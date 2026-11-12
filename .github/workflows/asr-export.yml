@@ -22,9 +22,13 @@ on:
         description: How many Wikimedia Commons word recordings to score (0 skips the accuracy test)
         required: true
         default: "40"
+      upload_to_models:
+        description: "Upload the pack files to the existing `models` release"
+        type: boolean
+        default: false
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   export:
@@ -263,6 +267,15 @@ jobs:
             python3 -I -c "import json,sys;print(json.dumps(json.load(open(sys.argv[1])),indent=1))" \
               "out/$LANG_CODE/pack-report.json" >> "$GITHUB_STEP_SUMMARY"
           fi
+
+      - name: Upload the pack to the models release
+        if: ${{ inputs.upload_to_models }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p stage
+          python3 -I tools/asr/publish_manifest.py "out/$LANG_CODE" --out stage/asr-manifest.json --stage stage
+          gh release upload models stage/* --clobber --repo "$GITHUB_REPOSITORY"
 
       - uses: actions/upload-artifact@v4
         if: ${{ always() && steps.validate.outcome == 'success' }}
