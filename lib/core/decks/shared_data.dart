@@ -6,6 +6,7 @@
 library;
 
 import '../data/deck_parser.dart';
+import '../data/sections.dart';
 import '../data/themes.dart';
 import 'app_version.dart';
 
@@ -18,11 +19,15 @@ const int maxSharedFileBytes = 512 * 1024;
 /// so adding a file here is one line and a loader.
 const Map<String, String> sharedKinds = <String, String>{
   'decks/themes.yaml': 'themes',
+  'decks/sections.yaml': 'sections',
 };
 
 /// The newest schema of each kind the app reads. A file of a later schema is
 /// not used: the bundled copy stays, as for an app too old for it.
-const Map<String, int> supportedSharedSchemas = <String, int>{'themes': 1};
+const Map<String, int> supportedSharedSchemas = <String, int>{
+  'themes': 1,
+  'sections': 1,
+};
 
 final RegExp _hex64 = RegExp(r'^[0-9a-f]{64}$');
 
@@ -146,7 +151,9 @@ String? checkSharedText(String path, String text) {
   final kind = sharedKinds[path];
   if (kind == null) return '$path is not a file this app reads';
   try {
-    if (kind == 'themes') parseThemes(text, source: path.split('/').last);
+    final source = path.split('/').last;
+    if (kind == 'themes') parseThemes(text, source: source);
+    if (kind == 'sections') parseSections(text, source: source);
     return null;
   } on DeckParseException catch (e) {
     return e.toString();

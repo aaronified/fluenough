@@ -117,7 +117,9 @@ extension UnlockState on AppState {
   /// The card [id] from the decks, or null if none has it.
   Card? cardById(String id) => derived<Map<String, Card>>(#cardsById, () {
     final byId = <String, Card>{};
-    for (final entry in decks) {
+    // Hidden decks a learner added are drilled too (D3), so a card of one
+    // is found as any is.
+    for (final entry in drillDecks) {
       for (final card in entry.cards) {
         byId.putIfAbsent(card.id, () => card);
       }

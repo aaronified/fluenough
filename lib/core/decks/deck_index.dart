@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'app_version.dart';
+import 'levels.dart';
 import 'shared_data.dart';
 
 /// The newest index format this app reads. An index of a later version
@@ -209,6 +210,154 @@ class IndexFile {
       : 'deck:$deck:$native';
 }
 
+/// A deck file with a `genre` in the index (`shelves`, deck-kinds plan, D9): a
+/// [file] entry plus what search and the Decks tab need before the file is
+/// downloaded. Hidden decks are listed here and nowhere else, and are fetched
+/// on demand; the visible ones also download with the language.
+class IndexShelf {
+  const IndexShelf({
+    required this.file,
+    required this.genre,
+    this.level,
+    this.hidden = false,
+    this.professional,
+    this.section,
+    this.weave = false,
+    this.title,
+    this.cards = 0,
+    this.coreId,
+  });
+
+  /// The file, as `files` would list it.
+  final IndexFile file;
+
+  /// The deck's genre, a string looked up in the sections file.
+  final String genre;
+
+  /// The lowest level the deck suits, or null for none (also for a value that
+  /// is no level).
+  final Level? level;
+
+  /// Whether the deck is kept out of the Decks tab, Today, the path,
+  /// placement and the counts until a learner adds it.
+  final bool hidden;
+
+  /// The profession of a professional deck.
+  final String? professional;
+
+  /// The Decks tab section the deck is in, as the tool resolved it.
+  final String? section;
+
+  /// Whether the deck may be woven into the course.
+  final bool weave;
+
+  /// The deck's name, in the language its file is written in.
+  final String? title;
+
+  /// How many cards (or passages) the file has.
+  final int cards;
+
+  /// The core id of the deck: the same for a core, its layers and a single
+  /// file's own id.
+  final String? coreId;
+
+  /// What names the deck across its files: [coreId], else the id the index
+  /// lists it as, else its path.
+  String get deckKey => coreId ?? file.deck ?? file.path;
+
+  /// Whether the file is a core, which is never listed as a deck of its own.
+  bool get isCore => file.core;
+
+  /// [json] as a shelf entry. Throws [FormatException] for one that is not
+  /// (the caller costs the entry and logs it).
+  static IndexShelf parse(
+    Object? json, {
+    String? appVersion,
+    String? languageMinApp,
+  }) {
+    if (json is! Map) throw const FormatException('a shelf is not an object');
+    final file = IndexFile._parse(
+      json,
+      appVersion: appVersion,
+      languageMinApp: languageMinApp,
+    );
+    final genre = json['genre'];
+    if (genre is! String || genre.isEmpty) {
+      throw FormatException('${file.path} has no genre');
+    }
+    String? text(String key) {
+      final value = json[key];
+      return value is String && value.isNotEmpty ? value : null;
+    }
+
+    final cards = json['cards'];
+    return IndexShelf(
+      file: file,
+      genre: genre,
+      level: Level.tryParse(json['level']),
+      hidden: json['hidden'] == true,
+      professional: text('professional'),
+      section: text('section'),
+      weave: json['weave'] == true,
+      title: text('title'),
+      cards: cards is int && cards >= 0 ? cards : 0,
+      coreId: text('core'),
+    );
+  }
+
+  @override
+  String toString() => 'IndexShelf(${file.path}, $genre)';
+}
+
+/// A creator's image in the index (`shared_media`): downloaded on demand when
+/// a creator is shown, checked by its hash alone, never as a deck.
+class SharedMediaFile {
+  const SharedMediaFile({
+    required this.path,
+    required this.size,
+    required this.sha256,
+    required this.kind,
+    this.language,
+  });
+
+  final String path;
+  final int size;
+  final String sha256;
+
+  /// `image`.
+  final String kind;
+
+  /// The language whose creator it shows.
+  final String? language;
+
+  /// [json] as a media entry, or null for one that is not (the caller logs
+  /// it).
+  static SharedMediaFile? tryParse(Object? json) {
+    if (json is! Map) return null;
+    final path = json['path'];
+    final size = json['size'];
+    final sha = json['sha256'];
+    if (path is! String ||
+        !path.startsWith('decks/creators/images/') ||
+        path.contains('..') ||
+        size is! int ||
+        size <= 0 ||
+        sha is! String ||
+        !_hex64.hasMatch(sha)) {
+      return null;
+    }
+    final kind = json['kind'];
+    final language = json['language'];
+    return SharedMediaFile(
+      path: path,
+      size: size,
+      sha256: sha,
+      kind: kind is String ? kind : 'image',
+      language: language is String ? language : null,
+    );
+  }
+}
+
 /// A script's font in the index (ADR-0042), listed under a language's
 /// `fonts`: one OFL-licensed Noto font, downloaded with the course that
 /// needs it and drawn under the family name [scriptFontFamily] gives its
@@ -343,6 +492,9 @@ class IndexLanguage {
     this.media = const <IndexFile>[],
     this.fonts = const <IndexFont>[],
     this.resources = const <IndexFile>[],
+    this.shelves = const <IndexShelf>[],
+    this.topics = const <IndexFile>[],
+    this.problems = const <String>[],
     this.minApp,
     this.appTooOld = false,
   });
@@ -392,6 +544,19 @@ class IndexLanguage {
   /// not with the decks; at most one.
   final List<IndexFile> resources;
 
+  /// Its decks with a `genre`, hidden ones too (`shelves`, deck-kinds plan,
+  /// D9). The visible ones are also among [files], so they download with the
+  /// language; a hidden one is only here, fetched on demand ([hiddenFilesFor]).
+  final List<IndexShelf> shelves;
+
+  /// Its topics file (`topics`), listed apart from [files] so that an app too
+  /// old to read it passes it by. Read, not downloaded yet.
+  final List<IndexFile> topics;
+
+  /// What in the language's new keys (`shelves`, `topics`) could not be read
+  /// and cost only itself, one line each, for the log.
+  final List<String> problems;
+
   /// The oldest app version that can read the language at all (`min_app`,
   /// ADR-0052), or null. An app older than this does not download any of
   /// its files and says it needs updating.
@@ -420,6 +585,54 @@ class IndexLanguage {
   /// do not speak, which the app then says: "Taught from English".
   bool taughtFromOther(List<String> spoken) =>
       natives.isNotEmpty && !natives.any((n) => spoken.contains(n.code));
+
+  /// The hidden decks the index lists, one entry for each deck taught from
+  /// one of [natives] (its layer, or its single file), never a core: what
+  /// search lists before anything is downloaded.
+  List<IndexShelf> hiddenDecksFor(Iterable<String> natives) {
+    final wanted = natives.toSet();
+    return <IndexShelf>[
+      for (final shelf in shelves)
+        if (shelf.hidden &&
+            !shelf.isCore &&
+            (shelf.file.native == null || wanted.contains(shelf.file.native)))
+          shelf,
+    ];
+  }
+
+  /// The files that put the hidden deck [deckKey] on the phone for a learner
+  /// from [natives]: its core and the layers (or its single file) taught from
+  /// one of them, that this app can read. Empty where the index lists no such
+  /// hidden deck. Never a visible deck's files, which download with the
+  /// language.
+  List<IndexFile> hiddenFilesFor(String deckKey, Iterable<String> natives) {
+    final wanted = natives.toSet();
+    return <IndexFile>[
+      for (final shelf in shelves)
+        if (shelf.hidden &&
+            shelf.deckKey == deckKey &&
+            shelf.file.readable &&
+            (shelf.file.native == null || wanted.contains(shelf.file.native)))
+          shelf.file,
+    ];
+  }
+
+  /// The newest app version the hidden deck [deckKey]'s files need that this
+  /// app is too old for, or null when it reads them all (`min_app`).
+  String? hiddenAppNeeded(String deckKey, Iterable<String> natives) {
+    final wanted = natives.toSet();
+    String? newest;
+    for (final shelf in shelves) {
+      if (!shelf.hidden ||
+          shelf.deckKey != deckKey ||
+          !shelf.file.appTooOld ||
+          shelf.file.native != null && !wanted.contains(shelf.file.native)) {
+        continue;
+      }
+      newest = newestAppVersion(newest, shelf.file.minApp);
+    }
+    return newest;
+  }
 
   /// The files a learner from [natives] downloads: the language's own
   /// files, its cores, and its decks and layers for [natives], then its
@@ -537,12 +750,48 @@ class IndexLanguage {
       appVersion: appVersion,
       languageMinApp: minApp,
     );
+    final problems = <String>[];
+    // The decks with a genre and a language's topics file are listed under
+    // keys of their own (D9), so that a release that reads `files` never
+    // sees them. A bad entry costs itself, and is named for the log.
+    final shelves = <IndexShelf>[];
+    for (final item in _list(json['shelves'])) {
+      try {
+        final shelf = IndexShelf.parse(
+          item,
+          appVersion: appVersion,
+          languageMinApp: minApp,
+        );
+        if (shelf.file.language != code) {
+          throw FormatException('${shelf.file.path} is not in decks/$code/');
+        }
+        shelves.add(shelf);
+      } on Object catch (e) {
+        problems.add('$code: a shelf entry was left out: $e');
+      }
+    }
+    final topics = <IndexFile>[];
+    for (final item in _list(json['topics'])) {
+      try {
+        final file = parse(item);
+        if (file.language != code) {
+          throw FormatException('${file.path} is not in decks/$code/');
+        }
+        topics.add(file);
+      } on Object catch (e) {
+        problems.add('$code: a topics entry was left out: $e');
+      }
+    }
     final files = <IndexFile>[
       for (final file in _list(json['files'])) parse(file),
       for (final file in _list(json['script_guides'])) parse(file),
       // The situations file (#724) is listed under its own key for the same
       // reason: the released app has no case for its kind.
       for (final file in _list(json['situations'])) parse(file),
+      // A visible genre deck downloads with the language; a hidden one is
+      // fetched when a learner adds it.
+      for (final shelf in shelves)
+        if (!shelf.hidden) shelf.file,
     ];
     final media = <IndexFile>[
       for (final file in _list(json['media'])) parse(file, media: true),
@@ -586,6 +835,9 @@ class IndexLanguage {
         for (final file in _list(json['resources']))
           ?_tryParseResources(file, code),
       ],
+      shelves: List<IndexShelf>.unmodifiable(shelves),
+      topics: List<IndexFile>.unmodifiable(topics),
+      problems: List<String>.unmodifiable(problems),
       minApp: minApp,
       appTooOld: appVersion != null && appIsOlderThan(appVersion, minApp),
     );
@@ -600,6 +852,7 @@ class DeckIndex {
     this.languages = const <IndexLanguage>[],
     this.shared = const <SharedFile>[],
     this.sharedProblems = const <String>[],
+    this.sharedMedia = const <SharedMediaFile>[],
   });
 
   /// The index's format. Later than [supportedIndexVersion], the app cannot
@@ -613,6 +866,18 @@ class DeckIndex {
 
   /// Why entries of the index's `shared` list were left out, for the log.
   final List<String> sharedProblems;
+
+  /// The creators' images (`shared_media`), downloaded on demand and checked
+  /// by hash alone. Empty for an index that lists none.
+  final List<SharedMediaFile> sharedMedia;
+
+  /// Every entry of the index that could not be read and cost only itself:
+  /// the shared list's, the media's and each language's new keys', one line
+  /// each, for the log.
+  List<String> get problems => <String>[
+    ...sharedProblems,
+    for (final language in languages) ...language.problems,
+  ];
 
   IndexLanguage? language(String code) {
     for (final language in languages) {
@@ -661,11 +926,26 @@ class DeckIndex {
       }
     }
     final shared = parseSharedFiles(json['shared'], appVersion: appVersion);
+    final media = <SharedMediaFile>[];
+    final mediaProblems = <String>[];
+    final rawMedia = json['shared_media'];
+    if (rawMedia != null && rawMedia is! List) {
+      mediaProblems.add('the shared_media list of the index is not a list');
+    }
+    for (final item in _list(rawMedia)) {
+      final file = SharedMediaFile.tryParse(item);
+      if (file == null) {
+        mediaProblems.add('a shared_media entry was left out');
+      } else {
+        media.add(file);
+      }
+    }
     return DeckIndex(
       version: version,
       languages: languages,
       shared: shared.files,
-      sharedProblems: shared.problems,
+      sharedProblems: <String>[...shared.problems, ...mediaProblems],
+      sharedMedia: List<SharedMediaFile>.unmodifiable(media),
     );
   }
 }

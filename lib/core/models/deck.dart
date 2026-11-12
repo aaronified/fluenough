@@ -284,7 +284,7 @@ class Deck {
 
   /// This deck with [cards] in place of its own, and no refs left: a grammar
   /// deck once its pattern is expanded, or a deck once its refs are resolved.
-  Deck withCards(List<Card> cards) => Deck(
+  Deck withCards(List<Card> cards, {List<Passage>? passages}) => Deck(
     id: id,
     name: name,
     kind: kind,
@@ -293,7 +293,7 @@ class Deck {
     license: license,
     cards: cards,
     pattern: pattern,
-    passages: passages,
+    passages: passages ?? this.passages,
     description: description,
     tags: tags,
     authors: authors,
@@ -314,6 +314,27 @@ class Deck {
     patternFamily: patternFamily,
     kindProblems: kindProblems,
   );
+
+  /// This deck as a learner at [learner] may have it (D2 of the deck-kinds
+  /// plan, [LevelGate]): null when the deck is itself above the level, else
+  /// the deck without the cards and the passages above it (null again when
+  /// none is left), which is this very deck when nothing is above it. A deck and a card with no level are
+  /// always kept.
+  Deck? forLevel(Level? learner) {
+    if (!LevelGate.allows(level, learner)) return null;
+    final keptCards = LevelGate.filter(cards, learner, (c) => c.level);
+    final keptPassages = LevelGate.filter(passages, learner, (p) => p.level);
+    if (keptCards.length == cards.length &&
+        keptPassages.length == passages.length) {
+      return this;
+    }
+    // A deck with nothing left that this learner may have is not offered.
+    if (keptCards.isEmpty && cards.isNotEmpty) return null;
+    return withCards(
+      List<Card>.unmodifiable(keptCards),
+      passages: List<Passage>.unmodifiable(keptPassages),
+    );
+  }
 
   @override
   String toString() => 'Deck($id, ${cards.length} cards)';

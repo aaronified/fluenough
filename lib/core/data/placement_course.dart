@@ -175,6 +175,12 @@ PlacementCourse loadPlacementCourse(
           ? deck.withCards(expandRules(deck, wordOf: (id) => written[id]))
           : deck,
   ];
+  // A hidden deck is never placed, nor is a deck with a genre, which is
+  // beyond the basics the path's words are (deck-kinds plan, D3, D7).
+  decks = <Deck>[
+    for (final deck in decks)
+      if (!deck.hidden && deck.genre == null) deck,
+  ];
   final byId = <String, Deck>{for (final d in decks) d.id: d};
   final path = languagePath?.forNative(native, exists: byId.containsKey);
   final ordered = <Deck>[];

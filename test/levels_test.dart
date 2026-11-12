@@ -86,55 +86,65 @@ void main() {
   });
 
   group('the unit a learner has reached', () {
-    test('counts a card with a review for the first core that holds it', () {
-      final plan = _plan();
-      final cards = <String, List<String>>{
-        'xx-a': <String>['xx-1', 'xx-2'],
-        'xx-b': <String>['xx-2', 'xx-3'],
-        'xx-c': <String>['xx-3', 'xx-4'],
-      };
-      // xx-2 is in the first two cores, xx-3 in the second and the third: only
-      // the first of each counts, so reviewing xx-2 starts xx-a and no more.
-      expect(startedCores(plan, cards, <String>{'xx-2'}), <String>{'xx-a'});
-      expect(startedCores(plan, cards, <String>{'xx-3'}), <String>{'xx-b'});
-      expect(startedCores(plan, cards, <String>{'xx-4'}), <String>{'xx-c'});
-      expect(startedCores(plan, cards, <String>{}), isEmpty);
+    final cards = <String, List<String>>{
+      'xx-a': <String>['xx-1', 'xx-2'],
+      'xx-b': <String>['xx-2', 'xx-3'],
+      'xx-c': <String>['xx-3', 'xx-4'],
+    };
+
+    test('counts a card for the first unit that holds it', () {
+      final first = firstUnitOfCards(_plan(), cards);
+      expect(first, <String, int>{'xx-1': 0, 'xx-2': 0, 'xx-3': 1, 'xx-4': 2});
     });
 
-    test('leaves out a core nothing is known of', () {
+    test('knows nothing of a core it is not given', () {
       expect(
-        startedCores(_plan(), const <String, List<String>>{}, <String>{'x'}),
+        firstUnitOfCards(_plan(), const <String, List<String>>{}),
         isEmpty,
       );
     });
 
     test('is the first unit for a learner who has begun nothing', () {
-      expect(furthestUnit(_plan(), started: <String>{}, placed: <String>{}), 0);
-    });
-
-    test('is the furthest unit with a started core', () {
       expect(
         furthestUnit(
           _plan(),
-          started: <String>{'xx-a', 'xx-c'},
+          firstUnit: firstUnitOfCards(_plan(), cards),
+          studied: const <String>[],
           placed: <String>{},
         ),
-        2,
+        0,
       );
+    });
+
+    test('is the unit of the furthest card studied', () {
+      final first = firstUnitOfCards(_plan(), cards);
+      int reached(List<String> studied) => furthestUnit(
+        _plan(),
+        firstUnit: first,
+        studied: studied,
+        placed: <String>{},
+      );
+      expect(reached(<String>['xx-1']), 0);
+      // xx-2 is in the first two cores: it reaches the first only.
+      expect(reached(<String>['xx-2']), 0);
+      expect(reached(<String>['xx-3']), 1);
+      expect(reached(<String>['xx-1', 'xx-4']), 2);
+      // A card no deck holds reaches nothing.
+      expect(reached(<String>['xx-99']), 0);
     });
 
     test('is the unit after one placement passed whole', () {
       final plan = _plan();
-      expect(
-        furthestUnit(plan, started: <String>{}, placed: <String>{'xx-b'}),
-        2,
+      int reached(Set<String> placed) => furthestUnit(
+        plan,
+        firstUnit: const <String, int>{},
+        studied: const <String>[],
+        placed: placed,
       );
+      expect(reached(<String>{'xx-b'}), 2);
       // The last written unit placed: the reach stops at the unit after it,
       // here the planned one.
-      expect(
-        furthestUnit(plan, started: <String>{}, placed: <String>{'xx-f'}),
-        6,
-      );
+      expect(reached(<String>{'xx-f'}), 6);
     });
 
     test('does not take a unit placed in part for passed', () {
@@ -143,7 +153,12 @@ void main() {
         _unit(<String>['xx-c'], milestone: Milestone.a2),
       ];
       expect(
-        furthestUnit(plan, started: <String>{}, placed: <String>{'xx-a'}),
+        furthestUnit(
+          plan,
+          firstUnit: const <String, int>{},
+          studied: const <String>[],
+          placed: <String>{'xx-a'},
+        ),
         0,
       );
     });

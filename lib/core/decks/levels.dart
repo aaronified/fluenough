@@ -64,51 +64,47 @@ Level? levelOfUnit(List<PlanUnit> plan, int index) {
 Level? learnerLevel(List<PlanUnit> plan, int furthestUnit) =>
     levelOfUnit(plan, furthestUnit);
 
-/// The cores of [plan] whose cards the learner has started, as the level model
-/// counts a unit reached: [cardsOfCore] gives each core's card ids and
-/// [studied] the ids of the cards with a review or a schedule. A card counts for
-/// the first core, in the path's order, that holds it, so that a word a later
-/// deck shares with an earlier one does not make the later unit reached.
-/// A core [cardsOfCore] does not know is not started.
-Set<String> startedCores(
+/// For each card id, the index of the first unit of [plan] whose cores hold it:
+/// [cardsOfCore] gives each core's card ids. A card counts for the first unit
+/// that holds it, so that a word a later deck shares with an earlier one does
+/// not make the later unit reached. A core [cardsOfCore] does not know holds
+/// nothing.
+Map<String, int> firstUnitOfCards(
   List<PlanUnit> plan,
   Map<String, Iterable<String>> cardsOfCore,
-  Set<String> studied,
 ) {
-  final started = <String>{};
-  final seen = <String>{};
-  for (final unit in plan) {
+  final first = <String, int>{};
+  for (final (i, unit) in plan.indexed) {
     for (final core in unit.decks) {
-      final cards = cardsOfCore[core];
-      if (cards == null) continue;
-      var own = false;
-      for (final id in cards) {
-        if (seen.add(id) && studied.contains(id)) own = true;
+      for (final id in cardsOfCore[core] ?? const <String>[]) {
+        first.putIfAbsent(id, () => i);
       }
-      if (own) started.add(core);
     }
   }
-  return started;
+  return first;
 }
 
-/// The index of the furthest unit of [plan] the learner has reached: a unit
-/// with a started core ([startedCores]), or the unit after one whose decks are
-/// all placed (placement passed it whole), never past the last unit; 0 for a
-/// learner who has begun nothing. Planned units (no decks) are never reached
-/// on their own, only passed over.
+/// The index of the furthest unit of [plan] the learner has reached: the unit
+/// of a card they have studied ([studied], the ids of cards with a review or a
+/// schedule; [firstUnit] from [firstUnitOfCards]), or the unit after one whose
+/// decks are all placed ([placed], core ids; placement passed it whole), never
+/// past the last unit; 0 for a learner who has begun nothing. A planned unit
+/// (no decks) is never reached on its own, only passed over.
 int furthestUnit(
   List<PlanUnit> plan, {
-  required Set<String> started,
+  required Map<String, int> firstUnit,
+  required Iterable<String> studied,
   required Set<String> placed,
 }) {
   var furthest = 0;
+  for (final id in studied) {
+    final unit = firstUnit[id];
+    if (unit != null && unit > furthest) furthest = unit;
+  }
   for (final (i, unit) in plan.indexed) {
-    if (unit.decks.isEmpty) continue;
-    if (unit.decks.any(started.contains) && i > furthest) furthest = i;
-    if (unit.decks.every(placed.contains)) {
-      final next = i + 1 < plan.length ? i + 1 : i;
-      if (next > furthest) furthest = next;
-    }
+    if (unit.decks.isEmpty || !unit.decks.every(placed.contains)) continue;
+    final next = i + 1 < plan.length ? i + 1 : i;
+    if (next > furthest) furthest = next;
   }
   return furthest;
 }

@@ -554,6 +554,11 @@ class _Reader {
               'this is the themes file, not a deck; the catalog reads it '
               'with parseThemes',
             ),
+            'sections' => fail(
+              kindNode,
+              'this is the sections file, not a deck; the catalog reads it '
+              'with parseSections',
+            ),
             _ => fail(
               kindNode,
               'kind must be vocab, grammar or reading, got '
