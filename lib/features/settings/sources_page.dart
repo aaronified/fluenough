@@ -229,6 +229,28 @@ class SourcesPage extends StatelessWidget {
                 ),
             ],
           ),
+          // The on-device AI listener's software and data (#1004).
+          const SizedBox(height: 16),
+          GroupedList.settings(
+            header: l10n.sourcesListener,
+            children: <Widget>[
+              GroupedTile(
+                leading: const Icon(Icons.memory_outlined),
+                title: l10n.sourcesListenerOnnx,
+                subtitle: l10n.sourcesListenerOnnxLine,
+              ),
+              GroupedTile(
+                leading: const Icon(Icons.auto_awesome_outlined),
+                title: l10n.sourcesListenerModel,
+                subtitle: l10n.sourcesListenerModelLine,
+              ),
+              GroupedTile(
+                leading: const Icon(Icons.record_voice_over_outlined),
+                title: l10n.sourcesListenerData,
+                subtitle: l10n.sourcesListenerDataLine,
+              ),
+            ],
+          ),
           if (media.isNotEmpty) ...<Widget>[
             const SizedBox(height: 16),
             GroupedList.settings(

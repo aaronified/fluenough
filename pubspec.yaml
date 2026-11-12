@@ -28,6 +28,9 @@ dependencies:
   # database. drift already depends on it, so the version is left to drift's.
   sqlite3: any
   http: ^1.6.0
+  # SHA-256 of the on-device listener's downloaded files (#1004, ADR-0054
+  # notes): a pack is renamed into place only when it matches the manifest.
+  crypto: ^3.0.6
 
   # Text to speech. Wraps android.speech.tts and AVSpeechSynthesizer.
   flutter_tts: ^4.2.5

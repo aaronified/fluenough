@@ -27,6 +27,7 @@ The head and the encoder-tensor hashes are read from the `.nemo` **without torch
 | `ctc.py` | head slice index, head file I/O, `Head.apply`, `ctc_decode` |
 | `nemo_ckpt.py` | torch-free `.nemo` reader and encoder hash |
 | `export_pack.py` | `.nemo` to pack (below) |
+| `publish_manifest.py` | pack dirs to `asr-manifest.json` (sizes, sha256, `models` release URLs); `--stage DIR` copies the files under their release asset names for the owner to upload |
 | `loadmodel.py`, `export_onnx.py`, `quantize.py` | the encoder-only ONNX export and int8 quantisation (spike scripts, generalised) |
 | `transcribe.py`, `eval_wer.py` | reference transcriber and the WER/CER scorer |
 | `fetch_wiktionary_audio.py` | downloads about 40 Telugu word recordings from Wikimedia Commons (paced, one request at a time, User-Agent, `maxlag`, backoff, request cap) into `name.wav` + `name.txt` pairs and `manifest.json` (author and licence per file); the accuracy test set, so nobody has to record words |

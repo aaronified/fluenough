@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- The Telugu on-device AI listener can be installed from the Voices page (not installed, downloading with Cancel, installed with Remove, failed with Try again), downloaded from the `models` release with its SHA-256 checked and resumable; `tools/asr/publish_manifest.py` writes the manifest. The Sources screen credits ONNX Runtime (MIT), AI4Bharat IndicConformer (MIT) and IndicVoices (CC BY 4.0). Telugu only for now (#1004).
+
 ### Changed
 
 - Deck-owned data (the theme list first) now lives on decks-live and updates with the decks, so a new theme needs no app release (owner request). The copy bundled in the app is the fallback for an offline first start and an app that cannot read the new file.

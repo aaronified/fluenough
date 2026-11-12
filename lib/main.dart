@@ -42,7 +42,9 @@ import 'core/tts/system_clip_player.dart';
 import 'core/tts/system_tts_engine.dart';
 import 'core/tts/volume_monitor.dart';
 import 'app/file_blob_store.dart';
+import 'app/asr_pack_downloader.dart';
 import 'app/channel_asr_runtime.dart';
+import 'app/file_asr_pack_store.dart';
 import 'app/file_asr_pack_locator.dart';
 import 'core/updates/apk_install.dart';
 import 'core/updates/github_release_check.dart';
@@ -94,6 +96,14 @@ Future<void> main() async {
   final asrPacks = FileAsrPackLocator(
     Directory('${files.path}/asr'),
     log: log.warning,
+  );
+  // Downloads the on-device listener (#1004); Telugu only for now. Add a
+  // language here once its pack is published in the manifest.
+  final asrInstaller = AsrPackDownloader(
+    manifestUrl: Uri.parse(AppLinks.asrManifest),
+    store: FileAsrPackStore(Directory('${files.path}/asr'), log: log.warning),
+    log: log.warning,
+    supported: const <String>{'te'},
   );
   final state = AppState(
     catalog: DeckCatalog(
@@ -148,6 +158,7 @@ Future<void> main() async {
       packs: asrPacks,
       log: log.warning,
     ),
+    asrPacks: asrInstaller,
     volume: SystemVolumeMonitor(),
     soundCheck: SystemSoundCheck(),
     networkProbe: SystemNetworkProbe(),
