@@ -4232,7 +4232,8 @@ def validate_layer(r: Report, raw: dict, path: Path) -> None:
         validate_guide_layer(r, raw, path, core)
         return
     r.core_id = r.listed_as = core_id
-    r.genre = core.get("genre") if core.get("genre") in GENRES else None
+    r.genre = core["genre"] if _is_str(core.get("genre")) and core["genre"] in GENRES \
+        else None
     r.hidden = core.get("hidden") is True
     r.level = core.get("level") if core.get("level") in LEVELS else None
     r.weave = core["weave"] if isinstance(core.get("weave"), bool) else None
