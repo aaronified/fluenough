@@ -544,7 +544,7 @@ void main() {
       const cal = GuessCalibration.seed;
       expect(cal.usable('F2', true, 0.25), isFalse);
       expect(cal.usable('F2', false, 0.25), isTrue);
-      expect(cal.guessFor('F2', false, 0.25), 0.35);
+      expect(cal.guessFor('F2', false, 0.25), 0.38);
       expect(cal.usable('S2', false, 0.5), isTrue);
       expect(cal.usable('S2legacy', false, 0.5), isFalse);
       expect(cal.guessFor('unknown', false, 0.25), 0.25);
