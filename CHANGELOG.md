@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Find my level and reviews make look-alike options: the wrong options of a sentence pick share the right one's length band and about as many words, and a review's wrong options come from the cards that look most like the right one (one length band, same word class, shared tags, nearest spelling), so no surface cue gives the answer away (#1097).
 - In Find my level, hearing a word and picking its meaning now counts for Reading as well as Hearing (#1105).
 - **Find my level shows its result card at once, and the result is simpler.** The "See my result" pause is gone: the card shows when the check ends (with Keep going on it while a sharper answer is possible). Each skill has a level name (Beginner, Amateur, Fluent or Expert) and the part of the whole language path it covers, drawn as a bar. Refs #1097.
 - Find my level no longer asks "what you heard" (arrange what was said); Hear questions always ask the meaning (#1105).

@@ -21,7 +21,7 @@ import '../../core/models/reading.dart';
 import '../../core/models/sound_contrasts.dart';
 import '../../core/network/network_probe.dart';
 import '../../core/scheduling/daily_timer.dart';
-import '../../core/scheduling/distractors.dart';
+import '../../core/scheduling/look_alike_options.dart';
 import '../../core/scheduling/picture_choice.dart';
 import '../../core/scheduling/fsrs.dart';
 import '../../core/scheduling/question_type.dart';
@@ -1354,12 +1354,16 @@ class DrillSession extends ChangeNotifier {
       return pictureOptions(card, deckCards, seed: _random.nextInt(1 << 30)) ??
           <Card>[card];
     }
-    // The pool by what its cards share with this one (rankDistractors),
-    // shuffled within each rank, so that the likelier mistakes come first.
-    final pool = <Card>[
-      for (final group in rankDistractors(card, _state.choicePool(card, ask)))
-        ...group..shuffle(_random),
-    ];
+    // The pool by what its cards share with this one, made by code from the
+    // cards that exist: those that look most like it (one length band, its
+    // word class, shared tags, the nearest by edit distance) come first
+    // (rankLookAlikes), the likelier mistakes before the rest.
+    final pool = rankLookAlikes(
+      card,
+      _state.choicePool(card, ask),
+      textOf: ask.optionOf,
+      random: _random,
+    );
     final shown = <String>{ask.optionOf(card)};
     final picked = <Card>[card];
     final partner = ask == Ask.hearMeaning ? _state.pairOf(card) : null;
