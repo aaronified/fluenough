@@ -95,7 +95,9 @@ alphabet:
   - "ja-hiragana"
   - "ja-kanji-1"
   - "ja-katakana"
+  - "ja-katakana-combos"
   - "ja-hiragana-marks"
+  - "ja-hiragana-combos"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
@@ -146,6 +148,7 @@ units:
   # voiced marks, the small ya, yu and yo, the small tsu and long vowels.
   - ["ja-hiragana"]
   - ["ja-hiragana-marks"]
+  - ["ja-hiragana-combos"]
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
   - decks: ["ja-about-me", "ja-about-me-sentences", "ja-reading-about-me", "*"]
@@ -269,6 +272,7 @@ units:
       - { id: "order-slip", text: { "en": "An order slip with counted items" } }
   # Katakana, after the core: the sounds of loanwords.
   - ["ja-katakana"]
+  - ["ja-katakana-combos"]
   - decks: ["ja-loanwords", "ja-loanwords-sentences", "ja-reading-loanwords", "*"]
     words: 30
   - decks: ["ja-market", "ja-market-sentences", "ja-reading-market", "*"]
