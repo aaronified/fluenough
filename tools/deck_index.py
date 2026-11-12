@@ -28,6 +28,12 @@ SHA-256 of the file with its proposals and its cards' `checked_by` taken
 out, so that a learner's phone is not offered an update when only a
 proposal or a reviewer's sign-off changed (#444, #449).
 
+The decks with a `genre` (hidden ones too) are listed apart under `shelves`,
+a language's topics file under `topics`, the shared files (themes, sections,
+creators, recommendations) under `shared` and creator images under the
+top-level `shared_media`; each new entry carries `min_app` from MIN_APP_KINDS
+(wiki/Plan-Deck-Kinds-And-Topics.md, D9).
+
 A language, or one file, may carry `min_app`, the oldest app version that can
 read it (ADR-0052), written from decks/min_app.json. The app that knows the
 key does not download what needs a newer app and says so; the released app
@@ -228,7 +234,28 @@ BUNDLED = {"decks/themes.yaml"}
 # An older app ignores the key and keeps using its bundled copy (BUNDLED).
 # Add a path here only after the app can read it from the downloads
 # (lib/core/decks/shared_data.dart names the kinds it can).
-SHARED = ("decks/themes.yaml",)
+# A path with a `*` is a pattern: every file it matches, in order, is listed
+# (decks/creators/<code>.yaml, decks/recommendations/<code>.yaml, one per
+# language; wiki/Plan-Deck-Kinds-And-Topics.md, D9).
+SHARED = ("decks/themes.yaml", "decks/sections.yaml", "decks/creators/*.yaml",
+          "decks/recommendations/*.yaml")
+# The folders under decks/ that are shared data, not a language's.
+SHARED_FOLDERS = {"creators", "recommendations"}
+# Creator images, listed under the top-level `shared_media`: downloaded on
+# demand when a creator is shown, checked by hash alone.
+SHARED_MEDIA = "decks/creators/images"
+
+# The oldest app that can read each new key, written to every entry under it
+# as `min_app` (D9), so no deck needs a line in decks/min_app.json. The
+# release that holds tasks T10 to T12 of the plan; raise it to the real
+# number when that release is cut (owner question 10).
+MIN_APP_KINDS = {
+    "shelves": "0.9.6",
+    "topics": "0.9.6",
+    "sections": "0.9.6",
+    "creators": "0.9.6",
+    "recommendations": "0.9.6",
+}
 
 # The fonts the app downloads with a course (ADR-0042): for each script that
 # phones often draw wrongly or lack, one OFL-licensed Noto font in
@@ -290,6 +317,7 @@ NOT_DECKS = {
     "script",
     "resources",
     "phonetics",
+    "topics",
 }
 
 
@@ -508,12 +536,78 @@ def _language_block(files: list[Path]) -> dict:
     return {}
 
 
+def _gate(entry: dict, kind: str, hand: str | None) -> None:
+    """Writes `min_app` on [entry]: the release that reads its kind
+    (MIN_APP_KINDS), or a newer one decks/min_app.json asks for by hand."""
+    auto = MIN_APP_KINDS.get(kind)
+    versions = [v for v in (auto, hand) if v is not None]
+    if versions:
+        entry["min_app"] = max(versions, key=lambda v: tuple(int(x) for x in v.split(".")))
+
+
+def _sections() -> dict:
+    """decks/sections.yaml read for the genres' default section and weave,
+    or {} when it is not there."""
+    raw = vd._load_raw(ROOT / "decks" / "sections.yaml")
+    genres = {}
+    if isinstance(raw, dict) and isinstance(raw.get("genres"), list):
+        for g in raw["genres"]:
+            if isinstance(g, dict) and vd._is_str(g.get("id")):
+                genres[g["id"]] = g
+    return genres
+
+
+def _shelf_entry(entry: dict, rep: vd.Report, path: Path, genres: dict) -> dict:
+    """A deck file with a `genre` as `shelves` lists it: its `files` entry,
+    and the genre, level, hidden flag, profession, section, weave, title and
+    card count the app searches by before it has the file."""
+    raw = vd._load_raw_view(path)
+    raw = raw if isinstance(raw, dict) else {}
+    core = raw if raw.get("kind") != "layer" else {}
+    genre = genres.get(rep.genre, {})
+    shelf = dict(entry)
+    shelf["genre"] = rep.genre
+    shelf["hidden"] = rep.hidden
+    if rep.level is not None:
+        shelf["level"] = rep.level
+    if rep.professional is not None:
+        shelf["professional"] = rep.professional
+    shelf["section"] = rep.section or genre.get("section") or "path"
+    weave = core.get("weave") if isinstance(core.get("weave"), bool) else None
+    if weave is None:
+        weave = genre.get("weave") if isinstance(genre.get("weave"), bool) else False
+    shelf["weave"] = weave
+    if vd._is_str(raw.get("name")):
+        shelf["title"] = raw["name"]
+    members = raw.get("cards") if raw.get("cards") is not None else raw.get("passages")
+    shelf["cards"] = len(members) if isinstance(members, (list, dict)) else 0
+    if rep.listed_as is not None:
+        shelf["core"] = rep.listed_as
+    return shelf
+
+
+def _shared_media() -> list[dict]:
+    """The creator images (`decks/creators/images/`), one entry each."""
+    folder = ROOT / SHARED_MEDIA
+    if not folder.is_dir():
+        return []
+    entries = []
+    for p in sorted(folder.iterdir()):
+        if p.suffix not in (".jpg", ".png", ".webp") or not p.is_file():
+            continue
+        data = p.read_bytes()
+        entries.append({"path": _rel(p), "size": len(data),
+                        "sha256": hashlib.sha256(data).hexdigest(), "kind": "image",
+                        "language": p.stem.split("-")[0]})
+    return entries
+
+
 def build(reports: list[vd.Report] | None = None,
           strict_released: bool | None = None) -> dict:
     """The index of the repository's decks/, from [reports] when the
     validator has them, else from validating every file here."""
     langs = sorted(p for p in DECKS.iterdir()
-                   if p.is_dir() and p.name not in HIDDEN | {FONTS_DIR.name})
+                   if p.is_dir() and p.name not in HIDDEN | {FONTS_DIR.name} | SHARED_FOLDERS)
     paths = [p for d in langs for p in vd._yaml_files(d)]
     if reports is None:
         reports = vd.validate_many(paths)
@@ -528,15 +622,17 @@ def build(reports: list[vd.Report] | None = None,
     min_languages, min_files = load_min_app()
     listed_files: set[str] = set()
     shared = []
-    for rel in SHARED:
-        shared_path = ROOT / rel
-        if not shared_path.is_file():
-            continue
-        shared_entry = _file_entry(shared_path, None)
-        if rel in min_files:
-            shared_entry["min_app"] = min_files[rel]
-        shared.append(shared_entry)
-        listed_files.add(rel)
+    sections = _sections()
+    for pattern in SHARED:
+        for shared_path in sorted(ROOT.glob(pattern)):
+            if not shared_path.is_file():
+                continue
+            rel = _rel(shared_path)
+            shared_entry = _file_entry(shared_path, None)
+            _gate(shared_entry, shared_entry["kind"], min_files.get(rel))
+            shared.append(shared_entry)
+            listed_files.add(rel)
+    shared_media = _shared_media()
     out = []
     for d in langs:
         code = d.name
@@ -557,6 +653,22 @@ def build(reports: list[vd.Report] | None = None,
         situations = [e for e in entries if e["kind"] == "situations"]
         files = [p for p, e in zip(files, entries) if e["kind"] != "situations"]
         entries = [e for e in entries if e["kind"] != "situations"]
+        # The topics file (D6) is listed apart too, for the same reason: its
+        # kind is unknown to the released app.
+        topics = [e for e in entries if e["kind"] == "topics"]
+        files = [p for p, e in zip(files, entries) if e["kind"] != "topics"]
+        entries = [e for e in entries if e["kind"] != "topics"]
+        # A deck with a `genre` is listed apart from `files` (D9), hidden or
+        # not, so a release that reads `files` never sees it. Its entry is a
+        # files entry plus what the app needs before it downloads the file.
+        shelves = []
+        for p, e in zip(files, entries):
+            rep = by_path.get(p.resolve())
+            if rep is not None and rep.genre is not None:
+                shelves.append(_shelf_entry(e, rep, p, sections))
+        shelved = {e["path"] for e in shelves}
+        files = [p for p, e in zip(files, entries) if e["path"] not in shelved]
+        entries = [e for e in entries if e["path"] not in shelved]
         # The phonetic rules are for tools/derive_phonetic.py alone: not
         # listed, not fetched, not in the size.
         files = [p for p, e in zip(files, entries) if e["kind"] != "phonetics"]
@@ -565,7 +677,7 @@ def build(reports: list[vd.Report] | None = None,
         entries = [e for e in entries if e not in guides]
         # A course with a path but no written deck is not offered: the
         # app would list it empty. It appears once its first deck lands.
-        if all(e["kind"] in NOT_DECKS for e in entries + guides + situations):
+        if all(e["kind"] in NOT_DECKS for e in entries + guides + situations + topics):
             continue
         natives = lang.natives()
         path_rep = lang.path()
@@ -585,7 +697,10 @@ def build(reports: list[vd.Report] | None = None,
             language["min_app"] = min_languages[code]
         language["natives"] = [{"code": n, "name": lang.native_name(n)} for n in natives]
         media = _media_entries(d)
-        language["size"] = sum(e["size"] for e in entries + guides + situations + media)
+        # A hidden deck is fetched on demand, so it is in no size.
+        visible = [e for e in shelves if not e["hidden"]]
+        language["size"] = sum(e["size"] for e in
+                               entries + guides + situations + media + visible + topics)
         if plan is not None:
             language["path"] = [core for u in plan.units for core in u.decks]
             units = []
@@ -608,15 +723,24 @@ def build(reports: list[vd.Report] | None = None,
                     unit["has"] = has
                 units.append(unit)
             language["units"] = units
-        for e in entries + guides + situations:
+        for e in entries + guides + situations + shelves + topics:
             listed_files.add(e["path"])
+        for e in entries + guides + situations:
             if e["path"] in min_files:
                 e["min_app"] = min_files[e["path"]]
+        for e in shelves:
+            _gate(e, "shelves", min_files.get(e["path"]))
+        for e in topics:
+            _gate(e, "topics", min_files.get(e["path"]))
         language["files"] = entries
         if guides:
             language["script_guides"] = guides
         if situations:
             language["situations"] = situations
+        if shelves:
+            language["shelves"] = shelves
+        if topics:
+            language["topics"] = topics
         if media:
             language["media"] = media
         # Apart from `files` and from the size: the released app reads only
@@ -635,6 +759,8 @@ def build(reports: list[vd.Report] | None = None,
     if strict_released is None:
         strict_released = bool(os.environ.get("FLUENOUGH_STRICT_RELEASED"))
     if not problems:
+        # Only the gates written by hand: the keys that gate themselves
+        # (MIN_APP_KINDS) are new files no release ships.
         problems, warnings = check_released(min_languages, min_files,
                                             strict=strict_released)
         for warning in warnings:
@@ -648,6 +774,8 @@ def build(reports: list[vd.Report] | None = None,
     }
     if shared:
         index["shared"] = shared
+    if shared_media:
+        index["shared_media"] = shared_media
     index["languages"] = out
     return index
 
@@ -663,16 +791,18 @@ def render(index: dict) -> str:
     lines.append(f'  "version": {index["version"]},')
     lines.append(f'  "schema": {index["schema"]},')
     lines.append(f'  "bundled": {dump(index["bundled"])},')
-    shared = index.get("shared", [])
-    if shared:
-        lines.append('  "shared": [')
-        for j, f in enumerate(shared):
-            lines.append(f"    {dump(f)}{',' if j < len(shared) - 1 else ''}")
-        lines.append("  ],")
+    for key in ("shared", "shared_media"):
+        shared = index.get(key, [])
+        if shared:
+            lines.append(f'  "{key}": [')
+            for j, f in enumerate(shared):
+                lines.append(f"    {dump(f)}{',' if j < len(shared) - 1 else ''}")
+            lines.append("  ],")
     lines.append('  "languages": [')
     for i, language in enumerate(index["languages"]):
         lines.append("    {")
-        lists = ("files", "script_guides", "situations", "media", "fonts", "resources")
+        lists = ("files", "script_guides", "situations", "shelves", "topics", "media",
+                 "fonts", "resources")
         keys = [k for k in language if k not in ("units", *lists)]
         for k in keys:
             lines.append(f'      "{k}": {dump(language[k])},')
