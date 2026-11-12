@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search Results Tabs</title>
+<meta name="description" content="Search results split into typed tabs: situations, topics, decks, grammar concepts, words, units and culture, with professional situations found only here (#1140, #1137, #1139).">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Sans+JP:wght@400;500&display=swap">
+<style>
+/* ===== The page around the phones (not the app) ===== */
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 16px 72px}
+h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;font-weight:700}
+.cap1{margin:0 0 16px;color:var(--page-muted);font-size:14px}
+.tw{display:flex;flex-wrap:wrap;gap:10px 24px;margin:0 0 14px}
+.tg{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--page-muted);flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--page-line);border-radius:10px;overflow:hidden;flex-wrap:wrap}
+.seg button{font:inherit;font-size:14px;min-height:40px;padding:0 14px;border:0;background:var(--page-card);color:var(--page-fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--page-acc);color:var(--page-bg);font-weight:600}
+section.opt{margin:0 0 52px;padding-top:20px;border-top:1px solid var(--page-line)}
+.frames{display:flex;flex-wrap:wrap;gap:20px 24px;align-items:flex-start}
+.fcol{display:flex;flex-direction:column;gap:6px;width:360px;max-width:100%}
+.fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+.sticky{position:sticky;top:0;z-index:20;background:var(--page-bg);padding:10px 0 4px;margin-bottom:12px;border-bottom:1px solid var(--page-line)}
+/* ===== The app: lib/ui/theme.dart (M3, Roboto; ColorScheme.fromSeed of the forest seed) =====
+   Every size is calc(N px * var(--t)), t = 1.4, the app's text cap (#505). Icons do not scale. */
+.ph{--t:1.4;width:360px;max-width:100%;height:740px;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
+.ph button{font-family:inherit;color:inherit;cursor:pointer}
+.appbar{flex:none;min-height:56px;display:flex;align-items:center;padding:0 4px 0 8px;color:var(--onSv);gap:2px}
+.appbar .ttl{flex:1;min-width:0;font-size:calc(20px*var(--t));line-height:1.2;font-weight:500;color:var(--onS);padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ib{width:48px;height:48px;border:0;background:none;display:flex;align-items:center;justify-content:center;border-radius:24px;padding:0;color:var(--onSv);flex:none}
+svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
+.sp{flex:1}
+.scroll{flex:1;min-height:0;overflow-y:auto;padding:0 16px 16px;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.t-body{font-size:calc(14px*var(--t));line-height:1.4;margin:0}
+.t-sm{font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv);margin:0}
+.t-lab{font-size:calc(12px*var(--t));line-height:1.3;font-weight:600;letter-spacing:.4px;color:var(--onSv);text-transform:uppercase;margin:14px 0 6px}
+.t-h{font-size:calc(16px*var(--t));line-height:1.3;font-weight:500;margin:0}
+.script{font-family:"Noto Sans Devanagari","Noto Sans Bengali",Roboto,sans-serif}
+.nowrap{white-space:nowrap}
+/* language bar */
+.lbar{display:flex;gap:8px;padding:0 16px 10px;flex:none}
+.pill{border:1px solid var(--ol);border-radius:8px;min-height:32px;padding:0 12px;font-size:calc(14px*var(--t));font-weight:500;display:inline-flex;align-items:center;gap:6px;background:none;color:var(--onSv)}
+.pill.on{background:var(--sc);color:var(--onSc);border-color:transparent}
+/* buttons */
+.btn{min-height:calc(40px*var(--t));border-radius:calc(20px*var(--t));border:0;font-size:calc(14px*var(--t));line-height:1.2;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;padding:6px 16px}
+.btn.fill{background:var(--p);color:var(--onP)}
+.btn.tonal{background:var(--sc);color:var(--onSc)}
+.btn.out{background:none;border:1px solid var(--ol);color:var(--p)}
+.btn.text{background:none;color:var(--p);padding:6px 12px}
+.btn.full{width:100%}
+.btn.sm{min-height:48px;border-radius:24px}
+/* cards */
+.card{background:var(--sLow);border-radius:16px;padding:14px 16px;margin:0 0 12px;display:flex;gap:12px;align-items:center;width:100%;text-align:left;border:0}
+.card .tx{flex:1;min-width:0}
+.card .ic{flex:none;width:40px;height:40px;border-radius:20px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center}
+/* bottom nav */
+.nav{flex:none;display:flex;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);padding:8px 4px 10px}
+.nav div{flex:1;text-align:center;font-size:calc(11px*var(--t));line-height:1.2;color:var(--onSv);display:flex;flex-direction:column;align-items:center;gap:2px}
+.nav div .pl{width:56px;height:28px;border-radius:14px;display:flex;align-items:center;justify-content:center}
+.nav div.on{color:var(--onS);font-weight:600}
+.nav div.on .pl{background:var(--sc);color:var(--onSc)}
+/* settings rows */
+/* sheet */
+.scrim{position:absolute;inset:0;background:rgba(0,0,0,.42);z-index:3}
+.sheet{position:absolute;z-index:4;left:0;right:0;bottom:0;background:var(--sLow);border-radius:28px 28px 0 0;display:flex;flex-direction:column;max-height:88%}
+.sheet .grab{flex:none;width:32px;height:4px;border-radius:2px;background:var(--onSv);opacity:.4;margin:10px auto 6px}
+.sheet .scroll{padding:6px 20px 20px}
+.sheet h3{margin:0 0 4px;font-size:calc(20px*var(--t));font-weight:500;line-height:1.2}
+.opt-row{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:none;border:0;padding:6px 0;min-height:48px;font-size:calc(14px*var(--t));line-height:1.3}
+.opt-row .tx{flex:1;min-width:0}
+.opt-row .tx small{display:block;font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.3}
+.box{flex:none;width:20px;height:20px;border-radius:3px;border:2px solid var(--onSv);display:flex;align-items:center;justify-content:center}
+.box.rd{border-radius:50%}
+.opt-row[aria-checked="true"] .box{background:var(--p);border-color:var(--p)}
+.box svg{width:16px;height:16px;fill:var(--onP);opacity:0}
+.opt-row[aria-checked="true"] .box svg{opacity:1}
+.sep{border-top:1px solid var(--olv);margin:6px 0}
+/* word rows */
+.wrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;align-items:center;border-top:1px solid var(--olv);padding:10px 0;width:100%;text-align:left;background:none;border-left:0;border-right:0;border-bottom:0}
+.wrow .w{font-size:calc(20px*var(--t));line-height:1.25;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrow .rd{font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrow .mn{font-size:calc(14px*var(--t));line-height:1.3;grid-column:1}
+.wrow .act{grid-column:2;grid-row:1/4;display:flex;align-items:center;gap:0}
+.wrow.unl .w,.wrow.unl .rd,.wrow.unl .mn{opacity:.78}
+.mastery{display:inline-flex;align-items:center;height:calc(18px*var(--t));padding:0 8px;border-radius:calc(9px*var(--t));font-size:calc(11px*var(--t));line-height:1;font-weight:600;letter-spacing:.3px}
+.m-new{box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
+.m-learning{background:var(--sc);color:var(--onSc)}
+.m-known{background:var(--p);color:var(--onP)}
+.audio{width:48px;height:48px;border-radius:24px;border:0;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;flex:none}
+.audio.sm{width:40px;height:40px}
+.bottom{flex:none;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv)}
+/* key-value (inspect) */
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;margin:0}
+.kv dt{font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.5}
+.kv dd{margin:0;font-size:calc(14px*var(--t));line-height:1.4;min-width:0;overflow-wrap:anywhere}
+.mono{font-family:ui-monospace,"Roboto Mono",monospace;font-size:calc(12px*var(--t))}
+.blk{display:flex;gap:12px;align-items:flex-start;border-radius:16px;padding:12px 14px;background:var(--sHigh);margin:8px 0}
+.blk p{margin:0;font-size:calc(14px*var(--t));line-height:1.35}
+.blk .tt{font-size:calc(12px*var(--t));font-weight:700;letter-spacing:.3px;text-transform:uppercase;margin:0 0 2px;color:var(--onSv)}
+/* conversation */
+.turns{display:flex;flex-direction:column;gap:12px;padding:4px 0}
+.turn{max-width:92%;border-radius:20px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.turn.a{align-self:flex-start;background:var(--sLow);border-bottom-left-radius:6px}
+.turn.b{align-self:flex-end;background:var(--sc);color:var(--onSc);border-bottom-right-radius:6px}
+.turn .who{font-size:calc(11px*var(--t));font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+.turn.a .who{color:var(--onSv)}
+.turn .tl{font-size:calc(20px*var(--t));line-height:1.45;font-weight:500}
+.turn .tl button{background:none;border:0;padding:0 1px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dotted currentColor}
+.turn .tl button.sel{background:var(--p);color:var(--onP);border-radius:6px;border-bottom-color:transparent}
+.turn .rdg{font-size:calc(13px*var(--t));line-height:1.3;opacity:.95}
+.turn .ml{font-size:calc(14px*var(--t));line-height:1.3;opacity:.95}
+.turn.live .tl{opacity:.85}
+.live-dot{display:inline-block;width:8px;height:8px;border-radius:4px;background:var(--E);margin-right:6px}
+.mic{display:flex;gap:12px;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);align-items:stretch}
+.mic .btn{flex:1;min-height:calc(48px*var(--t));flex-direction:column;gap:2px;border-radius:24px;font-size:calc(13px*var(--t))}
+.mic .btn svg.i{width:28px;height:28px}
+.mic .btn.on{outline:3px solid var(--onS);outline-offset:2px}
+.status{display:flex;align-items:center;gap:8px;padding:0 16px 8px;flex:none}
+/* highlight of what changed */
+.hl-on .chg{outline:2px dashed var(--E);outline-offset:3px;position:relative;border-radius:14px}
+.hl-on .chg::after{content:"new";position:absolute;top:-10px;right:6px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:6px;z-index:2;letter-spacing:.3px}
+.hl-on .chg.upd::after{content:"changed"}
+.hl-on .chg.gone::after{content:"removed"}
+.ghost{opacity:.55;text-decoration:line-through;pointer-events:none}
+.hide{display:none!important}
+.note{font-size:13px;color:var(--page-muted);margin:6px 0 14px;max-width:760px}
+.tabs{flex:none;display:flex;overflow-x:auto;scrollbar-width:none;box-shadow:0 -1px 0 var(--olv) inset;padding:0 4px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;min-height:48px;padding:0 12px;border:0;background:none;font-size:calc(14px*var(--t));font-weight:500;color:var(--onSv);display:flex;align-items:center;gap:6px;border-bottom:3px solid transparent;white-space:nowrap}
+.tab .n{font-size:calc(12px*var(--t));font-weight:600;background:var(--sc);color:var(--onSc);border-radius:10px;padding:1px 7px}
+.tab[aria-selected="true"]{color:var(--p);border-bottom-color:var(--p);font-weight:700}
+.tab .best{width:6px;height:6px;border-radius:3px;background:var(--p)}
+.sbox{margin:0 16px 8px;flex:none;display:flex;align-items:center;gap:8px;background:var(--sHigh);border-radius:28px;min-height:56px;padding:0 8px 0 16px}
+.sbox .q{flex:1;min-width:0;font-size:calc(16px*var(--t));white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 8px}
+.chp{border:1px solid var(--ol);border-radius:8px;min-height:32px;padding:0 10px;font-size:calc(12px*var(--t));display:inline-flex;align-items:center;gap:4px;background:none;color:var(--onSv);font-weight:500}
+.chp.on{background:var(--sc);color:var(--onSc);border-color:transparent}
+.tag{display:inline-flex;align-items:center;gap:4px;height:calc(18px*var(--t));padding:0 7px;border-radius:calc(9px*var(--t));font-size:calc(11px*var(--t));line-height:1;font-weight:700;letter-spacing:.3px;white-space:nowrap}
+.tag.lv{box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
+.tag.pro{background:var(--pl);color:var(--onPl)}
+.tag.up{background:none;box-shadow:inset 0 0 0 1px var(--pl);color:var(--pl)}
+.tag.kind{background:var(--sc);color:var(--onSc)}
+.tag.pr{background:var(--pr);color:var(--onPr)}
+.rrow{display:flex;gap:12px;align-items:flex-start;border-top:1px solid var(--olv);padding:12px 0;width:100%;text-align:left;background:none;border-left:0;border-right:0;border-bottom:0}
+.rrow .ico{flex:none;width:40px;height:40px;border-radius:12px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(14px*var(--t))}
+.rrow .tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.rrow .nm{font-size:calc(16px*var(--t));line-height:1.3;font-weight:500}
+.rrow .sub{font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv)}
+.rrow .rt{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.rrow.up{opacity:.8}
+.rrow.up .nm{font-weight:400}
+.bar{height:6px;border-radius:3px;background:var(--olv);overflow:hidden;margin-top:2px}
+.bar i{display:block;height:100%;background:var(--p)}
+.ex{font-size:calc(14px*var(--t));line-height:1.4;background:var(--sHigh);border-radius:10px;padding:6px 10px;margin-top:2px}
+.corr{font-size:calc(12px*var(--t));color:var(--onSv);margin:0 0 6px;line-height:1.4}
+.corr b{color:var(--onS)}
+.big{font-size:calc(20px*var(--t));line-height:1.3;font-weight:500}
+.more{display:flex;align-items:center;justify-content:center;min-height:48px;border-top:1px solid var(--olv);color:var(--p);font-size:calc(14px*var(--t));font-weight:600;width:100%;background:none;border-left:0;border-right:0;border-bottom:0}
+.empty{text-align:center;padding:28px 8px;color:var(--onSv)}
+.empty .big{color:var(--onS);margin:8px 0 4px}
+.empty svg.i{width:48px;height:48px;opacity:.7;margin:0 auto}
+.hint{font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.35;margin:0 0 8px}
+.pillrow{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0}
+.addb{min-height:48px;border-radius:24px;border:1px solid var(--ol);background:none;color:var(--p);font-weight:600;font-size:calc(13px*var(--t));padding:0 12px;display:inline-flex;align-items:center;gap:4px}
+.thumb{flex:none;width:72px;height:72px;border-radius:14px;background:var(--sHigh);display:flex;align-items:center;justify-content:center;color:var(--onSv);position:relative;overflow:hidden}
+.thumb svg.i{width:32px;height:32px;opacity:.6}
+.thumb.ph2{background:repeating-linear-gradient(45deg,var(--sHigh) 0 8px,var(--sLow) 8px 16px);box-shadow:inset 0 0 0 1px var(--ol)}
+.cred{font-size:calc(11px*var(--t));line-height:1.3;color:var(--onSv)}
+.tl{position:relative;margin:6px 0 6px 8px;padding-left:16px;border-left:2px solid var(--olv)}
+.tl .ev{position:relative;padding:0 0 12px}
+.tl .ev::before{content:"";position:absolute;left:-23px;top:5px;width:12px;height:12px;border-radius:6px;background:var(--s);box-shadow:inset 0 0 0 2px var(--ol)}
+.tl .ev.met::before{background:var(--p);box-shadow:none}
+.tl .ev.this::before{background:var(--pl);box-shadow:0 0 0 3px var(--sc)}
+.tl .ev.now::before{background:var(--pr);box-shadow:none}
+.tl .ev b{font-size:calc(13px*var(--t));display:block;font-weight:600}
+.tl .ev span{font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.35}
+.strip{display:flex;gap:0;overflow:hidden;margin:6px 0;position:relative;padding-top:10px}
+.strip::before{content:"";position:absolute;left:0;right:0;top:15px;height:2px;background:var(--olv)}
+.strip .d{flex:1;min-width:0;text-align:center;position:relative;font-size:calc(10px*var(--t));line-height:1.2;color:var(--onSv)}
+.strip .d i{display:block;width:12px;height:12px;border-radius:6px;margin:0 auto 4px;background:var(--s);box-shadow:inset 0 0 0 2px var(--ol);position:relative;top:-4px}
+.strip .d.met i{background:var(--p);box-shadow:none}.strip .d.this i{background:var(--pl);box-shadow:0 0 0 3px var(--sc)}.strip .d.now i{background:var(--pr);box-shadow:none}
+.strip .d.this{color:var(--onS);font-weight:700}
+.qt{border-left:4px solid var(--p);padding:4px 0 4px 12px;margin:6px 0}
+.qt .big{font-size:calc(22px*var(--t))}
+.src{font-size:calc(11px*var(--t));line-height:1.4;color:var(--onSv)}
+.legacy{border-radius:16px;padding:12px 14px;background:var(--sHigh);margin:8px 0}
+.legacy .tt{font-size:calc(12px*var(--t));font-weight:700;letter-spacing:.3px;text-transform:uppercase;color:var(--onSv);margin:0 0 4px}
+.legacy li{font-size:calc(13px*var(--t));line-height:1.35;margin:0 0 4px}
+.legacy ul{margin:4px 0 0;padding-left:18px}
+.sw2{width:52px;height:32px;border-radius:16px;background:var(--olv);position:relative;flex:none}
+.sw2::after{content:"";position:absolute;top:4px;left:4px;width:24px;height:24px;border-radius:12px;background:var(--onSv)}
+.sw2.on{background:var(--p)}.sw2.on::after{left:24px;background:var(--onP)}
+.frames.wide .fcol{width:360px}
+.opt h2 small{font-weight:400;color:var(--page-muted);font-size:14px}
+.qs{margin:0 0 40px;padding:14px 16px;border:1px solid var(--page-line);border-radius:12px;background:var(--page-card);max-width:760px;font-size:14px}
+.hl-on .tabs.chg,.hl-on .chips.chg,.hl-on .corr.chg{margin-bottom:10px;margin-top:4px}.hl-on .tabs.chg{margin-left:4px;margin-right:4px}
+
+body{font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali","Noto Sans JP",system-ui,sans-serif}
+.ph,.script{font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali","Noto Sans JP",sans-serif}
+</style>
+</head>
+<body>
+<div class="wrap" id="wrap">
+<h1>Search results by type</h1>
+<p class="cap1">Typed result tabs (#1140), with topics (#1137) and professional situations (#1139). Phone 360 dp at 1.4x text, light and dark, Japanese, Spanish, Hindustani and Bengali. The tabs are a native TabBar and are tappable in the first phone. Self-checks and notes: search-results-tabs.md.</p>
+<div class="sticky tw">
+ <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
+ <div class="tg">Course <span class="seg" data-k="lang"><button data-v="ja">Japanese</button><button data-v="es">Spanish</button><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button></span></div>
+ <div class="tg">Highlight changes <span class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
+ <div class="tg">Tab bar <span class="seg" data-k="tabs"><button data-v="a">A: one scrollable row</button><button data-v="b">B: first four + More</button></span></div>
+ <div class="tg">Above my level <span class="seg" data-k="up"><button data-v="a">A: shown, marked</button><button data-v="b">B: folded under a row</button></span></div>
+ <div class="tg">Professional <span class="seg" data-k="pro"><button data-v="a">A: inside Situations</button><button data-v="b">B: its own tab</button></span></div>
+</div>
+<div id="root"></div>
+</div>
+<script>
+const PAL={
+dark:{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sHigh":"#262b27","ol":"#8a938b","olv":"#404942","E":"#ffb4ab","onE":"#690005","pl":"#E0A458","onPl":"#2b1a00","pr":"#9ecaff","onPr":"#00315a"},
+light:{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sHigh":"#e4eae2","ol":"#717972","olv":"#c0c9c0","E":"#ba1a1a","onE":"#ffffff","pl":"#8A5A00","onPl":"#ffffff","pr":"#1565C0","onPr":"#ffffff"}};
+const IC={search:"M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z",close:"M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z",back:"M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z",add:"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z",chev:"M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z",check:"M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z",lock:"M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM9 8V6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9z",work:"M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z",vol:"M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z",quote:"M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z",tag:"M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58s1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z",deck:"M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z",flag:"M14.4 6 14 4H5v17h2v-7h5.6l.4 2h7V6z",place:"M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z",info:"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z",play:"M8 5v14l11-7z",hist:"M13 3a9 9 0 0 0-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.954 8.954 0 0 0 13 21a9 9 0 0 0 0-18zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z",person:"M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z",image:"M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z",star:"M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z",eyeoff:"M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2z",tune:"M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z",more:"M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z",today:"M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"};
+const ic=(n,s)=>`<svg class="i" viewBox="0 0 24 24" aria-hidden="true"${s?` style="width:${s}px;height:${s}px"`:''}><path d="${IC[n]}"/></svg>`;
+const ph=(cap,bar,body,bottom,over)=>`<div class="fcol"><div class="fcap">${cap}</div><div class="ph">${bar}<div class="scroll">${body}</div>${bottom||''}${over||''}</div></div>`;
+const abar=(t,back,acts)=>`<div class="appbar">${back?`<button class="ib" aria-label="Back">${ic('back')}</button>`:'<span style="width:8px"></span>'}<span class="ttl">${t}</span>${acts||''}</div>`;
+const nav=on=>`<div class="nav">${['Today','Decks','Progress','Settings'].map(x=>`<div class="${x==on?'on':''}"><span class="pl">${ic(x=='Today'?'today':x=='Decks'?'deck':x=='Progress'?'star':'tune')}</span>${x}</div>`).join('')}</div>`;
+function wire(S,build){
+ document.querySelectorAll('.seg').forEach(s=>{s.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;S[s.dataset.k]=b.dataset.v;build()})});
+}
+function sync(S){document.querySelectorAll('.seg').forEach(s=>s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',S[s.dataset.k]==b.dataset.v)));}
+function theme(S,root){const p=PAL[S.theme];root.style.cssText=Object.entries(p).map(([k,v])=>`--${k}:${v}`).join(';');root.className=S.hl=='1'?'hl-on':'';document.documentElement.dataset.theme=S.theme;}
+
+const S={theme:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light',lang:'ja',hl:'1',tabs:'a',up:'a',pro:'a',tab:null};
+const LV=['A1','A2','B1','B2'];const ME='A2';
+const up=l=>LV.indexOf(l)>LV.indexOf(ME);
+/* kind field drives the tab: a new type is data (kind), not a new row widget. */
+const KINDS=[['situation','Situations'],['topic','Topics'],['deck','Decks'],['grammar','Grammar concepts'],['word','Words'],['unit','Units'],['culture','Culture and proverbs']];
+const D={
+ja:{name:'Japanese',q:'te-form',typo:'teform',best:'topic',
+ situation:{n:6,r:[{t:'Asking for help at a station',s:'Scene: ticket machine, platform. 9 phrases use the te-form',l:'A1',ja:'駅で助けを頼む'},{t:'At the pharmacy',s:'Scene: describing symptoms. 8 phrases',l:'A2',ja:'薬局で'}]},
+ topic:{n:2,r:[{t:'Te-form (て形)',s:'Japanese · 31 verbs, 4 units, 3 decks',cov:.39,l:'A2'},{t:'Te-form requests (〜てください)',s:'Japanese · 12 cards, 2 units',cov:.25,l:'A1'}]},
+ deck:{n:3,r:[{t:'Verbs 2: everyday actions',s:'Japanese · 40 cards · words',l:'A1',k:'Words'},{t:'Te-form sentences',s:'Japanese · 24 cards · sentences',l:'A2',k:'Sentences'}]},
+ grammar:{n:4,r:[{t:'Godan verbs: sound changes',ex:'書く → 書いて',rd:'kaku → kaite',l:'A2'},{t:'〜ている: ongoing action',ex:'食べている',rd:'tabete iru · is eating',l:'A2'}]},
+ word:{n:38,r:[{w:'食べて',rd:'tabete',m:'eat, and then',st:'Known'},{w:'書いて',rd:'kaite',m:'write, and then',st:'Learning'}]},
+ unit:{n:4,r:[{t:'Unit 21: Asking and requesting',s:'Path · 6 lessons · you are on unit 14',l:'A1'},{t:'Unit 38: Connecting actions',s:'Path · 6 lessons',l:'B1'}]},
+ culture:{n:0,r:[]},
+ pro:[{t:'Registering at a conference',ja:'学会の受付',s:'Academia · 9 phrases · te-form requests and polite register',l:'A2',prof:'Academia'},{t:'Taking a patient history',ja:'問診',s:'Medicine · 11 phrases',l:'B1',prof:'Medicine'}],proq:'conference',proword:'学会',
+ up:{situation:'Presenting and Q&A'}},
+es:{name:'Spanish',q:'ser',typo:'esr',best:'topic',
+ situation:{n:5,r:[{t:'Meeting a host family',s:'Scene: arriving, introductions. 8 phrases use ser',l:'A1',ja:'Conocer a la familia'},{t:'Describing a lost bag',s:'Scene: airport desk. 7 phrases',l:'A2'}]},
+ topic:{n:2,r:[{t:'Ser vs estar',s:'Spanish · 26 cards, 5 units, 2 decks',cov:.5,l:'A1'},{t:'Ser: origin and profession',s:'Spanish · 14 cards, 2 units',cov:.7,l:'A1'}]},
+ deck:{n:2,r:[{t:'To be: ser and estar',s:'Spanish · 30 cards · verbs',l:'A1',k:'Verbs'},{t:'Describing people',s:'Spanish · 28 cards · words',l:'A1',k:'Words'}]},
+ grammar:{n:3,r:[{t:'Present tense of ser',ex:'Yo soy, tú eres, ella es',rd:'irregular, all persons',l:'A1'},{t:'Ser + adjective: lasting traits',ex:'Es alto.',rd:'He is tall.',l:'A2'}]},
+ word:{n:21,r:[{w:'ser',rd:'[seɾ]',m:'to be (lasting)',st:'Known'},{w:'seré',rd:'[seˈɾe]',m:'I will be',st:'New'}]},
+ unit:{n:3,r:[{t:'Unit 6: Who you are',s:'Path · 6 lessons · you are on unit 14',l:'A1'},{t:'Unit 52: The imperfect subjunctive of ser',s:'Path · 6 lessons',l:'B2'}]},
+ culture:{n:1,r:[{t:'Dime con quién andas y te diré quién eres',s:'Proverb · folk, traditional',l:'A2',m:'Tell me who you walk with and I will tell you who you are.'}]},
+ pro:[{t:'Registering at a conference',ja:'Inscripción en un congreso',s:'Academia · 9 phrases',l:'A2',prof:'Academia'},{t:'Site visit at an excavation',ja:'Visita a la excavación',s:'Archaeology · 10 phrases',l:'B1',prof:'Archaeology'}],proq:'congreso',proword:'congreso',
+ up:{}},
+hi:{name:'Hindustani',q:'ne',typo:'nee',best:'topic',
+ situation:{n:4,r:[{t:'Asking the rickshaw fare',s:'Scene: street, bargaining. 8 phrases',l:'A1',ja:'किराया पूछना'},{t:'Telling the doctor what you ate',s:'Scene: clinic. 7 phrases use ne',l:'A2',ja:'डॉक्टर को बताना'}]},
+ topic:{n:1,r:[{t:'Ergative ने (ne)',s:'Hindustani · 22 cards, 3 units, 2 decks',cov:.32,l:'A2'}]},
+ deck:{n:2,r:[{t:'Past tense with ने',s:'Hindustani · 22 cards · sentences',l:'A2',k:'Sentences'},{t:'Postpositions 1',s:'Hindustani · 18 cards · words',l:'A1',k:'Words'}]},
+ grammar:{n:3,r:[{t:'ने with transitive past',ex:'राम ने खाना खाया',rd:'Rām ne khānā khāyā',l:'A2'},{t:'Verb agrees with the object',ex:'उसने किताब पढ़ी',rd:'usne kitāb paṛhī',l:'A2'}]},
+ word:{n:17,r:[{w:'उसने',rd:'usne',m:'he or she (did), with ne',st:'Learning'},{w:'मैंने',rd:'maiṃne',m:'I (did), with ne',st:'Known'}]},
+ unit:{n:2,r:[{t:'Unit 19: What I did yesterday',s:'Path · 6 lessons',l:'A2'},{t:'Unit 41: ne with compound verbs',s:'Path · 6 lessons',l:'B1'}]},
+ culture:{n:1,r:[{t:'जिसने की शर्म, उसके फूटे कर्म',s:'Proverb · folk, traditional',l:'B1',m:'Whoever was shy, his fortunes broke.',rd:'jisne kī śarm, uske phūṭe karm'}]},
+ pro:[{t:'Registering at a conference',ja:'सम्मेलन में पंजीकरण',s:'Academia · 9 phrases',l:'A2',prof:'Academia'},{t:'Filing a news story',ja:'समाचार दर्ज करना',s:'Journalism · 10 phrases',l:'B1',prof:'Journalism'}],proq:'सम्मेलन',proword:'सम्मेलन',
+ up:{}},
+bn:{name:'Bengali',q:'টা',typo:'ta',best:'topic',
+ situation:{n:3,r:[{t:'Buying fruit at the market',s:'Scene: stall, counting. 9 phrases use টা',l:'A1',ja:'বাজারে ফল কেনা'},{t:'Ordering tea',s:'Scene: tea stall. 6 phrases',l:'A1',ja:'চা অর্ডার করা'}]},
+ topic:{n:2,r:[{t:'Classifiers: টা, টি, জন',s:'Bengali · 28 cards, 4 units, 2 decks',cov:.43,l:'A1'},{t:'টা as "the": definiteness',s:'Bengali · 10 cards, 1 unit',cov:.2,l:'A2'}]},
+ deck:{n:2,r:[{t:'Counting things',s:'Bengali · 30 cards · words',l:'A1',k:'Words'},{t:'Classifier sentences',s:'Bengali · 20 cards · sentences',l:'A2',k:'Sentences'}]},
+ grammar:{n:3,r:[{t:'Numeral + classifier',ex:'তিনটা কলা',rd:'tinṭā kalā · three bananas',l:'A1'},{t:'জন for people',ex:'দুজন ছেলে',rd:'dujon chele · two boys',l:'A1'}]},
+ word:{n:12,r:[{w:'টা',rd:'ṭā',m:'classifier, the',st:'Known'},{w:'কতটা',rd:'kotoṭā',m:'how much',st:'New'}]},
+ unit:{n:2,r:[{t:'Unit 8: How many?',s:'Path · 6 lessons',l:'A1'},{t:'Unit 33: Definiteness and classifiers',s:'Path · 6 lessons',l:'B1'}]},
+ culture:{n:0,r:[]},
+ pro:[{t:'Registering at a conference',ja:'সম্মেলনে নিবন্ধন',s:'Academia · 9 phrases',l:'A2',prof:'Academia'},{t:'Ward round',ja:'ওয়ার্ড রাউন্ড',s:'Medicine · 11 phrases',l:'B1',prof:'Medicine'}],proq:'সম্মেলন',proword:'সম্মেলন',
+ up:{}}};
+const ICO={situation:'place',topic:'tag',deck:'deck',unit:'flag',culture:'quote'};
+const lvTag=l=>up(l)?`<span class="tag up">${ic('lock',12)} ${l} · above your level</span>`:`<span class="tag lv">${l}</span>`;
+function row(k,r,d){
+ const upc=r.l&&up(r.l)?' up':'';
+ if(k=='word')return `<button class="rrow"><div class="tx"><span class="big script">${r.w}</span><span class="sub">${r.rd}</span><span class="nm" style="font-size:calc(14px*var(--t));font-weight:400">${r.m}</span></div><span class="mastery ${r.st=='Known'?'m-known':r.st=='Learning'?'m-learning':'m-new'}">${r.st}</span><span class="audio sm" aria-label="Play">${ic('vol')}</span></button>`;
+ if(k=='grammar')return `<button class="rrow${upc}"><span class="ico">Aa</span><div class="tx"><span class="nm">${r.t}</span><span class="ex script">${r.ex}</span><span class="sub">${r.rd}</span><span class="rt"><span class="tag kind">Grammar</span>${lvTag(r.l)}</span></div></button>`;
+ if(k=='topic')return `<button class="rrow${upc}"><span class="ico">${ic('tag')}</span><div class="tx"><span class="nm script">${r.t}</span><span class="sub">${r.s}</span><div class="bar" role="img" aria-label="You know ${Math.round(r.cov*100)} percent of this topic"><i style="width:${r.cov*100}%"></i></div><span class="sub">You know ${Math.round(r.cov*100)}% of it</span><span class="rt">${lvTag(r.l)}</span></div></button>`;
+ if(k=='culture')return `<button class="rrow${upc}"><span class="ico">${ic('quote')}</span><div class="tx"><span class="nm script">${r.t}</span>${r.rd?`<span class="sub">${r.rd}</span>`:''}<span class="sub">${r.m}</span><span class="rt"><span class="tag kind">Proverb</span>${lvTag(r.l)}</span><span class="sub">${r.s}</span></div></button>`;
+ if(k=='deck')return `<button class="rrow${upc}"><span class="ico">${ic('deck')}</span><div class="tx"><span class="nm">${r.t}</span><span class="sub">${r.s}</span><span class="rt"><span class="tag kind">${r.k}</span>${lvTag(r.l)}</span></div></button>`;
+ if(k=='unit')return `<button class="rrow${upc}"><span class="ico">${ic('flag')}</span><div class="tx"><span class="nm">${r.t}</span><span class="sub">${r.s}</span><span class="rt">${lvTag(r.l)}</span></div></button>`;
+ /* situation, incl. professional */
+ const pro=r.prof;
+ return `<div class="rrow${upc}"><span class="ico" style="${pro?'background:var(--pl);color:var(--onPl)':''}">${ic(pro?'work':'place')}</span><div class="tx"><span class="nm">${r.t}</span>${r.ja?`<span class="sub script">${r.ja}</span>`:''}<span class="sub">${r.s}</span><span class="rt">${pro?`<span class="tag pro">Professional · ${r.prof}</span>`:'<span class="tag kind">Situation</span>'}${lvTag(r.l)}</span>${pro?`<span class="rt"><button class="addb chg">${ic('add',18)} Add to my courses</button></span><span class="sub">Not shown on Today or the path unless you add it.</span>`:''}</div></div>`;
+}
+function tabsFor(d,q){ // only kinds with results; best first
+ let ks=KINDS.filter(([k])=>k=='situation'?d.situation.n>0:k=='deck'||k=='topic'||k=='grammar'||k=='word'||k=='unit'||k=='culture'?d[k].n>0:false);
+ let ks2=ks.map(([k,l])=>[k,l,d[k].n]);
+ const b=ks2.findIndex(x=>x[0]==d.best);if(b>0)ks2.unshift(ks2.splice(b,1)[0]);
+ return ks2;
+}
+function tabbar(ks,sel){
+ const lab=ks.map(([k,l,n],i)=>`<button class="tab" role="tab" data-k="${k}" aria-selected="${k==sel}">${i==0?'<span class="best" title="Best match"></span>':''}${l} <span class="n">${n}</span></button>`);
+ if(S.tabs=='a')return `<div class="tabs" role="tablist" aria-label="Result types">${lab.join('')}</div>`;
+ const first=lab.slice(0,4).join('');const rest=ks.slice(4);
+ return `<div class="tabs" role="tablist">${first}${rest.length?`<button class="tab" aria-haspopup="menu">More ${rest.length} ${ic('chev',18)}</button>`:''}</div>`;
+}
+function results(d,k,rows,showUp){
+ let r=rows,hid=0;
+ if(S.up=='b'){const keep=r.filter(x=>!x.l||!up(x.l));hid=r.length-keep.length;r=keep;}
+ return `<div>${r.map(x=>row(k,x,d)).join('')}${hid?`<button class="more">${ic('lock',16)}&nbsp;Show ${hid} above your level</button>`:''}${d[k].n>rows.length?`<button class="more">Show all ${d[k].n}</button>`:''}</div>`;
+}
+function sbox(q,clear){return `<div class="sbox"><span style="color:var(--onSv)">${ic('search')}</span><span class="q script">${q}</span>${clear?`<button class="ib" aria-label="Clear">${ic('close')}</button>`:''}</div>`;}
+const barS=(d,q)=>`<div class="appbar"><button class="ib" aria-label="Back">${ic('back')}</button><span class="ttl">Search · ${d.name}</span></div>`;
+function frame1(d){
+ const ks=tabsFor(d); if(!S.tab||!ks.find(x=>x[0]==S.tab)||S._lang!=S.lang){S.tab=ks[0][0];S._lang=S.lang}
+ let allks=ks;
+ if(S.pro=='b'){/* own tab: professional items leave Situations */}
+ const k=S.tab;
+ return ph(`1 · Results for "${d.q}" (tabs are tappable)`,barS(d)+sbox(d.q,true)+`${tabbar(ks,k).replace("class=\"tabs\"","class=\"tabs chg\"")}`,
+  `<p class="hint">Best match opens first (dot). Last tab you used is remembered for this session. Showing ${LV[1]} learner: results above it are marked.</p>`+results(d,k,d[k].r)+`<p class="hint" style="margin-top:10px">No Culture tab: nothing matched in culture.</p>`.replace(/.*/,d.culture.n?'':'<p class="hint" style="margin-top:10px">No Culture tab: nothing matched in culture.</p>'));
+}
+function frame2(d){
+ const ks=tabsFor(d);
+ return ph(`2 · Typo-tolerant: "${d.typo}"`,barS(d)+sbox(d.typo,true)+`${tabbar(ks,ks[0][0]).replace("class=\"tabs\"","class=\"tabs chg\"")}`,
+  `<p class="corr chg upd">Showing results for <b class="script">${d.q}</b> · <u>Search only for "${d.typo}"</u></p>`+results(d,ks[0][0],d[ks[0][0]].r));
+}
+function frame3(d){
+ const pro=d.pro; const hasPro=S.pro=='b';
+ const rows=pro.map(p=>({...p}));
+ const ks=[['situation','Situations',rows.length+(hasPro?0:2)]];
+ let tabs;
+ if(hasPro)tabs=`<div class="tabs" role="tablist"><button class="tab" aria-selected="false">Situations <span class="n">4</span></button><button class="tab chg" aria-selected="true"><span class="best"></span>Professional <span class="n">${rows.length}</span></button><button class="tab" aria-selected="false">Words <span class="n">3</span></button></div>`;
+ else tabs=`<div class="tabs" role="tablist"><button class="tab" aria-selected="true"><span class="best"></span>Situations <span class="n">${rows.length+1}</span></button><button class="tab" aria-selected="false">Words <span class="n">3</span></button></div>`;
+ const body=`<div class="chips chg"><span class="chp on">All professions</span><span class="chp">Academia</span><span class="chp">Medicine</span><span class="chp">Law</span><span class="chp">${ic('more',14)}</span></div><p class="hint">Professional situations never show on Today, the path or the deck lists. They appear only here. Adding one puts it in your courses.</p>`+
+   (hasPro?'':row('situation',{t:'Ordering at a restaurant',s:'Scene: table. 9 phrases',l:'A1'},d))+rows.map(r=>row('situation',r,d)).join('');
+ return ph(`3 · Professional situation: "${d.proq}"`,barS(d)+sbox(d.proq,true)+tabs,body);
+}
+function frame4(d){
+ /* above-level treatment, Words/Units tab */
+ const ks=tabsFor(d);const k='unit';
+ return ph(`4 · Above your level (you are at ${ME}), Units tab`,barS(d)+sbox(d.q,true)+`${tabbar(ks,k).replace("class=\"tabs\"","class=\"tabs chg\"")}`,
+  `<p class="hint">${S.up=='a'?'A: shown, dimmed, with a lock and the level. Tapping opens a preview, not a lesson.':'B: hidden by default and folded under one row, so the list stays at the learner\'s level.'}</p>`+results(d,k,d.unit.r)+
+  `<div class="blk" style="margin-top:12px"><span style="color:var(--onSv)">${ic('info')}</span><div><p class="tt">Setting</p><p>Search: show results above my level (on). Off hides them.</p></div></div>`);
+}
+function frame5(d){
+ return ph('5 · No results',barS(d)+sbox('kyoto sushi bar',true),
+  `<div class="empty">${ic('search')}<p class="big">Nothing for "kyoto sushi bar"</p><p class="t-sm">Try fewer or shorter words, or the English meaning. Search finds situations, topics, decks, grammar, words, units and proverbs in ${d.name} and the languages you learn.</p></div><p class="t-lab">Try</p><div class="chips"><span class="chp">${d.q}</span><span class="chp">greetings</span><span class="chp">numbers</span></div>`);
+}
+function frame6(d){
+ return ph('6 · Empty (before typing)',barS(d)+sbox('<span style="color:var(--onSv)">Search decks, words, topics…</span>',false),
+  `<p class="t-lab">Recent</p><button class="rrow" style="border-top:0">${ic('hist')}<div class="tx"><span class="nm script">${d.q}</span></div></button><button class="rrow">${ic('hist')}<div class="tx"><span class="nm">greetings</span></div></button><p class="t-lab">Find by type</p><div class="chips"><span class="chp">Situations</span><span class="chp">Topics</span><span class="chp">Grammar</span><span class="chp">Words</span><span class="chp">Units</span><span class="chp">Proverbs</span></div><p class="hint">Tabs appear after you type, and only for types that have results.</p>`);
+}
+function build(){
+ const d=D[S.lang];const root=document.getElementById('root');theme(S,root);
+ root.innerHTML=`<section class="opt"><div class="frames">${frame1(d)}${frame2(d)}${frame3(d)}${frame4(d)}${frame5(d)}${frame6(d)}</div></section>
+ <section class="qs"><b>Open questions for the owner</b><ol><li>Tab bar: one scrollable row (A) or four plus a More menu (B)?</li><li>Above my level: shown and marked (A) or folded away (B)? Default and setting?</li><li>Professional: inside Situations with a marker (A) or its own tab (B)? Profession as a chip filter?</li><li>Does the first row of the Words tab group by language when the learner has several?</li></ol></section>`;
+ sync(S);
+ root.querySelectorAll('.tab[data-k]').forEach(b=>b.addEventListener('click',()=>{S.tab=b.dataset.k;build()}));
+}
+wire(S,build);build();
+</script>
+</body>
+</html>
