@@ -14,6 +14,7 @@ import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/unlocks.dart';
 import 'package:fluenough/core/data/placement_course.dart';
+import 'package:fluenough/core/decks/levels.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/tts/tts_engine.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -289,7 +290,8 @@ void main() {
       };
       final catalog = DeckCatalog.parseAll(files);
       expect(catalog.decks.single.id, 'zz-en-odd');
-      expect(catalog.decks.single.deck.level, isNull);
+      // A present but unreadable level fails closed: it counts as the highest level.
+      expect(catalog.decks.single.deck.level, Level.c2);
       expect(catalog.kindProblems.single, contains('zz-en-odd'));
       expect(catalog.kindProblems.single, contains('level'));
     });
