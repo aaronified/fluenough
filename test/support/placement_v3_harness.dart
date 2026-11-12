@@ -773,7 +773,11 @@ class BaselinePicker implements SimPicker {
   static const Map<PlacementSkill, List<String>> _formats =
       <PlacementSkill, List<String>>{
         PlacementSkill.read: <String>['F2', 'F8', 'F5', 'F3', 'F6'],
-        PlacementSkill.hear: <String>['F13', 'F17', 'F15'],
+        // F26 (the look-alike word pick, Hear alone) stands where the
+        // dictation F16 stood before it was removed (#1105): a Hear format a
+        // gamer cannot answer without knowing the word, which the naive
+        // control asks as every other format.
+        PlacementSkill.hear: <String>['F13', 'F26', 'F17', 'F15'],
         PlacementSkill.write: <String>['F8', 'F7', 'F4'],
         PlacementSkill.say: <String>['F18'],
       };
