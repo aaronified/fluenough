@@ -267,7 +267,7 @@ class _TypedSearchResultsState extends State<TypedSearchResults> {
     final corrected = close ? correctedQuery(text, items) : null;
     return SliverMainAxisGroup(
       slivers: <Widget>[
-        if (tabs.isEmpty)
+        if (tabs.isEmpty && widget.outcome.broken.isEmpty)
           SliverToBoxAdapter(
             child: _NoResults(
               query: text,
@@ -276,7 +276,7 @@ class _TypedSearchResultsState extends State<TypedSearchResults> {
               onSearch: widget.onSearch,
             ),
           )
-        else ...<Widget>[
+        else if (tabs.isNotEmpty) ...<Widget>[
           if (close && !_exact)
             SliverToBoxAdapter(
               child: Padding(

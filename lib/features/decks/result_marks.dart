@@ -273,7 +273,9 @@ class ResultRow extends StatelessWidget {
         ? main
         : Semantics(
             button: true,
-            child: InkWell(onTap: onTap, child: main),
+            child: MergeSemantics(
+              child: InkWell(onTap: onTap, child: main),
+            ),
           );
     if (actions == null) return tappable;
     return Column(

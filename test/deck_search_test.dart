@@ -292,17 +292,27 @@ void main() {
       expect(find.byTooltip(l10n.decksSearchClose), findsNothing);
     });
 
-    testWidgets('a kind chip on a result narrows the search to that kind', (
+    testWidgets('plain text is searched by type, in tabs', (tester) async {
+      usePhone(tester);
+      await pumpTelugu(tester);
+      await type(tester, 'why');
+      expect(find.byType(TabBar), findsOneWidget);
+      expect(
+        find.descendant(of: find.byType(TabBar), matching: find.text('Words')),
+        findsOneWidget,
+      );
+    });
+
+    testWidgets('a kind chip narrows the search to one list, with no tabs', (
       tester,
     ) async {
       usePhone(tester);
       await pumpTelugu(tester);
+      await type(tester, 'kind:words ');
       await type(tester, 'why');
-      final chip = find.text('Words').first;
-      await tester.ensureVisible(chip);
-      await tester.tap(chip);
-      await tester.pumpAndSettle();
       expect(find.widgetWithText(InputChip, 'kind: Words'), findsOneWidget);
+      expect(find.byType(TabBar), findsNothing);
+      expect(find.text('Words'), findsWidgets);
     });
 
     testWidgets('nothing found says what the search looks in', (tester) async {
@@ -311,7 +321,7 @@ void main() {
       await type(tester, 'qzxvbnm');
       final l10n = l10nOf(tester);
       expect(find.text(l10n.searchNothing('qzxvbnm')), findsOneWidget);
-      expect(find.text(l10n.searchNothingBody), findsOneWidget);
+      expect(find.text(l10n.searchNothingTypedBody('Telugu')), findsOneWidget);
     });
 
     testWidgets('at 1.4x text the bar, the chips and the menu fit', (
