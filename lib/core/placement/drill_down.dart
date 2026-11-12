@@ -32,6 +32,10 @@ import 'placement_questions.dart';
 const double kPriorLogOddsMin = -1.5;
 const double kPriorLogOddsMax = 1.0;
 
+/// A skill whose isolating answers put its chance of having failed at this or
+/// less is cleared: the rest of the case's items go to the others.
+const double kClearedFail = 0.2;
+
 /// Why a drill-down started.
 enum DrillTrigger { mixedWrong, luckyRight, uncertain }
 
@@ -379,49 +383,37 @@ class DrillDown {
       _close(c, DrillEnd.budget);
       return null;
     }
-    final open = <PlacementSkill>[
+    final live = <PlacementSkill>[
       for (final s in c.skills)
-        if ((c.asked[s] ?? 0) <
-                (c.skills.length == 1
-                    ? config.maxIsolating
-                    : config.perSkill) &&
-            !c.spent.contains(s))
-          s,
+        if (!c.spent.contains(s)) s,
     ];
-    if (open.isEmpty) {
-      // Every implicated skill had its two items and the case is still open:
-      // the items left of the four go to the skill whose answer is the least
-      // settled (a lucky guess or a slip among its two).
-      final spare =
-          <PlacementSkill>[
-            for (final s in c.skills)
-              if (!c.spent.contains(s)) s,
-          ]..sort(
-            (a, b) => (_fail(a, c.deck) - 0.5).abs().compareTo(
-              (_fail(b, c.deck) - 0.5).abs(),
-            ),
-          );
-      if (spare.isEmpty) {
-        _close(c, DrillEnd.exhausted);
-        return null;
-      }
-      return spare.first;
+    if (live.isEmpty) {
+      _close(c, DrillEnd.exhausted);
+      return null;
     }
-    // The skill least asked first (so every implicated skill is heard before
-    // any gets its second item and the posterior can tell them apart), the
-    // one most likely to have failed among those.
-    open.sort((a, b) {
-      final ka = c.asked[a] ?? 0;
-      final kb = c.asked[b] ?? 0;
-      if (ka == 0 || kb == 0) {
-        if (ka != kb) return ka.compareTo(kb);
-        return _failOf(c, b).compareTo(_failOf(c, a));
-      }
-      // Every skill has been asked once: the next goes to the one the
-      // answers have settled the least.
-      return (_failOf(c, a) - 0.5).abs().compareTo((_failOf(c, b) - 0.5).abs());
-    });
-    return open.first;
+    // Every implicated skill is heard once first, the one most likely to
+    // have failed first (so the posterior can tell them apart).
+    final fresh = <PlacementSkill>[
+      for (final s in live)
+        if ((c.asked[s] ?? 0) == 0) s,
+    ]..sort((a, b) => _failOf(c, b).compareTo(_failOf(c, a)));
+    if (fresh.isNotEmpty) return fresh.first;
+    if (c.skills.length == 1) return live.first;
+    // Then the items go where they decide most: to the skill whose answers
+    // leave it the most undecided, leaving out a skill that one right answer
+    // has already cleared (its chance of having failed is [kClearedFail] or
+    // less), so a skill that looks like the failing one gets three items
+    // rather than two, and a slip on the other is not left standing.
+    final open = <PlacementSkill>[
+      for (final s in live)
+        if (_failOf(c, s) > kClearedFail) s,
+    ];
+    final pool = open.isEmpty ? live : open;
+    pool.sort(
+      (a, b) =>
+          (_failOf(c, a) - 0.5).abs().compareTo((_failOf(c, b) - 0.5).abs()),
+    );
+    return pool.first;
   }
 
   /// The picker found no isolating item for [skill].
