@@ -8,6 +8,7 @@ tags: ["grammar", "unreviewed"]
 table:
   applies_to:
     pos: ["adj"]
+    except: ["ja-4199"]
   slots: ["past", "negative", "na"]
   rows:
     - word: "ja-0318"
@@ -1257,6 +1258,20 @@ table:
         "na": "ちゅうじつな"
       "readings":
         "na": "chuujitsuna"
+    - "word": "ja-4200"
+      "forms":
+        "past": null
+        "negative": null
+        "na": "たしかな"
+      "readings":
+        "na": "tashikana"
+    - "word": "ja-4201"
+      "forms":
+        "past": null
+        "negative": null
+        "na": "あきらかな"
+      "readings":
+        "na": "akirakana"
 rules:
   - id: "ja-rule-i-adjectives"
     slots: ["past", "negative"]
