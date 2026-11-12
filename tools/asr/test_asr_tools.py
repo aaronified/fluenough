@@ -26,7 +26,7 @@ try:
 except ImportError:  # CI installs it; a contributor machine may not have it
     np = None
 
-from . import ctc, eval_wer, export_pack, fetch_wiktionary_audio, golden, nemo_ckpt, np_features, transcribe
+from . import ctc, eval_wer, export_pack, fetch_wiktionary_audio, golden, nemo_ckpt, np_features, publish_manifest, transcribe
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.normpath(os.path.join(HERE, "..", ".."))
@@ -437,6 +437,60 @@ class FetchWiktionaryAudioTest(unittest.TestCase):
             with open(os.path.join(d, "manifest.json"), encoding="utf-8") as f:
                 self.assertEqual(json.load(f)["files"][0]["license"], "CC BY-SA 4.0")
             self.assertFalse(os.path.exists(os.path.join(d, "w001.src")))
+
+
+class PublishManifestTest(unittest.TestCase):
+    def make_pack(self, d, code="te"):
+        os.makedirs(d)
+        for name, data in ((publish_manifest.ENCODER, b"enc" * 10), (f"head_{code}.f32", b"h" * 8),
+                           (f"head_{code}.json", b"{}")):
+            with open(os.path.join(d, name), "wb") as f:
+                f.write(data)
+
+    def test_entry_has_sizes_hashes_and_release_urls(self):
+        import hashlib
+        with tempfile.TemporaryDirectory() as t:
+            self.make_pack(os.path.join(t, "te"))
+            manifest, uploads = publish_manifest.build([os.path.join(t, "te")])
+        self.assertEqual(manifest["packVersion"], 1)
+        (lang,) = manifest["languages"]
+        self.assertEqual(lang["code"], "te")
+        by = {f["name"]: f for f in lang["files"]}
+        self.assertEqual(by["encoder.int8.onnx"]["kind"], "encoder")
+        self.assertEqual(by["encoder.int8.onnx"]["bytes"], 30)
+        self.assertEqual(by["encoder.int8.onnx"]["sha256"], hashlib.sha256(b"enc" * 10).hexdigest())
+        self.assertEqual(by["encoder.int8.onnx"]["url"], publish_manifest.BASE_URL + "/te-encoder.int8.onnx")
+        self.assertEqual(by["head_te.f32"]["url"], publish_manifest.BASE_URL + "/head_te.f32")
+        self.assertEqual(by["head_te.json"]["kind"], "head")
+        self.assertEqual([a for _, a in uploads], ["te-encoder.int8.onnx", "head_te.f32", "head_te.json"])
+
+    def test_two_languages_are_sorted_and_duplicates_refused(self):
+        with tempfile.TemporaryDirectory() as t:
+            self.make_pack(os.path.join(t, "b"), "bn")
+            self.make_pack(os.path.join(t, "a"), "te")
+            manifest, _ = publish_manifest.build([os.path.join(t, "b"), os.path.join(t, "a")])
+            self.assertEqual([l["code"] for l in manifest["languages"]], ["bn", "te"])
+            with self.assertRaises(ValueError):
+                publish_manifest.build([os.path.join(t, "a"), os.path.join(t, "a")])
+
+    def test_missing_file_is_an_error_and_main_logs_it(self):
+        with tempfile.TemporaryDirectory() as t:
+            self.make_pack(os.path.join(t, "te"))
+            os.remove(os.path.join(t, "te", "head_te.json"))
+            with self.assertRaises(ValueError):
+                publish_manifest.build([os.path.join(t, "te")])
+            with self.assertLogs("asr.publish_manifest", level="ERROR"):
+                self.assertEqual(publish_manifest.main([os.path.join(t, "te"), "--out", os.path.join(t, "m.json")]), 1)
+
+    def test_main_writes_manifest_and_stages_assets(self):
+        with tempfile.TemporaryDirectory() as t:
+            self.make_pack(os.path.join(t, "te"))
+            out, stage = os.path.join(t, "m.json"), os.path.join(t, "stage")
+            with self.assertLogs("asr.publish_manifest", level="INFO"):
+                self.assertEqual(publish_manifest.main([os.path.join(t, "te"), "--out", out, "--stage", stage]), 0)
+            with open(out, encoding="utf-8") as f:
+                self.assertEqual(json.load(f)["languages"][0]["code"], "te")
+            self.assertEqual(sorted(os.listdir(stage)), ["head_te.f32", "head_te.json", "te-encoder.int8.onnx"])
 
 
 if __name__ == "__main__":
