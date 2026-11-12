@@ -5,7 +5,9 @@
 /// copy. Free of Flutter, so that it is tested in milliseconds.
 library;
 
+import '../data/creators.dart';
 import '../data/deck_parser.dart';
+import '../data/recommendations.dart';
 import '../data/sections.dart';
 import '../data/themes.dart';
 import 'app_version.dart';
@@ -15,18 +17,39 @@ import 'app_version.dart';
 const int maxSharedFileBytes = 512 * 1024;
 
 /// What the app can read from the downloads, by path: the file's `kind`. A
-/// path the index lists that is not here is passed by (a later app reads it),
-/// so adding a file here is one line and a loader.
+/// path the index lists that is not here (and matches no pattern of
+/// [sharedKindOf]) is passed by (a later app reads it), so adding a file here
+/// is one line and a loader.
 const Map<String, String> sharedKinds = <String, String>{
   'decks/themes.yaml': 'themes',
   'decks/sections.yaml': 'sections',
 };
+
+/// The files of a kind that has one per language, by path: the creators and
+/// the recommendations of a language (deck-kinds plan, D5, D13).
+final Map<RegExp, String> _sharedKindPatterns = <RegExp, String>{
+  RegExp(r'^decks/creators/[a-z]{2,3}\.yaml$'): 'creators',
+  RegExp(r'^decks/recommendations/[a-z]{2,3}\.yaml$'): 'recommendations',
+};
+
+/// The `kind` of the shared file at [path], or null for a path this app does
+/// not read: the exact paths of [sharedKinds], then the per-language patterns.
+String? sharedKindOf(String path) {
+  final exact = sharedKinds[path];
+  if (exact != null) return exact;
+  for (final MapEntry(:key, :value) in _sharedKindPatterns.entries) {
+    if (key.hasMatch(path)) return value;
+  }
+  return null;
+}
 
 /// The newest schema of each kind the app reads. A file of a later schema is
 /// not used: the bundled copy stays, as for an app too old for it.
 const Map<String, int> supportedSharedSchemas = <String, int>{
   'themes': 1,
   'sections': 1,
+  'creators': supportedCreatorsSchema,
+  'recommendations': supportedRecommendationsSchema,
 };
 
 final RegExp _hex64 = RegExp(r'^[0-9a-f]{64}$');
@@ -103,7 +126,7 @@ class SharedFile {
         problems.add('a shared file has no path');
         continue;
       }
-      final kind = sharedKinds[path];
+      final kind = sharedKindOf(path);
       if (kind == null) {
         // A file a later app reads: not a fault.
         continue;
@@ -148,12 +171,26 @@ class SharedFile {
 /// catalog reads it with, so a file that passes here is one the catalog
 /// reads. Never throws.
 String? checkSharedText(String path, String text) {
-  final kind = sharedKinds[path];
+  final kind = sharedKindOf(path);
   if (kind == null) return '$path is not a file this app reads';
   try {
     final source = path.split('/').last;
     if (kind == 'themes') parseThemes(text, source: source);
     if (kind == 'sections') parseSections(text, source: source);
+    // A per-language file names its language in its name and in its text.
+    final named = source.substring(0, source.length - '.yaml'.length);
+    if (kind == 'creators') {
+      final file = parseCreators(text, source: source);
+      if (file.languageCode != named) {
+        return '$path is for language ${file.languageCode}';
+      }
+    }
+    if (kind == 'recommendations') {
+      final file = parseRecommendations(text, source: source);
+      if (file.languageCode != named) {
+        return '$path is for language ${file.languageCode}';
+      }
+    }
     return null;
   } on DeckParseException catch (e) {
     return e.toString();
@@ -163,5 +200,11 @@ String? checkSharedText(String path, String text) {
 }
 
 /// The name a shared file's copy is kept under on the phone, apart from the
-/// decks: `shared-themes.yaml`.
-String sharedNoteName(String path) => 'shared-${path.split('/').last}';
+/// decks: `shared-themes.yaml`; a per-language file keeps its folder in the
+/// name so that two kinds of one language do not meet: `shared-creators-te.yaml`.
+String sharedNoteName(String path) {
+  final parts = path.split('/');
+  return parts.length > 2 && sharedKinds[path] == null
+      ? 'shared-${parts[parts.length - 2]}-${parts.last}'
+      : 'shared-${parts.last}';
+}

@@ -14,7 +14,10 @@ import '../core/data/situations_parser.dart';
 import '../core/data/guide_layers.dart';
 import '../core/data/script_guide_parser.dart';
 import '../core/data/romanisation_parser.dart';
+import '../core/data/creators.dart';
+import '../core/data/recommendations.dart';
 import '../core/data/sections.dart';
+import '../core/data/topics.dart';
 import '../core/data/sounds_parser.dart';
 import '../core/models/script_guide.dart';
 import '../core/models/romanisation.dart';
@@ -28,7 +31,10 @@ import '../core/decks/sha256.dart';
 import '../core/decks/adult_gate.dart';
 import '../core/decks/levels.dart';
 import '../core/models/fact.dart';
+import '../core/models/creator.dart';
+import '../core/models/recommendation.dart';
 import '../core/models/situation.dart';
+import '../core/models/topic.dart';
 import '../core/models/card.dart';
 import '../core/models/deck.dart';
 import '../core/models/number_rules.dart';
@@ -205,6 +211,11 @@ class Catalog {
     this.sections = DeckSections.empty,
     Map<String, FactsFile> facts = const <String, FactsFile>{},
     Map<String, SituationsFile> situations = const <String, SituationsFile>{},
+    Map<String, TopicsFile> topics = const <String, TopicsFile>{},
+    Map<String, CreatorsFile> creators = const <String, CreatorsFile>{},
+    Map<String, RecommendationsFile> recommendations =
+        const <String, RecommendationsFile>{},
+    List<String> dataProblems = const <String>[],
     Map<String, NumberRules> numberRules = const <String, NumberRules>{},
     Map<String, CoursePath> paths = const <String, CoursePath>{},
     Map<String, LanguagePath> languagePaths = const <String, LanguagePath>{},
@@ -217,6 +228,12 @@ class Catalog {
        themes = List<DeckTheme>.unmodifiable(themes),
        facts = Map<String, FactsFile>.unmodifiable(facts),
        situations = Map<String, SituationsFile>.unmodifiable(situations),
+       topics = Map<String, TopicsFile>.unmodifiable(topics),
+       creators = Map<String, CreatorsFile>.unmodifiable(creators),
+       recommendations = Map<String, RecommendationsFile>.unmodifiable(
+         recommendations,
+       ),
+       dataProblems = List<String>.unmodifiable(dataProblems),
        numberRules = Map<String, NumberRules>.unmodifiable(numberRules),
        paths = Map<String, CoursePath>.unmodifiable(paths),
        languagePaths = Map<String, LanguagePath>.unmodifiable(languagePaths),
@@ -230,6 +247,22 @@ class Catalog {
   /// Each language's situation sheets (#724), by language code. A language
   /// without a situations file has none.
   final Map<String, SituationsFile> situations;
+
+  /// Each language's topics (deck-kinds plan, D6), by language code. A
+  /// language without a topics file has none.
+  final Map<String, TopicsFile> topics;
+
+  /// Each language's creators (D5), by language code, from the shared
+  /// `decks/creators/<code>.yaml`.
+  final Map<String, CreatorsFile> creators;
+
+  /// Each language's recommended works (D13), by language code, from the
+  /// shared `decks/recommendations/<code>.yaml`.
+  final Map<String, RecommendationsFile> recommendations;
+
+  /// What in the topics, creators and recommendations files could not be read
+  /// and was left out, one line each with its file, for the log.
+  final List<String> dataProblems;
 
   /// Each language's rules for spelling a generated number (#54), by
   /// language code. A language without a numbers file has none.
@@ -341,6 +374,10 @@ class Catalog {
     sections: sections,
     facts: facts,
     situations: situations,
+    topics: topics,
+    creators: creators,
+    recommendations: recommendations,
+    dataProblems: dataProblems,
     numberRules: numberRules,
     paths: paths,
     languagePaths: languagePaths,
@@ -706,6 +743,10 @@ class DeckCatalog {
     var sections = DeckSections.empty;
     final facts = <String, FactsFile>{};
     final situations = <String, SituationsFile>{};
+    final topics = <String, TopicsFile>{};
+    final creators = <String, CreatorsFile>{};
+    final recommendations = <String, RecommendationsFile>{};
+    final dataProblems = <String>[];
     final numberRules = <String, NumberRules>{};
     final languagePaths = <String, LanguagePath>{};
     final sounds = <String, SoundContrasts>{};
@@ -905,9 +946,45 @@ class DeckCatalog {
         }
         continue;
       }
-      // A language's topics file (D6) holds no deck. Its reader is a later
-      // task: until then it is passed by, never shown as a broken deck.
-      if (kind == 'topics') continue;
+      // The topics, creators and recommendations files hold no deck (D5, D6,
+      // D13). A file that cannot be read at all is shown as broken; an entry
+      // that cannot costs itself and is named for the log.
+      if (kind == 'topics') {
+        try {
+          final file = parseTopics(text, source: path.split('/').last);
+          topics.putIfAbsent(file.languageCode, () => file);
+          dataProblems.addAll(<String>[
+            for (final p in file.problems) '${path.split('/').last}: $p',
+          ]);
+        } on DeckParseException catch (e) {
+          broken.add(BrokenDeck(path: path, error: e));
+        }
+        continue;
+      }
+      if (kind == 'creators') {
+        try {
+          final file = parseCreators(text, source: path.split('/').last);
+          creators.putIfAbsent(file.languageCode, () => file);
+          dataProblems.addAll(<String>[
+            for (final p in file.problems) '${path.split('/').last}: $p',
+          ]);
+        } on DeckParseException catch (e) {
+          broken.add(BrokenDeck(path: path, error: e));
+        }
+        continue;
+      }
+      if (kind == 'recommendations') {
+        try {
+          final file = parseRecommendations(text, source: path.split('/').last);
+          recommendations.putIfAbsent(file.languageCode, () => file);
+          dataProblems.addAll(<String>[
+            for (final p in file.problems) '${path.split('/').last}: $p',
+          ]);
+        } on DeckParseException catch (e) {
+          broken.add(BrokenDeck(path: path, error: e));
+        }
+        continue;
+      }
       if (kind == 'sections') {
         try {
           sections = parseSections(text, source: path.split('/').last);
@@ -972,6 +1049,10 @@ class DeckCatalog {
       sections: sections,
       facts: facts,
       situations: situations,
+      topics: topics,
+      creators: creators,
+      recommendations: recommendations,
+      dataProblems: dataProblems,
       numberRules: numberRules,
       paths: placed,
       languagePaths: languagePaths,
@@ -1262,8 +1343,11 @@ class DeckCatalog {
         case 'sections':
           parseSections(text, source: source);
         case 'topics':
-          // Read by a later task; no deck to check.
-          break;
+          parseTopics(text, source: source);
+        case 'creators':
+          parseCreators(text, source: source);
+        case 'recommendations':
+          parseRecommendations(text, source: source);
         default:
           header.part == 'core'
               ? DeckParser.parseCore(text, source: source)

@@ -1,5 +1,6 @@
 import 'package:drift/drift.dart';
 
+import '../models/completed_work.dart';
 import '../models/drill_mode.dart';
 import '../models/leech_action.dart';
 import '../scheduling/placement_withdrawal.dart';
@@ -11,6 +12,7 @@ import 'tables/decks.dart';
 import 'tables/fsrs_parameters.dart';
 import 'tables/leech_actions.dart';
 import 'tables/placement_withdrawals.dart';
+import 'tables/recommendation_marks.dart';
 import 'tables/replay_snapshots.dart';
 import 'tables/restores.dart';
 import 'tables/reviews.dart';
@@ -296,4 +298,68 @@ class PlacementWithdrawalsDao extends DatabaseAccessor<AppDatabase>
         ],
       ),
   ];
+}
+
+/// The recommended works a learner marked completed (T25). A plain table: a
+/// mark is added, replaced by marking again, and deleted by un-marking.
+@DriftAccessor(tables: [RecommendationMarks])
+class RecommendationMarksDao extends DatabaseAccessor<AppDatabase>
+    with _$RecommendationMarksDaoMixin {
+  RecommendationMarksDao(super.attachedDatabase);
+
+  /// Marks [work] completed; marking a work again keeps the date it was first
+  /// marked.
+  Future<void> mark(CompletedWork work) => into(recommendationMarks).insert(
+    RecommendationMarksCompanion.insert(
+      recommendationId: work.recommendationId,
+      language: work.language,
+      completedAt: work.completedAt,
+    ),
+    mode: InsertMode.insertOrIgnore,
+  );
+
+  /// Un-marks the work with [recommendationId]; true when it was marked.
+  Future<bool> unmark(String recommendationId) async =>
+      await (delete(
+        recommendationMarks,
+      )..where((m) => m.recommendationId.equals(recommendationId))).go() >
+      0;
+
+  /// Every mark, oldest first.
+  Future<List<CompletedWork>> all() async => <CompletedWork>[
+    for (final row
+        in await (select(recommendationMarks)..orderBy([
+              (m) => OrderingTerm.asc(m.completedAt),
+              (m) => OrderingTerm.asc(m.recommendationId),
+            ]))
+            .get())
+      CompletedWork(
+        recommendationId: row.recommendationId,
+        language: row.language,
+        completedAt: row.completedAt,
+      ),
+  ];
+
+  /// The marks of one language.
+  Future<List<CompletedWork>> forLanguage(String language) async =>
+      <CompletedWork>[
+        for (final work in await all())
+          if (work.language == language) work,
+      ];
+
+  /// Every mark of [works] the database does not have yet is added, and none
+  /// is changed or removed: how a backup is merged in. Returns how many were
+  /// added.
+  Future<int> addMissing(Iterable<CompletedWork> works) =>
+      transaction(() async {
+        final have = <String>{for (final w in await all()) w.recommendationId};
+        var added = 0;
+        for (final work in works) {
+          if (have.add(work.recommendationId)) {
+            await mark(work);
+            added++;
+          }
+        }
+        return added;
+      });
 }
