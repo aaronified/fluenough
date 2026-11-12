@@ -50,7 +50,9 @@ class RecommendationList {
 }
 
 /// The list of [all] for a learner on [course] at [level]. A work is offered
-/// by [recommendationOffered]; one it refuses is counted as above the level
+/// by [recommendationOffered], and a script-only learner is shown only books
+/// (the approved mockup: the rest appears when they start the language); one
+/// it refuses is counted as above the level
 /// when its level is above, else as another script when it is a book of a
 /// script the script-only learner is not learning.
 RecommendationList recommendationList(
@@ -63,6 +65,9 @@ RecommendationList recommendationList(
   var otherScript = 0;
   Level? lowest;
   for (final r in all) {
+    // The approved mockup: a learner who learns only the script is shown
+    // books, in that script, and nothing else until they start the language.
+    if (course.scriptOnly && !r.isBook) continue;
     if (recommendationOffered(r, course, level)) {
       offered.add(r);
     } else if (LevelGate.isAbove(r.level, level) &&
