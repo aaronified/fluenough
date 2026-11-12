@@ -159,22 +159,27 @@ void main() {
         expect(cx.vocab.length, greaterThan(500));
         expect(cx.sentences.length, greaterThan(100));
         final counts = bank.countsByFormat;
-        // The formats that pass the audit in both courses.
+        // The formats that pass the audit in both courses. The sentence picks
+        // (F5, F17) are in Spanish only: Hindustani has 116 sentences whose
+        // options can be made to look alike, and the audit's upper bound
+        // (0.3213) is above the pick's 0.32 at that few (never loosened).
         for (final code in <String>[
           'F2',
           'F3',
           'F4',
-          'F5',
+          if (language == 'es') 'F5',
           'F7',
           'F8',
           'F9',
           'F13',
-          'F17',
+          if (language == 'es') 'F17',
           'F18',
           'F22',
           'F23',
           'F24',
           'F25',
+          'F26',
+          'F27',
           'F21',
         ]) {
           expect(counts[code] ?? 0, greaterThan(20), reason: '$language $code');
@@ -198,7 +203,13 @@ void main() {
           <String>['F4', 'F7', 'F8'].where(has).length,
           greaterThanOrEqualTo(3),
         );
-        expect(<String>['F13', 'F17'].where(has).length, 2);
+        // Hear alone has the look-alike word pick (F26) in both courses, and
+        // the sentence pick (F17) in Spanish.
+        expect(has('F26'), isTrue);
+        expect(
+          <String>['F13', 'F17', 'F26'].where(has).length,
+          2 + (language == 'es' ? 1 : 0),
+        );
         expect(has('F18'), isTrue);
         // Word order passes the held-out solvers in Spanish only (Hindi has
         // 139 usable sentences, too few once they are balanced).
@@ -415,6 +426,49 @@ void main() {
         expect(loose / of('F3').length, lessThanOrEqualTo(0.01));
       });
 
+      test('makes look-alike word picks (F26 heard, F27 written) of six '
+          'options in one length band, each a cheap single-skill item', () {
+        final hear = formatInfo('F26');
+        final read = formatInfo('F27');
+        expect(hear.skills, <PlacementSkill>{PlacementSkill.hear});
+        expect(read.skills, <PlacementSkill>{PlacementSkill.read});
+        expect(hear.needsAudio, isTrue);
+        expect(read.needsAudio, isFalse);
+        for (final f in <FormatInfo>[hear, read]) {
+          expect(f.options, 6, reason: f.code);
+          expect(f.guess, inInclusiveRange(0.17, 0.20), reason: f.code);
+          expect(f.slip, lessThanOrEqualTo(0.05), reason: f.code);
+          expect(f.seconds, lessThanOrEqualTo(8), reason: f.code);
+          expect(f.admissionBound, closeTo(f.guess + 0.07, 1e-9));
+        }
+        final picks = ItemGenerators(cx).lookAlikePicks('F27');
+        expect(picks.length, greaterThan(300), reason: language);
+        for (final it in picks) {
+          expect(it.options, hasLength(6), reason: it.id);
+          expect(it.options.toSet().length, 6, reason: it.id);
+          final right = it.options[it.correct];
+          for (final o in it.options) {
+            expect(inOneBand(right, o), isTrue, reason: '${it.id} $o');
+          }
+          expect(it.cognateScore, lessThan(kWordLevelCognateMax));
+        }
+        // Heard and written are the same items; both are admitted, so a bank
+        // asks them (a card is never asked in both: shared conflict keys).
+        for (final code in <String>['F26', 'F27']) {
+          final cls = bank.audit.classes['$code:clean']!;
+          expect(cls.passes, isTrue, reason: '$language $code');
+          expect(cls.accuracy, lessThan(0.22), reason: '$language $code');
+          expect(of(code).length, picks.length, reason: code);
+        }
+        final heard = of('F26').first;
+        final written = of('F27').firstWhere((i) => i.cardId == heard.cardId);
+        expect(heard.conflictKeys, written.conflictKeys);
+        final q = V3Run.questionOf(heard);
+        expect(q.audio, heard.prompt);
+        expect(q.options, hasLength(6));
+        expect(V3Run.questionOf(written).shown, written.prompt);
+      });
+
       test('makes sentence picks whose wrong options are other sentences, '
           'with no cue for the solvers', () {
         final g = ItemGenerators(cx);
@@ -471,9 +525,19 @@ void main() {
           expect(lenTop / picks.length, lessThanOrEqualTo(0.27));
           expect(lenBottom / picks.length, lessThanOrEqualTo(0.27));
           expect(simTop / picks.length, lessThanOrEqualTo(0.27));
-          // The class passes the audit, so it is admitted.
-          expect(bank.audit.classes['$format:clean']!.passes, isTrue);
-          expect(of(format), isNotEmpty);
+          final audited = bank.audit.classes['$format:clean']!;
+          if (language == 'es') {
+            // The class passes the audit, so it is admitted.
+            expect(audited.passes, isTrue);
+            expect(of(format), isNotEmpty);
+          } else {
+            // Too few sentences (116): the best solver is at chance, but the
+            // upper confidence bound is above the bound, so the class is not
+            // admitted (the bound is never loosened).
+            expect(audited.accuracy, lessThanOrEqualTo(audited.bound));
+            expect(audited.passes, isFalse);
+            expect(of(format), isEmpty);
+          }
         }
       });
 
@@ -605,7 +669,11 @@ void main() {
             );
           }
           // Every solver of an admitted class is within the bound.
-          for (final key in <String>['F21:clean', 'F5:clean', 'F17:clean']) {
+          for (final key in <String>[
+            'F21:clean',
+            if (language == 'es') 'F5:clean',
+            if (language == 'es') 'F17:clean',
+          ]) {
             final c = bank.audit.classes[key]!;
             expect(c.passes, isTrue, reason: key);
             expect(

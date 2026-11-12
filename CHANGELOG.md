@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Find my level has a new cheap question for Hearing and Reading: hear or read a word and pick its meaning among six look-alike options (same length band, same word class, similar form), so a lucky guess is about one in six and a slip is rare; the isolating checks that follow a miss use it (#1097).
 - Find my level asks the reverse too: the English is spoken and shown, and you choose, type or arrange the answer in the language (#1106).
 - On-device listener: engine and preferred-engine wiring (#1004).
 - On-device listener: Kotlin ONNX Runtime channel and Dart runtime interface (#1004).

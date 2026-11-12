@@ -328,6 +328,12 @@ class GuessCalibration {
     'F15:clean': 0.70,
     'F17:clean': 0.35,
     'F17:cognate': 0.90,
+    // The six-option look-alike word picks: the best solver's upper bound of
+    // the audit stays under 0.20 (a sixth by chance).
+    'F26:clean': 0.20,
+    'F26:cognate': 0.85,
+    'F27:clean': 0.20,
+    'F27:cognate': 0.97,
     // The heard-sentence pick as the adversary found it, before its options
     // were made to look alike (length band, shared structure): the right
     // option was found 75% of the time by shape. Never asked.

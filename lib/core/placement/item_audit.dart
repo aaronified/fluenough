@@ -208,7 +208,16 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
     final rows = <List<List<double>>>[];
     final rowCorrect = <int>[];
     switch (fmt) {
-      case 'F2' || 'F13' || 'F3' || 'F5' || 'F17' || 'F6' || 'S2' || 'F6g':
+      case 'F2' ||
+          'F13' ||
+          'F26' ||
+          'F27' ||
+          'F3' ||
+          'F5' ||
+          'F17' ||
+          'F6' ||
+          'S2' ||
+          'F6g':
         final nOptions = sample.first.options.length;
         solvers['chance'] = sample.length / nOptions;
         for (final it in sample) {
@@ -217,7 +226,12 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
           ];
           final l = expectedBoth(lens, it.correct);
           both('length', l.high, l.low);
-          if (fmt == 'F2' || fmt == 'F13' || fmt == 'F5' || fmt == 'F17') {
+          if (fmt == 'F2' ||
+              fmt == 'F13' ||
+              fmt == 'F26' ||
+              fmt == 'F27' ||
+              fmt == 'F5' ||
+              fmt == 'F17') {
             final promptWords = targetWords(it.promptRoman ?? it.prompt);
             final sim = <double>[
               for (final o in it.options)

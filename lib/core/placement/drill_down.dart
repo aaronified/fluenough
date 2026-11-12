@@ -26,6 +26,12 @@ import 'placement_questions.dart';
 //
 // Pure Dart.
 
+/// The range the starting log-odds of an implicated skill are held to (see
+/// `DrillDown._priorLogOdds`): -1.5 is about 18% likely to have failed, 1.0
+/// about 73%.
+const double kPriorLogOddsMin = -1.5;
+const double kPriorLogOddsMax = 1.0;
+
 /// Why a drill-down started.
 enum DrillTrigger { mixedWrong, luckyRight, uncertain }
 
@@ -215,8 +221,9 @@ class DrillDown {
     DrillTrigger t,
     List<PlacementSkill> skills,
     int deck,
-    int band,
-  ) {
+    int band, {
+    Map<PlacementSkill, double> preKnown = const <PlacementSkill, double>{},
+  }) {
     final fresh = <PlacementSkill>[
       for (final s in skills)
         if (!_done.contains(_key(s, band))) s,
@@ -228,11 +235,24 @@ class DrillDown {
     fresh.sort((a, b) => _fail(b, deck).compareTo(_fail(a, deck)));
     final c = DrillCase(t, fresh, deck);
     for (final k in fresh) {
-      c.logOdds[k] = 0;
+      c.logOdds[k] = _priorLogOdds(preKnown[k]);
     }
     cases.add(c);
     active = c;
     return c;
+  }
+
+  /// Where the isolating answers of a skill start: the log-odds that it fails
+  /// the level, from the chance the posterior gave BEFORE the item that
+  /// started the case that it knows it ([preKnown]; even odds when not
+  /// known), held to a mild range so that the isolating answers still decide.
+  /// A skill the learner had already shown to know the level (a slip on the
+  /// mixed item) needs more than one wrong answer to be named; one the
+  /// posterior doubted needs less.
+  static double _priorLogOdds(double? preKnown) {
+    if (preKnown == null) return 0;
+    final p = preKnown.clamp(0.02, 0.98);
+    return math.log((1 - p) / p).clamp(kPriorLogOddsMin, kPriorLogOddsMax);
   }
 
   /// An item of [skills] at [deck] (in [band]) was answered. [preKnown] is,
@@ -261,7 +281,13 @@ class DrillDown {
           if (_fail(s, deck) >= config.implicate) s,
       ];
       if (implicated.isNotEmpty) {
-        return _start(DrillTrigger.mixedWrong, implicated, deck, band);
+        return _start(
+          DrillTrigger.mixedWrong,
+          implicated,
+          deck,
+          band,
+          preKnown: preKnown,
+        );
       }
     }
     if (right) {
@@ -270,7 +296,13 @@ class DrillDown {
           if ((preKnown[s] ?? 1) < config.lucky) s,
       ];
       if (lucky.isNotEmpty) {
-        return _start(DrillTrigger.luckyRight, lucky, deck, band);
+        return _start(
+          DrillTrigger.luckyRight,
+          lucky,
+          deck,
+          band,
+          preKnown: preKnown,
+        );
       }
     }
     return null;

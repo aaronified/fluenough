@@ -62,7 +62,7 @@ class FormatInfo {
   final String notGeneratedBecause;
 
   /// The admission bound of the audit: the design guess plus 0.07 (0.32 for
-  /// a four-option pick).
+  /// a four-option pick, 0.25 for the six-option look-alike pick).
   double get admissionBound => options == 4 ? 0.32 : guess + 0.07;
 }
 
@@ -321,6 +321,31 @@ const List<FormatInfo> kFormatInventory = <FormatInfo>[
     wordLevel: false,
     options: 2,
     leakRisk: 'end marks left in the wrong place; bigram plausibility',
+  ),
+  FormatInfo(
+    'F26',
+    'Heard word, pick its meaning among six look-alike options',
+    {_hear},
+    0.04,
+    0.18,
+    7,
+    options: 6,
+    needsAudio: true,
+    leakRisk:
+        'cognates heard; the one option unlike the others by length or '
+        'word class (the options are made alike)',
+  ),
+  FormatInfo(
+    'F27',
+    'Written word, pick its meaning among six look-alike options',
+    {_read},
+    0.04,
+    0.18,
+    7,
+    options: 6,
+    leakRisk:
+        'cognates; the one option unlike the others by length or word '
+        'class (the options are made alike)',
   ),
   FormatInfo(
     'F22',

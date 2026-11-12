@@ -117,6 +117,10 @@ const Map<String, FormatSpec> kFormats = <String, FormatSpec>{
   'F15': FormatSpec('F15', {_h}, 0.05, 0.50, 6),
   'F17': FormatSpec('F17', {_h}, 0.10, 0.25, 8, wordLevel: false),
   'F18': FormatSpec('F18', {_s}, 0.15, 0.03, 10),
+  // The look-alike word picks of six options (owner, 2026-11-12): heard
+  // (Hear) and written (Read), the cheap isolators of the drill-down.
+  'F26': FormatSpec('F26', {_h}, 0.04, 0.18, 7),
+  'F27': FormatSpec('F27', {_r}, 0.04, 0.18, 7),
   'F1': FormatSpec('F1', {_r}, 0.10, 0.0, 3),
 };
 
@@ -985,6 +989,8 @@ const List<String> kAdmittedFormats = <String>[
   'F8',
   'F24',
   'F18',
+  'F26',
+  'F27',
   'F1',
 ];
 

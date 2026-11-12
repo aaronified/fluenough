@@ -16,6 +16,8 @@
    "items": {
     "F2": 1151,
     "F13": 1152,
+    "F27": 1123,
+    "F26": 1123,
     "F3": 1151,
     "F22": 1151,
     "F7": 1162,
@@ -278,6 +280,48 @@
      },
      "passes": true
     },
+    "F26:clean": {
+     "n": 348,
+     "accuracy": 0.17,
+     "upper": 0.2057,
+     "bound": 0.25,
+     "solver": "eliminate-similar",
+     "solvers": {
+      "chance": 0.1667,
+      "length": 0.1484,
+      "length-inverted": 0.131,
+      "similarity": 0.1466,
+      "similarity-inverted": 0.122,
+      "eliminate-similar": 0.17,
+      "eliminate-similar-inverted": 0.0,
+      "known-words": 0.1667,
+      "known-words-inverted": 0.1667,
+      "known+similarity": 0.1466,
+      "known+similarity-inverted": 0.122
+     },
+     "passes": true
+    },
+    "F27:clean": {
+     "n": 348,
+     "accuracy": 0.17,
+     "upper": 0.2057,
+     "bound": 0.25,
+     "solver": "eliminate-similar",
+     "solvers": {
+      "chance": 0.1667,
+      "length": 0.1484,
+      "length-inverted": 0.131,
+      "similarity": 0.1466,
+      "similarity-inverted": 0.122,
+      "eliminate-similar": 0.17,
+      "eliminate-similar-inverted": 0.0,
+      "known-words": 0.1667,
+      "known-words-inverted": 0.1667,
+      "known+similarity": 0.1466,
+      "known+similarity-inverted": 0.122
+     },
+     "passes": true
+    },
     "F2:clean": {
      "n": 356,
      "accuracy": 0.2563,
@@ -528,6 +572,8 @@
    "items": {
     "F2": 1516,
     "F13": 1516,
+    "F27": 1499,
+    "F26": 1499,
     "F3": 1516,
     "F22": 1516,
     "F7": 1521,
@@ -782,6 +828,48 @@
       "char-lm-rank4": 0.0,
       "feature-classifier": 0.0,
       "spelling-rules": 0.0
+     },
+     "passes": true
+    },
+    "F26:clean": {
+     "n": 351,
+     "accuracy": 0.1699,
+     "upper": 0.2054,
+     "bound": 0.25,
+     "solver": "eliminate-similar",
+     "solvers": {
+      "chance": 0.1667,
+      "length": 0.1514,
+      "length-inverted": 0.1278,
+      "similarity": 0.1443,
+      "similarity-inverted": 0.1531,
+      "eliminate-similar": 0.1699,
+      "eliminate-similar-inverted": 0.0,
+      "known-words": 0.1667,
+      "known-words-inverted": 0.1667,
+      "known+similarity": 0.1443,
+      "known+similarity-inverted": 0.1531
+     },
+     "passes": true
+    },
+    "F27:clean": {
+     "n": 351,
+     "accuracy": 0.1699,
+     "upper": 0.2054,
+     "bound": 0.25,
+     "solver": "eliminate-similar",
+     "solvers": {
+      "chance": 0.1667,
+      "length": 0.1514,
+      "length-inverted": 0.1278,
+      "similarity": 0.1443,
+      "similarity-inverted": 0.1531,
+      "eliminate-similar": 0.1699,
+      "eliminate-similar-inverted": 0.0,
+      "known-words": 0.1667,
+      "known-words-inverted": 0.1667,
+      "known+similarity": 0.1443,
+      "known+similarity-inverted": 0.1531
      },
      "passes": true
     },

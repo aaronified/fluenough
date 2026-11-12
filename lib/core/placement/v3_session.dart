@@ -648,7 +648,7 @@ class V3Run {
     // A reverse format (English spoken) is drawn as the format it reverses;
     // the screen speaks the English it shows.
     switch (baseFormat(item.format)) {
-      case 'F2':
+      case 'F2' || 'F27':
         return V3Question(
           id: item.id,
           format: item.format,
@@ -658,7 +658,7 @@ class V3Run {
           options: item.options,
           item: item,
         );
-      case 'F13':
+      case 'F13' || 'F26':
         return V3Question(
           id: item.id,
           format: item.format,
