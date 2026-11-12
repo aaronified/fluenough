@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'app_version.dart';
-import 'levels.dart';
+import '../models/level.dart';
 import 'shared_data.dart';
 
 /// The newest index format this app reads. An index of a later version

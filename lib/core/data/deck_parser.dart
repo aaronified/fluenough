@@ -1,7 +1,7 @@
 import 'package:yaml/yaml.dart';
 
 import '../models/author.dart';
-import '../decks/levels.dart';
+import '../models/level.dart';
 import '../models/card.dart';
 import '../models/card_source.dart';
 import '../models/card_set.dart';

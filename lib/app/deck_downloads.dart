@@ -445,8 +445,12 @@ class DeckDownloads extends ChangeNotifier {
       _fontsOnPhone = await files.fontManifest();
       final text = await files.readNote(_indexNote);
       if (text != null) {
-        _index = DeckIndex.parse(text, appVersion: appVersion);
+        final index = DeckIndex.parse(text, appVersion: appVersion);
+        _index = index;
         _indexStatus = IndexStatus.ready;
+        for (final problem in index.problems) {
+          _log?.warning('Deck index kept on the phone: $problem');
+        }
       }
     } on Object catch (e) {
       _log?.warning('Deck downloads: could not read what is kept: $e');

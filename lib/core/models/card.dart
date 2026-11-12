@@ -1,4 +1,4 @@
-import '../decks/levels.dart';
+import 'level.dart';
 import 'card_source.dart';
 import 'drill_mode.dart';
 import 'rule.dart';

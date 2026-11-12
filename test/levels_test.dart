@@ -47,9 +47,9 @@ void main() {
     });
 
     test('has one for each milestone of a path', () {
-      expect(Level.ofMilestone(Milestone.a1), Level.a1);
-      expect(Level.ofMilestone(Milestone.a2), Level.a2);
-      expect(Level.ofMilestone(Milestone.b1), Level.b1);
+      expect(levelOfMilestone(Milestone.a1), Level.a1);
+      expect(levelOfMilestone(Milestone.a2), Level.a2);
+      expect(levelOfMilestone(Milestone.b1), Level.b1);
     });
   });
 

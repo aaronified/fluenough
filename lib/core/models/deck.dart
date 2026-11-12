@@ -1,4 +1,4 @@
-import '../decks/levels.dart';
+import 'level.dart';
 import 'author.dart';
 import 'card.dart';
 import 'card_set.dart';
