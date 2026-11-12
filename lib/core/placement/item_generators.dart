@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 
 import '../models/card.dart';
+import '../scheduling/look_alike.dart';
 import 'cognate_score.dart';
 import 'item_audit.dart' show matcherRight;
 import 'item_registry.dart';
@@ -1309,6 +1310,8 @@ class ItemGenerators {
   /// option: it is neither the longest nor the shortest, neither the most nor
   /// the least like the prompt's words, no option has more of the first
   /// words' English than another, and it is not the centre of the options.
+  /// The wrong options also look like the right one: one length band and
+  /// about as many words ([inOneBand]), so no surface cue singles it out.
   /// A sentence for which no such three exist gets no item.
   List<RegItem> sentencePicks(String format) {
     final out = <RegItem>[];
@@ -1366,7 +1369,9 @@ class ItemGenerators {
         if (e.toLowerCase() == english.toLowerCase()) continue;
         final overlap = mine.intersection(optionWordsCached(e)).length;
         if (overlap > math.max(1, mine.length ~/ 2)) continue;
-        if ((e.length - english.length).abs() > 30) continue;
+        // Options look alike: one length band and about as many words, so
+        // that no surface cue singles the right one out.
+        if (!inOneBand(english, e)) continue;
         if (knownWordScore(prompt, e, known) != k0) continue;
         pool.add((e, sim(e), heldOut(e)));
       }
