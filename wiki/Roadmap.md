@@ -338,7 +338,7 @@ A plan with no tracking issue is flagged.
 - [a B1 plan in every path](https://github.com/aaronified/fluenough/wiki/Plan-B1-Plans) (Written 2026-10-06), tracks #209
 - [books, films and songs you bring, with questions on them](https://github.com/aaronified/fluenough/wiki/Plan-Books-Films-Songs) (Written 2026-10-06), tracks #215
 - [reviewing decks in the app, sent by mail](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Browser) (Written 2026-10-06), tracks #403
-- [deck kinds, levels, hidden decks, sources, creators, topics and search kinds as data](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Kinds-And-Topics), **no tracking issue**
+- [deck kinds, levels, hidden decks, sources, creators, recommendations, topics and search kinds as data](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Kinds-And-Topics), **no tracking issue**
 - [deck-owned data on decks-live](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Owned-Data), **no tracking issue**
 - [decks in a branch of their own](https://github.com/aaronified/fluenough/wiki/Plan-Decks-Branch), **no tracking issue**
 - [explain the mistake on a wrong grammar answer](https://github.com/aaronified/fluenough/wiki/Plan-Explain-Mistakes) (Written 2026-10-05), tracks #225
