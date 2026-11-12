@@ -1,3 +1,4 @@
+import '../decks/levels.dart';
 import 'author.dart';
 import 'card.dart';
 import 'card_set.dart';
@@ -172,6 +173,14 @@ class Deck {
     this.checkedBy = const <String, List<String>>{},
     this.verified = const <String, List<String>>{},
     this.sets = const <CardSet>[],
+    this.genre,
+    this.level,
+    this.hidden = false,
+    this.professional,
+    this.section,
+    this.weave,
+    this.patternFamily,
+    this.kindProblems = const <String>[],
   });
 
   final String id;
@@ -235,6 +244,42 @@ class Deck {
   /// never in [cards], so never scheduled, asked or logged.
   final List<CardSet> sets;
 
+  /// What kind of deck it is beyond its structure (`genre`, D1 of the
+  /// deck-kinds plan): `culture`, `proverbs`, `multiword`, `professional`, or
+  /// a later one the app only shows under "Beyond the basics". Null for an
+  /// ordinary path deck. The app reads the string and looks it up in the
+  /// sections file; it never branches on it.
+  final String? genre;
+
+  /// The lowest level the deck suits (`level`): a learner below it is never
+  /// given the deck. Null for a deck with none, which every learner has.
+  final Level? level;
+
+  /// Whether the deck is kept out of the Decks tab, Today, the path,
+  /// placement and the counts, until a learner adds it (`hidden`, D3).
+  final bool hidden;
+
+  /// The profession a professional deck is for (`professional`), an id in the
+  /// sections file.
+  final String? professional;
+
+  /// The Decks tab list the deck is under (`section`), or null for its
+  /// genre's, then `path`.
+  final String? section;
+
+  /// Whether the deck may be woven into the course (`weave`), or null for its
+  /// genre's default.
+  final bool? weave;
+
+  /// A multi-word deck's pattern family (`pattern_family`): shown on the deck
+  /// page and never read by code.
+  final String? patternFamily;
+
+  /// What in the deck's kind fields (`genre`, `level`, `hidden`, a card's
+  /// `source` and the rest) could not be read, one line each: the field was
+  /// left out and the deck still loads. The app logs them.
+  final List<String> kindProblems;
+
   int get cardCount => cards.length;
 
   /// This deck with [cards] in place of its own, and no refs left: a grammar
@@ -260,6 +305,14 @@ class Deck {
     checkedBy: checkedBy,
     verified: verified,
     sets: sets,
+    genre: genre,
+    level: level,
+    hidden: hidden,
+    professional: professional,
+    section: section,
+    weave: weave,
+    patternFamily: patternFamily,
+    kindProblems: kindProblems,
   );
 
   @override
