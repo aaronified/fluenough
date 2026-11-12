@@ -1,0 +1,38 @@
+schema: 1
+id: "zz-proverbs-ejemplo"
+part: "core"
+kind: "vocab"
+language: { code: "zz", iso639_3: "zzz", name: "Testlang", script: "latin", tts: "es-ES", icon: "Zz" }
+license: "CC-BY-SA-4.0"
+genre: "proverbs"
+level: "A2"
+tags: ["beginner"]
+cards:
+  - id: "zz-9401"
+    target: "Agua que no has de beber, déjala correr."
+    pos: "phrase"
+    register: "neutral"
+    modes: ["recognition", "listening"]
+    notes:
+      - { id: "literal", kind: "note" }
+    source:
+      author: "anonymous"
+      collection: "Refranes de prueba"
+      date: "c. 1600"
+      edition: "Colección de prueba"
+      basis: "oral-tradition"
+      jurisdiction: "ES"
+      rights_checked: "2026-11-12"
+  - id: "zz-9402"
+    target: "Quien madruga, encuentra."
+    pos: "phrase"
+    register: "informal"
+    modes: ["recognition"]
+    source:
+      author: "anonymous"
+      collection: "Refranes de prueba"
+      date: "c. 1600"
+      edition: "Colección de prueba"
+      basis: "oral-tradition"
+      jurisdiction: "ES"
+      rights_checked: "2026-11-12"

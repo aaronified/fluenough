@@ -1,0 +1,48 @@
+# The people behind the works (D5), invented for the tests: one with a
+# licensed image and a legacy, one with the placeholder.
+schema: 1
+kind: "creators"
+id: "creators-zz"
+language: "zz"
+license: "CC-BY-SA-4.0"
+eras:
+  - id: "moderna"
+    name: { zz: "Edad Moderna", en: "The Modern Age" }
+    from: 1850
+    to: null
+creators:
+  - id: "zz-ejemplo-autora"
+    name:
+      zz: { text: "Ana Ejemplo" }
+      en: { text: "Ana Ejemplo" }
+    born: 1850
+    died: 1910
+    era: "moderna"
+    bio:
+      en: "A made-up writer of letters, who exists only for the tests."
+    image:
+      file: "decks/creators/images/zz-ejemplo-autora.png"
+      credit: "Test fixture"
+      author: "The Fluenough tests"
+      licence: "CC-BY-4.0"
+      licence_url: "https://creativecommons.org/licenses/by/4.0/"
+      source_url: "https://example.org/zz-ejemplo-autora"
+      retrieved: "2026-11-12"
+    legacy:
+      text: { en: "Her letters are read in made-up schools." }
+      items:
+        - kind: "curriculum"
+          year: 1990
+          text: { en: "Her letters were set in a made-up school curriculum." }
+          source: { url: "https://example.org/curriculum", accessed: "2026-11-12" }
+    related:
+      - { creator: "zz-ejemplo-poeta", relation: "influence" }
+  - id: "zz-ejemplo-poeta"
+    name:
+      zz: { text: "Luis Prueba" }
+      en: { text: "Luis Prueba" }
+    born: 1900
+    died: 1975
+    era: "moderna"
+    bio:
+      en: "A made-up poet, who exists only for the tests."

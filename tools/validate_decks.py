@@ -6381,8 +6381,11 @@ def check_paths_across(reports: list[Report]) -> list[str]:
                         f"learner)")
         # Every deck of the language given now, of every course, is on it.
         for deck in reports:
+            # A deck with a genre is found by its section or by search, and is on
+            # a path only when a unit names it (the plan, D1 and D3).
             if deck.course_deck is None or deck.course_deck[0] != lang \
-                    or deck.listed_as is None or deck.listed_as in listed:
+                    or deck.listed_as is None or deck.listed_as in listed \
+                    or deck.genre is not None or deck.hidden:
                 continue
             problems.append(f"{rep.path}: units: does not list {deck.listed_as!r}, the "
                             f"core id of {deck.course_deck[2]}; every deck of {lang} is "
@@ -8531,8 +8534,10 @@ def check_kinds_across(reports: list[Report]) -> list[str]:
                     ("situations", sheets, f"a situation of {code}"),
                     ("script_units", features, f"a script guide feature of {code}")):
                 for ref in t.get(key) or []:
-                    # Nothing to resolve against (no path, no such file): skip.
-                    if not known and key != "decks":
+                    # A path or rules the language does not have yet: nothing
+                    # to resolve units and grammar against.
+                    if (key == "units" and path is None) or (
+                            key == "grammar" and path is None and not known):
                         continue
                     if _is_str(ref) and ref not in known:
                         problems.append(f"{rep.path}: {where}: {key} names {ref!r}, "
