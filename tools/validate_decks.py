@@ -8366,7 +8366,11 @@ SHARED_KIND_CHECKS = {
 def _find_shared(path: Path, rel: str) -> Path | None:
     """A deck-owned file ([rel], such as sections.yaml) as a deck at [path]
     sees it: in the decks/ folder above its language's, else the repository's."""
-    for base in [*list(path.resolve().parents)[:3], ROOT / "decks"]:
+    resolved = path.resolve()
+    bases = list(resolved.parents)[:3]
+    if ROOT in resolved.parents:
+        bases.append(ROOT / "decks")  # not for a draft or a test tree elsewhere
+    for base in bases:
         candidate = base / rel
         if candidate.is_file():
             return candidate
