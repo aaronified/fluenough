@@ -16,6 +16,7 @@ import 'dart:io';
 import 'dart:math' as math;
 
 import 'package:fluenough/core/placement/assurance_model.dart';
+import 'package:fluenough/core/placement/item_registry.dart' show baseFormat;
 import 'package:fluenough/core/placement/joint_model.dart';
 import 'package:fluenough/core/placement/placement_profile.dart';
 import 'package:fluenough/core/placement/placement_questions.dart';
@@ -110,11 +111,16 @@ const Map<String, FormatSpec> kFormats = <String, FormatSpec>{
   // Build step 4b: type the one unit left out of a word (a cheap Write item).
   'F21': FormatSpec('F21', {_w}, 0.08, 0.10, 6),
   'F8': FormatSpec('F8', {_w, _r}, 0.10, 0.05, 15, wordLevel: false),
-  'F13': FormatSpec('F13', {_h}, 0.05, 0.25, 6),
+  // The reverse of F8 (English spoken): the same item, asked with sound.
+  'F24': FormatSpec('F24', {_w, _r}, 0.10, 0.05, 15, wordLevel: false),
+  'F13': FormatSpec('F13', {_h, _r}, 0.05, 0.25, 6),
   'F15': FormatSpec('F15', {_h}, 0.05, 0.50, 6),
-  'F16': FormatSpec('F16', {_h, _w}, 0.10, 0.05, 15, wordLevel: false),
   'F17': FormatSpec('F17', {_h}, 0.10, 0.25, 8, wordLevel: false),
   'F18': FormatSpec('F18', {_s}, 0.15, 0.03, 10),
+  // The look-alike word picks of six options (owner, 2026-11-12): heard
+  // (Hear) and written (Read), the cheap isolators of the drill-down.
+  'F26': FormatSpec('F26', {_h}, 0.03, 0.18, 7),
+  'F27': FormatSpec('F27', {_r}, 0.03, 0.18, 7),
   'F1': FormatSpec('F1', {_r}, 0.10, 0.0, 3),
 };
 
@@ -127,6 +133,8 @@ String formatKey(String code, BankProfile profile) {
   return switch (code) {
     'F4' => 'F4',
     'F5' => 'F5legacy',
+    // The heard-sentence pick of the legacy bank leaked as the written one.
+    'F17' => 'F17legacy',
     'F6' => 'F6hint',
     _ => code,
   };
@@ -218,6 +226,7 @@ class LeakLanguage {
 
   /// The gamer's accuracy beyond its words on format [code].
   double rate(String code, bool cognate, BankProfile profile, bool strong) {
+    code = baseFormat(code); // a reverse format leaks as its base
     final measured = audit[code];
     if (profile == BankProfile.fixed && !cognate && measured != null) {
       // A gamer is never worse than guessing: the design guess is the floor.
@@ -764,8 +773,12 @@ class BaselinePicker implements SimPicker {
   static const Map<PlacementSkill, List<String>> _formats =
       <PlacementSkill, List<String>>{
         PlacementSkill.read: <String>['F2', 'F8', 'F5', 'F3', 'F6'],
-        PlacementSkill.hear: <String>['F13', 'F16', 'F17', 'F15'],
-        PlacementSkill.write: <String>['F8', 'F16', 'F7', 'F4'],
+        // F26 (the look-alike word pick, Hear alone) stands where the
+        // dictation F16 stood before it was removed (#1105): a Hear format a
+        // gamer cannot answer without knowing the word, which the naive
+        // control asks as every other format.
+        PlacementSkill.hear: <String>['F13', 'F26', 'F17', 'F15'],
+        PlacementSkill.write: <String>['F8', 'F7', 'F4'],
         PlacementSkill.say: <String>['F18'],
       };
 
@@ -966,7 +979,7 @@ class BaselinePicker implements SimPicker {
 }
 
 /// The formats the item bank admits (the audit's survivors of build step 3:
-/// F2/F13/F3, F4, F7/F18, F8/F16, F9 and F1/F14 where admitted); the stand-in
+/// F2/F13/F3, F4, F7/F18, F8, F9 and F1/F14 where admitted); the stand-in
 /// bank carries them as [kFormats] entries.
 const List<String> kAdmittedFormats = <String>[
   'F2',
@@ -978,8 +991,10 @@ const List<String> kAdmittedFormats = <String>[
   'F7',
   'F21',
   'F8',
-  'F16',
+  'F24',
   'F18',
+  'F26',
+  'F27',
   'F1',
 ];
 

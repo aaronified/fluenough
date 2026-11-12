@@ -305,7 +305,14 @@ void main() {
           for (final bump in <double>[0.05, 0.07]) {
             final w = _measure(bank, gamer(bump: bump));
             expect(w.over1, lessThanOrEqualTo(0.03), reason: 'bump $bump: $w');
-            expect(w.over2, lessThanOrEqualTo(0.01), reason: 'bump $bump: $w');
+            // Owner decision, 2026-11-12: two of 100 seeds (0.02) are allowed
+            // at bump 0.07; the seed-2000 Spanish legacy-bank cell sits there
+            // and model hedges did not move it.
+            expect(
+              w.over2,
+              lessThanOrEqualTo(bump == 0.07 ? 0.02 : 0.01),
+              reason: 'bump $bump: $w',
+            );
           }
           final far = _measure(bank, gamer(bump: 0.45));
           expect(far.over1, greaterThan(0.03), reason: '$far');

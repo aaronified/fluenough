@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 
 import '../models/card.dart';
+import '../scheduling/look_alike.dart';
 import 'cognate_score.dart';
 import 'item_audit.dart' show matcherRight;
 import 'item_registry.dart';
@@ -30,6 +31,9 @@ const double kWordLevelCognateMax = 0.45;
 
 /// The share of word-pick items that carry a look-alike lure.
 const double kLureRate = 0.15;
+
+/// The wrong options of a look-alike word pick (F26, F27): six options in all.
+const int kLookAlikeDistractors = 5;
 
 final RegExp _marks = RegExp(r'^[^\p{L}\p{M}]+|[^\p{L}\p{M}]+$', unicode: true);
 final RegExp _mark = RegExp(r'\p{M}', unicode: true);
@@ -677,6 +681,75 @@ class ItemGenerators {
     return out;
   }
 
+  /// Look-alike word picks: a written word (F27) or a heard one (F26), pick
+  /// its meaning among SIX options made to look alike, so that the pick has a
+  /// guess rate of about a sixth and no option stands out. The wrong options
+  /// are meanings of words of the same part of speech and the same surface
+  /// shape, near the word on the path ([_shapeMatches]), whose English is in
+  /// one length band and has about as many words as the right one
+  /// ([inOneBand]), and whose resemblance to the prompt is closest to the right
+  /// option's ([_matchAffinity]). A word with fewer than five such options
+  /// gets no item. One item serves both formats (a card is never asked in
+  /// both: they share conflict keys).
+  List<RegItem> lookAlikePicks(String format) {
+    final r = cx.stream('lookalike');
+    final out = <RegItem>[];
+    for (final v in cx.vocab) {
+      if (v.leaky || v.gloss.isEmpty) continue;
+      String english(VocabWord o) =>
+          o.glossHead.isEmpty ? o.gloss : o.glossHead;
+      bool alike(VocabWord o) => inOneBand(v.gloss, o.gloss);
+      final shapes = _matchAffinity(
+        v,
+        _byGlossLength(v, _shapeMatches(v).where(alike).toList()),
+        (o) => wordSimilarity(v.roman, english(o), cx.data.language),
+        wordSimilarity(v.roman, english(v), cx.data.language),
+      );
+      final taken = <String>{};
+      final distractors = <VocabWord>[];
+      final lure = r.nextDouble() < kLureRate
+          ? _lure(v, v.roman, english, taken, r)
+          : null;
+      if (lure != null && alike(lure)) {
+        distractors.add(lure);
+        taken.add(lure.card.id);
+      }
+      for (final o in shapes) {
+        if (distractors.length >= kLookAlikeDistractors) break;
+        if (taken.contains(o.card.id)) continue;
+        if (distractors.any(
+          (d) => d.gloss.toLowerCase() == o.gloss.toLowerCase(),
+        )) {
+          continue;
+        }
+        distractors.add(o);
+        taken.add(o.card.id);
+      }
+      if (distractors.length < kLookAlikeDistractors) continue;
+      final opts = _shuffle(r, <String>[
+        v.gloss,
+        ...distractors.map((d) => d.gloss),
+      ]);
+      out.add(
+        RegItem(
+          id: _key(v.card.id, format),
+          format: format,
+          cardId: v.card.id,
+          deck: v.deck,
+          prompt: v.display,
+          promptRoman: v.roman,
+          options: opts,
+          optionsRoman: opts,
+          correct: opts.indexOf(v.gloss),
+          cognateScore: v.cognateScore,
+          lemmas: <String>{v.lemma},
+          coCards: <String>{for (final d in distractors) d.card.id},
+        ),
+      );
+    }
+    return out;
+  }
+
   /// English meaning to the written word (F3).
   List<RegItem> meaningToWord() {
     final r = cx.stream('m2w');
@@ -1072,8 +1145,7 @@ class ItemGenerators {
     return out;
   }
 
-  /// Sentence tiles: English to a built sentence (F8), a heard sentence built
-  /// (F16). Two decoy tokens from other sentences near it; the end marks stay
+  /// Sentence tiles: English to a built sentence (F8). Two decoy tokens from other sentences near it; the end marks stay
   /// where they are.
   List<RegItem> sentenceTiles(String format) {
     final r = cx.stream('stiles:$format');
@@ -1102,7 +1174,7 @@ class ItemGenerators {
           format: format,
           cardId: s.card.id,
           deck: s.deck,
-          prompt: format == 'F8' ? s.english : s.text,
+          prompt: s.english,
           tiles: _shuffle(r, <String>[...lower, ...decoys.take(2)]),
           answerTiles: lower,
           alternatives: alternativeOrders(
@@ -1310,6 +1382,8 @@ class ItemGenerators {
   /// option: it is neither the longest nor the shortest, neither the most nor
   /// the least like the prompt's words, no option has more of the first
   /// words' English than another, and it is not the centre of the options.
+  /// The wrong options also look like the right one: one length band and
+  /// about as many words ([inOneBand]), so no surface cue singles it out.
   /// A sentence for which no such three exist gets no item.
   List<RegItem> sentencePicks(String format) {
     final out = <RegItem>[];
@@ -1367,7 +1441,9 @@ class ItemGenerators {
         if (e.toLowerCase() == english.toLowerCase()) continue;
         final overlap = mine.intersection(optionWordsCached(e)).length;
         if (overlap > math.max(1, mine.length ~/ 2)) continue;
-        if ((e.length - english.length).abs() > 30) continue;
+        // Options look alike: one length band and about as many words, so
+        // that no surface cue singles the right one out.
+        if (!inOneBand(english, e)) continue;
         if (knownWordScore(prompt, e, known) != k0) continue;
         pool.add((e, sim(e), heldOut(e)));
       }

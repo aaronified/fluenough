@@ -9,7 +9,8 @@ library;
 import 'package:fluenough/core/placement/admission.dart';
 import 'package:fluenough/core/placement/item_bank.dart';
 import 'package:fluenough/core/placement/item_codec.dart';
-import 'package:fluenough/core/placement/item_registry.dart' show RegItem;
+import 'package:fluenough/core/placement/item_registry.dart'
+    show RegItem, baseFormat;
 import 'package:fluenough/core/placement/placement_data.dart';
 import 'package:fluenough/core/placement/placement_questions.dart';
 import 'package:fluenough/core/placement/v3_picker.dart'
@@ -40,24 +41,27 @@ const Map<String, String> _notAsked = <String, String>{
 
 /// Admitted formats the oracle learner's runs over one language do not reach
 /// (they are asked in other languages' runs and by learners the oracle is not).
-const Map<String, Map<String, String>> _notAskedIn =
-    <String, Map<String, String>>{
-      'es': <String, String>{
-        'F17':
-            'a heard sentence pick costs 8 s at the guess of a word pick: '
-            'chosen only when the word picks of a band are used up',
-      },
-      'hi': <String, String>{
-        'F7':
-            'Write is placed with the 6 s gap items (F21) and the sentence '
-            'tiles; typing a whole Devanagari word costs 12 s and gives no '
-            'more information per second',
-        'F5':
-            'a sentence pick costs 8 s at the guess of a word pick: chosen '
-            'only when the word picks of a band are used up',
-        'F17': 'the same, heard',
-      },
-    };
+const Map<String, Map<String, String>>
+_notAskedIn = <String, Map<String, String>>{
+  'es': <String, String>{
+    'F7':
+        'Write is placed with the 6 s gap items (F21, F25) and the sentence '
+        'tiles; typing a whole word costs 12 s and gives no more '
+        'information per second',
+    'F5':
+        'a sentence pick costs 8 s at the guess of a word pick: chosen '
+        'only when the word picks of a band are used up',
+  },
+  'hi': <String, String>{
+    'F7':
+        'Write is placed with the 6 s gap items (F21) and the sentence '
+        'tiles; typing a whole Devanagari word costs 12 s and gives no '
+        'more information per second',
+    'F5':
+        'a sentence pick costs 8 s at the guess of a word pick: chosen '
+        'only when the word picks of a band are used up',
+  },
+};
 
 void main() {
   for (final language in <String>['es', 'hi']) {
@@ -343,7 +347,7 @@ void main() {
           final admitted = <String>{
             for (final i in bank.items)
               if (i.info.skills.contains(skill) &&
-                  !_notAsked.containsKey(i.format))
+                  !_notAsked.containsKey(baseFormat(i.format)))
                 i.format,
           };
           expect(admitted, isNotEmpty, reason: '$language $skill');
@@ -359,9 +363,11 @@ void main() {
         final missing = admitted
             .where(
               (f) =>
-                  !asked.contains(f) &&
-                  !_notAsked.containsKey(f) &&
-                  !here.containsKey(f),
+                  // A reverse format is its base's items asked with sound:
+                  // either stands for the other.
+                  !asked.any((a) => baseFormat(a) == baseFormat(f)) &&
+                  !_notAsked.containsKey(baseFormat(f)) &&
+                  !here.containsKey(baseFormat(f)),
             )
             .toList();
         expect(

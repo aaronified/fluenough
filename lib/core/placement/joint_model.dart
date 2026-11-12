@@ -2,6 +2,7 @@ import 'dart:math' as math;
 import 'dart:typed_data';
 
 import 'assurance_model.dart';
+import 'item_registry.dart';
 import 'placement_questions.dart';
 
 // The joint measurement model of "Find my level" V3
@@ -317,17 +318,34 @@ class GuessCalibration {
     'F6hint:cognate': 0.75,
     'F6endings:clean': 0.99,
     'F6:clean': 0.35,
-    'F7:clean': 0.05,
+    // The typed and tiled formats: a gamer 0.07 better than measured (the
+    // margin gate) answers them at the design guess plus 0.07, so the model
+    // hedges at that (F7 0.03, F8 0.05, F21 0.10, F18 0.03 by design).
+    'F7:clean': 0.10,
     'F7:cognate': 0.55,
-    'F8:clean': 0.09,
+    'F8:clean': 0.12,
     'F9:clean': 0.55,
     'F9:cognate': 0.85,
     'F13:clean': 0.35,
     'F13:cognate': 0.85,
     'F15:clean': 0.70,
-    'F16:clean': 0.09,
     'F17:clean': 0.35,
+    'F18:clean': 0.10,
+    'F21:clean': 0.17,
     'F17:cognate': 0.90,
+    // The six-option look-alike word picks: the best solver's upper bound of
+    // the audit stays under 0.20 (a sixth by chance), and the admission bound
+    // is 0.25; a gamer 0.07 better than measured (the margin gate) answers
+    // them at 0.25, so the model hedges at 0.27.
+    'F26:clean': 0.27,
+    'F26:cognate': 0.85,
+    'F27:clean': 0.27,
+    'F27:cognate': 0.97,
+    // The heard-sentence pick as the adversary found it, before its options
+    // were made to look alike (length band, shared structure): the right
+    // option was found 75% of the time by shape. Never asked.
+    'F17legacy:clean': 0.95,
+    'F17legacy:cognate': 0.95,
     'F6:cognate': 0.90,
     'S2legacy:clean': 0.98,
     'S2legacy:cognate': 0.98,
@@ -340,9 +358,9 @@ class GuessCalibration {
   /// [base]: the base, raised to the measured bound, never lowered.
   double guessFor(String format, bool cognate, double base, {String? key}) {
     final bound =
-        upperBounds['${key ?? format}:${cognate ? 'cognate' : 'clean'}'];
+        upperBounds['${key ?? baseFormat(format)}:${cognate ? 'cognate' : 'clean'}'];
     final g = bound == null ? base : math.max(base, bound);
-    final m = scale[format];
+    final m = scale[baseFormat(format)];
     return m == null ? g : math.min(0.99, g * m);
   }
 

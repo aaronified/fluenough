@@ -192,7 +192,7 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
     final sample = <RegItem>[
       for (var i = 0; i < all.length; i += stride) all[i],
     ];
-    final fmt = sample.first.format;
+    final fmt = baseFormat(sample.first.format);
     final info = sample.first.info;
     final solvers = <String, double>{};
     var trials = sample.length;
@@ -208,7 +208,16 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
     final rows = <List<List<double>>>[];
     final rowCorrect = <int>[];
     switch (fmt) {
-      case 'F2' || 'F13' || 'F3' || 'F5' || 'F17' || 'F6' || 'S2' || 'F6g':
+      case 'F2' ||
+          'F13' ||
+          'F26' ||
+          'F27' ||
+          'F3' ||
+          'F5' ||
+          'F17' ||
+          'F6' ||
+          'S2' ||
+          'F6g':
         final nOptions = sample.first.options.length;
         solvers['chance'] = sample.length / nOptions;
         for (final it in sample) {
@@ -217,7 +226,12 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
           ];
           final l = expectedBoth(lens, it.correct);
           both('length', l.high, l.low);
-          if (fmt == 'F2' || fmt == 'F13' || fmt == 'F5' || fmt == 'F17') {
+          if (fmt == 'F2' ||
+              fmt == 'F13' ||
+              fmt == 'F26' ||
+              fmt == 'F27' ||
+              fmt == 'F5' ||
+              fmt == 'F17') {
             final promptWords = targetWords(it.promptRoman ?? it.prompt);
             final sim = <double>[
               for (final o in it.options)
@@ -500,7 +514,7 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
         solvers[r.$2] = r.$1;
         aucN1 = r.$3;
         aucN2 = r.$4;
-      case 'F8' || 'F16':
+      case 'F8':
         var total = 0.0;
         for (final it in sample) {
           total += _sentenceTiles(it, wordGrams2, suffixGrams2);
@@ -567,7 +581,7 @@ double _bound(String fmt, FormatInfo info) {
       return 0.57;
     case 'F4':
       return 0.10 + 0.07;
-    case 'F8' || 'F16':
+    case 'F8':
       return 0.05 + 0.07;
     default:
       return info.admissionBound;

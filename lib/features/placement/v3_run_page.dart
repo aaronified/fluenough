@@ -6,7 +6,6 @@ import '../../core/placement/placement_questions.dart' show PlacementSkill;
 import '../../core/placement/v3_result.dart';
 import '../../core/placement/v3_session.dart';
 import '../../l10n/app_localizations.dart';
-import '../../ui/theme.dart';
 import '../../ui/widgets/snack.dart';
 import 'find_level_labels.dart' show FindLevelRecheck;
 import 'placement_questions.dart' show PlacementShell;
@@ -112,6 +111,8 @@ class _V3RunPageState extends State<V3RunPage> {
 
   void _done(Map<PlacementSkill, int> overrides) {
     try {
+      // At the soft stop, Done ends the run with what it holds.
+      if (_run.atCheckpoint) _run.stop();
       widget.onFinish(_result!, overrides);
     } on Object catch (error, stack) {
       debugPrint('Find my level: writing the outcome failed: $error\n$stack');
@@ -138,7 +139,9 @@ class _V3RunPageState extends State<V3RunPage> {
   @override
   Widget build(BuildContext context) {
     final recheck = widget.recheck;
-    if (_run.finished) {
+    // The result card shows at once, at the soft stop too, where it offers
+    // Keep going for a sharper answer.
+    if (_run.finished || _run.atCheckpoint) {
       final result = _result ??= V3Result.of(_run);
       return PopScope(
         canPop: false,
@@ -148,6 +151,13 @@ class _V3RunPageState extends State<V3RunPage> {
         child: V3ResultPage(
           result: result,
           failed: _failed,
+          onKeepGoing: _run.atCheckpoint
+              ? () {
+                  _result = null;
+                  _run.keepGoing();
+                  _changed();
+                }
+              : null,
           onDone: _done,
           onRestart: _restart,
           recheck: recheck == null
@@ -167,16 +177,7 @@ class _V3RunPageState extends State<V3RunPage> {
         if (!didPop) _pause();
       },
       child: question == null
-          ? V3SoftStop(
-              onKeepGoing: () {
-                _run.keepGoing();
-                _changed();
-              },
-              onStop: () {
-                _run.stop();
-                _changed();
-              },
-            )
+          ? const SizedBox.shrink()
           : PlacementShell(
               onClose: _pause,
               deckName: widget.languageName,
@@ -196,74 +197,6 @@ class _V3RunPageState extends State<V3RunPage> {
                 onListened: _listened,
               ),
             ),
-    );
-  }
-}
-
-/// The pause at the soft stop: the check could end here, or go on for a
-/// sharper answer.
-class V3SoftStop extends StatelessWidget {
-  const V3SoftStop({
-    super.key,
-    required this.onKeepGoing,
-    required this.onStop,
-  });
-
-  final VoidCallback onKeepGoing;
-  final VoidCallback onStop;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    return Scaffold(
-      appBar: AppBar(automaticallyImplyLeading: false),
-      body: SafeArea(
-        child: Column(
-          children: <Widget>[
-            Expanded(
-              child: ListView(
-                padding: const EdgeInsets.all(AppSizes.gutter),
-                children: <Widget>[
-                  Semantics(
-                    header: true,
-                    child: Text(
-                      l10n.findLevelSoftStopTitle,
-                      style: theme.textTheme.headlineSmall,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    l10n.findLevelSoftStopBody,
-                    style: theme.textTheme.bodyLarge,
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(AppSizes.gutter),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  FilledButton(
-                    key: const ValueKey<String>('find-level-see-result'),
-                    style: AppButtonStyles.tall(context),
-                    onPressed: onStop,
-                    child: Text(l10n.findLevelSeeResult),
-                  ),
-                  const SizedBox(height: 8),
-                  OutlinedButton(
-                    key: const ValueKey<String>('find-level-keep-going'),
-                    style: AppButtonStyles.tall(context),
-                    onPressed: onKeepGoing,
-                    child: Text(l10n.findLevelKeepGoing),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }

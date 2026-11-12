@@ -141,7 +141,7 @@ void main() {
           {'F2', 'F13'},
           {'F8', 'F13'},
           {'F2', 'F7'},
-          {'F16', 'F2'},
+          {'F24', 'F2'},
         ];
         for (final formats in sets) {
           final supplied = <PlacementSkill>{
