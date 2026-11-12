@@ -216,6 +216,7 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
           'F5' ||
           'F17' ||
           'F6' ||
+          'F28' ||
           'S2' ||
           'F6g':
         final nOptions = sample.first.options.length;
@@ -293,7 +294,7 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
               for (var i = 0; i < known.length; i++) known[i] + 0.01 * sim[i],
             ], it.correct);
             both('known+similarity', comb.high, comb.low);
-          } else if (fmt == 'F6') {
+          } else if (fmt == 'F6' || fmt == 'F28') {
             final scores = <double>[
               for (final o in it.options)
                 knownGloss.contains(o.toLowerCase()) ? 1.0 : 0.0,
@@ -328,6 +329,29 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
                 ngramScore(fill(o), 3, suffixGrams3, ownS3, suffixOf),
             ], it.correct);
             both('context-ending-triples', cs3.high, cs3.low);
+            if (fmt == 'F28') {
+              // The options of one word class: a solver that picks the one
+              // option whose class stands alone (it has a chance share where
+              // all share a class).
+              final cls = <String>[
+                for (final o in it.options)
+                  <String>{
+                    for (final v in cx.vocab)
+                      if (v.word.toLowerCase() == o.toLowerCase()) v.pos,
+                  }.join('/'),
+              ];
+              final lone = <int>[
+                for (var k = 0; k < cls.length; k++)
+                  if (cls.where((c) => c == cls[k]).length == 1) k,
+              ];
+              both(
+                'class-odd-one-out',
+                lone.length == 1
+                    ? (lone.first == it.correct ? 1 : 0)
+                    : 1 / cls.length,
+                0,
+              );
+            }
           } else if (fmt == 'S2') {
             final truth = targetWords(it.options[it.correct]);
             List<String> words(String o) =>

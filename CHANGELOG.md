@@ -20,11 +20,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - On-device listener: end-of-speech detector and PCM recorder (#1004).
 - On-device listener: pure-Dart CTC head and decoder (#1004).
 - On-device listener: pure-Dart log-mel front end (#1004).
+- Find my level asks gap spelling with two or three letters left out as well as one, for most words (#1098).
+- Find my level asks a sentence fill-in: the English sentence, the sentence with a blank, and four words of the same word class; languages without part-of-speech data are left out of it (#1099).
 
 ### Changed
 
 - Find my level and reviews make look-alike options: the wrong options of a sentence pick share the right one's length band and about as many words, and a review's wrong options come from the cards that look most like the right one (one length band, same word class, shared tags, nearest spelling), so no surface cue gives the answer away (#1097).
 - In Find my level, hearing a word and picking its meaning now counts for Reading as well as Hearing (#1105).
+- Find my level asks harder questions: more typed letters and same-class sentence fill-ins in place of easy picks, with no threshold loosened (#1100).
 - **Find my level shows its result card at once, and the result is simpler.** The "See my result" pause is gone: the card shows when the check ends (with Keep going on it while a sharper answer is possible). Each skill has a level name (Beginner, Amateur, Fluent or Expert) and the part of the whole language path it covers, drawn as a bar. Refs #1097.
 - Find my level no longer asks "what you heard" (arrange what was said); Hear questions always ask the meaning (#1105).
 - Deck-owned data (the theme list first) now lives on decks-live and updates with the decks, so a new theme needs no app release (owner request). The copy bundled in the app is the fallback for an offline first start and an app that cannot read the new file.
