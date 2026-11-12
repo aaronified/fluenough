@@ -1,0 +1,26 @@
+"schema": 1
+"id": "ja-en-grammar-te-form"
+"kind": "layer"
+"core": "ja-grammar-te-form"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "The te-form: verbs joined with て (te)"
+"description": "The te-form is the verb form that joins actions (I got up, washed and went out) and makes requests. It ends in て (te) or で (de), and how the verb changes depends on its group: an ichidan verb drops る (ru), a godan verb changes its last sound, and する (suru) and くる (kuru) are irregular. Every verb a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+"license": "CC-BY-SA-4.0"
+"tags":
+  - "grammar"
+  - "unreviewed"
+"table":
+  "slot_name": "form"
+  "slots":
+    "te": "te-form of {meaning}"
+    "ending": "what replaces the last sound in the te-form of {meaning}"
+"rules":
+  "ja-rule-te-form":
+    "name": "The te-form"
+    "explanation": "The te-form ends in {1} or で (de). An ichidan verb drops る (ru) and adds {1}: たべる (taberu) becomes {2}. A godan verb changes its last sound: く (ku) becomes いて (ite), as in {3}; ぐ (gu) becomes いで (ide), as in {4}; す (su) becomes して (shite), as in {5}; む (mu), ぶ (bu) and ぬ (nu) become んで (nde), as in {6}; う (u), つ (tsu) and る (ru) become って (tte), as in {7}. いく (iku) is the one exception: {8}, not いいて (iite). くる (kuru) becomes {9} and する (suru) becomes {10}."
+  "ja-rule-te-ending":
+    "name": "The te-form endings"
+    "explanation": "The ending depends on the last sound of a godan verb: {2} after く (ku), {3} after ぐ (gu), {4} after す (su), {5} after む (mu), ぶ (bu) or ぬ (nu), and {6} after う (u), つ (tsu) or る (ru). An ichidan verb takes {1}. Two verbs break the pattern: いく (iku) takes {6}, and くる (kuru) becomes きて (kite)."

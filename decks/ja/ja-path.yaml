@@ -260,7 +260,9 @@ units:
       - { id: "meishi", text: { "en": "A business card and a short job description" } }
   - decks: ["ja-numbers-big", "ja-numbers-big-sentences", "ja-reading-numbers-big"]
     words: 35
-  - planned: { id: "ja-grammar-counters", grammar: "counters" }
+  - decks: ["ja-grammar-counters", "ja-grammar-counters-sentences"]
+    words: 0
+    grammar: ["counters"]
     listening_passages:
       - { id: "two-coffees-three-people", text: { "en": "Ordering for a group: two coffees, three people, one sheet of paper" } }
     reading_passages:
@@ -344,7 +346,9 @@ units:
       - { id: "a-normal-day", text: { "en": "Someone talks through an ordinary working day" } }
     reading_passages:
       - { id: "daily-timetable", text: { "en": "A timetable for a day: wake, work, eat, bathe, sleep" } }
-  - planned: { id: "ja-grammar-te-form", grammar: "te-form" }
+  - decks: ["ja-grammar-te-form", "ja-grammar-te-form-sentences"]
+    words: 0
+    grammar: ["te-form", "te-ending"]
     listening_passages:
       - { id: "and-then", text: { "en": "Telling a morning in order: I got up, washed and went out" } }
     reading_passages:
