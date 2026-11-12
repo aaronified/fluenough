@@ -102,7 +102,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.10.0
 
-13 approved open issues.
+10 approved open issues.
 
 **Bugs**
 
@@ -118,13 +118,10 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 - [#1095](https://github.com/aaronified/fluenough/issues/1095) Review shell: Again / Hard / Okay / Easy self-rating buttons
 - [#1100](https://github.com/aaronified/fluenough/issues/1100) Placement: make the questions much tougher
-- [#1106](https://github.com/aaronified/fluenough/issues/1106) Placement: reverse direction questions (English spoken, learner answers in the target language)
 - [#1017](https://github.com/aaronified/fluenough/issues/1017) Plan: build entire languages as private decks (Your decks)
 - [#1096](https://github.com/aaronified/fluenough/issues/1096) Reviews: use the new placement question types
-- [#1097](https://github.com/aaronified/fluenough/issues/1097) Placement: drop the "See your results" screen and simplify the result card
 - [#1098](https://github.com/aaronified/fluenough/issues/1098) Placement: more cloze questions (single and multiple letters)
 - [#1099](https://github.com/aaronified/fluenough/issues/1099) Placement: sentence fill-in-the-blank with same-word-class options
-- [#1105](https://github.com/aaronified/fluenough/issues/1105) Placement: remove 'what you heard' questions; always ask the meaning, with tougher non-guessable items
 
 ### 1 · Skill model + FSRS
 
