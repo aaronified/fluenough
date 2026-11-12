@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Culture Recommendations</title>
+<meta name="description" content="A browse list of popular works (book, film, series, song, play, podcast) with a briefing, an I have completed this action, a home section of completed works, and comprehension questions for a completed work.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&display=swap">
+<style>
+/* ===== The page around the phones (not the app) ===== */
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 16px 72px}
+h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;font-weight:700}
+.cap1{margin:0 0 16px;color:var(--page-muted);font-size:14px}
+.tw{display:flex;flex-wrap:wrap;gap:10px 24px;margin:0 0 14px}
+.tg{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--page-muted);flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--page-line);border-radius:10px;overflow:hidden;flex-wrap:wrap}
+.seg button{font:inherit;font-size:14px;min-height:40px;padding:0 14px;border:0;background:var(--page-card);color:var(--page-fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--page-acc);color:var(--page-bg);font-weight:600}
+section.opt{margin:0 0 52px;padding-top:20px;border-top:1px solid var(--page-line)}
+.frames{display:flex;flex-wrap:wrap;gap:20px 24px;align-items:flex-start}
+.fcol{display:flex;flex-direction:column;gap:6px;width:360px;max-width:100%}
+.fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+.sticky{position:sticky;top:0;z-index:20;background:var(--page-bg);padding:10px 0 4px;margin-bottom:12px;border-bottom:1px solid var(--page-line)}
+/* ===== The app: lib/ui/theme.dart (M3, Roboto; ColorScheme.fromSeed of the forest seed) =====
+   Every size is calc(N px * var(--t)), t = 1.4, the app's text cap (#505). Icons do not scale. */
+.ph{--t:1.4;width:360px;max-width:100%;height:740px;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
+.ph button{font-family:inherit;color:inherit;cursor:pointer}
+.appbar{flex:none;min-height:56px;display:flex;align-items:center;padding:0 4px 0 8px;color:var(--onSv);gap:2px}
+.appbar .ttl{flex:1;min-width:0;font-size:calc(20px*var(--t));line-height:1.2;font-weight:500;color:var(--onS);padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ib{width:48px;height:48px;border:0;background:none;display:flex;align-items:center;justify-content:center;border-radius:24px;padding:0;color:var(--onSv);flex:none}
+svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
+.sp{flex:1}
+.scroll{flex:1;min-height:0;overflow-y:auto;padding:0 16px 16px;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.t-body{font-size:calc(14px*var(--t));line-height:1.4;margin:0}
+.t-sm{font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv);margin:0}
+.t-lab{font-size:calc(12px*var(--t));line-height:1.3;font-weight:600;letter-spacing:.4px;color:var(--onSv);text-transform:uppercase;margin:14px 0 6px}
+.t-h{font-size:calc(16px*var(--t));line-height:1.3;font-weight:500;margin:0}
+.script{font-family:"Noto Sans Devanagari","Noto Sans Bengali",Roboto,sans-serif}
+.nowrap{white-space:nowrap}
+/* language bar */
+.lbar{display:flex;gap:8px;padding:0 16px 10px;flex:none}
+.pill{border:1px solid var(--ol);border-radius:8px;min-height:32px;padding:0 12px;font-size:calc(14px*var(--t));font-weight:500;display:inline-flex;align-items:center;gap:6px;background:none;color:var(--onSv)}
+.pill.on{background:var(--sc);color:var(--onSc);border-color:transparent}
+/* buttons */
+.btn{min-height:calc(40px*var(--t));border-radius:calc(20px*var(--t));border:0;font-size:calc(14px*var(--t));line-height:1.2;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;padding:6px 16px}
+.btn.fill{background:var(--p);color:var(--onP)}
+.btn.tonal{background:var(--sc);color:var(--onSc)}
+.btn.out{background:none;border:1px solid var(--ol);color:var(--p)}
+.btn.text{background:none;color:var(--p);padding:6px 12px}
+.btn.full{width:100%}
+.btn.sm{min-height:48px;border-radius:24px}
+/* cards */
+.card{background:var(--sLow);border-radius:16px;padding:14px 16px;margin:0 0 12px;display:flex;gap:12px;align-items:center;width:100%;text-align:left;border:0}
+.card .tx{flex:1;min-width:0}
+.card .ic{flex:none;width:40px;height:40px;border-radius:20px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center}
+/* bottom nav */
+.nav{flex:none;display:flex;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);padding:8px 4px 10px}
+.nav div{flex:1;text-align:center;font-size:calc(11px*var(--t));line-height:1.2;color:var(--onSv);display:flex;flex-direction:column;align-items:center;gap:2px}
+.nav div .pl{width:56px;height:28px;border-radius:14px;display:flex;align-items:center;justify-content:center}
+.nav div.on{color:var(--onS);font-weight:600}
+.nav div.on .pl{background:var(--sc);color:var(--onSc)}
+/* settings rows */
+/* sheet */
+.scrim{position:absolute;inset:0;background:rgba(0,0,0,.42);z-index:3}
+.sheet{position:absolute;z-index:4;left:0;right:0;bottom:0;background:var(--sLow);border-radius:28px 28px 0 0;display:flex;flex-direction:column;max-height:88%}
+.sheet .grab{flex:none;width:32px;height:4px;border-radius:2px;background:var(--onSv);opacity:.4;margin:10px auto 6px}
+.sheet .scroll{padding:6px 20px 20px}
+.sheet h3{margin:0 0 4px;font-size:calc(20px*var(--t));font-weight:500;line-height:1.2}
+.opt-row{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:none;border:0;padding:6px 0;min-height:48px;font-size:calc(14px*var(--t));line-height:1.3}
+.opt-row .tx{flex:1;min-width:0}
+.opt-row .tx small{display:block;font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.3}
+.box{flex:none;width:20px;height:20px;border-radius:3px;border:2px solid var(--onSv);display:flex;align-items:center;justify-content:center}
+.box.rd{border-radius:50%}
+.opt-row[aria-checked="true"] .box{background:var(--p);border-color:var(--p)}
+.box svg{width:16px;height:16px;fill:var(--onP);opacity:0}
+.opt-row[aria-checked="true"] .box svg{opacity:1}
+.sep{border-top:1px solid var(--olv);margin:6px 0}
+/* word rows */
+.wrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;align-items:center;border-top:1px solid var(--olv);padding:10px 0;width:100%;text-align:left;background:none;border-left:0;border-right:0;border-bottom:0}
+.wrow .w{font-size:calc(20px*var(--t));line-height:1.25;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrow .rd{font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrow .mn{font-size:calc(14px*var(--t));line-height:1.3;grid-column:1}
+.wrow .act{grid-column:2;grid-row:1/4;display:flex;align-items:center;gap:0}
+.wrow.unl .w,.wrow.unl .rd,.wrow.unl .mn{opacity:.78}
+.mastery{display:inline-flex;align-items:center;height:calc(18px*var(--t));padding:0 8px;border-radius:calc(9px*var(--t));font-size:calc(11px*var(--t));line-height:1;font-weight:600;letter-spacing:.3px}
+.m-new{box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
+.m-learning{background:var(--sc);color:var(--onSc)}
+.m-known{background:var(--p);color:var(--onP)}
+.audio{width:48px;height:48px;border-radius:24px;border:0;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;flex:none}
+.audio.sm{width:40px;height:40px}
+.bottom{flex:none;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv)}
+/* key-value (inspect) */
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;margin:0}
+.kv dt{font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.5}
+.kv dd{margin:0;font-size:calc(14px*var(--t));line-height:1.4;min-width:0;overflow-wrap:anywhere}
+.mono{font-family:ui-monospace,"Roboto Mono",monospace;font-size:calc(12px*var(--t))}
+.blk{display:flex;gap:12px;align-items:flex-start;border-radius:16px;padding:12px 14px;background:var(--sHigh);margin:8px 0}
+.blk p{margin:0;font-size:calc(14px*var(--t));line-height:1.35}
+.blk .tt{font-size:calc(12px*var(--t));font-weight:700;letter-spacing:.3px;text-transform:uppercase;margin:0 0 2px;color:var(--onSv)}
+/* conversation */
+.turns{display:flex;flex-direction:column;gap:12px;padding:4px 0}
+.turn{max-width:92%;border-radius:20px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.turn.a{align-self:flex-start;background:var(--sLow);border-bottom-left-radius:6px}
+.turn.b{align-self:flex-end;background:var(--sc);color:var(--onSc);border-bottom-right-radius:6px}
+.turn .who{font-size:calc(11px*var(--t));font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+.turn.a .who{color:var(--onSv)}
+.turn .tl{font-size:calc(20px*var(--t));line-height:1.45;font-weight:500}
+.turn .tl button{background:none;border:0;padding:0 1px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dotted currentColor}
+.turn .tl button.sel{background:var(--p);color:var(--onP);border-radius:6px;border-bottom-color:transparent}
+.turn .rdg{font-size:calc(13px*var(--t));line-height:1.3;opacity:.95}
+.turn .ml{font-size:calc(14px*var(--t));line-height:1.3;opacity:.95}
+.turn.live .tl{opacity:.85}
+.live-dot{display:inline-block;width:8px;height:8px;border-radius:4px;background:var(--E);margin-right:6px}
+.mic{display:flex;gap:12px;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);align-items:stretch}
+.mic .btn{flex:1;min-height:calc(48px*var(--t));flex-direction:column;gap:2px;border-radius:24px;font-size:calc(13px*var(--t))}
+.mic .btn svg.i{width:28px;height:28px}
+.mic .btn.on{outline:3px solid var(--onS);outline-offset:2px}
+.status{display:flex;align-items:center;gap:8px;padding:0 16px 8px;flex:none}
+/* highlight of what changed */
+.hl-on .chg{outline:2px dashed var(--E);outline-offset:3px;position:relative;border-radius:14px}
+.hl-on .chg::after{content:"new";position:absolute;top:-10px;right:6px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:6px;z-index:2;letter-spacing:.3px}
+.hl-on .chg.upd::after{content:"changed"}
+.hl-on .chg.gone::after{content:"removed"}
+.ghost{opacity:.55;text-decoration:line-through;pointer-events:none}
+.hide{display:none!important}
+.note{font-size:13px;color:var(--page-muted);margin:6px 0 14px;max-width:760px}
+.tabs{flex:none;display:flex;overflow-x:auto;scrollbar-width:none;box-shadow:0 -1px 0 var(--olv) inset;padding:0 4px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;min-height:48px;padding:0 12px;border:0;background:none;font-size:calc(14px*var(--t));font-weight:500;color:var(--onSv);display:flex;align-items:center;gap:6px;border-bottom:3px solid transparent;white-space:nowrap}
+.tab .n{font-size:calc(12px*var(--t));font-weight:600;background:var(--sc);color:var(--onSc);border-radius:10px;padding:1px 7px}
+.tab[aria-selected="true"]{color:var(--p);border-bottom-color:var(--p);font-weight:700}
+.tab .best{width:6px;height:6px;border-radius:3px;background:var(--p)}
+.sbox{margin:0 16px 8px;flex:none;display:flex;align-items:center;gap:8px;background:var(--sHigh);border-radius:28px;min-height:56px;padding:0 8px 0 16px}
+.sbox .q{flex:1;min-width:0;font-size:calc(16px*var(--t));white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 8px}
+.chp{border:1px solid var(--ol);border-radius:8px;min-height:32px;padding:0 10px;font-size:calc(12px*var(--t));display:inline-flex;align-items:center;gap:4px;background:none;color:var(--onSv);font-weight:500}
+.chp.on{background:var(--sc);color:var(--onSc);border-color:transparent}
+.tag{display:inline-flex;align-items:center;gap:4px;height:calc(18px*var(--t));padding:0 7px;border-radius:calc(9px*var(--t));font-size:calc(11px*var(--t));line-height:1;font-weight:700;letter-spacing:.3px;white-space:nowrap}
+.tag.lv{box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
+.tag.pro{background:var(--pl);color:var(--onPl)}
+.tag.up{background:none;box-shadow:inset 0 0 0 1px var(--pl);color:var(--pl)}
+.tag.kind{background:var(--sc);color:var(--onSc)}
+.tag.pr{background:var(--pr);color:var(--onPr)}
+.rrow{display:flex;gap:12px;align-items:flex-start;border-top:1px solid var(--olv);padding:12px 0;width:100%;text-align:left;background:none;border-left:0;border-right:0;border-bottom:0}
+.rrow .ico{flex:none;width:40px;height:40px;border-radius:12px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(14px*var(--t))}
+.rrow .tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.rrow .nm{font-size:calc(16px*var(--t));line-height:1.3;font-weight:500}
+.rrow .sub{font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv)}
+.rrow .rt{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.rrow.up{opacity:.8}
+.rrow.up .nm{font-weight:400}
+.bar{height:6px;border-radius:3px;background:var(--olv);overflow:hidden;margin-top:2px}
+.bar i{display:block;height:100%;background:var(--p)}
+.ex{font-size:calc(14px*var(--t));line-height:1.4;background:var(--sHigh);border-radius:10px;padding:6px 10px;margin-top:2px}
+.corr{font-size:calc(12px*var(--t));color:var(--onSv);margin:0 0 6px;line-height:1.4}
+.corr b{color:var(--onS)}
+.big{font-size:calc(20px*var(--t));line-height:1.3;font-weight:500}
+.more{display:flex;align-items:center;justify-content:center;min-height:48px;border-top:1px solid var(--olv);color:var(--p);font-size:calc(14px*var(--t));font-weight:600;width:100%;background:none;border-left:0;border-right:0;border-bottom:0}
+.empty{text-align:center;padding:28px 8px;color:var(--onSv)}
+.empty .big{color:var(--onS);margin:8px 0 4px}
+.empty svg.i{width:48px;height:48px;opacity:.7;margin:0 auto}
+.hint{font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.35;margin:0 0 8px}
+.pillrow{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0}
+.addb{min-height:48px;border-radius:24px;border:1px solid var(--ol);background:none;color:var(--p);font-weight:600;font-size:calc(13px*var(--t));padding:0 12px;display:inline-flex;align-items:center;gap:4px}
+.thumb{flex:none;width:72px;height:72px;border-radius:14px;background:var(--sHigh);display:flex;align-items:center;justify-content:center;color:var(--onSv);position:relative;overflow:hidden}
+.thumb svg.i{width:32px;height:32px;opacity:.6}
+.thumb.ph2{background:repeating-linear-gradient(45deg,var(--sHigh) 0 8px,var(--sLow) 8px 16px);box-shadow:inset 0 0 0 1px var(--ol)}
+.cred{font-size:calc(11px*var(--t));line-height:1.3;color:var(--onSv)}
+.tl{position:relative;margin:6px 0 6px 8px;padding-left:16px;border-left:2px solid var(--olv)}
+.tl .ev{position:relative;padding:0 0 12px}
+.tl .ev::before{content:"";position:absolute;left:-23px;top:5px;width:12px;height:12px;border-radius:6px;background:var(--s);box-shadow:inset 0 0 0 2px var(--ol)}
+.tl .ev.met::before{background:var(--p);box-shadow:none}
+.tl .ev.this::before{background:var(--pl);box-shadow:0 0 0 3px var(--sc)}
+.tl .ev.now::before{background:var(--pr);box-shadow:none}
+.tl .ev b{font-size:calc(13px*var(--t));display:block;font-weight:600}
+.tl .ev span{font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.35}
+.strip{display:flex;gap:0;overflow:hidden;margin:6px 0;position:relative;padding-top:10px}
+.strip::before{content:"";position:absolute;left:0;right:0;top:15px;height:2px;background:var(--olv)}
+.strip .d{flex:1;min-width:0;text-align:center;position:relative;font-size:calc(10px*var(--t));line-height:1.2;color:var(--onSv)}
+.strip .d i{display:block;width:12px;height:12px;border-radius:6px;margin:0 auto 4px;background:var(--s);box-shadow:inset 0 0 0 2px var(--ol);position:relative;top:-4px}
+.strip .d.met i{background:var(--p);box-shadow:none}.strip .d.this i{background:var(--pl);box-shadow:0 0 0 3px var(--sc)}.strip .d.now i{background:var(--pr);box-shadow:none}
+.strip .d.this{color:var(--onS);font-weight:700}
+.qt{border-left:4px solid var(--p);padding:4px 0 4px 12px;margin:6px 0}
+.qt .big{font-size:calc(22px*var(--t))}
+.src{font-size:calc(11px*var(--t));line-height:1.4;color:var(--onSv)}
+.legacy{border-radius:16px;padding:12px 14px;background:var(--sHigh);margin:8px 0}
+.legacy .tt{font-size:calc(12px*var(--t));font-weight:700;letter-spacing:.3px;text-transform:uppercase;color:var(--onSv);margin:0 0 4px}
+.legacy li{font-size:calc(13px*var(--t));line-height:1.35;margin:0 0 4px}
+.legacy ul{margin:4px 0 0;padding-left:18px}
+.sw2{width:52px;height:32px;border-radius:16px;background:var(--olv);position:relative;flex:none}
+.sw2::after{content:"";position:absolute;top:4px;left:4px;width:24px;height:24px;border-radius:12px;background:var(--onSv)}
+.sw2.on{background:var(--p)}.sw2.on::after{left:24px;background:var(--onP)}
+.frames.wide .fcol{width:360px}
+.opt h2 small{font-weight:400;color:var(--page-muted);font-size:14px}
+.qs{margin:0 0 40px;padding:14px 16px;border:1px solid var(--page-line);border-radius:12px;background:var(--page-card);max-width:760px;font-size:14px}
+.hl-on .tabs.chg,.hl-on .chips.chg,.hl-on .corr.chg{margin-bottom:10px;margin-top:4px}.hl-on .tabs.chg{margin-left:4px;margin-right:4px}
+
+body,.ph,.script{font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",system-ui,sans-serif}
+.cover{flex:none;width:56px;height:80px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--onSc);background:repeating-linear-gradient(45deg,var(--sc) 0 8px,var(--sHigh) 8px 16px);box-shadow:inset 0 0 0 1px var(--ol);position:relative}
+.cover svg.i{width:28px;height:28px;opacity:.7}
+.cover.sm{width:44px;height:62px}
+.done{position:absolute;right:-6px;top:-6px;width:22px;height:22px;border-radius:11px;background:var(--p);color:var(--onP);display:flex;align-items:center;justify-content:center}
+.done svg.i{width:16px;height:16px}
+.qopt{display:flex;gap:10px;align-items:center;min-height:48px;border:1px solid var(--ol);border-radius:12px;padding:8px 12px;margin:0 0 8px;width:100%;text-align:left;background:none;font-size:calc(16px*var(--t));font-weight:500}
+.qopt.ok{background:var(--sc);color:var(--onSc);border-color:transparent}
+.hrow{display:flex;gap:12px;overflow:hidden;padding:6px 0 10px}
+</style>
+</head>
+<body>
+<div class="wrap" id="wrap">
+<h1>Culture recommendations</h1>
+<p class="cap1">Popular works we point to but do not reproduce: book, film, series, song, play, podcast. Browse with a short briefing, mark "I've completed this", see completed works on the home screen, and answer comprehension questions in the target language. Phone 360 dp at 1.4x text, light and dark, Hindustani and Bengali. Self-checks and notes: culture-recommendations.md. Titles and facts are examples for a reviewer to check.</p>
+<div class="sticky tw">
+ <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
+ <div class="tg">Course <span class="seg" data-k="c"><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button></span></div>
+ <div class="tg">Learner <span class="seg" data-k="m"><button data-v="s">Learns the script only</button><button data-v="0">A1</button><button data-v="1">A2</button><button data-v="2">B1</button></span></div>
+ <div class="tg">Highlight changes <span class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
+ <div class="tg">Briefing <span class="seg" data-k="br"><button data-v="a">A: opens in the list</button><button data-v="b">B: opens a sheet</button></span></div>
+ <div class="tg">Home section <span class="seg" data-k="hm"><button data-v="a">A: cover strip</button><button data-v="b">B: one line + count</button></span></div>
+</div>
+<div id="root"></div>
+</div>
+<script>
+const PAL={
+dark:{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sHigh":"#262b27","ol":"#8a938b","olv":"#404942","E":"#ffb4ab","onE":"#690005","pl":"#E0A458","onPl":"#2b1a00","pr":"#9ecaff","onPr":"#00315a"},
+light:{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sHigh":"#e4eae2","ol":"#717972","olv":"#c0c9c0","E":"#ba1a1a","onE":"#ffffff","pl":"#8A5A00","onPl":"#ffffff","pr":"#1565C0","onPr":"#ffffff"}};
+const IC={search:"M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z",close:"M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z",back:"M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z",add:"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z",chev:"M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z",check:"M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z",lock:"M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM9 8V6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9z",work:"M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z",vol:"M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z",quote:"M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z",tag:"M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58s1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z",deck:"M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z",flag:"M14.4 6 14 4H5v17h2v-7h5.6l.4 2h7V6z",place:"M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z",info:"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z",play:"M8 5v14l11-7z",hist:"M13 3a9 9 0 0 0-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.954 8.954 0 0 0 13 21a9 9 0 0 0 0-18zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z",person:"M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z",image:"M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z",star:"M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z",eyeoff:"M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2z",tune:"M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z",more:"M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z",today:"M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"};
+const ic=(n,s)=>`<svg class="i" viewBox="0 0 24 24" aria-hidden="true"${s?` style="width:${s}px;height:${s}px"`:''}><path d="${IC[n]}"/></svg>`;
+const ph=(cap,bar,body,bottom,over)=>`<div class="fcol"><div class="fcap">${cap}</div><div class="ph">${bar}<div class="scroll">${body}</div>${bottom||''}${over||''}</div></div>`;
+const abar=(t,back,acts)=>`<div class="appbar">${back?`<button class="ib" aria-label="Back">${ic('back')}</button>`:'<span style="width:8px"></span>'}<span class="ttl">${t}</span>${acts||''}</div>`;
+const nav=on=>`<div class="nav">${['Today','Decks','Progress','Settings'].map(x=>`<div class="${x==on?'on':''}"><span class="pl">${ic(x=='Today'?'today':x=='Decks'?'deck':x=='Progress'?'star':'tune')}</span>${x}</div>`).join('')}</div>`;
+function wire(S,build){
+ document.querySelectorAll('.seg').forEach(s=>{s.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;S[s.dataset.k]=b.dataset.v;build()})});
+}
+function sync(S){document.querySelectorAll('.seg').forEach(s=>s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',S[s.dataset.k]==b.dataset.v)));}
+function theme(S,root){const p=PAL[S.theme];root.style.cssText=Object.entries(p).map(([k,v])=>`--${k}:${v}`).join(';');root.className=S.hl=='1'?'hl-on':'';document.documentElement.dataset.theme=S.theme;}
+
+const S={theme:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light',c:'hi',m:'1',hl:'1',br:'a',hm:'a',kind:'all',sel:0,done:{}};
+const LV=['A1','A2','B1'];
+const KN={book:'Book',film:'Film',series:'Series',song:'Song',play:'Play',podcast:'Podcast'};
+/* script: the script a book is written in (books only). pd: public domain; deck: also quoted in a culture deck. */
+const W={
+hi:{name:'Hindustani',sc:'Devanagari',items:[
+ {id:'h1',k:'book',t:'ईदगाह',en:'Idgah',by:'Premchand',yr:1933,l:2,script:'Devanagari',pd:true,deck:'Premchand: Idgah (passage, B1)',brief:'A short story. A boy, Hamid, goes to the Eid fair with three paise and thinks of his grandmother.',len:'About 20 pages',q:['हामिद मेले से क्या खरीदता है?',['चिमटा','मिठाई','खिलौना'],0]},
+ {id:'h2',k:'book',t:'गोदान',en:'Godan',by:'Premchand',yr:1936,l:2,script:'Devanagari',pd:true,deck:'',brief:'A novel about a farmer, Hori, and his wish to own a cow.',len:'About 300 pages · long',q:['होरी क्या पालना चाहता है?',['गाय','घोड़ा','बकरी'],0]},
+ {id:'h3',k:'book',t:'بوستان خیال',en:'Bostan-e-Khayal',by:'Mir Amman',yr:1802,l:2,script:'Perso-Arabic',pd:true,deck:'',brief:'A tale collection in the Perso-Arabic script.',len:'Long',q:null},
+ {id:'h4',k:'film',t:'लगान',en:'Lagaan',by:'Ashutosh Gowariker',yr:2001,l:2,brief:'Villagers play cricket against their rulers to avoid a tax. Spoken Hindi with Awadhi flavour.',len:'3 h 44',q:['गाँव वाले किसके ख़िलाफ़ खेलते हैं?',['अंग्रेज़ों','पड़ोसी गाँव','राजा'],0]},
+ {id:'h5',k:'series',t:'मालगुडी डेज़',en:'Malgudi Days',by:'Shankar Nag',yr:1987,l:1,brief:'Short episodes about children and a small town. Slow, clear speech.',len:'39 episodes of 25 min',q:['स्वामी किस उम्र का बच्चा है?',['छोटा','बूढ़ा','जवान'],0]},
+ {id:'h6',k:'song',t:'ऐ मेरे वतन के लोगों',en:'Ae mere watan ke logon',by:'Lata Mangeshkar',yr:1963,l:1,brief:'A patriotic song, sung slowly. Many lines are simple.',len:'6 min',q:['यह गीत किस के बारे में है?',['देश','बारिश','मेला'],0]},
+ {id:'h7',k:'play',t:'आधे अधूरे',en:'Adhe Adhure',by:'Mohan Rakesh',yr:1969,l:2,brief:'A play about one family at home; spoken, everyday Hindi.',len:'2 h',q:null},
+ {id:'h8',k:'podcast',t:'कहानी सुनो',en:'Story podcast (example)',by:'Various',yr:2021,l:0,brief:'Short stories read slowly, with simple words.',len:'10 min each',q:['कहानी कहाँ सुनी जाती है?',['फ़ोन पर','पानी में','दूकान में'],0]}]},
+bn:{name:'Bengali',sc:'Bengali script',items:[
+ {id:'b1',k:'book',t:'পোস্টমাস্টার',en:'The Postmaster',by:'Rabindranath Tagore',yr:1891,l:2,script:'Bengali',pd:true,deck:'Tagore: The Postmaster (passage, B1)',brief:'A short story. A city postmaster and an orphan girl, Ratan, in a village.',len:'About 10 pages · literary register',q:['রতন কে?',['একটি অনাথ মেয়ে','গ্রামের শিক্ষিকা','পোস্টমাস্টারের মেয়ে'],0]},
+ {id:'b2',k:'book',t:'পথের পাঁচালী',en:'Pather Panchali',by:'Bibhutibhushan Bandyopadhyay',yr:1929,l:2,script:'Bengali',pd:true,deck:'',brief:'A novel about Apu and his sister Durga in a village.',len:'About 250 pages · long',q:['অপুর দিদির নাম কী?',['দুর্গা','রতন','লক্ষ্মী'],0]},
+ {id:'b3',k:'book',t:'রক্তকরবী',en:'Rakta Karabi',by:'Rabindranath Tagore',yr:1926,l:2,script:'Bengali',pd:true,deck:'',brief:'A play in book form, set in a town of gold miners.',len:'About 60 pages',q:null},
+ {id:'b4',k:'film',t:'পথের পাঁচালী',en:'Pather Panchali',by:'Satyajit Ray',yr:1955,l:2,brief:'The novel as a film. Slow scenes, spoken village Bengali.',len:'2 h 5',q:['দুর্গা কার সঙ্গে খেলে?',['অপু','রতন','মা'],0]},
+ {id:'b5',k:'series',t:'ব্যোমকেশ',en:'Byomkesh Bakshi',by:'Basu Chatterjee',yr:1993,l:1,brief:'Detective tales in short episodes; clear speech.',len:'Episodes of 25 min',q:null},
+ {id:'b6',k:'song',t:'আমার সোনার বাংলা',en:'Amar Shonar Bangla',by:'Rabindranath Tagore',yr:1905,l:1,pd:true,deck:'Amar Shonar Bangla (stanza, A2)',brief:'The national anthem of Bangladesh. The words are in your culture deck; here you can find a recording.',len:'4 min',q:['এই গানে কার কথা বলা হয়েছে?',['বাংলা','সমুদ্র','বাজার'],0]},
+ {id:'b7',k:'podcast',t:'গল্প শুনি',en:'Story podcast (example)',by:'Various',yr:2022,l:0,brief:'Short stories read slowly, with simple words.',len:'10 min each',q:null}]}};
+const IKIND={book:'deck',film:'play',series:'play',song:'vol',play:'quote',podcast:'vol'};
+function visible(w){
+ const m=S.m;let hid=0,wrongScript=0;
+ const out=w.items.filter(x=>{
+  if(m=='s'){ if(x.k!='book')return false; if(x.script&&x.script!=w.sc.split(' ')[0]){wrongScript++;return false;} return true;}
+  if(x.l>+m){hid++;return false;} return true;});
+ return {out,hid,wrongScript};
+}
+function kinds(w){
+ // books only for learners who learn scripts (here: always shown for a script learner and for learners at any level who also learn the script)
+ const v=visible(w).out;const set=[...new Set(v.map(x=>x.k))];
+ return set;
+}
+const tagL=l=>`<span class="tag lv">${LV[l]}</span>`;
+function row(x,open){
+ const dn=S.done[x.id];
+ return `<div class="rrow"><button class="cover" style="border:0;padding:0" data-sel="${x.id}" aria-label="${x.en}">${ic(IKIND[x.k])}${dn?`<span class="done">${ic('check')}</span>`:''}</button><div class="tx"><button style="text-align:left;background:none;border:0;padding:0;color:inherit" data-sel="${x.id}"><span class="nm script">${x.t}</span></button><span class="sub">${x.en} · ${x.by} · ${x.yr}</span><span class="rt"><span class="tag kind">${KN[x.k]}</span>${tagL(x.l)}${x.pd?'<span class="tag pr">Public domain</span>':''}</span>${x.deck?`<span class="sub chg"><b>Also in your culture deck:</b> ${x.deck}</span>`:''}${open?`<span class="t-body" style="margin-top:4px">${x.brief}</span><span class="sub">${x.len} · Not included in the app: find it where you read, watch or listen.</span><span class="rt"><button class="btn ${dn?'tonal':'fill'} sm chg" style="min-height:48px;font-size:calc(13px*var(--t))" data-done="${x.id}">${dn?ic('check',18)+' Completed':"I've completed this"}</button>${dn&&x.q?`<button class="btn text" data-q="${x.id}">Questions</button>`:''}</span>`:`<span class="sub">${x.brief.split('. ')[0].replace(/\.$/,'')}.</span>`}</div></div>`;
+}
+function f1(w){
+ const {out,hid,wrongScript}=visible(w);const ks=kinds(w);
+ const sel=S.kind!='all'&&ks.includes(S.kind)?S.kind:'all';
+ const chips=`<div class="chips chg"><button class="chp ${sel=='all'?'on':''}" data-kind="all">All ${out.length}</button>${ks.map(k=>`<button class="chp ${sel==k?'on':''}" data-kind="${k}">${KN[k]} ${out.filter(x=>x.k==k).length}</button>`).join('')}</div>`;
+ const list=out.filter(x=>sel=='all'||x.k==sel);
+ const open=S.br=='a'?(S.sel&&list.find(x=>x.id==S.sel)?S.sel:list[0].id):null;
+ const notes=(S.m=='s'?`<div class="blk chg"><span style="color:var(--onSv)">${ic('info')}</span><div><p class="tt">You are learning the script</p><p>Only books in ${w.sc} are shown, because you can read them. Films, series, songs, plays and podcasts appear when you start the language.${wrongScript?` ${wrongScript} book in another script is not shown.`:''}</p></div></div>`:hid?`<p class="hint">${hid} more above your level. They unlock at B1.</p>`:'');
+ return ph('1 · Browse list, '+(S.m=='s'?'script-only learner':'level '+LV[+S.m]),abar('Culture recommendations',true),`${chips}${notes}<p class="hint">Popular works, not reproduced here. Public-domain works are also quoted in your culture deck.</p>`+list.map(x=>row(x,x.id==open)).join('')+(!list.length?'<p class="hint">Nothing yet at this level.</p>':''));
+}
+function f2(w){
+ const {out}=visible(w);const x=out.find(y=>y.id==S.sel)||out[0];const dn=S.done[x.id];
+ const body=`<div class="hd" style="display:flex;gap:12px"><div class="cover" style="width:72px;height:104px">${ic(IKIND[x.k])}</div><div style="min-width:0"><h3 class="script" style="margin:0;font-size:calc(20px*var(--t));font-weight:500">${x.t}</h3><p class="t-sm">${x.en}</p><p class="t-sm">${x.by} · ${x.yr}</p><div class="pillrow"><span class="tag kind">${KN[x.k]}</span>${tagL(x.l)}</div></div></div>
+ <p class="t-lab">Briefing at ${LV[Math.max(0,Math.min(2,S.m=='s'?0:+S.m))]}</p><p class="t-body chg">${x.brief}</p><p class="t-sm" style="margin-top:6px">${x.len}</p>
+ ${x.pd?`<div class="legacy"><p class="tt">Public domain</p><p style="margin:0;font-size:calc(13px*var(--t))">${x.deck?'You can read part of it in the app: '+x.deck+'.':'Free to read from libraries and archives; not copied into the app.'}</p></div>`:`<p class="src" style="margin-top:6px">Not included in the app. We do not host or link to copyrighted works.</p>`}
+ <button class="btn ${dn?'tonal':'fill'} full chg" style="margin-top:12px" data-done="${x.id}">${dn?ic('check',20)+' Completed · undo':"I've completed this"}</button>${dn&&x.q?`<button class="btn out full" style="margin-top:8px" data-q="${x.id}">Answer questions</button>`:''}`;
+ if(S.br=='a')return ph('2 · Briefing opens in the list (A): the first row of phone 1',abar('Culture recommendations',true),`<p class="hint">In variant A the briefing and the action open under the row in phone 1. Shown here as a close-up of the same row.</p>`+row(x,true));
+ return ph('2 · Briefing sheet (B)',abar('Culture recommendations',true),'<p class="hint">List behind the sheet.</p>',``,`<div class="scrim"></div><div class="sheet"><div class="grab"></div><div class="scroll">${body}</div></div>`);
+}
+function f3(w){
+ const dn=w.items.filter(x=>S.done[x.id]);
+ const strip=dn.length?`<div class="hrow">${dn.map(x=>`<div style="width:64px;flex:none;text-align:center"><div class="cover sm" style="margin:0 auto">${ic(IKIND[x.k])}<span class="done">${ic('check')}</span></div><p class="sub" style="font-size:calc(10px*var(--t));line-height:1.2;margin-top:4px">${x.en}</p></div>`).join('')}</div>`:'<p class="hint">Nothing completed yet.</p>';
+ const sec=S.hm=='a'?`<div class="card chg" style="flex-direction:column;align-items:stretch;gap:2px"><p class="t-h">Culture you have completed</p><p class="t-sm">${dn.length} ${dn.length==1?'work':'works'} · ${dn.filter(x=>x.q).length} with questions</p>${strip}<button class="btn text" style="align-self:flex-start;padding-left:0">See all and recommendations ${ic('chev',18)}</button></div>`:`<button class="card chg"><div class="ic">${ic('check',20)}</div><div class="tx"><p class="t-h">Culture</p><p class="t-sm">${dn.length} completed · next: ${(w.items.find(x=>!S.done[x.id]&&(S.m=='s'?x.k=='book':x.l<=+S.m))||{en:'nothing yet'}).en}</p></div>${ic('chev')}</button>`;
+ return ph('3 · Home (Today): what you have completed',abar('Today'),`<button class="btn fill full" style="margin:6px 0 12px">Start (12 min)</button>${sec}<button class="card"><div class="ic">${ic('vol',20)}</div><div class="tx"><p class="t-h">Listening</p><p class="t-sm">6 cards</p></div></button>`,nav('Today'));
+}
+function f4(w){
+ const x=w.items.find(y=>y.q&&(S.done[y.id]))||w.items.find(y=>y.q);
+ const q=x.q;
+ return ph('4 · Questions for a completed work',abar(x.en,true),`<p class="t-sm">Questions in ${w.name} at ${LV[Math.min(2,Math.max(0,x.l))]}: short words, the story you completed. Not graded against a score; a miss shows the sentence to re-read.</p><div class="chip" style="margin:6px 0">Question 1 of 3</div><p class="big script chg" style="margin:8px 0 12px">${q[0]}</p>`+q[1].map((o,i)=>`<button class="qopt script ${i==q[2]?'ok':''}"><span class="box rd" style="${i==q[2]?'background:var(--p);border-color:var(--p)':''}">${i==q[2]?ic('check'):''}</span>${o}</button>`).join('')+`<div class="legacy"><p class="tt">Right</p><p style="margin:0;font-size:calc(13px*var(--t))">Re-read: ${x.brief.split('. ')[0].replace(/\.$/,'')}.</p></div><button class="btn fill full" style="margin-top:8px">Next</button>`);
+}
+function f5(w){
+ return ph('5 · Rules at a glance',abar('Who sees what',true),`<p class="t-lab">Kind and who sees it</p>`+[['Book','Only learners who learn scripts. A script-only learner sees only books in that script, e.g. '+w.sc+'.'],['Film, series, song, play, podcast','From the day you start the language, at or below your level.'],['Public-domain work','Also quoted in a culture deck: the badge says where.'],['Above your level','Hidden, with a count and the level it unlocks (settings may show it with support, as in culture-in-course).']].map(x=>`<div class="blk"><div><p class="tt">${x[0]}</p><p>${x[1]}</p></div></div>`).join(''));
+}
+function build(){
+ const w=W[S.c];const root=document.getElementById('root');theme(S,root);
+ root.innerHTML=`<section class="opt"><div class="frames">${f1(w)}${f2(w)}${f3(w)}${f4(w)}${f5(w)}</div></section>
+ <section class="qs"><b>Open questions for the owner</b><ol>
+ <li>Briefing: opens under the row (A) or in a sheet (B)? At which level is it written (the learner's, or one per work)?</li>
+ <li>"I've completed this" is self-reported, with no proof. Is that enough, or should questions come first?</li>
+ <li>Do completed works count toward progress or only show on the home screen? Home: cover strip (A) or one line (B)?</li>
+ <li>Books: shown only to learners who learn scripts. For a learner at A1 who reads the script, do books above their language level appear?</li>
+ <li>Hindustani has two scripts: should the script-only filter follow the script the learner chose (Devanagari or Perso-Arabic), as shown?</li>
+ <li>Where do the works come from: a reviewed list per language, owner-curated, or contributor pull requests? Can we link out to where to find a work (library or service)?</li>
+ <li>Question sets: written per work by a bilingual reviewer, at the learner's level, three questions each? Is there a limit for a work with none (shown without a Questions button)?</li></ol></section>`;
+ sync(S);
+ root.querySelectorAll('[data-sel]').forEach(b=>b.addEventListener('click',()=>{S.sel=b.dataset.sel;build()}));
+ root.querySelectorAll('[data-done]').forEach(b=>b.addEventListener('click',()=>{S.done[b.dataset.done]=!S.done[b.dataset.done];build()}));
+ root.querySelectorAll('[data-kind]').forEach(b=>b.addEventListener('click',()=>{S.kind=b.dataset.kind;build()}));
+}
+S.done={h1:true,h5:true,b1:true,b6:true};
+S.sel=null;
+wire(S,()=>{S.sel=null;S.kind='all';build()});build();
+</script>
+</body>
+</html>
