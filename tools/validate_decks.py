@@ -8404,6 +8404,23 @@ def _creators_from_raw(raw: object) -> dict[str, dict]:
     return out
 
 
+def _recommended_creators(reports: list[Report], rep: Report, code: str) -> set[str]:
+    """The creator ids the language's recommendations file names: a creator
+    named there counts as cited, as one a card names does."""
+    for other in reports:
+        if other.recs_lang == code and other.recs_data is not None:
+            return {i for _, _, info in other.recs_data for i in info.get("_creators", [])}
+    found = _find_shared(rep.path, f"recommendations/{code}.yaml")
+    raw = _load_raw_view(found) if found is not None else None
+    out: set[str] = set()
+    for rec in (raw.get("recommendations") if isinstance(raw, dict) else None) or []:
+        ids = rec.get("creator") if isinstance(rec, dict) else None
+        for i in [ids] if isinstance(ids, str) else ids if isinstance(ids, list) else []:
+            if _is_str(i):
+                out.add(i)
+    return out
+
+
 def _creators_for(reports: list[Report], rep: Report, code: str
                   ) -> tuple[dict[str, dict] | None, Path | None]:
     for other in reports:
@@ -8512,6 +8529,7 @@ def check_kinds_across(reports: list[Report]) -> list[str]:
                                 f"{rep.creators_lang}")
         everyone = lang.all()
         cited = {i for o in everyone for ids, *_ in o.creator_refs for i in ids}
+        cited |= _recommended_creators(reports, rep, rep.creators_lang)
         for cid in rep.creators_data:
             if everyone and cid not in cited:
                 rep.warn(f"creator {cid}", "no card cites this creator yet")

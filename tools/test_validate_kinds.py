@@ -15,7 +15,7 @@ import unittest
 
 import kinds_testlib as k
 from kinds_testlib import KindsCase, card, CULTURE, CULTURE_LAYER, MEDICINE, MULTIWORD, \
-    PATH, PROVERBS, READING, SECTIONS
+    PATH, PROVERBS, READING, SECTIONS, CREATORS, RECS
 
 import validate_decks as vd
 
@@ -449,6 +449,28 @@ class AcrossFiles(KindsCase):
         code, text = self.run_main()
         # checked_by is a rater code: whatever the code, the creator has none.
         self.assertIn("but creator zz-ejemplo-autora has no checked_by", text)
+
+    def _add_a_creator_no_card_names(self) -> None:
+        def change(d: dict) -> None:
+            d["creators"].append({
+                "id": "zz-ejemplo-solo", "name": {"zz": {"text": "Sola Prueba"}},
+                "born": 1900, "era": "moderna",
+                "bio": {"en": "A made-up creator no card names."}})
+        self.edit(CREATORS, change)
+
+    def test_a_creator_no_card_or_recommendation_names_warns(self) -> None:
+        self._add_a_creator_no_card_names()
+        code, text = self.run_main()
+        self.assertEqual(code, 0, text)
+        self.assertIn("creator zz-ejemplo-solo: no card cites this creator yet", text)
+
+    def test_a_creator_only_a_recommendation_names_is_cited(self) -> None:
+        self._add_a_creator_no_card_names()
+        self.edit(RECS, lambda d: d["recommendations"][1]["creator"].append(
+            "zz-ejemplo-solo"))
+        code, text = self.run_main()
+        self.assertEqual(code, 0, text)
+        self.assertNotIn("no card cites this creator yet", text)
 
 
 if __name__ == "__main__":
