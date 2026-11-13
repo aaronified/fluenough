@@ -3286,6 +3286,12 @@ id another deck has: write `<language>-my-NNNN`, which no deck in the
 repository uses, and list a word another deck has by `ref`. The same file
 again replaces the deck with that id.
 
+The **sample deck pack**, `fluenough-sample-decks.zip`, is attached to every
+[release](https://github.com/aaronified/fluenough/releases/latest/download/fluenough-sample-decks.zip):
+one deck of every kind the fixtures cover (`test/fixtures/deck-kinds`, the
+made-up language `zz`) and the Spanish and Telugu sample course
+(`test/fixtures/sample-decks`), built by `tools/build_sample_pack.py`.
+
 An added deck that names a theme goes at the bottom of that theme's unit,
 through the path's wildcards; one with no theme, or a theme the course
 does not have, goes at the end. An added deck can be removed; what was
