@@ -126,11 +126,31 @@ class PrivateManifest {
       }
     }
     final code = string(languageNode, 'code', 'language.');
-    if (!isPrivateCode(code)) {
+    final kindText = string(root, 'kind', '');
+    final kind = PrivateKind.values
+        .where((k) => k.text == kindText)
+        .firstOrNull;
+    if (kind == null) {
+      throw FormatException(
+        'manifest.yaml: "kind" must be "new-language" or "modified-language", '
+        'got "$kindText"',
+      );
+    }
+    // A new language takes a private-use code, qaa to qtz, that no built-in
+    // language uses, so it can never clash with an official course. A package
+    // that modifies a language the app teaches carries that language's own
+    // code (te), and may not take a free private-use code: it modifies
+    // nothing (plan task 11).
+    if (kind == PrivateKind.newLanguage && !isPrivateCode(code)) {
       throw FormatException(
         'manifest.yaml: "language.code" "$code" must be a private-use code, '
-        'qaa to qtz, that no built-in language uses; a real language code '
-        'such as te is not allowed yet',
+        'qaa to qtz, that no built-in language uses, for a new language',
+      );
+    }
+    if (kind == PrivateKind.modifiedLanguage && !isModifiableCode(code)) {
+      throw FormatException(
+        'manifest.yaml: "language.code" "$code" must be the code of a '
+        'language the app teaches, such as te, for a modified language',
       );
     }
     final package = string(root, 'package', '');
@@ -144,16 +164,6 @@ class PrivateManifest {
     if (revision is! int || revision < 1) {
       throw const FormatException(
         'manifest.yaml: "revision" must be a whole number, 1 or more',
-      );
-    }
-    final kindText = string(root, 'kind', '');
-    final kind = PrivateKind.values
-        .where((k) => k.text == kindText)
-        .firstOrNull;
-    if (kind == null) {
-      throw FormatException(
-        'manifest.yaml: "kind" must be "new-language" or "modified-language", '
-        'got "$kindText"',
       );
     }
     final minApp = string(root, 'min_app', '');

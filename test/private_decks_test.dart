@@ -6,6 +6,7 @@ import 'package:fluenough/app/private_import.dart';
 import 'package:fluenough/app/private_store.dart';
 import 'package:fluenough/core/private/private_ids.dart';
 import 'package:fluenough/core/private/private_manifest.dart';
+import 'package:fluenough/core/private/private_package.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 // Private language packages, first slice (#1017, Plan-Private-Languages,
@@ -157,7 +158,7 @@ void main() {
         store: store,
         appVersion: '0.9.0',
       );
-      await store.setActive('fnpd-qaa', active: false);
+      await store.deactivate('fnpd-qaa');
       expect((await _catalogOf(store)).decks, isEmpty);
       expect((await store.packages()).single.active, isFalse);
     });
@@ -351,7 +352,7 @@ cards:
           revision: 1,
           kind: 'new-language',
         ),
-        isTrue,
+        PrivateInstall.installed,
       );
       final again = FilePrivateStore(dir);
       final paths = await again.list();
@@ -386,7 +387,7 @@ cards:
             revision: 2,
             kind: 'new-language',
           ),
-          isFalse,
+          PrivateInstall.failed,
         );
         expect((await store.packages()).single.revision, 1);
         expect(File('${dir.path}/escape.yaml').existsSync(), isFalse);
@@ -422,7 +423,7 @@ cards:
           revision: 1,
           kind: 'new-language',
         ),
-        isFalse,
+        PrivateInstall.failed,
       );
     });
   });

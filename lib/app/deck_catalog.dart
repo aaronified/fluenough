@@ -802,6 +802,9 @@ class DeckCatalog {
     final dataProblems = <String>[];
     final numberRules = <String, NumberRules>{};
     final languagePaths = <String, LanguagePath>{};
+    // A private package's path (#1017), by language: it replaces the built-in
+    // path of that language while the package is read, and nothing else.
+    final privatePaths = <String, LanguagePath>{};
     final sounds = <String, SoundContrasts>{};
     final romanisations = <String, Romanisation>{};
     final scriptGuides = <String, ScriptGuide>{};
@@ -975,7 +978,13 @@ class DeckCatalog {
           final source = path.split('/').last;
           final languagePath = parseLanguagePath(text, source: source);
           _requirePrivateLanguage(path, languagePath.language);
-          final earlier = languagePaths[languagePath.language];
+          // A private path is kept apart: where the language has a built-in
+          // path, the private one replaces it (below); two private paths of
+          // one package, or two built-in ones, are still a mistake.
+          final into = path.startsWith(privateDeckPrefix)
+              ? privatePaths
+              : languagePaths;
+          final earlier = into[languagePath.language];
           if (earlier != null) {
             throw DeckParseException(
               '${languagePath.language} already has a path, ${earlier.id}; '
@@ -983,7 +992,7 @@ class DeckCatalog {
               source: source,
             );
           }
-          languagePaths[languagePath.language] = languagePath;
+          into[languagePath.language] = languagePath;
         } on DeckParseException catch (e) {
           broken.add(BrokenDeck(path: path, error: e));
         }
@@ -1212,6 +1221,14 @@ class DeckCatalog {
       for (final entry in everything)
         if (entry.deck.hidden) entry,
     ];
+    // A private path replaces the built-in path of its language, and is
+    // marked as privately modified when the language is one the app teaches
+    // (its code is not a free private-use code).
+    for (final MapEntry(key: language, value: path) in privatePaths.entries) {
+      languagePaths[language] = isPrivateCode(language)
+          ? path
+          : path.asPrivatelyModified();
+    }
     final placed = _placed(_coursePaths(languagePaths, resolved), resolved);
     final scriptFeatures = <String, Set<String>>{};
     for (final guide in <Object>[
