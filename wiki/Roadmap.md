@@ -309,6 +309,8 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1168](https://github.com/aaronified/fluenough/issues/1168) Language: Assamese: full deck format
 - [#1169](https://github.com/aaronified/fluenough/issues/1169) Language: Bodo: full deck format
 - [#1170](https://github.com/aaronified/fluenough/issues/1170) Language: Dogri: full deck format
+- [#1171](https://github.com/aaronified/fluenough/issues/1171) Language: Gujarati: full deck format
+- [#1172](https://github.com/aaronified/fluenough/issues/1172) Language: Kannada: full deck format
 
 ## Plans
 
