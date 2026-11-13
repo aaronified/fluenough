@@ -59,11 +59,16 @@ import 'speech_test_sheet.dart';
 /// once speaking is set up), for after installing a voice or a language
 /// pack.
 class VoicesPage extends StatefulWidget {
-  const VoicesPage({super.key, this.apps});
+  const VoicesPage({super.key, this.apps, this.language});
 
   /// The voice apps listed under Other voices, for tests and the gallery.
   /// Null reads them from [appsAsset].
   final List<VoiceApp>? apps;
+
+  /// The language, by code, whose card the page opens at: scrolled into view,
+  /// with "Other languages on this phone" opened if it is in there (#233).
+  /// Null opens at the top.
+  final String? language;
 
   /// The hand-kept list of apps that install as phone voices (#642).
   static const String appsAsset = 'assets/voice_apps.yaml';
@@ -130,6 +135,12 @@ class _VoicesPageState extends State<VoicesPage> with WidgetsBindingObserver {
 
   /// The engine's error code from the last Play, by language code.
   final Map<String, String> _playFailed = <String, String>{};
+
+  /// Each language's card, to scroll to the one the page was opened at.
+  final Map<String, GlobalKey> _cardKeys = <String, GlobalKey>{};
+
+  /// Whether the page has scrolled to [VoicesPage.language] yet.
+  bool _scrolled = false;
 
   @override
   void initState() {
@@ -288,7 +299,20 @@ class _VoicesPageState extends State<VoicesPage> with WidgetsBindingObserver {
         if (!learns(l.code)) l,
     ];
     // Folded unless nothing is learned, then open, until the learner says.
-    final othersOpen = _othersOpen ?? learning.isEmpty;
+    final target = widget.language;
+    final othersOpen =
+        _othersOpen ??
+        (learning.isEmpty ||
+            (target != null && others.any((l) => l.code == target)));
+    if (target != null && !_scrolled) {
+      _scrolled = true;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        final context = _cardKeys[target]?.currentContext;
+        if (context != null && context.mounted) {
+          unawaited(Scrollable.ensureVisible(context));
+        }
+      });
+    }
     final speaking = state.features.isAvailable(Feature.drillSpeaking);
     Widget card(LanguageInfo language) {
       final blocks = state.voiceBlocksOf(language.code);
@@ -309,6 +333,7 @@ class _VoicesPageState extends State<VoicesPage> with WidgetsBindingObserver {
       final offersAi = state.asrLanguages.contains(language.code);
       if (offersAi) state.askAsrSize(language.code);
       Widget build(AiListener? ai) => LanguageVoiceCard(
+        key: _cardKeys.putIfAbsent(language.code, GlobalKey.new),
         language: language,
         glyph: _glyphOf(state, language),
         voiceStatus: _rechecking

@@ -140,6 +140,7 @@ class SettingsNotifier extends ChangeNotifier {
   Map<String, FontChoice> _fontChoices = const <String, FontChoice>{};
   Set<String> _speechNotOnDevice = const <String>{};
   Set<String> _speechUnsupported = const <String>{};
+  Set<String> _speechAlerted = const <String>{};
   Set<String> _scriptGuidesSeen = const <String>{};
   Set<String> _resourcesHidden = const <String>{};
   Map<String, Set<String>> _collapsedLevels = const <String, Set<String>>{};
@@ -1138,6 +1139,22 @@ class SettingsNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// The languages, by code, whose "speech works only online" alert Today
+  /// has shown (#233): it shows once per language.
+  Set<String> get speechAlerted => _speechAlerted;
+
+  bool hasSpeechAlert(String code) => _speechAlerted.contains(code);
+
+  /// Records that the alert for [code] was shown.
+  void markSpeechAlerted(String code) {
+    if (_speechAlerted.contains(code)) return;
+    _speechAlerted = Set<String>.unmodifiable(<String>{
+      ..._speechAlerted,
+      code,
+    });
+    notifyListeners();
+  }
+
   /// Forgets what listens found, so that the next ones find out again.
   void forgetFoundSpeech() {
     if (_speechNotOnDevice.isEmpty && _speechUnsupported.isEmpty) return;
@@ -1477,6 +1494,7 @@ class SettingsNotifier extends ChangeNotifier {
     }),
     'speech_not_on_device': (_speechNotOnDevice.toList()..sort()).join(','),
     'speech_unsupported': (_speechUnsupported.toList()..sort()).join(','),
+    'speech_alerted': (_speechAlerted.toList()..sort()).join(','),
     'script_guides_seen': (_scriptGuidesSeen.toList()..sort()).join(','),
     'resources_hidden': (_resourcesHidden.toList()..sort()).join(','),
     'placed_review': jsonEncode(<String, String>{
@@ -1788,6 +1806,11 @@ class SettingsNotifier extends ChangeNotifier {
         if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) {
           allowOnlineSpeech(code, true);
         }
+      }
+    }
+    if (pick('speech_alerted', (t) => t) case final v?) {
+      for (final code in v.split(',')) {
+        if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) markSpeechAlerted(code);
       }
     }
     if (pick('no_alphabet', (t) => t) case final v?) {
