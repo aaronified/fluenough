@@ -49,6 +49,9 @@ def main() -> int:
     if TARGET.exists():
         shutil.rmtree(TARGET)
     paths = list(index["bundled"])
+    # The deck-owned sections file the released app bundles: not in the index,
+    # but the sample keeps it so the bundled-asset build finds it.
+    paths.append("decks/sections.yaml")
     for language in kept:
         paths += [f["path"] for f in language["files"]]
         paths += [m["path"] for m in language.get("media", [])]

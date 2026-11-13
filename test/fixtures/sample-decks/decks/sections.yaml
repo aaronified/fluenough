@@ -1,0 +1,27 @@
+# Deck-owned data (owner, 2026-11-11): the Decks tab's sections, the deck
+# genres, the professions and the search kinds, as data. Edited on
+# decks-live with the decks; this copy on main is the app's bundled
+# fallback for an offline first start. Ids are permanent.
+# wiki/Plan-Deck-Kinds-And-Topics.md, D8.
+schema: 1
+kind: "sections"
+sections:
+  - { id: "path", name: { en: "Course" }, listed: true }
+  - { id: "beyond-basics", name: { en: "Beyond the basics" }, listed: true }
+  - { id: "professional", name: { en: "Professional" }, listed: false }
+genres:
+  - { id: "culture", name: { en: "Culture" }, section: "beyond-basics", search_kind: "culture", weave: true }
+  - { id: "proverbs", name: { en: "Proverbs" }, section: "beyond-basics", search_kind: "proverbs", weave: true }
+  - { id: "multiword", name: { en: "Multi-word verbs" }, section: "beyond-basics", search_kind: "multiword", weave: true }
+  - { id: "professional", name: { en: "Professional" }, section: "professional", search_kind: "situations", weave: false }
+professions: []
+search_kinds:
+  - { id: "situations", name: { en: "Situations" }, row: "scene", order: 1 }
+  - { id: "topics", name: { en: "Topics" }, row: "topic", order: 2 }
+  - { id: "decks", name: { en: "Decks" }, row: "deck", order: 3 }
+  - { id: "concepts", name: { en: "Grammar concepts" }, row: "concept", order: 4 }
+  - { id: "cards", name: { en: "Words" }, row: "card", order: 5 }
+  - { id: "units", name: { en: "Units" }, row: "unit", order: 6 }
+  - { id: "culture", name: { en: "Culture" }, row: "card", order: 7 }
+  - { id: "proverbs", name: { en: "Proverbs" }, row: "card", order: 8 }
+  - { id: "multiword", name: { en: "Multi-word verbs" }, row: "card", order: 9 }
