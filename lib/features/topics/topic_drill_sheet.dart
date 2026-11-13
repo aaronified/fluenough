@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/session.dart';
+import '../../app/situations.dart';
 import '../../app/skill.dart';
 import '../../l10n/app_localizations.dart';
 
@@ -88,10 +89,20 @@ class _TopicDrillSheetState extends State<TopicDrillSheet> {
     limit: _count == 0 ? null : _count,
   );
 
-  /// How many cards the chosen skills and size would ask right now.
+  /// The last count, kept for the skills and size it was made for, so a
+  /// rebuild does not build the session again.
+  String? _countKey;
+  int _countValue = 0;
+
+  /// How many distinct cards the chosen skills and size would ask right now.
   int _drillable(AppState state) {
+    final key = '$_count|${(<int>[for (final s in _skills) s.index]..sort())}';
+    if (key == _countKey) return _countValue;
     try {
-      return state.sheetSession(_request()).length;
+      final items = state.sheetSession(_request());
+      _countValue = <String>{for (final item in items) item.card.id}.length;
+      _countKey = key;
+      return _countValue;
     } on Object catch (error) {
       state.log.warning('A topic drill could not be counted: $error');
       return 1;
