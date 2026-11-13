@@ -56,6 +56,11 @@ enum Feature {
   // project (#495).
   deckTemplates(495),
   deckSend(495),
+  // Private languages (#1017): a package exported, a course downloaded to
+  // change, and a starter package. Built in a later slice.
+  privateExport(1017),
+  privateDownload(1017),
+  privateStarter(1017),
 
   // Feedback: support, bug reports and feedback by mail. Until it is on,
   // every report button opens a new GitHub issue instead.

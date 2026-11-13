@@ -43,6 +43,7 @@ class SpokenLanguage {
     this.typed = true,
     this.verification = NativeVerification.none,
     this.popular = false,
+    this.isPrivate = false,
   });
 
   /// The same code decks use for `native.code`, such as `bn`.
@@ -194,6 +195,12 @@ class SpokenLanguage {
   /// a hand-kept list in the bundled `assets/languages.yaml`, so a change
   /// reaches learners with the next app release).
   final bool popular;
+
+  /// Whether the entry comes from a private language package the learner
+  /// installed (#1017) rather than from `assets/languages.yaml`: a language
+  /// of their own, or a built-in one a package changes (its name and script
+  /// are the package's).
+  final bool isPrivate;
 
   /// Other names a search finds it by (`aliases`), such as "Urdu" for
   /// Hindustani (#623).

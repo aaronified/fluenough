@@ -8,11 +8,14 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/snack.dart';
+import '../private/private_decks_section.dart';
 import '../../ui/theme.dart';
 import 'settings_controls.dart';
 import 'settings_section_page.dart';
 
-/// Settings' Your decks page (#475, #495): Upload a deck, which opens the
+/// Settings' Your decks page (#475, #495, #1017): the private language
+/// packages first (Add a private language, a group for each package); then
+/// Upload a deck, which opens the
 /// page that checks a file and adds it; Get a template, incoming; and the
 /// decks the learner added, grouped by the language learned and then the
 /// language it is taught from, each with Open, Send it to us (incoming) and
@@ -44,6 +47,8 @@ class YourDecksPage extends StatelessWidget {
     return SettingsSectionPage(
       title: l10n.settingsRowDecks,
       builder: (context) => <Widget>[
+        // Private language packages (#1017): their own part of the page.
+        const PrivatePackagesSection(),
         GroupedList.settings(
           children: <Widget>[
             GroupedTile(

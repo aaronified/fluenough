@@ -20,7 +20,15 @@ class ReviewErasure {
     this.to,
     this.placement = false,
     this.placedAtSeconds = const <int>{},
+    this.idPrefix,
   });
+
+  /// The answers on the cards of a private language package, `fnpd-<code>-`
+  /// (#1017), and nothing else: the built-in course of the same code keeps
+  /// its progress, as does placement's credit. For "Remove and delete my
+  /// progress" (owner, 2026-11-13).
+  factory ReviewErasure.privatePackage(String code) =>
+      ReviewErasure(language: code, answers: true, idPrefix: 'fnpd-$code-');
 
   /// The language, as card ids name it: `te` for `te-0053`.
   final String language;
@@ -45,8 +53,19 @@ class ReviewErasure {
   /// Whether nothing is chosen.
   bool get isEmpty => !answers && !placement;
 
-  /// Whether [cardId] is of [language].
-  bool isOfLanguage(String cardId) => Abilities.languageOf(cardId) == language;
+  /// When set, only the cards whose id starts with it are selected, not every
+  /// card of [language]: a private package's cards (`fnpd-te-`) are not the
+  /// built-in course's, though both name `te`.
+  final String? idPrefix;
+
+  /// Whether [cardId] is of [language], or, with an [idPrefix], starts with
+  /// it.
+  bool isOfLanguage(String cardId) {
+    final prefix = idPrefix;
+    return prefix == null
+        ? Abilities.languageOf(cardId) == language
+        : cardId.startsWith(prefix);
+  }
 
   /// Whether a review of [cardId] given at [at] is one placement wrote: in
   /// a second placement wrote its credit, and with the shape of credit
