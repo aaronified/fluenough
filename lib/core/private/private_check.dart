@@ -212,6 +212,9 @@ const Set<String> _dataKinds = <String>{
   'sections',
 };
 
+/// A `!name` tag at the start of a YAML node.
+final RegExp _tagPattern = RegExp(r'(^|[\s:\-\[{,])![^\s!]');
+
 /// A package file read as YAML, for the checks that need a place.
 class _File {
   _File(this.path, this.root);
@@ -334,13 +337,6 @@ abstract final class PrivateCheck {
     YamlNode node;
     try {
       node = loadYamlNode(text.startsWith('﻿') ? text.substring(1) : text);
-    } on YamlException catch (e) {
-      // A tag the YAML reader does not build is a custom tag; any other
-      // YAML mistake is level 1's to tell.
-      if (e.message.contains('tag')) {
-        out.add(_error('yamlTag', file: path));
-      }
-      return;
     } on StackOverflowError {
       out.add(
         _error(
@@ -350,8 +346,13 @@ abstract final class PrivateCheck {
         ),
       );
       return;
-    } on Object {
-      // Not YAML this reads: level 1 says so.
+    } on Object catch (e) {
+      // A tag the YAML reader does not build is a custom tag (found by its
+      // message, or by a `!tag` in the text); any other YAML mistake is
+      // level 1's to tell.
+      if ('$e'.toLowerCase().contains('tag') || _tagPattern.hasMatch(text)) {
+        out.add(_error('yamlTag', file: path));
+      }
       return;
     }
     // A node a second visit reaches is an alias; the walk stops at the
@@ -359,10 +360,14 @@ abstract final class PrivateCheck {
     final visited = Set<YamlNode>.identity();
     var aliasAt = -1;
     var deepAt = -1;
+    var tagAt = -1;
     // [line] is where the walk is in the file: a repeated node reports the
     // line of its alias, not of the anchor it is the same object as.
     void walk(YamlNode n, int depth, int line) {
       if (aliasAt >= 0 || deepAt >= 0) return;
+      // A node written with a tag has it first in its text; a plain scalar
+      // cannot start with `!`, and a quoted one starts with its quote.
+      if (tagAt < 0 && n.span.text.startsWith('!')) tagAt = _lineOf(n);
       if (depth > privateYamlMaxDepth) {
         deepAt = _lineOf(n);
         return;
@@ -387,6 +392,7 @@ abstract final class PrivateCheck {
     }
 
     walk(node, 1, 1);
+    if (tagAt >= 0) out.add(_error('yamlTag', file: path, line: tagAt));
     if (aliasAt >= 0) out.add(_error('yamlAlias', file: path, line: aliasAt));
     if (deepAt >= 0) {
       out.add(
