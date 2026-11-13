@@ -179,6 +179,16 @@ contributor.
   `0.5.3`): it bumps `pubspec.yaml` and `lib/app/app_info.dart`, dates the
   changelog, commits, tags and builds (`tools/prepare_release.py`). There is
   no release pull request.
+- **Changelog lines are for the app's users** (owner, 2026-11-13: "the last
+  changelog for the app (the one that shows up at the start after an update)
+  was very weird. a lot of the entries were simply CI (nothing else). the
+  changelog writer needs to be wary of these mistakes, maybe add a skill for
+  writing changelogs in each PR commit. pure doc commits do not need update in
+  the changelog as they do not alter the app"). Follow
+  `.claude/skills/changelog/SKILL.md` for each line: only what a learner can
+  see or feel, a bold headline and one plain sentence, never CI, workflows,
+  tools, tests, refactors, deck content or docs, and no duplicate `###`
+  headings. A docs-only commit or push adds no CHANGELOG line.
 - **Milestones are releases** (0.4.4, 0.5.0, 0.6.0, 0.7.0, 0.9.0). The milestone's
   description holds its order, and the wiki's Roadmap page is generated from
   it (#484). Tidy issues and plans after work lands, and close issues when done. Tag new issues to a
