@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 
+import '../core/data/daos.dart' show RecommendationMarksDao;
 import '../core/data/database.dart';
 import '../core/data/replay_isolate.dart';
 import '../core/data/review_log.dart';
@@ -107,6 +108,11 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
     progress._writes = ready.then<void>((_) {}, onError: (_) {});
     return progress;
   }
+
+  /// The table of the recommended works the learner marked completed (deck-kinds
+  /// plan, D13, T25), which lives in this profile's database beside the log.
+  RecommendationMarksDao get recommendationMarksDao =>
+      _db.recommendationMarksDao;
 
   /// Completes once the review log has been read into memory, and the state
   /// cache rebuilt from it, or once reading it has failed ([persists]). Never

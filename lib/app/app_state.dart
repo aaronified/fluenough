@@ -55,6 +55,9 @@ import '../core/scheduling/lesson_sets.dart';
 import 'added_decks.dart';
 import '../core/decks/deck_index.dart';
 import 'app_log.dart';
+import 'recommendation_progress.dart';
+import 'recommendation_questions.dart';
+import '../core/decks/weave.dart' show cultureGenres;
 import 'card_media.dart';
 import 'card_sets.dart';
 import 'unlocks.dart';
@@ -202,6 +205,7 @@ class AppState extends ChangeNotifier {
     this.logFiles = const PickerLogFiles(),
     this._backupFiles = const PickerBackupFiles(),
     this._backupStore,
+    this._recommendationMarks,
     this.deckFiles = const PickerDeckFiles(),
     this.links = const LauncherLinks(),
     this.systemSettings = const NullSystemSettings(),
@@ -250,6 +254,7 @@ class AppState extends ChangeNotifier {
     }
     progress.addListener(_progressChanged);
     this.settings.addListener(_settingsChanged);
+    recommendationProgress.addListener(_marksChanged);
     addListener(_structureChanged);
     _loggedTab = shellTab.value;
     shellTab.addListener(_logTab);
@@ -364,6 +369,7 @@ class AppState extends ChangeNotifier {
     LogFiles logFiles = const PickerLogFiles(),
     BackupFiles backupFiles = const PickerBackupFiles(),
     BackupStore? backupStore,
+    RecommendationMarkStore? recommendationMarks,
     DeckFiles deckFiles = const PickerDeckFiles(),
     DeckStore? addedDecks,
     LinkOpener? links,
@@ -410,6 +416,7 @@ class AppState extends ChangeNotifier {
       logFiles: logFiles,
       backupFiles: backupFiles,
       backupStore: backupStore ?? MemoryBackupStore(),
+      recommendationMarks: recommendationMarks,
       deckFiles: deckFiles,
       links: links ?? FixedLinks(),
       systemSettings: systemSettings,
@@ -467,6 +474,16 @@ class AppState extends ChangeNotifier {
   /// Scheduling state and the review log. Has its own notifier.
   final ProgressStore progress;
 
+  /// The recommended works the learner marked completed, and the gate on their
+  /// questions (deck-kinds plan, D13, T25). Has its own notifier; kept in the
+  /// progress database and the backups.
+  late final RecommendationProgress recommendationProgress =
+      RecommendationProgress(
+        _recommendationMarks ?? markStoreFor(progress),
+        log: log,
+      );
+  final RecommendationMarkStore? _recommendationMarks;
+
   /// Where the review log's backup is saved and read from (#20).
   final LogFiles logFiles;
 
@@ -484,6 +501,8 @@ class AppState extends ChangeNotifier {
     log: log,
     languagesOnPhone: () => deckDownloads?.languagesOnPhone ?? <String>{},
     restored: _downloadRestored,
+    completedWorks: () => recommendationProgress.completed,
+    restoreMarks: recommendationProgress.replaceMarks,
   );
 
   /// After a restore, the languages the backup lists that are not on the
@@ -905,7 +924,19 @@ class AppState extends ChangeNotifier {
   List<DeckEntry> get addedHiddenDecks => _view.hidden;
 
   /// [decks] and the hidden decks a learner added: what a session may drill.
-  List<DeckEntry> get drillDecks => <DeckEntry>[...decks, ...addedHiddenDecks];
+  ///
+  /// The questions of the completed recommended works join them as reading
+  /// decks (D13, T25), and the culture and proverbs decks leave them while
+  /// "Show culture items" is off (D11, T20).
+  List<DeckEntry> get drillDecks => <DeckEntry>[
+    for (final entry in <DeckEntry>[...decks, ...addedHiddenDecks])
+      if (!_cultureOff(entry)) entry,
+    ...worksDecks,
+  ];
+
+  /// Whether [entry] is a culture or proverbs deck while culture items are off.
+  bool _cultureOff(DeckEntry entry) =>
+      !settings.cultureItems && cultureGenres.contains(entry.deck.genre);
 
   /// Every deck file that did not parse, for the "couldn't read" rows.
   List<BrokenDeck> get brokenDecks => _catalog.broken;
@@ -1013,7 +1044,7 @@ class AppState extends ChangeNotifier {
     return today;
   }
 
-  DeckEntry? deckById(String id) => _view.byId(id);
+  DeckEntry? deckById(String id) => _view.byId(id) ?? worksDeckById(id);
 
   /// [deckById], or a deck no native speaker has rated yet (#630): what a
   /// review of it reads, sent from the review screens alone.
@@ -1030,7 +1061,8 @@ class AppState extends ChangeNotifier {
       _catalog.languagePaths[language];
 
   /// The deck a card came from.
-  DeckEntry? deckOf(Card card) => _view.byId(card.deckId);
+  DeckEntry? deckOf(Card card) =>
+      _view.byId(card.deckId) ?? worksDeckById(card.deckId);
 
   /// The decks in the languages the current profile learns, and of those,
   /// only the [shownLanguage]'s while one is chosen (#461): what Today
@@ -1386,6 +1418,7 @@ class AppState extends ChangeNotifier {
       await deckDownloads?.open();
       _catalog = await deckCatalog.load();
       await progressReady;
+      await recommendationProgress.load();
       _status = CatalogStatus.ready;
       _mapSkills();
       log.event('Decks loaded: ${decks.length}');
@@ -2129,6 +2162,13 @@ class AppState extends ChangeNotifier {
 
   void _settingsChanged() => _settingsVersion++;
 
+  /// A work was marked or un-marked completed: its questions join or leave the
+  /// lessons and reviews, so what was kept for a queue is dropped (T25).
+  void _marksChanged() {
+    _structureVersion++;
+    _forgetPending();
+  }
+
   final Map<String, _Kept> _keptValues = <String, _Kept>{};
 
   /// [compute]'s value for [key] about language [code], kept until that
@@ -2642,14 +2682,22 @@ class AppState extends ChangeNotifier {
   /// placed, this version can drill nothing in it, or every card a lesson
   /// may teach is taught. A closed sentence does not count.
   bool _isTaughtOut(DeckEntry entry) =>
-      isPlaced(entry) || !canDrill(entry) || notStudiedOpenIn(entry) == 0;
+      isPlaced(entry) ||
+      _cultureOff(entry) ||
+      !canDrill(entry) ||
+      notStudiedOpenIn(entry) == 0;
 
   /// Whether the path is past [entry]: it is placed, this version can drill
   /// nothing in it, or every card in it is learned in the skills on.
-  bool isFinished(DeckEntry entry) => keptFor<bool>(entry.language.code, (
-    'isFinished',
-    entry.id,
-  ), () => isPlaced(entry) || !canDrill(entry) || notStudiedIn(entry) == 0);
+  bool isFinished(DeckEntry entry) => keptFor<bool>(
+    entry.language.code,
+    ('isFinished', entry.id),
+    () =>
+        isPlaced(entry) ||
+        _cultureOff(entry) ||
+        !canDrill(entry) ||
+        notStudiedIn(entry) == 0,
+  );
 
   /// The units Today teaches new cards from: for each language the profile
   /// learns, the first unit of its course's path that is not finished and
@@ -3742,10 +3790,19 @@ class AppState extends ChangeNotifier {
   }) {
     final cards = deckId != null
         ? deckById(deckId)?.cards ?? const <Card>[]
-        : _alternating(<List<DeckEntry>>[
-            for (final unit in pendingUnits)
-              if (unit.first.language.code == language) unit,
-          ]);
+        : <Card>[
+            ..._alternating(<List<DeckEntry>>[
+              for (final unit in pendingUnits)
+                if (unit.first.language.code == language)
+                  <DeckEntry>[
+                    for (final entry in unit)
+                      if (!_cultureOff(entry)) entry,
+                  ],
+            ]),
+            // The questions of completed works come after the path's own
+            // cards, as reading items (T25).
+            ...workQuestionCards(language),
+          ];
     final seen = <String>{};
     final gate = unlocks;
     return <Card>[
@@ -4168,6 +4225,9 @@ class AppState extends ChangeNotifier {
     progress.removeListener(_forgetPending);
     progress.removeListener(_progressChanged);
     settings.removeListener(_settingsChanged);
+    recommendationProgress
+      ..removeListener(_marksChanged)
+      ..dispose();
     removeListener(_structureChanged);
     shellTab
       ..removeListener(_logTab)

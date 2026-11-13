@@ -146,6 +146,15 @@ class SettingsPage extends StatelessWidget {
             : l10n.settingsSumActivitiesSomeOff(off),
         route: AppRoutes.settingsActivities,
       ),
+      _row(
+        context,
+        icon: Icons.auto_stories_outlined,
+        title: l10n.settingsRowCulture,
+        line: settings.cultureItems
+            ? l10n.settingsSumCultureOn
+            : l10n.settingsSumCultureOff,
+        route: AppRoutes.settingsCulture,
+      ),
       GroupedTile(
         leading: const Icon(Icons.palette_outlined),
         title: l10n.settingsRowLook,

@@ -15706,5 +15706,919 @@
         "example": "A2"
       }
     }
+  },
+  "settingsRowCulture": "Culture",
+  "@settingsRowCulture": {
+    "description": "Settings row: culture items woven through the course, their people and the recommended works."
+  },
+  "settingsSumCultureOn": "Items shown in the path and on Today",
+  "@settingsSumCultureOn": {
+    "description": "Line under the Culture row of Settings while culture items are on."
+  },
+  "settingsSumCultureOff": "Culture items are off",
+  "@settingsSumCultureOff": {
+    "description": "Line under the Culture row of Settings while culture items are off."
+  },
+  "cultureSettingShow": "Show culture items",
+  "@cultureSettingShow": {
+    "description": "Switch on the Culture settings page: proverbs, lines of verse and passages woven into the path and Today."
+  },
+  "cultureSettingShowOn": "In the path, on Today and in reviews",
+  "@cultureSettingShowOn": {
+    "description": "Line under the culture switch while it is on."
+  },
+  "cultureSettingShowOff": "Not in the path, on Today or in reviews. Search still finds them.",
+  "@cultureSettingShowOff": {
+    "description": "Line under the culture switch while it is off."
+  },
+  "cultureSettingAboveHeading": "Items above my level",
+  "@cultureSettingAboveHeading": {
+    "description": "Heading of the choice of what to do with a culture item above the learner’s level."
+  },
+  "cultureSettingAboveHide": "Do not show them",
+  "@cultureSettingAboveHide": {
+    "description": "Choice: culture items above the learner’s level are not shown."
+  },
+  "cultureSettingAboveHideBody": "Unlocks when you reach the level",
+  "@cultureSettingAboveHideBody": {
+    "description": "Line under the choice that hides items above the level."
+  },
+  "cultureSettingAboveSupport": "Show with support",
+  "@cultureSettingAboveSupport": {
+    "description": "Choice: culture items above the learner’s level are shown with support."
+  },
+  "cultureSettingAboveSupportBody": "Words glossed, a lock mark, not counted",
+  "@cultureSettingAboveSupportBody": {
+    "description": "Line under the choice that shows items above the level with support."
+  },
+  "cultureSettingHowMany": "How many",
+  "@cultureSettingHowMany": {
+    "description": "Heading of the culture settings that say how many items a unit gets and how they count."
+  },
+  "cultureSettingPerUnit": "Per unit",
+  "@cultureSettingPerUnit": {
+    "description": "Row of the culture settings: how many culture items each path unit is given."
+  },
+  "cultureSettingPerUnitValue": "{count, plural, =1{1 item} other{{count} items}}",
+  "@cultureSettingPerUnitValue": {
+    "description": "How many culture items a unit is given, as a row value and as a choice.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "cultureSettingCounts": "Count toward path progress",
+  "@cultureSettingCounts": {
+    "description": "Switch of the culture settings: whether a woven culture item counts as a step of its unit."
+  },
+  "cultureSettingCountsOn": "A culture item counts as a step of its unit",
+  "@cultureSettingCountsOn": {
+    "description": "Line under the counting switch while it is on."
+  },
+  "cultureSettingCountsOff": "Off: culture is a bonus",
+  "@cultureSettingCountsOff": {
+    "description": "Line under the counting switch while it is off."
+  },
+  "cultureSettingCreators": "Show creator and legacy",
+  "@cultureSettingCreators": {
+    "description": "Switch of the culture settings: the person behind an item and what still lives today."
+  },
+  "cultureSettingCreatorsOn": "Who made it and what still lives today",
+  "@cultureSettingCreatorsOn": {
+    "description": "Line under the creator switch while it is on."
+  },
+  "cultureSettingCreatorsOff": "Only the item and its source",
+  "@cultureSettingCreatorsOff": {
+    "description": "Line under the creator switch while it is off."
+  },
+  "cultureSettingOpenDeck": "The culture deck",
+  "@cultureSettingOpenDeck": {
+    "description": "Row of the culture settings that opens the whole culture deck of the language shown."
+  },
+  "cultureSettingNote": "Culture items are real texts, with the person behind them. An item above your level is never shown without support.",
+  "@cultureSettingNote": {
+    "description": "Help line at the foot of the culture settings page."
+  },
+  "cultureKindProverb": "Proverb",
+  "@cultureKindProverb": {
+    "description": "What a culture item is: a proverb."
+  },
+  "cultureKindLine": "Line",
+  "@cultureKindLine": {
+    "description": "What a culture item is: a line or stanza of verse or prose."
+  },
+  "cultureKindPassage": "Passage",
+  "@cultureKindPassage": {
+    "description": "What a culture item is: a passage of prose."
+  },
+  "cultureItemTitle": "Culture · {level}",
+  "@cultureItemTitle": {
+    "description": "Title of a culture item’s page.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "A1"
+      }
+    }
+  },
+  "cultureItemNotFound": "This culture item isn’t here",
+  "@cultureItemNotFound": {
+    "description": "Shown when a culture item cannot be found."
+  },
+  "cultureListen": "Listen",
+  "@cultureListen": {
+    "description": "Tooltip of the button that plays a culture item aloud."
+  },
+  "cultureGlossTitle": "Words",
+  "@cultureGlossTitle": {
+    "description": "Heading above the glossed words of a passage."
+  },
+  "cultureGlossEntry": "{word} · {meaning}",
+  "@cultureGlossEntry": {
+    "description": "A glossed word and what it means.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "देश"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "country"
+      }
+    }
+  },
+  "cultureNoAuthorTitle": "No single author",
+  "@cultureNoAuthorTitle": {
+    "description": "Title of the note on a folk saying nobody wrote."
+  },
+  "cultureNoAuthorBody": "A folk saying, in use for centuries.",
+  "@cultureNoAuthorBody": {
+    "description": "Body of the note on a folk saying nobody wrote."
+  },
+  "cultureNoKnownAuthor": "No known author",
+  "@cultureNoKnownAuthor": {
+    "description": "The author of a source line when the source names none."
+  },
+  "cultureNotShownTitle": "Not shown yet",
+  "@cultureNotShownTitle": {
+    "description": "Title of the notice on an item above the learner’s level that is not shown."
+  },
+  "cultureNotShownBody": "This item is at {level}. It opens when you reach that level.",
+  "@cultureNotShownBody": {
+    "description": "Body of the notice on an item above the learner’s level that is not shown.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "B1"
+      }
+    }
+  },
+  "cultureAboveTitle": "Above your level",
+  "@cultureAboveTitle": {
+    "description": "Title of the notice on an item above the learner’s level that is shown with support."
+  },
+  "cultureAboveBody": "Its words are glossed. It will not count toward your progress or be scheduled for review.",
+  "@cultureAboveBody": {
+    "description": "Body of the notice on an item above the learner’s level that is shown with support."
+  },
+  "culturePractise": "Practise this item",
+  "@culturePractise": {
+    "description": "Button that practises a culture item."
+  },
+  "culturePractiseAgain": "Practise again",
+  "@culturePractiseAgain": {
+    "description": "Button that practises a culture item already met."
+  },
+  "cultureMet": "You have met this item",
+  "@cultureMet": {
+    "description": "Line on a culture item the learner has met."
+  },
+  "cultureBonusNote": "A bonus: it does not count toward your progress.",
+  "@cultureBonusNote": {
+    "description": "Note under the practise button while culture is a bonus."
+  },
+  "cultureCountsNote": "It counts toward your progress in this unit.",
+  "@cultureCountsNote": {
+    "description": "Note under the practise button while culture counts toward the unit."
+  },
+  "cultureAllItems": "All culture items",
+  "@cultureAllItems": {
+    "description": "Link from a culture item to the whole culture deck."
+  },
+  "cultureBasisPublicDomain": "public domain",
+  "@cultureBasisPublicDomain": {
+    "description": "Part of a source line: the text is in the public domain."
+  },
+  "cultureBasisPublicDomainDied": "public domain: author died {year}",
+  "@cultureBasisPublicDomainDied": {
+    "description": "Part of a source line: the text is in the public domain because its author died in {year}.",
+    "placeholders": {
+      "year": {
+        "type": "String",
+        "example": "1936"
+      }
+    }
+  },
+  "cultureBasisLicensed": "licensed: {licence}",
+  "@cultureBasisLicensed": {
+    "description": "Part of a source line: the text is used under a licence.",
+    "placeholders": {
+      "licence": {
+        "type": "String",
+        "example": "CC-BY-4.0"
+      }
+    }
+  },
+  "cultureBasisQuotation": "short quotation",
+  "@cultureBasisQuotation": {
+    "description": "Part of a source line: the text is a short quotation the law allows."
+  },
+  "cultureBasisOral": "oral tradition",
+  "@cultureBasisOral": {
+    "description": "Part of a source line: the text is from oral tradition."
+  },
+  "cultureLegacyTitle": "Still alive today",
+  "@cultureLegacyTitle": {
+    "description": "Heading of the block on how a person and their work still shape the culture."
+  },
+  "cultureLegacyMore": "Tap the person for more",
+  "@cultureLegacyMore": {
+    "description": "Under the one legacy line on an item."
+  },
+  "cultureLegacyYear": "{year}: {text}",
+  "@cultureLegacyYear": {
+    "description": "A legacy example with its year.",
+    "placeholders": {
+      "year": {
+        "type": "int",
+        "example": "1990"
+      },
+      "text": {
+        "type": "String",
+        "example": "Taught in schools."
+      }
+    }
+  },
+  "cultureCreatorOpens": "Opens the person’s card",
+  "@cultureCreatorOpens": {
+    "description": "Spoken hint of the creator chip."
+  },
+  "cultureAbout": "About {name}",
+  "@cultureAbout": {
+    "description": "Heading above a creator’s bio.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Kabir"
+      }
+    }
+  },
+  "cultureTimelineHeading": "Timeline",
+  "@cultureTimelineHeading": {
+    "description": "Heading above the timeline strip on a creator’s card."
+  },
+  "cultureImageNone": "No licensed image yet",
+  "@cultureImageNone": {
+    "description": "Under a creator’s picture when the file has no licensed image, and the placeholder’s spoken label."
+  },
+  "cultureImageCredit": "Image: {credit}",
+  "@cultureImageCredit": {
+    "description": "Credit line under a creator’s picture: who made it and the licence.",
+    "placeholders": {
+      "credit": {
+        "type": "String",
+        "example": "Wikimedia Commons · public domain"
+      }
+    }
+  },
+  "cultureImagePublicDomain": "public domain",
+  "@cultureImagePublicDomain": {
+    "description": "Licence in a creator picture’s credit line."
+  },
+  "cultureImageOf": "Picture of {name}",
+  "@cultureImageOf": {
+    "description": "Spoken label of a creator’s picture.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Kabir"
+      }
+    }
+  },
+  "cultureImageLicenceLink": "Licence and source",
+  "@cultureImageLicenceLink": {
+    "description": "Link under a creator’s picture to its licence page."
+  },
+  "cultureLinkCopied": "Link copied",
+  "@cultureLinkCopied": {
+    "description": "Toast when a link could not be opened and was copied."
+  },
+  "cultureYearBce": "{year} BCE",
+  "@cultureYearBce": {
+    "description": "A year before the common era.",
+    "placeholders": {
+      "year": {
+        "type": "int",
+        "example": "500"
+      }
+    }
+  },
+  "cultureYearCirca": "c. {year}",
+  "@cultureYearCirca": {
+    "description": "An uncertain year.",
+    "placeholders": {
+      "year": {
+        "type": "String",
+        "example": "1500"
+      }
+    }
+  },
+  "cultureLifespan": "{born} to {died}",
+  "@cultureLifespan": {
+    "description": "A person’s dates.",
+    "placeholders": {
+      "born": {
+        "type": "String",
+        "example": "1861"
+      },
+      "died": {
+        "type": "String",
+        "example": "1941"
+      }
+    }
+  },
+  "cultureLifespanLiving": "{born}, living",
+  "@cultureLifespanLiving": {
+    "description": "A living person’s birth year.",
+    "placeholders": {
+      "born": {
+        "type": "String",
+        "example": "1962"
+      }
+    }
+  },
+  "cultureBorn": "Born {year}",
+  "@cultureBorn": {
+    "description": "A person whose death is not known.",
+    "placeholders": {
+      "year": {
+        "type": "String",
+        "example": "1962"
+      }
+    }
+  },
+  "cultureDied": "Died {year}",
+  "@cultureDied": {
+    "description": "A person whose birth is not known.",
+    "placeholders": {
+      "year": {
+        "type": "String",
+        "example": "1941"
+      }
+    }
+  },
+  "cultureTimelineTitle": "Timeline",
+  "@cultureTimelineTitle": {
+    "description": "Title of the full timeline screen."
+  },
+  "cultureTimelineStripLabel": "Timeline",
+  "@cultureTimelineStripLabel": {
+    "description": "Spoken label of the timeline strip."
+  },
+  "cultureTimelineFull": "Full timeline",
+  "@cultureTimelineFull": {
+    "description": "Button under the strip that opens the full timeline."
+  },
+  "cultureTimelineToday": "Today",
+  "@cultureTimelineToday": {
+    "description": "The right end of the timeline."
+  },
+  "cultureTimelineThis": "this one",
+  "@cultureTimelineThis": {
+    "description": "Spoken state of the timeline event of the work or person being looked at."
+  },
+  "cultureTimelineMet": "you met this",
+  "@cultureTimelineMet": {
+    "description": "State of a timeline event the learner has met."
+  },
+  "cultureTimelineNotYet": "not met yet",
+  "@cultureTimelineNotYet": {
+    "description": "State of a timeline event the learner has not met."
+  },
+  "cultureTimelineEventLabel": "{year}: {label}. {state}",
+  "@cultureTimelineEventLabel": {
+    "description": "Spoken label of a timeline event.",
+    "placeholders": {
+      "year": {
+        "type": "String",
+        "example": "1933"
+      },
+      "label": {
+        "type": "String",
+        "example": "Premchand · Idgah"
+      },
+      "state": {
+        "type": "String",
+        "example": "you met this"
+      }
+    }
+  },
+  "cultureTimelineWork": "{who} · {work}",
+  "@cultureTimelineWork": {
+    "description": "A work on the timeline: its creator and its name.",
+    "placeholders": {
+      "who": {
+        "type": "String",
+        "example": "Premchand"
+      },
+      "work": {
+        "type": "String",
+        "example": "Idgah"
+      }
+    }
+  },
+  "cultureTimelineYearLabel": "{year} · {label}",
+  "@cultureTimelineYearLabel": {
+    "description": "A timeline event with its year.",
+    "placeholders": {
+      "year": {
+        "type": "int",
+        "example": "1933"
+      },
+      "label": {
+        "type": "String",
+        "example": "Premchand · Idgah"
+      }
+    }
+  },
+  "cultureTimelineIntro": "Where the works you have met in {language} sit in time. Filled marks are works you have met.",
+  "@cultureTimelineIntro": {
+    "description": "Intro of the full timeline.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "cultureTimelineIntroCreator": "Where {name} sits among the works you have met in {language}. Filled marks are works you have met.",
+  "@cultureTimelineIntroCreator": {
+    "description": "Intro of the full timeline from a creator’s card.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Kabir"
+      },
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "cultureTimelineEmpty": "Nothing on the timeline yet",
+  "@cultureTimelineEmpty": {
+    "description": "Shown when there is nothing on the timeline."
+  },
+  "cultureDeckTitle": "{language} culture",
+  "@cultureDeckTitle": {
+    "description": "Title of the full culture deck of a course.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "cultureDeckCount": "{count, plural, =1{1 item} other{{count} items}} · {atLevel} at your level",
+  "@cultureDeckCount": {
+    "description": "Under the title of the culture deck.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      },
+      "atLevel": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "cultureDeckEmpty": "No culture items yet",
+  "@cultureDeckEmpty": {
+    "description": "Empty state of the culture deck."
+  },
+  "cultureDeckEmptyBody": "This course has no proverbs or culture decks yet.",
+  "@cultureDeckEmptyBody": {
+    "description": "Body of the empty culture deck."
+  },
+  "culturePeople": "People",
+  "@culturePeople": {
+    "description": "Heading of the list of creators in the culture deck."
+  },
+  "cultureUnlocksAt": "Unlocks at {level}",
+  "@cultureUnlocksAt": {
+    "description": "Title of a locked culture item.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "B1"
+      }
+    }
+  },
+  "cultureRowKindSource": "{kind} · {source}",
+  "@cultureRowKindSource": {
+    "description": "Line under a culture item in the deck: its kind and where it comes from.",
+    "placeholders": {
+      "kind": {
+        "type": "String",
+        "example": "Stanza"
+      },
+      "source": {
+        "type": "String",
+        "example": "Kabir · Dohavali · c. 1500"
+      }
+    }
+  },
+  "cultureDeckSourcesNote": "Every source line shows the author, the work, the date and why it may be quoted.",
+  "@cultureDeckSourcesNote": {
+    "description": "Note at the foot of the culture deck."
+  },
+  "cultureCardKind": "{kind}:",
+  "@cultureCardKind": {
+    "description": "The kind of a culture item on its card, before its first words.",
+    "placeholders": {
+      "kind": {
+        "type": "String",
+        "example": "Proverb"
+      }
+    }
+  },
+  "cultureCardLineBonus": "Culture · {level} · bonus",
+  "@cultureCardLineBonus": {
+    "description": "Line on the culture card of a unit while culture is a bonus.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "A1"
+      }
+    }
+  },
+  "cultureCardLineCounts": "Culture · {level} · counts toward the unit",
+  "@cultureCardLineCounts": {
+    "description": "Line on the culture card of a unit while culture counts.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "A1"
+      }
+    }
+  },
+  "cultureOffHint": "Culture items are off. Turn them on in Settings.",
+  "@cultureOffHint": {
+    "description": "Shown in a unit while culture items are off."
+  },
+  "cultureTodayTitle": "Culture · {level}",
+  "@cultureTodayTitle": {
+    "description": "Title of Today’s culture row.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "A1"
+      }
+    }
+  },
+  "cultureTodayLine": "{kind}, skip anytime",
+  "@cultureTodayLine": {
+    "description": "Line of Today’s culture row.",
+    "placeholders": {
+      "kind": {
+        "type": "String",
+        "example": "Proverb"
+      }
+    }
+  },
+  "recTitle": "Culture recommendations",
+  "@recTitle": {
+    "description": "Title of the recommended works screen."
+  },
+  "recEmpty": "No recommendations yet",
+  "@recEmpty": {
+    "description": "Empty state of the recommended works."
+  },
+  "recEmptyBody": "Popular works to find elsewhere will appear here once this course has them.",
+  "@recEmptyBody": {
+    "description": "Body of the empty recommended works."
+  },
+  "recIntro": "Popular works, not reproduced here. Public-domain works are also quoted in your culture deck.",
+  "@recIntro": {
+    "description": "Intro line of the recommended works list."
+  },
+  "recChipAll": "All {count}",
+  "@recChipAll": {
+    "description": "Filter chip: every recommended work.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "8"
+      }
+    }
+  },
+  "recChipKind": "{kind} {count}",
+  "@recChipKind": {
+    "description": "Filter chip: one kind of work with its count.",
+    "placeholders": {
+      "kind": {
+        "type": "String",
+        "example": "Book"
+      },
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "recHiddenAbove": "{count, plural, =1{1 more work is} other{{count} more works are}} above your level. They unlock at {level}.",
+  "@recHiddenAbove": {
+    "description": "Under the filter chips: works hidden because they are above the level.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      },
+      "level": {
+        "type": "String",
+        "example": "B1"
+      }
+    }
+  },
+  "recScriptOnlyTitle": "You are learning the script",
+  "@recScriptOnlyTitle": {
+    "description": "Title of the notice for a learner who learns only the script."
+  },
+  "recScriptOnlyBody": "Only books in the script you are learning are shown, because you can read them. Films, series, songs, plays and podcasts appear when you start {language}. {count, plural, =0{} =1{1 book in another script is not shown.} other{{count} books in another script are not shown.}}",
+  "@recScriptOnlyBody": {
+    "description": "Body of the notice for a learner who learns only the script.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      },
+      "count": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "recNothingAtLevel": "Nothing yet at this level.",
+  "@recNothingAtLevel": {
+    "description": "Shown when no recommended work is offered at the level."
+  },
+  "recMediumBook": "Book",
+  "@recMediumBook": {
+    "description": "Kind of work: a book."
+  },
+  "recMediumFilm": "Film",
+  "@recMediumFilm": {
+    "description": "Kind of work: a film."
+  },
+  "recMediumSeries": "Series",
+  "@recMediumSeries": {
+    "description": "Kind of work: a series."
+  },
+  "recMediumSong": "Song",
+  "@recMediumSong": {
+    "description": "Kind of work: a song."
+  },
+  "recMediumPlay": "Play",
+  "@recMediumPlay": {
+    "description": "Kind of work: a play."
+  },
+  "recMediumPodcast": "Podcast",
+  "@recMediumPodcast": {
+    "description": "Kind of work: a podcast."
+  },
+  "recMediumComic": "Comic",
+  "@recMediumComic": {
+    "description": "Kind of work: a comic."
+  },
+  "recPublicDomain": "Public domain",
+  "@recPublicDomain": {
+    "description": "Badge on a recommended work in the public domain."
+  },
+  "recAlsoInDeck": "Also in your culture deck: {deck}",
+  "@recAlsoInDeck": {
+    "description": "Line on a recommended work that a culture deck also quotes.",
+    "placeholders": {
+      "deck": {
+        "type": "String",
+        "example": "Premchand: Idgah"
+      }
+    }
+  },
+  "recNotIncluded": "Not included in the app: find it where you read, watch or listen.",
+  "@recNotIncluded": {
+    "description": "Line on the open recommended work."
+  },
+  "recLegalLine": "{kind}: {note}",
+  "@recLegalLine": {
+    "description": "A legal way to get a work, with its note.",
+    "placeholders": {
+      "kind": {
+        "type": "String",
+        "example": "Library"
+      },
+      "note": {
+        "type": "String",
+        "example": "Free: public domain"
+      }
+    }
+  },
+  "recLegalLibrary": "Library",
+  "@recLegalLibrary": {
+    "description": "Kind of legal route: a library."
+  },
+  "recLegalPublisher": "Publisher",
+  "@recLegalPublisher": {
+    "description": "Kind of legal route: the publisher."
+  },
+  "recLegalStore": "Store",
+  "@recLegalStore": {
+    "description": "Kind of legal route: a store."
+  },
+  "recLegalStream": "Stream",
+  "@recLegalStream": {
+    "description": "Kind of legal route: a streaming service."
+  },
+  "recLegalArchive": "Archive",
+  "@recLegalArchive": {
+    "description": "Kind of legal route: an archive."
+  },
+  "recLegalPublicDomain": "Public-domain copy",
+  "@recLegalPublicDomain": {
+    "description": "Kind of legal route: a public-domain copy."
+  },
+  "recIComplete": "I’ve completed this",
+  "@recIComplete": {
+    "description": "Button that marks a recommended work completed."
+  },
+  "recCompleted": "Completed",
+  "@recCompleted": {
+    "description": "Button and spoken label of a completed recommended work."
+  },
+  "recNotCompleted": "Marked as not completed",
+  "@recNotCompleted": {
+    "description": "Toast after a work’s completed mark is taken away."
+  },
+  "recQuestions": "Questions",
+  "@recQuestions": {
+    "description": "Button that opens the questions of a completed work."
+  },
+  "recHomeTitle": "Culture you have completed",
+  "@recHomeTitle": {
+    "description": "Title of the completed works card on Today."
+  },
+  "recHomeNone": "Nothing completed yet.",
+  "@recHomeNone": {
+    "description": "Line of the completed works card when there are none."
+  },
+  "recHomeCount": "{works, plural, =1{1 work} other{{works} works}} · {questions} with questions",
+  "@recHomeCount": {
+    "description": "Line of the completed works card: how many works and how many have questions.",
+    "placeholders": {
+      "works": {
+        "type": "int",
+        "example": "2"
+      },
+      "questions": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "recHomeSeeAll": "See all and recommendations",
+  "@recHomeSeeAll": {
+    "description": "Button of the completed works card."
+  },
+  "recCoverLabel": "{title}, completed",
+  "@recCoverLabel": {
+    "description": "Spoken label of a completed work’s cover.",
+    "placeholders": {
+      "title": {
+        "type": "String",
+        "example": "Idgah"
+      }
+    }
+  },
+  "recWorkNotFound": "This work isn’t here",
+  "@recWorkNotFound": {
+    "description": "Shown when a recommended work cannot be found."
+  },
+  "recNoQuestions": "This work has no questions yet",
+  "@recNoQuestions": {
+    "description": "Shown for a completed work that has no questions."
+  },
+  "recQuestionsLocked": "Questions come after you complete the work",
+  "@recQuestionsLocked": {
+    "description": "Title shown when the questions of a work not completed are asked for."
+  },
+  "recQuestionsLockedBody": "Mark the work completed to answer its questions. They also join your lessons then.",
+  "@recQuestionsLockedBody": {
+    "description": "Body shown when the questions of a work not completed are asked for."
+  },
+  "recQuestionsIntro": "Questions in {language} about the work you completed. They are not graded against a score; a miss shows what to re-read.",
+  "@recQuestionsIntro": {
+    "description": "Intro of the questions of a completed work.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "recQuestionOf": "Question {number} of {total}",
+  "@recQuestionOf": {
+    "description": "Which question of a work is shown.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "1"
+      },
+      "total": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "recOptionRight": "right answer",
+  "@recOptionRight": {
+    "description": "Spoken state of the right choice after answering."
+  },
+  "recOptionWrong": "your answer, not right",
+  "@recOptionWrong": {
+    "description": "Spoken state of a wrong choice after answering."
+  },
+  "recOptionLabel": "{option}, {state}",
+  "@recOptionLabel": {
+    "description": "Spoken label of a choice after answering.",
+    "placeholders": {
+      "option": {
+        "type": "String",
+        "example": "a pair of tongs"
+      },
+      "state": {
+        "type": "String",
+        "example": "right answer"
+      }
+    }
+  },
+  "recFeedbackRight": "Right",
+  "@recFeedbackRight": {
+    "description": "Feedback after a right answer."
+  },
+  "recFeedbackWrong": "Not quite",
+  "@recFeedbackWrong": {
+    "description": "Feedback after a wrong answer."
+  },
+  "recReread": "Re-read: {line}",
+  "@recReread": {
+    "description": "What to re-read after a miss.",
+    "placeholders": {
+      "line": {
+        "type": "String",
+        "example": "A short story about a boy at the Eid fair."
+      }
+    }
+  },
+  "recQuestionsNext": "Next",
+  "@recQuestionsNext": {
+    "description": "Button to the next question."
+  },
+  "recQuestionsFinish": "Finish",
+  "@recQuestionsFinish": {
+    "description": "Button after the last question."
+  },
+  "recQuestionsDone": "All questions answered",
+  "@recQuestionsDone": {
+    "description": "Title when the last question of a work is answered."
+  },
+  "recQuestionsScore": "You answered {right} of {total} right.",
+  "@recQuestionsScore": {
+    "description": "Score when the questions of a work are done.",
+    "placeholders": {
+      "right": {
+        "type": "int",
+        "example": "2"
+      },
+      "total": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "recQuestionsNote": "The same questions come back in your lessons and reviews while the work is marked completed.",
+  "@recQuestionsNote": {
+    "description": "Note under the questions of a completed work."
   }
 }

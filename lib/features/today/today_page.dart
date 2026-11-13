@@ -13,6 +13,8 @@ import '../../ui/widgets/language_bar.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/profile_avatar.dart';
 import '../../ui/widgets/visible_listenable_builder.dart';
+import '../culture/completed_works_card.dart';
+import '../culture/culture_cards.dart';
 import '../placement/native_choice.dart';
 import 'daily_card.dart';
 import 'fact_languages_sheet.dart';
@@ -165,6 +167,8 @@ class _TodayContent extends StatelessWidget {
         StreakCard(numbers: numbers),
         const SizedBox(height: 24),
         const SituationsCard(),
+        const TodayCultureCard(),
+        const CompletedWorksCard(),
         if (state.features.isIncoming(Feature.dailyFacts)) ...<Widget>[
           const SizedBox(height: 16),
           const _FactCard(),

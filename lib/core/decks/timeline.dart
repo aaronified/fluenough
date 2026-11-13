@@ -157,14 +157,17 @@ class Timeline {
 /// not shown (so that their name does not give the item away); a creator no
 /// work cites is shown. A legacy item is a mark only for a shown creator and
 /// only when it has a year no later than [today]. A work with an unknown
-/// creator is left out.
+/// creator is left out. [alsoCited] are creators cited by works not in
+/// [works] (a hidden deck, a deck that does not weave, a recommended work):
+/// they count as cited, so one no work at the level cites stays out.
 Timeline buildTimeline(
   CreatorsFile file,
   Iterable<TimelineWork> works,
   Level? level, {
   required int today,
+  Iterable<String> alsoCited = const <String>[],
 }) {
-  final cited = <String>{};
+  final cited = <String>{...alsoCited};
   final visible = <TimelineWorkMark>[];
   for (final work in works) {
     final known = <String>[

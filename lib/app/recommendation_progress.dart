@@ -6,6 +6,8 @@ import '../core/models/completed_work.dart';
 import '../core/models/reading.dart' show ReadingQuestion;
 import '../core/models/recommendation.dart';
 import 'app_log.dart';
+import 'database_progress.dart';
+import 'memory_progress.dart' show ProgressStore;
 
 /// Where the completed marks are kept (wiki Plan-Deck-Kinds-And-Topics.md,
 /// D13, T25): learner state in the progress database, never in a deck.
@@ -74,6 +76,14 @@ class DatabaseRecommendationMarkStore implements RecommendationMarkStore {
   Future<int> addMissing(Iterable<CompletedWork> works) =>
       _dao.addMissing(works);
 }
+
+/// The store for a profile's marks: its database's `recommendation_marks`
+/// table when [progress] is kept in one, else memory (a profile whose database
+/// could not be opened, a test).
+RecommendationMarkStore markStoreFor(ProgressStore progress) =>
+    progress is DatabaseProgress
+    ? DatabaseRecommendationMarkStore(progress.recommendationMarksDao)
+    : MemoryRecommendationMarkStore();
 
 /// The recommended works a learner completed: the marks the homepage lists,
 /// and the gate on their questions, which are asked only on a completed work
@@ -153,15 +163,48 @@ class RecommendationProgress extends ChangeNotifier {
       // The marks taken so far reach the store first, so a work marked a
       // moment ago is not counted as new.
       await _writes;
-      final added = await _store.addMissing(works);
-      for (final work in works) {
-        _marks.putIfAbsent(work.recommendationId, () => work);
-      }
-      if (added > 0) notifyListeners();
-      return added;
+      return await _addMissing(works);
     } on Object catch (e) {
       _log?.warning('Completed works could not be imported: $e');
       return 0;
+    }
+  }
+
+  /// Adds the works not marked here, without waiting for [_writes] (a restore
+  /// runs inside that queue, and waiting for itself would never finish).
+  Future<int> _addMissing(Iterable<CompletedWork> works) async {
+    final added = await _store.addMissing(works);
+    for (final work in works) {
+      _marks.putIfAbsent(work.recommendationId, () => work);
+    }
+    if (added > 0) notifyListeners();
+    return added;
+  }
+
+  /// Makes the marks those of a backup that is restored: a work marked here
+  /// and not in [works] is un-marked, one in [works] and not here is added
+  /// (the restore replaces what the learner has). Never throws: what fails is
+  /// logged and the marks stay as they were.
+  Future<void> replaceMarks(Iterable<CompletedWork> works) {
+    // Queued behind the pending writes, and the later ones behind it, so a
+    // restore never races a mark still being saved.
+    final done = _writes.then((_) => _replaceMarks(works));
+    _writes = done;
+    return done;
+  }
+
+  Future<void> _replaceMarks(Iterable<CompletedWork> works) async {
+    try {
+      final keep = <String>{for (final w in works) w.recommendationId};
+      for (final id in _marks.keys.toList()) {
+        if (keep.contains(id)) continue;
+        await _store.unmark(id);
+        _marks.remove(id);
+      }
+      await _addMissing(works);
+      notifyListeners();
+    } on Object catch (e) {
+      _log?.warning('Completed works could not be restored: $e');
     }
   }
 

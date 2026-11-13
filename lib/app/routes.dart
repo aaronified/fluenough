@@ -2,6 +2,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../core/feedback/report.dart';
+import '../features/culture/culture_deck_page.dart';
+import '../features/culture/culture_item_page.dart';
+import '../features/culture/culture_settings_page.dart';
+import '../features/culture/culture_timeline.dart';
+import '../features/culture/recommendations_page.dart';
+import '../features/culture/work_questions_page.dart';
 import '../features/decks/deck_detail_page.dart';
 import '../features/decks/import_page.dart';
 import '../features/decks/unit_page.dart';
@@ -107,6 +113,10 @@ abstract final class AppRoutes {
   static const String settingsSupport = '/settings/support';
   static const String settingsFonts = '/settings/fonts';
 
+  /// Settings' Culture page: the switch, what to do above the learner's level,
+  /// how many items a unit is given. Deck-kinds plan, T20.
+  static const String settingsCulture = '/settings/culture';
+
   /// Profiles and privacy, opened from the profile card.
   static const String settingsProfiles = '/settings/profiles';
   static const String spokenLanguages = '/spoken-languages';
@@ -130,6 +140,23 @@ abstract final class AppRoutes {
 
   /// A topic's page (#1137). Argument: a [TopicRequest].
   static const String topic = '/topic';
+
+  /// A language's full culture deck, with its people. Argument: the language
+  /// code, a [String]. Deck-kinds plan, T20.
+  static const String culture = '/culture';
+
+  /// A culture item's page. Argument: a [CultureItemRequest].
+  static const String cultureItem = '/culture-item';
+
+  /// The culture timeline, to today. Argument: a [CultureTimelineRequest].
+  static const String cultureTimeline = '/culture-timeline';
+
+  /// A language's recommended works. Argument: a [RecommendationsRequest].
+  /// Deck-kinds plan, T26.
+  static const String recommendations = '/recommendations';
+
+  /// The questions of a completed work. Argument: a [WorkQuestionsRequest].
+  static const String workQuestions = '/work-questions';
 
   /// A script's guide. Argument: the language code, a [String].
   static const String scriptGuide = '/script-guide';
@@ -192,6 +219,7 @@ abstract final class AppRoutes {
       settingsUpdates => const UpdatesPage(),
       settingsSupport => const SupportPage(),
       settingsFonts => const ScriptFontsPage(),
+      settingsCulture => const CultureSettingsPage(),
       settingsProfiles => const ProfilesPrivacyPage(),
       spokenLanguages => const LanguagesPage(),
       learnLanguages => LanguagesPage(
@@ -206,6 +234,17 @@ abstract final class AppRoutes {
         request: args,
       ),
       topic when args is TopicRequest => TopicPage(request: args),
+      culture when args is String => CultureDeckPage(language: args),
+      cultureItem when args is CultureItemRequest => CultureItemPage(
+        request: args,
+      ),
+      cultureTimeline when args is CultureTimelineRequest =>
+        CultureTimelinePage(request: args),
+      recommendations when args is RecommendationsRequest =>
+        RecommendationsPage(request: args),
+      workQuestions when args is WorkQuestionsRequest => WorkQuestionsPage(
+        request: args,
+      ),
       scriptGuide when args is String => ScriptGuidePage(guideKey: args),
       profiles => const ProfilesPage(),
       pin when args is String => PinPage(profileId: args),
@@ -244,6 +283,53 @@ abstract final class AppNavigator {
   ) => Navigator.of(context).pushNamed(
     AppRoutes.topic,
     arguments: TopicRequest(language: language, topicId: topicId),
+  );
+
+  /// [language]'s full culture deck, with its people (T20).
+  static Future<void> openCulture(BuildContext context, String language) =>
+      Navigator.of(context).pushNamed(AppRoutes.culture, arguments: language);
+
+  /// The page of culture item [itemId] of [language] (T20).
+  static Future<void> openCultureItem(
+    BuildContext context,
+    String language,
+    String itemId,
+  ) => Navigator.of(context).pushNamed(
+    AppRoutes.cultureItem,
+    arguments: CultureItemRequest(language: language, itemId: itemId),
+  );
+
+  /// The full culture timeline of [language], with [creatorId] marked (T20).
+  static Future<void> openCultureTimeline(
+    BuildContext context,
+    String language, [
+    String? creatorId,
+  ]) => Navigator.of(context).pushNamed(
+    AppRoutes.cultureTimeline,
+    arguments: CultureTimelineRequest(language: language, creatorId: creatorId),
+  );
+
+  /// [language]'s recommended works, with [openId] open (T26).
+  static Future<void> openRecommendations(
+    BuildContext context,
+    String language, {
+    String? openId,
+  }) => Navigator.of(context).pushNamed(
+    AppRoutes.recommendations,
+    arguments: RecommendationsRequest(language: language, openId: openId),
+  );
+
+  /// The questions of the completed work [recommendationId] (T26).
+  static Future<void> openWorkQuestions(
+    BuildContext context,
+    String language,
+    String recommendationId,
+  ) => Navigator.of(context).pushNamed(
+    AppRoutes.workQuestions,
+    arguments: WorkQuestionsRequest(
+      language: language,
+      recommendationId: recommendationId,
+    ),
   );
 
   /// A report from the screen [request] was raised on.

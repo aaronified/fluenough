@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import '../data/log_jsonl.dart';
+import '../models/completed_work.dart';
 import '../models/leech_action.dart';
 import '../scheduling/placement_withdrawal.dart';
 import '../scheduling/replay.dart';
@@ -154,6 +155,14 @@ class AppBackup {
   /// The placement credit the learner took back, as the log says. A backup
   /// from 0.9.1 or older has none.
   List<PlacementWithdrawal> get withdrawals => _parsed.withdrawals;
+
+  /// The recommended works the learner marked completed, as the log's
+  /// `completed` lines say (deck-kinds plan, D13, T25). A backup from before
+  /// them has none; a line that does not read is skipped, never a failed
+  /// restore.
+  late final List<CompletedWork> completedWorks = LogJsonl.decodeCompletedWorks(
+    log,
+  );
 
   /// The backup as a file's bytes.
   Uint8List encode() {
