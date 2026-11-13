@@ -453,8 +453,8 @@ class AcrossFiles(KindsCase):
     def _add_a_creator_no_card_names(self) -> None:
         def change(d: dict) -> None:
             d["creators"].append({
-                "id": "zz-ejemplo-solo", "name": {"zz": {"text": "Sola Prueba"}},
-                "born": 1900, "era": "moderna",
+                "id": "zz-ejemplo-solo", "name": {"zz": {"text": "Sola Prueba"}, "en": {"text": "Sola Prueba"}},
+                "born": 1900, "died": 1975, "era": "moderna",
                 "bio": {"en": "A made-up creator no card names."}})
         self.edit(CREATORS, change)
 
