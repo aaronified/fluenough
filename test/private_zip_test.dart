@@ -89,6 +89,77 @@ void main() {
     );
   });
 
+  test('refuses names that differ by case, non-ASCII names, look-alikes', () {
+    expect(
+      () => _read(<ZipSpec>[
+        ZipSpec('a.yaml', _text('x: 1')),
+        ZipSpec('A.yaml', _text('x: 2')),
+      ]),
+      _refuses('used twice'),
+    );
+    // A lowercase collision with manifest.yaml too.
+    expect(
+      () => _read(<ZipSpec>[
+        ZipSpec('manifest.yaml', _text('x: 1')),
+        ZipSpec('Manifest.yaml', _text('x: 2')),
+      ]),
+      _refuses('used twice'),
+    );
+    // NFC and NFD forms of one name: both are beyond ASCII, so refused.
+    expect(
+      () => _read(<ZipSpec>[ZipSpec('caf\u00e9.yaml', _text('x: 1'))]),
+      _refuses('file name'),
+    );
+    expect(
+      () => _read(<ZipSpec>[ZipSpec('cafe\u0301.yaml', _text('x: 1'))]),
+      _refuses('file name'),
+    );
+    const odd = <String>[
+      '\u0430.yaml', // Cyrillic a
+      'a\u2215b.yaml', // division slash
+      'a\u202eb.yaml', // bidi override
+      'a b.yaml',
+      'a*b.yaml',
+    ];
+    for (final name in odd) {
+      expect(
+        () => _read(<ZipSpec>[ZipSpec(name, _text('x: 1'))]),
+        _refuses('file name'),
+        reason: name,
+      );
+    }
+    // Letters, digits and ._/- are fine, in a folder too.
+    expect(
+      _read(<ZipSpec>[ZipSpec('qaa/en/a_b-1.v2.yaml', _text('x: 1'))]),
+      hasLength(1),
+    );
+  });
+
+  test('refuses an encrypted entry, a zip64 entry, and a nested archive', () {
+    expect(
+      () => _read(<ZipSpec>[ZipSpec('a.yaml', _text('x: 1'), flags: 0x0801)]),
+      throwsA(
+        isA<FormatException>().having(
+          (e) => e.message,
+          'message',
+          contains('encrypted'),
+        ),
+      ),
+    );
+    // The zip64 sentinel: 0xFFFFFFFF in the size field.
+    expect(
+      () => _read(<ZipSpec>[
+        ZipSpec('a.yaml', _text('x: 1'), declaredSize: 0xffffffff),
+      ]),
+      throwsA(isA<FormatException>()),
+    );
+    // A nested archive is read as a file with its bytes, not opened; the
+    // name is refused at level 0 (see private_check_test.dart).
+    expect(_read(<ZipSpec>[ZipSpec('inner.zip', _text('PK'))]).keys, <String>[
+      'inner.zip',
+    ]);
+  });
+
   test('refuses more files, more bytes, or a bigger file than allowed', () {
     final many = <ZipSpec>[
       for (var i = 0; i < 1001; i++) ZipSpec('f$i.yaml', _text('x')),

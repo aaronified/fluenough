@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:fluenough/core/private/private_check.dart';
+import 'package:fluenough/core/private/private_package.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/private_fixture.dart';
@@ -81,6 +82,35 @@ void main() {
         )!.isError,
         isTrue,
       );
+    });
+
+    test('names that differ by case, or beyond ASCII, a nested archive', () {
+      final a = utf8.encode('a: 1');
+      final twice = PrivateCheck.level0({'a.yaml': a, 'A.yaml': a});
+      expect(_find(twice, 'zipUnsafe')!.isError, isTrue);
+      final manifest = PrivateCheck.level0({
+        'manifest.yaml': a,
+        'Manifest.yaml': a,
+      });
+      expect(_find(manifest, 'zipUnsafe')!.file, 'Manifest.yaml');
+      for (final name in <String>[
+        'caf\u00e9.yaml',
+        'cafe\u0301.yaml',
+        '\u0430.yaml',
+        'a\u202eb.yaml',
+      ]) {
+        expect(
+          _find(PrivateCheck.level0({name: a}), 'fileName'),
+          isNotNull,
+          reason: name,
+        );
+      }
+      expect(
+        _find(PrivateCheck.level0({'inner.zip': a}), 'fileType')!.isError,
+        isTrue,
+      );
+      expect(isSafePackagePath('qaa/en/a_b-1.yaml'), isTrue);
+      expect(isSafePackagePath('A b.yaml'), isFalse);
     });
 
     test('text that is not UTF-8', () {

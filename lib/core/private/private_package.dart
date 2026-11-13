@@ -134,9 +134,14 @@ class PrivatePackage {
 /// that are plain names, a YAML or JSON file. Refuses an absolute path, `..`,
 /// a backslash, a drive, an empty segment and a hidden file, so that no
 /// package file can be written outside its own folder.
+final RegExp _packagePathChars = RegExp(r'^[A-Za-z0-9._/-]+$');
+
 bool isSafePackagePath(String path) {
   if (path.isEmpty || path.contains('\\') || path.contains(':')) return false;
   if (path.startsWith('/')) return false;
+  // ASCII letters, digits and `._/-` only: no bidi marks, look-alike
+  // slashes or Unicode forms that a filesystem might fold together.
+  if (!_packagePathChars.hasMatch(path)) return false;
   if (!path.endsWith('.yaml') && !path.endsWith('.json')) return false;
   for (final segment in path.split('/')) {
     if (segment.isEmpty || segment.startsWith('.')) return false;

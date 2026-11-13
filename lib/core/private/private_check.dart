@@ -286,7 +286,21 @@ abstract final class PrivateCheck {
           ),
         );
       }
+      final lower = <String>{};
       for (final MapEntry(key: path, value: bytes) in files.entries) {
+        if (!lower.add(path.toLowerCase())) {
+          // Two names that one case-insensitive disk would make one file.
+          out.add(
+            _error(
+              'zipUnsafe',
+              file: path,
+              params: <String, String>{
+                'detail': 'a name is used twice, ignoring case',
+              },
+            ),
+          );
+          continue;
+        }
         _level0File(path, bytes, out);
       }
     } on Object catch (e) {

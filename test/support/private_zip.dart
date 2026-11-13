@@ -14,6 +14,7 @@ class ZipSpec {
     this.deflate = false,
     this.unixMode,
     this.declaredSize,
+    this.flags = 0x0800,
   });
 
   final String name;
@@ -27,6 +28,9 @@ class ZipSpec {
 
   /// The size the headers claim, when it is not the data's length.
   final int? declaredSize;
+
+  /// The general purpose flags; bit 0 marks an encrypted entry.
+  final int flags;
 }
 
 /// A zip of [entries], written as a tool on Unix would write it.
@@ -50,7 +54,7 @@ Uint8List buildZip(List<ZipSpec> entries) {
     out
       ..add(u32(0x04034b50))
       ..add(u16(20))
-      ..add(u16(0x0800))
+      ..add(u16(e.flags))
       ..add(u16(method))
       ..add(u16(0))
       ..add(u16(0x21))
@@ -65,7 +69,7 @@ Uint8List buildZip(List<ZipSpec> entries) {
       ..add(u32(0x02014b50))
       ..add(u16(e.unixMode == null ? 20 : (3 << 8) | 20))
       ..add(u16(20))
-      ..add(u16(0x0800))
+      ..add(u16(e.flags))
       ..add(u16(method))
       ..add(u16(0))
       ..add(u16(0x21))

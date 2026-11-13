@@ -125,7 +125,7 @@ abstract final class ZipFiles {
   ///
   /// With [limits] the archive is also checked as one from outside the app:
   /// an absolute name, `..`, `.` or an empty part, a backslash, a drive
-  /// letter, a colon, a control character, a name seen twice, a symbolic
+  /// letter, a colon, a control character, any character beyond ASCII letters, digits and `._/-`, a name seen twice (case aside), a symbolic
   /// link, more files or bytes than [ZipLimits] allows, or an entry that
   /// unpacks to more than [ZipLimits.maxRatio] times its packed size is
   /// refused, all before an entry is unpacked, and an entry that unpacks to
@@ -139,6 +139,7 @@ abstract final class ZipFiles {
     var at = view.getUint32(end + 16, Endian.little);
     final files = <String, Uint8List>{};
     final seen = <String>{};
+    final seenLower = <String>{};
     var unpacked = 0;
     var packedTotal = 0;
     if (limits != null && entries > limits.maxFiles + 1000) {
@@ -177,7 +178,11 @@ abstract final class ZipFiles {
         _requireSafeName(
           isDirectory ? name.substring(0, name.length - 1) : name,
         );
-        if (!seen.add(name)) {
+        // A name that differs only by case is the same file on a
+        // case-insensitive disk (and `Manifest.yaml` would land on
+        // `manifest.yaml`); [_requireSafeName] allows ASCII only, so
+        // Unicode normalisation cannot make two names one.
+        if (!seen.add(name) || !seenLower.add(name.toLowerCase())) {
           throw const FormatException('unsafe zip: a name is used twice');
         }
         // The high half of the attributes is the Unix mode when the zip was
@@ -259,8 +264,11 @@ abstract final class ZipFiles {
   }
 
   /// Refuses a name that could land outside the folder it is unpacked into.
+  static final RegExp _safeNameChars = RegExp(r'^[A-Za-z0-9._/-]+$');
+
   static void _requireSafeName(String name) {
     if (name.isEmpty ||
+        !_safeNameChars.hasMatch(name) ||
         name.startsWith('/') ||
         name.contains('\\') ||
         name.contains(':') ||

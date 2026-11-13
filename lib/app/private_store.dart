@@ -36,8 +36,11 @@ abstract interface class PrivateStore implements DeckSource {
   /// At most [maxActivePrivatePackages] are active: installing a package
   /// that would be the fourth returns [PrivateInstall.needsDeactivation] and
   /// writes nothing (the learner deactivates one, or installs it with
-  /// `active: false`). [retired] replaces the package's retired ids (an
-  /// update that drops a card id records it); null keeps the earlier ones.
+  /// `active: false`). [retired] are the ids an update drops: they are
+  /// added to the package's earlier retired ids (and those kept when it was
+  /// removed), never swapped for them. The index is written first with the
+  /// merged set, then the folders swapped, then the index finished; a crash
+  /// between is finished or undone at next launch, never losing a retired id.
   Future<PrivateInstall> install(
     String id,
     Map<String, String> files, {
@@ -60,9 +63,20 @@ abstract interface class PrivateStore implements DeckSource {
   /// installed or cannot be read. For an update to compare with.
   Future<Map<String, String>?> readPackage(String id);
 
-  /// Deletes the package [id]. Review history stays. True when it did.
+  /// Deletes the package [id]. Review history stays. Its retired ids are
+  /// kept (a tombstone) so a package imported again under [id] cannot reuse
+  /// them. True when it did.
   Future<bool> remove(String id);
 }
+
+/// A test's stand-in for a process killed mid-install: [FilePrivateStore]
+/// does not undo anything when this is thrown from its `onStep` hook.
+class PrivateStoreCrash implements Exception {
+  const PrivateStoreCrash();
+}
+
+bool _sameIds(List<String> a, List<String> b) =>
+    a.length == b.length && a.toSet().containsAll(b);
 
 List<String> _sorted(Iterable<String> ids) =>
     (<String>{...ids}.toList())..sort();
@@ -118,137 +132,62 @@ class FilePrivateStore implements PrivateStore {
 
   Future<void>? _recovered;
 
-  /// Once per launch, before anything else: a crash between moving a package
-  /// aside and moving its new files in leaves `staging/<id>.old` and no
-  /// `<id>`. Puts the old package back, then clears staging.
+  /// Test hook: called with the name of each step of an install (`index-pre`,
+  /// `marker`, `old-moved`, `new-moved`, `index-final`, `cleanup`) before the
+  /// step runs. A [PrivateStoreCrash] thrown from it stops the install dead,
+  /// with no undo, as a killed process would; any other error is an ordinary
+  /// failure.
+  Future<void> Function(String step)? onStep;
+
+  Future<void> _step(String step) async => await onStep?.call(step);
+
+  File _marker(String id) => File('${_staging.path}/$id.commit');
+
+  /// Once per launch, before anything else: finishes or undoes an install a
+  /// crash cut short. An install writes the index first with the retired ids
+  /// merged (a safe superset), then a commit marker holding the new entry,
+  /// then swaps the folders. So:
+  ///
+  /// - marker present, the new files in place (`staging/<id>` gone) and the
+  ///   folder there: rolls forward, writing the marker's entry unless the
+  ///   index already has it or something newer, and drops the old files;
+  /// - otherwise rolls back: puts `staging/<id>.old` back as `<id>`.
+  ///
+  /// The retired ids already in the index are kept either way. Then clears
+  /// staging.
   Future<void> _recover() async {
     try {
       if (!await _staging.exists()) return;
+      final ids = <String>{};
       await for (final entity in _staging.list()) {
-        if (entity is! Directory || !entity.path.endsWith('.old')) continue;
-        final name = entity.uri.pathSegments
-            .where((s) => s.isNotEmpty)
-            .last
-            .replaceFirst(RegExp(r'\.old$'), '');
-        if (!_isPackageId(name)) continue;
-        final target = _folder(name);
-        if (!await target.exists()) {
-          await entity.rename(target.path);
-          _log?.warning('Private decks: restored a package after a crash');
+        final name = entity.uri.pathSegments.where((s) => s.isNotEmpty).last;
+        if (entity is Directory && name.endsWith('.old')) {
+          ids.add(name.replaceFirst(RegExp(r'\.old$'), ''));
+        } else if (entity is File && name.endsWith('.commit')) {
+          ids.add(name.replaceFirst(RegExp(r'\.commit$'), ''));
         }
       }
-      await _staging.delete(recursive: true);
+      for (final id in ids) {
+        if (!_isPackageId(id)) continue;
+        try {
+          await _recoverOne(id);
+        } on Object catch (e, stack) {
+          _fail('could not recover a package', e, stack);
+        }
+      }
     } on Object catch (e, stack) {
       _fail('could not recover after a crash', e, stack);
     }
-  }
-
-  void _fail(String what, Object error, StackTrace stack) =>
-      _log?.error(describeError('Private decks: $what', error, stack));
-
-  @override
-  Future<List<PrivatePackage>> packages() async {
-    await (_recovered ??= _recover());
     try {
-      if (!await _index.exists()) return const <PrivatePackage>[];
-      final json = jsonDecode(await _index.readAsString());
-      final list = json is Map<Object?, Object?> ? json['packages'] : null;
-      if (list is! List<Object?>) {
-        _log?.warning('Private decks: the index has no list of packages');
-        return const <PrivatePackage>[];
-      }
-      return <PrivatePackage>[
-        for (final item in list) ?PrivatePackage.fromJson(item),
-      ];
+      if (await _staging.exists()) await _staging.delete(recursive: true);
     } on Object catch (e, stack) {
-      _fail('could not read the index', e, stack);
-      return const <PrivatePackage>[];
+      _fail('could not clear staging', e, stack);
     }
   }
 
-  Future<void> _writeIndex(List<PrivatePackage> packages) async {
-    await root.create(recursive: true);
-    final temp = File('${_index.path}.new');
-    await temp.writeAsString(
-      jsonEncode(<String, Object?>{
-        'packages': <Object?>[for (final p in packages) p.toJson()],
-      }),
-      flush: true,
-    );
-    await temp.rename(_index.path);
-  }
-
-  @override
-  Future<List<String>> list() async {
-    try {
-      final paths = <String>[];
-      for (final package in await packages()) {
-        if (!package.active || !_isPackageId(package.id)) continue;
-        final folder = _folder(package.id);
-        if (!await folder.exists()) continue;
-        final prefix = '${folder.path}/';
-        final files = <String>[
-          await for (final entity in folder.list(recursive: true))
-            if (entity is File && entity.path.startsWith(prefix))
-              entity.path.substring(prefix.length).replaceAll('\\', '/'),
-        ];
-        paths.addAll(_catalogPaths(package.id, files));
-      }
-      return paths..sort();
-    } on Object catch (e, stack) {
-      _fail('could not list the packages', e, stack);
-      return const <String>[];
-    }
-  }
-
-  @override
-  Future<String> read(String path) async {
-    final parts = _split(path);
-    if (parts == null ||
-        !_isPackageId(parts.$1) ||
-        !isSafePackagePath(parts.$2)) {
-      throw StateError('no private deck file at $path');
-    }
-    try {
-      return await File('${root.path}/${parts.$1}/${parts.$2}').readAsString();
-    } on Object catch (e, stack) {
-      _fail('could not read a file', e, stack);
-      rethrow;
-    }
-  }
-
-  @override
-  Future<PrivateInstall> install(
-    String id,
-    Map<String, String> files, {
-    required int revision,
-    required String kind,
-    bool? active,
-    List<String>? retired,
-  }) async {
-    if (!_isPackageId(id) || files.isEmpty) {
-      _log?.warning(
-        'Private decks: refused to install a package with a bad '
-        'id or no files',
-      );
-      return PrivateInstall.failed;
-    }
-    for (final path in files.keys) {
-      if (!isSafePackagePath(path)) {
-        _log?.warning(
-          'Private decks: refused to install a package with a '
-          'file named outside its folder',
-        );
-        return PrivateInstall.failed;
-      }
-    }
-    final packagesBefore = await packages(); // recovers first
-    final before = packagesBefore.where((p) => p.id == id).firstOrNull;
-    final willBeActive = active ?? before?.active ?? true;
-    if (willBeActive && _overCap(packagesBefore, id)) {
-      _log?.warning('Private decks: a package needs another to be inactive');
-      return PrivateInstall.needsDeactivation;
-    }
+  Future<void> _recoverOne(String id) async {
+    final target = _folder(id);
+    final old = Directory('${_staging.path}/$id.old');
     final fresh = Directory('${_staging.path}/$id');
     final old = Directory('${_staging.path}/$id.old');
     var movedOld = false;
@@ -261,33 +200,69 @@ class FilePrivateStore implements PrivateStore {
         await file.writeAsString(entry.value, flush: true);
         size += utf8.encode(entry.value).length;
       }
+      final tombstones = await _readTombstones();
+      // The ids this install retires are added to the earlier ones, never
+      // swapped for them: a safe superset, whatever happens next.
+      final mergedRetired = _sorted(<String>[
+        ...?before?.retired,
+        ...?tombstones[id],
+        ...?retired,
+      ]);
+      final entry = PrivatePackage(
+        id: id,
+        revision: revision,
+        kind: kind,
+        size: size,
+        importedAt: _clock().toUtc(),
+        active: willBeActive,
+        retired: mergedRetired,
+      );
+      // 1. The index first: the earlier entry with the merged retired ids,
+      // so a crash from here on can never lose one.
+      if (before != null && !_sameIds(before.retired, mergedRetired)) {
+        await _step('index-pre');
+        await _writeIndex(<PrivatePackage>[
+          for (final p in packagesBefore)
+            p.id == id
+                ? PrivatePackage(
+                    id: p.id,
+                    revision: p.revision,
+                    kind: p.kind,
+                    size: p.size,
+                    importedAt: p.importedAt,
+                    active: p.active,
+                    retired: mergedRetired,
+                  )
+                : p,
+        ]);
+      }
+      // 2. The commit marker: what recovery writes if it finds the files
+      // swapped but the index not yet final.
+      await _step('marker');
+      await _marker(id).writeAsString(jsonEncode(entry.toJson()), flush: true);
+      // 3. The swap.
       final target = _folder(id);
       if (await target.exists()) {
+        await _step('old-moved');
         await target.rename(old.path);
         movedOld = true;
       }
+      await _step('new-moved');
       await fresh.rename(target.path);
-      final earlier = packagesBefore.where((p) => p.id == id).firstOrNull;
+      // 4. The final index.
+      await _step('index-final');
       await _writeIndex(<PrivatePackage>[
         for (final p in packagesBefore)
           if (p.id != id) p,
-        PrivatePackage(
-          id: id,
-          revision: revision,
-          kind: kind,
-          size: size,
-          importedAt: _clock().toUtc(),
-          active: willBeActive,
-          retired: _sorted(retired ?? earlier?.retired ?? const <String>[]),
-        ),
-      ]);
-      if (await _staging.exists()) await _staging.delete(recursive: true);
-      _log?.event('Private decks: installed $id revision $revision');
-      return PrivateInstall.installed;
+        entry,
+      ], tombstones: tombstones..remove(id));
+    } on PrivateStoreCrash {
+      rethrow;
     } on Object catch (e, stack) {
       _fail('could not install a package', e, stack);
       try {
-        // Put back what was there.
+        // Put back what was there. The index is either the earlier entry
+        // (with possibly more retired ids, which is safe) or not touched.
         final target = _folder(id);
         if (movedOld && await old.exists()) {
           if (await target.exists()) await target.delete(recursive: true);
@@ -302,6 +277,18 @@ class FilePrivateStore implements PrivateStore {
       }
       return PrivateInstall.failed;
     }
+    // The install is done once the index is final: a failure to tidy up is
+    // logged and never undoes it (a leftover is dealt with at next launch).
+    try {
+      await _step('cleanup');
+      if (await _staging.exists()) await _staging.delete(recursive: true);
+    } on PrivateStoreCrash {
+      rethrow;
+    } on Object catch (e, stack) {
+      _fail('could not clear staging after an install', e, stack);
+    }
+    _log?.event('Private decks: installed $id revision $revision');
+    return PrivateInstall.installed;
   }
 
   Future<bool> _setActive(String id, bool active) async {
@@ -365,10 +352,15 @@ class FilePrivateStore implements PrivateStore {
     if (!_isPackageId(id)) return false;
     try {
       final all = await packages();
+      final gone = all.where((p) => p.id == id).firstOrNull;
+      final tombstones = await _readTombstones();
+      if (gone != null && gone.retired.isNotEmpty) {
+        tombstones[id] = _sorted(<String>[...gone.retired, ...?tombstones[id]]);
+      }
       await _writeIndex(<PrivatePackage>[
         for (final p in all)
           if (p.id != id) p,
-      ]);
+      ], tombstones: tombstones);
       final folder = _folder(id);
       if (await folder.exists()) await folder.delete(recursive: true);
       return true;
@@ -389,6 +381,7 @@ class MemoryPrivateStore implements PrivateStore {
   final Map<String, PrivatePackage> _packages = <String, PrivatePackage>{};
   final Map<String, Map<String, String>> _files =
       <String, Map<String, String>>{};
+  final Map<String, List<String>> _tombstones = <String, List<String>>{};
 
   @override
   Future<List<PrivatePackage>> packages() async =>
@@ -437,8 +430,13 @@ class MemoryPrivateStore implements PrivateStore {
       size: files.values.fold<int>(0, (n, t) => n + utf8.encode(t).length),
       importedAt: _clock().toUtc(),
       active: willBeActive,
-      retired: _sorted(retired ?? before?.retired ?? const <String>[]),
+      retired: _sorted(<String>[
+        ...?before?.retired,
+        ..._tombstones[id] ?? const <String>[],
+        ...?retired,
+      ]),
     );
+    _tombstones.remove(id);
     return PrivateInstall.installed;
   }
 
@@ -471,6 +469,10 @@ class MemoryPrivateStore implements PrivateStore {
   @override
   Future<bool> remove(String id) async {
     _files.remove(id);
-    return _packages.remove(id) != null;
+    final gone = _packages.remove(id);
+    if (gone != null && gone.retired.isNotEmpty) {
+      _tombstones[id] = gone.retired;
+    }
+    return gone != null;
   }
 }
