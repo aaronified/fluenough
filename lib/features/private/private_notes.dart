@@ -135,34 +135,39 @@ Future<void> showPrivateWhySheet(BuildContext context, {required String name}) {
     builder: (sheet) {
       final l10n = AppLocalizations.of(sheet)!;
       final theme = Theme.of(sheet);
-      return SingleChildScrollView(
-        padding: const EdgeInsetsDirectional.fromSTEB(20, 0, 20, 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Text(l10n.privateWhyTitle(name), style: theme.textTheme.titleLarge),
-            const SizedBox(height: 8),
-            Text(l10n.privateWhyBody, style: theme.textTheme.bodyLarge),
-            const SizedBox(height: 8),
-            Text(
-              l10n.privateWhyHint(name),
-              style: theme.textTheme.bodyMedium!.copyWith(
-                color: theme.colorScheme.onSurfaceVariant,
+      return SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsetsDirectional.fromSTEB(20, 0, 20, 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Text(
+                l10n.privateWhyTitle(name),
+                style: theme.textTheme.titleLarge,
               ),
-            ),
-            const SizedBox(height: 12),
-            FilledButton.tonal(
-              onPressed: () async {
-                await state.refreshVoices();
-                if (sheet.mounted) Navigator.of(sheet).pop();
-              },
-              child: Text(l10n.privateCheckAgain),
-            ),
-            TextButton(
-              onPressed: () => Navigator.of(sheet).pop(),
-              child: Text(l10n.privateClose),
-            ),
-          ],
+              const SizedBox(height: 8),
+              Text(l10n.privateWhyBody, style: theme.textTheme.bodyLarge),
+              const SizedBox(height: 8),
+              Text(
+                l10n.privateWhyHint(name),
+                style: theme.textTheme.bodyMedium!.copyWith(
+                  color: theme.colorScheme.onSurfaceVariant,
+                ),
+              ),
+              const SizedBox(height: 12),
+              FilledButton.tonal(
+                onPressed: () async {
+                  await state.refreshVoices();
+                  if (sheet.mounted) Navigator.of(sheet).pop();
+                },
+                child: Text(l10n.privateCheckAgain),
+              ),
+              TextButton(
+                onPressed: () => Navigator.of(sheet).pop(),
+                child: Text(l10n.privateClose),
+              ),
+            ],
+          ),
         ),
       );
     },

@@ -164,10 +164,13 @@ Future<void> _openOver(WidgetTester tester, Widget page, _World world) async {
   await tester.pumpAndSettle();
 }
 
-Future<AppState> worldForDiag() async => (await _world(
-  codes: <String>['qaa', 'qab', 'qac', 'qad'],
-  off: <String>{'qad'},
-)).state;
+Future<AppState> worldForDiag() async {
+  _tiny = await tinyPackage();
+  return (await _world(
+    codes: <String>['qaa', 'qab', 'qac', 'qad'],
+    off: <String>{'qad'},
+  )).state;
+}
 
 void main() {
   setUpAll(() async => _tiny = await tinyPackage());

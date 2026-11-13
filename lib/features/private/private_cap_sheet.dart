@@ -70,65 +70,67 @@ class _CapSheetState extends State<_CapSheet> {
     final theme = Theme.of(context);
     final locale = Localizations.localeOf(context).toLanguageTag();
     String nameOf(String id) => widget.names[id] ?? id;
-    return SingleChildScrollView(
-      padding: const EdgeInsetsDirectional.fromSTEB(20, 0, 20, 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          Text(l10n.privateCapTitle, style: theme.textTheme.titleLarge),
-          const SizedBox(height: 8),
-          Text(
-            l10n.privateCapBody(widget.newName),
-            style: theme.textTheme.bodyMedium,
-          ),
-          const SizedBox(height: 12),
-          Semantics(
-            header: true,
-            child: Text(
-              l10n.privateCapTurnOff,
-              style: theme.textTheme.titleSmall!.copyWith(
-                color: theme.colorScheme.primary,
+    return SafeArea(
+      child: SingleChildScrollView(
+        padding: const EdgeInsetsDirectional.fromSTEB(20, 0, 20, 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Text(l10n.privateCapTitle, style: theme.textTheme.titleLarge),
+            const SizedBox(height: 8),
+            Text(
+              l10n.privateCapBody(widget.newName),
+              style: theme.textTheme.bodyMedium,
+            ),
+            const SizedBox(height: 12),
+            Semantics(
+              header: true,
+              child: Text(
+                l10n.privateCapTurnOff,
+                style: theme.textTheme.titleSmall!.copyWith(
+                  color: theme.colorScheme.primary,
+                ),
               ),
             ),
-          ),
-          RadioGroup<String>(
-            groupValue: _off,
-            onChanged: (id) {
-              if (id != null) setState(() => _off = id);
-            },
-            child: Column(
-              children: <Widget>[
-                for (final package in widget.ordered)
-                  RadioListTile<String>(
-                    value: package.id,
-                    contentPadding: EdgeInsets.zero,
-                    title: Text(nameOf(package.id)),
-                    subtitle: Text(
-                      widget.lastStudied[package.id] == null
-                          ? l10n.privateNeverStudied(
-                              privateSizeText(widget.sizes[package.id] ?? 0),
-                            )
-                          : l10n.privateStudiedOn(
-                              DateFormat.yMMMd(locale).format(
-                                widget.lastStudied[package.id]!.toLocal(),
+            RadioGroup<String>(
+              groupValue: _off,
+              onChanged: (id) {
+                if (id != null) setState(() => _off = id);
+              },
+              child: Column(
+                children: <Widget>[
+                  for (final package in widget.ordered)
+                    RadioListTile<String>(
+                      value: package.id,
+                      contentPadding: EdgeInsets.zero,
+                      title: Text(nameOf(package.id)),
+                      subtitle: Text(
+                        widget.lastStudied[package.id] == null
+                            ? l10n.privateNeverStudied(
+                                privateSizeText(widget.sizes[package.id] ?? 0),
+                              )
+                            : l10n.privateStudiedOn(
+                                DateFormat.yMMMd(locale).format(
+                                  widget.lastStudied[package.id]!.toLocal(),
+                                ),
+                                privateSizeText(widget.sizes[package.id] ?? 0),
                               ),
-                              privateSizeText(widget.sizes[package.id] ?? 0),
-                            ),
+                      ),
                     ),
-                  ),
-              ],
+                ],
+              ),
             ),
-          ),
-          const SizedBox(height: 8),
-          FilledButton(
-            onPressed: () => Navigator.of(context).pop(_off),
-            child: Text(l10n.privateCapSwap(nameOf(_off), widget.newName)),
-          ),
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: Text(l10n.privateCapKeep(widget.newName)),
-          ),
-        ],
+            const SizedBox(height: 8),
+            FilledButton(
+              onPressed: () => Navigator.of(context).pop(_off),
+              child: Text(l10n.privateCapSwap(nameOf(_off), widget.newName)),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: Text(l10n.privateCapKeep(widget.newName)),
+            ),
+          ],
+        ),
       ),
     );
   }
