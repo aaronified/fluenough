@@ -1,0 +1,21 @@
+schema: 1
+id: "ja-en-grammar-conditional-tara-nara"
+kind: "layer"
+core: "ja-grammar-conditional-tara-nara"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "If and when: たら (tara) and なら (nara)"
+description: "Put ら (ra) after the past (ta) form of a verb to say if or when something has happened, and なら (nara) after the plain form to say if something is so: かえったら (kaettara), when I get home. Every verb a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "conditional-tara": "if or when {meaning}"
+    "conditional-nara": "if {meaning}"
+rules:
+  "ja-rule-conditional-tara":
+    name: "たら (tara): if, when"
+    explanation: "{1} follows the past (ta) form to say if or when something has happened: {2} means if I eat, or when I have eaten."
+  "ja-rule-conditional-nara":
+    name: "なら (nara): if it is so"
+    explanation: "{1} follows the plain form to take up what has been said or planned: {2} means if you are going to eat."

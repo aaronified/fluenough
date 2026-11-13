@@ -1269,3 +1269,262 @@ cards:
         ipa: "dakaɾa kanaɾadzɯ ikimasɯ"
         bases:
           - { word: "いきます", base: "いく", reading: "iku" }
+  - id: "ja-4487"
+    target: "ところが"
+    words: ["ところが"]
+    reading: "tokoroga"
+    ipa: "tokoɾoɡa"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ほんをかいました。ところが、よみませんでした。"
+        words: ["ほん", "を", "かいました", "ところが", "よみませんでした"]
+        reading: "hon o kaimashita. tokoroga, yomimasendeshita."
+        ipa: "hoɴ o kaimaɕita tokoɾoɡa jomimaseɴdeɕita"
+        bases:
+          - { word: "ほん", ref: "ja-1180" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "かいました", ref: "ja-0356" }
+          - { word: "よみませんでした", ref: "ja-0345" }
+      - target: "ともだちをまちました。ところが、だれもきませんでした。"
+        words: ["ともだち", "を", "まちました", "ところが", "だれ", "も", "きませんでした"]
+        reading: "tomodachi o machimashita. tokoroga, dare mo kimasendeshita."
+        ipa: "tomodatɕi o matɕimaɕita tokoɾoɡa daɾe mo kimaseɴdeɕita"
+        bases:
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "まちました", ref: "ja-0358" }
+          - { word: "だれ", ref: "ja-0107" }
+          - { word: "も", base: "も", reading: "mo" }
+          - { word: "きませんでした", base: "くる", reading: "kuru" }
+  - id: "ja-4488"
+    target: "もしかしたら"
+    words: ["もしかしたら"]
+    reading: "moshikashitara"
+    ipa: "moɕikaɕitaɾa"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "もしかしたら、あしたはあめかもしれません。"
+        words: ["もしかしたら", "あした", "は", "あめ", "かもしれません"]
+        reading: "moshikashitara, ashita wa ame kamoshiremasen."
+        ipa: "moɕikaɕitaɾa aɕita wa ame kamoɕiɾemaseɴ"
+        bases:
+          - { word: "あした", ref: "ja-0513" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "あめ", ref: "ja-1454" }
+          - { word: "かもしれません", base: "かもしれない", reading: "kamoshirenai" }
+      - target: "もしかしたら、ともだちがくるかもしれません。"
+        words: ["もしかしたら", "ともだち", "が", "くる", "かもしれません"]
+        reading: "moshikashitara, tomodachi ga kuru kamoshiremasen."
+        ipa: "moɕikaɕitaɾa tomodatɕi ɡa kɯɾɯ kamoɕiɾemaseɴ"
+        bases:
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "が", base: "が", reading: "ga" }
+          - { word: "くる", ref: "ja-0349" }
+          - { word: "かもしれません", base: "かもしれない", reading: "kamoshirenai" }
+  - id: "ja-4489"
+    target: "どちらかといえば"
+    words: ["どちらかといえば"]
+    reading: "dochirakatoieba"
+    ipa: "dotɕiɾakatoieba"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "どちらかといえば、わたしはコーヒーがすきです。"
+        words: ["どちらかといえば", "わたし", "は", "コーヒー", "が", "すき", "です"]
+        reading: "dochirakatoieba, watashi wa koohii ga suki desu."
+        ipa: "dotɕiɾakatoieba wataɕi wa koːçiː ɡa sɯki desɯ"
+        bases:
+          - { word: "わたし", ref: "ja-0067" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "コーヒー", ref: "ja-0849" }
+          - { word: "が", base: "が", reading: "ga" }
+          - { word: "すき", ref: "ja-0318" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "どちらかといえば、バスがいいです。"
+        words: ["どちらかといえば", "バス", "が", "いい", "です"]
+        reading: "dochirakatoieba, basu ga ii desu."
+        ipa: "dotɕiɾakatoieba basɯ ɡa iː desɯ"
+        bases:
+          - { word: "バス", ref: "ja-0856" }
+          - { word: "が", base: "が", reading: "ga" }
+          - { word: "いい", ref: "ja-0464" }
+          - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-4490"
+    target: "とうぜん"
+    words: ["とうぜん"]
+    reading: "touzen"
+    ipa: "toːzeɴ"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "とうぜん、わたしもいきます。"
+        words: ["とうぜん", "わたし", "も", "いきます"]
+        reading: "touzen, watashi mo ikimasu."
+        ipa: "toːzeɴ wataɕi mo ikimasɯ"
+        bases:
+          - { word: "わたし", ref: "ja-0067" }
+          - { word: "も", base: "も", reading: "mo" }
+          - { word: "いきます", ref: "ja-0348" }
+      - target: "とうぜん、むずかしいです。"
+        words: ["とうぜん", "むずかしい", "です"]
+        reading: "touzen, muzukashii desu."
+        ipa: "toːzeɴ mɯzɯkaɕiː desɯ"
+        bases:
+          - { word: "むずかしい", ref: "ja-0473" }
+          - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-4491"
+    target: "いちがいに"
+    words: ["いちがいに"]
+    reading: "ichigaini"
+    ipa: "itɕiɡaini"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "いちがいに、やすいものがわるいとはいえません。"
+        words: ["いちがいに", "やすい", "もの", "が", "わるい", "とは", "いえません"]
+        reading: "ichigaini, yasui mono ga warui towa iemasen."
+        ipa: "itɕiɡaini jasɯi mono ɡa waɾɯi towa iemaseɴ"
+        bases:
+          - { word: "やすい", ref: "ja-0438" }
+          - { word: "もの", ref: "ja-1187" }
+          - { word: "が", base: "が", reading: "ga" }
+          - { word: "わるい", ref: "ja-0465" }
+          - { word: "とは", base: "とは", reading: "towa" }
+          - { word: "いえません", base: "いう", reading: "iu" }
+  - id: "ja-4492"
+    target: "せめて"
+    words: ["せめて"]
+    reading: "semete"
+    ipa: "semete"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "せめて、ひとつたべましょう。"
+        words: ["せめて", "ひとつ", "たべましょう"]
+        reading: "semete, hitotsu tabemashou."
+        ipa: "semete çitotsɯ tabemaɕoː"
+        bases:
+          - { word: "ひとつ", ref: "ja-0240" }
+          - { word: "たべましょう", ref: "ja-0341" }
+      - target: "せめて、でんわをしてください。"
+        words: ["せめて", "でんわ", "を", "してください"]
+        reading: "semete, denwa o shitekudasai."
+        ipa: "semete deɴwa o ɕitekɯdasai"
+        bases:
+          - { word: "でんわ", ref: "ja-1202" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "してください", ref: "ja-0375" }
+  - id: "ja-4493"
+    target: "どうやら"
+    words: ["どうやら"]
+    reading: "douyara"
+    ipa: "doːjaɾa"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "どうやら、ともだちはねています。"
+        words: ["どうやら", "ともだち", "は", "ねて", "います"]
+        reading: "douyara, tomodachi wa nete imasu."
+        ipa: "doːjaɾa tomodatɕi wa nete imasɯ"
+        bases:
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "ねて", ref: "ja-0352" }
+          - { word: "います", base: "いる", reading: "iru" }
+      - target: "どうやら、ともだちはいえにいません。"
+        words: ["どうやら", "ともだち", "は", "いえ", "に", "いません"]
+        reading: "douyara, tomodachi wa ie ni imasen."
+        ipa: "doːjaɾa tomodatɕi wa ie ni imaseɴ"
+        bases:
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "いえ", ref: "ja-1153" }
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "いません", base: "いる", reading: "iru" }
+  - id: "ja-4494"
+    target: "まさか"
+    words: ["まさか"]
+    reading: "masaka"
+    ipa: "masaka"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "まさか、わすれましたか。"
+        words: ["まさか", "わすれました", "か"]
+        reading: "masaka, wasuremashita ka."
+        ipa: "masaka wasɯɾemaɕita ka"
+        bases:
+          - { word: "わすれました", ref: "ja-0578" }
+          - { word: "か", base: "か", reading: "ka" }
+      - target: "まさか、あめですか。"
+        words: ["まさか", "あめ", "です", "か"]
+        reading: "masaka, ame desu ka."
+        ipa: "masaka ame desɯ ka"
+        bases:
+          - { word: "あめ", ref: "ja-1454" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-4495"
+    target: "ともかく"
+    words: ["ともかく"]
+    reading: "tomokaku"
+    ipa: "tomokakɯ"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ともかく、たべましょう。"
+        words: ["ともかく", "たべましょう"]
+        reading: "tomokaku, tabemashou."
+        ipa: "tomokakɯ tabemaɕoː"
+        bases:
+          - { word: "たべましょう", ref: "ja-0341" }
+      - target: "ともかく、いきます。"
+        words: ["ともかく", "いきます"]
+        reading: "tomokaku, ikimasu."
+        ipa: "tomokakɯ ikimasɯ"
+        bases:
+          - { word: "いきます", ref: "ja-0348" }
+  - id: "ja-4496"
+    target: "かえって"
+    words: ["かえって"]
+    reading: "kaette"
+    ipa: "kaette"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "かえって、いそがしいです。"
+        words: ["かえって", "いそがしい", "です"]
+        reading: "kaette, isogashii desu."
+        ipa: "kaette isoɡaɕiː desɯ"
+        bases:
+          - { word: "いそがしい", ref: "ja-0476" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "かえって、たかいです。"
+        words: ["かえって", "たかい", "です"]
+        reading: "kaette, takai desu."
+        ipa: "kaette takai desɯ"
+        bases:
+          - { word: "たかい", ref: "ja-0439" }
+          - { word: "です", base: "です", reading: "desu" }

@@ -1,0 +1,91 @@
+schema: 1
+id: "ja-en-grammar-te-iru-sentences"
+kind: "layer"
+core: "ja-grammar-te-iru-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "ている (te iru) in sentences"
+description: "Sentences about what is going on now, with the te-form and います (imasu), to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-4437":
+    native: "I am reading a book now."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "います": { meaning: "to be, to stay (for people and animals)" }
+    confusables:
+      w1: { why: "よむ (yomu) means to read." }
+      w2: { why: "かく (kaku) means to write." }
+  "ja-4438":
+    native: "My friend is sleeping now."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "います": { meaning: "to be, to stay (for people and animals)" }
+    confusables:
+      w1: { why: "ねる (neru) means to sleep; to go to bed." }
+      w2: { why: "おきる (okiru) means to get up; to wake up." }
+  "ja-4439":
+    native: "I am watching television."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "います": { meaning: "to be, to stay (for people and animals)" }
+    confusables:
+      w1: { why: "みる (miru) means to see; to look at; to watch." }
+      w2: { why: "きく (kiku) means to listen; to hear; to ask." }
+  "ja-4440":
+    native: "I am listening to the radio."
+    notes:
+      "n1": "きいて (kiite) is the te-form of きく (kiku): く (ku) becomes いて (ite)."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "います": { meaning: "to be, to stay (for people and animals)" }
+    confusables:
+      w1: { why: "きく (kiku) means to listen; to hear; to ask." }
+      w2: { why: "よむ (yomu) means to read." }
+  "ja-4441":
+    native: "The children are playing outside."
+    notes:
+      "n1": "あそんで (asonde) is the te-form of あそぶ (asobu): ぶ (bu) becomes んで (nde)."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "で": { meaning: "(at, in, by)" }
+      "います": { meaning: "to be, to stay (for people and animals)" }
+    confusables:
+      w1: { why: "あそぶ (asobu) means to play." }
+      w2: { why: "はたらく (hataraku) means to work." }
+  "ja-4442":
+    native: "My father is working."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "います": { meaning: "to be, to stay (for people and animals)" }
+    confusables:
+      w1: { why: "はたらく (hataraku) means to work." }
+      w2: { why: "ねる (neru) means to sleep; to go to bed." }
+  "ja-4443":
+    native: "I am using the telephone now."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "います": { meaning: "to be, to stay (for people and animals)" }
+    confusables:
+      w1: { why: "つかう (tsukau) means to use." }
+      w2: { why: "つくる (tsukuru) means to make; to create." }
+  "ja-4444":
+    native: "My mother is cooking."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "を": { meaning: "(marks the thing acted on)" }
+      "います": { meaning: "to be, to stay (for people and animals)" }
+    confusables:
+      w1: { why: "つくる (tsukuru) means to make; to create." }
+      w2: { why: "たべる (taberu) means to eat." }
+  "ja-4577":
+    native: "My mother is sitting here."
+    notes:
+      "n1": "すわっています (suwatte imasu) says a state that follows an action: she sat down, and she is still sitting. It is a lasting state, not an action in progress."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "に": { meaning: "(in, at, to)" }
+      "います": { meaning: "to be, to stay (for people and animals)" }
+    confusables:
+      w1: { why: "すわる (suwaru) means to sit." }
+      w2: { why: "たつ (tatsu) means to stand; to stand up." }

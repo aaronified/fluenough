@@ -1,0 +1,77 @@
+schema: 1
+id: "ja-en-grammar-te-kudasai-sentences"
+kind: "layer"
+core: "ja-grammar-te-kudasai-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Requests with ください (kudasai) in sentences"
+description: "Polite requests with the te-form and ください (kudasai), to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-4429":
+    native: "Please wait a moment."
+    notes:
+      "n1": "ちょっと (chotto) means 'a little' and softens a request. まって (matte) is the te-form of まつ (matsu)."
+    bases:
+      "ください": { meaning: "please (give me)" }
+    confusables:
+      w1: { why: "まつ (matsu) means to wait." }
+      w2: { why: "まちます (machimasu) is the polite 'wait', not a request." }
+  "ja-4430":
+    native: "Please write your name here."
+    bases:
+      "に": { meaning: "(in, at, to)" }
+      "を": { meaning: "(marks the thing acted on)" }
+      "ください": { meaning: "please (give me)" }
+    confusables:
+      w1: { why: "かく (kaku) means to write." }
+      w2: { why: "よむ (yomu) means to read." }
+  "ja-4431":
+    native: "Please speak slowly."
+    bases:
+      "ください": { meaning: "please (give me)" }
+    confusables:
+      w1: { why: "はなす (hanasu) means to speak; to talk." }
+      w2: { why: "きく (kiku) means to listen; to hear; to ask." }
+  "ja-4432":
+    native: "Please open the door."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "ください": { meaning: "please (give me)" }
+    confusables:
+      w1: { why: "あける (akeru) means to open." }
+      w2: { why: "しめる (shimeru) means to shut; to lock." }
+  "ja-4433":
+    native: "Please close the window."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "ください": { meaning: "please (give me)" }
+    confusables:
+      w1: { why: "しめる (shimeru) means to shut; to lock." }
+      w2: { why: "あける (akeru) means to open." }
+  "ja-4434":
+    native: "Please sit here."
+    notes:
+      "n1": "すわって (suwatte) is the te-form of すわる (suwaru): a godan verb ending in る (ru) takes って (tte)."
+    bases:
+      "に": { meaning: "(in, at, to)" }
+      "ください": { meaning: "please (give me)" }
+    confusables:
+      w1: { why: "すわる (suwaru) means to sit." }
+      w2: { why: "たつ (tatsu) means to stand; to stand up." }
+  "ja-4435":
+    native: "Please show me the book."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "ください": { meaning: "please (give me)" }
+    confusables:
+      w1: { why: "みせる (miseru) means to show." }
+      w2: { why: "みる (miru) means to see; to look at; to watch." }
+  "ja-4436":
+    native: "Please listen to the radio."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "ください": { meaning: "please (give me)" }
+    confusables:
+      w1: { why: "きく (kiku) means to listen; to hear; to ask." }
+      w2: { why: "はなす (hanasu) means to speak; to talk." }

@@ -1,0 +1,134 @@
+schema: 1
+id: "ja-grammar-te-auxiliaries-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-4479"
+    target: "ごはんをたべてしまいました。"
+    words: ["ごはん", "を", "たべて", "しまいました"]
+    reading: "gohan o tabete shimaimashita."
+    ipa: "ɡohaɴ o tabete ɕimaimaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "ごはん", ref: "ja-0074" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "たべて", ref: "ja-0341" }
+      - { word: "しまいました", base: "しまう", reading: "shimau" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-0341", kind: "word" }
+      - { id: "w2", ref: "ja-0342", kind: "word" }
+    rules: ["ja-rule-te-shimau"]
+  - id: "ja-4480"
+    target: "ほんをよんでおきます。"
+    words: ["ほん", "を", "よんで", "おきます"]
+    reading: "hon o yonde okimasu."
+    ipa: "hoɴ o joɴde okimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ほん", ref: "ja-1180" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "よんで", ref: "ja-0345" }
+      - { word: "おきます", base: "おく", reading: "oku" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-0345", kind: "word" }
+      - { id: "w2", ref: "ja-0346", kind: "word" }
+    rules: ["ja-rule-te-oku"]
+  - id: "ja-4481"
+    target: "このほんをよんでみます。"
+    words: ["この", "ほん", "を", "よんで", "みます"]
+    reading: "kono hon o yonde mimasu."
+    ipa: "kono hoɴ o joɴde mimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "この", base: "この", reading: "kono" }
+      - { word: "ほん", ref: "ja-1180" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "よんで", ref: "ja-0345" }
+      - { word: "みます", ref: "ja-0343" }
+    confusables:
+      - { id: "w1", ref: "ja-0345", kind: "word" }
+      - { id: "w2", ref: "ja-0346", kind: "word" }
+    rules: ["ja-rule-te-miru"]
+  - id: "ja-4482"
+    target: "コーヒーをのんでみます。"
+    words: ["コーヒー", "を", "のんで", "みます"]
+    reading: "koohii o nonde mimasu."
+    ipa: "koːçiː o noɴde mimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "コーヒー", ref: "ja-0849" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "のんで", ref: "ja-0342" }
+      - { word: "みます", ref: "ja-0343" }
+    confusables:
+      - { id: "w1", ref: "ja-0342", kind: "word" }
+      - { id: "w2", ref: "ja-0341", kind: "word" }
+    rules: ["ja-rule-te-miru"]
+  - id: "ja-4483"
+    target: "りょうりをつくっておきます。"
+    words: ["りょうり", "を", "つくって", "おきます"]
+    reading: "ryouri o tsukutte okimasu."
+    ipa: "ɾjoːɾi o tsɯkɯtte okimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "りょうり", ref: "ja-0994" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "つくって", ref: "ja-0364" }
+      - { word: "おきます", base: "おく", reading: "oku" }
+    confusables:
+      - { id: "w1", ref: "ja-0364", kind: "word" }
+      - { id: "w2", ref: "ja-0341", kind: "word" }
+    rules: ["ja-rule-te-oku"]
+  - id: "ja-4484"
+    target: "きょうははやくねてしまいました。"
+    words: ["きょう", "は", "はやく", "ねて", "しまいました"]
+    reading: "kyou wa hayaku nete shimaimashita."
+    ipa: "kjoː wa hajakɯ nete ɕimaimaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "きょう", ref: "ja-0512" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "はやく", ref: "ja-0401" }
+      - { word: "ねて", ref: "ja-0352" }
+      - { word: "しまいました", base: "しまう", reading: "shimau" }
+    confusables:
+      - { id: "w1", ref: "ja-0352", kind: "word" }
+      - { id: "w2", ref: "ja-0351", kind: "word" }
+    rules: ["ja-rule-te-shimau"]
+  - id: "ja-4485"
+    target: "てがみをかいてしまいます。"
+    words: ["てがみ", "を", "かいて", "しまいます"]
+    reading: "tegami o kaite shimaimasu."
+    ipa: "teɡami o kaite ɕimaimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "てがみ", ref: "ja-1356" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "かいて", ref: "ja-0346" }
+      - { word: "しまいます", base: "しまう", reading: "shimau" }
+    confusables:
+      - { id: "w1", ref: "ja-0346", kind: "word" }
+      - { id: "w2", ref: "ja-0345", kind: "word" }
+    rules: ["ja-rule-te-shimau"]
+  - id: "ja-4486"
+    target: "ケーキをたべてみます。"
+    words: ["ケーキ", "を", "たべて", "みます"]
+    reading: "keeki o tabete mimasu."
+    ipa: "keːki o tabete mimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ケーキ", ref: "ja-0853" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "たべて", ref: "ja-0341" }
+      - { word: "みます", ref: "ja-0343" }
+    confusables:
+      - { id: "w1", ref: "ja-0341", kind: "word" }
+      - { id: "w2", ref: "ja-0342", kind: "word" }
+    rules: ["ja-rule-te-miru"]

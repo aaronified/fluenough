@@ -1,0 +1,132 @@
+schema: 1
+id: "ja-grammar-te-kudasai-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-4429"
+    target: "ちょっとまってください。"
+    words: ["ちょっと", "まって", "ください"]
+    reading: "chotto matte kudasai."
+    ipa: "tɕotto matte kɯdasai"
+    pos: "phrase"
+    bases:
+      - { word: "ちょっと", ref: "ja-0406" }
+      - { word: "まって", ref: "ja-0358" }
+      - { word: "ください", base: "ください", reading: "kudasai" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-0358", kind: "word" }
+      - { id: "w2", word: "まちます", reading: "machimasu", kind: "word" }
+    rules: ["ja-rule-te-kudasai"]
+  - id: "ja-4430"
+    target: "ここになまえをかいてください。"
+    words: ["ここ", "に", "なまえ", "を", "かいて", "ください"]
+    reading: "koko ni namae o kaite kudasai."
+    ipa: "koko ni namae o kaite kɯdasai"
+    pos: "phrase"
+    bases:
+      - { word: "ここ", ref: "ja-0554" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "なまえ", ref: "ja-0144" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "かいて", ref: "ja-0346" }
+      - { word: "ください", base: "ください", reading: "kudasai" }
+    confusables:
+      - { id: "w1", ref: "ja-0346", kind: "word" }
+      - { id: "w2", ref: "ja-0345", kind: "word" }
+    rules: ["ja-rule-te-kudasai"]
+  - id: "ja-4431"
+    target: "ゆっくりはなしてください。"
+    words: ["ゆっくり", "はなして", "ください"]
+    reading: "yukkuri hanashite kudasai."
+    ipa: "jɯkkɯɾi hanaɕite kɯdasai"
+    pos: "phrase"
+    bases:
+      - { word: "ゆっくり", ref: "ja-0402" }
+      - { word: "はなして", ref: "ja-0347" }
+      - { word: "ください", base: "ください", reading: "kudasai" }
+    confusables:
+      - { id: "w1", ref: "ja-0347", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-te-kudasai"]
+  - id: "ja-4432"
+    target: "ドアをあけてください。"
+    words: ["ドア", "を", "あけて", "ください"]
+    reading: "doa o akete kudasai."
+    ipa: "doa o akete kɯdasai"
+    pos: "phrase"
+    bases:
+      - { word: "ドア", ref: "ja-0859" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "あけて", ref: "ja-0372" }
+      - { word: "ください", base: "ください", reading: "kudasai" }
+    confusables:
+      - { id: "w1", ref: "ja-0372", kind: "word" }
+      - { id: "w2", ref: "ja-0373", kind: "word" }
+    rules: ["ja-rule-te-kudasai"]
+  - id: "ja-4433"
+    target: "まどをしめてください。"
+    words: ["まど", "を", "しめて", "ください"]
+    reading: "mado o shimete kudasai."
+    ipa: "mado o ɕimete kɯdasai"
+    pos: "phrase"
+    bases:
+      - { word: "まど", ref: "ja-1170" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "しめて", ref: "ja-0373" }
+      - { word: "ください", base: "ください", reading: "kudasai" }
+    confusables:
+      - { id: "w1", ref: "ja-0373", kind: "word" }
+      - { id: "w2", ref: "ja-0372", kind: "word" }
+    rules: ["ja-rule-te-kudasai"]
+  - id: "ja-4434"
+    target: "ここにすわってください。"
+    words: ["ここ", "に", "すわって", "ください"]
+    reading: "koko ni suwatte kudasai."
+    ipa: "koko ni sɯwatte kɯdasai"
+    pos: "phrase"
+    bases:
+      - { word: "ここ", ref: "ja-0554" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "すわって", ref: "ja-0370" }
+      - { word: "ください", base: "ください", reading: "kudasai" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-0370", kind: "word" }
+      - { id: "w2", ref: "ja-0371", kind: "word" }
+    rules: ["ja-rule-te-kudasai"]
+  - id: "ja-4435"
+    target: "ほんをみせてください。"
+    words: ["ほん", "を", "みせて", "ください"]
+    reading: "hon o misete kudasai."
+    ipa: "hoɴ o misete kɯdasai"
+    pos: "phrase"
+    bases:
+      - { word: "ほん", ref: "ja-1180" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "みせて", ref: "ja-0591" }
+      - { word: "ください", base: "ください", reading: "kudasai" }
+    confusables:
+      - { id: "w1", ref: "ja-0591", kind: "word" }
+      - { id: "w2", ref: "ja-0343", kind: "word" }
+    rules: ["ja-rule-te-kudasai"]
+  - id: "ja-4436"
+    target: "ラジオをきいてください。"
+    words: ["ラジオ", "を", "きいて", "ください"]
+    reading: "rajio o kiite kudasai."
+    ipa: "ɾadʑio o kiːte kɯdasai"
+    pos: "phrase"
+    bases:
+      - { word: "ラジオ", ref: "ja-0863" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "きいて", ref: "ja-0344" }
+      - { word: "ください", base: "ください", reading: "kudasai" }
+    confusables:
+      - { id: "w1", ref: "ja-0344", kind: "word" }
+      - { id: "w2", ref: "ja-0347", kind: "word" }
+    rules: ["ja-rule-te-kudasai"]

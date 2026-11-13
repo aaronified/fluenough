@@ -1,0 +1,2656 @@
+schema: 1
+id: "ja-grammar-conditional-tara-nara"
+part: "core"
+kind: "rules"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ja-0085"]
+  slots: ["conditional-tara", "conditional-nara"]
+  rows:
+    - word: "ja-1050"
+      forms:
+        "conditional-tara": "まがったら"
+        "conditional-nara": "まがるなら"
+      readings:
+        "conditional-tara": "magattara"
+        "conditional-nara": "magarunara"
+    - word: "ja-1060"
+      forms:
+        "conditional-tara": "わたったら"
+        "conditional-nara": "わたるなら"
+      readings:
+        "conditional-tara": "watattara"
+        "conditional-nara": "watarunara"
+    - word: "ja-1061"
+      forms:
+        "conditional-tara": "すすんだら"
+        "conditional-nara": "すすむなら"
+      readings:
+        "conditional-tara": "susundara"
+        "conditional-nara": "susumunara"
+    - word: "ja-1062"
+      forms:
+        "conditional-tara": "さがったら"
+        "conditional-nara": "さがるなら"
+      readings:
+        "conditional-tara": "sagattara"
+        "conditional-nara": "sagarunara"
+    - word: "ja-1070"
+      forms:
+        "conditional-tara": "まちがえたら"
+        "conditional-nara": "まちがえるなら"
+      readings:
+        "conditional-tara": "machigaetara"
+        "conditional-nara": "machigaerunara"
+    - word: "ja-1071"
+      forms:
+        "conditional-tara": "でたら"
+        "conditional-nara": "でるなら"
+      readings:
+        "conditional-tara": "detara"
+        "conditional-nara": "derunara"
+    - word: "ja-1078"
+      forms:
+        "conditional-tara": "むかったら"
+        "conditional-nara": "むかうなら"
+      readings:
+        "conditional-tara": "mukattara"
+        "conditional-nara": "mukaunara"
+    - word: "ja-0341"
+      forms:
+        "conditional-tara": "たべたら"
+        "conditional-nara": "たべるなら"
+      readings:
+        "conditional-tara": "tabetara"
+        "conditional-nara": "taberunara"
+    - word: "ja-0342"
+      forms:
+        "conditional-tara": "のんだら"
+        "conditional-nara": "のむなら"
+      readings:
+        "conditional-tara": "nondara"
+        "conditional-nara": "nomunara"
+    - word: "ja-0343"
+      forms:
+        "conditional-tara": "みたら"
+        "conditional-nara": "みるなら"
+      readings:
+        "conditional-tara": "mitara"
+        "conditional-nara": "mirunara"
+    - word: "ja-0344"
+      forms:
+        "conditional-tara": "きいたら"
+        "conditional-nara": "きくなら"
+      readings:
+        "conditional-tara": "kiitara"
+        "conditional-nara": "kikunara"
+    - word: "ja-0345"
+      forms:
+        "conditional-tara": "よんだら"
+        "conditional-nara": "よむなら"
+      readings:
+        "conditional-tara": "yondara"
+        "conditional-nara": "yomunara"
+    - word: "ja-0346"
+      forms:
+        "conditional-tara": "かいたら"
+        "conditional-nara": "かくなら"
+      readings:
+        "conditional-tara": "kaitara"
+        "conditional-nara": "kakunara"
+    - word: "ja-0347"
+      forms:
+        "conditional-tara": "はなしたら"
+        "conditional-nara": "はなすなら"
+      readings:
+        "conditional-tara": "hanashitara"
+        "conditional-nara": "hanasunara"
+    - word: "ja-0348"
+      forms:
+        "conditional-tara": "いったら"
+        "conditional-nara": "いくなら"
+      readings:
+        "conditional-tara": "ittara"
+        "conditional-nara": "ikunara"
+    - word: "ja-0349"
+      forms:
+        "conditional-tara": "きたら"
+        "conditional-nara": "くるなら"
+      readings:
+        "conditional-tara": "kitara"
+        "conditional-nara": "kurunara"
+    - word: "ja-0350"
+      forms:
+        "conditional-tara": "かえったら"
+        "conditional-nara": "かえるなら"
+      readings:
+        "conditional-tara": "kaettara"
+        "conditional-nara": "kaerunara"
+    - word: "ja-0351"
+      forms:
+        "conditional-tara": "おきたら"
+        "conditional-nara": "おきるなら"
+      readings:
+        "conditional-tara": "okitara"
+        "conditional-nara": "okirunara"
+    - word: "ja-0352"
+      forms:
+        "conditional-tara": "ねたら"
+        "conditional-nara": "ねるなら"
+      readings:
+        "conditional-tara": "netara"
+        "conditional-nara": "nerunara"
+    - word: "ja-0353"
+      forms:
+        "conditional-tara": "はたらいたら"
+        "conditional-nara": "はたらくなら"
+      readings:
+        "conditional-tara": "hataraitara"
+        "conditional-nara": "hatarakunara"
+    - word: "ja-0354"
+      forms:
+        "conditional-tara": "やすんだら"
+        "conditional-nara": "やすむなら"
+      readings:
+        "conditional-tara": "yasundara"
+        "conditional-nara": "yasumunara"
+    - word: "ja-0355"
+      forms:
+        "conditional-tara": "はいったら"
+        "conditional-nara": "はいるなら"
+      readings:
+        "conditional-tara": "haittara"
+        "conditional-nara": "hairunara"
+    - word: "ja-0356"
+      forms:
+        "conditional-tara": "かったら"
+        "conditional-nara": "かうなら"
+      readings:
+        "conditional-tara": "kattara"
+        "conditional-nara": "kaunara"
+    - word: "ja-0357"
+      forms:
+        "conditional-tara": "あったら"
+        "conditional-nara": "あうなら"
+      readings:
+        "conditional-tara": "attara"
+        "conditional-nara": "aunara"
+    - word: "ja-0358"
+      forms:
+        "conditional-tara": "まったら"
+        "conditional-nara": "まつなら"
+      readings:
+        "conditional-tara": "mattara"
+        "conditional-nara": "matsunara"
+    - word: "ja-0359"
+      forms:
+        "conditional-tara": "もったら"
+        "conditional-nara": "もつなら"
+      readings:
+        "conditional-tara": "mottara"
+        "conditional-nara": "motsunara"
+    - word: "ja-0360"
+      forms:
+        "conditional-tara": "あるいたら"
+        "conditional-nara": "あるくなら"
+      readings:
+        "conditional-tara": "aruitara"
+        "conditional-nara": "arukunara"
+    - word: "ja-0361"
+      forms:
+        "conditional-tara": "のったら"
+        "conditional-nara": "のるなら"
+      readings:
+        "conditional-tara": "nottara"
+        "conditional-nara": "norunara"
+    - word: "ja-0362"
+      forms:
+        "conditional-tara": "おりたら"
+        "conditional-nara": "おりるなら"
+      readings:
+        "conditional-tara": "oritara"
+        "conditional-nara": "orirunara"
+    - word: "ja-0363"
+      forms:
+        "conditional-tara": "あらったら"
+        "conditional-nara": "あらうなら"
+      readings:
+        "conditional-tara": "arattara"
+        "conditional-nara": "araunara"
+    - word: "ja-0364"
+      forms:
+        "conditional-tara": "つくったら"
+        "conditional-nara": "つくるなら"
+      readings:
+        "conditional-tara": "tsukuttara"
+        "conditional-nara": "tsukurunara"
+    - word: "ja-0365"
+      forms:
+        "conditional-tara": "わかったら"
+        "conditional-nara": "わかるなら"
+      readings:
+        "conditional-tara": "wakattara"
+        "conditional-nara": "wakarunara"
+    - word: "ja-0366"
+      forms:
+        "conditional-tara": "しったら"
+        "conditional-nara": "しるなら"
+      readings:
+        "conditional-tara": "shittara"
+        "conditional-nara": "shirunara"
+    - word: "ja-0367"
+      forms:
+        "conditional-tara": "ならったら"
+        "conditional-nara": "ならうなら"
+      readings:
+        "conditional-tara": "narattara"
+        "conditional-nara": "naraunara"
+    - word: "ja-0368"
+      forms:
+        "conditional-tara": "おしえたら"
+        "conditional-nara": "おしえるなら"
+      readings:
+        "conditional-tara": "oshietara"
+        "conditional-nara": "oshierunara"
+    - word: "ja-0369"
+      forms:
+        "conditional-tara": "つかったら"
+        "conditional-nara": "つかうなら"
+      readings:
+        "conditional-tara": "tsukattara"
+        "conditional-nara": "tsukaunara"
+    - word: "ja-0370"
+      forms:
+        "conditional-tara": "すわったら"
+        "conditional-nara": "すわるなら"
+      readings:
+        "conditional-tara": "suwattara"
+        "conditional-nara": "suwarunara"
+    - word: "ja-0371"
+      forms:
+        "conditional-tara": "たったら"
+        "conditional-nara": "たつなら"
+      readings:
+        "conditional-tara": "tattara"
+        "conditional-nara": "tatsunara"
+    - word: "ja-0372"
+      forms:
+        "conditional-tara": "あけたら"
+        "conditional-nara": "あけるなら"
+      readings:
+        "conditional-tara": "aketara"
+        "conditional-nara": "akerunara"
+    - word: "ja-0373"
+      forms:
+        "conditional-tara": "しめたら"
+        "conditional-nara": "しめるなら"
+      readings:
+        "conditional-tara": "shimetara"
+        "conditional-nara": "shimerunara"
+    - word: "ja-0374"
+      forms:
+        "conditional-tara": "あそんだら"
+        "conditional-nara": "あそぶなら"
+      readings:
+        "conditional-tara": "asondara"
+        "conditional-nara": "asobunara"
+    - word: "ja-0375"
+      forms:
+        "conditional-tara": "したら"
+        "conditional-nara": "するなら"
+      readings:
+        "conditional-tara": "shitara"
+        "conditional-nara": "surunara"
+    - word: "ja-0949"
+      forms:
+        "conditional-tara": "かぞえたら"
+        "conditional-nara": "かぞえるなら"
+      readings:
+        "conditional-tara": "kazoetara"
+        "conditional-nara": "kazoerunara"
+    - word: "ja-1226"
+      forms:
+        "conditional-tara": "こまったら"
+        "conditional-nara": "こまるなら"
+      readings:
+        "conditional-tara": "komattara"
+        "conditional-nara": "komarunara"
+    - word: "ja-1227"
+      forms:
+        "conditional-tara": "よんだら"
+        "conditional-nara": "よぶなら"
+      readings:
+        "conditional-tara": "yondara"
+        "conditional-nara": "yobunara"
+    - word: "ja-1228"
+      forms:
+        "conditional-tara": "まよったら"
+        "conditional-nara": "まようなら"
+      readings:
+        "conditional-tara": "mayottara"
+        "conditional-nara": "mayounara"
+    - word: "ja-1236"
+      forms:
+        "conditional-tara": "たすけたら"
+        "conditional-nara": "たすけるなら"
+      readings:
+        "conditional-tara": "tasuketara"
+        "conditional-nara": "tasukerunara"
+    - word: "ja-1237"
+      forms:
+        "conditional-tara": "たすかったら"
+        "conditional-nara": "たすかるなら"
+      readings:
+        "conditional-tara": "tasukattara"
+        "conditional-nara": "tasukarunara"
+    - word: "ja-1240"
+      forms:
+        "conditional-tara": "まもったら"
+        "conditional-nara": "まもるなら"
+      readings:
+        "conditional-tara": "mamottara"
+        "conditional-nara": "mamorunara"
+    - word: "ja-0571"
+      forms:
+        "conditional-tara": "あびたら"
+        "conditional-nara": "あびるなら"
+      readings:
+        "conditional-tara": "abitara"
+        "conditional-nara": "abirunara"
+    - word: "ja-0572"
+      forms:
+        "conditional-tara": "はしったら"
+        "conditional-nara": "はしるなら"
+      readings:
+        "conditional-tara": "hashittara"
+        "conditional-nara": "hashirunara"
+    - word: "ja-0573"
+      forms:
+        "conditional-tara": "とんだら"
+        "conditional-nara": "とぶなら"
+      readings:
+        "conditional-tara": "tondara"
+        "conditional-nara": "tobunara"
+    - word: "ja-0574"
+      forms:
+        "conditional-tara": "おどったら"
+        "conditional-nara": "おどるなら"
+      readings:
+        "conditional-tara": "odottara"
+        "conditional-nara": "odorunara"
+    - word: "ja-0575"
+      forms:
+        "conditional-tara": "うたったら"
+        "conditional-nara": "うたうなら"
+      readings:
+        "conditional-tara": "utattara"
+        "conditional-nara": "utaunara"
+    - word: "ja-0576"
+      forms:
+        "conditional-tara": "かりたら"
+        "conditional-nara": "かりるなら"
+      readings:
+        "conditional-tara": "karitara"
+        "conditional-nara": "karirunara"
+    - word: "ja-0577"
+      forms:
+        "conditional-tara": "かえしたら"
+        "conditional-nara": "かえすなら"
+      readings:
+        "conditional-tara": "kaeshitara"
+        "conditional-nara": "kaesunara"
+    - word: "ja-0578"
+      forms:
+        "conditional-tara": "わすれたら"
+        "conditional-nara": "わすれるなら"
+      readings:
+        "conditional-tara": "wasuretara"
+        "conditional-nara": "wasurerunara"
+    - word: "ja-0579"
+      forms:
+        "conditional-tara": "おぼえたら"
+        "conditional-nara": "おぼえるなら"
+      readings:
+        "conditional-tara": "oboetara"
+        "conditional-nara": "oboerunara"
+    - word: "ja-0580"
+      forms:
+        "conditional-tara": "てつだったら"
+        "conditional-nara": "てつだうなら"
+      readings:
+        "conditional-tara": "tetsudattara"
+        "conditional-nara": "tetsudaunara"
+    - word: "ja-0581"
+      forms:
+        "conditional-tara": "ひろったら"
+        "conditional-nara": "ひろうなら"
+      readings:
+        "conditional-tara": "hirottara"
+        "conditional-nara": "hirounara"
+    - word: "ja-0582"
+      forms:
+        "conditional-tara": "すてたら"
+        "conditional-nara": "すてるなら"
+      readings:
+        "conditional-tara": "sutetara"
+        "conditional-nara": "suterunara"
+    - word: "ja-0583"
+      forms:
+        "conditional-tara": "なくしたら"
+        "conditional-nara": "なくすなら"
+      readings:
+        "conditional-tara": "nakushitara"
+        "conditional-nara": "nakusunara"
+    - word: "ja-0584"
+      forms:
+        "conditional-tara": "のぼったら"
+        "conditional-nara": "のぼるなら"
+      readings:
+        "conditional-tara": "nobottara"
+        "conditional-nara": "noborunara"
+    - word: "ja-0585"
+      forms:
+        "conditional-tara": "そうじしたら"
+        "conditional-nara": "そうじするなら"
+      readings:
+        "conditional-tara": "soujishitara"
+        "conditional-nara": "soujisurunara"
+    - word: "ja-0586"
+      forms:
+        "conditional-tara": "りょうりしたら"
+        "conditional-nara": "りょうりするなら"
+      readings:
+        "conditional-tara": "ryourishitara"
+        "conditional-nara": "ryourisurunara"
+    - word: "ja-0587"
+      forms:
+        "conditional-tara": "でかけたら"
+        "conditional-nara": "でかけるなら"
+      readings:
+        "conditional-tara": "dekaketara"
+        "conditional-nara": "dekakerunara"
+    - word: "ja-0588"
+      forms:
+        "conditional-tara": "もどったら"
+        "conditional-nara": "もどるなら"
+      readings:
+        "conditional-tara": "modottara"
+        "conditional-nara": "modorunara"
+    - word: "ja-0589"
+      forms:
+        "conditional-tara": "とまったら"
+        "conditional-nara": "とまるなら"
+      readings:
+        "conditional-tara": "tomattara"
+        "conditional-nara": "tomarunara"
+    - word: "ja-0590"
+      forms:
+        "conditional-tara": "さがしたら"
+        "conditional-nara": "さがすなら"
+      readings:
+        "conditional-tara": "sagashitara"
+        "conditional-nara": "sagasunara"
+    - word: "ja-0591"
+      forms:
+        "conditional-tara": "みせたら"
+        "conditional-nara": "みせるなら"
+      readings:
+        "conditional-tara": "misetara"
+        "conditional-nara": "miserunara"
+    - word: "ja-0592"
+      forms:
+        "conditional-tara": "いれたら"
+        "conditional-nara": "いれるなら"
+      readings:
+        "conditional-tara": "iretara"
+        "conditional-nara": "irerunara"
+    - word: "ja-0593"
+      forms:
+        "conditional-tara": "わらったら"
+        "conditional-nara": "わらうなら"
+      readings:
+        "conditional-tara": "warattara"
+        "conditional-nara": "waraunara"
+    - word: "ja-0594"
+      forms:
+        "conditional-tara": "おこったら"
+        "conditional-nara": "おこるなら"
+      readings:
+        "conditional-tara": "okottara"
+        "conditional-nara": "okorunara"
+    - word: "ja-0595"
+      forms:
+        "conditional-tara": "やめたら"
+        "conditional-nara": "やめるなら"
+      readings:
+        "conditional-tara": "yametara"
+        "conditional-nara": "yamerunara"
+    - word: "ja-0596"
+      forms:
+        "conditional-tara": "はじめたら"
+        "conditional-nara": "はじめるなら"
+      readings:
+        "conditional-tara": "hajimetara"
+        "conditional-nara": "hajimerunara"
+    - word: "ja-0597"
+      forms:
+        "conditional-tara": "ひっこしたら"
+        "conditional-nara": "ひっこすなら"
+      readings:
+        "conditional-tara": "hikkoshitara"
+        "conditional-nara": "hikkosunara"
+    - word: "ja-0598"
+      forms:
+        "conditional-tara": "あげたら"
+        "conditional-nara": "あげるなら"
+      readings:
+        "conditional-tara": "agetara"
+        "conditional-nara": "agerunara"
+    - word: "ja-0599"
+      forms:
+        "conditional-tara": "もらったら"
+        "conditional-nara": "もらうなら"
+      readings:
+        "conditional-tara": "morattara"
+        "conditional-nara": "moraunara"
+    - word: "ja-0600"
+      forms:
+        "conditional-tara": "さけんだら"
+        "conditional-nara": "さけぶなら"
+      readings:
+        "conditional-tara": "sakendara"
+        "conditional-nara": "sakebunara"
+    - word: "ja-0516"
+      forms:
+        "conditional-tara": "おわったら"
+        "conditional-nara": "おわるなら"
+      readings:
+        "conditional-tara": "owattara"
+        "conditional-nara": "owarunara"
+    - word: "ja-0711"
+      forms:
+        "conditional-tara": "つとめたら"
+        "conditional-nara": "つとめるなら"
+      readings:
+        "conditional-tara": "tsutometara"
+        "conditional-nara": "tsutomerunara"
+    - word: "ja-1334"
+      forms:
+        "conditional-tara": "きがえたら"
+        "conditional-nara": "きがえるなら"
+      readings:
+        "conditional-tara": "kigaetara"
+        "conditional-nara": "kigaerunara"
+    - word: "ja-1335"
+      forms:
+        "conditional-tara": "はいたら"
+        "conditional-nara": "はくなら"
+      readings:
+        "conditional-tara": "haitara"
+        "conditional-nara": "hakunara"
+    - word: "ja-1336"
+      forms:
+        "conditional-tara": "かぶったら"
+        "conditional-nara": "かぶるなら"
+      readings:
+        "conditional-tara": "kabuttara"
+        "conditional-nara": "kaburunara"
+    - word: "ja-1341"
+      forms:
+        "conditional-tara": "つかれたら"
+        "conditional-nara": "つかれるなら"
+      readings:
+        "conditional-tara": "tsukaretara"
+        "conditional-nara": "tsukarerunara"
+    - word: "ja-1348"
+      forms:
+        "conditional-tara": "だしたら"
+        "conditional-nara": "だすなら"
+      readings:
+        "conditional-tara": "dashitara"
+        "conditional-nara": "dasunara"
+    - word: "ja-1349"
+      forms:
+        "conditional-tara": "わかしたら"
+        "conditional-nara": "わかすなら"
+      readings:
+        "conditional-tara": "wakashitara"
+        "conditional-nara": "wakasunara"
+    - word: "ja-1350"
+      forms:
+        "conditional-tara": "ほしたら"
+        "conditional-nara": "ほすなら"
+      readings:
+        "conditional-tara": "hoshitara"
+        "conditional-nara": "hosunara"
+    - word: "ja-1351"
+      forms:
+        "conditional-tara": "かたづけたら"
+        "conditional-nara": "かたづけるなら"
+      readings:
+        "conditional-tara": "katazuketara"
+        "conditional-nara": "katazukerunara"
+    - word: "ja-1352"
+      forms:
+        "conditional-tara": "たたんだら"
+        "conditional-nara": "たたむなら"
+      readings:
+        "conditional-tara": "tatandara"
+        "conditional-nara": "tatamunara"
+    - word: "ja-1353"
+      forms:
+        "conditional-tara": "ぬいだら"
+        "conditional-nara": "ぬぐなら"
+      readings:
+        "conditional-tara": "nuidara"
+        "conditional-nara": "nugunara"
+    - word: "ja-1354"
+      forms:
+        "conditional-tara": "まにあったら"
+        "conditional-nara": "まにあうなら"
+      readings:
+        "conditional-tara": "maniattara"
+        "conditional-nara": "maniaunara"
+    - word: "ja-1364"
+      forms:
+        "conditional-tara": "かわいたら"
+        "conditional-nara": "かわくなら"
+      readings:
+        "conditional-tara": "kawaitara"
+        "conditional-nara": "kawakunara"
+    - word: "ja-1368"
+      forms:
+        "conditional-tara": "いそいだら"
+        "conditional-nara": "いそぐなら"
+      readings:
+        "conditional-tara": "isoidara"
+        "conditional-nara": "isogunara"
+    - word: "ja-1718"
+      forms:
+        "conditional-tara": "うったら"
+        "conditional-nara": "うるなら"
+      readings:
+        "conditional-tara": "uttara"
+        "conditional-nara": "urunara"
+    - word: "ja-1719"
+      forms:
+        "conditional-tara": "はらったら"
+        "conditional-nara": "はらうなら"
+      readings:
+        "conditional-tara": "harattara"
+        "conditional-nara": "haraunara"
+    - word: "ja-1720"
+      forms:
+        "conditional-tara": "まけたら"
+        "conditional-nara": "まけるなら"
+      readings:
+        "conditional-tara": "maketara"
+        "conditional-nara": "makerunara"
+    - word: "ja-1721"
+      forms:
+        "conditional-tara": "えらんだら"
+        "conditional-nara": "えらぶなら"
+      readings:
+        "conditional-tara": "erandara"
+        "conditional-nara": "erabunara"
+    - word: "ja-1758"
+      forms:
+        "conditional-tara": "たのんだら"
+        "conditional-nara": "たのむなら"
+      readings:
+        "conditional-tara": "tanondara"
+        "conditional-nara": "tanomunara"
+    - word: "ja-1759"
+      forms:
+        "conditional-tara": "おごったら"
+        "conditional-nara": "おごるなら"
+      readings:
+        "conditional-tara": "ogottara"
+        "conditional-nara": "ogorunara"
+    - word: "ja-1790"
+      forms:
+        "conditional-tara": "いためたら"
+        "conditional-nara": "いためるなら"
+      readings:
+        "conditional-tara": "itametara"
+        "conditional-nara": "itamerunara"
+    - word: "ja-1791"
+      forms:
+        "conditional-tara": "まぜたら"
+        "conditional-nara": "まぜるなら"
+      readings:
+        "conditional-tara": "mazetara"
+        "conditional-nara": "mazerunara"
+    - word: "ja-1792"
+      forms:
+        "conditional-tara": "ゆでたら"
+        "conditional-nara": "ゆでるなら"
+      readings:
+        "conditional-tara": "yudetara"
+        "conditional-nara": "yuderunara"
+    - word: "ja-1793"
+      forms:
+        "conditional-tara": "にたら"
+        "conditional-nara": "にるなら"
+      readings:
+        "conditional-tara": "nitara"
+        "conditional-nara": "nirunara"
+    - word: "ja-1794"
+      forms:
+        "conditional-tara": "やいたら"
+        "conditional-nara": "やくなら"
+      readings:
+        "conditional-tara": "yaitara"
+        "conditional-nara": "yakunara"
+    - word: "ja-1799"
+      forms:
+        "conditional-tara": "ひやしたら"
+        "conditional-nara": "ひやすなら"
+      readings:
+        "conditional-tara": "hiyashitara"
+        "conditional-nara": "hiyasunara"
+    - word: "ja-1800"
+      forms:
+        "conditional-tara": "あたためたら"
+        "conditional-nara": "あたためるなら"
+      readings:
+        "conditional-tara": "atatametara"
+        "conditional-nara": "atatamerunara"
+    - word: "ja-1801"
+      forms:
+        "conditional-tara": "きざんだら"
+        "conditional-nara": "きざむなら"
+      readings:
+        "conditional-tara": "kizandara"
+        "conditional-nara": "kizamunara"
+    - word: "ja-1802"
+      forms:
+        "conditional-tara": "むいたら"
+        "conditional-nara": "むくなら"
+      readings:
+        "conditional-tara": "muitara"
+        "conditional-nara": "mukunara"
+    - word: "ja-1803"
+      forms:
+        "conditional-tara": "つつんだら"
+        "conditional-nara": "つつむなら"
+      readings:
+        "conditional-tara": "tsutsundara"
+        "conditional-nara": "tsutsumunara"
+    - word: "ja-1804"
+      forms:
+        "conditional-tara": "こげたら"
+        "conditional-nara": "こげるなら"
+      readings:
+        "conditional-tara": "kogetara"
+        "conditional-nara": "kogerunara"
+    - word: "ja-1805"
+      forms:
+        "conditional-tara": "さましたら"
+        "conditional-nara": "さますなら"
+      readings:
+        "conditional-tara": "samashitara"
+        "conditional-nara": "samasunara"
+    - word: "ja-1850"
+      forms:
+        "conditional-tara": "べんきょうしたら"
+        "conditional-nara": "べんきょうするなら"
+      readings:
+        "conditional-tara": "benkyoushitara"
+        "conditional-nara": "benkyousurunara"
+    - word: "ja-1861"
+      forms:
+        "conditional-tara": "おくれたら"
+        "conditional-nara": "おくれるなら"
+      readings:
+        "conditional-tara": "okuretara"
+        "conditional-nara": "okurerunara"
+    - word: "ja-1862"
+      forms:
+        "conditional-tara": "まなんだら"
+        "conditional-nara": "まなぶなら"
+      readings:
+        "conditional-tara": "manandara"
+        "conditional-nara": "manabunara"
+    - word: "ja-1863"
+      forms:
+        "conditional-tara": "つづけたら"
+        "conditional-nara": "つづけるなら"
+      readings:
+        "conditional-tara": "tsuzuketara"
+        "conditional-nara": "tsuzukerunara"
+    - word: "ja-1864"
+      forms:
+        "conditional-tara": "かんがえたら"
+        "conditional-nara": "かんがえるなら"
+      readings:
+        "conditional-tara": "kangaetara"
+        "conditional-nara": "kangaerunara"
+    - word: "ja-1865"
+      forms:
+        "conditional-tara": "こたえたら"
+        "conditional-nara": "こたえるなら"
+      readings:
+        "conditional-tara": "kotaetara"
+        "conditional-nara": "kotaerunara"
+    - word: "ja-1892"
+      forms:
+        "conditional-tara": "およいだら"
+        "conditional-nara": "およぐなら"
+      readings:
+        "conditional-tara": "oyoidara"
+        "conditional-nara": "oyogunara"
+    - word: "ja-1893"
+      forms:
+        "conditional-tara": "とったら"
+        "conditional-nara": "とるなら"
+      readings:
+        "conditional-tara": "tottara"
+        "conditional-nara": "torunara"
+    - word: "ja-1896"
+      forms:
+        "conditional-tara": "えがいたら"
+        "conditional-nara": "えがくなら"
+      readings:
+        "conditional-tara": "egaitara"
+        "conditional-nara": "egakunara"
+    - word: "ja-1900"
+      forms:
+        "conditional-tara": "ぬったら"
+        "conditional-nara": "ぬうなら"
+      readings:
+        "conditional-tara": "nuttara"
+        "conditional-nara": "nuunara"
+    - word: "ja-1901"
+      forms:
+        "conditional-tara": "あんだら"
+        "conditional-nara": "あむなら"
+      readings:
+        "conditional-tara": "andara"
+        "conditional-nara": "amunara"
+    - word: "ja-1907"
+      forms:
+        "conditional-tara": "ほめたら"
+        "conditional-nara": "ほめるなら"
+      readings:
+        "conditional-tara": "hometara"
+        "conditional-nara": "homerunara"
+    - word: "ja-1910"
+      forms:
+        "conditional-tara": "かったら"
+        "conditional-nara": "かつなら"
+      readings:
+        "conditional-tara": "kattara"
+        "conditional-nara": "katsunara"
+    - word: "ja-1933"
+      forms:
+        "conditional-tara": "かなでたら"
+        "conditional-nara": "かなでるなら"
+      readings:
+        "conditional-tara": "kanadetara"
+        "conditional-nara": "kanaderunara"
+    - word: "ja-1934"
+      forms:
+        "conditional-tara": "ならしたら"
+        "conditional-nara": "ならすなら"
+      readings:
+        "conditional-tara": "narashitara"
+        "conditional-nara": "narasunara"
+    - word: "ja-1935"
+      forms:
+        "conditional-tara": "ひびいたら"
+        "conditional-nara": "ひびくなら"
+      readings:
+        "conditional-tara": "hibiitara"
+        "conditional-nara": "hibikunara"
+    - word: "ja-1939"
+      forms:
+        "conditional-tara": "たたいたら"
+        "conditional-nara": "たたくなら"
+      readings:
+        "conditional-tara": "tataitara"
+        "conditional-nara": "tatakunara"
+    - word: "ja-1940"
+      forms:
+        "conditional-tara": "きこえたら"
+        "conditional-nara": "きこえるなら"
+      readings:
+        "conditional-tara": "kikoetara"
+        "conditional-nara": "kikoerunara"
+    - word: "ja-1941"
+      forms:
+        "conditional-tara": "ひいたら"
+        "conditional-nara": "ひくなら"
+      readings:
+        "conditional-tara": "hiitara"
+        "conditional-nara": "hikunara"
+    - word: "ja-1539"
+      forms:
+        "conditional-tara": "にあったら"
+        "conditional-nara": "にあうなら"
+      readings:
+        "conditional-tara": "niattara"
+        "conditional-nara": "niaunara"
+    - word: "ja-1542"
+      forms:
+        "conditional-tara": "きたら"
+        "conditional-nara": "きるなら"
+      readings:
+        "conditional-tara": "kitara"
+        "conditional-nara": "kirunara"
+    - word: "ja-1996"
+      forms:
+        "conditional-tara": "なげたら"
+        "conditional-nara": "なげるなら"
+      readings:
+        "conditional-tara": "nagetara"
+        "conditional-nara": "nagerunara"
+    - word: "ja-1997"
+      forms:
+        "conditional-tara": "うったら"
+        "conditional-nara": "うつなら"
+      readings:
+        "conditional-tara": "uttara"
+        "conditional-nara": "utsunara"
+    - word: "ja-1998"
+      forms:
+        "conditional-tara": "けったら"
+        "conditional-nara": "けるなら"
+      readings:
+        "conditional-tara": "kettara"
+        "conditional-nara": "kerunara"
+    - word: "ja-1999"
+      forms:
+        "conditional-tara": "おいかけたら"
+        "conditional-nara": "おいかけるなら"
+      readings:
+        "conditional-tara": "oikaketara"
+        "conditional-nara": "oikakerunara"
+    - word: "ja-2000"
+      forms:
+        "conditional-tara": "あきらめたら"
+        "conditional-nara": "あきらめるなら"
+      readings:
+        "conditional-tara": "akirametara"
+        "conditional-nara": "akiramerunara"
+    - word: "ja-2001"
+      forms:
+        "conditional-tara": "きたえたら"
+        "conditional-nara": "きたえるなら"
+      readings:
+        "conditional-tara": "kitaetara"
+        "conditional-nara": "kitaerunara"
+    - word: "ja-2002"
+      forms:
+        "conditional-tara": "ねらったら"
+        "conditional-nara": "ねらうなら"
+      readings:
+        "conditional-tara": "nerattara"
+        "conditional-nara": "neraunara"
+    - word: "ja-2049"
+      forms:
+        "conditional-tara": "うつったら"
+        "conditional-nara": "うつるなら"
+      readings:
+        "conditional-tara": "utsuttara"
+        "conditional-nara": "utsurunara"
+    - word: "ja-2050"
+      forms:
+        "conditional-tara": "なおったら"
+        "conditional-nara": "なおるなら"
+      readings:
+        "conditional-tara": "naottara"
+        "conditional-nara": "naorunara"
+    - word: "ja-2051"
+      forms:
+        "conditional-tara": "なおしたら"
+        "conditional-nara": "なおすなら"
+      readings:
+        "conditional-tara": "naoshitara"
+        "conditional-nara": "naosunara"
+    - word: "ja-2052"
+      forms:
+        "conditional-tara": "たおれたら"
+        "conditional-nara": "たおれるなら"
+      readings:
+        "conditional-tara": "taoretara"
+        "conditional-nara": "taorerunara"
+    - word: "ja-2053"
+      forms:
+        "conditional-tara": "はれたら"
+        "conditional-nara": "はれるなら"
+      readings:
+        "conditional-tara": "haretara"
+        "conditional-nara": "harerunara"
+    - word: "ja-2054"
+      forms:
+        "conditional-tara": "しびれたら"
+        "conditional-nara": "しびれるなら"
+      readings:
+        "conditional-tara": "shibiretara"
+        "conditional-nara": "shibirerunara"
+    - word: "ja-2115"
+      forms:
+        "conditional-tara": "みがいたら"
+        "conditional-nara": "みがくなら"
+      readings:
+        "conditional-tara": "migaitara"
+        "conditional-nara": "migakunara"
+    - word: "ja-2116"
+      forms:
+        "conditional-tara": "こすったら"
+        "conditional-nara": "こするなら"
+      readings:
+        "conditional-tara": "kosuttara"
+        "conditional-nara": "kosurunara"
+    - word: "ja-2117"
+      forms:
+        "conditional-tara": "すすいだら"
+        "conditional-nara": "すすぐなら"
+      readings:
+        "conditional-tara": "susuidara"
+        "conditional-nara": "susugunara"
+    - word: "ja-2118"
+      forms:
+        "conditional-tara": "しぼったら"
+        "conditional-nara": "しぼるなら"
+      readings:
+        "conditional-tara": "shibottara"
+        "conditional-nara": "shiborunara"
+    - word: "ja-2119"
+      forms:
+        "conditional-tara": "かわかしたら"
+        "conditional-nara": "かわかすなら"
+      readings:
+        "conditional-tara": "kawakashitara"
+        "conditional-nara": "kawakasunara"
+    - word: "ja-2120"
+      forms:
+        "conditional-tara": "しまったら"
+        "conditional-nara": "しまうなら"
+      readings:
+        "conditional-tara": "shimattara"
+        "conditional-nara": "shimaunara"
+    - word: "ja-2121"
+      forms:
+        "conditional-tara": "そろえたら"
+        "conditional-nara": "そろえるなら"
+      readings:
+        "conditional-tara": "soroetara"
+        "conditional-nara": "soroerunara"
+    - word: "ja-2122"
+      forms:
+        "conditional-tara": "かざったら"
+        "conditional-nara": "かざるなら"
+      readings:
+        "conditional-tara": "kazattara"
+        "conditional-nara": "kazarunara"
+    - word: "ja-2123"
+      forms:
+        "conditional-tara": "とりかえたら"
+        "conditional-nara": "とりかえるなら"
+      readings:
+        "conditional-tara": "torikaetara"
+        "conditional-nara": "torikaerunara"
+    - word: "ja-2124"
+      forms:
+        "conditional-tara": "つめたら"
+        "conditional-nara": "つめるなら"
+      readings:
+        "conditional-tara": "tsumetara"
+        "conditional-nara": "tsumerunara"
+    - word: "ja-2125"
+      forms:
+        "conditional-tara": "くばったら"
+        "conditional-nara": "くばるなら"
+      readings:
+        "conditional-tara": "kubattara"
+        "conditional-nara": "kubarunara"
+    - word: "ja-2126"
+      forms:
+        "conditional-tara": "こぼしたら"
+        "conditional-nara": "こぼすなら"
+      readings:
+        "conditional-tara": "koboshitara"
+        "conditional-nara": "kobosunara"
+    - word: "ja-2127"
+      forms:
+        "conditional-tara": "よごれたら"
+        "conditional-nara": "よごれるなら"
+      readings:
+        "conditional-tara": "yogoretara"
+        "conditional-nara": "yogorerunara"
+    - word: "ja-2128"
+      forms:
+        "conditional-tara": "よごしたら"
+        "conditional-nara": "よごすなら"
+      readings:
+        "conditional-tara": "yogoshitara"
+        "conditional-nara": "yogosunara"
+    - word: "ja-2129"
+      forms:
+        "conditional-tara": "ちらかしたら"
+        "conditional-nara": "ちらかすなら"
+      readings:
+        "conditional-tara": "chirakashitara"
+        "conditional-nara": "chirakasunara"
+    - word: "ja-2164"
+      forms:
+        "conditional-tara": "やせたら"
+        "conditional-nara": "やせるなら"
+      readings:
+        "conditional-tara": "yasetara"
+        "conditional-nara": "yaserunara"
+    - word: "ja-2165"
+      forms:
+        "conditional-tara": "ふとったら"
+        "conditional-nara": "ふとるなら"
+      readings:
+        "conditional-tara": "futottara"
+        "conditional-nara": "futorunara"
+    - word: "ja-2217"
+      forms:
+        "conditional-tara": "かわったら"
+        "conditional-nara": "かわるなら"
+      readings:
+        "conditional-tara": "kawattara"
+        "conditional-nara": "kawarunara"
+    - word: "ja-2218"
+      forms:
+        "conditional-tara": "きまったら"
+        "conditional-nara": "きまるなら"
+      readings:
+        "conditional-tara": "kimattara"
+        "conditional-nara": "kimarunara"
+    - word: "ja-2219"
+      forms:
+        "conditional-tara": "きめたら"
+        "conditional-nara": "きめるなら"
+      readings:
+        "conditional-tara": "kimetara"
+        "conditional-nara": "kimerunara"
+    - word: "ja-2220"
+      forms:
+        "conditional-tara": "なったら"
+        "conditional-nara": "なるなら"
+      readings:
+        "conditional-tara": "nattara"
+        "conditional-nara": "narunara"
+    - word: "ja-2221"
+      forms:
+        "conditional-tara": "なれたら"
+        "conditional-nara": "なれるなら"
+      readings:
+        "conditional-tara": "naretara"
+        "conditional-nara": "narerunara"
+    - word: "ja-2222"
+      forms:
+        "conditional-tara": "ついたら"
+        "conditional-nara": "つくなら"
+      readings:
+        "conditional-tara": "tsuitara"
+        "conditional-nara": "tsukunara"
+    - word: "ja-2223"
+      forms:
+        "conditional-tara": "つけたら"
+        "conditional-nara": "つけるなら"
+      readings:
+        "conditional-tara": "tsuketara"
+        "conditional-nara": "tsukerunara"
+    - word: "ja-2224"
+      forms:
+        "conditional-tara": "けしたら"
+        "conditional-nara": "けすなら"
+      readings:
+        "conditional-tara": "keshitara"
+        "conditional-nara": "kesunara"
+    - word: "ja-2225"
+      forms:
+        "conditional-tara": "きえたら"
+        "conditional-nara": "きえるなら"
+      readings:
+        "conditional-tara": "kietara"
+        "conditional-nara": "kierunara"
+    - word: "ja-2226"
+      forms:
+        "conditional-tara": "あいたら"
+        "conditional-nara": "あくなら"
+      readings:
+        "conditional-tara": "aitara"
+        "conditional-nara": "akunara"
+    - word: "ja-2227"
+      forms:
+        "conditional-tara": "しまったら"
+        "conditional-nara": "しまるなら"
+      readings:
+        "conditional-tara": "shimattara"
+        "conditional-nara": "shimarunara"
+    - word: "ja-2228"
+      forms:
+        "conditional-tara": "つかまえたら"
+        "conditional-nara": "つかまえるなら"
+      readings:
+        "conditional-tara": "tsukamaetara"
+        "conditional-nara": "tsukamaerunara"
+    - word: "ja-2229"
+      forms:
+        "conditional-tara": "つかんだら"
+        "conditional-nara": "つかむなら"
+      readings:
+        "conditional-tara": "tsukandara"
+        "conditional-nara": "tsukamunara"
+    - word: "ja-2230"
+      forms:
+        "conditional-tara": "おしたら"
+        "conditional-nara": "おすなら"
+      readings:
+        "conditional-tara": "oshitara"
+        "conditional-nara": "osunara"
+    - word: "ja-2231"
+      forms:
+        "conditional-tara": "ひっぱったら"
+        "conditional-nara": "ひっぱるなら"
+      readings:
+        "conditional-tara": "hippattara"
+        "conditional-nara": "hipparunara"
+    - word: "ja-2232"
+      forms:
+        "conditional-tara": "おとしたら"
+        "conditional-nara": "おとすなら"
+      readings:
+        "conditional-tara": "otoshitara"
+        "conditional-nara": "otosunara"
+    - word: "ja-2233"
+      forms:
+        "conditional-tara": "おちたら"
+        "conditional-nara": "おちるなら"
+      readings:
+        "conditional-tara": "ochitara"
+        "conditional-nara": "ochirunara"
+    - word: "ja-2234"
+      forms:
+        "conditional-tara": "ひらいたら"
+        "conditional-nara": "ひらくなら"
+      readings:
+        "conditional-tara": "hiraitara"
+        "conditional-nara": "hirakunara"
+    - word: "ja-2235"
+      forms:
+        "conditional-tara": "とじたら"
+        "conditional-nara": "とじるなら"
+      readings:
+        "conditional-tara": "tojitara"
+        "conditional-nara": "tojirunara"
+    - word: "ja-2236"
+      forms:
+        "conditional-tara": "わたしたら"
+        "conditional-nara": "わたすなら"
+      readings:
+        "conditional-tara": "watashitara"
+        "conditional-nara": "watasunara"
+    - word: "ja-2237"
+      forms:
+        "conditional-tara": "うけたら"
+        "conditional-nara": "うけるなら"
+      readings:
+        "conditional-tara": "uketara"
+        "conditional-nara": "ukerunara"
+    - word: "ja-2238"
+      forms:
+        "conditional-tara": "つたえたら"
+        "conditional-nara": "つたえるなら"
+      readings:
+        "conditional-tara": "tsutaetara"
+        "conditional-nara": "tsutaerunara"
+    - word: "ja-2239"
+      forms:
+        "conditional-tara": "つたわったら"
+        "conditional-nara": "つたわるなら"
+      readings:
+        "conditional-tara": "tsutawattara"
+        "conditional-nara": "tsutawarunara"
+    - word: "ja-2240"
+      forms:
+        "conditional-tara": "むかえたら"
+        "conditional-nara": "むかえるなら"
+      readings:
+        "conditional-tara": "mukaetara"
+        "conditional-nara": "mukaerunara"
+    - word: "ja-2241"
+      forms:
+        "conditional-tara": "おくったら"
+        "conditional-nara": "おくるなら"
+      readings:
+        "conditional-tara": "okuttara"
+        "conditional-nara": "okurunara"
+    - word: "ja-2242"
+      forms:
+        "conditional-tara": "とどいたら"
+        "conditional-nara": "とどくなら"
+      readings:
+        "conditional-tara": "todoitara"
+        "conditional-nara": "todokunara"
+    - word: "ja-2243"
+      forms:
+        "conditional-tara": "とどけたら"
+        "conditional-nara": "とどけるなら"
+      readings:
+        "conditional-tara": "todoketara"
+        "conditional-nara": "todokerunara"
+    - word: "ja-2244"
+      forms:
+        "conditional-tara": "たずねたら"
+        "conditional-nara": "たずねるなら"
+      readings:
+        "conditional-tara": "tazunetara"
+        "conditional-nara": "tazunerunara"
+    - word: "ja-2245"
+      forms:
+        "conditional-tara": "まちがったら"
+        "conditional-nara": "まちがうなら"
+      readings:
+        "conditional-tara": "machigattara"
+        "conditional-nara": "machigaunara"
+    - word: "ja-2246"
+      forms:
+        "conditional-tara": "あやまったら"
+        "conditional-nara": "あやまるなら"
+      readings:
+        "conditional-tara": "ayamattara"
+        "conditional-nara": "ayamarunara"
+    - word: "ja-2247"
+      forms:
+        "conditional-tara": "ゆるしたら"
+        "conditional-nara": "ゆるすなら"
+      readings:
+        "conditional-tara": "yurushitara"
+        "conditional-nara": "yurusunara"
+    - word: "ja-2248"
+      forms:
+        "conditional-tara": "ことわったら"
+        "conditional-nara": "ことわるなら"
+      readings:
+        "conditional-tara": "kotowattara"
+        "conditional-nara": "kotowarunara"
+    - word: "ja-2249"
+      forms:
+        "conditional-tara": "さそったら"
+        "conditional-nara": "さそうなら"
+      readings:
+        "conditional-tara": "sasottara"
+        "conditional-nara": "sasounara"
+    - word: "ja-2250"
+      forms:
+        "conditional-tara": "かよったら"
+        "conditional-nara": "かようなら"
+      readings:
+        "conditional-tara": "kayottara"
+        "conditional-nara": "kayounara"
+    - word: "ja-2251"
+      forms:
+        "conditional-tara": "とおったら"
+        "conditional-nara": "とおるなら"
+      readings:
+        "conditional-tara": "toottara"
+        "conditional-nara": "toorunara"
+    - word: "ja-2252"
+      forms:
+        "conditional-tara": "すぎたら"
+        "conditional-nara": "すぎるなら"
+      readings:
+        "conditional-tara": "sugitara"
+        "conditional-nara": "sugirunara"
+    - word: "ja-2253"
+      forms:
+        "conditional-tara": "まわったら"
+        "conditional-nara": "まわるなら"
+      readings:
+        "conditional-tara": "mawattara"
+        "conditional-nara": "mawarunara"
+    - word: "ja-2254"
+      forms:
+        "conditional-tara": "まわしたら"
+        "conditional-nara": "まわすなら"
+      readings:
+        "conditional-tara": "mawashitara"
+        "conditional-nara": "mawasunara"
+    - word: "ja-2255"
+      forms:
+        "conditional-tara": "うごいたら"
+        "conditional-nara": "うごくなら"
+      readings:
+        "conditional-tara": "ugoitara"
+        "conditional-nara": "ugokunara"
+    - word: "ja-2256"
+      forms:
+        "conditional-tara": "うごかしたら"
+        "conditional-nara": "うごかすなら"
+      readings:
+        "conditional-tara": "ugokashitara"
+        "conditional-nara": "ugokasunara"
+    - word: "ja-2257"
+      forms:
+        "conditional-tara": "のこったら"
+        "conditional-nara": "のこるなら"
+      readings:
+        "conditional-tara": "nokottara"
+        "conditional-nara": "nokorunara"
+    - word: "ja-2258"
+      forms:
+        "conditional-tara": "のこしたら"
+        "conditional-nara": "のこすなら"
+      readings:
+        "conditional-tara": "nokoshitara"
+        "conditional-nara": "nokosunara"
+    - word: "ja-2259"
+      forms:
+        "conditional-tara": "あつまったら"
+        "conditional-nara": "あつまるなら"
+      readings:
+        "conditional-tara": "atsumattara"
+        "conditional-nara": "atsumarunara"
+    - word: "ja-2260"
+      forms:
+        "conditional-tara": "あつめたら"
+        "conditional-nara": "あつめるなら"
+      readings:
+        "conditional-tara": "atsumetara"
+        "conditional-nara": "atsumerunara"
+    - word: "ja-2261"
+      forms:
+        "conditional-tara": "わけたら"
+        "conditional-nara": "わけるなら"
+      readings:
+        "conditional-tara": "waketara"
+        "conditional-nara": "wakerunara"
+    - word: "ja-2262"
+      forms:
+        "conditional-tara": "くらべたら"
+        "conditional-nara": "くらべるなら"
+      readings:
+        "conditional-tara": "kurabetara"
+        "conditional-nara": "kuraberunara"
+    - word: "ja-2263"
+      forms:
+        "conditional-tara": "かくれたら"
+        "conditional-nara": "かくれるなら"
+      readings:
+        "conditional-tara": "kakuretara"
+        "conditional-nara": "kakurerunara"
+    - word: "ja-2264"
+      forms:
+        "conditional-tara": "かくしたら"
+        "conditional-nara": "かくすなら"
+      readings:
+        "conditional-tara": "kakushitara"
+        "conditional-nara": "kakusunara"
+    - word: "ja-2265"
+      forms:
+        "conditional-tara": "みつかったら"
+        "conditional-nara": "みつかるなら"
+      readings:
+        "conditional-tara": "mitsukattara"
+        "conditional-nara": "mitsukarunara"
+    - word: "ja-2266"
+      forms:
+        "conditional-tara": "みつけたら"
+        "conditional-nara": "みつけるなら"
+      readings:
+        "conditional-tara": "mitsuketara"
+        "conditional-nara": "mitsukerunara"
+    - word: "ja-2267"
+      forms:
+        "conditional-tara": "ふえたら"
+        "conditional-nara": "ふえるなら"
+      readings:
+        "conditional-tara": "fuetara"
+        "conditional-nara": "fuerunara"
+    - word: "ja-2268"
+      forms:
+        "conditional-tara": "へったら"
+        "conditional-nara": "へるなら"
+      readings:
+        "conditional-tara": "hettara"
+        "conditional-nara": "herunara"
+    - word: "ja-2269"
+      forms:
+        "conditional-tara": "そだてたら"
+        "conditional-nara": "そだてるなら"
+      readings:
+        "conditional-tara": "sodatetara"
+        "conditional-nara": "sodaterunara"
+    - word: "ja-2270"
+      forms:
+        "conditional-tara": "そだったら"
+        "conditional-nara": "そだつなら"
+      readings:
+        "conditional-tara": "sodattara"
+        "conditional-nara": "sodatsunara"
+    - word: "ja-2271"
+      forms:
+        "conditional-tara": "うまれたら"
+        "conditional-nara": "うまれるなら"
+      readings:
+        "conditional-tara": "umaretara"
+        "conditional-nara": "umarerunara"
+    - word: "ja-2272"
+      forms:
+        "conditional-tara": "いきたら"
+        "conditional-nara": "いきるなら"
+      readings:
+        "conditional-tara": "ikitara"
+        "conditional-nara": "ikirunara"
+    - word: "ja-2273"
+      forms:
+        "conditional-tara": "たのしんだら"
+        "conditional-nara": "たのしむなら"
+      readings:
+        "conditional-tara": "tanoshindara"
+        "conditional-nara": "tanoshimunara"
+    - word: "ja-2274"
+      forms:
+        "conditional-tara": "あたったら"
+        "conditional-nara": "あたるなら"
+      readings:
+        "conditional-tara": "atattara"
+        "conditional-nara": "atarunara"
+    - word: "ja-2275"
+      forms:
+        "conditional-tara": "はじまったら"
+        "conditional-nara": "はじまるなら"
+      readings:
+        "conditional-tara": "hajimattara"
+        "conditional-nara": "hajimarunara"
+    - word: "ja-2276"
+      forms:
+        "conditional-tara": "さわったら"
+        "conditional-nara": "さわるなら"
+      readings:
+        "conditional-tara": "sawattara"
+        "conditional-nara": "sawarunara"
+    - word: "ja-2320"
+      forms:
+        "conditional-tara": "つながったら"
+        "conditional-nara": "つながるなら"
+      readings:
+        "conditional-tara": "tsunagattara"
+        "conditional-nara": "tsunagarunara"
+    - word: "ja-2321"
+      forms:
+        "conditional-tara": "つないだら"
+        "conditional-nara": "つなぐなら"
+      readings:
+        "conditional-tara": "tsunaidara"
+        "conditional-nara": "tsunagunara"
+    - word: "ja-2322"
+      forms:
+        "conditional-tara": "かけたら"
+        "conditional-nara": "かけるなら"
+      readings:
+        "conditional-tara": "kaketara"
+        "conditional-nara": "kakerunara"
+    - word: "ja-2323"
+      forms:
+        "conditional-tara": "うけとったら"
+        "conditional-nara": "うけとるなら"
+      readings:
+        "conditional-tara": "uketottara"
+        "conditional-nara": "uketorunara"
+    - word: "ja-2364"
+      forms:
+        "conditional-tara": "のりおくれたら"
+        "conditional-nara": "のりおくれるなら"
+      readings:
+        "conditional-tara": "noriokuretara"
+        "conditional-nara": "noriokurerunara"
+    - word: "ja-2365"
+      forms:
+        "conditional-tara": "のりかえたら"
+        "conditional-nara": "のりかえるなら"
+      readings:
+        "conditional-tara": "norikaetara"
+        "conditional-nara": "norikaerunara"
+    - word: "ja-2407"
+      forms:
+        "conditional-tara": "たちよったら"
+        "conditional-nara": "たちよるなら"
+      readings:
+        "conditional-tara": "tachiyottara"
+        "conditional-nara": "tachiyorunara"
+    - word: "ja-2470"
+      forms:
+        "conditional-tara": "さいたら"
+        "conditional-nara": "さくなら"
+      readings:
+        "conditional-tara": "saitara"
+        "conditional-nara": "sakunara"
+    - word: "ja-2471"
+      forms:
+        "conditional-tara": "ちったら"
+        "conditional-nara": "ちるなら"
+      readings:
+        "conditional-tara": "chittara"
+        "conditional-nara": "chirunara"
+    - word: "ja-2472"
+      forms:
+        "conditional-tara": "しげったら"
+        "conditional-nara": "しげるなら"
+      readings:
+        "conditional-tara": "shigettara"
+        "conditional-nara": "shigerunara"
+    - word: "ja-2473"
+      forms:
+        "conditional-tara": "かれたら"
+        "conditional-nara": "かれるなら"
+      readings:
+        "conditional-tara": "karetara"
+        "conditional-nara": "karerunara"
+    - word: "ja-2600"
+      forms:
+        "conditional-tara": "まかせたら"
+        "conditional-nara": "まかせるなら"
+      readings:
+        "conditional-tara": "makasetara"
+        "conditional-nara": "makaserunara"
+    - word: "ja-2601"
+      forms:
+        "conditional-tara": "ひきうけたら"
+        "conditional-nara": "ひきうけるなら"
+      readings:
+        "conditional-tara": "hikiuketara"
+        "conditional-nara": "hikiukerunara"
+    - word: "ja-2602"
+      forms:
+        "conditional-tara": "こなしたら"
+        "conditional-nara": "こなすなら"
+      readings:
+        "conditional-tara": "konashitara"
+        "conditional-nara": "konasunara"
+    - word: "ja-2603"
+      forms:
+        "conditional-tara": "はげんだら"
+        "conditional-nara": "はげむなら"
+      readings:
+        "conditional-tara": "hagendara"
+        "conditional-nara": "hagemunara"
+    - word: "ja-2604"
+      forms:
+        "conditional-tara": "てがけたら"
+        "conditional-nara": "てがけるなら"
+      readings:
+        "conditional-tara": "tegaketara"
+        "conditional-nara": "tegakerunara"
+    - word: "ja-2605"
+      forms:
+        "conditional-tara": "しめきったら"
+        "conditional-nara": "しめきるなら"
+      readings:
+        "conditional-tara": "shimekittara"
+        "conditional-nara": "shimekirunara"
+    - word: "ja-2606"
+      forms:
+        "conditional-tara": "まにあわせたら"
+        "conditional-nara": "まにあわせるなら"
+      readings:
+        "conditional-tara": "maniawasetara"
+        "conditional-nara": "maniawaserunara"
+    - word: "ja-2716"
+      forms:
+        "conditional-tara": "かたよったら"
+        "conditional-nara": "かたよるなら"
+      readings:
+        "conditional-tara": "katayottara"
+        "conditional-nara": "katayorunara"
+    - word: "ja-2768"
+      forms:
+        "conditional-tara": "おどろいたら"
+        "conditional-nara": "おどろくなら"
+      readings:
+        "conditional-tara": "odoroitara"
+        "conditional-nara": "odorokunara"
+    - word: "ja-2769"
+      forms:
+        "conditional-tara": "よろこんだら"
+        "conditional-nara": "よろこぶなら"
+      readings:
+        "conditional-tara": "yorokondara"
+        "conditional-nara": "yorokobunara"
+    - word: "ja-2770"
+      forms:
+        "conditional-tara": "かなしんだら"
+        "conditional-nara": "かなしむなら"
+      readings:
+        "conditional-tara": "kanashindara"
+        "conditional-nara": "kanashimunara"
+    - word: "ja-2771"
+      forms:
+        "conditional-tara": "なやんだら"
+        "conditional-nara": "なやむなら"
+      readings:
+        "conditional-tara": "nayandara"
+        "conditional-nara": "nayamunara"
+    - word: "ja-2772"
+      forms:
+        "conditional-tara": "あわてたら"
+        "conditional-nara": "あわてるなら"
+      readings:
+        "conditional-tara": "awatetara"
+        "conditional-nara": "awaterunara"
+    - word: "ja-2773"
+      forms:
+        "conditional-tara": "あせったら"
+        "conditional-nara": "あせるなら"
+      readings:
+        "conditional-tara": "asettara"
+        "conditional-nara": "aserunara"
+    - word: "ja-2774"
+      forms:
+        "conditional-tara": "おちついたら"
+        "conditional-nara": "おちつくなら"
+      readings:
+        "conditional-tara": "ochitsuitara"
+        "conditional-nara": "ochitsukunara"
+    - word: "ja-2794"
+      forms:
+        "conditional-tara": "きらったら"
+        "conditional-nara": "きらうなら"
+      readings:
+        "conditional-tara": "kirattara"
+        "conditional-nara": "kiraunara"
+    - word: "ja-2795"
+      forms:
+        "conditional-tara": "あいしたら"
+        "conditional-nara": "あいするなら"
+      readings:
+        "conditional-tara": "aishitara"
+        "conditional-nara": "aisurunara"
+    - word: "ja-2796"
+      forms:
+        "conditional-tara": "にくんだら"
+        "conditional-nara": "にくむなら"
+      readings:
+        "conditional-tara": "nikundara"
+        "conditional-nara": "nikumunara"
+    - word: "ja-2797"
+      forms:
+        "conditional-tara": "ねたんだら"
+        "conditional-nara": "ねたむなら"
+      readings:
+        "conditional-tara": "netandara"
+        "conditional-nara": "netamunara"
+    - word: "ja-2798"
+      forms:
+        "conditional-tara": "うらんだら"
+        "conditional-nara": "うらむなら"
+      readings:
+        "conditional-tara": "urandara"
+        "conditional-nara": "uramunara"
+    - word: "ja-2799"
+      forms:
+        "conditional-tara": "なつかしんだら"
+        "conditional-nara": "なつかしむなら"
+      readings:
+        "conditional-tara": "natsukashindara"
+        "conditional-nara": "natsukashimunara"
+    - word: "ja-2800"
+      forms:
+        "conditional-tara": "いやがったら"
+        "conditional-nara": "いやがるなら"
+      readings:
+        "conditional-tara": "iyagattara"
+        "conditional-nara": "iyagarunara"
+    - word: "ja-2801"
+      forms:
+        "conditional-tara": "こらえたら"
+        "conditional-nara": "こらえるなら"
+      readings:
+        "conditional-tara": "koraetara"
+        "conditional-nara": "koraerunara"
+    - word: "ja-2803"
+      forms:
+        "conditional-tara": "はずかしがったら"
+        "conditional-nara": "はずかしがるなら"
+      readings:
+        "conditional-tara": "hazukashigattara"
+        "conditional-nara": "hazukashigarunara"
+    - word: "ja-2806"
+      forms:
+        "conditional-tara": "かんじたら"
+        "conditional-nara": "かんじるなら"
+      readings:
+        "conditional-tara": "kanjitara"
+        "conditional-nara": "kanjirunara"
+    - word: "ja-2812"
+      forms:
+        "conditional-tara": "さびしがったら"
+        "conditional-nara": "さびしがるなら"
+      readings:
+        "conditional-tara": "sabishigattara"
+        "conditional-nara": "sabishigarunara"
+    - word: "ja-2876"
+      forms:
+        "conditional-tara": "かたったら"
+        "conditional-nara": "かたるなら"
+      readings:
+        "conditional-tara": "katattara"
+        "conditional-nara": "katarunara"
+    - word: "ja-2877"
+      forms:
+        "conditional-tara": "ひろまったら"
+        "conditional-nara": "ひろまるなら"
+      readings:
+        "conditional-tara": "hiromattara"
+        "conditional-nara": "hiromarunara"
+    - word: "ja-2925"
+      forms:
+        "conditional-tara": "あずけたら"
+        "conditional-nara": "あずけるなら"
+      readings:
+        "conditional-tara": "azuketara"
+        "conditional-nara": "azukerunara"
+    - word: "ja-2926"
+      forms:
+        "conditional-tara": "あずかったら"
+        "conditional-nara": "あずかるなら"
+      readings:
+        "conditional-tara": "azukattara"
+        "conditional-nara": "azukarunara"
+    - word: "ja-2944"
+      forms:
+        "conditional-tara": "めぐったら"
+        "conditional-nara": "めぐるなら"
+      readings:
+        "conditional-tara": "meguttara"
+        "conditional-nara": "megurunara"
+    - word: "ja-2945"
+      forms:
+        "conditional-tara": "おとずれたら"
+        "conditional-nara": "おとずれるなら"
+      readings:
+        "conditional-tara": "otozuretara"
+        "conditional-nara": "otozurerunara"
+    - word: "ja-2982"
+      forms:
+        "conditional-tara": "もうしこんだら"
+        "conditional-nara": "もうしこむなら"
+      readings:
+        "conditional-tara": "moushikondara"
+        "conditional-nara": "moushikomunara"
+    - word: "ja-3062"
+      forms:
+        "conditional-tara": "とどけでたら"
+        "conditional-nara": "とどけでるなら"
+      readings:
+        "conditional-tara": "todokedetara"
+        "conditional-nara": "todokederunara"
+    - word: "ja-3140"
+      forms:
+        "conditional-tara": "つくりだしたら"
+        "conditional-nara": "つくりだすなら"
+      readings:
+        "conditional-tara": "tsukuridashitara"
+        "conditional-nara": "tsukuridasunara"
+    - word: "ja-3195"
+      forms:
+        "conditional-tara": "めざしたら"
+        "conditional-nara": "めざすなら"
+      readings:
+        "conditional-tara": "mezashitara"
+        "conditional-nara": "mezasunara"
+    - word: "ja-3294"
+      forms:
+        "conditional-tara": "きをつかったら"
+        "conditional-nara": "きをつかうなら"
+      readings:
+        "conditional-tara": "kiotsukattara"
+        "conditional-nara": "kiotsukaunara"
+    - word: "ja-3309"
+      forms:
+        "conditional-tara": "ゆずったら"
+        "conditional-nara": "ゆずるなら"
+      readings:
+        "conditional-tara": "yuzuttara"
+        "conditional-nara": "yuzurunara"
+    - word: "ja-3310"
+      forms:
+        "conditional-tara": "ゆずりあったら"
+        "conditional-nara": "ゆずりあうなら"
+      readings:
+        "conditional-tara": "yuzuriattara"
+        "conditional-nara": "yuzuriaunara"
+    - word: "ja-3311"
+      forms:
+        "conditional-tara": "ならんだら"
+        "conditional-nara": "ならぶなら"
+      readings:
+        "conditional-tara": "narandara"
+        "conditional-nara": "narabunara"
+    - word: "ja-3319"
+      forms:
+        "conditional-tara": "もてなしたら"
+        "conditional-nara": "もてなすなら"
+      readings:
+        "conditional-tara": "motenashitara"
+        "conditional-nara": "motenasunara"
+    - word: "ja-3320"
+      forms:
+        "conditional-tara": "まねいたら"
+        "conditional-nara": "まねくなら"
+      readings:
+        "conditional-tara": "maneitara"
+        "conditional-nara": "manekunara"
+    - word: "ja-3321"
+      forms:
+        "conditional-tara": "つつしんだら"
+        "conditional-nara": "つつしむなら"
+      readings:
+        "conditional-tara": "tsutsushindara"
+        "conditional-nara": "tsutsushimunara"
+    - word: "ja-3322"
+      forms:
+        "conditional-tara": "いましめたら"
+        "conditional-nara": "いましめるなら"
+      readings:
+        "conditional-tara": "imashimetara"
+        "conditional-nara": "imashimerunara"
+    - word: "ja-3383"
+      forms:
+        "conditional-tara": "へらしたら"
+        "conditional-nara": "へらすなら"
+      readings:
+        "conditional-tara": "herashitara"
+        "conditional-nara": "herasunara"
+    - word: "ja-3384"
+      forms:
+        "conditional-tara": "ふやしたら"
+        "conditional-nara": "ふやすなら"
+      readings:
+        "conditional-tara": "fuyashitara"
+        "conditional-nara": "fuyasunara"
+    - word: "ja-3385"
+      forms:
+        "conditional-tara": "こわしたら"
+        "conditional-nara": "こわすなら"
+      readings:
+        "conditional-tara": "kowashitara"
+        "conditional-nara": "kowasunara"
+    - word: "ja-3386"
+      forms:
+        "conditional-tara": "こわれたら"
+        "conditional-nara": "こわれるなら"
+      readings:
+        "conditional-tara": "kowaretara"
+        "conditional-nara": "kowarerunara"
+    - word: "ja-3389"
+      forms:
+        "conditional-tara": "たもったら"
+        "conditional-nara": "たもつなら"
+      readings:
+        "conditional-tara": "tamottara"
+        "conditional-nara": "tamotsunara"
+    - word: "ja-3390"
+      forms:
+        "conditional-tara": "さけたら"
+        "conditional-nara": "さけるなら"
+      readings:
+        "conditional-tara": "saketara"
+        "conditional-nara": "sakerunara"
+    - word: "ja-3434"
+      forms:
+        "conditional-tara": "えんじたら"
+        "conditional-nara": "えんじるなら"
+      readings:
+        "conditional-tara": "enjitara"
+        "conditional-nara": "enjirunara"
+    - word: "ja-3452"
+      forms:
+        "conditional-tara": "ないたら"
+        "conditional-nara": "なくなら"
+      readings:
+        "conditional-tara": "naitara"
+        "conditional-nara": "nakunara"
+    - word: "ja-3564"
+      forms:
+        "conditional-tara": "たたかったら"
+        "conditional-nara": "たたかうなら"
+      readings:
+        "conditional-tara": "tatakattara"
+        "conditional-nara": "tatakaunara"
+    - word: "ja-3568"
+      forms:
+        "conditional-tara": "ほろびたら"
+        "conditional-nara": "ほろびるなら"
+      readings:
+        "conditional-tara": "horobitara"
+        "conditional-nara": "horobirunara"
+    - word: "ja-3569"
+      forms:
+        "conditional-tara": "ほろぼしたら"
+        "conditional-nara": "ほろぼすなら"
+      readings:
+        "conditional-tara": "horoboshitara"
+        "conditional-nara": "horobosunara"
+    - word: "ja-3571"
+      forms:
+        "conditional-tara": "さかえたら"
+        "conditional-nara": "さかえるなら"
+      readings:
+        "conditional-tara": "sakaetara"
+        "conditional-nara": "sakaerunara"
+    - word: "ja-3611"
+      forms:
+        "conditional-tara": "いのったら"
+        "conditional-nara": "いのるなら"
+      readings:
+        "conditional-tara": "inottara"
+        "conditional-nara": "inorunara"
+    - word: "ja-3612"
+      forms:
+        "conditional-tara": "おがんだら"
+        "conditional-nara": "おがむなら"
+      readings:
+        "conditional-tara": "ogandara"
+        "conditional-nara": "ogamunara"
+    - word: "ja-3690"
+      forms:
+        "conditional-tara": "いわったら"
+        "conditional-nara": "いわうなら"
+      readings:
+        "conditional-tara": "iwattara"
+        "conditional-nara": "iwaunara"
+    - word: "ja-3691"
+      forms:
+        "conditional-tara": "にぎわったら"
+        "conditional-nara": "にぎわうなら"
+      readings:
+        "conditional-tara": "nigiwattara"
+        "conditional-nara": "nigiwaunara"
+    - word: "ja-3779"
+      forms:
+        "conditional-tara": "うちとけたら"
+        "conditional-nara": "うちとけるなら"
+      readings:
+        "conditional-tara": "uchitoketara"
+        "conditional-nara": "uchitokerunara"
+    - word: "ja-3780"
+      forms:
+        "conditional-tara": "しんじあったら"
+        "conditional-nara": "しんじあうなら"
+      readings:
+        "conditional-tara": "shinjiattara"
+        "conditional-nara": "shinjiaunara"
+    - word: "ja-3781"
+      forms:
+        "conditional-tara": "たよったら"
+        "conditional-nara": "たよるなら"
+      readings:
+        "conditional-tara": "tayottara"
+        "conditional-nara": "tayorunara"
+    - word: "ja-3782"
+      forms:
+        "conditional-tara": "はげましたら"
+        "conditional-nara": "はげますなら"
+      readings:
+        "conditional-tara": "hagemashitara"
+        "conditional-nara": "hagemasunara"
+    - word: "ja-3783"
+      forms:
+        "conditional-tara": "なぐさめたら"
+        "conditional-nara": "なぐさめるなら"
+      readings:
+        "conditional-tara": "nagusametara"
+        "conditional-nara": "nagusamerunara"
+    - word: "ja-3784"
+      forms:
+        "conditional-tara": "かばったら"
+        "conditional-nara": "かばうなら"
+      readings:
+        "conditional-tara": "kabattara"
+        "conditional-nara": "kabaunara"
+    - word: "ja-3785"
+      forms:
+        "conditional-tara": "ささえたら"
+        "conditional-nara": "ささえるなら"
+      readings:
+        "conditional-tara": "sasaetara"
+        "conditional-nara": "sasaerunara"
+    - word: "ja-3786"
+      forms:
+        "conditional-tara": "たすけあったら"
+        "conditional-nara": "たすけあうなら"
+      readings:
+        "conditional-tara": "tasukeattara"
+        "conditional-nara": "tasukeaunara"
+    - word: "ja-3790"
+      forms:
+        "conditional-tara": "しりあったら"
+        "conditional-nara": "しりあうなら"
+      readings:
+        "conditional-tara": "shiriattara"
+        "conditional-nara": "shiriaunara"
+    - word: "ja-3791"
+      forms:
+        "conditional-tara": "であったら"
+        "conditional-nara": "であうなら"
+      readings:
+        "conditional-tara": "deattara"
+        "conditional-nara": "deaunara"
+    - word: "ja-3833"
+      forms:
+        "conditional-tara": "くらしたら"
+        "conditional-nara": "くらすなら"
+      readings:
+        "conditional-tara": "kurashitara"
+        "conditional-nara": "kurasunara"
+    - word: "ja-3857"
+      forms:
+        "conditional-tara": "かしたら"
+        "conditional-nara": "かすなら"
+      readings:
+        "conditional-tara": "kashitara"
+        "conditional-nara": "kasunara"
+    - word: "ja-3887"
+      forms:
+        "conditional-tara": "ゆれたら"
+        "conditional-nara": "ゆれるなら"
+      readings:
+        "conditional-tara": "yuretara"
+        "conditional-nara": "yurerunara"
+    - word: "ja-3898"
+      forms:
+        "conditional-tara": "すくったら"
+        "conditional-nara": "すくうなら"
+      readings:
+        "conditional-tara": "sukuttara"
+        "conditional-nara": "sukuunara"
+    - word: "ja-3914"
+      forms:
+        "conditional-tara": "にげたら"
+        "conditional-nara": "にげるなら"
+      readings:
+        "conditional-tara": "nigetara"
+        "conditional-nara": "nigerunara"
+    - word: "ja-3915"
+      forms:
+        "conditional-tara": "にがしたら"
+        "conditional-nara": "にがすなら"
+      readings:
+        "conditional-tara": "nigashitara"
+        "conditional-nara": "nigasunara"
+    - word: "ja-3963"
+      forms:
+        "conditional-tara": "きんじたら"
+        "conditional-nara": "きんじるなら"
+      readings:
+        "conditional-tara": "kinjitara"
+        "conditional-nara": "kinjirunara"
+    - word: "ja-3965"
+      forms:
+        "conditional-tara": "うったえたら"
+        "conditional-nara": "うったえるなら"
+      readings:
+        "conditional-tara": "uttaetara"
+        "conditional-nara": "uttaerunara"
+    - word: "ja-4046"
+      forms:
+        "conditional-tara": "おそったら"
+        "conditional-nara": "おそうなら"
+      readings:
+        "conditional-tara": "osottara"
+        "conditional-nara": "osounara"
+    - word: "ja-4047"
+      forms:
+        "conditional-tara": "おさえたら"
+        "conditional-nara": "おさえるなら"
+      readings:
+        "conditional-tara": "osaetara"
+        "conditional-nara": "osaerunara"
+    - word: "ja-4048"
+      forms:
+        "conditional-tara": "おさまったら"
+        "conditional-nara": "おさまるなら"
+      readings:
+        "conditional-tara": "osamattara"
+        "conditional-nara": "osamarunara"
+    - word: "ja-4049"
+      forms:
+        "conditional-tara": "おさめたら"
+        "conditional-nara": "おさめるなら"
+      readings:
+        "conditional-tara": "osametara"
+        "conditional-nara": "osamerunara"
+    - word: "ja-4050"
+      forms:
+        "conditional-tara": "おぼれたら"
+        "conditional-nara": "おぼれるなら"
+      readings:
+        "conditional-tara": "oboretara"
+        "conditional-nara": "oborerunara"
+    - word: "ja-4051"
+      forms:
+        "conditional-tara": "おもいだしたら"
+        "conditional-nara": "おもいだすなら"
+      readings:
+        "conditional-tara": "omoidashitara"
+        "conditional-nara": "omoidasunara"
+    - word: "ja-4052"
+      forms:
+        "conditional-tara": "おもいついたら"
+        "conditional-nara": "おもいつくなら"
+      readings:
+        "conditional-tara": "omoitsuitara"
+        "conditional-nara": "omoitsukunara"
+    - word: "ja-4053"
+      forms:
+        "conditional-tara": "かかえたら"
+        "conditional-nara": "かかえるなら"
+      readings:
+        "conditional-tara": "kakaetara"
+        "conditional-nara": "kakaerunara"
+    - word: "ja-4054"
+      forms:
+        "conditional-tara": "かさなったら"
+        "conditional-nara": "かさなるなら"
+      readings:
+        "conditional-tara": "kasanattara"
+        "conditional-nara": "kasanarunara"
+    - word: "ja-4055"
+      forms:
+        "conditional-tara": "かさねたら"
+        "conditional-nara": "かさねるなら"
+      readings:
+        "conditional-tara": "kasanetara"
+        "conditional-nara": "kasanerunara"
+    - word: "ja-4056"
+      forms:
+        "conditional-tara": "かたむいたら"
+        "conditional-nara": "かたむくなら"
+      readings:
+        "conditional-tara": "katamuitara"
+        "conditional-nara": "katamukunara"
+    - word: "ja-4057"
+      forms:
+        "conditional-tara": "かなったら"
+        "conditional-nara": "かなうなら"
+      readings:
+        "conditional-tara": "kanattara"
+        "conditional-nara": "kanaunara"
+    - word: "ja-4058"
+      forms:
+        "conditional-tara": "かぶせたら"
+        "conditional-nara": "かぶせるなら"
+      readings:
+        "conditional-tara": "kabusetara"
+        "conditional-nara": "kabuserunara"
+    - word: "ja-4059"
+      forms:
+        "conditional-tara": "きづいたら"
+        "conditional-nara": "きづくなら"
+      readings:
+        "conditional-tara": "kizuitara"
+        "conditional-nara": "kizukunara"
+    - word: "ja-4060"
+      forms:
+        "conditional-tara": "くずれたら"
+        "conditional-nara": "くずれるなら"
+      readings:
+        "conditional-tara": "kuzuretara"
+        "conditional-nara": "kuzurerunara"
+    - word: "ja-4061"
+      forms:
+        "conditional-tara": "くたびれたら"
+        "conditional-nara": "くたびれるなら"
+      readings:
+        "conditional-tara": "kutabiretara"
+        "conditional-nara": "kutabirerunara"
+    - word: "ja-4062"
+      forms:
+        "conditional-tara": "くっついたら"
+        "conditional-nara": "くっつくなら"
+      readings:
+        "conditional-tara": "kuttsuitara"
+        "conditional-nara": "kuttsukunara"
+    - word: "ja-4063"
+      forms:
+        "conditional-tara": "くっつけたら"
+        "conditional-nara": "くっつけるなら"
+      readings:
+        "conditional-tara": "kuttsuketara"
+        "conditional-nara": "kuttsukerunara"
+    - word: "ja-4064"
+      forms:
+        "conditional-tara": "ころがったら"
+        "conditional-nara": "ころがるなら"
+      readings:
+        "conditional-tara": "korogattara"
+        "conditional-nara": "korogarunara"
+    - word: "ja-4065"
+      forms:
+        "conditional-tara": "ころしたら"
+        "conditional-nara": "ころすなら"
+      readings:
+        "conditional-tara": "koroshitara"
+        "conditional-nara": "korosunara"
+    - word: "ja-4066"
+      forms:
+        "conditional-tara": "こめたら"
+        "conditional-nara": "こめるなら"
+      readings:
+        "conditional-tara": "kometara"
+        "conditional-nara": "komerunara"
+    - word: "ja-4067"
+      forms:
+        "conditional-tara": "さからったら"
+        "conditional-nara": "さからうなら"
+      readings:
+        "conditional-tara": "sakarattara"
+        "conditional-nara": "sakaraunara"
+    - word: "ja-4068"
+      forms:
+        "conditional-tara": "さしたら"
+        "conditional-nara": "さすなら"
+      readings:
+        "conditional-tara": "sashitara"
+        "conditional-nara": "sasunara"
+    - word: "ja-4069"
+      forms:
+        "conditional-tara": "さびたら"
+        "conditional-nara": "さびるなら"
+      readings:
+        "conditional-tara": "sabitara"
+        "conditional-nara": "sabirunara"
+    - word: "ja-4070"
+      forms:
+        "conditional-tara": "しずんだら"
+        "conditional-nara": "しずむなら"
+      readings:
+        "conditional-tara": "shizundara"
+        "conditional-nara": "shizumunara"
+    - word: "ja-4071"
+      forms:
+        "conditional-tara": "しずめたら"
+        "conditional-nara": "しずめるなら"
+      readings:
+        "conditional-tara": "shizumetara"
+        "conditional-nara": "shizumerunara"
+    - word: "ja-4072"
+      forms:
+        "conditional-tara": "したがったら"
+        "conditional-nara": "したがうなら"
+      readings:
+        "conditional-tara": "shitagattara"
+        "conditional-nara": "shitagaunara"
+    - word: "ja-4073"
+      forms:
+        "conditional-tara": "しばったら"
+        "conditional-nara": "しばるなら"
+      readings:
+        "conditional-tara": "shibattara"
+        "conditional-nara": "shibarunara"
+    - word: "ja-4074"
+      forms:
+        "conditional-tara": "しめしたら"
+        "conditional-nara": "しめすなら"
+      readings:
+        "conditional-tara": "shimeshitara"
+        "conditional-nara": "shimesunara"
+    - word: "ja-4075"
+      forms:
+        "conditional-tara": "すべったら"
+        "conditional-nara": "すべるなら"
+      readings:
+        "conditional-tara": "subettara"
+        "conditional-nara": "suberunara"
+    - word: "ja-4076"
+      forms:
+        "conditional-tara": "すませたら"
+        "conditional-nara": "すませるなら"
+      readings:
+        "conditional-tara": "sumasetara"
+        "conditional-nara": "sumaserunara"
+    - word: "ja-4077"
+      forms:
+        "conditional-tara": "すんだら"
+        "conditional-nara": "すむなら"
+      readings:
+        "conditional-tara": "sundara"
+        "conditional-nara": "sumunara"
+    - word: "ja-4078"
+      forms:
+        "conditional-tara": "ずれたら"
+        "conditional-nara": "ずれるなら"
+      readings:
+        "conditional-tara": "zuretara"
+        "conditional-nara": "zurerunara"
+    - word: "ja-4079"
+      forms:
+        "conditional-tara": "せまったら"
+        "conditional-nara": "せまるなら"
+      readings:
+        "conditional-tara": "semattara"
+        "conditional-nara": "semarunara"
+    - word: "ja-4080"
+      forms:
+        "conditional-tara": "そなえたら"
+        "conditional-nara": "そなえるなら"
+      readings:
+        "conditional-tara": "sonaetara"
+        "conditional-nara": "sonaerunara"
+    - word: "ja-4081"
+      forms:
+        "conditional-tara": "そまったら"
+        "conditional-nara": "そまるなら"
+      readings:
+        "conditional-tara": "somattara"
+        "conditional-nara": "somarunara"
+    - word: "ja-4082"
+      forms:
+        "conditional-tara": "そめたら"
+        "conditional-nara": "そめるなら"
+      readings:
+        "conditional-tara": "sometara"
+        "conditional-nara": "somerunara"
+    - word: "ja-4083"
+      forms:
+        "conditional-tara": "たえたら"
+        "conditional-nara": "たえるなら"
+      readings:
+        "conditional-tara": "taetara"
+        "conditional-nara": "taerunara"
+    - word: "ja-4084"
+      forms:
+        "conditional-tara": "たしかめたら"
+        "conditional-nara": "たしかめるなら"
+      readings:
+        "conditional-tara": "tashikametara"
+        "conditional-nara": "tashikamerunara"
+    - word: "ja-4085"
+      forms:
+        "conditional-tara": "たまったら"
+        "conditional-nara": "たまるなら"
+      readings:
+        "conditional-tara": "tamattara"
+        "conditional-nara": "tamarunara"
+    - word: "ja-4086"
+      forms:
+        "conditional-tara": "ためしたら"
+        "conditional-nara": "ためすなら"
+      readings:
+        "conditional-tara": "tameshitara"
+        "conditional-nara": "tamesunara"
+    - word: "ja-4087"
+      forms:
+        "conditional-tara": "ちぢんだら"
+        "conditional-nara": "ちぢむなら"
+      readings:
+        "conditional-tara": "chijindara"
+        "conditional-nara": "chijimunara"
+    - word: "ja-4088"
+      forms:
+        "conditional-tara": "ちぢめたら"
+        "conditional-nara": "ちぢめるなら"
+      readings:
+        "conditional-tara": "chijimetara"
+        "conditional-nara": "chijimerunara"
+    - word: "ja-4089"
+      forms:
+        "conditional-tara": "ついだら"
+        "conditional-nara": "つぐなら"
+      readings:
+        "conditional-tara": "tsuidara"
+        "conditional-nara": "tsugunara"
+    - word: "ja-4090"
+      forms:
+        "conditional-tara": "つづいたら"
+        "conditional-nara": "つづくなら"
+      readings:
+        "conditional-tara": "tsuzuitara"
+        "conditional-nara": "tsuzukunara"
+    - word: "ja-4091"
+      forms:
+        "conditional-tara": "つぶしたら"
+        "conditional-nara": "つぶすなら"
+      readings:
+        "conditional-tara": "tsubushitara"
+        "conditional-nara": "tsubusunara"
+    - word: "ja-4092"
+      forms:
+        "conditional-tara": "つぶれたら"
+        "conditional-nara": "つぶれるなら"
+      readings:
+        "conditional-tara": "tsuburetara"
+        "conditional-nara": "tsuburerunara"
+    - word: "ja-4093"
+      forms:
+        "conditional-tara": "てらしたら"
+        "conditional-nara": "てらすなら"
+      readings:
+        "conditional-tara": "terashitara"
+        "conditional-nara": "terasunara"
+    - word: "ja-4094"
+      forms:
+        "conditional-tara": "とおしたら"
+        "conditional-nara": "とおすなら"
+      readings:
+        "conditional-tara": "tooshitara"
+        "conditional-nara": "toosunara"
+    - word: "ja-4095"
+      forms:
+        "conditional-tara": "とかしたら"
+        "conditional-nara": "とかすなら"
+      readings:
+        "conditional-tara": "tokashitara"
+        "conditional-nara": "tokasunara"
+    - word: "ja-4096"
+      forms:
+        "conditional-tara": "とけたら"
+        "conditional-nara": "とけるなら"
+      readings:
+        "conditional-tara": "toketara"
+        "conditional-nara": "tokerunara"
+    - word: "ja-4097"
+      forms:
+        "conditional-tara": "ととのったら"
+        "conditional-nara": "ととのうなら"
+      readings:
+        "conditional-tara": "totonottara"
+        "conditional-nara": "totonounara"
+    - word: "ja-4098"
+      forms:
+        "conditional-tara": "ととのえたら"
+        "conditional-nara": "ととのえるなら"
+      readings:
+        "conditional-tara": "totonoetara"
+        "conditional-nara": "totonoerunara"
+    - word: "ja-4099"
+      forms:
+        "conditional-tara": "とびこんだら"
+        "conditional-nara": "とびこむなら"
+      readings:
+        "conditional-tara": "tobikondara"
+        "conditional-nara": "tobikomunara"
+    - word: "ja-4100"
+      forms:
+        "conditional-tara": "ともなったら"
+        "conditional-nara": "ともなうなら"
+      readings:
+        "conditional-tara": "tomonattara"
+        "conditional-nara": "tomonaunara"
+    - word: "ja-4101"
+      forms:
+        "conditional-tara": "とらえたら"
+        "conditional-nara": "とらえるなら"
+      readings:
+        "conditional-tara": "toraetara"
+        "conditional-nara": "toraerunara"
+    - word: "ja-4102"
+      forms:
+        "conditional-tara": "とりあげたら"
+        "conditional-nara": "とりあげるなら"
+      readings:
+        "conditional-tara": "toriagetara"
+        "conditional-nara": "toriagerunara"
+    - word: "ja-4103"
+      forms:
+        "conditional-tara": "とりだしたら"
+        "conditional-nara": "とりだすなら"
+      readings:
+        "conditional-tara": "toridashitara"
+        "conditional-nara": "toridasunara"
+    - word: "ja-4104"
+      forms:
+        "conditional-tara": "とりのぞいたら"
+        "conditional-nara": "とりのぞくなら"
+      readings:
+        "conditional-tara": "torinozoitara"
+        "conditional-nara": "torinozokunara"
+    - word: "ja-4105"
+      forms:
+        "conditional-tara": "ながしたら"
+        "conditional-nara": "ながすなら"
+      readings:
+        "conditional-tara": "nagashitara"
+        "conditional-nara": "nagasunara"
+    - word: "ja-4185"
+      forms:
+        "conditional-tara": "みとめたら"
+        "conditional-nara": "みとめるなら"
+      readings:
+        "conditional-tara": "mitometara"
+        "conditional-nara": "mitomerunara"
+    - word: "ja-4186"
+      forms:
+        "conditional-tara": "うたがったら"
+        "conditional-nara": "うたがうなら"
+      readings:
+        "conditional-tara": "utagattara"
+        "conditional-nara": "utagaunara"
+    - word: "ja-4187"
+      forms:
+        "conditional-tara": "しんじたら"
+        "conditional-nara": "しんじるなら"
+      readings:
+        "conditional-tara": "shinjitara"
+        "conditional-nara": "shinjirunara"
+    - word: "ja-4192"
+      forms:
+        "conditional-tara": "ろんじたら"
+        "conditional-nara": "ろんじるなら"
+      readings:
+        "conditional-tara": "ronjitara"
+        "conditional-nara": "ronjirunara"
+rules:
+  - id: "ja-rule-conditional-tara"
+    slots: ["conditional-tara"]
+    words:
+      - { word: "たら", reading: "tara" }
+      - { word: "たべたら", reading: "tabetara" }
+  - id: "ja-rule-conditional-nara"
+    slots: ["conditional-nara"]
+    words:
+      - { word: "なら", reading: "nara" }
+      - { word: "たべるなら", reading: "taberu nara" }

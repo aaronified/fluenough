@@ -1,0 +1,2656 @@
+schema: 1
+id: "ja-grammar-permission"
+part: "core"
+kind: "rules"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ja-0085"]
+  slots: ["te-mo-ii", "te-wa-ikenai"]
+  rows:
+    - word: "ja-1050"
+      forms:
+        "te-mo-ii": "まがってもいいです"
+        "te-wa-ikenai": "まがってはいけません"
+      readings:
+        "te-mo-ii": "magattemoiidesu"
+        "te-wa-ikenai": "magattewaikemasen"
+    - word: "ja-1060"
+      forms:
+        "te-mo-ii": "わたってもいいです"
+        "te-wa-ikenai": "わたってはいけません"
+      readings:
+        "te-mo-ii": "watattemoiidesu"
+        "te-wa-ikenai": "watattewaikemasen"
+    - word: "ja-1061"
+      forms:
+        "te-mo-ii": "すすんでもいいです"
+        "te-wa-ikenai": "すすんではいけません"
+      readings:
+        "te-mo-ii": "susundemoiidesu"
+        "te-wa-ikenai": "susundewaikemasen"
+    - word: "ja-1062"
+      forms:
+        "te-mo-ii": "さがってもいいです"
+        "te-wa-ikenai": "さがってはいけません"
+      readings:
+        "te-mo-ii": "sagattemoiidesu"
+        "te-wa-ikenai": "sagattewaikemasen"
+    - word: "ja-1070"
+      forms:
+        "te-mo-ii": "まちがえてもいいです"
+        "te-wa-ikenai": "まちがえてはいけません"
+      readings:
+        "te-mo-ii": "machigaetemoiidesu"
+        "te-wa-ikenai": "machigaetewaikemasen"
+    - word: "ja-1071"
+      forms:
+        "te-mo-ii": "でてもいいです"
+        "te-wa-ikenai": "でてはいけません"
+      readings:
+        "te-mo-ii": "detemoiidesu"
+        "te-wa-ikenai": "detewaikemasen"
+    - word: "ja-1078"
+      forms:
+        "te-mo-ii": "むかってもいいです"
+        "te-wa-ikenai": "むかってはいけません"
+      readings:
+        "te-mo-ii": "mukattemoiidesu"
+        "te-wa-ikenai": "mukattewaikemasen"
+    - word: "ja-0341"
+      forms:
+        "te-mo-ii": "たべてもいいです"
+        "te-wa-ikenai": "たべてはいけません"
+      readings:
+        "te-mo-ii": "tabetemoiidesu"
+        "te-wa-ikenai": "tabetewaikemasen"
+    - word: "ja-0342"
+      forms:
+        "te-mo-ii": "のんでもいいです"
+        "te-wa-ikenai": "のんではいけません"
+      readings:
+        "te-mo-ii": "nondemoiidesu"
+        "te-wa-ikenai": "nondewaikemasen"
+    - word: "ja-0343"
+      forms:
+        "te-mo-ii": "みてもいいです"
+        "te-wa-ikenai": "みてはいけません"
+      readings:
+        "te-mo-ii": "mitemoiidesu"
+        "te-wa-ikenai": "mitewaikemasen"
+    - word: "ja-0344"
+      forms:
+        "te-mo-ii": "きいてもいいです"
+        "te-wa-ikenai": "きいてはいけません"
+      readings:
+        "te-mo-ii": "kiitemoiidesu"
+        "te-wa-ikenai": "kiitewaikemasen"
+    - word: "ja-0345"
+      forms:
+        "te-mo-ii": "よんでもいいです"
+        "te-wa-ikenai": "よんではいけません"
+      readings:
+        "te-mo-ii": "yondemoiidesu"
+        "te-wa-ikenai": "yondewaikemasen"
+    - word: "ja-0346"
+      forms:
+        "te-mo-ii": "かいてもいいです"
+        "te-wa-ikenai": "かいてはいけません"
+      readings:
+        "te-mo-ii": "kaitemoiidesu"
+        "te-wa-ikenai": "kaitewaikemasen"
+    - word: "ja-0347"
+      forms:
+        "te-mo-ii": "はなしてもいいです"
+        "te-wa-ikenai": "はなしてはいけません"
+      readings:
+        "te-mo-ii": "hanashitemoiidesu"
+        "te-wa-ikenai": "hanashitewaikemasen"
+    - word: "ja-0348"
+      forms:
+        "te-mo-ii": "いってもいいです"
+        "te-wa-ikenai": "いってはいけません"
+      readings:
+        "te-mo-ii": "ittemoiidesu"
+        "te-wa-ikenai": "ittewaikemasen"
+    - word: "ja-0349"
+      forms:
+        "te-mo-ii": "きてもいいです"
+        "te-wa-ikenai": "きてはいけません"
+      readings:
+        "te-mo-ii": "kitemoiidesu"
+        "te-wa-ikenai": "kitewaikemasen"
+    - word: "ja-0350"
+      forms:
+        "te-mo-ii": "かえってもいいです"
+        "te-wa-ikenai": "かえってはいけません"
+      readings:
+        "te-mo-ii": "kaettemoiidesu"
+        "te-wa-ikenai": "kaettewaikemasen"
+    - word: "ja-0351"
+      forms:
+        "te-mo-ii": "おきてもいいです"
+        "te-wa-ikenai": "おきてはいけません"
+      readings:
+        "te-mo-ii": "okitemoiidesu"
+        "te-wa-ikenai": "okitewaikemasen"
+    - word: "ja-0352"
+      forms:
+        "te-mo-ii": "ねてもいいです"
+        "te-wa-ikenai": "ねてはいけません"
+      readings:
+        "te-mo-ii": "netemoiidesu"
+        "te-wa-ikenai": "netewaikemasen"
+    - word: "ja-0353"
+      forms:
+        "te-mo-ii": "はたらいてもいいです"
+        "te-wa-ikenai": "はたらいてはいけません"
+      readings:
+        "te-mo-ii": "hataraitemoiidesu"
+        "te-wa-ikenai": "hataraitewaikemasen"
+    - word: "ja-0354"
+      forms:
+        "te-mo-ii": "やすんでもいいです"
+        "te-wa-ikenai": "やすんではいけません"
+      readings:
+        "te-mo-ii": "yasundemoiidesu"
+        "te-wa-ikenai": "yasundewaikemasen"
+    - word: "ja-0355"
+      forms:
+        "te-mo-ii": "はいってもいいです"
+        "te-wa-ikenai": "はいってはいけません"
+      readings:
+        "te-mo-ii": "haittemoiidesu"
+        "te-wa-ikenai": "haittewaikemasen"
+    - word: "ja-0356"
+      forms:
+        "te-mo-ii": "かってもいいです"
+        "te-wa-ikenai": "かってはいけません"
+      readings:
+        "te-mo-ii": "kattemoiidesu"
+        "te-wa-ikenai": "kattewaikemasen"
+    - word: "ja-0357"
+      forms:
+        "te-mo-ii": "あってもいいです"
+        "te-wa-ikenai": "あってはいけません"
+      readings:
+        "te-mo-ii": "attemoiidesu"
+        "te-wa-ikenai": "attewaikemasen"
+    - word: "ja-0358"
+      forms:
+        "te-mo-ii": "まってもいいです"
+        "te-wa-ikenai": "まってはいけません"
+      readings:
+        "te-mo-ii": "mattemoiidesu"
+        "te-wa-ikenai": "mattewaikemasen"
+    - word: "ja-0359"
+      forms:
+        "te-mo-ii": "もってもいいです"
+        "te-wa-ikenai": "もってはいけません"
+      readings:
+        "te-mo-ii": "mottemoiidesu"
+        "te-wa-ikenai": "mottewaikemasen"
+    - word: "ja-0360"
+      forms:
+        "te-mo-ii": "あるいてもいいです"
+        "te-wa-ikenai": "あるいてはいけません"
+      readings:
+        "te-mo-ii": "aruitemoiidesu"
+        "te-wa-ikenai": "aruitewaikemasen"
+    - word: "ja-0361"
+      forms:
+        "te-mo-ii": "のってもいいです"
+        "te-wa-ikenai": "のってはいけません"
+      readings:
+        "te-mo-ii": "nottemoiidesu"
+        "te-wa-ikenai": "nottewaikemasen"
+    - word: "ja-0362"
+      forms:
+        "te-mo-ii": "おりてもいいです"
+        "te-wa-ikenai": "おりてはいけません"
+      readings:
+        "te-mo-ii": "oritemoiidesu"
+        "te-wa-ikenai": "oritewaikemasen"
+    - word: "ja-0363"
+      forms:
+        "te-mo-ii": "あらってもいいです"
+        "te-wa-ikenai": "あらってはいけません"
+      readings:
+        "te-mo-ii": "arattemoiidesu"
+        "te-wa-ikenai": "arattewaikemasen"
+    - word: "ja-0364"
+      forms:
+        "te-mo-ii": "つくってもいいです"
+        "te-wa-ikenai": "つくってはいけません"
+      readings:
+        "te-mo-ii": "tsukuttemoiidesu"
+        "te-wa-ikenai": "tsukuttewaikemasen"
+    - word: "ja-0365"
+      forms:
+        "te-mo-ii": "わかってもいいです"
+        "te-wa-ikenai": "わかってはいけません"
+      readings:
+        "te-mo-ii": "wakattemoiidesu"
+        "te-wa-ikenai": "wakattewaikemasen"
+    - word: "ja-0366"
+      forms:
+        "te-mo-ii": "しってもいいです"
+        "te-wa-ikenai": "しってはいけません"
+      readings:
+        "te-mo-ii": "shittemoiidesu"
+        "te-wa-ikenai": "shittewaikemasen"
+    - word: "ja-0367"
+      forms:
+        "te-mo-ii": "ならってもいいです"
+        "te-wa-ikenai": "ならってはいけません"
+      readings:
+        "te-mo-ii": "narattemoiidesu"
+        "te-wa-ikenai": "narattewaikemasen"
+    - word: "ja-0368"
+      forms:
+        "te-mo-ii": "おしえてもいいです"
+        "te-wa-ikenai": "おしえてはいけません"
+      readings:
+        "te-mo-ii": "oshietemoiidesu"
+        "te-wa-ikenai": "oshietewaikemasen"
+    - word: "ja-0369"
+      forms:
+        "te-mo-ii": "つかってもいいです"
+        "te-wa-ikenai": "つかってはいけません"
+      readings:
+        "te-mo-ii": "tsukattemoiidesu"
+        "te-wa-ikenai": "tsukattewaikemasen"
+    - word: "ja-0370"
+      forms:
+        "te-mo-ii": "すわってもいいです"
+        "te-wa-ikenai": "すわってはいけません"
+      readings:
+        "te-mo-ii": "suwattemoiidesu"
+        "te-wa-ikenai": "suwattewaikemasen"
+    - word: "ja-0371"
+      forms:
+        "te-mo-ii": "たってもいいです"
+        "te-wa-ikenai": "たってはいけません"
+      readings:
+        "te-mo-ii": "tattemoiidesu"
+        "te-wa-ikenai": "tattewaikemasen"
+    - word: "ja-0372"
+      forms:
+        "te-mo-ii": "あけてもいいです"
+        "te-wa-ikenai": "あけてはいけません"
+      readings:
+        "te-mo-ii": "aketemoiidesu"
+        "te-wa-ikenai": "aketewaikemasen"
+    - word: "ja-0373"
+      forms:
+        "te-mo-ii": "しめてもいいです"
+        "te-wa-ikenai": "しめてはいけません"
+      readings:
+        "te-mo-ii": "shimetemoiidesu"
+        "te-wa-ikenai": "shimetewaikemasen"
+    - word: "ja-0374"
+      forms:
+        "te-mo-ii": "あそんでもいいです"
+        "te-wa-ikenai": "あそんではいけません"
+      readings:
+        "te-mo-ii": "asondemoiidesu"
+        "te-wa-ikenai": "asondewaikemasen"
+    - word: "ja-0375"
+      forms:
+        "te-mo-ii": "してもいいです"
+        "te-wa-ikenai": "してはいけません"
+      readings:
+        "te-mo-ii": "shitemoiidesu"
+        "te-wa-ikenai": "shitewaikemasen"
+    - word: "ja-0949"
+      forms:
+        "te-mo-ii": "かぞえてもいいです"
+        "te-wa-ikenai": "かぞえてはいけません"
+      readings:
+        "te-mo-ii": "kazoetemoiidesu"
+        "te-wa-ikenai": "kazoetewaikemasen"
+    - word: "ja-1226"
+      forms:
+        "te-mo-ii": "こまってもいいです"
+        "te-wa-ikenai": "こまってはいけません"
+      readings:
+        "te-mo-ii": "komattemoiidesu"
+        "te-wa-ikenai": "komattewaikemasen"
+    - word: "ja-1227"
+      forms:
+        "te-mo-ii": "よんでもいいです"
+        "te-wa-ikenai": "よんではいけません"
+      readings:
+        "te-mo-ii": "yondemoiidesu"
+        "te-wa-ikenai": "yondewaikemasen"
+    - word: "ja-1228"
+      forms:
+        "te-mo-ii": "まよってもいいです"
+        "te-wa-ikenai": "まよってはいけません"
+      readings:
+        "te-mo-ii": "mayottemoiidesu"
+        "te-wa-ikenai": "mayottewaikemasen"
+    - word: "ja-1236"
+      forms:
+        "te-mo-ii": "たすけてもいいです"
+        "te-wa-ikenai": "たすけてはいけません"
+      readings:
+        "te-mo-ii": "tasuketemoiidesu"
+        "te-wa-ikenai": "tasuketewaikemasen"
+    - word: "ja-1237"
+      forms:
+        "te-mo-ii": "たすかってもいいです"
+        "te-wa-ikenai": "たすかってはいけません"
+      readings:
+        "te-mo-ii": "tasukattemoiidesu"
+        "te-wa-ikenai": "tasukattewaikemasen"
+    - word: "ja-1240"
+      forms:
+        "te-mo-ii": "まもってもいいです"
+        "te-wa-ikenai": "まもってはいけません"
+      readings:
+        "te-mo-ii": "mamottemoiidesu"
+        "te-wa-ikenai": "mamottewaikemasen"
+    - word: "ja-0571"
+      forms:
+        "te-mo-ii": "あびてもいいです"
+        "te-wa-ikenai": "あびてはいけません"
+      readings:
+        "te-mo-ii": "abitemoiidesu"
+        "te-wa-ikenai": "abitewaikemasen"
+    - word: "ja-0572"
+      forms:
+        "te-mo-ii": "はしってもいいです"
+        "te-wa-ikenai": "はしってはいけません"
+      readings:
+        "te-mo-ii": "hashittemoiidesu"
+        "te-wa-ikenai": "hashittewaikemasen"
+    - word: "ja-0573"
+      forms:
+        "te-mo-ii": "とんでもいいです"
+        "te-wa-ikenai": "とんではいけません"
+      readings:
+        "te-mo-ii": "tondemoiidesu"
+        "te-wa-ikenai": "tondewaikemasen"
+    - word: "ja-0574"
+      forms:
+        "te-mo-ii": "おどってもいいです"
+        "te-wa-ikenai": "おどってはいけません"
+      readings:
+        "te-mo-ii": "odottemoiidesu"
+        "te-wa-ikenai": "odottewaikemasen"
+    - word: "ja-0575"
+      forms:
+        "te-mo-ii": "うたってもいいです"
+        "te-wa-ikenai": "うたってはいけません"
+      readings:
+        "te-mo-ii": "utattemoiidesu"
+        "te-wa-ikenai": "utattewaikemasen"
+    - word: "ja-0576"
+      forms:
+        "te-mo-ii": "かりてもいいです"
+        "te-wa-ikenai": "かりてはいけません"
+      readings:
+        "te-mo-ii": "karitemoiidesu"
+        "te-wa-ikenai": "karitewaikemasen"
+    - word: "ja-0577"
+      forms:
+        "te-mo-ii": "かえしてもいいです"
+        "te-wa-ikenai": "かえしてはいけません"
+      readings:
+        "te-mo-ii": "kaeshitemoiidesu"
+        "te-wa-ikenai": "kaeshitewaikemasen"
+    - word: "ja-0578"
+      forms:
+        "te-mo-ii": "わすれてもいいです"
+        "te-wa-ikenai": "わすれてはいけません"
+      readings:
+        "te-mo-ii": "wasuretemoiidesu"
+        "te-wa-ikenai": "wasuretewaikemasen"
+    - word: "ja-0579"
+      forms:
+        "te-mo-ii": "おぼえてもいいです"
+        "te-wa-ikenai": "おぼえてはいけません"
+      readings:
+        "te-mo-ii": "oboetemoiidesu"
+        "te-wa-ikenai": "oboetewaikemasen"
+    - word: "ja-0580"
+      forms:
+        "te-mo-ii": "てつだってもいいです"
+        "te-wa-ikenai": "てつだってはいけません"
+      readings:
+        "te-mo-ii": "tetsudattemoiidesu"
+        "te-wa-ikenai": "tetsudattewaikemasen"
+    - word: "ja-0581"
+      forms:
+        "te-mo-ii": "ひろってもいいです"
+        "te-wa-ikenai": "ひろってはいけません"
+      readings:
+        "te-mo-ii": "hirottemoiidesu"
+        "te-wa-ikenai": "hirottewaikemasen"
+    - word: "ja-0582"
+      forms:
+        "te-mo-ii": "すててもいいです"
+        "te-wa-ikenai": "すててはいけません"
+      readings:
+        "te-mo-ii": "sutetemoiidesu"
+        "te-wa-ikenai": "sutetewaikemasen"
+    - word: "ja-0583"
+      forms:
+        "te-mo-ii": "なくしてもいいです"
+        "te-wa-ikenai": "なくしてはいけません"
+      readings:
+        "te-mo-ii": "nakushitemoiidesu"
+        "te-wa-ikenai": "nakushitewaikemasen"
+    - word: "ja-0584"
+      forms:
+        "te-mo-ii": "のぼってもいいです"
+        "te-wa-ikenai": "のぼってはいけません"
+      readings:
+        "te-mo-ii": "nobottemoiidesu"
+        "te-wa-ikenai": "nobottewaikemasen"
+    - word: "ja-0585"
+      forms:
+        "te-mo-ii": "そうじしてもいいです"
+        "te-wa-ikenai": "そうじしてはいけません"
+      readings:
+        "te-mo-ii": "soujishitemoiidesu"
+        "te-wa-ikenai": "soujishitewaikemasen"
+    - word: "ja-0586"
+      forms:
+        "te-mo-ii": "りょうりしてもいいです"
+        "te-wa-ikenai": "りょうりしてはいけません"
+      readings:
+        "te-mo-ii": "ryourishitemoiidesu"
+        "te-wa-ikenai": "ryourishitewaikemasen"
+    - word: "ja-0587"
+      forms:
+        "te-mo-ii": "でかけてもいいです"
+        "te-wa-ikenai": "でかけてはいけません"
+      readings:
+        "te-mo-ii": "dekaketemoiidesu"
+        "te-wa-ikenai": "dekaketewaikemasen"
+    - word: "ja-0588"
+      forms:
+        "te-mo-ii": "もどってもいいです"
+        "te-wa-ikenai": "もどってはいけません"
+      readings:
+        "te-mo-ii": "modottemoiidesu"
+        "te-wa-ikenai": "modottewaikemasen"
+    - word: "ja-0589"
+      forms:
+        "te-mo-ii": "とまってもいいです"
+        "te-wa-ikenai": "とまってはいけません"
+      readings:
+        "te-mo-ii": "tomattemoiidesu"
+        "te-wa-ikenai": "tomattewaikemasen"
+    - word: "ja-0590"
+      forms:
+        "te-mo-ii": "さがしてもいいです"
+        "te-wa-ikenai": "さがしてはいけません"
+      readings:
+        "te-mo-ii": "sagashitemoiidesu"
+        "te-wa-ikenai": "sagashitewaikemasen"
+    - word: "ja-0591"
+      forms:
+        "te-mo-ii": "みせてもいいです"
+        "te-wa-ikenai": "みせてはいけません"
+      readings:
+        "te-mo-ii": "misetemoiidesu"
+        "te-wa-ikenai": "misetewaikemasen"
+    - word: "ja-0592"
+      forms:
+        "te-mo-ii": "いれてもいいです"
+        "te-wa-ikenai": "いれてはいけません"
+      readings:
+        "te-mo-ii": "iretemoiidesu"
+        "te-wa-ikenai": "iretewaikemasen"
+    - word: "ja-0593"
+      forms:
+        "te-mo-ii": "わらってもいいです"
+        "te-wa-ikenai": "わらってはいけません"
+      readings:
+        "te-mo-ii": "warattemoiidesu"
+        "te-wa-ikenai": "warattewaikemasen"
+    - word: "ja-0594"
+      forms:
+        "te-mo-ii": "おこってもいいです"
+        "te-wa-ikenai": "おこってはいけません"
+      readings:
+        "te-mo-ii": "okottemoiidesu"
+        "te-wa-ikenai": "okottewaikemasen"
+    - word: "ja-0595"
+      forms:
+        "te-mo-ii": "やめてもいいです"
+        "te-wa-ikenai": "やめてはいけません"
+      readings:
+        "te-mo-ii": "yametemoiidesu"
+        "te-wa-ikenai": "yametewaikemasen"
+    - word: "ja-0596"
+      forms:
+        "te-mo-ii": "はじめてもいいです"
+        "te-wa-ikenai": "はじめてはいけません"
+      readings:
+        "te-mo-ii": "hajimetemoiidesu"
+        "te-wa-ikenai": "hajimetewaikemasen"
+    - word: "ja-0597"
+      forms:
+        "te-mo-ii": "ひっこしてもいいです"
+        "te-wa-ikenai": "ひっこしてはいけません"
+      readings:
+        "te-mo-ii": "hikkoshitemoiidesu"
+        "te-wa-ikenai": "hikkoshitewaikemasen"
+    - word: "ja-0598"
+      forms:
+        "te-mo-ii": "あげてもいいです"
+        "te-wa-ikenai": "あげてはいけません"
+      readings:
+        "te-mo-ii": "agetemoiidesu"
+        "te-wa-ikenai": "agetewaikemasen"
+    - word: "ja-0599"
+      forms:
+        "te-mo-ii": "もらってもいいです"
+        "te-wa-ikenai": "もらってはいけません"
+      readings:
+        "te-mo-ii": "morattemoiidesu"
+        "te-wa-ikenai": "morattewaikemasen"
+    - word: "ja-0600"
+      forms:
+        "te-mo-ii": "さけんでもいいです"
+        "te-wa-ikenai": "さけんではいけません"
+      readings:
+        "te-mo-ii": "sakendemoiidesu"
+        "te-wa-ikenai": "sakendewaikemasen"
+    - word: "ja-0516"
+      forms:
+        "te-mo-ii": "おわってもいいです"
+        "te-wa-ikenai": "おわってはいけません"
+      readings:
+        "te-mo-ii": "owattemoiidesu"
+        "te-wa-ikenai": "owattewaikemasen"
+    - word: "ja-0711"
+      forms:
+        "te-mo-ii": "つとめてもいいです"
+        "te-wa-ikenai": "つとめてはいけません"
+      readings:
+        "te-mo-ii": "tsutometemoiidesu"
+        "te-wa-ikenai": "tsutometewaikemasen"
+    - word: "ja-1334"
+      forms:
+        "te-mo-ii": "きがえてもいいです"
+        "te-wa-ikenai": "きがえてはいけません"
+      readings:
+        "te-mo-ii": "kigaetemoiidesu"
+        "te-wa-ikenai": "kigaetewaikemasen"
+    - word: "ja-1335"
+      forms:
+        "te-mo-ii": "はいてもいいです"
+        "te-wa-ikenai": "はいてはいけません"
+      readings:
+        "te-mo-ii": "haitemoiidesu"
+        "te-wa-ikenai": "haitewaikemasen"
+    - word: "ja-1336"
+      forms:
+        "te-mo-ii": "かぶってもいいです"
+        "te-wa-ikenai": "かぶってはいけません"
+      readings:
+        "te-mo-ii": "kabuttemoiidesu"
+        "te-wa-ikenai": "kabuttewaikemasen"
+    - word: "ja-1341"
+      forms:
+        "te-mo-ii": "つかれてもいいです"
+        "te-wa-ikenai": "つかれてはいけません"
+      readings:
+        "te-mo-ii": "tsukaretemoiidesu"
+        "te-wa-ikenai": "tsukaretewaikemasen"
+    - word: "ja-1348"
+      forms:
+        "te-mo-ii": "だしてもいいです"
+        "te-wa-ikenai": "だしてはいけません"
+      readings:
+        "te-mo-ii": "dashitemoiidesu"
+        "te-wa-ikenai": "dashitewaikemasen"
+    - word: "ja-1349"
+      forms:
+        "te-mo-ii": "わかしてもいいです"
+        "te-wa-ikenai": "わかしてはいけません"
+      readings:
+        "te-mo-ii": "wakashitemoiidesu"
+        "te-wa-ikenai": "wakashitewaikemasen"
+    - word: "ja-1350"
+      forms:
+        "te-mo-ii": "ほしてもいいです"
+        "te-wa-ikenai": "ほしてはいけません"
+      readings:
+        "te-mo-ii": "hoshitemoiidesu"
+        "te-wa-ikenai": "hoshitewaikemasen"
+    - word: "ja-1351"
+      forms:
+        "te-mo-ii": "かたづけてもいいです"
+        "te-wa-ikenai": "かたづけてはいけません"
+      readings:
+        "te-mo-ii": "katazuketemoiidesu"
+        "te-wa-ikenai": "katazuketewaikemasen"
+    - word: "ja-1352"
+      forms:
+        "te-mo-ii": "たたんでもいいです"
+        "te-wa-ikenai": "たたんではいけません"
+      readings:
+        "te-mo-ii": "tatandemoiidesu"
+        "te-wa-ikenai": "tatandewaikemasen"
+    - word: "ja-1353"
+      forms:
+        "te-mo-ii": "ぬいでもいいです"
+        "te-wa-ikenai": "ぬいではいけません"
+      readings:
+        "te-mo-ii": "nuidemoiidesu"
+        "te-wa-ikenai": "nuidewaikemasen"
+    - word: "ja-1354"
+      forms:
+        "te-mo-ii": "まにあってもいいです"
+        "te-wa-ikenai": "まにあってはいけません"
+      readings:
+        "te-mo-ii": "maniattemoiidesu"
+        "te-wa-ikenai": "maniattewaikemasen"
+    - word: "ja-1364"
+      forms:
+        "te-mo-ii": "かわいてもいいです"
+        "te-wa-ikenai": "かわいてはいけません"
+      readings:
+        "te-mo-ii": "kawaitemoiidesu"
+        "te-wa-ikenai": "kawaitewaikemasen"
+    - word: "ja-1368"
+      forms:
+        "te-mo-ii": "いそいでもいいです"
+        "te-wa-ikenai": "いそいではいけません"
+      readings:
+        "te-mo-ii": "isoidemoiidesu"
+        "te-wa-ikenai": "isoidewaikemasen"
+    - word: "ja-1718"
+      forms:
+        "te-mo-ii": "うってもいいです"
+        "te-wa-ikenai": "うってはいけません"
+      readings:
+        "te-mo-ii": "uttemoiidesu"
+        "te-wa-ikenai": "uttewaikemasen"
+    - word: "ja-1719"
+      forms:
+        "te-mo-ii": "はらってもいいです"
+        "te-wa-ikenai": "はらってはいけません"
+      readings:
+        "te-mo-ii": "harattemoiidesu"
+        "te-wa-ikenai": "harattewaikemasen"
+    - word: "ja-1720"
+      forms:
+        "te-mo-ii": "まけてもいいです"
+        "te-wa-ikenai": "まけてはいけません"
+      readings:
+        "te-mo-ii": "maketemoiidesu"
+        "te-wa-ikenai": "maketewaikemasen"
+    - word: "ja-1721"
+      forms:
+        "te-mo-ii": "えらんでもいいです"
+        "te-wa-ikenai": "えらんではいけません"
+      readings:
+        "te-mo-ii": "erandemoiidesu"
+        "te-wa-ikenai": "erandewaikemasen"
+    - word: "ja-1758"
+      forms:
+        "te-mo-ii": "たのんでもいいです"
+        "te-wa-ikenai": "たのんではいけません"
+      readings:
+        "te-mo-ii": "tanondemoiidesu"
+        "te-wa-ikenai": "tanondewaikemasen"
+    - word: "ja-1759"
+      forms:
+        "te-mo-ii": "おごってもいいです"
+        "te-wa-ikenai": "おごってはいけません"
+      readings:
+        "te-mo-ii": "ogottemoiidesu"
+        "te-wa-ikenai": "ogottewaikemasen"
+    - word: "ja-1790"
+      forms:
+        "te-mo-ii": "いためてもいいです"
+        "te-wa-ikenai": "いためてはいけません"
+      readings:
+        "te-mo-ii": "itametemoiidesu"
+        "te-wa-ikenai": "itametewaikemasen"
+    - word: "ja-1791"
+      forms:
+        "te-mo-ii": "まぜてもいいです"
+        "te-wa-ikenai": "まぜてはいけません"
+      readings:
+        "te-mo-ii": "mazetemoiidesu"
+        "te-wa-ikenai": "mazetewaikemasen"
+    - word: "ja-1792"
+      forms:
+        "te-mo-ii": "ゆでてもいいです"
+        "te-wa-ikenai": "ゆでてはいけません"
+      readings:
+        "te-mo-ii": "yudetemoiidesu"
+        "te-wa-ikenai": "yudetewaikemasen"
+    - word: "ja-1793"
+      forms:
+        "te-mo-ii": "にてもいいです"
+        "te-wa-ikenai": "にてはいけません"
+      readings:
+        "te-mo-ii": "nitemoiidesu"
+        "te-wa-ikenai": "nitewaikemasen"
+    - word: "ja-1794"
+      forms:
+        "te-mo-ii": "やいてもいいです"
+        "te-wa-ikenai": "やいてはいけません"
+      readings:
+        "te-mo-ii": "yaitemoiidesu"
+        "te-wa-ikenai": "yaitewaikemasen"
+    - word: "ja-1799"
+      forms:
+        "te-mo-ii": "ひやしてもいいです"
+        "te-wa-ikenai": "ひやしてはいけません"
+      readings:
+        "te-mo-ii": "hiyashitemoiidesu"
+        "te-wa-ikenai": "hiyashitewaikemasen"
+    - word: "ja-1800"
+      forms:
+        "te-mo-ii": "あたためてもいいです"
+        "te-wa-ikenai": "あたためてはいけません"
+      readings:
+        "te-mo-ii": "atatametemoiidesu"
+        "te-wa-ikenai": "atatametewaikemasen"
+    - word: "ja-1801"
+      forms:
+        "te-mo-ii": "きざんでもいいです"
+        "te-wa-ikenai": "きざんではいけません"
+      readings:
+        "te-mo-ii": "kizandemoiidesu"
+        "te-wa-ikenai": "kizandewaikemasen"
+    - word: "ja-1802"
+      forms:
+        "te-mo-ii": "むいてもいいです"
+        "te-wa-ikenai": "むいてはいけません"
+      readings:
+        "te-mo-ii": "muitemoiidesu"
+        "te-wa-ikenai": "muitewaikemasen"
+    - word: "ja-1803"
+      forms:
+        "te-mo-ii": "つつんでもいいです"
+        "te-wa-ikenai": "つつんではいけません"
+      readings:
+        "te-mo-ii": "tsutsundemoiidesu"
+        "te-wa-ikenai": "tsutsundewaikemasen"
+    - word: "ja-1804"
+      forms:
+        "te-mo-ii": "こげてもいいです"
+        "te-wa-ikenai": "こげてはいけません"
+      readings:
+        "te-mo-ii": "kogetemoiidesu"
+        "te-wa-ikenai": "kogetewaikemasen"
+    - word: "ja-1805"
+      forms:
+        "te-mo-ii": "さましてもいいです"
+        "te-wa-ikenai": "さましてはいけません"
+      readings:
+        "te-mo-ii": "samashitemoiidesu"
+        "te-wa-ikenai": "samashitewaikemasen"
+    - word: "ja-1850"
+      forms:
+        "te-mo-ii": "べんきょうしてもいいです"
+        "te-wa-ikenai": "べんきょうしてはいけません"
+      readings:
+        "te-mo-ii": "benkyoushitemoiidesu"
+        "te-wa-ikenai": "benkyoushitewaikemasen"
+    - word: "ja-1861"
+      forms:
+        "te-mo-ii": "おくれてもいいです"
+        "te-wa-ikenai": "おくれてはいけません"
+      readings:
+        "te-mo-ii": "okuretemoiidesu"
+        "te-wa-ikenai": "okuretewaikemasen"
+    - word: "ja-1862"
+      forms:
+        "te-mo-ii": "まなんでもいいです"
+        "te-wa-ikenai": "まなんではいけません"
+      readings:
+        "te-mo-ii": "manandemoiidesu"
+        "te-wa-ikenai": "manandewaikemasen"
+    - word: "ja-1863"
+      forms:
+        "te-mo-ii": "つづけてもいいです"
+        "te-wa-ikenai": "つづけてはいけません"
+      readings:
+        "te-mo-ii": "tsuzuketemoiidesu"
+        "te-wa-ikenai": "tsuzuketewaikemasen"
+    - word: "ja-1864"
+      forms:
+        "te-mo-ii": "かんがえてもいいです"
+        "te-wa-ikenai": "かんがえてはいけません"
+      readings:
+        "te-mo-ii": "kangaetemoiidesu"
+        "te-wa-ikenai": "kangaetewaikemasen"
+    - word: "ja-1865"
+      forms:
+        "te-mo-ii": "こたえてもいいです"
+        "te-wa-ikenai": "こたえてはいけません"
+      readings:
+        "te-mo-ii": "kotaetemoiidesu"
+        "te-wa-ikenai": "kotaetewaikemasen"
+    - word: "ja-1892"
+      forms:
+        "te-mo-ii": "およいでもいいです"
+        "te-wa-ikenai": "およいではいけません"
+      readings:
+        "te-mo-ii": "oyoidemoiidesu"
+        "te-wa-ikenai": "oyoidewaikemasen"
+    - word: "ja-1893"
+      forms:
+        "te-mo-ii": "とってもいいです"
+        "te-wa-ikenai": "とってはいけません"
+      readings:
+        "te-mo-ii": "tottemoiidesu"
+        "te-wa-ikenai": "tottewaikemasen"
+    - word: "ja-1896"
+      forms:
+        "te-mo-ii": "えがいてもいいです"
+        "te-wa-ikenai": "えがいてはいけません"
+      readings:
+        "te-mo-ii": "egaitemoiidesu"
+        "te-wa-ikenai": "egaitewaikemasen"
+    - word: "ja-1900"
+      forms:
+        "te-mo-ii": "ぬってもいいです"
+        "te-wa-ikenai": "ぬってはいけません"
+      readings:
+        "te-mo-ii": "nuttemoiidesu"
+        "te-wa-ikenai": "nuttewaikemasen"
+    - word: "ja-1901"
+      forms:
+        "te-mo-ii": "あんでもいいです"
+        "te-wa-ikenai": "あんではいけません"
+      readings:
+        "te-mo-ii": "andemoiidesu"
+        "te-wa-ikenai": "andewaikemasen"
+    - word: "ja-1907"
+      forms:
+        "te-mo-ii": "ほめてもいいです"
+        "te-wa-ikenai": "ほめてはいけません"
+      readings:
+        "te-mo-ii": "hometemoiidesu"
+        "te-wa-ikenai": "hometewaikemasen"
+    - word: "ja-1910"
+      forms:
+        "te-mo-ii": "かってもいいです"
+        "te-wa-ikenai": "かってはいけません"
+      readings:
+        "te-mo-ii": "kattemoiidesu"
+        "te-wa-ikenai": "kattewaikemasen"
+    - word: "ja-1933"
+      forms:
+        "te-mo-ii": "かなでてもいいです"
+        "te-wa-ikenai": "かなでてはいけません"
+      readings:
+        "te-mo-ii": "kanadetemoiidesu"
+        "te-wa-ikenai": "kanadetewaikemasen"
+    - word: "ja-1934"
+      forms:
+        "te-mo-ii": "ならしてもいいです"
+        "te-wa-ikenai": "ならしてはいけません"
+      readings:
+        "te-mo-ii": "narashitemoiidesu"
+        "te-wa-ikenai": "narashitewaikemasen"
+    - word: "ja-1935"
+      forms:
+        "te-mo-ii": "ひびいてもいいです"
+        "te-wa-ikenai": "ひびいてはいけません"
+      readings:
+        "te-mo-ii": "hibiitemoiidesu"
+        "te-wa-ikenai": "hibiitewaikemasen"
+    - word: "ja-1939"
+      forms:
+        "te-mo-ii": "たたいてもいいです"
+        "te-wa-ikenai": "たたいてはいけません"
+      readings:
+        "te-mo-ii": "tataitemoiidesu"
+        "te-wa-ikenai": "tataitewaikemasen"
+    - word: "ja-1940"
+      forms:
+        "te-mo-ii": "きこえてもいいです"
+        "te-wa-ikenai": "きこえてはいけません"
+      readings:
+        "te-mo-ii": "kikoetemoiidesu"
+        "te-wa-ikenai": "kikoetewaikemasen"
+    - word: "ja-1941"
+      forms:
+        "te-mo-ii": "ひいてもいいです"
+        "te-wa-ikenai": "ひいてはいけません"
+      readings:
+        "te-mo-ii": "hiitemoiidesu"
+        "te-wa-ikenai": "hiitewaikemasen"
+    - word: "ja-1539"
+      forms:
+        "te-mo-ii": "にあってもいいです"
+        "te-wa-ikenai": "にあってはいけません"
+      readings:
+        "te-mo-ii": "niattemoiidesu"
+        "te-wa-ikenai": "niattewaikemasen"
+    - word: "ja-1542"
+      forms:
+        "te-mo-ii": "きてもいいです"
+        "te-wa-ikenai": "きてはいけません"
+      readings:
+        "te-mo-ii": "kitemoiidesu"
+        "te-wa-ikenai": "kitewaikemasen"
+    - word: "ja-1996"
+      forms:
+        "te-mo-ii": "なげてもいいです"
+        "te-wa-ikenai": "なげてはいけません"
+      readings:
+        "te-mo-ii": "nagetemoiidesu"
+        "te-wa-ikenai": "nagetewaikemasen"
+    - word: "ja-1997"
+      forms:
+        "te-mo-ii": "うってもいいです"
+        "te-wa-ikenai": "うってはいけません"
+      readings:
+        "te-mo-ii": "uttemoiidesu"
+        "te-wa-ikenai": "uttewaikemasen"
+    - word: "ja-1998"
+      forms:
+        "te-mo-ii": "けってもいいです"
+        "te-wa-ikenai": "けってはいけません"
+      readings:
+        "te-mo-ii": "kettemoiidesu"
+        "te-wa-ikenai": "kettewaikemasen"
+    - word: "ja-1999"
+      forms:
+        "te-mo-ii": "おいかけてもいいです"
+        "te-wa-ikenai": "おいかけてはいけません"
+      readings:
+        "te-mo-ii": "oikaketemoiidesu"
+        "te-wa-ikenai": "oikaketewaikemasen"
+    - word: "ja-2000"
+      forms:
+        "te-mo-ii": "あきらめてもいいです"
+        "te-wa-ikenai": "あきらめてはいけません"
+      readings:
+        "te-mo-ii": "akirametemoiidesu"
+        "te-wa-ikenai": "akirametewaikemasen"
+    - word: "ja-2001"
+      forms:
+        "te-mo-ii": "きたえてもいいです"
+        "te-wa-ikenai": "きたえてはいけません"
+      readings:
+        "te-mo-ii": "kitaetemoiidesu"
+        "te-wa-ikenai": "kitaetewaikemasen"
+    - word: "ja-2002"
+      forms:
+        "te-mo-ii": "ねらってもいいです"
+        "te-wa-ikenai": "ねらってはいけません"
+      readings:
+        "te-mo-ii": "nerattemoiidesu"
+        "te-wa-ikenai": "nerattewaikemasen"
+    - word: "ja-2049"
+      forms:
+        "te-mo-ii": "うつってもいいです"
+        "te-wa-ikenai": "うつってはいけません"
+      readings:
+        "te-mo-ii": "utsuttemoiidesu"
+        "te-wa-ikenai": "utsuttewaikemasen"
+    - word: "ja-2050"
+      forms:
+        "te-mo-ii": "なおってもいいです"
+        "te-wa-ikenai": "なおってはいけません"
+      readings:
+        "te-mo-ii": "naottemoiidesu"
+        "te-wa-ikenai": "naottewaikemasen"
+    - word: "ja-2051"
+      forms:
+        "te-mo-ii": "なおしてもいいです"
+        "te-wa-ikenai": "なおしてはいけません"
+      readings:
+        "te-mo-ii": "naoshitemoiidesu"
+        "te-wa-ikenai": "naoshitewaikemasen"
+    - word: "ja-2052"
+      forms:
+        "te-mo-ii": "たおれてもいいです"
+        "te-wa-ikenai": "たおれてはいけません"
+      readings:
+        "te-mo-ii": "taoretemoiidesu"
+        "te-wa-ikenai": "taoretewaikemasen"
+    - word: "ja-2053"
+      forms:
+        "te-mo-ii": "はれてもいいです"
+        "te-wa-ikenai": "はれてはいけません"
+      readings:
+        "te-mo-ii": "haretemoiidesu"
+        "te-wa-ikenai": "haretewaikemasen"
+    - word: "ja-2054"
+      forms:
+        "te-mo-ii": "しびれてもいいです"
+        "te-wa-ikenai": "しびれてはいけません"
+      readings:
+        "te-mo-ii": "shibiretemoiidesu"
+        "te-wa-ikenai": "shibiretewaikemasen"
+    - word: "ja-2115"
+      forms:
+        "te-mo-ii": "みがいてもいいです"
+        "te-wa-ikenai": "みがいてはいけません"
+      readings:
+        "te-mo-ii": "migaitemoiidesu"
+        "te-wa-ikenai": "migaitewaikemasen"
+    - word: "ja-2116"
+      forms:
+        "te-mo-ii": "こすってもいいです"
+        "te-wa-ikenai": "こすってはいけません"
+      readings:
+        "te-mo-ii": "kosuttemoiidesu"
+        "te-wa-ikenai": "kosuttewaikemasen"
+    - word: "ja-2117"
+      forms:
+        "te-mo-ii": "すすいでもいいです"
+        "te-wa-ikenai": "すすいではいけません"
+      readings:
+        "te-mo-ii": "susuidemoiidesu"
+        "te-wa-ikenai": "susuidewaikemasen"
+    - word: "ja-2118"
+      forms:
+        "te-mo-ii": "しぼってもいいです"
+        "te-wa-ikenai": "しぼってはいけません"
+      readings:
+        "te-mo-ii": "shibottemoiidesu"
+        "te-wa-ikenai": "shibottewaikemasen"
+    - word: "ja-2119"
+      forms:
+        "te-mo-ii": "かわかしてもいいです"
+        "te-wa-ikenai": "かわかしてはいけません"
+      readings:
+        "te-mo-ii": "kawakashitemoiidesu"
+        "te-wa-ikenai": "kawakashitewaikemasen"
+    - word: "ja-2120"
+      forms:
+        "te-mo-ii": "しまってもいいです"
+        "te-wa-ikenai": "しまってはいけません"
+      readings:
+        "te-mo-ii": "shimattemoiidesu"
+        "te-wa-ikenai": "shimattewaikemasen"
+    - word: "ja-2121"
+      forms:
+        "te-mo-ii": "そろえてもいいです"
+        "te-wa-ikenai": "そろえてはいけません"
+      readings:
+        "te-mo-ii": "soroetemoiidesu"
+        "te-wa-ikenai": "soroetewaikemasen"
+    - word: "ja-2122"
+      forms:
+        "te-mo-ii": "かざってもいいです"
+        "te-wa-ikenai": "かざってはいけません"
+      readings:
+        "te-mo-ii": "kazattemoiidesu"
+        "te-wa-ikenai": "kazattewaikemasen"
+    - word: "ja-2123"
+      forms:
+        "te-mo-ii": "とりかえてもいいです"
+        "te-wa-ikenai": "とりかえてはいけません"
+      readings:
+        "te-mo-ii": "torikaetemoiidesu"
+        "te-wa-ikenai": "torikaetewaikemasen"
+    - word: "ja-2124"
+      forms:
+        "te-mo-ii": "つめてもいいです"
+        "te-wa-ikenai": "つめてはいけません"
+      readings:
+        "te-mo-ii": "tsumetemoiidesu"
+        "te-wa-ikenai": "tsumetewaikemasen"
+    - word: "ja-2125"
+      forms:
+        "te-mo-ii": "くばってもいいです"
+        "te-wa-ikenai": "くばってはいけません"
+      readings:
+        "te-mo-ii": "kubattemoiidesu"
+        "te-wa-ikenai": "kubattewaikemasen"
+    - word: "ja-2126"
+      forms:
+        "te-mo-ii": "こぼしてもいいです"
+        "te-wa-ikenai": "こぼしてはいけません"
+      readings:
+        "te-mo-ii": "koboshitemoiidesu"
+        "te-wa-ikenai": "koboshitewaikemasen"
+    - word: "ja-2127"
+      forms:
+        "te-mo-ii": "よごれてもいいです"
+        "te-wa-ikenai": "よごれてはいけません"
+      readings:
+        "te-mo-ii": "yogoretemoiidesu"
+        "te-wa-ikenai": "yogoretewaikemasen"
+    - word: "ja-2128"
+      forms:
+        "te-mo-ii": "よごしてもいいです"
+        "te-wa-ikenai": "よごしてはいけません"
+      readings:
+        "te-mo-ii": "yogoshitemoiidesu"
+        "te-wa-ikenai": "yogoshitewaikemasen"
+    - word: "ja-2129"
+      forms:
+        "te-mo-ii": "ちらかしてもいいです"
+        "te-wa-ikenai": "ちらかしてはいけません"
+      readings:
+        "te-mo-ii": "chirakashitemoiidesu"
+        "te-wa-ikenai": "chirakashitewaikemasen"
+    - word: "ja-2164"
+      forms:
+        "te-mo-ii": "やせてもいいです"
+        "te-wa-ikenai": "やせてはいけません"
+      readings:
+        "te-mo-ii": "yasetemoiidesu"
+        "te-wa-ikenai": "yasetewaikemasen"
+    - word: "ja-2165"
+      forms:
+        "te-mo-ii": "ふとってもいいです"
+        "te-wa-ikenai": "ふとってはいけません"
+      readings:
+        "te-mo-ii": "futottemoiidesu"
+        "te-wa-ikenai": "futottewaikemasen"
+    - word: "ja-2217"
+      forms:
+        "te-mo-ii": "かわってもいいです"
+        "te-wa-ikenai": "かわってはいけません"
+      readings:
+        "te-mo-ii": "kawattemoiidesu"
+        "te-wa-ikenai": "kawattewaikemasen"
+    - word: "ja-2218"
+      forms:
+        "te-mo-ii": "きまってもいいです"
+        "te-wa-ikenai": "きまってはいけません"
+      readings:
+        "te-mo-ii": "kimattemoiidesu"
+        "te-wa-ikenai": "kimattewaikemasen"
+    - word: "ja-2219"
+      forms:
+        "te-mo-ii": "きめてもいいです"
+        "te-wa-ikenai": "きめてはいけません"
+      readings:
+        "te-mo-ii": "kimetemoiidesu"
+        "te-wa-ikenai": "kimetewaikemasen"
+    - word: "ja-2220"
+      forms:
+        "te-mo-ii": "なってもいいです"
+        "te-wa-ikenai": "なってはいけません"
+      readings:
+        "te-mo-ii": "nattemoiidesu"
+        "te-wa-ikenai": "nattewaikemasen"
+    - word: "ja-2221"
+      forms:
+        "te-mo-ii": "なれてもいいです"
+        "te-wa-ikenai": "なれてはいけません"
+      readings:
+        "te-mo-ii": "naretemoiidesu"
+        "te-wa-ikenai": "naretewaikemasen"
+    - word: "ja-2222"
+      forms:
+        "te-mo-ii": "ついてもいいです"
+        "te-wa-ikenai": "ついてはいけません"
+      readings:
+        "te-mo-ii": "tsuitemoiidesu"
+        "te-wa-ikenai": "tsuitewaikemasen"
+    - word: "ja-2223"
+      forms:
+        "te-mo-ii": "つけてもいいです"
+        "te-wa-ikenai": "つけてはいけません"
+      readings:
+        "te-mo-ii": "tsuketemoiidesu"
+        "te-wa-ikenai": "tsuketewaikemasen"
+    - word: "ja-2224"
+      forms:
+        "te-mo-ii": "けしてもいいです"
+        "te-wa-ikenai": "けしてはいけません"
+      readings:
+        "te-mo-ii": "keshitemoiidesu"
+        "te-wa-ikenai": "keshitewaikemasen"
+    - word: "ja-2225"
+      forms:
+        "te-mo-ii": "きえてもいいです"
+        "te-wa-ikenai": "きえてはいけません"
+      readings:
+        "te-mo-ii": "kietemoiidesu"
+        "te-wa-ikenai": "kietewaikemasen"
+    - word: "ja-2226"
+      forms:
+        "te-mo-ii": "あいてもいいです"
+        "te-wa-ikenai": "あいてはいけません"
+      readings:
+        "te-mo-ii": "aitemoiidesu"
+        "te-wa-ikenai": "aitewaikemasen"
+    - word: "ja-2227"
+      forms:
+        "te-mo-ii": "しまってもいいです"
+        "te-wa-ikenai": "しまってはいけません"
+      readings:
+        "te-mo-ii": "shimattemoiidesu"
+        "te-wa-ikenai": "shimattewaikemasen"
+    - word: "ja-2228"
+      forms:
+        "te-mo-ii": "つかまえてもいいです"
+        "te-wa-ikenai": "つかまえてはいけません"
+      readings:
+        "te-mo-ii": "tsukamaetemoiidesu"
+        "te-wa-ikenai": "tsukamaetewaikemasen"
+    - word: "ja-2229"
+      forms:
+        "te-mo-ii": "つかんでもいいです"
+        "te-wa-ikenai": "つかんではいけません"
+      readings:
+        "te-mo-ii": "tsukandemoiidesu"
+        "te-wa-ikenai": "tsukandewaikemasen"
+    - word: "ja-2230"
+      forms:
+        "te-mo-ii": "おしてもいいです"
+        "te-wa-ikenai": "おしてはいけません"
+      readings:
+        "te-mo-ii": "oshitemoiidesu"
+        "te-wa-ikenai": "oshitewaikemasen"
+    - word: "ja-2231"
+      forms:
+        "te-mo-ii": "ひっぱってもいいです"
+        "te-wa-ikenai": "ひっぱってはいけません"
+      readings:
+        "te-mo-ii": "hippattemoiidesu"
+        "te-wa-ikenai": "hippattewaikemasen"
+    - word: "ja-2232"
+      forms:
+        "te-mo-ii": "おとしてもいいです"
+        "te-wa-ikenai": "おとしてはいけません"
+      readings:
+        "te-mo-ii": "otoshitemoiidesu"
+        "te-wa-ikenai": "otoshitewaikemasen"
+    - word: "ja-2233"
+      forms:
+        "te-mo-ii": "おちてもいいです"
+        "te-wa-ikenai": "おちてはいけません"
+      readings:
+        "te-mo-ii": "ochitemoiidesu"
+        "te-wa-ikenai": "ochitewaikemasen"
+    - word: "ja-2234"
+      forms:
+        "te-mo-ii": "ひらいてもいいです"
+        "te-wa-ikenai": "ひらいてはいけません"
+      readings:
+        "te-mo-ii": "hiraitemoiidesu"
+        "te-wa-ikenai": "hiraitewaikemasen"
+    - word: "ja-2235"
+      forms:
+        "te-mo-ii": "とじてもいいです"
+        "te-wa-ikenai": "とじてはいけません"
+      readings:
+        "te-mo-ii": "tojitemoiidesu"
+        "te-wa-ikenai": "tojitewaikemasen"
+    - word: "ja-2236"
+      forms:
+        "te-mo-ii": "わたしてもいいです"
+        "te-wa-ikenai": "わたしてはいけません"
+      readings:
+        "te-mo-ii": "watashitemoiidesu"
+        "te-wa-ikenai": "watashitewaikemasen"
+    - word: "ja-2237"
+      forms:
+        "te-mo-ii": "うけてもいいです"
+        "te-wa-ikenai": "うけてはいけません"
+      readings:
+        "te-mo-ii": "uketemoiidesu"
+        "te-wa-ikenai": "uketewaikemasen"
+    - word: "ja-2238"
+      forms:
+        "te-mo-ii": "つたえてもいいです"
+        "te-wa-ikenai": "つたえてはいけません"
+      readings:
+        "te-mo-ii": "tsutaetemoiidesu"
+        "te-wa-ikenai": "tsutaetewaikemasen"
+    - word: "ja-2239"
+      forms:
+        "te-mo-ii": "つたわってもいいです"
+        "te-wa-ikenai": "つたわってはいけません"
+      readings:
+        "te-mo-ii": "tsutawattemoiidesu"
+        "te-wa-ikenai": "tsutawattewaikemasen"
+    - word: "ja-2240"
+      forms:
+        "te-mo-ii": "むかえてもいいです"
+        "te-wa-ikenai": "むかえてはいけません"
+      readings:
+        "te-mo-ii": "mukaetemoiidesu"
+        "te-wa-ikenai": "mukaetewaikemasen"
+    - word: "ja-2241"
+      forms:
+        "te-mo-ii": "おくってもいいです"
+        "te-wa-ikenai": "おくってはいけません"
+      readings:
+        "te-mo-ii": "okuttemoiidesu"
+        "te-wa-ikenai": "okuttewaikemasen"
+    - word: "ja-2242"
+      forms:
+        "te-mo-ii": "とどいてもいいです"
+        "te-wa-ikenai": "とどいてはいけません"
+      readings:
+        "te-mo-ii": "todoitemoiidesu"
+        "te-wa-ikenai": "todoitewaikemasen"
+    - word: "ja-2243"
+      forms:
+        "te-mo-ii": "とどけてもいいです"
+        "te-wa-ikenai": "とどけてはいけません"
+      readings:
+        "te-mo-ii": "todoketemoiidesu"
+        "te-wa-ikenai": "todoketewaikemasen"
+    - word: "ja-2244"
+      forms:
+        "te-mo-ii": "たずねてもいいです"
+        "te-wa-ikenai": "たずねてはいけません"
+      readings:
+        "te-mo-ii": "tazunetemoiidesu"
+        "te-wa-ikenai": "tazunetewaikemasen"
+    - word: "ja-2245"
+      forms:
+        "te-mo-ii": "まちがってもいいです"
+        "te-wa-ikenai": "まちがってはいけません"
+      readings:
+        "te-mo-ii": "machigattemoiidesu"
+        "te-wa-ikenai": "machigattewaikemasen"
+    - word: "ja-2246"
+      forms:
+        "te-mo-ii": "あやまってもいいです"
+        "te-wa-ikenai": "あやまってはいけません"
+      readings:
+        "te-mo-ii": "ayamattemoiidesu"
+        "te-wa-ikenai": "ayamattewaikemasen"
+    - word: "ja-2247"
+      forms:
+        "te-mo-ii": "ゆるしてもいいです"
+        "te-wa-ikenai": "ゆるしてはいけません"
+      readings:
+        "te-mo-ii": "yurushitemoiidesu"
+        "te-wa-ikenai": "yurushitewaikemasen"
+    - word: "ja-2248"
+      forms:
+        "te-mo-ii": "ことわってもいいです"
+        "te-wa-ikenai": "ことわってはいけません"
+      readings:
+        "te-mo-ii": "kotowattemoiidesu"
+        "te-wa-ikenai": "kotowattewaikemasen"
+    - word: "ja-2249"
+      forms:
+        "te-mo-ii": "さそってもいいです"
+        "te-wa-ikenai": "さそってはいけません"
+      readings:
+        "te-mo-ii": "sasottemoiidesu"
+        "te-wa-ikenai": "sasottewaikemasen"
+    - word: "ja-2250"
+      forms:
+        "te-mo-ii": "かよってもいいです"
+        "te-wa-ikenai": "かよってはいけません"
+      readings:
+        "te-mo-ii": "kayottemoiidesu"
+        "te-wa-ikenai": "kayottewaikemasen"
+    - word: "ja-2251"
+      forms:
+        "te-mo-ii": "とおってもいいです"
+        "te-wa-ikenai": "とおってはいけません"
+      readings:
+        "te-mo-ii": "toottemoiidesu"
+        "te-wa-ikenai": "toottewaikemasen"
+    - word: "ja-2252"
+      forms:
+        "te-mo-ii": "すぎてもいいです"
+        "te-wa-ikenai": "すぎてはいけません"
+      readings:
+        "te-mo-ii": "sugitemoiidesu"
+        "te-wa-ikenai": "sugitewaikemasen"
+    - word: "ja-2253"
+      forms:
+        "te-mo-ii": "まわってもいいです"
+        "te-wa-ikenai": "まわってはいけません"
+      readings:
+        "te-mo-ii": "mawattemoiidesu"
+        "te-wa-ikenai": "mawattewaikemasen"
+    - word: "ja-2254"
+      forms:
+        "te-mo-ii": "まわしてもいいです"
+        "te-wa-ikenai": "まわしてはいけません"
+      readings:
+        "te-mo-ii": "mawashitemoiidesu"
+        "te-wa-ikenai": "mawashitewaikemasen"
+    - word: "ja-2255"
+      forms:
+        "te-mo-ii": "うごいてもいいです"
+        "te-wa-ikenai": "うごいてはいけません"
+      readings:
+        "te-mo-ii": "ugoitemoiidesu"
+        "te-wa-ikenai": "ugoitewaikemasen"
+    - word: "ja-2256"
+      forms:
+        "te-mo-ii": "うごかしてもいいです"
+        "te-wa-ikenai": "うごかしてはいけません"
+      readings:
+        "te-mo-ii": "ugokashitemoiidesu"
+        "te-wa-ikenai": "ugokashitewaikemasen"
+    - word: "ja-2257"
+      forms:
+        "te-mo-ii": "のこってもいいです"
+        "te-wa-ikenai": "のこってはいけません"
+      readings:
+        "te-mo-ii": "nokottemoiidesu"
+        "te-wa-ikenai": "nokottewaikemasen"
+    - word: "ja-2258"
+      forms:
+        "te-mo-ii": "のこしてもいいです"
+        "te-wa-ikenai": "のこしてはいけません"
+      readings:
+        "te-mo-ii": "nokoshitemoiidesu"
+        "te-wa-ikenai": "nokoshitewaikemasen"
+    - word: "ja-2259"
+      forms:
+        "te-mo-ii": "あつまってもいいです"
+        "te-wa-ikenai": "あつまってはいけません"
+      readings:
+        "te-mo-ii": "atsumattemoiidesu"
+        "te-wa-ikenai": "atsumattewaikemasen"
+    - word: "ja-2260"
+      forms:
+        "te-mo-ii": "あつめてもいいです"
+        "te-wa-ikenai": "あつめてはいけません"
+      readings:
+        "te-mo-ii": "atsumetemoiidesu"
+        "te-wa-ikenai": "atsumetewaikemasen"
+    - word: "ja-2261"
+      forms:
+        "te-mo-ii": "わけてもいいです"
+        "te-wa-ikenai": "わけてはいけません"
+      readings:
+        "te-mo-ii": "waketemoiidesu"
+        "te-wa-ikenai": "waketewaikemasen"
+    - word: "ja-2262"
+      forms:
+        "te-mo-ii": "くらべてもいいです"
+        "te-wa-ikenai": "くらべてはいけません"
+      readings:
+        "te-mo-ii": "kurabetemoiidesu"
+        "te-wa-ikenai": "kurabetewaikemasen"
+    - word: "ja-2263"
+      forms:
+        "te-mo-ii": "かくれてもいいです"
+        "te-wa-ikenai": "かくれてはいけません"
+      readings:
+        "te-mo-ii": "kakuretemoiidesu"
+        "te-wa-ikenai": "kakuretewaikemasen"
+    - word: "ja-2264"
+      forms:
+        "te-mo-ii": "かくしてもいいです"
+        "te-wa-ikenai": "かくしてはいけません"
+      readings:
+        "te-mo-ii": "kakushitemoiidesu"
+        "te-wa-ikenai": "kakushitewaikemasen"
+    - word: "ja-2265"
+      forms:
+        "te-mo-ii": "みつかってもいいです"
+        "te-wa-ikenai": "みつかってはいけません"
+      readings:
+        "te-mo-ii": "mitsukattemoiidesu"
+        "te-wa-ikenai": "mitsukattewaikemasen"
+    - word: "ja-2266"
+      forms:
+        "te-mo-ii": "みつけてもいいです"
+        "te-wa-ikenai": "みつけてはいけません"
+      readings:
+        "te-mo-ii": "mitsuketemoiidesu"
+        "te-wa-ikenai": "mitsuketewaikemasen"
+    - word: "ja-2267"
+      forms:
+        "te-mo-ii": "ふえてもいいです"
+        "te-wa-ikenai": "ふえてはいけません"
+      readings:
+        "te-mo-ii": "fuetemoiidesu"
+        "te-wa-ikenai": "fuetewaikemasen"
+    - word: "ja-2268"
+      forms:
+        "te-mo-ii": "へってもいいです"
+        "te-wa-ikenai": "へってはいけません"
+      readings:
+        "te-mo-ii": "hettemoiidesu"
+        "te-wa-ikenai": "hettewaikemasen"
+    - word: "ja-2269"
+      forms:
+        "te-mo-ii": "そだててもいいです"
+        "te-wa-ikenai": "そだててはいけません"
+      readings:
+        "te-mo-ii": "sodatetemoiidesu"
+        "te-wa-ikenai": "sodatetewaikemasen"
+    - word: "ja-2270"
+      forms:
+        "te-mo-ii": "そだってもいいです"
+        "te-wa-ikenai": "そだってはいけません"
+      readings:
+        "te-mo-ii": "sodattemoiidesu"
+        "te-wa-ikenai": "sodattewaikemasen"
+    - word: "ja-2271"
+      forms:
+        "te-mo-ii": "うまれてもいいです"
+        "te-wa-ikenai": "うまれてはいけません"
+      readings:
+        "te-mo-ii": "umaretemoiidesu"
+        "te-wa-ikenai": "umaretewaikemasen"
+    - word: "ja-2272"
+      forms:
+        "te-mo-ii": "いきてもいいです"
+        "te-wa-ikenai": "いきてはいけません"
+      readings:
+        "te-mo-ii": "ikitemoiidesu"
+        "te-wa-ikenai": "ikitewaikemasen"
+    - word: "ja-2273"
+      forms:
+        "te-mo-ii": "たのしんでもいいです"
+        "te-wa-ikenai": "たのしんではいけません"
+      readings:
+        "te-mo-ii": "tanoshindemoiidesu"
+        "te-wa-ikenai": "tanoshindewaikemasen"
+    - word: "ja-2274"
+      forms:
+        "te-mo-ii": "あたってもいいです"
+        "te-wa-ikenai": "あたってはいけません"
+      readings:
+        "te-mo-ii": "atattemoiidesu"
+        "te-wa-ikenai": "atattewaikemasen"
+    - word: "ja-2275"
+      forms:
+        "te-mo-ii": "はじまってもいいです"
+        "te-wa-ikenai": "はじまってはいけません"
+      readings:
+        "te-mo-ii": "hajimattemoiidesu"
+        "te-wa-ikenai": "hajimattewaikemasen"
+    - word: "ja-2276"
+      forms:
+        "te-mo-ii": "さわってもいいです"
+        "te-wa-ikenai": "さわってはいけません"
+      readings:
+        "te-mo-ii": "sawattemoiidesu"
+        "te-wa-ikenai": "sawattewaikemasen"
+    - word: "ja-2320"
+      forms:
+        "te-mo-ii": "つながってもいいです"
+        "te-wa-ikenai": "つながってはいけません"
+      readings:
+        "te-mo-ii": "tsunagattemoiidesu"
+        "te-wa-ikenai": "tsunagattewaikemasen"
+    - word: "ja-2321"
+      forms:
+        "te-mo-ii": "つないでもいいです"
+        "te-wa-ikenai": "つないではいけません"
+      readings:
+        "te-mo-ii": "tsunaidemoiidesu"
+        "te-wa-ikenai": "tsunaidewaikemasen"
+    - word: "ja-2322"
+      forms:
+        "te-mo-ii": "かけてもいいです"
+        "te-wa-ikenai": "かけてはいけません"
+      readings:
+        "te-mo-ii": "kaketemoiidesu"
+        "te-wa-ikenai": "kaketewaikemasen"
+    - word: "ja-2323"
+      forms:
+        "te-mo-ii": "うけとってもいいです"
+        "te-wa-ikenai": "うけとってはいけません"
+      readings:
+        "te-mo-ii": "uketottemoiidesu"
+        "te-wa-ikenai": "uketottewaikemasen"
+    - word: "ja-2364"
+      forms:
+        "te-mo-ii": "のりおくれてもいいです"
+        "te-wa-ikenai": "のりおくれてはいけません"
+      readings:
+        "te-mo-ii": "noriokuretemoiidesu"
+        "te-wa-ikenai": "noriokuretewaikemasen"
+    - word: "ja-2365"
+      forms:
+        "te-mo-ii": "のりかえてもいいです"
+        "te-wa-ikenai": "のりかえてはいけません"
+      readings:
+        "te-mo-ii": "norikaetemoiidesu"
+        "te-wa-ikenai": "norikaetewaikemasen"
+    - word: "ja-2407"
+      forms:
+        "te-mo-ii": "たちよってもいいです"
+        "te-wa-ikenai": "たちよってはいけません"
+      readings:
+        "te-mo-ii": "tachiyottemoiidesu"
+        "te-wa-ikenai": "tachiyottewaikemasen"
+    - word: "ja-2470"
+      forms:
+        "te-mo-ii": "さいてもいいです"
+        "te-wa-ikenai": "さいてはいけません"
+      readings:
+        "te-mo-ii": "saitemoiidesu"
+        "te-wa-ikenai": "saitewaikemasen"
+    - word: "ja-2471"
+      forms:
+        "te-mo-ii": "ちってもいいです"
+        "te-wa-ikenai": "ちってはいけません"
+      readings:
+        "te-mo-ii": "chittemoiidesu"
+        "te-wa-ikenai": "chittewaikemasen"
+    - word: "ja-2472"
+      forms:
+        "te-mo-ii": "しげってもいいです"
+        "te-wa-ikenai": "しげってはいけません"
+      readings:
+        "te-mo-ii": "shigettemoiidesu"
+        "te-wa-ikenai": "shigettewaikemasen"
+    - word: "ja-2473"
+      forms:
+        "te-mo-ii": "かれてもいいです"
+        "te-wa-ikenai": "かれてはいけません"
+      readings:
+        "te-mo-ii": "karetemoiidesu"
+        "te-wa-ikenai": "karetewaikemasen"
+    - word: "ja-2600"
+      forms:
+        "te-mo-ii": "まかせてもいいです"
+        "te-wa-ikenai": "まかせてはいけません"
+      readings:
+        "te-mo-ii": "makasetemoiidesu"
+        "te-wa-ikenai": "makasetewaikemasen"
+    - word: "ja-2601"
+      forms:
+        "te-mo-ii": "ひきうけてもいいです"
+        "te-wa-ikenai": "ひきうけてはいけません"
+      readings:
+        "te-mo-ii": "hikiuketemoiidesu"
+        "te-wa-ikenai": "hikiuketewaikemasen"
+    - word: "ja-2602"
+      forms:
+        "te-mo-ii": "こなしてもいいです"
+        "te-wa-ikenai": "こなしてはいけません"
+      readings:
+        "te-mo-ii": "konashitemoiidesu"
+        "te-wa-ikenai": "konashitewaikemasen"
+    - word: "ja-2603"
+      forms:
+        "te-mo-ii": "はげんでもいいです"
+        "te-wa-ikenai": "はげんではいけません"
+      readings:
+        "te-mo-ii": "hagendemoiidesu"
+        "te-wa-ikenai": "hagendewaikemasen"
+    - word: "ja-2604"
+      forms:
+        "te-mo-ii": "てがけてもいいです"
+        "te-wa-ikenai": "てがけてはいけません"
+      readings:
+        "te-mo-ii": "tegaketemoiidesu"
+        "te-wa-ikenai": "tegaketewaikemasen"
+    - word: "ja-2605"
+      forms:
+        "te-mo-ii": "しめきってもいいです"
+        "te-wa-ikenai": "しめきってはいけません"
+      readings:
+        "te-mo-ii": "shimekittemoiidesu"
+        "te-wa-ikenai": "shimekittewaikemasen"
+    - word: "ja-2606"
+      forms:
+        "te-mo-ii": "まにあわせてもいいです"
+        "te-wa-ikenai": "まにあわせてはいけません"
+      readings:
+        "te-mo-ii": "maniawasetemoiidesu"
+        "te-wa-ikenai": "maniawasetewaikemasen"
+    - word: "ja-2716"
+      forms:
+        "te-mo-ii": "かたよってもいいです"
+        "te-wa-ikenai": "かたよってはいけません"
+      readings:
+        "te-mo-ii": "katayottemoiidesu"
+        "te-wa-ikenai": "katayottewaikemasen"
+    - word: "ja-2768"
+      forms:
+        "te-mo-ii": "おどろいてもいいです"
+        "te-wa-ikenai": "おどろいてはいけません"
+      readings:
+        "te-mo-ii": "odoroitemoiidesu"
+        "te-wa-ikenai": "odoroitewaikemasen"
+    - word: "ja-2769"
+      forms:
+        "te-mo-ii": "よろこんでもいいです"
+        "te-wa-ikenai": "よろこんではいけません"
+      readings:
+        "te-mo-ii": "yorokondemoiidesu"
+        "te-wa-ikenai": "yorokondewaikemasen"
+    - word: "ja-2770"
+      forms:
+        "te-mo-ii": "かなしんでもいいです"
+        "te-wa-ikenai": "かなしんではいけません"
+      readings:
+        "te-mo-ii": "kanashindemoiidesu"
+        "te-wa-ikenai": "kanashindewaikemasen"
+    - word: "ja-2771"
+      forms:
+        "te-mo-ii": "なやんでもいいです"
+        "te-wa-ikenai": "なやんではいけません"
+      readings:
+        "te-mo-ii": "nayandemoiidesu"
+        "te-wa-ikenai": "nayandewaikemasen"
+    - word: "ja-2772"
+      forms:
+        "te-mo-ii": "あわててもいいです"
+        "te-wa-ikenai": "あわててはいけません"
+      readings:
+        "te-mo-ii": "awatetemoiidesu"
+        "te-wa-ikenai": "awatetewaikemasen"
+    - word: "ja-2773"
+      forms:
+        "te-mo-ii": "あせってもいいです"
+        "te-wa-ikenai": "あせってはいけません"
+      readings:
+        "te-mo-ii": "asettemoiidesu"
+        "te-wa-ikenai": "asettewaikemasen"
+    - word: "ja-2774"
+      forms:
+        "te-mo-ii": "おちついてもいいです"
+        "te-wa-ikenai": "おちついてはいけません"
+      readings:
+        "te-mo-ii": "ochitsuitemoiidesu"
+        "te-wa-ikenai": "ochitsuitewaikemasen"
+    - word: "ja-2794"
+      forms:
+        "te-mo-ii": "きらってもいいです"
+        "te-wa-ikenai": "きらってはいけません"
+      readings:
+        "te-mo-ii": "kirattemoiidesu"
+        "te-wa-ikenai": "kirattewaikemasen"
+    - word: "ja-2795"
+      forms:
+        "te-mo-ii": "あいしてもいいです"
+        "te-wa-ikenai": "あいしてはいけません"
+      readings:
+        "te-mo-ii": "aishitemoiidesu"
+        "te-wa-ikenai": "aishitewaikemasen"
+    - word: "ja-2796"
+      forms:
+        "te-mo-ii": "にくんでもいいです"
+        "te-wa-ikenai": "にくんではいけません"
+      readings:
+        "te-mo-ii": "nikundemoiidesu"
+        "te-wa-ikenai": "nikundewaikemasen"
+    - word: "ja-2797"
+      forms:
+        "te-mo-ii": "ねたんでもいいです"
+        "te-wa-ikenai": "ねたんではいけません"
+      readings:
+        "te-mo-ii": "netandemoiidesu"
+        "te-wa-ikenai": "netandewaikemasen"
+    - word: "ja-2798"
+      forms:
+        "te-mo-ii": "うらんでもいいです"
+        "te-wa-ikenai": "うらんではいけません"
+      readings:
+        "te-mo-ii": "urandemoiidesu"
+        "te-wa-ikenai": "urandewaikemasen"
+    - word: "ja-2799"
+      forms:
+        "te-mo-ii": "なつかしんでもいいです"
+        "te-wa-ikenai": "なつかしんではいけません"
+      readings:
+        "te-mo-ii": "natsukashindemoiidesu"
+        "te-wa-ikenai": "natsukashindewaikemasen"
+    - word: "ja-2800"
+      forms:
+        "te-mo-ii": "いやがってもいいです"
+        "te-wa-ikenai": "いやがってはいけません"
+      readings:
+        "te-mo-ii": "iyagattemoiidesu"
+        "te-wa-ikenai": "iyagattewaikemasen"
+    - word: "ja-2801"
+      forms:
+        "te-mo-ii": "こらえてもいいです"
+        "te-wa-ikenai": "こらえてはいけません"
+      readings:
+        "te-mo-ii": "koraetemoiidesu"
+        "te-wa-ikenai": "koraetewaikemasen"
+    - word: "ja-2803"
+      forms:
+        "te-mo-ii": "はずかしがってもいいです"
+        "te-wa-ikenai": "はずかしがってはいけません"
+      readings:
+        "te-mo-ii": "hazukashigattemoiidesu"
+        "te-wa-ikenai": "hazukashigattewaikemasen"
+    - word: "ja-2806"
+      forms:
+        "te-mo-ii": "かんじてもいいです"
+        "te-wa-ikenai": "かんじてはいけません"
+      readings:
+        "te-mo-ii": "kanjitemoiidesu"
+        "te-wa-ikenai": "kanjitewaikemasen"
+    - word: "ja-2812"
+      forms:
+        "te-mo-ii": "さびしがってもいいです"
+        "te-wa-ikenai": "さびしがってはいけません"
+      readings:
+        "te-mo-ii": "sabishigattemoiidesu"
+        "te-wa-ikenai": "sabishigattewaikemasen"
+    - word: "ja-2876"
+      forms:
+        "te-mo-ii": "かたってもいいです"
+        "te-wa-ikenai": "かたってはいけません"
+      readings:
+        "te-mo-ii": "katattemoiidesu"
+        "te-wa-ikenai": "katattewaikemasen"
+    - word: "ja-2877"
+      forms:
+        "te-mo-ii": "ひろまってもいいです"
+        "te-wa-ikenai": "ひろまってはいけません"
+      readings:
+        "te-mo-ii": "hiromattemoiidesu"
+        "te-wa-ikenai": "hiromattewaikemasen"
+    - word: "ja-2925"
+      forms:
+        "te-mo-ii": "あずけてもいいです"
+        "te-wa-ikenai": "あずけてはいけません"
+      readings:
+        "te-mo-ii": "azuketemoiidesu"
+        "te-wa-ikenai": "azuketewaikemasen"
+    - word: "ja-2926"
+      forms:
+        "te-mo-ii": "あずかってもいいです"
+        "te-wa-ikenai": "あずかってはいけません"
+      readings:
+        "te-mo-ii": "azukattemoiidesu"
+        "te-wa-ikenai": "azukattewaikemasen"
+    - word: "ja-2944"
+      forms:
+        "te-mo-ii": "めぐってもいいです"
+        "te-wa-ikenai": "めぐってはいけません"
+      readings:
+        "te-mo-ii": "meguttemoiidesu"
+        "te-wa-ikenai": "meguttewaikemasen"
+    - word: "ja-2945"
+      forms:
+        "te-mo-ii": "おとずれてもいいです"
+        "te-wa-ikenai": "おとずれてはいけません"
+      readings:
+        "te-mo-ii": "otozuretemoiidesu"
+        "te-wa-ikenai": "otozuretewaikemasen"
+    - word: "ja-2982"
+      forms:
+        "te-mo-ii": "もうしこんでもいいです"
+        "te-wa-ikenai": "もうしこんではいけません"
+      readings:
+        "te-mo-ii": "moushikondemoiidesu"
+        "te-wa-ikenai": "moushikondewaikemasen"
+    - word: "ja-3062"
+      forms:
+        "te-mo-ii": "とどけでてもいいです"
+        "te-wa-ikenai": "とどけでてはいけません"
+      readings:
+        "te-mo-ii": "todokedetemoiidesu"
+        "te-wa-ikenai": "todokedetewaikemasen"
+    - word: "ja-3140"
+      forms:
+        "te-mo-ii": "つくりだしてもいいです"
+        "te-wa-ikenai": "つくりだしてはいけません"
+      readings:
+        "te-mo-ii": "tsukuridashitemoiidesu"
+        "te-wa-ikenai": "tsukuridashitewaikemasen"
+    - word: "ja-3195"
+      forms:
+        "te-mo-ii": "めざしてもいいです"
+        "te-wa-ikenai": "めざしてはいけません"
+      readings:
+        "te-mo-ii": "mezashitemoiidesu"
+        "te-wa-ikenai": "mezashitewaikemasen"
+    - word: "ja-3294"
+      forms:
+        "te-mo-ii": "きをつかってもいいです"
+        "te-wa-ikenai": "きをつかってはいけません"
+      readings:
+        "te-mo-ii": "kiotsukattemoiidesu"
+        "te-wa-ikenai": "kiotsukattewaikemasen"
+    - word: "ja-3309"
+      forms:
+        "te-mo-ii": "ゆずってもいいです"
+        "te-wa-ikenai": "ゆずってはいけません"
+      readings:
+        "te-mo-ii": "yuzuttemoiidesu"
+        "te-wa-ikenai": "yuzuttewaikemasen"
+    - word: "ja-3310"
+      forms:
+        "te-mo-ii": "ゆずりあってもいいです"
+        "te-wa-ikenai": "ゆずりあってはいけません"
+      readings:
+        "te-mo-ii": "yuzuriattemoiidesu"
+        "te-wa-ikenai": "yuzuriattewaikemasen"
+    - word: "ja-3311"
+      forms:
+        "te-mo-ii": "ならんでもいいです"
+        "te-wa-ikenai": "ならんではいけません"
+      readings:
+        "te-mo-ii": "narandemoiidesu"
+        "te-wa-ikenai": "narandewaikemasen"
+    - word: "ja-3319"
+      forms:
+        "te-mo-ii": "もてなしてもいいです"
+        "te-wa-ikenai": "もてなしてはいけません"
+      readings:
+        "te-mo-ii": "motenashitemoiidesu"
+        "te-wa-ikenai": "motenashitewaikemasen"
+    - word: "ja-3320"
+      forms:
+        "te-mo-ii": "まねいてもいいです"
+        "te-wa-ikenai": "まねいてはいけません"
+      readings:
+        "te-mo-ii": "maneitemoiidesu"
+        "te-wa-ikenai": "maneitewaikemasen"
+    - word: "ja-3321"
+      forms:
+        "te-mo-ii": "つつしんでもいいです"
+        "te-wa-ikenai": "つつしんではいけません"
+      readings:
+        "te-mo-ii": "tsutsushindemoiidesu"
+        "te-wa-ikenai": "tsutsushindewaikemasen"
+    - word: "ja-3322"
+      forms:
+        "te-mo-ii": "いましめてもいいです"
+        "te-wa-ikenai": "いましめてはいけません"
+      readings:
+        "te-mo-ii": "imashimetemoiidesu"
+        "te-wa-ikenai": "imashimetewaikemasen"
+    - word: "ja-3383"
+      forms:
+        "te-mo-ii": "へらしてもいいです"
+        "te-wa-ikenai": "へらしてはいけません"
+      readings:
+        "te-mo-ii": "herashitemoiidesu"
+        "te-wa-ikenai": "herashitewaikemasen"
+    - word: "ja-3384"
+      forms:
+        "te-mo-ii": "ふやしてもいいです"
+        "te-wa-ikenai": "ふやしてはいけません"
+      readings:
+        "te-mo-ii": "fuyashitemoiidesu"
+        "te-wa-ikenai": "fuyashitewaikemasen"
+    - word: "ja-3385"
+      forms:
+        "te-mo-ii": "こわしてもいいです"
+        "te-wa-ikenai": "こわしてはいけません"
+      readings:
+        "te-mo-ii": "kowashitemoiidesu"
+        "te-wa-ikenai": "kowashitewaikemasen"
+    - word: "ja-3386"
+      forms:
+        "te-mo-ii": "こわれてもいいです"
+        "te-wa-ikenai": "こわれてはいけません"
+      readings:
+        "te-mo-ii": "kowaretemoiidesu"
+        "te-wa-ikenai": "kowaretewaikemasen"
+    - word: "ja-3389"
+      forms:
+        "te-mo-ii": "たもってもいいです"
+        "te-wa-ikenai": "たもってはいけません"
+      readings:
+        "te-mo-ii": "tamottemoiidesu"
+        "te-wa-ikenai": "tamottewaikemasen"
+    - word: "ja-3390"
+      forms:
+        "te-mo-ii": "さけてもいいです"
+        "te-wa-ikenai": "さけてはいけません"
+      readings:
+        "te-mo-ii": "saketemoiidesu"
+        "te-wa-ikenai": "saketewaikemasen"
+    - word: "ja-3434"
+      forms:
+        "te-mo-ii": "えんじてもいいです"
+        "te-wa-ikenai": "えんじてはいけません"
+      readings:
+        "te-mo-ii": "enjitemoiidesu"
+        "te-wa-ikenai": "enjitewaikemasen"
+    - word: "ja-3452"
+      forms:
+        "te-mo-ii": "ないてもいいです"
+        "te-wa-ikenai": "ないてはいけません"
+      readings:
+        "te-mo-ii": "naitemoiidesu"
+        "te-wa-ikenai": "naitewaikemasen"
+    - word: "ja-3564"
+      forms:
+        "te-mo-ii": "たたかってもいいです"
+        "te-wa-ikenai": "たたかってはいけません"
+      readings:
+        "te-mo-ii": "tatakattemoiidesu"
+        "te-wa-ikenai": "tatakattewaikemasen"
+    - word: "ja-3568"
+      forms:
+        "te-mo-ii": "ほろびてもいいです"
+        "te-wa-ikenai": "ほろびてはいけません"
+      readings:
+        "te-mo-ii": "horobitemoiidesu"
+        "te-wa-ikenai": "horobitewaikemasen"
+    - word: "ja-3569"
+      forms:
+        "te-mo-ii": "ほろぼしてもいいです"
+        "te-wa-ikenai": "ほろぼしてはいけません"
+      readings:
+        "te-mo-ii": "horoboshitemoiidesu"
+        "te-wa-ikenai": "horoboshitewaikemasen"
+    - word: "ja-3571"
+      forms:
+        "te-mo-ii": "さかえてもいいです"
+        "te-wa-ikenai": "さかえてはいけません"
+      readings:
+        "te-mo-ii": "sakaetemoiidesu"
+        "te-wa-ikenai": "sakaetewaikemasen"
+    - word: "ja-3611"
+      forms:
+        "te-mo-ii": "いのってもいいです"
+        "te-wa-ikenai": "いのってはいけません"
+      readings:
+        "te-mo-ii": "inottemoiidesu"
+        "te-wa-ikenai": "inottewaikemasen"
+    - word: "ja-3612"
+      forms:
+        "te-mo-ii": "おがんでもいいです"
+        "te-wa-ikenai": "おがんではいけません"
+      readings:
+        "te-mo-ii": "ogandemoiidesu"
+        "te-wa-ikenai": "ogandewaikemasen"
+    - word: "ja-3690"
+      forms:
+        "te-mo-ii": "いわってもいいです"
+        "te-wa-ikenai": "いわってはいけません"
+      readings:
+        "te-mo-ii": "iwattemoiidesu"
+        "te-wa-ikenai": "iwattewaikemasen"
+    - word: "ja-3691"
+      forms:
+        "te-mo-ii": "にぎわってもいいです"
+        "te-wa-ikenai": "にぎわってはいけません"
+      readings:
+        "te-mo-ii": "nigiwattemoiidesu"
+        "te-wa-ikenai": "nigiwattewaikemasen"
+    - word: "ja-3779"
+      forms:
+        "te-mo-ii": "うちとけてもいいです"
+        "te-wa-ikenai": "うちとけてはいけません"
+      readings:
+        "te-mo-ii": "uchitoketemoiidesu"
+        "te-wa-ikenai": "uchitoketewaikemasen"
+    - word: "ja-3780"
+      forms:
+        "te-mo-ii": "しんじあってもいいです"
+        "te-wa-ikenai": "しんじあってはいけません"
+      readings:
+        "te-mo-ii": "shinjiattemoiidesu"
+        "te-wa-ikenai": "shinjiattewaikemasen"
+    - word: "ja-3781"
+      forms:
+        "te-mo-ii": "たよってもいいです"
+        "te-wa-ikenai": "たよってはいけません"
+      readings:
+        "te-mo-ii": "tayottemoiidesu"
+        "te-wa-ikenai": "tayottewaikemasen"
+    - word: "ja-3782"
+      forms:
+        "te-mo-ii": "はげましてもいいです"
+        "te-wa-ikenai": "はげましてはいけません"
+      readings:
+        "te-mo-ii": "hagemashitemoiidesu"
+        "te-wa-ikenai": "hagemashitewaikemasen"
+    - word: "ja-3783"
+      forms:
+        "te-mo-ii": "なぐさめてもいいです"
+        "te-wa-ikenai": "なぐさめてはいけません"
+      readings:
+        "te-mo-ii": "nagusametemoiidesu"
+        "te-wa-ikenai": "nagusametewaikemasen"
+    - word: "ja-3784"
+      forms:
+        "te-mo-ii": "かばってもいいです"
+        "te-wa-ikenai": "かばってはいけません"
+      readings:
+        "te-mo-ii": "kabattemoiidesu"
+        "te-wa-ikenai": "kabattewaikemasen"
+    - word: "ja-3785"
+      forms:
+        "te-mo-ii": "ささえてもいいです"
+        "te-wa-ikenai": "ささえてはいけません"
+      readings:
+        "te-mo-ii": "sasaetemoiidesu"
+        "te-wa-ikenai": "sasaetewaikemasen"
+    - word: "ja-3786"
+      forms:
+        "te-mo-ii": "たすけあってもいいです"
+        "te-wa-ikenai": "たすけあってはいけません"
+      readings:
+        "te-mo-ii": "tasukeattemoiidesu"
+        "te-wa-ikenai": "tasukeattewaikemasen"
+    - word: "ja-3790"
+      forms:
+        "te-mo-ii": "しりあってもいいです"
+        "te-wa-ikenai": "しりあってはいけません"
+      readings:
+        "te-mo-ii": "shiriattemoiidesu"
+        "te-wa-ikenai": "shiriattewaikemasen"
+    - word: "ja-3791"
+      forms:
+        "te-mo-ii": "であってもいいです"
+        "te-wa-ikenai": "であってはいけません"
+      readings:
+        "te-mo-ii": "deattemoiidesu"
+        "te-wa-ikenai": "deattewaikemasen"
+    - word: "ja-3833"
+      forms:
+        "te-mo-ii": "くらしてもいいです"
+        "te-wa-ikenai": "くらしてはいけません"
+      readings:
+        "te-mo-ii": "kurashitemoiidesu"
+        "te-wa-ikenai": "kurashitewaikemasen"
+    - word: "ja-3857"
+      forms:
+        "te-mo-ii": "かしてもいいです"
+        "te-wa-ikenai": "かしてはいけません"
+      readings:
+        "te-mo-ii": "kashitemoiidesu"
+        "te-wa-ikenai": "kashitewaikemasen"
+    - word: "ja-3887"
+      forms:
+        "te-mo-ii": "ゆれてもいいです"
+        "te-wa-ikenai": "ゆれてはいけません"
+      readings:
+        "te-mo-ii": "yuretemoiidesu"
+        "te-wa-ikenai": "yuretewaikemasen"
+    - word: "ja-3898"
+      forms:
+        "te-mo-ii": "すくってもいいです"
+        "te-wa-ikenai": "すくってはいけません"
+      readings:
+        "te-mo-ii": "sukuttemoiidesu"
+        "te-wa-ikenai": "sukuttewaikemasen"
+    - word: "ja-3914"
+      forms:
+        "te-mo-ii": "にげてもいいです"
+        "te-wa-ikenai": "にげてはいけません"
+      readings:
+        "te-mo-ii": "nigetemoiidesu"
+        "te-wa-ikenai": "nigetewaikemasen"
+    - word: "ja-3915"
+      forms:
+        "te-mo-ii": "にがしてもいいです"
+        "te-wa-ikenai": "にがしてはいけません"
+      readings:
+        "te-mo-ii": "nigashitemoiidesu"
+        "te-wa-ikenai": "nigashitewaikemasen"
+    - word: "ja-3963"
+      forms:
+        "te-mo-ii": "きんじてもいいです"
+        "te-wa-ikenai": "きんじてはいけません"
+      readings:
+        "te-mo-ii": "kinjitemoiidesu"
+        "te-wa-ikenai": "kinjitewaikemasen"
+    - word: "ja-3965"
+      forms:
+        "te-mo-ii": "うったえてもいいです"
+        "te-wa-ikenai": "うったえてはいけません"
+      readings:
+        "te-mo-ii": "uttaetemoiidesu"
+        "te-wa-ikenai": "uttaetewaikemasen"
+    - word: "ja-4046"
+      forms:
+        "te-mo-ii": "おそってもいいです"
+        "te-wa-ikenai": "おそってはいけません"
+      readings:
+        "te-mo-ii": "osottemoiidesu"
+        "te-wa-ikenai": "osottewaikemasen"
+    - word: "ja-4047"
+      forms:
+        "te-mo-ii": "おさえてもいいです"
+        "te-wa-ikenai": "おさえてはいけません"
+      readings:
+        "te-mo-ii": "osaetemoiidesu"
+        "te-wa-ikenai": "osaetewaikemasen"
+    - word: "ja-4048"
+      forms:
+        "te-mo-ii": "おさまってもいいです"
+        "te-wa-ikenai": "おさまってはいけません"
+      readings:
+        "te-mo-ii": "osamattemoiidesu"
+        "te-wa-ikenai": "osamattewaikemasen"
+    - word: "ja-4049"
+      forms:
+        "te-mo-ii": "おさめてもいいです"
+        "te-wa-ikenai": "おさめてはいけません"
+      readings:
+        "te-mo-ii": "osametemoiidesu"
+        "te-wa-ikenai": "osametewaikemasen"
+    - word: "ja-4050"
+      forms:
+        "te-mo-ii": "おぼれてもいいです"
+        "te-wa-ikenai": "おぼれてはいけません"
+      readings:
+        "te-mo-ii": "oboretemoiidesu"
+        "te-wa-ikenai": "oboretewaikemasen"
+    - word: "ja-4051"
+      forms:
+        "te-mo-ii": "おもいだしてもいいです"
+        "te-wa-ikenai": "おもいだしてはいけません"
+      readings:
+        "te-mo-ii": "omoidashitemoiidesu"
+        "te-wa-ikenai": "omoidashitewaikemasen"
+    - word: "ja-4052"
+      forms:
+        "te-mo-ii": "おもいついてもいいです"
+        "te-wa-ikenai": "おもいついてはいけません"
+      readings:
+        "te-mo-ii": "omoitsuitemoiidesu"
+        "te-wa-ikenai": "omoitsuitewaikemasen"
+    - word: "ja-4053"
+      forms:
+        "te-mo-ii": "かかえてもいいです"
+        "te-wa-ikenai": "かかえてはいけません"
+      readings:
+        "te-mo-ii": "kakaetemoiidesu"
+        "te-wa-ikenai": "kakaetewaikemasen"
+    - word: "ja-4054"
+      forms:
+        "te-mo-ii": "かさなってもいいです"
+        "te-wa-ikenai": "かさなってはいけません"
+      readings:
+        "te-mo-ii": "kasanattemoiidesu"
+        "te-wa-ikenai": "kasanattewaikemasen"
+    - word: "ja-4055"
+      forms:
+        "te-mo-ii": "かさねてもいいです"
+        "te-wa-ikenai": "かさねてはいけません"
+      readings:
+        "te-mo-ii": "kasanetemoiidesu"
+        "te-wa-ikenai": "kasanetewaikemasen"
+    - word: "ja-4056"
+      forms:
+        "te-mo-ii": "かたむいてもいいです"
+        "te-wa-ikenai": "かたむいてはいけません"
+      readings:
+        "te-mo-ii": "katamuitemoiidesu"
+        "te-wa-ikenai": "katamuitewaikemasen"
+    - word: "ja-4057"
+      forms:
+        "te-mo-ii": "かなってもいいです"
+        "te-wa-ikenai": "かなってはいけません"
+      readings:
+        "te-mo-ii": "kanattemoiidesu"
+        "te-wa-ikenai": "kanattewaikemasen"
+    - word: "ja-4058"
+      forms:
+        "te-mo-ii": "かぶせてもいいです"
+        "te-wa-ikenai": "かぶせてはいけません"
+      readings:
+        "te-mo-ii": "kabusetemoiidesu"
+        "te-wa-ikenai": "kabusetewaikemasen"
+    - word: "ja-4059"
+      forms:
+        "te-mo-ii": "きづいてもいいです"
+        "te-wa-ikenai": "きづいてはいけません"
+      readings:
+        "te-mo-ii": "kizuitemoiidesu"
+        "te-wa-ikenai": "kizuitewaikemasen"
+    - word: "ja-4060"
+      forms:
+        "te-mo-ii": "くずれてもいいです"
+        "te-wa-ikenai": "くずれてはいけません"
+      readings:
+        "te-mo-ii": "kuzuretemoiidesu"
+        "te-wa-ikenai": "kuzuretewaikemasen"
+    - word: "ja-4061"
+      forms:
+        "te-mo-ii": "くたびれてもいいです"
+        "te-wa-ikenai": "くたびれてはいけません"
+      readings:
+        "te-mo-ii": "kutabiretemoiidesu"
+        "te-wa-ikenai": "kutabiretewaikemasen"
+    - word: "ja-4062"
+      forms:
+        "te-mo-ii": "くっついてもいいです"
+        "te-wa-ikenai": "くっついてはいけません"
+      readings:
+        "te-mo-ii": "kuttsuitemoiidesu"
+        "te-wa-ikenai": "kuttsuitewaikemasen"
+    - word: "ja-4063"
+      forms:
+        "te-mo-ii": "くっつけてもいいです"
+        "te-wa-ikenai": "くっつけてはいけません"
+      readings:
+        "te-mo-ii": "kuttsuketemoiidesu"
+        "te-wa-ikenai": "kuttsuketewaikemasen"
+    - word: "ja-4064"
+      forms:
+        "te-mo-ii": "ころがってもいいです"
+        "te-wa-ikenai": "ころがってはいけません"
+      readings:
+        "te-mo-ii": "korogattemoiidesu"
+        "te-wa-ikenai": "korogattewaikemasen"
+    - word: "ja-4065"
+      forms:
+        "te-mo-ii": "ころしてもいいです"
+        "te-wa-ikenai": "ころしてはいけません"
+      readings:
+        "te-mo-ii": "koroshitemoiidesu"
+        "te-wa-ikenai": "koroshitewaikemasen"
+    - word: "ja-4066"
+      forms:
+        "te-mo-ii": "こめてもいいです"
+        "te-wa-ikenai": "こめてはいけません"
+      readings:
+        "te-mo-ii": "kometemoiidesu"
+        "te-wa-ikenai": "kometewaikemasen"
+    - word: "ja-4067"
+      forms:
+        "te-mo-ii": "さからってもいいです"
+        "te-wa-ikenai": "さからってはいけません"
+      readings:
+        "te-mo-ii": "sakarattemoiidesu"
+        "te-wa-ikenai": "sakarattewaikemasen"
+    - word: "ja-4068"
+      forms:
+        "te-mo-ii": "さしてもいいです"
+        "te-wa-ikenai": "さしてはいけません"
+      readings:
+        "te-mo-ii": "sashitemoiidesu"
+        "te-wa-ikenai": "sashitewaikemasen"
+    - word: "ja-4069"
+      forms:
+        "te-mo-ii": "さびてもいいです"
+        "te-wa-ikenai": "さびてはいけません"
+      readings:
+        "te-mo-ii": "sabitemoiidesu"
+        "te-wa-ikenai": "sabitewaikemasen"
+    - word: "ja-4070"
+      forms:
+        "te-mo-ii": "しずんでもいいです"
+        "te-wa-ikenai": "しずんではいけません"
+      readings:
+        "te-mo-ii": "shizundemoiidesu"
+        "te-wa-ikenai": "shizundewaikemasen"
+    - word: "ja-4071"
+      forms:
+        "te-mo-ii": "しずめてもいいです"
+        "te-wa-ikenai": "しずめてはいけません"
+      readings:
+        "te-mo-ii": "shizumetemoiidesu"
+        "te-wa-ikenai": "shizumetewaikemasen"
+    - word: "ja-4072"
+      forms:
+        "te-mo-ii": "したがってもいいです"
+        "te-wa-ikenai": "したがってはいけません"
+      readings:
+        "te-mo-ii": "shitagattemoiidesu"
+        "te-wa-ikenai": "shitagattewaikemasen"
+    - word: "ja-4073"
+      forms:
+        "te-mo-ii": "しばってもいいです"
+        "te-wa-ikenai": "しばってはいけません"
+      readings:
+        "te-mo-ii": "shibattemoiidesu"
+        "te-wa-ikenai": "shibattewaikemasen"
+    - word: "ja-4074"
+      forms:
+        "te-mo-ii": "しめしてもいいです"
+        "te-wa-ikenai": "しめしてはいけません"
+      readings:
+        "te-mo-ii": "shimeshitemoiidesu"
+        "te-wa-ikenai": "shimeshitewaikemasen"
+    - word: "ja-4075"
+      forms:
+        "te-mo-ii": "すべってもいいです"
+        "te-wa-ikenai": "すべってはいけません"
+      readings:
+        "te-mo-ii": "subettemoiidesu"
+        "te-wa-ikenai": "subettewaikemasen"
+    - word: "ja-4076"
+      forms:
+        "te-mo-ii": "すませてもいいです"
+        "te-wa-ikenai": "すませてはいけません"
+      readings:
+        "te-mo-ii": "sumasetemoiidesu"
+        "te-wa-ikenai": "sumasetewaikemasen"
+    - word: "ja-4077"
+      forms:
+        "te-mo-ii": "すんでもいいです"
+        "te-wa-ikenai": "すんではいけません"
+      readings:
+        "te-mo-ii": "sundemoiidesu"
+        "te-wa-ikenai": "sundewaikemasen"
+    - word: "ja-4078"
+      forms:
+        "te-mo-ii": "ずれてもいいです"
+        "te-wa-ikenai": "ずれてはいけません"
+      readings:
+        "te-mo-ii": "zuretemoiidesu"
+        "te-wa-ikenai": "zuretewaikemasen"
+    - word: "ja-4079"
+      forms:
+        "te-mo-ii": "せまってもいいです"
+        "te-wa-ikenai": "せまってはいけません"
+      readings:
+        "te-mo-ii": "semattemoiidesu"
+        "te-wa-ikenai": "semattewaikemasen"
+    - word: "ja-4080"
+      forms:
+        "te-mo-ii": "そなえてもいいです"
+        "te-wa-ikenai": "そなえてはいけません"
+      readings:
+        "te-mo-ii": "sonaetemoiidesu"
+        "te-wa-ikenai": "sonaetewaikemasen"
+    - word: "ja-4081"
+      forms:
+        "te-mo-ii": "そまってもいいです"
+        "te-wa-ikenai": "そまってはいけません"
+      readings:
+        "te-mo-ii": "somattemoiidesu"
+        "te-wa-ikenai": "somattewaikemasen"
+    - word: "ja-4082"
+      forms:
+        "te-mo-ii": "そめてもいいです"
+        "te-wa-ikenai": "そめてはいけません"
+      readings:
+        "te-mo-ii": "sometemoiidesu"
+        "te-wa-ikenai": "sometewaikemasen"
+    - word: "ja-4083"
+      forms:
+        "te-mo-ii": "たえてもいいです"
+        "te-wa-ikenai": "たえてはいけません"
+      readings:
+        "te-mo-ii": "taetemoiidesu"
+        "te-wa-ikenai": "taetewaikemasen"
+    - word: "ja-4084"
+      forms:
+        "te-mo-ii": "たしかめてもいいです"
+        "te-wa-ikenai": "たしかめてはいけません"
+      readings:
+        "te-mo-ii": "tashikametemoiidesu"
+        "te-wa-ikenai": "tashikametewaikemasen"
+    - word: "ja-4085"
+      forms:
+        "te-mo-ii": "たまってもいいです"
+        "te-wa-ikenai": "たまってはいけません"
+      readings:
+        "te-mo-ii": "tamattemoiidesu"
+        "te-wa-ikenai": "tamattewaikemasen"
+    - word: "ja-4086"
+      forms:
+        "te-mo-ii": "ためしてもいいです"
+        "te-wa-ikenai": "ためしてはいけません"
+      readings:
+        "te-mo-ii": "tameshitemoiidesu"
+        "te-wa-ikenai": "tameshitewaikemasen"
+    - word: "ja-4087"
+      forms:
+        "te-mo-ii": "ちぢんでもいいです"
+        "te-wa-ikenai": "ちぢんではいけません"
+      readings:
+        "te-mo-ii": "chijindemoiidesu"
+        "te-wa-ikenai": "chijindewaikemasen"
+    - word: "ja-4088"
+      forms:
+        "te-mo-ii": "ちぢめてもいいです"
+        "te-wa-ikenai": "ちぢめてはいけません"
+      readings:
+        "te-mo-ii": "chijimetemoiidesu"
+        "te-wa-ikenai": "chijimetewaikemasen"
+    - word: "ja-4089"
+      forms:
+        "te-mo-ii": "ついでもいいです"
+        "te-wa-ikenai": "ついではいけません"
+      readings:
+        "te-mo-ii": "tsuidemoiidesu"
+        "te-wa-ikenai": "tsuidewaikemasen"
+    - word: "ja-4090"
+      forms:
+        "te-mo-ii": "つづいてもいいです"
+        "te-wa-ikenai": "つづいてはいけません"
+      readings:
+        "te-mo-ii": "tsuzuitemoiidesu"
+        "te-wa-ikenai": "tsuzuitewaikemasen"
+    - word: "ja-4091"
+      forms:
+        "te-mo-ii": "つぶしてもいいです"
+        "te-wa-ikenai": "つぶしてはいけません"
+      readings:
+        "te-mo-ii": "tsubushitemoiidesu"
+        "te-wa-ikenai": "tsubushitewaikemasen"
+    - word: "ja-4092"
+      forms:
+        "te-mo-ii": "つぶれてもいいです"
+        "te-wa-ikenai": "つぶれてはいけません"
+      readings:
+        "te-mo-ii": "tsuburetemoiidesu"
+        "te-wa-ikenai": "tsuburetewaikemasen"
+    - word: "ja-4093"
+      forms:
+        "te-mo-ii": "てらしてもいいです"
+        "te-wa-ikenai": "てらしてはいけません"
+      readings:
+        "te-mo-ii": "terashitemoiidesu"
+        "te-wa-ikenai": "terashitewaikemasen"
+    - word: "ja-4094"
+      forms:
+        "te-mo-ii": "とおしてもいいです"
+        "te-wa-ikenai": "とおしてはいけません"
+      readings:
+        "te-mo-ii": "tooshitemoiidesu"
+        "te-wa-ikenai": "tooshitewaikemasen"
+    - word: "ja-4095"
+      forms:
+        "te-mo-ii": "とかしてもいいです"
+        "te-wa-ikenai": "とかしてはいけません"
+      readings:
+        "te-mo-ii": "tokashitemoiidesu"
+        "te-wa-ikenai": "tokashitewaikemasen"
+    - word: "ja-4096"
+      forms:
+        "te-mo-ii": "とけてもいいです"
+        "te-wa-ikenai": "とけてはいけません"
+      readings:
+        "te-mo-ii": "toketemoiidesu"
+        "te-wa-ikenai": "toketewaikemasen"
+    - word: "ja-4097"
+      forms:
+        "te-mo-ii": "ととのってもいいです"
+        "te-wa-ikenai": "ととのってはいけません"
+      readings:
+        "te-mo-ii": "totonottemoiidesu"
+        "te-wa-ikenai": "totonottewaikemasen"
+    - word: "ja-4098"
+      forms:
+        "te-mo-ii": "ととのえてもいいです"
+        "te-wa-ikenai": "ととのえてはいけません"
+      readings:
+        "te-mo-ii": "totonoetemoiidesu"
+        "te-wa-ikenai": "totonoetewaikemasen"
+    - word: "ja-4099"
+      forms:
+        "te-mo-ii": "とびこんでもいいです"
+        "te-wa-ikenai": "とびこんではいけません"
+      readings:
+        "te-mo-ii": "tobikondemoiidesu"
+        "te-wa-ikenai": "tobikondewaikemasen"
+    - word: "ja-4100"
+      forms:
+        "te-mo-ii": "ともなってもいいです"
+        "te-wa-ikenai": "ともなってはいけません"
+      readings:
+        "te-mo-ii": "tomonattemoiidesu"
+        "te-wa-ikenai": "tomonattewaikemasen"
+    - word: "ja-4101"
+      forms:
+        "te-mo-ii": "とらえてもいいです"
+        "te-wa-ikenai": "とらえてはいけません"
+      readings:
+        "te-mo-ii": "toraetemoiidesu"
+        "te-wa-ikenai": "toraetewaikemasen"
+    - word: "ja-4102"
+      forms:
+        "te-mo-ii": "とりあげてもいいです"
+        "te-wa-ikenai": "とりあげてはいけません"
+      readings:
+        "te-mo-ii": "toriagetemoiidesu"
+        "te-wa-ikenai": "toriagetewaikemasen"
+    - word: "ja-4103"
+      forms:
+        "te-mo-ii": "とりだしてもいいです"
+        "te-wa-ikenai": "とりだしてはいけません"
+      readings:
+        "te-mo-ii": "toridashitemoiidesu"
+        "te-wa-ikenai": "toridashitewaikemasen"
+    - word: "ja-4104"
+      forms:
+        "te-mo-ii": "とりのぞいてもいいです"
+        "te-wa-ikenai": "とりのぞいてはいけません"
+      readings:
+        "te-mo-ii": "torinozoitemoiidesu"
+        "te-wa-ikenai": "torinozoitewaikemasen"
+    - word: "ja-4105"
+      forms:
+        "te-mo-ii": "ながしてもいいです"
+        "te-wa-ikenai": "ながしてはいけません"
+      readings:
+        "te-mo-ii": "nagashitemoiidesu"
+        "te-wa-ikenai": "nagashitewaikemasen"
+    - word: "ja-4185"
+      forms:
+        "te-mo-ii": "みとめてもいいです"
+        "te-wa-ikenai": "みとめてはいけません"
+      readings:
+        "te-mo-ii": "mitometemoiidesu"
+        "te-wa-ikenai": "mitometewaikemasen"
+    - word: "ja-4186"
+      forms:
+        "te-mo-ii": "うたがってもいいです"
+        "te-wa-ikenai": "うたがってはいけません"
+      readings:
+        "te-mo-ii": "utagattemoiidesu"
+        "te-wa-ikenai": "utagattewaikemasen"
+    - word: "ja-4187"
+      forms:
+        "te-mo-ii": "しんじてもいいです"
+        "te-wa-ikenai": "しんじてはいけません"
+      readings:
+        "te-mo-ii": "shinjitemoiidesu"
+        "te-wa-ikenai": "shinjitewaikemasen"
+    - word: "ja-4192"
+      forms:
+        "te-mo-ii": "ろんじてもいいです"
+        "te-wa-ikenai": "ろんじてはいけません"
+      readings:
+        "te-mo-ii": "ronjitemoiidesu"
+        "te-wa-ikenai": "ronjitewaikemasen"
+rules:
+  - id: "ja-rule-te-mo-ii"
+    slots: ["te-mo-ii"]
+    words:
+      - { word: "てもいいです", reading: "te mo ii desu" }
+      - { word: "たべてもいいです", reading: "tabete mo ii desu" }
+  - id: "ja-rule-te-wa-ikenai"
+    slots: ["te-wa-ikenai"]
+    words:
+      - { word: "てはいけません", reading: "te wa ikemasen" }
+      - { word: "たべてはいけません", reading: "tabete wa ikemasen" }

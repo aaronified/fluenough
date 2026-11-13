@@ -1,0 +1,158 @@
+schema: 1
+id: "ja-grammar-te-iru-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-4437"
+    target: "いまほんをよんでいます。"
+    words: ["いま", "ほん", "を", "よんで", "います"]
+    reading: "ima hon o yonde imasu."
+    ipa: "ima hoɴ o joɴde imasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "いま", ref: "ja-0508" }
+      - { word: "ほん", ref: "ja-1180" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "よんで", ref: "ja-0345" }
+      - { word: "います", base: "いる", reading: "iru" }
+    confusables:
+      - { id: "w1", ref: "ja-0345", kind: "word" }
+      - { id: "w2", ref: "ja-0346", kind: "word" }
+    rules: ["ja-rule-te-iru"]
+  - id: "ja-4438"
+    target: "ともだちはいまねています。"
+    words: ["ともだち", "は", "いま", "ねて", "います"]
+    reading: "tomodachi wa ima nete imasu."
+    ipa: "tomodatɕi wa ima nete imasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "いま", ref: "ja-0508" }
+      - { word: "ねて", ref: "ja-0352" }
+      - { word: "います", base: "いる", reading: "iru" }
+    confusables:
+      - { id: "w1", ref: "ja-0352", kind: "word" }
+      - { id: "w2", ref: "ja-0351", kind: "word" }
+    rules: ["ja-rule-te-iru"]
+  - id: "ja-4439"
+    target: "テレビをみています。"
+    words: ["テレビ", "を", "みて", "います"]
+    reading: "terebi o mite imasu."
+    ipa: "teɾebi o mite imasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "テレビ", ref: "ja-0850" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "みて", ref: "ja-0343" }
+      - { word: "います", base: "いる", reading: "iru" }
+    confusables:
+      - { id: "w1", ref: "ja-0343", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-te-iru"]
+  - id: "ja-4440"
+    target: "ラジオをきいています。"
+    words: ["ラジオ", "を", "きいて", "います"]
+    reading: "rajio o kiite imasu."
+    ipa: "ɾadʑio o kiːte imasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ラジオ", ref: "ja-0863" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "きいて", ref: "ja-0344" }
+      - { word: "います", base: "いる", reading: "iru" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-0344", kind: "word" }
+      - { id: "w2", ref: "ja-0345", kind: "word" }
+    rules: ["ja-rule-te-iru"]
+  - id: "ja-4441"
+    target: "こどもはそとであそんでいます。"
+    words: ["こども", "は", "そと", "で", "あそんで", "います"]
+    reading: "kodomo wa soto de asonde imasu."
+    ipa: "kodomo wa soto de asoɴde imasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "こども", ref: "ja-0225" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "そと", ref: "ja-0547" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "あそんで", ref: "ja-0374" }
+      - { word: "います", base: "いる", reading: "iru" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-0374", kind: "word" }
+      - { id: "w2", ref: "ja-0353", kind: "word" }
+    rules: ["ja-rule-te-iru"]
+  - id: "ja-4442"
+    target: "ちちははたらいています。"
+    words: ["ちち", "は", "はたらいて", "います"]
+    reading: "chichi wa hataraite imasu."
+    ipa: "tɕitɕi wa hataɾaite imasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ちち", ref: "ja-0200" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "はたらいて", ref: "ja-0353" }
+      - { word: "います", base: "いる", reading: "iru" }
+    confusables:
+      - { id: "w1", ref: "ja-0353", kind: "word" }
+      - { id: "w2", ref: "ja-0352", kind: "word" }
+    rules: ["ja-rule-te-iru"]
+  - id: "ja-4443"
+    target: "いまでんわをつかっています。"
+    words: ["いま", "でんわ", "を", "つかって", "います"]
+    reading: "ima denwa o tsukatte imasu."
+    ipa: "ima deɴwa o tsɯkatte imasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "いま", ref: "ja-0508" }
+      - { word: "でんわ", ref: "ja-1202" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "つかって", ref: "ja-0369" }
+      - { word: "います", base: "いる", reading: "iru" }
+    confusables:
+      - { id: "w1", ref: "ja-0369", kind: "word" }
+      - { id: "w2", ref: "ja-0364", kind: "word" }
+    rules: ["ja-rule-te-iru"]
+  - id: "ja-4444"
+    target: "はははりょうりをつくっています。"
+    words: ["はは", "は", "りょうり", "を", "つくって", "います"]
+    reading: "haha wa ryouri o tsukutte imasu."
+    ipa: "haha wa ɾjoːɾi o tsɯkɯtte imasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "はは", ref: "ja-0201" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "りょうり", ref: "ja-0994" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "つくって", ref: "ja-0364" }
+      - { word: "います", base: "いる", reading: "iru" }
+    confusables:
+      - { id: "w1", ref: "ja-0364", kind: "word" }
+      - { id: "w2", ref: "ja-0341", kind: "word" }
+    rules: ["ja-rule-te-iru"]
+  - id: "ja-4577"
+    target: "はははここにすわっています。"
+    words: ["はは", "は", "ここ", "に", "すわって", "います"]
+    reading: "haha wa koko ni suwatte imasu."
+    ipa: "haha wa koko ni sɯwatte imasɯ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "はは", ref: "ja-0201" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ここ", ref: "ja-0554" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "すわって", ref: "ja-0370" }
+      - { word: "います", base: "いる", reading: "iru" }
+    confusables:
+      - { id: "w1", ref: "ja-0370", kind: "word" }
+      - { id: "w2", ref: "ja-0371", kind: "word" }
+    rules: ["ja-rule-te-iru"]
