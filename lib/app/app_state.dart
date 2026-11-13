@@ -1570,6 +1570,25 @@ class AppState extends ChangeNotifier {
         : SpeechStatus.onlineOnly;
   }
 
+  /// The shown language, when it is one the profile learns, speaking is on
+  /// for it and the phone can recognise it only online, which the learner
+  /// has not allowed: what Today says, and alerts once, so that its speaking
+  /// questions are not skipped without a word (#233). Null otherwise,
+  /// including in a browser, whose recogniser always listens online and asks
+  /// first.
+  LanguageInfo? get speechOnlineOnlyShown {
+    final code = shownLanguage;
+    if (code == null || _speech is OnlineOnlySpeech) return null;
+    if (!settings.isEnabled(Skill.speaking) ||
+        settings.isOffFor(Skill.speaking, code) ||
+        !currentProfile.learns(code)) {
+      return null;
+    }
+    final language = languageByCode(code);
+    if (language == null || language.isNotation) return null;
+    return speechStatus(language) == SpeechStatus.onlineOnly ? language : null;
+  }
+
   /// Whether a speaking drill in [language] can be graded now.
   bool canHear(LanguageInfo language) =>
       // A private language with no voice has its speaking drills hidden
@@ -3976,6 +3995,22 @@ class AppState extends ChangeNotifier {
       }
     }
     return ipaCardsFor(ipa, cards);
+  }
+
+  /// Every answer the IPA course can ask for: its cards' targets and their
+  /// alternatives, once each, whichever language the course is taught from.
+  /// The IPA keyboard's symbols are found from them (#836); empty while the
+  /// IPA decks are not on the phone.
+  List<String> ipaAnswerTargets() {
+    final seen = <String>{};
+    for (final entry in _catalog.decks) {
+      if (!entry.language.isIpa) continue;
+      for (final card in entry.cards) {
+        seen.add(card.target);
+        seen.addAll(card.altTarget);
+      }
+    }
+    return seen.toList();
   }
 
   /// The session of "The sounds of this word" for [card], or null where

@@ -225,7 +225,7 @@ abstract final class AppRoutes {
       learnLanguages => LanguagesPage(
         initialQuery: args is String ? args : null,
       ),
-      voices => const VoicesPage(),
+      voices => VoicesPage(language: args is String ? args : null),
       releaseNotes => const ReleaseNotesPage(),
       sources => const SourcesPage(),
       appLog => const AppLogPage(),
@@ -441,8 +441,10 @@ abstract final class AppNavigator {
       Navigator.of(context)
           .pushNamed(AppRoutes.learnLanguages, arguments: query);
 
-  static Future<void> openVoices(BuildContext context) =>
-      Navigator.of(context).pushNamed(AppRoutes.voices);
+  /// The Voices page; with [language], scrolled to that language's card
+  /// (#233).
+  static Future<void> openVoices(BuildContext context, {String? language}) =>
+      Navigator.of(context).pushNamed(AppRoutes.voices, arguments: language);
 
   /// What changed in each release, which the page fetches from GitHub.
   static Future<void> openReleaseNotes(BuildContext context) =>

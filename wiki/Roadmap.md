@@ -176,6 +176,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1145](https://github.com/aaronified/fluenough/issues/1145) Situations screen: the learner chooses which situations to show; new situations teach only widely used words and phrases
 - [#1146](https://github.com/aaronified/fluenough/issues/1146) Japanese: about 1000 kanji by B1 (deferred)
 - [#1158](https://github.com/aaronified/fluenough/issues/1158) Offline speech recognisers for every priority language (Indic, European, East Asian)
+- [#1221](https://github.com/aaronified/fluenough/issues/1221) IPA keyboard: follow-ups before it is switched on
 - [#25](https://github.com/aaronified/fluenough/issues/25) F-Droid metadata and submission
 - [#26](https://github.com/aaronified/fluenough/issues/26) Accessibility: a TalkBack pass on a phone
 - [#30](https://github.com/aaronified/fluenough/issues/30) Script decks: document their conventions; positional forms for Arabic-script languages

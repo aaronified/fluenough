@@ -21,6 +21,7 @@ import 'fact_languages_sheet.dart';
 import 'due_card.dart';
 import 'install_hint_card.dart';
 import 'situations_card.dart';
+import 'speech_online_card.dart';
 import 'streak_card.dart';
 import 'today_numbers.dart';
 import '../private/private_notes.dart';
@@ -165,6 +166,7 @@ class _TodayContent extends StatelessWidget {
           const SizedBox(height: 24),
           DueCard(numbers: numbers),
         ] else ...<Widget>[const _NoDecks(), const SizedBox(height: 16)],
+        const SpeechOnlineCard(),
         StreakCard(numbers: numbers),
         const SizedBox(height: 24),
         const SituationsCard(),

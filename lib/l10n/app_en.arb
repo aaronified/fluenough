@@ -2927,6 +2927,34 @@
   "@brailleSpace": {
     "description": "Button of the braille keyboard: adds a space, an empty cell between words, to the answer."
   },
+  "ipaKeyboard": "IPA keyboard",
+  "@ipaKeyboard": {
+    "description": "Names, for a screen reader, the app's own keyboard of IPA symbols under a typed answer in the IPA course (#836)."
+  },
+  "ipaTabVowels": "Vowels",
+  "@ipaTabVowels": {
+    "description": "Tab of the IPA keyboard: the vowel symbols."
+  },
+  "ipaTabConsonants": "Consonants",
+  "@ipaTabConsonants": {
+    "description": "Tab of the IPA keyboard: the pulmonic consonant symbols, the ones made with the breath from the lungs."
+  },
+  "ipaTabOther": "Other",
+  "@ipaTabOther": {
+    "description": "Tab of the IPA keyboard: the symbols that are neither vowels nor pulmonic consonants, such as clicks, implosives, ties and brackets."
+  },
+  "ipaTabMarks": "Marks",
+  "@ipaTabMarks": {
+    "description": "Tab of the IPA keyboard: diacritics and suprasegmentals, the small marks that go with a letter, and stress, length and tone."
+  },
+  "ipaBackspace": "Backspace",
+  "@ipaBackspace": {
+    "description": "Button of the IPA keyboard, an icon with this as its tooltip: deletes the symbol before the cursor in the answer."
+  },
+  "ipaSpace": "Space",
+  "@ipaSpace": {
+    "description": "Button of the IPA keyboard, an icon with this as its tooltip: adds a space to the answer."
+  },
   "pinDeleteLabel": "Delete last digit",
   "@pinDeleteLabel": {
     "description": "Screen reader label of the PIN pad's delete button, whose tooltip is the one word of brailleBackspace."
@@ -17018,5 +17046,15 @@
   "privateDeleteTypeLabel": "Type the name",
   "@privateDeleteTypeLabel": {"description": "Label of the field where the learner types the package's name to confirm deleting its progress."},
   "settingsDataRestoredSkipped": "Restored, but these private languages could not be added and were left out: {names}. Your decks download again.",
-  "@settingsDataRestoredSkipped": {"description": "Toast after a restore when some private language packages in the backup no longer pass the checks.", "placeholders": {"names": {"type": "String"}}}
+  "@settingsDataRestoredSkipped": {"description": "Toast after a restore when some private language packages in the backup no longer pass the checks.", "placeholders": {"names": {"type": "String"}}},
+  "speechOnlineLine": "Your phone can’t recognise {language} offline, so speaking questions are skipped.",
+  "@speechOnlineLine": {"description": "On Today, in a line under the day’s cards: speaking questions in the shown language are left out because the phone recognises it only online and the learner has not allowed that. A button opens the Voices page.", "placeholders": {"language": {"type": "String"}}},
+  "speechOnlineOpenSettings": "Open settings",
+  "@speechOnlineOpenSettings": {"description": "Button on Today’s speech line and in its alert: opens the Voices page at the language’s card."},
+  "speechOnlineNotNow": "Not now",
+  "@speechOnlineNotNow": {"description": "Button of the speech alert that closes it without opening settings."},
+  "speechOnlineAlertTitle": "Speaking {language} needs the internet",
+  "@speechOnlineAlertTitle": {"description": "Title of the alert shown once per language: the phone recognises it only online.", "placeholders": {"language": {"type": "String"}}},
+  "speechOnlineAlertBody": "Your phone can’t recognise {language} offline, so speaking questions are skipped. On the Voices page you can allow online recognition, which sends what you say to your phone’s speech service.",
+  "@speechOnlineAlertBody": {"description": "Body of the alert shown once per language: what is skipped and where to change it.", "placeholders": {"language": {"type": "String"}}}
 }
