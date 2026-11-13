@@ -103,7 +103,7 @@ abstract final class PrivateExport {
         >{};
     String? pathText;
     var skipped = 0;
-    for (final MapEntry(key: path, value: text) in files.entries) {
+    for (final text in files.values) {
       final root = _load(text);
       if (root == null) {
         skipped++;
@@ -218,8 +218,9 @@ abstract final class PrivateExport {
         if (root == null) return false;
         walk(root, keys: false);
         final cards = root['cards'];
-        if (root['kind'] == 'layer' && cards is YamlMap)
+        if (root['kind'] == 'layer' && cards is YamlMap) {
           walk(cards, keys: true);
+        }
         return ok;
       } on YamlException {
         return false;

@@ -21,7 +21,6 @@ import 'package:fluenough/core/backup/zip_files.dart';
 import 'package:fluenough/core/data/log_jsonl.dart';
 import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/core/models/deck.dart';
-import 'package:fluenough/core/models/leech_action.dart';
 import 'package:fluenough/core/private/private_check.dart';
 import 'package:fluenough/core/private/private_export.dart';
 import 'package:fluenough/core/private/private_manifest.dart';
@@ -676,9 +675,9 @@ void main() {
       usePhone(tester);
       await pumpScreen(
         tester,
-        Scaffold(
+        const Scaffold(
           body: Column(
-            children: const <Widget>[
+            children: <Widget>[
               PrivateLanguageTag(language: own),
               PrivateLanguageTag(language: changed),
               PrivateLanguageTag(language: builtIn),

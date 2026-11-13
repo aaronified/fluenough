@@ -195,8 +195,9 @@ class PrivatePackagesController extends ChangeNotifier {
         );
       },
     );
-    if (choice == null || choice == _RemoveChoice.cancel || !context.mounted)
+    if (choice == null || choice == _RemoveChoice.cancel || !context.mounted) {
       return;
+    }
     final removed = await state.removePrivate(
       entry.package.id,
       deleteProgress: choice == _RemoveChoice.delete,
