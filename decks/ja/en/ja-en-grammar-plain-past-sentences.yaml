@@ -1,0 +1,55 @@
+schema: 1
+id: "ja-en-grammar-plain-past-sentences"
+kind: "layer"
+core: "ja-grammar-plain-past-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Plain past, in sentences"
+description: "Sentences in the plain past and the plain negative past, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-4505":
+    native: "I watched a film yesterday."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "きく (kiku) means to listen; to hear; to ask." }
+      w2: { why: "よむ (yomu) means to read." }
+  "ja-4506":
+    native: "I ate a meal in the morning."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "のむ (nomu) means to drink." }
+      w2: { why: "つくる (tsukuru) means to make; to create." }
+  "ja-4507":
+    native: "My friend did not come yesterday."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+    confusables:
+      w1: { why: "いく (iku) means to go." }
+      w2: { why: "かえる (kaeru) means to return home; to go home." }
+  "ja-4508":
+    native: "I did not read the book."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "かく (kaku) means to write." }
+      w2: { why: "きく (kiku) means to listen; to hear; to ask." }
+  "ja-4509":
+    native: "My father went by bus."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "で": { meaning: "(at, in, by)" }
+    confusables:
+      w1: { why: "くる (kuru) means to come." }
+      w2: { why: "かえる (kaeru) means to return home; to go home." }
+  "ja-4510":
+    native: "My mother did not use the telephone."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "つくる (tsukuru) means to make; to create." }
+      w2: { why: "かう (kau) means to buy; to keep (an animal)." }

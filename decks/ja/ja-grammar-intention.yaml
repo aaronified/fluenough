@@ -1,0 +1,2658 @@
+schema: 1
+id: "ja-grammar-intention"
+part: "core"
+kind: "rules"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ja-0085"]
+  slots: ["volitional", "tsumori"]
+  rows:
+    - word: "ja-1050"
+      forms:
+        "volitional": "まがろう"
+        "tsumori": "まがるつもりです"
+      readings:
+        "volitional": "magarou"
+        "tsumori": "magarutsumoridesu"
+    - word: "ja-1060"
+      forms:
+        "volitional": "わたろう"
+        "tsumori": "わたるつもりです"
+      readings:
+        "volitional": "watarou"
+        "tsumori": "watarutsumoridesu"
+    - word: "ja-1061"
+      forms:
+        "volitional": "すすもう"
+        "tsumori": "すすむつもりです"
+      readings:
+        "volitional": "susumou"
+        "tsumori": "susumutsumoridesu"
+    - word: "ja-1062"
+      forms:
+        "volitional": "さがろう"
+        "tsumori": "さがるつもりです"
+      readings:
+        "volitional": "sagarou"
+        "tsumori": "sagarutsumoridesu"
+    - word: "ja-1070"
+      forms:
+        "volitional": "まちがえよう"
+        "tsumori": "まちがえるつもりです"
+      readings:
+        "volitional": "machigaeyou"
+        "tsumori": "machigaerutsumoridesu"
+    - word: "ja-1071"
+      forms:
+        "volitional": "でよう"
+        "tsumori": "でるつもりです"
+      readings:
+        "volitional": "deyou"
+        "tsumori": "derutsumoridesu"
+    - word: "ja-1078"
+      forms:
+        "volitional": "むかおう"
+        "tsumori": "むかうつもりです"
+      readings:
+        "volitional": "mukaou"
+        "tsumori": "mukautsumoridesu"
+    - word: "ja-0341"
+      forms:
+        "volitional": "たべよう"
+        "tsumori": "たべるつもりです"
+      readings:
+        "volitional": "tabeyou"
+        "tsumori": "taberutsumoridesu"
+    - word: "ja-0342"
+      forms:
+        "volitional": "のもう"
+        "tsumori": "のむつもりです"
+      readings:
+        "volitional": "nomou"
+        "tsumori": "nomutsumoridesu"
+    - word: "ja-0343"
+      forms:
+        "volitional": "みよう"
+        "tsumori": "みるつもりです"
+      readings:
+        "volitional": "miyou"
+        "tsumori": "mirutsumoridesu"
+    - word: "ja-0344"
+      forms:
+        "volitional": "きこう"
+        "tsumori": "きくつもりです"
+      readings:
+        "volitional": "kikou"
+        "tsumori": "kikutsumoridesu"
+    - word: "ja-0345"
+      forms:
+        "volitional": "よもう"
+        "tsumori": "よむつもりです"
+      readings:
+        "volitional": "yomou"
+        "tsumori": "yomutsumoridesu"
+    - word: "ja-0346"
+      forms:
+        "volitional": "かこう"
+        "tsumori": "かくつもりです"
+      readings:
+        "volitional": "kakou"
+        "tsumori": "kakutsumoridesu"
+    - word: "ja-0347"
+      forms:
+        "volitional": "はなそう"
+        "tsumori": "はなすつもりです"
+      readings:
+        "volitional": "hanasou"
+        "tsumori": "hanasutsumoridesu"
+    - word: "ja-0348"
+      forms:
+        "volitional": "いこう"
+        "tsumori": "いくつもりです"
+      readings:
+        "volitional": "ikou"
+        "tsumori": "ikutsumoridesu"
+    - word: "ja-0349"
+      forms:
+        "volitional": "こよう"
+        "tsumori": "くるつもりです"
+      readings:
+        "volitional": "koyou"
+        "tsumori": "kurutsumoridesu"
+    - word: "ja-0350"
+      forms:
+        "volitional": "かえろう"
+        "tsumori": "かえるつもりです"
+      readings:
+        "volitional": "kaerou"
+        "tsumori": "kaerutsumoridesu"
+    - word: "ja-0351"
+      forms:
+        "volitional": "おきよう"
+        "tsumori": "おきるつもりです"
+      readings:
+        "volitional": "okiyou"
+        "tsumori": "okirutsumoridesu"
+    - word: "ja-0352"
+      forms:
+        "volitional": "ねよう"
+        "tsumori": "ねるつもりです"
+      readings:
+        "volitional": "neyou"
+        "tsumori": "nerutsumoridesu"
+    - word: "ja-0353"
+      forms:
+        "volitional": "はたらこう"
+        "tsumori": "はたらくつもりです"
+      readings:
+        "volitional": "hatarakou"
+        "tsumori": "hatarakutsumoridesu"
+    - word: "ja-0354"
+      forms:
+        "volitional": "やすもう"
+        "tsumori": "やすむつもりです"
+      readings:
+        "volitional": "yasumou"
+        "tsumori": "yasumutsumoridesu"
+    - word: "ja-0355"
+      forms:
+        "volitional": "はいろう"
+        "tsumori": "はいるつもりです"
+      readings:
+        "volitional": "hairou"
+        "tsumori": "hairutsumoridesu"
+    - word: "ja-0356"
+      forms:
+        "volitional": "かおう"
+        "tsumori": "かうつもりです"
+      readings:
+        "volitional": "kaou"
+        "tsumori": "kautsumoridesu"
+    - word: "ja-0357"
+      forms:
+        "volitional": "あおう"
+        "tsumori": "あうつもりです"
+      readings:
+        "volitional": "aou"
+        "tsumori": "autsumoridesu"
+    - word: "ja-0358"
+      forms:
+        "volitional": "まとう"
+        "tsumori": "まつつもりです"
+      readings:
+        "volitional": "matou"
+        "tsumori": "matsutsumoridesu"
+    - word: "ja-0359"
+      forms:
+        "volitional": "もとう"
+        "tsumori": "もつつもりです"
+      readings:
+        "volitional": "motou"
+        "tsumori": "motsutsumoridesu"
+    - word: "ja-0360"
+      forms:
+        "volitional": "あるこう"
+        "tsumori": "あるくつもりです"
+      readings:
+        "volitional": "arukou"
+        "tsumori": "arukutsumoridesu"
+    - word: "ja-0361"
+      forms:
+        "volitional": "のろう"
+        "tsumori": "のるつもりです"
+      readings:
+        "volitional": "norou"
+        "tsumori": "norutsumoridesu"
+    - word: "ja-0362"
+      forms:
+        "volitional": "おりよう"
+        "tsumori": "おりるつもりです"
+      readings:
+        "volitional": "oriyou"
+        "tsumori": "orirutsumoridesu"
+    - word: "ja-0363"
+      forms:
+        "volitional": "あらおう"
+        "tsumori": "あらうつもりです"
+      readings:
+        "volitional": "araou"
+        "tsumori": "arautsumoridesu"
+    - word: "ja-0364"
+      forms:
+        "volitional": "つくろう"
+        "tsumori": "つくるつもりです"
+      readings:
+        "volitional": "tsukurou"
+        "tsumori": "tsukurutsumoridesu"
+    - word: "ja-0365"
+      forms:
+        "volitional": "わかろう"
+        "tsumori": "わかるつもりです"
+      readings:
+        "volitional": "wakarou"
+        "tsumori": "wakarutsumoridesu"
+    - word: "ja-0366"
+      forms:
+        "volitional": "しろう"
+        "tsumori": "しるつもりです"
+      readings:
+        "volitional": "shirou"
+        "tsumori": "shirutsumoridesu"
+    - word: "ja-0367"
+      forms:
+        "volitional": "ならおう"
+        "tsumori": "ならうつもりです"
+      readings:
+        "volitional": "naraou"
+        "tsumori": "narautsumoridesu"
+    - word: "ja-0368"
+      forms:
+        "volitional": "おしえよう"
+        "tsumori": "おしえるつもりです"
+      readings:
+        "volitional": "oshieyou"
+        "tsumori": "oshierutsumoridesu"
+    - word: "ja-0369"
+      forms:
+        "volitional": "つかおう"
+        "tsumori": "つかうつもりです"
+      readings:
+        "volitional": "tsukaou"
+        "tsumori": "tsukautsumoridesu"
+    - word: "ja-0370"
+      forms:
+        "volitional": "すわろう"
+        "tsumori": "すわるつもりです"
+      readings:
+        "volitional": "suwarou"
+        "tsumori": "suwarutsumoridesu"
+    - word: "ja-0371"
+      forms:
+        "volitional": "たとう"
+        "tsumori": "たつつもりです"
+      readings:
+        "volitional": "tatou"
+        "tsumori": "tatsutsumoridesu"
+    - word: "ja-0372"
+      forms:
+        "volitional": "あけよう"
+        "tsumori": "あけるつもりです"
+      readings:
+        "volitional": "akeyou"
+        "tsumori": "akerutsumoridesu"
+    - word: "ja-0373"
+      forms:
+        "volitional": "しめよう"
+        "tsumori": "しめるつもりです"
+      readings:
+        "volitional": "shimeyou"
+        "tsumori": "shimerutsumoridesu"
+    - word: "ja-0374"
+      forms:
+        "volitional": "あそぼう"
+        "tsumori": "あそぶつもりです"
+      readings:
+        "volitional": "asobou"
+        "tsumori": "asobutsumoridesu"
+    - word: "ja-0375"
+      forms:
+        "volitional": "しよう"
+        "tsumori": "するつもりです"
+      readings:
+        "volitional": "shiyou"
+        "tsumori": "surutsumoridesu"
+    - word: "ja-0949"
+      forms:
+        "volitional": "かぞえよう"
+        "tsumori": "かぞえるつもりです"
+      readings:
+        "volitional": "kazoeyou"
+        "tsumori": "kazoerutsumoridesu"
+    - word: "ja-1226"
+      forms:
+        "volitional": "こまろう"
+        "tsumori": "こまるつもりです"
+      readings:
+        "volitional": "komarou"
+        "tsumori": "komarutsumoridesu"
+    - word: "ja-1227"
+      forms:
+        "volitional": "よぼう"
+        "tsumori": "よぶつもりです"
+      readings:
+        "volitional": "yobou"
+        "tsumori": "yobutsumoridesu"
+    - word: "ja-1228"
+      forms:
+        "volitional": "まよおう"
+        "tsumori": "まようつもりです"
+      readings:
+        "volitional": "mayoou"
+        "tsumori": "mayoutsumoridesu"
+    - word: "ja-1236"
+      forms:
+        "volitional": "たすけよう"
+        "tsumori": "たすけるつもりです"
+      readings:
+        "volitional": "tasukeyou"
+        "tsumori": "tasukerutsumoridesu"
+    - word: "ja-1237"
+      forms:
+        "volitional": "たすかろう"
+        "tsumori": "たすかるつもりです"
+      readings:
+        "volitional": "tasukarou"
+        "tsumori": "tasukarutsumoridesu"
+    - word: "ja-1240"
+      forms:
+        "volitional": "まもろう"
+        "tsumori": "まもるつもりです"
+      readings:
+        "volitional": "mamorou"
+        "tsumori": "mamorutsumoridesu"
+    - word: "ja-0571"
+      forms:
+        "volitional": "あびよう"
+        "tsumori": "あびるつもりです"
+      readings:
+        "volitional": "abiyou"
+        "tsumori": "abirutsumoridesu"
+    - word: "ja-0572"
+      forms:
+        "volitional": "はしろう"
+        "tsumori": "はしるつもりです"
+      readings:
+        "volitional": "hashirou"
+        "tsumori": "hashirutsumoridesu"
+    - word: "ja-0573"
+      forms:
+        "volitional": "とぼう"
+        "tsumori": "とぶつもりです"
+      readings:
+        "volitional": "tobou"
+        "tsumori": "tobutsumoridesu"
+    - word: "ja-0574"
+      forms:
+        "volitional": "おどろう"
+        "tsumori": "おどるつもりです"
+      readings:
+        "volitional": "odorou"
+        "tsumori": "odorutsumoridesu"
+    - word: "ja-0575"
+      forms:
+        "volitional": "うたおう"
+        "tsumori": "うたうつもりです"
+      readings:
+        "volitional": "utaou"
+        "tsumori": "utautsumoridesu"
+    - word: "ja-0576"
+      forms:
+        "volitional": "かりよう"
+        "tsumori": "かりるつもりです"
+      readings:
+        "volitional": "kariyou"
+        "tsumori": "karirutsumoridesu"
+    - word: "ja-0577"
+      forms:
+        "volitional": "かえそう"
+        "tsumori": "かえすつもりです"
+      readings:
+        "volitional": "kaesou"
+        "tsumori": "kaesutsumoridesu"
+    - word: "ja-0578"
+      forms:
+        "volitional": "わすれよう"
+        "tsumori": "わすれるつもりです"
+      readings:
+        "volitional": "wasureyou"
+        "tsumori": "wasurerutsumoridesu"
+    - word: "ja-0579"
+      forms:
+        "volitional": "おぼえよう"
+        "tsumori": "おぼえるつもりです"
+      readings:
+        "volitional": "oboeyou"
+        "tsumori": "oboerutsumoridesu"
+    - word: "ja-0580"
+      forms:
+        "volitional": "てつだおう"
+        "tsumori": "てつだうつもりです"
+      readings:
+        "volitional": "tetsudaou"
+        "tsumori": "tetsudautsumoridesu"
+    - word: "ja-0581"
+      forms:
+        "volitional": "ひろおう"
+        "tsumori": "ひろうつもりです"
+      readings:
+        "volitional": "hiroou"
+        "tsumori": "hiroutsumoridesu"
+    - word: "ja-0582"
+      forms:
+        "volitional": "すてよう"
+        "tsumori": "すてるつもりです"
+      readings:
+        "volitional": "suteyou"
+        "tsumori": "suterutsumoridesu"
+    - word: "ja-0583"
+      forms:
+        "volitional": "なくそう"
+        "tsumori": "なくすつもりです"
+      readings:
+        "volitional": "nakusou"
+        "tsumori": "nakusutsumoridesu"
+    - word: "ja-0584"
+      forms:
+        "volitional": "のぼろう"
+        "tsumori": "のぼるつもりです"
+      readings:
+        "volitional": "noborou"
+        "tsumori": "noborutsumoridesu"
+    - word: "ja-0585"
+      forms:
+        "volitional": "そうじしよう"
+        "tsumori": "そうじするつもりです"
+      readings:
+        "volitional": "soujishiyou"
+        "tsumori": "soujisurutsumoridesu"
+    - word: "ja-0586"
+      forms:
+        "volitional": "りょうりしよう"
+        "tsumori": "りょうりするつもりです"
+      readings:
+        "volitional": "ryourishiyou"
+        "tsumori": "ryourisurutsumoridesu"
+    - word: "ja-0587"
+      forms:
+        "volitional": "でかけよう"
+        "tsumori": "でかけるつもりです"
+      readings:
+        "volitional": "dekakeyou"
+        "tsumori": "dekakerutsumoridesu"
+    - word: "ja-0588"
+      forms:
+        "volitional": "もどろう"
+        "tsumori": "もどるつもりです"
+      readings:
+        "volitional": "modorou"
+        "tsumori": "modorutsumoridesu"
+    - word: "ja-0589"
+      forms:
+        "volitional": "とまろう"
+        "tsumori": "とまるつもりです"
+      readings:
+        "volitional": "tomarou"
+        "tsumori": "tomarutsumoridesu"
+    - word: "ja-0590"
+      forms:
+        "volitional": "さがそう"
+        "tsumori": "さがすつもりです"
+      readings:
+        "volitional": "sagasou"
+        "tsumori": "sagasutsumoridesu"
+    - word: "ja-0591"
+      forms:
+        "volitional": "みせろう"
+        "tsumori": "みせるつもりです"
+      readings:
+        "volitional": "miserou"
+        "tsumori": "miserutsumoridesu"
+    - word: "ja-0592"
+      forms:
+        "volitional": "いれよう"
+        "tsumori": "いれるつもりです"
+      readings:
+        "volitional": "ireyou"
+        "tsumori": "irerutsumoridesu"
+    - word: "ja-0593"
+      forms:
+        "volitional": "わらおう"
+        "tsumori": "わらうつもりです"
+      readings:
+        "volitional": "waraou"
+        "tsumori": "warautsumoridesu"
+    - word: "ja-0594"
+      forms:
+        "volitional": "おころう"
+        "tsumori": "おこるつもりです"
+      readings:
+        "volitional": "okorou"
+        "tsumori": "okorutsumoridesu"
+    - word: "ja-0595"
+      forms:
+        "volitional": "やめよう"
+        "tsumori": "やめるつもりです"
+      readings:
+        "volitional": "yameyou"
+        "tsumori": "yamerutsumoridesu"
+    - word: "ja-0596"
+      forms:
+        "volitional": "はじめよう"
+        "tsumori": "はじめるつもりです"
+      readings:
+        "volitional": "hajimeyou"
+        "tsumori": "hajimerutsumoridesu"
+    - word: "ja-0597"
+      forms:
+        "volitional": "ひっこそう"
+        "tsumori": "ひっこすつもりです"
+      readings:
+        "volitional": "hikkosou"
+        "tsumori": "hikkosutsumoridesu"
+    - word: "ja-0598"
+      forms:
+        "volitional": "あげよう"
+        "tsumori": "あげるつもりです"
+      readings:
+        "volitional": "ageyou"
+        "tsumori": "agerutsumoridesu"
+    - word: "ja-0599"
+      forms:
+        "volitional": "もらおう"
+        "tsumori": "もらうつもりです"
+      readings:
+        "volitional": "moraou"
+        "tsumori": "morautsumoridesu"
+    - word: "ja-0600"
+      forms:
+        "volitional": "さけぼう"
+        "tsumori": "さけぶつもりです"
+      readings:
+        "volitional": "sakebou"
+        "tsumori": "sakebutsumoridesu"
+    - word: "ja-0516"
+      forms:
+        "volitional": "おわろう"
+        "tsumori": "おわるつもりです"
+      readings:
+        "volitional": "owarou"
+        "tsumori": "owarutsumoridesu"
+    - word: "ja-0711"
+      forms:
+        "volitional": "つとめよう"
+        "tsumori": "つとめるつもりです"
+      readings:
+        "volitional": "tsutomeyou"
+        "tsumori": "tsutomerutsumoridesu"
+    - word: "ja-1334"
+      forms:
+        "volitional": "きがえよう"
+        "tsumori": "きがえるつもりです"
+      readings:
+        "volitional": "kigaeyou"
+        "tsumori": "kigaerutsumoridesu"
+    - word: "ja-1335"
+      forms:
+        "volitional": "はこう"
+        "tsumori": "はくつもりです"
+      readings:
+        "volitional": "hakou"
+        "tsumori": "hakutsumoridesu"
+    - word: "ja-1336"
+      forms:
+        "volitional": "かぶろう"
+        "tsumori": "かぶるつもりです"
+      readings:
+        "volitional": "kaburou"
+        "tsumori": "kaburutsumoridesu"
+    - word: "ja-1341"
+      forms:
+        "volitional": "つかれよう"
+        "tsumori": "つかれるつもりです"
+      readings:
+        "volitional": "tsukareyou"
+        "tsumori": "tsukarerutsumoridesu"
+    - word: "ja-1348"
+      forms:
+        "volitional": "だそう"
+        "tsumori": "だすつもりです"
+      readings:
+        "volitional": "dasou"
+        "tsumori": "dasutsumoridesu"
+    - word: "ja-1349"
+      forms:
+        "volitional": "わかそう"
+        "tsumori": "わかすつもりです"
+      readings:
+        "volitional": "wakasou"
+        "tsumori": "wakasutsumoridesu"
+    - word: "ja-1350"
+      forms:
+        "volitional": "ほそう"
+        "tsumori": "ほすつもりです"
+      readings:
+        "volitional": "hosou"
+        "tsumori": "hosutsumoridesu"
+    - word: "ja-1351"
+      forms:
+        "volitional": "かたづけよう"
+        "tsumori": "かたづけるつもりです"
+      readings:
+        "volitional": "katazukeyou"
+        "tsumori": "katazukerutsumoridesu"
+    - word: "ja-1352"
+      forms:
+        "volitional": "たたもう"
+        "tsumori": "たたむつもりです"
+      readings:
+        "volitional": "tatamou"
+        "tsumori": "tatamutsumoridesu"
+    - word: "ja-1353"
+      forms:
+        "volitional": "ぬごう"
+        "tsumori": "ぬぐつもりです"
+      readings:
+        "volitional": "nugou"
+        "tsumori": "nugutsumoridesu"
+    - word: "ja-1354"
+      forms:
+        "volitional": "まにあおう"
+        "tsumori": "まにあうつもりです"
+      readings:
+        "volitional": "maniaou"
+        "tsumori": "maniautsumoridesu"
+    - word: "ja-1364"
+      forms:
+        "volitional": "かわこう"
+        "tsumori": "かわくつもりです"
+      readings:
+        "volitional": "kawakou"
+        "tsumori": "kawakutsumoridesu"
+    - word: "ja-1368"
+      forms:
+        "volitional": "いそごう"
+        "tsumori": "いそぐつもりです"
+      readings:
+        "volitional": "isogou"
+        "tsumori": "isogutsumoridesu"
+    - word: "ja-1539"
+      forms:
+        "volitional": "にあおう"
+        "tsumori": "にあうつもりです"
+      readings:
+        "volitional": "niaou"
+        "tsumori": "niautsumoridesu"
+    - word: "ja-1542"
+      forms:
+        "volitional": "きよう"
+        "tsumori": "きるつもりです"
+      readings:
+        "volitional": "kiyou"
+        "tsumori": "kirutsumoridesu"
+    - word: "ja-1718"
+      forms:
+        "volitional": "うろう"
+        "tsumori": "うるつもりです"
+      readings:
+        "volitional": "urou"
+        "tsumori": "urutsumoridesu"
+    - word: "ja-1719"
+      forms:
+        "volitional": "はらおう"
+        "tsumori": "はらうつもりです"
+      readings:
+        "volitional": "haraou"
+        "tsumori": "harautsumoridesu"
+    - word: "ja-1720"
+      forms:
+        "volitional": "まけよう"
+        "tsumori": "まけるつもりです"
+      readings:
+        "volitional": "makeyou"
+        "tsumori": "makerutsumoridesu"
+    - word: "ja-1721"
+      forms:
+        "volitional": "えらぼう"
+        "tsumori": "えらぶつもりです"
+      readings:
+        "volitional": "erabou"
+        "tsumori": "erabutsumoridesu"
+    - word: "ja-1758"
+      forms:
+        "volitional": "たのもう"
+        "tsumori": "たのむつもりです"
+      readings:
+        "volitional": "tanomou"
+        "tsumori": "tanomutsumoridesu"
+    - word: "ja-1759"
+      forms:
+        "volitional": "おごろう"
+        "tsumori": "おごるつもりです"
+      readings:
+        "volitional": "ogorou"
+        "tsumori": "ogorutsumoridesu"
+    - word: "ja-1790"
+      forms:
+        "volitional": "いためよう"
+        "tsumori": "いためるつもりです"
+      readings:
+        "volitional": "itameyou"
+        "tsumori": "itamerutsumoridesu"
+    - word: "ja-1791"
+      forms:
+        "volitional": "まぜよう"
+        "tsumori": "まぜるつもりです"
+      readings:
+        "volitional": "mazeyou"
+        "tsumori": "mazerutsumoridesu"
+    - word: "ja-1792"
+      forms:
+        "volitional": "ゆでよう"
+        "tsumori": "ゆでるつもりです"
+      readings:
+        "volitional": "yudeyou"
+        "tsumori": "yuderutsumoridesu"
+    - word: "ja-1793"
+      forms:
+        "volitional": "によう"
+        "tsumori": "にるつもりです"
+      readings:
+        "volitional": "niyou"
+        "tsumori": "nirutsumoridesu"
+    - word: "ja-1794"
+      forms:
+        "volitional": "やこう"
+        "tsumori": "やくつもりです"
+      readings:
+        "volitional": "yakou"
+        "tsumori": "yakutsumoridesu"
+    - word: "ja-1799"
+      forms:
+        "volitional": "ひやそう"
+        "tsumori": "ひやすつもりです"
+      readings:
+        "volitional": "hiyasou"
+        "tsumori": "hiyasutsumoridesu"
+    - word: "ja-1800"
+      forms:
+        "volitional": "あたためよう"
+        "tsumori": "あたためるつもりです"
+      readings:
+        "volitional": "atatameyou"
+        "tsumori": "atatamerutsumoridesu"
+    - word: "ja-1801"
+      forms:
+        "volitional": "きざもう"
+        "tsumori": "きざむつもりです"
+      readings:
+        "volitional": "kizamou"
+        "tsumori": "kizamutsumoridesu"
+    - word: "ja-1802"
+      forms:
+        "volitional": "むこう"
+        "tsumori": "むくつもりです"
+      readings:
+        "volitional": "mukou"
+        "tsumori": "mukutsumoridesu"
+    - word: "ja-1803"
+      forms:
+        "volitional": "つつもう"
+        "tsumori": "つつむつもりです"
+      readings:
+        "volitional": "tsutsumou"
+        "tsumori": "tsutsumutsumoridesu"
+    - word: "ja-1804"
+      forms:
+        "volitional": "こげよう"
+        "tsumori": "こげるつもりです"
+      readings:
+        "volitional": "kogeyou"
+        "tsumori": "kogerutsumoridesu"
+    - word: "ja-1805"
+      forms:
+        "volitional": "さまそう"
+        "tsumori": "さますつもりです"
+      readings:
+        "volitional": "samasou"
+        "tsumori": "samasutsumoridesu"
+    - word: "ja-1850"
+      forms:
+        "volitional": "べんきょうしよう"
+        "tsumori": "べんきょうするつもりです"
+      readings:
+        "volitional": "benkyoushiyou"
+        "tsumori": "benkyousurutsumoridesu"
+    - word: "ja-1861"
+      forms:
+        "volitional": "おくれよう"
+        "tsumori": "おくれるつもりです"
+      readings:
+        "volitional": "okureyou"
+        "tsumori": "okurerutsumoridesu"
+    - word: "ja-1862"
+      forms:
+        "volitional": "まなぼう"
+        "tsumori": "まなぶつもりです"
+      readings:
+        "volitional": "manabou"
+        "tsumori": "manabutsumoridesu"
+    - word: "ja-1863"
+      forms:
+        "volitional": "つづけよう"
+        "tsumori": "つづけるつもりです"
+      readings:
+        "volitional": "tsuzukeyou"
+        "tsumori": "tsuzukerutsumoridesu"
+    - word: "ja-1864"
+      forms:
+        "volitional": "かんがえよう"
+        "tsumori": "かんがえるつもりです"
+      readings:
+        "volitional": "kangaeyou"
+        "tsumori": "kangaerutsumoridesu"
+    - word: "ja-1865"
+      forms:
+        "volitional": "こたえよう"
+        "tsumori": "こたえるつもりです"
+      readings:
+        "volitional": "kotaeyou"
+        "tsumori": "kotaerutsumoridesu"
+    - word: "ja-1892"
+      forms:
+        "volitional": "およごう"
+        "tsumori": "およぐつもりです"
+      readings:
+        "volitional": "oyogou"
+        "tsumori": "oyogutsumoridesu"
+    - word: "ja-1893"
+      forms:
+        "volitional": "とろう"
+        "tsumori": "とるつもりです"
+      readings:
+        "volitional": "torou"
+        "tsumori": "torutsumoridesu"
+    - word: "ja-1896"
+      forms:
+        "volitional": "えがこう"
+        "tsumori": "えがくつもりです"
+      readings:
+        "volitional": "egakou"
+        "tsumori": "egakutsumoridesu"
+    - word: "ja-1900"
+      forms:
+        "volitional": "ぬおう"
+        "tsumori": "ぬうつもりです"
+      readings:
+        "volitional": "nuou"
+        "tsumori": "nuutsumoridesu"
+    - word: "ja-1901"
+      forms:
+        "volitional": "あもう"
+        "tsumori": "あむつもりです"
+      readings:
+        "volitional": "amou"
+        "tsumori": "amutsumoridesu"
+    - word: "ja-1907"
+      forms:
+        "volitional": "ほめよう"
+        "tsumori": "ほめるつもりです"
+      readings:
+        "volitional": "homeyou"
+        "tsumori": "homerutsumoridesu"
+    - word: "ja-1910"
+      forms:
+        "volitional": "かとう"
+        "tsumori": "かつつもりです"
+      readings:
+        "volitional": "katou"
+        "tsumori": "katsutsumoridesu"
+    - word: "ja-1933"
+      forms:
+        "volitional": "かなでよう"
+        "tsumori": "かなでるつもりです"
+      readings:
+        "volitional": "kanadeyou"
+        "tsumori": "kanaderutsumoridesu"
+    - word: "ja-1934"
+      forms:
+        "volitional": "ならそう"
+        "tsumori": "ならすつもりです"
+      readings:
+        "volitional": "narasou"
+        "tsumori": "narasutsumoridesu"
+    - word: "ja-1935"
+      forms:
+        "volitional": "ひびこう"
+        "tsumori": "ひびくつもりです"
+      readings:
+        "volitional": "hibikou"
+        "tsumori": "hibikutsumoridesu"
+    - word: "ja-1939"
+      forms:
+        "volitional": "たたこう"
+        "tsumori": "たたくつもりです"
+      readings:
+        "volitional": "tatakou"
+        "tsumori": "tatakutsumoridesu"
+    - word: "ja-1940"
+      forms:
+        "volitional": "きこえよう"
+        "tsumori": "きこえるつもりです"
+      readings:
+        "volitional": "kikoeyou"
+        "tsumori": "kikoerutsumoridesu"
+    - word: "ja-1941"
+      forms:
+        "volitional": "ひこう"
+        "tsumori": "ひくつもりです"
+      readings:
+        "volitional": "hikou"
+        "tsumori": "hikutsumoridesu"
+    - word: "ja-1996"
+      forms:
+        "volitional": "なげよう"
+        "tsumori": "なげるつもりです"
+      readings:
+        "volitional": "nageyou"
+        "tsumori": "nagerutsumoridesu"
+    - word: "ja-1997"
+      forms:
+        "volitional": "うとう"
+        "tsumori": "うつつもりです"
+      readings:
+        "volitional": "utou"
+        "tsumori": "utsutsumoridesu"
+    - word: "ja-1998"
+      forms:
+        "volitional": "けろう"
+        "tsumori": "けるつもりです"
+      readings:
+        "volitional": "kerou"
+        "tsumori": "kerutsumoridesu"
+    - word: "ja-1999"
+      forms:
+        "volitional": "おいかけよう"
+        "tsumori": "おいかけるつもりです"
+      readings:
+        "volitional": "oikakeyou"
+        "tsumori": "oikakerutsumoridesu"
+    - word: "ja-2000"
+      forms:
+        "volitional": "あきらめよう"
+        "tsumori": "あきらめるつもりです"
+      readings:
+        "volitional": "akirameyou"
+        "tsumori": "akiramerutsumoridesu"
+    - word: "ja-2001"
+      forms:
+        "volitional": "きたえよう"
+        "tsumori": "きたえるつもりです"
+      readings:
+        "volitional": "kitaeyou"
+        "tsumori": "kitaerutsumoridesu"
+    - word: "ja-2002"
+      forms:
+        "volitional": "ねらおう"
+        "tsumori": "ねらうつもりです"
+      readings:
+        "volitional": "neraou"
+        "tsumori": "nerautsumoridesu"
+    - word: "ja-2049"
+      forms:
+        "volitional": "うつろう"
+        "tsumori": "うつるつもりです"
+      readings:
+        "volitional": "utsurou"
+        "tsumori": "utsurutsumoridesu"
+    - word: "ja-2050"
+      forms:
+        "volitional": "なおろう"
+        "tsumori": "なおるつもりです"
+      readings:
+        "volitional": "naorou"
+        "tsumori": "naorutsumoridesu"
+    - word: "ja-2051"
+      forms:
+        "volitional": "なおそう"
+        "tsumori": "なおすつもりです"
+      readings:
+        "volitional": "naosou"
+        "tsumori": "naosutsumoridesu"
+    - word: "ja-2052"
+      forms:
+        "volitional": "たおれよう"
+        "tsumori": "たおれるつもりです"
+      readings:
+        "volitional": "taoreyou"
+        "tsumori": "taorerutsumoridesu"
+    - word: "ja-2053"
+      forms:
+        "volitional": "はれよう"
+        "tsumori": "はれるつもりです"
+      readings:
+        "volitional": "hareyou"
+        "tsumori": "harerutsumoridesu"
+    - word: "ja-2054"
+      forms:
+        "volitional": "しびれよう"
+        "tsumori": "しびれるつもりです"
+      readings:
+        "volitional": "shibireyou"
+        "tsumori": "shibirerutsumoridesu"
+    - word: "ja-2115"
+      forms:
+        "volitional": "みがこう"
+        "tsumori": "みがくつもりです"
+      readings:
+        "volitional": "migakou"
+        "tsumori": "migakutsumoridesu"
+    - word: "ja-2116"
+      forms:
+        "volitional": "こすろう"
+        "tsumori": "こするつもりです"
+      readings:
+        "volitional": "kosurou"
+        "tsumori": "kosurutsumoridesu"
+    - word: "ja-2117"
+      forms:
+        "volitional": "すすごう"
+        "tsumori": "すすぐつもりです"
+      readings:
+        "volitional": "susugou"
+        "tsumori": "susugutsumoridesu"
+    - word: "ja-2118"
+      forms:
+        "volitional": "しぼろう"
+        "tsumori": "しぼるつもりです"
+      readings:
+        "volitional": "shiborou"
+        "tsumori": "shiborutsumoridesu"
+    - word: "ja-2119"
+      forms:
+        "volitional": "かわかそう"
+        "tsumori": "かわかすつもりです"
+      readings:
+        "volitional": "kawakasou"
+        "tsumori": "kawakasutsumoridesu"
+    - word: "ja-2120"
+      forms:
+        "volitional": "しまおう"
+        "tsumori": "しまうつもりです"
+      readings:
+        "volitional": "shimaou"
+        "tsumori": "shimautsumoridesu"
+    - word: "ja-2121"
+      forms:
+        "volitional": "そろえよう"
+        "tsumori": "そろえるつもりです"
+      readings:
+        "volitional": "soroeyou"
+        "tsumori": "soroerutsumoridesu"
+    - word: "ja-2122"
+      forms:
+        "volitional": "かざろう"
+        "tsumori": "かざるつもりです"
+      readings:
+        "volitional": "kazarou"
+        "tsumori": "kazarutsumoridesu"
+    - word: "ja-2123"
+      forms:
+        "volitional": "とりかえよう"
+        "tsumori": "とりかえるつもりです"
+      readings:
+        "volitional": "torikaeyou"
+        "tsumori": "torikaerutsumoridesu"
+    - word: "ja-2124"
+      forms:
+        "volitional": "つめよう"
+        "tsumori": "つめるつもりです"
+      readings:
+        "volitional": "tsumeyou"
+        "tsumori": "tsumerutsumoridesu"
+    - word: "ja-2125"
+      forms:
+        "volitional": "くばろう"
+        "tsumori": "くばるつもりです"
+      readings:
+        "volitional": "kubarou"
+        "tsumori": "kubarutsumoridesu"
+    - word: "ja-2126"
+      forms:
+        "volitional": "こぼそう"
+        "tsumori": "こぼすつもりです"
+      readings:
+        "volitional": "kobosou"
+        "tsumori": "kobosutsumoridesu"
+    - word: "ja-2127"
+      forms:
+        "volitional": "よごれよう"
+        "tsumori": "よごれるつもりです"
+      readings:
+        "volitional": "yogoreyou"
+        "tsumori": "yogorerutsumoridesu"
+    - word: "ja-2128"
+      forms:
+        "volitional": "よごそう"
+        "tsumori": "よごすつもりです"
+      readings:
+        "volitional": "yogosou"
+        "tsumori": "yogosutsumoridesu"
+    - word: "ja-2129"
+      forms:
+        "volitional": "ちらかそう"
+        "tsumori": "ちらかすつもりです"
+      readings:
+        "volitional": "chirakasou"
+        "tsumori": "chirakasutsumoridesu"
+    - word: "ja-2164"
+      forms:
+        "volitional": "やせよう"
+        "tsumori": "やせるつもりです"
+      readings:
+        "volitional": "yaseyou"
+        "tsumori": "yaserutsumoridesu"
+    - word: "ja-2165"
+      forms:
+        "volitional": "ふとろう"
+        "tsumori": "ふとるつもりです"
+      readings:
+        "volitional": "futorou"
+        "tsumori": "futorutsumoridesu"
+    - word: "ja-2217"
+      forms:
+        "volitional": "かわろう"
+        "tsumori": "かわるつもりです"
+      readings:
+        "volitional": "kawarou"
+        "tsumori": "kawarutsumoridesu"
+    - word: "ja-2218"
+      forms:
+        "volitional": "きまろう"
+        "tsumori": "きまるつもりです"
+      readings:
+        "volitional": "kimarou"
+        "tsumori": "kimarutsumoridesu"
+    - word: "ja-2219"
+      forms:
+        "volitional": "きめよう"
+        "tsumori": "きめるつもりです"
+      readings:
+        "volitional": "kimeyou"
+        "tsumori": "kimerutsumoridesu"
+    - word: "ja-2220"
+      forms:
+        "volitional": "なろう"
+        "tsumori": "なるつもりです"
+      readings:
+        "volitional": "narou"
+        "tsumori": "narutsumoridesu"
+    - word: "ja-2221"
+      forms:
+        "volitional": "なれよう"
+        "tsumori": "なれるつもりです"
+      readings:
+        "volitional": "nareyou"
+        "tsumori": "narerutsumoridesu"
+    - word: "ja-2222"
+      forms:
+        "volitional": "つこう"
+        "tsumori": "つくつもりです"
+      readings:
+        "volitional": "tsukou"
+        "tsumori": "tsukutsumoridesu"
+    - word: "ja-2223"
+      forms:
+        "volitional": "つけよう"
+        "tsumori": "つけるつもりです"
+      readings:
+        "volitional": "tsukeyou"
+        "tsumori": "tsukerutsumoridesu"
+    - word: "ja-2224"
+      forms:
+        "volitional": "けそう"
+        "tsumori": "けすつもりです"
+      readings:
+        "volitional": "kesou"
+        "tsumori": "kesutsumoridesu"
+    - word: "ja-2225"
+      forms:
+        "volitional": "きえよう"
+        "tsumori": "きえるつもりです"
+      readings:
+        "volitional": "kieyou"
+        "tsumori": "kierutsumoridesu"
+    - word: "ja-2226"
+      forms:
+        "volitional": "あこう"
+        "tsumori": "あくつもりです"
+      readings:
+        "volitional": "akou"
+        "tsumori": "akutsumoridesu"
+    - word: "ja-2227"
+      forms:
+        "volitional": "しまろう"
+        "tsumori": "しまるつもりです"
+      readings:
+        "volitional": "shimarou"
+        "tsumori": "shimarutsumoridesu"
+    - word: "ja-2228"
+      forms:
+        "volitional": "つかまえよう"
+        "tsumori": "つかまえるつもりです"
+      readings:
+        "volitional": "tsukamaeyou"
+        "tsumori": "tsukamaerutsumoridesu"
+    - word: "ja-2229"
+      forms:
+        "volitional": "つかもう"
+        "tsumori": "つかむつもりです"
+      readings:
+        "volitional": "tsukamou"
+        "tsumori": "tsukamutsumoridesu"
+    - word: "ja-2230"
+      forms:
+        "volitional": "おそう"
+        "tsumori": "おすつもりです"
+      readings:
+        "volitional": "osou"
+        "tsumori": "osutsumoridesu"
+    - word: "ja-2231"
+      forms:
+        "volitional": "ひっぱろう"
+        "tsumori": "ひっぱるつもりです"
+      readings:
+        "volitional": "hipparou"
+        "tsumori": "hipparutsumoridesu"
+    - word: "ja-2232"
+      forms:
+        "volitional": "おとそう"
+        "tsumori": "おとすつもりです"
+      readings:
+        "volitional": "otosou"
+        "tsumori": "otosutsumoridesu"
+    - word: "ja-2233"
+      forms:
+        "volitional": "おちよう"
+        "tsumori": "おちるつもりです"
+      readings:
+        "volitional": "ochiyou"
+        "tsumori": "ochirutsumoridesu"
+    - word: "ja-2234"
+      forms:
+        "volitional": "ひらこう"
+        "tsumori": "ひらくつもりです"
+      readings:
+        "volitional": "hirakou"
+        "tsumori": "hirakutsumoridesu"
+    - word: "ja-2235"
+      forms:
+        "volitional": "とじよう"
+        "tsumori": "とじるつもりです"
+      readings:
+        "volitional": "tojiyou"
+        "tsumori": "tojirutsumoridesu"
+    - word: "ja-2236"
+      forms:
+        "volitional": "わたそう"
+        "tsumori": "わたすつもりです"
+      readings:
+        "volitional": "watasou"
+        "tsumori": "watasutsumoridesu"
+    - word: "ja-2237"
+      forms:
+        "volitional": "うけよう"
+        "tsumori": "うけるつもりです"
+      readings:
+        "volitional": "ukeyou"
+        "tsumori": "ukerutsumoridesu"
+    - word: "ja-2238"
+      forms:
+        "volitional": "つたえよう"
+        "tsumori": "つたえるつもりです"
+      readings:
+        "volitional": "tsutaeyou"
+        "tsumori": "tsutaerutsumoridesu"
+    - word: "ja-2239"
+      forms:
+        "volitional": "つたわろう"
+        "tsumori": "つたわるつもりです"
+      readings:
+        "volitional": "tsutawarou"
+        "tsumori": "tsutawarutsumoridesu"
+    - word: "ja-2240"
+      forms:
+        "volitional": "むかえよう"
+        "tsumori": "むかえるつもりです"
+      readings:
+        "volitional": "mukaeyou"
+        "tsumori": "mukaerutsumoridesu"
+    - word: "ja-2241"
+      forms:
+        "volitional": "おくろう"
+        "tsumori": "おくるつもりです"
+      readings:
+        "volitional": "okurou"
+        "tsumori": "okurutsumoridesu"
+    - word: "ja-2242"
+      forms:
+        "volitional": "とどこう"
+        "tsumori": "とどくつもりです"
+      readings:
+        "volitional": "todokou"
+        "tsumori": "todokutsumoridesu"
+    - word: "ja-2243"
+      forms:
+        "volitional": "とどけよう"
+        "tsumori": "とどけるつもりです"
+      readings:
+        "volitional": "todokeyou"
+        "tsumori": "todokerutsumoridesu"
+    - word: "ja-2244"
+      forms:
+        "volitional": "たずねよう"
+        "tsumori": "たずねるつもりです"
+      readings:
+        "volitional": "tazuneyou"
+        "tsumori": "tazunerutsumoridesu"
+    - word: "ja-2245"
+      forms:
+        "volitional": "まちがおう"
+        "tsumori": "まちがうつもりです"
+      readings:
+        "volitional": "machigaou"
+        "tsumori": "machigautsumoridesu"
+    - word: "ja-2246"
+      forms:
+        "volitional": "あやまろう"
+        "tsumori": "あやまるつもりです"
+      readings:
+        "volitional": "ayamarou"
+        "tsumori": "ayamarutsumoridesu"
+    - word: "ja-2247"
+      forms:
+        "volitional": "ゆるそう"
+        "tsumori": "ゆるすつもりです"
+      readings:
+        "volitional": "yurusou"
+        "tsumori": "yurusutsumoridesu"
+    - word: "ja-2248"
+      forms:
+        "volitional": "ことわろう"
+        "tsumori": "ことわるつもりです"
+      readings:
+        "volitional": "kotowarou"
+        "tsumori": "kotowarutsumoridesu"
+    - word: "ja-2249"
+      forms:
+        "volitional": "さそおう"
+        "tsumori": "さそうつもりです"
+      readings:
+        "volitional": "sasoou"
+        "tsumori": "sasoutsumoridesu"
+    - word: "ja-2250"
+      forms:
+        "volitional": "かよおう"
+        "tsumori": "かようつもりです"
+      readings:
+        "volitional": "kayoou"
+        "tsumori": "kayoutsumoridesu"
+    - word: "ja-2251"
+      forms:
+        "volitional": "とおろう"
+        "tsumori": "とおるつもりです"
+      readings:
+        "volitional": "toorou"
+        "tsumori": "toorutsumoridesu"
+    - word: "ja-2252"
+      forms:
+        "volitional": "すぎよう"
+        "tsumori": "すぎるつもりです"
+      readings:
+        "volitional": "sugiyou"
+        "tsumori": "sugirutsumoridesu"
+    - word: "ja-2253"
+      forms:
+        "volitional": "まわろう"
+        "tsumori": "まわるつもりです"
+      readings:
+        "volitional": "mawarou"
+        "tsumori": "mawarutsumoridesu"
+    - word: "ja-2254"
+      forms:
+        "volitional": "まわそう"
+        "tsumori": "まわすつもりです"
+      readings:
+        "volitional": "mawasou"
+        "tsumori": "mawasutsumoridesu"
+    - word: "ja-2255"
+      forms:
+        "volitional": "うごこう"
+        "tsumori": "うごくつもりです"
+      readings:
+        "volitional": "ugokou"
+        "tsumori": "ugokutsumoridesu"
+    - word: "ja-2256"
+      forms:
+        "volitional": "うごかそう"
+        "tsumori": "うごかすつもりです"
+      readings:
+        "volitional": "ugokasou"
+        "tsumori": "ugokasutsumoridesu"
+    - word: "ja-2257"
+      forms:
+        "volitional": "のころう"
+        "tsumori": "のこるつもりです"
+      readings:
+        "volitional": "nokorou"
+        "tsumori": "nokorutsumoridesu"
+    - word: "ja-2258"
+      forms:
+        "volitional": "のこそう"
+        "tsumori": "のこすつもりです"
+      readings:
+        "volitional": "nokosou"
+        "tsumori": "nokosutsumoridesu"
+    - word: "ja-2259"
+      forms:
+        "volitional": "あつまろう"
+        "tsumori": "あつまるつもりです"
+      readings:
+        "volitional": "atsumarou"
+        "tsumori": "atsumarutsumoridesu"
+    - word: "ja-2260"
+      forms:
+        "volitional": "あつめよう"
+        "tsumori": "あつめるつもりです"
+      readings:
+        "volitional": "atsumeyou"
+        "tsumori": "atsumerutsumoridesu"
+    - word: "ja-2261"
+      forms:
+        "volitional": "わけよう"
+        "tsumori": "わけるつもりです"
+      readings:
+        "volitional": "wakeyou"
+        "tsumori": "wakerutsumoridesu"
+    - word: "ja-2262"
+      forms:
+        "volitional": "くらべよう"
+        "tsumori": "くらべるつもりです"
+      readings:
+        "volitional": "kurabeyou"
+        "tsumori": "kuraberutsumoridesu"
+    - word: "ja-2263"
+      forms:
+        "volitional": "かくれよう"
+        "tsumori": "かくれるつもりです"
+      readings:
+        "volitional": "kakureyou"
+        "tsumori": "kakurerutsumoridesu"
+    - word: "ja-2264"
+      forms:
+        "volitional": "かくそう"
+        "tsumori": "かくすつもりです"
+      readings:
+        "volitional": "kakusou"
+        "tsumori": "kakusutsumoridesu"
+    - word: "ja-2265"
+      forms:
+        "volitional": "みつかろう"
+        "tsumori": "みつかるつもりです"
+      readings:
+        "volitional": "mitsukarou"
+        "tsumori": "mitsukarutsumoridesu"
+    - word: "ja-2266"
+      forms:
+        "volitional": "みつけよう"
+        "tsumori": "みつけるつもりです"
+      readings:
+        "volitional": "mitsukeyou"
+        "tsumori": "mitsukerutsumoridesu"
+    - word: "ja-2267"
+      forms:
+        "volitional": "ふえよう"
+        "tsumori": "ふえるつもりです"
+      readings:
+        "volitional": "fueyou"
+        "tsumori": "fuerutsumoridesu"
+    - word: "ja-2268"
+      forms:
+        "volitional": "へろう"
+        "tsumori": "へるつもりです"
+      readings:
+        "volitional": "herou"
+        "tsumori": "herutsumoridesu"
+    - word: "ja-2269"
+      forms:
+        "volitional": "そだてよう"
+        "tsumori": "そだてるつもりです"
+      readings:
+        "volitional": "sodateyou"
+        "tsumori": "sodaterutsumoridesu"
+    - word: "ja-2270"
+      forms:
+        "volitional": "そだとう"
+        "tsumori": "そだつつもりです"
+      readings:
+        "volitional": "sodatou"
+        "tsumori": "sodatsutsumoridesu"
+    - word: "ja-2271"
+      forms:
+        "volitional": "うまれよう"
+        "tsumori": "うまれるつもりです"
+      readings:
+        "volitional": "umareyou"
+        "tsumori": "umarerutsumoridesu"
+    - word: "ja-2272"
+      forms:
+        "volitional": "いきよう"
+        "tsumori": "いきるつもりです"
+      readings:
+        "volitional": "ikiyou"
+        "tsumori": "ikirutsumoridesu"
+    - word: "ja-2273"
+      forms:
+        "volitional": "たのしもう"
+        "tsumori": "たのしむつもりです"
+      readings:
+        "volitional": "tanoshimou"
+        "tsumori": "tanoshimutsumoridesu"
+    - word: "ja-2274"
+      forms:
+        "volitional": "あたろう"
+        "tsumori": "あたるつもりです"
+      readings:
+        "volitional": "atarou"
+        "tsumori": "atarutsumoridesu"
+    - word: "ja-2275"
+      forms:
+        "volitional": "はじまろう"
+        "tsumori": "はじまるつもりです"
+      readings:
+        "volitional": "hajimarou"
+        "tsumori": "hajimarutsumoridesu"
+    - word: "ja-2276"
+      forms:
+        "volitional": "さわろう"
+        "tsumori": "さわるつもりです"
+      readings:
+        "volitional": "sawarou"
+        "tsumori": "sawarutsumoridesu"
+    - word: "ja-2320"
+      forms:
+        "volitional": "つながろう"
+        "tsumori": "つながるつもりです"
+      readings:
+        "volitional": "tsunagarou"
+        "tsumori": "tsunagarutsumoridesu"
+    - word: "ja-2321"
+      forms:
+        "volitional": "つなごう"
+        "tsumori": "つなぐつもりです"
+      readings:
+        "volitional": "tsunagou"
+        "tsumori": "tsunagutsumoridesu"
+    - word: "ja-2322"
+      forms:
+        "volitional": "かけよう"
+        "tsumori": "かけるつもりです"
+      readings:
+        "volitional": "kakeyou"
+        "tsumori": "kakerutsumoridesu"
+    - word: "ja-2323"
+      forms:
+        "volitional": "うけとろう"
+        "tsumori": "うけとるつもりです"
+      readings:
+        "volitional": "uketorou"
+        "tsumori": "uketorutsumoridesu"
+    - word: "ja-2364"
+      forms:
+        "volitional": "のりおくれよう"
+        "tsumori": "のりおくれるつもりです"
+      readings:
+        "volitional": "noriokureyou"
+        "tsumori": "noriokurerutsumoridesu"
+    - word: "ja-2365"
+      forms:
+        "volitional": "のりかえよう"
+        "tsumori": "のりかえるつもりです"
+      readings:
+        "volitional": "norikaeyou"
+        "tsumori": "norikaerutsumoridesu"
+    - word: "ja-2407"
+      forms:
+        "volitional": "たちよろう"
+        "tsumori": "たちよるつもりです"
+      readings:
+        "volitional": "tachiyorou"
+        "tsumori": "tachiyorutsumoridesu"
+    - word: "ja-2470"
+      forms:
+        "volitional": "さこう"
+        "tsumori": "さくつもりです"
+      readings:
+        "volitional": "sakou"
+        "tsumori": "sakutsumoridesu"
+    - word: "ja-2471"
+      forms:
+        "volitional": "ちろう"
+        "tsumori": "ちるつもりです"
+      readings:
+        "volitional": "chirou"
+        "tsumori": "chirutsumoridesu"
+    - word: "ja-2472"
+      forms:
+        "volitional": "しげよう"
+        "tsumori": "しげるつもりです"
+      readings:
+        "volitional": "shigeyou"
+        "tsumori": "shigerutsumoridesu"
+    - word: "ja-2473"
+      forms:
+        "volitional": "かれよう"
+        "tsumori": "かれるつもりです"
+      readings:
+        "volitional": "kareyou"
+        "tsumori": "karerutsumoridesu"
+    - word: "ja-2600"
+      forms:
+        "volitional": "まかせよう"
+        "tsumori": "まかせるつもりです"
+      readings:
+        "volitional": "makaseyou"
+        "tsumori": "makaserutsumoridesu"
+    - word: "ja-2601"
+      forms:
+        "volitional": "ひきうけよう"
+        "tsumori": "ひきうけるつもりです"
+      readings:
+        "volitional": "hikiukeyou"
+        "tsumori": "hikiukerutsumoridesu"
+    - word: "ja-2602"
+      forms:
+        "volitional": "こなそう"
+        "tsumori": "こなすつもりです"
+      readings:
+        "volitional": "konasou"
+        "tsumori": "konasutsumoridesu"
+    - word: "ja-2603"
+      forms:
+        "volitional": "はげもう"
+        "tsumori": "はげむつもりです"
+      readings:
+        "volitional": "hagemou"
+        "tsumori": "hagemutsumoridesu"
+    - word: "ja-2604"
+      forms:
+        "volitional": "てがけよう"
+        "tsumori": "てがけるつもりです"
+      readings:
+        "volitional": "tegakeyou"
+        "tsumori": "tegakerutsumoridesu"
+    - word: "ja-2605"
+      forms:
+        "volitional": "しめきろう"
+        "tsumori": "しめきるつもりです"
+      readings:
+        "volitional": "shimekirou"
+        "tsumori": "shimekirutsumoridesu"
+    - word: "ja-2606"
+      forms:
+        "volitional": "まにあわせよう"
+        "tsumori": "まにあわせるつもりです"
+      readings:
+        "volitional": "maniawaseyou"
+        "tsumori": "maniawaserutsumoridesu"
+    - word: "ja-2716"
+      forms:
+        "volitional": "かたよろう"
+        "tsumori": "かたよるつもりです"
+      readings:
+        "volitional": "katayorou"
+        "tsumori": "katayorutsumoridesu"
+    - word: "ja-2768"
+      forms:
+        "volitional": "おどろこう"
+        "tsumori": "おどろくつもりです"
+      readings:
+        "volitional": "odorokou"
+        "tsumori": "odorokutsumoridesu"
+    - word: "ja-2769"
+      forms:
+        "volitional": "よろこぼう"
+        "tsumori": "よろこぶつもりです"
+      readings:
+        "volitional": "yorokobou"
+        "tsumori": "yorokobutsumoridesu"
+    - word: "ja-2770"
+      forms:
+        "volitional": "かなしもう"
+        "tsumori": "かなしむつもりです"
+      readings:
+        "volitional": "kanashimou"
+        "tsumori": "kanashimutsumoridesu"
+    - word: "ja-2771"
+      forms:
+        "volitional": "なやもう"
+        "tsumori": "なやむつもりです"
+      readings:
+        "volitional": "nayamou"
+        "tsumori": "nayamutsumoridesu"
+    - word: "ja-2772"
+      forms:
+        "volitional": "あわてよう"
+        "tsumori": "あわてるつもりです"
+      readings:
+        "volitional": "awateyou"
+        "tsumori": "awaterutsumoridesu"
+    - word: "ja-2773"
+      forms:
+        "volitional": "あせろう"
+        "tsumori": "あせるつもりです"
+      readings:
+        "volitional": "aserou"
+        "tsumori": "aserutsumoridesu"
+    - word: "ja-2774"
+      forms:
+        "volitional": "おちつこう"
+        "tsumori": "おちつくつもりです"
+      readings:
+        "volitional": "ochitsukou"
+        "tsumori": "ochitsukutsumoridesu"
+    - word: "ja-2794"
+      forms:
+        "volitional": "きらおう"
+        "tsumori": "きらうつもりです"
+      readings:
+        "volitional": "kiraou"
+        "tsumori": "kirautsumoridesu"
+    - word: "ja-2795"
+      forms:
+        "volitional": "あいしよう"
+        "tsumori": "あいするつもりです"
+      readings:
+        "volitional": "aishiyou"
+        "tsumori": "aisurutsumoridesu"
+    - word: "ja-2796"
+      forms:
+        "volitional": "にくもう"
+        "tsumori": "にくむつもりです"
+      readings:
+        "volitional": "nikumou"
+        "tsumori": "nikumutsumoridesu"
+    - word: "ja-2797"
+      forms:
+        "volitional": "ねたもう"
+        "tsumori": "ねたむつもりです"
+      readings:
+        "volitional": "netamou"
+        "tsumori": "netamutsumoridesu"
+    - word: "ja-2798"
+      forms:
+        "volitional": "うらもう"
+        "tsumori": "うらむつもりです"
+      readings:
+        "volitional": "uramou"
+        "tsumori": "uramutsumoridesu"
+    - word: "ja-2799"
+      forms:
+        "volitional": "なつかしもう"
+        "tsumori": "なつかしむつもりです"
+      readings:
+        "volitional": "natsukashimou"
+        "tsumori": "natsukashimutsumoridesu"
+    - word: "ja-2800"
+      forms:
+        "volitional": "いやがろう"
+        "tsumori": "いやがるつもりです"
+      readings:
+        "volitional": "iyagarou"
+        "tsumori": "iyagarutsumoridesu"
+    - word: "ja-2801"
+      forms:
+        "volitional": "こらえよう"
+        "tsumori": "こらえるつもりです"
+      readings:
+        "volitional": "koraeyou"
+        "tsumori": "koraerutsumoridesu"
+    - word: "ja-2803"
+      forms:
+        "volitional": "はずかしがろう"
+        "tsumori": "はずかしがるつもりです"
+      readings:
+        "volitional": "hazukashigarou"
+        "tsumori": "hazukashigarutsumoridesu"
+    - word: "ja-2806"
+      forms:
+        "volitional": "かんじよう"
+        "tsumori": "かんじるつもりです"
+      readings:
+        "volitional": "kanjiyou"
+        "tsumori": "kanjirutsumoridesu"
+    - word: "ja-2812"
+      forms:
+        "volitional": "さびしがろう"
+        "tsumori": "さびしがるつもりです"
+      readings:
+        "volitional": "sabishigarou"
+        "tsumori": "sabishigarutsumoridesu"
+    - word: "ja-2876"
+      forms:
+        "volitional": "かたろう"
+        "tsumori": "かたるつもりです"
+      readings:
+        "volitional": "katarou"
+        "tsumori": "katarutsumoridesu"
+    - word: "ja-2877"
+      forms:
+        "volitional": "ひろまろう"
+        "tsumori": "ひろまるつもりです"
+      readings:
+        "volitional": "hiromarou"
+        "tsumori": "hiromarutsumoridesu"
+    - word: "ja-2925"
+      forms:
+        "volitional": "あずけよう"
+        "tsumori": "あずけるつもりです"
+      readings:
+        "volitional": "azukeyou"
+        "tsumori": "azukerutsumoridesu"
+    - word: "ja-2926"
+      forms:
+        "volitional": "あずかろう"
+        "tsumori": "あずかるつもりです"
+      readings:
+        "volitional": "azukarou"
+        "tsumori": "azukarutsumoridesu"
+    - word: "ja-2944"
+      forms:
+        "volitional": "めぐろう"
+        "tsumori": "めぐるつもりです"
+      readings:
+        "volitional": "megurou"
+        "tsumori": "megurutsumoridesu"
+    - word: "ja-2945"
+      forms:
+        "volitional": "おとずれよう"
+        "tsumori": "おとずれるつもりです"
+      readings:
+        "volitional": "otozureyou"
+        "tsumori": "otozurerutsumoridesu"
+    - word: "ja-2982"
+      forms:
+        "volitional": "もうしこもう"
+        "tsumori": "もうしこむつもりです"
+      readings:
+        "volitional": "moushikomou"
+        "tsumori": "moushikomutsumoridesu"
+    - word: "ja-3062"
+      forms:
+        "volitional": "とどけでよう"
+        "tsumori": "とどけでるつもりです"
+      readings:
+        "volitional": "todokedeyou"
+        "tsumori": "todokederutsumoridesu"
+    - word: "ja-3140"
+      forms:
+        "volitional": "つくりだそう"
+        "tsumori": "つくりだすつもりです"
+      readings:
+        "volitional": "tsukuridasou"
+        "tsumori": "tsukuridasutsumoridesu"
+    - word: "ja-3195"
+      forms:
+        "volitional": "めざそう"
+        "tsumori": "めざすつもりです"
+      readings:
+        "volitional": "mezasou"
+        "tsumori": "mezasutsumoridesu"
+    - word: "ja-3294"
+      forms:
+        "volitional": "きをつかおう"
+        "tsumori": "きをつかうつもりです"
+      readings:
+        "volitional": "kiotsukaou"
+        "tsumori": "kiotsukautsumoridesu"
+    - word: "ja-3309"
+      forms:
+        "volitional": "ゆずろう"
+        "tsumori": "ゆずるつもりです"
+      readings:
+        "volitional": "yuzurou"
+        "tsumori": "yuzurutsumoridesu"
+    - word: "ja-3310"
+      forms:
+        "volitional": "ゆずりあおう"
+        "tsumori": "ゆずりあうつもりです"
+      readings:
+        "volitional": "yuzuriaou"
+        "tsumori": "yuzuriautsumoridesu"
+    - word: "ja-3311"
+      forms:
+        "volitional": "ならぼう"
+        "tsumori": "ならぶつもりです"
+      readings:
+        "volitional": "narabou"
+        "tsumori": "narabutsumoridesu"
+    - word: "ja-3319"
+      forms:
+        "volitional": "もてなそう"
+        "tsumori": "もてなすつもりです"
+      readings:
+        "volitional": "motenasou"
+        "tsumori": "motenasutsumoridesu"
+    - word: "ja-3320"
+      forms:
+        "volitional": "まねこう"
+        "tsumori": "まねくつもりです"
+      readings:
+        "volitional": "manekou"
+        "tsumori": "manekutsumoridesu"
+    - word: "ja-3321"
+      forms:
+        "volitional": "つつしもう"
+        "tsumori": "つつしむつもりです"
+      readings:
+        "volitional": "tsutsushimou"
+        "tsumori": "tsutsushimutsumoridesu"
+    - word: "ja-3322"
+      forms:
+        "volitional": "いましめよう"
+        "tsumori": "いましめるつもりです"
+      readings:
+        "volitional": "imashimeyou"
+        "tsumori": "imashimerutsumoridesu"
+    - word: "ja-3383"
+      forms:
+        "volitional": "へらそう"
+        "tsumori": "へらすつもりです"
+      readings:
+        "volitional": "herasou"
+        "tsumori": "herasutsumoridesu"
+    - word: "ja-3384"
+      forms:
+        "volitional": "ふやそう"
+        "tsumori": "ふやすつもりです"
+      readings:
+        "volitional": "fuyasou"
+        "tsumori": "fuyasutsumoridesu"
+    - word: "ja-3385"
+      forms:
+        "volitional": "こわそう"
+        "tsumori": "こわすつもりです"
+      readings:
+        "volitional": "kowasou"
+        "tsumori": "kowasutsumoridesu"
+    - word: "ja-3386"
+      forms:
+        "volitional": "こわれよう"
+        "tsumori": "こわれるつもりです"
+      readings:
+        "volitional": "kowareyou"
+        "tsumori": "kowarerutsumoridesu"
+    - word: "ja-3389"
+      forms:
+        "volitional": "たもとう"
+        "tsumori": "たもつつもりです"
+      readings:
+        "volitional": "tamotou"
+        "tsumori": "tamotsutsumoridesu"
+    - word: "ja-3390"
+      forms:
+        "volitional": "さけよう"
+        "tsumori": "さけるつもりです"
+      readings:
+        "volitional": "sakeyou"
+        "tsumori": "sakerutsumoridesu"
+    - word: "ja-3434"
+      forms:
+        "volitional": "えんじよう"
+        "tsumori": "えんじるつもりです"
+      readings:
+        "volitional": "enjiyou"
+        "tsumori": "enjirutsumoridesu"
+    - word: "ja-3452"
+      forms:
+        "volitional": "なこう"
+        "tsumori": "なくつもりです"
+      readings:
+        "volitional": "nakou"
+        "tsumori": "nakutsumoridesu"
+    - word: "ja-3564"
+      forms:
+        "volitional": "たたかおう"
+        "tsumori": "たたかうつもりです"
+      readings:
+        "volitional": "tatakaou"
+        "tsumori": "tatakautsumoridesu"
+    - word: "ja-3568"
+      forms:
+        "volitional": "ほろびよう"
+        "tsumori": "ほろびるつもりです"
+      readings:
+        "volitional": "horobiyou"
+        "tsumori": "horobirutsumoridesu"
+    - word: "ja-3569"
+      forms:
+        "volitional": "ほろぼそう"
+        "tsumori": "ほろぼすつもりです"
+      readings:
+        "volitional": "horobosou"
+        "tsumori": "horobosutsumoridesu"
+    - word: "ja-3571"
+      forms:
+        "volitional": "さかえよう"
+        "tsumori": "さかえるつもりです"
+      readings:
+        "volitional": "sakaeyou"
+        "tsumori": "sakaerutsumoridesu"
+    - word: "ja-3611"
+      forms:
+        "volitional": "いのろう"
+        "tsumori": "いのるつもりです"
+      readings:
+        "volitional": "inorou"
+        "tsumori": "inorutsumoridesu"
+    - word: "ja-3612"
+      forms:
+        "volitional": "おがもう"
+        "tsumori": "おがむつもりです"
+      readings:
+        "volitional": "ogamou"
+        "tsumori": "ogamutsumoridesu"
+    - word: "ja-3690"
+      forms:
+        "volitional": "いわおう"
+        "tsumori": "いわうつもりです"
+      readings:
+        "volitional": "iwaou"
+        "tsumori": "iwautsumoridesu"
+    - word: "ja-3691"
+      forms:
+        "volitional": "にぎわおう"
+        "tsumori": "にぎわうつもりです"
+      readings:
+        "volitional": "nigiwaou"
+        "tsumori": "nigiwautsumoridesu"
+    - word: "ja-3779"
+      forms:
+        "volitional": "うちとけよう"
+        "tsumori": "うちとけるつもりです"
+      readings:
+        "volitional": "uchitokeyou"
+        "tsumori": "uchitokerutsumoridesu"
+    - word: "ja-3780"
+      forms:
+        "volitional": "しんじあおう"
+        "tsumori": "しんじあうつもりです"
+      readings:
+        "volitional": "shinjiaou"
+        "tsumori": "shinjiautsumoridesu"
+    - word: "ja-3781"
+      forms:
+        "volitional": "たよろう"
+        "tsumori": "たよるつもりです"
+      readings:
+        "volitional": "tayorou"
+        "tsumori": "tayorutsumoridesu"
+    - word: "ja-3782"
+      forms:
+        "volitional": "はげまそう"
+        "tsumori": "はげますつもりです"
+      readings:
+        "volitional": "hagemasou"
+        "tsumori": "hagemasutsumoridesu"
+    - word: "ja-3783"
+      forms:
+        "volitional": "なぐさめよう"
+        "tsumori": "なぐさめるつもりです"
+      readings:
+        "volitional": "nagusameyou"
+        "tsumori": "nagusamerutsumoridesu"
+    - word: "ja-3784"
+      forms:
+        "volitional": "かばおう"
+        "tsumori": "かばうつもりです"
+      readings:
+        "volitional": "kabaou"
+        "tsumori": "kabautsumoridesu"
+    - word: "ja-3785"
+      forms:
+        "volitional": "ささえよう"
+        "tsumori": "ささえるつもりです"
+      readings:
+        "volitional": "sasaeyou"
+        "tsumori": "sasaerutsumoridesu"
+    - word: "ja-3786"
+      forms:
+        "volitional": "たすけあおう"
+        "tsumori": "たすけあうつもりです"
+      readings:
+        "volitional": "tasukeaou"
+        "tsumori": "tasukeautsumoridesu"
+    - word: "ja-3790"
+      forms:
+        "volitional": "しりあおう"
+        "tsumori": "しりあうつもりです"
+      readings:
+        "volitional": "shiriaou"
+        "tsumori": "shiriautsumoridesu"
+    - word: "ja-3791"
+      forms:
+        "volitional": "であおう"
+        "tsumori": "であうつもりです"
+      readings:
+        "volitional": "deaou"
+        "tsumori": "deautsumoridesu"
+    - word: "ja-3833"
+      forms:
+        "volitional": "くらそう"
+        "tsumori": "くらすつもりです"
+      readings:
+        "volitional": "kurasou"
+        "tsumori": "kurasutsumoridesu"
+    - word: "ja-3857"
+      forms:
+        "volitional": "かそう"
+        "tsumori": "かすつもりです"
+      readings:
+        "volitional": "kasou"
+        "tsumori": "kasutsumoridesu"
+    - word: "ja-3887"
+      forms:
+        "volitional": "ゆれよう"
+        "tsumori": "ゆれるつもりです"
+      readings:
+        "volitional": "yureyou"
+        "tsumori": "yurerutsumoridesu"
+    - word: "ja-3898"
+      forms:
+        "volitional": "すくおう"
+        "tsumori": "すくうつもりです"
+      readings:
+        "volitional": "sukuou"
+        "tsumori": "sukuutsumoridesu"
+    - word: "ja-3914"
+      forms:
+        "volitional": "にげよう"
+        "tsumori": "にげるつもりです"
+      readings:
+        "volitional": "nigeyou"
+        "tsumori": "nigerutsumoridesu"
+    - word: "ja-3915"
+      forms:
+        "volitional": "にがそう"
+        "tsumori": "にがすつもりです"
+      readings:
+        "volitional": "nigasou"
+        "tsumori": "nigasutsumoridesu"
+    - word: "ja-3963"
+      forms:
+        "volitional": "きんじよう"
+        "tsumori": "きんじるつもりです"
+      readings:
+        "volitional": "kinjiyou"
+        "tsumori": "kinjirutsumoridesu"
+    - word: "ja-3965"
+      forms:
+        "volitional": "うったえよう"
+        "tsumori": "うったえるつもりです"
+      readings:
+        "volitional": "uttaeyou"
+        "tsumori": "uttaerutsumoridesu"
+    - word: "ja-4046"
+      forms:
+        "volitional": "おそおう"
+        "tsumori": "おそうつもりです"
+      readings:
+        "volitional": "osoou"
+        "tsumori": "osoutsumoridesu"
+    - word: "ja-4047"
+      forms:
+        "volitional": "おさえよう"
+        "tsumori": "おさえるつもりです"
+      readings:
+        "volitional": "osaeyou"
+        "tsumori": "osaerutsumoridesu"
+    - word: "ja-4048"
+      forms:
+        "volitional": "おさまろう"
+        "tsumori": "おさまるつもりです"
+      readings:
+        "volitional": "osamarou"
+        "tsumori": "osamarutsumoridesu"
+    - word: "ja-4049"
+      forms:
+        "volitional": "おさめよう"
+        "tsumori": "おさめるつもりです"
+      readings:
+        "volitional": "osameyou"
+        "tsumori": "osamerutsumoridesu"
+    - word: "ja-4050"
+      forms:
+        "volitional": "おぼれよう"
+        "tsumori": "おぼれるつもりです"
+      readings:
+        "volitional": "oboreyou"
+        "tsumori": "oborerutsumoridesu"
+    - word: "ja-4051"
+      forms:
+        "volitional": "おもいだそう"
+        "tsumori": "おもいだすつもりです"
+      readings:
+        "volitional": "omoidasou"
+        "tsumori": "omoidasutsumoridesu"
+    - word: "ja-4052"
+      forms:
+        "volitional": "おもいつこう"
+        "tsumori": "おもいつくつもりです"
+      readings:
+        "volitional": "omoitsukou"
+        "tsumori": "omoitsukutsumoridesu"
+    - word: "ja-4053"
+      forms:
+        "volitional": "かかえよう"
+        "tsumori": "かかえるつもりです"
+      readings:
+        "volitional": "kakaeyou"
+        "tsumori": "kakaerutsumoridesu"
+    - word: "ja-4054"
+      forms:
+        "volitional": "かさなろう"
+        "tsumori": "かさなるつもりです"
+      readings:
+        "volitional": "kasanarou"
+        "tsumori": "kasanarutsumoridesu"
+    - word: "ja-4055"
+      forms:
+        "volitional": "かさねよう"
+        "tsumori": "かさねるつもりです"
+      readings:
+        "volitional": "kasaneyou"
+        "tsumori": "kasanerutsumoridesu"
+    - word: "ja-4056"
+      forms:
+        "volitional": "かたむこう"
+        "tsumori": "かたむくつもりです"
+      readings:
+        "volitional": "katamukou"
+        "tsumori": "katamukutsumoridesu"
+    - word: "ja-4057"
+      forms:
+        "volitional": "かなおう"
+        "tsumori": "かなうつもりです"
+      readings:
+        "volitional": "kanaou"
+        "tsumori": "kanautsumoridesu"
+    - word: "ja-4058"
+      forms:
+        "volitional": "かぶせよう"
+        "tsumori": "かぶせるつもりです"
+      readings:
+        "volitional": "kabuseyou"
+        "tsumori": "kabuserutsumoridesu"
+    - word: "ja-4059"
+      forms:
+        "volitional": "きづこう"
+        "tsumori": "きづくつもりです"
+      readings:
+        "volitional": "kizukou"
+        "tsumori": "kizukutsumoridesu"
+    - word: "ja-4060"
+      forms:
+        "volitional": "くずれよう"
+        "tsumori": "くずれるつもりです"
+      readings:
+        "volitional": "kuzureyou"
+        "tsumori": "kuzurerutsumoridesu"
+    - word: "ja-4061"
+      forms:
+        "volitional": "くたびれよう"
+        "tsumori": "くたびれるつもりです"
+      readings:
+        "volitional": "kutabireyou"
+        "tsumori": "kutabirerutsumoridesu"
+    - word: "ja-4062"
+      forms:
+        "volitional": "くっつこう"
+        "tsumori": "くっつくつもりです"
+      readings:
+        "volitional": "kuttsukou"
+        "tsumori": "kuttsukutsumoridesu"
+    - word: "ja-4063"
+      forms:
+        "volitional": "くっつけよう"
+        "tsumori": "くっつけるつもりです"
+      readings:
+        "volitional": "kuttsukeyou"
+        "tsumori": "kuttsukerutsumoridesu"
+    - word: "ja-4064"
+      forms:
+        "volitional": "ころがろう"
+        "tsumori": "ころがるつもりです"
+      readings:
+        "volitional": "korogarou"
+        "tsumori": "korogarutsumoridesu"
+    - word: "ja-4065"
+      forms:
+        "volitional": "ころそう"
+        "tsumori": "ころすつもりです"
+      readings:
+        "volitional": "korosou"
+        "tsumori": "korosutsumoridesu"
+    - word: "ja-4066"
+      forms:
+        "volitional": "こめよう"
+        "tsumori": "こめるつもりです"
+      readings:
+        "volitional": "komeyou"
+        "tsumori": "komerutsumoridesu"
+    - word: "ja-4067"
+      forms:
+        "volitional": "さからおう"
+        "tsumori": "さからうつもりです"
+      readings:
+        "volitional": "sakaraou"
+        "tsumori": "sakarautsumoridesu"
+    - word: "ja-4068"
+      forms:
+        "volitional": "さそう"
+        "tsumori": "さすつもりです"
+      readings:
+        "volitional": "sasou"
+        "tsumori": "sasutsumoridesu"
+    - word: "ja-4069"
+      forms:
+        "volitional": "さびよう"
+        "tsumori": "さびるつもりです"
+      readings:
+        "volitional": "sabiyou"
+        "tsumori": "sabirutsumoridesu"
+    - word: "ja-4070"
+      forms:
+        "volitional": "しずもう"
+        "tsumori": "しずむつもりです"
+      readings:
+        "volitional": "shizumou"
+        "tsumori": "shizumutsumoridesu"
+    - word: "ja-4071"
+      forms:
+        "volitional": "しずめよう"
+        "tsumori": "しずめるつもりです"
+      readings:
+        "volitional": "shizumeyou"
+        "tsumori": "shizumerutsumoridesu"
+    - word: "ja-4072"
+      forms:
+        "volitional": "したがおう"
+        "tsumori": "したがうつもりです"
+      readings:
+        "volitional": "shitagaou"
+        "tsumori": "shitagautsumoridesu"
+    - word: "ja-4073"
+      forms:
+        "volitional": "しばろう"
+        "tsumori": "しばるつもりです"
+      readings:
+        "volitional": "shibarou"
+        "tsumori": "shibarutsumoridesu"
+    - word: "ja-4074"
+      forms:
+        "volitional": "しめそう"
+        "tsumori": "しめすつもりです"
+      readings:
+        "volitional": "shimesou"
+        "tsumori": "shimesutsumoridesu"
+    - word: "ja-4075"
+      forms:
+        "volitional": "すべろう"
+        "tsumori": "すべるつもりです"
+      readings:
+        "volitional": "suberou"
+        "tsumori": "suberutsumoridesu"
+    - word: "ja-4076"
+      forms:
+        "volitional": "すませよう"
+        "tsumori": "すませるつもりです"
+      readings:
+        "volitional": "sumaseyou"
+        "tsumori": "sumaserutsumoridesu"
+    - word: "ja-4077"
+      forms:
+        "volitional": "すもう"
+        "tsumori": "すむつもりです"
+      readings:
+        "volitional": "sumou"
+        "tsumori": "sumutsumoridesu"
+    - word: "ja-4078"
+      forms:
+        "volitional": "ずれよう"
+        "tsumori": "ずれるつもりです"
+      readings:
+        "volitional": "zureyou"
+        "tsumori": "zurerutsumoridesu"
+    - word: "ja-4079"
+      forms:
+        "volitional": "せまろう"
+        "tsumori": "せまるつもりです"
+      readings:
+        "volitional": "semarou"
+        "tsumori": "semarutsumoridesu"
+    - word: "ja-4080"
+      forms:
+        "volitional": "そなえよう"
+        "tsumori": "そなえるつもりです"
+      readings:
+        "volitional": "sonaeyou"
+        "tsumori": "sonaerutsumoridesu"
+    - word: "ja-4081"
+      forms:
+        "volitional": "そまろう"
+        "tsumori": "そまるつもりです"
+      readings:
+        "volitional": "somarou"
+        "tsumori": "somarutsumoridesu"
+    - word: "ja-4082"
+      forms:
+        "volitional": "そめよう"
+        "tsumori": "そめるつもりです"
+      readings:
+        "volitional": "someyou"
+        "tsumori": "somerutsumoridesu"
+    - word: "ja-4083"
+      forms:
+        "volitional": "たえよう"
+        "tsumori": "たえるつもりです"
+      readings:
+        "volitional": "taeyou"
+        "tsumori": "taerutsumoridesu"
+    - word: "ja-4084"
+      forms:
+        "volitional": "たしかめよう"
+        "tsumori": "たしかめるつもりです"
+      readings:
+        "volitional": "tashikameyou"
+        "tsumori": "tashikamerutsumoridesu"
+    - word: "ja-4085"
+      forms:
+        "volitional": "たまろう"
+        "tsumori": "たまるつもりです"
+      readings:
+        "volitional": "tamarou"
+        "tsumori": "tamarutsumoridesu"
+    - word: "ja-4086"
+      forms:
+        "volitional": "ためそう"
+        "tsumori": "ためすつもりです"
+      readings:
+        "volitional": "tamesou"
+        "tsumori": "tamesutsumoridesu"
+    - word: "ja-4087"
+      forms:
+        "volitional": "ちぢもう"
+        "tsumori": "ちぢむつもりです"
+      readings:
+        "volitional": "chijimou"
+        "tsumori": "chijimutsumoridesu"
+    - word: "ja-4088"
+      forms:
+        "volitional": "ちぢめよう"
+        "tsumori": "ちぢめるつもりです"
+      readings:
+        "volitional": "chijimeyou"
+        "tsumori": "chijimerutsumoridesu"
+    - word: "ja-4089"
+      forms:
+        "volitional": "つごう"
+        "tsumori": "つぐつもりです"
+      readings:
+        "volitional": "tsugou"
+        "tsumori": "tsugutsumoridesu"
+    - word: "ja-4090"
+      forms:
+        "volitional": "つづこう"
+        "tsumori": "つづくつもりです"
+      readings:
+        "volitional": "tsuzukou"
+        "tsumori": "tsuzukutsumoridesu"
+    - word: "ja-4091"
+      forms:
+        "volitional": "つぶそう"
+        "tsumori": "つぶすつもりです"
+      readings:
+        "volitional": "tsubusou"
+        "tsumori": "tsubusutsumoridesu"
+    - word: "ja-4092"
+      forms:
+        "volitional": "つぶれよう"
+        "tsumori": "つぶれるつもりです"
+      readings:
+        "volitional": "tsubureyou"
+        "tsumori": "tsuburerutsumoridesu"
+    - word: "ja-4093"
+      forms:
+        "volitional": "てらそう"
+        "tsumori": "てらすつもりです"
+      readings:
+        "volitional": "terasou"
+        "tsumori": "terasutsumoridesu"
+    - word: "ja-4094"
+      forms:
+        "volitional": "とおそう"
+        "tsumori": "とおすつもりです"
+      readings:
+        "volitional": "toosou"
+        "tsumori": "toosutsumoridesu"
+    - word: "ja-4095"
+      forms:
+        "volitional": "とかそう"
+        "tsumori": "とかすつもりです"
+      readings:
+        "volitional": "tokasou"
+        "tsumori": "tokasutsumoridesu"
+    - word: "ja-4096"
+      forms:
+        "volitional": "とけよう"
+        "tsumori": "とけるつもりです"
+      readings:
+        "volitional": "tokeyou"
+        "tsumori": "tokerutsumoridesu"
+    - word: "ja-4097"
+      forms:
+        "volitional": "ととのおう"
+        "tsumori": "ととのうつもりです"
+      readings:
+        "volitional": "totonoou"
+        "tsumori": "totonoutsumoridesu"
+    - word: "ja-4098"
+      forms:
+        "volitional": "ととのえよう"
+        "tsumori": "ととのえるつもりです"
+      readings:
+        "volitional": "totonoeyou"
+        "tsumori": "totonoerutsumoridesu"
+    - word: "ja-4099"
+      forms:
+        "volitional": "とびこもう"
+        "tsumori": "とびこむつもりです"
+      readings:
+        "volitional": "tobikomou"
+        "tsumori": "tobikomutsumoridesu"
+    - word: "ja-4100"
+      forms:
+        "volitional": "ともなおう"
+        "tsumori": "ともなうつもりです"
+      readings:
+        "volitional": "tomonaou"
+        "tsumori": "tomonautsumoridesu"
+    - word: "ja-4101"
+      forms:
+        "volitional": "とらえよう"
+        "tsumori": "とらえるつもりです"
+      readings:
+        "volitional": "toraeyou"
+        "tsumori": "toraerutsumoridesu"
+    - word: "ja-4102"
+      forms:
+        "volitional": "とりあげよう"
+        "tsumori": "とりあげるつもりです"
+      readings:
+        "volitional": "toriageyou"
+        "tsumori": "toriagerutsumoridesu"
+    - word: "ja-4103"
+      forms:
+        "volitional": "とりだそう"
+        "tsumori": "とりだすつもりです"
+      readings:
+        "volitional": "toridasou"
+        "tsumori": "toridasutsumoridesu"
+    - word: "ja-4104"
+      forms:
+        "volitional": "とりのぞこう"
+        "tsumori": "とりのぞくつもりです"
+      readings:
+        "volitional": "torinozokou"
+        "tsumori": "torinozokutsumoridesu"
+    - word: "ja-4105"
+      forms:
+        "volitional": "ながそう"
+        "tsumori": "ながすつもりです"
+      readings:
+        "volitional": "nagasou"
+        "tsumori": "nagasutsumoridesu"
+    - word: "ja-4185"
+      forms:
+        "volitional": "みとめよう"
+        "tsumori": "みとめるつもりです"
+      readings:
+        "volitional": "mitomeyou"
+        "tsumori": "mitomerutsumoridesu"
+    - word: "ja-4186"
+      forms:
+        "volitional": "うたがおう"
+        "tsumori": "うたがうつもりです"
+      readings:
+        "volitional": "utagaou"
+        "tsumori": "utagautsumoridesu"
+    - word: "ja-4187"
+      forms:
+        "volitional": "しんじよう"
+        "tsumori": "しんじるつもりです"
+      readings:
+        "volitional": "shinjiyou"
+        "tsumori": "shinjirutsumoridesu"
+    - word: "ja-4192"
+      forms:
+        "volitional": "ろんじよう"
+        "tsumori": "ろんじるつもりです"
+      readings:
+        "volitional": "ronjiyou"
+        "tsumori": "ronjirutsumoridesu"
+rules:
+  - id: "ja-rule-volitional"
+    slots: ["volitional"]
+    words:
+      - { word: "たべよう", reading: "tabeyou" }
+      - { word: "いこう", reading: "ikou" }
+      - { word: "しよう", reading: "shiyou" }
+      - { word: "こよう", reading: "koyou" }
+  - id: "ja-rule-tsumori"
+    slots: ["tsumori"]
+    words:
+      - { word: "つもりです", reading: "tsumori desu" }
+      - { word: "たべるつもりです", reading: "taberu tsumori desu" }

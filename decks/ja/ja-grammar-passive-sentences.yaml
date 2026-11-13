@@ -1,0 +1,94 @@
+schema: 1
+id: "ja-grammar-passive-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-4547"
+    target: "ほんがよまれます。"
+    words: ["ほん", "が", "よまれます"]
+    reading: "hon ga yomaremasu."
+    ipa: "hoɴ ɡa jomaɾemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ほん", ref: "ja-1180" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "よまれます", ref: "ja-0345" }
+    confusables:
+      - { id: "w1", ref: "ja-0346", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-passive"]
+  - id: "ja-4548"
+    target: "ここでごはんがたべられます。"
+    words: ["ここ", "で", "ごはん", "が", "たべられます"]
+    reading: "koko de gohan ga taberaremasu."
+    ipa: "koko de ɡohaɴ ɡa tabeɾaɾemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ここ", ref: "ja-0554" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "ごはん", ref: "ja-0074" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "たべられます", ref: "ja-0341" }
+    confusables:
+      - { id: "w1", ref: "ja-0342", kind: "word" }
+      - { id: "w2", ref: "ja-0364", kind: "word" }
+    rules: ["ja-rule-passive"]
+  - id: "ja-4549"
+    target: "えいががみられます。"
+    words: ["えいが", "が", "みられます"]
+    reading: "eiga ga miraremasu."
+    ipa: "eːɡa ɡa miɾaɾemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "えいが", ref: "ja-1358" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "みられます", ref: "ja-0343" }
+    confusables:
+      - { id: "w1", ref: "ja-0344", kind: "word" }
+      - { id: "w2", ref: "ja-0345", kind: "word" }
+    rules: ["ja-rule-passive"]
+  - id: "ja-4550"
+    target: "ドアがあけられます。"
+    words: ["ドア", "が", "あけられます"]
+    reading: "doa ga akeraremasu."
+    ipa: "doa ɡa akeɾaɾemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ドア", ref: "ja-0859" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "あけられます", ref: "ja-0372" }
+    confusables:
+      - { id: "w1", ref: "ja-0373", kind: "word" }
+      - { id: "w2", ref: "ja-1071", kind: "word" }
+    rules: ["ja-rule-passive"]
+  - id: "ja-4551"
+    target: "コーヒーがのまれます。"
+    words: ["コーヒー", "が", "のまれます"]
+    reading: "koohii ga nomaremasu."
+    ipa: "koːçiː ɡa nomaɾemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "コーヒー", ref: "ja-0849" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "のまれます", ref: "ja-0342" }
+    confusables:
+      - { id: "w1", ref: "ja-0341", kind: "word" }
+      - { id: "w2", ref: "ja-0364", kind: "word" }
+    rules: ["ja-rule-passive"]
+  - id: "ja-4552"
+    target: "てがみがかかれます。"
+    words: ["てがみ", "が", "かかれます"]
+    reading: "tegami ga kakaremasu."
+    ipa: "teɡami ɡa kakaɾemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "てがみ", ref: "ja-1356" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "かかれます", ref: "ja-0346" }
+    confusables:
+      - { id: "w1", ref: "ja-0345", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-passive"]

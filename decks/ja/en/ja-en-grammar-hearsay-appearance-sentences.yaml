@@ -1,0 +1,55 @@
+schema: 1
+id: "ja-en-grammar-hearsay-appearance-sentences"
+kind: "layer"
+core: "ja-grammar-hearsay-appearance-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Hearsay and appearance, in sentences"
+description: "Sentences that say what you hear, what looks so and what seems so, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-4553":
+    native: "I hear that my friend will come tomorrow."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+    confusables:
+      w1: { why: "いく (iku) means to go." }
+      w2: { why: "かえる (kaeru) means to return home; to go home." }
+  "ja-4554":
+    native: "My friend looks as if he will sleep."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+    confusables:
+      w1: { why: "おきる (okiru) means to get up; to wake up." }
+      w2: { why: "あそぶ (asobu) means to play." }
+  "ja-4555":
+    native: "It seems that my friend watches films."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "きく (kiku) means to listen; to hear; to ask." }
+      w2: { why: "よむ (yomu) means to read." }
+  "ja-4556":
+    native: "I gather that my father reads books."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "かく (kaku) means to write." }
+      w2: { why: "きく (kiku) means to listen; to hear; to ask." }
+  "ja-4557":
+    native: "I hear that my mother cooks."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "たべる (taberu) means to eat." }
+      w2: { why: "かう (kau) means to buy; to keep (an animal)." }
+  "ja-4558":
+    native: "My friend looks as if he will drink."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+    confusables:
+      w1: { why: "たべる (taberu) means to eat." }
+      w2: { why: "みる (miru) means to see; to look at; to watch." }

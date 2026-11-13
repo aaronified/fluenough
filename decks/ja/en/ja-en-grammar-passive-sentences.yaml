@@ -1,0 +1,53 @@
+schema: 1
+id: "ja-en-grammar-passive-sentences"
+kind: "layer"
+core: "ja-grammar-passive-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The passive, in sentences"
+description: "Sentences in the passive, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-4547":
+    native: "The book is read."
+    bases:
+      "が": { meaning: "(marks the one who does the action)" }
+    confusables:
+      w1: { why: "かく (kaku) means to write." }
+      w2: { why: "きく (kiku) means to listen; to hear; to ask." }
+  "ja-4548":
+    native: "Meals are eaten here."
+    bases:
+      "で": { meaning: "(at, in, by)" }
+      "が": { meaning: "(marks the one who does the action)" }
+    confusables:
+      w1: { why: "のむ (nomu) means to drink." }
+      w2: { why: "つくる (tsukuru) means to make; to create." }
+  "ja-4549":
+    native: "The film is watched."
+    bases:
+      "が": { meaning: "(marks the one who does the action)" }
+    confusables:
+      w1: { why: "きく (kiku) means to listen; to hear; to ask." }
+      w2: { why: "よむ (yomu) means to read." }
+  "ja-4550":
+    native: "The door is opened."
+    bases:
+      "が": { meaning: "(marks the one who does the action)" }
+    confusables:
+      w1: { why: "しめる (shimeru) means to shut; to lock." }
+      w2: { why: "でる (deru) means to go out; to leave." }
+  "ja-4551":
+    native: "Coffee is drunk."
+    bases:
+      "が": { meaning: "(marks the one who does the action)" }
+    confusables:
+      w1: { why: "たべる (taberu) means to eat." }
+      w2: { why: "つくる (tsukuru) means to make; to create." }
+  "ja-4552":
+    native: "A letter is written."
+    bases:
+      "が": { meaning: "(marks the one who does the action)" }
+    confusables:
+      w1: { why: "よむ (yomu) means to read." }
+      w2: { why: "きく (kiku) means to listen; to hear; to ask." }

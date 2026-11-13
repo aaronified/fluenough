@@ -1,0 +1,52 @@
+schema: 1
+id: "ja-en-grammar-intention-sentences"
+kind: "layer"
+core: "ja-grammar-intention-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Intention, in sentences"
+description: "Sentences with the volitional form and つもりです (tsumori desu), to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-4523":
+    native: "Let us go with my friend."
+    bases:
+      "と": { meaning: "(with; and)" }
+    confusables:
+      w1: { why: "くる (kuru) means to come." }
+      w2: { why: "かえる (kaeru) means to return home; to go home." }
+  "ja-4524":
+    native: "Let us wait here."
+    bases:
+      "で": { meaning: "(at, in, by)" }
+    confusables:
+      w1: { why: "あう (au) means to meet." }
+      w2: { why: "でる (deru) means to go out; to leave." }
+  "ja-4525":
+    native: "I plan to see a film tomorrow."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "きく (kiku) means to listen; to hear; to ask." }
+      w2: { why: "よむ (yomu) means to read." }
+  "ja-4526":
+    native: "I plan to meet my friend."
+    bases:
+      "に": { meaning: "(in, at, to)" }
+    confusables:
+      w1: { why: "まつ (matsu) means to wait." }
+      w2: { why: "いく (iku) means to go." }
+  "ja-4527":
+    native: "Let us eat."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "のむ (nomu) means to drink." }
+      w2: { why: "つくる (tsukuru) means to make; to create." }
+  "ja-4528":
+    native: "I plan to drink coffee."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "たべる (taberu) means to eat." }
+      w2: { why: "かう (kau) means to buy; to keep (an animal)." }

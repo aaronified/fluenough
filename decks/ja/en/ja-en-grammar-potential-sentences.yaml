@@ -1,0 +1,57 @@
+schema: 1
+id: "ja-en-grammar-potential-sentences"
+kind: "layer"
+core: "ja-grammar-potential-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The potential form, in sentences"
+description: "Sentences that say what can be done, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-4517":
+    native: "I can eat fish."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "のむ (nomu) means to drink." }
+      w2: { why: "つくる (tsukuru) means to make; to create." }
+  "ja-4518":
+    native: "My friend can watch the film."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "きく (kiku) means to listen; to hear; to ask." }
+      w2: { why: "よむ (yomu) means to read." }
+  "ja-4519":
+    native: "You can use the telephone here."
+    bases:
+      "で": { meaning: "(at, in, by)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "かう (kau) means to buy; to keep (an animal)." }
+      w2: { why: "つくる (tsukuru) means to make; to create." }
+  "ja-4520":
+    native: "My mother can read the book."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "かく (kaku) means to write." }
+      w2: { why: "きく (kiku) means to listen; to hear; to ask." }
+  "ja-4521":
+    native: "You can go by bus."
+    bases:
+      "で": { meaning: "(at, in, by)" }
+    confusables:
+      w1: { why: "くる (kuru) means to come." }
+      w2: { why: "かえる (kaeru) means to return home; to go home." }
+  "ja-4522":
+    native: "You can drink coffee here."
+    bases:
+      "で": { meaning: "(at, in, by)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "たべる (taberu) means to eat." }
+      w2: { why: "みる (miru) means to see; to look at; to watch." }

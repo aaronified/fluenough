@@ -1,0 +1,110 @@
+schema: 1
+id: "ja-grammar-nominalisers-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-4541"
+    target: "ほんをよむのはたのしいです。"
+    words: ["ほん", "を", "よむ", "の", "は", "たのしい", "です"]
+    reading: "hon o yomu no wa tanoshii desu."
+    ipa: "hoɴ o jomɯ no wa tanoɕiː desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ほん", ref: "ja-1180" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "よむ", ref: "ja-0345" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "たのしい", ref: "ja-0475" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", ref: "ja-0346", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-nominaliser-no"]
+  - id: "ja-4542"
+    target: "コーヒーをのむのがすきです。"
+    words: ["コーヒー", "を", "のむ", "の", "が", "すき", "です"]
+    reading: "koohii o nomu no ga suki desu."
+    ipa: "koːçiː o nomɯ no ɡa sɯki desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "コーヒー", ref: "ja-0849" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "のむ", ref: "ja-0342" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "すき", ref: "ja-0318" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", ref: "ja-0341", kind: "word" }
+      - { id: "w2", ref: "ja-0364", kind: "word" }
+    rules: ["ja-rule-nominaliser-no"]
+  - id: "ja-4543"
+    target: "えいがをみるのはたのしいです。"
+    words: ["えいが", "を", "みる", "の", "は", "たのしい", "です"]
+    reading: "eiga o miru no wa tanoshii desu."
+    ipa: "eːɡa o miɾɯ no wa tanoɕiː desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "えいが", ref: "ja-1358" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "みる", ref: "ja-0343" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "たのしい", ref: "ja-0475" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", ref: "ja-0344", kind: "word" }
+      - { id: "w2", ref: "ja-0345", kind: "word" }
+    rules: ["ja-rule-nominaliser-no"]
+  - id: "ja-4544"
+    target: "はなすことはむずかしいです。"
+    words: ["はなす", "こと", "は", "むずかしい", "です"]
+    reading: "hanasu koto wa muzukashii desu."
+    ipa: "hanasɯ koto wa mɯzɯkaɕiː desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "はなす", ref: "ja-0347" }
+      - { word: "こと", base: "こと", reading: "koto" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "むずかしい", ref: "ja-0473" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", ref: "ja-0344", kind: "word" }
+      - { id: "w2", ref: "ja-0346", kind: "word" }
+    rules: ["ja-rule-nominaliser-koto"]
+  - id: "ja-4545"
+    target: "かくことはむずかしいです。"
+    words: ["かく", "こと", "は", "むずかしい", "です"]
+    reading: "kaku koto wa muzukashii desu."
+    ipa: "kakɯ koto wa mɯzɯkaɕiː desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "かく", ref: "ja-0346" }
+      - { word: "こと", base: "こと", reading: "koto" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "むずかしい", ref: "ja-0473" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", ref: "ja-0345", kind: "word" }
+      - { id: "w2", ref: "ja-0347", kind: "word" }
+    rules: ["ja-rule-nominaliser-koto"]
+  - id: "ja-4546"
+    target: "たべるのがすきです。"
+    words: ["たべる", "の", "が", "すき", "です"]
+    reading: "taberu no ga suki desu."
+    ipa: "tabeɾɯ no ɡa sɯki desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "たべる", ref: "ja-0341" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "すき", ref: "ja-0318" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", ref: "ja-0342", kind: "word" }
+      - { id: "w2", ref: "ja-0364", kind: "word" }
+    rules: ["ja-rule-nominaliser-no"]

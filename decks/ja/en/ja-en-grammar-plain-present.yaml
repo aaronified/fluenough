@@ -1,0 +1,21 @@
+schema: 1
+id: "ja-en-grammar-plain-present"
+kind: "layer"
+core: "ja-grammar-plain-present"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The plain forms: the dictionary form and ない (nai)"
+description: "The plain forms are what friends use among themselves. The dictionary form is the plain present; ない (nai) makes it negative. An ichidan verb drops る (ru), a godan verb changes its last sound to the a-row, and する (suru) and くる (kuru) are irregular. Every verb a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "plain-present": "{meaning} (plain)"
+    "nai-form": "do not {meaning}"
+rules:
+  "ja-rule-plain-present":
+    name: "The plain form: the dictionary form"
+    explanation: "{1} and {2} are plain forms: the form the dictionary lists. Friends use it to say what they do; a polite speaker says たべます (tabemasu) in its place."
+  "ja-rule-nai-form":
+    name: "ない (nai): the plain negative"
+    explanation: "The plain negative ends in ない (nai). An ichidan verb drops る (ru): たべる (taberu) becomes {1}. A godan verb changes its last sound to the a-row: いく (iku) becomes {2}; a verb ending in う (u) takes わ (wa), as in あわない (awanai). する (suru) becomes {3} and くる (kuru) becomes {4}."

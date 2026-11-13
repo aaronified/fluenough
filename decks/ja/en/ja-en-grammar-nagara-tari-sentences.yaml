@@ -1,0 +1,57 @@
+schema: 1
+id: "ja-en-grammar-nagara-tari-sentences"
+kind: "layer"
+core: "ja-grammar-nagara-tari-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "While and and-so-on, in sentences"
+description: "Sentences with ながら (nagara) and たり (tari), to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-4571":
+    native: "I read a book while drinking coffee."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "ながら": { meaning: "while doing" }
+    confusables:
+      w1: { why: "たべる (taberu) means to eat." }
+      w2: { why: "みる (miru) means to see; to look at; to watch." }
+  "ja-4572":
+    native: "I eat while watching television."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "ながら": { meaning: "while doing" }
+    confusables:
+      w1: { why: "きく (kiku) means to listen; to hear; to ask." }
+      w2: { why: "よむ (yomu) means to read." }
+  "ja-4573":
+    native: "I work while listening to the radio."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "ながら": { meaning: "while doing" }
+    confusables:
+      w1: { why: "みる (miru) means to see; to look at; to watch." }
+      w2: { why: "のむ (nomu) means to drink." }
+  "ja-4574":
+    native: "In the morning I read a book, watch a film, and so on."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "かく (kaku) means to write." }
+      w2: { why: "きく (kiku) means to listen; to hear; to ask." }
+  "ja-4575":
+    native: "I talk with my friends, meet them, and so on."
+    bases:
+      "と": { meaning: "(with; and)" }
+    confusables:
+      w1: { why: "きく (kiku) means to listen; to hear; to ask." }
+      w2: { why: "いく (iku) means to go." }
+  "ja-4576":
+    native: "At noon I eat a meal, drink coffee, and so on."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "つくる (tsukuru) means to make; to create." }
+      w2: { why: "みる (miru) means to see; to look at; to watch." }

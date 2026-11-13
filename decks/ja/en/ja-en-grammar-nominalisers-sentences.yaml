@@ -1,0 +1,67 @@
+schema: 1
+id: "ja-en-grammar-nominalisers-sentences"
+kind: "layer"
+core: "ja-grammar-nominalisers-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verbs as nouns, in sentences"
+description: "Sentences in which a verb is the subject or the thing liked, with の (no) and こと (koto), to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-4541":
+    native: "Reading books is fun."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "の": { meaning: "(turns a verb into a noun)" }
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "かく (kaku) means to write." }
+      w2: { why: "きく (kiku) means to listen; to hear; to ask." }
+  "ja-4542":
+    native: "I like drinking coffee."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "の": { meaning: "(turns a verb into a noun)" }
+      "が": { meaning: "(marks the one who does the action)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "たべる (taberu) means to eat." }
+      w2: { why: "つくる (tsukuru) means to make; to create." }
+  "ja-4543":
+    native: "Watching films is fun."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "の": { meaning: "(turns a verb into a noun)" }
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "きく (kiku) means to listen; to hear; to ask." }
+      w2: { why: "よむ (yomu) means to read." }
+  "ja-4544":
+    native: "Speaking is difficult."
+    bases:
+      "こと": { meaning: "(turns a verb into a noun)" }
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "きく (kiku) means to listen; to hear; to ask." }
+      w2: { why: "かく (kaku) means to write." }
+  "ja-4545":
+    native: "Writing is difficult."
+    bases:
+      "こと": { meaning: "(turns a verb into a noun)" }
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "よむ (yomu) means to read." }
+      w2: { why: "はなす (hanasu) means to speak; to talk." }
+  "ja-4546":
+    native: "I like eating."
+    bases:
+      "の": { meaning: "(turns a verb into a noun)" }
+      "が": { meaning: "(marks the one who does the action)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "のむ (nomu) means to drink." }
+      w2: { why: "つくる (tsukuru) means to make; to create." }

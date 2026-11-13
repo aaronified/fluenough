@@ -1,0 +1,2656 @@
+schema: 1
+id: "ja-grammar-nominalisers"
+part: "core"
+kind: "rules"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ja-0085"]
+  slots: ["nominaliser-no", "nominaliser-koto"]
+  rows:
+    - word: "ja-1050"
+      forms:
+        "nominaliser-no": "まがるの"
+        "nominaliser-koto": "まがること"
+      readings:
+        "nominaliser-no": "magaruno"
+        "nominaliser-koto": "magarukoto"
+    - word: "ja-1060"
+      forms:
+        "nominaliser-no": "わたるの"
+        "nominaliser-koto": "わたること"
+      readings:
+        "nominaliser-no": "wataruno"
+        "nominaliser-koto": "watarukoto"
+    - word: "ja-1061"
+      forms:
+        "nominaliser-no": "すすむの"
+        "nominaliser-koto": "すすむこと"
+      readings:
+        "nominaliser-no": "susumuno"
+        "nominaliser-koto": "susumukoto"
+    - word: "ja-1062"
+      forms:
+        "nominaliser-no": "さがるの"
+        "nominaliser-koto": "さがること"
+      readings:
+        "nominaliser-no": "sagaruno"
+        "nominaliser-koto": "sagarukoto"
+    - word: "ja-1070"
+      forms:
+        "nominaliser-no": "まちがえるの"
+        "nominaliser-koto": "まちがえること"
+      readings:
+        "nominaliser-no": "machigaeruno"
+        "nominaliser-koto": "machigaerukoto"
+    - word: "ja-1071"
+      forms:
+        "nominaliser-no": "でるの"
+        "nominaliser-koto": "でること"
+      readings:
+        "nominaliser-no": "deruno"
+        "nominaliser-koto": "derukoto"
+    - word: "ja-1078"
+      forms:
+        "nominaliser-no": "むかうの"
+        "nominaliser-koto": "むかうこと"
+      readings:
+        "nominaliser-no": "mukauno"
+        "nominaliser-koto": "mukaukoto"
+    - word: "ja-0341"
+      forms:
+        "nominaliser-no": "たべるの"
+        "nominaliser-koto": "たべること"
+      readings:
+        "nominaliser-no": "taberuno"
+        "nominaliser-koto": "taberukoto"
+    - word: "ja-0342"
+      forms:
+        "nominaliser-no": "のむの"
+        "nominaliser-koto": "のむこと"
+      readings:
+        "nominaliser-no": "nomuno"
+        "nominaliser-koto": "nomukoto"
+    - word: "ja-0343"
+      forms:
+        "nominaliser-no": "みるの"
+        "nominaliser-koto": "みること"
+      readings:
+        "nominaliser-no": "miruno"
+        "nominaliser-koto": "mirukoto"
+    - word: "ja-0344"
+      forms:
+        "nominaliser-no": "きくの"
+        "nominaliser-koto": "きくこと"
+      readings:
+        "nominaliser-no": "kikuno"
+        "nominaliser-koto": "kikukoto"
+    - word: "ja-0345"
+      forms:
+        "nominaliser-no": "よむの"
+        "nominaliser-koto": "よむこと"
+      readings:
+        "nominaliser-no": "yomuno"
+        "nominaliser-koto": "yomukoto"
+    - word: "ja-0346"
+      forms:
+        "nominaliser-no": "かくの"
+        "nominaliser-koto": "かくこと"
+      readings:
+        "nominaliser-no": "kakuno"
+        "nominaliser-koto": "kakukoto"
+    - word: "ja-0347"
+      forms:
+        "nominaliser-no": "はなすの"
+        "nominaliser-koto": "はなすこと"
+      readings:
+        "nominaliser-no": "hanasuno"
+        "nominaliser-koto": "hanasukoto"
+    - word: "ja-0348"
+      forms:
+        "nominaliser-no": "いくの"
+        "nominaliser-koto": "いくこと"
+      readings:
+        "nominaliser-no": "ikuno"
+        "nominaliser-koto": "ikukoto"
+    - word: "ja-0349"
+      forms:
+        "nominaliser-no": "くるの"
+        "nominaliser-koto": "くること"
+      readings:
+        "nominaliser-no": "kuruno"
+        "nominaliser-koto": "kurukoto"
+    - word: "ja-0350"
+      forms:
+        "nominaliser-no": "かえるの"
+        "nominaliser-koto": "かえること"
+      readings:
+        "nominaliser-no": "kaeruno"
+        "nominaliser-koto": "kaerukoto"
+    - word: "ja-0351"
+      forms:
+        "nominaliser-no": "おきるの"
+        "nominaliser-koto": "おきること"
+      readings:
+        "nominaliser-no": "okiruno"
+        "nominaliser-koto": "okirukoto"
+    - word: "ja-0352"
+      forms:
+        "nominaliser-no": "ねるの"
+        "nominaliser-koto": "ねること"
+      readings:
+        "nominaliser-no": "neruno"
+        "nominaliser-koto": "nerukoto"
+    - word: "ja-0353"
+      forms:
+        "nominaliser-no": "はたらくの"
+        "nominaliser-koto": "はたらくこと"
+      readings:
+        "nominaliser-no": "hatarakuno"
+        "nominaliser-koto": "hatarakukoto"
+    - word: "ja-0354"
+      forms:
+        "nominaliser-no": "やすむの"
+        "nominaliser-koto": "やすむこと"
+      readings:
+        "nominaliser-no": "yasumuno"
+        "nominaliser-koto": "yasumukoto"
+    - word: "ja-0355"
+      forms:
+        "nominaliser-no": "はいるの"
+        "nominaliser-koto": "はいること"
+      readings:
+        "nominaliser-no": "hairuno"
+        "nominaliser-koto": "hairukoto"
+    - word: "ja-0356"
+      forms:
+        "nominaliser-no": "かうの"
+        "nominaliser-koto": "かうこと"
+      readings:
+        "nominaliser-no": "kauno"
+        "nominaliser-koto": "kaukoto"
+    - word: "ja-0357"
+      forms:
+        "nominaliser-no": "あうの"
+        "nominaliser-koto": "あうこと"
+      readings:
+        "nominaliser-no": "auno"
+        "nominaliser-koto": "aukoto"
+    - word: "ja-0358"
+      forms:
+        "nominaliser-no": "まつの"
+        "nominaliser-koto": "まつこと"
+      readings:
+        "nominaliser-no": "matsuno"
+        "nominaliser-koto": "matsukoto"
+    - word: "ja-0359"
+      forms:
+        "nominaliser-no": "もつの"
+        "nominaliser-koto": "もつこと"
+      readings:
+        "nominaliser-no": "motsuno"
+        "nominaliser-koto": "motsukoto"
+    - word: "ja-0360"
+      forms:
+        "nominaliser-no": "あるくの"
+        "nominaliser-koto": "あるくこと"
+      readings:
+        "nominaliser-no": "arukuno"
+        "nominaliser-koto": "arukukoto"
+    - word: "ja-0361"
+      forms:
+        "nominaliser-no": "のるの"
+        "nominaliser-koto": "のること"
+      readings:
+        "nominaliser-no": "noruno"
+        "nominaliser-koto": "norukoto"
+    - word: "ja-0362"
+      forms:
+        "nominaliser-no": "おりるの"
+        "nominaliser-koto": "おりること"
+      readings:
+        "nominaliser-no": "oriruno"
+        "nominaliser-koto": "orirukoto"
+    - word: "ja-0363"
+      forms:
+        "nominaliser-no": "あらうの"
+        "nominaliser-koto": "あらうこと"
+      readings:
+        "nominaliser-no": "arauno"
+        "nominaliser-koto": "araukoto"
+    - word: "ja-0364"
+      forms:
+        "nominaliser-no": "つくるの"
+        "nominaliser-koto": "つくること"
+      readings:
+        "nominaliser-no": "tsukuruno"
+        "nominaliser-koto": "tsukurukoto"
+    - word: "ja-0365"
+      forms:
+        "nominaliser-no": "わかるの"
+        "nominaliser-koto": "わかること"
+      readings:
+        "nominaliser-no": "wakaruno"
+        "nominaliser-koto": "wakarukoto"
+    - word: "ja-0366"
+      forms:
+        "nominaliser-no": "しるの"
+        "nominaliser-koto": "しること"
+      readings:
+        "nominaliser-no": "shiruno"
+        "nominaliser-koto": "shirukoto"
+    - word: "ja-0367"
+      forms:
+        "nominaliser-no": "ならうの"
+        "nominaliser-koto": "ならうこと"
+      readings:
+        "nominaliser-no": "narauno"
+        "nominaliser-koto": "naraukoto"
+    - word: "ja-0368"
+      forms:
+        "nominaliser-no": "おしえるの"
+        "nominaliser-koto": "おしえること"
+      readings:
+        "nominaliser-no": "oshieruno"
+        "nominaliser-koto": "oshierukoto"
+    - word: "ja-0369"
+      forms:
+        "nominaliser-no": "つかうの"
+        "nominaliser-koto": "つかうこと"
+      readings:
+        "nominaliser-no": "tsukauno"
+        "nominaliser-koto": "tsukaukoto"
+    - word: "ja-0370"
+      forms:
+        "nominaliser-no": "すわるの"
+        "nominaliser-koto": "すわること"
+      readings:
+        "nominaliser-no": "suwaruno"
+        "nominaliser-koto": "suwarukoto"
+    - word: "ja-0371"
+      forms:
+        "nominaliser-no": "たつの"
+        "nominaliser-koto": "たつこと"
+      readings:
+        "nominaliser-no": "tatsuno"
+        "nominaliser-koto": "tatsukoto"
+    - word: "ja-0372"
+      forms:
+        "nominaliser-no": "あけるの"
+        "nominaliser-koto": "あけること"
+      readings:
+        "nominaliser-no": "akeruno"
+        "nominaliser-koto": "akerukoto"
+    - word: "ja-0373"
+      forms:
+        "nominaliser-no": "しめるの"
+        "nominaliser-koto": "しめること"
+      readings:
+        "nominaliser-no": "shimeruno"
+        "nominaliser-koto": "shimerukoto"
+    - word: "ja-0374"
+      forms:
+        "nominaliser-no": "あそぶの"
+        "nominaliser-koto": "あそぶこと"
+      readings:
+        "nominaliser-no": "asobuno"
+        "nominaliser-koto": "asobukoto"
+    - word: "ja-0375"
+      forms:
+        "nominaliser-no": "するの"
+        "nominaliser-koto": "すること"
+      readings:
+        "nominaliser-no": "suruno"
+        "nominaliser-koto": "surukoto"
+    - word: "ja-0949"
+      forms:
+        "nominaliser-no": "かぞえるの"
+        "nominaliser-koto": "かぞえること"
+      readings:
+        "nominaliser-no": "kazoeruno"
+        "nominaliser-koto": "kazoerukoto"
+    - word: "ja-1226"
+      forms:
+        "nominaliser-no": "こまるの"
+        "nominaliser-koto": "こまること"
+      readings:
+        "nominaliser-no": "komaruno"
+        "nominaliser-koto": "komarukoto"
+    - word: "ja-1227"
+      forms:
+        "nominaliser-no": "よぶの"
+        "nominaliser-koto": "よぶこと"
+      readings:
+        "nominaliser-no": "yobuno"
+        "nominaliser-koto": "yobukoto"
+    - word: "ja-1228"
+      forms:
+        "nominaliser-no": "まようの"
+        "nominaliser-koto": "まようこと"
+      readings:
+        "nominaliser-no": "mayouno"
+        "nominaliser-koto": "mayoukoto"
+    - word: "ja-1236"
+      forms:
+        "nominaliser-no": "たすけるの"
+        "nominaliser-koto": "たすけること"
+      readings:
+        "nominaliser-no": "tasukeruno"
+        "nominaliser-koto": "tasukerukoto"
+    - word: "ja-1237"
+      forms:
+        "nominaliser-no": "たすかるの"
+        "nominaliser-koto": "たすかること"
+      readings:
+        "nominaliser-no": "tasukaruno"
+        "nominaliser-koto": "tasukarukoto"
+    - word: "ja-1240"
+      forms:
+        "nominaliser-no": "まもるの"
+        "nominaliser-koto": "まもること"
+      readings:
+        "nominaliser-no": "mamoruno"
+        "nominaliser-koto": "mamorukoto"
+    - word: "ja-0571"
+      forms:
+        "nominaliser-no": "あびるの"
+        "nominaliser-koto": "あびること"
+      readings:
+        "nominaliser-no": "abiruno"
+        "nominaliser-koto": "abirukoto"
+    - word: "ja-0572"
+      forms:
+        "nominaliser-no": "はしるの"
+        "nominaliser-koto": "はしること"
+      readings:
+        "nominaliser-no": "hashiruno"
+        "nominaliser-koto": "hashirukoto"
+    - word: "ja-0573"
+      forms:
+        "nominaliser-no": "とぶの"
+        "nominaliser-koto": "とぶこと"
+      readings:
+        "nominaliser-no": "tobuno"
+        "nominaliser-koto": "tobukoto"
+    - word: "ja-0574"
+      forms:
+        "nominaliser-no": "おどるの"
+        "nominaliser-koto": "おどること"
+      readings:
+        "nominaliser-no": "odoruno"
+        "nominaliser-koto": "odorukoto"
+    - word: "ja-0575"
+      forms:
+        "nominaliser-no": "うたうの"
+        "nominaliser-koto": "うたうこと"
+      readings:
+        "nominaliser-no": "utauno"
+        "nominaliser-koto": "utaukoto"
+    - word: "ja-0576"
+      forms:
+        "nominaliser-no": "かりるの"
+        "nominaliser-koto": "かりること"
+      readings:
+        "nominaliser-no": "kariruno"
+        "nominaliser-koto": "karirukoto"
+    - word: "ja-0577"
+      forms:
+        "nominaliser-no": "かえすの"
+        "nominaliser-koto": "かえすこと"
+      readings:
+        "nominaliser-no": "kaesuno"
+        "nominaliser-koto": "kaesukoto"
+    - word: "ja-0578"
+      forms:
+        "nominaliser-no": "わすれるの"
+        "nominaliser-koto": "わすれること"
+      readings:
+        "nominaliser-no": "wasureruno"
+        "nominaliser-koto": "wasurerukoto"
+    - word: "ja-0579"
+      forms:
+        "nominaliser-no": "おぼえるの"
+        "nominaliser-koto": "おぼえること"
+      readings:
+        "nominaliser-no": "oboeruno"
+        "nominaliser-koto": "oboerukoto"
+    - word: "ja-0580"
+      forms:
+        "nominaliser-no": "てつだうの"
+        "nominaliser-koto": "てつだうこと"
+      readings:
+        "nominaliser-no": "tetsudauno"
+        "nominaliser-koto": "tetsudaukoto"
+    - word: "ja-0581"
+      forms:
+        "nominaliser-no": "ひろうの"
+        "nominaliser-koto": "ひろうこと"
+      readings:
+        "nominaliser-no": "hirouno"
+        "nominaliser-koto": "hiroukoto"
+    - word: "ja-0582"
+      forms:
+        "nominaliser-no": "すてるの"
+        "nominaliser-koto": "すてること"
+      readings:
+        "nominaliser-no": "suteruno"
+        "nominaliser-koto": "suterukoto"
+    - word: "ja-0583"
+      forms:
+        "nominaliser-no": "なくすの"
+        "nominaliser-koto": "なくすこと"
+      readings:
+        "nominaliser-no": "nakusuno"
+        "nominaliser-koto": "nakusukoto"
+    - word: "ja-0584"
+      forms:
+        "nominaliser-no": "のぼるの"
+        "nominaliser-koto": "のぼること"
+      readings:
+        "nominaliser-no": "noboruno"
+        "nominaliser-koto": "noborukoto"
+    - word: "ja-0585"
+      forms:
+        "nominaliser-no": "そうじするの"
+        "nominaliser-koto": "そうじすること"
+      readings:
+        "nominaliser-no": "soujisuruno"
+        "nominaliser-koto": "soujisurukoto"
+    - word: "ja-0586"
+      forms:
+        "nominaliser-no": "りょうりするの"
+        "nominaliser-koto": "りょうりすること"
+      readings:
+        "nominaliser-no": "ryourisuruno"
+        "nominaliser-koto": "ryourisurukoto"
+    - word: "ja-0587"
+      forms:
+        "nominaliser-no": "でかけるの"
+        "nominaliser-koto": "でかけること"
+      readings:
+        "nominaliser-no": "dekakeruno"
+        "nominaliser-koto": "dekakerukoto"
+    - word: "ja-0588"
+      forms:
+        "nominaliser-no": "もどるの"
+        "nominaliser-koto": "もどること"
+      readings:
+        "nominaliser-no": "modoruno"
+        "nominaliser-koto": "modorukoto"
+    - word: "ja-0589"
+      forms:
+        "nominaliser-no": "とまるの"
+        "nominaliser-koto": "とまること"
+      readings:
+        "nominaliser-no": "tomaruno"
+        "nominaliser-koto": "tomarukoto"
+    - word: "ja-0590"
+      forms:
+        "nominaliser-no": "さがすの"
+        "nominaliser-koto": "さがすこと"
+      readings:
+        "nominaliser-no": "sagasuno"
+        "nominaliser-koto": "sagasukoto"
+    - word: "ja-0591"
+      forms:
+        "nominaliser-no": "みせるの"
+        "nominaliser-koto": "みせること"
+      readings:
+        "nominaliser-no": "miseruno"
+        "nominaliser-koto": "miserukoto"
+    - word: "ja-0592"
+      forms:
+        "nominaliser-no": "いれるの"
+        "nominaliser-koto": "いれること"
+      readings:
+        "nominaliser-no": "ireruno"
+        "nominaliser-koto": "irerukoto"
+    - word: "ja-0593"
+      forms:
+        "nominaliser-no": "わらうの"
+        "nominaliser-koto": "わらうこと"
+      readings:
+        "nominaliser-no": "warauno"
+        "nominaliser-koto": "waraukoto"
+    - word: "ja-0594"
+      forms:
+        "nominaliser-no": "おこるの"
+        "nominaliser-koto": "おこること"
+      readings:
+        "nominaliser-no": "okoruno"
+        "nominaliser-koto": "okorukoto"
+    - word: "ja-0595"
+      forms:
+        "nominaliser-no": "やめるの"
+        "nominaliser-koto": "やめること"
+      readings:
+        "nominaliser-no": "yameruno"
+        "nominaliser-koto": "yamerukoto"
+    - word: "ja-0596"
+      forms:
+        "nominaliser-no": "はじめるの"
+        "nominaliser-koto": "はじめること"
+      readings:
+        "nominaliser-no": "hajimeruno"
+        "nominaliser-koto": "hajimerukoto"
+    - word: "ja-0597"
+      forms:
+        "nominaliser-no": "ひっこすの"
+        "nominaliser-koto": "ひっこすこと"
+      readings:
+        "nominaliser-no": "hikkosuno"
+        "nominaliser-koto": "hikkosukoto"
+    - word: "ja-0598"
+      forms:
+        "nominaliser-no": "あげるの"
+        "nominaliser-koto": "あげること"
+      readings:
+        "nominaliser-no": "ageruno"
+        "nominaliser-koto": "agerukoto"
+    - word: "ja-0599"
+      forms:
+        "nominaliser-no": "もらうの"
+        "nominaliser-koto": "もらうこと"
+      readings:
+        "nominaliser-no": "morauno"
+        "nominaliser-koto": "moraukoto"
+    - word: "ja-0600"
+      forms:
+        "nominaliser-no": "さけぶの"
+        "nominaliser-koto": "さけぶこと"
+      readings:
+        "nominaliser-no": "sakebuno"
+        "nominaliser-koto": "sakebukoto"
+    - word: "ja-0516"
+      forms:
+        "nominaliser-no": "おわるの"
+        "nominaliser-koto": "おわること"
+      readings:
+        "nominaliser-no": "owaruno"
+        "nominaliser-koto": "owarukoto"
+    - word: "ja-0711"
+      forms:
+        "nominaliser-no": "つとめるの"
+        "nominaliser-koto": "つとめること"
+      readings:
+        "nominaliser-no": "tsutomeruno"
+        "nominaliser-koto": "tsutomerukoto"
+    - word: "ja-1334"
+      forms:
+        "nominaliser-no": "きがえるの"
+        "nominaliser-koto": "きがえること"
+      readings:
+        "nominaliser-no": "kigaeruno"
+        "nominaliser-koto": "kigaerukoto"
+    - word: "ja-1335"
+      forms:
+        "nominaliser-no": "はくの"
+        "nominaliser-koto": "はくこと"
+      readings:
+        "nominaliser-no": "hakuno"
+        "nominaliser-koto": "hakukoto"
+    - word: "ja-1336"
+      forms:
+        "nominaliser-no": "かぶるの"
+        "nominaliser-koto": "かぶること"
+      readings:
+        "nominaliser-no": "kaburuno"
+        "nominaliser-koto": "kaburukoto"
+    - word: "ja-1341"
+      forms:
+        "nominaliser-no": "つかれるの"
+        "nominaliser-koto": "つかれること"
+      readings:
+        "nominaliser-no": "tsukareruno"
+        "nominaliser-koto": "tsukarerukoto"
+    - word: "ja-1348"
+      forms:
+        "nominaliser-no": "だすの"
+        "nominaliser-koto": "だすこと"
+      readings:
+        "nominaliser-no": "dasuno"
+        "nominaliser-koto": "dasukoto"
+    - word: "ja-1349"
+      forms:
+        "nominaliser-no": "わかすの"
+        "nominaliser-koto": "わかすこと"
+      readings:
+        "nominaliser-no": "wakasuno"
+        "nominaliser-koto": "wakasukoto"
+    - word: "ja-1350"
+      forms:
+        "nominaliser-no": "ほすの"
+        "nominaliser-koto": "ほすこと"
+      readings:
+        "nominaliser-no": "hosuno"
+        "nominaliser-koto": "hosukoto"
+    - word: "ja-1351"
+      forms:
+        "nominaliser-no": "かたづけるの"
+        "nominaliser-koto": "かたづけること"
+      readings:
+        "nominaliser-no": "katazukeruno"
+        "nominaliser-koto": "katazukerukoto"
+    - word: "ja-1352"
+      forms:
+        "nominaliser-no": "たたむの"
+        "nominaliser-koto": "たたむこと"
+      readings:
+        "nominaliser-no": "tatamuno"
+        "nominaliser-koto": "tatamukoto"
+    - word: "ja-1353"
+      forms:
+        "nominaliser-no": "ぬぐの"
+        "nominaliser-koto": "ぬぐこと"
+      readings:
+        "nominaliser-no": "nuguno"
+        "nominaliser-koto": "nugukoto"
+    - word: "ja-1354"
+      forms:
+        "nominaliser-no": "まにあうの"
+        "nominaliser-koto": "まにあうこと"
+      readings:
+        "nominaliser-no": "maniauno"
+        "nominaliser-koto": "maniaukoto"
+    - word: "ja-1364"
+      forms:
+        "nominaliser-no": "かわくの"
+        "nominaliser-koto": "かわくこと"
+      readings:
+        "nominaliser-no": "kawakuno"
+        "nominaliser-koto": "kawakukoto"
+    - word: "ja-1368"
+      forms:
+        "nominaliser-no": "いそぐの"
+        "nominaliser-koto": "いそぐこと"
+      readings:
+        "nominaliser-no": "isoguno"
+        "nominaliser-koto": "isogukoto"
+    - word: "ja-1539"
+      forms:
+        "nominaliser-no": "にあうの"
+        "nominaliser-koto": "にあうこと"
+      readings:
+        "nominaliser-no": "niauno"
+        "nominaliser-koto": "niaukoto"
+    - word: "ja-1542"
+      forms:
+        "nominaliser-no": "きるの"
+        "nominaliser-koto": "きること"
+      readings:
+        "nominaliser-no": "kiruno"
+        "nominaliser-koto": "kirukoto"
+    - word: "ja-1718"
+      forms:
+        "nominaliser-no": "うるの"
+        "nominaliser-koto": "うること"
+      readings:
+        "nominaliser-no": "uruno"
+        "nominaliser-koto": "urukoto"
+    - word: "ja-1719"
+      forms:
+        "nominaliser-no": "はらうの"
+        "nominaliser-koto": "はらうこと"
+      readings:
+        "nominaliser-no": "harauno"
+        "nominaliser-koto": "haraukoto"
+    - word: "ja-1720"
+      forms:
+        "nominaliser-no": "まけるの"
+        "nominaliser-koto": "まけること"
+      readings:
+        "nominaliser-no": "makeruno"
+        "nominaliser-koto": "makerukoto"
+    - word: "ja-1721"
+      forms:
+        "nominaliser-no": "えらぶの"
+        "nominaliser-koto": "えらぶこと"
+      readings:
+        "nominaliser-no": "erabuno"
+        "nominaliser-koto": "erabukoto"
+    - word: "ja-1758"
+      forms:
+        "nominaliser-no": "たのむの"
+        "nominaliser-koto": "たのむこと"
+      readings:
+        "nominaliser-no": "tanomuno"
+        "nominaliser-koto": "tanomukoto"
+    - word: "ja-1759"
+      forms:
+        "nominaliser-no": "おごるの"
+        "nominaliser-koto": "おごること"
+      readings:
+        "nominaliser-no": "ogoruno"
+        "nominaliser-koto": "ogorukoto"
+    - word: "ja-1790"
+      forms:
+        "nominaliser-no": "いためるの"
+        "nominaliser-koto": "いためること"
+      readings:
+        "nominaliser-no": "itameruno"
+        "nominaliser-koto": "itamerukoto"
+    - word: "ja-1791"
+      forms:
+        "nominaliser-no": "まぜるの"
+        "nominaliser-koto": "まぜること"
+      readings:
+        "nominaliser-no": "mazeruno"
+        "nominaliser-koto": "mazerukoto"
+    - word: "ja-1792"
+      forms:
+        "nominaliser-no": "ゆでるの"
+        "nominaliser-koto": "ゆでること"
+      readings:
+        "nominaliser-no": "yuderuno"
+        "nominaliser-koto": "yuderukoto"
+    - word: "ja-1793"
+      forms:
+        "nominaliser-no": "にるの"
+        "nominaliser-koto": "にること"
+      readings:
+        "nominaliser-no": "niruno"
+        "nominaliser-koto": "nirukoto"
+    - word: "ja-1794"
+      forms:
+        "nominaliser-no": "やくの"
+        "nominaliser-koto": "やくこと"
+      readings:
+        "nominaliser-no": "yakuno"
+        "nominaliser-koto": "yakukoto"
+    - word: "ja-1799"
+      forms:
+        "nominaliser-no": "ひやすの"
+        "nominaliser-koto": "ひやすこと"
+      readings:
+        "nominaliser-no": "hiyasuno"
+        "nominaliser-koto": "hiyasukoto"
+    - word: "ja-1800"
+      forms:
+        "nominaliser-no": "あたためるの"
+        "nominaliser-koto": "あたためること"
+      readings:
+        "nominaliser-no": "atatameruno"
+        "nominaliser-koto": "atatamerukoto"
+    - word: "ja-1801"
+      forms:
+        "nominaliser-no": "きざむの"
+        "nominaliser-koto": "きざむこと"
+      readings:
+        "nominaliser-no": "kizamuno"
+        "nominaliser-koto": "kizamukoto"
+    - word: "ja-1802"
+      forms:
+        "nominaliser-no": "むくの"
+        "nominaliser-koto": "むくこと"
+      readings:
+        "nominaliser-no": "mukuno"
+        "nominaliser-koto": "mukukoto"
+    - word: "ja-1803"
+      forms:
+        "nominaliser-no": "つつむの"
+        "nominaliser-koto": "つつむこと"
+      readings:
+        "nominaliser-no": "tsutsumuno"
+        "nominaliser-koto": "tsutsumukoto"
+    - word: "ja-1804"
+      forms:
+        "nominaliser-no": "こげるの"
+        "nominaliser-koto": "こげること"
+      readings:
+        "nominaliser-no": "kogeruno"
+        "nominaliser-koto": "kogerukoto"
+    - word: "ja-1805"
+      forms:
+        "nominaliser-no": "さますの"
+        "nominaliser-koto": "さますこと"
+      readings:
+        "nominaliser-no": "samasuno"
+        "nominaliser-koto": "samasukoto"
+    - word: "ja-1850"
+      forms:
+        "nominaliser-no": "べんきょうするの"
+        "nominaliser-koto": "べんきょうすること"
+      readings:
+        "nominaliser-no": "benkyousuruno"
+        "nominaliser-koto": "benkyousurukoto"
+    - word: "ja-1861"
+      forms:
+        "nominaliser-no": "おくれるの"
+        "nominaliser-koto": "おくれること"
+      readings:
+        "nominaliser-no": "okureruno"
+        "nominaliser-koto": "okurerukoto"
+    - word: "ja-1862"
+      forms:
+        "nominaliser-no": "まなぶの"
+        "nominaliser-koto": "まなぶこと"
+      readings:
+        "nominaliser-no": "manabuno"
+        "nominaliser-koto": "manabukoto"
+    - word: "ja-1863"
+      forms:
+        "nominaliser-no": "つづけるの"
+        "nominaliser-koto": "つづけること"
+      readings:
+        "nominaliser-no": "tsuzukeruno"
+        "nominaliser-koto": "tsuzukerukoto"
+    - word: "ja-1864"
+      forms:
+        "nominaliser-no": "かんがえるの"
+        "nominaliser-koto": "かんがえること"
+      readings:
+        "nominaliser-no": "kangaeruno"
+        "nominaliser-koto": "kangaerukoto"
+    - word: "ja-1865"
+      forms:
+        "nominaliser-no": "こたえるの"
+        "nominaliser-koto": "こたえること"
+      readings:
+        "nominaliser-no": "kotaeruno"
+        "nominaliser-koto": "kotaerukoto"
+    - word: "ja-1892"
+      forms:
+        "nominaliser-no": "およぐの"
+        "nominaliser-koto": "およぐこと"
+      readings:
+        "nominaliser-no": "oyoguno"
+        "nominaliser-koto": "oyogukoto"
+    - word: "ja-1893"
+      forms:
+        "nominaliser-no": "とるの"
+        "nominaliser-koto": "とること"
+      readings:
+        "nominaliser-no": "toruno"
+        "nominaliser-koto": "torukoto"
+    - word: "ja-1896"
+      forms:
+        "nominaliser-no": "えがくの"
+        "nominaliser-koto": "えがくこと"
+      readings:
+        "nominaliser-no": "egakuno"
+        "nominaliser-koto": "egakukoto"
+    - word: "ja-1900"
+      forms:
+        "nominaliser-no": "ぬうの"
+        "nominaliser-koto": "ぬうこと"
+      readings:
+        "nominaliser-no": "nuuno"
+        "nominaliser-koto": "nuukoto"
+    - word: "ja-1901"
+      forms:
+        "nominaliser-no": "あむの"
+        "nominaliser-koto": "あむこと"
+      readings:
+        "nominaliser-no": "amuno"
+        "nominaliser-koto": "amukoto"
+    - word: "ja-1907"
+      forms:
+        "nominaliser-no": "ほめるの"
+        "nominaliser-koto": "ほめること"
+      readings:
+        "nominaliser-no": "homeruno"
+        "nominaliser-koto": "homerukoto"
+    - word: "ja-1910"
+      forms:
+        "nominaliser-no": "かつの"
+        "nominaliser-koto": "かつこと"
+      readings:
+        "nominaliser-no": "katsuno"
+        "nominaliser-koto": "katsukoto"
+    - word: "ja-1933"
+      forms:
+        "nominaliser-no": "かなでるの"
+        "nominaliser-koto": "かなでること"
+      readings:
+        "nominaliser-no": "kanaderuno"
+        "nominaliser-koto": "kanaderukoto"
+    - word: "ja-1934"
+      forms:
+        "nominaliser-no": "ならすの"
+        "nominaliser-koto": "ならすこと"
+      readings:
+        "nominaliser-no": "narasuno"
+        "nominaliser-koto": "narasukoto"
+    - word: "ja-1935"
+      forms:
+        "nominaliser-no": "ひびくの"
+        "nominaliser-koto": "ひびくこと"
+      readings:
+        "nominaliser-no": "hibikuno"
+        "nominaliser-koto": "hibikukoto"
+    - word: "ja-1939"
+      forms:
+        "nominaliser-no": "たたくの"
+        "nominaliser-koto": "たたくこと"
+      readings:
+        "nominaliser-no": "tatakuno"
+        "nominaliser-koto": "tatakukoto"
+    - word: "ja-1940"
+      forms:
+        "nominaliser-no": "きこえるの"
+        "nominaliser-koto": "きこえること"
+      readings:
+        "nominaliser-no": "kikoeruno"
+        "nominaliser-koto": "kikoerukoto"
+    - word: "ja-1941"
+      forms:
+        "nominaliser-no": "ひくの"
+        "nominaliser-koto": "ひくこと"
+      readings:
+        "nominaliser-no": "hikuno"
+        "nominaliser-koto": "hikukoto"
+    - word: "ja-1996"
+      forms:
+        "nominaliser-no": "なげるの"
+        "nominaliser-koto": "なげること"
+      readings:
+        "nominaliser-no": "nageruno"
+        "nominaliser-koto": "nagerukoto"
+    - word: "ja-1997"
+      forms:
+        "nominaliser-no": "うつの"
+        "nominaliser-koto": "うつこと"
+      readings:
+        "nominaliser-no": "utsuno"
+        "nominaliser-koto": "utsukoto"
+    - word: "ja-1998"
+      forms:
+        "nominaliser-no": "けるの"
+        "nominaliser-koto": "けること"
+      readings:
+        "nominaliser-no": "keruno"
+        "nominaliser-koto": "kerukoto"
+    - word: "ja-1999"
+      forms:
+        "nominaliser-no": "おいかけるの"
+        "nominaliser-koto": "おいかけること"
+      readings:
+        "nominaliser-no": "oikakeruno"
+        "nominaliser-koto": "oikakerukoto"
+    - word: "ja-2000"
+      forms:
+        "nominaliser-no": "あきらめるの"
+        "nominaliser-koto": "あきらめること"
+      readings:
+        "nominaliser-no": "akirameruno"
+        "nominaliser-koto": "akiramerukoto"
+    - word: "ja-2001"
+      forms:
+        "nominaliser-no": "きたえるの"
+        "nominaliser-koto": "きたえること"
+      readings:
+        "nominaliser-no": "kitaeruno"
+        "nominaliser-koto": "kitaerukoto"
+    - word: "ja-2002"
+      forms:
+        "nominaliser-no": "ねらうの"
+        "nominaliser-koto": "ねらうこと"
+      readings:
+        "nominaliser-no": "nerauno"
+        "nominaliser-koto": "neraukoto"
+    - word: "ja-2049"
+      forms:
+        "nominaliser-no": "うつるの"
+        "nominaliser-koto": "うつること"
+      readings:
+        "nominaliser-no": "utsuruno"
+        "nominaliser-koto": "utsurukoto"
+    - word: "ja-2050"
+      forms:
+        "nominaliser-no": "なおるの"
+        "nominaliser-koto": "なおること"
+      readings:
+        "nominaliser-no": "naoruno"
+        "nominaliser-koto": "naorukoto"
+    - word: "ja-2051"
+      forms:
+        "nominaliser-no": "なおすの"
+        "nominaliser-koto": "なおすこと"
+      readings:
+        "nominaliser-no": "naosuno"
+        "nominaliser-koto": "naosukoto"
+    - word: "ja-2052"
+      forms:
+        "nominaliser-no": "たおれるの"
+        "nominaliser-koto": "たおれること"
+      readings:
+        "nominaliser-no": "taoreruno"
+        "nominaliser-koto": "taorerukoto"
+    - word: "ja-2053"
+      forms:
+        "nominaliser-no": "はれるの"
+        "nominaliser-koto": "はれること"
+      readings:
+        "nominaliser-no": "hareruno"
+        "nominaliser-koto": "harerukoto"
+    - word: "ja-2054"
+      forms:
+        "nominaliser-no": "しびれるの"
+        "nominaliser-koto": "しびれること"
+      readings:
+        "nominaliser-no": "shibireruno"
+        "nominaliser-koto": "shibirerukoto"
+    - word: "ja-2115"
+      forms:
+        "nominaliser-no": "みがくの"
+        "nominaliser-koto": "みがくこと"
+      readings:
+        "nominaliser-no": "migakuno"
+        "nominaliser-koto": "migakukoto"
+    - word: "ja-2116"
+      forms:
+        "nominaliser-no": "こするの"
+        "nominaliser-koto": "こすること"
+      readings:
+        "nominaliser-no": "kosuruno"
+        "nominaliser-koto": "kosurukoto"
+    - word: "ja-2117"
+      forms:
+        "nominaliser-no": "すすぐの"
+        "nominaliser-koto": "すすぐこと"
+      readings:
+        "nominaliser-no": "susuguno"
+        "nominaliser-koto": "susugukoto"
+    - word: "ja-2118"
+      forms:
+        "nominaliser-no": "しぼるの"
+        "nominaliser-koto": "しぼること"
+      readings:
+        "nominaliser-no": "shiboruno"
+        "nominaliser-koto": "shiborukoto"
+    - word: "ja-2119"
+      forms:
+        "nominaliser-no": "かわかすの"
+        "nominaliser-koto": "かわかすこと"
+      readings:
+        "nominaliser-no": "kawakasuno"
+        "nominaliser-koto": "kawakasukoto"
+    - word: "ja-2120"
+      forms:
+        "nominaliser-no": "しまうの"
+        "nominaliser-koto": "しまうこと"
+      readings:
+        "nominaliser-no": "shimauno"
+        "nominaliser-koto": "shimaukoto"
+    - word: "ja-2121"
+      forms:
+        "nominaliser-no": "そろえるの"
+        "nominaliser-koto": "そろえること"
+      readings:
+        "nominaliser-no": "soroeruno"
+        "nominaliser-koto": "soroerukoto"
+    - word: "ja-2122"
+      forms:
+        "nominaliser-no": "かざるの"
+        "nominaliser-koto": "かざること"
+      readings:
+        "nominaliser-no": "kazaruno"
+        "nominaliser-koto": "kazarukoto"
+    - word: "ja-2123"
+      forms:
+        "nominaliser-no": "とりかえるの"
+        "nominaliser-koto": "とりかえること"
+      readings:
+        "nominaliser-no": "torikaeruno"
+        "nominaliser-koto": "torikaerukoto"
+    - word: "ja-2124"
+      forms:
+        "nominaliser-no": "つめるの"
+        "nominaliser-koto": "つめること"
+      readings:
+        "nominaliser-no": "tsumeruno"
+        "nominaliser-koto": "tsumerukoto"
+    - word: "ja-2125"
+      forms:
+        "nominaliser-no": "くばるの"
+        "nominaliser-koto": "くばること"
+      readings:
+        "nominaliser-no": "kubaruno"
+        "nominaliser-koto": "kubarukoto"
+    - word: "ja-2126"
+      forms:
+        "nominaliser-no": "こぼすの"
+        "nominaliser-koto": "こぼすこと"
+      readings:
+        "nominaliser-no": "kobosuno"
+        "nominaliser-koto": "kobosukoto"
+    - word: "ja-2127"
+      forms:
+        "nominaliser-no": "よごれるの"
+        "nominaliser-koto": "よごれること"
+      readings:
+        "nominaliser-no": "yogoreruno"
+        "nominaliser-koto": "yogorerukoto"
+    - word: "ja-2128"
+      forms:
+        "nominaliser-no": "よごすの"
+        "nominaliser-koto": "よごすこと"
+      readings:
+        "nominaliser-no": "yogosuno"
+        "nominaliser-koto": "yogosukoto"
+    - word: "ja-2129"
+      forms:
+        "nominaliser-no": "ちらかすの"
+        "nominaliser-koto": "ちらかすこと"
+      readings:
+        "nominaliser-no": "chirakasuno"
+        "nominaliser-koto": "chirakasukoto"
+    - word: "ja-2164"
+      forms:
+        "nominaliser-no": "やせるの"
+        "nominaliser-koto": "やせること"
+      readings:
+        "nominaliser-no": "yaseruno"
+        "nominaliser-koto": "yaserukoto"
+    - word: "ja-2165"
+      forms:
+        "nominaliser-no": "ふとるの"
+        "nominaliser-koto": "ふとること"
+      readings:
+        "nominaliser-no": "futoruno"
+        "nominaliser-koto": "futorukoto"
+    - word: "ja-2217"
+      forms:
+        "nominaliser-no": "かわるの"
+        "nominaliser-koto": "かわること"
+      readings:
+        "nominaliser-no": "kawaruno"
+        "nominaliser-koto": "kawarukoto"
+    - word: "ja-2218"
+      forms:
+        "nominaliser-no": "きまるの"
+        "nominaliser-koto": "きまること"
+      readings:
+        "nominaliser-no": "kimaruno"
+        "nominaliser-koto": "kimarukoto"
+    - word: "ja-2219"
+      forms:
+        "nominaliser-no": "きめるの"
+        "nominaliser-koto": "きめること"
+      readings:
+        "nominaliser-no": "kimeruno"
+        "nominaliser-koto": "kimerukoto"
+    - word: "ja-2220"
+      forms:
+        "nominaliser-no": "なるの"
+        "nominaliser-koto": "なること"
+      readings:
+        "nominaliser-no": "naruno"
+        "nominaliser-koto": "narukoto"
+    - word: "ja-2221"
+      forms:
+        "nominaliser-no": "なれるの"
+        "nominaliser-koto": "なれること"
+      readings:
+        "nominaliser-no": "nareruno"
+        "nominaliser-koto": "narerukoto"
+    - word: "ja-2222"
+      forms:
+        "nominaliser-no": "つくの"
+        "nominaliser-koto": "つくこと"
+      readings:
+        "nominaliser-no": "tsukuno"
+        "nominaliser-koto": "tsukukoto"
+    - word: "ja-2223"
+      forms:
+        "nominaliser-no": "つけるの"
+        "nominaliser-koto": "つけること"
+      readings:
+        "nominaliser-no": "tsukeruno"
+        "nominaliser-koto": "tsukerukoto"
+    - word: "ja-2224"
+      forms:
+        "nominaliser-no": "けすの"
+        "nominaliser-koto": "けすこと"
+      readings:
+        "nominaliser-no": "kesuno"
+        "nominaliser-koto": "kesukoto"
+    - word: "ja-2225"
+      forms:
+        "nominaliser-no": "きえるの"
+        "nominaliser-koto": "きえること"
+      readings:
+        "nominaliser-no": "kieruno"
+        "nominaliser-koto": "kierukoto"
+    - word: "ja-2226"
+      forms:
+        "nominaliser-no": "あくの"
+        "nominaliser-koto": "あくこと"
+      readings:
+        "nominaliser-no": "akuno"
+        "nominaliser-koto": "akukoto"
+    - word: "ja-2227"
+      forms:
+        "nominaliser-no": "しまるの"
+        "nominaliser-koto": "しまること"
+      readings:
+        "nominaliser-no": "shimaruno"
+        "nominaliser-koto": "shimarukoto"
+    - word: "ja-2228"
+      forms:
+        "nominaliser-no": "つかまえるの"
+        "nominaliser-koto": "つかまえること"
+      readings:
+        "nominaliser-no": "tsukamaeruno"
+        "nominaliser-koto": "tsukamaerukoto"
+    - word: "ja-2229"
+      forms:
+        "nominaliser-no": "つかむの"
+        "nominaliser-koto": "つかむこと"
+      readings:
+        "nominaliser-no": "tsukamuno"
+        "nominaliser-koto": "tsukamukoto"
+    - word: "ja-2230"
+      forms:
+        "nominaliser-no": "おすの"
+        "nominaliser-koto": "おすこと"
+      readings:
+        "nominaliser-no": "osuno"
+        "nominaliser-koto": "osukoto"
+    - word: "ja-2231"
+      forms:
+        "nominaliser-no": "ひっぱるの"
+        "nominaliser-koto": "ひっぱること"
+      readings:
+        "nominaliser-no": "hipparuno"
+        "nominaliser-koto": "hipparukoto"
+    - word: "ja-2232"
+      forms:
+        "nominaliser-no": "おとすの"
+        "nominaliser-koto": "おとすこと"
+      readings:
+        "nominaliser-no": "otosuno"
+        "nominaliser-koto": "otosukoto"
+    - word: "ja-2233"
+      forms:
+        "nominaliser-no": "おちるの"
+        "nominaliser-koto": "おちること"
+      readings:
+        "nominaliser-no": "ochiruno"
+        "nominaliser-koto": "ochirukoto"
+    - word: "ja-2234"
+      forms:
+        "nominaliser-no": "ひらくの"
+        "nominaliser-koto": "ひらくこと"
+      readings:
+        "nominaliser-no": "hirakuno"
+        "nominaliser-koto": "hirakukoto"
+    - word: "ja-2235"
+      forms:
+        "nominaliser-no": "とじるの"
+        "nominaliser-koto": "とじること"
+      readings:
+        "nominaliser-no": "tojiruno"
+        "nominaliser-koto": "tojirukoto"
+    - word: "ja-2236"
+      forms:
+        "nominaliser-no": "わたすの"
+        "nominaliser-koto": "わたすこと"
+      readings:
+        "nominaliser-no": "watasuno"
+        "nominaliser-koto": "watasukoto"
+    - word: "ja-2237"
+      forms:
+        "nominaliser-no": "うけるの"
+        "nominaliser-koto": "うけること"
+      readings:
+        "nominaliser-no": "ukeruno"
+        "nominaliser-koto": "ukerukoto"
+    - word: "ja-2238"
+      forms:
+        "nominaliser-no": "つたえるの"
+        "nominaliser-koto": "つたえること"
+      readings:
+        "nominaliser-no": "tsutaeruno"
+        "nominaliser-koto": "tsutaerukoto"
+    - word: "ja-2239"
+      forms:
+        "nominaliser-no": "つたわるの"
+        "nominaliser-koto": "つたわること"
+      readings:
+        "nominaliser-no": "tsutawaruno"
+        "nominaliser-koto": "tsutawarukoto"
+    - word: "ja-2240"
+      forms:
+        "nominaliser-no": "むかえるの"
+        "nominaliser-koto": "むかえること"
+      readings:
+        "nominaliser-no": "mukaeruno"
+        "nominaliser-koto": "mukaerukoto"
+    - word: "ja-2241"
+      forms:
+        "nominaliser-no": "おくるの"
+        "nominaliser-koto": "おくること"
+      readings:
+        "nominaliser-no": "okuruno"
+        "nominaliser-koto": "okurukoto"
+    - word: "ja-2242"
+      forms:
+        "nominaliser-no": "とどくの"
+        "nominaliser-koto": "とどくこと"
+      readings:
+        "nominaliser-no": "todokuno"
+        "nominaliser-koto": "todokukoto"
+    - word: "ja-2243"
+      forms:
+        "nominaliser-no": "とどけるの"
+        "nominaliser-koto": "とどけること"
+      readings:
+        "nominaliser-no": "todokeruno"
+        "nominaliser-koto": "todokerukoto"
+    - word: "ja-2244"
+      forms:
+        "nominaliser-no": "たずねるの"
+        "nominaliser-koto": "たずねること"
+      readings:
+        "nominaliser-no": "tazuneruno"
+        "nominaliser-koto": "tazunerukoto"
+    - word: "ja-2245"
+      forms:
+        "nominaliser-no": "まちがうの"
+        "nominaliser-koto": "まちがうこと"
+      readings:
+        "nominaliser-no": "machigauno"
+        "nominaliser-koto": "machigaukoto"
+    - word: "ja-2246"
+      forms:
+        "nominaliser-no": "あやまるの"
+        "nominaliser-koto": "あやまること"
+      readings:
+        "nominaliser-no": "ayamaruno"
+        "nominaliser-koto": "ayamarukoto"
+    - word: "ja-2247"
+      forms:
+        "nominaliser-no": "ゆるすの"
+        "nominaliser-koto": "ゆるすこと"
+      readings:
+        "nominaliser-no": "yurusuno"
+        "nominaliser-koto": "yurusukoto"
+    - word: "ja-2248"
+      forms:
+        "nominaliser-no": "ことわるの"
+        "nominaliser-koto": "ことわること"
+      readings:
+        "nominaliser-no": "kotowaruno"
+        "nominaliser-koto": "kotowarukoto"
+    - word: "ja-2249"
+      forms:
+        "nominaliser-no": "さそうの"
+        "nominaliser-koto": "さそうこと"
+      readings:
+        "nominaliser-no": "sasouno"
+        "nominaliser-koto": "sasoukoto"
+    - word: "ja-2250"
+      forms:
+        "nominaliser-no": "かようの"
+        "nominaliser-koto": "かようこと"
+      readings:
+        "nominaliser-no": "kayouno"
+        "nominaliser-koto": "kayoukoto"
+    - word: "ja-2251"
+      forms:
+        "nominaliser-no": "とおるの"
+        "nominaliser-koto": "とおること"
+      readings:
+        "nominaliser-no": "tooruno"
+        "nominaliser-koto": "toorukoto"
+    - word: "ja-2252"
+      forms:
+        "nominaliser-no": "すぎるの"
+        "nominaliser-koto": "すぎること"
+      readings:
+        "nominaliser-no": "sugiruno"
+        "nominaliser-koto": "sugirukoto"
+    - word: "ja-2253"
+      forms:
+        "nominaliser-no": "まわるの"
+        "nominaliser-koto": "まわること"
+      readings:
+        "nominaliser-no": "mawaruno"
+        "nominaliser-koto": "mawarukoto"
+    - word: "ja-2254"
+      forms:
+        "nominaliser-no": "まわすの"
+        "nominaliser-koto": "まわすこと"
+      readings:
+        "nominaliser-no": "mawasuno"
+        "nominaliser-koto": "mawasukoto"
+    - word: "ja-2255"
+      forms:
+        "nominaliser-no": "うごくの"
+        "nominaliser-koto": "うごくこと"
+      readings:
+        "nominaliser-no": "ugokuno"
+        "nominaliser-koto": "ugokukoto"
+    - word: "ja-2256"
+      forms:
+        "nominaliser-no": "うごかすの"
+        "nominaliser-koto": "うごかすこと"
+      readings:
+        "nominaliser-no": "ugokasuno"
+        "nominaliser-koto": "ugokasukoto"
+    - word: "ja-2257"
+      forms:
+        "nominaliser-no": "のこるの"
+        "nominaliser-koto": "のこること"
+      readings:
+        "nominaliser-no": "nokoruno"
+        "nominaliser-koto": "nokorukoto"
+    - word: "ja-2258"
+      forms:
+        "nominaliser-no": "のこすの"
+        "nominaliser-koto": "のこすこと"
+      readings:
+        "nominaliser-no": "nokosuno"
+        "nominaliser-koto": "nokosukoto"
+    - word: "ja-2259"
+      forms:
+        "nominaliser-no": "あつまるの"
+        "nominaliser-koto": "あつまること"
+      readings:
+        "nominaliser-no": "atsumaruno"
+        "nominaliser-koto": "atsumarukoto"
+    - word: "ja-2260"
+      forms:
+        "nominaliser-no": "あつめるの"
+        "nominaliser-koto": "あつめること"
+      readings:
+        "nominaliser-no": "atsumeruno"
+        "nominaliser-koto": "atsumerukoto"
+    - word: "ja-2261"
+      forms:
+        "nominaliser-no": "わけるの"
+        "nominaliser-koto": "わけること"
+      readings:
+        "nominaliser-no": "wakeruno"
+        "nominaliser-koto": "wakerukoto"
+    - word: "ja-2262"
+      forms:
+        "nominaliser-no": "くらべるの"
+        "nominaliser-koto": "くらべること"
+      readings:
+        "nominaliser-no": "kuraberuno"
+        "nominaliser-koto": "kuraberukoto"
+    - word: "ja-2263"
+      forms:
+        "nominaliser-no": "かくれるの"
+        "nominaliser-koto": "かくれること"
+      readings:
+        "nominaliser-no": "kakureruno"
+        "nominaliser-koto": "kakurerukoto"
+    - word: "ja-2264"
+      forms:
+        "nominaliser-no": "かくすの"
+        "nominaliser-koto": "かくすこと"
+      readings:
+        "nominaliser-no": "kakusuno"
+        "nominaliser-koto": "kakusukoto"
+    - word: "ja-2265"
+      forms:
+        "nominaliser-no": "みつかるの"
+        "nominaliser-koto": "みつかること"
+      readings:
+        "nominaliser-no": "mitsukaruno"
+        "nominaliser-koto": "mitsukarukoto"
+    - word: "ja-2266"
+      forms:
+        "nominaliser-no": "みつけるの"
+        "nominaliser-koto": "みつけること"
+      readings:
+        "nominaliser-no": "mitsukeruno"
+        "nominaliser-koto": "mitsukerukoto"
+    - word: "ja-2267"
+      forms:
+        "nominaliser-no": "ふえるの"
+        "nominaliser-koto": "ふえること"
+      readings:
+        "nominaliser-no": "fueruno"
+        "nominaliser-koto": "fuerukoto"
+    - word: "ja-2268"
+      forms:
+        "nominaliser-no": "へるの"
+        "nominaliser-koto": "へること"
+      readings:
+        "nominaliser-no": "heruno"
+        "nominaliser-koto": "herukoto"
+    - word: "ja-2269"
+      forms:
+        "nominaliser-no": "そだてるの"
+        "nominaliser-koto": "そだてること"
+      readings:
+        "nominaliser-no": "sodateruno"
+        "nominaliser-koto": "sodaterukoto"
+    - word: "ja-2270"
+      forms:
+        "nominaliser-no": "そだつの"
+        "nominaliser-koto": "そだつこと"
+      readings:
+        "nominaliser-no": "sodatsuno"
+        "nominaliser-koto": "sodatsukoto"
+    - word: "ja-2271"
+      forms:
+        "nominaliser-no": "うまれるの"
+        "nominaliser-koto": "うまれること"
+      readings:
+        "nominaliser-no": "umareruno"
+        "nominaliser-koto": "umarerukoto"
+    - word: "ja-2272"
+      forms:
+        "nominaliser-no": "いきるの"
+        "nominaliser-koto": "いきること"
+      readings:
+        "nominaliser-no": "ikiruno"
+        "nominaliser-koto": "ikirukoto"
+    - word: "ja-2273"
+      forms:
+        "nominaliser-no": "たのしむの"
+        "nominaliser-koto": "たのしむこと"
+      readings:
+        "nominaliser-no": "tanoshimuno"
+        "nominaliser-koto": "tanoshimukoto"
+    - word: "ja-2274"
+      forms:
+        "nominaliser-no": "あたるの"
+        "nominaliser-koto": "あたること"
+      readings:
+        "nominaliser-no": "ataruno"
+        "nominaliser-koto": "atarukoto"
+    - word: "ja-2275"
+      forms:
+        "nominaliser-no": "はじまるの"
+        "nominaliser-koto": "はじまること"
+      readings:
+        "nominaliser-no": "hajimaruno"
+        "nominaliser-koto": "hajimarukoto"
+    - word: "ja-2276"
+      forms:
+        "nominaliser-no": "さわるの"
+        "nominaliser-koto": "さわること"
+      readings:
+        "nominaliser-no": "sawaruno"
+        "nominaliser-koto": "sawarukoto"
+    - word: "ja-2320"
+      forms:
+        "nominaliser-no": "つながるの"
+        "nominaliser-koto": "つながること"
+      readings:
+        "nominaliser-no": "tsunagaruno"
+        "nominaliser-koto": "tsunagarukoto"
+    - word: "ja-2321"
+      forms:
+        "nominaliser-no": "つなぐの"
+        "nominaliser-koto": "つなぐこと"
+      readings:
+        "nominaliser-no": "tsunaguno"
+        "nominaliser-koto": "tsunagukoto"
+    - word: "ja-2322"
+      forms:
+        "nominaliser-no": "かけるの"
+        "nominaliser-koto": "かけること"
+      readings:
+        "nominaliser-no": "kakeruno"
+        "nominaliser-koto": "kakerukoto"
+    - word: "ja-2323"
+      forms:
+        "nominaliser-no": "うけとるの"
+        "nominaliser-koto": "うけとること"
+      readings:
+        "nominaliser-no": "uketoruno"
+        "nominaliser-koto": "uketorukoto"
+    - word: "ja-2364"
+      forms:
+        "nominaliser-no": "のりおくれるの"
+        "nominaliser-koto": "のりおくれること"
+      readings:
+        "nominaliser-no": "noriokureruno"
+        "nominaliser-koto": "noriokurerukoto"
+    - word: "ja-2365"
+      forms:
+        "nominaliser-no": "のりかえるの"
+        "nominaliser-koto": "のりかえること"
+      readings:
+        "nominaliser-no": "norikaeruno"
+        "nominaliser-koto": "norikaerukoto"
+    - word: "ja-2407"
+      forms:
+        "nominaliser-no": "たちよるの"
+        "nominaliser-koto": "たちよること"
+      readings:
+        "nominaliser-no": "tachiyoruno"
+        "nominaliser-koto": "tachiyorukoto"
+    - word: "ja-2470"
+      forms:
+        "nominaliser-no": "さくの"
+        "nominaliser-koto": "さくこと"
+      readings:
+        "nominaliser-no": "sakuno"
+        "nominaliser-koto": "sakukoto"
+    - word: "ja-2471"
+      forms:
+        "nominaliser-no": "ちるの"
+        "nominaliser-koto": "ちること"
+      readings:
+        "nominaliser-no": "chiruno"
+        "nominaliser-koto": "chirukoto"
+    - word: "ja-2472"
+      forms:
+        "nominaliser-no": "しげるの"
+        "nominaliser-koto": "しげること"
+      readings:
+        "nominaliser-no": "shigeruno"
+        "nominaliser-koto": "shigerukoto"
+    - word: "ja-2473"
+      forms:
+        "nominaliser-no": "かれるの"
+        "nominaliser-koto": "かれること"
+      readings:
+        "nominaliser-no": "kareruno"
+        "nominaliser-koto": "karerukoto"
+    - word: "ja-2600"
+      forms:
+        "nominaliser-no": "まかせるの"
+        "nominaliser-koto": "まかせること"
+      readings:
+        "nominaliser-no": "makaseruno"
+        "nominaliser-koto": "makaserukoto"
+    - word: "ja-2601"
+      forms:
+        "nominaliser-no": "ひきうけるの"
+        "nominaliser-koto": "ひきうけること"
+      readings:
+        "nominaliser-no": "hikiukeruno"
+        "nominaliser-koto": "hikiukerukoto"
+    - word: "ja-2602"
+      forms:
+        "nominaliser-no": "こなすの"
+        "nominaliser-koto": "こなすこと"
+      readings:
+        "nominaliser-no": "konasuno"
+        "nominaliser-koto": "konasukoto"
+    - word: "ja-2603"
+      forms:
+        "nominaliser-no": "はげむの"
+        "nominaliser-koto": "はげむこと"
+      readings:
+        "nominaliser-no": "hagemuno"
+        "nominaliser-koto": "hagemukoto"
+    - word: "ja-2604"
+      forms:
+        "nominaliser-no": "てがけるの"
+        "nominaliser-koto": "てがけること"
+      readings:
+        "nominaliser-no": "tegakeruno"
+        "nominaliser-koto": "tegakerukoto"
+    - word: "ja-2605"
+      forms:
+        "nominaliser-no": "しめきるの"
+        "nominaliser-koto": "しめきること"
+      readings:
+        "nominaliser-no": "shimekiruno"
+        "nominaliser-koto": "shimekirukoto"
+    - word: "ja-2606"
+      forms:
+        "nominaliser-no": "まにあわせるの"
+        "nominaliser-koto": "まにあわせること"
+      readings:
+        "nominaliser-no": "maniawaseruno"
+        "nominaliser-koto": "maniawaserukoto"
+    - word: "ja-2716"
+      forms:
+        "nominaliser-no": "かたよるの"
+        "nominaliser-koto": "かたよること"
+      readings:
+        "nominaliser-no": "katayoruno"
+        "nominaliser-koto": "katayorukoto"
+    - word: "ja-2768"
+      forms:
+        "nominaliser-no": "おどろくの"
+        "nominaliser-koto": "おどろくこと"
+      readings:
+        "nominaliser-no": "odorokuno"
+        "nominaliser-koto": "odorokukoto"
+    - word: "ja-2769"
+      forms:
+        "nominaliser-no": "よろこぶの"
+        "nominaliser-koto": "よろこぶこと"
+      readings:
+        "nominaliser-no": "yorokobuno"
+        "nominaliser-koto": "yorokobukoto"
+    - word: "ja-2770"
+      forms:
+        "nominaliser-no": "かなしむの"
+        "nominaliser-koto": "かなしむこと"
+      readings:
+        "nominaliser-no": "kanashimuno"
+        "nominaliser-koto": "kanashimukoto"
+    - word: "ja-2771"
+      forms:
+        "nominaliser-no": "なやむの"
+        "nominaliser-koto": "なやむこと"
+      readings:
+        "nominaliser-no": "nayamuno"
+        "nominaliser-koto": "nayamukoto"
+    - word: "ja-2772"
+      forms:
+        "nominaliser-no": "あわてるの"
+        "nominaliser-koto": "あわてること"
+      readings:
+        "nominaliser-no": "awateruno"
+        "nominaliser-koto": "awaterukoto"
+    - word: "ja-2773"
+      forms:
+        "nominaliser-no": "あせるの"
+        "nominaliser-koto": "あせること"
+      readings:
+        "nominaliser-no": "aseruno"
+        "nominaliser-koto": "aserukoto"
+    - word: "ja-2774"
+      forms:
+        "nominaliser-no": "おちつくの"
+        "nominaliser-koto": "おちつくこと"
+      readings:
+        "nominaliser-no": "ochitsukuno"
+        "nominaliser-koto": "ochitsukukoto"
+    - word: "ja-2794"
+      forms:
+        "nominaliser-no": "きらうの"
+        "nominaliser-koto": "きらうこと"
+      readings:
+        "nominaliser-no": "kirauno"
+        "nominaliser-koto": "kiraukoto"
+    - word: "ja-2795"
+      forms:
+        "nominaliser-no": "あいするの"
+        "nominaliser-koto": "あいすること"
+      readings:
+        "nominaliser-no": "aisuruno"
+        "nominaliser-koto": "aisurukoto"
+    - word: "ja-2796"
+      forms:
+        "nominaliser-no": "にくむの"
+        "nominaliser-koto": "にくむこと"
+      readings:
+        "nominaliser-no": "nikumuno"
+        "nominaliser-koto": "nikumukoto"
+    - word: "ja-2797"
+      forms:
+        "nominaliser-no": "ねたむの"
+        "nominaliser-koto": "ねたむこと"
+      readings:
+        "nominaliser-no": "netamuno"
+        "nominaliser-koto": "netamukoto"
+    - word: "ja-2798"
+      forms:
+        "nominaliser-no": "うらむの"
+        "nominaliser-koto": "うらむこと"
+      readings:
+        "nominaliser-no": "uramuno"
+        "nominaliser-koto": "uramukoto"
+    - word: "ja-2799"
+      forms:
+        "nominaliser-no": "なつかしむの"
+        "nominaliser-koto": "なつかしむこと"
+      readings:
+        "nominaliser-no": "natsukashimuno"
+        "nominaliser-koto": "natsukashimukoto"
+    - word: "ja-2800"
+      forms:
+        "nominaliser-no": "いやがるの"
+        "nominaliser-koto": "いやがること"
+      readings:
+        "nominaliser-no": "iyagaruno"
+        "nominaliser-koto": "iyagarukoto"
+    - word: "ja-2801"
+      forms:
+        "nominaliser-no": "こらえるの"
+        "nominaliser-koto": "こらえること"
+      readings:
+        "nominaliser-no": "koraeruno"
+        "nominaliser-koto": "koraerukoto"
+    - word: "ja-2803"
+      forms:
+        "nominaliser-no": "はずかしがるの"
+        "nominaliser-koto": "はずかしがること"
+      readings:
+        "nominaliser-no": "hazukashigaruno"
+        "nominaliser-koto": "hazukashigarukoto"
+    - word: "ja-2806"
+      forms:
+        "nominaliser-no": "かんじるの"
+        "nominaliser-koto": "かんじること"
+      readings:
+        "nominaliser-no": "kanjiruno"
+        "nominaliser-koto": "kanjirukoto"
+    - word: "ja-2812"
+      forms:
+        "nominaliser-no": "さびしがるの"
+        "nominaliser-koto": "さびしがること"
+      readings:
+        "nominaliser-no": "sabishigaruno"
+        "nominaliser-koto": "sabishigarukoto"
+    - word: "ja-2876"
+      forms:
+        "nominaliser-no": "かたるの"
+        "nominaliser-koto": "かたること"
+      readings:
+        "nominaliser-no": "kataruno"
+        "nominaliser-koto": "katarukoto"
+    - word: "ja-2877"
+      forms:
+        "nominaliser-no": "ひろまるの"
+        "nominaliser-koto": "ひろまること"
+      readings:
+        "nominaliser-no": "hiromaruno"
+        "nominaliser-koto": "hiromarukoto"
+    - word: "ja-2925"
+      forms:
+        "nominaliser-no": "あずけるの"
+        "nominaliser-koto": "あずけること"
+      readings:
+        "nominaliser-no": "azukeruno"
+        "nominaliser-koto": "azukerukoto"
+    - word: "ja-2926"
+      forms:
+        "nominaliser-no": "あずかるの"
+        "nominaliser-koto": "あずかること"
+      readings:
+        "nominaliser-no": "azukaruno"
+        "nominaliser-koto": "azukarukoto"
+    - word: "ja-2944"
+      forms:
+        "nominaliser-no": "めぐるの"
+        "nominaliser-koto": "めぐること"
+      readings:
+        "nominaliser-no": "meguruno"
+        "nominaliser-koto": "megurukoto"
+    - word: "ja-2945"
+      forms:
+        "nominaliser-no": "おとずれるの"
+        "nominaliser-koto": "おとずれること"
+      readings:
+        "nominaliser-no": "otozureruno"
+        "nominaliser-koto": "otozurerukoto"
+    - word: "ja-2982"
+      forms:
+        "nominaliser-no": "もうしこむの"
+        "nominaliser-koto": "もうしこむこと"
+      readings:
+        "nominaliser-no": "moushikomuno"
+        "nominaliser-koto": "moushikomukoto"
+    - word: "ja-3062"
+      forms:
+        "nominaliser-no": "とどけでるの"
+        "nominaliser-koto": "とどけでること"
+      readings:
+        "nominaliser-no": "todokederuno"
+        "nominaliser-koto": "todokederukoto"
+    - word: "ja-3140"
+      forms:
+        "nominaliser-no": "つくりだすの"
+        "nominaliser-koto": "つくりだすこと"
+      readings:
+        "nominaliser-no": "tsukuridasuno"
+        "nominaliser-koto": "tsukuridasukoto"
+    - word: "ja-3195"
+      forms:
+        "nominaliser-no": "めざすの"
+        "nominaliser-koto": "めざすこと"
+      readings:
+        "nominaliser-no": "mezasuno"
+        "nominaliser-koto": "mezasukoto"
+    - word: "ja-3294"
+      forms:
+        "nominaliser-no": "きをつかうの"
+        "nominaliser-koto": "きをつかうこと"
+      readings:
+        "nominaliser-no": "kiotsukauno"
+        "nominaliser-koto": "kiotsukaukoto"
+    - word: "ja-3309"
+      forms:
+        "nominaliser-no": "ゆずるの"
+        "nominaliser-koto": "ゆずること"
+      readings:
+        "nominaliser-no": "yuzuruno"
+        "nominaliser-koto": "yuzurukoto"
+    - word: "ja-3310"
+      forms:
+        "nominaliser-no": "ゆずりあうの"
+        "nominaliser-koto": "ゆずりあうこと"
+      readings:
+        "nominaliser-no": "yuzuriauno"
+        "nominaliser-koto": "yuzuriaukoto"
+    - word: "ja-3311"
+      forms:
+        "nominaliser-no": "ならぶの"
+        "nominaliser-koto": "ならぶこと"
+      readings:
+        "nominaliser-no": "narabuno"
+        "nominaliser-koto": "narabukoto"
+    - word: "ja-3319"
+      forms:
+        "nominaliser-no": "もてなすの"
+        "nominaliser-koto": "もてなすこと"
+      readings:
+        "nominaliser-no": "motenasuno"
+        "nominaliser-koto": "motenasukoto"
+    - word: "ja-3320"
+      forms:
+        "nominaliser-no": "まねくの"
+        "nominaliser-koto": "まねくこと"
+      readings:
+        "nominaliser-no": "manekuno"
+        "nominaliser-koto": "manekukoto"
+    - word: "ja-3321"
+      forms:
+        "nominaliser-no": "つつしむの"
+        "nominaliser-koto": "つつしむこと"
+      readings:
+        "nominaliser-no": "tsutsushimuno"
+        "nominaliser-koto": "tsutsushimukoto"
+    - word: "ja-3322"
+      forms:
+        "nominaliser-no": "いましめるの"
+        "nominaliser-koto": "いましめること"
+      readings:
+        "nominaliser-no": "imashimeruno"
+        "nominaliser-koto": "imashimerukoto"
+    - word: "ja-3383"
+      forms:
+        "nominaliser-no": "へらすの"
+        "nominaliser-koto": "へらすこと"
+      readings:
+        "nominaliser-no": "herasuno"
+        "nominaliser-koto": "herasukoto"
+    - word: "ja-3384"
+      forms:
+        "nominaliser-no": "ふやすの"
+        "nominaliser-koto": "ふやすこと"
+      readings:
+        "nominaliser-no": "fuyasuno"
+        "nominaliser-koto": "fuyasukoto"
+    - word: "ja-3385"
+      forms:
+        "nominaliser-no": "こわすの"
+        "nominaliser-koto": "こわすこと"
+      readings:
+        "nominaliser-no": "kowasuno"
+        "nominaliser-koto": "kowasukoto"
+    - word: "ja-3386"
+      forms:
+        "nominaliser-no": "こわれるの"
+        "nominaliser-koto": "こわれること"
+      readings:
+        "nominaliser-no": "kowareruno"
+        "nominaliser-koto": "kowarerukoto"
+    - word: "ja-3389"
+      forms:
+        "nominaliser-no": "たもつの"
+        "nominaliser-koto": "たもつこと"
+      readings:
+        "nominaliser-no": "tamotsuno"
+        "nominaliser-koto": "tamotsukoto"
+    - word: "ja-3390"
+      forms:
+        "nominaliser-no": "さけるの"
+        "nominaliser-koto": "さけること"
+      readings:
+        "nominaliser-no": "sakeruno"
+        "nominaliser-koto": "sakerukoto"
+    - word: "ja-3434"
+      forms:
+        "nominaliser-no": "えんじるの"
+        "nominaliser-koto": "えんじること"
+      readings:
+        "nominaliser-no": "enjiruno"
+        "nominaliser-koto": "enjirukoto"
+    - word: "ja-3452"
+      forms:
+        "nominaliser-no": "なくの"
+        "nominaliser-koto": "なくこと"
+      readings:
+        "nominaliser-no": "nakuno"
+        "nominaliser-koto": "nakukoto"
+    - word: "ja-3564"
+      forms:
+        "nominaliser-no": "たたかうの"
+        "nominaliser-koto": "たたかうこと"
+      readings:
+        "nominaliser-no": "tatakauno"
+        "nominaliser-koto": "tatakaukoto"
+    - word: "ja-3568"
+      forms:
+        "nominaliser-no": "ほろびるの"
+        "nominaliser-koto": "ほろびること"
+      readings:
+        "nominaliser-no": "horobiruno"
+        "nominaliser-koto": "horobirukoto"
+    - word: "ja-3569"
+      forms:
+        "nominaliser-no": "ほろぼすの"
+        "nominaliser-koto": "ほろぼすこと"
+      readings:
+        "nominaliser-no": "horobosuno"
+        "nominaliser-koto": "horobosukoto"
+    - word: "ja-3571"
+      forms:
+        "nominaliser-no": "さかえるの"
+        "nominaliser-koto": "さかえること"
+      readings:
+        "nominaliser-no": "sakaeruno"
+        "nominaliser-koto": "sakaerukoto"
+    - word: "ja-3611"
+      forms:
+        "nominaliser-no": "いのるの"
+        "nominaliser-koto": "いのること"
+      readings:
+        "nominaliser-no": "inoruno"
+        "nominaliser-koto": "inorukoto"
+    - word: "ja-3612"
+      forms:
+        "nominaliser-no": "おがむの"
+        "nominaliser-koto": "おがむこと"
+      readings:
+        "nominaliser-no": "ogamuno"
+        "nominaliser-koto": "ogamukoto"
+    - word: "ja-3690"
+      forms:
+        "nominaliser-no": "いわうの"
+        "nominaliser-koto": "いわうこと"
+      readings:
+        "nominaliser-no": "iwauno"
+        "nominaliser-koto": "iwaukoto"
+    - word: "ja-3691"
+      forms:
+        "nominaliser-no": "にぎわうの"
+        "nominaliser-koto": "にぎわうこと"
+      readings:
+        "nominaliser-no": "nigiwauno"
+        "nominaliser-koto": "nigiwaukoto"
+    - word: "ja-3779"
+      forms:
+        "nominaliser-no": "うちとけるの"
+        "nominaliser-koto": "うちとけること"
+      readings:
+        "nominaliser-no": "uchitokeruno"
+        "nominaliser-koto": "uchitokerukoto"
+    - word: "ja-3780"
+      forms:
+        "nominaliser-no": "しんじあうの"
+        "nominaliser-koto": "しんじあうこと"
+      readings:
+        "nominaliser-no": "shinjiauno"
+        "nominaliser-koto": "shinjiaukoto"
+    - word: "ja-3781"
+      forms:
+        "nominaliser-no": "たよるの"
+        "nominaliser-koto": "たよること"
+      readings:
+        "nominaliser-no": "tayoruno"
+        "nominaliser-koto": "tayorukoto"
+    - word: "ja-3782"
+      forms:
+        "nominaliser-no": "はげますの"
+        "nominaliser-koto": "はげますこと"
+      readings:
+        "nominaliser-no": "hagemasuno"
+        "nominaliser-koto": "hagemasukoto"
+    - word: "ja-3783"
+      forms:
+        "nominaliser-no": "なぐさめるの"
+        "nominaliser-koto": "なぐさめること"
+      readings:
+        "nominaliser-no": "nagusameruno"
+        "nominaliser-koto": "nagusamerukoto"
+    - word: "ja-3784"
+      forms:
+        "nominaliser-no": "かばうの"
+        "nominaliser-koto": "かばうこと"
+      readings:
+        "nominaliser-no": "kabauno"
+        "nominaliser-koto": "kabaukoto"
+    - word: "ja-3785"
+      forms:
+        "nominaliser-no": "ささえるの"
+        "nominaliser-koto": "ささえること"
+      readings:
+        "nominaliser-no": "sasaeruno"
+        "nominaliser-koto": "sasaerukoto"
+    - word: "ja-3786"
+      forms:
+        "nominaliser-no": "たすけあうの"
+        "nominaliser-koto": "たすけあうこと"
+      readings:
+        "nominaliser-no": "tasukeauno"
+        "nominaliser-koto": "tasukeaukoto"
+    - word: "ja-3790"
+      forms:
+        "nominaliser-no": "しりあうの"
+        "nominaliser-koto": "しりあうこと"
+      readings:
+        "nominaliser-no": "shiriauno"
+        "nominaliser-koto": "shiriaukoto"
+    - word: "ja-3791"
+      forms:
+        "nominaliser-no": "であうの"
+        "nominaliser-koto": "であうこと"
+      readings:
+        "nominaliser-no": "deauno"
+        "nominaliser-koto": "deaukoto"
+    - word: "ja-3833"
+      forms:
+        "nominaliser-no": "くらすの"
+        "nominaliser-koto": "くらすこと"
+      readings:
+        "nominaliser-no": "kurasuno"
+        "nominaliser-koto": "kurasukoto"
+    - word: "ja-3857"
+      forms:
+        "nominaliser-no": "かすの"
+        "nominaliser-koto": "かすこと"
+      readings:
+        "nominaliser-no": "kasuno"
+        "nominaliser-koto": "kasukoto"
+    - word: "ja-3887"
+      forms:
+        "nominaliser-no": "ゆれるの"
+        "nominaliser-koto": "ゆれること"
+      readings:
+        "nominaliser-no": "yureruno"
+        "nominaliser-koto": "yurerukoto"
+    - word: "ja-3898"
+      forms:
+        "nominaliser-no": "すくうの"
+        "nominaliser-koto": "すくうこと"
+      readings:
+        "nominaliser-no": "sukuuno"
+        "nominaliser-koto": "sukuukoto"
+    - word: "ja-3914"
+      forms:
+        "nominaliser-no": "にげるの"
+        "nominaliser-koto": "にげること"
+      readings:
+        "nominaliser-no": "nigeruno"
+        "nominaliser-koto": "nigerukoto"
+    - word: "ja-3915"
+      forms:
+        "nominaliser-no": "にがすの"
+        "nominaliser-koto": "にがすこと"
+      readings:
+        "nominaliser-no": "nigasuno"
+        "nominaliser-koto": "nigasukoto"
+    - word: "ja-3963"
+      forms:
+        "nominaliser-no": "きんじるの"
+        "nominaliser-koto": "きんじること"
+      readings:
+        "nominaliser-no": "kinjiruno"
+        "nominaliser-koto": "kinjirukoto"
+    - word: "ja-3965"
+      forms:
+        "nominaliser-no": "うったえるの"
+        "nominaliser-koto": "うったえること"
+      readings:
+        "nominaliser-no": "uttaeruno"
+        "nominaliser-koto": "uttaerukoto"
+    - word: "ja-4046"
+      forms:
+        "nominaliser-no": "おそうの"
+        "nominaliser-koto": "おそうこと"
+      readings:
+        "nominaliser-no": "osouno"
+        "nominaliser-koto": "osoukoto"
+    - word: "ja-4047"
+      forms:
+        "nominaliser-no": "おさえるの"
+        "nominaliser-koto": "おさえること"
+      readings:
+        "nominaliser-no": "osaeruno"
+        "nominaliser-koto": "osaerukoto"
+    - word: "ja-4048"
+      forms:
+        "nominaliser-no": "おさまるの"
+        "nominaliser-koto": "おさまること"
+      readings:
+        "nominaliser-no": "osamaruno"
+        "nominaliser-koto": "osamarukoto"
+    - word: "ja-4049"
+      forms:
+        "nominaliser-no": "おさめるの"
+        "nominaliser-koto": "おさめること"
+      readings:
+        "nominaliser-no": "osameruno"
+        "nominaliser-koto": "osamerukoto"
+    - word: "ja-4050"
+      forms:
+        "nominaliser-no": "おぼれるの"
+        "nominaliser-koto": "おぼれること"
+      readings:
+        "nominaliser-no": "oboreruno"
+        "nominaliser-koto": "oborerukoto"
+    - word: "ja-4051"
+      forms:
+        "nominaliser-no": "おもいだすの"
+        "nominaliser-koto": "おもいだすこと"
+      readings:
+        "nominaliser-no": "omoidasuno"
+        "nominaliser-koto": "omoidasukoto"
+    - word: "ja-4052"
+      forms:
+        "nominaliser-no": "おもいつくの"
+        "nominaliser-koto": "おもいつくこと"
+      readings:
+        "nominaliser-no": "omoitsukuno"
+        "nominaliser-koto": "omoitsukukoto"
+    - word: "ja-4053"
+      forms:
+        "nominaliser-no": "かかえるの"
+        "nominaliser-koto": "かかえること"
+      readings:
+        "nominaliser-no": "kakaeruno"
+        "nominaliser-koto": "kakaerukoto"
+    - word: "ja-4054"
+      forms:
+        "nominaliser-no": "かさなるの"
+        "nominaliser-koto": "かさなること"
+      readings:
+        "nominaliser-no": "kasanaruno"
+        "nominaliser-koto": "kasanarukoto"
+    - word: "ja-4055"
+      forms:
+        "nominaliser-no": "かさねるの"
+        "nominaliser-koto": "かさねること"
+      readings:
+        "nominaliser-no": "kasaneruno"
+        "nominaliser-koto": "kasanerukoto"
+    - word: "ja-4056"
+      forms:
+        "nominaliser-no": "かたむくの"
+        "nominaliser-koto": "かたむくこと"
+      readings:
+        "nominaliser-no": "katamukuno"
+        "nominaliser-koto": "katamukukoto"
+    - word: "ja-4057"
+      forms:
+        "nominaliser-no": "かなうの"
+        "nominaliser-koto": "かなうこと"
+      readings:
+        "nominaliser-no": "kanauno"
+        "nominaliser-koto": "kanaukoto"
+    - word: "ja-4058"
+      forms:
+        "nominaliser-no": "かぶせるの"
+        "nominaliser-koto": "かぶせること"
+      readings:
+        "nominaliser-no": "kabuseruno"
+        "nominaliser-koto": "kabuserukoto"
+    - word: "ja-4059"
+      forms:
+        "nominaliser-no": "きづくの"
+        "nominaliser-koto": "きづくこと"
+      readings:
+        "nominaliser-no": "kizukuno"
+        "nominaliser-koto": "kizukukoto"
+    - word: "ja-4060"
+      forms:
+        "nominaliser-no": "くずれるの"
+        "nominaliser-koto": "くずれること"
+      readings:
+        "nominaliser-no": "kuzureruno"
+        "nominaliser-koto": "kuzurerukoto"
+    - word: "ja-4061"
+      forms:
+        "nominaliser-no": "くたびれるの"
+        "nominaliser-koto": "くたびれること"
+      readings:
+        "nominaliser-no": "kutabireruno"
+        "nominaliser-koto": "kutabirerukoto"
+    - word: "ja-4062"
+      forms:
+        "nominaliser-no": "くっつくの"
+        "nominaliser-koto": "くっつくこと"
+      readings:
+        "nominaliser-no": "kuttsukuno"
+        "nominaliser-koto": "kuttsukukoto"
+    - word: "ja-4063"
+      forms:
+        "nominaliser-no": "くっつけるの"
+        "nominaliser-koto": "くっつけること"
+      readings:
+        "nominaliser-no": "kuttsukeruno"
+        "nominaliser-koto": "kuttsukerukoto"
+    - word: "ja-4064"
+      forms:
+        "nominaliser-no": "ころがるの"
+        "nominaliser-koto": "ころがること"
+      readings:
+        "nominaliser-no": "korogaruno"
+        "nominaliser-koto": "korogarukoto"
+    - word: "ja-4065"
+      forms:
+        "nominaliser-no": "ころすの"
+        "nominaliser-koto": "ころすこと"
+      readings:
+        "nominaliser-no": "korosuno"
+        "nominaliser-koto": "korosukoto"
+    - word: "ja-4066"
+      forms:
+        "nominaliser-no": "こめるの"
+        "nominaliser-koto": "こめること"
+      readings:
+        "nominaliser-no": "komeruno"
+        "nominaliser-koto": "komerukoto"
+    - word: "ja-4067"
+      forms:
+        "nominaliser-no": "さからうの"
+        "nominaliser-koto": "さからうこと"
+      readings:
+        "nominaliser-no": "sakarauno"
+        "nominaliser-koto": "sakaraukoto"
+    - word: "ja-4068"
+      forms:
+        "nominaliser-no": "さすの"
+        "nominaliser-koto": "さすこと"
+      readings:
+        "nominaliser-no": "sasuno"
+        "nominaliser-koto": "sasukoto"
+    - word: "ja-4069"
+      forms:
+        "nominaliser-no": "さびるの"
+        "nominaliser-koto": "さびること"
+      readings:
+        "nominaliser-no": "sabiruno"
+        "nominaliser-koto": "sabirukoto"
+    - word: "ja-4070"
+      forms:
+        "nominaliser-no": "しずむの"
+        "nominaliser-koto": "しずむこと"
+      readings:
+        "nominaliser-no": "shizumuno"
+        "nominaliser-koto": "shizumukoto"
+    - word: "ja-4071"
+      forms:
+        "nominaliser-no": "しずめるの"
+        "nominaliser-koto": "しずめること"
+      readings:
+        "nominaliser-no": "shizumeruno"
+        "nominaliser-koto": "shizumerukoto"
+    - word: "ja-4072"
+      forms:
+        "nominaliser-no": "したがうの"
+        "nominaliser-koto": "したがうこと"
+      readings:
+        "nominaliser-no": "shitagauno"
+        "nominaliser-koto": "shitagaukoto"
+    - word: "ja-4073"
+      forms:
+        "nominaliser-no": "しばるの"
+        "nominaliser-koto": "しばること"
+      readings:
+        "nominaliser-no": "shibaruno"
+        "nominaliser-koto": "shibarukoto"
+    - word: "ja-4074"
+      forms:
+        "nominaliser-no": "しめすの"
+        "nominaliser-koto": "しめすこと"
+      readings:
+        "nominaliser-no": "shimesuno"
+        "nominaliser-koto": "shimesukoto"
+    - word: "ja-4075"
+      forms:
+        "nominaliser-no": "すべるの"
+        "nominaliser-koto": "すべること"
+      readings:
+        "nominaliser-no": "suberuno"
+        "nominaliser-koto": "suberukoto"
+    - word: "ja-4076"
+      forms:
+        "nominaliser-no": "すませるの"
+        "nominaliser-koto": "すませること"
+      readings:
+        "nominaliser-no": "sumaseruno"
+        "nominaliser-koto": "sumaserukoto"
+    - word: "ja-4077"
+      forms:
+        "nominaliser-no": "すむの"
+        "nominaliser-koto": "すむこと"
+      readings:
+        "nominaliser-no": "sumuno"
+        "nominaliser-koto": "sumukoto"
+    - word: "ja-4078"
+      forms:
+        "nominaliser-no": "ずれるの"
+        "nominaliser-koto": "ずれること"
+      readings:
+        "nominaliser-no": "zureruno"
+        "nominaliser-koto": "zurerukoto"
+    - word: "ja-4079"
+      forms:
+        "nominaliser-no": "せまるの"
+        "nominaliser-koto": "せまること"
+      readings:
+        "nominaliser-no": "semaruno"
+        "nominaliser-koto": "semarukoto"
+    - word: "ja-4080"
+      forms:
+        "nominaliser-no": "そなえるの"
+        "nominaliser-koto": "そなえること"
+      readings:
+        "nominaliser-no": "sonaeruno"
+        "nominaliser-koto": "sonaerukoto"
+    - word: "ja-4081"
+      forms:
+        "nominaliser-no": "そまるの"
+        "nominaliser-koto": "そまること"
+      readings:
+        "nominaliser-no": "somaruno"
+        "nominaliser-koto": "somarukoto"
+    - word: "ja-4082"
+      forms:
+        "nominaliser-no": "そめるの"
+        "nominaliser-koto": "そめること"
+      readings:
+        "nominaliser-no": "someruno"
+        "nominaliser-koto": "somerukoto"
+    - word: "ja-4083"
+      forms:
+        "nominaliser-no": "たえるの"
+        "nominaliser-koto": "たえること"
+      readings:
+        "nominaliser-no": "taeruno"
+        "nominaliser-koto": "taerukoto"
+    - word: "ja-4084"
+      forms:
+        "nominaliser-no": "たしかめるの"
+        "nominaliser-koto": "たしかめること"
+      readings:
+        "nominaliser-no": "tashikameruno"
+        "nominaliser-koto": "tashikamerukoto"
+    - word: "ja-4085"
+      forms:
+        "nominaliser-no": "たまるの"
+        "nominaliser-koto": "たまること"
+      readings:
+        "nominaliser-no": "tamaruno"
+        "nominaliser-koto": "tamarukoto"
+    - word: "ja-4086"
+      forms:
+        "nominaliser-no": "ためすの"
+        "nominaliser-koto": "ためすこと"
+      readings:
+        "nominaliser-no": "tamesuno"
+        "nominaliser-koto": "tamesukoto"
+    - word: "ja-4087"
+      forms:
+        "nominaliser-no": "ちぢむの"
+        "nominaliser-koto": "ちぢむこと"
+      readings:
+        "nominaliser-no": "chijimuno"
+        "nominaliser-koto": "chijimukoto"
+    - word: "ja-4088"
+      forms:
+        "nominaliser-no": "ちぢめるの"
+        "nominaliser-koto": "ちぢめること"
+      readings:
+        "nominaliser-no": "chijimeruno"
+        "nominaliser-koto": "chijimerukoto"
+    - word: "ja-4089"
+      forms:
+        "nominaliser-no": "つぐの"
+        "nominaliser-koto": "つぐこと"
+      readings:
+        "nominaliser-no": "tsuguno"
+        "nominaliser-koto": "tsugukoto"
+    - word: "ja-4090"
+      forms:
+        "nominaliser-no": "つづくの"
+        "nominaliser-koto": "つづくこと"
+      readings:
+        "nominaliser-no": "tsuzukuno"
+        "nominaliser-koto": "tsuzukukoto"
+    - word: "ja-4091"
+      forms:
+        "nominaliser-no": "つぶすの"
+        "nominaliser-koto": "つぶすこと"
+      readings:
+        "nominaliser-no": "tsubusuno"
+        "nominaliser-koto": "tsubusukoto"
+    - word: "ja-4092"
+      forms:
+        "nominaliser-no": "つぶれるの"
+        "nominaliser-koto": "つぶれること"
+      readings:
+        "nominaliser-no": "tsubureruno"
+        "nominaliser-koto": "tsuburerukoto"
+    - word: "ja-4093"
+      forms:
+        "nominaliser-no": "てらすの"
+        "nominaliser-koto": "てらすこと"
+      readings:
+        "nominaliser-no": "terasuno"
+        "nominaliser-koto": "terasukoto"
+    - word: "ja-4094"
+      forms:
+        "nominaliser-no": "とおすの"
+        "nominaliser-koto": "とおすこと"
+      readings:
+        "nominaliser-no": "toosuno"
+        "nominaliser-koto": "toosukoto"
+    - word: "ja-4095"
+      forms:
+        "nominaliser-no": "とかすの"
+        "nominaliser-koto": "とかすこと"
+      readings:
+        "nominaliser-no": "tokasuno"
+        "nominaliser-koto": "tokasukoto"
+    - word: "ja-4096"
+      forms:
+        "nominaliser-no": "とけるの"
+        "nominaliser-koto": "とけること"
+      readings:
+        "nominaliser-no": "tokeruno"
+        "nominaliser-koto": "tokerukoto"
+    - word: "ja-4097"
+      forms:
+        "nominaliser-no": "ととのうの"
+        "nominaliser-koto": "ととのうこと"
+      readings:
+        "nominaliser-no": "totonouno"
+        "nominaliser-koto": "totonoukoto"
+    - word: "ja-4098"
+      forms:
+        "nominaliser-no": "ととのえるの"
+        "nominaliser-koto": "ととのえること"
+      readings:
+        "nominaliser-no": "totonoeruno"
+        "nominaliser-koto": "totonoerukoto"
+    - word: "ja-4099"
+      forms:
+        "nominaliser-no": "とびこむの"
+        "nominaliser-koto": "とびこむこと"
+      readings:
+        "nominaliser-no": "tobikomuno"
+        "nominaliser-koto": "tobikomukoto"
+    - word: "ja-4100"
+      forms:
+        "nominaliser-no": "ともなうの"
+        "nominaliser-koto": "ともなうこと"
+      readings:
+        "nominaliser-no": "tomonauno"
+        "nominaliser-koto": "tomonaukoto"
+    - word: "ja-4101"
+      forms:
+        "nominaliser-no": "とらえるの"
+        "nominaliser-koto": "とらえること"
+      readings:
+        "nominaliser-no": "toraeruno"
+        "nominaliser-koto": "toraerukoto"
+    - word: "ja-4102"
+      forms:
+        "nominaliser-no": "とりあげるの"
+        "nominaliser-koto": "とりあげること"
+      readings:
+        "nominaliser-no": "toriageruno"
+        "nominaliser-koto": "toriagerukoto"
+    - word: "ja-4103"
+      forms:
+        "nominaliser-no": "とりだすの"
+        "nominaliser-koto": "とりだすこと"
+      readings:
+        "nominaliser-no": "toridasuno"
+        "nominaliser-koto": "toridasukoto"
+    - word: "ja-4104"
+      forms:
+        "nominaliser-no": "とりのぞくの"
+        "nominaliser-koto": "とりのぞくこと"
+      readings:
+        "nominaliser-no": "torinozokuno"
+        "nominaliser-koto": "torinozokukoto"
+    - word: "ja-4105"
+      forms:
+        "nominaliser-no": "ながすの"
+        "nominaliser-koto": "ながすこと"
+      readings:
+        "nominaliser-no": "nagasuno"
+        "nominaliser-koto": "nagasukoto"
+    - word: "ja-4185"
+      forms:
+        "nominaliser-no": "みとめるの"
+        "nominaliser-koto": "みとめること"
+      readings:
+        "nominaliser-no": "mitomeruno"
+        "nominaliser-koto": "mitomerukoto"
+    - word: "ja-4186"
+      forms:
+        "nominaliser-no": "うたがうの"
+        "nominaliser-koto": "うたがうこと"
+      readings:
+        "nominaliser-no": "utagauno"
+        "nominaliser-koto": "utagaukoto"
+    - word: "ja-4187"
+      forms:
+        "nominaliser-no": "しんじるの"
+        "nominaliser-koto": "しんじること"
+      readings:
+        "nominaliser-no": "shinjiruno"
+        "nominaliser-koto": "shinjirukoto"
+    - word: "ja-4192"
+      forms:
+        "nominaliser-no": "ろんじるの"
+        "nominaliser-koto": "ろんじること"
+      readings:
+        "nominaliser-no": "ronjiruno"
+        "nominaliser-koto": "ronjirukoto"
+rules:
+  - id: "ja-rule-nominaliser-no"
+    slots: ["nominaliser-no"]
+    words:
+      - { word: "たべるの", reading: "taberu no" }
+      - { word: "のむの", reading: "nomu no" }
+  - id: "ja-rule-nominaliser-koto"
+    slots: ["nominaliser-koto"]
+    words:
+      - { word: "たべること", reading: "taberu koto" }
+      - { word: "のむこと", reading: "nomu koto" }

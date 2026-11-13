@@ -1,0 +1,104 @@
+schema: 1
+id: "ja-grammar-conditional-to-ba-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-4529"
+    target: "えきへいくと、ともだちにあいます。"
+    words: ["えき", "へ", "いく", "と", "ともだち", "に", "あいます"]
+    reading: "eki e iku to, tomodachi ni aimasu."
+    ipa: "eki e ikɯ to tomodatɕi ni aimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "えき", ref: "ja-1021" }
+      - { word: "へ", ref: "ja-0029" }
+      - { word: "いく", ref: "ja-0348" }
+      - { word: "と", base: "と", reading: "to" }
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "あいます", ref: "ja-0357" }
+    confusables:
+      - { id: "w1", ref: "ja-0350", kind: "word" }
+      - { id: "w2", ref: "ja-0349", kind: "word" }
+    rules: ["ja-rule-conditional-to"]
+  - id: "ja-4530"
+    target: "よめば、わかります。"
+    words: ["よめば", "わかります"]
+    reading: "yomeba, wakarimasu."
+    ipa: "jomeba wakaɾimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "よめば", ref: "ja-0345" }
+      - { word: "わかります", ref: "ja-0365" }
+    confusables:
+      - { id: "w1", ref: "ja-0346", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-conditional-ba"]
+  - id: "ja-4531"
+    target: "バスでいけば、やすいです。"
+    words: ["バス", "で", "いけば", "やすい", "です"]
+    reading: "basu de ikeba, yasui desu."
+    ipa: "basɯ de ikeba jasɯi desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "バス", ref: "ja-0856" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "いけば", ref: "ja-0348" }
+      - { word: "やすい", ref: "ja-0438" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", ref: "ja-0349", kind: "word" }
+      - { id: "w2", ref: "ja-0350", kind: "word" }
+    rules: ["ja-rule-conditional-ba"]
+  - id: "ja-4532"
+    target: "くすりをのむと、ねます。"
+    words: ["くすり", "を", "のむ", "と", "ねます"]
+    reading: "kusuri o nomu to, nemasu."
+    ipa: "kɯsɯɾi o nomɯ to nemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "くすり", ref: "ja-1103" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "のむ", ref: "ja-0342" }
+      - { word: "と", base: "と", reading: "to" }
+      - { word: "ねます", ref: "ja-0352" }
+    confusables:
+      - { id: "w1", ref: "ja-0341", kind: "word" }
+      - { id: "w2", ref: "ja-0364", kind: "word" }
+    rules: ["ja-rule-conditional-to"]
+  - id: "ja-4533"
+    target: "ここでまてば、バスがきます。"
+    words: ["ここ", "で", "まてば", "バス", "が", "きます"]
+    reading: "koko de mateba, basu ga kimasu."
+    ipa: "koko de mateba basɯ ɡa kimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ここ", ref: "ja-0554" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "まてば", ref: "ja-0358" }
+      - { word: "バス", ref: "ja-0856" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "きます", ref: "ja-0349" }
+    confusables:
+      - { id: "w1", ref: "ja-0348", kind: "word" }
+      - { id: "w2", ref: "ja-1071", kind: "word" }
+    rules: ["ja-rule-conditional-ba"]
+  - id: "ja-4534"
+    target: "はやくおきれば、あさごはんをたべます。"
+    words: ["はやく", "おきれば", "あさごはん", "を", "たべます"]
+    reading: "hayaku okireba, asagohan o tabemasu."
+    ipa: "hajakɯ okiɾeba asaɡohaɴ o tabemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "はやく", ref: "ja-0401" }
+      - { word: "おきれば", ref: "ja-0351" }
+      - { word: "あさごはん", ref: "ja-0955" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "たべます", ref: "ja-0341" }
+    confusables:
+      - { id: "w1", ref: "ja-0352", kind: "word" }
+      - { id: "w2", ref: "ja-1071", kind: "word" }
+    rules: ["ja-rule-conditional-ba"]

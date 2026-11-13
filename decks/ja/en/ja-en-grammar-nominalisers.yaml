@@ -1,0 +1,21 @@
+schema: 1
+id: "ja-en-grammar-nominalisers"
+kind: "layer"
+core: "ja-grammar-nominalisers"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verbs as nouns: の (no) and こと (koto)"
+description: "After the dictionary form, の (no) or こと (koto) turns a verb into a noun phrase: たべるのはたのしいです (taberu no wa tanoshii desu), eating is fun. Every verb a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "nominaliser-no": "{meaning} (as a noun)"
+    "nominaliser-koto": "{meaning} (as a noun)"
+rules:
+  "ja-rule-nominaliser-no":
+    name: "の (no): makes a verb a noun"
+    explanation: "{1} turns a verb into a noun phrase: {2} means eating, or the act of eating. It is used with は (wa) and が (ga), as in {1} は (wa)."
+  "ja-rule-nominaliser-koto":
+    name: "こと (koto): makes a verb a noun"
+    explanation: "{1} also turns a verb into a noun phrase: {2} means eating. It is a little more formal than の (no), and is used for abilities, rules and plans."

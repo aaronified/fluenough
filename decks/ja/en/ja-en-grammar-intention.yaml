@@ -1,0 +1,21 @@
+schema: 1
+id: "ja-en-grammar-intention"
+kind: "layer"
+core: "ja-grammar-intention"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Intention: the volitional form and つもりです (tsumori desu)"
+description: "The volitional form says let us, or I will. つもりです (tsumori desu) after the dictionary form says what you plan to do. Every verb a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "volitional": "let us {meaning}"
+    "tsumori": "plan to {meaning}"
+rules:
+  "ja-rule-volitional":
+    name: "The volitional form: let us, I will"
+    explanation: "The plain volitional form says let us, or I will. An ichidan verb adds よう (you) to its stem: たべる (taberu) becomes {1}. A godan verb changes its last sound to the o-row and adds う (u): いく (iku) becomes {2}. する (suru) becomes {3} and くる (kuru) becomes {4}."
+  "ja-rule-tsumori":
+    name: "つもりです (tsumori desu): plan to"
+    explanation: "{1} follows the dictionary form to say what you plan to do: {2} means I plan to eat."

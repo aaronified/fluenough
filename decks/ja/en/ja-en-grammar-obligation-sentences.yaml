@@ -1,0 +1,48 @@
+schema: 1
+id: "ja-en-grammar-obligation-sentences"
+kind: "layer"
+core: "ja-grammar-obligation-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Must and had better, in sentences"
+description: "Sentences that say what must be done and what is better done, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-4511":
+    native: "I must work tomorrow."
+    confusables:
+      w1: { why: "あそぶ (asobu) means to play." }
+      w2: { why: "やすむ (yasumu) means to rest; to take a day off." }
+  "ja-4512":
+    native: "I must get up early tomorrow."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+    confusables:
+      w1: { why: "ねる (neru) means to sleep; to go to bed." }
+      w2: { why: "でる (deru) means to go out; to leave." }
+  "ja-4513":
+    native: "I must wait here."
+    bases:
+      "で": { meaning: "(at, in, by)" }
+    confusables:
+      w1: { why: "いく (iku) means to go." }
+      w2: { why: "でる (deru) means to go out; to leave." }
+  "ja-4514":
+    native: "I must write a letter now."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "よむ (yomu) means to read." }
+      w2: { why: "きく (kiku) means to listen; to hear; to ask." }
+  "ja-4515":
+    native: "You had better go to bed early."
+    confusables:
+      w1: { why: "おきる (okiru) means to get up; to wake up." }
+      w2: { why: "あそぶ (asobu) means to play." }
+  "ja-4516":
+    native: "You had better take the medicine."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "たべる (taberu) means to eat." }
+      w2: { why: "つくる (tsukuru) means to make; to create." }

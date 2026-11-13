@@ -1,0 +1,21 @@
+schema: 1
+id: "ja-en-grammar-nagara-tari"
+kind: "layer"
+core: "ja-grammar-nagara-tari"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "While and and-so-on: ながら (nagara) and たり (tari)"
+description: "After the verb stem, ながら (nagara) says that one person does two things at the same time. After the past (ta) form, り (ri) lists actions as examples: ほんをよんだり (hon o yondari)、えいがをみたりします (eiga o mitari shimasu). Every verb a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "nagara": "while {meaning}-ing"
+    "tari": "{meaning} and so on"
+rules:
+  "ja-rule-nagara":
+    name: "ながら (nagara): while"
+    explanation: "{1} follows the verb stem to say that two things are done at the same time by one person: {2} means while eating."
+  "ja-rule-tari":
+    name: "たり (tari): doing this and that"
+    explanation: "{1} follows the past (ta) form to list things you do as examples, usually with します (shimasu): {2} means eating and so on."

@@ -1,0 +1,21 @@
+schema: 1
+id: "ja-en-grammar-conditional-to-ba"
+kind: "layer"
+core: "ja-grammar-conditional-to-ba"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "If and when: と (to) and ば (ba)"
+description: "と (to) after the dictionary form says that one thing follows from another. The ば (ba) form says if. Every verb a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "conditional-to": "when or if {meaning}"
+    "conditional-ba": "if {meaning}"
+rules:
+  "ja-rule-conditional-to":
+    name: "と (to): when, if (what follows)"
+    explanation: "{1} follows the dictionary form to say that one thing leads to another: {2} means when or if I go."
+  "ja-rule-conditional-ba":
+    name: "ば (ba): if"
+    explanation: "The ば (ba) form says if. An ichidan verb drops る (ru) and adds れば (reba): たべる (taberu) becomes {1}. A godan verb changes its last sound to the e-row and adds ば (ba): いく (iku) becomes {2}. する (suru) becomes {3} and くる (kuru) becomes {4}."

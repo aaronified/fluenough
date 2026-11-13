@@ -1,0 +1,112 @@
+schema: 1
+id: "ja-grammar-nagara-tari-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-4571"
+    target: "コーヒーをのみながら、ほんをよみます。"
+    words: ["コーヒー", "を", "のみ", "ながら", "ほん", "を", "よみます"]
+    reading: "koohii o nomi nagara, hon o yomimasu."
+    ipa: "koːçiː o nomi naɡaɾa hoɴ o jomimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "コーヒー", ref: "ja-0849" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "のみ", ref: "ja-0342" }
+      - { word: "ながら", base: "ながら", reading: "nagara" }
+      - { word: "ほん", ref: "ja-1180" }
+      - { word: "よみます", ref: "ja-0345" }
+    confusables:
+      - { id: "w1", ref: "ja-0341", kind: "word" }
+      - { id: "w2", ref: "ja-0343", kind: "word" }
+    rules: ["ja-rule-nagara"]
+  - id: "ja-4572"
+    target: "テレビをみながら、ごはんをたべます。"
+    words: ["テレビ", "を", "み", "ながら", "ごはん", "を", "たべます"]
+    reading: "terebi o mi nagara, gohan o tabemasu."
+    ipa: "teɾebi o mi naɡaɾa ɡohaɴ o tabemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "テレビ", ref: "ja-0850" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "み", ref: "ja-0343" }
+      - { word: "ながら", base: "ながら", reading: "nagara" }
+      - { word: "ごはん", ref: "ja-0074" }
+      - { word: "たべます", ref: "ja-0341" }
+    confusables:
+      - { id: "w1", ref: "ja-0344", kind: "word" }
+      - { id: "w2", ref: "ja-0345", kind: "word" }
+    rules: ["ja-rule-nagara"]
+  - id: "ja-4573"
+    target: "ラジオをききながら、はたらきます。"
+    words: ["ラジオ", "を", "きき", "ながら", "はたらきます"]
+    reading: "rajio o kiki nagara, hatarakimasu."
+    ipa: "ɾadʑio o kiki naɡaɾa hataɾakimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ラジオ", ref: "ja-0863" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "きき", ref: "ja-0344" }
+      - { word: "ながら", base: "ながら", reading: "nagara" }
+      - { word: "はたらきます", ref: "ja-0353" }
+    confusables:
+      - { id: "w1", ref: "ja-0343", kind: "word" }
+      - { id: "w2", ref: "ja-0342", kind: "word" }
+    rules: ["ja-rule-nagara"]
+  - id: "ja-4574"
+    target: "あさはほんをよんだり、えいがをみたりします。"
+    words: ["あさ", "は", "ほん", "を", "よんだり", "えいが", "を", "みたり", "します"]
+    reading: "asa wa hon o yondari, eiga o mitari shimasu."
+    ipa: "asa wa hoɴ o joɴdaɾi eːɡa o mitaɾi ɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "あさ", ref: "ja-0509" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ほん", ref: "ja-1180" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "よんだり", ref: "ja-0345" }
+      - { word: "えいが", ref: "ja-1358" }
+      - { word: "みたり", ref: "ja-0343" }
+      - { word: "します", ref: "ja-0375" }
+    confusables:
+      - { id: "w1", ref: "ja-0346", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-tari"]
+  - id: "ja-4575"
+    target: "ともだちとはなしたり、あったりします。"
+    words: ["ともだち", "と", "はなしたり", "あったり", "します"]
+    reading: "tomodachi to hanashitari, attari shimasu."
+    ipa: "tomodatɕi to hanaɕitaɾi attaɾi ɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "と", base: "と", reading: "to" }
+      - { word: "はなしたり", ref: "ja-0347" }
+      - { word: "あったり", ref: "ja-0357" }
+      - { word: "します", ref: "ja-0375" }
+    confusables:
+      - { id: "w1", ref: "ja-0344", kind: "word" }
+      - { id: "w2", ref: "ja-0348", kind: "word" }
+    rules: ["ja-rule-tari"]
+  - id: "ja-4576"
+    target: "ひるはごはんをたべたり、コーヒーをのんだりします。"
+    words: ["ひる", "は", "ごはん", "を", "たべたり", "コーヒー", "を", "のんだり", "します"]
+    reading: "hiru wa gohan o tabetari, koohii o nondari shimasu."
+    ipa: "çiɾɯ wa ɡohaɴ o tabetaɾi koːçiː o noɴdaɾi ɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ひる", ref: "ja-0510" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ごはん", ref: "ja-0074" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "たべたり", ref: "ja-0341" }
+      - { word: "コーヒー", ref: "ja-0849" }
+      - { word: "のんだり", ref: "ja-0342" }
+      - { word: "します", ref: "ja-0375" }
+    confusables:
+      - { id: "w1", ref: "ja-0364", kind: "word" }
+      - { id: "w2", ref: "ja-0343", kind: "word" }
+    rules: ["ja-rule-tari"]

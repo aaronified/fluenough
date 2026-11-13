@@ -1,0 +1,99 @@
+schema: 1
+id: "ja-grammar-hearsay-appearance-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-4553"
+    target: "ともだちはあしたくるそうです。"
+    words: ["ともだち", "は", "あした", "くるそうです"]
+    reading: "tomodachi wa ashita kurusoudesu."
+    ipa: "tomodatɕi wa aɕita kɯɾɯsoːdesɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "あした", ref: "ja-0513" }
+      - { word: "くるそうです", ref: "ja-0349" }
+    confusables:
+      - { id: "w1", ref: "ja-0348", kind: "word" }
+      - { id: "w2", ref: "ja-0350", kind: "word" }
+    rules: ["ja-rule-sou-da-hearsay"]
+  - id: "ja-4554"
+    target: "ともだちはねそうです。"
+    words: ["ともだち", "は", "ねそうです"]
+    reading: "tomodachi wa nesoudesu."
+    ipa: "tomodatɕi wa nesoːdesɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ねそうです", ref: "ja-0352" }
+    confusables:
+      - { id: "w1", ref: "ja-0351", kind: "word" }
+      - { id: "w2", ref: "ja-0374", kind: "word" }
+    rules: ["ja-rule-sou-da-appearance"]
+  - id: "ja-4555"
+    target: "ともだちはえいがをみるようです。"
+    words: ["ともだち", "は", "えいが", "を", "みるようです"]
+    reading: "tomodachi wa eiga o miruyoudesu."
+    ipa: "tomodatɕi wa eːɡa o miɾɯjoːdesɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "えいが", ref: "ja-1358" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "みるようです", ref: "ja-0343" }
+    confusables:
+      - { id: "w1", ref: "ja-0344", kind: "word" }
+      - { id: "w2", ref: "ja-0345", kind: "word" }
+    rules: ["ja-rule-you-da"]
+  - id: "ja-4556"
+    target: "ちちはほんをよむらしいです。"
+    words: ["ちち", "は", "ほん", "を", "よむらしいです"]
+    reading: "chichi wa hon o yomurashiidesu."
+    ipa: "tɕitɕi wa hoɴ o jomɯɾaɕiːdesɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ちち", ref: "ja-0200" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ほん", ref: "ja-1180" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "よむらしいです", ref: "ja-0345" }
+    confusables:
+      - { id: "w1", ref: "ja-0346", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-rashii"]
+  - id: "ja-4557"
+    target: "はははごはんをつくるそうです。"
+    words: ["はは", "は", "ごはん", "を", "つくるそうです"]
+    reading: "haha wa gohan o tsukurusoudesu."
+    ipa: "haha wa ɡohaɴ o tsɯkɯɾɯsoːdesɯ"
+    pos: "phrase"
+    bases:
+      - { word: "はは", ref: "ja-0201" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ごはん", ref: "ja-0074" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "つくるそうです", ref: "ja-0364" }
+    confusables:
+      - { id: "w1", ref: "ja-0341", kind: "word" }
+      - { id: "w2", ref: "ja-0356", kind: "word" }
+    rules: ["ja-rule-sou-da-hearsay"]
+  - id: "ja-4558"
+    target: "ともだちはのみそうです。"
+    words: ["ともだち", "は", "のみそうです"]
+    reading: "tomodachi wa nomisoudesu."
+    ipa: "tomodatɕi wa nomisoːdesɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "のみそうです", ref: "ja-0342" }
+    confusables:
+      - { id: "w1", ref: "ja-0341", kind: "word" }
+      - { id: "w2", ref: "ja-0343", kind: "word" }
+    rules: ["ja-rule-sou-da-appearance"]

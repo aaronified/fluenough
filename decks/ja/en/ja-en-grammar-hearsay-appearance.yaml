@@ -1,0 +1,29 @@
+schema: 1
+id: "ja-en-grammar-hearsay-appearance"
+kind: "layer"
+core: "ja-grammar-hearsay-appearance"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Hearsay and appearance: そうです (sou desu), ようです (you desu) and らしいです (rashii desu)"
+description: "After the dictionary form, そうです (sou desu) reports what you have heard, ようです (you desu) says that it seems so, and らしいです (rashii desu) says that you gather it so; after the verb stem, そうです (sou desu) says how it looks. Every verb a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "sou-da-hearsay": "I hear that {meaning}"
+    "sou-da-appearance": "it looks like one will {meaning}"
+    "you-da": "it seems that {meaning}"
+    "rashii": "I gather that {meaning}"
+rules:
+  "ja-rule-sou-da-hearsay":
+    name: "そうです (sou desu): I hear that"
+    explanation: "{1} follows the dictionary form to say what you have heard: {2} means I hear that he eats."
+  "ja-rule-sou-da-appearance":
+    name: "そうです (sou desu): looks like"
+    explanation: "{1} follows the verb stem to say how something looks: {2} means it looks as if he will eat. Do not mix it up with the form that reports what was heard."
+  "ja-rule-you-da":
+    name: "ようです (you desu): it seems"
+    explanation: "{1} follows the dictionary form to say how things seem from what you see or know: {2} means it seems that he eats."
+  "ja-rule-rashii":
+    name: "らしいです (rashii desu): I gather"
+    explanation: "{1} follows the dictionary form to say what you gather from what you have heard or seen: {2} means I gather that he eats."

@@ -1,0 +1,2656 @@
+schema: 1
+id: "ja-grammar-quotation"
+part: "core"
+kind: "rules"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ja-0085"]
+  slots: ["to-iu", "to-omou"]
+  rows:
+    - word: "ja-1050"
+      forms:
+        "to-iu": "まがるといいます"
+        "to-omou": "まがるとおもいます"
+      readings:
+        "to-iu": "magarutoiimasu"
+        "to-omou": "magarutoomoimasu"
+    - word: "ja-1060"
+      forms:
+        "to-iu": "わたるといいます"
+        "to-omou": "わたるとおもいます"
+      readings:
+        "to-iu": "watarutoiimasu"
+        "to-omou": "watarutoomoimasu"
+    - word: "ja-1061"
+      forms:
+        "to-iu": "すすむといいます"
+        "to-omou": "すすむとおもいます"
+      readings:
+        "to-iu": "susumutoiimasu"
+        "to-omou": "susumutoomoimasu"
+    - word: "ja-1062"
+      forms:
+        "to-iu": "さがるといいます"
+        "to-omou": "さがるとおもいます"
+      readings:
+        "to-iu": "sagarutoiimasu"
+        "to-omou": "sagarutoomoimasu"
+    - word: "ja-1070"
+      forms:
+        "to-iu": "まちがえるといいます"
+        "to-omou": "まちがえるとおもいます"
+      readings:
+        "to-iu": "machigaerutoiimasu"
+        "to-omou": "machigaerutoomoimasu"
+    - word: "ja-1071"
+      forms:
+        "to-iu": "でるといいます"
+        "to-omou": "でるとおもいます"
+      readings:
+        "to-iu": "derutoiimasu"
+        "to-omou": "derutoomoimasu"
+    - word: "ja-1078"
+      forms:
+        "to-iu": "むかうといいます"
+        "to-omou": "むかうとおもいます"
+      readings:
+        "to-iu": "mukautoiimasu"
+        "to-omou": "mukautoomoimasu"
+    - word: "ja-0341"
+      forms:
+        "to-iu": "たべるといいます"
+        "to-omou": "たべるとおもいます"
+      readings:
+        "to-iu": "taberutoiimasu"
+        "to-omou": "taberutoomoimasu"
+    - word: "ja-0342"
+      forms:
+        "to-iu": "のむといいます"
+        "to-omou": "のむとおもいます"
+      readings:
+        "to-iu": "nomutoiimasu"
+        "to-omou": "nomutoomoimasu"
+    - word: "ja-0343"
+      forms:
+        "to-iu": "みるといいます"
+        "to-omou": "みるとおもいます"
+      readings:
+        "to-iu": "mirutoiimasu"
+        "to-omou": "mirutoomoimasu"
+    - word: "ja-0344"
+      forms:
+        "to-iu": "きくといいます"
+        "to-omou": "きくとおもいます"
+      readings:
+        "to-iu": "kikutoiimasu"
+        "to-omou": "kikutoomoimasu"
+    - word: "ja-0345"
+      forms:
+        "to-iu": "よむといいます"
+        "to-omou": "よむとおもいます"
+      readings:
+        "to-iu": "yomutoiimasu"
+        "to-omou": "yomutoomoimasu"
+    - word: "ja-0346"
+      forms:
+        "to-iu": "かくといいます"
+        "to-omou": "かくとおもいます"
+      readings:
+        "to-iu": "kakutoiimasu"
+        "to-omou": "kakutoomoimasu"
+    - word: "ja-0347"
+      forms:
+        "to-iu": "はなすといいます"
+        "to-omou": "はなすとおもいます"
+      readings:
+        "to-iu": "hanasutoiimasu"
+        "to-omou": "hanasutoomoimasu"
+    - word: "ja-0348"
+      forms:
+        "to-iu": "いくといいます"
+        "to-omou": "いくとおもいます"
+      readings:
+        "to-iu": "ikutoiimasu"
+        "to-omou": "ikutoomoimasu"
+    - word: "ja-0349"
+      forms:
+        "to-iu": "くるといいます"
+        "to-omou": "くるとおもいます"
+      readings:
+        "to-iu": "kurutoiimasu"
+        "to-omou": "kurutoomoimasu"
+    - word: "ja-0350"
+      forms:
+        "to-iu": "かえるといいます"
+        "to-omou": "かえるとおもいます"
+      readings:
+        "to-iu": "kaerutoiimasu"
+        "to-omou": "kaerutoomoimasu"
+    - word: "ja-0351"
+      forms:
+        "to-iu": "おきるといいます"
+        "to-omou": "おきるとおもいます"
+      readings:
+        "to-iu": "okirutoiimasu"
+        "to-omou": "okirutoomoimasu"
+    - word: "ja-0352"
+      forms:
+        "to-iu": "ねるといいます"
+        "to-omou": "ねるとおもいます"
+      readings:
+        "to-iu": "nerutoiimasu"
+        "to-omou": "nerutoomoimasu"
+    - word: "ja-0353"
+      forms:
+        "to-iu": "はたらくといいます"
+        "to-omou": "はたらくとおもいます"
+      readings:
+        "to-iu": "hatarakutoiimasu"
+        "to-omou": "hatarakutoomoimasu"
+    - word: "ja-0354"
+      forms:
+        "to-iu": "やすむといいます"
+        "to-omou": "やすむとおもいます"
+      readings:
+        "to-iu": "yasumutoiimasu"
+        "to-omou": "yasumutoomoimasu"
+    - word: "ja-0355"
+      forms:
+        "to-iu": "はいるといいます"
+        "to-omou": "はいるとおもいます"
+      readings:
+        "to-iu": "hairutoiimasu"
+        "to-omou": "hairutoomoimasu"
+    - word: "ja-0356"
+      forms:
+        "to-iu": "かうといいます"
+        "to-omou": "かうとおもいます"
+      readings:
+        "to-iu": "kautoiimasu"
+        "to-omou": "kautoomoimasu"
+    - word: "ja-0357"
+      forms:
+        "to-iu": "あうといいます"
+        "to-omou": "あうとおもいます"
+      readings:
+        "to-iu": "autoiimasu"
+        "to-omou": "autoomoimasu"
+    - word: "ja-0358"
+      forms:
+        "to-iu": "まつといいます"
+        "to-omou": "まつとおもいます"
+      readings:
+        "to-iu": "matsutoiimasu"
+        "to-omou": "matsutoomoimasu"
+    - word: "ja-0359"
+      forms:
+        "to-iu": "もつといいます"
+        "to-omou": "もつとおもいます"
+      readings:
+        "to-iu": "motsutoiimasu"
+        "to-omou": "motsutoomoimasu"
+    - word: "ja-0360"
+      forms:
+        "to-iu": "あるくといいます"
+        "to-omou": "あるくとおもいます"
+      readings:
+        "to-iu": "arukutoiimasu"
+        "to-omou": "arukutoomoimasu"
+    - word: "ja-0361"
+      forms:
+        "to-iu": "のるといいます"
+        "to-omou": "のるとおもいます"
+      readings:
+        "to-iu": "norutoiimasu"
+        "to-omou": "norutoomoimasu"
+    - word: "ja-0362"
+      forms:
+        "to-iu": "おりるといいます"
+        "to-omou": "おりるとおもいます"
+      readings:
+        "to-iu": "orirutoiimasu"
+        "to-omou": "orirutoomoimasu"
+    - word: "ja-0363"
+      forms:
+        "to-iu": "あらうといいます"
+        "to-omou": "あらうとおもいます"
+      readings:
+        "to-iu": "arautoiimasu"
+        "to-omou": "arautoomoimasu"
+    - word: "ja-0364"
+      forms:
+        "to-iu": "つくるといいます"
+        "to-omou": "つくるとおもいます"
+      readings:
+        "to-iu": "tsukurutoiimasu"
+        "to-omou": "tsukurutoomoimasu"
+    - word: "ja-0365"
+      forms:
+        "to-iu": "わかるといいます"
+        "to-omou": "わかるとおもいます"
+      readings:
+        "to-iu": "wakarutoiimasu"
+        "to-omou": "wakarutoomoimasu"
+    - word: "ja-0366"
+      forms:
+        "to-iu": "しるといいます"
+        "to-omou": "しるとおもいます"
+      readings:
+        "to-iu": "shirutoiimasu"
+        "to-omou": "shirutoomoimasu"
+    - word: "ja-0367"
+      forms:
+        "to-iu": "ならうといいます"
+        "to-omou": "ならうとおもいます"
+      readings:
+        "to-iu": "narautoiimasu"
+        "to-omou": "narautoomoimasu"
+    - word: "ja-0368"
+      forms:
+        "to-iu": "おしえるといいます"
+        "to-omou": "おしえるとおもいます"
+      readings:
+        "to-iu": "oshierutoiimasu"
+        "to-omou": "oshierutoomoimasu"
+    - word: "ja-0369"
+      forms:
+        "to-iu": "つかうといいます"
+        "to-omou": "つかうとおもいます"
+      readings:
+        "to-iu": "tsukautoiimasu"
+        "to-omou": "tsukautoomoimasu"
+    - word: "ja-0370"
+      forms:
+        "to-iu": "すわるといいます"
+        "to-omou": "すわるとおもいます"
+      readings:
+        "to-iu": "suwarutoiimasu"
+        "to-omou": "suwarutoomoimasu"
+    - word: "ja-0371"
+      forms:
+        "to-iu": "たつといいます"
+        "to-omou": "たつとおもいます"
+      readings:
+        "to-iu": "tatsutoiimasu"
+        "to-omou": "tatsutoomoimasu"
+    - word: "ja-0372"
+      forms:
+        "to-iu": "あけるといいます"
+        "to-omou": "あけるとおもいます"
+      readings:
+        "to-iu": "akerutoiimasu"
+        "to-omou": "akerutoomoimasu"
+    - word: "ja-0373"
+      forms:
+        "to-iu": "しめるといいます"
+        "to-omou": "しめるとおもいます"
+      readings:
+        "to-iu": "shimerutoiimasu"
+        "to-omou": "shimerutoomoimasu"
+    - word: "ja-0374"
+      forms:
+        "to-iu": "あそぶといいます"
+        "to-omou": "あそぶとおもいます"
+      readings:
+        "to-iu": "asobutoiimasu"
+        "to-omou": "asobutoomoimasu"
+    - word: "ja-0375"
+      forms:
+        "to-iu": "するといいます"
+        "to-omou": "するとおもいます"
+      readings:
+        "to-iu": "surutoiimasu"
+        "to-omou": "surutoomoimasu"
+    - word: "ja-0949"
+      forms:
+        "to-iu": "かぞえるといいます"
+        "to-omou": "かぞえるとおもいます"
+      readings:
+        "to-iu": "kazoerutoiimasu"
+        "to-omou": "kazoerutoomoimasu"
+    - word: "ja-1226"
+      forms:
+        "to-iu": "こまるといいます"
+        "to-omou": "こまるとおもいます"
+      readings:
+        "to-iu": "komarutoiimasu"
+        "to-omou": "komarutoomoimasu"
+    - word: "ja-1227"
+      forms:
+        "to-iu": "よぶといいます"
+        "to-omou": "よぶとおもいます"
+      readings:
+        "to-iu": "yobutoiimasu"
+        "to-omou": "yobutoomoimasu"
+    - word: "ja-1228"
+      forms:
+        "to-iu": "まようといいます"
+        "to-omou": "まようとおもいます"
+      readings:
+        "to-iu": "mayoutoiimasu"
+        "to-omou": "mayoutoomoimasu"
+    - word: "ja-1236"
+      forms:
+        "to-iu": "たすけるといいます"
+        "to-omou": "たすけるとおもいます"
+      readings:
+        "to-iu": "tasukerutoiimasu"
+        "to-omou": "tasukerutoomoimasu"
+    - word: "ja-1237"
+      forms:
+        "to-iu": "たすかるといいます"
+        "to-omou": "たすかるとおもいます"
+      readings:
+        "to-iu": "tasukarutoiimasu"
+        "to-omou": "tasukarutoomoimasu"
+    - word: "ja-1240"
+      forms:
+        "to-iu": "まもるといいます"
+        "to-omou": "まもるとおもいます"
+      readings:
+        "to-iu": "mamorutoiimasu"
+        "to-omou": "mamorutoomoimasu"
+    - word: "ja-0571"
+      forms:
+        "to-iu": "あびるといいます"
+        "to-omou": "あびるとおもいます"
+      readings:
+        "to-iu": "abirutoiimasu"
+        "to-omou": "abirutoomoimasu"
+    - word: "ja-0572"
+      forms:
+        "to-iu": "はしるといいます"
+        "to-omou": "はしるとおもいます"
+      readings:
+        "to-iu": "hashirutoiimasu"
+        "to-omou": "hashirutoomoimasu"
+    - word: "ja-0573"
+      forms:
+        "to-iu": "とぶといいます"
+        "to-omou": "とぶとおもいます"
+      readings:
+        "to-iu": "tobutoiimasu"
+        "to-omou": "tobutoomoimasu"
+    - word: "ja-0574"
+      forms:
+        "to-iu": "おどるといいます"
+        "to-omou": "おどるとおもいます"
+      readings:
+        "to-iu": "odorutoiimasu"
+        "to-omou": "odorutoomoimasu"
+    - word: "ja-0575"
+      forms:
+        "to-iu": "うたうといいます"
+        "to-omou": "うたうとおもいます"
+      readings:
+        "to-iu": "utautoiimasu"
+        "to-omou": "utautoomoimasu"
+    - word: "ja-0576"
+      forms:
+        "to-iu": "かりるといいます"
+        "to-omou": "かりるとおもいます"
+      readings:
+        "to-iu": "karirutoiimasu"
+        "to-omou": "karirutoomoimasu"
+    - word: "ja-0577"
+      forms:
+        "to-iu": "かえすといいます"
+        "to-omou": "かえすとおもいます"
+      readings:
+        "to-iu": "kaesutoiimasu"
+        "to-omou": "kaesutoomoimasu"
+    - word: "ja-0578"
+      forms:
+        "to-iu": "わすれるといいます"
+        "to-omou": "わすれるとおもいます"
+      readings:
+        "to-iu": "wasurerutoiimasu"
+        "to-omou": "wasurerutoomoimasu"
+    - word: "ja-0579"
+      forms:
+        "to-iu": "おぼえるといいます"
+        "to-omou": "おぼえるとおもいます"
+      readings:
+        "to-iu": "oboerutoiimasu"
+        "to-omou": "oboerutoomoimasu"
+    - word: "ja-0580"
+      forms:
+        "to-iu": "てつだうといいます"
+        "to-omou": "てつだうとおもいます"
+      readings:
+        "to-iu": "tetsudautoiimasu"
+        "to-omou": "tetsudautoomoimasu"
+    - word: "ja-0581"
+      forms:
+        "to-iu": "ひろうといいます"
+        "to-omou": "ひろうとおもいます"
+      readings:
+        "to-iu": "hiroutoiimasu"
+        "to-omou": "hiroutoomoimasu"
+    - word: "ja-0582"
+      forms:
+        "to-iu": "すてるといいます"
+        "to-omou": "すてるとおもいます"
+      readings:
+        "to-iu": "suterutoiimasu"
+        "to-omou": "suterutoomoimasu"
+    - word: "ja-0583"
+      forms:
+        "to-iu": "なくすといいます"
+        "to-omou": "なくすとおもいます"
+      readings:
+        "to-iu": "nakusutoiimasu"
+        "to-omou": "nakusutoomoimasu"
+    - word: "ja-0584"
+      forms:
+        "to-iu": "のぼるといいます"
+        "to-omou": "のぼるとおもいます"
+      readings:
+        "to-iu": "noborutoiimasu"
+        "to-omou": "noborutoomoimasu"
+    - word: "ja-0585"
+      forms:
+        "to-iu": "そうじするといいます"
+        "to-omou": "そうじするとおもいます"
+      readings:
+        "to-iu": "soujisurutoiimasu"
+        "to-omou": "soujisurutoomoimasu"
+    - word: "ja-0586"
+      forms:
+        "to-iu": "りょうりするといいます"
+        "to-omou": "りょうりするとおもいます"
+      readings:
+        "to-iu": "ryourisurutoiimasu"
+        "to-omou": "ryourisurutoomoimasu"
+    - word: "ja-0587"
+      forms:
+        "to-iu": "でかけるといいます"
+        "to-omou": "でかけるとおもいます"
+      readings:
+        "to-iu": "dekakerutoiimasu"
+        "to-omou": "dekakerutoomoimasu"
+    - word: "ja-0588"
+      forms:
+        "to-iu": "もどるといいます"
+        "to-omou": "もどるとおもいます"
+      readings:
+        "to-iu": "modorutoiimasu"
+        "to-omou": "modorutoomoimasu"
+    - word: "ja-0589"
+      forms:
+        "to-iu": "とまるといいます"
+        "to-omou": "とまるとおもいます"
+      readings:
+        "to-iu": "tomarutoiimasu"
+        "to-omou": "tomarutoomoimasu"
+    - word: "ja-0590"
+      forms:
+        "to-iu": "さがすといいます"
+        "to-omou": "さがすとおもいます"
+      readings:
+        "to-iu": "sagasutoiimasu"
+        "to-omou": "sagasutoomoimasu"
+    - word: "ja-0591"
+      forms:
+        "to-iu": "みせるといいます"
+        "to-omou": "みせるとおもいます"
+      readings:
+        "to-iu": "miserutoiimasu"
+        "to-omou": "miserutoomoimasu"
+    - word: "ja-0592"
+      forms:
+        "to-iu": "いれるといいます"
+        "to-omou": "いれるとおもいます"
+      readings:
+        "to-iu": "irerutoiimasu"
+        "to-omou": "irerutoomoimasu"
+    - word: "ja-0593"
+      forms:
+        "to-iu": "わらうといいます"
+        "to-omou": "わらうとおもいます"
+      readings:
+        "to-iu": "warautoiimasu"
+        "to-omou": "warautoomoimasu"
+    - word: "ja-0594"
+      forms:
+        "to-iu": "おこるといいます"
+        "to-omou": "おこるとおもいます"
+      readings:
+        "to-iu": "okorutoiimasu"
+        "to-omou": "okorutoomoimasu"
+    - word: "ja-0595"
+      forms:
+        "to-iu": "やめるといいます"
+        "to-omou": "やめるとおもいます"
+      readings:
+        "to-iu": "yamerutoiimasu"
+        "to-omou": "yamerutoomoimasu"
+    - word: "ja-0596"
+      forms:
+        "to-iu": "はじめるといいます"
+        "to-omou": "はじめるとおもいます"
+      readings:
+        "to-iu": "hajimerutoiimasu"
+        "to-omou": "hajimerutoomoimasu"
+    - word: "ja-0597"
+      forms:
+        "to-iu": "ひっこすといいます"
+        "to-omou": "ひっこすとおもいます"
+      readings:
+        "to-iu": "hikkosutoiimasu"
+        "to-omou": "hikkosutoomoimasu"
+    - word: "ja-0598"
+      forms:
+        "to-iu": "あげるといいます"
+        "to-omou": "あげるとおもいます"
+      readings:
+        "to-iu": "agerutoiimasu"
+        "to-omou": "agerutoomoimasu"
+    - word: "ja-0599"
+      forms:
+        "to-iu": "もらうといいます"
+        "to-omou": "もらうとおもいます"
+      readings:
+        "to-iu": "morautoiimasu"
+        "to-omou": "morautoomoimasu"
+    - word: "ja-0600"
+      forms:
+        "to-iu": "さけぶといいます"
+        "to-omou": "さけぶとおもいます"
+      readings:
+        "to-iu": "sakebutoiimasu"
+        "to-omou": "sakebutoomoimasu"
+    - word: "ja-0516"
+      forms:
+        "to-iu": "おわるといいます"
+        "to-omou": "おわるとおもいます"
+      readings:
+        "to-iu": "owarutoiimasu"
+        "to-omou": "owarutoomoimasu"
+    - word: "ja-0711"
+      forms:
+        "to-iu": "つとめるといいます"
+        "to-omou": "つとめるとおもいます"
+      readings:
+        "to-iu": "tsutomerutoiimasu"
+        "to-omou": "tsutomerutoomoimasu"
+    - word: "ja-1334"
+      forms:
+        "to-iu": "きがえるといいます"
+        "to-omou": "きがえるとおもいます"
+      readings:
+        "to-iu": "kigaerutoiimasu"
+        "to-omou": "kigaerutoomoimasu"
+    - word: "ja-1335"
+      forms:
+        "to-iu": "はくといいます"
+        "to-omou": "はくとおもいます"
+      readings:
+        "to-iu": "hakutoiimasu"
+        "to-omou": "hakutoomoimasu"
+    - word: "ja-1336"
+      forms:
+        "to-iu": "かぶるといいます"
+        "to-omou": "かぶるとおもいます"
+      readings:
+        "to-iu": "kaburutoiimasu"
+        "to-omou": "kaburutoomoimasu"
+    - word: "ja-1341"
+      forms:
+        "to-iu": "つかれるといいます"
+        "to-omou": "つかれるとおもいます"
+      readings:
+        "to-iu": "tsukarerutoiimasu"
+        "to-omou": "tsukarerutoomoimasu"
+    - word: "ja-1348"
+      forms:
+        "to-iu": "だすといいます"
+        "to-omou": "だすとおもいます"
+      readings:
+        "to-iu": "dasutoiimasu"
+        "to-omou": "dasutoomoimasu"
+    - word: "ja-1349"
+      forms:
+        "to-iu": "わかすといいます"
+        "to-omou": "わかすとおもいます"
+      readings:
+        "to-iu": "wakasutoiimasu"
+        "to-omou": "wakasutoomoimasu"
+    - word: "ja-1350"
+      forms:
+        "to-iu": "ほすといいます"
+        "to-omou": "ほすとおもいます"
+      readings:
+        "to-iu": "hosutoiimasu"
+        "to-omou": "hosutoomoimasu"
+    - word: "ja-1351"
+      forms:
+        "to-iu": "かたづけるといいます"
+        "to-omou": "かたづけるとおもいます"
+      readings:
+        "to-iu": "katazukerutoiimasu"
+        "to-omou": "katazukerutoomoimasu"
+    - word: "ja-1352"
+      forms:
+        "to-iu": "たたむといいます"
+        "to-omou": "たたむとおもいます"
+      readings:
+        "to-iu": "tatamutoiimasu"
+        "to-omou": "tatamutoomoimasu"
+    - word: "ja-1353"
+      forms:
+        "to-iu": "ぬぐといいます"
+        "to-omou": "ぬぐとおもいます"
+      readings:
+        "to-iu": "nugutoiimasu"
+        "to-omou": "nugutoomoimasu"
+    - word: "ja-1354"
+      forms:
+        "to-iu": "まにあうといいます"
+        "to-omou": "まにあうとおもいます"
+      readings:
+        "to-iu": "maniautoiimasu"
+        "to-omou": "maniautoomoimasu"
+    - word: "ja-1364"
+      forms:
+        "to-iu": "かわくといいます"
+        "to-omou": "かわくとおもいます"
+      readings:
+        "to-iu": "kawakutoiimasu"
+        "to-omou": "kawakutoomoimasu"
+    - word: "ja-1368"
+      forms:
+        "to-iu": "いそぐといいます"
+        "to-omou": "いそぐとおもいます"
+      readings:
+        "to-iu": "isogutoiimasu"
+        "to-omou": "isogutoomoimasu"
+    - word: "ja-1539"
+      forms:
+        "to-iu": "にあうといいます"
+        "to-omou": "にあうとおもいます"
+      readings:
+        "to-iu": "niautoiimasu"
+        "to-omou": "niautoomoimasu"
+    - word: "ja-1542"
+      forms:
+        "to-iu": "きるといいます"
+        "to-omou": "きるとおもいます"
+      readings:
+        "to-iu": "kirutoiimasu"
+        "to-omou": "kirutoomoimasu"
+    - word: "ja-1718"
+      forms:
+        "to-iu": "うるといいます"
+        "to-omou": "うるとおもいます"
+      readings:
+        "to-iu": "urutoiimasu"
+        "to-omou": "urutoomoimasu"
+    - word: "ja-1719"
+      forms:
+        "to-iu": "はらうといいます"
+        "to-omou": "はらうとおもいます"
+      readings:
+        "to-iu": "harautoiimasu"
+        "to-omou": "harautoomoimasu"
+    - word: "ja-1720"
+      forms:
+        "to-iu": "まけるといいます"
+        "to-omou": "まけるとおもいます"
+      readings:
+        "to-iu": "makerutoiimasu"
+        "to-omou": "makerutoomoimasu"
+    - word: "ja-1721"
+      forms:
+        "to-iu": "えらぶといいます"
+        "to-omou": "えらぶとおもいます"
+      readings:
+        "to-iu": "erabutoiimasu"
+        "to-omou": "erabutoomoimasu"
+    - word: "ja-1758"
+      forms:
+        "to-iu": "たのむといいます"
+        "to-omou": "たのむとおもいます"
+      readings:
+        "to-iu": "tanomutoiimasu"
+        "to-omou": "tanomutoomoimasu"
+    - word: "ja-1759"
+      forms:
+        "to-iu": "おごるといいます"
+        "to-omou": "おごるとおもいます"
+      readings:
+        "to-iu": "ogorutoiimasu"
+        "to-omou": "ogorutoomoimasu"
+    - word: "ja-1790"
+      forms:
+        "to-iu": "いためるといいます"
+        "to-omou": "いためるとおもいます"
+      readings:
+        "to-iu": "itamerutoiimasu"
+        "to-omou": "itamerutoomoimasu"
+    - word: "ja-1791"
+      forms:
+        "to-iu": "まぜるといいます"
+        "to-omou": "まぜるとおもいます"
+      readings:
+        "to-iu": "mazerutoiimasu"
+        "to-omou": "mazerutoomoimasu"
+    - word: "ja-1792"
+      forms:
+        "to-iu": "ゆでるといいます"
+        "to-omou": "ゆでるとおもいます"
+      readings:
+        "to-iu": "yuderutoiimasu"
+        "to-omou": "yuderutoomoimasu"
+    - word: "ja-1793"
+      forms:
+        "to-iu": "にるといいます"
+        "to-omou": "にるとおもいます"
+      readings:
+        "to-iu": "nirutoiimasu"
+        "to-omou": "nirutoomoimasu"
+    - word: "ja-1794"
+      forms:
+        "to-iu": "やくといいます"
+        "to-omou": "やくとおもいます"
+      readings:
+        "to-iu": "yakutoiimasu"
+        "to-omou": "yakutoomoimasu"
+    - word: "ja-1799"
+      forms:
+        "to-iu": "ひやすといいます"
+        "to-omou": "ひやすとおもいます"
+      readings:
+        "to-iu": "hiyasutoiimasu"
+        "to-omou": "hiyasutoomoimasu"
+    - word: "ja-1800"
+      forms:
+        "to-iu": "あたためるといいます"
+        "to-omou": "あたためるとおもいます"
+      readings:
+        "to-iu": "atatamerutoiimasu"
+        "to-omou": "atatamerutoomoimasu"
+    - word: "ja-1801"
+      forms:
+        "to-iu": "きざむといいます"
+        "to-omou": "きざむとおもいます"
+      readings:
+        "to-iu": "kizamutoiimasu"
+        "to-omou": "kizamutoomoimasu"
+    - word: "ja-1802"
+      forms:
+        "to-iu": "むくといいます"
+        "to-omou": "むくとおもいます"
+      readings:
+        "to-iu": "mukutoiimasu"
+        "to-omou": "mukutoomoimasu"
+    - word: "ja-1803"
+      forms:
+        "to-iu": "つつむといいます"
+        "to-omou": "つつむとおもいます"
+      readings:
+        "to-iu": "tsutsumutoiimasu"
+        "to-omou": "tsutsumutoomoimasu"
+    - word: "ja-1804"
+      forms:
+        "to-iu": "こげるといいます"
+        "to-omou": "こげるとおもいます"
+      readings:
+        "to-iu": "kogerutoiimasu"
+        "to-omou": "kogerutoomoimasu"
+    - word: "ja-1805"
+      forms:
+        "to-iu": "さますといいます"
+        "to-omou": "さますとおもいます"
+      readings:
+        "to-iu": "samasutoiimasu"
+        "to-omou": "samasutoomoimasu"
+    - word: "ja-1850"
+      forms:
+        "to-iu": "べんきょうするといいます"
+        "to-omou": "べんきょうするとおもいます"
+      readings:
+        "to-iu": "benkyousurutoiimasu"
+        "to-omou": "benkyousurutoomoimasu"
+    - word: "ja-1861"
+      forms:
+        "to-iu": "おくれるといいます"
+        "to-omou": "おくれるとおもいます"
+      readings:
+        "to-iu": "okurerutoiimasu"
+        "to-omou": "okurerutoomoimasu"
+    - word: "ja-1862"
+      forms:
+        "to-iu": "まなぶといいます"
+        "to-omou": "まなぶとおもいます"
+      readings:
+        "to-iu": "manabutoiimasu"
+        "to-omou": "manabutoomoimasu"
+    - word: "ja-1863"
+      forms:
+        "to-iu": "つづけるといいます"
+        "to-omou": "つづけるとおもいます"
+      readings:
+        "to-iu": "tsuzukerutoiimasu"
+        "to-omou": "tsuzukerutoomoimasu"
+    - word: "ja-1864"
+      forms:
+        "to-iu": "かんがえるといいます"
+        "to-omou": "かんがえるとおもいます"
+      readings:
+        "to-iu": "kangaerutoiimasu"
+        "to-omou": "kangaerutoomoimasu"
+    - word: "ja-1865"
+      forms:
+        "to-iu": "こたえるといいます"
+        "to-omou": "こたえるとおもいます"
+      readings:
+        "to-iu": "kotaerutoiimasu"
+        "to-omou": "kotaerutoomoimasu"
+    - word: "ja-1892"
+      forms:
+        "to-iu": "およぐといいます"
+        "to-omou": "およぐとおもいます"
+      readings:
+        "to-iu": "oyogutoiimasu"
+        "to-omou": "oyogutoomoimasu"
+    - word: "ja-1893"
+      forms:
+        "to-iu": "とるといいます"
+        "to-omou": "とるとおもいます"
+      readings:
+        "to-iu": "torutoiimasu"
+        "to-omou": "torutoomoimasu"
+    - word: "ja-1896"
+      forms:
+        "to-iu": "えがくといいます"
+        "to-omou": "えがくとおもいます"
+      readings:
+        "to-iu": "egakutoiimasu"
+        "to-omou": "egakutoomoimasu"
+    - word: "ja-1900"
+      forms:
+        "to-iu": "ぬうといいます"
+        "to-omou": "ぬうとおもいます"
+      readings:
+        "to-iu": "nuutoiimasu"
+        "to-omou": "nuutoomoimasu"
+    - word: "ja-1901"
+      forms:
+        "to-iu": "あむといいます"
+        "to-omou": "あむとおもいます"
+      readings:
+        "to-iu": "amutoiimasu"
+        "to-omou": "amutoomoimasu"
+    - word: "ja-1907"
+      forms:
+        "to-iu": "ほめるといいます"
+        "to-omou": "ほめるとおもいます"
+      readings:
+        "to-iu": "homerutoiimasu"
+        "to-omou": "homerutoomoimasu"
+    - word: "ja-1910"
+      forms:
+        "to-iu": "かつといいます"
+        "to-omou": "かつとおもいます"
+      readings:
+        "to-iu": "katsutoiimasu"
+        "to-omou": "katsutoomoimasu"
+    - word: "ja-1933"
+      forms:
+        "to-iu": "かなでるといいます"
+        "to-omou": "かなでるとおもいます"
+      readings:
+        "to-iu": "kanaderutoiimasu"
+        "to-omou": "kanaderutoomoimasu"
+    - word: "ja-1934"
+      forms:
+        "to-iu": "ならすといいます"
+        "to-omou": "ならすとおもいます"
+      readings:
+        "to-iu": "narasutoiimasu"
+        "to-omou": "narasutoomoimasu"
+    - word: "ja-1935"
+      forms:
+        "to-iu": "ひびくといいます"
+        "to-omou": "ひびくとおもいます"
+      readings:
+        "to-iu": "hibikutoiimasu"
+        "to-omou": "hibikutoomoimasu"
+    - word: "ja-1939"
+      forms:
+        "to-iu": "たたくといいます"
+        "to-omou": "たたくとおもいます"
+      readings:
+        "to-iu": "tatakutoiimasu"
+        "to-omou": "tatakutoomoimasu"
+    - word: "ja-1940"
+      forms:
+        "to-iu": "きこえるといいます"
+        "to-omou": "きこえるとおもいます"
+      readings:
+        "to-iu": "kikoerutoiimasu"
+        "to-omou": "kikoerutoomoimasu"
+    - word: "ja-1941"
+      forms:
+        "to-iu": "ひくといいます"
+        "to-omou": "ひくとおもいます"
+      readings:
+        "to-iu": "hikutoiimasu"
+        "to-omou": "hikutoomoimasu"
+    - word: "ja-1996"
+      forms:
+        "to-iu": "なげるといいます"
+        "to-omou": "なげるとおもいます"
+      readings:
+        "to-iu": "nagerutoiimasu"
+        "to-omou": "nagerutoomoimasu"
+    - word: "ja-1997"
+      forms:
+        "to-iu": "うつといいます"
+        "to-omou": "うつとおもいます"
+      readings:
+        "to-iu": "utsutoiimasu"
+        "to-omou": "utsutoomoimasu"
+    - word: "ja-1998"
+      forms:
+        "to-iu": "けるといいます"
+        "to-omou": "けるとおもいます"
+      readings:
+        "to-iu": "kerutoiimasu"
+        "to-omou": "kerutoomoimasu"
+    - word: "ja-1999"
+      forms:
+        "to-iu": "おいかけるといいます"
+        "to-omou": "おいかけるとおもいます"
+      readings:
+        "to-iu": "oikakerutoiimasu"
+        "to-omou": "oikakerutoomoimasu"
+    - word: "ja-2000"
+      forms:
+        "to-iu": "あきらめるといいます"
+        "to-omou": "あきらめるとおもいます"
+      readings:
+        "to-iu": "akiramerutoiimasu"
+        "to-omou": "akiramerutoomoimasu"
+    - word: "ja-2001"
+      forms:
+        "to-iu": "きたえるといいます"
+        "to-omou": "きたえるとおもいます"
+      readings:
+        "to-iu": "kitaerutoiimasu"
+        "to-omou": "kitaerutoomoimasu"
+    - word: "ja-2002"
+      forms:
+        "to-iu": "ねらうといいます"
+        "to-omou": "ねらうとおもいます"
+      readings:
+        "to-iu": "nerautoiimasu"
+        "to-omou": "nerautoomoimasu"
+    - word: "ja-2049"
+      forms:
+        "to-iu": "うつるといいます"
+        "to-omou": "うつるとおもいます"
+      readings:
+        "to-iu": "utsurutoiimasu"
+        "to-omou": "utsurutoomoimasu"
+    - word: "ja-2050"
+      forms:
+        "to-iu": "なおるといいます"
+        "to-omou": "なおるとおもいます"
+      readings:
+        "to-iu": "naorutoiimasu"
+        "to-omou": "naorutoomoimasu"
+    - word: "ja-2051"
+      forms:
+        "to-iu": "なおすといいます"
+        "to-omou": "なおすとおもいます"
+      readings:
+        "to-iu": "naosutoiimasu"
+        "to-omou": "naosutoomoimasu"
+    - word: "ja-2052"
+      forms:
+        "to-iu": "たおれるといいます"
+        "to-omou": "たおれるとおもいます"
+      readings:
+        "to-iu": "taorerutoiimasu"
+        "to-omou": "taorerutoomoimasu"
+    - word: "ja-2053"
+      forms:
+        "to-iu": "はれるといいます"
+        "to-omou": "はれるとおもいます"
+      readings:
+        "to-iu": "harerutoiimasu"
+        "to-omou": "harerutoomoimasu"
+    - word: "ja-2054"
+      forms:
+        "to-iu": "しびれるといいます"
+        "to-omou": "しびれるとおもいます"
+      readings:
+        "to-iu": "shibirerutoiimasu"
+        "to-omou": "shibirerutoomoimasu"
+    - word: "ja-2115"
+      forms:
+        "to-iu": "みがくといいます"
+        "to-omou": "みがくとおもいます"
+      readings:
+        "to-iu": "migakutoiimasu"
+        "to-omou": "migakutoomoimasu"
+    - word: "ja-2116"
+      forms:
+        "to-iu": "こするといいます"
+        "to-omou": "こするとおもいます"
+      readings:
+        "to-iu": "kosurutoiimasu"
+        "to-omou": "kosurutoomoimasu"
+    - word: "ja-2117"
+      forms:
+        "to-iu": "すすぐといいます"
+        "to-omou": "すすぐとおもいます"
+      readings:
+        "to-iu": "susugutoiimasu"
+        "to-omou": "susugutoomoimasu"
+    - word: "ja-2118"
+      forms:
+        "to-iu": "しぼるといいます"
+        "to-omou": "しぼるとおもいます"
+      readings:
+        "to-iu": "shiborutoiimasu"
+        "to-omou": "shiborutoomoimasu"
+    - word: "ja-2119"
+      forms:
+        "to-iu": "かわかすといいます"
+        "to-omou": "かわかすとおもいます"
+      readings:
+        "to-iu": "kawakasutoiimasu"
+        "to-omou": "kawakasutoomoimasu"
+    - word: "ja-2120"
+      forms:
+        "to-iu": "しまうといいます"
+        "to-omou": "しまうとおもいます"
+      readings:
+        "to-iu": "shimautoiimasu"
+        "to-omou": "shimautoomoimasu"
+    - word: "ja-2121"
+      forms:
+        "to-iu": "そろえるといいます"
+        "to-omou": "そろえるとおもいます"
+      readings:
+        "to-iu": "soroerutoiimasu"
+        "to-omou": "soroerutoomoimasu"
+    - word: "ja-2122"
+      forms:
+        "to-iu": "かざるといいます"
+        "to-omou": "かざるとおもいます"
+      readings:
+        "to-iu": "kazarutoiimasu"
+        "to-omou": "kazarutoomoimasu"
+    - word: "ja-2123"
+      forms:
+        "to-iu": "とりかえるといいます"
+        "to-omou": "とりかえるとおもいます"
+      readings:
+        "to-iu": "torikaerutoiimasu"
+        "to-omou": "torikaerutoomoimasu"
+    - word: "ja-2124"
+      forms:
+        "to-iu": "つめるといいます"
+        "to-omou": "つめるとおもいます"
+      readings:
+        "to-iu": "tsumerutoiimasu"
+        "to-omou": "tsumerutoomoimasu"
+    - word: "ja-2125"
+      forms:
+        "to-iu": "くばるといいます"
+        "to-omou": "くばるとおもいます"
+      readings:
+        "to-iu": "kubarutoiimasu"
+        "to-omou": "kubarutoomoimasu"
+    - word: "ja-2126"
+      forms:
+        "to-iu": "こぼすといいます"
+        "to-omou": "こぼすとおもいます"
+      readings:
+        "to-iu": "kobosutoiimasu"
+        "to-omou": "kobosutoomoimasu"
+    - word: "ja-2127"
+      forms:
+        "to-iu": "よごれるといいます"
+        "to-omou": "よごれるとおもいます"
+      readings:
+        "to-iu": "yogorerutoiimasu"
+        "to-omou": "yogorerutoomoimasu"
+    - word: "ja-2128"
+      forms:
+        "to-iu": "よごすといいます"
+        "to-omou": "よごすとおもいます"
+      readings:
+        "to-iu": "yogosutoiimasu"
+        "to-omou": "yogosutoomoimasu"
+    - word: "ja-2129"
+      forms:
+        "to-iu": "ちらかすといいます"
+        "to-omou": "ちらかすとおもいます"
+      readings:
+        "to-iu": "chirakasutoiimasu"
+        "to-omou": "chirakasutoomoimasu"
+    - word: "ja-2164"
+      forms:
+        "to-iu": "やせるといいます"
+        "to-omou": "やせるとおもいます"
+      readings:
+        "to-iu": "yaserutoiimasu"
+        "to-omou": "yaserutoomoimasu"
+    - word: "ja-2165"
+      forms:
+        "to-iu": "ふとるといいます"
+        "to-omou": "ふとるとおもいます"
+      readings:
+        "to-iu": "futorutoiimasu"
+        "to-omou": "futorutoomoimasu"
+    - word: "ja-2217"
+      forms:
+        "to-iu": "かわるといいます"
+        "to-omou": "かわるとおもいます"
+      readings:
+        "to-iu": "kawarutoiimasu"
+        "to-omou": "kawarutoomoimasu"
+    - word: "ja-2218"
+      forms:
+        "to-iu": "きまるといいます"
+        "to-omou": "きまるとおもいます"
+      readings:
+        "to-iu": "kimarutoiimasu"
+        "to-omou": "kimarutoomoimasu"
+    - word: "ja-2219"
+      forms:
+        "to-iu": "きめるといいます"
+        "to-omou": "きめるとおもいます"
+      readings:
+        "to-iu": "kimerutoiimasu"
+        "to-omou": "kimerutoomoimasu"
+    - word: "ja-2220"
+      forms:
+        "to-iu": "なるといいます"
+        "to-omou": "なるとおもいます"
+      readings:
+        "to-iu": "narutoiimasu"
+        "to-omou": "narutoomoimasu"
+    - word: "ja-2221"
+      forms:
+        "to-iu": "なれるといいます"
+        "to-omou": "なれるとおもいます"
+      readings:
+        "to-iu": "narerutoiimasu"
+        "to-omou": "narerutoomoimasu"
+    - word: "ja-2222"
+      forms:
+        "to-iu": "つくといいます"
+        "to-omou": "つくとおもいます"
+      readings:
+        "to-iu": "tsukutoiimasu"
+        "to-omou": "tsukutoomoimasu"
+    - word: "ja-2223"
+      forms:
+        "to-iu": "つけるといいます"
+        "to-omou": "つけるとおもいます"
+      readings:
+        "to-iu": "tsukerutoiimasu"
+        "to-omou": "tsukerutoomoimasu"
+    - word: "ja-2224"
+      forms:
+        "to-iu": "けすといいます"
+        "to-omou": "けすとおもいます"
+      readings:
+        "to-iu": "kesutoiimasu"
+        "to-omou": "kesutoomoimasu"
+    - word: "ja-2225"
+      forms:
+        "to-iu": "きえるといいます"
+        "to-omou": "きえるとおもいます"
+      readings:
+        "to-iu": "kierutoiimasu"
+        "to-omou": "kierutoomoimasu"
+    - word: "ja-2226"
+      forms:
+        "to-iu": "あくといいます"
+        "to-omou": "あくとおもいます"
+      readings:
+        "to-iu": "akutoiimasu"
+        "to-omou": "akutoomoimasu"
+    - word: "ja-2227"
+      forms:
+        "to-iu": "しまるといいます"
+        "to-omou": "しまるとおもいます"
+      readings:
+        "to-iu": "shimarutoiimasu"
+        "to-omou": "shimarutoomoimasu"
+    - word: "ja-2228"
+      forms:
+        "to-iu": "つかまえるといいます"
+        "to-omou": "つかまえるとおもいます"
+      readings:
+        "to-iu": "tsukamaerutoiimasu"
+        "to-omou": "tsukamaerutoomoimasu"
+    - word: "ja-2229"
+      forms:
+        "to-iu": "つかむといいます"
+        "to-omou": "つかむとおもいます"
+      readings:
+        "to-iu": "tsukamutoiimasu"
+        "to-omou": "tsukamutoomoimasu"
+    - word: "ja-2230"
+      forms:
+        "to-iu": "おすといいます"
+        "to-omou": "おすとおもいます"
+      readings:
+        "to-iu": "osutoiimasu"
+        "to-omou": "osutoomoimasu"
+    - word: "ja-2231"
+      forms:
+        "to-iu": "ひっぱるといいます"
+        "to-omou": "ひっぱるとおもいます"
+      readings:
+        "to-iu": "hipparutoiimasu"
+        "to-omou": "hipparutoomoimasu"
+    - word: "ja-2232"
+      forms:
+        "to-iu": "おとすといいます"
+        "to-omou": "おとすとおもいます"
+      readings:
+        "to-iu": "otosutoiimasu"
+        "to-omou": "otosutoomoimasu"
+    - word: "ja-2233"
+      forms:
+        "to-iu": "おちるといいます"
+        "to-omou": "おちるとおもいます"
+      readings:
+        "to-iu": "ochirutoiimasu"
+        "to-omou": "ochirutoomoimasu"
+    - word: "ja-2234"
+      forms:
+        "to-iu": "ひらくといいます"
+        "to-omou": "ひらくとおもいます"
+      readings:
+        "to-iu": "hirakutoiimasu"
+        "to-omou": "hirakutoomoimasu"
+    - word: "ja-2235"
+      forms:
+        "to-iu": "とじるといいます"
+        "to-omou": "とじるとおもいます"
+      readings:
+        "to-iu": "tojirutoiimasu"
+        "to-omou": "tojirutoomoimasu"
+    - word: "ja-2236"
+      forms:
+        "to-iu": "わたすといいます"
+        "to-omou": "わたすとおもいます"
+      readings:
+        "to-iu": "watasutoiimasu"
+        "to-omou": "watasutoomoimasu"
+    - word: "ja-2237"
+      forms:
+        "to-iu": "うけるといいます"
+        "to-omou": "うけるとおもいます"
+      readings:
+        "to-iu": "ukerutoiimasu"
+        "to-omou": "ukerutoomoimasu"
+    - word: "ja-2238"
+      forms:
+        "to-iu": "つたえるといいます"
+        "to-omou": "つたえるとおもいます"
+      readings:
+        "to-iu": "tsutaerutoiimasu"
+        "to-omou": "tsutaerutoomoimasu"
+    - word: "ja-2239"
+      forms:
+        "to-iu": "つたわるといいます"
+        "to-omou": "つたわるとおもいます"
+      readings:
+        "to-iu": "tsutawarutoiimasu"
+        "to-omou": "tsutawarutoomoimasu"
+    - word: "ja-2240"
+      forms:
+        "to-iu": "むかえるといいます"
+        "to-omou": "むかえるとおもいます"
+      readings:
+        "to-iu": "mukaerutoiimasu"
+        "to-omou": "mukaerutoomoimasu"
+    - word: "ja-2241"
+      forms:
+        "to-iu": "おくるといいます"
+        "to-omou": "おくるとおもいます"
+      readings:
+        "to-iu": "okurutoiimasu"
+        "to-omou": "okurutoomoimasu"
+    - word: "ja-2242"
+      forms:
+        "to-iu": "とどくといいます"
+        "to-omou": "とどくとおもいます"
+      readings:
+        "to-iu": "todokutoiimasu"
+        "to-omou": "todokutoomoimasu"
+    - word: "ja-2243"
+      forms:
+        "to-iu": "とどけるといいます"
+        "to-omou": "とどけるとおもいます"
+      readings:
+        "to-iu": "todokerutoiimasu"
+        "to-omou": "todokerutoomoimasu"
+    - word: "ja-2244"
+      forms:
+        "to-iu": "たずねるといいます"
+        "to-omou": "たずねるとおもいます"
+      readings:
+        "to-iu": "tazunerutoiimasu"
+        "to-omou": "tazunerutoomoimasu"
+    - word: "ja-2245"
+      forms:
+        "to-iu": "まちがうといいます"
+        "to-omou": "まちがうとおもいます"
+      readings:
+        "to-iu": "machigautoiimasu"
+        "to-omou": "machigautoomoimasu"
+    - word: "ja-2246"
+      forms:
+        "to-iu": "あやまるといいます"
+        "to-omou": "あやまるとおもいます"
+      readings:
+        "to-iu": "ayamarutoiimasu"
+        "to-omou": "ayamarutoomoimasu"
+    - word: "ja-2247"
+      forms:
+        "to-iu": "ゆるすといいます"
+        "to-omou": "ゆるすとおもいます"
+      readings:
+        "to-iu": "yurusutoiimasu"
+        "to-omou": "yurusutoomoimasu"
+    - word: "ja-2248"
+      forms:
+        "to-iu": "ことわるといいます"
+        "to-omou": "ことわるとおもいます"
+      readings:
+        "to-iu": "kotowarutoiimasu"
+        "to-omou": "kotowarutoomoimasu"
+    - word: "ja-2249"
+      forms:
+        "to-iu": "さそうといいます"
+        "to-omou": "さそうとおもいます"
+      readings:
+        "to-iu": "sasoutoiimasu"
+        "to-omou": "sasoutoomoimasu"
+    - word: "ja-2250"
+      forms:
+        "to-iu": "かようといいます"
+        "to-omou": "かようとおもいます"
+      readings:
+        "to-iu": "kayoutoiimasu"
+        "to-omou": "kayoutoomoimasu"
+    - word: "ja-2251"
+      forms:
+        "to-iu": "とおるといいます"
+        "to-omou": "とおるとおもいます"
+      readings:
+        "to-iu": "toorutoiimasu"
+        "to-omou": "toorutoomoimasu"
+    - word: "ja-2252"
+      forms:
+        "to-iu": "すぎるといいます"
+        "to-omou": "すぎるとおもいます"
+      readings:
+        "to-iu": "sugirutoiimasu"
+        "to-omou": "sugirutoomoimasu"
+    - word: "ja-2253"
+      forms:
+        "to-iu": "まわるといいます"
+        "to-omou": "まわるとおもいます"
+      readings:
+        "to-iu": "mawarutoiimasu"
+        "to-omou": "mawarutoomoimasu"
+    - word: "ja-2254"
+      forms:
+        "to-iu": "まわすといいます"
+        "to-omou": "まわすとおもいます"
+      readings:
+        "to-iu": "mawasutoiimasu"
+        "to-omou": "mawasutoomoimasu"
+    - word: "ja-2255"
+      forms:
+        "to-iu": "うごくといいます"
+        "to-omou": "うごくとおもいます"
+      readings:
+        "to-iu": "ugokutoiimasu"
+        "to-omou": "ugokutoomoimasu"
+    - word: "ja-2256"
+      forms:
+        "to-iu": "うごかすといいます"
+        "to-omou": "うごかすとおもいます"
+      readings:
+        "to-iu": "ugokasutoiimasu"
+        "to-omou": "ugokasutoomoimasu"
+    - word: "ja-2257"
+      forms:
+        "to-iu": "のこるといいます"
+        "to-omou": "のこるとおもいます"
+      readings:
+        "to-iu": "nokorutoiimasu"
+        "to-omou": "nokorutoomoimasu"
+    - word: "ja-2258"
+      forms:
+        "to-iu": "のこすといいます"
+        "to-omou": "のこすとおもいます"
+      readings:
+        "to-iu": "nokosutoiimasu"
+        "to-omou": "nokosutoomoimasu"
+    - word: "ja-2259"
+      forms:
+        "to-iu": "あつまるといいます"
+        "to-omou": "あつまるとおもいます"
+      readings:
+        "to-iu": "atsumarutoiimasu"
+        "to-omou": "atsumarutoomoimasu"
+    - word: "ja-2260"
+      forms:
+        "to-iu": "あつめるといいます"
+        "to-omou": "あつめるとおもいます"
+      readings:
+        "to-iu": "atsumerutoiimasu"
+        "to-omou": "atsumerutoomoimasu"
+    - word: "ja-2261"
+      forms:
+        "to-iu": "わけるといいます"
+        "to-omou": "わけるとおもいます"
+      readings:
+        "to-iu": "wakerutoiimasu"
+        "to-omou": "wakerutoomoimasu"
+    - word: "ja-2262"
+      forms:
+        "to-iu": "くらべるといいます"
+        "to-omou": "くらべるとおもいます"
+      readings:
+        "to-iu": "kuraberutoiimasu"
+        "to-omou": "kuraberutoomoimasu"
+    - word: "ja-2263"
+      forms:
+        "to-iu": "かくれるといいます"
+        "to-omou": "かくれるとおもいます"
+      readings:
+        "to-iu": "kakurerutoiimasu"
+        "to-omou": "kakurerutoomoimasu"
+    - word: "ja-2264"
+      forms:
+        "to-iu": "かくすといいます"
+        "to-omou": "かくすとおもいます"
+      readings:
+        "to-iu": "kakusutoiimasu"
+        "to-omou": "kakusutoomoimasu"
+    - word: "ja-2265"
+      forms:
+        "to-iu": "みつかるといいます"
+        "to-omou": "みつかるとおもいます"
+      readings:
+        "to-iu": "mitsukarutoiimasu"
+        "to-omou": "mitsukarutoomoimasu"
+    - word: "ja-2266"
+      forms:
+        "to-iu": "みつけるといいます"
+        "to-omou": "みつけるとおもいます"
+      readings:
+        "to-iu": "mitsukerutoiimasu"
+        "to-omou": "mitsukerutoomoimasu"
+    - word: "ja-2267"
+      forms:
+        "to-iu": "ふえるといいます"
+        "to-omou": "ふえるとおもいます"
+      readings:
+        "to-iu": "fuerutoiimasu"
+        "to-omou": "fuerutoomoimasu"
+    - word: "ja-2268"
+      forms:
+        "to-iu": "へるといいます"
+        "to-omou": "へるとおもいます"
+      readings:
+        "to-iu": "herutoiimasu"
+        "to-omou": "herutoomoimasu"
+    - word: "ja-2269"
+      forms:
+        "to-iu": "そだてるといいます"
+        "to-omou": "そだてるとおもいます"
+      readings:
+        "to-iu": "sodaterutoiimasu"
+        "to-omou": "sodaterutoomoimasu"
+    - word: "ja-2270"
+      forms:
+        "to-iu": "そだつといいます"
+        "to-omou": "そだつとおもいます"
+      readings:
+        "to-iu": "sodatsutoiimasu"
+        "to-omou": "sodatsutoomoimasu"
+    - word: "ja-2271"
+      forms:
+        "to-iu": "うまれるといいます"
+        "to-omou": "うまれるとおもいます"
+      readings:
+        "to-iu": "umarerutoiimasu"
+        "to-omou": "umarerutoomoimasu"
+    - word: "ja-2272"
+      forms:
+        "to-iu": "いきるといいます"
+        "to-omou": "いきるとおもいます"
+      readings:
+        "to-iu": "ikirutoiimasu"
+        "to-omou": "ikirutoomoimasu"
+    - word: "ja-2273"
+      forms:
+        "to-iu": "たのしむといいます"
+        "to-omou": "たのしむとおもいます"
+      readings:
+        "to-iu": "tanoshimutoiimasu"
+        "to-omou": "tanoshimutoomoimasu"
+    - word: "ja-2274"
+      forms:
+        "to-iu": "あたるといいます"
+        "to-omou": "あたるとおもいます"
+      readings:
+        "to-iu": "atarutoiimasu"
+        "to-omou": "atarutoomoimasu"
+    - word: "ja-2275"
+      forms:
+        "to-iu": "はじまるといいます"
+        "to-omou": "はじまるとおもいます"
+      readings:
+        "to-iu": "hajimarutoiimasu"
+        "to-omou": "hajimarutoomoimasu"
+    - word: "ja-2276"
+      forms:
+        "to-iu": "さわるといいます"
+        "to-omou": "さわるとおもいます"
+      readings:
+        "to-iu": "sawarutoiimasu"
+        "to-omou": "sawarutoomoimasu"
+    - word: "ja-2320"
+      forms:
+        "to-iu": "つながるといいます"
+        "to-omou": "つながるとおもいます"
+      readings:
+        "to-iu": "tsunagarutoiimasu"
+        "to-omou": "tsunagarutoomoimasu"
+    - word: "ja-2321"
+      forms:
+        "to-iu": "つなぐといいます"
+        "to-omou": "つなぐとおもいます"
+      readings:
+        "to-iu": "tsunagutoiimasu"
+        "to-omou": "tsunagutoomoimasu"
+    - word: "ja-2322"
+      forms:
+        "to-iu": "かけるといいます"
+        "to-omou": "かけるとおもいます"
+      readings:
+        "to-iu": "kakerutoiimasu"
+        "to-omou": "kakerutoomoimasu"
+    - word: "ja-2323"
+      forms:
+        "to-iu": "うけとるといいます"
+        "to-omou": "うけとるとおもいます"
+      readings:
+        "to-iu": "uketorutoiimasu"
+        "to-omou": "uketorutoomoimasu"
+    - word: "ja-2364"
+      forms:
+        "to-iu": "のりおくれるといいます"
+        "to-omou": "のりおくれるとおもいます"
+      readings:
+        "to-iu": "noriokurerutoiimasu"
+        "to-omou": "noriokurerutoomoimasu"
+    - word: "ja-2365"
+      forms:
+        "to-iu": "のりかえるといいます"
+        "to-omou": "のりかえるとおもいます"
+      readings:
+        "to-iu": "norikaerutoiimasu"
+        "to-omou": "norikaerutoomoimasu"
+    - word: "ja-2407"
+      forms:
+        "to-iu": "たちよるといいます"
+        "to-omou": "たちよるとおもいます"
+      readings:
+        "to-iu": "tachiyorutoiimasu"
+        "to-omou": "tachiyorutoomoimasu"
+    - word: "ja-2470"
+      forms:
+        "to-iu": "さくといいます"
+        "to-omou": "さくとおもいます"
+      readings:
+        "to-iu": "sakutoiimasu"
+        "to-omou": "sakutoomoimasu"
+    - word: "ja-2471"
+      forms:
+        "to-iu": "ちるといいます"
+        "to-omou": "ちるとおもいます"
+      readings:
+        "to-iu": "chirutoiimasu"
+        "to-omou": "chirutoomoimasu"
+    - word: "ja-2472"
+      forms:
+        "to-iu": "しげるといいます"
+        "to-omou": "しげるとおもいます"
+      readings:
+        "to-iu": "shigerutoiimasu"
+        "to-omou": "shigerutoomoimasu"
+    - word: "ja-2473"
+      forms:
+        "to-iu": "かれるといいます"
+        "to-omou": "かれるとおもいます"
+      readings:
+        "to-iu": "karerutoiimasu"
+        "to-omou": "karerutoomoimasu"
+    - word: "ja-2600"
+      forms:
+        "to-iu": "まかせるといいます"
+        "to-omou": "まかせるとおもいます"
+      readings:
+        "to-iu": "makaserutoiimasu"
+        "to-omou": "makaserutoomoimasu"
+    - word: "ja-2601"
+      forms:
+        "to-iu": "ひきうけるといいます"
+        "to-omou": "ひきうけるとおもいます"
+      readings:
+        "to-iu": "hikiukerutoiimasu"
+        "to-omou": "hikiukerutoomoimasu"
+    - word: "ja-2602"
+      forms:
+        "to-iu": "こなすといいます"
+        "to-omou": "こなすとおもいます"
+      readings:
+        "to-iu": "konasutoiimasu"
+        "to-omou": "konasutoomoimasu"
+    - word: "ja-2603"
+      forms:
+        "to-iu": "はげむといいます"
+        "to-omou": "はげむとおもいます"
+      readings:
+        "to-iu": "hagemutoiimasu"
+        "to-omou": "hagemutoomoimasu"
+    - word: "ja-2604"
+      forms:
+        "to-iu": "てがけるといいます"
+        "to-omou": "てがけるとおもいます"
+      readings:
+        "to-iu": "tegakerutoiimasu"
+        "to-omou": "tegakerutoomoimasu"
+    - word: "ja-2605"
+      forms:
+        "to-iu": "しめきるといいます"
+        "to-omou": "しめきるとおもいます"
+      readings:
+        "to-iu": "shimekirutoiimasu"
+        "to-omou": "shimekirutoomoimasu"
+    - word: "ja-2606"
+      forms:
+        "to-iu": "まにあわせるといいます"
+        "to-omou": "まにあわせるとおもいます"
+      readings:
+        "to-iu": "maniawaserutoiimasu"
+        "to-omou": "maniawaserutoomoimasu"
+    - word: "ja-2716"
+      forms:
+        "to-iu": "かたよるといいます"
+        "to-omou": "かたよるとおもいます"
+      readings:
+        "to-iu": "katayorutoiimasu"
+        "to-omou": "katayorutoomoimasu"
+    - word: "ja-2768"
+      forms:
+        "to-iu": "おどろくといいます"
+        "to-omou": "おどろくとおもいます"
+      readings:
+        "to-iu": "odorokutoiimasu"
+        "to-omou": "odorokutoomoimasu"
+    - word: "ja-2769"
+      forms:
+        "to-iu": "よろこぶといいます"
+        "to-omou": "よろこぶとおもいます"
+      readings:
+        "to-iu": "yorokobutoiimasu"
+        "to-omou": "yorokobutoomoimasu"
+    - word: "ja-2770"
+      forms:
+        "to-iu": "かなしむといいます"
+        "to-omou": "かなしむとおもいます"
+      readings:
+        "to-iu": "kanashimutoiimasu"
+        "to-omou": "kanashimutoomoimasu"
+    - word: "ja-2771"
+      forms:
+        "to-iu": "なやむといいます"
+        "to-omou": "なやむとおもいます"
+      readings:
+        "to-iu": "nayamutoiimasu"
+        "to-omou": "nayamutoomoimasu"
+    - word: "ja-2772"
+      forms:
+        "to-iu": "あわてるといいます"
+        "to-omou": "あわてるとおもいます"
+      readings:
+        "to-iu": "awaterutoiimasu"
+        "to-omou": "awaterutoomoimasu"
+    - word: "ja-2773"
+      forms:
+        "to-iu": "あせるといいます"
+        "to-omou": "あせるとおもいます"
+      readings:
+        "to-iu": "aserutoiimasu"
+        "to-omou": "aserutoomoimasu"
+    - word: "ja-2774"
+      forms:
+        "to-iu": "おちつくといいます"
+        "to-omou": "おちつくとおもいます"
+      readings:
+        "to-iu": "ochitsukutoiimasu"
+        "to-omou": "ochitsukutoomoimasu"
+    - word: "ja-2794"
+      forms:
+        "to-iu": "きらうといいます"
+        "to-omou": "きらうとおもいます"
+      readings:
+        "to-iu": "kirautoiimasu"
+        "to-omou": "kirautoomoimasu"
+    - word: "ja-2795"
+      forms:
+        "to-iu": "あいするといいます"
+        "to-omou": "あいするとおもいます"
+      readings:
+        "to-iu": "aisurutoiimasu"
+        "to-omou": "aisurutoomoimasu"
+    - word: "ja-2796"
+      forms:
+        "to-iu": "にくむといいます"
+        "to-omou": "にくむとおもいます"
+      readings:
+        "to-iu": "nikumutoiimasu"
+        "to-omou": "nikumutoomoimasu"
+    - word: "ja-2797"
+      forms:
+        "to-iu": "ねたむといいます"
+        "to-omou": "ねたむとおもいます"
+      readings:
+        "to-iu": "netamutoiimasu"
+        "to-omou": "netamutoomoimasu"
+    - word: "ja-2798"
+      forms:
+        "to-iu": "うらむといいます"
+        "to-omou": "うらむとおもいます"
+      readings:
+        "to-iu": "uramutoiimasu"
+        "to-omou": "uramutoomoimasu"
+    - word: "ja-2799"
+      forms:
+        "to-iu": "なつかしむといいます"
+        "to-omou": "なつかしむとおもいます"
+      readings:
+        "to-iu": "natsukashimutoiimasu"
+        "to-omou": "natsukashimutoomoimasu"
+    - word: "ja-2800"
+      forms:
+        "to-iu": "いやがるといいます"
+        "to-omou": "いやがるとおもいます"
+      readings:
+        "to-iu": "iyagarutoiimasu"
+        "to-omou": "iyagarutoomoimasu"
+    - word: "ja-2801"
+      forms:
+        "to-iu": "こらえるといいます"
+        "to-omou": "こらえるとおもいます"
+      readings:
+        "to-iu": "koraerutoiimasu"
+        "to-omou": "koraerutoomoimasu"
+    - word: "ja-2803"
+      forms:
+        "to-iu": "はずかしがるといいます"
+        "to-omou": "はずかしがるとおもいます"
+      readings:
+        "to-iu": "hazukashigarutoiimasu"
+        "to-omou": "hazukashigarutoomoimasu"
+    - word: "ja-2806"
+      forms:
+        "to-iu": "かんじるといいます"
+        "to-omou": "かんじるとおもいます"
+      readings:
+        "to-iu": "kanjirutoiimasu"
+        "to-omou": "kanjirutoomoimasu"
+    - word: "ja-2812"
+      forms:
+        "to-iu": "さびしがるといいます"
+        "to-omou": "さびしがるとおもいます"
+      readings:
+        "to-iu": "sabishigarutoiimasu"
+        "to-omou": "sabishigarutoomoimasu"
+    - word: "ja-2876"
+      forms:
+        "to-iu": "かたるといいます"
+        "to-omou": "かたるとおもいます"
+      readings:
+        "to-iu": "katarutoiimasu"
+        "to-omou": "katarutoomoimasu"
+    - word: "ja-2877"
+      forms:
+        "to-iu": "ひろまるといいます"
+        "to-omou": "ひろまるとおもいます"
+      readings:
+        "to-iu": "hiromarutoiimasu"
+        "to-omou": "hiromarutoomoimasu"
+    - word: "ja-2925"
+      forms:
+        "to-iu": "あずけるといいます"
+        "to-omou": "あずけるとおもいます"
+      readings:
+        "to-iu": "azukerutoiimasu"
+        "to-omou": "azukerutoomoimasu"
+    - word: "ja-2926"
+      forms:
+        "to-iu": "あずかるといいます"
+        "to-omou": "あずかるとおもいます"
+      readings:
+        "to-iu": "azukarutoiimasu"
+        "to-omou": "azukarutoomoimasu"
+    - word: "ja-2944"
+      forms:
+        "to-iu": "めぐるといいます"
+        "to-omou": "めぐるとおもいます"
+      readings:
+        "to-iu": "megurutoiimasu"
+        "to-omou": "megurutoomoimasu"
+    - word: "ja-2945"
+      forms:
+        "to-iu": "おとずれるといいます"
+        "to-omou": "おとずれるとおもいます"
+      readings:
+        "to-iu": "otozurerutoiimasu"
+        "to-omou": "otozurerutoomoimasu"
+    - word: "ja-2982"
+      forms:
+        "to-iu": "もうしこむといいます"
+        "to-omou": "もうしこむとおもいます"
+      readings:
+        "to-iu": "moushikomutoiimasu"
+        "to-omou": "moushikomutoomoimasu"
+    - word: "ja-3062"
+      forms:
+        "to-iu": "とどけでるといいます"
+        "to-omou": "とどけでるとおもいます"
+      readings:
+        "to-iu": "todokederutoiimasu"
+        "to-omou": "todokederutoomoimasu"
+    - word: "ja-3140"
+      forms:
+        "to-iu": "つくりだすといいます"
+        "to-omou": "つくりだすとおもいます"
+      readings:
+        "to-iu": "tsukuridasutoiimasu"
+        "to-omou": "tsukuridasutoomoimasu"
+    - word: "ja-3195"
+      forms:
+        "to-iu": "めざすといいます"
+        "to-omou": "めざすとおもいます"
+      readings:
+        "to-iu": "mezasutoiimasu"
+        "to-omou": "mezasutoomoimasu"
+    - word: "ja-3294"
+      forms:
+        "to-iu": "きをつかうといいます"
+        "to-omou": "きをつかうとおもいます"
+      readings:
+        "to-iu": "kiotsukautoiimasu"
+        "to-omou": "kiotsukautoomoimasu"
+    - word: "ja-3309"
+      forms:
+        "to-iu": "ゆずるといいます"
+        "to-omou": "ゆずるとおもいます"
+      readings:
+        "to-iu": "yuzurutoiimasu"
+        "to-omou": "yuzurutoomoimasu"
+    - word: "ja-3310"
+      forms:
+        "to-iu": "ゆずりあうといいます"
+        "to-omou": "ゆずりあうとおもいます"
+      readings:
+        "to-iu": "yuzuriautoiimasu"
+        "to-omou": "yuzuriautoomoimasu"
+    - word: "ja-3311"
+      forms:
+        "to-iu": "ならぶといいます"
+        "to-omou": "ならぶとおもいます"
+      readings:
+        "to-iu": "narabutoiimasu"
+        "to-omou": "narabutoomoimasu"
+    - word: "ja-3319"
+      forms:
+        "to-iu": "もてなすといいます"
+        "to-omou": "もてなすとおもいます"
+      readings:
+        "to-iu": "motenasutoiimasu"
+        "to-omou": "motenasutoomoimasu"
+    - word: "ja-3320"
+      forms:
+        "to-iu": "まねくといいます"
+        "to-omou": "まねくとおもいます"
+      readings:
+        "to-iu": "manekutoiimasu"
+        "to-omou": "manekutoomoimasu"
+    - word: "ja-3321"
+      forms:
+        "to-iu": "つつしむといいます"
+        "to-omou": "つつしむとおもいます"
+      readings:
+        "to-iu": "tsutsushimutoiimasu"
+        "to-omou": "tsutsushimutoomoimasu"
+    - word: "ja-3322"
+      forms:
+        "to-iu": "いましめるといいます"
+        "to-omou": "いましめるとおもいます"
+      readings:
+        "to-iu": "imashimerutoiimasu"
+        "to-omou": "imashimerutoomoimasu"
+    - word: "ja-3383"
+      forms:
+        "to-iu": "へらすといいます"
+        "to-omou": "へらすとおもいます"
+      readings:
+        "to-iu": "herasutoiimasu"
+        "to-omou": "herasutoomoimasu"
+    - word: "ja-3384"
+      forms:
+        "to-iu": "ふやすといいます"
+        "to-omou": "ふやすとおもいます"
+      readings:
+        "to-iu": "fuyasutoiimasu"
+        "to-omou": "fuyasutoomoimasu"
+    - word: "ja-3385"
+      forms:
+        "to-iu": "こわすといいます"
+        "to-omou": "こわすとおもいます"
+      readings:
+        "to-iu": "kowasutoiimasu"
+        "to-omou": "kowasutoomoimasu"
+    - word: "ja-3386"
+      forms:
+        "to-iu": "こわれるといいます"
+        "to-omou": "こわれるとおもいます"
+      readings:
+        "to-iu": "kowarerutoiimasu"
+        "to-omou": "kowarerutoomoimasu"
+    - word: "ja-3389"
+      forms:
+        "to-iu": "たもつといいます"
+        "to-omou": "たもつとおもいます"
+      readings:
+        "to-iu": "tamotsutoiimasu"
+        "to-omou": "tamotsutoomoimasu"
+    - word: "ja-3390"
+      forms:
+        "to-iu": "さけるといいます"
+        "to-omou": "さけるとおもいます"
+      readings:
+        "to-iu": "sakerutoiimasu"
+        "to-omou": "sakerutoomoimasu"
+    - word: "ja-3434"
+      forms:
+        "to-iu": "えんじるといいます"
+        "to-omou": "えんじるとおもいます"
+      readings:
+        "to-iu": "enjirutoiimasu"
+        "to-omou": "enjirutoomoimasu"
+    - word: "ja-3452"
+      forms:
+        "to-iu": "なくといいます"
+        "to-omou": "なくとおもいます"
+      readings:
+        "to-iu": "nakutoiimasu"
+        "to-omou": "nakutoomoimasu"
+    - word: "ja-3564"
+      forms:
+        "to-iu": "たたかうといいます"
+        "to-omou": "たたかうとおもいます"
+      readings:
+        "to-iu": "tatakautoiimasu"
+        "to-omou": "tatakautoomoimasu"
+    - word: "ja-3568"
+      forms:
+        "to-iu": "ほろびるといいます"
+        "to-omou": "ほろびるとおもいます"
+      readings:
+        "to-iu": "horobirutoiimasu"
+        "to-omou": "horobirutoomoimasu"
+    - word: "ja-3569"
+      forms:
+        "to-iu": "ほろぼすといいます"
+        "to-omou": "ほろぼすとおもいます"
+      readings:
+        "to-iu": "horobosutoiimasu"
+        "to-omou": "horobosutoomoimasu"
+    - word: "ja-3571"
+      forms:
+        "to-iu": "さかえるといいます"
+        "to-omou": "さかえるとおもいます"
+      readings:
+        "to-iu": "sakaerutoiimasu"
+        "to-omou": "sakaerutoomoimasu"
+    - word: "ja-3611"
+      forms:
+        "to-iu": "いのるといいます"
+        "to-omou": "いのるとおもいます"
+      readings:
+        "to-iu": "inorutoiimasu"
+        "to-omou": "inorutoomoimasu"
+    - word: "ja-3612"
+      forms:
+        "to-iu": "おがむといいます"
+        "to-omou": "おがむとおもいます"
+      readings:
+        "to-iu": "ogamutoiimasu"
+        "to-omou": "ogamutoomoimasu"
+    - word: "ja-3690"
+      forms:
+        "to-iu": "いわうといいます"
+        "to-omou": "いわうとおもいます"
+      readings:
+        "to-iu": "iwautoiimasu"
+        "to-omou": "iwautoomoimasu"
+    - word: "ja-3691"
+      forms:
+        "to-iu": "にぎわうといいます"
+        "to-omou": "にぎわうとおもいます"
+      readings:
+        "to-iu": "nigiwautoiimasu"
+        "to-omou": "nigiwautoomoimasu"
+    - word: "ja-3779"
+      forms:
+        "to-iu": "うちとけるといいます"
+        "to-omou": "うちとけるとおもいます"
+      readings:
+        "to-iu": "uchitokerutoiimasu"
+        "to-omou": "uchitokerutoomoimasu"
+    - word: "ja-3780"
+      forms:
+        "to-iu": "しんじあうといいます"
+        "to-omou": "しんじあうとおもいます"
+      readings:
+        "to-iu": "shinjiautoiimasu"
+        "to-omou": "shinjiautoomoimasu"
+    - word: "ja-3781"
+      forms:
+        "to-iu": "たよるといいます"
+        "to-omou": "たよるとおもいます"
+      readings:
+        "to-iu": "tayorutoiimasu"
+        "to-omou": "tayorutoomoimasu"
+    - word: "ja-3782"
+      forms:
+        "to-iu": "はげますといいます"
+        "to-omou": "はげますとおもいます"
+      readings:
+        "to-iu": "hagemasutoiimasu"
+        "to-omou": "hagemasutoomoimasu"
+    - word: "ja-3783"
+      forms:
+        "to-iu": "なぐさめるといいます"
+        "to-omou": "なぐさめるとおもいます"
+      readings:
+        "to-iu": "nagusamerutoiimasu"
+        "to-omou": "nagusamerutoomoimasu"
+    - word: "ja-3784"
+      forms:
+        "to-iu": "かばうといいます"
+        "to-omou": "かばうとおもいます"
+      readings:
+        "to-iu": "kabautoiimasu"
+        "to-omou": "kabautoomoimasu"
+    - word: "ja-3785"
+      forms:
+        "to-iu": "ささえるといいます"
+        "to-omou": "ささえるとおもいます"
+      readings:
+        "to-iu": "sasaerutoiimasu"
+        "to-omou": "sasaerutoomoimasu"
+    - word: "ja-3786"
+      forms:
+        "to-iu": "たすけあうといいます"
+        "to-omou": "たすけあうとおもいます"
+      readings:
+        "to-iu": "tasukeautoiimasu"
+        "to-omou": "tasukeautoomoimasu"
+    - word: "ja-3790"
+      forms:
+        "to-iu": "しりあうといいます"
+        "to-omou": "しりあうとおもいます"
+      readings:
+        "to-iu": "shiriautoiimasu"
+        "to-omou": "shiriautoomoimasu"
+    - word: "ja-3791"
+      forms:
+        "to-iu": "であうといいます"
+        "to-omou": "であうとおもいます"
+      readings:
+        "to-iu": "deautoiimasu"
+        "to-omou": "deautoomoimasu"
+    - word: "ja-3833"
+      forms:
+        "to-iu": "くらすといいます"
+        "to-omou": "くらすとおもいます"
+      readings:
+        "to-iu": "kurasutoiimasu"
+        "to-omou": "kurasutoomoimasu"
+    - word: "ja-3857"
+      forms:
+        "to-iu": "かすといいます"
+        "to-omou": "かすとおもいます"
+      readings:
+        "to-iu": "kasutoiimasu"
+        "to-omou": "kasutoomoimasu"
+    - word: "ja-3887"
+      forms:
+        "to-iu": "ゆれるといいます"
+        "to-omou": "ゆれるとおもいます"
+      readings:
+        "to-iu": "yurerutoiimasu"
+        "to-omou": "yurerutoomoimasu"
+    - word: "ja-3898"
+      forms:
+        "to-iu": "すくうといいます"
+        "to-omou": "すくうとおもいます"
+      readings:
+        "to-iu": "sukuutoiimasu"
+        "to-omou": "sukuutoomoimasu"
+    - word: "ja-3914"
+      forms:
+        "to-iu": "にげるといいます"
+        "to-omou": "にげるとおもいます"
+      readings:
+        "to-iu": "nigerutoiimasu"
+        "to-omou": "nigerutoomoimasu"
+    - word: "ja-3915"
+      forms:
+        "to-iu": "にがすといいます"
+        "to-omou": "にがすとおもいます"
+      readings:
+        "to-iu": "nigasutoiimasu"
+        "to-omou": "nigasutoomoimasu"
+    - word: "ja-3963"
+      forms:
+        "to-iu": "きんじるといいます"
+        "to-omou": "きんじるとおもいます"
+      readings:
+        "to-iu": "kinjirutoiimasu"
+        "to-omou": "kinjirutoomoimasu"
+    - word: "ja-3965"
+      forms:
+        "to-iu": "うったえるといいます"
+        "to-omou": "うったえるとおもいます"
+      readings:
+        "to-iu": "uttaerutoiimasu"
+        "to-omou": "uttaerutoomoimasu"
+    - word: "ja-4046"
+      forms:
+        "to-iu": "おそうといいます"
+        "to-omou": "おそうとおもいます"
+      readings:
+        "to-iu": "osoutoiimasu"
+        "to-omou": "osoutoomoimasu"
+    - word: "ja-4047"
+      forms:
+        "to-iu": "おさえるといいます"
+        "to-omou": "おさえるとおもいます"
+      readings:
+        "to-iu": "osaerutoiimasu"
+        "to-omou": "osaerutoomoimasu"
+    - word: "ja-4048"
+      forms:
+        "to-iu": "おさまるといいます"
+        "to-omou": "おさまるとおもいます"
+      readings:
+        "to-iu": "osamarutoiimasu"
+        "to-omou": "osamarutoomoimasu"
+    - word: "ja-4049"
+      forms:
+        "to-iu": "おさめるといいます"
+        "to-omou": "おさめるとおもいます"
+      readings:
+        "to-iu": "osamerutoiimasu"
+        "to-omou": "osamerutoomoimasu"
+    - word: "ja-4050"
+      forms:
+        "to-iu": "おぼれるといいます"
+        "to-omou": "おぼれるとおもいます"
+      readings:
+        "to-iu": "oborerutoiimasu"
+        "to-omou": "oborerutoomoimasu"
+    - word: "ja-4051"
+      forms:
+        "to-iu": "おもいだすといいます"
+        "to-omou": "おもいだすとおもいます"
+      readings:
+        "to-iu": "omoidasutoiimasu"
+        "to-omou": "omoidasutoomoimasu"
+    - word: "ja-4052"
+      forms:
+        "to-iu": "おもいつくといいます"
+        "to-omou": "おもいつくとおもいます"
+      readings:
+        "to-iu": "omoitsukutoiimasu"
+        "to-omou": "omoitsukutoomoimasu"
+    - word: "ja-4053"
+      forms:
+        "to-iu": "かかえるといいます"
+        "to-omou": "かかえるとおもいます"
+      readings:
+        "to-iu": "kakaerutoiimasu"
+        "to-omou": "kakaerutoomoimasu"
+    - word: "ja-4054"
+      forms:
+        "to-iu": "かさなるといいます"
+        "to-omou": "かさなるとおもいます"
+      readings:
+        "to-iu": "kasanarutoiimasu"
+        "to-omou": "kasanarutoomoimasu"
+    - word: "ja-4055"
+      forms:
+        "to-iu": "かさねるといいます"
+        "to-omou": "かさねるとおもいます"
+      readings:
+        "to-iu": "kasanerutoiimasu"
+        "to-omou": "kasanerutoomoimasu"
+    - word: "ja-4056"
+      forms:
+        "to-iu": "かたむくといいます"
+        "to-omou": "かたむくとおもいます"
+      readings:
+        "to-iu": "katamukutoiimasu"
+        "to-omou": "katamukutoomoimasu"
+    - word: "ja-4057"
+      forms:
+        "to-iu": "かなうといいます"
+        "to-omou": "かなうとおもいます"
+      readings:
+        "to-iu": "kanautoiimasu"
+        "to-omou": "kanautoomoimasu"
+    - word: "ja-4058"
+      forms:
+        "to-iu": "かぶせるといいます"
+        "to-omou": "かぶせるとおもいます"
+      readings:
+        "to-iu": "kabuserutoiimasu"
+        "to-omou": "kabuserutoomoimasu"
+    - word: "ja-4059"
+      forms:
+        "to-iu": "きづくといいます"
+        "to-omou": "きづくとおもいます"
+      readings:
+        "to-iu": "kizukutoiimasu"
+        "to-omou": "kizukutoomoimasu"
+    - word: "ja-4060"
+      forms:
+        "to-iu": "くずれるといいます"
+        "to-omou": "くずれるとおもいます"
+      readings:
+        "to-iu": "kuzurerutoiimasu"
+        "to-omou": "kuzurerutoomoimasu"
+    - word: "ja-4061"
+      forms:
+        "to-iu": "くたびれるといいます"
+        "to-omou": "くたびれるとおもいます"
+      readings:
+        "to-iu": "kutabirerutoiimasu"
+        "to-omou": "kutabirerutoomoimasu"
+    - word: "ja-4062"
+      forms:
+        "to-iu": "くっつくといいます"
+        "to-omou": "くっつくとおもいます"
+      readings:
+        "to-iu": "kuttsukutoiimasu"
+        "to-omou": "kuttsukutoomoimasu"
+    - word: "ja-4063"
+      forms:
+        "to-iu": "くっつけるといいます"
+        "to-omou": "くっつけるとおもいます"
+      readings:
+        "to-iu": "kuttsukerutoiimasu"
+        "to-omou": "kuttsukerutoomoimasu"
+    - word: "ja-4064"
+      forms:
+        "to-iu": "ころがるといいます"
+        "to-omou": "ころがるとおもいます"
+      readings:
+        "to-iu": "korogarutoiimasu"
+        "to-omou": "korogarutoomoimasu"
+    - word: "ja-4065"
+      forms:
+        "to-iu": "ころすといいます"
+        "to-omou": "ころすとおもいます"
+      readings:
+        "to-iu": "korosutoiimasu"
+        "to-omou": "korosutoomoimasu"
+    - word: "ja-4066"
+      forms:
+        "to-iu": "こめるといいます"
+        "to-omou": "こめるとおもいます"
+      readings:
+        "to-iu": "komerutoiimasu"
+        "to-omou": "komerutoomoimasu"
+    - word: "ja-4067"
+      forms:
+        "to-iu": "さからうといいます"
+        "to-omou": "さからうとおもいます"
+      readings:
+        "to-iu": "sakarautoiimasu"
+        "to-omou": "sakarautoomoimasu"
+    - word: "ja-4068"
+      forms:
+        "to-iu": "さすといいます"
+        "to-omou": "さすとおもいます"
+      readings:
+        "to-iu": "sasutoiimasu"
+        "to-omou": "sasutoomoimasu"
+    - word: "ja-4069"
+      forms:
+        "to-iu": "さびるといいます"
+        "to-omou": "さびるとおもいます"
+      readings:
+        "to-iu": "sabirutoiimasu"
+        "to-omou": "sabirutoomoimasu"
+    - word: "ja-4070"
+      forms:
+        "to-iu": "しずむといいます"
+        "to-omou": "しずむとおもいます"
+      readings:
+        "to-iu": "shizumutoiimasu"
+        "to-omou": "shizumutoomoimasu"
+    - word: "ja-4071"
+      forms:
+        "to-iu": "しずめるといいます"
+        "to-omou": "しずめるとおもいます"
+      readings:
+        "to-iu": "shizumerutoiimasu"
+        "to-omou": "shizumerutoomoimasu"
+    - word: "ja-4072"
+      forms:
+        "to-iu": "したがうといいます"
+        "to-omou": "したがうとおもいます"
+      readings:
+        "to-iu": "shitagautoiimasu"
+        "to-omou": "shitagautoomoimasu"
+    - word: "ja-4073"
+      forms:
+        "to-iu": "しばるといいます"
+        "to-omou": "しばるとおもいます"
+      readings:
+        "to-iu": "shibarutoiimasu"
+        "to-omou": "shibarutoomoimasu"
+    - word: "ja-4074"
+      forms:
+        "to-iu": "しめすといいます"
+        "to-omou": "しめすとおもいます"
+      readings:
+        "to-iu": "shimesutoiimasu"
+        "to-omou": "shimesutoomoimasu"
+    - word: "ja-4075"
+      forms:
+        "to-iu": "すべるといいます"
+        "to-omou": "すべるとおもいます"
+      readings:
+        "to-iu": "suberutoiimasu"
+        "to-omou": "suberutoomoimasu"
+    - word: "ja-4076"
+      forms:
+        "to-iu": "すませるといいます"
+        "to-omou": "すませるとおもいます"
+      readings:
+        "to-iu": "sumaserutoiimasu"
+        "to-omou": "sumaserutoomoimasu"
+    - word: "ja-4077"
+      forms:
+        "to-iu": "すむといいます"
+        "to-omou": "すむとおもいます"
+      readings:
+        "to-iu": "sumutoiimasu"
+        "to-omou": "sumutoomoimasu"
+    - word: "ja-4078"
+      forms:
+        "to-iu": "ずれるといいます"
+        "to-omou": "ずれるとおもいます"
+      readings:
+        "to-iu": "zurerutoiimasu"
+        "to-omou": "zurerutoomoimasu"
+    - word: "ja-4079"
+      forms:
+        "to-iu": "せまるといいます"
+        "to-omou": "せまるとおもいます"
+      readings:
+        "to-iu": "semarutoiimasu"
+        "to-omou": "semarutoomoimasu"
+    - word: "ja-4080"
+      forms:
+        "to-iu": "そなえるといいます"
+        "to-omou": "そなえるとおもいます"
+      readings:
+        "to-iu": "sonaerutoiimasu"
+        "to-omou": "sonaerutoomoimasu"
+    - word: "ja-4081"
+      forms:
+        "to-iu": "そまるといいます"
+        "to-omou": "そまるとおもいます"
+      readings:
+        "to-iu": "somarutoiimasu"
+        "to-omou": "somarutoomoimasu"
+    - word: "ja-4082"
+      forms:
+        "to-iu": "そめるといいます"
+        "to-omou": "そめるとおもいます"
+      readings:
+        "to-iu": "somerutoiimasu"
+        "to-omou": "somerutoomoimasu"
+    - word: "ja-4083"
+      forms:
+        "to-iu": "たえるといいます"
+        "to-omou": "たえるとおもいます"
+      readings:
+        "to-iu": "taerutoiimasu"
+        "to-omou": "taerutoomoimasu"
+    - word: "ja-4084"
+      forms:
+        "to-iu": "たしかめるといいます"
+        "to-omou": "たしかめるとおもいます"
+      readings:
+        "to-iu": "tashikamerutoiimasu"
+        "to-omou": "tashikamerutoomoimasu"
+    - word: "ja-4085"
+      forms:
+        "to-iu": "たまるといいます"
+        "to-omou": "たまるとおもいます"
+      readings:
+        "to-iu": "tamarutoiimasu"
+        "to-omou": "tamarutoomoimasu"
+    - word: "ja-4086"
+      forms:
+        "to-iu": "ためすといいます"
+        "to-omou": "ためすとおもいます"
+      readings:
+        "to-iu": "tamesutoiimasu"
+        "to-omou": "tamesutoomoimasu"
+    - word: "ja-4087"
+      forms:
+        "to-iu": "ちぢむといいます"
+        "to-omou": "ちぢむとおもいます"
+      readings:
+        "to-iu": "chijimutoiimasu"
+        "to-omou": "chijimutoomoimasu"
+    - word: "ja-4088"
+      forms:
+        "to-iu": "ちぢめるといいます"
+        "to-omou": "ちぢめるとおもいます"
+      readings:
+        "to-iu": "chijimerutoiimasu"
+        "to-omou": "chijimerutoomoimasu"
+    - word: "ja-4089"
+      forms:
+        "to-iu": "つぐといいます"
+        "to-omou": "つぐとおもいます"
+      readings:
+        "to-iu": "tsugutoiimasu"
+        "to-omou": "tsugutoomoimasu"
+    - word: "ja-4090"
+      forms:
+        "to-iu": "つづくといいます"
+        "to-omou": "つづくとおもいます"
+      readings:
+        "to-iu": "tsuzukutoiimasu"
+        "to-omou": "tsuzukutoomoimasu"
+    - word: "ja-4091"
+      forms:
+        "to-iu": "つぶすといいます"
+        "to-omou": "つぶすとおもいます"
+      readings:
+        "to-iu": "tsubusutoiimasu"
+        "to-omou": "tsubusutoomoimasu"
+    - word: "ja-4092"
+      forms:
+        "to-iu": "つぶれるといいます"
+        "to-omou": "つぶれるとおもいます"
+      readings:
+        "to-iu": "tsuburerutoiimasu"
+        "to-omou": "tsuburerutoomoimasu"
+    - word: "ja-4093"
+      forms:
+        "to-iu": "てらすといいます"
+        "to-omou": "てらすとおもいます"
+      readings:
+        "to-iu": "terasutoiimasu"
+        "to-omou": "terasutoomoimasu"
+    - word: "ja-4094"
+      forms:
+        "to-iu": "とおすといいます"
+        "to-omou": "とおすとおもいます"
+      readings:
+        "to-iu": "toosutoiimasu"
+        "to-omou": "toosutoomoimasu"
+    - word: "ja-4095"
+      forms:
+        "to-iu": "とかすといいます"
+        "to-omou": "とかすとおもいます"
+      readings:
+        "to-iu": "tokasutoiimasu"
+        "to-omou": "tokasutoomoimasu"
+    - word: "ja-4096"
+      forms:
+        "to-iu": "とけるといいます"
+        "to-omou": "とけるとおもいます"
+      readings:
+        "to-iu": "tokerutoiimasu"
+        "to-omou": "tokerutoomoimasu"
+    - word: "ja-4097"
+      forms:
+        "to-iu": "ととのうといいます"
+        "to-omou": "ととのうとおもいます"
+      readings:
+        "to-iu": "totonoutoiimasu"
+        "to-omou": "totonoutoomoimasu"
+    - word: "ja-4098"
+      forms:
+        "to-iu": "ととのえるといいます"
+        "to-omou": "ととのえるとおもいます"
+      readings:
+        "to-iu": "totonoerutoiimasu"
+        "to-omou": "totonoerutoomoimasu"
+    - word: "ja-4099"
+      forms:
+        "to-iu": "とびこむといいます"
+        "to-omou": "とびこむとおもいます"
+      readings:
+        "to-iu": "tobikomutoiimasu"
+        "to-omou": "tobikomutoomoimasu"
+    - word: "ja-4100"
+      forms:
+        "to-iu": "ともなうといいます"
+        "to-omou": "ともなうとおもいます"
+      readings:
+        "to-iu": "tomonautoiimasu"
+        "to-omou": "tomonautoomoimasu"
+    - word: "ja-4101"
+      forms:
+        "to-iu": "とらえるといいます"
+        "to-omou": "とらえるとおもいます"
+      readings:
+        "to-iu": "toraerutoiimasu"
+        "to-omou": "toraerutoomoimasu"
+    - word: "ja-4102"
+      forms:
+        "to-iu": "とりあげるといいます"
+        "to-omou": "とりあげるとおもいます"
+      readings:
+        "to-iu": "toriagerutoiimasu"
+        "to-omou": "toriagerutoomoimasu"
+    - word: "ja-4103"
+      forms:
+        "to-iu": "とりだすといいます"
+        "to-omou": "とりだすとおもいます"
+      readings:
+        "to-iu": "toridasutoiimasu"
+        "to-omou": "toridasutoomoimasu"
+    - word: "ja-4104"
+      forms:
+        "to-iu": "とりのぞくといいます"
+        "to-omou": "とりのぞくとおもいます"
+      readings:
+        "to-iu": "torinozokutoiimasu"
+        "to-omou": "torinozokutoomoimasu"
+    - word: "ja-4105"
+      forms:
+        "to-iu": "ながすといいます"
+        "to-omou": "ながすとおもいます"
+      readings:
+        "to-iu": "nagasutoiimasu"
+        "to-omou": "nagasutoomoimasu"
+    - word: "ja-4185"
+      forms:
+        "to-iu": "みとめるといいます"
+        "to-omou": "みとめるとおもいます"
+      readings:
+        "to-iu": "mitomerutoiimasu"
+        "to-omou": "mitomerutoomoimasu"
+    - word: "ja-4186"
+      forms:
+        "to-iu": "うたがうといいます"
+        "to-omou": "うたがうとおもいます"
+      readings:
+        "to-iu": "utagautoiimasu"
+        "to-omou": "utagautoomoimasu"
+    - word: "ja-4187"
+      forms:
+        "to-iu": "しんじるといいます"
+        "to-omou": "しんじるとおもいます"
+      readings:
+        "to-iu": "shinjirutoiimasu"
+        "to-omou": "shinjirutoomoimasu"
+    - word: "ja-4192"
+      forms:
+        "to-iu": "ろんじるといいます"
+        "to-omou": "ろんじるとおもいます"
+      readings:
+        "to-iu": "ronjirutoiimasu"
+        "to-omou": "ronjirutoomoimasu"
+rules:
+  - id: "ja-rule-to-iu"
+    slots: ["to-iu"]
+    words:
+      - { word: "といいます", reading: "to iimasu" }
+      - { word: "たべるといいます", reading: "taberu to iimasu" }
+  - id: "ja-rule-to-omou"
+    slots: ["to-omou"]
+    words:
+      - { word: "とおもいます", reading: "to omoimasu" }
+      - { word: "たべるとおもいます", reading: "taberu to omoimasu" }

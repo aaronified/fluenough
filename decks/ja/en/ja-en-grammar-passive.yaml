@@ -1,0 +1,17 @@
+schema: 1
+id: "ja-en-grammar-passive"
+kind: "layer"
+core: "ja-grammar-passive"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The passive form"
+description: "The passive says what is done to someone or something. An ichidan verb adds られる (rareru), a godan verb changes its last sound to the a-row and adds れる (reru), and する (suru) and くる (kuru) are irregular. Every verb a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "passive": "be {meaning}-ed"
+rules:
+  "ja-rule-passive":
+    name: "The passive form"
+    explanation: "The passive says what is done to someone or something. An ichidan verb adds られる (rareru) to its stem: たべる (taberu) becomes {1}. A godan verb changes its last sound to the a-row and adds れる (reru): いく (iku) becomes {2}. する (suru) becomes {3} and くる (kuru) becomes {4}. For an ichidan verb it looks the same as the potential. The polite forms are shown."
