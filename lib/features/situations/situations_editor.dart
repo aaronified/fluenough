@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart' show listEquals;
 import 'package:flutter/material.dart';
+import 'package:flutter/semantics.dart' show CustomSemanticsAction;
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
@@ -94,7 +95,7 @@ class _SituationsEditorState extends State<SituationsEditor> {
     ];
     return AlertDialog(
       title: Text(l10n.situationsEditTitle),
-      insetPadding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
+      insetPadding: const EdgeInsets.symmetric(horizontal: 16),
       content: SizedBox(
         width: double.maxFinite,
         child: SingleChildScrollView(

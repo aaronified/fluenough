@@ -6,6 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/app/situations.dart';
 import 'package:fluenough/features/situations/situations_editor.dart';
 import 'package:fluenough/features/today/situations_card.dart';
 
