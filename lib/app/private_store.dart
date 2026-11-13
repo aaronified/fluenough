@@ -78,9 +78,8 @@ final RegExp _packageIdPattern = RegExp(r'^[a-z0-9]+(?:-[a-z0-9]+)*$');
 /// <root>/staging/            an install in progress, deleted after it
 /// ```
 class FilePrivateStore implements PrivateStore {
-  FilePrivateStore(this.root, {AppLog? log, DateTime Function()? clock})
-    : _log = log,
-      _clock = clock ?? DateTime.now;
+  FilePrivateStore(this.root, {this._log, DateTime Function()? clock})
+    : _clock = clock ?? DateTime.now;
 
   final Directory root;
   final AppLog? _log;
@@ -305,9 +304,8 @@ class FilePrivateStore implements PrivateStore {
 
 /// [PrivateStore] in memory, for tests and the gallery.
 class MemoryPrivateStore implements PrivateStore {
-  MemoryPrivateStore({AppLog? log, DateTime Function()? clock})
-    : _log = log,
-      _clock = clock ?? DateTime.now;
+  MemoryPrivateStore({this._log, DateTime Function()? clock})
+    : _clock = clock ?? DateTime.now;
 
   final AppLog? _log;
   final DateTime Function() _clock;
