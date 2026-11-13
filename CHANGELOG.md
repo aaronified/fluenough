@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.10.0] - 2026-11-13
+
 ### Added
 
 - **Search results by type, and topic pages.** The Decks tab's search shows a tab for each kind of result that has any (situations, topics, decks, grammar concepts, words, units, culture and proverbs), the best match first, with a row of its own for each kind, and a typo put right with a way to search exactly what you typed. A professional situation is found only here, marked Professional, with "Add to my courses". What is above your level is listed marked with its level and cannot be started, or left out with the new setting "Hide what is above my level". A topic has its own page with its units, decks and cards, how much of it you know, and "Drill this topic" with a chooser for how many cards and which skills; a unit lists its topics as chips, and a script topic lists its characters. Creators' images download only when shown (#1137, #1139, #1140).
