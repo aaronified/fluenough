@@ -165,6 +165,13 @@ class PrivatePackagesController extends ChangeNotifier {
     if (choice == null || choice == _RemoveChoice.cancel || !context.mounted) {
       return;
     }
+    if (choice == _RemoveChoice.delete) {
+      final typed = await showDialog<bool>(
+        context: context,
+        builder: (context) => _TypeNameDialog(name: name),
+      );
+      if (typed != true || !context.mounted) return;
+    }
     final removed = await state.removePrivate(
       entry.package.id,
       deleteProgress: choice == _RemoveChoice.delete,
@@ -282,6 +289,71 @@ class PrivatePackagesController extends ChangeNotifier {
 }
 
 enum _RemoveChoice { cancel, keep, delete }
+
+/// The second step of "Remove and delete my progress" (AGENTS.md rule 9, third
+/// exception): the learner types the package's name. The button stays off
+/// until the trimmed text equals it exactly, case included.
+class _TypeNameDialog extends StatefulWidget {
+  const _TypeNameDialog({required this.name});
+
+  final String name;
+
+  @override
+  State<_TypeNameDialog> createState() => _TypeNameDialogState();
+}
+
+class _TypeNameDialogState extends State<_TypeNameDialog> {
+  final TextEditingController _text = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _text.addListener(() => setState(() {}));
+  }
+
+  @override
+  void dispose() {
+    _text.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final error = TextStyle(color: Theme.of(context).colorScheme.error);
+    final matches = _text.text.trim() == widget.name;
+    return AlertDialog(
+      title: Text(l10n.privateDeleteTypeTitle(widget.name)),
+      scrollable: true,
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(l10n.privateDeleteTypeBody(widget.name)),
+          const SizedBox(height: 12),
+          TextField(
+            key: const ValueKey<String>('private-delete-name'),
+            controller: _text,
+            autofocus: true,
+            autocorrect: false,
+            decoration: InputDecoration(labelText: l10n.privateDeleteTypeLabel),
+          ),
+        ],
+      ),
+      actions: <Widget>[
+        TextButton(
+          onPressed: () => Navigator.of(context).pop(false),
+          child: Text(l10n.commonCancel),
+        ),
+        TextButton(
+          key: const ValueKey<String>('private-delete-confirm'),
+          onPressed: matches ? () => Navigator.of(context).pop(true) : null,
+          child: Text(l10n.privateRemoveDelete, style: error),
+        ),
+      ],
+    );
+  }
+}
 
 class _Empty extends StatelessWidget {
   @override

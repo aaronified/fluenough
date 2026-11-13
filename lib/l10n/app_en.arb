@@ -16918,5 +16918,11 @@
   "privateHowRemovedBody": "Out of your path. History kept; id retired.",
   "@privateHowRemovedBody": {"description": "Row body on the how-progress page."},
   "privateGotIt": "Got it",
-  "@privateGotIt": {"description": "Button that closes the how-progress page."}
+  "@privateGotIt": {"description": "Button that closes the how-progress page."},
+  "privateDeleteTypeTitle": "Delete your progress on {name}?",
+  "@privateDeleteTypeTitle": {"description": "Title of the second step of Remove and delete my progress for a private package.", "placeholders": {"name": {"type": "String"}}},
+  "privateDeleteTypeBody": "This deletes your reviews of the cards of {name}, after a backup of everything is kept. It cannot be undone from the app. To confirm, type the name exactly as it is written here.",
+  "@privateDeleteTypeBody": {"description": "Explains the typed confirmation before a private package's progress is deleted.", "placeholders": {"name": {"type": "String"}}},
+  "privateDeleteTypeLabel": "Type the name",
+  "@privateDeleteTypeLabel": {"description": "Label of the field where the learner types the package's name to confirm deleting its progress."}
 }

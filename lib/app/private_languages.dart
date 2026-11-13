@@ -175,12 +175,13 @@ extension PrivateLanguagesOnState on AppState {
     final store = privateStore;
     if (store == null) return false;
     try {
-      if (deleteProgress) {
-        await deletePrivateProgress(id);
-      }
+      // Progress goes only after the package is gone: a failed removal must
+      // not cost the learner their reviews. (The backup inside
+      // [deletePrivateProgress] is still kept before anything is erased.)
       final removed = await store.remove(id);
       if (removed) {
         log.event('Private decks: removed $id');
+        if (deleteProgress) await deletePrivateProgress(id);
         await _reloadPrivate();
       }
       return removed;
