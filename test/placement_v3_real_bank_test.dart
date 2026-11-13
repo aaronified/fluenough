@@ -51,6 +51,11 @@ _notAskedIn = <String, Map<String, String>>{
     'F5':
         'a sentence pick costs 8 s at the guess of a word pick: chosen '
         'only when the word picks of a band are used up',
+    'F28':
+        'a sentence fill-in costs 10 s at the guess of a word pick: it is on '
+        'the screen (kScreenFormats, V3Session) and the picker may choose it, '
+        'but it gives less information per second than the word picks and '
+        'gap items, so it is chosen only when those of a band are used up',
   },
   'hi': <String, String>{
     'F7':
