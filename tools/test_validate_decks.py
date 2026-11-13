@@ -134,6 +134,9 @@ class IndexCheck(unittest.TestCase):
                         encoding="utf-8")
         shutil.copytree(REPO / "decks" / "ja", self.tmp / "decks" / "ja")
         shutil.copy(REPO / "decks" / "themes.yaml", self.tmp / "decks" / "themes.yaml")
+        for shared in ("creators", "recommendations"):
+            if (REPO / "decks" / shared).is_dir():
+                shutil.copytree(REPO / "decks" / shared, self.tmp / "decks" / shared)
         self.write_index()
         result = self.run_validator("decks/", self.tmp)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
