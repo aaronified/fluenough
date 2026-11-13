@@ -60,7 +60,10 @@ void main() {
     expect(food.deck.level, Level.b1);
 
     // Hidden: off every list, but on the phone and still a private deck.
-    expect(catalog.byId('fnpd-qaa-secret'), isNull);
+    expect(
+      catalog.decks.map((e) => e.id),
+      isNot(contains('fnpd-qaa-secret')),
+    );
     expect(catalog.hidden.map((e) => e.id), contains('fnpd-qaa-secret'));
     expect(catalog.hidden.single.private, isTrue);
 
