@@ -129,6 +129,7 @@ class _Cover extends StatelessWidget {
       excludeSemantics: true,
       onTap: () =>
           AppNavigator.openRecommendations(context, language, openId: work.id),
+      // hint-ok: shows text
       child: InkWell(
         borderRadius: BorderRadius.circular(AppRadii.field),
         onTap: () => AppNavigator.openRecommendations(

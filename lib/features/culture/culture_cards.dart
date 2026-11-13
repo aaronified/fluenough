@@ -46,6 +46,7 @@ class _CultureCard extends StatelessWidget {
         color: scheme.secondaryContainer,
         borderRadius: BorderRadius.circular(AppRadii.group),
         clipBehavior: Clip.antiAlias,
+        // hint-ok: shows text
         child: InkWell(
           onTap: () => AppNavigator.openCultureItem(context, language, item.id),
           child: Padding(

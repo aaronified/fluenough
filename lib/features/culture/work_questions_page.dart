@@ -268,6 +268,7 @@ class _Option extends StatelessWidget {
             : scheme.surfaceContainerHigh,
         borderRadius: BorderRadius.circular(AppRadii.field),
         clipBehavior: Clip.antiAlias,
+        // hint-ok: shows text
         child: InkWell(
           onTap: onTap,
           child: ConstrainedBox(

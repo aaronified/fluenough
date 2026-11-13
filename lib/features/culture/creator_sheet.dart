@@ -190,6 +190,7 @@ class CreatorChip extends StatelessWidget {
             color: theme.colorScheme.surfaceContainerHigh,
             borderRadius: BorderRadius.circular(AppRadii.field),
             clipBehavior: Clip.antiAlias,
+            // hint-ok: shows text
             child: InkWell(
               onTap: () => showCreatorSheet(
                 context,
@@ -257,6 +258,7 @@ class CreatorRow extends StatelessWidget {
     final info = cultureLanguage(state, language);
     return Semantics(
       button: true,
+      // hint-ok: shows text
       child: InkWell(
         onTap: () => showCreatorSheet(
           context,
