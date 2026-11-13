@@ -1481,8 +1481,16 @@ class DrillSession extends ChangeNotifier {
   List<String> _shuffledWords() {
     final words = _words;
     final tiles = <String>[...words, ...extraTilesOf(words)];
-    for (var i = 0; i < 8 && listEquals(tiles, words); i++) {
+    // Shuffled until the needed tiles, the extras left out, are out of the
+    // answer's order where they can be.
+    for (var i = 0; i < 8; i++) {
       tiles.shuffle(_random);
+      if (!listEquals(<String>[
+        for (final tile in tiles)
+          if (words.contains(tile)) tile,
+      ], words)) {
+        break;
+      }
     }
     return tiles;
   }
@@ -1501,15 +1509,28 @@ class DrillSession extends ChangeNotifier {
       final card = item.card;
       final script = deck.language.script;
       final firstScript = writtenTarget == card.target;
+      // A tile another accepted order needs is needed, too.
+      final needed = <String>{
+        ...answer,
+        for (final other
+            in rearrangesReading
+                ? card.readings
+                : card.acceptedAnswers(DrillMode.production))
+          ...(rearrangesReading ? tilesOf(other) : card.tilesOfSpelling(other)),
+      };
       for (final confusable in card.confusables) {
         String? text;
         final ref = confusable.ref;
         if (ref != null) {
           final other = _state.cardInCourseOf(card, ref);
           if (other != null) {
-            text = rearrangesReading
+            final written = rearrangesReading
                 ? other.reading
                 : other.targetIn(inputScript, firstScript: script);
+            // As a tile of the answer is written: a mark at its edge is
+            // not part of it.
+            final found = written == null ? null : tilesOf(written);
+            text = found != null && found.length == 1 ? found.single : null;
           }
         } else if (rearrangesReading) {
           text = confusable.kind == 'mark'
@@ -1522,7 +1543,7 @@ class DrillSession extends ChangeNotifier {
         if (tile == null ||
             tile.isEmpty ||
             tile.contains(RegExp(r'\s')) ||
-            answer.contains(tile) ||
+            needed.contains(tile) ||
             extras.contains(tile)) {
           continue;
         }

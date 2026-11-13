@@ -122,6 +122,21 @@ void main() {
     expect(find.text('?'), findsOneWidget);
   });
 
+  testWidgets('the needed tiles are shuffled out of the answer order, the '
+      'extras among them', (tester) async {
+    await _pump(tester, 'Mi casa grande.');
+    final shown = <String>[
+      for (final tile in tester.widgetList<WordTile>(find.byType(WordTile)))
+        tile.text,
+    ];
+    final needed = <String>[
+      for (final tile in shown)
+        if (<String>['mi', 'casa', 'grande', '.'].contains(tile)) tile,
+    ];
+    expect(needed, isNot(<String>['mi', 'casa', 'grande', '.']));
+    expect(shown, hasLength(7));
+  });
+
   testWidgets('Check waits for as many tiles as the answer has, and the right '
       'order is right', (tester) async {
     await _pump(tester, 'Mi casa grande.');
