@@ -128,8 +128,9 @@ class PrivateManifest {
     final code = string(languageNode, 'code', 'language.');
     if (!isPrivateCode(code)) {
       throw FormatException(
-        'manifest.yaml: "language.code" "$code" must be a two or three letter '
-        'code; a three letter code starting with q must be qaa to qtz',
+        'manifest.yaml: "language.code" "$code" must be a private-use code, '
+        'qaa to qtz, that no built-in language uses; a real language code '
+        'such as te is not allowed yet',
       );
     }
     final package = string(root, 'package', '');

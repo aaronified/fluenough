@@ -44,8 +44,34 @@ void main() {
       expect(isPrivateCode('qaa'), isTrue);
       expect(isPrivateCode('qtz'), isTrue);
       expect(isPrivateCode('qua'), isFalse);
-      expect(isPrivateCode('te'), isTrue);
+      // A real code would sit beside the built-in language of that code, so
+      // slice 1 refuses it (modified-language packages are plan task 11).
+      expect(isPrivateCode('te'), isFalse, reason: 'te is a built-in code');
+      expect(isPrivateCode('en'), isFalse);
+      expect(isPrivateCode('abc'), isFalse);
       expect(isPrivateCode('QAA'), isFalse);
+    });
+
+    test('languageOfId is the first segment of every public id', () {
+      const ids = <String>[
+        'te-0001',
+        'bn-0002',
+        'zz-en-words',
+        'hi-en-core-100',
+        'hi-perso-arabic-script',
+        'zz-en-a-b-c-d',
+        'zz-',
+        'nodash',
+        'te',
+        '-x',
+        'fnp-1',
+        'fnpd',
+      ];
+      for (final id in ids) {
+        expect(languageOfId(id), id.split('-').first, reason: id);
+      }
+      expect(languageOfId('fnpd-qaa-0001'), 'qaa');
+      expect(languageOfId('fnpd-qaa-en-words'), 'qaa');
     });
 
     test('a code a built-in language uses is not private', () {
@@ -248,6 +274,65 @@ cards:
         isA<DeckUnreadable>(),
       );
       expect(DeckCatalog.checkFile('decks/qaa/x.yaml', text), isNotNull);
+    });
+  });
+
+  group('a private package cannot take a built-in code or guide', () {
+    test('a package with code te is refused at import', () async {
+      final files = <String, String>{
+        for (final e in (await _tiny()).entries)
+          if (e.key == 'manifest.yaml')
+            e.key: e.value
+                .replaceAll('"qaa"', '"te"')
+                .replaceAll('fnpd-qaa', 'fnpd-te')
+          else
+            e.key: e.value,
+      };
+      final store = MemoryPrivateStore();
+      final result = await importPrivatePackage(
+        files,
+        store: store,
+        appVersion: '0.9.0',
+      );
+      expect(result.installed, isFalse);
+      expect(result.problems.join(' '), contains('language.code'));
+      expect(await store.packages(), isEmpty);
+    });
+
+    test('a package cannot take a code a built-in language uses', () {
+      for (final code in builtInPrivateUseCodes) {
+        expect(isPrivateCode(code), isFalse, reason: code);
+      }
+    });
+
+    test('a private sounds or script layer does not replace the built-in '
+        'one', () {
+      String read(String path) => File(path).readAsStringSync();
+      final builtIn = <String, String>{
+        'decks/te/te-sounds.yaml': read('decks/te/te-sounds.yaml'),
+        'decks/te/en/te-en-sounds.yaml': read('decks/te/en/te-en-sounds.yaml'),
+        'decks/te/te-script.yaml': read('decks/te/te-script.yaml'),
+        'decks/te/en/te-en-script.yaml': read('decks/te/en/te-en-script.yaml'),
+      };
+      final alone = DeckCatalog.parseAll(builtIn);
+      expect(alone.sounds['te'], isNotNull);
+      final soundName = alone.sounds['te']!.contrasts.first.name;
+      final guideName = alone.scriptGuides.values.first.name;
+
+      // The same files again under a private package of the built-in code,
+      // with their text changed, which sort after the built-in ones.
+      final both = <String, String>{
+        ...builtIn,
+        for (final e in builtIn.entries)
+          'private/fnpd-te/${e.key.substring('decks/'.length)}': e.value
+              .replaceAll('a short or a long vowel', 'PRIVATE SOUND')
+              .replaceAll('How Telugu script works', 'PRIVATE GUIDE'),
+      };
+      final catalog = DeckCatalog.parseAll(both);
+      expect(catalog.sounds['te']!.contrasts.first.name, soundName);
+      expect(catalog.scriptGuides.values.first.name, guideName);
+      expect(soundName, isNot('PRIVATE SOUND'));
+      expect(guideName, isNot('PRIVATE GUIDE'));
     });
   });
 

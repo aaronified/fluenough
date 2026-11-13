@@ -29,14 +29,13 @@ const Set<String> builtInPrivateUseCodes = <String>{
 /// Whether [id] starts with `fnpd-`.
 bool isPrivateId(String id) => id.startsWith(privateIdMarker);
 
-/// Whether [code] is a code a package may use: two or three lowercase
-/// letters, and when it is three letters starting with `q`, one of `qaa` to
-/// `qtz` that no built-in language uses.
-bool isPrivateCode(String code) {
-  if (!_codePattern.hasMatch(code)) return false;
-  if (!code.startsWith('q') || code.length != 3) return true;
-  return _localUseCode.hasMatch(code) && !builtInPrivateUseCodes.contains(code);
-}
+/// Whether [code] is a code a package may use in this slice: one of `qaa`
+/// to `qtz` that no built-in language uses. A real code such as `te` is
+/// refused, because a package of that code would sit beside the built-in
+/// language of the same code; packages that modify a real language wait for
+/// plan task 11 (Plan-Private-Languages).
+bool isPrivateCode(String code) =>
+    _localUseCode.hasMatch(code) && !builtInPrivateUseCodes.contains(code);
 
 /// The package id for language [code]: `fnpd-qaa`.
 String packageIdFor(String code) => '$privateIdMarker$code';

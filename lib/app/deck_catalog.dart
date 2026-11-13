@@ -916,11 +916,22 @@ class DeckCatalog {
           final earlier = guideNative[key];
           if (earlier == null || earlier != 'en' && layer.native == 'en') {
             guideNative[key] = layer.native;
+            // A private file never replaces a built-in guide of the same
+            // language: it only fills a place nothing else holds.
+            final private = path.startsWith('private/');
             switch (merged) {
               case ScriptGuide():
-                scriptGuides[merged.key] = merged;
+                if (private) {
+                  scriptGuides.putIfAbsent(merged.key, () => merged);
+                } else {
+                  scriptGuides[merged.key] = merged;
+                }
               case SoundContrasts():
-                sounds[language] = merged;
+                if (private) {
+                  sounds.putIfAbsent(language, () => merged);
+                } else {
+                  sounds[language] = merged;
+                }
             }
           }
         } on DeckParseException catch (e) {
