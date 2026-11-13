@@ -224,7 +224,7 @@ class _TopicPageState extends State<TopicPage> {
                     label: l10n.topicKnownBarLabel(known, every.length),
                     excludeSemantics: true,
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(3),
+                      borderRadius: BorderRadius.circular(AppRadii.mark),
                       child: LinearProgressIndicator(
                         value: known / every.length,
                         minHeight: 6,

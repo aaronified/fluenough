@@ -536,7 +536,7 @@ class _TabStripState extends State<_TabStrip>
                     DecoratedBox(
                       decoration: BoxDecoration(
                         color: scheme.secondaryContainer,
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(AppRadii.chip),
                       ),
                       child: Padding(
                         padding: const EdgeInsetsDirectional.symmetric(

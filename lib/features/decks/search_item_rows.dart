@@ -14,6 +14,7 @@ import '../../core/models/level.dart';
 import '../../core/progress/recent_answers.dart' show MasteryLevel;
 import '../../core/search/search_items.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/theme.dart';
 import '../../ui/widgets/target_text.dart';
 import '../downloads/download_text.dart';
 import '../situations/situation_page.dart' show SituationRequest;
@@ -148,7 +149,7 @@ Widget _topicRow(
             label: l10n.searchTopicKnownLabel(percent),
             excludeSemantics: true,
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(3),
+              borderRadius: BorderRadius.circular(AppRadii.mark),
               child: LinearProgressIndicator(
                 value: known / cards,
                 minHeight: 6,
