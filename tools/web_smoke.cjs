@@ -172,6 +172,22 @@ async function main() {
     await page.waitForSelector('flt-semantics-placeholder', { state: 'attached', timeout: 60000 });
     await page.evaluate(() => document.querySelector('flt-semantics-placeholder').click());
   };
+  // The launch's deck update check can finish after the tab bar first draws,
+  // and its modal dialog then hides Today: give it time, answer "Not now"
+  // while it is up, and go on only once Today is back and no dialog is left.
+  const settleDeckUpdate = async () => {
+    await page.waitForTimeout(5000);
+    const end = Date.now() + 20000;
+    while (Date.now() < end) {
+      if (await has('Deck updates')) {
+        console.log('  a deck update was offered after the launch: answered "Not now"');
+        await press('Not now', ['button']);
+      }
+      if ((await has('Today')) && !(await has('Deck updates'))) return;
+      await page.waitForTimeout(250);
+    }
+    throw new Error('a deck update dialog stayed on screen after the launch');
+  };
   const scrollDown = async () => {
     await page.mouse.move(215, 450);
     await page.mouse.wheel(0, 500);
@@ -233,6 +249,7 @@ async function main() {
     await step('Today, Decks, Progress and Settings are reachable', async () => {
       // The first decks are downloaded from GitHub first.
       await waitFor('Today', 'the tab bar', 150000);
+      await settleDeckUpdate();
       await page.waitForTimeout(1000);
       const tabs = [
         ['Today', 'Start'],
@@ -282,6 +299,7 @@ async function main() {
         await press('Not now', ['button']);
       }
       await waitFor('Today', 'the tab bar after a reload', 60000);
+      await settleDeckUpdate();
       if (await has('Get started')) throw new Error('first launch again after a reload');
     });
 
