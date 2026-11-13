@@ -324,7 +324,7 @@ def check_decks(files: dict[str, bytes], code: str) -> list[vd.Report]:
     the file."""
     trees, _ = _parse(files)
     reports: list[vd.Report] = []
-    tmp = Path(tempfile.mkdtemp(prefix="fnpd-"))
+    tmp = Path(tempfile.mkdtemp(prefix="private-check-"))
     vd.PRIVATE_MODE = True
     try:
         for name, tree in sorted(trees.items()):
