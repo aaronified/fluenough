@@ -320,7 +320,8 @@ class _DeckResultRowState extends State<_DeckResultRow> {
     final snippet = result.snippetCard == null
         ? null
         : index.cardOf(result.snippetCard!);
-    final snippetLine = snippet == null
+    // Nothing of an item above the learner's level shows its card text.
+    final snippetLine = (above || snippet == null)
         ? null
         : '${snippet.target} · ${snippet.native}';
     final isScene = professional != null || row.kind == ResultKind.situations;

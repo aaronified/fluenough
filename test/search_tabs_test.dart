@@ -216,6 +216,15 @@ void main() {
       );
     });
 
+    testWidgets('shows no card text under an item above your level', (
+      tester,
+    ) async {
+      usePhone(tester);
+      await _show(tester, state, 'libro');
+      expect(find.text(_l10n.searchAboveYourLevel('B1')), findsWidgets);
+      expect(find.text('libro · book'), findsNothing);
+    });
+
     testWidgets('marks a topic above your level, which still opens', (
       tester,
     ) async {

@@ -246,7 +246,7 @@ class _TopicPageState extends State<TopicPage> {
             const SizedBox(height: 12),
             _Notice(
               title: l10n.topicAboveTitle,
-              body: learner == null
+              body: learner == null || allowed.isEmpty
                   ? l10n.topicAboveBodyNoLevel(topic.level!.label)
                   : l10n.topicAboveBody(
                       topic.level!.label,
@@ -256,7 +256,7 @@ class _TopicPageState extends State<TopicPage> {
             ),
           ],
           ..._units(context, state, resolved, learner),
-          ..._decks(context, state, topics, resolved, learner, every),
+          ..._decks(context, state, resolved, learner, every),
           ..._cards(
             context,
             state,
@@ -293,7 +293,7 @@ class _TopicPageState extends State<TopicPage> {
                     ),
               icon: const Icon(Icons.play_arrow),
               label: Text(
-                above
+                above && allowed.isNotEmpty
                     ? l10n.topicDrillCountLimited(allowed.length)
                     : l10n.topicDrillCount(drillable),
                 textAlign: TextAlign.center,
@@ -416,7 +416,6 @@ class _TopicPageState extends State<TopicPage> {
   List<Widget> _decks(
     BuildContext context,
     AppState state,
-    Topics topics,
     ResolvedTopic resolved,
     Level? learner,
     List<String> every,
@@ -439,20 +438,9 @@ class _TopicPageState extends State<TopicPage> {
           break;
         }
       }
-      final fact = topics.world.deck(core);
-      if (entry == null) {
-        // A hidden deck the index lists, which the learner has not added.
-        rows.add(
-          ResultRow(
-            icon: Icons.style_outlined,
-            title: core,
-            lines: <Widget>[RowLine(l10n.searchNotAdded)],
-            tags: <Widget>[LevelTag(level: fact?.level)],
-            dim: true,
-          ),
-        );
-        continue;
-      }
+      // A hidden deck the learner has not added is never listed (it only
+      // counts and drills through [resolved]).
+      if (entry == null) continue;
       final inDeck = <String>{for (final c in entry.cards) c.id};
       final topicCards = every.where(inDeck.contains).length;
       final deckAbove = LevelGate.isAbove(entry.deck.level, learner);

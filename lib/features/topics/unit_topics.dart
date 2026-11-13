@@ -114,12 +114,13 @@ class UnitTopicChips extends StatelessWidget {
               children: <Widget>[
                 for (final r in found)
                   ActionChip(
-                    avatar: Icon(
-                      LevelGate.isAbove(r.topic.level, learner)
-                          ? Icons.lock_outline
-                          : Icons.sell_outlined,
-                      size: 18,
-                    ),
+                    avatar: LevelGate.isAbove(r.topic.level, learner)
+                        ? Icon(
+                            Icons.lock_outline,
+                            size: 18,
+                            semanticLabel: l10n.topicAboveYourLevelCue,
+                          )
+                        : const Icon(Icons.sell_outlined, size: 18),
                     label: Text(r.topic.nameFor(spoken)),
                     onPressed: () =>
                         AppNavigator.openTopic(context, language, r.topic.id),
