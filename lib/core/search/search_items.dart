@@ -193,7 +193,7 @@ class ItemSearchOutcome {
 /// The rows of the search, kept by parent, and the FTS5 index that narrows
 /// them where there is one. Never a source of truth: rebuilt from the decks.
 class ItemCorpus {
-  ItemCorpus({CardSearchIndex? index}) : _index = index;
+  ItemCorpus({this._index});
 
   /// The FTS5 index, or null where the platform has none or it failed once:
   /// every row is then scanned, which gives the same results.
