@@ -169,11 +169,6 @@ Future<AppState> worldForDiag() async => (await _world(
   off: <String>{'qad'},
 )).state;
 
-Future<AppState> worldForDiag() async => (await _world(
-  codes: <String>['qaa', 'qab', 'qac', 'qad'],
-  off: <String>{'qad'},
-)).state;
-
 void main() {
   setUpAll(() async => _tiny = await tinyPackage());
 

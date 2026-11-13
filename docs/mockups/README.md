@@ -13,8 +13,6 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
   Bengali, light and dark, 1.4x. Open choices are tweak controls and are
   listed in `today-chain.md`, with the self-check.
 
-- `private-your-decks.html` (`private-your-decks.md`), `private-import-review.html` (`private-import-review.md`) and `private-update-summary.html` (`private-update-summary.md`): private language packages (#1017, `wiki/Plan-Private-Languages.md` tasks 13 to 18): Your decks with a group per package, the cap of three, capability notices and the privately modified tag; the import review; and the update summary. Light and dark, 1.4x, Bengali and Hindi examples. Open choices are tweak controls and are listed in each Markdown file with its self-check.
-
 ## Current and approved
 
 Each is the spec for its screen. Don't rewrite one without the owner's
@@ -61,6 +59,7 @@ These were fully built, so their mockups were deleted. Code comments still
 name them. They are in git at 19d200b
 (`git show 19d200b:docs/mockups/<name>.html`):
 
+- `private-your-decks.html`, `private-import-review.html` and `private-update-summary.html`: private language packages (#1017, `wiki/Plan-Private-Languages.md` tasks 8, 14 to 18), approved by the owner, 2026-11-13 ("mockup is fine"), built in the third slice and removed once built (owner, 2026-10-16: "Remove when built"). They are in git history at `432a51e`: `git show 432a51e:docs/mockups/private-your-decks.html`, with the `.md` notes of the same names.
 - `reviewer-mode.html`: reviewer mode (#471, #476, #477, #508), approved by
   the owner, 2026-10-17 ("The reviewer mode mockup looks fine. Build it."),
   built and removed once built (owner, 2026-10-16: "Remove when built"; all
