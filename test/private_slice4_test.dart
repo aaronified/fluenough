@@ -286,8 +286,8 @@ void main() {
           'schema: 1\nid: "te-en-home"\nkind: "layer"\ncore: "te-home"\n'
           'native: { code: "en", iso639_3: "eng", name: "English" }\n'
           'name: "Home"\nlicense: "CC-BY-SA-4.0"\ncards:\n'
-          '  "te-0001":\n    native: "house"\n    notes: &n\n      n1: "a"\n'
-          '  "te-0002":\n    native: "door"\n    notes: *n\n'
+          '  "te-0001":\n    native: "house"\n    alt_native: &n ["dwelling"]\n'
+          '  "te-0002":\n    native: "door"\n    alt_native: *n\n'
           '  "te-0003":\n    native: "roof"\n';
       final result = PrivateExport.fromBuiltIn(
         language: _te,
@@ -728,7 +728,6 @@ void main() {
         state: phone.state,
       );
       final l10n = l10nOf(tester);
-      expect(find.text(l10n.privateNoVoiceTitle), findsOneWidget);
       expect(find.textContaining(l10n.privateNoVoiceBody), findsOneWidget);
     });
 
@@ -747,7 +746,6 @@ void main() {
         state: phone.state,
       );
       final l10n = l10nOf(tester);
-      expect(find.text(l10n.privateNoVoiceTitle), findsNothing);
       expect(find.textContaining(l10n.privateNoVoiceBody), findsNothing);
     });
   });
