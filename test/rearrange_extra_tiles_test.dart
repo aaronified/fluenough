@@ -16,29 +16,48 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'support/harness.dart';
 
-const String _deck = '''
+const String _core = '''
 schema: 1
-id: es-fixture-extras
-name: "Spanish (extra tiles fixture)"
-kind: vocab
-language: { code: es, iso639_3: spa, name: Spanish, script: latin, tts: es-ES }
-native: { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
+id: "es-extras"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES" }
+license: "CC-BY-SA-4.0"
 cards:
-  - id: es-fixture-9001
+  - id: "es-9001"
     target: "Mi casa grande."
-    native: "my big house"
     confusables:
       - { id: "num", word: "Mis", kind: "form" }
-      - { id: "card", ref: "es-fixture-9002", kind: "word" }
+      - { id: "card", ref: "es-9002", kind: "word" }
       - { id: "mark", word: "?", kind: "mark" }
       - { id: "needed", word: "casa", kind: "word" }
       - { id: "again", word: "mis", kind: "form" }
-  - id: es-fixture-9002
+  - id: "es-9002"
     target: "Perro"
-    native: "dog"
-  - id: es-fixture-9003
+  - id: "es-9003"
     target: "tu casa pequeña"
+''';
+
+const String _layer = '''
+schema: 1
+id: "es-en-extras"
+kind: "layer"
+core: "es-extras"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Spanish (extra tiles fixture)"
+license: "CC-BY-SA-4.0"
+cards:
+  "es-9001":
+    native: "my big house"
+    confusables:
+      "num": { why: "Plural." }
+      "card": { why: "A dog." }
+      "mark": { why: "A question." }
+      "needed": { why: "Needed." }
+      "again": { why: "Plural again." }
+  "es-9002":
+    native: "dog"
+  "es-9003":
     native: "your small house"
 ''';
 
@@ -51,7 +70,8 @@ Future<void> _pump(
   usePhone(tester, textScale: textScale);
   final state = AppState.test(
     decks: MemoryDeckSource(const <String, String>{
-      'decks/es/es-fixture-extras.yaml': _deck,
+      'decks/es/es-extras.yaml': _core,
+      'decks/es/en/es-en-extras.yaml': _layer,
     }),
     tts: FixedTtsEngine(<String>{'es'}),
     settings: SettingsNotifier(
@@ -64,10 +84,7 @@ Future<void> _pump(
   await pumpScreen(
     tester,
     DrillPage(
-      request: DrillRequest.untaught(
-        'es-fixture-extras',
-        skill: Skill.production,
-      ),
+      request: DrillRequest.untaught('es-en-extras', skill: Skill.production),
       preset: DrillPreset(target: target, ask: Ask.rearrange),
     ),
     state: state,
