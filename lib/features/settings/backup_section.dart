@@ -294,7 +294,17 @@ class _BackupSectionState extends State<BackupSection> {
       return;
     }
     state.haptics.success();
-    if (context.mounted) showAppSnackBar(context, l10n.settingsDataRestored);
+    final skipped = state.backups.privateSkipped;
+    if (context.mounted) {
+      showAppSnackBar(
+        context,
+        skipped.isEmpty
+            ? l10n.settingsDataRestored
+            : l10n.settingsDataRestoredSkipped(
+                skipped.join(l10n.commonListSeparator),
+              ),
+      );
+    }
   }
 }
 

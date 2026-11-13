@@ -160,6 +160,15 @@ class _RestoreSheet extends StatelessWidget {
               l10n.settingsRestoreAlso,
               l10n.settingsRestoreAlsoText,
             ),
+            if (backup.privatePackages.isNotEmpty)
+              fact(
+                Icons.menu_book_outlined,
+                l10n.privateRestoreHolds,
+                l10n.privateRestoreHoldsValue(
+                  <String>[for (final p in backup.privatePackages) p.name]
+                      .join(l10n.commonListSeparator),
+                ),
+              ),
             if (backup.downloads.isNotEmpty)
               fact(
                 Icons.download,

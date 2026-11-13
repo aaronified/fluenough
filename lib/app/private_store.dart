@@ -68,6 +68,14 @@ abstract interface class PrivateStore implements DeckSource {
   /// when none, or when it cannot be read.
   Future<List<String>> tombstone(String id);
 
+  /// Every tombstone, by package id: the retired ids of removed packages. For
+  /// a backup to carry, so that a restore does not forget them.
+  Future<Map<String, List<String>>> tombstones();
+
+  /// Adds [retired] to the tombstone of [id], keeping those already there. A
+  /// restore calls it with the tombstones a backup carries. True when it did.
+  Future<bool> addTombstone(String id, List<String> retired);
+
   /// Deletes the package [id]. Review history stays. Its retired ids are
   /// kept (a tombstone) so a package imported again under [id] cannot reuse
   /// them. True when it did.
@@ -538,6 +546,27 @@ class FilePrivateStore implements PrivateStore {
       (await _readTombstones())[id] ?? const <String>[];
 
   @override
+  Future<Map<String, List<String>>> tombstones() async {
+    await packages(); // recovers first
+    return _readTombstones();
+  }
+
+  @override
+  Future<bool> addTombstone(String id, List<String> retired) async {
+    if (!_isPackageId(id) || retired.isEmpty) return false;
+    try {
+      final all = await packages();
+      final tombstones = await _readTombstones();
+      tombstones[id] = _sorted(<String>[...retired, ...?tombstones[id]]);
+      await _writeIndex(all, tombstones: tombstones);
+      return true;
+    } on Object catch (e, stack) {
+      _fail('could not keep the retired ids of a package', e, stack);
+      return false;
+    }
+  }
+
+  @override
   Future<bool> remove(String id) async {
     if (!_isPackageId(id)) return false;
     try {
@@ -659,6 +688,20 @@ class MemoryPrivateStore implements PrivateStore {
   @override
   Future<List<String>> tombstone(String id) async =>
       _tombstones[id] ?? const <String>[];
+
+  @override
+  Future<Map<String, List<String>>> tombstones() async =>
+      <String, List<String>>{
+        for (final MapEntry(:key, :value) in _tombstones.entries)
+          key: List<String>.of(value),
+      };
+
+  @override
+  Future<bool> addTombstone(String id, List<String> retired) async {
+    if (!_isPackageId(id) || retired.isEmpty) return false;
+    _tombstones[id] = _sorted(<String>[...retired, ...?_tombstones[id]]);
+    return true;
+  }
 
   @override
   Future<bool> remove(String id) async {

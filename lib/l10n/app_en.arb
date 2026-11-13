@@ -10372,7 +10372,7 @@
   "@settingsDecksTemplate": {
     "description": "A row on Your decks: save a template of a deck to fill in."
   },
-  "settingsDecksTemplateDesc": "A single deck, or a full language: a deck and its path",
+  "settingsDecksTemplateDesc": "A single deck to fill in, as a file. For a whole language, use the starter package",
   "@settingsDecksTemplateDesc": {
     "description": "Under Get a template."
   },
@@ -10401,10 +10401,6 @@
   "@settingsDecksOpen": {
     "description": "A button on a deck of the learner’s own on Your decks: opens the deck."
   },
-  "settingsDecksSend": "Send it to us",
-  "@settingsDecksSend": {
-    "description": "A button on a deck of the learner’s own on Your decks: sends the deck to the project to check and add for everyone."
-  },
   "settingsDecksRemove": "Remove",
   "@settingsDecksRemove": {
     "description": "A button on a deck of the learner’s own on Your decks: removes it, after asking. Shown in the error colour."
@@ -10413,9 +10409,9 @@
   "@settingsDecksNone": {
     "description": "On Your decks when the learner has added no deck."
   },
-  "settingsDecksAbout": "We check it, and add it to Fluenough for everyone.",
+  "settingsDecksAbout": "Decks you add stay on this phone and in your backups. Nothing is sent anywhere.",
   "@settingsDecksAbout": {
-    "description": "A line on Your decks about what happens to a deck that is sent."
+    "description": "A line at the foot of Your decks: what happens to a deck the learner added."
   },
   "settingsRemindersLanguages": "Languages",
   "@settingsRemindersLanguages": {
@@ -16626,11 +16622,11 @@
   "privateAdd": "Add a private language",
   "@privateAdd": {"description": "The main button on Your decks: opens a file chooser for a .fnzip package."},
   "privateDownload": "Download a course to change",
-  "@privateDownload": {"description": "A row on Your decks: saves a course already on the phone as a package to edit. Incoming."},
+  "@privateDownload": {"description": "A row on Your decks: opens the list of courses on the phone to save one as a package to edit."},
   "privateDownloadDesc": "Any course already on this phone",
   "@privateDownloadDesc": {"description": "Under Download a course to change."},
   "privateStarter": "Get a starter package",
-  "@privateStarter": {"description": "A row on Your decks: saves a small example package. Incoming."},
+  "@privateStarter": {"description": "A row on Your decks: saves a small example package."},
   "privateStarterDesc": "A small example you can edit",
   "@privateStarterDesc": {"description": "Under Get a starter package."},
   "privateListHeading": "Your private languages · {count}",
@@ -16686,7 +16682,7 @@
   "privateUpdate": "Update",
   "@privateUpdate": {"description": "Button on a private package: choose a newer file of it."},
   "privateExport": "Export",
-  "@privateExport": {"description": "Button on a private package: save it as a .fnzip. Incoming."},
+  "@privateExport": {"description": "Button on a private package: save it as a .fnzip."},
   "privateRemove": "Remove",
   "@privateRemove": {"description": "Button on a private package: remove it, after asking. Error colour."},
   "privateNoVoiceTitle": "No voice on your phone.",
@@ -16919,10 +16915,44 @@
   "@privateHowRemovedBody": {"description": "Row body on the how-progress page."},
   "privateGotIt": "Got it",
   "@privateGotIt": {"description": "Button that closes the how-progress page."},
+  "privateYours": "Yours",
+  "@privateYours": {"description": "Tag on a private language of the learner's own in the language lists."},
+  "privateNoteReplaces": "{replacing, plural, =1{1 card replaces a built-in card} other{{replacing} cards replace built-in cards}}. {byRef, plural, =1{1 stays as it is, by reference} other{{byRef} stay as they are, by reference}}.",
+  "@privateNoteReplaces": {"description": "Note on the review screen of a package that changes a course: cards that replace built-in cards, and cards that are only a reference to one.", "placeholders": {"replacing": {"type": "int"}, "byRef": {"type": "int"}}},
+  "privateNoteReplacesHint": "A card you changed gets a new id of its own and starts new. A card you left alone keeps its progress.",
+  "@privateNoteReplacesHint": {"description": "Hint under the note about cards that replace built-in ones."},
+  "privateDownloadIntro": "Pick a course on this phone. You get a package with a copy of its decks that you can change in any text editor, then add it back with Add a private language. The course’s own path stays as it is until you change it.",
+  "@privateDownloadIntro": {"description": "Intro line of the page where the learner picks a course to download and change."},
+  "privateDownloadNone": "No course is on this phone yet. Add a language in Settings, then come back.",
+  "@privateDownloadNone": {"description": "Shown on the download-a-course page when no course of the app is on the phone."},
+  "privateDownloadDecks": "{count, plural, =1{1 deck} other{{count} decks}}",
+  "@privateDownloadDecks": {"description": "How many decks a course has, under its name on the download-a-course page.", "placeholders": {"count": {"type": "int"}}},
+  "privateDownloadSaved": "Saved {file}. Change it, then add it with Add a private language.",
+  "@privateDownloadSaved": {"description": "Toast after a course was saved as a package.", "placeholders": {"file": {"type": "String"}}},
+  "privateDownloadSkipped": "Saved {file}. {count, plural, =1{1 file} other{{count} files}} of the course were left out because the app owns them (facts, sounds, scripts) or they could not be copied safely.",
+  "@privateDownloadSkipped": {"description": "Toast after a course was saved as a package and some of its files were left out.", "placeholders": {"file": {"type": "String"}, "count": {"type": "int"}}},
+  "privateDownloadTooBig": "This course is bigger than the 10 MB a package may be, so it cannot be downloaded to change.",
+  "@privateDownloadTooBig": {"description": "Toast when a course as a package would be over the size limit."},
+  "privateDownloadFailed": "The course could not be saved. Try again.",
+  "@privateDownloadFailed": {"description": "Toast when a course could not be made into a package."},
+  "privateExportSaved": "Saved {file}.",
+  "@privateExportSaved": {"description": "Toast after a private package was saved as a .fnzip.", "placeholders": {"file": {"type": "String"}}},
+  "privateExportFailed": "The package could not be saved. Try again.",
+  "@privateExportFailed": {"description": "Toast when exporting a private package failed."},
+  "privateStarterSaved": "Saved {file}. Add it with Add a private language to see how it works.",
+  "@privateStarterSaved": {"description": "Toast after the starter package was saved.", "placeholders": {"file": {"type": "String"}}},
+  "privateStarterFailed": "The starter package could not be saved. Try again.",
+  "@privateStarterFailed": {"description": "Toast when saving the starter package failed."},
+  "privateRestoreHolds": "Your private languages",
+  "@privateRestoreHolds": {"description": "Label on the restore sheet: the private languages the backup holds."},
+  "privateRestoreHoldsValue": "{names}. They come back as they were; the ones on this phone stay.",
+  "@privateRestoreHoldsValue": {"description": "Value on the restore sheet: the names of the private languages in the backup.", "placeholders": {"names": {"type": "String"}}},
   "privateDeleteTypeTitle": "Delete your progress on {name}?",
   "@privateDeleteTypeTitle": {"description": "Title of the second step of Remove and delete my progress for a private package.", "placeholders": {"name": {"type": "String"}}},
   "privateDeleteTypeBody": "This deletes your reviews of the cards of {name}, after a backup of everything is kept. It cannot be undone from the app. To confirm, type the name exactly as it is written here.",
   "@privateDeleteTypeBody": {"description": "Explains the typed confirmation before a private package's progress is deleted.", "placeholders": {"name": {"type": "String"}}},
   "privateDeleteTypeLabel": "Type the name",
-  "@privateDeleteTypeLabel": {"description": "Label of the field where the learner types the package's name to confirm deleting its progress."}
+  "@privateDeleteTypeLabel": {"description": "Label of the field where the learner types the package's name to confirm deleting its progress."},
+  "settingsDataRestoredSkipped": "Restored, but these private languages could not be added and were left out: {names}. Your decks download again.",
+  "@settingsDataRestoredSkipped": {"description": "Toast after a restore when some private language packages in the backup no longer pass the checks.", "placeholders": {"names": {"type": "String"}}}
 }

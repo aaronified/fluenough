@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../core/data/spoken_languages.dart';
+import '../../core/private/private_ids.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 
@@ -83,6 +85,32 @@ class PrivateTag extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+/// The tag a private language carries in the language lists (Plan-Private-
+/// Languages 2.5): "Yours" for a language of the learner's own, "Privately
+/// modified" for one the app teaches that a package changes. Draws nothing
+/// for any other language.
+class PrivateLanguageTag extends StatelessWidget {
+  const PrivateLanguageTag({super.key, required this.language});
+
+  final SpokenLanguage language;
+
+  @override
+  Widget build(BuildContext context) {
+    if (!language.isPrivate) return const SizedBox.shrink();
+    final l10n = AppLocalizations.of(context)!;
+    return Padding(
+      padding: const EdgeInsetsDirectional.only(top: 4),
+      child: isPrivateCode(language.code)
+          ? PrivateTag(label: l10n.privateYours, icon: Icons.person_outline)
+          : PrivateTag(
+              label: l10n.privateModified,
+              icon: Icons.edit_outlined,
+              kind: PrivateTagKind.modified,
+            ),
     );
   }
 }

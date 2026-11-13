@@ -13,10 +13,18 @@ Checks decks against schema 1. CI runs this on every pull request.
 ```sh
 python3 tools/validate_decks.py decks/
 python3 tools/validate_decks.py decks/es/es-en-core-100.yaml
+python3 tools/validate_decks.py --private my-package/        # a private language package (folder or .fnzip)
 ```
 
 Errors fail the build; warnings do not. Exit status is 0 when every deck is
 valid, 1 on any error, 2 if the arguments are wrong.
+
+`--private` checks a private language package ([Private-Language-Package](Private-Language-Package),
+#1017) instead: its names, sizes, manifest, `fnpd-<code>-` ids and path, then each
+deck and layer with these rules (`tools/validate_private.py`; the package part
+mirrors the app's own import, and the two share the fixture
+`test/fixtures/private/qaa-tiny`). Outside `--private` the validator refuses a
+`fnpd-` id and a private manifest, so a private package never goes under `decks/`.
 
 It checks structure and field types, that the deck id matches the filename,
 that each card id names the deck's language and is written once in it, that
