@@ -848,8 +848,9 @@ class AppState extends ChangeNotifier {
   Catalog _gatedByLevel(Catalog scoped) {
     try {
       if (!identical(_levelsOf, _catalog)) {
+        final made = LearnerLevels(_catalog);
         _levelsOf = _catalog;
-        _learnerLevels = LearnerLevels(_catalog);
+        _learnerLevels = made;
         _levels = const <String, Level?>{};
         _levelBase = null;
       }
@@ -866,6 +867,8 @@ class AppState extends ChangeNotifier {
     } on Object catch (error, stack) {
       log.error(describeError('Learner levels failed', error, stack));
       _levelBase = null;
+      _levelsOf = null;
+      _levels = const <String, Level?>{};
       return scoped.forLevels((_) => null);
     }
   }

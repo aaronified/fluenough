@@ -70,7 +70,7 @@ void main() {
   probe?.close();
 
   group('the kind of an item', () {
-    final corpus = _corpus(_source(), fts: false);
+    late final ItemCorpus corpus = _corpus(_source(), fts: false);
     String kindOf(String query, SearchItemType type, String id) {
       final found = corpus.search(
         query,

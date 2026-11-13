@@ -59,6 +59,7 @@ class V3Question {
     this.trailingMark = '',
     this.gapBefore = '',
     this.gapAfter = '',
+    this.gapBlanks = 1,
     this.script = false,
     this.item,
     this.gateItem,
@@ -95,6 +96,9 @@ class V3Question {
   /// For [V3Mode.gap]: the word's units before and after the gap.
   final String gapBefore;
   final String gapAfter;
+
+  /// How many blanks the gap is drawn with (the units left out).
+  final int gapBlanks;
 
   /// A question of the script gate.
   final bool script;
@@ -734,7 +738,23 @@ class V3Run {
           mode: V3Mode.gap,
           shown: item.prompt,
           gapBefore: units.take(gap).join(),
-          gapAfter: units.skip(gap + 1).join(),
+          gapAfter: units.skip(gap + item.gapLength).join(),
+          gapBlanks: item.gapLength,
+          item: item,
+        );
+      case 'F28':
+        // The English sentence, the target sentence with its blank, and
+        // options of one word class.
+        final parts = item.prompt.split('___');
+        return V3Question(
+          id: item.id,
+          format: item.format,
+          mode: V3Mode.pick,
+          shown: item.promptRoman,
+          gapBefore: parts.first,
+          gapAfter: parts.length > 1 ? parts.last : '',
+          options: item.options,
+          optionsAreTarget: true,
           item: item,
         );
       case 'F18':

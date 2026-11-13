@@ -252,11 +252,13 @@ class Deck {
   final String? genre;
 
   /// The lowest level the deck suits (`level`): a learner below it is never
-  /// given the deck. Null for a deck with none, which every learner has.
+  /// given the deck. Null for a deck with none, which every learner has. A
+  /// level that is written but is not one reads as [Level.c2] (fails closed).
   final Level? level;
 
   /// Whether the deck is kept out of the Decks tab, Today, the path,
-  /// placement and the counts, until a learner adds it (`hidden`, D3).
+  /// placement and the counts, until a learner adds it (`hidden`, D3). A
+  /// `hidden` that is written but is not true or false reads as true.
   final bool hidden;
 
   /// The profession a professional deck is for (`professional`), an id in the
@@ -329,7 +331,11 @@ class Deck {
       return this;
     }
     // A deck with nothing left that this learner may have is not offered.
-    if (keptCards.isEmpty && cards.isNotEmpty) return null;
+    if (keptCards.isEmpty &&
+        keptPassages.isEmpty &&
+        (cards.isNotEmpty || passages.isNotEmpty)) {
+      return null;
+    }
     return withCards(
       List<Card>.unmodifiable(keptCards),
       passages: List<Passage>.unmodifiable(keptPassages),

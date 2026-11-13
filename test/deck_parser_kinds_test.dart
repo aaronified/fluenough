@@ -247,17 +247,28 @@ passages:
   });
 
   group('tolerance', () {
-    test('leaves out a level that is not one and says so', () {
+    test('reads a level that is not one as C2 and says so', () {
       final deck = DeckParser.parse('''
 $_header
 level: "D9"
 cards:
   - { id: "zz-9901", target: "a", native: "a", level: "Z" }
 ''', source: 'bad');
-      expect(deck.level, isNull);
-      expect(deck.cards.single.level, isNull);
+      expect(deck.level, Level.c2);
+      expect(deck.cards.single.level, Level.c2);
       expect(deck.kindProblems, hasLength(2));
       expect(deck.kindProblems.first, contains('level'));
+    });
+
+    test('reads a lower-case level as C2, never as open to all', () {
+      final deck = DeckParser.parse('''
+$_header
+level: "b1"
+cards:
+  - { id: "zz-9901", target: "a", native: "a" }
+''', source: 'bad');
+      expect(deck.level, Level.c2);
+      expect(deck.kindProblems, hasLength(1));
     });
 
     test('leaves out fields of the wrong type and still loads', () {
@@ -278,7 +289,7 @@ cards:
     legacy: [1, 2]
 ''', source: 'bad');
       expect(deck.genre, isNull);
-      expect(deck.hidden, isFalse);
+      expect(deck.hidden, isTrue);
       expect(deck.weave, isNull);
       expect(deck.section, isNull);
       expect(deck.professional, isNull);

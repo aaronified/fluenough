@@ -3832,6 +3832,10 @@ file is counted in the language's `size`. The `situations:` key belongs to a
 situations file only, and a language has one file, named
 `<code>-situations.yaml`; the validator refuses anything else.
 
+### What new situations teach (owner, 2026-11-12)
+
+New situations, professional ones included, teach only words and phrases that are very widely used in that situation, and are not over-translated: one natural phrase per idea, the common register only, short glosses, no list of every synonym or variant, a handful of phrases per scene. The learner chooses which situations show on the situations screen (issue #1145); professional situations are hidden by default and found by search (issue #1139).
+
 ---
 
 ## Resources files
