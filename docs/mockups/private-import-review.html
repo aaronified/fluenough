@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Private Import Review</title>
+<meta name="description" content="Import review after choosing a .fnzip: counts, findings with a severity word, Add disabled while errors remain, and the older-revision, over-size and unsafe-file refusals.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&display=swap">
+<style>
+
+/* ===== The page around the phones (not the app) ===== */
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 16px 72px}
+h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;font-weight:700}
+.cap1{margin:0 0 16px;color:var(--page-muted);font-size:14px}
+.tw{display:flex;flex-wrap:wrap;gap:10px 24px;margin:0 0 14px}
+.tg{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--page-muted);flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--page-line);border-radius:10px;overflow:hidden;flex-wrap:wrap}
+.seg button{font:inherit;font-size:14px;min-height:40px;padding:0 14px;border:0;background:var(--page-card);color:var(--page-fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--page-acc);color:var(--page-bg);font-weight:600}
+section.opt{margin:0 0 52px;padding-top:20px;border-top:1px solid var(--page-line)}
+.frames{display:flex;flex-wrap:wrap;gap:20px 24px;align-items:flex-start}
+.fcol{display:flex;flex-direction:column;gap:6px;width:360px;max-width:100%}
+.fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+.sticky{position:sticky;top:0;z-index:20;background:var(--page-bg);padding:10px 0 4px;margin-bottom:12px;border-bottom:1px solid var(--page-line)}
+/* ===== The app: lib/ui/theme.dart (M3, Roboto; ColorScheme.fromSeed of the forest seed) =====
+   Every size is calc(N px * var(--t)), t = 1.4, the app's text cap (#505). Icons do not scale. */
+.ph{--t:1.4;width:360px;max-width:100%;height:740px;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
+.ph button{font-family:inherit;color:inherit;cursor:pointer}
+.appbar{flex:none;min-height:56px;display:flex;align-items:center;padding:0 4px 0 8px;color:var(--onSv);gap:2px}
+.appbar .ttl{flex:1;min-width:0;font-size:calc(20px*var(--t));line-height:1.2;font-weight:500;color:var(--onS);padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ib{width:48px;height:48px;border:0;background:none;display:flex;align-items:center;justify-content:center;border-radius:24px;padding:0;color:var(--onSv);flex:none}
+svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
+.sp{flex:1}
+.scroll{flex:1;min-height:0;overflow-y:auto;padding:0 16px 16px;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.t-body{font-size:calc(14px*var(--t));line-height:1.4;margin:0}
+.t-sm{font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv);margin:0}
+.t-lab{font-size:calc(12px*var(--t));line-height:1.3;font-weight:600;letter-spacing:.4px;color:var(--onSv);text-transform:uppercase;margin:14px 0 6px}
+.t-h{font-size:calc(16px*var(--t));line-height:1.3;font-weight:500;margin:0}
+.script{font-family:"Noto Sans Devanagari","Noto Sans Bengali",Roboto,sans-serif}
+.nowrap{white-space:nowrap}
+/* language bar */
+.lbar{display:flex;gap:8px;padding:0 16px 10px;flex:none}
+.pill{border:1px solid var(--ol);border-radius:8px;min-height:32px;padding:0 12px;font-size:calc(14px*var(--t));font-weight:500;display:inline-flex;align-items:center;gap:6px;background:none;color:var(--onSv)}
+.pill.on{background:var(--sc);color:var(--onSc);border-color:transparent}
+/* buttons */
+.btn{min-height:calc(40px*var(--t));border-radius:calc(20px*var(--t));border:0;font-size:calc(14px*var(--t));line-height:1.2;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;padding:6px 16px}
+.btn.fill{background:var(--p);color:var(--onP)}
+.btn.tonal{background:var(--sc);color:var(--onSc)}
+.btn.out{background:none;border:1px solid var(--ol);color:var(--p)}
+.btn.text{background:none;color:var(--p);padding:6px 12px}
+.btn.full{width:100%}
+.btn.sm{min-height:48px;border-radius:24px}
+/* cards */
+.card{background:var(--sLow);border-radius:16px;padding:14px 16px;margin:0 0 12px;display:flex;gap:12px;align-items:center;width:100%;text-align:left;border:0}
+.card .tx{flex:1;min-width:0}
+.card .ic{flex:none;width:40px;height:40px;border-radius:20px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center}
+/* bottom nav */
+.nav{flex:none;display:flex;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);padding:8px 4px 10px}
+.nav div{flex:1;text-align:center;font-size:calc(11px*var(--t));line-height:1.2;color:var(--onSv);display:flex;flex-direction:column;align-items:center;gap:2px}
+.nav div .pl{width:56px;height:28px;border-radius:14px;display:flex;align-items:center;justify-content:center}
+.nav div.on{color:var(--onS);font-weight:600}
+.nav div.on .pl{background:var(--sc);color:var(--onSc)}
+/* settings rows */
+/* sheet */
+.scrim{position:absolute;inset:0;background:rgba(0,0,0,.42);z-index:3}
+.sheet{position:absolute;z-index:4;left:0;right:0;bottom:0;background:var(--sLow);border-radius:28px 28px 0 0;display:flex;flex-direction:column;max-height:88%}
+.sheet .grab{flex:none;width:32px;height:4px;border-radius:2px;background:var(--onSv);opacity:.4;margin:10px auto 6px}
+.sheet .scroll{padding:6px 20px 20px}
+.sheet h3{margin:0 0 4px;font-size:calc(20px*var(--t));font-weight:500;line-height:1.2}
+.opt-row{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:none;border:0;padding:6px 0;min-height:48px;font-size:calc(14px*var(--t));line-height:1.3}
+.opt-row .tx{flex:1;min-width:0}
+.opt-row .tx small{display:block;font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.3}
+.box{flex:none;width:20px;height:20px;border-radius:3px;border:2px solid var(--onSv);display:flex;align-items:center;justify-content:center}
+.box.rd{border-radius:50%}
+.opt-row[aria-checked="true"] .box{background:var(--p);border-color:var(--p)}
+.box svg{width:16px;height:16px;fill:var(--onP);opacity:0}
+.opt-row[aria-checked="true"] .box svg{opacity:1}
+.sep{border-top:1px solid var(--olv);margin:6px 0}
+/* word rows */
+.wrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;align-items:center;border-top:1px solid var(--olv);padding:10px 0;width:100%;text-align:left;background:none;border-left:0;border-right:0;border-bottom:0}
+.wrow .w{font-size:calc(20px*var(--t));line-height:1.25;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrow .rd{font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrow .mn{font-size:calc(14px*var(--t));line-height:1.3;grid-column:1}
+.wrow .act{grid-column:2;grid-row:1/4;display:flex;align-items:center;gap:0}
+.wrow.unl .w,.wrow.unl .rd,.wrow.unl .mn{opacity:.78}
+.mastery{display:inline-flex;align-items:center;height:calc(18px*var(--t));padding:0 8px;border-radius:calc(9px*var(--t));font-size:calc(11px*var(--t));line-height:1;font-weight:600;letter-spacing:.3px}
+.m-new{box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
+.m-learning{background:var(--sc);color:var(--onSc)}
+.m-known{background:var(--p);color:var(--onP)}
+.audio{width:48px;height:48px;border-radius:24px;border:0;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;flex:none}
+.audio.sm{width:40px;height:40px}
+.bottom{flex:none;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv)}
+/* key-value (inspect) */
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;margin:0}
+.kv dt{font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.5}
+.kv dd{margin:0;font-size:calc(14px*var(--t));line-height:1.4;min-width:0;overflow-wrap:anywhere}
+.mono{font-family:ui-monospace,"Roboto Mono",monospace;font-size:calc(12px*var(--t))}
+.blk{display:flex;gap:12px;align-items:flex-start;border-radius:16px;padding:12px 14px;background:var(--sHigh);margin:8px 0}
+.blk p{margin:0;font-size:calc(14px*var(--t));line-height:1.35}
+.blk .tt{font-size:calc(12px*var(--t));font-weight:700;letter-spacing:.3px;text-transform:uppercase;margin:0 0 2px;color:var(--onSv)}
+/* conversation */
+.turns{display:flex;flex-direction:column;gap:12px;padding:4px 0}
+.turn{max-width:92%;border-radius:20px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.turn.a{align-self:flex-start;background:var(--sLow);border-bottom-left-radius:6px}
+.turn.b{align-self:flex-end;background:var(--sc);color:var(--onSc);border-bottom-right-radius:6px}
+.turn .who{font-size:calc(11px*var(--t));font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+.turn.a .who{color:var(--onSv)}
+.turn .tl{font-size:calc(20px*var(--t));line-height:1.45;font-weight:500}
+.turn .tl button{background:none;border:0;padding:0 1px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dotted currentColor}
+.turn .tl button.sel{background:var(--p);color:var(--onP);border-radius:6px;border-bottom-color:transparent}
+.turn .rdg{font-size:calc(13px*var(--t));line-height:1.3;opacity:.95}
+.turn .ml{font-size:calc(14px*var(--t));line-height:1.3;opacity:.95}
+.turn.live .tl{opacity:.85}
+.live-dot{display:inline-block;width:8px;height:8px;border-radius:4px;background:var(--E);margin-right:6px}
+.mic{display:flex;gap:12px;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);align-items:stretch}
+.mic .btn{flex:1;min-height:calc(48px*var(--t));flex-direction:column;gap:2px;border-radius:24px;font-size:calc(13px*var(--t))}
+.mic .btn svg.i{width:28px;height:28px}
+.mic .btn.on{outline:3px solid var(--onS);outline-offset:2px}
+.status{display:flex;align-items:center;gap:8px;padding:0 16px 8px;flex:none}
+/* highlight of what changed */
+.hl-on .chg{outline:2px dashed var(--E);outline-offset:3px;position:relative;border-radius:14px}
+.hl-on .chg::after{content:"new";position:absolute;top:-10px;right:6px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:6px;z-index:2;letter-spacing:.3px}
+.hl-on .chg.upd::after{content:"changed"}
+.hl-on .chg.gone::after{content:"removed"}
+.ghost{opacity:.55;text-decoration:line-through;pointer-events:none}
+.hide{display:none!important}
+.note{font-size:13px;color:var(--page-muted);margin:6px 0 14px;max-width:760px}
+.tabs{flex:none;display:flex;overflow-x:auto;scrollbar-width:none;box-shadow:0 -1px 0 var(--olv) inset;padding:0 4px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;min-height:48px;padding:0 12px;border:0;background:none;font-size:calc(14px*var(--t));font-weight:500;color:var(--onSv);display:flex;align-items:center;gap:6px;border-bottom:3px solid transparent;white-space:nowrap}
+.tab .n{font-size:calc(12px*var(--t));font-weight:600;background:var(--sc);color:var(--onSc);border-radius:10px;padding:1px 7px}
+.tab[aria-selected="true"]{color:var(--p);border-bottom-color:var(--p);font-weight:700}
+.tab .best{width:6px;height:6px;border-radius:3px;background:var(--p)}
+.sbox{margin:0 16px 8px;flex:none;display:flex;align-items:center;gap:8px;background:var(--sHigh);border-radius:28px;min-height:56px;padding:0 8px 0 16px}
+.sbox .q{flex:1;min-width:0;font-size:calc(16px*var(--t));white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 8px}
+.chp{border:1px solid var(--ol);border-radius:8px;min-height:32px;padding:0 10px;font-size:calc(12px*var(--t));display:inline-flex;align-items:center;gap:4px;background:none;color:var(--onSv);font-weight:500}
+.chp.on{background:var(--sc);color:var(--onSc);border-color:transparent}
+.tag{display:inline-flex;align-items:center;gap:4px;height:calc(18px*var(--t));padding:0 7px;border-radius:calc(9px*var(--t));font-size:calc(11px*var(--t));line-height:1;font-weight:700;letter-spacing:.3px;white-space:nowrap}
+.tag.lv{box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
+.tag.pro{background:var(--pl);color:var(--onPl)}
+.tag.up{background:none;box-shadow:inset 0 0 0 1px var(--pl);color:var(--pl)}
+.tag.kind{background:var(--sc);color:var(--onSc)}
+.tag.pr{background:var(--pr);color:var(--onPr)}
+.rrow{display:flex;gap:12px;align-items:flex-start;border-top:1px solid var(--olv);padding:12px 0;width:100%;text-align:left;background:none;border-left:0;border-right:0;border-bottom:0}
+.rrow .ico{flex:none;width:40px;height:40px;border-radius:12px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(14px*var(--t))}
+.rrow .tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.rrow .nm{font-size:calc(16px*var(--t));line-height:1.3;font-weight:500}
+.rrow .sub{font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv)}
+.rrow .rt{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.rrow.up{opacity:.8}
+.rrow.up .nm{font-weight:400}
+.bar{height:6px;border-radius:3px;background:var(--olv);overflow:hidden;margin-top:2px}
+.bar i{display:block;height:100%;background:var(--p)}
+.ex{font-size:calc(14px*var(--t));line-height:1.4;background:var(--sHigh);border-radius:10px;padding:6px 10px;margin-top:2px}
+.corr{font-size:calc(12px*var(--t));color:var(--onSv);margin:0 0 6px;line-height:1.4}
+.corr b{color:var(--onS)}
+.big{font-size:calc(20px*var(--t));line-height:1.3;font-weight:500}
+.more{display:flex;align-items:center;justify-content:center;min-height:48px;border-top:1px solid var(--olv);color:var(--p);font-size:calc(14px*var(--t));font-weight:600;width:100%;background:none;border-left:0;border-right:0;border-bottom:0}
+.empty{text-align:center;padding:28px 8px;color:var(--onSv)}
+.empty .big{color:var(--onS);margin:8px 0 4px}
+.empty svg.i{width:48px;height:48px;opacity:.7;margin:0 auto}
+.hint{font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.35;margin:0 0 8px}
+.pillrow{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0}
+.addb{min-height:48px;border-radius:24px;border:1px solid var(--ol);background:none;color:var(--p);font-weight:600;font-size:calc(13px*var(--t));padding:0 12px;display:inline-flex;align-items:center;gap:4px}
+.thumb{flex:none;width:72px;height:72px;border-radius:14px;background:var(--sHigh);display:flex;align-items:center;justify-content:center;color:var(--onSv);position:relative;overflow:hidden}
+.thumb svg.i{width:32px;height:32px;opacity:.6}
+.thumb.ph2{background:repeating-linear-gradient(45deg,var(--sHigh) 0 8px,var(--sLow) 8px 16px);box-shadow:inset 0 0 0 1px var(--ol)}
+.cred{font-size:calc(11px*var(--t));line-height:1.3;color:var(--onSv)}
+.tl{position:relative;margin:6px 0 6px 8px;padding-left:16px;border-left:2px solid var(--olv)}
+.tl .ev{position:relative;padding:0 0 12px}
+.tl .ev::before{content:"";position:absolute;left:-23px;top:5px;width:12px;height:12px;border-radius:6px;background:var(--s);box-shadow:inset 0 0 0 2px var(--ol)}
+.tl .ev.met::before{background:var(--p);box-shadow:none}
+.tl .ev.this::before{background:var(--pl);box-shadow:0 0 0 3px var(--sc)}
+.tl .ev.now::before{background:var(--pr);box-shadow:none}
+.tl .ev b{font-size:calc(13px*var(--t));display:block;font-weight:600}
+.tl .ev span{font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.35}
+.strip{display:flex;gap:0;overflow:hidden;margin:6px 0;position:relative;padding-top:10px}
+.strip::before{content:"";position:absolute;left:0;right:0;top:15px;height:2px;background:var(--olv)}
+.strip .d{flex:1;min-width:0;text-align:center;position:relative;font-size:calc(10px*var(--t));line-height:1.2;color:var(--onSv)}
+.strip .d i{display:block;width:12px;height:12px;border-radius:6px;margin:0 auto 4px;background:var(--s);box-shadow:inset 0 0 0 2px var(--ol);position:relative;top:-4px}
+.strip .d.met i{background:var(--p);box-shadow:none}.strip .d.this i{background:var(--pl);box-shadow:0 0 0 3px var(--sc)}.strip .d.now i{background:var(--pr);box-shadow:none}
+.strip .d.this{color:var(--onS);font-weight:700}
+.qt{border-left:4px solid var(--p);padding:4px 0 4px 12px;margin:6px 0}
+.qt .big{font-size:calc(22px*var(--t))}
+.src{font-size:calc(11px*var(--t));line-height:1.4;color:var(--onSv)}
+.legacy{border-radius:16px;padding:12px 14px;background:var(--sHigh);margin:8px 0}
+.legacy .tt{font-size:calc(12px*var(--t));font-weight:700;letter-spacing:.3px;text-transform:uppercase;color:var(--onSv);margin:0 0 4px}
+.legacy li{font-size:calc(13px*var(--t));line-height:1.35;margin:0 0 4px}
+.legacy ul{margin:4px 0 0;padding-left:18px}
+.sw2{width:52px;height:32px;border-radius:16px;background:var(--olv);position:relative;flex:none}
+.sw2::after{content:"";position:absolute;top:4px;left:4px;width:24px;height:24px;border-radius:12px;background:var(--onSv)}
+.sw2.on{background:var(--p)}.sw2.on::after{left:24px;background:var(--onP)}
+.frames.wide .fcol{width:360px}
+.opt h2 small{font-weight:400;color:var(--page-muted);font-size:14px}
+.qs{margin:0 0 40px;padding:14px 16px;border:1px solid var(--page-line);border-radius:12px;background:var(--page-card);max-width:760px;font-size:14px}
+.hl-on .tabs.chg,.hl-on .chips.chg,.hl-on .corr.chg{margin-bottom:10px;margin-top:4px}.hl-on .tabs.chg{margin-left:4px;margin-right:4px}
+
+body,.ph,.script{font-family:Roboto,"Noto Sans Devanagari","Noto Sans JP",system-ui,sans-serif}
+/* ===== Added for the private-decks mockups ===== */
+.ph :focus-visible{outline:3px solid var(--p);outline-offset:2px}
+.sw{appearance:none;-webkit-appearance:none;margin:0;width:52px;height:32px;border-radius:16px;border:2px solid var(--ol);background:var(--sHigh);position:relative;flex:none;cursor:pointer}
+.sw::after{content:"";position:absolute;top:4px;left:4px;width:16px;height:16px;border-radius:8px;background:var(--ol);transition:none}
+.sw:checked{background:var(--p);border-color:var(--p)}
+.sw:checked::after{left:24px;top:2px;width:24px;height:24px;border-radius:12px;background:var(--onP)}
+.swrow{display:flex;align-items:center;gap:12px;min-height:48px;width:100%;cursor:pointer}
+.swrow .tx{flex:1;min-width:0}
+.swrow .tx b{display:block;font-size:calc(14px*var(--t));line-height:1.3;font-weight:600}
+.swrow .tx small{display:block;font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv)}
+.cb{appearance:none;-webkit-appearance:none;margin:0;width:24px;height:24px;border-radius:4px;border:2px solid var(--onSv);background:none;flex:none;position:relative;cursor:pointer}
+.cb:checked{background:var(--p);border-color:var(--p)}
+.cb:checked::after{content:"";position:absolute;left:6px;top:1px;width:6px;height:12px;border:solid var(--onP);border-width:0 3px 3px 0;transform:rotate(45deg)}
+.rd2{appearance:none;-webkit-appearance:none;margin:0;width:22px;height:22px;border-radius:11px;border:2px solid var(--onSv);flex:none;position:relative;cursor:pointer}
+.rd2:checked{border-color:var(--p)}
+.rd2:checked::after{content:"";position:absolute;left:3px;top:3px;width:12px;height:12px;border-radius:6px;background:var(--p)}
+.pick{display:flex;align-items:center;gap:12px;min-height:56px;padding:6px 0;width:100%;cursor:pointer;font-size:calc(14px*var(--t));line-height:1.3}
+.pick .tx{flex:1;min-width:0}.pick small{display:block;font-size:calc(12px*var(--t));color:var(--onSv)}
+.btn:disabled{background:var(--olv);color:var(--onSv);opacity:.9;cursor:not-allowed}
+.btn.err{background:none;border:1px solid var(--E);color:var(--E)}
+.btn.errfill{background:var(--E);color:var(--onE)}
+.btn.sm2{min-height:48px;border-radius:24px;padding:6px 10px;font-size:calc(13px*var(--t))}
+.btnrow{display:flex;gap:8px;margin-top:10px}.btnrow .btn{flex:1;min-width:0}
+.tag.e{background:var(--E);color:var(--onE)}
+.tag.w{background:var(--pl);color:var(--onPl)}
+.tag.n{background:none;box-shadow:inset 0 0 0 1px var(--ol);color:var(--onS)}
+.tag.ok{background:var(--sc);color:var(--onSc)}
+.tag.off{background:none;box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
+.tag.slot{background:var(--pl);color:var(--onPl)}
+.tag svg.i{width:14px;height:14px}
+.grp{background:var(--sLow);border-radius:20px;padding:14px 16px;margin:0 0 14px}
+.grp.dim{box-shadow:inset 0 0 0 1px var(--olv)}
+.gh{display:flex;gap:12px;align-items:center;width:100%;text-align:left;background:none;border:0;padding:0;min-height:48px}
+.gh .ic{flex:none;width:40px;height:40px;border-radius:12px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(14px*var(--t))}
+.gh .tx{flex:1;min-width:0}
+.gh .nm{font-size:calc(16px*var(--t));font-weight:500;line-height:1.25;display:block}
+.gh .sub{font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.3;display:block}
+.notice{display:flex;gap:10px;align-items:flex-start;border-radius:14px;padding:10px 12px;background:var(--sHigh);margin:10px 0 0;box-shadow:inset 4px 0 0 var(--pl)}
+.notice p{margin:0;font-size:calc(13px*var(--t));line-height:1.35}
+.notice b{font-weight:700}
+.notice.err{box-shadow:inset 4px 0 0 var(--E)}
+.notice.info{box-shadow:inset 4px 0 0 var(--pr)}
+.notice svg.i{flex:none;margin-top:1px}
+.tagb{display:inline-flex;align-items:center;min-height:48px;background:none;border:0;padding:0 4px 0 0;color:inherit}
+.dlg{position:absolute;z-index:4;left:24px;right:24px;top:50%;transform:translateY(-50%);background:var(--sHigh);border-radius:28px;padding:22px 22px 14px}
+.dlg h3{margin:0 0 10px;font-size:calc(20px*var(--t));line-height:1.2;font-weight:500}
+.dlg p{margin:0 0 8px;font-size:calc(14px*var(--t));line-height:1.35;color:var(--onSv)}
+.dlg .acts{display:flex;justify-content:flex-end;gap:4px;margin-top:10px;flex-wrap:wrap}
+.btn.text.errt{color:var(--E)}
+.fx{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 10px;margin:6px 0 0;font-size:calc(12px*var(--t));line-height:1.4}
+.fx dt{color:var(--onSv)}.fx dd{margin:0;overflow-wrap:anywhere}
+.codeb{font-family:ui-monospace,"Roboto Mono",monospace;font-size:calc(12px*var(--t));line-height:1.4;background:var(--sHigh);border-radius:10px;padding:8px 10px;overflow-wrap:anywhere;margin:4px 0}
+.cnt{display:flex;gap:8px;margin:10px 0}
+.cnt div{flex:1;background:var(--sLow);border-radius:14px;padding:8px 6px;text-align:center}
+.cnt b{display:block;font-size:calc(20px*var(--t));line-height:1.2;font-weight:600}
+.cnt span{font-size:calc(12px*var(--t));color:var(--onSv)}
+.sevsum{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0}
+.scrollfx{overflow:visible}
+.ph.short{height:auto;min-height:0}
+.ph.short .scroll{flex:none;overflow:visible}
+.spin{width:28px;height:28px;border-radius:14px;border:4px solid var(--olv);border-top-color:var(--p);flex:none}
+.stp{display:flex;align-items:center;gap:10px;min-height:40px;font-size:calc(14px*var(--t))}
+.stp .dot{width:24px;height:24px;border-radius:12px;flex:none;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 2px var(--ol);color:var(--onP)}
+.stp.done .dot{background:var(--p);box-shadow:none}.stp.now .dot{box-shadow:inset 0 0 0 4px var(--p)}
+.stp svg.i{width:16px;height:16px}
+.hdr-ph{background:var(--sLow);border-radius:16px;padding:6px 12px 10px;margin:0 0 10px}
+.dtab{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0}
+.chipb{border:1px solid var(--ol);border-radius:8px;min-height:48px;padding:0 12px;font-size:calc(13px*var(--t));display:inline-flex;align-items:center;gap:4px;background:none;color:var(--onSv);font-weight:500}
+.chipb[aria-pressed="true"]{background:var(--sc);color:var(--onSc);border-color:transparent}
+.qs ol{margin:6px 0 0;padding-left:20px}.qs li{margin:0 0 6px}
+.opt h2{margin-top:0}
+
+body,.ph,.script{font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",system-ui,sans-serif}
+</style>
+</head>
+<body>
+<div class="wrap" id="wrap">
+<h1>Private languages: import review</h1>
+<p class="cap1">After choosing a .fnzip: what it holds, what the checks found, and whether it can be added (#1017, Plan-Private-Languages tasks 10 and 17, sections 2.4 and 2.11). Phone 360 dp at 1.4x text, light and dark. All screens are new, so nothing is outlined. Self-checks and notes: private-import-review.md.</p>
+<div class="sticky tw">
+ <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
+ <div class="tg">Example <span class="seg" data-k="lang"><button data-v="bn">Bengali, changed course</button><button data-v="hi">Hindi, changed course</button><button data-v="qaa">Tolu, new language</button></span></div>
+ <div class="tg">The file has <span class="seg" data-k="sc"><button data-v="err">Errors</button><button data-v="warn">Warnings only</button><button data-v="ok">Notes only</button></span></div>
+ <div class="tg">Findings <span class="seg" data-k="gr"><button data-v="a">A: by severity</button><button data-v="b">B: by file</button></span></div>
+ <div class="tg">Detail <span class="seg" data-k="det"><button data-v="a">A: opens in the list</button><button data-v="b">B: bottom sheet</button></span></div>
+ <div class="tg">Rights <span class="seg" data-k="rt"><button data-v="a">A: a box to tick</button><button data-v="b">B: warnings only</button></span></div>
+ <div class="tg">Older revision <span class="seg" data-k="lr"><button data-v="a">A: refused</button><button data-v="b">B: refused, with an override</button></span></div>
+</div>
+<div id="root"></div>
+</div>
+<script>
+
+const PAL={
+dark:{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sHigh":"#262b27","ol":"#8a938b","olv":"#404942","E":"#ffb4ab","onE":"#690005","pl":"#E0A458","onPl":"#2b1a00","pr":"#9ecaff","onPr":"#00315a"},
+light:{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sHigh":"#e4eae2","ol":"#717972","olv":"#c0c9c0","E":"#ba1a1a","onE":"#ffffff","pl":"#8A5A00","onPl":"#ffffff","pr":"#1565C0","onPr":"#ffffff"}};
+const IC={search:"M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z",close:"M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z",back:"M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z",add:"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z",chev:"M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z",check:"M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z",lock:"M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM9 8V6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9z",work:"M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z",vol:"M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z",quote:"M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z",tag:"M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58s1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z",deck:"M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z",flag:"M14.4 6 14 4H5v17h2v-7h5.6l.4 2h7V6z",place:"M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z",info:"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z",play:"M8 5v14l11-7z",hist:"M13 3a9 9 0 0 0-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.954 8.954 0 0 0 13 21a9 9 0 0 0 0-18zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z",person:"M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z",image:"M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z",star:"M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z",eyeoff:"M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2z",tune:"M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z",more:"M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z",today:"M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"};
+const ic=(n,s)=>`<svg class="i" viewBox="0 0 24 24" aria-hidden="true"${s?` style="width:${s}px;height:${s}px"`:''}><path d="${IC[n]}"/></svg>`;
+const ph=(cap,bar,body,bottom,over)=>`<div class="fcol"><div class="fcap">${cap}</div><div class="ph">${bar}<div class="scroll">${body}</div>${bottom||''}${over||''}</div></div>`;
+const abar=(t,back,acts)=>`<div class="appbar">${back?`<button class="ib" aria-label="Back">${ic('back')}</button>`:'<span style="width:8px"></span>'}<span class="ttl">${t}</span>${acts||''}</div>`;
+const nav=on=>`<div class="nav">${['Today','Decks','Progress','Settings'].map(x=>`<div class="${x==on?'on':''}"><span class="pl">${ic(x=='Today'?'today':x=='Decks'?'deck':x=='Progress'?'star':'tune')}</span>${x}</div>`).join('')}</div>`;
+function wire(S,build){
+ document.querySelectorAll('.seg').forEach(s=>{s.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;S[s.dataset.k]=b.dataset.v;build()})});
+}
+function sync(S){document.querySelectorAll('.seg').forEach(s=>s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',S[s.dataset.k]==b.dataset.v)));}
+function theme(S,root){const p=PAL[S.theme];root.style.cssText=Object.entries(p).map(([k,v])=>`--${k}:${v}`).join(';');root.className=S.hl=='1'?'hl-on':'';document.documentElement.dataset.theme=S.theme;}
+
+
+Object.assign(IC,{trash:"M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z",dl:"M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z",ul:"M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z",warn:"M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z",err:"M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z",volx:"M16.5 12A4.5 4.5 0 0 0 14 7.97v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51A8.796 8.796 0 0 0 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06a8.99 8.99 0 0 0 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4 9.91 6.09 12 8.18V4z",edit:"M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a.996.996 0 0 0 0-1.41l-2.34-2.34a.996.996 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z",sync:"M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46A7.93 7.93 0 0 0 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74A7.93 7.93 0 0 0 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z",file:"M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z",more:"M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z",ex:"M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z",col:"M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z",lang:"M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z",hide:"M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27z"});
+const ph2=(cap,bar,body,bottom,over,cls)=>`<div class="fcol"><div class="fcap">${cap}</div><div class="ph ${cls||''}">${bar}<div class="scroll">${body}</div>${bottom||''}${over||''}</div></div>`;
+
+
+const S={theme:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light',lang:'bn',sc:'err',gr:'a',det:'a',rt:'a',lr:'a',ack:false};
+const D={
+bn:{file:'bengali-my-path-r7.fnzip',mb:2.4,pkg:'fnpd-bn',code:'bn',lang:'Bengali',own:'বাংলা',kind:'Changes the built-in Bengali course',rev:7,cards:612,units:38,decks:9,
+ core:'bn/fnpd-bn-verbs-1.yaml',path:'fnpd-bn-path.yaml',layer:'bn/en/fnpd-bn-verbs-1.yaml',
+ c1:'bn-0412',c1n:'fnpd-bn-0412',val1:'id: "bn-0412"',w1:'fnpd-bn-0455',val2:'meaning: yes',w2:'fnpd-bn-0301',base:'Bengali course revision 54',changed:41,kept:571,deck:'bn-kitchen',unit:'unit-17',ex:'আমি ভাত খাই'},
+hi:{file:'hindustani-exam-path-r3.fnzip',mb:1.1,pkg:'fnpd-hi',code:'hi',lang:'Hindustani',own:'हिन्दुस्तानी',kind:'Changes the built-in Hindustani course',rev:3,cards:340,units:24,decks:6,
+ core:'hi/fnpd-hi-verbs-1.yaml',path:'fnpd-hi-path.yaml',layer:'hi/en/fnpd-hi-verbs-1.yaml',
+ c1:'hi-0231',c1n:'fnpd-hi-0231',val1:'id: "hi-0231"',w1:'fnpd-hi-0188',val2:'meaning: no',w2:'fnpd-hi-0094',base:'Hindustani course revision 61',changed:27,kept:313,deck:'hi-kitchen',unit:'unit-9',ex:'मैं चाय पीता हूँ'},
+qaa:{file:'tolu-r2.fnzip',mb:0.006,pkg:'fnpd-qaa',code:'qaa',lang:'Tolu',own:'Tolu',kind:'A new language (constructed)',rev:2,cards:6,units:2,decks:1,
+ core:'qaa/fnpd-qaa-words.yaml',path:'fnpd-qaa-path.yaml',layer:'qaa/en/fnpd-qaa-words.yaml',
+ c1:'qaa-0003',c1n:'fnpd-qaa-0003',val1:'id: "qaa-0003"',w1:'fnpd-qaa-0005',val2:'meaning: no',w2:'fnpd-qaa-0002',base:'',changed:0,kept:0,deck:'qaa-greetings',unit:'unit-2',ex:'lumi tola'}};
+const SEV={Error:['e','err'],Warning:['w','warn'],Note:['n','info']};
+const sevTag=s=>`<span class="tag ${SEV[s][0]}">${ic(SEV[s][1],14)} ${s}</span>`;
+function finds(){
+ const d=D[S.lang];const f=[];
+ if(S.sc=='err'){
+  f.push({s:'Error',file:d.core,line:214,card:d.c1n,field:'id',msg:`The id does not start with ${d.pkg}-.`,val:d.val1,fix:`Rename it to ${d.c1n}. Every id in a private package starts with ${d.pkg}-, so it can never match a built-in card.`});
+  f.push({s:'Error',file:d.path,line:31,card:'',field:`units › ${d.unit} › decks`,msg:`The deck ${d.deck} is in neither this package nor the built-in decks.`,val:`- ${d.deck}`,fix:`Add ${d.deck}.yaml to the package, or name a deck that exists.`});
+  f.push({s:'Error',file:d.layer,line:77,card:d.c1n,field:'native',msg:'This card has no matching core card in the package.',val:`ref: ${d.c1n}`,fix:'Every layer card needs its core card with the same id.'});
+ }
+ if(S.sc!='ok'){
+  f.push({s:'Warning',file:d.layer,line:120,card:d.w1,field:'meaning',msg:'An unquoted yes or no is read as true or false.',val:d.val2,fix:`Write it in quotes: meaning: "${d.val2.split(': ')[1]}".`});
+  if(S.lang!='qaa')f.push({s:'Warning',file:d.core,line:402,card:d.w2,field:'reading',msg:'No reading on a card in a non-Latin script.',val:'reading: ""',fix:'Add a reading in Latin letters so learners can sound it out.'});
+  if(S.rt=='b')f.push({s:'Warning',file:'manifest.yaml',line:9,card:'',field:'source',msg:'A card note mentions a source. You need the right to use that text.',val:'notes: "© 2019 Example Press"',fix:'Remove the text, or confirm you may use it.'});
+ }
+ f.push({s:'Note',file:'manifest.yaml',line:5,card:'',field:'tts',msg:S.lang=='qaa'?'This phone has no voice for Tolu. Speaking and sound drills will be hidden.':`This phone has a voice for ${d.lang}. All drills stay on.`,val:'',fix:S.lang=='qaa'?'Nothing to fix. If you install a voice later, turn the language off and on to check again.':'Nothing to fix.'});
+ if(d.changed)f.push({s:'Note',file:d.path,line:1,card:'',field:'based_on',msg:`${d.changed} cards replace built-in cards. ${d.kept} stay as they are, by reference.`,val:'',fix:'Edited cards get a new id and hide the original in your path only.'});
+ return f;
+}
+const loc=f=>`${f.file} · line ${f.line}`;
+function row(f,i,open){
+ const det=`<dl class="fx"><dt>File</dt><dd>${f.file}</dd><dt>Line</dt><dd>${f.line}</dd>${f.card?`<dt>Card</dt><dd>${f.card}</dd>`:''}<dt>Field</dt><dd>${f.field}</dd></dl>${f.val?`<div class="codeb">${f.val}</div>`:''}<p class="t-sm" style="color:var(--onS);margin-top:4px"><b>How to fix:</b> ${f.fix} Then choose the file again.</p>`;
+ return `<div class="rrow" style="flex-direction:column;gap:4px;padding:6px 0"><button class="rrow" aria-expanded="${open}" style="border:0;padding:6px 0;min-height:48px;align-items:center"><div class="tx"><span class="rt">${sevTag(f.s)}<span class="sub">${loc(f)}</span></span><span class="nm" style="font-size:calc(14px*var(--t));font-weight:400">${f.msg}</span>${f.card?`<span class="sub">Card ${f.card} · field ${f.field}</span>`:''}</div>${ic(open?'col':'ex')}</button>${open?`<div style="width:100%">${det}</div>`:''}</div>`;
+}
+function list(){
+ const f=finds();let o=S.det=='a'?0:-1;
+ if(S.gr=='a'){
+  const ord=['Error','Warning','Note'];let h='';let n=0;
+  ord.forEach(s=>{const g=f.filter(x=>x.s==s);if(!g.length)return;h+=`<p class="t-lab">${s}s · ${g.length}</p>`+g.map(x=>row(x,n,(S.det=='a'&&n++==0))).join('')});return h;
+ }
+ const files=[...new Set(f.map(x=>x.file))];let n=0;
+ return files.map(fl=>{const g=f.filter(x=>x.file==fl);return `<p class="t-lab" style="text-transform:none;letter-spacing:0;font-size:calc(13px*var(--t))">${fl} · ${g.length}</p>`+g.map(x=>row(x,n,(S.det=='a'&&n++==0))).join('')}).join('');
+}
+function main(sy){
+ const d=D[S.lang];const f=finds();const c={Error:0,Warning:0,Note:0};f.forEach(x=>c[x.s]++);
+ const rights=S.rt=='a'&&S.sc!='ok';
+ const blocked=c.Error>0||(rights&&!S.ack);
+ const reason=c.Error>0?`Fix ${c.Error} error${c.Error>1?'s':''} in the file and choose it again.`:(rights&&!S.ack?'Tick the box about your rights to add it.':'');
+ const sum=`<div class="blk" style="margin-top:0"><span style="color:var(--onSv)">${ic('file')}</span><div style="min-width:0"><p style="font-weight:600;overflow-wrap:anywhere">${d.file}</p><p class="t-sm">${d.mb<0.1?'6 KB':d.mb+' MB'} of 10 MB</p><div class="bar" role="img" aria-label="${d.mb} of 10 MB"><i style="width:${Math.max(2,d.mb*10)}%"></i></div></div></div>
+ <dl class="fx"><dt>Language</dt><dd class="script">${d.lang} · ${d.own}</dd><dt>Package</dt><dd>${d.pkg} · revision ${d.rev}</dd><dt>Kind</dt><dd>${d.kind}${d.base?`, based on ${d.base}`:''}</dd></dl>
+ <div class="cnt"><div><b>${d.cards}</b><span>cards</span></div><div><b>${d.units}</b><span>units</span></div><div><b>${d.decks}</b><span>${d.decks==1?'deck':'decks'}</span></div></div>
+ <div class="sevsum" role="status">${['Error','Warning','Note'].map(s=>`<span class="tag ${SEV[s][0]}">${ic(SEV[s][1],14)} ${c[s]} ${s}${c[s]==1?'':'s'}</span>`).join('')}</div>`;
+ const rb=rights?`<div class="notice"><span style="color:var(--pl)">${ic('warn')}</span><div><p><b>Rights.</b> Added cards are shared under CC-BY-SA-4.0 if you export the package, as the course is. The app cannot check where the text came from.</p><label class="pick" style="min-height:48px;margin-top:4px"><input class="cb" id="ack" type="checkbox" ${S.ack?'checked':''}><span class="tx">I have the right to use this content.</span></label></div></div>`:'';
+ const body=sum+rb+list();
+ const bottom=`<div class="bottom">${reason?`<p class="t-sm" style="margin:0 0 8px;color:var(--onS)">${reason}</p>`:''}<button class="btn fill full" ${blocked?'disabled':''}>Add to my decks</button><button class="btn text full" style="margin-top:4px">Choose another file</button></div>`;
+ return ph2(sy?'3 · The same screen, scrolled to the findings':'2 · Review (what the file holds and what was found)',abar('Check the package',true),(sy?`<i data-sy="${sy}"></i>`:'')+body,bottom);
+}
+function sheet(){
+ const f=finds()[0];
+ const body=`<h3>${f.s}</h3><div class="pillrow">${sevTag(f.s)}</div><p class="t-body" style="margin:4px 0">${f.msg}</p><dl class="fx"><dt>File</dt><dd>${f.file}</dd><dt>Line</dt><dd>${f.line}</dd>${f.card?`<dt>Card</dt><dd>${f.card}</dd>`:''}<dt>Field</dt><dd>${f.field}</dd></dl>${f.val?`<div class="codeb">${f.val}</div>`:''}<p class="t-body" style="margin-top:6px"><b>How to fix:</b> ${f.fix} Then choose the file again.</p><button class="btn tonal full" style="margin-top:10px">Close</button>`;
+ return ph2('4 · One finding in a sheet (detail B)',abar('Check the package',true),`<p class="t-lab">${f.s}s</p>${row(f,0,false)}`,'',`<div class="scrim"></div><div class="sheet"><div class="grab"></div><div class="scroll">${body}</div></div>`);
+}
+function checking(){
+ const st=(l,s)=>`<div class="stp ${s}"><span class="dot">${s=='done'?ic('check'):''}</span>${l}</div>`;
+ return ph2('1 · While it checks (on its own thread)',abar('Check the package',true),`<div class="blk" style="margin-top:0"><span class="spin" aria-hidden="true"></span><div><p style="font-weight:600">${D[S.lang].file}</p><p class="t-sm">Checking…</p></div></div>${st('Safe to open','done')}${st('Every file readable','done')}${st('Ids and path agree','now')}${st('Quality','')}<div class="bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Checking"><i style="width:60%"></i></div>`,`<div class="bottom"><button class="btn out full">Cancel</button></div>`);
+}
+function lower(){
+ const d=D[S.lang];const lo=d.rev-2;
+ const o=S.lr=='b'?`<button class="btn err full" style="margin-top:8px">Replace revision ${d.rev} with revision ${lo}</button><p class="hint" style="margin-top:6px">Cards added in revisions ${lo+1} to ${d.rev} would be removed, and their ids retired. Your progress is kept.</p>`:'';
+ return ph2('5 · Refused: an older revision',abar('Check the package',true),`<div class="empty">${ic('err')}<p class="big">This is an older revision</p><p class="t-body" style="color:var(--onSv);text-align:left">${d.lang} is already on this phone at revision ${d.rev}. This file is revision ${lo}.</p></div><span class="tag e" style="margin:0 0 8px">${ic('err',14)} Refused</span><dl class="fx"><dt>Installed</dt><dd>revision ${d.rev}</dd><dt>This file</dt><dd>revision ${lo} (${d.pkg})</dd></dl><p class="t-body" style="margin:10px 0">Choose a file with revision ${d.rev+1} or higher to update, or export the installed one.</p>${o}`,`<div class="bottom"><button class="btn fill full">Choose another file</button><button class="btn text full" style="margin-top:4px">Close</button></div>`);
+}
+function size(){
+ return ph2('6 · Refused: over the size limit',abar('Check the package',true),`<div class="empty">${ic('err')}<p class="big">This file is too big</p></div><span class="tag e" style="margin:0 0 8px">${ic('err',14)} Refused</span><div class="blk"><span style="color:var(--onSv)">${ic('file')}</span><div style="min-width:0"><p style="font-weight:600;overflow-wrap:anywhere">long-course-r4.fnzip</p><p class="t-sm">11.3 MB. The limit is 10 MB for each language, measured on the file itself.</p><div class="bar" role="img" aria-label="11.3 of 10 MB" style="background:var(--E)"><i style="width:88%;background:var(--onS)"></i></div></div></div><p class="t-body" style="margin:10px 0">Split a very large language into a smaller package, or remove files you do not need, then zip it again. The unpacked files may not pass 30 MB either.</p><p class="hint">Nothing was added. Fonts, audio and images are not allowed in a package yet.</p>`,`<div class="bottom"><button class="btn fill full">Choose another file</button><button class="btn text full" style="margin-top:4px">Close</button></div>`);
+}
+function unsafe(){
+ return ph2('7 · Refused: not safe to open',abar('Check the package',true),`<div class="empty">${ic('err')}<p class="big">This file cannot be opened safely</p></div><span class="tag e" style="margin:0 0 8px">${ic('err',14)} Refused</span><p class="t-body">A file inside it has a name the app will not accept, so nothing was unpacked.</p><div class="codeb">../../settings.yaml</div><p class="hint">Other reasons: a locked or damaged zip, two files with one name, more than 1,000 files, a file over 2 MB, or a ratio that looks like a zip bomb. The message names the one found.</p>`,`<div class="bottom"><button class="btn fill full">Choose another file</button><button class="btn text full" style="margin-top:4px">Close</button></div>`);
+}
+function build(){
+ const root=document.getElementById('root');theme(S,root);
+ const fr=[checking(),main(0),main(520)];if(S.det=='b')fr.push(sheet());fr.push(lower(),size(),unsafe());
+ root.innerHTML=`<section class="opt"><div class="frames">${fr.join('')}</div></section><section class="qs"><b>Open questions for the owner</b><ol><li>An older revision: a plain refusal (A, task 10) or a refusal with a destructive override (B, section 2.7 says "a lower revision needs a confirm")? The plan contradicts itself here.</li><li>Rights: a box the learner must tick when the file has rights warnings (A), or the warnings alone (B)? The app cannot detect copied text, so A only guards what it can see (a source or copyright mark).</li><li>Findings grouped by severity (A, the worst first) or by file (B, how an author fixes them)?</li><li>Detail: expanded in the list (A) or in a sheet (B)? A keeps context; B keeps the list short at 1.4x text.</li><li>Should Warnings ever block? Proposed: never, only Errors. Notes are information.</li></ol></section>`;
+ const a=document.getElementById('ack');if(a)a.addEventListener('change',()=>{S.ack=a.checked;build()});
+ document.querySelectorAll('[data-sy]').forEach(e=>{e.parentElement.scrollTop=+e.dataset.sy});sync(S);
+}
+wire(S,build);build();
+
+</script>
+</body>
+</html>
