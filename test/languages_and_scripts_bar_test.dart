@@ -1128,9 +1128,11 @@ void main() {
       final state = await pumpBar(tester);
       final label = find.bySemanticsLabel(RegExp('^Language shown'));
       var node = tester.getSemantics(label);
+      // The bundled course has new cards waiting, so the dot's words follow.
       expect(
         node.label,
-        'Language shown: ${nameOf(state, 'hi')}, 1 of 8 languages',
+        'Language shown: ${nameOf(state, 'hi')}, 1 of 8 languages, '
+        'has cards to do',
       );
 
       Map<String, int> actions() => <String, int>{

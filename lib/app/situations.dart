@@ -18,6 +18,9 @@ typedef SheetCard = ({Card card, DeckEntry deck, bool isNew});
 /// to nine words: the rest of a long sheet is for the next session.
 const int sheetNewCardsCap = 9;
 
+/// How many situations Today's card shows (#1145).
+const int situationsOnCard = 6;
+
 /// Situation sheets (#724): lists of card ids, resolved against the decks.
 extension SituationState on AppState {
   /// The language Today's situation buttons are for: the one the language
@@ -37,6 +40,28 @@ extension SituationState on AppState {
     }
     return learned.isEmpty ? null : learned.first;
   }
+
+  /// The situations the learner has picked for [language], in their order;
+  /// until they pick, the file's first [situationsOnCard] (#1145). A picked id
+  /// the file no longer writes is left out, and a situation a deck update
+  /// adds is not in the pick, so it never overrides the learner's choice.
+  List<Situation> pickedSituations(String language) {
+    final file = situationsOf(language);
+    if (file == null) return const <Situation>[];
+    final ids = settings.situationsShownOf(language);
+    if (ids == null) return file.situations.take(situationsOnCard).toList();
+    final picked = <Situation>[for (final id in ids) ?file.byId(id)];
+    // A pick with nothing left in the file (stale ids) is no pick: the card
+    // must not be empty.
+    return picked.isEmpty
+        ? file.situations.take(situationsOnCard).toList()
+        : picked;
+  }
+
+  /// What Today's card shows for [language]: the first [situationsOnCard]
+  /// of [pickedSituations].
+  List<Situation> cardSituations(String language) =>
+      pickedSituations(language).take(situationsOnCard).toList();
 
   /// The cards of [language]'s decks by id, as the learner's course teaches
   /// them: where two native languages write a card, the course's.
