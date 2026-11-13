@@ -3,6 +3,8 @@ import '../core/decks/timeline.dart';
 import '../core/decks/timeline_entries.dart';
 import '../core/decks/weave.dart';
 import '../core/models/creator.dart';
+import '../core/models/level.dart';
+import '../core/models/recommendation.dart';
 import 'app_state.dart';
 import 'deck_catalog.dart';
 import 'item_search.dart' show coreIdOfDeck;
@@ -99,6 +101,75 @@ extension CultureState on AppState {
   CreatorsFile? creatorsOf(String language) =>
       catalogWithAboveLevel.creators[language];
 
+  /// Every creator any work of [language] cites: each card and passage of
+  /// every deck of the language, hidden or not, woven or not, and every
+  /// recommended work, whatever its level. This is the "who is cited" set of
+  /// the name-leak rule: a creator cited anywhere but shown by no work at the
+  /// learner's level is kept out of People, the timeline and the legacy marks,
+  /// so that their name never gives an unreached work away.
+  ///
+  /// Limit: a hidden deck that is not downloaded cannot be read here, so its
+  /// creators are missing from this set (a follow-up could put creator ids in
+  /// the index shelves).
+  Set<String> creatorsCitedIn(String language) => derived<Set<String>>(
+    ('creatorsCited', language),
+    () {
+      final cited = <String>{};
+      try {
+        final catalog = catalogWithAboveLevel;
+        for (final entry in <DeckEntry>[...catalog.decks, ...catalog.hidden]) {
+          if (entry.language.code != language) continue;
+          for (final card in entry.deck.cards) {
+            cited.addAll(card.creators);
+          }
+          for (final passage in entry.deck.passages) {
+            cited.addAll(passage.creators);
+          }
+        }
+        for (final rec
+            in catalog.recommendations[language]?.recommendations ??
+                const <Recommendation>[]) {
+          cited.addAll(rec.creators);
+        }
+      } on Object catch (error, stack) {
+        log.error('Creators cited in $language failed: $error\n$stack');
+      }
+      return cited;
+    },
+  );
+
+  /// The creators of [language] that may be named to this learner: those a
+  /// shown item cites, an item of the learner's level in a deck that is not
+  /// hidden. With [support] (culture above the level, with support) an item
+  /// above the level also shows its creators, unless a hidden deck's card
+  /// cites them too.
+  Set<String> creatorsShownIn(String language, {required bool support}) {
+    final shown = <String>{};
+    try {
+      final learner = levelIn(language);
+      final hiddenCited = <String>{};
+      for (final entry in catalogWithAboveLevel.hidden) {
+        if (entry.language.code != language) continue;
+        for (final card in entry.deck.cards) {
+          hiddenCited.addAll(card.creators);
+        }
+        for (final passage in entry.deck.passages) {
+          hiddenCited.addAll(passage.creators);
+        }
+      }
+      for (final item in cultureItemsIn(language)) {
+        if (LevelGate.allows(item.level, learner)) {
+          shown.addAll(item.creators);
+        } else if (support) {
+          shown.addAll(item.creators.where((c) => !hiddenCited.contains(c)));
+        }
+      }
+    } on Object catch (error, stack) {
+      log.error('Creators shown in $language failed: $error\n$stack');
+    }
+    return shown;
+  }
+
   /// The timeline of [language]'s culture for this learner, to today.
   Timeline cultureTimelineOf(String language) {
     final file = creatorsOf(language);
@@ -109,6 +180,7 @@ extension CultureState on AppState {
         timelineWorksOf(cultureItemsIn(language)),
         levelIn(language),
         today: now().year,
+        alsoCited: creatorsCitedIn(language),
       );
     } on Object catch (error, stack) {
       log.error('Timeline of $language failed: $error\n$stack');

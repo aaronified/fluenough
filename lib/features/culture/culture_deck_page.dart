@@ -54,28 +54,17 @@ class CultureDeckPage extends StatelessWidget {
     );
   }
 
-  /// The creators to list: those some shown item cites, and those no item
-  /// cites; never one only an item above the level cites, whose name would
-  /// give that item away (the timeline's rule).
-  List<Creator> _people(
-    AppState state,
-    CreatorsFile? file,
-    List<CultureItem> items,
-    Level? learner,
-    bool support,
-  ) {
+  /// The creators to list: those a shown item cites, and those no work cites
+  /// anywhere; never one only a work out of sight cites (above the level, in a
+  /// hidden deck, in a deck that does not weave, or a recommended work), whose
+  /// name would give it away (the timeline's rule, from the same two sets).
+  List<Creator> _people(AppState state, CreatorsFile? file, bool support) {
     if (file == null) return const <Creator>[];
-    final citedShown = <String>{};
-    final citedAny = <String>{};
-    for (final item in items) {
-      citedAny.addAll(item.creators);
-      if (support || LevelGate.allows(item.level, learner)) {
-        citedShown.addAll(item.creators);
-      }
-    }
+    final cited = state.creatorsCitedIn(language);
+    final shown = state.creatorsShownIn(language, support: support);
     return <Creator>[
       for (final c in file.creators)
-        if (!citedAny.contains(c.id) || citedShown.contains(c.id)) c,
+        if (!cited.contains(c.id) || shown.contains(c.id)) c,
     ];
   }
 
@@ -91,7 +80,7 @@ class CultureDeckPage extends StatelessWidget {
     final atLevel = items
         .where((i) => LevelGate.allows(i.level, learner))
         .length;
-    final people = _people(state, file, items, learner, support);
+    final people = _people(state, file, support);
     final showPeople = state.settings.cultureCreators;
     return Scaffold(
       appBar: AppBar(

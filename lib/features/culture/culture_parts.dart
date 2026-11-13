@@ -166,7 +166,12 @@ class _CreatorThumbState extends State<CreatorThumb> {
 
   void _load() {
     final path = widget.creator.image?.file;
-    if (path == null || path == _loaded) return;
+    if (path == null) {
+      _image = null;
+      _loaded = null;
+      return;
+    }
+    if (path == _loaded) return;
     _loaded = path;
     final downloads = AppScope.read(context).deckDownloads;
     _image = downloads?.creatorImage(path);

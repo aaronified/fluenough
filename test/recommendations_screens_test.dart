@@ -148,6 +148,7 @@ void main() {
       usePhone(tester);
       final state = await cultureApp();
       await _complete(state, 'zz-rec-camino');
+      final first = state.recommendationProgress.completed.single.completedAt;
       await pumpScreen(tester, _page, state: state);
       await tester.tap(find.text(_l10n.recCompleted));
       await tester.pumpAndSettle();
@@ -159,6 +160,7 @@ void main() {
       await tester.tap(find.text(_l10n.commonUndo));
       await tester.pumpAndSettle();
       expect(state.recommendationProgress.isCompleted('zz-rec-camino'), isTrue);
+      expect(state.recommendationProgress.completed.single.completedAt, first);
     });
   });
 

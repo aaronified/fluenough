@@ -176,7 +176,15 @@ class RecommendationProgress extends ChangeNotifier {
   /// and not in [works] is un-marked, one in [works] and not here is added
   /// (the restore replaces what the learner has). Never throws: what fails is
   /// logged and the marks stay as they were.
-  Future<void> replaceMarks(Iterable<CompletedWork> works) async {
+  Future<void> replaceMarks(Iterable<CompletedWork> works) {
+    // Queued behind the pending writes, and the later ones behind it, so a
+    // restore never races a mark still being saved.
+    final done = _writes.then((_) => _replaceMarks(works));
+    _writes = done;
+    return done;
+  }
+
+  Future<void> _replaceMarks(Iterable<CompletedWork> works) async {
     try {
       final keep = <String>{for (final w in works) w.recommendationId};
       for (final id in _marks.keys.toList()) {

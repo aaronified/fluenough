@@ -240,5 +240,16 @@ void main() {
       expect(progress.completedIds, <String>{book.id, 'zz-rec-dos'});
       expect(progress.completed.first.completedAt, _at);
     });
+
+    test('a restore waits for a mark still being saved', () async {
+      final store = MemoryRecommendationMarkStore();
+      final progress = RecommendationProgress(store);
+      addTearDown(progress.dispose);
+      progress.complete(book, 'zz', _at);
+      // No wait: the mark's write is still queued when the restore starts.
+      await progress.replaceMarks(const <CompletedWork>[]);
+      expect(progress.completed, isEmpty);
+      expect(await store.load(), isEmpty);
+    });
   });
 }

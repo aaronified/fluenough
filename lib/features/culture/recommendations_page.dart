@@ -7,6 +7,7 @@ import '../../app/item_search.dart' show coreIdOfDeck;
 import '../../app/recommendation_feed.dart';
 import '../../app/routes.dart';
 import '../../core/decks/recommendation_list.dart';
+import '../../core/models/completed_work.dart';
 import '../../core/models/creator.dart';
 import '../../core/models/recommendation.dart';
 import '../../l10n/app_localizations.dart';
@@ -455,18 +456,21 @@ class _OpenWork extends StatelessWidget {
   /// Takes the mark away, with a way back in the toast.
   void _unmark(BuildContext context, AppState state) {
     final l10n = AppLocalizations.of(context)!;
-    state.recommendationProgress.unmark(work.id);
+    final progress = state.recommendationProgress;
+    // Undo gives back the same completion date, not a new one.
+    final was = <CompletedWork>[
+      for (final w in progress.completed)
+        if (w.recommendationId == work.id) w,
+    ];
+    final completedAt = was.isEmpty ? state.now() : was.first.completedAt;
+    progress.unmark(work.id);
     final messenger = ScaffoldMessenger.maybeOf(context);
     messenger?.showSnackBar(
       SnackBar(
         content: Text(l10n.recNotCompleted),
         action: SnackBarAction(
           label: l10n.commonUndo,
-          onPressed: () => state.recommendationProgress.complete(
-            work,
-            language,
-            state.now(),
-          ),
+          onPressed: () => progress.complete(work, language, completedAt),
         ),
       ),
     );
