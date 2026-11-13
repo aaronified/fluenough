@@ -207,7 +207,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#229](https://github.com/aaronified/fluenough/issues/229) Plan: an ISO 15919 letters deck
 - [#230](https://github.com/aaronified/fluenough/issues/230) Plan: a listening tier in context
 - [#232](https://github.com/aaronified/fluenough/issues/232) Plan: Play Protect and developer verification
-- [#233](https://github.com/aaronified/fluenough/issues/233) Plan: say when speech works only online
 - [#234](https://github.com/aaronified/fluenough/issues/234) Plan: word-order tiles without giveaways, and with extra tiles
 - [#285](https://github.com/aaronified/fluenough/issues/285) Research and standards: owner decisions before building
 - [#286](https://github.com/aaronified/fluenough/issues/286) Research and standards: the citations file and parser
@@ -398,7 +397,7 @@ A plan with no tracking issue is flagged.
 - [what reviewing covers, and how reviewers change cards](https://github.com/aaronified/fluenough/wiki/Plan-Reviewing-Scope) (Written 2026-10-11, for 0), tracks #476, #477
 - [building sentences by reasoning](https://github.com/aaronified/fluenough/wiki/Plan-Sentence-Building) (Written 2026-10-05), tracks #222
 - [settings that say what they do, on and off](https://github.com/aaronified/fluenough/wiki/Plan-Settings-Wording) (Written 2026-10-06), **no tracking issue**
-- [say when speech can't be recognised offline](https://github.com/aaronified/fluenough/wiki/Plan-Speech-Offline-Alert) (Written 2026-10-05), tracks #233
+- [say when speech can't be recognised offline](https://github.com/aaronified/fluenough/wiki/Plan-Speech-Offline-Alert) (Written 2026-10-05), **no tracking issue**
 - [synonym sets for typed English meanings](https://github.com/aaronified/fluenough/wiki/Plan-Synonym-Dictionary), **no tracking issue**
 - [cut the tests down to behaviour](https://github.com/aaronified/fluenough/wiki/Plan-Test-Cut) (Written 2026-10-20), **no tracking issue**
 - [Fluenough on the web, as a PWA on GitHub Pages](https://github.com/aaronified/fluenough/wiki/Plan-Web-Pwa), tracks #218
