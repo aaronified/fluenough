@@ -240,6 +240,8 @@ long-horizon ask (owner, 2026-10-23).
 
 **Deck kinds as data** (owner, 2026-11-12, "Mockups look fine. Build"): culture, proverbs, multi-word verbs, professional situations, topics (scripts are topics), recommendations and creators are data on decks-live, per [Plan-Deck-Kinds-And-Topics](wiki/Plan-Deck-Kinds-And-Topics.md). They were built in PRs #1147 to #1151 and released in 0.10.0. `MIN_APP_KINDS` in `tools/deck_index.py` stays 0.9.6 because no 0.9.6 will be released; set it before any 0.9.6. The owner's questions still open are in the plan.
 
+**Language completeness** (owner, 2026-11-13: "i want not just culture, but also topics, situations, everything the app now plans for a language, in FULL"): the checklist, status grid, batch rules and open questions for Japanese, Spanish, French, Telugu, Marathi, Bengali, Assamese and Gujarati are in [Plan-Language-Completeness](wiki/Plan-Language-Completeness.md).
+
 **Hindustani** is one course (owner, 2026-10-18: "Hindi and Urdu should be
 combined as we should not care about socipolitics over linguistics"; chose
 "One course, two scripts"). The `hi` course and its card ids stay; it is
