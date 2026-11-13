@@ -192,7 +192,7 @@ cards:
 $cards''';
 
     test('a deck that lists a card by ref is still private', () {
-      final catalog = Catalog.parseAll(<String, String>{
+      final catalog = DeckCatalog.parseAll(<String, String>{
         'private/fnpd-qaa/qaa/fnpd-qaa-words.yaml': deck(
           'fnpd-qaa-words',
           '  - { id: "fnpd-qaa-0001", target: "kolu", native: "house" }\n',

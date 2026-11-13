@@ -37,7 +37,7 @@ const int devImportMaxFileBytes = 2 * 1024 * 1024;
 ///
 /// Level 1 of the plan's checks: the manifest reads, the app is new enough,
 /// every file's name is safe, and the app's own readers parse every deck,
-/// path and facts file of the package ([Catalog.parseAll] on the files under
+/// path and facts file of the package ([DeckCatalog.parseAll] on the files under
 /// the package's folder), with every id carrying `fnpd-<code>-` and every
 /// deck teaching the manifest's language. [builtIn] holds the app's own deck
 /// files, which a package that modifies a language may refer to.
@@ -80,7 +80,7 @@ Future<PrivateImportResult> importPrivatePackage(
         if (entry.key.endsWith('.yaml') && entry.key != privateManifestName)
           '$folder${entry.key}': entry.value,
     };
-    final catalog = Catalog.parseAll(<String, String>{
+    final catalog = DeckCatalog.parseAll(<String, String>{
       ...builtIn,
       ...deckFiles,
     });
