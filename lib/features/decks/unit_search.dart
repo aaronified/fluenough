@@ -802,9 +802,14 @@ class SearchResultsSliver extends StatelessWidget {
     required this.query,
     required this.onKind,
     required this.onRemoveKind,
+    this.kindChips = true,
   });
 
   final SearchOutcome outcome;
+
+  /// Whether each row carries its kind as a chip that narrows the search. The
+  /// typed result tabs turn it off: the tab is the kind.
+  final bool kindChips;
 
   /// The text the learner typed, for the lines that quote it.
   final String query;
@@ -928,7 +933,8 @@ class SearchResultsSliver extends StatelessWidget {
                             ),
                           ),
                         ),
-                      _KindChipLine(kind: hit.kind, onKind: onKind),
+                      if (kindChips)
+                        _KindChipLine(kind: hit.kind, onKind: onKind),
                     ],
                   )
                 : _HitTile(hit: hit, state: state, onKind: onKind);

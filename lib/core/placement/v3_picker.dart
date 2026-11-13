@@ -58,6 +58,14 @@ const int kRunSoftStopItems = 22;
 /// pool, and never chosen.
 const Set<String> kUnaskableFormats = <String>{'S2', 'F9'};
 
+/// The look-alike word picks (F26 heard, F27 written): the cheap single-skill
+/// isolators of the drill-down. The run's ordinary choice leaves them to the
+/// drill-down, and takes them itself only when nothing else is askable for a
+/// skill (Hear alone, when Read is not in play), so a miss on a mixed item
+/// is still followed by checks that a lucky guess or a slip rarely fools, and
+/// the mixed items keep the run's openers.
+const Set<String> kIsolatorFormats = <String>{'F26', 'F27'};
+
 /// The formats the screens of a run can show. An item of another format (a
 /// cloze, a gender item) is never offered to the picker, whatever the audit
 /// admitted: the screen has none for it.
@@ -71,10 +79,16 @@ const Set<String> kScreenFormats = <String>{
   'F8',
   'F13',
   'F14',
-  'F16',
+  'F22',
+  'F23',
+  'F24',
+  'F25',
   'F17',
   'F18',
   'F21',
+  'F26',
+  'F27',
+  'F28',
 };
 
 /// One askable item, as the picker sees it. The bank's items are turned into
@@ -162,8 +176,9 @@ class PickerCandidate {
       format: item.format,
       deck: item.deck,
       skills: info.skills,
-      seconds: info.seconds * (profile.secondsScale[item.format] ?? 1),
-      slip: info.slip * (profile.slipScale[item.format] ?? 1),
+      seconds:
+          info.seconds * (profile.secondsScale[baseFormat(item.format)] ?? 1),
+      slip: info.slip * (profile.slipScale[baseFormat(item.format)] ?? 1),
       guess: guess,
       conflictKeys: item.conflictKeys,
       clean: !cognate && guess <= kCleanGuessMax,
@@ -359,8 +374,7 @@ class PickerConfig {
   /// stands apart from the others, an ear-only learner).
   final int standApartItems;
 
-  /// How many mixed items (an item of two skills: tiles of Read and Write,
-  /// dictation of Hear and Write) open the run, at the middle of the
+  /// How many mixed items (an item of two skills: tiles of Read and Write) open the run, at the middle of the
   /// posterior: cheap per skill, and the drill-down tells apart a miss.
   final int mixedOpening;
 
@@ -673,6 +687,7 @@ class V3Picker {
           right: right,
           slip: c.slip,
           guess: c.guess,
+          label: c.format,
         );
       }
       return;
@@ -724,12 +739,14 @@ class V3Picker {
     final budget = config.maxSeconds - seconds;
     final used = <String>{
       for (final a in asked)
-        if (a.skills.length >= 2) a.format,
+        if (a.skills.length >= 2) baseFormat(a.format),
     };
     PickerCandidate? best;
     var bestScore = double.negativeInfinity;
     for (final format in pool.formats) {
-      if (used.contains(format)) continue;
+      // A reverse format is its base's item with sound: not a second mixed
+      // opener of the same kind.
+      if (used.contains(baseFormat(format))) continue;
       for (final skill in _tested) {
         final band = _quantileBand(skill, config.mixedQuantile);
         for (final cand in _near(
@@ -780,7 +797,9 @@ class V3Picker {
           if (cand.pseudo || cand.yesNo || cand.seconds > budget) continue;
           // At the level of the item that was missed: the nearest deck.
           final far = (cand.deck - c.deck).abs();
-          final score = (_information(cand) + 0.2) / cand.seconds - 0.01 * far;
+          final score = config.drill.powerScore
+              ? _power(cand) / cand.seconds - 0.01 * far
+              : (_information(cand) + 0.2) / cand.seconds - 0.01 * far;
           if (score > bestScore) {
             bestScore = score;
             best = cand;
@@ -790,6 +809,14 @@ class V3Picker {
       if (best != null) return best;
     }
     return null;
+  }
+
+  /// The evidence the two answers to [c] carry, in nats: a wrong answer
+  /// against a slip, a right one against a guess.
+  static double _power(PickerCandidate c) {
+    final g = c.guess.clamp(0.01, 0.99);
+    final s = c.slip.clamp(0.01, 0.99);
+    return math.log((1 - g) / s) + math.log((1 - s) / g);
   }
 
   PickerCandidate? _take(PickerCandidate c) {
@@ -1067,6 +1094,7 @@ class V3Picker {
     var bestScore = double.negativeInfinity;
     for (final format in pool.formats) {
       if (relaxed < 2 && _formatRun(format) >= 2) continue;
+      if (relaxed == 0 && kIsolatorFormats.contains(format)) continue;
       final near = _near(
         format,
         band,

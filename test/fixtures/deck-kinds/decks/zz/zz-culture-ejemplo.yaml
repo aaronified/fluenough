@@ -1,0 +1,82 @@
+# A culture deck (genre, level, a source block and a creator on every
+# card): a public-domain line, a licensed one and a short quotation. All the
+# texts and people are invented for the tests.
+schema: 1
+id: "zz-culture-ejemplo"
+part: "core"
+kind: "vocab"
+language: { code: "zz", iso639_3: "zzz", name: "Testlang", script: "latin", tts: "es-ES", icon: "Zz" }
+license: "CC-BY-SA-4.0"
+genre: "culture"
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - id: "zz-9201"
+    target: "Hay algo que no se ve y todo lo ilumina."
+    bases:
+      - { word: "Hay", base: "haber" }
+      - { word: "algo", base: "algo" }
+      - { word: "que", base: "que" }
+      - { word: "no", base: "no" }
+      - { word: "se", base: "se" }
+      - { word: "ve", base: "ver" }
+      - { word: "y", base: "y" }
+      - { word: "todo", base: "todo" }
+      - { word: "lo", base: "lo" }
+      - { word: "ilumina", base: "iluminar" }
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "zz-ejemplo-autora"
+    source:
+      author: "Ana Ejemplo"
+      work: "Obra de prueba"
+      date: 1890
+      edition: "Edición de prueba, 1901"
+      basis: "public-domain"
+      author_died: 1910
+      jurisdiction: "ES"
+      rights_checked: "2026-11-12"
+  - id: "zz-9202"
+    target: "La luz llega primero a las ventanas."
+    bases:
+      - { word: "La", base: "el" }
+      - { word: "luz", base: "luz" }
+      - { word: "llega", base: "llegar" }
+      - { word: "primero", base: "primero" }
+      - { word: "a", base: "a" }
+      - { word: "las", base: "el" }
+      - { word: "ventanas", base: "ventana" }
+    pos: "phrase"
+    modes: ["recognition", "listening"]
+    creator: "zz-ejemplo-poeta"
+    source:
+      author: "Luis Prueba"
+      work: "Poema de prueba"
+      date: 2015
+      url: "https://example.org/poema-de-prueba"
+      basis: "licensed"
+      licence: "CC-BY-4.0"
+      licence_url: "https://creativecommons.org/licenses/by/4.0/"
+      jurisdiction: "ES"
+      rights_checked: "2026-11-12"
+  - id: "zz-9203"
+    target: "Cada puerta guarda un verano."
+    bases:
+      - { word: "Cada", base: "cada" }
+      - { word: "puerta", base: "puerta" }
+      - { word: "guarda", base: "guardar" }
+      - { word: "un", base: "uno" }
+      - { word: "verano", base: "verano" }
+    pos: "phrase"
+    modes: ["recognition"]
+    creator: "zz-ejemplo-poeta"
+    source:
+      author: "Luis Prueba"
+      work: "Libro de prueba"
+      date: 1975
+      edition: "Edición de prueba, 1975"
+      basis: "quotation"
+      licence: "short quotation, Berne Convention art. 10(1)"
+      jurisdiction: "ES"
+      rights_checked: "2026-11-12"

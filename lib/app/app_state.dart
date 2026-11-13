@@ -35,6 +35,7 @@ import '../core/scheduling/session_queue.dart';
 import '../core/scheduling/study_hours.dart';
 import '../core/network/network_probe.dart';
 import '../core/sound/sound_check.dart';
+import '../core/speech/asr/asr_pack_installer.dart';
 import '../core/speech/speech_engine.dart';
 import '../core/tts/clip_player.dart';
 import '../core/tts/tts_engine.dart';
@@ -54,13 +55,18 @@ import '../core/scheduling/lesson_sets.dart';
 import 'added_decks.dart';
 import '../core/decks/deck_index.dart';
 import 'app_log.dart';
+import 'recommendation_progress.dart';
+import 'recommendation_questions.dart';
+import '../core/decks/weave.dart' show cultureGenres;
 import 'card_media.dart';
 import 'card_sets.dart';
 import 'unlocks.dart';
 import 'daily_plan.dart';
 import '../core/decks/ipa_course.dart';
+import '../core/decks/levels.dart';
 import '../core/decks/script_fonts.dart';
 import 'deck_catalog.dart';
+import 'learner_levels.dart';
 import 'deck_downloads.dart';
 import 'font_check.dart';
 import 'deck_import.dart';
@@ -191,6 +197,7 @@ class AppState extends ChangeNotifier {
     this._clips = const NullClipPlayer(),
     this._media,
     this._speech = const NullSpeechEngine(),
+    this._asrPacks = const NullAsrPackInstaller(),
     this.soundCheck = const NullSoundCheck(),
     this.networkProbe = const NullNetworkProbe(),
     this.features = const FeatureRegistry.shipped(),
@@ -198,6 +205,7 @@ class AppState extends ChangeNotifier {
     this.logFiles = const PickerLogFiles(),
     this._backupFiles = const PickerBackupFiles(),
     this._backupStore,
+    this._recommendationMarks,
     this.deckFiles = const PickerDeckFiles(),
     this.links = const LauncherLinks(),
     this.systemSettings = const NullSystemSettings(),
@@ -246,11 +254,14 @@ class AppState extends ChangeNotifier {
     }
     progress.addListener(_progressChanged);
     this.settings.addListener(_settingsChanged);
+    recommendationProgress.addListener(_marksChanged);
     addListener(_structureChanged);
     _loggedTab = shellTab.value;
     shellTab.addListener(_logTab);
     shellTabMoving.addListener(_logTab);
     deckDownloads?.onFilesChanged = _filesDownloaded;
+    _asrSub = _asrPacks.changes.listen((_) => asrChanges.value++);
+    unawaited(_asrPacks.refresh());
     deckDownloads
       ?..wantsFont = fontCheck.wants
       ..usesFont = fontCheck.uses;
@@ -349,6 +360,7 @@ class AppState extends ChangeNotifier {
     ClipPlayer clips = const NullClipPlayer(),
     CardMedia media = const NoCardMedia(),
     SpeechEngine speech = const NullSpeechEngine(),
+    AsrPackInstaller asrPacks = const NullAsrPackInstaller(),
     SoundCheckEngine soundCheck = const NullSoundCheck(),
     NetworkProbe networkProbe = const NullNetworkProbe(),
     ProgressStore? progress,
@@ -357,6 +369,7 @@ class AppState extends ChangeNotifier {
     LogFiles logFiles = const PickerLogFiles(),
     BackupFiles backupFiles = const PickerBackupFiles(),
     BackupStore? backupStore,
+    RecommendationMarkStore? recommendationMarks,
     DeckFiles deckFiles = const PickerDeckFiles(),
     DeckStore? addedDecks,
     LinkOpener? links,
@@ -395,6 +408,7 @@ class AppState extends ChangeNotifier {
       clips: clips,
       media: media,
       speech: speech,
+      asrPacks: asrPacks,
       soundCheck: soundCheck,
       networkProbe: networkProbe,
       features: features,
@@ -402,6 +416,7 @@ class AppState extends ChangeNotifier {
       logFiles: logFiles,
       backupFiles: backupFiles,
       backupStore: backupStore ?? MemoryBackupStore(),
+      recommendationMarks: recommendationMarks,
       deckFiles: deckFiles,
       links: links ?? FixedLinks(),
       systemSettings: systemSettings,
@@ -459,6 +474,16 @@ class AppState extends ChangeNotifier {
   /// Scheduling state and the review log. Has its own notifier.
   final ProgressStore progress;
 
+  /// The recommended works the learner marked completed, and the gate on their
+  /// questions (deck-kinds plan, D13, T25). Has its own notifier; kept in the
+  /// progress database and the backups.
+  late final RecommendationProgress recommendationProgress =
+      RecommendationProgress(
+        _recommendationMarks ?? markStoreFor(progress),
+        log: log,
+      );
+  final RecommendationMarkStore? _recommendationMarks;
+
   /// Where the review log's backup is saved and read from (#20).
   final LogFiles logFiles;
 
@@ -476,6 +501,8 @@ class AppState extends ChangeNotifier {
     log: log,
     languagesOnPhone: () => deckDownloads?.languagesOnPhone ?? <String>{},
     restored: _downloadRestored,
+    completedWorks: () => recommendationProgress.completed,
+    restoreMarks: recommendationProgress.replaceMarks,
   );
 
   /// After a restore, the languages the backup lists that are not on the
@@ -665,6 +692,78 @@ class AppState extends ChangeNotifier {
       path == null ? null : media.localPath(path);
   final SpeechEngine _speech;
 
+  // The on-device listener's packs (#1004, Plan-Speech-Offline-Alert)
+  final AsrPackInstaller _asrPacks;
+  StreamSubscription<AsrInstallChange>? _asrSub;
+  final Map<String, int> _asrSizes = <String, int>{};
+  final Set<String> _asrSizeAsked = <String>{};
+
+  /// Counts every change of an on-device listener pack's state, so that the
+  /// Voices page rebuilds on download progress without this whole state
+  /// notifying.
+  final ValueNotifier<int> asrChanges = ValueNotifier<int>(0);
+
+  /// The languages that have an on-device listener to install (Telugu only
+  /// for now).
+  Set<String> get asrLanguages => _asrPacks.languages;
+
+  /// Where [code]'s on-device listener stands: not installed, downloading,
+  /// installed or failed.
+  AsrInstallState asrState(String code) => _asrPacks.stateOf(code);
+
+  /// What [code]'s listener downloads, in bytes, once the manifest has
+  /// said; null before that or when it could not be fetched.
+  int? asrSize(String code) => _asrSizes[code];
+
+  /// Asks the manifest for [code]'s size, once (again after a failed try).
+  void askAsrSize(String code) {
+    if (_asrSizes.containsKey(code) || !_asrSizeAsked.add(code)) return;
+    unawaited(() async {
+      try {
+        final size = await _asrPacks.sizeOf(code);
+        if (size != null) {
+          _asrSizes[code] = size;
+        } else {
+          _asrSizeAsked.remove(code);
+        }
+      } catch (e) {
+        _asrSizeAsked.remove(code);
+        log.warning('Speech error: asr size ${_errorCode(e)}');
+      }
+      if (!_disposed) asrChanges.value++;
+    }());
+  }
+
+  /// Downloads [code]'s on-device listener. Completes when it is installed,
+  /// failed or cancelled; the state says which.
+  Future<void> installAsrPack(String code) async {
+    try {
+      await _asrPacks.install(code);
+    } catch (e) {
+      log.warning('Speech error: asr install ${_errorCode(e)}');
+    }
+    if (!_disposed) await recheckSpeech();
+  }
+
+  /// Stops [code]'s download, keeping what came to resume.
+  void cancelAsrPack(String code) {
+    try {
+      _asrPacks.cancel(code);
+    } catch (e) {
+      log.warning('Speech error: asr cancel ${_errorCode(e)}');
+    }
+  }
+
+  /// Deletes [code]'s on-device listener.
+  Future<void> removeAsrPack(String code) async {
+    try {
+      await _asrPacks.remove(code);
+    } catch (e) {
+      log.warning('Speech error: asr remove ${_errorCode(e)}');
+    }
+    if (!_disposed) await recheckSpeech();
+  }
+
   /// The microphone and speaker, for the first launch's sound check (#89).
   final SoundCheckEngine soundCheck;
 
@@ -736,17 +835,108 @@ class AppState extends ChangeNotifier {
   /// decks and the word sheet read one list (#628).
   Catalog get _view {
     final adult = settings.adultContent;
+    var moved = false;
     if (!identical(_adultOf, _catalog) || _adultOn != adult) {
       _adultOf = _catalog;
       _adultOn = adult;
       _adultScoped = _catalog.forAdult(adult: adult);
+      moved = true;
     }
-    return _adultScoped;
+    // A learner's level moves only when they start a card or placement passes
+    // a unit: the number of cards with a schedule and the set of placed decks
+    // say so without reading either again.
+    final started = progress.states.length;
+    final placed = settings.placedDecks;
+    if (moved || started != _startedSeen || !identical(placed, _placedSeen)) {
+      _startedSeen = started;
+      _placedSeen = placed;
+      _levelScoped = _gatedByLevel(_adultScoped);
+    }
+    return _levelScoped;
   }
 
   Catalog? _adultOf;
   bool _adultOn = false;
   Catalog _adultScoped = Catalog.empty;
+
+  /// [_adultScoped] with what is above the learner's level in each language
+  /// left out (D2 of the deck-kinds plan): worked out again after progress,
+  /// placement or the decks change, and the same catalog while no language's
+  /// level moved. It fails closed: if the levels cannot be worked out, no
+  /// levelled item is offered, and the failure goes to the log.
+  Catalog _gatedByLevel(Catalog scoped) {
+    try {
+      if (!identical(_levelsOf, _catalog)) {
+        final made = LearnerLevels(_catalog);
+        _levelsOf = _catalog;
+        _learnerLevels = made;
+        _levels = const <String, Level?>{};
+        _levelBase = null;
+      }
+      final levels = _learnerLevels!.levels(
+        studied: <String>[for (final key in progress.states.keys) key.cardId],
+        placedDecks: settings.placedDecks,
+      );
+      if (identical(_levelBase, scoped) && sameLevels(levels, _levels)) {
+        return _levelScoped;
+      }
+      _levels = levels;
+      _levelBase = scoped;
+      return scoped.forLevels((language) => levels[language]);
+    } on Object catch (error, stack) {
+      log.error(describeError('Learner levels failed', error, stack));
+      _levelBase = null;
+      _levelsOf = null;
+      _levels = const <String, Level?>{};
+      return scoped.forLevels((_) => null);
+    }
+  }
+
+  Catalog _levelScoped = Catalog.empty;
+  int _startedSeen = -1;
+  Set<String>? _placedSeen;
+  Catalog? _levelsOf;
+  Catalog? _levelBase;
+  LearnerLevels? _learnerLevels;
+  Map<String, Level?> _levels = const <String, Level?>{};
+
+  /// The level the learner has reached in [language] (D2): the level of the
+  /// furthest unit of its path they have studied or been placed past, or null
+  /// where its path has no levels. What a level-marked result is compared with.
+  Level? levelIn(String language) {
+    _view;
+    return _levels[language];
+  }
+
+  /// The catalog with adult content applied but not the level gate: what is
+  /// above the learner's level is still in it. Only what lists such an item
+  /// marked with its level and not startable reads it (search, topics, deck-
+  /// kinds plan D2); every screen that offers an item reads [decks].
+  Catalog get catalogWithAboveLevel {
+    _view;
+    return _adultScoped;
+  }
+
+  /// The hidden decks a learner added from a search result, which are on the
+  /// phone (D3): the only decks outside [decks] that Today's reviews and a
+  /// deck's own page read. Never in the Decks tab's lists, the path,
+  /// placement or the counts.
+  List<DeckEntry> get addedHiddenDecks => _view.hidden;
+
+  /// [decks] and the hidden decks a learner added: what a session may drill.
+  ///
+  /// The questions of the completed recommended works join them as reading
+  /// decks (D13, T25), and the culture and proverbs decks leave them while
+  /// "Show culture items" is off (D11, T20).
+  List<DeckEntry> get drillDecks => <DeckEntry>[
+    for (final entry in <DeckEntry>[...decks, ...addedHiddenDecks])
+      if (!_cultureOff(entry)) entry,
+    ...worksDecks,
+  ];
+
+  /// Whether [entry] is a culture or proverbs deck while culture items are off.
+  bool _cultureOff(DeckEntry entry) =>
+      !settings.cultureItems && cultureGenres.contains(entry.deck.genre);
 
   /// Every deck file that did not parse, for the "couldn't read" rows.
   List<BrokenDeck> get brokenDecks => _catalog.broken;
@@ -854,7 +1044,7 @@ class AppState extends ChangeNotifier {
     return today;
   }
 
-  DeckEntry? deckById(String id) => _view.byId(id);
+  DeckEntry? deckById(String id) => _view.byId(id) ?? worksDeckById(id);
 
   /// [deckById], or a deck no native speaker has rated yet (#630): what a
   /// review of it reads, sent from the review screens alone.
@@ -871,7 +1061,8 @@ class AppState extends ChangeNotifier {
       _catalog.languagePaths[language];
 
   /// The deck a card came from.
-  DeckEntry? deckOf(Card card) => _view.byId(card.deckId);
+  DeckEntry? deckOf(Card card) =>
+      _view.byId(card.deckId) ?? worksDeckById(card.deckId);
 
   /// The decks in the languages the current profile learns, and of those,
   /// only the [shownLanguage]'s while one is chosen (#461): what Today
@@ -891,7 +1082,8 @@ class AppState extends ChangeNotifier {
     final profile = currentProfile;
     final shown = onlyShown ? shownLanguage : null;
     final mine = <DeckEntry>[
-      for (final entry in decks)
+      // The hidden decks a learner added join Today's reviews (D3).
+      for (final entry in drillDecks)
         if (profile.learns(entry.language.code) &&
             LanguageChoice.shows(shown, entry.language.code))
           entry,
@@ -1014,8 +1206,25 @@ class AppState extends ChangeNotifier {
     _status = CatalogStatus.ready;
     _loadError = null;
     _mapSkills();
+    _logKindProblems();
     notifyListeners();
     await refreshVoices();
+  }
+
+  /// Reports to the log what in the decks' kind fields, and in the sections
+  /// file, could not be read and was left out (deck-kinds plan, T10, T11):
+  /// each costs only itself, and none is swallowed.
+  void _logKindProblems() {
+    try {
+      for (final problem in _catalog.kindProblems) {
+        log.warning('Deck kind field: $problem');
+      }
+      for (final problem in _catalog.sections.problems) {
+        log.warning('Sections file: $problem');
+      }
+    } on Object catch (error, stack) {
+      log.error(describeError('Deck kind problems failed', error, stack));
+    }
   }
 
   // ---------------------------------------------------------------------------
@@ -1209,9 +1418,11 @@ class AppState extends ChangeNotifier {
       await deckDownloads?.open();
       _catalog = await deckCatalog.load();
       await progressReady;
+      await recommendationProgress.load();
       _status = CatalogStatus.ready;
       _mapSkills();
       log.event('Decks loaded: ${decks.length}');
+      _logKindProblems();
       unawaited(_afterLaunch());
     } catch (error, stack) {
       _loadError = error;
@@ -1951,6 +2162,13 @@ class AppState extends ChangeNotifier {
 
   void _settingsChanged() => _settingsVersion++;
 
+  /// A work was marked or un-marked completed: its questions join or leave the
+  /// lessons and reviews, so what was kept for a queue is dropped (T25).
+  void _marksChanged() {
+    _structureVersion++;
+    _forgetPending();
+  }
+
   final Map<String, _Kept> _keptValues = <String, _Kept>{};
 
   /// [compute]'s value for [key] about language [code], kept until that
@@ -2238,7 +2456,7 @@ class AppState extends ChangeNotifier {
               if (language == null || entry.language.code == language) entry,
           ]
         : <DeckEntry>[
-            for (final entry in this.decks)
+            for (final entry in drillDecks)
               if (ids.contains(entry.id)) entry,
           ];
     final scope = request.script;
@@ -2287,7 +2505,7 @@ class AppState extends ChangeNotifier {
     final voiced = derived<Map<String, bool>>(
       ('voiced', strict),
       () => <String, bool>{
-        for (final entry in this.decks)
+        for (final entry in drillDecks)
           entry.id:
               (strict
                   ? canSpeak(entry.language)
@@ -2298,7 +2516,7 @@ class AppState extends ChangeNotifier {
     final heard = derived<Map<String, bool>>(
       ('heard', strict),
       () => <String, bool>{
-        for (final entry in this.decks)
+        for (final entry in drillDecks)
           entry.id:
               (strict
                   ? canHear(entry.language)
@@ -2464,14 +2682,22 @@ class AppState extends ChangeNotifier {
   /// placed, this version can drill nothing in it, or every card a lesson
   /// may teach is taught. A closed sentence does not count.
   bool _isTaughtOut(DeckEntry entry) =>
-      isPlaced(entry) || !canDrill(entry) || notStudiedOpenIn(entry) == 0;
+      isPlaced(entry) ||
+      _cultureOff(entry) ||
+      !canDrill(entry) ||
+      notStudiedOpenIn(entry) == 0;
 
   /// Whether the path is past [entry]: it is placed, this version can drill
   /// nothing in it, or every card in it is learned in the skills on.
-  bool isFinished(DeckEntry entry) => keptFor<bool>(entry.language.code, (
-    'isFinished',
-    entry.id,
-  ), () => isPlaced(entry) || !canDrill(entry) || notStudiedIn(entry) == 0);
+  bool isFinished(DeckEntry entry) => keptFor<bool>(
+    entry.language.code,
+    ('isFinished', entry.id),
+    () =>
+        isPlaced(entry) ||
+        _cultureOff(entry) ||
+        !canDrill(entry) ||
+        notStudiedIn(entry) == 0,
+  );
 
   /// The units Today teaches new cards from: for each language the profile
   /// learns, the first unit of its course's path that is not finished and
@@ -3564,10 +3790,19 @@ class AppState extends ChangeNotifier {
   }) {
     final cards = deckId != null
         ? deckById(deckId)?.cards ?? const <Card>[]
-        : _alternating(<List<DeckEntry>>[
-            for (final unit in pendingUnits)
-              if (unit.first.language.code == language) unit,
-          ]);
+        : <Card>[
+            ..._alternating(<List<DeckEntry>>[
+              for (final unit in pendingUnits)
+                if (unit.first.language.code == language)
+                  <DeckEntry>[
+                    for (final entry in unit)
+                      if (!_cultureOff(entry)) entry,
+                  ],
+            ]),
+            // The questions of completed works come after the path's own
+            // cards, as reading items (T25).
+            ...workQuestionCards(language),
+          ];
     final seen = <String>{};
     final gate = unlocks;
     return <Card>[
@@ -3980,6 +4215,8 @@ class AppState extends ChangeNotifier {
   void dispose() {
     _disposed = true;
     _todayPending = null;
+    unawaited(_asrSub?.cancel());
+    asrChanges.dispose();
     reminders.dispose();
     settings
       ..removeListener(_forgetPending)
@@ -3988,6 +4225,9 @@ class AppState extends ChangeNotifier {
     progress.removeListener(_forgetPending);
     progress.removeListener(_progressChanged);
     settings.removeListener(_settingsChanged);
+    recommendationProgress
+      ..removeListener(_marksChanged)
+      ..dispose();
     removeListener(_structureChanged);
     shellTab
       ..removeListener(_logTab)

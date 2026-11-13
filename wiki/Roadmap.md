@@ -6,6 +6,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ## Released
 
+- **models**
 - **v0.9.5**
 - **v0.9.4**
 - **v0.9.3**
@@ -101,14 +102,13 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.10.0
 
-14 approved open issues.
+7 approved open issues.
 
 **Bugs**
 
 - [#850](https://github.com/aaronified/fluenough/issues/850) App is sluggish: about 1 s before every interaction responds
 - [#1012](https://github.com/aaronified/fluenough/issues/1012) Check the web app (PWA): installability, offline, and core flows
 - [#1101](https://github.com/aaronified/fluenough/issues/1101) Say: recording at recognition is untested on a real device
-- [#1102](https://github.com/aaronified/fluenough/issues/1102) Web smoke test fails intermittently (network failures)
 
 **Enhancements**
 
@@ -116,15 +116,9 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 **Other**
 
-- [#1097](https://github.com/aaronified/fluenough/issues/1097) Placement: drop the "See your results" screen and simplify the result card
-- [#1100](https://github.com/aaronified/fluenough/issues/1100) Placement: make the questions much tougher
-- [#1098](https://github.com/aaronified/fluenough/issues/1098) Placement: more cloze questions (single and multiple letters)
-- [#1099](https://github.com/aaronified/fluenough/issues/1099) Placement: sentence fill-in-the-blank with same-word-class options
 - [#1095](https://github.com/aaronified/fluenough/issues/1095) Review shell: Again / Hard / Okay / Easy self-rating buttons
-- [#1096](https://github.com/aaronified/fluenough/issues/1096) Reviews: use the new placement question types
 - [#1017](https://github.com/aaronified/fluenough/issues/1017) Plan: build entire languages as private decks (Your decks)
-- [#1105](https://github.com/aaronified/fluenough/issues/1105) Placement: remove 'what you heard' questions; always ask the meaning, with tougher non-guessable items
-- [#1106](https://github.com/aaronified/fluenough/issues/1106) Placement: reverse direction questions (English spoken, learner answers in the target language)
+- [#1096](https://github.com/aaronified/fluenough/issues/1096) Reviews: use the new placement question types
 
 ### 1 · Skill model + FSRS
 
@@ -178,6 +172,17 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#614](https://github.com/aaronified/fluenough/issues/614) A second reading field on cards: transliteration and normalised or vocalised form
 - [#681](https://github.com/aaronified/fluenough/issues/681) Language bar: a dot on languages with something to do, and a full-height IPA glyph
 - [#881](https://github.com/aaronified/fluenough/issues/881) Speaking: "Hear yourself" replays the answer the learner spoke, not a new recording
+- [#1133](https://github.com/aaronified/fluenough/issues/1133) Culture decks from real-world works (public domain first), for every first-list language
+- [#1134](https://github.com/aaronified/fluenough/issues/1134) Culture items woven through the courses at the right level (not a separate shelf only)
+- [#1135](https://github.com/aaronified/fluenough/issues/1135) Proverb decks, levelled, for every first-list language
+- [#1136](https://github.com/aaronified/fluenough/issues/1136) Phrasal and multi-word verb decks, levelled, in the languages that have them
+- [#1137](https://github.com/aaronified/fluenough/issues/1137) Topics for deck search: language-specific grammar topics, and search must cover situations decks
+- [#1139](https://github.com/aaronified/fluenough/issues/1139) Professional decks: targeted situations for academia, engineering, computer science, medicine, archaeology and other travelling professions (hidden from the main screen, found by search)
+- [#1140](https://github.com/aaronified/fluenough/issues/1140) Search results by type, each with its own tab: situations, topics, decks, grammar concepts and more (mockup first)
+- [#1142](https://github.com/aaronified/fluenough/issues/1142) Culture recommendations: popular works not reproduced here, "I've done this" on the homepage, questions and briefings about them
+- [#1143](https://github.com/aaronified/fluenough/issues/1143) English Braille as a script of English, not a separate course (the IPA stays separate)
+- [#1145](https://github.com/aaronified/fluenough/issues/1145) Situations screen: the learner chooses which situations to show; new situations teach only widely used words and phrases
+- [#1146](https://github.com/aaronified/fluenough/issues/1146) Japanese: about 1000 kanji by B1 (deferred)
 - [#25](https://github.com/aaronified/fluenough/issues/25) F-Droid metadata and submission
 - [#26](https://github.com/aaronified/fluenough/issues/26) Accessibility: a TalkBack pass on a phone
 - [#30](https://github.com/aaronified/fluenough/issues/30) Script decks: document their conventions; positional forms for Arabic-script languages
@@ -321,6 +326,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#952](https://github.com/aaronified/fluenough/issues/952) Skill switches: matching and choosing switches (remainder of #243)
 - [#959](https://github.com/aaronified/fluenough/issues/959) Paths and starter decks (first words and phrases) for every planned language
 - [#1103](https://github.com/aaronified/fluenough/issues/1103) Play Store release: paid colour themes, pure black and wallpaper colours (free on GitHub)
+- [#1132](https://github.com/aaronified/fluenough/issues/1132) Placement: make the sentence fill-in (F28) pass the audit so it can be asked
 
 ## Plans
 
@@ -332,6 +338,8 @@ A plan with no tracking issue is flagged.
 - [a B1 plan in every path](https://github.com/aaronified/fluenough/wiki/Plan-B1-Plans) (Written 2026-10-06), tracks #209
 - [books, films and songs you bring, with questions on them](https://github.com/aaronified/fluenough/wiki/Plan-Books-Films-Songs) (Written 2026-10-06), tracks #215
 - [reviewing decks in the app, sent by mail](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Browser) (Written 2026-10-06), tracks #403
+- [deck kinds, levels, hidden decks, sources, creators, recommendations, topics and search kinds as data](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Kinds-And-Topics), **no tracking issue**
+- [deck-owned data on decks-live](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Owned-Data), **no tracking issue**
 - [decks in a branch of their own](https://github.com/aaronified/fluenough/wiki/Plan-Decks-Branch), **no tracking issue**
 - [explain the mistake on a wrong grammar answer](https://github.com/aaronified/fluenough/wiki/Plan-Explain-Mistakes) (Written 2026-10-05), tracks #225
 - [a recent fit for FSRS, with the window chosen from the learner's own reviews](https://github.com/aaronified/fluenough/wiki/Plan-Fsrs-Recent-Fit), **no tracking issue**

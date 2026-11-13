@@ -1,7 +1,9 @@
 import 'package:yaml/yaml.dart';
 
 import '../models/author.dart';
+import '../models/level.dart';
 import '../models/card.dart';
+import '../models/card_source.dart';
 import '../models/card_set.dart';
 import '../models/deck.dart';
 import '../models/drill_mode.dart';
@@ -12,6 +14,7 @@ import '../models/rule.dart';
 import '../private/private_ids.dart';
 import 'yaml_tree.dart';
 
+part 'deck_kinds.dart';
 part 'deck_layers.dart';
 
 /// A deck file that could not be read, and where in it the problem is.
@@ -129,6 +132,8 @@ const _headerFields = {
   'pattern',
   'theme',
   'passages',
+  // The deck kinds (deck_kinds.dart), read tolerantly.
+  ..._kindHeaderKeys,
 };
 
 final _scriptId = RegExp(r'^[a-z]+(?:_[a-z]+)*$');
@@ -172,6 +177,9 @@ const _cardFields = {
   'checked_by',
   // Which data points of the card are settled (#519), read by [verifiedIn].
   'verified',
+  // The deck kinds (deck_kinds.dart): a card's source block, level, creator
+  // and legacy.
+  ..._kindCardKeys,
 };
 
 /// A layer-only card's fields: a single-file card's, its id being its key.
@@ -215,6 +223,7 @@ const _coreHeaderFields = {
   'pattern',
   'table',
   'rules',
+  ..._kindHeaderKeys,
 };
 const _layerHeaderFields = {
   'schema',
@@ -232,6 +241,9 @@ const _layerHeaderFields = {
   'pattern',
   'table',
   'rules',
+  // A layer has no kind fields: the validator refuses them, and they are
+  // read from its core. Allowed here so that none can break a layer.
+  ..._kindHeaderKeys,
 };
 const _coreCardFields = {
   'hears',
@@ -277,6 +289,8 @@ const _coreCardFields = {
   'checked_by',
   // Which data points of the card are settled (#519), read by [verifiedIn].
   'verified',
+  // The deck kinds (deck_kinds.dart).
+  ..._kindCardKeys,
 };
 
 /// A core card's item lists (DECK-FORMAT.md, Card data), and each item's
@@ -398,6 +412,11 @@ const _passageFields = {
   'theme',
   'questions',
   'glossary',
+  // The deck kinds (deck_kinds.dart): a culture passage's level, creator
+  // and legacy; its `source` may be a mapping.
+  'level',
+  'creator',
+  'legacy',
 };
 const _sentenceFields = {'text', 'reading', 'ipa'};
 const _glossFields = {'word', 'modern', 'reading', 'ipa', 'meaning', 'note'};
@@ -435,6 +454,10 @@ class _Reader {
   /// rule ids start with. A layer, which has no language block, takes it
   /// from its id.
   String lang = '';
+
+  /// What in the deck's kind fields could not be read and was left out
+  /// (deck_kinds.dart); the deck still loads, and the app logs them.
+  final List<String> kindProblems = <String>[];
 
   Never fail(YamlNode node, String message) {
     final start = node.span.start;
@@ -532,6 +555,26 @@ class _Reader {
               'this is the themes file, not a deck; the catalog reads it '
               'with parseThemes',
             ),
+            'sections' => fail(
+              kindNode,
+              'this is the sections file, not a deck; the catalog reads it '
+              'with parseSections',
+            ),
+            'topics' => fail(
+              kindNode,
+              'this is a topics file, not a deck; the catalog reads it '
+              'with parseTopics',
+            ),
+            'creators' => fail(
+              kindNode,
+              'this is a creators file, not a deck; the catalog reads it '
+              'with parseCreators',
+            ),
+            'recommendations' => fail(
+              kindNode,
+              'this is a recommendations file, not a deck; the catalog reads '
+              'it with parseRecommendations',
+            ),
             _ => fail(
               kindNode,
               'kind must be vocab, grammar or reading, got '
@@ -564,6 +607,7 @@ class _Reader {
     final theme = fields.has('theme')
         ? this.id(fields.require('theme'), 'theme')
         : null;
+    final kinds = kindHeader(fields);
 
     var cards = const <Card>[];
     var refs = const <CardRef>[];
@@ -643,6 +687,14 @@ class _Reader {
       verified: fields.has('cards')
           ? verifiedIn(fields.require('cards'))
           : const <String, List<String>>{},
+      genre: kinds.genre,
+      level: kinds.level,
+      hidden: kinds.hidden,
+      professional: kinds.professional,
+      section: kinds.section,
+      weave: kinds.weave,
+      patternFamily: kinds.patternFamily,
+      kindProblems: List<String>.unmodifiable(kindProblems),
     );
   }
 
@@ -874,6 +926,7 @@ class _Reader {
 
     final notes = this.notes(fields.node('notes'), '$path.notes');
     final ownRoot = isOwnRoot(fields.node('bases'));
+    final kinds = kindCard(fields, path);
     return Card(
       id: id,
       deckId: deckId,
@@ -928,6 +981,10 @@ class _Reader {
       ownRoot: ownRoot,
       register: fields.optionalString('register', allowEmpty: false),
       frequency: frequency(fields.node('frequency'), '$path.frequency'),
+      level: kinds.level,
+      creators: kinds.creators,
+      sourceBlock: kinds.source,
+      legacy: kinds.legacy,
     );
   }
 
@@ -1586,6 +1643,7 @@ class _Reader {
     final theme = fields.has('theme')
         ? this.id(fields.require('theme'), 'theme')
         : null;
+    final kinds = kindHeader(fields);
 
     return DeckCore(
       id: id,
@@ -1609,6 +1667,14 @@ class _Reader {
       verified: fields.has('cards')
           ? verifiedIn(fields.require('cards'))
           : const <String, List<String>>{},
+      genre: kinds.genre,
+      level: kinds.level,
+      hidden: kinds.hidden,
+      professional: kinds.professional,
+      section: kinds.section,
+      weave: kinds.weave,
+      patternFamily: kinds.patternFamily,
+      kindProblems: List<String>.unmodifiable(kindProblems),
     );
   }
 
@@ -1666,6 +1732,7 @@ class _Reader {
     }
     fields.allowOnly(_coreCardFields);
     final ownRoot = isOwnRoot(fields.node('bases'));
+    final kinds = kindCard(fields, path);
     return CoreWritten(
       id: id,
       target: fields.string('target'),
@@ -1719,6 +1786,10 @@ class _Reader {
             key: coreItems(node, '$path.$key', allowed),
       },
       senses: coreSenses(fields.node('senses'), '$path.senses'),
+      level: kinds.level,
+      creators: kinds.creators,
+      sourceBlock: kinds.source,
+      legacy: kinds.legacy,
     );
   }
 
@@ -2564,7 +2635,12 @@ class _Reader {
       ).indexed)
         sentence(item, '$path.sentences[$i]'),
     ];
-    final source = fields.optionalString('source', allowEmpty: false);
+    // A culture passage's `source` is a mapping; any other is the text.
+    final sourceNode = fields.node('source');
+    final source = sourceNode is YamlMap
+        ? null
+        : fields.optionalString('source', allowEmpty: false);
+    final kinds = kindCard(fields, path, textSourceOk: true);
     final theme = fields.has('theme')
         ? this.id(fields.require('theme'), '$path.theme')
         : null;
@@ -2594,6 +2670,10 @@ class _Reader {
       source: source,
       theme: theme,
       glossary: List.unmodifiable(glossary),
+      level: kinds.level,
+      creators: kinds.creators,
+      sourceBlock: kinds.source,
+      legacy: kinds.legacy,
     );
   }
 

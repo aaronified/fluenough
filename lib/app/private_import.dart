@@ -89,7 +89,12 @@ Future<PrivateImportResult> importPrivatePackage(
         problems.add('${broken.fileName}: ${broken.error.message}');
       }
     }
-    final own = catalog.decks.where((e) => e.private).toList();
+    // A hidden deck (D3) is in [Catalog.hidden], not [Catalog.decks]; it is
+    // a deck of the package all the same.
+    final own = <DeckEntry>[
+      for (final entry in <DeckEntry>[...catalog.decks, ...catalog.hidden])
+        if (entry.private) entry,
+    ];
     if (own.isEmpty && problems.isEmpty) {
       problems.add('the package has no deck that can be read');
     }

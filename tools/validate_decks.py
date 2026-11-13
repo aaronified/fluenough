@@ -25,6 +25,7 @@ import unicodedata
 import datetime
 import hashlib
 import json
+import struct
 from dataclasses import dataclass, field
 from pathlib import Path
 from urllib.parse import urlparse
@@ -98,7 +99,8 @@ SCRIPT_BLOCKS = {
     "latin": ((0x0041, 0x024F), (0x1E00, 0x1EFF)),
 }
 KINDS = {"vocab", "grammar", "facts", "situations", "themes", "numbers", "path", "sounds", "script",
-         "reading", "rules", "layer", "resources", "phonetics"}
+         "reading", "rules", "layer", "resources", "phonetics",
+         "creators", "topics", "sections", "recommendations"}
 THEMES_KEYS = {"schema", "kind", "description", "themes"}
 # A language's path (ADR-0013), one per language learnt (ADR-0036).
 PATH_KEYS = {"schema", "kind", "id", "language", "description", "units", "alphabet",
@@ -138,7 +140,8 @@ FEATURE_KEYS = {"id", "name", "term", "reading", "ipa", "example", "text",
 GUIDE_KINDS = ("script", "sounds")
 # Kinds of file that are not a written deck (as tools/deck_index.py NOT_DECKS).
 NOT_DECK_KINDS = {"path", "facts", "situations", "numbers", "romanisation", "sounds", "script",
-                  "resources", "phonetics"}
+                  "resources", "phonetics", "creators", "topics", "sections",
+                  "recommendations"}
 # A language's phonetic rules (tools/derive_phonetic.py): the ordered rules
 # that turn a card's broad `ipa` into its narrow `phonetic`. Only the tool
 # reads it; the index does not list it and the app never fetches it.
@@ -170,6 +173,7 @@ HEADER_KEYS = {
     "schema", "id", "name", "kind", "language", "native", "license",
     "authors", "source", "description", "tags", "cards", "pattern", "facts",
     "theme", "passages", "situations",
+    "genre", "level", "hidden", "professional", "section", "weave", "pattern_family",
 }
 CARD_KEYS = {
     "id", "target", "native", "reading", "ipa", "phonetic", "phonetic_source", "alt_target", "alt_native",
@@ -177,6 +181,7 @@ CARD_KEYS = {
     "picture", "picture_ask", "phrasebook", "bases", "rules", "wiktionary",
     "register", "frequency",
     "audio_credit", "image", "image_credit", "target_scripts", "words",
+    "source", "level", "creator", "legacy",
 }
 # A ref lists a card written in another deck (ADR-0018). It may give its own
 # native-side fields; what the card is in the language learned stays the
@@ -191,7 +196,8 @@ FACT_KEYS = {"id", "text", "contrast", "tags", "source", "cards"}
 # of Today's buttons (lib/core/models/situation.dart), and a situation's keys.
 SITUATION_ICONS = ("taxi", "shops", "eat", "doctor", "traffic", "rail")
 SITUATION_KEYS = {"id", "icon", "title", "phrases", "words"}
-PASSAGE_KEYS = {"id", "title", "sentences", "source", "theme", "questions", "glossary"}
+PASSAGE_KEYS = {"id", "title", "sentences", "source", "theme", "questions", "glossary",
+                "level", "creator", "legacy"}
 SENTENCE_KEYS = {"text", "reading", "ipa"}
 QUESTION_KEYS = {"id", "prompt", "options", "answer"}
 GLOSS_KEYS = {"word", "modern", "reading", "ipa", "meaning", "note"}
@@ -207,7 +213,9 @@ CHOICES = range(2, 5)
 # one native language. Merged, they are the deck the layer's id names.
 CORE_HEADER_KEYS = {"schema", "id", "part", "kind", "language", "license",
                     "authors", "source", "tags", "theme", "cards", "pattern",
-                    "table", "rules"}
+                    "table", "rules",
+                    "genre", "level", "hidden", "professional", "section", "weave",
+                    "pattern_family"}
 LAYER_HEADER_KEYS = {"schema", "id", "kind", "core", "native", "name",
                      "description", "license", "authors", "source", "tags",
                      "cards", "pattern", "table", "rules"}
@@ -220,7 +228,7 @@ CORE_CARD_KEYS = {"id", "target", "reading", "ipa", "phonetic",
                   "synonyms", "antonyms", "collocations", "confusables", "forms",
                   "senses", "audio_credit", "image", "image_credit",
                   "target_scripts", "words", "warning", "not_sounds_like",
-                  "not_looks_like"}
+                  "not_looks_like", "source", "level", "creator", "legacy"}
 CORE_REF_KEYS = {"ref", "reading", "ipa", "tags", "modes", "examples", "notes"}
 # A set card (DECK-FORMAT.md, Set cards; #506, #515): a closed group shown
 # together before its members are drilled. It is a card of a vocab core,
@@ -846,6 +854,30 @@ class Report:
     native_name: str | None = None
     core_rules: list[str] = field(default_factory=list)
     text_pairs: list[tuple[str, str, str]] = field(default_factory=list)
+    # Deck kinds (wiki/Plan-Deck-Kinds-And-Topics.md): a deck's header
+    # fields; a layer takes them from its core, for the checks across files.
+    genre: str | None = None
+    level: str | None = None
+    hidden: bool = False
+    professional: str | None = None
+    section: str | None = None
+    weave: bool | None = None
+    reviewed: bool = False
+    # The creators a card or passage names: (ids, where, source author, the
+    # first year of its source date).
+    creator_refs: list[tuple[list[str], str, object, int | None]] = field(default_factory=list)
+    # The shared files of the kinds: their language and what they list.
+    creators_lang: str | None = None
+    creators_data: dict[str, dict] | None = None
+    creators_images: list[str] = field(default_factory=list)
+    topics_data: list[tuple[str, str, dict]] | None = None
+    sections_data: dict[str, set[str]] | None = None
+    recs_lang: str | None = None
+    recs_data: list[tuple[str, str, dict]] | None = None
+    situation_ids: list[str] = field(default_factory=list)
+    script_features: set[str] = field(default_factory=set)
+    # A creator's related cards, (card id, where).
+    related_cards: list[tuple[str, str]] = field(default_factory=list)
 
     def error(self, where: str, msg: str) -> None:
         self.errors.append(f"{where}: {msg}")
@@ -1184,7 +1216,8 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
             vocab=(r.deck_kind or "vocab") == "vocab",
             reading=_is_str(card.get("reading")), in_core=core)
 
-    allowed = CORE_CARD_KEYS if core else CARD_KEYS - ({"id"} if form == "layer" else set())
+    allowed = CORE_CARD_KEYS if core else CARD_KEYS - (
+        {"id", "source", "level", "creator", "legacy"} if form == "layer" else set())
     for unknown in sorted(set(card) - allowed, key=str):
         if core and unknown in NATIVE_SIDE:
             r.error(where, f"a core card's {unknown!r} is in each layer, under "
@@ -2638,6 +2671,7 @@ def check_situations(r: Report, situations: object, lang: str | None = None) -> 
             if sid in seen:
                 r.error(where, "duplicate situation id")
             seen.add(sid)
+            r.situation_ids.append(sid)
         for unknown in sorted(set(sit) - SITUATION_KEYS, key=str):
             r.error(where, f"unknown field {unknown!r}")
 
@@ -2886,6 +2920,7 @@ def validate(path: Path) -> Report:
     proposals = strip_proposals(raw)
     checks = strip_checks(raw)
     _validate_raw(r, raw, path)
+    check_reviewed_cards(r, raw, checks)
     check_proposals(r, proposals)
     check_checks(r, checks)
     if checks:
@@ -2986,7 +3021,8 @@ def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
         r.error("part", f'must be "core", or left out on a single-file deck; got '
                         f'{raw["part"]!r}')
 
-    if raw.get("kind") not in ("romanisation", "phonetics"):
+    if raw.get("kind") not in ("romanisation", "phonetics", "creators", "topics",
+                               "sections", "recommendations"):
         check_transliterated(r, raw)
 
     if raw.get("kind") == "themes":
@@ -3000,6 +3036,10 @@ def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
         return r
     if raw.get("kind") == "romanisation":
         check_romanisation_file(r, raw, path)
+        return r
+    if raw.get("kind") in SHARED_KIND_CHECKS:
+        check_ipa(r, raw)
+        SHARED_KIND_CHECKS[raw["kind"]](r, raw, path)
         return r
     if raw.get("kind") == "resources":
         check_resources_file(r, raw, path)
@@ -3164,6 +3204,7 @@ def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
     if kind in ("vocab", "grammar") and r.course_deck is not None:
         r.taught_words = (r.course_deck[0], r.course_deck[1], _taught(raw))
     _check_review_tags(r, raw)
+    check_kind_header(r, raw, kind if isinstance(kind, str) else None)
     if r.native_code is not None:
         for d in r.card_defs.values():
             d.natives = {r.native_code}
@@ -3800,6 +3841,7 @@ def validate_core(r: Report, raw: dict, path: Path) -> None:
     elif kind == "rules":
         check_rules_core(r, raw, lc, script)
     _check_review_tags(r, raw)
+    check_kind_header(r, raw, kind)
 
 
 def _is_set(card: object) -> bool:
@@ -4190,6 +4232,14 @@ def validate_layer(r: Report, raw: dict, path: Path) -> None:
         validate_guide_layer(r, raw, path, core)
         return
     r.core_id = r.listed_as = core_id
+    r.genre = core["genre"] if _is_str(core.get("genre")) and core["genre"] in GENRES \
+        else None
+    r.hidden = core.get("hidden") is True
+    r.level = core.get("level") if core.get("level") in LEVELS else None
+    r.weave = core["weave"] if isinstance(core.get("weave"), bool) else None
+    for key in ("professional", "section"):
+        if _is_str(core.get(key)) and ID_RE.fullmatch(core[key]):
+            setattr(r, key, core[key])
     code = _lang_code(core.get("language"))
     lc = code or "xx"
     script = _script_of(core.get("language"))
@@ -4215,6 +4265,8 @@ def validate_layer(r: Report, raw: dict, path: Path) -> None:
             r.error("language", f"a layer takes its language from its core, {core_id}")
         elif unknown == "theme":
             r.error("theme", f"a layer takes its theme from its core, {core_id}")
+        elif unknown in KIND_HEADER_KEYS:
+            r.error(unknown, f"a layer takes {unknown} from its core, {core_id}")
         else:
             r.error("root", f"unknown field {unknown!r}")
     schema = raw.get("schema")
@@ -5006,8 +5058,12 @@ def check_passages(r: Report, passages: object, script: str, lang: str
             r.error(where, f"unknown field {unknown!r}")
         if not _is_str(passage.get("title")):
             r.error(where, "title is required")
-        _check_optional_text(r, where, passage, "source")
-        _check_source_shape(r, where, "passage", passage.get("source"), passage.get("id"))
+        if not isinstance(passage.get("source"), dict):
+            # A mapping is a culture passage's source block (D4), checked
+            # with the deck's other kinds rules.
+            _check_optional_text(r, where, passage, "source")
+            _check_source_shape(r, where, "passage", passage.get("source"),
+                                passage.get("id"))
         theme = passage.get("theme")
         if theme is not None and (not _is_str(theme) or not ID_RE.fullmatch(theme)):
             r.error(where, f"theme must be a theme id from decks/themes.yaml, got {theme!r}")
@@ -5663,6 +5719,9 @@ def check_script_file(r: Report, raw: dict, path: Path, *, core: bool = False) -
         lang = None
     elif path.parent.name != lang:
         r.error("language", f"is {lang!r} but the file is in {path.parent.name}/")
+    if lang is not None:
+        # The language it guides, for a topic that names its features.
+        r.facts_lang = lang
     guide_id = raw.get("id")
     if guide_id != path.stem:
         r.error("id", f"is {guide_id!r} but the filename stem is {path.stem!r}")
@@ -5705,6 +5764,7 @@ def check_script_file(r: Report, raw: dict, path: Path, *, core: bool = False) -
             r.error(where, f"feature {fid!r} is listed twice")
         else:
             ids.add(fid)
+            r.script_features.add(fid)
         for key in ("example",) if core else ("name", "example", "text"):
             if not _is_str(feature.get(key)) or not feature[key].strip():
                 r.error(where, f"needs {key}, quoted text")
@@ -6320,10 +6380,18 @@ def check_paths_across(reports: list[Report]) -> list[str]:
                         f"{rep.path}: units[{u.i}]: lists {core!r}, which is no deck of "
                         f"{lang}: no core {core}, and no deck {lang}-<native>-"
                         f"{core[len(lang) + 1:]}")
+                elif any(o.hidden for o in by_core[core]):
+                    problems.append(
+                        f"{rep.path}: units[{u.i}]: lists {core!r}, a hidden deck: a "
+                        f"hidden deck is on no path (found by search, added by the "
+                        f"learner)")
         # Every deck of the language given now, of every course, is on it.
         for deck in reports:
+            # A deck with a genre is found by its section or by search, and is on
+            # a path only when a unit names it (the plan, D1 and D3).
             if deck.course_deck is None or deck.course_deck[0] != lang \
-                    or deck.listed_as is None or deck.listed_as in listed:
+                    or deck.listed_as is None or deck.listed_as in listed \
+                    or deck.genre is not None or deck.hidden:
                 continue
             problems.append(f"{rep.path}: units: does not list {deck.listed_as!r}, the "
                             f"core id of {deck.course_deck[2]}; every deck of {lang} is "
@@ -7095,6 +7163,1431 @@ def check_genders_across(reports: list[Report]) -> list[str]:
     return problems
 
 
+# --- Deck kinds, levels, hidden decks, sources, creators, topics -------------
+# wiki/Plan-Deck-Kinds-And-Topics.md (decisions D1 to D13). Every field is
+# optional: a deck without `genre`, `level` or `hidden` is checked as before.
+
+LEVELS = ("A1", "A2", "B1", "B2", "C1", "C2")
+KIND_HEADER_KEYS = ("genre", "level", "hidden", "professional", "section", "weave",
+                    "pattern_family")
+# Where the plan's `shared` kinds live: decks/creators/<code>.yaml and
+# decks/recommendations/<code>.yaml, one file per language and a stem that is
+# only the language's code, so not unique among decks.
+SHARED_DIRS = ("creators", "recommendations")
+
+# D1: the one place a genre's rules are written. `kinds` the header `kind` it
+# may have; `modes` the question types a card may carry (a genre only narrows
+# the fixed set of #107, never adds to it); `pos` the parts of speech a card
+# may have (None: any), `pos_required` whether a card must name one; `source`
+# and `creator` whether every card needs them (a creator not for an anonymous
+# author); `register` and `usage` what every card must carry; `review`
+# whether the deck is tagged "unreviewed" or "reviewed".
+GENRES: dict[str, dict] = {
+    "culture": {"kinds": ("vocab", "reading"),
+                "modes": frozenset({"recognition", "listening"}),
+                "pos": frozenset({"phrase", "noun"}), "pos_required": False,
+                "source": True, "creator": True, "register": False, "usage": False,
+                "review": True},
+    "proverbs": {"kinds": ("vocab",),
+                 "modes": frozenset({"recognition", "listening"}),
+                 "pos": frozenset({"phrase"}), "pos_required": True,
+                 "source": True, "creator": False, "register": True, "usage": False,
+                 "review": False},
+    "multiword": {"kinds": ("vocab", "grammar"),
+                  "modes": frozenset({"recognition", "production", "listening",
+                                      "grammar"}),
+                  "pos": None, "pos_required": False,
+                  "source": False, "creator": False, "register": False, "usage": True,
+                  "review": False},
+    "professional": {"kinds": ("vocab", "reading"),
+                     "modes": frozenset({"recognition", "production", "listening"}),
+                     "pos": None, "pos_required": False,
+                     "source": False, "creator": False, "register": False, "usage": False,
+                     "review": True},
+}
+
+# D4: the rights basis of a source block, and what each one needs.
+SOURCE_BASES = ("public-domain", "licensed", "quotation", "oral-tradition")
+SOURCE_KEYS = {"author", "work", "collection", "region", "date", "edition", "url",
+               "basis", "author_died", "jurisdiction", "licence", "licence_url",
+               "rights_checked"}
+# No NC, no ND: a card is copied and adapted under CC-BY-SA-4.0.
+FREE_LICENCES = ("CC0-1.0", "CC-BY-4.0", "CC-BY-SA-4.0")
+IMAGE_LICENCES = ("public-domain",) + FREE_LICENCES
+QUOTATION_WORDS = 25
+QUOTATION_CARDS = 5
+# The mechanical public-domain floor (D4, rule 3): years after an author's
+# death, by jurisdiction (ISO 3166-1 alpha-2). It catches typos; it is not a
+# legal opinion, which the reviewer owns. Owner question 7 confirms the table.
+PD_TERMS = {"IN": 60, "BD": 60, "ES": 70, "FR": 70, "JP": 70, "CN": 50}
+PD_DEFAULT_TERM = 70
+# An anonymous work: years after its publication.
+PD_ANONYMOUS_TERM = 70
+# Rule 3's alternative for an anonymous work: published before this year.
+PD_ANONYMOUS_BEFORE = 1900
+
+LEGACY_KINDS = ("curriculum", "festival", "film", "music", "saying", "commemoration",
+                "adaptation", "place", "other")
+LEGACY_WORDS = 60
+RELATIONS = ("adaptation", "influence", "response", "echo")
+MEDIA_KINDS = ("book", "film", "series", "song", "play", "podcast", "comic")
+LEGAL_KINDS = ("library", "publisher", "store", "stream", "archive", "public-domain")
+SEARCH_ROWS = ("scene", "topic", "deck", "concept", "card", "unit")
+TOPIC_KINDS = ("grammar", "verbs", "words", "script", "register", "profession", "other")
+IMAGE_MAX_BYTES = 300 * 1024
+IMAGE_MAX_SIDE = 1024
+SHARED_MAX_BYTES = 512 * 1024
+MAX_CHARS_LEN = 12
+PIRATE_HOSTS = Path(__file__).resolve().parent / "pirate_hosts.txt"
+
+
+def _today() -> datetime.date:
+    """Today; the tests replace it."""
+    return datetime.date.today()
+
+
+def pd_term(jurisdiction: object) -> int:
+    """Years after an author's death that a work stays protected in
+    [jurisdiction], by the floor's table."""
+    return PD_TERMS.get(jurisdiction, PD_DEFAULT_TERM) if isinstance(jurisdiction, str) \
+        else PD_DEFAULT_TERM
+
+
+def parse_years(value: object) -> tuple[int, int] | None:
+    """A source's `date`: a year (1892), a span ("1892-1909"), or "c. 1750",
+    as its first and last year; None for anything else."""
+    if isinstance(value, bool):
+        return None
+    if isinstance(value, int):
+        return (value, value) if 1 <= value <= 9999 else None
+    if isinstance(value, str):
+        m = re.fullmatch(r"(?:c\.\s?)?([0-9]{3,4})(?:-([0-9]{3,4}))?", value.strip())
+        if m:
+            first = int(m.group(1))
+            last = int(m.group(2)) if m.group(2) else first
+            return (first, last) if first <= last else None
+    return None
+
+
+def public_domain_problem(source: dict, *, today: datetime.date | None = None) -> str | None:
+    """Why a `basis: public-domain` source fails the mechanical floor, or
+    None: died + term < this year, or an anonymous work first published
+    before 1900 and more than 70 years ago."""
+    year = (today or _today()).year
+    years = parse_years(source.get("date"))
+    died = source.get("author_died")
+    if isinstance(died, int) and not isinstance(died, bool):
+        term = pd_term(source.get("jurisdiction"))
+        if died + term >= year:
+            return (f"author_died {died} + {term} years (the term in "
+                    f"{source.get('jurisdiction')!r}) is not before {year}: the work "
+                    f"may still be protected")
+        return None
+    if source.get("author") == "anonymous":
+        if years is None or years[0] >= PD_ANONYMOUS_BEFORE:
+            return (f"an anonymous work is public domain only when published before "
+                    f"{PD_ANONYMOUS_BEFORE}; its date is {source.get('date')!r}")
+        if years[1] + PD_ANONYMOUS_TERM >= year:
+            return (f"published {years[1]} + {PD_ANONYMOUS_TERM} years is not before "
+                    f"{year}: the work may still be protected")
+        return None
+    return "public-domain needs author_died (a year), or author: \"anonymous\" and a date before 1900"
+
+
+def _iso_date(value: object) -> datetime.date | None:
+    if isinstance(value, datetime.date) and not isinstance(value, datetime.datetime):
+        return value
+    if isinstance(value, str) and DATE_RE.fullmatch(value):
+        try:
+            return datetime.date.fromisoformat(value)
+        except ValueError:
+            return None
+    return None
+
+
+def _year_of(value: object) -> tuple[int | None, bool]:
+    """A creator's `born` or `died`: a year (negative for BCE), or
+    `{ year, circa: true }`. Returns (the year or None, whether it is circa)."""
+    if isinstance(value, bool):
+        return None, False
+    if isinstance(value, int):
+        return value, False
+    if isinstance(value, dict) and set(value) <= {"year", "circa"} \
+            and isinstance(value.get("year"), int) and not isinstance(value["year"], bool) \
+            and (value.get("circa") is True or "circa" not in value):
+        return value["year"], value.get("circa") is True
+    return None, False
+
+
+def _https(url: object) -> bool:
+    if not isinstance(url, str):
+        return False
+    parts = urlparse(url)
+    return parts.scheme == "https" and bool(parts.netloc) and " " not in url
+
+
+# Scripts whose text needs a reading beside it (not Latin, Cyrillic or Greek).
+_NEEDS_READING = re.compile("[\u0900-\u0dff\u0590-\u06ff\u0e00-\u0e7f\u3040-\u30ff"
+                            "\u4e00-\u9fff\uac00-\ud7af]")
+
+
+def _text_entry(r: Report, where: str, value: object) -> None:
+    """A name or a title: `{ text, reading?, ipa? }`. A text in a script that
+    is not Latin needs its reading (the rule of every card)."""
+    if not isinstance(value, dict) or set(value) - {"text", "reading", "ipa"}:
+        r.error(where, "must be a mapping with text, and optionally reading and ipa")
+        return
+    text = value.get("text")
+    if not _is_str(text):
+        r.error(where, "text is required and must be non-empty text")
+        return
+    for key in ("reading", "ipa"):
+        if key in value and not _is_str(value[key]):
+            r.error(where, f"{key} must be non-empty text, or left out")
+    if _NEEDS_READING.search(text) and not _is_str(value.get("reading")):
+        r.error(where, f"{text!r} is in a script other than Latin and needs its reading")
+
+
+def _by_language(r: Report, where: str, value: object, *,
+                 max_words: int | None = None) -> None:
+    """Text keyed by language code, English required."""
+    _check_by_language(r, where, "text", value)
+    if max_words is not None and isinstance(value, dict):
+        for code, text in value.items():
+            if _is_str(text) and len(text.split()) > max_words:
+                r.error(where, f"{code} text is {len(text.split())} words; at most "
+                               f"{max_words}")
+
+
+def _levels_ok(r: Report, where: str, level: object, deck_level: str | None) -> str | None:
+    """A card's or passage's `level`: valid, and not below the deck's."""
+    if level not in LEVELS:
+        r.error(where, f"level must be one of {', '.join(LEVELS)}, got {level!r}")
+        return None
+    if deck_level is not None and LEVELS.index(level) < LEVELS.index(deck_level):
+        r.error(where, f"level {level} is below the deck's {deck_level}: a card is "
+                       f"never easier than its deck")
+    return level
+
+
+def _check_date_field(r: Report, where: str, key: str, value: object) -> datetime.date | None:
+    """A date written YYYY-MM-DD, not in the future."""
+    d = _iso_date(value)
+    if d is None:
+        r.error(where, f"{key} must be a date written YYYY-MM-DD, got {value!r}")
+    elif d > _today():
+        r.error(where, f"{key} {value} is in the future")
+        return None
+    return d
+
+
+def check_source_block(r: Report, where: str, source: object, *, genre: str | None,
+                       target: str | None = None, script: str = "") -> dict | None:
+    """A culture or proverb card's `source` block (D4, rules 1 to 8). Returns
+    {author, years, basis} for the checks across files, or None when it is
+    not a mapping."""
+    p = f"{where}.source"
+    if not isinstance(source, dict):
+        r.error(where, "source must be a mapping with author, work, date, basis, "
+                       "jurisdiction, rights_checked and an edition or url "
+                       "(wiki/Plan-Deck-Kinds-And-Topics.md, D4)")
+        return None
+    for unknown in sorted(set(source) - SOURCE_KEYS, key=str):
+        r.error(p, f"unknown field {unknown!r}")
+    basis = source.get("basis")
+    if basis not in SOURCE_BASES:
+        r.error(p, f"basis must be one of {', '.join(SOURCE_BASES)}, got {basis!r}")
+        basis = None
+    for key in ("author", "date", "jurisdiction", "rights_checked"):
+        if key not in source:
+            r.error(p, f"{key} is required")
+    for key in ("author", "work", "collection", "region", "edition", "licence",
+                "licence_url"):
+        if key in source and not _is_str(source[key]):
+            r.error(p, f"{key} must be non-empty text, got {source[key]!r}")
+    author = source.get("author")
+    anonymous = author == "anonymous"
+    if basis == "oral-tradition":
+        if not (_is_str(source.get("collection")) or _is_str(source.get("region"))):
+            r.error(p, "an oral-tradition source names its collection or region")
+        if genre != "proverbs" and not anonymous:
+            r.error(p, "basis oral-tradition is for proverbs, or a folk item with "
+                       'author: "anonymous"')
+    else:
+        if genre == "culture" and not _is_str(source.get("work")):
+            r.error(p, "work is required on a culture card")
+        elif not (_is_str(source.get("work")) or _is_str(source.get("collection"))):
+            r.error(p, "work (or collection, for a proverb) is required")
+    if "edition" not in source and "url" not in source:
+        r.error(p, "needs an edition or a url, so the text can be checked")
+    if "url" in source and not _https(source["url"]):
+        r.error(p, f"url must be an https link, got {source['url']!r}")
+    years = parse_years(source.get("date")) if "date" in source else None
+    if "date" in source and years is None:
+        r.error(p, f"date must be a year, a span like \"1892-1909\", or \"c. 1750\", "
+                   f"got {source['date']!r}")
+    if "jurisdiction" in source and not (
+            isinstance(source["jurisdiction"], str)
+            and re.fullmatch(r"[A-Z]{2}", source["jurisdiction"])):
+        r.error(p, f"jurisdiction must be an ISO 3166-1 alpha-2 code such as \"IN\", "
+                   f"got {source['jurisdiction']!r}")
+    checked = None
+    if "rights_checked" in source:
+        checked = _check_date_field(r, p, "rights_checked", source["rights_checked"])
+    if checked is not None and years is not None and years[1] > checked.year:
+        r.error(p, f"date {source.get('date')!r} is after rights_checked "
+                   f"{source['rights_checked']}")
+    died = source.get("author_died")
+    if "author_died" in source and (isinstance(died, bool) or not isinstance(died, int)
+                                    or died > _today().year):
+        r.error(p, f"author_died must be a year, got {died!r}")
+    if basis == "public-domain":
+        problem = public_domain_problem(source)
+        if problem is not None:
+            r.error(p, problem)
+    elif basis == "licensed":
+        if source.get("licence") not in FREE_LICENCES:
+            r.error(p, f"a licensed source needs licence, one of "
+                       f"{', '.join(FREE_LICENCES)} (no NC, no ND), got "
+                       f"{source.get('licence')!r}")
+        if not _https(source.get("licence_url")):
+            r.error(p, "a licensed source needs licence_url, an https link to the licence")
+    elif basis == "quotation":
+        if not _is_str(source.get("licence")):
+            r.error(p, "a quotation names the exception that allows it in licence, "
+                       'such as "short quotation, Berne Convention art. 10(1)"')
+        if target is not None:
+            count = len(target) if script in NO_SPACES else len(target.split())
+            if count > QUOTATION_WORDS:
+                r.error(where, f"a quotation is at most {QUOTATION_WORDS} words; this "
+                               f"is {count}: leave it out")
+    return {"author": author, "years": years, "basis": basis}
+
+
+def check_legacy(r: Report, where: str, legacy: object) -> None:
+    """A creator's or a work's `legacy` (D5b): a short text, optionally by
+    level, and one to six checkable items, each with a source."""
+    p = f"{where}.legacy"
+    if not isinstance(legacy, dict) or set(legacy) - {"text", "text_target", "items"}:
+        r.error(where, "legacy must be a mapping with text, items and optionally "
+                       "text_target")
+        return
+    if "text" in legacy:
+        _by_language(r, p + ".text", legacy["text"], max_words=LEGACY_WORDS)
+    target = legacy.get("text_target")
+    if target is not None:
+        if not isinstance(target, dict):
+            r.error(p, "text_target must map a level to { text, reading, ipa }")
+        else:
+            for level, entry in target.items():
+                if level not in ("A1", "A2", "B1"):
+                    r.error(p, f"text_target level {level!r} must be A1, A2 or B1")
+                _text_entry(r, f"{p}.text_target.{level}", entry)
+    items = legacy.get("items")
+    if not isinstance(items, list) or not 1 <= len(items) <= 6:
+        r.error(p, "items is required: one to six concrete, checkable examples "
+                   "(a summary alone is not enough)")
+        return
+    for i, item in enumerate(items):
+        w = f"{p}.items[{i}]"
+        if not isinstance(item, dict) or set(item) - {"kind", "text", "year", "source"}:
+            r.error(w, "must be a mapping with kind, text, source and optionally year")
+            continue
+        if item.get("kind") not in LEGACY_KINDS:
+            r.error(w, f"kind must be one of {', '.join(LEGACY_KINDS)}, got "
+                       f"{item.get('kind')!r}")
+        _by_language(r, w + ".text", item.get("text"))
+        year = item.get("year")
+        if "year" in item and (isinstance(year, bool) or not isinstance(year, int)
+                               or year > _today().year):
+            r.error(w, f"year must be a year, no later than this one, got {year!r}")
+        src = item.get("source")
+        if not isinstance(src, dict) or set(src) - {"url", "work", "accessed", "date"}:
+            r.error(w, "source must be a mapping with an https url or a work, and "
+                       "accessed or date")
+            continue
+        if "url" in src and not _https(src["url"]):
+            r.error(w, f"source.url must be an https link, got {src['url']!r}")
+        if "url" not in src and not _is_str(src.get("work")):
+            r.error(w, "source needs an https url or a work: a claim without a "
+                       "source fails")
+        if "accessed" in src:
+            _check_date_field(r, w + ".source", "accessed", src["accessed"])
+        elif "date" in src:
+            if not (parse_years(src["date"]) or _iso_date(src["date"])):
+                r.error(w, f"source.date must be a year or YYYY-MM-DD, got {src['date']!r}")
+        else:
+            r.error(w, "source needs accessed (the day the link was read) or date")
+
+
+def _creator_ids(r: Report, where: str, value: object, lang: str | None) -> list[str]:
+    """A card's `creator`: one creator id, or a list of them."""
+    ids = [value] if isinstance(value, str) else value
+    pattern = re.compile(rf"{re.escape(lang)}-[a-z0-9]+(?:-[a-z0-9]+)*") if lang else None
+    if not isinstance(ids, list) or not ids or not all(
+            _is_str(i) and (pattern is None or pattern.fullmatch(i)) for i in ids):
+        r.error(where, f"creator must be a creator id of the language, "
+                       f"{lang or '<language>'}- and a name, or a list of them, got "
+                       f"{value!r}")
+        return []
+    if len(set(ids)) != len(ids):
+        r.error(where, "creator names an id twice")
+    return list(dict.fromkeys(ids))
+
+
+def check_kind_header(r: Report, raw: dict, kind: str | None) -> None:
+    """A deck's `genre`, `level`, `hidden`, `professional`, `section`, `weave`
+    and `pattern_family` (D1 to D3, D7), then its cards' and passages' kinds
+    fields. Called for a single-file deck and for a core; a layer has none."""
+    genre = raw.get("genre") if "genre" in raw else None
+    spec = None
+    if "genre" in raw:
+        if not _is_str(genre) or genre not in GENRES:
+            r.error("genre", f"must be one of {', '.join(sorted(GENRES))}, got {genre!r}")
+        else:
+            spec = GENRES[genre]
+            r.genre = genre
+    deck_level = None
+    if "level" in raw:
+        if raw["level"] in LEVELS:
+            deck_level = r.level = raw["level"]
+        else:
+            r.error("level", f"must be one of {', '.join(LEVELS)}, got {raw['level']!r}")
+    for key in ("hidden", "weave"):
+        if key in raw and not isinstance(raw[key], bool):
+            r.error(key, f"must be true or false, unquoted, got {raw[key]!r}")
+    r.hidden = raw.get("hidden") is True
+    r.weave = raw["weave"] if isinstance(raw.get("weave"), bool) else None
+    for key in ("professional", "section", "pattern_family"):
+        if key in raw and not (_is_str(raw[key]) and ID_RE.fullmatch(raw[key])):
+            r.error(key, f"must match [a-z0-9-]+, got {raw[key]!r}")
+    if _is_str(raw.get("professional")) and ID_RE.fullmatch(raw["professional"]):
+        r.professional = raw["professional"]
+    if _is_str(raw.get("section")) and ID_RE.fullmatch(raw["section"]):
+        r.section = raw["section"]
+    tags = raw.get("tags") if isinstance(raw.get("tags"), list) else []
+    r.reviewed = "reviewed" in tags and "unreviewed" not in tags
+    if "pattern_family" in raw and genre != "multiword":
+        r.error("pattern_family", "only a multiword deck has a pattern_family")
+    if "professional" in raw and genre != "professional":
+        r.error("professional", "only a professional deck names a profession "
+                                "(genre: \"professional\")")
+    if spec is not None:
+        if kind is not None and kind not in spec["kinds"]:
+            r.error("kind", f"a {genre} deck is {' or '.join(spec['kinds'])}, got {kind!r}")
+        if "level" not in raw:
+            r.error("level", f"is required on a {genre} deck")
+        if genre == "professional":
+            if "professional" not in raw:
+                r.error("professional", "a professional deck names its profession, a "
+                                        "profession id of decks/sections.yaml")
+            if raw.get("hidden") is not True:
+                r.error("hidden", "a professional deck is hidden: true")
+        if spec["review"] and not r.culture and (
+                ("reviewed" in tags) == ("unreviewed" in tags)):
+            r.error("tags", f'a {genre} deck is tagged "unreviewed" until a reviewer '
+                            f'checks it, then "reviewed": exactly one of them')
+    _check_kind_cards(r, raw, spec, genre, deck_level, kind)
+
+
+def _check_kind_cards(r: Report, raw: dict, spec: dict | None, genre: str | None,
+                      deck_level: str | None, kind: str | None) -> None:
+    lang = r.lang_code
+    script = r.script or ""
+    cards = raw.get("cards")
+    quotations = 0
+    items: list[tuple[str, dict, bool, str | None]] = []
+    if isinstance(cards, list):
+        for i, card in enumerate(cards):
+            if not isinstance(card, dict) or _is_set(card):
+                continue
+            cid = card.get("ref") if "ref" in card else card.get("id")
+            where = f"card {cid}" if _is_str(cid) else f"cards[{i}]"
+            items.append((where, card, "ref" in card,
+                          card.get("target") if _is_str(card.get("target")) else None))
+    passages = raw.get("passages")
+    if isinstance(passages, list) and kind == "reading":
+        for i, passage in enumerate(passages):
+            if isinstance(passage, dict):
+                pid = passage.get("id")
+                sentences = passage.get("sentences")
+                text = " ".join(s["text"] for s in sentences
+                                if isinstance(s, dict) and _is_str(s.get("text"))) \
+                    if isinstance(sentences, list) else None
+                items.append((f"passage {pid}" if _is_str(pid) else f"passages[{i}]",
+                              passage, False, text))
+    for where, card, is_ref, target in items:
+        if "modes" in card and spec is not None and isinstance(card["modes"], list):
+            for m in card["modes"]:
+                if isinstance(m, str) and m in MODES and m not in spec["modes"]:
+                    r.error(where, f"mode {m!r} is not allowed on a {genre} card "
+                                   f"({', '.join(sorted(spec['modes']))})")
+        if is_ref:
+            continue
+        if "level" in card:
+            _levels_ok(r, where, card["level"], deck_level)
+        pos = card.get("pos")
+        if spec is not None and spec["pos"] is not None and (
+                "pos" in card or (spec["pos_required"] and kind == "vocab")):
+            if pos not in spec["pos"]:
+                r.error(where, f"pos must be {' or '.join(sorted(spec['pos']))} on a "
+                               f"{genre} card, got {pos!r}")
+        if spec is not None and spec["register"] and "register" not in card:
+            r.error(where, f"a {genre} card has a register ({', '.join(REGISTERS)})")
+        if spec is not None and spec["usage"]:
+            notes = card.get("notes")
+            if not (isinstance(notes, list) and any(
+                    isinstance(n, dict) and n.get("kind") == "usage" for n in notes)):
+                r.error(where, f"a {genre} card has a note of kind usage (separable "
+                               f"or not, which particle or case follows)")
+        info = None
+        # A passage's `source` is still text in an ordinary deck: only a
+        # mapping is a block.
+        has_block = "source" in card and (
+            not where.startswith("passage") or isinstance(card["source"], dict))
+        if has_block or (spec is not None and spec["source"]):
+            if not has_block:
+                r.error(where, f"a {genre} card has a source block (D4)")
+            else:
+                info = check_source_block(r, where, card["source"], genre=genre,
+                                          target=target, script=script)
+                if info is not None and info["basis"] == "quotation":
+                    quotations += 1
+        if "legacy" in card:
+            check_legacy(r, where, card["legacy"])
+        author = info["author"] if info is not None else None
+        if "creator" in card:
+            ids = _creator_ids(r, where + ".creator", card["creator"], lang)
+            if author == "anonymous":
+                r.error(where, 'an anonymous source has no creator')
+            elif ids:
+                r.creator_refs.append((ids, where, author,
+                                       info["years"][0] if info and info["years"] else None))
+        elif spec is not None and spec["creator"] and author != "anonymous":
+            r.error(where, f"a {genre} card names its creator by id (creator: "
+                           f'"<language>-<name>"), unless its author is "anonymous"')
+    if quotations > QUOTATION_CARDS:
+        r.error("cards", f"{quotations} quotation cards; at most {QUOTATION_CARDS} per deck")
+
+
+def check_reviewed_cards(r: Report, raw: object, checks: list) -> None:
+    """D4, rule 9: a culture or proverbs deck tagged `reviewed` has every
+    written card signed off with `checked_by`."""
+    if not isinstance(raw, dict) or raw.get("kind") == "layer" \
+            or r.genre not in ("culture", "proverbs") or not r.reviewed:
+        return
+    signed = {c.where for c in checks if c.key == "checked_by"}
+    for where, cid, entry in _card_entries(raw):
+        if "ref" not in entry and entry.get("kind") != "set" and where not in signed:
+            r.error(where, f"card {cid}: the deck is tagged reviewed, so every card "
+                           f"needs checked_by")
+
+
+# --- decks/sections.yaml (D8) ------------------------------------------------
+
+SECTIONS_KEYS = {"schema", "kind", "sections", "genres", "professions", "search_kinds"}
+
+
+def _id_list(r: Report, raw: dict, key: str, entry_keys: set[str]) -> dict[str, dict]:
+    """A list of mappings with an `id` and a `name` by language, each id once."""
+    found: dict[str, dict] = {}
+    value = raw.get(key)
+    if key == "professions" and value is None:
+        return found
+    if not isinstance(value, list) or (not value and key != "professions"):
+        r.error(key, "must be a non-empty list")
+        return found
+    for i, entry in enumerate(value):
+        where = f"{key}[{i}]"
+        if not isinstance(entry, dict):
+            r.error(where, "must be a mapping")
+            continue
+        for unknown in sorted(set(entry) - entry_keys, key=str):
+            r.error(where, f"unknown field {unknown!r}")
+        eid = entry.get("id")
+        if not _is_str(eid) or not ID_RE.fullmatch(eid):
+            r.error(where, f"id must match [a-z0-9-]+, got {eid!r}")
+            continue
+        where = f"{key} {eid}"
+        if eid in found:
+            r.error(where, "is listed twice")
+        found[eid] = entry
+        _check_by_language(r, where, "name", entry.get("name"))
+    return found
+
+
+def check_sections_file(r: Report, raw: dict, path: Path) -> None:
+    """decks/sections.yaml: the Decks tab's sections, the genres, the
+    professions and the search kinds, as data (D8)."""
+    for unknown in sorted(set(raw) - SECTIONS_KEYS, key=str):
+        r.error("root", f"unknown field {unknown!r} in a sections file")
+    schema = raw.get("schema")
+    if isinstance(schema, bool) or schema != SCHEMA:
+        r.error("schema", f"must be {SCHEMA}, got {schema!r}")
+    if path.stem != "sections":
+        r.error("root", f"a sections file is decks/sections.yaml, got {path.name!r}")
+    try:
+        if path.stat().st_size > SHARED_MAX_BYTES:
+            r.error("root", f"is over {SHARED_MAX_BYTES // 1024} KB, which the app "
+                            f"refuses for a shared file")
+    except OSError:
+        pass
+    sections = _id_list(r, raw, "sections", {"id", "name", "listed"})
+    for sid, s in sections.items():
+        if "listed" in s and not isinstance(s["listed"], bool):
+            r.error(f"sections {sid}", "listed must be true or false")
+    genres = _id_list(r, raw, "genres", {"id", "name", "section", "search_kind", "weave"})
+    professions = _id_list(r, raw, "professions", {"id", "name"})
+    kinds = _id_list(r, raw, "search_kinds", {"id", "name", "row", "order"})
+    orders: set[object] = set()
+    for kid, k in kinds.items():
+        where = f"search_kinds {kid}"
+        if k.get("row") not in SEARCH_ROWS:
+            r.error(where, f"row must be one of {', '.join(SEARCH_ROWS)}, got "
+                           f"{k.get('row')!r}")
+        order = k.get("order")
+        if isinstance(order, bool) or not isinstance(order, int):
+            r.error(where, f"order must be a whole number, got {order!r}")
+        elif order in orders:
+            r.error(where, f"order {order} is used twice")
+        else:
+            orders.add(order)
+    for gid, g in genres.items():
+        where = f"genres {gid}"
+        if g.get("section") not in sections:
+            r.error(where, f"section {g.get('section')!r} is not a section of the file")
+        if g.get("search_kind") not in kinds:
+            r.error(where, f"search_kind {g.get('search_kind')!r} is not a search kind "
+                           f"of the file")
+        if "weave" in g and not isinstance(g["weave"], bool):
+            r.error(where, "weave must be true or false")
+        if gid not in GENRES:
+            r.error(where, f"{gid!r} is not a genre the validator knows "
+                           f"({', '.join(sorted(GENRES))}); add it to GENRES in "
+                           f"tools/validate_decks.py too")
+    for gid in GENRES:
+        if gid not in genres:
+            r.error("genres", f"does not list {gid!r}, a genre the validator knows")
+    r.sections_data = {"sections": set(sections), "genres": set(genres),
+                       "professions": set(professions), "search_kinds": set(kinds)}
+
+
+# --- decks/creators/<code>.yaml (D5, D5b) ------------------------------------
+
+CREATORS_KEYS = {"schema", "kind", "id", "language", "license", "eras", "creators"}
+CREATOR_KEYS = {"id", "name", "born", "died", "living", "era", "region", "bio",
+                "bio_target", "image", "legacy", "related", "checked_by"}
+IMAGE_KEYS = {"file", "credit", "author", "licence", "licence_url", "source_url",
+              "retrieved"}
+MAX_LIFESPAN = 120
+ERA_SLACK = 50
+IMAGE_EXTS = (".jpg", ".png", ".webp")
+
+
+def image_size(data: bytes) -> tuple[int, int] | None:
+    """The width and height of a PNG, JPEG or WebP, read from its header; None
+    when it is none of them or cannot be read."""
+    try:
+        if data[:8] == b"\x89PNG\r\n\x1a\n":
+            return struct.unpack(">II", data[16:24])
+        if data[:3] == b"\xff\xd8\xff":
+            i = 2
+            while i + 9 < len(data):
+                if data[i] != 0xFF:
+                    i += 1
+                    continue
+                marker = data[i + 1]
+                if marker == 0xFF:
+                    i += 1
+                elif marker in (0xD8, 0x01) or 0xD0 <= marker <= 0xD7:
+                    i += 2
+                elif 0xC0 <= marker <= 0xCF and marker not in (0xC4, 0xC8, 0xCC):
+                    height, width = struct.unpack(">HH", data[i + 5:i + 9])
+                    return width, height
+                else:
+                    i += 2 + struct.unpack(">H", data[i + 2:i + 4])[0]
+            return None
+        if data[:4] == b"RIFF" and data[8:12] == b"WEBP":
+            chunk = data[12:16]
+            if chunk == b"VP8X":
+                return (1 + int.from_bytes(data[24:27], "little"),
+                        1 + int.from_bytes(data[27:30], "little"))
+            if chunk == b"VP8 ":
+                width, height = struct.unpack("<HH", data[26:30])
+                return width & 0x3FFF, height & 0x3FFF
+            if chunk == b"VP8L":
+                bits = int.from_bytes(data[21:25], "little")
+                return (bits & 0x3FFF) + 1, ((bits >> 14) & 0x3FFF) + 1
+    except (struct.error, IndexError):
+        return None
+    return None
+
+
+def check_image(r: Report, where: str, image: object, creator_id: str, living: bool,
+                path: Path) -> None:
+    """A creator's optional `image` (D5): the file, and the credit and licence
+    that let it be shown."""
+    p = f"{where}.image"
+    if not isinstance(image, dict):
+        r.error(where, "image must be a mapping, or left out")
+        return
+    for unknown in sorted(set(image) - IMAGE_KEYS, key=str):
+        r.error(p, f"unknown field {unknown!r}")
+    licence = image.get("licence")
+    required = ["file", "credit", "author", "licence", "source_url", "retrieved"]
+    if licence != "public-domain":
+        required.append("licence_url")
+    for key in required:
+        if not _is_str(image.get(key)):
+            r.error(p, f"{key} is required")
+    if licence is not None and licence not in IMAGE_LICENCES:
+        r.error(p, f"licence must be one of {', '.join(IMAGE_LICENCES)} (no NC, no ND, "
+                   f"no fair use), got {licence!r}")
+    if living and licence == "public-domain":
+        r.error(p, "a living creator's image is never public-domain by age: it needs "
+                   "a free licence (CC0-1.0, CC-BY-4.0 or CC-BY-SA-4.0)")
+    for key in ("licence_url", "source_url"):
+        if key in image and not _https(image[key]):
+            r.error(p, f"{key} must be an https link, got {image[key]!r}")
+    if "retrieved" in image:
+        _check_date_field(r, p, "retrieved", image["retrieved"])
+    file = image.get("file")
+    if not _is_str(file):
+        return
+    prefix = "decks/creators/images/"
+    if not file.startswith(prefix) or "/" in file[len(prefix):] \
+            or not file.endswith(IMAGE_EXTS):
+        r.error(p, f"file must be {prefix}<creator id> and .jpg, .png or .webp, got "
+                   f"{file!r}")
+        return
+    if file[len(prefix):].rsplit(".", 1)[0] != creator_id:
+        r.error(p, f"file is named for its creator: {prefix}{creator_id}.<ext>")
+    r.creators_images.append(file[len(prefix):])
+    disk = path.parent / "images" / file[len(prefix):]
+    if not disk.is_file():
+        r.error(p, f"{file} does not exist")
+        return
+    data = disk.read_bytes()
+    if len(data) > IMAGE_MAX_BYTES:
+        r.error(p, f"{file} is {len(data) // 1024} KB; at most {IMAGE_MAX_BYTES // 1024}")
+    size = image_size(data)
+    ext = file.rsplit(".", 1)[1]
+    magic = {"png": data[:4] == b"\x89PNG", "jpg": data[:3] == b"\xff\xd8\xff",
+             "webp": data[:4] == b"RIFF" and data[8:12] == b"WEBP"}[ext]
+    if not magic or size is None:
+        r.error(p, f"{file} is not a readable {ext} image")
+    elif max(size) > IMAGE_MAX_SIDE:
+        r.error(p, f"{file} is {size[0]} x {size[1]} px; at most {IMAGE_MAX_SIDE} on a side")
+
+
+def check_creators_file(r: Report, raw: dict, path: Path) -> None:
+    """decks/creators/<code>.yaml: the people behind the works, once each
+    (D5, D5b)."""
+    for unknown in sorted(set(raw) - CREATORS_KEYS, key=str):
+        r.error("root", f"unknown field {unknown!r} in a creators file")
+    schema = raw.get("schema")
+    if isinstance(schema, bool) or schema != SCHEMA:
+        r.error("schema", f"must be {SCHEMA}, got {schema!r}")
+    lang = raw.get("language")
+    if not isinstance(lang, str) or not CODE_RE.fullmatch(lang):
+        r.error("language", f"must be a language code such as 'te', {_code_error(lang)}")
+        lang = None
+    else:
+        r.creators_lang = lang
+        if path.stem != lang or path.parent.name != "creators":
+            r.error("language", f"a creators file is decks/creators/{lang}.yaml")
+        if raw.get("id") != f"creators-{lang}":
+            r.error("id", f"must be creators-{lang}, got {raw.get('id')!r}")
+    if not _is_str(raw.get("license")):
+        r.error("license", "is required (an SPDX identifier, such as CC-BY-SA-4.0)")
+    try:
+        if path.stat().st_size > SHARED_MAX_BYTES:
+            r.error("root", f"is over {SHARED_MAX_BYTES // 1024} KB, which the app "
+                            f"refuses for a shared file")
+    except OSError:
+        pass
+    today = _today().year
+    eras: dict[str, tuple[int, int | None]] = {}
+    if "eras" in raw and not isinstance(raw["eras"], list):
+        r.error("eras", "must be a list")
+    for i, era in enumerate(raw["eras"] if isinstance(raw.get("eras"), list) else []):
+        where = f"eras[{i}]"
+        if not isinstance(era, dict) or set(era) - {"id", "name", "reading", "from", "to"}:
+            r.error(where, "must be a mapping with id, name, from, to and optionally reading")
+            continue
+        eid = era.get("id")
+        if not _is_str(eid) or not ID_RE.fullmatch(eid):
+            r.error(where, f"id must match [a-z0-9-]+, got {eid!r}")
+            continue
+        where = f"era {eid}"
+        if eid in eras:
+            r.error(where, "is listed twice")
+        _check_by_language(r, where, "name", era.get("name"))
+        start, end = era.get("from"), era.get("to")
+        if isinstance(start, bool) or not isinstance(start, int):
+            r.error(where, f"from must be a year, got {start!r}")
+            continue
+        if end is not None and (isinstance(end, bool) or not isinstance(end, int)):
+            r.error(where, f"to must be a year, or null for an era still running, got {end!r}")
+            continue
+        if end is not None and start >= end:
+            r.error(where, f"from {start} is not before to {end}")
+        eras[eid] = (start, end)
+    creators = raw.get("creators")
+    if not isinstance(creators, list) or not creators:
+        r.error("creators", "must be a non-empty list")
+        return
+    id_re = re.compile(rf"{re.escape(lang)}-[a-z0-9]+(?:-[a-z0-9]+)*") if lang else None
+    found: dict[str, dict] = {}
+    for i, c in enumerate(creators):
+        where = f"creators[{i}]"
+        if not isinstance(c, dict):
+            r.error(where, "must be a mapping")
+            continue
+        for unknown in sorted(set(c) - CREATOR_KEYS, key=str):
+            r.error(where, f"unknown field {unknown!r}")
+        cid = c.get("id")
+        if not _is_str(cid) or (id_re is not None and not id_re.fullmatch(cid)):
+            r.error(where, f"id must be {lang or '<language>'}- and a name, got {cid!r}")
+            continue
+        where = f"creator {cid}"
+        if cid in found:
+            r.error(where, "is listed twice")
+        names = c.get("name")
+        if not isinstance(names, dict) or "en" not in names:
+            r.error(where, "name maps a language code to { text, reading, ipa } and "
+                           "has an en entry")
+            names = {}
+        for code, entry in names.items():
+            _text_entry(r, f"{where}.name.{code}", entry)
+        born, died = c.get("born"), c.get("died")
+        by, _ = _year_of(born)
+        dy, _ = _year_of(died)
+        if by is None:
+            r.error(where, f"born must be a year, or {{ year, circa: true }}, got {born!r}")
+        if "died" in c and dy is None:
+            r.error(where, f"died must be a year, or {{ year, circa: true }}, got {died!r}")
+        if "living" in c and c["living"] is not True:
+            r.error(where, "living must be true, or left out")
+        living = c.get("living") is True
+        if "died" not in c and not living:
+            r.error(where, "has no died: add died, or living: true")
+        if "died" in c and living:
+            r.error(where, "is living: true and has died")
+        if by is not None and dy is not None:
+            if by >= dy:
+                r.error(where, f"born {by} is not before died {dy}")
+            elif dy - by > MAX_LIFESPAN:
+                r.error(where, f"lived {dy - by} years; at most {MAX_LIFESPAN}")
+        if dy is not None and dy > today:
+            r.error(where, f"died {dy} is in the future")
+        if by is not None and by > today:
+            r.error(where, f"born {by} is in the future")
+        era = c.get("era")
+        if era is not None:
+            if era not in eras:
+                r.error(where, f"era {era!r} is not one of the file's eras")
+            elif by is not None:
+                start, end = eras[era]
+                active_from = by + 15
+                active_to = dy if dy is not None else today
+                if active_to < start - ERA_SLACK or active_from > (
+                        end if end is not None else today) + ERA_SLACK:
+                    r.error(where, f"active {active_from} to {active_to}, but era {era!r} "
+                                   f"runs {start} to {end if end is not None else 'today'} "
+                                   f"(within {ERA_SLACK} years)")
+        if "region" in c and not (_is_str(c["region"]) and ID_RE.fullmatch(c["region"])):
+            r.error(where, f"region must be a region id of the language's path, got "
+                           f"{c['region']!r}")
+        _by_language(r, where + ".bio", c.get("bio"))
+        bt = c.get("bio_target")
+        if bt is not None:
+            if not isinstance(bt, dict):
+                r.error(where, "bio_target must map a level to { text, reading, ipa }")
+            else:
+                for level, entry in bt.items():
+                    if level not in LEVELS:
+                        r.error(where, f"bio_target level {level!r} is not one of "
+                                       f"{', '.join(LEVELS)}")
+                    _text_entry(r, f"{where}.bio_target.{level}", entry)
+        if "image" in c:
+            check_image(r, where, c["image"], cid, living, path)
+        if "legacy" in c:
+            check_legacy(r, where, c["legacy"])
+        related = c.get("related")
+        if related is not None and not isinstance(related, list):
+            r.error(where, "related must be a list")
+            related = []
+        for k, rel in enumerate(related or []):
+            w = f"{where}.related[{k}]"
+            if not isinstance(rel, dict) or set(rel) - {"creator", "card", "relation"} \
+                    or ("creator" in rel) == ("card" in rel):
+                r.error(w, "must be a mapping with a creator or a card, and a relation")
+                continue
+            if rel.get("relation") not in RELATIONS:
+                r.error(w, f"relation must be one of {', '.join(RELATIONS)}, got "
+                           f"{rel.get('relation')!r}")
+            if "card" in rel:
+                if _is_str(rel["card"]) and lang and card_id_re(lang).fullmatch(rel["card"]):
+                    r.related_cards.append((rel["card"], w))
+                else:
+                    r.error(w, f"card must be a {lang or ''} card id, got {rel['card']!r}")
+            elif rel.get("creator") == cid:
+                r.error(w, "relates a creator to themselves")
+            elif not _is_str(rel.get("creator")):
+                r.error(w, "creator must be a creator id")
+        if "checked_by" in c:
+            codes = c["checked_by"]
+            if not isinstance(codes, list) or not codes or any(
+                    rater_code(x) is None or rater_code(x) != x for x in codes):
+                r.error(where, "checked_by must be a non-empty list of rater codes, "
+                               "FL-XXXX-XXXX-C")
+        found[cid] = {"names": {e["text"] for e in names.values()
+                                if isinstance(e, dict) and _is_str(e.get("text"))},
+                      "born": by, "died": dy, "region": c.get("region"),
+                      "checked": bool(c.get("checked_by")), "where": where,
+                      "related": [rel.get("creator") for rel in related or []
+                                  if isinstance(rel, dict) and "creator" in rel]}
+    for cid, c in found.items():
+        for other in c["related"]:
+            if _is_str(other) and id_re is not None and id_re.fullmatch(other) \
+                    and other not in found:
+                r.error(c["where"], f"related names {other!r}, which is not in the file")
+    r.creators_data = found
+    images = path.parent / "images"
+    if lang and images.is_dir():
+        cited = set(r.creators_images)
+        for p in sorted(images.iterdir()):
+            if p.name.startswith(f"{lang}-") and p.name not in cited:
+                r.error("image", f"decks/creators/images/{p.name} is cited by no creator")
+
+
+# --- decks/<code>/<code>-topics.yaml (D6) ------------------------------------
+
+TOPICS_KEYS = {"schema", "kind", "id", "language", "license", "description", "topics"}
+TOPIC_KEYS = {"id", "name", "summary", "term", "level", "kind", "decks", "units",
+              "cards", "grammar", "situations", "topics", "script_units", "chars"}
+# What a topic covers: at least one. `script_units` are a script guide's
+# feature ids and `chars` a list of letters, signs or glyphs (a Bengali
+# juktakkhor, a kanji group, a Braille groupsign): data only, no per-script
+# code (owner, 2026-11-12, #1137).
+TOPIC_COVERS = ("decks", "units", "cards", "grammar", "situations", "topics",
+                "script_units", "chars")
+
+
+def check_topics_file(r: Report, raw: dict, path: Path) -> None:
+    """A language's topics: what a learner would search for, naming what
+    exists (D6). References are resolved across the language's files."""
+    for unknown in sorted(set(raw) - TOPICS_KEYS, key=str):
+        r.error("root", f"unknown field {unknown!r} in a topics file")
+    schema = raw.get("schema")
+    if isinstance(schema, bool) or schema != SCHEMA:
+        r.error("schema", f"must be {SCHEMA}, got {schema!r}")
+    lang = raw.get("language")
+    if not isinstance(lang, str) or not CODE_RE.fullmatch(lang):
+        r.error("language", f"must be a language code such as 'ja', {_code_error(lang)}")
+        lang = None
+    else:
+        r.facts_lang = lang
+        if path.stem != f"{lang}-topics" or raw.get("id") != f"{lang}-topics":
+            r.error("id", f"a topics file is {lang}-topics.yaml, with that id, got "
+                          f"{raw.get('id')!r} in {path.name!r}")
+    lc = lang or "xx"
+    topics = raw.get("topics")
+    if not isinstance(topics, list) or not topics:
+        r.error("topics", "must be a non-empty list")
+        return
+    id_re = re.compile(rf"{re.escape(lc)}-[a-z0-9]+(?:-[a-z0-9]+)*")
+    ids: set[str] = set()
+    collected: list[tuple[str, str, dict]] = []
+    for i, t in enumerate(topics):
+        where = f"topics[{i}]"
+        if not isinstance(t, dict):
+            r.error(where, "must be a mapping")
+            continue
+        for unknown in sorted(set(t) - TOPIC_KEYS, key=str):
+            r.error(where, f"unknown field {unknown!r}")
+        tid = t.get("id")
+        if not _is_str(tid) or not id_re.fullmatch(tid):
+            r.error(where, f"id must be {lc}- and a name, [a-z0-9-]+, got {tid!r}")
+            continue
+        where = f"topic {tid}"
+        if tid in ids:
+            r.error(where, "duplicate topic id")
+        ids.add(tid)
+        _check_by_language(r, where, "name", t.get("name"))
+        if "summary" in t:
+            _check_by_language(r, where, "summary", t["summary"])
+        if "term" in t:
+            _text_entry(r, f"{where}.term", t["term"])
+        if "level" in t and t["level"] not in LEVELS:
+            r.error(where, f"level must be one of {', '.join(LEVELS)}, got {t['level']!r}")
+        if "kind" in t and not (_is_str(t["kind"]) and ID_RE.fullmatch(t["kind"])):
+            r.error(where, f"kind must be a word such as {', '.join(TOPIC_KINDS)}, got "
+                           f"{t['kind']!r}")
+        covered = 0
+        for key in TOPIC_COVERS:
+            if key not in t:
+                continue
+            value = t[key]
+            if not isinstance(value, list) or not value:
+                r.error(where, f"{key} must be a non-empty list, or left out")
+                continue
+            covered += 1
+            seen: list[object] = []
+            for k, ref in enumerate(value):
+                w = f"{where}.{key}[{k}]"
+                if key == "chars":
+                    text = ref.get("text") if isinstance(ref, dict) else ref
+                    if isinstance(ref, dict):
+                        _text_entry(r, w, ref)
+                    if not _is_str(text) or text != text.strip() or re.search(r"\s", text) \
+                            or len(text) > MAX_CHARS_LEN:
+                        r.error(w, f"a character is a letter, sign or conjunct of at "
+                                   f"most {MAX_CHARS_LEN} code points with no spaces, "
+                                   f"got {text!r}")
+                        continue
+                    ref = unicodedata.normalize("NFC", text)
+                elif key == "cards":
+                    if not _is_str(ref) or not card_id_re(lc).fullmatch(ref):
+                        r.error(w, f"must be a {lc} card id, got {ref!r}")
+                        continue
+                    r.base_refs.append((ref, where, f"{key}[{k}]"))
+                elif key == "decks" and not _is_core_id(ref, lc):
+                    r.error(w, f"must be a core id of {lc}, {lc}- and a name, got {ref!r}")
+                    continue
+                elif key in ("units", "grammar", "situations", "script_units") \
+                        and not (_is_str(ref) and ID_RE.fullmatch(ref)):
+                    r.error(w, f"must be an id, [a-z0-9-]+, got {ref!r}")
+                    continue
+                elif key == "topics":
+                    if ref == tid:
+                        r.error(w, "a topic does not list itself")
+                        continue
+                    if not _is_str(ref) or not id_re.fullmatch(ref):
+                        r.error(w, f"must be a topic id of {lc}, got {ref!r}")
+                        continue
+                if ref in seen:
+                    r.error(w, f"{ref!r} is listed twice")
+                seen.append(ref)
+        if not covered:
+            r.error(where, f"covers nothing: list at least one of "
+                           f"{', '.join(TOPIC_COVERS)}")
+        collected.append((tid, where, t))
+    for tid, where, t in collected:
+        others = t.get("topics")
+        for other in others if isinstance(others, list) else []:
+            if _is_str(other) and id_re.fullmatch(other) and other != tid \
+                    and other not in ids:
+                r.error(where, f"topics names {other!r}, which is not in the file")
+    r.topics_data = collected
+
+
+# --- decks/recommendations/<code>.yaml (D13) ---------------------------------
+
+RECS_KEYS = {"schema", "kind", "id", "language", "license", "recommendations"}
+REC_KEYS = {"id", "medium", "title", "creator", "year", "level", "script", "briefing",
+            "questions", "legal", "quoted_in", "checked_by", "tags"}
+
+
+def _pirate_hosts() -> set[str]:
+    try:
+        lines = PIRATE_HOSTS.read_text(encoding="utf-8").splitlines()
+        return {line.strip().lower() for line in lines
+                if line.strip() and not line.strip().startswith("#")}
+    except OSError:
+        return set()
+
+
+def _language_scripts(code: str) -> list[str] | None:
+    """The scripts assets/languages.yaml lists for [code], or None."""
+    raw = _load_raw_view(ROOT / "assets" / "languages.yaml")
+    if isinstance(raw, dict) and isinstance(raw.get("languages"), list):
+        for entry in raw["languages"]:
+            if isinstance(entry, dict) and entry.get("code") == code:
+                scripts = entry.get("scripts")
+                if isinstance(scripts, list):
+                    return [s for s in scripts if isinstance(s, str)]
+                return [entry["script"]] if _is_str(entry.get("script")) else None
+    return None
+
+
+def check_recommendations_file(r: Report, raw: dict, path: Path) -> None:
+    """decks/recommendations/<code>.yaml: popular works to find elsewhere and
+    be taught about, never reproduced (D13)."""
+    for unknown in sorted(set(raw) - RECS_KEYS, key=str):
+        r.error("root", f"unknown field {unknown!r} in a recommendations file")
+    schema = raw.get("schema")
+    if isinstance(schema, bool) or schema != SCHEMA:
+        r.error("schema", f"must be {SCHEMA}, got {schema!r}")
+    lang = raw.get("language")
+    if not isinstance(lang, str) or not CODE_RE.fullmatch(lang):
+        r.error("language", f"must be a language code such as 'te', {_code_error(lang)}")
+        lang = None
+    else:
+        r.recs_lang = lang
+        if path.stem != lang or path.parent.name != "recommendations":
+            r.error("language", f"a recommendations file is decks/recommendations/{lang}.yaml")
+        if raw.get("id") != f"recommendations-{lang}":
+            r.error("id", f"must be recommendations-{lang}, got {raw.get('id')!r}")
+    if not _is_str(raw.get("license")):
+        r.error("license", "is required (an SPDX identifier, such as CC-BY-SA-4.0)")
+    recs = raw.get("recommendations")
+    if not isinstance(recs, list) or not recs:
+        r.error("recommendations", "must be a non-empty list")
+        return
+    scripts = _language_scripts(lang) if lang else None
+    hosts = _pirate_hosts()
+    if not hosts:
+        r.error("recommendations", "tools/pirate_hosts.txt is missing or empty, the "
+                                   "pirate-host deny list cannot run")
+    id_re = re.compile(rf"{re.escape(lang)}-rec-[a-z0-9]+(?:-[a-z0-9]+)*") if lang else None
+    ids: set[str] = set()
+    collected: list[tuple[str, str, dict]] = []
+    for i, rec in enumerate(recs):
+        where = f"recommendations[{i}]"
+        if not isinstance(rec, dict):
+            r.error(where, "must be a mapping")
+            continue
+        for unknown in sorted(set(rec) - REC_KEYS, key=str):
+            r.error(where, f"unknown field {unknown!r}: a recommendation holds no text "
+                           f"of the work, only what is said about it")
+        rid = rec.get("id")
+        if not _is_str(rid) or (id_re is not None and not id_re.fullmatch(rid)):
+            r.error(where, f"id must be {lang or '<language>'}-rec- and a name, got {rid!r}")
+            continue
+        where = f"recommendation {rid}"
+        if rid in ids:
+            r.error(where, "duplicate recommendation id")
+        ids.add(rid)
+        medium = rec.get("medium")
+        if medium not in MEDIA_KINDS:
+            r.error(where, f"medium must be one of {', '.join(MEDIA_KINDS)}, got {medium!r}")
+        _text_entry(r, f"{where}.title", rec.get("title"))
+        creators: list[str] = []
+        if "creator" in rec:
+            creators = _creator_ids(r, where + ".creator", rec["creator"], lang)
+        else:
+            r.error(where, "creator is required: the ids of the creators file")
+        year = rec.get("year")
+        if isinstance(year, bool) or not isinstance(year, int) or year > _today().year:
+            r.error(where, f"year must be a year, no later than this one, got {year!r}")
+        if rec.get("level") not in LEVELS:
+            r.error(where, f"level must be one of {', '.join(LEVELS)}, got "
+                           f"{rec.get('level')!r}")
+        script = rec.get("script")
+        if medium == "book":
+            if not _is_str(script):
+                r.error(where, "a book names the script it is printed in")
+            elif scripts is not None and script not in scripts:
+                r.error(where, f"script {script!r} is not one of {lang}'s "
+                               f"({', '.join(scripts)})")
+        elif "script" in rec:
+            r.error(where, "only a book has a script")
+        _by_language(r, where + ".briefing", rec.get("briefing"))
+        questions = rec.get("questions")
+        if not isinstance(questions, list) or not 3 <= len(questions) <= 8:
+            r.error(where, "questions must be a list of 3 to 8 questions")
+            questions = []
+        qids: set[str] = set()
+        for k, q in enumerate(questions):
+            w = f"{where}.questions[{k}]"
+            if not isinstance(q, dict) or set(q) - QUESTION_KEYS:
+                r.error(w, "must be a mapping with id, prompt, options and answer")
+                continue
+            qid = q.get("id")
+            if not _is_str(qid) or not ID_RE.fullmatch(qid):
+                r.error(w, f"id must match [a-z0-9-]+, got {qid!r}")
+            elif qid in qids:
+                r.error(w, f"duplicate question id {qid!r}")
+            else:
+                qids.add(qid)
+            _check_by_language(r, w, "prompt", q.get("prompt"))
+            options = q.get("options")
+            if not isinstance(options, dict) or "en" not in options:
+                r.error(w, "options map a language code to a list of 2 to 4 options, "
+                           "with an en entry")
+                continue
+            lengths = set()
+            for code, opts in options.items():
+                if not isinstance(opts, list) or len(opts) not in CHOICES \
+                        or not all(_is_str(o) for o in opts):
+                    r.error(w, f"options.{code} must be a list of 2 to 4 options")
+                else:
+                    lengths.add(len(opts))
+            ans = q.get("answer")
+            if len(lengths) != 1:
+                r.error(w, "every language gives the same number of options")
+            elif isinstance(ans, bool) or not isinstance(ans, int) \
+                    or not 1 <= ans <= next(iter(lengths)):
+                r.error(w, f"answer must be the number of the right option, from 1 to "
+                           f"{next(iter(lengths))}, got {ans!r}")
+        legal = rec.get("legal")
+        if legal is not None and not isinstance(legal, list):
+            r.error(where, "legal must be a list")
+            legal = []
+        for k, leg in enumerate(legal or []):
+            w = f"{where}.legal[{k}]"
+            if not isinstance(leg, dict) or set(leg) - {"kind", "url", "note"}:
+                r.error(w, "must be a mapping with kind, url and optionally note")
+                continue
+            if leg.get("kind") not in LEGAL_KINDS:
+                r.error(w, f"kind must be one of {', '.join(LEGAL_KINDS)}, got "
+                           f"{leg.get('kind')!r}")
+            if not _https(leg.get("url")):
+                r.error(w, f"url must be an https link, got {leg.get('url')!r}")
+            else:
+                host = (urlparse(leg["url"]).hostname or "").lower().rstrip(".")
+                if any(host == h or host.endswith("." + h) for h in hosts):
+                    r.error(w, f"{host} is on the deny list of unlicensed hosts "
+                               f"(tools/pirate_hosts.txt): link the rights-holder's "
+                               f"or a library's page")
+            if "note" in leg:
+                _by_language(r, w + ".note", leg["note"])
+        if "quoted_in" in rec and not (_is_str(rec["quoted_in"])
+                                       and _is_core_id(rec["quoted_in"], lang or "xx")):
+            r.error(where, f"quoted_in must be the core id of a {lang} culture deck, "
+                           f"got {rec['quoted_in']!r}")
+        tags = rec.get("tags")
+        if tags is not None:
+            _check_str_list(r, where, "tags", tags)
+        if "checked_by" in rec:
+            codes = rec["checked_by"]
+            if not isinstance(codes, list) or not codes or any(
+                    rater_code(x) is None or rater_code(x) != x for x in codes):
+                r.error(where, "checked_by must be a non-empty list of rater codes")
+        if isinstance(tags, list) and "reviewed" in tags and not rec.get("checked_by"):
+            r.error(where, "is tagged reviewed, so it needs checked_by")
+        info = dict(rec)
+        info["_creators"] = creators
+        collected.append((rid, where, info))
+    r.recs_data = collected
+
+
+SHARED_KIND_CHECKS = {
+    "sections": check_sections_file,
+    "creators": check_creators_file,
+    "topics": check_topics_file,
+    "recommendations": check_recommendations_file,
+}
+
+
+# --- The checks across files for the kinds -----------------------------------
+
+def _find_shared(path: Path, rel: str) -> Path | None:
+    """A deck-owned file ([rel], such as sections.yaml) as a deck at [path]
+    sees it: in the decks/ folder above its language's, else the repository's."""
+    resolved = path.resolve()
+    bases = list(resolved.parents)[:3]
+    if ROOT in resolved.parents:
+        bases.append(ROOT / "decks")  # not for a draft or a test tree elsewhere
+    for base in bases:
+        candidate = base / rel
+        if candidate.is_file():
+            return candidate
+    return None
+
+
+def _creators_from_raw(raw: object) -> dict[str, dict]:
+    out: dict[str, dict] = {}
+    if isinstance(raw, dict) and isinstance(raw.get("creators"), list):
+        for c in raw["creators"]:
+            if not isinstance(c, dict) or not _is_str(c.get("id")):
+                continue
+            names = c.get("name") if isinstance(c.get("name"), dict) else {}
+            out[c["id"]] = {
+                "names": {e["text"] for e in names.values()
+                          if isinstance(e, dict) and _is_str(e.get("text"))},
+                "born": _year_of(c.get("born"))[0], "died": _year_of(c.get("died"))[0],
+                "region": c.get("region"), "checked": bool(c.get("checked_by")),
+                "where": f"creator {c['id']}", "related": []}
+    return out
+
+
+def _creators_for(reports: list[Report], rep: Report, code: str
+                  ) -> tuple[dict[str, dict] | None, Path | None]:
+    for other in reports:
+        if other.creators_lang == code and other.creators_data is not None:
+            return other.creators_data, other.path
+    found = _find_shared(rep.path, f"creators/{code}.yaml")
+    if found is None:
+        return None, None
+    return _creators_from_raw(_load_raw_view(found)), found
+
+
+def check_kinds_across(reports: list[Report]) -> list[str]:
+    """The checks across files of the deck kinds: every genre, profession and
+    section a deck uses is listed in decks/sections.yaml; a card's creator is
+    in the language's creators file, its source author is that creator and
+    its date is not before their birth; creator ids are unique across
+    languages; topics and recommendations name what exists."""
+    problems: list[str] = []
+    ctx = _context(reports)
+    given_paths = {o.path.resolve() for o in reports}
+
+    # decks/sections.yaml.
+    for rep in reports:
+        if not (rep.genre or rep.professional or rep.section) or rep.part == "layer":
+            continue
+        listed = next((o.sections_data for o in reports if o.sections_data is not None),
+                      None)
+        if listed is None:
+            found = _find_shared(rep.path, "sections.yaml")
+            raw = _load_raw_view(found) if found is not None else None
+            if not isinstance(raw, dict) or raw.get("kind") != "sections":
+                continue
+            listed = {k: {e["id"] for e in raw.get(k) or []
+                          if isinstance(e, dict) and _is_str(e.get("id"))}
+                      for k in ("sections", "genres", "professions")}
+        if rep.genre and rep.genre not in listed["genres"]:
+            problems.append(f"{rep.path}: genre: {rep.genre!r} is not listed in "
+                            f"decks/sections.yaml; add its row there first")
+        if rep.professional and rep.professional not in listed["professions"]:
+            problems.append(f"{rep.path}: professional: {rep.professional!r} is not "
+                            f"listed in decks/sections.yaml; add its row there first")
+        if rep.section and rep.section not in listed["sections"]:
+            problems.append(f"{rep.path}: section: {rep.section!r} is not listed in "
+                            f"decks/sections.yaml")
+
+    # Creator ids are unique across the language files.
+    seen: dict[str, Path] = {}
+    for rep in reports:
+        if rep.creators_data is None:
+            continue
+        for cid in rep.creators_data:
+            if cid in seen and seen[cid].resolve() != rep.path.resolve():
+                problems.append(f"{rep.path}: creator {cid}: also in {seen[cid]}; an id "
+                                f"is unique across the creators files")
+            seen.setdefault(cid, rep.path)
+        for other in sorted(rep.path.parent.glob("*.yaml")):
+            if other.resolve() in given_paths:
+                continue
+            for cid in _creators_from_raw(_load_raw_view(other)):
+                if cid in rep.creators_data:
+                    problems.append(f"{rep.path}: creator {cid}: also in {other}; an id "
+                                    f"is unique across the creators files")
+
+    # The creators a card names.
+    for rep in reports:
+        if not rep.creator_refs or rep.lang_code is None:
+            continue
+        creators, file = _creators_for(reports, rep, rep.lang_code)
+        if creators is None:
+            problems.append(f"{rep.path}: names creators, but there is no "
+                            f"decks/creators/{rep.lang_code}.yaml")
+            continue
+        for ids, where, author, year in rep.creator_refs:
+            for cid in ids:
+                c = creators.get(cid)
+                if c is None:
+                    problems.append(f"{rep.path}: {where}: creator {cid!r} is not in "
+                                    f"{file}")
+                    continue
+                if _is_str(author) and author != "anonymous" and author not in c["names"]:
+                    problems.append(f"{rep.path}: {where}: source.author {author!r} is "
+                                    f"none of {cid}'s names")
+                if year is not None and c["born"] is not None and year < c["born"]:
+                    problems.append(f"{rep.path}: {where}: source date {year} is before "
+                                    f"{cid} was born ({c['born']})")
+                if rep.reviewed and rep.genre == "culture" and not c["checked"]:
+                    problems.append(f"{rep.path}: {where}: the deck is tagged reviewed, "
+                                    f"but creator {cid} has no checked_by")
+
+    # A creators file against the language's path and cards.
+    for rep in reports:
+        if rep.creators_data is None or rep.creators_lang is None:
+            continue
+        lang = ctx.lang(rep.creators_lang)
+        path = lang.path()
+        regions = path.plan.regions if path is not None else None
+        for cid, c in rep.creators_data.items():
+            if regions is not None and c["region"] is not None and c["region"] not in regions:
+                problems.append(f"{rep.path}: {c['where']}: region {c['region']!r} is not "
+                                f"a region of {rep.creators_lang}'s path "
+                                f"({', '.join(regions)})")
+        defs = lang.defs()
+        for cid, where in rep.related_cards:
+            if defs and cid not in defs:
+                problems.append(f"{rep.path}: {where}: card {cid} is not a card of "
+                                f"{rep.creators_lang}")
+        everyone = lang.all()
+        cited = {i for o in everyone for ids, *_ in o.creator_refs for i in ids}
+        for cid in rep.creators_data:
+            if everyone and cid not in cited:
+                rep.warn(f"creator {cid}", "no card cites this creator yet")
+
+    # Topics.
+    for rep in reports:
+        if rep.topics_data is None or rep.facts_lang is None:
+            continue
+        code = rep.facts_lang
+        lang = ctx.lang(code)
+        by_core = lang.by_core()
+        path = lang.path()
+        units: set[str] = set()
+        grammar: set[str] = set()
+        if path is not None:
+            for u in path.plan.units:
+                units.update(u.decks)
+                if u.planned is not None and _is_str(u.planned.get("id")):
+                    units.add(u.planned["id"])
+                grammar.update(u.grammar)
+        # The situations file and the script guides are no deck of the
+        # language (they have no `lang_code`): those given, and on disk.
+        facts = [o for o in reports if o.facts_lang == code] + [
+            validate(p) for pat in ("*-situations.yaml", "*-script.yaml")
+            for p in lang._on_disk(pat)]
+        sheets = {sid for o in facts if o.situations_lang == code
+                  for sid in o.situation_ids}
+        features = {f for o in facts for f in o.script_features}
+        rules = {rid for o in lang.all() for rid, _ in o.rules_defined}
+        for tid, where, t in rep.topics_data:
+            for key, known, what in (
+                    ("decks", set(by_core), f"a deck of {code}"),
+                    ("units", units, f"a unit of {code}'s path"),
+                    ("grammar", grammar | rules, f"a grammar concept or rule of {code}"),
+                    ("situations", sheets, f"a situation of {code}"),
+                    ("script_units", features, f"a script guide feature of {code}")):
+                for ref in t.get(key) or []:
+                    # A path or rules the language does not have yet: nothing
+                    # to resolve units and grammar against.
+                    if (key == "units" and path is None) or (
+                            key == "grammar" and path is None and not known):
+                        continue
+                    if _is_str(ref) and ref not in known:
+                        problems.append(f"{rep.path}: {where}: {key} names {ref!r}, "
+                                        f"which is not {what}")
+
+    # Recommendations.
+    for rep in reports:
+        if rep.recs_data is None or rep.recs_lang is None:
+            continue
+        creators, file = _creators_for(reports, rep, rep.recs_lang)
+        by_core = ctx.lang(rep.recs_lang).by_core()
+        for rid, where, rec in rep.recs_data:
+            for cid in rec.get("_creators", []):
+                c = creators.get(cid) if creators is not None else None
+                if c is None:
+                    problems.append(f"{rep.path}: {where}: creator {cid!r} is not in the "
+                                    f"creators file of {rep.recs_lang}")
+                elif isinstance(rec.get("year"), int) and c["born"] is not None \
+                        and rec["year"] < c["born"]:
+                    problems.append(f"{rep.path}: {where}: year {rec['year']} is before "
+                                    f"{cid} was born ({c['born']})")
+            quoted = rec.get("quoted_in")
+            if _is_str(quoted):
+                decks = by_core.get(quoted)
+                if not decks:
+                    problems.append(f"{rep.path}: {where}: quoted_in {quoted!r} is no "
+                                    f"deck of {rep.recs_lang}")
+                elif not any(set(rec.get("_creators", []))
+                             & {i for ids, *_ in o.creator_refs for i in ids}
+                             for o in decks):
+                    problems.append(f"{rep.path}: {where}: quoted_in {quoted!r} has no "
+                                    f"card citing the same creator")
+    return problems
+
+
 def collect(target: Path) -> list[Path]:
     if target.is_file():
         return [target]
@@ -7164,6 +8657,8 @@ def main(argv: list[str]) -> int:
 
     ids: dict[str, Path] = {}
     for p in paths:
+        if p.parent.name in SHARED_DIRS:
+            continue  # decks/creators/<code>.yaml: one per language, by design
         if p.stem in ids:
             print(f"error: duplicate deck id {p.stem!r}: {ids[p.stem]} and {p}")
             return 1
@@ -7180,7 +8675,7 @@ def main(argv: list[str]) -> int:
               + check_bases_across(reports) + check_phrasebook_across(reports)
               + check_plans_across(reports) + check_regions_across(reports)
               + check_genders_across(reports) + check_media_across(reports)
-              + check_sets_across(reports))
+              + check_sets_across(reports) + check_kinds_across(reports))
     for problem in across:
         print(f"error: {problem}")
     warn_base_stems_across(reports)

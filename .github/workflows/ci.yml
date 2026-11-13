@@ -46,6 +46,12 @@ on:
       - "!wiki/**"
       - "wiki/Reviewing-Guide.md"
   pull_request:
+  # The heavy placement suites run every night on main (owner, 2026-11-11), so
+  # a change that slips past the path list in "Which parts changed" is caught
+  # within a day. A manual run ("Run workflow") runs them too.
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
 
 # A new push to a PR cancels its older run; main's runs are never cancelled.
 concurrency:
@@ -72,6 +78,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       app: ${{ steps.diff.outputs.app }}
+      placement: ${{ steps.diff.outputs.placement }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -81,12 +88,28 @@ jobs:
           EVENT: ${{ github.event_name }}
         run: |
           app=true
+          # The heavy placement suites (test/heavy_tests.json) run when placement
+          # changed, on the nightly schedule and on a manual run (owner,
+          # 2026-11-11); any doubt (files not listable) runs them.
+          placement=true
+          if [ "$EVENT" = "pull_request" ] || [ "$EVENT" = "push" ]; then
+            if pfiles=$(git diff --name-only --no-renames HEAD^1 HEAD) && [ -n "$pfiles" ]; then
+              if echo "$pfiles" | grep -qE '^(lib/core/placement/|lib/app/placement|lib/features/placement/|test/placement_|test/support/placement_|test/fixtures/placement/|assets/placement_profiles\.json$|tools/placement|tools/test_shard\.py$|tools/test_test_shard\.py$|test/shard_weights\.json$|test/heavy_tests\.json$|\.github/workflows/ci\.yml$)'; then
+                echo "Placement changed: the heavy placement suites run."
+              else
+                placement=false
+                echo "Placement unchanged: the heavy placement suites are skipped."
+              fi
+            else
+              echo "Could not list the changed files: the heavy placement suites run."
+            fi
+          fi
           if [ "$EVENT" = "pull_request" ]; then
             if files=$(git diff --name-only --no-renames HEAD^1 HEAD) && [ -n "$files" ]; then
               echo "Changed files: $(echo "$files" | wc -l)"
               # Under decks/ and not an app file: themes.yaml is bundled in
               # the app (pubspec.yaml) and min_app.json changes its gating.
-              others=$( { echo "$files" | grep -v '^decks/'; echo "$files" | grep -xE 'decks/(themes\.yaml|min_app\.json)'; } || true)
+              others=$( { echo "$files" | grep -v '^decks/'; echo "$files" | grep -xE 'decks/(themes\.yaml|sections\.yaml|min_app\.json)'; } || true)
               if [ -z "$others" ]; then
                 app=false
                 echo "Only decks/ changed: analyse, live downloads and the APK build are skipped."
@@ -101,6 +124,7 @@ jobs:
             echo "Not a pull request: everything runs."
           fi
           echo "app=$app" >> "$GITHUB_OUTPUT"
+          echo "placement=$placement" >> "$GITHUB_OUTPUT"
 
   # The decks are not here to check any more (owner, 2026-11-06): they live on
   # the decks-live branch, with a deck CI of its own (.github/workflows/ci.yml
@@ -163,7 +187,7 @@ jobs:
     if: always()
     steps:
       # Main's decks/ is frozen (decks live on decks-live): a pull request to
-      # main may change only decks/themes.yaml and decks/min_app.json there.
+      # main may change only decks/themes.yaml, decks/sections.yaml and decks/min_app.json there.
       - uses: actions/checkout@v7
         if: github.event_name == 'pull_request'
         with:
@@ -263,6 +287,7 @@ jobs:
   # The job name "App: tests N/8" is what the ruleset's gate waits for.
   app-tests:
     name: "App: tests ${{ matrix.n }}/8"
+    needs: [changes]
     strategy:
       fail-fast: false
       matrix:
@@ -306,8 +331,14 @@ jobs:
       # it would leave `flutter test` with no files, which runs them all.
       # The json report gives each test file's time, for refreshing the weights.
       - name: Test
+        env:
+          PLACEMENT: ${{ needs.changes.outputs.placement }}
         run: |
-          files=$(python3 tools/test_shard.py --total-shards 8 --shard-index ${{ matrix.shard }})
+          # The heavy placement suites run only when placement changed, nightly
+          # and on a manual run (test/heavy_tests.json, "Which parts changed").
+          flags=""
+          if [ "$PLACEMENT" != "true" ]; then flags="--exclude-heavy"; fi
+          files=$(python3 tools/test_shard.py --total-shards 8 --shard-index ${{ matrix.shard }} $flags)
           echo "$files"
           flutter test $files --file-reporter json:flutter-test-times.json
       - uses: actions/upload-artifact@v7

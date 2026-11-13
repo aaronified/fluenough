@@ -5,6 +5,7 @@ import '../../core/models/drill_mode.dart';
 import '../../core/models/review_event.dart';
 import '../../core/scheduling/fsrs.dart';
 import '../../core/scheduling/study_hours.dart';
+import '../../core/private/private_ids.dart';
 
 /// Hours spent learning a language, and about how many are left in its
 /// course's decks: the course card's hours row (#227).
@@ -35,7 +36,7 @@ CourseHours courseHours(AppState state, String language) => state.derived((
 List<ReviewEvent> _reviewsOf(AppState state, String language) => <ReviewEvent>[
   for (final review in state.progress.log.answered)
     if ((state.deckById(review.deckId)?.language.code ??
-            review.cardId.split('-').first) ==
+            languageOfId(review.cardId)) ==
         language)
       review,
 ];

@@ -14,6 +14,10 @@ import '../core/data/situations_parser.dart';
 import '../core/data/guide_layers.dart';
 import '../core/data/script_guide_parser.dart';
 import '../core/data/romanisation_parser.dart';
+import '../core/data/creators.dart';
+import '../core/data/recommendations.dart';
+import '../core/data/sections.dart';
+import '../core/data/topics.dart';
 import '../core/data/sounds_parser.dart';
 import '../core/models/script_guide.dart';
 import '../core/models/romanisation.dart';
@@ -26,8 +30,12 @@ import '../core/data/yaml_tree.dart';
 import '../core/decks/sha256.dart';
 import '../core/logs/log_entry.dart';
 import '../core/decks/adult_gate.dart';
+import '../core/decks/levels.dart';
 import '../core/models/fact.dart';
+import '../core/models/creator.dart';
+import '../core/models/recommendation.dart';
 import '../core/models/situation.dart';
+import '../core/models/topic.dart';
 import '../core/models/card.dart';
 import '../core/models/deck.dart';
 import '../core/models/number_rules.dart';
@@ -207,9 +215,17 @@ class Catalog {
   Catalog({
     required List<DeckEntry> decks,
     required List<BrokenDeck> broken,
+    List<DeckEntry> hidden = const <DeckEntry>[],
     List<DeckTheme> themes = const <DeckTheme>[],
+    this.sections = DeckSections.empty,
     Map<String, FactsFile> facts = const <String, FactsFile>{},
     Map<String, SituationsFile> situations = const <String, SituationsFile>{},
+    Map<String, TopicsFile> topics = const <String, TopicsFile>{},
+    Map<String, CreatorsFile> creators = const <String, CreatorsFile>{},
+    Map<String, RecommendationsFile> recommendations =
+        const <String, RecommendationsFile>{},
+    List<String> dataProblems = const <String>[],
+    Map<String, Set<String>> scriptFeatures = const <String, Set<String>>{},
     Map<String, NumberRules> numberRules = const <String, NumberRules>{},
     Map<String, CoursePath> paths = const <String, CoursePath>{},
     Map<String, LanguagePath> languagePaths = const <String, LanguagePath>{},
@@ -217,10 +233,18 @@ class Catalog {
     Map<String, Romanisation> romanisations = const <String, Romanisation>{},
     Map<String, ScriptGuide> scriptGuides = const <String, ScriptGuide>{},
   }) : decks = List<DeckEntry>.unmodifiable(decks),
+       hidden = List<DeckEntry>.unmodifiable(hidden),
        broken = List<BrokenDeck>.unmodifiable(broken),
        themes = List<DeckTheme>.unmodifiable(themes),
        facts = Map<String, FactsFile>.unmodifiable(facts),
        situations = Map<String, SituationsFile>.unmodifiable(situations),
+       topics = Map<String, TopicsFile>.unmodifiable(topics),
+       creators = Map<String, CreatorsFile>.unmodifiable(creators),
+       recommendations = Map<String, RecommendationsFile>.unmodifiable(
+         recommendations,
+       ),
+       dataProblems = List<String>.unmodifiable(dataProblems),
+       scriptFeatures = Map<String, Set<String>>.unmodifiable(scriptFeatures),
        numberRules = Map<String, NumberRules>.unmodifiable(numberRules),
        paths = Map<String, CoursePath>.unmodifiable(paths),
        languagePaths = Map<String, LanguagePath>.unmodifiable(languagePaths),
@@ -234,6 +258,28 @@ class Catalog {
   /// Each language's situation sheets (#724), by language code. A language
   /// without a situations file has none.
   final Map<String, SituationsFile> situations;
+
+  /// Each language's topics (deck-kinds plan, D6), by language code. A
+  /// language without a topics file has none.
+  final Map<String, TopicsFile> topics;
+
+  /// Each language's creators (D5), by language code, from the shared
+  /// `decks/creators/<code>.yaml`.
+  final Map<String, CreatorsFile> creators;
+
+  /// Each language's recommended works (D13), by language code, from the
+  /// shared `decks/recommendations/<code>.yaml`.
+  final Map<String, RecommendationsFile> recommendations;
+
+  /// What in the topics, creators and recommendations files could not be read
+  /// and was left out, one line each with its file, for the log.
+  final List<String> dataProblems;
+
+  /// The ids of each language's script guide features (`features[].id`), by
+  /// language code, from the guides and from a guide's core alone: what a
+  /// script topic's `script_units` name. A core with no layer has no
+  /// [ScriptGuide] here but its features are known.
+  final Map<String, Set<String>> scriptFeatures;
 
   /// Each language's rules for spelling a generated number (#54), by
   /// language code. A language without a numbers file has none.
@@ -276,51 +322,121 @@ class Catalog {
   /// catalog when nothing is left out, so that every screen reads one list.
   Catalog forAdult({required bool adult}) {
     var changed = false;
-    final shown = <DeckEntry>[];
-    for (final entry in decks) {
-      final deck = deckForAdult(entry.deck, adult: adult);
-      if (identical(deck, entry.deck)) {
-        shown.add(entry);
-        continue;
+    List<DeckEntry> scoped(List<DeckEntry> entries) {
+      final shown = <DeckEntry>[];
+      for (final entry in entries) {
+        final deck = deckForAdult(entry.deck, adult: adult);
+        if (identical(deck, entry.deck)) {
+          shown.add(entry);
+          continue;
+        }
+        changed = true;
+        if (deck != null) {
+          shown.add(
+            DeckEntry(
+              path: entry.path,
+              deck: deck,
+              bundled: entry.bundled,
+              private: entry.private,
+            ),
+          );
+        }
       }
-      changed = true;
-      if (deck != null) {
-        shown.add(
-          DeckEntry(
-            path: entry.path,
-            deck: deck,
-            bundled: entry.bundled,
-            private: entry.private,
-          ),
-        );
-      }
+      return shown;
     }
+
+    final shown = scoped(decks);
+    final shownHidden = scoped(hidden);
     if (!changed) return this;
-    return Catalog(
-      decks: shown,
-      broken: broken,
-      themes: themes,
-      facts: facts,
-      situations: situations,
-      numberRules: numberRules,
-      paths: paths,
-      languagePaths: languagePaths,
-      sounds: sounds,
-      romanisations: romanisations,
-      scriptGuides: scriptGuides,
-    );
+    return _with(decks: shown, hidden: shownHidden);
   }
+
+  /// This catalog as a learner at the levels [levelOf] gives has it (D2 of the
+  /// deck-kinds plan, [LevelGate]): a deck above the learner's level in its
+  /// language is gone, and so is every card and passage above it in the decks
+  /// that stay. [levelOf] gives a language's level by its code, null for a
+  /// language with no levels, in which no levelled item is offered. The same
+  /// catalog when nothing is above the level, so that every screen reads one
+  /// list.
+  Catalog forLevels(Level? Function(String language) levelOf) {
+    var changed = false;
+    List<DeckEntry> scoped(List<DeckEntry> entries) {
+      final shown = <DeckEntry>[];
+      for (final entry in entries) {
+        final deck = entry.deck.forLevel(levelOf(entry.language.code));
+        if (identical(deck, entry.deck)) {
+          shown.add(entry);
+          continue;
+        }
+        changed = true;
+        if (deck != null) {
+          shown.add(
+            DeckEntry(
+              path: entry.path,
+              deck: deck,
+              bundled: entry.bundled,
+              private: entry.private,
+            ),
+          );
+        }
+      }
+      return shown;
+    }
+
+    final shown = scoped(decks);
+    final shownHidden = scoped(hidden);
+    if (!changed) return this;
+    return _with(decks: shown, hidden: shownHidden);
+  }
+
+  /// This catalog with other [decks] and [hidden], all else the same.
+  Catalog _with({
+    required List<DeckEntry> decks,
+    required List<DeckEntry> hidden,
+  }) => Catalog(
+    decks: decks,
+    broken: broken,
+    hidden: hidden,
+    themes: themes,
+    sections: sections,
+    facts: facts,
+    situations: situations,
+    topics: topics,
+    creators: creators,
+    recommendations: recommendations,
+    dataProblems: dataProblems,
+    scriptFeatures: scriptFeatures,
+    numberRules: numberRules,
+    paths: paths,
+    languagePaths: languagePaths,
+    sounds: sounds,
+    romanisations: romanisations,
+    scriptGuides: scriptGuides,
+  );
 
   /// In file order, which groups them by language directory, except that a
   /// course's decks come in teaching order, so that its new cards do too:
   /// its path's order, or without a path, its theme decks in the order of
-  /// [themes] and then the rest.
+  /// [themes] and then the rest. Never a hidden deck: those are in [hidden]
+  /// (deck-kinds plan, D3), so that the Decks tab, Today, the path,
+  /// placement and the counts, which all read this list, never see one.
   final List<DeckEntry> decks;
+
+  /// The hidden decks on the phone (`hidden: true`): those a learner added
+  /// from a search result, since a hidden deck is downloaded only then. Kept
+  /// apart from [decks]; read only by what a learner chose to add: Today's
+  /// reviews, the deck's own page and the "Added from search" group.
+  final List<DeckEntry> hidden;
 
   final List<BrokenDeck> broken;
 
   /// The shared theme path, from `decks/themes.yaml` (ADR-0010).
   final List<DeckTheme> themes;
+
+  /// The Decks tab's sections, the deck genres, the professions and the
+  /// search kinds, from `decks/sections.yaml` (deck-kinds plan, D8): the file
+  /// downloaded with the decks, else the copy bundled in the app, else none.
+  final DeckSections sections;
 
   /// The theme with [id], or null if the path has none.
   DeckTheme? themeById(String? id) {
@@ -334,12 +450,23 @@ class Catalog {
   CoursePath? pathOf(DeckEntry entry) =>
       paths['${entry.language.code}/${entry.deck.native.code}'];
 
+  /// The deck with [id], one a learner added from a search included.
   DeckEntry? byId(String id) {
     for (final entry in decks) {
       if (entry.id == id) return entry;
     }
+    for (final entry in hidden) {
+      if (entry.id == id) return entry;
+    }
     return null;
   }
+
+  /// What in the decks' kind fields could not be read and was left out, one
+  /// line each with its deck, for the log (hidden decks too).
+  List<String> get kindProblems => <String>[
+    for (final entry in <DeckEntry>[...decks, ...hidden])
+      for (final problem in entry.deck.kindProblems) '${entry.id}: $problem',
+  ];
 
   /// Every target language the decks teach, one per BCP-47 code, in the
   /// order the decks list them.
@@ -666,8 +793,13 @@ class DeckCatalog {
     final decks = <DeckEntry>[];
     final broken = <BrokenDeck>[];
     var themes = const <DeckTheme>[];
+    var sections = DeckSections.empty;
     final facts = <String, FactsFile>{};
     final situations = <String, SituationsFile>{};
+    final topics = <String, TopicsFile>{};
+    final creators = <String, CreatorsFile>{};
+    final recommendations = <String, RecommendationsFile>{};
+    final dataProblems = <String>[];
     final numberRules = <String, NumberRules>{};
     final languagePaths = <String, LanguagePath>{};
     final sounds = <String, SoundContrasts>{};
@@ -891,6 +1023,133 @@ class DeckCatalog {
         }
         continue;
       }
+      // The topics, creators and recommendations files hold no deck (D5, D6,
+      // D13). A file that cannot be read at all is shown as broken; an entry
+      // that cannot costs itself and is named for the log.
+      if (kind == 'topics') {
+        try {
+          final source = path.split('/').last;
+          var file = parseTopics(text, source: source);
+          _requirePrivateLanguage(path, file.languageCode);
+          final code = _privateCode(path);
+          if (code != null) {
+            // A package's topics sit beside the built-in ones, in its own
+            // id namespace (D14, T27).
+            file = TopicsFile(
+              languageCode: file.languageCode,
+              topics: _privateOnly(
+                source,
+                code,
+                file.topics,
+                (t) => t.id,
+                dataProblems,
+              ),
+              problems: file.problems,
+            );
+            final earlier = topics[file.languageCode];
+            if (earlier != null) {
+              file = TopicsFile(
+                languageCode: file.languageCode,
+                topics: <Topic>[...earlier.topics, ...file.topics],
+                problems: <String>[...earlier.problems, ...file.problems],
+              );
+              topics[file.languageCode] = file;
+            }
+          }
+          topics.putIfAbsent(file.languageCode, () => file);
+          dataProblems.addAll(<String>[
+            for (final p in file.problems) '$source: $p',
+          ]);
+        } on DeckParseException catch (e) {
+          broken.add(BrokenDeck(path: path, error: e));
+        }
+        continue;
+      }
+      if (kind == 'creators') {
+        try {
+          final source = path.split('/').last;
+          var file = parseCreators(text, source: source);
+          _requirePrivateLanguage(path, file.languageCode);
+          final code = _privateCode(path);
+          if (code != null) {
+            final earlier = creators[file.languageCode];
+            final own = _privateOnly(
+              source,
+              code,
+              file.creators,
+              (c) => c.id,
+              dataProblems,
+            );
+            file = CreatorsFile(
+              languageCode: file.languageCode,
+              eras: <CreatorEra>[
+                ...?earlier?.eras,
+                for (final era in file.eras)
+                  if (earlier?.eraById(era.id) == null) era,
+              ],
+              creators: <Creator>[...?earlier?.creators, ...own],
+              problems: <String>[...?earlier?.problems, ...file.problems],
+            );
+            creators[file.languageCode] = file;
+          }
+          creators.putIfAbsent(file.languageCode, () => file);
+          dataProblems.addAll(<String>[
+            for (final p in file.problems) '$source: $p',
+          ]);
+        } on DeckParseException catch (e) {
+          broken.add(BrokenDeck(path: path, error: e));
+        }
+        continue;
+      }
+      if (kind == 'recommendations') {
+        try {
+          final source = path.split('/').last;
+          var file = parseRecommendations(text, source: source);
+          _requirePrivateLanguage(path, file.languageCode);
+          final code = _privateCode(path);
+          if (code != null) {
+            final earlier = recommendations[file.languageCode];
+            file = RecommendationsFile(
+              languageCode: file.languageCode,
+              recommendations: <Recommendation>[
+                ...?earlier?.recommendations,
+                ..._privateOnly(
+                  source,
+                  code,
+                  file.recommendations,
+                  (r) => r.id,
+                  dataProblems,
+                ),
+              ],
+              problems: <String>[...?earlier?.problems, ...file.problems],
+            );
+            recommendations[file.languageCode] = file;
+          }
+          recommendations.putIfAbsent(file.languageCode, () => file);
+          dataProblems.addAll(<String>[
+            for (final p in file.problems) '$source: $p',
+          ]);
+        } on DeckParseException catch (e) {
+          broken.add(BrokenDeck(path: path, error: e));
+        }
+        continue;
+      }
+      if (kind == 'sections') {
+        try {
+          if (path.startsWith(privateDeckPrefix)) {
+            // The genres, professions and search kinds are the app's own;
+            // a package uses them and cannot replace them (D14).
+            throw DeckParseException(
+              'a private package cannot have its own sections',
+              source: path.split('/').last,
+            );
+          }
+          sections = parseSections(text, source: path.split('/').last);
+        } on DeckParseException catch (e) {
+          broken.add(BrokenDeck(path: path, error: e));
+        }
+        continue;
+      }
       Deck deck;
       try {
         deck = isLayer(path)
@@ -931,14 +1190,41 @@ class DeckCatalog {
         ),
       );
     }
-    final resolved = _withRules(_withRefs(decks));
+    final everything = _withRules(_withRefs(decks));
+    // A hidden deck is kept out of the path and of every list a learner is
+    // given (D3): it is in [Catalog.hidden] when it is on the phone.
+    final resolved = <DeckEntry>[
+      for (final entry in everything)
+        if (!entry.deck.hidden) entry,
+    ];
+    final added = <DeckEntry>[
+      for (final entry in everything)
+        if (entry.deck.hidden) entry,
+    ];
     final placed = _placed(_coursePaths(languagePaths, resolved), resolved);
+    final scriptFeatures = <String, Set<String>>{};
+    for (final guide in <Object>[
+      ...guideCores.values,
+      ...scriptGuides.values,
+    ]) {
+      if (guide is! ScriptGuide) continue;
+      (scriptFeatures[guide.language] ??= <String>{}).addAll(<String>[
+        for (final feature in guide.features) feature.id,
+      ]);
+    }
     return Catalog(
       decks: _inTeachingOrder(resolved, themes, placed),
+      hidden: added,
       broken: broken,
       themes: themes,
+      sections: sections,
       facts: facts,
       situations: situations,
+      topics: topics,
+      creators: creators,
+      recommendations: recommendations,
+      dataProblems: dataProblems,
+      scriptFeatures: scriptFeatures,
       numberRules: numberRules,
       paths: placed,
       languagePaths: languagePaths,
@@ -976,6 +1262,37 @@ class DeckCatalog {
         source: path.split('/').last,
       );
     }
+  }
+
+  /// The [items] of a private package's data file whose id starts with the
+  /// package's `fnpd-<code>-`; each other is left out and told in [problems],
+  /// so that a package's topic, creator or recommendation never reaches a
+  /// built-in id (D14, T27).
+  static List<T> _privateOnly<T>(
+    String source,
+    String code,
+    Iterable<T> items,
+    String Function(T) idOf,
+    List<String> problems,
+  ) {
+    final kept = <T>[];
+    for (final item in items) {
+      try {
+        final id = idOf(item);
+        if (hasPrivatePrefix(id, code)) {
+          kept.add(item);
+        } else {
+          problems.add(
+            '$source: "$id" must start with ${packageIdFor(code)}-, left out',
+          );
+        }
+      } on Object catch (e) {
+        // parseAll is pure and may run in an isolate: the problem is told in
+        // the catalog's data problems, which the app logs.
+        problems.add('$source: an entry could not be checked ($e)');
+      }
+    }
+    return kept;
   }
 
   /// Refuses a deck of a private package (a file under [privateDeckPrefix])
@@ -1107,8 +1424,11 @@ class DeckCatalog {
       for (final MapEntry(key: course, value: path) in paths.entries)
         course: path.placing(<({String id, String? theme})>[
           for (final e in decks)
+            // A deck with a genre is not a path deck (D7): the wildcard does
+            // not take it, and a path places it only by naming it.
             if ('${e.language.code}/${e.deck.native.code}' == course &&
-                path.unitOf(e.id) == null)
+                path.unitOf(e.id) == null &&
+                e.deck.genre == null)
               (id: e.id, theme: e.deck.theme),
         ], (id) => themeOf[id]),
     };
@@ -1286,6 +1606,14 @@ class DeckCatalog {
               : parseScriptGuide(text, source: source);
         case 'themes':
           parseThemes(text, source: source);
+        case 'sections':
+          parseSections(text, source: source);
+        case 'topics':
+          parseTopics(text, source: source);
+        case 'creators':
+          parseCreators(text, source: source);
+        case 'recommendations':
+          parseRecommendations(text, source: source);
         default:
           if (header.part == 'core') {
             ids.add(DeckParser.parseCore(text, source: source).id);

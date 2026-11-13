@@ -10,26 +10,26 @@ import '../../ui/theme.dart';
 import 'find_level_labels.dart' show FindLevelRecheck;
 import 'find_level_labels.dart' show findLevelSkillName;
 
-/// The word for a confidence (how likely the true level is within a tenth of
-/// the middle of the range): never a probability of "none" and never
-/// "Verified".
-String findLevelConfidenceWord(
-  AppLocalizations l10n,
-  PlacementConfidence confidence,
-) => switch (confidence) {
-  PlacementConfidence.high => l10n.findLevelLabelSure,
-  PlacementConfidence.medium => l10n.findLevelLabelFairlySure,
-  PlacementConfidence.low => l10n.findLevelLabelNotSureYet,
-};
+/// The name of a level (Beginner to Expert).
+String findLevelLevelName(AppLocalizations l10n, V3LevelName level) =>
+    switch (level) {
+      V3LevelName.beginner => l10n.findLevelLevelBeginner,
+      V3LevelName.amateur => l10n.findLevelLevelAmateur,
+      V3LevelName.fluent => l10n.findLevelLevelFluent,
+      V3LevelName.expert => l10n.findLevelLevelExpert,
+    };
 
-/// The headline of a placed skill: "Read: start at unit 14".
+/// "30% to 45% of the path" (or one percent when the range is a point).
+String findLevelPercentText(AppLocalizations l10n, V3PercentRange r) =>
+    r.high <= r.low
+    ? l10n.findLevelPercentOne(r.low)
+    : l10n.findLevelPercentRange(r.low, r.high);
+
+/// The headline of a skill that is not placed: "Say: self-rated, not placed".
 String findLevelResultHeadline(AppLocalizations l10n, V3SkillResult s) {
   final name = findLevelSkillName(l10n, s.skill);
   return switch (s.status) {
-    V3Status.placed =>
-      s.startUnit <= 0
-          ? l10n.findLevelResultStartBeginning(name)
-          : l10n.findLevelResultStart(name, s.startUnit),
+    V3Status.placed => name,
     V3Status.selfRated => l10n.findLevelResultSelfRated(name),
     V3Status.needsScript => l10n.findLevelResultNeedsScript(name),
     V3Status.notTested => l10n.findLevelResultNotTested(name, switch (s.why) {
@@ -42,17 +42,64 @@ String findLevelResultHeadline(AppLocalizations l10n, V3SkillResult s) {
   };
 }
 
-/// "Likely between unit 11 and unit 17" (the 80% range of a placed skill).
-String findLevelResultRange(AppLocalizations l10n, V3SkillResult s) {
-  if (s.highUnit <= s.lowUnit) return l10n.findLevelResultRangeOne(s.lowUnit);
-  if (s.lowUnit <= 0) return l10n.findLevelResultRangeBeginning(s.highUnit);
-  return l10n.findLevelResultRange(s.lowUnit, s.highUnit);
+/// The range of a skill drawn as a bar: its span of the whole path.
+class _RangeBar extends StatelessWidget {
+  const _RangeBar({required this.range});
+
+  final V3PercentRange range;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return ExcludeSemantics(
+      child: LayoutBuilder(
+        builder: (context, box) {
+          final width = box.maxWidth;
+          final start = width * range.low / 100;
+          // A point still shows: the span is never thinner than the bar is
+          // tall.
+          final span = (width * (range.high - range.low) / 100)
+              .clamp(_barHeight, width)
+              .toDouble();
+          return SizedBox(
+            height: _barHeight,
+            child: Stack(
+              children: <Widget>[
+                Positioned.fill(
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      color: scheme.surfaceContainerHighest,
+                      borderRadius: BorderRadius.circular(_barHeight / 2),
+                    ),
+                  ),
+                ),
+                PositionedDirectional(
+                  start: start.clamp(0, width - span).toDouble(),
+                  width: span,
+                  top: 0,
+                  bottom: 0,
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      color: scheme.primary,
+                      borderRadius: BorderRadius.circular(_barHeight / 2),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
+      ),
+    );
+  }
 }
 
-/// The end of a V3 run (wiki/Plan-Placement-V3.md, step 7): per skill a start
-/// unit with the range the run is 80% sure of and a confidence word, or the
-/// reason it was not placed; a way to change a start; and, when Read and
-/// Write wait for the script, why and the way to check again.
+const double _barHeight = 12;
+
+/// The end of a V3 run (wiki/Plan-Placement-V3.md, step 7): per skill a level
+/// name and the range of the whole path the run is 80% sure of, drawn as a
+/// bar, or the reason it was not placed; a way to change a start; and, when
+/// Read and Write wait for the script, why and the way to check again.
 class V3ResultPage extends StatefulWidget {
   const V3ResultPage({
     super.key,
@@ -61,7 +108,12 @@ class V3ResultPage extends StatefulWidget {
     required this.onRestart,
     this.recheck,
     this.failed = false,
+    this.onKeepGoing,
   });
+
+  /// "Keep going" for a sharper answer: given while the run is at its soft
+  /// stop.
+  final VoidCallback? onKeepGoing;
 
   final V3Result result;
 
@@ -183,18 +235,20 @@ class _V3ResultPageState extends State<V3ResultPage> {
             confidence: PlacementConfidence.high,
           );
     final headline = findLevelResultHeadline(l10n, shown);
+    final range = shown.placed ? shown.percentRange(_r.totalUnits) : null;
+    final levelName = range == null
+        ? null
+        : findLevelLevelName(l10n, range.level);
     final lines = <String>[
-      if (shown.placed && changed == null && s.rangeShown)
-        findLevelResultRange(l10n, s),
-      if (shown.placed && changed == null && s.confidence != null)
-        findLevelConfidenceWord(l10n, s.confidence!),
+      if (range != null) findLevelPercentText(l10n, range),
       if (s.status == V3Status.selfRated) l10n.findLevelResultSelfRatedBody,
       if (s.status == V3Status.needsScript) l10n.findLevelResultNeedsScriptBody,
-      if (changed == null &&
-          shown.placed &&
-          s.confidence == PlacementConfidence.low)
-        l10n.findLevelNoteNotSureYet,
     ];
+    // One reading for a screen reader: "Read: Fluent, 37% to 57% of the path".
+    final spoken = <String>[
+      if (levelName == null) headline else '$headline: $levelName',
+      ...lines,
+    ].join(', ');
     return Semantics(
       container: true,
       child: Padding(
@@ -203,17 +257,50 @@ class _V3ResultPageState extends State<V3ResultPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(headline, style: theme.textTheme.titleMedium),
-            for (final line in lines)
-              Padding(
-                padding: const EdgeInsets.only(top: 4),
-                child: Text(
-                  line,
-                  style: theme.textTheme.bodyMedium!.copyWith(
-                    color: scheme.onSurfaceVariant,
+            Semantics(
+              label: spoken,
+              excludeSemantics: true,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: Text(
+                          headline,
+                          style: theme.textTheme.titleMedium,
+                        ),
+                      ),
+                      if (levelName != null)
+                        Text(
+                          levelName,
+                          key: ValueKey<String>(
+                            'find-level-name-${s.skill.name}',
+                          ),
+                          style: theme.textTheme.titleMedium!.copyWith(
+                            color: scheme.primary,
+                          ),
+                        ),
+                    ],
                   ),
-                ),
+                  if (range != null)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8),
+                      child: _RangeBar(range: range),
+                    ),
+                  for (final line in lines)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 4),
+                      child: Text(
+                        line,
+                        style: theme.textTheme.bodyMedium!.copyWith(
+                          color: scheme.onSurfaceVariant,
+                        ),
+                      ),
+                    ),
+                ],
               ),
+            ),
             if (s.placed)
               Align(
                 alignment: AlignmentDirectional.centerStart,
@@ -250,13 +337,6 @@ class _V3ResultPageState extends State<V3ResultPage> {
                       style: theme.textTheme.headlineSmall,
                     ),
                   ),
-                  const SizedBox(height: 8),
-                  Text(
-                    l10n.findLevelResultIntro,
-                    style: theme.textTheme.bodyMedium!.copyWith(
-                      color: theme.colorScheme.onSurfaceVariant,
-                    ),
-                  ),
                   const SizedBox(height: 16),
                   for (final s in _r.skills) _skill(context, s),
                   if (recheck != null)
@@ -271,12 +351,12 @@ class _V3ResultPageState extends State<V3ResultPage> {
                               s.startUnit <= 0
                                   ? l10n.findLevelCompareStart
                                   : l10n.findLevelCompareUnit(s.startUnit),
-                              s.confidence == null
-                                  ? ''
-                                  : findLevelConfidenceWord(
+                              s.placed
+                                  ? findLevelLevelName(
                                       l10n,
-                                      s.confidence!,
-                                    ),
+                                      s.percentRange(_r.totalUnits).level,
+                                    )
+                                  : '',
                             ),
                             style: theme.textTheme.bodyMedium,
                           ),
@@ -305,6 +385,16 @@ class _V3ResultPageState extends State<V3ResultPage> {
                       onPressed: () => widget.onRestart(V3ScriptStart.ask),
                       child: Text(l10n.findLevelCheckLetters),
                     ),
+                  ],
+                  if (widget.onKeepGoing != null) ...<Widget>[
+                    if (_r.needsScript) const SizedBox(height: 8),
+                    OutlinedButton(
+                      key: const ValueKey<String>('find-level-keep-going'),
+                      style: AppButtonStyles.tall(context),
+                      onPressed: widget.onKeepGoing,
+                      child: Text(l10n.findLevelKeepGoing),
+                    ),
+                    const SizedBox(height: 8),
                   ],
                   if (widget.failed)
                     Padding(

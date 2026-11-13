@@ -6,6 +6,7 @@ import '../core/data/log_jsonl.dart';
 import '../core/data/replay_isolate.dart';
 import '../core/data/review_erasure.dart';
 import '../core/data/restore_record.dart';
+import '../core/models/completed_work.dart';
 import '../core/models/drill_mode.dart';
 import '../core/models/leech_action.dart';
 import '../core/models/review_event.dart';
@@ -16,6 +17,7 @@ import '../core/scheduling/replay.dart';
 import '../core/scheduling/fsrs.dart';
 import '../core/scheduling/skill_map.dart';
 import '../core/scheduling/skill_parameters.dart';
+import '../core/private/private_ids.dart';
 
 export '../core/data/restore_record.dart' show RestoreRecord;
 export '../core/data/review_erasure.dart' show ReviewErasure;
@@ -396,7 +398,7 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     // Under the card's language and the deck's, which name the same one
     // (`te-0053`, `te-en-core-100`) but are read by different callers.
     _languageTick[skillOf(key).language] = ++_tick;
-    _languageTick[deckId.split('-').first] = _tick;
+    _languageTick[languageOfId(deckId)] = _tick;
     // A language studied now may become another's baseline: when that
     // changes which set schedules a pair, every state is replayed with the
     // new choice, so that the states are always what the replay gives.
@@ -616,13 +618,19 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
 extension ProgressQueries on ProgressStore {
   /// The review log, leech actions and fitted parameters as a JSONL
   /// backup (#20).
-  String exportJsonl() => LogJsonl.encode(
+  ///
+  /// With [completedWorks], the recommended works marked completed ride along
+  /// as lines of a type an older app skips (deck-kinds plan, D13, T25).
+  String exportJsonl({
+    Iterable<CompletedWork> completedWorks = const <CompletedWork>[],
+  }) => LogJsonl.encode(
     // The credit the learner took back is still in the log: it is left out
     // of the replay, never out of a backup.
     inTimeOrder(<LoggedReview>[...log.map(logged), ...withdrawnReviews]),
     actionsInTimeOrder(leechActions),
     fitted: parameters.fitted,
     withdrawals: withdrawalsInTimeOrder(withdrawals),
+    completedWorks: completedWorks,
   );
 
   /// Every review of every skill, the script skills' (#556) after the

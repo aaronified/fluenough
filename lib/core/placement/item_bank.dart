@@ -201,7 +201,7 @@ class ItemBank {
     'F7',
     'F18',
     'F8',
-    'F16',
+    'F24',
   };
 
   /// What a run can begin with out of [items] (a whole bank, or what the
@@ -230,6 +230,7 @@ class ItemBank {
   static Iterable<_Step> _steps(ItemGenerators g, {bool runtime = false}) {
     List<RegItem>? pseudo;
     List<RegItem>? picks;
+    List<RegItem>? looks;
     List<RegItem> pseudoOf(String format) {
       pseudo ??= g.pseudowords('F1');
       return format == 'F1'
@@ -244,40 +245,77 @@ class ItemBank {
           : <RegItem>[for (final i in picks!) i.withFormat(format)];
     }
 
+    // The look-alike word picks, written (F27) and heard (F26): one item
+    // each, made once.
+    List<RegItem> lookOf(String format) {
+      looks ??= g.lookAlikePicks('F27');
+      return format == 'F27'
+          ? looks!
+          : <RegItem>[for (final i in looks!) i.withFormat(format)];
+    }
+
+    // A format's items, or those of the format it reverses (the English
+    // spoken), made once.
+    final made = <String, List<RegItem>>{};
+    List<RegItem> reverseOf(String format) {
+      final base = baseFormat(format);
+      final items = made[base] ??= switch (base) {
+        'F3' => g.meaningToWord(),
+        'F7' => g.typedOrSaid('F7'),
+        'F8' => g.sentenceTiles('F8'),
+        _ => g.gapTyping(),
+      };
+      return base == format
+          ? items
+          : <RegItem>[for (final i in items) i.withFormat(format)];
+    }
+
     if (runtime) {
       return <_Step>[
         _Step(() => g.wordToMeaning('F2'), starter: true),
         _Step(() => g.wordToMeaning('F13'), starter: true),
-        _Step(() => g.typedOrSaid('F7'), starter: true),
+        _Step(() => reverseOf('F7'), starter: true),
         _Step(() => g.typedOrSaid('F18'), starter: true),
-        _Step(() => g.sentenceTiles('F8'), starter: true),
-        _Step(() => g.sentenceTiles('F16'), starter: true),
-        _Step(g.gapTyping),
-        _Step(g.meaningToWord),
+        _Step(() => reverseOf('F8'), starter: true),
+        _Step(() => reverseOf('F24'), starter: true),
+        _Step(() => lookOf('F27')),
+        _Step(() => lookOf('F26')),
+        _Step(() => reverseOf('F23')),
+        _Step(() => reverseOf('F21')),
+        _Step(() => reverseOf('F25')),
+        _Step(() => reverseOf('F3')),
+        _Step(() => reverseOf('F22')),
         _Step(() => g.yesNoReal('F1')),
         _Step(() => g.yesNoReal('F14')),
         _Step(() => pseudoOf('F1')),
         _Step(() => pseudoOf('F14')),
         _Step(() => picksOf('F5')),
         _Step(() => picksOf('F17')),
+        _Step(g.sentenceFill),
       ];
     }
     return <_Step>[
       _Step(() => g.wordToMeaning('F2')),
       _Step(() => g.wordToMeaning('F13')),
-      _Step(g.meaningToWord),
-      _Step(() => g.typedOrSaid('F7')),
-      _Step(g.gapTyping),
+      _Step(() => lookOf('F27')),
+      _Step(() => lookOf('F26')),
+      _Step(() => reverseOf('F3')),
+      _Step(() => reverseOf('F22')),
+      _Step(() => reverseOf('F7')),
+      _Step(() => reverseOf('F23')),
+      _Step(() => reverseOf('F21')),
+      _Step(() => reverseOf('F25')),
       _Step(() => g.typedOrSaid('F18')),
       _Step(() => g.yesNoReal('F1')),
       _Step(() => g.yesNoReal('F14')),
       _Step(() => pseudoOf('F1')),
       _Step(() => pseudoOf('F14')),
-      _Step(() => g.sentenceTiles('F8')),
-      _Step(() => g.sentenceTiles('F16')),
+      _Step(() => reverseOf('F8')),
+      _Step(() => reverseOf('F24')),
       _Step(g.wordOrder),
       _Step(() => picksOf('F5')),
       _Step(() => picksOf('F17')),
+      _Step(g.sentenceFill),
       _Step(g.cloze),
       _Step(g.genderExceptions),
       _Step(g.matching),

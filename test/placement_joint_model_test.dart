@@ -536,6 +536,11 @@ void main() {
 
   group('calibration', () {
     test('a cognate is unusable in a word format, a clean word is not', () {
+      const twin = GuessCalibration(<String, double>{}, scale: {'F7': 1.25});
+      expect(
+        twin.guessFor('F23', false, 0.15),
+        twin.guessFor('F7', false, 0.15),
+      );
       const cal = GuessCalibration.seed;
       expect(cal.usable('F2', true, 0.25), isFalse);
       expect(cal.usable('F2', false, 0.25), isTrue);
@@ -547,6 +552,10 @@ void main() {
       expect(cal.guessFor('F6endings', false, 0.25), 0.99);
       expect(cal.usable('F6endings', false, 0.25), isFalse);
       expect(cal.usable('F5legacy', true, 0.25), isFalse);
+      // The heard-sentence pick as the adversary found it (options told apart
+      // by shape) is never asked; the one with look-alike options is.
+      expect(cal.usable('F17legacy', false, 0.25), isFalse);
+      expect(cal.usable('F17', false, 0.25), isTrue);
       expect(cal.guessFor('F6hint', true, 0.25), 0.75);
     });
 

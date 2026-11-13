@@ -7,14 +7,51 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **Private language packages.** Install a whole private language from a package folder; it uses the same deck kinds, levels and hidden decks as a public course (first slice, #1017).
+
+## [0.10.0] - 2026-11-13
+
+### Added
+
+- **Search results by type, and topic pages.** The Decks tab's search shows a tab for each kind of result that has any (situations, topics, decks, grammar concepts, words, units, culture and proverbs), the best match first, with a row of its own for each kind, and a typo put right with a way to search exactly what you typed. A professional situation is found only here, marked Professional, with "Add to my courses". What is above your level is listed marked with its level and cannot be started, or left out with the new setting "Hide what is above my level". A topic has its own page with its units, decks and cards, how much of it you know, and "Drill this topic" with a chooser for how many cards and which skills; a unit lists its topics as chips, and a script topic lists its characters. Creators' images download only when shown (#1137, #1139, #1140).
+- **Culture in the course, and recommended works.** A proverb, a line of verse or a passage at your level is woven into the path's units and offered on Today (one a unit by default, a bonus, never above your level), with its source line (author, work, date and why it may be quoted), the person behind it as a card (picture with its credit and licence, or a placeholder; a bio at your level; "Still alive today") and a timeline to today; the whole culture deck lists its items and its people, and Settings gets a Culture page (the switch, items above your level, how many a unit gets, counting toward progress, creator and legacy). Culture recommendations list popular books, films, series, songs, plays and podcasts to find elsewhere, with a briefing, the legal ways to get them and "I've completed this"; the works you completed are on Today, and their questions join your lessons and reviews as reading items while the mark is there, and ride in your backups. Books show only to learners who learn scripts (#1133, #1134, #1135, #1140).
+- `tools/validate_decks.py`: deck tools for deck kinds, levels, hidden decks, sources, creators, topics and recommendations (data only, no app change yet): `tools/validate_decks.py` checks the new deck header fields (`genre`, `level`, `hidden`, `professional`, `section`, `weave`), a card's `source` block with a public-domain floor, and the creators, topics, sections and recommendations files; `tools/deck_index.py` writes `shelves`, per-language `topics`, `shared_media` and the new `shared` files with their `min_app`; `decks/sections.yaml` is the starter list of genres, sections and search kinds (#1133, #1135, #1136, #1137, #1139, #1140).
+- `lib/core/decks/levels.dart`: app core for deck kinds, levels and hidden decks (data side only, no screens yet): a level model (`A1` to `C2`, a learner's level from the furthest path unit they have studied or been placed past), the deck header fields `genre`, `level`, `hidden`, `professional`, `section`, `weave` and `pattern_family` and a card's `level`, `creator`, `source` block and `legacy`, read tolerantly (a bad value is left out and logged, never a broken deck); `decks/sections.yaml` read from the decks-live download with the bundled copy as the fallback; the index's `shelves`, `topics` and `shared_media` read, and a hidden deck downloaded on demand and removed again; a hidden deck is kept out of the Decks tab, Today's new words, the path, placement and the counts, and a learner is never given a deck or card above their level (#1133, #1135, #1136, #1137, #1139, #1140).
+- `lib/core/decks/topic_resolver.dart`: app core for topics, creators, recommendations, search kinds and completed works (data side only, no screens yet): a language's topics file downloads with the language and is read, including script topics with their script units and character lists, and each topic's references (decks, units, cards, grammar concepts, situation sheets, related topics) are resolved, with a drill list that keeps to the learner's level; the shared per-language creators and recommendations files are read (names with readings and IPA, dates, era, bio, legacy, picture credit; briefing, questions, legal route), the timeline is derived from them and runs to today, and a book is recommended only to a learner who learns scripts; the Decks search index finds situations, topics, decks, grammar concepts, units, words, culture, proverbs and multi-word verbs under search kinds that come from `decks/sections.yaml`, marking what is above the learner's level; the recommended works a learner marks completed are kept in the progress database (schema 12) and the backup log (#1133, #1135, #1136, #1137, #1139, #1140).
+- The Telugu on-device AI listener can be installed from the Voices page (not installed, downloading with Cancel, installed with Remove, failed with Try again), downloaded from the `models` release with its SHA-256 checked and resumable; `tools/asr/publish_manifest.py` writes the manifest. The Sources screen credits ONNX Runtime (MIT), AI4Bharat IndicConformer (MIT) and IndicVoices (CC BY 4.0). Telugu only for now (#1004).
+- Find my level has a new cheap question for Hearing and Reading: hear or read a word and pick its meaning among six look-alike options (same length band, same word class, similar form), so a lucky guess is about one in six and a slip is rare; the isolating checks that follow a miss use it (#1097).
+- Find my level asks the reverse too: the English is spoken and shown, and you choose, type or arrange the answer in the language (#1106).
+- On-device listener: engine and preferred-engine wiring (#1004).
+- On-device listener: Kotlin ONNX Runtime channel and Dart runtime interface (#1004).
+- tools/asr: Telugu on-device listener reference tools (#1004).
+- tools/asr: Wiktionary Telugu audio accuracy test (#1004).
+- .github/workflows/asr-export.yml: manual workflow that exports one language's on-device listener pack on a GitHub runner (#1004).
+- On-device listener: end-of-speech detector and PCM recorder (#1004).
+- On-device listener: pure-Dart CTC head and decoder (#1004).
+- On-device listener: pure-Dart log-mel front end (#1004).
+- Find my level asks gap spelling with two or three letters left out as well as one, for most words (#1098).
+- Find my level asks a sentence fill-in: the English sentence, the sentence with a blank, and four words of the same word class; languages without part-of-speech data are left out of it (#1099).
+
+### Changed
+
+- Find my level and reviews make look-alike options: the wrong options of a sentence pick share the right one's length band and about as many words, and a review's wrong options come from the cards that look most like the right one (one length band, same word class, shared tags, nearest spelling), so no surface cue gives the answer away (#1097).
+- In Find my level, hearing a word and picking its meaning now counts for Reading as well as Hearing (#1105).
+- Find my level asks harder questions: more typed letters and same-class sentence fill-ins in place of easy picks, with no threshold loosened (#1100).
+- **Find my level shows its result card at once, and the result is simpler.** The "See my result" pause is gone: the card shows when the check ends (with Keep going on it while a sharper answer is possible). Each skill has a level name (Beginner, Amateur, Fluent or Expert) and the part of the whole language path it covers, drawn as a bar. Refs #1097.
+- Find my level no longer asks "what you heard" (arrange what was said); Hear questions always ask the meaning (#1105).
+- Deck-owned data (the theme list first) now lives on decks-live and updates with the decks, so a new theme needs no app release (owner request). The copy bundled in the app is the fallback for an offline first start and an app that cannot read the new file.
+- CI: test shard weights refreshed so the 8 shards finish together.
+- CI: the heavy placement suites run only when placement changes and nightly (#1004 owner request). `test/heavy_tests.json` lists them; `tools/test_shard.py --exclude-heavy` leaves them out before the 8 shards are balanced.
+
 ### Fixed
 
 - Say works again: recording no longer runs at the same time as online recognition; #1107. The recogniser has the microphone alone, as before 0.9.4, and Hear yourself records a take after the attempt.
-### Added
+- CI: the web smoke test no longer fails when the runner cannot reach the apt mirror (#1102).
 
-- Private decks: install a whole private language from a package (first slice, #1017).
-- tools/asr: Telugu on-device listener reference tools (#1004).
-- On-device listener: pure-Dart log-mel front end (#1004).
+### Fixed
+
+- Say works again: recording no longer runs at the same time as online recognition; #1107. The recogniser has the microphone alone, as before 0.9.4, and Hear yourself records a take after the attempt.
+- CI: the web smoke test no longer fails when the runner cannot reach the apt mirror (#1102).
 
 ## [0.9.5] - 2026-11-10
 

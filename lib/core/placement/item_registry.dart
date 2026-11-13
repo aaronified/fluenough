@@ -62,7 +62,7 @@ class FormatInfo {
   final String notGeneratedBecause;
 
   /// The admission bound of the audit: the design guess plus 0.07 (0.32 for
-  /// a four-option pick).
+  /// a four-option pick, 0.25 for the six-option look-alike pick).
   double get admissionBound => options == 4 ? 0.32 : guess + 0.07;
 }
 
@@ -136,6 +136,20 @@ const List<FormatInfo> kFormatInventory = <FormatInfo>[
     wordLevel: false,
     options: 4,
     leakRisk: 'endings that agree with the sentence; an English hint',
+  ),
+  FormatInfo(
+    'F28',
+    'English sentence and the target sentence with a blank, pick the word '
+        'of the same class',
+    {_read},
+    0.10,
+    0.25,
+    10,
+    wordLevel: false,
+    options: 4,
+    leakRisk:
+        'an option of another word class; an English hint that fits two '
+        'options; endings that agree with the sentence',
   ),
   FormatInfo(
     'F6g',
@@ -224,7 +238,10 @@ const List<FormatInfo> kFormatInventory = <FormatInfo>[
   FormatInfo(
     'F13',
     'Heard word, pick its English meaning',
-    {_hear},
+    // Hear and Read together (a mixed item, so a miss can start a
+    // drill-down that isolates Hear with F17, #1105): knowing the word heard
+    // is also knowing the word.
+    {_hear, _read},
     0.05,
     0.25,
     6,
@@ -256,17 +273,6 @@ const List<FormatInfo> kFormatInventory = <FormatInfo>[
         'the V2 question builder makes pairs from the language\'s sounds file '
         'and audio trust (question_builder.dart); it joins this registry '
         'with the audio screens of step 6',
-  ),
-  FormatInfo(
-    'F16',
-    'Dictation: hear a sentence, build it from tiles',
-    {_hear, _write},
-    0.10,
-    0.05,
-    15,
-    wordLevel: false,
-    needsAudio: true,
-    leakRisk: 'decoy elimination',
   ),
   FormatInfo(
     'F17',
@@ -330,7 +336,88 @@ const List<FormatInfo> kFormatInventory = <FormatInfo>[
     options: 2,
     leakRisk: 'end marks left in the wrong place; bigram plausibility',
   ),
+  FormatInfo(
+    'F26',
+    'Heard word, pick its meaning among six look-alike options',
+    {_hear},
+    0.03,
+    0.18,
+    7,
+    options: 6,
+    needsAudio: true,
+    leakRisk:
+        'cognates heard; the one option unlike the others by length or '
+        'word class (the options are made alike)',
+  ),
+  FormatInfo(
+    'F27',
+    'Written word, pick its meaning among six look-alike options',
+    {_read},
+    0.03,
+    0.18,
+    7,
+    options: 6,
+    leakRisk:
+        'cognates; the one option unlike the others by length or word '
+        'class (the options are made alike)',
+  ),
+  FormatInfo(
+    'F22',
+    'English spoken and shown, pick the written word (reverse of F3)',
+    {_read},
+    0.05,
+    0.25,
+    6,
+    options: 4,
+    leakRisk: 'cognates; spelling cues',
+  ),
+  FormatInfo(
+    'F23',
+    'English spoken and shown, type the word (reverse of F7)',
+    {_write},
+    0.15,
+    0.03,
+    12,
+    leakRisk: 'a spelling-rule guess from an English cognate',
+  ),
+  FormatInfo(
+    'F24',
+    'English sentence spoken and shown, build it from tiles (reverse of F8)',
+    {_write, _read},
+    0.10,
+    0.05,
+    15,
+    wordLevel: false,
+    leakRisk: 'word order from the English; decoy elimination',
+  ),
+  FormatInfo(
+    'F25',
+    'English spoken and shown, and the word with one unit left out, type '
+        'the unit (reverse of F21)',
+    {_write},
+    0.08,
+    0.10,
+    6,
+    leakRisk: 'the letter patterns of the language fill the gap',
+  ),
 ];
+
+/// The reverse formats: the English meaning is spoken by the phone's English
+/// voice (always there) and shown, and the learner answers in the language.
+/// Each asks the items of the format it maps to, with sound, so the audit and
+/// the calibration treat it as that format ([baseFormat]).
+const Map<String, String> kSpokenFormats = <String, String>{
+  'F22': 'F3',
+  'F23': 'F7',
+  'F24': 'F8',
+  'F25': 'F21',
+};
+
+/// The format whose items [format] asks (itself, unless it is a reverse one).
+String baseFormat(String format) => kSpokenFormats[format] ?? format;
+
+/// Whether [format] speaks its English meaning.
+bool isSpokenEnglish(String format) => kSpokenFormats.containsKey(format);
 
 /// The inventory entry for [code].
 FormatInfo formatInfo(String code) =>
@@ -437,6 +524,20 @@ class RegItem {
   /// For a gap-spelling item (F21): the index of the unit left out of
   /// [answerTiles] (the word's units); [accepted] holds the unit to type.
   final int gapIndex;
+
+  /// How many units of [answerTiles] the gap of an F21 item leaves out (one,
+  /// two or three): the units from [gapIndex] on that spell the accepted
+  /// answer.
+  int get gapLength {
+    if (gapIndex < 0 || accepted.isEmpty) return 1;
+    var n = 0;
+    var len = 0;
+    while (len < accepted.first.length && gapIndex + n < answerTiles.length) {
+      len += answerTiles[gapIndex + n].length;
+      n++;
+    }
+    return n < 1 ? 1 : n;
+  }
 
   /// The base lemmas of the item's content words, for the family rule.
   final Set<String> lemmas;

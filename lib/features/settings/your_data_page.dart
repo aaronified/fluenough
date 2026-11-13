@@ -229,7 +229,12 @@ class _BodyState extends State<_Body> {
     final name = 'fluenough-${state.currentProfile.id}-reviews.jsonl';
     final bool saved;
     try {
-      saved = await state.logFiles.save(name, state.progress.exportJsonl());
+      saved = await state.logFiles.save(
+        name,
+        state.progress.exportJsonl(
+          completedWorks: state.recommendationProgress.completed,
+        ),
+      );
     } on Exception catch (e) {
       state.log.warning('Review log not exported: ${e.runtimeType}');
       if (context.mounted) showAppSnackBar(context, l10n.settingsExportFailed);
@@ -291,6 +296,11 @@ class _BodyState extends State<_Body> {
         backup.leechActions,
         fitted: backup.fitted,
         withdrawals: backup.withdrawals,
+      );
+      // The recommended works marked completed ride in the same file; the
+      // ones not marked here are added, none is changed (T25).
+      await state.recommendationProgress.importMarks(
+        LogJsonl.decodeCompletedWorks(text),
       );
     } on FormatException catch (e) {
       state.log.warning('Review log not imported: not a backup');

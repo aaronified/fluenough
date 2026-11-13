@@ -192,7 +192,7 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
     final sample = <RegItem>[
       for (var i = 0; i < all.length; i += stride) all[i],
     ];
-    final fmt = sample.first.format;
+    final fmt = baseFormat(sample.first.format);
     final info = sample.first.info;
     final solvers = <String, double>{};
     var trials = sample.length;
@@ -208,7 +208,17 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
     final rows = <List<List<double>>>[];
     final rowCorrect = <int>[];
     switch (fmt) {
-      case 'F2' || 'F13' || 'F3' || 'F5' || 'F17' || 'F6' || 'S2' || 'F6g':
+      case 'F2' ||
+          'F13' ||
+          'F26' ||
+          'F27' ||
+          'F3' ||
+          'F5' ||
+          'F17' ||
+          'F6' ||
+          'F28' ||
+          'S2' ||
+          'F6g':
         final nOptions = sample.first.options.length;
         solvers['chance'] = sample.length / nOptions;
         for (final it in sample) {
@@ -217,7 +227,12 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
           ];
           final l = expectedBoth(lens, it.correct);
           both('length', l.high, l.low);
-          if (fmt == 'F2' || fmt == 'F13' || fmt == 'F5' || fmt == 'F17') {
+          if (fmt == 'F2' ||
+              fmt == 'F13' ||
+              fmt == 'F26' ||
+              fmt == 'F27' ||
+              fmt == 'F5' ||
+              fmt == 'F17') {
             final promptWords = targetWords(it.promptRoman ?? it.prompt);
             final sim = <double>[
               for (final o in it.options)
@@ -279,7 +294,7 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
               for (var i = 0; i < known.length; i++) known[i] + 0.01 * sim[i],
             ], it.correct);
             both('known+similarity', comb.high, comb.low);
-          } else if (fmt == 'F6') {
+          } else if (fmt == 'F6' || fmt == 'F28') {
             final scores = <double>[
               for (final o in it.options)
                 knownGloss.contains(o.toLowerCase()) ? 1.0 : 0.0,
@@ -314,6 +329,29 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
                 ngramScore(fill(o), 3, suffixGrams3, ownS3, suffixOf),
             ], it.correct);
             both('context-ending-triples', cs3.high, cs3.low);
+            if (fmt == 'F28') {
+              // The options of one word class: a solver that picks the one
+              // option whose class stands alone (it has a chance share where
+              // all share a class).
+              final cls = <String>[
+                for (final o in it.options)
+                  <String>{
+                    for (final v in cx.vocab)
+                      if (v.word.toLowerCase() == o.toLowerCase()) v.pos,
+                  }.join('/'),
+              ];
+              final lone = <int>[
+                for (var k = 0; k < cls.length; k++)
+                  if (cls.where((c) => c == cls[k]).length == 1) k,
+              ];
+              both(
+                'class-odd-one-out',
+                lone.length == 1
+                    ? (lone.first == it.correct ? 1 : 0)
+                    : 1 / cls.length,
+                0,
+              );
+            }
           } else if (fmt == 'S2') {
             final truth = targetWords(it.options[it.correct]);
             List<String> words(String o) =>
@@ -500,7 +538,7 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
         solvers[r.$2] = r.$1;
         aucN1 = r.$3;
         aucN2 = r.$4;
-      case 'F8' || 'F16':
+      case 'F8':
         var total = 0.0;
         for (final it in sample) {
           total += _sentenceTiles(it, wordGrams2, suffixGrams2);
@@ -567,7 +605,7 @@ double _bound(String fmt, FormatInfo info) {
       return 0.57;
     case 'F4':
       return 0.10 + 0.07;
-    case 'F8' || 'F16':
+    case 'F8':
       return 0.05 + 0.07;
     default:
       return info.admissionBound;

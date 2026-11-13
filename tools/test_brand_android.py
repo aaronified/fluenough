@@ -357,6 +357,89 @@ class ApplyTest(unittest.TestCase):
         self.assertEqual(self.kotlin().count("private fun listenWithAudio"), 1)
         self.assertEqual(self.kotlin().count("import android.speech.SpeechRecognizer"), 1)
 
+    def _the_on_device_listener_runtime_is_added_once(self) -> None:
+        # #1004: onnxruntime-android pinned, minSdk 24, the keep rule,
+        # AsrChannel.kt and its one registering line, in a new and an
+        # earlier activity; running again changes nothing.
+        brand_android.apply(self.root)
+        gradle = self.gradle.read_text(encoding="utf-8")
+        lib = "com.microsoft.onnxruntime:onnxruntime-android:1.31.1"
+        self.assertEqual(gradle.count(f'implementation("{lib}")'), 1)
+        self.assertEqual(gradle.count("coreLibraryDesugaring("), 1)
+        self.assertNotRegex(lib, r"[\[\]+]|latest")
+        k = self.kotlin()
+        register = "AsrChannel.register(flutterEngine.dartExecutor.binaryMessenger)"
+        self.assertEqual(k.count(register), 1)
+        self.assertLess(
+            k.index("super.configureFlutterEngine(flutterEngine)"), k.index(register)
+        )
+        rules = (self.root / brand_android.PROGUARD_RULES).read_text(encoding="utf-8")
+        self.assertEqual(rules.count("-keep class ai.onnxruntime.** { *; }"), 1)
+        channel = (self.root / brand_android.ASR_FILE).read_text(encoding="utf-8")
+        self.assertIn("package app.fluenough", channel)
+        self.assertIn('MethodChannel(messenger, "app.fluenough/asr")', channel)
+        for method in ('"load" ->', '"run" ->', '"close" ->'):
+            self.assertIn(method, channel)
+        # Names from the session's metadata, never hard-coded.
+        self.assertIn("opened.inputInfo", channel)
+        self.assertIn("opened.outputInfo", channel)
+        self.assertNotIn('"audio_signal"', channel)
+        self.assertNotIn('"features"]', channel)
+        # Off the main thread, answered on it, one thread so run never meets close.
+        self.assertIn("Executors.newSingleThreadExecutor", channel)
+        self.assertIn("main.post", channel)
+        for code in ("no_model", "load_failed", "run_failed", "out_of_memory"):
+            self.assertIn(f'"{code}"', channel)
+        self.assertIn("catch (e: OutOfMemoryError)", channel)
+        self.assertIn("ByteOrder.LITTLE_ENDIAN", channel)
+        self.assertIn("tensor.close()", channel)
+        # An int32 length is a buffer of one int, not two.
+        self.assertIn("allocateDirect(4).order(ByteOrder.nativeOrder()).asIntBuffer()", channel)
+        self.assertIn("allocateDirect(8).order(ByteOrder.nativeOrder()).asLongBuffer()", channel)
+        # One process-wide channel, so a recreated engine leaks nothing.
+        self.assertEqual(channel.count("AsrChannel()"), 1)
+        self.assertIn("private val shared = AsrChannel()", channel)
+        self.assertIn("setMethodCallHandler(shared::handle)", channel)
+        self.assertIn("opened?.close()", channel)
+        files = (
+            self.gradle,
+            self.activity,
+            self.root / brand_android.PROGUARD_RULES,
+            self.root / brand_android.ASR_FILE,
+        )
+        once = [f.read_text(encoding="utf-8") for f in files]
+        self.activity.write_text(self.earlier_activity(), encoding="utf-8")
+        brand_android.apply(self.root)
+        brand_android.apply(self.root)
+        self.assertEqual(self.kotlin().count(register), 1)
+        upgraded = self.kotlin()
+        brand_android.apply(self.root)
+        self.assertEqual(self.kotlin(), upgraded)
+        self.assertEqual(self.gradle.read_text(encoding="utf-8"), once[0])
+        self.assertEqual(files[2].read_text(encoding="utf-8"), once[2])
+        self.assertEqual(files[3].read_text(encoding="utf-8"), once[3])
+
+    def _the_minimum_sdk_is_raised_only_when_below_what_onnx_runtime_needs(self) -> None:
+        raised = brand_android.min_sdk
+        flutter = "        minSdk = flutter.minSdkVersion\n"
+        text = raised(flutter)
+        self.assertEqual(
+            text, "        minSdk = maxOf(flutter.minSdkVersion, 24)\n"
+        )
+        self.assertEqual(raised(text), text)
+        self.assertEqual(raised("minSdk = 21\n"), "minSdk = 24\n")
+        self.assertEqual(raised("minSdk = 26\n"), "minSdk = 26\n")
+        self.assertEqual(raised("no sdk here\n"), "no sdk here\n")
+        # An existing keep file keeps its own rules.
+        self.assertEqual(
+            brand_android.proguard("-dontwarn x.**\n").count("-dontwarn x.**"), 1
+        )
+        self.assertIn("-keep class ai.onnxruntime.**", brand_android.proguard("-dontwarn x.**\n"))
+
+    def _an_activity_without_the_engine_hook_is_an_error(self) -> None:
+        with self.assertRaises(brand_android.BrandError):
+            brand_android.asr("class MainActivity : FlutterActivity() {}")
+
     def _the_installer_is_visible_and_not_gated_on_resolve_activity(self) -> None:
         # #487: on Android 11+ the package installer is hidden from
         # resolveActivity without this <queries> entry.
@@ -423,6 +506,9 @@ class ApplyTest(unittest.TestCase):
             self._the_wallpaper_colour_is_read_on_android_12_and_later_only,
             self._say_can_listen_and_keep_the_voice_through_the_audio_source_extra,
             self._the_installer_is_visible_and_not_gated_on_resolve_activity,
+            self._the_on_device_listener_runtime_is_added_once,
+            self._the_minimum_sdk_is_raised_only_when_below_what_onnx_runtime_needs,
+            self._an_activity_without_the_engine_hook_is_an_error,
         )
         for case in cases:
             with self.subTest(case.__name__.lstrip("_")):

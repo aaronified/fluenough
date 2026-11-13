@@ -26,7 +26,7 @@ try:
 except ImportError:  # CI installs it; a contributor machine may not have it
     np = None
 
-from . import ctc, eval_wer, export_pack, golden, nemo_ckpt, np_features, transcribe
+from . import ctc, eval_wer, export_pack, fetch_wiktionary_audio, golden, nemo_ckpt, np_features, publish_manifest, transcribe
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.normpath(os.path.join(HERE, "..", ".."))
@@ -350,6 +350,147 @@ class ScoreTest(unittest.TestCase):
     def test_all_wrong_is_a_hundred_percent(self):
         we, wn, _, _ = eval_wer.score("a b", "")
         self.assertEqual((we, wn), (2, 2))
+
+
+class FetchWiktionaryAudioTest(unittest.TestCase):
+    F = fetch_wiktionary_audio
+
+    def test_title_to_word(self):
+        w = self.F.word_from_title
+        self.assertEqual(w("File:Te-తెలుగు.ogg"), "తెలుగు")
+        self.assertEqual(w("File:LL-Q8097 (tel)-Speaker One-నీరు.wav"), "నీరు")
+        self.assertEqual(w("File:Te-water.ogg"), None)
+        self.assertEqual(w("File:Telugu 12.ogg"), None)
+        self.assertEqual(w("File:Te-అమ్మ_నాన్న.ogg"), "అమ్మ నాన్న")
+
+    def page(self, title, url="https://upload.wikimedia.org/x"):
+        return {"title": title, "imageinfo": [{"url": url, "user": "u", "descriptionurl": "d",
+                "extmetadata": {"Artist": {"value": "<a href='x'>Ann &amp; Bob</a>"},
+                                "LicenseShortName": {"value": "CC BY-SA 4.0"},
+                                "LicenseUrl": {"value": "https://cc"}}}]}
+
+    def test_select_filters_and_dedupes(self):
+        pages = [self.page("File:Te-నీరు.ogg"), self.page("File:LL-Q8097 (tel)-S-నీరు.wav"),
+                 self.page("File:Te-water.ogg"), self.page("File:Te-అమ్మ.png"),
+                 self.page("File:Te-ఇల్లు.ogg", url=""), self.page("File:Te-ఇల్లు.ogg"),
+                 self.page("File:Te-కారు.ogg")]
+        with self.assertLogs("asr.fetch_wiktionary_audio", level="INFO"):
+            got = self.F.select(pages, 10)
+        self.assertEqual(sorted(w for _, w in got), ["ఇల్లు", "కారు", "నీరు"])
+        self.assertEqual(len(self.F.select(pages, 1)), 1)
+
+    def test_manifest_entry(self):
+        e = self.F.manifest_entry(self.page("File:Te-నీరు.ogg"), "నీరు", "w001.wav")
+        self.assertEqual(e["author"], "Ann & Bob")
+        self.assertEqual((e["license"], e["file"], e["word"]), ("CC BY-SA 4.0", "w001.wav", "నీరు"))
+
+    def test_client_backs_off_and_respects_budget(self):
+        sleeps, calls = [], []
+
+        class Resp:
+            def __enter__(s): return s
+            def __exit__(s, *a): return False
+            def read(s): return b"ok"
+
+        def opener(req, timeout):
+            calls.append(req.get_header("User-agent"))
+            if len(calls) < 3:
+                raise self.F.urllib.error.HTTPError(req.full_url, 429, "slow", {}, None)
+            return Resp()
+
+        c = self.F.Client(max_requests=10, pause=0.1, opener=opener, sleep=sleeps.append)
+        with self.assertLogs("asr.fetch_wiktionary_audio", level="WARNING"):
+            self.assertEqual(c.fetch("https://x/y"), b"ok")
+        self.assertIn("fluenough-asr-eval", calls[0])
+        self.assertEqual(sleeps[:2], [2.0, 4.0])
+        self.assertGreaterEqual(sleeps[-1], 1.0)
+        c2 = self.F.Client(max_requests=1, opener=opener, sleep=lambda s: None)
+        c2.requests = 1
+        with self.assertLogs("asr.fetch_wiktionary_audio", level="ERROR"):
+            self.assertIsNone(c2.fetch("https://x/y"))
+
+    def test_run_writes_pairs_and_manifest(self):
+        pages = [self.page("File:Te-నీరు.ogg"), self.page("File:Te-water.ogg")]
+        answers = {}
+
+        class Stub(self.F.Client):
+            def api(s, params):
+                if params.get("list") == "categorymembers":
+                    return {"query": {"categorymembers": []}}
+                return {"query": {"pages": pages}}
+
+            def fetch(s, url, timeout=60, attempts=5):
+                s.requests += 1
+                return b"audio"
+
+        def fake_convert(src, dst):
+            with open(dst, "wb") as f:
+                f.write(b"wav")
+            return True
+
+        with tempfile.TemporaryDirectory() as d:
+            with self.assertLogs("asr.fetch_wiktionary_audio", level="INFO"):
+                entries = self.F.run(d, 5, ["Category:Test"], Stub(), fake_convert)
+            self.assertEqual(len(entries), 1)
+            with open(os.path.join(d, "w001.txt"), encoding="utf-8") as f:
+                self.assertEqual(f.read().strip(), "నీరు")
+            with open(os.path.join(d, "manifest.json"), encoding="utf-8") as f:
+                self.assertEqual(json.load(f)["files"][0]["license"], "CC BY-SA 4.0")
+            self.assertFalse(os.path.exists(os.path.join(d, "w001.src")))
+
+
+class PublishManifestTest(unittest.TestCase):
+    def make_pack(self, d, code="te"):
+        os.makedirs(d)
+        for name, data in ((publish_manifest.ENCODER, b"enc" * 10), (f"head_{code}.f32", b"h" * 8),
+                           (f"head_{code}.json", b"{}")):
+            with open(os.path.join(d, name), "wb") as f:
+                f.write(data)
+
+    def test_entry_has_sizes_hashes_and_release_urls(self):
+        import hashlib
+        with tempfile.TemporaryDirectory() as t:
+            self.make_pack(os.path.join(t, "te"))
+            manifest, uploads = publish_manifest.build([os.path.join(t, "te")])
+        self.assertEqual(manifest["packVersion"], 1)
+        (lang,) = manifest["languages"]
+        self.assertEqual(lang["code"], "te")
+        by = {f["name"]: f for f in lang["files"]}
+        self.assertEqual(by["encoder.int8.onnx"]["kind"], "encoder")
+        self.assertEqual(by["encoder.int8.onnx"]["bytes"], 30)
+        self.assertEqual(by["encoder.int8.onnx"]["sha256"], hashlib.sha256(b"enc" * 10).hexdigest())
+        self.assertEqual(by["encoder.int8.onnx"]["url"], publish_manifest.BASE_URL + "/te-encoder.int8.onnx")
+        self.assertEqual(by["head_te.f32"]["url"], publish_manifest.BASE_URL + "/head_te.f32")
+        self.assertEqual(by["head_te.json"]["kind"], "head")
+        self.assertEqual([a for _, a in uploads], ["te-encoder.int8.onnx", "head_te.f32", "head_te.json"])
+
+    def test_two_languages_are_sorted_and_duplicates_refused(self):
+        with tempfile.TemporaryDirectory() as t:
+            self.make_pack(os.path.join(t, "b"), "bn")
+            self.make_pack(os.path.join(t, "a"), "te")
+            manifest, _ = publish_manifest.build([os.path.join(t, "b"), os.path.join(t, "a")])
+            self.assertEqual([l["code"] for l in manifest["languages"]], ["bn", "te"])
+            with self.assertRaises(ValueError):
+                publish_manifest.build([os.path.join(t, "a"), os.path.join(t, "a")])
+
+    def test_missing_file_is_an_error_and_main_logs_it(self):
+        with tempfile.TemporaryDirectory() as t:
+            self.make_pack(os.path.join(t, "te"))
+            os.remove(os.path.join(t, "te", "head_te.json"))
+            with self.assertRaises(ValueError):
+                publish_manifest.build([os.path.join(t, "te")])
+            with self.assertLogs("asr.publish_manifest", level="ERROR"):
+                self.assertEqual(publish_manifest.main([os.path.join(t, "te"), "--out", os.path.join(t, "m.json")]), 1)
+
+    def test_main_writes_manifest_and_stages_assets(self):
+        with tempfile.TemporaryDirectory() as t:
+            self.make_pack(os.path.join(t, "te"))
+            out, stage = os.path.join(t, "m.json"), os.path.join(t, "stage")
+            with self.assertLogs("asr.publish_manifest", level="INFO"):
+                self.assertEqual(publish_manifest.main([os.path.join(t, "te"), "--out", out, "--stage", stage]), 0)
+            with open(out, encoding="utf-8") as f:
+                self.assertEqual(json.load(f)["languages"][0]["code"], "te")
+            self.assertEqual(sorted(os.listdir(stage)), ["head_te.f32", "head_te.json", "te-encoder.int8.onnx"])
 
 
 if __name__ == "__main__":

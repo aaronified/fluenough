@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 
 import '../core/backup/app_backup.dart';
 import '../core/data/database.dart';
+import '../core/models/completed_work.dart';
 import 'app_info.dart';
 import 'app_log.dart';
 import 'backup_files.dart';
@@ -32,6 +33,8 @@ class Backups extends ChangeNotifier {
     required this._log,
     this._languagesOnPhone = _noLanguages,
     this._restored = _nothing,
+    this._completedWorks = _noWorks,
+    this._restoreMarks = _keepMarks,
     this.appVersion = AppInfo.version,
   });
 
@@ -52,6 +55,12 @@ class Backups extends ChangeNotifier {
   final Set<String> Function() _languagesOnPhone;
   final void Function(List<String> languages) _restored;
 
+  /// The recommended works marked completed, for a backup to carry as lines of
+  /// its log (deck-kinds plan, D13, T25), and what a restore does with the
+  /// marks of the backup it restores.
+  final List<CompletedWork> Function() _completedWorks;
+  final Future<void> Function(List<CompletedWork> works) _restoreMarks;
+
   /// This build's version, which a backup records.
   final String appVersion;
 
@@ -59,6 +68,8 @@ class Backups extends ChangeNotifier {
 
   static Set<String> _noLanguages() => const <String>{};
   static void _nothing(List<String> _) {}
+  static List<CompletedWork> _noWorks() => const <CompletedWork>[];
+  static Future<void> _keepMarks(List<CompletedWork> _) async {}
 
   /// The backups kept on the phone, newest first. Empty until [load].
   List<StoredBackup> get recent => _recent;
@@ -74,7 +85,7 @@ class Backups extends ChangeNotifier {
     appVersion: appVersion,
     schemaVersion: AppDatabase.currentSchemaVersion,
     createdAt: _clock(),
-    log: progress.exportJsonl(),
+    log: progress.exportJsonl(completedWorks: _completedWorks()),
     settings: settings.toStored(),
     downloads: (_languagesOnPhone().toList()..sort()),
     kind: kind,
@@ -173,6 +184,13 @@ class Backups extends ChangeNotifier {
         keptCopy: copy.id,
       ),
     );
+    // The marks of completed works are not part of the append-only log: the
+    // restore makes them those of the backup, which an older one lacks.
+    try {
+      await _restoreMarks(backup.completedWorks);
+    } on Object catch (e) {
+      _log.warning('Completed works not restored: ${e.runtimeType}');
+    }
     final defaults = SettingsNotifier();
     final stored = <String, String>{...defaults.toStored(), ...backup.settings};
     defaults.dispose();

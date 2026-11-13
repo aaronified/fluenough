@@ -1,0 +1,30 @@
+# The fixture language's topics: a script topic (a feature of the script
+# guide and a list of characters), a verbs topic over a deck and a card, and a
+# profession topic over a hidden deck.
+schema: 1
+kind: "topics"
+id: "zz-topics"
+language: "zz"
+license: "CC-BY-SA-4.0"
+topics:
+  - id: "zz-juktakkhor"
+    name: { en: "Conjunct letters" }
+    summary: { en: "Letters that join two consonants into one shape." }
+    term: { text: "যুক্তাক্ষর", reading: "juktakkhor" }
+    kind: "script"
+    level: "A1"
+    script_units: ["conjuncts", "r-forms"]
+    chars: ["ক্ষ", "জ্ঞ", "ক্ত", "ন্দ", "স্ত"]
+  - id: "zz-reflexive-verbs"
+    name: { en: "Reflexive verbs" }
+    kind: "verbs"
+    level: "A2"
+    decks: ["zz-multiword-ejemplo"]
+    cards: ["zz-9501"]
+    units: ["zz-words"]
+    topics: ["zz-juktakkhor"]
+  - id: "zz-conference"
+    name: { en: "At a conference" }
+    kind: "profession"
+    level: "B1"
+    decks: ["zz-medicine-registro"]

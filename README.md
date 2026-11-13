@@ -148,7 +148,7 @@ below is written from `decks/index.json` each time the decks change.
 | Interslavic | Constructed | Slavic | Latin, Cyrillic | in progress |
 | Irish | Indo-European | Celtic | Latin | in progress |
 | Italian | Indo-European | Romance | Latin | in progress |
-| Japanese | Japonic | — | Kana, Kanji | in progress |
+| Japanese | Japonic | — | Kana, Kanji | A1 |
 | Kannada | Dravidian | South | Kannada | B1 |
 | Koine Greek | Indo-European | Hellenic | Greek | in progress |
 | Korean | Koreanic | — | Hangul | in progress |

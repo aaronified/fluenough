@@ -26,6 +26,12 @@ import 'placement_questions.dart';
 //
 // Pure Dart.
 
+/// The range the starting log-odds of an implicated skill are held to (see
+/// `DrillDown._priorLogOdds`): -1.5 is about 18% likely to have failed, 1.0
+/// about 73%.
+const double kPriorLogOddsMin = -1.5;
+const double kPriorLogOddsMax = 1.0;
+
 /// Why a drill-down started.
 enum DrillTrigger { mixedWrong, luckyRight, uncertain }
 
@@ -54,16 +60,47 @@ enum DrillEnd {
 class DrillConfig {
   const DrillConfig({
     this.enabled = true,
-    this.maxCases = 2,
+    this.maxCases = 1,
     this.maxIsolating = 4,
     this.perSkill = 2,
     this.surprise = 0.0,
     this.implicate = 0.25,
     this.lucky = 0.2,
     this.identify = 0.8,
-    this.wideClasses = 8,
+    this.wideClasses = 9,
     this.stopAfterSeconds = 150,
+    this.allFailedPerSkill = 2,
+    this.fallbackTop = 0.4,
+    this.fallbackGap = 0.1,
+    this.adaptive = false,
+    this.singleMax = 4,
+    this.laterMax = 4,
+    this.powerScore = true,
   });
+
+  /// The most isolating items of the second drill-down of a run.
+  final int laterMax;
+
+  /// Whether the picker chooses an isolating item by the evidence its answers
+  /// carry per second (a cheap, hard-to-guess item first) instead of the
+  /// chance-weighted information.
+  final bool powerScore;
+
+  /// Isolating items each implicated skill needs before the case may end as
+  /// [DrillEnd.allFailed] (a first wrong answer may be a slip).
+  final int allFailedPerSkill;
+
+  /// What the verdict of a case that ended on budget needs: the likeliest
+  /// skill at least this likely to have failed, and this far ahead.
+  final double fallbackTop;
+  final double fallbackGap;
+
+  /// Whether the items beyond one per skill go to the skill the answers leave
+  /// the most undecided, up to [maxIsolating] less one for each other skill.
+  final bool adaptive;
+
+  /// The most isolating items of a case with one implicated skill.
+  final int singleMax;
 
   final bool enabled;
 
@@ -91,7 +128,8 @@ class DrillConfig {
   final double identify;
 
   /// An interval wider than this many classes starts a drill-down (the plan
-  /// says 6; 8 keeps the amateur-declared cells inside the time gate).
+  /// says 6; 9 keeps the amateur-declared cells inside the item gate now that
+  /// Hear can be isolated in Hindustani too).
   final int wideClasses;
 
   /// No drill-down starts after this many seconds of the run.
@@ -100,7 +138,14 @@ class DrillConfig {
 
 /// One drill-down.
 class DrillCase {
-  DrillCase(this.trigger, this.skills, this.deck);
+  DrillCase(
+    this.trigger,
+    this.skills,
+    this.deck, {
+    this.config = const DrillConfig(),
+  });
+
+  final DrillConfig config;
 
   final DrillTrigger trigger;
 
@@ -116,6 +161,10 @@ class DrillCase {
   /// (a learner is usually at one level in every skill), which is the very
   /// thing the isolating items are asked to see past.
   final Map<PlacementSkill, double> logOdds = <PlacementSkill, double>{};
+
+  /// What each isolating item was, in order (`F26+`: a right answer to an
+  /// F26), for the tests' reports.
+  final List<String> trail = <String>[];
 
   /// The isolating items asked, per skill.
   final Map<PlacementSkill, int> asked = <PlacementSkill, int>{};
@@ -151,7 +200,9 @@ class DrillCase {
         next = e.value;
       }
     }
-    return top >= 0.4 && top - next >= 0.1 ? best : null;
+    return top >= config.fallbackTop && top - next >= config.fallbackGap
+        ? best
+        : null;
   }
 
   /// The isolating items asked.
@@ -215,8 +266,9 @@ class DrillDown {
     DrillTrigger t,
     List<PlacementSkill> skills,
     int deck,
-    int band,
-  ) {
+    int band, {
+    Map<PlacementSkill, double> preKnown = const <PlacementSkill, double>{},
+  }) {
     final fresh = <PlacementSkill>[
       for (final s in skills)
         if (!_done.contains(_key(s, band))) s,
@@ -226,13 +278,26 @@ class DrillDown {
       _done.add(_key(s, band));
     }
     fresh.sort((a, b) => _fail(b, deck).compareTo(_fail(a, deck)));
-    final c = DrillCase(t, fresh, deck);
+    final c = DrillCase(t, fresh, deck, config: config);
     for (final k in fresh) {
-      c.logOdds[k] = 0;
+      c.logOdds[k] = _priorLogOdds(preKnown[k]);
     }
     cases.add(c);
     active = c;
     return c;
+  }
+
+  /// Where the isolating answers of a skill start: the log-odds that it fails
+  /// the level, from the chance the posterior gave BEFORE the item that
+  /// started the case that it knows it ([preKnown]; even odds when not
+  /// known), held to a mild range so that the isolating answers still decide.
+  /// A skill the learner had already shown to know the level (a slip on the
+  /// mixed item) needs more than one wrong answer to be named; one the
+  /// posterior doubted needs less.
+  static double _priorLogOdds(double? preKnown) {
+    if (preKnown == null) return 0;
+    final p = preKnown.clamp(0.02, 0.98);
+    return math.log((1 - p) / p).clamp(kPriorLogOddsMin, kPriorLogOddsMax);
   }
 
   /// An item of [skills] at [deck] (in [band]) was answered. [preKnown] is,
@@ -261,7 +326,13 @@ class DrillDown {
           if (_fail(s, deck) >= config.implicate) s,
       ];
       if (implicated.isNotEmpty) {
-        return _start(DrillTrigger.mixedWrong, implicated, deck, band);
+        return _start(
+          DrillTrigger.mixedWrong,
+          implicated,
+          deck,
+          band,
+          preKnown: preKnown,
+        );
       }
     }
     if (right) {
@@ -270,7 +341,13 @@ class DrillDown {
           if ((preKnown[s] ?? 1) < config.lucky) s,
       ];
       if (lucky.isNotEmpty) {
-        return _start(DrillTrigger.luckyRight, lucky, deck, band);
+        return _start(
+          DrillTrigger.luckyRight,
+          lucky,
+          deck,
+          band,
+          preKnown: preKnown,
+        );
       }
     }
     return null;
@@ -342,7 +419,7 @@ class DrillDown {
   PlacementSkill? next() {
     final c = active;
     if (c == null) return null;
-    if (c.isolating >= config.maxIsolating) {
+    if (c.isolating >= _cap(c)) {
       _close(c, DrillEnd.budget);
       return null;
     }
@@ -350,7 +427,9 @@ class DrillDown {
       for (final s in c.skills)
         if ((c.asked[s] ?? 0) <
                 (c.skills.length == 1
-                    ? config.maxIsolating
+                    ? config.singleMax
+                    : config.adaptive
+                    ? config.maxIsolating - (c.skills.length - 1)
                     : config.perSkill) &&
             !c.spent.contains(s))
           s,
@@ -391,6 +470,12 @@ class DrillDown {
     return open.first;
   }
 
+  /// The most isolating items of [c]: the later drill-downs of a run may get
+  /// fewer.
+  int _cap(DrillCase c) => cases.indexOf(c) >= 1
+      ? math.min(config.maxIsolating, config.laterMax)
+      : config.maxIsolating;
+
   /// The picker found no isolating item for [skill].
   void noCandidate(PlacementSkill skill) => active?.spent.add(skill);
 
@@ -400,9 +485,11 @@ class DrillDown {
     required bool right,
     required double slip,
     required double guess,
+    String label = '',
   }) {
     final c = active;
     if (c == null) return;
+    c.trail.add('${skill.name}:$label${right ? '+' : '-'}');
     c.asked[skill] = (c.asked[skill] ?? 0) + 1;
     // Likelihood ratio of "failed" against "knows".
     final g = guess.clamp(0.01, 0.99);
@@ -416,9 +503,13 @@ class DrillDown {
       _close(c, DrillEnd.identified);
     } else if (c.skills.length > 1 &&
         c.isolating >= 3 &&
-        c.skills.every((s) => (c.asked[s] ?? 0) >= 1 && _failOf(c, s) >= 0.9)) {
+        c.skills.every(
+          (s) =>
+              (c.asked[s] ?? 0) >= config.allFailedPerSkill &&
+              _failOf(c, s) >= 0.9,
+        )) {
       _close(c, DrillEnd.allFailed);
-    } else if (c.isolating >= config.maxIsolating) {
+    } else if (c.isolating >= _cap(c)) {
       _close(c, DrillEnd.budget);
     }
   }

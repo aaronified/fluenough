@@ -8,6 +8,7 @@ import '../core/decks/deck_fetch.dart';
 import '../core/decks/deck_index.dart';
 import '../core/decks/language_resources.dart';
 import '../core/decks/sha256.dart';
+import '../core/decks/shared_data.dart';
 import '../core/review/review_queue.dart';
 import 'app_info.dart';
 import 'app_log.dart';
@@ -275,6 +276,106 @@ class DeckDownloads extends ChangeNotifier {
   }
 
   // ---------------------------------------------------------------------------
+  // Deck-owned data (owner, 2026-11-11)
+
+  /// The deck-owned files on the phone, by path (`decks/themes.yaml`): each
+  /// was downloaded, matched the index's hash and passed [checkSharedText]
+  /// before it was kept, and is checked again when read from the phone.
+  final Map<String, String> _shared = <String, String>{};
+
+  /// The text of each deck-owned file on the phone. A file not here is
+  /// read from the app's own bundled copy, which is also what an offline
+  /// first start and an old app use.
+  Map<String, String> get sharedTexts =>
+      Map<String, String>.unmodifiable(_shared);
+
+  /// Reads the deck-owned files kept on the phone. A kept file this app
+  /// cannot read, as after an update that changed what it reads, is left
+  /// out and logged: the bundled copy is used. Never throws, never reaches
+  /// the network.
+  Future<void> _openShared() async {
+    // The fixed paths, and the per-language files (creators, recommendations)
+    // the index kept on the phone lists: a file is only kept when the index
+    // listed it, so the kept index names every one there can be.
+    final paths = <String>{
+      ...sharedKinds.keys,
+      for (final file in _index?.shared ?? const <SharedFile>[]) file.path,
+    };
+    for (final path in paths) {
+      try {
+        final text = await files.readNote(sharedNoteName(path));
+        if (text == null) continue;
+        final problem = checkSharedText(path, text);
+        if (problem != null) {
+          _log?.warning(
+            'Deck-owned file kept on the phone is not used, the bundled copy '
+            'is: $problem',
+          );
+          continue;
+        }
+        _shared[path] = text;
+      } on Object catch (e) {
+        _log?.warning('Deck-owned file $path could not be read: $e');
+      }
+    }
+  }
+
+  /// Brings the deck-owned files up to the index just read: each one the
+  /// index lists, that this app can read, whose hash is not the one on the
+  /// phone, is downloaded, checked against its size and hash, read as the
+  /// app reads it, and only then kept. A file that fails any step is left
+  /// out and logged; what was on the phone stays, and so does the bundled
+  /// copy. Calls [onFilesChanged] when a file changed. Never throws.
+  Future<void> _refreshShared() async {
+    final index = _index;
+    if (index == null) return;
+    var changed = false;
+    try {
+      for (final file in index.shared) {
+        try {
+          final why = file.unusableReason;
+          if (why != null) {
+            _log?.warning('Deck-owned file not downloaded: $why');
+            continue;
+          }
+          final kept = _shared[file.path];
+          if (kept != null && sha256Hex(utf8.encode(kept)) == file.sha256) {
+            continue;
+          }
+          final fetched = await _fetchChecked(
+            IndexFile(path: file.path, size: file.size, sha256: file.sha256),
+          );
+          final bytes = fetched.bytes;
+          if (bytes == null) continue;
+          final text = utf8.decode(bytes);
+          final problem = checkSharedText(file.path, text);
+          if (problem != null) {
+            _log?.warning(
+              'Deck-owned file ${file.path} downloaded but not used: $problem',
+            );
+            continue;
+          }
+          await files.writeNote(sharedNoteName(file.path), text);
+          _shared[file.path] = text;
+          changed = true;
+          _log?.event('Deck-owned file updated: ${file.path}');
+        } on Object catch (e) {
+          _log?.warning('Deck-owned file ${file.path} failed: $e');
+        }
+      }
+    } on Object catch (e) {
+      _log?.warning('Deck-owned files failed: $e');
+    }
+    if (changed) {
+      try {
+        await _filesChanged();
+      } on Object catch (e) {
+        _log?.warning('Deck-owned files: the catalog could not be read: $e');
+      }
+    }
+  }
+
+  // ---------------------------------------------------------------------------
   // The index
 
   /// The last index read, or null if none ever was.
@@ -351,12 +452,17 @@ class DeckDownloads extends ChangeNotifier {
       _fontsOnPhone = await files.fontManifest();
       final text = await files.readNote(_indexNote);
       if (text != null) {
-        _index = DeckIndex.parse(text, appVersion: appVersion);
+        final index = DeckIndex.parse(text, appVersion: appVersion);
+        _index = index;
         _indexStatus = IndexStatus.ready;
+        for (final problem in index.problems) {
+          _log?.warning('Deck index kept on the phone: $problem');
+        }
       }
     } on Object catch (e) {
       _log?.warning('Deck downloads: could not read what is kept: $e');
     }
+    await _openShared();
     try {
       final queue = await files.readNote(_queueNote);
       if (queue != null) _reviewQueue = ReviewQueue.parse(queue);
@@ -443,7 +549,11 @@ class DeckDownloads extends ChangeNotifier {
     }
     await _saveState();
     _log?.event('Deck index read: ${index.languages.length} languages');
+    for (final problem in index.problems) {
+      _log?.warning('Deck index: $problem');
+    }
     _notify();
+    await _refreshShared();
     return true;
   }
 
@@ -827,6 +937,121 @@ class DeckDownloads extends ChangeNotifier {
     }
   }
 
+  // ---------------------------------------------------------------------------
+  // Hidden decks (deck-kinds plan, D3, T12)
+
+  /// The hidden decks of [language] that are on the phone, by deck key
+  /// ([IndexShelf.deckKey]): those a learner added. A hidden deck is on the
+  /// phone only because it was added, so this is the set the Decks tab lists
+  /// under "Added from search".
+  Set<String> hiddenDecksOnPhone(String language) {
+    final entry = _index?.language(language);
+    if (entry == null) return const <String>{};
+    return <String>{
+      for (final shelf in entry.shelves)
+        if (shelf.hidden && _onPhone.containsKey(shelf.file.path))
+          shelf.deckKey,
+    };
+  }
+
+  /// Whether the hidden deck [deckKey] of [language] is on the phone.
+  bool hasHiddenDeck(String language, String deckKey) =>
+      hiddenDecksOnPhone(language).contains(deckKey);
+
+  /// Downloads the hidden deck [deckKey] of [language] for a learner who
+  /// speaks [spoken]: "Add to my courses" on a search result. Its core and
+  /// the layers taught from their languages are fetched, each checked against
+  /// the index's hash and read as the app reads it, and kept together; a
+  /// deck on the phone already is not fetched again. Returns null once it is
+  /// on the phone, else why not: [DeckDownloadFailure.appTooOld] when its
+  /// files need a newer app (`min_app`), [DeckDownloadFailure.notOffered]
+  /// when the index lists no hidden deck by that key. Never throws.
+  Future<DeckDownloadFailure?> fetchHidden(
+    String language,
+    String deckKey,
+    List<String> spoken,
+  ) {
+    return _job(
+      language,
+      () => _againIfStale(language, () async {
+        try {
+          if (!await ensureIndex()) return _indexFailure;
+          final entry = _index!.language(language);
+          if (entry == null) return DeckDownloadFailure.notOffered;
+          if (entry.appTooOld) return DeckDownloadFailure.appTooOld;
+          final natives = entry.nativesFor(spoken);
+          // A deck is fetched whole or not at all: if any of its files needs
+          // a newer app, none is downloaded.
+          final needed = entry.hiddenAppNeeded(deckKey, natives);
+          if (needed != null) {
+            _log?.warning(
+              'Hidden deck $deckKey needs app $needed, not downloaded',
+            );
+            return DeckDownloadFailure.appTooOld;
+          }
+          final wanted = entry.hiddenFilesFor(deckKey, natives);
+          if (wanted.isEmpty) {
+            _log?.warning('Hidden deck $deckKey is not offered for $language');
+            return DeckDownloadFailure.notOffered;
+          }
+          final failure = await _fetchAndKeep(language, wanted, groups: false);
+          if (failure == null) {
+            _log?.event('Hidden deck added from search: $deckKey');
+          }
+          return failure;
+        } on Object catch (e, stack) {
+          _log?.error('Hidden deck $deckKey could not be fetched: $e\n$stack');
+          return DeckDownloadFailure.storage;
+        }
+      }),
+    );
+  }
+
+  /// Takes the hidden deck [deckKey] of [language] off the phone again. Only a
+  /// hidden deck the index lists is ever removed, never a visible one's files.
+  /// The learner's progress, which is in the review log, stays. Never throws.
+  Future<void> removeHidden(String language, String deckKey) async {
+    try {
+      final entry = _index?.language(language);
+      if (entry == null) {
+        _log?.warning('Hidden deck $deckKey not removed: no index is known');
+        return;
+      }
+      final paths = <String>[
+        for (final shelf in entry.shelves)
+          if (shelf.hidden &&
+              shelf.deckKey == deckKey &&
+              _onPhone.containsKey(shelf.file.path))
+            shelf.file.path,
+      ];
+      if (paths.isEmpty) return;
+      await _writing(() async {
+        await files.putAll(const <IndexFile, List<int>>{}, remove: paths);
+        _onPhone = await files.manifest();
+      });
+      _log?.event('Hidden deck removed from the phone: $deckKey');
+      _notify();
+      await _filesChanged();
+    } on Object catch (e, stack) {
+      _log?.error('Hidden deck $deckKey could not be removed: $e\n$stack');
+    }
+  }
+
+  /// The files [entry] wants on the phone for [natives]: those that download
+  /// with the language, and the files of each hidden deck a learner added, so
+  /// that an added deck is updated with the rest.
+  List<IndexFile> _wantedFiles(IndexLanguage entry, Iterable<String> natives) {
+    final keys = <String>{
+      for (final shelf in entry.shelves)
+        if (shelf.hidden && _onPhone.containsKey(shelf.file.path))
+          shelf.deckKey,
+    };
+    return <IndexFile>[
+      ...entry.filesFor(natives),
+      for (final key in keys) ...entry.hiddenFilesFor(key, natives),
+    ];
+  }
+
   /// Runs [body] as [language]'s one job: a second call while it runs
   /// waits for the first.
   Future<DeckDownloadFailure?> _job(
@@ -1074,6 +1299,75 @@ class DeckDownloads extends ChangeNotifier {
     );
   }
 
+  // ---------------------------------------------------------------------------
+  // Creators' images (deck-kinds plan, D5, T15 glue)
+
+  static const String _creatorImagePrefix = 'creator-image-';
+  final Map<String, Uint8List> _creatorImages = <String, Uint8List>{};
+  final Map<String, Future<Uint8List?>> _creatorImageJobs =
+      <String, Future<Uint8List?>>{};
+
+  /// The creator image at [path] (`decks/creators/images/te-x.jpg`, as a
+  /// creator's `image.file` names it), downloaded when it is first shown and
+  /// kept on the phone: only when the index lists it in `shared_media`, and
+  /// only when its size and hash match, as for any file. A second call while
+  /// one runs waits for it. Returns null when it is not listed, cannot be
+  /// reached or does not match; the screen then draws its placeholder. Never
+  /// throws, and logs what it could not do.
+  Future<Uint8List?> creatorImage(String path) {
+    final kept = _creatorImages[path];
+    if (kept != null) return Future<Uint8List?>.value(kept);
+    return _creatorImageJobs[path] ??= _loadCreatorImage(path).whenComplete(() {
+      // A block body: returning the removed job would make this wait on
+      // itself for ever.
+      _creatorImageJobs.remove(path);
+    });
+  }
+
+  Future<Uint8List?> _loadCreatorImage(String path) async {
+    try {
+      if (_index == null && !await ensureIndex()) return null;
+      SharedMediaFile? listed;
+      for (final media in _index?.sharedMedia ?? const <SharedMediaFile>[]) {
+        if (media.path == path) listed = media;
+      }
+      if (listed == null) {
+        _log?.warning('Creator image is not in the index: $path');
+        return null;
+      }
+      final note = '$_creatorImagePrefix${listed.sha256}.b64';
+      try {
+        final text = await files.readNote(note);
+        if (text != null) {
+          final bytes = base64Decode(text);
+          if (bytes.length == listed.size &&
+              sha256Hex(bytes) == listed.sha256) {
+            return _creatorImages[path] = Uint8List.fromList(bytes);
+          }
+        }
+      } on Object catch (e) {
+        _log?.warning('Kept creator image could not be read ($path): $e');
+      }
+      final fetched = await _fetchChecked(
+        IndexFile(path: path, size: listed.size, sha256: listed.sha256),
+      );
+      final bytes = fetched.bytes;
+      if (bytes == null) return null;
+      final image = Uint8List.fromList(bytes);
+      _creatorImages[path] = image;
+      try {
+        await files.writeNote(note, base64Encode(image));
+      } on Object catch (e) {
+        // Shown this session, fetched again the next.
+        _log?.warning('Creator image could not be kept ($path): $e');
+      }
+      return image;
+    } on Object catch (e, stack) {
+      _log?.error('Creator image $path could not be loaded: $e\n$stack');
+      return null;
+    }
+  }
+
   /// [file], downloaded and checked against its size and hash.
   Future<({List<int>? bytes, DeckDownloadFailure? failure})> _fetchChecked(
     IndexFile file,
@@ -1273,7 +1567,7 @@ class DeckDownloads extends ChangeNotifier {
       if (entry == null) continue;
       final changes = changesFor(
         language,
-        entry.filesFor(entry.nativesFor(spoken)),
+        _wantedFiles(entry, entry.nativesFor(spoken)),
         _onPhone,
         reviewer: _reviewer,
         fonts: entry.fonts,

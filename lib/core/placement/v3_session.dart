@@ -59,6 +59,7 @@ class V3Question {
     this.trailingMark = '',
     this.gapBefore = '',
     this.gapAfter = '',
+    this.gapBlanks = 1,
     this.script = false,
     this.item,
     this.gateItem,
@@ -95,6 +96,9 @@ class V3Question {
   /// For [V3Mode.gap]: the word's units before and after the gap.
   final String gapBefore;
   final String gapAfter;
+
+  /// How many blanks the gap is drawn with (the units left out).
+  final int gapBlanks;
 
   /// A question of the script gate.
   final bool script;
@@ -540,7 +544,7 @@ class V3Run {
               profile.f4DecoyKey && item.format == 'F4' && item.decoyCount > 0
               ? 'F4decoys'
               : null,
-          slipScale: profile.slipScale[item.format] ?? 1,
+          slipScale: profile.slipScale[baseFormat(item.format)] ?? 1,
         ),
         outcome,
       );
@@ -645,8 +649,10 @@ class V3Run {
   /// The screen's view of a bank [item]. A self-rated Say is asked as
   /// [V3Mode.rateSay].
   static V3Question questionOf(RegItem item, {bool selfRated = false}) {
-    switch (item.format) {
-      case 'F2':
+    // A reverse format (English spoken) is drawn as the format it reverses;
+    // the screen speaks the English it shows.
+    switch (baseFormat(item.format)) {
+      case 'F2' || 'F27':
         return V3Question(
           id: item.id,
           format: item.format,
@@ -656,7 +662,7 @@ class V3Run {
           options: item.options,
           item: item,
         );
-      case 'F13':
+      case 'F13' || 'F26':
         return V3Question(
           id: item.id,
           format: item.format,
@@ -715,17 +721,6 @@ class V3Run {
           trailingMark: item.trailingMark,
           item: item,
         );
-      case 'F16':
-        return V3Question(
-          id: item.id,
-          format: item.format,
-          mode: V3Mode.tiles,
-          audio: item.prompt,
-          tiles: item.tiles,
-          leadingMark: item.leadingMark,
-          trailingMark: item.trailingMark,
-          item: item,
-        );
       case 'F7':
         return V3Question(
           id: item.id,
@@ -743,7 +738,23 @@ class V3Run {
           mode: V3Mode.gap,
           shown: item.prompt,
           gapBefore: units.take(gap).join(),
-          gapAfter: units.skip(gap + 1).join(),
+          gapAfter: units.skip(gap + item.gapLength).join(),
+          gapBlanks: item.gapLength,
+          item: item,
+        );
+      case 'F28':
+        // The English sentence, the target sentence with its blank, and
+        // options of one word class.
+        final parts = item.prompt.split('___');
+        return V3Question(
+          id: item.id,
+          format: item.format,
+          mode: V3Mode.pick,
+          shown: item.promptRoman,
+          gapBefore: parts.first,
+          gapAfter: parts.length > 1 ? parts.last : '',
+          options: item.options,
+          optionsAreTarget: true,
           item: item,
         );
       case 'F18':

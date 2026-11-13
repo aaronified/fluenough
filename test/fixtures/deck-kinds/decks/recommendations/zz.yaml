@@ -1,0 +1,34 @@
+# Popular works to find elsewhere (D13), invented for the tests: a book,
+# quoted in the culture deck, and a film.
+schema: 1
+kind: "recommendations"
+id: "recommendations-zz"
+language: "zz"
+license: "CC-BY-SA-4.0"
+recommendations:
+  - id: "zz-rec-cartas-de-prueba"
+    medium: "book"
+    title: { text: "Cartas de prueba" }
+    creator: ["zz-ejemplo-autora"]
+    year: 1895
+    level: "A2"
+    script: "latin"
+    briefing: { en: "A short book of letters between friends." }
+    questions:
+      - { id: "q1", prompt: { en: "Who writes the letters?" }, options: { en: ["Friends", "Strangers"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "What season comes?" }, options: { en: ["Summer", "Winter"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Where do they meet?" }, options: { en: ["A river house", "A market"] }, answer: 1 }
+    legal:
+      - { kind: "library", url: "https://example.org/biblioteca/cartas", note: { en: "Free: public domain" } }
+    quoted_in: "zz-culture-ejemplo"
+  - id: "zz-rec-una-pelicula"
+    medium: "film"
+    title: { text: "Una película de prueba" }
+    creator: ["zz-ejemplo-poeta"]
+    year: 1980
+    level: "B1"
+    briefing: { en: "A made-up film about a poet." }
+    questions:
+      - { id: "q1", prompt: { en: "Who is the film about?" }, options: { en: ["A poet", "A doctor"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Is it a real film?" }, options: { en: ["No", "Yes"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What is it for?" }, options: { en: ["Tests", "Cinemas"] }, answer: 1 }
