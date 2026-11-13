@@ -11,6 +11,7 @@ import '../models/grammar_pattern.dart';
 import '../models/proposal.dart';
 import '../models/reading.dart';
 import '../models/rule.dart';
+import '../private/private_ids.dart';
 import 'yaml_tree.dart';
 
 part 'deck_kinds.dart';
@@ -2283,7 +2284,7 @@ class _Reader {
     final id = this.id(idNode, 'id');
     // A layer has no language block: its id starts with the language's
     // code, which merging checks against the core's.
-    lang = id.split('-').first;
+    lang = languageOfId(id);
     final native = language(fields.require('native'), 'native', full: false);
     final name = fields.string('name');
     final license = fields.string('license');
@@ -3154,13 +3155,15 @@ String _filled(String text, List<NoteWord> words) =>
       return n != null && n <= words.length ? words[n - 1].shown : m[0]!;
     });
 
-/// A rule id of the language [lang]: `te-rule-lo`.
+/// A rule id of the language [lang]: `te-rule-lo`, or `fnpd-te-rule-lo` in a
+/// private package (#1017).
 RegExp _ruleId(String lang) =>
-    RegExp('^${RegExp.escape(lang)}-rule-[a-z0-9]+(?:-[a-z0-9]+)*\$');
+    RegExp('^(?:fnpd-)?${RegExp.escape(lang)}-rule-[a-z0-9]+(?:-[a-z0-9]+)*\$');
 
-/// A core id of the language [lang]: `te-home`.
+/// A core id of the language [lang]: `te-home`, or `fnpd-te-home` in a
+/// private package (#1017).
 RegExp _coreId(String lang) =>
-    RegExp('^${RegExp.escape(lang)}-[a-z0-9]+(?:-[a-z0-9]+)*\$');
+    RegExp('^(?:fnpd-)?${RegExp.escape(lang)}-[a-z0-9]+(?:-[a-z0-9]+)*\$');
 
 /// How Python, and so the validator, writes [key]'s value: `True`, `1`.
 String _pythonRepr(YamlNode key) => switch (_value(key)) {

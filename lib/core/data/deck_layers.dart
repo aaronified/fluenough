@@ -608,8 +608,10 @@ Deck mergeLayer(DeckCore core, DeckLayer layer, {required String source}) {
       'core: this layer is of ${layer.core}, not of ${core.id}',
     );
   }
+  // A private package's ids start `fnpd-<lang>-` (#1017).
+  final prefix = idLanguagePrefix(core.id, lang);
   final expected =
-      '$lang-${layer.native.code}-${core.id.substring(lang.length + 1)}';
+      '$prefix-${layer.native.code}-${core.id.substring(prefix.length + 1)}';
   if (layer.id != expected) {
     reader.fail(
       layer.idNode,

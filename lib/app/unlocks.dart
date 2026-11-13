@@ -8,6 +8,7 @@ import '../core/progress/unlocks.dart';
 import 'app_state.dart';
 import 'deck_catalog.dart';
 import 'session.dart';
+import '../core/private/private_ids.dart';
 
 /// A rule of a rules deck, and the deck that gives it.
 typedef RuleEntry = ({Rule rule, DeckEntry deck});
@@ -24,7 +25,7 @@ extension UnlockState on AppState {
       for (final entry in decks) entry.id: entry.language.code,
     };
     return (event) => progress.parameters.of(
-      byDeck[event.deckId] ?? event.deckId.split('-').first,
+      byDeck[event.deckId] ?? languageOfId(event.deckId),
       event.mode,
     );
   }
@@ -101,7 +102,7 @@ extension UnlockState on AppState {
   /// The rule [id], with the deck that gives it, from the course taught from
   /// the learner's language where it can; null if no deck has it.
   RuleEntry? ruleOf(String id) {
-    final code = id.split('-').first;
+    final code = languageOfId(id);
     final native = courseNative(code);
     RuleEntry? found;
     for (final entry in decks) {

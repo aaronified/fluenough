@@ -1,5 +1,6 @@
 import '../core/data/course_path.dart';
 import '../core/decks/levels.dart';
+import '../core/private/private_ids.dart';
 import 'deck_catalog.dart';
 
 /// A language's path and what its decks hold, as [LearnerLevels] keeps it.
@@ -49,11 +50,12 @@ class LearnerLevels {
   /// The core id `te-home` of the deck `te-en-home` of [language] taught from
   /// [native], or null for a deck id that does not follow that form.
   static String? coreIdOf(String deckId, String language, String native) {
-    final prefix = '$language-$native-';
+    final lead = idLanguagePrefix(deckId, language);
+    final prefix = '$lead-$native-';
     if (!deckId.startsWith(prefix) || deckId.length == prefix.length) {
       return null;
     }
-    return '$language-${deckId.substring(prefix.length)}';
+    return '$lead-${deckId.substring(prefix.length)}';
   }
 
   /// The level reached in each language that has a path with levels, by code:
@@ -64,12 +66,12 @@ class LearnerLevels {
     required Iterable<String> studied,
     required Set<String> placedDecks,
   }) {
-    // A card id starts with its language's code (ADR-0018): group by it once.
+    // A card id starts with its language's code (ADR-0018), or with
+    // `fnpd-<code>-` when it is private: group by it once.
     final byLanguage = <String, List<String>>{};
     for (final id in studied) {
-      final dash = id.indexOf('-');
-      if (dash <= 0) continue;
-      (byLanguage[id.substring(0, dash)] ??= <String>[]).add(id);
+      if (id.indexOf('-') <= 0) continue;
+      (byLanguage[languageOfId(id)] ??= <String>[]).add(id);
     }
     return <String, Level?>{
       for (final MapEntry(key: code, value: language) in _languages.entries)

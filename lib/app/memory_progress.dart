@@ -17,6 +17,7 @@ import '../core/scheduling/replay.dart';
 import '../core/scheduling/fsrs.dart';
 import '../core/scheduling/skill_map.dart';
 import '../core/scheduling/skill_parameters.dart';
+import '../core/private/private_ids.dart';
 
 export '../core/data/restore_record.dart' show RestoreRecord;
 export '../core/data/review_erasure.dart' show ReviewErasure;
@@ -397,7 +398,7 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     // Under the card's language and the deck's, which name the same one
     // (`te-0053`, `te-en-core-100`) but are read by different callers.
     _languageTick[skillOf(key).language] = ++_tick;
-    _languageTick[deckId.split('-').first] = _tick;
+    _languageTick[languageOfId(deckId)] = _tick;
     // A language studied now may become another's baseline: when that
     // changes which set schedules a pair, every state is replayed with the
     // new choice, so that the states are always what the replay gives.

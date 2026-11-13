@@ -10,6 +10,7 @@ library;
 
 import '../models/level.dart';
 import '../models/topic.dart';
+import '../private/private_ids.dart';
 import 'deck_parser.dart';
 import 'kinds_read.dart';
 
@@ -73,7 +74,8 @@ Topic? _readTopic(
     problems.add(path, 'has no id of lowercase words, left out');
     return null;
   }
-  if (!id.startsWith('$code-')) {
+  // A private package's topic id starts `fnpd-<code>-` (#1017).
+  if (!id.startsWith('${idLanguagePrefix(id, code)}-')) {
     problems.add(path, '"$id" does not start with "$code-"');
   }
   final names = localisedText(item['name'], '$path.name', problems);

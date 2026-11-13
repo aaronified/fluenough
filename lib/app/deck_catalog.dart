@@ -28,6 +28,7 @@ import '../core/data/rule_expander.dart';
 import '../core/data/themes.dart';
 import '../core/data/yaml_tree.dart';
 import '../core/decks/sha256.dart';
+import '../core/logs/log_entry.dart';
 import '../core/decks/adult_gate.dart';
 import '../core/decks/levels.dart';
 import '../core/models/fact.dart';
@@ -38,7 +39,10 @@ import '../core/models/topic.dart';
 import '../core/models/card.dart';
 import '../core/models/deck.dart';
 import '../core/models/number_rules.dart';
+import '../core/private/private_ids.dart';
 import 'added_decks.dart';
+import 'app_log.dart';
+import 'private_store.dart';
 
 /// Where deck files come from: their paths, and each one's text.
 ///
@@ -144,6 +148,7 @@ final class DeckEntry extends CatalogEntry {
     required String path,
     required this.deck,
     this.bundled = true,
+    this.private = false,
   }) : super(path);
 
   final Deck deck;
@@ -151,6 +156,10 @@ final class DeckEntry extends CatalogEntry {
   /// Whether the deck is one of the app's own, bundled or downloaded from
   /// the repository (#210), rather than added by the learner from a file.
   final bool bundled;
+
+  /// Whether the deck is part of a private language package (#1017), read
+  /// from under [privateDeckPrefix]. Such a deck is never [bundled].
+  final bool private;
 
   String get id => deck.id;
 
@@ -324,7 +333,12 @@ class Catalog {
         changed = true;
         if (deck != null) {
           shown.add(
-            DeckEntry(path: entry.path, deck: deck, bundled: entry.bundled),
+            DeckEntry(
+              path: entry.path,
+              deck: deck,
+              bundled: entry.bundled,
+              private: entry.private,
+            ),
           );
         }
       }
@@ -357,7 +371,12 @@ class Catalog {
         changed = true;
         if (deck != null) {
           shown.add(
-            DeckEntry(path: entry.path, deck: deck, bundled: entry.bundled),
+            DeckEntry(
+              path: entry.path,
+              deck: deck,
+              bundled: entry.bundled,
+              private: entry.private,
+            ),
           );
         }
       }
@@ -657,12 +676,21 @@ class DeckCatalog {
     this.added,
     this.parser = parseInPlace,
     this.snapshots,
+    this.privateStore,
+    this.log,
   });
 
   final DeckSource source;
 
   /// Where decks a learner adds are kept (#22), or null where none can be.
   final DeckStore? added;
+
+  /// Where the private language packages are kept (#1017), or null where
+  /// none can be. Only its active packages are read.
+  final PrivateStore? privateStore;
+
+  /// Where a private file that cannot be read is told, if anywhere.
+  final AppLog? log;
 
   /// How the files are parsed: in place by default, which is what tests and
   /// the web build want; the app passes [parseInIsolate], so that reading
@@ -692,6 +720,22 @@ class DeckCatalog {
     if (added != null) {
       for (final path in await added.list()) {
         files[path] = await added.read(path);
+      }
+    }
+    final privateStore = this.privateStore;
+    if (privateStore != null) {
+      try {
+        for (final path in await privateStore.list()) {
+          try {
+            files[path] = await privateStore.read(path);
+          } on Object catch (e, stack) {
+            // A file that cannot be read is left out, and told: the rest of
+            // the catalog still loads.
+            log?.error(describeError('A private deck file', e, stack));
+          }
+        }
+      } on Object catch (e, stack) {
+        log?.error(describeError('The private decks', e, stack));
       }
     }
     final snapshots = this.snapshots;
@@ -765,11 +809,18 @@ class DeckCatalog {
     // Added decks after the bundled ones: a bundled deck keeps its id, and
     // the card a ref finds, when an added deck has them too.
     bool isAdded(String path) => path.startsWith(addedDeckPrefix);
+    // Private packages (#1017) come after the bundled decks and before the
+    // single files a learner added.
+    int rank(String path) => isAdded(path)
+        ? 2
+        : path.startsWith(privateDeckPrefix)
+        ? 1
+        : 0;
     final paths = files.keys.toList()
-      ..sort(
-        (a, b) =>
-            isAdded(a) != isAdded(b) ? (isAdded(a) ? 1 : -1) : a.compareTo(b),
-      );
+      ..sort((a, b) {
+        final byRank = rank(a).compareTo(rank(b));
+        return byRank != 0 ? byRank : a.compareTo(b);
+      });
     final headers = <String, ({String? kind, String? part, String? core})>{
       for (final path in paths) path: _headerOf(files[path]!),
     };
@@ -794,10 +845,12 @@ class DeckCatalog {
     final brokenCores = <String>{};
     for (final path in paths.where(isCore)) {
       try {
-        cores[path] = DeckParser.parseCore(
+        final core = DeckParser.parseCore(
           files[path]!,
           source: path.split('/').last,
         );
+        _requirePrivateIds(path, core.id, const <Card>[]);
+        cores[path] = core;
       } on DeckParseException catch (e) {
         broken.add(BrokenDeck(path: path, error: e));
         brokenCores.add(path);
@@ -858,15 +911,27 @@ class DeckCatalog {
             ),
             _ => throw StateError('not a guide core'),
           };
+          _requirePrivateLanguage(path, language);
           final key = '${layer.core}:$language';
           final earlier = guideNative[key];
           if (earlier == null || earlier != 'en' && layer.native == 'en') {
             guideNative[key] = layer.native;
+            // A private file never replaces a built-in guide of the same
+            // language: it only fills a place nothing else holds.
+            final private = path.startsWith('private/');
             switch (merged) {
               case ScriptGuide():
-                scriptGuides[merged.key] = merged;
+                if (private) {
+                  scriptGuides.putIfAbsent(merged.key, () => merged);
+                } else {
+                  scriptGuides[merged.key] = merged;
+                }
               case SoundContrasts():
-                sounds[language] = merged;
+                if (private) {
+                  sounds.putIfAbsent(language, () => merged);
+                } else {
+                  sounds[language] = merged;
+                }
             }
           }
         } on DeckParseException catch (e) {
@@ -877,6 +942,7 @@ class DeckCatalog {
       if (kind == 'facts') {
         try {
           final file = parseFacts(text, source: path.split('/').last);
+          _requirePrivateLanguage(path, file.languageCode);
           facts.putIfAbsent(file.languageCode, () => file);
         } on DeckParseException catch (e) {
           broken.add(BrokenDeck(path: path, error: e));
@@ -886,6 +952,7 @@ class DeckCatalog {
       if (kind == 'situations') {
         try {
           final file = parseSituations(text, source: path.split('/').last);
+          _requirePrivateLanguage(path, file.languageCode);
           situations.putIfAbsent(file.languageCode, () => file);
         } on DeckParseException catch (e) {
           broken.add(BrokenDeck(path: path, error: e));
@@ -895,6 +962,7 @@ class DeckCatalog {
       if (kind == 'numbers') {
         try {
           final rules = parseNumberRules(text, source: path.split('/').last);
+          _requirePrivateLanguage(path, rules.language.code);
           numberRules.putIfAbsent(rules.language.code, () => rules);
         } on DeckParseException catch (e) {
           broken.add(BrokenDeck(path: path, error: e));
@@ -906,6 +974,7 @@ class DeckCatalog {
         try {
           final source = path.split('/').last;
           final languagePath = parseLanguagePath(text, source: source);
+          _requirePrivateLanguage(path, languagePath.language);
           final earlier = languagePaths[languagePath.language];
           if (earlier != null) {
             throw DeckParseException(
@@ -923,6 +992,7 @@ class DeckCatalog {
       if (kind == 'romanisation') {
         try {
           final file = parseRomanisation(text, source: path.split('/').last);
+          _requirePrivateLanguage(path, file.language);
           romanisations.putIfAbsent(file.language, () => file);
         } on DeckParseException catch (e) {
           broken.add(BrokenDeck(path: path, error: e));
@@ -932,6 +1002,7 @@ class DeckCatalog {
       if (kind == 'sounds') {
         try {
           final file = parseSounds(text, source: path.split('/').last);
+          _requirePrivateLanguage(path, file.language);
           sounds.putIfAbsent(file.language, () => file);
         } on DeckParseException catch (e) {
           broken.add(BrokenDeck(path: path, error: e));
@@ -941,6 +1012,7 @@ class DeckCatalog {
       if (kind == 'script') {
         try {
           final guide = parseScriptGuide(text, source: path.split('/').last);
+          _requirePrivateLanguage(path, guide.language);
           scriptGuides.putIfAbsent(guide.key, () => guide);
         } on DeckParseException catch (e) {
           broken.add(BrokenDeck(path: path, error: e));
@@ -949,6 +1021,13 @@ class DeckCatalog {
       }
       if (kind == 'themes') {
         try {
+          if (path.startsWith(privateDeckPrefix)) {
+            // The theme list is the app's own; a package cannot replace it.
+            throw DeckParseException(
+              'a private package cannot have its own themes yet',
+              source: path.split('/').last,
+            );
+          }
           themes = parseThemes(text, source: path.split('/').last);
         } on DeckParseException catch (e) {
           broken.add(BrokenDeck(path: path, error: e));
@@ -960,10 +1039,37 @@ class DeckCatalog {
       // that cannot costs itself and is named for the log.
       if (kind == 'topics') {
         try {
-          final file = parseTopics(text, source: path.split('/').last);
+          final source = path.split('/').last;
+          var file = parseTopics(text, source: source);
+          _requirePrivateLanguage(path, file.languageCode);
+          final code = _privateCode(path);
+          if (code != null) {
+            // A package's topics sit beside the built-in ones, in its own
+            // id namespace (D14, T27).
+            file = TopicsFile(
+              languageCode: file.languageCode,
+              topics: _privateOnly(
+                source,
+                code,
+                file.topics,
+                (t) => t.id,
+                dataProblems,
+              ),
+              problems: file.problems,
+            );
+            final earlier = topics[file.languageCode];
+            if (earlier != null) {
+              file = TopicsFile(
+                languageCode: file.languageCode,
+                topics: <Topic>[...earlier.topics, ...file.topics],
+                problems: <String>[...earlier.problems, ...file.problems],
+              );
+              topics[file.languageCode] = file;
+            }
+          }
           topics.putIfAbsent(file.languageCode, () => file);
           dataProblems.addAll(<String>[
-            for (final p in file.problems) '${path.split('/').last}: $p',
+            for (final p in file.problems) '$source: $p',
           ]);
         } on DeckParseException catch (e) {
           broken.add(BrokenDeck(path: path, error: e));
@@ -972,10 +1078,34 @@ class DeckCatalog {
       }
       if (kind == 'creators') {
         try {
-          final file = parseCreators(text, source: path.split('/').last);
+          final source = path.split('/').last;
+          var file = parseCreators(text, source: source);
+          _requirePrivateLanguage(path, file.languageCode);
+          final code = _privateCode(path);
+          if (code != null) {
+            final earlier = creators[file.languageCode];
+            final own = _privateOnly(
+              source,
+              code,
+              file.creators,
+              (c) => c.id,
+              dataProblems,
+            );
+            file = CreatorsFile(
+              languageCode: file.languageCode,
+              eras: <CreatorEra>[
+                ...?earlier?.eras,
+                for (final era in file.eras)
+                  if (earlier?.eraById(era.id) == null) era,
+              ],
+              creators: <Creator>[...?earlier?.creators, ...own],
+              problems: <String>[...?earlier?.problems, ...file.problems],
+            );
+            creators[file.languageCode] = file;
+          }
           creators.putIfAbsent(file.languageCode, () => file);
           dataProblems.addAll(<String>[
-            for (final p in file.problems) '${path.split('/').last}: $p',
+            for (final p in file.problems) '$source: $p',
           ]);
         } on DeckParseException catch (e) {
           broken.add(BrokenDeck(path: path, error: e));
@@ -984,10 +1114,31 @@ class DeckCatalog {
       }
       if (kind == 'recommendations') {
         try {
-          final file = parseRecommendations(text, source: path.split('/').last);
+          final source = path.split('/').last;
+          var file = parseRecommendations(text, source: source);
+          _requirePrivateLanguage(path, file.languageCode);
+          final code = _privateCode(path);
+          if (code != null) {
+            final earlier = recommendations[file.languageCode];
+            file = RecommendationsFile(
+              languageCode: file.languageCode,
+              recommendations: <Recommendation>[
+                ...?earlier?.recommendations,
+                ..._privateOnly(
+                  source,
+                  code,
+                  file.recommendations,
+                  (r) => r.id,
+                  dataProblems,
+                ),
+              ],
+              problems: <String>[...?earlier?.problems, ...file.problems],
+            );
+            recommendations[file.languageCode] = file;
+          }
           recommendations.putIfAbsent(file.languageCode, () => file);
           dataProblems.addAll(<String>[
-            for (final p in file.problems) '${path.split('/').last}: $p',
+            for (final p in file.problems) '$source: $p',
           ]);
         } on DeckParseException catch (e) {
           broken.add(BrokenDeck(path: path, error: e));
@@ -996,6 +1147,14 @@ class DeckCatalog {
       }
       if (kind == 'sections') {
         try {
+          if (path.startsWith(privateDeckPrefix)) {
+            // The genres, professions and search kinds are the app's own;
+            // a package uses them and cannot replace them (D14).
+            throw DeckParseException(
+              'a private package cannot have its own sections',
+              source: path.split('/').last,
+            );
+          }
           sections = parseSections(text, source: path.split('/').last);
         } on DeckParseException catch (e) {
           broken.add(BrokenDeck(path: path, error: e));
@@ -1007,6 +1166,7 @@ class DeckCatalog {
         deck = isLayer(path)
             ? _merged(path, text, files, cores, brokenCores)
             : DeckParser.parse(text, source: path.split('/').last);
+        _requirePrivateIds(path, deck.id, deck.cards);
       } on DeckParseException catch (e) {
         broken.add(BrokenDeck(path: path, error: e));
         continue;
@@ -1034,7 +1194,10 @@ class DeckCatalog {
         DeckEntry(
           path: path,
           deck: deck,
-          bundled: !path.startsWith(addedDeckPrefix),
+          bundled:
+              !path.startsWith(addedDeckPrefix) &&
+              !path.startsWith(privateDeckPrefix),
+          private: path.startsWith(privateDeckPrefix),
         ),
       );
     }
@@ -1080,6 +1243,97 @@ class DeckCatalog {
       romanisations: romanisations,
       scriptGuides: scriptGuides,
     );
+  }
+
+  /// The language code of the private package [path] is in, or null when
+  /// [path] is not under [privateDeckPrefix]. Throws when the package folder
+  /// is not named `fnpd-<code>`.
+  static String? _privateCode(String path) {
+    if (!path.startsWith(privateDeckPrefix)) return null;
+    final folder = path.substring(privateDeckPrefix.length).split('/').first;
+    final code = packageCode('$folder-x');
+    if (code == null || folder != packageIdFor(code)) {
+      throw DeckParseException(
+        'a private package folder is named fnpd- and the language code, such '
+        'as fnpd-qaa, got "$folder"',
+        source: path.split('/').last,
+      );
+    }
+    return code;
+  }
+
+  /// Refuses a file of a private package that is about another language than
+  /// the package's, so that a package never takes over a built-in course's
+  /// path, facts or sounds.
+  static void _requirePrivateLanguage(String path, String language) {
+    final code = _privateCode(path);
+    if (code != null && language != code) {
+      throw DeckParseException(
+        'this file is about $language, but its package is for $code',
+        source: path.split('/').last,
+      );
+    }
+  }
+
+  /// The [items] of a private package's data file whose id starts with the
+  /// package's `fnpd-<code>-`; each other is left out and told in [problems],
+  /// so that a package's topic, creator or recommendation never reaches a
+  /// built-in id (D14, T27).
+  static List<T> _privateOnly<T>(
+    String source,
+    String code,
+    Iterable<T> items,
+    String Function(T) idOf,
+    List<String> problems,
+  ) {
+    final kept = <T>[];
+    for (final item in items) {
+      try {
+        final id = idOf(item);
+        if (hasPrivatePrefix(id, code)) {
+          kept.add(item);
+        } else {
+          problems.add(
+            '$source: "$id" must start with ${packageIdFor(code)}-, left out',
+          );
+        }
+      } on Object catch (e) {
+        // parseAll is pure and may run in an isolate: the problem is told in
+        // the catalog's data problems, which the app logs.
+        problems.add('$source: an entry could not be checked ($e)');
+      }
+    }
+    return kept;
+  }
+
+  /// Refuses a deck of a private package (a file under [privateDeckPrefix])
+  /// whose id, or one of whose own cards' ids, does not start with the
+  /// package's `fnpd-<code>-` (#1017), so that a private file can never
+  /// reach a built-in id. A file elsewhere is not checked.
+  static void _requirePrivateIds(
+    String path,
+    String deckId,
+    Iterable<Card> cards,
+  ) {
+    final code = _privateCode(path);
+    if (code == null) return;
+    final source = path.split('/').last;
+    if (!hasPrivatePrefix(deckId, code)) {
+      throw DeckParseException(
+        'deck id "$deckId" must start with ${packageIdFor(code)}-: every id '
+        'of a private package does',
+        source: source,
+      );
+    }
+    for (final card in cards) {
+      if (!hasPrivatePrefix(card.id, code)) {
+        throw DeckParseException(
+          'card id "${card.id}" must start with ${packageIdFor(code)}-: every '
+          'id of a private package does',
+          source: source,
+        );
+      }
+    }
   }
 
   /// The layer at [path], whose text is [text], merged with its core: the
@@ -1138,6 +1392,7 @@ class DeckCatalog {
               ),
             ),
             bundled: entry.bundled,
+            private: entry.private,
           ),
     ];
   }
@@ -1219,6 +1474,7 @@ class DeckCatalog {
             path: entry.path,
             deck: entry.deck.withCards(_resolved(entry.deck, written)),
             bundled: entry.bundled,
+            private: entry.private,
           ),
     ];
   }
@@ -1334,12 +1590,13 @@ class DeckCatalog {
   static String? checkFile(String path, String text) {
     final source = path.split('/').last;
     final header = _headerOf(text);
+    final ids = <String>[];
     try {
       switch (header.kind) {
         case 'layer' when isGuideCoreId(header.core):
           parseGuideLayer(text, source: source);
         case 'layer':
-          DeckParser.parseLayer(text, source: source);
+          ids.add(DeckParser.parseLayer(text, source: source).id);
         case 'facts':
           parseFacts(text, source: source);
         case 'situations':
@@ -1369,9 +1626,18 @@ class DeckCatalog {
         case 'recommendations':
           parseRecommendations(text, source: source);
         default:
-          header.part == 'core'
-              ? DeckParser.parseCore(text, source: source)
-              : DeckParser.parse(text, source: source);
+          if (header.part == 'core') {
+            ids.add(DeckParser.parseCore(text, source: source).id);
+          } else {
+            final deck = DeckParser.parse(text, source: source);
+            ids
+              ..add(deck.id)
+              ..addAll(deck.cards.map((c) => c.id));
+          }
+      }
+      // Private ids live only in a private package, under private/.
+      if (ids.any(isPrivateId)) {
+        return '$source: ids starting fnpd- belong to private packages only';
       }
       return null;
     } on DeckParseException catch (e) {

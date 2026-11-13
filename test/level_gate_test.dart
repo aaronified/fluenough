@@ -236,6 +236,16 @@ void main() {
       },
     );
 
+    test('names the core of a private deck with its fnpd- mark', () {
+      expect(
+        LearnerLevels.coreIdOf('fnpd-qaa-en-home', 'qaa', 'en'),
+        'fnpd-qaa-home',
+      );
+      expect(LearnerLevels.coreIdOf('fnpd-qaa-bn-home', 'qaa', 'en'), isNull);
+      expect(LearnerLevels.coreIdOf('fnpd-qaa-en-', 'qaa', 'en'), isNull);
+      expect(LearnerLevels.coreIdOf('qaa-en-home', 'qaa', 'en'), 'qaa-home');
+    });
+
     test('compares two sets of levels', () {
       expect(
         sameLevels(

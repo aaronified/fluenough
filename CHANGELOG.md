@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **Private language packages.** Install a whole private language from a package folder; it uses the same deck kinds, levels and hidden decks as a public course (first slice, #1017).
+
 ## [0.10.0] - 2026-11-13
 
 ### Added

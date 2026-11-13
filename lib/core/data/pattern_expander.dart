@@ -2,6 +2,7 @@ import '../models/card.dart';
 import '../models/deck.dart';
 import '../models/drill_mode.dart';
 import '../models/grammar_pattern.dart';
+import '../private/private_ids.dart';
 
 /// One grammar deck's pattern table as cards: one per `(entry, slot)` cell
 /// that has a form (docs/DECK-FORMAT.md, "Expansion").
@@ -58,9 +59,10 @@ List<Card> expandPattern(Deck deck) {
 /// [slotIndex]. The one place the scheme is written, so that the drill finds
 /// a card's cell by the same id the expander gave it.
 String patternCardId(Deck deck, PatternEntry entry, int slotIndex) {
-  final course = '${deck.language.code}-${deck.native.code}-';
+  final stem = idLanguagePrefix(deck.id, deck.language.code);
+  final course = '$stem-${deck.native.code}-';
   final name = deck.id.startsWith(course)
-      ? '${deck.language.code}-${deck.id.substring(course.length)}'
+      ? '$stem-${deck.id.substring(course.length)}'
       : deck.id;
   return '$name-${entry.idPart}-$slotIndex';
 }

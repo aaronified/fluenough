@@ -5,6 +5,7 @@ import '../../app/skill.dart';
 import '../../core/models/card.dart';
 import '../../core/models/drill_mode.dart';
 import '../../core/progress/tag_strength.dart';
+import '../../core/private/private_ids.dart';
 
 /// Finds a card by its id, as [deckId] lists it if that deck still does,
 /// or else as the first deck listing it does; null if no deck does. Retired
@@ -56,7 +57,7 @@ class LanguageTable {
   /// (`es-en-core-100`, #51), when the catalog has that language.
   String? of(String deckId) {
     if (byDeck[deckId] case final code?) return code;
-    final named = deckId.split('-').first;
+    final named = languageOfId(deckId);
     return codes.contains(named) ? named : null;
   }
 }
