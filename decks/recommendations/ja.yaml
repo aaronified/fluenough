@@ -15,9 +15,9 @@ recommendations:
     level: "A2"
     briefing: { en: "An animated film about a ten-year-old girl whose family stops at a strange town. It turns out to be a place for spirits, and she must work in a bathhouse to save her parents. It is one of the best-known Japanese films abroad." }
     questions:
-      - { id: "q1", prompt: { en: "What happens to the girl's parents after they eat the food in the empty town?" }, options: { en: ["They are turned into pigs", "They fall asleep for a hundred years", "They disappear into the sea"] }, answer: 1 }
-      - { id: "q2", prompt: { en: "What new name does the bathhouse owner give the girl?" }, options: { en: ["Sen", "Haku", "Yuna"] }, answer: 1 }
-      - { id: "q3", prompt: { en: "What kind of place does the girl work in?" }, options: { en: ["A bathhouse for spirits", "A train station", "A school"] }, answer: 1 }
+      - { id: "q1", prompt: { en: "What happens to the girl's parents after they eat the food in the empty town?" }, options: { en: ["They fall asleep for a hundred years", "They are turned into pigs", "They disappear into the sea"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "What new name does the bathhouse owner give the girl?" }, options: { en: ["Haku", "Yuna", "Sen"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "Who is the boy who helps the girl and turns out to be a river spirit?" }, options: { en: ["Haku", "Kamaji", "Boh"] }, answer: 1 }
     tags: ["unreviewed"]
   - id: "ja-rec-tonari-no-totoro"
     medium: "film"
@@ -27,8 +27,8 @@ recommendations:
     level: "A2"
     briefing: { en: "An animated film about two sisters who move to the countryside and meet the gentle forest spirits near their new house. A calm story with no villain." }
     questions:
-      - { id: "q1", prompt: { en: "Why does the family move to the countryside?" }, options: { en: ["To be near the hospital where the mother is", "Because of a war", "Because the father changes schools"] }, answer: 1 }
-      - { id: "q2", prompt: { en: "What are the two sisters called?" }, options: { en: ["Satsuki and Mei", "Chihiro and Haku", "Kiki and Tombo"] }, answer: 1 }
+      - { id: "q1", prompt: { en: "Why does the family move to the countryside?" }, options: { en: ["Because of a war", "To be near the hospital where the mother is", "Because the father changes schools"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "What are the two sisters called?" }, options: { en: ["Chihiro and Haku", "Kiki and Tombo", "Satsuki and Mei"] }, answer: 3 }
       - { id: "q3", prompt: { en: "Which animal-shaped vehicle do the sisters ride at night?" }, options: { en: ["A cat-shaped bus", "A giant bird", "A flying boat"] }, answer: 1 }
     tags: ["unreviewed"]
   - id: "ja-rec-shichinin-no-samurai"
@@ -39,8 +39,8 @@ recommendations:
     level: "B1"
     briefing: { en: "A long black-and-white film about a farming village that hires masterless warriors to protect it from bandits. It shaped adventure films in many countries." }
     questions:
-      - { id: "q1", prompt: { en: "What do the villagers hire the samurai to do?" }, options: { en: ["Protect the village from bandits", "Build a castle", "Collect taxes"] }, answer: 1 }
-      - { id: "q2", prompt: { en: "Which of the group is a farmer's son pretending to be a samurai?" }, options: { en: ["Kikuchiyo", "Kambei", "Katsushiro"] }, answer: 1 }
+      - { id: "q1", prompt: { en: "What can the farmers offer the samurai as payment?" }, options: { en: ["Gold", "Meals of rice", "Land"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Which of the group is a farmer's son pretending to be a samurai?" }, options: { en: ["Kambei", "Katsushiro", "Kikuchiyo"] }, answer: 3 }
       - { id: "q3", prompt: { en: "At the end, who does Kambei say has won?" }, options: { en: ["The farmers", "The samurai", "The bandits"] }, answer: 1 }
     tags: ["unreviewed"]
   - id: "ja-rec-tokyo-monogatari"
@@ -51,8 +51,8 @@ recommendations:
     level: "B1"
     briefing: { en: "A quiet black-and-white film about an elderly couple who travel from a small town to Tokyo to visit their grown children, who are too busy for them." }
     questions:
-      - { id: "q1", prompt: { en: "Where do the elderly couple travel to?" }, options: { en: ["Tokyo", "Kyoto", "Hokkaido"] }, answer: 1 }
-      - { id: "q2", prompt: { en: "Who is kind to the couple in Tokyo?" }, options: { en: ["Their widowed daughter-in-law, Noriko", "Their eldest son", "Their neighbour"] }, answer: 1 }
+      - { id: "q1", prompt: { en: "Which small town do the old couple come from?" }, options: { en: ["Kyoto", "Onomichi", "Nagasaki"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Who is kind to the couple in Tokyo?" }, options: { en: ["Their eldest son", "Their neighbour", "Their widowed daughter-in-law, Noriko"] }, answer: 3 }
       - { id: "q3", prompt: { en: "What happens to the mother after they return home?" }, options: { en: ["She dies", "She moves to Tokyo", "She goes on a second trip"] }, answer: 1 }
     tags: ["unreviewed"]
   - id: "ja-rec-gojira"
@@ -63,8 +63,8 @@ recommendations:
     level: "B1"
     briefing: { en: "The first film about Godzilla, a sea monster woken by nuclear testing. It is a serious film about fear after the war." }
     questions:
-      - { id: "q1", prompt: { en: "What wakes the monster?" }, options: { en: ["Nuclear bomb tests", "An earthquake", "A ship's engine"] }, answer: 1 }
-      - { id: "q2", prompt: { en: "Which city does it attack?" }, options: { en: ["Tokyo", "Osaka", "Nagasaki"] }, answer: 1 }
+      - { id: "q1", prompt: { en: "On which island do the villagers first see signs of the monster?" }, options: { en: ["Sado Island", "Odo Island", "Okinawa"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Which city does it attack?" }, options: { en: ["Osaka", "Nagasaki", "Tokyo"] }, answer: 3 }
       - { id: "q3", prompt: { en: "What weapon does the scientist Serizawa invent?" }, options: { en: ["The Oxygen Destroyer", "A giant net", "A sound weapon"] }, answer: 1 }
     tags: ["unreviewed"]
   - id: "ja-rec-kimi-no-na-wa"
@@ -75,8 +75,8 @@ recommendations:
     level: "A2"
     briefing: { en: "An animated film about a girl in a small mountain town and a boy in Tokyo who find that they sometimes swap bodies in their sleep." }
     questions:
-      - { id: "q1", prompt: { en: "Where do the two main characters live?" }, options: { en: ["A mountain town and Tokyo", "Kyoto and Osaka", "Two islands"] }, answer: 1 }
-      - { id: "q2", prompt: { en: "What comes close to the earth in the story?" }, options: { en: ["A comet", "A solar eclipse", "A second moon"] }, answer: 1 }
+      - { id: "q1", prompt: { en: "What is the name of the girl's mountain town?" }, options: { en: ["Takayama", "Itomori", "Karuizawa"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "What comes close to the earth in the story?" }, options: { en: ["A solar eclipse", "A second moon", "A comet"] }, answer: 3 }
       - { id: "q3", prompt: { en: "What does the girl tie in her hair?" }, options: { en: ["A red braided cord", "A white ribbon", "A flower"] }, answer: 1 }
     tags: ["unreviewed"]
   - id: "ja-rec-ue-o-muite-arukou"
@@ -87,8 +87,8 @@ recommendations:
     level: "A2"
     briefing: { en: "A song from 1961, sung by Sakamoto Kyu, about walking with your face turned up so that your tears do not fall. It was a hit abroad under another name." }
     questions:
-      - { id: "q1", prompt: { en: "Who sang the song?" }, options: { en: ["Sakamoto Kyu", "Ei Rokusuke", "Miyazaki Hayao"] }, answer: 1 }
-      - { id: "q2", prompt: { en: "What name did it have when it was released in the United States?" }, options: { en: ["Sukiyaki", "Tokyo Night", "Look Up"] }, answer: 1 }
+      - { id: "q1", prompt: { en: "What does the singer do in the song besides singing words?" }, options: { en: ["He claps", "He whistles", "He plays a flute"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "What name did it have when it was released in the United States?" }, options: { en: ["Tokyo Night", "Look Up", "Sukiyaki"] }, answer: 3 }
       - { id: "q3", prompt: { en: "What position did it reach on the US Billboard Hot 100 in 1963?" }, options: { en: ["Number one", "Number twenty", "It did not enter"] }, answer: 1 }
     tags: ["unreviewed"]
   - id: "ja-rec-noruwei-no-mori"
@@ -100,9 +100,9 @@ recommendations:
     script: "han"
     briefing: { en: "A novel in which a man in his thirties remembers his student days in Tokyo in the 1960s, and two very different women in his life. The title is the name of a song by the Beatles." }
     questions:
-      - { id: "q1", prompt: { en: "What is the narrator's name?" }, options: { en: ["Toru Watanabe", "Kenji Okada", "Haruki Sato"] }, answer: 1 }
-      - { id: "q2", prompt: { en: "Which two women are most important to him?" }, options: { en: ["Naoko and Midori", "Yuki and Kana", "Mei and Satsuki"] }, answer: 1 }
-      - { id: "q3", prompt: { en: "Which band's song gives the book its title?" }, options: { en: ["The Beatles", "The Rolling Stones", "Queen"] }, answer: 1 }
+      - { id: "q1", prompt: { en: "What is the narrator's name?" }, options: { en: ["Kenji Okada", "Toru Watanabe", "Haruki Sato"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Which two women are most important to him?" }, options: { en: ["Yuki and Kana", "Mei and Satsuki", "Naoko and Midori"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "Where does Naoko go to recover?" }, options: { en: ["A sanatorium in the mountains", "A shop in Osaka", "A temple in Kyoto"] }, answer: 1 }
     tags: ["unreviewed"]
   - id: "ja-rec-tetsuwan-atom"
     medium: "comic"
@@ -112,7 +112,7 @@ recommendations:
     level: "A2"
     briefing: { en: "A manga about a robot boy with a human heart who fights for people. It was Japan's first well-known animated television series." }
     questions:
-      - { id: "q1", prompt: { en: "Who builds the robot boy?" }, options: { en: ["Doctor Tenma", "Doctor Ochanomizu", "His brother"] }, answer: 1 }
-      - { id: "q2", prompt: { en: "Why is he built?" }, options: { en: ["To replace the doctor's son who died", "To fight in a war", "To work in a factory"] }, answer: 1 }
+      - { id: "q1", prompt: { en: "Who builds the robot boy?" }, options: { en: ["Doctor Ochanomizu", "Doctor Tenma", "His brother"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Why is he built?" }, options: { en: ["To fight in a war", "To work in a factory", "To replace the doctor's son who died"] }, answer: 3 }
       - { id: "q3", prompt: { en: "How does he fly?" }, options: { en: ["With jets in his legs", "With wings", "With a balloon"] }, answer: 1 }
     tags: ["unreviewed"]
