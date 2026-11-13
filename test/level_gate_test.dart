@@ -241,10 +241,7 @@ void main() {
         LearnerLevels.coreIdOf('fnpd-qaa-en-home', 'qaa', 'en'),
         'fnpd-qaa-home',
       );
-      expect(
-        LearnerLevels.coreIdOf('fnpd-qaa-bn-home', 'qaa', 'en'),
-        isNull,
-      );
+      expect(LearnerLevels.coreIdOf('fnpd-qaa-bn-home', 'qaa', 'en'), isNull);
       expect(LearnerLevels.coreIdOf('fnpd-qaa-en-', 'qaa', 'en'), isNull);
       expect(LearnerLevels.coreIdOf('qaa-en-home', 'qaa', 'en'), 'qaa-home');
     });
