@@ -1,0 +1,253 @@
+# The people behind the works of the Japanese culture decks (wiki/Plan-Deck-Kinds-And-Topics.md, D5).
+# Dates are the years of birth and death; the eras follow the Japanese tradition. No pictures: none has a licence checked yet.
+schema: 1
+kind: "creators"
+id: "creators-ja"
+language: "ja"
+license: "CC-BY-SA-4.0"
+eras:
+  - id: "nara"
+    name: { ja: "奈良時代", en: "Nara period" }
+    reading: { ja: "nara jidai" }
+    from: 710
+    to: 794
+  - id: "heian"
+    name: { ja: "平安時代", en: "Heian period" }
+    reading: { ja: "heian jidai" }
+    from: 794
+    to: 1185
+  - id: "kamakura"
+    name: { ja: "鎌倉時代", en: "Kamakura period" }
+    reading: { ja: "kamakura jidai" }
+    from: 1185
+    to: 1333
+  - id: "edo"
+    name: { ja: "江戸時代", en: "Edo period" }
+    reading: { ja: "edo jidai" }
+    from: 1603
+    to: 1868
+  - id: "meiji"
+    name: { ja: "明治時代", en: "Meiji period" }
+    reading: { ja: "meiji jidai" }
+    from: 1868
+    to: 1912
+  - id: "taisho"
+    name: { ja: "大正時代", en: "Taisho period" }
+    reading: { ja: "taisho jidai" }
+    from: 1912
+    to: 1926
+  - id: "showa"
+    name: { ja: "昭和時代", en: "Showa period" }
+    reading: { ja: "showa jidai" }
+    from: 1926
+    to: 1989
+creators:
+  - id: "ja-abe-no-nakamaro"
+    name:
+      ja: { text: "阿倍仲麻呂", reading: "abe no nakamaro", ipa: "abe no nakamaɾo" }
+      en: { text: "Abe no Nakamaro" }
+    born: 698
+    died: 770
+    era: "nara"
+    bio:
+      en: "Abe no Nakamaro was a student sent from Japan to Tang China in the Nara period. He stayed on in China, served at the Tang court, and never came home."
+    legacy:
+      text: { en: "He is remembered for one poem about the moon, and a monument to him stands in China." }
+      items:
+        - { kind: "commemoration", year: 1979, text: { en: "A monument in Xingqing Palace Park in Xi'an, China, carries his poem about the moon. It was put up in 1979 to mark the friendship of the cities of Nara and Xi'an." }, source: { url: "https://ja.wikipedia.org/wiki/%E9%98%BF%E5%80%8D%E4%BB%B2%E9%BA%BB%E5%91%82", accessed: "2026-11-13" } }
+  - id: "ja-ariwara-no-narihira"
+    name:
+      ja: { text: "在原業平", reading: "ariwara no narihira", ipa: "aɾiwaɾa no naɾiçiɾa" }
+      en: { text: "Ariwara no Narihira" }
+    born: 825
+    died: 880
+    era: "heian"
+    bio:
+      en: "Ariwara no Narihira was a nobleman and poet of the early Heian court, the fifth son of a prince. His poems are collected in the Kokin Wakashu."
+    legacy:
+      text: { en: "One of his poems is part of the best-known collection of one hundred poems." }
+      items:
+        - { kind: "other", text: { en: "His poem about the Tatsuta River is number 17 in the Ogura Hyakunin Isshu, the collection of one hundred poems by one hundred poets." }, source: { url: "https://ja.wikipedia.org/wiki/%E5%9C%A8%E5%8E%9F%E6%A5%AD%E5%B9%B3", accessed: "2026-11-13" } }
+  - id: "ja-sei-shonagon"
+    name:
+      ja: { text: "清少納言", reading: "sei shounagon", ipa: "seː ɕoːnaɡoɴ" }
+      en: { text: "Sei Shonagon" }
+    born: { year: 966, circa: true }
+    died: { year: 1025, circa: true }
+    era: "heian"
+    bio:
+      en: "Sei Shonagon served as a lady at the Heian court and wrote Makura no Soshi (The Pillow Book). The years of her birth and death are not certain."
+    legacy:
+      text: { en: "Her book is still read in Japan, and she appears in new stories and comics." }
+      items:
+        - { kind: "adaptation", year: 2019, text: { en: "A manga series about her, by PEACH-PIT, began in 2019." }, source: { url: "https://ja.wikipedia.org/wiki/%E6%B8%85%E5%B0%91%E7%B4%8D%E8%A8%80", accessed: "2026-11-13" } }
+  - id: "ja-kamo-no-chomei"
+    name:
+      ja: { text: "鴨長明", reading: "kamo no choumei", ipa: "kamo no tɕoːmeː" }
+      en: { text: "Kamo no Chomei" }
+    born: { year: 1155, circa: true }
+    died: 1216
+    era: "kamakura"
+    bio:
+      en: "Kamo no Chomei was a poet and essayist who lived at the end of the Heian period and the start of the Kamakura period. He lived as a hermit in a small hut and wrote Hojoki about it. The year of his birth is not certain."
+    legacy:
+      text: { en: "His Hojoki is a model of Japanese writing about how nothing lasts." }
+      items:
+        - { kind: "other", text: { en: "Hojoki is called the first fine work of literature written in a mixed style of Japanese and Chinese, and the source of the literature of hermits and of impermanence." }, source: { url: "https://ja.wikipedia.org/wiki/%E6%96%B9%E4%B8%88%E8%A8%98", accessed: "2026-11-13" } }
+  - id: "ja-dogen"
+    name:
+      ja: { text: "道元", reading: "dougen", ipa: "doːɡeɴ" }
+      en: { text: "Dogen" }
+    born: 1200
+    died: 1253
+    era: "kamakura"
+    bio:
+      en: "Dogen was a Zen monk and the founder of the Soto school of Zen in Japan. He also wrote poems in Japanese."
+    legacy:
+      text: { en: "His poem about the four seasons is still quoted." }
+      items:
+        - { kind: "commemoration", year: 1981, text: { en: "In 1981 a monument was put up at a temple in Nagano with this poem carved in the handwriting of the novelist Kawabata Yasunari." }, source: { url: "https://ja.wikipedia.org/wiki/1981%E5%B9%B4%E3%81%AE%E6%96%87%E5%AD%A6", accessed: "2026-11-13" } }
+  - id: "ja-matsuo-basho"
+    name:
+      ja: { text: "松尾芭蕉", reading: "matsuo bashou", ipa: "matsɯo baɕoː" }
+      en: { text: "Matsuo Basho" }
+    born: 1644
+    died: 1694
+    era: "edo"
+    bio:
+      en: "Matsuo Basho was a poet of the Edo period who made the short verse that is now called haiku into a fine art. He travelled on foot and wrote about his journeys in Oku no Hosomichi."
+    legacy:
+      text: { en: "His poem about the old pond is known as the poem that stands for haiku itself." }
+      items:
+        - { kind: "other", text: { en: "Since the Edo period, his poem about the old pond has been known as the poem that stands for haiku." }, source: { url: "https://ja.wikipedia.org/wiki/%E5%8F%A4%E6%B1%A0%E3%82%84%E8%9B%99%E9%A3%9B%E3%81%B3%E3%81%93%E3%82%80%E6%B0%B4%E3%81%AE%E9%9F%B3", accessed: "2026-11-13" } }
+        - { kind: "place", text: { en: "A footbridge on the pine-lined path at Soka, near Tokyo, is named after the opening of Oku no Hosomichi." }, source: { url: "https://ja.wikipedia.org/wiki/%E8%8D%89%E5%8A%A0%E6%9D%BE%E5%8E%9F", accessed: "2026-11-13" } }
+  - id: "ja-yosa-buson"
+    name:
+      ja: { text: "与謝蕪村", reading: "yosa buson", ipa: "josa bɯsoɴ" }
+      en: { text: "Yosa Buson" }
+    born: 1716
+    died: 1784
+    era: "edo"
+    bio:
+      en: "Yosa Buson was a poet and painter of the Edo period. He is known both for his haiku and for his paintings."
+    legacy:
+      text: { en: "A series of school stories takes its title from one of his poems." }
+      items:
+        - { kind: "other", text: { en: "A series of short stories about a school art club takes its title from his poem about rape blossoms." }, source: { url: "https://ja.wikipedia.org/wiki/%E6%9C%88%E3%81%AF%E6%9D%B1%E3%81%AB%E6%97%A5%E3%81%AF%E8%A5%BF%E3%81%AB", accessed: "2026-11-13" } }
+  - id: "ja-kobayashi-issa"
+    name:
+      ja: { text: "小林一茶", reading: "kobayashi issa", ipa: "kobajaɕi issa" }
+      en: { text: "Kobayashi Issa" }
+    born: 1763
+    died: 1828
+    era: "edo"
+    bio:
+      en: "Kobayashi Issa was a poet of the Edo period who wrote many haiku about small animals and about ordinary people."
+    legacy:
+      text: { en: "A temple in Tokyo remembers him with a festival every year." }
+      items:
+        - { kind: "festival", text: { en: "Entenji, a temple in Tokyo known as the frog temple, holds an Issa festival every November." }, source: { url: "https://ja.wikipedia.org/wiki/%E7%82%8E%E5%A4%A9%E5%AF%BA", accessed: "2026-11-13" } }
+  - id: "ja-ryokan"
+    name:
+      ja: { text: "良寛", reading: "ryoukan", ipa: "ɾjoːkaɴ" }
+      en: { text: "Ryokan" }
+    born: 1758
+    died: 1831
+    era: "edo"
+    bio:
+      en: "Ryokan was a Zen monk, poet and calligrapher of the Edo period. He lived simply in the mountains of Echigo, now Niigata, and liked to play with children."
+    legacy:
+      text: { en: "Stories of him playing with children are still told." }
+      items:
+        - { kind: "other", text: { en: "Stories say he played temari and hide-and-seek with the village children, and these stories are still told." }, source: { url: "https://ja.wikipedia.org/wiki/%E8%89%AF%E5%AF%9B", accessed: "2026-11-13" } }
+  - id: "ja-natsume-soseki"
+    name:
+      ja: { text: "夏目漱石", reading: "natsume souseki", ipa: "natsɯme soːseki" }
+      en: { text: "Natsume Soseki" }
+    born: 1867
+    died: 1916
+    era: "meiji"
+    bio:
+      en: "Natsume Soseki was a novelist of the Meiji period. He was also a haiku poet, a scholar of English literature and a teacher."
+    legacy:
+      text: { en: "The first line of his first novel is carved on a school memorial in Tokyo." }
+      items:
+        - { kind: "commemoration", text: { en: "The first line of I Am a Cat is carved, with his name, on a memorial at Ochanomizu Elementary School in Tokyo." }, source: { url: "https://ja.wikipedia.org/wiki/%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%BA%E7%AB%8B%E3%81%8A%E8%8C%B6%E3%81%AE%E6%B0%B4%E5%B0%8F%E5%AD%A6%E6%A0%A1", accessed: "2026-11-13" } }
+  - id: "ja-masaoka-shiki"
+    name:
+      ja: { text: "正岡子規", reading: "masaoka shiki", ipa: "masaoka ɕiki" }
+      en: { text: "Masaoka Shiki" }
+    born: 1867
+    died: 1902
+    era: "meiji"
+    bio:
+      en: "Masaoka Shiki was a poet and writer of the Meiji period. He was ill for much of his short life, and he worked to make haiku and tanka modern."
+    legacy:
+      text: { en: "He is remembered as the poet who led the modernising of haiku." }
+      items:
+        - { kind: "other", text: { en: "He led the modernising of haiku in the Meiji period." }, source: { url: "https://ja.wikipedia.org/wiki/%E5%8F%A4%E6%B1%A0%E3%82%84%E8%9B%99%E9%A3%9B%E3%81%B3%E3%81%93%E3%82%80%E6%B0%B4%E3%81%AE%E9%9F%B3", accessed: "2026-11-13" } }
+  - id: "ja-yosano-akiko"
+    name:
+      ja: { text: "与謝野晶子", reading: "yosano akiko", ipa: "josano akiko" }
+      en: { text: "Yosano Akiko" }
+    born: 1878
+    died: 1942
+    era: "meiji"
+    bio:
+      en: "Yosano Akiko was a poet and writer. Her first book of poems, Midaregami (1901), spoke openly of a woman's love at a time when that was not usual."
+    legacy:
+      text: { en: "One poem of hers gave her a nickname that people still use." }
+      items:
+        - { kind: "saying", text: { en: "A line of her poem gave her the nickname 'Akiko of the soft skin'." }, source: { url: "https://ja.wikipedia.org/wiki/%E4%B8%8E%E8%AC%9D%E9%87%8E%E6%99%B6%E5%AD%90", accessed: "2026-11-13" } }
+  - id: "ja-doi-bansui"
+    name:
+      ja: { text: "土井晩翠", reading: "doi bansui", ipa: "doi baɴsɯi" }
+      en: { text: "Doi Bansui" }
+    born: 1871
+    died: 1952
+    era: "meiji"
+    bio:
+      en: "Doi Bansui was a poet and a scholar of English literature. He wrote the words of Kojo no Tsuki."
+    legacy:
+      text: { en: "Kojo no Tsuki is one of the best-known songs in Japan." }
+      items:
+        - { kind: "music", year: 1901, text: { en: "Kojo no Tsuki is called the first song composed in Japan in the Western style, and it is well known to Westerners, with Sakura." }, source: { url: "https://ja.wikipedia.org/wiki/%E8%8D%92%E5%9F%8E%E3%81%AE%E6%9C%88", accessed: "2026-11-13" } }
+  - id: "ja-takano-tatsuyuki"
+    name:
+      ja: { text: "高野辰之", reading: "takano tatsuyuki", ipa: "takano tatsɯjɯki" }
+      en: { text: "Takano Tatsuyuki" }
+    born: 1876
+    died: 1947
+    era: "taisho"
+    bio:
+      en: "Takano Tatsuyuki wrote the words of the school song Furusato, which was published in 1914 without his name. His name became known in the 1960s."
+    legacy:
+      text: { en: "Furusato is taught in Japanese schools today." }
+      items:
+        - { kind: "curriculum", year: 2024, text: { en: "From the 2024 school year Furusato is one of four songs that every sixth-year music textbook in Japan must include." }, source: { url: "https://ja.wikipedia.org/wiki/%E6%95%85%E9%83%B7_(%E5%94%B1%E6%AD%8C)", accessed: "2026-11-13" } }
+  - id: "ja-akutagawa-ryunosuke"
+    name:
+      ja: { text: "芥川龍之介", reading: "akutagawa ryuunosuke", ipa: "akɯtaɡawa ɾjɯːnosɯke" }
+      en: { text: "Akutagawa Ryunosuke" }
+    born: 1892
+    died: 1927
+    era: "taisho"
+    bio:
+      en: "Akutagawa Ryunosuke was a writer of short stories in the Taisho period. Many of his stories, including Rashomon, retell old tales."
+    legacy:
+      text: { en: "Japan's best-known prize for new writers carries his name." }
+      items:
+        - { kind: "commemoration", text: { en: "The Akutagawa Prize, a prize for new writers, was set up in his name by his friend Kikuchi Kan." }, source: { url: "https://ja.wikipedia.org/wiki/%E8%8A%A5%E5%B7%9D%E9%BE%8D%E4%B9%8B%E4%BB%8B", accessed: "2026-11-13" } }
+  - id: "ja-miyazawa-kenji"
+    name:
+      ja: { text: "宮沢賢治", reading: "miyazawa kenji", ipa: "mijazawa keɴdʑi" }
+      en: { text: "Miyazawa Kenji" }
+    born: 1896
+    died: 1933
+    era: "taisho"
+    bio:
+      en: "Miyazawa Kenji was a poet and writer of children's stories from Iwate. He was a Buddhist, he died young, and most of his work was read only after his death."
+    legacy:
+      text: { en: "His poem about not losing to the rain and wind is among the best known in Japan." }
+      items:
+        - { kind: "other", text: { en: "Found as a memo after his death, Ame ni mo makezu is widely known and counted among his best-known works." }, source: { url: "https://ja.wikipedia.org/wiki/%E9%9B%A8%E3%83%8B%E3%83%A2%E3%83%9E%E3%82%B1%E3%82%BA", accessed: "2026-11-13" } }
