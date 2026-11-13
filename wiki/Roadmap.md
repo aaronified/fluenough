@@ -275,7 +275,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#366](https://github.com/aaronified/fluenough/issues/366) New course: Polish
 - [#367](https://github.com/aaronified/fluenough/issues/367) New course: Serbian/Croatian
 - [#368](https://github.com/aaronified/fluenough/issues/368) New course: Greek
-- [#368](https://github.com/aaronified/fluenough/issues/368) New course: Greek
 - [#369](https://github.com/aaronified/fluenough/issues/369) New course: Turkish
 - [#370](https://github.com/aaronified/fluenough/issues/370) New course: Finnish
 - [#371](https://github.com/aaronified/fluenough/issues/371) New course: Hungarian
@@ -329,6 +328,9 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1187](https://github.com/aaronified/fluenough/issues/1187) Language: Kumaoni: full deck format
 - [#1188](https://github.com/aaronified/fluenough/issues/1188) Language: Garhwali: full deck format
 - [#1189](https://github.com/aaronified/fluenough/issues/1189) Language: Mizo: full deck format
+- [#1190](https://github.com/aaronified/fluenough/issues/1190) Language: Khasi: full deck format
+- [#1191](https://github.com/aaronified/fluenough/issues/1191) Language: Goan Konkani: full deck format
+- [#1192](https://github.com/aaronified/fluenough/issues/1192) Language: Spanish: full deck format
 
 ## Plans
 
