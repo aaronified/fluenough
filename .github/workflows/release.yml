@@ -569,15 +569,23 @@ jobs:
             echo "Source for this exact build is the tag it was made from."
           } >> "$notes"
 
-      # The universal APK only: it installs on any device, and a single file
-      # leaves nobody guessing which build is theirs.
-      - name: Attach the APK to the release
+      # The sample deck pack: one deck of every kind the fixtures cover and
+      # the es/te sample course, to read and copy (#92). Built from the
+      # frozen fixtures, so it costs no network and no secrets.
+      - name: Build the sample deck pack
+        run: python3 tools/build_sample_pack.py "$RUNNER_TEMP/fluenough-sample-decks.zip"
+
+      # The universal APK, which installs on any device, so a single file
+      # leaves nobody guessing which build is theirs; and the sample deck pack.
+      - name: Attach the APK and the sample deck pack to the release
         uses: softprops/action-gh-release@v3
         with:
           # A manual run's ref is main, so name the tag rather than let the
           # action take it from the ref.
           tag_name: ${{ env.TAG }}
-          files: build/app/outputs/flutter-apk/app-release.apk
+          files: |
+            build/app/outputs/flutter-apk/app-release.apk
+            ${{ runner.temp }}/fluenough-sample-decks.zip
           generate_release_notes: false
           body_path: ${{ runner.temp }}/release_notes.md
 

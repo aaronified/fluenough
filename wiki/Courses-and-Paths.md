@@ -48,7 +48,7 @@ If the app says the decks need a newer version, update the app in Settings first
 
 ## Your own decks
 
-Settings > "Your decks" lets you upload a deck file or a CSV. It is checked before it is added. You can get a template of a single deck. Nothing you add is sent anywhere: it stays on your phone and in your backups. To write one, see the [Deck building guide](Deck-Building-Guide).
+Settings > "Your decks" lets you upload a deck file or a CSV. It is checked before it is added. You can get a template of a single deck. Nothing you add is sent anywhere: it stays on your phone and in your backups. To write one, see the [Deck building guide](Deck-Building-Guide). A [sample deck pack](https://github.com/aaronified/fluenough/releases/latest/download/fluenough-sample-decks.zip), attached to every release, has one deck of every kind and a small Spanish and Telugu course to read and copy.
 
 A whole language, or your own version of a course, is a private language package (a `.fnzip`): add one, get a starter package, or download a course on your phone to change it. See [Private-Language-Package](Private-Language-Package).
 

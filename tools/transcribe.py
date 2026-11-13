@@ -588,12 +588,45 @@ def default_choices(units: list[Unit], lang: str) -> list[Choice]:
             # single letter.
             first = k == 1 or (k >= 2 and units[k - 2].kind == "SP")
             if end and not first:
-                drop = True
-            elif lang in ("hi", "mr", "gu") and _schwa_drops(units, k):
+                drop = not _said_after_cluster(units, k, lang)
+            elif lang in ("hi", "mr", "gu", "bn") and \
+                    _schwa_drops(units, k):
                 drop = True
         if drop:
             picked[k] = Choice("", "", [""], 0, "drop")
     return picked
+
+
+# Letters after which a word's last vowel is said when a cluster ends in
+# them (Hindi, Marathi, Gujarati; no-hint fix 1, #315): मित्र mitra.
+_CLUSTER_END_SAID = {"r", "y", "v", "n", "ṇ", "m", "l"}
+
+
+def _said_after_cluster(units: list[Unit], k: int, lang: str) -> bool:
+    """Whether the inherent vowel ending a word is said, because the word
+    ends in a cluster whose last consonant is r, y, v, n, ṇ, m or l."""
+    if lang not in ("hi", "mr", "gu") or k < 2:
+        return False
+    last, before = units[k - 1], units[k - 2]
+    return (last.kind == "C" and last.letter in _CLUSTER_END_SAID
+            and not last.fixed and before.kind == "C")
+
+
+# Consonants a Bengali or Assamese sibilant stays s before (no-hint fix 3):
+# the stops and the dentals n and l.
+_SIBILANT_STAYS_S = {"k", "kh", "g", "gh", "ṭ", "ṭh", "ḍ", "ḍh", "t", "th",
+                     "d", "dh", "p", "ph", "b", "bh", "n", "l"}
+
+
+def _sibilant_by_rule(units: list[Unit], k: int, lang: str
+                      ) -> tuple[str, str]:
+    """A Bengali or Assamese sibilant with no hint: the language's table
+    (ś in Bengali, x in Assamese), but s before a dental or a stop."""
+    nxt = units[k + 1] if k + 1 < len(units) else None
+    if nxt is not None and nxt.kind == "C" and \
+            nxt.letter in _SIBILANT_STAYS_S:
+        return "s", "s"
+    return consonant(units[k].letter, lang)
 
 
 def _schwa_drops(units: list[Unit], k: int) -> bool:
@@ -694,6 +727,7 @@ def _transcribe(text: str, lang: str, hint: str | None) -> Transcription:
     fitted = picked is not None
     if picked is None and hint:
         picked = _word_by_word(units, hint, lang)
+    by_rule = picked is None
     if picked is None:
         picked = default_choices(units, lang)
     iso: list[str] = []
@@ -705,7 +739,11 @@ def _transcribe(text: str, lang: str, hint: str | None) -> Transcription:
             if ch.tag == "silent":
                 i_iso, i_ipa = "", ""
             # Bengali and Assamese say a sibilant as s where it is typed s.
+            # With no hint nothing is typed: the language's table decides.
             if lang in ("bn", "as") and u.letter in ("ś", "ṣ", "s") and \
+                    by_rule and not u.fixed and ch.tag != "silent":
+                i_iso, i_ipa = _sibilant_by_rule(units, k, lang)
+            elif lang in ("bn", "as") and u.letter in ("ś", "ṣ", "s") and \
                     typed.startswith("s") and not typed.startswith("sh"):
                 i_iso, i_ipa = "s", "s"
             # ফ, ಫ in a word from English is f, typed f: ಫ್ಲಾಟ್ flat.

@@ -64,6 +64,32 @@ class ReadingTest(unittest.TestCase):
                     fresh.doCleanups()
 
 
+class NoHintTest(unittest.TestCase):
+    """The three fixes that apply only with no hint (#315)."""
+
+    def read(self, lang, word):
+        return transcribe(word, lang).reading
+
+    def test_a_words_last_vowel_after_a_cluster_ending_in_r_is_said(self) -> None:
+        self.assertEqual(self.read("hi", "मित्र"), "mitra")
+        self.assertEqual(self.read("mr", "मित्र"), "mitra")
+        self.assertEqual(self.read("gu", "મિત્ર"), "mitra")
+        # A last vowel after a single consonant is still dropped.
+        self.assertEqual(self.read("hi", "कमल"), "kamal")
+
+    def test_bengali_drops_an_inherent_vowel_inside_a_word(self) -> None:
+        self.assertEqual(self.read("bn", "আপনার"), "āpnār")
+
+    def test_sibilants_follow_the_table_unless_before_a_stop(self) -> None:
+        self.assertEqual(self.read("bn", "সকাল"), "śôkāl")
+        self.assertEqual(self.read("as", "সকাল"), "xôkāl")
+        self.assertEqual(self.read("bn", "স্টেশন"), "sṭeśon")
+        self.assertEqual(self.read("as", "স্কুল"), "skul")
+
+    def test_a_hint_still_decides_the_sibilant(self) -> None:
+        self.assertEqual(transcribe("সকাল", "bn", "sokal").reading, "sôkāl")
+
+
 class NewLanguagesTest(unittest.TestCase):
     """Japanese, Korean, Mandarin and Toki Pona (#612), read the way the
     decks write them."""
