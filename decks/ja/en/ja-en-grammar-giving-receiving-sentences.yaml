@@ -1,0 +1,74 @@
+schema: 1
+id: "ja-en-grammar-giving-receiving-sentences"
+kind: "layer"
+core: "ja-grammar-giving-receiving-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Giving and receiving in sentences"
+description: "Sentences about doing something for someone, with the te-form and あげます (agemasu), くれます (kuremasu) or もらいます (moraimasu), to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-4453":
+    native: "I write a letter for my friend."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "に": { meaning: "(in, at, to)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "かく (kaku) means to write." }
+      w2: { why: "よむ (yomu) means to read." }
+  "ja-4454":
+    native: "My mother makes a meal for me."
+    notes:
+      "n1": "くれます (kuremasu) is used when someone does something for me or my side. For what I do for others, use あげます (agemasu)."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "に": { meaning: "(in, at, to)" }
+      "を": { meaning: "(marks the thing acted on)" }
+      "くれます": { meaning: "to give (to me or my side)" }
+    confusables:
+      w1: { why: "つくる (tsukuru) means to make; to create." }
+      w2: { why: "たべる (taberu) means to eat." }
+  "ja-4455":
+    native: "The teacher reads a book for me."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "に": { meaning: "(in, at, to)" }
+      "を": { meaning: "(marks the thing acted on)" }
+      "くれます": { meaning: "to give (to me or my side)" }
+    confusables:
+      w1: { why: "よむ (yomu) means to read." }
+      w2: { why: "かく (kaku) means to write." }
+  "ja-4456":
+    native: "I read a book for my friend."
+    bases:
+      "に": { meaning: "(in, at, to)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "よむ (yomu) means to read." }
+      w2: { why: "きく (kiku) means to listen; to hear; to ask." }
+  "ja-4457":
+    native: "I ask my friend to come."
+    notes:
+      "n1": "With もらいます (moraimasu), the person who does the action is marked with に (ni): ともだちに (tomodachi ni), from my friend."
+    bases:
+      "に": { meaning: "(in, at, to)" }
+    confusables:
+      w1: { why: "くる (kuru) means to come." }
+      w2: { why: "いく (iku) means to go." }
+  "ja-4458":
+    native: "I have the teacher look at my letter."
+    bases:
+      "に": { meaning: "(in, at, to)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "みる (miru) means to see; to look at; to watch." }
+      w2: { why: "みせる (miseru) means to show." }
+  "ja-4459":
+    native: "I have my mother cook for me."
+    bases:
+      "に": { meaning: "(in, at, to)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "つくる (tsukuru) means to make; to create." }
+      w2: { why: "たべる (taberu) means to eat." }

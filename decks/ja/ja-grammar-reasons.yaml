@@ -1,0 +1,2656 @@
+schema: 1
+id: "ja-grammar-reasons"
+part: "core"
+kind: "rules"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ja-0085"]
+  slots: ["kara-because", "node"]
+  rows:
+    - word: "ja-1050"
+      forms:
+        "kara-because": "まがるから"
+        "node": "まがるので"
+      readings:
+        "kara-because": "magarukara"
+        "node": "magarunode"
+    - word: "ja-1060"
+      forms:
+        "kara-because": "わたるから"
+        "node": "わたるので"
+      readings:
+        "kara-because": "watarukara"
+        "node": "watarunode"
+    - word: "ja-1061"
+      forms:
+        "kara-because": "すすむから"
+        "node": "すすむので"
+      readings:
+        "kara-because": "susumukara"
+        "node": "susumunode"
+    - word: "ja-1062"
+      forms:
+        "kara-because": "さがるから"
+        "node": "さがるので"
+      readings:
+        "kara-because": "sagarukara"
+        "node": "sagarunode"
+    - word: "ja-1070"
+      forms:
+        "kara-because": "まちがえるから"
+        "node": "まちがえるので"
+      readings:
+        "kara-because": "machigaerukara"
+        "node": "machigaerunode"
+    - word: "ja-1071"
+      forms:
+        "kara-because": "でるから"
+        "node": "でるので"
+      readings:
+        "kara-because": "derukara"
+        "node": "derunode"
+    - word: "ja-1078"
+      forms:
+        "kara-because": "むかうから"
+        "node": "むかうので"
+      readings:
+        "kara-because": "mukaukara"
+        "node": "mukaunode"
+    - word: "ja-0341"
+      forms:
+        "kara-because": "たべるから"
+        "node": "たべるので"
+      readings:
+        "kara-because": "taberukara"
+        "node": "taberunode"
+    - word: "ja-0342"
+      forms:
+        "kara-because": "のむから"
+        "node": "のむので"
+      readings:
+        "kara-because": "nomukara"
+        "node": "nomunode"
+    - word: "ja-0343"
+      forms:
+        "kara-because": "みるから"
+        "node": "みるので"
+      readings:
+        "kara-because": "mirukara"
+        "node": "mirunode"
+    - word: "ja-0344"
+      forms:
+        "kara-because": "きくから"
+        "node": "きくので"
+      readings:
+        "kara-because": "kikukara"
+        "node": "kikunode"
+    - word: "ja-0345"
+      forms:
+        "kara-because": "よむから"
+        "node": "よむので"
+      readings:
+        "kara-because": "yomukara"
+        "node": "yomunode"
+    - word: "ja-0346"
+      forms:
+        "kara-because": "かくから"
+        "node": "かくので"
+      readings:
+        "kara-because": "kakukara"
+        "node": "kakunode"
+    - word: "ja-0347"
+      forms:
+        "kara-because": "はなすから"
+        "node": "はなすので"
+      readings:
+        "kara-because": "hanasukara"
+        "node": "hanasunode"
+    - word: "ja-0348"
+      forms:
+        "kara-because": "いくから"
+        "node": "いくので"
+      readings:
+        "kara-because": "ikukara"
+        "node": "ikunode"
+    - word: "ja-0349"
+      forms:
+        "kara-because": "くるから"
+        "node": "くるので"
+      readings:
+        "kara-because": "kurukara"
+        "node": "kurunode"
+    - word: "ja-0350"
+      forms:
+        "kara-because": "かえるから"
+        "node": "かえるので"
+      readings:
+        "kara-because": "kaerukara"
+        "node": "kaerunode"
+    - word: "ja-0351"
+      forms:
+        "kara-because": "おきるから"
+        "node": "おきるので"
+      readings:
+        "kara-because": "okirukara"
+        "node": "okirunode"
+    - word: "ja-0352"
+      forms:
+        "kara-because": "ねるから"
+        "node": "ねるので"
+      readings:
+        "kara-because": "nerukara"
+        "node": "nerunode"
+    - word: "ja-0353"
+      forms:
+        "kara-because": "はたらくから"
+        "node": "はたらくので"
+      readings:
+        "kara-because": "hatarakukara"
+        "node": "hatarakunode"
+    - word: "ja-0354"
+      forms:
+        "kara-because": "やすむから"
+        "node": "やすむので"
+      readings:
+        "kara-because": "yasumukara"
+        "node": "yasumunode"
+    - word: "ja-0355"
+      forms:
+        "kara-because": "はいるから"
+        "node": "はいるので"
+      readings:
+        "kara-because": "hairukara"
+        "node": "hairunode"
+    - word: "ja-0356"
+      forms:
+        "kara-because": "かうから"
+        "node": "かうので"
+      readings:
+        "kara-because": "kaukara"
+        "node": "kaunode"
+    - word: "ja-0357"
+      forms:
+        "kara-because": "あうから"
+        "node": "あうので"
+      readings:
+        "kara-because": "aukara"
+        "node": "aunode"
+    - word: "ja-0358"
+      forms:
+        "kara-because": "まつから"
+        "node": "まつので"
+      readings:
+        "kara-because": "matsukara"
+        "node": "matsunode"
+    - word: "ja-0359"
+      forms:
+        "kara-because": "もつから"
+        "node": "もつので"
+      readings:
+        "kara-because": "motsukara"
+        "node": "motsunode"
+    - word: "ja-0360"
+      forms:
+        "kara-because": "あるくから"
+        "node": "あるくので"
+      readings:
+        "kara-because": "arukukara"
+        "node": "arukunode"
+    - word: "ja-0361"
+      forms:
+        "kara-because": "のるから"
+        "node": "のるので"
+      readings:
+        "kara-because": "norukara"
+        "node": "norunode"
+    - word: "ja-0362"
+      forms:
+        "kara-because": "おりるから"
+        "node": "おりるので"
+      readings:
+        "kara-because": "orirukara"
+        "node": "orirunode"
+    - word: "ja-0363"
+      forms:
+        "kara-because": "あらうから"
+        "node": "あらうので"
+      readings:
+        "kara-because": "araukara"
+        "node": "araunode"
+    - word: "ja-0364"
+      forms:
+        "kara-because": "つくるから"
+        "node": "つくるので"
+      readings:
+        "kara-because": "tsukurukara"
+        "node": "tsukurunode"
+    - word: "ja-0365"
+      forms:
+        "kara-because": "わかるから"
+        "node": "わかるので"
+      readings:
+        "kara-because": "wakarukara"
+        "node": "wakarunode"
+    - word: "ja-0366"
+      forms:
+        "kara-because": "しるから"
+        "node": "しるので"
+      readings:
+        "kara-because": "shirukara"
+        "node": "shirunode"
+    - word: "ja-0367"
+      forms:
+        "kara-because": "ならうから"
+        "node": "ならうので"
+      readings:
+        "kara-because": "naraukara"
+        "node": "naraunode"
+    - word: "ja-0368"
+      forms:
+        "kara-because": "おしえるから"
+        "node": "おしえるので"
+      readings:
+        "kara-because": "oshierukara"
+        "node": "oshierunode"
+    - word: "ja-0369"
+      forms:
+        "kara-because": "つかうから"
+        "node": "つかうので"
+      readings:
+        "kara-because": "tsukaukara"
+        "node": "tsukaunode"
+    - word: "ja-0370"
+      forms:
+        "kara-because": "すわるから"
+        "node": "すわるので"
+      readings:
+        "kara-because": "suwarukara"
+        "node": "suwarunode"
+    - word: "ja-0371"
+      forms:
+        "kara-because": "たつから"
+        "node": "たつので"
+      readings:
+        "kara-because": "tatsukara"
+        "node": "tatsunode"
+    - word: "ja-0372"
+      forms:
+        "kara-because": "あけるから"
+        "node": "あけるので"
+      readings:
+        "kara-because": "akerukara"
+        "node": "akerunode"
+    - word: "ja-0373"
+      forms:
+        "kara-because": "しめるから"
+        "node": "しめるので"
+      readings:
+        "kara-because": "shimerukara"
+        "node": "shimerunode"
+    - word: "ja-0374"
+      forms:
+        "kara-because": "あそぶから"
+        "node": "あそぶので"
+      readings:
+        "kara-because": "asobukara"
+        "node": "asobunode"
+    - word: "ja-0375"
+      forms:
+        "kara-because": "するから"
+        "node": "するので"
+      readings:
+        "kara-because": "surukara"
+        "node": "surunode"
+    - word: "ja-0949"
+      forms:
+        "kara-because": "かぞえるから"
+        "node": "かぞえるので"
+      readings:
+        "kara-because": "kazoerukara"
+        "node": "kazoerunode"
+    - word: "ja-1226"
+      forms:
+        "kara-because": "こまるから"
+        "node": "こまるので"
+      readings:
+        "kara-because": "komarukara"
+        "node": "komarunode"
+    - word: "ja-1227"
+      forms:
+        "kara-because": "よぶから"
+        "node": "よぶので"
+      readings:
+        "kara-because": "yobukara"
+        "node": "yobunode"
+    - word: "ja-1228"
+      forms:
+        "kara-because": "まようから"
+        "node": "まようので"
+      readings:
+        "kara-because": "mayoukara"
+        "node": "mayounode"
+    - word: "ja-1236"
+      forms:
+        "kara-because": "たすけるから"
+        "node": "たすけるので"
+      readings:
+        "kara-because": "tasukerukara"
+        "node": "tasukerunode"
+    - word: "ja-1237"
+      forms:
+        "kara-because": "たすかるから"
+        "node": "たすかるので"
+      readings:
+        "kara-because": "tasukarukara"
+        "node": "tasukarunode"
+    - word: "ja-1240"
+      forms:
+        "kara-because": "まもるから"
+        "node": "まもるので"
+      readings:
+        "kara-because": "mamorukara"
+        "node": "mamorunode"
+    - word: "ja-0571"
+      forms:
+        "kara-because": "あびるから"
+        "node": "あびるので"
+      readings:
+        "kara-because": "abirukara"
+        "node": "abirunode"
+    - word: "ja-0572"
+      forms:
+        "kara-because": "はしるから"
+        "node": "はしるので"
+      readings:
+        "kara-because": "hashirukara"
+        "node": "hashirunode"
+    - word: "ja-0573"
+      forms:
+        "kara-because": "とぶから"
+        "node": "とぶので"
+      readings:
+        "kara-because": "tobukara"
+        "node": "tobunode"
+    - word: "ja-0574"
+      forms:
+        "kara-because": "おどるから"
+        "node": "おどるので"
+      readings:
+        "kara-because": "odorukara"
+        "node": "odorunode"
+    - word: "ja-0575"
+      forms:
+        "kara-because": "うたうから"
+        "node": "うたうので"
+      readings:
+        "kara-because": "utaukara"
+        "node": "utaunode"
+    - word: "ja-0576"
+      forms:
+        "kara-because": "かりるから"
+        "node": "かりるので"
+      readings:
+        "kara-because": "karirukara"
+        "node": "karirunode"
+    - word: "ja-0577"
+      forms:
+        "kara-because": "かえすから"
+        "node": "かえすので"
+      readings:
+        "kara-because": "kaesukara"
+        "node": "kaesunode"
+    - word: "ja-0578"
+      forms:
+        "kara-because": "わすれるから"
+        "node": "わすれるので"
+      readings:
+        "kara-because": "wasurerukara"
+        "node": "wasurerunode"
+    - word: "ja-0579"
+      forms:
+        "kara-because": "おぼえるから"
+        "node": "おぼえるので"
+      readings:
+        "kara-because": "oboerukara"
+        "node": "oboerunode"
+    - word: "ja-0580"
+      forms:
+        "kara-because": "てつだうから"
+        "node": "てつだうので"
+      readings:
+        "kara-because": "tetsudaukara"
+        "node": "tetsudaunode"
+    - word: "ja-0581"
+      forms:
+        "kara-because": "ひろうから"
+        "node": "ひろうので"
+      readings:
+        "kara-because": "hiroukara"
+        "node": "hirounode"
+    - word: "ja-0582"
+      forms:
+        "kara-because": "すてるから"
+        "node": "すてるので"
+      readings:
+        "kara-because": "suterukara"
+        "node": "suterunode"
+    - word: "ja-0583"
+      forms:
+        "kara-because": "なくすから"
+        "node": "なくすので"
+      readings:
+        "kara-because": "nakusukara"
+        "node": "nakusunode"
+    - word: "ja-0584"
+      forms:
+        "kara-because": "のぼるから"
+        "node": "のぼるので"
+      readings:
+        "kara-because": "noborukara"
+        "node": "noborunode"
+    - word: "ja-0585"
+      forms:
+        "kara-because": "そうじするから"
+        "node": "そうじするので"
+      readings:
+        "kara-because": "soujisurukara"
+        "node": "soujisurunode"
+    - word: "ja-0586"
+      forms:
+        "kara-because": "りょうりするから"
+        "node": "りょうりするので"
+      readings:
+        "kara-because": "ryourisurukara"
+        "node": "ryourisurunode"
+    - word: "ja-0587"
+      forms:
+        "kara-because": "でかけるから"
+        "node": "でかけるので"
+      readings:
+        "kara-because": "dekakerukara"
+        "node": "dekakerunode"
+    - word: "ja-0588"
+      forms:
+        "kara-because": "もどるから"
+        "node": "もどるので"
+      readings:
+        "kara-because": "modorukara"
+        "node": "modorunode"
+    - word: "ja-0589"
+      forms:
+        "kara-because": "とまるから"
+        "node": "とまるので"
+      readings:
+        "kara-because": "tomarukara"
+        "node": "tomarunode"
+    - word: "ja-0590"
+      forms:
+        "kara-because": "さがすから"
+        "node": "さがすので"
+      readings:
+        "kara-because": "sagasukara"
+        "node": "sagasunode"
+    - word: "ja-0591"
+      forms:
+        "kara-because": "みせるから"
+        "node": "みせるので"
+      readings:
+        "kara-because": "miserukara"
+        "node": "miserunode"
+    - word: "ja-0592"
+      forms:
+        "kara-because": "いれるから"
+        "node": "いれるので"
+      readings:
+        "kara-because": "irerukara"
+        "node": "irerunode"
+    - word: "ja-0593"
+      forms:
+        "kara-because": "わらうから"
+        "node": "わらうので"
+      readings:
+        "kara-because": "waraukara"
+        "node": "waraunode"
+    - word: "ja-0594"
+      forms:
+        "kara-because": "おこるから"
+        "node": "おこるので"
+      readings:
+        "kara-because": "okorukara"
+        "node": "okorunode"
+    - word: "ja-0595"
+      forms:
+        "kara-because": "やめるから"
+        "node": "やめるので"
+      readings:
+        "kara-because": "yamerukara"
+        "node": "yamerunode"
+    - word: "ja-0596"
+      forms:
+        "kara-because": "はじめるから"
+        "node": "はじめるので"
+      readings:
+        "kara-because": "hajimerukara"
+        "node": "hajimerunode"
+    - word: "ja-0597"
+      forms:
+        "kara-because": "ひっこすから"
+        "node": "ひっこすので"
+      readings:
+        "kara-because": "hikkosukara"
+        "node": "hikkosunode"
+    - word: "ja-0598"
+      forms:
+        "kara-because": "あげるから"
+        "node": "あげるので"
+      readings:
+        "kara-because": "agerukara"
+        "node": "agerunode"
+    - word: "ja-0599"
+      forms:
+        "kara-because": "もらうから"
+        "node": "もらうので"
+      readings:
+        "kara-because": "moraukara"
+        "node": "moraunode"
+    - word: "ja-0600"
+      forms:
+        "kara-because": "さけぶから"
+        "node": "さけぶので"
+      readings:
+        "kara-because": "sakebukara"
+        "node": "sakebunode"
+    - word: "ja-0516"
+      forms:
+        "kara-because": "おわるから"
+        "node": "おわるので"
+      readings:
+        "kara-because": "owarukara"
+        "node": "owarunode"
+    - word: "ja-0711"
+      forms:
+        "kara-because": "つとめるから"
+        "node": "つとめるので"
+      readings:
+        "kara-because": "tsutomerukara"
+        "node": "tsutomerunode"
+    - word: "ja-1334"
+      forms:
+        "kara-because": "きがえるから"
+        "node": "きがえるので"
+      readings:
+        "kara-because": "kigaerukara"
+        "node": "kigaerunode"
+    - word: "ja-1335"
+      forms:
+        "kara-because": "はくから"
+        "node": "はくので"
+      readings:
+        "kara-because": "hakukara"
+        "node": "hakunode"
+    - word: "ja-1336"
+      forms:
+        "kara-because": "かぶるから"
+        "node": "かぶるので"
+      readings:
+        "kara-because": "kaburukara"
+        "node": "kaburunode"
+    - word: "ja-1341"
+      forms:
+        "kara-because": "つかれるから"
+        "node": "つかれるので"
+      readings:
+        "kara-because": "tsukarerukara"
+        "node": "tsukarerunode"
+    - word: "ja-1348"
+      forms:
+        "kara-because": "だすから"
+        "node": "だすので"
+      readings:
+        "kara-because": "dasukara"
+        "node": "dasunode"
+    - word: "ja-1349"
+      forms:
+        "kara-because": "わかすから"
+        "node": "わかすので"
+      readings:
+        "kara-because": "wakasukara"
+        "node": "wakasunode"
+    - word: "ja-1350"
+      forms:
+        "kara-because": "ほすから"
+        "node": "ほすので"
+      readings:
+        "kara-because": "hosukara"
+        "node": "hosunode"
+    - word: "ja-1351"
+      forms:
+        "kara-because": "かたづけるから"
+        "node": "かたづけるので"
+      readings:
+        "kara-because": "katazukerukara"
+        "node": "katazukerunode"
+    - word: "ja-1352"
+      forms:
+        "kara-because": "たたむから"
+        "node": "たたむので"
+      readings:
+        "kara-because": "tatamukara"
+        "node": "tatamunode"
+    - word: "ja-1353"
+      forms:
+        "kara-because": "ぬぐから"
+        "node": "ぬぐので"
+      readings:
+        "kara-because": "nugukara"
+        "node": "nugunode"
+    - word: "ja-1354"
+      forms:
+        "kara-because": "まにあうから"
+        "node": "まにあうので"
+      readings:
+        "kara-because": "maniaukara"
+        "node": "maniaunode"
+    - word: "ja-1364"
+      forms:
+        "kara-because": "かわくから"
+        "node": "かわくので"
+      readings:
+        "kara-because": "kawakukara"
+        "node": "kawakunode"
+    - word: "ja-1368"
+      forms:
+        "kara-because": "いそぐから"
+        "node": "いそぐので"
+      readings:
+        "kara-because": "isogukara"
+        "node": "isogunode"
+    - word: "ja-1718"
+      forms:
+        "kara-because": "うるから"
+        "node": "うるので"
+      readings:
+        "kara-because": "urukara"
+        "node": "urunode"
+    - word: "ja-1719"
+      forms:
+        "kara-because": "はらうから"
+        "node": "はらうので"
+      readings:
+        "kara-because": "haraukara"
+        "node": "haraunode"
+    - word: "ja-1720"
+      forms:
+        "kara-because": "まけるから"
+        "node": "まけるので"
+      readings:
+        "kara-because": "makerukara"
+        "node": "makerunode"
+    - word: "ja-1721"
+      forms:
+        "kara-because": "えらぶから"
+        "node": "えらぶので"
+      readings:
+        "kara-because": "erabukara"
+        "node": "erabunode"
+    - word: "ja-1758"
+      forms:
+        "kara-because": "たのむから"
+        "node": "たのむので"
+      readings:
+        "kara-because": "tanomukara"
+        "node": "tanomunode"
+    - word: "ja-1759"
+      forms:
+        "kara-because": "おごるから"
+        "node": "おごるので"
+      readings:
+        "kara-because": "ogorukara"
+        "node": "ogorunode"
+    - word: "ja-1790"
+      forms:
+        "kara-because": "いためるから"
+        "node": "いためるので"
+      readings:
+        "kara-because": "itamerukara"
+        "node": "itamerunode"
+    - word: "ja-1791"
+      forms:
+        "kara-because": "まぜるから"
+        "node": "まぜるので"
+      readings:
+        "kara-because": "mazerukara"
+        "node": "mazerunode"
+    - word: "ja-1792"
+      forms:
+        "kara-because": "ゆでるから"
+        "node": "ゆでるので"
+      readings:
+        "kara-because": "yuderukara"
+        "node": "yuderunode"
+    - word: "ja-1793"
+      forms:
+        "kara-because": "にるから"
+        "node": "にるので"
+      readings:
+        "kara-because": "nirukara"
+        "node": "nirunode"
+    - word: "ja-1794"
+      forms:
+        "kara-because": "やくから"
+        "node": "やくので"
+      readings:
+        "kara-because": "yakukara"
+        "node": "yakunode"
+    - word: "ja-1799"
+      forms:
+        "kara-because": "ひやすから"
+        "node": "ひやすので"
+      readings:
+        "kara-because": "hiyasukara"
+        "node": "hiyasunode"
+    - word: "ja-1800"
+      forms:
+        "kara-because": "あたためるから"
+        "node": "あたためるので"
+      readings:
+        "kara-because": "atatamerukara"
+        "node": "atatamerunode"
+    - word: "ja-1801"
+      forms:
+        "kara-because": "きざむから"
+        "node": "きざむので"
+      readings:
+        "kara-because": "kizamukara"
+        "node": "kizamunode"
+    - word: "ja-1802"
+      forms:
+        "kara-because": "むくから"
+        "node": "むくので"
+      readings:
+        "kara-because": "mukukara"
+        "node": "mukunode"
+    - word: "ja-1803"
+      forms:
+        "kara-because": "つつむから"
+        "node": "つつむので"
+      readings:
+        "kara-because": "tsutsumukara"
+        "node": "tsutsumunode"
+    - word: "ja-1804"
+      forms:
+        "kara-because": "こげるから"
+        "node": "こげるので"
+      readings:
+        "kara-because": "kogerukara"
+        "node": "kogerunode"
+    - word: "ja-1805"
+      forms:
+        "kara-because": "さますから"
+        "node": "さますので"
+      readings:
+        "kara-because": "samasukara"
+        "node": "samasunode"
+    - word: "ja-1850"
+      forms:
+        "kara-because": "べんきょうするから"
+        "node": "べんきょうするので"
+      readings:
+        "kara-because": "benkyousurukara"
+        "node": "benkyousurunode"
+    - word: "ja-1861"
+      forms:
+        "kara-because": "おくれるから"
+        "node": "おくれるので"
+      readings:
+        "kara-because": "okurerukara"
+        "node": "okurerunode"
+    - word: "ja-1862"
+      forms:
+        "kara-because": "まなぶから"
+        "node": "まなぶので"
+      readings:
+        "kara-because": "manabukara"
+        "node": "manabunode"
+    - word: "ja-1863"
+      forms:
+        "kara-because": "つづけるから"
+        "node": "つづけるので"
+      readings:
+        "kara-because": "tsuzukerukara"
+        "node": "tsuzukerunode"
+    - word: "ja-1864"
+      forms:
+        "kara-because": "かんがえるから"
+        "node": "かんがえるので"
+      readings:
+        "kara-because": "kangaerukara"
+        "node": "kangaerunode"
+    - word: "ja-1865"
+      forms:
+        "kara-because": "こたえるから"
+        "node": "こたえるので"
+      readings:
+        "kara-because": "kotaerukara"
+        "node": "kotaerunode"
+    - word: "ja-1892"
+      forms:
+        "kara-because": "およぐから"
+        "node": "およぐので"
+      readings:
+        "kara-because": "oyogukara"
+        "node": "oyogunode"
+    - word: "ja-1893"
+      forms:
+        "kara-because": "とるから"
+        "node": "とるので"
+      readings:
+        "kara-because": "torukara"
+        "node": "torunode"
+    - word: "ja-1896"
+      forms:
+        "kara-because": "えがくから"
+        "node": "えがくので"
+      readings:
+        "kara-because": "egakukara"
+        "node": "egakunode"
+    - word: "ja-1900"
+      forms:
+        "kara-because": "ぬうから"
+        "node": "ぬうので"
+      readings:
+        "kara-because": "nuukara"
+        "node": "nuunode"
+    - word: "ja-1901"
+      forms:
+        "kara-because": "あむから"
+        "node": "あむので"
+      readings:
+        "kara-because": "amukara"
+        "node": "amunode"
+    - word: "ja-1907"
+      forms:
+        "kara-because": "ほめるから"
+        "node": "ほめるので"
+      readings:
+        "kara-because": "homerukara"
+        "node": "homerunode"
+    - word: "ja-1910"
+      forms:
+        "kara-because": "かつから"
+        "node": "かつので"
+      readings:
+        "kara-because": "katsukara"
+        "node": "katsunode"
+    - word: "ja-1933"
+      forms:
+        "kara-because": "かなでるから"
+        "node": "かなでるので"
+      readings:
+        "kara-because": "kanaderukara"
+        "node": "kanaderunode"
+    - word: "ja-1934"
+      forms:
+        "kara-because": "ならすから"
+        "node": "ならすので"
+      readings:
+        "kara-because": "narasukara"
+        "node": "narasunode"
+    - word: "ja-1935"
+      forms:
+        "kara-because": "ひびくから"
+        "node": "ひびくので"
+      readings:
+        "kara-because": "hibikukara"
+        "node": "hibikunode"
+    - word: "ja-1939"
+      forms:
+        "kara-because": "たたくから"
+        "node": "たたくので"
+      readings:
+        "kara-because": "tatakukara"
+        "node": "tatakunode"
+    - word: "ja-1940"
+      forms:
+        "kara-because": "きこえるから"
+        "node": "きこえるので"
+      readings:
+        "kara-because": "kikoerukara"
+        "node": "kikoerunode"
+    - word: "ja-1941"
+      forms:
+        "kara-because": "ひくから"
+        "node": "ひくので"
+      readings:
+        "kara-because": "hikukara"
+        "node": "hikunode"
+    - word: "ja-1539"
+      forms:
+        "kara-because": "にあうから"
+        "node": "にあうので"
+      readings:
+        "kara-because": "niaukara"
+        "node": "niaunode"
+    - word: "ja-1542"
+      forms:
+        "kara-because": "きるから"
+        "node": "きるので"
+      readings:
+        "kara-because": "kirukara"
+        "node": "kirunode"
+    - word: "ja-1996"
+      forms:
+        "kara-because": "なげるから"
+        "node": "なげるので"
+      readings:
+        "kara-because": "nagerukara"
+        "node": "nagerunode"
+    - word: "ja-1997"
+      forms:
+        "kara-because": "うつから"
+        "node": "うつので"
+      readings:
+        "kara-because": "utsukara"
+        "node": "utsunode"
+    - word: "ja-1998"
+      forms:
+        "kara-because": "けるから"
+        "node": "けるので"
+      readings:
+        "kara-because": "kerukara"
+        "node": "kerunode"
+    - word: "ja-1999"
+      forms:
+        "kara-because": "おいかけるから"
+        "node": "おいかけるので"
+      readings:
+        "kara-because": "oikakerukara"
+        "node": "oikakerunode"
+    - word: "ja-2000"
+      forms:
+        "kara-because": "あきらめるから"
+        "node": "あきらめるので"
+      readings:
+        "kara-because": "akiramerukara"
+        "node": "akiramerunode"
+    - word: "ja-2001"
+      forms:
+        "kara-because": "きたえるから"
+        "node": "きたえるので"
+      readings:
+        "kara-because": "kitaerukara"
+        "node": "kitaerunode"
+    - word: "ja-2002"
+      forms:
+        "kara-because": "ねらうから"
+        "node": "ねらうので"
+      readings:
+        "kara-because": "neraukara"
+        "node": "neraunode"
+    - word: "ja-2049"
+      forms:
+        "kara-because": "うつるから"
+        "node": "うつるので"
+      readings:
+        "kara-because": "utsurukara"
+        "node": "utsurunode"
+    - word: "ja-2050"
+      forms:
+        "kara-because": "なおるから"
+        "node": "なおるので"
+      readings:
+        "kara-because": "naorukara"
+        "node": "naorunode"
+    - word: "ja-2051"
+      forms:
+        "kara-because": "なおすから"
+        "node": "なおすので"
+      readings:
+        "kara-because": "naosukara"
+        "node": "naosunode"
+    - word: "ja-2052"
+      forms:
+        "kara-because": "たおれるから"
+        "node": "たおれるので"
+      readings:
+        "kara-because": "taorerukara"
+        "node": "taorerunode"
+    - word: "ja-2053"
+      forms:
+        "kara-because": "はれるから"
+        "node": "はれるので"
+      readings:
+        "kara-because": "harerukara"
+        "node": "harerunode"
+    - word: "ja-2054"
+      forms:
+        "kara-because": "しびれるから"
+        "node": "しびれるので"
+      readings:
+        "kara-because": "shibirerukara"
+        "node": "shibirerunode"
+    - word: "ja-2115"
+      forms:
+        "kara-because": "みがくから"
+        "node": "みがくので"
+      readings:
+        "kara-because": "migakukara"
+        "node": "migakunode"
+    - word: "ja-2116"
+      forms:
+        "kara-because": "こするから"
+        "node": "こするので"
+      readings:
+        "kara-because": "kosurukara"
+        "node": "kosurunode"
+    - word: "ja-2117"
+      forms:
+        "kara-because": "すすぐから"
+        "node": "すすぐので"
+      readings:
+        "kara-because": "susugukara"
+        "node": "susugunode"
+    - word: "ja-2118"
+      forms:
+        "kara-because": "しぼるから"
+        "node": "しぼるので"
+      readings:
+        "kara-because": "shiborukara"
+        "node": "shiborunode"
+    - word: "ja-2119"
+      forms:
+        "kara-because": "かわかすから"
+        "node": "かわかすので"
+      readings:
+        "kara-because": "kawakasukara"
+        "node": "kawakasunode"
+    - word: "ja-2120"
+      forms:
+        "kara-because": "しまうから"
+        "node": "しまうので"
+      readings:
+        "kara-because": "shimaukara"
+        "node": "shimaunode"
+    - word: "ja-2121"
+      forms:
+        "kara-because": "そろえるから"
+        "node": "そろえるので"
+      readings:
+        "kara-because": "soroerukara"
+        "node": "soroerunode"
+    - word: "ja-2122"
+      forms:
+        "kara-because": "かざるから"
+        "node": "かざるので"
+      readings:
+        "kara-because": "kazarukara"
+        "node": "kazarunode"
+    - word: "ja-2123"
+      forms:
+        "kara-because": "とりかえるから"
+        "node": "とりかえるので"
+      readings:
+        "kara-because": "torikaerukara"
+        "node": "torikaerunode"
+    - word: "ja-2124"
+      forms:
+        "kara-because": "つめるから"
+        "node": "つめるので"
+      readings:
+        "kara-because": "tsumerukara"
+        "node": "tsumerunode"
+    - word: "ja-2125"
+      forms:
+        "kara-because": "くばるから"
+        "node": "くばるので"
+      readings:
+        "kara-because": "kubarukara"
+        "node": "kubarunode"
+    - word: "ja-2126"
+      forms:
+        "kara-because": "こぼすから"
+        "node": "こぼすので"
+      readings:
+        "kara-because": "kobosukara"
+        "node": "kobosunode"
+    - word: "ja-2127"
+      forms:
+        "kara-because": "よごれるから"
+        "node": "よごれるので"
+      readings:
+        "kara-because": "yogorerukara"
+        "node": "yogorerunode"
+    - word: "ja-2128"
+      forms:
+        "kara-because": "よごすから"
+        "node": "よごすので"
+      readings:
+        "kara-because": "yogosukara"
+        "node": "yogosunode"
+    - word: "ja-2129"
+      forms:
+        "kara-because": "ちらかすから"
+        "node": "ちらかすので"
+      readings:
+        "kara-because": "chirakasukara"
+        "node": "chirakasunode"
+    - word: "ja-2164"
+      forms:
+        "kara-because": "やせるから"
+        "node": "やせるので"
+      readings:
+        "kara-because": "yaserukara"
+        "node": "yaserunode"
+    - word: "ja-2165"
+      forms:
+        "kara-because": "ふとるから"
+        "node": "ふとるので"
+      readings:
+        "kara-because": "futorukara"
+        "node": "futorunode"
+    - word: "ja-2217"
+      forms:
+        "kara-because": "かわるから"
+        "node": "かわるので"
+      readings:
+        "kara-because": "kawarukara"
+        "node": "kawarunode"
+    - word: "ja-2218"
+      forms:
+        "kara-because": "きまるから"
+        "node": "きまるので"
+      readings:
+        "kara-because": "kimarukara"
+        "node": "kimarunode"
+    - word: "ja-2219"
+      forms:
+        "kara-because": "きめるから"
+        "node": "きめるので"
+      readings:
+        "kara-because": "kimerukara"
+        "node": "kimerunode"
+    - word: "ja-2220"
+      forms:
+        "kara-because": "なるから"
+        "node": "なるので"
+      readings:
+        "kara-because": "narukara"
+        "node": "narunode"
+    - word: "ja-2221"
+      forms:
+        "kara-because": "なれるから"
+        "node": "なれるので"
+      readings:
+        "kara-because": "narerukara"
+        "node": "narerunode"
+    - word: "ja-2222"
+      forms:
+        "kara-because": "つくから"
+        "node": "つくので"
+      readings:
+        "kara-because": "tsukukara"
+        "node": "tsukunode"
+    - word: "ja-2223"
+      forms:
+        "kara-because": "つけるから"
+        "node": "つけるので"
+      readings:
+        "kara-because": "tsukerukara"
+        "node": "tsukerunode"
+    - word: "ja-2224"
+      forms:
+        "kara-because": "けすから"
+        "node": "けすので"
+      readings:
+        "kara-because": "kesukara"
+        "node": "kesunode"
+    - word: "ja-2225"
+      forms:
+        "kara-because": "きえるから"
+        "node": "きえるので"
+      readings:
+        "kara-because": "kierukara"
+        "node": "kierunode"
+    - word: "ja-2226"
+      forms:
+        "kara-because": "あくから"
+        "node": "あくので"
+      readings:
+        "kara-because": "akukara"
+        "node": "akunode"
+    - word: "ja-2227"
+      forms:
+        "kara-because": "しまるから"
+        "node": "しまるので"
+      readings:
+        "kara-because": "shimarukara"
+        "node": "shimarunode"
+    - word: "ja-2228"
+      forms:
+        "kara-because": "つかまえるから"
+        "node": "つかまえるので"
+      readings:
+        "kara-because": "tsukamaerukara"
+        "node": "tsukamaerunode"
+    - word: "ja-2229"
+      forms:
+        "kara-because": "つかむから"
+        "node": "つかむので"
+      readings:
+        "kara-because": "tsukamukara"
+        "node": "tsukamunode"
+    - word: "ja-2230"
+      forms:
+        "kara-because": "おすから"
+        "node": "おすので"
+      readings:
+        "kara-because": "osukara"
+        "node": "osunode"
+    - word: "ja-2231"
+      forms:
+        "kara-because": "ひっぱるから"
+        "node": "ひっぱるので"
+      readings:
+        "kara-because": "hipparukara"
+        "node": "hipparunode"
+    - word: "ja-2232"
+      forms:
+        "kara-because": "おとすから"
+        "node": "おとすので"
+      readings:
+        "kara-because": "otosukara"
+        "node": "otosunode"
+    - word: "ja-2233"
+      forms:
+        "kara-because": "おちるから"
+        "node": "おちるので"
+      readings:
+        "kara-because": "ochirukara"
+        "node": "ochirunode"
+    - word: "ja-2234"
+      forms:
+        "kara-because": "ひらくから"
+        "node": "ひらくので"
+      readings:
+        "kara-because": "hirakukara"
+        "node": "hirakunode"
+    - word: "ja-2235"
+      forms:
+        "kara-because": "とじるから"
+        "node": "とじるので"
+      readings:
+        "kara-because": "tojirukara"
+        "node": "tojirunode"
+    - word: "ja-2236"
+      forms:
+        "kara-because": "わたすから"
+        "node": "わたすので"
+      readings:
+        "kara-because": "watasukara"
+        "node": "watasunode"
+    - word: "ja-2237"
+      forms:
+        "kara-because": "うけるから"
+        "node": "うけるので"
+      readings:
+        "kara-because": "ukerukara"
+        "node": "ukerunode"
+    - word: "ja-2238"
+      forms:
+        "kara-because": "つたえるから"
+        "node": "つたえるので"
+      readings:
+        "kara-because": "tsutaerukara"
+        "node": "tsutaerunode"
+    - word: "ja-2239"
+      forms:
+        "kara-because": "つたわるから"
+        "node": "つたわるので"
+      readings:
+        "kara-because": "tsutawarukara"
+        "node": "tsutawarunode"
+    - word: "ja-2240"
+      forms:
+        "kara-because": "むかえるから"
+        "node": "むかえるので"
+      readings:
+        "kara-because": "mukaerukara"
+        "node": "mukaerunode"
+    - word: "ja-2241"
+      forms:
+        "kara-because": "おくるから"
+        "node": "おくるので"
+      readings:
+        "kara-because": "okurukara"
+        "node": "okurunode"
+    - word: "ja-2242"
+      forms:
+        "kara-because": "とどくから"
+        "node": "とどくので"
+      readings:
+        "kara-because": "todokukara"
+        "node": "todokunode"
+    - word: "ja-2243"
+      forms:
+        "kara-because": "とどけるから"
+        "node": "とどけるので"
+      readings:
+        "kara-because": "todokerukara"
+        "node": "todokerunode"
+    - word: "ja-2244"
+      forms:
+        "kara-because": "たずねるから"
+        "node": "たずねるので"
+      readings:
+        "kara-because": "tazunerukara"
+        "node": "tazunerunode"
+    - word: "ja-2245"
+      forms:
+        "kara-because": "まちがうから"
+        "node": "まちがうので"
+      readings:
+        "kara-because": "machigaukara"
+        "node": "machigaunode"
+    - word: "ja-2246"
+      forms:
+        "kara-because": "あやまるから"
+        "node": "あやまるので"
+      readings:
+        "kara-because": "ayamarukara"
+        "node": "ayamarunode"
+    - word: "ja-2247"
+      forms:
+        "kara-because": "ゆるすから"
+        "node": "ゆるすので"
+      readings:
+        "kara-because": "yurusukara"
+        "node": "yurusunode"
+    - word: "ja-2248"
+      forms:
+        "kara-because": "ことわるから"
+        "node": "ことわるので"
+      readings:
+        "kara-because": "kotowarukara"
+        "node": "kotowarunode"
+    - word: "ja-2249"
+      forms:
+        "kara-because": "さそうから"
+        "node": "さそうので"
+      readings:
+        "kara-because": "sasoukara"
+        "node": "sasounode"
+    - word: "ja-2250"
+      forms:
+        "kara-because": "かようから"
+        "node": "かようので"
+      readings:
+        "kara-because": "kayoukara"
+        "node": "kayounode"
+    - word: "ja-2251"
+      forms:
+        "kara-because": "とおるから"
+        "node": "とおるので"
+      readings:
+        "kara-because": "toorukara"
+        "node": "toorunode"
+    - word: "ja-2252"
+      forms:
+        "kara-because": "すぎるから"
+        "node": "すぎるので"
+      readings:
+        "kara-because": "sugirukara"
+        "node": "sugirunode"
+    - word: "ja-2253"
+      forms:
+        "kara-because": "まわるから"
+        "node": "まわるので"
+      readings:
+        "kara-because": "mawarukara"
+        "node": "mawarunode"
+    - word: "ja-2254"
+      forms:
+        "kara-because": "まわすから"
+        "node": "まわすので"
+      readings:
+        "kara-because": "mawasukara"
+        "node": "mawasunode"
+    - word: "ja-2255"
+      forms:
+        "kara-because": "うごくから"
+        "node": "うごくので"
+      readings:
+        "kara-because": "ugokukara"
+        "node": "ugokunode"
+    - word: "ja-2256"
+      forms:
+        "kara-because": "うごかすから"
+        "node": "うごかすので"
+      readings:
+        "kara-because": "ugokasukara"
+        "node": "ugokasunode"
+    - word: "ja-2257"
+      forms:
+        "kara-because": "のこるから"
+        "node": "のこるので"
+      readings:
+        "kara-because": "nokorukara"
+        "node": "nokorunode"
+    - word: "ja-2258"
+      forms:
+        "kara-because": "のこすから"
+        "node": "のこすので"
+      readings:
+        "kara-because": "nokosukara"
+        "node": "nokosunode"
+    - word: "ja-2259"
+      forms:
+        "kara-because": "あつまるから"
+        "node": "あつまるので"
+      readings:
+        "kara-because": "atsumarukara"
+        "node": "atsumarunode"
+    - word: "ja-2260"
+      forms:
+        "kara-because": "あつめるから"
+        "node": "あつめるので"
+      readings:
+        "kara-because": "atsumerukara"
+        "node": "atsumerunode"
+    - word: "ja-2261"
+      forms:
+        "kara-because": "わけるから"
+        "node": "わけるので"
+      readings:
+        "kara-because": "wakerukara"
+        "node": "wakerunode"
+    - word: "ja-2262"
+      forms:
+        "kara-because": "くらべるから"
+        "node": "くらべるので"
+      readings:
+        "kara-because": "kuraberukara"
+        "node": "kuraberunode"
+    - word: "ja-2263"
+      forms:
+        "kara-because": "かくれるから"
+        "node": "かくれるので"
+      readings:
+        "kara-because": "kakurerukara"
+        "node": "kakurerunode"
+    - word: "ja-2264"
+      forms:
+        "kara-because": "かくすから"
+        "node": "かくすので"
+      readings:
+        "kara-because": "kakusukara"
+        "node": "kakusunode"
+    - word: "ja-2265"
+      forms:
+        "kara-because": "みつかるから"
+        "node": "みつかるので"
+      readings:
+        "kara-because": "mitsukarukara"
+        "node": "mitsukarunode"
+    - word: "ja-2266"
+      forms:
+        "kara-because": "みつけるから"
+        "node": "みつけるので"
+      readings:
+        "kara-because": "mitsukerukara"
+        "node": "mitsukerunode"
+    - word: "ja-2267"
+      forms:
+        "kara-because": "ふえるから"
+        "node": "ふえるので"
+      readings:
+        "kara-because": "fuerukara"
+        "node": "fuerunode"
+    - word: "ja-2268"
+      forms:
+        "kara-because": "へるから"
+        "node": "へるので"
+      readings:
+        "kara-because": "herukara"
+        "node": "herunode"
+    - word: "ja-2269"
+      forms:
+        "kara-because": "そだてるから"
+        "node": "そだてるので"
+      readings:
+        "kara-because": "sodaterukara"
+        "node": "sodaterunode"
+    - word: "ja-2270"
+      forms:
+        "kara-because": "そだつから"
+        "node": "そだつので"
+      readings:
+        "kara-because": "sodatsukara"
+        "node": "sodatsunode"
+    - word: "ja-2271"
+      forms:
+        "kara-because": "うまれるから"
+        "node": "うまれるので"
+      readings:
+        "kara-because": "umarerukara"
+        "node": "umarerunode"
+    - word: "ja-2272"
+      forms:
+        "kara-because": "いきるから"
+        "node": "いきるので"
+      readings:
+        "kara-because": "ikirukara"
+        "node": "ikirunode"
+    - word: "ja-2273"
+      forms:
+        "kara-because": "たのしむから"
+        "node": "たのしむので"
+      readings:
+        "kara-because": "tanoshimukara"
+        "node": "tanoshimunode"
+    - word: "ja-2274"
+      forms:
+        "kara-because": "あたるから"
+        "node": "あたるので"
+      readings:
+        "kara-because": "atarukara"
+        "node": "atarunode"
+    - word: "ja-2275"
+      forms:
+        "kara-because": "はじまるから"
+        "node": "はじまるので"
+      readings:
+        "kara-because": "hajimarukara"
+        "node": "hajimarunode"
+    - word: "ja-2276"
+      forms:
+        "kara-because": "さわるから"
+        "node": "さわるので"
+      readings:
+        "kara-because": "sawarukara"
+        "node": "sawarunode"
+    - word: "ja-2320"
+      forms:
+        "kara-because": "つながるから"
+        "node": "つながるので"
+      readings:
+        "kara-because": "tsunagarukara"
+        "node": "tsunagarunode"
+    - word: "ja-2321"
+      forms:
+        "kara-because": "つなぐから"
+        "node": "つなぐので"
+      readings:
+        "kara-because": "tsunagukara"
+        "node": "tsunagunode"
+    - word: "ja-2322"
+      forms:
+        "kara-because": "かけるから"
+        "node": "かけるので"
+      readings:
+        "kara-because": "kakerukara"
+        "node": "kakerunode"
+    - word: "ja-2323"
+      forms:
+        "kara-because": "うけとるから"
+        "node": "うけとるので"
+      readings:
+        "kara-because": "uketorukara"
+        "node": "uketorunode"
+    - word: "ja-2364"
+      forms:
+        "kara-because": "のりおくれるから"
+        "node": "のりおくれるので"
+      readings:
+        "kara-because": "noriokurerukara"
+        "node": "noriokurerunode"
+    - word: "ja-2365"
+      forms:
+        "kara-because": "のりかえるから"
+        "node": "のりかえるので"
+      readings:
+        "kara-because": "norikaerukara"
+        "node": "norikaerunode"
+    - word: "ja-2407"
+      forms:
+        "kara-because": "たちよるから"
+        "node": "たちよるので"
+      readings:
+        "kara-because": "tachiyorukara"
+        "node": "tachiyorunode"
+    - word: "ja-2470"
+      forms:
+        "kara-because": "さくから"
+        "node": "さくので"
+      readings:
+        "kara-because": "sakukara"
+        "node": "sakunode"
+    - word: "ja-2471"
+      forms:
+        "kara-because": "ちるから"
+        "node": "ちるので"
+      readings:
+        "kara-because": "chirukara"
+        "node": "chirunode"
+    - word: "ja-2472"
+      forms:
+        "kara-because": "しげるから"
+        "node": "しげるので"
+      readings:
+        "kara-because": "shigerukara"
+        "node": "shigerunode"
+    - word: "ja-2473"
+      forms:
+        "kara-because": "かれるから"
+        "node": "かれるので"
+      readings:
+        "kara-because": "karerukara"
+        "node": "karerunode"
+    - word: "ja-2600"
+      forms:
+        "kara-because": "まかせるから"
+        "node": "まかせるので"
+      readings:
+        "kara-because": "makaserukara"
+        "node": "makaserunode"
+    - word: "ja-2601"
+      forms:
+        "kara-because": "ひきうけるから"
+        "node": "ひきうけるので"
+      readings:
+        "kara-because": "hikiukerukara"
+        "node": "hikiukerunode"
+    - word: "ja-2602"
+      forms:
+        "kara-because": "こなすから"
+        "node": "こなすので"
+      readings:
+        "kara-because": "konasukara"
+        "node": "konasunode"
+    - word: "ja-2603"
+      forms:
+        "kara-because": "はげむから"
+        "node": "はげむので"
+      readings:
+        "kara-because": "hagemukara"
+        "node": "hagemunode"
+    - word: "ja-2604"
+      forms:
+        "kara-because": "てがけるから"
+        "node": "てがけるので"
+      readings:
+        "kara-because": "tegakerukara"
+        "node": "tegakerunode"
+    - word: "ja-2605"
+      forms:
+        "kara-because": "しめきるから"
+        "node": "しめきるので"
+      readings:
+        "kara-because": "shimekirukara"
+        "node": "shimekirunode"
+    - word: "ja-2606"
+      forms:
+        "kara-because": "まにあわせるから"
+        "node": "まにあわせるので"
+      readings:
+        "kara-because": "maniawaserukara"
+        "node": "maniawaserunode"
+    - word: "ja-2716"
+      forms:
+        "kara-because": "かたよるから"
+        "node": "かたよるので"
+      readings:
+        "kara-because": "katayorukara"
+        "node": "katayorunode"
+    - word: "ja-2768"
+      forms:
+        "kara-because": "おどろくから"
+        "node": "おどろくので"
+      readings:
+        "kara-because": "odorokukara"
+        "node": "odorokunode"
+    - word: "ja-2769"
+      forms:
+        "kara-because": "よろこぶから"
+        "node": "よろこぶので"
+      readings:
+        "kara-because": "yorokobukara"
+        "node": "yorokobunode"
+    - word: "ja-2770"
+      forms:
+        "kara-because": "かなしむから"
+        "node": "かなしむので"
+      readings:
+        "kara-because": "kanashimukara"
+        "node": "kanashimunode"
+    - word: "ja-2771"
+      forms:
+        "kara-because": "なやむから"
+        "node": "なやむので"
+      readings:
+        "kara-because": "nayamukara"
+        "node": "nayamunode"
+    - word: "ja-2772"
+      forms:
+        "kara-because": "あわてるから"
+        "node": "あわてるので"
+      readings:
+        "kara-because": "awaterukara"
+        "node": "awaterunode"
+    - word: "ja-2773"
+      forms:
+        "kara-because": "あせるから"
+        "node": "あせるので"
+      readings:
+        "kara-because": "aserukara"
+        "node": "aserunode"
+    - word: "ja-2774"
+      forms:
+        "kara-because": "おちつくから"
+        "node": "おちつくので"
+      readings:
+        "kara-because": "ochitsukukara"
+        "node": "ochitsukunode"
+    - word: "ja-2794"
+      forms:
+        "kara-because": "きらうから"
+        "node": "きらうので"
+      readings:
+        "kara-because": "kiraukara"
+        "node": "kiraunode"
+    - word: "ja-2795"
+      forms:
+        "kara-because": "あいするから"
+        "node": "あいするので"
+      readings:
+        "kara-because": "aisurukara"
+        "node": "aisurunode"
+    - word: "ja-2796"
+      forms:
+        "kara-because": "にくむから"
+        "node": "にくむので"
+      readings:
+        "kara-because": "nikumukara"
+        "node": "nikumunode"
+    - word: "ja-2797"
+      forms:
+        "kara-because": "ねたむから"
+        "node": "ねたむので"
+      readings:
+        "kara-because": "netamukara"
+        "node": "netamunode"
+    - word: "ja-2798"
+      forms:
+        "kara-because": "うらむから"
+        "node": "うらむので"
+      readings:
+        "kara-because": "uramukara"
+        "node": "uramunode"
+    - word: "ja-2799"
+      forms:
+        "kara-because": "なつかしむから"
+        "node": "なつかしむので"
+      readings:
+        "kara-because": "natsukashimukara"
+        "node": "natsukashimunode"
+    - word: "ja-2800"
+      forms:
+        "kara-because": "いやがるから"
+        "node": "いやがるので"
+      readings:
+        "kara-because": "iyagarukara"
+        "node": "iyagarunode"
+    - word: "ja-2801"
+      forms:
+        "kara-because": "こらえるから"
+        "node": "こらえるので"
+      readings:
+        "kara-because": "koraerukara"
+        "node": "koraerunode"
+    - word: "ja-2803"
+      forms:
+        "kara-because": "はずかしがるから"
+        "node": "はずかしがるので"
+      readings:
+        "kara-because": "hazukashigarukara"
+        "node": "hazukashigarunode"
+    - word: "ja-2806"
+      forms:
+        "kara-because": "かんじるから"
+        "node": "かんじるので"
+      readings:
+        "kara-because": "kanjirukara"
+        "node": "kanjirunode"
+    - word: "ja-2812"
+      forms:
+        "kara-because": "さびしがるから"
+        "node": "さびしがるので"
+      readings:
+        "kara-because": "sabishigarukara"
+        "node": "sabishigarunode"
+    - word: "ja-2876"
+      forms:
+        "kara-because": "かたるから"
+        "node": "かたるので"
+      readings:
+        "kara-because": "katarukara"
+        "node": "katarunode"
+    - word: "ja-2877"
+      forms:
+        "kara-because": "ひろまるから"
+        "node": "ひろまるので"
+      readings:
+        "kara-because": "hiromarukara"
+        "node": "hiromarunode"
+    - word: "ja-2925"
+      forms:
+        "kara-because": "あずけるから"
+        "node": "あずけるので"
+      readings:
+        "kara-because": "azukerukara"
+        "node": "azukerunode"
+    - word: "ja-2926"
+      forms:
+        "kara-because": "あずかるから"
+        "node": "あずかるので"
+      readings:
+        "kara-because": "azukarukara"
+        "node": "azukarunode"
+    - word: "ja-2944"
+      forms:
+        "kara-because": "めぐるから"
+        "node": "めぐるので"
+      readings:
+        "kara-because": "megurukara"
+        "node": "megurunode"
+    - word: "ja-2945"
+      forms:
+        "kara-because": "おとずれるから"
+        "node": "おとずれるので"
+      readings:
+        "kara-because": "otozurerukara"
+        "node": "otozurerunode"
+    - word: "ja-2982"
+      forms:
+        "kara-because": "もうしこむから"
+        "node": "もうしこむので"
+      readings:
+        "kara-because": "moushikomukara"
+        "node": "moushikomunode"
+    - word: "ja-3062"
+      forms:
+        "kara-because": "とどけでるから"
+        "node": "とどけでるので"
+      readings:
+        "kara-because": "todokederukara"
+        "node": "todokederunode"
+    - word: "ja-3140"
+      forms:
+        "kara-because": "つくりだすから"
+        "node": "つくりだすので"
+      readings:
+        "kara-because": "tsukuridasukara"
+        "node": "tsukuridasunode"
+    - word: "ja-3195"
+      forms:
+        "kara-because": "めざすから"
+        "node": "めざすので"
+      readings:
+        "kara-because": "mezasukara"
+        "node": "mezasunode"
+    - word: "ja-3294"
+      forms:
+        "kara-because": "きをつかうから"
+        "node": "きをつかうので"
+      readings:
+        "kara-because": "kiotsukaukara"
+        "node": "kiotsukaunode"
+    - word: "ja-3309"
+      forms:
+        "kara-because": "ゆずるから"
+        "node": "ゆずるので"
+      readings:
+        "kara-because": "yuzurukara"
+        "node": "yuzurunode"
+    - word: "ja-3310"
+      forms:
+        "kara-because": "ゆずりあうから"
+        "node": "ゆずりあうので"
+      readings:
+        "kara-because": "yuzuriaukara"
+        "node": "yuzuriaunode"
+    - word: "ja-3311"
+      forms:
+        "kara-because": "ならぶから"
+        "node": "ならぶので"
+      readings:
+        "kara-because": "narabukara"
+        "node": "narabunode"
+    - word: "ja-3319"
+      forms:
+        "kara-because": "もてなすから"
+        "node": "もてなすので"
+      readings:
+        "kara-because": "motenasukara"
+        "node": "motenasunode"
+    - word: "ja-3320"
+      forms:
+        "kara-because": "まねくから"
+        "node": "まねくので"
+      readings:
+        "kara-because": "manekukara"
+        "node": "manekunode"
+    - word: "ja-3321"
+      forms:
+        "kara-because": "つつしむから"
+        "node": "つつしむので"
+      readings:
+        "kara-because": "tsutsushimukara"
+        "node": "tsutsushimunode"
+    - word: "ja-3322"
+      forms:
+        "kara-because": "いましめるから"
+        "node": "いましめるので"
+      readings:
+        "kara-because": "imashimerukara"
+        "node": "imashimerunode"
+    - word: "ja-3383"
+      forms:
+        "kara-because": "へらすから"
+        "node": "へらすので"
+      readings:
+        "kara-because": "herasukara"
+        "node": "herasunode"
+    - word: "ja-3384"
+      forms:
+        "kara-because": "ふやすから"
+        "node": "ふやすので"
+      readings:
+        "kara-because": "fuyasukara"
+        "node": "fuyasunode"
+    - word: "ja-3385"
+      forms:
+        "kara-because": "こわすから"
+        "node": "こわすので"
+      readings:
+        "kara-because": "kowasukara"
+        "node": "kowasunode"
+    - word: "ja-3386"
+      forms:
+        "kara-because": "こわれるから"
+        "node": "こわれるので"
+      readings:
+        "kara-because": "kowarerukara"
+        "node": "kowarerunode"
+    - word: "ja-3389"
+      forms:
+        "kara-because": "たもつから"
+        "node": "たもつので"
+      readings:
+        "kara-because": "tamotsukara"
+        "node": "tamotsunode"
+    - word: "ja-3390"
+      forms:
+        "kara-because": "さけるから"
+        "node": "さけるので"
+      readings:
+        "kara-because": "sakerukara"
+        "node": "sakerunode"
+    - word: "ja-3434"
+      forms:
+        "kara-because": "えんじるから"
+        "node": "えんじるので"
+      readings:
+        "kara-because": "enjirukara"
+        "node": "enjirunode"
+    - word: "ja-3452"
+      forms:
+        "kara-because": "なくから"
+        "node": "なくので"
+      readings:
+        "kara-because": "nakukara"
+        "node": "nakunode"
+    - word: "ja-3564"
+      forms:
+        "kara-because": "たたかうから"
+        "node": "たたかうので"
+      readings:
+        "kara-because": "tatakaukara"
+        "node": "tatakaunode"
+    - word: "ja-3568"
+      forms:
+        "kara-because": "ほろびるから"
+        "node": "ほろびるので"
+      readings:
+        "kara-because": "horobirukara"
+        "node": "horobirunode"
+    - word: "ja-3569"
+      forms:
+        "kara-because": "ほろぼすから"
+        "node": "ほろぼすので"
+      readings:
+        "kara-because": "horobosukara"
+        "node": "horobosunode"
+    - word: "ja-3571"
+      forms:
+        "kara-because": "さかえるから"
+        "node": "さかえるので"
+      readings:
+        "kara-because": "sakaerukara"
+        "node": "sakaerunode"
+    - word: "ja-3611"
+      forms:
+        "kara-because": "いのるから"
+        "node": "いのるので"
+      readings:
+        "kara-because": "inorukara"
+        "node": "inorunode"
+    - word: "ja-3612"
+      forms:
+        "kara-because": "おがむから"
+        "node": "おがむので"
+      readings:
+        "kara-because": "ogamukara"
+        "node": "ogamunode"
+    - word: "ja-3690"
+      forms:
+        "kara-because": "いわうから"
+        "node": "いわうので"
+      readings:
+        "kara-because": "iwaukara"
+        "node": "iwaunode"
+    - word: "ja-3691"
+      forms:
+        "kara-because": "にぎわうから"
+        "node": "にぎわうので"
+      readings:
+        "kara-because": "nigiwaukara"
+        "node": "nigiwaunode"
+    - word: "ja-3779"
+      forms:
+        "kara-because": "うちとけるから"
+        "node": "うちとけるので"
+      readings:
+        "kara-because": "uchitokerukara"
+        "node": "uchitokerunode"
+    - word: "ja-3780"
+      forms:
+        "kara-because": "しんじあうから"
+        "node": "しんじあうので"
+      readings:
+        "kara-because": "shinjiaukara"
+        "node": "shinjiaunode"
+    - word: "ja-3781"
+      forms:
+        "kara-because": "たよるから"
+        "node": "たよるので"
+      readings:
+        "kara-because": "tayorukara"
+        "node": "tayorunode"
+    - word: "ja-3782"
+      forms:
+        "kara-because": "はげますから"
+        "node": "はげますので"
+      readings:
+        "kara-because": "hagemasukara"
+        "node": "hagemasunode"
+    - word: "ja-3783"
+      forms:
+        "kara-because": "なぐさめるから"
+        "node": "なぐさめるので"
+      readings:
+        "kara-because": "nagusamerukara"
+        "node": "nagusamerunode"
+    - word: "ja-3784"
+      forms:
+        "kara-because": "かばうから"
+        "node": "かばうので"
+      readings:
+        "kara-because": "kabaukara"
+        "node": "kabaunode"
+    - word: "ja-3785"
+      forms:
+        "kara-because": "ささえるから"
+        "node": "ささえるので"
+      readings:
+        "kara-because": "sasaerukara"
+        "node": "sasaerunode"
+    - word: "ja-3786"
+      forms:
+        "kara-because": "たすけあうから"
+        "node": "たすけあうので"
+      readings:
+        "kara-because": "tasukeaukara"
+        "node": "tasukeaunode"
+    - word: "ja-3790"
+      forms:
+        "kara-because": "しりあうから"
+        "node": "しりあうので"
+      readings:
+        "kara-because": "shiriaukara"
+        "node": "shiriaunode"
+    - word: "ja-3791"
+      forms:
+        "kara-because": "であうから"
+        "node": "であうので"
+      readings:
+        "kara-because": "deaukara"
+        "node": "deaunode"
+    - word: "ja-3833"
+      forms:
+        "kara-because": "くらすから"
+        "node": "くらすので"
+      readings:
+        "kara-because": "kurasukara"
+        "node": "kurasunode"
+    - word: "ja-3857"
+      forms:
+        "kara-because": "かすから"
+        "node": "かすので"
+      readings:
+        "kara-because": "kasukara"
+        "node": "kasunode"
+    - word: "ja-3887"
+      forms:
+        "kara-because": "ゆれるから"
+        "node": "ゆれるので"
+      readings:
+        "kara-because": "yurerukara"
+        "node": "yurerunode"
+    - word: "ja-3898"
+      forms:
+        "kara-because": "すくうから"
+        "node": "すくうので"
+      readings:
+        "kara-because": "sukuukara"
+        "node": "sukuunode"
+    - word: "ja-3914"
+      forms:
+        "kara-because": "にげるから"
+        "node": "にげるので"
+      readings:
+        "kara-because": "nigerukara"
+        "node": "nigerunode"
+    - word: "ja-3915"
+      forms:
+        "kara-because": "にがすから"
+        "node": "にがすので"
+      readings:
+        "kara-because": "nigasukara"
+        "node": "nigasunode"
+    - word: "ja-3963"
+      forms:
+        "kara-because": "きんじるから"
+        "node": "きんじるので"
+      readings:
+        "kara-because": "kinjirukara"
+        "node": "kinjirunode"
+    - word: "ja-3965"
+      forms:
+        "kara-because": "うったえるから"
+        "node": "うったえるので"
+      readings:
+        "kara-because": "uttaerukara"
+        "node": "uttaerunode"
+    - word: "ja-4046"
+      forms:
+        "kara-because": "おそうから"
+        "node": "おそうので"
+      readings:
+        "kara-because": "osoukara"
+        "node": "osounode"
+    - word: "ja-4047"
+      forms:
+        "kara-because": "おさえるから"
+        "node": "おさえるので"
+      readings:
+        "kara-because": "osaerukara"
+        "node": "osaerunode"
+    - word: "ja-4048"
+      forms:
+        "kara-because": "おさまるから"
+        "node": "おさまるので"
+      readings:
+        "kara-because": "osamarukara"
+        "node": "osamarunode"
+    - word: "ja-4049"
+      forms:
+        "kara-because": "おさめるから"
+        "node": "おさめるので"
+      readings:
+        "kara-because": "osamerukara"
+        "node": "osamerunode"
+    - word: "ja-4050"
+      forms:
+        "kara-because": "おぼれるから"
+        "node": "おぼれるので"
+      readings:
+        "kara-because": "oborerukara"
+        "node": "oborerunode"
+    - word: "ja-4051"
+      forms:
+        "kara-because": "おもいだすから"
+        "node": "おもいだすので"
+      readings:
+        "kara-because": "omoidasukara"
+        "node": "omoidasunode"
+    - word: "ja-4052"
+      forms:
+        "kara-because": "おもいつくから"
+        "node": "おもいつくので"
+      readings:
+        "kara-because": "omoitsukukara"
+        "node": "omoitsukunode"
+    - word: "ja-4053"
+      forms:
+        "kara-because": "かかえるから"
+        "node": "かかえるので"
+      readings:
+        "kara-because": "kakaerukara"
+        "node": "kakaerunode"
+    - word: "ja-4054"
+      forms:
+        "kara-because": "かさなるから"
+        "node": "かさなるので"
+      readings:
+        "kara-because": "kasanarukara"
+        "node": "kasanarunode"
+    - word: "ja-4055"
+      forms:
+        "kara-because": "かさねるから"
+        "node": "かさねるので"
+      readings:
+        "kara-because": "kasanerukara"
+        "node": "kasanerunode"
+    - word: "ja-4056"
+      forms:
+        "kara-because": "かたむくから"
+        "node": "かたむくので"
+      readings:
+        "kara-because": "katamukukara"
+        "node": "katamukunode"
+    - word: "ja-4057"
+      forms:
+        "kara-because": "かなうから"
+        "node": "かなうので"
+      readings:
+        "kara-because": "kanaukara"
+        "node": "kanaunode"
+    - word: "ja-4058"
+      forms:
+        "kara-because": "かぶせるから"
+        "node": "かぶせるので"
+      readings:
+        "kara-because": "kabuserukara"
+        "node": "kabuserunode"
+    - word: "ja-4059"
+      forms:
+        "kara-because": "きづくから"
+        "node": "きづくので"
+      readings:
+        "kara-because": "kizukukara"
+        "node": "kizukunode"
+    - word: "ja-4060"
+      forms:
+        "kara-because": "くずれるから"
+        "node": "くずれるので"
+      readings:
+        "kara-because": "kuzurerukara"
+        "node": "kuzurerunode"
+    - word: "ja-4061"
+      forms:
+        "kara-because": "くたびれるから"
+        "node": "くたびれるので"
+      readings:
+        "kara-because": "kutabirerukara"
+        "node": "kutabirerunode"
+    - word: "ja-4062"
+      forms:
+        "kara-because": "くっつくから"
+        "node": "くっつくので"
+      readings:
+        "kara-because": "kuttsukukara"
+        "node": "kuttsukunode"
+    - word: "ja-4063"
+      forms:
+        "kara-because": "くっつけるから"
+        "node": "くっつけるので"
+      readings:
+        "kara-because": "kuttsukerukara"
+        "node": "kuttsukerunode"
+    - word: "ja-4064"
+      forms:
+        "kara-because": "ころがるから"
+        "node": "ころがるので"
+      readings:
+        "kara-because": "korogarukara"
+        "node": "korogarunode"
+    - word: "ja-4065"
+      forms:
+        "kara-because": "ころすから"
+        "node": "ころすので"
+      readings:
+        "kara-because": "korosukara"
+        "node": "korosunode"
+    - word: "ja-4066"
+      forms:
+        "kara-because": "こめるから"
+        "node": "こめるので"
+      readings:
+        "kara-because": "komerukara"
+        "node": "komerunode"
+    - word: "ja-4067"
+      forms:
+        "kara-because": "さからうから"
+        "node": "さからうので"
+      readings:
+        "kara-because": "sakaraukara"
+        "node": "sakaraunode"
+    - word: "ja-4068"
+      forms:
+        "kara-because": "さすから"
+        "node": "さすので"
+      readings:
+        "kara-because": "sasukara"
+        "node": "sasunode"
+    - word: "ja-4069"
+      forms:
+        "kara-because": "さびるから"
+        "node": "さびるので"
+      readings:
+        "kara-because": "sabirukara"
+        "node": "sabirunode"
+    - word: "ja-4070"
+      forms:
+        "kara-because": "しずむから"
+        "node": "しずむので"
+      readings:
+        "kara-because": "shizumukara"
+        "node": "shizumunode"
+    - word: "ja-4071"
+      forms:
+        "kara-because": "しずめるから"
+        "node": "しずめるので"
+      readings:
+        "kara-because": "shizumerukara"
+        "node": "shizumerunode"
+    - word: "ja-4072"
+      forms:
+        "kara-because": "したがうから"
+        "node": "したがうので"
+      readings:
+        "kara-because": "shitagaukara"
+        "node": "shitagaunode"
+    - word: "ja-4073"
+      forms:
+        "kara-because": "しばるから"
+        "node": "しばるので"
+      readings:
+        "kara-because": "shibarukara"
+        "node": "shibarunode"
+    - word: "ja-4074"
+      forms:
+        "kara-because": "しめすから"
+        "node": "しめすので"
+      readings:
+        "kara-because": "shimesukara"
+        "node": "shimesunode"
+    - word: "ja-4075"
+      forms:
+        "kara-because": "すべるから"
+        "node": "すべるので"
+      readings:
+        "kara-because": "suberukara"
+        "node": "suberunode"
+    - word: "ja-4076"
+      forms:
+        "kara-because": "すませるから"
+        "node": "すませるので"
+      readings:
+        "kara-because": "sumaserukara"
+        "node": "sumaserunode"
+    - word: "ja-4077"
+      forms:
+        "kara-because": "すむから"
+        "node": "すむので"
+      readings:
+        "kara-because": "sumukara"
+        "node": "sumunode"
+    - word: "ja-4078"
+      forms:
+        "kara-because": "ずれるから"
+        "node": "ずれるので"
+      readings:
+        "kara-because": "zurerukara"
+        "node": "zurerunode"
+    - word: "ja-4079"
+      forms:
+        "kara-because": "せまるから"
+        "node": "せまるので"
+      readings:
+        "kara-because": "semarukara"
+        "node": "semarunode"
+    - word: "ja-4080"
+      forms:
+        "kara-because": "そなえるから"
+        "node": "そなえるので"
+      readings:
+        "kara-because": "sonaerukara"
+        "node": "sonaerunode"
+    - word: "ja-4081"
+      forms:
+        "kara-because": "そまるから"
+        "node": "そまるので"
+      readings:
+        "kara-because": "somarukara"
+        "node": "somarunode"
+    - word: "ja-4082"
+      forms:
+        "kara-because": "そめるから"
+        "node": "そめるので"
+      readings:
+        "kara-because": "somerukara"
+        "node": "somerunode"
+    - word: "ja-4083"
+      forms:
+        "kara-because": "たえるから"
+        "node": "たえるので"
+      readings:
+        "kara-because": "taerukara"
+        "node": "taerunode"
+    - word: "ja-4084"
+      forms:
+        "kara-because": "たしかめるから"
+        "node": "たしかめるので"
+      readings:
+        "kara-because": "tashikamerukara"
+        "node": "tashikamerunode"
+    - word: "ja-4085"
+      forms:
+        "kara-because": "たまるから"
+        "node": "たまるので"
+      readings:
+        "kara-because": "tamarukara"
+        "node": "tamarunode"
+    - word: "ja-4086"
+      forms:
+        "kara-because": "ためすから"
+        "node": "ためすので"
+      readings:
+        "kara-because": "tamesukara"
+        "node": "tamesunode"
+    - word: "ja-4087"
+      forms:
+        "kara-because": "ちぢむから"
+        "node": "ちぢむので"
+      readings:
+        "kara-because": "chijimukara"
+        "node": "chijimunode"
+    - word: "ja-4088"
+      forms:
+        "kara-because": "ちぢめるから"
+        "node": "ちぢめるので"
+      readings:
+        "kara-because": "chijimerukara"
+        "node": "chijimerunode"
+    - word: "ja-4089"
+      forms:
+        "kara-because": "つぐから"
+        "node": "つぐので"
+      readings:
+        "kara-because": "tsugukara"
+        "node": "tsugunode"
+    - word: "ja-4090"
+      forms:
+        "kara-because": "つづくから"
+        "node": "つづくので"
+      readings:
+        "kara-because": "tsuzukukara"
+        "node": "tsuzukunode"
+    - word: "ja-4091"
+      forms:
+        "kara-because": "つぶすから"
+        "node": "つぶすので"
+      readings:
+        "kara-because": "tsubusukara"
+        "node": "tsubusunode"
+    - word: "ja-4092"
+      forms:
+        "kara-because": "つぶれるから"
+        "node": "つぶれるので"
+      readings:
+        "kara-because": "tsuburerukara"
+        "node": "tsuburerunode"
+    - word: "ja-4093"
+      forms:
+        "kara-because": "てらすから"
+        "node": "てらすので"
+      readings:
+        "kara-because": "terasukara"
+        "node": "terasunode"
+    - word: "ja-4094"
+      forms:
+        "kara-because": "とおすから"
+        "node": "とおすので"
+      readings:
+        "kara-because": "toosukara"
+        "node": "toosunode"
+    - word: "ja-4095"
+      forms:
+        "kara-because": "とかすから"
+        "node": "とかすので"
+      readings:
+        "kara-because": "tokasukara"
+        "node": "tokasunode"
+    - word: "ja-4096"
+      forms:
+        "kara-because": "とけるから"
+        "node": "とけるので"
+      readings:
+        "kara-because": "tokerukara"
+        "node": "tokerunode"
+    - word: "ja-4097"
+      forms:
+        "kara-because": "ととのうから"
+        "node": "ととのうので"
+      readings:
+        "kara-because": "totonoukara"
+        "node": "totonounode"
+    - word: "ja-4098"
+      forms:
+        "kara-because": "ととのえるから"
+        "node": "ととのえるので"
+      readings:
+        "kara-because": "totonoerukara"
+        "node": "totonoerunode"
+    - word: "ja-4099"
+      forms:
+        "kara-because": "とびこむから"
+        "node": "とびこむので"
+      readings:
+        "kara-because": "tobikomukara"
+        "node": "tobikomunode"
+    - word: "ja-4100"
+      forms:
+        "kara-because": "ともなうから"
+        "node": "ともなうので"
+      readings:
+        "kara-because": "tomonaukara"
+        "node": "tomonaunode"
+    - word: "ja-4101"
+      forms:
+        "kara-because": "とらえるから"
+        "node": "とらえるので"
+      readings:
+        "kara-because": "toraerukara"
+        "node": "toraerunode"
+    - word: "ja-4102"
+      forms:
+        "kara-because": "とりあげるから"
+        "node": "とりあげるので"
+      readings:
+        "kara-because": "toriagerukara"
+        "node": "toriagerunode"
+    - word: "ja-4103"
+      forms:
+        "kara-because": "とりだすから"
+        "node": "とりだすので"
+      readings:
+        "kara-because": "toridasukara"
+        "node": "toridasunode"
+    - word: "ja-4104"
+      forms:
+        "kara-because": "とりのぞくから"
+        "node": "とりのぞくので"
+      readings:
+        "kara-because": "torinozokukara"
+        "node": "torinozokunode"
+    - word: "ja-4105"
+      forms:
+        "kara-because": "ながすから"
+        "node": "ながすので"
+      readings:
+        "kara-because": "nagasukara"
+        "node": "nagasunode"
+    - word: "ja-4185"
+      forms:
+        "kara-because": "みとめるから"
+        "node": "みとめるので"
+      readings:
+        "kara-because": "mitomerukara"
+        "node": "mitomerunode"
+    - word: "ja-4186"
+      forms:
+        "kara-because": "うたがうから"
+        "node": "うたがうので"
+      readings:
+        "kara-because": "utagaukara"
+        "node": "utagaunode"
+    - word: "ja-4187"
+      forms:
+        "kara-because": "しんじるから"
+        "node": "しんじるので"
+      readings:
+        "kara-because": "shinjirukara"
+        "node": "shinjirunode"
+    - word: "ja-4192"
+      forms:
+        "kara-because": "ろんじるから"
+        "node": "ろんじるので"
+      readings:
+        "kara-because": "ronjirukara"
+        "node": "ronjirunode"
+rules:
+  - id: "ja-rule-kara-because"
+    slots: ["kara-because"]
+    words:
+      - { word: "から", reading: "kara" }
+      - { word: "たべるから", reading: "taberu kara" }
+  - id: "ja-rule-node"
+    slots: ["node"]
+    words:
+      - { word: "ので", reading: "node" }
+      - { word: "たべるので", reading: "taberu node" }

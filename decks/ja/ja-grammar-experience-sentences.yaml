@@ -1,0 +1,135 @@
+schema: 1
+id: "ja-grammar-experience-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-4460"
+    target: "にほんにいったことがあります。"
+    words: ["にほん", "に", "いった", "こと", "が", "あります"]
+    reading: "nihon ni itta koto ga arimasu."
+    ipa: "nihoɴ ni itta koto ɡa aɾimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "にほん", ref: "ja-0072" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "いった", ref: "ja-0348" }
+      - { word: "こと", base: "こと", reading: "koto" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "あります", base: "ある", reading: "aru" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-0348", kind: "word" }
+      - { id: "w2", ref: "ja-0350", kind: "word" }
+    rules: ["ja-rule-ta-koto-ga-aru"]
+  - id: "ja-4461"
+    target: "すしをたべたことがあります。"
+    words: ["すし", "を", "たべた", "こと", "が", "あります"]
+    reading: "sushi o tabeta koto ga arimasu."
+    ipa: "sɯɕi o tabeta koto ɡa aɾimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "すし", ref: "ja-1754" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "たべた", ref: "ja-0341" }
+      - { word: "こと", base: "こと", reading: "koto" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "あります", base: "ある", reading: "aru" }
+    confusables:
+      - { id: "w1", ref: "ja-0341", kind: "word" }
+      - { id: "w2", ref: "ja-0342", kind: "word" }
+    rules: ["ja-rule-ta-koto-ga-aru"]
+  - id: "ja-4462"
+    target: "えいがをみたことがありますか。"
+    words: ["えいが", "を", "みた", "こと", "が", "あります", "か"]
+    reading: "eiga o mita koto ga arimasu ka."
+    ipa: "eːɡa o mita koto ɡa aɾimasɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "えいが", ref: "ja-1358" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "みた", ref: "ja-0343" }
+      - { word: "こと", base: "こと", reading: "koto" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "あります", base: "ある", reading: "aru" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - { id: "w1", ref: "ja-0343", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-ta-koto-ga-aru"]
+  - id: "ja-4463"
+    target: "ともだちにあったことがありません。"
+    words: ["ともだち", "に", "あった", "こと", "が", "ありません"]
+    reading: "tomodachi ni atta koto ga arimasen."
+    ipa: "tomodatɕi ni atta koto ɡa aɾimaseɴ"
+    pos: "phrase"
+    bases:
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "あった", ref: "ja-0357" }
+      - { word: "こと", base: "こと", reading: "koto" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "ありません", base: "ある", reading: "aru" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-0357", kind: "word" }
+      - { id: "w2", ref: "ja-0348", kind: "word" }
+    rules: ["ja-rule-ta-koto-ga-aru"]
+  - id: "ja-4464"
+    target: "コーヒーをのんだことがありません。"
+    words: ["コーヒー", "を", "のんだ", "こと", "が", "ありません"]
+    reading: "koohii o nonda koto ga arimasen."
+    ipa: "koːçiː o noɴda koto ɡa aɾimaseɴ"
+    pos: "phrase"
+    bases:
+      - { word: "コーヒー", ref: "ja-0849" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "のんだ", ref: "ja-0342" }
+      - { word: "こと", base: "こと", reading: "koto" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "ありません", base: "ある", reading: "aru" }
+    confusables:
+      - { id: "w1", ref: "ja-0342", kind: "word" }
+      - { id: "w2", ref: "ja-0341", kind: "word" }
+    rules: ["ja-rule-ta-koto-ga-aru"]
+  - id: "ja-4465"
+    target: "このほんをよんだことがありますか。"
+    words: ["この", "ほん", "を", "よんだ", "こと", "が", "あります", "か"]
+    reading: "kono hon o yonda koto ga arimasu ka."
+    ipa: "kono hoɴ o joɴda koto ɡa aɾimasɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "この", base: "この", reading: "kono" }
+      - { word: "ほん", ref: "ja-1180" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "よんだ", ref: "ja-0345" }
+      - { word: "こと", base: "こと", reading: "koto" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "あります", base: "ある", reading: "aru" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - { id: "w1", ref: "ja-0345", kind: "word" }
+      - { id: "w2", ref: "ja-0346", kind: "word" }
+    rules: ["ja-rule-ta-koto-ga-aru"]
+  - id: "ja-4466"
+    target: "とうきょうにいったことがありますか。"
+    words: ["とうきょう", "に", "いった", "こと", "が", "あります", "か"]
+    reading: "toukyou ni itta koto ga arimasu ka."
+    ipa: "toːkjoː ni itta koto ɡa aɾimasɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "とうきょう", ref: "ja-0328" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "いった", ref: "ja-0348" }
+      - { word: "こと", base: "こと", reading: "koto" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "あります", base: "ある", reading: "aru" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - { id: "w1", ref: "ja-0348", kind: "word" }
+      - { id: "w2", ref: "ja-0350", kind: "word" }
+    rules: ["ja-rule-ta-koto-ga-aru"]

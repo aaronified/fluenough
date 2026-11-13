@@ -1,0 +1,3413 @@
+schema: 1
+id: "ja-grammar-giving-receiving"
+part: "core"
+kind: "rules"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ja-0085"]
+  slots: ["ageru", "kureru", "morau"]
+  rows:
+    - word: "ja-1050"
+      forms:
+        "ageru": "まがってあげます"
+        "kureru": "まがってくれます"
+        "morau": "まがってもらいます"
+      readings:
+        "ageru": "magatteagemasu"
+        "kureru": "magattekuremasu"
+        "morau": "magattemoraimasu"
+    - word: "ja-1060"
+      forms:
+        "ageru": "わたってあげます"
+        "kureru": "わたってくれます"
+        "morau": "わたってもらいます"
+      readings:
+        "ageru": "watatteagemasu"
+        "kureru": "watattekuremasu"
+        "morau": "watattemoraimasu"
+    - word: "ja-1061"
+      forms:
+        "ageru": "すすんであげます"
+        "kureru": "すすんでくれます"
+        "morau": "すすんでもらいます"
+      readings:
+        "ageru": "susundeagemasu"
+        "kureru": "susundekuremasu"
+        "morau": "susundemoraimasu"
+    - word: "ja-1062"
+      forms:
+        "ageru": "さがってあげます"
+        "kureru": "さがってくれます"
+        "morau": "さがってもらいます"
+      readings:
+        "ageru": "sagatteagemasu"
+        "kureru": "sagattekuremasu"
+        "morau": "sagattemoraimasu"
+    - word: "ja-1070"
+      forms:
+        "ageru": "まちがえてあげます"
+        "kureru": "まちがえてくれます"
+        "morau": "まちがえてもらいます"
+      readings:
+        "ageru": "machigaeteagemasu"
+        "kureru": "machigaetekuremasu"
+        "morau": "machigaetemoraimasu"
+    - word: "ja-1071"
+      forms:
+        "ageru": "でてあげます"
+        "kureru": "でてくれます"
+        "morau": "でてもらいます"
+      readings:
+        "ageru": "deteagemasu"
+        "kureru": "detekuremasu"
+        "morau": "detemoraimasu"
+    - word: "ja-1078"
+      forms:
+        "ageru": "むかってあげます"
+        "kureru": "むかってくれます"
+        "morau": "むかってもらいます"
+      readings:
+        "ageru": "mukatteagemasu"
+        "kureru": "mukattekuremasu"
+        "morau": "mukattemoraimasu"
+    - word: "ja-0341"
+      forms:
+        "ageru": "たべてあげます"
+        "kureru": "たべてくれます"
+        "morau": "たべてもらいます"
+      readings:
+        "ageru": "tabeteagemasu"
+        "kureru": "tabetekuremasu"
+        "morau": "tabetemoraimasu"
+    - word: "ja-0342"
+      forms:
+        "ageru": "のんであげます"
+        "kureru": "のんでくれます"
+        "morau": "のんでもらいます"
+      readings:
+        "ageru": "nondeagemasu"
+        "kureru": "nondekuremasu"
+        "morau": "nondemoraimasu"
+    - word: "ja-0343"
+      forms:
+        "ageru": "みてあげます"
+        "kureru": "みてくれます"
+        "morau": "みてもらいます"
+      readings:
+        "ageru": "miteagemasu"
+        "kureru": "mitekuremasu"
+        "morau": "mitemoraimasu"
+    - word: "ja-0344"
+      forms:
+        "ageru": "きいてあげます"
+        "kureru": "きいてくれます"
+        "morau": "きいてもらいます"
+      readings:
+        "ageru": "kiiteagemasu"
+        "kureru": "kiitekuremasu"
+        "morau": "kiitemoraimasu"
+    - word: "ja-0345"
+      forms:
+        "ageru": "よんであげます"
+        "kureru": "よんでくれます"
+        "morau": "よんでもらいます"
+      readings:
+        "ageru": "yondeagemasu"
+        "kureru": "yondekuremasu"
+        "morau": "yondemoraimasu"
+    - word: "ja-0346"
+      forms:
+        "ageru": "かいてあげます"
+        "kureru": "かいてくれます"
+        "morau": "かいてもらいます"
+      readings:
+        "ageru": "kaiteagemasu"
+        "kureru": "kaitekuremasu"
+        "morau": "kaitemoraimasu"
+    - word: "ja-0347"
+      forms:
+        "ageru": "はなしてあげます"
+        "kureru": "はなしてくれます"
+        "morau": "はなしてもらいます"
+      readings:
+        "ageru": "hanashiteagemasu"
+        "kureru": "hanashitekuremasu"
+        "morau": "hanashitemoraimasu"
+    - word: "ja-0348"
+      forms:
+        "ageru": "いってあげます"
+        "kureru": "いってくれます"
+        "morau": "いってもらいます"
+      readings:
+        "ageru": "itteagemasu"
+        "kureru": "ittekuremasu"
+        "morau": "ittemoraimasu"
+    - word: "ja-0349"
+      forms:
+        "ageru": "きてあげます"
+        "kureru": "きてくれます"
+        "morau": "きてもらいます"
+      readings:
+        "ageru": "kiteagemasu"
+        "kureru": "kitekuremasu"
+        "morau": "kitemoraimasu"
+    - word: "ja-0350"
+      forms:
+        "ageru": "かえってあげます"
+        "kureru": "かえってくれます"
+        "morau": "かえってもらいます"
+      readings:
+        "ageru": "kaetteagemasu"
+        "kureru": "kaettekuremasu"
+        "morau": "kaettemoraimasu"
+    - word: "ja-0351"
+      forms:
+        "ageru": "おきてあげます"
+        "kureru": "おきてくれます"
+        "morau": "おきてもらいます"
+      readings:
+        "ageru": "okiteagemasu"
+        "kureru": "okitekuremasu"
+        "morau": "okitemoraimasu"
+    - word: "ja-0352"
+      forms:
+        "ageru": "ねてあげます"
+        "kureru": "ねてくれます"
+        "morau": "ねてもらいます"
+      readings:
+        "ageru": "neteagemasu"
+        "kureru": "netekuremasu"
+        "morau": "netemoraimasu"
+    - word: "ja-0353"
+      forms:
+        "ageru": "はたらいてあげます"
+        "kureru": "はたらいてくれます"
+        "morau": "はたらいてもらいます"
+      readings:
+        "ageru": "hataraiteagemasu"
+        "kureru": "hataraitekuremasu"
+        "morau": "hataraitemoraimasu"
+    - word: "ja-0354"
+      forms:
+        "ageru": "やすんであげます"
+        "kureru": "やすんでくれます"
+        "morau": "やすんでもらいます"
+      readings:
+        "ageru": "yasundeagemasu"
+        "kureru": "yasundekuremasu"
+        "morau": "yasundemoraimasu"
+    - word: "ja-0355"
+      forms:
+        "ageru": "はいってあげます"
+        "kureru": "はいってくれます"
+        "morau": "はいってもらいます"
+      readings:
+        "ageru": "haitteagemasu"
+        "kureru": "haittekuremasu"
+        "morau": "haittemoraimasu"
+    - word: "ja-0356"
+      forms:
+        "ageru": "かってあげます"
+        "kureru": "かってくれます"
+        "morau": "かってもらいます"
+      readings:
+        "ageru": "katteagemasu"
+        "kureru": "kattekuremasu"
+        "morau": "kattemoraimasu"
+    - word: "ja-0357"
+      forms:
+        "ageru": "あってあげます"
+        "kureru": "あってくれます"
+        "morau": "あってもらいます"
+      readings:
+        "ageru": "atteagemasu"
+        "kureru": "attekuremasu"
+        "morau": "attemoraimasu"
+    - word: "ja-0358"
+      forms:
+        "ageru": "まってあげます"
+        "kureru": "まってくれます"
+        "morau": "まってもらいます"
+      readings:
+        "ageru": "matteagemasu"
+        "kureru": "mattekuremasu"
+        "morau": "mattemoraimasu"
+    - word: "ja-0359"
+      forms:
+        "ageru": "もってあげます"
+        "kureru": "もってくれます"
+        "morau": "もってもらいます"
+      readings:
+        "ageru": "motteagemasu"
+        "kureru": "mottekuremasu"
+        "morau": "mottemoraimasu"
+    - word: "ja-0360"
+      forms:
+        "ageru": "あるいてあげます"
+        "kureru": "あるいてくれます"
+        "morau": "あるいてもらいます"
+      readings:
+        "ageru": "aruiteagemasu"
+        "kureru": "aruitekuremasu"
+        "morau": "aruitemoraimasu"
+    - word: "ja-0361"
+      forms:
+        "ageru": "のってあげます"
+        "kureru": "のってくれます"
+        "morau": "のってもらいます"
+      readings:
+        "ageru": "notteagemasu"
+        "kureru": "nottekuremasu"
+        "morau": "nottemoraimasu"
+    - word: "ja-0362"
+      forms:
+        "ageru": "おりてあげます"
+        "kureru": "おりてくれます"
+        "morau": "おりてもらいます"
+      readings:
+        "ageru": "oriteagemasu"
+        "kureru": "oritekuremasu"
+        "morau": "oritemoraimasu"
+    - word: "ja-0363"
+      forms:
+        "ageru": "あらってあげます"
+        "kureru": "あらってくれます"
+        "morau": "あらってもらいます"
+      readings:
+        "ageru": "aratteagemasu"
+        "kureru": "arattekuremasu"
+        "morau": "arattemoraimasu"
+    - word: "ja-0364"
+      forms:
+        "ageru": "つくってあげます"
+        "kureru": "つくってくれます"
+        "morau": "つくってもらいます"
+      readings:
+        "ageru": "tsukutteagemasu"
+        "kureru": "tsukuttekuremasu"
+        "morau": "tsukuttemoraimasu"
+    - word: "ja-0365"
+      forms:
+        "ageru": "わかってあげます"
+        "kureru": "わかってくれます"
+        "morau": "わかってもらいます"
+      readings:
+        "ageru": "wakatteagemasu"
+        "kureru": "wakattekuremasu"
+        "morau": "wakattemoraimasu"
+    - word: "ja-0366"
+      forms:
+        "ageru": "しってあげます"
+        "kureru": "しってくれます"
+        "morau": "しってもらいます"
+      readings:
+        "ageru": "shitteagemasu"
+        "kureru": "shittekuremasu"
+        "morau": "shittemoraimasu"
+    - word: "ja-0367"
+      forms:
+        "ageru": "ならってあげます"
+        "kureru": "ならってくれます"
+        "morau": "ならってもらいます"
+      readings:
+        "ageru": "naratteagemasu"
+        "kureru": "narattekuremasu"
+        "morau": "narattemoraimasu"
+    - word: "ja-0368"
+      forms:
+        "ageru": "おしえてあげます"
+        "kureru": "おしえてくれます"
+        "morau": "おしえてもらいます"
+      readings:
+        "ageru": "oshieteagemasu"
+        "kureru": "oshietekuremasu"
+        "morau": "oshietemoraimasu"
+    - word: "ja-0369"
+      forms:
+        "ageru": "つかってあげます"
+        "kureru": "つかってくれます"
+        "morau": "つかってもらいます"
+      readings:
+        "ageru": "tsukatteagemasu"
+        "kureru": "tsukattekuremasu"
+        "morau": "tsukattemoraimasu"
+    - word: "ja-0370"
+      forms:
+        "ageru": "すわってあげます"
+        "kureru": "すわってくれます"
+        "morau": "すわってもらいます"
+      readings:
+        "ageru": "suwatteagemasu"
+        "kureru": "suwattekuremasu"
+        "morau": "suwattemoraimasu"
+    - word: "ja-0371"
+      forms:
+        "ageru": "たってあげます"
+        "kureru": "たってくれます"
+        "morau": "たってもらいます"
+      readings:
+        "ageru": "tatteagemasu"
+        "kureru": "tattekuremasu"
+        "morau": "tattemoraimasu"
+    - word: "ja-0372"
+      forms:
+        "ageru": "あけてあげます"
+        "kureru": "あけてくれます"
+        "morau": "あけてもらいます"
+      readings:
+        "ageru": "aketeagemasu"
+        "kureru": "aketekuremasu"
+        "morau": "aketemoraimasu"
+    - word: "ja-0373"
+      forms:
+        "ageru": "しめてあげます"
+        "kureru": "しめてくれます"
+        "morau": "しめてもらいます"
+      readings:
+        "ageru": "shimeteagemasu"
+        "kureru": "shimetekuremasu"
+        "morau": "shimetemoraimasu"
+    - word: "ja-0374"
+      forms:
+        "ageru": "あそんであげます"
+        "kureru": "あそんでくれます"
+        "morau": "あそんでもらいます"
+      readings:
+        "ageru": "asondeagemasu"
+        "kureru": "asondekuremasu"
+        "morau": "asondemoraimasu"
+    - word: "ja-0375"
+      forms:
+        "ageru": "してあげます"
+        "kureru": "してくれます"
+        "morau": "してもらいます"
+      readings:
+        "ageru": "shiteagemasu"
+        "kureru": "shitekuremasu"
+        "morau": "shitemoraimasu"
+    - word: "ja-0949"
+      forms:
+        "ageru": "かぞえてあげます"
+        "kureru": "かぞえてくれます"
+        "morau": "かぞえてもらいます"
+      readings:
+        "ageru": "kazoeteagemasu"
+        "kureru": "kazoetekuremasu"
+        "morau": "kazoetemoraimasu"
+    - word: "ja-1226"
+      forms:
+        "ageru": "こまってあげます"
+        "kureru": "こまってくれます"
+        "morau": "こまってもらいます"
+      readings:
+        "ageru": "komatteagemasu"
+        "kureru": "komattekuremasu"
+        "morau": "komattemoraimasu"
+    - word: "ja-1227"
+      forms:
+        "ageru": "よんであげます"
+        "kureru": "よんでくれます"
+        "morau": "よんでもらいます"
+      readings:
+        "ageru": "yondeagemasu"
+        "kureru": "yondekuremasu"
+        "morau": "yondemoraimasu"
+    - word: "ja-1228"
+      forms:
+        "ageru": "まよってあげます"
+        "kureru": "まよってくれます"
+        "morau": "まよってもらいます"
+      readings:
+        "ageru": "mayotteagemasu"
+        "kureru": "mayottekuremasu"
+        "morau": "mayottemoraimasu"
+    - word: "ja-1236"
+      forms:
+        "ageru": "たすけてあげます"
+        "kureru": "たすけてくれます"
+        "morau": "たすけてもらいます"
+      readings:
+        "ageru": "tasuketeagemasu"
+        "kureru": "tasuketekuremasu"
+        "morau": "tasuketemoraimasu"
+    - word: "ja-1237"
+      forms:
+        "ageru": "たすかってあげます"
+        "kureru": "たすかってくれます"
+        "morau": "たすかってもらいます"
+      readings:
+        "ageru": "tasukatteagemasu"
+        "kureru": "tasukattekuremasu"
+        "morau": "tasukattemoraimasu"
+    - word: "ja-1240"
+      forms:
+        "ageru": "まもってあげます"
+        "kureru": "まもってくれます"
+        "morau": "まもってもらいます"
+      readings:
+        "ageru": "mamotteagemasu"
+        "kureru": "mamottekuremasu"
+        "morau": "mamottemoraimasu"
+    - word: "ja-0571"
+      forms:
+        "ageru": "あびてあげます"
+        "kureru": "あびてくれます"
+        "morau": "あびてもらいます"
+      readings:
+        "ageru": "abiteagemasu"
+        "kureru": "abitekuremasu"
+        "morau": "abitemoraimasu"
+    - word: "ja-0572"
+      forms:
+        "ageru": "はしってあげます"
+        "kureru": "はしってくれます"
+        "morau": "はしってもらいます"
+      readings:
+        "ageru": "hashitteagemasu"
+        "kureru": "hashittekuremasu"
+        "morau": "hashittemoraimasu"
+    - word: "ja-0573"
+      forms:
+        "ageru": "とんであげます"
+        "kureru": "とんでくれます"
+        "morau": "とんでもらいます"
+      readings:
+        "ageru": "tondeagemasu"
+        "kureru": "tondekuremasu"
+        "morau": "tondemoraimasu"
+    - word: "ja-0574"
+      forms:
+        "ageru": "おどってあげます"
+        "kureru": "おどってくれます"
+        "morau": "おどってもらいます"
+      readings:
+        "ageru": "odotteagemasu"
+        "kureru": "odottekuremasu"
+        "morau": "odottemoraimasu"
+    - word: "ja-0575"
+      forms:
+        "ageru": "うたってあげます"
+        "kureru": "うたってくれます"
+        "morau": "うたってもらいます"
+      readings:
+        "ageru": "utatteagemasu"
+        "kureru": "utattekuremasu"
+        "morau": "utattemoraimasu"
+    - word: "ja-0576"
+      forms:
+        "ageru": "かりてあげます"
+        "kureru": "かりてくれます"
+        "morau": "かりてもらいます"
+      readings:
+        "ageru": "kariteagemasu"
+        "kureru": "karitekuremasu"
+        "morau": "karitemoraimasu"
+    - word: "ja-0577"
+      forms:
+        "ageru": "かえしてあげます"
+        "kureru": "かえしてくれます"
+        "morau": "かえしてもらいます"
+      readings:
+        "ageru": "kaeshiteagemasu"
+        "kureru": "kaeshitekuremasu"
+        "morau": "kaeshitemoraimasu"
+    - word: "ja-0578"
+      forms:
+        "ageru": "わすれてあげます"
+        "kureru": "わすれてくれます"
+        "morau": "わすれてもらいます"
+      readings:
+        "ageru": "wasureteagemasu"
+        "kureru": "wasuretekuremasu"
+        "morau": "wasuretemoraimasu"
+    - word: "ja-0579"
+      forms:
+        "ageru": "おぼえてあげます"
+        "kureru": "おぼえてくれます"
+        "morau": "おぼえてもらいます"
+      readings:
+        "ageru": "oboeteagemasu"
+        "kureru": "oboetekuremasu"
+        "morau": "oboetemoraimasu"
+    - word: "ja-0580"
+      forms:
+        "ageru": "てつだってあげます"
+        "kureru": "てつだってくれます"
+        "morau": "てつだってもらいます"
+      readings:
+        "ageru": "tetsudatteagemasu"
+        "kureru": "tetsudattekuremasu"
+        "morau": "tetsudattemoraimasu"
+    - word: "ja-0581"
+      forms:
+        "ageru": "ひろってあげます"
+        "kureru": "ひろってくれます"
+        "morau": "ひろってもらいます"
+      readings:
+        "ageru": "hirotteagemasu"
+        "kureru": "hirottekuremasu"
+        "morau": "hirottemoraimasu"
+    - word: "ja-0582"
+      forms:
+        "ageru": "すててあげます"
+        "kureru": "すててくれます"
+        "morau": "すててもらいます"
+      readings:
+        "ageru": "suteteagemasu"
+        "kureru": "sutetekuremasu"
+        "morau": "sutetemoraimasu"
+    - word: "ja-0583"
+      forms:
+        "ageru": "なくしてあげます"
+        "kureru": "なくしてくれます"
+        "morau": "なくしてもらいます"
+      readings:
+        "ageru": "nakushiteagemasu"
+        "kureru": "nakushitekuremasu"
+        "morau": "nakushitemoraimasu"
+    - word: "ja-0584"
+      forms:
+        "ageru": "のぼってあげます"
+        "kureru": "のぼってくれます"
+        "morau": "のぼってもらいます"
+      readings:
+        "ageru": "nobotteagemasu"
+        "kureru": "nobottekuremasu"
+        "morau": "nobottemoraimasu"
+    - word: "ja-0585"
+      forms:
+        "ageru": "そうじしてあげます"
+        "kureru": "そうじしてくれます"
+        "morau": "そうじしてもらいます"
+      readings:
+        "ageru": "soujishiteagemasu"
+        "kureru": "soujishitekuremasu"
+        "morau": "soujishitemoraimasu"
+    - word: "ja-0586"
+      forms:
+        "ageru": "りょうりしてあげます"
+        "kureru": "りょうりしてくれます"
+        "morau": "りょうりしてもらいます"
+      readings:
+        "ageru": "ryourishiteagemasu"
+        "kureru": "ryourishitekuremasu"
+        "morau": "ryourishitemoraimasu"
+    - word: "ja-0587"
+      forms:
+        "ageru": "でかけてあげます"
+        "kureru": "でかけてくれます"
+        "morau": "でかけてもらいます"
+      readings:
+        "ageru": "dekaketeagemasu"
+        "kureru": "dekaketekuremasu"
+        "morau": "dekaketemoraimasu"
+    - word: "ja-0588"
+      forms:
+        "ageru": "もどってあげます"
+        "kureru": "もどってくれます"
+        "morau": "もどってもらいます"
+      readings:
+        "ageru": "modotteagemasu"
+        "kureru": "modottekuremasu"
+        "morau": "modottemoraimasu"
+    - word: "ja-0589"
+      forms:
+        "ageru": "とまってあげます"
+        "kureru": "とまってくれます"
+        "morau": "とまってもらいます"
+      readings:
+        "ageru": "tomatteagemasu"
+        "kureru": "tomattekuremasu"
+        "morau": "tomattemoraimasu"
+    - word: "ja-0590"
+      forms:
+        "ageru": "さがしてあげます"
+        "kureru": "さがしてくれます"
+        "morau": "さがしてもらいます"
+      readings:
+        "ageru": "sagashiteagemasu"
+        "kureru": "sagashitekuremasu"
+        "morau": "sagashitemoraimasu"
+    - word: "ja-0591"
+      forms:
+        "ageru": "みせてあげます"
+        "kureru": "みせてくれます"
+        "morau": "みせてもらいます"
+      readings:
+        "ageru": "miseteagemasu"
+        "kureru": "misetekuremasu"
+        "morau": "misetemoraimasu"
+    - word: "ja-0592"
+      forms:
+        "ageru": "いれてあげます"
+        "kureru": "いれてくれます"
+        "morau": "いれてもらいます"
+      readings:
+        "ageru": "ireteagemasu"
+        "kureru": "iretekuremasu"
+        "morau": "iretemoraimasu"
+    - word: "ja-0593"
+      forms:
+        "ageru": "わらってあげます"
+        "kureru": "わらってくれます"
+        "morau": "わらってもらいます"
+      readings:
+        "ageru": "waratteagemasu"
+        "kureru": "warattekuremasu"
+        "morau": "warattemoraimasu"
+    - word: "ja-0594"
+      forms:
+        "ageru": "おこってあげます"
+        "kureru": "おこってくれます"
+        "morau": "おこってもらいます"
+      readings:
+        "ageru": "okotteagemasu"
+        "kureru": "okottekuremasu"
+        "morau": "okottemoraimasu"
+    - word: "ja-0595"
+      forms:
+        "ageru": "やめてあげます"
+        "kureru": "やめてくれます"
+        "morau": "やめてもらいます"
+      readings:
+        "ageru": "yameteagemasu"
+        "kureru": "yametekuremasu"
+        "morau": "yametemoraimasu"
+    - word: "ja-0596"
+      forms:
+        "ageru": "はじめてあげます"
+        "kureru": "はじめてくれます"
+        "morau": "はじめてもらいます"
+      readings:
+        "ageru": "hajimeteagemasu"
+        "kureru": "hajimetekuremasu"
+        "morau": "hajimetemoraimasu"
+    - word: "ja-0597"
+      forms:
+        "ageru": "ひっこしてあげます"
+        "kureru": "ひっこしてくれます"
+        "morau": "ひっこしてもらいます"
+      readings:
+        "ageru": "hikkoshiteagemasu"
+        "kureru": "hikkoshitekuremasu"
+        "morau": "hikkoshitemoraimasu"
+    - word: "ja-0598"
+      forms:
+        "ageru": "あげてあげます"
+        "kureru": "あげてくれます"
+        "morau": "あげてもらいます"
+      readings:
+        "ageru": "ageteagemasu"
+        "kureru": "agetekuremasu"
+        "morau": "agetemoraimasu"
+    - word: "ja-0599"
+      forms:
+        "ageru": "もらってあげます"
+        "kureru": "もらってくれます"
+        "morau": "もらってもらいます"
+      readings:
+        "ageru": "moratteagemasu"
+        "kureru": "morattekuremasu"
+        "morau": "morattemoraimasu"
+    - word: "ja-0600"
+      forms:
+        "ageru": "さけんであげます"
+        "kureru": "さけんでくれます"
+        "morau": "さけんでもらいます"
+      readings:
+        "ageru": "sakendeagemasu"
+        "kureru": "sakendekuremasu"
+        "morau": "sakendemoraimasu"
+    - word: "ja-0516"
+      forms:
+        "ageru": "おわってあげます"
+        "kureru": "おわってくれます"
+        "morau": "おわってもらいます"
+      readings:
+        "ageru": "owatteagemasu"
+        "kureru": "owattekuremasu"
+        "morau": "owattemoraimasu"
+    - word: "ja-0711"
+      forms:
+        "ageru": "つとめてあげます"
+        "kureru": "つとめてくれます"
+        "morau": "つとめてもらいます"
+      readings:
+        "ageru": "tsutometeagemasu"
+        "kureru": "tsutometekuremasu"
+        "morau": "tsutometemoraimasu"
+    - word: "ja-1334"
+      forms:
+        "ageru": "きがえてあげます"
+        "kureru": "きがえてくれます"
+        "morau": "きがえてもらいます"
+      readings:
+        "ageru": "kigaeteagemasu"
+        "kureru": "kigaetekuremasu"
+        "morau": "kigaetemoraimasu"
+    - word: "ja-1335"
+      forms:
+        "ageru": "はいてあげます"
+        "kureru": "はいてくれます"
+        "morau": "はいてもらいます"
+      readings:
+        "ageru": "haiteagemasu"
+        "kureru": "haitekuremasu"
+        "morau": "haitemoraimasu"
+    - word: "ja-1336"
+      forms:
+        "ageru": "かぶってあげます"
+        "kureru": "かぶってくれます"
+        "morau": "かぶってもらいます"
+      readings:
+        "ageru": "kabutteagemasu"
+        "kureru": "kabuttekuremasu"
+        "morau": "kabuttemoraimasu"
+    - word: "ja-1341"
+      forms:
+        "ageru": "つかれてあげます"
+        "kureru": "つかれてくれます"
+        "morau": "つかれてもらいます"
+      readings:
+        "ageru": "tsukareteagemasu"
+        "kureru": "tsukaretekuremasu"
+        "morau": "tsukaretemoraimasu"
+    - word: "ja-1348"
+      forms:
+        "ageru": "だしてあげます"
+        "kureru": "だしてくれます"
+        "morau": "だしてもらいます"
+      readings:
+        "ageru": "dashiteagemasu"
+        "kureru": "dashitekuremasu"
+        "morau": "dashitemoraimasu"
+    - word: "ja-1349"
+      forms:
+        "ageru": "わかしてあげます"
+        "kureru": "わかしてくれます"
+        "morau": "わかしてもらいます"
+      readings:
+        "ageru": "wakashiteagemasu"
+        "kureru": "wakashitekuremasu"
+        "morau": "wakashitemoraimasu"
+    - word: "ja-1350"
+      forms:
+        "ageru": "ほしてあげます"
+        "kureru": "ほしてくれます"
+        "morau": "ほしてもらいます"
+      readings:
+        "ageru": "hoshiteagemasu"
+        "kureru": "hoshitekuremasu"
+        "morau": "hoshitemoraimasu"
+    - word: "ja-1351"
+      forms:
+        "ageru": "かたづけてあげます"
+        "kureru": "かたづけてくれます"
+        "morau": "かたづけてもらいます"
+      readings:
+        "ageru": "katazuketeagemasu"
+        "kureru": "katazuketekuremasu"
+        "morau": "katazuketemoraimasu"
+    - word: "ja-1352"
+      forms:
+        "ageru": "たたんであげます"
+        "kureru": "たたんでくれます"
+        "morau": "たたんでもらいます"
+      readings:
+        "ageru": "tatandeagemasu"
+        "kureru": "tatandekuremasu"
+        "morau": "tatandemoraimasu"
+    - word: "ja-1353"
+      forms:
+        "ageru": "ぬいであげます"
+        "kureru": "ぬいでくれます"
+        "morau": "ぬいでもらいます"
+      readings:
+        "ageru": "nuideagemasu"
+        "kureru": "nuidekuremasu"
+        "morau": "nuidemoraimasu"
+    - word: "ja-1354"
+      forms:
+        "ageru": "まにあってあげます"
+        "kureru": "まにあってくれます"
+        "morau": "まにあってもらいます"
+      readings:
+        "ageru": "maniatteagemasu"
+        "kureru": "maniattekuremasu"
+        "morau": "maniattemoraimasu"
+    - word: "ja-1364"
+      forms:
+        "ageru": "かわいてあげます"
+        "kureru": "かわいてくれます"
+        "morau": "かわいてもらいます"
+      readings:
+        "ageru": "kawaiteagemasu"
+        "kureru": "kawaitekuremasu"
+        "morau": "kawaitemoraimasu"
+    - word: "ja-1368"
+      forms:
+        "ageru": "いそいであげます"
+        "kureru": "いそいでくれます"
+        "morau": "いそいでもらいます"
+      readings:
+        "ageru": "isoideagemasu"
+        "kureru": "isoidekuremasu"
+        "morau": "isoidemoraimasu"
+    - word: "ja-1718"
+      forms:
+        "ageru": "うってあげます"
+        "kureru": "うってくれます"
+        "morau": "うってもらいます"
+      readings:
+        "ageru": "utteagemasu"
+        "kureru": "uttekuremasu"
+        "morau": "uttemoraimasu"
+    - word: "ja-1719"
+      forms:
+        "ageru": "はらってあげます"
+        "kureru": "はらってくれます"
+        "morau": "はらってもらいます"
+      readings:
+        "ageru": "haratteagemasu"
+        "kureru": "harattekuremasu"
+        "morau": "harattemoraimasu"
+    - word: "ja-1720"
+      forms:
+        "ageru": "まけてあげます"
+        "kureru": "まけてくれます"
+        "morau": "まけてもらいます"
+      readings:
+        "ageru": "maketeagemasu"
+        "kureru": "maketekuremasu"
+        "morau": "maketemoraimasu"
+    - word: "ja-1721"
+      forms:
+        "ageru": "えらんであげます"
+        "kureru": "えらんでくれます"
+        "morau": "えらんでもらいます"
+      readings:
+        "ageru": "erandeagemasu"
+        "kureru": "erandekuremasu"
+        "morau": "erandemoraimasu"
+    - word: "ja-1758"
+      forms:
+        "ageru": "たのんであげます"
+        "kureru": "たのんでくれます"
+        "morau": "たのんでもらいます"
+      readings:
+        "ageru": "tanondeagemasu"
+        "kureru": "tanondekuremasu"
+        "morau": "tanondemoraimasu"
+    - word: "ja-1759"
+      forms:
+        "ageru": "おごってあげます"
+        "kureru": "おごってくれます"
+        "morau": "おごってもらいます"
+      readings:
+        "ageru": "ogotteagemasu"
+        "kureru": "ogottekuremasu"
+        "morau": "ogottemoraimasu"
+    - word: "ja-1790"
+      forms:
+        "ageru": "いためてあげます"
+        "kureru": "いためてくれます"
+        "morau": "いためてもらいます"
+      readings:
+        "ageru": "itameteagemasu"
+        "kureru": "itametekuremasu"
+        "morau": "itametemoraimasu"
+    - word: "ja-1791"
+      forms:
+        "ageru": "まぜてあげます"
+        "kureru": "まぜてくれます"
+        "morau": "まぜてもらいます"
+      readings:
+        "ageru": "mazeteagemasu"
+        "kureru": "mazetekuremasu"
+        "morau": "mazetemoraimasu"
+    - word: "ja-1792"
+      forms:
+        "ageru": "ゆでてあげます"
+        "kureru": "ゆでてくれます"
+        "morau": "ゆでてもらいます"
+      readings:
+        "ageru": "yudeteagemasu"
+        "kureru": "yudetekuremasu"
+        "morau": "yudetemoraimasu"
+    - word: "ja-1793"
+      forms:
+        "ageru": "にてあげます"
+        "kureru": "にてくれます"
+        "morau": "にてもらいます"
+      readings:
+        "ageru": "niteagemasu"
+        "kureru": "nitekuremasu"
+        "morau": "nitemoraimasu"
+    - word: "ja-1794"
+      forms:
+        "ageru": "やいてあげます"
+        "kureru": "やいてくれます"
+        "morau": "やいてもらいます"
+      readings:
+        "ageru": "yaiteagemasu"
+        "kureru": "yaitekuremasu"
+        "morau": "yaitemoraimasu"
+    - word: "ja-1799"
+      forms:
+        "ageru": "ひやしてあげます"
+        "kureru": "ひやしてくれます"
+        "morau": "ひやしてもらいます"
+      readings:
+        "ageru": "hiyashiteagemasu"
+        "kureru": "hiyashitekuremasu"
+        "morau": "hiyashitemoraimasu"
+    - word: "ja-1800"
+      forms:
+        "ageru": "あたためてあげます"
+        "kureru": "あたためてくれます"
+        "morau": "あたためてもらいます"
+      readings:
+        "ageru": "atatameteagemasu"
+        "kureru": "atatametekuremasu"
+        "morau": "atatametemoraimasu"
+    - word: "ja-1801"
+      forms:
+        "ageru": "きざんであげます"
+        "kureru": "きざんでくれます"
+        "morau": "きざんでもらいます"
+      readings:
+        "ageru": "kizandeagemasu"
+        "kureru": "kizandekuremasu"
+        "morau": "kizandemoraimasu"
+    - word: "ja-1802"
+      forms:
+        "ageru": "むいてあげます"
+        "kureru": "むいてくれます"
+        "morau": "むいてもらいます"
+      readings:
+        "ageru": "muiteagemasu"
+        "kureru": "muitekuremasu"
+        "morau": "muitemoraimasu"
+    - word: "ja-1803"
+      forms:
+        "ageru": "つつんであげます"
+        "kureru": "つつんでくれます"
+        "morau": "つつんでもらいます"
+      readings:
+        "ageru": "tsutsundeagemasu"
+        "kureru": "tsutsundekuremasu"
+        "morau": "tsutsundemoraimasu"
+    - word: "ja-1804"
+      forms:
+        "ageru": "こげてあげます"
+        "kureru": "こげてくれます"
+        "morau": "こげてもらいます"
+      readings:
+        "ageru": "kogeteagemasu"
+        "kureru": "kogetekuremasu"
+        "morau": "kogetemoraimasu"
+    - word: "ja-1805"
+      forms:
+        "ageru": "さましてあげます"
+        "kureru": "さましてくれます"
+        "morau": "さましてもらいます"
+      readings:
+        "ageru": "samashiteagemasu"
+        "kureru": "samashitekuremasu"
+        "morau": "samashitemoraimasu"
+    - word: "ja-1850"
+      forms:
+        "ageru": "べんきょうしてあげます"
+        "kureru": "べんきょうしてくれます"
+        "morau": "べんきょうしてもらいます"
+      readings:
+        "ageru": "benkyoushiteagemasu"
+        "kureru": "benkyoushitekuremasu"
+        "morau": "benkyoushitemoraimasu"
+    - word: "ja-1861"
+      forms:
+        "ageru": "おくれてあげます"
+        "kureru": "おくれてくれます"
+        "morau": "おくれてもらいます"
+      readings:
+        "ageru": "okureteagemasu"
+        "kureru": "okuretekuremasu"
+        "morau": "okuretemoraimasu"
+    - word: "ja-1862"
+      forms:
+        "ageru": "まなんであげます"
+        "kureru": "まなんでくれます"
+        "morau": "まなんでもらいます"
+      readings:
+        "ageru": "manandeagemasu"
+        "kureru": "manandekuremasu"
+        "morau": "manandemoraimasu"
+    - word: "ja-1863"
+      forms:
+        "ageru": "つづけてあげます"
+        "kureru": "つづけてくれます"
+        "morau": "つづけてもらいます"
+      readings:
+        "ageru": "tsuzuketeagemasu"
+        "kureru": "tsuzuketekuremasu"
+        "morau": "tsuzuketemoraimasu"
+    - word: "ja-1864"
+      forms:
+        "ageru": "かんがえてあげます"
+        "kureru": "かんがえてくれます"
+        "morau": "かんがえてもらいます"
+      readings:
+        "ageru": "kangaeteagemasu"
+        "kureru": "kangaetekuremasu"
+        "morau": "kangaetemoraimasu"
+    - word: "ja-1865"
+      forms:
+        "ageru": "こたえてあげます"
+        "kureru": "こたえてくれます"
+        "morau": "こたえてもらいます"
+      readings:
+        "ageru": "kotaeteagemasu"
+        "kureru": "kotaetekuremasu"
+        "morau": "kotaetemoraimasu"
+    - word: "ja-1892"
+      forms:
+        "ageru": "およいであげます"
+        "kureru": "およいでくれます"
+        "morau": "およいでもらいます"
+      readings:
+        "ageru": "oyoideagemasu"
+        "kureru": "oyoidekuremasu"
+        "morau": "oyoidemoraimasu"
+    - word: "ja-1893"
+      forms:
+        "ageru": "とってあげます"
+        "kureru": "とってくれます"
+        "morau": "とってもらいます"
+      readings:
+        "ageru": "totteagemasu"
+        "kureru": "tottekuremasu"
+        "morau": "tottemoraimasu"
+    - word: "ja-1896"
+      forms:
+        "ageru": "えがいてあげます"
+        "kureru": "えがいてくれます"
+        "morau": "えがいてもらいます"
+      readings:
+        "ageru": "egaiteagemasu"
+        "kureru": "egaitekuremasu"
+        "morau": "egaitemoraimasu"
+    - word: "ja-1900"
+      forms:
+        "ageru": "ぬってあげます"
+        "kureru": "ぬってくれます"
+        "morau": "ぬってもらいます"
+      readings:
+        "ageru": "nutteagemasu"
+        "kureru": "nuttekuremasu"
+        "morau": "nuttemoraimasu"
+    - word: "ja-1901"
+      forms:
+        "ageru": "あんであげます"
+        "kureru": "あんでくれます"
+        "morau": "あんでもらいます"
+      readings:
+        "ageru": "andeagemasu"
+        "kureru": "andekuremasu"
+        "morau": "andemoraimasu"
+    - word: "ja-1907"
+      forms:
+        "ageru": "ほめてあげます"
+        "kureru": "ほめてくれます"
+        "morau": "ほめてもらいます"
+      readings:
+        "ageru": "hometeagemasu"
+        "kureru": "hometekuremasu"
+        "morau": "hometemoraimasu"
+    - word: "ja-1910"
+      forms:
+        "ageru": "かってあげます"
+        "kureru": "かってくれます"
+        "morau": "かってもらいます"
+      readings:
+        "ageru": "katteagemasu"
+        "kureru": "kattekuremasu"
+        "morau": "kattemoraimasu"
+    - word: "ja-1933"
+      forms:
+        "ageru": "かなでてあげます"
+        "kureru": "かなでてくれます"
+        "morau": "かなでてもらいます"
+      readings:
+        "ageru": "kanadeteagemasu"
+        "kureru": "kanadetekuremasu"
+        "morau": "kanadetemoraimasu"
+    - word: "ja-1934"
+      forms:
+        "ageru": "ならしてあげます"
+        "kureru": "ならしてくれます"
+        "morau": "ならしてもらいます"
+      readings:
+        "ageru": "narashiteagemasu"
+        "kureru": "narashitekuremasu"
+        "morau": "narashitemoraimasu"
+    - word: "ja-1935"
+      forms:
+        "ageru": "ひびいてあげます"
+        "kureru": "ひびいてくれます"
+        "morau": "ひびいてもらいます"
+      readings:
+        "ageru": "hibiiteagemasu"
+        "kureru": "hibiitekuremasu"
+        "morau": "hibiitemoraimasu"
+    - word: "ja-1939"
+      forms:
+        "ageru": "たたいてあげます"
+        "kureru": "たたいてくれます"
+        "morau": "たたいてもらいます"
+      readings:
+        "ageru": "tataiteagemasu"
+        "kureru": "tataitekuremasu"
+        "morau": "tataitemoraimasu"
+    - word: "ja-1940"
+      forms:
+        "ageru": "きこえてあげます"
+        "kureru": "きこえてくれます"
+        "morau": "きこえてもらいます"
+      readings:
+        "ageru": "kikoeteagemasu"
+        "kureru": "kikoetekuremasu"
+        "morau": "kikoetemoraimasu"
+    - word: "ja-1941"
+      forms:
+        "ageru": "ひいてあげます"
+        "kureru": "ひいてくれます"
+        "morau": "ひいてもらいます"
+      readings:
+        "ageru": "hiiteagemasu"
+        "kureru": "hiitekuremasu"
+        "morau": "hiitemoraimasu"
+    - word: "ja-1539"
+      forms:
+        "ageru": "にあってあげます"
+        "kureru": "にあってくれます"
+        "morau": "にあってもらいます"
+      readings:
+        "ageru": "niatteagemasu"
+        "kureru": "niattekuremasu"
+        "morau": "niattemoraimasu"
+    - word: "ja-1542"
+      forms:
+        "ageru": "きてあげます"
+        "kureru": "きてくれます"
+        "morau": "きてもらいます"
+      readings:
+        "ageru": "kiteagemasu"
+        "kureru": "kitekuremasu"
+        "morau": "kitemoraimasu"
+    - word: "ja-1996"
+      forms:
+        "ageru": "なげてあげます"
+        "kureru": "なげてくれます"
+        "morau": "なげてもらいます"
+      readings:
+        "ageru": "nageteagemasu"
+        "kureru": "nagetekuremasu"
+        "morau": "nagetemoraimasu"
+    - word: "ja-1997"
+      forms:
+        "ageru": "うってあげます"
+        "kureru": "うってくれます"
+        "morau": "うってもらいます"
+      readings:
+        "ageru": "utteagemasu"
+        "kureru": "uttekuremasu"
+        "morau": "uttemoraimasu"
+    - word: "ja-1998"
+      forms:
+        "ageru": "けってあげます"
+        "kureru": "けってくれます"
+        "morau": "けってもらいます"
+      readings:
+        "ageru": "ketteagemasu"
+        "kureru": "kettekuremasu"
+        "morau": "kettemoraimasu"
+    - word: "ja-1999"
+      forms:
+        "ageru": "おいかけてあげます"
+        "kureru": "おいかけてくれます"
+        "morau": "おいかけてもらいます"
+      readings:
+        "ageru": "oikaketeagemasu"
+        "kureru": "oikaketekuremasu"
+        "morau": "oikaketemoraimasu"
+    - word: "ja-2000"
+      forms:
+        "ageru": "あきらめてあげます"
+        "kureru": "あきらめてくれます"
+        "morau": "あきらめてもらいます"
+      readings:
+        "ageru": "akirameteagemasu"
+        "kureru": "akirametekuremasu"
+        "morau": "akirametemoraimasu"
+    - word: "ja-2001"
+      forms:
+        "ageru": "きたえてあげます"
+        "kureru": "きたえてくれます"
+        "morau": "きたえてもらいます"
+      readings:
+        "ageru": "kitaeteagemasu"
+        "kureru": "kitaetekuremasu"
+        "morau": "kitaetemoraimasu"
+    - word: "ja-2002"
+      forms:
+        "ageru": "ねらってあげます"
+        "kureru": "ねらってくれます"
+        "morau": "ねらってもらいます"
+      readings:
+        "ageru": "neratteagemasu"
+        "kureru": "nerattekuremasu"
+        "morau": "nerattemoraimasu"
+    - word: "ja-2049"
+      forms:
+        "ageru": "うつってあげます"
+        "kureru": "うつってくれます"
+        "morau": "うつってもらいます"
+      readings:
+        "ageru": "utsutteagemasu"
+        "kureru": "utsuttekuremasu"
+        "morau": "utsuttemoraimasu"
+    - word: "ja-2050"
+      forms:
+        "ageru": "なおってあげます"
+        "kureru": "なおってくれます"
+        "morau": "なおってもらいます"
+      readings:
+        "ageru": "naotteagemasu"
+        "kureru": "naottekuremasu"
+        "morau": "naottemoraimasu"
+    - word: "ja-2051"
+      forms:
+        "ageru": "なおしてあげます"
+        "kureru": "なおしてくれます"
+        "morau": "なおしてもらいます"
+      readings:
+        "ageru": "naoshiteagemasu"
+        "kureru": "naoshitekuremasu"
+        "morau": "naoshitemoraimasu"
+    - word: "ja-2052"
+      forms:
+        "ageru": "たおれてあげます"
+        "kureru": "たおれてくれます"
+        "morau": "たおれてもらいます"
+      readings:
+        "ageru": "taoreteagemasu"
+        "kureru": "taoretekuremasu"
+        "morau": "taoretemoraimasu"
+    - word: "ja-2053"
+      forms:
+        "ageru": "はれてあげます"
+        "kureru": "はれてくれます"
+        "morau": "はれてもらいます"
+      readings:
+        "ageru": "hareteagemasu"
+        "kureru": "haretekuremasu"
+        "morau": "haretemoraimasu"
+    - word: "ja-2054"
+      forms:
+        "ageru": "しびれてあげます"
+        "kureru": "しびれてくれます"
+        "morau": "しびれてもらいます"
+      readings:
+        "ageru": "shibireteagemasu"
+        "kureru": "shibiretekuremasu"
+        "morau": "shibiretemoraimasu"
+    - word: "ja-2115"
+      forms:
+        "ageru": "みがいてあげます"
+        "kureru": "みがいてくれます"
+        "morau": "みがいてもらいます"
+      readings:
+        "ageru": "migaiteagemasu"
+        "kureru": "migaitekuremasu"
+        "morau": "migaitemoraimasu"
+    - word: "ja-2116"
+      forms:
+        "ageru": "こすってあげます"
+        "kureru": "こすってくれます"
+        "morau": "こすってもらいます"
+      readings:
+        "ageru": "kosutteagemasu"
+        "kureru": "kosuttekuremasu"
+        "morau": "kosuttemoraimasu"
+    - word: "ja-2117"
+      forms:
+        "ageru": "すすいであげます"
+        "kureru": "すすいでくれます"
+        "morau": "すすいでもらいます"
+      readings:
+        "ageru": "susuideagemasu"
+        "kureru": "susuidekuremasu"
+        "morau": "susuidemoraimasu"
+    - word: "ja-2118"
+      forms:
+        "ageru": "しぼってあげます"
+        "kureru": "しぼってくれます"
+        "morau": "しぼってもらいます"
+      readings:
+        "ageru": "shibotteagemasu"
+        "kureru": "shibottekuremasu"
+        "morau": "shibottemoraimasu"
+    - word: "ja-2119"
+      forms:
+        "ageru": "かわかしてあげます"
+        "kureru": "かわかしてくれます"
+        "morau": "かわかしてもらいます"
+      readings:
+        "ageru": "kawakashiteagemasu"
+        "kureru": "kawakashitekuremasu"
+        "morau": "kawakashitemoraimasu"
+    - word: "ja-2120"
+      forms:
+        "ageru": "しまってあげます"
+        "kureru": "しまってくれます"
+        "morau": "しまってもらいます"
+      readings:
+        "ageru": "shimatteagemasu"
+        "kureru": "shimattekuremasu"
+        "morau": "shimattemoraimasu"
+    - word: "ja-2121"
+      forms:
+        "ageru": "そろえてあげます"
+        "kureru": "そろえてくれます"
+        "morau": "そろえてもらいます"
+      readings:
+        "ageru": "soroeteagemasu"
+        "kureru": "soroetekuremasu"
+        "morau": "soroetemoraimasu"
+    - word: "ja-2122"
+      forms:
+        "ageru": "かざってあげます"
+        "kureru": "かざってくれます"
+        "morau": "かざってもらいます"
+      readings:
+        "ageru": "kazatteagemasu"
+        "kureru": "kazattekuremasu"
+        "morau": "kazattemoraimasu"
+    - word: "ja-2123"
+      forms:
+        "ageru": "とりかえてあげます"
+        "kureru": "とりかえてくれます"
+        "morau": "とりかえてもらいます"
+      readings:
+        "ageru": "torikaeteagemasu"
+        "kureru": "torikaetekuremasu"
+        "morau": "torikaetemoraimasu"
+    - word: "ja-2124"
+      forms:
+        "ageru": "つめてあげます"
+        "kureru": "つめてくれます"
+        "morau": "つめてもらいます"
+      readings:
+        "ageru": "tsumeteagemasu"
+        "kureru": "tsumetekuremasu"
+        "morau": "tsumetemoraimasu"
+    - word: "ja-2125"
+      forms:
+        "ageru": "くばってあげます"
+        "kureru": "くばってくれます"
+        "morau": "くばってもらいます"
+      readings:
+        "ageru": "kubatteagemasu"
+        "kureru": "kubattekuremasu"
+        "morau": "kubattemoraimasu"
+    - word: "ja-2126"
+      forms:
+        "ageru": "こぼしてあげます"
+        "kureru": "こぼしてくれます"
+        "morau": "こぼしてもらいます"
+      readings:
+        "ageru": "koboshiteagemasu"
+        "kureru": "koboshitekuremasu"
+        "morau": "koboshitemoraimasu"
+    - word: "ja-2127"
+      forms:
+        "ageru": "よごれてあげます"
+        "kureru": "よごれてくれます"
+        "morau": "よごれてもらいます"
+      readings:
+        "ageru": "yogoreteagemasu"
+        "kureru": "yogoretekuremasu"
+        "morau": "yogoretemoraimasu"
+    - word: "ja-2128"
+      forms:
+        "ageru": "よごしてあげます"
+        "kureru": "よごしてくれます"
+        "morau": "よごしてもらいます"
+      readings:
+        "ageru": "yogoshiteagemasu"
+        "kureru": "yogoshitekuremasu"
+        "morau": "yogoshitemoraimasu"
+    - word: "ja-2129"
+      forms:
+        "ageru": "ちらかしてあげます"
+        "kureru": "ちらかしてくれます"
+        "morau": "ちらかしてもらいます"
+      readings:
+        "ageru": "chirakashiteagemasu"
+        "kureru": "chirakashitekuremasu"
+        "morau": "chirakashitemoraimasu"
+    - word: "ja-2164"
+      forms:
+        "ageru": "やせてあげます"
+        "kureru": "やせてくれます"
+        "morau": "やせてもらいます"
+      readings:
+        "ageru": "yaseteagemasu"
+        "kureru": "yasetekuremasu"
+        "morau": "yasetemoraimasu"
+    - word: "ja-2165"
+      forms:
+        "ageru": "ふとってあげます"
+        "kureru": "ふとってくれます"
+        "morau": "ふとってもらいます"
+      readings:
+        "ageru": "futotteagemasu"
+        "kureru": "futottekuremasu"
+        "morau": "futottemoraimasu"
+    - word: "ja-2217"
+      forms:
+        "ageru": "かわってあげます"
+        "kureru": "かわってくれます"
+        "morau": "かわってもらいます"
+      readings:
+        "ageru": "kawatteagemasu"
+        "kureru": "kawattekuremasu"
+        "morau": "kawattemoraimasu"
+    - word: "ja-2218"
+      forms:
+        "ageru": "きまってあげます"
+        "kureru": "きまってくれます"
+        "morau": "きまってもらいます"
+      readings:
+        "ageru": "kimatteagemasu"
+        "kureru": "kimattekuremasu"
+        "morau": "kimattemoraimasu"
+    - word: "ja-2219"
+      forms:
+        "ageru": "きめてあげます"
+        "kureru": "きめてくれます"
+        "morau": "きめてもらいます"
+      readings:
+        "ageru": "kimeteagemasu"
+        "kureru": "kimetekuremasu"
+        "morau": "kimetemoraimasu"
+    - word: "ja-2220"
+      forms:
+        "ageru": "なってあげます"
+        "kureru": "なってくれます"
+        "morau": "なってもらいます"
+      readings:
+        "ageru": "natteagemasu"
+        "kureru": "nattekuremasu"
+        "morau": "nattemoraimasu"
+    - word: "ja-2221"
+      forms:
+        "ageru": "なれてあげます"
+        "kureru": "なれてくれます"
+        "morau": "なれてもらいます"
+      readings:
+        "ageru": "nareteagemasu"
+        "kureru": "naretekuremasu"
+        "morau": "naretemoraimasu"
+    - word: "ja-2222"
+      forms:
+        "ageru": "ついてあげます"
+        "kureru": "ついてくれます"
+        "morau": "ついてもらいます"
+      readings:
+        "ageru": "tsuiteagemasu"
+        "kureru": "tsuitekuremasu"
+        "morau": "tsuitemoraimasu"
+    - word: "ja-2223"
+      forms:
+        "ageru": "つけてあげます"
+        "kureru": "つけてくれます"
+        "morau": "つけてもらいます"
+      readings:
+        "ageru": "tsuketeagemasu"
+        "kureru": "tsuketekuremasu"
+        "morau": "tsuketemoraimasu"
+    - word: "ja-2224"
+      forms:
+        "ageru": "けしてあげます"
+        "kureru": "けしてくれます"
+        "morau": "けしてもらいます"
+      readings:
+        "ageru": "keshiteagemasu"
+        "kureru": "keshitekuremasu"
+        "morau": "keshitemoraimasu"
+    - word: "ja-2225"
+      forms:
+        "ageru": "きえてあげます"
+        "kureru": "きえてくれます"
+        "morau": "きえてもらいます"
+      readings:
+        "ageru": "kieteagemasu"
+        "kureru": "kietekuremasu"
+        "morau": "kietemoraimasu"
+    - word: "ja-2226"
+      forms:
+        "ageru": "あいてあげます"
+        "kureru": "あいてくれます"
+        "morau": "あいてもらいます"
+      readings:
+        "ageru": "aiteagemasu"
+        "kureru": "aitekuremasu"
+        "morau": "aitemoraimasu"
+    - word: "ja-2227"
+      forms:
+        "ageru": "しまってあげます"
+        "kureru": "しまってくれます"
+        "morau": "しまってもらいます"
+      readings:
+        "ageru": "shimatteagemasu"
+        "kureru": "shimattekuremasu"
+        "morau": "shimattemoraimasu"
+    - word: "ja-2228"
+      forms:
+        "ageru": "つかまえてあげます"
+        "kureru": "つかまえてくれます"
+        "morau": "つかまえてもらいます"
+      readings:
+        "ageru": "tsukamaeteagemasu"
+        "kureru": "tsukamaetekuremasu"
+        "morau": "tsukamaetemoraimasu"
+    - word: "ja-2229"
+      forms:
+        "ageru": "つかんであげます"
+        "kureru": "つかんでくれます"
+        "morau": "つかんでもらいます"
+      readings:
+        "ageru": "tsukandeagemasu"
+        "kureru": "tsukandekuremasu"
+        "morau": "tsukandemoraimasu"
+    - word: "ja-2230"
+      forms:
+        "ageru": "おしてあげます"
+        "kureru": "おしてくれます"
+        "morau": "おしてもらいます"
+      readings:
+        "ageru": "oshiteagemasu"
+        "kureru": "oshitekuremasu"
+        "morau": "oshitemoraimasu"
+    - word: "ja-2231"
+      forms:
+        "ageru": "ひっぱってあげます"
+        "kureru": "ひっぱってくれます"
+        "morau": "ひっぱってもらいます"
+      readings:
+        "ageru": "hippatteagemasu"
+        "kureru": "hippattekuremasu"
+        "morau": "hippattemoraimasu"
+    - word: "ja-2232"
+      forms:
+        "ageru": "おとしてあげます"
+        "kureru": "おとしてくれます"
+        "morau": "おとしてもらいます"
+      readings:
+        "ageru": "otoshiteagemasu"
+        "kureru": "otoshitekuremasu"
+        "morau": "otoshitemoraimasu"
+    - word: "ja-2233"
+      forms:
+        "ageru": "おちてあげます"
+        "kureru": "おちてくれます"
+        "morau": "おちてもらいます"
+      readings:
+        "ageru": "ochiteagemasu"
+        "kureru": "ochitekuremasu"
+        "morau": "ochitemoraimasu"
+    - word: "ja-2234"
+      forms:
+        "ageru": "ひらいてあげます"
+        "kureru": "ひらいてくれます"
+        "morau": "ひらいてもらいます"
+      readings:
+        "ageru": "hiraiteagemasu"
+        "kureru": "hiraitekuremasu"
+        "morau": "hiraitemoraimasu"
+    - word: "ja-2235"
+      forms:
+        "ageru": "とじてあげます"
+        "kureru": "とじてくれます"
+        "morau": "とじてもらいます"
+      readings:
+        "ageru": "tojiteagemasu"
+        "kureru": "tojitekuremasu"
+        "morau": "tojitemoraimasu"
+    - word: "ja-2236"
+      forms:
+        "ageru": "わたしてあげます"
+        "kureru": "わたしてくれます"
+        "morau": "わたしてもらいます"
+      readings:
+        "ageru": "watashiteagemasu"
+        "kureru": "watashitekuremasu"
+        "morau": "watashitemoraimasu"
+    - word: "ja-2237"
+      forms:
+        "ageru": "うけてあげます"
+        "kureru": "うけてくれます"
+        "morau": "うけてもらいます"
+      readings:
+        "ageru": "uketeagemasu"
+        "kureru": "uketekuremasu"
+        "morau": "uketemoraimasu"
+    - word: "ja-2238"
+      forms:
+        "ageru": "つたえてあげます"
+        "kureru": "つたえてくれます"
+        "morau": "つたえてもらいます"
+      readings:
+        "ageru": "tsutaeteagemasu"
+        "kureru": "tsutaetekuremasu"
+        "morau": "tsutaetemoraimasu"
+    - word: "ja-2239"
+      forms:
+        "ageru": "つたわってあげます"
+        "kureru": "つたわってくれます"
+        "morau": "つたわってもらいます"
+      readings:
+        "ageru": "tsutawatteagemasu"
+        "kureru": "tsutawattekuremasu"
+        "morau": "tsutawattemoraimasu"
+    - word: "ja-2240"
+      forms:
+        "ageru": "むかえてあげます"
+        "kureru": "むかえてくれます"
+        "morau": "むかえてもらいます"
+      readings:
+        "ageru": "mukaeteagemasu"
+        "kureru": "mukaetekuremasu"
+        "morau": "mukaetemoraimasu"
+    - word: "ja-2241"
+      forms:
+        "ageru": "おくってあげます"
+        "kureru": "おくってくれます"
+        "morau": "おくってもらいます"
+      readings:
+        "ageru": "okutteagemasu"
+        "kureru": "okuttekuremasu"
+        "morau": "okuttemoraimasu"
+    - word: "ja-2242"
+      forms:
+        "ageru": "とどいてあげます"
+        "kureru": "とどいてくれます"
+        "morau": "とどいてもらいます"
+      readings:
+        "ageru": "todoiteagemasu"
+        "kureru": "todoitekuremasu"
+        "morau": "todoitemoraimasu"
+    - word: "ja-2243"
+      forms:
+        "ageru": "とどけてあげます"
+        "kureru": "とどけてくれます"
+        "morau": "とどけてもらいます"
+      readings:
+        "ageru": "todoketeagemasu"
+        "kureru": "todoketekuremasu"
+        "morau": "todoketemoraimasu"
+    - word: "ja-2244"
+      forms:
+        "ageru": "たずねてあげます"
+        "kureru": "たずねてくれます"
+        "morau": "たずねてもらいます"
+      readings:
+        "ageru": "tazuneteagemasu"
+        "kureru": "tazunetekuremasu"
+        "morau": "tazunetemoraimasu"
+    - word: "ja-2245"
+      forms:
+        "ageru": "まちがってあげます"
+        "kureru": "まちがってくれます"
+        "morau": "まちがってもらいます"
+      readings:
+        "ageru": "machigatteagemasu"
+        "kureru": "machigattekuremasu"
+        "morau": "machigattemoraimasu"
+    - word: "ja-2246"
+      forms:
+        "ageru": "あやまってあげます"
+        "kureru": "あやまってくれます"
+        "morau": "あやまってもらいます"
+      readings:
+        "ageru": "ayamatteagemasu"
+        "kureru": "ayamattekuremasu"
+        "morau": "ayamattemoraimasu"
+    - word: "ja-2247"
+      forms:
+        "ageru": "ゆるしてあげます"
+        "kureru": "ゆるしてくれます"
+        "morau": "ゆるしてもらいます"
+      readings:
+        "ageru": "yurushiteagemasu"
+        "kureru": "yurushitekuremasu"
+        "morau": "yurushitemoraimasu"
+    - word: "ja-2248"
+      forms:
+        "ageru": "ことわってあげます"
+        "kureru": "ことわってくれます"
+        "morau": "ことわってもらいます"
+      readings:
+        "ageru": "kotowatteagemasu"
+        "kureru": "kotowattekuremasu"
+        "morau": "kotowattemoraimasu"
+    - word: "ja-2249"
+      forms:
+        "ageru": "さそってあげます"
+        "kureru": "さそってくれます"
+        "morau": "さそってもらいます"
+      readings:
+        "ageru": "sasotteagemasu"
+        "kureru": "sasottekuremasu"
+        "morau": "sasottemoraimasu"
+    - word: "ja-2250"
+      forms:
+        "ageru": "かよってあげます"
+        "kureru": "かよってくれます"
+        "morau": "かよってもらいます"
+      readings:
+        "ageru": "kayotteagemasu"
+        "kureru": "kayottekuremasu"
+        "morau": "kayottemoraimasu"
+    - word: "ja-2251"
+      forms:
+        "ageru": "とおってあげます"
+        "kureru": "とおってくれます"
+        "morau": "とおってもらいます"
+      readings:
+        "ageru": "tootteagemasu"
+        "kureru": "toottekuremasu"
+        "morau": "toottemoraimasu"
+    - word: "ja-2252"
+      forms:
+        "ageru": "すぎてあげます"
+        "kureru": "すぎてくれます"
+        "morau": "すぎてもらいます"
+      readings:
+        "ageru": "sugiteagemasu"
+        "kureru": "sugitekuremasu"
+        "morau": "sugitemoraimasu"
+    - word: "ja-2253"
+      forms:
+        "ageru": "まわってあげます"
+        "kureru": "まわってくれます"
+        "morau": "まわってもらいます"
+      readings:
+        "ageru": "mawatteagemasu"
+        "kureru": "mawattekuremasu"
+        "morau": "mawattemoraimasu"
+    - word: "ja-2254"
+      forms:
+        "ageru": "まわしてあげます"
+        "kureru": "まわしてくれます"
+        "morau": "まわしてもらいます"
+      readings:
+        "ageru": "mawashiteagemasu"
+        "kureru": "mawashitekuremasu"
+        "morau": "mawashitemoraimasu"
+    - word: "ja-2255"
+      forms:
+        "ageru": "うごいてあげます"
+        "kureru": "うごいてくれます"
+        "morau": "うごいてもらいます"
+      readings:
+        "ageru": "ugoiteagemasu"
+        "kureru": "ugoitekuremasu"
+        "morau": "ugoitemoraimasu"
+    - word: "ja-2256"
+      forms:
+        "ageru": "うごかしてあげます"
+        "kureru": "うごかしてくれます"
+        "morau": "うごかしてもらいます"
+      readings:
+        "ageru": "ugokashiteagemasu"
+        "kureru": "ugokashitekuremasu"
+        "morau": "ugokashitemoraimasu"
+    - word: "ja-2257"
+      forms:
+        "ageru": "のこってあげます"
+        "kureru": "のこってくれます"
+        "morau": "のこってもらいます"
+      readings:
+        "ageru": "nokotteagemasu"
+        "kureru": "nokottekuremasu"
+        "morau": "nokottemoraimasu"
+    - word: "ja-2258"
+      forms:
+        "ageru": "のこしてあげます"
+        "kureru": "のこしてくれます"
+        "morau": "のこしてもらいます"
+      readings:
+        "ageru": "nokoshiteagemasu"
+        "kureru": "nokoshitekuremasu"
+        "morau": "nokoshitemoraimasu"
+    - word: "ja-2259"
+      forms:
+        "ageru": "あつまってあげます"
+        "kureru": "あつまってくれます"
+        "morau": "あつまってもらいます"
+      readings:
+        "ageru": "atsumatteagemasu"
+        "kureru": "atsumattekuremasu"
+        "morau": "atsumattemoraimasu"
+    - word: "ja-2260"
+      forms:
+        "ageru": "あつめてあげます"
+        "kureru": "あつめてくれます"
+        "morau": "あつめてもらいます"
+      readings:
+        "ageru": "atsumeteagemasu"
+        "kureru": "atsumetekuremasu"
+        "morau": "atsumetemoraimasu"
+    - word: "ja-2261"
+      forms:
+        "ageru": "わけてあげます"
+        "kureru": "わけてくれます"
+        "morau": "わけてもらいます"
+      readings:
+        "ageru": "waketeagemasu"
+        "kureru": "waketekuremasu"
+        "morau": "waketemoraimasu"
+    - word: "ja-2262"
+      forms:
+        "ageru": "くらべてあげます"
+        "kureru": "くらべてくれます"
+        "morau": "くらべてもらいます"
+      readings:
+        "ageru": "kurabeteagemasu"
+        "kureru": "kurabetekuremasu"
+        "morau": "kurabetemoraimasu"
+    - word: "ja-2263"
+      forms:
+        "ageru": "かくれてあげます"
+        "kureru": "かくれてくれます"
+        "morau": "かくれてもらいます"
+      readings:
+        "ageru": "kakureteagemasu"
+        "kureru": "kakuretekuremasu"
+        "morau": "kakuretemoraimasu"
+    - word: "ja-2264"
+      forms:
+        "ageru": "かくしてあげます"
+        "kureru": "かくしてくれます"
+        "morau": "かくしてもらいます"
+      readings:
+        "ageru": "kakushiteagemasu"
+        "kureru": "kakushitekuremasu"
+        "morau": "kakushitemoraimasu"
+    - word: "ja-2265"
+      forms:
+        "ageru": "みつかってあげます"
+        "kureru": "みつかってくれます"
+        "morau": "みつかってもらいます"
+      readings:
+        "ageru": "mitsukatteagemasu"
+        "kureru": "mitsukattekuremasu"
+        "morau": "mitsukattemoraimasu"
+    - word: "ja-2266"
+      forms:
+        "ageru": "みつけてあげます"
+        "kureru": "みつけてくれます"
+        "morau": "みつけてもらいます"
+      readings:
+        "ageru": "mitsuketeagemasu"
+        "kureru": "mitsuketekuremasu"
+        "morau": "mitsuketemoraimasu"
+    - word: "ja-2267"
+      forms:
+        "ageru": "ふえてあげます"
+        "kureru": "ふえてくれます"
+        "morau": "ふえてもらいます"
+      readings:
+        "ageru": "fueteagemasu"
+        "kureru": "fuetekuremasu"
+        "morau": "fuetemoraimasu"
+    - word: "ja-2268"
+      forms:
+        "ageru": "へってあげます"
+        "kureru": "へってくれます"
+        "morau": "へってもらいます"
+      readings:
+        "ageru": "hetteagemasu"
+        "kureru": "hettekuremasu"
+        "morau": "hettemoraimasu"
+    - word: "ja-2269"
+      forms:
+        "ageru": "そだててあげます"
+        "kureru": "そだててくれます"
+        "morau": "そだててもらいます"
+      readings:
+        "ageru": "sodateteagemasu"
+        "kureru": "sodatetekuremasu"
+        "morau": "sodatetemoraimasu"
+    - word: "ja-2270"
+      forms:
+        "ageru": "そだってあげます"
+        "kureru": "そだってくれます"
+        "morau": "そだってもらいます"
+      readings:
+        "ageru": "sodatteagemasu"
+        "kureru": "sodattekuremasu"
+        "morau": "sodattemoraimasu"
+    - word: "ja-2271"
+      forms:
+        "ageru": "うまれてあげます"
+        "kureru": "うまれてくれます"
+        "morau": "うまれてもらいます"
+      readings:
+        "ageru": "umareteagemasu"
+        "kureru": "umaretekuremasu"
+        "morau": "umaretemoraimasu"
+    - word: "ja-2272"
+      forms:
+        "ageru": "いきてあげます"
+        "kureru": "いきてくれます"
+        "morau": "いきてもらいます"
+      readings:
+        "ageru": "ikiteagemasu"
+        "kureru": "ikitekuremasu"
+        "morau": "ikitemoraimasu"
+    - word: "ja-2273"
+      forms:
+        "ageru": "たのしんであげます"
+        "kureru": "たのしんでくれます"
+        "morau": "たのしんでもらいます"
+      readings:
+        "ageru": "tanoshindeagemasu"
+        "kureru": "tanoshindekuremasu"
+        "morau": "tanoshindemoraimasu"
+    - word: "ja-2274"
+      forms:
+        "ageru": "あたってあげます"
+        "kureru": "あたってくれます"
+        "morau": "あたってもらいます"
+      readings:
+        "ageru": "atatteagemasu"
+        "kureru": "atattekuremasu"
+        "morau": "atattemoraimasu"
+    - word: "ja-2275"
+      forms:
+        "ageru": "はじまってあげます"
+        "kureru": "はじまってくれます"
+        "morau": "はじまってもらいます"
+      readings:
+        "ageru": "hajimatteagemasu"
+        "kureru": "hajimattekuremasu"
+        "morau": "hajimattemoraimasu"
+    - word: "ja-2276"
+      forms:
+        "ageru": "さわってあげます"
+        "kureru": "さわってくれます"
+        "morau": "さわってもらいます"
+      readings:
+        "ageru": "sawatteagemasu"
+        "kureru": "sawattekuremasu"
+        "morau": "sawattemoraimasu"
+    - word: "ja-2320"
+      forms:
+        "ageru": "つながってあげます"
+        "kureru": "つながってくれます"
+        "morau": "つながってもらいます"
+      readings:
+        "ageru": "tsunagatteagemasu"
+        "kureru": "tsunagattekuremasu"
+        "morau": "tsunagattemoraimasu"
+    - word: "ja-2321"
+      forms:
+        "ageru": "つないであげます"
+        "kureru": "つないでくれます"
+        "morau": "つないでもらいます"
+      readings:
+        "ageru": "tsunaideagemasu"
+        "kureru": "tsunaidekuremasu"
+        "morau": "tsunaidemoraimasu"
+    - word: "ja-2322"
+      forms:
+        "ageru": "かけてあげます"
+        "kureru": "かけてくれます"
+        "morau": "かけてもらいます"
+      readings:
+        "ageru": "kaketeagemasu"
+        "kureru": "kaketekuremasu"
+        "morau": "kaketemoraimasu"
+    - word: "ja-2323"
+      forms:
+        "ageru": "うけとってあげます"
+        "kureru": "うけとってくれます"
+        "morau": "うけとってもらいます"
+      readings:
+        "ageru": "uketotteagemasu"
+        "kureru": "uketottekuremasu"
+        "morau": "uketottemoraimasu"
+    - word: "ja-2364"
+      forms:
+        "ageru": "のりおくれてあげます"
+        "kureru": "のりおくれてくれます"
+        "morau": "のりおくれてもらいます"
+      readings:
+        "ageru": "noriokureteagemasu"
+        "kureru": "noriokuretekuremasu"
+        "morau": "noriokuretemoraimasu"
+    - word: "ja-2365"
+      forms:
+        "ageru": "のりかえてあげます"
+        "kureru": "のりかえてくれます"
+        "morau": "のりかえてもらいます"
+      readings:
+        "ageru": "norikaeteagemasu"
+        "kureru": "norikaetekuremasu"
+        "morau": "norikaetemoraimasu"
+    - word: "ja-2407"
+      forms:
+        "ageru": "たちよってあげます"
+        "kureru": "たちよってくれます"
+        "morau": "たちよってもらいます"
+      readings:
+        "ageru": "tachiyotteagemasu"
+        "kureru": "tachiyottekuremasu"
+        "morau": "tachiyottemoraimasu"
+    - word: "ja-2470"
+      forms:
+        "ageru": "さいてあげます"
+        "kureru": "さいてくれます"
+        "morau": "さいてもらいます"
+      readings:
+        "ageru": "saiteagemasu"
+        "kureru": "saitekuremasu"
+        "morau": "saitemoraimasu"
+    - word: "ja-2471"
+      forms:
+        "ageru": "ちってあげます"
+        "kureru": "ちってくれます"
+        "morau": "ちってもらいます"
+      readings:
+        "ageru": "chitteagemasu"
+        "kureru": "chittekuremasu"
+        "morau": "chittemoraimasu"
+    - word: "ja-2472"
+      forms:
+        "ageru": "しげってあげます"
+        "kureru": "しげってくれます"
+        "morau": "しげってもらいます"
+      readings:
+        "ageru": "shigetteagemasu"
+        "kureru": "shigettekuremasu"
+        "morau": "shigettemoraimasu"
+    - word: "ja-2473"
+      forms:
+        "ageru": "かれてあげます"
+        "kureru": "かれてくれます"
+        "morau": "かれてもらいます"
+      readings:
+        "ageru": "kareteagemasu"
+        "kureru": "karetekuremasu"
+        "morau": "karetemoraimasu"
+    - word: "ja-2600"
+      forms:
+        "ageru": "まかせてあげます"
+        "kureru": "まかせてくれます"
+        "morau": "まかせてもらいます"
+      readings:
+        "ageru": "makaseteagemasu"
+        "kureru": "makasetekuremasu"
+        "morau": "makasetemoraimasu"
+    - word: "ja-2601"
+      forms:
+        "ageru": "ひきうけてあげます"
+        "kureru": "ひきうけてくれます"
+        "morau": "ひきうけてもらいます"
+      readings:
+        "ageru": "hikiuketeagemasu"
+        "kureru": "hikiuketekuremasu"
+        "morau": "hikiuketemoraimasu"
+    - word: "ja-2602"
+      forms:
+        "ageru": "こなしてあげます"
+        "kureru": "こなしてくれます"
+        "morau": "こなしてもらいます"
+      readings:
+        "ageru": "konashiteagemasu"
+        "kureru": "konashitekuremasu"
+        "morau": "konashitemoraimasu"
+    - word: "ja-2603"
+      forms:
+        "ageru": "はげんであげます"
+        "kureru": "はげんでくれます"
+        "morau": "はげんでもらいます"
+      readings:
+        "ageru": "hagendeagemasu"
+        "kureru": "hagendekuremasu"
+        "morau": "hagendemoraimasu"
+    - word: "ja-2604"
+      forms:
+        "ageru": "てがけてあげます"
+        "kureru": "てがけてくれます"
+        "morau": "てがけてもらいます"
+      readings:
+        "ageru": "tegaketeagemasu"
+        "kureru": "tegaketekuremasu"
+        "morau": "tegaketemoraimasu"
+    - word: "ja-2605"
+      forms:
+        "ageru": "しめきってあげます"
+        "kureru": "しめきってくれます"
+        "morau": "しめきってもらいます"
+      readings:
+        "ageru": "shimekitteagemasu"
+        "kureru": "shimekittekuremasu"
+        "morau": "shimekittemoraimasu"
+    - word: "ja-2606"
+      forms:
+        "ageru": "まにあわせてあげます"
+        "kureru": "まにあわせてくれます"
+        "morau": "まにあわせてもらいます"
+      readings:
+        "ageru": "maniawaseteagemasu"
+        "kureru": "maniawasetekuremasu"
+        "morau": "maniawasetemoraimasu"
+    - word: "ja-2716"
+      forms:
+        "ageru": "かたよってあげます"
+        "kureru": "かたよってくれます"
+        "morau": "かたよってもらいます"
+      readings:
+        "ageru": "katayotteagemasu"
+        "kureru": "katayottekuremasu"
+        "morau": "katayottemoraimasu"
+    - word: "ja-2768"
+      forms:
+        "ageru": "おどろいてあげます"
+        "kureru": "おどろいてくれます"
+        "morau": "おどろいてもらいます"
+      readings:
+        "ageru": "odoroiteagemasu"
+        "kureru": "odoroitekuremasu"
+        "morau": "odoroitemoraimasu"
+    - word: "ja-2769"
+      forms:
+        "ageru": "よろこんであげます"
+        "kureru": "よろこんでくれます"
+        "morau": "よろこんでもらいます"
+      readings:
+        "ageru": "yorokondeagemasu"
+        "kureru": "yorokondekuremasu"
+        "morau": "yorokondemoraimasu"
+    - word: "ja-2770"
+      forms:
+        "ageru": "かなしんであげます"
+        "kureru": "かなしんでくれます"
+        "morau": "かなしんでもらいます"
+      readings:
+        "ageru": "kanashindeagemasu"
+        "kureru": "kanashindekuremasu"
+        "morau": "kanashindemoraimasu"
+    - word: "ja-2771"
+      forms:
+        "ageru": "なやんであげます"
+        "kureru": "なやんでくれます"
+        "morau": "なやんでもらいます"
+      readings:
+        "ageru": "nayandeagemasu"
+        "kureru": "nayandekuremasu"
+        "morau": "nayandemoraimasu"
+    - word: "ja-2772"
+      forms:
+        "ageru": "あわててあげます"
+        "kureru": "あわててくれます"
+        "morau": "あわててもらいます"
+      readings:
+        "ageru": "awateteagemasu"
+        "kureru": "awatetekuremasu"
+        "morau": "awatetemoraimasu"
+    - word: "ja-2773"
+      forms:
+        "ageru": "あせってあげます"
+        "kureru": "あせってくれます"
+        "morau": "あせってもらいます"
+      readings:
+        "ageru": "asetteagemasu"
+        "kureru": "asettekuremasu"
+        "morau": "asettemoraimasu"
+    - word: "ja-2774"
+      forms:
+        "ageru": "おちついてあげます"
+        "kureru": "おちついてくれます"
+        "morau": "おちついてもらいます"
+      readings:
+        "ageru": "ochitsuiteagemasu"
+        "kureru": "ochitsuitekuremasu"
+        "morau": "ochitsuitemoraimasu"
+    - word: "ja-2794"
+      forms:
+        "ageru": "きらってあげます"
+        "kureru": "きらってくれます"
+        "morau": "きらってもらいます"
+      readings:
+        "ageru": "kiratteagemasu"
+        "kureru": "kirattekuremasu"
+        "morau": "kirattemoraimasu"
+    - word: "ja-2795"
+      forms:
+        "ageru": "あいしてあげます"
+        "kureru": "あいしてくれます"
+        "morau": "あいしてもらいます"
+      readings:
+        "ageru": "aishiteagemasu"
+        "kureru": "aishitekuremasu"
+        "morau": "aishitemoraimasu"
+    - word: "ja-2796"
+      forms:
+        "ageru": "にくんであげます"
+        "kureru": "にくんでくれます"
+        "morau": "にくんでもらいます"
+      readings:
+        "ageru": "nikundeagemasu"
+        "kureru": "nikundekuremasu"
+        "morau": "nikundemoraimasu"
+    - word: "ja-2797"
+      forms:
+        "ageru": "ねたんであげます"
+        "kureru": "ねたんでくれます"
+        "morau": "ねたんでもらいます"
+      readings:
+        "ageru": "netandeagemasu"
+        "kureru": "netandekuremasu"
+        "morau": "netandemoraimasu"
+    - word: "ja-2798"
+      forms:
+        "ageru": "うらんであげます"
+        "kureru": "うらんでくれます"
+        "morau": "うらんでもらいます"
+      readings:
+        "ageru": "urandeagemasu"
+        "kureru": "urandekuremasu"
+        "morau": "urandemoraimasu"
+    - word: "ja-2799"
+      forms:
+        "ageru": "なつかしんであげます"
+        "kureru": "なつかしんでくれます"
+        "morau": "なつかしんでもらいます"
+      readings:
+        "ageru": "natsukashindeagemasu"
+        "kureru": "natsukashindekuremasu"
+        "morau": "natsukashindemoraimasu"
+    - word: "ja-2800"
+      forms:
+        "ageru": "いやがってあげます"
+        "kureru": "いやがってくれます"
+        "morau": "いやがってもらいます"
+      readings:
+        "ageru": "iyagatteagemasu"
+        "kureru": "iyagattekuremasu"
+        "morau": "iyagattemoraimasu"
+    - word: "ja-2801"
+      forms:
+        "ageru": "こらえてあげます"
+        "kureru": "こらえてくれます"
+        "morau": "こらえてもらいます"
+      readings:
+        "ageru": "koraeteagemasu"
+        "kureru": "koraetekuremasu"
+        "morau": "koraetemoraimasu"
+    - word: "ja-2803"
+      forms:
+        "ageru": "はずかしがってあげます"
+        "kureru": "はずかしがってくれます"
+        "morau": "はずかしがってもらいます"
+      readings:
+        "ageru": "hazukashigatteagemasu"
+        "kureru": "hazukashigattekuremasu"
+        "morau": "hazukashigattemoraimasu"
+    - word: "ja-2806"
+      forms:
+        "ageru": "かんじてあげます"
+        "kureru": "かんじてくれます"
+        "morau": "かんじてもらいます"
+      readings:
+        "ageru": "kanjiteagemasu"
+        "kureru": "kanjitekuremasu"
+        "morau": "kanjitemoraimasu"
+    - word: "ja-2812"
+      forms:
+        "ageru": "さびしがってあげます"
+        "kureru": "さびしがってくれます"
+        "morau": "さびしがってもらいます"
+      readings:
+        "ageru": "sabishigatteagemasu"
+        "kureru": "sabishigattekuremasu"
+        "morau": "sabishigattemoraimasu"
+    - word: "ja-2876"
+      forms:
+        "ageru": "かたってあげます"
+        "kureru": "かたってくれます"
+        "morau": "かたってもらいます"
+      readings:
+        "ageru": "katatteagemasu"
+        "kureru": "katattekuremasu"
+        "morau": "katattemoraimasu"
+    - word: "ja-2877"
+      forms:
+        "ageru": "ひろまってあげます"
+        "kureru": "ひろまってくれます"
+        "morau": "ひろまってもらいます"
+      readings:
+        "ageru": "hiromatteagemasu"
+        "kureru": "hiromattekuremasu"
+        "morau": "hiromattemoraimasu"
+    - word: "ja-2925"
+      forms:
+        "ageru": "あずけてあげます"
+        "kureru": "あずけてくれます"
+        "morau": "あずけてもらいます"
+      readings:
+        "ageru": "azuketeagemasu"
+        "kureru": "azuketekuremasu"
+        "morau": "azuketemoraimasu"
+    - word: "ja-2926"
+      forms:
+        "ageru": "あずかってあげます"
+        "kureru": "あずかってくれます"
+        "morau": "あずかってもらいます"
+      readings:
+        "ageru": "azukatteagemasu"
+        "kureru": "azukattekuremasu"
+        "morau": "azukattemoraimasu"
+    - word: "ja-2944"
+      forms:
+        "ageru": "めぐってあげます"
+        "kureru": "めぐってくれます"
+        "morau": "めぐってもらいます"
+      readings:
+        "ageru": "megutteagemasu"
+        "kureru": "meguttekuremasu"
+        "morau": "meguttemoraimasu"
+    - word: "ja-2945"
+      forms:
+        "ageru": "おとずれてあげます"
+        "kureru": "おとずれてくれます"
+        "morau": "おとずれてもらいます"
+      readings:
+        "ageru": "otozureteagemasu"
+        "kureru": "otozuretekuremasu"
+        "morau": "otozuretemoraimasu"
+    - word: "ja-2982"
+      forms:
+        "ageru": "もうしこんであげます"
+        "kureru": "もうしこんでくれます"
+        "morau": "もうしこんでもらいます"
+      readings:
+        "ageru": "moushikondeagemasu"
+        "kureru": "moushikondekuremasu"
+        "morau": "moushikondemoraimasu"
+    - word: "ja-3062"
+      forms:
+        "ageru": "とどけでてあげます"
+        "kureru": "とどけでてくれます"
+        "morau": "とどけでてもらいます"
+      readings:
+        "ageru": "todokedeteagemasu"
+        "kureru": "todokedetekuremasu"
+        "morau": "todokedetemoraimasu"
+    - word: "ja-3140"
+      forms:
+        "ageru": "つくりだしてあげます"
+        "kureru": "つくりだしてくれます"
+        "morau": "つくりだしてもらいます"
+      readings:
+        "ageru": "tsukuridashiteagemasu"
+        "kureru": "tsukuridashitekuremasu"
+        "morau": "tsukuridashitemoraimasu"
+    - word: "ja-3195"
+      forms:
+        "ageru": "めざしてあげます"
+        "kureru": "めざしてくれます"
+        "morau": "めざしてもらいます"
+      readings:
+        "ageru": "mezashiteagemasu"
+        "kureru": "mezashitekuremasu"
+        "morau": "mezashitemoraimasu"
+    - word: "ja-3294"
+      forms:
+        "ageru": "きをつかってあげます"
+        "kureru": "きをつかってくれます"
+        "morau": "きをつかってもらいます"
+      readings:
+        "ageru": "kiotsukatteagemasu"
+        "kureru": "kiotsukattekuremasu"
+        "morau": "kiotsukattemoraimasu"
+    - word: "ja-3309"
+      forms:
+        "ageru": "ゆずってあげます"
+        "kureru": "ゆずってくれます"
+        "morau": "ゆずってもらいます"
+      readings:
+        "ageru": "yuzutteagemasu"
+        "kureru": "yuzuttekuremasu"
+        "morau": "yuzuttemoraimasu"
+    - word: "ja-3310"
+      forms:
+        "ageru": "ゆずりあってあげます"
+        "kureru": "ゆずりあってくれます"
+        "morau": "ゆずりあってもらいます"
+      readings:
+        "ageru": "yuzuriatteagemasu"
+        "kureru": "yuzuriattekuremasu"
+        "morau": "yuzuriattemoraimasu"
+    - word: "ja-3311"
+      forms:
+        "ageru": "ならんであげます"
+        "kureru": "ならんでくれます"
+        "morau": "ならんでもらいます"
+      readings:
+        "ageru": "narandeagemasu"
+        "kureru": "narandekuremasu"
+        "morau": "narandemoraimasu"
+    - word: "ja-3319"
+      forms:
+        "ageru": "もてなしてあげます"
+        "kureru": "もてなしてくれます"
+        "morau": "もてなしてもらいます"
+      readings:
+        "ageru": "motenashiteagemasu"
+        "kureru": "motenashitekuremasu"
+        "morau": "motenashitemoraimasu"
+    - word: "ja-3320"
+      forms:
+        "ageru": "まねいてあげます"
+        "kureru": "まねいてくれます"
+        "morau": "まねいてもらいます"
+      readings:
+        "ageru": "maneiteagemasu"
+        "kureru": "maneitekuremasu"
+        "morau": "maneitemoraimasu"
+    - word: "ja-3321"
+      forms:
+        "ageru": "つつしんであげます"
+        "kureru": "つつしんでくれます"
+        "morau": "つつしんでもらいます"
+      readings:
+        "ageru": "tsutsushindeagemasu"
+        "kureru": "tsutsushindekuremasu"
+        "morau": "tsutsushindemoraimasu"
+    - word: "ja-3322"
+      forms:
+        "ageru": "いましめてあげます"
+        "kureru": "いましめてくれます"
+        "morau": "いましめてもらいます"
+      readings:
+        "ageru": "imashimeteagemasu"
+        "kureru": "imashimetekuremasu"
+        "morau": "imashimetemoraimasu"
+    - word: "ja-3383"
+      forms:
+        "ageru": "へらしてあげます"
+        "kureru": "へらしてくれます"
+        "morau": "へらしてもらいます"
+      readings:
+        "ageru": "herashiteagemasu"
+        "kureru": "herashitekuremasu"
+        "morau": "herashitemoraimasu"
+    - word: "ja-3384"
+      forms:
+        "ageru": "ふやしてあげます"
+        "kureru": "ふやしてくれます"
+        "morau": "ふやしてもらいます"
+      readings:
+        "ageru": "fuyashiteagemasu"
+        "kureru": "fuyashitekuremasu"
+        "morau": "fuyashitemoraimasu"
+    - word: "ja-3385"
+      forms:
+        "ageru": "こわしてあげます"
+        "kureru": "こわしてくれます"
+        "morau": "こわしてもらいます"
+      readings:
+        "ageru": "kowashiteagemasu"
+        "kureru": "kowashitekuremasu"
+        "morau": "kowashitemoraimasu"
+    - word: "ja-3386"
+      forms:
+        "ageru": "こわれてあげます"
+        "kureru": "こわれてくれます"
+        "morau": "こわれてもらいます"
+      readings:
+        "ageru": "kowareteagemasu"
+        "kureru": "kowaretekuremasu"
+        "morau": "kowaretemoraimasu"
+    - word: "ja-3389"
+      forms:
+        "ageru": "たもってあげます"
+        "kureru": "たもってくれます"
+        "morau": "たもってもらいます"
+      readings:
+        "ageru": "tamotteagemasu"
+        "kureru": "tamottekuremasu"
+        "morau": "tamottemoraimasu"
+    - word: "ja-3390"
+      forms:
+        "ageru": "さけてあげます"
+        "kureru": "さけてくれます"
+        "morau": "さけてもらいます"
+      readings:
+        "ageru": "saketeagemasu"
+        "kureru": "saketekuremasu"
+        "morau": "saketemoraimasu"
+    - word: "ja-3434"
+      forms:
+        "ageru": "えんじてあげます"
+        "kureru": "えんじてくれます"
+        "morau": "えんじてもらいます"
+      readings:
+        "ageru": "enjiteagemasu"
+        "kureru": "enjitekuremasu"
+        "morau": "enjitemoraimasu"
+    - word: "ja-3452"
+      forms:
+        "ageru": "ないてあげます"
+        "kureru": "ないてくれます"
+        "morau": "ないてもらいます"
+      readings:
+        "ageru": "naiteagemasu"
+        "kureru": "naitekuremasu"
+        "morau": "naitemoraimasu"
+    - word: "ja-3564"
+      forms:
+        "ageru": "たたかってあげます"
+        "kureru": "たたかってくれます"
+        "morau": "たたかってもらいます"
+      readings:
+        "ageru": "tatakatteagemasu"
+        "kureru": "tatakattekuremasu"
+        "morau": "tatakattemoraimasu"
+    - word: "ja-3568"
+      forms:
+        "ageru": "ほろびてあげます"
+        "kureru": "ほろびてくれます"
+        "morau": "ほろびてもらいます"
+      readings:
+        "ageru": "horobiteagemasu"
+        "kureru": "horobitekuremasu"
+        "morau": "horobitemoraimasu"
+    - word: "ja-3569"
+      forms:
+        "ageru": "ほろぼしてあげます"
+        "kureru": "ほろぼしてくれます"
+        "morau": "ほろぼしてもらいます"
+      readings:
+        "ageru": "horoboshiteagemasu"
+        "kureru": "horoboshitekuremasu"
+        "morau": "horoboshitemoraimasu"
+    - word: "ja-3571"
+      forms:
+        "ageru": "さかえてあげます"
+        "kureru": "さかえてくれます"
+        "morau": "さかえてもらいます"
+      readings:
+        "ageru": "sakaeteagemasu"
+        "kureru": "sakaetekuremasu"
+        "morau": "sakaetemoraimasu"
+    - word: "ja-3611"
+      forms:
+        "ageru": "いのってあげます"
+        "kureru": "いのってくれます"
+        "morau": "いのってもらいます"
+      readings:
+        "ageru": "inotteagemasu"
+        "kureru": "inottekuremasu"
+        "morau": "inottemoraimasu"
+    - word: "ja-3612"
+      forms:
+        "ageru": "おがんであげます"
+        "kureru": "おがんでくれます"
+        "morau": "おがんでもらいます"
+      readings:
+        "ageru": "ogandeagemasu"
+        "kureru": "ogandekuremasu"
+        "morau": "ogandemoraimasu"
+    - word: "ja-3690"
+      forms:
+        "ageru": "いわってあげます"
+        "kureru": "いわってくれます"
+        "morau": "いわってもらいます"
+      readings:
+        "ageru": "iwatteagemasu"
+        "kureru": "iwattekuremasu"
+        "morau": "iwattemoraimasu"
+    - word: "ja-3691"
+      forms:
+        "ageru": "にぎわってあげます"
+        "kureru": "にぎわってくれます"
+        "morau": "にぎわってもらいます"
+      readings:
+        "ageru": "nigiwatteagemasu"
+        "kureru": "nigiwattekuremasu"
+        "morau": "nigiwattemoraimasu"
+    - word: "ja-3779"
+      forms:
+        "ageru": "うちとけてあげます"
+        "kureru": "うちとけてくれます"
+        "morau": "うちとけてもらいます"
+      readings:
+        "ageru": "uchitoketeagemasu"
+        "kureru": "uchitoketekuremasu"
+        "morau": "uchitoketemoraimasu"
+    - word: "ja-3780"
+      forms:
+        "ageru": "しんじあってあげます"
+        "kureru": "しんじあってくれます"
+        "morau": "しんじあってもらいます"
+      readings:
+        "ageru": "shinjiatteagemasu"
+        "kureru": "shinjiattekuremasu"
+        "morau": "shinjiattemoraimasu"
+    - word: "ja-3781"
+      forms:
+        "ageru": "たよってあげます"
+        "kureru": "たよってくれます"
+        "morau": "たよってもらいます"
+      readings:
+        "ageru": "tayotteagemasu"
+        "kureru": "tayottekuremasu"
+        "morau": "tayottemoraimasu"
+    - word: "ja-3782"
+      forms:
+        "ageru": "はげましてあげます"
+        "kureru": "はげましてくれます"
+        "morau": "はげましてもらいます"
+      readings:
+        "ageru": "hagemashiteagemasu"
+        "kureru": "hagemashitekuremasu"
+        "morau": "hagemashitemoraimasu"
+    - word: "ja-3783"
+      forms:
+        "ageru": "なぐさめてあげます"
+        "kureru": "なぐさめてくれます"
+        "morau": "なぐさめてもらいます"
+      readings:
+        "ageru": "nagusameteagemasu"
+        "kureru": "nagusametekuremasu"
+        "morau": "nagusametemoraimasu"
+    - word: "ja-3784"
+      forms:
+        "ageru": "かばってあげます"
+        "kureru": "かばってくれます"
+        "morau": "かばってもらいます"
+      readings:
+        "ageru": "kabatteagemasu"
+        "kureru": "kabattekuremasu"
+        "morau": "kabattemoraimasu"
+    - word: "ja-3785"
+      forms:
+        "ageru": "ささえてあげます"
+        "kureru": "ささえてくれます"
+        "morau": "ささえてもらいます"
+      readings:
+        "ageru": "sasaeteagemasu"
+        "kureru": "sasaetekuremasu"
+        "morau": "sasaetemoraimasu"
+    - word: "ja-3786"
+      forms:
+        "ageru": "たすけあってあげます"
+        "kureru": "たすけあってくれます"
+        "morau": "たすけあってもらいます"
+      readings:
+        "ageru": "tasukeatteagemasu"
+        "kureru": "tasukeattekuremasu"
+        "morau": "tasukeattemoraimasu"
+    - word: "ja-3790"
+      forms:
+        "ageru": "しりあってあげます"
+        "kureru": "しりあってくれます"
+        "morau": "しりあってもらいます"
+      readings:
+        "ageru": "shiriatteagemasu"
+        "kureru": "shiriattekuremasu"
+        "morau": "shiriattemoraimasu"
+    - word: "ja-3791"
+      forms:
+        "ageru": "であってあげます"
+        "kureru": "であってくれます"
+        "morau": "であってもらいます"
+      readings:
+        "ageru": "deatteagemasu"
+        "kureru": "deattekuremasu"
+        "morau": "deattemoraimasu"
+    - word: "ja-3833"
+      forms:
+        "ageru": "くらしてあげます"
+        "kureru": "くらしてくれます"
+        "morau": "くらしてもらいます"
+      readings:
+        "ageru": "kurashiteagemasu"
+        "kureru": "kurashitekuremasu"
+        "morau": "kurashitemoraimasu"
+    - word: "ja-3857"
+      forms:
+        "ageru": "かしてあげます"
+        "kureru": "かしてくれます"
+        "morau": "かしてもらいます"
+      readings:
+        "ageru": "kashiteagemasu"
+        "kureru": "kashitekuremasu"
+        "morau": "kashitemoraimasu"
+    - word: "ja-3887"
+      forms:
+        "ageru": "ゆれてあげます"
+        "kureru": "ゆれてくれます"
+        "morau": "ゆれてもらいます"
+      readings:
+        "ageru": "yureteagemasu"
+        "kureru": "yuretekuremasu"
+        "morau": "yuretemoraimasu"
+    - word: "ja-3898"
+      forms:
+        "ageru": "すくってあげます"
+        "kureru": "すくってくれます"
+        "morau": "すくってもらいます"
+      readings:
+        "ageru": "sukutteagemasu"
+        "kureru": "sukuttekuremasu"
+        "morau": "sukuttemoraimasu"
+    - word: "ja-3914"
+      forms:
+        "ageru": "にげてあげます"
+        "kureru": "にげてくれます"
+        "morau": "にげてもらいます"
+      readings:
+        "ageru": "nigeteagemasu"
+        "kureru": "nigetekuremasu"
+        "morau": "nigetemoraimasu"
+    - word: "ja-3915"
+      forms:
+        "ageru": "にがしてあげます"
+        "kureru": "にがしてくれます"
+        "morau": "にがしてもらいます"
+      readings:
+        "ageru": "nigashiteagemasu"
+        "kureru": "nigashitekuremasu"
+        "morau": "nigashitemoraimasu"
+    - word: "ja-3963"
+      forms:
+        "ageru": "きんじてあげます"
+        "kureru": "きんじてくれます"
+        "morau": "きんじてもらいます"
+      readings:
+        "ageru": "kinjiteagemasu"
+        "kureru": "kinjitekuremasu"
+        "morau": "kinjitemoraimasu"
+    - word: "ja-3965"
+      forms:
+        "ageru": "うったえてあげます"
+        "kureru": "うったえてくれます"
+        "morau": "うったえてもらいます"
+      readings:
+        "ageru": "uttaeteagemasu"
+        "kureru": "uttaetekuremasu"
+        "morau": "uttaetemoraimasu"
+    - word: "ja-4046"
+      forms:
+        "ageru": "おそってあげます"
+        "kureru": "おそってくれます"
+        "morau": "おそってもらいます"
+      readings:
+        "ageru": "osotteagemasu"
+        "kureru": "osottekuremasu"
+        "morau": "osottemoraimasu"
+    - word: "ja-4047"
+      forms:
+        "ageru": "おさえてあげます"
+        "kureru": "おさえてくれます"
+        "morau": "おさえてもらいます"
+      readings:
+        "ageru": "osaeteagemasu"
+        "kureru": "osaetekuremasu"
+        "morau": "osaetemoraimasu"
+    - word: "ja-4048"
+      forms:
+        "ageru": "おさまってあげます"
+        "kureru": "おさまってくれます"
+        "morau": "おさまってもらいます"
+      readings:
+        "ageru": "osamatteagemasu"
+        "kureru": "osamattekuremasu"
+        "morau": "osamattemoraimasu"
+    - word: "ja-4049"
+      forms:
+        "ageru": "おさめてあげます"
+        "kureru": "おさめてくれます"
+        "morau": "おさめてもらいます"
+      readings:
+        "ageru": "osameteagemasu"
+        "kureru": "osametekuremasu"
+        "morau": "osametemoraimasu"
+    - word: "ja-4050"
+      forms:
+        "ageru": "おぼれてあげます"
+        "kureru": "おぼれてくれます"
+        "morau": "おぼれてもらいます"
+      readings:
+        "ageru": "oboreteagemasu"
+        "kureru": "oboretekuremasu"
+        "morau": "oboretemoraimasu"
+    - word: "ja-4051"
+      forms:
+        "ageru": "おもいだしてあげます"
+        "kureru": "おもいだしてくれます"
+        "morau": "おもいだしてもらいます"
+      readings:
+        "ageru": "omoidashiteagemasu"
+        "kureru": "omoidashitekuremasu"
+        "morau": "omoidashitemoraimasu"
+    - word: "ja-4052"
+      forms:
+        "ageru": "おもいついてあげます"
+        "kureru": "おもいついてくれます"
+        "morau": "おもいついてもらいます"
+      readings:
+        "ageru": "omoitsuiteagemasu"
+        "kureru": "omoitsuitekuremasu"
+        "morau": "omoitsuitemoraimasu"
+    - word: "ja-4053"
+      forms:
+        "ageru": "かかえてあげます"
+        "kureru": "かかえてくれます"
+        "morau": "かかえてもらいます"
+      readings:
+        "ageru": "kakaeteagemasu"
+        "kureru": "kakaetekuremasu"
+        "morau": "kakaetemoraimasu"
+    - word: "ja-4054"
+      forms:
+        "ageru": "かさなってあげます"
+        "kureru": "かさなってくれます"
+        "morau": "かさなってもらいます"
+      readings:
+        "ageru": "kasanatteagemasu"
+        "kureru": "kasanattekuremasu"
+        "morau": "kasanattemoraimasu"
+    - word: "ja-4055"
+      forms:
+        "ageru": "かさねてあげます"
+        "kureru": "かさねてくれます"
+        "morau": "かさねてもらいます"
+      readings:
+        "ageru": "kasaneteagemasu"
+        "kureru": "kasanetekuremasu"
+        "morau": "kasanetemoraimasu"
+    - word: "ja-4056"
+      forms:
+        "ageru": "かたむいてあげます"
+        "kureru": "かたむいてくれます"
+        "morau": "かたむいてもらいます"
+      readings:
+        "ageru": "katamuiteagemasu"
+        "kureru": "katamuitekuremasu"
+        "morau": "katamuitemoraimasu"
+    - word: "ja-4057"
+      forms:
+        "ageru": "かなってあげます"
+        "kureru": "かなってくれます"
+        "morau": "かなってもらいます"
+      readings:
+        "ageru": "kanatteagemasu"
+        "kureru": "kanattekuremasu"
+        "morau": "kanattemoraimasu"
+    - word: "ja-4058"
+      forms:
+        "ageru": "かぶせてあげます"
+        "kureru": "かぶせてくれます"
+        "morau": "かぶせてもらいます"
+      readings:
+        "ageru": "kabuseteagemasu"
+        "kureru": "kabusetekuremasu"
+        "morau": "kabusetemoraimasu"
+    - word: "ja-4059"
+      forms:
+        "ageru": "きづいてあげます"
+        "kureru": "きづいてくれます"
+        "morau": "きづいてもらいます"
+      readings:
+        "ageru": "kizuiteagemasu"
+        "kureru": "kizuitekuremasu"
+        "morau": "kizuitemoraimasu"
+    - word: "ja-4060"
+      forms:
+        "ageru": "くずれてあげます"
+        "kureru": "くずれてくれます"
+        "morau": "くずれてもらいます"
+      readings:
+        "ageru": "kuzureteagemasu"
+        "kureru": "kuzuretekuremasu"
+        "morau": "kuzuretemoraimasu"
+    - word: "ja-4061"
+      forms:
+        "ageru": "くたびれてあげます"
+        "kureru": "くたびれてくれます"
+        "morau": "くたびれてもらいます"
+      readings:
+        "ageru": "kutabireteagemasu"
+        "kureru": "kutabiretekuremasu"
+        "morau": "kutabiretemoraimasu"
+    - word: "ja-4062"
+      forms:
+        "ageru": "くっついてあげます"
+        "kureru": "くっついてくれます"
+        "morau": "くっついてもらいます"
+      readings:
+        "ageru": "kuttsuiteagemasu"
+        "kureru": "kuttsuitekuremasu"
+        "morau": "kuttsuitemoraimasu"
+    - word: "ja-4063"
+      forms:
+        "ageru": "くっつけてあげます"
+        "kureru": "くっつけてくれます"
+        "morau": "くっつけてもらいます"
+      readings:
+        "ageru": "kuttsuketeagemasu"
+        "kureru": "kuttsuketekuremasu"
+        "morau": "kuttsuketemoraimasu"
+    - word: "ja-4064"
+      forms:
+        "ageru": "ころがってあげます"
+        "kureru": "ころがってくれます"
+        "morau": "ころがってもらいます"
+      readings:
+        "ageru": "korogatteagemasu"
+        "kureru": "korogattekuremasu"
+        "morau": "korogattemoraimasu"
+    - word: "ja-4065"
+      forms:
+        "ageru": "ころしてあげます"
+        "kureru": "ころしてくれます"
+        "morau": "ころしてもらいます"
+      readings:
+        "ageru": "koroshiteagemasu"
+        "kureru": "koroshitekuremasu"
+        "morau": "koroshitemoraimasu"
+    - word: "ja-4066"
+      forms:
+        "ageru": "こめてあげます"
+        "kureru": "こめてくれます"
+        "morau": "こめてもらいます"
+      readings:
+        "ageru": "kometeagemasu"
+        "kureru": "kometekuremasu"
+        "morau": "kometemoraimasu"
+    - word: "ja-4067"
+      forms:
+        "ageru": "さからってあげます"
+        "kureru": "さからってくれます"
+        "morau": "さからってもらいます"
+      readings:
+        "ageru": "sakaratteagemasu"
+        "kureru": "sakarattekuremasu"
+        "morau": "sakarattemoraimasu"
+    - word: "ja-4068"
+      forms:
+        "ageru": "さしてあげます"
+        "kureru": "さしてくれます"
+        "morau": "さしてもらいます"
+      readings:
+        "ageru": "sashiteagemasu"
+        "kureru": "sashitekuremasu"
+        "morau": "sashitemoraimasu"
+    - word: "ja-4069"
+      forms:
+        "ageru": "さびてあげます"
+        "kureru": "さびてくれます"
+        "morau": "さびてもらいます"
+      readings:
+        "ageru": "sabiteagemasu"
+        "kureru": "sabitekuremasu"
+        "morau": "sabitemoraimasu"
+    - word: "ja-4070"
+      forms:
+        "ageru": "しずんであげます"
+        "kureru": "しずんでくれます"
+        "morau": "しずんでもらいます"
+      readings:
+        "ageru": "shizundeagemasu"
+        "kureru": "shizundekuremasu"
+        "morau": "shizundemoraimasu"
+    - word: "ja-4071"
+      forms:
+        "ageru": "しずめてあげます"
+        "kureru": "しずめてくれます"
+        "morau": "しずめてもらいます"
+      readings:
+        "ageru": "shizumeteagemasu"
+        "kureru": "shizumetekuremasu"
+        "morau": "shizumetemoraimasu"
+    - word: "ja-4072"
+      forms:
+        "ageru": "したがってあげます"
+        "kureru": "したがってくれます"
+        "morau": "したがってもらいます"
+      readings:
+        "ageru": "shitagatteagemasu"
+        "kureru": "shitagattekuremasu"
+        "morau": "shitagattemoraimasu"
+    - word: "ja-4073"
+      forms:
+        "ageru": "しばってあげます"
+        "kureru": "しばってくれます"
+        "morau": "しばってもらいます"
+      readings:
+        "ageru": "shibatteagemasu"
+        "kureru": "shibattekuremasu"
+        "morau": "shibattemoraimasu"
+    - word: "ja-4074"
+      forms:
+        "ageru": "しめしてあげます"
+        "kureru": "しめしてくれます"
+        "morau": "しめしてもらいます"
+      readings:
+        "ageru": "shimeshiteagemasu"
+        "kureru": "shimeshitekuremasu"
+        "morau": "shimeshitemoraimasu"
+    - word: "ja-4075"
+      forms:
+        "ageru": "すべってあげます"
+        "kureru": "すべってくれます"
+        "morau": "すべってもらいます"
+      readings:
+        "ageru": "subetteagemasu"
+        "kureru": "subettekuremasu"
+        "morau": "subettemoraimasu"
+    - word: "ja-4076"
+      forms:
+        "ageru": "すませてあげます"
+        "kureru": "すませてくれます"
+        "morau": "すませてもらいます"
+      readings:
+        "ageru": "sumaseteagemasu"
+        "kureru": "sumasetekuremasu"
+        "morau": "sumasetemoraimasu"
+    - word: "ja-4077"
+      forms:
+        "ageru": "すんであげます"
+        "kureru": "すんでくれます"
+        "morau": "すんでもらいます"
+      readings:
+        "ageru": "sundeagemasu"
+        "kureru": "sundekuremasu"
+        "morau": "sundemoraimasu"
+    - word: "ja-4078"
+      forms:
+        "ageru": "ずれてあげます"
+        "kureru": "ずれてくれます"
+        "morau": "ずれてもらいます"
+      readings:
+        "ageru": "zureteagemasu"
+        "kureru": "zuretekuremasu"
+        "morau": "zuretemoraimasu"
+    - word: "ja-4079"
+      forms:
+        "ageru": "せまってあげます"
+        "kureru": "せまってくれます"
+        "morau": "せまってもらいます"
+      readings:
+        "ageru": "sematteagemasu"
+        "kureru": "semattekuremasu"
+        "morau": "semattemoraimasu"
+    - word: "ja-4080"
+      forms:
+        "ageru": "そなえてあげます"
+        "kureru": "そなえてくれます"
+        "morau": "そなえてもらいます"
+      readings:
+        "ageru": "sonaeteagemasu"
+        "kureru": "sonaetekuremasu"
+        "morau": "sonaetemoraimasu"
+    - word: "ja-4081"
+      forms:
+        "ageru": "そまってあげます"
+        "kureru": "そまってくれます"
+        "morau": "そまってもらいます"
+      readings:
+        "ageru": "somatteagemasu"
+        "kureru": "somattekuremasu"
+        "morau": "somattemoraimasu"
+    - word: "ja-4082"
+      forms:
+        "ageru": "そめてあげます"
+        "kureru": "そめてくれます"
+        "morau": "そめてもらいます"
+      readings:
+        "ageru": "someteagemasu"
+        "kureru": "sometekuremasu"
+        "morau": "sometemoraimasu"
+    - word: "ja-4083"
+      forms:
+        "ageru": "たえてあげます"
+        "kureru": "たえてくれます"
+        "morau": "たえてもらいます"
+      readings:
+        "ageru": "taeteagemasu"
+        "kureru": "taetekuremasu"
+        "morau": "taetemoraimasu"
+    - word: "ja-4084"
+      forms:
+        "ageru": "たしかめてあげます"
+        "kureru": "たしかめてくれます"
+        "morau": "たしかめてもらいます"
+      readings:
+        "ageru": "tashikameteagemasu"
+        "kureru": "tashikametekuremasu"
+        "morau": "tashikametemoraimasu"
+    - word: "ja-4085"
+      forms:
+        "ageru": "たまってあげます"
+        "kureru": "たまってくれます"
+        "morau": "たまってもらいます"
+      readings:
+        "ageru": "tamatteagemasu"
+        "kureru": "tamattekuremasu"
+        "morau": "tamattemoraimasu"
+    - word: "ja-4086"
+      forms:
+        "ageru": "ためしてあげます"
+        "kureru": "ためしてくれます"
+        "morau": "ためしてもらいます"
+      readings:
+        "ageru": "tameshiteagemasu"
+        "kureru": "tameshitekuremasu"
+        "morau": "tameshitemoraimasu"
+    - word: "ja-4087"
+      forms:
+        "ageru": "ちぢんであげます"
+        "kureru": "ちぢんでくれます"
+        "morau": "ちぢんでもらいます"
+      readings:
+        "ageru": "chijindeagemasu"
+        "kureru": "chijindekuremasu"
+        "morau": "chijindemoraimasu"
+    - word: "ja-4088"
+      forms:
+        "ageru": "ちぢめてあげます"
+        "kureru": "ちぢめてくれます"
+        "morau": "ちぢめてもらいます"
+      readings:
+        "ageru": "chijimeteagemasu"
+        "kureru": "chijimetekuremasu"
+        "morau": "chijimetemoraimasu"
+    - word: "ja-4089"
+      forms:
+        "ageru": "ついであげます"
+        "kureru": "ついでくれます"
+        "morau": "ついでもらいます"
+      readings:
+        "ageru": "tsuideagemasu"
+        "kureru": "tsuidekuremasu"
+        "morau": "tsuidemoraimasu"
+    - word: "ja-4090"
+      forms:
+        "ageru": "つづいてあげます"
+        "kureru": "つづいてくれます"
+        "morau": "つづいてもらいます"
+      readings:
+        "ageru": "tsuzuiteagemasu"
+        "kureru": "tsuzuitekuremasu"
+        "morau": "tsuzuitemoraimasu"
+    - word: "ja-4091"
+      forms:
+        "ageru": "つぶしてあげます"
+        "kureru": "つぶしてくれます"
+        "morau": "つぶしてもらいます"
+      readings:
+        "ageru": "tsubushiteagemasu"
+        "kureru": "tsubushitekuremasu"
+        "morau": "tsubushitemoraimasu"
+    - word: "ja-4092"
+      forms:
+        "ageru": "つぶれてあげます"
+        "kureru": "つぶれてくれます"
+        "morau": "つぶれてもらいます"
+      readings:
+        "ageru": "tsubureteagemasu"
+        "kureru": "tsuburetekuremasu"
+        "morau": "tsuburetemoraimasu"
+    - word: "ja-4093"
+      forms:
+        "ageru": "てらしてあげます"
+        "kureru": "てらしてくれます"
+        "morau": "てらしてもらいます"
+      readings:
+        "ageru": "terashiteagemasu"
+        "kureru": "terashitekuremasu"
+        "morau": "terashitemoraimasu"
+    - word: "ja-4094"
+      forms:
+        "ageru": "とおしてあげます"
+        "kureru": "とおしてくれます"
+        "morau": "とおしてもらいます"
+      readings:
+        "ageru": "tooshiteagemasu"
+        "kureru": "tooshitekuremasu"
+        "morau": "tooshitemoraimasu"
+    - word: "ja-4095"
+      forms:
+        "ageru": "とかしてあげます"
+        "kureru": "とかしてくれます"
+        "morau": "とかしてもらいます"
+      readings:
+        "ageru": "tokashiteagemasu"
+        "kureru": "tokashitekuremasu"
+        "morau": "tokashitemoraimasu"
+    - word: "ja-4096"
+      forms:
+        "ageru": "とけてあげます"
+        "kureru": "とけてくれます"
+        "morau": "とけてもらいます"
+      readings:
+        "ageru": "toketeagemasu"
+        "kureru": "toketekuremasu"
+        "morau": "toketemoraimasu"
+    - word: "ja-4097"
+      forms:
+        "ageru": "ととのってあげます"
+        "kureru": "ととのってくれます"
+        "morau": "ととのってもらいます"
+      readings:
+        "ageru": "totonotteagemasu"
+        "kureru": "totonottekuremasu"
+        "morau": "totonottemoraimasu"
+    - word: "ja-4098"
+      forms:
+        "ageru": "ととのえてあげます"
+        "kureru": "ととのえてくれます"
+        "morau": "ととのえてもらいます"
+      readings:
+        "ageru": "totonoeteagemasu"
+        "kureru": "totonoetekuremasu"
+        "morau": "totonoetemoraimasu"
+    - word: "ja-4099"
+      forms:
+        "ageru": "とびこんであげます"
+        "kureru": "とびこんでくれます"
+        "morau": "とびこんでもらいます"
+      readings:
+        "ageru": "tobikondeagemasu"
+        "kureru": "tobikondekuremasu"
+        "morau": "tobikondemoraimasu"
+    - word: "ja-4100"
+      forms:
+        "ageru": "ともなってあげます"
+        "kureru": "ともなってくれます"
+        "morau": "ともなってもらいます"
+      readings:
+        "ageru": "tomonatteagemasu"
+        "kureru": "tomonattekuremasu"
+        "morau": "tomonattemoraimasu"
+    - word: "ja-4101"
+      forms:
+        "ageru": "とらえてあげます"
+        "kureru": "とらえてくれます"
+        "morau": "とらえてもらいます"
+      readings:
+        "ageru": "toraeteagemasu"
+        "kureru": "toraetekuremasu"
+        "morau": "toraetemoraimasu"
+    - word: "ja-4102"
+      forms:
+        "ageru": "とりあげてあげます"
+        "kureru": "とりあげてくれます"
+        "morau": "とりあげてもらいます"
+      readings:
+        "ageru": "toriageteagemasu"
+        "kureru": "toriagetekuremasu"
+        "morau": "toriagetemoraimasu"
+    - word: "ja-4103"
+      forms:
+        "ageru": "とりだしてあげます"
+        "kureru": "とりだしてくれます"
+        "morau": "とりだしてもらいます"
+      readings:
+        "ageru": "toridashiteagemasu"
+        "kureru": "toridashitekuremasu"
+        "morau": "toridashitemoraimasu"
+    - word: "ja-4104"
+      forms:
+        "ageru": "とりのぞいてあげます"
+        "kureru": "とりのぞいてくれます"
+        "morau": "とりのぞいてもらいます"
+      readings:
+        "ageru": "torinozoiteagemasu"
+        "kureru": "torinozoitekuremasu"
+        "morau": "torinozoitemoraimasu"
+    - word: "ja-4105"
+      forms:
+        "ageru": "ながしてあげます"
+        "kureru": "ながしてくれます"
+        "morau": "ながしてもらいます"
+      readings:
+        "ageru": "nagashiteagemasu"
+        "kureru": "nagashitekuremasu"
+        "morau": "nagashitemoraimasu"
+    - word: "ja-4185"
+      forms:
+        "ageru": "みとめてあげます"
+        "kureru": "みとめてくれます"
+        "morau": "みとめてもらいます"
+      readings:
+        "ageru": "mitometeagemasu"
+        "kureru": "mitometekuremasu"
+        "morau": "mitometemoraimasu"
+    - word: "ja-4186"
+      forms:
+        "ageru": "うたがってあげます"
+        "kureru": "うたがってくれます"
+        "morau": "うたがってもらいます"
+      readings:
+        "ageru": "utagatteagemasu"
+        "kureru": "utagattekuremasu"
+        "morau": "utagattemoraimasu"
+    - word: "ja-4187"
+      forms:
+        "ageru": "しんじてあげます"
+        "kureru": "しんじてくれます"
+        "morau": "しんじてもらいます"
+      readings:
+        "ageru": "shinjiteagemasu"
+        "kureru": "shinjitekuremasu"
+        "morau": "shinjitemoraimasu"
+    - word: "ja-4192"
+      forms:
+        "ageru": "ろんじてあげます"
+        "kureru": "ろんじてくれます"
+        "morau": "ろんじてもらいます"
+      readings:
+        "ageru": "ronjiteagemasu"
+        "kureru": "ronjitekuremasu"
+        "morau": "ronjitemoraimasu"
+rules:
+  - id: "ja-rule-ageru"
+    slots: ["ageru"]
+    words:
+      - { word: "てあげます", reading: "te agemasu" }
+      - { word: "つくってあげます", reading: "tsukutte agemasu" }
+  - id: "ja-rule-kureru"
+    slots: ["kureru"]
+    words:
+      - { word: "てくれます", reading: "te kuremasu" }
+      - { word: "つくってくれます", reading: "tsukutte kuremasu" }
+  - id: "ja-rule-morau"
+    slots: ["morau"]
+    words:
+      - { word: "てもらいます", reading: "te moraimasu" }
+      - { word: "つくってもらいます", reading: "tsukutte moraimasu" }

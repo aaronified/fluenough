@@ -1,0 +1,25 @@
+schema: 1
+id: "ja-en-grammar-giving-receiving"
+kind: "layer"
+core: "ja-grammar-giving-receiving"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Doing for others: てあげる (te ageru), てくれる (te kureru) and てもらう (te morau)"
+description: "After the te-form, あげます (agemasu) says that you do something for someone, くれます (kuremasu) that someone does something for you, and もらいます (moraimasu) that you have someone do it: つくってあげます (tsukutte agemasu), I make it for you. Every verb a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "ageru": "{meaning} for someone"
+    "kureru": "{meaning} for me"
+    "morau": "have someone {meaning} for me"
+rules:
+  "ja-rule-ageru":
+    name: "てあげます (te agemasu): do for someone"
+    explanation: "{1} follows the te-form to say that you do something for someone else: {2} means I make it for you."
+  "ja-rule-kureru":
+    name: "てくれます (te kuremasu): someone does for me"
+    explanation: "{1} follows the te-form to say that someone does something for me or my side: {2} means someone makes it for me."
+  "ja-rule-morau":
+    name: "てもらいます (te moraimasu): have someone do"
+    explanation: "{1} follows the te-form to say that you have someone do something for you: {2} means I have someone make it for me. The person who does it is marked with に (ni)."

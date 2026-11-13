@@ -1,0 +1,76 @@
+schema: 1
+id: "ja-en-grammar-te-auxiliaries-sentences"
+kind: "layer"
+core: "ja-grammar-te-auxiliaries-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Helper verbs after the te-form, in sentences"
+description: "Sentences with しまう (shimau), おく (oku) and みる (miru) after the te-form, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-4479":
+    native: "I have eaten all the food."
+    notes:
+      "n1": "しまいました (shimaimashita) is from しまう (shimau). Here it is a helper verb, not the verb 'to put away'."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "しまいました": { meaning: "to finish; to end up doing" }
+    confusables:
+      w1: { why: "たべる (taberu) means to eat." }
+      w2: { why: "のむ (nomu) means to drink." }
+  "ja-4480":
+    native: "I will read the book in advance."
+    notes:
+      "n1": "おきます (okimasu) is from おく (oku), 'to put'. After a te-form it is a helper verb and means 'in advance'."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "おきます": { meaning: "to put; to do in advance" }
+    confusables:
+      w1: { why: "よむ (yomu) means to read." }
+      w2: { why: "かく (kaku) means to write." }
+  "ja-4481":
+    native: "I will try reading this book."
+    bases:
+      "この": { meaning: "this" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "よむ (yomu) means to read." }
+      w2: { why: "かく (kaku) means to write." }
+  "ja-4482":
+    native: "I will try drinking the coffee."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "のむ (nomu) means to drink." }
+      w2: { why: "たべる (taberu) means to eat." }
+  "ja-4483":
+    native: "I will cook in advance."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "おきます": { meaning: "to put; to do in advance" }
+    confusables:
+      w1: { why: "つくる (tsukuru) means to make; to create." }
+      w2: { why: "たべる (taberu) means to eat." }
+  "ja-4484":
+    native: "I ended up going to bed early today."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "しまいました": { meaning: "to finish; to end up doing" }
+    confusables:
+      w1: { why: "ねる (neru) means to sleep; to go to bed." }
+      w2: { why: "おきる (okiru) means to get up; to wake up." }
+  "ja-4485":
+    native: "I will finish writing the letter."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "しまいます": { meaning: "to finish; to end up doing" }
+    confusables:
+      w1: { why: "かく (kaku) means to write." }
+      w2: { why: "よむ (yomu) means to read." }
+  "ja-4486":
+    native: "I will try the cake."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "たべる (taberu) means to eat." }
+      w2: { why: "のむ (nomu) means to drink." }

@@ -1,0 +1,17 @@
+schema: 1
+id: "ja-en-grammar-experience"
+kind: "layer"
+core: "ja-grammar-experience"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Having done it: たことがあります (ta koto ga arimasu)"
+description: "Put ことがあります (koto ga arimasu) after the past (ta) form of a verb to say that you have done something before: たべたことがあります (tabeta koto ga arimasu), I have eaten it. Every verb a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "ta-koto-ga-aru": "have {meaning}"
+rules:
+  "ja-rule-ta-koto-ga-aru":
+    name: "たことがあります (ta koto ga arimasu): have done"
+    explanation: "{1} follows the past (ta) form to say that you have done something before: {2} means I have eaten it. The past form is the te-form with た (ta) in place of て (te), and だ (da) in place of で (de)."

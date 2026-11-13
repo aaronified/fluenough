@@ -1,0 +1,60 @@
+schema: 1
+id: "ja-en-grammar-conditional-tara-nara-sentences"
+kind: "layer"
+core: "ja-grammar-conditional-tara-nara-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "If and when, in sentences"
+description: "Sentences with たら (tara) and なら (nara), to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-4473":
+    native: "When I get home, I eat a meal."
+    bases:
+      "に": { meaning: "(in, at, to)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "かえる (kaeru) means to return home; to go home." }
+      w2: { why: "いく (iku) means to go." }
+  "ja-4474":
+    native: "If I get tired, I go to bed."
+    confusables:
+      w1: { why: "つかれる (tsukareru) means to get tired." }
+      w2: { why: "おきる (okiru) means to get up; to wake up." }
+  "ja-4475":
+    native: "If I meet my friend, I talk to him."
+    bases:
+      "に": { meaning: "(in, at, to)" }
+    confusables:
+      w1: { why: "あう (au) means to meet." }
+      w2: { why: "きく (kiku) means to listen; to hear; to ask." }
+  "ja-4476":
+    native: "If you are going, the bus is good."
+    notes:
+      "n1": "なら (nara) follows the plain form as it is: いく (iku) stays いく (iku). It takes up something just said or planned."
+    bases:
+      "なら": { meaning: "if it is the case that" }
+      "が": { meaning: "(marks the one who does the action)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "かえる (kaeru) means to return home; to go home." }
+      w2: { why: "くる (kuru) means to come." }
+  "ja-4477":
+    native: "If you are drinking, coffee is good."
+    bases:
+      "なら": { meaning: "if it is the case that" }
+      "が": { meaning: "(marks the one who does the action)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "たべる (taberu) means to eat." }
+      w2: { why: "みる (miru) means to see; to look at; to watch." }
+  "ja-4478":
+    native: "If you are reading a book, here is good."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "なら": { meaning: "if it is the case that" }
+      "が": { meaning: "(marks the one who does the action)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "かく (kaku) means to write." }
+      w2: { why: "きく (kiku) means to listen; to hear; to ask." }

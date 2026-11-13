@@ -1,0 +1,21 @@
+schema: 1
+id: "ja-en-grammar-permission"
+kind: "layer"
+core: "ja-grammar-permission"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Permission: てもいいです (te mo ii desu) and てはいけません (te wa ikemasen)"
+description: "Put もいいです (mo ii desu) after the te-form to say that something is allowed, and はいけません (wa ikemasen) to say that it is not: たべてもいいです (tabete mo ii desu), you may eat. Every verb a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "te-mo-ii": "may {meaning}"
+    "te-wa-ikenai": "must not {meaning}"
+rules:
+  "ja-rule-te-mo-ii":
+    name: "てもいいです (te mo ii desu): may"
+    explanation: "{1} follows the te-form to say that something is allowed: {2} means you may eat. With か (ka) it asks for permission."
+  "ja-rule-te-wa-ikenai":
+    name: "てはいけません (te wa ikemasen): must not"
+    explanation: "{1} follows the te-form to say that something is not allowed: {2} means you must not eat."

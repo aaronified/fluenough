@@ -1,0 +1,17 @@
+schema: 1
+id: "ja-en-grammar-te-kudasai"
+kind: "layer"
+core: "ja-grammar-te-kudasai"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Asking: the te-form and ください (kudasai)"
+description: "Put ください (kudasai) after the te-form of a verb to ask someone politely to do it: まってください (matte kudasai), please wait. Every verb a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "te-kudasai": "please {meaning}"
+rules:
+  "ja-rule-te-kudasai":
+    name: "ください (kudasai): please"
+    explanation: "{1} is added to the te-form of a verb to ask politely: {2} means please eat."
