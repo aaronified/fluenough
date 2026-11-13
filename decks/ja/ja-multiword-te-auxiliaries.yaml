@@ -1,0 +1,129 @@
+# Japanese verb phrases of a te-form and an auxiliary verb (mi-ru, o-ku, shima-u, ku-ru, i-ku, age-ru, mora-u, kure-ru).
+schema: 1
+id: "ja-multiword-te-auxiliaries"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+genre: "multiword"
+pattern_family: "te-form-auxiliary"
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - id: "ja-4412"
+    target: "たべてみる"
+    words: ["たべて", "みる"]
+    reading: "tabete miru"
+    ipa: "tabete miɾɯ"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "たべて", base: "たべる", reading: "taberu" }
+      - { word: "みる", base: "みる", reading: "miru" }
+  - id: "ja-4413"
+    target: "よんでみる"
+    words: ["よんで", "みる"]
+    reading: "yonde miru"
+    ipa: "joɴde miɾɯ"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "よんで", base: "よむ", reading: "yomu" }
+      - { word: "みる", base: "みる", reading: "miru" }
+  - id: "ja-4414"
+    target: "かいておく"
+    words: ["かいて", "おく"]
+    reading: "kaite oku"
+    ipa: "kaite okɯ"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "かいて", base: "かく", reading: "kaku" }
+      - { word: "おく", base: "おく", reading: "oku" }
+  - id: "ja-4415"
+    target: "たべてしまう"
+    words: ["たべて", "しまう"]
+    reading: "tabete shimau"
+    ipa: "tabete ɕimaɯ"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "たべて", base: "たべる", reading: "taberu" }
+      - { word: "しまう", base: "しまう", reading: "shimau" }
+  - id: "ja-4416"
+    target: "かってくる"
+    words: ["かって", "くる"]
+    reading: "katte kuru"
+    ipa: "katte kɯɾɯ"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "かって", base: "かう", reading: "kau" }
+      - { word: "くる", base: "くる", reading: "kuru" }
+  - id: "ja-4417"
+    target: "もっていく"
+    words: ["もって", "いく"]
+    reading: "motte iku"
+    ipa: "motte ikɯ"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "もって", base: "もつ", reading: "motsu" }
+      - { word: "いく", base: "いく", reading: "iku" }
+  - id: "ja-4418"
+    target: "かしてあげる"
+    words: ["かして", "あげる"]
+    reading: "kashite ageru"
+    ipa: "kaɕite aɡeɾɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "かして", base: "かす", reading: "kasu" }
+      - { word: "あげる", base: "あげる", reading: "ageru" }
+  - id: "ja-4419"
+    target: "おしえてもらう"
+    words: ["おしえて", "もらう"]
+    reading: "oshiete morau"
+    ipa: "oɕiete moɾaɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "おしえて", base: "おしえる", reading: "oshieru" }
+      - { word: "もらう", base: "もらう", reading: "morau" }
+  - id: "ja-4420"
+    target: "てつだってくれる"
+    words: ["てつだって", "くれる"]
+    reading: "tetsudatte kureru"
+    ipa: "tetsɯdatte kɯɾeɾɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "てつだって", base: "てつだう", reading: "tetsudau" }
+      - { word: "くれる", base: "くれる", reading: "kureru" }

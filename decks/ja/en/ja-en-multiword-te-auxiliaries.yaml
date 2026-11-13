@@ -1,0 +1,73 @@
+schema: 1
+id: "ja-en-multiword-te-auxiliaries"
+kind: "layer"
+core: "ja-multiword-te-auxiliaries"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Multi-word verbs: te-form and auxiliary"
+description: "Nine verb phrases of a te-form and a second verb that adds a meaning: try, do in advance, finish, go and come back, take along, and the three verbs of giving and receiving. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ja-4412":
+    native: "to try eating"
+    notes:
+      "u1": "The main verb in the te-form, then みる (miru): try doing it and see. The two words are written apart; here みる (miru) does not mean 'to see'."
+    bases:
+      "たべて": { meaning: "to eat (te-form)" }
+      "みる": { meaning: "to see; after a te-form, to try" }
+  "ja-4413":
+    native: "to try reading"
+    notes:
+      "u1": "The same pattern with よむ (yomu): its te-form よんで (yonde) ends in んで (nde)."
+    bases:
+      "よんで": { meaning: "to read (te-form)" }
+      "みる": { meaning: "to see; after a te-form, to try" }
+  "ja-4414":
+    native: "to write it down in advance"
+    notes:
+      "u1": "The te-form and おく (oku): do something now, for later. The result stays done."
+    bases:
+      "かいて": { meaning: "to write (te-form)" }
+      "おく": { meaning: "to put; after a te-form, to do in advance" }
+  "ja-4415":
+    native: "to eat it all up; to end up eating it"
+    notes:
+      "u1": "The te-form and しまう (shimau): do something completely, or do it by mistake, often with regret. Which meaning is meant comes from the context."
+    bases:
+      "たべて": { meaning: "to eat (te-form)" }
+      "しまう": { meaning: "to finish; after a te-form, to do completely" }
+  "ja-4416":
+    native: "to go and buy it, and come back"
+    notes:
+      "u1": "The te-form and くる (kuru): go, do the thing, and come back. The person who speaks is where they return to."
+    bases:
+      "かって": { meaning: "to buy (te-form)" }
+      "くる": { meaning: "to come; after a te-form, to do it and come back" }
+  "ja-4417":
+    native: "to take it along"
+    notes:
+      "u1": "The te-form and いく (iku): the action goes away from the speaker. To bring something here, say もってくる (motte kuru)."
+    bases:
+      "もって": { meaning: "to hold, to carry (te-form)" }
+      "いく": { meaning: "to go; after a te-form, to do it and go" }
+  "ja-4418":
+    native: "to lend it to someone, as a favor"
+    notes:
+      "u1": "The te-form and あげる (ageru): you do something for another person. Said to that person's face it can sound like a favor."
+    bases:
+      "かして": { meaning: "to lend (te-form)" }
+      "あげる": { meaning: "to give; after a te-form, to do for someone" }
+  "ja-4419":
+    native: "to get someone to teach me"
+    notes:
+      "u1": "The te-form and もらう (morau): someone does something for you. The person who does it is marked with に (ni), as in せんせいにおしえてもらう (sensei ni oshiete morau)."
+    bases:
+      "おしえて": { meaning: "to teach (te-form)" }
+      "もらう": { meaning: "to receive; after a te-form, to have someone do it for me" }
+  "ja-4420":
+    native: "to help me"
+    notes:
+      "u1": "The te-form and くれる (kureru): someone does something for you or your side. Mind the direction: あげる (ageru) is what you do for others, くれる (kureru) is what others do for you."
+    bases:
+      "てつだって": { meaning: "to help (te-form)" }
+      "くれる": { meaning: "to give to me; after a te-form, to do for me" }
