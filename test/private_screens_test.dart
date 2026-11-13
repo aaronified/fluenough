@@ -91,6 +91,12 @@ class _Files implements DeckFiles {
   }) async => bytes == null ? null : (name: 'package.fnzip', bytes: bytes!);
 }
 
+/// A store whose removal fails, as a disk error would.
+class _FailingRemoveStore extends MemoryPrivateStore {
+  @override
+  Future<bool> remove(String id) async => false;
+}
+
 class _World {
   _World(this.state, this.store);
 
@@ -106,6 +112,7 @@ Future<_World> _world({
   Set<String> off = const <String>{},
   MemoryProgress? progress,
   Uint8List? picked,
+  MemoryPrivateStore? store,
 }) async {
   const names = <String, String>{
     'qaa': 'Alpha',
@@ -113,7 +120,7 @@ Future<_World> _world({
     'qac': 'Gamma',
     'qad': 'Delta',
   };
-  final store = MemoryPrivateStore();
+  store ??= MemoryPrivateStore();
   for (final code in codes) {
     final result = await importPrivatePackage(
       _pkg(code, names[code]!),
@@ -500,11 +507,99 @@ void main() {
       await tester.pumpAndSettle();
       await tester.tap(find.text(l10n.privateRemoveDelete));
       await tester.pumpAndSettle();
+      await tester.enterText(
+        find.byKey(const ValueKey<String>('private-delete-name')),
+        'Alpha',
+      );
+      await tester.pumpAndSettle();
+      await tester.tap(
+        find.byKey(const ValueKey<String>('private-delete-confirm')),
+      );
+      await tester.pumpAndSettle();
       expect((await world.store.packages()).map((p) => p.id), <String>[
         'fnpd-qab',
       ]);
       expect(world.state.progress.log.map((e) => e.cardId), <String>[
         'fnpd-qab-0001',
+      ]);
+    });
+
+    testWidgets('deleting progress waits for the typed name: off until it '
+        'matches exactly (trimmed, case kept), and built-in reviews stay', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final progress = MemoryProgress();
+      _answer(progress, 'fnpd-qaa-0001', DateTime(2026, 11, 1));
+      _answer(progress, 'te-0001', DateTime(2026, 11, 1));
+      final world = await _world(codes: <String>['qaa'], progress: progress);
+      await _open(tester, const YourDecksPage(), world);
+      final l10n = l10nOf(tester);
+      await _reveal(tester, find.text(l10n.privateRemove));
+      await tester.tap(find.text(l10n.privateRemove).first);
+      await tester.pumpAndSettle();
+      await tester.tap(find.text(l10n.privateRemoveDelete));
+      await tester.pumpAndSettle();
+      final field = find.byKey(const ValueKey<String>('private-delete-name'));
+      final confirm = find.byKey(
+        const ValueKey<String>('private-delete-confirm'),
+      );
+      bool enabled() => tester.widget<TextButton>(confirm).onPressed != null;
+      expect(enabled(), isFalse);
+      for (final wrong in <String>['alpha', 'Alph', 'Alpha 2']) {
+        await tester.enterText(field, wrong);
+        await tester.pump();
+        expect(enabled(), isFalse, reason: wrong);
+      }
+      await tester.enterText(field, '  Alpha ');
+      await tester.pump();
+      expect(enabled(), isTrue);
+      await tester.tap(confirm);
+      await tester.pumpAndSettle();
+      expect(await world.store.packages(), isEmpty);
+      expect(world.state.progress.log.map((e) => e.cardId), <String>[
+        'te-0001',
+      ]);
+    });
+
+    screen('the type-the-name step of deleting progress', (tester, mode) async {
+      final world = await _world(codes: <String>['qaa']);
+      await pumpScreen(
+        tester,
+        const YourDecksPage(),
+        state: world.state,
+        themeMode: mode,
+      );
+      final l10n = l10nOf(tester);
+      await _reveal(tester, find.text(l10n.privateRemove));
+      await tester.tap(find.text(l10n.privateRemove).first);
+      await tester.pumpAndSettle();
+      await tester.tap(find.text(l10n.privateRemoveDelete));
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.privateDeleteTypeTitle('Alpha')), findsOneWidget);
+    }, onTop: find.byType(AlertDialog));
+
+    test('a removal that fails keeps the progress', () async {
+      final progress = MemoryProgress();
+      _answer(progress, 'fnpd-qaa-0001', DateTime(2026, 11, 1));
+      final store = _FailingRemoveStore();
+      final world = await _world(
+        codes: <String>[],
+        progress: progress,
+        store: store,
+      );
+      await importPrivatePackage(
+        _pkg('qaa', 'Alpha'),
+        store: store,
+        appVersion: _appVersion,
+      );
+      expect(
+        await world.state.removePrivate('fnpd-qaa', deleteProgress: true),
+        isFalse,
+      );
+      expect((await store.packages()).map((p) => p.id), <String>['fnpd-qaa']);
+      expect(world.state.progress.log.map((e) => e.cardId), <String>[
+        'fnpd-qaa-0001',
       ]);
     });
 
@@ -699,7 +794,7 @@ void main() {
       await pumpScreen(
         tester,
         const Scaffold(
-          body: const Column(
+          body: Column(
             children: <Widget>[
               PrivateModifiedTag(language: 'te'),
               PrivateModifiedTag(language: 'hi'),

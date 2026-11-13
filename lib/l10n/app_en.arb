@@ -16946,5 +16946,11 @@
   "privateRestoreHolds": "Your private languages",
   "@privateRestoreHolds": {"description": "Label on the restore sheet: the private languages the backup holds."},
   "privateRestoreHoldsValue": "{names}. They come back as they were; the ones on this phone stay.",
-  "@privateRestoreHoldsValue": {"description": "Value on the restore sheet: the names of the private languages in the backup.", "placeholders": {"names": {"type": "String"}}}
+  "@privateRestoreHoldsValue": {"description": "Value on the restore sheet: the names of the private languages in the backup.", "placeholders": {"names": {"type": "String"}}},
+  "privateDeleteTypeTitle": "Delete your progress on {name}?",
+  "@privateDeleteTypeTitle": {"description": "Title of the second step of Remove and delete my progress for a private package.", "placeholders": {"name": {"type": "String"}}},
+  "privateDeleteTypeBody": "This deletes your reviews of the cards of {name}, after a backup of everything is kept. It cannot be undone from the app. To confirm, type the name exactly as it is written here.",
+  "@privateDeleteTypeBody": {"description": "Explains the typed confirmation before a private package's progress is deleted.", "placeholders": {"name": {"type": "String"}}},
+  "privateDeleteTypeLabel": "Type the name",
+  "@privateDeleteTypeLabel": {"description": "Label of the field where the learner types the package's name to confirm deleting its progress."}
 }
