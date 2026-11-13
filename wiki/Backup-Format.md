@@ -13,8 +13,10 @@ entries stored, not compressed, and reads stored or deflated entries, so a
 backup unzipped and zipped again by hand still restores. No encryption, no
 zip64, no multi-disk archives.
 
-A backup never holds deck files, nor anything that restricts a profile.
-After a restore the languages it lists download again.
+A backup never holds deck files, nor anything that restricts a profile,
+**except the learner's own private language packages** (#1017), which exist
+nowhere else. After a restore the languages it lists download again, and the
+private packages it holds are installed again.
 
 ## Parts
 
@@ -25,9 +27,20 @@ After a restore the languages it lists download again.
 | `settings.json` | Every setting, as a JSON object of string keys to string values, except the reviewer's. |
 | `reviewer.json` | The reviewer's settings, the same way: `review_decks`, `rater_code` (the access code; owner, 2026-10-11), `review_intro_shown`, `reviews`. |
 | `downloads.json` | `{"languages": ["bn", "hi"]}`: the languages whose decks were on the phone. |
+| `own-decks.json` | Only when the learner has private language packages, or removed some: `{"packages": [{"id": "fnpd-qaa", "name": "Tiny", "revision": 2, "kind": "new-language", "active": true, "retired": ["fnpd-qaa-0003"], "file": "own-decks/fnpd-qaa.fnzip"}], "tombstones": {"fnpd-qab": ["fnpd-qab-0001"]}}`. `retired` are the card ids an update dropped; `tombstones` are those of packages the learner removed. Both keep a later revision from reusing an id. |
+| `own-decks/<package id>.fnzip` | Each private package as the learner imported it ([Private-Language-Package](Private-Language-Package)). Already compressed, so the backup stores it as it is. |
 
 A part that is missing reads as empty, and a setting that is not there
-takes its default. A file or key the app does not know is ignored.
+takes its default. A file or key the app does not know is ignored: an older
+app restores the log and settings of a backup that has `own-decks`, and leaves
+the packages out. The format `version` stays `1`.
+
+A package entry whose id is not `fnpd-<code>`, or whose file is not in the zip,
+is skipped. A restore installs each package through the same checks as an
+import, so one that no longer passes them (or whose manifest is another
+package than the index says) is left out and logged, and the others come back. A
+restore adds to the packages on the phone, never removes one, and installs a
+package off when turning it on would make a fourth active.
 
 ## `manifest.json`
 
@@ -45,7 +58,8 @@ takes its default. A file or key the app does not know is ignored.
 | `kind` | What made it: `you` (Back up now), `update` (an app update began to download), `restore` (the copy of what a restore replaced), `file` (a file restored from, kept as it was read), `delete` (the copy made before a language's data was deleted from its sheet, #861). Unknown reads as `you`. |
 | `forVersion` | For an `update` backup, the version being downloaded. |
 | `reviews` | How many reviews `log.jsonl` holds, so Recent backups can say without reading the log. |
-| `parts` | The other files in the zip. |
+| `privateLanguages` | When there are private packages: their names, so the restore screen can say what comes back. |
+| `parts` | The other files in the zip (the `.fnzip` files are listed in `own-decks.json`). |
 
 ## Kept on the phone
 

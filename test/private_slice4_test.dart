@@ -18,13 +18,16 @@ import 'package:fluenough/app/private_import.dart';
 import 'package:fluenough/app/private_languages.dart';
 import 'package:fluenough/app/private_store.dart';
 import 'package:fluenough/core/backup/zip_files.dart';
+import 'package:fluenough/core/data/log_jsonl.dart';
 import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/core/models/deck.dart';
+import 'package:fluenough/core/models/leech_action.dart';
 import 'package:fluenough/core/private/private_check.dart';
 import 'package:fluenough/core/private/private_export.dart';
 import 'package:fluenough/core/private/private_manifest.dart';
 import 'package:fluenough/core/private/private_package.dart';
 import 'package:fluenough/core/private/private_starter.dart';
+import 'package:fluenough/core/scheduling/replay.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/decks/course_card.dart';
 import 'package:fluenough/features/decks/path_model.dart';
@@ -41,6 +44,12 @@ import 'support/harness.dart';
 import 'support/private_fixture.dart';
 
 const String _appVersion = '9.9.9';
+
+/// The log of a learner who has answered nothing.
+final String _emptyLog = LogJsonl.encode(
+  const <LoggedReview>[],
+  const <LeechAction>[],
+);
 
 late Map<String, String> _tiny;
 
@@ -348,7 +357,7 @@ void main() {
       appVersion: '0.10.0',
       schemaVersion: 12,
       createdAt: DateTime.utc(2026, 11, 13, 9),
-      log: '',
+      log: _emptyLog,
       settings: const <String, String>{},
       privatePackages: packages,
       privateTombstones: tombstones,
@@ -479,7 +488,7 @@ void main() {
         appVersion: '0.10.0',
         schemaVersion: 12,
         createdAt: DateTime.utc(2026, 11, 13),
-        log: '',
+        log: _emptyLog,
         settings: const <String, String>{},
       );
       await a.state.backups.restore(plain, fromFile: false);
@@ -493,7 +502,7 @@ void main() {
         appVersion: '0.10.0',
         schemaVersion: 12,
         createdAt: DateTime.utc(2026, 11, 13),
-        log: '',
+        log: _emptyLog,
         settings: const <String, String>{},
         privatePackages: <BackupPrivatePackage>[
           BackupPrivatePackage(
@@ -520,7 +529,7 @@ void main() {
         appVersion: '0.10.0',
         schemaVersion: 12,
         createdAt: DateTime.utc(2026, 11, 13),
-        log: '',
+        log: _emptyLog,
         settings: const <String, String>{},
         privatePackages: <BackupPrivatePackage>[
           BackupPrivatePackage(

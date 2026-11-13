@@ -3270,61 +3270,36 @@ skips them (#519, owner, 2026-10-30: "a `verified` field on cards").
 ## Adding your own deck
 
 A learner's own deck is **one file**: the target and the native text
-together, with no core and layer split, and no rules deck. A learner can
-also get a template for a full language, which is one file too and keeps
-its path (owner, 2026-10-12, #495: "For custom decks, we need to keep it as
-simple as possible. So, no split."). Any deck the app can read in that form
-can be added, a vocab deck, a grammar deck or a reading deck. A custom deck
-lives only in the app's data on the phone and in its backups.
+together, with no core and layer split, and no rules deck (owner, 2026-10-12,
+#495: "For custom decks, we need to keep it as simple as possible. So, no
+split."). Any deck the app can read in that form can be added, a vocab deck,
+a grammar deck or a reading deck. A custom deck lives only in the app's data
+on the phone and in its backups; **nothing is sent anywhere**. Sending a deck
+to the project was retired (owner, 2026-11-06, #1017: "File to file. Offline
+sharing. Nothing to build.").
 
-**What is decided (owner, 2026-10-12, #495; built there, not built yet):**
-
-- **The app numbers every deck and card.** "It will thus use a generated
-  USER series name sequence for the decks and cards to make sure zero
-  overlaps." On upload the app replaces whatever ids the file has. A custom
-  deck's id is **`user-<target>-<native>-NNNN`**, as `user-bn-en-0001`, and
-  a custom card's id is **`<target>-user-NNNNNN`**, as `bn-user-000001`,
-  numbered in order on that phone. The next number is stored and never
-  reused, and a backup and restore keep every id. Course decks never use
-  these series, so a custom deck cannot clash with one, and an id problem
-  is never an error on the review screen.
-- **The codes are two letters** where the language has a two-letter ISO
-  639-1 code (`bn`); a three-letter ISO 639-3 code only for a language with
-  none (`bho`). `ben` is a warning with the fix "Use 'bn'".
-- **The same file again** is recognised by its content: replace it or keep
-  both.
-- **Sending a deck to us** is offered only after it is added. A maintainer
-  then splits it into a core and a layer and gives its cards repo ids
-  `<target>-NNNN`; the repo deck ships a map from the sender's ids, so the
-  sender's progress moves onto the new ids and no other learner is affected
-  (owner, 2026-10-12: "Renumber on adding").
-- **Templates ship without ids,** or with placeholders, and say the app
-  will number the cards. The file the app saves today,
-  [`assets/deck-template.yaml`](https://github.com/aaronified/fluenough/blob/main/assets/deck-template.yaml), still uses
-  the older `hi-my-NNNN` ids that the app asks the learner to write; #495
-  replaces it.
-
-**The validator change this needs.** `tools/validate_decks.py` knows two
-shapes of card id and of deck id, the language and at least four digits
-(`hi-0042`), and a deck id that starts with the language learnt and then
-the language taught from. A custom deck's ids are neither. The review screen
-runs the same checks as the validator ([#495](https://github.com/aaronified/fluenough/issues/495)),
-so the validator needs a mode for a custom deck: it accepts the two user
-series and refuses them in any file under `decks/`, so that the repository
-never holds one and `--next-id` never hands one out. How that mode is
-switched on is for #495 to settle.
-
-**Until #495 is built,** Decks > Add a deck > From a file adds a deck written
-from the template, and the app refuses a file that is not a deck or does
-not parse (its file, line and message are shown), the id of a deck that
-comes with the app, and a card id another deck has: write
-`<language>-my-NNNN`, which no deck in the repository uses, and list a word
-another deck has by `ref`.
+Settings, Your decks, Get a template saves the template
+([`assets/deck-template.yaml`](https://github.com/aaronified/fluenough/blob/main/assets/deck-template.yaml)).
+The app refuses a file that is not a deck or does not parse (its file, line
+and message are shown), the id of a deck that comes with the app, and a card
+id another deck has: write `<language>-my-NNNN`, which no deck in the
+repository uses, and list a word another deck has by `ref`. The same file
+again replaces the deck with that id.
 
 An added deck that names a theme goes at the bottom of that theme's unit,
 through the path's wildcards; one with no theme, or a theme the course
 does not have, goes at the end. An added deck can be removed; what was
 learned from it stays.
+
+**A whole language, or your own version of a course, is not a single file.**
+It is a private language package, a `.fnzip` with the repository's own files
+(cores, layers, a path) and ids that start `fnpd-<code>-`: see
+[Private-Language-Package](Private-Language-Package) and
+[Plan-Private-Languages](Plan-Private-Languages). The app-numbered `user-` ids
+and the renumbering of a deck on adding that #495 planned are replaced by that
+plan: the author writes the ids and the app never renumbers them. A card of a
+private package may carry `replaces: "<built-in card id>"`, which the app reads
+and the repository's validator refuses.
 
 ## Romanisation
 

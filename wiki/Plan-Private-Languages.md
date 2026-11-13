@@ -39,6 +39,22 @@ The owner said not to stop for confirmation (CLAUDE.md, 2026-11-07), so the orch
 | 4 | Packages per language, and the path | One package per language code; a modified private path replaces the built-in path while the package is active |
 | 5 | A code later becoming official | The package is flagged "shadowed" (2.10) |
 
+## Decisions taken building the last slice (tasks 19 to 24)
+
+The orchestrator took these defaults (CLAUDE.md, 2026-11-07: do not stop for confirmation); they stand until the owner says otherwise.
+
+| # | Question | Decision |
+|---|---|---|
+| 1 | What "download a course to change" writes | Copies of the course's **vocab and grammar** cores and their layers, every id rewritten to `fnpd-<code>-`, plus the course's path file **as it is**. The path still names the built-in decks, so an unchanged export teaches what the course did and keeps every card's progress; a learner who edits a copy puts its `fnpd-` id in the path (an edited card is a new card and starts fresh, owner default 5 of 2026-11-13). Facts, sounds, scripts, romanisation, themes, **rules decks and reading decks** are not copied (the path keeps naming them): the first group belongs to the app, and for the rules and reading decks no rewrite that is checked to import has been written |
+| 2 | `replaces` | A card of a package may carry `replaces: "<built-in card id>"`. The deck parser accepts the field in a core or single-file card (and nowhere else); nothing else reads it. The import review counts the cards that carry it, and the cards that are only a `ref`, in the note "N cards replace built-in cards. M stay as they are, by reference". The repository's validator refuses the field. The export does not write it: an unchanged copy replaces nothing |
+| 3 | A course file that uses YAML aliases | Some of the course's own files do (written by a tool); an import refuses an alias. The export writes such a file out in full, as JSON (valid YAML), so what is exported always imports. A deck that still has an id of the language without the prefix after the rewrite is left out with its layers and counted |
+| 4 | A restore and the packages on the phone | It **adds**: each package of the backup is installed through the import's own checks (a lower revision is allowed, a restore replaces), turned off when it would be a fourth active one; a package on the phone that the backup lacks stays, and a backup with no private part changes none. The retired ids a backup carries, and the tombstones of removed packages, are kept |
+| 5 | Backup size | Every backup (the learner's, the update's, the restore copy, the delete copy) carries the packages, stored as the `.fnzip` already is. Up to three packages: at most their own sizes (10 MB each) |
+| 6 | Starter package and template | The starter is the tiny `qaa` fixture with a comment on every part, written as Dart text (`private_starter.dart`) and zipped when saved, so a test keeps it importing clean. Get a template saves the existing single-deck template |
+| 7 | The `deckSend` row | Removed with its feature flag and string; the line under Your decks now says nothing is sent |
+| 8 | The Python `--private` check | `tools/validate_private.py` checks the package (level 0 and 2 mirrored from the app) and then each deck and layer with the validator's own rules, ids rewritten from `fnpd-<code>-` to `<code>-`; the validator, outside `--private`, refuses a `fnpd-` id or a private manifest |
+| 9 | Limits | Unchanged: the measured numbers below leave room under every limit |
+
 ## Goal and non-goals
 
 **Goal.** A learner brings a whole language, or a modified path of one the app teaches, as a private package through Settings, Your decks, and uses it like any course: path, Today, reviews, placement, drills, search. It lives only on the phone and in backups.
@@ -154,9 +170,29 @@ A `q` code never clashes. A real ISO code later added to `languages.yaml`: the p
 
 10 MB `.fnzip`; 30 MB unpacked; ratio guard; 2 MB per file; 1,000 files; 20,000 cards; depth 32; 3 active languages (a fourth asks which to deactivate); no cap on installed packages (disk use is shown on the page). Import runs on an isolate with progress. Measure a 5 MB language on a low-end phone before fixing the numbers (ADR-0047).
 
+### Measured limits (task 24)
+
+Measured on 2026-11-13 with the app's own pure-Dart code (`PrivateExport`, `ZipFiles`, `PrivateCheck`, the `yaml` package) run on the Dart VM 3.13 of a desktop machine, on the real courses of this repository exported with "Download a course to change". **These are desktop numbers, not a phone's.**
+
+| Course | Files | Cards | Text | `.fnzip` | Text / file |
+|---|---|---|---|---|---|
+| Chinese (`zh`) | 572 | 4,379 | 5.34 MB | 1,315,285 B (1.3 MB) | 4.1 |
+| Bengali (`bn`) | 396 | 4,054 | 4.11 MB | 959,898 B (0.9 MB) | 4.3 |
+| Hindustani (`hi`) | 316 | 2,586 | 4.51 MB | 881,190 B (0.8 MB) | 5.1 |
+| Spanish (`es`) | 328 | 2,536 | 3.13 MB | 699,805 B (0.7 MB) | 4.5 |
+| Telugu (`te`) | 270 | 3,625 | 3.51 MB | 734,156 B (0.7 MB) | 4.8 |
+
+- **What binds first.** Against the limits, the largest course (Chinese) uses 57% of the 1,000 files, 22% of the 20,000 cards (cards in cores, not the cells of grammar decks), 18% of the 30 MB unpacked, 13% of the 10 MB file. The largest single file in all the decks is 648,090 bytes (bn-grammar-noun-forms), 32% of the 2 MB limit. No built-in course has more than 571 files. At the observed text-to-file ratio of 4.1 to 5.1 the 30 MB unpacked ceiling is reached at a 6 to 7 MB file, so it binds before the 10 MB file limit would. The 100 times ratio guard was not measured per entry.
+- **Time, desktop VM, one isolate, for Chinese (5.3 MB of text):** copying the course into a package 1.7 to 2.5 s; writing the `.fnzip` 0.35 to 0.4 s; opening it with the limits about 0.05 s (Telugu); level 0 1.1 to 1.2 s; counting 0.7 s; level 2 1.5 s; reading all its YAML once 0.3 s (Telugu). Level 0, counting and level 2 each read the YAML again, and the catalog reads it a fourth time, so an import costs about four reads of the package: about 3.4 s of CPU on the desktop before the catalog parses it.
+- **Not measured:** a phone (the numbers above would be several times higher on a low-end one: ADR-0047's "the app must not lag" has not been checked for an import), the catalog's own parse of a package (it needs Flutter), and a package of 5 MB packed: no real package here is above 1.3 MB, and a synthetic one made by repeating cards compresses unrealistically (ratio 7 to 8), so none is quoted.
+- **Finding.** The import runs the checks on the UI isolate (`stagePrivateArchive`), and the review page waits on them. For a course-sized package that is seconds of work on a desktop and more on a phone. The plan (2.11) said "import runs on an isolate with progress": **this is not built**, and is left as a follow-up. The pure checks (`ZipFiles.decode`, level 0, counts, level 2) take only plain data, so they can move into an isolate without touching the store.
+- **Numbers adjusted:** none. Every limit has room for the app's largest course, and a language of 20,000 cards would need about 4 to 5 MB packed.
+
 ## 3. Byte-sized tasks, in dependency order
 
 H = Haiku-suitable; S = Sonnet only. One pull request each; CI only (no local test runs). Never touch: `decks/`, the drift schema (no migration), built-in ids, `assets/languages.yaml`.
+
+**Status (2026-11-13):** tasks 1 to 24 are built (slices 1 to 4). What is left is the follow-up noted under "Measured limits": the checks on an isolate.
 
 **Slice 1: import one tiny private language folder and see its first unit (tasks 1 to 6).**
 
