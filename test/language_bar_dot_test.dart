@@ -87,7 +87,6 @@ void main() {
       testWidgets('a language with a card due shows the dot, and its label '
           'says so (${mode.name}, ${scale}x)', (tester) async {
         final semantics = tester.ensureSemantics();
-        addTearDown(semantics.dispose);
         final state = await _pumpBar(
           tester,
           _learner(daysAgo: 60),
@@ -104,6 +103,7 @@ void main() {
           find.bySemanticsLabel(RegExp(l10n.languageHasCardsToDo('.*'))),
           findsWidgets,
         );
+        semantics.dispose();
       });
     }
   }
