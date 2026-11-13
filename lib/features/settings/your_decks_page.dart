@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
@@ -20,20 +22,42 @@ import 'settings_section_page.dart';
 /// decks the learner added, grouped by the language learned and then the
 /// language it is taught from, each with Open, Send it to us (incoming) and
 /// Remove, which asks first and is in the error colour.
-class YourDecksPage extends StatelessWidget {
+class YourDecksPage extends StatefulWidget {
   const YourDecksPage({super.key});
+
+  @override
+  State<YourDecksPage> createState() => _YourDecksPageState();
 
   /// The decks the learner added, in the order they were found.
   static List<DeckEntry> ownDecks(Iterable<DeckEntry> decks) => <DeckEntry>[
     for (final entry in decks)
       if (!entry.bundled && !entry.private) entry,
   ];
+}
+
+class _YourDecksPageState extends State<YourDecksPage> {
+  PrivatePackagesController? _private;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (_private == null) {
+      _private = PrivatePackagesController(AppScope.read(context));
+      unawaited(_private!.load());
+    }
+  }
+
+  @override
+  void dispose() {
+    _private?.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
-    final own = ownDecks(state.decks);
+    final own = YourDecksPage.ownDecks(state.decks);
     // Grouped by "language › from native", in the order first met.
     final groups = <(String, String), List<DeckEntry>>{};
     for (final entry in own) {
@@ -46,9 +70,10 @@ class YourDecksPage extends StatelessWidget {
     }
     return SettingsSectionPage(
       title: l10n.settingsRowDecks,
+      listenable: _private,
       builder: (context) => <Widget>[
         // Private language packages (#1017): their own part of the page.
-        const PrivatePackagesSection(),
+        ..._private!.rows(context),
         GroupedList.settings(
           children: <Widget>[
             GroupedTile(

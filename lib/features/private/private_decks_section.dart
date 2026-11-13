@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../../app/app_scope.dart';
+import '../../app/app_state.dart';
 import '../../app/features.dart';
 import '../../app/private_languages.dart';
 import '../../core/logs/log_entry.dart';
@@ -30,31 +31,26 @@ class _Entry {
   String get name => manifest?.language.name ?? package.id;
 }
 
-/// The private language packages of Your decks (#1017, Plan-Private-
-/// Languages tasks 13 to 16; mockup `private-your-decks`, variants A): the
-/// Add a private language action, the rows for what comes later, and a group
-/// for each package, or the empty state.
-class PrivatePackagesSection extends StatefulWidget {
-  const PrivatePackagesSection({super.key});
+/// What the private language packages part of Your decks shows and does
+/// (#1017, Plan-Private-Languages tasks 13 to 16; mockup
+/// `private-your-decks`, variants A): the Add a private language action, the
+/// rows for what comes later, and a group for each package, or the empty
+/// state. The page asks it for [rows], one widget a row, so the page's list
+/// stays lazy and its length is known; it listens to it for what it loaded.
+class PrivatePackagesController extends ChangeNotifier {
+  PrivatePackagesController(this.state);
 
-  @override
-  State<PrivatePackagesSection> createState() => _PrivatePackagesSectionState();
-}
-
-class _PrivatePackagesSectionState extends State<PrivatePackagesSection> {
+  final AppState state;
   List<_Entry>? _entries;
-  bool _asked = false;
+  bool _disposed = false;
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    if (_asked) return;
-    _asked = true;
-    _load();
+  void dispose() {
+    _disposed = true;
+    super.dispose();
   }
 
-  Future<void> _load() async {
-    final state = AppScope.read(context);
+  Future<void> load() async {
     final entries = <_Entry>[];
     try {
       final store = state.privateStore;
@@ -79,43 +75,41 @@ class _PrivatePackagesSectionState extends State<PrivatePackagesSection> {
     } on Object catch (e, stack) {
       state.log.error(describeError('Private decks: page load', e, stack));
     }
-    if (mounted) setState(() => _entries = entries);
+    if (_disposed) return;
+    _entries = entries;
+    notifyListeners();
   }
 
-  Future<void> _add() async {
+  Future<void> _add(BuildContext context) async {
     await choosePrivatePackage(context);
-    if (mounted) await _load();
+    await load();
   }
 
-  Future<void> _switch(_Entry entry, bool on) async {
+  Future<void> _switch(BuildContext context, _Entry entry, bool on) async {
     final l10n = AppLocalizations.of(context)!;
-    final state = AppScope.read(context);
     final id = entry.package.id;
     if (!on) {
       if (await state.setPrivateActive(id, active: false) !=
               PrivateActivation.done &&
-          mounted) {
+          context.mounted) {
         showAppSnackBar(context, l10n.privateSwitchFailed);
       }
     } else {
       final done = await state.setPrivateActive(id, active: true);
-      if (!mounted) return;
+      if (!context.mounted) return;
       if (done == PrivateActivation.needsDeactivation) {
-        final active = <PrivatePackage>[
-          for (final e in _entries ?? const <_Entry>[])
-            if (e.package.active && e.package.id != id) e.package,
-        ];
+        final all = _entries ?? const <_Entry>[];
         final off = await showPrivateCapSheet(
           context,
           newId: id,
           newName: entry.name,
-          active: active,
-          names: <String, String>{
-            for (final e in _entries ?? const <_Entry>[]) e.package.id: e.name,
-          },
+          active: <PrivatePackage>[
+            for (final e in all)
+              if (e.package.active && e.package.id != id) e.package,
+          ],
+          names: <String, String>{for (final e in all) e.package.id: e.name},
           sizes: <String, int>{
-            for (final e in _entries ?? const <_Entry>[])
-              e.package.id: e.package.size,
+            for (final e in all) e.package.id: e.package.size,
           },
         );
         if (off != null) await state.swapPrivate(off: off, on: id);
@@ -123,12 +117,11 @@ class _PrivatePackagesSectionState extends State<PrivatePackagesSection> {
         showAppSnackBar(context, l10n.privateSwitchFailed);
       }
     }
-    if (mounted) await _load();
+    await load();
   }
 
-  Future<void> _remove(_Entry entry) async {
+  Future<void> _remove(BuildContext context, _Entry entry) async {
     final l10n = AppLocalizations.of(context)!;
-    final state = AppScope.read(context);
     final name = entry.name;
     final modified = entry.manifest?.kind == PrivateKind.modifiedLanguage;
     final choice = await showDialog<_RemoveChoice>(
@@ -169,12 +162,13 @@ class _PrivatePackagesSectionState extends State<PrivatePackagesSection> {
         );
       },
     );
-    if (choice == null || choice == _RemoveChoice.cancel || !mounted) return;
+    if (choice == null || choice == _RemoveChoice.cancel || !context.mounted)
+      return;
     final removed = await state.removePrivate(
       entry.package.id,
       deleteProgress: choice == _RemoveChoice.delete,
     );
-    if (!mounted) return;
+    if (!context.mounted) return;
     if (removed) {
       state.haptics.danger();
       showAppSnackBar(context, l10n.privateRemoved(name));
@@ -182,109 +176,107 @@ class _PrivatePackagesSectionState extends State<PrivatePackagesSection> {
       state.haptics.error();
       showAppSnackBar(context, l10n.privateRemoveFailed);
     }
-    await _load();
+    await load();
   }
 
-  @override
-  Widget build(BuildContext context) {
+  /// The rows of the part, each its own widget.
+  List<Widget> rows(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    final state = AppScope.of(context);
     if (!state.canAddPrivate) {
-      return Padding(
-        padding: const EdgeInsetsDirectional.symmetric(
-          horizontal: AppSizes.textInset,
-        ),
-        child: Text(l10n.privateUnavailable, style: settingsHelpStyle(theme)),
-      );
-    }
-    final entries = _entries;
-    final active = entries?.where((e) => e.package.active).length ?? 0;
-    final used = entries?.fold<int>(0, (n, e) => n + e.package.size) ?? 0;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: <Widget>[
+      return <Widget>[
         Padding(
           padding: const EdgeInsetsDirectional.symmetric(
             horizontal: AppSizes.textInset,
           ),
-          child: Text(l10n.privateIntro, style: theme.textTheme.bodyMedium),
+          child: Text(l10n.privateUnavailable, style: settingsHelpStyle(theme)),
         ),
-        const SizedBox(height: 12),
-        FilledButton.icon(
-          key: const ValueKey<String>('private-add'),
-          style: FilledButton.styleFrom(
-            minimumSize: const Size.fromHeight(AppSizes.primaryButton),
-          ),
-          onPressed: _add,
-          icon: const Icon(Icons.upload_file_outlined),
-          label: Text(l10n.privateAdd),
-        ),
-        const SizedBox(height: 12),
-        GroupedList.settings(
-          children: <Widget>[
-            GroupedTile(
-              leading: const Icon(Icons.download_outlined),
-              title: l10n.privateDownload,
-              subtitle: l10n.privateDownloadDesc,
-              trailing: const Icon(Icons.chevron_right),
-              feature: Feature.privateDownload,
-            ),
-            GroupedTile(
-              leading: const Icon(Icons.description_outlined),
-              title: l10n.privateStarter,
-              subtitle: l10n.privateStarterDesc,
-              trailing: const Icon(Icons.chevron_right),
-              feature: Feature.privateStarter,
-            ),
-          ],
-        ),
-        const SizedBox(height: 20),
-        if (entries == null)
-          const SizedBox.shrink()
-        else if (entries.isEmpty)
-          _Empty()
-        else ...<Widget>[
+      ];
+    }
+    final entries = _entries;
+    final active = entries?.where((e) => e.package.active).length ?? 0;
+    final used = entries?.fold<int>(0, (n, e) => n + e.package.size) ?? 0;
+    return <Widget>[
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
           Padding(
             padding: const EdgeInsetsDirectional.symmetric(
               horizontal: AppSizes.textInset,
             ),
-            child: Semantics(
-              header: true,
-              child: Text(
-                l10n.privateListHeading(entries.length),
-                style: theme.textTheme.groupLabel.copyWith(
-                  color: theme.colorScheme.primary,
+            child: Text(l10n.privateIntro, style: theme.textTheme.bodyMedium),
+          ),
+          const SizedBox(height: 12),
+          FilledButton.icon(
+            key: const ValueKey<String>('private-add'),
+            style: FilledButton.styleFrom(
+              minimumSize: const Size.fromHeight(AppSizes.primaryButton),
+            ),
+            onPressed: () => _add(context),
+            icon: const Icon(Icons.upload_file_outlined),
+            label: Text(l10n.privateAdd),
+          ),
+        ],
+      ),
+      GroupedList.settings(
+        children: <Widget>[
+          GroupedTile(
+            leading: const Icon(Icons.download_outlined),
+            title: l10n.privateDownload,
+            subtitle: l10n.privateDownloadDesc,
+            trailing: const Icon(Icons.chevron_right),
+            feature: Feature.privateDownload,
+          ),
+          GroupedTile(
+            leading: const Icon(Icons.description_outlined),
+            title: l10n.privateStarter,
+            subtitle: l10n.privateStarterDesc,
+            trailing: const Icon(Icons.chevron_right),
+            feature: Feature.privateStarter,
+          ),
+        ],
+      ),
+      if (entries != null && entries.isEmpty) _Empty(),
+      if (entries != null && entries.isNotEmpty) ...<Widget>[
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsetsDirectional.symmetric(
+                horizontal: AppSizes.textInset,
+              ),
+              child: Semantics(
+                header: true,
+                child: Text(
+                  l10n.privateListHeading(entries.length),
+                  style: theme.textTheme.groupLabel.copyWith(
+                    color: theme.colorScheme.primary,
+                  ),
                 ),
               ),
             ),
-          ),
-          const SizedBox(height: 4),
-          Padding(
-            padding: const EdgeInsetsDirectional.symmetric(
-              horizontal: AppSizes.textInset,
+            const SizedBox(height: 4),
+            Padding(
+              padding: const EdgeInsetsDirectional.symmetric(
+                horizontal: AppSizes.textInset,
+              ),
+              child: Text(
+                l10n.privateUsage(active, privateSizeText(used)),
+                style: settingsHelpStyle(theme),
+              ),
             ),
-            child: Text(
-              l10n.privateUsage(active, privateSizeText(used)),
-              style: settingsHelpStyle(theme),
-            ),
-          ),
-          const SizedBox(height: 12),
-          for (final entry in entries) ...<Widget>[
-            _Group(
-              entry: entry,
-              slotsFull:
-                  entries.where((e) => e.package.active).length >=
-                  maxActivePrivatePackages,
-              onSwitch: (on) => _switch(entry, on),
-              onUpdate: _add,
-              onRemove: () => _remove(entry),
-            ),
-            const SizedBox(height: 12),
           ],
-        ],
+        ),
+        for (final entry in entries)
+          _Group(
+            entry: entry,
+            slotsFull: active >= maxActivePrivatePackages,
+            onSwitch: (on) => _switch(context, entry, on),
+            onUpdate: () => _add(context),
+            onRemove: () => _remove(context, entry),
+          ),
       ],
-    );
+    ];
   }
 }
 
