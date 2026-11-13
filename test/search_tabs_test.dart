@@ -188,6 +188,9 @@ void main() {
     testWidgets('lists the words in the Words tab', (tester) async {
       usePhone(tester);
       await _show(tester, state, 'house');
+      // The strip scrolls: bring the tab into view as a thumb would.
+      await tester.ensureVisible(_tab('Words'));
+      await tester.pumpAndSettle();
       await tester.tap(_tab('Words'));
       await tester.pumpAndSettle();
       expect(find.text('casa'), findsOneWidget);
@@ -228,8 +231,23 @@ void main() {
     ) async {
       usePhone(tester);
       await _show(tester, state, 'libro');
-      expect(find.text(_l10n.searchAboveYourLevel('B1')), findsWidgets);
-      expect(find.text('libro · book'), findsNothing);
+      // The match is a card of a unit above the level: look at every tab.
+      var marked = false;
+      final tabs = find.descendant(
+        of: find.byType(TabBar),
+        matching: find.byType(Tab),
+      );
+      for (var i = 0; i < tabs.evaluate().length; i++) {
+        await tester.ensureVisible(tabs.at(i));
+        await tester.pumpAndSettle();
+        await tester.tap(tabs.at(i));
+        await tester.pumpAndSettle();
+        marked =
+            marked ||
+            find.text(_l10n.searchAboveYourLevel('B1')).evaluate().isNotEmpty;
+        expect(find.text('libro · book'), findsNothing);
+      }
+      expect(marked, isTrue);
     });
 
     testWidgets('marks a topic above your level, which still opens', (
@@ -300,6 +318,9 @@ void main() {
     ) async {
       usePhone(tester);
       await _show(tester, state, '');
+      // The path opens at the unit up next, with the bar scrolled away.
+      await tester.ensureVisible(find.byType(TextField));
+      await tester.pumpAndSettle();
       await tester.tap(find.byType(TextField));
       await tester.pumpAndSettle();
       expect(find.text(_l10n.searchFindByType), findsOneWidget);

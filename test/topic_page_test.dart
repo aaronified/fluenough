@@ -54,7 +54,18 @@ void main() {
       expect(find.text(_l10n.topicDeckCards(2, 2)), findsOneWidget);
       expect(find.text(_l10n.topicCardsHeading(2, 2)), findsOneWidget);
       expect(find.text('casa'), findsOneWidget);
-      // A related topic above the level is listed, marked.
+      // A related topic above the level is listed, marked (the page builds
+      // its rows lazily, so scroll to the end first).
+      await tester.scrollUntilVisible(
+        find.text('Library words'),
+        200,
+        scrollable: find
+            .descendant(
+              of: find.byType(TopicPage),
+              matching: find.byType(Scrollable),
+            )
+            .first,
+      );
       expect(find.text('Library words'), findsOneWidget);
       expect(find.text(_l10n.topicAboveTitle.toUpperCase()), findsNothing);
     });
@@ -224,7 +235,11 @@ void main() {
         const UnitPage(deckId: 'zz-en-last'),
         state: state,
       );
-      expect(find.bySemanticsLabel(_l10n.topicAboveYourLevelCue), findsWidgets);
+      // The chip merges its lock's label with the topic's name.
+      expect(
+        find.bySemanticsLabel(RegExp(_l10n.topicAboveYourLevelCue)),
+        findsWidgets,
+      );
       handle.dispose();
     });
 
