@@ -68,7 +68,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.7.0
 
-13 approved open issues.
+12 approved open issues.
 
 **Enhancements**
 
@@ -81,7 +81,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 **Other**
 
 - [#474](https://github.com/aaronified/fluenough/issues/474) Onboarding journey: where the major functions live and what they do, replayable from Settings
-- [#91](https://github.com/aaronified/fluenough/issues/91) Pictures as cues: image format, licence and validator, for Write and Hear
 - [#97](https://github.com/aaronified/fluenough/issues/97) Parental supervision: child profiles with no abuse-related content, and admin controls
 - [#403](https://github.com/aaronified/fluenough/issues/403) Plan: reviewing decks in the app, sent by mail
 - [#509](https://github.com/aaronified/fluenough/issues/509) Milestone exams: reading passages and questions at each B1 milestone, required to continue
@@ -188,9 +187,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#46](https://github.com/aaronified/fluenough/issues/46) Let the user choose the interface language, with translations in plain txt files
 - [#58](https://github.com/aaronified/fluenough/issues/58) Review the unreviewed Hindi and Bengali grammar decks
 - [#92](https://github.com/aaronified/fluenough/issues/92) Sample deck pack: one example of every deck kind, as a download
-- [#94](https://github.com/aaronified/fluenough/issues/94) Proverb and idiom decks
-- [#95](https://github.com/aaronified/fluenough/issues/95) Bengali compound-verb deck; phrasal verbs if English becomes a course
-- [#96](https://github.com/aaronified/fluenough/issues/96) Offensive words behind an adult gate
 - [#99](https://github.com/aaronified/fluenough/issues/99) Culture decks: beyond the basics (tracking)
 - [#100](https://github.com/aaronified/fluenough/issues/100) Culture deck: cultural heroes
 - [#101](https://github.com/aaronified/fluenough/issues/101) Culture deck: local mythology and folklore
@@ -199,7 +195,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#104](https://github.com/aaronified/fluenough/issues/104) Culture deck: classic literature
 - [#105](https://github.com/aaronified/fluenough/issues/105) Slang decks: add current (Gen Z) slang
 - [#106](https://github.com/aaronified/fluenough/issues/106) Culture deck: love
-- [#107](https://github.com/aaronified/fluenough/issues/107) New deck topics are data: a section field, and question types after the skill model
 - [#108](https://github.com/aaronified/fluenough/issues/108) Home-screen widget: cards due and the streak
 - [#110](https://github.com/aaronified/fluenough/issues/110) Dialogue decks: short role-plays, one side each
 - [#111](https://github.com/aaronified/fluenough/issues/111) Native-speaker audio for cards, where TTS is weak
@@ -271,6 +266,8 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#343](https://github.com/aaronified/fluenough/issues/343) Listening in context: scheduling and the drill
 - [#344](https://github.com/aaronified/fluenough/issues/344) Listening in context: content, in phases
 - [#345](https://github.com/aaronified/fluenough/issues/345) Release signing: developer console account and registration
+- [#346](https://github.com/aaronified/fluenough/issues/346) Release signing: prove ownership in the APK
+- [#348](https://github.com/aaronified/fluenough/issues/348) Word-order tiles: extra tiles per card
 - [#349](https://github.com/aaronified/fluenough/issues/349) Word-order tiles: content for 1,098 cards
 - [#350](https://github.com/aaronified/fluenough/issues/350) Language paths: new languages, one full course each
 - [#351](https://github.com/aaronified/fluenough/issues/351) New course: Punjabi
