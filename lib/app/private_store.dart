@@ -63,6 +63,11 @@ abstract interface class PrivateStore implements DeckSource {
   /// installed or cannot be read. For an update to compare with.
   Future<Map<String, String>?> readPackage(String id);
 
+  /// The retired ids kept for the package [id] after it was removed (its
+  /// tombstone): what a package imported again under [id] may not reuse. Empty
+  /// when none, or when it cannot be read.
+  Future<List<String>> tombstone(String id);
+
   /// Deletes the package [id]. Review history stays. Its retired ids are
   /// kept (a tombstone) so a package imported again under [id] cannot reuse
   /// them. True when it did.
@@ -529,6 +534,10 @@ class FilePrivateStore implements PrivateStore {
   }
 
   @override
+  Future<List<String>> tombstone(String id) async =>
+      (await _readTombstones())[id] ?? const <String>[];
+
+  @override
   Future<bool> remove(String id) async {
     if (!_isPackageId(id)) return false;
     try {
@@ -646,6 +655,10 @@ class MemoryPrivateStore implements PrivateStore {
     final files = _files[id];
     return files == null ? null : Map<String, String>.of(files);
   }
+
+  @override
+  Future<List<String>> tombstone(String id) async =>
+      _tombstones[id] ?? const <String>[];
 
   @override
   Future<bool> remove(String id) async {

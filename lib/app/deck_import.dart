@@ -119,6 +119,11 @@ abstract interface class DeckFiles {
   /// Asks for a deck file, under [title]: its name and text, or null if
   /// none was picked.
   Future<({String name, String text})?> open({required String title});
+
+  /// Asks for a file, under [title], and reads its bytes: a private language
+  /// package, a `.fnzip` (#1017). Its name and bytes, or null if none was
+  /// picked.
+  Future<({String name, List<int> bytes})?> openBytes({required String title});
 }
 
 /// [DeckFiles] through `file_picker`.
@@ -139,5 +144,14 @@ class PickerDeckFiles implements DeckFiles {
     final file = await FilePicker.pickFile(dialogTitle: title);
     if (file == null) return null;
     return (name: file.name, text: await file.xFile.readAsString());
+  }
+
+  @override
+  Future<({String name, List<int> bytes})?> openBytes({
+    required String title,
+  }) async {
+    final file = await FilePicker.pickFile(dialogTitle: title);
+    if (file == null) return null;
+    return (name: file.name, bytes: await file.xFile.readAsBytes());
   }
 }

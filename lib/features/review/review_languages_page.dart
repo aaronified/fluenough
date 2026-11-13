@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/routes.dart';
-import '../../core/data/spoken_languages.dart';
 import '../../core/review/review_pairs.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
@@ -17,6 +16,7 @@ import '../downloads/download_text.dart';
 import '../downloads/language_download_row.dart';
 import '../settings/settings_controls.dart';
 import 'review_waiting.dart';
+import '../../app/language_directory_loader.dart';
 
 /// Opens Languages you review.
 Future<void> showReviewLanguages(BuildContext context) =>
@@ -59,20 +59,20 @@ class _ReviewLanguagesPageState extends State<ReviewLanguagesPage> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     if (_knownScripts.isNotEmpty) return;
-    DefaultAssetBundle.of(context)
-        .loadString(spokenLanguagesAsset)
-        .then(parseSpokenLanguages)
-        .then((languages) {
-          if (!mounted) return;
-          setState(() {
-            _knownScripts = <String, String>{
-              for (final l in languages) l.code: ?l.script,
-            };
-            _knownNames = <String, String>{
-              for (final l in languages) l.code: l.name,
-            };
-          });
-        }, onError: (Object _) {});
+    loadLanguageDirectory(
+      DefaultAssetBundle.of(context),
+      AppScope.maybeRead(context),
+    ).then((languages) {
+      if (!mounted) return;
+      setState(() {
+        _knownScripts = <String, String>{
+          for (final l in languages) l.code: ?l.script,
+        };
+        _knownNames = <String, String>{
+          for (final l in languages) l.code: l.name,
+        };
+      });
+    }, onError: (Object _) {});
   }
 
   @override

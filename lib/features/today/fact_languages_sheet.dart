@@ -6,6 +6,7 @@ import '../../core/data/spoken_languages.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/hint.dart';
+import '../../app/language_directory_loader.dart';
 
 /// The small button at the top left of Today's fact card (#926): it opens
 /// the choice of the languages the fact is shown in. Icon only, so it has a
@@ -106,12 +107,12 @@ class _FactLanguagesSheetState extends State<FactLanguagesSheet> {
     super.didChangeDependencies();
     if (_asked || _all != null) return;
     _asked = true;
-    DefaultAssetBundle.of(context)
-        .loadString(spokenLanguagesAsset)
-        .then(parseSpokenLanguages)
-        .then((list) {
-          if (mounted) setState(() => _all = list);
-        }, onError: (Object _) {});
+    loadLanguageDirectory(
+      DefaultAssetBundle.of(context),
+      AppScope.maybeRead(context),
+    ).then((list) {
+      if (mounted) setState(() => _all = list);
+    }, onError: (Object _) {});
   }
 
   String _name(AppState state, String code) =>

@@ -20,6 +20,7 @@ import 'add_language_page.dart';
 import 'language_skills_sheet.dart';
 import 'language_views.dart';
 import 'skill_widgets.dart';
+import '../../app/language_directory_loader.dart';
 
 /// The list's filter pills, in their order: Learning, Know, then the four
 /// skills. A skill's pill matches a language where that skill is not Leave.
@@ -72,14 +73,14 @@ class _LanguagesPageState extends State<LanguagesPage> {
     super.didChangeDependencies();
     if (_asked || _all != null) return;
     _asked = true;
-    DefaultAssetBundle.of(context)
-        .loadString(spokenLanguagesAsset)
-        .then(parseSpokenLanguages)
-        .then((list) {
-          if (!mounted) return;
-          setState(() => _all = list);
-          _openQuery();
-        }, onError: (Object _) {});
+    loadLanguageDirectory(
+      DefaultAssetBundle.of(context),
+      AppScope.maybeRead(context),
+    ).then((list) {
+      if (!mounted) return;
+      setState(() => _all = list);
+      _openQuery();
+    }, onError: (Object _) {});
   }
 
   /// Opens Add a language at [LanguagesPage.initialQuery], once, when the

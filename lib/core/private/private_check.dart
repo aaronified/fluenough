@@ -66,6 +66,14 @@ class PrivateFinding {
 
   /// An English sentence for the finding, with its place first.
   String get message {
+    final where = file == null ? '' : '$file${line == null ? '' : ':$line'}: ';
+    return '$where$text';
+  }
+
+  /// The English sentence without its place: what a screen shows beside the
+  /// file and line, as it shows a parser's message (exception text, which
+  /// AGENTS.md rule 10 leaves untranslated).
+  String get text {
     String p(String key) => params[key] ?? '';
     final what = switch (token) {
       'archiveTooBig' =>
@@ -135,8 +143,7 @@ class PrivateFinding {
             'given to a card again',
       _ => token,
     };
-    final where = file == null ? '' : '$file${line == null ? '' : ':$line'}: ';
-    return '$where$what';
+    return what;
   }
 
   @override

@@ -59,6 +59,7 @@ These were fully built, so their mockups were deleted. Code comments still
 name them. They are in git at 19d200b
 (`git show 19d200b:docs/mockups/<name>.html`):
 
+- `private-your-decks.html`, `private-import-review.html` and `private-update-summary.html`: private language packages (#1017, `wiki/Plan-Private-Languages.md` tasks 8, 14 to 18), approved by the owner, 2026-11-13 ("mockup is fine"), built in the third slice and removed once built (owner, 2026-10-16: "Remove when built"). They are in git history at `432a51e`: `git show 432a51e:docs/mockups/private-your-decks.html`, with the `.md` notes of the same names.
 - `reviewer-mode.html`: reviewer mode (#471, #476, #477, #508), approved by
   the owner, 2026-10-17 ("The reviewer mode mockup looks fine. Build it."),
   built and removed once built (owner, 2026-10-16: "Remove when built"; all

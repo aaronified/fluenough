@@ -533,12 +533,14 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
         : 0;
     if (removed == 0 && taken == 0) return 0;
     final pairs = <ProgressKey>{for (final r in keep) r.key};
-    _parameters = SkillParameters(
-      fitted: <SkillKey, FittedParameters>{
-        for (final MapEntry(:key, :value) in _parameters.fitted.entries)
-          if (key.language != erasure.language) key: value,
-      },
-    );
+    if (erasure.idPrefix == null) {
+      _parameters = SkillParameters(
+        fitted: <SkillKey, FittedParameters>{
+          for (final MapEntry(:key, :value) in _parameters.fitted.entries)
+            if (key.language != erasure.language) key: value,
+        },
+      );
+    }
     if (taken > 0) {
       _withdrawals.removeWhere((w) => w.language == erasure.language);
     }
