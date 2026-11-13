@@ -67,10 +67,11 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.7.0
 
-12 approved open issues.
+13 approved open issues.
 
 **Enhancements**
 
+- [#204](https://github.com/aaronified/fluenough/issues/204) Profiles and a PIN lock
 - [#204](https://github.com/aaronified/fluenough/issues/204) Profiles and a PIN lock
 - [#495](https://github.com/aaronified/fluenough/issues/495) Your decks: custom decks, templates, and an upload review that validates and fixes
 - [#522](https://github.com/aaronified/fluenough/issues/522) Question engine: questions derived from card data (ADR-0039)
@@ -155,6 +156,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 ## Approved, not scheduled
 
 - [#169](https://github.com/aaronified/fluenough/issues/169) Lessons that start from songs and films learners already know
+- [#170](https://github.com/aaronified/fluenough/issues/170) Bengali: start the course with Ekla Chalo Re
 - [#170](https://github.com/aaronified/fluenough/issues/170) Bengali: start the course with Ekla Chalo Re
 - [#411](https://github.com/aaronified/fluenough/issues/411) Shareable progress image or summary, built from the review log
 - [#520](https://github.com/aaronified/fluenough/issues/520) Regional flavours: a deck per language after A2, noting major regional variations
@@ -340,6 +342,8 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1199](https://github.com/aaronified/fluenough/issues/1199) Language: Indonesian: full deck format
 - [#1200](https://github.com/aaronified/fluenough/issues/1200) Language: Persian: full deck format
 - [#1201](https://github.com/aaronified/fluenough/issues/1201) Language: Pashto: full deck format
+- [#1202](https://github.com/aaronified/fluenough/issues/1202) Language: Mycenaean Greek: full deck format
+- [#1203](https://github.com/aaronified/fluenough/issues/1203) Language: Sumerian: full deck format
 
 ## Plans
 
