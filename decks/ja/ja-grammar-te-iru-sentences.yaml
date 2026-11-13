@@ -137,3 +137,22 @@ cards:
       - { id: "w1", ref: "ja-0364", kind: "word" }
       - { id: "w2", ref: "ja-0341", kind: "word" }
     rules: ["ja-rule-te-iru"]
+  - id: "ja-4577"
+    target: "ははここにすわっています。"
+    words: ["はは", "は", "ここ", "に", "すわって", "います"]
+    reading: "haha wa koko ni suwatte imasu."
+    ipa: "haha wa koko ni sɯwatte imasɯ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "はは", ref: "ja-0201" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ここ", ref: "ja-0554" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "すわって", ref: "ja-0370" }
+      - { word: "います", base: "いる", reading: "iru" }
+    confusables:
+      - { id: "w1", ref: "ja-0370", kind: "word" }
+      - { id: "w2", ref: "ja-0371", kind: "word" }
+    rules: ["ja-rule-te-iru"]

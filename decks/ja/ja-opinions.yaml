@@ -1279,15 +1279,15 @@ cards:
       - { id: "n1", kind: "usage" }
     bases: "self"
     examples:
-      - target: "ほんをかいました。ところが、よみません。"
-        words: ["ほん", "を", "かいました", "ところが", "よみません"]
-        reading: "hon o kaimashita. tokoroga, yomimasen."
-        ipa: "hoɴ o kaimaɕita tokoɾoɡa jomimaseɴ"
+      - target: "ほんをかいました。ところが、よみませんでした。"
+        words: ["ほん", "を", "かいました", "ところが", "よみませんでした"]
+        reading: "hon o kaimashita. tokoroga, yomimasendeshita."
+        ipa: "hoɴ o kaimaɕita tokoɾoɡa jomimaseɴdeɕita"
         bases:
           - { word: "ほん", ref: "ja-1180" }
           - { word: "を", base: "を", reading: "o" }
           - { word: "かいました", ref: "ja-0356" }
-          - { word: "よみません", ref: "ja-0345" }
+          - { word: "よみませんでした", ref: "ja-0345" }
       - target: "ともだちをまちました。ところが、だれもきませんでした。"
         words: ["ともだち", "を", "まちました", "ところが", "だれ", "も", "きませんでした"]
         reading: "tomodachi o machimashita. tokoroga, dare mo kimasendeshita."
@@ -1309,23 +1309,24 @@ cards:
       - { id: "n1", kind: "usage" }
     bases: "self"
     examples:
-      - target: "もしかしたら、あしたはあめです。"
-        words: ["もしかしたら", "あした", "は", "あめ", "です"]
-        reading: "moshikashitara, ashita wa ame desu."
-        ipa: "moɕikaɕitaɾa aɕita wa ame desɯ"
+      - target: "もしかしたら、あしたはあめかもしれません。"
+        words: ["もしかしたら", "あした", "は", "あめ", "かもしれません"]
+        reading: "moshikashitara, ashita wa ame kamoshiremasen."
+        ipa: "moɕikaɕitaɾa aɕita wa ame kamoɕiɾemaseɴ"
         bases:
           - { word: "あした", ref: "ja-0513" }
           - { word: "は", base: "は", reading: "wa" }
           - { word: "あめ", ref: "ja-1454" }
-          - { word: "です", base: "です", reading: "desu" }
-      - target: "もしかしたら、ともだちがきます。"
-        words: ["もしかしたら", "ともだち", "が", "きます"]
-        reading: "moshikashitara, tomodachi ga kimasu."
-        ipa: "moɕikaɕitaɾa tomodatɕi ɡa kimasɯ"
+          - { word: "かもしれません", base: "かもしれない", reading: "kamoshirenai" }
+      - target: "もしかしたら、ともだちがくるかもしれません。"
+        words: ["もしかしたら", "ともだち", "が", "くる", "かもしれません"]
+        reading: "moshikashitara, tomodachi ga kuru kamoshiremasen."
+        ipa: "moɕikaɕitaɾa tomodatɕi ɡa kɯɾɯ kamoɕiɾemaseɴ"
         bases:
           - { word: "ともだち", ref: "ja-0143" }
           - { word: "が", base: "が", reading: "ga" }
-          - { word: "きます", ref: "ja-0349" }
+          - { word: "くる", ref: "ja-0349" }
+          - { word: "かもしれません", base: "かもしれない", reading: "kamoshirenai" }
   - id: "ja-4489"
     target: "どちらかといえば"
     words: ["どちらかといえば"]
@@ -1446,15 +1447,16 @@ cards:
           - { word: "は", base: "は", reading: "wa" }
           - { word: "ねて", ref: "ja-0352" }
           - { word: "います", base: "いる", reading: "iru" }
-      - target: "どうやら、あしたはいそがしいです。"
-        words: ["どうやら", "あした", "は", "いそがしい", "です"]
-        reading: "douyara, ashita wa isogashii desu."
-        ipa: "doːjaɾa aɕita wa isoɡaɕiː desɯ"
+      - target: "どうやら、ともだちはいえにいません。"
+        words: ["どうやら", "ともだち", "は", "いえ", "に", "いません"]
+        reading: "douyara, tomodachi wa ie ni imasen."
+        ipa: "doːjaɾa tomodatɕi wa ie ni imaseɴ"
         bases:
-          - { word: "あした", ref: "ja-0513" }
+          - { word: "ともだち", ref: "ja-0143" }
           - { word: "は", base: "は", reading: "wa" }
-          - { word: "いそがしい", ref: "ja-0476" }
-          - { word: "です", base: "です", reading: "desu" }
+          - { word: "いえ", ref: "ja-1153" }
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "いません", base: "いる", reading: "iru" }
   - id: "ja-4494"
     target: "まさか"
     words: ["まさか"]
@@ -1472,14 +1474,13 @@ cards:
         bases:
           - { word: "わすれました", ref: "ja-0578" }
           - { word: "か", base: "か", reading: "ka" }
-      - target: "まさか、ともだちがきませんか。"
-        words: ["まさか", "ともだち", "が", "きません", "か"]
-        reading: "masaka, tomodachi ga kimasen ka."
-        ipa: "masaka tomodatɕi ɡa kimaseɴ ka"
+      - target: "まさか、あめですか。"
+        words: ["まさか", "あめ", "です", "か"]
+        reading: "masaka, ame desu ka."
+        ipa: "masaka ame desɯ ka"
         bases:
-          - { word: "ともだち", ref: "ja-0143" }
-          - { word: "が", base: "が", reading: "ga" }
-          - { word: "きません", ref: "ja-0349" }
+          - { word: "あめ", ref: "ja-1454" }
+          - { word: "です", base: "です", reading: "desu" }
           - { word: "か", base: "か", reading: "ka" }
   - id: "ja-4495"
     target: "ともかく"

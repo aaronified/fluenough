@@ -1087,8 +1087,8 @@ cards:
     notes:
       "n1": "ところが (tokoroga) comes after a sentence and brings a result that is the opposite of what was expected."
     examples:
-      "ほんをかいました。ところが、よみません。":
-        native: "I bought a book; but I do not read it."
+      "ほんをかいました。ところが、よみませんでした。":
+        native: "I bought a book; but I did not read it."
         bases:
           "を": { meaning: "(marks the thing acted on)" }
       "ともだちをまちました。ところが、だれもきませんでした。":
@@ -1100,17 +1100,18 @@ cards:
   "ja-4488":
     native: "perhaps; maybe"
     notes:
-      "n1": "もしかしたら (moshikashitara) says that something is possible but not sure; it often ends with か (ka) or です (desu)."
+      "n1": "もしかしたら (moshikashitara) says that something is possible but not sure; it usually goes with かもしれません (kamoshiremasen), may be."
     examples:
-      "もしかしたら、あしたはあめです。":
-        native: "Perhaps it will be rain tomorrow."
+      "もしかしたら、あしたはあめかもしれません。":
+        native: "Perhaps it will rain tomorrow."
         bases:
           "は": { meaning: "(marks the topic)" }
-          "です": { meaning: "is (polite)" }
-      "もしかしたら、ともだちがきます。":
-        native: "Maybe my friend will come."
+          "かもしれません": { meaning: "might; may be" }
+      "もしかしたら、ともだちがくるかもしれません。":
+        native: "My friend may come."
         bases:
           "が": { meaning: "(marks the one who does the action)" }
+          "かもしれません": { meaning: "might; may be" }
   "ja-4489":
     native: "if anything; on the whole"
     notes:
@@ -1172,11 +1173,12 @@ cards:
         bases:
           "は": { meaning: "(marks the topic)" }
           "います": { meaning: "to be, to stay (for people and animals)" }
-      "どうやら、あしたはいそがしいです。":
-        native: "It seems I will be busy tomorrow."
+      "どうやら、ともだちはいえにいません。":
+        native: "Apparently my friend is not at home."
         bases:
           "は": { meaning: "(marks the topic)" }
-          "です": { meaning: "is (polite)" }
+          "に": { meaning: "(in, at, to)" }
+          "いません": { meaning: "to be, to stay (for people and animals), in the negative" }
   "ja-4494":
     native: "surely not"
     notes:
@@ -1186,10 +1188,10 @@ cards:
         native: "Surely you have not forgotten?"
         bases:
           "か": { meaning: "(marks a question)" }
-      "まさか、ともだちがきませんか。":
-        native: "Surely my friend will not fail to come?"
+      "まさか、あめですか。":
+        native: "Surely it is not rain?"
         bases:
-          "が": { meaning: "(marks the one who does the action)" }
+          "です": { meaning: "is (polite)" }
           "か": { meaning: "(marks a question)" }
   "ja-4495":
     native: "anyway; at any rate"
