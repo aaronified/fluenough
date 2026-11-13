@@ -165,7 +165,12 @@ Future<void> _openOver(WidgetTester tester, Widget page, _World world) async {
 }
 
 Future<AppState> worldForDiag() async {
-  _tiny = await tinyPackage();
+  final root = Directory(privateFixtureFolder);
+  _tiny = <String, String>{
+    for (final f in root.listSync(recursive: true))
+      if (f is File && f.path.endsWith('.yaml'))
+        f.path.substring(root.path.length + 1): f.readAsStringSync(),
+  };
   return (await _world(
     codes: <String>['qaa', 'qab', 'qac', 'qad'],
     off: <String>{'qad'},
