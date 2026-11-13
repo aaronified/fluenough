@@ -50,7 +50,12 @@ extension SituationState on AppState {
     if (file == null) return const <Situation>[];
     final ids = settings.situationsShownOf(language);
     if (ids == null) return file.situations.take(situationsOnCard).toList();
-    return <Situation>[for (final id in ids) ?file.byId(id)];
+    final picked = <Situation>[for (final id in ids) ?file.byId(id)];
+    // A pick with nothing left in the file (stale ids) is no pick: the card
+    // must not be empty.
+    return picked.isEmpty
+        ? file.situations.take(situationsOnCard).toList()
+        : picked;
   }
 
   /// What Today's card shows for [language]: the first [situationsOnCard]

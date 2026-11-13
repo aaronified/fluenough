@@ -1984,10 +1984,12 @@ class SettingsNotifier extends ChangeNotifier {
     if (pick('situations_shown', _parseJsonMap) case final v?) {
       for (final MapEntry(:key, :value) in v.entries) {
         if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! List) continue;
-        setSituationsShown(key, <String>[
+        final ids = <String>[
           for (final id in value)
             if (id is String && id.isNotEmpty) id,
-        ]);
+        ];
+        // An empty list is no choice: the card would have no buttons.
+        if (ids.isNotEmpty) setSituationsShown(key, ids);
       }
     }
     for (final (name, unsupported) in <(String, bool)>[

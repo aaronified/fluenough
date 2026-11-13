@@ -8,6 +8,7 @@ import '../../app/situations.dart';
 import '../../core/models/situation.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/incoming.dart';
 import 'situation_visuals.dart';
 
 /// The popup behind the pencil on Today's Situations card (#1145; owner,
@@ -117,7 +118,10 @@ class _SituationsEditorState extends State<SituationsEditor> {
                     runSpacing: gap,
                     children: <Widget>[
                       for (final s in tiles)
-                        SizedBox(width: width, child: _tile(l10n, s, spoken)),
+                        SizedBox(
+                          width: width,
+                          child: _tile(l10n, s, spoken, width),
+                        ),
                     ],
                   );
                 },
@@ -144,7 +148,12 @@ class _SituationsEditorState extends State<SituationsEditor> {
     );
   }
 
-  Widget _tile(AppLocalizations l10n, Situation s, List<String> spoken) {
+  Widget _tile(
+    AppLocalizations l10n,
+    Situation s,
+    List<String> spoken,
+    double width,
+  ) {
     final index = _chosen.indexOf(s.id);
     final on = index >= 0;
     final title = s.titleFor(spoken);
@@ -172,14 +181,14 @@ class _SituationsEditorState extends State<SituationsEditor> {
       },
       child: face,
     );
-    if (!on) return Opacity(opacity: kFadedTile, child: semantic);
+    if (!on) return Opacity(opacity: kIncomingOpacity, child: semantic);
     return DragTarget<String>(
       onWillAcceptWithDetails: (details) => details.data != s.id,
       onAcceptWithDetails: (details) => _moveTo(details.data, s.id),
       builder: (context, candidates, _) => LongPressDraggable<String>(
         data: s.id,
         feedback: SizedBox(
-          width: 96,
+          width: width,
           child: Material(
             color: Colors.transparent,
             child: _TileFace(
@@ -190,7 +199,7 @@ class _SituationsEditorState extends State<SituationsEditor> {
             ),
           ),
         ),
-        childWhenDragging: Opacity(opacity: kFadedTile, child: face),
+        childWhenDragging: Opacity(opacity: kIncomingOpacity, child: face),
         child: DecoratedBox(
           position: DecorationPosition.foreground,
           decoration: BoxDecoration(
@@ -208,9 +217,6 @@ class _SituationsEditorState extends State<SituationsEditor> {
     );
   }
 }
-
-/// How faded a tile that is not chosen is drawn.
-const double kFadedTile = 0.38;
 
 /// One tile: the situation's icon and name in its colours, and while it is
 /// chosen its place in the order.

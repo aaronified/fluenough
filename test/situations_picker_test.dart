@@ -213,4 +213,18 @@ void main() {
       <String>['s8', 's2'],
     );
   });
+
+  test('a pick whose ids are all gone, or an empty restored pick, leaves '
+      'the default six', () async {
+    final state = _learner();
+    await state.load();
+    state.settings.setSituationsShown('hi', <String>['gone', 'also-gone']);
+    expect(
+      <String>[for (final s in state.pickedSituations('hi')) s.id],
+      <String>['s1', 's2', 's3', 's4', 's5', 's6'],
+    );
+    final restored = SettingsNotifier()
+      ..restore(<String, String>{'situations_shown': '{"hi":[]}'});
+    expect(restored.situationsShownOf('hi'), isNull);
+  });
 }
