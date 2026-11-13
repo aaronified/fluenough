@@ -172,21 +172,28 @@ async function main() {
     await page.waitForSelector('flt-semantics-placeholder', { state: 'attached', timeout: 60000 });
     await page.evaluate(() => document.querySelector('flt-semantics-placeholder').click());
   };
-  // The launch's deck update check can finish after the tab bar first draws,
-  // and its modal dialog then hides Today: give it time, answer "Not now"
-  // while it is up, and go on only once Today is back and no dialog is left.
-  const settleDeckUpdate = async () => {
-    await page.waitForTimeout(5000);
-    const end = Date.now() + 20000;
+  // The launch's deck update check can finish at any time while the tab bar
+  // draws, and its modal dialog then hides Today. Wait for Today, answering
+  // "Not now" whenever the dialog is up; done once Today is visible with no
+  // dialog on two polls in a row, 2.5 s apart.
+  const waitForToday = async (what, timeout) => {
+    const end = Date.now() + timeout;
+    let clean = 0;
     while (Date.now() < end) {
       if (await has('Deck updates')) {
-        console.log('  a deck update was offered after the launch: answered "Not now"');
+        console.log('  a deck update was offered on the launch: answered "Not now"');
         await press('Not now', ['button']);
+        clean = 0;
+      } else if (await has('Today')) {
+        if (++clean >= 2) return;
+        await page.waitForTimeout(2500);
+        continue;
+      } else {
+        clean = 0;
       }
-      if ((await has('Today')) && !(await has('Deck updates'))) return;
       await page.waitForTimeout(250);
     }
-    throw new Error('a deck update dialog stayed on screen after the launch');
+    throw new Error(`${what}: no "Today" within ${timeout / 1000}s`);
   };
   const scrollDown = async () => {
     await page.mouse.move(215, 450);
@@ -248,8 +255,7 @@ async function main() {
 
     await step('Today, Decks, Progress and Settings are reachable', async () => {
       // The first decks are downloaded from GitHub first.
-      await waitFor('Today', 'the tab bar', 150000);
-      await settleDeckUpdate();
+      await waitForToday('the tab bar', 150000);
       await page.waitForTimeout(1000);
       const tabs = [
         ['Today', 'Start'],
@@ -287,19 +293,9 @@ async function main() {
     await step('a reload opens the app on Today: progress and settings are kept', async () => {
       await openApp();
       // The decks come from GitHub's decks-live branch, which changes under
-      // the test: if the launch finds a deck update (a modal dialog that
-      // hides the tab bar), the learner's answer is "Not now". What is
-      // tested is the kept progress, not which decks are live.
-      const end = Date.now() + 60000;
-      while (Date.now() < end && !(await has('Today')) && !(await has('Deck updates'))) {
-        await page.waitForTimeout(250);
-      }
-      if (await has('Deck updates')) {
-        console.log('  a deck update was offered on the launch: answered "Not now"');
-        await press('Not now', ['button']);
-      }
-      await waitFor('Today', 'the tab bar after a reload', 60000);
-      await settleDeckUpdate();
+      // the test: if the launch finds a deck update, the learner's answer is
+      // "Not now". What is tested is the kept progress, not the live decks.
+      await waitForToday('the tab bar after a reload', 60000);
       if (await has('Get started')) throw new Error('first launch again after a reload');
     });
 
@@ -333,7 +329,7 @@ async function main() {
         offline = true;
         await context.setOffline(true);
         await openApp();
-        await waitFor('Today', 'the app offline, under its service worker', 60000);
+        await waitForToday('the app offline, under its service worker', 60000);
         await context.setOffline(false);
         offline = false;
       }
