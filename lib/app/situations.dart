@@ -52,7 +52,7 @@ extension SituationState on AppState {
     if (ids == null) return file.situations.take(situationsOnCard).toList();
     return <Situation>[
       for (final id in ids)
-        if (file.byId(id) case final situation?) situation,
+        ?file.byId(id),
     ];
   }
 

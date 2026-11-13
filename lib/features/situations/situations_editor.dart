@@ -89,7 +89,7 @@ class _SituationsEditorState extends State<SituationsEditor> {
     final byId = <String, Situation>{for (final s in _all) s.id: s};
     final tiles = <Situation>[
       for (final id in _chosen)
-        if (byId[id] case final s?) s,
+        ?byId[id],
       for (final s in _all)
         if (!_chosen.contains(s.id)) s,
     ];
