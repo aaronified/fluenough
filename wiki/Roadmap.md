@@ -198,7 +198,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#218](https://github.com/aaronified/fluenough/issues/218) Plan: Fluenough on the web, installable
 - [#219](https://github.com/aaronified/fluenough/issues/219) Plan: conversation practice with an AI, within what you know
 - [#220](https://github.com/aaronified/fluenough/issues/220) Plan: read your own text, and make cards from it
-- [#220](https://github.com/aaronified/fluenough/issues/220) Plan: read your own text, and make cards from it
 - [#221](https://github.com/aaronified/fluenough/issues/221) Plan: readings made in the app
 - [#222](https://github.com/aaronified/fluenough/issues/222) Plan: building sentences by reasoning, and cloze
 - [#223](https://github.com/aaronified/fluenough/issues/223) Plan: achievements, not as aggressive as Duolingo
@@ -352,6 +351,9 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1210](https://github.com/aaronified/fluenough/issues/1210) Language: Classical Greek: full deck format
 - [#1211](https://github.com/aaronified/fluenough/issues/1211) Language: Archaic Greek: full deck format
 - [#1212](https://github.com/aaronified/fluenough/issues/1212) Language: Koine Greek: full deck format
+- [#1213](https://github.com/aaronified/fluenough/issues/1213) Language: Pali: full deck format
+- [#1214](https://github.com/aaronified/fluenough/issues/1214) Language: Aramaic (Imperial): full deck format
+- [#1215](https://github.com/aaronified/fluenough/issues/1215) Language: Ashokan Prakrit: full deck format
 
 ## Plans
 
