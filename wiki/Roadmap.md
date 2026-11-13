@@ -271,6 +271,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#362](https://github.com/aaronified/fluenough/issues/362) New course: Swedish
 - [#363](https://github.com/aaronified/fluenough/issues/363) New course: Norwegian
 - [#364](https://github.com/aaronified/fluenough/issues/364) New course: Yiddish
+- [#364](https://github.com/aaronified/fluenough/issues/364) New course: Yiddish
 - [#365](https://github.com/aaronified/fluenough/issues/365) New course: Russian
 - [#366](https://github.com/aaronified/fluenough/issues/366) New course: Polish
 - [#367](https://github.com/aaronified/fluenough/issues/367) New course: Serbian/Croatian
@@ -318,6 +319,12 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1177](https://github.com/aaronified/fluenough/issues/1177) Language: Marathi: full deck format
 - [#1178](https://github.com/aaronified/fluenough/issues/1178) Language: Santali: full deck format
 - [#1179](https://github.com/aaronified/fluenough/issues/1179) Language: Sindhi: full deck format
+- [#1180](https://github.com/aaronified/fluenough/issues/1180) Language: Bhojpuri: full deck format
+- [#1181](https://github.com/aaronified/fluenough/issues/1181) Language: Tulu: full deck format
+- [#1182](https://github.com/aaronified/fluenough/issues/1182) Language: Rajasthani: full deck format
+- [#1183](https://github.com/aaronified/fluenough/issues/1183) Language: Magahi: full deck format
+- [#1184](https://github.com/aaronified/fluenough/issues/1184) Language: Chhattisgarhi: full deck format
+- [#1185](https://github.com/aaronified/fluenough/issues/1185) Language: Awadhi: full deck format
 
 ## Plans
 
