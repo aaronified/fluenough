@@ -184,7 +184,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#34](https://github.com/aaronified/fluenough/issues/34) Complex script rendering: Nastaliq, conjuncts, matras
 - [#46](https://github.com/aaronified/fluenough/issues/46) Let the user choose the interface language, with translations in plain txt files
 - [#58](https://github.com/aaronified/fluenough/issues/58) Review the unreviewed Hindi and Bengali grammar decks
-- [#92](https://github.com/aaronified/fluenough/issues/92) Sample deck pack: one example of every deck kind, as a download
 - [#99](https://github.com/aaronified/fluenough/issues/99) Culture decks: beyond the basics (tracking)
 - [#101](https://github.com/aaronified/fluenough/issues/101) Culture deck: local mythology and folklore
 - [#102](https://github.com/aaronified/fluenough/issues/102) Culture deck: cuisine
@@ -229,7 +228,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#312](https://github.com/aaronified/fluenough/issues/312) AI conversation: privacy, and tests with a fake model
 - [#313](https://github.com/aaronified/fluenough/issues/313) Import text: the reader and matching words to cards
 - [#314](https://github.com/aaronified/fluenough/issues/314) Import text: the card maker
-- [#315](https://github.com/aaronified/fluenough/issues/315) In-app readings: the three no-hint fixes in tools/transcribe.py
 - [#316](https://github.com/aaronified/fluenough/issues/316) In-app readings: a Dart port in lib/core
 - [#317](https://github.com/aaronified/fluenough/issues/317) Sentence building: owner decisions before building
 - [#318](https://github.com/aaronified/fluenough/issues/318) Sentence building: the English sentence bank
@@ -297,7 +295,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#386](https://github.com/aaronified/fluenough/issues/386) New course: Somali
 - [#387](https://github.com/aaronified/fluenough/issues/387) New course: Quechua
 - [#388](https://github.com/aaronified/fluenough/issues/388) New course: Esperanto
-- [#425](https://github.com/aaronified/fluenough/issues/425) Remove the analyzer bound once build_runner supports 14.5.0
 - [#472](https://github.com/aaronified/fluenough/issues/472) Language themes: a colour, icon and background image for each language
 - [#665](https://github.com/aaronified/fluenough/issues/665) English Braille: a facts file (qbe-facts.yaml)
 - [#722](https://github.com/aaronified/fluenough/issues/722) Conversation mode: transcribe two people talking, in real time
