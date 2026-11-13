@@ -189,6 +189,187 @@ class FilePrivateStore implements PrivateStore {
     final target = _folder(id);
     final old = Directory('${_staging.path}/$id.old');
     final fresh = Directory('${_staging.path}/$id');
+    final marker = _marker(id);
+    PrivatePackage? entry;
+    if (await marker.exists()) {
+      try {
+        final json = jsonDecode(await marker.readAsString());
+        entry = PrivatePackage.fromJson(json);
+      } on Object catch (e, stack) {
+        _fail('could not read a commit marker', e, stack);
+      }
+    }
+    if (entry != null && !await fresh.exists() && await target.exists()) {
+      final all = await _readPackages();
+      final current = all.where((p) => p.id == id).firstOrNull;
+      if (current == null || current.importedAt.isBefore(entry.importedAt)) {
+        final merged = PrivatePackage(
+          id: entry.id,
+          revision: entry.revision,
+          kind: entry.kind,
+          size: entry.size,
+          importedAt: entry.importedAt,
+          active: entry.active,
+          retired: _sorted(<String>[...entry.retired, ...?current?.retired]),
+        );
+        final tombstones = await _readTombstones();
+        tombstones.remove(id);
+        await _writeIndex(<PrivatePackage>[
+          for (final p in all)
+            if (p.id != id) p,
+          merged,
+        ], tombstones: tombstones);
+      }
+      _log?.warning('Private decks: finished an update after a crash');
+      return;
+    }
+    if (await old.exists()) {
+      if (await target.exists()) await target.delete(recursive: true);
+      await old.rename(target.path);
+      _log?.warning('Private decks: restored a package after a crash');
+    }
+  }
+
+  void _fail(String what, Object error, StackTrace stack) =>
+      _log?.error(describeError('Private decks: $what', error, stack));
+
+  @override
+  Future<List<PrivatePackage>> packages() async {
+    await (_recovered ??= _recover());
+    return _readPackages();
+  }
+
+  Future<List<PrivatePackage>> _readPackages() async {
+    try {
+      if (!await _index.exists()) return const <PrivatePackage>[];
+      final json = jsonDecode(await _index.readAsString());
+      final list = json is Map<Object?, Object?> ? json['packages'] : null;
+      if (list is! List<Object?>) {
+        _log?.warning('Private decks: the index has no list of packages');
+        return const <PrivatePackage>[];
+      }
+      return <PrivatePackage>[
+        for (final item in list) ?PrivatePackage.fromJson(item),
+      ];
+    } on Object catch (e, stack) {
+      _fail('could not read the index', e, stack);
+      return const <PrivatePackage>[];
+    }
+  }
+
+  /// The retired ids of removed packages, by package id: a package removed
+  /// and imported again may not reuse them.
+  Future<Map<String, List<String>>> _readTombstones() async {
+    try {
+      if (!await _index.exists()) return <String, List<String>>{};
+      final json = jsonDecode(await _index.readAsString());
+      final raw = json is Map<Object?, Object?> ? json['tombstones'] : null;
+      if (raw is! Map<Object?, Object?>) return <String, List<String>>{};
+      return <String, List<String>>{
+        for (final MapEntry(:key, :value) in raw.entries)
+          if (key is String && value is List<Object?>)
+            key: _sorted(<String>[
+              for (final r in value)
+                if (r is String) r,
+            ]),
+      };
+    } on Object catch (e, stack) {
+      _fail('could not read the retired ids of removed packages', e, stack);
+      return <String, List<String>>{};
+    }
+  }
+
+  /// Writes the index atomically (a `.new` file, then a rename).
+  /// [tombstones] null keeps the ones already there.
+  Future<void> _writeIndex(
+    List<PrivatePackage> packages, {
+    Map<String, List<String>>? tombstones,
+  }) async {
+    final kept = tombstones ?? await _readTombstones();
+    await root.create(recursive: true);
+    final temp = File('${_index.path}.new');
+    await temp.writeAsString(
+      jsonEncode(<String, Object?>{
+        'packages': <Object?>[for (final p in packages) p.toJson()],
+        if (kept.isNotEmpty) 'tombstones': kept,
+      }),
+      flush: true,
+    );
+    await temp.rename(_index.path);
+  }
+
+  @override
+  Future<List<String>> list() async {
+    try {
+      final paths = <String>[];
+      for (final package in await packages()) {
+        if (!package.active || !_isPackageId(package.id)) continue;
+        final folder = _folder(package.id);
+        if (!await folder.exists()) continue;
+        final prefix = '${folder.path}/';
+        final files = <String>[
+          await for (final entity in folder.list(recursive: true))
+            if (entity is File && entity.path.startsWith(prefix))
+              entity.path.substring(prefix.length).replaceAll('\\', '/'),
+        ];
+        paths.addAll(_catalogPaths(package.id, files));
+      }
+      return paths..sort();
+    } on Object catch (e, stack) {
+      _fail('could not list the packages', e, stack);
+      return const <String>[];
+    }
+  }
+
+  @override
+  Future<String> read(String path) async {
+    final parts = _split(path);
+    if (parts == null ||
+        !_isPackageId(parts.$1) ||
+        !isSafePackagePath(parts.$2)) {
+      throw StateError('no private deck file at $path');
+    }
+    try {
+      return await File('${root.path}/${parts.$1}/${parts.$2}').readAsString();
+    } on Object catch (e, stack) {
+      _fail('could not read a file', e, stack);
+      rethrow;
+    }
+  }
+
+  @override
+  Future<PrivateInstall> install(
+    String id,
+    Map<String, String> files, {
+    required int revision,
+    required String kind,
+    bool? active,
+    List<String>? retired,
+  }) async {
+    if (!_isPackageId(id) || files.isEmpty) {
+      _log?.warning(
+        'Private decks: refused to install a package with a bad '
+        'id or no files',
+      );
+      return PrivateInstall.failed;
+    }
+    for (final path in files.keys) {
+      if (!isSafePackagePath(path)) {
+        _log?.warning(
+          'Private decks: refused to install a package with a '
+          'file named outside its folder',
+        );
+        return PrivateInstall.failed;
+      }
+    }
+    final packagesBefore = await packages(); // recovers first
+    final before = packagesBefore.where((p) => p.id == id).firstOrNull;
+    final willBeActive = active ?? before?.active ?? true;
+    if (willBeActive && _overCap(packagesBefore, id)) {
+      _log?.warning('Private decks: a package needs another to be inactive');
+      return PrivateInstall.needsDeactivation;
+    }
+    final fresh = Directory('${_staging.path}/$id');
     final old = Directory('${_staging.path}/$id.old');
     var movedOld = false;
     try {
