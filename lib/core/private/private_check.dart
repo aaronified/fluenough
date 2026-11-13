@@ -185,6 +185,8 @@ class PrivateCounts {
     this.cards = 0,
     this.units = 0,
     this.bytes = 0,
+    this.replacing = 0,
+    this.byReference = 0,
   });
 
   final int files;
@@ -201,6 +203,13 @@ class PrivateCounts {
 
   /// Bytes of the files, unpacked.
   final int bytes;
+
+  /// Cards that say they replace a built-in card (`replaces`).
+  final int replacing;
+
+  /// Cards that are only a reference to a built-in or another card (`ref`):
+  /// they stay as they are, and keep their progress.
+  final int byReference;
 }
 
 /// Kinds of file that are data about a language, not a deck or a layer.
@@ -453,6 +462,8 @@ abstract final class PrivateCheck {
     var cards = 0;
     var units = 0;
     var bytes = 0;
+    var replacing = 0;
+    var byReference = 0;
     for (final text in files.values) {
       bytes += utf8.encode(text).length;
     }
@@ -462,6 +473,14 @@ abstract final class PrivateCheck {
       } else if (file.isDeck) {
         decks++;
         cards += _cardCount(file);
+        final list = file.root['cards'];
+        if (list is YamlList) {
+          for (final card in list) {
+            if (card is! YamlMap) continue;
+            if (card['replaces'] is String) replacing++;
+            if (card['ref'] is String) byReference++;
+          }
+        }
       } else if (file.kind == 'path' && file.root['units'] is YamlList) {
         units = (file.root['units'] as YamlList).length;
       }
@@ -473,6 +492,8 @@ abstract final class PrivateCheck {
       cards: cards,
       units: units,
       bytes: bytes,
+      replacing: replacing,
+      byReference: byReference,
     );
   }
 

@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'dart:io' show ZLibDecoder;
+import 'dart:io' show ZLibDecoder, ZLibEncoder;
 import 'dart:typed_data';
 
 /// What [ZipFiles.decode] refuses beyond a damaged zip, for an archive that
@@ -45,8 +45,10 @@ class ZipLimits {
 /// A zip archive of small files, read and written without a package
 /// (docs/BACKUP-FORMAT.md): the container of a backup (#470).
 ///
-/// Written stored, not compressed: a backup is a few text files, and a
-/// stored zip is the simplest one that every unzip tool opens. Read, a
+/// Written stored by default: a backup is a few text files, and a stored zip
+/// is the simplest one that every unzip tool opens. A private language
+/// package (#1017) is written deflated (`encode(deflate: true)`), because its
+/// 10 MB limit is on the compressed file. Read, a
 /// stored or a deflated entry is accepted, so a backup that was unzipped
 /// and zipped again by hand still restores. Nothing else of the format is
 /// used: no encryption, no zip64, no multi-disk archives.
@@ -59,8 +61,15 @@ abstract final class ZipFiles {
   /// ask for gigabytes.
   static const int maxEntryBytes = 256 * 1024 * 1024;
 
-  /// [files], by path, as a zip written at [at].
-  static Uint8List encode(Map<String, List<int>> files, {DateTime? at}) {
+  /// [files], by path, as a zip written at [at]. With [deflate] each entry
+  /// is compressed when that makes it smaller, and stored when it does not;
+  /// the bytes are the same for the same input, so a package exported twice
+  /// is the same file.
+  static Uint8List encode(
+    Map<String, List<int>> files, {
+    DateTime? at,
+    bool deflate = false,
+  }) {
     final stamp = _dos(at ?? DateTime.utc(1980));
     final out = BytesBuilder(copy: false);
     final central = BytesBuilder(copy: false);
@@ -69,30 +78,39 @@ abstract final class ZipFiles {
       final name = utf8.encode(path);
       final crc = crc32(data);
       final offset = out.length;
+      var method = 0;
+      var packed = data;
+      if (deflate && data.isNotEmpty) {
+        final squeezed = ZLibEncoder(raw: true, level: 9).convert(data);
+        if (squeezed.length < data.length) {
+          method = 8;
+          packed = squeezed;
+        }
+      }
       out
         ..add(_u32(_localSignature))
         ..add(_u16(20))
         ..add(_u16(0x0800)) // names are UTF-8
-        ..add(_u16(0)) // stored
+        ..add(_u16(method))
         ..add(_u16(stamp.time))
         ..add(_u16(stamp.date))
         ..add(_u32(crc))
-        ..add(_u32(data.length))
+        ..add(_u32(packed.length))
         ..add(_u32(data.length))
         ..add(_u16(name.length))
         ..add(_u16(0))
         ..add(name)
-        ..add(data);
+        ..add(packed);
       central
         ..add(_u32(_centralSignature))
         ..add(_u16(20))
         ..add(_u16(20))
         ..add(_u16(0x0800))
-        ..add(_u16(0))
+        ..add(_u16(method))
         ..add(_u16(stamp.time))
         ..add(_u16(stamp.date))
         ..add(_u32(crc))
-        ..add(_u32(data.length))
+        ..add(_u32(packed.length))
         ..add(_u32(data.length))
         ..add(_u16(name.length))
         ..add(_u16(0)) // extra

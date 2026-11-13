@@ -14,7 +14,7 @@ CHANGELOG = """# Changelog
 
 ### Added
 
-- A new thing (#1).
+- **A new thing.** It works.
 
 ## [0.5.1] - 2026-10-19
 
@@ -50,7 +50,7 @@ class PrepareReleaseTest(unittest.TestCase):
         text = self.read("CHANGELOG.md")
         self.assertIn(
             "## [Unreleased]\n\n## [0.5.2] - 2026-10-20\n\n### Added\n\n"
-            "- A new thing (#1).\n\n## [0.5.1] - 2026-10-19\n",
+            "- **A new thing.** It works.\n\n## [0.5.1] - 2026-10-19\n",
             text,
         )
         self.assertEqual(text.count("A new thing"), 1)
@@ -58,7 +58,7 @@ class PrepareReleaseTest(unittest.TestCase):
     def _empty_unreleased_fails_and_writes_nothing(self):
         self.write(
             "CHANGELOG.md",
-            CHANGELOG.replace("### Added\n\n- A new thing (#1).\n\n", ""),
+            CHANGELOG.replace("### Added\n\n- **A new thing.** It works.\n\n", ""),
         )
         with self.assertRaisesRegex(prepare_release.ReleaseError, "empty"):
             prepare_release.prepare(self.root, "0.5.2", "2026-10-20")
@@ -76,12 +76,22 @@ class PrepareReleaseTest(unittest.TestCase):
             prepare_release.prepare(self.root, "v0.5.2", "2026-10-20")
 
     def _unreleased_as_last_section(self):
-        self.write("CHANGELOG.md", "# Changelog\n\n## [Unreleased]\n\n- Only.\n")
+        self.write("CHANGELOG.md", "# Changelog\n\n## [Unreleased]\n\n- **Only.** Shown.\n")
         prepare_release.prepare(self.root, "0.6.0", "2026-10-20")
         self.assertEqual(
             self.read("CHANGELOG.md"),
-            "# Changelog\n\n## [Unreleased]\n\n## [0.6.0] - 2026-10-20\n\n- Only.\n",
+            "# Changelog\n\n## [Unreleased]\n\n## [0.6.0] - 2026-10-20\n\n- **Only.** Shown.\n",
         )
+
+    def _bad_unreleased_line_fails_and_writes_nothing(self):
+        self.write(
+            "CHANGELOG.md",
+            CHANGELOG.replace("- **A new thing.** It works.", "- CI: a new thing."),
+        )
+        with self.assertRaisesRegex(prepare_release.ReleaseError, "line 7"):
+            prepare_release.prepare(self.root, "0.5.2", "2026-10-20")
+        self.assertEqual(self.read("pubspec.yaml"), PUBSPEC)
+        self.assertEqual(self.read("lib/app/app_info.dart"), APP_INFO)
 
     def _notes_are_the_versions_section(self):
         self.assertEqual(
@@ -90,7 +100,7 @@ class PrepareReleaseTest(unittest.TestCase):
         prepare_release.prepare(self.root, "0.5.2", "2026-10-20")
         self.assertEqual(
             prepare_release.notes_for(self.read("CHANGELOG.md"), "0.5.2"),
-            "### Added\n\n- A new thing (#1).\n",
+            "### Added\n\n- **A new thing.** It works.\n",
         )
 
     def _notes_of_a_missing_or_empty_version_fail(self):
@@ -148,6 +158,7 @@ class PrepareReleaseTest(unittest.TestCase):
             self._empty_unreleased_fails_and_writes_nothing,
             self._not_higher_fails,
             self._bad_version_fails,
+            self._bad_unreleased_line_fails_and_writes_nothing,
         )
         for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
@@ -158,6 +169,35 @@ class PrepareReleaseTest(unittest.TestCase):
                     getattr(fresh, case.__name__)()
                 finally:
                     fresh.doCleanups()
+
+    def test_unreleased_lines_must_show_well_in_the_app(self) -> None:
+        # (case, the bullet or heading lines, the line number of the problem or None)
+        cases = (
+            ("backtick passes", "- `tools/x.py`: a developer note.\n", None),
+            ("bold headline passes", "- **Headline.** Detail.\n", None),
+            ("CI prefix fails", "- CI: test shard weights refreshed.\n", 5),
+            ("plain sentence fails", "- Some plain sentence.\n", 5),
+            (
+                "repeated heading fails",
+                "### Fixed\n\n- **A.** a.\n\n### Fixed\n\n- **B.** b.\n",
+                9,
+            ),
+            (
+                "clean section passes, later sections not checked",
+                "### Added\n\n- **A.** a.\n\n### Fixed\n\n- `x`: b.\n\n"
+                "## [0.5.1] - 2026-10-19\n\n- CI: old.\n",
+                None,
+            ),
+        )
+        head = "# Changelog\n\n## [Unreleased]\n\n"
+        for name, body, line in cases:
+            with self.subTest(name):
+                problems = prepare_release.unreleased_problems(head + body)
+                if line is None:
+                    self.assertEqual(problems, [])
+                else:
+                    self.assertEqual(len(problems), 1)
+                    self.assertTrue(problems[0].startswith(f"line {line}:"), problems[0])
 
 
 if __name__ == "__main__":

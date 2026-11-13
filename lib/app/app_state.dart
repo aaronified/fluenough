@@ -507,6 +507,9 @@ class AppState extends ChangeNotifier {
     restored: _downloadRestored,
     completedWorks: () => recommendationProgress.completed,
     restoreMarks: recommendationProgress.replaceMarks,
+    privateSnapshot: () => privateBackupSnapshot(),
+    restorePrivate: (packages, tombstones) =>
+        restorePrivatePackages(packages, tombstones),
   );
 
   /// After a restore, the languages the backup lists that are not on the

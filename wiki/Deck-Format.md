@@ -3270,61 +3270,42 @@ skips them (#519, owner, 2026-10-30: "a `verified` field on cards").
 ## Adding your own deck
 
 A learner's own deck is **one file**: the target and the native text
-together, with no core and layer split, and no rules deck. A learner can
-also get a template for a full language, which is one file too and keeps
-its path (owner, 2026-10-12, #495: "For custom decks, we need to keep it as
-simple as possible. So, no split."). Any deck the app can read in that form
-can be added, a vocab deck, a grammar deck or a reading deck. A custom deck
-lives only in the app's data on the phone and in its backups.
+together, with no core and layer split, and no rules deck (owner, 2026-10-12,
+#495: "For custom decks, we need to keep it as simple as possible. So, no
+split."). Any deck the app can read in that form can be added, a vocab deck,
+a grammar deck or a reading deck. A custom deck lives only in the app's data
+on the phone and in its backups; **nothing is sent anywhere**. Sending a deck
+to the project was retired (owner, 2026-11-06, #1017: "File to file. Offline
+sharing. Nothing to build.").
 
-**What is decided (owner, 2026-10-12, #495; built there, not built yet):**
+Settings, Your decks, Get a template saves the template
+([`assets/deck-template.yaml`](https://github.com/aaronified/fluenough/blob/main/assets/deck-template.yaml)).
+The app refuses a file that is not a deck or does not parse (its file, line
+and message are shown), the id of a deck that comes with the app, and a card
+id another deck has: write `<language>-my-NNNN`, which no deck in the
+repository uses, and list a word another deck has by `ref`. The same file
+again replaces the deck with that id.
 
-- **The app numbers every deck and card.** "It will thus use a generated
-  USER series name sequence for the decks and cards to make sure zero
-  overlaps." On upload the app replaces whatever ids the file has. A custom
-  deck's id is **`user-<target>-<native>-NNNN`**, as `user-bn-en-0001`, and
-  a custom card's id is **`<target>-user-NNNNNN`**, as `bn-user-000001`,
-  numbered in order on that phone. The next number is stored and never
-  reused, and a backup and restore keep every id. Course decks never use
-  these series, so a custom deck cannot clash with one, and an id problem
-  is never an error on the review screen.
-- **The codes are two letters** where the language has a two-letter ISO
-  639-1 code (`bn`); a three-letter ISO 639-3 code only for a language with
-  none (`bho`). `ben` is a warning with the fix "Use 'bn'".
-- **The same file again** is recognised by its content: replace it or keep
-  both.
-- **Sending a deck to us** is offered only after it is added. A maintainer
-  then splits it into a core and a layer and gives its cards repo ids
-  `<target>-NNNN`; the repo deck ships a map from the sender's ids, so the
-  sender's progress moves onto the new ids and no other learner is affected
-  (owner, 2026-10-12: "Renumber on adding").
-- **Templates ship without ids,** or with placeholders, and say the app
-  will number the cards. The file the app saves today,
-  [`assets/deck-template.yaml`](https://github.com/aaronified/fluenough/blob/main/assets/deck-template.yaml), still uses
-  the older `hi-my-NNNN` ids that the app asks the learner to write; #495
-  replaces it.
-
-**The validator change this needs.** `tools/validate_decks.py` knows two
-shapes of card id and of deck id, the language and at least four digits
-(`hi-0042`), and a deck id that starts with the language learnt and then
-the language taught from. A custom deck's ids are neither. The review screen
-runs the same checks as the validator ([#495](https://github.com/aaronified/fluenough/issues/495)),
-so the validator needs a mode for a custom deck: it accepts the two user
-series and refuses them in any file under `decks/`, so that the repository
-never holds one and `--next-id` never hands one out. How that mode is
-switched on is for #495 to settle.
-
-**Until #495 is built,** Decks > Add a deck > From a file adds a deck written
-from the template, and the app refuses a file that is not a deck or does
-not parse (its file, line and message are shown), the id of a deck that
-comes with the app, and a card id another deck has: write
-`<language>-my-NNNN`, which no deck in the repository uses, and list a word
-another deck has by `ref`.
+The **sample deck pack**, `fluenough-sample-decks.zip`, is attached to every
+[release](https://github.com/aaronified/fluenough/releases/latest/download/fluenough-sample-decks.zip):
+one deck of every kind the fixtures cover (`test/fixtures/deck-kinds`, the
+made-up language `zz`) and the Spanish and Telugu sample course
+(`test/fixtures/sample-decks`), built by `tools/build_sample_pack.py`.
 
 An added deck that names a theme goes at the bottom of that theme's unit,
 through the path's wildcards; one with no theme, or a theme the course
 does not have, goes at the end. An added deck can be removed; what was
 learned from it stays.
+
+**A whole language, or your own version of a course, is not a single file.**
+It is a private language package, a `.fnzip` with the repository's own files
+(cores, layers, a path) and ids that start `fnpd-<code>-`: see
+[Private-Language-Package](Private-Language-Package) and
+[Plan-Private-Languages](Plan-Private-Languages). The app-numbered `user-` ids
+and the renumbering of a deck on adding that #495 planned are replaced by that
+plan: the author writes the ids and the app never renumbers them. A card of a
+private package may carry `replaces: "<built-in card id>"`, which the app reads
+and the repository's validator refuses.
 
 ## Romanisation
 
@@ -3613,6 +3594,125 @@ would download, so `tools/deck_index.py` lists a guide of another script, and
 its layers, under the language's `script_guides` instead of `files`
 ([How the app gets decks](#how-the-app-gets-decks-indexjson)): an app that does not know the key
 passes them by, as it does `media`, and keeps showing the default guide.
+
+## Building script decks
+
+A script deck teaches a language's letters, signs, conjuncts, digits and
+reading before its words; the [script guide](#script-guides) explains how the
+script works. The existing script decks are on `decks-live`, and are the
+model for new ones: `decks/bn/bn-script-*.yaml` (Bengali),
+`decks/hi/hi-script-*.yaml` (Hindustani in Devanagari),
+`decks/hi/hi-script-perso-arabic-*.yaml` (Hindustani in the Perso-Arabic
+script), and the same for Assamese, Gujarati, Kannada, Marathi and Telugu.
+
+### Which decks
+
+| Deck | Teaches | Example, Bengali |
+|---|---|---|
+| `<lang>-script-vowels` | the independent vowels | `bn-0001` অ |
+| `<lang>-script-consonants` | each consonant, with its inherent vowel | `bn-0012` ক |
+| `<lang>-script-vowel-signs` | the vowel signs, each on a host consonant | `bn-0063` কা |
+| `<lang>-script-conjuncts` | the conjuncts | `bn-0081` ক্ষ |
+| `<lang>-script-digits` | the digits | `bn-1352` ০ |
+| `<lang>-script-reading` | words written in the script, to read | `bn-0052` কলম |
+
+Hindustani's Perso-Arabic decks are `hi-script-perso-arabic-letters`,
+`-shapes`, `-vowels`, `-digits` and `-reading`.
+
+Every deck is `kind: vocab` (the default) with `part: "core"`, and its
+English layer is `decks/<lang>/en/<lang>-en-script-<part>.yaml`
+([Core and layer files](#core-and-layer-files)). The header gives the
+language's `script` and `tts`, `license: "CC-BY-SA-4.0"`, and the tags
+`beginner`, `script` and `unreviewed` (the existing decks carry all three;
+the English layers say they are not yet checked by a native speaker).
+
+### Card fields
+
+- **`target`**: the letter, sign, syllable, conjunct or digit, in its script.
+- **`reading`**: the romanisation of the sound as it is said, in the
+  language's scheme ([Romanisation](#romanisation)). A consonant card carries
+  its inherent vowel: ক is `kô`, and অ is `ô`. A vowel-sign card reads the
+  syllable: কা is `kā`.
+- **`ipa`**: the broad IPA of the sound (`ক` is `kɔ`, `কা` is `ka`). The
+  `ipa` is what the app compares.
+- **`pos`**: `letter` for a letter, a vowel sign or a conjunct; `digit` for a
+  digit ([`pos`](#card-fields)).
+- **`notes`**: as the existing decks give it, `[{ id: "n1", kind: "note" }]`.
+  The note's text is in the English layer, as for any core
+  ([Core and layer files](#core-and-layer-files)).
+- **`examples`**: one or two sentences that use the letter, each with its
+  `target`, `reading`, `ipa` and `bases`, as any card's examples are.
+- **`modes`**: on a letter that sounds exactly like another, `modes:
+  [recognition, production]`, so that it is drilled by reading and writing
+  only ([Paths](#paths)).
+- **`hears: "form"`**: on a word of a `<lang>-script-reading` deck, which is
+  heard and typed as its form ([`hears`](#card-fields)).
+- **`ref`**: a reading-deck card may name a card of another deck by its id,
+  as `bn-script-reading` does for words the course teaches elsewhere.
+- **`tags`**: `own-letter` on a letter the language adds to, or writes
+  differently from, a script it shares with others (Assamese ৰ and ৱ, see
+  [Card fields](#card-fields)).
+
+### Letters, combos and marks
+
+- **One letter, one card.** Each letter is its own card; a letter that is
+  said as another is written as that one ([Romanisation](#romanisation)).
+- **Vowel signs are drilled on a host consonant.** The card's `target` is the
+  written syllable, a consonant with its sign, such as কি (`ki`) or কী
+  (`ki`); a sign is not drilled alone in the existing decks. The sign is
+  written before the consonant in Bengali and read after it, so the reading
+  is the order of the sound. Whether a sign is also drilled alone is **to
+  decide**.
+- **Conjuncts are one card each.** The `target` is the written cluster with
+  its virama, such as ক্ষ (`kkhô`), not its parts.
+- **Signs with no sound of their own** (the virama and the nukta) take no
+  reading of their own in prose ([Script in prose](#script-in-prose-always-with-its-reading)).
+- **The examples carry the combos.** A vowel sign or conjunct is learnt
+  through the words that contain it, in the examples, as the consonants'
+  examples do.
+
+### Reading and IPA
+
+- The `reading` is in the language's romanisation, as said, not strictly ISO
+  15919; for Bengali an inherent vowel is written `ô` (see
+  [Romanisation](#romanisation)).
+- The `ipa` is broad. Existing script decks do **not** give a `phonetic`
+  (narrow) IPA. Whether they get one, as the owner's rule for every card
+  asks, is **to decide**.
+- A script quoted in any prose field follows the
+  [script in prose](#script-in-prose-always-with-its-reading) rule; the
+  `target`, `reading` and `ipa` fields are the word itself and need none.
+
+### Script topics
+
+A script topic in the language's topics file has `kind: "script"`. It names
+the script guide's features with `script_units` (their `features[].id` in
+`<lang>-script`, or `<lang>-<script>-script`), and/or lists its own `chars`,
+the characters as strings. `decks/ja/ja-topics.yaml` has examples (hiragana
+and katakana, with `chars` and `decks`). The fields and their rules are
+defined in [Plan-Deck-Kinds-And-Topics](Plan-Deck-Kinds-And-Topics), under
+"Scripts are topics too".
+
+### Where script decks sit on the path
+
+- **After the first words.** The script comes after a course's first themes,
+  before the rest. In `decks/bn/bn-path.yaml` the script is units 7 and 8:
+  `bn-script-vowels`, `bn-script-consonants` and `bn-script-reading`, then
+  `bn-script-vowel-signs`, `bn-script-conjuncts` and `bn-script-digits`
+  ([Paths](#paths)).
+- **Listed in `alphabet`.** Each script deck is listed in the path's
+  `alphabet`, and must be on the path. A learner who already reads the script
+  skips them, and until a learner is past them answers typed in Latin letters
+  count in full ([Paths](#paths)).
+
+### Positional forms for Arabic-script languages: not yet built
+
+Not yet built. Urdu and Shahmukhi need the positional forms of a letter
+(isolated, initial, medial, final) taught as one letter. The issue's plan to
+reuse the grammar `slots` table is **to decide**, with the Urdu work (#40).
+Hindustani's `hi-script-perso-arabic-shapes` lists the forms as text in the
+`target`, such as `بـ ـبـ ـب`; that is what exists today, and it is not a
+`slots` table.
 
 ## Facts files
 

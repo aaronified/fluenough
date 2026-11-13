@@ -52,12 +52,11 @@ enum Feature {
   importFile(22),
   importUrl(22),
   importCsv(0),
-  // Your decks: the template in two formats, and sending a deck to the
-  // project (#495).
+  // Your decks: the deck template (#495). Sending a deck to the project was
+  // retired by the private languages plan (owner, 2026-11-06, #1017).
   deckTemplates(495),
-  deckSend(495),
   // Private languages (#1017): a package exported, a course downloaded to
-  // change, and a starter package. Built in a later slice.
+  // change, and a starter package.
   privateExport(1017),
   privateDownload(1017),
   privateStarter(1017),
@@ -129,6 +128,10 @@ enum Feature {
     Feature.localBackup,
     Feature.localRestore,
     Feature.importFile,
+    Feature.deckTemplates,
+    Feature.privateExport,
+    Feature.privateDownload,
+    Feature.privateStarter,
     Feature.voiceSettingsLink,
     Feature.feedbackMail,
     Feature.logs,

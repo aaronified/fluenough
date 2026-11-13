@@ -9,7 +9,7 @@ Settings > Your data > Backup and restore.
 1. Tap Back up now. It saves one file, where you choose, named like `fluenough-backup-2026-10-22.fnbackup`. A copy is kept on the phone too.
 2. Keep the file somewhere safe: in your cloud, on a computer, or sent to yourself.
 
-One file holds your progress (the review log), your settings, your rater code (if you review decks) and the list of languages you downloaded. It does not hold deck files or anything that restricts a profile.
+One file holds your progress (the review log), your settings, your rater code (if you review decks) and the list of languages you downloaded. It does not hold the app's deck files or anything that restricts a profile. It does hold your own private language packages ([Private-Language-Package](Private-Language-Package)), which exist nowhere else.
 
 A backup holds your whole learning history. It leaves the phone only if you share it. Connecting a cloud service (Dropbox, Box, Google Drive, OneDrive, Nextcloud) is shown as "Feature incoming" for now.
 
@@ -23,7 +23,7 @@ The app also makes a backup before it updates itself.
 2. A sheet shows what is in it before anything changes: when it was made, which app version made it, how many reviews and in which languages, and which languages will be downloaded again.
 3. Tap Replace and restore. Your progress and settings on this phone are replaced. A copy is kept first, in Recent backups.
 
-After a restore, your decks download again.
+After a restore, your decks download again, and your private language packages are added again (one already on the phone is replaced by the backup's copy, even an older one; one the phone has and the backup lacks stays; a package that no longer passes the checks is left out, and the restore says which).
 
 If the file is not a Fluenough backup, or is damaged, nothing changes. If it was made by a newer Fluenough, update the app first, then restore it.
 

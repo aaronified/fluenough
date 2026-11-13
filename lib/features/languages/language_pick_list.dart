@@ -5,6 +5,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../downloads/app_update_needed.dart';
 import '../placement/course_line.dart';
+import '../private/private_widgets.dart';
 import 'language_views.dart';
 import 'languages_page.dart' show LanguageSection;
 import 'verification_mark.dart';
@@ -277,6 +278,7 @@ class _LanguagePickListState extends State<LanguagePickList> {
                                 color: scheme.onSurfaceVariant,
                               ),
                             ),
+                          PrivateLanguageTag(language: view.language),
                         ],
                       ),
                     ),

@@ -1,21 +1,24 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
-import '../../app/features.dart';
 import '../../app/private_languages.dart';
 import '../../core/logs/log_entry.dart';
 import '../../core/private/private_check.dart';
+import '../../core/private/private_export.dart';
 import '../../core/private/private_manifest.dart';
 import '../../core/private/private_package.dart';
+import '../../core/private/private_starter.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
-import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/snack.dart';
 import '../settings/settings_controls.dart';
 import 'private_cap_sheet.dart';
+import 'private_download_page.dart';
 import 'private_import_page.dart';
 import 'private_notes.dart';
 import 'private_widgets.dart';
@@ -118,6 +121,36 @@ class PrivatePackagesController extends ChangeNotifier {
       }
     }
     await load();
+  }
+
+  Future<void> _export(BuildContext context, _Entry entry) async {
+    final l10n = AppLocalizations.of(context)!;
+    final id = entry.package.id;
+    final done = await state.exportPrivate(id);
+    if (!context.mounted || done == PrivateSave.cancelled) return;
+    if (done == PrivateSave.saved) {
+      showAppSnackBar(
+        context,
+        l10n.privateExportSaved(
+          PrivateExport.fileName(id, entry.package.revision),
+        ),
+      );
+    } else {
+      state.haptics.error();
+      showAppSnackBar(context, l10n.privateExportFailed);
+    }
+  }
+
+  Future<void> _starter(BuildContext context) async {
+    final l10n = AppLocalizations.of(context)!;
+    final done = await state.saveStarterPackage();
+    if (!context.mounted || done == PrivateSave.cancelled) return;
+    showAppSnackBar(
+      context,
+      done == PrivateSave.saved
+          ? l10n.privateStarterSaved(privateStarterFileName)
+          : l10n.privateStarterFailed,
+    );
   }
 
   Future<void> _remove(BuildContext context, _Entry entry) async {
@@ -233,14 +266,20 @@ class PrivatePackagesController extends ChangeNotifier {
             title: l10n.privateDownload,
             subtitle: l10n.privateDownloadDesc,
             trailing: const Icon(Icons.chevron_right),
-            feature: Feature.privateDownload,
+            onTap: () => unawaited(
+              Navigator.of(context).push<void>(
+                MaterialPageRoute<void>(
+                  builder: (_) => const PrivateDownloadPage(),
+                ),
+              ),
+            ),
           ),
           GroupedTile(
             leading: const Icon(Icons.description_outlined),
             title: l10n.privateStarter,
             subtitle: l10n.privateStarterDesc,
             trailing: const Icon(Icons.chevron_right),
-            feature: Feature.privateStarter,
+            onTap: () => unawaited(_starter(context)),
           ),
         ],
       ),
@@ -281,6 +320,7 @@ class PrivatePackagesController extends ChangeNotifier {
             slotsFull: active >= maxActivePrivatePackages,
             onSwitch: (on) => _switch(context, entry, on),
             onUpdate: () => _add(context),
+            onExport: () => _export(context, entry),
             onRemove: () => _remove(context, entry),
           ),
       ],
@@ -397,6 +437,7 @@ class _Group extends StatelessWidget {
     required this.slotsFull,
     required this.onSwitch,
     required this.onUpdate,
+    required this.onExport,
     required this.onRemove,
   });
 
@@ -404,6 +445,7 @@ class _Group extends StatelessWidget {
   final bool slotsFull;
   final ValueChanged<bool> onSwitch;
   final VoidCallback onUpdate;
+  final VoidCallback onExport;
   final VoidCallback onRemove;
 
   @override
@@ -536,14 +578,9 @@ class _Group extends StatelessWidget {
                   onPressed: onUpdate,
                   child: Text(l10n.privateUpdate),
                 ),
-                IncomingFeature(
-                  feature: Feature.privateExport,
-                  label: l10n.privateExport,
-                  badge: IncomingBadgePlacement.none,
-                  child: OutlinedButton(
-                    onPressed: null,
-                    child: Text(l10n.privateExport),
-                  ),
+                OutlinedButton(
+                  onPressed: onExport,
+                  child: Text(l10n.privateExport),
                 ),
                 OutlinedButton(
                   style: OutlinedButton.styleFrom(
