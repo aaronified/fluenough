@@ -123,3 +123,106 @@ All consistent with [CLAUDE.md](../CLAUDE.md): one Haiku deck builder and one So
 6. **Setting in the language list.** What does the entry hold: one culture switch, or also the weaving amount and the level? Needs a mockup (T17 and T20 of the kinds plan). **Answer (owner, 2026-11-13): the culture settings mockup for the language list is wanted ("yes"), queued behind the code work.**
 7. **Situations for Japanese** wait for 0.10.0 (CLAUDE.md). **Answer (owner, 2026-11-13): situations no longer wait for 0.10.0, which is released.** This holds for all eight languages.
 8. **Non-Latin-script sourcing.** For Telugu, Marathi, Bengali, Assamese and Gujarati the sourcing list needs a bilingual reviewer first. Who, and may Wikipedia stay the only source for dates (question 4 of Plan-Culture-Japanese)? **Answer (owner, 2026-11-13): every deck of every language, not just the Indic ones, ships unreviewed and is reviewed through the app's review mechanism (`docs/review-queue/<code>.md`). No named reviewer.**
+
+## (e) Language tracking issues (2026-11-13)
+
+Owner (2026-11-13): "Deck work issues to be updated with the full deck format as we have planned for all languages. So every language that the app has planned so far will have open issues (japanese and telugu are the closest to completion but not complete yet)." Each language below has exactly one open tracking issue carrying the checklist of section (a). Existing 'New course' issues were reused (one comment each); the others are new issues titled 'Language: <Name>: full deck format'. Japanese (#378) and Telugu (#419) are the closest to complete, not complete; the missing items are in their issues. English, the IPA course and English Braille have no tracker here (English is the base language; the IPA and Braille are #836 and #1143). Deck work is held. State is read from decks-live on 2026-11-13: units built are units with decks, and 'core files' excludes English layers.
+
+| Language | Code | Issue | List | Priority | State |
+|---|---|---|---|---|---|
+| Bengali | bn | #1166 | first list (to B1) | deck priority 2 of the first list, culture priority 6 of 8 | path of 173 units, 172 built; 261 core files |
+| Hindustani | hi | #1167 | first list (to B1) | deck priority 8 of the first list | path of 120 units, 119 built; 217 core files |
+| Assamese | as | #1168 | first list (to B1) | deck priority 6 of the first list, culture priority 7 of 8 | path of 173 units, 172 built; 250 core files |
+| Bodo | brx | #1169 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| Dogri | doi | #1170 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| Gujarati | gu | #1171 | not on a numbered list; owner's culture-priority language (8th) | culture priority 8 of 8 | path of 117 units, 42 built; 60 core files |
+| Kannada | kn | #1172 | first list (to B1) | deck priority 5 of the first list | path of 115 units, 114 built; 133 core files |
+| Kashmiri | ks | #1173 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| Konkani | kok | #1174 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| Maithili | mai | #1175 | third list and others (first words only) | no ranked priority | path of 121 units, 1 built; 3 core files |
+| Malayalam | ml | #355 | second list (to A1; Classical Sanskrit to B1) | second-list position 2 | path of 118 units, 1 built; 3 core files |
+| Manipuri | mni | #1176 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| Marathi | mr | #1177 | first list (to B1) | deck priority 4 of the first list, culture priority 5 of 8 | path of 116 units, 115 built; 136 core files |
+| Nepali | ne | #353 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| Odia | or | #352 | third list and others (first words only) | no ranked priority | path of 120 units, 1 built; 3 core files |
+| Punjabi | pa | #351 | third list and others (first words only) | no ranked priority | path of 121 units, 1 built; 3 core files |
+| Classical Sanskrit | sa | #356 | second list (Classical Sanskrit: to B1) | second-list position 9 | no path or decks yet (language entry only) |
+| Santali | sat | #1178 | second list (to A1; Classical Sanskrit to B1) | second-list position 3 | no path or decks yet (language entry only) |
+| Sindhi | sd | #1179 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| Tamil | ta | #354 | second list (to A1; Classical Sanskrit to B1) | second-list position 1 | path of 115 units, 27 built; 45 core files |
+| Telugu | te | #419 | first list (to B1) | deck priority 1 of the first list, culture priority 4 of 8 | path of 121 units, 120 built; 154 core files (closest to complete, not complete) |
+| Bhojpuri | bho | #1180 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| Tulu | tcy | #1181 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| Rajasthani | raj | #1182 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| Magahi | mag | #1183 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| Chhattisgarhi | hne | #1184 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| Awadhi | awa | #1185 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| Haryanvi | bgc | #1186 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| Kumaoni | kfy | #1187 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| Garhwali | gbm | #1188 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| Mizo | lus | #1189 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| Khasi | kha | #1190 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| Goan Konkani | gom | #1191 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| French | fr | #359 | first list (to B1) | deck priority 10 of the first list, culture priority 3 of 8 | path of 113 units, 77 built; 229 core files |
+| Spanish | es | #1192 | first list (to B1) | deck priority 3 of the first list, culture priority 2 of 8 | path of 103 units, 102 built; 271 core files |
+| German | de | #361 | second list (to A1; Classical Sanskrit to B1) | second-list position 7 | path of 111 units, 1 built; 3 core files |
+| Mandarin Chinese | zh | #376 | first list (to B1) | deck priority 7 of the first list | path of 130 units, 129 built; 377 core files |
+| Japanese | ja | #378 | first list (to B1) | deck priority 9 of the first list, culture priority 1 of 8 | path of 138 units, 95 built; 193 core files (closest to complete, not complete) |
+| Korean | ko | #379 | second list (to A1; Classical Sanskrit to B1) | second-list position 4 | path of 136 units, 7 built; 16 core files |
+| Esperanto | eo | #388 | third list and others (first words only) | no ranked priority | path of 112 units, 1 built; 3 core files |
+| Toki Pona | tok | #1193 | 11th in the 2026-10-18 deck priority | no ranked priority | path of 46 units, 45 built; 152 core files |
+| Lojban | jbo | #1194 | third list and others (first words only) | no ranked priority | path of 114 units, 1 built; 3 core files |
+| Interslavic | isv | #1195 | third list and others (first words only) | no ranked priority | path of 113 units, 1 built; 3 core files |
+| Portuguese | pt | #357 | third list and others (first words only) | no ranked priority | path of 87 units, 1 built; 3 core files |
+| Italian | it | #358 | second list (to A1; Classical Sanskrit to B1) | second-list position 6 | path of 87 units, 1 built; 3 core files |
+| Catalan | ca | #360 | third list and others (first words only) | no ranked priority | path of 88 units, 1 built; 3 core files |
+| Swedish | sv | #362 | third list and others (first words only) | no ranked priority | path of 85 units, 1 built; 3 core files |
+| Norwegian (Bokmål) | nb | #363 | third list and others (first words only) | no ranked priority | path of 85 units, 1 built; 3 core files |
+| Yiddish | yi | #364 | third list and others (first words only) | no ranked priority | path of 86 units, 1 built; 3 core files |
+| Russian | ru | #365 | second list (to A1; Classical Sanskrit to B1) | second-list position 8 | path of 88 units, 1 built; 3 core files |
+| Polish | pl | #366 | second list (to A1; Classical Sanskrit to B1) | second-list position 11 | path of 87 units, 1 built; 3 core files |
+| Serbo-Croatian | hbs | #367 | third list and others (first words only) | no ranked priority | path of 90 units, 1 built; 3 core files |
+| Greek (Modern) | el | #368 | second list (to A1; Classical Sanskrit to B1) | second-list position 10 | path of 87 units, 1 built; 3 core files |
+| Hebrew | he | #375 | third list and others (first words only) | no ranked priority | path of 90 units, 1 built; 3 core files |
+| Finnish | fi | #370 | third list and others (first words only) | no ranked priority | path of 85 units, 1 built; 3 core files |
+| Hungarian | hu | #371 | third list and others (first words only) | no ranked priority | path of 85 units, 1 built; 3 core files |
+| Turkish | tr | #369 | third list and others (first words only) | no ranked priority | path of 84 units, 1 built; 3 core files |
+| Basque | eu | #372 | third list and others (first words only) | no ranked priority | path of 83 units, 1 built; 3 core files |
+| Irish | ga | #373 | third list and others (first words only) | no ranked priority | path of 85 units, 1 built; 3 core files |
+| Arabic | ar | #374 | third list and others (first words only) | no ranked priority | path of 91 units, 1 built; 3 core files |
+| Cantonese | yue | #377 | third list and others (first words only) | no ranked priority | path of 86 units, 1 built; 3 core files |
+| Thai | th | #381 | third list and others (first words only) | no ranked priority | path of 86 units, 1 built; 3 core files |
+| Vietnamese | vi | #380 | third list and others (first words only) | no ranked priority | path of 83 units, 1 built; 3 core files |
+| Filipino | fil | #382 | third list and others (first words only) | no ranked priority | path of 81 units, 1 built; 3 core files |
+| Malay | ms | #383 | third list and others (first words only) | no ranked priority | path of 82 units, 1 built; 3 core files |
+| Afrikaans | af | #1196 | second list (to A1; Classical Sanskrit to B1) | second-list position 5 | no path or decks yet (language entry only) |
+| Dutch | nl | #1197 | third list (first words only) | third-list position 4 | no path or decks yet (language entry only) |
+| Ukrainian | uk | #1198 | third list (first words only) | third-list position 5 | no path or decks yet (language entry only) |
+| Indonesian | id | #1199 | third list (first words only) | third-list position 1 | no path or decks yet (language entry only) |
+| Persian | fa | #1200 | third list (first words only) | third-list position 2 | no path or decks yet (language entry only) |
+| Pashto | ps | #1201 | third list (first words only) | third-list position 3 | no path or decks yet (language entry only) |
+| Swahili | sw | #384 | third list and others (first words only) | no ranked priority | path of 84 units, 1 built; 3 core files |
+| Hausa | ha | #385 | third list and others (first words only) | no ranked priority | path of 83 units, 1 built; 3 core files |
+| Somali | so | #386 | third list and others (first words only) | no ranked priority | path of 82 units, 1 built; 3 core files |
+| Quechua | qu | #387 | third list and others (first words only) | no ranked priority | path of 82 units, 1 built; 3 core files |
+| Mycenaean Greek | gmy | #1202 | third list and others (first words only) | no ranked priority | 1 deck files, no path |
+| Sumerian | sux | #1203 | third list and others (first words only) | no ranked priority | 1 deck files, no path |
+| Egyptian | egy | #1204 | third list and others (first words only) | no ranked priority | 1 deck files, no path |
+| Proto-Indo-European | ine | #1205 | third list and others (first words only) | no ranked priority | 1 deck files, no path |
+| Vedic Sanskrit | vsn | #1206 | third list and others (first words only) | no ranked priority | path of 60 units, 1 built; 3 core files |
+| Latin | la | #1207 | third list and others (first words only) | no ranked priority | path of 60 units, 1 built; 3 core files |
+| Old English | ang | #1208 | third list and others (first words only) | no ranked priority | path of 59 units, 1 built; 3 core files |
+| Middle English | enm | #1209 | third list and others (first words only) | no ranked priority | path of 57 units, 1 built; 3 core files |
+| Classical Greek | grc | #1210 | third list and others (first words only) | no ranked priority | path of 63 units, 1 built; 3 core files |
+| Archaic Greek | qgh | #1211 | third list and others (first words only) | no ranked priority | path of 60 units, 1 built; 3 core files |
+| Koine Greek | qgk | #1212 | third list and others (first words only) | no ranked priority | path of 64 units, 1 built; 3 core files |
+| Pali | pli | #1213 | third list and others (first words only) | no ranked priority | path of 61 units, 1 built; 3 core files |
+| Aramaic (Imperial) | arc | #1214 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| Ashokan Prakrit | qap | #1215 | third list and others (first words only) | no ranked priority | path of 61 units, 1 built; 3 core files |
+| Indian Sign Language | ins | #592 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| American Sign Language | ase | #593 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| Klingon | tlh | #587 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| Sindarin | sjn | #588 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| Quenya | qya | #589 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| Dothraki | qdo | #590 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
+| High Valyrian | qhv | #591 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
