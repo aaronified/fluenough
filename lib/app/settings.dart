@@ -1101,6 +1101,10 @@ class SettingsNotifier extends ChangeNotifier {
     _situationsShown = _without(_situationsShown, language);
     _placedReview = _without(_placedReview, language);
     _voices = _without(_voices, language);
+    _speechAlerted = Set<String>.unmodifiable(<String>{
+      for (final code in _speechAlerted)
+        if (code != language) code,
+    });
     _noAlphabet = Set<String>.unmodifiable(<String>{
       for (final code in _noAlphabet)
         if (code != language) code,

@@ -139,8 +139,35 @@ class _VoicesPageState extends State<VoicesPage> with WidgetsBindingObserver {
   /// Each language's card, to scroll to the one the page was opened at.
   final Map<String, GlobalKey> _cardKeys = <String, GlobalKey>{};
 
-  /// Whether the page has scrolled to [VoicesPage.language] yet.
+  /// Whether the page has started scrolling to [VoicesPage.language].
   bool _scrolled = false;
+
+  final ScrollController _scroll = ScrollController();
+
+  /// Scrolls [code]'s card into view. The list builds its children lazily,
+  /// so a card far down, or in the folded "Other languages", may not exist
+  /// yet: each frame it is missing, the list moves on by most of a screen,
+  /// up to a dozen times, until it is built (#233).
+  void _scrollTo(String code, int attempt) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      final target = _cardKeys[code]?.currentContext;
+      if (target != null) {
+        unawaited(Scrollable.ensureVisible(target));
+        return;
+      }
+      if (attempt >= 12 || !_scroll.hasClients) return;
+      final position = _scroll.position;
+      if (position.pixels >= position.maxScrollExtent) return;
+      _scroll.jumpTo(
+        (position.pixels + position.viewportDimension * 0.8).clamp(
+          0.0,
+          position.maxScrollExtent,
+        ),
+      );
+      _scrollTo(code, attempt + 1);
+    });
+  }
 
   @override
   void initState() {
@@ -151,6 +178,7 @@ class _VoicesPageState extends State<VoicesPage> with WidgetsBindingObserver {
 
   @override
   void dispose() {
+    _scroll.dispose();
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
@@ -306,12 +334,7 @@ class _VoicesPageState extends State<VoicesPage> with WidgetsBindingObserver {
             (target != null && others.any((l) => l.code == target)));
     if (target != null && !_scrolled) {
       _scrolled = true;
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        final context = _cardKeys[target]?.currentContext;
-        if (context != null && context.mounted) {
-          unawaited(Scrollable.ensureVisible(context));
-        }
-      });
+      _scrollTo(target, 0);
     }
     final speaking = state.features.isAvailable(Feature.drillSpeaking);
     Widget card(LanguageInfo language) {
@@ -397,6 +420,7 @@ class _VoicesPageState extends State<VoicesPage> with WidgetsBindingObserver {
       body: ListenableBuilder(
         listenable: state.settings,
         builder: (context, _) => ListView(
+          controller: _scroll,
           padding: const EdgeInsetsDirectional.fromSTEB(
             16,
             0,

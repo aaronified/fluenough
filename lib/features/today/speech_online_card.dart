@@ -50,6 +50,11 @@ class _SpeechOnlineCardState extends State<SpeechOnlineCard> {
         _alerting = false;
         return;
       }
+      // The learner may have switched language, or allowed it, since.
+      if (state.speechOnlineOnlyShown?.code != language.code) {
+        _alerting = false;
+        return;
+      }
       state.settings.markSpeechAlerted(language.code);
       final open = await showDialog<bool>(
         context: context,

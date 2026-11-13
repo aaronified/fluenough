@@ -163,6 +163,37 @@ void main() {
       expect(_line(), findsNothing);
     });
 
+    test('a language reset forgets its alert, so it can show again', () {
+      final settings = SettingsNotifier()
+        ..markSpeechAlerted('te')
+        ..markSpeechAlerted('bn');
+      settings.clearLanguageSettings('te');
+      expect(settings.hasSpeechAlert('te'), isFalse);
+      expect(settings.hasSpeechAlert('bn'), isTrue);
+    });
+
+    testWidgets('the Voices page opens at a language in the folded '
+        'Other languages, far down the list', (tester) async {
+      usePhone(tester, textScale: 1.4);
+      final state = AppState.test(
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningChosen: true,
+          learningLanguages: const <String>['te'],
+        ),
+      );
+      addTearDown(state.dispose);
+      await pumpScreen(tester, const VoicesPage(language: 'bn'), state: state);
+
+      final card = find.byWidgetPredicate(
+        (w) => w is LanguageVoiceCard && w.language.code == 'bn',
+      );
+      expect(card, findsOneWidget);
+      final rect = tester.getRect(card);
+      expect(rect.top, lessThan(844));
+      expect(rect.bottom, greaterThan(0));
+    });
+
     testWidgets('nothing shows when speech works offline', (tester) async {
       usePhone(tester, textScale: 1.4);
       final state = await _state(
