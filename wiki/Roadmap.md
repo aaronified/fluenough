@@ -194,10 +194,10 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#214](https://github.com/aaronified/fluenough/issues/214) Plan: a Research and standards page, with the sources
 - [#215](https://github.com/aaronified/fluenough/issues/215) Plan: books, films and songs you bring, with questions on them
 - [#216](https://github.com/aaronified/fluenough/issues/216) Plan: a path for every language, by family
-- [#216](https://github.com/aaronified/fluenough/issues/216) Plan: a path for every language, by family
 - [#217](https://github.com/aaronified/fluenough/issues/217) Plan: IPA from Wiktionary
 - [#218](https://github.com/aaronified/fluenough/issues/218) Plan: Fluenough on the web, installable
 - [#219](https://github.com/aaronified/fluenough/issues/219) Plan: conversation practice with an AI, within what you know
+- [#220](https://github.com/aaronified/fluenough/issues/220) Plan: read your own text, and make cards from it
 - [#220](https://github.com/aaronified/fluenough/issues/220) Plan: read your own text, and make cards from it
 - [#221](https://github.com/aaronified/fluenough/issues/221) Plan: readings made in the app
 - [#222](https://github.com/aaronified/fluenough/issues/222) Plan: building sentences by reasoning, and cloze
@@ -348,6 +348,10 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1206](https://github.com/aaronified/fluenough/issues/1206) Language: Vedic Sanskrit: full deck format
 - [#1207](https://github.com/aaronified/fluenough/issues/1207) Language: Latin: full deck format
 - [#1208](https://github.com/aaronified/fluenough/issues/1208) Language: Old English: full deck format
+- [#1209](https://github.com/aaronified/fluenough/issues/1209) Language: Middle English: full deck format
+- [#1210](https://github.com/aaronified/fluenough/issues/1210) Language: Classical Greek: full deck format
+- [#1211](https://github.com/aaronified/fluenough/issues/1211) Language: Archaic Greek: full deck format
+- [#1212](https://github.com/aaronified/fluenough/issues/1212) Language: Koine Greek: full deck format
 
 ## Plans
 
