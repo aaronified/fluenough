@@ -995,6 +995,70 @@
       }
     }
   },
+  "languageHasCardsToDo": "{label}, has cards to do",
+  "@languageHasCardsToDo": {
+    "description": "What the screen reader says of a language in the language bar and its menu when it has a review due or a new card waiting (the accent dot, #681): the language's usual label, then this.",
+    "placeholders": {
+      "label": {
+        "type": "String",
+        "example": "Bengali"
+      }
+    }
+  },
+  "situationsEditLabel": "Choose which situations to show",
+  "@situationsEditLabel": {
+    "description": "Screen reader label of the pencil at the top right of the Situations card on Today, whose tooltip is hintEdit. It opens the editor of which situations the card shows (#1145)."
+  },
+  "situationsEditTitle": "Choose situations",
+  "@situationsEditTitle": {
+    "description": "Title of the popup where the learner picks and orders the situations Today's card shows (#1145)."
+  },
+  "situationsEditHelp": "Tap a situation to add or remove it. Hold and drag to reorder. The first {count} are shown on Today.",
+  "@situationsEditHelp": {
+    "description": "Help line in the situations editor: tapping toggles a tile, a long press drags it, and only the first few chosen are on the card.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "6"
+      }
+    }
+  },
+  "situationsEditReset": "Reset to defaults",
+  "@situationsEditReset": {
+    "description": "Button in the situations editor: goes back to the situations each language starts with."
+  },
+  "situationsEditShown": "{title}, shown, number {position}",
+  "@situationsEditShown": {
+    "description": "Screen reader label of a chosen situation's tile in the editor: its name and its place in the chosen order.",
+    "placeholders": {
+      "title": {
+        "type": "String",
+        "example": "Taxi"
+      },
+      "position": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "situationsEditHidden": "{title}, not shown",
+  "@situationsEditHidden": {
+    "description": "Screen reader label of a situation's tile in the editor when it is not chosen; a tap adds it.",
+    "placeholders": {
+      "title": {
+        "type": "String",
+        "example": "Taxi"
+      }
+    }
+  },
+  "situationsEditEarlier": "Move earlier",
+  "@situationsEditEarlier": {
+    "description": "Screen reader action on a chosen situation's tile in the editor: moves it one place earlier in the order, instead of dragging."
+  },
+  "situationsEditLater": "Move later",
+  "@situationsEditLater": {
+    "description": "Screen reader action on a chosen situation's tile in the editor: moves it one place later in the order, instead of dragging."
+  },
   "todaySituationsTitle": "Situations",
   "@todaySituationsTitle": {
     "description": "The Situations card on Today, under the buttons (#724)."
