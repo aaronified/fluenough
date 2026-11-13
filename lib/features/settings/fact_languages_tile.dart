@@ -5,6 +5,7 @@ import '../../core/data/spoken_languages.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../today/fact_languages_sheet.dart';
+import '../../app/language_directory_loader.dart';
 
 /// Settings' Fact languages row (#926): the languages Today's fact is shown
 /// in. Its line says the choice, and it opens the same sheet as the button on
@@ -36,12 +37,12 @@ class _FactLanguagesTileState extends State<FactLanguagesTile> {
     super.didChangeDependencies();
     if (_asked || _all != null) return;
     _asked = true;
-    DefaultAssetBundle.of(context)
-        .loadString(spokenLanguagesAsset)
-        .then(parseSpokenLanguages)
-        .then((list) {
-          if (mounted) setState(() => _all = list);
-        }, onError: (Object _) {});
+    loadLanguageDirectory(
+      DefaultAssetBundle.of(context),
+      AppScope.maybeRead(context),
+    ).then((list) {
+      if (mounted) setState(() => _all = list);
+    }, onError: (Object _) {});
   }
 
   @override

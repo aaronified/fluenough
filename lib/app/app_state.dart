@@ -66,6 +66,8 @@ import '../core/decks/ipa_course.dart';
 import '../core/decks/levels.dart';
 import '../core/decks/script_fonts.dart';
 import 'deck_catalog.dart';
+import 'private_languages.dart';
+import 'private_store.dart';
 import 'learner_levels.dart';
 import 'deck_downloads.dart';
 import 'font_check.dart';
@@ -372,6 +374,7 @@ class AppState extends ChangeNotifier {
     RecommendationMarkStore? recommendationMarks,
     DeckFiles deckFiles = const PickerDeckFiles(),
     DeckStore? addedDecks,
+    PrivateStore? privateStore,
     LinkOpener? links,
     SystemSettings systemSettings = const NullSystemSettings(),
     WebInstall? webInstall,
@@ -402,6 +405,7 @@ class AppState extends ChangeNotifier {
       catalog: DeckCatalog(
         decks ?? RepositoryDeckSource(),
         added: addedDecks ?? MemoryDeckStore(),
+        privateStore: privateStore,
       ),
       progress: progress ?? MemoryProgress(),
       tts: tts,
@@ -1198,6 +1202,10 @@ class AppState extends ChangeNotifier {
     await _reloadDecks();
   }
 
+  /// [_reloadDecks] for the private language packages (#1017): a package
+  /// installed, updated, removed, turned on or off.
+  Future<void> reloadDecks() => _reloadDecks();
+
   /// Reads the catalog again without going back to loading, so the screen
   /// that added or removed a deck stays.
   Future<void> _reloadDecks() async {
@@ -1560,10 +1568,14 @@ class AppState extends ChangeNotifier {
   }
 
   /// Whether a speaking drill in [language] can be graded now.
-  bool canHear(LanguageInfo language) => switch (speechStatus(language)) {
-    SpeechStatus.onDevice || SpeechStatus.online => true,
-    _ => false,
-  };
+  bool canHear(LanguageInfo language) =>
+      // A private language with no voice has its speaking drills hidden
+      // (#1017, task 14).
+      !privateNoVoice(language) &&
+      switch (speechStatus(language)) {
+        SpeechStatus.onDevice || SpeechStatus.online => true,
+        _ => false,
+      };
 
   /// Whether a speaking question in [language] can be asked now, or asked
   /// after the learner is asked to allow listening online: a browser's

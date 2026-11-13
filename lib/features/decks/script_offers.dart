@@ -8,6 +8,7 @@ import '../../core/search/script_of.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
+import '../../app/language_directory_loader.dart';
 
 /// What the search says about a query typed in a script the course does not
 /// read (#527, mockup section 7): the courses the learner has that use it
@@ -44,9 +45,10 @@ class _ScriptOffersState extends State<ScriptOffers> {
     super.didChangeDependencies();
     _catalog ??= widget.spokenList != null
         ? Future<List<SpokenLanguage>>.value(widget.spokenList)
-        : DefaultAssetBundle.of(context)
-              .loadString(spokenLanguagesAsset)
-              .then(parseSpokenLanguages);
+        : loadLanguageDirectory(
+            DefaultAssetBundle.of(context),
+            AppScope.maybeRead(context),
+          );
   }
 
   @override

@@ -204,7 +204,7 @@ append-only in the same way, and so is `placement_withdrawals` (migration 11,
 placement credit the learner took back; the replay leaves out exactly the
 reviews a withdrawal names, and no review is ever touched).
 
-There are **two exceptions**, and only two. The first (owner, 2026-10-17:
+There are **three exceptions**, and only three. The first (owner, 2026-10-17:
 "Logged exception"): a restore from a backup that the learner has confirmed,
 after the app has kept a copy of what it replaces, empties `reviews`,
 `leech_actions` and `placement_withdrawals` and writes the backup's in their
@@ -221,8 +221,17 @@ typing the language's name, after the app kept a backup of everything
 language's card states and the drop of its fitted parameters; it removes only
 that language's reviews selected by a `ReviewErasure` (answers, optionally
 within a range of local days, and placement's credit) and the language's
-leech actions left with no review. No other code path may delete from or
-update these tables.
+leech actions left with no review.
+
+The third (owner, 2026-11-13: option A, #1017): the learner removed a private
+language package with "Remove and delete my progress", confirmed by typing the
+package's name, after the app kept a backup of everything (`BackupKind.delete`)
+and only once the package itself was removed. It goes only through the same
+`AppDatabase.eraseReviews`, with `ReviewErasure.privatePackage(code)`: it
+removes only the reviews of cards whose ids start `fnpd-<code>-` (and the
+leech actions left with no review), never a built-in card's, and never
+placement's credit. No other code path may delete from or update these
+tables.
 
 ### 10. No user-visible string is a literal in a widget.
 

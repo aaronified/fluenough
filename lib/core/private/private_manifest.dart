@@ -31,6 +31,7 @@ class PrivateManifest {
     required this.language,
     required this.minApp,
     this.basedOn,
+    this.ownName,
   });
 
   /// The `format` every manifest carries.
@@ -54,6 +55,7 @@ class PrivateManifest {
     'code',
     'iso639_3',
     'name',
+    'own_name',
     'script',
     'scripts',
     'tts',
@@ -77,6 +79,10 @@ class PrivateManifest {
 
   /// For a modified language, the course revision the package starts from.
   final String? basedOn;
+
+  /// The language's name for itself (`language.own_name`), or null when the
+  /// manifest gives none: the language directory then shows [LanguageInfo.name].
+  final String? ownName;
 
   /// The language code, such as `qaa`.
   String get code => language.code;
@@ -204,7 +210,14 @@ class PrivateManifest {
     }
     final tts = languageNode['tts'];
     final icon = languageNode['icon'];
+    final ownName = languageNode['own_name'];
+    if (ownName != null && (ownName is! String || ownName.trim().isEmpty)) {
+      throw const FormatException(
+        'manifest.yaml: "language.own_name" must be text',
+      );
+    }
     return PrivateManifest(
+      ownName: ownName as String?,
       package: package,
       revision: revision,
       kind: kind,

@@ -537,9 +537,13 @@ class ReviewLog {
   Future<int> eraseReviews(ReviewErasure erasure) => _db.transaction(() async {
     final erased = await _db.eraseReviews(erasure);
     if (erased.reviews == 0 && erased.withdrawals == 0) return 0;
-    await (_db.delete(
-      _db.fsrsParameters,
-    )..where((p) => p.language.equals(erasure.language))).go();
+    // A private package's erasure leaves the language's fits: they were
+    // learned from the built-in course's answers too (#1017).
+    if (erasure.idPrefix == null) {
+      await (_db.delete(
+        _db.fsrsParameters,
+      )..where((p) => p.language.equals(erasure.language))).go();
+    }
     final remaining = await reviews();
     final parameters = SkillParameters(
       fitted: await fitted(),

@@ -290,9 +290,10 @@ TextStyle _styleOf(WidgetTester tester, String text) =>
 // From added_decks_test.dart.
 /// Answers the file dialogs from memory.
 class FakeDeckFiles implements DeckFiles {
-  FakeDeckFiles({this.picked});
+  FakeDeckFiles({this.picked, this.pickedBytes});
 
   ({String name, String text})? picked;
+  ({String name, List<int> bytes})? pickedBytes;
   final Map<String, String> saved = <String, String>{};
 
   @override
@@ -304,6 +305,11 @@ class FakeDeckFiles implements DeckFiles {
   @override
   Future<({String name, String text})?> open({required String title}) async =>
       picked;
+
+  @override
+  Future<({String name, List<int> bytes})?> openBytes({
+    required String title,
+  }) async => pickedBytes;
 }
 
 /// The template, as the learner downloads it: Hindi from English, a market
