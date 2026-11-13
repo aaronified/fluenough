@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **Today says when speaking works only online.** If your phone can recognise a language only online, Today tells you once and keeps a line with an Open settings button that takes you to that language on the Voices page.
 - **Choose which situations Today shows.** A pencil at the top right of the Situations card opens a grid of every situation, where you tap to add or remove one, hold and drag to reorder, and the first six are the ones on the card, remembered for each language.
 - **A dot on languages with something to do.** A language in the language bar shows a small dot when it has a review due or a new card waiting, and the IPA's symbol is drawn as tall as the other languages' letters.
 - **Good is now Okay.** The four self-rating buttons after a word you judge yourself read Again, Hard, Okay and Easy, and Okay records the same score Good did.

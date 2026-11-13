@@ -140,6 +140,7 @@ class SettingsNotifier extends ChangeNotifier {
   Map<String, FontChoice> _fontChoices = const <String, FontChoice>{};
   Set<String> _speechNotOnDevice = const <String>{};
   Set<String> _speechUnsupported = const <String>{};
+  Set<String> _speechAlerted = const <String>{};
   Set<String> _scriptGuidesSeen = const <String>{};
   Set<String> _resourcesHidden = const <String>{};
   Map<String, Set<String>> _collapsedLevels = const <String, Set<String>>{};
@@ -1100,6 +1101,10 @@ class SettingsNotifier extends ChangeNotifier {
     _situationsShown = _without(_situationsShown, language);
     _placedReview = _without(_placedReview, language);
     _voices = _without(_voices, language);
+    _speechAlerted = Set<String>.unmodifiable(<String>{
+      for (final code in _speechAlerted)
+        if (code != language) code,
+    });
     _noAlphabet = Set<String>.unmodifiable(<String>{
       for (final code in _noAlphabet)
         if (code != language) code,
@@ -1157,6 +1162,22 @@ class SettingsNotifier extends ChangeNotifier {
     final next = Set<String>.of(_waitingOpen);
     open ? next.add(language) : next.remove(language);
     _waitingOpen = Set<String>.unmodifiable(next);
+    notifyListeners();
+  }
+
+  /// The languages, by code, whose "speech works only online" alert Today
+  /// has shown (#233): it shows once per language.
+  Set<String> get speechAlerted => _speechAlerted;
+
+  bool hasSpeechAlert(String code) => _speechAlerted.contains(code);
+
+  /// Records that the alert for [code] was shown.
+  void markSpeechAlerted(String code) {
+    if (_speechAlerted.contains(code)) return;
+    _speechAlerted = Set<String>.unmodifiable(<String>{
+      ..._speechAlerted,
+      code,
+    });
     notifyListeners();
   }
 
@@ -1499,6 +1520,7 @@ class SettingsNotifier extends ChangeNotifier {
     }),
     'speech_not_on_device': (_speechNotOnDevice.toList()..sort()).join(','),
     'speech_unsupported': (_speechUnsupported.toList()..sort()).join(','),
+    'speech_alerted': (_speechAlerted.toList()..sort()).join(','),
     'script_guides_seen': (_scriptGuidesSeen.toList()..sort()).join(','),
     'resources_hidden': (_resourcesHidden.toList()..sort()).join(','),
     'placed_review': jsonEncode(<String, String>{
@@ -1811,6 +1833,11 @@ class SettingsNotifier extends ChangeNotifier {
         if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) {
           allowOnlineSpeech(code, true);
         }
+      }
+    }
+    if (pick('speech_alerted', (t) => t) case final v?) {
+      for (final code in v.split(',')) {
+        if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) markSpeechAlerted(code);
       }
     }
     if (pick('no_alphabet', (t) => t) case final v?) {

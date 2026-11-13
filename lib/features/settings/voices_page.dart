@@ -59,11 +59,16 @@ import 'speech_test_sheet.dart';
 /// once speaking is set up), for after installing a voice or a language
 /// pack.
 class VoicesPage extends StatefulWidget {
-  const VoicesPage({super.key, this.apps});
+  const VoicesPage({super.key, this.apps, this.language});
 
   /// The voice apps listed under Other voices, for tests and the gallery.
   /// Null reads them from [appsAsset].
   final List<VoiceApp>? apps;
+
+  /// The language, by code, whose card the page opens at: scrolled into view,
+  /// with "Other languages on this phone" opened if it is in there (#233).
+  /// Null opens at the top.
+  final String? language;
 
   /// The hand-kept list of apps that install as phone voices (#642).
   static const String appsAsset = 'assets/voice_apps.yaml';
@@ -131,6 +136,39 @@ class _VoicesPageState extends State<VoicesPage> with WidgetsBindingObserver {
   /// The engine's error code from the last Play, by language code.
   final Map<String, String> _playFailed = <String, String>{};
 
+  /// Each language's card, to scroll to the one the page was opened at.
+  final Map<String, GlobalKey> _cardKeys = <String, GlobalKey>{};
+
+  /// Whether the page has started scrolling to [VoicesPage.language].
+  bool _scrolled = false;
+
+  final ScrollController _scroll = ScrollController();
+
+  /// Scrolls [code]'s card into view. The list builds its children lazily,
+  /// so a card far down, or in the folded "Other languages", may not exist
+  /// yet: each frame it is missing, the list moves on by most of a screen,
+  /// up to a dozen times, until it is built (#233).
+  void _scrollTo(String code, int attempt) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      final target = _cardKeys[code]?.currentContext;
+      if (target != null) {
+        unawaited(Scrollable.ensureVisible(target));
+        return;
+      }
+      if (attempt >= 12 || !_scroll.hasClients) return;
+      final position = _scroll.position;
+      if (position.pixels >= position.maxScrollExtent) return;
+      _scroll.jumpTo(
+        (position.pixels + position.viewportDimension * 0.8).clamp(
+          0.0,
+          position.maxScrollExtent,
+        ),
+      );
+      _scrollTo(code, attempt + 1);
+    });
+  }
+
   @override
   void initState() {
     super.initState();
@@ -140,6 +178,7 @@ class _VoicesPageState extends State<VoicesPage> with WidgetsBindingObserver {
 
   @override
   void dispose() {
+    _scroll.dispose();
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
@@ -288,7 +327,15 @@ class _VoicesPageState extends State<VoicesPage> with WidgetsBindingObserver {
         if (!learns(l.code)) l,
     ];
     // Folded unless nothing is learned, then open, until the learner says.
-    final othersOpen = _othersOpen ?? learning.isEmpty;
+    final target = widget.language;
+    final othersOpen =
+        _othersOpen ??
+        (learning.isEmpty ||
+            (target != null && others.any((l) => l.code == target)));
+    if (target != null && !_scrolled) {
+      _scrolled = true;
+      _scrollTo(target, 0);
+    }
     final speaking = state.features.isAvailable(Feature.drillSpeaking);
     Widget card(LanguageInfo language) {
       final blocks = state.voiceBlocksOf(language.code);
@@ -309,6 +356,7 @@ class _VoicesPageState extends State<VoicesPage> with WidgetsBindingObserver {
       final offersAi = state.asrLanguages.contains(language.code);
       if (offersAi) state.askAsrSize(language.code);
       Widget build(AiListener? ai) => LanguageVoiceCard(
+        key: _cardKeys.putIfAbsent(language.code, GlobalKey.new),
         language: language,
         glyph: _glyphOf(state, language),
         voiceStatus: _rechecking
@@ -372,6 +420,7 @@ class _VoicesPageState extends State<VoicesPage> with WidgetsBindingObserver {
       body: ListenableBuilder(
         listenable: state.settings,
         builder: (context, _) => ListView(
+          controller: _scroll,
           padding: const EdgeInsetsDirectional.fromSTEB(
             16,
             0,
