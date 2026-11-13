@@ -17,12 +17,12 @@ ones that matter most; read the section before acting on one.
 - **Docs straight to main:** a change to Markdown docs only is pushed to main with no PR and no CI check ([Git, PRs and CI](#git-prs-and-ci)).
 - **PRs for everything else:** code, decks, `decks/index.json` and the CHANGELOG go through a pull request, with CI green and one review ([Git, PRs and CI](#git-prs-and-ci)).
 - **Tests run only in CI:** no agent runs the tests or the deck validator locally ([Git, PRs and CI](#git-prs-and-ci)).
-- **Red loop:** while CI is red, rerun only the failing job or the failing test files until they pass, then run the full CI once ([Git, PRs and CI](#git-prs-and-ci)).
+- **Red loop:** while CI is red, rerun only the failing job or the failing test files until they pass, then run the full CI once, or merge as soon as the one failing shard is green if the rest was green on the previous head ([Git, PRs and CI](#git-prs-and-ci)).
 - **No stray branches:** never push a branch after its PR has merged, and never push scratch, review or worktree branches ([Git, PRs and CI](#git-prs-and-ci)).
 - **No tags:** never create or push git tags; only the owner tags releases ([Tags](#tags-owner-2026-10-12)).
 - **Off limits:** `homelab-stacks` is never cloned, modified or pushed to ([Repositories off limits](#repositories-off-limits-owner-2026-10-12)).
 - **Releases:** the owner runs the Release workflow; each PR adds its own CHANGELOG line; deck content stays out of a release ([Releases and milestones](#releases-and-milestones)).
-- **Top priorities after the placement release** (owner, 2026-11-07): 1. private decks, 2. on-device voice recognition, both recorded for later; the session that ships the placement bugfix release stops there, and no agent starts them without a new owner instruction ([Releases and milestones](#releases-and-milestones)).
+- **Next work after 0.10.0** (owner, 2026-11-13: "Then work on the private decks"): private decks (#1017) first; on-device voice recognition is in 0.10.0, for Telugu only for now ([Releases and milestones](#releases-and-milestones)).
 - **Deck work:** the language lists, priorities and what is in scope this week, and the order after the placement fix, are in one place; deck PRs are large, and `tools/deck_index.py` is never run locally ([Content and decks](#content-and-decks)).
 - **Decks live on `decks-live`** (owner, 2026-11-06): deck PRs target it; its index and review queue are regenerated there; deck-owned data (`decks/themes.yaml` and any file entirely about decks) lives there too and reaches apps with the decks ([Content and decks](#content-and-decks), [Plan-Deck-Owned-Data](wiki/Plan-Deck-Owned-Data.md)).
 - **Card ids are permanent**, YAML scalars are quoted, and `lib/core` has no Flutter imports ([AGENTS.md](AGENTS.md)).
@@ -157,7 +157,7 @@ contributor.
   just to run tests. CI runs them for free. Code and deck commits are checked
   by CI: after pushing, read CI's result. A docs-only push to main needs no CI
   check.
-- **Red loop** (owner, 2026-11-12: "Just rerun the CI that is failing till it is fixed. Then run full. This is simply wasting time."). While a pull request's CI is red, do not run the whole CI after every fix. Rerun only what is failing: the failing job of the same run (`rerun-failed-jobs`), or, after a new commit, only the failing test files with the `Tests only` workflow (`.github/workflows/tests-only.yml`, `workflow_dispatch`, inputs `ref` and `files`) once it exists on the branch. When those pass, run the full CI once. A coder pushes the fix and stops; it does not poll CI.
+- **Red loop** (owner, 2026-11-12: "Just rerun the CI that is failing till it is fixed. Then run full. This is simply wasting time."). While a pull request's CI is red, do not run the whole CI after every fix. Rerun only what is failing: the failing job of the same run (`rerun-failed-jobs`), or, after a new commit, only the failing test files with the `Tests only` workflow (`.github/workflows/tests-only.yml`, `workflow_dispatch`, inputs `ref` and `files`) once it exists on the branch. When those pass, run the full CI once, or merge as below. A coder pushes the fix and stops; it does not poll CI. Owner, recorded 2026-11-13 ("merge as soon as shard 6/8 is green and skip the full rerun"): the owner allows merging as soon as the one failing shard is green when the rest was green on the previous head. A rerun of failed jobs reuses the original merge snapshot, so after a base change, update the branch instead of rerunning.
 - **Irrelevant checks** (owner, 2026-10-22). When reading CI for a change,
   ignore failing checks that are irrelevant to it. A deck-only change needs
   only "Validate decks" and "Released app reads the decks" green (#524, owner,
@@ -166,6 +166,9 @@ contributor.
 
 ## Releases and milestones
 
+- **Release plan** (owner, 2026-11-11: "do a 0.x.0 release after on device voice and placement fixes are merged. Private deck and other planned issues will go into that as 0.0.x releases"; "Say fix ... releases with your 0.10.0 release. I will not release mid merges. You will after all are merged"). 0.10.0 was cut on 2026-11-13 from main (`9ec1df68`), after the on-device voice work, the placement fixes and the deck-kinds scaffolding were merged. Private decks and the other planned issues follow as patch releases 0.10.x.
+- **On-device voice** (owner, recorded 2026-11-13): Telugu only for now.
+- **Placement margin gate** (owner, 2026-11-12): the margin test allows `over2 <= 0.02` at bump 0.07 only (two of 100 seeds); every other limit is unchanged. Recorded in [Plan-Placement-V3](wiki/Plan-Placement-V3.md#owner-approved-tolerance-on-the-margin-gate-2026-11-12).
 - **Releases** (owner, 2026-10-20: "Can the release workflow not
   automatically take care of the release commit? So that I can cut releases
   just from the UI?"). Each pull request adds its own CHANGELOG.md line under
@@ -181,7 +184,7 @@ contributor.
   it (#484). Tidy issues and plans after work lands, and close issues when done. Tag new issues to a
   milestone only as the owner says.
 - **Current milestone** (owner, 2026-11-06: "We are now working on 0.9.0"). Milestone 0.9.0 exists, and new work is recorded against it.
-- **Top priorities after the placement release** (owner, 2026-11-07: "After the release these will be the top priorities: 1. Private decks 2. On device voice recognition"; "Do not build them. You will stop at the release."). After the placement rebuild (V3) and its bugfix release, these two are the next items, in this order: 1. Private decks (private custom language courses; issue #1017, wiki Plan-Private-Languages / Plan-Profiles pages), 2. On-device voice recognition (offline recogniser, issue #1004, wiki Plan-Speech-Offline-Alert, ADR-0054 notes). The session that ships the placement bugfix release stops there. No agent builds either item without a new instruction from the owner, and deck content work stays paused until the owner resumes it.
+- **Top priorities after the placement release** (owner, 2026-11-07: "After the release these will be the top priorities: 1. Private decks 2. On device voice recognition"; "Do not build them. You will stop at the release."). After the placement rebuild (V3) and its bugfix release, these two are the next items, in this order: 1. Private decks (private custom language courses; issue #1017, wiki Plan-Private-Languages / Plan-Profiles pages), 2. On-device voice recognition (offline recogniser, issue #1004, wiki Plan-Speech-Offline-Alert, ADR-0054 notes). The session that ships the placement bugfix release stops there. No agent builds either item without a new instruction from the owner, and deck content work stays paused until the owner resumes it. **Now current** (owner, 2026-11-13: "Then work on the private decks"): 0.10.0 has shipped the placement fixes (see Release plan), so that stop is over and private decks (#1017, PR #1121) is the next work. On-device voice is already in 0.10.0, for Telugu only for now.
 
 ## Content and decks
 
@@ -200,7 +203,7 @@ a repository of world's languages. The tower of babel, is to rise
 again."). The other courses' decks (#420) and the new courses'
 paths are no longer left to contributors.
 
-**Deck work paused for the placement rebuild** (owner, 2026-11-07: "Stop the deck work."): no deck agents run until the owner resumes deck work; open deck PRs (Malayalam #1062) stay drafts.
+**Deck work paused for the placement rebuild** (owner, 2026-11-07: "Stop the deck work."): no deck agents run until the owner resumes deck work; open deck PRs (Malayalam #1062) stay drafts. Lifted: the pause ended when the placement fix shipped in 0.10.0, under "Deck order after the placement fix" below, and the owner's 2026-11-13 order puts private decks first (recorded 2026-11-13).
 
 **Deck priority** (owner, 2026-10-18). Decks are built in this order:
 1. Telugu, 2. Bengali, 3. Spanish, 4. Marathi, 5. Kannada, 6. Assamese,
@@ -231,6 +234,12 @@ long-horizon ask (owner, 2026-10-23).
 
 **Deck order after the placement fix** (owner, 2026-11-06: "Complete the placement fix, then carry on with the decks. On the 1st list of languages, get the situations cards before the all A1. Both will come after the 2nd list gets B1."; earlier the same day: "Deck builds can be paused"; then, correcting it: "Ok, sorry. 2nd list A1 and all languages first deck only. Only classical sanskrit to B1."). The pause on deck building is lifted when the placement fix (the guess-proof Find my level work) lands. From then on the order is: (1) the second list (under "Three language lists") is built to A1, with Classical Sanskrit to B1, the only language that goes to B1; (2) the situations cards (decks of kind `situations`, `wiki/Deck-Format.md`) for the first list of languages (Telugu, Bengali, Spanish, Marathi, Kannada, Assamese, Chinese, Hindustani, Japanese and French); (3) the first deck (first words and phrases) for all other languages (the third list and any others). Wording to confirm with the owner: what exactly "first deck only" and "before the all A1" cover in step (3).
 
+**Japanese deck work** (owner, recorded 2026-11-13: "Keep the japanese work slow and steady. No rush there."; "Kanji need not be focused on... Only have some basic ones, nothing ambitious"; later "Ja-opinions seem fit to be merged in decks-live", "1152 is complete", "Japanese needs to land fully as well"). Japanese goes in small batches, assigned one at a time, each merged when CI is green and the owner approves. Basic kanji only: about 1000 kanji by B1 is deferred (issue #1146). The situations sheets (#1124, draft) wait for 0.10.0, then go in their own pull request. Telugu situations move to decks-live afterwards, with migrations.
+
+**Situations** (owner, 2026-11-12, issue #1145): one situations file per language. New situations teach only widely used words and phrases, with no over-translation.
+
+**Deck kinds as data** (owner, 2026-11-12, "Mockups look fine. Build"): culture, proverbs, multi-word verbs, professional situations, topics (scripts are topics), recommendations and creators are data on decks-live, per [Plan-Deck-Kinds-And-Topics](wiki/Plan-Deck-Kinds-And-Topics.md). They were built in PRs #1147 to #1151 and released in 0.10.0. `MIN_APP_KINDS` in `tools/deck_index.py` stays 0.9.6 because no 0.9.6 will be released; set it before any 0.9.6. The owner's questions still open are in the plan.
+
 **Hindustani** is one course (owner, 2026-10-18: "Hindi and Urdu should be
 combined as we should not care about socipolitics over linguistics"; chose
 "One course, two scripts"). The `hi` course and its card ids stay; it is
@@ -257,7 +266,7 @@ adjectives, verbs) are full tables covering every word, as Bengali's are
   offline first start, an app too old to download it) and is never edited for
   a new theme. This replaces "edited only on main" of 2026-11-06. Deck
   content never needs a release. The audit and the rules are in
-  [Plan-Deck-Owned-Data](wiki/Plan-Deck-Owned-Data.md).
+  [Plan-Deck-Owned-Data](wiki/Plan-Deck-Owned-Data.md). decks-live is a snapshot copy of the repo with its own history: CI lays main's tools, assets, test and sample deck over it each run (`.github/actions/main-tools`), its own workflows (`ci.yml`, index and review-queue) are not overlaid and are kept up to date by hand, and things main adds that decks-live needs (for example `decks/sections.yaml`) must be copied to decks-live (recorded 2026-11-13).
 - **Deck index** (owner, 2026-10-23). `decks/index.json` is regenerated on
   `decks-live` by its workflow after each merge (`.github/workflows/deck-index.yml`,
   PR #719). The review queue (`decks/review-queue.json`) is regenerated there
