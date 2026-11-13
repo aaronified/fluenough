@@ -101,7 +101,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.10.0
 
-6 approved open issues.
+5 approved open issues.
 
 **Bugs**
 
@@ -114,7 +114,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 **Other**
 
-- [#1095](https://github.com/aaronified/fluenough/issues/1095) Review shell: Again / Hard / Okay / Easy self-rating buttons
 - [#1017](https://github.com/aaronified/fluenough/issues/1017) Plan: build entire languages as private decks (Your decks)
 - [#1096](https://github.com/aaronified/fluenough/issues/1096) Reviews: use the new placement question types
 
