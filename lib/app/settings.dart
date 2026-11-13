@@ -143,6 +143,7 @@ class SettingsNotifier extends ChangeNotifier {
   Set<String> _scriptGuidesSeen = const <String>{};
   Set<String> _resourcesHidden = const <String>{};
   Map<String, Set<String>> _collapsedLevels = const <String, Set<String>>{};
+  Map<String, List<String>> _situationsShown = const <String, List<String>>{};
   Map<String, PlacedReview> _placedReview = const <String, PlacedReview>{};
   Map<String, Set<int>> _placedAt = const <String, Set<int>>{};
   Map<String, Map<int, int>> _placedBy = const <String, Map<int, int>>{};
@@ -827,6 +828,26 @@ class SettingsNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// The situations the learner chose for Today's card on [language] (#1145),
+  /// by id, in the order they chose; the card shows the first six. Null until
+  /// they choose: the card then shows the file's first six.
+  List<String>? situationsShownOf(String language) =>
+      _situationsShown[language];
+
+  /// Keeps [ids] as [language]'s chosen situations, or with null forgets
+  /// the choice (back to the default).
+  void setSituationsShown(String language, List<String>? ids) {
+    if (listEquals(_situationsShown[language], ids)) return;
+    _situationsShown = Map<String, List<String>>.unmodifiable(
+      <String, List<String>>{
+        for (final MapEntry(:key, :value) in _situationsShown.entries)
+          if (key != language) key: value,
+        if (ids != null) language: List<String>.unmodifiable(ids),
+      },
+    );
+    notifyListeners();
+  }
+
   /// How [language]'s course reviews the words placement credited (#761),
   /// [PlacedReview.fallback] until the learner chooses.
   PlacedReview placedReviewOf(String language) =>
@@ -1076,6 +1097,7 @@ class SettingsNotifier extends ChangeNotifier {
     _dailyExtra = _without(_dailyExtra, language);
     _scriptsLearned = _without(_scriptsLearned, language);
     _collapsedLevels = _without(_collapsedLevels, language);
+    _situationsShown = _without(_situationsShown, language);
     _placedReview = _without(_placedReview, language);
     _voices = _without(_voices, language);
     _noAlphabet = Set<String>.unmodifiable(<String>{
@@ -1521,6 +1543,7 @@ class SettingsNotifier extends ChangeNotifier {
       for (final MapEntry(:key, :value) in _collapsedLevels.entries)
         key: value.toList()..sort(),
     }),
+    'situations_shown': jsonEncode(_situationsShown),
     'waiting_open': (_waitingOpen.toList()..sort()).join(','),
     'paused_until': jsonEncode(<String, int>{
       for (final MapEntry(:key, :value) in _pausedUntil.entries)
@@ -1956,6 +1979,17 @@ class SettingsNotifier extends ChangeNotifier {
             setLevelCollapsed(key, level, true);
           }
         }
+      }
+    }
+    if (pick('situations_shown', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! List) continue;
+        final ids = <String>[
+          for (final id in value)
+            if (id is String && id.isNotEmpty) id,
+        ];
+        // An empty list is no choice: the card would have no buttons.
+        if (ids.isNotEmpty) setSituationsShown(key, ids);
       }
     }
     for (final (name, unsupported) in <(String, bool)>[
