@@ -399,10 +399,10 @@ void main() {
       await _open(tester, const YourDecksPage(), world);
       final l10n = l10nOf(tester);
       expect(find.text('Alpha'), findsOneWidget);
-      await _reveal(tester, find.text('Beta'));
-      expect(find.text('Beta'), findsOneWidget);
       expect(find.text(l10n.privateListHeading(2)), findsOneWidget);
       expect(find.textContaining('2 of 3 active'), findsOneWidget);
+      await _reveal(tester, find.text('Beta'));
+      expect(find.text('Beta'), findsOneWidget);
       expect(find.text(l10n.privateKindNew), findsWidgets);
       expect(find.text(l10n.privateHoldsValue(6, 2, 2)), findsWidgets);
     });
