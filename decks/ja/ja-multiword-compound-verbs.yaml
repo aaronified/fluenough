@@ -1,0 +1,116 @@
+# Japanese compound verbs: a verb stem and a second verb.
+schema: 1
+id: "ja-multiword-compound-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+genre: "multiword"
+pattern_family: "compound-verb"
+level: "B1"
+tags: ["unreviewed"]
+cards:
+  - id: "ja-4421"
+    target: "たべはじめる"
+    words: ["たべ", "はじめる"]
+    reading: "tabe hajimeru"
+    ipa: "tabe hadʑimeɾɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "たべ", base: "たべる", reading: "taberu" }
+      - { word: "はじめる", base: "はじめる", reading: "hajimeru" }
+  - id: "ja-4422"
+    target: "よみおわる"
+    words: ["よみ", "おわる"]
+    reading: "yomi owaru"
+    ipa: "jomi owaɾɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "よみ", base: "よむ", reading: "yomu" }
+      - { word: "おわる", base: "おわる", reading: "owaru" }
+  - id: "ja-4423"
+    target: "はなしつづける"
+    words: ["はなし", "つづける"]
+    reading: "hanashi tsuzukeru"
+    ipa: "hanaɕi tsɯzɯkeɾɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "はなし", base: "はなす", reading: "hanasu" }
+      - { word: "つづける", base: "つづける", reading: "tsuzukeru" }
+  - id: "ja-4424"
+    target: "なきだす"
+    words: ["なき", "だす"]
+    reading: "naki dasu"
+    ipa: "naki dasɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "なき", base: "なく", reading: "naku" }
+      - { word: "だす", base: "だす", reading: "dasu" }
+  - id: "ja-4425"
+    target: "のみすぎる"
+    words: ["のみ", "すぎる"]
+    reading: "nomi sugiru"
+    ipa: "nomi sɯɡiɾɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "のみ", base: "のむ", reading: "nomu" }
+      - { word: "すぎる", base: "すぎる", reading: "sugiru" }
+  - id: "ja-4426"
+    target: "かんがえなおす"
+    words: ["かんがえ", "なおす"]
+    reading: "kangae naosu"
+    ipa: "kaɴɡae naosɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "かんがえ", base: "かんがえる", reading: "kangaeru" }
+      - { word: "なおす", base: "なおす", reading: "naosu" }
+  - id: "ja-4427"
+    target: "おもいだす"
+    words: ["おもい", "だす"]
+    reading: "omoi dasu"
+    ipa: "omoi dasɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "おもい", base: "おもう", reading: "omou" }
+      - { word: "だす", base: "だす", reading: "dasu" }
+  - id: "ja-4428"
+    target: "おもいつく"
+    words: ["おもい", "つく"]
+    reading: "omoi tsuku"
+    ipa: "omoi tsɯkɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "おもい", base: "おもう", reading: "omou" }
+      - { word: "つく", base: "つく", reading: "tsuku" }

@@ -1,0 +1,66 @@
+schema: 1
+id: "ja-en-multiword-compound-verbs"
+kind: "layer"
+core: "ja-multiword-compound-verbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Multi-word verbs: compound verbs"
+description: "Eight compound verbs, a verb stem and a second verb: begin, finish, keep, burst into, too much, do again, and two with their own meaning. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ja-4421":
+    native: "to start eating"
+    notes:
+      "u1": "The verb stem (the verb without ます (masu): たべ (tabe)) and はじめる (hajimeru): begin doing. It can be planned."
+    bases:
+      "たべ": { meaning: "to eat (stem)" }
+      "はじめる": { meaning: "to begin" }
+  "ja-4422":
+    native: "to finish reading"
+    notes:
+      "u1": "The stem and おわる (owaru): finish doing."
+    bases:
+      "よみ": { meaning: "to read (stem)" }
+      "おわる": { meaning: "to end, to finish" }
+  "ja-4423":
+    native: "to keep talking"
+    notes:
+      "u1": "The stem and つづける (tsuzukeru): keep doing."
+    bases:
+      "はなし": { meaning: "to talk (stem)" }
+      "つづける": { meaning: "to continue" }
+  "ja-4424":
+    native: "to burst into tears"
+    notes:
+      "u1": "The stem and だす (dasu): start suddenly. はじめる (hajimeru) can be planned; だす (dasu) usually cannot."
+    bases:
+      "なき": { meaning: "to cry (stem)" }
+      "だす": { meaning: "to put out; after a stem, to burst into" }
+  "ja-4425":
+    native: "to drink too much"
+    notes:
+      "u1": "The stem and すぎる (sugiru): do too much. It also follows adjectives."
+    bases:
+      "のみ": { meaning: "to drink (stem)" }
+      "すぎる": { meaning: "to pass; after a stem, to do too much" }
+  "ja-4426":
+    native: "to think again"
+    notes:
+      "u1": "The stem and なおす (naosu): do again, in a better way."
+    bases:
+      "かんがえ": { meaning: "to think (stem)" }
+      "なおす": { meaning: "to fix; after a stem, to do again" }
+  "ja-4427":
+    native: "to remember, to recall"
+    notes:
+      "u1": "おもう (omou) and だす (dasu) have become one verb, 'to think out', which means to recall. Its meaning is more than the two parts."
+    bases:
+      "おもい": { meaning: "to think (stem)" }
+      "だす": { meaning: "to put out" }
+  "ja-4428":
+    native: "to come up with an idea"
+    notes:
+      "u1": "The stem and つく (tsuku): an idea 'attaches' to the mind. It is not おもいだす (omoidasu), which is to remember something known."
+    bases:
+      "おもい": { meaning: "to think (stem)" }
+      "つく": { meaning: "to attach, to arrive" }

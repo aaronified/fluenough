@@ -243,3 +243,14 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ja-culture-1 | All English lines in ja-culture-1 are the builder's own plain translations, and each text is shown in modern kana: please check them, and the A2 or B1 level of each card. | Sonnet builder | 2026-11-13 |
 | unit-level | ja-culture-1 | decks/creators/ja.yaml: please check each creator's dates (Sei Shonagon, Kamo no Chomei, Takano Tatsuyuki), era, bio and legacy line; no pictures are used because no licence has been checked. | Sonnet builder | 2026-11-13 |
 | course-wide | ja-culture-1 | The IPA of ja-culture-1 is from tools/transcribe.py with z (not dz) between vowels, as in the older decks; is that right? | Sonnet builder | 2026-11-13 |
+| ja-4400 | ja-proverbs-1 | Are the twelve proverbs in ja-proverbs-1 really in the Edo-period iroha karuta sets (the source block says so, dated 1603-1868), and is that the right way to date an oral-tradition proverb? | Sonnet builder | 2026-11-13 |
+| ja-4406 | ja-proverbs-1 | Is びんぼうひまなし (written 貧乏暇なし) the standard wording, and is 'Poverty leaves no free time' fair? | Sonnet builder | 2026-11-13 |
+| ja-4408 | ja-proverbs-1 | Is ねんにはねんをいれよ (written 念には念を入れよ) the standard form, or is 念には念を入れ the usual one? | Sonnet builder | 2026-11-13 |
+| ja-4411 | ja-proverbs-1 | Is みからでたさび (written 身から出た錆) in the iroha karuta sets, and is the note on its meaning right? | Sonnet builder | 2026-11-13 |
+| unit-level | ja-proverbs-1 | The note of each proverb gives what it is said of in the builder's own words: please check each. | Sonnet builder | 2026-11-13 |
+| ja-4412 | ja-multiword-te-auxiliaries | Are the usage notes right, in particular しまう (to do by mistake, with regret) and あげる (can sound like a favor)? | Sonnet builder | 2026-11-13 |
+| ja-4421 | ja-multiword-compound-verbs | Are はじめる and だす described right (planned against sudden), and is おもいだす fairly called one verb with its own meaning? | Sonnet builder | 2026-11-13 |
+| unit-level | ja-multiword-* | Levels: the te-form auxiliaries are A2 (みる, おく, しまう, くる, いく) and B1 (あげる, もらう, くれる); the compound verbs are B1. Are these right? | Sonnet builder | 2026-11-13 |
+| unit-level | recommendations/ja.yaml | The nine works' briefings and quiz answers are from the builder's memory of the works; please check every question against the work, and that none can be answered without it. | Sonnet builder | 2026-11-13 |
+| unit-level | recommendations/ja.yaml | Titles are written in kana with a reading, though the official titles use kanji (千と千尋の神隠し and so on): is that acceptable under the kana-only rule? | Sonnet builder | 2026-11-13 |
+| unit-level | creators/ja.yaml | Nine creators are added (two living: Miyazaki Hayao, Shinkai Makoto; and a third, Murakami Haruki): is it right to list living creators with no picture and no legacy, and are the dates right? | Sonnet builder | 2026-11-13 |
