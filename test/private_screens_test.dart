@@ -164,6 +164,17 @@ Future<void> _openOver(WidgetTester tester, Widget page, _World world) async {
   await tester.pumpAndSettle();
 }
 
+/// Scrolls the page's list until [finder] is on screen: the list is lazy, so
+/// a group far down is not built until then.
+Future<void> _reveal(WidgetTester tester, Finder finder) async {
+  await tester.scrollUntilVisible(
+    finder,
+    300,
+    scrollable: find.byType(Scrollable).first,
+  );
+  await tester.pumpAndSettle();
+}
+
 void main() {
   setUpAll(() async => _tiny = await tinyPackage());
 
@@ -360,7 +371,8 @@ void main() {
       expect(world.state.canSpeak(language), isFalse);
       final l10n = l10nOf(tester);
       expect(find.textContaining(l10n.privateNoVoiceBody), findsOneWidget);
-      await tapShown(tester, find.text(l10n.privateWhy));
+      await _reveal(tester, find.text(l10n.privateWhy));
+      await tester.tap(find.text(l10n.privateWhy));
       await tester.pumpAndSettle();
       expect(find.text(l10n.privateWhyTitle('Alpha')), findsOneWidget);
       expect(find.text(l10n.privateCheckAgain), findsOneWidget);
@@ -387,11 +399,12 @@ void main() {
       await _open(tester, const YourDecksPage(), world);
       final l10n = l10nOf(tester);
       expect(find.text('Alpha'), findsOneWidget);
+      await _reveal(tester, find.text('Beta'));
       expect(find.text('Beta'), findsOneWidget);
       expect(find.text(l10n.privateListHeading(2)), findsOneWidget);
       expect(find.textContaining('2 of 3 active'), findsOneWidget);
-      expect(find.text(l10n.privateKindNew), findsNWidgets(2));
-      expect(find.text(l10n.privateHoldsValue(6, 2, 2)), findsNWidgets(2));
+      expect(find.text(l10n.privateKindNew), findsWidgets);
+      expect(find.text(l10n.privateHoldsValue(6, 2, 2)), findsWidgets);
     });
 
     testWidgets('a fourth package asks which to turn off, the least recently '
@@ -408,9 +421,9 @@ void main() {
       );
       await _open(tester, const YourDecksPage(), world);
       final l10n = l10nOf(tester);
+      await _reveal(tester, find.text(l10n.privateNeedsSlot));
       expect(find.text(l10n.privateNeedsSlot), findsOneWidget);
-      final fourth = find.byType(Switch).at(3);
-      await tapShown(tester, fourth);
+      await tester.tap(find.byType(Switch).last);
       await tester.pumpAndSettle();
       expect(find.text(l10n.privateCapTitle), findsOneWidget);
       expect(
@@ -443,7 +456,8 @@ void main() {
       );
       await _open(tester, const YourDecksPage(), world);
       final l10n = l10nOf(tester);
-      await tapShown(tester, find.text(l10n.privateRemove).first);
+      await _reveal(tester, find.text(l10n.privateRemove));
+      await tester.tap(find.text(l10n.privateRemove).first);
       await tester.pumpAndSettle();
       expect(find.text(l10n.privateRemoveTitle('Alpha')), findsOneWidget);
       final dialog = find.byType(AlertDialog);
@@ -482,7 +496,8 @@ void main() {
       );
       await _open(tester, const YourDecksPage(), world);
       final l10n = l10nOf(tester);
-      await tapShown(tester, find.text(l10n.privateRemove).first);
+      await _reveal(tester, find.text(l10n.privateRemove));
+      await tester.tap(find.text(l10n.privateRemove).first);
       await tester.pumpAndSettle();
       await tester.tap(find.text(l10n.privateRemoveDelete));
       await tester.pumpAndSettle();
@@ -740,7 +755,8 @@ void main() {
         codes: <String>['qaa', 'qab', 'qac', 'qad'],
         off: <String>{'qad'},
         then: (tester) async {
-          await tapShown(tester, find.byType(Switch).at(3));
+          await _reveal(tester, find.text(l10nOf(tester).privateNeedsSlot));
+          await tester.tap(find.byType(Switch).last);
           await tester.pumpAndSettle();
         },
       ),
@@ -751,7 +767,8 @@ void main() {
       yourDecks(
         codes: <String>['qaa'],
         then: (tester) async {
-          await tapShown(tester, find.text(l10nOf(tester).privateRemove));
+          await _reveal(tester, find.text(l10nOf(tester).privateRemove));
+          await tester.tap(find.text(l10nOf(tester).privateRemove));
           await tester.pumpAndSettle();
         },
       ),
@@ -762,7 +779,8 @@ void main() {
       yourDecks(
         codes: <String>['qaa'],
         then: (tester) async {
-          await tapShown(tester, find.text(l10nOf(tester).privateWhy));
+          await _reveal(tester, find.text(l10nOf(tester).privateWhy));
+          await tester.tap(find.text(l10nOf(tester).privateWhy));
           await tester.pumpAndSettle();
         },
       ),
