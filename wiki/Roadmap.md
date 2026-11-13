@@ -67,11 +67,10 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.7.0
 
-13 approved open issues.
+12 approved open issues.
 
 **Enhancements**
 
-- [#204](https://github.com/aaronified/fluenough/issues/204) Profiles and a PIN lock
 - [#204](https://github.com/aaronified/fluenough/issues/204) Profiles and a PIN lock
 - [#495](https://github.com/aaronified/fluenough/issues/495) Your decks: custom decks, templates, and an upload review that validates and fixes
 - [#522](https://github.com/aaronified/fluenough/issues/522) Question engine: questions derived from card data (ADR-0039)
@@ -157,7 +156,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 - [#169](https://github.com/aaronified/fluenough/issues/169) Lessons that start from songs and films learners already know
 - [#170](https://github.com/aaronified/fluenough/issues/170) Bengali: start the course with Ekla Chalo Re
-- [#170](https://github.com/aaronified/fluenough/issues/170) Bengali: start the course with Ekla Chalo Re
 - [#411](https://github.com/aaronified/fluenough/issues/411) Shareable progress image or summary, built from the review log
 - [#520](https://github.com/aaronified/fluenough/issues/520) Regional flavours: a deck per language after A2, noting major regional variations
 - [#579](https://github.com/aaronified/fluenough/issues/579) Sign languages: a deck format and drills built on images and video
@@ -195,6 +193,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#110](https://github.com/aaronified/fluenough/issues/110) Dialogue decks: short role-plays, one side each
 - [#214](https://github.com/aaronified/fluenough/issues/214) Plan: a Research and standards page, with the sources
 - [#215](https://github.com/aaronified/fluenough/issues/215) Plan: books, films and songs you bring, with questions on them
+- [#216](https://github.com/aaronified/fluenough/issues/216) Plan: a path for every language, by family
 - [#216](https://github.com/aaronified/fluenough/issues/216) Plan: a path for every language, by family
 - [#217](https://github.com/aaronified/fluenough/issues/217) Plan: IPA from Wiktionary
 - [#218](https://github.com/aaronified/fluenough/issues/218) Plan: Fluenough on the web, installable
@@ -344,6 +343,11 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1201](https://github.com/aaronified/fluenough/issues/1201) Language: Pashto: full deck format
 - [#1202](https://github.com/aaronified/fluenough/issues/1202) Language: Mycenaean Greek: full deck format
 - [#1203](https://github.com/aaronified/fluenough/issues/1203) Language: Sumerian: full deck format
+- [#1204](https://github.com/aaronified/fluenough/issues/1204) Language: Egyptian: full deck format
+- [#1205](https://github.com/aaronified/fluenough/issues/1205) Language: Proto-Indo-European: full deck format
+- [#1206](https://github.com/aaronified/fluenough/issues/1206) Language: Vedic Sanskrit: full deck format
+- [#1207](https://github.com/aaronified/fluenough/issues/1207) Language: Latin: full deck format
+- [#1208](https://github.com/aaronified/fluenough/issues/1208) Language: Old English: full deck format
 
 ## Plans
 
