@@ -1,0 +1,3413 @@
+schema: 1
+id: "ja-grammar-te-auxiliaries"
+part: "core"
+kind: "rules"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ja-0085"]
+  slots: ["te-shimau", "te-oku", "te-miru"]
+  rows:
+    - word: "ja-1050"
+      forms:
+        "te-shimau": "まがってしまいます"
+        "te-oku": "まがっておきます"
+        "te-miru": "まがってみます"
+      readings:
+        "te-shimau": "magatteshimaimasu"
+        "te-oku": "magatteokimasu"
+        "te-miru": "magattemimasu"
+    - word: "ja-1060"
+      forms:
+        "te-shimau": "わたってしまいます"
+        "te-oku": "わたっておきます"
+        "te-miru": "わたってみます"
+      readings:
+        "te-shimau": "watatteshimaimasu"
+        "te-oku": "watatteokimasu"
+        "te-miru": "watattemimasu"
+    - word: "ja-1061"
+      forms:
+        "te-shimau": "すすんでしまいます"
+        "te-oku": "すすんでおきます"
+        "te-miru": "すすんでみます"
+      readings:
+        "te-shimau": "susundeshimaimasu"
+        "te-oku": "susundeokimasu"
+        "te-miru": "susundemimasu"
+    - word: "ja-1062"
+      forms:
+        "te-shimau": "さがってしまいます"
+        "te-oku": "さがっておきます"
+        "te-miru": "さがってみます"
+      readings:
+        "te-shimau": "sagatteshimaimasu"
+        "te-oku": "sagatteokimasu"
+        "te-miru": "sagattemimasu"
+    - word: "ja-1070"
+      forms:
+        "te-shimau": "まちがえてしまいます"
+        "te-oku": "まちがえておきます"
+        "te-miru": "まちがえてみます"
+      readings:
+        "te-shimau": "machigaeteshimaimasu"
+        "te-oku": "machigaeteokimasu"
+        "te-miru": "machigaetemimasu"
+    - word: "ja-1071"
+      forms:
+        "te-shimau": "でてしまいます"
+        "te-oku": "でておきます"
+        "te-miru": "でてみます"
+      readings:
+        "te-shimau": "deteshimaimasu"
+        "te-oku": "deteokimasu"
+        "te-miru": "detemimasu"
+    - word: "ja-1078"
+      forms:
+        "te-shimau": "むかってしまいます"
+        "te-oku": "むかっておきます"
+        "te-miru": "むかってみます"
+      readings:
+        "te-shimau": "mukatteshimaimasu"
+        "te-oku": "mukatteokimasu"
+        "te-miru": "mukattemimasu"
+    - word: "ja-0341"
+      forms:
+        "te-shimau": "たべてしまいます"
+        "te-oku": "たべておきます"
+        "te-miru": "たべてみます"
+      readings:
+        "te-shimau": "tabeteshimaimasu"
+        "te-oku": "tabeteokimasu"
+        "te-miru": "tabetemimasu"
+    - word: "ja-0342"
+      forms:
+        "te-shimau": "のんでしまいます"
+        "te-oku": "のんでおきます"
+        "te-miru": "のんでみます"
+      readings:
+        "te-shimau": "nondeshimaimasu"
+        "te-oku": "nondeokimasu"
+        "te-miru": "nondemimasu"
+    - word: "ja-0343"
+      forms:
+        "te-shimau": "みてしまいます"
+        "te-oku": "みておきます"
+        "te-miru": "みてみます"
+      readings:
+        "te-shimau": "miteshimaimasu"
+        "te-oku": "miteokimasu"
+        "te-miru": "mitemimasu"
+    - word: "ja-0344"
+      forms:
+        "te-shimau": "きいてしまいます"
+        "te-oku": "きいておきます"
+        "te-miru": "きいてみます"
+      readings:
+        "te-shimau": "kiiteshimaimasu"
+        "te-oku": "kiiteokimasu"
+        "te-miru": "kiitemimasu"
+    - word: "ja-0345"
+      forms:
+        "te-shimau": "よんでしまいます"
+        "te-oku": "よんでおきます"
+        "te-miru": "よんでみます"
+      readings:
+        "te-shimau": "yondeshimaimasu"
+        "te-oku": "yondeokimasu"
+        "te-miru": "yondemimasu"
+    - word: "ja-0346"
+      forms:
+        "te-shimau": "かいてしまいます"
+        "te-oku": "かいておきます"
+        "te-miru": "かいてみます"
+      readings:
+        "te-shimau": "kaiteshimaimasu"
+        "te-oku": "kaiteokimasu"
+        "te-miru": "kaitemimasu"
+    - word: "ja-0347"
+      forms:
+        "te-shimau": "はなしてしまいます"
+        "te-oku": "はなしておきます"
+        "te-miru": "はなしてみます"
+      readings:
+        "te-shimau": "hanashiteshimaimasu"
+        "te-oku": "hanashiteokimasu"
+        "te-miru": "hanashitemimasu"
+    - word: "ja-0348"
+      forms:
+        "te-shimau": "いってしまいます"
+        "te-oku": "いっておきます"
+        "te-miru": "いってみます"
+      readings:
+        "te-shimau": "itteshimaimasu"
+        "te-oku": "itteokimasu"
+        "te-miru": "ittemimasu"
+    - word: "ja-0349"
+      forms:
+        "te-shimau": "きてしまいます"
+        "te-oku": "きておきます"
+        "te-miru": "きてみます"
+      readings:
+        "te-shimau": "kiteshimaimasu"
+        "te-oku": "kiteokimasu"
+        "te-miru": "kitemimasu"
+    - word: "ja-0350"
+      forms:
+        "te-shimau": "かえってしまいます"
+        "te-oku": "かえっておきます"
+        "te-miru": "かえってみます"
+      readings:
+        "te-shimau": "kaetteshimaimasu"
+        "te-oku": "kaetteokimasu"
+        "te-miru": "kaettemimasu"
+    - word: "ja-0351"
+      forms:
+        "te-shimau": "おきてしまいます"
+        "te-oku": "おきておきます"
+        "te-miru": "おきてみます"
+      readings:
+        "te-shimau": "okiteshimaimasu"
+        "te-oku": "okiteokimasu"
+        "te-miru": "okitemimasu"
+    - word: "ja-0352"
+      forms:
+        "te-shimau": "ねてしまいます"
+        "te-oku": "ねておきます"
+        "te-miru": "ねてみます"
+      readings:
+        "te-shimau": "neteshimaimasu"
+        "te-oku": "neteokimasu"
+        "te-miru": "netemimasu"
+    - word: "ja-0353"
+      forms:
+        "te-shimau": "はたらいてしまいます"
+        "te-oku": "はたらいておきます"
+        "te-miru": "はたらいてみます"
+      readings:
+        "te-shimau": "hataraiteshimaimasu"
+        "te-oku": "hataraiteokimasu"
+        "te-miru": "hataraitemimasu"
+    - word: "ja-0354"
+      forms:
+        "te-shimau": "やすんでしまいます"
+        "te-oku": "やすんでおきます"
+        "te-miru": "やすんでみます"
+      readings:
+        "te-shimau": "yasundeshimaimasu"
+        "te-oku": "yasundeokimasu"
+        "te-miru": "yasundemimasu"
+    - word: "ja-0355"
+      forms:
+        "te-shimau": "はいってしまいます"
+        "te-oku": "はいっておきます"
+        "te-miru": "はいってみます"
+      readings:
+        "te-shimau": "haitteshimaimasu"
+        "te-oku": "haitteokimasu"
+        "te-miru": "haittemimasu"
+    - word: "ja-0356"
+      forms:
+        "te-shimau": "かってしまいます"
+        "te-oku": "かっておきます"
+        "te-miru": "かってみます"
+      readings:
+        "te-shimau": "katteshimaimasu"
+        "te-oku": "katteokimasu"
+        "te-miru": "kattemimasu"
+    - word: "ja-0357"
+      forms:
+        "te-shimau": "あってしまいます"
+        "te-oku": "あっておきます"
+        "te-miru": "あってみます"
+      readings:
+        "te-shimau": "atteshimaimasu"
+        "te-oku": "atteokimasu"
+        "te-miru": "attemimasu"
+    - word: "ja-0358"
+      forms:
+        "te-shimau": "まってしまいます"
+        "te-oku": "まっておきます"
+        "te-miru": "まってみます"
+      readings:
+        "te-shimau": "matteshimaimasu"
+        "te-oku": "matteokimasu"
+        "te-miru": "mattemimasu"
+    - word: "ja-0359"
+      forms:
+        "te-shimau": "もってしまいます"
+        "te-oku": "もっておきます"
+        "te-miru": "もってみます"
+      readings:
+        "te-shimau": "motteshimaimasu"
+        "te-oku": "motteokimasu"
+        "te-miru": "mottemimasu"
+    - word: "ja-0360"
+      forms:
+        "te-shimau": "あるいてしまいます"
+        "te-oku": "あるいておきます"
+        "te-miru": "あるいてみます"
+      readings:
+        "te-shimau": "aruiteshimaimasu"
+        "te-oku": "aruiteokimasu"
+        "te-miru": "aruitemimasu"
+    - word: "ja-0361"
+      forms:
+        "te-shimau": "のってしまいます"
+        "te-oku": "のっておきます"
+        "te-miru": "のってみます"
+      readings:
+        "te-shimau": "notteshimaimasu"
+        "te-oku": "notteokimasu"
+        "te-miru": "nottemimasu"
+    - word: "ja-0362"
+      forms:
+        "te-shimau": "おりてしまいます"
+        "te-oku": "おりておきます"
+        "te-miru": "おりてみます"
+      readings:
+        "te-shimau": "oriteshimaimasu"
+        "te-oku": "oriteokimasu"
+        "te-miru": "oritemimasu"
+    - word: "ja-0363"
+      forms:
+        "te-shimau": "あらってしまいます"
+        "te-oku": "あらっておきます"
+        "te-miru": "あらってみます"
+      readings:
+        "te-shimau": "aratteshimaimasu"
+        "te-oku": "aratteokimasu"
+        "te-miru": "arattemimasu"
+    - word: "ja-0364"
+      forms:
+        "te-shimau": "つくってしまいます"
+        "te-oku": "つくっておきます"
+        "te-miru": "つくってみます"
+      readings:
+        "te-shimau": "tsukutteshimaimasu"
+        "te-oku": "tsukutteokimasu"
+        "te-miru": "tsukuttemimasu"
+    - word: "ja-0365"
+      forms:
+        "te-shimau": "わかってしまいます"
+        "te-oku": "わかっておきます"
+        "te-miru": "わかってみます"
+      readings:
+        "te-shimau": "wakatteshimaimasu"
+        "te-oku": "wakatteokimasu"
+        "te-miru": "wakattemimasu"
+    - word: "ja-0366"
+      forms:
+        "te-shimau": "しってしまいます"
+        "te-oku": "しっておきます"
+        "te-miru": "しってみます"
+      readings:
+        "te-shimau": "shitteshimaimasu"
+        "te-oku": "shitteokimasu"
+        "te-miru": "shittemimasu"
+    - word: "ja-0367"
+      forms:
+        "te-shimau": "ならってしまいます"
+        "te-oku": "ならっておきます"
+        "te-miru": "ならってみます"
+      readings:
+        "te-shimau": "naratteshimaimasu"
+        "te-oku": "naratteokimasu"
+        "te-miru": "narattemimasu"
+    - word: "ja-0368"
+      forms:
+        "te-shimau": "おしえてしまいます"
+        "te-oku": "おしえておきます"
+        "te-miru": "おしえてみます"
+      readings:
+        "te-shimau": "oshieteshimaimasu"
+        "te-oku": "oshieteokimasu"
+        "te-miru": "oshietemimasu"
+    - word: "ja-0369"
+      forms:
+        "te-shimau": "つかってしまいます"
+        "te-oku": "つかっておきます"
+        "te-miru": "つかってみます"
+      readings:
+        "te-shimau": "tsukatteshimaimasu"
+        "te-oku": "tsukatteokimasu"
+        "te-miru": "tsukattemimasu"
+    - word: "ja-0370"
+      forms:
+        "te-shimau": "すわってしまいます"
+        "te-oku": "すわっておきます"
+        "te-miru": "すわってみます"
+      readings:
+        "te-shimau": "suwatteshimaimasu"
+        "te-oku": "suwatteokimasu"
+        "te-miru": "suwattemimasu"
+    - word: "ja-0371"
+      forms:
+        "te-shimau": "たってしまいます"
+        "te-oku": "たっておきます"
+        "te-miru": "たってみます"
+      readings:
+        "te-shimau": "tatteshimaimasu"
+        "te-oku": "tatteokimasu"
+        "te-miru": "tattemimasu"
+    - word: "ja-0372"
+      forms:
+        "te-shimau": "あけてしまいます"
+        "te-oku": "あけておきます"
+        "te-miru": "あけてみます"
+      readings:
+        "te-shimau": "aketeshimaimasu"
+        "te-oku": "aketeokimasu"
+        "te-miru": "aketemimasu"
+    - word: "ja-0373"
+      forms:
+        "te-shimau": "しめてしまいます"
+        "te-oku": "しめておきます"
+        "te-miru": "しめてみます"
+      readings:
+        "te-shimau": "shimeteshimaimasu"
+        "te-oku": "shimeteokimasu"
+        "te-miru": "shimetemimasu"
+    - word: "ja-0374"
+      forms:
+        "te-shimau": "あそんでしまいます"
+        "te-oku": "あそんでおきます"
+        "te-miru": "あそんでみます"
+      readings:
+        "te-shimau": "asondeshimaimasu"
+        "te-oku": "asondeokimasu"
+        "te-miru": "asondemimasu"
+    - word: "ja-0375"
+      forms:
+        "te-shimau": "してしまいます"
+        "te-oku": "しておきます"
+        "te-miru": "してみます"
+      readings:
+        "te-shimau": "shiteshimaimasu"
+        "te-oku": "shiteokimasu"
+        "te-miru": "shitemimasu"
+    - word: "ja-0949"
+      forms:
+        "te-shimau": "かぞえてしまいます"
+        "te-oku": "かぞえておきます"
+        "te-miru": "かぞえてみます"
+      readings:
+        "te-shimau": "kazoeteshimaimasu"
+        "te-oku": "kazoeteokimasu"
+        "te-miru": "kazoetemimasu"
+    - word: "ja-1226"
+      forms:
+        "te-shimau": "こまってしまいます"
+        "te-oku": "こまっておきます"
+        "te-miru": "こまってみます"
+      readings:
+        "te-shimau": "komatteshimaimasu"
+        "te-oku": "komatteokimasu"
+        "te-miru": "komattemimasu"
+    - word: "ja-1227"
+      forms:
+        "te-shimau": "よんでしまいます"
+        "te-oku": "よんでおきます"
+        "te-miru": "よんでみます"
+      readings:
+        "te-shimau": "yondeshimaimasu"
+        "te-oku": "yondeokimasu"
+        "te-miru": "yondemimasu"
+    - word: "ja-1228"
+      forms:
+        "te-shimau": "まよってしまいます"
+        "te-oku": "まよっておきます"
+        "te-miru": "まよってみます"
+      readings:
+        "te-shimau": "mayotteshimaimasu"
+        "te-oku": "mayotteokimasu"
+        "te-miru": "mayottemimasu"
+    - word: "ja-1236"
+      forms:
+        "te-shimau": "たすけてしまいます"
+        "te-oku": "たすけておきます"
+        "te-miru": "たすけてみます"
+      readings:
+        "te-shimau": "tasuketeshimaimasu"
+        "te-oku": "tasuketeokimasu"
+        "te-miru": "tasuketemimasu"
+    - word: "ja-1237"
+      forms:
+        "te-shimau": "たすかってしまいます"
+        "te-oku": "たすかっておきます"
+        "te-miru": "たすかってみます"
+      readings:
+        "te-shimau": "tasukatteshimaimasu"
+        "te-oku": "tasukatteokimasu"
+        "te-miru": "tasukattemimasu"
+    - word: "ja-1240"
+      forms:
+        "te-shimau": "まもってしまいます"
+        "te-oku": "まもっておきます"
+        "te-miru": "まもってみます"
+      readings:
+        "te-shimau": "mamotteshimaimasu"
+        "te-oku": "mamotteokimasu"
+        "te-miru": "mamottemimasu"
+    - word: "ja-0571"
+      forms:
+        "te-shimau": "あびてしまいます"
+        "te-oku": "あびておきます"
+        "te-miru": "あびてみます"
+      readings:
+        "te-shimau": "abiteshimaimasu"
+        "te-oku": "abiteokimasu"
+        "te-miru": "abitemimasu"
+    - word: "ja-0572"
+      forms:
+        "te-shimau": "はしってしまいます"
+        "te-oku": "はしっておきます"
+        "te-miru": "はしってみます"
+      readings:
+        "te-shimau": "hashitteshimaimasu"
+        "te-oku": "hashitteokimasu"
+        "te-miru": "hashittemimasu"
+    - word: "ja-0573"
+      forms:
+        "te-shimau": "とんでしまいます"
+        "te-oku": "とんでおきます"
+        "te-miru": "とんでみます"
+      readings:
+        "te-shimau": "tondeshimaimasu"
+        "te-oku": "tondeokimasu"
+        "te-miru": "tondemimasu"
+    - word: "ja-0574"
+      forms:
+        "te-shimau": "おどってしまいます"
+        "te-oku": "おどっておきます"
+        "te-miru": "おどってみます"
+      readings:
+        "te-shimau": "odotteshimaimasu"
+        "te-oku": "odotteokimasu"
+        "te-miru": "odottemimasu"
+    - word: "ja-0575"
+      forms:
+        "te-shimau": "うたってしまいます"
+        "te-oku": "うたっておきます"
+        "te-miru": "うたってみます"
+      readings:
+        "te-shimau": "utatteshimaimasu"
+        "te-oku": "utatteokimasu"
+        "te-miru": "utattemimasu"
+    - word: "ja-0576"
+      forms:
+        "te-shimau": "かりてしまいます"
+        "te-oku": "かりておきます"
+        "te-miru": "かりてみます"
+      readings:
+        "te-shimau": "kariteshimaimasu"
+        "te-oku": "kariteokimasu"
+        "te-miru": "karitemimasu"
+    - word: "ja-0577"
+      forms:
+        "te-shimau": "かえしてしまいます"
+        "te-oku": "かえしておきます"
+        "te-miru": "かえしてみます"
+      readings:
+        "te-shimau": "kaeshiteshimaimasu"
+        "te-oku": "kaeshiteokimasu"
+        "te-miru": "kaeshitemimasu"
+    - word: "ja-0578"
+      forms:
+        "te-shimau": "わすれてしまいます"
+        "te-oku": "わすれておきます"
+        "te-miru": "わすれてみます"
+      readings:
+        "te-shimau": "wasureteshimaimasu"
+        "te-oku": "wasureteokimasu"
+        "te-miru": "wasuretemimasu"
+    - word: "ja-0579"
+      forms:
+        "te-shimau": "おぼえてしまいます"
+        "te-oku": "おぼえておきます"
+        "te-miru": "おぼえてみます"
+      readings:
+        "te-shimau": "oboeteshimaimasu"
+        "te-oku": "oboeteokimasu"
+        "te-miru": "oboetemimasu"
+    - word: "ja-0580"
+      forms:
+        "te-shimau": "てつだってしまいます"
+        "te-oku": "てつだっておきます"
+        "te-miru": "てつだってみます"
+      readings:
+        "te-shimau": "tetsudatteshimaimasu"
+        "te-oku": "tetsudatteokimasu"
+        "te-miru": "tetsudattemimasu"
+    - word: "ja-0581"
+      forms:
+        "te-shimau": "ひろってしまいます"
+        "te-oku": "ひろっておきます"
+        "te-miru": "ひろってみます"
+      readings:
+        "te-shimau": "hirotteshimaimasu"
+        "te-oku": "hirotteokimasu"
+        "te-miru": "hirottemimasu"
+    - word: "ja-0582"
+      forms:
+        "te-shimau": "すててしまいます"
+        "te-oku": "すてておきます"
+        "te-miru": "すててみます"
+      readings:
+        "te-shimau": "suteteshimaimasu"
+        "te-oku": "suteteokimasu"
+        "te-miru": "sutetemimasu"
+    - word: "ja-0583"
+      forms:
+        "te-shimau": "なくしてしまいます"
+        "te-oku": "なくしておきます"
+        "te-miru": "なくしてみます"
+      readings:
+        "te-shimau": "nakushiteshimaimasu"
+        "te-oku": "nakushiteokimasu"
+        "te-miru": "nakushitemimasu"
+    - word: "ja-0584"
+      forms:
+        "te-shimau": "のぼってしまいます"
+        "te-oku": "のぼっておきます"
+        "te-miru": "のぼってみます"
+      readings:
+        "te-shimau": "nobotteshimaimasu"
+        "te-oku": "nobotteokimasu"
+        "te-miru": "nobottemimasu"
+    - word: "ja-0585"
+      forms:
+        "te-shimau": "そうじしてしまいます"
+        "te-oku": "そうじしておきます"
+        "te-miru": "そうじしてみます"
+      readings:
+        "te-shimau": "soujishiteshimaimasu"
+        "te-oku": "soujishiteokimasu"
+        "te-miru": "soujishitemimasu"
+    - word: "ja-0586"
+      forms:
+        "te-shimau": "りょうりしてしまいます"
+        "te-oku": "りょうりしておきます"
+        "te-miru": "りょうりしてみます"
+      readings:
+        "te-shimau": "ryourishiteshimaimasu"
+        "te-oku": "ryourishiteokimasu"
+        "te-miru": "ryourishitemimasu"
+    - word: "ja-0587"
+      forms:
+        "te-shimau": "でかけてしまいます"
+        "te-oku": "でかけておきます"
+        "te-miru": "でかけてみます"
+      readings:
+        "te-shimau": "dekaketeshimaimasu"
+        "te-oku": "dekaketeokimasu"
+        "te-miru": "dekaketemimasu"
+    - word: "ja-0588"
+      forms:
+        "te-shimau": "もどってしまいます"
+        "te-oku": "もどっておきます"
+        "te-miru": "もどってみます"
+      readings:
+        "te-shimau": "modotteshimaimasu"
+        "te-oku": "modotteokimasu"
+        "te-miru": "modottemimasu"
+    - word: "ja-0589"
+      forms:
+        "te-shimau": "とまってしまいます"
+        "te-oku": "とまっておきます"
+        "te-miru": "とまってみます"
+      readings:
+        "te-shimau": "tomatteshimaimasu"
+        "te-oku": "tomatteokimasu"
+        "te-miru": "tomattemimasu"
+    - word: "ja-0590"
+      forms:
+        "te-shimau": "さがしてしまいます"
+        "te-oku": "さがしておきます"
+        "te-miru": "さがしてみます"
+      readings:
+        "te-shimau": "sagashiteshimaimasu"
+        "te-oku": "sagashiteokimasu"
+        "te-miru": "sagashitemimasu"
+    - word: "ja-0591"
+      forms:
+        "te-shimau": "みせてしまいます"
+        "te-oku": "みせておきます"
+        "te-miru": "みせてみます"
+      readings:
+        "te-shimau": "miseteshimaimasu"
+        "te-oku": "miseteokimasu"
+        "te-miru": "misetemimasu"
+    - word: "ja-0592"
+      forms:
+        "te-shimau": "いれてしまいます"
+        "te-oku": "いれておきます"
+        "te-miru": "いれてみます"
+      readings:
+        "te-shimau": "ireteshimaimasu"
+        "te-oku": "ireteokimasu"
+        "te-miru": "iretemimasu"
+    - word: "ja-0593"
+      forms:
+        "te-shimau": "わらってしまいます"
+        "te-oku": "わらっておきます"
+        "te-miru": "わらってみます"
+      readings:
+        "te-shimau": "waratteshimaimasu"
+        "te-oku": "waratteokimasu"
+        "te-miru": "warattemimasu"
+    - word: "ja-0594"
+      forms:
+        "te-shimau": "おこってしまいます"
+        "te-oku": "おこっておきます"
+        "te-miru": "おこってみます"
+      readings:
+        "te-shimau": "okotteshimaimasu"
+        "te-oku": "okotteokimasu"
+        "te-miru": "okottemimasu"
+    - word: "ja-0595"
+      forms:
+        "te-shimau": "やめてしまいます"
+        "te-oku": "やめておきます"
+        "te-miru": "やめてみます"
+      readings:
+        "te-shimau": "yameteshimaimasu"
+        "te-oku": "yameteokimasu"
+        "te-miru": "yametemimasu"
+    - word: "ja-0596"
+      forms:
+        "te-shimau": "はじめてしまいます"
+        "te-oku": "はじめておきます"
+        "te-miru": "はじめてみます"
+      readings:
+        "te-shimau": "hajimeteshimaimasu"
+        "te-oku": "hajimeteokimasu"
+        "te-miru": "hajimetemimasu"
+    - word: "ja-0597"
+      forms:
+        "te-shimau": "ひっこしてしまいます"
+        "te-oku": "ひっこしておきます"
+        "te-miru": "ひっこしてみます"
+      readings:
+        "te-shimau": "hikkoshiteshimaimasu"
+        "te-oku": "hikkoshiteokimasu"
+        "te-miru": "hikkoshitemimasu"
+    - word: "ja-0598"
+      forms:
+        "te-shimau": "あげてしまいます"
+        "te-oku": "あげておきます"
+        "te-miru": "あげてみます"
+      readings:
+        "te-shimau": "ageteshimaimasu"
+        "te-oku": "ageteokimasu"
+        "te-miru": "agetemimasu"
+    - word: "ja-0599"
+      forms:
+        "te-shimau": "もらってしまいます"
+        "te-oku": "もらっておきます"
+        "te-miru": "もらってみます"
+      readings:
+        "te-shimau": "moratteshimaimasu"
+        "te-oku": "moratteokimasu"
+        "te-miru": "morattemimasu"
+    - word: "ja-0600"
+      forms:
+        "te-shimau": "さけんでしまいます"
+        "te-oku": "さけんでおきます"
+        "te-miru": "さけんでみます"
+      readings:
+        "te-shimau": "sakendeshimaimasu"
+        "te-oku": "sakendeokimasu"
+        "te-miru": "sakendemimasu"
+    - word: "ja-0516"
+      forms:
+        "te-shimau": "おわってしまいます"
+        "te-oku": "おわっておきます"
+        "te-miru": "おわってみます"
+      readings:
+        "te-shimau": "owatteshimaimasu"
+        "te-oku": "owatteokimasu"
+        "te-miru": "owattemimasu"
+    - word: "ja-0711"
+      forms:
+        "te-shimau": "つとめてしまいます"
+        "te-oku": "つとめておきます"
+        "te-miru": "つとめてみます"
+      readings:
+        "te-shimau": "tsutometeshimaimasu"
+        "te-oku": "tsutometeokimasu"
+        "te-miru": "tsutometemimasu"
+    - word: "ja-1334"
+      forms:
+        "te-shimau": "きがえてしまいます"
+        "te-oku": "きがえておきます"
+        "te-miru": "きがえてみます"
+      readings:
+        "te-shimau": "kigaeteshimaimasu"
+        "te-oku": "kigaeteokimasu"
+        "te-miru": "kigaetemimasu"
+    - word: "ja-1335"
+      forms:
+        "te-shimau": "はいてしまいます"
+        "te-oku": "はいておきます"
+        "te-miru": "はいてみます"
+      readings:
+        "te-shimau": "haiteshimaimasu"
+        "te-oku": "haiteokimasu"
+        "te-miru": "haitemimasu"
+    - word: "ja-1336"
+      forms:
+        "te-shimau": "かぶってしまいます"
+        "te-oku": "かぶっておきます"
+        "te-miru": "かぶってみます"
+      readings:
+        "te-shimau": "kabutteshimaimasu"
+        "te-oku": "kabutteokimasu"
+        "te-miru": "kabuttemimasu"
+    - word: "ja-1341"
+      forms:
+        "te-shimau": "つかれてしまいます"
+        "te-oku": "つかれておきます"
+        "te-miru": "つかれてみます"
+      readings:
+        "te-shimau": "tsukareteshimaimasu"
+        "te-oku": "tsukareteokimasu"
+        "te-miru": "tsukaretemimasu"
+    - word: "ja-1348"
+      forms:
+        "te-shimau": "だしてしまいます"
+        "te-oku": "だしておきます"
+        "te-miru": "だしてみます"
+      readings:
+        "te-shimau": "dashiteshimaimasu"
+        "te-oku": "dashiteokimasu"
+        "te-miru": "dashitemimasu"
+    - word: "ja-1349"
+      forms:
+        "te-shimau": "わかしてしまいます"
+        "te-oku": "わかしておきます"
+        "te-miru": "わかしてみます"
+      readings:
+        "te-shimau": "wakashiteshimaimasu"
+        "te-oku": "wakashiteokimasu"
+        "te-miru": "wakashitemimasu"
+    - word: "ja-1350"
+      forms:
+        "te-shimau": "ほしてしまいます"
+        "te-oku": "ほしておきます"
+        "te-miru": "ほしてみます"
+      readings:
+        "te-shimau": "hoshiteshimaimasu"
+        "te-oku": "hoshiteokimasu"
+        "te-miru": "hoshitemimasu"
+    - word: "ja-1351"
+      forms:
+        "te-shimau": "かたづけてしまいます"
+        "te-oku": "かたづけておきます"
+        "te-miru": "かたづけてみます"
+      readings:
+        "te-shimau": "katazuketeshimaimasu"
+        "te-oku": "katazuketeokimasu"
+        "te-miru": "katazuketemimasu"
+    - word: "ja-1352"
+      forms:
+        "te-shimau": "たたんでしまいます"
+        "te-oku": "たたんでおきます"
+        "te-miru": "たたんでみます"
+      readings:
+        "te-shimau": "tatandeshimaimasu"
+        "te-oku": "tatandeokimasu"
+        "te-miru": "tatandemimasu"
+    - word: "ja-1353"
+      forms:
+        "te-shimau": "ぬいでしまいます"
+        "te-oku": "ぬいでおきます"
+        "te-miru": "ぬいでみます"
+      readings:
+        "te-shimau": "nuideshimaimasu"
+        "te-oku": "nuideokimasu"
+        "te-miru": "nuidemimasu"
+    - word: "ja-1354"
+      forms:
+        "te-shimau": "まにあってしまいます"
+        "te-oku": "まにあっておきます"
+        "te-miru": "まにあってみます"
+      readings:
+        "te-shimau": "maniatteshimaimasu"
+        "te-oku": "maniatteokimasu"
+        "te-miru": "maniattemimasu"
+    - word: "ja-1364"
+      forms:
+        "te-shimau": "かわいてしまいます"
+        "te-oku": "かわいておきます"
+        "te-miru": "かわいてみます"
+      readings:
+        "te-shimau": "kawaiteshimaimasu"
+        "te-oku": "kawaiteokimasu"
+        "te-miru": "kawaitemimasu"
+    - word: "ja-1368"
+      forms:
+        "te-shimau": "いそいでしまいます"
+        "te-oku": "いそいでおきます"
+        "te-miru": "いそいでみます"
+      readings:
+        "te-shimau": "isoideshimaimasu"
+        "te-oku": "isoideokimasu"
+        "te-miru": "isoidemimasu"
+    - word: "ja-1718"
+      forms:
+        "te-shimau": "うってしまいます"
+        "te-oku": "うっておきます"
+        "te-miru": "うってみます"
+      readings:
+        "te-shimau": "utteshimaimasu"
+        "te-oku": "utteokimasu"
+        "te-miru": "uttemimasu"
+    - word: "ja-1719"
+      forms:
+        "te-shimau": "はらってしまいます"
+        "te-oku": "はらっておきます"
+        "te-miru": "はらってみます"
+      readings:
+        "te-shimau": "haratteshimaimasu"
+        "te-oku": "haratteokimasu"
+        "te-miru": "harattemimasu"
+    - word: "ja-1720"
+      forms:
+        "te-shimau": "まけてしまいます"
+        "te-oku": "まけておきます"
+        "te-miru": "まけてみます"
+      readings:
+        "te-shimau": "maketeshimaimasu"
+        "te-oku": "maketeokimasu"
+        "te-miru": "maketemimasu"
+    - word: "ja-1721"
+      forms:
+        "te-shimau": "えらんでしまいます"
+        "te-oku": "えらんでおきます"
+        "te-miru": "えらんでみます"
+      readings:
+        "te-shimau": "erandeshimaimasu"
+        "te-oku": "erandeokimasu"
+        "te-miru": "erandemimasu"
+    - word: "ja-1758"
+      forms:
+        "te-shimau": "たのんでしまいます"
+        "te-oku": "たのんでおきます"
+        "te-miru": "たのんでみます"
+      readings:
+        "te-shimau": "tanondeshimaimasu"
+        "te-oku": "tanondeokimasu"
+        "te-miru": "tanondemimasu"
+    - word: "ja-1759"
+      forms:
+        "te-shimau": "おごってしまいます"
+        "te-oku": "おごっておきます"
+        "te-miru": "おごってみます"
+      readings:
+        "te-shimau": "ogotteshimaimasu"
+        "te-oku": "ogotteokimasu"
+        "te-miru": "ogottemimasu"
+    - word: "ja-1790"
+      forms:
+        "te-shimau": "いためてしまいます"
+        "te-oku": "いためておきます"
+        "te-miru": "いためてみます"
+      readings:
+        "te-shimau": "itameteshimaimasu"
+        "te-oku": "itameteokimasu"
+        "te-miru": "itametemimasu"
+    - word: "ja-1791"
+      forms:
+        "te-shimau": "まぜてしまいます"
+        "te-oku": "まぜておきます"
+        "te-miru": "まぜてみます"
+      readings:
+        "te-shimau": "mazeteshimaimasu"
+        "te-oku": "mazeteokimasu"
+        "te-miru": "mazetemimasu"
+    - word: "ja-1792"
+      forms:
+        "te-shimau": "ゆでてしまいます"
+        "te-oku": "ゆでておきます"
+        "te-miru": "ゆでてみます"
+      readings:
+        "te-shimau": "yudeteshimaimasu"
+        "te-oku": "yudeteokimasu"
+        "te-miru": "yudetemimasu"
+    - word: "ja-1793"
+      forms:
+        "te-shimau": "にてしまいます"
+        "te-oku": "にておきます"
+        "te-miru": "にてみます"
+      readings:
+        "te-shimau": "niteshimaimasu"
+        "te-oku": "niteokimasu"
+        "te-miru": "nitemimasu"
+    - word: "ja-1794"
+      forms:
+        "te-shimau": "やいてしまいます"
+        "te-oku": "やいておきます"
+        "te-miru": "やいてみます"
+      readings:
+        "te-shimau": "yaiteshimaimasu"
+        "te-oku": "yaiteokimasu"
+        "te-miru": "yaitemimasu"
+    - word: "ja-1799"
+      forms:
+        "te-shimau": "ひやしてしまいます"
+        "te-oku": "ひやしておきます"
+        "te-miru": "ひやしてみます"
+      readings:
+        "te-shimau": "hiyashiteshimaimasu"
+        "te-oku": "hiyashiteokimasu"
+        "te-miru": "hiyashitemimasu"
+    - word: "ja-1800"
+      forms:
+        "te-shimau": "あたためてしまいます"
+        "te-oku": "あたためておきます"
+        "te-miru": "あたためてみます"
+      readings:
+        "te-shimau": "atatameteshimaimasu"
+        "te-oku": "atatameteokimasu"
+        "te-miru": "atatametemimasu"
+    - word: "ja-1801"
+      forms:
+        "te-shimau": "きざんでしまいます"
+        "te-oku": "きざんでおきます"
+        "te-miru": "きざんでみます"
+      readings:
+        "te-shimau": "kizandeshimaimasu"
+        "te-oku": "kizandeokimasu"
+        "te-miru": "kizandemimasu"
+    - word: "ja-1802"
+      forms:
+        "te-shimau": "むいてしまいます"
+        "te-oku": "むいておきます"
+        "te-miru": "むいてみます"
+      readings:
+        "te-shimau": "muiteshimaimasu"
+        "te-oku": "muiteokimasu"
+        "te-miru": "muitemimasu"
+    - word: "ja-1803"
+      forms:
+        "te-shimau": "つつんでしまいます"
+        "te-oku": "つつんでおきます"
+        "te-miru": "つつんでみます"
+      readings:
+        "te-shimau": "tsutsundeshimaimasu"
+        "te-oku": "tsutsundeokimasu"
+        "te-miru": "tsutsundemimasu"
+    - word: "ja-1804"
+      forms:
+        "te-shimau": "こげてしまいます"
+        "te-oku": "こげておきます"
+        "te-miru": "こげてみます"
+      readings:
+        "te-shimau": "kogeteshimaimasu"
+        "te-oku": "kogeteokimasu"
+        "te-miru": "kogetemimasu"
+    - word: "ja-1805"
+      forms:
+        "te-shimau": "さましてしまいます"
+        "te-oku": "さましておきます"
+        "te-miru": "さましてみます"
+      readings:
+        "te-shimau": "samashiteshimaimasu"
+        "te-oku": "samashiteokimasu"
+        "te-miru": "samashitemimasu"
+    - word: "ja-1850"
+      forms:
+        "te-shimau": "べんきょうしてしまいます"
+        "te-oku": "べんきょうしておきます"
+        "te-miru": "べんきょうしてみます"
+      readings:
+        "te-shimau": "benkyoushiteshimaimasu"
+        "te-oku": "benkyoushiteokimasu"
+        "te-miru": "benkyoushitemimasu"
+    - word: "ja-1861"
+      forms:
+        "te-shimau": "おくれてしまいます"
+        "te-oku": "おくれておきます"
+        "te-miru": "おくれてみます"
+      readings:
+        "te-shimau": "okureteshimaimasu"
+        "te-oku": "okureteokimasu"
+        "te-miru": "okuretemimasu"
+    - word: "ja-1862"
+      forms:
+        "te-shimau": "まなんでしまいます"
+        "te-oku": "まなんでおきます"
+        "te-miru": "まなんでみます"
+      readings:
+        "te-shimau": "manandeshimaimasu"
+        "te-oku": "manandeokimasu"
+        "te-miru": "manandemimasu"
+    - word: "ja-1863"
+      forms:
+        "te-shimau": "つづけてしまいます"
+        "te-oku": "つづけておきます"
+        "te-miru": "つづけてみます"
+      readings:
+        "te-shimau": "tsuzuketeshimaimasu"
+        "te-oku": "tsuzuketeokimasu"
+        "te-miru": "tsuzuketemimasu"
+    - word: "ja-1864"
+      forms:
+        "te-shimau": "かんがえてしまいます"
+        "te-oku": "かんがえておきます"
+        "te-miru": "かんがえてみます"
+      readings:
+        "te-shimau": "kangaeteshimaimasu"
+        "te-oku": "kangaeteokimasu"
+        "te-miru": "kangaetemimasu"
+    - word: "ja-1865"
+      forms:
+        "te-shimau": "こたえてしまいます"
+        "te-oku": "こたえておきます"
+        "te-miru": "こたえてみます"
+      readings:
+        "te-shimau": "kotaeteshimaimasu"
+        "te-oku": "kotaeteokimasu"
+        "te-miru": "kotaetemimasu"
+    - word: "ja-1892"
+      forms:
+        "te-shimau": "およいでしまいます"
+        "te-oku": "およいでおきます"
+        "te-miru": "およいでみます"
+      readings:
+        "te-shimau": "oyoideshimaimasu"
+        "te-oku": "oyoideokimasu"
+        "te-miru": "oyoidemimasu"
+    - word: "ja-1893"
+      forms:
+        "te-shimau": "とってしまいます"
+        "te-oku": "とっておきます"
+        "te-miru": "とってみます"
+      readings:
+        "te-shimau": "totteshimaimasu"
+        "te-oku": "totteokimasu"
+        "te-miru": "tottemimasu"
+    - word: "ja-1896"
+      forms:
+        "te-shimau": "えがいてしまいます"
+        "te-oku": "えがいておきます"
+        "te-miru": "えがいてみます"
+      readings:
+        "te-shimau": "egaiteshimaimasu"
+        "te-oku": "egaiteokimasu"
+        "te-miru": "egaitemimasu"
+    - word: "ja-1900"
+      forms:
+        "te-shimau": "ぬってしまいます"
+        "te-oku": "ぬっておきます"
+        "te-miru": "ぬってみます"
+      readings:
+        "te-shimau": "nutteshimaimasu"
+        "te-oku": "nutteokimasu"
+        "te-miru": "nuttemimasu"
+    - word: "ja-1901"
+      forms:
+        "te-shimau": "あんでしまいます"
+        "te-oku": "あんでおきます"
+        "te-miru": "あんでみます"
+      readings:
+        "te-shimau": "andeshimaimasu"
+        "te-oku": "andeokimasu"
+        "te-miru": "andemimasu"
+    - word: "ja-1907"
+      forms:
+        "te-shimau": "ほめてしまいます"
+        "te-oku": "ほめておきます"
+        "te-miru": "ほめてみます"
+      readings:
+        "te-shimau": "hometeshimaimasu"
+        "te-oku": "hometeokimasu"
+        "te-miru": "hometemimasu"
+    - word: "ja-1910"
+      forms:
+        "te-shimau": "かってしまいます"
+        "te-oku": "かっておきます"
+        "te-miru": "かってみます"
+      readings:
+        "te-shimau": "katteshimaimasu"
+        "te-oku": "katteokimasu"
+        "te-miru": "kattemimasu"
+    - word: "ja-1933"
+      forms:
+        "te-shimau": "かなでてしまいます"
+        "te-oku": "かなでておきます"
+        "te-miru": "かなでてみます"
+      readings:
+        "te-shimau": "kanadeteshimaimasu"
+        "te-oku": "kanadeteokimasu"
+        "te-miru": "kanadetemimasu"
+    - word: "ja-1934"
+      forms:
+        "te-shimau": "ならしてしまいます"
+        "te-oku": "ならしておきます"
+        "te-miru": "ならしてみます"
+      readings:
+        "te-shimau": "narashiteshimaimasu"
+        "te-oku": "narashiteokimasu"
+        "te-miru": "narashitemimasu"
+    - word: "ja-1935"
+      forms:
+        "te-shimau": "ひびいてしまいます"
+        "te-oku": "ひびいておきます"
+        "te-miru": "ひびいてみます"
+      readings:
+        "te-shimau": "hibiiteshimaimasu"
+        "te-oku": "hibiiteokimasu"
+        "te-miru": "hibiitemimasu"
+    - word: "ja-1939"
+      forms:
+        "te-shimau": "たたいてしまいます"
+        "te-oku": "たたいておきます"
+        "te-miru": "たたいてみます"
+      readings:
+        "te-shimau": "tataiteshimaimasu"
+        "te-oku": "tataiteokimasu"
+        "te-miru": "tataitemimasu"
+    - word: "ja-1940"
+      forms:
+        "te-shimau": "きこえてしまいます"
+        "te-oku": "きこえておきます"
+        "te-miru": "きこえてみます"
+      readings:
+        "te-shimau": "kikoeteshimaimasu"
+        "te-oku": "kikoeteokimasu"
+        "te-miru": "kikoetemimasu"
+    - word: "ja-1941"
+      forms:
+        "te-shimau": "ひいてしまいます"
+        "te-oku": "ひいておきます"
+        "te-miru": "ひいてみます"
+      readings:
+        "te-shimau": "hiiteshimaimasu"
+        "te-oku": "hiiteokimasu"
+        "te-miru": "hiitemimasu"
+    - word: "ja-1539"
+      forms:
+        "te-shimau": "にあってしまいます"
+        "te-oku": "にあっておきます"
+        "te-miru": "にあってみます"
+      readings:
+        "te-shimau": "niatteshimaimasu"
+        "te-oku": "niatteokimasu"
+        "te-miru": "niattemimasu"
+    - word: "ja-1542"
+      forms:
+        "te-shimau": "きてしまいます"
+        "te-oku": "きておきます"
+        "te-miru": "きてみます"
+      readings:
+        "te-shimau": "kiteshimaimasu"
+        "te-oku": "kiteokimasu"
+        "te-miru": "kitemimasu"
+    - word: "ja-1996"
+      forms:
+        "te-shimau": "なげてしまいます"
+        "te-oku": "なげておきます"
+        "te-miru": "なげてみます"
+      readings:
+        "te-shimau": "nageteshimaimasu"
+        "te-oku": "nageteokimasu"
+        "te-miru": "nagetemimasu"
+    - word: "ja-1997"
+      forms:
+        "te-shimau": "うってしまいます"
+        "te-oku": "うっておきます"
+        "te-miru": "うってみます"
+      readings:
+        "te-shimau": "utteshimaimasu"
+        "te-oku": "utteokimasu"
+        "te-miru": "uttemimasu"
+    - word: "ja-1998"
+      forms:
+        "te-shimau": "けってしまいます"
+        "te-oku": "けっておきます"
+        "te-miru": "けってみます"
+      readings:
+        "te-shimau": "ketteshimaimasu"
+        "te-oku": "ketteokimasu"
+        "te-miru": "kettemimasu"
+    - word: "ja-1999"
+      forms:
+        "te-shimau": "おいかけてしまいます"
+        "te-oku": "おいかけておきます"
+        "te-miru": "おいかけてみます"
+      readings:
+        "te-shimau": "oikaketeshimaimasu"
+        "te-oku": "oikaketeokimasu"
+        "te-miru": "oikaketemimasu"
+    - word: "ja-2000"
+      forms:
+        "te-shimau": "あきらめてしまいます"
+        "te-oku": "あきらめておきます"
+        "te-miru": "あきらめてみます"
+      readings:
+        "te-shimau": "akirameteshimaimasu"
+        "te-oku": "akirameteokimasu"
+        "te-miru": "akirametemimasu"
+    - word: "ja-2001"
+      forms:
+        "te-shimau": "きたえてしまいます"
+        "te-oku": "きたえておきます"
+        "te-miru": "きたえてみます"
+      readings:
+        "te-shimau": "kitaeteshimaimasu"
+        "te-oku": "kitaeteokimasu"
+        "te-miru": "kitaetemimasu"
+    - word: "ja-2002"
+      forms:
+        "te-shimau": "ねらってしまいます"
+        "te-oku": "ねらっておきます"
+        "te-miru": "ねらってみます"
+      readings:
+        "te-shimau": "neratteshimaimasu"
+        "te-oku": "neratteokimasu"
+        "te-miru": "nerattemimasu"
+    - word: "ja-2049"
+      forms:
+        "te-shimau": "うつってしまいます"
+        "te-oku": "うつっておきます"
+        "te-miru": "うつってみます"
+      readings:
+        "te-shimau": "utsutteshimaimasu"
+        "te-oku": "utsutteokimasu"
+        "te-miru": "utsuttemimasu"
+    - word: "ja-2050"
+      forms:
+        "te-shimau": "なおってしまいます"
+        "te-oku": "なおっておきます"
+        "te-miru": "なおってみます"
+      readings:
+        "te-shimau": "naotteshimaimasu"
+        "te-oku": "naotteokimasu"
+        "te-miru": "naottemimasu"
+    - word: "ja-2051"
+      forms:
+        "te-shimau": "なおしてしまいます"
+        "te-oku": "なおしておきます"
+        "te-miru": "なおしてみます"
+      readings:
+        "te-shimau": "naoshiteshimaimasu"
+        "te-oku": "naoshiteokimasu"
+        "te-miru": "naoshitemimasu"
+    - word: "ja-2052"
+      forms:
+        "te-shimau": "たおれてしまいます"
+        "te-oku": "たおれておきます"
+        "te-miru": "たおれてみます"
+      readings:
+        "te-shimau": "taoreteshimaimasu"
+        "te-oku": "taoreteokimasu"
+        "te-miru": "taoretemimasu"
+    - word: "ja-2053"
+      forms:
+        "te-shimau": "はれてしまいます"
+        "te-oku": "はれておきます"
+        "te-miru": "はれてみます"
+      readings:
+        "te-shimau": "hareteshimaimasu"
+        "te-oku": "hareteokimasu"
+        "te-miru": "haretemimasu"
+    - word: "ja-2054"
+      forms:
+        "te-shimau": "しびれてしまいます"
+        "te-oku": "しびれておきます"
+        "te-miru": "しびれてみます"
+      readings:
+        "te-shimau": "shibireteshimaimasu"
+        "te-oku": "shibireteokimasu"
+        "te-miru": "shibiretemimasu"
+    - word: "ja-2115"
+      forms:
+        "te-shimau": "みがいてしまいます"
+        "te-oku": "みがいておきます"
+        "te-miru": "みがいてみます"
+      readings:
+        "te-shimau": "migaiteshimaimasu"
+        "te-oku": "migaiteokimasu"
+        "te-miru": "migaitemimasu"
+    - word: "ja-2116"
+      forms:
+        "te-shimau": "こすってしまいます"
+        "te-oku": "こすっておきます"
+        "te-miru": "こすってみます"
+      readings:
+        "te-shimau": "kosutteshimaimasu"
+        "te-oku": "kosutteokimasu"
+        "te-miru": "kosuttemimasu"
+    - word: "ja-2117"
+      forms:
+        "te-shimau": "すすいでしまいます"
+        "te-oku": "すすいでおきます"
+        "te-miru": "すすいでみます"
+      readings:
+        "te-shimau": "susuideshimaimasu"
+        "te-oku": "susuideokimasu"
+        "te-miru": "susuidemimasu"
+    - word: "ja-2118"
+      forms:
+        "te-shimau": "しぼってしまいます"
+        "te-oku": "しぼっておきます"
+        "te-miru": "しぼってみます"
+      readings:
+        "te-shimau": "shibotteshimaimasu"
+        "te-oku": "shibotteokimasu"
+        "te-miru": "shibottemimasu"
+    - word: "ja-2119"
+      forms:
+        "te-shimau": "かわかしてしまいます"
+        "te-oku": "かわかしておきます"
+        "te-miru": "かわかしてみます"
+      readings:
+        "te-shimau": "kawakashiteshimaimasu"
+        "te-oku": "kawakashiteokimasu"
+        "te-miru": "kawakashitemimasu"
+    - word: "ja-2120"
+      forms:
+        "te-shimau": "しまってしまいます"
+        "te-oku": "しまっておきます"
+        "te-miru": "しまってみます"
+      readings:
+        "te-shimau": "shimatteshimaimasu"
+        "te-oku": "shimatteokimasu"
+        "te-miru": "shimattemimasu"
+    - word: "ja-2121"
+      forms:
+        "te-shimau": "そろえてしまいます"
+        "te-oku": "そろえておきます"
+        "te-miru": "そろえてみます"
+      readings:
+        "te-shimau": "soroeteshimaimasu"
+        "te-oku": "soroeteokimasu"
+        "te-miru": "soroetemimasu"
+    - word: "ja-2122"
+      forms:
+        "te-shimau": "かざってしまいます"
+        "te-oku": "かざっておきます"
+        "te-miru": "かざってみます"
+      readings:
+        "te-shimau": "kazatteshimaimasu"
+        "te-oku": "kazatteokimasu"
+        "te-miru": "kazattemimasu"
+    - word: "ja-2123"
+      forms:
+        "te-shimau": "とりかえてしまいます"
+        "te-oku": "とりかえておきます"
+        "te-miru": "とりかえてみます"
+      readings:
+        "te-shimau": "torikaeteshimaimasu"
+        "te-oku": "torikaeteokimasu"
+        "te-miru": "torikaetemimasu"
+    - word: "ja-2124"
+      forms:
+        "te-shimau": "つめてしまいます"
+        "te-oku": "つめておきます"
+        "te-miru": "つめてみます"
+      readings:
+        "te-shimau": "tsumeteshimaimasu"
+        "te-oku": "tsumeteokimasu"
+        "te-miru": "tsumetemimasu"
+    - word: "ja-2125"
+      forms:
+        "te-shimau": "くばってしまいます"
+        "te-oku": "くばっておきます"
+        "te-miru": "くばってみます"
+      readings:
+        "te-shimau": "kubatteshimaimasu"
+        "te-oku": "kubatteokimasu"
+        "te-miru": "kubattemimasu"
+    - word: "ja-2126"
+      forms:
+        "te-shimau": "こぼしてしまいます"
+        "te-oku": "こぼしておきます"
+        "te-miru": "こぼしてみます"
+      readings:
+        "te-shimau": "koboshiteshimaimasu"
+        "te-oku": "koboshiteokimasu"
+        "te-miru": "koboshitemimasu"
+    - word: "ja-2127"
+      forms:
+        "te-shimau": "よごれてしまいます"
+        "te-oku": "よごれておきます"
+        "te-miru": "よごれてみます"
+      readings:
+        "te-shimau": "yogoreteshimaimasu"
+        "te-oku": "yogoreteokimasu"
+        "te-miru": "yogoretemimasu"
+    - word: "ja-2128"
+      forms:
+        "te-shimau": "よごしてしまいます"
+        "te-oku": "よごしておきます"
+        "te-miru": "よごしてみます"
+      readings:
+        "te-shimau": "yogoshiteshimaimasu"
+        "te-oku": "yogoshiteokimasu"
+        "te-miru": "yogoshitemimasu"
+    - word: "ja-2129"
+      forms:
+        "te-shimau": "ちらかしてしまいます"
+        "te-oku": "ちらかしておきます"
+        "te-miru": "ちらかしてみます"
+      readings:
+        "te-shimau": "chirakashiteshimaimasu"
+        "te-oku": "chirakashiteokimasu"
+        "te-miru": "chirakashitemimasu"
+    - word: "ja-2164"
+      forms:
+        "te-shimau": "やせてしまいます"
+        "te-oku": "やせておきます"
+        "te-miru": "やせてみます"
+      readings:
+        "te-shimau": "yaseteshimaimasu"
+        "te-oku": "yaseteokimasu"
+        "te-miru": "yasetemimasu"
+    - word: "ja-2165"
+      forms:
+        "te-shimau": "ふとってしまいます"
+        "te-oku": "ふとっておきます"
+        "te-miru": "ふとってみます"
+      readings:
+        "te-shimau": "futotteshimaimasu"
+        "te-oku": "futotteokimasu"
+        "te-miru": "futottemimasu"
+    - word: "ja-2217"
+      forms:
+        "te-shimau": "かわってしまいます"
+        "te-oku": "かわっておきます"
+        "te-miru": "かわってみます"
+      readings:
+        "te-shimau": "kawatteshimaimasu"
+        "te-oku": "kawatteokimasu"
+        "te-miru": "kawattemimasu"
+    - word: "ja-2218"
+      forms:
+        "te-shimau": "きまってしまいます"
+        "te-oku": "きまっておきます"
+        "te-miru": "きまってみます"
+      readings:
+        "te-shimau": "kimatteshimaimasu"
+        "te-oku": "kimatteokimasu"
+        "te-miru": "kimattemimasu"
+    - word: "ja-2219"
+      forms:
+        "te-shimau": "きめてしまいます"
+        "te-oku": "きめておきます"
+        "te-miru": "きめてみます"
+      readings:
+        "te-shimau": "kimeteshimaimasu"
+        "te-oku": "kimeteokimasu"
+        "te-miru": "kimetemimasu"
+    - word: "ja-2220"
+      forms:
+        "te-shimau": "なってしまいます"
+        "te-oku": "なっておきます"
+        "te-miru": "なってみます"
+      readings:
+        "te-shimau": "natteshimaimasu"
+        "te-oku": "natteokimasu"
+        "te-miru": "nattemimasu"
+    - word: "ja-2221"
+      forms:
+        "te-shimau": "なれてしまいます"
+        "te-oku": "なれておきます"
+        "te-miru": "なれてみます"
+      readings:
+        "te-shimau": "nareteshimaimasu"
+        "te-oku": "nareteokimasu"
+        "te-miru": "naretemimasu"
+    - word: "ja-2222"
+      forms:
+        "te-shimau": "ついてしまいます"
+        "te-oku": "ついておきます"
+        "te-miru": "ついてみます"
+      readings:
+        "te-shimau": "tsuiteshimaimasu"
+        "te-oku": "tsuiteokimasu"
+        "te-miru": "tsuitemimasu"
+    - word: "ja-2223"
+      forms:
+        "te-shimau": "つけてしまいます"
+        "te-oku": "つけておきます"
+        "te-miru": "つけてみます"
+      readings:
+        "te-shimau": "tsuketeshimaimasu"
+        "te-oku": "tsuketeokimasu"
+        "te-miru": "tsuketemimasu"
+    - word: "ja-2224"
+      forms:
+        "te-shimau": "けしてしまいます"
+        "te-oku": "けしておきます"
+        "te-miru": "けしてみます"
+      readings:
+        "te-shimau": "keshiteshimaimasu"
+        "te-oku": "keshiteokimasu"
+        "te-miru": "keshitemimasu"
+    - word: "ja-2225"
+      forms:
+        "te-shimau": "きえてしまいます"
+        "te-oku": "きえておきます"
+        "te-miru": "きえてみます"
+      readings:
+        "te-shimau": "kieteshimaimasu"
+        "te-oku": "kieteokimasu"
+        "te-miru": "kietemimasu"
+    - word: "ja-2226"
+      forms:
+        "te-shimau": "あいてしまいます"
+        "te-oku": "あいておきます"
+        "te-miru": "あいてみます"
+      readings:
+        "te-shimau": "aiteshimaimasu"
+        "te-oku": "aiteokimasu"
+        "te-miru": "aitemimasu"
+    - word: "ja-2227"
+      forms:
+        "te-shimau": "しまってしまいます"
+        "te-oku": "しまっておきます"
+        "te-miru": "しまってみます"
+      readings:
+        "te-shimau": "shimatteshimaimasu"
+        "te-oku": "shimatteokimasu"
+        "te-miru": "shimattemimasu"
+    - word: "ja-2228"
+      forms:
+        "te-shimau": "つかまえてしまいます"
+        "te-oku": "つかまえておきます"
+        "te-miru": "つかまえてみます"
+      readings:
+        "te-shimau": "tsukamaeteshimaimasu"
+        "te-oku": "tsukamaeteokimasu"
+        "te-miru": "tsukamaetemimasu"
+    - word: "ja-2229"
+      forms:
+        "te-shimau": "つかんでしまいます"
+        "te-oku": "つかんでおきます"
+        "te-miru": "つかんでみます"
+      readings:
+        "te-shimau": "tsukandeshimaimasu"
+        "te-oku": "tsukandeokimasu"
+        "te-miru": "tsukandemimasu"
+    - word: "ja-2230"
+      forms:
+        "te-shimau": "おしてしまいます"
+        "te-oku": "おしておきます"
+        "te-miru": "おしてみます"
+      readings:
+        "te-shimau": "oshiteshimaimasu"
+        "te-oku": "oshiteokimasu"
+        "te-miru": "oshitemimasu"
+    - word: "ja-2231"
+      forms:
+        "te-shimau": "ひっぱってしまいます"
+        "te-oku": "ひっぱっておきます"
+        "te-miru": "ひっぱってみます"
+      readings:
+        "te-shimau": "hippatteshimaimasu"
+        "te-oku": "hippatteokimasu"
+        "te-miru": "hippattemimasu"
+    - word: "ja-2232"
+      forms:
+        "te-shimau": "おとしてしまいます"
+        "te-oku": "おとしておきます"
+        "te-miru": "おとしてみます"
+      readings:
+        "te-shimau": "otoshiteshimaimasu"
+        "te-oku": "otoshiteokimasu"
+        "te-miru": "otoshitemimasu"
+    - word: "ja-2233"
+      forms:
+        "te-shimau": "おちてしまいます"
+        "te-oku": "おちておきます"
+        "te-miru": "おちてみます"
+      readings:
+        "te-shimau": "ochiteshimaimasu"
+        "te-oku": "ochiteokimasu"
+        "te-miru": "ochitemimasu"
+    - word: "ja-2234"
+      forms:
+        "te-shimau": "ひらいてしまいます"
+        "te-oku": "ひらいておきます"
+        "te-miru": "ひらいてみます"
+      readings:
+        "te-shimau": "hiraiteshimaimasu"
+        "te-oku": "hiraiteokimasu"
+        "te-miru": "hiraitemimasu"
+    - word: "ja-2235"
+      forms:
+        "te-shimau": "とじてしまいます"
+        "te-oku": "とじておきます"
+        "te-miru": "とじてみます"
+      readings:
+        "te-shimau": "tojiteshimaimasu"
+        "te-oku": "tojiteokimasu"
+        "te-miru": "tojitemimasu"
+    - word: "ja-2236"
+      forms:
+        "te-shimau": "わたしてしまいます"
+        "te-oku": "わたしておきます"
+        "te-miru": "わたしてみます"
+      readings:
+        "te-shimau": "watashiteshimaimasu"
+        "te-oku": "watashiteokimasu"
+        "te-miru": "watashitemimasu"
+    - word: "ja-2237"
+      forms:
+        "te-shimau": "うけてしまいます"
+        "te-oku": "うけておきます"
+        "te-miru": "うけてみます"
+      readings:
+        "te-shimau": "uketeshimaimasu"
+        "te-oku": "uketeokimasu"
+        "te-miru": "uketemimasu"
+    - word: "ja-2238"
+      forms:
+        "te-shimau": "つたえてしまいます"
+        "te-oku": "つたえておきます"
+        "te-miru": "つたえてみます"
+      readings:
+        "te-shimau": "tsutaeteshimaimasu"
+        "te-oku": "tsutaeteokimasu"
+        "te-miru": "tsutaetemimasu"
+    - word: "ja-2239"
+      forms:
+        "te-shimau": "つたわってしまいます"
+        "te-oku": "つたわっておきます"
+        "te-miru": "つたわってみます"
+      readings:
+        "te-shimau": "tsutawatteshimaimasu"
+        "te-oku": "tsutawatteokimasu"
+        "te-miru": "tsutawattemimasu"
+    - word: "ja-2240"
+      forms:
+        "te-shimau": "むかえてしまいます"
+        "te-oku": "むかえておきます"
+        "te-miru": "むかえてみます"
+      readings:
+        "te-shimau": "mukaeteshimaimasu"
+        "te-oku": "mukaeteokimasu"
+        "te-miru": "mukaetemimasu"
+    - word: "ja-2241"
+      forms:
+        "te-shimau": "おくってしまいます"
+        "te-oku": "おくっておきます"
+        "te-miru": "おくってみます"
+      readings:
+        "te-shimau": "okutteshimaimasu"
+        "te-oku": "okutteokimasu"
+        "te-miru": "okuttemimasu"
+    - word: "ja-2242"
+      forms:
+        "te-shimau": "とどいてしまいます"
+        "te-oku": "とどいておきます"
+        "te-miru": "とどいてみます"
+      readings:
+        "te-shimau": "todoiteshimaimasu"
+        "te-oku": "todoiteokimasu"
+        "te-miru": "todoitemimasu"
+    - word: "ja-2243"
+      forms:
+        "te-shimau": "とどけてしまいます"
+        "te-oku": "とどけておきます"
+        "te-miru": "とどけてみます"
+      readings:
+        "te-shimau": "todoketeshimaimasu"
+        "te-oku": "todoketeokimasu"
+        "te-miru": "todoketemimasu"
+    - word: "ja-2244"
+      forms:
+        "te-shimau": "たずねてしまいます"
+        "te-oku": "たずねておきます"
+        "te-miru": "たずねてみます"
+      readings:
+        "te-shimau": "tazuneteshimaimasu"
+        "te-oku": "tazuneteokimasu"
+        "te-miru": "tazunetemimasu"
+    - word: "ja-2245"
+      forms:
+        "te-shimau": "まちがってしまいます"
+        "te-oku": "まちがっておきます"
+        "te-miru": "まちがってみます"
+      readings:
+        "te-shimau": "machigatteshimaimasu"
+        "te-oku": "machigatteokimasu"
+        "te-miru": "machigattemimasu"
+    - word: "ja-2246"
+      forms:
+        "te-shimau": "あやまってしまいます"
+        "te-oku": "あやまっておきます"
+        "te-miru": "あやまってみます"
+      readings:
+        "te-shimau": "ayamatteshimaimasu"
+        "te-oku": "ayamatteokimasu"
+        "te-miru": "ayamattemimasu"
+    - word: "ja-2247"
+      forms:
+        "te-shimau": "ゆるしてしまいます"
+        "te-oku": "ゆるしておきます"
+        "te-miru": "ゆるしてみます"
+      readings:
+        "te-shimau": "yurushiteshimaimasu"
+        "te-oku": "yurushiteokimasu"
+        "te-miru": "yurushitemimasu"
+    - word: "ja-2248"
+      forms:
+        "te-shimau": "ことわってしまいます"
+        "te-oku": "ことわっておきます"
+        "te-miru": "ことわってみます"
+      readings:
+        "te-shimau": "kotowatteshimaimasu"
+        "te-oku": "kotowatteokimasu"
+        "te-miru": "kotowattemimasu"
+    - word: "ja-2249"
+      forms:
+        "te-shimau": "さそってしまいます"
+        "te-oku": "さそっておきます"
+        "te-miru": "さそってみます"
+      readings:
+        "te-shimau": "sasotteshimaimasu"
+        "te-oku": "sasotteokimasu"
+        "te-miru": "sasottemimasu"
+    - word: "ja-2250"
+      forms:
+        "te-shimau": "かよってしまいます"
+        "te-oku": "かよっておきます"
+        "te-miru": "かよってみます"
+      readings:
+        "te-shimau": "kayotteshimaimasu"
+        "te-oku": "kayotteokimasu"
+        "te-miru": "kayottemimasu"
+    - word: "ja-2251"
+      forms:
+        "te-shimau": "とおってしまいます"
+        "te-oku": "とおっておきます"
+        "te-miru": "とおってみます"
+      readings:
+        "te-shimau": "tootteshimaimasu"
+        "te-oku": "tootteokimasu"
+        "te-miru": "toottemimasu"
+    - word: "ja-2252"
+      forms:
+        "te-shimau": "すぎてしまいます"
+        "te-oku": "すぎておきます"
+        "te-miru": "すぎてみます"
+      readings:
+        "te-shimau": "sugiteshimaimasu"
+        "te-oku": "sugiteokimasu"
+        "te-miru": "sugitemimasu"
+    - word: "ja-2253"
+      forms:
+        "te-shimau": "まわってしまいます"
+        "te-oku": "まわっておきます"
+        "te-miru": "まわってみます"
+      readings:
+        "te-shimau": "mawatteshimaimasu"
+        "te-oku": "mawatteokimasu"
+        "te-miru": "mawattemimasu"
+    - word: "ja-2254"
+      forms:
+        "te-shimau": "まわしてしまいます"
+        "te-oku": "まわしておきます"
+        "te-miru": "まわしてみます"
+      readings:
+        "te-shimau": "mawashiteshimaimasu"
+        "te-oku": "mawashiteokimasu"
+        "te-miru": "mawashitemimasu"
+    - word: "ja-2255"
+      forms:
+        "te-shimau": "うごいてしまいます"
+        "te-oku": "うごいておきます"
+        "te-miru": "うごいてみます"
+      readings:
+        "te-shimau": "ugoiteshimaimasu"
+        "te-oku": "ugoiteokimasu"
+        "te-miru": "ugoitemimasu"
+    - word: "ja-2256"
+      forms:
+        "te-shimau": "うごかしてしまいます"
+        "te-oku": "うごかしておきます"
+        "te-miru": "うごかしてみます"
+      readings:
+        "te-shimau": "ugokashiteshimaimasu"
+        "te-oku": "ugokashiteokimasu"
+        "te-miru": "ugokashitemimasu"
+    - word: "ja-2257"
+      forms:
+        "te-shimau": "のこってしまいます"
+        "te-oku": "のこっておきます"
+        "te-miru": "のこってみます"
+      readings:
+        "te-shimau": "nokotteshimaimasu"
+        "te-oku": "nokotteokimasu"
+        "te-miru": "nokottemimasu"
+    - word: "ja-2258"
+      forms:
+        "te-shimau": "のこしてしまいます"
+        "te-oku": "のこしておきます"
+        "te-miru": "のこしてみます"
+      readings:
+        "te-shimau": "nokoshiteshimaimasu"
+        "te-oku": "nokoshiteokimasu"
+        "te-miru": "nokoshitemimasu"
+    - word: "ja-2259"
+      forms:
+        "te-shimau": "あつまってしまいます"
+        "te-oku": "あつまっておきます"
+        "te-miru": "あつまってみます"
+      readings:
+        "te-shimau": "atsumatteshimaimasu"
+        "te-oku": "atsumatteokimasu"
+        "te-miru": "atsumattemimasu"
+    - word: "ja-2260"
+      forms:
+        "te-shimau": "あつめてしまいます"
+        "te-oku": "あつめておきます"
+        "te-miru": "あつめてみます"
+      readings:
+        "te-shimau": "atsumeteshimaimasu"
+        "te-oku": "atsumeteokimasu"
+        "te-miru": "atsumetemimasu"
+    - word: "ja-2261"
+      forms:
+        "te-shimau": "わけてしまいます"
+        "te-oku": "わけておきます"
+        "te-miru": "わけてみます"
+      readings:
+        "te-shimau": "waketeshimaimasu"
+        "te-oku": "waketeokimasu"
+        "te-miru": "waketemimasu"
+    - word: "ja-2262"
+      forms:
+        "te-shimau": "くらべてしまいます"
+        "te-oku": "くらべておきます"
+        "te-miru": "くらべてみます"
+      readings:
+        "te-shimau": "kurabeteshimaimasu"
+        "te-oku": "kurabeteokimasu"
+        "te-miru": "kurabetemimasu"
+    - word: "ja-2263"
+      forms:
+        "te-shimau": "かくれてしまいます"
+        "te-oku": "かくれておきます"
+        "te-miru": "かくれてみます"
+      readings:
+        "te-shimau": "kakureteshimaimasu"
+        "te-oku": "kakureteokimasu"
+        "te-miru": "kakuretemimasu"
+    - word: "ja-2264"
+      forms:
+        "te-shimau": "かくしてしまいます"
+        "te-oku": "かくしておきます"
+        "te-miru": "かくしてみます"
+      readings:
+        "te-shimau": "kakushiteshimaimasu"
+        "te-oku": "kakushiteokimasu"
+        "te-miru": "kakushitemimasu"
+    - word: "ja-2265"
+      forms:
+        "te-shimau": "みつかってしまいます"
+        "te-oku": "みつかっておきます"
+        "te-miru": "みつかってみます"
+      readings:
+        "te-shimau": "mitsukatteshimaimasu"
+        "te-oku": "mitsukatteokimasu"
+        "te-miru": "mitsukattemimasu"
+    - word: "ja-2266"
+      forms:
+        "te-shimau": "みつけてしまいます"
+        "te-oku": "みつけておきます"
+        "te-miru": "みつけてみます"
+      readings:
+        "te-shimau": "mitsuketeshimaimasu"
+        "te-oku": "mitsuketeokimasu"
+        "te-miru": "mitsuketemimasu"
+    - word: "ja-2267"
+      forms:
+        "te-shimau": "ふえてしまいます"
+        "te-oku": "ふえておきます"
+        "te-miru": "ふえてみます"
+      readings:
+        "te-shimau": "fueteshimaimasu"
+        "te-oku": "fueteokimasu"
+        "te-miru": "fuetemimasu"
+    - word: "ja-2268"
+      forms:
+        "te-shimau": "へってしまいます"
+        "te-oku": "へっておきます"
+        "te-miru": "へってみます"
+      readings:
+        "te-shimau": "hetteshimaimasu"
+        "te-oku": "hetteokimasu"
+        "te-miru": "hettemimasu"
+    - word: "ja-2269"
+      forms:
+        "te-shimau": "そだててしまいます"
+        "te-oku": "そだてておきます"
+        "te-miru": "そだててみます"
+      readings:
+        "te-shimau": "sodateteshimaimasu"
+        "te-oku": "sodateteokimasu"
+        "te-miru": "sodatetemimasu"
+    - word: "ja-2270"
+      forms:
+        "te-shimau": "そだってしまいます"
+        "te-oku": "そだっておきます"
+        "te-miru": "そだってみます"
+      readings:
+        "te-shimau": "sodatteshimaimasu"
+        "te-oku": "sodatteokimasu"
+        "te-miru": "sodattemimasu"
+    - word: "ja-2271"
+      forms:
+        "te-shimau": "うまれてしまいます"
+        "te-oku": "うまれておきます"
+        "te-miru": "うまれてみます"
+      readings:
+        "te-shimau": "umareteshimaimasu"
+        "te-oku": "umareteokimasu"
+        "te-miru": "umaretemimasu"
+    - word: "ja-2272"
+      forms:
+        "te-shimau": "いきてしまいます"
+        "te-oku": "いきておきます"
+        "te-miru": "いきてみます"
+      readings:
+        "te-shimau": "ikiteshimaimasu"
+        "te-oku": "ikiteokimasu"
+        "te-miru": "ikitemimasu"
+    - word: "ja-2273"
+      forms:
+        "te-shimau": "たのしんでしまいます"
+        "te-oku": "たのしんでおきます"
+        "te-miru": "たのしんでみます"
+      readings:
+        "te-shimau": "tanoshindeshimaimasu"
+        "te-oku": "tanoshindeokimasu"
+        "te-miru": "tanoshindemimasu"
+    - word: "ja-2274"
+      forms:
+        "te-shimau": "あたってしまいます"
+        "te-oku": "あたっておきます"
+        "te-miru": "あたってみます"
+      readings:
+        "te-shimau": "atatteshimaimasu"
+        "te-oku": "atatteokimasu"
+        "te-miru": "atattemimasu"
+    - word: "ja-2275"
+      forms:
+        "te-shimau": "はじまってしまいます"
+        "te-oku": "はじまっておきます"
+        "te-miru": "はじまってみます"
+      readings:
+        "te-shimau": "hajimatteshimaimasu"
+        "te-oku": "hajimatteokimasu"
+        "te-miru": "hajimattemimasu"
+    - word: "ja-2276"
+      forms:
+        "te-shimau": "さわってしまいます"
+        "te-oku": "さわっておきます"
+        "te-miru": "さわってみます"
+      readings:
+        "te-shimau": "sawatteshimaimasu"
+        "te-oku": "sawatteokimasu"
+        "te-miru": "sawattemimasu"
+    - word: "ja-2320"
+      forms:
+        "te-shimau": "つながってしまいます"
+        "te-oku": "つながっておきます"
+        "te-miru": "つながってみます"
+      readings:
+        "te-shimau": "tsunagatteshimaimasu"
+        "te-oku": "tsunagatteokimasu"
+        "te-miru": "tsunagattemimasu"
+    - word: "ja-2321"
+      forms:
+        "te-shimau": "つないでしまいます"
+        "te-oku": "つないでおきます"
+        "te-miru": "つないでみます"
+      readings:
+        "te-shimau": "tsunaideshimaimasu"
+        "te-oku": "tsunaideokimasu"
+        "te-miru": "tsunaidemimasu"
+    - word: "ja-2322"
+      forms:
+        "te-shimau": "かけてしまいます"
+        "te-oku": "かけておきます"
+        "te-miru": "かけてみます"
+      readings:
+        "te-shimau": "kaketeshimaimasu"
+        "te-oku": "kaketeokimasu"
+        "te-miru": "kaketemimasu"
+    - word: "ja-2323"
+      forms:
+        "te-shimau": "うけとってしまいます"
+        "te-oku": "うけとっておきます"
+        "te-miru": "うけとってみます"
+      readings:
+        "te-shimau": "uketotteshimaimasu"
+        "te-oku": "uketotteokimasu"
+        "te-miru": "uketottemimasu"
+    - word: "ja-2364"
+      forms:
+        "te-shimau": "のりおくれてしまいます"
+        "te-oku": "のりおくれておきます"
+        "te-miru": "のりおくれてみます"
+      readings:
+        "te-shimau": "noriokureteshimaimasu"
+        "te-oku": "noriokureteokimasu"
+        "te-miru": "noriokuretemimasu"
+    - word: "ja-2365"
+      forms:
+        "te-shimau": "のりかえてしまいます"
+        "te-oku": "のりかえておきます"
+        "te-miru": "のりかえてみます"
+      readings:
+        "te-shimau": "norikaeteshimaimasu"
+        "te-oku": "norikaeteokimasu"
+        "te-miru": "norikaetemimasu"
+    - word: "ja-2407"
+      forms:
+        "te-shimau": "たちよってしまいます"
+        "te-oku": "たちよっておきます"
+        "te-miru": "たちよってみます"
+      readings:
+        "te-shimau": "tachiyotteshimaimasu"
+        "te-oku": "tachiyotteokimasu"
+        "te-miru": "tachiyottemimasu"
+    - word: "ja-2470"
+      forms:
+        "te-shimau": "さいてしまいます"
+        "te-oku": "さいておきます"
+        "te-miru": "さいてみます"
+      readings:
+        "te-shimau": "saiteshimaimasu"
+        "te-oku": "saiteokimasu"
+        "te-miru": "saitemimasu"
+    - word: "ja-2471"
+      forms:
+        "te-shimau": "ちってしまいます"
+        "te-oku": "ちっておきます"
+        "te-miru": "ちってみます"
+      readings:
+        "te-shimau": "chitteshimaimasu"
+        "te-oku": "chitteokimasu"
+        "te-miru": "chittemimasu"
+    - word: "ja-2472"
+      forms:
+        "te-shimau": "しげってしまいます"
+        "te-oku": "しげっておきます"
+        "te-miru": "しげってみます"
+      readings:
+        "te-shimau": "shigetteshimaimasu"
+        "te-oku": "shigetteokimasu"
+        "te-miru": "shigettemimasu"
+    - word: "ja-2473"
+      forms:
+        "te-shimau": "かれてしまいます"
+        "te-oku": "かれておきます"
+        "te-miru": "かれてみます"
+      readings:
+        "te-shimau": "kareteshimaimasu"
+        "te-oku": "kareteokimasu"
+        "te-miru": "karetemimasu"
+    - word: "ja-2600"
+      forms:
+        "te-shimau": "まかせてしまいます"
+        "te-oku": "まかせておきます"
+        "te-miru": "まかせてみます"
+      readings:
+        "te-shimau": "makaseteshimaimasu"
+        "te-oku": "makaseteokimasu"
+        "te-miru": "makasetemimasu"
+    - word: "ja-2601"
+      forms:
+        "te-shimau": "ひきうけてしまいます"
+        "te-oku": "ひきうけておきます"
+        "te-miru": "ひきうけてみます"
+      readings:
+        "te-shimau": "hikiuketeshimaimasu"
+        "te-oku": "hikiuketeokimasu"
+        "te-miru": "hikiuketemimasu"
+    - word: "ja-2602"
+      forms:
+        "te-shimau": "こなしてしまいます"
+        "te-oku": "こなしておきます"
+        "te-miru": "こなしてみます"
+      readings:
+        "te-shimau": "konashiteshimaimasu"
+        "te-oku": "konashiteokimasu"
+        "te-miru": "konashitemimasu"
+    - word: "ja-2603"
+      forms:
+        "te-shimau": "はげんでしまいます"
+        "te-oku": "はげんでおきます"
+        "te-miru": "はげんでみます"
+      readings:
+        "te-shimau": "hagendeshimaimasu"
+        "te-oku": "hagendeokimasu"
+        "te-miru": "hagendemimasu"
+    - word: "ja-2604"
+      forms:
+        "te-shimau": "てがけてしまいます"
+        "te-oku": "てがけておきます"
+        "te-miru": "てがけてみます"
+      readings:
+        "te-shimau": "tegaketeshimaimasu"
+        "te-oku": "tegaketeokimasu"
+        "te-miru": "tegaketemimasu"
+    - word: "ja-2605"
+      forms:
+        "te-shimau": "しめきってしまいます"
+        "te-oku": "しめきっておきます"
+        "te-miru": "しめきってみます"
+      readings:
+        "te-shimau": "shimekitteshimaimasu"
+        "te-oku": "shimekitteokimasu"
+        "te-miru": "shimekittemimasu"
+    - word: "ja-2606"
+      forms:
+        "te-shimau": "まにあわせてしまいます"
+        "te-oku": "まにあわせておきます"
+        "te-miru": "まにあわせてみます"
+      readings:
+        "te-shimau": "maniawaseteshimaimasu"
+        "te-oku": "maniawaseteokimasu"
+        "te-miru": "maniawasetemimasu"
+    - word: "ja-2716"
+      forms:
+        "te-shimau": "かたよってしまいます"
+        "te-oku": "かたよっておきます"
+        "te-miru": "かたよってみます"
+      readings:
+        "te-shimau": "katayotteshimaimasu"
+        "te-oku": "katayotteokimasu"
+        "te-miru": "katayottemimasu"
+    - word: "ja-2768"
+      forms:
+        "te-shimau": "おどろいてしまいます"
+        "te-oku": "おどろいておきます"
+        "te-miru": "おどろいてみます"
+      readings:
+        "te-shimau": "odoroiteshimaimasu"
+        "te-oku": "odoroiteokimasu"
+        "te-miru": "odoroitemimasu"
+    - word: "ja-2769"
+      forms:
+        "te-shimau": "よろこんでしまいます"
+        "te-oku": "よろこんでおきます"
+        "te-miru": "よろこんでみます"
+      readings:
+        "te-shimau": "yorokondeshimaimasu"
+        "te-oku": "yorokondeokimasu"
+        "te-miru": "yorokondemimasu"
+    - word: "ja-2770"
+      forms:
+        "te-shimau": "かなしんでしまいます"
+        "te-oku": "かなしんでおきます"
+        "te-miru": "かなしんでみます"
+      readings:
+        "te-shimau": "kanashindeshimaimasu"
+        "te-oku": "kanashindeokimasu"
+        "te-miru": "kanashindemimasu"
+    - word: "ja-2771"
+      forms:
+        "te-shimau": "なやんでしまいます"
+        "te-oku": "なやんでおきます"
+        "te-miru": "なやんでみます"
+      readings:
+        "te-shimau": "nayandeshimaimasu"
+        "te-oku": "nayandeokimasu"
+        "te-miru": "nayandemimasu"
+    - word: "ja-2772"
+      forms:
+        "te-shimau": "あわててしまいます"
+        "te-oku": "あわてておきます"
+        "te-miru": "あわててみます"
+      readings:
+        "te-shimau": "awateteshimaimasu"
+        "te-oku": "awateteokimasu"
+        "te-miru": "awatetemimasu"
+    - word: "ja-2773"
+      forms:
+        "te-shimau": "あせってしまいます"
+        "te-oku": "あせっておきます"
+        "te-miru": "あせってみます"
+      readings:
+        "te-shimau": "asetteshimaimasu"
+        "te-oku": "asetteokimasu"
+        "te-miru": "asettemimasu"
+    - word: "ja-2774"
+      forms:
+        "te-shimau": "おちついてしまいます"
+        "te-oku": "おちついておきます"
+        "te-miru": "おちついてみます"
+      readings:
+        "te-shimau": "ochitsuiteshimaimasu"
+        "te-oku": "ochitsuiteokimasu"
+        "te-miru": "ochitsuitemimasu"
+    - word: "ja-2794"
+      forms:
+        "te-shimau": "きらってしまいます"
+        "te-oku": "きらっておきます"
+        "te-miru": "きらってみます"
+      readings:
+        "te-shimau": "kiratteshimaimasu"
+        "te-oku": "kiratteokimasu"
+        "te-miru": "kirattemimasu"
+    - word: "ja-2795"
+      forms:
+        "te-shimau": "あいしてしまいます"
+        "te-oku": "あいしておきます"
+        "te-miru": "あいしてみます"
+      readings:
+        "te-shimau": "aishiteshimaimasu"
+        "te-oku": "aishiteokimasu"
+        "te-miru": "aishitemimasu"
+    - word: "ja-2796"
+      forms:
+        "te-shimau": "にくんでしまいます"
+        "te-oku": "にくんでおきます"
+        "te-miru": "にくんでみます"
+      readings:
+        "te-shimau": "nikundeshimaimasu"
+        "te-oku": "nikundeokimasu"
+        "te-miru": "nikundemimasu"
+    - word: "ja-2797"
+      forms:
+        "te-shimau": "ねたんでしまいます"
+        "te-oku": "ねたんでおきます"
+        "te-miru": "ねたんでみます"
+      readings:
+        "te-shimau": "netandeshimaimasu"
+        "te-oku": "netandeokimasu"
+        "te-miru": "netandemimasu"
+    - word: "ja-2798"
+      forms:
+        "te-shimau": "うらんでしまいます"
+        "te-oku": "うらんでおきます"
+        "te-miru": "うらんでみます"
+      readings:
+        "te-shimau": "urandeshimaimasu"
+        "te-oku": "urandeokimasu"
+        "te-miru": "urandemimasu"
+    - word: "ja-2799"
+      forms:
+        "te-shimau": "なつかしんでしまいます"
+        "te-oku": "なつかしんでおきます"
+        "te-miru": "なつかしんでみます"
+      readings:
+        "te-shimau": "natsukashindeshimaimasu"
+        "te-oku": "natsukashindeokimasu"
+        "te-miru": "natsukashindemimasu"
+    - word: "ja-2800"
+      forms:
+        "te-shimau": "いやがってしまいます"
+        "te-oku": "いやがっておきます"
+        "te-miru": "いやがってみます"
+      readings:
+        "te-shimau": "iyagatteshimaimasu"
+        "te-oku": "iyagatteokimasu"
+        "te-miru": "iyagattemimasu"
+    - word: "ja-2801"
+      forms:
+        "te-shimau": "こらえてしまいます"
+        "te-oku": "こらえておきます"
+        "te-miru": "こらえてみます"
+      readings:
+        "te-shimau": "koraeteshimaimasu"
+        "te-oku": "koraeteokimasu"
+        "te-miru": "koraetemimasu"
+    - word: "ja-2803"
+      forms:
+        "te-shimau": "はずかしがってしまいます"
+        "te-oku": "はずかしがっておきます"
+        "te-miru": "はずかしがってみます"
+      readings:
+        "te-shimau": "hazukashigatteshimaimasu"
+        "te-oku": "hazukashigatteokimasu"
+        "te-miru": "hazukashigattemimasu"
+    - word: "ja-2806"
+      forms:
+        "te-shimau": "かんじてしまいます"
+        "te-oku": "かんじておきます"
+        "te-miru": "かんじてみます"
+      readings:
+        "te-shimau": "kanjiteshimaimasu"
+        "te-oku": "kanjiteokimasu"
+        "te-miru": "kanjitemimasu"
+    - word: "ja-2812"
+      forms:
+        "te-shimau": "さびしがってしまいます"
+        "te-oku": "さびしがっておきます"
+        "te-miru": "さびしがってみます"
+      readings:
+        "te-shimau": "sabishigatteshimaimasu"
+        "te-oku": "sabishigatteokimasu"
+        "te-miru": "sabishigattemimasu"
+    - word: "ja-2876"
+      forms:
+        "te-shimau": "かたってしまいます"
+        "te-oku": "かたっておきます"
+        "te-miru": "かたってみます"
+      readings:
+        "te-shimau": "katatteshimaimasu"
+        "te-oku": "katatteokimasu"
+        "te-miru": "katattemimasu"
+    - word: "ja-2877"
+      forms:
+        "te-shimau": "ひろまってしまいます"
+        "te-oku": "ひろまっておきます"
+        "te-miru": "ひろまってみます"
+      readings:
+        "te-shimau": "hiromatteshimaimasu"
+        "te-oku": "hiromatteokimasu"
+        "te-miru": "hiromattemimasu"
+    - word: "ja-2925"
+      forms:
+        "te-shimau": "あずけてしまいます"
+        "te-oku": "あずけておきます"
+        "te-miru": "あずけてみます"
+      readings:
+        "te-shimau": "azuketeshimaimasu"
+        "te-oku": "azuketeokimasu"
+        "te-miru": "azuketemimasu"
+    - word: "ja-2926"
+      forms:
+        "te-shimau": "あずかってしまいます"
+        "te-oku": "あずかっておきます"
+        "te-miru": "あずかってみます"
+      readings:
+        "te-shimau": "azukatteshimaimasu"
+        "te-oku": "azukatteokimasu"
+        "te-miru": "azukattemimasu"
+    - word: "ja-2944"
+      forms:
+        "te-shimau": "めぐってしまいます"
+        "te-oku": "めぐっておきます"
+        "te-miru": "めぐってみます"
+      readings:
+        "te-shimau": "megutteshimaimasu"
+        "te-oku": "megutteokimasu"
+        "te-miru": "meguttemimasu"
+    - word: "ja-2945"
+      forms:
+        "te-shimau": "おとずれてしまいます"
+        "te-oku": "おとずれておきます"
+        "te-miru": "おとずれてみます"
+      readings:
+        "te-shimau": "otozureteshimaimasu"
+        "te-oku": "otozureteokimasu"
+        "te-miru": "otozuretemimasu"
+    - word: "ja-2982"
+      forms:
+        "te-shimau": "もうしこんでしまいます"
+        "te-oku": "もうしこんでおきます"
+        "te-miru": "もうしこんでみます"
+      readings:
+        "te-shimau": "moushikondeshimaimasu"
+        "te-oku": "moushikondeokimasu"
+        "te-miru": "moushikondemimasu"
+    - word: "ja-3062"
+      forms:
+        "te-shimau": "とどけでてしまいます"
+        "te-oku": "とどけでておきます"
+        "te-miru": "とどけでてみます"
+      readings:
+        "te-shimau": "todokedeteshimaimasu"
+        "te-oku": "todokedeteokimasu"
+        "te-miru": "todokedetemimasu"
+    - word: "ja-3140"
+      forms:
+        "te-shimau": "つくりだしてしまいます"
+        "te-oku": "つくりだしておきます"
+        "te-miru": "つくりだしてみます"
+      readings:
+        "te-shimau": "tsukuridashiteshimaimasu"
+        "te-oku": "tsukuridashiteokimasu"
+        "te-miru": "tsukuridashitemimasu"
+    - word: "ja-3195"
+      forms:
+        "te-shimau": "めざしてしまいます"
+        "te-oku": "めざしておきます"
+        "te-miru": "めざしてみます"
+      readings:
+        "te-shimau": "mezashiteshimaimasu"
+        "te-oku": "mezashiteokimasu"
+        "te-miru": "mezashitemimasu"
+    - word: "ja-3294"
+      forms:
+        "te-shimau": "きをつかってしまいます"
+        "te-oku": "きをつかっておきます"
+        "te-miru": "きをつかってみます"
+      readings:
+        "te-shimau": "kiotsukatteshimaimasu"
+        "te-oku": "kiotsukatteokimasu"
+        "te-miru": "kiotsukattemimasu"
+    - word: "ja-3309"
+      forms:
+        "te-shimau": "ゆずってしまいます"
+        "te-oku": "ゆずっておきます"
+        "te-miru": "ゆずってみます"
+      readings:
+        "te-shimau": "yuzutteshimaimasu"
+        "te-oku": "yuzutteokimasu"
+        "te-miru": "yuzuttemimasu"
+    - word: "ja-3310"
+      forms:
+        "te-shimau": "ゆずりあってしまいます"
+        "te-oku": "ゆずりあっておきます"
+        "te-miru": "ゆずりあってみます"
+      readings:
+        "te-shimau": "yuzuriatteshimaimasu"
+        "te-oku": "yuzuriatteokimasu"
+        "te-miru": "yuzuriattemimasu"
+    - word: "ja-3311"
+      forms:
+        "te-shimau": "ならんでしまいます"
+        "te-oku": "ならんでおきます"
+        "te-miru": "ならんでみます"
+      readings:
+        "te-shimau": "narandeshimaimasu"
+        "te-oku": "narandeokimasu"
+        "te-miru": "narandemimasu"
+    - word: "ja-3319"
+      forms:
+        "te-shimau": "もてなしてしまいます"
+        "te-oku": "もてなしておきます"
+        "te-miru": "もてなしてみます"
+      readings:
+        "te-shimau": "motenashiteshimaimasu"
+        "te-oku": "motenashiteokimasu"
+        "te-miru": "motenashitemimasu"
+    - word: "ja-3320"
+      forms:
+        "te-shimau": "まねいてしまいます"
+        "te-oku": "まねいておきます"
+        "te-miru": "まねいてみます"
+      readings:
+        "te-shimau": "maneiteshimaimasu"
+        "te-oku": "maneiteokimasu"
+        "te-miru": "maneitemimasu"
+    - word: "ja-3321"
+      forms:
+        "te-shimau": "つつしんでしまいます"
+        "te-oku": "つつしんでおきます"
+        "te-miru": "つつしんでみます"
+      readings:
+        "te-shimau": "tsutsushindeshimaimasu"
+        "te-oku": "tsutsushindeokimasu"
+        "te-miru": "tsutsushindemimasu"
+    - word: "ja-3322"
+      forms:
+        "te-shimau": "いましめてしまいます"
+        "te-oku": "いましめておきます"
+        "te-miru": "いましめてみます"
+      readings:
+        "te-shimau": "imashimeteshimaimasu"
+        "te-oku": "imashimeteokimasu"
+        "te-miru": "imashimetemimasu"
+    - word: "ja-3383"
+      forms:
+        "te-shimau": "へらしてしまいます"
+        "te-oku": "へらしておきます"
+        "te-miru": "へらしてみます"
+      readings:
+        "te-shimau": "herashiteshimaimasu"
+        "te-oku": "herashiteokimasu"
+        "te-miru": "herashitemimasu"
+    - word: "ja-3384"
+      forms:
+        "te-shimau": "ふやしてしまいます"
+        "te-oku": "ふやしておきます"
+        "te-miru": "ふやしてみます"
+      readings:
+        "te-shimau": "fuyashiteshimaimasu"
+        "te-oku": "fuyashiteokimasu"
+        "te-miru": "fuyashitemimasu"
+    - word: "ja-3385"
+      forms:
+        "te-shimau": "こわしてしまいます"
+        "te-oku": "こわしておきます"
+        "te-miru": "こわしてみます"
+      readings:
+        "te-shimau": "kowashiteshimaimasu"
+        "te-oku": "kowashiteokimasu"
+        "te-miru": "kowashitemimasu"
+    - word: "ja-3386"
+      forms:
+        "te-shimau": "こわれてしまいます"
+        "te-oku": "こわれておきます"
+        "te-miru": "こわれてみます"
+      readings:
+        "te-shimau": "kowareteshimaimasu"
+        "te-oku": "kowareteokimasu"
+        "te-miru": "kowaretemimasu"
+    - word: "ja-3389"
+      forms:
+        "te-shimau": "たもってしまいます"
+        "te-oku": "たもっておきます"
+        "te-miru": "たもってみます"
+      readings:
+        "te-shimau": "tamotteshimaimasu"
+        "te-oku": "tamotteokimasu"
+        "te-miru": "tamottemimasu"
+    - word: "ja-3390"
+      forms:
+        "te-shimau": "さけてしまいます"
+        "te-oku": "さけておきます"
+        "te-miru": "さけてみます"
+      readings:
+        "te-shimau": "saketeshimaimasu"
+        "te-oku": "saketeokimasu"
+        "te-miru": "saketemimasu"
+    - word: "ja-3434"
+      forms:
+        "te-shimau": "えんじてしまいます"
+        "te-oku": "えんじておきます"
+        "te-miru": "えんじてみます"
+      readings:
+        "te-shimau": "enjiteshimaimasu"
+        "te-oku": "enjiteokimasu"
+        "te-miru": "enjitemimasu"
+    - word: "ja-3452"
+      forms:
+        "te-shimau": "ないてしまいます"
+        "te-oku": "ないておきます"
+        "te-miru": "ないてみます"
+      readings:
+        "te-shimau": "naiteshimaimasu"
+        "te-oku": "naiteokimasu"
+        "te-miru": "naitemimasu"
+    - word: "ja-3564"
+      forms:
+        "te-shimau": "たたかってしまいます"
+        "te-oku": "たたかっておきます"
+        "te-miru": "たたかってみます"
+      readings:
+        "te-shimau": "tatakatteshimaimasu"
+        "te-oku": "tatakatteokimasu"
+        "te-miru": "tatakattemimasu"
+    - word: "ja-3568"
+      forms:
+        "te-shimau": "ほろびてしまいます"
+        "te-oku": "ほろびておきます"
+        "te-miru": "ほろびてみます"
+      readings:
+        "te-shimau": "horobiteshimaimasu"
+        "te-oku": "horobiteokimasu"
+        "te-miru": "horobitemimasu"
+    - word: "ja-3569"
+      forms:
+        "te-shimau": "ほろぼしてしまいます"
+        "te-oku": "ほろぼしておきます"
+        "te-miru": "ほろぼしてみます"
+      readings:
+        "te-shimau": "horoboshiteshimaimasu"
+        "te-oku": "horoboshiteokimasu"
+        "te-miru": "horoboshitemimasu"
+    - word: "ja-3571"
+      forms:
+        "te-shimau": "さかえてしまいます"
+        "te-oku": "さかえておきます"
+        "te-miru": "さかえてみます"
+      readings:
+        "te-shimau": "sakaeteshimaimasu"
+        "te-oku": "sakaeteokimasu"
+        "te-miru": "sakaetemimasu"
+    - word: "ja-3611"
+      forms:
+        "te-shimau": "いのってしまいます"
+        "te-oku": "いのっておきます"
+        "te-miru": "いのってみます"
+      readings:
+        "te-shimau": "inotteshimaimasu"
+        "te-oku": "inotteokimasu"
+        "te-miru": "inottemimasu"
+    - word: "ja-3612"
+      forms:
+        "te-shimau": "おがんでしまいます"
+        "te-oku": "おがんでおきます"
+        "te-miru": "おがんでみます"
+      readings:
+        "te-shimau": "ogandeshimaimasu"
+        "te-oku": "ogandeokimasu"
+        "te-miru": "ogandemimasu"
+    - word: "ja-3690"
+      forms:
+        "te-shimau": "いわってしまいます"
+        "te-oku": "いわっておきます"
+        "te-miru": "いわってみます"
+      readings:
+        "te-shimau": "iwatteshimaimasu"
+        "te-oku": "iwatteokimasu"
+        "te-miru": "iwattemimasu"
+    - word: "ja-3691"
+      forms:
+        "te-shimau": "にぎわってしまいます"
+        "te-oku": "にぎわっておきます"
+        "te-miru": "にぎわってみます"
+      readings:
+        "te-shimau": "nigiwatteshimaimasu"
+        "te-oku": "nigiwatteokimasu"
+        "te-miru": "nigiwattemimasu"
+    - word: "ja-3779"
+      forms:
+        "te-shimau": "うちとけてしまいます"
+        "te-oku": "うちとけておきます"
+        "te-miru": "うちとけてみます"
+      readings:
+        "te-shimau": "uchitoketeshimaimasu"
+        "te-oku": "uchitoketeokimasu"
+        "te-miru": "uchitoketemimasu"
+    - word: "ja-3780"
+      forms:
+        "te-shimau": "しんじあってしまいます"
+        "te-oku": "しんじあっておきます"
+        "te-miru": "しんじあってみます"
+      readings:
+        "te-shimau": "shinjiatteshimaimasu"
+        "te-oku": "shinjiatteokimasu"
+        "te-miru": "shinjiattemimasu"
+    - word: "ja-3781"
+      forms:
+        "te-shimau": "たよってしまいます"
+        "te-oku": "たよっておきます"
+        "te-miru": "たよってみます"
+      readings:
+        "te-shimau": "tayotteshimaimasu"
+        "te-oku": "tayotteokimasu"
+        "te-miru": "tayottemimasu"
+    - word: "ja-3782"
+      forms:
+        "te-shimau": "はげましてしまいます"
+        "te-oku": "はげましておきます"
+        "te-miru": "はげましてみます"
+      readings:
+        "te-shimau": "hagemashiteshimaimasu"
+        "te-oku": "hagemashiteokimasu"
+        "te-miru": "hagemashitemimasu"
+    - word: "ja-3783"
+      forms:
+        "te-shimau": "なぐさめてしまいます"
+        "te-oku": "なぐさめておきます"
+        "te-miru": "なぐさめてみます"
+      readings:
+        "te-shimau": "nagusameteshimaimasu"
+        "te-oku": "nagusameteokimasu"
+        "te-miru": "nagusametemimasu"
+    - word: "ja-3784"
+      forms:
+        "te-shimau": "かばってしまいます"
+        "te-oku": "かばっておきます"
+        "te-miru": "かばってみます"
+      readings:
+        "te-shimau": "kabatteshimaimasu"
+        "te-oku": "kabatteokimasu"
+        "te-miru": "kabattemimasu"
+    - word: "ja-3785"
+      forms:
+        "te-shimau": "ささえてしまいます"
+        "te-oku": "ささえておきます"
+        "te-miru": "ささえてみます"
+      readings:
+        "te-shimau": "sasaeteshimaimasu"
+        "te-oku": "sasaeteokimasu"
+        "te-miru": "sasaetemimasu"
+    - word: "ja-3786"
+      forms:
+        "te-shimau": "たすけあってしまいます"
+        "te-oku": "たすけあっておきます"
+        "te-miru": "たすけあってみます"
+      readings:
+        "te-shimau": "tasukeatteshimaimasu"
+        "te-oku": "tasukeatteokimasu"
+        "te-miru": "tasukeattemimasu"
+    - word: "ja-3790"
+      forms:
+        "te-shimau": "しりあってしまいます"
+        "te-oku": "しりあっておきます"
+        "te-miru": "しりあってみます"
+      readings:
+        "te-shimau": "shiriatteshimaimasu"
+        "te-oku": "shiriatteokimasu"
+        "te-miru": "shiriattemimasu"
+    - word: "ja-3791"
+      forms:
+        "te-shimau": "であってしまいます"
+        "te-oku": "であっておきます"
+        "te-miru": "であってみます"
+      readings:
+        "te-shimau": "deatteshimaimasu"
+        "te-oku": "deatteokimasu"
+        "te-miru": "deattemimasu"
+    - word: "ja-3833"
+      forms:
+        "te-shimau": "くらしてしまいます"
+        "te-oku": "くらしておきます"
+        "te-miru": "くらしてみます"
+      readings:
+        "te-shimau": "kurashiteshimaimasu"
+        "te-oku": "kurashiteokimasu"
+        "te-miru": "kurashitemimasu"
+    - word: "ja-3857"
+      forms:
+        "te-shimau": "かしてしまいます"
+        "te-oku": "かしておきます"
+        "te-miru": "かしてみます"
+      readings:
+        "te-shimau": "kashiteshimaimasu"
+        "te-oku": "kashiteokimasu"
+        "te-miru": "kashitemimasu"
+    - word: "ja-3887"
+      forms:
+        "te-shimau": "ゆれてしまいます"
+        "te-oku": "ゆれておきます"
+        "te-miru": "ゆれてみます"
+      readings:
+        "te-shimau": "yureteshimaimasu"
+        "te-oku": "yureteokimasu"
+        "te-miru": "yuretemimasu"
+    - word: "ja-3898"
+      forms:
+        "te-shimau": "すくってしまいます"
+        "te-oku": "すくっておきます"
+        "te-miru": "すくってみます"
+      readings:
+        "te-shimau": "sukutteshimaimasu"
+        "te-oku": "sukutteokimasu"
+        "te-miru": "sukuttemimasu"
+    - word: "ja-3914"
+      forms:
+        "te-shimau": "にげてしまいます"
+        "te-oku": "にげておきます"
+        "te-miru": "にげてみます"
+      readings:
+        "te-shimau": "nigeteshimaimasu"
+        "te-oku": "nigeteokimasu"
+        "te-miru": "nigetemimasu"
+    - word: "ja-3915"
+      forms:
+        "te-shimau": "にがしてしまいます"
+        "te-oku": "にがしておきます"
+        "te-miru": "にがしてみます"
+      readings:
+        "te-shimau": "nigashiteshimaimasu"
+        "te-oku": "nigashiteokimasu"
+        "te-miru": "nigashitemimasu"
+    - word: "ja-3963"
+      forms:
+        "te-shimau": "きんじてしまいます"
+        "te-oku": "きんじておきます"
+        "te-miru": "きんじてみます"
+      readings:
+        "te-shimau": "kinjiteshimaimasu"
+        "te-oku": "kinjiteokimasu"
+        "te-miru": "kinjitemimasu"
+    - word: "ja-3965"
+      forms:
+        "te-shimau": "うったえてしまいます"
+        "te-oku": "うったえておきます"
+        "te-miru": "うったえてみます"
+      readings:
+        "te-shimau": "uttaeteshimaimasu"
+        "te-oku": "uttaeteokimasu"
+        "te-miru": "uttaetemimasu"
+    - word: "ja-4046"
+      forms:
+        "te-shimau": "おそってしまいます"
+        "te-oku": "おそっておきます"
+        "te-miru": "おそってみます"
+      readings:
+        "te-shimau": "osotteshimaimasu"
+        "te-oku": "osotteokimasu"
+        "te-miru": "osottemimasu"
+    - word: "ja-4047"
+      forms:
+        "te-shimau": "おさえてしまいます"
+        "te-oku": "おさえておきます"
+        "te-miru": "おさえてみます"
+      readings:
+        "te-shimau": "osaeteshimaimasu"
+        "te-oku": "osaeteokimasu"
+        "te-miru": "osaetemimasu"
+    - word: "ja-4048"
+      forms:
+        "te-shimau": "おさまってしまいます"
+        "te-oku": "おさまっておきます"
+        "te-miru": "おさまってみます"
+      readings:
+        "te-shimau": "osamatteshimaimasu"
+        "te-oku": "osamatteokimasu"
+        "te-miru": "osamattemimasu"
+    - word: "ja-4049"
+      forms:
+        "te-shimau": "おさめてしまいます"
+        "te-oku": "おさめておきます"
+        "te-miru": "おさめてみます"
+      readings:
+        "te-shimau": "osameteshimaimasu"
+        "te-oku": "osameteokimasu"
+        "te-miru": "osametemimasu"
+    - word: "ja-4050"
+      forms:
+        "te-shimau": "おぼれてしまいます"
+        "te-oku": "おぼれておきます"
+        "te-miru": "おぼれてみます"
+      readings:
+        "te-shimau": "oboreteshimaimasu"
+        "te-oku": "oboreteokimasu"
+        "te-miru": "oboretemimasu"
+    - word: "ja-4051"
+      forms:
+        "te-shimau": "おもいだしてしまいます"
+        "te-oku": "おもいだしておきます"
+        "te-miru": "おもいだしてみます"
+      readings:
+        "te-shimau": "omoidashiteshimaimasu"
+        "te-oku": "omoidashiteokimasu"
+        "te-miru": "omoidashitemimasu"
+    - word: "ja-4052"
+      forms:
+        "te-shimau": "おもいついてしまいます"
+        "te-oku": "おもいついておきます"
+        "te-miru": "おもいついてみます"
+      readings:
+        "te-shimau": "omoitsuiteshimaimasu"
+        "te-oku": "omoitsuiteokimasu"
+        "te-miru": "omoitsuitemimasu"
+    - word: "ja-4053"
+      forms:
+        "te-shimau": "かかえてしまいます"
+        "te-oku": "かかえておきます"
+        "te-miru": "かかえてみます"
+      readings:
+        "te-shimau": "kakaeteshimaimasu"
+        "te-oku": "kakaeteokimasu"
+        "te-miru": "kakaetemimasu"
+    - word: "ja-4054"
+      forms:
+        "te-shimau": "かさなってしまいます"
+        "te-oku": "かさなっておきます"
+        "te-miru": "かさなってみます"
+      readings:
+        "te-shimau": "kasanatteshimaimasu"
+        "te-oku": "kasanatteokimasu"
+        "te-miru": "kasanattemimasu"
+    - word: "ja-4055"
+      forms:
+        "te-shimau": "かさねてしまいます"
+        "te-oku": "かさねておきます"
+        "te-miru": "かさねてみます"
+      readings:
+        "te-shimau": "kasaneteshimaimasu"
+        "te-oku": "kasaneteokimasu"
+        "te-miru": "kasanetemimasu"
+    - word: "ja-4056"
+      forms:
+        "te-shimau": "かたむいてしまいます"
+        "te-oku": "かたむいておきます"
+        "te-miru": "かたむいてみます"
+      readings:
+        "te-shimau": "katamuiteshimaimasu"
+        "te-oku": "katamuiteokimasu"
+        "te-miru": "katamuitemimasu"
+    - word: "ja-4057"
+      forms:
+        "te-shimau": "かなってしまいます"
+        "te-oku": "かなっておきます"
+        "te-miru": "かなってみます"
+      readings:
+        "te-shimau": "kanatteshimaimasu"
+        "te-oku": "kanatteokimasu"
+        "te-miru": "kanattemimasu"
+    - word: "ja-4058"
+      forms:
+        "te-shimau": "かぶせてしまいます"
+        "te-oku": "かぶせておきます"
+        "te-miru": "かぶせてみます"
+      readings:
+        "te-shimau": "kabuseteshimaimasu"
+        "te-oku": "kabuseteokimasu"
+        "te-miru": "kabusetemimasu"
+    - word: "ja-4059"
+      forms:
+        "te-shimau": "きづいてしまいます"
+        "te-oku": "きづいておきます"
+        "te-miru": "きづいてみます"
+      readings:
+        "te-shimau": "kizuiteshimaimasu"
+        "te-oku": "kizuiteokimasu"
+        "te-miru": "kizuitemimasu"
+    - word: "ja-4060"
+      forms:
+        "te-shimau": "くずれてしまいます"
+        "te-oku": "くずれておきます"
+        "te-miru": "くずれてみます"
+      readings:
+        "te-shimau": "kuzureteshimaimasu"
+        "te-oku": "kuzureteokimasu"
+        "te-miru": "kuzuretemimasu"
+    - word: "ja-4061"
+      forms:
+        "te-shimau": "くたびれてしまいます"
+        "te-oku": "くたびれておきます"
+        "te-miru": "くたびれてみます"
+      readings:
+        "te-shimau": "kutabireteshimaimasu"
+        "te-oku": "kutabireteokimasu"
+        "te-miru": "kutabiretemimasu"
+    - word: "ja-4062"
+      forms:
+        "te-shimau": "くっついてしまいます"
+        "te-oku": "くっついておきます"
+        "te-miru": "くっついてみます"
+      readings:
+        "te-shimau": "kuttsuiteshimaimasu"
+        "te-oku": "kuttsuiteokimasu"
+        "te-miru": "kuttsuitemimasu"
+    - word: "ja-4063"
+      forms:
+        "te-shimau": "くっつけてしまいます"
+        "te-oku": "くっつけておきます"
+        "te-miru": "くっつけてみます"
+      readings:
+        "te-shimau": "kuttsuketeshimaimasu"
+        "te-oku": "kuttsuketeokimasu"
+        "te-miru": "kuttsuketemimasu"
+    - word: "ja-4064"
+      forms:
+        "te-shimau": "ころがってしまいます"
+        "te-oku": "ころがっておきます"
+        "te-miru": "ころがってみます"
+      readings:
+        "te-shimau": "korogatteshimaimasu"
+        "te-oku": "korogatteokimasu"
+        "te-miru": "korogattemimasu"
+    - word: "ja-4065"
+      forms:
+        "te-shimau": "ころしてしまいます"
+        "te-oku": "ころしておきます"
+        "te-miru": "ころしてみます"
+      readings:
+        "te-shimau": "koroshiteshimaimasu"
+        "te-oku": "koroshiteokimasu"
+        "te-miru": "koroshitemimasu"
+    - word: "ja-4066"
+      forms:
+        "te-shimau": "こめてしまいます"
+        "te-oku": "こめておきます"
+        "te-miru": "こめてみます"
+      readings:
+        "te-shimau": "kometeshimaimasu"
+        "te-oku": "kometeokimasu"
+        "te-miru": "kometemimasu"
+    - word: "ja-4067"
+      forms:
+        "te-shimau": "さからってしまいます"
+        "te-oku": "さからっておきます"
+        "te-miru": "さからってみます"
+      readings:
+        "te-shimau": "sakaratteshimaimasu"
+        "te-oku": "sakaratteokimasu"
+        "te-miru": "sakarattemimasu"
+    - word: "ja-4068"
+      forms:
+        "te-shimau": "さしてしまいます"
+        "te-oku": "さしておきます"
+        "te-miru": "さしてみます"
+      readings:
+        "te-shimau": "sashiteshimaimasu"
+        "te-oku": "sashiteokimasu"
+        "te-miru": "sashitemimasu"
+    - word: "ja-4069"
+      forms:
+        "te-shimau": "さびてしまいます"
+        "te-oku": "さびておきます"
+        "te-miru": "さびてみます"
+      readings:
+        "te-shimau": "sabiteshimaimasu"
+        "te-oku": "sabiteokimasu"
+        "te-miru": "sabitemimasu"
+    - word: "ja-4070"
+      forms:
+        "te-shimau": "しずんでしまいます"
+        "te-oku": "しずんでおきます"
+        "te-miru": "しずんでみます"
+      readings:
+        "te-shimau": "shizundeshimaimasu"
+        "te-oku": "shizundeokimasu"
+        "te-miru": "shizundemimasu"
+    - word: "ja-4071"
+      forms:
+        "te-shimau": "しずめてしまいます"
+        "te-oku": "しずめておきます"
+        "te-miru": "しずめてみます"
+      readings:
+        "te-shimau": "shizumeteshimaimasu"
+        "te-oku": "shizumeteokimasu"
+        "te-miru": "shizumetemimasu"
+    - word: "ja-4072"
+      forms:
+        "te-shimau": "したがってしまいます"
+        "te-oku": "したがっておきます"
+        "te-miru": "したがってみます"
+      readings:
+        "te-shimau": "shitagatteshimaimasu"
+        "te-oku": "shitagatteokimasu"
+        "te-miru": "shitagattemimasu"
+    - word: "ja-4073"
+      forms:
+        "te-shimau": "しばってしまいます"
+        "te-oku": "しばっておきます"
+        "te-miru": "しばってみます"
+      readings:
+        "te-shimau": "shibatteshimaimasu"
+        "te-oku": "shibatteokimasu"
+        "te-miru": "shibattemimasu"
+    - word: "ja-4074"
+      forms:
+        "te-shimau": "しめしてしまいます"
+        "te-oku": "しめしておきます"
+        "te-miru": "しめしてみます"
+      readings:
+        "te-shimau": "shimeshiteshimaimasu"
+        "te-oku": "shimeshiteokimasu"
+        "te-miru": "shimeshitemimasu"
+    - word: "ja-4075"
+      forms:
+        "te-shimau": "すべってしまいます"
+        "te-oku": "すべっておきます"
+        "te-miru": "すべってみます"
+      readings:
+        "te-shimau": "subetteshimaimasu"
+        "te-oku": "subetteokimasu"
+        "te-miru": "subettemimasu"
+    - word: "ja-4076"
+      forms:
+        "te-shimau": "すませてしまいます"
+        "te-oku": "すませておきます"
+        "te-miru": "すませてみます"
+      readings:
+        "te-shimau": "sumaseteshimaimasu"
+        "te-oku": "sumaseteokimasu"
+        "te-miru": "sumasetemimasu"
+    - word: "ja-4077"
+      forms:
+        "te-shimau": "すんでしまいます"
+        "te-oku": "すんでおきます"
+        "te-miru": "すんでみます"
+      readings:
+        "te-shimau": "sundeshimaimasu"
+        "te-oku": "sundeokimasu"
+        "te-miru": "sundemimasu"
+    - word: "ja-4078"
+      forms:
+        "te-shimau": "ずれてしまいます"
+        "te-oku": "ずれておきます"
+        "te-miru": "ずれてみます"
+      readings:
+        "te-shimau": "zureteshimaimasu"
+        "te-oku": "zureteokimasu"
+        "te-miru": "zuretemimasu"
+    - word: "ja-4079"
+      forms:
+        "te-shimau": "せまってしまいます"
+        "te-oku": "せまっておきます"
+        "te-miru": "せまってみます"
+      readings:
+        "te-shimau": "sematteshimaimasu"
+        "te-oku": "sematteokimasu"
+        "te-miru": "semattemimasu"
+    - word: "ja-4080"
+      forms:
+        "te-shimau": "そなえてしまいます"
+        "te-oku": "そなえておきます"
+        "te-miru": "そなえてみます"
+      readings:
+        "te-shimau": "sonaeteshimaimasu"
+        "te-oku": "sonaeteokimasu"
+        "te-miru": "sonaetemimasu"
+    - word: "ja-4081"
+      forms:
+        "te-shimau": "そまってしまいます"
+        "te-oku": "そまっておきます"
+        "te-miru": "そまってみます"
+      readings:
+        "te-shimau": "somatteshimaimasu"
+        "te-oku": "somatteokimasu"
+        "te-miru": "somattemimasu"
+    - word: "ja-4082"
+      forms:
+        "te-shimau": "そめてしまいます"
+        "te-oku": "そめておきます"
+        "te-miru": "そめてみます"
+      readings:
+        "te-shimau": "someteshimaimasu"
+        "te-oku": "someteokimasu"
+        "te-miru": "sometemimasu"
+    - word: "ja-4083"
+      forms:
+        "te-shimau": "たえてしまいます"
+        "te-oku": "たえておきます"
+        "te-miru": "たえてみます"
+      readings:
+        "te-shimau": "taeteshimaimasu"
+        "te-oku": "taeteokimasu"
+        "te-miru": "taetemimasu"
+    - word: "ja-4084"
+      forms:
+        "te-shimau": "たしかめてしまいます"
+        "te-oku": "たしかめておきます"
+        "te-miru": "たしかめてみます"
+      readings:
+        "te-shimau": "tashikameteshimaimasu"
+        "te-oku": "tashikameteokimasu"
+        "te-miru": "tashikametemimasu"
+    - word: "ja-4085"
+      forms:
+        "te-shimau": "たまってしまいます"
+        "te-oku": "たまっておきます"
+        "te-miru": "たまってみます"
+      readings:
+        "te-shimau": "tamatteshimaimasu"
+        "te-oku": "tamatteokimasu"
+        "te-miru": "tamattemimasu"
+    - word: "ja-4086"
+      forms:
+        "te-shimau": "ためしてしまいます"
+        "te-oku": "ためしておきます"
+        "te-miru": "ためしてみます"
+      readings:
+        "te-shimau": "tameshiteshimaimasu"
+        "te-oku": "tameshiteokimasu"
+        "te-miru": "tameshitemimasu"
+    - word: "ja-4087"
+      forms:
+        "te-shimau": "ちぢんでしまいます"
+        "te-oku": "ちぢんでおきます"
+        "te-miru": "ちぢんでみます"
+      readings:
+        "te-shimau": "chijindeshimaimasu"
+        "te-oku": "chijindeokimasu"
+        "te-miru": "chijindemimasu"
+    - word: "ja-4088"
+      forms:
+        "te-shimau": "ちぢめてしまいます"
+        "te-oku": "ちぢめておきます"
+        "te-miru": "ちぢめてみます"
+      readings:
+        "te-shimau": "chijimeteshimaimasu"
+        "te-oku": "chijimeteokimasu"
+        "te-miru": "chijimetemimasu"
+    - word: "ja-4089"
+      forms:
+        "te-shimau": "ついでしまいます"
+        "te-oku": "ついでおきます"
+        "te-miru": "ついでみます"
+      readings:
+        "te-shimau": "tsuideshimaimasu"
+        "te-oku": "tsuideokimasu"
+        "te-miru": "tsuidemimasu"
+    - word: "ja-4090"
+      forms:
+        "te-shimau": "つづいてしまいます"
+        "te-oku": "つづいておきます"
+        "te-miru": "つづいてみます"
+      readings:
+        "te-shimau": "tsuzuiteshimaimasu"
+        "te-oku": "tsuzuiteokimasu"
+        "te-miru": "tsuzuitemimasu"
+    - word: "ja-4091"
+      forms:
+        "te-shimau": "つぶしてしまいます"
+        "te-oku": "つぶしておきます"
+        "te-miru": "つぶしてみます"
+      readings:
+        "te-shimau": "tsubushiteshimaimasu"
+        "te-oku": "tsubushiteokimasu"
+        "te-miru": "tsubushitemimasu"
+    - word: "ja-4092"
+      forms:
+        "te-shimau": "つぶれてしまいます"
+        "te-oku": "つぶれておきます"
+        "te-miru": "つぶれてみます"
+      readings:
+        "te-shimau": "tsubureteshimaimasu"
+        "te-oku": "tsubureteokimasu"
+        "te-miru": "tsuburetemimasu"
+    - word: "ja-4093"
+      forms:
+        "te-shimau": "てらしてしまいます"
+        "te-oku": "てらしておきます"
+        "te-miru": "てらしてみます"
+      readings:
+        "te-shimau": "terashiteshimaimasu"
+        "te-oku": "terashiteokimasu"
+        "te-miru": "terashitemimasu"
+    - word: "ja-4094"
+      forms:
+        "te-shimau": "とおしてしまいます"
+        "te-oku": "とおしておきます"
+        "te-miru": "とおしてみます"
+      readings:
+        "te-shimau": "tooshiteshimaimasu"
+        "te-oku": "tooshiteokimasu"
+        "te-miru": "tooshitemimasu"
+    - word: "ja-4095"
+      forms:
+        "te-shimau": "とかしてしまいます"
+        "te-oku": "とかしておきます"
+        "te-miru": "とかしてみます"
+      readings:
+        "te-shimau": "tokashiteshimaimasu"
+        "te-oku": "tokashiteokimasu"
+        "te-miru": "tokashitemimasu"
+    - word: "ja-4096"
+      forms:
+        "te-shimau": "とけてしまいます"
+        "te-oku": "とけておきます"
+        "te-miru": "とけてみます"
+      readings:
+        "te-shimau": "toketeshimaimasu"
+        "te-oku": "toketeokimasu"
+        "te-miru": "toketemimasu"
+    - word: "ja-4097"
+      forms:
+        "te-shimau": "ととのってしまいます"
+        "te-oku": "ととのっておきます"
+        "te-miru": "ととのってみます"
+      readings:
+        "te-shimau": "totonotteshimaimasu"
+        "te-oku": "totonotteokimasu"
+        "te-miru": "totonottemimasu"
+    - word: "ja-4098"
+      forms:
+        "te-shimau": "ととのえてしまいます"
+        "te-oku": "ととのえておきます"
+        "te-miru": "ととのえてみます"
+      readings:
+        "te-shimau": "totonoeteshimaimasu"
+        "te-oku": "totonoeteokimasu"
+        "te-miru": "totonoetemimasu"
+    - word: "ja-4099"
+      forms:
+        "te-shimau": "とびこんでしまいます"
+        "te-oku": "とびこんでおきます"
+        "te-miru": "とびこんでみます"
+      readings:
+        "te-shimau": "tobikondeshimaimasu"
+        "te-oku": "tobikondeokimasu"
+        "te-miru": "tobikondemimasu"
+    - word: "ja-4100"
+      forms:
+        "te-shimau": "ともなってしまいます"
+        "te-oku": "ともなっておきます"
+        "te-miru": "ともなってみます"
+      readings:
+        "te-shimau": "tomonatteshimaimasu"
+        "te-oku": "tomonatteokimasu"
+        "te-miru": "tomonattemimasu"
+    - word: "ja-4101"
+      forms:
+        "te-shimau": "とらえてしまいます"
+        "te-oku": "とらえておきます"
+        "te-miru": "とらえてみます"
+      readings:
+        "te-shimau": "toraeteshimaimasu"
+        "te-oku": "toraeteokimasu"
+        "te-miru": "toraetemimasu"
+    - word: "ja-4102"
+      forms:
+        "te-shimau": "とりあげてしまいます"
+        "te-oku": "とりあげておきます"
+        "te-miru": "とりあげてみます"
+      readings:
+        "te-shimau": "toriageteshimaimasu"
+        "te-oku": "toriageteokimasu"
+        "te-miru": "toriagetemimasu"
+    - word: "ja-4103"
+      forms:
+        "te-shimau": "とりだしてしまいます"
+        "te-oku": "とりだしておきます"
+        "te-miru": "とりだしてみます"
+      readings:
+        "te-shimau": "toridashiteshimaimasu"
+        "te-oku": "toridashiteokimasu"
+        "te-miru": "toridashitemimasu"
+    - word: "ja-4104"
+      forms:
+        "te-shimau": "とりのぞいてしまいます"
+        "te-oku": "とりのぞいておきます"
+        "te-miru": "とりのぞいてみます"
+      readings:
+        "te-shimau": "torinozoiteshimaimasu"
+        "te-oku": "torinozoiteokimasu"
+        "te-miru": "torinozoitemimasu"
+    - word: "ja-4105"
+      forms:
+        "te-shimau": "ながしてしまいます"
+        "te-oku": "ながしておきます"
+        "te-miru": "ながしてみます"
+      readings:
+        "te-shimau": "nagashiteshimaimasu"
+        "te-oku": "nagashiteokimasu"
+        "te-miru": "nagashitemimasu"
+    - word: "ja-4185"
+      forms:
+        "te-shimau": "みとめてしまいます"
+        "te-oku": "みとめておきます"
+        "te-miru": "みとめてみます"
+      readings:
+        "te-shimau": "mitometeshimaimasu"
+        "te-oku": "mitometeokimasu"
+        "te-miru": "mitometemimasu"
+    - word: "ja-4186"
+      forms:
+        "te-shimau": "うたがってしまいます"
+        "te-oku": "うたがっておきます"
+        "te-miru": "うたがってみます"
+      readings:
+        "te-shimau": "utagatteshimaimasu"
+        "te-oku": "utagatteokimasu"
+        "te-miru": "utagattemimasu"
+    - word: "ja-4187"
+      forms:
+        "te-shimau": "しんじてしまいます"
+        "te-oku": "しんじておきます"
+        "te-miru": "しんじてみます"
+      readings:
+        "te-shimau": "shinjiteshimaimasu"
+        "te-oku": "shinjiteokimasu"
+        "te-miru": "shinjitemimasu"
+    - word: "ja-4192"
+      forms:
+        "te-shimau": "ろんじてしまいます"
+        "te-oku": "ろんじておきます"
+        "te-miru": "ろんじてみます"
+      readings:
+        "te-shimau": "ronjiteshimaimasu"
+        "te-oku": "ronjiteokimasu"
+        "te-miru": "ronjitemimasu"
+rules:
+  - id: "ja-rule-te-shimau"
+    slots: ["te-shimau"]
+    words:
+      - { word: "てしまいます", reading: "te shimaimasu" }
+      - { word: "たべてしまいます", reading: "tabete shimaimasu" }
+  - id: "ja-rule-te-oku"
+    slots: ["te-oku"]
+    words:
+      - { word: "ておきます", reading: "te okimasu" }
+      - { word: "かいておきます", reading: "kaite okimasu" }
+  - id: "ja-rule-te-miru"
+    slots: ["te-miru"]
+    words:
+      - { word: "てみます", reading: "te mimasu" }
+      - { word: "たべてみます", reading: "tabete mimasu" }

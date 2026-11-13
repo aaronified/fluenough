@@ -1,0 +1,135 @@
+schema: 1
+id: "ja-grammar-giving-receiving-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-4453"
+    target: "わたしはともだちにてがみをかいてあげます。"
+    words: ["わたし", "は", "ともだち", "に", "てがみ", "を", "かいて", "あげます"]
+    reading: "watashi wa tomodachi ni tegami o kaite agemasu."
+    ipa: "wataɕi wa tomodatɕi ni teɡami o kaite aɡemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "てがみ", ref: "ja-1356" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "かいて", ref: "ja-0346" }
+      - { word: "あげます", ref: "ja-0598" }
+    confusables:
+      - { id: "w1", ref: "ja-0346", kind: "word" }
+      - { id: "w2", ref: "ja-0345", kind: "word" }
+    rules: ["ja-rule-ageru"]
+  - id: "ja-4454"
+    target: "はははわたしにごはんをつくってくれます。"
+    words: ["はは", "は", "わたし", "に", "ごはん", "を", "つくって", "くれます"]
+    reading: "haha wa watashi ni gohan o tsukutte kuremasu."
+    ipa: "haha wa wataɕi ni ɡohaɴ o tsɯkɯtte kɯɾemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "はは", ref: "ja-0201" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "ごはん", ref: "ja-0074" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "つくって", ref: "ja-0364" }
+      - { word: "くれます", base: "くれる", reading: "kureru" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-0364", kind: "word" }
+      - { id: "w2", ref: "ja-0341", kind: "word" }
+    rules: ["ja-rule-kureru"]
+  - id: "ja-4455"
+    target: "せんせいはわたしにほんをよんでくれます。"
+    words: ["せんせい", "は", "わたし", "に", "ほん", "を", "よんで", "くれます"]
+    reading: "sensei wa watashi ni hon o yonde kuremasu."
+    ipa: "seɴseː wa wataɕi ni hoɴ o joɴde kɯɾemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "せんせい", ref: "ja-0070" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "ほん", ref: "ja-1180" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "よんで", ref: "ja-0345" }
+      - { word: "くれます", base: "くれる", reading: "kureru" }
+    confusables:
+      - { id: "w1", ref: "ja-0345", kind: "word" }
+      - { id: "w2", ref: "ja-0346", kind: "word" }
+    rules: ["ja-rule-kureru"]
+  - id: "ja-4456"
+    target: "ちちにほんをよんであげます。"
+    words: ["ちち", "に", "ほん", "を", "よんで", "あげます"]
+    reading: "chichi ni hon o yonde agemasu."
+    ipa: "tɕitɕi ni hoɴ o joɴde aɡemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ちち", ref: "ja-0200" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "ほん", ref: "ja-1180" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "よんで", ref: "ja-0345" }
+      - { word: "あげます", ref: "ja-0598" }
+    confusables:
+      - { id: "w1", ref: "ja-0345", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-ageru"]
+  - id: "ja-4457"
+    target: "ともだちにきてもらいます。"
+    words: ["ともだち", "に", "きて", "もらいます"]
+    reading: "tomodachi ni kite moraimasu."
+    ipa: "tomodatɕi ni kite moɾaimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "きて", ref: "ja-0349" }
+      - { word: "もらいます", ref: "ja-0599" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-0349", kind: "word" }
+      - { id: "w2", ref: "ja-0348", kind: "word" }
+    rules: ["ja-rule-morau"]
+  - id: "ja-4458"
+    target: "せんせいにてがみをみてもらいます。"
+    words: ["せんせい", "に", "てがみ", "を", "みて", "もらいます"]
+    reading: "sensei ni tegami o mite moraimasu."
+    ipa: "seɴseː ni teɡami o mite moɾaimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "せんせい", ref: "ja-0070" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "てがみ", ref: "ja-1356" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "みて", ref: "ja-0343" }
+      - { word: "もらいます", ref: "ja-0599" }
+    confusables:
+      - { id: "w1", ref: "ja-0343", kind: "word" }
+      - { id: "w2", ref: "ja-0591", kind: "word" }
+    rules: ["ja-rule-morau"]
+  - id: "ja-4459"
+    target: "ははにりょうりをつくってもらいます。"
+    words: ["はは", "に", "りょうり", "を", "つくって", "もらいます"]
+    reading: "haha ni ryouri o tsukutte moraimasu."
+    ipa: "haha ni ɾjoːɾi o tsɯkɯtte moɾaimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "はは", ref: "ja-0201" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "りょうり", ref: "ja-0994" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "つくって", ref: "ja-0364" }
+      - { word: "もらいます", ref: "ja-0599" }
+    confusables:
+      - { id: "w1", ref: "ja-0364", kind: "word" }
+      - { id: "w2", ref: "ja-0341", kind: "word" }
+    rules: ["ja-rule-morau"]

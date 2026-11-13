@@ -1,0 +1,146 @@
+schema: 1
+id: "ja-grammar-permission-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-4445"
+    target: "ここでたべてもいいですか。"
+    words: ["ここ", "で", "たべて", "も", "いい", "です", "か"]
+    reading: "koko de tabete mo ii desu ka."
+    ipa: "koko de tabete mo iː desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "ここ", ref: "ja-0554" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "たべて", ref: "ja-0341" }
+      - { word: "も", base: "も", reading: "mo" }
+      - { word: "いい", ref: "ja-0464" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - { id: "w1", ref: "ja-0341", kind: "word" }
+      - { id: "w2", ref: "ja-0342", kind: "word" }
+    rules: ["ja-rule-te-mo-ii"]
+  - id: "ja-4446"
+    target: "ここにすわってもいいです。"
+    words: ["ここ", "に", "すわって", "も", "いい", "です"]
+    reading: "koko ni suwatte mo ii desu."
+    ipa: "koko ni sɯwatte mo iː desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ここ", ref: "ja-0554" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "すわって", ref: "ja-0370" }
+      - { word: "も", base: "も", reading: "mo" }
+      - { word: "いい", ref: "ja-0464" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", ref: "ja-0370", kind: "word" }
+      - { id: "w2", ref: "ja-0371", kind: "word" }
+    rules: ["ja-rule-te-mo-ii"]
+  - id: "ja-4447"
+    target: "テレビをみてもいいですか。"
+    words: ["テレビ", "を", "みて", "も", "いい", "です", "か"]
+    reading: "terebi o mite mo ii desu ka."
+    ipa: "teɾebi o mite mo iː desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "テレビ", ref: "ja-0850" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "みて", ref: "ja-0343" }
+      - { word: "も", base: "も", reading: "mo" }
+      - { word: "いい", ref: "ja-0464" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - { id: "w1", ref: "ja-0343", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-te-mo-ii"]
+  - id: "ja-4448"
+    target: "ここでねてはいけません。"
+    words: ["ここ", "で", "ねて", "は", "いけません"]
+    reading: "koko de nete wa ikemasen."
+    ipa: "koko de nete wa ikemaseɴ"
+    pos: "phrase"
+    bases:
+      - { word: "ここ", ref: "ja-0554" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "ねて", ref: "ja-0352" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "いけません", base: "いけません", reading: "ikemasen" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-0352", kind: "word" }
+      - { id: "w2", ref: "ja-0351", kind: "word" }
+    rules: ["ja-rule-te-wa-ikenai"]
+  - id: "ja-4449"
+    target: "ドアをあけてはいけません。"
+    words: ["ドア", "を", "あけて", "は", "いけません"]
+    reading: "doa o akete wa ikemasen."
+    ipa: "doa o akete wa ikemaseɴ"
+    pos: "phrase"
+    bases:
+      - { word: "ドア", ref: "ja-0859" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "あけて", ref: "ja-0372" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "いけません", base: "いけません", reading: "ikemasen" }
+    confusables:
+      - { id: "w1", ref: "ja-0372", kind: "word" }
+      - { id: "w2", ref: "ja-0373", kind: "word" }
+    rules: ["ja-rule-te-wa-ikenai"]
+  - id: "ja-4450"
+    target: "ここでのんではいけません。"
+    words: ["ここ", "で", "のんで", "は", "いけません"]
+    reading: "koko de nonde wa ikemasen."
+    ipa: "koko de noɴde wa ikemaseɴ"
+    pos: "phrase"
+    bases:
+      - { word: "ここ", ref: "ja-0554" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "のんで", ref: "ja-0342" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "いけません", base: "いけません", reading: "ikemasen" }
+    confusables:
+      - { id: "w1", ref: "ja-0342", kind: "word" }
+      - { id: "w2", ref: "ja-0341", kind: "word" }
+    rules: ["ja-rule-te-wa-ikenai"]
+  - id: "ja-4451"
+    target: "でんわをつかってもいいですか。"
+    words: ["でんわ", "を", "つかって", "も", "いい", "です", "か"]
+    reading: "denwa o tsukatte mo ii desu ka."
+    ipa: "deɴwa o tsɯkatte mo iː desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "でんわ", ref: "ja-1202" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "つかって", ref: "ja-0369" }
+      - { word: "も", base: "も", reading: "mo" }
+      - { word: "いい", ref: "ja-0464" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - { id: "w1", ref: "ja-0369", kind: "word" }
+      - { id: "w2", ref: "ja-0364", kind: "word" }
+    rules: ["ja-rule-te-mo-ii"]
+  - id: "ja-4452"
+    target: "えいがをみてもいいです。"
+    words: ["えいが", "を", "みて", "も", "いい", "です"]
+    reading: "eiga o mite mo ii desu."
+    ipa: "eːɡa o mite mo iː desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "えいが", ref: "ja-1358" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "みて", ref: "ja-0343" }
+      - { word: "も", base: "も", reading: "mo" }
+      - { word: "いい", ref: "ja-0464" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", ref: "ja-0343", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-te-mo-ii"]

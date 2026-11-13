@@ -1,0 +1,17 @@
+schema: 1
+id: "ja-en-grammar-te-iru"
+kind: "layer"
+core: "ja-grammar-te-iru"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Going on now: the te-form and います (imasu)"
+description: "Put います (imasu) after the te-form of a verb to say that something is going on now: たべています (tabete imasu), is eating. It also says a state that lasts. Every verb a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "te-iru": "is {meaning}-ing"
+rules:
+  "ja-rule-te-iru":
+    name: "ている (te iru): is doing"
+    explanation: "{1} is added to the te-form of a verb to say what is going on now: {2} means is eating. It can also say a state that lasts, as in すんでいます (sunde imasu), which means lives."

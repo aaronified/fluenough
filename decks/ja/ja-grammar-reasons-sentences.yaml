@@ -1,0 +1,106 @@
+schema: 1
+id: "ja-grammar-reasons-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-4467"
+    target: "あついから、みずをのみます。"
+    words: ["あつい", "から", "みず", "を", "のみます"]
+    reading: "atsui kara, mizu o nomimasu."
+    ipa: "atsɯi kaɾa mizɯ o nomimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "あつい", ref: "ja-0466" }
+      - { word: "から", base: "から", reading: "kara" }
+      - { word: "みず", ref: "ja-0073" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "のみます", ref: "ja-0342" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-0342", kind: "word" }
+      - { id: "w2", ref: "ja-0341", kind: "word" }
+    rules: ["ja-rule-kara-because"]
+  - id: "ja-4468"
+    target: "さむいから、いえにいます。"
+    words: ["さむい", "から", "いえ", "に", "います"]
+    reading: "samui kara, ie ni imasu."
+    ipa: "samɯi kaɾa ie ni imasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "さむい", ref: "ja-0467" }
+      - { word: "から", base: "から", reading: "kara" }
+      - { word: "いえ", ref: "ja-1153" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "います", base: "いる", reading: "iru" }
+    confusables:
+      - { id: "w1", ref: "ja-0350", kind: "word" }
+      - { id: "w2", ref: "ja-0348", kind: "word" }
+    rules: ["ja-rule-kara-because"]
+  - id: "ja-4469"
+    target: "いそがしいので、いきません。"
+    words: ["いそがしい", "ので", "いきません"]
+    reading: "isogashii node, ikimasen."
+    ipa: "isoɡaɕiː node ikimaseɴ"
+    pos: "phrase"
+    bases:
+      - { word: "いそがしい", ref: "ja-0476" }
+      - { word: "ので", base: "ので", reading: "node" }
+      - { word: "いきません", ref: "ja-0348" }
+    confusables:
+      - { id: "w1", ref: "ja-0348", kind: "word" }
+      - { id: "w2", ref: "ja-0350", kind: "word" }
+    rules: ["ja-rule-node"]
+  - id: "ja-4470"
+    target: "ねつがあるので、ねます。"
+    words: ["ねつ", "が", "ある", "ので", "ねます"]
+    reading: "netsu ga aru node, nemasu."
+    ipa: "netsɯ ɡa aɾɯ node nemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ねつ", ref: "ja-1101" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "ある", base: "ある", reading: "aru" }
+      - { word: "ので", base: "ので", reading: "node" }
+      - { word: "ねます", ref: "ja-0352" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-0352", kind: "word" }
+      - { id: "w2", ref: "ja-0351", kind: "word" }
+    rules: ["ja-rule-node"]
+  - id: "ja-4471"
+    target: "しけんがあるので、ほんをよみます。"
+    words: ["しけん", "が", "ある", "ので", "ほん", "を", "よみます"]
+    reading: "shiken ga aru node, hon o yomimasu."
+    ipa: "ɕikeɴ ɡa aɾɯ node hoɴ o jomimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "しけん", ref: "ja-0721" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "ある", base: "ある", reading: "aru" }
+      - { word: "ので", base: "ので", reading: "node" }
+      - { word: "ほん", ref: "ja-1180" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "よみます", ref: "ja-0345" }
+    confusables:
+      - { id: "w1", ref: "ja-0345", kind: "word" }
+      - { id: "w2", ref: "ja-0346", kind: "word" }
+    rules: ["ja-rule-node"]
+  - id: "ja-4472"
+    target: "やすいから、かいます。"
+    words: ["やすい", "から", "かいます"]
+    reading: "yasui kara, kaimasu."
+    ipa: "jasɯi kaɾa kaimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "やすい", ref: "ja-0438" }
+      - { word: "から", base: "から", reading: "kara" }
+      - { word: "かいます", ref: "ja-0356" }
+    confusables:
+      - { id: "w1", ref: "ja-0356", kind: "word" }
+      - { id: "w2", ref: "ja-0364", kind: "word" }
+    rules: ["ja-rule-kara-because"]

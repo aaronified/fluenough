@@ -1,0 +1,108 @@
+schema: 1
+id: "ja-grammar-conditional-tara-nara-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-4473"
+    target: "いえにかえったら、ごはんをたべます。"
+    words: ["いえ", "に", "かえったら", "ごはん", "を", "たべます"]
+    reading: "ie ni kaettara, gohan o tabemasu."
+    ipa: "ie ni kaettaɾa ɡohaɴ o tabemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "いえ", ref: "ja-1153" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "かえったら", ref: "ja-0350" }
+      - { word: "ごはん", ref: "ja-0074" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "たべます", ref: "ja-0341" }
+    confusables:
+      - { id: "w1", ref: "ja-0350", kind: "word" }
+      - { id: "w2", ref: "ja-0348", kind: "word" }
+    rules: ["ja-rule-conditional-tara"]
+  - id: "ja-4474"
+    target: "つかれたら、ねます。"
+    words: ["つかれたら", "ねます"]
+    reading: "tsukaretara, nemasu."
+    ipa: "tsɯkaɾetaɾa nemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "つかれたら", ref: "ja-1341" }
+      - { word: "ねます", ref: "ja-0352" }
+    confusables:
+      - { id: "w1", ref: "ja-1341", kind: "word" }
+      - { id: "w2", ref: "ja-0351", kind: "word" }
+    rules: ["ja-rule-conditional-tara"]
+  - id: "ja-4475"
+    target: "ともだちにあったら、はなします。"
+    words: ["ともだち", "に", "あったら", "はなします"]
+    reading: "tomodachi ni attara, hanashimasu."
+    ipa: "tomodatɕi ni attaɾa hanaɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "あったら", ref: "ja-0357" }
+      - { word: "はなします", ref: "ja-0347" }
+    confusables:
+      - { id: "w1", ref: "ja-0357", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-conditional-tara"]
+  - id: "ja-4476"
+    target: "いくなら、バスがいいです。"
+    words: ["いく", "なら", "バス", "が", "いい", "です"]
+    reading: "iku nara, basu ga ii desu."
+    ipa: "ikɯ naɾa basɯ ɡa iː desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "いく", ref: "ja-0348" }
+      - { word: "なら", base: "なら", reading: "nara" }
+      - { word: "バス", ref: "ja-0856" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "いい", ref: "ja-0464" }
+      - { word: "です", base: "です", reading: "desu" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-0350", kind: "word" }
+      - { id: "w2", ref: "ja-0349", kind: "word" }
+    rules: ["ja-rule-conditional-nara"]
+  - id: "ja-4477"
+    target: "のむなら、コーヒーがいいです。"
+    words: ["のむ", "なら", "コーヒー", "が", "いい", "です"]
+    reading: "nomu nara, koohii ga ii desu."
+    ipa: "nomɯ naɾa koːçiː ɡa iː desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "のむ", ref: "ja-0342" }
+      - { word: "なら", base: "なら", reading: "nara" }
+      - { word: "コーヒー", ref: "ja-0849" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "いい", ref: "ja-0464" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", ref: "ja-0341", kind: "word" }
+      - { id: "w2", ref: "ja-0343", kind: "word" }
+    rules: ["ja-rule-conditional-nara"]
+  - id: "ja-4478"
+    target: "ほんをよむなら、ここがいいです。"
+    words: ["ほん", "を", "よむ", "なら", "ここ", "が", "いい", "です"]
+    reading: "hon o yomu nara, koko ga ii desu."
+    ipa: "hoɴ o jomɯ naɾa koko ɡa iː desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ほん", ref: "ja-1180" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "よむ", ref: "ja-0345" }
+      - { word: "なら", base: "なら", reading: "nara" }
+      - { word: "ここ", ref: "ja-0554" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "いい", ref: "ja-0464" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", ref: "ja-0346", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-conditional-nara"]

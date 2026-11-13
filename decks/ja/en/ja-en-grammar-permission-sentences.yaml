@@ -1,0 +1,87 @@
+schema: 1
+id: "ja-en-grammar-permission-sentences"
+kind: "layer"
+core: "ja-grammar-permission-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Permission in sentences"
+description: "Sentences that allow or forbid something, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-4445":
+    native: "May I eat here?"
+    bases:
+      "で": { meaning: "(at, in, by)" }
+      "も": { meaning: "(also, even)" }
+      "です": { meaning: "is (polite)" }
+      "か": { meaning: "(marks a question)" }
+    confusables:
+      w1: { why: "たべる (taberu) means to eat." }
+      w2: { why: "のむ (nomu) means to drink." }
+  "ja-4446":
+    native: "You may sit here."
+    bases:
+      "に": { meaning: "(in, at, to)" }
+      "も": { meaning: "(also, even)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "すわる (suwaru) means to sit." }
+      w2: { why: "たつ (tatsu) means to stand; to stand up." }
+  "ja-4447":
+    native: "May I watch television?"
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "も": { meaning: "(also, even)" }
+      "です": { meaning: "is (polite)" }
+      "か": { meaning: "(marks a question)" }
+    confusables:
+      w1: { why: "みる (miru) means to see; to look at; to watch." }
+      w2: { why: "きく (kiku) means to listen; to hear; to ask." }
+  "ja-4448":
+    native: "You must not sleep here."
+    notes:
+      "n1": "The は (wa) after the te-form is written は (ha) and read wa. はいけません (wa ikemasen) is a firm ban, so it is what signs and rules use."
+    bases:
+      "で": { meaning: "(at, in, by)" }
+      "は": { meaning: "(marks the topic)" }
+      "いけません": { meaning: "must not (said after a te-form and the particle for the topic)" }
+    confusables:
+      w1: { why: "ねる (neru) means to sleep; to go to bed." }
+      w2: { why: "おきる (okiru) means to get up; to wake up." }
+  "ja-4449":
+    native: "You must not open the door."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "は": { meaning: "(marks the topic)" }
+      "いけません": { meaning: "must not (said after a te-form and the particle for the topic)" }
+    confusables:
+      w1: { why: "あける (akeru) means to open." }
+      w2: { why: "しめる (shimeru) means to shut; to lock." }
+  "ja-4450":
+    native: "You must not drink here."
+    bases:
+      "で": { meaning: "(at, in, by)" }
+      "は": { meaning: "(marks the topic)" }
+      "いけません": { meaning: "must not (said after a te-form and the particle for the topic)" }
+    confusables:
+      w1: { why: "のむ (nomu) means to drink." }
+      w2: { why: "たべる (taberu) means to eat." }
+  "ja-4451":
+    native: "May I use the telephone?"
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "も": { meaning: "(also, even)" }
+      "です": { meaning: "is (polite)" }
+      "か": { meaning: "(marks a question)" }
+    confusables:
+      w1: { why: "つかう (tsukau) means to use." }
+      w2: { why: "つくる (tsukuru) means to make; to create." }
+  "ja-4452":
+    native: "You may watch the film."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "も": { meaning: "(also, even)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "みる (miru) means to see; to look at; to watch." }
+      w2: { why: "きく (kiku) means to listen; to hear; to ask." }

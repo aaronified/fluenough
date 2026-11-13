@@ -1,0 +1,88 @@
+schema: 1
+id: "ja-en-grammar-experience-sentences"
+kind: "layer"
+core: "ja-grammar-experience-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Having done it, in sentences"
+description: "Sentences about what you have and have not done, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-4460":
+    native: "I have been to Japan."
+    notes:
+      "n1": "いった (itta) is the past form of いく (iku): its te-form is いって (itte), not いいて (iite), so its past form is いった (itta)."
+    bases:
+      "に": { meaning: "(in, at, to)" }
+      "こと": { meaning: "thing, matter; the fact of having done" }
+      "が": { meaning: "(marks the one who does the action)" }
+      "あります": { meaning: "to be, to exist (for things)" }
+    confusables:
+      w1: { why: "いく (iku) means to go." }
+      w2: { why: "かえる (kaeru) means to return home; to go home." }
+  "ja-4461":
+    native: "I have eaten sushi."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "こと": { meaning: "thing, matter; the fact of having done" }
+      "が": { meaning: "(marks the one who does the action)" }
+      "あります": { meaning: "to be, to exist (for things)" }
+    confusables:
+      w1: { why: "たべる (taberu) means to eat." }
+      w2: { why: "のむ (nomu) means to drink." }
+  "ja-4462":
+    native: "Have you seen the film?"
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "こと": { meaning: "thing, matter; the fact of having done" }
+      "が": { meaning: "(marks the one who does the action)" }
+      "あります": { meaning: "to be, to exist (for things)" }
+      "か": { meaning: "(marks a question)" }
+    confusables:
+      w1: { why: "みる (miru) means to see; to look at; to watch." }
+      w2: { why: "きく (kiku) means to listen; to hear; to ask." }
+  "ja-4463":
+    native: "I have never met my friend."
+    notes:
+      "n1": "あった (atta) is the past form of あう (au). ありません (arimasen) in place of あります (arimasu) turns it into 'never'."
+    bases:
+      "に": { meaning: "(in, at, to)" }
+      "こと": { meaning: "thing, matter; the fact of having done" }
+      "が": { meaning: "(marks the one who does the action)" }
+      "ありません": { meaning: "to be, to exist (for things)" }
+    confusables:
+      w1: { why: "あう (au) means to meet." }
+      w2: { why: "いく (iku) means to go." }
+  "ja-4464":
+    native: "I have never drunk coffee."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "こと": { meaning: "thing, matter; the fact of having done" }
+      "が": { meaning: "(marks the one who does the action)" }
+      "ありません": { meaning: "to be, to exist (for things)" }
+    confusables:
+      w1: { why: "のむ (nomu) means to drink." }
+      w2: { why: "たべる (taberu) means to eat." }
+  "ja-4465":
+    native: "Have you read this book?"
+    bases:
+      "この": { meaning: "this" }
+      "を": { meaning: "(marks the thing acted on)" }
+      "こと": { meaning: "thing, matter; the fact of having done" }
+      "が": { meaning: "(marks the one who does the action)" }
+      "あります": { meaning: "to be, to exist (for things)" }
+      "か": { meaning: "(marks a question)" }
+    confusables:
+      w1: { why: "よむ (yomu) means to read." }
+      w2: { why: "かく (kaku) means to write." }
+  "ja-4466":
+    native: "Have you been to Tokyo?"
+    bases:
+      "に": { meaning: "(in, at, to)" }
+      "こと": { meaning: "thing, matter; the fact of having done" }
+      "が": { meaning: "(marks the one who does the action)" }
+      "あります": { meaning: "to be, to exist (for things)" }
+      "か": { meaning: "(marks a question)" }
+    confusables:
+      w1: { why: "いく (iku) means to go." }
+      w2: { why: "かえる (kaeru) means to return home; to go home." }
