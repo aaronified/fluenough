@@ -79,11 +79,16 @@ class Backups extends ChangeNotifier {
   /// (#1017), and what a restore does with the ones of the backup it
   /// restores.
   final Future<PrivateSnapshot> Function() _privateSnapshot;
-  final Future<void> Function(
+  final Future<List<String>> Function(
     List<BackupPrivatePackage> packages,
     Map<String, List<String>> tombstones,
   )
   _restorePrivate;
+
+  /// The names of the private packages the last restore left out, because
+  /// they no longer pass the import's checks: the screen tells the learner.
+  List<String> get privateSkipped => _privateSkipped;
+  List<String> _privateSkipped = const <String>[];
 
   /// This build's version, which a backup records.
   final String appVersion;
@@ -98,10 +103,10 @@ class Backups extends ChangeNotifier {
     packages: const <BackupPrivatePackage>[],
     tombstones: const <String, List<String>>{},
   );
-  static Future<void> _keepPrivate(
+  static Future<List<String>> _keepPrivate(
     List<BackupPrivatePackage> _,
     Map<String, List<String>> _,
-  ) async {}
+  ) async => const <String>[];
 
   /// The backups kept on the phone, newest first. Empty until [load].
   List<StoredBackup> get recent => _recent;
@@ -244,12 +249,19 @@ class Backups extends ChangeNotifier {
     // The learner's own private language packages come back too, before the
     // settings, which may name one of their languages (#1017). A backup
     // without any leaves the packages on the phone as they are.
+    _privateSkipped = const <String>[];
     if (backup.privatePackages.isNotEmpty ||
         backup.privateTombstones.isNotEmpty) {
       try {
-        await _restorePrivate(backup.privatePackages, backup.privateTombstones);
+        _privateSkipped = await _restorePrivate(
+          backup.privatePackages,
+          backup.privateTombstones,
+        );
       } on Object catch (e) {
         _log.warning('Private languages not restored: ${e.runtimeType}');
+        _privateSkipped = <String>[
+          for (final p in backup.privatePackages) p.name,
+        ];
       }
     }
     // The marks of completed works are not part of the append-only log: the

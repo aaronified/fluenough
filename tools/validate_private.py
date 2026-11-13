@@ -312,6 +312,9 @@ def check_package(files: dict[str, bytes]) -> tuple[list[str], list[str], dict |
     return errors, warnings, manifest
 
 
+REPLACES_RE = re.compile(r"^[ \t]+replaces:.*\n", re.MULTILINE)
+
+
 def translate(text: str, code: str) -> str:
     """The deck [text] with `fnpd-<code>-` written as `<code>-`, as the
     repository's own checks expect ids."""
@@ -330,7 +333,9 @@ def check_decks(files: dict[str, bytes], code: str) -> list[vd.Report]:
         for name, tree in sorted(trees.items()):
             if name == MANIFEST or tree.get("kind") in DATA_KINDS:
                 continue
-            text = translate(files[name].decode("utf-8"), code)
+            # `replaces` is a private-package card field the app reads and the
+            # repository's validator does not know: left out of the content run.
+            text = REPLACES_RE.sub("", translate(files[name].decode("utf-8"), code))
             deck_id = tree.get("id")
             stem = (deck_id[len(MARKER):] if isinstance(deck_id, str)
                     and deck_id.startswith(MARKER) else Path(name).stem)

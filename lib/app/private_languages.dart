@@ -1,3 +1,4 @@
+import '../core/backup/zip_files.dart';
 import '../core/data/review_erasure.dart';
 import '../core/data/spoken_languages.dart';
 import '../core/decks/font_check.dart';
@@ -365,6 +366,17 @@ extension PrivateLanguagesOnState on AppState {
         );
         return (package: package, saved: false, tooBig: true);
       }
+      // The import also refuses over 30 MB unpacked, 2 MB a file and 1,000
+      // files: read the archive back with those limits, as the import will.
+      try {
+        ZipFiles.decode(bytes, limits: ZipLimits.privatePackage);
+      } on FormatException catch (e) {
+        log.warning(
+          'Private decks: the course ${language.code} is over an import '
+          'limit: ${e.message}',
+        );
+        return (package: package, saved: false, tooBig: true);
+      }
       final saved = await backups.saveFile(
         PrivateExport.fileName(packageIdFor(language.code), 1),
         bytes,
@@ -450,8 +462,9 @@ extension PrivateLanguagesOnState on AppState {
   /// and told. A package is installed active as it was, or off when that
   /// would be a fourth. The retired ids the backup carries, and the
   /// tombstones, are kept, so a restore never frees an id to be reused. The
-  /// catalog is read again once. Returns how many were installed.
-  Future<int> restorePrivatePackages(
+  /// catalog is read again once. Returns the names of the packages that were
+  /// left out (empty when all came back), for the restore to tell.
+  Future<List<String>> restorePrivatePackages(
     List<BackupPrivatePackage> packages,
     Map<String, List<String>> tombstones,
   ) async {
@@ -460,9 +473,10 @@ extension PrivateLanguagesOnState on AppState {
       log.warning(
         'Private decks: a backup has packages; none can be kept here',
       );
-      return 0;
+      return <String>[for (final p in packages) p.name];
     }
     var installed = 0;
+    final skipped = <String>[];
     for (final entry in tombstones.entries) {
       try {
         await store.addTombstone(entry.key, entry.value);
@@ -484,6 +498,7 @@ extension PrivateLanguagesOnState on AppState {
             'Private decks: ${package.id} from a backup was left out, '
             '${staging.errors.length} errors',
           );
+          skipped.add(package.name);
           continue;
         }
         final retired = <String>{
@@ -513,8 +528,13 @@ extension PrivateLanguagesOnState on AppState {
             log: log,
           );
         }
-        if (result.installed) installed++;
+        if (result.installed) {
+          installed++;
+        } else {
+          skipped.add(package.name);
+        }
       } on Object catch (e, stack) {
+        skipped.add(package.name);
         log.error(
           describeError('Private decks: restore of a package', e, stack),
         );
@@ -522,6 +542,6 @@ extension PrivateLanguagesOnState on AppState {
     }
     if (installed > 0) await _reloadPrivate();
     log.event('Private decks: restored $installed of ${packages.length}');
-    return installed;
+    return skipped;
   }
 }

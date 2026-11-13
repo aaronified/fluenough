@@ -120,8 +120,11 @@ class PackageChecks(unittest.TestCase):
         import yaml
 
         raw = yaml.safe_load((TOOLS.parent / "assets" / "languages.yaml").read_text(encoding="utf-8"))
+        # The app's own three-letter codes starting with q (some, like Quenya's
+        # qya, lie outside qaa-qtz): the list holds them all, so a package can
+        # never take one.
         taken = {entry["code"] for entry in raw["languages"]
-                 if validate_private.PRIVATE_USE_RE.fullmatch(entry["code"])}
+                 if len(entry["code"]) == 3 and entry["code"].startswith("q")}
         self.assertEqual(taken, validate_private.BUILT_IN_PRIVATE_USE)
 
 
@@ -204,6 +207,17 @@ class DeckChecks(unittest.TestCase):
         for report in reports:
             for error in report.errors:
                 self.assertNotIn("fnpd-", error, f"{report.path}: {error}")
+
+
+class ReplacesField(unittest.TestCase):
+    def test_a_card_that_replaces_a_built_in_card_is_accepted(self) -> None:
+        files = edited(qaa_fnpd_qaa_home_yaml=(
+            '  - id: "fnpd-qaa-0001"\n', '  - id: "fnpd-qaa-0001"\n    replaces: "te-0001"\n'))
+        errors, _, _ = validate_private.check_package(files)
+        self.assertEqual(errors, [])
+        for report in validate_private.check_decks(files, "qaa"):
+            for error in report.errors:
+                self.assertNotIn("replaces", error, f"{report.path}: {error}")
 
 
 class Command(unittest.TestCase):

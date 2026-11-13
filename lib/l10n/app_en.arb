@@ -16952,5 +16952,7 @@
   "privateDeleteTypeBody": "This deletes your reviews of the cards of {name}, after a backup of everything is kept. It cannot be undone from the app. To confirm, type the name exactly as it is written here.",
   "@privateDeleteTypeBody": {"description": "Explains the typed confirmation before a private package's progress is deleted.", "placeholders": {"name": {"type": "String"}}},
   "privateDeleteTypeLabel": "Type the name",
-  "@privateDeleteTypeLabel": {"description": "Label of the field where the learner types the package's name to confirm deleting its progress."}
+  "@privateDeleteTypeLabel": {"description": "Label of the field where the learner types the package's name to confirm deleting its progress."},
+  "settingsDataRestoredSkipped": "Restored, but these private languages could not be added and were left out: {names}. Your decks download again.",
+  "@settingsDataRestoredSkipped": {"description": "Toast after a restore when some private language packages in the backup no longer pass the checks.", "placeholders": {"names": {"type": "String"}}}
 }

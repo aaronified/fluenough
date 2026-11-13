@@ -516,6 +516,7 @@ void main() {
       );
       await b.state.backups.restore(backup, fromFile: false);
       expect(await b.store.packages(), isEmpty);
+      expect(b.state.backups.privateSkipped, <String>['Tiny']);
     });
 
     test('a package that no longer passes the checks is left out and the '
@@ -551,6 +552,8 @@ void main() {
       );
       await b.state.backups.restore(backup, fromFile: false);
       expect((await b.store.packages()).map((p) => p.id), <String>['fnpd-qaa']);
+      // The learner is told which one was left out.
+      expect(b.state.backups.privateSkipped, <String>['Broken']);
     });
   });
 
@@ -632,6 +635,21 @@ void main() {
       );
       expect(staging.errors, isEmpty, reason: staging.errors.join('; '));
       expect(staging.canInstall, isTrue);
+    });
+
+    test('a course over an import limit (a file over 2 MB) is not saved, '
+        'though the archive is small', () async {
+      final course = _course();
+      final key = course.keys.firstWhere((k) => k.endsWith('te-home.yaml'));
+      course[key] =
+          '${course[key]!}  - id: "te-9999"\n'
+          '    target: "${'x' * (3 * 1024 * 1024)}"\n';
+      final phone = _phone(decks: course);
+      final done = await phone.state.downloadCourse(_te);
+      expect(done, isNotNull);
+      expect(done!.tooBig, isTrue);
+      expect(done.saved, isFalse);
+      expect(phone.files.saved, isEmpty);
     });
 
     testWidgets('with no course on the phone the page says so', (tester) async {
