@@ -163,6 +163,7 @@ class SettingsNotifier extends ChangeNotifier {
   Map<String, DateTime> _lessonsDone = const <String, DateTime>{};
   bool _reviewDecks = false;
   bool _adultContent = false;
+  bool _hideAboveLevel = false;
   Map<String, String> _voices = const <String, String>{};
   String? _raterCode;
   bool _reviewIntroShown = false;
@@ -239,6 +240,14 @@ class SettingsNotifier extends ChangeNotifier {
   bool get adultContent => _adultContent;
   set adultContent(bool value) =>
       _set(_adultContent, value, (v) => _adultContent = v);
+
+  /// Settings' "Hide what is above my level" (deck-kinds plan, D2, #1137,
+  /// #1140): search lists a deck, topic, situation or unit above the
+  /// learner's level marked with its level and not startable; with this on
+  /// they are left out of a result. Off by default. Per profile.
+  bool get hideAboveLevel => _hideAboveLevel;
+  set hideAboveLevel(bool value) =>
+      _set(_hideAboveLevel, value, (v) => _hideAboveLevel = v);
 
   /// The rater code the phone made when reviewing was first turned on,
   /// written `FL-XXXX-XXXX-C`, or null before. Kept when reviewing is
@@ -1494,6 +1503,7 @@ class SettingsNotifier extends ChangeNotifier {
     'clock_time': jsonEncode(_clockTime),
     'review_decks': '$_reviewDecks',
     'adult_content': '$_adultContent',
+    'hide_above_level': '$_hideAboveLevel',
     'tts_voices': jsonEncode(_voices),
     'rater_code': _raterCode ?? '',
     'review_intro_shown': '$_reviewIntroShown',
@@ -1913,6 +1923,7 @@ class SettingsNotifier extends ChangeNotifier {
     }
     if (pick('review_decks', flag) case final v?) reviewDecks = v;
     if (pick('adult_content', flag) case final v?) adultContent = v;
+    if (pick('hide_above_level', flag) case final v?) hideAboveLevel = v;
     if (pick('tts_voices', _parseJsonMap) case final v?) {
       for (final MapEntry(:key, :value) in v.entries) {
         if (RegExp(r'^[a-z]{2,3}$').hasMatch(key) &&

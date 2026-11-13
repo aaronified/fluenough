@@ -889,6 +889,15 @@ class AppState extends ChangeNotifier {
     return _levels[language];
   }
 
+  /// The catalog with adult content applied but not the level gate: what is
+  /// above the learner's level is still in it. Only what lists such an item
+  /// marked with its level and not startable reads it (search, topics, deck-
+  /// kinds plan D2); every screen that offers an item reads [decks].
+  Catalog get catalogWithAboveLevel {
+    _view;
+    return _adultScoped;
+  }
+
   /// The hidden decks a learner added from a search result, which are on the
   /// phone (D3): the only decks outside [decks] that Today's reviews and a
   /// deck's own page read. Never in the Decks tab's lists, the path,

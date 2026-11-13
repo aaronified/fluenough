@@ -1,4 +1,5 @@
 import '../core/models/card.dart';
+import '../core/models/drill_mode.dart';
 import '../core/models/situation.dart';
 import '../core/progress/recent_answers.dart' show MasteryLevel;
 import '../core/scheduling/lesson.dart';
@@ -44,7 +45,8 @@ extension SituationState on AppState {
         final native = courseNative(language);
         final entries =
             <DeckEntry>[
-              for (final entry in decks)
+              // A hidden deck the learner added is drilled like any (D3).
+              for (final entry in drillDecks)
                 if (entry.language.code == language) entry,
             ]..sort((a, b) {
               int rank(DeckEntry e) => e.deck.native.code == native ? 0 : 1;
@@ -89,12 +91,29 @@ extension SituationState on AppState {
     final language = request.language;
     final ids = request.cardIds;
     if (language == null || ids == null) return const <SessionItem>[];
-    final cards = <Card>[for (final c in sheetCards(language, ids)) c.card];
+    var cards = <Card>[for (final c in sheetCards(language, ids)) c.card];
+    final limit = request.limit;
+    if (limit != null && limit < cards.length) {
+      // Those not known yet first, each group in the sheet's own order.
+      final recent = recentAnswers;
+      bool known(Card card) => recent.of(card.id).level == MasteryLevel.known;
+      cards = <Card>[
+        ...cards.where((c) => !known(c)),
+        ...cards.where(known),
+      ].take(limit).toList();
+    }
     final taught = <String>{
       for (final card in cards)
         if (isTaught(card)) card.id,
     };
-    final modesOf = drillableModesNow();
+    final drillable = drillableModesNow();
+    final skills = request.skills;
+    final asked = skills == null
+        ? null
+        : <DrillMode>{for (final skill in skills) ...skill.modes};
+    final Set<DrillMode> Function(Card card) modesOf = asked == null
+        ? drillable
+        : (card) => drillable(card).intersection(asked);
     final gate = unlocks;
     final lesson = request.revise
         ? const <SessionItem>[]
@@ -120,7 +139,7 @@ extension SituationState on AppState {
         ? const <SessionItem>[]
         : <SessionItem>[
             for (final item in sessionItems(
-              DrillRequest(revise: true, language: language),
+              DrillRequest(revise: true, language: language, skills: skills),
             ))
               if (taught.contains(item.card.id)) item,
           ];

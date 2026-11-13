@@ -42,6 +42,7 @@ import '../features/stats/how_you_learn_page.dart';
 import '../features/stats/leeches_page.dart';
 import '../features/stats/stats_numbers.dart';
 import '../features/summary/summary_page.dart';
+import '../features/topics/topic_page.dart';
 import 'app_scope.dart';
 import 'session.dart';
 import 'shell_tab.dart';
@@ -127,6 +128,9 @@ abstract final class AppRoutes {
   /// A sheet's cards in full, one at a time. Argument: a [SituationRequest].
   static const String situationInspect = '/situation-inspect';
 
+  /// A topic's page (#1137). Argument: a [TopicRequest].
+  static const String topic = '/topic';
+
   /// A script's guide. Argument: the language code, a [String].
   static const String scriptGuide = '/script-guide';
   static const String profiles = '/profiles';
@@ -201,6 +205,7 @@ abstract final class AppRoutes {
       situationInspect when args is SituationRequest => SituationInspectPage(
         request: args,
       ),
+      topic when args is TopicRequest => TopicPage(request: args),
       scriptGuide when args is String => ScriptGuidePage(guideKey: args),
       profiles => const ProfilesPage(),
       pin when args is String => PinPage(profileId: args),
@@ -230,6 +235,16 @@ abstract final class AppNavigator {
   /// The unit of its course's path that [deckId] is in.
   static Future<void> openUnit(BuildContext context, String deckId) =>
       Navigator.of(context).pushNamed(AppRoutes.unit, arguments: deckId);
+
+  /// The page of topic [topicId] of [language] (#1137).
+  static Future<void> openTopic(
+    BuildContext context,
+    String language,
+    String topicId,
+  ) => Navigator.of(context).pushNamed(
+    AppRoutes.topic,
+    arguments: TopicRequest(language: language, topicId: topicId),
+  );
 
   /// A report from the screen [request] was raised on.
   static Future<void> openReport(BuildContext context, ReportRequest request) =>

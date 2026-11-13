@@ -1299,6 +1299,75 @@ class DeckDownloads extends ChangeNotifier {
     );
   }
 
+  // ---------------------------------------------------------------------------
+  // Creators' images (deck-kinds plan, D5, T15 glue)
+
+  static const String _creatorImagePrefix = 'creator-image-';
+  final Map<String, Uint8List> _creatorImages = <String, Uint8List>{};
+  final Map<String, Future<Uint8List?>> _creatorImageJobs =
+      <String, Future<Uint8List?>>{};
+
+  /// The creator image at [path] (`decks/creators/images/te-x.jpg`, as a
+  /// creator's `image.file` names it), downloaded when it is first shown and
+  /// kept on the phone: only when the index lists it in `shared_media`, and
+  /// only when its size and hash match, as for any file. A second call while
+  /// one runs waits for it. Returns null when it is not listed, cannot be
+  /// reached or does not match; the screen then draws its placeholder. Never
+  /// throws, and logs what it could not do.
+  Future<Uint8List?> creatorImage(String path) {
+    final kept = _creatorImages[path];
+    if (kept != null) return Future<Uint8List?>.value(kept);
+    return _creatorImageJobs[path] ??= _loadCreatorImage(path).whenComplete(() {
+      // A block body: returning the removed job would make this wait on
+      // itself for ever.
+      _creatorImageJobs.remove(path);
+    });
+  }
+
+  Future<Uint8List?> _loadCreatorImage(String path) async {
+    try {
+      if (_index == null && !await ensureIndex()) return null;
+      SharedMediaFile? listed;
+      for (final media in _index?.sharedMedia ?? const <SharedMediaFile>[]) {
+        if (media.path == path) listed = media;
+      }
+      if (listed == null) {
+        _log?.warning('Creator image is not in the index: $path');
+        return null;
+      }
+      final note = '$_creatorImagePrefix${listed.sha256}.b64';
+      try {
+        final text = await files.readNote(note);
+        if (text != null) {
+          final bytes = base64Decode(text);
+          if (bytes.length == listed.size &&
+              sha256Hex(bytes) == listed.sha256) {
+            return _creatorImages[path] = Uint8List.fromList(bytes);
+          }
+        }
+      } on Object catch (e) {
+        _log?.warning('Kept creator image could not be read ($path): $e');
+      }
+      final fetched = await _fetchChecked(
+        IndexFile(path: path, size: listed.size, sha256: listed.sha256),
+      );
+      final bytes = fetched.bytes;
+      if (bytes == null) return null;
+      final image = Uint8List.fromList(bytes);
+      _creatorImages[path] = image;
+      try {
+        await files.writeNote(note, base64Encode(image));
+      } on Object catch (e) {
+        // Shown this session, fetched again the next.
+        _log?.warning('Creator image could not be kept ($path): $e');
+      }
+      return image;
+    } on Object catch (e, stack) {
+      _log?.error('Creator image $path could not be loaded: $e\n$stack');
+      return null;
+    }
+  }
+
   /// [file], downloaded and checked against its size and hash.
   Future<({List<int>? bytes, DeckDownloadFailure? failure})> _fetchChecked(
     IndexFile file,

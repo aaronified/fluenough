@@ -23,6 +23,7 @@ import '../../ui/widgets/stat_tile.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
 import '../review/review_waiting.dart' show pairOf, reviewPairsOf;
+import '../topics/unit_topics.dart';
 import 'deck_content.dart';
 import 'number_practice_tile.dart';
 import 'path_model.dart';
@@ -244,6 +245,7 @@ class _UnitPageState extends State<UnitPage> {
                 title: unitTitle(state, decks),
                 decks: decks,
               ),
+              UnitTopicChips(language: language.code, decks: decks),
               const SizedBox(height: 20),
               _Tiles(
                 content: content,
