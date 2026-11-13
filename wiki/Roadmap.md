@@ -68,7 +68,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.7.0
 
-13 approved open issues.
+12 approved open issues.
 
 **Enhancements**
 
@@ -81,7 +81,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 **Other**
 
 - [#474](https://github.com/aaronified/fluenough/issues/474) Onboarding journey: where the major functions live and what they do, replayable from Settings
-- [#91](https://github.com/aaronified/fluenough/issues/91) Pictures as cues: image format, licence and validator, for Write and Hear
 - [#97](https://github.com/aaronified/fluenough/issues/97) Parental supervision: child profiles with no abuse-related content, and admin controls
 - [#403](https://github.com/aaronified/fluenough/issues/403) Plan: reviewing decks in the app, sent by mail
 - [#509](https://github.com/aaronified/fluenough/issues/509) Milestone exams: reading passages and questions at each B1 milestone, required to continue
@@ -103,13 +102,12 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.10.0
 
-7 approved open issues.
+6 approved open issues.
 
 **Bugs**
 
 - [#850](https://github.com/aaronified/fluenough/issues/850) App is sluggish: about 1 s before every interaction responds
 - [#1012](https://github.com/aaronified/fluenough/issues/1012) Check the web app (PWA): installability, offline, and core flows
-- [#1101](https://github.com/aaronified/fluenough/issues/1101) Say: recording at recognition is untested on a real device
 
 **Enhancements**
 
@@ -174,13 +172,9 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#681](https://github.com/aaronified/fluenough/issues/681) Language bar: a dot on languages with something to do, and a full-height IPA glyph
 - [#881](https://github.com/aaronified/fluenough/issues/881) Speaking: "Hear yourself" replays the answer the learner spoke, not a new recording
 - [#1133](https://github.com/aaronified/fluenough/issues/1133) Culture decks from real-world works (public domain first), for every first-list language
-- [#1134](https://github.com/aaronified/fluenough/issues/1134) Culture items woven through the courses at the right level (not a separate shelf only)
 - [#1135](https://github.com/aaronified/fluenough/issues/1135) Proverb decks, levelled, for every first-list language
 - [#1136](https://github.com/aaronified/fluenough/issues/1136) Phrasal and multi-word verb decks, levelled, in the languages that have them
-- [#1137](https://github.com/aaronified/fluenough/issues/1137) Topics for deck search: language-specific grammar topics, and search must cover situations decks
 - [#1139](https://github.com/aaronified/fluenough/issues/1139) Professional decks: targeted situations for academia, engineering, computer science, medicine, archaeology and other travelling professions (hidden from the main screen, found by search)
-- [#1140](https://github.com/aaronified/fluenough/issues/1140) Search results by type, each with its own tab: situations, topics, decks, grammar concepts and more (mockup first)
-- [#1142](https://github.com/aaronified/fluenough/issues/1142) Culture recommendations: popular works not reproduced here, "I've done this" on the homepage, questions and briefings about them
 - [#1143](https://github.com/aaronified/fluenough/issues/1143) English Braille as a script of English, not a separate course (the IPA stays separate)
 - [#1145](https://github.com/aaronified/fluenough/issues/1145) Situations screen: the learner chooses which situations to show; new situations teach only widely used words and phrases
 - [#1146](https://github.com/aaronified/fluenough/issues/1146) Japanese: about 1000 kanji by B1 (deferred)
@@ -193,9 +187,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#46](https://github.com/aaronified/fluenough/issues/46) Let the user choose the interface language, with translations in plain txt files
 - [#58](https://github.com/aaronified/fluenough/issues/58) Review the unreviewed Hindi and Bengali grammar decks
 - [#92](https://github.com/aaronified/fluenough/issues/92) Sample deck pack: one example of every deck kind, as a download
-- [#94](https://github.com/aaronified/fluenough/issues/94) Proverb and idiom decks
-- [#95](https://github.com/aaronified/fluenough/issues/95) Bengali compound-verb deck; phrasal verbs if English becomes a course
-- [#96](https://github.com/aaronified/fluenough/issues/96) Offensive words behind an adult gate
 - [#99](https://github.com/aaronified/fluenough/issues/99) Culture decks: beyond the basics (tracking)
 - [#100](https://github.com/aaronified/fluenough/issues/100) Culture deck: cultural heroes
 - [#101](https://github.com/aaronified/fluenough/issues/101) Culture deck: local mythology and folklore
@@ -204,7 +195,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#104](https://github.com/aaronified/fluenough/issues/104) Culture deck: classic literature
 - [#105](https://github.com/aaronified/fluenough/issues/105) Slang decks: add current (Gen Z) slang
 - [#106](https://github.com/aaronified/fluenough/issues/106) Culture deck: love
-- [#107](https://github.com/aaronified/fluenough/issues/107) New deck topics are data: a section field, and question types after the skill model
 - [#108](https://github.com/aaronified/fluenough/issues/108) Home-screen widget: cards due and the streak
 - [#110](https://github.com/aaronified/fluenough/issues/110) Dialogue decks: short role-plays, one side each
 - [#111](https://github.com/aaronified/fluenough/issues/111) Native-speaker audio for cards, where TTS is weak
@@ -324,7 +314,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#722](https://github.com/aaronified/fluenough/issues/722) Conversation mode: transcribe two people talking, in real time
 - [#734](https://github.com/aaronified/fluenough/issues/734) Sounds deck for every language: its sounds, and how they differ from the learner's native sounds
 - [#836](https://github.com/aaronified/fluenough/issues/836) An IPA keyboard for typed answers in the IPA course
-- [#924](https://github.com/aaronified/fluenough/issues/924) Typed meaning answers: accept equivalent words (synonym dictionary) and unseparated alternatives
 - [#952](https://github.com/aaronified/fluenough/issues/952) Skill switches: matching and choosing switches (remainder of #243)
 - [#959](https://github.com/aaronified/fluenough/issues/959) Paths and starter decks (first words and phrases) for every planned language
 - [#1103](https://github.com/aaronified/fluenough/issues/1103) Play Store release: paid colour themes, pure black and wallpaper colours (free on GitHub)
