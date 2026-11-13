@@ -134,7 +134,7 @@ void main() {
         final result = await importPrivateArchive(
           buildZip(<ZipSpec>[
             ...specsOf(tiny),
-            ZipSpec('qaa/logo.png', const <int>[1, 2, 3]),
+            const ZipSpec('qaa/logo.png', const <int>[1, 2, 3]),
           ]),
           store: store,
           appVersion: '0.10.0',
