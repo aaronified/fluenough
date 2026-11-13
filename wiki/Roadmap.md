@@ -353,6 +353,7 @@ A plan with no tracking issue is flagged.
 - [the IPA course revamp, and a phonology deck for every language](https://github.com/aaronified/fluenough/wiki/Plan-Ipa-Revamp-And-Language-Phonology) (Written 2026-10-26), **no tracking issue**
 - [a deck that teaches ISO 15919, in each language](https://github.com/aaronified/fluenough/wiki/Plan-Iso-15919-Deck), tracks #229
 - [Japanese B1 word lists](https://github.com/aaronified/fluenough/wiki/Plan-Japanese-B1-Wordlists) (Written 2026-11-06 (Sonnet, for the owner)), **no tracking issue**
+- [language completeness, everything the app plans for a language, in full](https://github.com/aaronified/fluenough/wiki/Plan-Language-Completeness), **no tracking issue**
 - [language paths, pacing by difficulty, and every language in the scheme](https://github.com/aaronified/fluenough/wiki/Plan-Language-Paths) (Written 2026-10-05), tracks #216
 - [Language Learning Paths (English Base, 30 min/day)](https://github.com/aaronified/fluenough/wiki/Plan-Language-Paths-Scheme), **no tracking issue**
 - [a look for each language (colour, icon, background image)](https://github.com/aaronified/fluenough/wiki/Plan-Language-Themes) (Written 2026-10-10; owner's answers recorded 2026-10-11), **no tracking issue**
