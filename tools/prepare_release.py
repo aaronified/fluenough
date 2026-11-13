@@ -20,9 +20,11 @@ CHANGELOG.md: the release workflow publishes that as the release's notes, so
 the CHANGELOG is the one list of what changed (deck additions are not in it,
 and so not in the notes the app's "What's new" shows).
 It then runs the same check as tools/check_release_version.py. It refuses an
-empty Unreleased section and a version that is not higher than the current
-one. The release workflow runs it (.github/workflows/release.yml) and commits
-the result, so no release pull request is opened by hand.
+empty Unreleased section, a version that is not higher than the current
+one, and an Unreleased line the app would show badly (see
+`unreleased_problems`). All refusals happen before any file is written. The
+release workflow runs it (.github/workflows/release.yml) and commits the
+result, so no release pull request is opened by hand.
 
 Requires only the Python standard library.
 """
@@ -45,6 +47,8 @@ PUBSPEC_LINE = re.compile(
 APP_INFO_LINE = re.compile(r"(static const String version = ')[^']*(';)")
 UNRELEASED = "## [Unreleased]"
 HEADING = re.compile(r"^## \[", re.MULTILINE)
+BULLET_OK = re.compile(r"^- (`|\*\*[^*]+\*\*)")
+SECTION_HEADING = re.compile(r"^### (.+)$")
 
 
 class ReleaseError(Exception):
@@ -80,6 +84,41 @@ def bump_app_info(text: str, version: str) -> str:
             "'static const String version = ...;' line."
         )
     return new
+
+
+def unreleased_problems(text: str) -> list[str]:
+    """The lines of `## [Unreleased]` the app's "What's new" would show badly.
+
+    A bullet must start with a backtick (a developer note, hidden in the app)
+    or with a bold headline (`- **Headline.** detail`, shown to the learner);
+    any other bullet is cut to its first word by the app. A `### <Heading>`
+    may appear only once in the section. Each problem names its line number
+    and the rule; an empty list means the section is clean.
+    """
+    problems = []
+    headings = set()
+    in_section = False
+    for number, line in enumerate(text.split("\n"), start=1):
+        if line.startswith("## ["):
+            in_section = line.strip() == UNRELEASED
+            continue
+        if not in_section:
+            continue
+        if line.startswith("- ") and not BULLET_OK.match(line):
+            problems.append(
+                f"line {number}: '{line}' starts with neither a backtick nor a "
+                "bold headline (rule: '- `' for a developer note, "
+                "'- **Headline.**' for a learner)."
+            )
+        heading = SECTION_HEADING.match(line)
+        if heading:
+            if heading.group(1) in headings:
+                problems.append(
+                    f"line {number}: '### {heading.group(1)}' repeats a heading "
+                    "of this section (rule: one heading of each name)."
+                )
+            headings.add(heading.group(1))
+    return problems
 
 
 def move_unreleased(text: str, version: str, today: str) -> str:
@@ -126,6 +165,12 @@ def prepare(root: Path, version: str, today: str) -> None:
         texts = {k: p.read_text(encoding="utf-8") for k, p in files.items()}
     except OSError as error:
         raise ReleaseError(f"Cannot read {error.filename}: {error.strerror}.")
+    problems = unreleased_problems(texts["changelog"])
+    if problems:
+        raise ReleaseError(
+            "CHANGELOG.md's '## [Unreleased]' section has lines the app would "
+            "show badly; fix them, then release:\n" + "\n".join(problems)
+        )
     new = {
         "pubspec": bump_pubspec(texts["pubspec"], version),
         "app_info": bump_app_info(texts["app_info"], version),

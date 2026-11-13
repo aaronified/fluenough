@@ -31,6 +31,8 @@ the repository.
 - Any other line is shown, cut at the first ` (#123)`, colon, full stop and
   space, or spaced dash. `- CI: test shard weights refreshed ...` therefore
   shows as the bullet "CI". That is the mistake of 0.10.0.
+- The Release workflow refuses to run if a line breaks this rule
+  (`unreleased_problems` in `tools/prepare_release.py`).
 
 ## What earns a line
 
