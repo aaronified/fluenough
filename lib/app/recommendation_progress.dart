@@ -163,16 +163,22 @@ class RecommendationProgress extends ChangeNotifier {
       // The marks taken so far reach the store first, so a work marked a
       // moment ago is not counted as new.
       await _writes;
-      final added = await _store.addMissing(works);
-      for (final work in works) {
-        _marks.putIfAbsent(work.recommendationId, () => work);
-      }
-      if (added > 0) notifyListeners();
-      return added;
+      return await _addMissing(works);
     } on Object catch (e) {
       _log?.warning('Completed works could not be imported: $e');
       return 0;
     }
+  }
+
+  /// Adds the works not marked here, without waiting for [_writes] (a restore
+  /// runs inside that queue, and waiting for itself would never finish).
+  Future<int> _addMissing(Iterable<CompletedWork> works) async {
+    final added = await _store.addMissing(works);
+    for (final work in works) {
+      _marks.putIfAbsent(work.recommendationId, () => work);
+    }
+    if (added > 0) notifyListeners();
+    return added;
   }
 
   /// Makes the marks those of a backup that is restored: a work marked here
@@ -195,7 +201,7 @@ class RecommendationProgress extends ChangeNotifier {
         await _store.unmark(id);
         _marks.remove(id);
       }
-      await importMarks(works);
+      await _addMissing(works);
       notifyListeners();
     } on Object catch (e) {
       _log?.warning('Completed works could not be restored: $e');

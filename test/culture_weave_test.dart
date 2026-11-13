@@ -103,13 +103,15 @@ void main() {
       () async {
         final state = await cultureApp();
         final items = state.cultureItemsIn('zz');
-        expect(_ids(items), <String>['zz-7101', 'zz-7201', 'zz-pasaje-1']);
-        final proverb = items[0];
+        // Deck order is the catalog's path order: culture-verso, then
+        // proverbs-lugar, then the passage deck.
+        expect(_ids(items), <String>['zz-7201', 'zz-7101', 'zz-pasaje-1']);
+        final proverb = items[1];
         expect(proverb.kind, CultureKind.proverb);
         expect(proverb.level, Level.a1);
         expect(proverb.meaning, 'Better late than never.');
         expect(proverb.creators, isEmpty);
-        final stanza = items[1];
+        final stanza = items[0];
         expect(stanza.level, Level.a2);
         expect(stanza.creators, <String>['zz-machado']);
         expect(stanza.source!.work, 'Proverbios y cantares');

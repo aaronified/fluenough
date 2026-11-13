@@ -3,6 +3,7 @@
 // a deck that is not woven into the course, is kept out of the People list and
 // the timeline, though no woven item cites them.
 
+import 'package:fluenough/app/culture.dart';
 import 'package:fluenough/features/culture/culture_deck_page.dart';
 import 'package:flutter_test/flutter_test.dart';
 

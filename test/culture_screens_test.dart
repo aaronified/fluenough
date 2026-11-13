@@ -39,6 +39,13 @@ Future<void> _tapShown(WidgetTester tester, Finder finder) async {
   await tester.pumpAndSettle();
 }
 
+// The chip is a column: the card button, then the legacy line. A tap at the
+// column's centre can land on the line, so tap the button itself.
+final Finder _chipButton = find.descendant(
+  of: find.byType(CreatorChip),
+  matching: find.byType(InkWell),
+);
+
 void main() {
   group('in a path unit', () {
     testWidgets('one culture card between the header and the words, a bonus', (
@@ -224,7 +231,7 @@ void main() {
       usePhone(tester);
       final state = await cultureApp(reach: 'b1');
       await pumpScreen(tester, _item('zz-7201'), state: state);
-      await _tapShown(tester, find.byType(CreatorChip));
+      await _tapShown(tester, _chipButton);
       expect(find.byType(CreatorCard), findsOneWidget);
       expect(find.text(_l10n.cultureImageNone), findsWidgets);
       expect(find.text(_l10n.cultureAbout('Antonio Machado')), findsOneWidget);
@@ -252,7 +259,7 @@ void main() {
         usePhone(tester);
         final state = await cultureApp(reach: 'b1');
         await pumpScreen(tester, _item('zz-pasaje-1'), state: state);
-        await _tapShown(tester, find.byType(CreatorChip));
+        await _tapShown(tester, _chipButton);
         expect(
           find.text(
             _l10n.cultureImageCredit(
@@ -271,7 +278,7 @@ void main() {
       usePhone(tester);
       final state = await cultureApp(reach: 'b1');
       await pumpScreen(tester, _item('zz-7201'), state: state);
-      await _tapShown(tester, find.byType(CreatorChip));
+      await _tapShown(tester, _chipButton);
       expect(find.byType(TimelineStrip), findsOneWidget);
       await _tapShown(tester, find.text(_l10n.cultureTimelineFull));
       expect(find.byType(CultureTimelinePage), findsOneWidget);
@@ -529,7 +536,7 @@ void main() {
     screen('the creator card as a sheet', (tester, mode) async {
       final state = await cultureApp(reach: 'b1');
       await pumpScreen(tester, _item('zz-7201'), state: state, themeMode: mode);
-      await _tapShown(tester, find.byType(CreatorChip));
+      await _tapShown(tester, _chipButton);
     }, onTop: find.byType(CreatorCard));
     screen('the creator card with a licensed image', (tester, mode) async {
       final state = await cultureApp(reach: 'b1');
@@ -539,7 +546,7 @@ void main() {
         state: state,
         themeMode: mode,
       );
-      await _tapShown(tester, find.byType(CreatorChip));
+      await _tapShown(tester, _chipButton);
     }, onTop: find.byType(CreatorCard));
   });
 }
