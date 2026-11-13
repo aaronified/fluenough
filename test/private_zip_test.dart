@@ -63,7 +63,7 @@ void main() {
     }
     // A directory entry is checked too.
     expect(
-      () => _read(<ZipSpec>[const ZipSpec('../up/', const <int>[])]),
+      () => _read(<ZipSpec>[const ZipSpec('../up/', <int>[])]),
       _refuses('file name'),
     );
   });
