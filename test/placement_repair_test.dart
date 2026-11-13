@@ -169,7 +169,7 @@ void main() {
       addTearDown(again.close);
       await check(again);
       expect(await again.placementWithdrawalsDao.all(), hasLength(1));
-      expect(AppDatabase.currentSchemaVersion, 11);
+      expect(AppDatabase.currentSchemaVersion, 12);
     });
 
     test(

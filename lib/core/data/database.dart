@@ -12,6 +12,7 @@ import 'tables/decks.dart';
 import 'tables/fsrs_parameters.dart';
 import 'tables/leech_actions.dart';
 import 'tables/placement_withdrawals.dart';
+import 'tables/recommendation_marks.dart';
 import 'tables/replay_snapshots.dart';
 import 'tables/restores.dart';
 import 'tables/reviews.dart';
@@ -54,6 +55,7 @@ part 'database.g.dart';
     Restores,
     ReplaySnapshots,
     PlacementWithdrawals,
+    RecommendationMarks,
   ],
   daos: [
     DecksDao,
@@ -66,6 +68,7 @@ part 'database.g.dart';
     RestoresDao,
     ReplaySnapshotsDao,
     PlacementWithdrawalsDao,
+    RecommendationMarksDao,
   ],
 )
 class AppDatabase extends _$AppDatabase {
@@ -92,12 +95,16 @@ class AppDatabase extends _$AppDatabase {
   /// 11: `placement_withdrawals`, append-only like `reviews`: placement
   ///    credit the learner took back, which the replay leaves out (wiki,
   ///    Plan-Placement-V2, point 17; issue #1063). `reviews` is not touched.
+  /// 12: `recommendation_marks`, the recommended works a learner marked
+  ///    completed (wiki Plan-Deck-Kinds-And-Topics.md, D13, T25). A plain
+  ///    table, not append-only: un-marking deletes a row. `reviews` is not
+  ///    touched.
   @override
   int get schemaVersion => currentSchemaVersion;
 
   /// [schemaVersion], for what needs it without a database: a backup says
   /// which schema it was made under (#470).
-  static const int currentSchemaVersion = 11;
+  static const int currentSchemaVersion = 12;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -216,6 +223,15 @@ class AppDatabase extends _$AppDatabase {
             }
           }
         }
+      }
+      if (from < 12) {
+        // Once, as in step 10: a new table only, so a step cut off part-way
+        // runs again. Nothing else is touched.
+        final exists = await customSelect(
+          "SELECT name FROM sqlite_master WHERE type = 'table' "
+          "AND name = 'recommendation_marks'",
+        ).get();
+        if (exists.isEmpty) await m.createTable(recommendationMarks);
       }
     },
   );

@@ -294,7 +294,14 @@ class DeckDownloads extends ChangeNotifier {
   /// out and logged: the bundled copy is used. Never throws, never reaches
   /// the network.
   Future<void> _openShared() async {
-    for (final path in sharedKinds.keys) {
+    // The fixed paths, and the per-language files (creators, recommendations)
+    // the index kept on the phone lists: a file is only kept when the index
+    // listed it, so the kept index names every one there can be.
+    final paths = <String>{
+      ...sharedKinds.keys,
+      for (final file in _index?.shared ?? const <SharedFile>[]) file.path,
+    };
+    for (final path in paths) {
       try {
         final text = await files.readNote(sharedNoteName(path));
         if (text == null) continue;

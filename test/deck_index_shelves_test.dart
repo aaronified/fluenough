@@ -147,13 +147,11 @@ void main() {
       },
     );
 
-    test('lists the topics file apart, and does not download it yet', () {
+    test('lists the topics file apart, and downloads it with the language', () {
       expect(zz.topics.map((f) => f.path), <String>['decks/zz/zz-topics.yaml']);
       expect(zz.topics.single.kind, 'topics');
-      expect(
-        zz.files.map((f) => f.path),
-        isNot(contains(zz.topics.single.path)),
-      );
+      expect(zz.files.map((f) => f.path), contains(zz.topics.single.path));
+      expect(zz.topics.single.isLanguageFile, isTrue);
     });
 
     test('is read from an index with none of the new keys, as before', () {

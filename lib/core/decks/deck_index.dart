@@ -21,6 +21,7 @@ const Set<String> languageFileKinds = <String>{
   'path',
   'facts',
   'situations',
+  'topics',
   'numbers',
   'romanisation',
   'sounds',
@@ -564,7 +565,8 @@ class IndexLanguage {
   final List<IndexShelf> shelves;
 
   /// Its topics file (`topics`), listed apart from [files] so that an app too
-  /// old to read it passes it by. Read, not downloaded yet.
+  /// old to read it passes it by. It is also among [files], so it downloads
+  /// with the language, as the situations file does.
   final List<IndexFile> topics;
 
   /// What in the language's new keys (`shelves`, `topics`) could not be read
@@ -802,6 +804,10 @@ class IndexLanguage {
       // The situations file (#724) is listed under its own key for the same
       // reason: the released app has no case for its kind.
       for (final file in _list(json['situations'])) parse(file),
+      // A language's topics file (deck-kinds plan, D6) downloads with the
+      // language, as the situations file does; the entries already read
+      // above (a bad one cost itself).
+      ...topics,
       // A visible genre deck downloads with the language; a hidden one is
       // fetched when a learner adds it.
       for (final shelf in shelves)

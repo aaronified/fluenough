@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import '../models/completed_work.dart';
 import '../models/drill_mode.dart';
 import '../models/leech_action.dart';
 import '../models/review_event.dart';
@@ -29,6 +30,7 @@ abstract final class LogJsonl {
     Map<SkillKey, FittedParameters> fitted =
         const <SkillKey, FittedParameters>{},
     Iterable<PlacementWithdrawal> withdrawals = const <PlacementWithdrawal>[],
+    Iterable<CompletedWork> completedWorks = const <CompletedWork>[],
   }) {
     final lines = <String>[
       jsonEncode(<String, Object>{'format': format, 'version': version}),
@@ -64,6 +66,15 @@ abstract final class LogJsonl {
           'modes': w.modeNames,
           'script': w.script,
           'decks': w.sortedDeckIds,
+        }),
+      // The recommended works the learner marked completed (deck-kinds plan,
+      // D13): a line of a type an older app skips, so no version bump.
+      for (final w in completedWorks)
+        jsonEncode(<String, Object?>{
+          'type': 'completed',
+          'recommendation': w.recommendationId,
+          'language': w.language,
+          'at': w.completedAt.toUtc().toIso8601String(),
         }),
       for (final MapEntry(:key, :value) in _sorted(fitted))
         jsonEncode(<String, Object?>{
@@ -165,6 +176,51 @@ abstract final class LogJsonl {
       fitted: fitted,
       withdrawals: taken,
     );
+  }
+
+  /// The completed recommended works in [text], a backup: the lines of type
+  /// `completed`, read tolerantly (a line that does not read is skipped, never
+  /// a failed restore) and the earliest mark of a work kept. A text that is
+  /// not a log has none; [decode] is what refuses it.
+  static List<CompletedWork> decodeCompletedWorks(String text) {
+    final found = <String, CompletedWork>{};
+    for (final raw in const LineSplitter().convert(text)) {
+      final line = raw.trim();
+      if (line.isEmpty || !line.contains('"completed"')) continue;
+      try {
+        final o = jsonDecode(line);
+        if (o is! Map<String, Object?> || o['type'] != 'completed') continue;
+        final id = o['recommendation'];
+        final language = o['language'];
+        final at = o['at'] is String
+            ? DateTime.tryParse(o['at']! as String)
+            : null;
+        if (id is! String ||
+            id.isEmpty ||
+            language is! String ||
+            language.isEmpty ||
+            at == null) {
+          continue;
+        }
+        final work = CompletedWork(
+          recommendationId: id,
+          language: language,
+          completedAt: at.toLocal(),
+        );
+        final before = found[id];
+        if (before == null || work.completedAt.isBefore(before.completedAt)) {
+          found[id] = work;
+        }
+      } on FormatException {
+        continue;
+      }
+    }
+    return found.values.toList()..sort((a, b) {
+      final byTime = a.completedAt.compareTo(b.completedAt);
+      return byTime != 0
+          ? byTime
+          : a.recommendationId.compareTo(b.recommendationId);
+    });
   }
 
   /// The withdrawal [o] holds, or null when it is not one.
