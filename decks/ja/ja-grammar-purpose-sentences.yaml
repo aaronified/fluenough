@@ -1,0 +1,108 @@
+schema: 1
+id: "ja-grammar-purpose-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-4559"
+    target: "ほんをよむために、ここにきます。"
+    words: ["ほん", "を", "よむ", "ために", "ここ", "に", "きます"]
+    reading: "hon o yomu tameni, koko ni kimasu."
+    ipa: "hoɴ o jomɯ tameni koko ni kimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ほん", ref: "ja-1180" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "よむ", ref: "ja-0345" }
+      - { word: "ために", base: "ために", reading: "tame ni" }
+      - { word: "ここ", ref: "ja-0554" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "きます", ref: "ja-0349" }
+    confusables:
+      - { id: "w1", ref: "ja-0346", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-tame-ni"]
+  - id: "ja-4560"
+    target: "ともだちにあうために、えきへいきます。"
+    words: ["ともだち", "に", "あう", "ために", "えき", "へ", "いきます"]
+    reading: "tomodachi ni au tameni, eki e ikimasu."
+    ipa: "tomodatɕi ni aɯ tameni eki e ikimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "あう", ref: "ja-0357" }
+      - { word: "ために", base: "ために", reading: "tame ni" }
+      - { word: "えき", ref: "ja-1021" }
+      - { word: "へ", ref: "ja-0029" }
+      - { word: "いきます", ref: "ja-0348" }
+    confusables:
+      - { id: "w1", ref: "ja-0358", kind: "word" }
+      - { id: "w2", ref: "ja-0350", kind: "word" }
+    rules: ["ja-rule-tame-ni"]
+  - id: "ja-4561"
+    target: "はやくねるようにします。"
+    words: ["はやく", "ねる", "ように", "します"]
+    reading: "hayaku neru youni shimasu."
+    ipa: "hajakɯ neɾɯ joːni ɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "はやく", ref: "ja-0401" }
+      - { word: "ねる", ref: "ja-0352" }
+      - { word: "ように", base: "ように", reading: "you ni" }
+      - { word: "します", ref: "ja-0375" }
+    confusables:
+      - { id: "w1", ref: "ja-0351", kind: "word" }
+      - { id: "w2", ref: "ja-0374", kind: "word" }
+    rules: ["ja-rule-you-ni"]
+  - id: "ja-4562"
+    target: "わすれないように、かきます。"
+    words: ["わすれない", "ように", "かきます"]
+    reading: "wasurenai youni, kakimasu."
+    ipa: "wasɯɾenai joːni kakimasɯ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "わすれない", ref: "ja-0578" }
+      - { word: "ように", base: "ように", reading: "you ni" }
+      - { word: "かきます", ref: "ja-0346" }
+    confusables:
+      - { id: "w1", ref: "ja-0579", kind: "word" }
+      - { id: "w2", ref: "ja-0345", kind: "word" }
+    rules: ["ja-rule-you-ni"]
+  - id: "ja-4563"
+    target: "コーヒーをかうために、みせへいきます。"
+    words: ["コーヒー", "を", "かう", "ために", "みせ", "へ", "いきます"]
+    reading: "koohii o kau tameni, mise e ikimasu."
+    ipa: "koːçiː o kaɯ tameni mise e ikimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "コーヒー", ref: "ja-0849" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "かう", ref: "ja-0356" }
+      - { word: "ために", base: "ために", reading: "tame ni" }
+      - { word: "みせ", ref: "ja-0915" }
+      - { word: "へ", ref: "ja-0029" }
+      - { word: "いきます", ref: "ja-0348" }
+    confusables:
+      - { id: "w1", ref: "ja-0342", kind: "word" }
+      - { id: "w2", ref: "ja-0364", kind: "word" }
+    rules: ["ja-rule-tame-ni"]
+  - id: "ja-4564"
+    target: "よくきくようにします。"
+    words: ["よく", "きく", "ように", "します"]
+    reading: "yoku kiku youni shimasu."
+    ipa: "jokɯ kikɯ joːni ɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "よく", ref: "ja-0389" }
+      - { word: "きく", ref: "ja-0344" }
+      - { word: "ように", base: "ように", reading: "you ni" }
+      - { word: "します", ref: "ja-0375" }
+    confusables:
+      - { id: "w1", ref: "ja-0347", kind: "word" }
+      - { id: "w2", ref: "ja-0345", kind: "word" }
+    rules: ["ja-rule-you-ni"]

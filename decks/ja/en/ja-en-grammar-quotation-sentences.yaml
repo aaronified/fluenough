@@ -1,0 +1,69 @@
+schema: 1
+id: "ja-en-grammar-quotation-sentences"
+kind: "layer"
+core: "ja-grammar-quotation-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Saying and thinking, in sentences"
+description: "Sentences that report what someone says or thinks, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-4535":
+    native: "I think my friend will come."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "と": { meaning: "(marks what is said or thought)" }
+      "おもいます": { meaning: "to think" }
+    confusables:
+      w1: { why: "いく (iku) means to go." }
+      w2: { why: "かえる (kaeru) means to return home; to go home." }
+  "ja-4536":
+    native: "My father said he would watch the film."
+    notes:
+      "n1": "いいました (iimashita) is the past of いいます (iimasu), to say; the plain form みる (miru) stands before と (to)."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "を": { meaning: "(marks the thing acted on)" }
+      "と": { meaning: "(marks what is said or thought)" }
+      "いいました": { meaning: "to say" }
+    confusables:
+      w1: { why: "きく (kiku) means to listen; to hear; to ask." }
+      w2: { why: "よむ (yomu) means to read." }
+  "ja-4537":
+    native: "My mother said she would go to bed."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "と": { meaning: "(marks what is said or thought)" }
+      "いいました": { meaning: "to say" }
+    confusables:
+      w1: { why: "おきる (okiru) means to get up; to wake up." }
+      w2: { why: "あそぶ (asobu) means to play." }
+  "ja-4538":
+    native: "I think I will go tomorrow."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "と": { meaning: "(marks what is said or thought)" }
+      "おもいます": { meaning: "to think" }
+    confusables:
+      w1: { why: "くる (kuru) means to come." }
+      w2: { why: "かえる (kaeru) means to return home; to go home." }
+  "ja-4539":
+    native: "The teacher said he would wait here."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "で": { meaning: "(at, in, by)" }
+      "と": { meaning: "(marks what is said or thought)" }
+      "いいました": { meaning: "to say" }
+    confusables:
+      w1: { why: "あう (au) means to meet." }
+      w2: { why: "でる (deru) means to go out; to leave." }
+  "ja-4540":
+    native: "I think my friend will go home by bus."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "で": { meaning: "(at, in, by)" }
+      "と": { meaning: "(marks what is said or thought)" }
+      "おもいます": { meaning: "to think" }
+    confusables:
+      w1: { why: "いく (iku) means to go." }
+      w2: { why: "くる (kuru) means to come." }

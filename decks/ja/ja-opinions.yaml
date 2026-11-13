@@ -1528,3 +1528,53 @@ cards:
         bases:
           - { word: "たかい", ref: "ja-0439" }
           - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-4497"
+    target: "けいこう"
+    words: ["けいこう"]
+    reading: "keikou"
+    ipa: "keːkoː"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "このけいこうはわるいです。"
+        words: ["この", "けいこう", "は", "わるい", "です"]
+        reading: "kono keikou wa warui desu."
+        ipa: "kono keːkoː wa waɾɯi desɯ"
+        bases:
+          - { word: "この", base: "この", reading: "kono" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "いまのけいこうをはなしましょう。"
+        words: ["いま", "の", "けいこう", "を", "はなしましょう"]
+        reading: "ima no keikou o hanashimashou."
+        ipa: "ima no keːkoː o hanaɕimaɕoː"
+        bases:
+          - { word: "の", base: "の", reading: "no" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "はなしましょう", base: "はなす", reading: "hanasu" }
+  - id: "ja-4498"
+    target: "はんめん"
+    words: ["はんめん"]
+    reading: "hanmen"
+    ipa: "haɴmeɴ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "このほんはむずかしいはんめん、たのしいです。"
+        words: ["この", "ほん", "は", "むずかしい", "はんめん", "たのしい", "です"]
+        reading: "kono hon wa muzukashii hanmen tanoshii desu."
+        ipa: "kono hoɴ wa mɯzɯkaɕiː haɴmeɴ tanoɕiː desɯ"
+        bases:
+          - { word: "この", base: "この", reading: "kono" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "やすいはんめん、わるいです。"
+        words: ["やすい", "はんめん", "わるい", "です"]
+        reading: "yasui hanmen warui desu."
+        ipa: "jasɯi haɴmeɴ waɾɯi desɯ"
+        bases:
+          - { word: "です", base: "です", reading: "desu" }

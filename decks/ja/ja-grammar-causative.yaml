@@ -1,0 +1,2658 @@
+schema: 1
+id: "ja-grammar-causative"
+part: "core"
+kind: "rules"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ja-0085"]
+  slots: ["causative", "causative-passive"]
+  rows:
+    - word: "ja-1050"
+      forms:
+        "causative": "まがらせます"
+        "causative-passive": "まがらせられます"
+      readings:
+        "causative": "magarasemasu"
+        "causative-passive": "magaraseraremasu"
+    - word: "ja-1060"
+      forms:
+        "causative": "わたらせます"
+        "causative-passive": "わたらせられます"
+      readings:
+        "causative": "watarasemasu"
+        "causative-passive": "wataraseraremasu"
+    - word: "ja-1061"
+      forms:
+        "causative": "すすませます"
+        "causative-passive": "すすませられます"
+      readings:
+        "causative": "susumasemasu"
+        "causative-passive": "susumaseraremasu"
+    - word: "ja-1062"
+      forms:
+        "causative": "さがらせます"
+        "causative-passive": "さがらせられます"
+      readings:
+        "causative": "sagarasemasu"
+        "causative-passive": "sagaraseraremasu"
+    - word: "ja-1070"
+      forms:
+        "causative": "まちがえさせます"
+        "causative-passive": "まちがえさせられます"
+      readings:
+        "causative": "machigaesasemasu"
+        "causative-passive": "machigaesaseraremasu"
+    - word: "ja-1071"
+      forms:
+        "causative": "でさせます"
+        "causative-passive": "でさせられます"
+      readings:
+        "causative": "desasemasu"
+        "causative-passive": "desaseraremasu"
+    - word: "ja-1078"
+      forms:
+        "causative": "むかわせます"
+        "causative-passive": "むかわせられます"
+      readings:
+        "causative": "mukawasemasu"
+        "causative-passive": "mukawaseraremasu"
+    - word: "ja-0341"
+      forms:
+        "causative": "たべさせます"
+        "causative-passive": "たべさせられます"
+      readings:
+        "causative": "tabesasemasu"
+        "causative-passive": "tabesaseraremasu"
+    - word: "ja-0342"
+      forms:
+        "causative": "のませます"
+        "causative-passive": "のませられます"
+      readings:
+        "causative": "nomasemasu"
+        "causative-passive": "nomaseraremasu"
+    - word: "ja-0343"
+      forms:
+        "causative": "みさせます"
+        "causative-passive": "みさせられます"
+      readings:
+        "causative": "misasemasu"
+        "causative-passive": "misaseraremasu"
+    - word: "ja-0344"
+      forms:
+        "causative": "きかせます"
+        "causative-passive": "きかせられます"
+      readings:
+        "causative": "kikasemasu"
+        "causative-passive": "kikaseraremasu"
+    - word: "ja-0345"
+      forms:
+        "causative": "よませます"
+        "causative-passive": "よませられます"
+      readings:
+        "causative": "yomasemasu"
+        "causative-passive": "yomaseraremasu"
+    - word: "ja-0346"
+      forms:
+        "causative": "かかせます"
+        "causative-passive": "かかせられます"
+      readings:
+        "causative": "kakasemasu"
+        "causative-passive": "kakaseraremasu"
+    - word: "ja-0347"
+      forms:
+        "causative": "はなさせます"
+        "causative-passive": "はなさせられます"
+      readings:
+        "causative": "hanasasemasu"
+        "causative-passive": "hanasaseraremasu"
+    - word: "ja-0348"
+      forms:
+        "causative": "いかせます"
+        "causative-passive": "いかせられます"
+      readings:
+        "causative": "ikasemasu"
+        "causative-passive": "ikaseraremasu"
+    - word: "ja-0349"
+      forms:
+        "causative": "こさせます"
+        "causative-passive": "こさせられます"
+      readings:
+        "causative": "kosasemasu"
+        "causative-passive": "kosaseraremasu"
+    - word: "ja-0350"
+      forms:
+        "causative": "かえらせます"
+        "causative-passive": "かえらせられます"
+      readings:
+        "causative": "kaerasemasu"
+        "causative-passive": "kaeraseraremasu"
+    - word: "ja-0351"
+      forms:
+        "causative": "おきさせます"
+        "causative-passive": "おきさせられます"
+      readings:
+        "causative": "okisasemasu"
+        "causative-passive": "okisaseraremasu"
+    - word: "ja-0352"
+      forms:
+        "causative": "ねさせます"
+        "causative-passive": "ねさせられます"
+      readings:
+        "causative": "nesasemasu"
+        "causative-passive": "nesaseraremasu"
+    - word: "ja-0353"
+      forms:
+        "causative": "はたらかせます"
+        "causative-passive": "はたらかせられます"
+      readings:
+        "causative": "hatarakasemasu"
+        "causative-passive": "hatarakaseraremasu"
+    - word: "ja-0354"
+      forms:
+        "causative": "やすませます"
+        "causative-passive": "やすませられます"
+      readings:
+        "causative": "yasumasemasu"
+        "causative-passive": "yasumaseraremasu"
+    - word: "ja-0355"
+      forms:
+        "causative": "はいらせます"
+        "causative-passive": "はいらせられます"
+      readings:
+        "causative": "hairasemasu"
+        "causative-passive": "hairaseraremasu"
+    - word: "ja-0356"
+      forms:
+        "causative": "かわせます"
+        "causative-passive": "かわせられます"
+      readings:
+        "causative": "kawasemasu"
+        "causative-passive": "kawaseraremasu"
+    - word: "ja-0357"
+      forms:
+        "causative": "あわせます"
+        "causative-passive": "あわせられます"
+      readings:
+        "causative": "awasemasu"
+        "causative-passive": "awaseraremasu"
+    - word: "ja-0358"
+      forms:
+        "causative": "またせます"
+        "causative-passive": "またせられます"
+      readings:
+        "causative": "matasemasu"
+        "causative-passive": "mataseraremasu"
+    - word: "ja-0359"
+      forms:
+        "causative": "もたせます"
+        "causative-passive": "もたせられます"
+      readings:
+        "causative": "motasemasu"
+        "causative-passive": "motaseraremasu"
+    - word: "ja-0360"
+      forms:
+        "causative": "あるかせます"
+        "causative-passive": "あるかせられます"
+      readings:
+        "causative": "arukasemasu"
+        "causative-passive": "arukaseraremasu"
+    - word: "ja-0361"
+      forms:
+        "causative": "のらせます"
+        "causative-passive": "のらせられます"
+      readings:
+        "causative": "norasemasu"
+        "causative-passive": "noraseraremasu"
+    - word: "ja-0362"
+      forms:
+        "causative": "おりさせます"
+        "causative-passive": "おりさせられます"
+      readings:
+        "causative": "orisasemasu"
+        "causative-passive": "orisaseraremasu"
+    - word: "ja-0363"
+      forms:
+        "causative": "あらわせます"
+        "causative-passive": "あらわせられます"
+      readings:
+        "causative": "arawasemasu"
+        "causative-passive": "arawaseraremasu"
+    - word: "ja-0364"
+      forms:
+        "causative": "つくらせます"
+        "causative-passive": "つくらせられます"
+      readings:
+        "causative": "tsukurasemasu"
+        "causative-passive": "tsukuraseraremasu"
+    - word: "ja-0365"
+      forms:
+        "causative": "わからせます"
+        "causative-passive": "わからせられます"
+      readings:
+        "causative": "wakarasemasu"
+        "causative-passive": "wakaraseraremasu"
+    - word: "ja-0366"
+      forms:
+        "causative": "しらせます"
+        "causative-passive": "しらせられます"
+      readings:
+        "causative": "shirasemasu"
+        "causative-passive": "shiraseraremasu"
+    - word: "ja-0367"
+      forms:
+        "causative": "ならわせます"
+        "causative-passive": "ならわせられます"
+      readings:
+        "causative": "narawasemasu"
+        "causative-passive": "narawaseraremasu"
+    - word: "ja-0368"
+      forms:
+        "causative": "おしえさせます"
+        "causative-passive": "おしえさせられます"
+      readings:
+        "causative": "oshiesasemasu"
+        "causative-passive": "oshiesaseraremasu"
+    - word: "ja-0369"
+      forms:
+        "causative": "つかわせます"
+        "causative-passive": "つかわせられます"
+      readings:
+        "causative": "tsukawasemasu"
+        "causative-passive": "tsukawaseraremasu"
+    - word: "ja-0370"
+      forms:
+        "causative": "すわらせます"
+        "causative-passive": "すわらせられます"
+      readings:
+        "causative": "suwarasemasu"
+        "causative-passive": "suwaraseraremasu"
+    - word: "ja-0371"
+      forms:
+        "causative": "たたせます"
+        "causative-passive": "たたせられます"
+      readings:
+        "causative": "tatasemasu"
+        "causative-passive": "tataseraremasu"
+    - word: "ja-0372"
+      forms:
+        "causative": "あけさせます"
+        "causative-passive": "あけさせられます"
+      readings:
+        "causative": "akesasemasu"
+        "causative-passive": "akesaseraremasu"
+    - word: "ja-0373"
+      forms:
+        "causative": "しめさせます"
+        "causative-passive": "しめさせられます"
+      readings:
+        "causative": "shimesasemasu"
+        "causative-passive": "shimesaseraremasu"
+    - word: "ja-0374"
+      forms:
+        "causative": "あそばせます"
+        "causative-passive": "あそばせられます"
+      readings:
+        "causative": "asobasemasu"
+        "causative-passive": "asobaseraremasu"
+    - word: "ja-0375"
+      forms:
+        "causative": "させます"
+        "causative-passive": "させられます"
+      readings:
+        "causative": "sasemasu"
+        "causative-passive": "saseraremasu"
+    - word: "ja-0949"
+      forms:
+        "causative": "かぞえさせます"
+        "causative-passive": "かぞえさせられます"
+      readings:
+        "causative": "kazoesasemasu"
+        "causative-passive": "kazoesaseraremasu"
+    - word: "ja-1226"
+      forms:
+        "causative": "こまらせます"
+        "causative-passive": "こまらせられます"
+      readings:
+        "causative": "komarasemasu"
+        "causative-passive": "komaraseraremasu"
+    - word: "ja-1227"
+      forms:
+        "causative": "よばせます"
+        "causative-passive": "よばせられます"
+      readings:
+        "causative": "yobasemasu"
+        "causative-passive": "yobaseraremasu"
+    - word: "ja-1228"
+      forms:
+        "causative": "まよわせます"
+        "causative-passive": "まよわせられます"
+      readings:
+        "causative": "mayowasemasu"
+        "causative-passive": "mayowaseraremasu"
+    - word: "ja-1236"
+      forms:
+        "causative": "たすけさせます"
+        "causative-passive": "たすけさせられます"
+      readings:
+        "causative": "tasukesasemasu"
+        "causative-passive": "tasukesaseraremasu"
+    - word: "ja-1237"
+      forms:
+        "causative": "たすからせます"
+        "causative-passive": "たすからせられます"
+      readings:
+        "causative": "tasukarasemasu"
+        "causative-passive": "tasukaraseraremasu"
+    - word: "ja-1240"
+      forms:
+        "causative": "まもらせます"
+        "causative-passive": "まもらせられます"
+      readings:
+        "causative": "mamorasemasu"
+        "causative-passive": "mamoraseraremasu"
+    - word: "ja-0571"
+      forms:
+        "causative": "あびさせます"
+        "causative-passive": "あびさせられます"
+      readings:
+        "causative": "abisasemasu"
+        "causative-passive": "abisaseraremasu"
+    - word: "ja-0572"
+      forms:
+        "causative": "はしらせます"
+        "causative-passive": "はしらせられます"
+      readings:
+        "causative": "hashirasemasu"
+        "causative-passive": "hashiraseraremasu"
+    - word: "ja-0573"
+      forms:
+        "causative": "とばせます"
+        "causative-passive": "とばせられます"
+      readings:
+        "causative": "tobasemasu"
+        "causative-passive": "tobaseraremasu"
+    - word: "ja-0574"
+      forms:
+        "causative": "おどらせます"
+        "causative-passive": "おどらせられます"
+      readings:
+        "causative": "odorasemasu"
+        "causative-passive": "odoraseraremasu"
+    - word: "ja-0575"
+      forms:
+        "causative": "うたわせます"
+        "causative-passive": "うたわせられます"
+      readings:
+        "causative": "utawasemasu"
+        "causative-passive": "utawaseraremasu"
+    - word: "ja-0576"
+      forms:
+        "causative": "かりさせます"
+        "causative-passive": "かりさせられます"
+      readings:
+        "causative": "karisasemasu"
+        "causative-passive": "karisaseraremasu"
+    - word: "ja-0577"
+      forms:
+        "causative": "かえさせます"
+        "causative-passive": "かえさせられます"
+      readings:
+        "causative": "kaesasemasu"
+        "causative-passive": "kaesaseraremasu"
+    - word: "ja-0578"
+      forms:
+        "causative": "わすれさせます"
+        "causative-passive": "わすれさせられます"
+      readings:
+        "causative": "wasuresasemasu"
+        "causative-passive": "wasuresaseraremasu"
+    - word: "ja-0579"
+      forms:
+        "causative": "おぼえさせます"
+        "causative-passive": "おぼえさせられます"
+      readings:
+        "causative": "oboesasemasu"
+        "causative-passive": "oboesaseraremasu"
+    - word: "ja-0580"
+      forms:
+        "causative": "てつだわせます"
+        "causative-passive": "てつだわせられます"
+      readings:
+        "causative": "tetsudawasemasu"
+        "causative-passive": "tetsudawaseraremasu"
+    - word: "ja-0581"
+      forms:
+        "causative": "ひろわせます"
+        "causative-passive": "ひろわせられます"
+      readings:
+        "causative": "hirowasemasu"
+        "causative-passive": "hirowaseraremasu"
+    - word: "ja-0582"
+      forms:
+        "causative": "すてさせます"
+        "causative-passive": "すてさせられます"
+      readings:
+        "causative": "sutesasemasu"
+        "causative-passive": "sutesaseraremasu"
+    - word: "ja-0583"
+      forms:
+        "causative": "なくさせます"
+        "causative-passive": "なくさせられます"
+      readings:
+        "causative": "nakusasemasu"
+        "causative-passive": "nakusaseraremasu"
+    - word: "ja-0584"
+      forms:
+        "causative": "のぼらせます"
+        "causative-passive": "のぼらせられます"
+      readings:
+        "causative": "noborasemasu"
+        "causative-passive": "noboraseraremasu"
+    - word: "ja-0585"
+      forms:
+        "causative": "そうじさせます"
+        "causative-passive": "そうじさせられます"
+      readings:
+        "causative": "soujisasemasu"
+        "causative-passive": "soujisaseraremasu"
+    - word: "ja-0586"
+      forms:
+        "causative": "りょうりさせます"
+        "causative-passive": "りょうりさせられます"
+      readings:
+        "causative": "ryourisasemasu"
+        "causative-passive": "ryourisaseraremasu"
+    - word: "ja-0587"
+      forms:
+        "causative": "でかけさせます"
+        "causative-passive": "でかけさせられます"
+      readings:
+        "causative": "dekakesasemasu"
+        "causative-passive": "dekakesaseraremasu"
+    - word: "ja-0588"
+      forms:
+        "causative": "もどらせます"
+        "causative-passive": "もどらせられます"
+      readings:
+        "causative": "modorasemasu"
+        "causative-passive": "modoraseraremasu"
+    - word: "ja-0589"
+      forms:
+        "causative": "とまらせます"
+        "causative-passive": "とまらせられます"
+      readings:
+        "causative": "tomarasemasu"
+        "causative-passive": "tomaraseraremasu"
+    - word: "ja-0590"
+      forms:
+        "causative": "さがさせます"
+        "causative-passive": "さがさせられます"
+      readings:
+        "causative": "sagasasemasu"
+        "causative-passive": "sagasaseraremasu"
+    - word: "ja-0591"
+      forms:
+        "causative": "みせさせます"
+        "causative-passive": "みせさせられます"
+      readings:
+        "causative": "misesasemasu"
+        "causative-passive": "misesaseraremasu"
+    - word: "ja-0592"
+      forms:
+        "causative": "いれさせます"
+        "causative-passive": "いれさせられます"
+      readings:
+        "causative": "iresasemasu"
+        "causative-passive": "iresaseraremasu"
+    - word: "ja-0593"
+      forms:
+        "causative": "わらわせます"
+        "causative-passive": "わらわせられます"
+      readings:
+        "causative": "warawasemasu"
+        "causative-passive": "warawaseraremasu"
+    - word: "ja-0594"
+      forms:
+        "causative": "おこらせます"
+        "causative-passive": "おこらせられます"
+      readings:
+        "causative": "okorasemasu"
+        "causative-passive": "okoraseraremasu"
+    - word: "ja-0595"
+      forms:
+        "causative": "やめさせます"
+        "causative-passive": "やめさせられます"
+      readings:
+        "causative": "yamesasemasu"
+        "causative-passive": "yamesaseraremasu"
+    - word: "ja-0596"
+      forms:
+        "causative": "はじめさせます"
+        "causative-passive": "はじめさせられます"
+      readings:
+        "causative": "hajimesasemasu"
+        "causative-passive": "hajimesaseraremasu"
+    - word: "ja-0597"
+      forms:
+        "causative": "ひっこさせます"
+        "causative-passive": "ひっこさせられます"
+      readings:
+        "causative": "hikkosasemasu"
+        "causative-passive": "hikkosaseraremasu"
+    - word: "ja-0598"
+      forms:
+        "causative": "あげさせます"
+        "causative-passive": "あげさせられます"
+      readings:
+        "causative": "agesasemasu"
+        "causative-passive": "agesaseraremasu"
+    - word: "ja-0599"
+      forms:
+        "causative": "もらわせます"
+        "causative-passive": "もらわせられます"
+      readings:
+        "causative": "morawasemasu"
+        "causative-passive": "morawaseraremasu"
+    - word: "ja-0600"
+      forms:
+        "causative": "さけばせます"
+        "causative-passive": "さけばせられます"
+      readings:
+        "causative": "sakebasemasu"
+        "causative-passive": "sakebaseraremasu"
+    - word: "ja-0516"
+      forms:
+        "causative": "おわらせます"
+        "causative-passive": "おわらせられます"
+      readings:
+        "causative": "owarasemasu"
+        "causative-passive": "owaraseraremasu"
+    - word: "ja-0711"
+      forms:
+        "causative": "つとめさせます"
+        "causative-passive": "つとめさせられます"
+      readings:
+        "causative": "tsutomesasemasu"
+        "causative-passive": "tsutomesaseraremasu"
+    - word: "ja-1334"
+      forms:
+        "causative": "きがえさせます"
+        "causative-passive": "きがえさせられます"
+      readings:
+        "causative": "kigaesasemasu"
+        "causative-passive": "kigaesaseraremasu"
+    - word: "ja-1335"
+      forms:
+        "causative": "はかせます"
+        "causative-passive": "はかせられます"
+      readings:
+        "causative": "hakasemasu"
+        "causative-passive": "hakaseraremasu"
+    - word: "ja-1336"
+      forms:
+        "causative": "かぶらせます"
+        "causative-passive": "かぶらせられます"
+      readings:
+        "causative": "kaburasemasu"
+        "causative-passive": "kaburaseraremasu"
+    - word: "ja-1341"
+      forms:
+        "causative": "つかれさせます"
+        "causative-passive": "つかれさせられます"
+      readings:
+        "causative": "tsukaresasemasu"
+        "causative-passive": "tsukaresaseraremasu"
+    - word: "ja-1348"
+      forms:
+        "causative": "ださせます"
+        "causative-passive": "ださせられます"
+      readings:
+        "causative": "dasasemasu"
+        "causative-passive": "dasaseraremasu"
+    - word: "ja-1349"
+      forms:
+        "causative": "わかさせます"
+        "causative-passive": "わかさせられます"
+      readings:
+        "causative": "wakasasemasu"
+        "causative-passive": "wakasaseraremasu"
+    - word: "ja-1350"
+      forms:
+        "causative": "ほさせます"
+        "causative-passive": "ほさせられます"
+      readings:
+        "causative": "hosasemasu"
+        "causative-passive": "hosaseraremasu"
+    - word: "ja-1351"
+      forms:
+        "causative": "かたづけさせます"
+        "causative-passive": "かたづけさせられます"
+      readings:
+        "causative": "katazukesasemasu"
+        "causative-passive": "katazukesaseraremasu"
+    - word: "ja-1352"
+      forms:
+        "causative": "たたませます"
+        "causative-passive": "たたませられます"
+      readings:
+        "causative": "tatamasemasu"
+        "causative-passive": "tatamaseraremasu"
+    - word: "ja-1353"
+      forms:
+        "causative": "ぬがせます"
+        "causative-passive": "ぬがせられます"
+      readings:
+        "causative": "nugasemasu"
+        "causative-passive": "nugaseraremasu"
+    - word: "ja-1354"
+      forms:
+        "causative": "まにあわせます"
+        "causative-passive": "まにあわせられます"
+      readings:
+        "causative": "maniawasemasu"
+        "causative-passive": "maniawaseraremasu"
+    - word: "ja-1364"
+      forms:
+        "causative": "かわかせます"
+        "causative-passive": "かわかせられます"
+      readings:
+        "causative": "kawakasemasu"
+        "causative-passive": "kawakaseraremasu"
+    - word: "ja-1368"
+      forms:
+        "causative": "いそがせます"
+        "causative-passive": "いそがせられます"
+      readings:
+        "causative": "isogasemasu"
+        "causative-passive": "isogaseraremasu"
+    - word: "ja-1539"
+      forms:
+        "causative": "にあわせます"
+        "causative-passive": "にあわせられます"
+      readings:
+        "causative": "niawasemasu"
+        "causative-passive": "niawaseraremasu"
+    - word: "ja-1542"
+      forms:
+        "causative": "きさせます"
+        "causative-passive": "きさせられます"
+      readings:
+        "causative": "kisasemasu"
+        "causative-passive": "kisaseraremasu"
+    - word: "ja-1718"
+      forms:
+        "causative": "うらせます"
+        "causative-passive": "うらせられます"
+      readings:
+        "causative": "urasemasu"
+        "causative-passive": "uraseraremasu"
+    - word: "ja-1719"
+      forms:
+        "causative": "はらわせます"
+        "causative-passive": "はらわせられます"
+      readings:
+        "causative": "harawasemasu"
+        "causative-passive": "harawaseraremasu"
+    - word: "ja-1720"
+      forms:
+        "causative": "まけさせます"
+        "causative-passive": "まけさせられます"
+      readings:
+        "causative": "makesasemasu"
+        "causative-passive": "makesaseraremasu"
+    - word: "ja-1721"
+      forms:
+        "causative": "えらばせます"
+        "causative-passive": "えらばせられます"
+      readings:
+        "causative": "erabasemasu"
+        "causative-passive": "erabaseraremasu"
+    - word: "ja-1758"
+      forms:
+        "causative": "たのませます"
+        "causative-passive": "たのませられます"
+      readings:
+        "causative": "tanomasemasu"
+        "causative-passive": "tanomaseraremasu"
+    - word: "ja-1759"
+      forms:
+        "causative": "おごらせます"
+        "causative-passive": "おごらせられます"
+      readings:
+        "causative": "ogorasemasu"
+        "causative-passive": "ogoraseraremasu"
+    - word: "ja-1790"
+      forms:
+        "causative": "いためさせます"
+        "causative-passive": "いためさせられます"
+      readings:
+        "causative": "itamesasemasu"
+        "causative-passive": "itamesaseraremasu"
+    - word: "ja-1791"
+      forms:
+        "causative": "まぜさせます"
+        "causative-passive": "まぜさせられます"
+      readings:
+        "causative": "mazesasemasu"
+        "causative-passive": "mazesaseraremasu"
+    - word: "ja-1792"
+      forms:
+        "causative": "ゆでさせます"
+        "causative-passive": "ゆでさせられます"
+      readings:
+        "causative": "yudesasemasu"
+        "causative-passive": "yudesaseraremasu"
+    - word: "ja-1793"
+      forms:
+        "causative": "にさせます"
+        "causative-passive": "にさせられます"
+      readings:
+        "causative": "nisasemasu"
+        "causative-passive": "nisaseraremasu"
+    - word: "ja-1794"
+      forms:
+        "causative": "やかせます"
+        "causative-passive": "やかせられます"
+      readings:
+        "causative": "yakasemasu"
+        "causative-passive": "yakaseraremasu"
+    - word: "ja-1799"
+      forms:
+        "causative": "ひやさせます"
+        "causative-passive": "ひやさせられます"
+      readings:
+        "causative": "hiyasasemasu"
+        "causative-passive": "hiyasaseraremasu"
+    - word: "ja-1800"
+      forms:
+        "causative": "あたためさせます"
+        "causative-passive": "あたためさせられます"
+      readings:
+        "causative": "atatamesasemasu"
+        "causative-passive": "atatamesaseraremasu"
+    - word: "ja-1801"
+      forms:
+        "causative": "きざませます"
+        "causative-passive": "きざませられます"
+      readings:
+        "causative": "kizamasemasu"
+        "causative-passive": "kizamaseraremasu"
+    - word: "ja-1802"
+      forms:
+        "causative": "むかせます"
+        "causative-passive": "むかせられます"
+      readings:
+        "causative": "mukasemasu"
+        "causative-passive": "mukaseraremasu"
+    - word: "ja-1803"
+      forms:
+        "causative": "つつませます"
+        "causative-passive": "つつませられます"
+      readings:
+        "causative": "tsutsumasemasu"
+        "causative-passive": "tsutsumaseraremasu"
+    - word: "ja-1804"
+      forms:
+        "causative": "こげさせます"
+        "causative-passive": "こげさせられます"
+      readings:
+        "causative": "kogesasemasu"
+        "causative-passive": "kogesaseraremasu"
+    - word: "ja-1805"
+      forms:
+        "causative": "さまさせます"
+        "causative-passive": "さまさせられます"
+      readings:
+        "causative": "samasasemasu"
+        "causative-passive": "samasaseraremasu"
+    - word: "ja-1850"
+      forms:
+        "causative": "べんきょうさせます"
+        "causative-passive": "べんきょうさせられます"
+      readings:
+        "causative": "benkyousasemasu"
+        "causative-passive": "benkyousaseraremasu"
+    - word: "ja-1861"
+      forms:
+        "causative": "おくれさせます"
+        "causative-passive": "おくれさせられます"
+      readings:
+        "causative": "okuresasemasu"
+        "causative-passive": "okuresaseraremasu"
+    - word: "ja-1862"
+      forms:
+        "causative": "まなばせます"
+        "causative-passive": "まなばせられます"
+      readings:
+        "causative": "manabasemasu"
+        "causative-passive": "manabaseraremasu"
+    - word: "ja-1863"
+      forms:
+        "causative": "つづけさせます"
+        "causative-passive": "つづけさせられます"
+      readings:
+        "causative": "tsuzukesasemasu"
+        "causative-passive": "tsuzukesaseraremasu"
+    - word: "ja-1864"
+      forms:
+        "causative": "かんがえさせます"
+        "causative-passive": "かんがえさせられます"
+      readings:
+        "causative": "kangaesasemasu"
+        "causative-passive": "kangaesaseraremasu"
+    - word: "ja-1865"
+      forms:
+        "causative": "こたえさせます"
+        "causative-passive": "こたえさせられます"
+      readings:
+        "causative": "kotaesasemasu"
+        "causative-passive": "kotaesaseraremasu"
+    - word: "ja-1892"
+      forms:
+        "causative": "およがせます"
+        "causative-passive": "およがせられます"
+      readings:
+        "causative": "oyogasemasu"
+        "causative-passive": "oyogaseraremasu"
+    - word: "ja-1893"
+      forms:
+        "causative": "とらせます"
+        "causative-passive": "とらせられます"
+      readings:
+        "causative": "torasemasu"
+        "causative-passive": "toraseraremasu"
+    - word: "ja-1896"
+      forms:
+        "causative": "えがかせます"
+        "causative-passive": "えがかせられます"
+      readings:
+        "causative": "egakasemasu"
+        "causative-passive": "egakaseraremasu"
+    - word: "ja-1900"
+      forms:
+        "causative": "ぬわせます"
+        "causative-passive": "ぬわせられます"
+      readings:
+        "causative": "nuwasemasu"
+        "causative-passive": "nuwaseraremasu"
+    - word: "ja-1901"
+      forms:
+        "causative": "あませます"
+        "causative-passive": "あませられます"
+      readings:
+        "causative": "amasemasu"
+        "causative-passive": "amaseraremasu"
+    - word: "ja-1907"
+      forms:
+        "causative": "ほめさせます"
+        "causative-passive": "ほめさせられます"
+      readings:
+        "causative": "homesasemasu"
+        "causative-passive": "homesaseraremasu"
+    - word: "ja-1910"
+      forms:
+        "causative": "かたせます"
+        "causative-passive": "かたせられます"
+      readings:
+        "causative": "katasemasu"
+        "causative-passive": "kataseraremasu"
+    - word: "ja-1933"
+      forms:
+        "causative": "かなでさせます"
+        "causative-passive": "かなでさせられます"
+      readings:
+        "causative": "kanadesasemasu"
+        "causative-passive": "kanadesaseraremasu"
+    - word: "ja-1934"
+      forms:
+        "causative": "ならさせます"
+        "causative-passive": "ならさせられます"
+      readings:
+        "causative": "narasasemasu"
+        "causative-passive": "narasaseraremasu"
+    - word: "ja-1935"
+      forms:
+        "causative": "ひびかせます"
+        "causative-passive": "ひびかせられます"
+      readings:
+        "causative": "hibikasemasu"
+        "causative-passive": "hibikaseraremasu"
+    - word: "ja-1939"
+      forms:
+        "causative": "たたかせます"
+        "causative-passive": "たたかせられます"
+      readings:
+        "causative": "tatakasemasu"
+        "causative-passive": "tatakaseraremasu"
+    - word: "ja-1940"
+      forms:
+        "causative": "きこえさせます"
+        "causative-passive": "きこえさせられます"
+      readings:
+        "causative": "kikoesasemasu"
+        "causative-passive": "kikoesaseraremasu"
+    - word: "ja-1941"
+      forms:
+        "causative": "ひかせます"
+        "causative-passive": "ひかせられます"
+      readings:
+        "causative": "hikasemasu"
+        "causative-passive": "hikaseraremasu"
+    - word: "ja-1996"
+      forms:
+        "causative": "なげさせます"
+        "causative-passive": "なげさせられます"
+      readings:
+        "causative": "nagesasemasu"
+        "causative-passive": "nagesaseraremasu"
+    - word: "ja-1997"
+      forms:
+        "causative": "うたせます"
+        "causative-passive": "うたせられます"
+      readings:
+        "causative": "utasemasu"
+        "causative-passive": "utaseraremasu"
+    - word: "ja-1998"
+      forms:
+        "causative": "けらせます"
+        "causative-passive": "けらせられます"
+      readings:
+        "causative": "kerasemasu"
+        "causative-passive": "keraseraremasu"
+    - word: "ja-1999"
+      forms:
+        "causative": "おいかけさせます"
+        "causative-passive": "おいかけさせられます"
+      readings:
+        "causative": "oikakesasemasu"
+        "causative-passive": "oikakesaseraremasu"
+    - word: "ja-2000"
+      forms:
+        "causative": "あきらめさせます"
+        "causative-passive": "あきらめさせられます"
+      readings:
+        "causative": "akiramesasemasu"
+        "causative-passive": "akiramesaseraremasu"
+    - word: "ja-2001"
+      forms:
+        "causative": "きたえさせます"
+        "causative-passive": "きたえさせられます"
+      readings:
+        "causative": "kitaesasemasu"
+        "causative-passive": "kitaesaseraremasu"
+    - word: "ja-2002"
+      forms:
+        "causative": "ねらわせます"
+        "causative-passive": "ねらわせられます"
+      readings:
+        "causative": "nerawasemasu"
+        "causative-passive": "nerawaseraremasu"
+    - word: "ja-2049"
+      forms:
+        "causative": "うつらせます"
+        "causative-passive": "うつらせられます"
+      readings:
+        "causative": "utsurasemasu"
+        "causative-passive": "utsuraseraremasu"
+    - word: "ja-2050"
+      forms:
+        "causative": "なおらせます"
+        "causative-passive": "なおらせられます"
+      readings:
+        "causative": "naorasemasu"
+        "causative-passive": "naoraseraremasu"
+    - word: "ja-2051"
+      forms:
+        "causative": "なおさせます"
+        "causative-passive": "なおさせられます"
+      readings:
+        "causative": "naosasemasu"
+        "causative-passive": "naosaseraremasu"
+    - word: "ja-2052"
+      forms:
+        "causative": "たおれさせます"
+        "causative-passive": "たおれさせられます"
+      readings:
+        "causative": "taoresasemasu"
+        "causative-passive": "taoresaseraremasu"
+    - word: "ja-2053"
+      forms:
+        "causative": "はれさせます"
+        "causative-passive": "はれさせられます"
+      readings:
+        "causative": "haresasemasu"
+        "causative-passive": "haresaseraremasu"
+    - word: "ja-2054"
+      forms:
+        "causative": "しびれさせます"
+        "causative-passive": "しびれさせられます"
+      readings:
+        "causative": "shibiresasemasu"
+        "causative-passive": "shibiresaseraremasu"
+    - word: "ja-2115"
+      forms:
+        "causative": "みがかせます"
+        "causative-passive": "みがかせられます"
+      readings:
+        "causative": "migakasemasu"
+        "causative-passive": "migakaseraremasu"
+    - word: "ja-2116"
+      forms:
+        "causative": "こすらせます"
+        "causative-passive": "こすらせられます"
+      readings:
+        "causative": "kosurasemasu"
+        "causative-passive": "kosuraseraremasu"
+    - word: "ja-2117"
+      forms:
+        "causative": "すすがせます"
+        "causative-passive": "すすがせられます"
+      readings:
+        "causative": "susugasemasu"
+        "causative-passive": "susugaseraremasu"
+    - word: "ja-2118"
+      forms:
+        "causative": "しぼらせます"
+        "causative-passive": "しぼらせられます"
+      readings:
+        "causative": "shiborasemasu"
+        "causative-passive": "shiboraseraremasu"
+    - word: "ja-2119"
+      forms:
+        "causative": "かわかさせます"
+        "causative-passive": "かわかさせられます"
+      readings:
+        "causative": "kawakasasemasu"
+        "causative-passive": "kawakasaseraremasu"
+    - word: "ja-2120"
+      forms:
+        "causative": "しまわせます"
+        "causative-passive": "しまわせられます"
+      readings:
+        "causative": "shimawasemasu"
+        "causative-passive": "shimawaseraremasu"
+    - word: "ja-2121"
+      forms:
+        "causative": "そろえさせます"
+        "causative-passive": "そろえさせられます"
+      readings:
+        "causative": "soroesasemasu"
+        "causative-passive": "soroesaseraremasu"
+    - word: "ja-2122"
+      forms:
+        "causative": "かざらせます"
+        "causative-passive": "かざらせられます"
+      readings:
+        "causative": "kazarasemasu"
+        "causative-passive": "kazaraseraremasu"
+    - word: "ja-2123"
+      forms:
+        "causative": "とりかえさせます"
+        "causative-passive": "とりかえさせられます"
+      readings:
+        "causative": "torikaesasemasu"
+        "causative-passive": "torikaesaseraremasu"
+    - word: "ja-2124"
+      forms:
+        "causative": "つめさせます"
+        "causative-passive": "つめさせられます"
+      readings:
+        "causative": "tsumesasemasu"
+        "causative-passive": "tsumesaseraremasu"
+    - word: "ja-2125"
+      forms:
+        "causative": "くばらせます"
+        "causative-passive": "くばらせられます"
+      readings:
+        "causative": "kubarasemasu"
+        "causative-passive": "kubaraseraremasu"
+    - word: "ja-2126"
+      forms:
+        "causative": "こぼさせます"
+        "causative-passive": "こぼさせられます"
+      readings:
+        "causative": "kobosasemasu"
+        "causative-passive": "kobosaseraremasu"
+    - word: "ja-2127"
+      forms:
+        "causative": "よごれさせます"
+        "causative-passive": "よごれさせられます"
+      readings:
+        "causative": "yogoresasemasu"
+        "causative-passive": "yogoresaseraremasu"
+    - word: "ja-2128"
+      forms:
+        "causative": "よごさせます"
+        "causative-passive": "よごさせられます"
+      readings:
+        "causative": "yogosasemasu"
+        "causative-passive": "yogosaseraremasu"
+    - word: "ja-2129"
+      forms:
+        "causative": "ちらかさせます"
+        "causative-passive": "ちらかさせられます"
+      readings:
+        "causative": "chirakasasemasu"
+        "causative-passive": "chirakasaseraremasu"
+    - word: "ja-2164"
+      forms:
+        "causative": "やせさせます"
+        "causative-passive": "やせさせられます"
+      readings:
+        "causative": "yasesasemasu"
+        "causative-passive": "yasesaseraremasu"
+    - word: "ja-2165"
+      forms:
+        "causative": "ふとらせます"
+        "causative-passive": "ふとらせられます"
+      readings:
+        "causative": "futorasemasu"
+        "causative-passive": "futoraseraremasu"
+    - word: "ja-2217"
+      forms:
+        "causative": "かわらせます"
+        "causative-passive": "かわらせられます"
+      readings:
+        "causative": "kawarasemasu"
+        "causative-passive": "kawaraseraremasu"
+    - word: "ja-2218"
+      forms:
+        "causative": "きまらせます"
+        "causative-passive": "きまらせられます"
+      readings:
+        "causative": "kimarasemasu"
+        "causative-passive": "kimaraseraremasu"
+    - word: "ja-2219"
+      forms:
+        "causative": "きめさせます"
+        "causative-passive": "きめさせられます"
+      readings:
+        "causative": "kimesasemasu"
+        "causative-passive": "kimesaseraremasu"
+    - word: "ja-2220"
+      forms:
+        "causative": "ならせます"
+        "causative-passive": "ならせられます"
+      readings:
+        "causative": "narasemasu"
+        "causative-passive": "naraseraremasu"
+    - word: "ja-2221"
+      forms:
+        "causative": "なれさせます"
+        "causative-passive": "なれさせられます"
+      readings:
+        "causative": "naresasemasu"
+        "causative-passive": "naresaseraremasu"
+    - word: "ja-2222"
+      forms:
+        "causative": "つかせます"
+        "causative-passive": "つかせられます"
+      readings:
+        "causative": "tsukasemasu"
+        "causative-passive": "tsukaseraremasu"
+    - word: "ja-2223"
+      forms:
+        "causative": "つけさせます"
+        "causative-passive": "つけさせられます"
+      readings:
+        "causative": "tsukesasemasu"
+        "causative-passive": "tsukesaseraremasu"
+    - word: "ja-2224"
+      forms:
+        "causative": "けさせます"
+        "causative-passive": "けさせられます"
+      readings:
+        "causative": "kesasemasu"
+        "causative-passive": "kesaseraremasu"
+    - word: "ja-2225"
+      forms:
+        "causative": "きえさせます"
+        "causative-passive": "きえさせられます"
+      readings:
+        "causative": "kiesasemasu"
+        "causative-passive": "kiesaseraremasu"
+    - word: "ja-2226"
+      forms:
+        "causative": "あかせます"
+        "causative-passive": "あかせられます"
+      readings:
+        "causative": "akasemasu"
+        "causative-passive": "akaseraremasu"
+    - word: "ja-2227"
+      forms:
+        "causative": "しまらせます"
+        "causative-passive": "しまらせられます"
+      readings:
+        "causative": "shimarasemasu"
+        "causative-passive": "shimaraseraremasu"
+    - word: "ja-2228"
+      forms:
+        "causative": "つかまえさせます"
+        "causative-passive": "つかまえさせられます"
+      readings:
+        "causative": "tsukamaesasemasu"
+        "causative-passive": "tsukamaesaseraremasu"
+    - word: "ja-2229"
+      forms:
+        "causative": "つかませます"
+        "causative-passive": "つかませられます"
+      readings:
+        "causative": "tsukamasemasu"
+        "causative-passive": "tsukamaseraremasu"
+    - word: "ja-2230"
+      forms:
+        "causative": "おさせます"
+        "causative-passive": "おさせられます"
+      readings:
+        "causative": "osasemasu"
+        "causative-passive": "osaseraremasu"
+    - word: "ja-2231"
+      forms:
+        "causative": "ひっぱらせます"
+        "causative-passive": "ひっぱらせられます"
+      readings:
+        "causative": "hipparasemasu"
+        "causative-passive": "hipparaseraremasu"
+    - word: "ja-2232"
+      forms:
+        "causative": "おとさせます"
+        "causative-passive": "おとさせられます"
+      readings:
+        "causative": "otosasemasu"
+        "causative-passive": "otosaseraremasu"
+    - word: "ja-2233"
+      forms:
+        "causative": "おちさせます"
+        "causative-passive": "おちさせられます"
+      readings:
+        "causative": "ochisasemasu"
+        "causative-passive": "ochisaseraremasu"
+    - word: "ja-2234"
+      forms:
+        "causative": "ひらかせます"
+        "causative-passive": "ひらかせられます"
+      readings:
+        "causative": "hirakasemasu"
+        "causative-passive": "hirakaseraremasu"
+    - word: "ja-2235"
+      forms:
+        "causative": "とじさせます"
+        "causative-passive": "とじさせられます"
+      readings:
+        "causative": "tojisasemasu"
+        "causative-passive": "tojisaseraremasu"
+    - word: "ja-2236"
+      forms:
+        "causative": "わたさせます"
+        "causative-passive": "わたさせられます"
+      readings:
+        "causative": "watasasemasu"
+        "causative-passive": "watasaseraremasu"
+    - word: "ja-2237"
+      forms:
+        "causative": "うけさせます"
+        "causative-passive": "うけさせられます"
+      readings:
+        "causative": "ukesasemasu"
+        "causative-passive": "ukesaseraremasu"
+    - word: "ja-2238"
+      forms:
+        "causative": "つたえさせます"
+        "causative-passive": "つたえさせられます"
+      readings:
+        "causative": "tsutaesasemasu"
+        "causative-passive": "tsutaesaseraremasu"
+    - word: "ja-2239"
+      forms:
+        "causative": "つたわらせます"
+        "causative-passive": "つたわらせられます"
+      readings:
+        "causative": "tsutawarasemasu"
+        "causative-passive": "tsutawaraseraremasu"
+    - word: "ja-2240"
+      forms:
+        "causative": "むかえさせます"
+        "causative-passive": "むかえさせられます"
+      readings:
+        "causative": "mukaesasemasu"
+        "causative-passive": "mukaesaseraremasu"
+    - word: "ja-2241"
+      forms:
+        "causative": "おくらせます"
+        "causative-passive": "おくらせられます"
+      readings:
+        "causative": "okurasemasu"
+        "causative-passive": "okuraseraremasu"
+    - word: "ja-2242"
+      forms:
+        "causative": "とどかせます"
+        "causative-passive": "とどかせられます"
+      readings:
+        "causative": "todokasemasu"
+        "causative-passive": "todokaseraremasu"
+    - word: "ja-2243"
+      forms:
+        "causative": "とどけさせます"
+        "causative-passive": "とどけさせられます"
+      readings:
+        "causative": "todokesasemasu"
+        "causative-passive": "todokesaseraremasu"
+    - word: "ja-2244"
+      forms:
+        "causative": "たずねさせます"
+        "causative-passive": "たずねさせられます"
+      readings:
+        "causative": "tazunesasemasu"
+        "causative-passive": "tazunesaseraremasu"
+    - word: "ja-2245"
+      forms:
+        "causative": "まちがわせます"
+        "causative-passive": "まちがわせられます"
+      readings:
+        "causative": "machigawasemasu"
+        "causative-passive": "machigawaseraremasu"
+    - word: "ja-2246"
+      forms:
+        "causative": "あやまらせます"
+        "causative-passive": "あやまらせられます"
+      readings:
+        "causative": "ayamarasemasu"
+        "causative-passive": "ayamaraseraremasu"
+    - word: "ja-2247"
+      forms:
+        "causative": "ゆるさせます"
+        "causative-passive": "ゆるさせられます"
+      readings:
+        "causative": "yurusasemasu"
+        "causative-passive": "yurusaseraremasu"
+    - word: "ja-2248"
+      forms:
+        "causative": "ことわらせます"
+        "causative-passive": "ことわらせられます"
+      readings:
+        "causative": "kotowarasemasu"
+        "causative-passive": "kotowaraseraremasu"
+    - word: "ja-2249"
+      forms:
+        "causative": "さそわせます"
+        "causative-passive": "さそわせられます"
+      readings:
+        "causative": "sasowasemasu"
+        "causative-passive": "sasowaseraremasu"
+    - word: "ja-2250"
+      forms:
+        "causative": "かよわせます"
+        "causative-passive": "かよわせられます"
+      readings:
+        "causative": "kayowasemasu"
+        "causative-passive": "kayowaseraremasu"
+    - word: "ja-2251"
+      forms:
+        "causative": "とおらせます"
+        "causative-passive": "とおらせられます"
+      readings:
+        "causative": "toorasemasu"
+        "causative-passive": "tooraseraremasu"
+    - word: "ja-2252"
+      forms:
+        "causative": "すぎさせます"
+        "causative-passive": "すぎさせられます"
+      readings:
+        "causative": "sugisasemasu"
+        "causative-passive": "sugisaseraremasu"
+    - word: "ja-2253"
+      forms:
+        "causative": "まわらせます"
+        "causative-passive": "まわらせられます"
+      readings:
+        "causative": "mawarasemasu"
+        "causative-passive": "mawaraseraremasu"
+    - word: "ja-2254"
+      forms:
+        "causative": "まわさせます"
+        "causative-passive": "まわさせられます"
+      readings:
+        "causative": "mawasasemasu"
+        "causative-passive": "mawasaseraremasu"
+    - word: "ja-2255"
+      forms:
+        "causative": "うごかせます"
+        "causative-passive": "うごかせられます"
+      readings:
+        "causative": "ugokasemasu"
+        "causative-passive": "ugokaseraremasu"
+    - word: "ja-2256"
+      forms:
+        "causative": "うごかさせます"
+        "causative-passive": "うごかさせられます"
+      readings:
+        "causative": "ugokasasemasu"
+        "causative-passive": "ugokasaseraremasu"
+    - word: "ja-2257"
+      forms:
+        "causative": "のこらせます"
+        "causative-passive": "のこらせられます"
+      readings:
+        "causative": "nokorasemasu"
+        "causative-passive": "nokoraseraremasu"
+    - word: "ja-2258"
+      forms:
+        "causative": "のこさせます"
+        "causative-passive": "のこさせられます"
+      readings:
+        "causative": "nokosasemasu"
+        "causative-passive": "nokosaseraremasu"
+    - word: "ja-2259"
+      forms:
+        "causative": "あつまらせます"
+        "causative-passive": "あつまらせられます"
+      readings:
+        "causative": "atsumarasemasu"
+        "causative-passive": "atsumaraseraremasu"
+    - word: "ja-2260"
+      forms:
+        "causative": "あつめさせます"
+        "causative-passive": "あつめさせられます"
+      readings:
+        "causative": "atsumesasemasu"
+        "causative-passive": "atsumesaseraremasu"
+    - word: "ja-2261"
+      forms:
+        "causative": "わけさせます"
+        "causative-passive": "わけさせられます"
+      readings:
+        "causative": "wakesasemasu"
+        "causative-passive": "wakesaseraremasu"
+    - word: "ja-2262"
+      forms:
+        "causative": "くらべさせます"
+        "causative-passive": "くらべさせられます"
+      readings:
+        "causative": "kurabesasemasu"
+        "causative-passive": "kurabesaseraremasu"
+    - word: "ja-2263"
+      forms:
+        "causative": "かくれさせます"
+        "causative-passive": "かくれさせられます"
+      readings:
+        "causative": "kakuresasemasu"
+        "causative-passive": "kakuresaseraremasu"
+    - word: "ja-2264"
+      forms:
+        "causative": "かくさせます"
+        "causative-passive": "かくさせられます"
+      readings:
+        "causative": "kakusasemasu"
+        "causative-passive": "kakusaseraremasu"
+    - word: "ja-2265"
+      forms:
+        "causative": "みつからせます"
+        "causative-passive": "みつからせられます"
+      readings:
+        "causative": "mitsukarasemasu"
+        "causative-passive": "mitsukaraseraremasu"
+    - word: "ja-2266"
+      forms:
+        "causative": "みつけさせます"
+        "causative-passive": "みつけさせられます"
+      readings:
+        "causative": "mitsukesasemasu"
+        "causative-passive": "mitsukesaseraremasu"
+    - word: "ja-2267"
+      forms:
+        "causative": "ふえさせます"
+        "causative-passive": "ふえさせられます"
+      readings:
+        "causative": "fuesasemasu"
+        "causative-passive": "fuesaseraremasu"
+    - word: "ja-2268"
+      forms:
+        "causative": "へらせます"
+        "causative-passive": "へらせられます"
+      readings:
+        "causative": "herasemasu"
+        "causative-passive": "heraseraremasu"
+    - word: "ja-2269"
+      forms:
+        "causative": "そだてさせます"
+        "causative-passive": "そだてさせられます"
+      readings:
+        "causative": "sodatesasemasu"
+        "causative-passive": "sodatesaseraremasu"
+    - word: "ja-2270"
+      forms:
+        "causative": "そだたせます"
+        "causative-passive": "そだたせられます"
+      readings:
+        "causative": "sodatasemasu"
+        "causative-passive": "sodataseraremasu"
+    - word: "ja-2271"
+      forms:
+        "causative": "うまれさせます"
+        "causative-passive": "うまれさせられます"
+      readings:
+        "causative": "umaresasemasu"
+        "causative-passive": "umaresaseraremasu"
+    - word: "ja-2272"
+      forms:
+        "causative": "いきさせます"
+        "causative-passive": "いきさせられます"
+      readings:
+        "causative": "ikisasemasu"
+        "causative-passive": "ikisaseraremasu"
+    - word: "ja-2273"
+      forms:
+        "causative": "たのしませます"
+        "causative-passive": "たのしませられます"
+      readings:
+        "causative": "tanoshimasemasu"
+        "causative-passive": "tanoshimaseraremasu"
+    - word: "ja-2274"
+      forms:
+        "causative": "あたらせます"
+        "causative-passive": "あたらせられます"
+      readings:
+        "causative": "atarasemasu"
+        "causative-passive": "ataraseraremasu"
+    - word: "ja-2275"
+      forms:
+        "causative": "はじまらせます"
+        "causative-passive": "はじまらせられます"
+      readings:
+        "causative": "hajimarasemasu"
+        "causative-passive": "hajimaraseraremasu"
+    - word: "ja-2276"
+      forms:
+        "causative": "さわらせます"
+        "causative-passive": "さわらせられます"
+      readings:
+        "causative": "sawarasemasu"
+        "causative-passive": "sawaraseraremasu"
+    - word: "ja-2320"
+      forms:
+        "causative": "つながらせます"
+        "causative-passive": "つながらせられます"
+      readings:
+        "causative": "tsunagarasemasu"
+        "causative-passive": "tsunagaraseraremasu"
+    - word: "ja-2321"
+      forms:
+        "causative": "つながせます"
+        "causative-passive": "つながせられます"
+      readings:
+        "causative": "tsunagasemasu"
+        "causative-passive": "tsunagaseraremasu"
+    - word: "ja-2322"
+      forms:
+        "causative": "かけさせます"
+        "causative-passive": "かけさせられます"
+      readings:
+        "causative": "kakesasemasu"
+        "causative-passive": "kakesaseraremasu"
+    - word: "ja-2323"
+      forms:
+        "causative": "うけとらせます"
+        "causative-passive": "うけとらせられます"
+      readings:
+        "causative": "uketorasemasu"
+        "causative-passive": "uketoraseraremasu"
+    - word: "ja-2364"
+      forms:
+        "causative": "のりおくれさせます"
+        "causative-passive": "のりおくれさせられます"
+      readings:
+        "causative": "noriokuresasemasu"
+        "causative-passive": "noriokuresaseraremasu"
+    - word: "ja-2365"
+      forms:
+        "causative": "のりかえさせます"
+        "causative-passive": "のりかえさせられます"
+      readings:
+        "causative": "norikaesasemasu"
+        "causative-passive": "norikaesaseraremasu"
+    - word: "ja-2407"
+      forms:
+        "causative": "たちよらせます"
+        "causative-passive": "たちよらせられます"
+      readings:
+        "causative": "tachiyorasemasu"
+        "causative-passive": "tachiyoraseraremasu"
+    - word: "ja-2470"
+      forms:
+        "causative": "さかせます"
+        "causative-passive": "さかせられます"
+      readings:
+        "causative": "sakasemasu"
+        "causative-passive": "sakaseraremasu"
+    - word: "ja-2471"
+      forms:
+        "causative": "ちらせます"
+        "causative-passive": "ちらせられます"
+      readings:
+        "causative": "chirasemasu"
+        "causative-passive": "chiraseraremasu"
+    - word: "ja-2472"
+      forms:
+        "causative": "しげらせます"
+        "causative-passive": "しげらせられます"
+      readings:
+        "causative": "shigerasemasu"
+        "causative-passive": "shigeraseraremasu"
+    - word: "ja-2473"
+      forms:
+        "causative": "かれさせます"
+        "causative-passive": "かれさせられます"
+      readings:
+        "causative": "karesasemasu"
+        "causative-passive": "karesaseraremasu"
+    - word: "ja-2600"
+      forms:
+        "causative": "まかせさせます"
+        "causative-passive": "まかせさせられます"
+      readings:
+        "causative": "makasesasemasu"
+        "causative-passive": "makasesaseraremasu"
+    - word: "ja-2601"
+      forms:
+        "causative": "ひきうけさせます"
+        "causative-passive": "ひきうけさせられます"
+      readings:
+        "causative": "hikiukesasemasu"
+        "causative-passive": "hikiukesaseraremasu"
+    - word: "ja-2602"
+      forms:
+        "causative": "こなさせます"
+        "causative-passive": "こなさせられます"
+      readings:
+        "causative": "konasasemasu"
+        "causative-passive": "konasaseraremasu"
+    - word: "ja-2603"
+      forms:
+        "causative": "はげませます"
+        "causative-passive": "はげませられます"
+      readings:
+        "causative": "hagemasemasu"
+        "causative-passive": "hagemaseraremasu"
+    - word: "ja-2604"
+      forms:
+        "causative": "てがけさせます"
+        "causative-passive": "てがけさせられます"
+      readings:
+        "causative": "tegakesasemasu"
+        "causative-passive": "tegakesaseraremasu"
+    - word: "ja-2605"
+      forms:
+        "causative": "しめきらせます"
+        "causative-passive": "しめきらせられます"
+      readings:
+        "causative": "shimekirasemasu"
+        "causative-passive": "shimekiraseraremasu"
+    - word: "ja-2606"
+      forms:
+        "causative": "まにあわせさせます"
+        "causative-passive": "まにあわせさせられます"
+      readings:
+        "causative": "maniawasesasemasu"
+        "causative-passive": "maniawasesaseraremasu"
+    - word: "ja-2716"
+      forms:
+        "causative": "かたよらせます"
+        "causative-passive": "かたよらせられます"
+      readings:
+        "causative": "katayorasemasu"
+        "causative-passive": "katayoraseraremasu"
+    - word: "ja-2768"
+      forms:
+        "causative": "おどろかせます"
+        "causative-passive": "おどろかせられます"
+      readings:
+        "causative": "odorokasemasu"
+        "causative-passive": "odorokaseraremasu"
+    - word: "ja-2769"
+      forms:
+        "causative": "よろこばせます"
+        "causative-passive": "よろこばせられます"
+      readings:
+        "causative": "yorokobasemasu"
+        "causative-passive": "yorokobaseraremasu"
+    - word: "ja-2770"
+      forms:
+        "causative": "かなしませます"
+        "causative-passive": "かなしませられます"
+      readings:
+        "causative": "kanashimasemasu"
+        "causative-passive": "kanashimaseraremasu"
+    - word: "ja-2771"
+      forms:
+        "causative": "なやませます"
+        "causative-passive": "なやませられます"
+      readings:
+        "causative": "nayamasemasu"
+        "causative-passive": "nayamaseraremasu"
+    - word: "ja-2772"
+      forms:
+        "causative": "あわてさせます"
+        "causative-passive": "あわてさせられます"
+      readings:
+        "causative": "awatesasemasu"
+        "causative-passive": "awatesaseraremasu"
+    - word: "ja-2773"
+      forms:
+        "causative": "あせらせます"
+        "causative-passive": "あせらせられます"
+      readings:
+        "causative": "aserasemasu"
+        "causative-passive": "aseraseraremasu"
+    - word: "ja-2774"
+      forms:
+        "causative": "おちつかせます"
+        "causative-passive": "おちつかせられます"
+      readings:
+        "causative": "ochitsukasemasu"
+        "causative-passive": "ochitsukaseraremasu"
+    - word: "ja-2794"
+      forms:
+        "causative": "きらわせます"
+        "causative-passive": "きらわせられます"
+      readings:
+        "causative": "kirawasemasu"
+        "causative-passive": "kirawaseraremasu"
+    - word: "ja-2795"
+      forms:
+        "causative": "あいさせます"
+        "causative-passive": "あいさせられます"
+      readings:
+        "causative": "aisasemasu"
+        "causative-passive": "aisaseraremasu"
+    - word: "ja-2796"
+      forms:
+        "causative": "にくませます"
+        "causative-passive": "にくませられます"
+      readings:
+        "causative": "nikumasemasu"
+        "causative-passive": "nikumaseraremasu"
+    - word: "ja-2797"
+      forms:
+        "causative": "ねたませます"
+        "causative-passive": "ねたませられます"
+      readings:
+        "causative": "netamasemasu"
+        "causative-passive": "netamaseraremasu"
+    - word: "ja-2798"
+      forms:
+        "causative": "うらませます"
+        "causative-passive": "うらませられます"
+      readings:
+        "causative": "uramasemasu"
+        "causative-passive": "uramaseraremasu"
+    - word: "ja-2799"
+      forms:
+        "causative": "なつかしませます"
+        "causative-passive": "なつかしませられます"
+      readings:
+        "causative": "natsukashimasemasu"
+        "causative-passive": "natsukashimaseraremasu"
+    - word: "ja-2800"
+      forms:
+        "causative": "いやがらせます"
+        "causative-passive": "いやがらせられます"
+      readings:
+        "causative": "iyagarasemasu"
+        "causative-passive": "iyagaraseraremasu"
+    - word: "ja-2801"
+      forms:
+        "causative": "こらえさせます"
+        "causative-passive": "こらえさせられます"
+      readings:
+        "causative": "koraesasemasu"
+        "causative-passive": "koraesaseraremasu"
+    - word: "ja-2803"
+      forms:
+        "causative": "はずかしがらせます"
+        "causative-passive": "はずかしがらせられます"
+      readings:
+        "causative": "hazukashigarasemasu"
+        "causative-passive": "hazukashigaraseraremasu"
+    - word: "ja-2806"
+      forms:
+        "causative": "かんじさせます"
+        "causative-passive": "かんじさせられます"
+      readings:
+        "causative": "kanjisasemasu"
+        "causative-passive": "kanjisaseraremasu"
+    - word: "ja-2812"
+      forms:
+        "causative": "さびしがらせます"
+        "causative-passive": "さびしがらせられます"
+      readings:
+        "causative": "sabishigarasemasu"
+        "causative-passive": "sabishigaraseraremasu"
+    - word: "ja-2876"
+      forms:
+        "causative": "かたらせます"
+        "causative-passive": "かたらせられます"
+      readings:
+        "causative": "katarasemasu"
+        "causative-passive": "kataraseraremasu"
+    - word: "ja-2877"
+      forms:
+        "causative": "ひろまらせます"
+        "causative-passive": "ひろまらせられます"
+      readings:
+        "causative": "hiromarasemasu"
+        "causative-passive": "hiromaraseraremasu"
+    - word: "ja-2925"
+      forms:
+        "causative": "あずけさせます"
+        "causative-passive": "あずけさせられます"
+      readings:
+        "causative": "azukesasemasu"
+        "causative-passive": "azukesaseraremasu"
+    - word: "ja-2926"
+      forms:
+        "causative": "あずからせます"
+        "causative-passive": "あずからせられます"
+      readings:
+        "causative": "azukarasemasu"
+        "causative-passive": "azukaraseraremasu"
+    - word: "ja-2944"
+      forms:
+        "causative": "めぐらせます"
+        "causative-passive": "めぐらせられます"
+      readings:
+        "causative": "megurasemasu"
+        "causative-passive": "meguraseraremasu"
+    - word: "ja-2945"
+      forms:
+        "causative": "おとずれさせます"
+        "causative-passive": "おとずれさせられます"
+      readings:
+        "causative": "otozuresasemasu"
+        "causative-passive": "otozuresaseraremasu"
+    - word: "ja-2982"
+      forms:
+        "causative": "もうしこませます"
+        "causative-passive": "もうしこませられます"
+      readings:
+        "causative": "moushikomasemasu"
+        "causative-passive": "moushikomaseraremasu"
+    - word: "ja-3062"
+      forms:
+        "causative": "とどけでさせます"
+        "causative-passive": "とどけでさせられます"
+      readings:
+        "causative": "todokedesasemasu"
+        "causative-passive": "todokedesaseraremasu"
+    - word: "ja-3140"
+      forms:
+        "causative": "つくりださせます"
+        "causative-passive": "つくりださせられます"
+      readings:
+        "causative": "tsukuridasasemasu"
+        "causative-passive": "tsukuridasaseraremasu"
+    - word: "ja-3195"
+      forms:
+        "causative": "めざさせます"
+        "causative-passive": "めざさせられます"
+      readings:
+        "causative": "mezasasemasu"
+        "causative-passive": "mezasaseraremasu"
+    - word: "ja-3294"
+      forms:
+        "causative": "きをつかわせます"
+        "causative-passive": "きをつかわせられます"
+      readings:
+        "causative": "kiotsukawasemasu"
+        "causative-passive": "kiotsukawaseraremasu"
+    - word: "ja-3309"
+      forms:
+        "causative": "ゆずらせます"
+        "causative-passive": "ゆずらせられます"
+      readings:
+        "causative": "yuzurasemasu"
+        "causative-passive": "yuzuraseraremasu"
+    - word: "ja-3310"
+      forms:
+        "causative": "ゆずりあわせます"
+        "causative-passive": "ゆずりあわせられます"
+      readings:
+        "causative": "yuzuriawasemasu"
+        "causative-passive": "yuzuriawaseraremasu"
+    - word: "ja-3311"
+      forms:
+        "causative": "ならばせます"
+        "causative-passive": "ならばせられます"
+      readings:
+        "causative": "narabasemasu"
+        "causative-passive": "narabaseraremasu"
+    - word: "ja-3319"
+      forms:
+        "causative": "もてなさせます"
+        "causative-passive": "もてなさせられます"
+      readings:
+        "causative": "motenasasemasu"
+        "causative-passive": "motenasaseraremasu"
+    - word: "ja-3320"
+      forms:
+        "causative": "まねかせます"
+        "causative-passive": "まねかせられます"
+      readings:
+        "causative": "manekasemasu"
+        "causative-passive": "manekaseraremasu"
+    - word: "ja-3321"
+      forms:
+        "causative": "つつしませます"
+        "causative-passive": "つつしませられます"
+      readings:
+        "causative": "tsutsushimasemasu"
+        "causative-passive": "tsutsushimaseraremasu"
+    - word: "ja-3322"
+      forms:
+        "causative": "いましめさせます"
+        "causative-passive": "いましめさせられます"
+      readings:
+        "causative": "imashimesasemasu"
+        "causative-passive": "imashimesaseraremasu"
+    - word: "ja-3383"
+      forms:
+        "causative": "へらさせます"
+        "causative-passive": "へらさせられます"
+      readings:
+        "causative": "herasasemasu"
+        "causative-passive": "herasaseraremasu"
+    - word: "ja-3384"
+      forms:
+        "causative": "ふやさせます"
+        "causative-passive": "ふやさせられます"
+      readings:
+        "causative": "fuyasasemasu"
+        "causative-passive": "fuyasaseraremasu"
+    - word: "ja-3385"
+      forms:
+        "causative": "こわさせます"
+        "causative-passive": "こわさせられます"
+      readings:
+        "causative": "kowasasemasu"
+        "causative-passive": "kowasaseraremasu"
+    - word: "ja-3386"
+      forms:
+        "causative": "こわれさせます"
+        "causative-passive": "こわれさせられます"
+      readings:
+        "causative": "kowaresasemasu"
+        "causative-passive": "kowaresaseraremasu"
+    - word: "ja-3389"
+      forms:
+        "causative": "たもたせます"
+        "causative-passive": "たもたせられます"
+      readings:
+        "causative": "tamotasemasu"
+        "causative-passive": "tamotaseraremasu"
+    - word: "ja-3390"
+      forms:
+        "causative": "さけさせます"
+        "causative-passive": "さけさせられます"
+      readings:
+        "causative": "sakesasemasu"
+        "causative-passive": "sakesaseraremasu"
+    - word: "ja-3434"
+      forms:
+        "causative": "えんじさせます"
+        "causative-passive": "えんじさせられます"
+      readings:
+        "causative": "enjisasemasu"
+        "causative-passive": "enjisaseraremasu"
+    - word: "ja-3452"
+      forms:
+        "causative": "なかせます"
+        "causative-passive": "なかせられます"
+      readings:
+        "causative": "nakasemasu"
+        "causative-passive": "nakaseraremasu"
+    - word: "ja-3564"
+      forms:
+        "causative": "たたかわせます"
+        "causative-passive": "たたかわせられます"
+      readings:
+        "causative": "tatakawasemasu"
+        "causative-passive": "tatakawaseraremasu"
+    - word: "ja-3568"
+      forms:
+        "causative": "ほろびさせます"
+        "causative-passive": "ほろびさせられます"
+      readings:
+        "causative": "horobisasemasu"
+        "causative-passive": "horobisaseraremasu"
+    - word: "ja-3569"
+      forms:
+        "causative": "ほろぼさせます"
+        "causative-passive": "ほろぼさせられます"
+      readings:
+        "causative": "horobosasemasu"
+        "causative-passive": "horobosaseraremasu"
+    - word: "ja-3571"
+      forms:
+        "causative": "さかえさせます"
+        "causative-passive": "さかえさせられます"
+      readings:
+        "causative": "sakaesasemasu"
+        "causative-passive": "sakaesaseraremasu"
+    - word: "ja-3611"
+      forms:
+        "causative": "いのらせます"
+        "causative-passive": "いのらせられます"
+      readings:
+        "causative": "inorasemasu"
+        "causative-passive": "inoraseraremasu"
+    - word: "ja-3612"
+      forms:
+        "causative": "おがませます"
+        "causative-passive": "おがませられます"
+      readings:
+        "causative": "ogamasemasu"
+        "causative-passive": "ogamaseraremasu"
+    - word: "ja-3690"
+      forms:
+        "causative": "いわわせます"
+        "causative-passive": "いわわせられます"
+      readings:
+        "causative": "iwawasemasu"
+        "causative-passive": "iwawaseraremasu"
+    - word: "ja-3691"
+      forms:
+        "causative": "にぎわわせます"
+        "causative-passive": "にぎわわせられます"
+      readings:
+        "causative": "nigiwawasemasu"
+        "causative-passive": "nigiwawaseraremasu"
+    - word: "ja-3779"
+      forms:
+        "causative": "うちとけさせます"
+        "causative-passive": "うちとけさせられます"
+      readings:
+        "causative": "uchitokesasemasu"
+        "causative-passive": "uchitokesaseraremasu"
+    - word: "ja-3780"
+      forms:
+        "causative": "しんじあわせます"
+        "causative-passive": "しんじあわせられます"
+      readings:
+        "causative": "shinjiawasemasu"
+        "causative-passive": "shinjiawaseraremasu"
+    - word: "ja-3781"
+      forms:
+        "causative": "たよらせます"
+        "causative-passive": "たよらせられます"
+      readings:
+        "causative": "tayorasemasu"
+        "causative-passive": "tayoraseraremasu"
+    - word: "ja-3782"
+      forms:
+        "causative": "はげまさせます"
+        "causative-passive": "はげまさせられます"
+      readings:
+        "causative": "hagemasasemasu"
+        "causative-passive": "hagemasaseraremasu"
+    - word: "ja-3783"
+      forms:
+        "causative": "なぐさめさせます"
+        "causative-passive": "なぐさめさせられます"
+      readings:
+        "causative": "nagusamesasemasu"
+        "causative-passive": "nagusamesaseraremasu"
+    - word: "ja-3784"
+      forms:
+        "causative": "かばわせます"
+        "causative-passive": "かばわせられます"
+      readings:
+        "causative": "kabawasemasu"
+        "causative-passive": "kabawaseraremasu"
+    - word: "ja-3785"
+      forms:
+        "causative": "ささえさせます"
+        "causative-passive": "ささえさせられます"
+      readings:
+        "causative": "sasaesasemasu"
+        "causative-passive": "sasaesaseraremasu"
+    - word: "ja-3786"
+      forms:
+        "causative": "たすけあわせます"
+        "causative-passive": "たすけあわせられます"
+      readings:
+        "causative": "tasukeawasemasu"
+        "causative-passive": "tasukeawaseraremasu"
+    - word: "ja-3790"
+      forms:
+        "causative": "しりあわせます"
+        "causative-passive": "しりあわせられます"
+      readings:
+        "causative": "shiriawasemasu"
+        "causative-passive": "shiriawaseraremasu"
+    - word: "ja-3791"
+      forms:
+        "causative": "であわせます"
+        "causative-passive": "であわせられます"
+      readings:
+        "causative": "deawasemasu"
+        "causative-passive": "deawaseraremasu"
+    - word: "ja-3833"
+      forms:
+        "causative": "くらさせます"
+        "causative-passive": "くらさせられます"
+      readings:
+        "causative": "kurasasemasu"
+        "causative-passive": "kurasaseraremasu"
+    - word: "ja-3857"
+      forms:
+        "causative": "かさせます"
+        "causative-passive": "かさせられます"
+      readings:
+        "causative": "kasasemasu"
+        "causative-passive": "kasaseraremasu"
+    - word: "ja-3887"
+      forms:
+        "causative": "ゆれさせます"
+        "causative-passive": "ゆれさせられます"
+      readings:
+        "causative": "yuresasemasu"
+        "causative-passive": "yuresaseraremasu"
+    - word: "ja-3898"
+      forms:
+        "causative": "すくわせます"
+        "causative-passive": "すくわせられます"
+      readings:
+        "causative": "sukuwasemasu"
+        "causative-passive": "sukuwaseraremasu"
+    - word: "ja-3914"
+      forms:
+        "causative": "にげさせます"
+        "causative-passive": "にげさせられます"
+      readings:
+        "causative": "nigesasemasu"
+        "causative-passive": "nigesaseraremasu"
+    - word: "ja-3915"
+      forms:
+        "causative": "にがさせます"
+        "causative-passive": "にがさせられます"
+      readings:
+        "causative": "nigasasemasu"
+        "causative-passive": "nigasaseraremasu"
+    - word: "ja-3963"
+      forms:
+        "causative": "きんじさせます"
+        "causative-passive": "きんじさせられます"
+      readings:
+        "causative": "kinjisasemasu"
+        "causative-passive": "kinjisaseraremasu"
+    - word: "ja-3965"
+      forms:
+        "causative": "うったえさせます"
+        "causative-passive": "うったえさせられます"
+      readings:
+        "causative": "uttaesasemasu"
+        "causative-passive": "uttaesaseraremasu"
+    - word: "ja-4046"
+      forms:
+        "causative": "おそわせます"
+        "causative-passive": "おそわせられます"
+      readings:
+        "causative": "osowasemasu"
+        "causative-passive": "osowaseraremasu"
+    - word: "ja-4047"
+      forms:
+        "causative": "おさえさせます"
+        "causative-passive": "おさえさせられます"
+      readings:
+        "causative": "osaesasemasu"
+        "causative-passive": "osaesaseraremasu"
+    - word: "ja-4048"
+      forms:
+        "causative": "おさまらせます"
+        "causative-passive": "おさまらせられます"
+      readings:
+        "causative": "osamarasemasu"
+        "causative-passive": "osamaraseraremasu"
+    - word: "ja-4049"
+      forms:
+        "causative": "おさめさせます"
+        "causative-passive": "おさめさせられます"
+      readings:
+        "causative": "osamesasemasu"
+        "causative-passive": "osamesaseraremasu"
+    - word: "ja-4050"
+      forms:
+        "causative": "おぼれさせます"
+        "causative-passive": "おぼれさせられます"
+      readings:
+        "causative": "oboresasemasu"
+        "causative-passive": "oboresaseraremasu"
+    - word: "ja-4051"
+      forms:
+        "causative": "おもいださせます"
+        "causative-passive": "おもいださせられます"
+      readings:
+        "causative": "omoidasasemasu"
+        "causative-passive": "omoidasaseraremasu"
+    - word: "ja-4052"
+      forms:
+        "causative": "おもいつかせます"
+        "causative-passive": "おもいつかせられます"
+      readings:
+        "causative": "omoitsukasemasu"
+        "causative-passive": "omoitsukaseraremasu"
+    - word: "ja-4053"
+      forms:
+        "causative": "かかえさせます"
+        "causative-passive": "かかえさせられます"
+      readings:
+        "causative": "kakaesasemasu"
+        "causative-passive": "kakaesaseraremasu"
+    - word: "ja-4054"
+      forms:
+        "causative": "かさならせます"
+        "causative-passive": "かさならせられます"
+      readings:
+        "causative": "kasanarasemasu"
+        "causative-passive": "kasanaraseraremasu"
+    - word: "ja-4055"
+      forms:
+        "causative": "かさねさせます"
+        "causative-passive": "かさねさせられます"
+      readings:
+        "causative": "kasanesasemasu"
+        "causative-passive": "kasanesaseraremasu"
+    - word: "ja-4056"
+      forms:
+        "causative": "かたむかせます"
+        "causative-passive": "かたむかせられます"
+      readings:
+        "causative": "katamukasemasu"
+        "causative-passive": "katamukaseraremasu"
+    - word: "ja-4057"
+      forms:
+        "causative": "かなわせます"
+        "causative-passive": "かなわせられます"
+      readings:
+        "causative": "kanawasemasu"
+        "causative-passive": "kanawaseraremasu"
+    - word: "ja-4058"
+      forms:
+        "causative": "かぶせさせます"
+        "causative-passive": "かぶせさせられます"
+      readings:
+        "causative": "kabusesasemasu"
+        "causative-passive": "kabusesaseraremasu"
+    - word: "ja-4059"
+      forms:
+        "causative": "きづかせます"
+        "causative-passive": "きづかせられます"
+      readings:
+        "causative": "kizukasemasu"
+        "causative-passive": "kizukaseraremasu"
+    - word: "ja-4060"
+      forms:
+        "causative": "くずれさせます"
+        "causative-passive": "くずれさせられます"
+      readings:
+        "causative": "kuzuresasemasu"
+        "causative-passive": "kuzuresaseraremasu"
+    - word: "ja-4061"
+      forms:
+        "causative": "くたびれさせます"
+        "causative-passive": "くたびれさせられます"
+      readings:
+        "causative": "kutabiresasemasu"
+        "causative-passive": "kutabiresaseraremasu"
+    - word: "ja-4062"
+      forms:
+        "causative": "くっつかせます"
+        "causative-passive": "くっつかせられます"
+      readings:
+        "causative": "kuttsukasemasu"
+        "causative-passive": "kuttsukaseraremasu"
+    - word: "ja-4063"
+      forms:
+        "causative": "くっつけさせます"
+        "causative-passive": "くっつけさせられます"
+      readings:
+        "causative": "kuttsukesasemasu"
+        "causative-passive": "kuttsukesaseraremasu"
+    - word: "ja-4064"
+      forms:
+        "causative": "ころがらせます"
+        "causative-passive": "ころがらせられます"
+      readings:
+        "causative": "korogarasemasu"
+        "causative-passive": "korogaraseraremasu"
+    - word: "ja-4065"
+      forms:
+        "causative": "ころさせます"
+        "causative-passive": "ころさせられます"
+      readings:
+        "causative": "korosasemasu"
+        "causative-passive": "korosaseraremasu"
+    - word: "ja-4066"
+      forms:
+        "causative": "こめさせます"
+        "causative-passive": "こめさせられます"
+      readings:
+        "causative": "komesasemasu"
+        "causative-passive": "komesaseraremasu"
+    - word: "ja-4067"
+      forms:
+        "causative": "さからわせます"
+        "causative-passive": "さからわせられます"
+      readings:
+        "causative": "sakarawasemasu"
+        "causative-passive": "sakarawaseraremasu"
+    - word: "ja-4068"
+      forms:
+        "causative": "ささせます"
+        "causative-passive": "ささせられます"
+      readings:
+        "causative": "sasasemasu"
+        "causative-passive": "sasaseraremasu"
+    - word: "ja-4069"
+      forms:
+        "causative": "さびさせます"
+        "causative-passive": "さびさせられます"
+      readings:
+        "causative": "sabisasemasu"
+        "causative-passive": "sabisaseraremasu"
+    - word: "ja-4070"
+      forms:
+        "causative": "しずませます"
+        "causative-passive": "しずませられます"
+      readings:
+        "causative": "shizumasemasu"
+        "causative-passive": "shizumaseraremasu"
+    - word: "ja-4071"
+      forms:
+        "causative": "しずめさせます"
+        "causative-passive": "しずめさせられます"
+      readings:
+        "causative": "shizumesasemasu"
+        "causative-passive": "shizumesaseraremasu"
+    - word: "ja-4072"
+      forms:
+        "causative": "したがわせます"
+        "causative-passive": "したがわせられます"
+      readings:
+        "causative": "shitagawasemasu"
+        "causative-passive": "shitagawaseraremasu"
+    - word: "ja-4073"
+      forms:
+        "causative": "しばらせます"
+        "causative-passive": "しばらせられます"
+      readings:
+        "causative": "shibarasemasu"
+        "causative-passive": "shibaraseraremasu"
+    - word: "ja-4074"
+      forms:
+        "causative": "しめさせます"
+        "causative-passive": "しめさせられます"
+      readings:
+        "causative": "shimesasemasu"
+        "causative-passive": "shimesaseraremasu"
+    - word: "ja-4075"
+      forms:
+        "causative": "すべらせます"
+        "causative-passive": "すべらせられます"
+      readings:
+        "causative": "suberasemasu"
+        "causative-passive": "suberaseraremasu"
+    - word: "ja-4076"
+      forms:
+        "causative": "すませさせます"
+        "causative-passive": "すませさせられます"
+      readings:
+        "causative": "sumasesasemasu"
+        "causative-passive": "sumasesaseraremasu"
+    - word: "ja-4077"
+      forms:
+        "causative": "すませます"
+        "causative-passive": "すませられます"
+      readings:
+        "causative": "sumasemasu"
+        "causative-passive": "sumaseraremasu"
+    - word: "ja-4078"
+      forms:
+        "causative": "ずれさせます"
+        "causative-passive": "ずれさせられます"
+      readings:
+        "causative": "zuresasemasu"
+        "causative-passive": "zuresaseraremasu"
+    - word: "ja-4079"
+      forms:
+        "causative": "せまらせます"
+        "causative-passive": "せまらせられます"
+      readings:
+        "causative": "semarasemasu"
+        "causative-passive": "semaraseraremasu"
+    - word: "ja-4080"
+      forms:
+        "causative": "そなえさせます"
+        "causative-passive": "そなえさせられます"
+      readings:
+        "causative": "sonaesasemasu"
+        "causative-passive": "sonaesaseraremasu"
+    - word: "ja-4081"
+      forms:
+        "causative": "そまらせます"
+        "causative-passive": "そまらせられます"
+      readings:
+        "causative": "somarasemasu"
+        "causative-passive": "somaraseraremasu"
+    - word: "ja-4082"
+      forms:
+        "causative": "そめさせます"
+        "causative-passive": "そめさせられます"
+      readings:
+        "causative": "somesasemasu"
+        "causative-passive": "somesaseraremasu"
+    - word: "ja-4083"
+      forms:
+        "causative": "たえさせます"
+        "causative-passive": "たえさせられます"
+      readings:
+        "causative": "taesasemasu"
+        "causative-passive": "taesaseraremasu"
+    - word: "ja-4084"
+      forms:
+        "causative": "たしかめさせます"
+        "causative-passive": "たしかめさせられます"
+      readings:
+        "causative": "tashikamesasemasu"
+        "causative-passive": "tashikamesaseraremasu"
+    - word: "ja-4085"
+      forms:
+        "causative": "たまらせます"
+        "causative-passive": "たまらせられます"
+      readings:
+        "causative": "tamarasemasu"
+        "causative-passive": "tamaraseraremasu"
+    - word: "ja-4086"
+      forms:
+        "causative": "ためさせます"
+        "causative-passive": "ためさせられます"
+      readings:
+        "causative": "tamesasemasu"
+        "causative-passive": "tamesaseraremasu"
+    - word: "ja-4087"
+      forms:
+        "causative": "ちぢませます"
+        "causative-passive": "ちぢませられます"
+      readings:
+        "causative": "chijimasemasu"
+        "causative-passive": "chijimaseraremasu"
+    - word: "ja-4088"
+      forms:
+        "causative": "ちぢめさせます"
+        "causative-passive": "ちぢめさせられます"
+      readings:
+        "causative": "chijimesasemasu"
+        "causative-passive": "chijimesaseraremasu"
+    - word: "ja-4089"
+      forms:
+        "causative": "つがせます"
+        "causative-passive": "つがせられます"
+      readings:
+        "causative": "tsugasemasu"
+        "causative-passive": "tsugaseraremasu"
+    - word: "ja-4090"
+      forms:
+        "causative": "つづかせます"
+        "causative-passive": "つづかせられます"
+      readings:
+        "causative": "tsuzukasemasu"
+        "causative-passive": "tsuzukaseraremasu"
+    - word: "ja-4091"
+      forms:
+        "causative": "つぶさせます"
+        "causative-passive": "つぶさせられます"
+      readings:
+        "causative": "tsubusasemasu"
+        "causative-passive": "tsubusaseraremasu"
+    - word: "ja-4092"
+      forms:
+        "causative": "つぶれさせます"
+        "causative-passive": "つぶれさせられます"
+      readings:
+        "causative": "tsuburesasemasu"
+        "causative-passive": "tsuburesaseraremasu"
+    - word: "ja-4093"
+      forms:
+        "causative": "てらさせます"
+        "causative-passive": "てらさせられます"
+      readings:
+        "causative": "terasasemasu"
+        "causative-passive": "terasaseraremasu"
+    - word: "ja-4094"
+      forms:
+        "causative": "とおさせます"
+        "causative-passive": "とおさせられます"
+      readings:
+        "causative": "toosasemasu"
+        "causative-passive": "toosaseraremasu"
+    - word: "ja-4095"
+      forms:
+        "causative": "とかさせます"
+        "causative-passive": "とかさせられます"
+      readings:
+        "causative": "tokasasemasu"
+        "causative-passive": "tokasaseraremasu"
+    - word: "ja-4096"
+      forms:
+        "causative": "とけさせます"
+        "causative-passive": "とけさせられます"
+      readings:
+        "causative": "tokesasemasu"
+        "causative-passive": "tokesaseraremasu"
+    - word: "ja-4097"
+      forms:
+        "causative": "ととのわせます"
+        "causative-passive": "ととのわせられます"
+      readings:
+        "causative": "totonowasemasu"
+        "causative-passive": "totonowaseraremasu"
+    - word: "ja-4098"
+      forms:
+        "causative": "ととのえさせます"
+        "causative-passive": "ととのえさせられます"
+      readings:
+        "causative": "totonoesasemasu"
+        "causative-passive": "totonoesaseraremasu"
+    - word: "ja-4099"
+      forms:
+        "causative": "とびこませます"
+        "causative-passive": "とびこませられます"
+      readings:
+        "causative": "tobikomasemasu"
+        "causative-passive": "tobikomaseraremasu"
+    - word: "ja-4100"
+      forms:
+        "causative": "ともなわせます"
+        "causative-passive": "ともなわせられます"
+      readings:
+        "causative": "tomonawasemasu"
+        "causative-passive": "tomonawaseraremasu"
+    - word: "ja-4101"
+      forms:
+        "causative": "とらえさせます"
+        "causative-passive": "とらえさせられます"
+      readings:
+        "causative": "toraesasemasu"
+        "causative-passive": "toraesaseraremasu"
+    - word: "ja-4102"
+      forms:
+        "causative": "とりあげさせます"
+        "causative-passive": "とりあげさせられます"
+      readings:
+        "causative": "toriagesasemasu"
+        "causative-passive": "toriagesaseraremasu"
+    - word: "ja-4103"
+      forms:
+        "causative": "とりださせます"
+        "causative-passive": "とりださせられます"
+      readings:
+        "causative": "toridasasemasu"
+        "causative-passive": "toridasaseraremasu"
+    - word: "ja-4104"
+      forms:
+        "causative": "とりのぞかせます"
+        "causative-passive": "とりのぞかせられます"
+      readings:
+        "causative": "torinozokasemasu"
+        "causative-passive": "torinozokaseraremasu"
+    - word: "ja-4105"
+      forms:
+        "causative": "ながさせます"
+        "causative-passive": "ながさせられます"
+      readings:
+        "causative": "nagasasemasu"
+        "causative-passive": "nagasaseraremasu"
+    - word: "ja-4185"
+      forms:
+        "causative": "みとめさせます"
+        "causative-passive": "みとめさせられます"
+      readings:
+        "causative": "mitomesasemasu"
+        "causative-passive": "mitomesaseraremasu"
+    - word: "ja-4186"
+      forms:
+        "causative": "うたがわせます"
+        "causative-passive": "うたがわせられます"
+      readings:
+        "causative": "utagawasemasu"
+        "causative-passive": "utagawaseraremasu"
+    - word: "ja-4187"
+      forms:
+        "causative": "しんじさせます"
+        "causative-passive": "しんじさせられます"
+      readings:
+        "causative": "shinjisasemasu"
+        "causative-passive": "shinjisaseraremasu"
+    - word: "ja-4192"
+      forms:
+        "causative": "ろんじさせます"
+        "causative-passive": "ろんじさせられます"
+      readings:
+        "causative": "ronjisasemasu"
+        "causative-passive": "ronjisaseraremasu"
+rules:
+  - id: "ja-rule-causative"
+    slots: ["causative"]
+    words:
+      - { word: "たべさせます", reading: "tabesasemasu" }
+      - { word: "いかせます", reading: "ikasemasu" }
+      - { word: "させます", reading: "sasemasu" }
+      - { word: "こさせます", reading: "kosasemasu" }
+  - id: "ja-rule-causative-passive"
+    slots: ["causative-passive"]
+    words:
+      - { word: "たべさせられます", reading: "tabesaseraremasu" }
+      - { word: "いかせられます", reading: "ikaseraremasu" }

@@ -1,0 +1,61 @@
+schema: 1
+id: "ja-en-grammar-plain-present-sentences"
+kind: "layer"
+core: "ja-grammar-plain-present-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Plain present and negative, in sentences"
+description: "Sentences in the plain present and the plain negative, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-4499":
+    native: "I drink coffee in the morning."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "たべる (taberu) means to eat." }
+      w2: { why: "みる (miru) means to see; to look at; to watch." }
+  "ja-4500":
+    native: "My friend watches television."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "のむ (nomu) means to drink." }
+      w2: { why: "きく (kiku) means to listen; to hear; to ask." }
+  "ja-4501":
+    native: "I do not eat fish."
+    notes:
+      "n1": "たべない (tabenai): the ichidan verb たべる (taberu) drops る (ru) and adds ない (nai)."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "のむ (nomu) means to drink." }
+      w2: { why: "みる (miru) means to see; to look at; to watch." }
+  "ja-4502":
+    native: "My father does not read books."
+    notes:
+      "n1": "よまない (yomanai): the godan verb よむ (yomu) changes む (mu) to ま (ma) and adds ない (nai)."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "かく (kaku) means to write." }
+      w2: { why: "きく (kiku) means to listen; to hear; to ask." }
+  "ja-4503":
+    native: "My mother does not talk with her friend."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "と": { meaning: "(with; and)" }
+    confusables:
+      w1: { why: "きく (kiku) means to listen; to hear; to ask." }
+      w2: { why: "あう (au) means to meet." }
+  "ja-4504":
+    native: "I go by bus."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "で": { meaning: "(at, in, by)" }
+    confusables:
+      w1: { why: "かえる (kaeru) means to return home; to go home." }
+      w2: { why: "くる (kuru) means to come." }

@@ -1,0 +1,95 @@
+schema: 1
+id: "ja-grammar-intention-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-4523"
+    target: "ともだちといこう。"
+    words: ["ともだち", "と", "いこう"]
+    reading: "tomodachi to ikou."
+    ipa: "tomodatɕi to ikoː"
+    pos: "phrase"
+    bases:
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "と", base: "と", reading: "to" }
+      - { word: "いこう", ref: "ja-0348" }
+    confusables:
+      - { id: "w1", ref: "ja-0349", kind: "word" }
+      - { id: "w2", ref: "ja-0350", kind: "word" }
+    rules: ["ja-rule-volitional"]
+  - id: "ja-4524"
+    target: "ここでまとう。"
+    words: ["ここ", "で", "まとう"]
+    reading: "koko de matou."
+    ipa: "koko de matoː"
+    pos: "phrase"
+    bases:
+      - { word: "ここ", ref: "ja-0554" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "まとう", ref: "ja-0358" }
+    confusables:
+      - { id: "w1", ref: "ja-0357", kind: "word" }
+      - { id: "w2", ref: "ja-1071", kind: "word" }
+    rules: ["ja-rule-volitional"]
+  - id: "ja-4525"
+    target: "あした、えいがをみるつもりです。"
+    words: ["あした", "えいが", "を", "みるつもりです"]
+    reading: "ashita, eiga o mirutsumoridesu."
+    ipa: "aɕita eːɡa o miɾɯtsɯmoɾidesɯ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "あした", ref: "ja-0513" }
+      - { word: "えいが", ref: "ja-1358" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "みるつもりです", ref: "ja-0343" }
+    confusables:
+      - { id: "w1", ref: "ja-0344", kind: "word" }
+      - { id: "w2", ref: "ja-0345", kind: "word" }
+    rules: ["ja-rule-tsumori"]
+  - id: "ja-4526"
+    target: "ともだちにあうつもりです。"
+    words: ["ともだち", "に", "あうつもりです"]
+    reading: "tomodachi ni autsumoridesu."
+    ipa: "tomodatɕi ni aɯtsɯmoɾidesɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "あうつもりです", ref: "ja-0357" }
+    confusables:
+      - { id: "w1", ref: "ja-0358", kind: "word" }
+      - { id: "w2", ref: "ja-0348", kind: "word" }
+    rules: ["ja-rule-tsumori"]
+  - id: "ja-4527"
+    target: "ごはんをたべよう。"
+    words: ["ごはん", "を", "たべよう"]
+    reading: "gohan o tabeyou."
+    ipa: "ɡohaɴ o tabejoː"
+    pos: "phrase"
+    bases:
+      - { word: "ごはん", ref: "ja-0074" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "たべよう", ref: "ja-0341" }
+    confusables:
+      - { id: "w1", ref: "ja-0342", kind: "word" }
+      - { id: "w2", ref: "ja-0364", kind: "word" }
+    rules: ["ja-rule-volitional"]
+  - id: "ja-4528"
+    target: "コーヒーをのむつもりです。"
+    words: ["コーヒー", "を", "のむつもりです"]
+    reading: "koohii o nomutsumoridesu."
+    ipa: "koːçiː o nomɯtsɯmoɾidesɯ"
+    pos: "phrase"
+    bases:
+      - { word: "コーヒー", ref: "ja-0849" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "のむつもりです", ref: "ja-0342" }
+    confusables:
+      - { id: "w1", ref: "ja-0341", kind: "word" }
+      - { id: "w2", ref: "ja-0356", kind: "word" }
+    rules: ["ja-rule-tsumori"]

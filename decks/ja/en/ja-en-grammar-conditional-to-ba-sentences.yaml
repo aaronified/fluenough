@@ -1,0 +1,56 @@
+schema: 1
+id: "ja-en-grammar-conditional-to-ba-sentences"
+kind: "layer"
+core: "ja-grammar-conditional-to-ba-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "If and when with と (to) and ば (ba), in sentences"
+description: "Sentences with と (to) and the ば (ba) form, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-4529":
+    native: "When I go to the station, I meet my friend."
+    bases:
+      "と": { meaning: "(when, if: what follows happens)" }
+      "に": { meaning: "(in, at, to)" }
+    confusables:
+      w1: { why: "かえる (kaeru) means to return home; to go home." }
+      w2: { why: "くる (kuru) means to come." }
+  "ja-4530":
+    native: "If you read it, you will understand."
+    notes:
+      "n1": "よめば (yomeba): む (mu) of よむ (yomu) changes to め (me) and ば (ba) is added."
+    confusables:
+      w1: { why: "かく (kaku) means to write." }
+      w2: { why: "きく (kiku) means to listen; to hear; to ask." }
+  "ja-4531":
+    native: "If you go by bus, it is cheap."
+    bases:
+      "で": { meaning: "(at, in, by)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "くる (kuru) means to come." }
+      w2: { why: "かえる (kaeru) means to return home; to go home." }
+  "ja-4532":
+    native: "When I take the medicine, I go to bed."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "と": { meaning: "(when, if: what follows happens)" }
+    confusables:
+      w1: { why: "たべる (taberu) means to eat." }
+      w2: { why: "つくる (tsukuru) means to make; to create." }
+  "ja-4533":
+    native: "If you wait here, the bus comes."
+    bases:
+      "で": { meaning: "(at, in, by)" }
+      "が": { meaning: "(marks the one who does the action)" }
+    confusables:
+      w1: { why: "いく (iku) means to go." }
+      w2: { why: "でる (deru) means to go out; to leave." }
+  "ja-4534":
+    native: "If you get up early, you eat breakfast."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "ねる (neru) means to sleep; to go to bed." }
+      w2: { why: "でる (deru) means to go out; to leave." }

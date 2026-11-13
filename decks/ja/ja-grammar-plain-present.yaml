@@ -1,0 +1,2658 @@
+schema: 1
+id: "ja-grammar-plain-present"
+part: "core"
+kind: "rules"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ja-0085"]
+  slots: ["plain-present", "nai-form"]
+  rows:
+    - word: "ja-1050"
+      forms:
+        "plain-present": "まがる"
+        "nai-form": "まがらない"
+      readings:
+        "plain-present": "magaru"
+        "nai-form": "magaranai"
+    - word: "ja-1060"
+      forms:
+        "plain-present": "わたる"
+        "nai-form": "わたらない"
+      readings:
+        "plain-present": "wataru"
+        "nai-form": "wataranai"
+    - word: "ja-1061"
+      forms:
+        "plain-present": "すすむ"
+        "nai-form": "すすまない"
+      readings:
+        "plain-present": "susumu"
+        "nai-form": "susumanai"
+    - word: "ja-1062"
+      forms:
+        "plain-present": "さがる"
+        "nai-form": "さがらない"
+      readings:
+        "plain-present": "sagaru"
+        "nai-form": "sagaranai"
+    - word: "ja-1070"
+      forms:
+        "plain-present": "まちがえる"
+        "nai-form": "まちがえない"
+      readings:
+        "plain-present": "machigaeru"
+        "nai-form": "machigaenai"
+    - word: "ja-1071"
+      forms:
+        "plain-present": "でる"
+        "nai-form": "でない"
+      readings:
+        "plain-present": "deru"
+        "nai-form": "denai"
+    - word: "ja-1078"
+      forms:
+        "plain-present": "むかう"
+        "nai-form": "むかわない"
+      readings:
+        "plain-present": "mukau"
+        "nai-form": "mukawanai"
+    - word: "ja-0341"
+      forms:
+        "plain-present": "たべる"
+        "nai-form": "たべない"
+      readings:
+        "plain-present": "taberu"
+        "nai-form": "tabenai"
+    - word: "ja-0342"
+      forms:
+        "plain-present": "のむ"
+        "nai-form": "のまない"
+      readings:
+        "plain-present": "nomu"
+        "nai-form": "nomanai"
+    - word: "ja-0343"
+      forms:
+        "plain-present": "みる"
+        "nai-form": "みない"
+      readings:
+        "plain-present": "miru"
+        "nai-form": "minai"
+    - word: "ja-0344"
+      forms:
+        "plain-present": "きく"
+        "nai-form": "きかない"
+      readings:
+        "plain-present": "kiku"
+        "nai-form": "kikanai"
+    - word: "ja-0345"
+      forms:
+        "plain-present": "よむ"
+        "nai-form": "よまない"
+      readings:
+        "plain-present": "yomu"
+        "nai-form": "yomanai"
+    - word: "ja-0346"
+      forms:
+        "plain-present": "かく"
+        "nai-form": "かかない"
+      readings:
+        "plain-present": "kaku"
+        "nai-form": "kakanai"
+    - word: "ja-0347"
+      forms:
+        "plain-present": "はなす"
+        "nai-form": "はなさない"
+      readings:
+        "plain-present": "hanasu"
+        "nai-form": "hanasanai"
+    - word: "ja-0348"
+      forms:
+        "plain-present": "いく"
+        "nai-form": "いかない"
+      readings:
+        "plain-present": "iku"
+        "nai-form": "ikanai"
+    - word: "ja-0349"
+      forms:
+        "plain-present": "くる"
+        "nai-form": "こない"
+      readings:
+        "plain-present": "kuru"
+        "nai-form": "konai"
+    - word: "ja-0350"
+      forms:
+        "plain-present": "かえる"
+        "nai-form": "かえらない"
+      readings:
+        "plain-present": "kaeru"
+        "nai-form": "kaeranai"
+    - word: "ja-0351"
+      forms:
+        "plain-present": "おきる"
+        "nai-form": "おきない"
+      readings:
+        "plain-present": "okiru"
+        "nai-form": "okinai"
+    - word: "ja-0352"
+      forms:
+        "plain-present": "ねる"
+        "nai-form": "ねない"
+      readings:
+        "plain-present": "neru"
+        "nai-form": "nenai"
+    - word: "ja-0353"
+      forms:
+        "plain-present": "はたらく"
+        "nai-form": "はたらかない"
+      readings:
+        "plain-present": "hataraku"
+        "nai-form": "hatarakanai"
+    - word: "ja-0354"
+      forms:
+        "plain-present": "やすむ"
+        "nai-form": "やすまない"
+      readings:
+        "plain-present": "yasumu"
+        "nai-form": "yasumanai"
+    - word: "ja-0355"
+      forms:
+        "plain-present": "はいる"
+        "nai-form": "はいらない"
+      readings:
+        "plain-present": "hairu"
+        "nai-form": "hairanai"
+    - word: "ja-0356"
+      forms:
+        "plain-present": "かう"
+        "nai-form": "かわない"
+      readings:
+        "plain-present": "kau"
+        "nai-form": "kawanai"
+    - word: "ja-0357"
+      forms:
+        "plain-present": "あう"
+        "nai-form": "あわない"
+      readings:
+        "plain-present": "au"
+        "nai-form": "awanai"
+    - word: "ja-0358"
+      forms:
+        "plain-present": "まつ"
+        "nai-form": "またない"
+      readings:
+        "plain-present": "matsu"
+        "nai-form": "matanai"
+    - word: "ja-0359"
+      forms:
+        "plain-present": "もつ"
+        "nai-form": "もたない"
+      readings:
+        "plain-present": "motsu"
+        "nai-form": "motanai"
+    - word: "ja-0360"
+      forms:
+        "plain-present": "あるく"
+        "nai-form": "あるかない"
+      readings:
+        "plain-present": "aruku"
+        "nai-form": "arukanai"
+    - word: "ja-0361"
+      forms:
+        "plain-present": "のる"
+        "nai-form": "のらない"
+      readings:
+        "plain-present": "noru"
+        "nai-form": "noranai"
+    - word: "ja-0362"
+      forms:
+        "plain-present": "おりる"
+        "nai-form": "おりない"
+      readings:
+        "plain-present": "oriru"
+        "nai-form": "orinai"
+    - word: "ja-0363"
+      forms:
+        "plain-present": "あらう"
+        "nai-form": "あらわない"
+      readings:
+        "plain-present": "arau"
+        "nai-form": "arawanai"
+    - word: "ja-0364"
+      forms:
+        "plain-present": "つくる"
+        "nai-form": "つくらない"
+      readings:
+        "plain-present": "tsukuru"
+        "nai-form": "tsukuranai"
+    - word: "ja-0365"
+      forms:
+        "plain-present": "わかる"
+        "nai-form": "わからない"
+      readings:
+        "plain-present": "wakaru"
+        "nai-form": "wakaranai"
+    - word: "ja-0366"
+      forms:
+        "plain-present": "しる"
+        "nai-form": "しらない"
+      readings:
+        "plain-present": "shiru"
+        "nai-form": "shiranai"
+    - word: "ja-0367"
+      forms:
+        "plain-present": "ならう"
+        "nai-form": "ならわない"
+      readings:
+        "plain-present": "narau"
+        "nai-form": "narawanai"
+    - word: "ja-0368"
+      forms:
+        "plain-present": "おしえる"
+        "nai-form": "おしえない"
+      readings:
+        "plain-present": "oshieru"
+        "nai-form": "oshienai"
+    - word: "ja-0369"
+      forms:
+        "plain-present": "つかう"
+        "nai-form": "つかわない"
+      readings:
+        "plain-present": "tsukau"
+        "nai-form": "tsukawanai"
+    - word: "ja-0370"
+      forms:
+        "plain-present": "すわる"
+        "nai-form": "すわらない"
+      readings:
+        "plain-present": "suwaru"
+        "nai-form": "suwaranai"
+    - word: "ja-0371"
+      forms:
+        "plain-present": "たつ"
+        "nai-form": "たたない"
+      readings:
+        "plain-present": "tatsu"
+        "nai-form": "tatanai"
+    - word: "ja-0372"
+      forms:
+        "plain-present": "あける"
+        "nai-form": "あけない"
+      readings:
+        "plain-present": "akeru"
+        "nai-form": "akenai"
+    - word: "ja-0373"
+      forms:
+        "plain-present": "しめる"
+        "nai-form": "しめない"
+      readings:
+        "plain-present": "shimeru"
+        "nai-form": "shimenai"
+    - word: "ja-0374"
+      forms:
+        "plain-present": "あそぶ"
+        "nai-form": "あそばない"
+      readings:
+        "plain-present": "asobu"
+        "nai-form": "asobanai"
+    - word: "ja-0375"
+      forms:
+        "plain-present": "する"
+        "nai-form": "しない"
+      readings:
+        "plain-present": "suru"
+        "nai-form": "shinai"
+    - word: "ja-0949"
+      forms:
+        "plain-present": "かぞえる"
+        "nai-form": "かぞえない"
+      readings:
+        "plain-present": "kazoeru"
+        "nai-form": "kazoenai"
+    - word: "ja-1226"
+      forms:
+        "plain-present": "こまる"
+        "nai-form": "こまらない"
+      readings:
+        "plain-present": "komaru"
+        "nai-form": "komaranai"
+    - word: "ja-1227"
+      forms:
+        "plain-present": "よぶ"
+        "nai-form": "よばない"
+      readings:
+        "plain-present": "yobu"
+        "nai-form": "yobanai"
+    - word: "ja-1228"
+      forms:
+        "plain-present": "まよう"
+        "nai-form": "まよわない"
+      readings:
+        "plain-present": "mayou"
+        "nai-form": "mayowanai"
+    - word: "ja-1236"
+      forms:
+        "plain-present": "たすける"
+        "nai-form": "たすけない"
+      readings:
+        "plain-present": "tasukeru"
+        "nai-form": "tasukenai"
+    - word: "ja-1237"
+      forms:
+        "plain-present": "たすかる"
+        "nai-form": "たすからない"
+      readings:
+        "plain-present": "tasukaru"
+        "nai-form": "tasukaranai"
+    - word: "ja-1240"
+      forms:
+        "plain-present": "まもる"
+        "nai-form": "まもらない"
+      readings:
+        "plain-present": "mamoru"
+        "nai-form": "mamoranai"
+    - word: "ja-0571"
+      forms:
+        "plain-present": "あびる"
+        "nai-form": "あびない"
+      readings:
+        "plain-present": "abiru"
+        "nai-form": "abinai"
+    - word: "ja-0572"
+      forms:
+        "plain-present": "はしる"
+        "nai-form": "はしらない"
+      readings:
+        "plain-present": "hashiru"
+        "nai-form": "hashiranai"
+    - word: "ja-0573"
+      forms:
+        "plain-present": "とぶ"
+        "nai-form": "とばない"
+      readings:
+        "plain-present": "tobu"
+        "nai-form": "tobanai"
+    - word: "ja-0574"
+      forms:
+        "plain-present": "おどる"
+        "nai-form": "おどらない"
+      readings:
+        "plain-present": "odoru"
+        "nai-form": "odoranai"
+    - word: "ja-0575"
+      forms:
+        "plain-present": "うたう"
+        "nai-form": "うたわない"
+      readings:
+        "plain-present": "utau"
+        "nai-form": "utawanai"
+    - word: "ja-0576"
+      forms:
+        "plain-present": "かりる"
+        "nai-form": "かりない"
+      readings:
+        "plain-present": "kariru"
+        "nai-form": "karinai"
+    - word: "ja-0577"
+      forms:
+        "plain-present": "かえす"
+        "nai-form": "かえさない"
+      readings:
+        "plain-present": "kaesu"
+        "nai-form": "kaesanai"
+    - word: "ja-0578"
+      forms:
+        "plain-present": "わすれる"
+        "nai-form": "わすれない"
+      readings:
+        "plain-present": "wasureru"
+        "nai-form": "wasurenai"
+    - word: "ja-0579"
+      forms:
+        "plain-present": "おぼえる"
+        "nai-form": "おぼえない"
+      readings:
+        "plain-present": "oboeru"
+        "nai-form": "oboenai"
+    - word: "ja-0580"
+      forms:
+        "plain-present": "てつだう"
+        "nai-form": "てつだわない"
+      readings:
+        "plain-present": "tetsudau"
+        "nai-form": "tetsudawanai"
+    - word: "ja-0581"
+      forms:
+        "plain-present": "ひろう"
+        "nai-form": "ひろわない"
+      readings:
+        "plain-present": "hirou"
+        "nai-form": "hirowanai"
+    - word: "ja-0582"
+      forms:
+        "plain-present": "すてる"
+        "nai-form": "すてない"
+      readings:
+        "plain-present": "suteru"
+        "nai-form": "sutenai"
+    - word: "ja-0583"
+      forms:
+        "plain-present": "なくす"
+        "nai-form": "なくさない"
+      readings:
+        "plain-present": "nakusu"
+        "nai-form": "nakusanai"
+    - word: "ja-0584"
+      forms:
+        "plain-present": "のぼる"
+        "nai-form": "のぼらない"
+      readings:
+        "plain-present": "noboru"
+        "nai-form": "noboranai"
+    - word: "ja-0585"
+      forms:
+        "plain-present": "そうじする"
+        "nai-form": "そうじしない"
+      readings:
+        "plain-present": "soujisuru"
+        "nai-form": "soujishinai"
+    - word: "ja-0586"
+      forms:
+        "plain-present": "りょうりする"
+        "nai-form": "りょうりしない"
+      readings:
+        "plain-present": "ryourisuru"
+        "nai-form": "ryourishinai"
+    - word: "ja-0587"
+      forms:
+        "plain-present": "でかける"
+        "nai-form": "でかけない"
+      readings:
+        "plain-present": "dekakeru"
+        "nai-form": "dekakenai"
+    - word: "ja-0588"
+      forms:
+        "plain-present": "もどる"
+        "nai-form": "もどらない"
+      readings:
+        "plain-present": "modoru"
+        "nai-form": "modoranai"
+    - word: "ja-0589"
+      forms:
+        "plain-present": "とまる"
+        "nai-form": "とまらない"
+      readings:
+        "plain-present": "tomaru"
+        "nai-form": "tomaranai"
+    - word: "ja-0590"
+      forms:
+        "plain-present": "さがす"
+        "nai-form": "さがさない"
+      readings:
+        "plain-present": "sagasu"
+        "nai-form": "sagasanai"
+    - word: "ja-0591"
+      forms:
+        "plain-present": "みせる"
+        "nai-form": "みせない"
+      readings:
+        "plain-present": "miseru"
+        "nai-form": "misenai"
+    - word: "ja-0592"
+      forms:
+        "plain-present": "いれる"
+        "nai-form": "いれない"
+      readings:
+        "plain-present": "ireru"
+        "nai-form": "irenai"
+    - word: "ja-0593"
+      forms:
+        "plain-present": "わらう"
+        "nai-form": "わらわない"
+      readings:
+        "plain-present": "warau"
+        "nai-form": "warawanai"
+    - word: "ja-0594"
+      forms:
+        "plain-present": "おこる"
+        "nai-form": "おこらない"
+      readings:
+        "plain-present": "okoru"
+        "nai-form": "okoranai"
+    - word: "ja-0595"
+      forms:
+        "plain-present": "やめる"
+        "nai-form": "やめない"
+      readings:
+        "plain-present": "yameru"
+        "nai-form": "yamenai"
+    - word: "ja-0596"
+      forms:
+        "plain-present": "はじめる"
+        "nai-form": "はじめない"
+      readings:
+        "plain-present": "hajimeru"
+        "nai-form": "hajimenai"
+    - word: "ja-0597"
+      forms:
+        "plain-present": "ひっこす"
+        "nai-form": "ひっこさない"
+      readings:
+        "plain-present": "hikkosu"
+        "nai-form": "hikkosanai"
+    - word: "ja-0598"
+      forms:
+        "plain-present": "あげる"
+        "nai-form": "あげない"
+      readings:
+        "plain-present": "ageru"
+        "nai-form": "agenai"
+    - word: "ja-0599"
+      forms:
+        "plain-present": "もらう"
+        "nai-form": "もらわない"
+      readings:
+        "plain-present": "morau"
+        "nai-form": "morawanai"
+    - word: "ja-0600"
+      forms:
+        "plain-present": "さけぶ"
+        "nai-form": "さけばない"
+      readings:
+        "plain-present": "sakebu"
+        "nai-form": "sakebanai"
+    - word: "ja-0516"
+      forms:
+        "plain-present": "おわる"
+        "nai-form": "おわらない"
+      readings:
+        "plain-present": "owaru"
+        "nai-form": "owaranai"
+    - word: "ja-0711"
+      forms:
+        "plain-present": "つとめる"
+        "nai-form": "つとめない"
+      readings:
+        "plain-present": "tsutomeru"
+        "nai-form": "tsutomenai"
+    - word: "ja-1334"
+      forms:
+        "plain-present": "きがえる"
+        "nai-form": "きがえない"
+      readings:
+        "plain-present": "kigaeru"
+        "nai-form": "kigaenai"
+    - word: "ja-1335"
+      forms:
+        "plain-present": "はく"
+        "nai-form": "はかない"
+      readings:
+        "plain-present": "haku"
+        "nai-form": "hakanai"
+    - word: "ja-1336"
+      forms:
+        "plain-present": "かぶる"
+        "nai-form": "かぶらない"
+      readings:
+        "plain-present": "kaburu"
+        "nai-form": "kaburanai"
+    - word: "ja-1341"
+      forms:
+        "plain-present": "つかれる"
+        "nai-form": "つかれない"
+      readings:
+        "plain-present": "tsukareru"
+        "nai-form": "tsukarenai"
+    - word: "ja-1348"
+      forms:
+        "plain-present": "だす"
+        "nai-form": "ださない"
+      readings:
+        "plain-present": "dasu"
+        "nai-form": "dasanai"
+    - word: "ja-1349"
+      forms:
+        "plain-present": "わかす"
+        "nai-form": "わかさない"
+      readings:
+        "plain-present": "wakasu"
+        "nai-form": "wakasanai"
+    - word: "ja-1350"
+      forms:
+        "plain-present": "ほす"
+        "nai-form": "ほさない"
+      readings:
+        "plain-present": "hosu"
+        "nai-form": "hosanai"
+    - word: "ja-1351"
+      forms:
+        "plain-present": "かたづける"
+        "nai-form": "かたづけない"
+      readings:
+        "plain-present": "katazukeru"
+        "nai-form": "katazukenai"
+    - word: "ja-1352"
+      forms:
+        "plain-present": "たたむ"
+        "nai-form": "たたまない"
+      readings:
+        "plain-present": "tatamu"
+        "nai-form": "tatamanai"
+    - word: "ja-1353"
+      forms:
+        "plain-present": "ぬぐ"
+        "nai-form": "ぬがない"
+      readings:
+        "plain-present": "nugu"
+        "nai-form": "nuganai"
+    - word: "ja-1354"
+      forms:
+        "plain-present": "まにあう"
+        "nai-form": "まにあわない"
+      readings:
+        "plain-present": "maniau"
+        "nai-form": "maniawanai"
+    - word: "ja-1364"
+      forms:
+        "plain-present": "かわく"
+        "nai-form": "かわかない"
+      readings:
+        "plain-present": "kawaku"
+        "nai-form": "kawakanai"
+    - word: "ja-1368"
+      forms:
+        "plain-present": "いそぐ"
+        "nai-form": "いそがない"
+      readings:
+        "plain-present": "isogu"
+        "nai-form": "isoganai"
+    - word: "ja-1539"
+      forms:
+        "plain-present": "にあう"
+        "nai-form": "にあわない"
+      readings:
+        "plain-present": "niau"
+        "nai-form": "niawanai"
+    - word: "ja-1542"
+      forms:
+        "plain-present": "きる"
+        "nai-form": "きない"
+      readings:
+        "plain-present": "kiru"
+        "nai-form": "kinai"
+    - word: "ja-1718"
+      forms:
+        "plain-present": "うる"
+        "nai-form": "うらない"
+      readings:
+        "plain-present": "uru"
+        "nai-form": "uranai"
+    - word: "ja-1719"
+      forms:
+        "plain-present": "はらう"
+        "nai-form": "はらわない"
+      readings:
+        "plain-present": "harau"
+        "nai-form": "harawanai"
+    - word: "ja-1720"
+      forms:
+        "plain-present": "まける"
+        "nai-form": "まけない"
+      readings:
+        "plain-present": "makeru"
+        "nai-form": "makenai"
+    - word: "ja-1721"
+      forms:
+        "plain-present": "えらぶ"
+        "nai-form": "えらばない"
+      readings:
+        "plain-present": "erabu"
+        "nai-form": "erabanai"
+    - word: "ja-1758"
+      forms:
+        "plain-present": "たのむ"
+        "nai-form": "たのまない"
+      readings:
+        "plain-present": "tanomu"
+        "nai-form": "tanomanai"
+    - word: "ja-1759"
+      forms:
+        "plain-present": "おごる"
+        "nai-form": "おごらない"
+      readings:
+        "plain-present": "ogoru"
+        "nai-form": "ogoranai"
+    - word: "ja-1790"
+      forms:
+        "plain-present": "いためる"
+        "nai-form": "いためない"
+      readings:
+        "plain-present": "itameru"
+        "nai-form": "itamenai"
+    - word: "ja-1791"
+      forms:
+        "plain-present": "まぜる"
+        "nai-form": "まぜない"
+      readings:
+        "plain-present": "mazeru"
+        "nai-form": "mazenai"
+    - word: "ja-1792"
+      forms:
+        "plain-present": "ゆでる"
+        "nai-form": "ゆでない"
+      readings:
+        "plain-present": "yuderu"
+        "nai-form": "yudenai"
+    - word: "ja-1793"
+      forms:
+        "plain-present": "にる"
+        "nai-form": "にない"
+      readings:
+        "plain-present": "niru"
+        "nai-form": "ninai"
+    - word: "ja-1794"
+      forms:
+        "plain-present": "やく"
+        "nai-form": "やかない"
+      readings:
+        "plain-present": "yaku"
+        "nai-form": "yakanai"
+    - word: "ja-1799"
+      forms:
+        "plain-present": "ひやす"
+        "nai-form": "ひやさない"
+      readings:
+        "plain-present": "hiyasu"
+        "nai-form": "hiyasanai"
+    - word: "ja-1800"
+      forms:
+        "plain-present": "あたためる"
+        "nai-form": "あたためない"
+      readings:
+        "plain-present": "atatameru"
+        "nai-form": "atatamenai"
+    - word: "ja-1801"
+      forms:
+        "plain-present": "きざむ"
+        "nai-form": "きざまない"
+      readings:
+        "plain-present": "kizamu"
+        "nai-form": "kizamanai"
+    - word: "ja-1802"
+      forms:
+        "plain-present": "むく"
+        "nai-form": "むかない"
+      readings:
+        "plain-present": "muku"
+        "nai-form": "mukanai"
+    - word: "ja-1803"
+      forms:
+        "plain-present": "つつむ"
+        "nai-form": "つつまない"
+      readings:
+        "plain-present": "tsutsumu"
+        "nai-form": "tsutsumanai"
+    - word: "ja-1804"
+      forms:
+        "plain-present": "こげる"
+        "nai-form": "こげない"
+      readings:
+        "plain-present": "kogeru"
+        "nai-form": "kogenai"
+    - word: "ja-1805"
+      forms:
+        "plain-present": "さます"
+        "nai-form": "さまさない"
+      readings:
+        "plain-present": "samasu"
+        "nai-form": "samasanai"
+    - word: "ja-1850"
+      forms:
+        "plain-present": "べんきょうする"
+        "nai-form": "べんきょうしない"
+      readings:
+        "plain-present": "benkyousuru"
+        "nai-form": "benkyoushinai"
+    - word: "ja-1861"
+      forms:
+        "plain-present": "おくれる"
+        "nai-form": "おくれない"
+      readings:
+        "plain-present": "okureru"
+        "nai-form": "okurenai"
+    - word: "ja-1862"
+      forms:
+        "plain-present": "まなぶ"
+        "nai-form": "まなばない"
+      readings:
+        "plain-present": "manabu"
+        "nai-form": "manabanai"
+    - word: "ja-1863"
+      forms:
+        "plain-present": "つづける"
+        "nai-form": "つづけない"
+      readings:
+        "plain-present": "tsuzukeru"
+        "nai-form": "tsuzukenai"
+    - word: "ja-1864"
+      forms:
+        "plain-present": "かんがえる"
+        "nai-form": "かんがえない"
+      readings:
+        "plain-present": "kangaeru"
+        "nai-form": "kangaenai"
+    - word: "ja-1865"
+      forms:
+        "plain-present": "こたえる"
+        "nai-form": "こたえない"
+      readings:
+        "plain-present": "kotaeru"
+        "nai-form": "kotaenai"
+    - word: "ja-1892"
+      forms:
+        "plain-present": "およぐ"
+        "nai-form": "およがない"
+      readings:
+        "plain-present": "oyogu"
+        "nai-form": "oyoganai"
+    - word: "ja-1893"
+      forms:
+        "plain-present": "とる"
+        "nai-form": "とらない"
+      readings:
+        "plain-present": "toru"
+        "nai-form": "toranai"
+    - word: "ja-1896"
+      forms:
+        "plain-present": "えがく"
+        "nai-form": "えがかない"
+      readings:
+        "plain-present": "egaku"
+        "nai-form": "egakanai"
+    - word: "ja-1900"
+      forms:
+        "plain-present": "ぬう"
+        "nai-form": "ぬわない"
+      readings:
+        "plain-present": "nuu"
+        "nai-form": "nuwanai"
+    - word: "ja-1901"
+      forms:
+        "plain-present": "あむ"
+        "nai-form": "あまない"
+      readings:
+        "plain-present": "amu"
+        "nai-form": "amanai"
+    - word: "ja-1907"
+      forms:
+        "plain-present": "ほめる"
+        "nai-form": "ほめない"
+      readings:
+        "plain-present": "homeru"
+        "nai-form": "homenai"
+    - word: "ja-1910"
+      forms:
+        "plain-present": "かつ"
+        "nai-form": "かたない"
+      readings:
+        "plain-present": "katsu"
+        "nai-form": "katanai"
+    - word: "ja-1933"
+      forms:
+        "plain-present": "かなでる"
+        "nai-form": "かなでない"
+      readings:
+        "plain-present": "kanaderu"
+        "nai-form": "kanadenai"
+    - word: "ja-1934"
+      forms:
+        "plain-present": "ならす"
+        "nai-form": "ならさない"
+      readings:
+        "plain-present": "narasu"
+        "nai-form": "narasanai"
+    - word: "ja-1935"
+      forms:
+        "plain-present": "ひびく"
+        "nai-form": "ひびかない"
+      readings:
+        "plain-present": "hibiku"
+        "nai-form": "hibikanai"
+    - word: "ja-1939"
+      forms:
+        "plain-present": "たたく"
+        "nai-form": "たたかない"
+      readings:
+        "plain-present": "tataku"
+        "nai-form": "tatakanai"
+    - word: "ja-1940"
+      forms:
+        "plain-present": "きこえる"
+        "nai-form": "きこえない"
+      readings:
+        "plain-present": "kikoeru"
+        "nai-form": "kikoenai"
+    - word: "ja-1941"
+      forms:
+        "plain-present": "ひく"
+        "nai-form": "ひかない"
+      readings:
+        "plain-present": "hiku"
+        "nai-form": "hikanai"
+    - word: "ja-1996"
+      forms:
+        "plain-present": "なげる"
+        "nai-form": "なげない"
+      readings:
+        "plain-present": "nageru"
+        "nai-form": "nagenai"
+    - word: "ja-1997"
+      forms:
+        "plain-present": "うつ"
+        "nai-form": "うたない"
+      readings:
+        "plain-present": "utsu"
+        "nai-form": "utanai"
+    - word: "ja-1998"
+      forms:
+        "plain-present": "ける"
+        "nai-form": "けらない"
+      readings:
+        "plain-present": "keru"
+        "nai-form": "keranai"
+    - word: "ja-1999"
+      forms:
+        "plain-present": "おいかける"
+        "nai-form": "おいかけない"
+      readings:
+        "plain-present": "oikakeru"
+        "nai-form": "oikakenai"
+    - word: "ja-2000"
+      forms:
+        "plain-present": "あきらめる"
+        "nai-form": "あきらめない"
+      readings:
+        "plain-present": "akirameru"
+        "nai-form": "akiramenai"
+    - word: "ja-2001"
+      forms:
+        "plain-present": "きたえる"
+        "nai-form": "きたえない"
+      readings:
+        "plain-present": "kitaeru"
+        "nai-form": "kitaenai"
+    - word: "ja-2002"
+      forms:
+        "plain-present": "ねらう"
+        "nai-form": "ねらわない"
+      readings:
+        "plain-present": "nerau"
+        "nai-form": "nerawanai"
+    - word: "ja-2049"
+      forms:
+        "plain-present": "うつる"
+        "nai-form": "うつらない"
+      readings:
+        "plain-present": "utsuru"
+        "nai-form": "utsuranai"
+    - word: "ja-2050"
+      forms:
+        "plain-present": "なおる"
+        "nai-form": "なおらない"
+      readings:
+        "plain-present": "naoru"
+        "nai-form": "naoranai"
+    - word: "ja-2051"
+      forms:
+        "plain-present": "なおす"
+        "nai-form": "なおさない"
+      readings:
+        "plain-present": "naosu"
+        "nai-form": "naosanai"
+    - word: "ja-2052"
+      forms:
+        "plain-present": "たおれる"
+        "nai-form": "たおれない"
+      readings:
+        "plain-present": "taoreru"
+        "nai-form": "taorenai"
+    - word: "ja-2053"
+      forms:
+        "plain-present": "はれる"
+        "nai-form": "はれない"
+      readings:
+        "plain-present": "hareru"
+        "nai-form": "harenai"
+    - word: "ja-2054"
+      forms:
+        "plain-present": "しびれる"
+        "nai-form": "しびれない"
+      readings:
+        "plain-present": "shibireru"
+        "nai-form": "shibirenai"
+    - word: "ja-2115"
+      forms:
+        "plain-present": "みがく"
+        "nai-form": "みがかない"
+      readings:
+        "plain-present": "migaku"
+        "nai-form": "migakanai"
+    - word: "ja-2116"
+      forms:
+        "plain-present": "こする"
+        "nai-form": "こすらない"
+      readings:
+        "plain-present": "kosuru"
+        "nai-form": "kosuranai"
+    - word: "ja-2117"
+      forms:
+        "plain-present": "すすぐ"
+        "nai-form": "すすがない"
+      readings:
+        "plain-present": "susugu"
+        "nai-form": "susuganai"
+    - word: "ja-2118"
+      forms:
+        "plain-present": "しぼる"
+        "nai-form": "しぼらない"
+      readings:
+        "plain-present": "shiboru"
+        "nai-form": "shiboranai"
+    - word: "ja-2119"
+      forms:
+        "plain-present": "かわかす"
+        "nai-form": "かわかさない"
+      readings:
+        "plain-present": "kawakasu"
+        "nai-form": "kawakasanai"
+    - word: "ja-2120"
+      forms:
+        "plain-present": "しまう"
+        "nai-form": "しまわない"
+      readings:
+        "plain-present": "shimau"
+        "nai-form": "shimawanai"
+    - word: "ja-2121"
+      forms:
+        "plain-present": "そろえる"
+        "nai-form": "そろえない"
+      readings:
+        "plain-present": "soroeru"
+        "nai-form": "soroenai"
+    - word: "ja-2122"
+      forms:
+        "plain-present": "かざる"
+        "nai-form": "かざらない"
+      readings:
+        "plain-present": "kazaru"
+        "nai-form": "kazaranai"
+    - word: "ja-2123"
+      forms:
+        "plain-present": "とりかえる"
+        "nai-form": "とりかえない"
+      readings:
+        "plain-present": "torikaeru"
+        "nai-form": "torikaenai"
+    - word: "ja-2124"
+      forms:
+        "plain-present": "つめる"
+        "nai-form": "つめない"
+      readings:
+        "plain-present": "tsumeru"
+        "nai-form": "tsumenai"
+    - word: "ja-2125"
+      forms:
+        "plain-present": "くばる"
+        "nai-form": "くばらない"
+      readings:
+        "plain-present": "kubaru"
+        "nai-form": "kubaranai"
+    - word: "ja-2126"
+      forms:
+        "plain-present": "こぼす"
+        "nai-form": "こぼさない"
+      readings:
+        "plain-present": "kobosu"
+        "nai-form": "kobosanai"
+    - word: "ja-2127"
+      forms:
+        "plain-present": "よごれる"
+        "nai-form": "よごれない"
+      readings:
+        "plain-present": "yogoreru"
+        "nai-form": "yogorenai"
+    - word: "ja-2128"
+      forms:
+        "plain-present": "よごす"
+        "nai-form": "よごさない"
+      readings:
+        "plain-present": "yogosu"
+        "nai-form": "yogosanai"
+    - word: "ja-2129"
+      forms:
+        "plain-present": "ちらかす"
+        "nai-form": "ちらかさない"
+      readings:
+        "plain-present": "chirakasu"
+        "nai-form": "chirakasanai"
+    - word: "ja-2164"
+      forms:
+        "plain-present": "やせる"
+        "nai-form": "やせない"
+      readings:
+        "plain-present": "yaseru"
+        "nai-form": "yasenai"
+    - word: "ja-2165"
+      forms:
+        "plain-present": "ふとる"
+        "nai-form": "ふとらない"
+      readings:
+        "plain-present": "futoru"
+        "nai-form": "futoranai"
+    - word: "ja-2217"
+      forms:
+        "plain-present": "かわる"
+        "nai-form": "かわらない"
+      readings:
+        "plain-present": "kawaru"
+        "nai-form": "kawaranai"
+    - word: "ja-2218"
+      forms:
+        "plain-present": "きまる"
+        "nai-form": "きまらない"
+      readings:
+        "plain-present": "kimaru"
+        "nai-form": "kimaranai"
+    - word: "ja-2219"
+      forms:
+        "plain-present": "きめる"
+        "nai-form": "きめない"
+      readings:
+        "plain-present": "kimeru"
+        "nai-form": "kimenai"
+    - word: "ja-2220"
+      forms:
+        "plain-present": "なる"
+        "nai-form": "ならない"
+      readings:
+        "plain-present": "naru"
+        "nai-form": "naranai"
+    - word: "ja-2221"
+      forms:
+        "plain-present": "なれる"
+        "nai-form": "なれない"
+      readings:
+        "plain-present": "nareru"
+        "nai-form": "narenai"
+    - word: "ja-2222"
+      forms:
+        "plain-present": "つく"
+        "nai-form": "つかない"
+      readings:
+        "plain-present": "tsuku"
+        "nai-form": "tsukanai"
+    - word: "ja-2223"
+      forms:
+        "plain-present": "つける"
+        "nai-form": "つけない"
+      readings:
+        "plain-present": "tsukeru"
+        "nai-form": "tsukenai"
+    - word: "ja-2224"
+      forms:
+        "plain-present": "けす"
+        "nai-form": "けさない"
+      readings:
+        "plain-present": "kesu"
+        "nai-form": "kesanai"
+    - word: "ja-2225"
+      forms:
+        "plain-present": "きえる"
+        "nai-form": "きえない"
+      readings:
+        "plain-present": "kieru"
+        "nai-form": "kienai"
+    - word: "ja-2226"
+      forms:
+        "plain-present": "あく"
+        "nai-form": "あかない"
+      readings:
+        "plain-present": "aku"
+        "nai-form": "akanai"
+    - word: "ja-2227"
+      forms:
+        "plain-present": "しまる"
+        "nai-form": "しまらない"
+      readings:
+        "plain-present": "shimaru"
+        "nai-form": "shimaranai"
+    - word: "ja-2228"
+      forms:
+        "plain-present": "つかまえる"
+        "nai-form": "つかまえない"
+      readings:
+        "plain-present": "tsukamaeru"
+        "nai-form": "tsukamaenai"
+    - word: "ja-2229"
+      forms:
+        "plain-present": "つかむ"
+        "nai-form": "つかまない"
+      readings:
+        "plain-present": "tsukamu"
+        "nai-form": "tsukamanai"
+    - word: "ja-2230"
+      forms:
+        "plain-present": "おす"
+        "nai-form": "おさない"
+      readings:
+        "plain-present": "osu"
+        "nai-form": "osanai"
+    - word: "ja-2231"
+      forms:
+        "plain-present": "ひっぱる"
+        "nai-form": "ひっぱらない"
+      readings:
+        "plain-present": "hipparu"
+        "nai-form": "hipparanai"
+    - word: "ja-2232"
+      forms:
+        "plain-present": "おとす"
+        "nai-form": "おとさない"
+      readings:
+        "plain-present": "otosu"
+        "nai-form": "otosanai"
+    - word: "ja-2233"
+      forms:
+        "plain-present": "おちる"
+        "nai-form": "おちない"
+      readings:
+        "plain-present": "ochiru"
+        "nai-form": "ochinai"
+    - word: "ja-2234"
+      forms:
+        "plain-present": "ひらく"
+        "nai-form": "ひらかない"
+      readings:
+        "plain-present": "hiraku"
+        "nai-form": "hirakanai"
+    - word: "ja-2235"
+      forms:
+        "plain-present": "とじる"
+        "nai-form": "とじない"
+      readings:
+        "plain-present": "tojiru"
+        "nai-form": "tojinai"
+    - word: "ja-2236"
+      forms:
+        "plain-present": "わたす"
+        "nai-form": "わたさない"
+      readings:
+        "plain-present": "watasu"
+        "nai-form": "watasanai"
+    - word: "ja-2237"
+      forms:
+        "plain-present": "うける"
+        "nai-form": "うけない"
+      readings:
+        "plain-present": "ukeru"
+        "nai-form": "ukenai"
+    - word: "ja-2238"
+      forms:
+        "plain-present": "つたえる"
+        "nai-form": "つたえない"
+      readings:
+        "plain-present": "tsutaeru"
+        "nai-form": "tsutaenai"
+    - word: "ja-2239"
+      forms:
+        "plain-present": "つたわる"
+        "nai-form": "つたわらない"
+      readings:
+        "plain-present": "tsutawaru"
+        "nai-form": "tsutawaranai"
+    - word: "ja-2240"
+      forms:
+        "plain-present": "むかえる"
+        "nai-form": "むかえない"
+      readings:
+        "plain-present": "mukaeru"
+        "nai-form": "mukaenai"
+    - word: "ja-2241"
+      forms:
+        "plain-present": "おくる"
+        "nai-form": "おくらない"
+      readings:
+        "plain-present": "okuru"
+        "nai-form": "okuranai"
+    - word: "ja-2242"
+      forms:
+        "plain-present": "とどく"
+        "nai-form": "とどかない"
+      readings:
+        "plain-present": "todoku"
+        "nai-form": "todokanai"
+    - word: "ja-2243"
+      forms:
+        "plain-present": "とどける"
+        "nai-form": "とどけない"
+      readings:
+        "plain-present": "todokeru"
+        "nai-form": "todokenai"
+    - word: "ja-2244"
+      forms:
+        "plain-present": "たずねる"
+        "nai-form": "たずねない"
+      readings:
+        "plain-present": "tazuneru"
+        "nai-form": "tazunenai"
+    - word: "ja-2245"
+      forms:
+        "plain-present": "まちがう"
+        "nai-form": "まちがわない"
+      readings:
+        "plain-present": "machigau"
+        "nai-form": "machigawanai"
+    - word: "ja-2246"
+      forms:
+        "plain-present": "あやまる"
+        "nai-form": "あやまらない"
+      readings:
+        "plain-present": "ayamaru"
+        "nai-form": "ayamaranai"
+    - word: "ja-2247"
+      forms:
+        "plain-present": "ゆるす"
+        "nai-form": "ゆるさない"
+      readings:
+        "plain-present": "yurusu"
+        "nai-form": "yurusanai"
+    - word: "ja-2248"
+      forms:
+        "plain-present": "ことわる"
+        "nai-form": "ことわらない"
+      readings:
+        "plain-present": "kotowaru"
+        "nai-form": "kotowaranai"
+    - word: "ja-2249"
+      forms:
+        "plain-present": "さそう"
+        "nai-form": "さそわない"
+      readings:
+        "plain-present": "sasou"
+        "nai-form": "sasowanai"
+    - word: "ja-2250"
+      forms:
+        "plain-present": "かよう"
+        "nai-form": "かよわない"
+      readings:
+        "plain-present": "kayou"
+        "nai-form": "kayowanai"
+    - word: "ja-2251"
+      forms:
+        "plain-present": "とおる"
+        "nai-form": "とおらない"
+      readings:
+        "plain-present": "tooru"
+        "nai-form": "tooranai"
+    - word: "ja-2252"
+      forms:
+        "plain-present": "すぎる"
+        "nai-form": "すぎない"
+      readings:
+        "plain-present": "sugiru"
+        "nai-form": "suginai"
+    - word: "ja-2253"
+      forms:
+        "plain-present": "まわる"
+        "nai-form": "まわらない"
+      readings:
+        "plain-present": "mawaru"
+        "nai-form": "mawaranai"
+    - word: "ja-2254"
+      forms:
+        "plain-present": "まわす"
+        "nai-form": "まわさない"
+      readings:
+        "plain-present": "mawasu"
+        "nai-form": "mawasanai"
+    - word: "ja-2255"
+      forms:
+        "plain-present": "うごく"
+        "nai-form": "うごかない"
+      readings:
+        "plain-present": "ugoku"
+        "nai-form": "ugokanai"
+    - word: "ja-2256"
+      forms:
+        "plain-present": "うごかす"
+        "nai-form": "うごかさない"
+      readings:
+        "plain-present": "ugokasu"
+        "nai-form": "ugokasanai"
+    - word: "ja-2257"
+      forms:
+        "plain-present": "のこる"
+        "nai-form": "のこらない"
+      readings:
+        "plain-present": "nokoru"
+        "nai-form": "nokoranai"
+    - word: "ja-2258"
+      forms:
+        "plain-present": "のこす"
+        "nai-form": "のこさない"
+      readings:
+        "plain-present": "nokosu"
+        "nai-form": "nokosanai"
+    - word: "ja-2259"
+      forms:
+        "plain-present": "あつまる"
+        "nai-form": "あつまらない"
+      readings:
+        "plain-present": "atsumaru"
+        "nai-form": "atsumaranai"
+    - word: "ja-2260"
+      forms:
+        "plain-present": "あつめる"
+        "nai-form": "あつめない"
+      readings:
+        "plain-present": "atsumeru"
+        "nai-form": "atsumenai"
+    - word: "ja-2261"
+      forms:
+        "plain-present": "わける"
+        "nai-form": "わけない"
+      readings:
+        "plain-present": "wakeru"
+        "nai-form": "wakenai"
+    - word: "ja-2262"
+      forms:
+        "plain-present": "くらべる"
+        "nai-form": "くらべない"
+      readings:
+        "plain-present": "kuraberu"
+        "nai-form": "kurabenai"
+    - word: "ja-2263"
+      forms:
+        "plain-present": "かくれる"
+        "nai-form": "かくれない"
+      readings:
+        "plain-present": "kakureru"
+        "nai-form": "kakurenai"
+    - word: "ja-2264"
+      forms:
+        "plain-present": "かくす"
+        "nai-form": "かくさない"
+      readings:
+        "plain-present": "kakusu"
+        "nai-form": "kakusanai"
+    - word: "ja-2265"
+      forms:
+        "plain-present": "みつかる"
+        "nai-form": "みつからない"
+      readings:
+        "plain-present": "mitsukaru"
+        "nai-form": "mitsukaranai"
+    - word: "ja-2266"
+      forms:
+        "plain-present": "みつける"
+        "nai-form": "みつけない"
+      readings:
+        "plain-present": "mitsukeru"
+        "nai-form": "mitsukenai"
+    - word: "ja-2267"
+      forms:
+        "plain-present": "ふえる"
+        "nai-form": "ふえない"
+      readings:
+        "plain-present": "fueru"
+        "nai-form": "fuenai"
+    - word: "ja-2268"
+      forms:
+        "plain-present": "へる"
+        "nai-form": "へらない"
+      readings:
+        "plain-present": "heru"
+        "nai-form": "heranai"
+    - word: "ja-2269"
+      forms:
+        "plain-present": "そだてる"
+        "nai-form": "そだてない"
+      readings:
+        "plain-present": "sodateru"
+        "nai-form": "sodatenai"
+    - word: "ja-2270"
+      forms:
+        "plain-present": "そだつ"
+        "nai-form": "そだたない"
+      readings:
+        "plain-present": "sodatsu"
+        "nai-form": "sodatanai"
+    - word: "ja-2271"
+      forms:
+        "plain-present": "うまれる"
+        "nai-form": "うまれない"
+      readings:
+        "plain-present": "umareru"
+        "nai-form": "umarenai"
+    - word: "ja-2272"
+      forms:
+        "plain-present": "いきる"
+        "nai-form": "いきない"
+      readings:
+        "plain-present": "ikiru"
+        "nai-form": "ikinai"
+    - word: "ja-2273"
+      forms:
+        "plain-present": "たのしむ"
+        "nai-form": "たのしまない"
+      readings:
+        "plain-present": "tanoshimu"
+        "nai-form": "tanoshimanai"
+    - word: "ja-2274"
+      forms:
+        "plain-present": "あたる"
+        "nai-form": "あたらない"
+      readings:
+        "plain-present": "ataru"
+        "nai-form": "ataranai"
+    - word: "ja-2275"
+      forms:
+        "plain-present": "はじまる"
+        "nai-form": "はじまらない"
+      readings:
+        "plain-present": "hajimaru"
+        "nai-form": "hajimaranai"
+    - word: "ja-2276"
+      forms:
+        "plain-present": "さわる"
+        "nai-form": "さわらない"
+      readings:
+        "plain-present": "sawaru"
+        "nai-form": "sawaranai"
+    - word: "ja-2320"
+      forms:
+        "plain-present": "つながる"
+        "nai-form": "つながらない"
+      readings:
+        "plain-present": "tsunagaru"
+        "nai-form": "tsunagaranai"
+    - word: "ja-2321"
+      forms:
+        "plain-present": "つなぐ"
+        "nai-form": "つながない"
+      readings:
+        "plain-present": "tsunagu"
+        "nai-form": "tsunaganai"
+    - word: "ja-2322"
+      forms:
+        "plain-present": "かける"
+        "nai-form": "かけない"
+      readings:
+        "plain-present": "kakeru"
+        "nai-form": "kakenai"
+    - word: "ja-2323"
+      forms:
+        "plain-present": "うけとる"
+        "nai-form": "うけとらない"
+      readings:
+        "plain-present": "uketoru"
+        "nai-form": "uketoranai"
+    - word: "ja-2364"
+      forms:
+        "plain-present": "のりおくれる"
+        "nai-form": "のりおくれない"
+      readings:
+        "plain-present": "noriokureru"
+        "nai-form": "noriokurenai"
+    - word: "ja-2365"
+      forms:
+        "plain-present": "のりかえる"
+        "nai-form": "のりかえない"
+      readings:
+        "plain-present": "norikaeru"
+        "nai-form": "norikaenai"
+    - word: "ja-2407"
+      forms:
+        "plain-present": "たちよる"
+        "nai-form": "たちよらない"
+      readings:
+        "plain-present": "tachiyoru"
+        "nai-form": "tachiyoranai"
+    - word: "ja-2470"
+      forms:
+        "plain-present": "さく"
+        "nai-form": "さかない"
+      readings:
+        "plain-present": "saku"
+        "nai-form": "sakanai"
+    - word: "ja-2471"
+      forms:
+        "plain-present": "ちる"
+        "nai-form": "ちらない"
+      readings:
+        "plain-present": "chiru"
+        "nai-form": "chiranai"
+    - word: "ja-2472"
+      forms:
+        "plain-present": "しげる"
+        "nai-form": "しげらない"
+      readings:
+        "plain-present": "shigeru"
+        "nai-form": "shigeranai"
+    - word: "ja-2473"
+      forms:
+        "plain-present": "かれる"
+        "nai-form": "かれない"
+      readings:
+        "plain-present": "kareru"
+        "nai-form": "karenai"
+    - word: "ja-2600"
+      forms:
+        "plain-present": "まかせる"
+        "nai-form": "まかせない"
+      readings:
+        "plain-present": "makaseru"
+        "nai-form": "makasenai"
+    - word: "ja-2601"
+      forms:
+        "plain-present": "ひきうける"
+        "nai-form": "ひきうけない"
+      readings:
+        "plain-present": "hikiukeru"
+        "nai-form": "hikiukenai"
+    - word: "ja-2602"
+      forms:
+        "plain-present": "こなす"
+        "nai-form": "こなさない"
+      readings:
+        "plain-present": "konasu"
+        "nai-form": "konasanai"
+    - word: "ja-2603"
+      forms:
+        "plain-present": "はげむ"
+        "nai-form": "はげまない"
+      readings:
+        "plain-present": "hagemu"
+        "nai-form": "hagemanai"
+    - word: "ja-2604"
+      forms:
+        "plain-present": "てがける"
+        "nai-form": "てがけない"
+      readings:
+        "plain-present": "tegakeru"
+        "nai-form": "tegakenai"
+    - word: "ja-2605"
+      forms:
+        "plain-present": "しめきる"
+        "nai-form": "しめきらない"
+      readings:
+        "plain-present": "shimekiru"
+        "nai-form": "shimekiranai"
+    - word: "ja-2606"
+      forms:
+        "plain-present": "まにあわせる"
+        "nai-form": "まにあわせない"
+      readings:
+        "plain-present": "maniawaseru"
+        "nai-form": "maniawasenai"
+    - word: "ja-2716"
+      forms:
+        "plain-present": "かたよる"
+        "nai-form": "かたよらない"
+      readings:
+        "plain-present": "katayoru"
+        "nai-form": "katayoranai"
+    - word: "ja-2768"
+      forms:
+        "plain-present": "おどろく"
+        "nai-form": "おどろかない"
+      readings:
+        "plain-present": "odoroku"
+        "nai-form": "odorokanai"
+    - word: "ja-2769"
+      forms:
+        "plain-present": "よろこぶ"
+        "nai-form": "よろこばない"
+      readings:
+        "plain-present": "yorokobu"
+        "nai-form": "yorokobanai"
+    - word: "ja-2770"
+      forms:
+        "plain-present": "かなしむ"
+        "nai-form": "かなしまない"
+      readings:
+        "plain-present": "kanashimu"
+        "nai-form": "kanashimanai"
+    - word: "ja-2771"
+      forms:
+        "plain-present": "なやむ"
+        "nai-form": "なやまない"
+      readings:
+        "plain-present": "nayamu"
+        "nai-form": "nayamanai"
+    - word: "ja-2772"
+      forms:
+        "plain-present": "あわてる"
+        "nai-form": "あわてない"
+      readings:
+        "plain-present": "awateru"
+        "nai-form": "awatenai"
+    - word: "ja-2773"
+      forms:
+        "plain-present": "あせる"
+        "nai-form": "あせらない"
+      readings:
+        "plain-present": "aseru"
+        "nai-form": "aseranai"
+    - word: "ja-2774"
+      forms:
+        "plain-present": "おちつく"
+        "nai-form": "おちつかない"
+      readings:
+        "plain-present": "ochitsuku"
+        "nai-form": "ochitsukanai"
+    - word: "ja-2794"
+      forms:
+        "plain-present": "きらう"
+        "nai-form": "きらわない"
+      readings:
+        "plain-present": "kirau"
+        "nai-form": "kirawanai"
+    - word: "ja-2795"
+      forms:
+        "plain-present": "あいする"
+        "nai-form": "あいしない"
+      readings:
+        "plain-present": "aisuru"
+        "nai-form": "aishinai"
+    - word: "ja-2796"
+      forms:
+        "plain-present": "にくむ"
+        "nai-form": "にくまない"
+      readings:
+        "plain-present": "nikumu"
+        "nai-form": "nikumanai"
+    - word: "ja-2797"
+      forms:
+        "plain-present": "ねたむ"
+        "nai-form": "ねたまない"
+      readings:
+        "plain-present": "netamu"
+        "nai-form": "netamanai"
+    - word: "ja-2798"
+      forms:
+        "plain-present": "うらむ"
+        "nai-form": "うらまない"
+      readings:
+        "plain-present": "uramu"
+        "nai-form": "uramanai"
+    - word: "ja-2799"
+      forms:
+        "plain-present": "なつかしむ"
+        "nai-form": "なつかしまない"
+      readings:
+        "plain-present": "natsukashimu"
+        "nai-form": "natsukashimanai"
+    - word: "ja-2800"
+      forms:
+        "plain-present": "いやがる"
+        "nai-form": "いやがらない"
+      readings:
+        "plain-present": "iyagaru"
+        "nai-form": "iyagaranai"
+    - word: "ja-2801"
+      forms:
+        "plain-present": "こらえる"
+        "nai-form": "こらえない"
+      readings:
+        "plain-present": "koraeru"
+        "nai-form": "koraenai"
+    - word: "ja-2803"
+      forms:
+        "plain-present": "はずかしがる"
+        "nai-form": "はずかしがらない"
+      readings:
+        "plain-present": "hazukashigaru"
+        "nai-form": "hazukashigaranai"
+    - word: "ja-2806"
+      forms:
+        "plain-present": "かんじる"
+        "nai-form": "かんじない"
+      readings:
+        "plain-present": "kanjiru"
+        "nai-form": "kanjinai"
+    - word: "ja-2812"
+      forms:
+        "plain-present": "さびしがる"
+        "nai-form": "さびしがらない"
+      readings:
+        "plain-present": "sabishigaru"
+        "nai-form": "sabishigaranai"
+    - word: "ja-2876"
+      forms:
+        "plain-present": "かたる"
+        "nai-form": "かたらない"
+      readings:
+        "plain-present": "kataru"
+        "nai-form": "kataranai"
+    - word: "ja-2877"
+      forms:
+        "plain-present": "ひろまる"
+        "nai-form": "ひろまらない"
+      readings:
+        "plain-present": "hiromaru"
+        "nai-form": "hiromaranai"
+    - word: "ja-2925"
+      forms:
+        "plain-present": "あずける"
+        "nai-form": "あずけない"
+      readings:
+        "plain-present": "azukeru"
+        "nai-form": "azukenai"
+    - word: "ja-2926"
+      forms:
+        "plain-present": "あずかる"
+        "nai-form": "あずからない"
+      readings:
+        "plain-present": "azukaru"
+        "nai-form": "azukaranai"
+    - word: "ja-2944"
+      forms:
+        "plain-present": "めぐる"
+        "nai-form": "めぐらない"
+      readings:
+        "plain-present": "meguru"
+        "nai-form": "meguranai"
+    - word: "ja-2945"
+      forms:
+        "plain-present": "おとずれる"
+        "nai-form": "おとずれない"
+      readings:
+        "plain-present": "otozureru"
+        "nai-form": "otozurenai"
+    - word: "ja-2982"
+      forms:
+        "plain-present": "もうしこむ"
+        "nai-form": "もうしこまない"
+      readings:
+        "plain-present": "moushikomu"
+        "nai-form": "moushikomanai"
+    - word: "ja-3062"
+      forms:
+        "plain-present": "とどけでる"
+        "nai-form": "とどけでない"
+      readings:
+        "plain-present": "todokederu"
+        "nai-form": "todokedenai"
+    - word: "ja-3140"
+      forms:
+        "plain-present": "つくりだす"
+        "nai-form": "つくりださない"
+      readings:
+        "plain-present": "tsukuridasu"
+        "nai-form": "tsukuridasanai"
+    - word: "ja-3195"
+      forms:
+        "plain-present": "めざす"
+        "nai-form": "めざさない"
+      readings:
+        "plain-present": "mezasu"
+        "nai-form": "mezasanai"
+    - word: "ja-3294"
+      forms:
+        "plain-present": "きをつかう"
+        "nai-form": "きをつかわない"
+      readings:
+        "plain-present": "kiotsukau"
+        "nai-form": "kiotsukawanai"
+    - word: "ja-3309"
+      forms:
+        "plain-present": "ゆずる"
+        "nai-form": "ゆずらない"
+      readings:
+        "plain-present": "yuzuru"
+        "nai-form": "yuzuranai"
+    - word: "ja-3310"
+      forms:
+        "plain-present": "ゆずりあう"
+        "nai-form": "ゆずりあわない"
+      readings:
+        "plain-present": "yuzuriau"
+        "nai-form": "yuzuriawanai"
+    - word: "ja-3311"
+      forms:
+        "plain-present": "ならぶ"
+        "nai-form": "ならばない"
+      readings:
+        "plain-present": "narabu"
+        "nai-form": "narabanai"
+    - word: "ja-3319"
+      forms:
+        "plain-present": "もてなす"
+        "nai-form": "もてなさない"
+      readings:
+        "plain-present": "motenasu"
+        "nai-form": "motenasanai"
+    - word: "ja-3320"
+      forms:
+        "plain-present": "まねく"
+        "nai-form": "まねかない"
+      readings:
+        "plain-present": "maneku"
+        "nai-form": "manekanai"
+    - word: "ja-3321"
+      forms:
+        "plain-present": "つつしむ"
+        "nai-form": "つつしまない"
+      readings:
+        "plain-present": "tsutsushimu"
+        "nai-form": "tsutsushimanai"
+    - word: "ja-3322"
+      forms:
+        "plain-present": "いましめる"
+        "nai-form": "いましめない"
+      readings:
+        "plain-present": "imashimeru"
+        "nai-form": "imashimenai"
+    - word: "ja-3383"
+      forms:
+        "plain-present": "へらす"
+        "nai-form": "へらさない"
+      readings:
+        "plain-present": "herasu"
+        "nai-form": "herasanai"
+    - word: "ja-3384"
+      forms:
+        "plain-present": "ふやす"
+        "nai-form": "ふやさない"
+      readings:
+        "plain-present": "fuyasu"
+        "nai-form": "fuyasanai"
+    - word: "ja-3385"
+      forms:
+        "plain-present": "こわす"
+        "nai-form": "こわさない"
+      readings:
+        "plain-present": "kowasu"
+        "nai-form": "kowasanai"
+    - word: "ja-3386"
+      forms:
+        "plain-present": "こわれる"
+        "nai-form": "こわれない"
+      readings:
+        "plain-present": "kowareru"
+        "nai-form": "kowarenai"
+    - word: "ja-3389"
+      forms:
+        "plain-present": "たもつ"
+        "nai-form": "たもたない"
+      readings:
+        "plain-present": "tamotsu"
+        "nai-form": "tamotanai"
+    - word: "ja-3390"
+      forms:
+        "plain-present": "さける"
+        "nai-form": "さけない"
+      readings:
+        "plain-present": "sakeru"
+        "nai-form": "sakenai"
+    - word: "ja-3434"
+      forms:
+        "plain-present": "えんじる"
+        "nai-form": "えんじない"
+      readings:
+        "plain-present": "enjiru"
+        "nai-form": "enjinai"
+    - word: "ja-3452"
+      forms:
+        "plain-present": "なく"
+        "nai-form": "なかない"
+      readings:
+        "plain-present": "naku"
+        "nai-form": "nakanai"
+    - word: "ja-3564"
+      forms:
+        "plain-present": "たたかう"
+        "nai-form": "たたかわない"
+      readings:
+        "plain-present": "tatakau"
+        "nai-form": "tatakawanai"
+    - word: "ja-3568"
+      forms:
+        "plain-present": "ほろびる"
+        "nai-form": "ほろびない"
+      readings:
+        "plain-present": "horobiru"
+        "nai-form": "horobinai"
+    - word: "ja-3569"
+      forms:
+        "plain-present": "ほろぼす"
+        "nai-form": "ほろぼさない"
+      readings:
+        "plain-present": "horobosu"
+        "nai-form": "horobosanai"
+    - word: "ja-3571"
+      forms:
+        "plain-present": "さかえる"
+        "nai-form": "さかえない"
+      readings:
+        "plain-present": "sakaeru"
+        "nai-form": "sakaenai"
+    - word: "ja-3611"
+      forms:
+        "plain-present": "いのる"
+        "nai-form": "いのらない"
+      readings:
+        "plain-present": "inoru"
+        "nai-form": "inoranai"
+    - word: "ja-3612"
+      forms:
+        "plain-present": "おがむ"
+        "nai-form": "おがまない"
+      readings:
+        "plain-present": "ogamu"
+        "nai-form": "ogamanai"
+    - word: "ja-3690"
+      forms:
+        "plain-present": "いわう"
+        "nai-form": "いわわない"
+      readings:
+        "plain-present": "iwau"
+        "nai-form": "iwawanai"
+    - word: "ja-3691"
+      forms:
+        "plain-present": "にぎわう"
+        "nai-form": "にぎわわない"
+      readings:
+        "plain-present": "nigiwau"
+        "nai-form": "nigiwawanai"
+    - word: "ja-3779"
+      forms:
+        "plain-present": "うちとける"
+        "nai-form": "うちとけない"
+      readings:
+        "plain-present": "uchitokeru"
+        "nai-form": "uchitokenai"
+    - word: "ja-3780"
+      forms:
+        "plain-present": "しんじあう"
+        "nai-form": "しんじあわない"
+      readings:
+        "plain-present": "shinjiau"
+        "nai-form": "shinjiawanai"
+    - word: "ja-3781"
+      forms:
+        "plain-present": "たよる"
+        "nai-form": "たよらない"
+      readings:
+        "plain-present": "tayoru"
+        "nai-form": "tayoranai"
+    - word: "ja-3782"
+      forms:
+        "plain-present": "はげます"
+        "nai-form": "はげまさない"
+      readings:
+        "plain-present": "hagemasu"
+        "nai-form": "hagemasanai"
+    - word: "ja-3783"
+      forms:
+        "plain-present": "なぐさめる"
+        "nai-form": "なぐさめない"
+      readings:
+        "plain-present": "nagusameru"
+        "nai-form": "nagusamenai"
+    - word: "ja-3784"
+      forms:
+        "plain-present": "かばう"
+        "nai-form": "かばわない"
+      readings:
+        "plain-present": "kabau"
+        "nai-form": "kabawanai"
+    - word: "ja-3785"
+      forms:
+        "plain-present": "ささえる"
+        "nai-form": "ささえない"
+      readings:
+        "plain-present": "sasaeru"
+        "nai-form": "sasaenai"
+    - word: "ja-3786"
+      forms:
+        "plain-present": "たすけあう"
+        "nai-form": "たすけあわない"
+      readings:
+        "plain-present": "tasukeau"
+        "nai-form": "tasukeawanai"
+    - word: "ja-3790"
+      forms:
+        "plain-present": "しりあう"
+        "nai-form": "しりあわない"
+      readings:
+        "plain-present": "shiriau"
+        "nai-form": "shiriawanai"
+    - word: "ja-3791"
+      forms:
+        "plain-present": "であう"
+        "nai-form": "であわない"
+      readings:
+        "plain-present": "deau"
+        "nai-form": "deawanai"
+    - word: "ja-3833"
+      forms:
+        "plain-present": "くらす"
+        "nai-form": "くらさない"
+      readings:
+        "plain-present": "kurasu"
+        "nai-form": "kurasanai"
+    - word: "ja-3857"
+      forms:
+        "plain-present": "かす"
+        "nai-form": "かさない"
+      readings:
+        "plain-present": "kasu"
+        "nai-form": "kasanai"
+    - word: "ja-3887"
+      forms:
+        "plain-present": "ゆれる"
+        "nai-form": "ゆれない"
+      readings:
+        "plain-present": "yureru"
+        "nai-form": "yurenai"
+    - word: "ja-3898"
+      forms:
+        "plain-present": "すくう"
+        "nai-form": "すくわない"
+      readings:
+        "plain-present": "sukuu"
+        "nai-form": "sukuwanai"
+    - word: "ja-3914"
+      forms:
+        "plain-present": "にげる"
+        "nai-form": "にげない"
+      readings:
+        "plain-present": "nigeru"
+        "nai-form": "nigenai"
+    - word: "ja-3915"
+      forms:
+        "plain-present": "にがす"
+        "nai-form": "にがさない"
+      readings:
+        "plain-present": "nigasu"
+        "nai-form": "nigasanai"
+    - word: "ja-3963"
+      forms:
+        "plain-present": "きんじる"
+        "nai-form": "きんじない"
+      readings:
+        "plain-present": "kinjiru"
+        "nai-form": "kinjinai"
+    - word: "ja-3965"
+      forms:
+        "plain-present": "うったえる"
+        "nai-form": "うったえない"
+      readings:
+        "plain-present": "uttaeru"
+        "nai-form": "uttaenai"
+    - word: "ja-4046"
+      forms:
+        "plain-present": "おそう"
+        "nai-form": "おそわない"
+      readings:
+        "plain-present": "osou"
+        "nai-form": "osowanai"
+    - word: "ja-4047"
+      forms:
+        "plain-present": "おさえる"
+        "nai-form": "おさえない"
+      readings:
+        "plain-present": "osaeru"
+        "nai-form": "osaenai"
+    - word: "ja-4048"
+      forms:
+        "plain-present": "おさまる"
+        "nai-form": "おさまらない"
+      readings:
+        "plain-present": "osamaru"
+        "nai-form": "osamaranai"
+    - word: "ja-4049"
+      forms:
+        "plain-present": "おさめる"
+        "nai-form": "おさめない"
+      readings:
+        "plain-present": "osameru"
+        "nai-form": "osamenai"
+    - word: "ja-4050"
+      forms:
+        "plain-present": "おぼれる"
+        "nai-form": "おぼれない"
+      readings:
+        "plain-present": "oboreru"
+        "nai-form": "oborenai"
+    - word: "ja-4051"
+      forms:
+        "plain-present": "おもいだす"
+        "nai-form": "おもいださない"
+      readings:
+        "plain-present": "omoidasu"
+        "nai-form": "omoidasanai"
+    - word: "ja-4052"
+      forms:
+        "plain-present": "おもいつく"
+        "nai-form": "おもいつかない"
+      readings:
+        "plain-present": "omoitsuku"
+        "nai-form": "omoitsukanai"
+    - word: "ja-4053"
+      forms:
+        "plain-present": "かかえる"
+        "nai-form": "かかえない"
+      readings:
+        "plain-present": "kakaeru"
+        "nai-form": "kakaenai"
+    - word: "ja-4054"
+      forms:
+        "plain-present": "かさなる"
+        "nai-form": "かさならない"
+      readings:
+        "plain-present": "kasanaru"
+        "nai-form": "kasanaranai"
+    - word: "ja-4055"
+      forms:
+        "plain-present": "かさねる"
+        "nai-form": "かさねない"
+      readings:
+        "plain-present": "kasaneru"
+        "nai-form": "kasanenai"
+    - word: "ja-4056"
+      forms:
+        "plain-present": "かたむく"
+        "nai-form": "かたむかない"
+      readings:
+        "plain-present": "katamuku"
+        "nai-form": "katamukanai"
+    - word: "ja-4057"
+      forms:
+        "plain-present": "かなう"
+        "nai-form": "かなわない"
+      readings:
+        "plain-present": "kanau"
+        "nai-form": "kanawanai"
+    - word: "ja-4058"
+      forms:
+        "plain-present": "かぶせる"
+        "nai-form": "かぶせない"
+      readings:
+        "plain-present": "kabuseru"
+        "nai-form": "kabusenai"
+    - word: "ja-4059"
+      forms:
+        "plain-present": "きづく"
+        "nai-form": "きづかない"
+      readings:
+        "plain-present": "kizuku"
+        "nai-form": "kizukanai"
+    - word: "ja-4060"
+      forms:
+        "plain-present": "くずれる"
+        "nai-form": "くずれない"
+      readings:
+        "plain-present": "kuzureru"
+        "nai-form": "kuzurenai"
+    - word: "ja-4061"
+      forms:
+        "plain-present": "くたびれる"
+        "nai-form": "くたびれない"
+      readings:
+        "plain-present": "kutabireru"
+        "nai-form": "kutabirenai"
+    - word: "ja-4062"
+      forms:
+        "plain-present": "くっつく"
+        "nai-form": "くっつかない"
+      readings:
+        "plain-present": "kuttsuku"
+        "nai-form": "kuttsukanai"
+    - word: "ja-4063"
+      forms:
+        "plain-present": "くっつける"
+        "nai-form": "くっつけない"
+      readings:
+        "plain-present": "kuttsukeru"
+        "nai-form": "kuttsukenai"
+    - word: "ja-4064"
+      forms:
+        "plain-present": "ころがる"
+        "nai-form": "ころがらない"
+      readings:
+        "plain-present": "korogaru"
+        "nai-form": "korogaranai"
+    - word: "ja-4065"
+      forms:
+        "plain-present": "ころす"
+        "nai-form": "ころさない"
+      readings:
+        "plain-present": "korosu"
+        "nai-form": "korosanai"
+    - word: "ja-4066"
+      forms:
+        "plain-present": "こめる"
+        "nai-form": "こめない"
+      readings:
+        "plain-present": "komeru"
+        "nai-form": "komenai"
+    - word: "ja-4067"
+      forms:
+        "plain-present": "さからう"
+        "nai-form": "さからわない"
+      readings:
+        "plain-present": "sakarau"
+        "nai-form": "sakarawanai"
+    - word: "ja-4068"
+      forms:
+        "plain-present": "さす"
+        "nai-form": "ささない"
+      readings:
+        "plain-present": "sasu"
+        "nai-form": "sasanai"
+    - word: "ja-4069"
+      forms:
+        "plain-present": "さびる"
+        "nai-form": "さびない"
+      readings:
+        "plain-present": "sabiru"
+        "nai-form": "sabinai"
+    - word: "ja-4070"
+      forms:
+        "plain-present": "しずむ"
+        "nai-form": "しずまない"
+      readings:
+        "plain-present": "shizumu"
+        "nai-form": "shizumanai"
+    - word: "ja-4071"
+      forms:
+        "plain-present": "しずめる"
+        "nai-form": "しずめない"
+      readings:
+        "plain-present": "shizumeru"
+        "nai-form": "shizumenai"
+    - word: "ja-4072"
+      forms:
+        "plain-present": "したがう"
+        "nai-form": "したがわない"
+      readings:
+        "plain-present": "shitagau"
+        "nai-form": "shitagawanai"
+    - word: "ja-4073"
+      forms:
+        "plain-present": "しばる"
+        "nai-form": "しばらない"
+      readings:
+        "plain-present": "shibaru"
+        "nai-form": "shibaranai"
+    - word: "ja-4074"
+      forms:
+        "plain-present": "しめす"
+        "nai-form": "しめさない"
+      readings:
+        "plain-present": "shimesu"
+        "nai-form": "shimesanai"
+    - word: "ja-4075"
+      forms:
+        "plain-present": "すべる"
+        "nai-form": "すべらない"
+      readings:
+        "plain-present": "suberu"
+        "nai-form": "suberanai"
+    - word: "ja-4076"
+      forms:
+        "plain-present": "すませる"
+        "nai-form": "すませない"
+      readings:
+        "plain-present": "sumaseru"
+        "nai-form": "sumasenai"
+    - word: "ja-4077"
+      forms:
+        "plain-present": "すむ"
+        "nai-form": "すまない"
+      readings:
+        "plain-present": "sumu"
+        "nai-form": "sumanai"
+    - word: "ja-4078"
+      forms:
+        "plain-present": "ずれる"
+        "nai-form": "ずれない"
+      readings:
+        "plain-present": "zureru"
+        "nai-form": "zurenai"
+    - word: "ja-4079"
+      forms:
+        "plain-present": "せまる"
+        "nai-form": "せまらない"
+      readings:
+        "plain-present": "semaru"
+        "nai-form": "semaranai"
+    - word: "ja-4080"
+      forms:
+        "plain-present": "そなえる"
+        "nai-form": "そなえない"
+      readings:
+        "plain-present": "sonaeru"
+        "nai-form": "sonaenai"
+    - word: "ja-4081"
+      forms:
+        "plain-present": "そまる"
+        "nai-form": "そまらない"
+      readings:
+        "plain-present": "somaru"
+        "nai-form": "somaranai"
+    - word: "ja-4082"
+      forms:
+        "plain-present": "そめる"
+        "nai-form": "そめない"
+      readings:
+        "plain-present": "someru"
+        "nai-form": "somenai"
+    - word: "ja-4083"
+      forms:
+        "plain-present": "たえる"
+        "nai-form": "たえない"
+      readings:
+        "plain-present": "taeru"
+        "nai-form": "taenai"
+    - word: "ja-4084"
+      forms:
+        "plain-present": "たしかめる"
+        "nai-form": "たしかめない"
+      readings:
+        "plain-present": "tashikameru"
+        "nai-form": "tashikamenai"
+    - word: "ja-4085"
+      forms:
+        "plain-present": "たまる"
+        "nai-form": "たまらない"
+      readings:
+        "plain-present": "tamaru"
+        "nai-form": "tamaranai"
+    - word: "ja-4086"
+      forms:
+        "plain-present": "ためす"
+        "nai-form": "ためさない"
+      readings:
+        "plain-present": "tamesu"
+        "nai-form": "tamesanai"
+    - word: "ja-4087"
+      forms:
+        "plain-present": "ちぢむ"
+        "nai-form": "ちぢまない"
+      readings:
+        "plain-present": "chijimu"
+        "nai-form": "chijimanai"
+    - word: "ja-4088"
+      forms:
+        "plain-present": "ちぢめる"
+        "nai-form": "ちぢめない"
+      readings:
+        "plain-present": "chijimeru"
+        "nai-form": "chijimenai"
+    - word: "ja-4089"
+      forms:
+        "plain-present": "つぐ"
+        "nai-form": "つがない"
+      readings:
+        "plain-present": "tsugu"
+        "nai-form": "tsuganai"
+    - word: "ja-4090"
+      forms:
+        "plain-present": "つづく"
+        "nai-form": "つづかない"
+      readings:
+        "plain-present": "tsuzuku"
+        "nai-form": "tsuzukanai"
+    - word: "ja-4091"
+      forms:
+        "plain-present": "つぶす"
+        "nai-form": "つぶさない"
+      readings:
+        "plain-present": "tsubusu"
+        "nai-form": "tsubusanai"
+    - word: "ja-4092"
+      forms:
+        "plain-present": "つぶれる"
+        "nai-form": "つぶれない"
+      readings:
+        "plain-present": "tsubureru"
+        "nai-form": "tsuburenai"
+    - word: "ja-4093"
+      forms:
+        "plain-present": "てらす"
+        "nai-form": "てらさない"
+      readings:
+        "plain-present": "terasu"
+        "nai-form": "terasanai"
+    - word: "ja-4094"
+      forms:
+        "plain-present": "とおす"
+        "nai-form": "とおさない"
+      readings:
+        "plain-present": "toosu"
+        "nai-form": "toosanai"
+    - word: "ja-4095"
+      forms:
+        "plain-present": "とかす"
+        "nai-form": "とかさない"
+      readings:
+        "plain-present": "tokasu"
+        "nai-form": "tokasanai"
+    - word: "ja-4096"
+      forms:
+        "plain-present": "とける"
+        "nai-form": "とけない"
+      readings:
+        "plain-present": "tokeru"
+        "nai-form": "tokenai"
+    - word: "ja-4097"
+      forms:
+        "plain-present": "ととのう"
+        "nai-form": "ととのわない"
+      readings:
+        "plain-present": "totonou"
+        "nai-form": "totonowanai"
+    - word: "ja-4098"
+      forms:
+        "plain-present": "ととのえる"
+        "nai-form": "ととのえない"
+      readings:
+        "plain-present": "totonoeru"
+        "nai-form": "totonoenai"
+    - word: "ja-4099"
+      forms:
+        "plain-present": "とびこむ"
+        "nai-form": "とびこまない"
+      readings:
+        "plain-present": "tobikomu"
+        "nai-form": "tobikomanai"
+    - word: "ja-4100"
+      forms:
+        "plain-present": "ともなう"
+        "nai-form": "ともなわない"
+      readings:
+        "plain-present": "tomonau"
+        "nai-form": "tomonawanai"
+    - word: "ja-4101"
+      forms:
+        "plain-present": "とらえる"
+        "nai-form": "とらえない"
+      readings:
+        "plain-present": "toraeru"
+        "nai-form": "toraenai"
+    - word: "ja-4102"
+      forms:
+        "plain-present": "とりあげる"
+        "nai-form": "とりあげない"
+      readings:
+        "plain-present": "toriageru"
+        "nai-form": "toriagenai"
+    - word: "ja-4103"
+      forms:
+        "plain-present": "とりだす"
+        "nai-form": "とりださない"
+      readings:
+        "plain-present": "toridasu"
+        "nai-form": "toridasanai"
+    - word: "ja-4104"
+      forms:
+        "plain-present": "とりのぞく"
+        "nai-form": "とりのぞかない"
+      readings:
+        "plain-present": "torinozoku"
+        "nai-form": "torinozokanai"
+    - word: "ja-4105"
+      forms:
+        "plain-present": "ながす"
+        "nai-form": "ながさない"
+      readings:
+        "plain-present": "nagasu"
+        "nai-form": "nagasanai"
+    - word: "ja-4185"
+      forms:
+        "plain-present": "みとめる"
+        "nai-form": "みとめない"
+      readings:
+        "plain-present": "mitomeru"
+        "nai-form": "mitomenai"
+    - word: "ja-4186"
+      forms:
+        "plain-present": "うたがう"
+        "nai-form": "うたがわない"
+      readings:
+        "plain-present": "utagau"
+        "nai-form": "utagawanai"
+    - word: "ja-4187"
+      forms:
+        "plain-present": "しんじる"
+        "nai-form": "しんじない"
+      readings:
+        "plain-present": "shinjiru"
+        "nai-form": "shinjinai"
+    - word: "ja-4192"
+      forms:
+        "plain-present": "ろんじる"
+        "nai-form": "ろんじない"
+      readings:
+        "plain-present": "ronjiru"
+        "nai-form": "ronjinai"
+rules:
+  - id: "ja-rule-plain-present"
+    slots: ["plain-present"]
+    words:
+      - { word: "たべる", reading: "taberu" }
+      - { word: "のむ", reading: "nomu" }
+  - id: "ja-rule-nai-form"
+    slots: ["nai-form"]
+    words:
+      - { word: "たべない", reading: "tabenai" }
+      - { word: "いかない", reading: "ikanai" }
+      - { word: "しない", reading: "shinai" }
+      - { word: "こない", reading: "konai" }

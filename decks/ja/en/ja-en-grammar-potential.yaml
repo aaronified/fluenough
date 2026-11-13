@@ -1,0 +1,17 @@
+schema: 1
+id: "ja-en-grammar-potential"
+kind: "layer"
+core: "ja-grammar-potential"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The potential form: can do"
+description: "The potential form says that you can do something. An ichidan verb adds られる (rareru) to its stem, a godan verb changes its last sound to the e-row, and する (suru) and くる (kuru) are irregular. Every verb a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "potential": "can {meaning}"
+rules:
+  "ja-rule-potential":
+    name: "The potential form: can do"
+    explanation: "The potential form says that you can do something. An ichidan verb adds られる (rareru) to its stem: たべる (taberu) becomes {1}. A godan verb changes its last sound to the e-row: いく (iku) becomes {2}. する (suru) becomes {3} and くる (kuru) becomes {4}. The polite forms are shown."

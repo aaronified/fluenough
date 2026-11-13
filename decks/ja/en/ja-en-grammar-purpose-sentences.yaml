@@ -1,0 +1,58 @@
+schema: 1
+id: "ja-en-grammar-purpose-sentences"
+kind: "layer"
+core: "ja-grammar-purpose-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Purpose, in sentences"
+description: "Sentences that give a purpose, with ために (tame ni) and ように (you ni), to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-4559":
+    native: "I come here in order to read a book."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "ために": { meaning: "in order to" }
+      "に": { meaning: "(in, at, to)" }
+    confusables:
+      w1: { why: "かく (kaku) means to write." }
+      w2: { why: "きく (kiku) means to listen; to hear; to ask." }
+  "ja-4560":
+    native: "I go to the station in order to meet my friend."
+    bases:
+      "に": { meaning: "(in, at, to)" }
+      "ために": { meaning: "in order to" }
+    confusables:
+      w1: { why: "まつ (matsu) means to wait." }
+      w2: { why: "かえる (kaeru) means to return home; to go home." }
+  "ja-4561":
+    native: "I try to go to bed early."
+    bases:
+      "ように": { meaning: "so that; in order to" }
+    confusables:
+      w1: { why: "おきる (okiru) means to get up; to wake up." }
+      w2: { why: "あそぶ (asobu) means to play." }
+  "ja-4562":
+    native: "I write it down so as not to forget."
+    notes:
+      "n1": "わすれないように (wasurenai you ni): the ない (nai) form with ように (you ni) says so that you do not."
+    bases:
+      "ように": { meaning: "so that; in order to" }
+    confusables:
+      w1: { why: "おぼえる (oboeru) means to remember; to memorise." }
+      w2: { why: "よむ (yomu) means to read." }
+  "ja-4563":
+    native: "I go to the shop in order to buy coffee."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "ために": { meaning: "in order to" }
+    confusables:
+      w1: { why: "のむ (nomu) means to drink." }
+      w2: { why: "つくる (tsukuru) means to make; to create." }
+  "ja-4564":
+    native: "I try to listen well."
+    bases:
+      "ように": { meaning: "so that; in order to" }
+    confusables:
+      w1: { why: "はなす (hanasu) means to speak; to talk." }
+      w2: { why: "よむ (yomu) means to read." }

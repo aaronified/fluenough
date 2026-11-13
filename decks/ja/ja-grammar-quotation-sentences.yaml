@@ -1,0 +1,113 @@
+schema: 1
+id: "ja-grammar-quotation-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-4535"
+    target: "ともだちはくるとおもいます。"
+    words: ["ともだち", "は", "くる", "と", "おもいます"]
+    reading: "tomodachi wa kuru to omoimasu."
+    ipa: "tomodatɕi wa kɯɾɯ to omoimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "くる", ref: "ja-0349" }
+      - { word: "と", base: "と", reading: "to" }
+      - { word: "おもいます", base: "おもう", reading: "omou" }
+    confusables:
+      - { id: "w1", ref: "ja-0348", kind: "word" }
+      - { id: "w2", ref: "ja-0350", kind: "word" }
+    rules: ["ja-rule-to-omou"]
+  - id: "ja-4536"
+    target: "ちちはえいがをみるといいました。"
+    words: ["ちち", "は", "えいが", "を", "みる", "と", "いいました"]
+    reading: "chichi wa eiga o miru to iimashita."
+    ipa: "tɕitɕi wa eːɡa o miɾɯ to iːmaɕita"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ちち", ref: "ja-0200" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "えいが", ref: "ja-1358" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "みる", ref: "ja-0343" }
+      - { word: "と", base: "と", reading: "to" }
+      - { word: "いいました", base: "いう", reading: "iu" }
+    confusables:
+      - { id: "w1", ref: "ja-0344", kind: "word" }
+      - { id: "w2", ref: "ja-0345", kind: "word" }
+    rules: ["ja-rule-to-iu"]
+  - id: "ja-4537"
+    target: "はははねるといいました。"
+    words: ["はは", "は", "ねる", "と", "いいました"]
+    reading: "haha wa neru to iimashita."
+    ipa: "haha wa neɾɯ to iːmaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "はは", ref: "ja-0201" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ねる", ref: "ja-0352" }
+      - { word: "と", base: "と", reading: "to" }
+      - { word: "いいました", base: "いう", reading: "iu" }
+    confusables:
+      - { id: "w1", ref: "ja-0351", kind: "word" }
+      - { id: "w2", ref: "ja-0374", kind: "word" }
+    rules: ["ja-rule-to-iu"]
+  - id: "ja-4538"
+    target: "わたしはあしたいくとおもいます。"
+    words: ["わたし", "は", "あした", "いく", "と", "おもいます"]
+    reading: "watashi wa ashita iku to omoimasu."
+    ipa: "wataɕi wa aɕita ikɯ to omoimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "あした", ref: "ja-0513" }
+      - { word: "いく", ref: "ja-0348" }
+      - { word: "と", base: "と", reading: "to" }
+      - { word: "おもいます", base: "おもう", reading: "omou" }
+    confusables:
+      - { id: "w1", ref: "ja-0349", kind: "word" }
+      - { id: "w2", ref: "ja-0350", kind: "word" }
+    rules: ["ja-rule-to-omou"]
+  - id: "ja-4539"
+    target: "せんせいはここでまつといいました。"
+    words: ["せんせい", "は", "ここ", "で", "まつ", "と", "いいました"]
+    reading: "sensei wa koko de matsu to iimashita."
+    ipa: "seɴseː wa koko de matsɯ to iːmaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "せんせい", ref: "ja-0070" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ここ", ref: "ja-0554" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "まつ", ref: "ja-0358" }
+      - { word: "と", base: "と", reading: "to" }
+      - { word: "いいました", base: "いう", reading: "iu" }
+    confusables:
+      - { id: "w1", ref: "ja-0357", kind: "word" }
+      - { id: "w2", ref: "ja-1071", kind: "word" }
+    rules: ["ja-rule-to-iu"]
+  - id: "ja-4540"
+    target: "ともだちはバスでかえるとおもいます。"
+    words: ["ともだち", "は", "バス", "で", "かえる", "と", "おもいます"]
+    reading: "tomodachi wa basu de kaeru to omoimasu."
+    ipa: "tomodatɕi wa basɯ de kaeɾɯ to omoimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "バス", ref: "ja-0856" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "かえる", ref: "ja-0350" }
+      - { word: "と", base: "と", reading: "to" }
+      - { word: "おもいます", base: "おもう", reading: "omou" }
+    confusables:
+      - { id: "w1", ref: "ja-0348", kind: "word" }
+      - { id: "w2", ref: "ja-0349", kind: "word" }
+    rules: ["ja-rule-to-omou"]

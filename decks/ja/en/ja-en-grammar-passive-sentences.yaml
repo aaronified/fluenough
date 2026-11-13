@@ -1,0 +1,60 @@
+schema: 1
+id: "ja-en-grammar-passive-sentences"
+kind: "layer"
+core: "ja-grammar-passive-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The passive, in sentences"
+description: "Sentences in the passive, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-4547":
+    native: "I was praised by the teacher."
+    notes:
+      "n1": "ほめられました (homeraremashita) is the past of the passive: an ichidan verb adds られる (rareru) to its stem. The person who does the action is marked with に (ni): せんせいに (sensei ni), by the teacher."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "に": { meaning: "(in, at, to)" }
+    confusables:
+      w1: { why: "みる (miru) means to see; to look at; to watch." }
+      w2: { why: "きく (kiku) means to listen; to hear; to ask." }
+  "ja-4548":
+    native: "I was helped by my friend."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "に": { meaning: "(in, at, to)" }
+    confusables:
+      w1: { why: "てつだう (tetsudau) means to help." }
+      w2: { why: "あう (au) means to meet." }
+  "ja-4549":
+    native: "The child was called by his mother."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "に": { meaning: "(in, at, to)" }
+    confusables:
+      w1: { why: "きく (kiku) means to listen; to hear; to ask." }
+      w2: { why: "はなす (hanasu) means to speak; to talk." }
+  "ja-4550":
+    native: "I was laughed at by my friend."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "に": { meaning: "(in, at, to)" }
+    confusables:
+      w1: { why: "はなす (hanasu) means to speak; to talk." }
+      w2: { why: "あう (au) means to meet." }
+  "ja-4551":
+    native: "My father is praised by the teacher."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "に": { meaning: "(in, at, to)" }
+    confusables:
+      w1: { why: "みる (miru) means to see; to look at; to watch." }
+      w2: { why: "きく (kiku) means to listen; to hear; to ask." }
+  "ja-4552":
+    native: "The child is helped by his father."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "に": { meaning: "(in, at, to)" }
+    confusables:
+      w1: { why: "てつだう (tetsudau) means to help." }
+      w2: { why: "あう (au) means to meet." }

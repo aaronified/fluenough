@@ -406,7 +406,9 @@ units:
       - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain, typhoon" } }
     reading_passages:
       - { id: "weather-message", text: { "en": "A message to a friend about the weather" } }
-  - planned: { id: "ja-grammar-plain-present", grammar: ["plain-present", "nai-form"] }
+  - decks: ["ja-grammar-plain-present", "ja-grammar-plain-present-sentences"]
+    words: 0
+    grammar: ["plain-present", "nai-form"]
     listening_passages:
       - { id: "talking-with-friends", text: { "en": "Friends talk casually: what they do and do not do" } }
     reading_passages:
@@ -428,7 +430,9 @@ units:
       - { id: "asking-the-price", text: { "en": "Asking about price and size in a department store" } }
     reading_passages:
       - { id: "receipt", text: { "en": "A shop receipt with tax" } }
-  - planned: { id: "ja-grammar-plain-past", grammar: ["ta-form", "nakatta"] }
+  - decks: ["ja-grammar-plain-past", "ja-grammar-plain-past-sentences"]
+    words: 0
+    grammar: ["ta-form", "nakatta"]
     listening_passages:
       - { id: "what-did-you-do", text: { "en": "Friends say casually what they did and did not do" } }
     reading_passages:
@@ -509,7 +513,9 @@ units:
       - { id: "a-cold-and-a-fever", text: { "en": "Telling a friend you have a cold and a fever" } }
     reading_passages:
       - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
-  - planned: { id: "ja-grammar-obligation", grammar: ["nakereba-naranai", "ta-hou-ga-ii"] }
+  - decks: ["ja-grammar-obligation", "ja-grammar-obligation-sentences"]
+    words: 0
+    grammar: ["nakereba-naranai", "ta-hou-ga-ii"]
     listening_passages:
       - { id: "you-should-rest", text: { "en": "A doctor says what you must do and what you had better do" } }
     reading_passages:
@@ -575,7 +581,9 @@ units:
       - { id: "describing-a-room", text: { "en": "Describing a rented room" } }
     reading_passages:
       - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
-  - planned: { id: "ja-grammar-potential", grammar: "potential" }
+  - decks: ["ja-grammar-potential", "ja-grammar-potential-sentences"]
+    words: 0
+    grammar: ["potential"]
     listening_passages:
       - { id: "can-you-swim", text: { "en": "Saying what you can and cannot do: swim, read kanji, eat natto" } }
     reading_passages:
@@ -586,7 +594,9 @@ units:
       - { id: "first-day-at-work", text: { "en": "A new colleague's first day at the office" } }
     reading_passages:
       - { id: "office-notice", text: { "en": "An office notice about a meeting" } }
-  - planned: { id: "ja-grammar-intention", grammar: ["volitional", "tsumori"] }
+  - decks: ["ja-grammar-intention", "ja-grammar-intention-sentences"]
+    words: 0
+    grammar: ["volitional", "tsumori"]
     listening_passages:
       - { id: "plans-for-the-holidays", text: { "en": "Saying what you are going to do and intend to do in the holidays" } }
     reading_passages:
@@ -606,7 +616,9 @@ units:
       - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
     reading_passages:
       - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
-  - planned: { id: "ja-grammar-conditional-to-ba", grammar: ["conditional-to", "conditional-ba"] }
+  - decks: ["ja-grammar-conditional-to-ba", "ja-grammar-conditional-to-ba-sentences"]
+    words: 0
+    grammar: ["conditional-to", "conditional-ba"]
     listening_passages:
       - { id: "if-you-press-this", text: { "en": "Saying what happens if you press a button, and what to do if it rains" } }
     reading_passages:
@@ -630,13 +642,15 @@ units:
       - { id: "radio-news", text: { "en": "A short radio news bulletin" } }
     reading_passages:
       - { id: "headline-list", text: { "en": "A list of newspaper headlines" } }
-  - planned: { id: "ja-grammar-quotation", grammar: ["to-iu", "to-omou"] }
+  - decks: ["ja-grammar-quotation", "ja-grammar-quotation-sentences"]
+    words: 0
+    grammar: ["to-iu", "to-omou"]
     listening_passages:
       - { id: "i-think-that", text: { "en": "Saying what you think and what someone said" } }
     reading_passages:
       - { id: "interview-notes", text: { "en": "Notes from a short street interview" } }
   - decks: ["ja-opinions"]
-    words: 60
+    words: 62
     listening_passages:
       - { id: "agreeing-and-disagreeing", text: { "en": "Two friends agree and disagree politely over coffee" } }
     reading_passages:
@@ -682,7 +696,9 @@ units:
       - { id: "fixing-a-phone", text: { "en": "Asking a shop to fix a phone" } }
     reading_passages:
       - { id: "app-instructions", text: { "en": "Instructions inside a phone app" } }
-  - planned: { id: "ja-grammar-nominalisers", grammar: ["nominaliser-no", "nominaliser-koto"] }
+  - decks: ["ja-grammar-nominalisers", "ja-grammar-nominalisers-sentences"]
+    words: 0
+    grammar: ["nominaliser-no", "nominaliser-koto"]
     listening_passages:
       - { id: "my-hobby-is", text: { "en": "Saying that your hobby is reading, and that you like walking" } }
     reading_passages:
@@ -721,7 +737,9 @@ units:
       - { id: "recycling-talk", text: { "en": "Neighbours talk about sorting rubbish and the summer heat" } }
     reading_passages:
       - { id: "clean-up-notice", text: { "en": "A notice for a neighbourhood clean-up" } }
-  - planned: { id: "ja-grammar-passive", grammar: "passive" }
+  - decks: ["ja-grammar-passive", "ja-grammar-passive-sentences"]
+    words: 0
+    grammar: ["passive"]
     listening_passages:
       - { id: "my-bike-was-stolen", text: { "en": "Telling the police your bike was stolen" } }
     reading_passages:
@@ -743,7 +761,9 @@ units:
       - { id: "a-calligraphy-class", text: { "en": "A teacher explains a calligraphy class" } }
     reading_passages:
       - { id: "exhibition-notice", text: { "en": "A notice for an art exhibition" } }
-  - planned: { id: "ja-grammar-hearsay-appearance", grammar: ["sou-da-hearsay", "sou-da-appearance", "you-da", "rashii"] }
+  - decks: ["ja-grammar-hearsay-appearance", "ja-grammar-hearsay-appearance-sentences"]
+    words: 0
+    grammar: ["sou-da-hearsay", "sou-da-appearance", "you-da", "rashii"]
     listening_passages:
       - { id: "it-looks-like-rain", text: { "en": "Saying it looks like rain, and that you heard the shop closed" } }
     reading_passages:
@@ -760,7 +780,9 @@ units:
       - { id: "at-the-shrine", text: { "en": "A friend explains how to pray at a shrine and a temple" } }
     reading_passages:
       - { id: "shrine-sign", text: { "en": "A sign at a shrine explaining its history" } }
-  - planned: { id: "ja-grammar-purpose", grammar: ["tame-ni", "you-ni"] }
+  - decks: ["ja-grammar-purpose", "ja-grammar-purpose-sentences"]
+    words: 0
+    grammar: ["tame-ni", "you-ni"]
     listening_passages:
       - { id: "saving-to-travel", text: { "en": "Saying what you do in order to travel, and so as not to forget" } }
     reading_passages:
@@ -777,7 +799,9 @@ units:
       - { id: "wedding-plans", text: { "en": "Relatives plan a wedding" } }
     reading_passages:
       - { id: "wedding-card", text: { "en": "A wedding invitation card" } }
-  - planned: { id: "ja-grammar-causative", grammar: ["causative", "causative-passive"] }
+  - decks: ["ja-grammar-causative", "ja-grammar-causative-sentences"]
+    words: 0
+    grammar: ["causative", "causative-passive"]
     listening_passages:
       - { id: "let-me-do-it", text: { "en": "Saying what a parent makes or lets a child do, and what you were made to do" } }
     reading_passages:
@@ -811,7 +835,9 @@ units:
       - { id: "at-the-koban", text: { "en": "Reporting a lost wallet at a police box" } }
     reading_passages:
       - { id: "rights-leaflet", text: { "en": "A leaflet on a tenant's rights" } }
-  - planned: { id: "ja-grammar-nagara-tari", grammar: ["nagara", "tari"] }
+  - decks: ["ja-grammar-nagara-tari", "ja-grammar-nagara-tari-sentences"]
+    words: 0
+    grammar: ["nagara", "tari"]
     listening_passages:
       - { id: "while-walking", text: { "en": "Saying you listen to music while walking, and do this and that at weekends" } }
     reading_passages:

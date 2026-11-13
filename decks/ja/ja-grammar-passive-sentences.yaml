@@ -1,0 +1,106 @@
+schema: 1
+id: "ja-grammar-passive-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-4547"
+    target: "わたしはせんせいにほめられました。"
+    words: ["わたし", "は", "せんせい", "に", "ほめられました"]
+    reading: "watashi wa sensei ni homeraremashita."
+    ipa: "wataɕi wa seɴseː ni homeɾaɾemaɕita"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "せんせい", ref: "ja-0070" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "ほめられました", ref: "ja-1907" }
+    confusables:
+      - { id: "w1", ref: "ja-0343", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-passive"]
+  - id: "ja-4548"
+    target: "わたしはともだちにたすけられました。"
+    words: ["わたし", "は", "ともだち", "に", "たすけられました"]
+    reading: "watashi wa tomodachi ni tasukeraremashita."
+    ipa: "wataɕi wa tomodatɕi ni tasɯkeɾaɾemaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "たすけられました", ref: "ja-1236" }
+    confusables:
+      - { id: "w1", ref: "ja-0580", kind: "word" }
+      - { id: "w2", ref: "ja-0357", kind: "word" }
+    rules: ["ja-rule-passive"]
+  - id: "ja-4549"
+    target: "こどもはははによばれました。"
+    words: ["こども", "は", "はは", "に", "よばれました"]
+    reading: "kodomo wa haha ni yobaremashita."
+    ipa: "kodomo wa haha ni jobaɾemaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "こども", ref: "ja-0225" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "はは", ref: "ja-0201" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "よばれました", ref: "ja-1227" }
+    confusables:
+      - { id: "w1", ref: "ja-0344", kind: "word" }
+      - { id: "w2", ref: "ja-0347", kind: "word" }
+    rules: ["ja-rule-passive"]
+  - id: "ja-4550"
+    target: "わたしはともだちにわらわれました。"
+    words: ["わたし", "は", "ともだち", "に", "わらわれました"]
+    reading: "watashi wa tomodachi ni warawaremashita."
+    ipa: "wataɕi wa tomodatɕi ni waɾawaɾemaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "わらわれました", ref: "ja-0593" }
+    confusables:
+      - { id: "w1", ref: "ja-0347", kind: "word" }
+      - { id: "w2", ref: "ja-0357", kind: "word" }
+    rules: ["ja-rule-passive"]
+  - id: "ja-4551"
+    target: "ちちはせんせいにほめられます。"
+    words: ["ちち", "は", "せんせい", "に", "ほめられます"]
+    reading: "chichi wa sensei ni homeraremasu."
+    ipa: "tɕitɕi wa seɴseː ni homeɾaɾemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ちち", ref: "ja-0200" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "せんせい", ref: "ja-0070" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "ほめられます", ref: "ja-1907" }
+    confusables:
+      - { id: "w1", ref: "ja-0343", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-passive"]
+  - id: "ja-4552"
+    target: "こどもはちちにたすけられます。"
+    words: ["こども", "は", "ちち", "に", "たすけられます"]
+    reading: "kodomo wa chichi ni tasukeraremasu."
+    ipa: "kodomo wa tɕitɕi ni tasɯkeɾaɾemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "こども", ref: "ja-0225" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ちち", ref: "ja-0200" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "たすけられます", ref: "ja-1236" }
+    confusables:
+      - { id: "w1", ref: "ja-0580", kind: "word" }
+      - { id: "w2", ref: "ja-0357", kind: "word" }
+    rules: ["ja-rule-passive"]

@@ -1,0 +1,94 @@
+schema: 1
+id: "ja-grammar-obligation-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-4511"
+    target: "あした、はたらかなければなりません。"
+    words: ["あした", "はたらかなければなりません"]
+    reading: "ashita, hatarakanakerebanarimasen."
+    ipa: "aɕita hataɾakanakeɾebanaɾimaseɴ"
+    pos: "phrase"
+    bases:
+      - { word: "あした", ref: "ja-0513" }
+      - { word: "はたらかなければなりません", ref: "ja-0353" }
+    confusables:
+      - { id: "w1", ref: "ja-0374", kind: "word" }
+      - { id: "w2", ref: "ja-0354", kind: "word" }
+    rules: ["ja-rule-nakereba-naranai"]
+  - id: "ja-4512"
+    target: "あしたははやくおきなければなりません。"
+    words: ["あした", "は", "はやく", "おきなければなりません"]
+    reading: "ashita wa hayaku okinakerebanarimasen."
+    ipa: "aɕita wa hajakɯ okinakeɾebanaɾimaseɴ"
+    pos: "phrase"
+    bases:
+      - { word: "あした", ref: "ja-0513" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "はやく", ref: "ja-0401" }
+      - { word: "おきなければなりません", ref: "ja-0351" }
+    confusables:
+      - { id: "w1", ref: "ja-0352", kind: "word" }
+      - { id: "w2", ref: "ja-1071", kind: "word" }
+    rules: ["ja-rule-nakereba-naranai"]
+  - id: "ja-4513"
+    target: "ここでまたなければなりません。"
+    words: ["ここ", "で", "またなければなりません"]
+    reading: "koko de matanakerebanarimasen."
+    ipa: "koko de matanakeɾebanaɾimaseɴ"
+    pos: "phrase"
+    bases:
+      - { word: "ここ", ref: "ja-0554" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "またなければなりません", ref: "ja-0358" }
+    confusables:
+      - { id: "w1", ref: "ja-0348", kind: "word" }
+      - { id: "w2", ref: "ja-1071", kind: "word" }
+    rules: ["ja-rule-nakereba-naranai"]
+  - id: "ja-4514"
+    target: "いま、てがみをかかなければなりません。"
+    words: ["いま", "てがみ", "を", "かかなければなりません"]
+    reading: "ima, tegami o kakanakerebanarimasen."
+    ipa: "ima teɡami o kakanakeɾebanaɾimaseɴ"
+    pos: "phrase"
+    bases:
+      - { word: "いま", ref: "ja-0508" }
+      - { word: "てがみ", ref: "ja-1356" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "かかなければなりません", ref: "ja-0346" }
+    confusables:
+      - { id: "w1", ref: "ja-0345", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-nakereba-naranai"]
+  - id: "ja-4515"
+    target: "はやくねたほうがいいです。"
+    words: ["はやく", "ねたほうがいいです"]
+    reading: "hayaku netahougaiidesu."
+    ipa: "hajakɯ netahoːɡaiːdesɯ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "はやく", ref: "ja-0401" }
+      - { word: "ねたほうがいいです", ref: "ja-0352" }
+    confusables:
+      - { id: "w1", ref: "ja-0351", kind: "word" }
+      - { id: "w2", ref: "ja-0374", kind: "word" }
+    rules: ["ja-rule-ta-hou-ga-ii"]
+  - id: "ja-4516"
+    target: "くすりをのんだほうがいいです。"
+    words: ["くすり", "を", "のんだほうがいいです"]
+    reading: "kusuri o nondahougaiidesu."
+    ipa: "kɯsɯɾi o noɴdahoːɡaiːdesɯ"
+    pos: "phrase"
+    bases:
+      - { word: "くすり", ref: "ja-1103" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "のんだほうがいいです", ref: "ja-0342" }
+    confusables:
+      - { id: "w1", ref: "ja-0341", kind: "word" }
+      - { id: "w2", ref: "ja-0364", kind: "word" }
+    rules: ["ja-rule-ta-hou-ga-ii"]

@@ -1,0 +1,21 @@
+schema: 1
+id: "ja-en-grammar-obligation"
+kind: "layer"
+core: "ja-grammar-obligation"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Must and had better: なければなりません (nakereba narimasen) and たほうがいいです (ta hou ga ii desu)"
+description: "After the ない (nai) form with い (i) dropped, なければなりません (nakereba narimasen) says that something must be done. After the past (ta) form, ほうがいいです (hou ga ii desu) gives advice. Every verb a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "nakereba-naranai": "must {meaning}"
+    "ta-hou-ga-ii": "had better {meaning}"
+rules:
+  "ja-rule-nakereba-naranai":
+    name: "なければなりません (nakereba narimasen): must"
+    explanation: "{1} follows the ない (nai) form with い (i) dropped to say that something must be done: {2} means I must eat."
+  "ja-rule-ta-hou-ga-ii":
+    name: "たほうがいいです (ta hou ga ii desu): had better"
+    explanation: "{1} follows the past (ta) form to give advice: {2} means you had better eat."

@@ -1,0 +1,112 @@
+schema: 1
+id: "ja-grammar-causative-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-4565"
+    target: "せんせいはこどもにほんをよませます。"
+    words: ["せんせい", "は", "こども", "に", "ほん", "を", "よませます"]
+    reading: "sensei wa kodomo ni hon o yomasemasu."
+    ipa: "seɴseː wa kodomo ni hoɴ o jomasemasɯ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "せんせい", ref: "ja-0070" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "こども", ref: "ja-0225" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "ほん", ref: "ja-1180" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "よませます", ref: "ja-0345" }
+    confusables:
+      - { id: "w1", ref: "ja-0346", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-causative"]
+  - id: "ja-4566"
+    target: "はははこどもにごはんをたべさせます。"
+    words: ["はは", "は", "こども", "に", "ごはん", "を", "たべさせます"]
+    reading: "haha wa kodomo ni gohan o tabesasemasu."
+    ipa: "haha wa kodomo ni ɡohaɴ o tabesasemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "はは", ref: "ja-0201" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "こども", ref: "ja-0225" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "ごはん", ref: "ja-0074" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "たべさせます", ref: "ja-0341" }
+    confusables:
+      - { id: "w1", ref: "ja-0342", kind: "word" }
+      - { id: "w2", ref: "ja-0364", kind: "word" }
+    rules: ["ja-rule-causative"]
+  - id: "ja-4567"
+    target: "ちちはわたしをまたせます。"
+    words: ["ちち", "は", "わたし", "を", "またせます"]
+    reading: "chichi wa watashi o matasemasu."
+    ipa: "tɕitɕi wa wataɕi o matasemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ちち", ref: "ja-0200" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "またせます", ref: "ja-0358" }
+    confusables:
+      - { id: "w1", ref: "ja-0348", kind: "word" }
+      - { id: "w2", ref: "ja-1071", kind: "word" }
+    rules: ["ja-rule-causative"]
+  - id: "ja-4568"
+    target: "わたしはせんせいにほんをよませられます。"
+    words: ["わたし", "は", "せんせい", "に", "ほん", "を", "よませられます"]
+    reading: "watashi wa sensei ni hon o yomaseraremasu."
+    ipa: "wataɕi wa seɴseː ni hoɴ o jomaseɾaɾemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "せんせい", ref: "ja-0070" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "ほん", ref: "ja-1180" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "よませられます", ref: "ja-0345" }
+    confusables:
+      - { id: "w1", ref: "ja-0346", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-causative-passive"]
+  - id: "ja-4569"
+    target: "こどもはははにごはんをたべさせられます。"
+    words: ["こども", "は", "はは", "に", "ごはん", "を", "たべさせられます"]
+    reading: "kodomo wa haha ni gohan o tabesaseraremasu."
+    ipa: "kodomo wa haha ni ɡohaɴ o tabesaseɾaɾemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "こども", ref: "ja-0225" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "はは", ref: "ja-0201" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "ごはん", ref: "ja-0074" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "たべさせられます", ref: "ja-0341" }
+    confusables:
+      - { id: "w1", ref: "ja-0342", kind: "word" }
+      - { id: "w2", ref: "ja-0364", kind: "word" }
+    rules: ["ja-rule-causative-passive"]
+  - id: "ja-4570"
+    target: "ともだちをあそばせます。"
+    words: ["ともだち", "を", "あそばせます"]
+    reading: "tomodachi o asobasemasu."
+    ipa: "tomodatɕi o asobasemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "あそばせます", ref: "ja-0374" }
+    confusables:
+      - { id: "w1", ref: "ja-0353", kind: "word" }
+      - { id: "w2", ref: "ja-0352", kind: "word" }
+    rules: ["ja-rule-causative"]

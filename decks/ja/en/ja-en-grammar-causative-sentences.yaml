@@ -1,0 +1,63 @@
+schema: 1
+id: "ja-en-grammar-causative-sentences"
+kind: "layer"
+core: "ja-grammar-causative-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The causative, in sentences"
+description: "Sentences with the causative and the causative-passive, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-4565":
+    native: "The teacher makes the children read a book."
+    notes:
+      "n1": "よませます (yomasemasu): the godan verb よむ (yomu) changes む (mu) to ま (ma) and adds せる (seru)."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "に": { meaning: "(in, at, to)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "かく (kaku) means to write." }
+      w2: { why: "きく (kiku) means to listen; to hear; to ask." }
+  "ja-4566":
+    native: "My mother makes the child eat."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "に": { meaning: "(in, at, to)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "のむ (nomu) means to drink." }
+      w2: { why: "つくる (tsukuru) means to make; to create." }
+  "ja-4567":
+    native: "My father makes me wait."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "いく (iku) means to go." }
+      w2: { why: "でる (deru) means to go out; to leave." }
+  "ja-4568":
+    native: "I am made to read a book by the teacher."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "に": { meaning: "(in, at, to)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "かく (kaku) means to write." }
+      w2: { why: "きく (kiku) means to listen; to hear; to ask." }
+  "ja-4569":
+    native: "The child is made to eat by his mother."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "に": { meaning: "(in, at, to)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "のむ (nomu) means to drink." }
+      w2: { why: "つくる (tsukuru) means to make; to create." }
+  "ja-4570":
+    native: "I let my friend play."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "はたらく (hataraku) means to work." }
+      w2: { why: "ねる (neru) means to sleep; to go to bed." }

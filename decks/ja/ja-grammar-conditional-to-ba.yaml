@@ -1,0 +1,2658 @@
+schema: 1
+id: "ja-grammar-conditional-to-ba"
+part: "core"
+kind: "rules"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ja-0085"]
+  slots: ["conditional-to", "conditional-ba"]
+  rows:
+    - word: "ja-1050"
+      forms:
+        "conditional-to": "まがると"
+        "conditional-ba": "まがれば"
+      readings:
+        "conditional-to": "magaruto"
+        "conditional-ba": "magareba"
+    - word: "ja-1060"
+      forms:
+        "conditional-to": "わたると"
+        "conditional-ba": "わたれば"
+      readings:
+        "conditional-to": "wataruto"
+        "conditional-ba": "watareba"
+    - word: "ja-1061"
+      forms:
+        "conditional-to": "すすむと"
+        "conditional-ba": "すすめば"
+      readings:
+        "conditional-to": "susumuto"
+        "conditional-ba": "susumeba"
+    - word: "ja-1062"
+      forms:
+        "conditional-to": "さがると"
+        "conditional-ba": "さがれば"
+      readings:
+        "conditional-to": "sagaruto"
+        "conditional-ba": "sagareba"
+    - word: "ja-1070"
+      forms:
+        "conditional-to": "まちがえると"
+        "conditional-ba": "まちがえれば"
+      readings:
+        "conditional-to": "machigaeruto"
+        "conditional-ba": "machigaereba"
+    - word: "ja-1071"
+      forms:
+        "conditional-to": "でると"
+        "conditional-ba": "でれば"
+      readings:
+        "conditional-to": "deruto"
+        "conditional-ba": "dereba"
+    - word: "ja-1078"
+      forms:
+        "conditional-to": "むかうと"
+        "conditional-ba": "むかえば"
+      readings:
+        "conditional-to": "mukauto"
+        "conditional-ba": "mukaeba"
+    - word: "ja-0341"
+      forms:
+        "conditional-to": "たべると"
+        "conditional-ba": "たべれば"
+      readings:
+        "conditional-to": "taberuto"
+        "conditional-ba": "tabereba"
+    - word: "ja-0342"
+      forms:
+        "conditional-to": "のむと"
+        "conditional-ba": "のめば"
+      readings:
+        "conditional-to": "nomuto"
+        "conditional-ba": "nomeba"
+    - word: "ja-0343"
+      forms:
+        "conditional-to": "みると"
+        "conditional-ba": "みれば"
+      readings:
+        "conditional-to": "miruto"
+        "conditional-ba": "mireba"
+    - word: "ja-0344"
+      forms:
+        "conditional-to": "きくと"
+        "conditional-ba": "きけば"
+      readings:
+        "conditional-to": "kikuto"
+        "conditional-ba": "kikeba"
+    - word: "ja-0345"
+      forms:
+        "conditional-to": "よむと"
+        "conditional-ba": "よめば"
+      readings:
+        "conditional-to": "yomuto"
+        "conditional-ba": "yomeba"
+    - word: "ja-0346"
+      forms:
+        "conditional-to": "かくと"
+        "conditional-ba": "かけば"
+      readings:
+        "conditional-to": "kakuto"
+        "conditional-ba": "kakeba"
+    - word: "ja-0347"
+      forms:
+        "conditional-to": "はなすと"
+        "conditional-ba": "はなせば"
+      readings:
+        "conditional-to": "hanasuto"
+        "conditional-ba": "hanaseba"
+    - word: "ja-0348"
+      forms:
+        "conditional-to": "いくと"
+        "conditional-ba": "いけば"
+      readings:
+        "conditional-to": "ikuto"
+        "conditional-ba": "ikeba"
+    - word: "ja-0349"
+      forms:
+        "conditional-to": "くると"
+        "conditional-ba": "くれば"
+      readings:
+        "conditional-to": "kuruto"
+        "conditional-ba": "kureba"
+    - word: "ja-0350"
+      forms:
+        "conditional-to": "かえると"
+        "conditional-ba": "かえれば"
+      readings:
+        "conditional-to": "kaeruto"
+        "conditional-ba": "kaereba"
+    - word: "ja-0351"
+      forms:
+        "conditional-to": "おきると"
+        "conditional-ba": "おきれば"
+      readings:
+        "conditional-to": "okiruto"
+        "conditional-ba": "okireba"
+    - word: "ja-0352"
+      forms:
+        "conditional-to": "ねると"
+        "conditional-ba": "ねれば"
+      readings:
+        "conditional-to": "neruto"
+        "conditional-ba": "nereba"
+    - word: "ja-0353"
+      forms:
+        "conditional-to": "はたらくと"
+        "conditional-ba": "はたらけば"
+      readings:
+        "conditional-to": "hatarakuto"
+        "conditional-ba": "hatarakeba"
+    - word: "ja-0354"
+      forms:
+        "conditional-to": "やすむと"
+        "conditional-ba": "やすめば"
+      readings:
+        "conditional-to": "yasumuto"
+        "conditional-ba": "yasumeba"
+    - word: "ja-0355"
+      forms:
+        "conditional-to": "はいると"
+        "conditional-ba": "はいれば"
+      readings:
+        "conditional-to": "hairuto"
+        "conditional-ba": "haireba"
+    - word: "ja-0356"
+      forms:
+        "conditional-to": "かうと"
+        "conditional-ba": "かえば"
+      readings:
+        "conditional-to": "kauto"
+        "conditional-ba": "kaeba"
+    - word: "ja-0357"
+      forms:
+        "conditional-to": "あうと"
+        "conditional-ba": "あえば"
+      readings:
+        "conditional-to": "auto"
+        "conditional-ba": "aeba"
+    - word: "ja-0358"
+      forms:
+        "conditional-to": "まつと"
+        "conditional-ba": "まてば"
+      readings:
+        "conditional-to": "matsuto"
+        "conditional-ba": "mateba"
+    - word: "ja-0359"
+      forms:
+        "conditional-to": "もつと"
+        "conditional-ba": "もてば"
+      readings:
+        "conditional-to": "motsuto"
+        "conditional-ba": "moteba"
+    - word: "ja-0360"
+      forms:
+        "conditional-to": "あるくと"
+        "conditional-ba": "あるけば"
+      readings:
+        "conditional-to": "arukuto"
+        "conditional-ba": "arukeba"
+    - word: "ja-0361"
+      forms:
+        "conditional-to": "のると"
+        "conditional-ba": "のれば"
+      readings:
+        "conditional-to": "noruto"
+        "conditional-ba": "noreba"
+    - word: "ja-0362"
+      forms:
+        "conditional-to": "おりると"
+        "conditional-ba": "おりれば"
+      readings:
+        "conditional-to": "oriruto"
+        "conditional-ba": "orireba"
+    - word: "ja-0363"
+      forms:
+        "conditional-to": "あらうと"
+        "conditional-ba": "あらえば"
+      readings:
+        "conditional-to": "arauto"
+        "conditional-ba": "araeba"
+    - word: "ja-0364"
+      forms:
+        "conditional-to": "つくると"
+        "conditional-ba": "つくれば"
+      readings:
+        "conditional-to": "tsukuruto"
+        "conditional-ba": "tsukureba"
+    - word: "ja-0365"
+      forms:
+        "conditional-to": "わかると"
+        "conditional-ba": "わかれば"
+      readings:
+        "conditional-to": "wakaruto"
+        "conditional-ba": "wakareba"
+    - word: "ja-0366"
+      forms:
+        "conditional-to": "しると"
+        "conditional-ba": "しれば"
+      readings:
+        "conditional-to": "shiruto"
+        "conditional-ba": "shireba"
+    - word: "ja-0367"
+      forms:
+        "conditional-to": "ならうと"
+        "conditional-ba": "ならえば"
+      readings:
+        "conditional-to": "narauto"
+        "conditional-ba": "naraeba"
+    - word: "ja-0368"
+      forms:
+        "conditional-to": "おしえると"
+        "conditional-ba": "おしえれば"
+      readings:
+        "conditional-to": "oshieruto"
+        "conditional-ba": "oshiereba"
+    - word: "ja-0369"
+      forms:
+        "conditional-to": "つかうと"
+        "conditional-ba": "つかえば"
+      readings:
+        "conditional-to": "tsukauto"
+        "conditional-ba": "tsukaeba"
+    - word: "ja-0370"
+      forms:
+        "conditional-to": "すわると"
+        "conditional-ba": "すわれば"
+      readings:
+        "conditional-to": "suwaruto"
+        "conditional-ba": "suwareba"
+    - word: "ja-0371"
+      forms:
+        "conditional-to": "たつと"
+        "conditional-ba": "たてば"
+      readings:
+        "conditional-to": "tatsuto"
+        "conditional-ba": "tateba"
+    - word: "ja-0372"
+      forms:
+        "conditional-to": "あけると"
+        "conditional-ba": "あければ"
+      readings:
+        "conditional-to": "akeruto"
+        "conditional-ba": "akereba"
+    - word: "ja-0373"
+      forms:
+        "conditional-to": "しめると"
+        "conditional-ba": "しめれば"
+      readings:
+        "conditional-to": "shimeruto"
+        "conditional-ba": "shimereba"
+    - word: "ja-0374"
+      forms:
+        "conditional-to": "あそぶと"
+        "conditional-ba": "あそべば"
+      readings:
+        "conditional-to": "asobuto"
+        "conditional-ba": "asobeba"
+    - word: "ja-0375"
+      forms:
+        "conditional-to": "すると"
+        "conditional-ba": "すれば"
+      readings:
+        "conditional-to": "suruto"
+        "conditional-ba": "sureba"
+    - word: "ja-0949"
+      forms:
+        "conditional-to": "かぞえると"
+        "conditional-ba": "かぞえれば"
+      readings:
+        "conditional-to": "kazoeruto"
+        "conditional-ba": "kazoereba"
+    - word: "ja-1226"
+      forms:
+        "conditional-to": "こまると"
+        "conditional-ba": "こまれば"
+      readings:
+        "conditional-to": "komaruto"
+        "conditional-ba": "komareba"
+    - word: "ja-1227"
+      forms:
+        "conditional-to": "よぶと"
+        "conditional-ba": "よべば"
+      readings:
+        "conditional-to": "yobuto"
+        "conditional-ba": "yobeba"
+    - word: "ja-1228"
+      forms:
+        "conditional-to": "まようと"
+        "conditional-ba": "まよえば"
+      readings:
+        "conditional-to": "mayouto"
+        "conditional-ba": "mayoeba"
+    - word: "ja-1236"
+      forms:
+        "conditional-to": "たすけると"
+        "conditional-ba": "たすければ"
+      readings:
+        "conditional-to": "tasukeruto"
+        "conditional-ba": "tasukereba"
+    - word: "ja-1237"
+      forms:
+        "conditional-to": "たすかると"
+        "conditional-ba": "たすかれば"
+      readings:
+        "conditional-to": "tasukaruto"
+        "conditional-ba": "tasukareba"
+    - word: "ja-1240"
+      forms:
+        "conditional-to": "まもると"
+        "conditional-ba": "まもれば"
+      readings:
+        "conditional-to": "mamoruto"
+        "conditional-ba": "mamoreba"
+    - word: "ja-0571"
+      forms:
+        "conditional-to": "あびると"
+        "conditional-ba": "あびれば"
+      readings:
+        "conditional-to": "abiruto"
+        "conditional-ba": "abireba"
+    - word: "ja-0572"
+      forms:
+        "conditional-to": "はしると"
+        "conditional-ba": "はしれば"
+      readings:
+        "conditional-to": "hashiruto"
+        "conditional-ba": "hashireba"
+    - word: "ja-0573"
+      forms:
+        "conditional-to": "とぶと"
+        "conditional-ba": "とべば"
+      readings:
+        "conditional-to": "tobuto"
+        "conditional-ba": "tobeba"
+    - word: "ja-0574"
+      forms:
+        "conditional-to": "おどると"
+        "conditional-ba": "おどれば"
+      readings:
+        "conditional-to": "odoruto"
+        "conditional-ba": "odoreba"
+    - word: "ja-0575"
+      forms:
+        "conditional-to": "うたうと"
+        "conditional-ba": "うたえば"
+      readings:
+        "conditional-to": "utauto"
+        "conditional-ba": "utaeba"
+    - word: "ja-0576"
+      forms:
+        "conditional-to": "かりると"
+        "conditional-ba": "かりれば"
+      readings:
+        "conditional-to": "kariruto"
+        "conditional-ba": "karireba"
+    - word: "ja-0577"
+      forms:
+        "conditional-to": "かえすと"
+        "conditional-ba": "かえせば"
+      readings:
+        "conditional-to": "kaesuto"
+        "conditional-ba": "kaeseba"
+    - word: "ja-0578"
+      forms:
+        "conditional-to": "わすれると"
+        "conditional-ba": "わすれれば"
+      readings:
+        "conditional-to": "wasureruto"
+        "conditional-ba": "wasurereba"
+    - word: "ja-0579"
+      forms:
+        "conditional-to": "おぼえると"
+        "conditional-ba": "おぼえれば"
+      readings:
+        "conditional-to": "oboeruto"
+        "conditional-ba": "oboereba"
+    - word: "ja-0580"
+      forms:
+        "conditional-to": "てつだうと"
+        "conditional-ba": "てつだえば"
+      readings:
+        "conditional-to": "tetsudauto"
+        "conditional-ba": "tetsudaeba"
+    - word: "ja-0581"
+      forms:
+        "conditional-to": "ひろうと"
+        "conditional-ba": "ひろえば"
+      readings:
+        "conditional-to": "hirouto"
+        "conditional-ba": "hiroeba"
+    - word: "ja-0582"
+      forms:
+        "conditional-to": "すてると"
+        "conditional-ba": "すてれば"
+      readings:
+        "conditional-to": "suteruto"
+        "conditional-ba": "sutereba"
+    - word: "ja-0583"
+      forms:
+        "conditional-to": "なくすと"
+        "conditional-ba": "なくせば"
+      readings:
+        "conditional-to": "nakusuto"
+        "conditional-ba": "nakuseba"
+    - word: "ja-0584"
+      forms:
+        "conditional-to": "のぼると"
+        "conditional-ba": "のぼれば"
+      readings:
+        "conditional-to": "noboruto"
+        "conditional-ba": "noboreba"
+    - word: "ja-0585"
+      forms:
+        "conditional-to": "そうじすると"
+        "conditional-ba": "そうじすれば"
+      readings:
+        "conditional-to": "soujisuruto"
+        "conditional-ba": "soujisureba"
+    - word: "ja-0586"
+      forms:
+        "conditional-to": "りょうりすると"
+        "conditional-ba": "りょうりすれば"
+      readings:
+        "conditional-to": "ryourisuruto"
+        "conditional-ba": "ryourisureba"
+    - word: "ja-0587"
+      forms:
+        "conditional-to": "でかけると"
+        "conditional-ba": "でかければ"
+      readings:
+        "conditional-to": "dekakeruto"
+        "conditional-ba": "dekakereba"
+    - word: "ja-0588"
+      forms:
+        "conditional-to": "もどると"
+        "conditional-ba": "もどれば"
+      readings:
+        "conditional-to": "modoruto"
+        "conditional-ba": "modoreba"
+    - word: "ja-0589"
+      forms:
+        "conditional-to": "とまると"
+        "conditional-ba": "とまれば"
+      readings:
+        "conditional-to": "tomaruto"
+        "conditional-ba": "tomareba"
+    - word: "ja-0590"
+      forms:
+        "conditional-to": "さがすと"
+        "conditional-ba": "さがせば"
+      readings:
+        "conditional-to": "sagasuto"
+        "conditional-ba": "sagaseba"
+    - word: "ja-0591"
+      forms:
+        "conditional-to": "みせると"
+        "conditional-ba": "みせれば"
+      readings:
+        "conditional-to": "miseruto"
+        "conditional-ba": "misereba"
+    - word: "ja-0592"
+      forms:
+        "conditional-to": "いれると"
+        "conditional-ba": "いれれば"
+      readings:
+        "conditional-to": "ireruto"
+        "conditional-ba": "irereba"
+    - word: "ja-0593"
+      forms:
+        "conditional-to": "わらうと"
+        "conditional-ba": "わらえば"
+      readings:
+        "conditional-to": "warauto"
+        "conditional-ba": "waraeba"
+    - word: "ja-0594"
+      forms:
+        "conditional-to": "おこると"
+        "conditional-ba": "おこれば"
+      readings:
+        "conditional-to": "okoruto"
+        "conditional-ba": "okoreba"
+    - word: "ja-0595"
+      forms:
+        "conditional-to": "やめると"
+        "conditional-ba": "やめれば"
+      readings:
+        "conditional-to": "yameruto"
+        "conditional-ba": "yamereba"
+    - word: "ja-0596"
+      forms:
+        "conditional-to": "はじめると"
+        "conditional-ba": "はじめれば"
+      readings:
+        "conditional-to": "hajimeruto"
+        "conditional-ba": "hajimereba"
+    - word: "ja-0597"
+      forms:
+        "conditional-to": "ひっこすと"
+        "conditional-ba": "ひっこせば"
+      readings:
+        "conditional-to": "hikkosuto"
+        "conditional-ba": "hikkoseba"
+    - word: "ja-0598"
+      forms:
+        "conditional-to": "あげると"
+        "conditional-ba": "あげれば"
+      readings:
+        "conditional-to": "ageruto"
+        "conditional-ba": "agereba"
+    - word: "ja-0599"
+      forms:
+        "conditional-to": "もらうと"
+        "conditional-ba": "もらえば"
+      readings:
+        "conditional-to": "morauto"
+        "conditional-ba": "moraeba"
+    - word: "ja-0600"
+      forms:
+        "conditional-to": "さけぶと"
+        "conditional-ba": "さけべば"
+      readings:
+        "conditional-to": "sakebuto"
+        "conditional-ba": "sakebeba"
+    - word: "ja-0516"
+      forms:
+        "conditional-to": "おわると"
+        "conditional-ba": "おわれば"
+      readings:
+        "conditional-to": "owaruto"
+        "conditional-ba": "owareba"
+    - word: "ja-0711"
+      forms:
+        "conditional-to": "つとめると"
+        "conditional-ba": "つとめれば"
+      readings:
+        "conditional-to": "tsutomeruto"
+        "conditional-ba": "tsutomereba"
+    - word: "ja-1334"
+      forms:
+        "conditional-to": "きがえると"
+        "conditional-ba": "きがえれば"
+      readings:
+        "conditional-to": "kigaeruto"
+        "conditional-ba": "kigaereba"
+    - word: "ja-1335"
+      forms:
+        "conditional-to": "はくと"
+        "conditional-ba": "はけば"
+      readings:
+        "conditional-to": "hakuto"
+        "conditional-ba": "hakeba"
+    - word: "ja-1336"
+      forms:
+        "conditional-to": "かぶると"
+        "conditional-ba": "かぶれば"
+      readings:
+        "conditional-to": "kaburuto"
+        "conditional-ba": "kabureba"
+    - word: "ja-1341"
+      forms:
+        "conditional-to": "つかれると"
+        "conditional-ba": "つかれれば"
+      readings:
+        "conditional-to": "tsukareruto"
+        "conditional-ba": "tsukarereba"
+    - word: "ja-1348"
+      forms:
+        "conditional-to": "だすと"
+        "conditional-ba": "だせば"
+      readings:
+        "conditional-to": "dasuto"
+        "conditional-ba": "daseba"
+    - word: "ja-1349"
+      forms:
+        "conditional-to": "わかすと"
+        "conditional-ba": "わかせば"
+      readings:
+        "conditional-to": "wakasuto"
+        "conditional-ba": "wakaseba"
+    - word: "ja-1350"
+      forms:
+        "conditional-to": "ほすと"
+        "conditional-ba": "ほせば"
+      readings:
+        "conditional-to": "hosuto"
+        "conditional-ba": "hoseba"
+    - word: "ja-1351"
+      forms:
+        "conditional-to": "かたづけると"
+        "conditional-ba": "かたづければ"
+      readings:
+        "conditional-to": "katazukeruto"
+        "conditional-ba": "katazukereba"
+    - word: "ja-1352"
+      forms:
+        "conditional-to": "たたむと"
+        "conditional-ba": "たためば"
+      readings:
+        "conditional-to": "tatamuto"
+        "conditional-ba": "tatameba"
+    - word: "ja-1353"
+      forms:
+        "conditional-to": "ぬぐと"
+        "conditional-ba": "ぬげば"
+      readings:
+        "conditional-to": "nuguto"
+        "conditional-ba": "nugeba"
+    - word: "ja-1354"
+      forms:
+        "conditional-to": "まにあうと"
+        "conditional-ba": "まにあえば"
+      readings:
+        "conditional-to": "maniauto"
+        "conditional-ba": "maniaeba"
+    - word: "ja-1364"
+      forms:
+        "conditional-to": "かわくと"
+        "conditional-ba": "かわけば"
+      readings:
+        "conditional-to": "kawakuto"
+        "conditional-ba": "kawakeba"
+    - word: "ja-1368"
+      forms:
+        "conditional-to": "いそぐと"
+        "conditional-ba": "いそげば"
+      readings:
+        "conditional-to": "isoguto"
+        "conditional-ba": "isogeba"
+    - word: "ja-1539"
+      forms:
+        "conditional-to": "にあうと"
+        "conditional-ba": "にあえば"
+      readings:
+        "conditional-to": "niauto"
+        "conditional-ba": "niaeba"
+    - word: "ja-1542"
+      forms:
+        "conditional-to": "きると"
+        "conditional-ba": "きれば"
+      readings:
+        "conditional-to": "kiruto"
+        "conditional-ba": "kireba"
+    - word: "ja-1718"
+      forms:
+        "conditional-to": "うると"
+        "conditional-ba": "うれば"
+      readings:
+        "conditional-to": "uruto"
+        "conditional-ba": "ureba"
+    - word: "ja-1719"
+      forms:
+        "conditional-to": "はらうと"
+        "conditional-ba": "はらえば"
+      readings:
+        "conditional-to": "harauto"
+        "conditional-ba": "haraeba"
+    - word: "ja-1720"
+      forms:
+        "conditional-to": "まけると"
+        "conditional-ba": "まければ"
+      readings:
+        "conditional-to": "makeruto"
+        "conditional-ba": "makereba"
+    - word: "ja-1721"
+      forms:
+        "conditional-to": "えらぶと"
+        "conditional-ba": "えらべば"
+      readings:
+        "conditional-to": "erabuto"
+        "conditional-ba": "erabeba"
+    - word: "ja-1758"
+      forms:
+        "conditional-to": "たのむと"
+        "conditional-ba": "たのめば"
+      readings:
+        "conditional-to": "tanomuto"
+        "conditional-ba": "tanomeba"
+    - word: "ja-1759"
+      forms:
+        "conditional-to": "おごると"
+        "conditional-ba": "おごれば"
+      readings:
+        "conditional-to": "ogoruto"
+        "conditional-ba": "ogoreba"
+    - word: "ja-1790"
+      forms:
+        "conditional-to": "いためると"
+        "conditional-ba": "いためれば"
+      readings:
+        "conditional-to": "itameruto"
+        "conditional-ba": "itamereba"
+    - word: "ja-1791"
+      forms:
+        "conditional-to": "まぜると"
+        "conditional-ba": "まぜれば"
+      readings:
+        "conditional-to": "mazeruto"
+        "conditional-ba": "mazereba"
+    - word: "ja-1792"
+      forms:
+        "conditional-to": "ゆでると"
+        "conditional-ba": "ゆでれば"
+      readings:
+        "conditional-to": "yuderuto"
+        "conditional-ba": "yudereba"
+    - word: "ja-1793"
+      forms:
+        "conditional-to": "にると"
+        "conditional-ba": "にれば"
+      readings:
+        "conditional-to": "niruto"
+        "conditional-ba": "nireba"
+    - word: "ja-1794"
+      forms:
+        "conditional-to": "やくと"
+        "conditional-ba": "やけば"
+      readings:
+        "conditional-to": "yakuto"
+        "conditional-ba": "yakeba"
+    - word: "ja-1799"
+      forms:
+        "conditional-to": "ひやすと"
+        "conditional-ba": "ひやせば"
+      readings:
+        "conditional-to": "hiyasuto"
+        "conditional-ba": "hiyaseba"
+    - word: "ja-1800"
+      forms:
+        "conditional-to": "あたためると"
+        "conditional-ba": "あたためれば"
+      readings:
+        "conditional-to": "atatameruto"
+        "conditional-ba": "atatamereba"
+    - word: "ja-1801"
+      forms:
+        "conditional-to": "きざむと"
+        "conditional-ba": "きざめば"
+      readings:
+        "conditional-to": "kizamuto"
+        "conditional-ba": "kizameba"
+    - word: "ja-1802"
+      forms:
+        "conditional-to": "むくと"
+        "conditional-ba": "むけば"
+      readings:
+        "conditional-to": "mukuto"
+        "conditional-ba": "mukeba"
+    - word: "ja-1803"
+      forms:
+        "conditional-to": "つつむと"
+        "conditional-ba": "つつめば"
+      readings:
+        "conditional-to": "tsutsumuto"
+        "conditional-ba": "tsutsumeba"
+    - word: "ja-1804"
+      forms:
+        "conditional-to": "こげると"
+        "conditional-ba": "こげれば"
+      readings:
+        "conditional-to": "kogeruto"
+        "conditional-ba": "kogereba"
+    - word: "ja-1805"
+      forms:
+        "conditional-to": "さますと"
+        "conditional-ba": "さませば"
+      readings:
+        "conditional-to": "samasuto"
+        "conditional-ba": "samaseba"
+    - word: "ja-1850"
+      forms:
+        "conditional-to": "べんきょうすると"
+        "conditional-ba": "べんきょうすれば"
+      readings:
+        "conditional-to": "benkyousuruto"
+        "conditional-ba": "benkyousureba"
+    - word: "ja-1861"
+      forms:
+        "conditional-to": "おくれると"
+        "conditional-ba": "おくれれば"
+      readings:
+        "conditional-to": "okureruto"
+        "conditional-ba": "okurereba"
+    - word: "ja-1862"
+      forms:
+        "conditional-to": "まなぶと"
+        "conditional-ba": "まなべば"
+      readings:
+        "conditional-to": "manabuto"
+        "conditional-ba": "manabeba"
+    - word: "ja-1863"
+      forms:
+        "conditional-to": "つづけると"
+        "conditional-ba": "つづければ"
+      readings:
+        "conditional-to": "tsuzukeruto"
+        "conditional-ba": "tsuzukereba"
+    - word: "ja-1864"
+      forms:
+        "conditional-to": "かんがえると"
+        "conditional-ba": "かんがえれば"
+      readings:
+        "conditional-to": "kangaeruto"
+        "conditional-ba": "kangaereba"
+    - word: "ja-1865"
+      forms:
+        "conditional-to": "こたえると"
+        "conditional-ba": "こたえれば"
+      readings:
+        "conditional-to": "kotaeruto"
+        "conditional-ba": "kotaereba"
+    - word: "ja-1892"
+      forms:
+        "conditional-to": "およぐと"
+        "conditional-ba": "およげば"
+      readings:
+        "conditional-to": "oyoguto"
+        "conditional-ba": "oyogeba"
+    - word: "ja-1893"
+      forms:
+        "conditional-to": "とると"
+        "conditional-ba": "とれば"
+      readings:
+        "conditional-to": "toruto"
+        "conditional-ba": "toreba"
+    - word: "ja-1896"
+      forms:
+        "conditional-to": "えがくと"
+        "conditional-ba": "えがけば"
+      readings:
+        "conditional-to": "egakuto"
+        "conditional-ba": "egakeba"
+    - word: "ja-1900"
+      forms:
+        "conditional-to": "ぬうと"
+        "conditional-ba": "ぬえば"
+      readings:
+        "conditional-to": "nuuto"
+        "conditional-ba": "nueba"
+    - word: "ja-1901"
+      forms:
+        "conditional-to": "あむと"
+        "conditional-ba": "あめば"
+      readings:
+        "conditional-to": "amuto"
+        "conditional-ba": "ameba"
+    - word: "ja-1907"
+      forms:
+        "conditional-to": "ほめると"
+        "conditional-ba": "ほめれば"
+      readings:
+        "conditional-to": "homeruto"
+        "conditional-ba": "homereba"
+    - word: "ja-1910"
+      forms:
+        "conditional-to": "かつと"
+        "conditional-ba": "かてば"
+      readings:
+        "conditional-to": "katsuto"
+        "conditional-ba": "kateba"
+    - word: "ja-1933"
+      forms:
+        "conditional-to": "かなでると"
+        "conditional-ba": "かなでれば"
+      readings:
+        "conditional-to": "kanaderuto"
+        "conditional-ba": "kanadereba"
+    - word: "ja-1934"
+      forms:
+        "conditional-to": "ならすと"
+        "conditional-ba": "ならせば"
+      readings:
+        "conditional-to": "narasuto"
+        "conditional-ba": "naraseba"
+    - word: "ja-1935"
+      forms:
+        "conditional-to": "ひびくと"
+        "conditional-ba": "ひびけば"
+      readings:
+        "conditional-to": "hibikuto"
+        "conditional-ba": "hibikeba"
+    - word: "ja-1939"
+      forms:
+        "conditional-to": "たたくと"
+        "conditional-ba": "たたけば"
+      readings:
+        "conditional-to": "tatakuto"
+        "conditional-ba": "tatakeba"
+    - word: "ja-1940"
+      forms:
+        "conditional-to": "きこえると"
+        "conditional-ba": "きこえれば"
+      readings:
+        "conditional-to": "kikoeruto"
+        "conditional-ba": "kikoereba"
+    - word: "ja-1941"
+      forms:
+        "conditional-to": "ひくと"
+        "conditional-ba": "ひけば"
+      readings:
+        "conditional-to": "hikuto"
+        "conditional-ba": "hikeba"
+    - word: "ja-1996"
+      forms:
+        "conditional-to": "なげると"
+        "conditional-ba": "なげれば"
+      readings:
+        "conditional-to": "nageruto"
+        "conditional-ba": "nagereba"
+    - word: "ja-1997"
+      forms:
+        "conditional-to": "うつと"
+        "conditional-ba": "うてば"
+      readings:
+        "conditional-to": "utsuto"
+        "conditional-ba": "uteba"
+    - word: "ja-1998"
+      forms:
+        "conditional-to": "けると"
+        "conditional-ba": "ければ"
+      readings:
+        "conditional-to": "keruto"
+        "conditional-ba": "kereba"
+    - word: "ja-1999"
+      forms:
+        "conditional-to": "おいかけると"
+        "conditional-ba": "おいかければ"
+      readings:
+        "conditional-to": "oikakeruto"
+        "conditional-ba": "oikakereba"
+    - word: "ja-2000"
+      forms:
+        "conditional-to": "あきらめると"
+        "conditional-ba": "あきらめれば"
+      readings:
+        "conditional-to": "akirameruto"
+        "conditional-ba": "akiramereba"
+    - word: "ja-2001"
+      forms:
+        "conditional-to": "きたえると"
+        "conditional-ba": "きたえれば"
+      readings:
+        "conditional-to": "kitaeruto"
+        "conditional-ba": "kitaereba"
+    - word: "ja-2002"
+      forms:
+        "conditional-to": "ねらうと"
+        "conditional-ba": "ねらえば"
+      readings:
+        "conditional-to": "nerauto"
+        "conditional-ba": "neraeba"
+    - word: "ja-2049"
+      forms:
+        "conditional-to": "うつると"
+        "conditional-ba": "うつれば"
+      readings:
+        "conditional-to": "utsuruto"
+        "conditional-ba": "utsureba"
+    - word: "ja-2050"
+      forms:
+        "conditional-to": "なおると"
+        "conditional-ba": "なおれば"
+      readings:
+        "conditional-to": "naoruto"
+        "conditional-ba": "naoreba"
+    - word: "ja-2051"
+      forms:
+        "conditional-to": "なおすと"
+        "conditional-ba": "なおせば"
+      readings:
+        "conditional-to": "naosuto"
+        "conditional-ba": "naoseba"
+    - word: "ja-2052"
+      forms:
+        "conditional-to": "たおれると"
+        "conditional-ba": "たおれれば"
+      readings:
+        "conditional-to": "taoreruto"
+        "conditional-ba": "taorereba"
+    - word: "ja-2053"
+      forms:
+        "conditional-to": "はれると"
+        "conditional-ba": "はれれば"
+      readings:
+        "conditional-to": "hareruto"
+        "conditional-ba": "harereba"
+    - word: "ja-2054"
+      forms:
+        "conditional-to": "しびれると"
+        "conditional-ba": "しびれれば"
+      readings:
+        "conditional-to": "shibireruto"
+        "conditional-ba": "shibirereba"
+    - word: "ja-2115"
+      forms:
+        "conditional-to": "みがくと"
+        "conditional-ba": "みがけば"
+      readings:
+        "conditional-to": "migakuto"
+        "conditional-ba": "migakeba"
+    - word: "ja-2116"
+      forms:
+        "conditional-to": "こすると"
+        "conditional-ba": "こすれば"
+      readings:
+        "conditional-to": "kosuruto"
+        "conditional-ba": "kosureba"
+    - word: "ja-2117"
+      forms:
+        "conditional-to": "すすぐと"
+        "conditional-ba": "すすげば"
+      readings:
+        "conditional-to": "susuguto"
+        "conditional-ba": "susugeba"
+    - word: "ja-2118"
+      forms:
+        "conditional-to": "しぼると"
+        "conditional-ba": "しぼれば"
+      readings:
+        "conditional-to": "shiboruto"
+        "conditional-ba": "shiboreba"
+    - word: "ja-2119"
+      forms:
+        "conditional-to": "かわかすと"
+        "conditional-ba": "かわかせば"
+      readings:
+        "conditional-to": "kawakasuto"
+        "conditional-ba": "kawakaseba"
+    - word: "ja-2120"
+      forms:
+        "conditional-to": "しまうと"
+        "conditional-ba": "しまえば"
+      readings:
+        "conditional-to": "shimauto"
+        "conditional-ba": "shimaeba"
+    - word: "ja-2121"
+      forms:
+        "conditional-to": "そろえると"
+        "conditional-ba": "そろえれば"
+      readings:
+        "conditional-to": "soroeruto"
+        "conditional-ba": "soroereba"
+    - word: "ja-2122"
+      forms:
+        "conditional-to": "かざると"
+        "conditional-ba": "かざれば"
+      readings:
+        "conditional-to": "kazaruto"
+        "conditional-ba": "kazareba"
+    - word: "ja-2123"
+      forms:
+        "conditional-to": "とりかえると"
+        "conditional-ba": "とりかえれば"
+      readings:
+        "conditional-to": "torikaeruto"
+        "conditional-ba": "torikaereba"
+    - word: "ja-2124"
+      forms:
+        "conditional-to": "つめると"
+        "conditional-ba": "つめれば"
+      readings:
+        "conditional-to": "tsumeruto"
+        "conditional-ba": "tsumereba"
+    - word: "ja-2125"
+      forms:
+        "conditional-to": "くばると"
+        "conditional-ba": "くばれば"
+      readings:
+        "conditional-to": "kubaruto"
+        "conditional-ba": "kubareba"
+    - word: "ja-2126"
+      forms:
+        "conditional-to": "こぼすと"
+        "conditional-ba": "こぼせば"
+      readings:
+        "conditional-to": "kobosuto"
+        "conditional-ba": "koboseba"
+    - word: "ja-2127"
+      forms:
+        "conditional-to": "よごれると"
+        "conditional-ba": "よごれれば"
+      readings:
+        "conditional-to": "yogoreruto"
+        "conditional-ba": "yogorereba"
+    - word: "ja-2128"
+      forms:
+        "conditional-to": "よごすと"
+        "conditional-ba": "よごせば"
+      readings:
+        "conditional-to": "yogosuto"
+        "conditional-ba": "yogoseba"
+    - word: "ja-2129"
+      forms:
+        "conditional-to": "ちらかすと"
+        "conditional-ba": "ちらかせば"
+      readings:
+        "conditional-to": "chirakasuto"
+        "conditional-ba": "chirakaseba"
+    - word: "ja-2164"
+      forms:
+        "conditional-to": "やせると"
+        "conditional-ba": "やせれば"
+      readings:
+        "conditional-to": "yaseruto"
+        "conditional-ba": "yasereba"
+    - word: "ja-2165"
+      forms:
+        "conditional-to": "ふとると"
+        "conditional-ba": "ふとれば"
+      readings:
+        "conditional-to": "futoruto"
+        "conditional-ba": "futoreba"
+    - word: "ja-2217"
+      forms:
+        "conditional-to": "かわると"
+        "conditional-ba": "かわれば"
+      readings:
+        "conditional-to": "kawaruto"
+        "conditional-ba": "kawareba"
+    - word: "ja-2218"
+      forms:
+        "conditional-to": "きまると"
+        "conditional-ba": "きまれば"
+      readings:
+        "conditional-to": "kimaruto"
+        "conditional-ba": "kimareba"
+    - word: "ja-2219"
+      forms:
+        "conditional-to": "きめると"
+        "conditional-ba": "きめれば"
+      readings:
+        "conditional-to": "kimeruto"
+        "conditional-ba": "kimereba"
+    - word: "ja-2220"
+      forms:
+        "conditional-to": "なると"
+        "conditional-ba": "なれば"
+      readings:
+        "conditional-to": "naruto"
+        "conditional-ba": "nareba"
+    - word: "ja-2221"
+      forms:
+        "conditional-to": "なれると"
+        "conditional-ba": "なれれば"
+      readings:
+        "conditional-to": "nareruto"
+        "conditional-ba": "narereba"
+    - word: "ja-2222"
+      forms:
+        "conditional-to": "つくと"
+        "conditional-ba": "つけば"
+      readings:
+        "conditional-to": "tsukuto"
+        "conditional-ba": "tsukeba"
+    - word: "ja-2223"
+      forms:
+        "conditional-to": "つけると"
+        "conditional-ba": "つければ"
+      readings:
+        "conditional-to": "tsukeruto"
+        "conditional-ba": "tsukereba"
+    - word: "ja-2224"
+      forms:
+        "conditional-to": "けすと"
+        "conditional-ba": "けせば"
+      readings:
+        "conditional-to": "kesuto"
+        "conditional-ba": "keseba"
+    - word: "ja-2225"
+      forms:
+        "conditional-to": "きえると"
+        "conditional-ba": "きえれば"
+      readings:
+        "conditional-to": "kieruto"
+        "conditional-ba": "kiereba"
+    - word: "ja-2226"
+      forms:
+        "conditional-to": "あくと"
+        "conditional-ba": "あけば"
+      readings:
+        "conditional-to": "akuto"
+        "conditional-ba": "akeba"
+    - word: "ja-2227"
+      forms:
+        "conditional-to": "しまると"
+        "conditional-ba": "しまれば"
+      readings:
+        "conditional-to": "shimaruto"
+        "conditional-ba": "shimareba"
+    - word: "ja-2228"
+      forms:
+        "conditional-to": "つかまえると"
+        "conditional-ba": "つかまえれば"
+      readings:
+        "conditional-to": "tsukamaeruto"
+        "conditional-ba": "tsukamaereba"
+    - word: "ja-2229"
+      forms:
+        "conditional-to": "つかむと"
+        "conditional-ba": "つかめば"
+      readings:
+        "conditional-to": "tsukamuto"
+        "conditional-ba": "tsukameba"
+    - word: "ja-2230"
+      forms:
+        "conditional-to": "おすと"
+        "conditional-ba": "おせば"
+      readings:
+        "conditional-to": "osuto"
+        "conditional-ba": "oseba"
+    - word: "ja-2231"
+      forms:
+        "conditional-to": "ひっぱると"
+        "conditional-ba": "ひっぱれば"
+      readings:
+        "conditional-to": "hipparuto"
+        "conditional-ba": "hippareba"
+    - word: "ja-2232"
+      forms:
+        "conditional-to": "おとすと"
+        "conditional-ba": "おとせば"
+      readings:
+        "conditional-to": "otosuto"
+        "conditional-ba": "otoseba"
+    - word: "ja-2233"
+      forms:
+        "conditional-to": "おちると"
+        "conditional-ba": "おちれば"
+      readings:
+        "conditional-to": "ochiruto"
+        "conditional-ba": "ochireba"
+    - word: "ja-2234"
+      forms:
+        "conditional-to": "ひらくと"
+        "conditional-ba": "ひらけば"
+      readings:
+        "conditional-to": "hirakuto"
+        "conditional-ba": "hirakeba"
+    - word: "ja-2235"
+      forms:
+        "conditional-to": "とじると"
+        "conditional-ba": "とじれば"
+      readings:
+        "conditional-to": "tojiruto"
+        "conditional-ba": "tojireba"
+    - word: "ja-2236"
+      forms:
+        "conditional-to": "わたすと"
+        "conditional-ba": "わたせば"
+      readings:
+        "conditional-to": "watasuto"
+        "conditional-ba": "wataseba"
+    - word: "ja-2237"
+      forms:
+        "conditional-to": "うけると"
+        "conditional-ba": "うければ"
+      readings:
+        "conditional-to": "ukeruto"
+        "conditional-ba": "ukereba"
+    - word: "ja-2238"
+      forms:
+        "conditional-to": "つたえると"
+        "conditional-ba": "つたえれば"
+      readings:
+        "conditional-to": "tsutaeruto"
+        "conditional-ba": "tsutaereba"
+    - word: "ja-2239"
+      forms:
+        "conditional-to": "つたわると"
+        "conditional-ba": "つたわれば"
+      readings:
+        "conditional-to": "tsutawaruto"
+        "conditional-ba": "tsutawareba"
+    - word: "ja-2240"
+      forms:
+        "conditional-to": "むかえると"
+        "conditional-ba": "むかえれば"
+      readings:
+        "conditional-to": "mukaeruto"
+        "conditional-ba": "mukaereba"
+    - word: "ja-2241"
+      forms:
+        "conditional-to": "おくると"
+        "conditional-ba": "おくれば"
+      readings:
+        "conditional-to": "okuruto"
+        "conditional-ba": "okureba"
+    - word: "ja-2242"
+      forms:
+        "conditional-to": "とどくと"
+        "conditional-ba": "とどけば"
+      readings:
+        "conditional-to": "todokuto"
+        "conditional-ba": "todokeba"
+    - word: "ja-2243"
+      forms:
+        "conditional-to": "とどけると"
+        "conditional-ba": "とどければ"
+      readings:
+        "conditional-to": "todokeruto"
+        "conditional-ba": "todokereba"
+    - word: "ja-2244"
+      forms:
+        "conditional-to": "たずねると"
+        "conditional-ba": "たずねれば"
+      readings:
+        "conditional-to": "tazuneruto"
+        "conditional-ba": "tazunereba"
+    - word: "ja-2245"
+      forms:
+        "conditional-to": "まちがうと"
+        "conditional-ba": "まちがえば"
+      readings:
+        "conditional-to": "machigauto"
+        "conditional-ba": "machigaeba"
+    - word: "ja-2246"
+      forms:
+        "conditional-to": "あやまると"
+        "conditional-ba": "あやまれば"
+      readings:
+        "conditional-to": "ayamaruto"
+        "conditional-ba": "ayamareba"
+    - word: "ja-2247"
+      forms:
+        "conditional-to": "ゆるすと"
+        "conditional-ba": "ゆるせば"
+      readings:
+        "conditional-to": "yurusuto"
+        "conditional-ba": "yuruseba"
+    - word: "ja-2248"
+      forms:
+        "conditional-to": "ことわると"
+        "conditional-ba": "ことわれば"
+      readings:
+        "conditional-to": "kotowaruto"
+        "conditional-ba": "kotowareba"
+    - word: "ja-2249"
+      forms:
+        "conditional-to": "さそうと"
+        "conditional-ba": "さそえば"
+      readings:
+        "conditional-to": "sasouto"
+        "conditional-ba": "sasoeba"
+    - word: "ja-2250"
+      forms:
+        "conditional-to": "かようと"
+        "conditional-ba": "かよえば"
+      readings:
+        "conditional-to": "kayouto"
+        "conditional-ba": "kayoeba"
+    - word: "ja-2251"
+      forms:
+        "conditional-to": "とおると"
+        "conditional-ba": "とおれば"
+      readings:
+        "conditional-to": "tooruto"
+        "conditional-ba": "tooreba"
+    - word: "ja-2252"
+      forms:
+        "conditional-to": "すぎると"
+        "conditional-ba": "すぎれば"
+      readings:
+        "conditional-to": "sugiruto"
+        "conditional-ba": "sugireba"
+    - word: "ja-2253"
+      forms:
+        "conditional-to": "まわると"
+        "conditional-ba": "まわれば"
+      readings:
+        "conditional-to": "mawaruto"
+        "conditional-ba": "mawareba"
+    - word: "ja-2254"
+      forms:
+        "conditional-to": "まわすと"
+        "conditional-ba": "まわせば"
+      readings:
+        "conditional-to": "mawasuto"
+        "conditional-ba": "mawaseba"
+    - word: "ja-2255"
+      forms:
+        "conditional-to": "うごくと"
+        "conditional-ba": "うごけば"
+      readings:
+        "conditional-to": "ugokuto"
+        "conditional-ba": "ugokeba"
+    - word: "ja-2256"
+      forms:
+        "conditional-to": "うごかすと"
+        "conditional-ba": "うごかせば"
+      readings:
+        "conditional-to": "ugokasuto"
+        "conditional-ba": "ugokaseba"
+    - word: "ja-2257"
+      forms:
+        "conditional-to": "のこると"
+        "conditional-ba": "のこれば"
+      readings:
+        "conditional-to": "nokoruto"
+        "conditional-ba": "nokoreba"
+    - word: "ja-2258"
+      forms:
+        "conditional-to": "のこすと"
+        "conditional-ba": "のこせば"
+      readings:
+        "conditional-to": "nokosuto"
+        "conditional-ba": "nokoseba"
+    - word: "ja-2259"
+      forms:
+        "conditional-to": "あつまると"
+        "conditional-ba": "あつまれば"
+      readings:
+        "conditional-to": "atsumaruto"
+        "conditional-ba": "atsumareba"
+    - word: "ja-2260"
+      forms:
+        "conditional-to": "あつめると"
+        "conditional-ba": "あつめれば"
+      readings:
+        "conditional-to": "atsumeruto"
+        "conditional-ba": "atsumereba"
+    - word: "ja-2261"
+      forms:
+        "conditional-to": "わけると"
+        "conditional-ba": "わければ"
+      readings:
+        "conditional-to": "wakeruto"
+        "conditional-ba": "wakereba"
+    - word: "ja-2262"
+      forms:
+        "conditional-to": "くらべると"
+        "conditional-ba": "くらべれば"
+      readings:
+        "conditional-to": "kuraberuto"
+        "conditional-ba": "kurabereba"
+    - word: "ja-2263"
+      forms:
+        "conditional-to": "かくれると"
+        "conditional-ba": "かくれれば"
+      readings:
+        "conditional-to": "kakureruto"
+        "conditional-ba": "kakurereba"
+    - word: "ja-2264"
+      forms:
+        "conditional-to": "かくすと"
+        "conditional-ba": "かくせば"
+      readings:
+        "conditional-to": "kakusuto"
+        "conditional-ba": "kakuseba"
+    - word: "ja-2265"
+      forms:
+        "conditional-to": "みつかると"
+        "conditional-ba": "みつかれば"
+      readings:
+        "conditional-to": "mitsukaruto"
+        "conditional-ba": "mitsukareba"
+    - word: "ja-2266"
+      forms:
+        "conditional-to": "みつけると"
+        "conditional-ba": "みつければ"
+      readings:
+        "conditional-to": "mitsukeruto"
+        "conditional-ba": "mitsukereba"
+    - word: "ja-2267"
+      forms:
+        "conditional-to": "ふえると"
+        "conditional-ba": "ふえれば"
+      readings:
+        "conditional-to": "fueruto"
+        "conditional-ba": "fuereba"
+    - word: "ja-2268"
+      forms:
+        "conditional-to": "へると"
+        "conditional-ba": "へれば"
+      readings:
+        "conditional-to": "heruto"
+        "conditional-ba": "hereba"
+    - word: "ja-2269"
+      forms:
+        "conditional-to": "そだてると"
+        "conditional-ba": "そだてれば"
+      readings:
+        "conditional-to": "sodateruto"
+        "conditional-ba": "sodatereba"
+    - word: "ja-2270"
+      forms:
+        "conditional-to": "そだつと"
+        "conditional-ba": "そだてば"
+      readings:
+        "conditional-to": "sodatsuto"
+        "conditional-ba": "sodateba"
+    - word: "ja-2271"
+      forms:
+        "conditional-to": "うまれると"
+        "conditional-ba": "うまれれば"
+      readings:
+        "conditional-to": "umareruto"
+        "conditional-ba": "umarereba"
+    - word: "ja-2272"
+      forms:
+        "conditional-to": "いきると"
+        "conditional-ba": "いきれば"
+      readings:
+        "conditional-to": "ikiruto"
+        "conditional-ba": "ikireba"
+    - word: "ja-2273"
+      forms:
+        "conditional-to": "たのしむと"
+        "conditional-ba": "たのしめば"
+      readings:
+        "conditional-to": "tanoshimuto"
+        "conditional-ba": "tanoshimeba"
+    - word: "ja-2274"
+      forms:
+        "conditional-to": "あたると"
+        "conditional-ba": "あたれば"
+      readings:
+        "conditional-to": "ataruto"
+        "conditional-ba": "atareba"
+    - word: "ja-2275"
+      forms:
+        "conditional-to": "はじまると"
+        "conditional-ba": "はじまれば"
+      readings:
+        "conditional-to": "hajimaruto"
+        "conditional-ba": "hajimareba"
+    - word: "ja-2276"
+      forms:
+        "conditional-to": "さわると"
+        "conditional-ba": "さわれば"
+      readings:
+        "conditional-to": "sawaruto"
+        "conditional-ba": "sawareba"
+    - word: "ja-2320"
+      forms:
+        "conditional-to": "つながると"
+        "conditional-ba": "つながれば"
+      readings:
+        "conditional-to": "tsunagaruto"
+        "conditional-ba": "tsunagareba"
+    - word: "ja-2321"
+      forms:
+        "conditional-to": "つなぐと"
+        "conditional-ba": "つなげば"
+      readings:
+        "conditional-to": "tsunaguto"
+        "conditional-ba": "tsunageba"
+    - word: "ja-2322"
+      forms:
+        "conditional-to": "かけると"
+        "conditional-ba": "かければ"
+      readings:
+        "conditional-to": "kakeruto"
+        "conditional-ba": "kakereba"
+    - word: "ja-2323"
+      forms:
+        "conditional-to": "うけとると"
+        "conditional-ba": "うけとれば"
+      readings:
+        "conditional-to": "uketoruto"
+        "conditional-ba": "uketoreba"
+    - word: "ja-2364"
+      forms:
+        "conditional-to": "のりおくれると"
+        "conditional-ba": "のりおくれれば"
+      readings:
+        "conditional-to": "noriokureruto"
+        "conditional-ba": "noriokurereba"
+    - word: "ja-2365"
+      forms:
+        "conditional-to": "のりかえると"
+        "conditional-ba": "のりかえれば"
+      readings:
+        "conditional-to": "norikaeruto"
+        "conditional-ba": "norikaereba"
+    - word: "ja-2407"
+      forms:
+        "conditional-to": "たちよると"
+        "conditional-ba": "たちよれば"
+      readings:
+        "conditional-to": "tachiyoruto"
+        "conditional-ba": "tachiyoreba"
+    - word: "ja-2470"
+      forms:
+        "conditional-to": "さくと"
+        "conditional-ba": "さけば"
+      readings:
+        "conditional-to": "sakuto"
+        "conditional-ba": "sakeba"
+    - word: "ja-2471"
+      forms:
+        "conditional-to": "ちると"
+        "conditional-ba": "ちれば"
+      readings:
+        "conditional-to": "chiruto"
+        "conditional-ba": "chireba"
+    - word: "ja-2472"
+      forms:
+        "conditional-to": "しげると"
+        "conditional-ba": "しげれば"
+      readings:
+        "conditional-to": "shigeruto"
+        "conditional-ba": "shigereba"
+    - word: "ja-2473"
+      forms:
+        "conditional-to": "かれると"
+        "conditional-ba": "かれれば"
+      readings:
+        "conditional-to": "kareruto"
+        "conditional-ba": "karereba"
+    - word: "ja-2600"
+      forms:
+        "conditional-to": "まかせると"
+        "conditional-ba": "まかせれば"
+      readings:
+        "conditional-to": "makaseruto"
+        "conditional-ba": "makasereba"
+    - word: "ja-2601"
+      forms:
+        "conditional-to": "ひきうけると"
+        "conditional-ba": "ひきうければ"
+      readings:
+        "conditional-to": "hikiukeruto"
+        "conditional-ba": "hikiukereba"
+    - word: "ja-2602"
+      forms:
+        "conditional-to": "こなすと"
+        "conditional-ba": "こなせば"
+      readings:
+        "conditional-to": "konasuto"
+        "conditional-ba": "konaseba"
+    - word: "ja-2603"
+      forms:
+        "conditional-to": "はげむと"
+        "conditional-ba": "はげめば"
+      readings:
+        "conditional-to": "hagemuto"
+        "conditional-ba": "hagemeba"
+    - word: "ja-2604"
+      forms:
+        "conditional-to": "てがけると"
+        "conditional-ba": "てがければ"
+      readings:
+        "conditional-to": "tegakeruto"
+        "conditional-ba": "tegakereba"
+    - word: "ja-2605"
+      forms:
+        "conditional-to": "しめきると"
+        "conditional-ba": "しめきれば"
+      readings:
+        "conditional-to": "shimekiruto"
+        "conditional-ba": "shimekireba"
+    - word: "ja-2606"
+      forms:
+        "conditional-to": "まにあわせると"
+        "conditional-ba": "まにあわせれば"
+      readings:
+        "conditional-to": "maniawaseruto"
+        "conditional-ba": "maniawasereba"
+    - word: "ja-2716"
+      forms:
+        "conditional-to": "かたよると"
+        "conditional-ba": "かたよれば"
+      readings:
+        "conditional-to": "katayoruto"
+        "conditional-ba": "katayoreba"
+    - word: "ja-2768"
+      forms:
+        "conditional-to": "おどろくと"
+        "conditional-ba": "おどろけば"
+      readings:
+        "conditional-to": "odorokuto"
+        "conditional-ba": "odorokeba"
+    - word: "ja-2769"
+      forms:
+        "conditional-to": "よろこぶと"
+        "conditional-ba": "よろこべば"
+      readings:
+        "conditional-to": "yorokobuto"
+        "conditional-ba": "yorokobeba"
+    - word: "ja-2770"
+      forms:
+        "conditional-to": "かなしむと"
+        "conditional-ba": "かなしめば"
+      readings:
+        "conditional-to": "kanashimuto"
+        "conditional-ba": "kanashimeba"
+    - word: "ja-2771"
+      forms:
+        "conditional-to": "なやむと"
+        "conditional-ba": "なやめば"
+      readings:
+        "conditional-to": "nayamuto"
+        "conditional-ba": "nayameba"
+    - word: "ja-2772"
+      forms:
+        "conditional-to": "あわてると"
+        "conditional-ba": "あわてれば"
+      readings:
+        "conditional-to": "awateruto"
+        "conditional-ba": "awatereba"
+    - word: "ja-2773"
+      forms:
+        "conditional-to": "あせると"
+        "conditional-ba": "あせれば"
+      readings:
+        "conditional-to": "aseruto"
+        "conditional-ba": "asereba"
+    - word: "ja-2774"
+      forms:
+        "conditional-to": "おちつくと"
+        "conditional-ba": "おちつけば"
+      readings:
+        "conditional-to": "ochitsukuto"
+        "conditional-ba": "ochitsukeba"
+    - word: "ja-2794"
+      forms:
+        "conditional-to": "きらうと"
+        "conditional-ba": "きらえば"
+      readings:
+        "conditional-to": "kirauto"
+        "conditional-ba": "kiraeba"
+    - word: "ja-2795"
+      forms:
+        "conditional-to": "あいすると"
+        "conditional-ba": "あいすれば"
+      readings:
+        "conditional-to": "aisuruto"
+        "conditional-ba": "aisureba"
+    - word: "ja-2796"
+      forms:
+        "conditional-to": "にくむと"
+        "conditional-ba": "にくめば"
+      readings:
+        "conditional-to": "nikumuto"
+        "conditional-ba": "nikumeba"
+    - word: "ja-2797"
+      forms:
+        "conditional-to": "ねたむと"
+        "conditional-ba": "ねためば"
+      readings:
+        "conditional-to": "netamuto"
+        "conditional-ba": "netameba"
+    - word: "ja-2798"
+      forms:
+        "conditional-to": "うらむと"
+        "conditional-ba": "うらめば"
+      readings:
+        "conditional-to": "uramuto"
+        "conditional-ba": "urameba"
+    - word: "ja-2799"
+      forms:
+        "conditional-to": "なつかしむと"
+        "conditional-ba": "なつかしめば"
+      readings:
+        "conditional-to": "natsukashimuto"
+        "conditional-ba": "natsukashimeba"
+    - word: "ja-2800"
+      forms:
+        "conditional-to": "いやがると"
+        "conditional-ba": "いやがれば"
+      readings:
+        "conditional-to": "iyagaruto"
+        "conditional-ba": "iyagareba"
+    - word: "ja-2801"
+      forms:
+        "conditional-to": "こらえると"
+        "conditional-ba": "こらえれば"
+      readings:
+        "conditional-to": "koraeruto"
+        "conditional-ba": "koraereba"
+    - word: "ja-2803"
+      forms:
+        "conditional-to": "はずかしがると"
+        "conditional-ba": "はずかしがれば"
+      readings:
+        "conditional-to": "hazukashigaruto"
+        "conditional-ba": "hazukashigareba"
+    - word: "ja-2806"
+      forms:
+        "conditional-to": "かんじると"
+        "conditional-ba": "かんじれば"
+      readings:
+        "conditional-to": "kanjiruto"
+        "conditional-ba": "kanjireba"
+    - word: "ja-2812"
+      forms:
+        "conditional-to": "さびしがると"
+        "conditional-ba": "さびしがれば"
+      readings:
+        "conditional-to": "sabishigaruto"
+        "conditional-ba": "sabishigareba"
+    - word: "ja-2876"
+      forms:
+        "conditional-to": "かたると"
+        "conditional-ba": "かたれば"
+      readings:
+        "conditional-to": "kataruto"
+        "conditional-ba": "katareba"
+    - word: "ja-2877"
+      forms:
+        "conditional-to": "ひろまると"
+        "conditional-ba": "ひろまれば"
+      readings:
+        "conditional-to": "hiromaruto"
+        "conditional-ba": "hiromareba"
+    - word: "ja-2925"
+      forms:
+        "conditional-to": "あずけると"
+        "conditional-ba": "あずければ"
+      readings:
+        "conditional-to": "azukeruto"
+        "conditional-ba": "azukereba"
+    - word: "ja-2926"
+      forms:
+        "conditional-to": "あずかると"
+        "conditional-ba": "あずかれば"
+      readings:
+        "conditional-to": "azukaruto"
+        "conditional-ba": "azukareba"
+    - word: "ja-2944"
+      forms:
+        "conditional-to": "めぐると"
+        "conditional-ba": "めぐれば"
+      readings:
+        "conditional-to": "meguruto"
+        "conditional-ba": "megureba"
+    - word: "ja-2945"
+      forms:
+        "conditional-to": "おとずれると"
+        "conditional-ba": "おとずれれば"
+      readings:
+        "conditional-to": "otozureruto"
+        "conditional-ba": "otozurereba"
+    - word: "ja-2982"
+      forms:
+        "conditional-to": "もうしこむと"
+        "conditional-ba": "もうしこめば"
+      readings:
+        "conditional-to": "moushikomuto"
+        "conditional-ba": "moushikomeba"
+    - word: "ja-3062"
+      forms:
+        "conditional-to": "とどけでると"
+        "conditional-ba": "とどけでれば"
+      readings:
+        "conditional-to": "todokederuto"
+        "conditional-ba": "todokedereba"
+    - word: "ja-3140"
+      forms:
+        "conditional-to": "つくりだすと"
+        "conditional-ba": "つくりだせば"
+      readings:
+        "conditional-to": "tsukuridasuto"
+        "conditional-ba": "tsukuridaseba"
+    - word: "ja-3195"
+      forms:
+        "conditional-to": "めざすと"
+        "conditional-ba": "めざせば"
+      readings:
+        "conditional-to": "mezasuto"
+        "conditional-ba": "mezaseba"
+    - word: "ja-3294"
+      forms:
+        "conditional-to": "きをつかうと"
+        "conditional-ba": "きをつかえば"
+      readings:
+        "conditional-to": "kiotsukauto"
+        "conditional-ba": "kiotsukaeba"
+    - word: "ja-3309"
+      forms:
+        "conditional-to": "ゆずると"
+        "conditional-ba": "ゆずれば"
+      readings:
+        "conditional-to": "yuzuruto"
+        "conditional-ba": "yuzureba"
+    - word: "ja-3310"
+      forms:
+        "conditional-to": "ゆずりあうと"
+        "conditional-ba": "ゆずりあえば"
+      readings:
+        "conditional-to": "yuzuriauto"
+        "conditional-ba": "yuzuriaeba"
+    - word: "ja-3311"
+      forms:
+        "conditional-to": "ならぶと"
+        "conditional-ba": "ならべば"
+      readings:
+        "conditional-to": "narabuto"
+        "conditional-ba": "narabeba"
+    - word: "ja-3319"
+      forms:
+        "conditional-to": "もてなすと"
+        "conditional-ba": "もてなせば"
+      readings:
+        "conditional-to": "motenasuto"
+        "conditional-ba": "motenaseba"
+    - word: "ja-3320"
+      forms:
+        "conditional-to": "まねくと"
+        "conditional-ba": "まねけば"
+      readings:
+        "conditional-to": "manekuto"
+        "conditional-ba": "manekeba"
+    - word: "ja-3321"
+      forms:
+        "conditional-to": "つつしむと"
+        "conditional-ba": "つつしめば"
+      readings:
+        "conditional-to": "tsutsushimuto"
+        "conditional-ba": "tsutsushimeba"
+    - word: "ja-3322"
+      forms:
+        "conditional-to": "いましめると"
+        "conditional-ba": "いましめれば"
+      readings:
+        "conditional-to": "imashimeruto"
+        "conditional-ba": "imashimereba"
+    - word: "ja-3383"
+      forms:
+        "conditional-to": "へらすと"
+        "conditional-ba": "へらせば"
+      readings:
+        "conditional-to": "herasuto"
+        "conditional-ba": "heraseba"
+    - word: "ja-3384"
+      forms:
+        "conditional-to": "ふやすと"
+        "conditional-ba": "ふやせば"
+      readings:
+        "conditional-to": "fuyasuto"
+        "conditional-ba": "fuyaseba"
+    - word: "ja-3385"
+      forms:
+        "conditional-to": "こわすと"
+        "conditional-ba": "こわせば"
+      readings:
+        "conditional-to": "kowasuto"
+        "conditional-ba": "kowaseba"
+    - word: "ja-3386"
+      forms:
+        "conditional-to": "こわれると"
+        "conditional-ba": "こわれれば"
+      readings:
+        "conditional-to": "kowareruto"
+        "conditional-ba": "kowarereba"
+    - word: "ja-3389"
+      forms:
+        "conditional-to": "たもつと"
+        "conditional-ba": "たもてば"
+      readings:
+        "conditional-to": "tamotsuto"
+        "conditional-ba": "tamoteba"
+    - word: "ja-3390"
+      forms:
+        "conditional-to": "さけると"
+        "conditional-ba": "さければ"
+      readings:
+        "conditional-to": "sakeruto"
+        "conditional-ba": "sakereba"
+    - word: "ja-3434"
+      forms:
+        "conditional-to": "えんじると"
+        "conditional-ba": "えんじれば"
+      readings:
+        "conditional-to": "enjiruto"
+        "conditional-ba": "enjireba"
+    - word: "ja-3452"
+      forms:
+        "conditional-to": "なくと"
+        "conditional-ba": "なけば"
+      readings:
+        "conditional-to": "nakuto"
+        "conditional-ba": "nakeba"
+    - word: "ja-3564"
+      forms:
+        "conditional-to": "たたかうと"
+        "conditional-ba": "たたかえば"
+      readings:
+        "conditional-to": "tatakauto"
+        "conditional-ba": "tatakaeba"
+    - word: "ja-3568"
+      forms:
+        "conditional-to": "ほろびると"
+        "conditional-ba": "ほろびれば"
+      readings:
+        "conditional-to": "horobiruto"
+        "conditional-ba": "horobireba"
+    - word: "ja-3569"
+      forms:
+        "conditional-to": "ほろぼすと"
+        "conditional-ba": "ほろぼせば"
+      readings:
+        "conditional-to": "horobosuto"
+        "conditional-ba": "horoboseba"
+    - word: "ja-3571"
+      forms:
+        "conditional-to": "さかえると"
+        "conditional-ba": "さかえれば"
+      readings:
+        "conditional-to": "sakaeruto"
+        "conditional-ba": "sakaereba"
+    - word: "ja-3611"
+      forms:
+        "conditional-to": "いのると"
+        "conditional-ba": "いのれば"
+      readings:
+        "conditional-to": "inoruto"
+        "conditional-ba": "inoreba"
+    - word: "ja-3612"
+      forms:
+        "conditional-to": "おがむと"
+        "conditional-ba": "おがめば"
+      readings:
+        "conditional-to": "ogamuto"
+        "conditional-ba": "ogameba"
+    - word: "ja-3690"
+      forms:
+        "conditional-to": "いわうと"
+        "conditional-ba": "いわえば"
+      readings:
+        "conditional-to": "iwauto"
+        "conditional-ba": "iwaeba"
+    - word: "ja-3691"
+      forms:
+        "conditional-to": "にぎわうと"
+        "conditional-ba": "にぎわえば"
+      readings:
+        "conditional-to": "nigiwauto"
+        "conditional-ba": "nigiwaeba"
+    - word: "ja-3779"
+      forms:
+        "conditional-to": "うちとけると"
+        "conditional-ba": "うちとければ"
+      readings:
+        "conditional-to": "uchitokeruto"
+        "conditional-ba": "uchitokereba"
+    - word: "ja-3780"
+      forms:
+        "conditional-to": "しんじあうと"
+        "conditional-ba": "しんじあえば"
+      readings:
+        "conditional-to": "shinjiauto"
+        "conditional-ba": "shinjiaeba"
+    - word: "ja-3781"
+      forms:
+        "conditional-to": "たよると"
+        "conditional-ba": "たよれば"
+      readings:
+        "conditional-to": "tayoruto"
+        "conditional-ba": "tayoreba"
+    - word: "ja-3782"
+      forms:
+        "conditional-to": "はげますと"
+        "conditional-ba": "はげませば"
+      readings:
+        "conditional-to": "hagemasuto"
+        "conditional-ba": "hagemaseba"
+    - word: "ja-3783"
+      forms:
+        "conditional-to": "なぐさめると"
+        "conditional-ba": "なぐさめれば"
+      readings:
+        "conditional-to": "nagusameruto"
+        "conditional-ba": "nagusamereba"
+    - word: "ja-3784"
+      forms:
+        "conditional-to": "かばうと"
+        "conditional-ba": "かばえば"
+      readings:
+        "conditional-to": "kabauto"
+        "conditional-ba": "kabaeba"
+    - word: "ja-3785"
+      forms:
+        "conditional-to": "ささえると"
+        "conditional-ba": "ささえれば"
+      readings:
+        "conditional-to": "sasaeruto"
+        "conditional-ba": "sasaereba"
+    - word: "ja-3786"
+      forms:
+        "conditional-to": "たすけあうと"
+        "conditional-ba": "たすけあえば"
+      readings:
+        "conditional-to": "tasukeauto"
+        "conditional-ba": "tasukeaeba"
+    - word: "ja-3790"
+      forms:
+        "conditional-to": "しりあうと"
+        "conditional-ba": "しりあえば"
+      readings:
+        "conditional-to": "shiriauto"
+        "conditional-ba": "shiriaeba"
+    - word: "ja-3791"
+      forms:
+        "conditional-to": "であうと"
+        "conditional-ba": "であえば"
+      readings:
+        "conditional-to": "deauto"
+        "conditional-ba": "deaeba"
+    - word: "ja-3833"
+      forms:
+        "conditional-to": "くらすと"
+        "conditional-ba": "くらせば"
+      readings:
+        "conditional-to": "kurasuto"
+        "conditional-ba": "kuraseba"
+    - word: "ja-3857"
+      forms:
+        "conditional-to": "かすと"
+        "conditional-ba": "かせば"
+      readings:
+        "conditional-to": "kasuto"
+        "conditional-ba": "kaseba"
+    - word: "ja-3887"
+      forms:
+        "conditional-to": "ゆれると"
+        "conditional-ba": "ゆれれば"
+      readings:
+        "conditional-to": "yureruto"
+        "conditional-ba": "yurereba"
+    - word: "ja-3898"
+      forms:
+        "conditional-to": "すくうと"
+        "conditional-ba": "すくえば"
+      readings:
+        "conditional-to": "sukuuto"
+        "conditional-ba": "sukueba"
+    - word: "ja-3914"
+      forms:
+        "conditional-to": "にげると"
+        "conditional-ba": "にげれば"
+      readings:
+        "conditional-to": "nigeruto"
+        "conditional-ba": "nigereba"
+    - word: "ja-3915"
+      forms:
+        "conditional-to": "にがすと"
+        "conditional-ba": "にがせば"
+      readings:
+        "conditional-to": "nigasuto"
+        "conditional-ba": "nigaseba"
+    - word: "ja-3963"
+      forms:
+        "conditional-to": "きんじると"
+        "conditional-ba": "きんじれば"
+      readings:
+        "conditional-to": "kinjiruto"
+        "conditional-ba": "kinjireba"
+    - word: "ja-3965"
+      forms:
+        "conditional-to": "うったえると"
+        "conditional-ba": "うったえれば"
+      readings:
+        "conditional-to": "uttaeruto"
+        "conditional-ba": "uttaereba"
+    - word: "ja-4046"
+      forms:
+        "conditional-to": "おそうと"
+        "conditional-ba": "おそえば"
+      readings:
+        "conditional-to": "osouto"
+        "conditional-ba": "osoeba"
+    - word: "ja-4047"
+      forms:
+        "conditional-to": "おさえると"
+        "conditional-ba": "おさえれば"
+      readings:
+        "conditional-to": "osaeruto"
+        "conditional-ba": "osaereba"
+    - word: "ja-4048"
+      forms:
+        "conditional-to": "おさまると"
+        "conditional-ba": "おさまれば"
+      readings:
+        "conditional-to": "osamaruto"
+        "conditional-ba": "osamareba"
+    - word: "ja-4049"
+      forms:
+        "conditional-to": "おさめると"
+        "conditional-ba": "おさめれば"
+      readings:
+        "conditional-to": "osameruto"
+        "conditional-ba": "osamereba"
+    - word: "ja-4050"
+      forms:
+        "conditional-to": "おぼれると"
+        "conditional-ba": "おぼれれば"
+      readings:
+        "conditional-to": "oboreruto"
+        "conditional-ba": "oborereba"
+    - word: "ja-4051"
+      forms:
+        "conditional-to": "おもいだすと"
+        "conditional-ba": "おもいだせば"
+      readings:
+        "conditional-to": "omoidasuto"
+        "conditional-ba": "omoidaseba"
+    - word: "ja-4052"
+      forms:
+        "conditional-to": "おもいつくと"
+        "conditional-ba": "おもいつけば"
+      readings:
+        "conditional-to": "omoitsukuto"
+        "conditional-ba": "omoitsukeba"
+    - word: "ja-4053"
+      forms:
+        "conditional-to": "かかえると"
+        "conditional-ba": "かかえれば"
+      readings:
+        "conditional-to": "kakaeruto"
+        "conditional-ba": "kakaereba"
+    - word: "ja-4054"
+      forms:
+        "conditional-to": "かさなると"
+        "conditional-ba": "かさなれば"
+      readings:
+        "conditional-to": "kasanaruto"
+        "conditional-ba": "kasanareba"
+    - word: "ja-4055"
+      forms:
+        "conditional-to": "かさねると"
+        "conditional-ba": "かさねれば"
+      readings:
+        "conditional-to": "kasaneruto"
+        "conditional-ba": "kasanereba"
+    - word: "ja-4056"
+      forms:
+        "conditional-to": "かたむくと"
+        "conditional-ba": "かたむけば"
+      readings:
+        "conditional-to": "katamukuto"
+        "conditional-ba": "katamukeba"
+    - word: "ja-4057"
+      forms:
+        "conditional-to": "かなうと"
+        "conditional-ba": "かなえば"
+      readings:
+        "conditional-to": "kanauto"
+        "conditional-ba": "kanaeba"
+    - word: "ja-4058"
+      forms:
+        "conditional-to": "かぶせると"
+        "conditional-ba": "かぶせれば"
+      readings:
+        "conditional-to": "kabuseruto"
+        "conditional-ba": "kabusereba"
+    - word: "ja-4059"
+      forms:
+        "conditional-to": "きづくと"
+        "conditional-ba": "きづけば"
+      readings:
+        "conditional-to": "kizukuto"
+        "conditional-ba": "kizukeba"
+    - word: "ja-4060"
+      forms:
+        "conditional-to": "くずれると"
+        "conditional-ba": "くずれれば"
+      readings:
+        "conditional-to": "kuzureruto"
+        "conditional-ba": "kuzurereba"
+    - word: "ja-4061"
+      forms:
+        "conditional-to": "くたびれると"
+        "conditional-ba": "くたびれれば"
+      readings:
+        "conditional-to": "kutabireruto"
+        "conditional-ba": "kutabirereba"
+    - word: "ja-4062"
+      forms:
+        "conditional-to": "くっつくと"
+        "conditional-ba": "くっつけば"
+      readings:
+        "conditional-to": "kuttsukuto"
+        "conditional-ba": "kuttsukeba"
+    - word: "ja-4063"
+      forms:
+        "conditional-to": "くっつけると"
+        "conditional-ba": "くっつければ"
+      readings:
+        "conditional-to": "kuttsukeruto"
+        "conditional-ba": "kuttsukereba"
+    - word: "ja-4064"
+      forms:
+        "conditional-to": "ころがると"
+        "conditional-ba": "ころがれば"
+      readings:
+        "conditional-to": "korogaruto"
+        "conditional-ba": "korogareba"
+    - word: "ja-4065"
+      forms:
+        "conditional-to": "ころすと"
+        "conditional-ba": "ころせば"
+      readings:
+        "conditional-to": "korosuto"
+        "conditional-ba": "koroseba"
+    - word: "ja-4066"
+      forms:
+        "conditional-to": "こめると"
+        "conditional-ba": "こめれば"
+      readings:
+        "conditional-to": "komeruto"
+        "conditional-ba": "komereba"
+    - word: "ja-4067"
+      forms:
+        "conditional-to": "さからうと"
+        "conditional-ba": "さからえば"
+      readings:
+        "conditional-to": "sakarauto"
+        "conditional-ba": "sakaraeba"
+    - word: "ja-4068"
+      forms:
+        "conditional-to": "さすと"
+        "conditional-ba": "させば"
+      readings:
+        "conditional-to": "sasuto"
+        "conditional-ba": "saseba"
+    - word: "ja-4069"
+      forms:
+        "conditional-to": "さびると"
+        "conditional-ba": "さびれば"
+      readings:
+        "conditional-to": "sabiruto"
+        "conditional-ba": "sabireba"
+    - word: "ja-4070"
+      forms:
+        "conditional-to": "しずむと"
+        "conditional-ba": "しずめば"
+      readings:
+        "conditional-to": "shizumuto"
+        "conditional-ba": "shizumeba"
+    - word: "ja-4071"
+      forms:
+        "conditional-to": "しずめると"
+        "conditional-ba": "しずめれば"
+      readings:
+        "conditional-to": "shizumeruto"
+        "conditional-ba": "shizumereba"
+    - word: "ja-4072"
+      forms:
+        "conditional-to": "したがうと"
+        "conditional-ba": "したがえば"
+      readings:
+        "conditional-to": "shitagauto"
+        "conditional-ba": "shitagaeba"
+    - word: "ja-4073"
+      forms:
+        "conditional-to": "しばると"
+        "conditional-ba": "しばれば"
+      readings:
+        "conditional-to": "shibaruto"
+        "conditional-ba": "shibareba"
+    - word: "ja-4074"
+      forms:
+        "conditional-to": "しめすと"
+        "conditional-ba": "しめせば"
+      readings:
+        "conditional-to": "shimesuto"
+        "conditional-ba": "shimeseba"
+    - word: "ja-4075"
+      forms:
+        "conditional-to": "すべると"
+        "conditional-ba": "すべれば"
+      readings:
+        "conditional-to": "suberuto"
+        "conditional-ba": "subereba"
+    - word: "ja-4076"
+      forms:
+        "conditional-to": "すませると"
+        "conditional-ba": "すませれば"
+      readings:
+        "conditional-to": "sumaseruto"
+        "conditional-ba": "sumasereba"
+    - word: "ja-4077"
+      forms:
+        "conditional-to": "すむと"
+        "conditional-ba": "すめば"
+      readings:
+        "conditional-to": "sumuto"
+        "conditional-ba": "sumeba"
+    - word: "ja-4078"
+      forms:
+        "conditional-to": "ずれると"
+        "conditional-ba": "ずれれば"
+      readings:
+        "conditional-to": "zureruto"
+        "conditional-ba": "zurereba"
+    - word: "ja-4079"
+      forms:
+        "conditional-to": "せまると"
+        "conditional-ba": "せまれば"
+      readings:
+        "conditional-to": "semaruto"
+        "conditional-ba": "semareba"
+    - word: "ja-4080"
+      forms:
+        "conditional-to": "そなえると"
+        "conditional-ba": "そなえれば"
+      readings:
+        "conditional-to": "sonaeruto"
+        "conditional-ba": "sonaereba"
+    - word: "ja-4081"
+      forms:
+        "conditional-to": "そまると"
+        "conditional-ba": "そまれば"
+      readings:
+        "conditional-to": "somaruto"
+        "conditional-ba": "somareba"
+    - word: "ja-4082"
+      forms:
+        "conditional-to": "そめると"
+        "conditional-ba": "そめれば"
+      readings:
+        "conditional-to": "someruto"
+        "conditional-ba": "somereba"
+    - word: "ja-4083"
+      forms:
+        "conditional-to": "たえると"
+        "conditional-ba": "たえれば"
+      readings:
+        "conditional-to": "taeruto"
+        "conditional-ba": "taereba"
+    - word: "ja-4084"
+      forms:
+        "conditional-to": "たしかめると"
+        "conditional-ba": "たしかめれば"
+      readings:
+        "conditional-to": "tashikameruto"
+        "conditional-ba": "tashikamereba"
+    - word: "ja-4085"
+      forms:
+        "conditional-to": "たまると"
+        "conditional-ba": "たまれば"
+      readings:
+        "conditional-to": "tamaruto"
+        "conditional-ba": "tamareba"
+    - word: "ja-4086"
+      forms:
+        "conditional-to": "ためすと"
+        "conditional-ba": "ためせば"
+      readings:
+        "conditional-to": "tamesuto"
+        "conditional-ba": "tameseba"
+    - word: "ja-4087"
+      forms:
+        "conditional-to": "ちぢむと"
+        "conditional-ba": "ちぢめば"
+      readings:
+        "conditional-to": "chijimuto"
+        "conditional-ba": "chijimeba"
+    - word: "ja-4088"
+      forms:
+        "conditional-to": "ちぢめると"
+        "conditional-ba": "ちぢめれば"
+      readings:
+        "conditional-to": "chijimeruto"
+        "conditional-ba": "chijimereba"
+    - word: "ja-4089"
+      forms:
+        "conditional-to": "つぐと"
+        "conditional-ba": "つげば"
+      readings:
+        "conditional-to": "tsuguto"
+        "conditional-ba": "tsugeba"
+    - word: "ja-4090"
+      forms:
+        "conditional-to": "つづくと"
+        "conditional-ba": "つづけば"
+      readings:
+        "conditional-to": "tsuzukuto"
+        "conditional-ba": "tsuzukeba"
+    - word: "ja-4091"
+      forms:
+        "conditional-to": "つぶすと"
+        "conditional-ba": "つぶせば"
+      readings:
+        "conditional-to": "tsubusuto"
+        "conditional-ba": "tsubuseba"
+    - word: "ja-4092"
+      forms:
+        "conditional-to": "つぶれると"
+        "conditional-ba": "つぶれれば"
+      readings:
+        "conditional-to": "tsubureruto"
+        "conditional-ba": "tsuburereba"
+    - word: "ja-4093"
+      forms:
+        "conditional-to": "てらすと"
+        "conditional-ba": "てらせば"
+      readings:
+        "conditional-to": "terasuto"
+        "conditional-ba": "teraseba"
+    - word: "ja-4094"
+      forms:
+        "conditional-to": "とおすと"
+        "conditional-ba": "とおせば"
+      readings:
+        "conditional-to": "toosuto"
+        "conditional-ba": "tooseba"
+    - word: "ja-4095"
+      forms:
+        "conditional-to": "とかすと"
+        "conditional-ba": "とかせば"
+      readings:
+        "conditional-to": "tokasuto"
+        "conditional-ba": "tokaseba"
+    - word: "ja-4096"
+      forms:
+        "conditional-to": "とけると"
+        "conditional-ba": "とければ"
+      readings:
+        "conditional-to": "tokeruto"
+        "conditional-ba": "tokereba"
+    - word: "ja-4097"
+      forms:
+        "conditional-to": "ととのうと"
+        "conditional-ba": "ととのえば"
+      readings:
+        "conditional-to": "totonouto"
+        "conditional-ba": "totonoeba"
+    - word: "ja-4098"
+      forms:
+        "conditional-to": "ととのえると"
+        "conditional-ba": "ととのえれば"
+      readings:
+        "conditional-to": "totonoeruto"
+        "conditional-ba": "totonoereba"
+    - word: "ja-4099"
+      forms:
+        "conditional-to": "とびこむと"
+        "conditional-ba": "とびこめば"
+      readings:
+        "conditional-to": "tobikomuto"
+        "conditional-ba": "tobikomeba"
+    - word: "ja-4100"
+      forms:
+        "conditional-to": "ともなうと"
+        "conditional-ba": "ともなえば"
+      readings:
+        "conditional-to": "tomonauto"
+        "conditional-ba": "tomonaeba"
+    - word: "ja-4101"
+      forms:
+        "conditional-to": "とらえると"
+        "conditional-ba": "とらえれば"
+      readings:
+        "conditional-to": "toraeruto"
+        "conditional-ba": "toraereba"
+    - word: "ja-4102"
+      forms:
+        "conditional-to": "とりあげると"
+        "conditional-ba": "とりあげれば"
+      readings:
+        "conditional-to": "toriageruto"
+        "conditional-ba": "toriagereba"
+    - word: "ja-4103"
+      forms:
+        "conditional-to": "とりだすと"
+        "conditional-ba": "とりだせば"
+      readings:
+        "conditional-to": "toridasuto"
+        "conditional-ba": "toridaseba"
+    - word: "ja-4104"
+      forms:
+        "conditional-to": "とりのぞくと"
+        "conditional-ba": "とりのぞけば"
+      readings:
+        "conditional-to": "torinozokuto"
+        "conditional-ba": "torinozokeba"
+    - word: "ja-4105"
+      forms:
+        "conditional-to": "ながすと"
+        "conditional-ba": "ながせば"
+      readings:
+        "conditional-to": "nagasuto"
+        "conditional-ba": "nagaseba"
+    - word: "ja-4185"
+      forms:
+        "conditional-to": "みとめると"
+        "conditional-ba": "みとめれば"
+      readings:
+        "conditional-to": "mitomeruto"
+        "conditional-ba": "mitomereba"
+    - word: "ja-4186"
+      forms:
+        "conditional-to": "うたがうと"
+        "conditional-ba": "うたがえば"
+      readings:
+        "conditional-to": "utagauto"
+        "conditional-ba": "utagaeba"
+    - word: "ja-4187"
+      forms:
+        "conditional-to": "しんじると"
+        "conditional-ba": "しんじれば"
+      readings:
+        "conditional-to": "shinjiruto"
+        "conditional-ba": "shinjireba"
+    - word: "ja-4192"
+      forms:
+        "conditional-to": "ろんじると"
+        "conditional-ba": "ろんじれば"
+      readings:
+        "conditional-to": "ronjiruto"
+        "conditional-ba": "ronjireba"
+rules:
+  - id: "ja-rule-conditional-to"
+    slots: ["conditional-to"]
+    words:
+      - { word: "と", reading: "to" }
+      - { word: "いくと", reading: "iku to" }
+  - id: "ja-rule-conditional-ba"
+    slots: ["conditional-ba"]
+    words:
+      - { word: "たべれば", reading: "tabereba" }
+      - { word: "いけば", reading: "ikeba" }
+      - { word: "すれば", reading: "sureba" }
+      - { word: "くれば", reading: "kureba" }

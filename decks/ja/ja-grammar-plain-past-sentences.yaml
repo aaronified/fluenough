@@ -1,0 +1,103 @@
+schema: 1
+id: "ja-grammar-plain-past-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-4505"
+    target: "きのう、えいがをみた。"
+    words: ["きのう", "えいが", "を", "みた"]
+    reading: "kinou, eiga o mita."
+    ipa: "kinoː eːɡa o mita"
+    pos: "phrase"
+    bases:
+      - { word: "きのう", ref: "ja-0514" }
+      - { word: "えいが", ref: "ja-1358" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "みた", ref: "ja-0343" }
+    confusables:
+      - { id: "w1", ref: "ja-0344", kind: "word" }
+      - { id: "w2", ref: "ja-0345", kind: "word" }
+    rules: ["ja-rule-ta-form"]
+  - id: "ja-4506"
+    target: "あさ、ごはんをたべた。"
+    words: ["あさ", "ごはん", "を", "たべた"]
+    reading: "asa, gohan o tabeta."
+    ipa: "asa ɡohaɴ o tabeta"
+    pos: "phrase"
+    bases:
+      - { word: "あさ", ref: "ja-0509" }
+      - { word: "ごはん", ref: "ja-0074" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "たべた", ref: "ja-0341" }
+    confusables:
+      - { id: "w1", ref: "ja-0342", kind: "word" }
+      - { id: "w2", ref: "ja-0364", kind: "word" }
+    rules: ["ja-rule-ta-form"]
+  - id: "ja-4507"
+    target: "ともだちはきのうこなかった。"
+    words: ["ともだち", "は", "きのう", "こなかった"]
+    reading: "tomodachi wa kinou konakatta."
+    ipa: "tomodatɕi wa kinoː konakatta"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "きのう", ref: "ja-0514" }
+      - { word: "こなかった", ref: "ja-0349" }
+    confusables:
+      - { id: "w1", ref: "ja-0348", kind: "word" }
+      - { id: "w2", ref: "ja-0350", kind: "word" }
+    rules: ["ja-rule-nakatta"]
+  - id: "ja-4508"
+    target: "わたしはほんをよまなかった。"
+    words: ["わたし", "は", "ほん", "を", "よまなかった"]
+    reading: "watashi wa hon o yomanakatta."
+    ipa: "wataɕi wa hoɴ o jomanakatta"
+    pos: "phrase"
+    bases:
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ほん", ref: "ja-1180" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "よまなかった", ref: "ja-0345" }
+    confusables:
+      - { id: "w1", ref: "ja-0346", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-nakatta"]
+  - id: "ja-4509"
+    target: "ちちはバスでいった。"
+    words: ["ちち", "は", "バス", "で", "いった"]
+    reading: "chichi wa basu de itta."
+    ipa: "tɕitɕi wa basɯ de itta"
+    pos: "phrase"
+    bases:
+      - { word: "ちち", ref: "ja-0200" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "バス", ref: "ja-0856" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "いった", ref: "ja-0348" }
+    confusables:
+      - { id: "w1", ref: "ja-0349", kind: "word" }
+      - { id: "w2", ref: "ja-0350", kind: "word" }
+    rules: ["ja-rule-ta-form"]
+  - id: "ja-4510"
+    target: "はははでんわをつかわなかった。"
+    words: ["はは", "は", "でんわ", "を", "つかわなかった"]
+    reading: "haha wa denwa o tsukawanakatta."
+    ipa: "haha wa deɴwa o tsɯkawanakatta"
+    pos: "phrase"
+    bases:
+      - { word: "はは", ref: "ja-0201" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "でんわ", ref: "ja-1202" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "つかわなかった", ref: "ja-0369" }
+    confusables:
+      - { id: "w1", ref: "ja-0364", kind: "word" }
+      - { id: "w2", ref: "ja-0356", kind: "word" }
+    rules: ["ja-rule-nakatta"]

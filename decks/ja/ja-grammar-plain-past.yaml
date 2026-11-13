@@ -1,0 +1,2657 @@
+schema: 1
+id: "ja-grammar-plain-past"
+part: "core"
+kind: "rules"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ja-0085"]
+  slots: ["ta-form", "nakatta"]
+  rows:
+    - word: "ja-1050"
+      forms:
+        "ta-form": "まがった"
+        "nakatta": "まがらなかった"
+      readings:
+        "ta-form": "magatta"
+        "nakatta": "magaranakatta"
+    - word: "ja-1060"
+      forms:
+        "ta-form": "わたった"
+        "nakatta": "わたらなかった"
+      readings:
+        "ta-form": "watatta"
+        "nakatta": "wataranakatta"
+    - word: "ja-1061"
+      forms:
+        "ta-form": "すすんだ"
+        "nakatta": "すすまなかった"
+      readings:
+        "ta-form": "susunda"
+        "nakatta": "susumanakatta"
+    - word: "ja-1062"
+      forms:
+        "ta-form": "さがった"
+        "nakatta": "さがらなかった"
+      readings:
+        "ta-form": "sagatta"
+        "nakatta": "sagaranakatta"
+    - word: "ja-1070"
+      forms:
+        "ta-form": "まちがえた"
+        "nakatta": "まちがえなかった"
+      readings:
+        "ta-form": "machigaeta"
+        "nakatta": "machigaenakatta"
+    - word: "ja-1071"
+      forms:
+        "ta-form": "でた"
+        "nakatta": "でなかった"
+      readings:
+        "ta-form": "deta"
+        "nakatta": "denakatta"
+    - word: "ja-1078"
+      forms:
+        "ta-form": "むかった"
+        "nakatta": "むかわなかった"
+      readings:
+        "ta-form": "mukatta"
+        "nakatta": "mukawanakatta"
+    - word: "ja-0341"
+      forms:
+        "ta-form": "たべた"
+        "nakatta": "たべなかった"
+      readings:
+        "ta-form": "tabeta"
+        "nakatta": "tabenakatta"
+    - word: "ja-0342"
+      forms:
+        "ta-form": "のんだ"
+        "nakatta": "のまなかった"
+      readings:
+        "ta-form": "nonda"
+        "nakatta": "nomanakatta"
+    - word: "ja-0343"
+      forms:
+        "ta-form": "みた"
+        "nakatta": "みなかった"
+      readings:
+        "ta-form": "mita"
+        "nakatta": "minakatta"
+    - word: "ja-0344"
+      forms:
+        "ta-form": "きいた"
+        "nakatta": "きかなかった"
+      readings:
+        "ta-form": "kiita"
+        "nakatta": "kikanakatta"
+    - word: "ja-0345"
+      forms:
+        "ta-form": "よんだ"
+        "nakatta": "よまなかった"
+      readings:
+        "ta-form": "yonda"
+        "nakatta": "yomanakatta"
+    - word: "ja-0346"
+      forms:
+        "ta-form": "かいた"
+        "nakatta": "かかなかった"
+      readings:
+        "ta-form": "kaita"
+        "nakatta": "kakanakatta"
+    - word: "ja-0347"
+      forms:
+        "ta-form": "はなした"
+        "nakatta": "はなさなかった"
+      readings:
+        "ta-form": "hanashita"
+        "nakatta": "hanasanakatta"
+    - word: "ja-0348"
+      forms:
+        "ta-form": "いった"
+        "nakatta": "いかなかった"
+      readings:
+        "ta-form": "itta"
+        "nakatta": "ikanakatta"
+    - word: "ja-0349"
+      forms:
+        "ta-form": "きた"
+        "nakatta": "こなかった"
+      readings:
+        "ta-form": "kita"
+        "nakatta": "konakatta"
+    - word: "ja-0350"
+      forms:
+        "ta-form": "かえった"
+        "nakatta": "かえらなかった"
+      readings:
+        "ta-form": "kaetta"
+        "nakatta": "kaeranakatta"
+    - word: "ja-0351"
+      forms:
+        "ta-form": "おきた"
+        "nakatta": "おきなかった"
+      readings:
+        "ta-form": "okita"
+        "nakatta": "okinakatta"
+    - word: "ja-0352"
+      forms:
+        "ta-form": "ねた"
+        "nakatta": "ねなかった"
+      readings:
+        "ta-form": "neta"
+        "nakatta": "nenakatta"
+    - word: "ja-0353"
+      forms:
+        "ta-form": "はたらいた"
+        "nakatta": "はたらかなかった"
+      readings:
+        "ta-form": "hataraita"
+        "nakatta": "hatarakanakatta"
+    - word: "ja-0354"
+      forms:
+        "ta-form": "やすんだ"
+        "nakatta": "やすまなかった"
+      readings:
+        "ta-form": "yasunda"
+        "nakatta": "yasumanakatta"
+    - word: "ja-0355"
+      forms:
+        "ta-form": "はいった"
+        "nakatta": "はいらなかった"
+      readings:
+        "ta-form": "haitta"
+        "nakatta": "hairanakatta"
+    - word: "ja-0356"
+      forms:
+        "ta-form": "かった"
+        "nakatta": "かわなかった"
+      readings:
+        "ta-form": "katta"
+        "nakatta": "kawanakatta"
+    - word: "ja-0357"
+      forms:
+        "ta-form": "あった"
+        "nakatta": "あわなかった"
+      readings:
+        "ta-form": "atta"
+        "nakatta": "awanakatta"
+    - word: "ja-0358"
+      forms:
+        "ta-form": "まった"
+        "nakatta": "またなかった"
+      readings:
+        "ta-form": "matta"
+        "nakatta": "matanakatta"
+    - word: "ja-0359"
+      forms:
+        "ta-form": "もった"
+        "nakatta": "もたなかった"
+      readings:
+        "ta-form": "motta"
+        "nakatta": "motanakatta"
+    - word: "ja-0360"
+      forms:
+        "ta-form": "あるいた"
+        "nakatta": "あるかなかった"
+      readings:
+        "ta-form": "aruita"
+        "nakatta": "arukanakatta"
+    - word: "ja-0361"
+      forms:
+        "ta-form": "のった"
+        "nakatta": "のらなかった"
+      readings:
+        "ta-form": "notta"
+        "nakatta": "noranakatta"
+    - word: "ja-0362"
+      forms:
+        "ta-form": "おりた"
+        "nakatta": "おりなかった"
+      readings:
+        "ta-form": "orita"
+        "nakatta": "orinakatta"
+    - word: "ja-0363"
+      forms:
+        "ta-form": "あらった"
+        "nakatta": "あらわなかった"
+      readings:
+        "ta-form": "aratta"
+        "nakatta": "arawanakatta"
+    - word: "ja-0364"
+      forms:
+        "ta-form": "つくった"
+        "nakatta": "つくらなかった"
+      readings:
+        "ta-form": "tsukutta"
+        "nakatta": "tsukuranakatta"
+    - word: "ja-0365"
+      forms:
+        "ta-form": "わかった"
+        "nakatta": "わからなかった"
+      readings:
+        "ta-form": "wakatta"
+        "nakatta": "wakaranakatta"
+    - word: "ja-0366"
+      forms:
+        "ta-form": "しった"
+        "nakatta": "しらなかった"
+      readings:
+        "ta-form": "shitta"
+        "nakatta": "shiranakatta"
+    - word: "ja-0367"
+      forms:
+        "ta-form": "ならった"
+        "nakatta": "ならわなかった"
+      readings:
+        "ta-form": "naratta"
+        "nakatta": "narawanakatta"
+    - word: "ja-0368"
+      forms:
+        "ta-form": "おしえた"
+        "nakatta": "おしえなかった"
+      readings:
+        "ta-form": "oshieta"
+        "nakatta": "oshienakatta"
+    - word: "ja-0369"
+      forms:
+        "ta-form": "つかった"
+        "nakatta": "つかわなかった"
+      readings:
+        "ta-form": "tsukatta"
+        "nakatta": "tsukawanakatta"
+    - word: "ja-0370"
+      forms:
+        "ta-form": "すわった"
+        "nakatta": "すわらなかった"
+      readings:
+        "ta-form": "suwatta"
+        "nakatta": "suwaranakatta"
+    - word: "ja-0371"
+      forms:
+        "ta-form": "たった"
+        "nakatta": "たたなかった"
+      readings:
+        "ta-form": "tatta"
+        "nakatta": "tatanakatta"
+    - word: "ja-0372"
+      forms:
+        "ta-form": "あけた"
+        "nakatta": "あけなかった"
+      readings:
+        "ta-form": "aketa"
+        "nakatta": "akenakatta"
+    - word: "ja-0373"
+      forms:
+        "ta-form": "しめた"
+        "nakatta": "しめなかった"
+      readings:
+        "ta-form": "shimeta"
+        "nakatta": "shimenakatta"
+    - word: "ja-0374"
+      forms:
+        "ta-form": "あそんだ"
+        "nakatta": "あそばなかった"
+      readings:
+        "ta-form": "asonda"
+        "nakatta": "asobanakatta"
+    - word: "ja-0375"
+      forms:
+        "ta-form": "した"
+        "nakatta": "しなかった"
+      readings:
+        "ta-form": "shita"
+        "nakatta": "shinakatta"
+    - word: "ja-0949"
+      forms:
+        "ta-form": "かぞえた"
+        "nakatta": "かぞえなかった"
+      readings:
+        "ta-form": "kazoeta"
+        "nakatta": "kazoenakatta"
+    - word: "ja-1226"
+      forms:
+        "ta-form": "こまった"
+        "nakatta": "こまらなかった"
+      readings:
+        "ta-form": "komatta"
+        "nakatta": "komaranakatta"
+    - word: "ja-1227"
+      forms:
+        "ta-form": "よんだ"
+        "nakatta": "よばなかった"
+      readings:
+        "ta-form": "yonda"
+        "nakatta": "yobanakatta"
+    - word: "ja-1228"
+      forms:
+        "ta-form": "まよった"
+        "nakatta": "まよわなかった"
+      readings:
+        "ta-form": "mayotta"
+        "nakatta": "mayowanakatta"
+    - word: "ja-1236"
+      forms:
+        "ta-form": "たすけた"
+        "nakatta": "たすけなかった"
+      readings:
+        "ta-form": "tasuketa"
+        "nakatta": "tasukenakatta"
+    - word: "ja-1237"
+      forms:
+        "ta-form": "たすかった"
+        "nakatta": "たすからなかった"
+      readings:
+        "ta-form": "tasukatta"
+        "nakatta": "tasukaranakatta"
+    - word: "ja-1240"
+      forms:
+        "ta-form": "まもった"
+        "nakatta": "まもらなかった"
+      readings:
+        "ta-form": "mamotta"
+        "nakatta": "mamoranakatta"
+    - word: "ja-0571"
+      forms:
+        "ta-form": "あびた"
+        "nakatta": "あびなかった"
+      readings:
+        "ta-form": "abita"
+        "nakatta": "abinakatta"
+    - word: "ja-0572"
+      forms:
+        "ta-form": "はしった"
+        "nakatta": "はしらなかった"
+      readings:
+        "ta-form": "hashitta"
+        "nakatta": "hashiranakatta"
+    - word: "ja-0573"
+      forms:
+        "ta-form": "とんだ"
+        "nakatta": "とばなかった"
+      readings:
+        "ta-form": "tonda"
+        "nakatta": "tobanakatta"
+    - word: "ja-0574"
+      forms:
+        "ta-form": "おどった"
+        "nakatta": "おどらなかった"
+      readings:
+        "ta-form": "odotta"
+        "nakatta": "odoranakatta"
+    - word: "ja-0575"
+      forms:
+        "ta-form": "うたった"
+        "nakatta": "うたわなかった"
+      readings:
+        "ta-form": "utatta"
+        "nakatta": "utawanakatta"
+    - word: "ja-0576"
+      forms:
+        "ta-form": "かりた"
+        "nakatta": "かりなかった"
+      readings:
+        "ta-form": "karita"
+        "nakatta": "karinakatta"
+    - word: "ja-0577"
+      forms:
+        "ta-form": "かえした"
+        "nakatta": "かえさなかった"
+      readings:
+        "ta-form": "kaeshita"
+        "nakatta": "kaesanakatta"
+    - word: "ja-0578"
+      forms:
+        "ta-form": "わすれた"
+        "nakatta": "わすれなかった"
+      readings:
+        "ta-form": "wasureta"
+        "nakatta": "wasurenakatta"
+    - word: "ja-0579"
+      forms:
+        "ta-form": "おぼえた"
+        "nakatta": "おぼえなかった"
+      readings:
+        "ta-form": "oboeta"
+        "nakatta": "oboenakatta"
+    - word: "ja-0580"
+      forms:
+        "ta-form": "てつだった"
+        "nakatta": "てつだわなかった"
+      readings:
+        "ta-form": "tetsudatta"
+        "nakatta": "tetsudawanakatta"
+    - word: "ja-0581"
+      forms:
+        "ta-form": "ひろった"
+        "nakatta": "ひろわなかった"
+      readings:
+        "ta-form": "hirotta"
+        "nakatta": "hirowanakatta"
+    - word: "ja-0582"
+      forms:
+        "ta-form": "すてた"
+        "nakatta": "すてなかった"
+      readings:
+        "ta-form": "suteta"
+        "nakatta": "sutenakatta"
+    - word: "ja-0583"
+      forms:
+        "ta-form": "なくした"
+        "nakatta": "なくさなかった"
+      readings:
+        "ta-form": "nakushita"
+        "nakatta": "nakusanakatta"
+    - word: "ja-0584"
+      forms:
+        "ta-form": "のぼった"
+        "nakatta": "のぼらなかった"
+      readings:
+        "ta-form": "nobotta"
+        "nakatta": "noboranakatta"
+    - word: "ja-0585"
+      forms:
+        "ta-form": "そうじした"
+        "nakatta": "そうじしなかった"
+      readings:
+        "ta-form": "soujishita"
+        "nakatta": "soujishinakatta"
+    - word: "ja-0586"
+      forms:
+        "ta-form": "りょうりした"
+        "nakatta": "りょうりしなかった"
+      readings:
+        "ta-form": "ryourishita"
+        "nakatta": "ryourishinakatta"
+    - word: "ja-0587"
+      forms:
+        "ta-form": "でかけた"
+        "nakatta": "でかけなかった"
+      readings:
+        "ta-form": "dekaketa"
+        "nakatta": "dekakenakatta"
+    - word: "ja-0588"
+      forms:
+        "ta-form": "もどった"
+        "nakatta": "もどらなかった"
+      readings:
+        "ta-form": "modotta"
+        "nakatta": "modoranakatta"
+    - word: "ja-0589"
+      forms:
+        "ta-form": "とまった"
+        "nakatta": "とまらなかった"
+      readings:
+        "ta-form": "tomatta"
+        "nakatta": "tomaranakatta"
+    - word: "ja-0590"
+      forms:
+        "ta-form": "さがした"
+        "nakatta": "さがさなかった"
+      readings:
+        "ta-form": "sagashita"
+        "nakatta": "sagasanakatta"
+    - word: "ja-0591"
+      forms:
+        "ta-form": "みせた"
+        "nakatta": "みせなかった"
+      readings:
+        "ta-form": "miseta"
+        "nakatta": "misenakatta"
+    - word: "ja-0592"
+      forms:
+        "ta-form": "いれた"
+        "nakatta": "いれなかった"
+      readings:
+        "ta-form": "ireta"
+        "nakatta": "irenakatta"
+    - word: "ja-0593"
+      forms:
+        "ta-form": "わらった"
+        "nakatta": "わらわなかった"
+      readings:
+        "ta-form": "waratta"
+        "nakatta": "warawanakatta"
+    - word: "ja-0594"
+      forms:
+        "ta-form": "おこった"
+        "nakatta": "おこらなかった"
+      readings:
+        "ta-form": "okotta"
+        "nakatta": "okoranakatta"
+    - word: "ja-0595"
+      forms:
+        "ta-form": "やめた"
+        "nakatta": "やめなかった"
+      readings:
+        "ta-form": "yameta"
+        "nakatta": "yamenakatta"
+    - word: "ja-0596"
+      forms:
+        "ta-form": "はじめた"
+        "nakatta": "はじめなかった"
+      readings:
+        "ta-form": "hajimeta"
+        "nakatta": "hajimenakatta"
+    - word: "ja-0597"
+      forms:
+        "ta-form": "ひっこした"
+        "nakatta": "ひっこさなかった"
+      readings:
+        "ta-form": "hikkoshita"
+        "nakatta": "hikkosanakatta"
+    - word: "ja-0598"
+      forms:
+        "ta-form": "あげた"
+        "nakatta": "あげなかった"
+      readings:
+        "ta-form": "ageta"
+        "nakatta": "agenakatta"
+    - word: "ja-0599"
+      forms:
+        "ta-form": "もらった"
+        "nakatta": "もらわなかった"
+      readings:
+        "ta-form": "moratta"
+        "nakatta": "morawanakatta"
+    - word: "ja-0600"
+      forms:
+        "ta-form": "さけんだ"
+        "nakatta": "さけばなかった"
+      readings:
+        "ta-form": "sakenda"
+        "nakatta": "sakebanakatta"
+    - word: "ja-0516"
+      forms:
+        "ta-form": "おわった"
+        "nakatta": "おわらなかった"
+      readings:
+        "ta-form": "owatta"
+        "nakatta": "owaranakatta"
+    - word: "ja-0711"
+      forms:
+        "ta-form": "つとめた"
+        "nakatta": "つとめなかった"
+      readings:
+        "ta-form": "tsutometa"
+        "nakatta": "tsutomenakatta"
+    - word: "ja-1334"
+      forms:
+        "ta-form": "きがえた"
+        "nakatta": "きがえなかった"
+      readings:
+        "ta-form": "kigaeta"
+        "nakatta": "kigaenakatta"
+    - word: "ja-1335"
+      forms:
+        "ta-form": "はいた"
+        "nakatta": "はかなかった"
+      readings:
+        "ta-form": "haita"
+        "nakatta": "hakanakatta"
+    - word: "ja-1336"
+      forms:
+        "ta-form": "かぶった"
+        "nakatta": "かぶらなかった"
+      readings:
+        "ta-form": "kabutta"
+        "nakatta": "kaburanakatta"
+    - word: "ja-1341"
+      forms:
+        "ta-form": "つかれた"
+        "nakatta": "つかれなかった"
+      readings:
+        "ta-form": "tsukareta"
+        "nakatta": "tsukarenakatta"
+    - word: "ja-1348"
+      forms:
+        "ta-form": "だした"
+        "nakatta": "ださなかった"
+      readings:
+        "ta-form": "dashita"
+        "nakatta": "dasanakatta"
+    - word: "ja-1349"
+      forms:
+        "ta-form": "わかした"
+        "nakatta": "わかさなかった"
+      readings:
+        "ta-form": "wakashita"
+        "nakatta": "wakasanakatta"
+    - word: "ja-1350"
+      forms:
+        "ta-form": "ほした"
+        "nakatta": "ほさなかった"
+      readings:
+        "ta-form": "hoshita"
+        "nakatta": "hosanakatta"
+    - word: "ja-1351"
+      forms:
+        "ta-form": "かたづけた"
+        "nakatta": "かたづけなかった"
+      readings:
+        "ta-form": "katazuketa"
+        "nakatta": "katazukenakatta"
+    - word: "ja-1352"
+      forms:
+        "ta-form": "たたんだ"
+        "nakatta": "たたまなかった"
+      readings:
+        "ta-form": "tatanda"
+        "nakatta": "tatamanakatta"
+    - word: "ja-1353"
+      forms:
+        "ta-form": "ぬいだ"
+        "nakatta": "ぬがなかった"
+      readings:
+        "ta-form": "nuida"
+        "nakatta": "nuganakatta"
+    - word: "ja-1354"
+      forms:
+        "ta-form": "まにあった"
+        "nakatta": "まにあわなかった"
+      readings:
+        "ta-form": "maniatta"
+        "nakatta": "maniawanakatta"
+    - word: "ja-1364"
+      forms:
+        "ta-form": "かわいた"
+        "nakatta": "かわかなかった"
+      readings:
+        "ta-form": "kawaita"
+        "nakatta": "kawakanakatta"
+    - word: "ja-1368"
+      forms:
+        "ta-form": "いそいだ"
+        "nakatta": "いそがなかった"
+      readings:
+        "ta-form": "isoida"
+        "nakatta": "isoganakatta"
+    - word: "ja-1539"
+      forms:
+        "ta-form": "にあった"
+        "nakatta": "にあわなかった"
+      readings:
+        "ta-form": "niatta"
+        "nakatta": "niawanakatta"
+    - word: "ja-1542"
+      forms:
+        "ta-form": "きた"
+        "nakatta": "きなかった"
+      readings:
+        "ta-form": "kita"
+        "nakatta": "kinakatta"
+    - word: "ja-1718"
+      forms:
+        "ta-form": "うった"
+        "nakatta": "うらなかった"
+      readings:
+        "ta-form": "utta"
+        "nakatta": "uranakatta"
+    - word: "ja-1719"
+      forms:
+        "ta-form": "はらった"
+        "nakatta": "はらわなかった"
+      readings:
+        "ta-form": "haratta"
+        "nakatta": "harawanakatta"
+    - word: "ja-1720"
+      forms:
+        "ta-form": "まけた"
+        "nakatta": "まけなかった"
+      readings:
+        "ta-form": "maketa"
+        "nakatta": "makenakatta"
+    - word: "ja-1721"
+      forms:
+        "ta-form": "えらんだ"
+        "nakatta": "えらばなかった"
+      readings:
+        "ta-form": "eranda"
+        "nakatta": "erabanakatta"
+    - word: "ja-1758"
+      forms:
+        "ta-form": "たのんだ"
+        "nakatta": "たのまなかった"
+      readings:
+        "ta-form": "tanonda"
+        "nakatta": "tanomanakatta"
+    - word: "ja-1759"
+      forms:
+        "ta-form": "おごった"
+        "nakatta": "おごらなかった"
+      readings:
+        "ta-form": "ogotta"
+        "nakatta": "ogoranakatta"
+    - word: "ja-1790"
+      forms:
+        "ta-form": "いためた"
+        "nakatta": "いためなかった"
+      readings:
+        "ta-form": "itameta"
+        "nakatta": "itamenakatta"
+    - word: "ja-1791"
+      forms:
+        "ta-form": "まぜた"
+        "nakatta": "まぜなかった"
+      readings:
+        "ta-form": "mazeta"
+        "nakatta": "mazenakatta"
+    - word: "ja-1792"
+      forms:
+        "ta-form": "ゆでた"
+        "nakatta": "ゆでなかった"
+      readings:
+        "ta-form": "yudeta"
+        "nakatta": "yudenakatta"
+    - word: "ja-1793"
+      forms:
+        "ta-form": "にた"
+        "nakatta": "になかった"
+      readings:
+        "ta-form": "nita"
+        "nakatta": "ninakatta"
+    - word: "ja-1794"
+      forms:
+        "ta-form": "やいた"
+        "nakatta": "やかなかった"
+      readings:
+        "ta-form": "yaita"
+        "nakatta": "yakanakatta"
+    - word: "ja-1799"
+      forms:
+        "ta-form": "ひやした"
+        "nakatta": "ひやさなかった"
+      readings:
+        "ta-form": "hiyashita"
+        "nakatta": "hiyasanakatta"
+    - word: "ja-1800"
+      forms:
+        "ta-form": "あたためた"
+        "nakatta": "あたためなかった"
+      readings:
+        "ta-form": "atatameta"
+        "nakatta": "atatamenakatta"
+    - word: "ja-1801"
+      forms:
+        "ta-form": "きざんだ"
+        "nakatta": "きざまなかった"
+      readings:
+        "ta-form": "kizanda"
+        "nakatta": "kizamanakatta"
+    - word: "ja-1802"
+      forms:
+        "ta-form": "むいた"
+        "nakatta": "むかなかった"
+      readings:
+        "ta-form": "muita"
+        "nakatta": "mukanakatta"
+    - word: "ja-1803"
+      forms:
+        "ta-form": "つつんだ"
+        "nakatta": "つつまなかった"
+      readings:
+        "ta-form": "tsutsunda"
+        "nakatta": "tsutsumanakatta"
+    - word: "ja-1804"
+      forms:
+        "ta-form": "こげた"
+        "nakatta": "こげなかった"
+      readings:
+        "ta-form": "kogeta"
+        "nakatta": "kogenakatta"
+    - word: "ja-1805"
+      forms:
+        "ta-form": "さました"
+        "nakatta": "さまさなかった"
+      readings:
+        "ta-form": "samashita"
+        "nakatta": "samasanakatta"
+    - word: "ja-1850"
+      forms:
+        "ta-form": "べんきょうした"
+        "nakatta": "べんきょうしなかった"
+      readings:
+        "ta-form": "benkyoushita"
+        "nakatta": "benkyoushinakatta"
+    - word: "ja-1861"
+      forms:
+        "ta-form": "おくれた"
+        "nakatta": "おくれなかった"
+      readings:
+        "ta-form": "okureta"
+        "nakatta": "okurenakatta"
+    - word: "ja-1862"
+      forms:
+        "ta-form": "まなんだ"
+        "nakatta": "まなばなかった"
+      readings:
+        "ta-form": "mananda"
+        "nakatta": "manabanakatta"
+    - word: "ja-1863"
+      forms:
+        "ta-form": "つづけた"
+        "nakatta": "つづけなかった"
+      readings:
+        "ta-form": "tsuzuketa"
+        "nakatta": "tsuzukenakatta"
+    - word: "ja-1864"
+      forms:
+        "ta-form": "かんがえた"
+        "nakatta": "かんがえなかった"
+      readings:
+        "ta-form": "kangaeta"
+        "nakatta": "kangaenakatta"
+    - word: "ja-1865"
+      forms:
+        "ta-form": "こたえた"
+        "nakatta": "こたえなかった"
+      readings:
+        "ta-form": "kotaeta"
+        "nakatta": "kotaenakatta"
+    - word: "ja-1892"
+      forms:
+        "ta-form": "およいだ"
+        "nakatta": "およがなかった"
+      readings:
+        "ta-form": "oyoida"
+        "nakatta": "oyoganakatta"
+    - word: "ja-1893"
+      forms:
+        "ta-form": "とった"
+        "nakatta": "とらなかった"
+      readings:
+        "ta-form": "totta"
+        "nakatta": "toranakatta"
+    - word: "ja-1896"
+      forms:
+        "ta-form": "えがいた"
+        "nakatta": "えがかなかった"
+      readings:
+        "ta-form": "egaita"
+        "nakatta": "egakanakatta"
+    - word: "ja-1900"
+      forms:
+        "ta-form": "ぬった"
+        "nakatta": "ぬわなかった"
+      readings:
+        "ta-form": "nutta"
+        "nakatta": "nuwanakatta"
+    - word: "ja-1901"
+      forms:
+        "ta-form": "あんだ"
+        "nakatta": "あまなかった"
+      readings:
+        "ta-form": "anda"
+        "nakatta": "amanakatta"
+    - word: "ja-1907"
+      forms:
+        "ta-form": "ほめた"
+        "nakatta": "ほめなかった"
+      readings:
+        "ta-form": "hometa"
+        "nakatta": "homenakatta"
+    - word: "ja-1910"
+      forms:
+        "ta-form": "かった"
+        "nakatta": "かたなかった"
+      readings:
+        "ta-form": "katta"
+        "nakatta": "katanakatta"
+    - word: "ja-1933"
+      forms:
+        "ta-form": "かなでた"
+        "nakatta": "かなでなかった"
+      readings:
+        "ta-form": "kanadeta"
+        "nakatta": "kanadenakatta"
+    - word: "ja-1934"
+      forms:
+        "ta-form": "ならした"
+        "nakatta": "ならさなかった"
+      readings:
+        "ta-form": "narashita"
+        "nakatta": "narasanakatta"
+    - word: "ja-1935"
+      forms:
+        "ta-form": "ひびいた"
+        "nakatta": "ひびかなかった"
+      readings:
+        "ta-form": "hibiita"
+        "nakatta": "hibikanakatta"
+    - word: "ja-1939"
+      forms:
+        "ta-form": "たたいた"
+        "nakatta": "たたかなかった"
+      readings:
+        "ta-form": "tataita"
+        "nakatta": "tatakanakatta"
+    - word: "ja-1940"
+      forms:
+        "ta-form": "きこえた"
+        "nakatta": "きこえなかった"
+      readings:
+        "ta-form": "kikoeta"
+        "nakatta": "kikoenakatta"
+    - word: "ja-1941"
+      forms:
+        "ta-form": "ひいた"
+        "nakatta": "ひかなかった"
+      readings:
+        "ta-form": "hiita"
+        "nakatta": "hikanakatta"
+    - word: "ja-1996"
+      forms:
+        "ta-form": "なげた"
+        "nakatta": "なげなかった"
+      readings:
+        "ta-form": "nageta"
+        "nakatta": "nagenakatta"
+    - word: "ja-1997"
+      forms:
+        "ta-form": "うった"
+        "nakatta": "うたなかった"
+      readings:
+        "ta-form": "utta"
+        "nakatta": "utanakatta"
+    - word: "ja-1998"
+      forms:
+        "ta-form": "けった"
+        "nakatta": "けらなかった"
+      readings:
+        "ta-form": "ketta"
+        "nakatta": "keranakatta"
+    - word: "ja-1999"
+      forms:
+        "ta-form": "おいかけた"
+        "nakatta": "おいかけなかった"
+      readings:
+        "ta-form": "oikaketa"
+        "nakatta": "oikakenakatta"
+    - word: "ja-2000"
+      forms:
+        "ta-form": "あきらめた"
+        "nakatta": "あきらめなかった"
+      readings:
+        "ta-form": "akirameta"
+        "nakatta": "akiramenakatta"
+    - word: "ja-2001"
+      forms:
+        "ta-form": "きたえた"
+        "nakatta": "きたえなかった"
+      readings:
+        "ta-form": "kitaeta"
+        "nakatta": "kitaenakatta"
+    - word: "ja-2002"
+      forms:
+        "ta-form": "ねらった"
+        "nakatta": "ねらわなかった"
+      readings:
+        "ta-form": "neratta"
+        "nakatta": "nerawanakatta"
+    - word: "ja-2049"
+      forms:
+        "ta-form": "うつった"
+        "nakatta": "うつらなかった"
+      readings:
+        "ta-form": "utsutta"
+        "nakatta": "utsuranakatta"
+    - word: "ja-2050"
+      forms:
+        "ta-form": "なおった"
+        "nakatta": "なおらなかった"
+      readings:
+        "ta-form": "naotta"
+        "nakatta": "naoranakatta"
+    - word: "ja-2051"
+      forms:
+        "ta-form": "なおした"
+        "nakatta": "なおさなかった"
+      readings:
+        "ta-form": "naoshita"
+        "nakatta": "naosanakatta"
+    - word: "ja-2052"
+      forms:
+        "ta-form": "たおれた"
+        "nakatta": "たおれなかった"
+      readings:
+        "ta-form": "taoreta"
+        "nakatta": "taorenakatta"
+    - word: "ja-2053"
+      forms:
+        "ta-form": "はれた"
+        "nakatta": "はれなかった"
+      readings:
+        "ta-form": "hareta"
+        "nakatta": "harenakatta"
+    - word: "ja-2054"
+      forms:
+        "ta-form": "しびれた"
+        "nakatta": "しびれなかった"
+      readings:
+        "ta-form": "shibireta"
+        "nakatta": "shibirenakatta"
+    - word: "ja-2115"
+      forms:
+        "ta-form": "みがいた"
+        "nakatta": "みがかなかった"
+      readings:
+        "ta-form": "migaita"
+        "nakatta": "migakanakatta"
+    - word: "ja-2116"
+      forms:
+        "ta-form": "こすった"
+        "nakatta": "こすらなかった"
+      readings:
+        "ta-form": "kosutta"
+        "nakatta": "kosuranakatta"
+    - word: "ja-2117"
+      forms:
+        "ta-form": "すすいだ"
+        "nakatta": "すすがなかった"
+      readings:
+        "ta-form": "susuida"
+        "nakatta": "susuganakatta"
+    - word: "ja-2118"
+      forms:
+        "ta-form": "しぼった"
+        "nakatta": "しぼらなかった"
+      readings:
+        "ta-form": "shibotta"
+        "nakatta": "shiboranakatta"
+    - word: "ja-2119"
+      forms:
+        "ta-form": "かわかした"
+        "nakatta": "かわかさなかった"
+      readings:
+        "ta-form": "kawakashita"
+        "nakatta": "kawakasanakatta"
+    - word: "ja-2120"
+      forms:
+        "ta-form": "しまった"
+        "nakatta": "しまわなかった"
+      readings:
+        "ta-form": "shimatta"
+        "nakatta": "shimawanakatta"
+    - word: "ja-2121"
+      forms:
+        "ta-form": "そろえた"
+        "nakatta": "そろえなかった"
+      readings:
+        "ta-form": "soroeta"
+        "nakatta": "soroenakatta"
+    - word: "ja-2122"
+      forms:
+        "ta-form": "かざった"
+        "nakatta": "かざらなかった"
+      readings:
+        "ta-form": "kazatta"
+        "nakatta": "kazaranakatta"
+    - word: "ja-2123"
+      forms:
+        "ta-form": "とりかえた"
+        "nakatta": "とりかえなかった"
+      readings:
+        "ta-form": "torikaeta"
+        "nakatta": "torikaenakatta"
+    - word: "ja-2124"
+      forms:
+        "ta-form": "つめた"
+        "nakatta": "つめなかった"
+      readings:
+        "ta-form": "tsumeta"
+        "nakatta": "tsumenakatta"
+    - word: "ja-2125"
+      forms:
+        "ta-form": "くばった"
+        "nakatta": "くばらなかった"
+      readings:
+        "ta-form": "kubatta"
+        "nakatta": "kubaranakatta"
+    - word: "ja-2126"
+      forms:
+        "ta-form": "こぼした"
+        "nakatta": "こぼさなかった"
+      readings:
+        "ta-form": "koboshita"
+        "nakatta": "kobosanakatta"
+    - word: "ja-2127"
+      forms:
+        "ta-form": "よごれた"
+        "nakatta": "よごれなかった"
+      readings:
+        "ta-form": "yogoreta"
+        "nakatta": "yogorenakatta"
+    - word: "ja-2128"
+      forms:
+        "ta-form": "よごした"
+        "nakatta": "よごさなかった"
+      readings:
+        "ta-form": "yogoshita"
+        "nakatta": "yogosanakatta"
+    - word: "ja-2129"
+      forms:
+        "ta-form": "ちらかした"
+        "nakatta": "ちらかさなかった"
+      readings:
+        "ta-form": "chirakashita"
+        "nakatta": "chirakasanakatta"
+    - word: "ja-2164"
+      forms:
+        "ta-form": "やせた"
+        "nakatta": "やせなかった"
+      readings:
+        "ta-form": "yaseta"
+        "nakatta": "yasenakatta"
+    - word: "ja-2165"
+      forms:
+        "ta-form": "ふとった"
+        "nakatta": "ふとらなかった"
+      readings:
+        "ta-form": "futotta"
+        "nakatta": "futoranakatta"
+    - word: "ja-2217"
+      forms:
+        "ta-form": "かわった"
+        "nakatta": "かわらなかった"
+      readings:
+        "ta-form": "kawatta"
+        "nakatta": "kawaranakatta"
+    - word: "ja-2218"
+      forms:
+        "ta-form": "きまった"
+        "nakatta": "きまらなかった"
+      readings:
+        "ta-form": "kimatta"
+        "nakatta": "kimaranakatta"
+    - word: "ja-2219"
+      forms:
+        "ta-form": "きめた"
+        "nakatta": "きめなかった"
+      readings:
+        "ta-form": "kimeta"
+        "nakatta": "kimenakatta"
+    - word: "ja-2220"
+      forms:
+        "ta-form": "なった"
+        "nakatta": "ならなかった"
+      readings:
+        "ta-form": "natta"
+        "nakatta": "naranakatta"
+    - word: "ja-2221"
+      forms:
+        "ta-form": "なれた"
+        "nakatta": "なれなかった"
+      readings:
+        "ta-form": "nareta"
+        "nakatta": "narenakatta"
+    - word: "ja-2222"
+      forms:
+        "ta-form": "ついた"
+        "nakatta": "つかなかった"
+      readings:
+        "ta-form": "tsuita"
+        "nakatta": "tsukanakatta"
+    - word: "ja-2223"
+      forms:
+        "ta-form": "つけた"
+        "nakatta": "つけなかった"
+      readings:
+        "ta-form": "tsuketa"
+        "nakatta": "tsukenakatta"
+    - word: "ja-2224"
+      forms:
+        "ta-form": "けした"
+        "nakatta": "けさなかった"
+      readings:
+        "ta-form": "keshita"
+        "nakatta": "kesanakatta"
+    - word: "ja-2225"
+      forms:
+        "ta-form": "きえた"
+        "nakatta": "きえなかった"
+      readings:
+        "ta-form": "kieta"
+        "nakatta": "kienakatta"
+    - word: "ja-2226"
+      forms:
+        "ta-form": "あいた"
+        "nakatta": "あかなかった"
+      readings:
+        "ta-form": "aita"
+        "nakatta": "akanakatta"
+    - word: "ja-2227"
+      forms:
+        "ta-form": "しまった"
+        "nakatta": "しまらなかった"
+      readings:
+        "ta-form": "shimatta"
+        "nakatta": "shimaranakatta"
+    - word: "ja-2228"
+      forms:
+        "ta-form": "つかまえた"
+        "nakatta": "つかまえなかった"
+      readings:
+        "ta-form": "tsukamaeta"
+        "nakatta": "tsukamaenakatta"
+    - word: "ja-2229"
+      forms:
+        "ta-form": "つかんだ"
+        "nakatta": "つかまなかった"
+      readings:
+        "ta-form": "tsukanda"
+        "nakatta": "tsukamanakatta"
+    - word: "ja-2230"
+      forms:
+        "ta-form": "おした"
+        "nakatta": "おさなかった"
+      readings:
+        "ta-form": "oshita"
+        "nakatta": "osanakatta"
+    - word: "ja-2231"
+      forms:
+        "ta-form": "ひっぱった"
+        "nakatta": "ひっぱらなかった"
+      readings:
+        "ta-form": "hippatta"
+        "nakatta": "hipparanakatta"
+    - word: "ja-2232"
+      forms:
+        "ta-form": "おとした"
+        "nakatta": "おとさなかった"
+      readings:
+        "ta-form": "otoshita"
+        "nakatta": "otosanakatta"
+    - word: "ja-2233"
+      forms:
+        "ta-form": "おちた"
+        "nakatta": "おちなかった"
+      readings:
+        "ta-form": "ochita"
+        "nakatta": "ochinakatta"
+    - word: "ja-2234"
+      forms:
+        "ta-form": "ひらいた"
+        "nakatta": "ひらかなかった"
+      readings:
+        "ta-form": "hiraita"
+        "nakatta": "hirakanakatta"
+    - word: "ja-2235"
+      forms:
+        "ta-form": "とじた"
+        "nakatta": "とじなかった"
+      readings:
+        "ta-form": "tojita"
+        "nakatta": "tojinakatta"
+    - word: "ja-2236"
+      forms:
+        "ta-form": "わたした"
+        "nakatta": "わたさなかった"
+      readings:
+        "ta-form": "watashita"
+        "nakatta": "watasanakatta"
+    - word: "ja-2237"
+      forms:
+        "ta-form": "うけた"
+        "nakatta": "うけなかった"
+      readings:
+        "ta-form": "uketa"
+        "nakatta": "ukenakatta"
+    - word: "ja-2238"
+      forms:
+        "ta-form": "つたえた"
+        "nakatta": "つたえなかった"
+      readings:
+        "ta-form": "tsutaeta"
+        "nakatta": "tsutaenakatta"
+    - word: "ja-2239"
+      forms:
+        "ta-form": "つたわった"
+        "nakatta": "つたわらなかった"
+      readings:
+        "ta-form": "tsutawatta"
+        "nakatta": "tsutawaranakatta"
+    - word: "ja-2240"
+      forms:
+        "ta-form": "むかえた"
+        "nakatta": "むかえなかった"
+      readings:
+        "ta-form": "mukaeta"
+        "nakatta": "mukaenakatta"
+    - word: "ja-2241"
+      forms:
+        "ta-form": "おくった"
+        "nakatta": "おくらなかった"
+      readings:
+        "ta-form": "okutta"
+        "nakatta": "okuranakatta"
+    - word: "ja-2242"
+      forms:
+        "ta-form": "とどいた"
+        "nakatta": "とどかなかった"
+      readings:
+        "ta-form": "todoita"
+        "nakatta": "todokanakatta"
+    - word: "ja-2243"
+      forms:
+        "ta-form": "とどけた"
+        "nakatta": "とどけなかった"
+      readings:
+        "ta-form": "todoketa"
+        "nakatta": "todokenakatta"
+    - word: "ja-2244"
+      forms:
+        "ta-form": "たずねた"
+        "nakatta": "たずねなかった"
+      readings:
+        "ta-form": "tazuneta"
+        "nakatta": "tazunenakatta"
+    - word: "ja-2245"
+      forms:
+        "ta-form": "まちがった"
+        "nakatta": "まちがわなかった"
+      readings:
+        "ta-form": "machigatta"
+        "nakatta": "machigawanakatta"
+    - word: "ja-2246"
+      forms:
+        "ta-form": "あやまった"
+        "nakatta": "あやまらなかった"
+      readings:
+        "ta-form": "ayamatta"
+        "nakatta": "ayamaranakatta"
+    - word: "ja-2247"
+      forms:
+        "ta-form": "ゆるした"
+        "nakatta": "ゆるさなかった"
+      readings:
+        "ta-form": "yurushita"
+        "nakatta": "yurusanakatta"
+    - word: "ja-2248"
+      forms:
+        "ta-form": "ことわった"
+        "nakatta": "ことわらなかった"
+      readings:
+        "ta-form": "kotowatta"
+        "nakatta": "kotowaranakatta"
+    - word: "ja-2249"
+      forms:
+        "ta-form": "さそった"
+        "nakatta": "さそわなかった"
+      readings:
+        "ta-form": "sasotta"
+        "nakatta": "sasowanakatta"
+    - word: "ja-2250"
+      forms:
+        "ta-form": "かよった"
+        "nakatta": "かよわなかった"
+      readings:
+        "ta-form": "kayotta"
+        "nakatta": "kayowanakatta"
+    - word: "ja-2251"
+      forms:
+        "ta-form": "とおった"
+        "nakatta": "とおらなかった"
+      readings:
+        "ta-form": "tootta"
+        "nakatta": "tooranakatta"
+    - word: "ja-2252"
+      forms:
+        "ta-form": "すぎた"
+        "nakatta": "すぎなかった"
+      readings:
+        "ta-form": "sugita"
+        "nakatta": "suginakatta"
+    - word: "ja-2253"
+      forms:
+        "ta-form": "まわった"
+        "nakatta": "まわらなかった"
+      readings:
+        "ta-form": "mawatta"
+        "nakatta": "mawaranakatta"
+    - word: "ja-2254"
+      forms:
+        "ta-form": "まわした"
+        "nakatta": "まわさなかった"
+      readings:
+        "ta-form": "mawashita"
+        "nakatta": "mawasanakatta"
+    - word: "ja-2255"
+      forms:
+        "ta-form": "うごいた"
+        "nakatta": "うごかなかった"
+      readings:
+        "ta-form": "ugoita"
+        "nakatta": "ugokanakatta"
+    - word: "ja-2256"
+      forms:
+        "ta-form": "うごかした"
+        "nakatta": "うごかさなかった"
+      readings:
+        "ta-form": "ugokashita"
+        "nakatta": "ugokasanakatta"
+    - word: "ja-2257"
+      forms:
+        "ta-form": "のこった"
+        "nakatta": "のこらなかった"
+      readings:
+        "ta-form": "nokotta"
+        "nakatta": "nokoranakatta"
+    - word: "ja-2258"
+      forms:
+        "ta-form": "のこした"
+        "nakatta": "のこさなかった"
+      readings:
+        "ta-form": "nokoshita"
+        "nakatta": "nokosanakatta"
+    - word: "ja-2259"
+      forms:
+        "ta-form": "あつまった"
+        "nakatta": "あつまらなかった"
+      readings:
+        "ta-form": "atsumatta"
+        "nakatta": "atsumaranakatta"
+    - word: "ja-2260"
+      forms:
+        "ta-form": "あつめた"
+        "nakatta": "あつめなかった"
+      readings:
+        "ta-form": "atsumeta"
+        "nakatta": "atsumenakatta"
+    - word: "ja-2261"
+      forms:
+        "ta-form": "わけた"
+        "nakatta": "わけなかった"
+      readings:
+        "ta-form": "waketa"
+        "nakatta": "wakenakatta"
+    - word: "ja-2262"
+      forms:
+        "ta-form": "くらべた"
+        "nakatta": "くらべなかった"
+      readings:
+        "ta-form": "kurabeta"
+        "nakatta": "kurabenakatta"
+    - word: "ja-2263"
+      forms:
+        "ta-form": "かくれた"
+        "nakatta": "かくれなかった"
+      readings:
+        "ta-form": "kakureta"
+        "nakatta": "kakurenakatta"
+    - word: "ja-2264"
+      forms:
+        "ta-form": "かくした"
+        "nakatta": "かくさなかった"
+      readings:
+        "ta-form": "kakushita"
+        "nakatta": "kakusanakatta"
+    - word: "ja-2265"
+      forms:
+        "ta-form": "みつかった"
+        "nakatta": "みつからなかった"
+      readings:
+        "ta-form": "mitsukatta"
+        "nakatta": "mitsukaranakatta"
+    - word: "ja-2266"
+      forms:
+        "ta-form": "みつけた"
+        "nakatta": "みつけなかった"
+      readings:
+        "ta-form": "mitsuketa"
+        "nakatta": "mitsukenakatta"
+    - word: "ja-2267"
+      forms:
+        "ta-form": "ふえた"
+        "nakatta": "ふえなかった"
+      readings:
+        "ta-form": "fueta"
+        "nakatta": "fuenakatta"
+    - word: "ja-2268"
+      forms:
+        "ta-form": "へった"
+        "nakatta": "へらなかった"
+      readings:
+        "ta-form": "hetta"
+        "nakatta": "heranakatta"
+    - word: "ja-2269"
+      forms:
+        "ta-form": "そだてた"
+        "nakatta": "そだてなかった"
+      readings:
+        "ta-form": "sodateta"
+        "nakatta": "sodatenakatta"
+    - word: "ja-2270"
+      forms:
+        "ta-form": "そだった"
+        "nakatta": "そだたなかった"
+      readings:
+        "ta-form": "sodatta"
+        "nakatta": "sodatanakatta"
+    - word: "ja-2271"
+      forms:
+        "ta-form": "うまれた"
+        "nakatta": "うまれなかった"
+      readings:
+        "ta-form": "umareta"
+        "nakatta": "umarenakatta"
+    - word: "ja-2272"
+      forms:
+        "ta-form": "いきた"
+        "nakatta": "いきなかった"
+      readings:
+        "ta-form": "ikita"
+        "nakatta": "ikinakatta"
+    - word: "ja-2273"
+      forms:
+        "ta-form": "たのしんだ"
+        "nakatta": "たのしまなかった"
+      readings:
+        "ta-form": "tanoshinda"
+        "nakatta": "tanoshimanakatta"
+    - word: "ja-2274"
+      forms:
+        "ta-form": "あたった"
+        "nakatta": "あたらなかった"
+      readings:
+        "ta-form": "atatta"
+        "nakatta": "ataranakatta"
+    - word: "ja-2275"
+      forms:
+        "ta-form": "はじまった"
+        "nakatta": "はじまらなかった"
+      readings:
+        "ta-form": "hajimatta"
+        "nakatta": "hajimaranakatta"
+    - word: "ja-2276"
+      forms:
+        "ta-form": "さわった"
+        "nakatta": "さわらなかった"
+      readings:
+        "ta-form": "sawatta"
+        "nakatta": "sawaranakatta"
+    - word: "ja-2320"
+      forms:
+        "ta-form": "つながった"
+        "nakatta": "つながらなかった"
+      readings:
+        "ta-form": "tsunagatta"
+        "nakatta": "tsunagaranakatta"
+    - word: "ja-2321"
+      forms:
+        "ta-form": "つないだ"
+        "nakatta": "つながなかった"
+      readings:
+        "ta-form": "tsunaida"
+        "nakatta": "tsunaganakatta"
+    - word: "ja-2322"
+      forms:
+        "ta-form": "かけた"
+        "nakatta": "かけなかった"
+      readings:
+        "ta-form": "kaketa"
+        "nakatta": "kakenakatta"
+    - word: "ja-2323"
+      forms:
+        "ta-form": "うけとった"
+        "nakatta": "うけとらなかった"
+      readings:
+        "ta-form": "uketotta"
+        "nakatta": "uketoranakatta"
+    - word: "ja-2364"
+      forms:
+        "ta-form": "のりおくれた"
+        "nakatta": "のりおくれなかった"
+      readings:
+        "ta-form": "noriokureta"
+        "nakatta": "noriokurenakatta"
+    - word: "ja-2365"
+      forms:
+        "ta-form": "のりかえた"
+        "nakatta": "のりかえなかった"
+      readings:
+        "ta-form": "norikaeta"
+        "nakatta": "norikaenakatta"
+    - word: "ja-2407"
+      forms:
+        "ta-form": "たちよった"
+        "nakatta": "たちよらなかった"
+      readings:
+        "ta-form": "tachiyotta"
+        "nakatta": "tachiyoranakatta"
+    - word: "ja-2470"
+      forms:
+        "ta-form": "さいた"
+        "nakatta": "さかなかった"
+      readings:
+        "ta-form": "saita"
+        "nakatta": "sakanakatta"
+    - word: "ja-2471"
+      forms:
+        "ta-form": "ちった"
+        "nakatta": "ちらなかった"
+      readings:
+        "ta-form": "chitta"
+        "nakatta": "chiranakatta"
+    - word: "ja-2472"
+      forms:
+        "ta-form": "しげった"
+        "nakatta": "しげらなかった"
+      readings:
+        "ta-form": "shigetta"
+        "nakatta": "shigeranakatta"
+    - word: "ja-2473"
+      forms:
+        "ta-form": "かれた"
+        "nakatta": "かれなかった"
+      readings:
+        "ta-form": "kareta"
+        "nakatta": "karenakatta"
+    - word: "ja-2600"
+      forms:
+        "ta-form": "まかせた"
+        "nakatta": "まかせなかった"
+      readings:
+        "ta-form": "makaseta"
+        "nakatta": "makasenakatta"
+    - word: "ja-2601"
+      forms:
+        "ta-form": "ひきうけた"
+        "nakatta": "ひきうけなかった"
+      readings:
+        "ta-form": "hikiuketa"
+        "nakatta": "hikiukenakatta"
+    - word: "ja-2602"
+      forms:
+        "ta-form": "こなした"
+        "nakatta": "こなさなかった"
+      readings:
+        "ta-form": "konashita"
+        "nakatta": "konasanakatta"
+    - word: "ja-2603"
+      forms:
+        "ta-form": "はげんだ"
+        "nakatta": "はげまなかった"
+      readings:
+        "ta-form": "hagenda"
+        "nakatta": "hagemanakatta"
+    - word: "ja-2604"
+      forms:
+        "ta-form": "てがけた"
+        "nakatta": "てがけなかった"
+      readings:
+        "ta-form": "tegaketa"
+        "nakatta": "tegakenakatta"
+    - word: "ja-2605"
+      forms:
+        "ta-form": "しめきった"
+        "nakatta": "しめきらなかった"
+      readings:
+        "ta-form": "shimekitta"
+        "nakatta": "shimekiranakatta"
+    - word: "ja-2606"
+      forms:
+        "ta-form": "まにあわせた"
+        "nakatta": "まにあわせなかった"
+      readings:
+        "ta-form": "maniawaseta"
+        "nakatta": "maniawasenakatta"
+    - word: "ja-2716"
+      forms:
+        "ta-form": "かたよった"
+        "nakatta": "かたよらなかった"
+      readings:
+        "ta-form": "katayotta"
+        "nakatta": "katayoranakatta"
+    - word: "ja-2768"
+      forms:
+        "ta-form": "おどろいた"
+        "nakatta": "おどろかなかった"
+      readings:
+        "ta-form": "odoroita"
+        "nakatta": "odorokanakatta"
+    - word: "ja-2769"
+      forms:
+        "ta-form": "よろこんだ"
+        "nakatta": "よろこばなかった"
+      readings:
+        "ta-form": "yorokonda"
+        "nakatta": "yorokobanakatta"
+    - word: "ja-2770"
+      forms:
+        "ta-form": "かなしんだ"
+        "nakatta": "かなしまなかった"
+      readings:
+        "ta-form": "kanashinda"
+        "nakatta": "kanashimanakatta"
+    - word: "ja-2771"
+      forms:
+        "ta-form": "なやんだ"
+        "nakatta": "なやまなかった"
+      readings:
+        "ta-form": "nayanda"
+        "nakatta": "nayamanakatta"
+    - word: "ja-2772"
+      forms:
+        "ta-form": "あわてた"
+        "nakatta": "あわてなかった"
+      readings:
+        "ta-form": "awateta"
+        "nakatta": "awatenakatta"
+    - word: "ja-2773"
+      forms:
+        "ta-form": "あせった"
+        "nakatta": "あせらなかった"
+      readings:
+        "ta-form": "asetta"
+        "nakatta": "aseranakatta"
+    - word: "ja-2774"
+      forms:
+        "ta-form": "おちついた"
+        "nakatta": "おちつかなかった"
+      readings:
+        "ta-form": "ochitsuita"
+        "nakatta": "ochitsukanakatta"
+    - word: "ja-2794"
+      forms:
+        "ta-form": "きらった"
+        "nakatta": "きらわなかった"
+      readings:
+        "ta-form": "kiratta"
+        "nakatta": "kirawanakatta"
+    - word: "ja-2795"
+      forms:
+        "ta-form": "あいした"
+        "nakatta": "あいしなかった"
+      readings:
+        "ta-form": "aishita"
+        "nakatta": "aishinakatta"
+    - word: "ja-2796"
+      forms:
+        "ta-form": "にくんだ"
+        "nakatta": "にくまなかった"
+      readings:
+        "ta-form": "nikunda"
+        "nakatta": "nikumanakatta"
+    - word: "ja-2797"
+      forms:
+        "ta-form": "ねたんだ"
+        "nakatta": "ねたまなかった"
+      readings:
+        "ta-form": "netanda"
+        "nakatta": "netamanakatta"
+    - word: "ja-2798"
+      forms:
+        "ta-form": "うらんだ"
+        "nakatta": "うらまなかった"
+      readings:
+        "ta-form": "uranda"
+        "nakatta": "uramanakatta"
+    - word: "ja-2799"
+      forms:
+        "ta-form": "なつかしんだ"
+        "nakatta": "なつかしまなかった"
+      readings:
+        "ta-form": "natsukashinda"
+        "nakatta": "natsukashimanakatta"
+    - word: "ja-2800"
+      forms:
+        "ta-form": "いやがった"
+        "nakatta": "いやがらなかった"
+      readings:
+        "ta-form": "iyagatta"
+        "nakatta": "iyagaranakatta"
+    - word: "ja-2801"
+      forms:
+        "ta-form": "こらえた"
+        "nakatta": "こらえなかった"
+      readings:
+        "ta-form": "koraeta"
+        "nakatta": "koraenakatta"
+    - word: "ja-2803"
+      forms:
+        "ta-form": "はずかしがった"
+        "nakatta": "はずかしがらなかった"
+      readings:
+        "ta-form": "hazukashigatta"
+        "nakatta": "hazukashigaranakatta"
+    - word: "ja-2806"
+      forms:
+        "ta-form": "かんじた"
+        "nakatta": "かんじなかった"
+      readings:
+        "ta-form": "kanjita"
+        "nakatta": "kanjinakatta"
+    - word: "ja-2812"
+      forms:
+        "ta-form": "さびしがった"
+        "nakatta": "さびしがらなかった"
+      readings:
+        "ta-form": "sabishigatta"
+        "nakatta": "sabishigaranakatta"
+    - word: "ja-2876"
+      forms:
+        "ta-form": "かたった"
+        "nakatta": "かたらなかった"
+      readings:
+        "ta-form": "katatta"
+        "nakatta": "kataranakatta"
+    - word: "ja-2877"
+      forms:
+        "ta-form": "ひろまった"
+        "nakatta": "ひろまらなかった"
+      readings:
+        "ta-form": "hiromatta"
+        "nakatta": "hiromaranakatta"
+    - word: "ja-2925"
+      forms:
+        "ta-form": "あずけた"
+        "nakatta": "あずけなかった"
+      readings:
+        "ta-form": "azuketa"
+        "nakatta": "azukenakatta"
+    - word: "ja-2926"
+      forms:
+        "ta-form": "あずかった"
+        "nakatta": "あずからなかった"
+      readings:
+        "ta-form": "azukatta"
+        "nakatta": "azukaranakatta"
+    - word: "ja-2944"
+      forms:
+        "ta-form": "めぐった"
+        "nakatta": "めぐらなかった"
+      readings:
+        "ta-form": "megutta"
+        "nakatta": "meguranakatta"
+    - word: "ja-2945"
+      forms:
+        "ta-form": "おとずれた"
+        "nakatta": "おとずれなかった"
+      readings:
+        "ta-form": "otozureta"
+        "nakatta": "otozurenakatta"
+    - word: "ja-2982"
+      forms:
+        "ta-form": "もうしこんだ"
+        "nakatta": "もうしこまなかった"
+      readings:
+        "ta-form": "moushikonda"
+        "nakatta": "moushikomanakatta"
+    - word: "ja-3062"
+      forms:
+        "ta-form": "とどけでた"
+        "nakatta": "とどけでなかった"
+      readings:
+        "ta-form": "todokedeta"
+        "nakatta": "todokedenakatta"
+    - word: "ja-3140"
+      forms:
+        "ta-form": "つくりだした"
+        "nakatta": "つくりださなかった"
+      readings:
+        "ta-form": "tsukuridashita"
+        "nakatta": "tsukuridasanakatta"
+    - word: "ja-3195"
+      forms:
+        "ta-form": "めざした"
+        "nakatta": "めざさなかった"
+      readings:
+        "ta-form": "mezashita"
+        "nakatta": "mezasanakatta"
+    - word: "ja-3294"
+      forms:
+        "ta-form": "きをつかった"
+        "nakatta": "きをつかわなかった"
+      readings:
+        "ta-form": "kiotsukatta"
+        "nakatta": "kiotsukawanakatta"
+    - word: "ja-3309"
+      forms:
+        "ta-form": "ゆずった"
+        "nakatta": "ゆずらなかった"
+      readings:
+        "ta-form": "yuzutta"
+        "nakatta": "yuzuranakatta"
+    - word: "ja-3310"
+      forms:
+        "ta-form": "ゆずりあった"
+        "nakatta": "ゆずりあわなかった"
+      readings:
+        "ta-form": "yuzuriatta"
+        "nakatta": "yuzuriawanakatta"
+    - word: "ja-3311"
+      forms:
+        "ta-form": "ならんだ"
+        "nakatta": "ならばなかった"
+      readings:
+        "ta-form": "naranda"
+        "nakatta": "narabanakatta"
+    - word: "ja-3319"
+      forms:
+        "ta-form": "もてなした"
+        "nakatta": "もてなさなかった"
+      readings:
+        "ta-form": "motenashita"
+        "nakatta": "motenasanakatta"
+    - word: "ja-3320"
+      forms:
+        "ta-form": "まねいた"
+        "nakatta": "まねかなかった"
+      readings:
+        "ta-form": "maneita"
+        "nakatta": "manekanakatta"
+    - word: "ja-3321"
+      forms:
+        "ta-form": "つつしんだ"
+        "nakatta": "つつしまなかった"
+      readings:
+        "ta-form": "tsutsushinda"
+        "nakatta": "tsutsushimanakatta"
+    - word: "ja-3322"
+      forms:
+        "ta-form": "いましめた"
+        "nakatta": "いましめなかった"
+      readings:
+        "ta-form": "imashimeta"
+        "nakatta": "imashimenakatta"
+    - word: "ja-3383"
+      forms:
+        "ta-form": "へらした"
+        "nakatta": "へらさなかった"
+      readings:
+        "ta-form": "herashita"
+        "nakatta": "herasanakatta"
+    - word: "ja-3384"
+      forms:
+        "ta-form": "ふやした"
+        "nakatta": "ふやさなかった"
+      readings:
+        "ta-form": "fuyashita"
+        "nakatta": "fuyasanakatta"
+    - word: "ja-3385"
+      forms:
+        "ta-form": "こわした"
+        "nakatta": "こわさなかった"
+      readings:
+        "ta-form": "kowashita"
+        "nakatta": "kowasanakatta"
+    - word: "ja-3386"
+      forms:
+        "ta-form": "こわれた"
+        "nakatta": "こわれなかった"
+      readings:
+        "ta-form": "kowareta"
+        "nakatta": "kowarenakatta"
+    - word: "ja-3389"
+      forms:
+        "ta-form": "たもった"
+        "nakatta": "たもたなかった"
+      readings:
+        "ta-form": "tamotta"
+        "nakatta": "tamotanakatta"
+    - word: "ja-3390"
+      forms:
+        "ta-form": "さけた"
+        "nakatta": "さけなかった"
+      readings:
+        "ta-form": "saketa"
+        "nakatta": "sakenakatta"
+    - word: "ja-3434"
+      forms:
+        "ta-form": "えんじた"
+        "nakatta": "えんじなかった"
+      readings:
+        "ta-form": "enjita"
+        "nakatta": "enjinakatta"
+    - word: "ja-3452"
+      forms:
+        "ta-form": "ないた"
+        "nakatta": "なかなかった"
+      readings:
+        "ta-form": "naita"
+        "nakatta": "nakanakatta"
+    - word: "ja-3564"
+      forms:
+        "ta-form": "たたかった"
+        "nakatta": "たたかわなかった"
+      readings:
+        "ta-form": "tatakatta"
+        "nakatta": "tatakawanakatta"
+    - word: "ja-3568"
+      forms:
+        "ta-form": "ほろびた"
+        "nakatta": "ほろびなかった"
+      readings:
+        "ta-form": "horobita"
+        "nakatta": "horobinakatta"
+    - word: "ja-3569"
+      forms:
+        "ta-form": "ほろぼした"
+        "nakatta": "ほろぼさなかった"
+      readings:
+        "ta-form": "horoboshita"
+        "nakatta": "horobosanakatta"
+    - word: "ja-3571"
+      forms:
+        "ta-form": "さかえた"
+        "nakatta": "さかえなかった"
+      readings:
+        "ta-form": "sakaeta"
+        "nakatta": "sakaenakatta"
+    - word: "ja-3611"
+      forms:
+        "ta-form": "いのった"
+        "nakatta": "いのらなかった"
+      readings:
+        "ta-form": "inotta"
+        "nakatta": "inoranakatta"
+    - word: "ja-3612"
+      forms:
+        "ta-form": "おがんだ"
+        "nakatta": "おがまなかった"
+      readings:
+        "ta-form": "oganda"
+        "nakatta": "ogamanakatta"
+    - word: "ja-3690"
+      forms:
+        "ta-form": "いわった"
+        "nakatta": "いわわなかった"
+      readings:
+        "ta-form": "iwatta"
+        "nakatta": "iwawanakatta"
+    - word: "ja-3691"
+      forms:
+        "ta-form": "にぎわった"
+        "nakatta": "にぎわわなかった"
+      readings:
+        "ta-form": "nigiwatta"
+        "nakatta": "nigiwawanakatta"
+    - word: "ja-3779"
+      forms:
+        "ta-form": "うちとけた"
+        "nakatta": "うちとけなかった"
+      readings:
+        "ta-form": "uchitoketa"
+        "nakatta": "uchitokenakatta"
+    - word: "ja-3780"
+      forms:
+        "ta-form": "しんじあった"
+        "nakatta": "しんじあわなかった"
+      readings:
+        "ta-form": "shinjiatta"
+        "nakatta": "shinjiawanakatta"
+    - word: "ja-3781"
+      forms:
+        "ta-form": "たよった"
+        "nakatta": "たよらなかった"
+      readings:
+        "ta-form": "tayotta"
+        "nakatta": "tayoranakatta"
+    - word: "ja-3782"
+      forms:
+        "ta-form": "はげました"
+        "nakatta": "はげまさなかった"
+      readings:
+        "ta-form": "hagemashita"
+        "nakatta": "hagemasanakatta"
+    - word: "ja-3783"
+      forms:
+        "ta-form": "なぐさめた"
+        "nakatta": "なぐさめなかった"
+      readings:
+        "ta-form": "nagusameta"
+        "nakatta": "nagusamenakatta"
+    - word: "ja-3784"
+      forms:
+        "ta-form": "かばった"
+        "nakatta": "かばわなかった"
+      readings:
+        "ta-form": "kabatta"
+        "nakatta": "kabawanakatta"
+    - word: "ja-3785"
+      forms:
+        "ta-form": "ささえた"
+        "nakatta": "ささえなかった"
+      readings:
+        "ta-form": "sasaeta"
+        "nakatta": "sasaenakatta"
+    - word: "ja-3786"
+      forms:
+        "ta-form": "たすけあった"
+        "nakatta": "たすけあわなかった"
+      readings:
+        "ta-form": "tasukeatta"
+        "nakatta": "tasukeawanakatta"
+    - word: "ja-3790"
+      forms:
+        "ta-form": "しりあった"
+        "nakatta": "しりあわなかった"
+      readings:
+        "ta-form": "shiriatta"
+        "nakatta": "shiriawanakatta"
+    - word: "ja-3791"
+      forms:
+        "ta-form": "であった"
+        "nakatta": "であわなかった"
+      readings:
+        "ta-form": "deatta"
+        "nakatta": "deawanakatta"
+    - word: "ja-3833"
+      forms:
+        "ta-form": "くらした"
+        "nakatta": "くらさなかった"
+      readings:
+        "ta-form": "kurashita"
+        "nakatta": "kurasanakatta"
+    - word: "ja-3857"
+      forms:
+        "ta-form": "かした"
+        "nakatta": "かさなかった"
+      readings:
+        "ta-form": "kashita"
+        "nakatta": "kasanakatta"
+    - word: "ja-3887"
+      forms:
+        "ta-form": "ゆれた"
+        "nakatta": "ゆれなかった"
+      readings:
+        "ta-form": "yureta"
+        "nakatta": "yurenakatta"
+    - word: "ja-3898"
+      forms:
+        "ta-form": "すくった"
+        "nakatta": "すくわなかった"
+      readings:
+        "ta-form": "sukutta"
+        "nakatta": "sukuwanakatta"
+    - word: "ja-3914"
+      forms:
+        "ta-form": "にげた"
+        "nakatta": "にげなかった"
+      readings:
+        "ta-form": "nigeta"
+        "nakatta": "nigenakatta"
+    - word: "ja-3915"
+      forms:
+        "ta-form": "にがした"
+        "nakatta": "にがさなかった"
+      readings:
+        "ta-form": "nigashita"
+        "nakatta": "nigasanakatta"
+    - word: "ja-3963"
+      forms:
+        "ta-form": "きんじた"
+        "nakatta": "きんじなかった"
+      readings:
+        "ta-form": "kinjita"
+        "nakatta": "kinjinakatta"
+    - word: "ja-3965"
+      forms:
+        "ta-form": "うったえた"
+        "nakatta": "うったえなかった"
+      readings:
+        "ta-form": "uttaeta"
+        "nakatta": "uttaenakatta"
+    - word: "ja-4046"
+      forms:
+        "ta-form": "おそった"
+        "nakatta": "おそわなかった"
+      readings:
+        "ta-form": "osotta"
+        "nakatta": "osowanakatta"
+    - word: "ja-4047"
+      forms:
+        "ta-form": "おさえた"
+        "nakatta": "おさえなかった"
+      readings:
+        "ta-form": "osaeta"
+        "nakatta": "osaenakatta"
+    - word: "ja-4048"
+      forms:
+        "ta-form": "おさまった"
+        "nakatta": "おさまらなかった"
+      readings:
+        "ta-form": "osamatta"
+        "nakatta": "osamaranakatta"
+    - word: "ja-4049"
+      forms:
+        "ta-form": "おさめた"
+        "nakatta": "おさめなかった"
+      readings:
+        "ta-form": "osameta"
+        "nakatta": "osamenakatta"
+    - word: "ja-4050"
+      forms:
+        "ta-form": "おぼれた"
+        "nakatta": "おぼれなかった"
+      readings:
+        "ta-form": "oboreta"
+        "nakatta": "oborenakatta"
+    - word: "ja-4051"
+      forms:
+        "ta-form": "おもいだした"
+        "nakatta": "おもいださなかった"
+      readings:
+        "ta-form": "omoidashita"
+        "nakatta": "omoidasanakatta"
+    - word: "ja-4052"
+      forms:
+        "ta-form": "おもいついた"
+        "nakatta": "おもいつかなかった"
+      readings:
+        "ta-form": "omoitsuita"
+        "nakatta": "omoitsukanakatta"
+    - word: "ja-4053"
+      forms:
+        "ta-form": "かかえた"
+        "nakatta": "かかえなかった"
+      readings:
+        "ta-form": "kakaeta"
+        "nakatta": "kakaenakatta"
+    - word: "ja-4054"
+      forms:
+        "ta-form": "かさなった"
+        "nakatta": "かさならなかった"
+      readings:
+        "ta-form": "kasanatta"
+        "nakatta": "kasanaranakatta"
+    - word: "ja-4055"
+      forms:
+        "ta-form": "かさねた"
+        "nakatta": "かさねなかった"
+      readings:
+        "ta-form": "kasaneta"
+        "nakatta": "kasanenakatta"
+    - word: "ja-4056"
+      forms:
+        "ta-form": "かたむいた"
+        "nakatta": "かたむかなかった"
+      readings:
+        "ta-form": "katamuita"
+        "nakatta": "katamukanakatta"
+    - word: "ja-4057"
+      forms:
+        "ta-form": "かなった"
+        "nakatta": "かなわなかった"
+      readings:
+        "ta-form": "kanatta"
+        "nakatta": "kanawanakatta"
+    - word: "ja-4058"
+      forms:
+        "ta-form": "かぶせた"
+        "nakatta": "かぶせなかった"
+      readings:
+        "ta-form": "kabuseta"
+        "nakatta": "kabusenakatta"
+    - word: "ja-4059"
+      forms:
+        "ta-form": "きづいた"
+        "nakatta": "きづかなかった"
+      readings:
+        "ta-form": "kizuita"
+        "nakatta": "kizukanakatta"
+    - word: "ja-4060"
+      forms:
+        "ta-form": "くずれた"
+        "nakatta": "くずれなかった"
+      readings:
+        "ta-form": "kuzureta"
+        "nakatta": "kuzurenakatta"
+    - word: "ja-4061"
+      forms:
+        "ta-form": "くたびれた"
+        "nakatta": "くたびれなかった"
+      readings:
+        "ta-form": "kutabireta"
+        "nakatta": "kutabirenakatta"
+    - word: "ja-4062"
+      forms:
+        "ta-form": "くっついた"
+        "nakatta": "くっつかなかった"
+      readings:
+        "ta-form": "kuttsuita"
+        "nakatta": "kuttsukanakatta"
+    - word: "ja-4063"
+      forms:
+        "ta-form": "くっつけた"
+        "nakatta": "くっつけなかった"
+      readings:
+        "ta-form": "kuttsuketa"
+        "nakatta": "kuttsukenakatta"
+    - word: "ja-4064"
+      forms:
+        "ta-form": "ころがった"
+        "nakatta": "ころがらなかった"
+      readings:
+        "ta-form": "korogatta"
+        "nakatta": "korogaranakatta"
+    - word: "ja-4065"
+      forms:
+        "ta-form": "ころした"
+        "nakatta": "ころさなかった"
+      readings:
+        "ta-form": "koroshita"
+        "nakatta": "korosanakatta"
+    - word: "ja-4066"
+      forms:
+        "ta-form": "こめた"
+        "nakatta": "こめなかった"
+      readings:
+        "ta-form": "kometa"
+        "nakatta": "komenakatta"
+    - word: "ja-4067"
+      forms:
+        "ta-form": "さからった"
+        "nakatta": "さからわなかった"
+      readings:
+        "ta-form": "sakaratta"
+        "nakatta": "sakarawanakatta"
+    - word: "ja-4068"
+      forms:
+        "ta-form": "さした"
+        "nakatta": "ささなかった"
+      readings:
+        "ta-form": "sashita"
+        "nakatta": "sasanakatta"
+    - word: "ja-4069"
+      forms:
+        "ta-form": "さびた"
+        "nakatta": "さびなかった"
+      readings:
+        "ta-form": "sabita"
+        "nakatta": "sabinakatta"
+    - word: "ja-4070"
+      forms:
+        "ta-form": "しずんだ"
+        "nakatta": "しずまなかった"
+      readings:
+        "ta-form": "shizunda"
+        "nakatta": "shizumanakatta"
+    - word: "ja-4071"
+      forms:
+        "ta-form": "しずめた"
+        "nakatta": "しずめなかった"
+      readings:
+        "ta-form": "shizumeta"
+        "nakatta": "shizumenakatta"
+    - word: "ja-4072"
+      forms:
+        "ta-form": "したがった"
+        "nakatta": "したがわなかった"
+      readings:
+        "ta-form": "shitagatta"
+        "nakatta": "shitagawanakatta"
+    - word: "ja-4073"
+      forms:
+        "ta-form": "しばった"
+        "nakatta": "しばらなかった"
+      readings:
+        "ta-form": "shibatta"
+        "nakatta": "shibaranakatta"
+    - word: "ja-4074"
+      forms:
+        "ta-form": "しめした"
+        "nakatta": "しめさなかった"
+      readings:
+        "ta-form": "shimeshita"
+        "nakatta": "shimesanakatta"
+    - word: "ja-4075"
+      forms:
+        "ta-form": "すべった"
+        "nakatta": "すべらなかった"
+      readings:
+        "ta-form": "subetta"
+        "nakatta": "suberanakatta"
+    - word: "ja-4076"
+      forms:
+        "ta-form": "すませた"
+        "nakatta": "すませなかった"
+      readings:
+        "ta-form": "sumaseta"
+        "nakatta": "sumasenakatta"
+    - word: "ja-4077"
+      forms:
+        "ta-form": "すんだ"
+        "nakatta": "すまなかった"
+      readings:
+        "ta-form": "sunda"
+        "nakatta": "sumanakatta"
+    - word: "ja-4078"
+      forms:
+        "ta-form": "ずれた"
+        "nakatta": "ずれなかった"
+      readings:
+        "ta-form": "zureta"
+        "nakatta": "zurenakatta"
+    - word: "ja-4079"
+      forms:
+        "ta-form": "せまった"
+        "nakatta": "せまらなかった"
+      readings:
+        "ta-form": "sematta"
+        "nakatta": "semaranakatta"
+    - word: "ja-4080"
+      forms:
+        "ta-form": "そなえた"
+        "nakatta": "そなえなかった"
+      readings:
+        "ta-form": "sonaeta"
+        "nakatta": "sonaenakatta"
+    - word: "ja-4081"
+      forms:
+        "ta-form": "そまった"
+        "nakatta": "そまらなかった"
+      readings:
+        "ta-form": "somatta"
+        "nakatta": "somaranakatta"
+    - word: "ja-4082"
+      forms:
+        "ta-form": "そめた"
+        "nakatta": "そめなかった"
+      readings:
+        "ta-form": "someta"
+        "nakatta": "somenakatta"
+    - word: "ja-4083"
+      forms:
+        "ta-form": "たえた"
+        "nakatta": "たえなかった"
+      readings:
+        "ta-form": "taeta"
+        "nakatta": "taenakatta"
+    - word: "ja-4084"
+      forms:
+        "ta-form": "たしかめた"
+        "nakatta": "たしかめなかった"
+      readings:
+        "ta-form": "tashikameta"
+        "nakatta": "tashikamenakatta"
+    - word: "ja-4085"
+      forms:
+        "ta-form": "たまった"
+        "nakatta": "たまらなかった"
+      readings:
+        "ta-form": "tamatta"
+        "nakatta": "tamaranakatta"
+    - word: "ja-4086"
+      forms:
+        "ta-form": "ためした"
+        "nakatta": "ためさなかった"
+      readings:
+        "ta-form": "tameshita"
+        "nakatta": "tamesanakatta"
+    - word: "ja-4087"
+      forms:
+        "ta-form": "ちぢんだ"
+        "nakatta": "ちぢまなかった"
+      readings:
+        "ta-form": "chijinda"
+        "nakatta": "chijimanakatta"
+    - word: "ja-4088"
+      forms:
+        "ta-form": "ちぢめた"
+        "nakatta": "ちぢめなかった"
+      readings:
+        "ta-form": "chijimeta"
+        "nakatta": "chijimenakatta"
+    - word: "ja-4089"
+      forms:
+        "ta-form": "ついだ"
+        "nakatta": "つがなかった"
+      readings:
+        "ta-form": "tsuida"
+        "nakatta": "tsuganakatta"
+    - word: "ja-4090"
+      forms:
+        "ta-form": "つづいた"
+        "nakatta": "つづかなかった"
+      readings:
+        "ta-form": "tsuzuita"
+        "nakatta": "tsuzukanakatta"
+    - word: "ja-4091"
+      forms:
+        "ta-form": "つぶした"
+        "nakatta": "つぶさなかった"
+      readings:
+        "ta-form": "tsubushita"
+        "nakatta": "tsubusanakatta"
+    - word: "ja-4092"
+      forms:
+        "ta-form": "つぶれた"
+        "nakatta": "つぶれなかった"
+      readings:
+        "ta-form": "tsubureta"
+        "nakatta": "tsuburenakatta"
+    - word: "ja-4093"
+      forms:
+        "ta-form": "てらした"
+        "nakatta": "てらさなかった"
+      readings:
+        "ta-form": "terashita"
+        "nakatta": "terasanakatta"
+    - word: "ja-4094"
+      forms:
+        "ta-form": "とおした"
+        "nakatta": "とおさなかった"
+      readings:
+        "ta-form": "tooshita"
+        "nakatta": "toosanakatta"
+    - word: "ja-4095"
+      forms:
+        "ta-form": "とかした"
+        "nakatta": "とかさなかった"
+      readings:
+        "ta-form": "tokashita"
+        "nakatta": "tokasanakatta"
+    - word: "ja-4096"
+      forms:
+        "ta-form": "とけた"
+        "nakatta": "とけなかった"
+      readings:
+        "ta-form": "toketa"
+        "nakatta": "tokenakatta"
+    - word: "ja-4097"
+      forms:
+        "ta-form": "ととのった"
+        "nakatta": "ととのわなかった"
+      readings:
+        "ta-form": "totonotta"
+        "nakatta": "totonowanakatta"
+    - word: "ja-4098"
+      forms:
+        "ta-form": "ととのえた"
+        "nakatta": "ととのえなかった"
+      readings:
+        "ta-form": "totonoeta"
+        "nakatta": "totonoenakatta"
+    - word: "ja-4099"
+      forms:
+        "ta-form": "とびこんだ"
+        "nakatta": "とびこまなかった"
+      readings:
+        "ta-form": "tobikonda"
+        "nakatta": "tobikomanakatta"
+    - word: "ja-4100"
+      forms:
+        "ta-form": "ともなった"
+        "nakatta": "ともなわなかった"
+      readings:
+        "ta-form": "tomonatta"
+        "nakatta": "tomonawanakatta"
+    - word: "ja-4101"
+      forms:
+        "ta-form": "とらえた"
+        "nakatta": "とらえなかった"
+      readings:
+        "ta-form": "toraeta"
+        "nakatta": "toraenakatta"
+    - word: "ja-4102"
+      forms:
+        "ta-form": "とりあげた"
+        "nakatta": "とりあげなかった"
+      readings:
+        "ta-form": "toriageta"
+        "nakatta": "toriagenakatta"
+    - word: "ja-4103"
+      forms:
+        "ta-form": "とりだした"
+        "nakatta": "とりださなかった"
+      readings:
+        "ta-form": "toridashita"
+        "nakatta": "toridasanakatta"
+    - word: "ja-4104"
+      forms:
+        "ta-form": "とりのぞいた"
+        "nakatta": "とりのぞかなかった"
+      readings:
+        "ta-form": "torinozoita"
+        "nakatta": "torinozokanakatta"
+    - word: "ja-4105"
+      forms:
+        "ta-form": "ながした"
+        "nakatta": "ながさなかった"
+      readings:
+        "ta-form": "nagashita"
+        "nakatta": "nagasanakatta"
+    - word: "ja-4185"
+      forms:
+        "ta-form": "みとめた"
+        "nakatta": "みとめなかった"
+      readings:
+        "ta-form": "mitometa"
+        "nakatta": "mitomenakatta"
+    - word: "ja-4186"
+      forms:
+        "ta-form": "うたがった"
+        "nakatta": "うたがわなかった"
+      readings:
+        "ta-form": "utagatta"
+        "nakatta": "utagawanakatta"
+    - word: "ja-4187"
+      forms:
+        "ta-form": "しんじた"
+        "nakatta": "しんじなかった"
+      readings:
+        "ta-form": "shinjita"
+        "nakatta": "shinjinakatta"
+    - word: "ja-4192"
+      forms:
+        "ta-form": "ろんじた"
+        "nakatta": "ろんじなかった"
+      readings:
+        "ta-form": "ronjita"
+        "nakatta": "ronjinakatta"
+rules:
+  - id: "ja-rule-ta-form"
+    slots: ["ta-form"]
+    words:
+      - { word: "たべた", reading: "tabeta" }
+      - { word: "いった", reading: "itta" }
+      - { word: "よんだ", reading: "yonda" }
+  - id: "ja-rule-nakatta"
+    slots: ["nakatta"]
+    words:
+      - { word: "たべなかった", reading: "tabenakatta" }
+      - { word: "いかなかった", reading: "ikanakatta" }

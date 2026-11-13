@@ -1,0 +1,107 @@
+schema: 1
+id: "ja-grammar-plain-present-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-4499"
+    target: "あさ、コーヒーをのむ。"
+    words: ["あさ", "コーヒー", "を", "のむ"]
+    reading: "asa, koohii o nomu."
+    ipa: "asa koːçiː o nomɯ"
+    pos: "phrase"
+    bases:
+      - { word: "あさ", ref: "ja-0509" }
+      - { word: "コーヒー", ref: "ja-0849" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "のむ", ref: "ja-0342" }
+    confusables:
+      - { id: "w1", ref: "ja-0341", kind: "word" }
+      - { id: "w2", ref: "ja-0343", kind: "word" }
+    rules: ["ja-rule-plain-present"]
+  - id: "ja-4500"
+    target: "ともだちはテレビをみる。"
+    words: ["ともだち", "は", "テレビ", "を", "みる"]
+    reading: "tomodachi wa terebi o miru."
+    ipa: "tomodatɕi wa teɾebi o miɾɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "テレビ", ref: "ja-0850" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "みる", ref: "ja-0343" }
+    confusables:
+      - { id: "w1", ref: "ja-0342", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-plain-present"]
+  - id: "ja-4501"
+    target: "わたしはさかなをたべない。"
+    words: ["わたし", "は", "さかな", "を", "たべない"]
+    reading: "watashi wa sakana o tabenai."
+    ipa: "wataɕi wa sakana o tabenai"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "さかな", ref: "ja-0896" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "たべない", ref: "ja-0341" }
+    confusables:
+      - { id: "w1", ref: "ja-0342", kind: "word" }
+      - { id: "w2", ref: "ja-0343", kind: "word" }
+    rules: ["ja-rule-nai-form"]
+  - id: "ja-4502"
+    target: "ちちはほんをよまない。"
+    words: ["ちち", "は", "ほん", "を", "よまない"]
+    reading: "chichi wa hon o yomanai."
+    ipa: "tɕitɕi wa hoɴ o jomanai"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ちち", ref: "ja-0200" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ほん", ref: "ja-1180" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "よまない", ref: "ja-0345" }
+    confusables:
+      - { id: "w1", ref: "ja-0346", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-nai-form"]
+  - id: "ja-4503"
+    target: "はははともだちとはなさない。"
+    words: ["はは", "は", "ともだち", "と", "はなさない"]
+    reading: "haha wa tomodachi to hanasanai."
+    ipa: "haha wa tomodatɕi to hanasanai"
+    pos: "phrase"
+    bases:
+      - { word: "はは", ref: "ja-0201" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "と", base: "と", reading: "to" }
+      - { word: "はなさない", ref: "ja-0347" }
+    confusables:
+      - { id: "w1", ref: "ja-0344", kind: "word" }
+      - { id: "w2", ref: "ja-0357", kind: "word" }
+    rules: ["ja-rule-nai-form"]
+  - id: "ja-4504"
+    target: "わたしはバスでいく。"
+    words: ["わたし", "は", "バス", "で", "いく"]
+    reading: "watashi wa basu de iku."
+    ipa: "wataɕi wa basɯ de ikɯ"
+    pos: "phrase"
+    bases:
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "バス", ref: "ja-0856" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "いく", ref: "ja-0348" }
+    confusables:
+      - { id: "w1", ref: "ja-0350", kind: "word" }
+      - { id: "w2", ref: "ja-0349", kind: "word" }
+    rules: ["ja-rule-plain-present"]

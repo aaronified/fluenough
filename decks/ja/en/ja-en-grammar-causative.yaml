@@ -1,0 +1,21 @@
+schema: 1
+id: "ja-en-grammar-causative"
+kind: "layer"
+core: "ja-grammar-causative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Make and let: the causative and the causative-passive"
+description: "The causative says that someone makes or lets another person do something; the causative-passive says that someone is made to do it. Every verb a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "causative": "make or let someone {meaning}"
+    "causative-passive": "be made to {meaning}"
+rules:
+  "ja-rule-causative":
+    name: "The causative form: make or let"
+    explanation: "The causative says that someone makes or lets another person do something. An ichidan verb adds させる (saseru) to its stem: たべる (taberu) becomes {1}. A godan verb changes its last sound to the a-row and adds せる (seru): いく (iku) becomes {2}. する (suru) becomes {3} and くる (kuru) becomes {4}. The polite forms are shown."
+  "ja-rule-causative-passive":
+    name: "The causative-passive form: be made to"
+    explanation: "The causative-passive says that someone is made to do something. It is the causative form with られる (rareru): たべさせます (tabesasemasu) becomes {1}, and いかせます (ikasemasu) becomes {2}."

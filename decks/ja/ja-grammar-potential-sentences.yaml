@@ -1,0 +1,106 @@
+schema: 1
+id: "ja-grammar-potential-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-4517"
+    target: "わたしはさかなをたべられます。"
+    words: ["わたし", "は", "さかな", "を", "たべられます"]
+    reading: "watashi wa sakana o taberaremasu."
+    ipa: "wataɕi wa sakana o tabeɾaɾemasɯ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "さかな", ref: "ja-0896" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "たべられます", ref: "ja-0341" }
+    confusables:
+      - { id: "w1", ref: "ja-0342", kind: "word" }
+      - { id: "w2", ref: "ja-0364", kind: "word" }
+    rules: ["ja-rule-potential"]
+  - id: "ja-4518"
+    target: "ともだちはえいがをみられます。"
+    words: ["ともだち", "は", "えいが", "を", "みられます"]
+    reading: "tomodachi wa eiga o miraremasu."
+    ipa: "tomodatɕi wa eːɡa o miɾaɾemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "えいが", ref: "ja-1358" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "みられます", ref: "ja-0343" }
+    confusables:
+      - { id: "w1", ref: "ja-0344", kind: "word" }
+      - { id: "w2", ref: "ja-0345", kind: "word" }
+    rules: ["ja-rule-potential"]
+  - id: "ja-4519"
+    target: "ここででんわをつかえます。"
+    words: ["ここ", "で", "でんわ", "を", "つかえます"]
+    reading: "koko de denwa o tsukaemasu."
+    ipa: "koko de deɴwa o tsɯkaemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ここ", ref: "ja-0554" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "でんわ", ref: "ja-1202" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "つかえます", ref: "ja-0369" }
+    confusables:
+      - { id: "w1", ref: "ja-0356", kind: "word" }
+      - { id: "w2", ref: "ja-0364", kind: "word" }
+    rules: ["ja-rule-potential"]
+  - id: "ja-4520"
+    target: "はははほんをよめます。"
+    words: ["はは", "は", "ほん", "を", "よめます"]
+    reading: "haha wa hon o yomemasu."
+    ipa: "haha wa hoɴ o jomemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "はは", ref: "ja-0201" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ほん", ref: "ja-1180" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "よめます", ref: "ja-0345" }
+    confusables:
+      - { id: "w1", ref: "ja-0346", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-potential"]
+  - id: "ja-4521"
+    target: "バスでいけます。"
+    words: ["バス", "で", "いけます"]
+    reading: "basu de ikemasu."
+    ipa: "basɯ de ikemasɯ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "バス", ref: "ja-0856" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "いけます", ref: "ja-0348" }
+    confusables:
+      - { id: "w1", ref: "ja-0349", kind: "word" }
+      - { id: "w2", ref: "ja-0350", kind: "word" }
+    rules: ["ja-rule-potential"]
+  - id: "ja-4522"
+    target: "ここでコーヒーをのめます。"
+    words: ["ここ", "で", "コーヒー", "を", "のめます"]
+    reading: "koko de koohii o nomemasu."
+    ipa: "koko de koːçiː o nomemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ここ", ref: "ja-0554" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "コーヒー", ref: "ja-0849" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "のめます", ref: "ja-0342" }
+    confusables:
+      - { id: "w1", ref: "ja-0341", kind: "word" }
+      - { id: "w2", ref: "ja-0343", kind: "word" }
+    rules: ["ja-rule-potential"]

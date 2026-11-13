@@ -1,0 +1,21 @@
+schema: 1
+id: "ja-en-grammar-plain-past"
+kind: "layer"
+core: "ja-grammar-plain-past"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The plain past: た (ta) and なかった (nakatta)"
+description: "The plain past is the te-form with た (ta) or だ (da); the plain negative past is the ない (nai) form with い (i) replaced by かった (katta). Every verb a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "ta-form": "{meaning} (past, plain)"
+    "nakatta": "did not {meaning}"
+rules:
+  "ja-rule-ta-form":
+    name: "た (ta): the plain past"
+    explanation: "The plain past is the te-form with た (ta) in place of て (te), and だ (da) in place of で (de): たべて (tabete) becomes {1}, いって (itte) becomes {2}, and よんで (yonde) becomes {3}."
+  "ja-rule-nakatta":
+    name: "なかった (nakatta): the plain negative past"
+    explanation: "The plain negative past is the ない (nai) form with い (i) replaced by かった (katta): たべない (tabenai) becomes {1}, and いかない (ikanai) becomes {2}."
