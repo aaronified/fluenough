@@ -96,7 +96,11 @@ abstract final class PrivateExport {
   }) {
     final code = language.code;
     final cores = <String, ({String id, String text, YamlMap root})>{};
-    final layers = <String, ({String id, String core, String native, String text, YamlMap root})>{};
+    final layers =
+        <
+          String,
+          ({String id, String core, String native, String text, YamlMap root})
+        >{};
     String? pathText;
     var skipped = 0;
     for (final MapEntry(key: path, value: text) in files.entries) {
@@ -193,7 +197,9 @@ abstract final class PrivateExport {
         void walk(Object? node, {required bool keys}) {
           if (node is YamlMap) {
             for (final MapEntry(key: key, value: value) in node.entries) {
-              if (key == 'id' && value is String && value.startsWith('$code-')) {
+              if (key == 'id' &&
+                  value is String &&
+                  value.startsWith('$code-')) {
                 ok = false;
               }
               if (keys && key is String && key.startsWith('$code-')) {
@@ -212,7 +218,8 @@ abstract final class PrivateExport {
         if (root == null) return false;
         walk(root, keys: false);
         final cards = root['cards'];
-        if (root['kind'] == 'layer' && cards is YamlMap) walk(cards, keys: true);
+        if (root['kind'] == 'layer' && cards is YamlMap)
+          walk(cards, keys: true);
         return ok;
       } on YamlException {
         return false;
@@ -224,8 +231,9 @@ abstract final class PrivateExport {
     var cardCount = 0;
     final exportedCores = <String>{};
     for (final core in cores.values) {
-      final text = rewrite(core.text);
-      if (!clean(text)) {
+      final plain = _withoutAliases(core.text);
+      final text = plain == null ? '' : rewrite(plain);
+      if (plain == null || !clean(text)) {
         skipped++;
         continue;
       }
@@ -241,8 +249,9 @@ abstract final class PrivateExport {
         skipped++;
         continue;
       }
-      final text = rewrite(layer.text);
-      if (!clean(text)) {
+      final plain = _withoutAliases(layer.text);
+      final text = plain == null ? '' : rewrite(plain);
+      if (plain == null || !clean(text)) {
         skipped++;
         continue;
       }
@@ -265,6 +274,49 @@ abstract final class PrivateExport {
       cards: cardCount,
       skipped: skipped,
     );
+  }
+
+  /// [text] as it is, or, when it uses YAML anchors and aliases (some of the
+  /// course's own files do, from the tool that wrote them), the same data
+  /// written out in full: an import refuses an alias, so a package never
+  /// holds one. Null when it cannot be read or reads in a loop.
+  static String? _withoutAliases(String text) {
+    try {
+      final root = loadYamlNode(text);
+      final visited = Set<Object>.identity();
+      bool alias(Object? node) {
+        if (node is YamlMap || node is YamlList) {
+          if (!visited.add(node!)) return true;
+        }
+        if (node is YamlMap) {
+          for (final MapEntry(:key, :value) in node.nodes.entries) {
+            if (alias(key) || alias(value)) return true;
+          }
+        } else if (node is YamlList) {
+          for (final item in node.nodes) {
+            if (alias(item)) return true;
+          }
+        }
+        return false;
+      }
+
+      if (!alias(root)) return text;
+      Object? plain(Object? node) {
+        if (node is YamlMap) {
+          return <String, Object?>{
+            for (final MapEntry(:key, :value) in node.entries)
+              '$key': plain(value),
+          };
+        }
+        if (node is YamlList) return <Object?>[for (final i in node) plain(i)];
+        if (node is YamlScalar) return node.value;
+        return node;
+      }
+
+      return '${jsonEncode(plain(root))}\n';
+    } on Object {
+      return null;
+    }
   }
 
   static YamlMap? _load(String text) {

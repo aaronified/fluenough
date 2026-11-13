@@ -407,9 +407,7 @@ class AppBackup {
     return found;
   }
 
-  static Map<String, List<String>> _tombstonesOf(
-    Map<String, Uint8List> files,
-  ) {
+  static Map<String, List<String>> _tombstonesOf(Map<String, Uint8List> files) {
     final Map<String, Object?> index;
     try {
       index = _object(files, privatePart);

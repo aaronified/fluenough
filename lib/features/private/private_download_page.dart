@@ -80,7 +80,9 @@ class _PrivateDownloadPageState extends State<PrivateDownloadPage> {
             children: <Widget>[
               for (final course in courses)
                 GroupedTile(
-                  key: ValueKey<String>('private-download-${course.language.code}'),
+                  key: ValueKey<String>(
+                    'private-download-${course.language.code}',
+                  ),
                   leading: const Icon(Icons.download_outlined),
                   title: course.language.name,
                   subtitle: l10n.privateDownloadDecks(course.decks),

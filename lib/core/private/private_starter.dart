@@ -69,7 +69,8 @@ cards:
     pos: "noun"
     tags: ["home"]
 ''',
-  'qaa/en/fnpd-qaa-en-home.yaml': r'''# A layer: what the cards mean in one native language (here English).
+  'qaa/en/fnpd-qaa-en-home.yaml':
+      r'''# A layer: what the cards mean in one native language (here English).
 # It lists each card of its core by id. Write one layer for each language
 # the learner can be taught from.
 schema: 1

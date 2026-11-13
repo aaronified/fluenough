@@ -323,9 +323,7 @@ extension PrivateLanguagesOnState on AppState {
   /// Makes the package that lets a learner change the course of [language]
   /// ([PrivateExport.fromBuiltIn]) from the course's files on the phone.
   /// Null, after logging, when they cannot be read or none could be copied.
-  Future<PrivateExportResult?> buildCoursePackage(
-    LanguageInfo language,
-  ) async {
+  Future<PrivateExportResult?> buildCoursePackage(LanguageInfo language) async {
     try {
       final source = deckCatalog.source;
       final prefix = 'decks/${language.code}/';
@@ -430,7 +428,9 @@ extension PrivateLanguagesOnState on AppState {
           ),
         );
       } on Object catch (e, stack) {
-        log.error(describeError('Private decks: backup of a package', e, stack));
+        log.error(
+          describeError('Private decks: backup of a package', e, stack),
+        );
       }
     }
     Map<String, List<String>> tombstones;
@@ -456,7 +456,9 @@ extension PrivateLanguagesOnState on AppState {
   ) async {
     final store = privateStore;
     if (store == null) {
-      log.warning('Private decks: a backup has packages; none can be kept here');
+      log.warning(
+        'Private decks: a backup has packages; none can be kept here',
+      );
       return 0;
     }
     var installed = 0;
@@ -512,7 +514,9 @@ extension PrivateLanguagesOnState on AppState {
         }
         if (result.installed) installed++;
       } on Object catch (e, stack) {
-        log.error(describeError('Private decks: restore of a package', e, stack));
+        log.error(
+          describeError('Private decks: restore of a package', e, stack),
+        );
       }
     }
     if (installed > 0) await _reloadPrivate();

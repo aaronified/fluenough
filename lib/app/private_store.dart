@@ -699,10 +699,7 @@ class MemoryPrivateStore implements PrivateStore {
   @override
   Future<bool> addTombstone(String id, List<String> retired) async {
     if (!_isPackageId(id) || retired.isEmpty) return false;
-    _tombstones[id] = _sorted(<String>[
-      ...retired,
-      ...?_tombstones[id],
-    ]);
+    _tombstones[id] = _sorted(<String>[...retired, ...?_tombstones[id]]);
     return true;
   }
 
