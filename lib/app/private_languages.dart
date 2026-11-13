@@ -17,6 +17,10 @@ import 'private_capabilities.dart';
 import 'private_import.dart';
 import 'private_store.dart';
 
+/// What came of offering a file to save: the learner saved it, cancelled the
+/// dialog, or something went wrong (told in the app log).
+enum PrivateSave { saved, cancelled, failed }
+
 /// What the learner does with private language packages (#1017), on top of
 /// the store and the import: each step reads the catalog again afterwards, so
 /// that Languages, Today and the drills see the change, and each guards what
@@ -278,25 +282,25 @@ extension PrivateLanguagesOnState on AppState {
 
   /// Offers the installed package [id] to the learner to save as a `.fnzip`
   /// (Plan-Private-Languages task 19): the same file imports on another
-  /// phone. False when it could not be read or the learner did not save it.
-  Future<bool> exportPrivate(String id) async {
+  /// phone.
+  Future<PrivateSave> exportPrivate(String id) async {
     final store = privateStore;
-    if (store == null) return false;
+    if (store == null) return PrivateSave.failed;
     try {
       final package = (await store.packages())
           .where((p) => p.id == id)
           .firstOrNull;
       final files = await store.readPackage(id);
-      if (package == null || files == null) return false;
+      if (package == null || files == null) return PrivateSave.failed;
       final saved = await backups.saveFile(
         PrivateExport.fileName(id, package.revision),
         PrivateExport.archive(files),
       );
       if (saved) log.event('Private decks: exported $id');
-      return saved;
+      return saved ? PrivateSave.saved : PrivateSave.cancelled;
     } on Object catch (e, stack) {
       log.error(describeError('Private decks: export failed', e, stack));
-      return false;
+      return PrivateSave.failed;
     }
   }
 
@@ -375,15 +379,16 @@ extension PrivateLanguagesOnState on AppState {
   }
 
   /// Offers the starter package (task 21) to save.
-  Future<bool> saveStarterPackage() async {
+  Future<PrivateSave> saveStarterPackage() async {
     try {
-      return await backups.saveFile(
+      final saved = await backups.saveFile(
         privateStarterFileName,
         privateStarterArchive(),
       );
+      return saved ? PrivateSave.saved : PrivateSave.cancelled;
     } on Object catch (e, stack) {
       log.error(describeError('Private decks: starter failed', e, stack));
-      return false;
+      return PrivateSave.failed;
     }
   }
 

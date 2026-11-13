@@ -140,6 +140,11 @@ final _scriptId = RegExp(r'^[a-z]+(?:_[a-z]+)*$');
 
 const _cardFields = {
   'hears',
+  // A private package's card that replaces a built-in card (#1017,
+  // Plan-Private-Languages): the id of the card it replaces, read by the
+  // package's checks and never by the parser, so a deck of the repository
+  // that has it fails the validator, which does not know it.
+  'replaces',
   'id',
   'target',
   'native',
@@ -183,7 +188,7 @@ const _cardFields = {
 };
 
 /// A layer-only card's fields: a single-file card's, its id being its key.
-final _layerCardFields = _cardFields.difference(const {'id'});
+final _layerCardFields = _cardFields.difference(const {'id', 'replaces'});
 
 /// What a ref may give: the native side of a card written in another deck
 /// (ADR-0018).
@@ -247,6 +252,7 @@ const _layerHeaderFields = {
 };
 const _coreCardFields = {
   'hears',
+  'replaces',
   'warning',
   'not_sounds_like',
   'not_looks_like',

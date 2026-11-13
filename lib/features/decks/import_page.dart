@@ -55,6 +55,27 @@ const String deckTemplateAsset = 'assets/deck-template.yaml';
 /// The name the template is saved as.
 const String deckTemplateFile = 'fluenough-deck-template.yaml';
 
+/// Offers the deck template to the learner to save (#22), and says in a toast
+/// what came of it. Used by Add a deck and by Your decks.
+Future<void> saveDeckTemplate(BuildContext context) async {
+  final l10n = AppLocalizations.of(context)!;
+  final state = AppScope.read(context);
+  final bundle = DefaultAssetBundle.of(context);
+  final bool saved;
+  try {
+    final text = await bundle.loadString(deckTemplateAsset);
+    saved = await state.deckFiles.save(deckTemplateFile, text);
+  } on Exception catch (e) {
+    state.log.warning('Deck template not saved: ${e.runtimeType}');
+    if (context.mounted) showAppSnackBar(context, l10n.importTemplateFailed);
+    return;
+  }
+  if (saved) state.log.event('Deck template saved');
+  if (saved && context.mounted) {
+    showAppSnackBar(context, l10n.importTemplateSaved(deckTemplateFile));
+  }
+}
+
 /// Add a deck: file, link or spreadsheet, and the error state with the
 /// parser's file, line and message.
 ///
@@ -110,24 +131,7 @@ class _ImportPageState extends State<ImportPage> {
     setState(() => _source = source);
   }
 
-  Future<void> _saveTemplate() async {
-    final l10n = AppLocalizations.of(context)!;
-    final state = AppScope.read(context);
-    final bundle = DefaultAssetBundle.of(context);
-    final bool saved;
-    try {
-      final text = await bundle.loadString(deckTemplateAsset);
-      saved = await state.deckFiles.save(deckTemplateFile, text);
-    } on Exception catch (e) {
-      state.log.warning('Deck template not saved: ${e.runtimeType}');
-      if (mounted) showAppSnackBar(context, l10n.importTemplateFailed);
-      return;
-    }
-    if (saved) state.log.event('Deck template saved');
-    if (saved && mounted) {
-      showAppSnackBar(context, l10n.importTemplateSaved(deckTemplateFile));
-    }
-  }
+  Future<void> _saveTemplate() => saveDeckTemplate(context);
 
   Future<void> _pick() async {
     final l10n = AppLocalizations.of(context)!;

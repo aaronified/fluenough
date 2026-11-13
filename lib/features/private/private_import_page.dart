@@ -487,6 +487,20 @@ class _Review extends StatelessWidget {
         ),
     ];
     final manifest = staging.manifest;
+    final counts = staging.counts;
+    if (manifest != null &&
+        counts != null &&
+        manifest.kind == PrivateKind.modifiedLanguage &&
+        (counts.replacing > 0 || counts.byReference > 0)) {
+      out.add(
+        _Row(
+          _RowSeverity.note,
+          l10n.privateNoteReplaces(counts.replacing, counts.byReference),
+          file: privateManifestFile,
+          hint: l10n.privateNoteReplacesHint,
+        ),
+      );
+    }
     if (manifest != null) {
       final caps = state.privateCapabilities(manifest.language);
       final name = manifest.language.name;

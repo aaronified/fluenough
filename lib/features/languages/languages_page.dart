@@ -16,6 +16,7 @@ import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../downloads/deck_update_controls.dart';
 import '../downloads/download_text.dart';
+import '../private/private_widgets.dart';
 import 'add_language_page.dart';
 import 'language_skills_sheet.dart';
 import 'language_views.dart';
@@ -604,6 +605,7 @@ class LanguageRow extends StatelessWidget {
                               color: scheme.onSurfaceVariant,
                             ),
                           ),
+                        PrivateLanguageTag(language: view.language),
                       ],
                     ),
                   ),
