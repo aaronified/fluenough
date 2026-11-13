@@ -3978,6 +3978,22 @@ class AppState extends ChangeNotifier {
     return ipaCardsFor(ipa, cards);
   }
 
+  /// Every answer the IPA course can ask for: its cards' targets and their
+  /// alternatives, once each, whichever language the course is taught from.
+  /// The IPA keyboard's symbols are found from them (#836); empty while the
+  /// IPA decks are not on the phone.
+  List<String> ipaAnswerTargets() {
+    final seen = <String>{};
+    for (final entry in _catalog.decks) {
+      if (!entry.language.isIpa) continue;
+      for (final card in entry.cards) {
+        seen.add(card.target);
+        seen.addAll(card.altTarget);
+      }
+    }
+    return seen.toList();
+  }
+
   /// The session of "The sounds of this word" for [card], or null where
   /// there are none to practise: its IPA cards, recorded in the IPA course.
   DrillRequest? soundsOfWordRequest(Card card) {

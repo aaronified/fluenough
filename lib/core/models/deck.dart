@@ -55,8 +55,9 @@ class LanguageInfo {
   final String? icon;
 
   /// Whether an answer in this language can be typed. False for the IPA
-  /// (`script: ipa`), which has no keyboard: production is asked by
-  /// choosing (ADR-0041). Braille is typed, on the app's own keyboard
+  /// (`script: ipa`), whose production is asked by choosing (ADR-0041);
+  /// were it typed, it would be on the app's own keyboard ([keyboard],
+  /// #836). Braille is typed, on the app's own keyboard
   /// ([keyboard], ADR-0043).
   final bool typed;
 
@@ -104,8 +105,13 @@ class LanguageInfo {
 
   /// The app's own keyboard that answers in this language are typed on,
   /// in place of the phone's, or null for the phone's: braille's six dots
-  /// (ADR-0043). Named by the script, so that a deck needs no new field.
-  ScriptKeyboard? get keyboard => isBraille ? ScriptKeyboard.braille : null;
+  /// (ADR-0043), or the IPA's symbols (#836). Named by the script, so that
+  /// a deck needs no new field.
+  ScriptKeyboard? get keyboard => isBraille
+      ? ScriptKeyboard.braille
+      : isIpa
+      ? ScriptKeyboard.ipa
+      : null;
 
   /// The tag handed to the TTS engine. Falls back to the bare language code,
   /// which leaves the regional accent to the device — acceptable, but decks
@@ -143,6 +149,9 @@ class LanguageInfo {
 enum ScriptKeyboard {
   /// Six dots in the Perkins layout, entered a cell at a time.
   braille,
+
+  /// The IPA's symbols, in tabs by kind, entered one at a time (#836).
+  ipa,
 }
 
 /// What a deck holds: cards, a pattern table that expands into cards,
