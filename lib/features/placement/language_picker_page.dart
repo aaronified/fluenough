@@ -35,6 +35,7 @@ import 'language_sheet.dart';
 import 'language_download.dart';
 import 'placement_page.dart';
 import 'script_test_page.dart';
+import '../../app/language_directory_loader.dart';
 
 /// The languages the learner learns (#211, #626, `docs/plans/language-picker.md`
 /// and the approved mockup `docs/mockups/languages-learning.html`): asked on
@@ -205,20 +206,20 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
       return;
     }
     _listAsked = true;
-    DefaultAssetBundle.of(context)
-        .loadString(spokenLanguagesAsset)
-        .then(parseSpokenLanguages)
-        .then((languages) {
-          if (!mounted) return;
-          setState(() {
-            _spokenList = languages;
-            if (widget.ownNames == null) {
-              _ownNames = <String, String>{
-                for (final l in languages) l.code: l.ownName,
-              };
-            }
-          });
-        }, onError: (Object _) {});
+    loadLanguageDirectory(
+      DefaultAssetBundle.of(context),
+      AppScope.maybeRead(context),
+    ).then((languages) {
+      if (!mounted) return;
+      setState(() {
+        _spokenList = languages;
+        if (widget.ownNames == null) {
+          _ownNames = <String, String>{
+            for (final l in languages) l.code: l.ownName,
+          };
+        }
+      });
+    }, onError: (Object _) {});
   }
 
   @override

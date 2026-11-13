@@ -258,11 +258,11 @@ Future<PrivateStaging> _stage(
       for (final e in bytes.entries) e.key: utf8.decode(e.value),
     };
     final findings = <PrivateFinding>[...zero];
-    PrivateStaging refused() {
+    PrivateStaging refused([PrivateManifest? manifest]) {
       log?.warning(
         'Private decks: import refused, ${findings.length} findings',
       );
-      return PrivateStaging(findings: findings);
+      return PrivateStaging(findings: findings, manifest: manifest);
     }
 
     final manifestText = files[privateManifestFile];
@@ -309,7 +309,8 @@ Future<PrivateStaging> _stage(
           },
         ),
       );
-      return refused();
+      // The manifest is given so that the screen can name the language.
+      return refused(manifest);
     }
 
     // Level 1: the app's own readers.
@@ -355,7 +356,13 @@ Future<PrivateStaging> _stage(
             (builtIn.isEmpty ? null : PrivateCheck.coreIds(builtIn)),
       ),
     );
-    final retiredBefore = installed?.retired ?? const <String>[];
+    // The ids an earlier revision retired, and those a removed package of the
+    // same id kept (its tombstone): a package removed and imported again may
+    // not give one of them to another card.
+    final retiredBefore = <String>{
+      ...?installed?.retired,
+      ...await store.tombstone(manifest.package),
+    }.toList()..sort();
     findings.addAll(PrivateCheck.retiredReused(files, retiredBefore));
     var dropped = const <String>[];
     if (installed != null) {

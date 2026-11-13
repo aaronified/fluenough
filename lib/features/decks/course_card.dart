@@ -12,6 +12,7 @@ import '../../ui/widgets/snack.dart';
 import '../downloads/download_text.dart';
 import 'course_hours.dart';
 import 'path_model.dart';
+import '../private/private_notes.dart';
 
 /// The card at the top of a course's path: the course, how much of it is
 /// done, with the levels marked on the bar where the path has them, and one
@@ -137,6 +138,10 @@ class _CourseCardState extends State<CourseCard> {
             ),
           ],
         ),
+        // A private package's mark and capability notice (#1017); nothing for
+        // a built-in course.
+        PrivateModifiedTag(language: language),
+        PrivateNoVoiceNotice(code: language),
         const SizedBox(height: 14),
         busy
             ? _DownloadBar(downloads: downloads, language: language)

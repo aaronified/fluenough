@@ -23,6 +23,7 @@ import 'install_hint_card.dart';
 import 'situations_card.dart';
 import 'streak_card.dart';
 import 'today_numbers.dart';
+import '../private/private_notes.dart';
 
 /// Today: each language's one button for the day (#521), cards due by
 /// skill, the streak and week, the Situations card, and the fact of the day.
@@ -221,6 +222,8 @@ class _Header extends StatelessWidget {
                     style: theme.textTheme.headlineSmall,
                   ),
                 ),
+                // A private package changed the shown course (#1017).
+                PrivateModifiedTag(language: state.shownLanguage),
               ],
             ),
           ),

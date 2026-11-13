@@ -179,6 +179,16 @@ contributor.
   `0.5.3`): it bumps `pubspec.yaml` and `lib/app/app_info.dart`, dates the
   changelog, commits, tags and builds (`tools/prepare_release.py`). There is
   no release pull request.
+- **Changelog lines are for the app's users** (owner, 2026-11-13: "the last
+  changelog for the app (the one that shows up at the start after an update)
+  was very weird. a lot of the entries were simply CI (nothing else). the
+  changelog writer needs to be wary of these mistakes, maybe add a skill for
+  writing changelogs in each PR commit. pure doc commits do not need update in
+  the changelog as they do not alter the app"). Follow
+  `.claude/skills/changelog/SKILL.md` for each line: only what a learner can
+  see or feel, a bold headline and one plain sentence, never CI, workflows,
+  tools, tests, refactors, deck content or docs, and no duplicate `###`
+  headings. A docs-only commit or push adds no CHANGELOG line.
 - **Milestones are releases** (0.4.4, 0.5.0, 0.6.0, 0.7.0, 0.9.0). The milestone's
   description holds its order, and the wiki's Roadmap page is generated from
   it (#484). Tidy issues and plans after work lands, and close issues when done. Tag new issues to a
@@ -202,6 +212,8 @@ will build the paths for every language that we want here. This is to be
 a repository of world's languages. The tower of babel, is to rise
 again."). The other courses' decks (#420) and the new courses'
 paths are no longer left to contributors.
+
+**Deck work held until the code is done** (owner, 2026-11-13: "hold the deck work. first complete all the code work. everything that is listed for 0.10.0 along with the scaffold and private decks."): no deck agents run and nothing new starts (the Japanese stream, batch 2 PR #1160 stays open) until the 0.10.0-listed code issues, the deck-kinds scaffold issues (#1132, #1134, #1137, #1140, #1142, #1143, #1145) and private decks (#1017) are done. The owner resumes deck work.
 
 **Deck work paused for the placement rebuild** (owner, 2026-11-07: "Stop the deck work."): no deck agents run until the owner resumes deck work; open deck PRs (Malayalam #1062) stay drafts. Lifted: the pause ended when the placement fix shipped in 0.10.0, under "Deck order after the placement fix" below, and the owner's 2026-11-13 order puts private decks first (recorded 2026-11-13).
 

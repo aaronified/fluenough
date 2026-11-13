@@ -314,12 +314,19 @@ class AppDatabase extends _$AppDatabase {
     ReviewErasure erasure,
   ) => transaction(() async {
     final code = erasure.language;
-    final of = [
-      Variable<String>(code),
-      Variable<int>(code.length + 1),
-      Variable<String>('$code-'),
-    ];
-    const ofLanguage = 'card_id = ? OR substr(card_id, 1, ?) = ?';
+    final prefix = erasure.idPrefix;
+    // A private package's cards (`fnpd-te-`) are found by their prefix alone:
+    // the built-in `te-` cards beside them are another course's.
+    final List<Variable<Object>> of = prefix == null
+        ? [
+            Variable<String>(code),
+            Variable<int>(code.length + 1),
+            Variable<String>('$code-'),
+          ]
+        : [Variable<int>(prefix.length), Variable<String>(prefix)];
+    final ofLanguage = prefix == null
+        ? 'card_id = ? OR substr(card_id, 1, ?) = ?'
+        : 'substr(card_id, 1, ?) = ?';
     final rows = await customSelect(
       'SELECT id, card_id, ts, grade, elapsed_ms, answer_given, asked '
       'FROM reviews WHERE $ofLanguage',
