@@ -306,6 +306,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1132](https://github.com/aaronified/fluenough/issues/1132) Placement: make the sentence fill-in (F28) pass the audit so it can be asked
 - [#1166](https://github.com/aaronified/fluenough/issues/1166) Language: Bengali: full deck format
 - [#1167](https://github.com/aaronified/fluenough/issues/1167) Language: Hindustani: full deck format
+- [#1168](https://github.com/aaronified/fluenough/issues/1168) Language: Assamese: full deck format
 
 ## Plans
 
