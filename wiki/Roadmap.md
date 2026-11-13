@@ -52,7 +52,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.6.0
 
-6 approved open issues.
+5 approved open issues.
 
 **Enhancements**
 
@@ -63,7 +63,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 **Other**
 
 - [#506](https://github.com/aaronified/fluenough/issues/506) Deck format review: card data list, questions from card data, DECK-FORMAT as the one guide
-- [#630](https://github.com/aaronified/fluenough/issues/630) Telugu offensive-words deck (te-offensive), rated before it ships
 - [#631](https://github.com/aaronified/fluenough/issues/631) Offensive-words decks for the priority languages
 
 ### 0.7.0
@@ -131,13 +130,12 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 2 · B1 plans
 
-6 approved open issues.
+5 approved open issues.
 
 **Other**
 
 - [#39](https://github.com/aaronified/fluenough/issues/39) Telugu and Kannada: refit to the Dravidian order
 - [#209](https://github.com/aaronified/fluenough/issues/209) Plan: a B1 plan in every path
-- [#257](https://github.com/aaronified/fluenough/issues/257) B1 plans: the CEFR skeleton of themes and grammar per level
 - [#413](https://github.com/aaronified/fluenough/issues/413) Plan: a phrasebook, then words, then rules, then sentences
 - [#419](https://github.com/aaronified/fluenough/issues/419) Words, rules, sentences: Telugu content
 - [#420](https://github.com/aaronified/fluenough/issues/420) Words, rules, sentences: content for the other courses
@@ -197,7 +195,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#106](https://github.com/aaronified/fluenough/issues/106) Culture deck: love
 - [#108](https://github.com/aaronified/fluenough/issues/108) Home-screen widget: cards due and the streak
 - [#110](https://github.com/aaronified/fluenough/issues/110) Dialogue decks: short role-plays, one side each
-- [#111](https://github.com/aaronified/fluenough/issues/111) Native-speaker audio for cards, where TTS is weak
 - [#214](https://github.com/aaronified/fluenough/issues/214) Plan: a Research and standards page, with the sources
 - [#215](https://github.com/aaronified/fluenough/issues/215) Plan: books, films and songs you bring, with questions on them
 - [#216](https://github.com/aaronified/fluenough/issues/216) Plan: a path for every language, by family
@@ -228,10 +225,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#294](https://github.com/aaronified/fluenough/issues/294) Shelf: item page, chapter progress and questions
 - [#295](https://github.com/aaronified/fluenough/issues/295) Shelf: first items per course, and the B1 finale
 - [#296](https://github.com/aaronified/fluenough/issues/296) Language paths: owner decisions
-- [#297](https://github.com/aaronified/fluenough/issues/297) Language paths: tiers and phases
-- [#298](https://github.com/aaronified/fluenough/issues/298) Language paths: pacing and the 30-minute day
 - [#299](https://github.com/aaronified/fluenough/issues/299) Language paths: variants and the common start
-- [#300](https://github.com/aaronified/fluenough/issues/300) Language paths: Indo-Aryan reorder
 - [#301](https://github.com/aaronified/fluenough/issues/301) Language paths: a full Spanish course
 - [#302](https://github.com/aaronified/fluenough/issues/302) Language paths: what new scripts need
 - [#305](https://github.com/aaronified/fluenough/issues/305) Wiktionary IPA: compare and list disagreements
