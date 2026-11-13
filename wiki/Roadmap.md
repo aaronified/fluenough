@@ -316,6 +316,8 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1175](https://github.com/aaronified/fluenough/issues/1175) Language: Maithili: full deck format
 - [#1176](https://github.com/aaronified/fluenough/issues/1176) Language: Manipuri: full deck format
 - [#1177](https://github.com/aaronified/fluenough/issues/1177) Language: Marathi: full deck format
+- [#1178](https://github.com/aaronified/fluenough/issues/1178) Language: Santali: full deck format
+- [#1179](https://github.com/aaronified/fluenough/issues/1179) Language: Sindhi: full deck format
 
 ## Plans
 
