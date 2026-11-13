@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:fluenough/app/private_store.dart';
+import 'package:fluenough/core/private/private_package.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 // A crash in the middle of an update must never lose a retired id
