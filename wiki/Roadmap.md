@@ -259,6 +259,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#350](https://github.com/aaronified/fluenough/issues/350) Language paths: new languages, one full course each
 - [#351](https://github.com/aaronified/fluenough/issues/351) New course: Punjabi
 - [#352](https://github.com/aaronified/fluenough/issues/352) New course: Odia
+- [#352](https://github.com/aaronified/fluenough/issues/352) New course: Odia
 - [#353](https://github.com/aaronified/fluenough/issues/353) New course: Nepali
 - [#354](https://github.com/aaronified/fluenough/issues/354) New course: Tamil
 - [#355](https://github.com/aaronified/fluenough/issues/355) New course: Malayalam
@@ -311,6 +312,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1170](https://github.com/aaronified/fluenough/issues/1170) Language: Dogri: full deck format
 - [#1171](https://github.com/aaronified/fluenough/issues/1171) Language: Gujarati: full deck format
 - [#1172](https://github.com/aaronified/fluenough/issues/1172) Language: Kannada: full deck format
+- [#1173](https://github.com/aaronified/fluenough/issues/1173) Language: Kashmiri: full deck format
 
 ## Plans
 
