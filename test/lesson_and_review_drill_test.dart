@@ -508,8 +508,11 @@ void main() {
         findsOneWidget,
       );
 
+      // The four labels are Again, Hard, Okay, Easy; Okay records what Good did.
+      expect(l10n.rateGood, 'Okay');
+      expect(find.text('Good'), findsNothing);
       final before = progress.log.length;
-      await tester.tap(find.text(l10n.rateGood));
+      await tester.tap(find.text('Okay'));
       await tester.pumpAndSettle();
       expect(progress.log, hasLength(before + 1));
       expect(progress.log.last.cardId, card.id);
