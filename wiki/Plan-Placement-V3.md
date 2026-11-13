@@ -525,4 +525,10 @@ Three gates stay pending: `experts-natives-within-a-tenth`, `honest-confidence` 
 
 ## Owner-approved tolerance on the margin gate (2026-11-12)
 
-The margin test in test/placement_v3_gamers_test.dart (a gamer 0.05 to 0.07 better than measured, the admission bound, still passes) allows over2 <= 0.02 (two of 100 seeds) at bump 0.07 only; every other limit is unchanged (0.01 at bump 0.05, over1 <= 0.03). Owner decision, 2026-11-12, after three calibration rounds left the es seed-2000 legacy-bank cell at 0.02. The F28 sentence fill-in (#1099) is excluded by the audit in es and hi, so it is never asked (issue #1132).
+The margin test in test/placement_v3_gamers_test.dart (a gamer 0.05 to 0.07 better than measured, the admission bound, still passes) allows over2 <= 0.02 (two of 100 seeds) at bump 0.07 only; every other limit is unchanged (0.01 at bump 0.05, over1 <= 0.03). Owner decision, 2026-11-12, after three calibration rounds left the es seed-2000 legacy-bank cell at 0.02. The F28 sentence fill-in (#1099) was excluded by the audit in es and hi at first (issue #1132); see "F28 sentence fill-in, balanced options" below.
+
+## F28 sentence fill-in, balanced options (issue #1132, 2026-11-13)
+
+The first F28 options were drawn at random from the class: the right word fitted the sentence better by the course's word pairs (best solver 0.40 in es, upper bound 0.447). The generator now draws 60 sets of three options per blank and keeps the one that stands where the fewest right words stand so far, for each of five cues (word pairs, ending pairs, ending triples, length, the first words' cue): the right word is at the top, the middle or the bottom as often as chance would, over the course (`position` in `item_solvers.dart`). Every option is a first word of the path or none is, as the right word is, so the first-words cue ties. No threshold changed.
+
+Result (es, clean): n 289, best solver 0.2575, upper 0.302 against the 0.32 bound; F28 is asked in es. The cognate class (n 62) and Hindi (clean n 62, cognate 2) stay excluded: the Wilson upper bound of a solver at exact chance (0.25) is about 0.36 for n 62 and passes 0.32 only from about 120 items, and Hindi has 219 sentence cards, 100 of them under five words and 17 with inner punctuation, so at most about 70 can make an item. Hindi F28 needs more or longer sentences, not better options.

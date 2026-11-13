@@ -88,8 +88,7 @@ class _SituationsEditorState extends State<SituationsEditor> {
     final spoken = _state.settings.spokenLanguages;
     final byId = <String, Situation>{for (final s in _all) s.id: s};
     final tiles = <Situation>[
-      for (final id in _chosen)
-        ?byId[id],
+      for (final id in _chosen) ?byId[id],
       for (final s in _all)
         if (!_chosen.contains(s.id)) s,
     ];

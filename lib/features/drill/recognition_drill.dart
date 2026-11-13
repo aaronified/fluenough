@@ -18,7 +18,7 @@ import '../decks/ipa_info_dot.dart';
 
 /// Recognition: the target, big, with its reading and, where the phone has
 /// a voice, its speaker; "Show answer"; then the meaning, the note and an
-/// example, and the four self-ratings in one row, or a swipe, which is Good.
+/// example, and the four self-ratings in one row, or a swipe, which is Okay.
 ///
 /// What it shows once revealed is [TaughtDetails], as the other questions
 /// show it once answered.
@@ -70,8 +70,8 @@ class RecognitionDrill extends StatelessWidget {
       reportDetail: '${session.item.card.id} in ${session.deck.id}',
       progress: session.progress,
       onClose: onClose,
-      // A swipe on the answer page, or the end-edge chevron, is Good, as
-      // tapping Good is (owner, 2026-10-29). Gone back to, it only shows the
+      // A swipe on the answer page, or the end-edge chevron, is Okay, as
+      // tapping Okay is (owner, 2026-10-29). Gone back to, it only shows the
       // card again.
       going: goingOn(
         session,

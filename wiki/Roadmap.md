@@ -101,7 +101,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.10.0
 
-6 approved open issues.
+5 approved open issues.
 
 **Bugs**
 
@@ -114,7 +114,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 **Other**
 
-- [#1095](https://github.com/aaronified/fluenough/issues/1095) Review shell: Again / Hard / Okay / Easy self-rating buttons
 - [#1017](https://github.com/aaronified/fluenough/issues/1017) Plan: build entire languages as private decks (Your decks)
 - [#1096](https://github.com/aaronified/fluenough/issues/1096) Reviews: use the new placement question types
 
@@ -184,7 +183,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#34](https://github.com/aaronified/fluenough/issues/34) Complex script rendering: Nastaliq, conjuncts, matras
 - [#46](https://github.com/aaronified/fluenough/issues/46) Let the user choose the interface language, with translations in plain txt files
 - [#58](https://github.com/aaronified/fluenough/issues/58) Review the unreviewed Hindi and Bengali grammar decks
-- [#92](https://github.com/aaronified/fluenough/issues/92) Sample deck pack: one example of every deck kind, as a download
 - [#99](https://github.com/aaronified/fluenough/issues/99) Culture decks: beyond the basics (tracking)
 - [#101](https://github.com/aaronified/fluenough/issues/101) Culture deck: local mythology and folklore
 - [#102](https://github.com/aaronified/fluenough/issues/102) Culture deck: cuisine
@@ -229,7 +227,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#312](https://github.com/aaronified/fluenough/issues/312) AI conversation: privacy, and tests with a fake model
 - [#313](https://github.com/aaronified/fluenough/issues/313) Import text: the reader and matching words to cards
 - [#314](https://github.com/aaronified/fluenough/issues/314) Import text: the card maker
-- [#315](https://github.com/aaronified/fluenough/issues/315) In-app readings: the three no-hint fixes in tools/transcribe.py
 - [#316](https://github.com/aaronified/fluenough/issues/316) In-app readings: a Dart port in lib/core
 - [#317](https://github.com/aaronified/fluenough/issues/317) Sentence building: owner decisions before building
 - [#318](https://github.com/aaronified/fluenough/issues/318) Sentence building: the English sentence bank
@@ -297,7 +294,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#386](https://github.com/aaronified/fluenough/issues/386) New course: Somali
 - [#387](https://github.com/aaronified/fluenough/issues/387) New course: Quechua
 - [#388](https://github.com/aaronified/fluenough/issues/388) New course: Esperanto
-- [#425](https://github.com/aaronified/fluenough/issues/425) Remove the analyzer bound once build_runner supports 14.5.0
 - [#472](https://github.com/aaronified/fluenough/issues/472) Language themes: a colour, icon and background image for each language
 - [#665](https://github.com/aaronified/fluenough/issues/665) English Braille: a facts file (qbe-facts.yaml)
 - [#722](https://github.com/aaronified/fluenough/issues/722) Conversation mode: transcribe two people talking, in real time
@@ -307,6 +303,56 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#959](https://github.com/aaronified/fluenough/issues/959) Paths and starter decks (first words and phrases) for every planned language
 - [#1103](https://github.com/aaronified/fluenough/issues/1103) Play Store release: paid colour themes, pure black and wallpaper colours (free on GitHub)
 - [#1132](https://github.com/aaronified/fluenough/issues/1132) Placement: make the sentence fill-in (F28) pass the audit so it can be asked
+- [#1166](https://github.com/aaronified/fluenough/issues/1166) Language: Bengali: full deck format
+- [#1167](https://github.com/aaronified/fluenough/issues/1167) Language: Hindustani: full deck format
+- [#1168](https://github.com/aaronified/fluenough/issues/1168) Language: Assamese: full deck format
+- [#1169](https://github.com/aaronified/fluenough/issues/1169) Language: Bodo: full deck format
+- [#1170](https://github.com/aaronified/fluenough/issues/1170) Language: Dogri: full deck format
+- [#1171](https://github.com/aaronified/fluenough/issues/1171) Language: Gujarati: full deck format
+- [#1172](https://github.com/aaronified/fluenough/issues/1172) Language: Kannada: full deck format
+- [#1173](https://github.com/aaronified/fluenough/issues/1173) Language: Kashmiri: full deck format
+- [#1174](https://github.com/aaronified/fluenough/issues/1174) Language: Konkani: full deck format
+- [#1175](https://github.com/aaronified/fluenough/issues/1175) Language: Maithili: full deck format
+- [#1176](https://github.com/aaronified/fluenough/issues/1176) Language: Manipuri: full deck format
+- [#1177](https://github.com/aaronified/fluenough/issues/1177) Language: Marathi: full deck format
+- [#1178](https://github.com/aaronified/fluenough/issues/1178) Language: Santali: full deck format
+- [#1179](https://github.com/aaronified/fluenough/issues/1179) Language: Sindhi: full deck format
+- [#1180](https://github.com/aaronified/fluenough/issues/1180) Language: Bhojpuri: full deck format
+- [#1181](https://github.com/aaronified/fluenough/issues/1181) Language: Tulu: full deck format
+- [#1182](https://github.com/aaronified/fluenough/issues/1182) Language: Rajasthani: full deck format
+- [#1183](https://github.com/aaronified/fluenough/issues/1183) Language: Magahi: full deck format
+- [#1184](https://github.com/aaronified/fluenough/issues/1184) Language: Chhattisgarhi: full deck format
+- [#1185](https://github.com/aaronified/fluenough/issues/1185) Language: Awadhi: full deck format
+- [#1186](https://github.com/aaronified/fluenough/issues/1186) Language: Haryanvi: full deck format
+- [#1187](https://github.com/aaronified/fluenough/issues/1187) Language: Kumaoni: full deck format
+- [#1188](https://github.com/aaronified/fluenough/issues/1188) Language: Garhwali: full deck format
+- [#1189](https://github.com/aaronified/fluenough/issues/1189) Language: Mizo: full deck format
+- [#1190](https://github.com/aaronified/fluenough/issues/1190) Language: Khasi: full deck format
+- [#1191](https://github.com/aaronified/fluenough/issues/1191) Language: Goan Konkani: full deck format
+- [#1192](https://github.com/aaronified/fluenough/issues/1192) Language: Spanish: full deck format
+- [#1193](https://github.com/aaronified/fluenough/issues/1193) Language: Toki Pona: full deck format
+- [#1194](https://github.com/aaronified/fluenough/issues/1194) Language: Lojban: full deck format
+- [#1195](https://github.com/aaronified/fluenough/issues/1195) Language: Interslavic: full deck format
+- [#1196](https://github.com/aaronified/fluenough/issues/1196) Language: Afrikaans: full deck format
+- [#1197](https://github.com/aaronified/fluenough/issues/1197) Language: Dutch: full deck format
+- [#1198](https://github.com/aaronified/fluenough/issues/1198) Language: Ukrainian: full deck format
+- [#1199](https://github.com/aaronified/fluenough/issues/1199) Language: Indonesian: full deck format
+- [#1200](https://github.com/aaronified/fluenough/issues/1200) Language: Persian: full deck format
+- [#1201](https://github.com/aaronified/fluenough/issues/1201) Language: Pashto: full deck format
+- [#1202](https://github.com/aaronified/fluenough/issues/1202) Language: Mycenaean Greek: full deck format
+- [#1203](https://github.com/aaronified/fluenough/issues/1203) Language: Sumerian: full deck format
+- [#1204](https://github.com/aaronified/fluenough/issues/1204) Language: Egyptian: full deck format
+- [#1205](https://github.com/aaronified/fluenough/issues/1205) Language: Proto-Indo-European: full deck format
+- [#1206](https://github.com/aaronified/fluenough/issues/1206) Language: Vedic Sanskrit: full deck format
+- [#1207](https://github.com/aaronified/fluenough/issues/1207) Language: Latin: full deck format
+- [#1208](https://github.com/aaronified/fluenough/issues/1208) Language: Old English: full deck format
+- [#1209](https://github.com/aaronified/fluenough/issues/1209) Language: Middle English: full deck format
+- [#1210](https://github.com/aaronified/fluenough/issues/1210) Language: Classical Greek: full deck format
+- [#1211](https://github.com/aaronified/fluenough/issues/1211) Language: Archaic Greek: full deck format
+- [#1212](https://github.com/aaronified/fluenough/issues/1212) Language: Koine Greek: full deck format
+- [#1213](https://github.com/aaronified/fluenough/issues/1213) Language: Pali: full deck format
+- [#1214](https://github.com/aaronified/fluenough/issues/1214) Language: Aramaic (Imperial): full deck format
+- [#1215](https://github.com/aaronified/fluenough/issues/1215) Language: Ashokan Prakrit: full deck format
 
 ## Plans
 
