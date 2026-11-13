@@ -253,7 +253,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#344](https://github.com/aaronified/fluenough/issues/344) Listening in context: content, in phases
 - [#345](https://github.com/aaronified/fluenough/issues/345) Release signing: developer console account and registration
 - [#346](https://github.com/aaronified/fluenough/issues/346) Release signing: prove ownership in the APK
-- [#348](https://github.com/aaronified/fluenough/issues/348) Word-order tiles: extra tiles per card
 - [#349](https://github.com/aaronified/fluenough/issues/349) Word-order tiles: content for 1,098 cards
 - [#350](https://github.com/aaronified/fluenough/issues/350) Language paths: new languages, one full course each
 - [#351](https://github.com/aaronified/fluenough/issues/351) New course: Punjabi
