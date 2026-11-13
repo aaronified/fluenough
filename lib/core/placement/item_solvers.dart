@@ -25,6 +25,28 @@ import 'item_generators.dart' show VocabWord, tileUnits;
   return (high: pick(true), low: pick(false));
 }
 
+/// Where an option scoring [right] stands among [others] by one cue, from the
+/// top place (0) to the bottom (`others.length`): each place's share, a tie
+/// spreading the share over the places it covers. A solver that picks the
+/// highest, the lowest or a middle option wins in proportion to that place's
+/// share, so a course whose right options stand in each place equally often
+/// gives no cue.
+List<double> position(double right, List<double> others) {
+  var above = 0;
+  var tied = 0;
+  for (final o in others) {
+    if ((o - right).abs() < 1e-9) {
+      tied++;
+    } else if (o > right) {
+      above++;
+    }
+  }
+  return <double>[
+    for (var q = 0; q <= others.length; q++)
+      q >= above && q <= above + tied ? 1 / (tied + 1) : 0,
+  ];
+}
+
 /// The n-gram keys of [tokens], padded with `^` at the start and `$` at the
 /// end.
 List<String> ngramKeys(List<String> tokens, int n) {

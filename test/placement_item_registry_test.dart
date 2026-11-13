@@ -667,6 +667,21 @@ void main() {
             expect(fits, i == it.correct, reason: '${it.id} option $i');
           }
         }
+        final audited = bank.audit.classes['F28:clean']!;
+        if (language == 'es') {
+          // No solver of the audit gains on the options: the best is within
+          // sampling noise of chance, and the class is asked.
+          expect(audited.passes, isTrue, reason: '${audited.solvers}');
+          expect(bank.excluded, isNot(contains('F28:clean')));
+          for (final e in audited.solvers.entries) {
+            expect(e.value, lessThan(0.29), reason: e.key);
+          }
+        } else {
+          // Hindi has too few sentences: even a solver at exact chance has an
+          // upper bound above the admission bound, so the class stays out.
+          expect(audited.n, lessThan(100));
+          expect(bank.excluded, contains('F28:clean'));
+        }
       });
 
       test('word order is admitted and balanced: the right order scores '

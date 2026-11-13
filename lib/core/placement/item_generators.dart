@@ -1760,6 +1760,25 @@ class ItemGenerators {
     for (final v in byWord.values) {
       (byClass[v.pos] ??= <VocabWord>[]).add(v);
     }
+    final cues = ContextCues(<List<String>>[
+      for (final x in cx.sentences) x.words,
+    ]);
+    final knownGloss = <String>{
+      for (final v in cx.early) ...<String>{
+        v.gloss.toLowerCase(),
+        v.glossHead,
+        v.word.toLowerCase(),
+        v.roman.toLowerCase(),
+      },
+    }..remove('');
+    // The cues the options are balanced on (`ContextCues` word pairs, ending
+    // pairs and ending triples, the length, the first-words cue), and for
+    // each how often the right word stood in each place, from the top (0) to
+    // the bottom (3), over the items made so far.
+    const fillCueColumns = <int>[0, 1, 2, 4, 5];
+    final seenPositions = <List<double>>[
+      for (final _ in fillCueColumns) <double>[0, 0, 0, 0],
+    ];
     for (final s in cx.sentences) {
       if (s.inner || s.words.length < 5) continue;
       final eng = glossWords(s.english).toSet();
@@ -1768,29 +1787,90 @@ class ItemGenerators {
           if (byWord[s.words[i].toLowerCase()] case final v?
               when glossWords(v.gloss).any(eng.contains))
             i,
-      ];
-      if (blanks.isEmpty) continue;
-      final i = blanks[rng.nextInt(blanks.length)];
-      final target = byWord[s.words[i].toLowerCase()]!;
-      final inSentence = <String>{for (final w in s.words) w.toLowerCase()};
-      final found = <VocabWord>[
-        for (final d in byClass[target.pos]!)
-          if (d.word.toLowerCase() != target.word.toLowerCase() &&
-              d.lemma != target.lemma &&
-              !inSentence.contains(d.word.toLowerCase()) &&
-              !glossWords(d.gloss).any(eng.contains) &&
-              (d.units.length - target.units.length).abs() <= 1 &&
-              (d.deck - s.deck).abs() <= 8)
-            d,
       ]..shuffle(rng);
-      final picked = <VocabWord>[];
-      for (final d in found) {
-        if (picked.every((p) => p.word.toLowerCase() != d.word.toLowerCase())) {
-          picked.add(d);
+      final inSentence = <String>{for (final w in s.words) w.toLowerCase()};
+      // The blank, and three options of its class chosen against the audit's
+      // solvers: the course's word pairs and ending pairs and triples, the
+      // length and the first words' cue each put the right word at the top,
+      // the bottom or the middle of the four as often as chance would, over
+      // the whole course (`position`: where the right word stands, counted
+      // for all the items made so far). Of 60 draws of three options the one
+      // that stands where the fewest right words stand so far is used, so no
+      // solver that picks the highest, the lowest or a middle option by one
+      // cue gains; no threshold is touched.
+      int? i;
+      VocabWord? target;
+      List<VocabWord>? picked;
+      var bestCost = double.infinity;
+      List<List<double>>? bestShare;
+      for (final blank in blanks) {
+        final t = byWord[s.words[blank].toLowerCase()]!;
+        final found = <VocabWord>[];
+        final seen = <String>{};
+        final knownTarget = knownGloss.contains(t.word.toLowerCase());
+        final candidates = <VocabWord>[
+          for (final d in byClass[t.pos]!)
+            if (d.word.toLowerCase() != t.word.toLowerCase() &&
+                d.lemma != t.lemma &&
+                !inSentence.contains(d.word.toLowerCase()) &&
+                !glossWords(d.gloss).any(eng.contains) &&
+                // A first word of the path or not, as the right word is, so
+                // the first words' cue ties.
+                knownGloss.contains(d.word.toLowerCase()) == knownTarget &&
+                (d.units.length - t.units.length).abs() <= 1 &&
+                (d.deck - s.deck).abs() <= 8)
+              d,
+        ]..shuffle(rng);
+        for (final d in candidates) {
+          if (seen.add(d.word.toLowerCase())) found.add(d);
+          if (found.length == 40) break;
         }
-        if (picked.length == 3) break;
+        if (found.length < 3) continue;
+        final prefix = <String>[for (var k = 0; k < blank; k++) s.words[k]];
+        final suffixWords = <String>[
+          for (var k = blank + 1; k < s.words.length; k++) s.words[k],
+        ];
+        final truthFill = <String>[...prefix, t.word, ...suffixWords];
+        List<double> cuesOf(String o) => <double>[
+          ...cues.scores(<String>[...prefix, o, ...suffixWords], truthFill),
+          o.length.toDouble(),
+          knownGloss.contains(o.toLowerCase()) ? 1.0 : 0.0,
+        ];
+        final targetCues = cuesOf(t.word);
+        final foundCues = <List<double>>[for (final d in found) cuesOf(d.word)];
+        for (var attempt = 0; attempt < 60; attempt++) {
+          final ix = <int>{};
+          while (ix.length < 3) {
+            ix.add(rng.nextInt(found.length));
+          }
+          final share = <List<double>>[
+            for (final c in fillCueColumns)
+              position(targetCues[c], <double>[
+                for (final k in ix) foundCues[k][c],
+              ]),
+          ];
+          var cost = 0.0;
+          for (var c = 0; c < share.length; c++) {
+            for (var q = 0; q < 4; q++) {
+              cost += share[c][q] * seenPositions[c][q];
+            }
+          }
+          if (cost < bestCost) {
+            bestCost = cost;
+            bestShare = share;
+            i = blank;
+            target = t;
+            picked = <VocabWord>[for (final k in ix) found[k]];
+          }
+        }
+        if (picked != null) break;
       }
-      if (picked.length < 3) continue;
+      if (i == null || target == null || picked == null) continue;
+      for (var c = 0; c < bestShare!.length; c++) {
+        for (var q = 0; q < 4; q++) {
+          seenPositions[c][q] += bestShare[c][q];
+        }
+      }
       final opts = <String>[
         target.word.toLowerCase(),
         for (final d in picked) d.word.toLowerCase(),
