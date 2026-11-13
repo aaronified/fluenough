@@ -111,7 +111,7 @@ void main() {
   group('the IPA chart', () {
     test('keys are the chart symbols the answers use, in chart order', () {
       final keys = ipaKeysFor(<String>['ʈ', 'ɒ', 'pʰ']);
-      expect(keys.map((k) => k.symbol), <String>['ɒ', 'ʈ', 'p', 'ʰ']);
+      expect(keys.map((k) => k.symbol), <String>['ɒ', 'p', 'ʈ', 'ʰ']);
       expect(keys.map((k) => k.kind), <IpaKind>[
         IpaKind.vowels,
         IpaKind.consonants,
