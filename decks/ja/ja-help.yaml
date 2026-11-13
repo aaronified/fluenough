@@ -612,3 +612,30 @@ cards:
           - { word: "は", base: "は", reading: "wa" }
           - { word: "です", base: "です", reading: "desu" }
           - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-4123"
+    target: "とまれ"
+    words: ["とまれ"]
+    reading: "tomare"
+    ipa: "tomaɾe"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "とまれのかんばんがあります。"
+        words: ["とまれ", "の", "かんばん", "が", "あります"]
+        reading: "tomare no kanban ga arimasu."
+        ipa: "tomaɾe no kaɴbaɴ ga aɾimasɯ"
+        bases:
+          - { word: "の", base: "の", reading: "no" }
+          - { word: "かんばん", base: "かんばん", reading: "kanban" }
+          - { word: "が", base: "が", reading: "ga" }
+          - { word: "あります", base: "ある", reading: "aru" }
+      - target: "みちにとまれがあります。"
+        words: ["みち", "に", "とまれ", "が", "あります"]
+        reading: "michi ni tomare ga arimasu."
+        ipa: "mitɕi ni tomaɾe ɡa aɾimasɯ"
+        bases:
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "が", base: "が", reading: "ga" }
+          - { word: "あります", base: "ある", reading: "aru" }

@@ -78,3 +78,60 @@ cards:
         word: "いぬ"
         reading: "inu"
         kind: "word"
+  - id: "ja-4124"
+    target: "めんきょしょうをみせてください。"
+    words: ["めんきょしょう", "を", "みせて", "ください"]
+    reading: "menkyoshou o misete kudasai."
+    ipa: "meɴkjoɕoː o misete kɯdasai"
+    pos: "phrase"
+    bases:
+      - { word: "ください", base: "ください", reading: "kudasai" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "みせて", base: "みせる", reading: "misete" }
+    confusables:
+      - id: "w1"
+        word: "パスポート"
+        reading: "pasupooto"
+        kind: "word"
+      - id: "w2"
+        word: "きっぷ"
+        reading: "kippu"
+        kind: "word"
+  - id: "ja-4125"
+    target: "ここでとまってください。"
+    words: ["ここ", "で", "とまって", "ください"]
+    reading: "koko de tomatte kudasai."
+    ipa: "koko de tomatte kɯdasai"
+    pos: "phrase"
+    bases:
+      - { word: "ください", base: "ください", reading: "kudasai" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "とまって", base: "とまる", reading: "tomatte" }
+    confusables:
+      - id: "w1"
+        word: "ゆっくり"
+        reading: "yukkuri"
+        kind: "word"
+      - id: "w2"
+        word: "まっすぐ"
+        reading: "massugu"
+        kind: "word"
+  - id: "ja-4126"
+    target: "どこへいきますか。"
+    words: ["どこ", "へ", "いきます", "か"]
+    reading: "doko e ikimasu ka."
+    ipa: "doko e ikimasɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "へ", base: "へ", reading: "e" }
+      - { word: "いきます", base: "いく", reading: "iku" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - id: "w1"
+        word: "えき"
+        reading: "eki"
+        kind: "word"
+      - id: "w2"
+        word: "くるま"
+        reading: "kuruma"
+        kind: "word"
