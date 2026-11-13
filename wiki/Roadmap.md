@@ -331,6 +331,9 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1190](https://github.com/aaronified/fluenough/issues/1190) Language: Khasi: full deck format
 - [#1191](https://github.com/aaronified/fluenough/issues/1191) Language: Goan Konkani: full deck format
 - [#1192](https://github.com/aaronified/fluenough/issues/1192) Language: Spanish: full deck format
+- [#1193](https://github.com/aaronified/fluenough/issues/1193) Language: Toki Pona: full deck format
+- [#1194](https://github.com/aaronified/fluenough/issues/1194) Language: Lojban: full deck format
+- [#1195](https://github.com/aaronified/fluenough/issues/1195) Language: Interslavic: full deck format
 
 ## Plans
 
