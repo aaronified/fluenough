@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../../app/app_scope.dart';
+import '../../app/app_state.dart';
 import '../../app/session.dart';
+import '../../app/situations.dart';
 import '../../app/skill.dart';
 import '../../l10n/app_localizations.dart';
 
@@ -82,9 +85,29 @@ class _TopicDrillSheetState extends State<TopicDrillSheet> {
     widget.cardIds,
     language: widget.language,
     revise: widget.revise,
-    skills: _skills.isEmpty ? null : <Skill>{..._skills},
+    skills: <Skill>{..._skills},
     limit: _count == 0 ? null : _count,
   );
+
+  /// The last count, kept for the skills and size it was made for, so a
+  /// rebuild does not build the session again.
+  String? _countKey;
+  int _countValue = 0;
+
+  /// How many distinct cards the chosen skills and size would ask right now.
+  int _drillable(AppState state) {
+    final key = '$_count|${(<int>[for (final s in _skills) s.index]..sort())}';
+    if (key == _countKey) return _countValue;
+    try {
+      final items = state.sheetSession(_request());
+      _countValue = <String>{for (final item in items) item.card.id}.length;
+      _countKey = key;
+      return _countValue;
+    } on Object catch (error) {
+      state.log.warning('A topic drill could not be counted: $error');
+      return 1;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -96,6 +119,10 @@ class _TopicDrillSheetState extends State<TopicDrillSheet> {
         if (n < total) n,
     ];
     if (!sizes.contains(_count) && _count != 0) _count = 0;
+    // An empty skill set would mean every skill, so Start waits for a choice,
+    // and for a session that has something to ask.
+    final noSkill = _skills.isEmpty;
+    final nothing = !noSkill && _drillable(AppScope.of(context)) == 0;
     return SafeArea(
       child: SingleChildScrollView(
         padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 16),
@@ -155,11 +182,23 @@ class _TopicDrillSheetState extends State<TopicDrillSheet> {
                   ),
               ],
             ),
+            if (noSkill || nothing)
+              Padding(
+                padding: const EdgeInsetsDirectional.only(top: 8),
+                child: Text(
+                  noSkill ? l10n.topicChooseASkill : l10n.topicNothingToDrill,
+                  style: theme.textTheme.bodySmall!.copyWith(
+                    color: theme.colorScheme.onSurfaceVariant,
+                  ),
+                ),
+              ),
             const SizedBox(height: 20),
             SizedBox(
               width: double.infinity,
               child: FilledButton(
-                onPressed: () => Navigator.of(context).pop(_request()),
+                onPressed: noSkill || nothing
+                    ? null
+                    : () => Navigator.of(context).pop(_request()),
                 child: Text(l10n.topicStartDrill),
               ),
             ),

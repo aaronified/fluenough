@@ -146,6 +146,10 @@ class SentenceInfo {
   String get text => '$leadingMark${words.join(' ')}$trailingMark';
 }
 
+/// The share of gap-spelling words (F21) that leave out two or three units
+/// instead of one (the difficulty knob of #1098 and #1100).
+const double kMultiGapShare = 0.67;
+
 /// The languages whose word order is free enough that the same words in
 /// another order, anywhere in the course, mean the same sentence. Empty until a
 /// native reviewer has flagged a language: a language is only listed here when
@@ -870,18 +874,24 @@ class ItemGenerators {
         for (final w in s.words) w,
     ]);
     final out = <RegItem>[];
+    final rng = cx.stream('gap');
     for (final v in words) {
       model.remove(v.units);
       final copies = 1 + (tokens[v.word.toLowerCase()] ?? 0);
       lm.add(v.word, -copies);
-      var bestGap = -1;
-      var bestSpread = -1.0;
+      // Per position: how near the middle of every cue's ranking the right
+      // unit stands (a rare unit would be the one a solver that types the
+      // rarest unit picks), or -1 when a cue picks it or it is no letter.
+      final spreads = <double>[];
+      final letters = <bool>[];
       for (var gap = 0; gap < v.units.length; gap++) {
+        spreads.add(-1);
         // A unit that is a bare mark or punctuation is never the gap.
-        if (latinLetters(v.units[gap]).isEmpty &&
-            !RegExp(r'\p{L}', unicode: true).hasMatch(v.units[gap])) {
-          continue;
-        }
+        final isLetter =
+            latinLetters(v.units[gap]).isNotEmpty ||
+            RegExp(r'\p{L}', unicode: true).hasMatch(v.units[gap]);
+        letters.add(isLetter);
+        if (!isLetter) continue;
         final abc = alphabet.contains(v.units[gap])
             ? alphabet
             : <String>[...alphabet, v.units[gap]];
@@ -899,17 +909,35 @@ class ItemGenerators {
         // No solver of any kind (highest, lowest, second to fourth highest,
         // in any cue) picks the unit.
         if (r.accuracy.values.any((a) => a > 0.04)) continue;
-        // The gap whose right unit stands nearest the middle of every cue's
-        // ranking, not at an end: a rare unit would be the one a solver
-        // that types the rarest unit picks.
-        final spread = r.position.map((p) => (p - 0.5).abs()).reduce(math.max);
-        if (bestSpread < 0 || spread < bestSpread) {
-          bestSpread = spread;
-          bestGap = gap;
-        }
+        spreads[gap] = r.position.map((p) => (p - 0.5).abs()).reduce(math.max);
       }
       model.restore(v.units);
       lm.add(v.word, copies);
+      // The number of units left out: two or three for most words (the audit
+      // judges the first of them with the others shown, the easier problem
+      // for a solver), one where no run of that length starts at a unit
+      // missed by every cue. Only the first unit of a run is judged (the
+      // others are shown to the audit's solvers, so they only have to be
+      // letters). The run with the least spread is the gap.
+      var want = 1;
+      if (rng.nextDouble() < kMultiGapShare) {
+        want = v.units.length >= 7 && rng.nextBool() ? 3 : 2;
+      }
+      var bestGap = -1;
+      var blanks = 1;
+      for (var n = want; n >= 1 && bestGap < 0; n--) {
+        var bestSpread = -1.0;
+        for (var gap = 0; gap + n <= v.units.length; gap++) {
+          if (spreads[gap] < 0) continue;
+          if (letters.sublist(gap, gap + n).any((x) => !x)) continue;
+          final spread = spreads[gap];
+          if (bestSpread < 0 || spread < bestSpread) {
+            bestSpread = spread;
+            bestGap = gap;
+            blanks = n;
+          }
+        }
+      }
       if (bestGap < 0) continue;
       out.add(
         RegItem(
@@ -920,7 +948,7 @@ class ItemGenerators {
           prompt: v.gloss,
           promptRoman: v.gloss,
           answerTiles: v.units,
-          accepted: <String>[v.units[bestGap]],
+          accepted: <String>[v.units.sublist(bestGap, bestGap + blanks).join()],
           gapIndex: bestGap,
           cognateScore: v.cognateScore,
           lemmas: <String>{v.lemma},
@@ -1699,6 +1727,88 @@ class ItemGenerators {
           options: opts,
           optionsRoman: opts,
           correct: opts.indexOf(target),
+          cognateScore: s.cognateScore,
+          nonCognateContent: s.nonCognateContent,
+          weight: s.nonCognateContent >= 2 ? 1 : 0.5,
+          lemmas: s.lemmas,
+        ),
+      );
+    }
+    return out;
+  }
+
+  /// Sentence fill-in (F28): the English sentence, the target sentence with
+  /// one word blanked, and four words of one word class to fill it with. The
+  /// class comes from the decks' part of speech (a word whose cards disagree,
+  /// or are `other`, is never blanked or used); a course without part of
+  /// speech makes no item. The English holds the right word's meaning and
+  /// none of the others', so only one option fits.
+  List<RegItem> sentenceFill() {
+    final out = <RegItem>[];
+    final rng = cx.stream('fill');
+    final byWord = <String, VocabWord>{};
+    final bad = <String>{};
+    for (final v in cx.vocab) {
+      final k = v.word.toLowerCase();
+      if (v.pos == 'other' || (byWord[k] != null && byWord[k]!.pos != v.pos)) {
+        bad.add(k);
+      }
+      byWord.putIfAbsent(k, () => v);
+    }
+    byWord.removeWhere((k, v) => bad.contains(k));
+    final byClass = <String, List<VocabWord>>{};
+    for (final v in byWord.values) {
+      (byClass[v.pos] ??= <VocabWord>[]).add(v);
+    }
+    for (final s in cx.sentences) {
+      if (s.inner || s.words.length < 5) continue;
+      final eng = glossWords(s.english).toSet();
+      final blanks = <int>[
+        for (var i = 1; i < s.words.length; i++)
+          if (byWord[s.words[i].toLowerCase()] case final v?
+              when glossWords(v.gloss).any(eng.contains))
+            i,
+      ];
+      if (blanks.isEmpty) continue;
+      final i = blanks[rng.nextInt(blanks.length)];
+      final target = byWord[s.words[i].toLowerCase()]!;
+      final inSentence = <String>{for (final w in s.words) w.toLowerCase()};
+      final found = <VocabWord>[
+        for (final d in byClass[target.pos]!)
+          if (d.word.toLowerCase() != target.word.toLowerCase() &&
+              d.lemma != target.lemma &&
+              !inSentence.contains(d.word.toLowerCase()) &&
+              !glossWords(d.gloss).any(eng.contains) &&
+              (d.units.length - target.units.length).abs() <= 1 &&
+              (d.deck - s.deck).abs() <= 8)
+            d,
+      ]..shuffle(rng);
+      final picked = <VocabWord>[];
+      for (final d in found) {
+        if (picked.every((p) => p.word.toLowerCase() != d.word.toLowerCase())) {
+          picked.add(d);
+        }
+        if (picked.length == 3) break;
+      }
+      if (picked.length < 3) continue;
+      final opts = <String>[
+        target.word.toLowerCase(),
+        for (final d in picked) d.word.toLowerCase(),
+      ]..shuffle(rng);
+      final blanked = <String>[
+        for (var k = 0; k < s.words.length; k++) k == i ? '___' : s.words[k],
+      ];
+      out.add(
+        RegItem(
+          id: _key(s.card.id, 'F28'),
+          format: 'F28',
+          cardId: s.card.id,
+          deck: s.deck,
+          prompt: '${s.leadingMark}${blanked.join(' ')}${s.trailingMark}',
+          promptRoman: s.english,
+          options: opts,
+          optionsRoman: opts,
+          correct: opts.indexOf(target.word.toLowerCase()),
           cognateScore: s.cognateScore,
           nonCognateContent: s.nonCognateContent,
           weight: s.nonCognateContent >= 2 ? 1 : 0.5,

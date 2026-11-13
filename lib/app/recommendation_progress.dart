@@ -92,7 +92,7 @@ RecommendationMarkStore markStoreFor(ProgressStore progress) =>
 /// Memory changes at once and the store is written behind it; a failed write
 /// is logged, never thrown at the learner, and the mark stays for the session.
 class RecommendationProgress extends ChangeNotifier {
-  RecommendationProgress(this._store, {AppLog? log}) : _log = log;
+  RecommendationProgress(this._store, {this._log});
 
   final RecommendationMarkStore _store;
   final AppLog? _log;
@@ -160,6 +160,9 @@ class RecommendationProgress extends ChangeNotifier {
   /// is changed or removed. Returns how many were added.
   Future<int> importMarks(Iterable<CompletedWork> works) async {
     try {
+      // The marks taken so far reach the store first, so a work marked a
+      // moment ago is not counted as new.
+      await _writes;
       final added = await _store.addMissing(works);
       for (final work in works) {
         _marks.putIfAbsent(work.recommendationId, () => work);

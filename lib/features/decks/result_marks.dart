@@ -238,7 +238,7 @@ class ResultRow extends StatelessWidget {
                 height: 40,
                 decoration: BoxDecoration(
                   color: iconBackground ?? scheme.secondaryContainer,
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(AppRadii.chip),
                 ),
                 alignment: Alignment.center,
                 child: icon != null

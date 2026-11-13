@@ -8192,8 +8192,9 @@ REC_KEYS = {"id", "medium", "title", "creator", "year", "level", "script", "brie
 
 def _pirate_hosts() -> set[str]:
     try:
-        return {line.strip().lower() for line in PIRATE_HOSTS.read_text(
-            encoding="utf-8").splitlines() if line.strip() and not line.startswith("#")}
+        lines = PIRATE_HOSTS.read_text(encoding="utf-8").splitlines()
+        return {line.strip().lower() for line in lines
+                if line.strip() and not line.strip().startswith("#")}
     except OSError:
         return set()
 
@@ -8237,6 +8238,9 @@ def check_recommendations_file(r: Report, raw: dict, path: Path) -> None:
         return
     scripts = _language_scripts(lang) if lang else None
     hosts = _pirate_hosts()
+    if not hosts:
+        r.error("recommendations", "tools/pirate_hosts.txt is missing or empty, the "
+                                   "pirate-host deny list cannot run")
     id_re = re.compile(rf"{re.escape(lang)}-rec-[a-z0-9]+(?:-[a-z0-9]+)*") if lang else None
     ids: set[str] = set()
     collected: list[tuple[str, str, dict]] = []
@@ -8333,7 +8337,7 @@ def check_recommendations_file(r: Report, raw: dict, path: Path) -> None:
             if not _https(leg.get("url")):
                 r.error(w, f"url must be an https link, got {leg.get('url')!r}")
             else:
-                host = (urlparse(leg["url"]).hostname or "").lower()
+                host = (urlparse(leg["url"]).hostname or "").lower().rstrip(".")
                 if any(host == h or host.endswith("." + h) for h in hosts):
                     r.error(w, f"{host} is on the deny list of unlicensed hosts "
                                f"(tools/pirate_hosts.txt): link the rights-holder's "

@@ -980,15 +980,17 @@ class DeckDownloads extends ChangeNotifier {
           if (entry == null) return DeckDownloadFailure.notOffered;
           if (entry.appTooOld) return DeckDownloadFailure.appTooOld;
           final natives = entry.nativesFor(spoken);
+          // A deck is fetched whole or not at all: if any of its files needs
+          // a newer app, none is downloaded.
+          final needed = entry.hiddenAppNeeded(deckKey, natives);
+          if (needed != null) {
+            _log?.warning(
+              'Hidden deck $deckKey needs app $needed, not downloaded',
+            );
+            return DeckDownloadFailure.appTooOld;
+          }
           final wanted = entry.hiddenFilesFor(deckKey, natives);
           if (wanted.isEmpty) {
-            if (entry.hiddenAppNeeded(deckKey, natives) != null) {
-              _log?.warning(
-                'Hidden deck $deckKey needs app '
-                '${entry.hiddenAppNeeded(deckKey, natives)}, not downloaded',
-              );
-              return DeckDownloadFailure.appTooOld;
-            }
             _log?.warning('Hidden deck $deckKey is not offered for $language');
             return DeckDownloadFailure.notOffered;
           }
@@ -1315,8 +1317,11 @@ class DeckDownloads extends ChangeNotifier {
   Future<Uint8List?> creatorImage(String path) {
     final kept = _creatorImages[path];
     if (kept != null) return Future<Uint8List?>.value(kept);
-    return _creatorImageJobs[path] ??= _loadCreatorImage(path)
-        .whenComplete(() => _creatorImageJobs.remove(path));
+    return _creatorImageJobs[path] ??= _loadCreatorImage(path).whenComplete(() {
+      // A block body: returning the removed job would make this wait on
+      // itself for ever.
+      _creatorImageJobs.remove(path);
+    });
   }
 
   Future<Uint8List?> _loadCreatorImage(String path) async {

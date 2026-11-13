@@ -7,6 +7,9 @@
 // unit" chips of a unit.
 
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/deck_catalog.dart';
+import 'package:fluenough/app/deck_downloads.dart';
+import 'package:fluenough/app/downloaded_decks.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/situations.dart';
 import 'package:fluenough/app/skill.dart';
@@ -18,6 +21,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/accessibility_shared.dart';
+import 'support/deck_remote.dart';
 import 'support/harness.dart';
 import 'support/kinds_world.dart';
 
@@ -50,7 +54,18 @@ void main() {
       expect(find.text(_l10n.topicDeckCards(2, 2)), findsOneWidget);
       expect(find.text(_l10n.topicCardsHeading(2, 2)), findsOneWidget);
       expect(find.text('casa'), findsOneWidget);
-      // A related topic above the level is listed, marked.
+      // A related topic above the level is listed, marked (the page builds
+      // its rows lazily, so scroll to the end first).
+      await tester.scrollUntilVisible(
+        find.text('Library words'),
+        200,
+        scrollable: find
+            .descendant(
+              of: find.byType(TopicPage),
+              matching: find.byType(Scrollable),
+            )
+            .first,
+      );
       expect(find.text('Library words'), findsOneWidget);
       expect(find.text(_l10n.topicAboveTitle.toUpperCase()), findsNothing);
     });
@@ -77,6 +92,64 @@ void main() {
       expect(find.text(_l10n.topicStartDrill), findsOneWidget);
     });
 
+    testWidgets('cannot be started with no skill chosen', (tester) async {
+      usePhone(tester);
+      await pumpScreen(tester, _page('zz-house'), state: state);
+      await tester.tap(find.text(_l10n.topicChoose));
+      await tester.pumpAndSettle();
+      FilledButton start() => tester.widget<FilledButton>(
+        find.ancestor(
+          of: find.text(_l10n.topicStartDrill),
+          matching: find.bySubtype<FilledButton>(),
+        ),
+      );
+      expect(start().onPressed, isNotNull);
+      for (final skill in <String>[
+        _l10n.topicSkillRead,
+        _l10n.topicSkillHear,
+      ]) {
+        await tester.tap(find.widgetWithText(FilterChip, skill));
+        await tester.pumpAndSettle();
+      }
+      expect(find.text(_l10n.topicChooseASkill), findsOneWidget);
+      expect(start().onPressed, isNull);
+    });
+
+    testWidgets('does not list a hidden deck the learner has not added', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final all = <String, String>{
+        ...kindsWorld(),
+        'decks/zz/zz-topics.yaml': kindsTopicsFile.replaceFirst(
+          'decks: ["zz-words"]',
+          'decks: ["zz-words", "zz-medicine-registro"]',
+        ),
+      };
+      final visible = <String, String>{
+        for (final e in all.entries)
+          if (!e.key.contains('medicine-registro')) e.key: e.value,
+      };
+      final phone = MemoryDownloadedDecks();
+      final downloads = DeckDownloads(
+        fetcher: FakeDeckRemote(all),
+        files: phone,
+        clock: () => DateTime(2026, 11, 12),
+      );
+      final world = await kindsWorldApp(
+        files: visible,
+        build: (files, settings) => AppState.test(
+          decks: DeckSources(<DeckSource>[MemoryDeckSource(files), phone]),
+          deckDownloads: downloads,
+          settings: settings,
+        ),
+      );
+      await tester.runAsync(downloads.refreshIndex);
+      await pumpScreen(tester, _page('zz-house'), state: world);
+      expect(find.text('House words'), findsWidgets);
+      expect(find.textContaining('medicine-registro'), findsNothing);
+    });
+
     testWidgets('lists a script topic\'s characters', (tester) async {
       usePhone(tester);
       await pumpScreen(tester, _page('zz-letters'), state: state);
@@ -95,14 +168,16 @@ void main() {
       usePhone(tester);
       await pumpScreen(tester, _page('zz-library'), state: state);
       expect(find.text(_l10n.topicAboveTitle.toUpperCase()), findsOneWidget);
-      expect(find.text(_l10n.topicAboveBody('B1', 'A1', 0)), findsOneWidget);
+      // Nothing of it can be drilled, so the notice names no limited drill.
+      expect(find.text(_l10n.topicAboveBodyNoLevel('B1')), findsOneWidget);
+      expect(find.textContaining('(0 here)'), findsNothing);
       expect(find.text(_l10n.searchAboveYourLevel('B1')), findsOneWidget);
       // No card of it is listed by its text; they are counted instead.
       expect(find.text('libro'), findsNothing);
       expect(find.text(_l10n.topicCardsAbove(3)), findsOneWidget);
       expect(find.text(_l10n.topicNothingToDrill), findsOneWidget);
       final drill = find.ancestor(
-        of: find.text(_l10n.topicDrillCountLimited(0)),
+        of: find.text(_l10n.topicDrillCount(0)),
         matching: find.bySubtype<FilledButton>(),
       );
       expect(tester.widget<FilledButton>(drill).onPressed, isNull);
@@ -148,6 +223,24 @@ void main() {
       await tester.tap(find.widgetWithText(ActionChip, 'House words'));
       await tester.pumpAndSettle();
       expect(find.byType(TopicPage), findsOneWidget);
+    });
+
+    testWidgets('mark a topic above your level for a screen reader', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final handle = tester.ensureSemantics();
+      await pumpScreen(
+        tester,
+        const UnitPage(deckId: 'zz-en-last'),
+        state: state,
+      );
+      // The chip merges its lock's label with the topic's name.
+      expect(
+        find.bySemanticsLabel(RegExp(_l10n.topicAboveYourLevelCue)),
+        findsWidgets,
+      );
+      handle.dispose();
     });
 
     testWidgets('are left out when the setting hides what is above', (

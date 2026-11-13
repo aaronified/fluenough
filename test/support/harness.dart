@@ -66,7 +66,11 @@ Future<AppState> pumpScreen(
   bool settle = true,
 }) async {
   final s = state ?? AppState.test();
-  await s.load();
+  // A state a test loaded outside the test body (a setUp) is not awaited
+  // again: awaiting a future the real zone finished from inside the test's
+  // fake-async zone leaves the next pump waiting for ever (the pump never
+  // returns and the test times out).
+  if (s.status == CatalogStatus.loading) await s.load();
   // A fresh tree: a test that draws more than one screen keeps no state of
   // the one before.
   await tester.pumpWidget(const SizedBox());

@@ -269,6 +269,20 @@ class IndexShelf {
   /// Whether the file is a core, which is never listed as a deck of its own.
   bool get isCore => file.core;
 
+  /// A shelf's level: absent is none; present but not a level fails closed as
+  /// [Level.c2] (never offered early).
+  static Level? _shelfLevel(Object? raw) {
+    if (raw == null) return null;
+    return Level.tryParse(raw) ?? Level.c2;
+  }
+
+  /// A shelf's `hidden`: absent is false; present but not true or false fails
+  /// closed as true (never listed openly).
+  static bool _shelfHidden(Object? raw) {
+    if (raw == null) return false;
+    return raw is bool ? raw : true;
+  }
+
   /// [json] as a shelf entry. Throws [FormatException] for one that is not
   /// (the caller costs the entry and logs it).
   static IndexShelf parse(
@@ -295,8 +309,8 @@ class IndexShelf {
     return IndexShelf(
       file: file,
       genre: genre,
-      level: Level.tryParse(json['level']),
-      hidden: json['hidden'] == true,
+      level: _shelfLevel(json['level']),
+      hidden: _shelfHidden(json['hidden']),
       professional: text('professional'),
       section: text('section'),
       weave: json['weave'] == true,

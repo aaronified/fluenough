@@ -6,7 +6,10 @@ about, never reproduced, with authored questions and legal links only."""
 from __future__ import annotations
 
 import unittest
+from pathlib import Path
+from unittest import mock
 
+import validate_decks
 from kinds_testlib import KindsCase, RECS
 
 BOOK = "zz-rec-cartas-de-prueba"
@@ -122,6 +125,28 @@ class Recommendations(KindsCase):
     def test_a_subdomain_of_a_pirate_host_is_refused(self) -> None:
         self.check(lambda d: rec(d)["legal"][0].__setitem__(
             "url", "https://cdn.libgen.is/book/123"), "is on the deny list")
+
+    def test_a_trailing_dot_host_is_refused(self) -> None:
+        self.check(lambda d: rec(d)["legal"][0].__setitem__(
+            "url", "https://libgen.is./book/123"), "is on the deny list")
+
+    def test_an_uppercase_host_is_refused(self) -> None:
+        self.check(lambda d: rec(d)["legal"][0].__setitem__(
+            "url", "https://CDN.LibGen.IS./book/123"), "is on the deny list")
+
+    def test_look_alike_hosts_are_allowed(self) -> None:
+        def change(d: dict) -> None:
+            rec(d)["legal"] = [{"kind": "store", "url": "https://notlibgen.is/x"},
+                               {"kind": "store", "url": "https://libgen.is.example.org/x"}]
+        self.edit(RECS, change)
+        self.assertEqual(self.errors(RECS), [])
+
+    def test_a_missing_deny_list_is_an_error(self) -> None:
+        with mock.patch.object(validate_decks, "PIRATE_HOSTS",
+                               Path("/nonexistent/pirate_hosts.txt")):
+            errs = "\n".join(self.errors(RECS))
+        self.assertIn("pirate_hosts.txt is missing or empty, the pirate-host deny "
+                      "list cannot run", errs)
 
     def test_stores_and_streams_are_allowed(self) -> None:
         def change(d: dict) -> None:

@@ -13,6 +13,17 @@ tags: ["unreviewed"]
 cards:
   - id: "zz-9201"
     target: "Hay algo que no se ve y todo lo ilumina."
+    bases:
+      - { word: "Hay", base: "haber" }
+      - { word: "algo", base: "algo" }
+      - { word: "que", base: "que" }
+      - { word: "no", base: "no" }
+      - { word: "se", base: "se" }
+      - { word: "ve", base: "ver" }
+      - { word: "y", base: "y" }
+      - { word: "todo", base: "todo" }
+      - { word: "lo", base: "lo" }
+      - { word: "ilumina", base: "iluminar" }
     pos: "phrase"
     level: "A2"
     modes: ["recognition", "listening"]
@@ -28,6 +39,14 @@ cards:
       rights_checked: "2026-11-12"
   - id: "zz-9202"
     target: "La luz llega primero a las ventanas."
+    bases:
+      - { word: "La", base: "el" }
+      - { word: "luz", base: "luz" }
+      - { word: "llega", base: "llegar" }
+      - { word: "primero", base: "primero" }
+      - { word: "a", base: "a" }
+      - { word: "las", base: "el" }
+      - { word: "ventanas", base: "ventana" }
     pos: "phrase"
     modes: ["recognition", "listening"]
     creator: "zz-ejemplo-poeta"
@@ -43,6 +62,12 @@ cards:
       rights_checked: "2026-11-12"
   - id: "zz-9203"
     target: "Cada puerta guarda un verano."
+    bases:
+      - { word: "Cada", base: "cada" }
+      - { word: "puerta", base: "puerta" }
+      - { word: "guarda", base: "guardar" }
+      - { word: "un", base: "uno" }
+      - { word: "verano", base: "verano" }
     pos: "phrase"
     modes: ["recognition"]
     creator: "zz-ejemplo-poeta"
