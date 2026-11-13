@@ -45,12 +45,17 @@ Future<void> _show(
   );
 }
 
-ItemResult _result(String kind, int rank, {String id = 'x'}) => ItemResult(
+ItemResult _result(
+  String kind,
+  int rank, {
+  String id = 'x',
+  List<String> fields = const <String>['te-form'],
+}) => ItemResult(
   row: ItemRow(
     type: SearchItemType.deck,
     id: '$kind-$id',
     kind: kind,
-    fields: <String>['te-form'],
+    fields: fields,
   ),
   rank: rank,
 );
@@ -120,7 +125,9 @@ void main() {
 
   group('a typo', () {
     test('is put right with the word the results have', () {
-      final results = <ItemResult>[_result('topics', 2)];
+      final results = <ItemResult>[
+        _result('topics', 2, fields: <String>['house', 'te-form']),
+      ];
       expect(correctedQuery('hose', results), 'house');
       expect(correctedQuery('house', results), isNull);
       expect(correctedQuery('zzzzzz', results), isNull);

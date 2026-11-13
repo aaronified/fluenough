@@ -1317,12 +1317,11 @@ class DeckDownloads extends ChangeNotifier {
   Future<Uint8List?> creatorImage(String path) {
     final kept = _creatorImages[path];
     if (kept != null) return Future<Uint8List?>.value(kept);
-    return _creatorImageJobs[path] ??= _loadCreatorImage(path)
-        .whenComplete(() {
-          // A block body: returning the removed job would make this wait on
-          // itself for ever.
-          _creatorImageJobs.remove(path);
-        });
+    return _creatorImageJobs[path] ??= _loadCreatorImage(path).whenComplete(() {
+      // A block body: returning the removed job would make this wait on
+      // itself for ever.
+      _creatorImageJobs.remove(path);
+    });
   }
 
   Future<Uint8List?> _loadCreatorImage(String path) async {
