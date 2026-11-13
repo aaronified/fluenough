@@ -213,6 +213,8 @@ a repository of world's languages. The tower of babel, is to rise
 again."). The other courses' decks (#420) and the new courses'
 paths are no longer left to contributors.
 
+**Deck work held until the code is done** (owner, 2026-11-13: "hold the deck work. first complete all the code work. everything that is listed for 0.10.0 along with the scaffold and private decks."): no deck agents run and nothing new starts (the Japanese stream, batch 2 PR #1160 stays open) until the 0.10.0-listed code issues, the deck-kinds scaffold issues (#1132, #1134, #1137, #1140, #1142, #1143, #1145) and private decks (#1017) are done. The owner resumes deck work.
+
 **Deck work paused for the placement rebuild** (owner, 2026-11-07: "Stop the deck work."): no deck agents run until the owner resumes deck work; open deck PRs (Malayalam #1062) stay drafts. Lifted: the pause ended when the placement fix shipped in 0.10.0, under "Deck order after the placement fix" below, and the owner's 2026-11-13 order puts private decks first (recorded 2026-11-13).
 
 **Deck priority** (owner, 2026-10-18). Decks are built in this order:
