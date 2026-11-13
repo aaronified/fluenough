@@ -7,9 +7,11 @@ import '../../app/situations.dart';
 import '../../core/models/situation.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/hint.dart';
 import '../../ui/widgets/incoming.dart';
 import '../situations/situation_page.dart';
 import '../situations/situation_visuals.dart';
+import '../situations/situations_editor.dart';
 
 /// The situation buttons on Today, under the streak (#724): one button
 /// for each of the six everyday moments, hailing a cab to the rail station,
@@ -34,9 +36,15 @@ class SituationsCard extends StatelessWidget {
     final state = AppScope.of(context);
     final language = state.situationsLanguage;
     final file = language == null ? null : state.situationsOf(language);
+    // Written sheets: those the learner picked, the first six. Unwritten:
+    // the six dimmed placeholders.
     final buttons = <_ButtonSpec>[
-      for (final key in situationIcons)
-        _spec(context, state, language, file?.withIcon(key), key),
+      if (file != null && language != null)
+        for (final sheet in state.cardSituations(language))
+          _spec(context, state, language, sheet, sheet.icon)
+      else
+        for (final key in situationIcons)
+          _spec(context, state, language, null, key),
     ];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -70,6 +78,13 @@ class SituationsCard extends StatelessWidget {
                   ),
                 ),
               ],
+              if (file != null && language != null)
+                LabelledIconButton(
+                  label: l10n.situationsEditLabel,
+                  hint: l10n.hintEdit,
+                  icon: const Icon(Icons.edit_outlined),
+                  onPressed: () => showSituationsEditor(context, language),
+                ),
             ],
           ),
         ),

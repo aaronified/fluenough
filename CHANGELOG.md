@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **Choose which situations Today shows.** A pencil at the top right of the Situations card opens a grid of every situation, where you tap to add or remove one, hold and drag to reorder, and the first six are the ones on the card, remembered for each language.
+- **A dot on languages with something to do.** A language in the language bar shows a small dot when it has a review due or a new card waiting, and the IPA's symbol is drawn as tall as the other languages' letters.
 - `tools/build_sample_pack.py`, `.github/workflows/release.yml`: the Release workflow attaches `fluenough-sample-decks.zip` to each release, one deck of every kind the fixtures cover plus the Spanish and Telugu sample course, linked from the Deck format and Courses and paths pages (#92).
 - `tools/transcribe.py`, `tools/test_transcribe.py`: the three no-hint fixes for readings made without a typed hint (#315): a word's last vowel is said after a cluster ending in r, y, v, n, ṇ, m or l (Hindi, Marathi, Gujarati: मित्र mitra), Bengali drops an inherent vowel inside a word as Hindi does (আপনার āpnār), and Bengali and Assamese sibilants follow the language's table (ś, x) except before a dental or a stop, where they are s. Readings made with a hint do not change.
 - `tools/prepare_release.py`, `tools/test_prepare_release.py`: the Release workflow refuses to prepare a release when an Unreleased line would show a bad bullet in the app's "What's new" sheet (a bullet that starts with neither a backtick nor a bold headline, or a repeated `### ` heading), before any file is written.
