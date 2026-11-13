@@ -14,6 +14,7 @@ import '../../core/grading/answer_grader.dart';
 import '../../core/grading/meaning_rules.dart' show meaningKey;
 import '../../core/grading/romanised.dart';
 import '../../core/grading/self_grade.dart';
+import '../../core/logs/log_entry.dart' show describeError;
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
@@ -1474,16 +1475,66 @@ class DrillSession extends ChangeNotifier {
   List<String>? _tiles;
 
   /// The current card's words to put in order, shuffled out of order where
-  /// they can be.
+  /// they can be, with its [extraTilesOf] mixed in (#348).
   List<String> get tiles => _tiles ??= _shuffledWords();
 
   List<String> _shuffledWords() {
     final words = _words;
-    final tiles = <String>[...words];
+    final tiles = <String>[...words, ...extraTilesOf(words)];
     for (var i = 0; i < 8 && listEquals(tiles, words); i++) {
       tiles.shuffle(_random);
     }
     return tiles;
+  }
+
+  /// The wrong tiles the card adds to its [answerWords] (#348): its
+  /// [Card.confusables], each written as a tile the way the answer's are
+  /// (lowercase; in Latin letters its reading while the words are put in
+  /// order in them; a confusable that names a card, that card's word). Never
+  /// one the answer needs, one that is not a single word or mark, one given
+  /// twice, nor one the card cannot show in the script it is put in order in
+  /// (a word written out has one spelling only). Empty where the card has
+  /// none, so the drill is as it was.
+  List<String> extraTilesOf(List<String> answer) {
+    final extras = <String>[];
+    try {
+      final card = item.card;
+      final script = deck.language.script;
+      final firstScript = writtenTarget == card.target;
+      for (final confusable in card.confusables) {
+        String? text;
+        final ref = confusable.ref;
+        if (ref != null) {
+          final other = _state.cardInCourseOf(card, ref);
+          if (other != null) {
+            text = rearrangesReading
+                ? other.reading
+                : other.targetIn(inputScript, firstScript: script);
+          }
+        } else if (rearrangesReading) {
+          text = confusable.kind == 'mark'
+              ? confusable.word
+              : confusable.reading;
+        } else if (firstScript) {
+          text = confusable.word;
+        }
+        final tile = text?.trim().toLowerCase();
+        if (tile == null ||
+            tile.isEmpty ||
+            tile.contains(RegExp(r'\s')) ||
+            answer.contains(tile) ||
+            extras.contains(tile)) {
+          continue;
+        }
+        extras.add(tile);
+      }
+    } on Object catch (error, stack) {
+      _state.log.error(
+        describeError('Extra tiles of ${item.card.id} left out', error, stack),
+      );
+      return const <String>[];
+    }
+    return extras;
   }
 
   final List<int> _placed = <int>[];
@@ -1512,16 +1563,19 @@ class DrillSession extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Checks the words placed, once every tile is: right, recorded 5, if
-  /// they read as the card's target or another it accepts, in Latin
-  /// letters its readings; else 1.
+  /// Whether the order can be checked: as many tiles are placed as the
+  /// answer has (#348). With extra tiles that is fewer than all of them, and
+  /// more can be placed, which can only be wrong.
+  bool get canCheck =>
+      ask == Ask.rearrange &&
+      _phase == DrillPhase.prompt &&
+      _placed.length >= answerWords.length;
+
+  /// Checks the words placed, once as many are as the answer has: right,
+  /// recorded 5, if they read as the card's target or another it accepts, in
+  /// Latin letters its readings, so with none of the extra tiles; else 1.
   void checkOrder() {
-    if (readOnly) return;
-    if (ask != Ask.rearrange ||
-        _phase != DrillPhase.prompt ||
-        _placed.length != tiles.length) {
-      return;
-    }
+    if (readOnly || !canCheck) return;
     final given = <String>[for (final i in _placed) tiles[i]].join(' ');
     final card = item.card;
     final accepted = rearrangesReading

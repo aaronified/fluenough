@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **Extra tiles in word order.** When a sentence has look-alike wrong words or marks, they now sit among its tiles, and an answer that uses one is not right.
 - **Good is now Okay.** The four self-rating buttons after a word you judge yourself read Again, Hard, Okay and Easy, and Okay records the same score Good did.
 - `tools/build_sample_pack.py`, `.github/workflows/release.yml`: the Release workflow attaches `fluenough-sample-decks.zip` to each release, one deck of every kind the fixtures cover plus the Spanish and Telugu sample course, linked from the Deck format and Courses and paths pages (#92).
 - `tools/transcribe.py`, `tools/test_transcribe.py`: the three no-hint fixes for readings made without a typed hint (#315): a word's last vowel is said after a cluster ending in r, y, v, n, ṇ, m or l (Hindi, Marathi, Gujarati: मित्र mitra), Bengali drops an inherent vowel inside a word as Hindi does (আপনার āpnār), and Bengali and Assamese sibilants follow the language's table (ś, x) except before a dental or a stop, where they are s. Readings made with a hint do not change.

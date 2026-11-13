@@ -136,9 +136,7 @@ class RearrangeDrill extends StatelessWidget {
       actions: <Widget>[
         if (answer == null)
           FilledButton(
-            onPressed: placed.length == tiles.length
-                ? session.checkOrder
-                : null,
+            onPressed: session.canCheck ? session.checkOrder : null,
             style: AppButtonStyles.tall(context),
             child: Text(l10n.drillCheck),
           ),
