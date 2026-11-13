@@ -6,6 +6,8 @@ Usage:
     python3 tools/validate_decks.py decks/es/es-en-core-100.yaml
 
     python3 tools/validate_decks.py --next-id bn
+    python3 tools/validate_decks.py --private my-package/   # a private language
+                                                            # package, folder or .fnzip
     python3 tools/validate_decks.py --jobs 1 decks/     # one process; the default
                                                         # is one worker per CPU
 
@@ -40,6 +42,11 @@ except ModuleNotFoundError:
     sys.exit("error: PyYAML is required.  pip install pyyaml")
 
 SCHEMA = 1
+# On while `--private` checks a private language package (tools/validate_private.py):
+# its ids are `fnpd-<code>-` rewritten as `<code>-`, so the checks that look
+# at the repository's own decks beside the file are left out.
+PRIVATE_MODE = False
+PRIVATE_ID_MARKER = "fnpd-"
 # Always used with fullmatch: `$` alone also matches before a trailing newline,
 # so `re.match` would accept an id ending in "\n".
 ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
@@ -2900,6 +2907,40 @@ def check_transliterated(r: Report, raw: object, *, fixed: str | None = None,
     walk(raw, [])
 
 
+def private_ids_in(raw: object) -> list[str]:
+    """The private ids (`fnpd-...`) a deck file writes: its own id, its cards'
+    ids, and the keys a layer gives translations under."""
+    found: list[str] = []
+    if not isinstance(raw, dict):
+        return found
+    deck_id = raw.get("id")
+    if isinstance(deck_id, str) and deck_id.startswith(PRIVATE_ID_MARKER):
+        found.append(deck_id)
+    cards = raw.get("cards")
+    if isinstance(cards, list):
+        for card in cards:
+            cid = card.get("id") if isinstance(card, dict) else None
+            if isinstance(cid, str) and cid.startswith(PRIVATE_ID_MARKER):
+                found.append(cid)
+    elif isinstance(cards, dict):
+        found.extend(k for k in cards
+                     if isinstance(k, str) and k.startswith(PRIVATE_ID_MARKER))
+    return found
+
+
+def check_not_private(r: Report, raw: dict) -> None:
+    """A private language package never goes under `decks/` (#1017): its ids
+    are the learner's own, and the repository's decks are shared. Refused
+    here, outside `--private`, so that the repository never holds one."""
+    if raw.get("format") == "fluenough-private":
+        r.error("format", "a private package's manifest is not a deck; a private "
+                          "package is checked with --private and never goes in decks/")
+    ids = private_ids_in(raw)
+    if ids:
+        r.error("id", f"{ids[0]!r} is a private id (fnpd-...), which is never allowed "
+                      f"in decks/; check a private package with --private")
+
+
 def validate(path: Path) -> Report:
     r = Report(path)
     try:
@@ -2914,6 +2955,11 @@ def validate(path: Path) -> Report:
     if not isinstance(raw, dict):
         r.error("root", "deck must be a YAML mapping")
         return r
+
+    if not PRIVATE_MODE:
+        check_not_private(r, raw)
+        if r.errors:
+            return r
 
     # Proposals are not deck content until applied (ADR-0038): taken out
     # before any other check, and checked on their own.
@@ -3731,7 +3777,8 @@ def _check_core_id(r: Report, raw: dict, path: Path, lang: str) -> None:
         r.error("id", f"{cid!r} ends in -script, which only a script guide's id does; "
                       f"give the core another name")
         return
-    dirs = _unique_dirs(path.parent, ROOT / "decks" / lang)
+    dirs = (_unique_dirs(path.parent) if PRIVATE_MODE
+            else _unique_dirs(path.parent, ROOT / "decks" / lang))
     seg = name.split("-")[0]
     if _reads_as_course(dirs, lang, seg):
         r.error("id", f"{cid!r} reads as a deck of the {lang}-{seg} course; a core's "
@@ -8625,6 +8672,12 @@ def main(argv: list[str]) -> int:
             return 2
         print(next_card_id(argv[2]))
         return 0
+    if len(argv) >= 2 and argv[1] == "--private":
+        # A private language package (#1017): checked on its own, never as
+        # part of decks/.
+        sys.modules.setdefault("validate_decks", sys.modules[__name__])
+        import validate_private
+        return validate_private.main(argv[2:])
     args = argv[1:]
     jobs: int | None = None
     for i, a in enumerate(args):
