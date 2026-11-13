@@ -188,8 +188,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#101](https://github.com/aaronified/fluenough/issues/101) Culture deck: local mythology and folklore
 - [#102](https://github.com/aaronified/fluenough/issues/102) Culture deck: cuisine
 - [#105](https://github.com/aaronified/fluenough/issues/105) Slang decks: add current (Gen Z) slang
-- [#105](https://github.com/aaronified/fluenough/issues/105) Slang decks: add current (Gen Z) slang
-- [#106](https://github.com/aaronified/fluenough/issues/106) Culture deck: love
 - [#106](https://github.com/aaronified/fluenough/issues/106) Culture deck: love
 - [#108](https://github.com/aaronified/fluenough/issues/108) Home-screen widget: cards due and the streak
 - [#110](https://github.com/aaronified/fluenough/issues/110) Dialogue decks: short role-plays, one side each
@@ -339,6 +337,9 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1196](https://github.com/aaronified/fluenough/issues/1196) Language: Afrikaans: full deck format
 - [#1197](https://github.com/aaronified/fluenough/issues/1197) Language: Dutch: full deck format
 - [#1198](https://github.com/aaronified/fluenough/issues/1198) Language: Ukrainian: full deck format
+- [#1199](https://github.com/aaronified/fluenough/issues/1199) Language: Indonesian: full deck format
+- [#1200](https://github.com/aaronified/fluenough/issues/1200) Language: Persian: full deck format
+- [#1201](https://github.com/aaronified/fluenough/issues/1201) Language: Pashto: full deck format
 
 ## Plans
 
