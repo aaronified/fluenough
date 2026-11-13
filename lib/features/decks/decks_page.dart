@@ -71,6 +71,10 @@ class _DecksPageState extends State<DecksPage> {
   /// The bar with its menu and offers above the results: the scrim covers
   /// what is under it, and a tap there closes the search.
   final GlobalKey _header = GlobalKey();
+
+  /// The start hints under the menu: not part of what a tap must spare, a tap
+  /// below the bar and its menu closes the search, as before the hints.
+  final GlobalKey _hints = GlobalKey();
   final FocusNode _focus = FocusNode();
 
   /// The token chips the bar holds (#527): typed as `kind:grammar ` or
@@ -281,7 +285,9 @@ class _DecksPageState extends State<DecksPage> {
   void _tapScrim(Offset position) {
     final box = _header.currentContext?.findRenderObject();
     if (box is! RenderBox || !box.attached) return;
-    final bottom = box.localToGlobal(Offset(0, box.size.height)).dy;
+    var bottom = box.localToGlobal(Offset(0, box.size.height)).dy;
+    final hints = _hints.currentContext?.findRenderObject();
+    if (hints is RenderBox && hints.attached) bottom -= hints.size.height;
     if (position.dy >= bottom) _close();
   }
 
@@ -605,7 +611,7 @@ class _DecksPageState extends State<DecksPage> {
                               _focus.hasFocus &&
                               _chips.isEmpty &&
                               _search.text.trim().isEmpty)
-                            SearchStartHints(onSearch: _setText),
+                            SearchStartHints(key: _hints, onSearch: _setText),
                           if (outcome != null) ...<Widget>[
                             if (outcome.foreign case final script?)
                               ScriptOffers(
