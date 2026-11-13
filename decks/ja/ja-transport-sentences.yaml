@@ -64,3 +64,79 @@ cards:
     confusables:
       - { id: "w1", word: "じてんしゃ", reading: "jitensha", kind: "word" }
       - { id: "w2", word: "バス", reading: "basu", kind: "word" }
+  - id: "ja-4163"
+    target: "でんしゃでえきにいきます。"
+    words: ["でんしゃ", "で", "えき", "に", "いきます"]
+    reading: "densha de eki ni ikimasu."
+    ipa: "deɴɕa de eki ni ikimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "いきます", base: "いく", reading: "iku" }
+    confusables:
+      - id: "w1"
+        word: "くるま"
+        reading: "kuruma"
+        kind: "word"
+      - id: "w2"
+        word: "きっぷ"
+        reading: "kippu"
+        kind: "word"
+  - id: "ja-4164"
+    target: "くるまはたかいです。"
+    words: ["くるま", "は", "たかい", "です"]
+    reading: "kuruma wa takai desu."
+    ipa: "kɯɾɯma wa takai desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "たかい", base: "たかい", reading: "takai" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "でんしゃ"
+        reading: "densha"
+        kind: "word"
+      - id: "w2"
+        word: "えき"
+        reading: "eki"
+        kind: "word"
+  - id: "ja-4165"
+    target: "きっぷうりばはどこですか。"
+    words: ["きっぷうりば", "は", "どこ", "です", "か"]
+    reading: "kippuuriba wa doko desu ka."
+    ipa: "kippɯːɾiba wa doko desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - id: "w1"
+        word: "えき"
+        reading: "eki"
+        kind: "word"
+      - id: "w2"
+        word: "のりば"
+        reading: "noriba"
+        kind: "word"
+  - id: "ja-4166"
+    target: "のりばをおしえてください。"
+    words: ["のりば", "を", "おしえて", "ください"]
+    reading: "noriba o oshiete kudasai."
+    ipa: "noɾiba o oɕiete kɯdasai"
+    pos: "phrase"
+    bases:
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "おしえて", base: "おしえる", reading: "oshieru" }
+      - { word: "ください", base: "ください", reading: "kudasai" }
+    confusables:
+      - id: "w1"
+        word: "きっぷ"
+        reading: "kippu"
+        kind: "word"
+      - id: "w2"
+        word: "えき"
+        reading: "eki"
+        kind: "word"

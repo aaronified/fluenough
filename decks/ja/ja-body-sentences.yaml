@@ -81,3 +81,78 @@ cards:
         word: "ゆび"
         reading: "yubi"
         kind: "word"
+  - id: "ja-4127"
+    target: "わたしのあたまはいたいです。"
+    words: ["わたし", "の", "あたま", "は", "いたい", "です"]
+    reading: "watashi no atama wa itai desu."
+    ipa: "wataɕi no atama wa itai desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "いたい", base: "いたい", reading: "itai" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "かお"
+        reading: "kao"
+        kind: "word"
+      - id: "w2"
+        word: "せなか"
+        reading: "senaka"
+        kind: "word"
+  - id: "ja-4128"
+    target: "せなかがかゆいです。"
+    words: ["せなか", "が", "かゆい", "です"]
+    reading: "senaka ga kayui desu."
+    ipa: "senaka ga kajɯi desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "かゆい", base: "かゆい", reading: "kayui" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "はな"
+        reading: "hana"
+        kind: "word"
+      - id: "w2"
+        word: "かお"
+        reading: "kao"
+        kind: "word"
+  - id: "ja-4129"
+    target: "くすりをのみました。"
+    words: ["くすり", "を", "のみました"]
+    reading: "kusuri o nomimashita."
+    ipa: "kɯsɯɾi o nomimaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "のみました", base: "のむ", reading: "nomu" }
+    confusables:
+      - id: "w1"
+        word: "ごはん"
+        reading: "gohan"
+        kind: "word"
+      - id: "w2"
+        word: "みず"
+        reading: "mizu"
+        kind: "word"
+  - id: "ja-4130"
+    target: "ねつがあります。"
+    words: ["ねつ", "が", "あります"]
+    reading: "netsu ga arimasu."
+    ipa: "netsɯ ga aɾimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "あります", base: "ある", reading: "aru" }
+    confusables:
+      - id: "w1"
+        word: "はな"
+        reading: "hana"
+        kind: "word"
+      - id: "w2"
+        word: "かお"
+        reading: "kao"
+        kind: "word"

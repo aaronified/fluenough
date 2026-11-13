@@ -81,3 +81,78 @@ cards:
         word: "れいぞうこ"
         reading: "reizouko"
         kind: "word"
+  - id: "ja-4147"
+    target: "まどはおおきいです。"
+    words: ["まど", "は", "おおきい", "です"]
+    reading: "mado wa ookii desu."
+    ipa: "mado wa oːkiː desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "おおきい", base: "おおきい", reading: "ookii" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "かべ"
+        reading: "kabe"
+        kind: "word"
+      - id: "w2"
+        word: "たな"
+        reading: "tana"
+        kind: "word"
+  - id: "ja-4148"
+    target: "かべにまどがあります。"
+    words: ["かべ", "に", "まど", "が", "あります"]
+    reading: "kabe ni mado ga arimasu."
+    ipa: "kabe ni mado ga aɾimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "あります", base: "ある", reading: "aru" }
+    confusables:
+      - id: "w1"
+        word: "へや"
+        reading: "heya"
+        kind: "word"
+      - id: "w2"
+        word: "ほん"
+        reading: "hon"
+        kind: "word"
+  - id: "ja-4149"
+    target: "ほんはへやにあります。"
+    words: ["ほん", "は", "へや", "に", "あります"]
+    reading: "hon wa heya ni arimasu."
+    ipa: "hoɴ wa heja ni aɾimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "あります", base: "ある", reading: "aru" }
+    confusables:
+      - id: "w1"
+        word: "たな"
+        reading: "tana"
+        kind: "word"
+      - id: "w2"
+        word: "まど"
+        reading: "mado"
+        kind: "word"
+  - id: "ja-4150"
+    target: "せんたくをします。"
+    words: ["せんたく", "を", "します"]
+    reading: "sentaku o shimasu."
+    ipa: "seɴtakɯ o ɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "します", base: "する", reading: "suru" }
+    confusables:
+      - id: "w1"
+        word: "へや"
+        reading: "heya"
+        kind: "word"
+      - id: "w2"
+        word: "まど"
+        reading: "mado"
+        kind: "word"

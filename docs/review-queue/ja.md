@@ -212,3 +212,13 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-0823 | ja-katakana (ゴ) | Two examples are near-identical ("…いれてください" and "…いれます"): should one go? | Haiku builder | 2026-11-07 |
 | ja-0804 | ja-katakana (ミ) | Two examples share a shape (しげんごみはゴミぶくろにいれます / しんぷがミサをします): check that both show ミ as the card's own letter. | Haiku builder | 2026-11-07 |
 | ja-0777 / ja-0828 | ja-katakana (オ, ゾ) | The sentence "オゾンのそうがうすくなりました。" is an example of both オ and ゾ: fine if both show their letter; a reviewer should confirm. | Haiku builder | 2026-11-07 |
+| ja-grammar-counters | ja-grammar-counters | Counters chosen by the builder (つ, にん, こ, ほん, まい, ひき, さつ, だい, かい, はい, さい, ふん): is this the right everyday set for A1 and A2, and is anything missing (e.g. 本 vs 冊 for magazines)? | Sonnet builder | 2026-11-12 |
+| ja-grammar-counters | ja-grammar-counters | Ten before a k, s, t or p counter: じゅっ (jup, as in じゅっぽん) is shown first and じっ (jip, as in じっぽん) accepted. Is that the right order today? | Sonnet builder | 2026-11-12 |
+| ja-grammar-counters | ja-grammar-counters | かい is taught as times, with floors only in the notes (さんがい is three floors): is a separate floor row wanted? | Sonnet builder | 2026-11-12 |
+| ja-grammar-counters | ja-grammar-counters-sentences | Are みずをさんぼんください, ぱんをひとつください and きってをごまいください natural ways to order or ask? | Sonnet builder | 2026-11-12 |
+| ja-1542 | ja-grammar-te-form | きる here is 着る (ichidan, きて), not 切る (godan, きって): the row gives きて. Please confirm the card's meaning matches this reading. | Sonnet builder | 2026-11-12 |
+| ja-2605 | ja-grammar-te-form | しめきる is treated as godan (締め切る, しめきって): please confirm. | Sonnet builder | 2026-11-12 |
+| ja-2116 | ja-grammar-te-form | こする is treated as godan (擦る, こすって), not the irregular する: please confirm. | Sonnet builder | 2026-11-12 |
+| ja-2773 | ja-grammar-te-form | あせる (to be impatient) is treated as godan (焦る, あせって), not ichidan: please confirm. | Sonnet builder | 2026-11-12 |
+| ja-1998 | ja-grammar-te-form | ける (to kick) is treated as godan (蹴る, けって): please confirm. | Sonnet builder | 2026-11-12 |
+| unit-level | ja-grammar-te-form | Are the sentences in ja-grammar-te-form-sentences natural Japanese, e.g. ごはんをたべて、がっこうへいきます? | Sonnet builder | 2026-11-12 |

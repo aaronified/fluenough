@@ -78,9 +78,11 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install pyyaml
-      # The app bundles main's decks/themes.yaml; it is edited on main only
-      # (owner, 2026-11-06), so decks-live's copy must be identical.
-      - name: decks/themes.yaml matches main's
+      # decks/themes.yaml is deck-owned data (owner, 2026-11-11): edited here,
+      # and downloaded by the apps with the decks. Main's copy is the app's
+      # bundled fallback, so it may be behind this one, but it must never list
+      # a theme this one lacks (ids are permanent).
+      - name: decks/themes.yaml keeps every theme of main's bundled copy
         run: |
           git fetch --no-tags --depth=1 origin +main:refs/sync/main
           git show refs/sync/main:tools/check_themes_in_sync.py > "$RUNNER_TEMP/check_themes_in_sync.py"
@@ -157,7 +159,7 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
-      - run: pip install pyyaml pytest pytest-xdist fonttools
+      - run: pip install pyyaml pytest pytest-xdist fonttools numpy
       - run: >-
           python3 -m pytest -n auto -q -p no:cacheprovider --rootdir tools tools
           --deselect test_validate_b1.py::Compatibility::test_todays_decks_get_no_info_and_no_b1_message
@@ -176,7 +178,7 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
-      - run: pip install pyyaml pytest pytest-xdist fonttools
+      - run: pip install pyyaml pytest pytest-xdist fonttools numpy
       # Three tests, three workers.
       - run: >-
           python3 -m pytest -n 3 -q -p no:cacheprovider --rootdir tools
@@ -195,7 +197,7 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
-      - run: pip install pyyaml pytest pytest-xdist fonttools
+      - run: pip install pyyaml pytest pytest-xdist fonttools numpy
       - uses: actions/download-artifact@v8
         with:
           name: validate-output
