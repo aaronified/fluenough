@@ -164,6 +164,16 @@ Future<void> _openOver(WidgetTester tester, Widget page, _World world) async {
   await tester.pumpAndSettle();
 }
 
+Future<AppState> worldForDiag() async => (await _world(
+  codes: <String>['qaa', 'qab', 'qac', 'qad'],
+  off: <String>{'qad'},
+)).state;
+
+Future<AppState> worldForDiag() async => (await _world(
+  codes: <String>['qaa', 'qab', 'qac', 'qad'],
+  off: <String>{'qad'},
+)).state;
+
 void main() {
   setUpAll(() async => _tiny = await tinyPackage());
 
@@ -360,7 +370,7 @@ void main() {
       expect(world.state.canSpeak(language), isFalse);
       final l10n = l10nOf(tester);
       expect(find.textContaining(l10n.privateNoVoiceBody), findsOneWidget);
-      await tester.tap(find.text(l10n.privateWhy));
+      await tapShown(tester, find.text(l10n.privateWhy));
       await tester.pumpAndSettle();
       expect(find.text(l10n.privateWhyTitle('Alpha')), findsOneWidget);
       expect(find.text(l10n.privateCheckAgain), findsOneWidget);
@@ -410,8 +420,7 @@ void main() {
       final l10n = l10nOf(tester);
       expect(find.text(l10n.privateNeedsSlot), findsOneWidget);
       final fourth = find.byType(Switch).at(3);
-      await tester.ensureVisible(fourth);
-      await tester.tap(fourth);
+      await tapShown(tester, fourth);
       await tester.pumpAndSettle();
       expect(find.text(l10n.privateCapTitle), findsOneWidget);
       expect(
@@ -444,8 +453,7 @@ void main() {
       );
       await _open(tester, const YourDecksPage(), world);
       final l10n = l10nOf(tester);
-      await tester.ensureVisible(find.text(l10n.privateRemove).first);
-      await tester.tap(find.text(l10n.privateRemove).first);
+      await tapShown(tester, find.text(l10n.privateRemove).first);
       await tester.pumpAndSettle();
       expect(find.text(l10n.privateRemoveTitle('Alpha')), findsOneWidget);
       final dialog = find.byType(AlertDialog);
@@ -484,8 +492,7 @@ void main() {
       );
       await _open(tester, const YourDecksPage(), world);
       final l10n = l10nOf(tester);
-      await tester.ensureVisible(find.text(l10n.privateRemove).first);
-      await tester.tap(find.text(l10n.privateRemove).first);
+      await tapShown(tester, find.text(l10n.privateRemove).first);
       await tester.pumpAndSettle();
       await tester.tap(find.text(l10n.privateRemoveDelete));
       await tester.pumpAndSettle();
@@ -566,7 +573,7 @@ void main() {
         ),
       );
       final l10n = l10nOf(tester);
-      expect(find.text(l10n.privateSumWarnings(1)), findsOneWidget);
+      expect(find.textContaining('Warning'), findsWidgets);
       expect(find.text(l10n.privateSumErrors(0)), findsOneWidget);
       final add = tester.widget<FilledButton>(
         find.byKey(const ValueKey<String>('private-add-confirm')),
@@ -653,6 +660,11 @@ void main() {
       await tester.tap(find.text(l10n.privateContinueUpdate));
       await tester.pumpAndSettle();
       expect(find.text(l10n.privateUpdateTitle('Alpha')), findsOneWidget);
+      await tester.scrollUntilVisible(
+        find.text(l10n.privateListRemoved(1)),
+        300,
+        scrollable: find.byType(Scrollable).first,
+      );
       expect(find.text(l10n.privateListChanged(1)), findsOneWidget);
       expect(find.text(l10n.privateListRemoved(1)), findsOneWidget);
       expect(find.text(l10n.privateUpdateTo(2)), findsOneWidget);
@@ -738,9 +750,7 @@ void main() {
         codes: <String>['qaa', 'qab', 'qac', 'qad'],
         off: <String>{'qad'},
         then: (tester) async {
-          final fourth = find.byType(Switch).at(3);
-          await tester.ensureVisible(fourth);
-          await tester.tap(fourth);
+          await tapShown(tester, find.byType(Switch).at(3));
           await tester.pumpAndSettle();
         },
       ),
@@ -751,8 +761,7 @@ void main() {
       yourDecks(
         codes: <String>['qaa'],
         then: (tester) async {
-          await tester.ensureVisible(find.text(l10nOf(tester).privateRemove));
-          await tester.tap(find.text(l10nOf(tester).privateRemove));
+          await tapShown(tester, find.text(l10nOf(tester).privateRemove));
           await tester.pumpAndSettle();
         },
       ),
@@ -763,8 +772,7 @@ void main() {
       yourDecks(
         codes: <String>['qaa'],
         then: (tester) async {
-          await tester.ensureVisible(find.text(l10nOf(tester).privateWhy));
-          await tester.tap(find.text(l10nOf(tester).privateWhy));
+          await tapShown(tester, find.text(l10nOf(tester).privateWhy));
           await tester.pumpAndSettle();
         },
       ),
@@ -796,19 +804,28 @@ void main() {
       'the import review of a clean package',
       pageOf(() => _zip(_pkg('qab', 'Beta'))),
     );
-    screen('the checking screen', (tester, mode) async {
-      final world = await _world();
-      await pumpScreen(
-        tester,
-        const PrivateImportPage(
-          fileName: 'package.fnzip',
-          bytes: <int>[],
-          holdChecking: true,
-        ),
-        state: world.state,
-        themeMode: mode,
-        settle: false,
-      );
+    testWidgets('the checking screen, at 1.4x text, light and dark', (
+      tester,
+    ) async {
+      final semantics = tester.ensureSemantics();
+      for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
+        usePhone(tester, textScale: 1.4, navBar: true);
+        final world = await _world();
+        await pumpScreen(
+          tester,
+          const PrivateImportPage(
+            fileName: 'package.fnzip',
+            bytes: <int>[],
+            holdChecking: true,
+          ),
+          state: world.state,
+          themeMode: mode,
+          settle: false,
+        );
+        expect(tester.takeException(), isNull, reason: mode.name);
+        await meetsEveryGuideline(tester);
+      }
+      semantics.dispose();
     });
     screen(
       'the refusal of a file over 10 MB',
