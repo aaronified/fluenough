@@ -5,8 +5,10 @@ import '../../core/grading/self_grade.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 
-/// Recognition's four self-rating buttons: Again, Hard, Good, Easy, each
-/// with when the card would next be due.
+/// The one shared self-rating row: Again, Hard, Okay, Easy, each with when
+/// the card would next be due. Recognition, the only question type the
+/// learner judges for themselves, uses it (owner, 2026-11-13: "one shared
+/// Again / Hard / Okay / Easy rater"). The Okay button is `SelfGrade.good`.
 ///
 /// One connected row, 64 tall and 4 apart, round (28) at the group's outer
 /// ends and 10 inside, at every text size (owner, 2026-10-29: "four buttons

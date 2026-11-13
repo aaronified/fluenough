@@ -3,7 +3,7 @@
 /// Recognition is self-assessed (see `DrillMode.isMachineGraded`): the app
 /// shows the meaning and the learner rates their own recall. Four gradations,
 /// mapped onto the same 0–5 ladder that `AnswerOutcome.toGrade` uses for
-/// machine-graded answers, so that a self-rated "Good" and a typed answer with
+/// machine-graded answers, so that a self-rated "Okay" (the button for [good]) and a typed answer with
 /// a missing accent schedule the card the same way. FSRS reads [easy]'s 5 as
 /// Easy, and an exact typed answer's 5 as Good (ADR-0033):
 ///
