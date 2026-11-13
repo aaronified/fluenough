@@ -285,7 +285,7 @@ void main() {
       const layer =
           'schema: 1\nid: "te-en-home"\nkind: "layer"\ncore: "te-home"\n'
           'native: { code: "en", iso639_3: "eng", name: "English" }\n'
-          'name: "Home"\ncards:\n'
+          'name: "Home"\nlicense: "CC-BY-SA-4.0"\ncards:\n'
           '  "te-0001":\n    native: "house"\n    notes: &n\n      n1: "a"\n'
           '  "te-0002":\n    native: "door"\n    notes: *n\n'
           '  "te-0003":\n    native: "roof"\n';
@@ -563,11 +563,8 @@ void main() {
       await _install(phone.store, _tiny);
       await pumpScreen(tester, const YourDecksPage(), state: phone.state);
       final l10n = l10nOf(tester);
-      await tester.scrollUntilVisible(
-        find.text(l10n.privateExport),
-        300,
-        scrollable: find.byType(Scrollable).first,
-      );
+      await tester.ensureVisible(find.text(l10n.privateExport));
+      await tester.pumpAndSettle();
       await tester.tap(find.text(l10n.privateExport));
       await tester.pumpAndSettle();
       final saved = phone.files.saved.single;
@@ -589,11 +586,8 @@ void main() {
       await _install(phone.store, _tiny);
       await pumpScreen(tester, const YourDecksPage(), state: phone.state);
       final l10n = l10nOf(tester);
-      await tester.scrollUntilVisible(
-        find.text(l10n.privateExport),
-        300,
-        scrollable: find.byType(Scrollable).first,
-      );
+      await tester.ensureVisible(find.text(l10n.privateExport));
+      await tester.pumpAndSettle();
       await tester.tap(find.text(l10n.privateExport));
       await tester.pumpAndSettle();
       expect(find.text(l10n.privateExportFailed), findsNothing);
@@ -726,8 +720,10 @@ void main() {
       await pumpScreen(tester, const SizedBox(), state: phone.state);
       await pumpScreen(
         tester,
-        SingleChildScrollView(
-          child: CourseCard(view: await view(phone.state), glyph: 'T'),
+        Scaffold(
+          body: SingleChildScrollView(
+            child: CourseCard(view: await view(phone.state), glyph: 'T'),
+          ),
         ),
         state: phone.state,
       );
@@ -743,8 +739,10 @@ void main() {
       await pumpScreen(tester, const SizedBox(), state: phone.state);
       await pumpScreen(
         tester,
-        SingleChildScrollView(
-          child: CourseCard(view: await view(phone.state), glyph: 'T'),
+        Scaffold(
+          body: SingleChildScrollView(
+            child: CourseCard(view: await view(phone.state), glyph: 'T'),
+          ),
         ),
         state: phone.state,
       );
