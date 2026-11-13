@@ -81,6 +81,14 @@ class _SpeechOnlineCardState extends State<SpeechOnlineCard> {
   @override
   Widget build(BuildContext context) {
     final state = AppScope.of(context);
+    // Allowing it online, or the alert's record, is a setting.
+    return ListenableBuilder(
+      listenable: state.settings,
+      builder: (context, _) => _content(context, state),
+    );
+  }
+
+  Widget _content(BuildContext context, AppState state) {
     final language = state.speechOnlineOnlyShown;
     if (language == null) return const SizedBox.shrink();
     _maybeAlert(language);

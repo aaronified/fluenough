@@ -4,6 +4,7 @@
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/app/shell_tab.dart';
 import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/speech/speech_engine.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
@@ -192,12 +193,10 @@ void main() {
     a11y.screen('the line under the cards', (tester, mode) async {
       final state = await _state();
       addTearDown(state.dispose);
-      await pumpScreen(
-        tester,
-        const TodayPage(),
-        state: state,
-        themeMode: mode,
-      );
+      state.settings.themeMode = mode;
+      await pumpApp(tester, state: state);
+      state.shellTab.value = ShellTab.today;
+      await tester.pumpAndSettle();
       await tester.tap(find.text(l10nOf(tester).speechOnlineNotNow));
       await tester.pumpAndSettle();
       expect(_line(), findsOneWidget);
