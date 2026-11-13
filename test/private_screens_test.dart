@@ -20,7 +20,6 @@ import 'package:fluenough/app/private_languages.dart';
 import 'package:fluenough/app/private_store.dart';
 import 'package:fluenough/core/backup/zip_files.dart';
 import 'package:fluenough/core/data/database.dart';
-import 'package:fluenough/core/data/review_erasure.dart';
 import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/core/decks/language_directory.dart';
 import 'package:fluenough/core/models/deck.dart';
@@ -204,11 +203,11 @@ void main() {
       'a built-in language a package changes keeps its place and family',
       () {
         final base = _builtIn.firstWhere((l) => l.code == 'te');
-        final changed = PrivateManifest(
+        final changed = const PrivateManifest(
           package: 'fnpd-te',
           revision: 1,
           kind: PrivateKind.modifiedLanguage,
-          language: const LanguageInfo(
+          language: LanguageInfo(
             code: 'te',
             iso639_3: 'tel',
             name: 'Telugu, short path',
@@ -699,9 +698,9 @@ void main() {
       );
       await pumpScreen(
         tester,
-        Scaffold(
-          body: Column(
-            children: const <Widget>[
+        const Scaffold(
+          body: const Column(
+            children: <Widget>[
               PrivateModifiedTag(language: 'te'),
               PrivateModifiedTag(language: 'hi'),
             ],

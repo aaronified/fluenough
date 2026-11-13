@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/routes.dart';
-import '../../core/data/spoken_languages.dart';
 import '../../core/review/review_pairs.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';

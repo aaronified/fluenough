@@ -6,6 +6,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ## Released
 
+- **v0.10.0**
 - **models**
 - **v0.9.5**
 - **v0.9.4**
@@ -183,6 +184,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1143](https://github.com/aaronified/fluenough/issues/1143) English Braille as a script of English, not a separate course (the IPA stays separate)
 - [#1145](https://github.com/aaronified/fluenough/issues/1145) Situations screen: the learner chooses which situations to show; new situations teach only widely used words and phrases
 - [#1146](https://github.com/aaronified/fluenough/issues/1146) Japanese: about 1000 kanji by B1 (deferred)
+- [#1158](https://github.com/aaronified/fluenough/issues/1158) Offline speech recognisers for every priority language (Indic, European, East Asian)
 - [#25](https://github.com/aaronified/fluenough/issues/25) F-Droid metadata and submission
 - [#26](https://github.com/aaronified/fluenough/issues/26) Accessibility: a TalkBack pass on a phone
 - [#30](https://github.com/aaronified/fluenough/issues/30) Script decks: document their conventions; positional forms for Arabic-script languages
@@ -337,6 +339,7 @@ A plan with no tracking issue is flagged.
 - [hands-free audio drills](https://github.com/aaronified/fluenough/wiki/Plan-Audio-Drills) (Written 2026-10-05), tracks #224
 - [a B1 plan in every path](https://github.com/aaronified/fluenough/wiki/Plan-B1-Plans) (Written 2026-10-06), tracks #209
 - [books, films and songs you bring, with questions on them](https://github.com/aaronified/fluenough/wiki/Plan-Books-Films-Songs) (Written 2026-10-06), tracks #215
+- [Japanese culture decks, sourcing list (batch 1)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Japanese), **no tracking issue**
 - [reviewing decks in the app, sent by mail](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Browser) (Written 2026-10-06), tracks #403
 - [deck kinds, levels, hidden decks, sources, creators, recommendations, topics and search kinds as data](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Kinds-And-Topics), **no tracking issue**
 - [deck-owned data on decks-live](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Owned-Data), **no tracking issue**
@@ -351,6 +354,7 @@ A plan with no tracking issue is flagged.
 - [the IPA course revamp, and a phonology deck for every language](https://github.com/aaronified/fluenough/wiki/Plan-Ipa-Revamp-And-Language-Phonology) (Written 2026-10-26), **no tracking issue**
 - [a deck that teaches ISO 15919, in each language](https://github.com/aaronified/fluenough/wiki/Plan-Iso-15919-Deck), tracks #229
 - [Japanese B1 word lists](https://github.com/aaronified/fluenough/wiki/Plan-Japanese-B1-Wordlists) (Written 2026-11-06 (Sonnet, for the owner)), **no tracking issue**
+- [language completeness, everything the app plans for a language, in full](https://github.com/aaronified/fluenough/wiki/Plan-Language-Completeness), **no tracking issue**
 - [language paths, pacing by difficulty, and every language in the scheme](https://github.com/aaronified/fluenough/wiki/Plan-Language-Paths) (Written 2026-10-05), tracks #216
 - [Language Learning Paths (English Base, 30 min/day)](https://github.com/aaronified/fluenough/wiki/Plan-Language-Paths-Scheme), **no tracking issue**
 - [a look for each language (colour, icon, background image)](https://github.com/aaronified/fluenough/wiki/Plan-Language-Themes) (Written 2026-10-10; owner's answers recorded 2026-10-11), **no tracking issue**

@@ -809,7 +809,7 @@ class HiddenLanguages(unittest.TestCase):
 
     def test_every_language_with_decks_is_shipped_or_hidden(self) -> None:
         dirs = {p.name for p in (REPO / "decks").iterdir()
-                if p.is_dir() and p.name != "fonts"}
+                if p.is_dir() and p.name not in ("fonts", "creators", "recommendations")}
         self.assertEqual(dirs - self.SHIPPED - self.hidden, set())
 
 
