@@ -13,7 +13,7 @@ const String privateDeckPrefix = 'private/';
 
 /// The file of a package that says what it is. Read with [DeckSource.read],
 /// never listed with the deck files.
-const String privateManifestName = 'manifest.yaml';
+const String privateManifestName = privateManifestFile;
 
 /// The private language packages a learner installed (#1017), kept apart
 /// from the bundled and added decks. As a [DeckSource] it lists and reads the
@@ -30,20 +30,47 @@ abstract interface class PrivateStore implements DeckSource {
   /// package, in one step: the files are written aside, then put in place,
   /// then the index is written. A failure leaves what was installed before
   /// as it was. Replaces any earlier install of [id] and keeps its
-  /// active flag. True when it installed.
-  Future<bool> install(
+  /// active flag, unless [active] says otherwise; a package not installed
+  /// before is active.
+  ///
+  /// At most [maxActivePrivatePackages] are active: installing a package
+  /// that would be the fourth returns [PrivateInstall.needsDeactivation] and
+  /// writes nothing (the learner deactivates one, or installs it with
+  /// `active: false`). [retired] replaces the package's retired ids (an
+  /// update that drops a card id records it); null keeps the earlier ones.
+  Future<PrivateInstall> install(
     String id,
     Map<String, String> files, {
     required int revision,
     required String kind,
+    bool? active,
+    List<String>? retired,
   });
 
-  /// Marks [id] active or not. True when it did.
-  Future<bool> setActive(String id, {required bool active});
+  /// Makes [id] active, unless [maxActivePrivatePackages] others already are:
+  /// then [PrivateActivation.needsDeactivation], and nothing changes.
+  Future<PrivateActivation> activate(String id);
+
+  /// Makes [id] inactive: its files stay, the catalog stops reading it. True
+  /// when it did (also when it was inactive already).
+  Future<bool> deactivate(String id);
+
+  /// Every file of the installed package [id], active or not, keyed by path
+  /// in the package with the manifest included; null when it is not
+  /// installed or cannot be read. For an update to compare with.
+  Future<Map<String, String>?> readPackage(String id);
 
   /// Deletes the package [id]. Review history stays. True when it did.
   Future<bool> remove(String id);
 }
+
+List<String> _sorted(Iterable<String> ids) =>
+    (<String>{...ids}.toList())..sort();
+
+/// Whether the package [id], once installed or activated, would be one more
+/// than [maxActivePrivatePackages] active, given the [all] installed.
+bool _overCap(List<PrivatePackage> all, String id) =>
+    all.where((p) => p.id != id && p.active).length >= maxActivePrivatePackages;
 
 /// The paths of the files a catalog reads from [files] of the package [id]:
 /// its YAML files but not the manifest, under [privateDeckPrefix].
@@ -191,18 +218,20 @@ class FilePrivateStore implements PrivateStore {
   }
 
   @override
-  Future<bool> install(
+  Future<PrivateInstall> install(
     String id,
     Map<String, String> files, {
     required int revision,
     required String kind,
+    bool? active,
+    List<String>? retired,
   }) async {
     if (!_isPackageId(id) || files.isEmpty) {
       _log?.warning(
         'Private decks: refused to install a package with a bad '
         'id or no files',
       );
-      return false;
+      return PrivateInstall.failed;
     }
     for (final path in files.keys) {
       if (!isSafePackagePath(path)) {
@@ -210,10 +239,16 @@ class FilePrivateStore implements PrivateStore {
           'Private decks: refused to install a package with a '
           'file named outside its folder',
         );
-        return false;
+        return PrivateInstall.failed;
       }
     }
     final packagesBefore = await packages(); // recovers first
+    final before = packagesBefore.where((p) => p.id == id).firstOrNull;
+    final willBeActive = active ?? before?.active ?? true;
+    if (willBeActive && _overCap(packagesBefore, id)) {
+      _log?.warning('Private decks: a package needs another to be inactive');
+      return PrivateInstall.needsDeactivation;
+    }
     final fresh = Directory('${_staging.path}/$id');
     final old = Directory('${_staging.path}/$id.old');
     var movedOld = false;
@@ -242,12 +277,13 @@ class FilePrivateStore implements PrivateStore {
           kind: kind,
           size: size,
           importedAt: _clock().toUtc(),
-          active: earlier?.active ?? true,
+          active: willBeActive,
+          retired: _sorted(retired ?? earlier?.retired ?? const <String>[]),
         ),
       ]);
       if (await _staging.exists()) await _staging.delete(recursive: true);
       _log?.event('Private decks: installed $id revision $revision');
-      return true;
+      return PrivateInstall.installed;
     } on Object catch (e, stack) {
       _fail('could not install a package', e, stack);
       try {
@@ -264,22 +300,63 @@ class FilePrivateStore implements PrivateStore {
       } on Object catch (e, stack) {
         _fail('could not undo a failed install', e, stack);
       }
+      return PrivateInstall.failed;
+    }
+  }
+
+  Future<bool> _setActive(String id, bool active) async {
+    final all = await packages();
+    await _writeIndex(<PrivatePackage>[
+      for (final p in all) p.id == id ? p.withActive(active: active) : p,
+    ]);
+    return true;
+  }
+
+  @override
+  Future<PrivateActivation> activate(String id) async {
+    try {
+      final all = await packages();
+      final package = all.where((p) => p.id == id).firstOrNull;
+      if (package == null) return PrivateActivation.notInstalled;
+      if (package.active) return PrivateActivation.done;
+      if (_overCap(all, id)) return PrivateActivation.needsDeactivation;
+      await _setActive(id, true);
+      return PrivateActivation.done;
+    } on Object catch (e, stack) {
+      _fail('could not activate a package', e, stack);
+      return PrivateActivation.failed;
+    }
+  }
+
+  @override
+  Future<bool> deactivate(String id) async {
+    try {
+      final all = await packages();
+      if (!all.any((p) => p.id == id)) return false;
+      return await _setActive(id, false);
+    } on Object catch (e, stack) {
+      _fail('could not deactivate a package', e, stack);
       return false;
     }
   }
 
   @override
-  Future<bool> setActive(String id, {required bool active}) async {
+  Future<Map<String, String>?> readPackage(String id) async {
+    if (!_isPackageId(id)) return null;
     try {
-      final all = await packages();
-      if (!all.any((p) => p.id == id)) return false;
-      await _writeIndex(<PrivatePackage>[
-        for (final p in all) p.id == id ? p.withActive(active: active) : p,
-      ]);
-      return true;
+      final folder = _folder(id);
+      if (!await folder.exists()) return null;
+      final prefix = '${folder.path}/';
+      final files = <String, String>{};
+      await for (final entity in folder.list(recursive: true)) {
+        if (entity is! File || !entity.path.startsWith(prefix)) continue;
+        files[entity.path.substring(prefix.length).replaceAll('\\', '/')] =
+            await entity.readAsString();
+      }
+      return files;
     } on Object catch (e, stack) {
-      _fail('could not change a package', e, stack);
-      return false;
+      _fail('could not read a package', e, stack);
+      return null;
     }
   }
 
@@ -332,17 +409,25 @@ class MemoryPrivateStore implements PrivateStore {
   }
 
   @override
-  Future<bool> install(
+  Future<PrivateInstall> install(
     String id,
     Map<String, String> files, {
     required int revision,
     required String kind,
+    bool? active,
+    List<String>? retired,
   }) async {
     if (!_isPackageId(id) ||
         files.isEmpty ||
         !files.keys.every(isSafePackagePath)) {
       _log?.warning('Private decks: refused to install a bad package');
-      return false;
+      return PrivateInstall.failed;
+    }
+    final before = _packages[id];
+    final willBeActive = active ?? before?.active ?? true;
+    if (willBeActive && _overCap(_packages.values.toList(), id)) {
+      _log?.warning('Private decks: a package needs another to be inactive');
+      return PrivateInstall.needsDeactivation;
     }
     _files[id] = Map<String, String>.of(files);
     _packages[id] = PrivatePackage(
@@ -351,17 +436,36 @@ class MemoryPrivateStore implements PrivateStore {
       kind: kind,
       size: files.values.fold<int>(0, (n, t) => n + utf8.encode(t).length),
       importedAt: _clock().toUtc(),
-      active: _packages[id]?.active ?? true,
+      active: willBeActive,
+      retired: _sorted(retired ?? before?.retired ?? const <String>[]),
     );
+    return PrivateInstall.installed;
+  }
+
+  @override
+  Future<PrivateActivation> activate(String id) async {
+    final package = _packages[id];
+    if (package == null) return PrivateActivation.notInstalled;
+    if (package.active) return PrivateActivation.done;
+    if (_overCap(_packages.values.toList(), id)) {
+      return PrivateActivation.needsDeactivation;
+    }
+    _packages[id] = package.withActive(active: true);
+    return PrivateActivation.done;
+  }
+
+  @override
+  Future<bool> deactivate(String id) async {
+    final package = _packages[id];
+    if (package == null) return false;
+    _packages[id] = package.withActive(active: false);
     return true;
   }
 
   @override
-  Future<bool> setActive(String id, {required bool active}) async {
-    final package = _packages[id];
-    if (package == null) return false;
-    _packages[id] = package.withActive(active: active);
-    return true;
+  Future<Map<String, String>?> readPackage(String id) async {
+    final files = _files[id];
+    return files == null ? null : Map<String, String>.of(files);
   }
 
   @override

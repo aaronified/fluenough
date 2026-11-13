@@ -1,6 +1,46 @@
 import 'dart:convert';
-import 'dart:io' show ZLibCodec;
+import 'dart:io' show ZLibDecoder;
 import 'dart:typed_data';
+
+/// What [ZipFiles.decode] refuses beyond a damaged zip, for an archive that
+/// comes from outside the app (a private language package, #1017): too many
+/// files, too many bytes, a suspicious compression ratio, or a name that
+/// could land outside the folder it is unpacked into. Messages never name a
+/// file, so they are safe to log.
+class ZipLimits {
+  const ZipLimits({
+    required this.maxFiles,
+    required this.maxUnpackedBytes,
+    required this.maxEntryBytes,
+    this.maxRatio = 100,
+    this.ratioFloorBytes = 4096,
+  });
+
+  /// The limits of a private language package (Plan-Private-Languages,
+  /// level 0): 1,000 files, 30 MB unpacked, 2 MB a file, ratio 100.
+  static const ZipLimits privatePackage = ZipLimits(
+    maxFiles: 1000,
+    maxUnpackedBytes: 30 * 1024 * 1024,
+    maxEntryBytes: 2 * 1024 * 1024,
+  );
+
+  /// The most files (directories not counted).
+  final int maxFiles;
+
+  /// The most bytes of every file together, once unpacked.
+  final int maxUnpackedBytes;
+
+  /// The most bytes of one file once unpacked.
+  final int maxEntryBytes;
+
+  /// The most an entry, or the archive, may unpack to as a multiple of its
+  /// packed size.
+  final int maxRatio;
+
+  /// An entry of at most this many unpacked bytes is not checked for its
+  /// ratio: a few lines of repeated text compress far, and cannot be a bomb.
+  final int ratioFloorBytes;
+}
 
 /// A zip archive of small files, read and written without a package
 /// (docs/BACKUP-FORMAT.md): the container of a backup (#470).
@@ -82,18 +122,35 @@ abstract final class ZipFiles {
   /// The files of the zip [bytes], by path. Throws [FormatException] for
   /// bytes that are not a zip this reads, or an entry whose checksum is
   /// wrong, so a truncated or damaged file is never half read.
-  static Map<String, Uint8List> decode(List<int> bytes) {
+  ///
+  /// With [limits] the archive is also checked as one from outside the app:
+  /// an absolute name, `..`, `.` or an empty part, a backslash, a drive
+  /// letter, a colon, a control character, a name seen twice, a symbolic
+  /// link, more files or bytes than [ZipLimits] allows, or an entry that
+  /// unpacks to more than [ZipLimits.maxRatio] times its packed size is
+  /// refused, all before an entry is unpacked, and an entry that unpacks to
+  /// more than it declares is cut off. Without it nothing beyond the
+  /// backup's own checks applies.
+  static Map<String, Uint8List> decode(List<int> bytes, {ZipLimits? limits}) {
     final data = Uint8List.fromList(bytes);
     final view = ByteData.sublistView(data);
     final end = _findEnd(data, view);
     final entries = view.getUint16(end + 10, Endian.little);
     var at = view.getUint32(end + 16, Endian.little);
     final files = <String, Uint8List>{};
+    final seen = <String>{};
+    var unpacked = 0;
+    var packedTotal = 0;
+    if (limits != null && entries > limits.maxFiles + 1000) {
+      // A directory entry is not a file, but a list this long is no package.
+      throw const FormatException('unsafe zip: too many entries');
+    }
     for (var i = 0; i < entries; i++) {
       if (at + 46 > data.length ||
           view.getUint32(at, Endian.little) != _centralSignature) {
         throw const FormatException('not a backup file: damaged zip');
       }
+      final madeBy = view.getUint16(at + 4, Endian.little);
       final flags = view.getUint16(at + 8, Endian.little);
       final method = view.getUint16(at + 10, Endian.little);
       final crc = view.getUint32(at + 16, Endian.little);
@@ -102,6 +159,7 @@ abstract final class ZipFiles {
       final nameLength = view.getUint16(at + 28, Endian.little);
       final extraLength = view.getUint16(at + 30, Endian.little);
       final commentLength = view.getUint16(at + 32, Endian.little);
+      final attributes = view.getUint32(at + 38, Endian.little);
       final local = view.getUint32(at + 42, Endian.little);
       if ((flags & 1) != 0) {
         throw const FormatException('not a backup file: encrypted zip');
@@ -114,12 +172,43 @@ abstract final class ZipFiles {
         allowMalformed: true,
       );
       at += 46 + nameLength + extraLength + commentLength;
-      if (name.endsWith('/')) continue;
+      final isDirectory = name.endsWith('/');
+      if (limits != null) {
+        _requireSafeName(
+          isDirectory ? name.substring(0, name.length - 1) : name,
+        );
+        if (!seen.add(name)) {
+          throw const FormatException('unsafe zip: a name is used twice');
+        }
+        // The high half of the attributes is the Unix mode when the zip was
+        // made on Unix (host 3); 0xA000 is a symbolic link.
+        if ((madeBy >> 8) == 3 && ((attributes >> 16) & 0xf000) == 0xa000) {
+          throw const FormatException('unsafe zip: a symbolic link');
+        }
+      }
+      if (isDirectory) continue;
       if (name.startsWith('/') || name.split('/').contains('..')) {
         throw FormatException('not a backup file: path $name');
       }
       if (size > maxEntryBytes) {
         throw const FormatException('not a backup file: entry too large');
+      }
+      if (limits != null) {
+        if (files.length >= limits.maxFiles) {
+          throw const FormatException('unsafe zip: too many files');
+        }
+        if (size > limits.maxEntryBytes) {
+          throw const FormatException('unsafe zip: a file is too large');
+        }
+        unpacked += size;
+        packedTotal += packed;
+        if (unpacked > limits.maxUnpackedBytes) {
+          throw const FormatException('unsafe zip: too many bytes unpacked');
+        }
+        if (size > limits.ratioFloorBytes &&
+            (packed == 0 || size > packed * limits.maxRatio)) {
+          throw const FormatException('unsafe zip: compression ratio too high');
+        }
       }
       if (local + 30 > data.length ||
           view.getUint32(local, Endian.little) != _localSignature) {
@@ -139,11 +228,20 @@ abstract final class ZipFiles {
         case 0:
           content = Uint8List.fromList(raw);
         case 8:
+          // Unpacked in pieces and stopped at the size the entry declares,
+          // so a lying header cannot ask for more memory than it says.
+          final sink = _CappedSink(size);
           try {
-            content = Uint8List.fromList(ZLibCodec(raw: true).decode(raw));
+            final input = ZLibDecoder(raw: true).startChunkedConversion(sink);
+            for (var from = 0; from < raw.length; from += 16384) {
+              final to = from + 16384 < raw.length ? from + 16384 : raw.length;
+              input.add(Uint8List.sublistView(raw, from, to));
+            }
+            input.close();
           } on Object {
             throw const FormatException('not a backup file: damaged zip');
           }
+          content = sink.takeBytes();
         default:
           throw FormatException('not a backup file: zip method $method');
       }
@@ -152,7 +250,28 @@ abstract final class ZipFiles {
       }
       files[name] = content;
     }
+    if (limits != null &&
+        unpacked > 4 * limits.ratioFloorBytes &&
+        (packedTotal == 0 || unpacked > packedTotal * limits.maxRatio)) {
+      throw const FormatException('unsafe zip: compression ratio too high');
+    }
     return files;
+  }
+
+  /// Refuses a name that could land outside the folder it is unpacked into.
+  static void _requireSafeName(String name) {
+    if (name.isEmpty ||
+        name.startsWith('/') ||
+        name.contains('\\') ||
+        name.contains(':') ||
+        name.codeUnits.any((c) => c < 0x20 || c == 0x7f)) {
+      throw const FormatException('unsafe zip: a file name is not allowed');
+    }
+    for (final part in name.split('/')) {
+      if (part.isEmpty || part == '.' || part == '..') {
+        throw const FormatException('unsafe zip: a file name is not allowed');
+      }
+    }
   }
 
   static int _findEnd(Uint8List data, ByteData view) {
@@ -197,4 +316,25 @@ abstract final class ZipFiles {
       date: (year << 9) | (at.month << 5) | at.day,
     );
   }
+}
+
+/// Collects unpacked bytes, and fails when more than [limit] arrive.
+class _CappedSink implements Sink<List<int>> {
+  _CappedSink(this.limit);
+
+  final int limit;
+  final BytesBuilder _out = BytesBuilder(copy: false);
+
+  @override
+  void add(List<int> chunk) {
+    if (_out.length + chunk.length > limit) {
+      throw const FormatException('unpacks to more than it declares');
+    }
+    _out.add(chunk);
+  }
+
+  @override
+  void close() {}
+
+  Uint8List takeBytes() => _out.takeBytes();
 }

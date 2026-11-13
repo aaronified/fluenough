@@ -1,7 +1,10 @@
+import 'dart:convert';
 import 'dart:io';
 
+import '../core/backup/zip_files.dart';
 import '../core/decks/app_version.dart';
 import '../core/logs/log_entry.dart';
+import '../core/private/private_check.dart';
 import '../core/private/private_manifest.dart';
 import '../core/private/private_package.dart';
 import 'app_log.dart';
@@ -9,75 +12,311 @@ import 'deck_catalog.dart';
 import 'private_store.dart';
 
 /// What importing a private language package came to (#1017).
-class PrivateImportResult {
-  const PrivateImportResult.installed(PrivateManifest this.manifest)
-    : problems = const <String>[];
+enum PrivateImportOutcome {
+  /// Installed.
+  installed,
 
-  const PrivateImportResult.refused(this.problems) : manifest = null;
+  /// A check found an error, or the package could not be saved; nothing was
+  /// installed.
+  refused,
 
-  /// The package's manifest, when it was installed.
+  /// The package is fine, but [maxActivePrivatePackages] others are active:
+  /// the learner deactivates one, or installs this one inactive.
+  needsDeactivation,
+}
+
+/// A package opened and checked, before anything is installed (Plan-Private-
+/// Languages, task 10): what the learner sees on the review screen.
+class PrivateStaging {
+  const PrivateStaging({
+    required this.findings,
+    this.manifest,
+    this.files = const <String, String>{},
+    this.counts,
+    this.retired = const <String>[],
+    this.dropped = const <String>[],
+  });
+
+  /// Every finding of levels 0 to 2, errors and warnings.
+  final List<PrivateFinding> findings;
+
+  /// The manifest, once it read.
   final PrivateManifest? manifest;
 
-  /// Why it was refused, one line each, for the learner or the author. Empty
-  /// when it was installed.
-  final List<String> problems;
+  /// The package's files, by path in the package, the manifest included.
+  /// Empty when level 0 refused the archive.
+  final Map<String, String> files;
 
-  bool get installed => manifest != null;
+  /// What the package holds; null when it could not be counted.
+  final PrivateCounts? counts;
+
+  /// The retired ids the package will have once installed: those of its
+  /// earlier revisions, and the card ids this revision drops.
+  final List<String> retired;
+
+  /// The card ids this revision drops from the installed revision.
+  final List<String> dropped;
+
+  List<PrivateFinding> get errors => <PrivateFinding>[
+    for (final f in findings)
+      if (f.isError) f,
+  ];
+
+  List<PrivateFinding> get warnings => <PrivateFinding>[
+    for (final f in findings)
+      if (!f.isError) f,
+  ];
+
+  /// Whether no error was found and the manifest read.
+  bool get canInstall => manifest != null && errors.isEmpty;
+}
+
+class PrivateImportResult {
+  const PrivateImportResult({
+    required this.outcome,
+    this.manifest,
+    this.findings = const <PrivateFinding>[],
+    this.counts,
+    this.active = const <PrivatePackage>[],
+  });
+
+  final PrivateImportOutcome outcome;
+
+  /// The package's manifest, when it read.
+  final PrivateManifest? manifest;
+
+  /// Every finding, errors and warnings.
+  final List<PrivateFinding> findings;
+
+  /// What the package holds, when it was opened.
+  final PrivateCounts? counts;
+
+  /// For [PrivateImportOutcome.needsDeactivation], the packages that are
+  /// active now, one of which the learner can deactivate.
+  final List<PrivatePackage> active;
+
+  bool get installed => outcome == PrivateImportOutcome.installed;
+
+  /// The errors, one line each, for the learner or the author. Empty when
+  /// the package was installed.
+  List<String> get problems => <String>[
+    for (final f in findings)
+      if (f.isError) f.message,
+    if (outcome == PrivateImportOutcome.refused &&
+        !findings.any((f) => f.isError))
+      'the package could not be saved on this phone',
+  ];
+
+  List<PrivateFinding> get warnings => <PrivateFinding>[
+    for (final f in findings)
+      if (!f.isError) f,
+  ];
 }
 
 /// The most files a package folder read here may hold, and the most bytes
-/// of one. The full limits are the safe reading of a `.fnzip` (Plan-Private-
-/// Languages, level 0); these only keep the dev path from reading a whole
-/// disk into memory.
-const int devImportMaxFiles = 1000;
-const int devImportMaxFileBytes = 2 * 1024 * 1024;
+/// of one: the dev path reads a folder, which has no archive to bound it.
+const int devImportMaxFiles = privateMaxFiles;
+const int devImportMaxFileBytes = privateFileMaxBytes;
 
-/// Checks the package [files], keyed by path in the package (the manifest
-/// included), and installs it into [store].
+PrivateFinding _error(
+  String token, {
+  String? file,
+  int? line,
+  Map<String, String> params = const <String, String>{},
+}) => PrivateFinding(
+  severity: FindingSeverity.error,
+  token: token,
+  file: file,
+  line: line,
+  params: params,
+);
+
+/// Opens and checks the package [files], keyed by path in the package (the
+/// manifest included), without installing it.
 ///
-/// Level 1 of the plan's checks: the manifest reads, the app is new enough,
-/// every file's name is safe, and the app's own readers parse every deck,
-/// path and facts file of the package ([DeckCatalog.parseAll] on the files under
-/// the package's folder), with every id carrying `fnpd-<code>-` and every
-/// deck teaching the manifest's language. [builtIn] holds the app's own deck
-/// files, which a package that modifies a language may refer to.
+/// Level 0 (safe), the manifest and the app version, the revision against
+/// what is installed in [store], level 1 (the app's own readers, through
+/// [DeckCatalog.parseAll], with [builtIn] deck files beside, which a package
+/// that modifies a language refers to) and level 2 (consistent), then the
+/// retired ids. Each level runs only when the one before found no error.
 ///
-/// Nothing is installed unless every check passes, and nothing here throws:
-/// what goes wrong is logged to [log] and told in the result.
-Future<PrivateImportResult> importPrivatePackage(
+/// [builtInCoreIds] are the course's core ids a path unit may name; when
+/// null they are read from [builtIn] if it holds any. [builtInLanguages] are
+/// the codes of the languages the app teaches; when given, a modified
+/// language must be one of them. [archiveBytes] is the size of the `.fnzip`
+/// when there is one. A lower revision than the installed one is an error
+/// unless [allowLowerRevision].
+///
+/// Never throws: what goes wrong is logged to [log] (counts and ids only,
+/// never the package's text) and told in the findings.
+Future<PrivateStaging> stagePrivateFiles(
   Map<String, String> files, {
   required PrivateStore store,
   required String appVersion,
   Map<String, String> builtIn = const <String, String>{},
+  Set<String>? builtInCoreIds,
+  Set<String>? builtInLanguages,
+  int? archiveBytes,
+  bool allowLowerRevision = false,
+  AppLog? log,
+}) => _stage(
+  <String, List<int>>{
+    for (final e in files.entries) e.key: utf8.encode(e.value),
+  },
+  store: store,
+  appVersion: appVersion,
+  builtIn: builtIn,
+  builtInCoreIds: builtInCoreIds,
+  builtInLanguages: builtInLanguages,
+  archiveBytes: archiveBytes,
+  allowLowerRevision: allowLowerRevision,
+  log: log,
+);
+
+/// [stagePrivateFiles] for the bytes of a `.fnzip`: refuses an archive over
+/// 10 MB before opening it, opens it with [ZipLimits.privatePackage] (no
+/// unsafe name, symbolic link, bomb or oversized file), then checks it as
+/// [stagePrivateFiles] does.
+Future<PrivateStaging> stagePrivateArchive(
+  List<int> archive, {
+  required PrivateStore store,
+  required String appVersion,
+  Map<String, String> builtIn = const <String, String>{},
+  Set<String>? builtInCoreIds,
+  Set<String>? builtInLanguages,
+  bool allowLowerRevision = false,
   AppLog? log,
 }) async {
   try {
-    final manifestText = files[privateManifestName];
-    if (manifestText == null) {
-      return _refused(log, <String>['$privateManifestName is missing']);
+    if (archive.length > privateArchiveMaxBytes) {
+      return PrivateStaging(
+        findings: <PrivateFinding>[
+          _error(
+            'archiveTooBig',
+            params: <String, String>{
+              'bytes': '${archive.length}',
+              'limit': '$privateArchiveMaxBytes',
+            },
+          ),
+        ],
+      );
     }
+    final Map<String, List<int>> opened;
+    try {
+      opened = ZipFiles.decode(archive, limits: ZipLimits.privatePackage);
+    } on FormatException catch (e) {
+      // The message names a reason, never a file.
+      log?.warning('Private decks: an archive was refused');
+      return PrivateStaging(
+        findings: <PrivateFinding>[
+          _error('zipUnsafe', params: <String, String>{'detail': e.message}),
+        ],
+      );
+    }
+    return await _stage(
+      opened,
+      store: store,
+      appVersion: appVersion,
+      builtIn: builtIn,
+      builtInCoreIds: builtInCoreIds,
+      builtInLanguages: builtInLanguages,
+      archiveBytes: archive.length,
+      allowLowerRevision: allowLowerRevision,
+      log: log,
+    );
+  } on Object catch (e, stack) {
+    log?.error(describeError('Private decks: archive failed', e, stack));
+    return PrivateStaging(
+      findings: <PrivateFinding>[
+        _error(
+          'zipUnsafe',
+          params: <String, String>{'detail': 'the archive could not be opened'},
+        ),
+      ],
+    );
+  }
+}
+
+Future<PrivateStaging> _stage(
+  Map<String, List<int>> bytes, {
+  required PrivateStore store,
+  required String appVersion,
+  required Map<String, String> builtIn,
+  required Set<String>? builtInCoreIds,
+  required Set<String>? builtInLanguages,
+  required int? archiveBytes,
+  required bool allowLowerRevision,
+  required AppLog? log,
+}) async {
+  try {
+    final zero = PrivateCheck.level0(bytes, archiveBytes: archiveBytes);
+    if (zero.any((f) => f.isError)) {
+      log?.warning('Private decks: import refused, ${zero.length} findings');
+      return PrivateStaging(findings: zero);
+    }
+    final files = <String, String>{
+      for (final e in bytes.entries) e.key: utf8.decode(e.value),
+    };
+    final findings = <PrivateFinding>[...zero];
+    PrivateStaging refused() {
+      log?.warning(
+        'Private decks: import refused, ${findings.length} findings',
+      );
+      return PrivateStaging(findings: findings);
+    }
+
+    final manifestText = files[privateManifestFile];
     final PrivateManifest manifest;
     try {
+      if (manifestText == null) {
+        findings.addAll(PrivateCheck.level2(files));
+        return refused();
+      }
       manifest = PrivateManifest.parse(manifestText);
-    } on FormatException catch (e) {
-      // The message names a field, never the learner's text.
-      return _refused(log, <String>[e.message]);
+    } on FormatException {
+      findings.addAll(PrivateCheck.level2(files));
+      return refused();
     }
     if (appIsOlderThan(appVersion, manifest.minApp)) {
-      return _refused(log, <String>[
-        'this package needs app version ${manifest.minApp} or newer',
-      ]);
+      findings.addAll(PrivateCheck.level2(files, appVersion: appVersion));
+      return refused();
     }
-    final problems = <String>[
-      for (final path in files.keys)
-        if (!isSafePackagePath(path)) 'the file name "$path" is not allowed',
-    ];
-    if (problems.isNotEmpty) return _refused(log, problems);
+    if (manifest.kind == PrivateKind.modifiedLanguage &&
+        builtInLanguages != null &&
+        !builtInLanguages.contains(manifest.code)) {
+      findings.add(
+        _error(
+          'languageUnknown',
+          file: privateManifestFile,
+          params: <String, String>{'code': manifest.code},
+        ),
+      );
+      return refused();
+    }
+    final installed = (await store.packages())
+        .where((p) => p.id == manifest.package)
+        .firstOrNull;
+    if (installed != null &&
+        manifest.revision < installed.revision &&
+        !allowLowerRevision) {
+      findings.add(
+        _error(
+          'revisionLower',
+          file: privateManifestFile,
+          params: <String, String>{
+            'found': '${manifest.revision}',
+            'installed': '${installed.revision}',
+          },
+        ),
+      );
+      return refused();
+    }
 
+    // Level 1: the app's own readers.
     final folder = '$privateDeckPrefix${manifest.package}/';
     final deckFiles = <String, String>{
       for (final entry in files.entries)
-        if (entry.key.endsWith('.yaml') && entry.key != privateManifestName)
+        if (entry.key.endsWith('.yaml') && entry.key != privateManifestFile)
           '$folder${entry.key}': entry.value,
     };
     final catalog = DeckCatalog.parseAll(<String, String>{
@@ -85,9 +324,15 @@ Future<PrivateImportResult> importPrivatePackage(
       ...deckFiles,
     });
     for (final broken in catalog.broken) {
-      if (broken.path.startsWith(folder)) {
-        problems.add('${broken.fileName}: ${broken.error.message}');
-      }
+      if (!broken.path.startsWith(folder)) continue;
+      findings.add(
+        _error(
+          'unreadable',
+          file: broken.path.substring(folder.length),
+          line: broken.error.line,
+          params: <String, String>{'detail': broken.error.message},
+        ),
+      );
     }
     // A hidden deck (D3) is in [Catalog.hidden], not [Catalog.decks]; it is
     // a deck of the package all the same.
@@ -95,53 +340,182 @@ Future<PrivateImportResult> importPrivatePackage(
       for (final entry in <DeckEntry>[...catalog.decks, ...catalog.hidden])
         if (entry.private) entry,
     ];
-    if (own.isEmpty && problems.isEmpty) {
-      problems.add('the package has no deck that can be read');
+    if (own.isEmpty && !findings.any((f) => f.isError)) {
+      findings.add(_error('noDecks'));
     }
-    for (final deck in own) {
-      if (deck.language.code != manifest.code) {
-        problems.add(
-          '${deck.path.split('/').last}: teaches ${deck.language.code}, but '
-          'the manifest is for ${manifest.code}',
-        );
+    if (findings.any((f) => f.isError)) return refused();
+
+    // Level 2: the package holds together, and reuses no retired id.
+    findings.addAll(
+      PrivateCheck.level2(
+        files,
+        appVersion: appVersion,
+        builtInCoreIds:
+            builtInCoreIds ??
+            (builtIn.isEmpty ? null : PrivateCheck.coreIds(builtIn)),
+      ),
+    );
+    final retiredBefore = installed?.retired ?? const <String>[];
+    findings.addAll(PrivateCheck.retiredReused(files, retiredBefore));
+    var dropped = const <String>[];
+    if (installed != null) {
+      final old = await store.readPackage(manifest.package);
+      if (old != null) {
+        final now = PrivateCheck.cardIds(files);
+        dropped = <String>[
+          for (final id in PrivateCheck.cardIds(old))
+            if (!now.contains(id)) id,
+        ]..sort();
       }
     }
-    if (problems.isNotEmpty) return _refused(log, problems);
-
-    final done = await store.install(
-      manifest.package,
-      files,
-      revision: manifest.revision,
-      kind: manifest.kind.text,
-    );
-    if (!done) {
-      // The store has logged why.
-      return const PrivateImportResult.refused(<String>[
-        'the package could not be saved on this phone',
-      ]);
+    final retired = <String>{...retiredBefore, ...dropped}.toList()..sort();
+    if (findings.any((f) => f.isError)) {
+      log?.warning(
+        'Private decks: import refused, ${findings.length} findings',
+      );
     }
-    log?.event(
-      'Private decks: imported ${manifest.package} revision '
-      '${manifest.revision}, ${own.length} decks',
+    return PrivateStaging(
+      findings: findings,
+      manifest: manifest,
+      files: files,
+      counts: PrivateCheck.counts(files),
+      retired: retired,
+      dropped: dropped,
     );
-    return PrivateImportResult.installed(manifest);
   } on Object catch (e, stack) {
     log?.error(describeError('Private decks: import failed', e, stack));
-    return const PrivateImportResult.refused(<String>[
-      'the package could not be imported',
-    ]);
+    return PrivateStaging(
+      findings: <PrivateFinding>[
+        _error(
+          'manifestInvalid',
+          params: <String, String>{
+            'detail': 'the package could not be imported',
+          },
+        ),
+      ],
+    );
   }
 }
 
-PrivateImportResult _refused(AppLog? log, List<String> problems) {
-  log?.warning('Private decks: import refused, ${problems.length} problems');
-  return PrivateImportResult.refused(problems);
+/// Installs a package [staging] found no error in, into [store]; [active]
+/// false installs it inactive (what the learner picks when
+/// [PrivateImportOutcome.needsDeactivation] asked).
+Future<PrivateImportResult> installStaged(
+  PrivateStaging staging, {
+  required PrivateStore store,
+  bool? active,
+  AppLog? log,
+}) async {
+  final manifest = staging.manifest;
+  PrivateImportResult result(
+    PrivateImportOutcome outcome, {
+    List<PrivatePackage> activeNow = const <PrivatePackage>[],
+  }) => PrivateImportResult(
+    outcome: outcome,
+    manifest: manifest,
+    findings: staging.findings,
+    counts: staging.counts,
+    active: activeNow,
+  );
+  if (manifest == null || !staging.canInstall) {
+    return result(PrivateImportOutcome.refused);
+  }
+  try {
+    final done = await store.install(
+      manifest.package,
+      staging.files,
+      revision: manifest.revision,
+      kind: manifest.kind.text,
+      active: active,
+      retired: staging.retired,
+    );
+    switch (done) {
+      case PrivateInstall.installed:
+        log?.event(
+          'Private decks: imported ${manifest.package} revision '
+          '${manifest.revision}, ${staging.counts?.decks ?? 0} decks',
+        );
+        return result(PrivateImportOutcome.installed);
+      case PrivateInstall.needsDeactivation:
+        return result(
+          PrivateImportOutcome.needsDeactivation,
+          activeNow: <PrivatePackage>[
+            for (final p in await store.packages())
+              if (p.active && p.id != manifest.package) p,
+          ],
+        );
+      case PrivateInstall.failed:
+        // The store has logged why.
+        return result(PrivateImportOutcome.refused);
+    }
+  } on Object catch (e, stack) {
+    log?.error(describeError('Private decks: install failed', e, stack));
+    return result(PrivateImportOutcome.refused);
+  }
 }
+
+/// Checks the package [files], keyed by path in the package (the manifest
+/// included), and installs it into [store]: [stagePrivateFiles], then
+/// [installStaged]. Nothing is installed unless every check passes, and
+/// nothing here throws.
+Future<PrivateImportResult> importPrivatePackage(
+  Map<String, String> files, {
+  required PrivateStore store,
+  required String appVersion,
+  Map<String, String> builtIn = const <String, String>{},
+  Set<String>? builtInCoreIds,
+  Set<String>? builtInLanguages,
+  bool allowLowerRevision = false,
+  bool? active,
+  AppLog? log,
+}) async => installStaged(
+  await stagePrivateFiles(
+    files,
+    store: store,
+    appVersion: appVersion,
+    builtIn: builtIn,
+    builtInCoreIds: builtInCoreIds,
+    builtInLanguages: builtInLanguages,
+    allowLowerRevision: allowLowerRevision,
+    log: log,
+  ),
+  store: store,
+  active: active,
+  log: log,
+);
+
+/// Imports the bytes of a `.fnzip`: [stagePrivateArchive], then
+/// [installStaged].
+Future<PrivateImportResult> importPrivateArchive(
+  List<int> archive, {
+  required PrivateStore store,
+  required String appVersion,
+  Map<String, String> builtIn = const <String, String>{},
+  Set<String>? builtInCoreIds,
+  Set<String>? builtInLanguages,
+  bool allowLowerRevision = false,
+  bool? active,
+  AppLog? log,
+}) async => installStaged(
+  await stagePrivateArchive(
+    archive,
+    store: store,
+    appVersion: appVersion,
+    builtIn: builtIn,
+    builtInCoreIds: builtInCoreIds,
+    builtInLanguages: builtInLanguages,
+    allowLowerRevision: allowLowerRevision,
+    log: log,
+  ),
+  store: store,
+  active: active,
+  log: log,
+);
 
 /// The YAML and JSON files under [directory], keyed by path in it with `/`
 /// separators, as [importPrivatePackage] takes them: the dev path for a
-/// package that is a folder (the `.fnzip` reader comes later). Null, after
-/// logging, when the folder cannot be read or is over the dev limits.
+/// package that is a folder. Null, after logging, when the folder cannot be
+/// read or is over the dev limits.
 Future<Map<String, String>?> readPackageFolder(
   Directory directory, {
   AppLog? log,

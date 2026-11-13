@@ -29,13 +29,20 @@ const Set<String> builtInPrivateUseCodes = <String>{
 /// Whether [id] starts with `fnpd-`.
 bool isPrivateId(String id) => id.startsWith(privateIdMarker);
 
-/// Whether [code] is a code a package may use in this slice: one of `qaa`
-/// to `qtz` that no built-in language uses. A real code such as `te` is
-/// refused, because a package of that code would sit beside the built-in
-/// language of the same code; packages that modify a real language wait for
-/// plan task 11 (Plan-Private-Languages).
+/// Whether [code] is a code a package of a **new** language may use: one of
+/// `qaa` to `qtz` that no built-in language uses. A real code such as `te`
+/// is refused, because a new language of that code would sit beside the
+/// built-in one; only a package that modifies a language the app teaches
+/// carries such a code ([isModifiableCode]).
 bool isPrivateCode(String code) =>
     _localUseCode.hasMatch(code) && !builtInPrivateUseCodes.contains(code);
+
+/// Whether [code] may be that of a package that **modifies** a language the
+/// app teaches: two or three lowercase letters that are not a free
+/// private-use code. Whether the app really teaches the language is checked
+/// where the app's languages are known (the import).
+bool isModifiableCode(String code) =>
+    _codePattern.hasMatch(code) && !isPrivateCode(code);
 
 /// The package id for language [code]: `fnpd-qaa`.
 String packageIdFor(String code) => '$privateIdMarker$code';

@@ -22,7 +22,26 @@ class LanguagePath with _B1Plan {
     this.regions = const <Region>[],
     this.genders,
     this.levels,
+    this.privatelyModified = false,
   });
+
+  /// Whether this path comes from a private package that modifies a language
+  /// the app teaches, and so replaces the built-in path while that package is
+  /// active (#1017, Plan-Private-Languages 2.5). The app shows a small tag
+  /// wherever the course or path is shown.
+  final bool privatelyModified;
+
+  /// This path, marked as privately modified.
+  LanguagePath asPrivatelyModified() => LanguagePath(
+    id: id,
+    language: language,
+    plan: plan,
+    alphabet: alphabet,
+    regions: regions,
+    genders: genders,
+    levels: levels,
+    privatelyModified: true,
+  );
 
   /// `<language>-path`, the file's name.
   final String id;
@@ -106,6 +125,7 @@ class LanguagePath with _B1Plan {
       }),
       plan: List<PlanUnit>.unmodifiable(plan),
       levels: levels,
+      privatelyModified: privatelyModified,
     );
   }
 
@@ -136,7 +156,12 @@ class CoursePath with _B1Plan {
     this.alphabet = const <String>{},
     this.plan = const <PlanUnit>[],
     this.levels,
+    this.privatelyModified = false,
   });
+
+  /// Whether the path is a private package's, replacing the built-in one
+  /// ([LanguagePath.privatelyModified]).
+  final bool privatelyModified;
 
   /// The language's path's id, `<language>-path`.
   final String id;
@@ -235,6 +260,7 @@ class CoursePath with _B1Plan {
       alphabet: alphabet,
       plan: plan,
       levels: levels,
+      privatelyModified: privatelyModified,
     );
   }
 

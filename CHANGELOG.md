@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - **Private language packages.** Install a whole private language from a package folder; it uses the same deck kinds, levels and hidden decks as a public course (first slice, #1017).
+- `lib/core/private/private_check.dart`, `lib/app/private_import.dart`, `lib/app/private_store.dart`: private language packages, second slice (core, no screens): a `.fnzip` is opened with safe zip limits (no unsafe name, symbolic link, bomb or oversized file) and checked at levels 0 to 2 with findings that carry a file, line, token and params; a package that modifies a language the app teaches (such as Telugu) replaces its path while active, marked privately modified; an update records the card ids it drops and a later revision cannot reuse them; at most three packages are active, and a fourth asks for one to be deactivated (#1017).
 
 ## [0.10.0] - 2026-11-13
 
