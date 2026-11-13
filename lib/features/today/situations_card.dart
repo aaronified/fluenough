@@ -29,7 +29,13 @@ class SituationsCard extends StatelessWidget {
   static const int perRow = 3;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) => ListenableBuilder(
+    // The learner's pick is a setting: the card follows it.
+    listenable: AppScope.read(context).settings,
+    builder: (context, _) => _card(context),
+  );
+
+  Widget _card(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;

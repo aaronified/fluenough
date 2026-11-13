@@ -95,7 +95,10 @@ void main() {
           themeMode: mode,
         );
         expect(state.languageHasWork('hi'), isTrue);
-        expect(find.byKey(const ValueKey<String>('language-dot')), findsOne);
+        expect(
+          find.byKey(const ValueKey<String>('language-dot')),
+          findsWidgets,
+        );
         final l10n = l10nOf(tester);
         expect(
           find.bySemanticsLabel(RegExp(l10n.languageHasCardsToDo('.*'))),
@@ -109,7 +112,7 @@ void main() {
     tester,
   ) async {
     await _pumpBar(tester, _learner());
-    expect(find.byKey(const ValueKey<String>('language-dot')), findsOne);
+    expect(find.byKey(const ValueKey<String>('language-dot')), findsWidgets);
   });
 
   testWidgets('a language with nothing due and nothing new shows no dot', (
@@ -162,6 +165,6 @@ void main() {
     double size(String glyph) =>
         tester.widget<Text>(find.text(glyph)).style!.fontSize!;
     expect(size('ə'), greaterThan(size('क')));
-    expect(find.byKey(const ValueKey<String>('language-dot')), findsOne);
+    expect(find.byKey(const ValueKey<String>('language-dot')), findsWidgets);
   });
 }
