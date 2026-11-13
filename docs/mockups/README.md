@@ -13,6 +13,8 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
   Bengali, light and dark, 1.4x. Open choices are tweak controls and are
   listed in `today-chain.md`, with the self-check.
 
+- `private-your-decks.html` (`private-your-decks.md`), `private-import-review.html` (`private-import-review.md`) and `private-update-summary.html` (`private-update-summary.md`): private language packages (#1017, `wiki/Plan-Private-Languages.md` tasks 13 to 18): Your decks with a group per package, the cap of three, capability notices and the privately modified tag; the import review; and the update summary. Light and dark, 1.4x, Bengali and Hindi examples. Open choices are tweak controls and are listed in each Markdown file with its self-check.
+
 ## Current and approved
 
 Each is the spec for its screen. Don't rewrite one without the owner's

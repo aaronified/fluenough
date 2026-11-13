@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Private Your Decks</title>
+<meta name="description" content="Your decks with a group for each private language package: Active switch, Update, Export, Remove, the cap of three active, the no-voice notice and the privately modified tag.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&display=swap">
+<style>
+
+/* ===== The page around the phones (not the app) ===== */
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 16px 72px}
+h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;font-weight:700}
+.cap1{margin:0 0 16px;color:var(--page-muted);font-size:14px}
+.tw{display:flex;flex-wrap:wrap;gap:10px 24px;margin:0 0 14px}
+.tg{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--page-muted);flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--page-line);border-radius:10px;overflow:hidden;flex-wrap:wrap}
+.seg button{font:inherit;font-size:14px;min-height:40px;padding:0 14px;border:0;background:var(--page-card);color:var(--page-fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--page-acc);color:var(--page-bg);font-weight:600}
+section.opt{margin:0 0 52px;padding-top:20px;border-top:1px solid var(--page-line)}
+.frames{display:flex;flex-wrap:wrap;gap:20px 24px;align-items:flex-start}
+.fcol{display:flex;flex-direction:column;gap:6px;width:360px;max-width:100%}
+.fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+.sticky{position:sticky;top:0;z-index:20;background:var(--page-bg);padding:10px 0 4px;margin-bottom:12px;border-bottom:1px solid var(--page-line)}
+/* ===== The app: lib/ui/theme.dart (M3, Roboto; ColorScheme.fromSeed of the forest seed) =====
+   Every size is calc(N px * var(--t)), t = 1.4, the app's text cap (#505). Icons do not scale. */
+.ph{--t:1.4;width:360px;max-width:100%;height:740px;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
+.ph button{font-family:inherit;color:inherit;cursor:pointer}
+.appbar{flex:none;min-height:56px;display:flex;align-items:center;padding:0 4px 0 8px;color:var(--onSv);gap:2px}
+.appbar .ttl{flex:1;min-width:0;font-size:calc(20px*var(--t));line-height:1.2;font-weight:500;color:var(--onS);padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ib{width:48px;height:48px;border:0;background:none;display:flex;align-items:center;justify-content:center;border-radius:24px;padding:0;color:var(--onSv);flex:none}
+svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
+.sp{flex:1}
+.scroll{flex:1;min-height:0;overflow-y:auto;padding:0 16px 16px;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.t-body{font-size:calc(14px*var(--t));line-height:1.4;margin:0}
+.t-sm{font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv);margin:0}
+.t-lab{font-size:calc(12px*var(--t));line-height:1.3;font-weight:600;letter-spacing:.4px;color:var(--onSv);text-transform:uppercase;margin:14px 0 6px}
+.t-h{font-size:calc(16px*var(--t));line-height:1.3;font-weight:500;margin:0}
+.script{font-family:"Noto Sans Devanagari","Noto Sans Bengali",Roboto,sans-serif}
+.nowrap{white-space:nowrap}
+/* language bar */
+.lbar{display:flex;gap:8px;padding:0 16px 10px;flex:none}
+.pill{border:1px solid var(--ol);border-radius:8px;min-height:32px;padding:0 12px;font-size:calc(14px*var(--t));font-weight:500;display:inline-flex;align-items:center;gap:6px;background:none;color:var(--onSv)}
+.pill.on{background:var(--sc);color:var(--onSc);border-color:transparent}
+/* buttons */
+.btn{min-height:calc(40px*var(--t));border-radius:calc(20px*var(--t));border:0;font-size:calc(14px*var(--t));line-height:1.2;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;padding:6px 16px}
+.btn.fill{background:var(--p);color:var(--onP)}
+.btn.tonal{background:var(--sc);color:var(--onSc)}
+.btn.out{background:none;border:1px solid var(--ol);color:var(--p)}
+.btn.text{background:none;color:var(--p);padding:6px 12px}
+.btn.full{width:100%}
+.btn.sm{min-height:48px;border-radius:24px}
+/* cards */
+.card{background:var(--sLow);border-radius:16px;padding:14px 16px;margin:0 0 12px;display:flex;gap:12px;align-items:center;width:100%;text-align:left;border:0}
+.card .tx{flex:1;min-width:0}
+.card .ic{flex:none;width:40px;height:40px;border-radius:20px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center}
+/* bottom nav */
+.nav{flex:none;display:flex;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);padding:8px 4px 10px}
+.nav div{flex:1;text-align:center;font-size:calc(11px*var(--t));line-height:1.2;color:var(--onSv);display:flex;flex-direction:column;align-items:center;gap:2px}
+.nav div .pl{width:56px;height:28px;border-radius:14px;display:flex;align-items:center;justify-content:center}
+.nav div.on{color:var(--onS);font-weight:600}
+.nav div.on .pl{background:var(--sc);color:var(--onSc)}
+/* settings rows */
+/* sheet */
+.scrim{position:absolute;inset:0;background:rgba(0,0,0,.42);z-index:3}
+.sheet{position:absolute;z-index:4;left:0;right:0;bottom:0;background:var(--sLow);border-radius:28px 28px 0 0;display:flex;flex-direction:column;max-height:88%}
+.sheet .grab{flex:none;width:32px;height:4px;border-radius:2px;background:var(--onSv);opacity:.4;margin:10px auto 6px}
+.sheet .scroll{padding:6px 20px 20px}
+.sheet h3{margin:0 0 4px;font-size:calc(20px*var(--t));font-weight:500;line-height:1.2}
+.opt-row{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:none;border:0;padding:6px 0;min-height:48px;font-size:calc(14px*var(--t));line-height:1.3}
+.opt-row .tx{flex:1;min-width:0}
+.opt-row .tx small{display:block;font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.3}
+.box{flex:none;width:20px;height:20px;border-radius:3px;border:2px solid var(--onSv);display:flex;align-items:center;justify-content:center}
+.box.rd{border-radius:50%}
+.opt-row[aria-checked="true"] .box{background:var(--p);border-color:var(--p)}
+.box svg{width:16px;height:16px;fill:var(--onP);opacity:0}
+.opt-row[aria-checked="true"] .box svg{opacity:1}
+.sep{border-top:1px solid var(--olv);margin:6px 0}
+/* word rows */
+.wrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;align-items:center;border-top:1px solid var(--olv);padding:10px 0;width:100%;text-align:left;background:none;border-left:0;border-right:0;border-bottom:0}
+.wrow .w{font-size:calc(20px*var(--t));line-height:1.25;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrow .rd{font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrow .mn{font-size:calc(14px*var(--t));line-height:1.3;grid-column:1}
+.wrow .act{grid-column:2;grid-row:1/4;display:flex;align-items:center;gap:0}
+.wrow.unl .w,.wrow.unl .rd,.wrow.unl .mn{opacity:.78}
+.mastery{display:inline-flex;align-items:center;height:calc(18px*var(--t));padding:0 8px;border-radius:calc(9px*var(--t));font-size:calc(11px*var(--t));line-height:1;font-weight:600;letter-spacing:.3px}
+.m-new{box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
+.m-learning{background:var(--sc);color:var(--onSc)}
+.m-known{background:var(--p);color:var(--onP)}
+.audio{width:48px;height:48px;border-radius:24px;border:0;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;flex:none}
+.audio.sm{width:40px;height:40px}
+.bottom{flex:none;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv)}
+/* key-value (inspect) */
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;margin:0}
+.kv dt{font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.5}
+.kv dd{margin:0;font-size:calc(14px*var(--t));line-height:1.4;min-width:0;overflow-wrap:anywhere}
+.mono{font-family:ui-monospace,"Roboto Mono",monospace;font-size:calc(12px*var(--t))}
+.blk{display:flex;gap:12px;align-items:flex-start;border-radius:16px;padding:12px 14px;background:var(--sHigh);margin:8px 0}
+.blk p{margin:0;font-size:calc(14px*var(--t));line-height:1.35}
+.blk .tt{font-size:calc(12px*var(--t));font-weight:700;letter-spacing:.3px;text-transform:uppercase;margin:0 0 2px;color:var(--onSv)}
+/* conversation */
+.turns{display:flex;flex-direction:column;gap:12px;padding:4px 0}
+.turn{max-width:92%;border-radius:20px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.turn.a{align-self:flex-start;background:var(--sLow);border-bottom-left-radius:6px}
+.turn.b{align-self:flex-end;background:var(--sc);color:var(--onSc);border-bottom-right-radius:6px}
+.turn .who{font-size:calc(11px*var(--t));font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+.turn.a .who{color:var(--onSv)}
+.turn .tl{font-size:calc(20px*var(--t));line-height:1.45;font-weight:500}
+.turn .tl button{background:none;border:0;padding:0 1px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dotted currentColor}
+.turn .tl button.sel{background:var(--p);color:var(--onP);border-radius:6px;border-bottom-color:transparent}
+.turn .rdg{font-size:calc(13px*var(--t));line-height:1.3;opacity:.95}
+.turn .ml{font-size:calc(14px*var(--t));line-height:1.3;opacity:.95}
+.turn.live .tl{opacity:.85}
+.live-dot{display:inline-block;width:8px;height:8px;border-radius:4px;background:var(--E);margin-right:6px}
+.mic{display:flex;gap:12px;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);align-items:stretch}
+.mic .btn{flex:1;min-height:calc(48px*var(--t));flex-direction:column;gap:2px;border-radius:24px;font-size:calc(13px*var(--t))}
+.mic .btn svg.i{width:28px;height:28px}
+.mic .btn.on{outline:3px solid var(--onS);outline-offset:2px}
+.status{display:flex;align-items:center;gap:8px;padding:0 16px 8px;flex:none}
+/* highlight of what changed */
+.hl-on .chg{outline:2px dashed var(--E);outline-offset:3px;position:relative;border-radius:14px}
+.hl-on .chg::after{content:"new";position:absolute;top:-10px;right:6px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:6px;z-index:2;letter-spacing:.3px}
+.hl-on .chg.upd::after{content:"changed"}
+.hl-on .chg.gone::after{content:"removed"}
+.ghost{opacity:.55;text-decoration:line-through;pointer-events:none}
+.hide{display:none!important}
+.note{font-size:13px;color:var(--page-muted);margin:6px 0 14px;max-width:760px}
+.tabs{flex:none;display:flex;overflow-x:auto;scrollbar-width:none;box-shadow:0 -1px 0 var(--olv) inset;padding:0 4px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;min-height:48px;padding:0 12px;border:0;background:none;font-size:calc(14px*var(--t));font-weight:500;color:var(--onSv);display:flex;align-items:center;gap:6px;border-bottom:3px solid transparent;white-space:nowrap}
+.tab .n{font-size:calc(12px*var(--t));font-weight:600;background:var(--sc);color:var(--onSc);border-radius:10px;padding:1px 7px}
+.tab[aria-selected="true"]{color:var(--p);border-bottom-color:var(--p);font-weight:700}
+.tab .best{width:6px;height:6px;border-radius:3px;background:var(--p)}
+.sbox{margin:0 16px 8px;flex:none;display:flex;align-items:center;gap:8px;background:var(--sHigh);border-radius:28px;min-height:56px;padding:0 8px 0 16px}
+.sbox .q{flex:1;min-width:0;font-size:calc(16px*var(--t));white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 8px}
+.chp{border:1px solid var(--ol);border-radius:8px;min-height:32px;padding:0 10px;font-size:calc(12px*var(--t));display:inline-flex;align-items:center;gap:4px;background:none;color:var(--onSv);font-weight:500}
+.chp.on{background:var(--sc);color:var(--onSc);border-color:transparent}
+.tag{display:inline-flex;align-items:center;gap:4px;height:calc(18px*var(--t));padding:0 7px;border-radius:calc(9px*var(--t));font-size:calc(11px*var(--t));line-height:1;font-weight:700;letter-spacing:.3px;white-space:nowrap}
+.tag.lv{box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
+.tag.pro{background:var(--pl);color:var(--onPl)}
+.tag.up{background:none;box-shadow:inset 0 0 0 1px var(--pl);color:var(--pl)}
+.tag.kind{background:var(--sc);color:var(--onSc)}
+.tag.pr{background:var(--pr);color:var(--onPr)}
+.rrow{display:flex;gap:12px;align-items:flex-start;border-top:1px solid var(--olv);padding:12px 0;width:100%;text-align:left;background:none;border-left:0;border-right:0;border-bottom:0}
+.rrow .ico{flex:none;width:40px;height:40px;border-radius:12px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(14px*var(--t))}
+.rrow .tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.rrow .nm{font-size:calc(16px*var(--t));line-height:1.3;font-weight:500}
+.rrow .sub{font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv)}
+.rrow .rt{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.rrow.up{opacity:.8}
+.rrow.up .nm{font-weight:400}
+.bar{height:6px;border-radius:3px;background:var(--olv);overflow:hidden;margin-top:2px}
+.bar i{display:block;height:100%;background:var(--p)}
+.ex{font-size:calc(14px*var(--t));line-height:1.4;background:var(--sHigh);border-radius:10px;padding:6px 10px;margin-top:2px}
+.corr{font-size:calc(12px*var(--t));color:var(--onSv);margin:0 0 6px;line-height:1.4}
+.corr b{color:var(--onS)}
+.big{font-size:calc(20px*var(--t));line-height:1.3;font-weight:500}
+.more{display:flex;align-items:center;justify-content:center;min-height:48px;border-top:1px solid var(--olv);color:var(--p);font-size:calc(14px*var(--t));font-weight:600;width:100%;background:none;border-left:0;border-right:0;border-bottom:0}
+.empty{text-align:center;padding:28px 8px;color:var(--onSv)}
+.empty .big{color:var(--onS);margin:8px 0 4px}
+.empty svg.i{width:48px;height:48px;opacity:.7;margin:0 auto}
+.hint{font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.35;margin:0 0 8px}
+.pillrow{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0}
+.addb{min-height:48px;border-radius:24px;border:1px solid var(--ol);background:none;color:var(--p);font-weight:600;font-size:calc(13px*var(--t));padding:0 12px;display:inline-flex;align-items:center;gap:4px}
+.thumb{flex:none;width:72px;height:72px;border-radius:14px;background:var(--sHigh);display:flex;align-items:center;justify-content:center;color:var(--onSv);position:relative;overflow:hidden}
+.thumb svg.i{width:32px;height:32px;opacity:.6}
+.thumb.ph2{background:repeating-linear-gradient(45deg,var(--sHigh) 0 8px,var(--sLow) 8px 16px);box-shadow:inset 0 0 0 1px var(--ol)}
+.cred{font-size:calc(11px*var(--t));line-height:1.3;color:var(--onSv)}
+.tl{position:relative;margin:6px 0 6px 8px;padding-left:16px;border-left:2px solid var(--olv)}
+.tl .ev{position:relative;padding:0 0 12px}
+.tl .ev::before{content:"";position:absolute;left:-23px;top:5px;width:12px;height:12px;border-radius:6px;background:var(--s);box-shadow:inset 0 0 0 2px var(--ol)}
+.tl .ev.met::before{background:var(--p);box-shadow:none}
+.tl .ev.this::before{background:var(--pl);box-shadow:0 0 0 3px var(--sc)}
+.tl .ev.now::before{background:var(--pr);box-shadow:none}
+.tl .ev b{font-size:calc(13px*var(--t));display:block;font-weight:600}
+.tl .ev span{font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.35}
+.strip{display:flex;gap:0;overflow:hidden;margin:6px 0;position:relative;padding-top:10px}
+.strip::before{content:"";position:absolute;left:0;right:0;top:15px;height:2px;background:var(--olv)}
+.strip .d{flex:1;min-width:0;text-align:center;position:relative;font-size:calc(10px*var(--t));line-height:1.2;color:var(--onSv)}
+.strip .d i{display:block;width:12px;height:12px;border-radius:6px;margin:0 auto 4px;background:var(--s);box-shadow:inset 0 0 0 2px var(--ol);position:relative;top:-4px}
+.strip .d.met i{background:var(--p);box-shadow:none}.strip .d.this i{background:var(--pl);box-shadow:0 0 0 3px var(--sc)}.strip .d.now i{background:var(--pr);box-shadow:none}
+.strip .d.this{color:var(--onS);font-weight:700}
+.qt{border-left:4px solid var(--p);padding:4px 0 4px 12px;margin:6px 0}
+.qt .big{font-size:calc(22px*var(--t))}
+.src{font-size:calc(11px*var(--t));line-height:1.4;color:var(--onSv)}
+.legacy{border-radius:16px;padding:12px 14px;background:var(--sHigh);margin:8px 0}
+.legacy .tt{font-size:calc(12px*var(--t));font-weight:700;letter-spacing:.3px;text-transform:uppercase;color:var(--onSv);margin:0 0 4px}
+.legacy li{font-size:calc(13px*var(--t));line-height:1.35;margin:0 0 4px}
+.legacy ul{margin:4px 0 0;padding-left:18px}
+.sw2{width:52px;height:32px;border-radius:16px;background:var(--olv);position:relative;flex:none}
+.sw2::after{content:"";position:absolute;top:4px;left:4px;width:24px;height:24px;border-radius:12px;background:var(--onSv)}
+.sw2.on{background:var(--p)}.sw2.on::after{left:24px;background:var(--onP)}
+.frames.wide .fcol{width:360px}
+.opt h2 small{font-weight:400;color:var(--page-muted);font-size:14px}
+.qs{margin:0 0 40px;padding:14px 16px;border:1px solid var(--page-line);border-radius:12px;background:var(--page-card);max-width:760px;font-size:14px}
+.hl-on .tabs.chg,.hl-on .chips.chg,.hl-on .corr.chg{margin-bottom:10px;margin-top:4px}.hl-on .tabs.chg{margin-left:4px;margin-right:4px}
+
+body,.ph,.script{font-family:Roboto,"Noto Sans Devanagari","Noto Sans JP",system-ui,sans-serif}
+/* ===== Added for the private-decks mockups ===== */
+.ph :focus-visible{outline:3px solid var(--p);outline-offset:2px}
+.sw{appearance:none;-webkit-appearance:none;margin:0;width:52px;height:32px;border-radius:16px;border:2px solid var(--ol);background:var(--sHigh);position:relative;flex:none;cursor:pointer}
+.sw::after{content:"";position:absolute;top:4px;left:4px;width:16px;height:16px;border-radius:8px;background:var(--ol);transition:none}
+.sw:checked{background:var(--p);border-color:var(--p)}
+.sw:checked::after{left:24px;top:2px;width:24px;height:24px;border-radius:12px;background:var(--onP)}
+.swrow{display:flex;align-items:center;gap:12px;min-height:48px;width:100%;cursor:pointer}
+.swrow .tx{flex:1;min-width:0}
+.swrow .tx b{display:block;font-size:calc(14px*var(--t));line-height:1.3;font-weight:600}
+.swrow .tx small{display:block;font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv)}
+.cb{appearance:none;-webkit-appearance:none;margin:0;width:24px;height:24px;border-radius:4px;border:2px solid var(--onSv);background:none;flex:none;position:relative;cursor:pointer}
+.cb:checked{background:var(--p);border-color:var(--p)}
+.cb:checked::after{content:"";position:absolute;left:6px;top:1px;width:6px;height:12px;border:solid var(--onP);border-width:0 3px 3px 0;transform:rotate(45deg)}
+.rd2{appearance:none;-webkit-appearance:none;margin:0;width:22px;height:22px;border-radius:11px;border:2px solid var(--onSv);flex:none;position:relative;cursor:pointer}
+.rd2:checked{border-color:var(--p)}
+.rd2:checked::after{content:"";position:absolute;left:3px;top:3px;width:12px;height:12px;border-radius:6px;background:var(--p)}
+.pick{display:flex;align-items:center;gap:12px;min-height:56px;padding:6px 0;width:100%;cursor:pointer;font-size:calc(14px*var(--t));line-height:1.3}
+.pick .tx{flex:1;min-width:0}.pick small{display:block;font-size:calc(12px*var(--t));color:var(--onSv)}
+.btn:disabled{background:var(--olv);color:var(--onSv);opacity:.9;cursor:not-allowed}
+.btn.err{background:none;border:1px solid var(--E);color:var(--E)}
+.btn.errfill{background:var(--E);color:var(--onE)}
+.btn.sm2{min-height:48px;border-radius:24px;padding:6px 10px;font-size:calc(13px*var(--t))}
+.btnrow{display:flex;gap:8px;margin-top:10px}.btnrow .btn{flex:1;min-width:0}
+.tag.e{background:var(--E);color:var(--onE)}
+.tag.w{background:var(--pl);color:var(--onPl)}
+.tag.n{background:none;box-shadow:inset 0 0 0 1px var(--ol);color:var(--onS)}
+.tag.ok{background:var(--sc);color:var(--onSc)}
+.tag.off{background:none;box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
+.tag.slot{background:var(--pl);color:var(--onPl)}
+.tag svg.i{width:14px;height:14px}
+.grp{background:var(--sLow);border-radius:20px;padding:14px 16px;margin:0 0 14px}
+.grp.dim{box-shadow:inset 0 0 0 1px var(--olv)}
+.gh{display:flex;gap:12px;align-items:center;width:100%;text-align:left;background:none;border:0;padding:0;min-height:48px}
+.gh .ic{flex:none;width:40px;height:40px;border-radius:12px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(14px*var(--t))}
+.gh .tx{flex:1;min-width:0}
+.gh .nm{font-size:calc(16px*var(--t));font-weight:500;line-height:1.25;display:block}
+.gh .sub{font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.3;display:block}
+.notice{display:flex;gap:10px;align-items:flex-start;border-radius:14px;padding:10px 12px;background:var(--sHigh);margin:10px 0 0;box-shadow:inset 4px 0 0 var(--pl)}
+.notice p{margin:0;font-size:calc(13px*var(--t));line-height:1.35}
+.notice b{font-weight:700}
+.notice.err{box-shadow:inset 4px 0 0 var(--E)}
+.notice.info{box-shadow:inset 4px 0 0 var(--pr)}
+.notice svg.i{flex:none;margin-top:1px}
+.tagb{display:inline-flex;align-items:center;min-height:48px;background:none;border:0;padding:0 4px 0 0;color:inherit}
+.dlg{position:absolute;z-index:4;left:24px;right:24px;top:50%;transform:translateY(-50%);background:var(--sHigh);border-radius:28px;padding:22px 22px 14px}
+.dlg h3{margin:0 0 10px;font-size:calc(20px*var(--t));line-height:1.2;font-weight:500}
+.dlg p{margin:0 0 8px;font-size:calc(14px*var(--t));line-height:1.35;color:var(--onSv)}
+.dlg .acts{display:flex;justify-content:flex-end;gap:4px;margin-top:10px;flex-wrap:wrap}
+.btn.text.errt{color:var(--E)}
+.fx{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 10px;margin:6px 0 0;font-size:calc(12px*var(--t));line-height:1.4}
+.fx dt{color:var(--onSv)}.fx dd{margin:0;overflow-wrap:anywhere}
+.codeb{font-family:ui-monospace,"Roboto Mono",monospace;font-size:calc(12px*var(--t));line-height:1.4;background:var(--sHigh);border-radius:10px;padding:8px 10px;overflow-wrap:anywhere;margin:4px 0}
+.cnt{display:flex;gap:8px;margin:10px 0}
+.cnt div{flex:1;background:var(--sLow);border-radius:14px;padding:8px 6px;text-align:center}
+.cnt b{display:block;font-size:calc(20px*var(--t));line-height:1.2;font-weight:600}
+.cnt span{font-size:calc(12px*var(--t));color:var(--onSv)}
+.sevsum{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0}
+.scrollfx{overflow:visible}
+.ph.short{height:auto;min-height:0}
+.ph.short .scroll{flex:none;overflow:visible}
+.spin{width:28px;height:28px;border-radius:14px;border:4px solid var(--olv);border-top-color:var(--p);flex:none}
+.stp{display:flex;align-items:center;gap:10px;min-height:40px;font-size:calc(14px*var(--t))}
+.stp .dot{width:24px;height:24px;border-radius:12px;flex:none;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 2px var(--ol);color:var(--onP)}
+.stp.done .dot{background:var(--p);box-shadow:none}.stp.now .dot{box-shadow:inset 0 0 0 4px var(--p)}
+.stp svg.i{width:16px;height:16px}
+.hdr-ph{background:var(--sLow);border-radius:16px;padding:6px 12px 10px;margin:0 0 10px}
+.dtab{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0}
+.chipb{border:1px solid var(--ol);border-radius:8px;min-height:48px;padding:0 12px;font-size:calc(13px*var(--t));display:inline-flex;align-items:center;gap:4px;background:none;color:var(--onSv);font-weight:500}
+.chipb[aria-pressed="true"]{background:var(--sc);color:var(--onSc);border-color:transparent}
+.qs ol{margin:6px 0 0;padding-left:20px}.qs li{margin:0 0 6px}
+.opt h2{margin-top:0}
+
+body,.ph,.script{font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",system-ui,sans-serif}
+</style>
+</head>
+<body>
+<div class="wrap" id="wrap">
+<h1>Private languages: Your decks</h1>
+<p class="cap1">Settings, Your decks, with a group for each private language package (#1017, Plan-Private-Languages tasks 13, 14, 15, 16). Phone 360 dp at 1.4x text, light and dark. Self-checks and notes: private-your-decks.md.</p>
+<div class="sticky tw">
+ <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
+ <div class="tg">Example <span class="seg" data-k="lang"><button data-v="bn">Bengali</button><button data-v="hi">Hindi</button></span></div>
+ <div class="tg">Packages <span class="seg" data-k="st"><button data-v="three">Three active</button><button data-v="four">A fourth installed</button></span></div>
+ <div class="tg">Highlight changes <span class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
+ <div class="tg">Group <span class="seg" data-k="gl"><button data-v="a">A: all open</button><button data-v="b">B: first open, others folded</button></span></div>
+ <div class="tg">Fourth package <span class="seg" data-k="cap"><button data-v="a">A: sheet at once</button><button data-v="b">B: banner, sheet on switch</button></span></div>
+ <div class="tg">No-voice notice <span class="seg" data-k="cn"><button data-v="a">A: block in the group</button><button data-v="b">B: tag, Why? sheet</button></span></div>
+ <div class="tg">Modified tag <span class="seg" data-k="tg"><button data-v="a">A: tag under the title</button><button data-v="b">B: one line under the title</button></span></div>
+</div>
+<div id="root"></div>
+</div>
+<script>
+
+const PAL={
+dark:{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sHigh":"#262b27","ol":"#8a938b","olv":"#404942","E":"#ffb4ab","onE":"#690005","pl":"#E0A458","onPl":"#2b1a00","pr":"#9ecaff","onPr":"#00315a"},
+light:{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sHigh":"#e4eae2","ol":"#717972","olv":"#c0c9c0","E":"#ba1a1a","onE":"#ffffff","pl":"#8A5A00","onPl":"#ffffff","pr":"#1565C0","onPr":"#ffffff"}};
+const IC={search:"M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z",close:"M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z",back:"M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z",add:"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z",chev:"M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z",check:"M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z",lock:"M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM9 8V6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9z",work:"M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z",vol:"M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z",quote:"M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z",tag:"M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58s1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z",deck:"M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z",flag:"M14.4 6 14 4H5v17h2v-7h5.6l.4 2h7V6z",place:"M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z",info:"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z",play:"M8 5v14l11-7z",hist:"M13 3a9 9 0 0 0-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.954 8.954 0 0 0 13 21a9 9 0 0 0 0-18zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z",person:"M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z",image:"M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z",star:"M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z",eyeoff:"M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2z",tune:"M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z",more:"M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z",today:"M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"};
+const ic=(n,s)=>`<svg class="i" viewBox="0 0 24 24" aria-hidden="true"${s?` style="width:${s}px;height:${s}px"`:''}><path d="${IC[n]}"/></svg>`;
+const ph=(cap,bar,body,bottom,over)=>`<div class="fcol"><div class="fcap">${cap}</div><div class="ph">${bar}<div class="scroll">${body}</div>${bottom||''}${over||''}</div></div>`;
+const abar=(t,back,acts)=>`<div class="appbar">${back?`<button class="ib" aria-label="Back">${ic('back')}</button>`:'<span style="width:8px"></span>'}<span class="ttl">${t}</span>${acts||''}</div>`;
+const nav=on=>`<div class="nav">${['Today','Decks','Progress','Settings'].map(x=>`<div class="${x==on?'on':''}"><span class="pl">${ic(x=='Today'?'today':x=='Decks'?'deck':x=='Progress'?'star':'tune')}</span>${x}</div>`).join('')}</div>`;
+function wire(S,build){
+ document.querySelectorAll('.seg').forEach(s=>{s.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;S[s.dataset.k]=b.dataset.v;build()})});
+}
+function sync(S){document.querySelectorAll('.seg').forEach(s=>s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',S[s.dataset.k]==b.dataset.v)));}
+function theme(S,root){const p=PAL[S.theme];root.style.cssText=Object.entries(p).map(([k,v])=>`--${k}:${v}`).join(';');root.className=S.hl=='1'?'hl-on':'';document.documentElement.dataset.theme=S.theme;}
+
+
+Object.assign(IC,{trash:"M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z",dl:"M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z",ul:"M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z",warn:"M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z",err:"M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z",volx:"M16.5 12A4.5 4.5 0 0 0 14 7.97v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51A8.796 8.796 0 0 0 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06a8.99 8.99 0 0 0 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4 9.91 6.09 12 8.18V4z",edit:"M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a.996.996 0 0 0 0-1.41l-2.34-2.34a.996.996 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z",sync:"M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46A7.93 7.93 0 0 0 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74A7.93 7.93 0 0 0 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z",file:"M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z",more:"M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z",ex:"M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z",col:"M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z",lang:"M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z",hide:"M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27z"});
+const ph2=(cap,bar,body,bottom,over,cls)=>`<div class="fcol"><div class="fcap">${cap}</div><div class="ph ${cls||''}">${bar}<div class="scroll">${body}</div>${bottom||''}${over||''}</div></div>`;
+
+
+const S={theme:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light',lang:'bn',st:'three',hl:'1',gl:'a',cap:'a',cn:'a',tg:'a'};
+const LANGS={
+ bn:{code:'bn',name:'Bengali, my path',own:'বাংলা',course:'Bengali',path:'Bengali path',ab:'ব',rev:7,size:'2.4 MB',pct:24,
+     facts:'41 cards changed, a path of 38 units',based:'Bengali course revision 54',last:'today',ex:'আমি ভাত খাই'},
+ hi:{code:'hi',name:'Hindustani, exam path',own:'हिन्दुस्तानी',course:'Hindustani',path:'Hindustani path',ab:'हि',rev:3,size:'1.1 MB',pct:11,
+     facts:'27 cards changed, a path of 24 units',based:'Hindustani course revision 61',last:'yesterday',ex:'मैं चाय पीता हूँ'}};
+const OTHER={bn:'hi',hi:'bn'};
+function pk(){
+ const L=LANGS[S.lang],O=LANGS[OTHER[S.lang]];
+ const mod=(l,last)=>({id:'fnpd-'+l.code,name:l.name,own:l.own,ab:l.ab,kind:'mod',rev:l.rev,size:l.size,pct:l.pct,facts:l.facts,based:l.based,date:'3 Nov 2026',on:true,last});
+ const a=mod(L,'today');
+ const q={id:'fnpd-qaa',name:'Tolu',own:'Tolu',ab:'T',kind:'new',rev:2,size:'6 KB',pct:1,facts:'6 cards, 2 units, 1 deck',based:'',date:'9 Nov 2026',on:true,last:'3 days ago',novoice:true};
+ const b=mod(O,'2 days ago');
+ const f={id:'fnpd-te',name:'Telugu, short path',own:'తెలుగు',ab:'తె',kind:'mod',rev:1,size:'0.9 MB',pct:9,facts:'12 cards changed, a path of 16 units',based:'Telugu course revision 88',date:'13 Nov 2026',on:false,needs:true,last:'never'};
+ return S.st=='four'?[a,q,b,f]:[a,q,b];
+}
+const tagMod=`<span class="tag pr">${ic('edit',14)} Privately modified</span>`;
+function group(p,i){
+ const open=S.gl=='a'||i==0;
+ const kindTag=p.kind=='mod'?`<span class="tag kind">Changed course</span>`:`<span class="tag kind">New language</span>`;
+ const onTag=p.needs?`<span class="tag slot">${ic('warn',14)} Needs a free slot</span>`:(p.on?`<span class="tag ok">${ic('check',14)} Active</span>`:`<span class="tag off">Not active</span>`);
+ const el=S.gl=='b'?'button':'div';const head=`<${el} class="gh" ${S.gl=='b'?`aria-expanded="${open}"`:''}><span class="ic script">${p.ab}</span><span class="tx"><span class="nm script">${p.name}</span><span class="sub"><span class="script">${p.own}</span> · ${p.id} · revision ${p.rev}</span></span>${S.gl=='b'?ic(open?'col':'ex'):''}</${el}>`;
+ let tags=`<div class="pillrow">${kindTag}${p.kind=='mod'?tagMod:''}${p.novoice&&S.cn=='b'?`<span class="tag n">${ic('volx',14)} No voice</span>`:''}${onTag}</div>`;
+ const sw=`<label class="swrow"><span class="tx"><b>Active</b><small>${p.on?'Shown in Languages, Today and drills.':(p.needs?'Off. Three are active, the most at a time.':'Hidden everywhere. Your progress is kept.')}</small></span><input class="sw" type="checkbox" role="switch" ${p.on?'checked':''} aria-label="Active: ${p.name}"></label>`;
+ const body=`<dl class="fx"><dt>Size</dt><dd>${p.size} of 10 MB</dd><dt>Holds</dt><dd>${p.facts}</dd>${p.based?`<dt>Based on</dt><dd>${p.based}</dd>`:''}<dt>Added</dt><dd>${p.date}</dd></dl>
+  <div class="bar" role="img" aria-label="${p.size} of the 10 MB limit"><i style="width:${p.pct}%"></i></div>`;
+ const note=p.novoice&&S.cn=='a'?`<div class="notice chg"><span style="color:var(--pl)">${ic('volx')}</span><p><b>No voice on your phone.</b> This language has no voice on your phone: speaking and sound drills are hidden. <button class="btn text" style="min-height:48px;padding:0 4px;display:inline-flex">Why?</button></p></div>`:'';
+ const ban=p.needs&&S.cap=='b'?`<div class="notice chg"><span style="color:var(--pl)">${ic('warn')}</span><p><b>Needs a free slot.</b> Three private languages are active, the most at a time. Turn one off to use this one. Nothing is deleted.</p></div><button class="btn tonal full sm" style="margin-top:8px">Choose one to turn off</button>`:'';
+ const acts=`<div class="btnrow"><button class="btn out sm2">Update</button><button class="btn out sm2">Export</button><button class="btn err sm2">Remove</button></div>`;
+ return `<section class="grp ${p.on?'':'dim'} chg" aria-label="${p.name}">${head}${tags}${open?body+sw+note+ban+acts:`<div class="t-sm" style="margin-top:2px">${p.size} · ${p.facts}</div>${sw}`}</section>`;
+}
+function yourDecks(sy){
+ const ps=pk();const mb=ps.length==4?'4.4':'3.5';
+ const body=`<p class="t-body" style="margin:0 0 10px">Whole languages and changed courses you bring as a file. They stay on this phone and in your backups. Nothing is sent anywhere.</p>
+ <button class="btn fill full chg">${ic('ul',20)} Add a private language</button>
+ <button class="opt-row"><span style="color:var(--p)">${ic('dl')}</span><span class="tx">Download a course to change<small>Any course already on this phone</small></span>${ic('chev')}</button>
+ <button class="opt-row"><span style="color:var(--p)">${ic('file')}</span><span class="tx">Get a starter package<small>A small example you can edit</small></span>${ic('chev')}</button>
+ <p class="t-lab">Your private languages · ${ps.length}</p>
+ <p class="hint">${ps.filter(p=>p.on).length} of 3 active. ${mb} MB used on this phone.</p>
+ ${ps.map(group).join('')}`;
+ const over=S.st=='four'&&S.cap=='a'?'':'';
+ return ph2(sy?(sy>1000?'1c · Scrolled to the fourth package':'1b · The same page, scrolled to the groups'):'1a · Your decks, with a group for each private language',abar('Your decks',true),(sy?`<i data-sy="${sy}"></i>`:'')+body,'',over);
+}
+function capSheet(){
+ const ps=pk().filter(p=>p.on);
+ const body=`<h3>Turn one off first</h3><p class="t-body" style="margin:6px 0 4px">Three private languages are active, the most at a time. To use Telugu, short path, turn one off. Nothing is deleted and your progress is kept.</p><p class="t-lab">Turn off</p>
+ ${ps.map((p,i)=>`<label class="pick"><input class="rd2" type="radio" name="off" ${i==1?'checked':''}><span class="tx"><span class="script">${p.name}</span><small>Last studied ${p.last} · ${p.size}</small></span></label>`).join('')}
+ <button class="btn fill full" style="margin-top:12px">Turn off Tolu and turn on Telugu</button><button class="btn text full" style="margin-top:4px">Keep Telugu off</button>`;
+ const bg=yourDecksBg();
+ return ph2(S.cap=='a'?'2 · A fourth package is added (sheet at once)':'2 · Switch on a fourth package (same sheet)',abar('Your decks',true),bg,'',`<div class="scrim"></div><div class="sheet"><div class="grab"></div><div class="scroll">${body}</div></div>`);
+}
+function yourDecksBg(){return `<p class="t-lab">Your private languages · 4</p><p class="hint">3 of 3 active. 4.4 MB used on this phone.</p>`+pk().concat(S.st=='four'?[]:[{id:'fnpd-te',name:'Telugu, short path',own:'తెలుగు',ab:'తె',kind:'mod',rev:1,size:'0.9 MB',pct:9,facts:'12 cards changed',date:'13 Nov 2026',on:false,needs:true}]).slice(2).map(group).join('');}
+function confirm(){
+ const L=LANGS[S.lang];
+ const bg=`<div style="padding-top:6px">${group(pk()[0],0)}</div>`;
+ return ph2('3 · Remove asks first',abar('Your decks',true),bg,'',`<div class="scrim"></div><div class="dlg" role="alertdialog" aria-modal="true" aria-label="Remove ${L.name}"><h3 class="script">Remove ${L.name}?</h3><p>This deletes the package's files from this phone. Your progress on its cards is kept, and comes back if you add the package again.</p><p>The built-in ${L.course} course returns, with its own path.</p><div class="acts"><button class="btn text">Cancel</button><button class="btn text errt">Remove</button></div></div>`);
+}
+function voice(){
+ const grid=`<h1 class="t-h" style="font-size:calc(24px*var(--t));margin:2px 0 4px">Tolu</h1><div class="pillrow"><span class="tag kind">New language</span><span class="tag n">${ic('volx',14)} No voice</span></div>
+ <p class="t-lab">Practice</p>
+ <button class="rrow" style="border-top:0"><span class="ico">${ic('quote')}</span><div class="tx"><span class="nm">Read and choose</span><span class="sub">Cards, choice and matching</span></div></button>
+ <button class="rrow"><span class="ico">${ic('edit')}</span><div class="tx"><span class="nm">Write</span><span class="sub">Type the answer</span></div></button>`;
+ const hintA=`<div class="notice"><span style="color:var(--pl)">${ic('volx')}</span><p>This language has no voice on your phone: speaking and sound drills are hidden. <button class="btn text" style="min-height:48px;padding:0 4px;display:inline-flex">Why?</button></p></div>`;
+ const over=S.cn=='b'?`<div class="scrim"></div><div class="sheet"><div class="grab"></div><div class="scroll"><h3>No voice for Tolu</h3><p class="t-body" style="margin:6px 0 8px">This language has no voice on your phone: speaking and sound drills are hidden. Reading and writing drills work as usual.</p><p class="t-sm">If you install a text-to-speech voice for it in your phone's settings, turn Tolu off and on in Your decks and the app checks again.</p><button class="btn tonal full" style="margin-top:12px">Check again now</button><button class="btn text full" style="margin-top:4px">Close</button></div></div>`:'';
+ return ph2('4 · The same notice where the learner meets it (Tolu, a constructed language, 6 cards)',abar('Tolu',true),grid+(S.cn=='a'?hintA:`<p class="hint" style="margin-top:8px">Tap "No voice" to see why.</p>`),nav('Decks'),over);
+}
+function headers(){
+ const L=LANGS[S.lang];
+ const tag=(where)=>S.tg=='a'
+  ?`<button class="tagb chg" aria-label="Privately modified, open Your decks">${tagMod}</button>`
+  :`<button class="rrow chg" style="border-top:0;padding:0;min-height:48px;align-items:center;margin-top:2px"><span style="color:var(--pr)">${ic('edit',20)}</span><div class="tx"><span class="nm" style="font-size:calc(13px*var(--t));font-weight:400">Privately modified · ${L.name}, revision ${L.rev}</span></div>${ic('chev',20)}</button>`;
+ const c=(cap,t,sub,extra)=>ph2(cap,abar(t,true),`<p class="t-sm">${sub}</p>${tag()}${extra}`,'','','short');
+ const one=ph2('5a · Course page',abar(L.course,true),`<p class="t-sm">Course</p><h1 class="script" style="font-size:calc(24px*var(--t));margin:2px 0 0;font-weight:500;line-height:1.2">${L.course} <span class="script" style="font-weight:400;font-size:calc(18px*var(--t))">${L.own}</span></h1>${tag()}<div class="bar"><i style="width:34%"></i></div><p class="t-sm" style="margin-top:4px">Unit 13 of 38 on your path</p>`,'','','short');
+ const two=ph2('5b · Path page',abar(L.path,true),`<p class="t-sm">38 units</p>${tag()}<button class="rrow" style="border-top:0"><span class="ico">12</span><div class="tx"><span class="nm script">Markets and shops</span><span class="sub">Unit 12 · from your package</span></div></button><button class="rrow"><span class="ico">13</span><div class="tx"><span class="nm script">At the station</span><span class="sub">Unit 13 · built-in unit</span></div></button>`,'','','short');
+ const three=ph2('5c · Today header',abar('Today',false),`<div class="lbar" style="padding:0 0 4px"><span class="pill on script">${L.course}</span></div>${tag()}<button class="btn fill full" style="margin-top:6px">Start today</button>`,'','','short');
+ return `<div class="fcol" style="gap:14px">${one}${two}${three}</div>`;
+}
+function empty(){
+ return ph2('6 · Empty state',abar('Your decks',true),`<div class="empty chg">${ic('deck')}<p class="big">No private languages yet</p><p class="t-body" style="color:var(--onSv)">A private language is a file (.fnzip) that you bring: a whole new language, or your own version of a course. It stays on this phone and in your backups.</p></div><button class="btn fill full">${ic('ul',20)} Add a private language</button><button class="opt-row" style="margin-top:6px"><span style="color:var(--p)">${ic('dl')}</span><span class="tx">Download a course to change<small>Any course already on this phone</small></span>${ic('chev')}</button><button class="opt-row"><span style="color:var(--p)">${ic('file')}</span><span class="tx">Get a starter package<small>A small example you can edit</small></span>${ic('chev')}</button>`);
+}
+function build(){
+ const root=document.getElementById('root');theme(S,root);
+ const fr=[yourDecks(0),yourDecks(560)];if(S.st=='four')fr.push(yourDecks(1500));
+ if(S.st=='four'||true)fr.push(capSheet());
+ fr.push(confirm(),voice(),headers(),empty());
+ root.innerHTML=`<section class="opt"><div class="frames">${fr.join('')}</div></section><section class="qs"><b>Open questions for the owner</b><ol><li>The fourth package: a sheet at once with "turn one off" (A), or only a banner, with the same sheet when the learner flips the switch (B)? Preselecting the least recently studied language is proposed.</li><li>Fold the groups so many packages stay scannable (B), or keep every action visible (A)? Remove stays two taps away either way.</li><li>No voice: a block in the group (A) or a "No voice" tag with a Why? sheet (B)? Wording is fixed by the owner.</li><li>"Privately modified": a tag under the title (A) or a one-line row that opens Your decks (B)? B is a 48 dp target; A needs a 48 dp hit area around a small tag.</li><li>Remove keeps the learner's progress for good (ADR-0020). Is "comes back if you add the package again" enough, or should Remove offer "Remove and delete my progress"?</li></ol></section>`;
+ document.querySelectorAll('[data-sy]').forEach(e=>{e.parentElement.scrollTop=+e.dataset.sy});sync(S);
+}
+wire(S,build);build();
+
+</script>
+</body>
+</html>
