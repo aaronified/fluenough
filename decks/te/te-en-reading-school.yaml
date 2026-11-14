@@ -1,0 +1,59 @@
+schema: 1
+id: "te-en-reading-school"
+name: "Reading: the timetable"
+kind: "reading"
+language:
+  code: "te"
+  iso639_3: "tel"
+  name: "Telugu"
+  script: "telugu"
+  tts: "te-IN"
+  icon: "తె"
+native:
+  code: "en"
+  iso639_3: "eng"
+  name: "English"
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A school timetable with the lessons, the times and a test, using the school and time words taught up to this unit. Not yet checked by a Telugu speaker: please report any mistake."
+tags:
+- "reading"
+- "beginner"
+- "unreviewed"
+passages:
+- id: "te-timetable"
+  title: "School timetable"
+  sentences:
+  - text: "సోమవారం ఉదయం ఎనిమిది గంటలకు తెలుగు ఉంది."
+    reading: "sōmavāraṁ udayaṁ enimidi gaṇṭalaku telugu undi."
+    ipa: "soːmaʋaːram ud̪ajam enimid̪i ɡaɳʈalaku t̪eluɡu und̪i"
+  - text: "పది గంటలకు విరామం."
+    reading: "padi gaṇṭalaku virāmaṁ."
+    ipa: "pad̪i ɡaɳʈalaku ʋiraːmam"
+  - text: "రెండు గంటలకు గణితం ఉంది."
+    reading: "reṇḍu gaṇṭalaku gaṇitaṁ undi."
+    ipa: "reɳɖu ɡaɳʈalaku ɡaɳit̪am und̪i"
+  - text: "శుక్రవారం ఇంగ్లీషు పరీక్ష ఉంది."
+    reading: "śukravāraṁ iṅglīṣu parīkṣa undi."
+    ipa: "ʃukraʋaːram iŋɡliːʂu pariːkʂa und̪i"
+  questions:
+  - id: "te-8166"
+    prompt:
+      en: "What is at ten o'clock?"
+    options:
+    - en: "A break"
+    - en: "Maths"
+    - en: "English"
+    answer: 1
+  - id: "te-8167"
+    prompt:
+      en: "When is the English test?"
+    options:
+    - en: "Monday"
+    - en: "Friday"
+    - en: "Sunday"
+    answer: 2
+  - id: "te-8168"
+    prompt:
+      en: "Maths is at two o'clock."
+    answer: true
