@@ -111,6 +111,7 @@ alphabet:
   - "ja-kanji-16"
   - "ja-kanji-17"
   - "ja-kanji-18"
+  - "ja-kanji-19"
   - "ja-katakana"
   - "ja-katakana-combos"
   - "ja-hiragana-marks"
@@ -584,11 +585,8 @@ units:
       - { id: "a-busy-day", text: { "en": "Someone lists everything they did in a day" } }
     reading_passages:
       - { id: "diary-entry", text: { "en": "A short diary entry" } }
-  - planned: { id: "ja-kanji-19", grammar: "script-kanji-19", words: 0 }
-    listening_passages:
-      - { id: "kanji-19-heard", text: { "en": "Hearing words whose kanji unit 19 teaches" } }
-    reading_passages:
-      - { id: "kanji-19-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 19" } }
+  - decks: ["ja-kanji-19"]
+    words: 0
   - decks: ["ja-grammar-experience", "ja-grammar-experience-sentences"]
     words: 0
     grammar: ["ta-koto-ga-aru"]
