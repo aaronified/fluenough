@@ -105,6 +105,7 @@ alphabet:
   - "ja-kanji-10"
   - "ja-kanji-11"
   - "ja-kanji-12"
+  - "ja-kanji-13"
   - "ja-katakana"
   - "ja-katakana-combos"
   - "ja-hiragana-marks"
@@ -501,11 +502,8 @@ units:
       - { id: "weekend-hobbies", text: { "en": "Friends talk about what they like doing at weekends" } }
     reading_passages:
       - { id: "club-poster", text: { "en": "A poster for a school's sports and music clubs" } }
-  - planned: { id: "ja-kanji-13", grammar: "script-kanji-13", words: 0 }
-    listening_passages:
-      - { id: "kanji-13-heard", text: { "en": "Hearing words whose kanji unit 13 teaches" } }
-    reading_passages:
-      - { id: "kanji-13-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 13" } }
+  - decks: ["ja-kanji-13"]
+    words: 0
   - planned: { id: "ja-grammar-likes", grammar: ["suki", "jouzu"] }
     listening_passages:
       - { id: "what-do-you-like", text: { "en": "Saying what you like and are good at, and what you are not" } }
