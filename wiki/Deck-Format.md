@@ -3693,6 +3693,65 @@ and katakana, with `chars` and `decks`). The fields and their rules are
 defined in [Plan-Deck-Kinds-And-Topics](Plan-Deck-Kinds-And-Topics), under
 "Scripts are topics too".
 
+### Character gating: a card shows only the characters the path has taught
+
+A language whose path teaches a script's characters one at a time can have the
+validator check that no card or example writes a character before the path has
+taught it (#1227). Nothing is checked for a language without the file below, so
+no existing deck changes.
+
+The data is a **gating file**, `decks/<code>/<code>-gating.yaml` (`kind:
+"gating"`), beside the path:
+
+```yaml
+schema: 1
+kind: "gating"
+id: "zz-gating"
+language: "zz"
+license: "CC-BY-SA-4.0"
+character_gating:
+  - script: "han"
+    mode: "warn"
+    allow: ["々"]
+    blocks: ["4E00-9FFF"]
+```
+
+| Field | Rule |
+|---|---|
+| `script` | The gated script's id, once per file. |
+| `mode` | `warn` (a warning, the build goes on) or `error`. Start with `warn`, and move to `error` once the language's decks pass. |
+| `allow` | Optional list of characters taught from the start (a repeat mark, say), one character each. |
+| `blocks` | Optional list of `"XXXX-YYYY"` hexadecimal code point ranges that say which characters belong to the script. Left out, the validator's own table for that script id is used; a script it has no table for needs `blocks`. |
+
+**It is not a key of the path** on purpose: a released app refuses a path file
+with a field it does not know, and a path cannot be put behind `min_app`
+because the apps already hold it. The gating file is read by the validator
+alone, as the phonetic rules are: `tools/deck_index.py` lists it nowhere, and
+the app never downloads it.
+
+For each unit of the path, in order, the validator knows the characters taught
+so far: those of the **character decks** (a deck in the path's `alphabet`
+tagged `script`) of earlier units, each card of one character teaching that
+character. A card whose `target`, `alt_target`, `target_scripts` spelling, or
+example `target` or `target_scripts` spelling writes a character of the gated
+script that is not yet taught is reported, naming the card, where in it, the
+character and the unit. What counts as taught:
+
+- A deck of the unit is checked against the earlier units' characters and the
+  characters of the unit's own character decks, so a sentence deck may share a
+  unit with the characters it uses.
+- Inside a character deck, a card is checked against the characters of the
+  cards before it and its own: the card teaches its character before its
+  examples use it.
+- A spelling in another script has no character of the gated script, so it is
+  not asked about: a word may be written in that script until its characters
+  are taught.
+- A deck the path does not list is not checked, and neither is a layer.
+
+At most 20 reports are written for one deck, then a line says how many more.
+The fixture is the made-up script `glyph` of `tools/test_validate_gating.py`
+over the `zz` decks.
+
 ### Where script decks sit on the path
 
 - **After the first words.** The script comes after a course's first themes,

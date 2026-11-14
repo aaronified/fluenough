@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- `tools/validate_decks.py`, `tools/deck_index.py`: a language's `decks/<lang>/<lang>-gating.yaml` names the scripts its path gates, and the validator reports a card, example or `target_scripts` spelling that writes a character of a gated script the path has not taught yet, as a warning or an error; the file is the validator's alone and is not listed in the index (#1227).
+
 ## [0.10.1] - 2026-11-13
 
 - **Extra tiles in word order.** When a sentence has look-alike wrong words or marks, they now sit among its tiles, and an answer that uses one is not right.

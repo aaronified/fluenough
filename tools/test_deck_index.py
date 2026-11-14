@@ -996,6 +996,18 @@ class DeckKindsIndex(unittest.TestCase):
         for key in ("shelves", "topics"):
             self.assertNotIn(key, lang)
 
+    def test_a_character_gating_file_is_the_validators_alone(self) -> None:
+        (self.tmp / "decks" / "zz" / "zz-gating.yaml").write_text(
+            'schema: 1\nkind: "gating"\nid: "zz-gating"\nlanguage: "zz"\n'
+            'license: "CC-BY-SA-4.0"\ncharacter_gating:\n'
+            '  - { script: "glyph", mode: "warn", blocks: ["0980-09FF"] }\n',
+            encoding="utf-8")
+        lang = self.zz()
+        listed = [f["path"] for key in ("files", "shelves", "topics", "script_guides")
+                  for f in lang.get(key, [])]
+        self.assertNotIn("decks/zz/zz-gating.yaml", listed)
+        self.assertNotIn("zz-gating", json.dumps(lang))
+
     def test_a_hand_gate_newer_than_the_automatic_one_wins(self) -> None:
         self.min_app({"files": {"decks/sections.yaml": "0.9.9",
                                 "decks/zz/zz-proverbs-ejemplo.yaml": "0.9.8",
