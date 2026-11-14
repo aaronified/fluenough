@@ -12,7 +12,7 @@ The sections below hold every rule with its owner quote and date. These are the
 ones that matter most; read the section before acting on one.
 
 - **Model by job:** Sonnet does complex coding, reviews and writes skills and ADRs; Haiku does simple, fully specified coding tasks (it never improvises: it reports issues and the architect re-specifies), builds decks, makes routine doc edits and fan-outs; Opus only when the owner asks ([Which model does what](#which-model-does-what-owner-2026-10-22)).
-- **Agent limits:** one Haiku deck builder, one Sonnet coder, and an extra Sonnet only for reviews while a review runs; at most two agents at once, even if both are Haiku; the main session only orchestrates ([Which model does what](#which-model-does-what-owner-2026-10-22)).
+- **Agent limits:** one Haiku deck builder (replaced for deck workers on 2026-11-14 by rule 17), one Sonnet coder, and an extra Sonnet only for reviews while a review runs; at most two agents at once, even if both are Haiku; the main session only orchestrates ([Which model does what](#which-model-does-what-owner-2026-10-22)).
 - **Reviews:** one Sonnet review per pull request; bug fixes only for decks and reviews ([Agents and models](#agents-and-models)).
 - **Docs straight to main:** a change to Markdown docs only is pushed to main with no PR and no CI check ([Git, PRs and CI](#git-prs-and-ci)).
 - **PRs for everything else:** code, decks, `decks/index.json` and the CHANGELOG go through a pull request, with CI green and one review ([Git, PRs and CI](#git-prs-and-ci)).
@@ -87,9 +87,11 @@ earlier limit of three agents with never more than two Sonnet (owner,
 coder. an extra sonnet will pop up from time to time to review the decks or
 the code PRs."): one Haiku deck builder, one Sonnet coder, and an extra Sonnet
 only while a review runs, for a deck or a code PR. Never a second coder and
-never more than one Haiku deck builder. This replaces the 2026-10-23 slot
+never more than one Haiku deck builder (replaced for deck workers on 2026-11-14 by rule 17). This replaces the 2026-10-23 slot
 split (one Haiku and one Sonnet on decks, one Sonnet on the Today chain), which
 is kept in [Owner-Decisions-History](wiki/Owner-Decisions-History.md).
+
+**Deck workers share one branch per language level** (owner, 2026-11-14: "Put more deck workers. 3 is too slow. But all deck workers should commit to the same language level PRs, which will only get one sonnet review each."). The one-builder and three-builder limits above do not cap Haiku deck workers: the architect runs as many as the work needs. All deck workers of one language level commit to ONE shared integration branch for that level (for example `decks/ja-g6-kanji`, `decks/te-b1-wave1`, `decks/es-b1-wave1`), each in its own worktree, merging the shared branch and `decks-live` before every fast-forward push to it. The architect opens ONE pull request for that branch, which gets exactly ONE Sonnet review (a second only if the first found a breaking bug). Workers never open pull requests. Rule 17 in [Deck-Work-Queue](wiki/Deck-Work-Queue.md) has the details.
 
 **Opus only when the owner explicitly asks**, reviews included (owner,
 2026-10-22). Nothing defaults to Opus.

@@ -2,7 +2,7 @@
 
 Owner orders of 2026-11-14, recorded as given:
 
-- Up to three Haiku deck builders work in parallel, on byte-sized, fully specified tasks. Sonnet reviews each pull request once.
+- Up to three Haiku deck builders work in parallel, on byte-sized, fully specified tasks. Sonnet reviews each pull request once. (replaced for deck workers on 2026-11-14 by rule 17)
 - "Do not leave anything in the middle. Complete the culture decks as well. Complete Japanese, then move on to Spanish, then Telugu, then French. Then the others."
 - "Build the kanjis as well." (about 1000 kanji by B1, #1146: the deferral is lifted)
 - "For each blocker create separate issues" and "the codes must be language agnostic": every code or tool need is a general mechanism driven by per-language data, never Japanese logic in `lib/` or `tools/`.
@@ -12,6 +12,8 @@ This page is a plan. It builds nothing. The sections for Spanish, Telugu, French
 ## Rules that every task carries
 
 **Rule 16 (owner, 2026-11-14): "Don't touch other languages before you complete japanese, spanish, and telugu. These are what most of my users are learning now."** No deck work starts on any other language (Hindustani, French, Marathi, Bengali, Assamese, Gujarati and the rest) until Japanese, Spanish and Telugu are complete (their language-completeness checklist in Plan-Language-Completeness.md). Work already merged for other languages stays. Order of work inside the three: any builder slot may take Japanese, Spanish or Telugu tasks; Japanese first by default.
+
+**Rule 17 (owner, 2026-11-14): "Put more deck workers. 3 is too slow. But all deck workers should commit to the same language level PRs, which will only get one sonnet review each."** The limits of one Haiku deck builder and of three builders at once (the owner orders above and "Slots" in `CLAUDE.md`) are replaced for deck workers on 2026-11-14 by this rule: the architect runs as many Haiku deck workers as the work needs. All deck workers of one language level (for example the Japanese grade-6 kanji decks, the Telugu B1 wave, the Spanish B1 wave) commit to ONE shared integration branch for that level (for example `decks/ja-g6-kanji`, `decks/te-b1-wave1`, `decks/es-b1-wave1`). Each worker works in its own worktree and, before every fast-forward push to the shared branch, merges the shared branch and `decks-live`. Conflicts in the alphabet and unit entries of `decks/ja/ja-path.yaml`, and in `decks/min_app.json`, are resolved by keeping both sides, in order. The architect opens ONE pull request for each shared branch, which gets exactly ONE Sonnet review (a second only if the first found a breaking bug). Workers never open pull requests themselves. The rules on no force pushes, no stray branches, tests only in CI and guarded Haiku code still apply. Each shared branch is named in this queue.
 
 1. **Report issues, never improvise.** A builder that meets anything unclear, missing or different from its task stops that item and reports it. The architect re-specifies. No guessing a reading, a date, a source or an id.
 2. **Guarded, logged code.** Any script a builder writes wraps its work in try/catch (including around loops over items, so one failure does not stop the rest), sends every caught failure to the app's existing logger (never a silent catch, never only a print), and repeats it in the report. No new logger.
@@ -84,7 +86,7 @@ Kanji decks `ja-kanji-2` to `ja-kanji-13` (JA-101 to JA-112) are merged to decks
 
 ### B. The buildable task queue
 
-Order and parallelism: three builders at most. A **lane** is a serial chain on one builder. Lanes marked PARALLEL share no file and may run at once.
+Order and parallelism: three builders at most (replaced for deck workers on 2026-11-14 by rule 17). A **lane** is a serial chain on one builder. Lanes marked PARALLEL share no file and may run at once.
 
 | Batch | Lane A (culture) | Lane B (path and kanji) | Lane C (genre decks) |
 |---|---|---|---|
@@ -357,7 +359,7 @@ Same principle: no existing card is edited. The gate leaves the phrases out, whi
 
 #### Hindustani tasks
 
-Each task creates one new sentences deck (core and layer) and edits **only one line of `decks/hi/hi-path.yaml`**: the `decks:` list of its unit, inserting the new deck's core id directly after the unit's first entry (the one-line exception of "Kanji lanes": different lines, so the tasks stay parallel; a rebase conflict there is the builder's to report). `words` is unchanged. **HI-001 to HI-006 may run in parallel** with each other and with the Spanish tasks (three builders at a time overall).
+Each task creates one new sentences deck (core and layer) and edits **only one line of `decks/hi/hi-path.yaml`**: the `decks:` list of its unit, inserting the new deck's core id directly after the unit's first entry (the one-line exception of "Kanji lanes": different lines, so the tasks stay parallel; a rebase conflict there is the builder's to report). `words` is unchanged. **HI-001 to HI-006 may run in parallel** with each other and with the Spanish tasks (three builders at a time overall; replaced for deck workers on 2026-11-14 by rule 17).
 
 | Id | Branch | Creates | Path line edited (unit's first deck) | Taught-words scope | Ids | Cards |
 |---|---|---|---|---|---|---|

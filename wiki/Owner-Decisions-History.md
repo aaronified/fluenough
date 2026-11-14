@@ -40,6 +40,10 @@ rule it replaced, as it was written (from the file's git history).
 
 2026-10-22 limit: at most three agents at once, never more than two Sonnet; replaced 2026-11-11 by: at most two agents at once, even if both are Haiku.
 
+### The deck builder limit (owner, 2026-11-06, 2026-11-14)
+
+2026-11-06 slots: "one Haiku deck builder", and the queue's 2026-11-14 order "Up to three Haiku deck builders work in parallel"; replaced for deck workers 2026-11-14 by rule 17 in [Deck-Work-Queue](Deck-Work-Queue.md): as many Haiku deck workers as the work needs, all committing to one shared branch per language level, one pull request and one Sonnet review for that branch.
+
 ### The agent slot split (owner, 2026-10-22, 2026-10-23)
 
 Replaced by the 2026-11-06 rule in `CLAUDE.md`, under "Which model does what":
