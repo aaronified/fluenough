@@ -42,7 +42,7 @@ rule it replaced, as it was written (from the file's git history).
 
 ### The deck builder limit (owner, 2026-11-06, 2026-11-14)
 
-2026-11-06 slots: "one Haiku deck builder", and the queue's 2026-11-14 order "Up to three Haiku deck builders work in parallel"; replaced for deck workers 2026-11-14 by rule 17 in [Deck-Work-Queue](Deck-Work-Queue.md): as many Haiku deck workers as the work needs, all committing to one shared branch per language level, one pull request and one Sonnet review for that branch.
+2026-11-06 slots: "one Haiku deck builder", and the queue's 2026-11-14 order "Up to three Haiku deck builders work in parallel"; replaced for deck workers 2026-11-14 by rule 17 in [Deck-Work-Queue](Deck-Work-Queue.md): as many Haiku deck workers as the work needs, all committing to one shared branch per language level, one pull request and one Sonnet review for that branch. When the reviews will run, drop 2 deck workers for each sonnet review (owner, 2026-11-14: "When the reviews will run, drop 2 deck workers for each sonnet reviews."). While a Sonnet review runs, the architect runs two fewer deck workers for each review running, so the total number of agents stays about the same; no new deck worker starts in the freed slots until that review has finished, and deck workers already running are never stopped.
 
 ### The agent slot split (owner, 2026-10-22, 2026-10-23)
 
