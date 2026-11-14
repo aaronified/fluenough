@@ -1,0 +1,125 @@
+schema: 1
+id: "te-numbers-big-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-7060"
+    target: "వారానికి నలభై గంటలు పని చేస్తాను."
+    reading: "vārāniki nalabhai gaṇṭalu pani cēstānu."
+    ipa: "ʋaːraːniki nalabʱai ɡaɳʈalu pani tʃeːst̪aːnu"
+    pos: "phrase"
+    rules: ["te-rule-present-first"]
+    bases:
+      - { word: "వారానికి", ref: "te-1086" }
+      - { word: "నలభై", ref: "te-0222" }
+      - { word: "గంటలు", ref: "te-0313" }
+      - { word: "పని", ref: "te-0197" }
+      - { word: "చేస్తాను", ref: "te-0621" }
+    confusables:
+      - { id: "c1", ref: "te-0221", kind: "word" }
+      - { id: "c2", ref: "te-1087", kind: "word" }
+  - id: "te-7062"
+    target: "ఈ దేశంలో వంద భాషలు మాట్లాడతారు."
+    reading: "ī dēśamlō vanda bhāṣalu māṭlāḍatāru."
+    ipa: "iː d̪eːʃamloː ʋand̪a bʱaːʂalu maːʈlaːɖat̪aːru"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "ఈ", ref: "te-0607" }
+      - { word: "దేశంలో", ref: "te-0199" }
+      - { word: "వంద", ref: "te-0228" }
+      - { word: "భాషలు", ref: "te-0200" }
+      - { word: "మాట్లాడతారు", ref: "te-0644" }
+    confusables:
+      - { id: "c1", ref: "te-0234", kind: "word" }
+      - { id: "c2", ref: "te-0198", kind: "word" }
+  - id: "te-7061"
+    target: "నీ జీతం లక్షా?"
+    reading: "nī jītaṁ lakṣā?"
+    ipa: "niː dʒiːt̪am lakʂaː"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-gen"]
+    bases:
+      - { word: "నీ", ref: "te-0594" }
+      - { word: "జీతం", ref: "te-0414" }
+      - { word: "లక్షా", ref: "te-0230" }
+    confusables:
+      - { id: "c1", ref: "te-0229", kind: "word" }
+      - { id: "c2", ref: "te-0231", kind: "word" }
+  - id: "te-7063"
+    target: "నేను రోజుకు రెండున్నర గంటలు చదువుతాను."
+    reading: "nēnu rōjuku reṇḍunnara gaṇṭalu caduvutānu."
+    ipa: "neːnu roːdʒuku reɳɖunnara ɡaɳʈalu tʃad̪uʋut̪aːnu"
+    pos: "phrase"
+    rules: ["te-rule-present-first"]
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "రోజుకు", ref: "te-1089" }
+      - { word: "రెండున్నర", ref: "te-0233" }
+      - { word: "గంటలు", ref: "te-0313" }
+      - { word: "చదువుతాను", ref: "te-0638" }
+    confusables:
+      - { id: "c1", ref: "te-0232", kind: "word" }
+      - { id: "c2", ref: "te-0314", kind: "word" }
+  - id: "te-7064"
+    target: "నా జీతం వెయ్యి కాదు."
+    reading: "nā jītaṁ veyyi kādu."
+    ipa: "naː dʒiːt̪am ʋejji kaːd̪u"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-gen"]
+    bases:
+      - { word: "నా", ref: "te-0593" }
+      - { word: "జీతం", ref: "te-0414" }
+      - { word: "వెయ్యి", ref: "te-0229" }
+      - { word: "కాదు", ref: "te-0158" }
+    confusables:
+      - { id: "c1", ref: "te-0230", kind: "word" }
+      - { id: "c2", ref: "te-0228", kind: "word" }
+  - id: "te-7066"
+    target: "అది ఒకటిన్నర డజనా?"
+    reading: "adi okaṭinnara ḍajanā?"
+    ipa: "ad̪i okaʈinnara ɖadʒanaː"
+    pos: "phrase"
+    bases:
+      - { word: "అది", ref: "te-0599" }
+      - { word: "ఒకటిన్నర", ref: "te-0232" }
+      - { word: "డజనా", ref: "te-1046" }
+    confusables:
+      - { id: "c1", ref: "te-0233", kind: "word" }
+      - { id: "c2", ref: "te-0223", kind: "word" }
+  - id: "te-7065"
+    target: "నాన్న తొంభై రోజులు ఊరిలో ఉంటాడు."
+    reading: "nānna tombhai rōjulu ūrilō uṇṭāḍu."
+    ipa: "naːnna t̪ombʱai roːdʒulu uːriloː uɳʈaːɖu"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "నాన్న", ref: "te-0381" }
+      - { word: "తొంభై", ref: "te-0227" }
+      - { word: "రోజులు", ref: "te-0316" }
+      - { word: "ఊరిలో", base: "ఊరు", reading: "ūrilō" }
+      - { word: "ఉంటాడు", ref: "te-0633" }
+    confusables:
+      - { id: "c1", ref: "te-0225", kind: "word" }
+      - { id: "c2", ref: "te-0317", kind: "word" }
+  - id: "te-7067"
+    target: "అతను ఏడాదికి అరవై రోజులు సెలవు తీసుకుంటాడు."
+    reading: "atanu ēḍādiki aravai rōjulu selavu tīsukuṇṭāḍu."
+    ipa: "at̪anu eːɖaːd̪iki araʋai roːdʒulu selaʋu t̪iːsukuɳʈaːɖu"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "అతను", ref: "te-0595" }
+      - { word: "ఏడాదికి", ref: "te-1088" }
+      - { word: "అరవై", ref: "te-0224" }
+      - { word: "రోజులు", ref: "te-0316" }
+      - { word: "సెలవు", ref: "te-0413" }
+      - { word: "తీసుకుంటాడు", ref: "te-0631" }
+    confusables:
+      - { id: "c1", ref: "te-0223", kind: "word" }
+      - { id: "c2", ref: "te-0415", kind: "word" }

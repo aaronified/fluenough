@@ -133,14 +133,14 @@ units:
   # themes, each its words, its rules, then its sentences.
   - decks: ["te-work", "te-work-sentences", "*"]
     words: 19
-  - decks: ["te-numbers-big", "*"]
+  - decks: ["te-numbers-big", "te-numbers-big-sentences", "*"]
     words: 13
   - decks: ["te-food", "*"]
     words: 64
-  - decks: ["te-groceries", "te-grammar-needs", "*"]
+  - decks: ["te-groceries", "te-groceries-sentences", "te-grammar-needs", "*"]
     words: 42
     grammar: ["needs"]
-  - decks: ["te-market", "te-grammar-nouns", "*"]
+  - decks: ["te-market", "te-market-sentences", "te-grammar-nouns", "*"]
     words: 7
     grammar: ["nouns"]
   - decks: ["te-pronouns-sentences"]
@@ -176,7 +176,7 @@ units:
       - { id: "at-the-tiffin-stall", text: { "en": "Ordering breakfast at a tiffin stall" } }
     reading_passages:
       - { id: "menu-board", text: { "en": "A menu board with dishes and prices" } }
-  - decks: ["te-directions", "te-grammar-continuous", "*"]
+  - decks: ["te-directions", "te-directions-sentences", "te-grammar-continuous", "*"]
     words: 12
     grammar: ["continuous"]
   - decks: ["te-transport", "*"]
