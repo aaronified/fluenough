@@ -121,6 +121,7 @@ alphabet:
   - "ja-kanji-26"
   - "ja-kanji-27"
   - "ja-kanji-28"
+  - "ja-kanji-29"
   - "ja-katakana"
   - "ja-katakana-combos"
   - "ja-hiragana-marks"
@@ -781,11 +782,8 @@ units:
       - { id: "a-business-call", text: { "en": "A polite phone call between two companies" } }
     reading_passages:
       - { id: "business-email", text: { "en": "A short business email" } }
-  - planned: { id: "ja-kanji-29", grammar: "script-kanji-29", words: 0 }
-    listening_passages:
-      - { id: "kanji-29-heard", text: { "en": "Hearing words whose kanji unit 29 teaches" } }
-    reading_passages:
-      - { id: "kanji-29-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 29" } }
+  - decks: ["ja-kanji-29"]
+    words: 0
   - planned: { id: "ja-grammar-keigo-sonkeigo", grammar: "sonkeigo" }
     listening_passages:
       - { id: "the-manager-is-coming", text: { "en": "Speaking of a customer and a manager with honorific verbs" } }
