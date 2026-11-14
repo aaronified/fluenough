@@ -71,7 +71,7 @@ cards:
     pos: "phrase"
     tags: ["sentence"]
     bases: [{ word: "Mi", ref: "es-0129" }, { word: "bebida", ref: "es-0655" }, { word: "es", ref: "es-0022" }, { word: "agua", ref: "es-0012" }]
-    confusables: [{ id: "zumo", ref: "es-0613", kind: "word" }, { id: "café", ref: "es-0611", kind: "word" }]
+    confusables: [{ id: "zumo", ref: "es-0613", kind: "word" }, { id: "es-0611", ref: "es-0611", kind: "word" }]
   - id: "es-3242"
     target: "¿Dónde compras la leche?"
     ipa: "ˈdonde ˈkompɾas la ˈletʃe"
@@ -85,7 +85,7 @@ cards:
     pos: "phrase"
     tags: ["sentence"]
     bases: [{ word: "No", ref: "es-0043" }, { word: "quiero", ref: "es-0661" }, { word: "café", ref: "es-0611" }, { word: "con", base: "con" }, { word: "azúcar", ref: "es-0606" }]
-    confusables: [{ id: "té", ref: "es-0612", kind: "word" }, { id: "zumo", ref: "es-0613", kind: "word" }]
+    confusables: [{ id: "es-0612", ref: "es-0612", kind: "word" }, { id: "zumo", ref: "es-0613", kind: "word" }]
   - id: "es-3244"
     target: "La cerveza está fría, pero la sopa está caliente."
     ipa: "la θeɾˈbeθa esˈta ˈfɾia ˈpeɾo la ˈsopa esˈta kaˈljente"
@@ -99,7 +99,7 @@ cards:
     pos: "phrase"
     tags: ["sentence"]
     bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "propina", ref: "es-0654" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "camarero", ref: "es-0651" }]
-    confusables: [{ id: "cuenta", ref: "es-0653", kind: "word" }, { id: "menú", ref: "es-0640", kind: "word" }]
+    confusables: [{ id: "cuenta", ref: "es-0653", kind: "word" }, { id: "es-0640", ref: "es-0640", kind: "word" }]
   - id: "es-3246"
     target: "Voy a almorzar con mi hermana."
     ipa: "boj a almoɾˈθaɾ kon mi eɾˈmana"
