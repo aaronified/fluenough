@@ -15,7 +15,7 @@ This page is a plan. It builds nothing. The sections for Spanish, Telugu, French
 2. **Guarded, logged code.** Any script a builder writes wraps its work in try/catch (including around loops over items, so one failure does not stop the rest), sends every caught failure to the app's existing logger (never a silent catch, never only a print), and repeats it in the report. No new logger.
 3. **Ids.** Card ids come only from the task's reserved range, ascending. A range left partly unused stays unused. An id is never reused or renumbered. A deck that needs more ids than reserved stops and reports.
 4. **Quote every YAML scalar** except `true`, `false` and whole numbers. Tag every new file `"unreviewed"`. Licence `CC-BY-SA-4.0`.
-5. **No local tests, no local validator, no tag, no new branch after a merge.** CI checks the pull request. Pull requests target `decks-live`. One Sonnet review per pull request. No deck file edits `decks/min_app.json`.
+5. **No local tests, no local validator, no tag, no new branch after a merge.** CI checks the pull request. Pull requests target `decks-live`. One Sonnet review per pull request. `decks/min_app.json` is owned by the kanji tasks alone, one line each (see "Kanji lanes"); no other task edits it.
 6. **Sources.** A date or legacy claim is read from the creator's or work's Japanese Wikipedia page by the builder. What was not read goes to the review queue as unverified. Nothing from memory is asserted as checked.
 7. **No quoted text.** Works are named by title and creator. A card carries only what its kind allows (the batch-1 shape), never a passage longer than that shape; nothing is copied from a translation, a dictionary or a lyric sheet. Translations are the builder's own plain renderings.
 8. **Review-queue rows** are written into the task's report (and the pull request description), one line each in the file's table shape. Only the task that owns `docs/review-queue/ja.md` in a batch edits it; the batch's `JA-04x` task collects the rest.
@@ -64,7 +64,9 @@ Issue #378's checklist (2026-11-13) is out of date: batches 1 to 4 have merged s
 | 13 | Review-queue rows for everything new | per batch | JA-042 to JA-044 |
 | 14 | Facts file | about 30 facts | JA-046 |
 | 15 | Kanji, about 1,000 by B1 | 1,026 school kanji, 7 done | JA-100 to JA-137 |
+| 15b | Examples for the kanji cards built without them | per flag | JA-048 to JA-050 |
 | 16 | Docs: stale statements (build-deck skill says narrow IPA tools are unbuilt; #378 and Plan-Language-Completeness counts) | 3 small edits | JA-045 |
+| JA-048 to 050 | decks/ja-kanji-examples-1 (decks ja-kanji-2 to 9), -2 (10 to 24), -3 (25 to 38) | edit the cores and layers of those kanji decks | After the word units JA-023 to JA-029 have merged: for every card flagged "no example" or "one example" in the review queue, add examples to two by the procedure of the kanji rules, now with the larger taught vocabulary; edit only those cards, ids and every other field unchanged; remove none of the flags (the reviewer does) | the review-queue rows, the decks | cards with two examples | none | everything else | after JA-029; each PARALLEL with the others |
 | 17 | Blockers that need code or tools | 3 issues | section C |
 
 ### B. The buildable task queue
@@ -113,53 +115,60 @@ Source of the set: the school kanji (kyoiku kanji), 1,026 characters in six grad
 
 - Files: `decks/ja/ja-kanji-N.yaml`, `decks/ja/en/ja-en-kanji-N.yaml`, and the unit's path entry (written form, deck also added to `alphabet`). Template: `ja-kanji-1` and `ja-en-kanji-1`, and Deck-Format "Japanese kanji". `script: han`, `scripts: [han, kana]`, tags `script`, `unreviewed`, `level` by the unit's place in the path (before the A2 milestone `A2`, after it `B1`).
 - One card per kanji, in the task's list order. `target` the kanji, `target_scripts.kana` the one reading the unit teaches it by (the word it stands for alone, else its commonest word), `words`, romaji `reading` (Hepburn, `ja-romanisation`), broad `ipa`, `pos: "letter"`, `bases: "self"`. No `phonetic`. The layer's note `n1` has this exact shape: `X (kana): on readings ... ; kun readings .... It is in W (romaji), meaning.` with every kana followed by its romaji.
-- Two examples per card, each with `target_scripts.kana`, `reading`, `ipa`, `words`. **Examples use only words already taught**: a word that is a card of a deck listed on the path at an earlier unit than this one (or an earlier card of this deck). The card's kanji appears in at least one example. A kanji with fewer than two such examples is not built: the builder reports it and the architect moves it to a later deck.
+- **Examples: an exact decision procedure.** An example is a short sentence of taught words (a card of a deck on the path before this unit's place, or an earlier kanji deck), with `target_scripts.kana`, `reading`, `ipa`, `words`. A kanji is **taught for this purpose if its card is in an earlier kanji deck or anywhere in this deck** (any card, any order): so 先生 is allowed in the deck that teaches both 先 and 生. A word may be shown in kanji only if every kanji in it is taught in this sense; its okurigana and every other word are in kana. No new vocabulary is ever added to make an example. For each kanji K, in order:
+  1. List the taught words whose standard spelling uses K (read the spelling on ja.wiktionary). Write up to two examples with K shown in kanji. Two found: done.
+  2. Exactly one found: build the card with that one example and write a review-queue row "one example".
+  3. None found, but the word K stands for alone (its card reading) is a taught word: write one example in which that word is written with K; row "one example".
+  4. Still none: build the card **with no `examples`** and write a review-queue row "no example: no taught word uses this kanji". The kanji is never dropped, never moved and never left out ("Do not leave anything in the middle"); its examples come later from the retrofit tasks JA-048 to JA-050 once more vocabulary is taught. Card, id, readings, meaning and notes are complete as always.
+  Expected thin cards the builder can predict (they still follow the procedure): in JA-101 貝 玉 王 左 右; in JA-102 糸 字 手 正 生 青 石 赤 先 (先 and 生 now give 先生 and 学生 as taught words once both are taught in the deck); in JA-103 虫 竹 力 林 立. The 9 JA-102 kanji the builder left unbuilt are built by the same builder with the procedure above, on the same branch.
 - **The rule for when new sentences may show kanji (proposed here, default taken):** in any card or example written after JA-001, a kanji is written as a kanji only if it is taught by then (its card is in a kanji deck at an earlier path position, or earlier in the same deck). Every other kanji in that sentence is written in kana. Existing kana decks are untouched and ids never change (ADR-0053). Until blocker B2 lands this rule is the builder's and the reviewer's, not the validator's.
 - Uncertain readings, grade membership or meanings: one review-queue row per kanji, in the report.
-- Not touched: `ja-topics.yaml` (JA-011), the path outside the task's own entry, `decks/min_app.json`, other kanji decks.
+- **min_app.** Every kanji deck's examples use `target_scripts`, so the deck's file gets one line in `decks/min_app.json` under `files`: `"decks/ja/ja-kanji-N.yaml": "0.8.1"` (the same value as `ja-kanji-1`), added in the same pull request. `tools/deck_index.py` does not gate this automatically (only the kinds in `MIN_APP_KINDS` are gated that way), and it refuses an entry only for a file the latest release tag already contains, which a new file is not. The layer file needs no entry. Add the line in path order inside `files`; the kanji tasks are the only ones to touch this file, and a rebase conflict there is theirs to report.
+- **Names, exactly.** Branch `decks/ja-kanji-N`, core `decks/ja/ja-kanji-N.yaml` with `id: "ja-kanji-N"`, layer `decks/ja/en/ja-en-kanji-N.yaml` with `id: "ja-en-kanji-N"`, `core: "ja-kanji-N"`, `kind: "layer"`, `name: "Kanji N: grade G, part P"` (the shape of `ja-en-kanji-1`: name, a description saying it is not yet checked by a Japanese speaker, licence, tags `script` and `unreviewed`), N being the task number minus 99. The Branch column below is the only branch the task uses.
+- Not touched: `ja-topics.yaml` (JA-011), the path outside the task's own entry, other kanji decks.
 
-**Kanji lanes (the one exception to rule 9).** JA-001 first rewrites the five planned kanji units into 37 planned units and spaces them with at least one other unit between every two, so the entries never touch. A kanji task then edits only its own entry. Two kanji lanes may run at once under this rule; if a rebase finds a conflict in the path, the builder stops and reports.
+**Kanji lanes (the one exception to rule 9).** JA-001 first rewrites the five planned kanji units into 37 planned units and spaces them with at least one other unit between every two, so the entries never touch. A kanji task then edits only its own entry, and its one `decks/min_app.json` line. Two kanji lanes may run at once under this rule; if a rebase finds a conflict in the path or in `min_app.json`, the builder stops and reports.
 
-| Task | Kanji (grade) | Count | Deck, ids |
+| Task | Kanji (grade) | Count | Branch (exact) | Deck, ids |
 |---|---|---|---|
 | JA-100 | **Done (Sonnet, docs on main):** the exact lists for grades 3 to 6 (200, 202, 193, 191 = 786, no repeats, none missing, checked against the Wikipedia grade table) and the split into JA-109 to JA-137 are in the rows below; grades 1 and 2 are the lists above, unchanged | docs | none |
-| JA-101 | 一右雨円王音下花貝学気九休玉空犬見五口校左三山子 (1) | 24 | ja-kanji-2 |
-| JA-102 | 四糸字耳七車手十出女小上森人正生青夕石赤千川先早 (1) | 24 | ja-kanji-3 |
-| JA-103 | 草足村大男竹中虫町天田二入年白八百文本名目立力林六 (1) | 25 | ja-kanji-4 |
-| JA-104 | 引羽雲園遠何科夏家歌画回会海絵外角楽活間丸岩顔汽記帰弓牛魚京強教 (2) | 32 | ja-kanji-5 |
-| JA-105 | 近兄形計元言原戸古午後語工公広交光考行高黄合谷国黒今才細作算止市 (2) | 32 | ja-kanji-6 |
-| JA-106 | 矢姉思紙寺自時室社弱首秋週春書少場色食心新親図数西声星晴切雪船線 (2) | 32 | ja-kanji-7 |
-| JA-107 | 前組走多太体台地池知茶昼長鳥朝直通弟店点電刀冬当東答頭同道読内南 (2) | 32 | ja-kanji-8 |
-| JA-108 | 肉馬売買麦半番父風分聞米歩母方北毎妹万明鳴毛門夜野友用曜来里理話 (2) | 32 | ja-kanji-9 |
-| JA-109 | 丁予化区反世主仕他代写去号央平打氷由申皮皿礼両全列 (3) | 25 | ja-kanji-10, ids ja-5480 to ja-5539 |
-| JA-110 | 向守安州式曲有次死羊血住助医君坂対局役投決究豆身返 (3) | 25 | ja-kanji-11, ids ja-5540 to ja-5599 |
-| JA-111 | 事使具取受味命和始委定実岸幸所放昔服板油波注泳物者 (3) | 25 | ja-kanji-12, ids ja-5600 to ja-5659 |
-| JA-112 | 育苦表乗係品客屋度待急拾持指昭柱洋炭界畑発相県研神 (3) | 25 | ja-kanji-13, ids ja-5660 to ja-5719 |
-| JA-113 | 秒級美負追送重面倍勉員宮島庫庭息旅根流消病真荷起速 (3) | 25 | ja-kanji-14, ids ja-5720 to ja-5779 |
-| JA-114 | 配酒院動商問宿帳悪族深球祭章笛第終習転進部都勝寒悲 (3) | 25 | ja-kanji-15, ids ja-5780 to ja-5839 |
-| JA-115 | 暑期植歯温港湖湯登着短童筆等落葉軽遊運開陽階集飲想 (3) | 25 | ja-kanji-16, ids ja-5840 to ja-5899 |
-| JA-116 | 意感暗業漢福詩路農鉄様緑練銀駅鼻横箱調談整橋薬館題 (3) | 25 | ja-kanji-17, ids ja-5900 to ja-5959 |
-| JA-117 | 不井夫欠氏付令以功加包司失必未末札民辺争仲伝兆共印各好成灯 (4) | 29 | ja-kanji-18, ids ja-5960 to ja-6019 |
-| JA-118 | 老衣阪位低佐児兵冷初別利努労完岐希折改材束求沖臣良芸例典刷 (4) | 29 | ja-kanji-19, ids ja-6020 to ja-6079 |
-| JA-119 | 卒協参周固奈季官岡底府径念松果治法泣牧的芽英阜便信勇単城変 (4) | 29 | ja-kanji-20, ids ja-6080 to ja-6139 |
-| JA-120 | 建昨栃栄浅省祝約茨要軍飛香倉候借孫害差席帯徒挙料案梅残浴特 (4) | 29 | ja-kanji-21, ids ja-6140 to ja-6199 |
-| JA-121 | 笑訓連郡健側副唱埼崎巣康敗望梨械清産票菜貨陸鹿博媛富散景最 (4) | 29 | ja-kanji-22, ids ja-6200 to ja-6259 |
-| JA-122 | 極満滋無然焼結給街覚賀達量隊順飯働塩愛戦照節続置試辞群察徳 (4) | 29 | ja-kanji-23, ids ja-6260 to ja-6319 |
-| JA-123 | 旗漁熊種管説関静億器標潟熱縄課輪選養機積録観類験鏡願競議 (4) | 28 | ja-kanji-24, ids ja-6320 to ja-6379 |
-| JA-124 | 久士仏支比刊句可史圧布弁旧永犯示仮件任再因団在似余判告囲 (5) | 28 | ja-kanji-25, ids ja-6380 to ja-6439 |
-| JA-125 | 均序志応快技条災状防価制効妻居往性招易枝武毒河版肥舎述非 (5) | 28 | ja-kanji-26, ids ja-6440 to ja-6499 |
-| JA-126 | 保則厚型政故査独祖紀迷逆限修個容師格桜殺留益破粉素耕能脈 (5) | 28 | ja-kanji-27, ids ja-6500 to ja-6559 |
-| JA-127 | 航財造停務基堂婦寄常張得情授採接救断液混率現略眼移経術規 (5) | 28 | ja-kanji-28, ids ja-6560 to ja-6619 |
-| JA-128 | 設許貧責険備喜営報属復提検減測程税統絶証評象貯貸費貿過勢 (5) | 28 | ja-kanji-29, ids ja-6620 to ja-6679 |
-| JA-129 | 墓夢幹損準禁罪義解豊資鉱飼像境増態慣構歴演精綿総製複適酸 (5) | 28 | ja-kanji-30, ids ja-6680 to ja-6739 |
-| JA-130 | 銅際雑領導暴潔確編賛賞質燃築興衛輸績講謝織職額識護 (5) | 25 | ja-kanji-31, ids ja-6740 to ja-6799 |
-| JA-131 | 亡寸己干仁収尺片冊処幼庁穴危后吸存宅宇机灰至舌乱卵否困 (6) | 27 | ja-kanji-32, ids ja-6800 to ja-6859 |
-| JA-132 | 孝忘我批私系並乳供券刻呼垂宗宙宝届延忠承担拝拡枚沿若奏 (6) | 27 | ja-kanji-33, ids ja-6860 to ja-6919 |
-| JA-133 | 姿宣専巻律映染段泉洗派皇看砂紅肺胃背退革俳俵値党射将展 (6) | 27 | ja-kanji-34, ids ja-6920 to ja-6979 |
-| JA-134 | 座従恩朗株班秘納純胸蚕討針降陛除骨域密捨探推欲済異盛窓 (6) | 27 | ja-kanji-35, ids ja-6980 to ja-7039 |
-| JA-135 | 翌脳著視訪訳郵郷閉頂割創勤善尊就揮敬晩棒痛筋策衆裁装補 (6) | 27 | ja-kanji-36, ids ja-7040 to ja-7099 |
-| JA-136 | 詞貴傷幕暖源盟絹署聖腸腹蒸裏誠賃預層暮模疑磁穀誌認誤銭 (6) | 27 | ja-kanji-37, ids ja-7100 to ja-7159 |
-| JA-137 | 閣障劇敵権潮熟蔵誕論諸遺奮憲操樹激糖縦鋼優厳縮覧簡臨難臓警 (6) | 29 | ja-kanji-38, ids ja-7160 to ja-7219 |
+| JA-101 | 一右雨円王音下花貝学気九休玉空犬見五口校左三山子 (1) | 24 | decks/ja-kanji-2 | ja-kanji-2, ids ja-5000 to ja-5059 |
+| JA-102 | 四糸字耳七車手十出女小上森人正生青夕石赤千川先早 (1) | 24 | decks/ja-kanji-3 | ja-kanji-3, ids ja-5060 to ja-5119 |
+| JA-103 | 草足村大男竹中虫町天田二入年白八百文本名目立力林六 (1) | 25 | decks/ja-kanji-4 | ja-kanji-4, ids ja-5120 to ja-5179 |
+| JA-104 | 引羽雲園遠何科夏家歌画回会海絵外角楽活間丸岩顔汽記帰弓牛魚京強教 (2) | 32 | decks/ja-kanji-5 | ja-kanji-5, ids ja-5180 to ja-5239 |
+| JA-105 | 近兄形計元言原戸古午後語工公広交光考行高黄合谷国黒今才細作算止市 (2) | 32 | decks/ja-kanji-6 | ja-kanji-6, ids ja-5240 to ja-5299 |
+| JA-106 | 矢姉思紙寺自時室社弱首秋週春書少場色食心新親図数西声星晴切雪船線 (2) | 32 | decks/ja-kanji-7 | ja-kanji-7, ids ja-5300 to ja-5359 |
+| JA-107 | 前組走多太体台地池知茶昼長鳥朝直通弟店点電刀冬当東答頭同道読内南 (2) | 32 | decks/ja-kanji-8 | ja-kanji-8, ids ja-5360 to ja-5419 |
+| JA-108 | 肉馬売買麦半番父風分聞米歩母方北毎妹万明鳴毛門夜野友用曜来里理話 (2) | 32 | decks/ja-kanji-9 | ja-kanji-9, ids ja-5420 to ja-5479 |
+| JA-109 | 丁予化区反世主仕他代写去号央平打氷由申皮皿礼両全列 (3) | 25 | decks/ja-kanji-10 | ja-kanji-10, ids ja-5480 to ja-5539 |
+| JA-110 | 向守安州式曲有次死羊血住助医君坂対局役投決究豆身返 (3) | 25 | decks/ja-kanji-11 | ja-kanji-11, ids ja-5540 to ja-5599 |
+| JA-111 | 事使具取受味命和始委定実岸幸所放昔服板油波注泳物者 (3) | 25 | decks/ja-kanji-12 | ja-kanji-12, ids ja-5600 to ja-5659 |
+| JA-112 | 育苦表乗係品客屋度待急拾持指昭柱洋炭界畑発相県研神 (3) | 25 | decks/ja-kanji-13 | ja-kanji-13, ids ja-5660 to ja-5719 |
+| JA-113 | 秒級美負追送重面倍勉員宮島庫庭息旅根流消病真荷起速 (3) | 25 | decks/ja-kanji-14 | ja-kanji-14, ids ja-5720 to ja-5779 |
+| JA-114 | 配酒院動商問宿帳悪族深球祭章笛第終習転進部都勝寒悲 (3) | 25 | decks/ja-kanji-15 | ja-kanji-15, ids ja-5780 to ja-5839 |
+| JA-115 | 暑期植歯温港湖湯登着短童筆等落葉軽遊運開陽階集飲想 (3) | 25 | decks/ja-kanji-16 | ja-kanji-16, ids ja-5840 to ja-5899 |
+| JA-116 | 意感暗業漢福詩路農鉄様緑練銀駅鼻横箱調談整橋薬館題 (3) | 25 | decks/ja-kanji-17 | ja-kanji-17, ids ja-5900 to ja-5959 |
+| JA-117 | 不井夫欠氏付令以功加包司失必未末札民辺争仲伝兆共印各好成灯 (4) | 29 | decks/ja-kanji-18 | ja-kanji-18, ids ja-5960 to ja-6019 |
+| JA-118 | 老衣阪位低佐児兵冷初別利努労完岐希折改材束求沖臣良芸例典刷 (4) | 29 | decks/ja-kanji-19 | ja-kanji-19, ids ja-6020 to ja-6079 |
+| JA-119 | 卒協参周固奈季官岡底府径念松果治法泣牧的芽英阜便信勇単城変 (4) | 29 | decks/ja-kanji-20 | ja-kanji-20, ids ja-6080 to ja-6139 |
+| JA-120 | 建昨栃栄浅省祝約茨要軍飛香倉候借孫害差席帯徒挙料案梅残浴特 (4) | 29 | decks/ja-kanji-21 | ja-kanji-21, ids ja-6140 to ja-6199 |
+| JA-121 | 笑訓連郡健側副唱埼崎巣康敗望梨械清産票菜貨陸鹿博媛富散景最 (4) | 29 | decks/ja-kanji-22 | ja-kanji-22, ids ja-6200 to ja-6259 |
+| JA-122 | 極満滋無然焼結給街覚賀達量隊順飯働塩愛戦照節続置試辞群察徳 (4) | 29 | decks/ja-kanji-23 | ja-kanji-23, ids ja-6260 to ja-6319 |
+| JA-123 | 旗漁熊種管説関静億器標潟熱縄課輪選養機積録観類験鏡願競議 (4) | 28 | decks/ja-kanji-24 | ja-kanji-24, ids ja-6320 to ja-6379 |
+| JA-124 | 久士仏支比刊句可史圧布弁旧永犯示仮件任再因団在似余判告囲 (5) | 28 | decks/ja-kanji-25 | ja-kanji-25, ids ja-6380 to ja-6439 |
+| JA-125 | 均序志応快技条災状防価制効妻居往性招易枝武毒河版肥舎述非 (5) | 28 | decks/ja-kanji-26 | ja-kanji-26, ids ja-6440 to ja-6499 |
+| JA-126 | 保則厚型政故査独祖紀迷逆限修個容師格桜殺留益破粉素耕能脈 (5) | 28 | decks/ja-kanji-27 | ja-kanji-27, ids ja-6500 to ja-6559 |
+| JA-127 | 航財造停務基堂婦寄常張得情授採接救断液混率現略眼移経術規 (5) | 28 | decks/ja-kanji-28 | ja-kanji-28, ids ja-6560 to ja-6619 |
+| JA-128 | 設許貧責険備喜営報属復提検減測程税統絶証評象貯貸費貿過勢 (5) | 28 | decks/ja-kanji-29 | ja-kanji-29, ids ja-6620 to ja-6679 |
+| JA-129 | 墓夢幹損準禁罪義解豊資鉱飼像境増態慣構歴演精綿総製複適酸 (5) | 28 | decks/ja-kanji-30 | ja-kanji-30, ids ja-6680 to ja-6739 |
+| JA-130 | 銅際雑領導暴潔確編賛賞質燃築興衛輸績講謝織職額識護 (5) | 25 | decks/ja-kanji-31 | ja-kanji-31, ids ja-6740 to ja-6799 |
+| JA-131 | 亡寸己干仁収尺片冊処幼庁穴危后吸存宅宇机灰至舌乱卵否困 (6) | 27 | decks/ja-kanji-32 | ja-kanji-32, ids ja-6800 to ja-6859 |
+| JA-132 | 孝忘我批私系並乳供券刻呼垂宗宙宝届延忠承担拝拡枚沿若奏 (6) | 27 | decks/ja-kanji-33 | ja-kanji-33, ids ja-6860 to ja-6919 |
+| JA-133 | 姿宣専巻律映染段泉洗派皇看砂紅肺胃背退革俳俵値党射将展 (6) | 27 | decks/ja-kanji-34 | ja-kanji-34, ids ja-6920 to ja-6979 |
+| JA-134 | 座従恩朗株班秘納純胸蚕討針降陛除骨域密捨探推欲済異盛窓 (6) | 27 | decks/ja-kanji-35 | ja-kanji-35, ids ja-6980 to ja-7039 |
+| JA-135 | 翌脳著視訪訳郵郷閉頂割創勤善尊就揮敬晩棒痛筋策衆裁装補 (6) | 27 | decks/ja-kanji-36 | ja-kanji-36, ids ja-7040 to ja-7099 |
+| JA-136 | 詞貴傷幕暖源盟絹署聖腸腹蒸裏誠賃預層暮模疑磁穀誌認誤銭 (6) | 27 | decks/ja-kanji-37 | ja-kanji-37, ids ja-7100 to ja-7159 |
+| JA-137 | 閣障劇敵権潮熟蔵誕論諸遺奮憲操樹激糖縦鋼優厳縮覧簡臨難臓警 (6) | 29 | decks/ja-kanji-38 | ja-kanji-38, ids ja-7160 to ja-7219 |
 
 The grade 1 list (80) is the seven in `ja-kanji-1` plus the 73 above; grade 2 is the 160 above. Both were counted (no repeats, no overlap); the reviewer checks them against the grade table.
 
