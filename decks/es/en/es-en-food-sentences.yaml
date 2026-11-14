@@ -5,7 +5,7 @@ core: "es-food-sentences"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Sentences: food and drink"
 license: "CC-BY-SA-4.0"
-description: "Six sentences about meals and ordering food, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+description: "Thirty sentences about meals and ordering food, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
 cards:
   "es-0662":
     native: "I want a salad and a bowl of soup."
@@ -31,3 +31,95 @@ cards:
     native: "The waitress is friendly."
     bases: {"La": "the"}
     confusables: {"camarero": { why: "Camarero is a waiter, the masculine form." }, "cliente": { why: "Cliente is a customer, not the server." }}
+  "es-3240":
+    native: "How much does the cheese cost?"
+    bases: {"el": "the"}
+    confusables: {"precio": { why: "Precio is the price of one item, a noun, not a question of amount." }, "barato": { why: "Barato is cheap, a description, not a price question." }}
+  "es-3241":
+    native: "My drink is water."
+    confusables: {"zumo": { why: "Zumo is juice, another drink." }, "es-0611": { why: "Café is coffee, a hot drink." }}
+  "es-3242":
+    native: "Where do you buy the milk?"
+    bases: {"la": "the"}
+    confusables: {"tienda": { why: "Tienda is a shop, where you buy things." }, "supermercado": { why: "Supermercado is a supermarket, the big shop." }}
+  "es-3243":
+    native: "I do not want coffee with sugar."
+    bases: {"con": "with"}
+    confusables: {"es-0612": { why: "Té is tea, a hot drink without coffee." }, "zumo": { why: "Zumo is juice, a cold drink." }}
+  "es-3244":
+    native: "The beer is cold, but the soup is hot."
+    bases: {"La": "the"}
+    confusables: {"vino": { why: "Vino is wine, another alcoholic drink." }, "bebida": { why: "Bebida is any drink, the general word." }}
+  "es-3245":
+    native: "I have a tip for the waiter."
+    bases: {"una": "a", "para": "for", "el": "the"}
+    confusables: {"cuenta": { why: "Cuenta is the bill, the money for the meal, not the tip." }, "es-0640": { why: "Menú is the menu, the list of dishes." }}
+  "es-3246":
+    native: "I am going to have lunch with my sister."
+    bases: {"a": "to", "con": "with"}
+    confusables: {"desayunar": { why: "Desayunar is to have breakfast, the first meal." }, "cenar": { why: "Cenar is to have dinner, the last meal." }}
+  "es-3247":
+    native: "I want to eat bread and cheese."
+    confusables: {"mantequilla": { why: "Mantequilla is butter, not cheese." }, "arroz": { why: "Arroz is rice, another food to eat." }}
+  "es-3248":
+    native: "Who pays the bill?"
+    bases: {"la": "the"}
+    confusables: {"propina": { why: "Propina is a tip, the extra money left." }, "dinero": { why: "Dinero is money in general, not the bill." }}
+  "es-3249":
+    native: "We drink wine with the dessert."
+    bases: {"con": "with", "el": "the"}
+    confusables: {"cerveza": { why: "Cerveza is beer, a different drink." }, "agua": { why: "Agua is water, the drink without alcohol." }}
+  "es-3250":
+    native: "Now I need the menu."
+    bases: {"el": "the"}
+    confusables: {"plato": { why: "Plato is a dish, one food on the menu." }, "postre": { why: "Postre is dessert, one course, not the list." }}
+  "es-3251":
+    native: "I wash the dishes after dinner."
+    bases: {"los": "the", "de": "of", "la": "the"}
+    confusables: {"limpiar": { why: "Limpiar is to clean, a different chore." }, "helado": { why: "Helado is ice cream, a dessert, not a dish to wash." }}
+  "es-3252":
+    native: "What do you have for lunch?"
+    bases: {"para": "for", "el": "the"}
+    confusables: {"desayuno": { why: "Desayuno is breakfast, the first meal." }, "cena": { why: "Cena is dinner, the evening meal." }}
+  "es-3253":
+    native: "The ice cream is very tasty."
+    bases: {"El": "the"}
+    confusables: {"tarta": { why: "Tarta is a cake, not an ice cream." }, "postre": { why: "Postre is dessert in general." }}
+  "es-3254":
+    native: "They have omelette and tea for breakfast."
+    confusables: {"pizza": { why: "Pizza is a different dish, with cheese." }, "ensalada": { why: "Ensalada is salad, a vegetable dish." }}
+  "es-3255":
+    native: "They do not order dessert."
+    confusables: {"helado": { why: "Helado is ice cream, a dessert but not the course." }, "tarta": { why: "Tarta is a cake, another dessert." }}
+  "es-3256":
+    native: "My father and I order the soup and the bread."
+    bases: {"la": "the", "el": "the"}
+    confusables: {"ensalada": { why: "Ensalada is salad, another first course." }, "tortilla": { why: "Tortilla is an omelette, a dish of egg." }}
+  "es-3257":
+    native: "I never cook pizza with my cousin and my aunt."
+    bases: {"con": "with"}
+    confusables: {"bocadillo": { why: "Bocadillo is a sandwich, a different quick meal." }, "hamburguesa": { why: "Hamburguesa is a burger, another fast food." }}
+  "es-3258":
+    native: "Are you having dinner with your aunt?"
+    bases: {"con": "with"}
+    confusables: {"almuerzo": { why: "Almuerzo is lunch, the midday meal." }, "desayuno": { why: "Desayuno is breakfast, the morning meal." }}
+  "es-3259":
+    native: "The sandwich costs five euros."
+    bases: {"El": "the"}
+    confusables: {"hamburguesa": { why: "Hamburguesa is a burger, not a sandwich." }, "pizza": { why: "Pizza is a flat dish with cheese, not a sandwich." }}
+  "es-3260":
+    native: "I take a burger home."
+    bases: {"una": "a", "a": "to"}
+    confusables: {"bocadillo": { why: "Bocadillo is a sandwich, not a burger." }, "pizza": { why: "Pizza is a different dish." }}
+  "es-3261":
+    native: "Are you having a cake or an ice cream today?"
+    bases: {"una": "a", "un": "a"}
+    confusables: {"postre": { why: "Postre is dessert in general." }, "bebida": { why: "Bebida is a drink, not a cake." }}
+  "es-3262":
+    native: "They prepare the salad."
+    bases: {"la": "the"}
+    confusables: {"sopa": { why: "Sopa is soup, a hot first course." }, "verdura": { why: "Verdura is vegetables in general." }}
+  "es-3263":
+    native: "I eat a sandwich today, but I have a cake."
+    bases: {"un": "a", "una": "a"}
+    confusables: {"hamburguesa": { why: "Hamburguesa is a burger, a different snack." }, "helado": { why: "Helado is ice cream, not a cake." }}
