@@ -1,0 +1,104 @@
+# Japanese idiomatic verbs: a noun with its particle, and a verb or adjective. A part that is a card of the course is written by ref; 気 (ki), つく (tsuku) and きく (kiku) are not cards of the course and are written with base and reading. Seven of the twenty planned idioms: the others are not attested on ja.wiktionary or have no bare verb card yet.
+schema: 1
+id: "ja-multiword-idiomatic-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+genre: "multiword"
+pattern_family: "idiomatic-verb"
+level: "B1"
+tags: ["unreviewed"]
+cards:
+  - id: "ja-4950"
+    target: "きになる"
+    words: ["きに", "なる"]
+    reading: "ki ni naru"
+    ipa: "ki ni naɾɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "きに", base: "き", reading: "ki ni" }
+      - { word: "なる", ref: "ja-2220" }
+  - id: "ja-4951"
+    target: "きをつける"
+    words: ["きを", "つける"]
+    reading: "ki o tsukeru"
+    ipa: "ki o tsɯkeɾɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "きを", base: "き", reading: "ki o" }
+      - { word: "つける", ref: "ja-2223" }
+  - id: "ja-4952"
+    target: "きがきく"
+    words: ["きが", "きく"]
+    reading: "ki ga kiku"
+    ipa: "ki ga kikɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "u2", kind: "homograph", ref: "ja-0344" }
+    bases:
+      - { word: "きが", base: "き", reading: "ki ga" }
+      - { word: "きく", base: "きく", reading: "kiku" }
+  - id: "ja-4953"
+    target: "きにする"
+    words: ["きに", "する"]
+    reading: "ki ni suru"
+    ipa: "ki ni sɯɾɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "きに", base: "き", reading: "ki ni" }
+      - { word: "する", ref: "ja-0375" }
+  - id: "ja-4954"
+    target: "あたまをひやす"
+    words: ["あたまを", "ひやす"]
+    reading: "atama o hiyasu"
+    ipa: "atama o çijasɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "あたまを", ref: "ja-1081" }
+      - { word: "ひやす", ref: "ja-1799" }
+  - id: "ja-4955"
+    target: "はなにつく"
+    words: ["はなに", "つく"]
+    reading: "hana ni tsuku"
+    ipa: "hana ni tsɯkɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "はなに", ref: "ja-1084" }
+      - { word: "つく", base: "つく", reading: "tsuku" }
+  - id: "ja-4956"
+    target: "みみにする"
+    words: ["みみに", "する"]
+    reading: "mimi ni suru"
+    ipa: "mimi ni sɯɾɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "みみに", ref: "ja-1083" }
+      - { word: "する", ref: "ja-0375" }
