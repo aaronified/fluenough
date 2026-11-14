@@ -1,0 +1,64 @@
+schema: 1
+id: "te-en-weather-sentences"
+kind: "layer"
+core: "te-weather-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Weather: sentences"
+description: "Ten sentences about the weather, with the words of the weather unit and the units before it. They unlock once their words and rules are known. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "te-7150":
+    native: "It is raining now."
+    confusables:
+      "c1": { why: "ఎండ (eṇḍa) 'sunshine; the sun's heat', is sun, not rain." }
+      "c2": { why: "మెరుపు (merupu) 'lightning', is a flash, not rain." }
+  "te-7151":
+    native: "It is cool today."
+    confusables:
+      "c1": { why: "వేడిగా (vēḍigā) 'hot', is the opposite of cool." }
+      "c2": { why: "మబ్బుగా (mabbugā) 'cloudy', is about the sky, not the temperature." }
+  "te-7152":
+    native: "This is not winter."
+    confusables:
+      "c1": { why: "వేసవి (vēsavi) 'summer', is the hot season, not winter." }
+      "c2": { why: "వర్షాకాలం (varṣākālaṁ) 'rainy season', is not winter." }
+  "te-7153":
+    native: "In winter I drink hot water."
+    confusables:
+      "c1": { why: "పాలు (pālu) 'milk', is a drink, but not water." }
+      "c2": { why: "తినడం (tinaḍaṁ) 'to eat', is not drinking." }
+  "te-7154":
+    native: "I want cool air."
+    bases:
+      "నాకు": "to me"
+    confusables:
+      "c1": { why: "ఎండ (eṇḍa) 'sunshine; the sun's heat', is heat, not air." }
+      "c2": { why: "నీరు (nīru) 'water', is not air." }
+  "te-7155":
+    native: "When does the rainy season come?"
+    notes:
+      "n1": "The stem is వస్త- (vast-) of రావడం (rāvaḍaṁ), 'to come', in the present."
+    confusables:
+      "c1": { why: "వేసవి (vēsavi) 'summer', is a season, so it is not the answer to when." }
+      "c2": { why: "ఎక్కడ (ekkaḍa) 'where', asks for a place, not a time." }
+  "te-7156":
+    native: "In the rainy season people buy an umbrella."
+    confusables:
+      "c1": { why: "చొక్కా (cokkā) 'shirt', is clothes, not an umbrella." }
+      "c2": { why: "వర్షం (varṣaṁ) 'rain', falls from the sky; no one buys it." }
+  "te-7157":
+    native: "In summer the sun is very hot."
+    confusables:
+      "c1": { why: "ఎండగా (eṇḍagā) 'sunny', is about the sky, not the heat." }
+      "c2": { why: "చల్లగా (callagā) 'cool; cold', is the opposite of hot." }
+  "te-7158":
+    native: "In the sun, do you take an umbrella?"
+    confusables:
+      "c1": { why: "చొక్కా (cokkā) 'shirt', is clothes, not an umbrella." }
+      "c2": { why: "తుఫాను (tuphānu) 'storm', is weather, not something you carry." }
+  "te-7159":
+    native: "We walk even in the rain."
+    confusables:
+      "c1": { why: "ఎండ (eṇḍa) 'sunshine; the sun's heat', is sun, not rain." }
+      "c2": { why: "చినుకు (cinuku) 'drizzle; a drop of rain', is light rain, not the rain itself." }
