@@ -60,3 +60,59 @@ cards:
     tags: ["sentence"]
     bases: [{ word: "Cenamos", ref: "es-0283" }, { word: "antes", ref: "es-0335" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "medianoche", ref: "es-0843" }]
     confusables: [{ id: "manana", ref: "es-0841", kind: "word" }, { id: "noche", ref: "es-0020", kind: "word" }]
+  - id: "es-3520"
+    target: "Mi nombre es Carmen y tengo una cita."
+    ipa: "mi ˈnombɾe es ˈkaɾmen i ˈtenɡo ˈuna ˈθita"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "nombre", base: "nombre" }, { word: "es", ref: "es-0022" }, { word: "Carmen", base: "Carmen" }, { word: "y", ref: "es-0048" }, { word: "tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "cita", ref: "es-0844" }]
+    confusables: [{ id: "hora", ref: "es-0838", kind: "word" }, { id: "minuto", ref: "es-0839", kind: "word" }]
+  - id: "es-3521"
+    target: "Desayuno a esta hora todos los días."
+    ipa: "desaˈʝuno a ˈesta ˈoɾa ˈtodos los ˈdias"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Desayuno", ref: "es-0282" }, { word: "a", base: "a" }, { word: "esta", base: "esta" }, { word: "hora", ref: "es-0838" }, { word: "todos", ref: "es-0134" }, { word: "los", base: "los" }, { word: "días", ref: "es-0019" }]
+    confusables: [{ id: "comer", ref: "es-0028", kind: "word" }, { id: "desayuno", ref: "es-0637", kind: "word" }]
+  - id: "es-3522"
+    target: "¿A qué hora empieza la reunión de hoy?"
+    ipa: "a ke ˈoɾa emˈpjeθa la rewˈnjon de oj"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "A", base: "a" }, { word: "qué", ref: "es-0054" }, { word: "hora", ref: "es-0838" }, { word: "empieza", ref: "es-0852" }, { word: "la", base: "la" }, { word: "reunión", ref: "es-0511" }, { word: "de", base: "de" }, { word: "hoy", ref: "es-0331" }]
+    confusables: [{ id: "minuto", ref: "es-0839", kind: "word" }, { id: "reloj", ref: "es-0845", kind: "word" }]
+  - id: "es-3523"
+    target: "Bebo café por la mañana."
+    ipa: "ˈbebo kaˈfe poɾ la maˈɲana"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Bebo", ref: "es-0029" }, { word: "café", ref: "es-0611" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "mañana", ref: "es-0841" }]
+    confusables: [{ id: "tomar", ref: "es-0906", kind: "word" }, { id: "comer", ref: "es-0028", kind: "word" }]
+  - id: "es-3524"
+    target: "No trabajo por la mañana."
+    ipa: "no tɾaˈbaxo poɾ la maˈɲana"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "No", ref: "es-0043" }, { word: "trabajo", ref: "es-0259" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "mañana", ref: "es-0841" }]
+    confusables: [{ id: "trabajo", ref: "es-0502", kind: "word" }, { id: "noche", ref: "es-0020", kind: "word" }]
+  - id: "es-3525"
+    target: "¿A qué hora cenas?"
+    ipa: "a ke ˈoɾa ˈθenas"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "A", base: "a" }, { word: "qué", ref: "es-0054" }, { word: "hora", ref: "es-0838" }, { word: "cenas", ref: "es-0283" }]
+    confusables: [{ id: "cena", ref: "es-0639", kind: "word" }, { id: "desayunar", ref: "es-0282", kind: "word" }]
+  - id: "es-3526"
+    target: "Voy al parque a esta hora todos los días."
+    ipa: "boj al ˈpaɾke a ˈesta ˈoɾa ˈtodos los ˈdias"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Voy", ref: "es-0026" }, { word: "al", base: "al" }, { word: "parque", ref: "es-0777" }, { word: "a", base: "a" }, { word: "esta", base: "esta" }, { word: "hora", ref: "es-0838" }, { word: "todos", ref: "es-0134" }, { word: "los", base: "los" }, { word: "días", ref: "es-0019" }]
+    confusables: [{ id: "calle", ref: "es-0017", kind: "word" }, { id: "trabajo", ref: "es-0502", kind: "word" }]
+  - id: "es-3527"
+    target: "Soy Tomás y como al mediodía."
+    ipa: "soj toˈmas i ˈkomo al medjoˈdia"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Soy", ref: "es-0022" }, { word: "Tomás", base: "Tomás" }, { word: "y", ref: "es-0048" }, { word: "como", ref: "es-0028" }, { word: "al", base: "al" }, { word: "mediodía", ref: "es-0842" }]
+    confusables: [{ id: "desayunar", ref: "es-0282", kind: "word" }, { id: "medianoche", ref: "es-0843", kind: "word" }]
