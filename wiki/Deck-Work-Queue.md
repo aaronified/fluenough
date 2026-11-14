@@ -246,3 +246,105 @@ Each is a separate issue to open (owner: "For each blocker create separate issue
 ### Verification notes
 
 Counts above come from reading every `decks/ja/*.yaml` on decks-live with PyYAML (cards, notes, ids, `ipa`, `phonetic`) and the path file. The grade 1 and 2 lists were counted (80 including the seven built, 160) with no repeats. The culture, proverb and multi-word candidate lists name works and creators only; their dates and legal basis are read by the builder from the creator's Japanese Wikipedia page, as in Plan-Culture-Japanese, and the reviewer owns the legal opinion. Nothing in this page was run through the validator; CI does that on each pull request.
+
+## Sentence gate rules (Spanish and Hindustani sentence tasks)
+
+Owner, 2026-11-14: "More clean Spanish and Hindi sentences would bring them back [placement sentence picks], and that is deck work. Then list them as issues and then do them in their decks." Issues #1244 (Spanish) and #1245 (Hindustani). The gate is `lib/core/placement/sentence_gate.dart` (PR #1240, not yet merged on 2026-11-14), the failing cards are listed in `docs/placement-bad-sentences.md` on the same branch. The audit measures how guessable a pick is from word-pair cues; Spanish passes the 0.32 bound only if its eligible sentences grow beyond n = 185 with varied structures, and Hindustani (about 70 eligible) needs about 130 or more. The bound is not loosened. Rules 1 to 10 above apply to every task here.
+
+**Every new sentence card must satisfy all of these** (a card that cannot is not written; the builder reports it):
+
+1. **Whole sentence:** one complete thought with a finite verb, 4 to 10 words in the target (words counted by spaces), ending with a full stop (`.` in Spanish, `।` or `.` as the course's cards do in Hindustani) or a question mark. No phrase, no fragment, no gloss, no title.
+2. **Faithful full translation:** the layer's `native` is one English sentence that says everything the target says and nothing more: capital letter, end mark, 2 to 16 words, no brackets for notes inside the meaning, one meaning only (no `;` alternatives), not cut at a comma, not a word-for-word gloss.
+3. **Same mood on both sides:** a target with `?` has a meaning that ends in `?`, and the other way round. Within one task about 20 of the 25 sentences are statements and about 5 are questions; the questions are spread through the deck, not grouped.
+4. **Taught words only:** every word is a word of a deck listed on the path at or before the task's unit (its cards, or a closed-class word such as an article, a preposition or a particle that the course teaches). A word not taught is not used; the builder never adds vocabulary to make a sentence work.
+5. **No template text:** no `…`, `...`, `___`, braces, `TODO` or `???`, in the target or the meaning. A sentence about a name or a place uses a real name or place.
+6. **Script:** the target is in the course's script only (Latin for Spanish; Devanagari for Hindustani, no Latin letter in it), never mixed.
+7. **Unique:** no target and no meaning equal to any other card of the course (search the language's decks first), so the right pick can be told from the wrong ones.
+8. **Not a question card:** the new cards are ordinary cards of a sentences deck, never a reading deck's question.
+
+**Variety rules** (the audit rewards sentences that cannot be guessed from a pair of words):
+
+- In one task's 25 sentences no frame is used more than twice (a frame is the first two words, such as `Me gusta` or `यह एक`), no verb more than twice, and no content noun more than twice; no two sentences differ by a single word.
+- Lengths are spread: at least 5 sentences of 4 to 5 words, 5 of 6 to 7 words, 5 of 8 to 10 words.
+- Use at least five different sentence shapes in the 25 (for example: a plain statement, a question, a negative, a past or future form, a sentence with a time or place phrase, a sentence with two verbs, a sentence with a reason or a contrast), and at least 8 different verbs.
+- Every sentence uses at least one word of the task's own unit and, in the 25, at least 10 words from earlier units, so the bank is not all one theme.
+- The wrong options of a pick are drawn from other cards by the app: write each sentence so that its meaning is not guessable from a single word it shares with its `confusables`.
+- Order: shuffle, so that no run of three cards has the same shape or mood.
+
+**Card shape:** the shape of the unit's existing sentences deck (`pos: "phrase"`, `tags: ["sentence"]` in Spanish, `bases` for every word with a `ref` where the word is a card and `base` where it is a closed-class word or an inflected form, `confusables` of 2 with a `why` in the layer, notes where the sentence has one point). No `phonetic` and no `phonetic_source` in any new card: they are written only by the tools (ES-010 and HI-007). Card ids are never changed or reused.
+
+### Spanish (`es`)
+
+State on decks-live ddcff92f: 102 path units, none planned; 2,536 cards, highest id `es-3124` (the ranges below start at `es-3200`); 66 sentences decks, each with about six sentences, so a deck grows by appending. Spanish conventions: `ipa` from `python3 tools/transcribe.py es "<sentence>"` (the decks use the Spain pronunciation, `θ`), no `reading` (Latin script), meanings in the layer, `native` capitalised with the Spanish inverted marks kept on the target (`¿...?`), the target starts with a capital and ends with its mark.
+
+#### Spanish repairs (failing cards in `docs/placement-bad-sentences.md`)
+
+The cards below are not sentences (phrases) or duplicate an earlier card. A card's meaning never changes and ids are permanent, so **none is edited**: the gate leaves them out and that is correct. ES-009 writes full-sentence replacements for what they taught.
+
+| Card | Target | Cause | Replaced by (ES-009) |
+|---|---|---|---|
+| es-0065 | a qué hora | phrase | 2 sentences asking at what time something happens |
+| es-0262 | mi nombre es | fragment | 2 sentences giving a name with a real name |
+| es-0341 | todos los días | phrase | 2 sentences with "every day" |
+| es-0934 | por la mañana | phrase | 2 sentences with "in the morning" |
+| es-0935 | por la tarde | phrase | 2 sentences with "in the afternoon" |
+| es-1217 | el centro comercial | phrase | 2 sentences with the shopping centre |
+| es-0097, es-0103 | ¿cómo te llamas?, ¿Cómo se llama usted? | same meaning | none: later card is dropped by the gate; new sentences must not repeat either meaning |
+| es-1000 | Mi cumpleaños es en mayo. | same meaning | none: do not write another birthday-in-May sentence |
+
+#### Spanish tasks
+
+Each ES-001 to ES-008 appends 25 sentences to **one existing sentences deck** (core and layer), so no path edit is needed. Files are disjoint, so **ES-001 to ES-009 may all run in parallel** (three builders at a time). Branch is `decks/es-<topic>`; ids are `es-` plus four digits from the reserved range, ascending.
+
+| Id | Branch | Edits (append only) | Taught-words scope (path units up to) | Ids | Cards |
+|---|---|---|---|---|---|
+| ES-001 | decks/es-sent-about-me | `decks/es/es-about-me-sentences.yaml`, `decks/es/en/es-en-about-me-sentences.yaml` | unit of `es-about-me` (7) | es-3200 to 3239 | 25 |
+| ES-002 | decks/es-sent-food | `es-food-sentences`, `es-en-food-sentences` | `es-food` (26) | es-3240 to 3279 | 25 |
+| ES-003 | decks/es-sent-directions | `es-directions-sentences`, `es-en-directions-sentences` | `es-directions` (28) | es-3280 to 3319 | 25 |
+| ES-004 | decks/es-sent-shopping | `es-shopping-sentences`, `es-en-shopping-sentences` | `es-shopping` (43) | es-3320 to 3359 | 25 |
+| ES-005 | decks/es-sent-hobbies | `es-hobbies-sentences`, `es-en-hobbies-sentences` | `es-hobbies` (49) | es-3360 to 3399 | 25 |
+| ES-006 | decks/es-sent-journey | `es-journey-sentences`, `es-en-journey-sentences` | `es-journey` (57) | es-3400 to 3439 | 25 |
+| ES-007 | decks/es-sent-health | `es-health-sentences`, `es-en-health-sentences` | `es-health` (65) | es-3440 to 3479 | 25 |
+| ES-008 | decks/es-sent-travel | `es-travel-sentences`, `es-en-travel-sentences` | `es-travel` (72) | es-3480 to 3519 | 25 |
+| ES-009 | decks/es-sent-repairs | `es-time-sentences`, `es-en-time-sentences` | `es-time` (32); a function whose words are not taught by then is reported and skipped | es-3520 to 3559 | 12 (the table above) |
+| ES-010 | decks/es-sent-phonetics | every new card of ES-001 to 009 via the tools | after all nine merge | none | tool run |
+| ES-011 | none (Sonnet, no PR) | runs the placement audit on the new Spanish bank and reports F5 and F17 accuracy against 0.32 at the new n; if it fails, the architect orders ES-012 onward (the same shape, other units: `es-money`, `es-news`, `es-weather`, `es-places`, ids from es-3600) | after ES-010 | none | audit |
+
+Content rules: the gate rules and the variety rules above; Spanish conventions above. Append at the end of the existing `cards:` and the layer's `cards:`; touch no existing card. The layer gives each new card `native`, `bases` meanings, `confusables` with `why`. The layer's `description` ("Six sentences...") is updated to the new count in the same edit. Not touched: any other file, the path, `decks/min_app.json`. Review-queue rows go in the report (rule 8). ES-010: `python3 tools/import_phonetic.py es --write` then `python3 tools/derive_phonetic.py es --write` (the tools skip cards that already have a form), report the counts.
+
+### Hindustani (`hi`)
+
+State on decks-live ddcff92f: 114 path units; 2,516 cards, highest id `hi-2835` (ranges start at `hi-2900`); only 15 sentences decks, so most themes have none and each HI task **creates a new sentences deck** for one unit. Conventions: Devanagari target with `target_scripts: { perso_arabic: "..." }` (the course offers Devanagari or the Perso-Arabic script, so every card has both, the Urdu spelling written as a native reader would, a doubtful spelling goes to the review queue), `reading` from `python3 tools/transcribe.py hi "<word>"` (letters based on ISO 15919: `maim̐`, `ē`, `ō`, long vowels with macrons; a word-final anusvara as the tool writes it; never write that it strictly follows ISO 15919), `ipa` from the same tool, `pos: "phrase"`, `bases` with `base` and `reading` for each inflected word, `confusables` with `kind`. Gender and honorific forms: a sentence about the speaker's own gender says so in the meaning ("said by a man") as the decks do; the verb agrees. Deck header as `hi-pronouns-sentences`: `kind: "vocab"`, `part: "core"`, `language` with `script: "devanagari"`, `scripts: ["devanagari", "perso_arabic"]`, tags `beginner` and `unreviewed`.
+
+#### Hindustani repairs (`docs/placement-bad-sentences.md`)
+
+Same principle: no existing card is edited. The gate leaves the phrases out, which is correct; HI-006 writes full sentences for what the template cards taught.
+
+| Card | Target | Cause | Replaced by (HI-006) |
+|---|---|---|---|
+| hi-0188 | मेरा नाम … है। | template `…` | 3 sentences giving a name (a real name each) |
+| hi-0190 | मैं … से हूँ। | template | 3 sentences naming a real city or country |
+| hi-0191 | मैं … में रहता हूँ। | template | 3 sentences with a real place, one with रहती (said by a woman) |
+| hi-0126, hi-0127 | तुम सुनते हो।, तू सुनता है। | same meaning | none; new meanings must differ ("You listen" is taken) |
+| hi-0120, 0121, 0423, 0443, 0445, 0446, 0447, 0454, 1397, 1398, 1399 | noun phrases and infinitives (father's house, bedroom, to brush one's teeth, lunch, dinner, to go to work, usually, climate...) | phrase | HI-006: one sentence for each of the six everyday ones (teeth, lunch, dinner, work, bedroom, usually); the compound-with-ओ expressions are left as they are |
+
+#### Hindustani tasks
+
+Each task creates one new sentences deck (core and layer) and edits **only one line of `decks/hi/hi-path.yaml`**: the `decks:` list of its unit, inserting the new deck's core id directly after the unit's first entry (the one-line exception of "Kanji lanes": different lines, so the tasks stay parallel; a rebase conflict there is the builder's to report). `words` is unchanged. **HI-001 to HI-006 may run in parallel** with each other and with the Spanish tasks (three builders at a time overall).
+
+| Id | Branch | Creates | Path line edited (unit's first deck) | Taught-words scope | Ids | Cards |
+|---|---|---|---|---|---|---|
+| HI-001 | decks/hi-sent-about-me | `decks/hi/hi-about-me-sentences.yaml`, `decks/hi/en/hi-en-about-me-sentences.yaml` | the unit of `hi-about-me` (12) | up to unit 12 | hi-2900 to 2939 | 25 |
+| HI-002 | decks/hi-sent-food | `hi-food-sentences`, `hi-en-food-sentences` | `hi-food` (29) | up to 29 | hi-2940 to 2979 | 25 |
+| HI-003 | decks/hi-sent-directions | `hi-directions-sentences`, `hi-en-directions-sentences` | `hi-directions` (36; its line lists `hi-grammar-continuous` after it) | up to 36 | hi-2980 to 3019 | 25 |
+| HI-004 | decks/hi-sent-shopping | `hi-shopping-sentences`, `hi-en-shopping-sentences` | `hi-shopping` (53) | up to 53 | hi-3020 to 3059 | 25 |
+| HI-005 | decks/hi-sent-health | `hi-health-sentences`, `hi-en-health-sentences` | `hi-health` (76) | up to 76 | hi-3060 to 3099 | 25 |
+| HI-006 | decks/hi-sent-repairs | `hi-time-sentences`, `hi-en-time-sentences` (the unit of `hi-time`, 17, has no sentences deck) | `hi-time` (17); a function whose words are not taught by unit 17 is reported and skipped (the work, bedroom and dinner ones then wait for a follow-up in `hi-work`, `hi-home` and `hi-food`) | up to 17 | hi-3100 to 3139 | 15 (the table above) |
+| HI-007 | decks/hi-sent-phonetics | every new card of HI-001 to 006 via the tools | none | after all six merge | none | tool run |
+| HI-008 | none (Sonnet, no PR) | runs the placement audit on the new Hindustani bank, reports F5 and F17 against 0.32 at the new n (need about 130 eligible or more; the task adds about 140); if it fails, follow-ups HI-009 onward are ordered with the same shape (`hi-work`, `hi-home`, `hi-weather`, `hi-money`, ids from hi-3200) | after HI-007 | none | audit |
+
+Content rules: the gate and variety rules above. HI-007: `python3 tools/import_phonetic.py hi --write` then `python3 tools/derive_phonetic.py hi --write` (`decks/hi/hi-phonetics.yaml` exists), counts reported. Not touched: other decks, `decks/min_app.json`, existing cards. Review-queue rows in the report: every Perso-Arabic spelling the builder is not sure of, every gender or honorific choice, and every translation with a nuance.
+
+### Counts
+
+Spanish: 9 builder tasks, 1 tool run, 1 audit (11). Hindustani: 6 builder tasks, 1 tool run, 1 audit (8).
