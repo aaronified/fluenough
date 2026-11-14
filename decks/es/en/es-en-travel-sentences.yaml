@@ -5,7 +5,7 @@ core: "es-travel-sentences"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Sentences: travel"
 license: "CC-BY-SA-4.0"
-description: "Six sentences about trips and hotels, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+description: "Thirty-one sentences about trips and hotels, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
 cards:
   "es-2196":
     native: "I confirm the booking at reception."
@@ -31,3 +31,103 @@ cards:
     native: "I buy a souvenir at the market."
     bases: { "un": "a", "en": "in", "el": "the", "recuerdo": "souvenir" }
     confusables: { "oferta": { why: "Oferta is an offer or a special price." }, "cargo": { why: "Cargo is a fee, a charge on a bill." } }
+  "es-3480":
+    native: "The tourist arrives late."
+    bases: { "El": "the" }
+    confusables: { "guía": { why: "Guía is a guide, a person who leads a tour." }, "ladrón": { why: "Ladrón is a thief, not a visitor." } }
+  "es-3481":
+    native: "I buy a map near the monument."
+    bases: { "un": "a", "del": "of the" }
+    confusables: { "museo": { why: "Museo is a museum, a place rather than a map." }, "lejos": { why: "Lejos is far, the opposite of near." } }
+  "es-3482":
+    native: "My brother rents a bicycle for the day trip."
+    bases: { "una": "a", "para": "for", "la": "the" }
+    confusables: { "coche": { why: "Coche is a car, not a bicycle." }, "moto": { why: "Moto is a motorbike, a different vehicle." } }
+  "es-3483":
+    native: "I never forget the sun cream."
+    bases: { "la": "the" }
+    confusables: { "toalla": { why: "Toalla is a towel, not sun cream." }, "sombra": { why: "Sombra is shade, another way to avoid the sun." } }
+  "es-3484":
+    native: "Can I pay the admission fee?"
+    bases: { "la": "the" }
+    confusables: { "precio": { why: "Precio is the price, the amount you pay." }, "cargo": { why: "Cargo is a fee, a charge on a bill." } }
+  "es-3485":
+    native: "We pay for the accommodation by card."
+    bases: { "el": "the", "con": "by" }
+    confusables: { "hotel": { why: "Hotel is one kind of accommodation, a building." }, "cuenta": { why: "Cuenta is the bill, the sum you owe." } }
+  "es-3486":
+    native: "It is very hot, but the monument is pretty."
+    bases: { "el": "the" }
+    confusables: { "museo": { why: "Museo is a museum, indoors." }, "feo": { why: "Feo is ugly, the opposite of pretty." } }
+  "es-3487":
+    native: "I do not have the visa yet."
+    bases: { "el": "the" }
+    confusables: { "pasaporte": { why: "Pasaporte is a passport, a different document." }, "embajada": { why: "Embajada is an embassy, an office rather than a paper." } }
+  "es-3488":
+    native: "I take a camera on the day trip."
+    bases: { "una": "a", "a": "on", "la": "the" }
+    confusables: { "foto": { why: "Foto is a photo, the picture itself, not the camera." }, "bolsa": { why: "Bolsa is a bag, which might hold the camera." } }
+  "es-3489":
+    native: "When does the visit start?"
+    bases: { "la": "the" }
+    confusables: { "hora": { why: "Hora is an hour, a time on the clock." }, "entrada": { why: "Entrada is an admission ticket, not the start." } }
+  "es-3490":
+    native: "We cross the street near an embassy."
+    bases: { "la": "the", "de": "of", "una": "an" }
+    confusables: { "consulado": { why: "Consulado is a consulate, a smaller office for papers." }, "robo": { why: "Robo is theft, not a building." } }
+  "es-3491":
+    native: "I want to stay at a big hotel."
+    bases: { "en": "at", "un": "a" }
+    confusables: { "hostal": { why: "Hostal is a cheaper, smaller place to stay." }, "alojamiento": { why: "Alojamiento is accommodation in general." } }
+  "es-3492":
+    native: "My family rests at the tourist beach after eating."
+    bases: { "en": "at", "la": "the", "de": "after" }
+    confusables: { "tranquilo": { why: "Tranquilo is calm or quiet, not busy with visitors." }, "lleno": { why: "Lleno is full, such as a crowded beach." } }
+  "es-3493":
+    native: "The reception desk is closed."
+    bases: { "La": "the" }
+    confusables: { "abierto": { why: "Abierto is open, the opposite of closed." }, "ocupado": { why: "Ocupado is busy or taken, such as a toilet." } }
+  "es-3494":
+    native: "Do you talk to the guide?"
+    bases: { "con": "to", "el": "the" }
+    confusables: { "agencia": { why: "Agencia is an agency that sells trips, not a person." }, "museo": { why: "Museo is a museum, a place to visit." } }
+  "es-3495":
+    native: "Yesterday I lost my passport at a consulate."
+    bases: { "el": "the", "en": "at", "un": "a" }
+    confusables: { "robo": { why: "Robo is theft, which is a different event." }, "embajada": { why: "Embajada is an embassy, a different office." } }
+  "es-3496":
+    native: "My brother and I exchange money at the agency."
+    bases: { "en": "at", "la": "the" }
+    confusables: { "gastar": { why: "Gastar is to spend money, not to change it." }, "ahorrar": { why: "Ahorrar is to save money." } }
+  "es-3497":
+    native: "The agency closes at five."
+    bases: { "La": "the", "a": "at", "las": "the" }
+    confusables: { "abrir": { why: "Abrir is to open, the opposite of close." }, "temprano": { why: "Temprano is early, a time of day." } }
+  "es-3498":
+    native: "My friend is very friendly with the tourists."
+    bases: { "con": "with", "los": "the" }
+    confusables: { "tranquilo": { why: "Tranquilo is calm or quiet, not friendly." }, "aburrido": { why: "Aburrido is boring, or bored." } }
+  "es-3499":
+    native: "Do you have the visa in the suitcase?"
+    bases: { "el": "the", "en": "in", "la": "the" }
+    confusables: { "seguro": { why: "Seguro is insurance, not a travel document." }, "billete": { why: "Billete is a ticket, a different document." } }
+  "es-3500":
+    native: "Today I sleep in cheap accommodation."
+    bases: { "en": "in", "un": "a" }
+    confusables: { "caro": { why: "Caro is expensive, the opposite of cheap." }, "hotel": { why: "Hotel is a kind of accommodation, which may be dear." } }
+  "es-3501":
+    native: "In the morning we have coffee with a foreigner."
+    bases: { "Por": "in", "la": "the", "el": "the", "con": "with", "un": "a" }
+    confusables: { "turista": { why: "Turista is a visitor on a trip, not any foreigner." }, "guía": { why: "Guía is a guide, a person who leads a tour." } }
+  "es-3502":
+    native: "We order the seasonal set menu."
+    bases: { "el": "the", "de": "of" }
+    confusables: { "cuenta": { why: "Cuenta is the bill, not the menu." }, "precio": { why: "Precio is a price, the cost of a dish." } }
+  "es-3503":
+    native: "Tomorrow I buy a souvenir for my family."
+    bases: { "un": "a", "para": "for" }
+    confusables: { "monumento": { why: "Monumento is a monument, a place, not a gift." }, "tienda": { why: "Tienda is a shop, where a souvenir is bought." } }
+  "es-3504":
+    native: "Where is the hotel reception desk?"
+    bases: { "la": "the", "del": "of the" }
+    confusables: { "cerca": { why: "Cerca is near, a place word, not a desk." }, "metro": { why: "Metro is the underground railway." } }
