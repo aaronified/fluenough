@@ -123,6 +123,7 @@ alphabet:
   - "ja-kanji-28"
   - "ja-kanji-29"
   - "ja-kanji-30"
+  - "ja-kanji-32"
   - "ja-katakana"
   - "ja-katakana-combos"
   - "ja-hiragana-marks"
@@ -846,11 +847,8 @@ units:
       - { id: "a-castle-visit", text: { "en": "A guide tells the story of an old castle" } }
     reading_passages:
       - { id: "museum-card", text: { "en": "A museum card about a shogun" } }
-  - planned: { id: "ja-kanji-32", grammar: "script-kanji-32", words: 0 }
-    listening_passages:
-      - { id: "kanji-32-heard", text: { "en": "Hearing words whose kanji unit 32 teaches" } }
-    reading_passages:
-      - { id: "kanji-32-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 32" } }
+  - decks: ["ja-kanji-32"]
+    words: 0
   - decks: ["ja-religion", "ja-religion-sentences", "ja-reading-religion", "*"]
     words: 45
     listening_passages:
