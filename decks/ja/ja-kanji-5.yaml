@@ -135,12 +135,18 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "わたしは歌う。"
+        target_scripts: { kana: "わたしはうたう。" }
+        words: ["わたし", "は", "歌う"]
+        reading: "watashi wa utau."
+        ipa: "wataɕi wa ɯtaɯ"
   - id: "ja-5190"
     target: "画"
     target_scripts: { kana: "えいが" }
     words: ["画"]
     reading: "eiga"
-    ipa: "eiɡa"
+    ipa: "eːɡa"
     pos: "letter"
     notes:
       - { id: "n1", kind: "usage" }
@@ -170,7 +176,7 @@ cards:
         target_scripts: { kana: "わたしはともだちにあう。" }
         words: ["わたし", "は", "ともだち", "に", "会う"]
         reading: "watashi wa tomodachi ni au."
-        ipa: "watɕi wa tomodatɕi ni au"
+        ipa: "wataɕi wa tomodatɕi ni au"
   - id: "ja-5193"
     target: "海"
     target_scripts: { kana: "うみ" }
@@ -228,7 +234,7 @@ cards:
         target_scripts: { kana: "わたしはかどをまがる。" }
         words: ["わたし", "は", "角", "を", "まがる"]
         reading: "watashi wa kado o magaru."
-        ipa: "watɕi wa kado o maɡaɾɯ"
+        ipa: "wataɕi wa kado o maɡaɾɯ"
   - id: "ja-5197"
     target: "楽"
     target_scripts: { kana: "たのしい" }
@@ -244,13 +250,13 @@ cards:
         target_scripts: { kana: "がっこうはたのしいです。" }
         words: ["がっこう", "は", "楽しい", "です"]
         reading: "gakkou wa tanoshii desu."
-        ipa: "ɡakːoː wa tanoɕiː desɯ"
+        ipa: "ɡakkoː wa tanoɕiː desɯ"
   - id: "ja-5198"
     target: "活"
     target_scripts: { kana: "せいかつ" }
     words: ["活"]
     reading: "seikatsu"
-    ipa: "seikatsɯ"
+    ipa: "seːkatsɯ"
     pos: "letter"
     notes:
       - { id: "n1", kind: "usage" }
@@ -260,7 +266,7 @@ cards:
         target_scripts: { kana: "せいかつはたのしいです。" }
         words: ["生活", "は", "たのしい", "です"]
         reading: "seikatsu wa tanoshii desu."
-        ipa: "seikatsɯ wa tanoɕiː desɯ"
+        ipa: "seːkatsɯ wa tanoɕiː desɯ"
   - id: "ja-5199"
     target: "間"
     target_scripts: { kana: "あいだ" }
@@ -272,11 +278,11 @@ cards:
       - { id: "n1", kind: "usage" }
     bases: "self"
     examples:
-      - target: "いえとえきの間はとおいです。"
-        target_scripts: { kana: "いえとえきのあいだはとおいです。" }
-        words: ["いえ", "と", "えき", "の", "間", "は", "とおい", "です"]
-        reading: "ie to eki no aida wa tooi desu."
-        ipa: "ie to eki no aida wa toːi desɯ"
+      - target: "えきとがっこうの間はこうえんです。"
+        target_scripts: { kana: "えきとがっこうのあいだはこうえんです。" }
+        words: ["えき", "と", "がっこう", "の", "間", "は", "こうえん", "です"]
+        reading: "eki to gakkou no aida wa kouen desu."
+        ipa: "eki to ɡakkoː no aida wa koːeɴ desɯ"
   - id: "ja-5200"
     target: "丸"
     target_scripts: { kana: "まるい" }
@@ -314,11 +320,11 @@ cards:
       - { id: "n1", kind: "usage" }
     bases: "self"
     examples:
-      - target: "顔はおおきいです。"
-        target_scripts: { kana: "かおはおおきいです。" }
-        words: ["顔", "は", "おおきい", "です"]
-        reading: "kao wa ookii desu."
-        ipa: "kao wa oːkiː desɯ"
+      - target: "いぬの顔はまるいです。"
+        target_scripts: { kana: "いぬのかおはまるいです。" }
+        words: ["いぬ", "の", "顔", "は", "まるい", "です"]
+        reading: "inu no kao wa marui desu."
+        ipa: "inɯ no kao wa maɾɯi desɯ"
   - id: "ja-5203"
     target: "汽"
     target_scripts: { kana: "きしゃ" }
@@ -354,7 +360,7 @@ cards:
         target_scripts: { kana: "わたしはいえにかえる。" }
         words: ["わたし", "は", "いえ", "に", "帰る"]
         reading: "watashi wa ie ni kaeru."
-        ipa: "watɕi wa ie ni kaeɾɯ"
+        ipa: "wataɕi wa ie ni kaeɾɯ"
   - id: "ja-5206"
     target: "弓"
     target_scripts: { kana: "ゆみ" }
@@ -396,7 +402,7 @@ cards:
     target_scripts: { kana: "とうきょう" }
     words: ["京"]
     reading: "toukyou"
-    ipa: "toːkʲoː"
+    ipa: "toːkjoː"
     pos: "letter"
     notes:
       - { id: "n1", kind: "usage" }
@@ -432,4 +438,4 @@ cards:
         target_scripts: { kana: "せんせいがおしえる。" }
         words: ["せんせい", "が", "教える"]
         reading: "sensei ga oshieru."
-        ipa: "seɴseː ɡa oɕieɾɯ"
+        ipa: "senseː ɡa oɕieɾɯ"
