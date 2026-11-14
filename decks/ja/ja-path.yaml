@@ -113,6 +113,7 @@ alphabet:
   - "ja-kanji-18"
   - "ja-kanji-19"
   - "ja-kanji-20"
+  - "ja-kanji-21"
   - "ja-katakana"
   - "ja-katakana-combos"
   - "ja-hiragana-marks"
@@ -609,11 +610,8 @@ units:
       - { id: "shinkansen-ticket", text: { "en": "Buying a bullet-train ticket at the counter" } }
     reading_passages:
       - { id: "platform-notice", text: { "en": "A train timetable and a platform notice" } }
-  - planned: { id: "ja-kanji-21", grammar: "script-kanji-21", words: 0 }
-    listening_passages:
-      - { id: "kanji-21-heard", text: { "en": "Hearing words whose kanji unit 21 teaches" } }
-    reading_passages:
-      - { id: "kanji-21-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 21" } }
+  - decks: ["ja-kanji-21"]
+    words: 0
   - decks: ["ja-grammar-reasons", "ja-grammar-reasons-sentences"]
     words: 0
     grammar: ["kara-because", "node"]
