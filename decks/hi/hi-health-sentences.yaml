@@ -1,0 +1,413 @@
+schema: 1
+id: "hi-health-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-3060"
+    target: "मैंने आज दवा ली।"
+    target_scripts: { perso_arabic: "میں نے آج دوا لی۔" }
+    reading: "mainnē āj davā lī."
+    ipa: "mɛːnneː aːdʒ d̪əʋaː liː"
+    pos: "phrase"
+    bases:
+      - { word: "मैंने", base: "मैं", reading: "mainnē" }
+      - { word: "आज", ref: "hi-0299" }
+      - { word: "दवा", ref: "hi-2089" }
+      - { word: "ली", base: "लेना", reading: "lī" }
+    confusables:
+      - { id: "w1", word: "चाय", reading: "cāy", kind: "word" }
+      - { id: "w2", word: "रोटी", reading: "rōṭī", kind: "word" }
+  - id: "hi-3061"
+    target: "हम जल्दी फ़ार्मेसी पहुँचे।"
+    target_scripts: { perso_arabic: "ہم جلدی دوا خانہ پہنچے۔" }
+    reading: "ham jaldī fārmēsī pahum̐cē."
+    ipa: "ɦəm dʒəld̪iː faːrmeːsiː pəɦʊ̃tʃeː"
+    pos: "phrase"
+    bases:
+      - { word: "हम", base: "हम", reading: "ham" }
+      - { word: "जल्दी", ref: "hi-0819" }
+      - { word: "फ़ार्मेसी", ref: "hi-2086" }
+      - { word: "पहुँचे", base: "पहुँचना", reading: "pahum̐cē" }
+    confusables:
+      - { id: "w1", word: "अस्पताल", reading: "aspatāl", kind: "word" }
+      - { id: "w2", word: "दुकान", reading: "dukān", kind: "word" }
+  - id: "hi-3062"
+    target: "डॉक्टर ने मरीज़ को इंजेक्शन दिया।"
+    target_scripts: { perso_arabic: "ڈاکٹر نے مریض کو انجیکشن دیا۔" }
+    reading: "ḍôkṭar nē marīz kō iñjēkśan diyā."
+    ipa: "ɖɔkʈər neː məriːz koː ɪɲdʒeːkʃən d̪ɪjaː"
+    pos: "phrase"
+    bases:
+      - { word: "डॉक्टर", ref: "hi-0357" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "मरीज़", ref: "hi-2085" }
+      - { word: "को", ref: "hi-0277" }
+      - { word: "इंजेक्शन", ref: "hi-2082" }
+      - { word: "दिया", base: "देना", reading: "diyā" }
+    confusables:
+      - { id: "w1", word: "दवा", reading: "davā", kind: "word" }
+      - { id: "w2", word: "टेस्ट", reading: "ṭēsṭ", kind: "word" }
+  - id: "hi-3063"
+    target: "नहाते समय प्लास्टर गीला मत करो।"
+    target_scripts: { perso_arabic: "نہاتے سمے پلاسٹر گیلا مت کرو۔" }
+    reading: "nahātē samay plāsṭar gīlā mat karō."
+    ipa: "nəɦaːt̪eː səməj plaːsʈər ɡiːlaː mət̪ kəroː"
+    pos: "phrase"
+    bases:
+      - { word: "नहाते", base: "नहाना", reading: "nahātē" }
+      - { word: "समय", ref: "hi-0607" }
+      - { word: "प्लास्टर", ref: "hi-2080" }
+      - { word: "गीला", ref: "hi-1285" }
+      - { word: "मत", base: "मत", reading: "mat" }
+      - { word: "करो", base: "करना", reading: "karō" }
+    confusables:
+      - { id: "w1", word: "ठंडा", reading: "ṭhaṇḍā", kind: "word" }
+      - { id: "w2", word: "गरम", reading: "garam", kind: "word" }
+  - id: "hi-3064"
+    target: "क्या उसने मेरी नाड़ी नापी?"
+    target_scripts: { perso_arabic: "کیا اس نے میری نبض ناپی؟" }
+    reading: "kyā usnē mērī nāṛī nāpī?"
+    ipa: "kjaː ʊsneː meːriː naːɽiː naːpiː"
+    pos: "phrase"
+    bases:
+      - { word: "क्या", ref: "hi-0157" }
+      - { word: "उसने", base: "वह", reading: "usnē" }
+      - { word: "मेरी", base: "मेरा", reading: "mērī" }
+      - { word: "नाड़ी", ref: "hi-2078" }
+      - { word: "नापी", base: "नापना", reading: "nāpī" }
+    confusables:
+      - { id: "w1", word: "दस्त", reading: "dast", kind: "word" }
+      - { id: "w2", word: "बीमारी", reading: "bīmārī", kind: "word" }
+  - id: "hi-3065"
+    target: "बच्चे की बीमारी इस सर्दी में लौट आई।"
+    target_scripts: { perso_arabic: "بچے کی بیماری اس سردی میں لوٹ آئی۔" }
+    reading: "baccē kī bīmārī is sardī mēm̐ lauṭ āī."
+    ipa: "bətʃtʃeː kiː biːmaːriː ɪs sərd̪iː mẽː lɔːʈ aːiː"
+    pos: "phrase"
+    bases:
+      - { word: "बच्चे", base: "बच्चा", reading: "baccē" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "बीमारी", ref: "hi-2075" }
+      - { word: "इस", base: "यह", reading: "is" }
+      - { word: "सर्दी", ref: "hi-1271" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "लौट", base: "लौटना", reading: "lauṭ" }
+      - { word: "आई", base: "आना", reading: "āī" }
+    confusables:
+      - { id: "w1", word: "स्वास्थ्य", reading: "svāsthy", kind: "word" }
+      - { id: "w2", word: "ठंड", reading: "ṭhaṇḍ", kind: "word" }
+  - id: "hi-3066"
+    target: "रोज़ का आहार बदलो।"
+    target_scripts: { perso_arabic: "روز کی غذا بدلو۔" }
+    reading: "rōz kā āhār badlō."
+    ipa: "roːz kaː aːɦaːr bəd̪loː"
+    pos: "phrase"
+    bases:
+      - { word: "रोज़", ref: "hi-0451" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "आहार", ref: "hi-2093" }
+      - { word: "बदलो", base: "बदलना", reading: "badlō" }
+    confusables:
+      - { id: "w1", word: "व्यायाम", reading: "vyāyām", kind: "word" }
+      - { id: "w2", word: "सब्ज़ी", reading: "sabzī", kind: "word" }
+  - id: "hi-3067"
+    target: "मुझे पेट में जलन हो रही है।"
+    target_scripts: { perso_arabic: "مجھے پیٹ میں جلن ہو رہی ہے۔" }
+    reading: "mujhē pēṭ mēm̐ jalan hō rahī hai."
+    ipa: "mʊdʒʱeː peːʈ mẽː dʒələn ɦoː rəɦiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मुझे", base: "मैं", reading: "mujhē" }
+      - { word: "पेट", ref: "hi-1036" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "जलन", ref: "hi-2087" }
+      - { word: "हो", base: "होना", reading: "hō" }
+      - { word: "रही", base: "रहना", reading: "rahī" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "दर्द", reading: "dard", kind: "word" }
+      - { id: "w2", word: "खाँसी", reading: "khām̐sī", kind: "word" }
+  - id: "hi-3068"
+    target: "एलर्जी पूरे शरीर में फैली।"
+    target_scripts: { perso_arabic: "الرجی پورے جسم میں پھیلی۔" }
+    reading: "ēlarjī pūrē śarīr mēm̐ phailī."
+    ipa: "eːlərdʒiː puːreː ʃəriːr mẽː pʰɛːliː"
+    pos: "phrase"
+    bases:
+      - { word: "एलर्जी", ref: "hi-2077" }
+      - { word: "पूरे", base: "पूरा", reading: "pūrē" }
+      - { word: "शरीर", ref: "hi-1041" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "फैली", base: "फैलना", reading: "phailī" }
+    confusables:
+      - { id: "w1", word: "बुखार", reading: "bukhār", kind: "word" }
+      - { id: "w2", word: "धूप", reading: "dhūp", kind: "word" }
+  - id: "hi-3069"
+    target: "क्या आपकी सर्जरी हो गई?"
+    target_scripts: { perso_arabic: "کیا آپ کی سرجری ہو گئی؟" }
+    reading: "kyā āpkī sarjarī hō gaī?"
+    ipa: "kjaː aːpkiː sərdʒəriː ɦoː ɡəiː"
+    pos: "phrase"
+    bases:
+      - { word: "क्या", ref: "hi-0157" }
+      - { word: "आपकी", base: "आपका", reading: "āpkī" }
+      - { word: "सर्जरी", ref: "hi-2083" }
+      - { word: "हो", base: "होना", reading: "hō" }
+      - { word: "गई", base: "जाना", reading: "gaī" }
+    confusables:
+      - { id: "w1", word: "टेस्ट", reading: "ṭēsṭ", kind: "word" }
+      - { id: "w2", word: "मालिश", reading: "māliś", kind: "word" }
+  - id: "hi-3070"
+    target: "कल रात प्लास्टर के नीचे उसका पैर सूज गया।"
+    target_scripts: { perso_arabic: "کل رات پلاسٹر کے نیچے اس کا پاؤں سوج گیا۔" }
+    reading: "kal rāt plāsṭar kē nīcē uskā pair sūj gayā."
+    ipa: "kəl raːt̪ plaːsʈər keː niːtʃeː ʊskaː pɛːr suːdʒ ɡəjaː"
+    pos: "phrase"
+    bases:
+      - { word: "कल", ref: "hi-0300" }
+      - { word: "रात", ref: "hi-0304" }
+      - { word: "प्लास्टर", ref: "hi-2080" }
+      - { word: "के", base: "का", reading: "kē" }
+      - { word: "नीचे", ref: "hi-0835" }
+      - { word: "उसका", ref: "hi-0757" }
+      - { word: "पैर", ref: "hi-1039" }
+      - { word: "सूज", base: "सूजना", reading: "sūj" }
+      - { word: "गया", base: "जाना", reading: "gayā" }
+    confusables:
+      - { id: "w1", word: "पट्टी", reading: "paṭṭī", kind: "word" }
+      - { id: "w2", word: "घुटना", reading: "ghuṭnā", kind: "word" }
+  - id: "hi-3071"
+    target: "मालिश और व्यायाम से उसे आराम मिला।"
+    target_scripts: { perso_arabic: "مالش اور ورزش سے اسے آرام ملا۔" }
+    reading: "māliś aur vyāyām sē usē ārām milā."
+    ipa: "maːlɪʃ ɔːr ʋjaːjaːm seː ʊseː aːraːm mɪlaː"
+    pos: "phrase"
+    bases:
+      - { word: "मालिश", ref: "hi-2090" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "व्यायाम", ref: "hi-2094" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "उसे", base: "वह", reading: "usē" }
+      - { word: "आराम", ref: "hi-1453" }
+      - { word: "मिला", base: "मिलना", reading: "milā" }
+    confusables:
+      - { id: "w1", word: "गर्मी", reading: "garmī", kind: "word" }
+      - { id: "w2", word: "थका", reading: "thakā", kind: "word" }
+  - id: "hi-3072"
+    target: "दस्त के बाद वह उठा।"
+    target_scripts: { perso_arabic: "دست کے بعد وہ اٹھا۔" }
+    reading: "dast kē bād vah uṭhā."
+    ipa: "d̪əst̪ keː baːd̪ ʋəɦ ʊʈʰaː"
+    pos: "phrase"
+    bases:
+      - { word: "दस्त", ref: "hi-2079" }
+      - { word: "के", base: "का", reading: "kē" }
+      - { word: "बाद", base: "बाद", reading: "bād" }
+      - { word: "वह", ref: "hi-0749" }
+      - { word: "उठा", base: "उठना", reading: "uṭhā" }
+    confusables:
+      - { id: "w1", word: "जलन", reading: "jalan", kind: "word" }
+      - { id: "w2", word: "खाँसी", reading: "khām̐sī", kind: "word" }
+  - id: "hi-3073"
+    target: "डॉक्टर के कहने पर मैंने सिगरेट छोड़ी।"
+    target_scripts: { perso_arabic: "ڈاکٹر کے کہنے پر میں نے سگریٹ چھوڑی۔" }
+    reading: "ḍôkṭar kē kahnē par mainnē sigrēṭ chōṛī."
+    ipa: "ɖɔkʈər keː kəɦneː pər mɛːnneː sɪɡreːʈ tʃʰoːɽiː"
+    pos: "phrase"
+    bases:
+      - { word: "डॉक्टर", ref: "hi-0357" }
+      - { word: "के", base: "का", reading: "kē" }
+      - { word: "कहने", base: "कहना", reading: "kahnē" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "मैंने", base: "मैं", reading: "mainnē" }
+      - { word: "सिगरेट", ref: "hi-2095" }
+      - { word: "छोड़ी", base: "छोड़ना", reading: "chōṛī" }
+    confusables:
+      - { id: "w1", word: "शराब", reading: "śarāb", kind: "word" }
+      - { id: "w2", word: "बोतल", reading: "bōtal", kind: "word" }
+  - id: "hi-3074"
+    target: "क्या तुमने टेस्ट की रिपोर्ट देखी?"
+    target_scripts: { perso_arabic: "کیا تم نے ٹیسٹ کی رپورٹ دیکھی؟" }
+    reading: "kyā tumnē ṭēsṭ kī ripōrṭ dēkhī?"
+    ipa: "kjaː t̪ʊmneː ʈeːsʈ kiː rɪpoːrʈ d̪eːkʰiː"
+    pos: "phrase"
+    bases:
+      - { word: "क्या", ref: "hi-0157" }
+      - { word: "तुमने", base: "तुम", reading: "tumnē" }
+      - { word: "टेस्ट", ref: "hi-2097" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "रिपोर्ट", ref: "hi-2009" }
+      - { word: "देखी", base: "देखना", reading: "dēkhī" }
+    confusables:
+      - { id: "w1", word: "सर्जरी", reading: "sarjarī", kind: "word" }
+      - { id: "w2", word: "दवा", reading: "davā", kind: "word" }
+  - id: "hi-3075"
+    target: "कुछ दिनों में उसका दस्त रुका।"
+    target_scripts: { perso_arabic: "کچھ دنوں میں اس کا دست رکا۔" }
+    reading: "kuch dinōm̐ mēm̐ uskā dast rukā."
+    ipa: "kʊtʃʰ d̪ɪnõː mẽː ʊskaː d̪əst̪ rʊkaː"
+    pos: "phrase"
+    bases:
+      - { word: "कुछ", ref: "hi-0759" }
+      - { word: "दिनों", base: "दिन", reading: "dinōm̐" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "उसका", ref: "hi-0757" }
+      - { word: "दस्त", ref: "hi-2079" }
+      - { word: "रुका", base: "रुकना", reading: "rukā" }
+    confusables:
+      - { id: "w1", word: "बुखार", reading: "bukhār", kind: "word" }
+      - { id: "w2", word: "खाँसी", reading: "khām̐sī", kind: "word" }
+  - id: "hi-3076"
+    target: "ऑपरेशन के लिए उसने घर के सारे पैसे जोड़े।"
+    target_scripts: { perso_arabic: "آپریشن کے لیے اس نے گھر کے سارے پیسے جوڑے۔" }
+    reading: "ôprēśan kē liē usnē ghar kē sārē paisē jōṛē."
+    ipa: "ɔpreːʃən keː lɪeː ʊsneː ɡʱər keː saːreː pɛːseː dʒoːɽeː"
+    pos: "phrase"
+    bases:
+      - { word: "ऑपरेशन", ref: "hi-2084" }
+      - { word: "के", base: "का", reading: "kē" }
+      - { word: "लिए", base: "लिए", reading: "liē" }
+      - { word: "उसने", base: "वह", reading: "usnē" }
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "सारे", base: "सारा", reading: "sārē" }
+      - { word: "पैसे", ref: "hi-0234" }
+      - { word: "जोड़े", base: "जोड़ना", reading: "jōṛē" }
+    confusables:
+      - { id: "w1", word: "जेब", reading: "jēb", kind: "word" }
+      - { id: "w2", word: "दुकान", reading: "dukān", kind: "word" }
+  - id: "hi-3077"
+    target: "हमने नुस्खा जेब में रखा।"
+    target_scripts: { perso_arabic: "ہم نے نسخہ جیب میں رکھا۔" }
+    reading: "hamnē nuskhā jēb mēm̐ rakhā."
+    ipa: "ɦəmneː nʊskʰaː dʒeːb mẽː rəkʰaː"
+    pos: "phrase"
+    bases:
+      - { word: "हमने", base: "हम", reading: "hamnē" }
+      - { word: "नुस्खा", ref: "hi-2092" }
+      - { word: "जेब", ref: "hi-1386" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "रखा", base: "रखना", reading: "rakhā" }
+    confusables:
+      - { id: "w1", word: "दवाई", reading: "davāī", kind: "word" }
+      - { id: "w2", word: "पट्टी", reading: "paṭṭī", kind: "word" }
+  - id: "hi-3078"
+    target: "मालिश के लिए कल सुबह आठ बजे आदमी घर आएगा।"
+    target_scripts: { perso_arabic: "مالش کے لیے کل صبح آٹھ بجے آدمی گھر آئے گا۔" }
+    reading: "māliś kē liē kal subah āṭh bajē ādmī ghar āēgā."
+    ipa: "maːlɪʃ keː lɪeː kəl sʊbəɦ aːʈʰ bədʒeː aːd̪miː ɡʱər aːeːɡaː"
+    pos: "phrase"
+    bases:
+      - { word: "मालिश", ref: "hi-2090" }
+      - { word: "के", base: "का", reading: "kē" }
+      - { word: "लिए", base: "लिए", reading: "liē" }
+      - { word: "कल", ref: "hi-0300" }
+      - { word: "सुबह", ref: "hi-0302" }
+      - { word: "आठ", ref: "hi-0205" }
+      - { word: "बजे", ref: "hi-0305" }
+      - { word: "आदमी", ref: "hi-0762" }
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "आएगा", base: "आना", reading: "āēgā" }
+    confusables:
+      - { id: "w1", word: "व्यायाम", reading: "vyāyām", kind: "word" }
+      - { id: "w2", word: "आराम", reading: "ārām", kind: "word" }
+  - id: "hi-3079"
+    target: "क्या तुम मेरा नुस्खा देखोगे?"
+    target_scripts: { perso_arabic: "کیا تم میرا نسخہ دیکھو گے؟" }
+    reading: "kyā tum mērā nuskhā dēkhōgē?"
+    ipa: "kjaː t̪ʊm meːraː nʊskʰaː d̪eːkʰoːɡeː"
+    pos: "phrase"
+    bases:
+      - { word: "क्या", ref: "hi-0157" }
+      - { word: "तुम", base: "तुम", reading: "tum" }
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "नुस्खा", ref: "hi-2092" }
+      - { word: "देखोगे", base: "देखना", reading: "dēkhōgē" }
+    confusables:
+      - { id: "w1", word: "दवाई", reading: "davāī", kind: "word" }
+      - { id: "w2", word: "पट्टी", reading: "paṭṭī", kind: "word" }
+  - id: "hi-3080"
+    target: "सर्जरी के तीन दिन बाद नर्स ने पट्टी खोली।"
+    target_scripts: { perso_arabic: "سرجری کے تین دن بعد نرس نے پٹی کھولی۔" }
+    reading: "sarjarī kē tīn din bād nars nē paṭṭī khōlī."
+    ipa: "sərdʒəriː keː t̪iːn d̪ɪn baːd̪ nərs neː pəʈʈiː kʰoːliː"
+    pos: "phrase"
+    bases:
+      - { word: "सर्जरी", ref: "hi-2083" }
+      - { word: "के", base: "का", reading: "kē" }
+      - { word: "तीन", ref: "hi-0200" }
+      - { word: "दिन", ref: "hi-0308" }
+      - { word: "बाद", base: "बाद", reading: "bād" }
+      - { word: "नर्स", ref: "hi-0406" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "पट्टी", ref: "hi-1441" }
+      - { word: "खोली", base: "खोलना", reading: "khōlī" }
+    confusables:
+      - { id: "w1", word: "दवा", reading: "davā", kind: "word" }
+      - { id: "w2", word: "टेस्ट", reading: "ṭēsṭ", kind: "word" }
+  - id: "hi-3081"
+    target: "वह मरीज़ सारी रात सोया नहीं।"
+    target_scripts: { perso_arabic: "وہ مریض ساری رات سویا نہیں۔" }
+    reading: "vah marīz sārī rāt sōyā nahīm̐."
+    ipa: "ʋəɦ məriːz saːriː raːt̪ soːjaː nəɦĩː"
+    pos: "phrase"
+    bases:
+      - { word: "वह", ref: "hi-0749" }
+      - { word: "मरीज़", ref: "hi-2085" }
+      - { word: "सारी", base: "सारा", reading: "sārī" }
+      - { word: "रात", ref: "hi-0304" }
+      - { word: "सोया", base: "सोना", reading: "sōyā" }
+      - { word: "नहीं", ref: "hi-0156" }
+    confusables:
+      - { id: "w1", word: "डॉक्टर", reading: "ḍôkṭar", kind: "word" }
+      - { id: "w2", word: "आदमी", reading: "ādmī", kind: "word" }
+  - id: "hi-3082"
+    target: "मैंने शराब नहीं बेची।"
+    target_scripts: { perso_arabic: "میں نے شراب نہیں بیچی۔" }
+    reading: "mainnē śarāb nahīm̐ bēcī."
+    ipa: "mɛːnneː ʃəraːb nəɦĩː beːtʃiː"
+    pos: "phrase"
+    bases:
+      - { word: "मैंने", base: "मैं", reading: "mainnē" }
+      - { word: "शराब", ref: "hi-2096" }
+      - { word: "नहीं", ref: "hi-0156" }
+      - { word: "बेची", base: "बेचना", reading: "bēcī" }
+    confusables:
+      - { id: "w1", word: "सिगरेट", reading: "sigrēṭ", kind: "word" }
+      - { id: "w2", word: "चाय", reading: "cāy", kind: "word" }
+  - id: "hi-3083"
+    target: "आज सुबह उसने जलन सही।"
+    target_scripts: { perso_arabic: "آج صبح اس نے جلن سہی۔" }
+    reading: "āj subah usnē jalan sahī."
+    ipa: "aːdʒ sʊbəɦ ʊsneː dʒələn səɦiː"
+    pos: "phrase"
+    bases:
+      - { word: "आज", ref: "hi-0299" }
+      - { word: "सुबह", ref: "hi-0302" }
+      - { word: "उसने", base: "वह", reading: "usnē" }
+      - { word: "जलन", ref: "hi-2087" }
+      - { word: "सही", base: "सहना", reading: "sahī" }
+    confusables:
+      - { id: "w1", word: "गर्मी", reading: "garmī", kind: "word" }
+      - { id: "w2", word: "दस्त", reading: "dast", kind: "word" }
+  - id: "hi-3084"
+    target: "क्या अस्पताल शाम को भी ऑपरेशन करता रहेगा?"
+    target_scripts: { perso_arabic: "کیا ہسپتال شام کو بھی آپریشن کرتا رہے گا؟" }
+    reading: "kyā aspatāl śām kō bhī ôprēśan kartā rahēgā?"
+    ipa: "kjaː əspət̪aːl ʃaːm koː bʱiː ɔpreːʃən kərt̪aː rəɦeːɡaː"
+    pos: "phrase"
+    bases:
+      - { word: "क्या", ref: "hi-0157" }
+      - { word: "अस्पताल", ref: "hi-0358" }
+      - { word: "शाम", ref: "hi-0303" }
+      - { word: "को", ref: "hi-0277" }
+      - { word: "भी", ref: "hi-0350" }
+      - { word: "ऑपरेशन", ref: "hi-2084" }
+      - { word: "करता", base: "करना", reading: "kartā" }
+      - { word: "रहेगा", base: "रहना", reading: "rahēgā" }
+    confusables:
+      - { id: "w1", word: "फ़ार्मेसी", reading: "fārmēsī", kind: "word" }
+      - { id: "w2", word: "दुकान", reading: "dukān", kind: "word" }
