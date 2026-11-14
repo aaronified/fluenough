@@ -264,10 +264,11 @@ Owner, 2026-11-14: "More clean Spanish and Hindi sentences would bring them back
 
 **Variety rules** (the audit rewards sentences that cannot be guessed from a pair of words):
 
-- In one task's 25 sentences no frame is used more than twice (a frame is the first two words, such as `Me gusta` or `यह एक`), no verb more than twice, and no content noun more than twice; no two sentences differ by a single word.
-- Lengths are spread: at least 5 sentences of 4 to 5 words, 5 of 6 to 7 words, 5 of 8 to 10 words.
-- Use at least five different sentence shapes in the 25 (for example: a plain statement, a question, a negative, a past or future form, a sentence with a time or place phrase, a sentence with two verbs, a sentence with a reason or a contrast), and at least 8 different verbs.
-- Every sentence uses at least one word of the task's own unit and, in the 25, at least 10 words from earlier units, so the bank is not all one theme.
+- **Frames are strict.** A frame is a sentence's skeleton: subject, verb form and the shape of its complement (for example "I + am + adjective", "you + want + noun + place"). No two sentences of a task share a frame, and no two start with the same two words more than twice. No two sentences differ by a single word.
+- **Verb cap by pool.** Count the task's pool P: the verb lemmas taught on the path up to the task's unit (cards with `pos: "verb"` of the decks listed there, plus verbs the unit's grammar decks teach, such as a reflexive or a copula-like verb). If P is 13 or more, no verb is used more than twice; if P is 8 to 12, no verb more than three times; if P is under 8 the task is not run and is reported. A sentence count the cap cannot reach (verbs x cap) is never forced: the task ships fewer sentences.
+- **Counts are 20 to 25, never padded.** A task ships between 20 and 25 sentences (12 or 15 for a repair task, as stated in its row). It never repeats a frame to reach 25. The scale below applies to the number n shipped: about n/5 questions (the rest statements); at least floor(n/5) sentences in each length group (4 to 5 words, 6 to 7, 8 to 10); at least five different shapes (a plain statement, a question, a negative, a past or future form, a time or place phrase, two verbs, a reason or a contrast); at least min(8, P) different verbs; no content noun more than twice.
+- Lengths and shapes are measured per task, not per deck.
+- Every sentence uses at least one word of the task's own unit and, across the task, at least 10 different words from earlier units, so the bank is not all one theme.
 - The wrong options of a pick are drawn from other cards by the app: write each sentence so that its meaning is not guessable from a single word it shares with its `confusables`.
 - Order: shuffle, so that no run of three cards has the same shape or mood.
 
@@ -310,11 +311,25 @@ Each ES-001 to ES-008 appends 25 sentences to **one existing sentences deck** (c
 | ES-010 | decks/es-sent-phonetics | every new card of ES-001 to 009 via the tools | after all nine merge | none | tool run |
 | ES-011 | none (Sonnet, no PR) | runs the placement audit on the new Spanish bank and reports F5 and F17 accuracy against 0.32 at the new n; if it fails, the architect orders ES-012 onward (the same shape, other units: `es-money`, `es-news`, `es-weather`, `es-places`, ids from es-3600) | after ES-010 | none | audit |
 
+**Verb pools, counted from the path position of each deck** (verb cards of the decks listed up to the unit; ES-001 also counts the verbs its unit's grammar teaches, 11 in all as its builder found: ser, estar, tener, ir, hablar, comer, estudiar, trabajar, sentir, llamarse, vivir):
+
+| Task | Pool P | Cap per verb | Cards to ship |
+|---|---|---|---|
+| ES-001 | 11 | 3 | 20 to 25 (frames strict, no padding) |
+| ES-002 | 47 | 2 | 25 |
+| ES-003 | 55 | 2 | 25 |
+| ES-004 | 102 | 2 | 25 |
+| ES-005 | 141 | 2 | 25 |
+| ES-006 | 213 | 2 | 25 |
+| ES-007 | 233 | 2 | 25 |
+| ES-008 | 265 | 2 | 25 |
+| ES-009 | 64 | 2 | 12 (3 per length group, 2 questions, 6 shapes, 6 verbs at least) |
+
 Content rules: the gate rules and the variety rules above; Spanish conventions above. Append at the end of the existing `cards:` and the layer's `cards:`; touch no existing card. The layer gives each new card `native`, `bases` meanings, `confusables` with `why`. The layer's `description` ("Six sentences...") is updated to the new count in the same edit. Not touched: any other file, the path, `decks/min_app.json`. Review-queue rows go in the report (rule 8). ES-010: `python3 tools/import_phonetic.py es --write` then `python3 tools/derive_phonetic.py es --write` (the tools skip cards that already have a form), report the counts.
 
 ### Hindustani (`hi`)
 
-State on decks-live ddcff92f: 114 path units; 2,516 cards, highest id `hi-2835` (ranges start at `hi-2900`); only 15 sentences decks, so most themes have none and each HI task **creates a new sentences deck** for one unit. Conventions: Devanagari target with `target_scripts: { perso_arabic: "..." }` (the course offers Devanagari or the Perso-Arabic script, so every card has both, the Urdu spelling written as a native reader would, a doubtful spelling goes to the review queue), `reading` from `python3 tools/transcribe.py hi "<word>"` (letters based on ISO 15919: `maim̐`, `ē`, `ō`, long vowels with macrons; a word-final anusvara as the tool writes it; never write that it strictly follows ISO 15919), `ipa` from the same tool, `pos: "phrase"`, `bases` with `base` and `reading` for each inflected word, `confusables` with `kind`. Gender and honorific forms: a sentence about the speaker's own gender says so in the meaning ("said by a man") as the decks do; the verb agrees. Deck header as `hi-pronouns-sentences`: `kind: "vocab"`, `part: "core"`, `language` with `script: "devanagari"`, `scripts: ["devanagari", "perso_arabic"]`, tags `beginner` and `unreviewed`.
+State on decks-live ddcff92f (the first Hindustani anchor, `hi-about-me` at unit 12, was dropped: no verb card is taught by then, only the copula, so no sentence with a taught verb exists; `hi-work` at unit 19 replaces it); 114 path units; 2,516 cards, highest id `hi-2835` (ranges start at `hi-2900`); only 15 sentences decks, so most themes have none and each HI task **creates a new sentences deck** for one unit. Conventions: Devanagari target with `target_scripts: { perso_arabic: "..." }` (the course offers Devanagari or the Perso-Arabic script, so every card has both, the Urdu spelling written as a native reader would, a doubtful spelling goes to the review queue), `reading` from `python3 tools/transcribe.py hi "<word>"` (letters based on ISO 15919: `maim̐`, `ē`, `ō`, long vowels with macrons; a word-final anusvara as the tool writes it; never write that it strictly follows ISO 15919), `ipa` from the same tool, `pos: "phrase"`, `bases` with `base` and `reading` for each inflected word, `confusables` with `kind`. Gender and honorific forms: a sentence about the speaker's own gender says so in the meaning ("said by a man") as the decks do; the verb agrees. Deck header as `hi-pronouns-sentences`: `kind: "vocab"`, `part: "core"`, `language` with `script: "devanagari"`, `scripts: ["devanagari", "perso_arabic"]`, tags `beginner` and `unreviewed`.
 
 #### Hindustani repairs (`docs/placement-bad-sentences.md`)
 
@@ -334,7 +349,7 @@ Each task creates one new sentences deck (core and layer) and edits **only one l
 
 | Id | Branch | Creates | Path line edited (unit's first deck) | Taught-words scope | Ids | Cards |
 |---|---|---|---|---|---|---|
-| HI-001 | decks/hi-sent-about-me | `decks/hi/hi-about-me-sentences.yaml`, `decks/hi/en/hi-en-about-me-sentences.yaml` | the unit of `hi-about-me` (12) | up to unit 12 | hi-2900 to 2939 | 25 |
+| HI-001 | decks/hi-sent-work | `decks/hi/hi-work-sentences.yaml`, `decks/hi/en/hi-en-work-sentences.yaml` | the unit of `hi-work` (19; its line is `decks: ["hi-work", "*"]`) | up to unit 19 | hi-2900 to 2939 | 25 |
 | HI-002 | decks/hi-sent-food | `hi-food-sentences`, `hi-en-food-sentences` | `hi-food` (29) | up to 29 | hi-2940 to 2979 | 25 |
 | HI-003 | decks/hi-sent-directions | `hi-directions-sentences`, `hi-en-directions-sentences` | `hi-directions` (36; its line lists `hi-grammar-continuous` after it) | up to 36 | hi-2980 to 3019 | 25 |
 | HI-004 | decks/hi-sent-shopping | `hi-shopping-sentences`, `hi-en-shopping-sentences` | `hi-shopping` (53) | up to 53 | hi-3020 to 3059 | 25 |
@@ -342,6 +357,17 @@ Each task creates one new sentences deck (core and layer) and edits **only one l
 | HI-006 | decks/hi-sent-repairs | `hi-time-sentences`, `hi-en-time-sentences` (the unit of `hi-time`, 17, has no sentences deck) | `hi-time` (17); a function whose words are not taught by unit 17 is reported and skipped (the work, bedroom and dinner ones then wait for a follow-up in `hi-work`, `hi-home` and `hi-food`) | up to 17 | hi-3100 to 3139 | 15 (the table above) |
 | HI-007 | decks/hi-sent-phonetics | every new card of HI-001 to 006 via the tools | none | after all six merge | none | tool run |
 | HI-008 | none (Sonnet, no PR) | runs the placement audit on the new Hindustani bank, reports F5 and F17 against 0.32 at the new n (need about 130 eligible or more; the task adds about 140); if it fails, follow-ups HI-009 onward are ordered with the same shape (`hi-work`, `hi-home`, `hi-weather`, `hi-money`, ids from hi-3200) | after HI-007 | none | audit |
+
+**Verb pools, counted from the path position of each deck** (verb cards of the decks listed up to the unit): 
+
+| Task | Pool P | Cap per verb | Cards to ship |
+|---|---|---|---|
+| HI-001 (unit 19) | 50 | 2 | 25 |
+| HI-002 (unit 29) | 50 | 2 | 25 |
+| HI-003 (unit 36) | 52 | 2 | 25 |
+| HI-004 (unit 53) | 66 | 2 | 25 |
+| HI-005 (unit 76) | 169 | 2 | 25 |
+| HI-006 (unit 17) | 25 | 2 | 15 (3 per length group, 3 questions, 6 shapes, 8 verbs at least) |
 
 Content rules: the gate and variety rules above. HI-007: `python3 tools/import_phonetic.py hi --write` then `python3 tools/derive_phonetic.py hi --write` (`decks/hi/hi-phonetics.yaml` exists), counts reported. Not touched: other decks, `decks/min_app.json`, existing cards. Review-queue rows in the report: every Perso-Arabic spelling the builder is not sure of, every gender or honorific choice, and every translation with a nuance.
 
