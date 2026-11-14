@@ -6,6 +6,11 @@ id: "creators-ja"
 language: "ja"
 license: "CC-BY-SA-4.0"
 eras:
+  - id: "asuka"
+    name: { ja: "飛鳥時代", en: "Asuka period" }
+    reading: { ja: "asuka jidai" }
+    from: 592
+    to: 710
   - id: "nara"
     name: { ja: "奈良時代", en: "Nara period" }
     reading: { ja: "nara jidai" }
@@ -21,6 +26,11 @@ eras:
     reading: { ja: "kamakura jidai" }
     from: 1185
     to: 1333
+  - id: "muromachi"
+    name: { ja: "室町時代", en: "Muromachi period" }
+    reading: { ja: "muromachi jidai" }
+    from: 1336
+    to: 1573
   - id: "edo"
     name: { ja: "江戸時代", en: "Edo period" }
     reading: { ja: "edo jidai" }
@@ -337,3 +347,120 @@ creators:
     era: "showa"
     bio:
       en: "Tezuka Osamu was a manga artist and animator of the Showa period, often called the god of manga."
+  - id: "ja-ki-no-tsurayuki"
+    name:
+      ja: { text: "紀貫之", reading: "ki no tsurayuki", ipa: "ki no tsɯɾajɯki" }
+      en: { text: "Ki no Tsurayuki" }
+    born: { year: 872, circa: true }
+    died: { year: 945, circa: true }
+    era: "heian"
+    bio:
+      en: "Ki no Tsurayuki was a poet of the Heian court. He led the compilation of the Kokin Wakashu, the first imperial anthology of Japanese poems, and wrote the Tosa Nikki, one of the earliest diaries written in kana. The years of his birth and death are not certain."
+    legacy:
+      text: { en: "He led the compilation of the Kokin Wakashu, the first imperial anthology of Japanese poems." }
+      items:
+        - { kind: "other", year: 905, text: { en: "The Kokin Wakashu was presented to the emperor in 905, by order of Emperor Daigo." }, source: { url: "https://ja.wikipedia.org/wiki/%E5%8F%A4%E4%BB%8A%E5%92%8C%E6%AD%8C%E9%9B%86", accessed: "2026-11-14" } }
+  - id: "ja-ono-no-komachi"
+    name:
+      ja: { text: "小野小町", reading: "ono no komachi", ipa: "ono no komatɕi" }
+      en: { text: "Ono no Komachi" }
+    born: { year: 825, circa: true }
+    died: { year: 900, circa: true }
+    era: "heian"
+    bio:
+      en: "Ono no Komachi was a woman poet of the early Heian period, and one of the Six Poets named in the preface of the Kokin Wakashu. Her birth and death years are not known; the years given are approximate."
+    legacy:
+      text: { en: "A monument with one of her poems stands at a temple in Kyoto." }
+      items:
+        - { kind: "commemoration", text: { en: "At Zuishin-in temple in Kyoto there is a monument carrying her poem about the flowers that fade." }, source: { url: "https://ja.wikipedia.org/wiki/%E5%B0%8F%E9%87%8E%E5%B0%8F%E7%94%BA", accessed: "2026-11-14" } }
+  - id: "ja-izumi-shikibu"
+    name:
+      ja: { text: "和泉式部", reading: "izumi shikibu", ipa: "izumi ɕikibɯ" }
+      en: { text: "Izumi Shikibu" }
+    born: { year: 976, circa: true }
+    died: { year: 1030, circa: true }
+    era: "heian"
+    bio:
+      en: "Izumi Shikibu was a poet of the middle Heian period, known for her love poems and her personal songs. Her birth and death years are not known; the years given are approximate."
+    legacy:
+      text: { en: "One of her poems is in the Ogura Hyakunin Isshu, the collection of one hundred poems." }
+      items:
+        - { kind: "other", text: { en: "Her poem about the wish to see a loved one once more is number 56 in the Ogura Hyakunin Isshu." }, source: { url: "https://ja.wikipedia.org/wiki/%E5%92%8C%E6%B3%89%E5%BC%8F%E9%83%A8", accessed: "2026-11-14" } }
+  - id: "ja-murasaki-shikibu"
+    name:
+      ja: { text: "紫式部", reading: "murasaki shikibu", ipa: "mɯɾasaki ɕikibɯ" }
+      en: { text: "Murasaki Shikibu" }
+    born: { year: 970, circa: true }
+    died: { year: 1031, circa: true }
+    era: "heian"
+    bio:
+      en: "Murasaki Shikibu was a lady at the Heian court and the author of The Tale of Genji, the long story of Prince Genji. Her birth and death years are not certain; the years given are the usual estimates."
+    legacy:
+      text: { en: "The Tale of Genji is first recorded in 1008, and it was painted as a picture scroll in the late Heian period." }
+      items:
+        - { kind: "other", year: 1008, text: { en: "The first record of The Tale of Genji is from 1008." }, source: { url: "https://ja.wikipedia.org/wiki/%E6%BA%90%E6%B0%8F%E7%89%A9%E8%AA%9E", accessed: "2026-11-14" } }
+  - id: "ja-yoshida-kenko"
+    name:
+      ja: { text: "吉田兼好", reading: "yoshida kenko", ipa: "jocida kenko" }
+      en: { text: "Yoshida Kenko" }
+    born: { year: 1283, circa: true }
+    died: { year: 1352, circa: true }
+    era: "kamakura"
+    bio:
+      en: "Yoshida Kenko, also called the monk Kenko, was a court official who became a monk and a poet. He wrote Tsurezuregusa, the essays of an idle hour. The years of his birth and death are not certain; he is last recorded in 1352."
+    legacy:
+      text: { en: "Tsurezuregusa is counted with the Hojoki and The Pillow Book as one of the three great Japanese essays." }
+      items:
+        - { kind: "other", text: { en: "The Japanese Wikipedia page on Tsurezuregusa counts it, with the Makura no Soshi and the Hojoki, as one of the three great Japanese essays." }, source: { url: "https://ja.wikipedia.org/wiki/%E5%BE%92%E7%84%B6%E8%8D%89", accessed: "2026-11-14" } }
+  - id: "ja-kakinomoto-no-hitomaro"
+    name:
+      ja: { text: "柿本人麻呂", reading: "kakinomoto no hitomaro", ipa: "kakinomoto no çitomaɾo" }
+      en: { text: "Kakinomoto no Hitomaro" }
+    born: { year: 660, circa: true }
+    died: { year: 708, circa: true }
+    era: "asuka"
+    bio:
+      en: "Kakinomoto no Hitomaro was a court poet of the Asuka period, active from about 680. His birth and death years are not known; the years given are approximate."
+    legacy:
+      text: { en: "He is named, with Yamabe no Akahito, as one of the saints of poetry." }
+      items:
+        - { kind: "other", text: { en: "Later poets called him, with Yamabe no Akahito, one of the saints of Japanese poetry." }, source: { url: "https://ja.wikipedia.org/wiki/%E6%9F%BF%E6%9C%AC%E4%BA%BA%E9%BA%BB%E5%91%82", accessed: "2026-11-14" } }
+  - id: "ja-zeami"
+    name:
+      ja: { text: "世阿弥", reading: "zeami", ipa: "zeami" }
+      en: { text: "Zeami" }
+    born: { year: 1363, circa: true }
+    died: { year: 1443, circa: true }
+    era: "muromachi"
+    bio:
+      en: "Zeami was an actor and playwright of noh in the early Muromachi period, the son of Kan'ami. He wrote Fushikaden, the oldest Japanese treatise on noh. The years of his birth and death are not certain."
+    legacy:
+      text: { en: "Fushikaden is the oldest treatise on noh, and it was first made public in 1909." }
+      items:
+        - { kind: "other", year: 1909, text: { en: "The scholar Yoshida Togo presented Fushikaden to a learned society in 1909, after it had been kept as a secret teaching." }, source: { url: "https://ja.wikipedia.org/wiki/%E9%A2%A8%E5%A7%BF%E8%8A%B1%E4%BC%9D", accessed: "2026-11-14" } }
+  - id: "ja-takarai-kikaku"
+    name:
+      ja: { text: "宝井其角", reading: "takarai kikaku", ipa: "takaɾai kikakɯ" }
+      en: { text: "Takarai Kikaku" }
+    born: 1661
+    died: 1707
+    era: "edo"
+    bio:
+      en: "Takarai Kikaku was a haiku poet of the Edo period and a disciple of Basho, known for his wit."
+    legacy:
+      text: { en: "A kabuki play tells how his haiku, written the night before the Ako raid, was answered by a samurai." }
+      items:
+        - { kind: "adaptation", text: { en: "The kabuki play Matsura no Taiko tells the story of his haiku on the night before the Ako raid and the reply of Otake Gengo." }, source: { url: "https://ja.wikipedia.org/wiki/%E5%AE%9D%E4%BA%95%E5%85%B6%E8%A7%92", accessed: "2026-11-14" } }
+  - id: "ja-chikamatsu-monzaemon"
+    name:
+      ja: { text: "近松門左衛門", reading: "chikamatsu monzaemon", ipa: "tɕikamatsɯ monzaemon" }
+      en: { text: "Chikamatsu Monzaemon" }
+    born: 1653
+    died: 1725
+    era: "edo"
+    bio:
+      en: "Chikamatsu Monzaemon was a playwright of puppet theatre (joruri) and kabuki in the Edo period, from a samurai family in Echizen. He wrote Sonezaki Shinju, a play about lovers who die together."
+    legacy:
+      text: { en: "Sonezaki Shinju was first staged in 1703 at the Takemoto-za theatre in Osaka." }
+      items:
+        - { kind: "other", year: 1703, text: { en: "Sonezaki Shinju was first staged in 1703 at the Takemoto-za theatre in Osaka." }, source: { url: "https://ja.wikipedia.org/wiki/%E6%9B%BE%E6%A0%B9%E5%B4%8E%E5%BF%83%E4%B8%AD", accessed: "2026-11-14" } }
