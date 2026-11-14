@@ -1,0 +1,144 @@
+schema: 1
+id: "te-weather-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-7150"
+    target: "ఇప్పుడు వర్షం పడుతోంది."
+    reading: "ippuḍu varṣaṁ paḍutōṁdi."
+    ipa: "ippuɖu ʋarʂam paɖut̪oːnd̪i"
+    pos: "phrase"
+    bases:
+      - { word: "ఇప్పుడు", ref: "te-0309" }
+      - { word: "వర్షం", ref: "te-1116" }
+      - { word: "పడుతోంది", ref: "te-0839" }
+    confusables:
+      - { id: "c1", ref: "te-1117", kind: "word" }
+      - { id: "c2", ref: "te-1123", kind: "word" }
+  - id: "te-7151"
+    target: "ఈరోజు చల్లగా ఉంది."
+    reading: "īrōju callagā undi."
+    ipa: "iːroːdʒu tʃallaɡaː und̪i"
+    pos: "phrase"
+    bases:
+      - { word: "ఈరోజు", ref: "te-0306" }
+      - { word: "చల్లగా", ref: "te-1139" }
+      - { word: "ఉంది", ref: "te-0633" }
+    confusables:
+      - { id: "c1", ref: "te-1140", kind: "word" }
+      - { id: "c2", ref: "te-1143", kind: "word" }
+  - id: "te-7152"
+    target: "ఇది చలికాలం కాదు."
+    reading: "idi calikālaṁ kādu."
+    ipa: "id̪i tʃalikaːlam kaːd̪u"
+    pos: "phrase"
+    bases:
+      - { word: "ఇది", ref: "te-0600" }
+      - { word: "చలికాలం", ref: "te-1126" }
+      - { word: "కాదు", ref: "te-0158" }
+    confusables:
+      - { id: "c1", ref: "te-1127", kind: "word" }
+      - { id: "c2", ref: "te-1125", kind: "word" }
+  - id: "te-7153"
+    target: "నేను వేడి పాలు తాగుతాను."
+    reading: "nēnu vēḍi pālu tāgutānu."
+    ipa: "neːnu ʋeːɖi paːlu t̪aːɡut̪aːnu"
+    pos: "phrase"
+    rules: ["te-rule-present-first"]
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "వేడి", ref: "te-0505" }
+      - { word: "పాలు", ref: "te-0265" }
+      - { word: "తాగుతాను", ref: "te-0625" }
+    confusables:
+      - { id: "c1", ref: "te-1132", kind: "word" }
+      - { id: "c2", ref: "te-0624", kind: "word" }
+  - id: "te-7154"
+    target: "నాకు చల్లని గాలి కావాలి."
+    reading: "nāku callani gāli kāvāli."
+    ipa: "naːku tʃallani ɡaːli kaːʋaːli"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-dat"]
+    bases:
+      - { word: "నాకు", base: "నేను", reading: "nāku" }
+      - { word: "చల్లని", ref: "te-0506" }
+      - { word: "గాలి", ref: "te-1118" }
+      - { word: "కావాలి", ref: "te-0460" }
+    confusables:
+      - { id: "c1", ref: "te-1117", kind: "word" }
+      - { id: "c2", ref: "te-1132", kind: "word" }
+  - id: "te-7155"
+    target: "వర్షాకాలం ఎప్పుడు వస్తుంది?"
+    reading: "varṣākālaṁ eppuḍu vastundi?"
+    ipa: "ʋarʂaːkaːlam eppuɖu ʋast̪und̪i"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "వర్షాకాలం", ref: "te-1125" }
+      - { word: "ఎప్పుడు", ref: "te-0163" }
+      - { word: "వస్తుంది", ref: "te-0623" }
+    confusables:
+      - { id: "c1", ref: "te-1127", kind: "word" }
+      - { id: "c2", ref: "te-0162", kind: "word" }
+  - id: "te-7156"
+    target: "వర్షాకాలంలో జనం గొడుగు కొంటారు."
+    reading: "varṣākālamlō janaṁ goḍugu koṇṭāru."
+    ipa: "ʋarʂaːkaːlamloː dʒanam ɡoɖuɡu koɳʈaːru"
+    pos: "phrase"
+    rules: ["te-rule-lo", "te-rule-present-third"]
+    bases:
+      - { word: "వర్షాకాలంలో", ref: "te-1125" }
+      - { word: "జనం", ref: "te-0054" }
+      - { word: "గొడుగు", ref: "te-0869" }
+      - { word: "కొంటారు", ref: "te-0641" }
+    confusables:
+      - { id: "c1", ref: "te-0912", kind: "word" }
+      - { id: "c2", ref: "te-1116", kind: "word" }
+  - id: "te-7157"
+    target: "వేసవిలో ఎండ చాలా వేడిగా ఉంటుంది."
+    reading: "vēsavilō eṇḍa cālā vēḍigā uṇṭundi."
+    ipa: "ʋeːsaʋiloː eɳɖa tʃaːlaː ʋeːɖiɡaː uɳʈund̪i"
+    pos: "phrase"
+    rules: ["te-rule-lo"]
+    bases:
+      - { word: "వేసవిలో", ref: "te-1127" }
+      - { word: "ఎండ", ref: "te-1117" }
+      - { word: "చాలా", ref: "te-1026" }
+      - { word: "వేడిగా", ref: "te-1140" }
+      - { word: "ఉంటుంది", ref: "te-0633" }
+    confusables:
+      - { id: "c1", ref: "te-1138", kind: "word" }
+      - { id: "c2", ref: "te-1139", kind: "word" }
+  - id: "te-7158"
+    target: "మీరు గొడుగు తీసుకుంటారా?"
+    reading: "mīru goḍugu tīsukuṇṭārā?"
+    ipa: "miːru ɡoɖuɡu t̪iːsukuɳʈaːraː"
+    pos: "phrase"
+    rules: ["te-rule-present-second"]
+    bases:
+      - { word: "మీరు", ref: "te-0136" }
+      - { word: "గొడుగు", ref: "te-0869" }
+      - { word: "తీసుకుంటారా", ref: "te-0631" }
+    confusables:
+      - { id: "c1", ref: "te-0912", kind: "word" }
+      - { id: "c2", ref: "te-1122", kind: "word" }
+  - id: "te-7159"
+    target: "వర్షంలో కూడా నడుస్తాం."
+    reading: "varṣamlō kūḍā naḍustāṁ."
+    ipa: "ʋarʂamloː kuːɖaː naɖust̪aːm"
+    pos: "phrase"
+    rules: ["te-rule-lo", "te-rule-present-first"]
+    bases:
+      - { word: "వర్షంలో", ref: "te-1116" }
+      - { word: "కూడా", ref: "te-0359" }
+      - { word: "నడుస్తాం", ref: "te-0636" }
+    confusables:
+      - { id: "c1", ref: "te-1117", kind: "word" }
+      - { id: "c2", ref: "te-1128", kind: "word" }
