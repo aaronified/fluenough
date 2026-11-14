@@ -181,13 +181,13 @@ units:
     grammar: ["continuous"]
   - decks: ["te-transport", "te-transport-sentences", "*"]
     words: 11
-  - decks: ["te-body", "te-body-sentences", "*"]
+  - decks: ["te-body", "te-body-sentences", "te-reading-body", "*"]
     words: 28
     listening_passages:
       - { id: "where-it-hurts", text: { "en": "Pointing to where it hurts" } }
     reading_passages:
       - { id: "exercise-poster", text: { "en": "A poster of simple exercises" } }
-  - decks: ["te-places", "te-places-sentences", "*"]
+  - decks: ["te-places", "te-places-sentences", "te-reading-places", "*"]
     words: 42
     listening_passages:
       - { id: "town-walk", text: { "en": "A guide names the places on a short walk through town" } }
@@ -197,7 +197,7 @@ units:
     words: 39
   - decks: ["te-home", "te-home-sentences", "*"]
     words: 19
-  - decks: ["te-things-sentences", "te-more-verbs-sentences"]
+  - decks: ["te-things-sentences", "te-more-verbs-sentences", "te-reading-things"]
     words: 0
     listening_passages:
       - { id: "packing-a-bag", text: { "en": "Two people pack a bag for a trip" } }
@@ -205,7 +205,7 @@ units:
     reading_passages:
       - { id: "lost-property-list", text: { "en": "A lost-property list at a bus station" } }
       - { id: "how-to-card", text: { "en": "A short how-to card for making tea" } }
-  - decks: ["te-quantities-sentences", "te-grammar-differences"]
+  - decks: ["te-quantities-sentences", "te-grammar-differences", "te-reading-quantities"]
     words: 6
     grammar: ["differences"]
     listening_passages:
@@ -218,7 +218,7 @@ units:
   - decks: ["te-grammar-adjectives", "te-grammar-articles", "te-grammar-gender-number"]
     words: 10
     grammar: ["articles", "gender-number", "adjectives"]
-  - decks: ["te-clothes", "te-clothes-sentences", "*"]
+  - decks: ["te-clothes", "te-clothes-sentences", "te-reading-clothes", "*"]
     words: 26
     listening_passages:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a shirt's colour and size in a shop" } }
