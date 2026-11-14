@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - **Deck builder questions are asked on their own.** A question from the deck builder now has a screen of its own in Daily questions, with the whole card and every example shown and its own Yes and No, and notes that are not yes-or-no questions are no longer asked.
+- **Find my level sentence questions make sense.** Sentences you hear or read now always come with their own English meaning among four sentences of the same kind, and the question asks what the sentence means.
 
 ## [0.10.1] - 2026-11-13
 
