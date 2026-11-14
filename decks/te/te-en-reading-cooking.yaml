@@ -1,0 +1,59 @@
+schema: 1
+id: "te-en-reading-cooking"
+name: "Reading: the recipe card"
+kind: "reading"
+language:
+  code: "te"
+  iso639_3: "tel"
+  name: "Telugu"
+  script: "telugu"
+  tts: "te-IN"
+  icon: "తె"
+native:
+  code: "en"
+  iso639_3: "eng"
+  name: "English"
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A recipe card with its four steps, using the cooking words and the polite commands taught up to this unit. Not yet checked by a Telugu speaker: please report any mistake."
+tags:
+- "reading"
+- "beginner"
+- "unreviewed"
+passages:
+- id: "te-recipe-card"
+  title: "Recipe card"
+  sentences:
+  - text: "పొయ్యి మీద గిన్నె పెట్టండి."
+    reading: "poyyi mīda ginne peṭṭaṇḍi."
+    ipa: "pojji miːd̪a ɡinne peʈʈaɳɖi"
+  - text: "నూనె వేయండి."
+    reading: "nūne vēyaṇḍi."
+    ipa: "nuːne ʋeːjaɳɖi"
+  - text: "ఉల్లిపాయ, వెల్లుల్లి కోయండి."
+    reading: "ullipāya, vellulli kōyaṇḍi."
+    ipa: "ullipaːja ʋellulli koːjaɳɖi"
+  - text: "బాగా కలపండి."
+    reading: "bāgā kalapaṇḍi."
+    ipa: "baːɡaː kalapaɳɖi"
+  questions:
+  - id: "te-8160"
+    prompt:
+      en: "What goes on the stove first?"
+    options:
+    - en: "A pot"
+    - en: "A spoon"
+    - en: "A lid"
+    answer: 1
+  - id: "te-8161"
+    prompt:
+      en: "What is chopped?"
+    options:
+    - en: "Onion and garlic"
+    - en: "Rice and lentils"
+    - en: "Eggs and milk"
+    answer: 1
+  - id: "te-8162"
+    prompt:
+      en: "The last step is to mix well."
+    answer: true

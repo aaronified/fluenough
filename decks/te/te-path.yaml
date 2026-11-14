@@ -312,13 +312,13 @@ units:
     words: 8
   - decks: ["te-dishes", "*"]
     words: 36
-  - decks: ["te-cooking", "*"]
+  - decks: ["te-cooking", "te-reading-cooking", "*"]
     words: 50
     listening_passages:
       - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes a dish" } }
     reading_passages:
       - { id: "recipe-card", text: { "en": "A recipe card with its steps" } }
-  - decks: ["te-grammar-comparison"]
+  - decks: ["te-grammar-comparison", "te-reading-comparison"]
     words: 5
     grammar: ["comparison"]
     listening_passages:
@@ -331,24 +331,24 @@ units:
   - decks: ["te-grammar-conjunct-verbs"]
     words: 3
     grammar: ["conjunct-verbs"]
-  - decks: ["te-school", "*"]
+  - decks: ["te-school", "te-reading-school", "*"]
     words: 52
     listening_passages:
       - { id: "school-day", text: { "en": "A child describes the school day" } }
     reading_passages:
       - { id: "timetable", text: { "en": "A school timetable" } }
-  - decks: ["te-hobbies", "*"]
+  - decks: ["te-hobbies", "te-reading-hobbies", "*"]
     words: 55
     listening_passages:
       - { id: "weekend-hobbies", text: { "en": "Friends talk about what they do at weekends" } }
     reading_passages:
-      - { id: "club-poster", text: { "en": "A poster for a sports and music club" } }
-  - decks: ["te-chores", "*"]
+      - { id: "club-poster", text: { "en": "A poster for a club with games and music" } }
+  - decks: ["te-chores", "te-reading-chores", "*"]
     words: 45
     listening_passages:
       - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
     reading_passages:
-      - { id: "chore-list", text: { "en": "A weekly chore list on the wall" } }
+      - { id: "chore-list", text: { "en": "A weekly list of chores" } }
   - decks: ["te-appearance", "te-reading-appearance", "*"]
     words: 55
     listening_passages:
@@ -366,7 +366,7 @@ units:
     listening_passages:
       - { id: "phone-call", text: { "en": "A phone call to arrange a meeting" } }
     reading_passages:
-      - { id: "text-messages", text: { "en": "Four short text messages about being busy, a low battery, a call tomorrow and a message read" } }
+      - { id: "text-messages", text: { "en": "Four short text messages: busy, a low battery, a call tomorrow, a message read" } }
   - decks: ["te-journey", "te-reading-journey", "*"]
     words: 62
     listening_passages:
