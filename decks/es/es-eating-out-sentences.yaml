@@ -48,3 +48,17 @@ cards:
     tags: ["sentence"]
     bases: [{ word: "La", base: "la" }, { word: "cuenta", ref: "es-0653" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }, { word: "y", ref: "es-0048" }, { word: "una", base: "una" }, { word: "propina", ref: "es-0654" }]
     confusables: [{ id: "menu", ref: "es-0640", kind: "word" }, { id: "pagar", ref: "es-0295", kind: "word" }]
+  - id: "es-4604"
+    target: "La cuenta, por favor."
+    ipa: "la ˈkwenta poɾ faˈboɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "cuenta", ref: "es-0653" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+    confusables: [{ id: "menu", ref: "es-0640", kind: "word" }, { id: "pagar", ref: "es-0295", kind: "word" }]
+  - id: "es-4605"
+    target: "Está delicioso, gracias."
+    ipa: "esˈta deliˈθjoso ˈɡɾaθjas"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Está", ref: "es-0023" }, { word: "delicioso", ref: "es-1267" }, { word: "gracias", ref: "es-0037" }]
+    confusables: [{ id: "sabor", ref: "es-1275", kind: "word" }, { id: "probar", ref: "es-1266", kind: "word" }]
