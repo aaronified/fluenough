@@ -1,0 +1,415 @@
+schema: 1
+id: "ja-kanji-4"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "han", scripts: ["han", "kana"], tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["script", "unreviewed"]
+cards:
+  - id: "ja-5120"
+    target: "草"
+    target_scripts: { kana: "くさ" }
+    words: ["草"]
+    reading: "kusa"
+    ipa: "kɯsa"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+  - id: "ja-5121"
+    target: "足"
+    target_scripts: { kana: "あし" }
+    words: ["足"]
+    reading: "ashi"
+    ipa: "aɕi"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "足がいたいです。"
+        target_scripts: { kana: "あしがいたいです。" }
+        words: ["足", "が", "いたい", "です"]
+        reading: "ashi ga itai desu."
+        ipa: "aɕi ɡa itai desɯ"
+      - target: "足が大きいです。"
+        target_scripts: { kana: "あしがおおきいです。" }
+        words: ["足", "が", "大きい", "です"]
+        reading: "ashi ga ookii desu."
+        ipa: "aɕi ɡa oːkiː desɯ"
+    bases: "self"
+  - id: "ja-5122"
+    target: "村"
+    target_scripts: { kana: "むら" }
+    words: ["村"]
+    reading: "mura"
+    ipa: "mɯɾa"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "村は大きいです。"
+        target_scripts: { kana: "むらはおおきいです。" }
+        words: ["村", "は", "大きい", "です"]
+        reading: "mura wa ookii desu."
+        ipa: "mɯɾa wa oːkiː desɯ"
+      - target: "わたしの村は小さいです。"
+        target_scripts: { kana: "わたしのむらはちいさいです。" }
+        words: ["わたし", "の", "村", "は", "小さい", "です"]
+        reading: "watashi no mura wa chiisai desu."
+        ipa: "wataɕi no mɯɾa wa tɕiːsai desɯ"
+    bases: "self"
+  - id: "ja-5123"
+    target: "大"
+    target_scripts: { kana: "おおきい" }
+    words: ["大"]
+    reading: "ookii"
+    ipa: "oːkiː"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "大学は大きいです。"
+        target_scripts: { kana: "だいがくはおおきいです。" }
+        words: ["大学", "は", "大きい", "です"]
+        reading: "daigaku wa ookii desu."
+        ipa: "daiɡakɯ wa oːkiː desɯ"
+      - target: "まどは大きいです。"
+        target_scripts: { kana: "まどはおおきいです。" }
+        words: ["まど", "は", "大きい", "です"]
+        reading: "mado wa ookii desu."
+        ipa: "mado wa oːkiː desɯ"
+    bases: "self"
+  - id: "ja-5124"
+    target: "男"
+    target_scripts: { kana: "おとこ" }
+    words: ["男"]
+    reading: "otoko"
+    ipa: "otoko"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "あのひとは男ですか。"
+        target_scripts: { kana: "あのひとはおとこですか。" }
+        words: ["あの", "ひと", "は", "男", "です", "か"]
+        reading: "ano hito wa otoko desu ka."
+        ipa: "ano çito wa otoko desɯ ka"
+    bases: "self"
+  - id: "ja-5125"
+    target: "竹"
+    target_scripts: { kana: "たけ" }
+    words: ["竹"]
+    reading: "take"
+    ipa: "take"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+  - id: "ja-5126"
+    target: "中"
+    target_scripts: { kana: "なか" }
+    words: ["中"]
+    reading: "naka"
+    ipa: "naka"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "いぬは中にいます。"
+        target_scripts: { kana: "いぬはなかにいます。" }
+        words: ["いぬ", "は", "中", "に", "います"]
+        reading: "inu wa naka ni imasu."
+        ipa: "inɯ wa naka ni imasɯ"
+      - target: "かばんの中に本があります。"
+        target_scripts: { kana: "かばんのなかにほんがあります。" }
+        words: ["かばん", "の", "中", "に", "本", "が", "あります"]
+        reading: "kaban no naka ni hon ga arimasu."
+        ipa: "kabaɴ no naka ni hoɴ ɡa arimasɯ"
+    bases: "self"
+  - id: "ja-5127"
+    target: "虫"
+    target_scripts: { kana: "むし" }
+    words: ["虫"]
+    reading: "mushi"
+    ipa: "mɯɕi"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+  - id: "ja-5128"
+    target: "町"
+    target_scripts: { kana: "まち" }
+    words: ["町"]
+    reading: "machi"
+    ipa: "matɕi"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "町は大きいです。"
+        target_scripts: { kana: "まちはおおきいです。" }
+        words: ["町", "は", "大きい", "です"]
+        reading: "machi wa ookii desu."
+        ipa: "matɕi wa oːkiː desɯ"
+    bases: "self"
+  - id: "ja-5129"
+    target: "天"
+    target_scripts: { kana: "てん" }
+    words: ["天"]
+    reading: "ten"
+    ipa: "teɴ"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "天気はあついです。"
+        target_scripts: { kana: "てんきはあついです。" }
+        words: ["天気", "は", "あつい", "です"]
+        reading: "tenki wa atsui desu."
+        ipa: "teɴki wa atsɯi desɯ"
+      - target: "きょうは天気がいいです。"
+        target_scripts: { kana: "きょうはてんきがいいです。" }
+        words: ["きょう", "は", "天気", "が", "いい", "です"]
+        reading: "kyou wa tenki ga ii desu."
+        ipa: "kjoː wa teɴki ɡa iː desɯ"
+    bases: "self"
+  - id: "ja-5130"
+    target: "田"
+    target_scripts: { kana: "た" }
+    words: ["田"]
+    reading: "ta"
+    ipa: "ta"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "田中さんは学生です。"
+        target_scripts: { kana: "たなかさんはがくせいです。" }
+        words: ["田中", "さん", "は", "学生", "です"]
+        reading: "tanaka san wa gakusei desu."
+        ipa: "tanaka saɴ wa ɡakɯseː desɯ"
+      - target: "田中さんのこどもは小さいです。"
+        target_scripts: { kana: "たなかさんのこどもはちいさいです。" }
+        words: ["田中", "さん", "の", "こども", "は", "小さい", "です"]
+        reading: "tanaka san no kodomo wa chiisai desu."
+        ipa: "tanaka saɴ no kodomo wa tɕiːsai desɯ"
+    bases: "self"
+  - id: "ja-5131"
+    target: "二"
+    target_scripts: { kana: "ふたつ" }
+    words: ["二"]
+    reading: "futatsu"
+    ipa: "ɸɯtatsɯ"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "二つあります。"
+        target_scripts: { kana: "ふたつあります。" }
+        words: ["二つ", "あります"]
+        reading: "futatsu arimasu."
+        ipa: "ɸɯtatsɯ arimasɯ"
+      - target: "二つください。"
+        target_scripts: { kana: "ふたつください。" }
+        words: ["二つ", "ください"]
+        reading: "futatsu kudasai."
+        ipa: "ɸɯtatsɯ kɯdasai"
+    bases: "self"
+  - id: "ja-5132"
+    target: "入"
+    target_scripts: { kana: "はいる" }
+    words: ["入"]
+    reading: "hairu"
+    ipa: "hairɯ"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "へやに入ります。"
+        target_scripts: { kana: "へやにはいります。" }
+        words: ["へや", "に", "入ります"]
+        reading: "heya ni hairimasu."
+        ipa: "heja ni hairimasɯ"
+    bases: "self"
+  - id: "ja-5133"
+    target: "年"
+    target_scripts: { kana: "とし" }
+    words: ["年"]
+    reading: "toshi"
+    ipa: "toɕi"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "年はいくつですか。"
+        target_scripts: { kana: "としはいくつですか。" }
+        words: ["年", "は", "いくつ", "です", "か"]
+        reading: "toshi wa ikutsu desu ka."
+        ipa: "toɕi wa ikɯtsɯ desɯ ka"
+    bases: "self"
+  - id: "ja-5134"
+    target: "白"
+    target_scripts: { kana: "しろ" }
+    words: ["白"]
+    reading: "shiro"
+    ipa: "ɕiɾo"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+  - id: "ja-5135"
+    target: "八"
+    target_scripts: { kana: "やっつ" }
+    words: ["八"]
+    reading: "yattsu"
+    ipa: "jattsɯ"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "八つあります。"
+        target_scripts: { kana: "やっつあります。" }
+        words: ["八つ", "あります"]
+        reading: "yattsu arimasu."
+        ipa: "jattsɯ arimasɯ"
+      - target: "八つください。"
+        target_scripts: { kana: "やっつください。" }
+        words: ["八つ", "ください"]
+        reading: "yattsu kudasai."
+        ipa: "jattsɯ kɯdasai"
+    bases: "self"
+  - id: "ja-5136"
+    target: "百"
+    target_scripts: { kana: "ひゃく" }
+    words: ["百"]
+    reading: "hyaku"
+    ipa: "çjakɯ"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "百はいくつですか。"
+        target_scripts: { kana: "ひゃくはいくつですか。" }
+        words: ["百", "は", "いくつ", "です", "か"]
+        reading: "hyaku wa ikutsu desu ka."
+        ipa: "çjakɯ wa ikɯtsɯ desɯ ka"
+    bases: "self"
+  - id: "ja-5137"
+    target: "文"
+    target_scripts: { kana: "ぶん" }
+    words: ["文"]
+    reading: "bun"
+    ipa: "bɯɴ"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+  - id: "ja-5138"
+    target: "本"
+    target_scripts: { kana: "ほん" }
+    words: ["本"]
+    reading: "hon"
+    ipa: "hoɴ"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "本はたなにあります。"
+        target_scripts: { kana: "ほんはたなにあります。" }
+        words: ["本", "は", "たな", "に", "あります"]
+        reading: "hon wa tana ni arimasu."
+        ipa: "hoɴ wa tana ni arimasɯ"
+      - target: "本を見せてください。"
+        target_scripts: { kana: "ほんをみせてください。" }
+        words: ["本", "を", "見せて", "ください"]
+        reading: "hon o misete kudasai."
+        ipa: "hoɴ o misete kɯdasai"
+    bases: "self"
+  - id: "ja-5139"
+    target: "名"
+    target_scripts: { kana: "な" }
+    words: ["名"]
+    reading: "na"
+    ipa: "na"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "名字はなんですか。"
+        target_scripts: { kana: "みょうじはなんですか。" }
+        words: ["名字", "は", "なん", "です", "か"]
+        reading: "myouji wa nan desu ka."
+        ipa: "mjoːdʑi wa naɴ desɯ ka"
+      - target: "わたしの名字はたなかです。"
+        target_scripts: { kana: "わたしのみょうじはたなかです。" }
+        words: ["わたし", "の", "名字", "は", "たなか", "です"]
+        reading: "watashi no myouji wa tanaka desu."
+        ipa: "wataɕi no mjoːdʑi wa tanaka desɯ"
+    bases: "self"
+  - id: "ja-5140"
+    target: "目"
+    target_scripts: { kana: "め" }
+    words: ["目"]
+    reading: "me"
+    ipa: "me"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+  - id: "ja-5141"
+    target: "立"
+    target_scripts: { kana: "たつ" }
+    words: ["立"]
+    reading: "tatsu"
+    ipa: "tatsɯ"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ここに立ちます。"
+        target_scripts: { kana: "ここにたちます。" }
+        words: ["ここ", "に", "立ちます"]
+        reading: "koko ni tachimasu."
+        ipa: "koko ni tatɕimasɯ"
+    bases: "self"
+  - id: "ja-5142"
+    target: "力"
+    target_scripts: { kana: "ちから" }
+    words: ["力"]
+    reading: "chikara"
+    ipa: "tɕikaɾa"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+  - id: "ja-5143"
+    target: "林"
+    target_scripts: { kana: "はやし" }
+    words: ["林"]
+    reading: "hayashi"
+    ipa: "hajaɕi"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+  - id: "ja-5144"
+    target: "六"
+    target_scripts: { kana: "むっつ" }
+    words: ["六"]
+    reading: "muttsu"
+    ipa: "mɯttsɯ"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "六つあります。"
+        target_scripts: { kana: "むっつあります。" }
+        words: ["六つ", "あります"]
+        reading: "muttsu arimasu."
+        ipa: "mɯttsɯ arimasɯ"
+      - target: "六つください。"
+        target_scripts: { kana: "むっつください。" }
+        words: ["六つ", "ください"]
+        reading: "muttsu kudasai."
+        ipa: "mɯttsɯ kɯdasai"
+    bases: "self"
