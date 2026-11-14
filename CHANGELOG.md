@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **Deck builder questions are asked on their own.** A question from the deck builder now has a screen of its own in Daily questions, with the whole card and every example shown and its own Yes and No, and notes that are not yes-or-no questions are no longer asked.
+
 ## [0.10.1] - 2026-11-13
 
 - **Extra tiles in word order.** When a sentence has look-alike wrong words or marks, they now sit among its tiles, and an answer that uses one is not right.

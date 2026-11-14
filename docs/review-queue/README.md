@@ -23,7 +23,13 @@ review bot reads. No deck-format change, and nothing ships to learners.
 - One row per card the builder is unsure of: gender, part of speech, reading
   or tone, a doubtful note, a traditional form, naturalness, a missing phrase.
 - Keep each row to one line. Do not put a `|` inside a cell (write `\|`).
-- The question is one line that a bilingual reviewer can answer.
+- The question is one line that a bilingual reviewer can answer **with Yes or
+  No**, written as a question that ends in `?`, and it names the item it is
+  about ("Is the example sentence X right for Y?"). The app shows the card in
+  full beside it (word, reading, meaning and every example), but the question
+  must still say which part it means. A note that is not a question ("death
+  year uncertain: 1890 or 1891", "source unverified") is not offered to
+  reviewers: put it in the unit's notes or an issue instead.
 - Use the card's real id. Never invent an id.
 - A question about a unit or a deck, not one card, uses `unit-level` in the
   card id column, and the unit column names the unit (with its id range where
@@ -36,9 +42,12 @@ review bot reads. No deck-format change, and nothing ships to learners.
 - **Builders** add a row for each doubtful card when they finish a unit. The
   step is in [build-deck](../../.claude/skills/build-deck/SKILL.md), step 7a.
   The rows go in the same commit as the deck.
-- **Reviewers** answer in the app, as they do now. A card with a row shows
-  the builder's question as a note, **Question from the deck builder**, in
-  the daily questions and in the card's review sheet, and is asked first.
+- **Reviewers** answer in the app, as they do now. A card with a row gets
+  the builder's question as a daily question of its own, **Question from the
+  deck builder**, asked first: the question is the heading, the card is
+  shown in full, and its own Yes and No answer only that question. The
+  question also shows as a note in the card's review sheet. Rows whose text
+  is not a question ending in `?` are left out of what reviewers see.
 - **The review bot reads these files** (`tools/review_queue.py`, run by
   `.github/workflows/review-queue.yml` on decks-live after a change to a queue file
   or a deck). It writes `decks/review-queue.json`, which the app downloads

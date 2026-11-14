@@ -23,7 +23,13 @@ enum QuestionKind {
   /// "Is this the right picture for it?" A proposal from the Wiktionary
   /// import (#523). The answer pins the exact file (the point is
   /// `image:<File>`), so two answers agree only on the same file.
-  image;
+  image,
+
+  /// A question the deck's builder could not settle, put to the reviewer
+  /// as a step of its own (docs/review-queue/README.md): the question is
+  /// the heading, the card is shown in full, and the answer is Yes or No to
+  /// that question only. The point is `builder:<8 hex of the question>`.
+  builder;
 
   /// How it is written in the mail's files. Permanent.
   String get wire => name;
@@ -49,6 +55,8 @@ enum QuestionKind {
     confusable => const <String>['not_real', 'wrong_word'],
     sound => const <String>['noisy', 'wrong_word', 'not_native'],
     image => const <String>['not_the_word', 'unclear', 'not_fit'],
+    // A free line in the mail says why; no fixed reason fits every doubt.
+    builder => const <String>[],
   };
 }
 
@@ -74,6 +82,16 @@ enum QuestionAnswer {
   }
 }
 
+/// An example sentence of a card, shown whole to a reviewer.
+class QuestionExample {
+  const QuestionExample({required this.target, this.reading, this.native});
+
+  /// The sentence in the language, its reading and its translation.
+  final String target;
+  final String? reading;
+  final String? native;
+}
+
 /// One question about one data point of one card.
 class ReviewQuestion {
   const ReviewQuestion({
@@ -89,7 +107,8 @@ class ReviewQuestion {
     this.shownMeaning,
     this.meaning,
     this.deckId,
-    this.builder = const <String>[],
+    this.asked,
+    this.examples = const <QuestionExample>[],
   });
 
   /// The course's language, by code.
@@ -120,9 +139,13 @@ class ReviewQuestion {
   /// The deck the card was found in, for the screen's sake.
   final String? deckId;
 
-  /// What the deck's builder asks the reviewer about this card, from the
-  /// review queue (2026-11-06): shown as a note, never part of the answer.
-  final List<String> builder;
+  /// What the deck's builder asks, for a [QuestionKind.builder] question:
+  /// the question's own words, from the review queue.
+  final String? asked;
+
+  /// Every example the card has, for a [QuestionKind.builder] question, so
+  /// that the reviewer can look at whatever the builder asks about.
+  final List<QuestionExample> examples;
 
   /// How weak the data is: 0 is unverified (written by Claude, or from no
   /// source), 1 semi-verified (taken from Wiktionary or Tatoeba, or signed
