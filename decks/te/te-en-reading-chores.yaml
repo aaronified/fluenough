@@ -1,0 +1,59 @@
+schema: 1
+id: "te-en-reading-chores"
+name: "Reading: the chore list"
+kind: "reading"
+language:
+  code: "te"
+  iso639_3: "tel"
+  name: "Telugu"
+  script: "telugu"
+  tts: "te-IN"
+  icon: "తె"
+native:
+  code: "en"
+  iso639_3: "eng"
+  name: "English"
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A weekly list of chores, using the chore words and the polite commands taught up to this unit. Not yet checked by a Telugu speaker: please report any mistake."
+tags:
+- "reading"
+- "beginner"
+- "unreviewed"
+passages:
+- id: "te-chore-list"
+  title: "Weekly chores"
+  sentences:
+  - text: "సోమవారం గదులు శుభ్రం చేయండి."
+    reading: "sōmavāraṁ gadulu śubhraṁ cēyaṇḍi."
+    ipa: "soːmaʋaːram ɡad̪ulu ʃubʱram tʃeːjaɳɖi"
+  - text: "మంగళవారం బట్టలు కడగండి."
+    reading: "maṅgaḷavāraṁ baṭṭalu kaḍagaṇḍi."
+    ipa: "maŋɡaɭaʋaːram baʈʈalu kaɖaɡaɳɖi"
+  - text: "బుధవారం చెత్త తీయండి."
+    reading: "budhavāraṁ cetta tīyaṇḍi."
+    ipa: "bud̪ʱaʋaːram tʃet̪t̪a t̪iːjaɳɖi"
+  - text: "శనివారం వంటిల్లు శుభ్రం చేయండి."
+    reading: "śanivāraṁ vaṇṭillu śubhraṁ cēyaṇḍi."
+    ipa: "ʃaniʋaːram ʋaɳʈillu ʃubʱram tʃeːjaɳɖi"
+  questions:
+  - id: "te-8172"
+    prompt:
+      en: "On which day should the clothes be washed?"
+    options:
+    - en: "Monday"
+    - en: "Tuesday"
+    - en: "Wednesday"
+    answer: 2
+  - id: "te-8173"
+    prompt:
+      en: "What should be cleaned on Saturday?"
+    options:
+    - en: "The kitchen"
+    - en: "The garden"
+    - en: "The bed"
+    answer: 1
+  - id: "te-8174"
+    prompt:
+      en: "The list asks for the rubbish to be taken out on Wednesday."
+    answer: true
