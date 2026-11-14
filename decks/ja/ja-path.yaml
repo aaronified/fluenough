@@ -118,6 +118,7 @@ alphabet:
   - "ja-kanji-23"
   - "ja-kanji-24"
   - "ja-kanji-25"
+  - "ja-kanji-26"
   - "ja-kanji-27"
   - "ja-katakana"
   - "ja-katakana-combos"
@@ -712,11 +713,8 @@ units:
       - { id: "i-think-that", text: { "en": "Saying what you think and what someone said" } }
     reading_passages:
       - { id: "interview-notes", text: { "en": "Notes from a short street interview" } }
-  - planned: { id: "ja-kanji-26", grammar: "script-kanji-26", words: 0 }
-    listening_passages:
-      - { id: "kanji-26-heard", text: { "en": "Hearing words whose kanji unit 26 teaches" } }
-    reading_passages:
-      - { id: "kanji-26-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 26" } }
+  - decks: ["ja-kanji-26"]
+    words: 0
   - decks: ["ja-opinions"]
     words: 62
     listening_passages:
