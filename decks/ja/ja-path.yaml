@@ -103,6 +103,7 @@ alphabet:
   - "ja-kanji-8"
   - "ja-kanji-9"
   - "ja-kanji-10"
+  - "ja-kanji-11"
   - "ja-katakana"
   - "ja-katakana-combos"
   - "ja-hiragana-marks"
@@ -470,11 +471,8 @@ units:
       - { id: "at-an-izakaya", text: { "en": "Ordering at a small izakaya and asking for the bill" } }
     reading_passages:
       - { id: "ticket-machine", text: { "en": "The buttons of a restaurant's meal-ticket machine" } }
-  - planned: { id: "ja-kanji-11", grammar: "script-kanji-11", words: 0 }
-    listening_passages:
-      - { id: "kanji-11-heard", text: { "en": "Hearing words whose kanji unit 11 teaches" } }
-    reading_passages:
-      - { id: "kanji-11-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 11" } }
+  - decks: ["ja-kanji-11"]
+    words: 0
   - decks: ["ja-cooking", "ja-cooking-sentences", "ja-reading-cooking", "*"]
     words: 31
     listening_passages:
