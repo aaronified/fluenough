@@ -154,19 +154,19 @@ cards:
     bases: [{ word: "Hablas", ref: "es-0027" }, { word: "con", base: "con" }, { word: "el", base: "el" }, { word: "guía", ref: "es-2190" }]
     confusables: [{ id: "agencia", ref: "es-2180", kind: "word" }, { id: "museo", ref: "es-0776", kind: "word" }]
   - id: "es-3495"
-    target: "Ayer perdí el pasaporte en un consulado."
-    ipa: "aˈʝeɾ peɾˈdi el pasaˈpoɾte en un konsuˈlado"
+    target: "Ayer perdí el pasaporte cerca del consulado."
+    ipa: "aˈʝeɾ peɾˈdi el pasaˈpoɾte ˈθeɾka del konsuˈlado"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "Ayer", ref: "es-0332" }, { word: "perdí", ref: "es-0874" }, { word: "el", base: "el" }, { word: "pasaporte", ref: "es-0878" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "consulado", ref: "es-2185" }]
+    bases: [{ word: "Ayer", ref: "es-0332" }, { word: "perdí", ref: "es-0874" }, { word: "el", base: "el" }, { word: "pasaporte", ref: "es-0878" }, { word: "cerca", ref: "es-0717" }, { word: "del", base: "del" }, { word: "consulado", ref: "es-2185" }]
     confusables: [{ id: "robo", ref: "es-2182", kind: "word" }, { id: "embajada", ref: "es-2184", kind: "word" }]
   - id: "es-3496"
-    target: "Mi hermano y yo cambiamos dinero en la agencia."
-    ipa: "mi eɾˈmano i ʝo kamˈbjamos diˈneɾo en la aˈxenθja"
+    target: "Mi hermano y yo compramos el viaje en la agencia."
+    ipa: "mi eɾˈmano i ʝo komˈpɾamos el ˈbjaxe en la aˈxenθja"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermano", ref: "es-0161" }, { word: "y", ref: "es-0048" }, { word: "yo", ref: "es-0119" }, { word: "cambiamos", ref: "es-0588" }, { word: "dinero", ref: "es-0513" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "agencia", ref: "es-2180" }]
-    confusables: [{ id: "gastar", ref: "es-1228", kind: "word" }, { id: "ahorrar", ref: "es-1229", kind: "word" }]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermano", ref: "es-0161" }, { word: "y", ref: "es-0048" }, { word: "yo", ref: "es-0119" }, { word: "compramos", ref: "es-0280" }, { word: "el", base: "el" }, { word: "viaje", ref: "es-1690" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "agencia", ref: "es-2180" }]
+    confusables: [{ id: "reservar", ref: "es-1258", kind: "word" }, { id: "billete", ref: "es-0685", kind: "word" }]
   - id: "es-3497"
     target: "La agencia cierra a las cinco."
     ipa: "la aˈxenθja ˈθjera a las ˈθinko"
@@ -182,11 +182,11 @@ cards:
     bases: [{ word: "Mi", ref: "es-0129" }, { word: "amigo", ref: "es-0005" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "simpático", ref: "es-0422" }, { word: "con", base: "con" }, { word: "los", base: "los" }, { word: "turistas", ref: "es-2172" }]
     confusables: [{ id: "tranquilo", ref: "es-0257", kind: "word" }, { id: "aburrido", ref: "es-0423", kind: "word" }]
   - id: "es-3499"
-    target: "¿Tienes el visado en la maleta?"
-    ipa: "ˈtjenes el biˈsado en la maˈleta"
+    target: "¿Tienes el pasaporte en la maleta?"
+    ipa: "ˈtjenes el pasaˈpoɾte en la maˈleta"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "Tienes", ref: "es-0024" }, { word: "el", base: "el" }, { word: "visado", ref: "es-2177" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "maleta", ref: "es-1167" }]
+    bases: [{ word: "Tienes", ref: "es-0024" }, { word: "el", base: "el" }, { word: "pasaporte", ref: "es-0878" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "maleta", ref: "es-1167" }]
     confusables: [{ id: "seguro", ref: "es-2188", kind: "word" }, { id: "billete", ref: "es-0685", kind: "word" }]
   - id: "es-3500"
     target: "Hoy duermo en un alojamiento barato."
@@ -196,12 +196,12 @@ cards:
     bases: [{ word: "Hoy", ref: "es-0331" }, { word: "duermo", ref: "es-0904" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "alojamiento", ref: "es-2179" }, { word: "barato", ref: "es-0411" }]
     confusables: [{ id: "caro", ref: "es-0412", kind: "word" }, { id: "hotel", ref: "es-0769", kind: "word" }]
   - id: "es-3501"
-    target: "Por la mañana tomamos el café con un extranjero."
-    ipa: "poɾ la maˈɲana toˈmamos el kaˈfe kon un ekstɾanˈxeɾo"
+    target: "Por la mañana tomamos café con un turista."
+    ipa: "poɾ la maˈɲana toˈmamos kaˈfe kon un tuˈɾista"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "Por", base: "por" }, { word: "la", base: "la" }, { word: "mañana", ref: "es-0841" }, { word: "tomamos", ref: "es-0624" }, { word: "el", base: "el" }, { word: "café", ref: "es-0611" }, { word: "con", base: "con" }, { word: "un", base: "un" }, { word: "extranjero", ref: "es-2195" }]
-    confusables: [{ id: "turista", ref: "es-2172", kind: "word" }, { id: "guía", ref: "es-2190", kind: "word" }]
+    bases: [{ word: "Por", base: "por" }, { word: "la", base: "la" }, { word: "mañana", ref: "es-0841" }, { word: "tomamos", ref: "es-0624" }, { word: "café", ref: "es-0611" }, { word: "con", base: "con" }, { word: "un", base: "un" }, { word: "turista", ref: "es-2172" }]
+    confusables: [{ id: "extranjero", ref: "es-2195", kind: "word" }, { id: "guía", ref: "es-2190", kind: "word" }]
   - id: "es-3502"
     target: "Pedimos el menú de temporada."
     ipa: "peˈdimos el meˈnu de tempoˈɾada"
