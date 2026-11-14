@@ -106,6 +106,7 @@ alphabet:
   - "ja-kanji-11"
   - "ja-kanji-12"
   - "ja-kanji-13"
+  - "ja-kanji-14"
   - "ja-katakana"
   - "ja-katakana-combos"
   - "ja-hiragana-marks"
@@ -514,11 +515,8 @@ units:
       - { id: "which-is-better", text: { "en": "Two friends compare two phones, and pick the best" } }
     reading_passages:
       - { id: "two-cities", text: { "en": "A short text comparing Tokyo and Osaka" } }
-  - planned: { id: "ja-kanji-14", grammar: "script-kanji-14", words: 0 }
-    listening_passages:
-      - { id: "kanji-14-heard", text: { "en": "Hearing words whose kanji unit 14 teaches" } }
-    reading_passages:
-      - { id: "kanji-14-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 14" } }
+  - decks: ["ja-kanji-14"]
+    words: 0
   - decks: ["ja-music", "ja-music-sentences", "ja-reading-music", "*"]
     words: 14
     listening_passages:
