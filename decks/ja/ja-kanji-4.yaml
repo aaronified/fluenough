@@ -89,11 +89,11 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - target: "男ですか。"
-        target_scripts: { kana: "おとこですか。" }
-        words: ["男", "です", "か"]
-        reading: "otoko desu ka."
-        ipa: "otoko desɯ ka"
+      - target: "あのひとは男ですか。"
+        target_scripts: { kana: "あのひとはおとこですか。" }
+        words: ["あの", "ひと", "は", "男", "です", "か"]
+        reading: "ano hito wa otoko desu ka."
+        ipa: "ano çito wa otoko desɯ ka"
     bases: "self"
   - id: "ja-5125"
     target: "竹"
@@ -166,12 +166,12 @@ cards:
         target_scripts: { kana: "てんきはあついです。" }
         words: ["天気", "は", "あつい", "です"]
         reading: "tenki wa atsui desu."
-        ipa: "tenki wa atsɯi desɯ"
+        ipa: "teɴki wa atsɯi desɯ"
       - target: "きょうは天気がいいです。"
         target_scripts: { kana: "きょうはてんきがいいです。" }
         words: ["きょう", "は", "天気", "が", "いい", "です"]
         reading: "kyou wa tenki ga ii desu."
-        ipa: "kjoː wa tenki ɡa iː desɯ"
+        ipa: "kjoː wa teɴki ɡa iː desɯ"
     bases: "self"
   - id: "ja-5130"
     target: "田"
@@ -288,16 +288,11 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - target: "四百はたかいです。"
-        target_scripts: { kana: "よんひゃくはたかいです。" }
-        words: ["四百", "は", "たかい", "です"]
-        reading: "yonhyaku wa takai desu."
-        ipa: "joɴçjakɯ wa takai desɯ"
-      - target: "五百です。"
-        target_scripts: { kana: "ごひゃくです。" }
-        words: ["五百", "です"]
-        reading: "gohyaku desu."
-        ipa: "ɡoçjakɯ desɯ"
+      - target: "百はいくつですか。"
+        target_scripts: { kana: "ひゃくはいくつですか。" }
+        words: ["百", "は", "いくつ", "です", "か"]
+        reading: "hyaku wa ikutsu desu ka."
+        ipa: "çjakɯ wa ikɯtsɯ desɯ ka"
     bases: "self"
   - id: "ja-5137"
     target: "文"
