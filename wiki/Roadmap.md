@@ -358,6 +358,8 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1213](https://github.com/aaronified/fluenough/issues/1213) Language: Pali: full deck format
 - [#1214](https://github.com/aaronified/fluenough/issues/1214) Language: Aramaic (Imperial): full deck format
 - [#1215](https://github.com/aaronified/fluenough/issues/1215) Language: Ashokan Prakrit: full deck format
+- [#1244](https://github.com/aaronified/fluenough/issues/1244) Spanish: more clean sentences so Find my level can ask sentence picks again
+- [#1245](https://github.com/aaronified/fluenough/issues/1245) Hindustani: more clean sentences so Find my level can ask sentence picks
 
 ## Plans
 
