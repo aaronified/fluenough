@@ -122,7 +122,8 @@ String indexFor(Map<String, String> files, {int version = 1}) {
     // A language's phonetic rules are for tools/derive_phonetic.py alone:
     // the index does not list them (tools/deck_index.py), so the app never
     // fetches them.
-    if (kind == 'phonetics') continue;
+    // The character gating file (#1227) is the validator's alone too.
+    if (kind == 'phonetics' || kind == 'gating') continue;
     final core = header['part'] == 'core';
     if (header['language'] case final YamlMap language) {
       names[code] = language['name'] as String? ?? code;

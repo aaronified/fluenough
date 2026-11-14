@@ -317,6 +317,7 @@ NOT_DECKS = {
     "script",
     "resources",
     "phonetics",
+    "gating",
     "topics",
 }
 
@@ -672,6 +673,10 @@ def build(reports: list[vd.Report] | None = None,
         # listed, not fetched, not in the size.
         files = [p for p, e in zip(files, entries) if e["kind"] != "phonetics"]
         entries = [e for e in entries if e["kind"] != "phonetics"]
+        # The character gating file (#1227) is the validator's alone, like
+        # the phonetic rules: not listed, not fetched, not in the size.
+        files = [p for p, e in zip(files, entries) if e["kind"] != "gating"]
+        entries = [e for e in entries if e["kind"] != "gating"]
         guides = [e for p, e in zip(files, entries) if _other_script_guide(p, e)]
         entries = [e for e in entries if e not in guides]
         # A course with a path but no written deck is not offered: the
