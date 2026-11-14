@@ -1,0 +1,43 @@
+# Topics a learner of Telugu would search for: what each one is, and the decks that teach it (wiki/Plan-Deck-Kinds-And-Topics.md, D6).
+# A script topic lists its characters; a topic holds no card text of its own.
+schema: 1
+kind: "topics"
+id: "te-topics"
+language: "te"
+license: "CC-BY-SA-4.0"
+topics:
+  - id: "te-vowels-script"
+    name: { en: "Telugu vowels" }
+    summary: { en: "The Telugu vowel letters, written on their own, from the short a to the long vowels and the diphthongs ai and au." }
+    kind: "script"
+    level: "A1"
+    decks: ["te-script-vowels"]
+    chars: ["అ", "ఆ", "ఇ", "ఈ", "ఉ", "ఊ", "ఋ", "ఎ", "ఏ", "ఐ", "ఒ", "ఓ", "ఔ"]
+  - id: "te-consonants-script"
+    name: { en: "Telugu consonants" }
+    summary: { en: "The Telugu consonant letters, each written with the a vowel built in, in their groups from ka to ha, including the retroflex and sibilant letters." }
+    kind: "script"
+    level: "A1"
+    decks: ["te-script-consonants"]
+    chars: ["క", "ఖ", "గ", "ఘ", "ఙ", "చ", "ఛ", "జ", "ఝ", "ఞ", "ట", "ఠ", "డ", "ఢ", "ణ", "త", "థ", "ద", "ధ", "న", "ప", "ఫ", "బ", "భ", "మ", "య", "ర", "ల", "వ", "శ", "ష", "స", "హ", "ళ"]
+  - id: "te-vowel-signs-script"
+    name: { en: "Telugu vowel signs" }
+    summary: { en: "The vowel signs, the marks written around a consonant to change its vowel, such as the sign for a long a in kā, and the bare consonant that has no vowel." }
+    kind: "script"
+    level: "A1"
+    decks: ["te-script-vowel-signs"]
+    chars: ["కా", "కి", "కీ", "కు", "కూ", "కృ", "కె", "కే", "కై", "కొ", "కో", "కౌ", "కం", "క్", "మా", "మి", "మీ", "ము", "మూ", "మె", "మే", "మొ", "మో"]
+  - id: "te-conjuncts-script"
+    name: { en: "Conjunct consonants (ottulu)" }
+    summary: { en: "Two consonants written together as one shape, called ottulu, such as the doubled k in kka and clusters such as kra and sta." }
+    kind: "script"
+    level: "A1"
+    decks: ["te-script-conjuncts"]
+    chars: ["క్క", "గ్గ", "చ్చ", "ట్ట", "డ్డ", "త్త", "ద్ద", "న్న", "ప్ప", "మ్మ", "ల్ల", "ళ్ళ", "య్య", "వ్వ", "క్ర", "ప్ర", "త్ర", "శ్ర", "వ్య", "ద్య", "క్ష", "స్త", "స్థ", "ష్ట"]
+  - id: "te-digits-script"
+    name: { en: "Telugu digits" }
+    summary: { en: "The ten Telugu digits, 0 to 9, with the spoken number word for each, such as okaṭi for one." }
+    kind: "script"
+    level: "A1"
+    decks: ["te-script-digits"]
+    chars: ["౦", "౧", "౨", "౩", "౪", "౫", "౬", "౭", "౮", "౯"]
