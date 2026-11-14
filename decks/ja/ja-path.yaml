@@ -98,6 +98,7 @@ alphabet:
   - "ja-kanji-3"
   - "ja-kanji-4"
   - "ja-kanji-5"
+  - "ja-kanji-6"
   - "ja-katakana"
   - "ja-katakana-combos"
   - "ja-hiragana-marks"
@@ -406,11 +407,8 @@ units:
       - { id: "but-and-so", text: { "en": "Joining two sentences: and, but, so, then" } }
     reading_passages:
       - { id: "short-blog-post", text: { "en": "A short blog post about a weekend" } }
-  - planned: { id: "ja-kanji-6", grammar: "script-kanji-6", words: 0 }
-    listening_passages:
-      - { id: "kanji-6-heard", text: { "en": "Hearing words whose kanji unit 6 teaches" } }
-    reading_passages:
-      - { id: "kanji-6-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 6" } }
+  - decks: ["ja-kanji-6"]
+    words: 0
   - decks: ["ja-animals", "ja-animals-sentences", "ja-reading-animals", "*"]
     words: 35
     listening_passages:
