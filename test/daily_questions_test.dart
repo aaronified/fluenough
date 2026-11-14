@@ -1248,12 +1248,18 @@ cards:
       }
 
       // At 1.4x the card is taller than the screen: the answers are below it.
-      Future<void> scrollToAnswers(WidgetTester tester) =>
-          tester.scrollUntilVisible(
-            find.text(l10nOf(tester).reviewQuestionSkip),
-            200,
-            scrollable: find.byType(Scrollable).first,
-          );
+      Future<void> scrollToAnswers(WidgetTester tester) async {
+        final skip = find.text(l10nOf(tester).reviewQuestionSkip);
+        await tester.scrollUntilVisible(
+          skip,
+          200,
+          scrollable: find.byType(Scrollable).first,
+        );
+        // Skip is the last control: bring it fully on screen, which brings
+        // Yes and No, above it, on screen too.
+        await tester.ensureVisible(skip);
+        await tester.pumpAndSettle();
+      }
 
       for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
         testWidgets('it shows the question as the heading and the whole '
