@@ -5,7 +5,7 @@ core: "es-illness-sentences"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Sentences: illness and the doctor"
 license: "CC-BY-SA-4.0"
-description: "Six sentences about feeling ill and going to the doctor, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+description: "Nine sentences about feeling ill and going to the doctor, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
 cards:
   "es-1493":
     native: "I have a fever and my head hurts."
@@ -30,3 +30,16 @@ cards:
     native: "I go to the emergency room because I am not getting better."
     bases: { "a": "to", "porque": "because" }
     confusables: { "consulta": { why: "Consulta is a planned visit to the doctor." }, "cita": { why: "Cita is an appointment made in advance." } }
+  "es-4606":
+    native: "I have a fever."
+    confusables: {"tos": { why: "Tos is a cough, a different symptom." }, "gripe": { why: "Gripe is the flu, the illness that can cause a fever." }}
+  "es-4607":
+    notes:
+      "n1": "A woman says alérgica; the ending agrees with the speaker."
+    native: "I am allergic to penicillin."
+    bases: {"a": "to", "la": "the", "penicilina": "penicillin"}
+    confusables: {"alergia": { why: "Alergia is the allergy, a noun; alérgico is the adjective." }, "enfermedad": { why: "Enfermedad is an illness, which an allergy is not." }}
+  "es-4608":
+    native: "I need a doctor."
+    bases: {"un": "a"}
+    confusables: {"doctor": { why: "Doctor is also a doctor, but médico is the common word." }, "farmacéutico": { why: "Farmacéutico is a pharmacist, who gives medicine but does not examine you." }}
