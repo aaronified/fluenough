@@ -996,6 +996,62 @@ class DeckKindsIndex(unittest.TestCase):
         for key in ("shelves", "topics"):
             self.assertNotIn(key, lang)
 
+    GLYPHS = """schema: 1
+id: "zz-en-glyphs"
+name: "Glyphs"
+language: { code: "zz", iso639_3: "zzz", name: "Testlang", script: "latin", tts: "es-ES", icon: "Zz" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner"]
+%s
+cards:
+  - id: "zz-9801"
+    target: "a"
+    native: "ay"
+    pos: "letter"
+%s
+"""
+    SCHEME = ('character_scheme:\n  readings:\n    first: { name: { en: "First" }, '
+              'script: "latin" }\n')
+    BLOCK = '    character:\n      readings:\n        - { kind: "first", text: "a" }\n'
+
+    def glyphs(self, scheme: str, block: str) -> dict:
+        (self.tmp / "decks" / "zz" / "zz-en-glyphs.yaml").write_text(
+            self.GLYPHS % (scheme, block), encoding="utf-8")
+        files = {f["path"]: f for f in self.zz()["files"]}
+        return files["decks/zz/zz-en-glyphs.yaml"]
+
+    def test_a_file_using_a_card_field_a_released_app_refuses_is_gated(self) -> None:
+        entry = self.glyphs(self.SCHEME, self.BLOCK)
+        self.assertEqual(entry["min_app"], "0.10.2")
+        # Only that file: the fixture's own files stay ungated.
+        others = [f for f in self.zz()["files"]
+                  if f["path"] != "decks/zz/zz-en-glyphs.yaml"]
+        self.assertTrue(all("min_app" not in f for f in others))
+
+    def test_a_layer_is_gated_with_the_core_it_names(self) -> None:
+        self.min_app({"files": {"decks/zz/zz-words.yaml": "0.12.0"}})
+        files = {f["path"]: f for f in self.zz()["files"]}
+        self.assertEqual(files["decks/zz/zz-words.yaml"]["min_app"], "0.12.0")
+        self.assertEqual(files["decks/zz/en/zz-en-words.yaml"]["min_app"], "0.12.0")
+
+    def test_a_layer_keeps_a_newer_gate_of_its_own(self) -> None:
+        self.min_app({"files": {"decks/zz/zz-words.yaml": "0.10.2",
+                                "decks/zz/en/zz-en-words.yaml": "0.12.0"}})
+        files = {f["path"]: f for f in self.zz()["files"]}
+        self.assertEqual(files["decks/zz/en/zz-en-words.yaml"]["min_app"], "0.12.0")
+
+    def test_a_file_without_the_field_is_not_gated(self) -> None:
+        self.assertNotIn("min_app", self.glyphs("", ""))
+
+    def test_a_hand_gate_newer_than_the_field_gate_wins(self) -> None:
+        self.min_app({"files": {"decks/zz/zz-en-glyphs.yaml": "0.12.0"}})
+        self.assertEqual(self.glyphs(self.SCHEME, self.BLOCK)["min_app"], "0.12.0")
+
+    def test_a_hand_gate_older_than_the_field_gate_does_not_lower_it(self) -> None:
+        self.min_app({"files": {"decks/zz/zz-en-glyphs.yaml": "0.8.1"}})
+        self.assertEqual(self.glyphs(self.SCHEME, self.BLOCK)["min_app"], "0.10.2")
+
     def test_a_character_gating_file_is_the_validators_alone(self) -> None:
         (self.tmp / "decks" / "zz" / "zz-gating.yaml").write_text(
             'schema: 1\nkind: "gating"\nid: "zz-gating"\nlanguage: "zz"\n'

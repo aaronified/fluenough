@@ -5,6 +5,7 @@ import '../models/level.dart';
 import '../models/card.dart';
 import '../models/card_source.dart';
 import '../models/card_set.dart';
+import '../models/character.dart';
 import '../models/deck.dart';
 import '../models/drill_mode.dart';
 import '../models/grammar_pattern.dart';
@@ -14,6 +15,7 @@ import '../models/rule.dart';
 import '../private/private_ids.dart';
 import 'yaml_tree.dart';
 
+part 'deck_character.dart';
 part 'deck_kinds.dart';
 part 'deck_layers.dart';
 
@@ -132,6 +134,8 @@ const _headerFields = {
   'pattern',
   'theme',
   'passages',
+  // The characters' readings and levels (deck_character.dart, #1226).
+  'character_scheme',
   // The deck kinds (deck_kinds.dart), read tolerantly.
   ..._kindHeaderKeys,
 };
@@ -185,6 +189,8 @@ const _cardFields = {
   // The deck kinds (deck_kinds.dart): a card's source block, level, creator
   // and legacy.
   ..._kindCardKeys,
+  // A script deck's character data (deck_character.dart, #1226).
+  'character',
 };
 
 /// A layer-only card's fields: a single-file card's, its id being its key.
@@ -228,6 +234,8 @@ const _coreHeaderFields = {
   'pattern',
   'table',
   'rules',
+  // The characters' readings and levels (deck_character.dart, #1226).
+  'character_scheme',
   ..._kindHeaderKeys,
 };
 const _layerHeaderFields = {
@@ -297,6 +305,8 @@ const _coreCardFields = {
   'verified',
   // The deck kinds (deck_kinds.dart).
   ..._kindCardKeys,
+  // A script deck's character data (deck_character.dart, #1226).
+  'character',
 };
 
 /// A core card's item lists (DECK-FORMAT.md, Card data), and each item's
@@ -700,6 +710,7 @@ class _Reader {
       section: kinds.section,
       weave: kinds.weave,
       patternFamily: kinds.patternFamily,
+      characterScheme: characterScheme(fields),
       kindProblems: List<String>.unmodifiable(kindProblems),
     );
   }
@@ -987,6 +998,7 @@ class _Reader {
       ownRoot: ownRoot,
       register: fields.optionalString('register', allowEmpty: false),
       frequency: frequency(fields.node('frequency'), '$path.frequency'),
+      character: character(fields.node('character'), '$path.character'),
       level: kinds.level,
       creators: kinds.creators,
       sourceBlock: kinds.source,
@@ -1680,6 +1692,7 @@ class _Reader {
       section: kinds.section,
       weave: kinds.weave,
       patternFamily: kinds.patternFamily,
+      characterScheme: characterScheme(fields),
       kindProblems: List<String>.unmodifiable(kindProblems),
     );
   }
@@ -1786,6 +1799,7 @@ class _Reader {
       ownRoot: ownRoot,
       register: fields.optionalString('register', allowEmpty: false),
       frequency: frequency(fields.node('frequency'), '$path.frequency'),
+      character: character(fields.node('character'), '$path.character'),
       items: <String, List<CardItem>>{
         for (final MapEntry(key: key, value: allowed) in _itemFields.entries)
           if (fields.node(key) case final node?)

@@ -181,6 +181,7 @@ HEADER_KEYS = {
     "authors", "source", "description", "tags", "cards", "pattern", "facts",
     "theme", "passages", "situations",
     "genre", "level", "hidden", "professional", "section", "weave", "pattern_family",
+    "character_scheme",
 }
 CARD_KEYS = {
     "id", "target", "native", "reading", "ipa", "phonetic", "phonetic_source", "alt_target", "alt_native",
@@ -188,7 +189,7 @@ CARD_KEYS = {
     "picture", "picture_ask", "phrasebook", "bases", "rules", "wiktionary",
     "register", "frequency",
     "audio_credit", "image", "image_credit", "target_scripts", "words",
-    "source", "level", "creator", "legacy",
+    "source", "level", "creator", "legacy", "character",
 }
 # A ref lists a card written in another deck (ADR-0018). It may give its own
 # native-side fields; what the card is in the language learned stays the
@@ -222,7 +223,7 @@ CORE_HEADER_KEYS = {"schema", "id", "part", "kind", "language", "license",
                     "authors", "source", "tags", "theme", "cards", "pattern",
                     "table", "rules",
                     "genre", "level", "hidden", "professional", "section", "weave",
-                    "pattern_family"}
+                    "pattern_family", "character_scheme"}
 LAYER_HEADER_KEYS = {"schema", "id", "kind", "core", "native", "name",
                      "description", "license", "authors", "source", "tags",
                      "cards", "pattern", "table", "rules"}
@@ -235,7 +236,8 @@ CORE_CARD_KEYS = {"id", "target", "reading", "ipa", "phonetic",
                   "synonyms", "antonyms", "collocations", "confusables", "forms",
                   "senses", "audio_credit", "image", "image_credit",
                   "target_scripts", "words", "warning", "not_sounds_like",
-                  "not_looks_like", "source", "level", "creator", "legacy"}
+                  "not_looks_like", "source", "level", "creator", "legacy",
+                  "character"}
 CORE_REF_KEYS = {"ref", "reading", "ipa", "tags", "modes", "examples", "notes"}
 # A set card (DECK-FORMAT.md, Set cards; #506, #515): a closed group shown
 # together before its members are drilled. It is a card of a vocab core,
@@ -887,6 +889,10 @@ class Report:
     recs_data: list[tuple[str, str, dict]] | None = None
     situation_ids: list[str] = field(default_factory=list)
     script_features: set[str] = field(default_factory=set)
+    # The card fields a released app refuses that this file uses, by name
+    # (CARD_FIELD_MIN_APP): tools/deck_index.py puts the file behind the app
+    # version that reads them (ADR-0052).
+    new_fields: set[str] = field(default_factory=set)
     # A script guide core's characters by feature id: its example and its
     # letters, NFC (#1228); a script topic's `chars` may name them.
     script_chars: dict[str, set[str]] = field(default_factory=dict)
@@ -1231,7 +1237,8 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
             reading=_is_str(card.get("reading")), in_core=core)
 
     allowed = CORE_CARD_KEYS if core else CARD_KEYS - (
-        {"id", "source", "level", "creator", "legacy"} if form == "layer" else set())
+        {"id", "source", "level", "creator", "legacy", "character"}
+        if form == "layer" else set())
     for unknown in sorted(set(card) - allowed, key=str):
         if core and unknown in NATIVE_SIDE:
             r.error(where, f"a core card's {unknown!r} is in each layer, under "
@@ -2900,6 +2907,10 @@ def check_transliterated(r: Report, raw: object, *, fixed: str | None = None,
                                              "alternatives", "target_scripts") for k in keys[:-1]):
                 return
             if key == "text" and "passages" in keys:
+                return
+            # A character block's radical is itself one character, checked
+            # as such by _check_character; its reading is the card's own.
+            if key == "radical" and keys[-2:-1] == ["character"]:
                 return
             if fixed is not None:
                 code = fixed
@@ -7648,7 +7659,181 @@ def check_kind_header(r: Report, raw: dict, kind: str | None) -> None:
                 ("reviewed" in tags) == ("unreviewed" in tags)):
             r.error("tags", f'a {genre} deck is tagged "unreviewed" until a reviewer '
                             f'checks it, then "reviewed": exactly one of them')
+    _check_character(r, raw)
     _check_kind_cards(r, raw, spec, genre, deck_level, kind)
+
+
+# A deck of single characters (a script deck) may give each card structured
+# data about its character (#1226): the readings it has by kind, its level in
+# a named scheme, its strokes and its radical. What the kinds and schemes are
+# is the deck's own data, `character_scheme` in its header, so no language and
+# no script is named here.
+CHARACTER_SCHEME_KEYS = {"readings", "levels"}
+CHARACTER_KIND_KEYS = {"name", "script"}
+CHARACTER_LEVEL_KEYS = {"name", "values"}
+CHARACTER_KEYS = {"readings", "level", "strokes", "radical"}
+CHARACTER_READING_KEYS = {"kind", "text", "reading"}
+MAX_STROKES = 64
+# The app version that first reads each card field below; a file that uses one
+# is put behind it in the index (ADR-0052), because a released app refuses a
+# card field it does not know. Raise it to the real number if the release that
+# holds the parser is not this one.
+CARD_FIELD_MIN_APP = {"character": "0.10.2"}
+
+
+def _scheme_entries(r: Report, raw: object, key: str, keys: set[str],
+                    need_script: bool) -> dict[str, dict]:
+    """The valid entries of one `character_scheme` map, by id."""
+    where = f"character_scheme.{key}"
+    if not isinstance(raw, dict) or not raw:
+        r.error(where, "must be a mapping of ids to their definitions")
+        return {}
+    found: dict[str, dict] = {}
+    for kid, entry in raw.items():
+        w = f"{where}.{kid}"
+        if not (_is_str(kid) and ID_RE.fullmatch(kid)):
+            r.error(where, f"id {kid!r} must match [a-z0-9-]+")
+            continue
+        if not isinstance(entry, dict):
+            r.error(w, "must be a mapping")
+            continue
+        for unknown in sorted(set(entry) - keys, key=str):
+            r.error(w, f"unknown field {unknown!r}")
+        _check_by_language(r, w, "name", entry.get("name"))
+        if need_script:
+            script = entry.get("script")
+            if not (_is_str(script) and SCRIPT_RE.fullmatch(script)):
+                r.error(w, f"script must be a script id such as 'latin', got {script!r}")
+                continue
+        else:
+            values = entry.get("values")
+            if values is not None:
+                if not isinstance(values, list) or not values:
+                    r.error(w, "values must be a non-empty list, or left out")
+                    continue
+                texts = []
+                for v in values:
+                    if isinstance(v, bool) or not (isinstance(v, int) or _is_str(v)):
+                        r.error(w, f"a value is a whole number or text, got {v!r}")
+                    texts.append(str(v))
+                if len(set(texts)) != len(texts):
+                    r.error(w, "values lists a value twice")
+        found[kid] = entry
+    return found
+
+
+def _check_character(r: Report, raw: dict) -> None:
+    """A deck's `character_scheme` and its cards' `character` blocks (#1226).
+    Only a core or a single-file deck has them; a layer's are refused as
+    unknown fields."""
+    scheme = raw.get("character_scheme")
+    kinds: dict[str, dict] = {}
+    levels: dict[str, dict] = {}
+    if "character_scheme" in raw:
+        r.new_fields.add("character")
+        if not isinstance(scheme, dict) or not scheme:
+            r.error("character_scheme", "must be a mapping with readings and/or levels")
+        else:
+            for unknown in sorted(set(scheme) - CHARACTER_SCHEME_KEYS, key=str):
+                r.error("character_scheme", f"unknown field {unknown!r}")
+            if "readings" in scheme:
+                kinds = _scheme_entries(r, scheme["readings"], "readings",
+                                        CHARACTER_KIND_KEYS, need_script=True)
+            if "levels" in scheme:
+                levels = _scheme_entries(r, scheme["levels"], "levels",
+                                         CHARACTER_LEVEL_KEYS, need_script=False)
+            if not scheme.keys() & CHARACTER_SCHEME_KEYS:
+                r.error("character_scheme", "names no readings and no levels")
+    cards = raw.get("cards")
+    if not isinstance(cards, list):
+        return
+    for i, card in enumerate(cards):
+        if not isinstance(card, dict) or "character" not in card:
+            continue
+        where = f"cards[{i}].character"
+        r.new_fields.add("character")
+        block = card["character"]
+        if "character_scheme" not in raw:
+            r.error(where, "the deck's header needs a character_scheme naming the "
+                           "reading kinds and level schemes the block uses")
+        if card.get("pos") not in SCRIPT_POS:
+            r.error(where, f"is for a card of a script deck, pos one of "
+                           f"{sorted(SCRIPT_POS)}, got {card.get('pos')!r}")
+        if not isinstance(block, dict) or not block:
+            r.error(where, "must be a mapping with readings, level, strokes or radical")
+            continue
+        for unknown in sorted(set(block) - CHARACTER_KEYS, key=str):
+            r.error(where, f"unknown field {unknown!r}")
+        if "readings" in block:
+            _check_character_readings(r, where, block["readings"], kinds)
+        if "level" in block:
+            _check_character_level(r, where, block["level"], levels)
+        if "strokes" in block:
+            strokes = block["strokes"]
+            if isinstance(strokes, bool) or not isinstance(strokes, int) \
+                    or not 1 <= strokes <= MAX_STROKES:
+                r.error(where, f"strokes must be a whole number from 1 to {MAX_STROKES}, "
+                               f"got {strokes!r}")
+        if "radical" in block:
+            radical = block["radical"]
+            if not _is_str(radical) or radical != unicodedata.normalize("NFC", radical) \
+                    or len(radical) != 1:
+                r.error(where, f"radical must be one character (one code point), "
+                               f"got {radical!r}")
+
+
+def _check_character_readings(r: Report, where: str, value: object,
+                              kinds: dict[str, dict]) -> None:
+    where = f"{where}.readings"
+    if not isinstance(value, list) or not value:
+        r.error(where, "must be a non-empty list of { kind, text, reading? }")
+        return
+    seen: set[tuple[object, object]] = set()
+    for k, item in enumerate(value):
+        w = f"{where}[{k}]"
+        if not isinstance(item, dict):
+            r.error(w, "must be a mapping with kind and text")
+            continue
+        for unknown in sorted(set(item) - CHARACTER_READING_KEYS, key=str):
+            r.error(w, f"unknown field {unknown!r}")
+        kind, text = item.get("kind"), item.get("text")
+        if not _is_str(kind) or kind not in kinds:
+            r.error(w, f"kind {kind!r} is not a reading kind of the deck's "
+                       f"character_scheme ({', '.join(sorted(kinds)) or 'none'})")
+        if not _is_str(text) or text != text.strip():
+            r.error(w, f"text must be the reading, text without spaces around it, "
+                       f"got {text!r}")
+        elif kind in kinds:
+            script = kinds[kind].get("script")
+            blocks = SCRIPT_BLOCKS.get(script) if _is_str(script) else None
+            if blocks and not _letters_in(text, blocks):
+                r.error(w, f"text {text!r} has letters that are not in the script "
+                           f"{script!r} of the kind {kind!r}")
+        if "reading" in item and not _is_str(item["reading"]):
+            r.error(w, "reading must be non-empty text, or left out")
+        if (kind, text) in seen:
+            r.error(w, f"the {kind!r} reading {text!r} is listed twice")
+        seen.add((kind, text))
+
+
+def _check_character_level(r: Report, where: str, value: object,
+                           levels: dict[str, dict]) -> None:
+    where = f"{where}.level"
+    if not isinstance(value, dict) or not value:
+        r.error(where, "must be a mapping of scheme to value, such as { grade: 1 }")
+        return
+    for scheme, level in value.items():
+        if not _is_str(scheme) or scheme not in levels:
+            r.error(where, f"scheme {scheme!r} is not a level scheme of the deck's "
+                           f"character_scheme ({', '.join(sorted(levels)) or 'none'})")
+            continue
+        if isinstance(level, bool) or not (isinstance(level, int) or _is_str(level)):
+            r.error(where, f"{scheme} must be a whole number or text, got {level!r}")
+            continue
+        allowed = levels[scheme].get("values")
+        if isinstance(allowed, list) and str(level) not in {str(v) for v in allowed}:
+            r.error(where, f"{scheme} {level!r} is not one of its values "
+                           f"({', '.join(str(v) for v in allowed)})")
 
 
 def _check_kind_cards(r: Report, raw: dict, spec: dict | None, genre: str | None,

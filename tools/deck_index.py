@@ -42,6 +42,10 @@ a file it already reads, is refused (read from the latest v* git tag; without
 git or the tag a warning, or an error with --strict-released or
 FLUENOUGH_STRICT_RELEASED=1, which CI's release-reader job sets).
 
+A file that uses a card field the released app refuses (`vd.CARD_FIELD_MIN_APP`,
+today the `character` block of a script deck) gets `min_app` too, written from
+the field itself, so no deck needs a line in decks/min_app.json for it.
+
 Writing the index also keeps the languages badge in the root README.md
 current: its number (`languages-N` and `N languages`) is the count of the
 index's real languages, leaving out the notation courses (script `ipa` or
@@ -546,6 +550,39 @@ def _gate(entry: dict, kind: str, hand: str | None) -> None:
         entry["min_app"] = max(versions, key=lambda v: tuple(int(x) for x in v.split(".")))
 
 
+def _gate_fields(entry: dict, rep: vd.Report | None) -> None:
+    """Raises `min_app` on [entry] to the release that reads the newest card
+    field its file uses (`vd.CARD_FIELD_MIN_APP`): a released app refuses a
+    card field it does not know, so the file waits for the app that does
+    (ADR-0052). Nothing is written for a file with none, or by hand."""
+    if rep is None or not rep.new_fields:
+        return
+    versions = [vd.CARD_FIELD_MIN_APP[f] for f in rep.new_fields
+                if f in vd.CARD_FIELD_MIN_APP]
+    if entry.get("min_app"):
+        versions.append(entry["min_app"])
+    if versions:
+        entry["min_app"] = max(versions, key=lambda v: tuple(int(x) for x in v.split(".")))
+
+
+def _gate_layers(entries: list[dict]) -> None:
+    """Gives each layer the `min_app` of the core of its deck: the app skips a
+    core it is too old for but would still download a layer alone, so a layer
+    is never listed for an app that cannot read its core (ADR-0052). Keeps a
+    newer gate the layer has itself."""
+    def newest(versions: list[str]) -> str:
+        return max(versions, key=lambda v: tuple(int(x) for x in v.split(".")))
+
+    cores: dict[str, str] = {}
+    for e in entries:
+        if e.get("part") == "core" and e.get("deck") and e.get("min_app"):
+            cores[e["deck"]] = newest([cores[e["deck"]], e["min_app"]]) \
+                if e["deck"] in cores else e["min_app"]
+    for e in entries:
+        if e.get("part") != "core" and e.get("native") and e.get("deck") in cores:
+            e["min_app"] = newest([v for v in (e.get("min_app"), cores[e["deck"]]) if v])
+
+
 def _sections() -> dict:
     """decks/sections.yaml read for the genres' default section and weave,
     or {} when it is not there."""
@@ -736,6 +773,11 @@ def build(reports: list[vd.Report] | None = None,
             _gate(e, "shelves", min_files.get(e["path"]))
         for e in topics:
             _gate(e, "topics", min_files.get(e["path"]))
+        # A file that uses a card field the released app refuses waits for the
+        # app that reads it, with no line in min_app.json (ADR-0052).
+        for e in entries + guides + situations + shelves:
+            _gate_fields(e, by_path.get((ROOT / e["path"]).resolve()))
+        _gate_layers(entries + guides + situations + shelves)
         language["files"] = entries
         if guides:
             language["script_guides"] = guides

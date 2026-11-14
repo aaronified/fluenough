@@ -34,6 +34,7 @@ class DeckCore {
     this.section,
     this.weave,
     this.patternFamily,
+    this.characterScheme,
     this.kindProblems = const <String>[],
   });
 
@@ -79,6 +80,9 @@ class DeckCore {
   final String? section;
   final bool? weave;
   final String? patternFamily;
+
+  /// The deck's `character_scheme` (#1226), null when it has none.
+  final CharacterScheme? characterScheme;
   final List<String> kindProblems;
 
   @override
@@ -132,6 +136,7 @@ class CoreWritten extends CoreCard {
     this.creators = const <String>[],
     this.sourceBlock,
     this.legacy,
+    this.character,
   }) : super(id);
 
   final String target;
@@ -194,6 +199,9 @@ class CoreWritten extends CoreCard {
   final List<String> creators;
   final CardSource? sourceBlock;
   final Map<String, Object?>? legacy;
+
+  /// The character data of a script deck's card (`character`, #1226).
+  final CardCharacter? character;
 }
 
 /// A core card's sense (#517), its meaning being in each layer.
@@ -714,6 +722,7 @@ Deck mergeLayer(DeckCore core, DeckLayer layer, {required String source}) {
     section: core.section,
     weave: core.weave,
     patternFamily: core.patternFamily,
+    characterScheme: core.characterScheme,
     kindProblems: core.kindProblems,
   );
 }
@@ -926,6 +935,7 @@ class _Merge {
       creators: card.creators,
       sourceBlock: card.sourceBlock,
       legacy: card.legacy,
+      character: card.character,
     );
   }
 

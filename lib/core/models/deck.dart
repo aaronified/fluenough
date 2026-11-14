@@ -2,6 +2,7 @@ import 'level.dart';
 import 'author.dart';
 import 'card.dart';
 import 'card_set.dart';
+import 'character.dart';
 import 'grammar_pattern.dart';
 import 'proposal.dart';
 import 'reading.dart';
@@ -189,6 +190,7 @@ class Deck {
     this.section,
     this.weave,
     this.patternFamily,
+    this.characterScheme,
     this.kindProblems = const <String>[],
   });
 
@@ -286,6 +288,11 @@ class Deck {
   /// page and never read by code.
   final String? patternFamily;
 
+  /// What its characters' readings and levels are (`character_scheme`,
+  /// #1226), for a script deck whose cards have a `character` block. Null for
+  /// a deck with none.
+  final CharacterScheme? characterScheme;
+
   /// What in the deck's kind fields (`genre`, `level`, `hidden`, a card's
   /// `source` and the rest) could not be read, one line each: the field was
   /// left out and the deck still loads. The app logs them.
@@ -323,6 +330,7 @@ class Deck {
     section: section,
     weave: weave,
     patternFamily: patternFamily,
+    characterScheme: characterScheme,
     kindProblems: kindProblems,
   );
 
