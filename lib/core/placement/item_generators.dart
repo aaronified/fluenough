@@ -1556,7 +1556,9 @@ class ItemGenerators {
           format: format,
           cardId: s.card.id,
           deck: s.deck,
-          prompt: s.text,
+          // The card's own sentence, commas and all, as it is shown and
+          // spoken (the words alone would drop the marks inside it).
+          prompt: s.card.target.trim().replaceAll(RegExp(r'\s+'), ' '),
           promptRoman: s.card.reading ?? s.text,
           options: opts,
           optionsRoman: opts,
