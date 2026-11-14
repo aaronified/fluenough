@@ -29,6 +29,26 @@ cards:
         reading: "yottsu no ringo wa takai desu."
         ipa: "jotsɯ no ɾiɴɡo wa takai desɯ"
         bases: [{ word: "の", base: "の", reading: "no" }, { word: "は", base: "は", reading: "wa" }, { word: "です", base: "です", reading: "desu" }]
+  - id: "ja-5075"
+    target: "糸"
+    target_scripts: { kana: "いと" }
+    words: ["糸"]
+    reading: "ito"
+    ipa: "ito"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+  - id: "ja-5076"
+    target: "字"
+    target_scripts: { kana: "じ" }
+    words: ["字"]
+    reading: "ji"
+    ipa: "dʑi"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
   - id: "ja-5061"
     target: "耳"
     target_scripts: { kana: "みみ" }
@@ -98,6 +118,23 @@ cards:
         reading: "watashi no kuruma desu."
         ipa: "wataɕi no kɯɾɯma desɯ"
         bases: [{ word: "の", base: "の", reading: "no" }, { word: "です", base: "です", reading: "desu" }]
+  - id: "ja-5077"
+    target: "手"
+    target_scripts: { kana: "て" }
+    words: ["手"]
+    reading: "te"
+    ipa: "te"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "わたしはにほんごが上手です。"
+        target_scripts: { kana: "わたしはにほんごがじょうずです。" }
+        words: ["わたし", "は", "にほんご", "が", "上手", "です"]
+        reading: "watashi wa nihongo ga jouzu desu."
+        ipa: "wataɕi wa nihoɴɡo ɡa dʑoːdzɯ desɯ"
+        bases: [{ word: "は", base: "は", reading: "wa" }, { word: "が", base: "が", reading: "ga" }, { word: "です", base: "です", reading: "desu" }]
   - id: "ja-5064"
     target: "十"
     target_scripts: { kana: "じゅう" }
@@ -259,6 +296,43 @@ cards:
         reading: "hito wa ooi desu."
         ipa: "çito wa oːi desɯ"
         bases: [{ word: "は", base: "は", reading: "wa" }, { word: "です", base: "です", reading: "desu" }]
+  - id: "ja-5078"
+    target: "正"
+    target_scripts: { kana: "ただしい" }
+    words: ["正"]
+    reading: "tadashii"
+    ipa: "tadaɕiː"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+  - id: "ja-5079"
+    target: "生"
+    target_scripts: { kana: "いきる" }
+    words: ["生"]
+    reading: "ikiru"
+    ipa: "ikiɾɯ"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "先生はがくせいです。"
+        target_scripts: { kana: "せんせいはがくせいです。" }
+        words: ["先生", "は", "がくせい", "です"]
+        reading: "sensei wa gakusei desu."
+        ipa: "seɴseː wa ɡakɯseː desɯ"
+        bases: [{ word: "は", base: "は", reading: "wa" }, { word: "です", base: "です", reading: "desu" }]
+  - id: "ja-5080"
+    target: "青"
+    target_scripts: { kana: "あお" }
+    words: ["青"]
+    reading: "ao"
+    ipa: "ao"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
   - id: "ja-5071"
     target: "夕"
     target_scripts: { kana: "ゆうがた" }
@@ -282,6 +356,26 @@ cards:
         reading: "yuugata ni kaerimasu."
         ipa: "jɯːɡata ni kaeɾimasɯ"
         bases: [{ word: "に", base: "に", reading: "ni" }, { word: "かえります", ref: "ja-0350" }]
+  - id: "ja-5081"
+    target: "石"
+    target_scripts: { kana: "いし" }
+    words: ["石"]
+    reading: "ishi"
+    ipa: "iɕi"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+  - id: "ja-5082"
+    target: "赤"
+    target_scripts: { kana: "あか" }
+    words: ["赤"]
+    reading: "aka"
+    ipa: "aka"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
   - id: "ja-5072"
     target: "千"
     target_scripts: { kana: "せん" }
@@ -328,6 +422,23 @@ cards:
         reading: "kawa ni ikimasu."
         ipa: "kawa ni ikimasɯ"
         bases: [{ word: "に", base: "に", reading: "ni" }, { word: "いきます", ref: "ja-0348" }]
+  - id: "ja-5083"
+    target: "先"
+    target_scripts: { kana: "さき" }
+    words: ["先"]
+    reading: "saki"
+    ipa: "saki"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "先生はやさしいです。"
+        target_scripts: { kana: "せんせいはやさしいです。" }
+        words: ["先生", "は", "やさしい", "です"]
+        reading: "sensei wa yasashii desu."
+        ipa: "seɴseː wa jasaɕiː desɯ"
+        bases: [{ word: "は", base: "は", reading: "wa" }, { word: "です", base: "です", reading: "desu" }]
   - id: "ja-5074"
     target: "早"
     target_scripts: { kana: "はやい" }
