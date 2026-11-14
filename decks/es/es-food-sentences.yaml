@@ -73,12 +73,12 @@ cards:
     bases: [{ word: "Mi", ref: "es-0129" }, { word: "bebida", ref: "es-0655" }, { word: "es", ref: "es-0022" }, { word: "agua", ref: "es-0012" }]
     confusables: [{ id: "zumo", ref: "es-0613", kind: "word" }, { id: "café", ref: "es-0611", kind: "word" }]
   - id: "es-3242"
-    target: "¿Dónde está el camarero?"
-    ipa: "ˈdonde esˈta el kamaˈɾeɾo"
+    target: "¿Dónde compras la leche?"
+    ipa: "ˈdonde ˈkompɾas la ˈletʃe"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "Dónde", ref: "es-0056" }, { word: "está", ref: "es-0023" }, { word: "el", base: "el" }, { word: "camarero", ref: "es-0651" }]
-    confusables: [{ id: "cliente", ref: "es-0515", kind: "word" }, { id: "cocinero", ref: "es-0508", kind: "word" }]
+    bases: [{ word: "Dónde", ref: "es-0056" }, { word: "compras", ref: "es-0280" }, { word: "la", base: "la" }, { word: "leche", ref: "es-0014" }]
+    confusables: [{ id: "tienda", ref: "es-0584", kind: "word" }, { id: "supermercado", ref: "es-0601", kind: "word" }]
   - id: "es-3243"
     target: "No quiero café con azúcar."
     ipa: "no ˈkjeɾo kaˈfe kon aˈθukaɾ"
@@ -122,11 +122,11 @@ cards:
     bases: [{ word: "Quién", ref: "es-0055" }, { word: "paga", ref: "es-0295" }, { word: "la", base: "la" }, { word: "cuenta", ref: "es-0653" }]
     confusables: [{ id: "propina", ref: "es-0654", kind: "word" }, { id: "dinero", ref: "es-0513", kind: "word" }]
   - id: "es-3249"
-    target: "Mi tío bebe vino con el postre."
-    ipa: "mi ˈtio ˈbebe ˈbino kon el ˈpostɾe"
+    target: "Bebemos vino con el postre."
+    ipa: "beˈbemos ˈbino kon el ˈpostɾe"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "Mi", ref: "es-0129" }, { word: "tío", ref: "es-0167" }, { word: "bebe", ref: "es-0029" }, { word: "vino", ref: "es-0620" }, { word: "con", base: "con" }, { word: "el", base: "el" }, { word: "postre", ref: "es-0642" }]
+    bases: [{ word: "Bebemos", ref: "es-0029" }, { word: "vino", ref: "es-0620" }, { word: "con", base: "con" }, { word: "el", base: "el" }, { word: "postre", ref: "es-0642" }]
     confusables: [{ id: "cerveza", ref: "es-0621", kind: "word" }, { id: "agua", ref: "es-0012", kind: "word" }]
   - id: "es-3250"
     target: "Ahora necesito el menú."
@@ -178,18 +178,18 @@ cards:
     bases: [{ word: "Mi", ref: "es-0129" }, { word: "padre", ref: "es-0159" }, { word: "y", ref: "es-0048" }, { word: "yo", ref: "es-0119" }, { word: "pedimos", ref: "es-0659" }, { word: "la", base: "la" }, { word: "sopa", ref: "es-0644" }, { word: "el", base: "el" }, { word: "pan", ref: "es-0013" }]
     confusables: [{ id: "ensalada", ref: "es-0643", kind: "word" }, { id: "tortilla", ref: "es-0645", kind: "word" }]
   - id: "es-3257"
-    target: "Nunca cocino la pizza con mi prima."
-    ipa: "ˈnunka koˈθino la ˈpiθθa kon mi ˈpɾima"
+    target: "Nunca cocino pizza con mi prima y mi tía."
+    ipa: "ˈnunka koˈθino ˈpiθθa kon mi ˈpɾima i mi ˈtia"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "Nunca", ref: "es-0321" }, { word: "cocino", ref: "es-0284" }, { word: "la", base: "la" }, { word: "pizza", ref: "es-0646" }, { word: "con", base: "con" }, { word: "mi", ref: "es-0129" }, { word: "prima", ref: "es-0170" }]
+    bases: [{ word: "Nunca", ref: "es-0321" }, { word: "cocino", ref: "es-0284" }, { word: "pizza", ref: "es-0646" }, { word: "con", base: "con" }, { word: "mi", ref: "es-0129" }, { word: "prima", ref: "es-0170" }, { word: "y", ref: "es-0048" }, { word: "tía", ref: "es-0168" }]
     confusables: [{ id: "bocadillo", ref: "es-0647", kind: "word" }, { id: "hamburguesa", ref: "es-0648", kind: "word" }]
   - id: "es-3258"
-    target: "¿Quién cena con mi tía?"
-    ipa: "kjen ˈθena kon mi ˈtia"
+    target: "¿Cenas con tu tía?"
+    ipa: "ˈθenas kon tu ˈtia"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "Quién", ref: "es-0055" }, { word: "cena", ref: "es-0639" }, { word: "con", base: "con" }, { word: "mi", ref: "es-0129" }, { word: "tía", ref: "es-0168" }]
+    bases: [{ word: "Cenas", ref: "es-0283" }, { word: "con", base: "con" }, { word: "tu", ref: "es-0130" }, { word: "tía", ref: "es-0168" }]
     confusables: [{ id: "almuerzo", ref: "es-0638", kind: "word" }, { id: "desayuno", ref: "es-0637", kind: "word" }]
   - id: "es-3259"
     target: "El bocadillo cuesta cinco euros."
@@ -206,23 +206,23 @@ cards:
     bases: [{ word: "Llevo", ref: "es-0623" }, { word: "una", base: "una" }, { word: "hamburguesa", ref: "es-0648" }, { word: "a", base: "a" }, { word: "casa", ref: "es-0006" }]
     confusables: [{ id: "bocadillo", ref: "es-0647", kind: "word" }, { id: "pizza", ref: "es-0646", kind: "word" }]
   - id: "es-3261"
-    target: "¿Tomas tú una tarta o un helado hoy?"
-    ipa: "ˈtomas tu ˈuna ˈtaɾta o un eˈlado oj"
+    target: "¿Tomas una tarta o un helado hoy?"
+    ipa: "ˈtomas ˈuna ˈtaɾta o un eˈlado oj"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "Tomas", ref: "es-0624" }, { word: "tú", ref: "es-0086" }, { word: "una", base: "una" }, { word: "tarta", ref: "es-0650" }, { word: "o", ref: "es-0049" }, { word: "un", base: "un" }, { word: "helado", ref: "es-0649" }, { word: "hoy", ref: "es-0331" }]
+    bases: [{ word: "Tomas", ref: "es-0624" }, { word: "una", base: "una" }, { word: "tarta", ref: "es-0650" }, { word: "o", ref: "es-0049" }, { word: "un", base: "un" }, { word: "helado", ref: "es-0649" }, { word: "hoy", ref: "es-0331" }]
     confusables: [{ id: "postre", ref: "es-0642", kind: "word" }, { id: "bebida", ref: "es-0655", kind: "word" }]
   - id: "es-3262"
-    target: "Mi madre prepara la ensalada."
-    ipa: "mi ˈmadɾe pɾeˈpaɾa la ensaˈlada"
+    target: "Ellos preparan la ensalada."
+    ipa: "ˈeʝos pɾeˈpaɾan la ensaˈlada"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "Mi", ref: "es-0129" }, { word: "madre", ref: "es-0160" }, { word: "prepara", ref: "es-0293" }, { word: "la", base: "la" }, { word: "ensalada", ref: "es-0643" }]
+    bases: [{ word: "Ellos", ref: "es-0124" }, { word: "preparan", ref: "es-0293" }, { word: "la", base: "la" }, { word: "ensalada", ref: "es-0643" }]
     confusables: [{ id: "sopa", ref: "es-0644", kind: "word" }, { id: "verdura", ref: "es-0579", kind: "word" }]
   - id: "es-3263"
-    target: "Mi tía come un bocadillo, pero yo tengo una tarta."
-    ipa: "mi ˈtia ˈkome un bokaˈdiʝo ˈpeɾo ʝo ˈtenɡo ˈuna ˈtaɾta"
+    target: "Como un bocadillo hoy, pero tengo una tarta."
+    ipa: "ˈkomo un bokaˈdiʝo oj ˈpeɾo ˈtenɡo ˈuna ˈtaɾta"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "Mi", ref: "es-0129" }, { word: "tía", ref: "es-0168" }, { word: "come", ref: "es-0028" }, { word: "un", base: "un" }, { word: "bocadillo", ref: "es-0647" }, { word: "pero", ref: "es-0050" }, { word: "yo", ref: "es-0119" }, { word: "tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "tarta", ref: "es-0650" }]
+    bases: [{ word: "Como", ref: "es-0028" }, { word: "un", base: "un" }, { word: "bocadillo", ref: "es-0647" }, { word: "hoy", ref: "es-0331" }, { word: "pero", ref: "es-0050" }, { word: "tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "tarta", ref: "es-0650" }]
     confusables: [{ id: "hamburguesa", ref: "es-0648", kind: "word" }, { id: "helado", ref: "es-0649", kind: "word" }]
