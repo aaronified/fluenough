@@ -100,6 +100,7 @@ alphabet:
   - "ja-kanji-5"
   - "ja-kanji-6"
   - "ja-kanji-7"
+  - "ja-kanji-9"
   - "ja-katakana"
   - "ja-katakana-combos"
   - "ja-hiragana-marks"
@@ -448,11 +449,8 @@ units:
       - { id: "asking-the-price", text: { "en": "Asking about price and size in a department store" } }
     reading_passages:
       - { id: "receipt", text: { "en": "A shop receipt with tax" } }
-  - planned: { id: "ja-kanji-9", grammar: "script-kanji-9", words: 0 }
-    listening_passages:
-      - { id: "kanji-9-heard", text: { "en": "Hearing words whose kanji unit 9 teaches" } }
-    reading_passages:
-      - { id: "kanji-9-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 9" } }
+  - decks: ["ja-kanji-9"]
+    words: 0
   - decks: ["ja-grammar-plain-past", "ja-grammar-plain-past-sentences"]
     words: 0
     grammar: ["ta-form", "nakatta"]
