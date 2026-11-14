@@ -767,7 +767,7 @@ cards:
   in a kana deck keeps its id and its history; the kanji spelling lands as a
   new card of a kanji deck only where the word is new.
 
-**A script unit of kanji** (`script-kanji-1` to `script-kanji-6`, deck ids
+**A script unit of kanji** (`script-kanji-1` to `script-kanji-38`, deck ids
 `ja-kanji-N`, listed under the path's `alphabet`) is a vocab deck tagged
 `script`, as Chinese's `characters-N` is, and its cards are single kanji:
 
