@@ -1,0 +1,115 @@
+schema: 1
+id: "es-en-multiword-pronominal"
+kind: "layer"
+core: "es-multiword-pronominal"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Multi-word verbs: pronominal verbs"
+description: "Twenty reflexive verb phrases: go home, stay calm, get on well with someone, realise, become, feel, behave, get used to, forget, get lost, have fun, find out, occur to someone, fall, leave, and get up early. Not yet checked by a Spanish speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "es-4450":
+    native: "to go home"
+    notes:
+      "u1": "Irse means to go away: me voy, I am going. Irse a casa means to go home: me voy a casa, I go home. Ir alone is the plain verb to go."
+    bases:
+      "irse": { meaning: "reflexive form of ir; to go away, to leave" }
+  "es-4451":
+    native: "to stay calm"
+    notes:
+      "u1": "Quedarse with an adjective says the state that stays the same: se queda tranquilo, he stays calm. Quedarse alone can mean to stay behind."
+  "es-4452":
+    native: "to get on well with her"
+    notes:
+      "u1": "Llevarse bien con and llevarse mal con say how well two people get on: se lleva bien con ella, he gets on well with her. Llevarse alone means to take something away."
+  "es-4453":
+    native: "to get on badly with him"
+    notes:
+      "u1": "Llevarse mal con is the opposite of llevarse bien con: se lleva mal con él, he gets on badly with him. The pattern has the reflexive se and the con before the person."
+  "es-4454":
+    native: "to realise that"
+    notes:
+      "u1": "Darse cuenta de means to notice or to realise something: me doy cuenta de eso, I realise that. Here cuenta is not the bill; darse cuenta de is a fixed phrase."
+    bases:
+      "darse": { meaning: "reflexive form of dar; with cuenta de, to notice or to realise" }
+      "cuenta": { meaning: "account, count; in darse cuenta, the realisation (not la cuenta, the bill)" }
+  "es-4455":
+    native: "to become happy"
+    notes:
+      "u1": "Ponerse with an adjective says a change of state: se pone contento, he becomes happy. Ponerse a with an infinitive means to start doing something, a different pattern."
+  "es-4456":
+    native: "to become a doctor"
+    notes:
+      "u1": "Hacerse with a noun says what someone becomes, often through study or work: se hizo médico, he became a doctor. Without the article it means to become one; hacerse el médico means to pretend to be one."
+    bases:
+      "hacerse": { meaning: "reflexive form of hacer; to become" }
+  "es-4457":
+    native: "to go crazy"
+    notes:
+      "u1": "Volverse with an adjective says a change of state, often sudden: se vuelve loco, he goes crazy. Volver alone means to return."
+    bases:
+      "volverse": { meaning: "reflexive form of volver; to become, often suddenly" }
+      "loco": { meaning: "crazy, mad" }
+  "es-4458":
+    native: "to feel well"
+    notes:
+      "u1": "Sentirse with an adjective says how someone feels: me siento bien, I feel well. Sentir alone means to feel or to be sorry: lo siento, I am sorry."
+    bases:
+      "sentirse": { meaning: "reflexive form of sentir; to feel" }
+  "es-4459":
+    native: "to look like her"
+    notes:
+      "u1": "Parecerse a means to resemble someone: se parece a ella, he looks like her. The a comes before the person, as in parecerse a su madre."
+  "es-4460":
+    native: "to behave well"
+    notes:
+      "u1": "Portarse with bien or mal says how someone behaves: se porta bien, he behaves well. Portarse mal means to behave badly."
+    bases:
+      "portarse": { meaning: "reflexive form of portar; to behave" }
+  "es-4461":
+    native: "to get used to living"
+    notes:
+      "u1": "Acostumbrarse a and an infinitive mean to get into the habit of doing something: me acostumbro a vivir aquí, I get used to living here. Use a noun for the thing: acostumbrarse al frío, to get used to the cold."
+    bases:
+      "acostumbrarse": { meaning: "reflexive form of acostumbrar; to get used to" }
+  "es-4462":
+    native: "to forget about that"
+    notes:
+      "u1": "Olvidarse de means to forget someone or something: me olvido de eso, I forget about that. The reflexive takes me, te, se, and the de comes before the thing forgotten."
+    bases:
+      "olvidarse": { meaning: "reflexive form of olvidar; to forget" }
+  "es-4463":
+    native: "to get lost in the city"
+    notes:
+      "u1": "Perderse means to get lost or to be lost: se pierde en la ciudad, he gets lost in the city. Perder alone means to lose something."
+  "es-4464":
+    native: "to have a lot of fun"
+    notes:
+      "u1": "Divertirse means to have fun or to enjoy oneself: nos divertimos mucho, we have a lot of fun. Divertir alone means to amuse someone."
+  "es-4465":
+    native: "to find out about that"
+    notes:
+      "u1": "Enterarse de means to find something out: me enteré de eso, I found out about that. Enterar alone means to inform someone of something."
+    bases:
+      "enterarse": { meaning: "reflexive form of enterar; to find out" }
+  "es-4466":
+    native: "for an idea to occur to him"
+    notes:
+      "u1": "Ocurrirsele means that a thought comes to someone: se le ocurrió una idea, an idea occurred to him. The idea is the subject and the person is the indirect object, le, so the verb agrees with the idea."
+    bases:
+      "ocurrírsele": { meaning: "to occur to, with the person as indirect object" }
+  "es-4467":
+    native: "to fall to the floor"
+    notes:
+      "u1": "Caerse stresses falling down, often by accident: se cae al suelo, he falls to the floor. Caer alone is falling in general: la pelota cae, the ball falls."
+  "es-4468":
+    native: "to leave the party"
+    notes:
+      "u1": "Marcharse means to go away or to leave a place: se marcha de la fiesta, he leaves the party. Marchar alone is used for things going well: la cosa marcha."
+    bases:
+      "marcharse": { meaning: "reflexive form of marchar; to go away, to leave" }
+  "es-4469":
+    native: "to get up early"
+    notes:
+      "u1": "Levantarse means to get out of bed or to stand up: me levanto temprano, I get up early. Levantar alone means to lift something."
