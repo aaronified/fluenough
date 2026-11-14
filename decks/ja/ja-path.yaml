@@ -108,6 +108,7 @@ alphabet:
   - "ja-kanji-13"
   - "ja-kanji-14"
   - "ja-kanji-15"
+  - "ja-kanji-16"
   - "ja-katakana"
   - "ja-katakana-combos"
   - "ja-hiragana-marks"
@@ -544,11 +545,8 @@ units:
       - { id: "birthday-presents", text: { "en": "Saying who gave whom which birthday present" } }
     reading_passages:
       - { id: "thank-you-card", text: { "en": "A thank-you card for a present" } }
-  - planned: { id: "ja-kanji-16", grammar: "script-kanji-16", words: 0 }
-    listening_passages:
-      - { id: "kanji-16-heard", text: { "en": "Hearing words whose kanji unit 16 teaches" } }
-    reading_passages:
-      - { id: "kanji-16-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 16" } }
+  - decks: ["ja-kanji-16"]
+    words: 0
   - decks: ["ja-illness", "ja-illness-sentences", "ja-reading-illness", "*"]
     words: 40
     listening_passages:
