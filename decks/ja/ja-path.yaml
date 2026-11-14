@@ -123,6 +123,7 @@ alphabet:
   - "ja-kanji-28"
   - "ja-kanji-29"
   - "ja-kanji-30"
+  - "ja-kanji-31"
   - "ja-kanji-32"
   - "ja-kanji-33"
   - "ja-kanji-38"
@@ -825,11 +826,8 @@ units:
       - { id: "after-the-film", text: { "en": "Friends talk about an animated film they saw" } }
     reading_passages:
       - { id: "film-review", text: { "en": "A short film review" } }
-  - planned: { id: "ja-kanji-31", grammar: "script-kanji-31", words: 0 }
-    listening_passages:
-      - { id: "kanji-31-heard", text: { "en": "Hearing words whose kanji unit 31 teaches" } }
-    reading_passages:
-      - { id: "kanji-31-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 31" } }
+  - decks: ["ja-kanji-31"]
+    words: 0
   - decks: ["ja-arts", "ja-arts-sentences", "ja-reading-arts", "*"]
     words: 45
     listening_passages:
