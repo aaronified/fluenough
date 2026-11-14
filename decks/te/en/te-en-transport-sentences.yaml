@@ -1,0 +1,66 @@
+schema: 1
+id: "te-en-transport-sentences"
+kind: "layer"
+core: "te-transport-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Transport: sentences"
+description: "Ten sentences about buses, autos, taxis, stations and tickets, with the words of the transport unit and the units before it. They unlock once their words and rules are known. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "te-7120":
+    native: "I go by bus."
+    confusables:
+      "c1": { why: "ఆటో (āṭō) 'auto-rickshaw', is a three-wheeler, not a bus." }
+      "c2": { why: "టాక్సీ (ṭāksī) 'taxi', is a car you hire, not a bus." }
+  "te-7121":
+    native: "How much is the auto fare?"
+    confusables:
+      "c1": { why: "బస్సు (bassu) 'bus', is a vehicle, not a fare." }
+      "c2": { why: "టికెట్ (ṭikeṭ) 'ticket', is the paper you buy, not the price." }
+  "te-7122":
+    native: "The taxi will stop near the station."
+    confusables:
+      "c1": { why: "ఆటో (āṭō) 'auto-rickshaw', is a different vehicle." }
+      "c2": { why: "సీటు (sīṭu) 'seat', is a place to sit, not a place to stop." }
+  "te-7123":
+    native: "Please give me a ticket."
+    bases:
+      "నాకు": "to me"
+    confusables:
+      "c1": { why: "సీటు (sīṭu) 'seat', is a place to sit, not a ticket." }
+      "c2": { why: "బస్సు (bassu) 'bus', is a vehicle, not a ticket." }
+  "te-7124":
+    native: "Which station will you get off at?"
+    confusables:
+      "c1": { why: "టికెట్ (ṭikeṭ) 'ticket', is not a place." }
+      "c2": { why: "రోడ్డు (rōḍḍu) 'road', is a road, not a station." }
+  "te-7125":
+    native: "The seat is empty."
+    bases:
+      "ఖాళీగా": "empty"
+    confusables:
+      "c1": { why: "టికెట్ (ṭikeṭ) 'ticket', is not a seat." }
+      "c2": { why: "స్టేషన్ (sṭēṣan) 'station', is a place, not a seat." }
+  "te-7126":
+    native: "The bus will come late."
+    confusables:
+      "c1": { why: "ఆటో (āṭō) 'auto-rickshaw', is a different vehicle." }
+      "c2": { why: "టాక్సీ (ṭāksī) 'taxi', is a different vehicle." }
+  "te-7127":
+    native: "Will the auto stop here?"
+    confusables:
+      "c1": { why: "టాక్సీ (ṭāksī) 'taxi', is a different vehicle." }
+      "c2": { why: "స్టేషన్ (sṭēṣan) 'station', is a place, not a stop." }
+  "te-7128":
+    native: "Mum will take a taxi tomorrow."
+    confusables:
+      "c1": { why: "బస్సు (bassu) 'bus', is a different vehicle." }
+      "c2": { why: "టికెట్ (ṭikeṭ) 'ticket', is not a vehicle." }
+  "te-7129":
+    native: "I have a helmet."
+    bases:
+      "నా": "my"
+    confusables:
+      "c1": { why: "సీటు (sīṭu) 'seat', is not a helmet." }
+      "c2": { why: "టికెట్ (ṭikeṭ) 'ticket', is not a helmet." }

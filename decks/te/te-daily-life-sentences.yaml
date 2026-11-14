@@ -1,0 +1,147 @@
+schema: 1
+id: "te-daily-life-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-7140"
+    target: "అమ్మ రోజూ వండుతుంది."
+    reading: "amma rōjū vaṇḍutundi."
+    ipa: "amma roːdʒuː ʋaɳɖut̪und̪i"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "అమ్మ", ref: "te-0059" }
+      - { word: "రోజూ", ref: "te-0451" }
+      - { word: "వండుతుంది", ref: "te-0643" }
+    confusables:
+      - { id: "c1", ref: "te-0624", kind: "word" }
+      - { id: "c2", ref: "te-0625", kind: "word" }
+  - id: "te-7141"
+    target: "నాన్న టిఫిన్ తింటాడు."
+    reading: "nānna ṭifin tiṇṭāḍu."
+    ipa: "naːnna ʈifin t̪iɳʈaːɖu"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "నాన్న", ref: "te-0381" }
+      - { word: "టిఫిన్", ref: "te-0444" }
+      - { word: "తింటాడు", ref: "te-0624" }
+    confusables:
+      - { id: "c1", ref: "te-0383", kind: "word" }
+      - { id: "c2", ref: "te-0384", kind: "word" }
+  - id: "te-7142"
+    target: "మీరు ఎప్పుడు పడుకుంటారు?"
+    reading: "mīru eppuḍu paḍukuṇṭāru?"
+    ipa: "miːru eppuɖu paɖukuɳʈaːru"
+    pos: "phrase"
+    rules: ["te-rule-present-second"]
+    bases:
+      - { word: "మీరు", ref: "te-0136" }
+      - { word: "ఎప్పుడు", ref: "te-0163" }
+      - { word: "పడుకుంటారు", ref: "te-0450" }
+    confusables:
+      - { id: "c1", ref: "te-0162", kind: "word" }
+      - { id: "c2", ref: "te-0164", kind: "word" }
+  - id: "te-7143"
+    target: "నేను రోజూ ఆరు గంటలకు లేస్తాను."
+    reading: "nēnu rōjū āru gaṇṭalaku lēstānu."
+    ipa: "neːnu roːdʒuː aːru ɡaɳʈalaku leːst̪aːnu"
+    pos: "phrase"
+    rules: ["te-rule-present-first"]
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "రోజూ", ref: "te-0451" }
+      - { word: "ఆరు", ref: "te-0206" }
+      - { word: "గంటలకు", base: "గంటలు", reading: "gaṇṭalaku" }
+      - { word: "లేస్తాను", ref: "te-0441" }
+    confusables:
+      - { id: "c1", ref: "te-0207", kind: "word" }
+      - { id: "c2", ref: "te-0208", kind: "word" }
+  - id: "te-7144"
+    target: "మీరు రోజూ పాలు తాగుతారా?"
+    reading: "mīru rōjū pālu tāgutārā?"
+    ipa: "miːru roːdʒuː paːlu t̪aːɡut̪aːraː"
+    pos: "phrase"
+    rules: ["te-rule-present-second"]
+    bases:
+      - { word: "మీరు", ref: "te-0136" }
+      - { word: "రోజూ", ref: "te-0451" }
+      - { word: "పాలు", ref: "te-0265" }
+      - { word: "తాగుతారా", ref: "te-0625" }
+    confusables:
+      - { id: "c1", ref: "te-0264", kind: "word" }
+      - { id: "c2", ref: "te-0261", kind: "word" }
+  - id: "te-7145"
+    target: "తర్వాత అతను ఇంటికి వస్తాడు."
+    reading: "tarvāta atanu iṇṭiki vastāḍu."
+    ipa: "t̪arʋaːt̪a at̪anu iɳʈiki ʋast̪aːɖu"
+    pos: "phrase"
+    rules: ["te-rule-present-third", "te-rule-ki"]
+    bases:
+      - { word: "తర్వాత", ref: "te-0455" }
+      - { word: "అతను", ref: "te-0595" }
+      - { word: "ఇంటికి", ref: "te-0195" }
+      - { word: "వస్తాడు", ref: "te-0623" }
+    confusables:
+      - { id: "c1", ref: "te-0196", kind: "word" }
+      - { id: "c2", ref: "te-0198", kind: "word" }
+  - id: "te-7146"
+    target: "ఇప్పుడు పడుకోండి."
+    reading: "ippuḍu paḍukōṇḍi."
+    ipa: "ippuɖu paɖukoːɳɖi"
+    pos: "phrase"
+    rules: ["te-rule-polite-request"]
+    bases:
+      - { word: "ఇప్పుడు", ref: "te-0309" }
+      - { word: "పడుకోండి", ref: "te-0450" }
+    confusables:
+      - { id: "c1", ref: "te-0307", kind: "word" }
+      - { id: "c2", ref: "te-0308", kind: "word" }
+  - id: "te-7147"
+    target: "నేను అప్పుడప్పుడు పాలు తాగుతాను."
+    reading: "nēnu appuḍappuḍu pālu tāgutānu."
+    ipa: "neːnu appuɖappuɖu paːlu t̪aːɡut̪aːnu"
+    pos: "phrase"
+    rules: ["te-rule-present-first"]
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "అప్పుడప్పుడు", ref: "te-0452" }
+      - { word: "పాలు", ref: "te-0265" }
+      - { word: "తాగుతాను", ref: "te-0625" }
+    confusables:
+      - { id: "c1", ref: "te-0453", kind: "word" }
+      - { id: "c2", ref: "te-0266", kind: "word" }
+  - id: "te-7148"
+    target: "అమ్మ సాధారణంగా సాయంత్రం వస్తుందా?"
+    reading: "amma sādhāraṇaṅgā sāyantram vastundā?"
+    ipa: "amma saːd̪ʱaːraɳaŋɡaː saːjant̪ram ʋast̪und̪aː"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "అమ్మ", ref: "te-0059" }
+      - { word: "సాధారణంగా", ref: "te-0454" }
+      - { word: "సాయంత్రం", ref: "te-0311" }
+      - { word: "వస్తుందా", ref: "te-0623" }
+    confusables:
+      - { id: "c1", ref: "te-0310", kind: "word" }
+      - { id: "c2", ref: "te-0312", kind: "word" }
+  - id: "te-7149"
+    target: "టిఫిన్ తర్వాత నేను పనికి వెళ్తాను."
+    reading: "ṭifin tarvāta nēnu paniki veḷtānu."
+    ipa: "ʈifin t̪arʋaːt̪a neːnu paniki ʋeɭt̪aːnu"
+    pos: "phrase"
+    rules: ["te-rule-present-first", "te-rule-ki"]
+    bases:
+      - { word: "టిఫిన్", ref: "te-0444" }
+      - { word: "తర్వాత", ref: "te-0455" }
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "పనికి", ref: "te-0197" }
+      - { word: "వెళ్తాను", ref: "te-0622" }
+    confusables:
+      - { id: "c1", ref: "te-0266", kind: "word" }
+      - { id: "c2", ref: "te-0264", kind: "word" }

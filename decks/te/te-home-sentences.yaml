@@ -1,0 +1,139 @@
+schema: 1
+id: "te-home-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-7130"
+    target: "నేను గదిలో చదువుతాను."
+    reading: "nēnu gadilō caduvutānu."
+    ipa: "neːnu ɡad̪iloː tʃad̪uʋut̪aːnu"
+    pos: "phrase"
+    rules: ["te-rule-present-first", "te-rule-lo"]
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "గదిలో", ref: "te-0420" }
+      - { word: "చదువుతాను", ref: "te-0638" }
+    confusables:
+      - { id: "c1", ref: "te-0421", kind: "word" }
+      - { id: "c2", ref: "te-0422", kind: "word" }
+  - id: "te-7131"
+    target: "పడకగదిలో మంచం ఉంది."
+    reading: "paḍakagadilō mañcaṁ undi."
+    ipa: "paɖakaɡad̪iloː maɲtʃam und̪i"
+    pos: "phrase"
+    rules: ["te-rule-lo"]
+    bases:
+      - { word: "పడకగదిలో", ref: "te-0422" }
+      - { word: "మంచం", ref: "te-0430" }
+      - { word: "ఉంది", ref: "te-0633" }
+    confusables:
+      - { id: "c1", ref: "te-0431", kind: "word" }
+      - { id: "c2", ref: "te-0432", kind: "word" }
+  - id: "te-7132"
+    target: "వంటిల్లు ఎక్కడ ఉంది?"
+    reading: "vaṇṭillu ekkaḍa undi?"
+    ipa: "ʋaɳʈillu ekkaɖa und̪i"
+    pos: "phrase"
+    bases:
+      - { word: "వంటిల్లు", ref: "te-0421" }
+      - { word: "ఎక్కడ", ref: "te-0162" }
+      - { word: "ఉంది", ref: "te-0633" }
+    confusables:
+      - { id: "c1", ref: "te-0163", kind: "word" }
+      - { id: "c2", ref: "te-0164", kind: "word" }
+  - id: "te-7133"
+    target: "ఈ ఇంట్లో లైటు ఉంది."
+    reading: "ī iṇṭlō laiṭu undi."
+    ipa: "iː iɳʈloː laiʈu und̪i"
+    pos: "phrase"
+    rules: ["te-rule-lo"]
+    bases:
+      - { word: "ఈ", ref: "te-0607" }
+      - { word: "ఇంట్లో", ref: "te-0195" }
+      - { word: "లైటు", ref: "te-0434" }
+      - { word: "ఉంది", ref: "te-0633" }
+    confusables:
+      - { id: "c1", ref: "te-0433", kind: "word" }
+      - { id: "c2", ref: "te-0426", kind: "word" }
+  - id: "te-7134"
+    target: "మంచం మీద నిద్రపోతాను."
+    reading: "mañcaṁ mīda nidrapōtānu."
+    ipa: "maɲtʃam miːd̪a nid̪rapoːt̪aːnu"
+    pos: "phrase"
+    rules: ["te-rule-present-first"]
+    bases:
+      - { word: "మంచం", ref: "te-0430" }
+      - { word: "మీద", ref: "te-0805" }
+      - { word: "నిద్రపోతాను", ref: "te-0640" }
+    confusables:
+      - { id: "c1", ref: "te-0432", kind: "word" }
+      - { id: "c2", ref: "te-0431", kind: "word" }
+  - id: "te-7135"
+    target: "తలుపు తెరుస్తావా?"
+    reading: "talupu terustāvā?"
+    ipa: "t̪alupu t̪erust̪aːʋaː"
+    pos: "phrase"
+    rules: ["te-rule-present-second"]
+    bases:
+      - { word: "తలుపు", ref: "te-0425" }
+      - { word: "తెరుస్తావా", ref: "te-0825" }
+    confusables:
+      - { id: "c1", ref: "te-0426", kind: "word" }
+      - { id: "c2", ref: "te-0427", kind: "word" }
+  - id: "te-7136"
+    target: "కిటికీ మూయండి."
+    reading: "kiṭikī mūyaṇḍi."
+    ipa: "kiʈikiː muːjaɳɖi"
+    pos: "phrase"
+    rules: ["te-rule-polite-request"]
+    bases:
+      - { word: "కిటికీ", ref: "te-0426" }
+      - { word: "మూయండి", ref: "te-0826" }
+    confusables:
+      - { id: "c1", ref: "te-0425", kind: "word" }
+      - { id: "c2", ref: "te-0433", kind: "word" }
+  - id: "te-7137"
+    target: "అతను బల్ల దగ్గర కూర్చుంటాడా?"
+    reading: "atanu balla daggara kūrcuṇṭāḍā?"
+    ipa: "at̪anu balla d̪aɡɡara kuːrtʃuɳʈaːɖaː"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "అతను", ref: "te-0595" }
+      - { word: "బల్ల", ref: "te-0432" }
+      - { word: "దగ్గర", ref: "te-0300" }
+      - { word: "కూర్చుంటాడా", ref: "te-0634" }
+    confusables:
+      - { id: "c1", ref: "te-0431", kind: "word" }
+      - { id: "c2", ref: "te-0430", kind: "word" }
+  - id: "te-7138"
+    target: "అమ్మ కుర్చీ తీసుకుంటుంది."
+    reading: "amma kurcī tīsukuṇṭundi."
+    ipa: "amma kurtʃiː t̪iːsukuɳʈund̪i"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "అమ్మ", ref: "te-0059" }
+      - { word: "కుర్చీ", ref: "te-0431" }
+      - { word: "తీసుకుంటుంది", ref: "te-0631" }
+    confusables:
+      - { id: "c1", ref: "te-0432", kind: "word" }
+      - { id: "c2", ref: "te-0430", kind: "word" }
+  - id: "te-7139"
+    target: "నేను మెట్లు ఎక్కుతాను."
+    reading: "nēnu meṭlu ekkutānu."
+    ipa: "neːnu meʈlu ekkut̪aːnu"
+    pos: "phrase"
+    rules: ["te-rule-present-first"]
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "మెట్లు", ref: "te-0427" }
+      - { word: "ఎక్కుతాను", ref: "te-0827" }
+    confusables:
+      - { id: "c1", ref: "te-0428", kind: "word" }
+      - { id: "c2", ref: "te-0425", kind: "word" }
