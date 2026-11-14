@@ -122,7 +122,7 @@ Source of the set: the school kanji (kyoiku kanji), 1,026 characters in six grad
 
 | Task | Kanji (grade) | Count | Deck, ids |
 |---|---|---|---|
-| JA-100 | **Sonnet, docs on main:** writes `wiki/Plan-Kanji-Japanese.md` with the exact lists for grades 3 to 6 (counts 200, 202, 193, 191, no repeats, checked against the grade table) and the split of JA-109 to JA-137; the lists for grades 1 and 2 below are copied into it | docs | none |
+| JA-100 | **Done (Sonnet, docs on main):** the exact lists for grades 3 to 6 (200, 202, 193, 191 = 786, no repeats, none missing, checked against the Wikipedia grade table) and the split into JA-109 to JA-137 are in the rows below; grades 1 and 2 are the lists above, unchanged | docs | none |
 | JA-101 | 一右雨円王音下花貝学気九休玉空犬見五口校左三山子 (1) | 24 | ja-kanji-2 |
 | JA-102 | 四糸字耳七車手十出女小上森人正生青夕石赤千川先早 (1) | 24 | ja-kanji-3 |
 | JA-103 | 草足村大男竹中虫町天田二入年白八百文本名目立力林六 (1) | 25 | ja-kanji-4 |
@@ -131,12 +131,41 @@ Source of the set: the school kanji (kyoiku kanji), 1,026 characters in six grad
 | JA-106 | 矢姉思紙寺自時室社弱首秋週春書少場色食心新親図数西声星晴切雪船線 (2) | 32 | ja-kanji-7 |
 | JA-107 | 前組走多太体台地池知茶昼長鳥朝直通弟店点電刀冬当東答頭同道読内南 (2) | 32 | ja-kanji-8 |
 | JA-108 | 肉馬売買麦半番父風分聞米歩母方北毎妹万明鳴毛門夜野友用曜来里理話 (2) | 32 | ja-kanji-9 |
-| JA-109 to 116 | grade 3, from JA-100's list | 8 x 25 | ja-kanji-10 to 17 |
-| JA-117 to 123 | grade 4 | 6 x 29 and 1 x 28 | ja-kanji-18 to 24 |
-| JA-124 to 130 | grade 5 | 6 x 28 and 1 x 25 | ja-kanji-25 to 31 |
-| JA-131 to 137 | grade 6 | 6 x 27 and 1 x 29 | ja-kanji-32 to 38 |
+| JA-109 | 丁予化区反世主仕他代写去号央平打氷由申皮皿礼両全列 (3) | 25 | ja-kanji-10, ids ja-5480 to ja-5539 |
+| JA-110 | 向守安州式曲有次死羊血住助医君坂対局役投決究豆身返 (3) | 25 | ja-kanji-11, ids ja-5540 to ja-5599 |
+| JA-111 | 事使具取受味命和始委定実岸幸所放昔服板油波注泳物者 (3) | 25 | ja-kanji-12, ids ja-5600 to ja-5659 |
+| JA-112 | 育苦表乗係品客屋度待急拾持指昭柱洋炭界畑発相県研神 (3) | 25 | ja-kanji-13, ids ja-5660 to ja-5719 |
+| JA-113 | 秒級美負追送重面倍勉員宮島庫庭息旅根流消病真荷起速 (3) | 25 | ja-kanji-14, ids ja-5720 to ja-5779 |
+| JA-114 | 配酒院動商問宿帳悪族深球祭章笛第終習転進部都勝寒悲 (3) | 25 | ja-kanji-15, ids ja-5780 to ja-5839 |
+| JA-115 | 暑期植歯温港湖湯登着短童筆等落葉軽遊運開陽階集飲想 (3) | 25 | ja-kanji-16, ids ja-5840 to ja-5899 |
+| JA-116 | 意感暗業漢福詩路農鉄様緑練銀駅鼻横箱調談整橋薬館題 (3) | 25 | ja-kanji-17, ids ja-5900 to ja-5959 |
+| JA-117 | 不井夫欠氏付令以功加包司失必未末札民辺争仲伝兆共印各好成灯 (4) | 29 | ja-kanji-18, ids ja-5960 to ja-6019 |
+| JA-118 | 老衣阪位低佐児兵冷初別利努労完岐希折改材束求沖臣良芸例典刷 (4) | 29 | ja-kanji-19, ids ja-6020 to ja-6079 |
+| JA-119 | 卒協参周固奈季官岡底府径念松果治法泣牧的芽英阜便信勇単城変 (4) | 29 | ja-kanji-20, ids ja-6080 to ja-6139 |
+| JA-120 | 建昨栃栄浅省祝約茨要軍飛香倉候借孫害差席帯徒挙料案梅残浴特 (4) | 29 | ja-kanji-21, ids ja-6140 to ja-6199 |
+| JA-121 | 笑訓連郡健側副唱埼崎巣康敗望梨械清産票菜貨陸鹿博媛富散景最 (4) | 29 | ja-kanji-22, ids ja-6200 to ja-6259 |
+| JA-122 | 極満滋無然焼結給街覚賀達量隊順飯働塩愛戦照節続置試辞群察徳 (4) | 29 | ja-kanji-23, ids ja-6260 to ja-6319 |
+| JA-123 | 旗漁熊種管説関静億器標潟熱縄課輪選養機積録観類験鏡願競議 (4) | 28 | ja-kanji-24, ids ja-6320 to ja-6379 |
+| JA-124 | 久士仏支比刊句可史圧布弁旧永犯示仮件任再因団在似余判告囲 (5) | 28 | ja-kanji-25, ids ja-6380 to ja-6439 |
+| JA-125 | 均序志応快技条災状防価制効妻居往性招易枝武毒河版肥舎述非 (5) | 28 | ja-kanji-26, ids ja-6440 to ja-6499 |
+| JA-126 | 保則厚型政故査独祖紀迷逆限修個容師格桜殺留益破粉素耕能脈 (5) | 28 | ja-kanji-27, ids ja-6500 to ja-6559 |
+| JA-127 | 航財造停務基堂婦寄常張得情授採接救断液混率現略眼移経術規 (5) | 28 | ja-kanji-28, ids ja-6560 to ja-6619 |
+| JA-128 | 設許貧責険備喜営報属復提検減測程税統絶証評象貯貸費貿過勢 (5) | 28 | ja-kanji-29, ids ja-6620 to ja-6679 |
+| JA-129 | 墓夢幹損準禁罪義解豊資鉱飼像境増態慣構歴演精綿総製複適酸 (5) | 28 | ja-kanji-30, ids ja-6680 to ja-6739 |
+| JA-130 | 銅際雑領導暴潔確編賛賞質燃築興衛輸績講謝織職額識護 (5) | 25 | ja-kanji-31, ids ja-6740 to ja-6799 |
+| JA-131 | 亡寸己干仁収尺片冊処幼庁穴危后吸存宅宇机灰至舌乱卵否困 (6) | 27 | ja-kanji-32, ids ja-6800 to ja-6859 |
+| JA-132 | 孝忘我批私系並乳供券刻呼垂宗宙宝届延忠承担拝拡枚沿若奏 (6) | 27 | ja-kanji-33, ids ja-6860 to ja-6919 |
+| JA-133 | 姿宣専巻律映染段泉洗派皇看砂紅肺胃背退革俳俵値党射将展 (6) | 27 | ja-kanji-34, ids ja-6920 to ja-6979 |
+| JA-134 | 座従恩朗株班秘納純胸蚕討針降陛除骨域密捨探推欲済異盛窓 (6) | 27 | ja-kanji-35, ids ja-6980 to ja-7039 |
+| JA-135 | 翌脳著視訪訳郵郷閉頂割創勤善尊就揮敬晩棒痛筋策衆裁装補 (6) | 27 | ja-kanji-36, ids ja-7040 to ja-7099 |
+| JA-136 | 詞貴傷幕暖源盟絹署聖腸腹蒸裏誠賃預層暮模疑磁穀誌認誤銭 (6) | 27 | ja-kanji-37, ids ja-7100 to ja-7159 |
+| JA-137 | 閣障劇敵権潮熟蔵誕論諸遺奮憲操樹激糖縦鋼優厳縮覧簡臨難臓警 (6) | 29 | ja-kanji-38, ids ja-7160 to ja-7219 |
 
 The grade 1 list (80) is the seven in `ja-kanji-1` plus the 73 above; grade 2 is the 160 above. Both were counted (no repeats, no overlap); the reviewer checks them against the grade table.
+
+**Kanji lists and card shape (JA-100, read 2026-11-14).** Sources: Japanese Wikipedia 学年別漢字配当表 (the official grade table, order within a grade is reading order) and English Wikipedia "Kyōiku kanji" (numbers 1 to 1,026, strokes, on and kun readings, short meanings), both read 2026-11-14. Verified: grades 1 to 6 are 80, 160, 200, 202, 193, 191 = 1,026 (the 2020 table; grade 4 gained 20 prefecture kanji, so the older 200/185/181 counts no longer hold); both pages agree on every grade's set; grades 1 and 2 above equal the pages' sets; the 786 kanji of JA-109 to JA-137 have no repeat and none is missing. Order inside a grade: fewest strokes first (a component usually has fewer strokes than the kanji built on it), ties in the English page's number order; the lists below are plain characters, the rows keep the ids reserved above (`ja-(5000 + 60 x (nn - 1))`, 60 ids per task).
+
+Card shape, as in `decks/ja/ja-kanji-1.yaml` and `decks/ja/en/ja-en-kanji-1.yaml` on `decks-live`: deck header `schema: 1`, `id: "ja-kanji-N"`, `part: "core"`, `kind: "vocab"`, `language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "han", scripts: ["han", "kana"], tts: "ja-JP" }`, `license: "CC-BY-SA-4.0"`, `tags: ["script", "unreviewed"]`. Each card: `id`, `target` (the kanji), `target_scripts: { kana: "..." }`, `words: ["<kanji>"]`, `reading` (romaji), `ipa` (broad), `pos: "letter"`, `notes: [{ id: "n1", kind: "usage" }]`, `bases: "self"`. The English layer (`kind: "layer"`, `core`, `native: { code: "en", ... }`, `name`, `description`) maps each card id to `native` (a short meaning) and `notes.n1` in the RULE-KANJI shape. Where to read the data: on and kun readings, strokes and the short meaning from the English Wikipedia "Kyōiku kanji" table; the readings are re-written in the builder's own words, never pasted from a dictionary. Anything a builder cannot read there or is unsure of goes to the review queue as unverified.
 
 #### The task table
 
