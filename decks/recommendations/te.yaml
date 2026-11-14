@@ -1,0 +1,105 @@
+# Popular works of India in Telugu that are not in the public domain: the learner finds them (a library, a shop, a service) and the app asks
+# the questions after the learner has marked the work as seen, read or heard. Nothing of a work is quoted (wiki/Plan-Language-Completeness.md,
+# "Source-it-yourself works"). No links are given: no link has been checked.
+schema: 1
+kind: "recommendations"
+id: "recommendations-te"
+language: "te"
+license: "CC-BY-SA-4.0"
+recommendations:
+  - id: "te-rec-shankarabharanam"
+    medium: "film"
+    title: { text: "శంకరాభరణం", reading: "śaṅkarābharaṇaṁ" }
+    creator: ["te-k-viswanath"]
+    year: 1980
+    level: "B1"
+    briefing: { en: "A musical drama about Shankara Sastri, a classical musician, and Tulasi, a young woman he shelters after she escapes from a landlord. The music is at the centre of the story." }
+    questions:
+      - { id: "q1", prompt: { en: "Why does Tulasi escape by train?" }, options: { en: ["Her mother tries to sell her to a wealthy landlord", "She wants to join a dance troupe", "She is running from the police"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who stabs the landlord to death after he assaults her?" }, options: { en: ["Sastri", "Madhava", "Tulasi"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "Whose marriage does Tulasi arrange using her late mother's wealth?" }, options: { en: ["Sarada and Kameswara Rao", "Madhava and Sarada", "Sastri and Tulasi"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "te-rec-sagara-sangamam"
+    medium: "film"
+    title: { text: "సాగర సంగమం", reading: "sāgara saṅgamaṁ" }
+    creator: ["te-k-viswanath"]
+    year: 1983
+    level: "B1"
+    briefing: { en: "A dance film about a gifted classical dancer who will not lower his art to suit commercial films, and the people whose lives change around him." }
+    questions:
+      - { id: "q1", prompt: { en: "What is the dancer's name?" }, options: { en: ["Balakrishna, called Balu", "Kishore", "Prasanth"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "What does Madhavi keep from Balu?" }, options: { en: ["Her widowhood", "Her real name", "Her job"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What happens to Balu after Kishore fires him?" }, options: { en: ["He is diagnosed with liver cirrhosis", "He moves to Delhi", "He becomes a film star"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "te-rec-pelli-choopulu"
+    medium: "film"
+    title: { text: "పెళ్ళి చూపులు", reading: "peḷḷi cūpulu" }
+    creator: ["te-tharun-bhascker"]
+    year: 2016
+    level: "A2"
+    briefing: { en: "A romantic comedy about two young people who are stuck in a room together, and a food truck business that their plans turn into." }
+    questions:
+      - { id: "q1", prompt: { en: "Why are Prasanth and Chitra stuck in a room?" }, options: { en: ["There is a power cut", "Her younger cousin locks a door that often jams", "Her father locks them in"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Who had planned a food truck business with Chitra?" }, options: { en: ["Prasanth", "Vikram", "Her father"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What job does Prasanth take in the food truck?" }, options: { en: ["He is the chef", "He keeps the accounts", "He drives the truck"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "te-rec-baahubali-the-beginning"
+    medium: "film"
+    title: { text: "బాహుబలి:ద బిగినింగ్", reading: "bāhubali:da biginiṅg" }
+    creator: ["te-s-s-rajamouli"]
+    year: 2015
+    level: "B1"
+    briefing: { en: "An epic action film about a baby rescued from a river and raised by a hill tribe, and the royal court of Mahishmati where his life changes." }
+    questions:
+      - { id: "q1", prompt: { en: "Who adopts the baby who is rescued from the river?" }, options: { en: ["Sanga, the wife of the Amburi chieftain", "Sivagami, the regent", "Devasena"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "For how long has Bhallaladeva kept Devasena imprisoned?" }, options: { en: ["Five years", "Twenty-five years", "Ten years"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What does Sivagami say about the throne after King Vikramadeva dies?" }, options: { en: ["The eldest prince will inherit it", "The more worthy prince will inherit it", "The court's chief minister will take it"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "te-rec-rrr"
+    medium: "film"
+    title: { text: "రౌద్రం రణం రుధిరం", reading: "raudraṁ raṇaṁ rudhiraṁ" }
+    creator: ["te-s-s-rajamouli"]
+    year: 2022
+    level: "B1"
+    briefing: { en: "An epic period action film set in 1920 under British rule, about a police officer and a rebel from a forest community who first meet as opponents." }
+    questions:
+      - { id: "q1", prompt: { en: "Who does Catherine recruit to capture Komaram Bheem?" }, options: { en: ["Alluri Sitarama Raju", "Scott Buxton", "Malli"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Where do Scott Buxton and Catherine take Malli?" }, options: { en: ["To Delhi", "To London", "To Hyderabad"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "How do Ram and Bheem first form a bond?" }, options: { en: ["Each rescues a boy trapped under a burning train wreck", "They win a wrestling match", "They share a prison cell"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "te-rec-mahanati"
+    medium: "film"
+    title: { text: "మహానటి", reading: "mahānaṭi" }
+    creator: ["te-nag-ashwin"]
+    year: 2018
+    level: "B1"
+    briefing: { en: "A biographical drama based on the life of the film actress Savitri, told through a reporter who looks into her story." }
+    questions:
+      - { id: "q1", prompt: { en: "Who finds the actress unconscious in 1980?" }, options: { en: ["Her son", "A reporter", "Her husband"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who is given the job of covering her case?" }, options: { en: ["Madhuravani and Vijay Anthony", "Shankarayya and Savitri", "Vijay Anthony alone"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What turns out to be Shankarayya?" }, options: { en: ["A roadside statue", "A doctor", "Her father"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "te-rec-eega"
+    medium: "film"
+    title: { text: "ఈగ", reading: "īga" }
+    creator: ["te-s-s-rajamouli"]
+    year: 2012
+    level: "A2"
+    briefing: { en: "A fantasy action film about a man who is murdered and returns as a housefly to take revenge on his killer." }
+    questions:
+      - { id: "q1", prompt: { en: "What does Nani make for a living?" }, options: { en: ["Fireworks", "Furniture", "Films"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who strangles Nani?" }, options: { en: ["Sudeep", "Bindu", "Vijay"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What does Nani come back as?" }, options: { en: ["A housefly", "A bird", "A ghost"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "te-rec-swathi-muthyam"
+    medium: "film"
+    title: { text: "స్వాతిముత్యం", reading: "svātimutyaṁ" }
+    creator: ["te-k-viswanath"]
+    year: 1986
+    level: "A2"
+    briefing: { en: "A romantic drama about an elderly man with a cognitive disability who ties a thaali around the neck of a young widow, and the village that is scandalised by it." }
+    questions:
+      - { id: "q1", prompt: { en: "Who is Sivayya?" }, options: { en: ["An elderly man with a cognitive disability", "A village priest", "A landlord"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who is Lalitha?" }, options: { en: ["A young widow with a five-year-old son", "Sivayya's sister", "A schoolteacher"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "During which festival does Sivayya tie the thaali?" }, options: { en: ["Sri Rama Navami", "Diwali", "Sankranti"] }, answer: 1 }
+    tags: ["unreviewed"]
