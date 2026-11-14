@@ -1,0 +1,403 @@
+schema: 1
+id: "hi-directions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-2980"
+    target: "मेरा दफ़्तर यहाँ से दूर है।"
+    target_scripts: { perso_arabic: "میرا دفتر یہاں سے دور ہے۔" }
+    reading: "mērā daftar yahām̐ sē dūr hai."
+    ipa: "meːraː d̪əft̪ər jəɦãː seː d̪uːr ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "दफ़्तर", ref: "hi-0400" }
+      - { word: "यहाँ", ref: "hi-0295" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "दूर", ref: "hi-0294" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "पास", reading: "pās", kind: "word" }
+      - { id: "w2", word: "घर", reading: "ghar", kind: "word" }
+  - id: "hi-2981"
+    target: "सड़क कहाँ जाती है?"
+    target_scripts: { perso_arabic: "سڑک کہاں جاتی ہے؟" }
+    reading: "saṛak kahām̐ jātī hai?"
+    ipa: "səɽək kəɦãː dʒaːt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "सड़क", ref: "hi-0298" }
+      - { word: "कहाँ", ref: "hi-0159" }
+      - { word: "जाती", base: "जाना", reading: "jānā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "रास्ता", reading: "rāstā", kind: "word" }
+      - { id: "w2", word: "कब", reading: "kab", kind: "word" }
+  - id: "hi-2982"
+    target: "मेरा भाई अक्सर रास्ता भूलता है।"
+    target_scripts: { perso_arabic: "میرا بھائی اکثر راستہ بھولتا ہے۔" }
+    reading: "mērā bhāī aksar rāstā bhūltā hai."
+    ipa: "meːraː bʱaːiː əksər raːst̪aː bʱuːlt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "भाई", ref: "hi-0378" }
+      - { word: "अक्सर", ref: "hi-0812" }
+      - { word: "रास्ता", ref: "hi-0297" }
+      - { word: "भूलता", base: "भूलना", reading: "bhūlnā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "नाम", reading: "nām", kind: "word" }
+      - { id: "w2", word: "सोचता", reading: "sōctā", kind: "word" }
+  - id: "hi-2983"
+    target: "सड़क पर बाएँ मुड़िए।"
+    target_scripts: { perso_arabic: "سڑک پر بائیں مڑیے۔" }
+    reading: "saṛak par bāēm̐ muṛiē."
+    ipa: "səɽək pər baːẽː mʊɽɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "सड़क", ref: "hi-0298" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "बाएँ", ref: "hi-0288" }
+      - { word: "मुड़िए", ref: "hi-0290" }
+    confusables:
+      - { id: "w1", word: "दाएँ", reading: "dāēm̐", kind: "word" }
+      - { id: "w2", word: "सीधे", reading: "sīdhē", kind: "word" }
+  - id: "hi-2984"
+    target: "वह सीधे दुकान तक चलती है।"
+    target_scripts: { perso_arabic: "وہ سیدھے دکان تک چلتی ہے۔" }
+    reading: "vah sīdhē dukān tak caltī hai."
+    ipa: "ʋəɦ siːd̪ʱeː d̪ʊkaːn t̪ək tʃəlt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "वह", ref: "hi-0749" }
+      - { word: "सीधे", ref: "hi-0289" }
+      - { word: "दुकान", ref: "hi-0239" }
+      - { word: "तक", ref: "hi-0278" }
+      - { word: "चलती", base: "चलना", reading: "calnā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "दूर", reading: "dūr", kind: "word" }
+      - { id: "w2", word: "पीछे", reading: "pīchē", kind: "word" }
+  - id: "hi-2985"
+    target: "हमारे लोग वहाँ बोलते हैं।"
+    target_scripts: { perso_arabic: "ہمارے لوگ وہاں بولتے ہیں۔" }
+    reading: "hamārē lōg vahām̐ bōltē haim̐."
+    ipa: "ɦəmaːreː loːɡ ʋəɦãː boːlt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "हमारे", base: "हमारा", reading: "hamārā" }
+      - { word: "लोग", ref: "hi-0761" }
+      - { word: "वहाँ", ref: "hi-0296" }
+      - { word: "बोलते", base: "बोलना", reading: "bōlnā" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "यहाँ", reading: "yahām̐", kind: "word" }
+      - { id: "w2", word: "भाषा", reading: "bhāśā", kind: "word" }
+  - id: "hi-2986"
+    target: "क्या यह रास्ता पास है?"
+    target_scripts: { perso_arabic: "کیا یہ راستہ پاس ہے؟" }
+    reading: "kyā yah rāstā pās hai?"
+    ipa: "kjaː jəɦ raːst̪aː paːs ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "क्या", ref: "hi-0157" }
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "रास्ता", ref: "hi-0297" }
+      - { word: "पास", ref: "hi-0293" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "दूर", reading: "dūr", kind: "word" }
+      - { id: "f1", word: "हैं", reading: "haim̐", kind: "form" }
+  - id: "hi-2987"
+    target: "यहाँ दो गिलास जूस चाहिए।"
+    target_scripts: { perso_arabic: "یہاں دو گلاس جوس چاہیے۔" }
+    reading: "yahām̐ dō gilās jūs cāhiē."
+    ipa: "jəɦãː d̪oː ɡɪlaːs dʒuːs tʃaːɦɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "यहाँ", ref: "hi-0295" }
+      - { word: "दो", ref: "hi-0199" }
+      - { word: "गिलास", ref: "hi-0878" }
+      - { word: "जूस", ref: "hi-0996" }
+      - { word: "चाहिए", ref: "hi-0460" }
+    confusables:
+      - { id: "w1", word: "चाहता", reading: "cāhtā", kind: "word" }
+      - { id: "w2", word: "बोतल", reading: "bōtal", kind: "word" }
+  - id: "hi-2988"
+    target: "आप यहाँ क्यों बैठते हैं?"
+    target_scripts: { perso_arabic: "آپ یہاں کیوں بیٹھتے ہیں؟" }
+    reading: "āp yahām̐ kyōm̐ baiṭhtē haim̐?"
+    ipa: "aːp jəɦãː kjõː bɛːʈʰt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "आप", ref: "hi-0134" }
+      - { word: "यहाँ", ref: "hi-0295" }
+      - { word: "क्यों", ref: "hi-0161" }
+      - { word: "बैठते", base: "बैठना", reading: "baiṭhnā" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "कहाँ", reading: "kahām̐", kind: "word" }
+      - { id: "f1", word: "बैठती", reading: "baiṭhtī", kind: "form" }
+  - id: "hi-2989"
+    target: "वह अभी आगे देखता है।"
+    target_scripts: { perso_arabic: "وہ ابھی آگے دیکھتا ہے۔" }
+    reading: "vah abhī āgē dēkhtā hai."
+    ipa: "ʋəɦ əbʱiː aːɡeː d̪eːkʰt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "वह", ref: "hi-0749" }
+      - { word: "अभी", ref: "hi-0301" }
+      - { word: "आगे", ref: "hi-0291" }
+      - { word: "देखता", base: "देखना", reading: "dēkhnā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "पीछे", reading: "pīchē", kind: "word" }
+      - { id: "w2", word: "चलता", reading: "caltā", kind: "word" }
+  - id: "hi-2990"
+    target: "ड्राइवर पीछे से नहीं आता।"
+    target_scripts: { perso_arabic: "ڈرائیور پیچھے سے نہیں آتا۔" }
+    reading: "ḍrāivar pīchē sē nahīm̐ ātā."
+    ipa: "ɖraːɪʋər piːtʃʰeː seː nəɦĩː aːt̪aː"
+    pos: "phrase"
+    bases:
+      - { word: "ड्राइवर", ref: "hi-0403" }
+      - { word: "पीछे", ref: "hi-0292" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "नहीं", ref: "hi-0156" }
+      - { word: "आता", base: "आना", reading: "ānā" }
+    confusables:
+      - { id: "w1", word: "आगे", reading: "āgē", kind: "word" }
+      - { id: "f1", word: "जाता", reading: "jātā", kind: "form" }
+  - id: "hi-2991"
+    target: "छात्र अध्यापक के पास बैठते हैं।"
+    target_scripts: { perso_arabic: "چھاتر ادھیاپک کے پاس بیٹھتے ہیں۔" }
+    reading: "chātr adhyāpak kē pās baiṭhtē haim̐."
+    ipa: "tʃʰaːt̪r əd̪ʱjaːpək keː paːs bɛːʈʰt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "छात्र", ref: "hi-0411" }
+      - { word: "अध्यापक", ref: "hi-0401" }
+      - { word: "के", base: "का", reading: "kā" }
+      - { word: "पास", ref: "hi-0293" }
+      - { word: "बैठते", base: "बैठना", reading: "baiṭhnā" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "दूर", reading: "dūr", kind: "word" }
+      - { id: "w2", word: "सीखते", reading: "sīkhtē", kind: "word" }
+  - id: "hi-2992"
+    target: "यहाँ गरम दूध मिलता है।"
+    target_scripts: { perso_arabic: "یہاں گرم دودھ ملتا ہے۔" }
+    reading: "yahām̐ garam dūdh miltā hai."
+    ipa: "jəɦãː ɡərəm d̪uːd̪ʱ mɪlt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यहाँ", ref: "hi-0295" }
+      - { word: "गरम", ref: "hi-0910" }
+      - { word: "दूध", ref: "hi-0259" }
+      - { word: "मिलता", base: "मिलना", reading: "milnā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "वहाँ", reading: "vahām̐", kind: "word" }
+      - { id: "w2", word: "ठंडा", reading: "ṭhaṇḍā", kind: "word" }
+  - id: "hi-2993"
+    target: "दुकानदार वहाँ दाम बताता है।"
+    target_scripts: { perso_arabic: "دکاندار وہاں دام بتاتا ہے۔" }
+    reading: "dukāndār vahām̐ dām batātā hai."
+    ipa: "d̪ʊkaːnd̪aːr ʋəɦãː d̪aːm bət̪aːt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "दुकानदार", ref: "hi-0402" }
+      - { word: "वहाँ", ref: "hi-0296" }
+      - { word: "दाम", ref: "hi-0232" }
+      - { word: "बताता", base: "बताना", reading: "batānā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "पैसे", reading: "paisē", kind: "word" }
+      - { id: "w2", word: "सस्ता", reading: "sastā", kind: "word" }
+  - id: "hi-2994"
+    target: "क्या आप हर सुबह सीधे दफ़्तर जाते हैं?"
+    target_scripts: { perso_arabic: "کیا آپ ہر صبح سیدھے دفتر جاتے ہیں؟" }
+    reading: "kyā āp har subah sīdhē daftar jātē haim̐?"
+    ipa: "kjaː aːp ɦər sʊbəɦ siːd̪ʱeː d̪əft̪ər dʒaːt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "क्या", ref: "hi-0157" }
+      - { word: "आप", ref: "hi-0134" }
+      - { word: "हर", base: "हर", reading: "har" }
+      - { word: "सुबह", ref: "hi-0302" }
+      - { word: "सीधे", ref: "hi-0289" }
+      - { word: "दफ़्तर", ref: "hi-0400" }
+      - { word: "जाते", base: "जाना", reading: "jānā" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "शाम", reading: "śām", kind: "word" }
+      - { id: "w2", word: "धीरे", reading: "dhīrē", kind: "word" }
+  - id: "hi-2995"
+    target: "सुनिए, आप दाएँ देखिए।"
+    target_scripts: { perso_arabic: "سنیے، آپ دائیں دیکھیے۔" }
+    reading: "suniē, āp dāēm̐ dēkhiē."
+    ipa: "sʊnɪeː aːp d̪aːẽː d̪eːkʰɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "सुनिए", ref: "hi-0186" }
+      - { word: "आप", ref: "hi-0134" }
+      - { word: "दाएँ", ref: "hi-0287" }
+      - { word: "देखिए", base: "देखना", reading: "dēkhnā" }
+    confusables:
+      - { id: "w1", word: "बाएँ", reading: "bāēm̐", kind: "word" }
+      - { id: "w2", word: "बोलिए", reading: "bōliē", kind: "word" }
+  - id: "hi-2996"
+    target: "मेरी बहन हर शाम यहाँ से सब्ज़ी लाती है।"
+    target_scripts: { perso_arabic: "میری بہن ہر شام یہاں سے سبزی لاتی ہے۔" }
+    reading: "mērī bahan har śām yahām̐ sē sabzī lātī hai."
+    ipa: "meːriː bəɦən ɦər ʃaːm jəɦãː seː səbziː laːt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", base: "मेरा", reading: "mērā" }
+      - { word: "बहन", ref: "hi-0379" }
+      - { word: "हर", base: "हर", reading: "har" }
+      - { word: "शाम", ref: "hi-0303" }
+      - { word: "यहाँ", ref: "hi-0295" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "सब्ज़ी", ref: "hi-0249" }
+      - { word: "लाती", base: "लाना", reading: "lānā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "सुबह", reading: "subah", kind: "word" }
+      - { id: "w2", word: "दूध", reading: "dūdh", kind: "word" }
+  - id: "hi-2997"
+    target: "मेरे चाचा सुबह घर के पीछे पढ़ते हैं।"
+    target_scripts: { perso_arabic: "میرے چاچا صبح گھر کے پیچھے پڑھتے ہیں۔" }
+    reading: "mērē cācā subah ghar kē pīchē paṛhtē haim̐."
+    ipa: "meːreː tʃaːtʃaː sʊbəɦ ɡʱər keː piːtʃʰeː pəɽʱt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरे", base: "मेरा", reading: "mērā" }
+      - { word: "चाचा", ref: "hi-0388" }
+      - { word: "सुबह", ref: "hi-0302" }
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "के", base: "का", reading: "kā" }
+      - { word: "पीछे", ref: "hi-0292" }
+      - { word: "पढ़ते", base: "पढ़ना", reading: "paṛhnā" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "दुकान", reading: "dukān", kind: "word" }
+      - { id: "w2", word: "आगे", reading: "āgē", kind: "word" }
+  - id: "hi-2998"
+    target: "वे हर बार दाएँ मुड़ते हैं।"
+    target_scripts: { perso_arabic: "وہ ہر بار دائیں مڑتے ہیں۔" }
+    reading: "vē har bār dāēm̐ muṛtē haim̐."
+    ipa: "ʋeː ɦər baːr d̪aːẽː mʊɽt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "वे", ref: "hi-0751" }
+      - { word: "हर", base: "हर", reading: "har" }
+      - { word: "बार", base: "बार", reading: "bār" }
+      - { word: "दाएँ", ref: "hi-0287" }
+      - { word: "मुड़ते", base: "मुड़ना", reading: "muṛnā" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "बाएँ", reading: "bāēm̐", kind: "word" }
+      - { id: "w2", word: "सीधे", reading: "sīdhē", kind: "word" }
+  - id: "hi-2999"
+    target: "मेरे दोस्त दूर के शहर से लौटते हैं।"
+    target_scripts: { perso_arabic: "میرے دوست دور کے شہر سے لوٹتے ہیں۔" }
+    reading: "mērē dōst dūr kē śahar sē lauṭtē haim̐."
+    ipa: "meːreː d̪oːst̪ d̪uːr keː ʃəɦər seː lɔːʈt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरे", base: "मेरा", reading: "mērā" }
+      - { word: "दोस्त", ref: "hi-0185" }
+      - { word: "दूर", ref: "hi-0294" }
+      - { word: "के", base: "का", reading: "kā" }
+      - { word: "शहर", ref: "hi-0195" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "लौटते", base: "लौटना", reading: "lauṭnā" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "पास", reading: "pās", kind: "word" }
+      - { id: "w2", word: "देश", reading: "dēś", kind: "word" }
+  - id: "hi-3000"
+    target: "मेरी बेटी आगे खेलती है।"
+    target_scripts: { perso_arabic: "میری بیٹی آگے کھیلتی ہے۔" }
+    reading: "mērī bēṭī āgē khēltī hai."
+    ipa: "meːriː beːʈiː aːɡeː kʰeːlt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", base: "मेरा", reading: "mērā" }
+      - { word: "बेटी", ref: "hi-0380" }
+      - { word: "आगे", ref: "hi-0291" }
+      - { word: "खेलती", base: "खेलना", reading: "khēlnā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "पीछे", reading: "pīchē", kind: "word" }
+      - { id: "w2", word: "सुनती", reading: "suntī", kind: "word" }
+  - id: "hi-3001"
+    target: "छोटे बच्चे अभी पीछे खेल रहे हैं।"
+    target_scripts: { perso_arabic: "چھوٹے بچے ابھی پیچھے کھیل رہے ہیں۔" }
+    reading: "chōṭē baccē abhī pīchē khēl rahē haim̐."
+    ipa: "tʃʰoːʈeː bətʃtʃeː əbʱiː piːtʃʰeː kʰeːl rəɦeː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "छोटे", base: "छोटा", reading: "chōṭā" }
+      - { word: "बच्चे", ref: "hi-0383" }
+      - { word: "अभी", ref: "hi-0301" }
+      - { word: "पीछे", ref: "hi-0292" }
+      - { word: "खेल", base: "खेलना", reading: "khēlnā" }
+      - { word: "रहे", base: "रहना", reading: "rahnā" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "बड़े", reading: "baṛē", kind: "word" }
+      - { id: "w2", word: "आगे", reading: "āgē", kind: "word" }
+  - id: "hi-3002"
+    target: "नर्स दूर से लौटती है।"
+    target_scripts: { perso_arabic: "نرس دور سے لوٹتی ہے۔" }
+    reading: "nars dūr sē lauṭtī hai."
+    ipa: "nərs d̪uːr seː lɔːʈt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "नर्स", ref: "hi-0406" }
+      - { word: "दूर", ref: "hi-0294" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "लौटती", base: "लौटना", reading: "lauṭnā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "यहाँ", reading: "yahām̐", kind: "word" }
+      - { id: "f1", word: "जाती", reading: "jātī", kind: "form" }
+  - id: "hi-3003"
+    target: "बेटा आगे दौड़ता है, इसलिए जल्दी जागता है।"
+    target_scripts: { perso_arabic: "بیٹا آگے دوڑتا ہے، اس لیے جلدی جاگتا ہے۔" }
+    reading: "bēṭā āgē dauṛtā hai, isliē jaldī jāgtā hai."
+    ipa: "beːʈaː aːɡeː d̪ɔːɽt̪aː ɦɛː ɪslɪeː dʒəld̪iː dʒaːɡt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "बेटा", ref: "hi-0184" }
+      - { word: "आगे", ref: "hi-0291" }
+      - { word: "दौड़ता", base: "दौड़ना", reading: "dauṛnā" }
+      - { word: "है", ref: "hi-0112" }
+      - { word: "इसलिए", ref: "hi-0346" }
+      - { word: "जल्दी", ref: "hi-0819" }
+      - { word: "जागता", base: "जागना", reading: "jāgnā" }
+    confusables:
+      - { id: "w1", word: "धीरे", reading: "dhīrē", kind: "word" }
+      - { id: "w2", word: "भूलता", reading: "bhūltā", kind: "word" }
+  - id: "hi-3004"
+    target: "कौन दुकान के पीछे रहता है?"
+    target_scripts: { perso_arabic: "کون دکان کے پیچھے رہتا ہے؟" }
+    reading: "kaun dukān kē pīchē rahtā hai?"
+    ipa: "kɔːn d̪ʊkaːn keː piːtʃʰeː rəɦt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "कौन", ref: "hi-0158" }
+      - { word: "दुकान", ref: "hi-0239" }
+      - { word: "के", base: "का", reading: "kā" }
+      - { word: "पीछे", ref: "hi-0292" }
+      - { word: "रहता", base: "रहना", reading: "rahnā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "कब", reading: "kab", kind: "word" }
+      - { id: "w2", word: "ऊपर", reading: "ūpar", kind: "word" }
