@@ -1,0 +1,228 @@
+schema: 1
+id: "hi-en-health-sentences"
+kind: "layer"
+core: "hi-health-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about health"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the health words of this unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-3060":
+    native: "I took medicine today."
+    bases:
+      "मैंने": "I (past subject)"
+      "ली": "took (feminine, agrees with the medicine)"
+    confusables:
+      "w1": { why: "Tea, not medicine: चाय (cāy) means tea." }
+      "w2": { why: "Bread, not medicine: रोटी (rōṭī) means bread." }
+  "hi-3061":
+    native: "We reached the pharmacy quickly."
+    bases:
+      "हम": "we"
+      "पहुँचे": "reached (plural)"
+    confusables:
+      "w1": { why: "Hospital, not pharmacy: अस्पताल (aspatāl) means hospital." }
+      "w2": { why: "Shop, not pharmacy: दुकान (dukān) means shop." }
+  "hi-3062":
+    native: "The doctor gave the patient an injection."
+    bases:
+      "ने": "ergative marker (the doctor is the one giving)"
+      "दिया": "gave (masculine, agrees with the injection)"
+    confusables:
+      "w1": { why: "Medicine, not injection: दवा (davā) means medicine." }
+      "w2": { why: "Test, not injection: टेस्ट (ṭēsṭ) means test." }
+  "hi-3063":
+    native: "Do not get the plaster wet while bathing."
+    bases:
+      "नहाते": "while bathing"
+      "मत": "not (with an imperative)"
+      "करो": "do (informal you), used with मत (mat)"
+    confusables:
+      "w1": { why: "Cold, not wet: ठंडा (ṭhaṇḍā) means cold." }
+      "w2": { why: "Hot, not wet: गरम (garam) means hot." }
+  "hi-3064":
+    native: "Did they measure my pulse?"
+    bases:
+      "उसने": "he or she (ergative, gender of the person not shown)"
+      "मेरी": "my (feminine, agrees with the pulse)"
+      "नापी": "measured (feminine, agrees with the pulse)"
+    confusables:
+      "w1": { why: "Diarrhoea, not pulse: दस्त (dast) means diarrhoea." }
+      "w2": { why: "Illness, not pulse: बीमारी (bīmārī) means illness." }
+  "hi-3065":
+    native: "The child's illness came back this winter."
+    bases:
+      "बच्चे": "child's (oblique), before की (kī)"
+      "की": "of (feminine, agrees with the illness)"
+      "इस": "this (with a noun)"
+      "लौट": "back, stem of लौटना (lauṭnā), used with आई (āī)"
+      "आई": "came (feminine, agrees with the illness)"
+    confusables:
+      "w1": { why: "Health, not illness: स्वास्थ्य (svāsthy) means health." }
+      "w2": { why: "Cold weather, not illness: ठंड (ṭhaṇḍ) means cold weather." }
+  "hi-3066":
+    native: "Change your daily diet."
+    bases:
+      "बदलो": "change (informal you)"
+    confusables:
+      "w1": { why: "Exercise, not diet: व्यायाम (vyāyām) means exercise." }
+      "w2": { why: "Vegetable, not diet: सब्ज़ी (sabzī) means vegetable." }
+  "hi-3067":
+    native: "I have a burning feeling in my stomach."
+    bases:
+      "मुझे": "to me (dative)"
+      "हो": "be, stem of होना (hōnā), used with रही (rahī)"
+      "रही": "continuing (feminine, agrees with the burning)"
+    confusables:
+      "w1": { why: "Pain, not burning: दर्द (dard) means pain." }
+      "w2": { why: "Cough, not burning: खाँसी (khām̐sī) means cough." }
+  "hi-3068":
+    native: "The allergy spread through the whole body."
+    bases:
+      "पूरे": "whole (oblique), before शरीर (śarīr)"
+      "फैली": "spread (feminine, agrees with the allergy)"
+    confusables:
+      "w1": { why: "Fever, not allergy: बुखार (bukhār) means fever." }
+      "w2": { why: "Sunlight, not allergy: धूप (dhūp) means sunlight." }
+  "hi-3069":
+    native: "Has your surgery been done?"
+    bases:
+      "आपकी": "your (polite, feminine, agrees with the surgery)"
+      "हो": "be, stem of होना (hōnā), used with गई (gaī)"
+      "गई": "went (feminine, agrees with the surgery)"
+    confusables:
+      "w1": { why: "Test, not surgery: टेस्ट (ṭēsṭ) means test." }
+      "w2": { why: "Massage, not surgery: मालिश (māliś) means massage." }
+  "hi-3070":
+    native: "Last night their foot swelled under the plaster."
+    bases:
+      "के": "of, with नीचे (nīcē)"
+      "सूज": "swell, stem of सूजना (sūjnā), used with गया (gayā)"
+      "गया": "went (masculine, agrees with the foot)"
+    confusables:
+      "w1": { why: "Bandage, not plaster: पट्टी (paṭṭī) means bandage." }
+      "w2": { why: "Knee, not plaster: घुटना (ghuṭnā) means knee." }
+  "hi-3071":
+    native: "Massage and exercise gave them relief."
+    bases:
+      "उसे": "to them (dative)"
+      "मिला": "got (masculine, agrees with the relief)"
+    confusables:
+      "w1": { why: "Heat, not massage: गर्मी (garmī) means heat." }
+      "w2": { why: "Tired, not massage: थका (thakā) means tired." }
+  "hi-3072":
+    native: "After the diarrhoea he got up."
+    bases:
+      "के": "of, with बाद (bād)"
+      "बाद": "after"
+      "उठा": "got up (masculine, the subject is a man)"
+    confusables:
+      "w1": { why: "Burning, not diarrhoea: जलन (jalan) means burning." }
+      "w2": { why: "Cough, not diarrhoea: खाँसी (khām̐sī) means cough." }
+  "hi-3073":
+    native: "On the doctor's advice I gave up cigarettes."
+    bases:
+      "के": "of, with कहने (kahnē)"
+      "कहने": "saying (oblique), before पर (par)"
+      "मैंने": "I (past subject)"
+      "छोड़ी": "gave up (feminine, agrees with cigarettes)"
+    confusables:
+      "w1": { why: "Alcohol, not cigarettes: शराब (śarāb) means alcohol." }
+      "w2": { why: "Bottle, not cigarettes: बोतल (bōtal) means bottle." }
+  "hi-3074":
+    native: "Did you look at the test report?"
+    bases:
+      "तुमने": "you (singular, past subject)"
+      "की": "of (feminine, agrees with the report)"
+      "देखी": "looked at (feminine, agrees with the report)"
+    confusables:
+      "w1": { why: "Surgery, not test: सर्जरी (sarjarī) means surgery." }
+      "w2": { why: "Medicine, not test: दवा (davā) means medicine." }
+  "hi-3075":
+    native: "In a few days their diarrhoea stopped."
+    bases:
+      "दिनों": "days (oblique plural), used with में (mēm̐)"
+      "रुका": "stopped (masculine, agrees with the diarrhoea)"
+    confusables:
+      "w1": { why: "Fever, not diarrhoea: बुखार (bukhār) means fever." }
+      "w2": { why: "Cough, not diarrhoea: खाँसी (khām̐sī) means cough." }
+  "hi-3076":
+    native: "For the operation they saved all the household's money."
+    bases:
+      "के": "of, with ऑपरेशन (ôprēśan) and घर (ghar)"
+      "लिए": "for, used with के (kē)"
+      "उसने": "they (ergative, gender of the person not shown)"
+      "सारे": "all (oblique plural), before पैसे (paisē)"
+      "जोड़े": "saved (masculine plural, agrees with the money)"
+    confusables:
+      "w1": { why: "Pocket, not money: जेब (jēb) means pocket." }
+      "w2": { why: "Shop, not money: दुकान (dukān) means shop." }
+  "hi-3077":
+    native: "We put the prescription in the pocket."
+    bases:
+      "हमने": "we (past, ergative)"
+      "रखा": "put (masculine, agrees with the prescription)"
+    confusables:
+      "w1": { why: "Medicine, not prescription: दवाई (davāī) means medicine." }
+      "w2": { why: "Bandage, not prescription: पट्टी (paṭṭī) means bandage." }
+  "hi-3078":
+    native: "A man will come to the house for the massage at eight tomorrow morning."
+    bases:
+      "के": "for, with मालिश (māliś), before लिए (liē)"
+      "लिए": "for"
+      "आएगा": "will come (masculine, the subject is a man)"
+    confusables:
+      "w1": { why: "Exercise, not massage: व्यायाम (vyāyām) means exercise." }
+      "w2": { why: "Rest, not massage: आराम (ārām) means rest." }
+  "hi-3079":
+    native: "Will you look at my prescription?"
+    bases:
+      "तुम": "you (singular)"
+      "देखोगे": "will look (masculine, said to a man)"
+    confusables:
+      "w1": { why: "Medicine, not prescription: दवाई (davāī) means medicine." }
+      "w2": { why: "Bandage, not prescription: पट्टी (paṭṭī) means bandage." }
+  "hi-3080":
+    native: "Three days after the surgery the nurse unwrapped the bandage."
+    bases:
+      "के": "of, with सर्जरी (sarjarī)"
+      "बाद": "after"
+      "ने": "ergative marker (the nurse is the one unwrapping)"
+      "खोली": "unwrapped (feminine, agrees with the bandage)"
+    confusables:
+      "w1": { why: "Medicine, not bandage: दवा (davā) means medicine." }
+      "w2": { why: "Test, not bandage: टेस्ट (ṭēsṭ) means test." }
+  "hi-3081":
+    native: "That patient did not sleep the whole night."
+    bases:
+      "सारी": "whole (feminine), with रात (rāt)"
+      "सोया": "slept (masculine, the patient is a man)"
+    confusables:
+      "w1": { why: "Doctor, not patient: डॉक्टर (ḍôkṭar) means doctor." }
+      "w2": { why: "Man, not patient: आदमी (ādmī) means man." }
+  "hi-3082":
+    native: "I did not sell alcohol."
+    bases:
+      "मैंने": "I (past subject)"
+      "बेची": "sold (feminine, agrees with alcohol)"
+    confusables:
+      "w1": { why: "Cigarette, not alcohol: सिगरेट (sigrēṭ) means cigarette." }
+      "w2": { why: "Tea, not alcohol: चाय (cāy) means tea." }
+  "hi-3083":
+    native: "This morning they endured the burning."
+    bases:
+      "उसने": "they (ergative, gender of the person not shown)"
+      "सही": "endured (feminine, agrees with the burning)"
+    confusables:
+      "w1": { why: "Heat, not burning: गर्मी (garmī) means heat." }
+      "w2": { why: "Diarrhoea, not burning: दस्त (dast) means diarrhoea." }
+  "hi-3084":
+    native: "Will the hospital also keep doing operations in the evening?"
+    bases:
+      "करता": "do (masculine, agrees with the hospital)"
+      "रहेगा": "keep on, will (masculine, agrees with the hospital)"
+    confusables:
+      "w1": { why: "Pharmacy, not hospital: फ़ार्मेसी (fārmēsī) means pharmacy." }
+      "w2": { why: "Shop, not hospital: दुकान (dukān) means shop." }
