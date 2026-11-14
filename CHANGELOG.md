@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- `tools/validate_decks.py`, `tools/topic_chars.py`, `tools/test_topic_chars.py`: a script topic's `chars` must be targets of the cards of its `decks` (or letters of its `script_units`), a one-character card left out of `chars` is a warning, and `tools/topic_chars.py` writes `chars` from the decks (#1228).
+
 ## [0.10.1] - 2026-11-13
 
 - **Extra tiles in word order.** When a sentence has look-alike wrong words or marks, they now sit among its tiles, and an answer that uses one is not right.

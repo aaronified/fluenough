@@ -3693,6 +3693,35 @@ and katakana, with `chars` and `decks`). The fields and their rules are
 defined in [Plan-Deck-Kinds-And-Topics](Plan-Deck-Kinds-And-Topics), under
 "Scripts are topics too".
 
+**`chars` is checked against the topic's `decks`** (#1228). For a script topic
+that lists `decks`, every character in `chars` must be the `target` of a card
+of those decks (a layer writes no target, so the core or the single-file deck
+is read), or a letter or example of one of its `script_units`; one that is
+neither is an error ("chars lists 'x', which is no card's target ..."). The
+reverse, a one-character card of those decks that `chars` leaves out, is a
+**warning** for now (`TOPIC_CHARS_MISSING_IS_ERROR` in
+`tools/validate_decks.py`), because decks-live's hiragana and katakana topics
+list the 46 basic letters but also name the marks, combos and small-kana decks.
+What counts as one character is Unicode's own (a letter with its marks, a
+conjunct joined by a virama), never a script's name. A topic with `chars` and
+`script_units` but no `decks` is checked against the script units' letters
+only; a topic that is not `kind: "script"` is not checked.
+
+`tools/topic_chars.py <lang>` writes `chars` from the decks, so a topic of
+200 characters is never copied by hand:
+
+```sh
+python3 tools/topic_chars.py ja                 # report what would change
+python3 tools/topic_chars.py ja --write         # patch decks/ja/ja-topics.yaml
+python3 tools/topic_chars.py ja --check         # exit 1 if a topic differs
+python3 tools/topic_chars.py ja --all-targets   # also two-character cards
+```
+
+It lists the one-character cards of each script topic's `decks` in deck and
+card order, keeps a character's `{ text, reading }` mapping, rewrites only the
+`chars` line, and leaves a topic with no `decks` alone. The fixture is a deck
+of single characters added to `zz` in `tools/test_topic_chars.py`.
+
 ### Where script decks sit on the path
 
 - **After the first words.** The script comes after a course's first themes,
