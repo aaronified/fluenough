@@ -18,10 +18,10 @@ cards:
     bases: "self"
   - id: "ja-7101"
     target: "貴"
-    target_scripts: { kana: "とうとい" }
+    target_scripts: { kana: "きちょう" }
     words: ["貴"]
-    reading: "toutoi"
-    ipa: "toːtoi"
+    reading: "kichou"
+    ipa: "kitɕoː"
     pos: "letter"
     notes:
       - { id: "n1", kind: "usage" }
@@ -31,11 +31,17 @@ cards:
     target_scripts: { kana: "きず" }
     words: ["傷"]
     reading: "kizu"
-    ipa: "kizɯ"
+    ipa: "kidzɯ"
     pos: "letter"
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "切り傷は痛いです。"
+        target_scripts: { kana: "きりきずはいたいです。" }
+        words: ["切り傷", "は", "痛い", "です"]
+        reading: "kirikizu wa itai desu."
+        ipa: "kiɾikidzɯ wa itai desɯ"
   - id: "ja-7103"
     target: "幕"
     target_scripts: { kana: "まく" }
@@ -192,6 +198,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "屋根裏は広いです。"
+        target_scripts: { kana: "やねうらはひろいです。" }
+        words: ["屋根裏", "は", "広い", "です"]
+        reading: "yaneura wa hiroi desu."
+        ipa: "janeɯɾa wa çiɾoi desɯ"
   - id: "ja-7114"
     target: "誠"
     target_scripts: { kana: "まこと" }
@@ -243,7 +255,7 @@ cards:
         target_scripts: { kana: "にもつをあずけます。" }
         words: ["荷物", "を", "預けます"]
         reading: "nimotsu o azukemasu."
-        ipa: "nimotsɯ o adzɯkeɾimasɯ"
+        ipa: "nimotsɯ o adzɯkemasɯ"
   - id: "ja-7117"
     target: "層"
     target_scripts: { kana: "こうそう" }
