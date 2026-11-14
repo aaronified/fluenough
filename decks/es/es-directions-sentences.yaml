@@ -94,7 +94,7 @@ cards:
     pos: "phrase"
     tags: ["sentence"]
     bases: [{ word: "Dónde", ref: "es-0056" }, { word: "compro", ref: "es-0280" }, { word: "un", base: "un" }, { word: "billete", ref: "es-0685" }, { word: "cerca", ref: "es-0717" }, { word: "de", base: "de" }, { word: "aquí", ref: "es-0051" }]
-    confusables: [{ id: "metro", ref: "es-0675", kind: "word" }, { id: "autobús", ref: "es-0674", kind: "word" }]
+    confusables: [{ id: "metro", ref: "es-0675", kind: "word" }, { id: "es-0674", ref: "es-0674", kind: "word" }]
   - id: "es-3282"
     target: "Vivo en el norte."
     ipa: "ˈbibo en el ˈnoɾte"
@@ -115,7 +115,7 @@ cards:
     pos: "phrase"
     tags: ["sentence"]
     bases: [{ word: "El", base: "el" }, { word: "puente", ref: "es-0708" }, { word: "está", ref: "es-0023" }, { word: "lejos", ref: "es-0718" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "ciudad", ref: "es-0016" }]
-    confusables: [{ id: "país", ref: "es-0018", kind: "word" }]
+    confusables: [{ id: "es-0018", ref: "es-0018", kind: "word" }, { id: "es-0717", ref: "es-0717", kind: "word" }]
   - id: "es-3290"
     target: "Siempre miro el semáforo."
     ipa: "ˈsjempɾe ˈmiɾo el seˈmafoɾo"
@@ -129,7 +129,7 @@ cards:
     pos: "phrase"
     tags: ["sentence"]
     bases: [{ word: "Quién", ref: "es-0055" }, { word: "espera", ref: "es-0693" }, { word: "el", base: "el" }, { word: "autobús", ref: "es-0674" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "parada", ref: "es-0683" }]
-    confusables: [{ id: "norte", ref: "es-0711", kind: "word" }, { id: "estación", ref: "es-0684", kind: "word" }]
+    confusables: [{ id: "norte", ref: "es-0711", kind: "word" }, { id: "es-0684", ref: "es-0684", kind: "word" }]
   - id: "es-3285"
     target: "Girar a la derecha es fácil."
     ipa: "xiˈɾaɾ a la deˈɾetʃa es ˈfaθil"
@@ -220,7 +220,7 @@ cards:
     pos: "phrase"
     tags: ["sentence"]
     bases: [{ word: "Usamos", ref: "es-0287" }, { word: "el", base: "el" }, { word: "mapa", ref: "es-0710" }, { word: "en", base: "en" }, { word: "cruce", ref: "es-0709" }]
-    confusables: [{ id: "semáforo", ref: "es-0707", kind: "word" }, { id: "puente", ref: "es-0708", kind: "word" }]
+    confusables: [{ id: "es-0707", ref: "es-0707", kind: "word" }, { id: "puente", ref: "es-0708", kind: "word" }]
   - id: "es-3299"
     target: "Pedimos café y té cerca de la tienda."
     ipa: "peˈdimos kaˈfe i te ˈθeɾka de la ˈtjenda"
