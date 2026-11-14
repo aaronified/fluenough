@@ -264,6 +264,17 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "わたしは反対です。"
+        target_scripts: { kana: "わたしははんたいです。" }
+        words: ["わたし", "は", "反対", "です"]
+        reading: "watashi wa hantai desu."
+        ipa: "wataɕi wa haɴtai desɯ"
+      - target: "みぎはひだりの反対です。"
+        target_scripts: { kana: "みぎはひだりのはんたいです。" }
+        words: ["みぎ", "は", "ひだり", "の", "反対", "です"]
+        reading: "migi wa hidari no hantai desu."
+        ipa: "miɡi wa çidaɾi no haɴtai desɯ"
   - id: "ja-5557"
     target: "局"
     target_scripts: { kana: "きょく" }
