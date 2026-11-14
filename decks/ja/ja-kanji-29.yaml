@@ -32,6 +32,11 @@ cards:
         words: ["許可", "は", "大切", "です"]
         reading: "kyoka wa taisetsu desu."
         ipa: "kjoka wa taisetsɯ desɯ"
+      - target: "先生は許します。"
+        target_scripts: { kana: "せんせいはゆるします。" }
+        words: ["先生", "は", "許します"]
+        reading: "sensei wa yurushimasu."
+        ipa: "seɴseː wa jɯɾɯɕimasɯ"
   - id: "ja-6622"
     target: "貧"
     target_scripts: { kana: "まずしい" }
@@ -74,6 +79,11 @@ cards:
         words: ["保険", "は", "大切", "です"]
         reading: "hoken wa taisetsu desu."
         ipa: "hokeɴ wa taisetsɯ desɯ"
+      - target: "保険は必要です。"
+        target_scripts: { kana: "ほけんはひつようです。" }
+        words: ["保険", "は", "必要", "です"]
+        reading: "hoken wa hitsuyou desu."
+        ipa: "hokeɴ wa çitsɯjoː desɯ"
   - id: "ja-6625"
     target: "備"
     target_scripts: { kana: "そなえる" }
@@ -126,7 +136,12 @@ cards:
         target_scripts: { kana: "えいぎょうはたいせつです。" }
         words: ["営業", "は", "大切", "です"]
         reading: "eigyou wa taisetsu desu."
-        ipa: "eːgjoː wa taisetsɯ desɯ"
+        ipa: "eːɡjoː wa taisetsɯ desɯ"
+      - target: "経営は大切です。"
+        target_scripts: { kana: "けいえいはたいせつです。" }
+        words: ["経営", "は", "大切", "です"]
+        reading: "keiei wa taisetsu desu."
+        ipa: "keːeː wa taisetsɯ desɯ"
   - id: "ja-6628"
     target: "報"
     target_scripts: { kana: "むくいる" }
@@ -143,6 +158,11 @@ cards:
         words: ["報告", "は", "大切", "です"]
         reading: "houkoku wa taisetsu desu."
         ipa: "hoːkokɯ wa taisetsɯ desɯ"
+      - target: "情報は大切です。"
+        target_scripts: { kana: "じょうほうはたいせつです。" }
+        words: ["情報", "は", "大切", "です"]
+        reading: "jouhou wa taisetsu desu."
+        ipa: "dʑoːhoː wa taisetsɯ desɯ"
   - id: "ja-6629"
     target: "属"
     target_scripts: { kana: "ぞくする" }
@@ -166,7 +186,7 @@ cards:
     examples:
       - target: "病気は回復しました。"
         target_scripts: { kana: "びょうきはかいふくしました。" }
-        words: ["病気", "は", "回復しました"]
+        words: ["病気", "は", "回復", "しました"]
         reading: "byouki wa kaifuku shimashita."
         ipa: "bjoːki wa kaiɸɯkɯ ɕimaɕita"
   - id: "ja-6631"
@@ -174,7 +194,7 @@ cards:
     target_scripts: { kana: "さげる" }
     words: ["提"]
     reading: "sageru"
-    ipa: "sageɾɯ"
+    ipa: "saɡeɾɯ"
     pos: "letter"
     notes:
       - { id: "n1", kind: "usage" }
@@ -196,6 +216,11 @@ cards:
       - { id: "n1", kind: "usage" }
     bases: "self"
     examples:
+      - target: "検査はむずかしいです。"
+        target_scripts: { kana: "けんさはむずかしいです。" }
+        words: ["検査", "は", "むずかしい", "です"]
+        reading: "kensa wa muzukashii desu."
+        ipa: "keɴsa wa mɯdzɯkaɕiː desɯ"
       - target: "点検はむずかしいです。"
         target_scripts: { kana: "てんけんはむずかしいです。" }
         words: ["点検", "は", "むずかしい", "です"]
@@ -265,6 +290,11 @@ cards:
         words: ["税金", "は", "高い", "です"]
         reading: "zeikin wa takai desu."
         ipa: "dzeːkiɴ wa takai desɯ"
+      - target: "税は高いです。"
+        target_scripts: { kana: "ぜいはたかいです。" }
+        words: ["税", "は", "高い", "です"]
+        reading: "zei wa takai desu."
+        ipa: "dzeː wa takai desɯ"
   - id: "ja-6637"
     target: "統"
     target_scripts: { kana: "すべる" }
@@ -307,6 +337,11 @@ cards:
         words: ["証明書", "は", "必要", "です"]
         reading: "shoumeisho wa hitsuyou desu."
         ipa: "ɕoːmeːɕo wa çitsɯjoː desɯ"
+      - target: "証明書は大切です。"
+        target_scripts: { kana: "しょうめいしょはたいせつです。" }
+        words: ["証明書", "は", "大切", "です"]
+        reading: "shoumeisho wa taisetsu desu."
+        ipa: "ɕoːmeːɕo wa taisetsɯ desɯ"
   - id: "ja-6640"
     target: "評"
     target_scripts: { kana: "ひょうばん" }
@@ -412,8 +447,8 @@ cards:
       - { id: "n1", kind: "usage" }
     bases: "self"
     examples:
-      - target: "大勢は来ました。"
-        target_scripts: { kana: "おおぜいはきました。" }
-        words: ["大勢", "は", "来ました"]
-        reading: "oozei wa kimashita."
-        ipa: "oːdzeː wa kimaɕita"
+      - target: "大勢は来ませんでした。"
+        target_scripts: { kana: "おおぜいはきませんでした。" }
+        words: ["大勢", "は", "来ません", "でした"]
+        reading: "oozei wa kimasen deshita."
+        ipa: "oːdzeː wa kimaseɴ deɕita"
