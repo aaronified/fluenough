@@ -388,3 +388,14 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "わたしのちちは医者です。"
+        target_scripts: { kana: "わたしのちちはいしゃです。" }
+        words: ["わたし", "の", "ちち", "は", "医者", "です"]
+        reading: "watashi no chichi wa isha desu."
+        ipa: "wataɕi no tɕitɕi wa iɕa desɯ"
+      - target: "医者にいきます。"
+        target_scripts: { kana: "いしゃにいきます。" }
+        words: ["医者", "に", "いきます"]
+        reading: "isha ni ikimasu."
+        ipa: "iɕa ni ikimasɯ"
