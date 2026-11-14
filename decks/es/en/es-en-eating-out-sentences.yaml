@@ -5,7 +5,7 @@ core: "es-eating-out-sentences"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Sentences: eating out"
 license: "CC-BY-SA-4.0"
-description: "Six sentences for ordering and booking, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+description: "Eight sentences for ordering and booking, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
 cards:
   "es-1290":
     native: "I want to book a table for two."
@@ -31,3 +31,10 @@ cards:
     native: "The bill, please, and a tip."
     bases: { "La": "the", "por": "for", "favor": "please", "una": "a" }
     confusables: { "menu": { why: "Menú is the menu, not the bill." }, "pagar": { why: "Pagar is to pay, the action after the bill." } }
+  "es-4604":
+    native: "The bill, please."
+    bases: {"La": "the", "por": "for", "favor": "please"}
+    confusables: {"menu": { why: "Menú is the menu, not the bill." }, "pagar": { why: "Pagar is to pay, the action after the bill." }}
+  "es-4605":
+    native: "It is delicious, thank you."
+    confusables: {"sabor": { why: "Sabor is the taste, a noun, not the praise." }, "probar": { why: "Probar is to try or taste, before you say it is delicious." }}
