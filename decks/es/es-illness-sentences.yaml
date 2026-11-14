@@ -48,3 +48,26 @@ cards:
     tags: ["sentence"]
     bases: [{ word: "Voy", ref: "es-0026" }, { word: "a", base: "a" }, { word: "urgencias", ref: "es-1469" }, { word: "porque", base: "porque" }, { word: "no", ref: "es-0043" }, { word: "mejoro", ref: "es-1485" }]
     confusables: [{ id: "consulta", ref: "es-1489", kind: "word" }, { id: "cita", ref: "es-0844", kind: "word" }]
+  - id: "es-4606"
+    target: "Tengo fiebre."
+    ipa: "ˈtenɡo ˈfjebɾe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tengo", ref: "es-0024" }, { word: "fiebre", ref: "es-1460" }]
+    confusables: [{ id: "tos", ref: "es-1461", kind: "word" }, { id: "gripe", ref: "es-1459", kind: "word" }]
+  - id: "es-4607"
+    notes:
+      - { id: "n1", kind: "note" }
+    target: "Soy alérgico a la penicilina."
+    ipa: "soj aˈleɾxiko a la peniθiˈlina"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Soy", ref: "es-0022" }, { word: "alérgico", ref: "es-1478" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "penicilina", base: "penicilina" }]
+    confusables: [{ id: "alergia", ref: "es-1477", kind: "word" }, { id: "enfermedad", ref: "es-1456", kind: "word" }]
+  - id: "es-4608"
+    target: "Necesito un médico."
+    ipa: "neθeˈsito un ˈmediko"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Necesito", ref: "es-0288" }, { word: "un", base: "un" }, { word: "médico", ref: "es-0506" }]
+    confusables: [{ id: "doctor", ref: "es-1468", kind: "word" }, { id: "farmaceutico", ref: "es-1467", kind: "word" }]
