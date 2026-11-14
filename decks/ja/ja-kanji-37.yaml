@@ -329,14 +329,20 @@ cards:
     bases: "self"
   - id: "ja-7123"
     target: "誌"
-    target_scripts: { kana: "にっし" }
+    target_scripts: { kana: "ざっし" }
     words: ["誌"]
-    reading: "nisshi"
-    ipa: "niɕːi"
+    reading: "zasshi"
+    ipa: "dzaɕɕi"
     pos: "letter"
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "雑誌を読みます。"
+        target_scripts: { kana: "ざっしをよみます。" }
+        words: ["雑誌", "を", "読みます"]
+        reading: "zasshi o yomimasu."
+        ipa: "dzaɕɕi o jomimasɯ"
   - id: "ja-7124"
     target: "認"
     target_scripts: { kana: "みとめる" }
