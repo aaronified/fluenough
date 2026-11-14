@@ -15,3 +15,9 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | te-0183 | see card | గారు is an honorific suffix: is the example's use natural, and is the gloss right? | Haiku builder | 2026-11-07 |
 | te-1029 | see card | ఎక్కువ: the example's sense (more/too much) and its translation need a check. | Haiku builder | 2026-11-07 |
 | te-0959 | see card | The anusvara reading in these examples is written uṁdi, while other examples in the course write undi (te-0958, te-0929, te-0974, te-0301 too): which spelling should the course use? | Haiku builder | 2026-11-07 |
+| te-8950 | see card | The Telugu of te-8950 to te-8969 is copied from te.wikisource's transcription of Carr's 1868 supplement (the scan was not reachable): please check the spelling of each proverb against the printed page. | Haiku builder | 2026-11-14 |
+| te-8968 | see card | The printed proverb has బందువూ (banduvū), an old spelling of బంధువు (bandhuvu, relative): should the card keep the printed spelling or the modern one? | Haiku builder | 2026-11-14 |
+| te-8959 | see card | బాపడు (bāpaḍu) is the printed word for a Brahman: is the gloss "Brahman" and the colloquial register right for a learner card? | Haiku builder | 2026-11-14 |
+| te-9003 | see card | The printed proverb joins అన్నీ (annī) and తెలిశినవాడూ (teliśinavāḍū) into one run (అన్నీతెలిశినవాడూ, annīteliśinavāḍū); the card writes them as two words: please check the spacing against the printed page. | Haiku builder | 2026-11-14 |
+| te-9008 | see card | కాని (kāni) in this proverb is read as "bad, unfavourable" (కాని కాలం, kāni kālaṁ, a bad time): is that the right sense for a learner card? | Haiku builder | 2026-11-14 |
+| te-9019 | see card | The printed proverb has అడిగా (aḍigā), which the card keeps; the gloss "must you ask?" is the builder's own reading: please check the spelling and the meaning. | Haiku builder | 2026-11-14 |
