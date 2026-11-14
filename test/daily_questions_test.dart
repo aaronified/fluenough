@@ -1247,6 +1247,14 @@ cards:
         return state;
       }
 
+      // At 1.4x the card is taller than the screen: the answers are below it.
+      Future<void> scrollToAnswers(WidgetTester tester) =>
+          tester.scrollUntilVisible(
+            find.text(l10nOf(tester).reviewQuestionSkip),
+            200,
+            scrollable: find.byType(Scrollable).first,
+          );
+
       for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
         testWidgets('it shows the question as the heading and the whole '
             'card, example sentence included, in $mode at 1.4x', (
@@ -1274,6 +1282,7 @@ cards:
           expect(find.text(translation), findsOneWidget);
           // One question, one pair of answers: no second question shares
           // the Yes and No.
+          await scrollToAnswers(tester);
           expect(find.text(l10n.reviewQuestionYes), findsOneWidget);
           expect(find.text(l10n.reviewQuestionNo), findsOneWidget);
           expect(
@@ -1291,6 +1300,7 @@ cards:
           questions: <String>['Is the gender right?'],
         );
         final l10n = l10nOf(tester);
+        await scrollToAnswers(tester);
         await tester.tap(find.text(l10n.reviewQuestionYes));
         await tester.pumpAndSettle();
         final answers = state.reviewing.questions.answers;
@@ -1313,6 +1323,7 @@ cards:
           questions: <String>['Is the gender right?'],
         );
         final l10n = l10nOf(tester);
+        await scrollToAnswers(tester);
         await tester.tap(find.text(l10n.reviewQuestionNo));
         await tester.pumpAndSettle();
         expect(find.text(l10n.reviewQuestionWhyNo), findsNothing);
