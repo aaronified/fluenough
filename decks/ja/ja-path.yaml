@@ -110,6 +110,7 @@ alphabet:
   - "ja-kanji-15"
   - "ja-kanji-16"
   - "ja-kanji-17"
+  - "ja-kanji-18"
   - "ja-kanji-19"
   - "ja-katakana"
   - "ja-katakana-combos"
@@ -570,11 +571,8 @@ units:
       - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
     reading_passages:
       - { id: "rubbish-calendar", text: { "en": "A neighbourhood calendar of rubbish collection days" } }
-  - planned: { id: "ja-kanji-18", grammar: "script-kanji-18", words: 0 }
-    listening_passages:
-      - { id: "kanji-18-heard", text: { "en": "Hearing words whose kanji unit 18 teaches" } }
-    reading_passages:
-      - { id: "kanji-18-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 18" } }
+  - decks: ["ja-kanji-18"]
+    words: 0
   - decks: ["ja-appearance", "ja-appearance-sentences", "ja-reading-appearance", "*"]
     words: 40
     listening_passages:
