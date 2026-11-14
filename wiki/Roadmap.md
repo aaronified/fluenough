@@ -361,6 +361,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1269](https://github.com/aaronified/fluenough/issues/1269) Situations: more icon keys, so a language can have more than six situations
 - [#1270](https://github.com/aaronified/fluenough/issues/1270) Placement admission: stored verdict is keyed to one deck snapshot, so live decks have none
 - [#1285](https://github.com/aaronified/fluenough/issues/1285) Phonetic import: Wiktionary names and varieties are hard-coded for three languages
+- [#1292](https://github.com/aaronified/fluenough/issues/1292) Telugu transcription tool never writes the course's anusvara reading (ṁ)
 
 ## Plans
 
