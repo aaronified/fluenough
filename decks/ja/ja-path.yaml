@@ -107,6 +107,7 @@ alphabet:
   - "ja-kanji-12"
   - "ja-kanji-13"
   - "ja-kanji-14"
+  - "ja-kanji-15"
   - "ja-katakana"
   - "ja-katakana-combos"
   - "ja-hiragana-marks"
@@ -523,11 +524,8 @@ units:
       - { id: "at-karaoke", text: { "en": "Friends choose songs at karaoke" } }
     reading_passages:
       - { id: "concert-flyer", text: { "en": "A flyer for a concert" } }
-  - planned: { id: "ja-kanji-15", grammar: "script-kanji-15", words: 0 }
-    listening_passages:
-      - { id: "kanji-15-heard", text: { "en": "Hearing words whose kanji unit 15 teaches" } }
-    reading_passages:
-      - { id: "kanji-15-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 15" } }
+  - decks: ["ja-kanji-15"]
+    words: 0
   # The planned word units from here to the B1 mark take their words from
   # the wiki page Plan-Japanese-B1-Wordlists (owner, 2026-11-06: "go with
   # C"). Each unit has a list at least as long as its size, every word fresh
