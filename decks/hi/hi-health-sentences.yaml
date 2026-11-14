@@ -10,8 +10,8 @@ cards:
   - id: "hi-3060"
     target: "मैंने आज दवा ली।"
     target_scripts: { perso_arabic: "میں نے آج دوا لی۔" }
-    reading: "maim̐nē āj davā lī."
-    ipa: "mɛ̃ːneː aːdʒ d̪əʋaː liː"
+    reading: "mainnē āj davā lī."
+    ipa: "mɛːnneː aːdʒ d̪əʋaː liː"
     pos: "phrase"
     bases:
       - { word: "मैंने", base: "मैं", reading: "mainnē" }
@@ -215,8 +215,8 @@ cards:
   - id: "hi-3073"
     target: "डॉक्टर के कहने पर मैंने सिगरेट छोड़ी।"
     target_scripts: { perso_arabic: "ڈاکٹر کے کہنے پر میں نے سگریٹ چھوڑی۔" }
-    reading: "ḍôkṭar kē kahnē par maim̐nē sigrēṭ chōṛī."
-    ipa: "ɖɔkʈər keː kəɦneː pər mɛ̃ːneː sɪɡreːʈ tʃʰoːɽiː"
+    reading: "ḍôkṭar kē kahnē par mainnē sigrēṭ chōṛī."
+    ipa: "ɖɔkʈər keː kəɦneː pər mɛːnneː sɪɡreːʈ tʃʰoːɽiː"
     pos: "phrase"
     bases:
       - { word: "डॉक्टर", ref: "hi-0357" }
@@ -367,8 +367,8 @@ cards:
   - id: "hi-3082"
     target: "मैंने शराब नहीं बेची।"
     target_scripts: { perso_arabic: "میں نے شراب نہیں بیچی۔" }
-    reading: "maim̐nē śarāb nahīm̐ bēcī."
-    ipa: "mɛ̃ːneː ʃəraːb nəɦĩː beːtʃiː"
+    reading: "mainnē śarāb nahīm̐ bēcī."
+    ipa: "mɛːnneː ʃəraːb nəɦĩː beːtʃiː"
     pos: "phrase"
     bases:
       - { word: "मैंने", base: "मैं", reading: "mainnē" }
@@ -379,33 +379,35 @@ cards:
       - { id: "w1", word: "सिगरेट", reading: "sigrēṭ", kind: "word" }
       - { id: "w2", word: "चाय", reading: "cāy", kind: "word" }
   - id: "hi-3083"
-    target: "मुझे दवा नहीं मिली।"
-    target_scripts: { perso_arabic: "مجھے دوا نہیں ملی۔" }
-    reading: "mujhē davā nahīm̐ milī."
-    ipa: "mʊdʒʱeː d̪əʋaː nəɦĩː mɪliː"
+    target: "आज सुबह उसने जलन सही।"
+    target_scripts: { perso_arabic: "آج صبح اس نے جلن سہی۔" }
+    reading: "āj subah usnē jalan sahī."
+    ipa: "aːdʒ sʊbəɦ ʊsneː dʒələn səɦiː"
     pos: "phrase"
     bases:
-      - { word: "मुझे", base: "मैं", reading: "mujhē" }
-      - { word: "दवा", ref: "hi-2089" }
-      - { word: "नहीं", ref: "hi-0156" }
-      - { word: "मिली", base: "मिलना", reading: "milī" }
+      - { word: "आज", ref: "hi-0299" }
+      - { word: "सुबह", ref: "hi-0302" }
+      - { word: "उसने", base: "वह", reading: "usnē" }
+      - { word: "जलन", ref: "hi-2087" }
+      - { word: "सही", base: "सहना", reading: "sahī" }
     confusables:
-      - { id: "w1", word: "पानी", reading: "pānī", kind: "word" }
-      - { id: "w2", word: "तेल", reading: "tēl", kind: "word" }
+      - { id: "w1", word: "गर्मी", reading: "garmī", kind: "word" }
+      - { id: "w2", word: "दस्त", reading: "dast", kind: "word" }
   - id: "hi-3084"
-    target: "क्या फ़ार्मेसी रात को भी खुली रहेगी?"
-    target_scripts: { perso_arabic: "کیا دوا خانہ رات کو بھی کھلا رہے گا؟" }
-    reading: "kyā fārmēsī rāt kō bhī khulī rahēgī?"
-    ipa: "kjaː faːrmeːsiː raːt̪ koː bʱiː kʰʊliː rəɦeːɡiː"
+    target: "क्या अस्पताल शाम को भी ऑपरेशन करता रहेगा?"
+    target_scripts: { perso_arabic: "کیا ہسپتال شام کو بھی آپریشن کرتا رہے گا؟" }
+    reading: "kyā aspatāl śām kō bhī ôprēśan kartā rahēgā?"
+    ipa: "kjaː əspət̪aːl ʃaːm koː bʱiː ɔpreːʃən kərt̪aː rəɦeːɡaː"
     pos: "phrase"
     bases:
       - { word: "क्या", ref: "hi-0157" }
-      - { word: "फ़ार्मेसी", ref: "hi-2086" }
-      - { word: "रात", ref: "hi-0304" }
+      - { word: "अस्पताल", ref: "hi-0358" }
+      - { word: "शाम", ref: "hi-0303" }
       - { word: "को", ref: "hi-0277" }
       - { word: "भी", ref: "hi-0350" }
-      - { word: "खुली", base: "खुला", reading: "khulī" }
-      - { word: "रहेगी", base: "रहना", reading: "rahēgī" }
+      - { word: "ऑपरेशन", ref: "hi-2084" }
+      - { word: "करता", base: "करना", reading: "kartā" }
+      - { word: "रहेगा", base: "रहना", reading: "rahēgā" }
     confusables:
-      - { id: "w1", word: "अस्पताल", reading: "aspatāl", kind: "word" }
+      - { id: "w1", word: "फ़ार्मेसी", reading: "fārmēsī", kind: "word" }
       - { id: "w2", word: "दुकान", reading: "dukān", kind: "word" }
