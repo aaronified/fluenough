@@ -6,6 +6,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ## Released
 
+- **v0.10.1**
 - **v0.10.0**
 - **models**
 - **v0.9.5**
@@ -177,6 +178,9 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1146](https://github.com/aaronified/fluenough/issues/1146) Japanese: about 1000 kanji by B1 (deferred)
 - [#1158](https://github.com/aaronified/fluenough/issues/1158) Offline speech recognisers for every priority language (Indic, European, East Asian)
 - [#1221](https://github.com/aaronified/fluenough/issues/1221) IPA keyboard: follow-ups before it is switched on
+- [#1226](https://github.com/aaronified/fluenough/issues/1226) Script-unit cards carry structured character data: readings by kind, level, strokes, radical.
+- [#1227](https://github.com/aaronified/fluenough/issues/1227) A path can gate a script: a card or example may use only the characters already taught.
+- [#1228](https://github.com/aaronified/fluenough/issues/1228) A script topic's `chars` must match the cards of its `decks`, and a tool writes them.
 - [#25](https://github.com/aaronified/fluenough/issues/25) F-Droid metadata and submission
 - [#26](https://github.com/aaronified/fluenough/issues/26) Accessibility: a TalkBack pass on a phone
 - [#30](https://github.com/aaronified/fluenough/issues/30) Script decks: document their conventions; positional forms for Arabic-script languages
