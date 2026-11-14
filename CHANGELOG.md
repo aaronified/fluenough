@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **Find my level sentence questions make sense.** Sentences you hear or read now always come with their own English meaning among four sentences of the same kind, and the question asks what the sentence means.
+
 ## [0.10.1] - 2026-11-13
 
 - **Extra tiles in word order.** When a sentence has look-alike wrong words or marks, they now sit among its tiles, and an answer that uses one is not right.

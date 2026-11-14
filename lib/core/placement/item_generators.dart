@@ -8,6 +8,7 @@ import 'item_registry.dart';
 import 'item_solvers.dart';
 import 'unit_model.dart';
 import 'placement_data.dart';
+import 'sentence_gate.dart';
 
 // The item generators of "Find my level" V3, with the item-generation fixes of
 // the adversarial review (wiki/Plan-Placement-V3.md):
@@ -300,6 +301,26 @@ class GenContext {
     'other',
   };
 
+  /// The cards of three to ten words kept out of the sentences, by card id,
+  /// with why ([sentenceFault]): a reading deck's question, a phrase, a card
+  /// whose meaning is no sentence of the target's shape.
+  late final Map<String, SentenceFault> rejectedSentences =
+      <String, SentenceFault>{
+        for (final r in rejectionsOf(data)) r.cardId: r.fault,
+      };
+
+  /// The cards of three to ten words that [data] keeps out of its sentences,
+  /// each with its fault (what the report and the app's log list).
+  static List<SentenceRejection> rejectionsOf(PlacementLanguageData data) =>
+      sentenceRejections(
+        data,
+        isSentenceShaped: (c) {
+          if (_isWordCard(c)) return false;
+          final n = targetWords(c.target).length;
+          return n >= 3 && n <= 10;
+        },
+      );
+
   void _read() {
     // First pass: the leading tokens of two-token cards are the articles.
     final lead = <String, int>{};
@@ -366,6 +387,7 @@ class GenContext {
                 ((genderVotes[g] ?? const <String, int>{})[article] ?? 0) + 1;
           }
         } else if (tokens.length >= 3 && tokens.length <= 10) {
+          if (rejectedSentences.containsKey(c.id)) continue;
           _addSentence(c, di, tokens);
         }
       }
@@ -385,7 +407,7 @@ class GenContext {
 
   static bool _isLatin(String s) => RegExp('^[A-Za-z]').hasMatch(s);
 
-  bool _isWordCard(Card c) =>
+  static bool _isWordCard(Card c) =>
       c.pos != null &&
       _wordPos.contains(c.pos) &&
       c.rule == null &&
@@ -434,7 +456,7 @@ class GenContext {
           (i == 0 ? lead.length : 0) + (i == raw.length - 1 ? trail.length : 0);
       if (plain.length - stripped.length != expectedMarks) inner = true;
     }
-    final english = shortGloss(c.native);
+    final english = sentenceMeaning(c.native, target: c.target);
     final romanWords = c.reading == null ? words : targetWords(c.reading!);
     var nonCog = 0;
     var best = 0.0;
@@ -1472,6 +1494,9 @@ class ItemGenerators {
         // Options look alike: one length band and about as many words, so
         // that no surface cue singles the right one out.
         if (!inOneBand(english, e)) continue;
+        // A question is set against questions, a statement against
+        // statements.
+        if (endsAsQuestion(e) != endsAsQuestion(english)) continue;
         if (knownWordScore(prompt, e, known) != k0) continue;
         pool.add((e, sim(e), heldOut(e)));
       }
@@ -1531,7 +1556,9 @@ class ItemGenerators {
           format: format,
           cardId: s.card.id,
           deck: s.deck,
-          prompt: s.text,
+          // The card's own sentence, commas and all, as it is shown and
+          // spoken (the words alone would drop the marks inside it).
+          prompt: s.card.target.trim().replaceAll(RegExp(r'\s+'), ' '),
           promptRoman: s.card.reading ?? s.text,
           options: opts,
           optionsRoman: opts,

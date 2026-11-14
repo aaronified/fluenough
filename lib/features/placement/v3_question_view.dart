@@ -153,8 +153,7 @@ class _V3QuestionViewState extends State<V3QuestionView> {
       case V3Mode.pick:
         return switch (baseFormat(_q.format)) {
           'F3' => l10n.placementQuestion,
-          'F5' => l10n.findLevelWhichSentence,
-          'F17' => l10n.findLevelWhichSentenceSounds,
+          'F5' || 'F17' => l10n.findLevelSentenceMeaning,
           'F28' => l10n.findLevelFillGap,
           _ => l10n.findLevelWordMeaning,
         };
