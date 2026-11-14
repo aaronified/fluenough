@@ -883,6 +883,9 @@ class Report:
     recs_data: list[tuple[str, str, dict]] | None = None
     situation_ids: list[str] = field(default_factory=list)
     script_features: set[str] = field(default_factory=set)
+    # A script guide core's characters by feature id: its example and its
+    # letters, NFC (#1228); a script topic's `chars` may name them.
+    script_chars: dict[str, set[str]] = field(default_factory=dict)
     # A creator's related cards, (card id, where).
     related_cards: list[tuple[str, str]] = field(default_factory=list)
 
@@ -5825,6 +5828,10 @@ def check_script_file(r: Report, raw: dict, path: Path, *, core: bool = False) -
         letters = feature.get("letters", [])
         if not isinstance(letters, list) or not all(_is_str(x) and x for x in letters):
             r.error(where, "letters must be a list of quoted letters")
+        elif core and _is_str(fid):
+            r.script_chars.setdefault(fid, set()).update(
+                unicodedata.normalize("NFC", x) for x in [feature.get("example"), *letters]
+                if _is_str(x))
 
 
 def validate_guide_layer(r: Report, raw: dict, path: Path, core: dict) -> None:
@@ -8230,6 +8237,93 @@ def check_topics_file(r: Report, raw: dict, path: Path) -> None:
     r.topics_data = collected
 
 
+# A script topic's `chars` against its decks (#1228). The cards a deck leaves
+# out of `chars` are a warning until the real topics files are written by
+# tools/topic_chars.py (decks-live's hiragana and katakana topics list the
+# 46 basic letters but also name the marks decks); flip this to make a
+# character card missing from `chars` an error, as `chars` naming a character
+# that no listed card has already is.
+TOPIC_CHARS_MISSING_IS_ERROR = False
+
+
+def _clusters(text: str) -> int:
+    """How many user-perceived characters [text] has, by data in Unicode and
+    no script's name: a mark, a joiner, or a letter after a virama joins the
+    one before it (a conjunct, a kana with a voicing mark)."""
+    count, joined = 0, False
+    for ch in text:
+        if count and (joined or unicodedata.category(ch)[0] == "M"
+                      or ch in "\u200c\u200d"):
+            pass
+        else:
+            count += 1
+        joined = unicodedata.combining(ch) == 9 or ch == "\u200d"
+    return count
+
+
+def topic_deck_targets(t: dict, by_core: dict[str, list[Report]]) -> list[str]:
+    """The targets of the cards of a topic's `decks`, NFC, in deck and card
+    order, each once: the characters its `chars` may name. A layer writes no
+    target, so only a core or a single-file deck is read."""
+    found: dict[str, None] = {}
+    for deck in t.get("decks") or []:
+        for rep in by_core.get(deck, []) if _is_str(deck) else []:
+            if rep.part == "layer":
+                continue
+            for d in rep.card_defs.values():
+                target = unicodedata.normalize("NFC", d.target.strip())
+                if target:
+                    found.setdefault(target)
+    return list(found)
+
+
+def topic_char_pool(t: dict, by_core: dict[str, list[Report]],
+                    facts: list[Report]) -> tuple[set[str], set[str]] | None:
+    """What a script topic's `chars` may name, and the single characters its
+    decks teach: (every target of the cards of its `decks` and every example
+    and letter of its `script_units`, the targets that are one character), or
+    None when it lists neither, so there is nothing to check against."""
+    if t.get("kind") != "script" or not (t.get("decks") or t.get("script_units")):
+        return None
+    targets = topic_deck_targets(t, by_core)
+    allowed = set(targets)
+    singles = {x for x in targets if _clusters(x) == 1}
+    for fid in t.get("script_units") or []:
+        for o in facts:
+            allowed |= o.script_chars.get(fid, set())
+    return allowed, singles
+
+
+def check_topic_chars(rep: Report, where: str, t: dict, pool: tuple,
+                      problems: list[str]) -> None:
+    """A script topic's `chars` are only characters its decks teach (or its
+    script units show), and each single-character card of its decks is
+    listed (#1228)."""
+    allowed, singles = pool
+    chars = []
+    for ref in t.get("chars") or []:
+        text = ref.get("text") if isinstance(ref, dict) else ref
+        if _is_str(text):
+            chars.append(unicodedata.normalize("NFC", text))
+    for ch in chars:
+        if ch not in allowed:
+            problems.append(f"{rep.path}: {where}: chars lists {ch!r}, which is no "
+                            f"card's target in the topic's decks, nor a letter of its "
+                            f"script units; `tools/topic_chars.py` writes chars from "
+                            f"the decks")
+    if t.get("decks"):
+        left = sorted(singles - set(chars))
+        if left:
+            shown = ", ".join(repr(c) for c in left[:8]) + (", ..." if len(left) > 8 else "")
+            msg = (f"chars leaves out {len(left)} single-character card(s) of the "
+                   f"topic's decks ({shown}); `tools/topic_chars.py` writes chars "
+                   f"from the decks")
+            if TOPIC_CHARS_MISSING_IS_ERROR:
+                problems.append(f"{rep.path}: {where}: {msg}")
+            else:
+                rep.warn(where, msg)
+
+
 # --- decks/recommendations/<code>.yaml (D13) ---------------------------------
 
 RECS_KEYS = {"schema", "kind", "id", "language", "license", "recommendations"}
@@ -8622,6 +8716,10 @@ def check_kinds_across(reports: list[Report]) -> list[str]:
                     if _is_str(ref) and ref not in known:
                         problems.append(f"{rep.path}: {where}: {key} names {ref!r}, "
                                         f"which is not {what}")
+            # A script topic's characters against its decks (#1228).
+            pool = topic_char_pool(t, by_core, facts)
+            if pool is not None and t.get("chars"):
+                check_topic_chars(rep, where, t, pool, problems)
 
     # Recommendations.
     for rep in reports:
