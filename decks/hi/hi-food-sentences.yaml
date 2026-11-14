@@ -1,0 +1,392 @@
+schema: 1
+id: "hi-food-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-2940"
+    target: "यह खट्टा नींबू लीजिए।"
+    target_scripts: { perso_arabic: "یہ کھٹا لیموں لیجیے۔" }
+    reading: "yah khaṭṭā nīmbū lījiē."
+    ipa: "jəɦ kʰəʈʈaː niːmbuː liːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", base: "यह", reading: "yah" }
+      - { word: "खट्टा", base: "खट्टा", reading: "khaṭṭā" }
+      - { word: "नींबू", base: "नींबू", reading: "nīmbū" }
+      - { word: "लीजिए", base: "लेना", reading: "lījiē" }
+    confusables:
+      - { id: "w1", word: "संतरा", reading: "santarā", kind: "word" }
+      - { id: "w2", word: "केला", reading: "kēlā", kind: "word" }
+  - id: "hi-2941"
+    target: "ताज़ा सलाद कौन लाए?"
+    target_scripts: { perso_arabic: "تازہ سلاد کون لائے؟" }
+    reading: "tāzā salād kaun lāē?"
+    ipa: "t̪aːzaː səlaːd̪ kɔːn laːeː"
+    pos: "phrase"
+    bases:
+      - { word: "ताज़ा", base: "ताज़ा", reading: "tāzā" }
+      - { word: "सलाद", base: "सलाद", reading: "salād" }
+      - { word: "कौन", base: "कौन", reading: "kaun" }
+      - { word: "लाए", base: "लाना", reading: "lāē" }
+    confusables:
+      - { id: "w1", word: "कहाँ", reading: "kahām̐", kind: "word" }
+      - { id: "w2", word: "कब", reading: "kab", kind: "word" }
+  - id: "hi-2942"
+    target: "बच्चे खुश हैं, इसलिए पकौड़े दीजिए।"
+    target_scripts: { perso_arabic: "بچے خوش ہیں، اس لیے پکوڑے دیجیے۔" }
+    reading: "baccē khuś haim̐, isliē pakauṛē dījiē."
+    ipa: "bətʃtʃeː kʰʊʃ ɦɛ̃ː ɪslɪeː pəkɔːɽeː d̪iːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "बच्चे", base: "बच्चे", reading: "baccē" }
+      - { word: "खुश", base: "खुश", reading: "khuś" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+      - { word: "इसलिए", base: "इसलिए", reading: "isliē" }
+      - { word: "पकौड़े", base: "पकौड़ा", reading: "pakauṛē" }
+      - { word: "दीजिए", base: "देना", reading: "dījiē" }
+    confusables:
+      - { id: "w1", word: "समोसा", reading: "samōsā", kind: "word" }
+      - { id: "w2", word: "दुखी", reading: "dukhī", kind: "word" }
+  - id: "hi-2943"
+    target: "आज सुबह मक्का को दोबारा उबालिए।"
+    target_scripts: { perso_arabic: "آج صبح مکئی کو دوبارہ ابالیے۔" }
+    reading: "āj subah makkā kō dōbārā ubāliē."
+    ipa: "aːdʒ sʊbəɦ məkkaː koː d̪oːbaːraː ʊbaːlɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "आज", base: "आज", reading: "āj" }
+      - { word: "सुबह", base: "सुबह", reading: "subah" }
+      - { word: "मक्का", base: "मक्का", reading: "makkā" }
+      - { word: "को", base: "को", reading: "kō" }
+      - { word: "दोबारा", base: "दोबारा", reading: "dōbārā" }
+      - { word: "उबालिए", base: "उबालना", reading: "ubāliē" }
+    confusables:
+      - { id: "w1", word: "शाम", reading: "śām", kind: "word" }
+      - { id: "w2", word: "कल", reading: "kal", kind: "word" }
+  - id: "hi-2944"
+    target: "मैं कौन-सा केला लूँ?"
+    target_scripts: { perso_arabic: "میں کون سا کیلا لوں؟" }
+    reading: "maim̐ kaun-sā kēlā lūm̐?"
+    ipa: "mɛ̃ː kɔːnsaː keːlaː lũː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", base: "मैं", reading: "maim̐" }
+      - { word: "कौन-सा", base: "कौन-सा", reading: "kaun-sā" }
+      - { word: "केला", base: "केला", reading: "kēlā" }
+      - { word: "लूँ", base: "लेना", reading: "lūm̐" }
+    confusables:
+      - { id: "w1", word: "सेब", reading: "sēb", kind: "word" }
+      - { id: "w2", word: "कौन", reading: "kaun", kind: "word" }
+  - id: "hi-2945"
+    target: "दीदी को मिठाई का नाम बताइए।"
+    target_scripts: { perso_arabic: "دیدی کو مٹھائی کا نام بتائیے۔" }
+    reading: "dīdī kō miṭhāī kā nām batāiē."
+    ipa: "d̪iːd̪iː koː mɪʈʰaːiː kaː naːm bət̪aːɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "दीदी", base: "दीदी", reading: "dīdī" }
+      - { word: "को", base: "को", reading: "kō" }
+      - { word: "मिठाई", base: "मिठाई", reading: "miṭhāī" }
+      - { word: "का", base: "का", reading: "kā" }
+      - { word: "नाम", base: "नाम", reading: "nām" }
+      - { word: "बताइए", base: "बताना", reading: "batāiē" }
+    confusables:
+      - { id: "w1", word: "भैया", reading: "bhaiyā", kind: "word" }
+      - { id: "w2", word: "दादी", reading: "dādī", kind: "word" }
+  - id: "hi-2946"
+    target: "गाजर को ठीक से काटिए, लेकिन अदरक को रखिए।"
+    target_scripts: { perso_arabic: "گاجر کو ٹھیک سے کاٹیے، لیکن ادرک کو رکھیے۔" }
+    reading: "gājar kō ṭhīk sē kāṭiē, lēkin adrak kō rakhiē."
+    ipa: "ɡaːdʒər koː ʈʰiːk seː kaːʈɪeː leːkɪn əd̪rək koː rəkʰɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "गाजर", base: "गाजर", reading: "gājar" }
+      - { word: "को", base: "को", reading: "kō" }
+      - { word: "ठीक", base: "ठीक", reading: "ṭhīk" }
+      - { word: "से", base: "से", reading: "sē" }
+      - { word: "काटिए", base: "काटना", reading: "kāṭiē" }
+      - { word: "लेकिन", base: "लेकिन", reading: "lēkin" }
+      - { word: "अदरक", base: "अदरक", reading: "adrak" }
+      - { word: "रखिए", base: "रखना", reading: "rakhiē" }
+    confusables:
+      - { id: "w1", word: "अंगूर", reading: "aṅgūr", kind: "word" }
+      - { id: "w2", word: "आम", reading: "ām", kind: "word" }
+  - id: "hi-2947"
+    target: "जब आप शहर जाएँ, तब ताज़े सेब ख़रीदिए।"
+    target_scripts: { perso_arabic: "جب آپ شہر جائیں، تب تازہ سیب خریدیے۔" }
+    reading: "jab āp śahar jāēm̐, tab tāzē sēb k͟harīdiē."
+    ipa: "dʒəb aːp ʃəɦər dʒaːẽː t̪əb t̪aːzeː seːb xəriːd̪ɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "जब", base: "जब", reading: "jab" }
+      - { word: "आप", base: "आप", reading: "āp" }
+      - { word: "शहर", base: "शहर", reading: "śahar" }
+      - { word: "जाएँ", base: "जाना", reading: "jāēm̐" }
+      - { word: "तब", base: "तब", reading: "tab" }
+      - { word: "ताज़े", base: "ताज़ा", reading: "tāzē" }
+      - { word: "सेब", base: "सेब", reading: "sēb" }
+      - { word: "ख़रीदिए", base: "ख़रीदना", reading: "k͟harīdiē" }
+    confusables:
+      - { id: "w1", word: "बेचना", reading: "bēcnā", kind: "word" }
+      - { id: "w2", word: "घर", reading: "ghar", kind: "word" }
+  - id: "hi-2948"
+    target: "चटनी के लिए नारियल लाइए।"
+    target_scripts: { perso_arabic: "چٹنی کے لیے ناریل لائیے۔" }
+    reading: "caṭnī kē liē nāriyal lāiē."
+    ipa: "tʃəʈniː keː lɪeː naːrɪjəl laːɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "चटनी", base: "चटनी", reading: "caṭnī" }
+      - { word: "के लिए", base: "के लिए", reading: "kē liē" }
+      - { word: "नारियल", base: "नारियल", reading: "nāriyal" }
+      - { word: "लाइए", base: "लाना", reading: "lāiē" }
+    confusables:
+      - { id: "w1", word: "नींबू", reading: "nīmbū", kind: "word" }
+      - { id: "w2", word: "लेना", reading: "lēnā", kind: "word" }
+  - id: "hi-2949"
+    target: "मैं बिरयानी कैसे पकाऊँ?"
+    target_scripts: { perso_arabic: "میں بریانی کیسے پکاؤں؟" }
+    reading: "maim̐ biryānī kaisē pakāūm̐?"
+    ipa: "mɛ̃ː bɪrjaːniː kɛːseː pəkaːũː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", base: "मैं", reading: "maim̐" }
+      - { word: "बिरयानी", base: "बिरयानी", reading: "biryānī" }
+      - { word: "कैसे", base: "कैसे", reading: "kaisē" }
+      - { word: "पकाऊँ", base: "पकाना", reading: "pakāūm̐" }
+    confusables:
+      - { id: "w1", word: "पराठा", reading: "parāṭhā", kind: "word" }
+      - { id: "w2", word: "कितना", reading: "kitnā", kind: "word" }
+  - id: "hi-2950"
+    target: "सोमवार को शाम बच्चों के साथ खेलिए, फिर मिठाई परोसिए।"
+    target_scripts: { perso_arabic: "پیر کو شام بچوں کے ساتھ کھیلیے، پھر مٹھائی پروسیے۔" }
+    reading: "sōmvār kō śām baccōm̐ kē sāth khēliē, phir miṭhāī parōsiē."
+    ipa: "soːmʋaːr koː ʃaːm bətʃtʃõː keː saːt̪ʰ kʰeːlɪeː pʰɪr mɪʈʰaːiː pəroːsɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "सोमवार", base: "सोमवार", reading: "sōmvār" }
+      - { word: "को", base: "को", reading: "kō" }
+      - { word: "शाम", base: "शाम", reading: "śām" }
+      - { word: "बच्चों", base: "बच्चे", reading: "baccōm̐" }
+      - { word: "के साथ", base: "के साथ", reading: "kē sāth" }
+      - { word: "खेलिए", base: "खेलना", reading: "khēliē" }
+      - { word: "फिर", base: "फिर", reading: "phir" }
+      - { word: "मिठाई", base: "मिठाई", reading: "miṭhāī" }
+      - { word: "परोसिए", base: "परोसना", reading: "parōsiē" }
+    confusables:
+      - { id: "w1", word: "शनिवार", reading: "śanivār", kind: "word" }
+      - { id: "w2", word: "दोस्त", reading: "dōst", kind: "word" }
+  - id: "hi-2951"
+    target: "यह केला अच्छी तरह धोइए।"
+    target_scripts: { perso_arabic: "یہ کیلا اچھی طرح دھوئیے۔" }
+    reading: "yah kēlā acchī tarah dhōiē."
+    ipa: "jəɦ keːlaː ətʃtʃʰiː t̪ərəɦ d̪ʱoːɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", base: "यह", reading: "yah" }
+      - { word: "केला", base: "केला", reading: "kēlā" }
+      - { word: "अच्छी", base: "अच्छा", reading: "acchī" }
+      - { word: "तरह", base: "तरह", reading: "tarah" }
+      - { word: "धोइए", base: "धोना", reading: "dhōiē" }
+    confusables:
+      - { id: "w1", word: "सेब", reading: "sēb", kind: "word" }
+      - { id: "w2", word: "पकाना", reading: "pakānā", kind: "word" }
+  - id: "hi-2952"
+    target: "आप कॉफ़ी जल्दी छानिए।"
+    target_scripts: { perso_arabic: "آپ کافی جلدی چھانیے۔" }
+    reading: "āp kôfī jaldī chāniē."
+    ipa: "aːp kɔfiː dʒəld̪iː tʃʰaːnɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "आप", base: "आप", reading: "āp" }
+      - { word: "कॉफ़ी", base: "कॉफ़ी", reading: "kôfī" }
+      - { word: "जल्दी", base: "जल्दी", reading: "jaldī" }
+      - { word: "छानिए", base: "छानना", reading: "chāniē" }
+    confusables:
+      - { id: "w1", word: "जूस", reading: "jūs", kind: "word" }
+      - { id: "w2", word: "धीरे", reading: "dhīrē", kind: "word" }
+  - id: "hi-2953"
+    target: "शनिवार को दादी को गुड़, बादाम, अदरक भेजिए।"
+    target_scripts: { perso_arabic: "ہفتہ کو دادی کو گڑ، بادام، ادرک بھیجیے۔" }
+    reading: "śanivār kō dādī kō guṛ, bādām, adrak bhējiē."
+    ipa: "ʃənɪʋaːr koː d̪aːd̪iː koː ɡʊɽ baːd̪aːm əd̪rək bʱeːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "शनिवार", base: "शनिवार", reading: "śanivār" }
+      - { word: "को", base: "को", reading: "kō" }
+      - { word: "दादी", base: "दादी", reading: "dādī" }
+      - { word: "गुड़", base: "गुड़", reading: "guṛ" }
+      - { word: "बादाम", base: "बादाम", reading: "bādām" }
+      - { word: "अदरक", base: "अदरक", reading: "adrak" }
+      - { word: "भेजिए", base: "भेजना", reading: "bhējiē" }
+    confusables:
+      - { id: "w1", word: "मंगलवार", reading: "maṅgalvār", kind: "word" }
+      - { id: "w2", word: "दीदी", reading: "dīdī", kind: "word" }
+  - id: "hi-2954"
+    target: "आप कल कितने बजे केक बेचें?"
+    target_scripts: { perso_arabic: "آپ کل کتنے بجے کیک بیچیں؟" }
+    reading: "āp kal kitnē bajē kēk bēcēm̐?"
+    ipa: "aːp kəl kɪt̪neː bədʒeː keːk beːtʃẽː"
+    pos: "phrase"
+    bases:
+      - { word: "आप", base: "आप", reading: "āp" }
+      - { word: "कल", base: "कल", reading: "kal" }
+      - { word: "कितने", base: "कितना", reading: "kitnē" }
+      - { word: "बजे", base: "बजे", reading: "bajē" }
+      - { word: "केक", base: "केक", reading: "kēk" }
+      - { word: "बेचें", base: "बेचना", reading: "bēcēm̐" }
+    confusables:
+      - { id: "w1", word: "पूरी", reading: "pūrī", kind: "word" }
+      - { id: "w2", word: "आज", reading: "āj", kind: "word" }
+  - id: "hi-2955"
+    target: "चीनी दही में डालिए।"
+    target_scripts: { perso_arabic: "چینی دہی میں ڈالیے۔" }
+    reading: "cīnī dahī mēm̐ ḍāliē."
+    ipa: "tʃiːniː d̪əɦiː mẽː ɖaːlɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "चीनी", base: "चीनी", reading: "cīnī" }
+      - { word: "दही", base: "दही", reading: "dahī" }
+      - { word: "में", base: "में", reading: "mēm̐" }
+      - { word: "डालिए", base: "डालना", reading: "ḍāliē" }
+    confusables:
+      - { id: "w1", word: "नमक", reading: "namak", kind: "word" }
+      - { id: "w2", word: "शहद", reading: "śahad", kind: "word" }
+  - id: "hi-2956"
+    target: "यह पराठा ठंडा नहीं है।"
+    target_scripts: { perso_arabic: "یہ پراٹھا ٹھنڈا نہیں ہے۔" }
+    reading: "yah parāṭhā ṭhaṇḍā nahīm̐ hai."
+    ipa: "jəɦ pəraːʈʰaː ʈʰəɳɖaː nəɦĩː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", base: "यह", reading: "yah" }
+      - { word: "पराठा", base: "पराठा", reading: "parāṭhā" }
+      - { word: "ठंडा", base: "ठंडा", reading: "ṭhaṇḍā" }
+      - { word: "नहीं", base: "नहीं", reading: "nahīm̐" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "गरम", reading: "garam", kind: "word" }
+      - { id: "w2", word: "ताज़ा", reading: "tāzā", kind: "word" }
+  - id: "hi-2957"
+    target: "भैया के पास केक जल्दी छोड़िए।"
+    target_scripts: { perso_arabic: "بھیا کے پاس کیک جلدی چھوڑیے۔" }
+    reading: "bhaiyā kē pās kēk jaldī chōṛiē."
+    ipa: "bʱɛːjaː keː paːs keːk dʒəld̪iː tʃʰoːɽɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "भैया", base: "भैया", reading: "bhaiyā" }
+      - { word: "के पास", base: "के पास", reading: "kē pās" }
+      - { word: "केक", base: "केक", reading: "kēk" }
+      - { word: "जल्दी", base: "जल्दी", reading: "jaldī" }
+      - { word: "छोड़िए", base: "छोड़ना", reading: "chōṛiē" }
+    confusables:
+      - { id: "w1", word: "दीदी", reading: "dīdī", kind: "word" }
+      - { id: "w2", word: "धीरे", reading: "dhīrē", kind: "word" }
+  - id: "hi-2958"
+    target: "बिरयानी को धीरे-धीरे पकाइए।"
+    target_scripts: { perso_arabic: "بریانی کو دھیرے دھیرے پکائیے۔" }
+    reading: "biryānī kō dhīrē-dhīrē pakāiē."
+    ipa: "bɪrjaːniː koː d̪ʱiːreːd̪ʱiːreː pəkaːɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "बिरयानी", base: "बिरयानी", reading: "biryānī" }
+      - { word: "को", base: "को", reading: "kō" }
+      - { word: "धीरे-धीरे", base: "धीरे-धीरे", reading: "dhīrē-dhīrē" }
+      - { word: "पकाइए", base: "पकाना", reading: "pakāiē" }
+    confusables:
+      - { id: "w1", word: "जल्दी", reading: "jaldī", kind: "word" }
+      - { id: "w2", word: "उबालना", reading: "ubālnā", kind: "word" }
+  - id: "hi-2959"
+    target: "सारे समोसे कहाँ रखूँ?"
+    target_scripts: { perso_arabic: "سارے سموسے کہاں رکھوں؟" }
+    reading: "sārē samōsē kahām̐ rakhūm̐?"
+    ipa: "saːreː səmoːseː kəɦãː rəkʰũː"
+    pos: "phrase"
+    bases:
+      - { word: "सारे", base: "सारा", reading: "sārē" }
+      - { word: "समोसे", base: "समोसा", reading: "samōsē" }
+      - { word: "कहाँ", base: "कहाँ", reading: "kahām̐" }
+      - { word: "रखूँ", base: "रखना", reading: "rakhūm̐" }
+    confusables:
+      - { id: "w1", word: "लड्डू", reading: "laḍḍū", kind: "word" }
+      - { id: "w2", word: "कब", reading: "kab", kind: "word" }
+  - id: "hi-2960"
+    target: "पहले सेब अच्छी तरह धोइए, फिर काटिए।"
+    target_scripts: { perso_arabic: "پہلے سیب اچھی طرح دھوئیے، پھر کاٹیے۔" }
+    reading: "pahlē sēb acchī tarah dhōiē, phir kāṭiē."
+    ipa: "pəɦleː seːb ətʃtʃʰiː t̪ərəɦ d̪ʱoːɪeː pʰɪr kaːʈɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "पहले", base: "पहले", reading: "pahlē" }
+      - { word: "सेब", base: "सेब", reading: "sēb" }
+      - { word: "अच्छी", base: "अच्छा", reading: "acchī" }
+      - { word: "तरह", base: "तरह", reading: "tarah" }
+      - { word: "धोइए", base: "धोना", reading: "dhōiē" }
+      - { word: "फिर", base: "फिर", reading: "phir" }
+      - { word: "काटिए", base: "काटना", reading: "kāṭiē" }
+    confusables:
+      - { id: "w1", word: "बाद में", reading: "bād mēm̐", kind: "word" }
+      - { id: "w2", word: "तुरंत", reading: "turant", kind: "word" }
+  - id: "hi-2961"
+    target: "मंगलवार को सुबह दीदी के लिए समोसे दीजिए।"
+    target_scripts: { perso_arabic: "منگل کو صبح دیدی کے لیے سموسے دیجیے۔" }
+    reading: "maṅgalvār kō subah dīdī kē liē samōsē dījiē."
+    ipa: "məŋɡəlʋaːr koː sʊbəɦ d̪iːd̪iː keː lɪeː səmoːseː d̪iːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "मंगलवार", base: "मंगलवार", reading: "maṅgalvār" }
+      - { word: "को", base: "को", reading: "kō" }
+      - { word: "सुबह", base: "सुबह", reading: "subah" }
+      - { word: "दीदी", base: "दीदी", reading: "dīdī" }
+      - { word: "के लिए", base: "के लिए", reading: "kē liē" }
+      - { word: "समोसे", base: "समोसा", reading: "samōsē" }
+      - { word: "दीजिए", base: "देना", reading: "dījiē" }
+    confusables:
+      - { id: "w1", word: "शुक्रवार", reading: "śukravār", kind: "word" }
+      - { id: "w2", word: "भैया", reading: "bhaiyā", kind: "word" }
+  - id: "hi-2962"
+    target: "किसान से अंगूर ख़रीदिए।"
+    target_scripts: { perso_arabic: "کسان سے انگور خریدیے۔" }
+    reading: "kisān sē aṅgūr k͟harīdiē."
+    ipa: "kɪsaːn seː əŋɡuːr xəriːd̪ɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "किसान", base: "किसान", reading: "kisān" }
+      - { word: "से", base: "से", reading: "sē" }
+      - { word: "अंगूर", base: "अंगूर", reading: "aṅgūr" }
+      - { word: "ख़रीदिए", base: "ख़रीदना", reading: "k͟harīdiē" }
+    confusables:
+      - { id: "w1", word: "दुकानदार", reading: "dukāndār", kind: "word" }
+      - { id: "w2", word: "बेचना", reading: "bēcnā", kind: "word" }
+  - id: "hi-2963"
+    target: "छोटा नारियल ठीक से खोलिए।"
+    target_scripts: { perso_arabic: "چھوٹا ناریل ٹھیک سے کھولیے۔" }
+    reading: "chōṭā nāriyal ṭhīk sē khōliē."
+    ipa: "tʃʰoːʈaː naːrɪjəl ʈʰiːk seː kʰoːlɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "छोटा", base: "छोटा", reading: "chōṭā" }
+      - { word: "नारियल", base: "नारियल", reading: "nāriyal" }
+      - { word: "ठीक", base: "ठीक", reading: "ṭhīk" }
+      - { word: "से", base: "से", reading: "sē" }
+      - { word: "खोलिए", base: "खोलना", reading: "khōliē" }
+    confusables:
+      - { id: "w1", word: "बड़ा", reading: "baṛā", kind: "word" }
+      - { id: "w2", word: "बोतल", reading: "bōtal", kind: "word" }
+  - id: "hi-2964"
+    target: "आज शहद धीरे-धीरे परोसिए।"
+    target_scripts: { perso_arabic: "آج شہد دھیرے دھیرے پروسیے۔" }
+    reading: "āj śahad dhīrē-dhīrē parōsiē."
+    ipa: "aːdʒ ʃəɦəd̪ d̪ʱiːreːd̪ʱiːreː pəroːsɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "आज", base: "आज", reading: "āj" }
+      - { word: "शहद", base: "शहद", reading: "śahad" }
+      - { word: "धीरे-धीरे", base: "धीरे-धीरे", reading: "dhīrē-dhīrē" }
+      - { word: "परोसिए", base: "परोसना", reading: "parōsiē" }
+    confusables:
+      - { id: "w1", word: "जल्दी", reading: "jaldī", kind: "word" }
+      - { id: "w2", word: "पकाना", reading: "pakānā", kind: "word" }
