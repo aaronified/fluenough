@@ -415,13 +415,13 @@ units:
       - { id: "what-i-did-today", text: { "en": "Telling a day as one chain of actions" } }
     reading_passages:
       - { id: "travel-diary", text: { "en": "A travel diary that chains what happened" } }
-  - decks: ["te-health", "*"]
+  - decks: ["te-health", "te-reading-health", "*"]
     words: 62
     listening_passages:
       - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
     reading_passages:
       - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
-  - decks: ["te-feelings"]
+  - decks: ["te-feelings", "te-reading-feelings"]
     words: 60
     listening_passages:
       - { id: "a-hard-week", text: { "en": "A friend says how the week made them feel" } }
@@ -433,20 +433,20 @@ units:
   # learner sees the deck until native speakers have rated each word (#630).
   - decks: ["te-offensive"]
     words: 12
-  - decks: ["te-grammar-relative-participle"]
+  - decks: ["te-grammar-relative-participle", "te-reading-relative-participle"]
     words: 0
     grammar: ["relative-past", "relative-nonpast"]
     listening_passages:
       - { id: "the-man-who-came", text: { "en": "Describing people by what they did" } }
     reading_passages:
       - { id: "shop-reviews", text: { "en": "Short reviews of a shop and its staff" } }
-  - decks: ["te-news", "*"]
+  - decks: ["te-news", "te-reading-news", "*"]
     words: 60
     listening_passages:
       - { id: "radio-news", text: { "en": "A short radio news bulletin" } }
     reading_passages:
       - { id: "headline-list", text: { "en": "A list of newspaper headlines" } }
-  - decks: ["te-opinions", "*"]
+  - decks: ["te-opinions", "te-reading-opinions", "*"]
     words: 55
     listening_passages:
       - { id: "agreeing-and-disagreeing", text: { "en": "Two friends agree and disagree politely" } }
