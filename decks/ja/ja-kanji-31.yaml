@@ -16,17 +16,6 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
-    examples:
-      - target: "銅は重いです。"
-        target_scripts: { kana: "どうはおもいです。" }
-        words: ["銅", "は", "重い", "です"]
-        reading: "dou wa omoi desu."
-        ipa: "doː wa omoi desɯ"
-      - target: "銅を買います。"
-        target_scripts: { kana: "どうをかいます。" }
-        words: ["銅", "を", "買います"]
-        reading: "dou o kaimasu."
-        ipa: "doː o kaimasɯ"
   - id: "ja-6741"
     target: "際"
     target_scripts: { kana: "きわ" }
@@ -37,12 +26,6 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
-    examples:
-      - target: "際を歩きます。"
-        target_scripts: { kana: "きわをあるきます。" }
-        words: ["際", "を", "歩きます"]
-        reading: "kiwa o arukimasu."
-        ipa: "kiwa o aɾɯkimasɯ"
   - id: "ja-6742"
     target: "雑"
     target_scripts: { kana: "ざつ" }
@@ -54,11 +37,11 @@ cards:
       - { id: "n1", kind: "usage" }
     bases: "self"
     examples:
-      - target: "部屋は雑です。"
-        target_scripts: { kana: "へやはざつです。" }
-        words: ["部屋", "は", "雑", "です"]
-        reading: "heya wa zatsu desu."
-        ipa: "heja wa dzatsɯ desɯ"
+      - target: "数学は複雑です。"
+        target_scripts: { kana: "すうがくはふくざつです。" }
+        words: ["数学", "は", "複雑", "です"]
+        reading: "suugaku wa fukuzatsu desu."
+        ipa: "sɯːɡakɯ wa ɸɯkɯdzatsɯ desɯ"
   - id: "ja-6743"
     target: "領"
     target_scripts: { kana: "りょうど" }
@@ -75,11 +58,6 @@ cards:
         words: ["大統領", "は", "いそがしい", "です"]
         reading: "daitouryou wa isogashii desu."
         ipa: "daitoːɾjoː wa isoɡaɕiː desɯ"
-      - target: "領土は大きいです。"
-        target_scripts: { kana: "りょうどはおおきいです。" }
-        words: ["領土", "は", "大きい", "です"]
-        reading: "ryoudo wa ookii desu."
-        ipa: "ɾjoːdo wa oːkiː desɯ"
   - id: "ja-6744"
     target: "導"
     target_scripts: { kana: "みちびく" }
@@ -90,12 +68,6 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
-    examples:
-      - target: "先生は学生を導きます。"
-        target_scripts: { kana: "せんせいはがくせいをみちびきます。" }
-        words: ["先生", "は", "学生", "を", "導きます"]
-        reading: "sensei wa gakusei o michibikimasu."
-        ipa: "seɴseː wa ɡakɯseː o mitɕibikimasɯ"
   - id: "ja-6745"
     target: "暴"
     target_scripts: { kana: "あばれる" }
@@ -106,12 +78,6 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
-    examples:
-      - target: "犬は暴れます。"
-        target_scripts: { kana: "いぬはあばれます。" }
-        words: ["犬", "は", "暴れます"]
-        reading: "inu wa abaremasu."
-        ipa: "inɯ wa abaɾemasɯ"
   - id: "ja-6746"
     target: "潔"
     target_scripts: { kana: "いさぎよい" }
@@ -144,6 +110,11 @@ cards:
         words: ["確かに", "高い", "です"]
         reading: "tashika ni takai desu."
         ipa: "taɕika ni takai desɯ"
+      - target: "これは確かです。"
+        target_scripts: { kana: "これはたしかです。" }
+        words: ["これ", "は", "確か", "です"]
+        reading: "kore wa tashika desu."
+        ipa: "koɾe wa taɕika desɯ"
   - id: "ja-6748"
     target: "編"
     target_scripts: { kana: "あむ" }
@@ -186,12 +157,6 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
-    examples:
-      - target: "賞は大きいです。"
-        target_scripts: { kana: "しょうはおおきいです。" }
-        words: ["賞", "は", "大きい", "です"]
-        reading: "shou wa ookii desu."
-        ipa: "ɕoː wa oːkiː desɯ"
   - id: "ja-6751"
     target: "質"
     target_scripts: { kana: "しつ" }
@@ -202,12 +167,6 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
-    examples:
-      - target: "質はいいです。"
-        target_scripts: { kana: "しつはいいです。" }
-        words: ["質", "は", "いい", "です"]
-        reading: "shitsu wa ii desu."
-        ipa: "ɕitsɯ wa iː desɯ"
   - id: "ja-6752"
     target: "燃"
     target_scripts: { kana: "もえる" }
@@ -218,12 +177,6 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
-    examples:
-      - target: "火は燃えます。"
-        target_scripts: { kana: "ひはもえます。" }
-        words: ["火", "は", "燃えます"]
-        reading: "hi wa moemasu."
-        ipa: "çi wa moemasɯ"
   - id: "ja-6753"
     target: "築"
     target_scripts: { kana: "きずく" }
@@ -235,11 +188,11 @@ cards:
       - { id: "n1", kind: "usage" }
     bases: "self"
     examples:
-      - target: "城を築きます。"
-        target_scripts: { kana: "しろをきずきます。" }
-        words: ["城", "を", "築きます"]
-        reading: "shiro o kizukimasu."
-        ipa: "ɕiɾo o kidzɯkimasɯ"
+      - target: "建築家はいそがしいです。"
+        target_scripts: { kana: "けんちくかはいそがしいです。" }
+        words: ["建築家", "は", "いそがしい", "です"]
+        reading: "kenchikuka wa isogashii desu."
+        ipa: "keɴtɕikɯka wa isoɡaɕiː desɯ"
   - id: "ja-6754"
     target: "興"
     target_scripts: { kana: "きょうみ" }
@@ -266,12 +219,6 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
-    examples:
-      - target: "衛生は大切です。"
-        target_scripts: { kana: "えいせいはたいせつです。" }
-        words: ["衛生", "は", "大切", "です"]
-        reading: "eisei wa taisetsu desu."
-        ipa: "eːseː wa taisetsɯ desɯ"
   - id: "ja-6756"
     target: "輸"
     target_scripts: { kana: "ゆにゅう" }
@@ -319,12 +266,6 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
-    examples:
-      - target: "講堂に行きます。"
-        target_scripts: { kana: "こうどうにいきます。" }
-        words: ["講堂", "に", "行きます"]
-        reading: "koudou ni ikimasu."
-        ipa: "koːdoː ni ikimasɯ"
   - id: "ja-6759"
     target: "謝"
     target_scripts: { kana: "あやまる" }
@@ -341,6 +282,11 @@ cards:
         words: ["先生", "に", "謝ります"]
         reading: "sensei ni ayamarimasu."
         ipa: "seɴseː ni ajamaɾimasɯ"
+      - target: "感謝は大切です。"
+        target_scripts: { kana: "かんしゃはたいせつです。" }
+        words: ["感謝", "は", "大切", "です"]
+        reading: "kansha wa taisetsu desu."
+        ipa: "kaɴɕa wa taisetsɯ desɯ"
   - id: "ja-6760"
     target: "織"
     target_scripts: { kana: "おる" }
@@ -351,12 +297,6 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
-    examples:
-      - target: "母は布を織ります。"
-        target_scripts: { kana: "はははぬのをおります。" }
-        words: ["母", "は", "布", "を", "織ります"]
-        reading: "haha wa nuno o orimasu."
-        ipa: "haha wa nɯno o oɾimasɯ"
   - id: "ja-6761"
     target: "職"
     target_scripts: { kana: "しょくぎょう" }
@@ -373,6 +313,11 @@ cards:
         words: ["職業", "は", "先生", "です"]
         reading: "shokugyou wa sensei desu."
         ipa: "ɕokɯɡjoː wa seɴseː desɯ"
+      - target: "職場に行きます。"
+        target_scripts: { kana: "しょくばにいきます。" }
+        words: ["職場", "に", "行きます"]
+        reading: "shokuba ni ikimasu."
+        ipa: "ɕokɯba ni ikimasɯ"
   - id: "ja-6762"
     target: "額"
     target_scripts: { kana: "ひたい" }
@@ -383,12 +328,6 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
-    examples:
-      - target: "額はいたいです。"
-        target_scripts: { kana: "ひたいはいたいです。" }
-        words: ["額", "は", "いたい", "です"]
-        reading: "hitai wa itai desu."
-        ipa: "çitai wa itai desɯ"
   - id: "ja-6763"
     target: "識"
     target_scripts: { kana: "ちしき" }
@@ -400,11 +339,11 @@ cards:
       - { id: "n1", kind: "usage" }
     bases: "self"
     examples:
-      - target: "知識を持ちます。"
-        target_scripts: { kana: "ちしきをもちます。" }
-        words: ["知識", "を", "持ちます"]
-        reading: "chishiki o mochimasu."
-        ipa: "tɕiɕiki o motɕimasɯ"
+      - target: "常識は大切です。"
+        target_scripts: { kana: "じょうしきはたいせつです。" }
+        words: ["常識", "は", "大切", "です"]
+        reading: "joushiki wa taisetsu desu."
+        ipa: "dʑoːɕiki wa taisetsɯ desɯ"
   - id: "ja-6764"
     target: "護"
     target_scripts: { kana: "ほご" }
@@ -421,3 +360,8 @@ cards:
         words: ["保護", "は", "大切", "です"]
         reading: "hogo wa taisetsu desu."
         ipa: "hoɡo wa taisetsɯ desɯ"
+      - target: "弁護士はゆうめいです。"
+        target_scripts: { kana: "べんごしはゆうめいです。" }
+        words: ["弁護士", "は", "ゆうめい", "です"]
+        reading: "bengoshi wa yuumei desu."
+        ipa: "beɴɡoɕi wa jɯːmeː desɯ"
