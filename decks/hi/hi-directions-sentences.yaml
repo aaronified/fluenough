@@ -84,7 +84,7 @@ cards:
       - { id: "w2", word: "पीछे", reading: "pīchē", kind: "word" }
   - id: "hi-2985"
     target: "हमारे लोग वहाँ बोलते हैं।"
-    target_scripts: { perso_arabic: "ہمारे لوگ وہاں بولتے ہیں۔" }
+    target_scripts: { perso_arabic: "ہمارے لوگ وہاں بولتے ہیں۔" }
     reading: "hamārē lōg vahām̐ bōltē haim̐."
     ipa: "ɦəmaːreː loːɡ ʋəɦãː boːlt̪eː ɦɛ̃ː"
     pos: "phrase"
@@ -113,16 +113,16 @@ cards:
       - { id: "w1", word: "दूर", reading: "dūr", kind: "word" }
       - { id: "f1", word: "हैं", reading: "haim̐", kind: "form" }
   - id: "hi-2987"
-    target: "यहाँ दो गिलास पानी चाहिए।"
-    target_scripts: { perso_arabic: "یہاں دو گلاس پانی چاہیے۔" }
-    reading: "yahām̐ dō gilās pānī cāhiē."
-    ipa: "jəɦãː d̪oː ɡɪlaːs paːniː tʃaːɦɪeː"
+    target: "यहाँ दो गिलास जूस चाहिए।"
+    target_scripts: { perso_arabic: "یہاں دو گلاس جوس چاہیے۔" }
+    reading: "yahām̐ dō gilās jūs cāhiē."
+    ipa: "jəɦãː d̪oː ɡɪlaːs dʒuːs tʃaːɦɪeː"
     pos: "phrase"
     bases:
       - { word: "यहाँ", ref: "hi-0295" }
       - { word: "दो", ref: "hi-0199" }
       - { word: "गिलास", ref: "hi-0878" }
-      - { word: "पानी", ref: "hi-0333" }
+      - { word: "जूस", ref: "hi-0996" }
       - { word: "चाहिए", ref: "hi-0460" }
     confusables:
       - { id: "w1", word: "चाहता", reading: "cāhtā", kind: "word" }
@@ -143,36 +143,35 @@ cards:
       - { id: "w1", word: "कहाँ", reading: "kahām̐", kind: "word" }
       - { id: "f1", word: "बैठती", reading: "baiṭhtī", kind: "form" }
   - id: "hi-2989"
-    target: "वह अभी आगे दौड़ रहा है।"
-    target_scripts: { perso_arabic: "وہ ابھی آگے دوڑ رہا ہے۔" }
-    reading: "vah abhī āgē dauṛ rahā hai."
-    ipa: "ʋəɦ əbʱiː aːɡeː d̪ɔːɽ rəɦaː ɦɛː"
+    target: "वह अभी आगे देखता है।"
+    target_scripts: { perso_arabic: "وہ ابھی آگے دیکھتا ہے۔" }
+    reading: "vah abhī āgē dēkhtā hai."
+    ipa: "ʋəɦ əbʱiː aːɡeː d̪eːkʰt̪aː ɦɛː"
     pos: "phrase"
     bases:
       - { word: "वह", ref: "hi-0749" }
       - { word: "अभी", ref: "hi-0301" }
       - { word: "आगे", ref: "hi-0291" }
-      - { word: "दौड़", base: "दौड़ना", reading: "dauṛnā" }
-      - { word: "रहा", base: "रहना", reading: "rahnā" }
+      - { word: "देखता", base: "देखना", reading: "dēkhnā" }
       - { word: "है", ref: "hi-0112" }
     confusables:
       - { id: "w1", word: "पीछे", reading: "pīchē", kind: "word" }
       - { id: "w2", word: "चलता", reading: "caltā", kind: "word" }
   - id: "hi-2990"
-    target: "पुलिस पीछे से नहीं आती।"
-    target_scripts: { perso_arabic: "پولیس پیچھے سے نہیں آتی۔" }
-    reading: "pulis pīchē sē nahīm̐ ātī."
-    ipa: "pʊlɪs piːtʃʰeː seː nəɦĩː aːt̪iː"
+    target: "ड्राइवर पीछे से नहीं आता।"
+    target_scripts: { perso_arabic: "ڈرائیور پیچھے سے نہیں آتا۔" }
+    reading: "ḍrāivar pīchē sē nahīm̐ ātā."
+    ipa: "ɖraːɪʋər piːtʃʰeː seː nəɦĩː aːt̪aː"
     pos: "phrase"
     bases:
-      - { word: "पुलिस", ref: "hi-0356" }
+      - { word: "ड्राइवर", ref: "hi-0403" }
       - { word: "पीछे", ref: "hi-0292" }
       - { word: "से", ref: "hi-0276" }
       - { word: "नहीं", ref: "hi-0156" }
-      - { word: "आती", base: "आना", reading: "ānā" }
+      - { word: "आता", base: "आना", reading: "ānā" }
     confusables:
       - { id: "w1", word: "आगे", reading: "āgē", kind: "word" }
-      - { id: "f1", word: "जाती", reading: "jātī", kind: "form" }
+      - { id: "f1", word: "जाता", reading: "jātā", kind: "form" }
   - id: "hi-2991"
     target: "छात्र अध्यापक के पास बैठते हैं।"
     target_scripts: { perso_arabic: "چھاتر ادھیاپک کے پاس بیٹھتے ہیں۔" }
@@ -220,15 +219,15 @@ cards:
       - { id: "w1", word: "पैसे", reading: "paisē", kind: "word" }
       - { id: "w2", word: "सस्ता", reading: "sastā", kind: "word" }
   - id: "hi-2994"
-    target: "क्या आप रोज़ सुबह सीधे दफ़्तर जाते हैं?"
-    target_scripts: { perso_arabic: "کیا آپ روز صبح سیدھے دفتر جاتے ہیں؟" }
-    reading: "kyā āp rōz subah sīdhē daftar jātē haim̐?"
-    ipa: "kjaː aːp roːz sʊbəɦ siːd̪ʱeː d̪əft̪ər dʒaːt̪eː ɦɛ̃ː"
+    target: "क्या आप हर सुबह सीधे दफ़्तर जाते हैं?"
+    target_scripts: { perso_arabic: "کیا آپ ہر صبح سیدھے دفتر جاتے ہیں؟" }
+    reading: "kyā āp har subah sīdhē daftar jātē haim̐?"
+    ipa: "kjaː aːp ɦər sʊbəɦ siːd̪ʱeː d̪əft̪ər dʒaːt̪eː ɦɛ̃ː"
     pos: "phrase"
     bases:
       - { word: "क्या", ref: "hi-0157" }
       - { word: "आप", ref: "hi-0134" }
-      - { word: "रोज़", ref: "hi-0451" }
+      - { word: "हर", base: "हर", reading: "har" }
       - { word: "सुबह", ref: "hi-0302" }
       - { word: "सीधे", ref: "hi-0289" }
       - { word: "दफ़्तर", ref: "hi-0400" }
@@ -271,20 +270,19 @@ cards:
       - { id: "w1", word: "सुबह", reading: "subah", kind: "word" }
       - { id: "w2", word: "दूध", reading: "dūdh", kind: "word" }
   - id: "hi-2997"
-    target: "मेरे चाचा हर सुबह घर के पीछे नहाते हैं।"
-    target_scripts: { perso_arabic: "میرے چاچا ہر صبح گھر کے پیچھے نہاتے ہیں۔" }
-    reading: "mērē cācā har subah ghar kē pīchē nahātē haim̐."
-    ipa: "meːreː tʃaːtʃaː ɦər sʊbəɦ ɡʱər keː piːtʃʰeː nəɦaːt̪eː ɦɛ̃ː"
+    target: "मेरे चाचा सुबह घर के पीछे पढ़ते हैं।"
+    target_scripts: { perso_arabic: "میرے چاچا صبح گھر کے پیچھے پڑھتے ہیں۔" }
+    reading: "mērē cācā subah ghar kē pīchē paṛhtē haim̐."
+    ipa: "meːreː tʃaːtʃaː sʊbəɦ ɡʱər keː piːtʃʰeː pəɽʱt̪eː ɦɛ̃ː"
     pos: "phrase"
     bases:
       - { word: "मेरे", base: "मेरा", reading: "mērā" }
       - { word: "चाचा", ref: "hi-0388" }
-      - { word: "हर", base: "हर", reading: "har" }
       - { word: "सुबह", ref: "hi-0302" }
       - { word: "घर", ref: "hi-0192" }
       - { word: "के", base: "का", reading: "kā" }
       - { word: "पीछे", ref: "hi-0292" }
-      - { word: "नहाते", base: "नहाना", reading: "nahānā" }
+      - { word: "पढ़ते", base: "पढ़ना", reading: "paṛhnā" }
       - { word: "हैं", ref: "hi-0113" }
     confusables:
       - { id: "w1", word: "दुकान", reading: "dukān", kind: "word" }
@@ -306,10 +304,10 @@ cards:
       - { id: "w1", word: "बाएँ", reading: "bāēm̐", kind: "word" }
       - { id: "w2", word: "सीधे", reading: "sīdhē", kind: "word" }
   - id: "hi-2999"
-    target: "मेरे दोस्त दूर के शहर में रहते हैं।"
-    target_scripts: { perso_arabic: "میرے دوست دور کے شہر میں رہتے ہیں۔" }
-    reading: "mērē dōst dūr kē śahar mēm̐ rahtē haim̐."
-    ipa: "meːreː d̪oːst̪ d̪uːr keː ʃəɦər mẽː rəɦt̪eː ɦɛ̃ː"
+    target: "मेरे दोस्त दूर के शहर से लौटते हैं।"
+    target_scripts: { perso_arabic: "میرے دوست دور کے شہر سے لوٹتے ہیں۔" }
+    reading: "mērē dōst dūr kē śahar sē lauṭtē haim̐."
+    ipa: "meːreː d̪oːst̪ d̪uːr keː ʃəɦər seː lɔːʈt̪eː ɦɛ̃ː"
     pos: "phrase"
     bases:
       - { word: "मेरे", base: "मेरा", reading: "mērā" }
@@ -317,24 +315,23 @@ cards:
       - { word: "दूर", ref: "hi-0294" }
       - { word: "के", base: "का", reading: "kā" }
       - { word: "शहर", ref: "hi-0195" }
-      - { word: "में", ref: "hi-0274" }
-      - { word: "रहते", base: "रहना", reading: "rahnā" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "लौटते", base: "लौटना", reading: "lauṭnā" }
       - { word: "हैं", ref: "hi-0113" }
     confusables:
       - { id: "w1", word: "पास", reading: "pās", kind: "word" }
       - { id: "w2", word: "देश", reading: "dēś", kind: "word" }
   - id: "hi-3000"
-    target: "मेरी बेटी हमेशा आगे देखती है।"
-    target_scripts: { perso_arabic: "میری بیٹی ہمیشہ آگے دیکھتی ہے۔" }
-    reading: "mērī bēṭī hamēśā āgē dēkhtī hai."
-    ipa: "meːriː beːʈiː ɦəmeːʃaː aːɡeː d̪eːkʰt̪iː ɦɛː"
+    target: "मेरी बेटी आगे खेलती है।"
+    target_scripts: { perso_arabic: "میری بیٹی آگے کھیلتی ہے۔" }
+    reading: "mērī bēṭī āgē khēltī hai."
+    ipa: "meːriː beːʈiː aːɡeː kʰeːlt̪iː ɦɛː"
     pos: "phrase"
     bases:
       - { word: "मेरी", base: "मेरा", reading: "mērā" }
       - { word: "बेटी", ref: "hi-0380" }
-      - { word: "हमेशा", ref: "hi-0453" }
       - { word: "आगे", ref: "hi-0291" }
-      - { word: "देखती", base: "देखना", reading: "dēkhnā" }
+      - { word: "खेलती", base: "खेलना", reading: "khēlnā" }
       - { word: "है", ref: "hi-0112" }
     confusables:
       - { id: "w1", word: "पीछे", reading: "pīchē", kind: "word" }
@@ -387,7 +384,7 @@ cards:
       - { word: "जागता", base: "जागना", reading: "jāgnā" }
     confusables:
       - { id: "w1", word: "धीरे", reading: "dhīrē", kind: "word" }
-      - { id: "w2", word: "सोता", reading: "sōtā", kind: "word" }
+      - { id: "w2", word: "भूलता", reading: "bhūltā", kind: "word" }
   - id: "hi-3004"
     target: "कौन दुकान के पीछे रहता है?"
     target_scripts: { perso_arabic: "کون دکان کے پیچھے رہتا ہے؟" }
