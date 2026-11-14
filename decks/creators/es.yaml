@@ -27,6 +27,10 @@ eras:
     name: { es: "Siglo XX", en: "Twentieth century" }
     from: 1900
     to: 2000
+  - id: "siglo-xxi"
+    name: { es: "Siglo XXI", en: "Twenty-first century" }
+    from: 2000
+    to: null
 creators:
   - id: "es-jorge-manrique"
     name:
@@ -198,15 +202,23 @@ creators:
     era: "siglo-xx"
     bio:
       en: "Gabriel García Márquez was a Colombian novelist, short-story writer and journalist. He won the Nobel Prize in Literature in 1982. He was born in 1927 and died in 2014 in Mexico City."
+    legacy:
+      text: { en: "He won the Nobel Prize in Literature in 1982, and his novel Cien años de soledad is one of the most read books in Spanish." }
+      items:
+        - { kind: "other", text: { en: "The Spanish Wikipedia article says Cien años de soledad is one of the most translated and read works in Spanish." }, source: { url: "https://es.wikipedia.org/wiki/Cien_a%C3%B1os_de_soledad", accessed: "2026-11-14" } }
   - id: "es-carlos-ruiz-zafon"
     name:
       es: { text: "Carlos Ruiz Zafón" }
       en: { text: "Carlos Ruiz Zafón" }
     born: 1964
     died: 2020
-    era: "siglo-xx"
+    era: "siglo-xxi"
     bio:
       en: "Carlos Ruiz Zafón was a Spanish novelist. He was born in Barcelona in 1964 and died in Los Angeles in 2020."
+    legacy:
+      text: { en: "His novel La sombra del viento became a worldwide bestseller." }
+      items:
+        - { kind: "other", text: { en: "The Spanish Wikipedia article says La sombra del viento has sold more than 25 million copies." }, source: { url: "https://es.wikipedia.org/wiki/Carlos_Ruiz_Zaf%C3%B3n", accessed: "2026-11-14" } }
   - id: "es-isabel-allende"
     name:
       es: { text: "Isabel Allende" }
@@ -216,6 +228,10 @@ creators:
     era: "siglo-xx"
     bio:
       en: "Isabel Allende is a Chilean-American writer of novels that sometimes use magical realism. She was born in 1942. She is still living."
+    legacy:
+      text: { en: "Her first novel, The House of the Spirits, was commercially successful." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article says The House of the Spirits (1982) was one of her commercially successful novels." }, source: { url: "https://en.wikipedia.org/wiki/Isabel_Allende", accessed: "2026-11-14" } }
   - id: "es-julio-cortazar"
     name:
       es: { text: "Julio Cortázar" }
@@ -225,6 +241,10 @@ creators:
     era: "siglo-xx"
     bio:
       en: "Julio Cortázar was an Argentine novelist, short-story writer and translator, and one of the founders of the Latin American Boom. He was born in 1914 and died in 1984 in Paris."
+    legacy:
+      text: { en: "His novel Rayuela is one of the central works of the Latin American Boom." }
+      items:
+        - { kind: "other", text: { en: "The Spanish Wikipedia article on Rayuela calls it one of the central works of the Latin American boom." }, source: { url: "https://es.wikipedia.org/wiki/Rayuela_(novela)", accessed: "2026-11-14" } }
   - id: "es-quino"
     name:
       es: { text: "Quino" }
@@ -234,6 +254,10 @@ creators:
     era: "siglo-xx"
     bio:
       en: "Quino, whose real name was Joaquín Salvador Lavado, was an Argentine cartoonist. He created the comic strip Mafalda. He was born in 1932 and died in 2020."
+    legacy:
+      text: { en: "His comic strip Mafalda is known in many countries." }
+      items:
+        - { kind: "other", text: { en: "The Spanish Wikipedia article says Mafalda has been translated into more than thirty languages." }, source: { url: "https://es.wikipedia.org/wiki/Mafalda", accessed: "2026-11-14" } }
   - id: "es-rene-rios-boettiger"
     name:
       es: { text: "René Ríos Boettiger" }
@@ -243,6 +267,10 @@ creators:
     era: "siglo-xx"
     bio:
       en: "René Ríos Boettiger, known as Pepo, was a Chilean cartoonist. He created the comic Condorito. He was born in 1911 and died in 2000."
+    legacy:
+      text: { en: "His comic Condorito is one of the most popular comic series in Latin America." }
+      items:
+        - { kind: "other", text: { en: "The Spanish Wikipedia article says that by 2012 Condorito appeared in 105 newspapers in 19 countries." }, source: { url: "https://es.wikipedia.org/wiki/Condorito", accessed: "2026-11-14" } }
   - id: "es-violeta-parra"
     name:
       es: { text: "Violeta Parra" }
@@ -252,15 +280,23 @@ creators:
     era: "siglo-xx"
     bio:
       en: "Violeta Parra was a Chilean singer-songwriter, folklorist and artist, and a pioneer of the Nueva Canción Chilena movement. She was born in 1917 and died in 1967."
+    legacy:
+      text: { en: "Her song Gracias a la vida became known around the world." }
+      items:
+        - { kind: "music", text: { en: "The Spanish Wikipedia article says Mercedes Sosa's 1971 version spread the song internationally." }, source: { url: "https://es.wikipedia.org/wiki/Gracias_a_la_vida", accessed: "2026-11-14" } }
   - id: "es-daniel-alarcon"
     name:
       es: { text: "Daniel Alarcón" }
       en: { text: "Daniel Alarcón" }
     born: 1977
     living: true
-    era: "siglo-xx"
+    era: "siglo-xxi"
     bio:
       en: "Daniel Alarcón is a Peruvian-American writer, journalist and radio host, who presents the podcast Radio Ambulante. He was born in Lima in 1977. He is still living."
+    legacy:
+      text: { en: "He presents Radio Ambulante, a podcast of audio stories from Latin America." }
+      items:
+        - { kind: "other", text: { en: "The Spanish Wikipedia article says Radio Ambulante has been distributed weekly by National Public Radio since 2016." }, source: { url: "https://es.wikipedia.org/wiki/Radio_Ambulante", accessed: "2026-11-14" } }
   - id: "es-juan-rulfo"
     name:
       es: { text: "Juan Rulfo" }
@@ -270,6 +306,10 @@ creators:
     era: "siglo-xx"
     bio:
       en: "Juan Rulfo was a Mexican writer and screenwriter, known for the short stories of El Llano en llamas and the novel Pedro Páramo. He was born in 1917 and died in 1986."
+    legacy:
+      text: { en: "His novel Pedro Páramo is one of the peaks of literature in Spanish." }
+      items:
+        - { kind: "other", text: { en: "The Spanish Wikipedia article on Pedro Páramo calls it one of the peaks of literature in the Castilian language." }, source: { url: "https://es.wikipedia.org/wiki/Pedro_P%C3%A1ramo", accessed: "2026-11-14" } }
   - id: "es-mario-vargas-llosa"
     name:
       es: { text: "Mario Vargas Llosa" }
@@ -279,3 +319,7 @@ creators:
     era: "siglo-xx"
     bio:
       en: "Mario Vargas Llosa was a Peruvian novelist, journalist, essayist and politician. He was born in 1936 and died in 2025."
+    legacy:
+      text: { en: "His first novel won a major Spanish literary prize." }
+      items:
+        - { kind: "other", text: { en: "The Spanish Wikipedia article says La ciudad y los perros won the Premio Biblioteca Breve unanimously in 1962." }, source: { url: "https://es.wikipedia.org/wiki/La_ciudad_y_los_perros_(novela)", accessed: "2026-11-14" } }
