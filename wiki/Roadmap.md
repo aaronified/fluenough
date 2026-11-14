@@ -358,6 +358,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1244](https://github.com/aaronified/fluenough/issues/1244) Spanish: more clean sentences so Find my level can ask sentence picks again
 - [#1245](https://github.com/aaronified/fluenough/issues/1245) Hindustani: more clean sentences so Find my level can ask sentence picks
 - [#1269](https://github.com/aaronified/fluenough/issues/1269) Situations: more icon keys, so a language can have more than six situations
+- [#1270](https://github.com/aaronified/fluenough/issues/1270) Placement admission: stored verdict is keyed to one deck snapshot, so live decks have none
 
 ## Plans
 
