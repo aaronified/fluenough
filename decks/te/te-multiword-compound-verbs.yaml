@@ -1,0 +1,78 @@
+# Telugu compound verbs: a verbal participle (-ఇ) and an auxiliary that adds completion, departure or preparation.
+schema: 1
+id: "te-multiword-compound-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+genre: "multiword"
+pattern_family: "aspectual-compound"
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - id: "te-9150"
+    target: "వెళ్ళి పోవడం"
+    words: ["వెళ్ళి", "పోవడం"]
+    reading: "veḷḷi pōvaḍaṁ"
+    ipa: "ʋeɭɭi poːʋaɖam"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "వెళ్ళి", ref: "te-0622" }
+      - { word: "పోవడం", base: "పోవడం", reading: "pōvaḍaṁ" }
+  - id: "te-9151"
+    target: "పడి పోవడం"
+    words: ["పడి", "పోవడం"]
+    reading: "paḍi pōvaḍaṁ"
+    ipa: "paɖi poːʋaɖam"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "పడి", ref: "te-0839" }
+      - { word: "పోవడం", base: "పోవడం", reading: "pōvaḍaṁ" }
+  - id: "te-9152"
+    target: "ఎగిరి పోవడం"
+    words: ["ఎగిరి", "పోవడం"]
+    reading: "egiri pōvaḍaṁ"
+    ipa: "eɡiri poːʋaɖam"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ఎగిరి", ref: "te-0845" }
+      - { word: "పోవడం", base: "పోవడం", reading: "pōvaḍaṁ" }
+  - id: "te-9153"
+    target: "అయి పోవడం"
+    words: ["అయి", "పోవడం"]
+    reading: "ayi pōvaḍaṁ"
+    ipa: "aji poːʋaɖam"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "అయి", base: "అవడం", reading: "avaḍaṁ" }
+      - { word: "పోవడం", base: "పోవడం", reading: "pōvaḍaṁ" }
+  - id: "te-9154"
+    target: "తెచ్చి పెట్టడం"
+    words: ["తెచ్చి", "పెట్టడం"]
+    reading: "tecci peṭṭaḍaṁ"
+    ipa: "t̪etʃtʃi peʈʈaɖam"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "తెచ్చి", ref: "te-0632" }
+      - { word: "పెట్టడం", ref: "te-0830" }

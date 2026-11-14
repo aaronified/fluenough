@@ -1,0 +1,40 @@
+schema: 1
+id: "te-en-multiword-compound-verbs"
+kind: "layer"
+core: "te-multiword-compound-verbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Multi-word verbs: compound verbs"
+description: "Five verb phrases of a verbal participle and an auxiliary: go away, fall down, fly away, be finished, and fetch and keep ready. Only five are attested: the other auxiliaries (to put, to give, to try, to come, to stay) have no compound found on te.wiktionary or in the course grammar deck. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "te-9150":
+    native: "to go away; to leave"
+    notes:
+      "u1": "వెళ్ళి (veḷḷi) పోవడం (pōvaḍaṁ) means to go away and leave a place. The course's te-grammar-compound-verbs deck has వెళ్ళిపోయాడు (veḷḷipōyāḍu), he went away."
+    bases:
+      "పోవడం": { meaning: "to go; to go away" }
+  "te-9151":
+    native: "to fall down; to collapse"
+    notes:
+      "u1": "పడి (paḍi) పోవడం (pōvaḍaṁ) means to fall down, as a person does when they fall to the ground. The course's te-grammar-compound-verbs deck has పడిపోయాడు (paḍipōyāḍu), he fell down."
+    bases:
+      "పోవడం": { meaning: "to go; to go away" }
+  "te-9152":
+    native: "to fly away"
+    notes:
+      "u1": "ఎగిరి (egiri) పోవడం (pōvaḍaṁ) means to fly off and away, as a bird does. The verb ఎగరడం (egaraḍaṁ) alone means to fly or to jump up."
+    bases:
+      "పోవడం": { meaning: "to go; to go away" }
+  "te-9153":
+    native: "to be finished; to run out"
+    notes:
+      "u1": "అయి (ayi) పోవడం (pōvaḍaṁ) is said of something that runs out or comes to an end, such as stock or fuel. The verb అవడం (avaḍaṁ) means to become."
+    bases:
+      "అయి": { meaning: "participle of అవడం (avaḍaṁ), to become" }
+      "పోవడం": { meaning: "to go; to go away" }
+  "te-9154":
+    native: "to fetch and keep ready (for someone)"
+    notes:
+      "u1": "తెచ్చి (tecci) పెట్టడం (peṭṭaḍaṁ) means to fetch something and put it aside or keep it ready, often for another person. The course's te-grammar-compound-verbs deck has తెచ్చిపెట్టండి (teccipeṭṭaṇḍi), please fetch it."
