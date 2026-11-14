@@ -1,0 +1,233 @@
+# Spanish verb periphrases: an auxiliary part and a verb, each with its own meaning
+# (ir a, acabar de, tener que, estar and a gerund, and the rest of the pattern families).
+schema: 1
+id: "es-multiword-periphrases"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+genre: "multiword"
+pattern_family: "verbal-periphrasis"
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - id: "es-4350"
+    target: "ir a comprar"
+    ipa: "iɾ a komˈpɾaɾ"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ir", ref: "es-0026" }
+      - { word: "comprar", ref: "es-0280" }
+  - id: "es-4351"
+    target: "acabar de terminar"
+    ipa: "akaˈbaɾ de teɾmiˈnaɾ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "acabar", ref: "es-3084" }
+      - { word: "terminar", ref: "es-0521" }
+  - id: "es-4352"
+    target: "tener que estudiar"
+    ipa: "teˈneɾ ke estuˈdjaɾ"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "tener", ref: "es-0024" }
+      - { word: "estudiar", ref: "es-0258" }
+  - id: "es-4353"
+    target: "hay que leer"
+    ipa: "aj ke leˈeɾ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "hay", base: "haber" }
+      - { word: "leer", ref: "es-0296" }
+  - id: "es-4354"
+    target: "deber de llegar"
+    ipa: "deˈbeɾ de ʝeˈɡaɾ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "deber", base: "deber" }
+      - { word: "llegar", ref: "es-0290" }
+  - id: "es-4355"
+    target: "estar comprando"
+    ipa: "esˈtaɾ komˈpɾando"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "estar", ref: "es-0023" }
+      - { word: "comprando", ref: "es-0280" }
+  - id: "es-4356"
+    target: "seguir escribiendo"
+    ipa: "seˈɡiɾ eskɾiˈbjendo"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "seguir", ref: "es-0722" }
+      - { word: "escribiendo", ref: "es-0297" }
+  - id: "es-4357"
+    target: "llevar estudiando"
+    ipa: "ʝeˈbaɾ estuˈdjando"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "llevar", ref: "es-0623" }
+      - { word: "estudiando", ref: "es-0258" }
+  - id: "es-4358"
+    target: "volver a leer"
+    ipa: "bolˈbeɾ a leˈeɾ"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "volver", ref: "es-0929" }
+      - { word: "leer", ref: "es-0296" }
+  - id: "es-4359"
+    target: "ponerse a llorar"
+    ipa: "poˈneɾse a ʝoˈɾaɾ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ponerse", ref: "es-1039" }
+      - { word: "llorar", ref: "es-2029" }
+  - id: "es-4360"
+    target: "empezar a bailar"
+    ipa: "empeˈθaɾ a bajˈlaɾ"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "empezar", ref: "es-0852" }
+      - { word: "bailar", ref: "es-0294" }
+  - id: "es-4361"
+    target: "echar a correr"
+    ipa: "eˈtʃaɾ a koˈreɾ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "echar", base: "echar" }
+      - { word: "correr", ref: "es-1068" }
+  - id: "es-4362"
+    target: "dejar de trabajar"
+    ipa: "deˈxaɾ de tɾabaˈxaɾ"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "dejar", ref: "es-1190" }
+      - { word: "trabajar", ref: "es-0259" }
+  - id: "es-4363"
+    target: "soler cenar"
+    ipa: "soˈleɾ θeˈnaɾ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "soler", base: "soler" }
+      - { word: "cenar", ref: "es-0283" }
+  - id: "es-4364"
+    target: "estar a punto de salir"
+    ipa: "esˈtaɾ a ˈpunto de saˈliɾ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "estar", ref: "es-0023" }
+      - { word: "salir", ref: "es-0690" }
+  - id: "es-4365"
+    target: "tardar en responder"
+    ipa: "taɾˈdaɾ en responˈdeɾ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "tardar", ref: "es-1286" }
+      - { word: "responder", ref: "es-1377" }
+  - id: "es-4366"
+    target: "andar buscando"
+    ipa: "anˈdaɾ busˈkando"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "andar", ref: "es-1614" }
+      - { word: "buscando", ref: "es-0289" }
+  - id: "es-4367"
+    target: "venir pensando"
+    ipa: "beˈniɾ penˈsando"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "venir", ref: "es-1632" }
+      - { word: "pensando", ref: "es-1617" }
+  - id: "es-4368"
+    target: "quedar en llamar"
+    ipa: "keˈdaɾ en ʝaˈmaɾ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "quedar", ref: "es-1041" }
+      - { word: "llamar", ref: "es-0302" }
+  - id: "es-4369"
+    target: "poder venir"
+    ipa: "poˈdeɾ beˈniɾ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "poder", ref: "es-1633" }
+      - { word: "venir", ref: "es-1632" }
