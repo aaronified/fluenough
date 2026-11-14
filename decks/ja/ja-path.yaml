@@ -118,6 +118,7 @@ alphabet:
   - "ja-kanji-23"
   - "ja-kanji-24"
   - "ja-kanji-25"
+  - "ja-kanji-27"
   - "ja-katakana"
   - "ja-katakana-combos"
   - "ja-hiragana-marks"
@@ -735,11 +736,8 @@ units:
       - { id: "i-lost-my-wallet", text: { "en": "Saying what went wrong, what you tried and what you got ready" } }
     reading_passages:
       - { id: "trip-checklist", text: { "en": "A checklist of things to do before a trip" } }
-  - planned: { id: "ja-kanji-27", grammar: "script-kanji-27", words: 0 }
-    listening_passages:
-      - { id: "kanji-27-heard", text: { "en": "Hearing words whose kanji unit 27 teaches" } }
-    reading_passages:
-      - { id: "kanji-27-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 27" } }
+  - decks: ["ja-kanji-27"]
+    words: 0
   - decks: ["ja-services", "ja-services-sentences", "ja-reading-services", "*"]
     words: 45
     listening_passages:
