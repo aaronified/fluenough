@@ -33,11 +33,11 @@ cards:
       - { id: "n1", kind: "usage" }
     bases: "self"
     examples:
-      - target: "昨日はあついです。"
-        target_scripts: { kana: "きのうはあついです。" }
-        words: ["昨日", "は", "あつい", "です"]
-        reading: "kinou wa atsui desu."
-        ipa: "kinoː wa atsɯi desɯ"
+      - target: "昨日はやすみました。"
+        target_scripts: { kana: "きのうはやすみました。" }
+        words: ["昨日", "は", "やすみました"]
+        reading: "kinou wa yasumimashita."
+        ipa: "kinoː wa jasɯmimaɕita"
   - id: "ja-6142"
     target: "栃"
     target_scripts: { kana: "とちぎ" }
@@ -110,11 +110,11 @@ cards:
         words: ["予約", "は", "むずかしい", "です"]
         reading: "yoyaku wa muzukashii desu."
         ipa: "jojakɯ wa mɯdzɯkaɕiː desɯ"
-      - target: "約束はいいです。"
-        target_scripts: { kana: "やくそくはいいです。" }
-        words: ["約束", "は", "いい", "です"]
-        reading: "yakusoku wa ii desu."
-        ipa: "jakɯsokɯ wa iː desɯ"
+      - target: "約束はたいへんです。"
+        target_scripts: { kana: "やくそくはたいへんです。" }
+        words: ["約束", "は", "たいへん", "です"]
+        reading: "yakusoku wa taihen desu."
+        ipa: "jakɯsokɯ wa taiheɴ desɯ"
   - id: "ja-6148"
     target: "茨"
     target_scripts: { kana: "いばらき" }
@@ -155,6 +155,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "飛行場はひろいです。"
+        target_scripts: { kana: "ひこうじょうはひろいです。" }
+        words: ["飛行場", "は", "ひろい", "です"]
+        reading: "hikoujou wa hiroi desu."
+        ipa: "çikoːdʑoː wa çiɾoi desɯ"
   - id: "ja-6152"
     target: "香"
     target_scripts: { kana: "かおり" }
@@ -207,6 +213,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "ほんを借ります。"
+        target_scripts: { kana: "ほんをかります。" }
+        words: ["ほん", "を", "借ります"]
+        reading: "hon o karimasu."
+        ipa: "hoɴ o kaɾimasɯ"
   - id: "ja-6156"
     target: "孫"
     target_scripts: { kana: "まご" }
@@ -351,7 +363,7 @@ cards:
         target_scripts: { kana: "ざんぎょうはたいへんです。" }
         words: ["残業", "は", "たいへん", "です"]
         reading: "zangyou wa taihen desu."
-        ipa: "dzaɴgjoː wa taiheɴ desɯ"
+        ipa: "dzaɴɡjoː wa taiheɴ desɯ"
       - target: "ここに残ります。"
         target_scripts: { kana: "ここにのこります。" }
         words: ["ここ", "に", "残ります"]
