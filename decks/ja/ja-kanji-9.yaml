@@ -126,6 +126,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "わたしはにほんごが一番すきです。"
+        target_scripts: { kana: "わたしはにほんごがいちばんすきです。" }
+        words: ["わたし", "は", "にほんご", "が", "一番", "すき", "です"]
+        reading: "watashi wa nihongo ga ichiban suki desu."
+        ipa: "wataɕi wa nihoɴɡo ɡa itɕibaɴ sɯki desɯ"
   - id: "ja-5427"
     target: "父"
     target_scripts: { kana: "ちち" }
@@ -157,6 +163,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "台風ははげしいです。"
+        target_scripts: { kana: "たいふうははげしいです。" }
+        words: ["台風", "は", "はげしい", "です"]
+        reading: "taifuu wa hageshii desu."
+        ipa: "taiɸɯː wa haɡeɕiː desɯ"
   - id: "ja-5429"
     target: "分"
     target_scripts: { kana: "わかる" }
@@ -362,6 +374,11 @@ cards:
         words: ["十万", "は", "たかい", "です"]
         reading: "juuman wa takai desu."
         ipa: "dʑɯːmaɴ wa takai desɯ"
+      - target: "百万えんはたかいです。"
+        target_scripts: { kana: "ひゃくまんえんはたかいです。" }
+        words: ["百万", "えん", "は", "たかい", "です"]
+        reading: "hyakuman en wa takai desu."
+        ipa: "çakɯmaɴ eɴ wa takai desɯ"
   - id: "ja-5439"
     target: "明"
     target_scripts: { kana: "あかるい" }
