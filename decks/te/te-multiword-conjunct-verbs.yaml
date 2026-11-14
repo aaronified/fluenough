@@ -1,0 +1,273 @@
+# Telugu conjunct verbs: a noun and a light verb (do, become, fall, hit, give) that make one verb phrase.
+schema: 1
+id: "te-multiword-conjunct-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+genre: "multiword"
+pattern_family: "conjunct-verb"
+level: "A1"
+tags: ["unreviewed"]
+cards:
+  - id: "te-9100"
+    target: "భోజనం చేయడం"
+    words: ["భోజనం", "చేయడం"]
+    reading: "bhōjanaṁ cēyaḍaṁ"
+    ipa: "bʱoːdʒanam tʃeːjaɖam"
+    pos: "phrase"
+    level: "A1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "భోజనం", ref: "te-0340" }
+      - { word: "చేయడం", ref: "te-0621" }
+  - id: "te-9101"
+    target: "ఉద్యోగం చేయడం"
+    words: ["ఉద్యోగం", "చేయడం"]
+    reading: "udyōgaṁ cēyaḍaṁ"
+    ipa: "ud̪joːɡam tʃeːjaɖam"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ఉద్యోగం", ref: "te-0400" }
+      - { word: "చేయడం", ref: "te-0621" }
+  - id: "te-9102"
+    target: "వ్యాపారం చేయడం"
+    words: ["వ్యాపారం", "చేయడం"]
+    reading: "vyāpāraṁ cēyaḍaṁ"
+    ipa: "ʋjaːpaːram tʃeːjaɖam"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "వ్యాపారం", ref: "te-0415" }
+      - { word: "చేయడం", ref: "te-0621" }
+  - id: "te-9103"
+    target: "యోగా చేయడం"
+    words: ["యోగా", "చేయడం"]
+    reading: "yōgā cēyaḍaṁ"
+    ipa: "joːɡaː tʃeːjaɖam"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "యోగా", ref: "te-3219" }
+      - { word: "చేయడం", ref: "te-0621" }
+  - id: "te-9104"
+    target: "పూజ చేయడం"
+    words: ["పూజ", "చేయడం"]
+    reading: "pūja cēyaḍaṁ"
+    ipa: "puːdʒa tʃeːjaɖam"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "పూజ", ref: "te-1308" }
+      - { word: "చేయడం", ref: "te-0621" }
+  - id: "te-9105"
+    target: "ఫిర్యాదు చేయడం"
+    words: ["ఫిర్యాదు", "చేయడం"]
+    reading: "phiryādu cēyaḍaṁ"
+    ipa: "pʰirjaːd̪u tʃeːjaɖam"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ఫిర్యాదు", ref: "te-4025" }
+      - { word: "చేయడం", ref: "te-0621" }
+  - id: "te-9106"
+    target: "ఉపవాసం చేయడం"
+    words: ["ఉపవాసం", "చేయడం"]
+    reading: "upavāsaṁ cēyaḍaṁ"
+    ipa: "upaʋaːsam tʃeːjaɖam"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ఉపవాసం", ref: "te-3228" }
+      - { word: "చేయడం", ref: "te-0621" }
+  - id: "te-9107"
+    target: "ఆలస్యం అవడం"
+    words: ["ఆలస్యం", "అవడం"]
+    reading: "ālasyaṁ avaḍaṁ"
+    ipa: "aːlasjam aʋaɖam"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ఆలస్యం", ref: "te-2926" }
+      - { word: "అవడం", base: "అవడం", reading: "avaḍaṁ" }
+  - id: "te-9108"
+    target: "ఖర్చు అవడం"
+    words: ["ఖర్చు", "అవడం"]
+    reading: "kharcu avaḍaṁ"
+    ipa: "kʰartʃu aʋaɖam"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ఖర్చు", ref: "te-3916" }
+      - { word: "అవడం", base: "అవడం", reading: "avaḍaṁ" }
+  - id: "te-9109"
+    target: "పని అవడం"
+    words: ["పని", "అవడం"]
+    reading: "pani avaḍaṁ"
+    ipa: "pani aʋaɖam"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "పని", ref: "te-0197" }
+      - { word: "అవడం", base: "అవడం", reading: "avaḍaṁ" }
+  - id: "te-9110"
+    target: "ఇబ్బంది పడడం"
+    words: ["ఇబ్బంది", "పడడం"]
+    reading: "ibbandi paḍaḍaṁ"
+    ipa: "ibband̪i paɖaɖam"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ఇబ్బంది", ref: "te-3325" }
+      - { word: "పడడం", base: "పడడం", reading: "paḍaḍaṁ" }
+  - id: "te-9111"
+    target: "బాధ పడడం"
+    words: ["బాధ", "పడడం"]
+    reading: "bādha paḍaḍaṁ"
+    ipa: "baːd̪ʱa paɖaɖam"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "బాధ", ref: "te-0971" }
+      - { word: "పడడం", base: "పడడం", reading: "paḍaḍaṁ" }
+  - id: "te-9112"
+    target: "శ్రమ పడడం"
+    words: ["శ్రమ", "పడడం"]
+    reading: "śrama paḍaḍaṁ"
+    ipa: "ʃrama paɖaɖam"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "శ్రమ", base: "శ్రమ", reading: "śrama" }
+      - { word: "పడడం", base: "పడడం", reading: "paḍaḍaṁ" }
+  - id: "te-9113"
+    target: "ఈత కొట్టడం"
+    words: ["ఈత", "కొట్టడం"]
+    reading: "īta koṭṭaḍaṁ"
+    ipa: "iːt̪a koʈʈaɖam"
+    pos: "phrase"
+    level: "A1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ఈత", ref: "te-1922" }
+      - { word: "కొట్టడం", base: "కొట్టడం", reading: "koṭṭaḍaṁ" }
+  - id: "te-9114"
+    target: "చప్పట్లు కొట్టడం"
+    words: ["చప్పట్లు", "కొట్టడం"]
+    reading: "cappaṭlu koṭṭaḍaṁ"
+    ipa: "tʃappaʈlu koʈʈaɖam"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "చప్పట్లు", base: "చప్పట్లు", reading: "cappaṭlu" }
+      - { word: "కొట్టడం", ref: "te-0838" }
+  - id: "te-9115"
+    target: "సలహా ఇవ్వడం"
+    words: ["సలహా", "ఇవ్వడం"]
+    reading: "salahā ivvaḍaṁ"
+    ipa: "salahaː iʋʋaɖam"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "సలహా", ref: "te-3611" }
+      - { word: "ఇవ్వడం", ref: "te-0630" }
+  - id: "te-9116"
+    target: "అనుమతి ఇవ్వడం"
+    words: ["అనుమతి", "ఇవ్వడం"]
+    reading: "anumati ivvaḍaṁ"
+    ipa: "anumat̪i iʋʋaɖam"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "అనుమతి", ref: "te-2914" }
+      - { word: "ఇవ్వడం", ref: "te-0630" }
+  - id: "te-9117"
+    target: "గడువు ఇవ్వడం"
+    words: ["గడువు", "ఇవ్వడం"]
+    reading: "gaḍuvu ivvaḍaṁ"
+    ipa: "ɡaɖuʋu iʋʋaɖam"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "గడువు", ref: "te-2912" }
+      - { word: "ఇవ్వడం", ref: "te-0630" }
+  - id: "te-9118"
+    target: "బహుమతి ఇవ్వడం"
+    words: ["బహుమతి", "ఇవ్వడం"]
+    reading: "bahumati ivvaḍaṁ"
+    ipa: "bahumat̪i iʋʋaɖam"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "బహుమతి", ref: "te-1338" }
+      - { word: "ఇవ్వడం", ref: "te-0630" }
+  - id: "te-9119"
+    target: "నోటీసు ఇవ్వడం"
+    words: ["నోటీసు", "ఇవ్వడం"]
+    reading: "nōṭīsu ivvaḍaṁ"
+    ipa: "noːʈiːsu iʋʋaɖam"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "నోటీసు", ref: "te-2910" }
+      - { word: "ఇవ్వడం", ref: "te-0630" }
