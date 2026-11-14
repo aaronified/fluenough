@@ -1,0 +1,113 @@
+schema: 1
+id: "te-directions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-7086"
+    target: "ఆఫీసుకి దారి ఎక్కడ?"
+    reading: "āphīsuki dāri ekkaḍa?"
+    ipa: "aːpʰiːsuki d̪aːri ekkaɖa"
+    pos: "phrase"
+    rules: ["te-rule-ki"]
+    bases:
+      - { word: "ఆఫీసుకి", ref: "te-0401" }
+      - { word: "దారి", ref: "te-0304" }
+      - { word: "ఎక్కడ", ref: "te-0162" }
+    confusables:
+      - { id: "c1", ref: "te-0163", kind: "word" }
+      - { id: "c2", ref: "te-0161", kind: "word" }
+  - id: "te-7087"
+    target: "ఆ రోడ్డులో నేరుగా వెళ్ళండి."
+    reading: "ā rōḍḍulō nērugā veḷḷaṇḍi."
+    ipa: "aː roːɖɖuloː neːruɡaː ʋeɭɭaɳɖi"
+    pos: "phrase"
+    rules: ["te-rule-polite-request"]
+    bases:
+      - { word: "ఆ", ref: "te-0608" }
+      - { word: "రోడ్డులో", ref: "te-0305" }
+      - { word: "నేరుగా", ref: "te-0296" }
+      - { word: "వెళ్ళండి", ref: "te-0622" }
+    confusables:
+      - { id: "c1", ref: "te-0304", kind: "word" }
+      - { id: "c2", ref: "te-0623", kind: "word" }
+  - id: "te-7088"
+    target: "కుడి వైపు తిరగండి."
+    reading: "kuḍi vaipu tiragaṇḍi."
+    ipa: "kuɖi ʋaipu t̪iraɡaɳɖi"
+    pos: "phrase"
+    rules: ["te-rule-polite-request"]
+    bases:
+      - { word: "కుడి", ref: "te-0294" }
+      - { word: "వైపు", ref: "te-0807" }
+      - { word: "తిరగండి", ref: "te-0841" }
+    confusables:
+      - { id: "c1", ref: "te-0295", kind: "word" }
+      - { id: "c2", ref: "te-0298", kind: "word" }
+  - id: "te-7089"
+    target: "దారి ఎడమ వైపు."
+    reading: "dāri eḍama vaipu."
+    ipa: "d̪aːri eɖama ʋaipu"
+    pos: "phrase"
+    bases:
+      - { word: "దారి", ref: "te-0304" }
+      - { word: "ఎడమ", ref: "te-0295" }
+      - { word: "వైపు", ref: "te-0807" }
+    confusables:
+      - { id: "c1", ref: "te-0294", kind: "word" }
+      - { id: "c2", ref: "te-0299", kind: "word" }
+  - id: "te-7090"
+    target: "నేను ఇక్కడ ఆగుతాను."
+    reading: "nēnu ikkaḍa āgutānu."
+    ipa: "neːnu ikkaɖa aːɡut̪aːnu"
+    pos: "phrase"
+    rules: ["te-rule-present-first"]
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "ఇక్కడ", ref: "te-0302" }
+      - { word: "ఆగుతాను", ref: "te-0648" }
+    confusables:
+      - { id: "c1", ref: "te-0303", kind: "word" }
+      - { id: "c2", ref: "te-0300", kind: "word" }
+  - id: "te-7091"
+    target: "ఇక్కడ రోడ్డు ఉందా?"
+    reading: "ikkaḍa rōḍḍu undā?"
+    ipa: "ikkaɖa roːɖɖu und̪aː"
+    pos: "phrase"
+    bases:
+      - { word: "ఇక్కడ", ref: "te-0302" }
+      - { word: "రోడ్డు", ref: "te-0305" }
+      - { word: "ఉందా", ref: "te-0633" }
+    confusables:
+      - { id: "c1", ref: "te-0303", kind: "word" }
+      - { id: "c2", ref: "te-0304", kind: "word" }
+  - id: "te-7092"
+    target: "అమ్మ అక్కడ నిలబడుతుంది."
+    reading: "amma akkaḍa nilabaḍutundi."
+    ipa: "amma akkaɖa nilabaɖut̪und̪i"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "అమ్మ", ref: "te-0059" }
+      - { word: "అక్కడ", ref: "te-0303" }
+      - { word: "నిలబడుతుంది", ref: "te-0635" }
+    confusables:
+      - { id: "c1", ref: "te-0302", kind: "word" }
+      - { id: "c2", ref: "te-0648", kind: "word" }
+  - id: "te-7093"
+    target: "అది ఇంటి వెనక ఉంది."
+    reading: "adi iṇṭi venaka undi."
+    ipa: "ad̪i iɳʈi ʋenaka und̪i"
+    pos: "phrase"
+    bases:
+      - { word: "అది", ref: "te-0599" }
+      - { word: "ఇంటి", ref: "te-0195" }
+      - { word: "వెనక", ref: "te-0299" }
+      - { word: "ఉంది", ref: "te-0633" }
+    confusables:
+      - { id: "c1", ref: "te-0298", kind: "word" }
+      - { id: "c2", ref: "te-0300", kind: "word" }
