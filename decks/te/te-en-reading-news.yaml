@@ -1,0 +1,59 @@
+"schema": 1
+"id": "te-en-reading-news"
+"name": "Reading: newspaper headlines"
+"kind": "reading"
+"language":
+  "code": "te"
+  "iso639_3": "tel"
+  "name": "Telugu"
+  "script": "telugu"
+  "tts": "te-IN"
+  "icon": "తె"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"description": "Four short newspaper headlines about the prime minister, officials, a new story and a region that needs peace, using the news words taught in this unit. Not yet checked by a Telugu speaker: please report any mistake."
+"tags":
+- "reading"
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "te-headline-list"
+  "title": "Headlines"
+  "sentences":
+      - "text": "ప్రధానమంత్రి ఈరోజు ఢిల్లీకి వెళ్ళారు."
+        "reading": "pradhānamantri īrōju ḍhillīki veḷḷāru."
+        "ipa": "prad̪ʱaːnamant̪ri iːroːdʒu ɖʱilliːki ʋeɭɭaːru"
+      - "text": "అధికారులు ఈరోజు ఊరికి వచ్చారు."
+        "reading": "adhikārulu īrōju ūriki vaccāru."
+        "ipa": "ad̪ʱikaːrulu iːroːdʒu uːriki ʋatʃtʃaːru"
+      - "text": "పత్రికలో కొత్త వార్త వచ్చింది."
+        "reading": "patrikalō kotta vārta vaccindi."
+        "ipa": "pat̪rikaloː kot̪t̪a ʋaːrt̪a ʋatʃtʃind̪i"
+      - "text": "ఈ ప్రాంతంలో శాంతి కావాలి."
+        "reading": "ī prāntamlō śānti kāvāli."
+        "ipa": "iː praːnt̪amloː ʃaːnt̪i kaːʋaːli"
+  "questions":
+      - "id": "te-8289"
+        "prompt":
+          "en": "Where did the prime minister go today?"
+        "options":
+        - "en": "Delhi"
+        - "en": "The town"
+        - "en": "The paper"
+        "answer": 1
+      - "id": "te-8290"
+        "prompt":
+          "en": "What does the last headline say the region needs?"
+        "options":
+        - "en": "A new school"
+        - "en": "Peace"
+        - "en": "A new road"
+        "answer": 2
+      - "id": "te-8291"
+        "prompt":
+          "en": "The chief minister came to the town today."
+        "answer": false
