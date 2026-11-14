@@ -125,6 +125,7 @@ alphabet:
   - "ja-kanji-30"
   - "ja-kanji-32"
   - "ja-kanji-33"
+  - "ja-kanji-36"
   - "ja-katakana"
   - "ja-katakana-combos"
   - "ja-hiragana-marks"
@@ -942,11 +943,8 @@ units:
       - { id: "sounds-and-feelings", text: { "en": "A friend describes rain, a headache and a smile with sound words: zaazaa, zukizuki, nikoniko" } }
     reading_passages:
       - { id: "manga-panel", text: { "en": "The sound words in a few manga panels" } }
-  - planned: { id: "ja-kanji-36", grammar: "script-kanji-36", words: 0 }
-    listening_passages:
-      - { id: "kanji-36-heard", text: { "en": "Hearing words whose kanji unit 36 teaches" } }
-    reading_passages:
-      - { id: "kanji-36-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 36" } }
+  - decks: ["ja-kanji-36"]
+    words: 0
   - planned: { id: "ja-abstract-words", theme: "abstract-words", words: 55 }
     listening_passages:
       - { id: "a-discussion", text: { "en": "A short discussion of an idea" } }
