@@ -1,0 +1,232 @@
+# Spanish multi-word light-verb idioms: a light verb and a noun, with the idiomatic meaning the
+# course teaches (hacer caso, dar las gracias, tener ganas de, tomar el pelo, and the rest of the family).
+schema: 1
+id: "es-multiword-light-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+genre: "multiword"
+pattern_family: "light-verb-idiom"
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - id: "es-4500"
+    target: "hacer caso"
+    ipa: "aˈθeɾ ˈkaso"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "hacer", ref: "es-0025" }
+      - { word: "caso", base: "caso" }
+  - id: "es-4501"
+    target: "hacer falta"
+    ipa: "aˈθeɾ ˈfalta"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "hacer", ref: "es-0025" }
+      - { word: "falta", base: "falta" }
+  - id: "es-4502"
+    target: "hacer cola"
+    ipa: "aˈθeɾ ˈkola"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "hacer", ref: "es-0025" }
+      - { word: "cola", ref: "es-1225" }
+  - id: "es-4503"
+    target: "dar un paseo"
+    ipa: "daɾ un paˈseo"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "dar", ref: "es-1629" }
+      - { word: "paseo", ref: "es-0915" }
+  - id: "es-4504"
+    target: "dar las gracias"
+    ipa: "daɾ las ˈɡɾaθjas"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "dar", ref: "es-1629" }
+      - { word: "gracias", ref: "es-0037" }
+  - id: "es-4505"
+    target: "dar la mano"
+    ipa: "daɾ la ˈmano"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "dar", ref: "es-1629" }
+      - { word: "mano", ref: "es-0738" }
+  - id: "es-4506"
+    target: "tener ganas de"
+    ipa: "teˈneɾ ˈɡanas de"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "tener", ref: "es-0024" }
+      - { word: "ganas", base: "ganas" }
+  - id: "es-4507"
+    target: "tener razón"
+    ipa: "teˈneɾ raˈθon"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "tener", ref: "es-0024" }
+      - { word: "razón", base: "razón" }
+  - id: "es-4508"
+    target: "tener miedo"
+    ipa: "teˈneɾ ˈmjedo"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "tener", ref: "es-0024" }
+      - { word: "miedo", ref: "es-1994" }
+  - id: "es-4509"
+    target: "tener prisa"
+    ipa: "teˈneɾ ˈpɾisa"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "tener", ref: "es-0024" }
+      - { word: "prisa", base: "prisa" }
+  - id: "es-4510"
+    target: "tomar el pelo"
+    ipa: "toˈmaɾ el ˈpelo"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "tomar", ref: "es-0906" }
+      - { word: "pelo", ref: "es-0748" }
+  - id: "es-4511"
+    target: "echar de menos"
+    ipa: "eˈtʃaɾ de ˈmenos"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "echar", base: "echar" }
+      - { word: "menos", base: "menos" }
+  - id: "es-4512"
+    target: "caer bien"
+    ipa: "kaˈeɾ bjen"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "caer", base: "caer" }
+      - { word: "bien", ref: "es-0326" }
+  - id: "es-4513"
+    target: "llevar a cabo"
+    ipa: "ʝeˈbaɾ a ˈkabo"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "llevar", ref: "es-0623" }
+      - { word: "cabo", base: "cabo" }
+  - id: "es-4514"
+    target: "poner la mesa"
+    ipa: "poˈneɾ la ˈmesa"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "poner", ref: "es-1628" }
+      - { word: "mesa", ref: "es-0009" }
+  - id: "es-4515"
+    target: "prestar atención"
+    ipa: "pɾesˈtaɾ atenˈθjon"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "prestar", base: "prestar" }
+      - { word: "atención", base: "atención" }
+  - id: "es-4516"
+    target: "cambiar de idea"
+    ipa: "kamˈbjaɾ de iˈdea"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "cambiar", ref: "es-0588" }
+      - { word: "idea", ref: "es-2112" }
+  - id: "es-4517"
+    target: "pegar un grito"
+    ipa: "peˈɡaɾ un ˈɡɾito"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "pegar", base: "pegar" }
+      - { word: "grito", base: "grito" }
+  - id: "es-4518"
+    target: "salir adelante"
+    ipa: "saˈliɾ adeˈlante"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "salir", base: "salir" }
+      - { word: "adelante", base: "adelante" }
+  - id: "es-4519"
+    target: "quedarse con"
+    ipa: "keˈdaɾse kon"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "quedarse", base: "quedarse" }
