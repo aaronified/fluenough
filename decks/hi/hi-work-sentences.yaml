@@ -1,0 +1,313 @@
+schema: 1
+id: "hi-work-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-2900"
+    target: "वह एक अच्छा इंजीनियर है।"
+    target_scripts: { perso_arabic: "وہ ایک اچھا انجینیئر ہے۔" }
+    reading: "vah ēk acchā iñjīniyar hai."
+    ipa: "ʋəɦ eːk ətʃtʃʰaː ɪɲdʒiːnɪjər ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "है", base: "होना", reading: "hōnā" }
+    confusables:
+      - { id: "w1", word: "वकील", reading: "vakīl", kind: "word" }
+      - { id: "w2", word: "नर्स", reading: "nars", kind: "word" }
+  - id: "hi-2901"
+    target: "क्या आप वकील हैं?"
+    target_scripts: { perso_arabic: "کیا آپ وکیل ہیں؟" }
+    reading: "kyā āp vakīl haim̐?"
+    ipa: "kjaː aːp ʋəkiːl ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "हैं", base: "होना", reading: "hōnā" }
+    confusables:
+      - { id: "w1", word: "किसान", reading: "kisān", kind: "word" }
+      - { id: "f1", word: "है", reading: "hai", kind: "form" }
+  - id: "hi-2902"
+    target: "मेरी बहन अच्छी तरह बोलती है।"
+    target_scripts: { perso_arabic: "میری بہن اچھی طرح بولتی ہے۔" }
+    reading: "mērī bahan acchī tarah bōltī hai."
+    ipa: "meːriː bəɦən ətʃtʃʰiː t̪ərəɦ boːlt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", base: "मेरा", reading: "mērā" }
+      - { word: "अच्छी", base: "अच्छा", reading: "acchā" }
+      - { word: "तरह", base: "तरह", reading: "tarah" }
+      - { word: "बोलती", base: "बोलना", reading: "bōlnā" }
+      - { word: "है", base: "होना", reading: "hōnā" }
+    confusables:
+      - { id: "w1", word: "भाई", reading: "bhāī", kind: "word" }
+      - { id: "f1", word: "हैं", reading: "haim̐", kind: "form" }
+  - id: "hi-2903"
+    target: "वह हर दिन दफ़्तर में काम करती है।"
+    target_scripts: { perso_arabic: "وہ ہر دن دفتر میں کام کرتی ہے۔" }
+    reading: "vah har din daftar mēm̐ kām kartī hai."
+    ipa: "ʋəɦ ɦər d̪ɪn d̪əft̪ər mẽː kaːm kərt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "हर", base: "हर", reading: "har" }
+      - { word: "में", base: "में", reading: "mēm̐" }
+      - { word: "करती", base: "करना", reading: "karnā" }
+      - { word: "है", base: "होना", reading: "hōnā" }
+    confusables:
+      - { id: "w1", word: "नर्स", reading: "nars", kind: "word" }
+      - { id: "w2", word: "दुकानदार", reading: "dukāndār", kind: "word" }
+  - id: "hi-2904"
+    target: "आप कितनी बार खेलते हैं?"
+    target_scripts: { perso_arabic: "آپ کتنی بار کھیلتے ہیں؟" }
+    reading: "āp kitnī bār khēltē haim̐?"
+    ipa: "aːp kɪt̪niː baːr kʰeːlt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "कितनी", ref: "hi-0163" }
+      - { word: "बार", base: "बार", reading: "bār" }
+      - { word: "खेलते", base: "खेलना", reading: "khēlnā" }
+      - { word: "हैं", base: "होना", reading: "hōnā" }
+    confusables:
+      - { id: "w1", word: "कहाँ", reading: "kahām̐", kind: "word" }
+      - { id: "f1", word: "है", reading: "hai", kind: "form" }
+  - id: "hi-2905"
+    target: "रात में इंजीनियर अक्सर अच्छी तरह सोचते हैं।"
+    target_scripts: { perso_arabic: "رات میں انجینئر اکثر اچھی طرح سوچتے ہیں۔" }
+    reading: "rāt mēm̐ iñjīniyar aksar acchī tarah sōctē haim̐."
+    ipa: "raːt̪ mẽː ɪɲdʒiːnɪjər əksər ətʃtʃʰiː t̪ərəɦ soːtʃt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "में", base: "में", reading: "mēm̐" }
+      - { word: "अच्छी", base: "अच्छा", reading: "acchā" }
+      - { word: "तरह", base: "तरह", reading: "tarah" }
+      - { word: "सोचते", base: "सोचना", reading: "sōcnā" }
+      - { word: "हैं", base: "होना", reading: "hōnā" }
+    confusables:
+      - { id: "w1", word: "आज", reading: "āj", kind: "word" }
+      - { id: "w2", word: "कभी नहीं", reading: "kabhī nahīm̐", kind: "word" }
+  - id: "hi-2906"
+    target: "दुकानदार जल्दी खोलता है।"
+    target_scripts: { perso_arabic: "دکاندار جلدی کھولتا ہے۔" }
+    reading: "dukāndār jaldī khōltā hai."
+    ipa: "d̪ʊkaːnd̪aːr dʒəld̪iː kʰoːlt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "खोलता", base: "खोलना", reading: "khōlnā" }
+      - { word: "है", base: "होना", reading: "hōnā" }
+    confusables:
+      - { id: "w1", word: "धीरे", reading: "dhīrē", kind: "word" }
+      - { id: "w2", word: "तुरंत", reading: "turant", kind: "word" }
+  - id: "hi-2907"
+    target: "मेरे पिता सुबह जागते हैं।"
+    target_scripts: { perso_arabic: "میرے پتا صبح جاگتے ہیں۔" }
+    reading: "mērē pitā subah jāgtē haim̐."
+    ipa: "meːreː pɪt̪aː sʊbəɦ dʒaːɡt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरे", base: "मेरा", reading: "mērā" }
+      - { word: "जागते", base: "जागना", reading: "jāgnā" }
+      - { word: "हैं", base: "होना", reading: "hōnā" }
+    confusables:
+      - { id: "w1", word: "माँ", reading: "mām̐", kind: "word" }
+      - { id: "w2", word: "भाई", reading: "bhāī", kind: "word" }
+  - id: "hi-2908"
+    target: "पत्रकार अक्सर रात में लिखते हैं।"
+    target_scripts: { perso_arabic: "پترکار اکثر رات میں لکھتے ہیں۔" }
+    reading: "patrakār aksar rāt mēm̐ likhtē haim̐."
+    ipa: "pət̪rəkaːr əksər raːt̪ mẽː lɪkʰt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "में", base: "में", reading: "mēm̐" }
+      - { word: "लिखते", base: "लिखना", reading: "likhnā" }
+      - { word: "हैं", base: "होना", reading: "hōnā" }
+    confusables:
+      - { id: "w1", word: "सुबह", reading: "subah", kind: "word" }
+      - { id: "w2", word: "शायद", reading: "śāyad", kind: "word" }
+  - id: "hi-2909"
+    target: "आप क्या सीखते हैं?"
+    target_scripts: { perso_arabic: "آپ کیا سیکھتے ہیں؟" }
+    reading: "āp kyā sīkhtē haim̐?"
+    ipa: "aːp kjaː siːkʰt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "सीखते", base: "सीखना", reading: "sīkhnā" }
+      - { word: "हैं", base: "होना", reading: "hōnā" }
+    confusables:
+      - { id: "w1", word: "कब", reading: "kab", kind: "word" }
+      - { id: "w2", word: "सुनना", reading: "sunnā", kind: "word" }
+  - id: "hi-2910"
+    target: "नर्स बाहर नहीं आती।"
+    target_scripts: { perso_arabic: "نرس باہر نہیں آتی۔" }
+    reading: "nars bāhar nahīm̐ ātī."
+    ipa: "nərs baːɦər nəɦĩː aːt̪iː"
+    pos: "phrase"
+    bases:
+      - { word: "आती", base: "आना", reading: "ānā" }
+    confusables:
+      - { id: "w1", word: "अंदर", reading: "andar", kind: "word" }
+      - { id: "w2", word: "ऊपर", reading: "ūpar", kind: "word" }
+  - id: "hi-2911"
+    target: "छात्र अब खेलते हैं।"
+    target_scripts: { perso_arabic: "چھاتر اب کھیلتے ہیں۔" }
+    reading: "chātr ab khēltē haim̐."
+    ipa: "tʃʰaːt̪r əb kʰeːlt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "खेलते", base: "खेलना", reading: "khēlnā" }
+      - { word: "हैं", base: "होना", reading: "hōnā" }
+    confusables:
+      - { id: "w1", word: "कभी नहीं", reading: "kabhī nahīm̐", kind: "word" }
+      - { id: "w2", word: "अध्यापक", reading: "adhyāpak", kind: "word" }
+  - id: "hi-2912"
+    target: "ड्राइवर तनख़्वाह कमाता है।"
+    target_scripts: { perso_arabic: "ڈرائیور تنخواہ کماتا ہے۔" }
+    reading: "ḍrāivar tanak͟hvāh kamātā hai."
+    ipa: "ɖraːɪʋər t̪ənəxʋaːɦ kəmaːt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "कमाता", base: "कमाना", reading: "kamānā" }
+      - { word: "है", base: "होना", reading: "hōnā" }
+    confusables:
+      - { id: "w1", word: "बेचना", reading: "bēcnā", kind: "word" }
+      - { id: "w2", word: "खरीदना", reading: "k͟harīdnā", kind: "word" }
+  - id: "hi-2913"
+    target: "मैंने कल नौकरी नहीं की।"
+    target_scripts: { perso_arabic: "میں نے کل نوکری نہیں کی۔" }
+    reading: "mainnē kal naukrī nahīm̐ kī."
+    ipa: "mɛːnneː kəl nɔːkriː nəɦĩː kiː"
+    pos: "phrase"
+    bases:
+      - { word: "मैंने", base: "मैं", reading: "maim̐" }
+      - { word: "की", base: "करना", reading: "karnā" }
+    confusables:
+      - { id: "w1", word: "आज", reading: "āj", kind: "word" }
+      - { id: "w2", word: "कुछ", reading: "kuch", kind: "word" }
+  - id: "hi-2914"
+    target: "वकील अभी नहीं जा रहा है।"
+    target_scripts: { perso_arabic: "وکیل ابھی نہیں جا رہا ہے۔" }
+    reading: "vakīl abhī nahīm̐ jā rahā hai."
+    ipa: "ʋəkiːl əbʱiː nəɦĩː dʒaː rəɦaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "जा", base: "जाना", reading: "jānā" }
+      - { word: "रहा", base: "रहना", reading: "rahnā" }
+      - { word: "है", base: "होना", reading: "hōnā" }
+    confusables:
+      - { id: "w1", word: "आज", reading: "āj", kind: "word" }
+      - { id: "w2", word: "कहीं", reading: "kahīm̐", kind: "word" }
+  - id: "hi-2915"
+    target: "दुकानदार अक्सर सुबह आता है।"
+    target_scripts: { perso_arabic: "دکاندار اکثر صبح آتا ہے۔" }
+    reading: "dukāndār aksar subah ātā hai."
+    ipa: "d̪ʊkaːnd̪aːr əksər sʊbəɦ aːt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "आता", base: "आना", reading: "ānā" }
+      - { word: "है", base: "होना", reading: "hōnā" }
+    confusables:
+      - { id: "w1", word: "कभी नहीं", reading: "kabhī nahīm̐", kind: "word" }
+      - { id: "w2", word: "शाम", reading: "śām", kind: "word" }
+  - id: "hi-2916"
+    target: "लेखक अक्सर कुछ लिखता है।"
+    target_scripts: { perso_arabic: "لیکھک اکثر کچھ لکھتا ہے۔" }
+    reading: "lēkhak aksar kuch likhtā hai."
+    ipa: "leːkʰək əksər kʊtʃʰ lɪkʰt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "लिखता", base: "लिखना", reading: "likhnā" }
+      - { word: "है", base: "होना", reading: "hōnā" }
+    confusables:
+      - { id: "w1", word: "पत्रकार", reading: "patrakār", kind: "word" }
+      - { id: "w2", word: "कभी नहीं", reading: "kabhī nahīm̐", kind: "word" }
+  - id: "hi-2917"
+    target: "आज मेरा भाई छुट्टी लेता है।"
+    target_scripts: { perso_arabic: "آج میرا بھائی چھٹی لیتا ہے۔" }
+    reading: "āj mērā bhāī chuṭṭī lētā hai."
+    ipa: "aːdʒ meːraː bʱaːiː tʃʰʊʈʈiː leːt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरा", base: "मेरा", reading: "mērā" }
+      - { word: "लेता", base: "लेना", reading: "lēnā" }
+      - { word: "है", base: "होना", reading: "hōnā" }
+    confusables:
+      - { id: "w1", word: "कल", reading: "kal", kind: "word" }
+      - { id: "w2", word: "देना", reading: "dēnā", kind: "word" }
+  - id: "hi-2918"
+    target: "किसान क्यों रोता है?"
+    target_scripts: { perso_arabic: "کسان کیوں روتا ہے؟" }
+    reading: "kisān kyōm̐ rōtā hai?"
+    ipa: "kɪsaːn kjõː roːt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "रोता", base: "रोना", reading: "rōnā" }
+      - { word: "है", base: "होना", reading: "hōnā" }
+    confusables:
+      - { id: "w1", word: "कब", reading: "kab", kind: "word" }
+      - { id: "w2", word: "कैसे", reading: "kaisē", kind: "word" }
+  - id: "hi-2919"
+    target: "मेरे पिता हर हफ़्ते सुबह दफ़्तर जाते हैं।"
+    target_scripts: { perso_arabic: "میرے پتا ہر ہفتے صبح دفتر جاتے ہیں۔" }
+    reading: "mērē pitā har haftē subah daftar jātē haim̐."
+    ipa: "meːreː pɪt̪aː ɦər ɦəft̪eː sʊbəɦ d̪əft̪ər dʒaːt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरे", base: "मेरा", reading: "mērā" }
+      - { word: "हर", base: "हर", reading: "har" }
+      - { word: "हफ़्ते", base: "हफ़्ता", reading: "haftā" }
+      - { word: "जाते", base: "जाना", reading: "jānā" }
+      - { word: "हैं", base: "होना", reading: "hōnā" }
+    confusables:
+      - { id: "w1", word: "माँ", reading: "mām̐", kind: "word" }
+      - { id: "w2", word: "शाम", reading: "śām", kind: "word" }
+  - id: "hi-2920"
+    target: "वह नई नौकरी चाहता है।"
+    target_scripts: { perso_arabic: "وہ نئی نوکری چاہتا ہے۔" }
+    reading: "vah naī naukrī cāhtā hai."
+    ipa: "ʋəɦ nəiː nɔːkriː tʃaːɦt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "नई", base: "नया", reading: "nayā" }
+      - { word: "चाहता", base: "चाहना", reading: "cāhnā" }
+      - { word: "है", base: "होना", reading: "hōnā" }
+    confusables:
+      - { id: "w1", word: "पुराना", reading: "purānā", kind: "word" }
+      - { id: "w2", word: "मिलना", reading: "milnā", kind: "word" }
+  - id: "hi-2921"
+    target: "मैं आज बहुत सीखता हूँ।"
+    target_scripts: { perso_arabic: "میں آج بہت سیکھتا ہوں۔" }
+    reading: "maim̐ āj bahut sīkhtā hūm̐."
+    ipa: "mɛ̃ː aːdʒ bəɦʊt̪ siːkʰt̪aː ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "सीखता", base: "सीखना", reading: "sīkhnā" }
+      - { word: "हूँ", base: "होना", reading: "hōnā" }
+    confusables:
+      - { id: "w1", word: "सिखाना", reading: "sikhānā", kind: "word" }
+      - { id: "w2", word: "भूलना", reading: "bhūlnā", kind: "word" }
+  - id: "hi-2922"
+    target: "रसोइया अभी घर में कुछ पका रहा है।"
+    target_scripts: { perso_arabic: "رسوئیا ابھی گھر میں کچھ پکا رہا ہے۔" }
+    reading: "rasōiyā abhī ghar mēm̐ kuch pakā rahā hai."
+    ipa: "rəsoːɪjaː əbʱiː ɡʱər mẽː kʊtʃʰ pəkaː rəɦaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "में", base: "में", reading: "mēm̐" }
+      - { word: "पका", base: "पकाना", reading: "pakānā" }
+      - { word: "रहा", base: "रहना", reading: "rahnā" }
+      - { word: "है", base: "होना", reading: "hōnā" }
+    confusables:
+      - { id: "w1", word: "बेचना", reading: "bēcnā", kind: "word" }
+      - { id: "w2", word: "धोना", reading: "dhōnā", kind: "word" }
+  - id: "hi-2923"
+    target: "ड्राइवर कहाँ लौटता है?"
+    target_scripts: { perso_arabic: "ڈرائیور کہاں لوٹتا ہے؟" }
+    reading: "ḍrāivar kahām̐ lauṭtā hai?"
+    ipa: "ɖraːɪʋər kəɦãː lɔːʈt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "लौटता", base: "लौटना", reading: "lauṭnā" }
+      - { word: "है", base: "होना", reading: "hōnā" }
+    confusables:
+      - { id: "w1", word: "जाना", reading: "jānā", kind: "word" }
+      - { id: "w2", word: "कब", reading: "kab", kind: "word" }
