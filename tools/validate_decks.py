@@ -106,7 +106,7 @@ SCRIPT_BLOCKS = {
     "latin": ((0x0041, 0x024F), (0x1E00, 0x1EFF)),
 }
 KINDS = {"vocab", "grammar", "facts", "situations", "themes", "numbers", "path", "sounds", "script",
-         "reading", "rules", "layer", "resources", "phonetics",
+         "reading", "rules", "layer", "resources", "phonetics", "gating",
          "creators", "topics", "sections", "recommendations"}
 THEMES_KEYS = {"schema", "kind", "description", "themes"}
 # A language's path (ADR-0013), one per language learnt (ADR-0036).
@@ -147,8 +147,8 @@ FEATURE_KEYS = {"id", "name", "term", "reading", "ipa", "example", "text",
 GUIDE_KINDS = ("script", "sounds")
 # Kinds of file that are not a written deck (as tools/deck_index.py NOT_DECKS).
 NOT_DECK_KINDS = {"path", "facts", "situations", "numbers", "romanisation", "sounds", "script",
-                  "resources", "phonetics", "creators", "topics", "sections",
-                  "recommendations"}
+                  "resources", "phonetics", "gating", "creators", "topics",
+                  "sections", "recommendations"}
 # A language's phonetic rules (tools/derive_phonetic.py): the ordered rules
 # that turn a card's broad `ipa` into its narrow `phonetic`. Only the tool
 # reads it; the index does not list it and the app never fetches it.
@@ -329,7 +329,8 @@ RESERVED_CORES = {"facts": "facts file", "situations": "situations file",
                   "numbers": "number rules",
                   "romanisation": "romanisation file", "script": "script guide",
                   "sounds": "sounds file", "path": "path",
-                  "resources": "resources file", "phonetics": "phonetic rules file"}
+                  "resources": "resources file", "phonetics": "phonetic rules file",
+                  "gating": "character gating file"}
 UNIT_KEYS = {"decks", "planned", "words", "grammar", "milestone",
              "listening_passages", "reading_passages"}
 PLANNED_KEYS = {"id", "theme", "grammar", "words"}
@@ -880,6 +881,9 @@ class Report:
     creators_data: dict[str, dict] | None = None
     creators_images: list[str] = field(default_factory=list)
     topics_data: list[tuple[str, str, dict]] | None = None
+    # A character gating file's language and its valid entries (#1227).
+    gating_lang: str | None = None
+    gating_data: list[dict] | None = None
     sections_data: dict[str, set[str]] | None = None
     recs_lang: str | None = None
     recs_data: list[tuple[str, str, dict]] | None = None
@@ -889,6 +893,9 @@ class Report:
     # (CARD_FIELD_MIN_APP): tools/deck_index.py puts the file behind the app
     # version that reads them (ADR-0052).
     new_fields: set[str] = field(default_factory=set)
+    # A script guide core's characters by feature id: its example and its
+    # letters, NFC (#1228); a script topic's `chars` may name them.
+    script_chars: dict[str, set[str]] = field(default_factory=dict)
     # A creator's related cards, (card id, where).
     related_cards: list[tuple[str, str]] = field(default_factory=list)
 
@@ -3074,8 +3081,8 @@ def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
         r.error("part", f'must be "core", or left out on a single-file deck; got '
                         f'{raw["part"]!r}')
 
-    if raw.get("kind") not in ("romanisation", "phonetics", "creators", "topics",
-                               "sections", "recommendations"):
+    if raw.get("kind") not in ("romanisation", "phonetics", "gating", "creators",
+                               "topics", "sections", "recommendations"):
         check_transliterated(r, raw)
 
     if raw.get("kind") == "themes":
@@ -3099,6 +3106,9 @@ def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
         return r
     if raw.get("kind") == "phonetics":
         check_phonetics_file(r, raw, path)
+        return r
+    if raw.get("kind") == "gating":
+        check_gating_file(r, raw, path)
         return r
     check_romanised(r, raw, path)
     check_ipa(r, raw)
@@ -5832,6 +5842,10 @@ def check_script_file(r: Report, raw: dict, path: Path, *, core: bool = False) -
         letters = feature.get("letters", [])
         if not isinstance(letters, list) or not all(_is_str(x) and x for x in letters):
             r.error(where, "letters must be a list of quoted letters")
+        elif core and _is_str(fid):
+            r.script_chars.setdefault(fid, set()).update(
+                unicodedata.normalize("NFC", x) for x in [feature.get("example"), *letters]
+                if _is_str(x))
 
 
 def validate_guide_layer(r: Report, raw: dict, path: Path, core: dict) -> None:
@@ -8411,6 +8425,321 @@ def check_topics_file(r: Report, raw: dict, path: Path) -> None:
     r.topics_data = collected
 
 
+# --- decks/<code>/<code>-gating.yaml (#1227) ---------------------------------
+
+GATING_KEYS = {"schema", "kind", "id", "language", "license", "description",
+               "character_gating"}
+GATING_ENTRY_KEYS = {"script", "mode", "allow", "blocks"}
+GATING_MODES = ("warn", "error")
+# At most this many reports for one deck, then a line saying how many more.
+GATING_MAX_REPORTS = 20
+_BLOCK_RE = re.compile(r"([0-9A-Fa-f]{4,6})-([0-9A-Fa-f]{4,6})")
+
+
+def check_gating_file(r: Report, raw: dict, path: Path) -> None:
+    """decks/<lang>/<lang>-gating.yaml: for each script the path gates, how
+    strictly (`warn` or `error`), the characters allowed from the start and,
+    for a script the validator has no Unicode blocks for, its blocks. Only
+    the validator reads it: the app does not, so a path of released apps is
+    never given a key it refuses (#1227). It lives beside the path and is
+    checked against it across files."""
+    for unknown in sorted(set(raw) - GATING_KEYS, key=str):
+        r.error("root", f"unknown field {unknown!r} in a gating file")
+    schema = raw.get("schema")
+    if isinstance(schema, bool) or schema != SCHEMA:
+        r.error("schema", f"must be {SCHEMA}, got {schema!r}")
+    lang = raw.get("language")
+    if not _is_str(lang) or not CODE_RE.fullmatch(lang):
+        r.error("language", f"must be a language code such as 'ja', {_code_error(lang)}")
+        lang = None
+    else:
+        if path.stem != f"{lang}-gating" or raw.get("id") != path.stem:
+            r.error("id", f"a gating file is {lang}-gating.yaml with id {lang}-gating, "
+                          f"got {raw.get('id')!r} in {path.name!r}")
+        r.gating_lang = lang
+    entries = raw.get("character_gating")
+    if not isinstance(entries, list) or not entries:
+        r.error("character_gating", "must be a non-empty list of { script, mode, "
+                                    "allow?, blocks? }")
+        return
+    valid: list[dict] = []
+    scripts: set[str] = set()
+    for i, entry in enumerate(entries):
+        where = f"character_gating[{i}]"
+        if not isinstance(entry, dict):
+            r.error(where, "must be a mapping")
+            continue
+        for unknown in sorted(set(entry) - GATING_ENTRY_KEYS, key=str):
+            r.error(where, f"unknown field {unknown!r}")
+        ok = True
+        script = entry.get("script")
+        if not (_is_str(script) and SCRIPT_RE.fullmatch(script)):
+            r.error(where, f"script must be a script id such as 'han', got {script!r}")
+            ok = False
+        elif script in scripts:
+            r.error(where, f"script {script!r} is gated twice")
+            ok = False
+        else:
+            scripts.add(script)
+        mode = entry.get("mode")
+        if mode not in GATING_MODES:
+            r.error(where, f"mode must be one of {', '.join(GATING_MODES)}, got {mode!r}")
+            ok = False
+        blocks: list[tuple[int, int]] = []
+        if "blocks" in entry:
+            given = entry["blocks"]
+            if not isinstance(given, list) or not given:
+                r.error(where, "blocks must be a non-empty list of 'XXXX-YYYY' "
+                               "hexadecimal code point ranges, or left out")
+                ok = False
+            else:
+                for b in given:
+                    m = _BLOCK_RE.fullmatch(b) if isinstance(b, str) else None
+                    if m is None or int(m[1], 16) > int(m[2], 16):
+                        hint = "" if isinstance(b, str) else (
+                            " (a bare number, not a range: the deck reader turns "
+                            "0980 into 980)")
+                        r.error(where, f"block {b!r} must be 'XXXX-YYYY', hexadecimal, "
+                                       f"the first not after the second{hint}")
+                        ok = False
+                    else:
+                        blocks.append((int(m[1], 16), int(m[2], 16)))
+        elif ok and script not in SCRIPT_BLOCKS:
+            r.error(where, f"the validator has no Unicode blocks for the script "
+                           f"{script!r}: give them, blocks: [\"XXXX-YYYY\"]")
+            ok = False
+        allow: set[str] = set()
+        if "allow" in entry:
+            given = entry["allow"]
+            if not isinstance(given, list) or not given:
+                r.error(where, "allow must be a non-empty list of characters, or left out")
+                ok = False
+            else:
+                for ch in given:
+                    if not _is_str(ch) or len(ch) != 1:
+                        r.error(where, f"allow lists one character each, got {ch!r}")
+                        ok = False
+                    elif ch in allow:
+                        r.error(where, f"allow lists {ch!r} twice")
+                    else:
+                        allow.add(ch)
+        if ok:
+            valid.append({"script": script, "mode": mode, "allow": allow,
+                          "blocks": tuple(blocks) or SCRIPT_BLOCKS[script], "where": where})
+    r.gating_data = valid
+
+
+def _gated_chars(text: str, blocks: tuple[tuple[int, int], ...]) -> list[str]:
+    """The characters of [text] in [blocks], in order, each once."""
+    found: dict[str, None] = {}
+    for ch in text:
+        if any(lo <= ord(ch) <= hi for lo, hi in blocks):
+            found.setdefault(ch)
+    return list(found)
+
+
+def _card_texts(card: dict) -> list[tuple[str, str]]:
+    """The spellings of a written card a gate looks at, with where each is:
+    its target, alternatives and `target_scripts`, and each example's target
+    and `target_scripts`."""
+    texts: list[tuple[str, str]] = []
+
+    def add(where: str, value: object) -> None:
+        if _is_str(value):
+            texts.append((where, value))
+
+    add("target", card.get("target"))
+    for k, alt in enumerate(card.get("alt_target") or []):
+        add(f"alt_target[{k}]", alt)
+    spellings = card.get("target_scripts")
+    for key, value in (spellings.items() if isinstance(spellings, dict) else []):
+        add(f"target_scripts.{key}", value)
+    for k, ex in enumerate(card.get("examples") or []):
+        if not isinstance(ex, dict):
+            continue
+        add(f"examples[{k}].target", ex.get("target"))
+        spellings = ex.get("target_scripts")
+        for key, value in (spellings.items() if isinstance(spellings, dict) else []):
+            add(f"examples[{k}].target_scripts.{key}", value)
+    return texts
+
+
+def check_gating_across(reports: list[Report], ctx: "_Context") -> list[str]:
+    """Each gated script of a language's gating file against its path: the
+    characters taught so far are those of the character decks (the path's
+    `alphabet` decks tagged `script`, one character on a card) of earlier
+    units, of the unit itself for its other decks, and, in a character deck,
+    of the cards before and including the one asked about. A card or an
+    example that writes a gated character not yet taught is reported: an
+    error, or a warning for `mode: warn`. A spelling in another script has
+    none of the gated script's characters, so it is not asked about (#1227)."""
+    problems: list[str] = []
+    for gate in reports:
+        if gate.gating_data is None or gate.gating_lang is None:
+            continue
+        lang = ctx.lang(gate.gating_lang)
+        path = lang.path()
+        if path is None or path.plan is None:
+            problems.append(f"{gate.path}: character_gating: {gate.gating_lang} has no "
+                            f"path to gate")
+            continue
+        plan = path.plan
+        by_core = lang.by_core()
+        for entry in gate.gating_data:
+            _gate_one(problems, gate, entry, plan, by_core)
+    return problems
+
+
+def _written_cards(rep: Report) -> tuple[list[dict], list[str]]:
+    """The written cards, in order, and the tags of a core or single-file
+    deck, read for a gate."""
+    raw = _load_raw_view(rep.path)
+    if not isinstance(raw, dict) or not isinstance(raw.get("cards"), list):
+        return [], []
+    tags = raw.get("tags")
+    return ([c for c in raw["cards"] if isinstance(c, dict) and _is_str(c.get("target"))],
+            [t for t in tags if isinstance(t, str)] if isinstance(tags, list) else [])
+
+
+def _gate_one(problems: list[str], gate: Report, entry: dict, plan: "PathPlan",
+              by_core: dict[str, list[Report]]) -> None:
+    blocks, mode = entry["blocks"], entry["mode"]
+    taught: set[str] = set(entry["allow"])
+    for unit in plan.units:
+        decks = [(core, rep) for core in unit.decks for rep in by_core.get(core, [])
+                 if rep.part != "layer"]
+        loaded = {id(rep): _written_cards(rep) for _, rep in decks}
+        is_char = {id(rep): core in plan.alphabet and "script" in loaded[id(rep)][1]
+                   for core, rep in decks}
+        # The characters the unit's character decks teach, whole.
+        taught_here: set[str] = set()
+        for _, rep in decks:
+            if is_char[id(rep)]:
+                for card in loaded[id(rep)][0]:
+                    target = card["target"].strip()
+                    if len(target) == 1 and _gated_chars(target, blocks):
+                        taught_here.add(target)
+        for core, rep in decks:
+            cards = loaded[id(rep)][0]
+            known = set(taught) if is_char[id(rep)] else taught | taught_here
+            reported = 0
+            for card in cards:
+                target = card["target"].strip()
+                if is_char[id(rep)] and len(target) == 1 and _gated_chars(target, blocks):
+                    known.add(target)
+                for spot, text in _card_texts(card):
+                    for ch in _gated_chars(text, blocks):
+                        if ch in known:
+                            continue
+                        reported += 1
+                        if reported > GATING_MAX_REPORTS:
+                            continue
+                        msg = (f"card {card.get('id')}: {spot} writes {ch!r} (U+{ord(ch):04X}), "
+                               f"a {entry['script']} character the path has not taught by "
+                               f"unit {unit.i + 1}; write it in another script, or teach it "
+                               f"in an earlier unit (gating file {gate.path.name}, "
+                               f"{entry['where']})")
+                        if mode == "error":
+                            problems.append(f"{rep.path}: {msg}")
+                        else:
+                            rep.warn(f"card {card.get('id')}", msg.split(": ", 1)[1])
+            if reported > GATING_MAX_REPORTS:
+                extra = (f"{reported - GATING_MAX_REPORTS} more {entry['script']} "
+                         f"characters not yet taught in {core}, not listed")
+                if mode == "error":
+                    problems.append(f"{rep.path}: {extra}")
+                else:
+                    rep.warn(core, extra)
+        taught |= taught_here
+
+
+# A script topic's `chars` against its decks (#1228). The cards a deck leaves
+# out of `chars` are a warning until the real topics files are written by
+# tools/topic_chars.py (decks-live's hiragana and katakana topics list the
+# 46 basic letters but also name the marks decks); flip this to make a
+# character card missing from `chars` an error, as `chars` naming a character
+# that no listed card has already is.
+TOPIC_CHARS_MISSING_IS_ERROR = False
+
+
+def _clusters(text: str) -> int:
+    """How many user-perceived characters [text] has, by data in Unicode and
+    no script's name: a mark, a joiner, or a letter after a virama joins the
+    one before it (a conjunct, a kana with a voicing mark)."""
+    count, joined = 0, False
+    for ch in text:
+        if count and (joined or unicodedata.category(ch)[0] == "M"
+                      or ch in "\u200c\u200d"):
+            pass
+        else:
+            count += 1
+        joined = unicodedata.combining(ch) == 9 or ch == "\u200d"
+    return count
+
+
+def topic_deck_targets(t: dict, by_core: dict[str, list[Report]]) -> list[str]:
+    """The targets of the cards of a topic's `decks`, NFC, in deck and card
+    order, each once: the characters its `chars` may name. A layer writes no
+    target, so only a core or a single-file deck is read."""
+    found: dict[str, None] = {}
+    for deck in t.get("decks") or []:
+        for rep in by_core.get(deck, []) if _is_str(deck) else []:
+            if rep.part == "layer":
+                continue
+            for d in rep.card_defs.values():
+                target = unicodedata.normalize("NFC", d.target.strip())
+                if target:
+                    found.setdefault(target)
+    return list(found)
+
+
+def topic_char_pool(t: dict, by_core: dict[str, list[Report]],
+                    facts: list[Report]) -> tuple[set[str], set[str]] | None:
+    """What a script topic's `chars` may name, and the single characters its
+    decks teach: (every target of the cards of its `decks` and every example
+    and letter of its `script_units`, the targets that are one character), or
+    None when it lists neither, so there is nothing to check against."""
+    if t.get("kind") != "script" or not (t.get("decks") or t.get("script_units")):
+        return None
+    targets = topic_deck_targets(t, by_core)
+    allowed = set(targets)
+    singles = {x for x in targets if _clusters(x) == 1}
+    for fid in t.get("script_units") or []:
+        for o in facts:
+            allowed |= o.script_chars.get(fid, set())
+    return allowed, singles
+
+
+def check_topic_chars(rep: Report, where: str, t: dict, pool: tuple,
+                      problems: list[str]) -> None:
+    """A script topic's `chars` are only characters its decks teach (or its
+    script units show), and each single-character card of its decks is
+    listed (#1228)."""
+    allowed, singles = pool
+    chars = []
+    for ref in t.get("chars") or []:
+        text = ref.get("text") if isinstance(ref, dict) else ref
+        if _is_str(text):
+            chars.append(unicodedata.normalize("NFC", text))
+    for ch in chars:
+        if ch not in allowed:
+            problems.append(f"{rep.path}: {where}: chars lists {ch!r}, which is no "
+                            f"card's target in the topic's decks, nor a letter of its "
+                            f"script units; `tools/topic_chars.py` writes chars from "
+                            f"the decks")
+    if t.get("decks"):
+        left = sorted(singles - set(chars))
+        if left:
+            shown = ", ".join(repr(c) for c in left[:8]) + (", ..." if len(left) > 8 else "")
+            msg = (f"chars leaves out {len(left)} single-character card(s) of the "
+                   f"topic's decks ({shown}); `tools/topic_chars.py` writes chars "
+                   f"from the decks")
+            if TOPIC_CHARS_MISSING_IS_ERROR:
+                problems.append(f"{rep.path}: {where}: {msg}")
+            else:
+                rep.warn(where, msg)
+
+
 # --- decks/recommendations/<code>.yaml (D13) ---------------------------------
 
 RECS_KEYS = {"schema", "kind", "id", "language", "license", "recommendations"}
@@ -8803,6 +9132,13 @@ def check_kinds_across(reports: list[Report]) -> list[str]:
                     if _is_str(ref) and ref not in known:
                         problems.append(f"{rep.path}: {where}: {key} names {ref!r}, "
                                         f"which is not {what}")
+            # A script topic's characters against its decks (#1228).
+            pool = topic_char_pool(t, by_core, facts)
+            if pool is not None and t.get("chars"):
+                check_topic_chars(rep, where, t, pool, problems)
+
+    # Character gating (#1227): only a language with a gating file.
+    problems += check_gating_across(reports, ctx)
 
     # Recommendations.
     for rep in reports:

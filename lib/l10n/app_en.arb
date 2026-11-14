@@ -13846,13 +13846,17 @@
   "@reviewGuideQuestionsCount": {
     "description": "Third paragraph of the daily questions step of How reviewing works, above the choice of how many a day (docs/REVIEWING.md says the same)."
   },
-  "reviewGuideQuestionsBuilder": "Some cards come with a question from the deck builder, a doubt they could not settle, such as a gender or a tone. Those cards are asked first, and the question is shown as a note, under Question from the deck builder, on the daily question and on the card in a unit\u2019s review. It is a hint for you, not part of your answer: answer the daily question as usual. If the builder\u2019s doubt turns out to be a mistake, open the card in a unit\u2019s review and use Suggest a change there, which the daily question does not offer.",
+  "reviewGuideQuestionsBuilder": "Some cards come with a question from the deck builder, a doubt they could not settle, such as a gender or a tone. Those cards are asked first. The builder\u2019s question is a daily question of its own, under Question from the deck builder, with the whole card in front of you, its word, its meaning and every example, and its own Yes and No. It is also shown as a note on the card in a unit\u2019s review. Only questions that can be answered Yes or No are asked. If the builder\u2019s doubt turns out to be a mistake, open the card in a unit\u2019s review and use Suggest a change there, which the daily question does not offer.",
   "@reviewGuideQuestionsBuilder": {
     "description": "Fourth paragraph of the daily questions step of How reviewing works (docs/REVIEWING.md says the same). “Question from the deck builder” must match reviewBuilderQuestion, “Suggest a change” reviewSuggest."
   },
   "reviewBuilderQuestion": "Question from the deck builder",
   "@reviewBuilderQuestion": {
-    "description": "Label of the note on a card, in a daily question and in a card's review sheet, that holds a question the deck's builder could not settle and asks the reviewer (docs/review-queue/README.md)."
+    "description": "Label of a question the deck's builder could not settle and asks the reviewer (docs/review-queue/README.md): above the question on its own daily-question step, and on the note in a card's review sheet."
+  },
+  "reviewBuilderExamples": "Examples on this card",
+  "@reviewBuilderExamples": {
+    "description": "Label above the card's example sentences, on a daily question from the deck builder, where the reviewer needs them to judge the builder's question."
   },
   "reviewQuestionsPerDayTitle": "Questions a day",
   "@reviewQuestionsPerDayTitle": {
@@ -14551,13 +14555,9 @@
   "@findLevelWordMeaning": {
     "description": "Find my level: a word to choose the meaning of."
   },
-  "findLevelWhichSentence": "Which sentence is right?",
-  "@findLevelWhichSentence": {
-    "description": "Find my level: two sentences, one with its words in the right order."
-  },
-  "findLevelWhichSentenceSounds": "Which sentence sounds right?",
-  "@findLevelWhichSentenceSounds": {
-    "description": "Find my level: two sentences, one with its words in the right order, with the right one played aloud."
+  "findLevelSentenceMeaning": "What does this sentence mean?",
+  "@findLevelSentenceMeaning": {
+    "description": "Find my level: a sentence, written or played aloud, to choose the meaning of."
   },
   "findLevelBuildFromMeaning": "Put the words in order",
   "@findLevelBuildFromMeaning": {

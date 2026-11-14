@@ -95,6 +95,17 @@ class Reading(unittest.TestCase):
         # The reviewer's own words are never read.
         self.assertNotIn(SECRET, repr(batch))
 
+    def test_a_builder_answer_names_the_hash_of_its_question(self) -> None:
+        batch = qa.read_questions([questions_file([
+            answer("zz-9201", "builder:0123abcd", "builder", "yes"),
+            answer("zz-9201", "builder:0123abcd", "builder", "no"),
+            answer("zz-9201", "builder:not-hex", "builder", "yes"),
+            answer("zz-9201", "builder:0123abcd", "builder", "flag"),
+        ])], ALICE)
+        self.assertEqual(
+            [(a.point, a.answer) for a in batch.answers],
+            [("builder:0123abcd", "yes"), ("builder:0123abcd", "no")])
+
     def test_an_image_answer_pins_its_file(self) -> None:
         batch = qa.read_questions([questions_file([
             answer("zz-9201", "image:Blorp.jpg", "image", "yes"),

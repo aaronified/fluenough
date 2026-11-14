@@ -767,7 +767,7 @@ cards:
   in a kana deck keeps its id and its history; the kanji spelling lands as a
   new card of a kanji deck only where the word is new.
 
-**A script unit of kanji** (`script-kanji-1` to `script-kanji-6`, deck ids
+**A script unit of kanji** (`script-kanji-1` to `script-kanji-38`, deck ids
 `ja-kanji-N`, listed under the path's `alphabet`) is a vocab deck tagged
 `script`, as Chinese's `characters-N` is, and its cards are single kanji:
 
@@ -3764,6 +3764,94 @@ the characters as strings. `decks/ja/ja-topics.yaml` has examples (hiragana
 and katakana, with `chars` and `decks`). The fields and their rules are
 defined in [Plan-Deck-Kinds-And-Topics](Plan-Deck-Kinds-And-Topics), under
 "Scripts are topics too".
+
+### Character gating: a card shows only the characters the path has taught
+
+A language whose path teaches a script's characters one at a time can have the
+validator check that no card or example writes a character before the path has
+taught it (#1227). Nothing is checked for a language without the file below, so
+no existing deck changes.
+
+The data is a **gating file**, `decks/<code>/<code>-gating.yaml` (`kind:
+"gating"`), beside the path:
+
+```yaml
+schema: 1
+kind: "gating"
+id: "zz-gating"
+language: "zz"
+license: "CC-BY-SA-4.0"
+character_gating:
+  - script: "han"
+    mode: "warn"
+    allow: ["々"]
+    blocks: ["4E00-9FFF"]
+```
+
+| Field | Rule |
+|---|---|
+| `script` | The gated script's id, once per file. |
+| `mode` | `warn` (a warning, the build goes on) or `error`. Start with `warn`, and move to `error` once the language's decks pass. |
+| `allow` | Optional list of characters taught from the start (a repeat mark, say), one character each. |
+| `blocks` | Optional list of `"XXXX-YYYY"` hexadecimal code point ranges that say which characters belong to the script. Left out, the validator's own table for that script id is used; a script it has no table for needs `blocks`. |
+
+**It is not a key of the path** on purpose: a released app refuses a path file
+with a field it does not know, and a path cannot be put behind `min_app`
+because the apps already hold it. The gating file is read by the validator
+alone, as the phonetic rules are: `tools/deck_index.py` lists it nowhere, and
+the app never downloads it.
+
+For each unit of the path, in order, the validator knows the characters taught
+so far: those of the **character decks** (a deck in the path's `alphabet`
+tagged `script`) of earlier units, each card of one character teaching that
+character. A card whose `target`, `alt_target`, `target_scripts` spelling, or
+example `target` or `target_scripts` spelling writes a character of the gated
+script that is not yet taught is reported, naming the card, where in it, the
+character and the unit. What counts as taught:
+
+- A deck of the unit is checked against the earlier units' characters and the
+  characters of the unit's own character decks, so a sentence deck may share a
+  unit with the characters it uses.
+- Inside a character deck, a card is checked against the characters of the
+  cards before it and its own: the card teaches its character before its
+  examples use it.
+- A spelling in another script has no character of the gated script, so it is
+  not asked about: a word may be written in that script until its characters
+  are taught.
+- A deck the path does not list is not checked, and neither is a layer.
+
+At most 20 reports are written for one deck, then a line says how many more.
+The fixture is the made-up script `glyph` of `tools/test_validate_gating.py`
+over the `zz` decks.
+
+**`chars` is checked against the topic's `decks`** (#1228). For a script topic
+that lists `decks`, every character in `chars` must be the `target` of a card
+of those decks (a layer writes no target, so the core or the single-file deck
+is read), or a letter or example of one of its `script_units`; one that is
+neither is an error ("chars lists 'x', which is no card's target ..."). The
+reverse, a one-character card of those decks that `chars` leaves out, is a
+**warning** for now (`TOPIC_CHARS_MISSING_IS_ERROR` in
+`tools/validate_decks.py`), because decks-live's hiragana and katakana topics
+list the 46 basic letters but also name the marks, combos and small-kana decks.
+What counts as one character is Unicode's own (a letter with its marks, a
+conjunct joined by a virama), never a script's name. A topic with `chars` and
+`script_units` but no `decks` is checked against the script units' letters
+only; a topic that is not `kind: "script"` is not checked.
+
+`tools/topic_chars.py <lang>` writes `chars` from the decks, so a topic of
+200 characters is never copied by hand:
+
+```sh
+python3 tools/topic_chars.py ja                 # report what would change
+python3 tools/topic_chars.py ja --write         # patch decks/ja/ja-topics.yaml
+python3 tools/topic_chars.py ja --check         # exit 1 if a topic differs
+python3 tools/topic_chars.py ja --all-targets   # also two-character cards
+```
+
+It lists the one-character cards of each script topic's `decks` in deck and
+card order, keeps a character's `{ text, reading }` mapping, rewrites only the
+`chars` line, and leaves a topic with no `decks` alone. The fixture is a deck
+of single characters added to `zz` in `tools/test_topic_chars.py`.
 
 ### Where script decks sit on the path
 

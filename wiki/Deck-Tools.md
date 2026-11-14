@@ -310,6 +310,14 @@ left alone. Another native language's layer needs that edition's own
 extract, which the tool does not read yet. `test_mark_wiktionary.py` tests it
 on `fixtures/wiktionary`.
 
+## `topic_chars.py`
+
+Writes the `chars` of a language's script topics from the one-character cards
+of their `decks` (`python3 tools/topic_chars.py ja --write`; `--check` exits 1
+when a topic differs, `--all-targets` also lists two-character cards). The
+validator checks `chars` against the same decks. See
+[Deck-Format](Deck-Format#script-topics), "Script topics".
+
 ## `import_phonetic.py` and `derive_phonetic.py`
 
 Write each card's narrow `[ ]` IPA into its `phonetic` field, with
