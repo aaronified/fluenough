@@ -29,6 +29,10 @@ This page is a plan. It builds nothing. The sections for Spanish, Telugu, French
 14. **Hepburn readings.** Readings follow kana-based Hepburn, as the merged decks do: とお is `oo`, おう is `ou`, the particle は is `wa` in readings and IPA, and geminates are written (`jottsɯ`, not `jotsɯ`). Read each kanji's readings from the cited source page, never from memory.
 15. **Dates and lifespans.** A `date` field uses a shape `tools/validate_decks.py` `parse_years` accepts: a year, `c. YEAR` or `A-B`. Explanations go in notes. A creator's born and died must satisfy the validator's `MAX_LIFESPAN` (120).
 
+## Spanish and Telugu completion plan
+
+The task-by-task plan for finishing Spanish (ES-012 to ES-045) and Telugu (TE-001 to TE-062), with reserved id ranges, blockers and launch order, is on its own page: [Deck-Work-Queue-ES-TE](Deck-Work-Queue-ES-TE.md) (2026-11-14, under rule 16). The sourcing lists for the genre decks are [Plan-Culture-Spanish](Plan-Culture-Spanish.md) and [Plan-Culture-Telugu](Plan-Culture-Telugu.md).
+
 ## Japanese
 
 ### State on decks-live, 2026-11-14 (what the issues no longer say)
@@ -312,6 +316,8 @@ Each ES-001 to ES-008 appends 25 sentences to **one existing sentences deck** (c
 | ES-009 | decks/es-sent-repairs | `es-time-sentences`, `es-en-time-sentences` | `es-time` (32); a function whose words are not taught by then is reported and skipped | es-3520 to 3559 | 12 (the table above) |
 | ES-010 | decks/es-sent-phonetics | every new card of ES-001 to 009 via the tools | after all nine merge | none | tool run |
 | ES-011 | none (Sonnet, no PR) | runs the placement audit on the new Spanish bank and reports F5 and F17 accuracy against 0.32 at the new n; if it fails, the architect orders ES-012 onward (the same shape, other units: `es-money`, `es-news`, `es-weather`, `es-places`, ids from es-3600) | after ES-010 | none | audit |
+
+**Renumbering note (2026-11-14):** the conditional top-up that the ES-011 row above reserves as "ES-012 onward" (`es-money`, `es-news`, `es-weather`, `es-places`, ids from es-3600) is now ES-046 to ES-049, ids es-3600 to es-3799, if ES-011 fails. The numbers ES-012 to ES-045 belong to [Deck-Work-Queue-ES-TE](Deck-Work-Queue-ES-TE.md). Nothing else in this section is renumbered.
 
 **Verb pools, counted from the path position of each deck** (verb cards of the decks listed up to the unit; ES-001 also counts the verbs its unit's grammar teaches, 11 in all as its builder found: ser, estar, tener, ir, hablar, comer, estudiar, trabajar, sentir, llamarse, vivir):
 
