@@ -1,0 +1,99 @@
+schema: 1
+id: "es-en-multiword-periphrases"
+kind: "layer"
+core: "es-multiword-periphrases"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Multi-word verbs: periphrases"
+description: "Twenty verb phrases of an auxiliary part and a verb: going to, having just done, having to, the progressive with estar, continuing, starting suddenly, stopping, habit, and ability. Each has the verb in its infinitive or gerund as taught in the course. Not yet checked by a Spanish speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "es-4350":
+    native: "to be going to buy"
+    notes:
+      "u1": "Ir a and an infinitive say what is going to happen: voy a comprar, I am going to buy. The infinitive does not change."
+  "es-4351":
+    native: "to have just finished"
+    notes:
+      "u1": "Acabar de and an infinitive say an action has just ended: acabo de terminar, I have just finished. Acabar alone means to finish something."
+  "es-4352":
+    native: "to have to study"
+    notes:
+      "u1": "Tener que and an infinitive say what someone must do: tengo que estudiar, I have to study. The que is part of the pattern."
+  "es-4353":
+    native: "it is necessary to read"
+    notes:
+      "u1": "Hay que and an infinitive say that something has to be done, by anyone: hay que leer, it is necessary to read. Hay is the present of haber, and the pattern has no subject; in the past it is había que."
+    bases:
+      "hay": { meaning: "impersonal form of haber; with que and an infinitive, it is necessary to" }
+  "es-4354":
+    native: "is probably arriving"
+    notes:
+      "u1": "Deber de and an infinitive guess that something is probably so: debe de llegar, he or she is probably arriving. It is not an obligation. Deber alone means must, or to owe."
+    bases:
+      "deber": { meaning: "to owe; must; with de and an infinitive, probably" }
+  "es-4355":
+    native: "to be buying"
+    notes:
+      "u1": "Estar and a gerund show an action in progress: está comprando, he or she is buying. Estar takes the tense; the gerund does not change."
+  "es-4356":
+    native: "to keep writing"
+    notes:
+      "u1": "Seguir and a gerund say an action goes on: sigue escribiendo, he or she keeps writing. Seguir alone means to follow."
+  "es-4357":
+    native: "to have been studying"
+    notes:
+      "u1": "Llevar and a gerund say how long an action has gone on: llevo estudiando dos horas, I have been studying for two hours. The time can come before or after the gerund: llevo dos horas estudiando, llevo estudiando dos horas."
+  "es-4358":
+    native: "to read again"
+    notes:
+      "u1": "Volver a and an infinitive say an action is done again: vuelvo a leer, I read again. Volver alone means to return."
+  "es-4359":
+    native: "to start crying"
+    notes:
+      "u1": "Ponerse a and an infinitive say an action starts suddenly: se puso a llorar, she started crying. Ponerse alone means to put oneself, or to put on clothes."
+  "es-4360":
+    native: "to start dancing"
+    notes:
+      "u1": "Empezar a and an infinitive say an action begins: empieza a bailar, he or she starts dancing."
+  "es-4361":
+    native: "to start running"
+    notes:
+      "u1": "Echar a and an infinitive say someone starts doing something suddenly: echó a correr, he or she started running. Echar alone means to throw."
+    bases:
+      "echar": { meaning: "to throw; with a and an infinitive, to start suddenly" }
+  "es-4362":
+    native: "to stop working"
+    notes:
+      "u1": "Dejar de and an infinitive say an action stops: dejé de trabajar, I stopped working. Dejar alone means to leave, or to let."
+  "es-4363":
+    native: "to usually have dinner"
+    notes:
+      "u1": "Soler and an infinitive say a habit: suelo cenar a las nueve, I usually have dinner at nine. Soler is used almost only in the present and the imperfect."
+    bases:
+      "soler": { meaning: "to be in the habit of; usually" }
+  "es-4364":
+    native: "to be about to leave"
+    notes:
+      "u1": "Estar a punto de and an infinitive say an action is just about to happen: estoy a punto de salir, I am about to leave."
+  "es-4365":
+    native: "to take a while to answer"
+    notes:
+      "u1": "Tardar en and an infinitive say an action takes a long time: tardó en responder, it took him a while to answer."
+  "es-4366":
+    native: "to go around looking"
+    notes:
+      "u1": "Andar and a gerund, in everyday speech, say someone goes around doing something: anda buscando trabajo, he is going around looking for work."
+  "es-4367":
+    native: "to have been thinking"
+    notes:
+      "u1": "Venir and a gerund say that an action has gone on up to now: viene pensando en eso desde hace días, he has been thinking about that for days."
+  "es-4368":
+    native: "to arrange to call"
+    notes:
+      "u1": "Quedar en and an infinitive say two people agree to do something: quedamos en llamar, we arranged to call. Quedar alone means to stay, or to be left."
+  "es-4369":
+    native: "to be able to come"
+    notes:
+      "u1": "Poder and an infinitive say what someone can do or may do: puedo venir, I can come. It does not mean must."
