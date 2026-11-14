@@ -122,6 +122,7 @@ alphabet:
   - "ja-kanji-27"
   - "ja-kanji-28"
   - "ja-kanji-29"
+  - "ja-kanji-30"
   - "ja-katakana"
   - "ja-katakana-combos"
   - "ja-hiragana-marks"
@@ -800,11 +801,8 @@ units:
       - { id: "visiting-a-home", text: { "en": "Visiting a Japanese home: what to say at the door and at the table" } }
     reading_passages:
       - { id: "etiquette-guide", text: { "en": "A short etiquette guide for visitors" } }
-  - planned: { id: "ja-kanji-30", grammar: "script-kanji-30", words: 0 }
-    listening_passages:
-      - { id: "kanji-30-heard", text: { "en": "Hearing words whose kanji unit 30 teaches" } }
-    reading_passages:
-      - { id: "kanji-30-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 30" } }
+  - decks: ["ja-kanji-30"]
+    words: 0
   - decks: ["ja-environment", "ja-environment-sentences", "ja-reading-environment", "*"]
     words: 50
     listening_passages:
