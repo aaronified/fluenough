@@ -1,0 +1,80 @@
+# Topics a learner of Spanish would search for: what each one is, and the decks that teach it (wiki/Plan-Deck-Kinds-And-Topics.md, D6).
+# A topic holds no card text of its own; it names the decks that already teach it.
+schema: 1
+kind: "topics"
+id: "es-topics"
+language: "es"
+license: "CC-BY-SA-4.0"
+topics:
+  - id: "es-ser-estar"
+    name: { en: "Ser vs estar" }
+    summary: { en: "The two Spanish verbs that both mean 'to be': ser for identity, origin and lasting traits, and estar for states, feelings and location." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["es-grammar-ser-estar"]
+  - id: "es-por-para"
+    name: { en: "Por vs para" }
+    summary: { en: "The two Spanish prepositions that both cover 'for': por for cause, exchange, means and passing through, and para for purpose, recipients, deadlines and destinations." }
+    kind: "grammar"
+    level: "A2"
+    decks: ["es-grammar-por-para"]
+  - id: "es-preterite-imperfect"
+    name: { en: "Preterite vs imperfect" }
+    summary: { en: "The two Spanish past tenses: the preterite for finished actions and events with a clear end, and the imperfect for habits, descriptions and what was going on." }
+    kind: "grammar"
+    level: "A2"
+    decks: ["es-grammar-preterite-imperfect", "es-grammar-preterite-regular", "es-grammar-preterite-irregular", "es-grammar-imperfect"]
+  - id: "es-subjunctive-present"
+    name: { en: "The present subjunctive" }
+    summary: { en: "The present subjunctive, the verb mood used after expressions of wish, doubt, feeling and purpose, and in clauses about things that have not happened yet." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["es-grammar-subjunctive-present", "es-grammar-subjunctive-uses"]
+  - id: "es-reflexive-verbs"
+    name: { en: "Reflexive verbs" }
+    summary: { en: "Verbs where the subject does the action to itself, such as getting up or washing oneself, shown with the reflexive pronouns me, te, se, nos and os." }
+    kind: "grammar"
+    level: "A2"
+    decks: ["es-grammar-reflexives"]
+  - id: "es-gender-agreement"
+    name: { en: "Noun gender and agreement" }
+    summary: { en: "Whether Spanish nouns are masculine or feminine, how articles, adjectives and plurals agree with the noun in gender and number, and the endings that show it." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["es-grammar-articles-gender", "es-grammar-adjective-agreement", "es-grammar-plural"]
+  - id: "es-object-pronouns"
+    name: { en: "Object pronouns" }
+    summary: { en: "The short pronouns that stand in for a direct or indirect object, such as 'him', 'her', 'them' or 'to me', and where they go in the sentence." }
+    kind: "grammar"
+    level: "A2"
+    decks: ["es-grammar-object-pronouns"]
+  - id: "es-commands"
+    name: { en: "Commands" }
+    summary: { en: "How to tell someone to do something, with the affirmative command forms for tú and usted. Negative commands come later, in the B1 part of the path." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["es-grammar-imperatives", "es-grammar-imperative-negative"]
+  - id: "es-si-clauses-conditional"
+    name: { en: "Si-clauses and the conditional" }
+    summary: { en: "If-clauses such as 'if I had time, I would go', and the conditional form that says what would happen." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["es-grammar-si-clauses", "es-grammar-conditional"]
+  - id: "es-gerund-progressive"
+    name: { en: "The gerund and progressive forms" }
+    summary: { en: "The gerund (the -ando and -iendo forms) and the progressive built with estar, for an action going on now, such as 'I am eating'." }
+    kind: "verbs"
+    level: "A2"
+    decks: ["es-grammar-estar-gerund"]
+  - id: "es-irregular-present"
+    name: { en: "Irregular present verbs" }
+    summary: { en: "Spanish verbs whose present tense does not follow the regular -ar, -er and -ir patterns, with the stem changes and forms that have to be learnt by heart." }
+    kind: "verbs"
+    level: "A1"
+    decks: ["es-grammar-present-irregular"]
+  - id: "es-numbers-time"
+    name: { en: "Numbers and telling time" }
+    summary: { en: "Counting from one to twenty and on to larger numbers, and telling the time of day in everyday speech." }
+    kind: "words"
+    level: "A1"
+    decks: ["es-numbers-1-20", "es-numbers-big", "es-time"]
