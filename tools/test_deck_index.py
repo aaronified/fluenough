@@ -1029,6 +1029,18 @@ cards:
                   if f["path"] != "decks/zz/zz-en-glyphs.yaml"]
         self.assertTrue(all("min_app" not in f for f in others))
 
+    def test_a_layer_is_gated_with_the_core_it_names(self) -> None:
+        self.min_app({"files": {"decks/zz/zz-words.yaml": "0.12.0"}})
+        files = {f["path"]: f for f in self.zz()["files"]}
+        self.assertEqual(files["decks/zz/zz-words.yaml"]["min_app"], "0.12.0")
+        self.assertEqual(files["decks/zz/en/zz-en-words.yaml"]["min_app"], "0.12.0")
+
+    def test_a_layer_keeps_a_newer_gate_of_its_own(self) -> None:
+        self.min_app({"files": {"decks/zz/zz-words.yaml": "0.10.2",
+                                "decks/zz/en/zz-en-words.yaml": "0.12.0"}})
+        files = {f["path"]: f for f in self.zz()["files"]}
+        self.assertEqual(files["decks/zz/en/zz-en-words.yaml"]["min_app"], "0.12.0")
+
     def test_a_file_without_the_field_is_not_gated(self) -> None:
         self.assertNotIn("min_app", self.glyphs("", ""))
 

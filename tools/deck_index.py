@@ -565,6 +565,24 @@ def _gate_fields(entry: dict, rep: vd.Report | None) -> None:
         entry["min_app"] = max(versions, key=lambda v: tuple(int(x) for x in v.split(".")))
 
 
+def _gate_layers(entries: list[dict]) -> None:
+    """Gives each layer the `min_app` of the core of its deck: the app skips a
+    core it is too old for but would still download a layer alone, so a layer
+    is never listed for an app that cannot read its core (ADR-0052). Keeps a
+    newer gate the layer has itself."""
+    def newest(versions: list[str]) -> str:
+        return max(versions, key=lambda v: tuple(int(x) for x in v.split(".")))
+
+    cores: dict[str, str] = {}
+    for e in entries:
+        if e.get("part") == "core" and e.get("deck") and e.get("min_app"):
+            cores[e["deck"]] = newest([cores[e["deck"]], e["min_app"]]) \
+                if e["deck"] in cores else e["min_app"]
+    for e in entries:
+        if e.get("part") != "core" and e.get("native") and e.get("deck") in cores:
+            e["min_app"] = newest([v for v in (e.get("min_app"), cores[e["deck"]]) if v])
+
+
 def _sections() -> dict:
     """decks/sections.yaml read for the genres' default section and weave,
     or {} when it is not there."""
@@ -759,6 +777,7 @@ def build(reports: list[vd.Report] | None = None,
         # app that reads it, with no line in min_app.json (ADR-0052).
         for e in entries + guides + situations + shelves:
             _gate_fields(e, by_path.get((ROOT / e["path"]).resolve()))
+        _gate_layers(entries + guides + situations + shelves)
         language["files"] = entries
         if guides:
             language["script_guides"] = guides
