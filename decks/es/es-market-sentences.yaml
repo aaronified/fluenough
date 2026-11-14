@@ -16,6 +16,8 @@ cards:
     bases: [{ word: "Compro", ref: "es-0280" }, { word: "una", base: "una" }, { word: "manzana", ref: "es-0569" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "mercado", ref: "es-0567" }]
     confusables: [{ id: "tienda", ref: "es-0584", kind: "word" }, { id: "fruta", ref: "es-0568", kind: "word" }]
   - id: "es-0590"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     target: "¿Cuánto cuestan las fresas?"
     ipa: "ˈkwanto ˈkwestan las ˈfɾesas"
     phonetic: "[ˈkwan̪t̪o ˈkwest̪an las ˈfɾesas]"
@@ -25,6 +27,8 @@ cards:
     bases: [{ word: "Cuánto", ref: "es-0060" }, { word: "cuestan", ref: "es-0587" }, { word: "las", base: "las" }, { word: "fresas", ref: "es-0572" }]
     confusables: [{ id: "precio", ref: "es-0580", kind: "word" }, { id: "pagar", ref: "es-0295", kind: "word" }]
   - id: "es-0591"
+    notes:
+      - { id: "n1", kind: "usage" }
     target: "El vendedor vende fruta y verdura."
     ipa: "el bendeˈdoɾ ˈbende ˈfɾuta i beɾˈduɾa"
     phonetic: "[el βen̪d̪eˈðoɾ ˈβen̪d̪e ˈfɾut̪a i βeɾˈðuɾa]"
@@ -34,6 +38,8 @@ cards:
     bases: [{ word: "El", base: "el" }, { word: "vendedor", ref: "es-0582" }, { word: "vende", ref: "es-0522" }, { word: "fruta", ref: "es-0568" }, { word: "y", ref: "es-0048" }, { word: "verdura", ref: "es-0579" }]
     confusables: [{ id: "comprar", ref: "es-0280", kind: "word" }, { id: "cambiar", ref: "es-0588", kind: "word" }]
   - id: "es-0592"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     target: "Hay una oferta hoy en la tienda."
     ipa: "aj ˈuna oˈfeɾta oj en la ˈtjenda"
     phonetic: "[aj ˈuna oˈfeɾt̪a oj en la ˈt̪jen̪d̪a]"
