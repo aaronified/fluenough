@@ -43,10 +43,10 @@ topics:
     chars: ["౦", "౧", "౨", "౩", "౪", "౫", "౬", "౭", "౮", "౯"]
   - id: "te-kinship"
     name: { en: "Kinship terms" }
-    summary: { en: "The Telugu words for family members and other close people, such as parents, siblings and friends, as the family and relationships decks teach them." }
+    summary: { en: "The Telugu words for family members, such as parents and siblings, as the family deck teaches them." }
     kind: "words"
     level: "A1"
-    decks: ["te-family", "te-relationships"]
+    decks: ["te-family"]
   - id: "te-food-dishes"
     name: { en: "Food and dishes" }
     summary: { en: "Common Telugu words for food and the names of dishes, with short sentences about food." }
@@ -71,3 +71,15 @@ topics:
     kind: "verbs"
     level: "A2"
     decks: ["te-multiword-compound-verbs", "te-grammar-compound-verbs"]
+  - id: "te-proverbs"
+    name: { en: "Proverbs (samethalu)" }
+    summary: { en: "Short sayings from a printed 1868 collection of Telugu proverbs, each with its literal meaning and what it is taken to mean." }
+    kind: "other"
+    level: "A2"
+    decks: ["te-proverbs-1", "te-proverbs-2", "te-proverbs-3"]
+  - id: "te-dative-subject"
+    name: { en: "Verbs with a dative subject" }
+    summary: { en: "Phrases where the person who likes, needs, knows or feels something is put in the dative case, as in 'to me' sentences, rather than as the subject." }
+    kind: "verbs"
+    level: "A1"
+    decks: ["te-multiword-dative-subject"]
