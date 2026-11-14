@@ -45,18 +45,19 @@ cards:
       - { id: "c1", ref: "te-1127", kind: "word" }
       - { id: "c2", ref: "te-1125", kind: "word" }
   - id: "te-7153"
-    target: "నేను వేడి పాలు తాగుతాను."
-    reading: "nēnu vēḍi pālu tāgutānu."
-    ipa: "neːnu ʋeːɖi paːlu t̪aːɡut̪aːnu"
+    target: "చలికాలంలో నేను వేడి నీరు తాగుతాను."
+    reading: "calikālamlō nēnu vēḍi nīru tāgutānu."
+    ipa: "tʃalikaːlamloː neːnu ʋeːɖi niːru t̪aːɡut̪aːnu"
     pos: "phrase"
-    rules: ["te-rule-present-first"]
+    rules: ["te-rule-lo", "te-rule-present-first"]
     bases:
+      - { word: "చలికాలంలో", ref: "te-1126" }
       - { word: "నేను", ref: "te-0593" }
       - { word: "వేడి", ref: "te-0505" }
-      - { word: "పాలు", ref: "te-0265" }
+      - { word: "నీరు", ref: "te-1132" }
       - { word: "తాగుతాను", ref: "te-0625" }
     confusables:
-      - { id: "c1", ref: "te-1132", kind: "word" }
+      - { id: "c1", ref: "te-0265", kind: "word" }
       - { id: "c2", ref: "te-0624", kind: "word" }
   - id: "te-7154"
     target: "నాకు చల్లని గాలి కావాలి."
@@ -117,12 +118,13 @@ cards:
       - { id: "c1", ref: "te-1138", kind: "word" }
       - { id: "c2", ref: "te-1139", kind: "word" }
   - id: "te-7158"
-    target: "మీరు గొడుగు తీసుకుంటారా?"
-    reading: "mīru goḍugu tīsukuṇṭārā?"
-    ipa: "miːru ɡoɖuɡu t̪iːsukuɳʈaːraː"
+    target: "ఎండలో మీరు గొడుగు తీసుకుంటారా?"
+    reading: "eṇḍalō mīru goḍugu tīsukuṇṭārā?"
+    ipa: "eɳɖaloː miːru ɡoɖuɡu t̪iːsukuɳʈaːraː"
     pos: "phrase"
-    rules: ["te-rule-present-second"]
+    rules: ["te-rule-lo", "te-rule-present-second"]
     bases:
+      - { word: "ఎండలో", ref: "te-1117" }
       - { word: "మీరు", ref: "te-0136" }
       - { word: "గొడుగు", ref: "te-0869" }
       - { word: "తీసుకుంటారా", ref: "te-0631" }
