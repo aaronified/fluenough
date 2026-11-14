@@ -106,6 +106,13 @@ alphabet:
   - "ja-kanji-11"
   - "ja-kanji-12"
   - "ja-kanji-13"
+  - "ja-kanji-14"
+  - "ja-kanji-15"
+  - "ja-kanji-16"
+  - "ja-kanji-17"
+  - "ja-kanji-18"
+  - "ja-kanji-19"
+  - "ja-kanji-20"
   - "ja-katakana"
   - "ja-katakana-combos"
   - "ja-hiragana-marks"
@@ -514,22 +521,16 @@ units:
       - { id: "which-is-better", text: { "en": "Two friends compare two phones, and pick the best" } }
     reading_passages:
       - { id: "two-cities", text: { "en": "A short text comparing Tokyo and Osaka" } }
-  - planned: { id: "ja-kanji-14", grammar: "script-kanji-14", words: 0 }
-    listening_passages:
-      - { id: "kanji-14-heard", text: { "en": "Hearing words whose kanji unit 14 teaches" } }
-    reading_passages:
-      - { id: "kanji-14-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 14" } }
+  - decks: ["ja-kanji-14"]
+    words: 0
   - decks: ["ja-music", "ja-music-sentences", "ja-reading-music", "*"]
     words: 14
     listening_passages:
       - { id: "at-karaoke", text: { "en": "Friends choose songs at karaoke" } }
     reading_passages:
       - { id: "concert-flyer", text: { "en": "A flyer for a concert" } }
-  - planned: { id: "ja-kanji-15", grammar: "script-kanji-15", words: 0 }
-    listening_passages:
-      - { id: "kanji-15-heard", text: { "en": "Hearing words whose kanji unit 15 teaches" } }
-    reading_passages:
-      - { id: "kanji-15-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 15" } }
+  - decks: ["ja-kanji-15"]
+    words: 0
   # The planned word units from here to the B1 mark take their words from
   # the wiki page Plan-Japanese-B1-Wordlists (owner, 2026-11-06: "go with
   # C"). Each unit has a list at least as long as its size, every word fresh
@@ -548,11 +549,8 @@ units:
       - { id: "birthday-presents", text: { "en": "Saying who gave whom which birthday present" } }
     reading_passages:
       - { id: "thank-you-card", text: { "en": "A thank-you card for a present" } }
-  - planned: { id: "ja-kanji-16", grammar: "script-kanji-16", words: 0 }
-    listening_passages:
-      - { id: "kanji-16-heard", text: { "en": "Hearing words whose kanji unit 16 teaches" } }
-    reading_passages:
-      - { id: "kanji-16-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 16" } }
+  - decks: ["ja-kanji-16"]
+    words: 0
   - decks: ["ja-illness", "ja-illness-sentences", "ja-reading-illness", "*"]
     words: 40
     listening_passages:
@@ -566,22 +564,16 @@ units:
       - { id: "you-should-rest", text: { "en": "A doctor says what you must do and what you had better do" } }
     reading_passages:
       - { id: "clinic-advice", text: { "en": "A clinic's advice sheet" } }
-  - planned: { id: "ja-kanji-17", grammar: "script-kanji-17", words: 0 }
-    listening_passages:
-      - { id: "kanji-17-heard", text: { "en": "Hearing words whose kanji unit 17 teaches" } }
-    reading_passages:
-      - { id: "kanji-17-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 17" } }
+  - decks: ["ja-kanji-17"]
+    words: 0
   - decks: ["ja-chores", "ja-chores-sentences", "ja-reading-chores", "*"]
     words: 35
     listening_passages:
       - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
     reading_passages:
       - { id: "rubbish-calendar", text: { "en": "A neighbourhood calendar of rubbish collection days" } }
-  - planned: { id: "ja-kanji-18", grammar: "script-kanji-18", words: 0 }
-    listening_passages:
-      - { id: "kanji-18-heard", text: { "en": "Hearing words whose kanji unit 18 teaches" } }
-    reading_passages:
-      - { id: "kanji-18-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 18" } }
+  - decks: ["ja-kanji-18"]
+    words: 0
   - decks: ["ja-appearance", "ja-appearance-sentences", "ja-reading-appearance", "*"]
     words: 40
     listening_passages:
@@ -594,11 +586,8 @@ units:
       - { id: "a-busy-day", text: { "en": "Someone lists everything they did in a day" } }
     reading_passages:
       - { id: "diary-entry", text: { "en": "A short diary entry" } }
-  - planned: { id: "ja-kanji-19", grammar: "script-kanji-19", words: 0 }
-    listening_passages:
-      - { id: "kanji-19-heard", text: { "en": "Hearing words whose kanji unit 19 teaches" } }
-    reading_passages:
-      - { id: "kanji-19-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 19" } }
+  - decks: ["ja-kanji-19"]
+    words: 0
   - decks: ["ja-grammar-experience", "ja-grammar-experience-sentences"]
     words: 0
     grammar: ["ta-koto-ga-aru"]
@@ -612,11 +601,8 @@ units:
       - { id: "phone-call", text: { "en": "A phone call to arrange a meeting" } }
     reading_passages:
       - { id: "text-messages", text: { "en": "A few text messages between friends" } }
-  - planned: { id: "ja-kanji-20", grammar: "script-kanji-20", words: 0 }
-    listening_passages:
-      - { id: "kanji-20-heard", text: { "en": "Hearing words whose kanji unit 20 teaches" } }
-    reading_passages:
-      - { id: "kanji-20-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 20" } }
+  - decks: ["ja-kanji-20"]
+    words: 0
   - decks: ["ja-journey", "ja-journey-sentences", "ja-reading-journey", "*"]
     words: 55
     listening_passages:

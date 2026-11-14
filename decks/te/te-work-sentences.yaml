@@ -1,0 +1,116 @@
+schema: 1
+id: "te-work-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-7026"
+    target: "ఆమె ఆఫీసులో పని చేస్తుంది."
+    reading: "āme āfīsulō pani cēstundi."
+    ipa: "aːme aːfiːsuloː pani tʃeːst̪und̪i"
+    pos: "phrase"
+    rules: ["te-rule-lo", "te-rule-present-third"]
+    bases:
+      - { word: "ఆమె", ref: "te-0596" }
+      - { word: "ఆఫీసులో", ref: "te-0401" }
+      - { word: "పని", ref: "te-0197" }
+      - { word: "చేస్తుంది", ref: "te-0621" }
+    confusables:
+      - { id: "c1", ref: "te-0402", kind: "word" }
+      - { id: "c2", ref: "te-0415", kind: "word" }
+  - id: "te-7027"
+    target: "నాన్నకు ఉద్యోగం ఉంది."
+    reading: "nānnaku udyōgaṁ undi."
+    ipa: "naːnnaku ud̪joːɡam und̪i"
+    pos: "phrase"
+    rules: ["te-rule-ki"]
+    bases:
+      - { word: "నాన్నకు", ref: "te-0381" }
+      - { word: "ఉద్యోగం", ref: "te-0400" }
+      - { word: "ఉంది", ref: "te-0633" }
+    confusables:
+      - { id: "c1", ref: "te-0413", kind: "word" }
+      - { id: "c2", ref: "te-0414", kind: "word" }
+  - id: "te-7028"
+    target: "ఆ విద్యార్థి చదువుతాడు."
+    reading: "ā vidyārthi caduvutāḍu."
+    ipa: "aː ʋid̪jaːrt̪ʰi tʃad̪uʋut̪aːɖu"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "ఆ", ref: "te-0608" }
+      - { word: "విద్యార్థి", ref: "te-0412" }
+      - { word: "చదువుతాడు", ref: "te-0638" }
+    confusables:
+      - { id: "c1", ref: "te-0402", kind: "word" }
+      - { id: "c2", ref: "te-0410", kind: "word" }
+  - id: "te-7029"
+    target: "నువ్వు ఎందుకు ఈ ఉద్యోగం చేస్తావు?"
+    reading: "nuvvu enduku ī udyōgaṁ cēstāvu?"
+    ipa: "nuʋʋu end̪uku iː ud̪joːɡam tʃeːst̪aːʋu"
+    pos: "phrase"
+    rules: ["te-rule-present-second"]
+    bases:
+      - { word: "నువ్వు", ref: "te-0594" }
+      - { word: "ఎందుకు", ref: "te-0164" }
+      - { word: "ఈ", ref: "te-0607" }
+      - { word: "ఉద్యోగం", ref: "te-0400" }
+      - { word: "చేస్తావు", ref: "te-0621" }
+    confusables:
+      - { id: "c1", ref: "te-0163", kind: "word" }
+      - { id: "c2", ref: "te-0162", kind: "word" }
+  - id: "te-7030"
+    target: "అమ్మ రైతు కాదు."
+    reading: "amma raitu kādu."
+    ipa: "amma rait̪u kaːd̪u"
+    pos: "phrase"
+    bases:
+      - { word: "అమ్మ", ref: "te-0059" }
+      - { word: "రైతు", ref: "te-0408" }
+      - { word: "కాదు", ref: "te-0158" }
+    confusables:
+      - { id: "c1", ref: "te-0157", kind: "word" }
+      - { id: "c2", ref: "te-0159", kind: "word" }
+  - id: "te-7031"
+    target: "అన్నకు జీతం ఎంత?"
+    reading: "annaku jītaṁ enta?"
+    ipa: "annaku dʒiːt̪am ent̪a"
+    pos: "phrase"
+    rules: ["te-rule-ki"]
+    bases:
+      - { word: "అన్నకు", ref: "te-0061" }
+      - { word: "జీతం", ref: "te-0414" }
+      - { word: "ఎంత", ref: "te-0166" }
+    confusables:
+      - { id: "c1", ref: "te-0163", kind: "word" }
+      - { id: "c2", ref: "te-0164", kind: "word" }
+  - id: "te-7032"
+    target: "డ్రైవర్ సమయానికి వస్తాడు."
+    reading: "ḍraivar samayāniki vastāḍu."
+    ipa: "ɖraiʋar samajaːniki ʋast̪aːɖu"
+    pos: "phrase"
+    rules: ["te-rule-ki", "te-rule-present-third"]
+    bases:
+      - { word: "డ్రైవర్", ref: "te-0404" }
+      - { word: "సమయానికి", ref: "te-0057" }
+      - { word: "వస్తాడు", ref: "te-0623" }
+    confusables:
+      - { id: "c1", ref: "te-0405", kind: "word" }
+      - { id: "c2", ref: "te-0401", kind: "word" }
+  - id: "te-7033"
+    target: "నేను సెలవు తీసుకుంటాను."
+    reading: "nēnu selavu tīsukuṇṭānu."
+    ipa: "neːnu selaʋu t̪iːsukuɳʈaːnu"
+    pos: "phrase"
+    rules: ["te-rule-present-first"]
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "సెలవు", ref: "te-0413" }
+      - { word: "తీసుకుంటాను", ref: "te-0631" }
+    confusables:
+      - { id: "c1", ref: "te-0400", kind: "word" }
+      - { id: "c2", ref: "te-0414", kind: "word" }

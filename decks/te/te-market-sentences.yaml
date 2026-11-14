@@ -1,0 +1,112 @@
+schema: 1
+id: "te-market-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-7078"
+    target: "నాకు కిలో టమాటాలు కావాలి."
+    reading: "nāku kilō ṭamāṭālu kāvāli."
+    ipa: "naːku kiloː ʈamaːʈaːlu kaːʋaːli"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-dat"]
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "కిలో", ref: "te-0248" }
+      - { word: "టమాటాలు", ref: "te-0258" }
+      - { word: "కావాలి", ref: "te-0460" }
+    confusables:
+      - { id: "c1", ref: "te-0259", kind: "word" }
+      - { id: "c2", ref: "te-0256", kind: "word" }
+  - id: "te-7079"
+    target: "అమ్మ ఉల్లిపాయలు కిలో కొంటుంది."
+    reading: "amma ullipāyalu kilō koṇṭundi."
+    ipa: "amma ullipaːjalu kiloː koɳʈund̪i"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "అమ్మ", ref: "te-0059" }
+      - { word: "ఉల్లిపాయలు", ref: "te-0257" }
+      - { word: "కిలో", ref: "te-0248" }
+      - { word: "కొంటుంది", ref: "te-0641" }
+    confusables:
+      - { id: "c1", ref: "te-0258", kind: "word" }
+      - { id: "c2", ref: "te-0260", kind: "word" }
+  - id: "te-7080"
+    target: "టమాటాలు ఎంత ధర?"
+    reading: "ṭamāṭālu enta dhara?"
+    ipa: "ʈamaːʈaːlu ent̪a d̪ʱara"
+    pos: "phrase"
+    bases:
+      - { word: "టమాటాలు", ref: "te-0258" }
+      - { word: "ఎంత", ref: "te-0166" }
+      - { word: "ధర", ref: "te-0240" }
+    confusables:
+      - { id: "c1", ref: "te-0241", kind: "word" }
+      - { id: "c2", ref: "te-0163", kind: "word" }
+  - id: "te-7081"
+    target: "ఇది పది రూపాయలు."
+    reading: "idi padi rūpāyalu."
+    ipa: "id̪i pad̪i ruːpaːjalu"
+    pos: "phrase"
+    bases:
+      - { word: "ఇది", ref: "te-0600" }
+      - { word: "పది", ref: "te-0210" }
+      - { word: "రూపాయలు", ref: "te-0241" }
+    confusables:
+      - { id: "c1", ref: "te-0240", kind: "word" }
+      - { id: "c2", ref: "te-0242", kind: "word" }
+  - id: "te-7082"
+    target: "దుకాణంలో చిల్లర ఉంది."
+    reading: "dukāṇamlō cillara undi."
+    ipa: "d̪ukaːɳamloː tʃillara und̪i"
+    pos: "phrase"
+    bases:
+      - { word: "దుకాణంలో", ref: "te-0246" }
+      - { word: "చిల్లర", ref: "te-0243" }
+      - { word: "ఉంది", ref: "te-0633" }
+    confusables:
+      - { id: "c1", ref: "te-0242", kind: "word" }
+      - { id: "c2", ref: "te-0241", kind: "word" }
+  - id: "te-7083"
+    target: "ధర చాలా ఎక్కువా?"
+    reading: "dhara cālā ekkuvā?"
+    ipa: "d̪ʱara tʃaːlaː ekkuʋaː"
+    pos: "phrase"
+    bases:
+      - { word: "ధర", ref: "te-0240" }
+      - { word: "చాలా", ref: "te-1026" }
+      - { word: "ఎక్కువా", ref: "te-1029" }
+    confusables:
+      - { id: "c1", ref: "te-1030", kind: "word" }
+      - { id: "c2", ref: "te-1024", kind: "word" }
+  - id: "te-7084"
+    target: "నాకు చిల్లర వద్దు."
+    reading: "nāku cillara vaddu."
+    ipa: "naːku tʃillara ʋad̪d̪u"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-dat"]
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "చిల్లర", ref: "te-0243" }
+      - { word: "వద్దు", ref: "te-0463" }
+    confusables:
+      - { id: "c1", ref: "te-0242", kind: "word" }
+      - { id: "c2", ref: "te-0460", kind: "word" }
+  - id: "te-7085"
+    target: "నేను డబ్బులు ఇస్తాను."
+    reading: "nēnu ḍabbulu istānu."
+    ipa: "neːnu ɖabbulu ist̪aːnu"
+    pos: "phrase"
+    rules: ["te-rule-present-first"]
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "డబ్బులు", ref: "te-0242" }
+      - { word: "ఇస్తాను", ref: "te-0630" }
+    confusables:
+      - { id: "c1", ref: "te-0241", kind: "word" }
+      - { id: "c2", ref: "te-0240", kind: "word" }

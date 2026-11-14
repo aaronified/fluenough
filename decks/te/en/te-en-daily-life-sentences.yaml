@@ -1,0 +1,66 @@
+schema: 1
+id: "te-en-daily-life-sentences"
+kind: "layer"
+core: "te-daily-life-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Daily life: sentences"
+description: "Ten sentences about a day's routine: meals, waking, sleeping and work, with the words of the daily life unit and the units before it. They unlock once their words and rules are known. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "te-7140":
+    native: "Mum cooks every day."
+    confusables:
+      "c1": { why: "తినడం (tinaḍaṁ) 'to eat', is eating, not cooking." }
+      "c2": { why: "తాగడం (tāgaḍaṁ) 'to drink', is drinking, not cooking." }
+  "te-7141":
+    native: "Dad eats breakfast."
+    confusables:
+      "c1": { why: "కొడుకు (koḍuku) 'son', is a person, not a meal." }
+      "c2": { why: "కూతురు (kūturu) 'daughter', is a person, not a meal." }
+  "te-7142":
+    native: "When do you go to bed?"
+    confusables:
+      "c1": { why: "ఎక్కడ (ekkaḍa) 'where', asks for a place, not a time." }
+      "c2": { why: "ఎందుకు (enduku) 'why', asks for a reason." }
+  "te-7143":
+    native: "I get up at six o'clock every day."
+    bases:
+      "గంటలకు": "o'clock"
+    confusables:
+      "c1": { why: "ఏడు (ēḍu) '7, seven', is a different hour." }
+      "c2": { why: "ఎనిమిది (enimidi) '8, eight', is a different hour." }
+  "te-7144":
+    native: "Do you always drink milk?"
+    confusables:
+      "c1": { why: "గుడ్డు (guḍḍu) 'egg', is not a drink." }
+      "c2": { why: "చేప (cēpa) 'fish', is not a drink." }
+  "te-7145":
+    native: "Then he comes home."
+    notes:
+      "n1": "The stem is వస్త- (vast-) of రావడం (rāvaḍaṁ), 'to come', in the present."
+    confusables:
+      "c1": { why: "కుటుంబం (kuṭumbaṁ) 'family', names people, not a home." }
+      "c2": { why: "ఊరు (ūru) 'town', is a town, not a home." }
+  "te-7146":
+    native: "Please go to bed now."
+    confusables:
+      "c1": { why: "రేపు (rēpu) 'tomorrow', asks for a day, not now." }
+      "c2": { why: "నిన్న (ninna) 'yesterday', is a past day." }
+  "te-7147":
+    native: "I sometimes cook."
+    confusables:
+      "c1": { why: "ఎప్పుడూ (eppuḍū) 'always', is every time, not sometimes." }
+      "c2": { why: "తినడం (tinaḍaṁ) 'to eat', is eating, not cooking." }
+  "te-7148":
+    native: "Does Mum usually come in the evening?"
+    notes:
+      "n1": "The stem is వస్త- (vast-) of రావడం (rāvaḍaṁ), 'to come', in the present."
+    confusables:
+      "c1": { why: "పొద్దున (podduna) 'morning', is a different time of day." }
+      "c2": { why: "రాత్రి (rātri) 'night', is a different time." }
+  "te-7149":
+    native: "After breakfast I read."
+    confusables:
+      "c1": { why: "చూడడం (cūḍaḍaṁ) 'to see; to watch', is watching, not reading." }
+      "c2": { why: "రాయడం (rāyaḍaṁ) 'to write', is writing, not reading." }

@@ -1,0 +1,146 @@
+schema: 1
+id: "te-groceries-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-7068"
+    target: "నేను రోజుకు పాలు తాగుతాను."
+    reading: "nēnu rōjuku pālu tāgutānu."
+    ipa: "neːnu roːdʒuku paːlu t̪aːɡut̪aːnu"
+    pos: "phrase"
+    rules: ["te-rule-present-first"]
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "రోజుకు", ref: "te-1089" }
+      - { word: "పాలు", ref: "te-0265" }
+      - { word: "తాగుతాను", ref: "te-0625" }
+    confusables:
+      - { id: "c1", ref: "te-0266", kind: "word" }
+      - { id: "c2", ref: "te-0264", kind: "word" }
+  - id: "te-7069"
+    target: "అమ్మ బియ్యం కొంటుంది."
+    reading: "amma biyyaṁ koṇṭundi."
+    ipa: "amma bijjam koɳʈund̪i"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "అమ్మ", ref: "te-0059" }
+      - { word: "బియ్యం", ref: "te-0266" }
+      - { word: "కొంటుంది", ref: "te-0641" }
+    confusables:
+      - { id: "c1", ref: "te-0265", kind: "word" }
+      - { id: "c2", ref: "te-0267", kind: "word" }
+  - id: "te-7070"
+    target: "నువ్వు చేప తింటావా?"
+    reading: "nuvvu cēpa tiṇṭāvā?"
+    ipa: "nuʋʋu tʃeːpa t̪iɳʈaːʋaː"
+    pos: "phrase"
+    rules: ["te-rule-present-second"]
+    bases:
+      - { word: "నువ్వు", ref: "te-0594" }
+      - { word: "చేప", ref: "te-0261" }
+      - { word: "తింటావా", ref: "te-0624" }
+    confusables:
+      - { id: "c1", ref: "te-0262", kind: "word" }
+      - { id: "c2", ref: "te-0263", kind: "word" }
+  - id: "te-7071"
+    target: "రాత్రి కోడిని వండుతారు."
+    reading: "rātri kōḍini vaṇḍutāru."
+    ipa: "raːt̪ri koːɖini ʋaɳɖut̪aːru"
+    pos: "phrase"
+    rules: ["te-rule-present-third", "te-rule-ni"]
+    bases:
+      - { word: "రాత్రి", ref: "te-0312" }
+      - { word: "కోడిని", ref: "te-0263" }
+      - { word: "వండుతారు", ref: "te-0643" }
+    confusables:
+      - { id: "c1", ref: "te-0261", kind: "word" }
+      - { id: "c2", ref: "te-0262", kind: "word" }
+  - id: "te-7072"
+    target: "నా ఇంట్లో బియ్యం ఉంది."
+    reading: "nā iṇṭlō biyyaṁ undi."
+    ipa: "naː iɳʈloː bijjam und̪i"
+    pos: "phrase"
+    bases:
+      - { word: "నా", ref: "te-0593" }
+      - { word: "ఇంట్లో", ref: "te-0195" }
+      - { word: "బియ్యం", ref: "te-0266" }
+      - { word: "ఉంది", ref: "te-0633" }
+    confusables:
+      - { id: "c1", ref: "te-0267", kind: "word" }
+      - { id: "c2", ref: "te-0196", kind: "word" }
+  - id: "te-7073"
+    target: "ఈ పప్పు తీసుకోండి."
+    reading: "ī pappu tīsukōṇḍi."
+    ipa: "iː pappu t̪iːsukoːɳɖi"
+    pos: "phrase"
+    rules: ["te-rule-polite-request"]
+    bases:
+      - { word: "ఈ", ref: "te-0607" }
+      - { word: "పప్పు", ref: "te-0267" }
+      - { word: "తీసుకోండి", ref: "te-0631" }
+    confusables:
+      - { id: "c1", ref: "te-0265", kind: "word" }
+      - { id: "c2", ref: "te-0630", kind: "word" }
+  - id: "te-7074"
+    target: "నేను అమ్మతో కలిసి చేపలు వండుతాను."
+    reading: "nēnu ammatō kalisi cēpalu vaṇḍutānu."
+    ipa: "neːnu ammat̪oː kalisi tʃeːpalu ʋaɳɖut̪aːnu"
+    pos: "phrase"
+    rules: ["te-rule-to", "te-rule-present-first"]
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "అమ్మతో", ref: "te-0059" }
+      - { word: "కలిసి", ref: "te-1097" }
+      - { word: "చేపలు", ref: "te-0261" }
+      - { word: "వండుతాను", ref: "te-0643" }
+    confusables:
+      - { id: "c1", ref: "te-0255", kind: "word" }
+      - { id: "c2", ref: "te-0381", kind: "word" }
+  - id: "te-7075"
+    target: "రైతు నుంచి పాలు తీసుకుంటాను."
+    reading: "raitu nuñci pālu tīsukuṇṭānu."
+    ipa: "rait̪u nuɲtʃi paːlu t̪iːsukuɳʈaːnu"
+    pos: "phrase"
+    rules: ["te-rule-nunci", "te-rule-present-first"]
+    bases:
+      - { word: "రైతు", ref: "te-0408" }
+      - { word: "నుంచి", base: "నుంచి", reading: "nuñci" }
+      - { word: "పాలు", ref: "te-0265" }
+      - { word: "తీసుకుంటాను", ref: "te-0631" }
+    confusables:
+      - { id: "c1", ref: "te-0403", kind: "word" }
+      - { id: "c2", ref: "te-0409", kind: "word" }
+  - id: "te-7076"
+    target: "నాకు రెండు గుడ్లు ఇస్తావా?"
+    reading: "nāku reṇḍu guḍlu istāvā?"
+    ipa: "naːku reɳɖu ɡuɖlu ist̪aːʋaː"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-dat", "te-rule-present-second"]
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "రెండు", ref: "te-0202" }
+      - { word: "గుడ్లు", ref: "te-0264" }
+      - { word: "ఇస్తావా", ref: "te-0630" }
+    confusables:
+      - { id: "c1", ref: "te-0263", kind: "word" }
+      - { id: "c2", ref: "te-0203", kind: "word" }
+  - id: "te-7077"
+    target: "ఆయన పప్పు మాత్రమే తింటాడు."
+    reading: "āyana pappu mātramē tiṇṭāḍu."
+    ipa: "aːjana pappu maːt̪rameː t̪iɳʈaːɖu"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "ఆయన", ref: "te-0597" }
+      - { word: "పప్పు", ref: "te-0267" }
+      - { word: "మాత్రమే", ref: "te-1033" }
+      - { word: "తింటాడు", ref: "te-0624" }
+    confusables:
+      - { id: "c1", ref: "te-0261", kind: "word" }
+      - { id: "c2", ref: "te-0265", kind: "word" }

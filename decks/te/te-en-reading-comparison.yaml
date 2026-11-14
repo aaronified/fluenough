@@ -1,0 +1,58 @@
+schema: 1
+id: "te-en-reading-comparison"
+name: "Reading: two cities"
+kind: "reading"
+language:
+  code: "te"
+  iso639_3: "tel"
+  name: "Telugu"
+  script: "telugu"
+  tts: "te-IN"
+  icon: "తె"
+native:
+  code: "en"
+  iso639_3: "eng"
+  name: "English"
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "Two cities compared with than, more and equally, using the comparison words taught up to this unit. Not yet checked by a Telugu speaker: please report any mistake."
+tags:
+- "reading"
+- "beginner"
+- "unreviewed"
+passages:
+- id: "te-two-cities"
+  title: "Two cities"
+  sentences:
+  - text: "ఈ నగరం ఆ నగరం కంటే పెద్దది."
+    reading: "ī nagaraṁ ā nagaraṁ kaṇṭē peddadi."
+    ipa: "iː naɡaram aː naɡaram kaɳʈeː ped̪d̪ad̪i"
+  - text: "ఈ నగరంలో బస్సులు ఎక్కువ."
+    reading: "ī nagaramlō bassulu ekkuva."
+    ipa: "iː naɡaramloː bassulu ekkuʋa"
+  - text: "ఆ నగరం ఇంకా చిన్నది."
+    reading: "ā nagaraṁ iṅkā cinnadi."
+    ipa: "aː naɡaram iŋkaː tʃinnad̪i"
+  - text: "కానీ రెండు నగరాలు సమానంగా మంచివి."
+    reading: "kānī reṇḍu nagarālu samānaṅgā mañcivi."
+    ipa: "kaːniː reɳɖu naɡaraːlu samaːnaŋɡaː maɲtʃiʋi"
+  questions:
+  - id: "te-8163"
+    prompt:
+      en: "Which city is bigger?"
+    options:
+    - en: "This city"
+    - en: "That city"
+    - en: "Both are the same size"
+    answer: 1
+  - id: "te-8164"
+    prompt:
+      en: "Which city has more buses?"
+    options:
+    - en: "This city"
+    - en: "That city"
+    answer: 1
+  - id: "te-8165"
+    prompt:
+      en: "The writer says the other city is bigger."
+    answer: false

@@ -1,0 +1,59 @@
+schema: 1
+id: "te-en-reading-hobbies"
+name: "Reading: the club poster"
+kind: "reading"
+language:
+  code: "te"
+  iso639_3: "tel"
+  name: "Telugu"
+  script: "telugu"
+  tts: "te-IN"
+  icon: "తె"
+native:
+  code: "en"
+  iso639_3: "eng"
+  name: "English"
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A club poster with a game, a meeting, music and the fee, using the hobby words taught up to this unit. Not yet checked by a Telugu speaker: please report any mistake."
+tags:
+- "reading"
+- "beginner"
+- "unreviewed"
+passages:
+- id: "te-club-poster"
+  title: "Club poster"
+  sentences:
+  - text: "మా క్లబ్‌లో ప్రతి వారాంతం ఆట ఉంటుంది."
+    reading: "mā klablō prati vārāṁtaṁ āṭa uṇṭundi."
+    ipa: "maː klabloː prat̪i ʋaːraːnt̪am aːʈa uɳʈund̪i"
+  - text: "కొత్త సభ్యులు సాయంత్రం కలవండి."
+    reading: "kotta sabhyulu sāyantraṁ kalavaṇḍi."
+    ipa: "kot̪t̪a sabʱjulu saːjant̪ram kalaʋaɳɖi"
+  - text: "ప్రతి ఆదివారం సంగీతం వినండి."
+    reading: "prati ādivāraṁ saṅgītaṁ vinaṇḍi."
+    ipa: "prat̪i aːd̪iʋaːram saŋɡiːt̪am ʋinaɳɖi"
+  - text: "ఫీజు లేదు."
+    reading: "phīju lēdu."
+    ipa: "pʰiːdʒu leːd̪u"
+  questions:
+  - id: "te-8169"
+    prompt:
+      en: "How often is there a game?"
+    options:
+    - en: "Every weekend"
+    - en: "Every day"
+    - en: "Once a year"
+    answer: 1
+  - id: "te-8170"
+    prompt:
+      en: "When should new members meet?"
+    options:
+    - en: "In the morning"
+    - en: "In the evening"
+    - en: "At night"
+    answer: 2
+  - id: "te-8171"
+    prompt:
+      en: "There is a fee to join."
+    answer: false
