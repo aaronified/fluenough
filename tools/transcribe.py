@@ -259,7 +259,7 @@ def _vowel_after(chars, i, off, units, lang) -> int:
 # How each vowel is written and said, by language: (ISO letters, IPA).
 _VOWELS_TE = {"a": ("a", "a"), "aa": ("ā", "aː"), "i": ("i", "i"),
               "ii": ("ī", "iː"), "u": ("u", "u"), "uu": ("ū", "uː"),
-              "r": ("ru", "ru"), "rr": ("rū", "ruː"), "se": ("e", "e"),
+              "r": ("ṛ", "ru"), "rr": ("rū", "ruː"), "se": ("e", "e"),
               "e": ("ē", "eː"), "ai": ("ai", "ai"), "so": ("o", "o"),
               "o": ("ō", "oː"), "au": ("au", "au"), "ce": ("ê", "æ"),
               "co": ("ô", "ɔ")}
@@ -659,6 +659,7 @@ HOMORGANIC = {"k": "ṅ", "kh": "ṅ", "g": "ṅ", "gh": "ṅ", "ṅ": "ṅ",
               "ṭ": "ṇ", "ṭh": "ṇ", "ḍ": "ṇ", "ḍh": "ṇ", "ṇ": "ṇ",
               "t": "n", "th": "n", "d": "n", "dh": "n", "n": "n",
               "p": "m", "ph": "m", "b": "m", "bh": "m", "m": "m"}
+TE_ANUSVARA_BEFORE = {"s", "v"}
 HOMORGANIC_IPA = {"ṅ": "ŋ", "ñ": "ɲ", "ṇ": "ɳ", "n": "n", "m": "m"}
 FRONT = {"i", "ii", "e", "se", "ai", "ce"}
 
@@ -782,7 +783,12 @@ def _transcribe(text: str, lang: str, hint: str | None) -> Transcription:
                 i_iso, i_ipa = "ṅ", "ŋ"
             else:
                 nxt = _next_letter(units, k)
-                if typed.startswith("m") and (nxt is None or
+                if lang == "te" and (nxt is None or nxt in TE_ANUSVARA_BEFORE):
+                    # The course writes a word-final anusvara ṁ: annaṁ, and
+                    # one before s or v: māṁsaṁ, saṁvatsaraṁ.
+                    # Before a stop it is the nasal of that stop (saṅgītaṁ).
+                    i_iso, i_ipa = "ṁ", "m"
+                elif typed.startswith("m") and (nxt is None or
                                               nxt not in HOMORGANIC or
                                               HOMORGANIC[nxt] == "m"):
                     i_iso, i_ipa = "m", "m"

@@ -48,6 +48,37 @@ class ReadingTest(unittest.TestCase):
                 finally:
                     fresh.doCleanups()
 
+    def test_telugu_writes_the_anusvara_as_the_course_does(self) -> None:
+        # Readings and IPA of existing Telugu cards (decks/te).
+        for word, hint, reading, ipa in (
+            ("దీపం", "deepam", "dīpaṁ", "d̪iːpam"),
+            ("ప్రసాదం", "prasadam", "prasādaṁ", "prasaːd̪am"),
+            ("తోరణం", "toranam", "tōraṇaṁ", "t̪oːraɳam"),
+            ("ఆహ్వానం", "ahvanam", "āhvānaṁ", "aːhʋaːnam"),
+            ("ఆనందం", "anandam", "ānandaṁ", "aːnand̪am"),
+            ("నృత్యం", "nrutyam", "nṛtyaṁ", "nrut̪jam"),
+            ("ఉత్సాహం", "utsaham", "utsāhaṁ", "ut̪saːham"),
+            ("పవిత్రం", "pavitram", "pavitraṁ", "paʋit̪ram"),
+            ("సంగీతం", "sangeetam", "saṅgītaṁ", "saŋɡiːt̪am"),
+            ("ఆలయం", "alayam", "ālayaṁ", "aːlajam"),
+            ("ఉదయం", "udayam", "udayaṁ", "ud̪ajam"),
+            ("అన్నం", "annam", "annaṁ", "annam"),
+            # Before s or v the course keeps the anusvara.
+            ("మాంసం", "mamsam", "māṁsaṁ", "maːmsam"),
+            ("సంవత్సరం", "samvatsaram", "saṁvatsaraṁ", "samʋat̪saram"),
+            ("సింహం", "simham", "simhaṁ", "simham"),
+        ):
+            with self.subTest(word):
+                self.check("te", word, hint, reading, ipa)
+
+    def test_telugu_anusvara_before_a_stop_is_that_stops_nasal(self) -> None:
+        self.check("te", "కారంగా", "karanga", "kāraṅgā", "kaːraŋɡaː")
+        self.check("te", "గంట", "ganta", "gaṇṭa", "ɡaɳʈa")
+        self.check("te", "పంపండి", "pampandi", "pampaṇḍi", "pampaɳɖi")
+
+    def test_other_languages_keep_their_anusvara(self) -> None:
+        self.check("hi", "संसार", "sansar", "saṁsār", "sə̃saːr")
+
     def test_the_bengali_inherent_vowel_and_a_hint_that_does_not_fit(self) -> None:
         cases = (
             self._bengali_inherent_vowel,
