@@ -124,6 +124,7 @@ alphabet:
   - "ja-kanji-29"
   - "ja-kanji-30"
   - "ja-kanji-32"
+  - "ja-kanji-33"
   - "ja-katakana"
   - "ja-katakana-combos"
   - "ja-hiragana-marks"
@@ -868,11 +869,8 @@ units:
       - { id: "summer-festival", text: { "en": "Neighbours plan a summer festival together" } }
     reading_passages:
       - { id: "festival-poster", text: { "en": "A poster for a summer festival" } }
-  - planned: { id: "ja-kanji-33", grammar: "script-kanji-33", words: 0 }
-    listening_passages:
-      - { id: "kanji-33-heard", text: { "en": "Hearing words whose kanji unit 33 teaches" } }
-    reading_passages:
-      - { id: "kanji-33-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 33" } }
+  - decks: ["ja-kanji-33"]
+    words: 0
   - decks: ["ja-weddings", "ja-weddings-sentences", "ja-reading-weddings", "*"]
     words: 40
     listening_passages:
