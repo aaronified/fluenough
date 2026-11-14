@@ -79,3 +79,178 @@ cards:
     tags: ["sentence"]
     bases: [{ word: "Lo", base: "lo" }, { word: "siento", base: "sentir" }, { word: "este", base: "este" }, { word: "modelo", base: "modelo" }, { word: "está", ref: "es-0023" }, { word: "agotado", ref: "es-1236" }]
     confusables: [{ id: "sold", ref: "es-1234", kind: "word" }, { id: "free", ref: "es-1235", kind: "word" }]
+  - id: "es-3320"
+    target: "Quiero comprar un regalo."
+    ipa: "ˈkjeɾo komˈpɾaɾ un reˈɡalo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Quiero", base: "querer" }, { word: "comprar", ref: es-0280 }, { word: "un", base: "un" }, { word: "regalo", ref: es-1221 }]
+    confusables: [{ id: "shop", ref: "es-0584", kind: "word" }, { id: "price", ref: "es-0580", kind: "word" }]
+  - id: "es-3321"
+    target: "¿Tiene usted el recibo de la compra?"
+    ipa: "ˈtjene usˈted el reˈθibo de la ˈkompɾa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tiene", base: "tener" }, { word: "usted", ref: es-0087 }, { word: "el", base: "el" }, { word: "recibo", ref: es-1214 }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "compra", ref: es-0914 }]
+    confusables: [{ id: "invoice", ref: "es-1222", kind: "word" }, { id: "card", ref: "es-0879", kind: "word" }]
+  - id: "es-3322"
+    target: "El descuento es de diez euros."
+    ipa: "el desˈkwento es de djeθ ˈewɾos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "descuento", ref: es-1212 }, { word: "es", base: "ser" }, { word: "de", base: "de" }, { word: "diez", ref: es-0214 }, { word: "euros", base: "euro" }]
+    confusables: [{ id: "price", ref: "es-0580", kind: "word" }, { id: "sale", ref: "es-1226", kind: "word" }]
+  - id: "es-3323"
+    target: "La cajera cierra la caja a las ocho."
+    ipa: "la kaˈxeɾa ˈθjera la ˈkaxa a las ˈotʃo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "cajera", ref: es-1219 }, { word: "cierra", base: "cerrar" }, { word: "la", base: "la" }, { word: "caja", ref: es-0382 }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "ocho", ref: es-0212 }]
+    confusables: [{ id: "counter", ref: "es-1224", kind: "word" }, { id: "queue", ref: "es-1225", kind: "word" }]
+  - id: "es-3324"
+    target: "No tengo efectivo ahora."
+    ipa: "no ˈtenɡo efekˈtibo aˈoɾa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "No", ref: es-0043 }, { word: "tengo", base: "tener" }, { word: "efectivo", ref: es-1220 }, { word: "ahora", ref: es-0333 }]
+    confusables: [{ id: "card", ref: "es-0879", kind: "word" }, { id: "bill", ref: "es-0685", kind: "word" }]
+  - id: "es-3325"
+    target: "¿Dónde está el mostrador?"
+    ipa: "ˈdonde esˈta el mostɾaˈdoɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Dónde", ref: es-0056 }, { word: "está", base: "estar" }, { word: "el", base: "el" }, { word: "mostrador", ref: es-1224 }]
+    confusables: [{ id: "window", ref: "es-1218", kind: "word" }, { id: "shop", ref: "es-0584", kind: "word" }]
+  - id: "es-3326"
+    target: "La etiqueta de la camisa está rota."
+    ipa: "la etiˈketa de la kaˈmisa esˈta ˈrota"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "etiqueta", ref: es-1223 }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "camisa", ref: es-1017 }, { word: "está", base: "estar" }, { word: "rota", base: "roto" }]
+    confusables: [{ id: "dress", ref: "es-1018", kind: "word" }, { id: "shoe", ref: "es-1022", kind: "word" }]
+  - id: "es-3327"
+    target: "Mi hermana compra una cesta para su madre."
+    ipa: "mi eɾˈmana ˈkompɾa ˈuna ˈθesta ˈpaɾa su ˈmadɾe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", base: "mi" }, { word: "hermana", ref: es-0162 }, { word: "compra", base: "comprar" }, { word: "una", base: "un" }, { word: "cesta", ref: es-1216 }, { word: "para", base: "para" }, { word: "su", base: "su" }, { word: "madre", ref: es-0160 }]
+    confusables: [{ id: "bag", ref: "es-0380", kind: "word" }, { id: "trolley", ref: "es-1215", kind: "word" }]
+  - id: "es-3328"
+    target: "¿Esta chaqueta usada cuesta mucho?"
+    ipa: "ˈesta tʃaˈketa uˈsada ˈkwesta ˈmutʃo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Esta", base: "este" }, { word: "chaqueta", ref: es-1020 }, { word: "usada", base: "usado" }, { word: "cuesta", base: "costar" }, { word: "mucho", ref: es-0053 }]
+    confusables: [{ id: "cheap", ref: "es-0411", kind: "word" }, { id: "dear", ref: "es-0412", kind: "word" }]
+  - id: "es-3329"
+    target: "Gastamos mucho dinero en las rebajas de hoy."
+    ipa: "ɡasˈtamos ˈmutʃo diˈneɾo en las reˈbaxas de oj"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Gastamos", base: "gastar" }, { word: "mucho", ref: es-0053 }, { word: "dinero", ref: es-0513 }, { word: "en", base: "en" }, { word: "las", base: "las" }, { word: "rebajas", base: "rebaja" }, { word: "de", base: "de" }, { word: "hoy", ref: es-0331 }]
+    confusables: [{ id: "discount", ref: "es-1212", kind: "word" }, { id: "sale", ref: "es-1226", kind: "word" }]
+  - id: "es-3330"
+    target: "Miro el escaparate, pero no quiero nada."
+    ipa: "ˈmiɾo el eskapaˈɾate ˈpeɾo no ˈkjeɾo ˈnada"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Miro", base: "mirar" }, { word: "el", base: "el" }, { word: "escaparate", ref: es-1218 }, { word: "pero", ref: es-0050 }, { word: "no", ref: es-0043 }, { word: "quiero", base: "querer" }, { word: "nada", ref: es-0360 }]
+    confusables: [{ id: "counter", ref: "es-1224", kind: "word" }, { id: "shop", ref: "es-0584", kind: "word" }]
+  - id: "es-3331"
+    target: "Este regalo es gratis."
+    ipa: "ˈeste reˈɡalo es ˈɡɾatis"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Este", base: "este" }, { word: "regalo", ref: es-1221 }, { word: "es", base: "ser" }, { word: "gratis", ref: es-1235 }]
+    confusables: [{ id: "cheap", ref: "es-0411", kind: "word" }, { id: "used", ref: "es-1234", kind: "word" }]
+  - id: "es-3332"
+    target: "¿Quién paga la factura?"
+    ipa: "kjen ˈpaɡa la fakˈtuɾa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Quién", ref: es-0055 }, { word: "paga", base: "pagar" }, { word: "la", base: "la" }, { word: "factura", ref: es-1222 }]
+    confusables: [{ id: "bill", ref: "es-0685", kind: "word" }, { id: "receipt", ref: "es-1214", kind: "word" }]
+  - id: "es-3333"
+    target: "El abrigo de la venta cuesta poco."
+    ipa: "el aˈbɾiɡo de la ˈbenta ˈkwesta ˈpoko"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "abrigo", ref: es-1023 }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "venta", ref: es-1226 }, { word: "cuesta", base: "costar" }, { word: "poco", ref: es-0358 }]
+    confusables: [{ id: "cheap", ref: "es-0411", kind: "word" }, { id: "discount", ref: "es-1212", kind: "word" }]
+  - id: "es-3334"
+    target: "Mañana vamos de rebajas."
+    ipa: "maˈɲana ˈbamos de reˈbaxas"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mañana", ref: es-0978 }, { word: "vamos", base: "ir" }, { word: "de", base: "de" }, { word: "rebajas", base: "rebaja" }]
+    confusables: [{ id: "market", ref: "es-0567", kind: "word" }, { id: "shop", ref: "es-0584", kind: "word" }]
+  - id: "es-3335"
+    target: "Ella cambia la camiseta usada por una pequeña."
+    ipa: "ˈeʝa ˈkambja la kamiˈseta uˈsada poɾ ˈuna peˈkeɲa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Ella", ref: es-0121 }, { word: "cambia", base: "cambiar" }, { word: "la", base: "la" }, { word: "camiseta", ref: es-1021 }, { word: "usada", base: "usado" }, { word: "por", base: "por" }, { word: "una", base: "un" }, { word: "pequeña", base: "pequeño" }]
+    confusables: [{ id: "blouse", ref: "es-1025", kind: "word" }, { id: "large", ref: "es-0031", kind: "word" }]
+  - id: "es-3336"
+    target: "Mi padre busca el mostrador."
+    ipa: "mi ˈpadɾe ˈbuska el mostɾaˈdoɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", base: "mi" }, { word: "padre", ref: es-0159 }, { word: "busca", base: "buscar" }, { word: "el", base: "el" }, { word: "mostrador", ref: es-1224 }]
+    confusables: [{ id: "shop", ref: "es-0584", kind: "word" }, { id: "bag", ref: "es-0380", kind: "word" }]
+  - id: "es-3337"
+    target: "¿La cajera acepta tarjeta?"
+    ipa: "la kaˈxeɾa aˈθepta taɾˈxeta"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "cajera", ref: es-1219 }, { word: "acepta", base: "aceptar" }, { word: "tarjeta", ref: es-0879 }]
+    confusables: [{ id: "cash", ref: "es-1220", kind: "word" }, { id: "counter", ref: "es-1224", kind: "word" }]
+  - id: "es-3338"
+    target: "El carrito pesa mucho con la compra."
+    ipa: "el kaˈrito ˈpesa ˈmutʃo kon la ˈkompɾa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "carrito", ref: es-1215 }, { word: "pesa", base: "pesar" }, { word: "mucho", ref: es-0053 }, { word: "con", base: "con" }, { word: "la", base: "la" }, { word: "compra", ref: es-0914 }]
+    confusables: [{ id: "basket", ref: "es-1216", kind: "word" }, { id: "heavy", ref: "es-1194", kind: "word" }]
+  - id: "es-3339"
+    target: "Ellos encuentran algo gratis en la tienda."
+    ipa: "ˈeʝos enˈkwentɾan ˈalɡo ˈɡɾatis en la ˈtjenda"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Ellos", ref: es-0124 }, { word: "encuentran", base: "encontrar" }, { word: "algo", ref: es-0359 }, { word: "gratis", ref: es-1235 }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "tienda", ref: es-0584 }]
+    confusables: [{ id: "used", ref: "es-1234", kind: "word" }, { id: "market", ref: "es-0567", kind: "word" }]
+  - id: "es-3340"
+    target: "Vendemos cestas en la tienda."
+    ipa: "benˈdemos ˈθestas en la ˈtjenda"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Vendemos", base: "vender" }, { word: "cestas", base: "cesta" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "tienda", ref: es-0584 }]
+    confusables: [{ id: "trolley", ref: "es-1215", kind: "word" }, { id: "bag", ref: "es-0380", kind: "word" }]
+  - id: "es-3341"
+    target: "La venta empieza mañana."
+    ipa: "la ˈbenta emˈpjeθa maˈɲana"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "venta", ref: es-1226 }, { word: "empieza", base: "empezar" }, { word: "mañana", ref: es-0978 }]
+    confusables: [{ id: "discount", ref: "es-1212", kind: "word" }, { id: "offer", ref: "es-0585", kind: "word" }]
+  - id: "es-3342"
+    target: "Necesito el saldo del banco."
+    ipa: "neθeˈsito el ˈsaldo del ˈbanko"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Necesito", base: "necesitar" }, { word: "el", base: "el" }, { word: "saldo", ref: es-1227 }, { word: "del", base: "de" }, { word: "banco", ref: es-0770 }]
+    confusables: [{ id: "money", ref: "es-0513", kind: "word" }, { id: "receipt", ref: "es-1214", kind: "word" }]
+  - id: "es-3343"
+    target: "El cliente devuelve la camisa con el recibo."
+    ipa: "el ˈkljente deˈbwelbe la kaˈmisa kon el reˈθibo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "cliente", ref: es-0515 }, { word: "devuelve", base: "devolver" }, { word: "la", base: "la" }, { word: "camisa", ref: es-1017 }, { word: "con", base: "con" }, { word: "el", base: "el" }, { word: "recibo", ref: es-1214 }]
+    confusables: [{ id: "invoice", ref: "es-1222", kind: "word" }, { id: "discount", ref: "es-1212", kind: "word" }]
+  - id: "es-3344"
+    target: "Hay cola en la caja."
+    ipa: "aj ˈkola en la ˈkaxa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hay", base: "haber" }, { word: "cola", ref: es-1225 }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "caja", ref: es-0382 }]
+    confusables: [{ id: "cashier", ref: "es-1219", kind: "word" }, { id: "counter", ref: "es-1224", kind: "word" }]
