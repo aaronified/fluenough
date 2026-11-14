@@ -7,7 +7,8 @@ The app writes short questions from card data and sends the answers by mail,
 one file per language, `fluenough-questions` (lib/core/review/
 questions_file.dart). A question is about one data point of one card, named
 `<card>|<point>`; the point is `meaning`, `example:<8 hex>`,
-`confusable:<item id>`, `sound` or `image:<File>` (the answer pins the file).
+`confusable:<item id>`, `sound`, `image:<File>` (the answer pins the file) or
+`builder:<8 hex>` (a deck builder's question).
 
 The answers are kept in `review-answers/<language>.json`, one entry a data
 point:
@@ -95,6 +96,7 @@ ANSWERS = {
     "confusable": ("yes", "no"),
     "sound": ("yes", "flag"),
     "image": ("yes", "no"),
+    "builder": ("yes", "no"),
 }
 REASONS = {
     "meaning": ("wrong", "awkward"),
@@ -102,6 +104,7 @@ REASONS = {
     "confusable": ("not_real", "wrong_word"),
     "sound": ("noisy", "wrong_word", "not_native"),
     "image": ("not_the_word", "unclear", "not_fit"),
+    "builder": (),
 }
 POINTS = {
     "meaning": re.compile(r"^meaning$"),
@@ -110,6 +113,8 @@ POINTS = {
     "sound": re.compile(r"^sound$"),
     # A Commons file name: no spaces, slashes or pipes.
     "image": re.compile(r"^image:[^\s|/\\]{1,200}$"),
+    # A deck builder's question: the hash of its text, as the app writes it.
+    "builder": re.compile(r"^builder:[0-9a-f]{8}$"),
 }
 CARD = re.compile(r"^[a-z]{2,3}-[0-9]{4,}$")
 
@@ -295,7 +300,10 @@ def record(root: Path, batch: Batch, code: str, agreements: int,
             if not flagger(point) and yes_count(point) >= needed:
                 point["settled"] = "yes"
                 result.settled.append(where)
-                right.setdefault((a.lang, a.card), []).append(a.point)
+                # A builder's doubt is not a field of the card: it never
+                # goes in `verified`.
+                if a.kind != "builder":
+                    right.setdefault((a.lang, a.card), []).append(a.point)
             continue
         if not flagger(point):
             point["flag"] = {"by": code}

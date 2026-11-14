@@ -57,7 +57,7 @@ class ReviewQueue {
             for (final row in rows)
               if (row is Map &&
                   row['question'] is String &&
-                  (row['question'] as String).trim().isNotEmpty)
+                  isAskable((row['question'] as String).trim()))
                 _cut((row['question'] as String).trim()),
           ];
           if (questions.isNotEmpty) {
@@ -70,6 +70,17 @@ class ReviewQueue {
     } on FormatException {
       return empty;
     }
+  }
+
+  /// Whether [question] can be put to a reader as a yes or no: it is a
+  /// question, ending in a question mark (`?` or `\uFF1F`). A note such as
+  /// "death year uncertain: 1890 or 1891" or "source unverified" is not
+  /// one, and is never offered to a reviewer. The feed has no other marker,
+  /// so this is the rule (wiki Plan-Reviewing-Scope, "Builder questions").
+  /// Each row is keyed by a card id, so it always names an item to look at.
+  static bool isAskable(String question) {
+    final text = question.trim();
+    return text.endsWith('?') || text.endsWith('\uFF1F');
   }
 
   static String _cut(String question) {

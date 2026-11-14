@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - `tools/validate_decks.py`, `tools/deck_index.py`: a language's `decks/<lang>/<lang>-gating.yaml` names the scripts its path gates, and the validator reports a card, example or `target_scripts` spelling that writes a character of a gated script the path has not taught yet, as a warning or an error; the file is the validator's alone and is not listed in the index (#1227).
+- **Deck builder questions are asked on their own.** A question from the deck builder now has a screen of its own in Daily questions, with the whole card and every example shown and its own Yes and No, and notes that are not yes-or-no questions are no longer asked.
 - `tools/validate_decks.py`, `tools/topic_chars.py`, `tools/test_topic_chars.py`: a script topic's `chars` must be targets of the cards of its `decks` (or letters of its `script_units`), a one-character card left out of `chars` is a warning, and `tools/topic_chars.py` writes `chars` from the decks (#1228).
 - **Find my level sentence questions make sense.** Sentences you hear or read now always come with their own English meaning among four sentences of the same kind, and the question asks what the sentence means.
 
