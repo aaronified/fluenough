@@ -84,7 +84,7 @@ Open a unit and tap **Review**. Mark each card that is right (**Looks right**).
 
 Some cards come with a question from the deck builder. It is shown on the
 card as a note, under **Question from the deck builder**, in the card's
-review and in the daily questions (see Daily questions below).
+review, and as a daily question of its own (see Daily questions below).
 
 Where a base word changes its stem in the card's form, such as Telugu రావడం
 (rāvaḍam), "to come", in వచ్చింది (vaccindi), "she came", the notes should
@@ -197,10 +197,13 @@ confusable, is this recording correct and by a native speaker. Data written
 without a source comes before data taken from Wiktionary or Tatoeba.
 
 Some cards come with a question from the deck builder, a doubt they could
-not settle, such as a gender or a tone. Those cards are asked first, and the
-question is shown on the card as a note, under **Question from the deck
-builder**, on the daily question and on the card in a unit's review. It is a
-hint for you, not part of your answer: answer the daily question as usual. If
+not settle, such as a gender or a tone. Those cards are asked first. The
+builder's question is a daily question of its own, under **Question from the
+deck builder**: the question is the heading, the whole card is shown below it
+(its word, its meaning and every example, with readings and translations),
+and its Yes and No answer that question and nothing else. The card's own
+questions come after it. The question is also shown as a note on the card in a
+unit's review. Only questions that can be answered Yes or No are asked. If
 the builder's doubt turns out to be a mistake, open the card in a unit's
 review and use **Suggest a change** there, which the daily question does not
 offer.

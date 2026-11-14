@@ -47,10 +47,10 @@ class ImageProposal {
 /// a card's `verified` lists (settled by agreeing answers), and every
 /// id in [skip] (what this reviewer answered, or put off today).
 ///
-/// The cards [queue] lists come first, each question carrying the builder's
-/// (2026-11-06): they keep the weakest-first order among themselves, then
-/// the rest follow in theirs. A listed card that is left out above is still
-/// left out.
+/// The cards [queue] lists come first, each builder question a step of its
+/// own, with the card in full (2026-11-06, split out 2026-11-14): they keep
+/// the card order among themselves, then the rest follow weakest first. A
+/// listed card that is left out above is still left out.
 List<ReviewQuestion> generateQuestions(
   Iterable<Deck> decks, {
   Set<String> skip = const <String>{},
@@ -93,6 +93,8 @@ List<ReviewQuestion> generateQuestions(
         String? shown,
         String? shownReading,
         String? shownMeaning,
+        String? asked,
+        List<QuestionExample> examples = const <QuestionExample>[],
       }) => ReviewQuestion(
         language: language,
         card: card.id,
@@ -106,8 +108,33 @@ List<ReviewQuestion> generateQuestions(
         shownMeaning: shownMeaning,
         weakness: weakness > floor ? weakness : floor,
         deckId: deck.id,
-        builder: queue.forCard(language, card.id),
+        asked: asked,
+        examples: examples,
       );
+
+      // The builder's doubts about the card, each its own question with the
+      // whole card in front of the reviewer.
+      for (final doubt in queue.forCard(language, card.id)) {
+        out.add(
+          make(
+            QuestionKind.builder,
+            'builder:${pointHash(doubt)}',
+            0,
+            asked: doubt,
+            examples: <QuestionExample>[
+              for (final example in card.examples)
+                if (example.target.trim().isNotEmpty)
+                  QuestionExample(
+                    target: example.target,
+                    reading: example.reading,
+                    native: example.native.trim().isEmpty
+                        ? null
+                        : example.native,
+                  ),
+            ],
+          ),
+        );
+      }
 
       if (card.native.trim().isNotEmpty && !settled.contains('meaning')) {
         out.add(make(QuestionKind.meaning, 'meaning', 0));
@@ -185,7 +212,8 @@ List<ReviewQuestion> generateQuestions(
           if (!skip.contains(q.id)) (i, q),
       ]..sort((a, b) {
         final byList =
-            (b.$2.builder.isEmpty ? 0 : 1) - (a.$2.builder.isEmpty ? 0 : 1);
+            (b.$2.kind == QuestionKind.builder ? 1 : 0) -
+            (a.$2.kind == QuestionKind.builder ? 1 : 0);
         if (byList != 0) return byList;
         final byWeakness = a.$2.weakness.compareTo(b.$2.weakness);
         return byWeakness != 0 ? byWeakness : a.$1.compareTo(b.$1);

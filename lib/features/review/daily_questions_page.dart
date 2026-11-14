@@ -13,7 +13,6 @@ import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
-import 'builder_note.dart';
 import 'daily_questions.dart';
 import 'send_reviews_sheet.dart' show reviewMailBody;
 
@@ -108,6 +107,11 @@ class _DailyQuestionsPageState extends State<DailyQuestionsPage> {
 
   Future<void> _no(ReviewQuestion question, QuestionAnswer answer) async {
     final l10n = AppLocalizations.of(context)!;
+    // A builder question has no fixed reasons: a No is the answer itself.
+    if (question.kind.reasons.isEmpty) {
+      await _answer(question, answer);
+      return;
+    }
     final picked = await showModalBottomSheet<(String?, String)>(
       context: context,
       showDragHandle: true,
@@ -278,6 +282,7 @@ class _QuestionCard extends StatelessWidget {
       QuestionKind.confusable => l10n.reviewQuestionConfusable(word),
       QuestionKind.sound => l10n.reviewQuestionSound,
       QuestionKind.image => l10n.reviewQuestionImage(word),
+      QuestionKind.builder => question.asked ?? '',
     };
     final about = switch (question.kind) {
       QuestionKind.example => l10n.reviewQuestionExampleFor(word),
@@ -293,11 +298,20 @@ class _QuestionCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           spacing: 12,
           children: <Widget>[
+            if (question.kind == QuestionKind.builder)
+              Text(
+                l10n.reviewBuilderQuestion,
+                style: theme.textTheme.labelLarge!.copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
+              ),
             Semantics(
               header: true,
               child: Text(prompt, style: theme.textTheme.titleLarge),
             ),
-            if (question.kind == QuestionKind.meaning) ...<Widget>[
+            if (question.kind == QuestionKind.builder)
+              _BuilderCard(question: question, language: language)
+            else if (question.kind == QuestionKind.meaning) ...<Widget>[
               TargetText(
                 question.word,
                 language: language,
@@ -343,11 +357,78 @@ class _QuestionCard extends StatelessWidget {
                 ),
             ] else if (about != null)
               Text(about, style: theme.textTheme.titleMedium),
-            if (question.builder.isNotEmpty)
-              BuilderNote(questions: question.builder),
           ],
         ),
       ),
+    );
+  }
+}
+
+/// The card a builder question is about, in full: its word, reading and
+/// meaning, and every example with its reading and translation, so that
+/// the reviewer can judge whatever the builder asks.
+class _BuilderCard extends StatelessWidget {
+  const _BuilderCard({required this.question, required this.language});
+
+  final ReviewQuestion question;
+  final LanguageInfo language;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      spacing: 8,
+      children: <Widget>[
+        TargetText(
+          question.word,
+          language: language,
+          fontSize: 32,
+          textAlign: TextAlign.start,
+        ),
+        if (question.reading != null)
+          Text(
+            question.reading!,
+            style: theme.textTheme.titleMedium!.copyWith(
+              color: scheme.onSurfaceVariant,
+            ),
+          ),
+        if (question.meaning != null)
+          Text(question.meaning!, style: theme.textTheme.titleLarge),
+        if (question.examples.isNotEmpty) ...<Widget>[
+          const SizedBox(height: 4),
+          Text(
+            l10n.reviewBuilderExamples,
+            style: theme.textTheme.labelLarge!.copyWith(
+              color: scheme.onSurfaceVariant,
+            ),
+          ),
+          for (final example in question.examples)
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: 2,
+              children: <Widget>[
+                TargetText(
+                  example.target,
+                  language: language,
+                  fontSize: 22,
+                  textAlign: TextAlign.start,
+                ),
+                if (example.reading != null)
+                  Text(
+                    example.reading!,
+                    style: theme.textTheme.bodyMedium!.copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
+                if (example.native != null)
+                  Text(example.native!, style: theme.textTheme.bodyLarge),
+              ],
+            ),
+        ],
+      ],
     );
   }
 }

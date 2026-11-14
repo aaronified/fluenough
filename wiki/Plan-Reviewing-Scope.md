@@ -28,6 +28,24 @@ Also (owner, 2026-10-11): the main word may change, as when শুভ সকা�
 (śubho śôkāl!) gives way to শুপ্রভাত! (śuprobhāt!), which is far more
 common; and a reviewer must be able to change, add and remove base words.
 
+## Builder questions (2026-11-14)
+
+A deck builder's doubt (`docs/review-queue/<lang>.md`) is asked as its own daily
+question, never as a note on another question (the owner could not answer one
+Yes and No for two questions, with the example only half shown). The step
+shows the question as its heading, the whole card (word, reading, meaning and
+every example with reading and translation), and Yes, No and Skip for that
+question alone. It is `QuestionKind.builder`, point `builder:<8 hex of the
+question>`; a No needs no reason, and the bot (`tools/question_answers.py`)
+counts it like any answer but never writes it into a card's `verified`.
+
+Only rows that can be answered Yes or No are offered. The feed has no marker,
+so the rule is: the text, trimmed, ends in `?` (or `\uFF1F`), and the row names
+a card id (unit-level and course-wide rows never reach the app). Notes such as
+"death year uncertain: X or Y" or "source unverified" stay in the queue file
+for maintainers. Builders write each question so that it names the item it is
+about. The card's review sheet still shows the question as a note.
+
 ## Rules reviewers are given
 
 These go in the reviewer onboarding in the app, in `docs/REVIEWING.md`, and
