@@ -130,20 +130,20 @@ cards:
       - { id: "w1", word: "प्याज़", reading: "pyāz", kind: "word" }
       - { id: "w2", word: "टमाटर", reading: "ṭamāṭar", kind: "word" }
   - id: "hi-3028"
-    target: "मैंने पड़ोसी से छूट पूछी।"
-    target_scripts: { perso_arabic: "میں نے پڑوسی سے چھوٹ پوچھی۔" }
-    reading: "mainnē paṛōsī sē chūṭ pūchī."
-    ipa: "mɛːnneː pəɽoːsiː seː tʃʰuːʈ puːtʃʰiː"
+    target: "मैंने पड़ोसी से भाव पूछा।"
+    target_scripts: { perso_arabic: "میں نے پڑوسی سے بھاؤ پوچھا۔" }
+    reading: "mainnē paṛōsī sē bhāv pūchā."
+    ipa: "mɛːnneː pəɽoːsiː seː bʱaːʋ puːtʃʰaː"
     pos: "phrase"
     bases:
       - { word: "मैंने", base: "मैं", reading: "mainnē" }
       - { word: "पड़ोसी", ref: "hi-0437" }
       - { word: "से", ref: "hi-0276" }
-      - { word: "छूट", ref: "hi-1341" }
-      - { word: "पूछी", base: "पूछना", reading: "pūchī" }
+      - { word: "भाव", ref: "hi-1378" }
+      - { word: "पूछा", base: "पूछना", reading: "pūchā" }
     confusables:
       - { id: "w1", word: "रसीद", reading: "rasīd", kind: "word" }
-      - { id: "w2", word: "कीमत", reading: "kīmat", kind: "word" }
+      - { id: "w2", word: "छूट", reading: "chūṭ", kind: "word" }
   - id: "hi-3029"
     target: "हमने कल सुबह मंडी से सब्ज़ी ली।"
     target_scripts: { perso_arabic: "ہم نے کل صبح منڈی سے سبزی لی۔" }
@@ -195,10 +195,10 @@ cards:
       - { id: "w1", word: "नोट", reading: "nōṭ", kind: "word" }
       - { id: "w2", word: "मोबाइल", reading: "mōbāil", kind: "word" }
   - id: "hi-3032"
-    target: "पड़ोसी ने आज बाज़ार में दो किलो प्याज़ बेचे।"
-    target_scripts: { perso_arabic: "پڑوسی نے آج بازار میں دو کلو پیاز بیچے۔" }
-    reading: "paṛōsī nē āj bāzār mēm̐ dō kilō pyāz bēcē."
-    ipa: "pəɽoːsiː neː aːdʒ baːzaːr mẽː d̪oː kɪloː pjaːz beːtʃeː"
+    target: "पड़ोसी ने आज बाज़ार में दो किलो प्याज़ थोक बेचे।"
+    target_scripts: { perso_arabic: "پڑوسی نے آج بازار میں دو کلو پیاز تھوک بیچے۔" }
+    reading: "paṛōsī nē āj bāzār mēm̐ dō kilō pyāz thōk bēcē."
+    ipa: "pəɽoːsiː neː aːdʒ baːzaːr mẽː d̪oː kɪloː pjaːz t̪ʰoːk beːtʃeː"
     pos: "phrase"
     bases:
       - { word: "पड़ोसी", ref: "hi-0437" }
@@ -209,6 +209,7 @@ cards:
       - { word: "दो", ref: "hi-0199" }
       - { word: "किलो", ref: "hi-0241" }
       - { word: "प्याज़", ref: "hi-0251" }
+      - { word: "थोक", ref: "hi-1366" }
       - { word: "बेचे", base: "बेचना", reading: "bēcē" }
     confusables:
       - { id: "w1", word: "सेब", reading: "sēb", kind: "word" }
