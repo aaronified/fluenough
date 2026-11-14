@@ -1,0 +1,181 @@
+# Japanese compound verbs, part 2: a verb stem and a second verb (だす, すぎる, あう). Each part taught earlier is written by ref.
+schema: 1
+id: "ja-multiword-compound-verbs-2"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+genre: "multiword"
+pattern_family: "compound-verb"
+level: "B1"
+tags: ["unreviewed"]
+cards:
+  - id: "ja-4900"
+    target: "ききだす"
+    words: ["きき", "だす"]
+    reading: "kiki dasu"
+    ipa: "kiki dasɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "きき", ref: "ja-0344" }
+      - { word: "だす", ref: "ja-1348" }
+  - id: "ja-4901"
+    target: "かきだす"
+    words: ["かき", "だす"]
+    reading: "kaki dasu"
+    ipa: "kaki dasɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "かき", ref: "ja-0346" }
+      - { word: "だす", ref: "ja-1348" }
+  - id: "ja-4902"
+    target: "のりだす"
+    words: ["のり", "だす"]
+    reading: "nori dasu"
+    ipa: "noɾi dasɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "のり", ref: "ja-0361" }
+      - { word: "だす", ref: "ja-1348" }
+  - id: "ja-4903"
+    target: "つくりだす"
+    words: ["つくり", "だす"]
+    reading: "tsukuri dasu"
+    ipa: "tsɯkɯɾi dasɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "つくり", ref: "ja-0364" }
+      - { word: "だす", ref: "ja-1348" }
+  - id: "ja-4904"
+    target: "とびだす"
+    words: ["とび", "だす"]
+    reading: "tobi dasu"
+    ipa: "tobi dasɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "とび", ref: "ja-0573" }
+      - { word: "だす", ref: "ja-1348" }
+  - id: "ja-4905"
+    target: "さがしだす"
+    words: ["さがし", "だす"]
+    reading: "sagashi dasu"
+    ipa: "saɡaɕi dasɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "さがし", ref: "ja-0590" }
+      - { word: "だす", ref: "ja-1348" }
+  - id: "ja-4906"
+    target: "おしだす"
+    words: ["おし", "だす"]
+    reading: "oshi dasu"
+    ipa: "oɕi dasɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "おし", ref: "ja-2230" }
+      - { word: "だす", ref: "ja-1348" }
+  - id: "ja-4907"
+    target: "うごきだす"
+    words: ["うごき", "だす"]
+    reading: "ugoki dasu"
+    ipa: "ɯɡoki dasɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "うごき", ref: "ja-2255" }
+      - { word: "だす", ref: "ja-1348" }
+  - id: "ja-4908"
+    target: "たべすぎる"
+    words: ["たべ", "すぎる"]
+    reading: "tabe sugiru"
+    ipa: "tabe sɯɡiɾɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "たべ", ref: "ja-0341" }
+      - { word: "すぎる", ref: "ja-2252" }
+  - id: "ja-4909"
+    target: "ねすぎる"
+    words: ["ね", "すぎる"]
+    reading: "ne sugiru"
+    ipa: "ne sɯɡiɾɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "u2", kind: "usage" }
+    bases:
+      - { word: "ね", ref: "ja-0352" }
+      - { word: "すぎる", ref: "ja-2252" }
+  - id: "ja-4910"
+    target: "みあう"
+    words: ["み", "あう"]
+    reading: "mi au"
+    ipa: "mi aɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "み", ref: "ja-0343" }
+      - { word: "あう", base: "あう", reading: "au" }
+  - id: "ja-4911"
+    target: "はなしあう"
+    words: ["はなし", "あう"]
+    reading: "hanashi au"
+    ipa: "hanaɕi aɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "はなし", ref: "ja-0347" }
+      - { word: "あう", base: "あう", reading: "au" }
+  - id: "ja-4912"
+    target: "あう"
+    words: ["あう"]
+    reading: "au"
+    ipa: "aɯ"
+    pos: "verb"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "u2", kind: "homograph", ref: "ja-0357" }
+    bases: "self"
