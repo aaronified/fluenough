@@ -179,7 +179,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1158](https://github.com/aaronified/fluenough/issues/1158) Offline speech recognisers for every priority language (Indic, European, East Asian)
 - [#1221](https://github.com/aaronified/fluenough/issues/1221) IPA keyboard: follow-ups before it is switched on
 - [#1226](https://github.com/aaronified/fluenough/issues/1226) Script-unit cards carry structured character data: readings by kind, level, strokes, radical.
-- [#1227](https://github.com/aaronified/fluenough/issues/1227) A path can gate a script: a card or example may use only the characters already taught.
 - [#1235](https://github.com/aaronified/fluenough/issues/1235) topic_chars tool: robustness follow-ups and the marks/combos decision
 - [#1242](https://github.com/aaronified/fluenough/issues/1242) Daily questions builder step: follow-ups
 - [#25](https://github.com/aaronified/fluenough/issues/25) F-Droid metadata and submission
