@@ -21,6 +21,11 @@ This page is a plan. It builds nothing. The sections for Spanish, Telugu, French
 8. **Review-queue rows** are written into the task's report (and the pull request description), one line each in the file's table shape. Only the task that owns `docs/review-queue/ja.md` in a batch edits it; the batch's `JA-04x` task collects the rest.
 9. **Shared files** (`decks/creators/ja.yaml`, `decks/ja/ja-topics.yaml`, `decks/recommendations/ja.yaml`, `docs/review-queue/ja.md`, `decks/ja/ja-path.yaml`, the rules decks) have exactly one owner per batch, named in the task. A task that does not own a shared file never edits it. The one exception is stated under "Kanji lanes".
 10. **Genre decks are not on the path.** A deck with a `genre` (culture, proverbs, multiword) needs no path edit; a vocab, rules or script deck without one must be listed on the path in the same pull request.
+11. **One base per word per card.** In a layer BASES list, list each base word once per card, even if it occurs twice in the text (validator: `bases[n].word X is given twice`).
+12. **Plain English meanings.** A base `meaning` is plain English only: no kana, kanji or romanisation (validator: `has no transliteration beside it`).
+13. **Latin notes.** A layer NOTE is Latin prose. Every Japanese word or kanji in it is followed by its Latin reading in parentheses (Hepburn, the same as the deck readings), for example `四 (shi)`.
+14. **Hepburn readings.** Readings follow kana-based Hepburn, as the merged decks do: とお is `oo`, おう is `ou`, the particle は is `wa` in readings and IPA, and geminates are written (`jottsɯ`, not `jotsɯ`). Read each kanji's readings from the cited source page, never from memory.
+15. **Dates and lifespans.** A `date` field uses a shape `tools/validate_decks.py` `parse_years` accepts: a year, `c. YEAR` or `A-B`. Explanations go in notes. A creator's born and died must satisfy the validator's `MAX_LIFESPAN` (120).
 
 ## Japanese
 
@@ -128,6 +133,8 @@ Source of the set: the school kanji (kyoiku kanji), 1,026 characters in six grad
 - Not touched: `ja-topics.yaml` (JA-011), the path outside the task's own entry, other kanji decks.
 
 **Kanji lanes (the one exception to rule 9).** JA-001 first rewrites the five planned kanji units into 37 planned units and spaces them with at least one other unit between every two, so the entries never touch. A kanji task then edits only its own entry, and its one `decks/min_app.json` line. Two kanji lanes may run at once under this rule; if a rebase finds a conflict in the path or in `min_app.json`, the builder stops and reports.
+
+Each kanji task writes its own decks/min_app.json line at 0.8.1 for its deck (stated exception to rule 5).
 
 | Task | Kanji (grade) | Count | Branch (exact) | Deck, ids |
 |---|---|---|---|
