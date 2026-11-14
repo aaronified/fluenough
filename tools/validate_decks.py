@@ -2908,6 +2908,10 @@ def check_transliterated(r: Report, raw: object, *, fixed: str | None = None,
                 return
             if key == "text" and "passages" in keys:
                 return
+            # A character block's radical is itself one character, checked
+            # as such by _check_character; its reading is the card's own.
+            if key == "radical" and keys[-2:-1] == ["character"]:
+                return
             if fixed is not None:
                 code = fixed
             else:
