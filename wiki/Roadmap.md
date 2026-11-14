@@ -182,6 +182,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1227](https://github.com/aaronified/fluenough/issues/1227) A path can gate a script: a card or example may use only the characters already taught.
 - [#1228](https://github.com/aaronified/fluenough/issues/1228) A script topic's `chars` must match the cards of its `decks`, and a tool writes them.
 - [#1235](https://github.com/aaronified/fluenough/issues/1235) topic_chars tool: robustness follow-ups and the marks/combos decision
+- [#1242](https://github.com/aaronified/fluenough/issues/1242) Daily questions builder step: follow-ups
 - [#25](https://github.com/aaronified/fluenough/issues/25) F-Droid metadata and submission
 - [#26](https://github.com/aaronified/fluenough/issues/26) Accessibility: a TalkBack pass on a phone
 - [#30](https://github.com/aaronified/fluenough/issues/30) Script decks: document their conventions; positional forms for Arabic-script languages
