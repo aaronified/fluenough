@@ -155,7 +155,8 @@ def run(lang: str, decks: Path, write: bool, all_targets: bool) -> tuple[list[st
         if p.resolve() != topics_path.resolve():
             reports.append(vd.validate(p))
     by_core = vd._context(reports).lang(lang).by_core()
-    text = topics_path.read_text(encoding="utf-8")
+    with open(topics_path, encoding="utf-8", newline="") as f:
+        text = f.read()
     lines = text.split("\n")
     report: list[str] = []
     differ = 0
@@ -180,7 +181,8 @@ def run(lang: str, decks: Path, write: bool, all_targets: bool) -> tuple[list[st
         if write and not patch(lines, tid, wanted, existing_mappings(t)):
             report.append(f"{tid}: could not patch it (block not found, or a comment in its chars), left alone")
     if write and differ:
-        topics_path.write_text("\n".join(lines), encoding="utf-8")
+        with open(topics_path, "w", encoding="utf-8", newline="") as f:
+            f.write("\n".join(lines))
     return report, differ
 
 
