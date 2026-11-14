@@ -1,0 +1,59 @@
+"schema": 1
+"id": "te-en-reading-cinema"
+"name": "Reading: a short film review"
+"kind": "reading"
+"language":
+  "code": "te"
+  "iso639_3": "tel"
+  "name": "Telugu"
+  "script": "telugu"
+  "tts": "te-IN"
+  "icon": "తె"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"description": "A short review of a film: the film is very good, the hero acted very well, everyone cried in the last scene, and the reviewer liked the ending. Not yet checked by a Telugu speaker: please report any mistake."
+"tags":
+- "reading"
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "te-film-review"
+  "title": "A short film review"
+  "sentences":
+  - "text": "ఈ సినిమా చాలా బాగుంది."
+    "reading": "ī sinimā cālā bāgundi."
+    "ipa": "iː sinimaː tʃaːlaː baːɡund̪i"
+  - "text": "ఆ హీరో చాలా బాగా నటించాడు."
+    "reading": "ā hīrō cālā bāgā naṭiñcāḍu."
+    "ipa": "aː hiːroː tʃaːlaː baːɡaː naʈiɲtʃaːɖu"
+  - "text": "చివరి సన్నివేశంలో అందరూ ఏడ్చారు."
+    "reading": "civari sannivēśamlō andarū ēḍcāru."
+    "ipa": "tʃiʋari sanniʋeːʃamloː and̪aruː eːɖtʃaːru"
+  - "text": "ముగింపు నాకు నచ్చింది."
+    "reading": "mugimpu nāku naccindi."
+    "ipa": "muɡimpu naːku natʃtʃind̪i"
+  "questions":
+  - "id": "te-8403"
+    "prompt":
+      "en": "What does the reviewer say about the hero?"
+    "options":
+    - "en": "He sang every song."
+    - "en": "He acted very well."
+    - "en": "He did not appear."
+    "answer": 2
+  - "id": "te-8404"
+    "prompt":
+      "en": "The reviewer did not like the ending."
+    "answer": false
+  - "id": "te-8405"
+    "prompt":
+      "en": "What did everyone do in the last scene?"
+    "options":
+    - "en": "They laughed."
+    - "en": "They left."
+    - "en": "They cried."
+    "answer": 3
