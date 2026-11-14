@@ -1,0 +1,328 @@
+schema: 1
+id: "hi-shopping-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-3020"
+    target: "मैंने यह कमीज़ बदली।"
+    target_scripts: { perso_arabic: "میں نے یہ قمیض بدلی۔" }
+    reading: "mainnē yah kamīz badlī."
+    ipa: "mɛːnneː jəɦ kəmiːz bəd̪liː"
+    pos: "phrase"
+    bases:
+      - { word: "मैंने", base: "मैं", reading: "mainnē" }
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "कमीज़", ref: "hi-1111" }
+      - { word: "बदली", base: "बदलना", reading: "badlī" }
+    confusables:
+      - { id: "w1", word: "जैकेट", reading: "jaikēṭ", kind: "word" }
+      - { id: "w2", word: "साड़ी", reading: "sāṛī", kind: "word" }
+  - id: "hi-3021"
+    target: "इस दुकान में ताज़ी सब्ज़ी थोक मिली।"
+    target_scripts: { perso_arabic: "اس دکان میں تازی سبزی تھوک ملی۔" }
+    reading: "is dukān mēm̐ tāzī sabzī thōk milī."
+    ipa: "ɪs d̪ʊkaːn mẽː t̪aːziː səbziː t̪ʰoːk mɪliː"
+    pos: "phrase"
+    bases:
+      - { word: "इस", base: "यह", reading: "is" }
+      - { word: "दुकान", ref: "hi-0239" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "ताज़ी", base: "ताज़ा", reading: "tāzī" }
+      - { word: "सब्ज़ी", ref: "hi-0249" }
+      - { word: "थोक", ref: "hi-1366" }
+      - { word: "मिली", base: "मिलना", reading: "milī" }
+    confusables:
+      - { id: "w1", word: "खुदरा", reading: "khudrā", kind: "word" }
+      - { id: "w2", word: "फल", reading: "phal", kind: "word" }
+  - id: "hi-3022"
+    target: "क्या आपने मेरा हिसाब समझा?"
+    target_scripts: { perso_arabic: "کیا آپ نے میرا حساب سمجھا؟" }
+    reading: "kyā āpnē mērā hisāb samjhā?"
+    ipa: "kjaː aːpneː meːraː ɦɪsaːb səmdʒʱaː"
+    pos: "phrase"
+    bases:
+      - { word: "क्या", ref: "hi-0157" }
+      - { word: "आपने", base: "आप", reading: "āpnē" }
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "हिसाब", ref: "hi-1354" }
+      - { word: "समझा", base: "समझना", reading: "samjhā" }
+    confusables:
+      - { id: "w1", word: "रकम", reading: "rakam", kind: "word" }
+      - { id: "w2", word: "गिनती", reading: "gintī", kind: "word" }
+  - id: "hi-3023"
+    target: "यह कार्ड नहीं चलता।"
+    target_scripts: { perso_arabic: "یہ کارڈ نہیں چلتا۔" }
+    reading: "yah kārḍ nahīm̐ caltā."
+    ipa: "jəɦ kaːrɖ nəɦĩː tʃəlt̪aː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "कार्ड", ref: "hi-1363" }
+      - { word: "नहीं", ref: "hi-0156" }
+      - { word: "चलता", base: "चलना", reading: "caltā" }
+    confusables:
+      - { id: "w1", word: "नक़द", reading: "naqad", kind: "word" }
+      - { id: "w2", word: "मोबाइल", reading: "mōbāil", kind: "word" }
+  - id: "hi-3024"
+    target: "माँ ने हमें कल दूध की कीमत बताई।"
+    target_scripts: { perso_arabic: "ماں نے ہمیں کل دودھ کی قیمت بتائی۔" }
+    reading: "mām̐ nē hamēm̐ kal dūdh kī kīmat batāī."
+    ipa: "mãː neː ɦəmẽː kəl d̪uːd̪ʱ kiː kiːmət̪ bət̪aːiː"
+    pos: "phrase"
+    bases:
+      - { word: "माँ", ref: "hi-0377" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "हमें", base: "हम", reading: "hamēm̐" }
+      - { word: "कल", ref: "hi-0300" }
+      - { word: "दूध", ref: "hi-0259" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "कीमत", ref: "hi-1342" }
+      - { word: "बताई", base: "बताना", reading: "batāī" }
+    confusables:
+      - { id: "w1", word: "छूट", reading: "chūṭ", kind: "word" }
+      - { id: "w2", word: "रसीद", reading: "rasīd", kind: "word" }
+  - id: "hi-3025"
+    target: "ग्राहक अकेले घर लौटा।"
+    target_scripts: { perso_arabic: "گاہک اکیلے گھر لوٹا۔" }
+    reading: "grāhak akēlē ghar lauṭā."
+    ipa: "ɡraːɦək əkeːleː ɡʱər lɔːʈaː"
+    pos: "phrase"
+    bases:
+      - { word: "ग्राहक", ref: "hi-1340" }
+      - { word: "अकेले", ref: "hi-0847" }
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "लौटा", base: "लौटना", reading: "lauṭā" }
+    confusables:
+      - { id: "w1", word: "दुकानदार", reading: "dukāndār", kind: "word" }
+      - { id: "w2", word: "किसान", reading: "kisān", kind: "word" }
+  - id: "hi-3026"
+    target: "आपने यह चीज़ कितने में ख़रीदी?"
+    target_scripts: { perso_arabic: "آپ نے یہ چیز کتنے میں خریدی؟" }
+    reading: "āpnē yah cīz kitnē mēm̐ k͟harīdī?"
+    ipa: "aːpneː jəɦ tʃiːz kɪt̪neː mẽː xəriːd̪iː"
+    pos: "phrase"
+    bases:
+      - { word: "आपने", base: "आप", reading: "āpnē" }
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "चीज़", ref: "hi-1351" }
+      - { word: "कितने", base: "कितना", reading: "kitnē" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "ख़रीदी", base: "ख़रीदना", reading: "k͟harīdī" }
+    confusables:
+      - { id: "w1", word: "कब", reading: "kab", kind: "word" }
+      - { id: "w2", word: "कहाँ", reading: "kahām̐", kind: "word" }
+  - id: "hi-3027"
+    target: "दुकानदार ने आलू ठीक तौला।"
+    target_scripts: { perso_arabic: "دکاندار نے آلو ٹھیک تولا۔" }
+    reading: "dukāndār nē ālū ṭhīk taulā."
+    ipa: "d̪ʊkaːnd̪aːr neː aːluː ʈʰiːk t̪ɔːlaː"
+    pos: "phrase"
+    bases:
+      - { word: "दुकानदार", ref: "hi-0402" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "आलू", ref: "hi-0250" }
+      - { word: "ठीक", ref: "hi-1703" }
+      - { word: "तौला", base: "तौलना", reading: "taulā" }
+    confusables:
+      - { id: "w1", word: "प्याज़", reading: "pyāz", kind: "word" }
+      - { id: "w2", word: "टमाटर", reading: "ṭamāṭar", kind: "word" }
+  - id: "hi-3028"
+    target: "मैंने पड़ोसी से भाव पूछा।"
+    target_scripts: { perso_arabic: "میں نے پڑوسی سے بھاؤ پوچھا۔" }
+    reading: "mainnē paṛōsī sē bhāv pūchā."
+    ipa: "mɛːnneː pəɽoːsiː seː bʱaːʋ puːtʃʰaː"
+    pos: "phrase"
+    bases:
+      - { word: "मैंने", base: "मैं", reading: "mainnē" }
+      - { word: "पड़ोसी", ref: "hi-0437" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "भाव", ref: "hi-1378" }
+      - { word: "पूछा", base: "पूछना", reading: "pūchā" }
+    confusables:
+      - { id: "w1", word: "रसीद", reading: "rasīd", kind: "word" }
+      - { id: "w2", word: "छूट", reading: "chūṭ", kind: "word" }
+  - id: "hi-3029"
+    target: "हमने कल सुबह मंडी से सब्ज़ी ली।"
+    target_scripts: { perso_arabic: "ہم نے کل صبح منڈی سے سبزی لی۔" }
+    reading: "hamnē kal subah maṇḍī sē sabzī lī."
+    ipa: "ɦəmneː kəl sʊbəɦ məɳɖiː seː səbziː liː"
+    pos: "phrase"
+    bases:
+      - { word: "हमने", base: "हम", reading: "hamnē" }
+      - { word: "कल", ref: "hi-0300" }
+      - { word: "सुबह", ref: "hi-0302" }
+      - { word: "मंडी", ref: "hi-1374" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "सब्ज़ी", ref: "hi-0249" }
+      - { word: "ली", base: "लेना", reading: "lī" }
+    confusables:
+      - { id: "w1", word: "बाज़ार", reading: "bāzār", kind: "word" }
+      - { id: "w2", word: "ठेला", reading: "ṭhēlā", kind: "word" }
+  - id: "hi-3030"
+    target: "उसने सुबह से शाम तक सारा सामान बेचा।"
+    target_scripts: { perso_arabic: "اس نے صبح سے شام تک سارا سامان بیچا۔" }
+    reading: "usnē subah sē śām tak sārā sāmān bēcā."
+    ipa: "ʊsneː sʊbəɦ seː ʃaːm t̪ək saːraː saːmaːn beːtʃaː"
+    pos: "phrase"
+    bases:
+      - { word: "उसने", base: "वह", reading: "usnē" }
+      - { word: "सुबह", ref: "hi-0302" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "शाम", ref: "hi-0303" }
+      - { word: "तक", ref: "hi-0278" }
+      - { word: "सारा", ref: "hi-0867" }
+      - { word: "सामान", ref: "hi-1350" }
+      - { word: "बेचा", base: "बेचना", reading: "bēcā" }
+    confusables:
+      - { id: "w1", word: "ख़रीदना", reading: "k͟harīdnā", kind: "word" }
+      - { id: "w2", word: "रात", reading: "rāt", kind: "word" }
+  - id: "hi-3031"
+    target: "आपने नक़द दिया या कार्ड?"
+    target_scripts: { perso_arabic: "آپ نے نقد دیا یا کارڈ؟" }
+    reading: "āpnē naqad diyā yā kārḍ?"
+    ipa: "aːpneː nəqəd̪ d̪ɪjaː jaː kaːrɖ"
+    pos: "phrase"
+    bases:
+      - { word: "आपने", base: "आप", reading: "āpnē" }
+      - { word: "नक़द", ref: "hi-1362" }
+      - { word: "दिया", base: "देना", reading: "diyā" }
+      - { word: "या", ref: "hi-0344" }
+      - { word: "कार्ड", ref: "hi-1363" }
+    confusables:
+      - { id: "w1", word: "नोट", reading: "nōṭ", kind: "word" }
+      - { id: "w2", word: "मोबाइल", reading: "mōbāil", kind: "word" }
+  - id: "hi-3032"
+    target: "पड़ोसी ने आज बाज़ार में दो किलो प्याज़ थोक बेचे।"
+    target_scripts: { perso_arabic: "پڑوسی نے آج بازار میں دو کلو پیاز تھوک بیچے۔" }
+    reading: "paṛōsī nē āj bāzār mēm̐ dō kilō pyāz thōk bēcē."
+    ipa: "pəɽoːsiː neː aːdʒ baːzaːr mẽː d̪oː kɪloː pjaːz t̪ʰoːk beːtʃeː"
+    pos: "phrase"
+    bases:
+      - { word: "पड़ोसी", ref: "hi-0437" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "आज", ref: "hi-0299" }
+      - { word: "बाज़ार", ref: "hi-1081" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "दो", ref: "hi-0199" }
+      - { word: "किलो", ref: "hi-0241" }
+      - { word: "प्याज़", ref: "hi-0251" }
+      - { word: "थोक", ref: "hi-1366" }
+      - { word: "बेचे", base: "बेचना", reading: "bēcē" }
+    confusables:
+      - { id: "w1", word: "सेब", reading: "sēb", kind: "word" }
+      - { id: "w2", word: "आलू", reading: "ālū", kind: "word" }
+  - id: "hi-3033"
+    target: "मेरी छोटी बहन ने शाम को मंडी में दाम पूछा।"
+    target_scripts: { perso_arabic: "میری چھوٹی بہن نے شام کو منڈی میں دام پوچھا۔" }
+    reading: "mērī chōṭī bahan nē śām kō maṇḍī mēm̐ dām pūchā."
+    ipa: "meːriː tʃʰoːʈiː bəɦən neː ʃaːm koː məɳɖiː mẽː d̪aːm puːtʃʰaː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", base: "मेरा", reading: "mērī" }
+      - { word: "छोटी", base: "छोटा", reading: "chōṭī" }
+      - { word: "बहन", ref: "hi-0379" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "शाम", ref: "hi-0303" }
+      - { word: "को", ref: "hi-0277" }
+      - { word: "मंडी", ref: "hi-1374" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "दाम", ref: "hi-0232" }
+      - { word: "पूछा", base: "पूछना", reading: "pūchā" }
+    confusables:
+      - { id: "w1", word: "बाज़ार", reading: "bāzār", kind: "word" }
+      - { id: "w2", word: "सुबह", reading: "subah", kind: "word" }
+  - id: "hi-3034"
+    target: "मेरे हाथ से सिक्का नीचे गिरा।"
+    target_scripts: { perso_arabic: "میرے ہاتھ سے سکہ نیچے گرا۔" }
+    reading: "mērē hāth sē sikkā nīcē girā."
+    ipa: "meːreː ɦaːt̪ʰ seː sɪkkaː niːtʃeː ɡɪraː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरे", base: "मेरा", reading: "mērē" }
+      - { word: "हाथ", ref: "hi-1042" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "सिक्का", ref: "hi-1344" }
+      - { word: "नीचे", ref: "hi-0835" }
+      - { word: "गिरा", base: "गिरना", reading: "girā" }
+    confusables:
+      - { id: "w1", word: "नोट", reading: "nōṭ", kind: "word" }
+      - { id: "w2", word: "पैर", reading: "pair", kind: "word" }
+  - id: "hi-3035"
+    target: "मैं अपना बटुआ भूला।"
+    target_scripts: { perso_arabic: "میں اپنا بٹوا بھولا۔" }
+    reading: "maim̐ apnā baṭuā bhūlā."
+    ipa: "mɛ̃ː əpnaː bəʈʊaː bʱuːlaː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "अपना", ref: "hi-0760" }
+      - { word: "बटुआ", ref: "hi-1346" }
+      - { word: "भूला", base: "भूलना", reading: "bhūlā" }
+    confusables:
+      - { id: "w1", word: "सिक्का", reading: "sikkā", kind: "word" }
+      - { id: "w2", word: "चाबी", reading: "cābī", kind: "word" }
+  - id: "hi-3036"
+    target: "क्या आपको रसीद चाहिए?"
+    target_scripts: { perso_arabic: "کیا آپ کو رسید چاہیے؟" }
+    reading: "kyā āpkō rasīd cāhiē?"
+    ipa: "kjaː aːpkoː rəsiːd̪ tʃaːɦɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "क्या", ref: "hi-0157" }
+      - { word: "आपको", base: "आप", reading: "āpkō" }
+      - { word: "रसीद", ref: "hi-1347" }
+      - { word: "चाहिए", ref: "hi-0460" }
+    confusables:
+      - { id: "w1", word: "नोट", reading: "nōṭ", kind: "word" }
+      - { id: "w2", word: "कार्ड", reading: "kārḍ", kind: "word" }
+  - id: "hi-3037"
+    target: "दुकानदार ने रसीद पर हर चीज़ की कीमत लिखी।"
+    target_scripts: { perso_arabic: "دکاندار نے رسید پر ہر چیز کی قیمت لکھی۔" }
+    reading: "dukāndār nē rasīd par har cīz kī kīmat likhī."
+    ipa: "d̪ʊkaːnd̪aːr neː rəsiːd̪ pər ɦər tʃiːz kiː kiːmət̪ lɪkʰiː"
+    pos: "phrase"
+    bases:
+      - { word: "दुकानदार", ref: "hi-0402" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "रसीद", ref: "hi-1347" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "हर", base: "हर", reading: "har" }
+      - { word: "चीज़", ref: "hi-1351" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "कीमत", ref: "hi-1342" }
+      - { word: "लिखी", base: "लिखना", reading: "likhī" }
+    confusables:
+      - { id: "w1", word: "बिल", reading: "bil", kind: "word" }
+      - { id: "w2", word: "नाप", reading: "nāp", kind: "word" }
+  - id: "hi-3038"
+    target: "मैंने सामान थैले में रखा।"
+    target_scripts: { perso_arabic: "میں نے سامان تھیلے میں رکھا۔" }
+    reading: "mainnē sāmān thailē mēm̐ rakhā."
+    ipa: "mɛːnneː saːmaːn t̪ʰɛːleː mẽː rəkʰaː"
+    pos: "phrase"
+    bases:
+      - { word: "मैंने", base: "मैं", reading: "mainnē" }
+      - { word: "सामान", ref: "hi-1350" }
+      - { word: "थैले", base: "थैला", reading: "thailē" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "रखा", base: "रखना", reading: "rakhā" }
+    confusables:
+      - { id: "w1", word: "बटुआ", reading: "baṭuā", kind: "word" }
+      - { id: "w2", word: "जेब", reading: "jēb", kind: "word" }
+  - id: "hi-3039"
+    target: "मैंने दूध नक़द ख़रीदा।"
+    target_scripts: { perso_arabic: "میں نے دودھ نقد خریدا۔" }
+    reading: "mainnē dūdh naqad k͟harīdā."
+    ipa: "mɛːnneː d̪uːd̪ʱ nəqəd̪ xəriːd̪aː"
+    pos: "phrase"
+    bases:
+      - { word: "मैंने", base: "मैं", reading: "mainnē" }
+      - { word: "दूध", ref: "hi-0259" }
+      - { word: "नक़द", ref: "hi-1362" }
+      - { word: "ख़रीदा", base: "ख़रीदना", reading: "k͟harīdā" }
+    confusables:
+      - { id: "w1", word: "दही", reading: "dahī", kind: "word" }
+      - { id: "w2", word: "चावल", reading: "cāval", kind: "word" }
