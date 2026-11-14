@@ -64,10 +64,18 @@ class SentenceRejection {
 final RegExp _letter = RegExp(r'\p{L}', unicode: true);
 final RegExp _latinLetter = RegExp(r'\p{Script=Latin}', unicode: true);
 final RegExp _placeholder = RegExp(
-  r'___|\{|\}|<|>|\bTODO\b|\bXXX\b|\?\?\?|\.\.\.|…',
+  r'___|\{|\}|\bTODO\b|\bXXX\b|\?\?\?|(^|\s)(…|\.\.\.)(\s|$|[.!?।。])',
 );
 final RegExp _questionEnd = RegExp(r'[?？؟]["”’)]*$');
-final RegExp _statementEnd = RegExp(r'[.!।॥。！｡۔]["”’)]*$');
+
+// What a target's end says about its mood, conservatively. Only an explicit
+// question mark counts as a question, in any script: `?`, `？`, `؟` (Arabic),
+// `;` and U+037E (Greek), `՞` (Armenian, inside the last word). A final `。`
+// or `।` gives no signal (Japanese and Chinese write questions with `。` or a
+// particle such as か or 吗, Hindi with `।`), so it never proves a statement;
+// only an ASCII full stop or `!` does.
+final RegExp _targetQuestionEnd = RegExp(r'[?？؟;\u037E]["”’)]*$|՞');
+final RegExp _asciiStatementEnd = RegExp(r'[.!]["”’)]*$');
 
 /// The meaning of a sentence card as one English sentence: the first
 /// alternative (up to a semicolon), without notes in brackets, and with its
@@ -85,9 +93,9 @@ String sentenceMeaning(String native, {String target = ''}) {
   // statement.
   final t = target.trim();
   if (first.isNotEmpty && !end.hasMatch(first) && !first.startsWith('to ')) {
-    if (RegExp(r'[?？؟]["”’)]*$').hasMatch(t)) {
+    if (_targetQuestionEnd.hasMatch(t)) {
       first = '$first?';
-    } else if (_statementEnd.hasMatch(t)) {
+    } else if (_asciiStatementEnd.hasMatch(t)) {
       first = '$first.';
     }
   }
@@ -101,9 +109,9 @@ String sentenceMeaning(String native, {String target = ''}) {
 /// Whether [meaning] ends as a question.
 bool endsAsQuestion(String meaning) => _questionEnd.hasMatch(meaning.trim());
 
-/// Whether [text] is a question as a language writes one (`?`, `？`, `؟`).
-bool _targetQuestion(String text) =>
-    RegExp(r'[?？؟]["”’)]*$').hasMatch(text.trim());
+/// Whether [text] carries an explicit question mark, in any script.
+bool targetHasQuestionMark(String text) =>
+    _targetQuestionEnd.hasMatch(text.trim());
 
 /// Why [c], a card of three to ten words, is not a sentence; null when it is.
 /// [nonLatinCourse] is whether most of the course is not written in Latin
@@ -141,10 +149,12 @@ SentenceFault? sentenceFault(Card c, {required bool nonLatinCourse}) {
   }
   final words = meaning.split(RegExp(r'\s+')).where((w) => w.isNotEmpty).length;
   if (words < 2 || words > 16) return SentenceFault.meaningLength;
-  final targetQ = _targetQuestion(target);
+  // When in doubt the card stays: a mismatch needs an explicit question mark
+  // on one side and, on the other, a plain statement ending.
+  final targetQ = targetHasQuestionMark(target);
   final meaningQ = endsAsQuestion(meaning);
   if ((targetQ && !meaningQ) ||
-      (!targetQ && meaningQ && _statementEnd.hasMatch(target.trim()))) {
+      (!targetQ && meaningQ && _asciiStatementEnd.hasMatch(target.trim()))) {
     return SentenceFault.moodMismatch;
   }
   return null;
@@ -191,8 +201,9 @@ List<SentenceRejection> sentenceRejections(
       if (fault == null) {
         final t = c.target.trim().toLowerCase();
         final m = sentenceMeaning(c.native, target: c.target).toLowerCase();
-        if (!targets.add(t) || !meanings.add(m))
+        if (!targets.add(t) || !meanings.add(m)) {
           fault = SentenceFault.duplicate;
+        }
       }
       if (fault != null) {
         out.add(

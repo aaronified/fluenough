@@ -122,6 +122,60 @@ void main() {
       );
     });
 
+    test('a question is not a mismatch where its language gives no mark: '
+        'Japanese か。, Chinese 吗, Greek ;, Hindi । and Arabic ؟', () {
+      expect(
+        sentenceFault(
+          card('これ は ペン です か。', 'Is this a pen?'),
+          nonLatinCourse: true,
+        ),
+        isNull,
+      );
+      expect(
+        sentenceFault(
+          card('你 是 学生 吗', 'Are you a student?'),
+          nonLatinCourse: true,
+        ),
+        isNull,
+      );
+      expect(
+        sentenceFault(
+          card('Πού μένεις εσύ;', 'Where do you live?'),
+          nonLatinCourse: true,
+        ),
+        isNull,
+      );
+      expect(
+        sentenceFault(
+          card('तुम कहाँ रहते हो।', 'Where do you live?'),
+          nonLatinCourse: true,
+        ),
+        isNull,
+      );
+      expect(
+        sentenceFault(
+          card('أين تسكن أنت؟', 'Where do you live?'),
+          nonLatinCourse: true,
+        ),
+        isNull,
+      );
+      // An explicit question mark against a statement is a mismatch.
+      expect(
+        sentenceFault(
+          card('Πού μένεις εσύ;', 'You live there.'),
+          nonLatinCourse: true,
+        ),
+        SentenceFault.moodMismatch,
+      );
+      expect(
+        sentenceFault(
+          card('أين تسكن أنت؟', 'You live there.'),
+          nonLatinCourse: true,
+        ),
+        SentenceFault.moodMismatch,
+      );
+    });
+
     test('a meaning that lacks its end mark takes the target\'s', () {
       expect(
         sentenceMeaning("I don't understand", target: 'Tôi không hiểu.'),
