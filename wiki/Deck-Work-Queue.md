@@ -15,12 +15,17 @@ This page is a plan. It builds nothing. The sections for Spanish, Telugu, French
 2. **Guarded, logged code.** Any script a builder writes wraps its work in try/catch (including around loops over items, so one failure does not stop the rest), sends every caught failure to the app's existing logger (never a silent catch, never only a print), and repeats it in the report. No new logger.
 3. **Ids.** Card ids come only from the task's reserved range, ascending. A range left partly unused stays unused. An id is never reused or renumbered. A deck that needs more ids than reserved stops and reports.
 4. **Quote every YAML scalar** except `true`, `false` and whole numbers. Tag every new file `"unreviewed"`. Licence `CC-BY-SA-4.0`.
-5. **No local tests, no local validator, no tag, no new branch after a merge.** CI checks the pull request. Pull requests target `decks-live`. One Sonnet review per pull request. No deck file edits `decks/min_app.json`.
+5. **No local tests, no local validator, no tag, no new branch after a merge.** CI checks the pull request. Pull requests target `decks-live`. One Sonnet review per pull request. `decks/min_app.json` is owned by the kanji tasks alone, one line each (see "Kanji lanes"); no other task edits it.
 6. **Sources.** A date or legacy claim is read from the creator's or work's Japanese Wikipedia page by the builder. What was not read goes to the review queue as unverified. Nothing from memory is asserted as checked.
 7. **No quoted text.** Works are named by title and creator. A card carries only what its kind allows (the batch-1 shape), never a passage longer than that shape; nothing is copied from a translation, a dictionary or a lyric sheet. Translations are the builder's own plain renderings.
 8. **Review-queue rows** are written into the task's report (and the pull request description), one line each in the file's table shape. Only the task that owns `docs/review-queue/ja.md` in a batch edits it; the batch's `JA-04x` task collects the rest.
 9. **Shared files** (`decks/creators/ja.yaml`, `decks/ja/ja-topics.yaml`, `decks/recommendations/ja.yaml`, `docs/review-queue/ja.md`, `decks/ja/ja-path.yaml`, the rules decks) have exactly one owner per batch, named in the task. A task that does not own a shared file never edits it. The one exception is stated under "Kanji lanes".
 10. **Genre decks are not on the path.** A deck with a `genre` (culture, proverbs, multiword) needs no path edit; a vocab, rules or script deck without one must be listed on the path in the same pull request.
+11. **One base per word per card.** In a layer BASES list, list each base word once per card, even if it occurs twice in the text (validator: `bases[n].word X is given twice`).
+12. **Plain English meanings.** A base `meaning` is plain English only: no kana, kanji or romanisation (validator: `has no transliteration beside it`).
+13. **Latin notes.** A layer NOTE is Latin prose. Every Japanese word or kanji in it is followed by its Latin reading in parentheses (Hepburn, the same as the deck readings), for example `四 (shi)`.
+14. **Hepburn readings.** Readings follow kana-based Hepburn, as the merged decks do: とお is `oo`, おう is `ou`, the particle は is `wa` in readings and IPA, and geminates are written (`jottsɯ`, not `jotsɯ`). Read each kanji's readings from the cited source page, never from memory.
+15. **Dates and lifespans.** A `date` field uses a shape `tools/validate_decks.py` `parse_years` accepts: a year, `c. YEAR` or `A-B`. Explanations go in notes. A creator's born and died must satisfy the validator's `MAX_LIFESPAN` (120).
 
 ## Japanese
 
@@ -64,7 +69,9 @@ Issue #378's checklist (2026-11-13) is out of date: batches 1 to 4 have merged s
 | 13 | Review-queue rows for everything new | per batch | JA-042 to JA-044 |
 | 14 | Facts file | about 30 facts | JA-046 |
 | 15 | Kanji, about 1,000 by B1 | 1,026 school kanji, 7 done | JA-100 to JA-137 |
+| 15b | Examples for the kanji cards built without them | per flag | JA-048 to JA-050 |
 | 16 | Docs: stale statements (build-deck skill says narrow IPA tools are unbuilt; #378 and Plan-Language-Completeness counts) | 3 small edits | JA-045 |
+| JA-048 to 050 | decks/ja-kanji-examples-1 (decks ja-kanji-2 to 9), -2 (10 to 24), -3 (25 to 38) | edit the cores and layers of those kanji decks | After the word units JA-023 to JA-029 have merged: for every card flagged "no example" or "one example" in the review queue, add examples to two by the procedure of the kanji rules, now with the larger taught vocabulary; edit only those cards, ids and every other field unchanged; remove none of the flags (the reviewer does) | the review-queue rows, the decks | cards with two examples | none | everything else | after JA-029; each PARALLEL with the others |
 | 17 | Blockers that need code or tools | 3 issues | section C |
 
 ### B. The buildable task queue
@@ -113,53 +120,62 @@ Source of the set: the school kanji (kyoiku kanji), 1,026 characters in six grad
 
 - Files: `decks/ja/ja-kanji-N.yaml`, `decks/ja/en/ja-en-kanji-N.yaml`, and the unit's path entry (written form, deck also added to `alphabet`). Template: `ja-kanji-1` and `ja-en-kanji-1`, and Deck-Format "Japanese kanji". `script: han`, `scripts: [han, kana]`, tags `script`, `unreviewed`, `level` by the unit's place in the path (before the A2 milestone `A2`, after it `B1`).
 - One card per kanji, in the task's list order. `target` the kanji, `target_scripts.kana` the one reading the unit teaches it by (the word it stands for alone, else its commonest word), `words`, romaji `reading` (Hepburn, `ja-romanisation`), broad `ipa`, `pos: "letter"`, `bases: "self"`. No `phonetic`. The layer's note `n1` has this exact shape: `X (kana): on readings ... ; kun readings .... It is in W (romaji), meaning.` with every kana followed by its romaji.
-- Two examples per card, each with `target_scripts.kana`, `reading`, `ipa`, `words`. **Examples use only words already taught**: a word that is a card of a deck listed on the path at an earlier unit than this one (or an earlier card of this deck). The card's kanji appears in at least one example. A kanji with fewer than two such examples is not built: the builder reports it and the architect moves it to a later deck.
+- **Examples: an exact decision procedure.** An example is a short sentence of taught words (a card of a deck on the path before this unit's place, or an earlier kanji deck), with `target_scripts.kana`, `reading`, `ipa`, `words`. A kanji is **taught for this purpose if its card is in an earlier kanji deck or anywhere in this deck** (any card, any order): so 先生 is allowed in the deck that teaches both 先 and 生. A word may be shown in kanji only if every kanji in it is taught in this sense; its okurigana and every other word are in kana. No new vocabulary is ever added to make an example. For each kanji K, in order:
+  1. List the taught words whose standard spelling uses K (read the spelling on ja.wiktionary). Write up to two examples with K shown in kanji. Two found: done.
+  2. Exactly one found: build the card with that one example and write a review-queue row "one example".
+  3. None found, but the word K stands for alone (its card reading) is a taught word: write one example in which that word is written with K; row "one example".
+  4. Still none: build the card **with no `examples`** and write a review-queue row "no example: no taught word uses this kanji". The kanji is never dropped, never moved and never left out ("Do not leave anything in the middle"); its examples come later from the retrofit tasks JA-048 to JA-050 once more vocabulary is taught. Card, id, readings, meaning and notes are complete as always.
+  Expected thin cards the builder can predict (they still follow the procedure): in JA-101 貝 玉 王 左 右; in JA-102 糸 字 手 正 生 青 石 赤 先 (先 and 生 now give 先生 and 学生 as taught words once both are taught in the deck); in JA-103 虫 竹 力 林 立. The 9 JA-102 kanji the builder left unbuilt are built by the same builder with the procedure above, on the same branch.
 - **The rule for when new sentences may show kanji (proposed here, default taken):** in any card or example written after JA-001, a kanji is written as a kanji only if it is taught by then (its card is in a kanji deck at an earlier path position, or earlier in the same deck). Every other kanji in that sentence is written in kana. Existing kana decks are untouched and ids never change (ADR-0053). Until blocker B2 lands this rule is the builder's and the reviewer's, not the validator's.
 - Uncertain readings, grade membership or meanings: one review-queue row per kanji, in the report.
-- Not touched: `ja-topics.yaml` (JA-011), the path outside the task's own entry, `decks/min_app.json`, other kanji decks.
+- **min_app.** Every kanji deck's examples use `target_scripts`, so the deck's file gets one line in `decks/min_app.json` under `files`: `"decks/ja/ja-kanji-N.yaml": "0.8.1"` (the same value as `ja-kanji-1`), added in the same pull request. `tools/deck_index.py` does not gate this automatically (only the kinds in `MIN_APP_KINDS` are gated that way), and it refuses an entry only for a file the latest release tag already contains, which a new file is not. The layer file needs no entry. Add the line in path order inside `files`; the kanji tasks are the only ones to touch this file, and a rebase conflict there is theirs to report.
+- **Names, exactly.** Branch `decks/ja-kanji-N`, core `decks/ja/ja-kanji-N.yaml` with `id: "ja-kanji-N"`, layer `decks/ja/en/ja-en-kanji-N.yaml` with `id: "ja-en-kanji-N"`, `core: "ja-kanji-N"`, `kind: "layer"`, `name: "Kanji N: grade G, part P"` (the shape of `ja-en-kanji-1`: name, a description saying it is not yet checked by a Japanese speaker, licence, tags `script` and `unreviewed`), N being the task number minus 99. The Branch column below is the only branch the task uses.
+- Not touched: `ja-topics.yaml` (JA-011), the path outside the task's own entry, other kanji decks.
 
-**Kanji lanes (the one exception to rule 9).** JA-001 first rewrites the five planned kanji units into 37 planned units and spaces them with at least one other unit between every two, so the entries never touch. A kanji task then edits only its own entry. Two kanji lanes may run at once under this rule; if a rebase finds a conflict in the path, the builder stops and reports.
+**Kanji lanes (the one exception to rule 9).** JA-001 first rewrites the five planned kanji units into 37 planned units and spaces them with at least one other unit between every two, so the entries never touch. A kanji task then edits only its own entry, and its one `decks/min_app.json` line. Two kanji lanes may run at once under this rule; if a rebase finds a conflict in the path or in `min_app.json`, the builder stops and reports.
 
-| Task | Kanji (grade) | Count | Deck, ids |
+Each kanji task writes its own decks/min_app.json line at 0.8.1 for its deck (stated exception to rule 5).
+
+| Task | Kanji (grade) | Count | Branch (exact) | Deck, ids |
 |---|---|---|---|
 | JA-100 | **Done (Sonnet, docs on main):** the exact lists for grades 3 to 6 (200, 202, 193, 191 = 786, no repeats, none missing, checked against the Wikipedia grade table) and the split into JA-109 to JA-137 are in the rows below; grades 1 and 2 are the lists above, unchanged | docs | none |
-| JA-101 | 一右雨円王音下花貝学気九休玉空犬見五口校左三山子 (1) | 24 | ja-kanji-2 |
-| JA-102 | 四糸字耳七車手十出女小上森人正生青夕石赤千川先早 (1) | 24 | ja-kanji-3 |
-| JA-103 | 草足村大男竹中虫町天田二入年白八百文本名目立力林六 (1) | 25 | ja-kanji-4 |
-| JA-104 | 引羽雲園遠何科夏家歌画回会海絵外角楽活間丸岩顔汽記帰弓牛魚京強教 (2) | 32 | ja-kanji-5 |
-| JA-105 | 近兄形計元言原戸古午後語工公広交光考行高黄合谷国黒今才細作算止市 (2) | 32 | ja-kanji-6 |
-| JA-106 | 矢姉思紙寺自時室社弱首秋週春書少場色食心新親図数西声星晴切雪船線 (2) | 32 | ja-kanji-7 |
-| JA-107 | 前組走多太体台地池知茶昼長鳥朝直通弟店点電刀冬当東答頭同道読内南 (2) | 32 | ja-kanji-8 |
-| JA-108 | 肉馬売買麦半番父風分聞米歩母方北毎妹万明鳴毛門夜野友用曜来里理話 (2) | 32 | ja-kanji-9 |
-| JA-109 | 丁予化区反世主仕他代写去号央平打氷由申皮皿礼両全列 (3) | 25 | ja-kanji-10, ids ja-5480 to ja-5539 |
-| JA-110 | 向守安州式曲有次死羊血住助医君坂対局役投決究豆身返 (3) | 25 | ja-kanji-11, ids ja-5540 to ja-5599 |
-| JA-111 | 事使具取受味命和始委定実岸幸所放昔服板油波注泳物者 (3) | 25 | ja-kanji-12, ids ja-5600 to ja-5659 |
-| JA-112 | 育苦表乗係品客屋度待急拾持指昭柱洋炭界畑発相県研神 (3) | 25 | ja-kanji-13, ids ja-5660 to ja-5719 |
-| JA-113 | 秒級美負追送重面倍勉員宮島庫庭息旅根流消病真荷起速 (3) | 25 | ja-kanji-14, ids ja-5720 to ja-5779 |
-| JA-114 | 配酒院動商問宿帳悪族深球祭章笛第終習転進部都勝寒悲 (3) | 25 | ja-kanji-15, ids ja-5780 to ja-5839 |
-| JA-115 | 暑期植歯温港湖湯登着短童筆等落葉軽遊運開陽階集飲想 (3) | 25 | ja-kanji-16, ids ja-5840 to ja-5899 |
-| JA-116 | 意感暗業漢福詩路農鉄様緑練銀駅鼻横箱調談整橋薬館題 (3) | 25 | ja-kanji-17, ids ja-5900 to ja-5959 |
-| JA-117 | 不井夫欠氏付令以功加包司失必未末札民辺争仲伝兆共印各好成灯 (4) | 29 | ja-kanji-18, ids ja-5960 to ja-6019 |
-| JA-118 | 老衣阪位低佐児兵冷初別利努労完岐希折改材束求沖臣良芸例典刷 (4) | 29 | ja-kanji-19, ids ja-6020 to ja-6079 |
-| JA-119 | 卒協参周固奈季官岡底府径念松果治法泣牧的芽英阜便信勇単城変 (4) | 29 | ja-kanji-20, ids ja-6080 to ja-6139 |
-| JA-120 | 建昨栃栄浅省祝約茨要軍飛香倉候借孫害差席帯徒挙料案梅残浴特 (4) | 29 | ja-kanji-21, ids ja-6140 to ja-6199 |
-| JA-121 | 笑訓連郡健側副唱埼崎巣康敗望梨械清産票菜貨陸鹿博媛富散景最 (4) | 29 | ja-kanji-22, ids ja-6200 to ja-6259 |
-| JA-122 | 極満滋無然焼結給街覚賀達量隊順飯働塩愛戦照節続置試辞群察徳 (4) | 29 | ja-kanji-23, ids ja-6260 to ja-6319 |
-| JA-123 | 旗漁熊種管説関静億器標潟熱縄課輪選養機積録観類験鏡願競議 (4) | 28 | ja-kanji-24, ids ja-6320 to ja-6379 |
-| JA-124 | 久士仏支比刊句可史圧布弁旧永犯示仮件任再因団在似余判告囲 (5) | 28 | ja-kanji-25, ids ja-6380 to ja-6439 |
-| JA-125 | 均序志応快技条災状防価制効妻居往性招易枝武毒河版肥舎述非 (5) | 28 | ja-kanji-26, ids ja-6440 to ja-6499 |
-| JA-126 | 保則厚型政故査独祖紀迷逆限修個容師格桜殺留益破粉素耕能脈 (5) | 28 | ja-kanji-27, ids ja-6500 to ja-6559 |
-| JA-127 | 航財造停務基堂婦寄常張得情授採接救断液混率現略眼移経術規 (5) | 28 | ja-kanji-28, ids ja-6560 to ja-6619 |
-| JA-128 | 設許貧責険備喜営報属復提検減測程税統絶証評象貯貸費貿過勢 (5) | 28 | ja-kanji-29, ids ja-6620 to ja-6679 |
-| JA-129 | 墓夢幹損準禁罪義解豊資鉱飼像境増態慣構歴演精綿総製複適酸 (5) | 28 | ja-kanji-30, ids ja-6680 to ja-6739 |
-| JA-130 | 銅際雑領導暴潔確編賛賞質燃築興衛輸績講謝織職額識護 (5) | 25 | ja-kanji-31, ids ja-6740 to ja-6799 |
-| JA-131 | 亡寸己干仁収尺片冊処幼庁穴危后吸存宅宇机灰至舌乱卵否困 (6) | 27 | ja-kanji-32, ids ja-6800 to ja-6859 |
-| JA-132 | 孝忘我批私系並乳供券刻呼垂宗宙宝届延忠承担拝拡枚沿若奏 (6) | 27 | ja-kanji-33, ids ja-6860 to ja-6919 |
-| JA-133 | 姿宣専巻律映染段泉洗派皇看砂紅肺胃背退革俳俵値党射将展 (6) | 27 | ja-kanji-34, ids ja-6920 to ja-6979 |
-| JA-134 | 座従恩朗株班秘納純胸蚕討針降陛除骨域密捨探推欲済異盛窓 (6) | 27 | ja-kanji-35, ids ja-6980 to ja-7039 |
-| JA-135 | 翌脳著視訪訳郵郷閉頂割創勤善尊就揮敬晩棒痛筋策衆裁装補 (6) | 27 | ja-kanji-36, ids ja-7040 to ja-7099 |
-| JA-136 | 詞貴傷幕暖源盟絹署聖腸腹蒸裏誠賃預層暮模疑磁穀誌認誤銭 (6) | 27 | ja-kanji-37, ids ja-7100 to ja-7159 |
-| JA-137 | 閣障劇敵権潮熟蔵誕論諸遺奮憲操樹激糖縦鋼優厳縮覧簡臨難臓警 (6) | 29 | ja-kanji-38, ids ja-7160 to ja-7219 |
+| JA-101 | 一右雨円王音下花貝学気九休玉空犬見五口校左三山子 (1) | 24 | decks/ja-kanji-2 | ja-kanji-2, ids ja-5000 to ja-5059 |
+| JA-102 | 四糸字耳七車手十出女小上森人正生青夕石赤千川先早 (1) | 24 | decks/ja-kanji-3 | ja-kanji-3, ids ja-5060 to ja-5119 |
+| JA-103 | 草足村大男竹中虫町天田二入年白八百文本名目立力林六 (1) | 25 | decks/ja-kanji-4 | ja-kanji-4, ids ja-5120 to ja-5179 |
+| JA-104 | 引羽雲園遠何科夏家歌画回会海絵外角楽活間丸岩顔汽記帰弓牛魚京強教 (2) | 32 | decks/ja-kanji-5 | ja-kanji-5, ids ja-5180 to ja-5239 |
+| JA-105 | 近兄形計元言原戸古午後語工公広交光考行高黄合谷国黒今才細作算止市 (2) | 32 | decks/ja-kanji-6 | ja-kanji-6, ids ja-5240 to ja-5299 |
+| JA-106 | 矢姉思紙寺自時室社弱首秋週春書少場色食心新親図数西声星晴切雪船線 (2) | 32 | decks/ja-kanji-7 | ja-kanji-7, ids ja-5300 to ja-5359 |
+| JA-107 | 前組走多太体台地池知茶昼長鳥朝直通弟店点電刀冬当東答頭同道読内南 (2) | 32 | decks/ja-kanji-8 | ja-kanji-8, ids ja-5360 to ja-5419 |
+| JA-108 | 肉馬売買麦半番父風分聞米歩母方北毎妹万明鳴毛門夜野友用曜来里理話 (2) | 32 | decks/ja-kanji-9 | ja-kanji-9, ids ja-5420 to ja-5479 |
+| JA-109 | 丁予化区反世主仕他代写去号央平打氷由申皮皿礼両全列 (3) | 25 | decks/ja-kanji-10 | ja-kanji-10, ids ja-5480 to ja-5539 |
+| JA-110 | 向守安州式曲有次死羊血住助医君坂対局役投決究豆身返 (3) | 25 | decks/ja-kanji-11 | ja-kanji-11, ids ja-5540 to ja-5599 |
+| JA-111 | 事使具取受味命和始委定実岸幸所放昔服板油波注泳物者 (3) | 25 | decks/ja-kanji-12 | ja-kanji-12, ids ja-5600 to ja-5659 |
+| JA-112 | 育苦表乗係品客屋度待急拾持指昭柱洋炭界畑発相県研神 (3) | 25 | decks/ja-kanji-13 | ja-kanji-13, ids ja-5660 to ja-5719 |
+| JA-113 | 秒級美負追送重面倍勉員宮島庫庭息旅根流消病真荷起速 (3) | 25 | decks/ja-kanji-14 | ja-kanji-14, ids ja-5720 to ja-5779 |
+| JA-114 | 配酒院動商問宿帳悪族深球祭章笛第終習転進部都勝寒悲 (3) | 25 | decks/ja-kanji-15 | ja-kanji-15, ids ja-5780 to ja-5839 |
+| JA-115 | 暑期植歯温港湖湯登着短童筆等落葉軽遊運開陽階集飲想 (3) | 25 | decks/ja-kanji-16 | ja-kanji-16, ids ja-5840 to ja-5899 |
+| JA-116 | 意感暗業漢福詩路農鉄様緑練銀駅鼻横箱調談整橋薬館題 (3) | 25 | decks/ja-kanji-17 | ja-kanji-17, ids ja-5900 to ja-5959 |
+| JA-117 | 不井夫欠氏付令以功加包司失必未末札民辺争仲伝兆共印各好成灯 (4) | 29 | decks/ja-kanji-18 | ja-kanji-18, ids ja-5960 to ja-6019 |
+| JA-118 | 老衣阪位低佐児兵冷初別利努労完岐希折改材束求沖臣良芸例典刷 (4) | 29 | decks/ja-kanji-19 | ja-kanji-19, ids ja-6020 to ja-6079 |
+| JA-119 | 卒協参周固奈季官岡底府径念松果治法泣牧的芽英阜便信勇単城変 (4) | 29 | decks/ja-kanji-20 | ja-kanji-20, ids ja-6080 to ja-6139 |
+| JA-120 | 建昨栃栄浅省祝約茨要軍飛香倉候借孫害差席帯徒挙料案梅残浴特 (4) | 29 | decks/ja-kanji-21 | ja-kanji-21, ids ja-6140 to ja-6199 |
+| JA-121 | 笑訓連郡健側副唱埼崎巣康敗望梨械清産票菜貨陸鹿博媛富散景最 (4) | 29 | decks/ja-kanji-22 | ja-kanji-22, ids ja-6200 to ja-6259 |
+| JA-122 | 極満滋無然焼結給街覚賀達量隊順飯働塩愛戦照節続置試辞群察徳 (4) | 29 | decks/ja-kanji-23 | ja-kanji-23, ids ja-6260 to ja-6319 |
+| JA-123 | 旗漁熊種管説関静億器標潟熱縄課輪選養機積録観類験鏡願競議 (4) | 28 | decks/ja-kanji-24 | ja-kanji-24, ids ja-6320 to ja-6379 |
+| JA-124 | 久士仏支比刊句可史圧布弁旧永犯示仮件任再因団在似余判告囲 (5) | 28 | decks/ja-kanji-25 | ja-kanji-25, ids ja-6380 to ja-6439 |
+| JA-125 | 均序志応快技条災状防価制効妻居往性招易枝武毒河版肥舎述非 (5) | 28 | decks/ja-kanji-26 | ja-kanji-26, ids ja-6440 to ja-6499 |
+| JA-126 | 保則厚型政故査独祖紀迷逆限修個容師格桜殺留益破粉素耕能脈 (5) | 28 | decks/ja-kanji-27 | ja-kanji-27, ids ja-6500 to ja-6559 |
+| JA-127 | 航財造停務基堂婦寄常張得情授採接救断液混率現略眼移経術規 (5) | 28 | decks/ja-kanji-28 | ja-kanji-28, ids ja-6560 to ja-6619 |
+| JA-128 | 設許貧責険備喜営報属復提検減測程税統絶証評象貯貸費貿過勢 (5) | 28 | decks/ja-kanji-29 | ja-kanji-29, ids ja-6620 to ja-6679 |
+| JA-129 | 墓夢幹損準禁罪義解豊資鉱飼像境増態慣構歴演精綿総製複適酸 (5) | 28 | decks/ja-kanji-30 | ja-kanji-30, ids ja-6680 to ja-6739 |
+| JA-130 | 銅際雑領導暴潔確編賛賞質燃築興衛輸績講謝織職額識護 (5) | 25 | decks/ja-kanji-31 | ja-kanji-31, ids ja-6740 to ja-6799 |
+| JA-131 | 亡寸己干仁収尺片冊処幼庁穴危后吸存宅宇机灰至舌乱卵否困 (6) | 27 | decks/ja-kanji-32 | ja-kanji-32, ids ja-6800 to ja-6859 |
+| JA-132 | 孝忘我批私系並乳供券刻呼垂宗宙宝届延忠承担拝拡枚沿若奏 (6) | 27 | decks/ja-kanji-33 | ja-kanji-33, ids ja-6860 to ja-6919 |
+| JA-133 | 姿宣専巻律映染段泉洗派皇看砂紅肺胃背退革俳俵値党射将展 (6) | 27 | decks/ja-kanji-34 | ja-kanji-34, ids ja-6920 to ja-6979 |
+| JA-134 | 座従恩朗株班秘納純胸蚕討針降陛除骨域密捨探推欲済異盛窓 (6) | 27 | decks/ja-kanji-35 | ja-kanji-35, ids ja-6980 to ja-7039 |
+| JA-135 | 翌脳著視訪訳郵郷閉頂割創勤善尊就揮敬晩棒痛筋策衆裁装補 (6) | 27 | decks/ja-kanji-36 | ja-kanji-36, ids ja-7040 to ja-7099 |
+| JA-136 | 詞貴傷幕暖源盟絹署聖腸腹蒸裏誠賃預層暮模疑磁穀誌認誤銭 (6) | 27 | decks/ja-kanji-37 | ja-kanji-37, ids ja-7100 to ja-7159 |
+| JA-137 | 閣障劇敵権潮熟蔵誕論諸遺奮憲操樹激糖縦鋼優厳縮覧簡臨難臓警 (6) | 29 | decks/ja-kanji-38 | ja-kanji-38, ids ja-7160 to ja-7219 |
 
 The grade 1 list (80) is the seven in `ja-kanji-1` plus the 73 above; grade 2 is the 160 above. Both were counted (no repeats, no overlap); the reviewer checks them against the grade table.
 
@@ -230,3 +246,131 @@ Each is a separate issue to open (owner: "For each blocker create separate issue
 ### Verification notes
 
 Counts above come from reading every `decks/ja/*.yaml` on decks-live with PyYAML (cards, notes, ids, `ipa`, `phonetic`) and the path file. The grade 1 and 2 lists were counted (80 including the seven built, 160) with no repeats. The culture, proverb and multi-word candidate lists name works and creators only; their dates and legal basis are read by the builder from the creator's Japanese Wikipedia page, as in Plan-Culture-Japanese, and the reviewer owns the legal opinion. Nothing in this page was run through the validator; CI does that on each pull request.
+
+## Sentence gate rules (Spanish and Hindustani sentence tasks)
+
+Owner, 2026-11-14: "More clean Spanish and Hindi sentences would bring them back [placement sentence picks], and that is deck work. Then list them as issues and then do them in their decks." Issues #1244 (Spanish) and #1245 (Hindustani). The gate is `lib/core/placement/sentence_gate.dart` (PR #1240, not yet merged on 2026-11-14), the failing cards are listed in `docs/placement-bad-sentences.md` on the same branch. The audit measures how guessable a pick is from word-pair cues; Spanish passes the 0.32 bound only if its eligible sentences grow beyond n = 185 with varied structures, and Hindustani (about 70 eligible) needs about 130 or more. The bound is not loosened. Rules 1 to 10 above apply to every task here.
+
+**Every new sentence card must satisfy all of these** (a card that cannot is not written; the builder reports it):
+
+1. **Whole sentence:** one complete thought with a finite verb, 4 to 10 words in the target (words counted by spaces), ending with a full stop (`.` in Spanish, `।` or `.` as the course's cards do in Hindustani) or a question mark. No phrase, no fragment, no gloss, no title.
+2. **Faithful full translation:** the layer's `native` is one English sentence that says everything the target says and nothing more: capital letter, end mark, 2 to 16 words, no brackets for notes inside the meaning, one meaning only (no `;` alternatives), not cut at a comma, not a word-for-word gloss.
+3. **Same mood on both sides:** a target with `?` has a meaning that ends in `?`, and the other way round. Within one task about 20 of the 25 sentences are statements and about 5 are questions; the questions are spread through the deck, not grouped.
+4. **Taught words only:** every word is a word of a deck listed on the path at or before the task's unit (its cards, or a closed-class word such as an article, a preposition or a particle that the course teaches). A word not taught is not used; the builder never adds vocabulary to make a sentence work.
+5. **No template text:** no `…`, `...`, `___`, braces, `TODO` or `???`, in the target or the meaning. A sentence about a name or a place uses a real name or place.
+6. **Script:** the target is in the course's script only (Latin for Spanish; Devanagari for Hindustani, no Latin letter in it), never mixed.
+7. **Unique:** no target and no meaning equal to any other card of the course (search the language's decks first), so the right pick can be told from the wrong ones.
+8. **Not a question card:** the new cards are ordinary cards of a sentences deck, never a reading deck's question.
+
+**Variety rules** (the audit rewards sentences that cannot be guessed from a pair of words):
+
+- **Frames are strict.** A frame is a sentence's skeleton: subject, verb form and the shape of its complement (for example "I + am + adjective", "you + want + noun + place"). No two sentences of a task share a frame, and no two start with the same two words more than twice. No two sentences differ by a single word.
+- **Verb cap by pool.** Count the task's pool P: the verb lemmas taught on the path up to the task's unit (cards with `pos: "verb"` of the decks listed there, plus verbs the unit's grammar decks teach, such as a reflexive or a copula-like verb). If P is 13 or more, no verb is used more than twice; if P is 8 to 12, no verb more than three times; if P is under 8 the task is not run and is reported. A sentence count the cap cannot reach (verbs x cap) is never forced: the task ships fewer sentences.
+- **Counts are 20 to 25, never padded.** A task ships between 20 and 25 sentences (12 or 15 for a repair task, as stated in its row). It never repeats a frame to reach 25. The scale below applies to the number n shipped: about n/5 questions (the rest statements); at least floor(n/5) sentences in each length group (4 to 5 words, 6 to 7, 8 to 10); at least five different shapes (a plain statement, a question, a negative, a past or future form, a time or place phrase, two verbs, a reason or a contrast); at least min(8, P) different verbs; no content noun more than twice.
+- Lengths and shapes are measured per task, not per deck.
+- Every sentence uses at least one word of the task's own unit and, across the task, at least 10 different words from earlier units, so the bank is not all one theme.
+- The wrong options of a pick are drawn from other cards by the app: write each sentence so that its meaning is not guessable from a single word it shares with its `confusables`.
+- Order: shuffle, so that no run of three cards has the same shape or mood.
+
+**Card shape:** the shape of the unit's existing sentences deck (`pos: "phrase"`, `tags: ["sentence"]` in Spanish, `bases` for every word with a `ref` where the word is a card and `base` where it is a closed-class word or an inflected form, `confusables` of 2 with a `why` in the layer, notes where the sentence has one point). No `phonetic` and no `phonetic_source` in any new card: they are written only by the tools (ES-010 and HI-007). Card ids are never changed or reused.
+
+### Spanish (`es`)
+
+State on decks-live ddcff92f: 102 path units, none planned; 2,536 cards, highest id `es-3124` (the ranges below start at `es-3200`); 66 sentences decks, each with about six sentences, so a deck grows by appending. Spanish conventions: `ipa` from `python3 tools/transcribe.py es "<sentence>"` (the decks use the Spain pronunciation, `θ`), no `reading` (Latin script), meanings in the layer, `native` capitalised with the Spanish inverted marks kept on the target (`¿...?`), the target starts with a capital and ends with its mark.
+
+#### Spanish repairs (failing cards in `docs/placement-bad-sentences.md`)
+
+The cards below are not sentences (phrases) or duplicate an earlier card. A card's meaning never changes and ids are permanent, so **none is edited**: the gate leaves them out and that is correct. ES-009 writes full-sentence replacements for what they taught.
+
+| Card | Target | Cause | Replaced by (ES-009) |
+|---|---|---|---|
+| es-0065 | a qué hora | phrase | 2 sentences asking at what time something happens |
+| es-0262 | mi nombre es | fragment | 2 sentences giving a name with a real name |
+| es-0341 | todos los días | phrase | 2 sentences with "every day" |
+| es-0934 | por la mañana | phrase | 2 sentences with "in the morning" |
+| es-0935 | por la tarde | phrase | 2 sentences with "in the afternoon" |
+| es-1217 | el centro comercial | phrase | 2 sentences with the shopping centre |
+| es-0097, es-0103 | ¿cómo te llamas?, ¿Cómo se llama usted? | same meaning | none: later card is dropped by the gate; new sentences must not repeat either meaning |
+| es-1000 | Mi cumpleaños es en mayo. | same meaning | none: do not write another birthday-in-May sentence |
+
+#### Spanish tasks
+
+Each ES-001 to ES-008 appends 25 sentences to **one existing sentences deck** (core and layer), so no path edit is needed. Files are disjoint, so **ES-001 to ES-009 may all run in parallel** (three builders at a time). Branch is `decks/es-<topic>`; ids are `es-` plus four digits from the reserved range, ascending.
+
+| Id | Branch | Edits (append only) | Taught-words scope (path units up to) | Ids | Cards |
+|---|---|---|---|---|---|
+| ES-001 | decks/es-sent-about-me | `decks/es/es-about-me-sentences.yaml`, `decks/es/en/es-en-about-me-sentences.yaml` | unit of `es-about-me` (7) | es-3200 to 3239 | 25 |
+| ES-002 | decks/es-sent-food | `es-food-sentences`, `es-en-food-sentences` | `es-food` (26) | es-3240 to 3279 | 25 |
+| ES-003 | decks/es-sent-directions | `es-directions-sentences`, `es-en-directions-sentences` | `es-directions` (28) | es-3280 to 3319 | 25 |
+| ES-004 | decks/es-sent-shopping | `es-shopping-sentences`, `es-en-shopping-sentences` | `es-shopping` (43) | es-3320 to 3359 | 25 |
+| ES-005 | decks/es-sent-hobbies | `es-hobbies-sentences`, `es-en-hobbies-sentences` | `es-hobbies` (49) | es-3360 to 3399 | 25 |
+| ES-006 | decks/es-sent-journey | `es-journey-sentences`, `es-en-journey-sentences` | `es-journey` (57) | es-3400 to 3439 | 25 |
+| ES-007 | decks/es-sent-health | `es-health-sentences`, `es-en-health-sentences` | `es-health` (65) | es-3440 to 3479 | 25 |
+| ES-008 | decks/es-sent-travel | `es-travel-sentences`, `es-en-travel-sentences` | `es-travel` (72) | es-3480 to 3519 | 25 |
+| ES-009 | decks/es-sent-repairs | `es-time-sentences`, `es-en-time-sentences` | `es-time` (32); a function whose words are not taught by then is reported and skipped | es-3520 to 3559 | 12 (the table above) |
+| ES-010 | decks/es-sent-phonetics | every new card of ES-001 to 009 via the tools | after all nine merge | none | tool run |
+| ES-011 | none (Sonnet, no PR) | runs the placement audit on the new Spanish bank and reports F5 and F17 accuracy against 0.32 at the new n; if it fails, the architect orders ES-012 onward (the same shape, other units: `es-money`, `es-news`, `es-weather`, `es-places`, ids from es-3600) | after ES-010 | none | audit |
+
+**Verb pools, counted from the path position of each deck** (verb cards of the decks listed up to the unit; ES-001 also counts the verbs its unit's grammar teaches, 11 in all as its builder found: ser, estar, tener, ir, hablar, comer, estudiar, trabajar, sentir, llamarse, vivir):
+
+| Task | Pool P | Cap per verb | Cards to ship |
+|---|---|---|---|
+| ES-001 | 11 | 3 | 20 to 25 (frames strict, no padding) |
+| ES-002 | 47 | 2 | 25 |
+| ES-003 | 55 | 2 | 25 |
+| ES-004 | 102 | 2 | 25 |
+| ES-005 | 141 | 2 | 25 |
+| ES-006 | 213 | 2 | 25 |
+| ES-007 | 233 | 2 | 25 |
+| ES-008 | 265 | 2 | 25 |
+| ES-009 | 64 | 2 | 12 (3 per length group, 2 questions, 6 shapes, 6 verbs at least) |
+
+Content rules: the gate rules and the variety rules above; Spanish conventions above. Append at the end of the existing `cards:` and the layer's `cards:`; touch no existing card. The layer gives each new card `native`, `bases` meanings, `confusables` with `why`. The layer's `description` ("Six sentences...") is updated to the new count in the same edit. Not touched: any other file, the path, `decks/min_app.json`. Review-queue rows go in the report (rule 8). ES-010: `python3 tools/import_phonetic.py es --write` then `python3 tools/derive_phonetic.py es --write` (the tools skip cards that already have a form), report the counts.
+
+### Hindustani (`hi`)
+
+State on decks-live ddcff92f (the first Hindustani anchor, `hi-about-me` at unit 12, was dropped: no verb card is taught by then, only the copula, so no sentence with a taught verb exists; `hi-work` at unit 19 replaces it); 114 path units; 2,516 cards, highest id `hi-2835` (ranges start at `hi-2900`); only 15 sentences decks, so most themes have none and each HI task **creates a new sentences deck** for one unit. Conventions: Devanagari target with `target_scripts: { perso_arabic: "..." }` (the course offers Devanagari or the Perso-Arabic script, so every card has both, the Urdu spelling written as a native reader would, a doubtful spelling goes to the review queue), `reading` from `python3 tools/transcribe.py hi "<word>"` (letters based on ISO 15919: `maim̐`, `ē`, `ō`, long vowels with macrons; a word-final anusvara as the tool writes it; never write that it strictly follows ISO 15919), `ipa` from the same tool, `pos: "phrase"`, `bases` with `base` and `reading` for each inflected word, `confusables` with `kind`. Gender and honorific forms: a sentence about the speaker's own gender says so in the meaning ("said by a man") as the decks do; the verb agrees. Deck header as `hi-pronouns-sentences`: `kind: "vocab"`, `part: "core"`, `language` with `script: "devanagari"`, `scripts: ["devanagari", "perso_arabic"]`, tags `beginner` and `unreviewed`.
+
+#### Hindustani repairs (`docs/placement-bad-sentences.md`)
+
+Same principle: no existing card is edited. The gate leaves the phrases out, which is correct; HI-006 writes full sentences for what the template cards taught.
+
+| Card | Target | Cause | Replaced by (HI-006) |
+|---|---|---|---|
+| hi-0188 | मेरा नाम … है। | template `…` | 3 sentences giving a name (a real name each) |
+| hi-0190 | मैं … से हूँ। | template | 3 sentences naming a real city or country |
+| hi-0191 | मैं … में रहता हूँ। | template | 3 sentences with a real place, one with रहती (said by a woman) |
+| hi-0126, hi-0127 | तुम सुनते हो।, तू सुनता है। | same meaning | none; new meanings must differ ("You listen" is taken) |
+| hi-0120, 0121, 0423, 0443, 0445, 0446, 0447, 0454, 1397, 1398, 1399 | noun phrases and infinitives (father's house, bedroom, to brush one's teeth, lunch, dinner, to go to work, usually, climate...) | phrase | HI-006: one sentence for each of the six everyday ones (teeth, lunch, dinner, work, bedroom, usually); the compound-with-ओ expressions are left as they are |
+
+#### Hindustani tasks
+
+Each task creates one new sentences deck (core and layer) and edits **only one line of `decks/hi/hi-path.yaml`**: the `decks:` list of its unit, inserting the new deck's core id directly after the unit's first entry (the one-line exception of "Kanji lanes": different lines, so the tasks stay parallel; a rebase conflict there is the builder's to report). `words` is unchanged. **HI-001 to HI-006 may run in parallel** with each other and with the Spanish tasks (three builders at a time overall).
+
+| Id | Branch | Creates | Path line edited (unit's first deck) | Taught-words scope | Ids | Cards |
+|---|---|---|---|---|---|---|
+| HI-001 | decks/hi-sent-work | `decks/hi/hi-work-sentences.yaml`, `decks/hi/en/hi-en-work-sentences.yaml` | the unit of `hi-work` (19; its line is `decks: ["hi-work", "*"]`) | up to unit 19 | hi-2900 to 2939 | 25 |
+| HI-002 | decks/hi-sent-food | `hi-food-sentences`, `hi-en-food-sentences` | `hi-food` (29) | up to 29 | hi-2940 to 2979 | 25 |
+| HI-003 | decks/hi-sent-directions | `hi-directions-sentences`, `hi-en-directions-sentences` | `hi-directions` (36; its line lists `hi-grammar-continuous` after it) | up to 36 | hi-2980 to 3019 | 25 |
+| HI-004 | decks/hi-sent-shopping | `hi-shopping-sentences`, `hi-en-shopping-sentences` | `hi-shopping` (53) | up to 53 | hi-3020 to 3059 | 25 |
+| HI-005 | decks/hi-sent-health | `hi-health-sentences`, `hi-en-health-sentences` | `hi-health` (76) | up to 76 | hi-3060 to 3099 | 25 |
+| HI-006 | decks/hi-sent-repairs | `hi-time-sentences`, `hi-en-time-sentences` (the unit of `hi-time`, 17, has no sentences deck) | `hi-time` (17); a function whose words are not taught by unit 17 is reported and skipped (the work, bedroom and dinner ones then wait for a follow-up in `hi-work`, `hi-home` and `hi-food`) | up to 17 | hi-3100 to 3139 | 15 (the table above) |
+| HI-007 | decks/hi-sent-phonetics | every new card of HI-001 to 006 via the tools | none | after all six merge | none | tool run |
+| HI-008 | none (Sonnet, no PR) | runs the placement audit on the new Hindustani bank, reports F5 and F17 against 0.32 at the new n (need about 130 eligible or more; the task adds about 140); if it fails, follow-ups HI-009 onward are ordered with the same shape (`hi-work`, `hi-home`, `hi-weather`, `hi-money`, ids from hi-3200) | after HI-007 | none | audit |
+
+**Verb pools, counted from the path position of each deck** (verb cards of the decks listed up to the unit): 
+
+| Task | Pool P | Cap per verb | Cards to ship |
+|---|---|---|---|
+| HI-001 (unit 19) | 50 | 2 | 25 |
+| HI-002 (unit 29) | 50 | 2 | 25 |
+| HI-003 (unit 36) | 52 | 2 | 25 |
+| HI-004 (unit 53) | 66 | 2 | 25 |
+| HI-005 (unit 76) | 169 | 2 | 25 |
+| HI-006 (unit 17) | 25 | 2 | 15 (3 per length group, 3 questions, 6 shapes, 8 verbs at least) |
+
+Content rules: the gate and variety rules above. HI-007: `python3 tools/import_phonetic.py hi --write` then `python3 tools/derive_phonetic.py hi --write` (`decks/hi/hi-phonetics.yaml` exists), counts reported. Not touched: other decks, `decks/min_app.json`, existing cards. Review-queue rows in the report: every Perso-Arabic spelling the builder is not sure of, every gender or honorific choice, and every translation with a nuance.
+
+### Counts
+
+Spanish: 9 builder tasks, 1 tool run, 1 audit (11). Hindustani: 6 builder tasks, 1 tool run, 1 audit (8).

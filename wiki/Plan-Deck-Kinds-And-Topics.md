@@ -351,7 +351,7 @@ peculiarity, a verb form, a class of words, a profession, a situation. It
   characters. The validator resolves `script_units` against the language's
   script guides and never reads a character list for meaning; the app draws
   `chars` as tiles and drills the topic's decks and cards as for any other
-  topic. A character list is how a topic names glyphs that no card carries yet.
+  topic. A character list is how a topic names glyphs that no card carries yet, but once a topic lists `decks` its `chars` must be the targets of those decks' cards (#1228, `tools/topic_chars.py` writes them; see Deck-Format, "Script topics").
   The fixture is `test/fixtures/deck-kinds/decks/zz/zz-topics.yaml`
   (`zz-juktakkhor`, a script guide's two features and five conjuncts).
 - **A topic page** lists its decks, units, concepts, situations and the count

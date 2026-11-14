@@ -15,9 +15,11 @@ import '../../core/placement/assurance_model.dart';
 import '../../core/placement/declaration_options.dart';
 import '../../core/placement/placement_questions.dart';
 import '../../core/placement/item_bank.dart' show ItemBank;
+import '../../core/placement/item_generators.dart' show GenContext;
 import '../../core/placement/item_registry.dart' show RegItem;
 import '../../core/placement/saved_run.dart' show placementDeckSetKey;
 import '../../core/placement/saved_v3_run.dart';
+import '../../core/placement/sentence_gate.dart' show SentenceFault;
 import '../../core/placement/v3_session.dart';
 import '../../core/placement/skills_in_play.dart';
 import '../../l10n/app_localizations.dart';
@@ -80,6 +82,32 @@ Future<void> startFindLevel(
   if (plan == null) {
     showAppSnackBar(context, l10n.findLevelNoCourse(name));
     return;
+  }
+  // The cards kept out of the sentence questions (a phrase, a template, a
+  // reading deck's question) are logged with their cause, for the deck
+  // builders: docs/placement-bad-sentences.md.
+  try {
+    final kept = GenContext.rejectionsOf(plan.data);
+    if (kept.isNotEmpty) {
+      final byCause = <SentenceFault, int>{};
+      for (final r in kept) {
+        byCause[r.fault] = (byCause[r.fault] ?? 0) + 1;
+      }
+      state.log.warning(
+        'Find my level ($code): ${kept.length} cards left out of the '
+        'sentence questions: '
+        '${byCause.entries.map((e) => '${e.key.name} ${e.value}').join(', ')}',
+      );
+      for (final r in kept) {
+        if (r.fault == SentenceFault.questionCard) continue;
+        state.log.warning(
+          'Find my level ($code): card ${r.cardId} is not a sentence '
+          '(${r.fault.name}): ${r.detail}',
+        );
+      }
+    }
+  } on Object catch (error) {
+    state.log.warning('Find my level ($code): sentence check failed: $error');
   }
   // The question bank is made in the background from here on.
   final bank = state.placementBanks.jobFor(plan.data);
