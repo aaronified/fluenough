@@ -1,0 +1,236 @@
+# Spanish pronominal verbs: a reflexive verb and the complement the course teaches
+# (irse a casa, darse cuenta de, ponerse contento, and the rest of the pronominal family).
+schema: 1
+id: "es-multiword-pronominal"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+genre: "multiword"
+pattern_family: "pronominal-verb"
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - id: "es-4450"
+    target: "irse a casa"
+    ipa: "iɾse a ˈkasa"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "irse", base: "irse" }
+      - { word: "casa", ref: "es-0006" }
+  - id: "es-4451"
+    target: "quedarse tranquilo"
+    ipa: "keˈdaɾse tɾanˈkilo"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "quedarse", ref: "es-1616" }
+      - { word: "tranquilo", ref: "es-0257" }
+  - id: "es-4452"
+    target: "llevarse bien con ella"
+    ipa: "ʝeˈbaɾse bjen kon ˈeʝa"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "llevarse", ref: "es-2751" }
+      - { word: "bien", ref: "es-0326" }
+      - { word: "ella", ref: "es-0121" }
+  - id: "es-4453"
+    target: "llevarse mal con él"
+    ipa: "ʝeˈbaɾse mal kon el"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "llevarse", ref: "es-2751" }
+      - { word: "mal", ref: "es-0327" }
+      - { word: "él", ref: "es-0120" }
+  - id: "es-4454"
+    target: "darse cuenta de eso"
+    ipa: "ˈdaɾse ˈkwenta de ˈeso"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "darse", base: "darse" }
+      - { word: "cuenta", ref: "es-0653" }
+      - { word: "eso", ref: "es-0128" }
+  - id: "es-4455"
+    target: "ponerse contento"
+    ipa: "poˈneɾse konˈtento"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ponerse", ref: "es-1039" }
+      - { word: "contento", ref: "es-0418" }
+  - id: "es-4456"
+    target: "hacerse médico"
+    ipa: "aˈθeɾse ˈmediko"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "hacerse", base: "hacerse" }
+      - { word: "médico", ref: "es-0506" }
+  - id: "es-4457"
+    target: "volverse loco"
+    ipa: "bolˈbeɾse ˈloko"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "volverse", base: "volverse" }
+      - { word: "loco", base: "loco" }
+  - id: "es-4458"
+    target: "sentirse bien"
+    ipa: "senˈtiɾse bjen"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "sentirse", base: "sentirse" }
+      - { word: "bien", ref: "es-0326" }
+  - id: "es-4459"
+    target: "parecerse a ella"
+    ipa: "paɾeˈθeɾse a ˈeʝa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "parecerse", ref: "es-1583" }
+      - { word: "ella", ref: "es-0121" }
+  - id: "es-4460"
+    target: "portarse bien"
+    ipa: "poɾˈtaɾse bjen"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "portarse", base: "portarse" }
+      - { word: "bien", ref: "es-0326" }
+  - id: "es-4461"
+    target: "acostumbrarse a vivir"
+    ipa: "akostumˈbɾaɾse a biˈbiɾ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "acostumbrarse", base: "acostumbrarse" }
+      - { word: "vivir", ref: "es-0030" }
+  - id: "es-4462"
+    target: "olvidarse de eso"
+    ipa: "olbiˈdaɾse de ˈeso"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "olvidarse", base: "olvidarse" }
+      - { word: "eso", ref: "es-0128" }
+  - id: "es-4463"
+    target: "perderse en la ciudad"
+    ipa: "peɾˈdeɾse en la θjuˈdad"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "perderse", ref: "es-1708" }
+      - { word: "ciudad", ref: "es-0016" }
+  - id: "es-4464"
+    target: "divertirse mucho"
+    ipa: "dibeɾˈtiɾse ˈmutʃo"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "divertirse", ref: "es-1429" }
+      - { word: "mucho", ref: "es-0053" }
+  - id: "es-4465"
+    target: "enterarse de eso"
+    ipa: "enteˈɾaɾse de ˈeso"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "enterarse", base: "enterarse" }
+      - { word: "eso", ref: "es-0128" }
+  - id: "es-4466"
+    target: "ocurrírsele una idea"
+    ipa: "okuˈriɾsele ˈuna iˈdea"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ocurrírsele", base: "ocurrirse" }
+      - { word: "idea", ref: "es-2112" }
+  - id: "es-4467"
+    target: "caerse al suelo"
+    ipa: "kaˈeɾse al ˈswelo"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "caerse", ref: "es-2831" }
+      - { word: "suelo", ref: "es-0819" }
+  - id: "es-4468"
+    target: "marcharse de la fiesta"
+    ipa: "maɾˈtʃaɾse de la ˈfjesta"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "marcharse", base: "marcharse" }
+      - { word: "fiesta", ref: "es-0979" }
+  - id: "es-4469"
+    target: "levantarse temprano"
+    ipa: "lebanˈtaɾse temˈpɾano"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "levantarse", ref: "es-0924" }
+      - { word: "temprano", ref: "es-0338" }
