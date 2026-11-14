@@ -219,12 +219,12 @@ void main() {
           <String>['F4', 'F7', 'F8'].where(has).length,
           greaterThanOrEqualTo(3),
         );
-        // Hear alone has the look-alike word pick (F26) in both courses, and
-        // the sentence pick (F17) in Spanish.
+        // Hear alone has the look-alike word pick (F26) in both courses; the
+        // sentence pick (F17) is asked when the audit passes it.
         expect(has('F26'), isTrue);
         expect(
           <String>['F13', 'F17', 'F26'].where(has).length,
-          2 + (language == 'es' ? 1 : 0),
+          2 + (has('F17') ? 1 : 0),
         );
         expect(has('F18'), isTrue);
         // Word order passes the held-out solvers in Spanish only (Hindi has
@@ -1189,10 +1189,19 @@ void main() {
         // A cognate is not generated: the old figure stands.
         expect(es.rate(code, true, BankProfile.fixed, true), greaterThan(0.5));
       }
-      // Sentence picks now pass the audit at chance (a quarter), and gap
-      // spelling is the cheap Write item.
-      expect(es.rate('F5', false, BankProfile.fixed, true), 0.25);
-      expect(es.rate('F17', false, BankProfile.fixed, true), 0.25);
+      // Sentence picks take the audit's measured leak, and gap spelling is
+      // the cheap Write item.
+      for (final code in <String>['F5', 'F17']) {
+        final measured =
+            ((classes['$code:clean']! as Map<String, Object?>)['accuracy']!
+                    as num)
+                .toDouble();
+        expect(
+          es.rate(code, false, BankProfile.fixed, true),
+          closeTo(math.max(measured, kFormats[code]!.guess), 1e-9),
+          reason: code,
+        );
+      }
       expect(es.rate('F21', false, BankProfile.fixed, true), 0.10);
       // The legacy bank is the adversary's own measurement, untouched.
       expect(es.rate('F5', false, BankProfile.legacy, true), 0.75);
