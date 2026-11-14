@@ -123,6 +123,7 @@ alphabet:
   - "ja-kanji-28"
   - "ja-kanji-29"
   - "ja-kanji-30"
+  - "ja-kanji-34"
   - "ja-katakana"
   - "ja-katakana-combos"
   - "ja-hiragana-marks"
@@ -900,11 +901,8 @@ units:
       - { id: "renting-a-flat", text: { "en": "Asking an estate agent about a flat to rent" } }
     reading_passages:
       - { id: "rental-terms", text: { "en": "The terms of a rental, with key money and deposit" } }
-  - planned: { id: "ja-kanji-34", grammar: "script-kanji-34", words: 0 }
-    listening_passages:
-      - { id: "kanji-34-heard", text: { "en": "Hearing words whose kanji unit 34 teaches" } }
-    reading_passages:
-      - { id: "kanji-34-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 34" } }
+  - decks: ["ja-kanji-34"]
+    words: 0
   - planned: { id: "ja-grammar-transitivity", grammar: "transitive-intransitive" }
     listening_passages:
       - { id: "the-door-opened", text: { "en": "Saying I opened the door and the door opened" } }
