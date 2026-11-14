@@ -146,7 +146,6 @@ void main() {
       const plain = '''
   - id: "zz-9803"
     target: "గ"
-    native: "ga"
     pos: "letter"
 ''';
       final deck = _parseSingle(_single(plain, scheme: ''));
