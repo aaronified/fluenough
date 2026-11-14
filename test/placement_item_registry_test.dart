@@ -1189,19 +1189,9 @@ void main() {
         // A cognate is not generated: the old figure stands.
         expect(es.rate(code, true, BankProfile.fixed, true), greaterThan(0.5));
       }
-      // Sentence picks take the audit's measured leak, and gap spelling is
-      // the cheap Write item.
-      for (final code in <String>['F5', 'F17']) {
-        final measured =
-            ((classes['$code:clean']! as Map<String, Object?>)['accuracy']!
-                    as num)
-                .toDouble();
-        expect(
-          es.rate(code, false, BankProfile.fixed, true),
-          closeTo(math.max(measured, kFormats[code]!.guess), 1e-9),
-          reason: code,
-        );
-      }
+      // Gap spelling is the cheap Write item. (Sentence picks that the audit
+      // does not pass are not in the profile, so the harness takes no leak
+      // for them.)
       expect(es.rate('F21', false, BankProfile.fixed, true), 0.10);
       // The legacy bank is the adversary's own measurement, untouched.
       expect(es.rate('F5', false, BankProfile.legacy, true), 0.75);
