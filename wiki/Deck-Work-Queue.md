@@ -354,8 +354,8 @@ Each task creates one new sentences deck (core and layer) and edits **only one l
 | HI-003 | decks/hi-sent-directions | `hi-directions-sentences`, `hi-en-directions-sentences` | `hi-directions` (36; its line lists `hi-grammar-continuous` after it) | up to 36 | hi-2980 to 3019 | 25 |
 | HI-004 | decks/hi-sent-shopping | `hi-shopping-sentences`, `hi-en-shopping-sentences` | `hi-shopping` (53) | up to 53 | hi-3020 to 3059 | 25 |
 | HI-005 | decks/hi-sent-health | `hi-health-sentences`, `hi-en-health-sentences` | `hi-health` (76) | up to 76 | hi-3060 to 3099 | 25 |
-| HI-006 | decks/hi-sent-repairs | `hi-time-sentences`, `hi-en-time-sentences` (the unit of `hi-time`, 17, has no sentences deck) | `hi-time` (17); a function whose words are not taught by unit 17 is reported and skipped (the work, bedroom and dinner ones then wait for a follow-up in `hi-work`, `hi-home` and `hi-food`) | up to 17 | hi-3100 to 3139 | 15 (the table above) |
-| HI-007 | decks/hi-sent-phonetics | every new card of HI-001 to 006 via the tools | none | after all six merge | none | tool run |
+| HI-006 | DROPPED | Dropped 2026-11-14 by the architect: the vocabulary taught by unit 17 (hi-time) cannot support it. None of the six phrase functions (teeth, lunch, dinner, work, bedroom, usually) has its words taught by unit 17, no personal name is taught, and the only real place taught is दिल्ली, so at most 2 to 9 sentences were possible against the 12-sentence minimum. The unit has no sentences deck; its words are covered by the sentences decks of later units (HI-002, HI-003, HI-005). | none | none | none | none |
+| HI-007 | decks/hi-sent-phonetics | every new card of HI-001 to 006 via the tools | none | after HI-001 to HI-005 merge | none | tool run |
 | HI-008 | none (Sonnet, no PR) | runs the placement audit on the new Hindustani bank, reports F5 and F17 against 0.32 at the new n (need about 130 eligible or more; the task adds about 140); if it fails, follow-ups HI-009 onward are ordered with the same shape (`hi-work`, `hi-home`, `hi-weather`, `hi-money`, ids from hi-3200) | after HI-007 | none | audit |
 
 **Verb pools, counted from the path position of each deck** (verb cards of the decks listed up to the unit): 
@@ -367,7 +367,7 @@ Each task creates one new sentences deck (core and layer) and edits **only one l
 | HI-003 (unit 36) | 52 | 2 | 25 |
 | HI-004 (unit 53) | 66 | 2 | 25 |
 | HI-005 (unit 76) | 169 | 2 | 25 |
-| HI-006 (unit 17) | 25 | 2 | 15 (3 per length group, 3 questions, 6 shapes, 8 verbs at least) |
+| HI-006 (unit 17) | 25 | 2 | DROPPED (see HI-006) |
 
 Content rules: the gate and variety rules above. HI-007: `python3 tools/import_phonetic.py hi --write` then `python3 tools/derive_phonetic.py hi --write` (`decks/hi/hi-phonetics.yaml` exists), counts reported. Not touched: other decks, `decks/min_app.json`, existing cards. Review-queue rows in the report: every Perso-Arabic spelling the builder is not sure of, every gender or honorific choice, and every translation with a nuance.
 
