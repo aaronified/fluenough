@@ -94,6 +94,7 @@ regions:
 alphabet:
   - "ja-hiragana"
   - "ja-kanji-1"
+  - "ja-kanji-3"
   - "ja-katakana"
   - "ja-katakana-combos"
   - "ja-hiragana-marks"
@@ -369,11 +370,8 @@ units:
       - { id: "please-wait", text: { "en": "Asking someone politely to wait, write and show" } }
     reading_passages:
       - { id: "request-signs", text: { "en": "Signs that ask: please take off your shoes, please line up" } }
-  - planned: { id: "ja-kanji-3", grammar: "script-kanji-3", words: 0 }
-    listening_passages:
-      - { id: "kanji-3-heard", text: { "en": "Hearing words whose kanji unit 3 teaches" } }
-    reading_passages:
-      - { id: "kanji-3-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 3" } }
+  - decks: ["ja-kanji-3"]
+    words: 0
   - decks: ["ja-calendar", "ja-calendar-sentences", "ja-reading-calendar", "*"]
     words: 38
     listening_passages:
