@@ -1,6 +1,7 @@
 # A culture deck of Japanese works that are in the public domain: short waka, haiku, noh and kabuki lines,
 # each with its source, its rights basis and its creator (wiki/Plan-Deck-Kinds-And-Topics.md).
 # The text is shown in modern kana, with kanji left out, so that a learner who knows only the kana can read it.
+# The grammar of the classical texts (such as なり, けり and む) is kept as written.
 schema: 1
 id: "ja-culture-2"
 part: "core"
@@ -12,10 +13,10 @@ level: "B1"
 tags: ["unreviewed"]
 cards:
   - id: "ja-4600"
-    target: "おとこもすなるにっきというものをおんなもしてみむとてするなり"
-    words: ["おとこ", "も", "すなる", "にっき", "という", "もの", "を", "おんな", "も", "して", "みむ", "とて", "する", "なり"]
-    reading: "otoko mo sunaru nikki to iu mono o onna mo shite mimu tote suru nari"
-    ipa: "otoko mo sɯnaɾɯ nikki to iɯ mono o onna mo ɕite mimɯ tote sɯɾɯ naɾi"
+    target: "おとこもすなるにっきというものをおんなもしてみんとてするなり"
+    words: ["おとこ", "も", "すなる", "にっき", "という", "もの", "を", "おんな", "も", "して", "みん", "とて", "する", "なり"]
+    reading: "otoko mo sunaru nikki to iu mono o onna mo shite min tote suru nari"
+    ipa: "otoko mo sɯnaɾɯ nikki to iɯ mono o onna mo ɕite min tote sɯɾɯ naɾi"
     pos: "phrase"
     level: "B1"
     modes: ["recognition", "listening"]
@@ -33,7 +34,7 @@ cards:
       - { word: "おんな", base: "おんな", reading: "onna" }
       - { word: "も", base: "も", reading: "mo" }
       - { word: "して", base: "する", reading: "shite" }
-      - { word: "みむ", base: "みる", reading: "mimu" }
+      - { word: "みん", base: "みる", reading: "min" }
       - { word: "とて", base: "とて", reading: "tote" }
       - { word: "する", base: "する", reading: "suru" }
       - { word: "なり", base: "なり", reading: "nari" }
@@ -41,17 +42,17 @@ cards:
       author: "Ki no Tsurayuki"
       work: "Tosa Nikki, the opening line"
       date: 934
-      edition: "Tosa Nikki, the Aosei-shoin text, first line; shown in modern kana (the historical spellings of the original are a reviewer check)"
+      edition: "Tosa Nikki, the Aosei-shoin text, first line; in modern kana spelling (the original has historical spellings, a reviewer check)"
       url: "https://ja.wikipedia.org/wiki/%E5%9C%9F%E4%BD%90%E6%97%A5%E8%A8%98"
       basis: "public-domain"
       author_died: 945
       jurisdiction: "JP"
       rights_checked: "2026-11-14"
   - id: "ja-4601"
-    target: "そでひちてむすびしみずのこおれるをはるたつきょうのかぜやとくらん"
-    words: ["そで", "ひちて", "むすび", "し", "みず", "の", "こおれる", "を", "はる", "たつ", "きょう", "の", "かぜ", "や", "とくらん"]
-    reading: "sode hichite musubi shi mizu no kooreru o haru tatsu kyou no kaze ya tokuran"
-    ipa: "sode çitɕite mɯsɯbi ɕi midzɯ no koːɾeɾɯ o haɾɯ tatsɯ kʲoː no kaze ja tokɯɾan"
+    target: "そでひじてむすびしみずのこおれるをはるたつきょうのかぜやとくらん"
+    words: ["そで", "ひじて", "むすび", "し", "みず", "の", "こおれる", "を", "はる", "たつ", "きょう", "の", "かぜ", "や", "とくらん"]
+    reading: "sode hijite musubi shi mizu no kooreru o haru tatsu kyou no kaze ya tokuran"
+    ipa: "sode çidʑite mɯsɯbi ɕi midzɯ no koːɾeɾɯ o haɾɯ tatsɯ kʲoː no kaze ja tokɯɾan"
     pos: "phrase"
     level: "B1"
     modes: ["recognition", "listening"]
@@ -60,7 +61,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "そで", base: "そで", reading: "sode" }
-      - { word: "ひちて", base: "ひつ", reading: "hichite" }
+      - { word: "ひじて", base: "ひじて", reading: "hijite" }
       - { word: "むすび", base: "むすぶ", reading: "musubi" }
       - { word: "し", base: "き", reading: "shi" }
       - { word: "みず", base: "みず", reading: "mizu" }
@@ -78,7 +79,7 @@ cards:
       author: "Ki no Tsurayuki"
       work: "Kokin Wakashu, spring poem 2"
       date: "c. 905"
-      edition: "Kokin Wakashu, spring; shown in modern kana"
+      edition: "Kokin Wakashu, spring; in modern kana spelling"
       url: "https://ja.wikipedia.org/wiki/%E5%8F%A4%E4%BB%8A%E5%92%8C%E6%AD%8C%E9%9B%86"
       basis: "public-domain"
       author_died: 945
@@ -88,7 +89,7 @@ cards:
     target: "さくらばなちりぬるかぜのなごりにはみずなきそらになみぞたちける"
     words: ["さくらばな", "ちりぬる", "かぜ", "の", "なごり", "には", "みず", "なき", "そら", "に", "なみ", "ぞ", "たちける"]
     reading: "sakurabana chirinuru kaze no nagori ni wa mizu naki sora ni nami zo tachikeru"
-    ipa: "sakɯɾabana tɕiɾinɯɾɯ kaze no naɡoɾi ni wa mizɯ nakʲi soɾa ni nami zo tatɕikeɾɯ"
+    ipa: "sakɯɾabana tɕiɾinɯɾɯ kaze no naɡoɾi ni wa mizɯ naki soɾa ni nami zo tatɕikeɾɯ"
     pos: "phrase"
     level: "B1"
     modes: ["recognition", "listening"]
@@ -113,15 +114,15 @@ cards:
       author: "Ki no Tsurayuki"
       work: "Kokin Wakashu, poem 89"
       date: "c. 905"
-      edition: "Kokin Wakashu; shown in modern kana"
+      edition: "Kokin Wakashu; in modern kana spelling"
       url: "https://ja.wikipedia.org/wiki/%E5%8F%A4%E4%BB%8A%E5%92%8C%E6%AD%8C%E9%9B%86"
       basis: "public-domain"
       author_died: 945
       jurisdiction: "JP"
       rights_checked: "2026-11-14"
   - id: "ja-4603"
-    target: "よしのがわいはなみたかくゆくみずのはやくぞひとをおもひそめてし"
-    words: ["よしのがわ", "いはなみ", "たかく", "ゆく", "みず", "の", "はやく", "ぞ", "ひと", "を", "おもひそめ", "てし"]
+    target: "よしのがわいわなみたかくゆくみずのはやくぞひとをおもいそめてし"
+    words: ["よしのがわ", "いわなみ", "たかく", "ゆく", "みず", "の", "はやく", "ぞ", "ひと", "を", "おもいそめ", "てし"]
     reading: "yoshinogawa iwanami takaku yuku mizu no hayaku zo hito o omoisome teshi"
     ipa: "joɕinoɡawa iwanami takaku jɯkɯ mizɯ no hajaku zo çito o omoisome teɕi"
     pos: "phrase"
@@ -132,30 +133,30 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "よしのがわ", base: "よしのがわ", reading: "yoshinogawa" }
-      - { word: "いはなみ", base: "いはなみ", reading: "iwanami" }
-      - { word: "たかく", base: "たかし", reading: "takaku" }
+      - { word: "いわなみ", base: "いわなみ", reading: "iwanami" }
+      - { word: "たかく", base: "たかい", reading: "takaku" }
       - { word: "ゆく", base: "ゆく", reading: "yuku" }
       - { word: "みず", base: "みず", reading: "mizu" }
       - { word: "の", base: "の", reading: "no" }
-      - { word: "はやく", base: "はやし", reading: "hayaku" }
+      - { word: "はやく", base: "はやい", reading: "hayaku" }
       - { word: "ぞ", base: "ぞ", reading: "zo" }
       - { word: "ひと", base: "ひと", reading: "hito" }
       - { word: "を", base: "を", reading: "o" }
-      - { word: "おもひそめ", base: "おもひそむ", reading: "omoisome" }
+      - { word: "おもいそめ", base: "おもいそむ", reading: "omoisome" }
       - { word: "てし", base: "つ", reading: "teshi" }
     source:
       author: "Ki no Tsurayuki"
       work: "Kokin Wakashu, poem 471"
       date: "c. 905"
-      edition: "Kokin Wakashu, a love poem; shown in modern kana"
+      edition: "Kokin Wakashu, a love poem; in modern kana spelling"
       url: "https://ja.wikipedia.org/wiki/%E5%8F%A4%E4%BB%8A%E5%92%8C%E6%AD%8C%E9%9B%86"
       basis: "public-domain"
       author_died: 945
       jurisdiction: "JP"
       rights_checked: "2026-11-14"
   - id: "ja-4604"
-    target: "はなのいろはうつりにけりないたづらにわがみよにふるながめせしまに"
-    words: ["はなの", "いろ", "は", "うつり", "に", "けりな", "いたづらに", "わが", "み", "よに", "ふる", "ながめ", "せし", "まに"]
+    target: "はなのいろはうつりにけりないたずらにわがみよにふるながめせしまに"
+    words: ["はなの", "いろ", "は", "うつり", "に", "けりな", "いたずらに", "わが", "み", "よに", "ふる", "ながめ", "せし", "まに"]
     reading: "hana no iro wa utsuri ni keri na itazura ni waga mi yo ni furu nagame seshi ma ni"
     ipa: "hana no iɾo wa ɯtsɯɾi ni keɾi na itazɯɾa ni waɡa mi jo ni ɸɯɾɯ naɡame seɕi ma ni"
     pos: "phrase"
@@ -171,7 +172,7 @@ cards:
       - { word: "うつり", base: "うつる", reading: "utsuri" }
       - { word: "に", base: "に", reading: "ni" }
       - { word: "けりな", base: "けり", reading: "keri na" }
-      - { word: "いたづらに", base: "いたづらなり", reading: "itazura ni" }
+      - { word: "いたずらに", base: "いたずらなり", reading: "itazura ni" }
       - { word: "わが", base: "わが", reading: "waga" }
       - { word: "み", base: "み", reading: "mi" }
       - { word: "よに", base: "よ", reading: "yo ni" }
@@ -183,15 +184,15 @@ cards:
       author: "Ono no Komachi"
       work: "Kokin Wakashu, a poem by Ono no Komachi (also in the Ogura Hyakunin Isshu)"
       date: "c. 905"
-      edition: "Kokin Wakashu; shown in modern kana"
+      edition: "Kokin Wakashu; in modern kana spelling"
       url: "https://ja.wikipedia.org/wiki/%E5%B0%8F%E9%87%8E%E5%B0%8F%E7%94%BA"
       basis: "public-domain"
       author_died: 900
       jurisdiction: "JP"
       rights_checked: "2026-11-14"
   - id: "ja-4605"
-    target: "あらざらむこのよのほかのおもひでにいまひとたびのあふこともがな"
-    words: ["あらざらむ", "この", "よ", "の", "ほか", "の", "おもひで", "に", "いまひとたび", "の", "あふ", "こと", "もがな"]
+    target: "あらざらむこのよのほかのおもいでにいまひとたびのあうこともがな"
+    words: ["あらざらむ", "この", "よ", "の", "ほか", "の", "おもいで", "に", "いまひとたび", "の", "あう", "こと", "もがな"]
     reading: "arazaramu kono yo no hoka no omoide ni ima hitotabi no au koto mo gana"
     ipa: "aɾazaɾamɯ kono jo no hoka no omoide ni ima çitotabi no au koto mo ɡana"
     pos: "phrase"
@@ -207,28 +208,28 @@ cards:
       - { word: "の", base: "の", reading: "no" }
       - { word: "ほか", base: "ほか", reading: "hoka" }
       - { word: "の", base: "の", reading: "no" }
-      - { word: "おもひで", base: "おもひで", reading: "omoide" }
+      - { word: "おもいで", base: "おもいで", reading: "omoide" }
       - { word: "に", base: "に", reading: "ni" }
       - { word: "いまひとたび", base: "いまひとたび", reading: "ima hitotabi" }
       - { word: "の", base: "の", reading: "no" }
-      - { word: "あふ", base: "あふ", reading: "au" }
+      - { word: "あう", base: "あう", reading: "au" }
       - { word: "こと", base: "こと", reading: "koto" }
       - { word: "もがな", base: "もがな", reading: "mo gana" }
     source:
       author: "Izumi Shikibu"
       work: "Ogura Hyakunin Isshu, poem 56"
-      date: "976-1100 (life; the year of the poem is not known)"
-      edition: "Ogura Hyakunin Isshu; shown in modern kana"
+      date: "976-1030"
+      edition: "Ogura Hyakunin Isshu; in modern kana spelling. The year of the poem is not known; the date is the approximate life span of the author"
       url: "https://ja.wikipedia.org/wiki/%E5%92%8C%E6%B3%89%E5%BC%8F%E9%83%A8"
       basis: "public-domain"
-      author_died: 1100
+      author_died: 1030
       jurisdiction: "JP"
       rights_checked: "2026-11-14"
   - id: "ja-4606"
-    target: "いはつつじいはねばうとしかけていへばものおもひまさるものをこそおもへ"
-    words: ["いは", "つつじ", "いはねば", "うとし", "かけて", "いへば", "もの", "おもひ", "まさる", "ものを", "こそ", "おもへ"]
+    target: "いわつつじいわねばうとしかけていえばものおもいまさるものをこそおもえ"
+    words: ["いわ", "つつじ", "いわねば", "うとし", "かけて", "いえば", "もの", "おもい", "まさる", "ものを", "こそ", "おもえ"]
     reading: "iwa tsutsuji iwaneba utoshi kakete ieba mono omoi masaru mono o koso omoe"
-    ipa: "iwa tsɯtsɯdʑi iwanebe ɯtoɕi kakete jeba mono omoi masaɾɯ mono o koso omoe"
+    ipa: "iwa tsɯtsɯdʑi iwaneba ɯtoɕi kakete jeba mono omoi masaɾɯ mono o koso omoe"
     pos: "phrase"
     level: "B1"
     modes: ["recognition", "listening"]
@@ -236,33 +237,33 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "いは", base: "いは", reading: "iwa" }
+      - { word: "いわ", base: "いわ", reading: "iwa" }
       - { word: "つつじ", base: "つつじ", reading: "tsutsuji" }
-      - { word: "いはねば", base: "いはず", reading: "iwaneba" }
+      - { word: "いわねば", base: "いわず", reading: "iwaneba" }
       - { word: "うとし", base: "うとし", reading: "utoshi" }
       - { word: "かけて", base: "かく", reading: "kakete" }
-      - { word: "いへば", base: "いふ", reading: "ieba" }
+      - { word: "いえば", base: "いう", reading: "ieba" }
       - { word: "もの", base: "もの", reading: "mono" }
-      - { word: "おもひ", base: "おもひ", reading: "omoi" }
+      - { word: "おもい", base: "おもい", reading: "omoi" }
       - { word: "まさる", base: "まさる", reading: "masaru" }
       - { word: "ものを", base: "もの", reading: "mono o" }
       - { word: "こそ", base: "こそ", reading: "koso" }
-      - { word: "おもへ", base: "おもふ", reading: "omoe" }
+      - { word: "おもえ", base: "おもう", reading: "omoe" }
     source:
       author: "Izumi Shikibu"
       work: "Izumi Shikibu Shu (the Shojushu), poem 698"
-      date: "976-1100 (life; the year of the poem is not known)"
-      edition: "Izumi Shikibu Shu, the Shojushu; shown in modern kana"
+      date: "976-1030"
+      edition: "Izumi Shikibu Shu, the Shojushu, poem 698, as quoted on the Japanese Wikipedia page of Izumi Shikibu; in modern kana spelling. The year of the poem is not known; the date is the approximate life span"
       url: "https://ja.wikipedia.org/wiki/%E5%92%8C%E6%B3%89%E5%BC%8F%E9%83%A8"
       basis: "public-domain"
-      author_died: 1100
+      author_died: 1030
       jurisdiction: "JP"
       rights_checked: "2026-11-14"
   - id: "ja-4607"
-    target: "めぐりあひてみしやそれともわかぬまにくもがくれにしよはのつきかげ"
-    words: ["めぐりあひて", "みし", "や", "それ", "とも", "わかぬ", "まに", "くも", "がくれ", "に", "し", "よはの", "つきかげ"]
-    reading: "meguriaite mishi ya sore tomo wakanu ma ni kumogakure ni shi yowa no tsukikage"
-    ipa: "meɡɯɾiai̯te miɕi ja soɾe tomo wakanɯ ma ni kɯmoɡakɯɾe ni ɕi jowa no tsɯkikaɡe"
+    target: "めぐりあいてみしやそれともわかぬまにくもがくれにしよはのつきかな"
+    words: ["めぐりあいて", "みし", "や", "それ", "とも", "わかぬ", "まに", "くも", "がくれ", "に", "し", "よはの", "つきかな"]
+    reading: "meguriaite mishi ya sore tomo wakanu ma ni kumogakure ni shi yowa no tsukikana"
+    ipa: "meɡɯɾiaite miɕi ja soɾe tomo wakanɯ ma ni kɯmoɡakɯɾe ni ɕi jowa no tsɯkikana"
     pos: "phrase"
     level: "B1"
     modes: ["recognition", "listening"]
@@ -270,7 +271,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "めぐりあひて", base: "めぐりあふ", reading: "meguriaite" }
+      - { word: "めぐりあいて", base: "めぐりあう", reading: "meguriaite" }
       - { word: "みし", base: "みる", reading: "mishi" }
       - { word: "や", base: "や", reading: "ya" }
       - { word: "それ", base: "それ", reading: "sore" }
@@ -282,22 +283,22 @@ cards:
       - { word: "に", base: "に", reading: "ni" }
       - { word: "し", base: "き", reading: "shi" }
       - { word: "よはの", base: "よは", reading: "yowa no" }
-      - { word: "つきかげ", base: "つきかげ", reading: "tsukikage" }
+      - { word: "つきかな", base: "つきかな", reading: "tsukikana" }
     source:
       author: "Murasaki Shikibu"
       work: "Ogura Hyakunin Isshu, poem 57"
-      date: "970-1031 (life; the year of the poem is not known)"
-      edition: "Ogura Hyakunin Isshu; shown in modern kana"
+      date: "970-1031"
+      edition: "Ogura Hyakunin Isshu; in modern kana spelling. The year of the poem is not known; the date is the approximate life span of the author"
       url: "https://ja.wikipedia.org/wiki/%E7%B4%AB%E5%BC%8F%E9%83%A8"
       basis: "public-domain"
       author_died: 1031
       jurisdiction: "JP"
       rights_checked: "2026-11-14"
   - id: "ja-4608"
-    target: "うちとけてまどろむとしもなきものをあふとみつるやうつつなるらん"
-    words: ["うちとけて", "まどろむ", "と", "しも", "なき", "ものを", "あふ", "と", "みつる", "や", "うつつ", "なるらん"]
+    target: "うちとけてまどろむとしもなきものをあうとみつるやうつつなるらん"
+    words: ["うちとけて", "まどろむ", "と", "しも", "なき", "ものを", "あう", "と", "みつる", "や", "うつつ", "なるらん"]
     reading: "uchitokete madoromu to shimo naki mono o au to mitsuru ya utsutsu naruran"
-    ipa: "ɯtɕitokete madoɾomɯ to ɕimo nakʲi mono o au to mitsɯɾɯ ja ɯtsɯtsɯ naɾɯɾaɴ"
+    ipa: "ɯtɕitokete madoɾomɯ to ɕimo naki mono o au to mitsɯɾɯ ja ɯtsɯtsɯ naɾɯɾaɴ"
     pos: "phrase"
     level: "B1"
     modes: ["recognition", "listening"]
@@ -311,7 +312,7 @@ cards:
       - { word: "しも", base: "しも", reading: "shimo" }
       - { word: "なき", base: "なし", reading: "naki" }
       - { word: "ものを", base: "もの", reading: "mono o" }
-      - { word: "あふ", base: "あふ", reading: "au" }
+      - { word: "あう", base: "あう", reading: "au" }
       - { word: "と", base: "と", reading: "to" }
       - { word: "みつる", base: "みる", reading: "mitsuru" }
       - { word: "や", base: "や", reading: "ya" }
@@ -320,16 +321,16 @@ cards:
     source:
       author: "Yoshida Kenko"
       work: "Kenko Kashu (the family collection), poem 57"
-      date: "1283-1352 (life; the year of the poem is not known)"
-      edition: "Kenko Kashu, poem 57; shown in modern kana"
+      date: "1283-1352"
+      edition: "Kenko Kashu, poem 57, as quoted on the Japanese Wikipedia page of Yoshida Kenko; in modern kana spelling. The year of the poem is not known; the dates are approximate"
       url: "https://ja.wikipedia.org/wiki/%E5%90%89%E7%94%B0%E5%85%BC%E5%A5%BD"
       basis: "public-domain"
-      author_died: 1400
+      author_died: 1352
       jurisdiction: "JP"
       rights_checked: "2026-11-14"
   - id: "ja-4609"
-    target: "あしびきのやまどりのをのしだりをのながながしよをひとりかもねむ"
-    words: ["あしびき", "の", "やまどり", "の", "を", "の", "しだり", "を", "の", "ながながし", "よ", "を", "ひとり", "かも", "ねむ"]
+    target: "あしびきのやまどりのおのしだりおのながながしよをひとりかもねむ"
+    words: ["あしびき", "の", "やまどり", "の", "お", "の", "しだり", "お", "の", "ながながし", "よ", "を", "ひとり", "かも", "ねむ"]
     reading: "ashibiki no yamadori no o no shidari o no naganagashi yo o hitori kamo nemu"
     ipa: "aɕibiki no jamadoɾi no o no ɕidaɾi o no naɡanaɡaɕi jo o çitoɾi kamo nemɯ"
     pos: "phrase"
@@ -343,10 +344,10 @@ cards:
       - { word: "の", base: "の", reading: "no" }
       - { word: "やまどり", base: "やまどり", reading: "yamadori" }
       - { word: "の", base: "の", reading: "no" }
-      - { word: "を", base: "を", reading: "o" }
+      - { word: "お", base: "お", reading: "o" }
       - { word: "の", base: "の", reading: "no" }
       - { word: "しだり", base: "しだり", reading: "shidari" }
-      - { word: "を", base: "を", reading: "o" }
+      - { word: "お", base: "お", reading: "o" }
       - { word: "の", base: "の", reading: "no" }
       - { word: "ながながし", base: "ながながし", reading: "naganagashi" }
       - { word: "よ", base: "よ", reading: "yo" }
@@ -357,18 +358,18 @@ cards:
     source:
       author: "Kakinomoto no Hitomaro"
       work: "Ogura Hyakunin Isshu, poem 3"
-      date: "680-708 (active years; the year of the poem is not known)"
-      edition: "Ogura Hyakunin Isshu; shown in modern kana"
+      date: "680-708"
+      edition: "Ogura Hyakunin Isshu; in modern kana spelling. The attribution to Hitomaro is traditional; the year of the poem is not known, and the dates are approximate"
       url: "https://ja.wikipedia.org/wiki/%E6%9F%BF%E6%9C%AC%E4%BA%BA%E9%BA%BB%E5%91%82"
       basis: "public-domain"
       author_died: 708
       jurisdiction: "JP"
       rights_checked: "2026-11-14"
   - id: "ja-4610"
-    target: "ちはやぶるかみのみさかにぬさまつりいはふいのちはおもちちがため"
-    words: ["ちはやぶる", "かみ", "の", "みさか", "に", "ぬさ", "まつり", "いはふ", "いのち", "は", "おもちち", "が", "ため"]
-    reading: "chihayaburu kami no misaka ni nusa matsuri iwafu inochi wa omochichi ga tame"
-    ipa: "tɕihajaburɯ kami no misaka ni nɯsa matsɯɾi iɰaɸɯ inotɕi wa omotɕitɕi ŋa tame"
+    target: "ちはやぶるかみのみさかにぬさまつりいわういのちはおもちちがため"
+    words: ["ちはやぶる", "かみ", "の", "みさか", "に", "ぬさ", "まつり", "いわう", "いのち", "は", "おもちち", "が", "ため"]
+    reading: "chihayaburu kami no misaka ni nusa matsuri iwau inochi wa omochichi ga tame"
+    ipa: "tɕihajaburɯ kami no misaka ni nɯsa matsɯɾi iwaɯ inotɕi wa omotɕitɕi ga tame"
     pos: "phrase"
     level: "B1"
     modes: ["recognition", "listening"]
@@ -382,7 +383,7 @@ cards:
       - { word: "に", base: "に", reading: "ni" }
       - { word: "ぬさ", base: "ぬさ", reading: "nusa" }
       - { word: "まつり", base: "まつる", reading: "matsuri" }
-      - { word: "いはふ", base: "いはふ", reading: "iwafu" }
+      - { word: "いわう", base: "いわう", reading: "iwau" }
       - { word: "いのち", base: "いのち", reading: "inochi" }
       - { word: "は", base: "は", reading: "wa" }
       - { word: "おもちち", base: "おもちち", reading: "omochichi" }
@@ -392,7 +393,7 @@ cards:
       author: "anonymous"
       work: "Manyoshu, Book 20, a poem of a sakimori (frontier guard)"
       date: "759-780"
-      edition: "Manyoshu, compiled 759 to about 780; shown in modern kana"
+      edition: "Manyoshu, compiled 759 to about 780; in modern kana spelling"
       url: "https://ja.wikipedia.org/wiki/%E4%B8%87%E8%91%89%E9%9B%86"
       basis: "public-domain"
       jurisdiction: "JP"
@@ -417,7 +418,7 @@ cards:
       author: "Zeami"
       work: "Fushikaden, the first lesson on the beginner's mind"
       date: "1402-1420"
-      edition: "Fushikaden; the first three parts are dated 1402 by a colophon, the rest about twenty years later; shown in modern kana"
+      edition: "Fushikaden; the first three parts are dated 1402 by a colophon, the rest about twenty years later; in modern kana spelling"
       url: "https://ja.wikipedia.org/wiki/%E9%A2%A8%E5%A7%BF%E8%8A%B1%E4%BC%9D"
       basis: "public-domain"
       author_died: 1443
@@ -446,7 +447,7 @@ cards:
       author: "Zeami"
       work: "Fushikaden, on keeping the secret of the flower"
       date: "1402-1420"
-      edition: "Fushikaden; the first three parts are dated 1402 by a colophon, the rest about twenty years later; shown in modern kana"
+      edition: "Fushikaden; the first three parts are dated 1402 by a colophon, the rest about twenty years later; in modern kana spelling"
       url: "https://ja.wikipedia.org/wiki/%E9%A2%A8%E5%A7%BF%E8%8A%B1%E4%BC%9D"
       basis: "public-domain"
       author_died: 1443
@@ -456,7 +457,7 @@ cards:
     target: "としのせやみずのながれとひとのみは"
     words: ["とし", "の", "せ", "や", "みず", "の", "ながれ", "と", "ひと", "の", "み", "は"]
     reading: "toshi no se ya mizu no nagare to hito no mi wa"
-    ipa: "tosɕi no se ja mizɯ no naɡaɾe to çito no mi wa"
+    ipa: "toɕi no se ja mizɯ no naɡaɾe to çito no mi wa"
     pos: "phrase"
     level: "B1"
     modes: ["recognition", "listening"]
@@ -480,7 +481,7 @@ cards:
       author: "Takarai Kikaku"
       work: "A haiku written on the night before the Ako raid"
       date: 1702
-      edition: "Haiku as quoted on the Japanese Wikipedia page of Takarai Kikaku; shown in modern kana"
+      edition: "Haiku as quoted on the Japanese Wikipedia page of Takarai Kikaku; in modern kana spelling"
       url: "https://ja.wikipedia.org/wiki/%E5%AE%9D%E4%BA%95%E5%85%B6%E8%A7%92"
       basis: "public-domain"
       author_died: 1707
@@ -519,7 +520,7 @@ cards:
       author: "Chikamatsu Monzaemon"
       work: "Sonezaki Shinju, the lovers' journey (michiyuki), its opening lines"
       date: 1703
-      edition: "Sonezaki Shinju, first staged 1703; shown in modern kana"
+      edition: "Sonezaki Shinju, first staged 1703; in modern kana spelling"
       url: "https://ja.wikipedia.org/wiki/%E6%9B%BE%E6%A0%B9%E5%B4%8E%E5%BF%83%E4%B8%AD"
       basis: "public-domain"
       author_died: 1725
@@ -529,7 +530,7 @@ cards:
     target: "みらいじょうぶつうたがいなきこいのてほんとなりにけり"
     words: ["みらい", "じょうぶつ", "うたがい", "なき", "こい", "の", "てほん", "と", "なり", "にけり"]
     reading: "mirai joubutsu utagai naki koi no tehon to nari ni keri"
-    ipa: "miɾai dʑoːbɯtsɯ ɯtaɡai nakʲi koi no tehoɴ to naɾi ni keɾi"
+    ipa: "miɾai dʑoːbɯtsɯ ɯtaɡai naki koi no tehoɴ to naɾi ni keɾi"
     pos: "phrase"
     level: "B1"
     modes: ["recognition", "listening"]
@@ -551,7 +552,7 @@ cards:
       author: "Chikamatsu Monzaemon"
       work: "Sonezaki Shinju, the closing lines of the michiyuki"
       date: 1703
-      edition: "Sonezaki Shinju, first staged 1703; shown in modern kana"
+      edition: "Sonezaki Shinju, first staged 1703; in modern kana spelling"
       url: "https://ja.wikipedia.org/wiki/%E6%9B%BE%E6%A0%B9%E5%B4%8E%E5%BF%83%E4%B8%AD"
       basis: "public-domain"
       author_died: 1725
@@ -580,7 +581,7 @@ cards:
       author: "Kobayashi Issa"
       work: "Oraga Haru, the haiku of the first episode"
       date: 1819
-      edition: "Oraga Haru, written in 1819 and printed in 1852; the haiku as quoted on the Japanese Wikipedia page; shown in modern kana"
+      edition: "Oraga Haru, written in 1819 and printed in 1852; the haiku as quoted on the Japanese Wikipedia page; in modern kana spelling"
       url: "https://ja.wikipedia.org/wiki/%E3%81%8A%E3%82%89%E3%81%8C%E6%98%A5"
       basis: "public-domain"
       author_died: 1828
@@ -590,7 +591,7 @@ cards:
     target: "かすみたちこのめもはるのゆきふればはななきさともはなぞちりける"
     words: ["かすみ", "たち", "この", "め", "も", "はる", "の", "ゆき", "ふれば", "はな", "なき", "さとも", "はな", "ぞ", "ちりける"]
     reading: "kasumi tachi kono me mo haru no yuki fureba hana naki satomo hana zo chirikeru"
-    ipa: "kasɯmi tatɕi kono me mo haɾɯ no jɯki ɸɯɾeba hana nakʲi satomo hana zo tɕiɾikeɾɯ"
+    ipa: "kasɯmi tatɕi kono me mo haɾɯ no jɯki ɸɯɾeba hana naki satomo hana zo tɕiɾikeɾɯ"
     pos: "phrase"
     level: "B1"
     modes: ["recognition", "listening"]
@@ -617,7 +618,7 @@ cards:
       author: "Ki no Tsurayuki"
       work: "Kokin Wakashu, poem 9"
       date: "c. 905"
-      edition: "Kokin Wakashu, spring; shown in modern kana"
+      edition: "Kokin Wakashu, spring; in modern kana spelling"
       url: "https://ja.wikipedia.org/wiki/%E5%8F%A4%E4%BB%8A%E5%92%8C%E6%AD%8C%E9%9B%86"
       basis: "public-domain"
       author_died: 945
