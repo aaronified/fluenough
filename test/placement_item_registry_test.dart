@@ -177,19 +177,18 @@ void main() {
         expect(cx.sentences.length, greaterThan(100));
         final counts = bank.countsByFormat;
         // The formats that pass the audit in both courses. The sentence picks
-        // (F5, F17) are in Spanish only: Hindustani has 116 sentences whose
-        // options can be made to look alike, and the audit's upper bound
-        // (0.3213) is above the pick's 0.32 at that few (never loosened).
+        // (F5, F17) are not here: with only whole sentences and look-alike
+        // options of one kind (sentence_gate.dart) the audit does not pass
+        // them in either course at this few (its upper bound is above the
+        // pick's 0.32; never loosened), so they are admitted when it does.
         for (final code in <String>[
           'F2',
           'F3',
           'F4',
-          if (language == 'es') 'F5',
           'F7',
           'F8',
           'F9',
           'F13',
-          if (language == 'es') 'F17',
           'F18',
           'F22',
           'F23',
@@ -542,19 +541,9 @@ void main() {
           expect(lenTop / picks.length, lessThanOrEqualTo(0.27));
           expect(lenBottom / picks.length, lessThanOrEqualTo(0.27));
           expect(simTop / picks.length, lessThanOrEqualTo(0.27));
+          // The audit decides: a class is asked only when it passes.
           final audited = bank.audit.classes['$format:clean']!;
-          if (language == 'es') {
-            // The class passes the audit, so it is admitted.
-            expect(audited.passes, isTrue);
-            expect(of(format), isNotEmpty);
-          } else {
-            // Too few sentences (116): the best solver is at chance, but the
-            // upper confidence bound is above the bound, so the class is not
-            // admitted (the bound is never loosened).
-            expect(audited.accuracy, lessThanOrEqualTo(audited.bound));
-            expect(audited.passes, isFalse);
-            expect(of(format), isEmpty);
-          }
+          expect(of(format).isNotEmpty, audited.passes, reason: format);
         }
       });
 
@@ -758,11 +747,7 @@ void main() {
             );
           }
           // Every solver of an admitted class is within the bound.
-          for (final key in <String>[
-            'F21:clean',
-            if (language == 'es') 'F5:clean',
-            if (language == 'es') 'F17:clean',
-          ]) {
+          for (final key in <String>['F21:clean']) {
             final c = bank.audit.classes[key]!;
             expect(c.passes, isTrue, reason: key);
             expect(

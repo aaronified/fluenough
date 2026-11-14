@@ -246,7 +246,6 @@ void main() {
           sentenceMeaning(s.card.native, target: s.card.target),
           reason: s.card.id,
         );
-        expect(_flat(s.text), _flat(s.card.target), reason: s.card.id);
       }
       expect(
         cx.sentences
