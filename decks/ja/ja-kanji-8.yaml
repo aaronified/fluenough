@@ -115,6 +115,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "地図をみます。"
+        target_scripts: { kana: "ちずをみます。" }
+        words: ["地図", "を", "みます"]
+        reading: "chizu o mimasu."
+        ipa: "tɕidzɯ o mimasɯ"
   - id: "ja-5368"
     target: "池"
     target_scripts: { kana: "いけ" }
@@ -362,6 +368,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "本当にたのしいです。"
+        target_scripts: { kana: "ほんとうにたのしいです。" }
+        words: ["本当に", "たのしい", "です"]
+        reading: "hontouni tanoshii desu."
+        ipa: "hoɴtoːni tanoɕiː desɯ"
   - id: "ja-5384"
     target: "東"
     target_scripts: { kana: "ひがし" }
@@ -380,7 +392,7 @@ cards:
         ipa: "çiɡaɕi ni jama ɡa aɾimasɯ"
       - target: "東京は大きいです。"
         target_scripts: { kana: "とうきょうはおおきいです。" }
-        words: ["東京", "は", "おおきい", "です"]
+        words: ["東京", "は", "大きい", "です"]
         reading: "toukyou wa ookii desu."
         ipa: "toːkjoː wa oːkiː desɯ"
   - id: "ja-5385"
@@ -466,12 +478,6 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
-    examples:
-      - target: "かばんの内にかぎがあります。"
-        target_scripts: { kana: "かばんのうちにかぎがあります。" }
-        words: ["かばん", "の", "内", "に", "かぎ", "が", "あります"]
-        reading: "kaban no uchi ni kagi ga arimasu."
-        ipa: "kabaɴ no ɯtɕi ni kaɡi ɡa aɾimasɯ"
   - id: "ja-5391"
     target: "南"
     target_scripts: { kana: "みなみ" }
