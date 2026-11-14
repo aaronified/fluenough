@@ -48,3 +48,178 @@ cards:
     tags: ["sentence"]
     bases: [{ word: "Quiero", ref: "es-0661" }, { word: "adelgazar", ref: "es-1963" }, { word: "y", ref: "es-0048" }, { word: "no", ref: "es-0043" }, { word: "engordar", ref: "es-1964" }]
     confusables: [{ id: "peso", ref: "es-1569", kind: "word" }, { id: "grasa", ref: "es-1951", kind: "word" }]
+  - id: "es-3440"
+    target: "Mi padre es muy sedentario."
+    ipa: "mi ˈpadɾe es mwi sedenˈtaɾjo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "padre", ref: "es-0159" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "sedentario", ref: "es-1966" }]
+    confusables: [{ id: "deporte", ref: "es-1402", kind: "word" }, { id: "fuerte", ref: "es-0432", kind: "word" }]
+  - id: "es-3441"
+    target: "Caminar cada mañana me da bienestar."
+    ipa: "kamiˈnaɾ ˈkada maˈɲana me da bjenesˈtaɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Caminar", ref: "es-0281" }, { word: "cada", ref: "es-0366" }, { word: "mañana", ref: "es-0841" }, { word: "me", base: "me" }, { word: "da", ref: "es-1629" }, { word: "bienestar", ref: "es-1954" }]
+    confusables: [{ id: "sano", ref: "es-1965", kind: "word" }, { id: "masaje", ref: "es-1955", kind: "word" }]
+  - id: "es-3442"
+    target: "¿Dónde está la clínica?"
+    ipa: "ˈdonde esˈta la ˈklinika"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Dónde", ref: "es-0056" }, { word: "está", ref: "es-0023" }, { word: "la", base: "la" }, { word: "clínica", ref: "es-1939" }]
+    confusables: [{ id: "hospital", ref: "es-0772", kind: "word" }, { id: "farmacia", ref: "es-0771", kind: "word" }]
+  - id: "es-3443"
+    target: "No como mucha grasa, pero bebo agua."
+    ipa: "no ˈkomo ˈmutʃa ˈɡɾasa ˈpeɾo ˈbebo ˈaɡwa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "No", ref: "es-0043" }, { word: "como", ref: "es-0028" }, { word: "mucha", ref: "es-0053" }, { word: "grasa", ref: "es-1951" }, { word: "pero", ref: "es-0050" }, { word: "bebo", ref: "es-0029" }, { word: "agua", ref: "es-0012" }]
+    confusables: [{ id: "alimento", ref: "es-1949", kind: "word" }, { id: "es-1947", ref: "es-1947", kind: "word" }]
+  - id: "es-3444"
+    target: "Me duele el músculo de la pierna."
+    ipa: "me ˈdwele el ˈmuskulo de la ˈpjeɾna"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Me", base: "me" }, { word: "duele", ref: "es-0754" }, { word: "el", base: "el" }, { word: "músculo", ref: "es-1958" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "pierna", ref: "es-0740" }]
+    confusables: [{ id: "hueso", ref: "es-1957", kind: "word" }, { id: "brazo", ref: "es-0737", kind: "word" }]
+  - id: "es-3445"
+    target: "Mis pulmones respiran bien en el campo."
+    ipa: "mis pulˈmones resˈpiɾan bjen en el ˈkampo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mis", ref: "es-0129" }, { word: "pulmones", ref: "es-1956" }, { word: "respiran", ref: "es-0755" }, { word: "bien", ref: "es-0326" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "campo", ref: "es-1772" }]
+    confusables: [{ id: "es-0745", ref: "es-0745", kind: "word" }, { id: "bosque", ref: "es-1749", kind: "word" }]
+  - id: "es-3446"
+    target: "Después de trabajar me relajo en casa."
+    ipa: "desˈpwes de tɾabaˈxaɾ me reˈlaxo en ˈkasa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Después", ref: "es-0336" }, { word: "de", base: "de" }, { word: "trabajar", ref: "es-0259" }, { word: "me", base: "me" }, { word: "relajo", ref: "es-1943" }, { word: "en", base: "en" }, { word: "casa", ref: "es-0006" }]
+    confusables: [{ id: "relajado", ref: "es-1944", kind: "word" }, { id: "descansar", ref: "es-0928", kind: "word" }]
+  - id: "es-3447"
+    target: "¿Tú entrenas en el gimnasio?"
+    ipa: "tu enˈtɾenas en el ximˈnasjo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tú", ref: "es-0086" }, { word: "entrenas", ref: "es-1961" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "gimnasio", ref: "es-0912" }]
+    confusables: [{ id: "entrenador", ref: "es-1959", kind: "word" }, { id: "deporte", ref: "es-1402", kind: "word" }]
+  - id: "es-3448"
+    target: "Duermo ocho horas cada noche para tener energía."
+    ipa: "ˈdweɾmo ˈotʃo ˈoɾas ˈkada ˈnotʃe ˈpaɾa teˈneɾ eneɾˈxia"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Duermo", ref: "es-0904" }, { word: "ocho", ref: "es-0212" }, { word: "horas", ref: "es-0838" }, { word: "cada", ref: "es-0366" }, { word: "noche", ref: "es-0020" }, { word: "para", base: "para" }, { word: "tener", ref: "es-0024" }, { word: "energía", ref: "es-1941" }]
+    confusables: [{ id: "es-0902", ref: "es-0902", kind: "word" }, { id: "es-1942", ref: "es-1942", kind: "word" }]
+  - id: "es-3449"
+    target: "El enfermero mira mi postura cada día."
+    ipa: "el enfeɾˈmeɾo ˈmiɾa mi posˈtuɾa ˈkada ˈdia"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "enfermero", ref: "es-1938" }, { word: "mira", ref: "es-0292" }, { word: "mi", ref: "es-0129" }, { word: "postura", ref: "es-1969" }, { word: "cada", ref: "es-0366" }, { word: "día", ref: "es-0019" }]
+    confusables: [{ id: "doctor", ref: "es-1468", kind: "word" }, { id: "es-1967", ref: "es-1967", kind: "word" }]
+  - id: "es-3450"
+    target: "Estoy cansado después de entrenar."
+    ipa: "esˈtoj kanˈsado desˈpwes de entɾeˈnaɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Estoy", ref: "es-0023" }, { word: "cansado", ref: "es-0420" }, { word: "después", ref: "es-0336" }, { word: "de", base: "de" }, { word: "entrenar", ref: "es-1961" }]
+    confusables: [{ id: "cansarse", ref: "es-1962", kind: "word" }, { id: "relajado", ref: "es-1944", kind: "word" }]
+  - id: "es-3451"
+    target: "Siempre desayuno fruta rica en vitaminas y proteína."
+    ipa: "ˈsjempɾe desaˈʝuno ˈfɾuta ˈrika en bitaˈminas i pɾoteˈina"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Siempre", ref: "es-0320" }, { word: "desayuno", ref: "es-0282" }, { word: "fruta", ref: "es-0568" }, { word: "rica", ref: "es-0409" }, { word: "en", base: "en" }, { word: "vitaminas", ref: "es-1946" }, { word: "y", ref: "es-0048" }, { word: "proteína", ref: "es-1950" }]
+    confusables: [{ id: "es-1945", ref: "es-1945", kind: "word" }, { id: "es-1947", ref: "es-1947", kind: "word" }]
+  - id: "es-3452"
+    target: "Mi hermana tiene mucha energía por la mañana."
+    ipa: "mi eɾˈmana ˈtjene ˈmutʃa eneɾˈxia poɾ la maˈɲana"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermana", ref: "es-0162" }, { word: "tiene", ref: "es-0024" }, { word: "mucha", ref: "es-0053" }, { word: "energía", ref: "es-1941" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "mañana", ref: "es-0841" }]
+    confusables: [{ id: "cansancio", ref: "es-1940", kind: "word" }, { id: "fatiga", ref: "es-1970", kind: "word" }]
+  - id: "es-3453"
+    target: "¿Cuántas calorías come usted al día?"
+    ipa: "ˈkwantas kaloˈɾias ˈkome usˈted al ˈdia"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Cuántas", ref: "es-0060" }, { word: "calorías", ref: "es-1947" }, { word: "come", ref: "es-0028" }, { word: "usted", ref: "es-0087" }, { word: "al", base: "al" }, { word: "día", ref: "es-0019" }]
+    confusables: [{ id: "vitamina", ref: "es-1946", kind: "word" }, { id: "es-1945", ref: "es-1945", kind: "word" }]
+  - id: "es-3454"
+    target: "Nunca me canso en la playa."
+    ipa: "ˈnunka me ˈkanso en la ˈplaʝa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Nunca", ref: "es-0321" }, { word: "me", base: "me" }, { word: "canso", ref: "es-1962" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "playa", ref: "es-0784" }]
+    confusables: [{ id: "es-1750", ref: "es-1750", kind: "word" }, { id: "cansado", ref: "es-0420", kind: "word" }]
+  - id: "es-3455"
+    target: "Nado cada semana para cuidar mis pulmones."
+    ipa: "ˈnado ˈkada seˈmana ˈpaɾa kwiˈdaɾ mis pulˈmones"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Nado", ref: "es-1066" }, { word: "cada", ref: "es-0366" }, { word: "semana", ref: "es-0840" }, { word: "para", base: "para" }, { word: "cuidar", ref: "es-1487" }, { word: "mis", ref: "es-0129" }, { word: "pulmones", ref: "es-1956" }]
+    confusables: [{ id: "es-1958", ref: "es-1958", kind: "word" }, { id: "bienestar", ref: "es-1954", kind: "word" }]
+  - id: "es-3456"
+    target: "Quiero mejorar mi postura."
+    ipa: "ˈkjeɾo mexoˈɾaɾ mi posˈtuɾa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Quiero", ref: "es-0661" }, { word: "mejorar", ref: "es-1485" }, { word: "mi", ref: "es-0129" }, { word: "postura", ref: "es-1969" }]
+    confusables: [{ id: "cuerpo", ref: "es-1587", kind: "word" }, { id: "es-1967", ref: "es-1967", kind: "word" }]
+  - id: "es-3457"
+    target: "¿Qué alimentos compras en el supermercado?"
+    ipa: "ke aliˈmentos ˈkompɾas en el supeɾmeɾˈkado"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Qué", ref: "es-0054" }, { word: "alimentos", ref: "es-1949" }, { word: "compras", ref: "es-0280" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "supermercado", ref: "es-0601" }]
+    confusables: [{ id: "tienda", ref: "es-0584", kind: "word" }, { id: "mercado", ref: "es-0567", kind: "word" }]
+  - id: "es-3458"
+    target: "Mi entrenador cambia el ritmo de los ejercicios."
+    ipa: "mi entɾenaˈdoɾ ˈkambja el ˈritmo de los exeɾˈθiθjos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "entrenador", ref: "es-1959" }, { word: "cambia", ref: "es-0588" }, { word: "el", base: "el" }, { word: "ritmo", ref: "es-1968" }, { word: "de", base: "de" }, { word: "los", base: "los" }, { word: "ejercicios", ref: "es-0913" }]
+    confusables: [{ id: "entrenar", ref: "es-1961", kind: "word" }, { id: "entrenamiento", ref: "es-1960", kind: "word" }]
+  - id: "es-3459"
+    target: "Ayer me cansé mucho en el gimnasio."
+    ipa: "aˈʝeɾ me kanˈse ˈmutʃo en el ximˈnasjo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Ayer", ref: "es-0332" }, { word: "me", base: "me" }, { word: "cansé", ref: "es-1962" }, { word: "mucho", ref: "es-0053" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "gimnasio", ref: "es-0912" }]
+    confusables: [{ id: "fatiga", ref: "es-1970", kind: "word" }, { id: "piscina", ref: "es-1423", kind: "word" }]
+  - id: "es-3460"
+    target: "Voy a relajarme en el parque hoy."
+    ipa: "boj a relaˈxaɾme en el ˈpaɾke oj"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Voy", ref: "es-0026" }, { word: "a", base: "a" }, { word: "relajarme", ref: "es-1943" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "parque", ref: "es-0777" }, { word: "hoy", ref: "es-0331" }]
+    confusables: [{ id: "descansar", ref: "es-0928", kind: "word" }, { id: "es-0810", ref: "es-0810", kind: "word" }]
+  - id: "es-3461"
+    target: "Los músculos necesitan descanso y mucha agua."
+    ipa: "los ˈmuskulos neθeˈsitan desˈkanso i ˈmutʃa ˈaɡwa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Los", base: "los" }, { word: "músculos", ref: "es-1958" }, { word: "necesitan", ref: "es-0288" }, { word: "descanso", ref: "es-0908" }, { word: "y", ref: "es-0048" }, { word: "mucha", ref: "es-0053" }, { word: "agua", ref: "es-0012" }]
+    confusables: [{ id: "es-1956", ref: "es-1956", kind: "word" }, { id: "cansancio", ref: "es-1940", kind: "word" }]
+  - id: "es-3462"
+    target: "¿Quién es el entrenador?"
+    ipa: "kjen es el entɾenaˈdoɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Quién", ref: "es-0055" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "entrenador", ref: "es-1959" }]
+    confusables: [{ id: "es-0506", ref: "es-0506", kind: "word" }, { id: "enfermero", ref: "es-1938", kind: "word" }]
+  - id: "es-3463"
+    target: "Mi madre hace yoga para mejorar su bienestar."
+    ipa: "mi ˈmadɾe ˈaθe ˈʝoɡa ˈpaɾa mexoˈɾaɾ su bjenesˈtaɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "madre", ref: "es-0160" }, { word: "hace", ref: "es-0025" }, { word: "yoga", ref: "es-1422" }, { word: "para", base: "para" }, { word: "mejorar", ref: "es-1485" }, { word: "su", ref: "es-0131" }, { word: "bienestar", ref: "es-1954" }]
+    confusables: [{ id: "pasatiempo", ref: "es-1401", kind: "word" }, { id: "masaje", ref: "es-1955", kind: "word" }]
+  - id: "es-3464"
+    target: "El ritmo de mi trabajo cambia mucho."
+    ipa: "el ˈritmo de mi tɾaˈbaxo ˈkambja ˈmutʃo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "ritmo", ref: "es-1968" }, { word: "de", base: "de" }, { word: "mi", ref: "es-0129" }, { word: "trabajo", ref: "es-0502" }, { word: "cambia", ref: "es-0588" }, { word: "mucho", ref: "es-0053" }]
+    confusables: [{ id: "cambio", ref: "es-0586", kind: "word" }, { id: "empresa", ref: "es-0514", kind: "word" }]
