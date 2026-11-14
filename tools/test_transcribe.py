@@ -56,7 +56,7 @@ class ReadingTest(unittest.TestCase):
             ("తోరణం", "toranam", "tōraṇaṁ", "t̪oːraɳam"),
             ("ఆహ్వానం", "ahvanam", "āhvānaṁ", "aːhʋaːnam"),
             ("ఆనందం", "anandam", "ānandaṁ", "aːnand̪am"),
-            ("నృత్యం", "nrutyam", "nṛtyaṁ", "nrut̪jam"),
+            ("నృత్యం", "nrutyam", "nrutyaṁ", "nrut̪jam"),
             ("ఉత్సాహం", "utsaham", "utsāhaṁ", "ut̪saːham"),
             ("పవిత్రం", "pavitram", "pavitraṁ", "paʋit̪ram"),
             ("సంగీతం", "sangeetam", "saṅgītaṁ", "saŋɡiːt̪am"),

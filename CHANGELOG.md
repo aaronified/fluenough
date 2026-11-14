@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- `tools/transcribe.py`, `tools/test_transcribe.py`: the Telugu transcription writes a word-final anusvara as `ṁ` (annaṁ, IPA `m`), keeps it before s and v (māṁsaṁ), and writes ఋ as `ṛ`, as the course's cards do; other languages are unchanged (#1292).
+- `tools/transcribe.py`, `tools/test_transcribe.py`: the Telugu transcription writes a word-final anusvara as `ṁ` (annaṁ, IPA `m`), keeps it before s and v (māṁsaṁ); other languages are unchanged (#1292).
 
 ## [0.10.2] - 2026-11-14
 

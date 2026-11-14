@@ -259,7 +259,7 @@ def _vowel_after(chars, i, off, units, lang) -> int:
 # How each vowel is written and said, by language: (ISO letters, IPA).
 _VOWELS_TE = {"a": ("a", "a"), "aa": ("ā", "aː"), "i": ("i", "i"),
               "ii": ("ī", "iː"), "u": ("u", "u"), "uu": ("ū", "uː"),
-              "r": ("ṛ", "ru"), "rr": ("rū", "ruː"), "se": ("e", "e"),
+              "r": ("ru", "ru"), "rr": ("rū", "ruː"), "se": ("e", "e"),
               "e": ("ē", "eː"), "ai": ("ai", "ai"), "so": ("o", "o"),
               "o": ("ō", "oː"), "au": ("au", "au"), "ce": ("ê", "æ"),
               "co": ("ô", "ɔ")}
