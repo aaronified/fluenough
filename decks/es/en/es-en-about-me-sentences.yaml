@@ -5,7 +5,7 @@ core: "es-about-me-sentences"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Sentences: about me"
 license: "CC-BY-SA-4.0"
-description: "Ten sentences about yourself, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+description: "Thirty-five sentences about yourself, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
 
 cards:
   "es-0264":
@@ -96,3 +96,184 @@ cards:
     confusables:
       "age": { why: "Edad is age; this question asks it with años." }
       "birthday": { why: "Cumpleaños is birthday, not age." }
+  "es-3200":
+    native: "I am from Lima."
+    bases:
+      "de": "of; from"
+      "Lima": "Lima"
+    confusables:
+      "nationality": { why: "Nacionalidad is nationality, not the place you come from." }
+      "age": { why: "Edad is age, not where you are from." }
+  "es-3201":
+    native: "I speak a lot here, sir."
+    bases:
+      "señor": "sir; Mr"
+    confusables:
+      "language": { why: "Idioma is language, the thing you speak, not the act of speaking." }
+      "eat": { why: "Comer is to eat, not to speak." }
+  "es-3202":
+    native: "You work here too."
+    bases: {}
+    confusables:
+      "study": { why: "Estudiar is to study, not to work." }
+      "job": { why: "Profesión is job, a noun, not the verb to work." }
+  "es-3203":
+    native: "You eat here too."
+    bases: {}
+    confusables:
+      "speak": { why: "Hablar is to speak, not to eat." }
+      "food": { why: "La comida is food, a noun, not the verb to eat." }
+  "es-3204":
+    native: "She is the teacher of your grandmother."
+    bases:
+      "la": "the"
+      "de": "of"
+    confusables:
+      "job": { why: "Profesión is job, not teacher." }
+      "family": { why: "Familia is family, not a teacher." }
+  "es-3205":
+    native: "Pedro has two children."
+    bases:
+      "Pedro": "Pedro"
+      "hijos": "children; sons"
+    confusables:
+      "brother": { why: "Hermano is brother, not child." }
+      "grandson": { why: "Nieto is grandson, not child." }
+  "es-3206":
+    native: "Luis studies and works a lot here."
+    bases:
+      "Luis": "Luis"
+    confusables:
+      "language": { why: "Idioma is language, not work." }
+      "job": { why: "Profesión is job, a noun, not a verb." }
+  "es-3207":
+    native: "Where do you and your husband work here?"
+    bases: {}
+    confusables:
+      "who": { why: "Quién is who, not where." }
+      "job": { why: "Profesión is job, not a place of work." }
+  "es-3208":
+    native: "Who is your sister?"
+    bases: {}
+    confusables:
+      "brother": { why: "Hermano is brother, not sister." }
+      "what": { why: "Qué is what, not who." }
+  "es-3209":
+    native: "My mother has three brothers and two daughters."
+    bases:
+      "hermanos": "brothers; siblings"
+      "hijas": "daughters"
+    confusables:
+      "sister": { why: "Hermana is sister, not brother." }
+      "aunt": { why: "Tía is aunt, not mother." }
+  "es-3210":
+    native: "My aunt has no children."
+    bases:
+      "hijos": "children; sons"
+    confusables:
+      "uncle": { why: "Tío is uncle, not aunt." }
+      "son": { why: "Hijo is son, not child." }
+  "es-3211":
+    native: "Nobody eats in the street, madam."
+    bases:
+      "en": "in"
+      "la": "the"
+    confusables:
+      "someone": { why: "Alguien is someone, the opposite of nobody." }
+      "everyone": { why: "Todos is everyone, not nobody." }
+  "es-3212":
+    native: "My grandmother is here, and my aunt is too."
+    bases: {}
+    confusables:
+      "grandfather": { why: "Abuelo is grandfather, not grandmother." }
+      "uncle": { why: "Tío is uncle, not aunt." }
+  "es-3213":
+    native: "My brother goes here too."
+    bases: {}
+    confusables:
+      "sister": { why: "Hermana is sister, not brother." }
+      "eat": { why: "Comer is to eat, not to go." }
+  "es-3214":
+    native: "Are you calm, Ana?"
+    bases:
+      "tranquila": "calm (said of a woman)"
+      "Ana": "Ana"
+    confusables:
+      "single": { why: "Soltero is single, not calm." }
+      "young": { why: "Joven is young, not calm." }
+  "es-3215":
+    native: "My wife studies a lot in the neighbourhood."
+    bases:
+      "en": "in"
+      "el": "the"
+    confusables:
+      "address": { why: "Dirección is address, not neighbourhood." }
+      "husband": { why: "Esposo is husband, not wife." }
+  "es-3216":
+    native: "They do not eat here, sir and madam."
+    bases:
+      "señor": "sir; Mr"
+      "señora": "madam; Mrs"
+    confusables:
+      "we": { why: "Nosotros is we, not they." }
+      "you-formal": { why: "Usted is you, formal, not they." }
+  "es-3217":
+    native: "I am here too, and my husband is too."
+    bases: {}
+    confusables:
+      "he": { why: "Él is he, not I." }
+      "wife": { why: "Esposa is wife, not husband." }
+  "es-3218":
+    native: "My sister talks a lot about her family."
+    bases:
+      "de": "about; of"
+    confusables:
+      "brother": { why: "Hermano is brother, not sister." }
+      "father": { why: "Padre is father, not family." }
+  "es-3219":
+    native: "She goes to the street."
+    bases:
+      "a": "to"
+      "la": "the"
+    confusables:
+      "he": { why: "Él is he, not she." }
+      "food": { why: "La comida is food, not street." }
+  "es-3220":
+    native: "I live in Lima, and you do too."
+    bases:
+      "vivo": "I live; live"
+      "en": "in"
+      "Lima": "Lima"
+    confusables:
+      "nationality": { why: "Nacionalidad is nationality, not where you live." }
+      "neighbourhood": { why: "Barrio is neighbourhood, not city." }
+  "es-3221":
+    native: "Pedro talks a lot too."
+    bases:
+      "Pedro": "Pedro"
+    confusables:
+      "eat": { why: "Comer is to eat, not to speak." }
+      "language": { why: "Idioma is language, the thing spoken, not the act." }
+  "es-3222":
+    native: "They study in the neighbourhood, and my mother does too."
+    bases:
+      "en": "in"
+      "el": "the"
+    confusables:
+      "job": { why: "Profesión is job, not study." }
+      "number": { why: "Número is number, not a place." }
+  "es-3223":
+    native: "Where do you live, Luis?"
+    bases:
+      "vives": "you live"
+      "Luis": "Luis"
+    confusables:
+      "when": { why: "Cuándo is when, not where." }
+      "address": { why: "Dirección is address, not where you live." }
+  "es-3224":
+    native: "Are you going here, Ana?"
+    bases:
+      "Ana": "Ana"
+    confusables:
+      "who": { why: "Quién is who, not here." }
+      "how": { why: "Cómo is how, not here." }
