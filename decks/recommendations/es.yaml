@@ -1,0 +1,255 @@
+# Popular works of the Spanish-speaking world that are not in the public domain: the learner finds them (a library, a shop, a service) and the app asks
+# the questions after the learner has marked the work as seen, read or heard. Nothing of a work is quoted (wiki/Plan-Language-Completeness.md,
+# "Source-it-yourself works"). No links are given: no link has been checked.
+schema: 1
+kind: "recommendations"
+id: "recommendations-es"
+language: "es"
+license: "CC-BY-SA-4.0"
+recommendations:
+  - id: "es-rec-el-laberinto-del-fauno"
+    medium: "film"
+    title: { text: "El laberinto del fauno" }
+    creator: ["es-guillermo-del-toro"]
+    year: 2006
+    level: "B1"
+    briefing: { en: "A dark fantasy film set in Spain in 1944, after the civil war. A girl moves with her pregnant mother to the countryside, where her stepfather is a cruel captain. In the woods she finds an old labyrinth and a strange creature." }
+    questions:
+      - { id: "q1", prompt: { en: "In which kind of building is Captain Vidal's post?" }, options: { en: ["A church", "A castle", "A mill"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "What is the name of the girl's mother?" }, options: { en: ["Carmen", "Mercedes", "Elena"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What does the faun ask Ofelia to give him for her third task?" }, options: { en: ["Her mother's ring", "The key from the toad", "Her baby brother's blood"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "es-rec-volver"
+    medium: "film"
+    title: { text: "Volver" }
+    creator: ["es-pedro-almodovar"]
+    year: 2006
+    level: "B1"
+    briefing: { en: "A comedy-drama about a family of women from a village. The story moves between Madrid and the village, and a family secret comes back to life." }
+    questions:
+      - { id: "q1", prompt: { en: "In which region is the village where the family comes from?" }, options: { en: ["La Mancha", "Andalusia", "Galicia"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Which character returns from the dead as a ghost?" }, options: { en: ["Sole", "Irene", "Agustina"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What is the name of the hot wind that blows over the village?" }, options: { en: ["Mistral", "Solano", "Tramontana"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "es-rec-todo-sobre-mi-madre"
+    medium: "film"
+    title: { text: "Todo sobre mi madre" }
+    creator: ["es-pedro-almodovar"]
+    year: 1999
+    level: "B2"
+    briefing: { en: "A nurse in Madrid loses her son in a sudden accident and goes to Barcelona to find the boy's father. There she meets actresses and other people who change her life." }
+    questions:
+      - { id: "q1", prompt: { en: "How does the son die?" }, options: { en: ["He falls from a balcony", "He is hit by a car", "He drowns in the sea"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Which actress was Esteban chasing for an autograph?" }, options: { en: ["Rosa", "Huma Rojo", "Lola"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Who is the boy's father, whom Manuela looks for in Barcelona?" }, options: { en: ["Huma Rojo", "Rosa", "Lola"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "es-rec-roma"
+    medium: "film"
+    title: { text: "Roma" }
+    creator: ["es-alfonso-cuaron"]
+    year: 2018
+    level: "B2"
+    briefing: { en: "A black-and-white film about a live-in housekeeper in a middle-class family in Mexico City. It is based on the director's own childhood and shows the family's daily life and some turbulent events in the city." }
+    questions:
+      - { id: "q1", prompt: { en: "What is the name of the housekeeper at the centre of the film?" }, options: { en: ["Sofía", "Carmen", "Cleo"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "When is the film set?" }, options: { en: ["In the early 1970s", "In the 1950s", "In the 1990s"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What violent event happens in the city during a street protest?" }, options: { en: ["A football match", "A massacre of protesters", "A wedding"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "es-rec-amores-perros"
+    medium: "film"
+    title: { text: "Amores perros" }
+    creator: ["es-alejandro-gonzalez-inarritu"]
+    year: 2000
+    level: "C1"
+    briefing: { en: "Three stories set in Mexico City that are connected in ways the viewer slowly discovers. The film shows love, violence and chance through the lives of people from very different backgrounds." }
+    questions:
+      - { id: "q1", prompt: { en: "What links the three stories in the film?" }, options: { en: ["A car crash", "A wedding", "A lottery ticket"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "What does Octavio do with his dog in the first story?" }, options: { en: ["He trains it to guard sheep", "He enters it in illegal dog fights", "He sells it to a neighbour"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What is Valeria's job?" }, options: { en: ["Teacher", "Doctor", "Model"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "es-rec-el-secreto-de-sus-ojos"
+    medium: "film"
+    title: { text: "El secreto de sus ojos" }
+    creator: ["es-juan-jose-campanella"]
+    year: 2009
+    level: "B2"
+    briefing: { en: "A retired man in Buenos Aires writes a novel about a murder case he could never solve. Writing it brings back the people and the feelings of that time, and the story moves between the past and the present." }
+    questions:
+      - { id: "q1", prompt: { en: "What is the job of the main character, Benjamín Esposito?" }, options: { en: ["Journalist", "Police officer", "A court official"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "In which year was the crime committed that he writes about?" }, options: { en: ["1964", "1974", "1984"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What is the name of the new department chief at the court, the woman he loves?" }, options: { en: ["Irene", "Liliana", "Sandoval"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "es-rec-y-tu-mama-tambien"
+    medium: "film"
+    title: { text: "Y tu mamá también" }
+    creator: ["es-alfonso-cuaron"]
+    year: 2001
+    level: "C1"
+    briefing: { en: "Two young men take a woman they have just met on a road trip to a beach they hope to reach. The trip shows the friendship between them and the changes in their lives." }
+    questions:
+      - { id: "q1", prompt: { en: "What is the name of the older woman who joins the two young men?" }, options: { en: ["Luisa", "Mariana", "Carmen"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "What is the name of the beach they plan to visit?" }, options: { en: ["Acapulco", "Boca del Cielo", "Cancún"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Which country is the film set in?" }, options: { en: ["Spain", "Argentina", "Mexico"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "es-rec-la-historia-oficial"
+    medium: "film"
+    title: { text: "La historia oficial" }
+    creator: ["es-luis-puenzo"]
+    year: 1985
+    level: "B2"
+    briefing: { en: "A woman in Buenos Aires begins to doubt what she has always believed about her family and her country. The story is set against the political events of its time." }
+    questions:
+      - { id: "q1", prompt: { en: "What is Alicia's job?" }, options: { en: ["Doctor", "Lawyer", "History teacher"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "What is the background of the film's story?" }, options: { en: ["An economic crisis", "The last military dictatorship", "A war with a neighbour"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What does Alicia learn about her adopted daughter, Gaby?" }, options: { en: ["That she is Roberto's daughter", "That she was born in Spain", "That she is the child of people who were disappeared"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "es-rec-los-lunes-al-sol"
+    medium: "film"
+    title: { text: "Los lunes al sol" }
+    creator: ["es-fernando-leon-de-aranoa"]
+    year: 2002
+    level: "B1"
+    briefing: { en: "A group of men who have lost their jobs in a port city spend their days together. Their friendship and their hopes are tested as the years pass." }
+    questions:
+      - { id: "q1", prompt: { en: "Which actor plays the character Santa?" }, options: { en: ["Luis Tosar", "Joaquín Climent", "Javier Bardem"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "What caused the men to lose their jobs?" }, options: { en: ["An industrial restructuring", "A flood", "A war"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Which city is the film set in?" }, options: { en: ["Madrid", "Vigo", "Bilbao"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "es-rec-la-casa-de-papel"
+    medium: "series"
+    title: { text: "La casa de papel" }
+    creator: ["es-alex-pina"]
+    year: 2017
+    level: "B1"
+    briefing: { en: "A television series about a group of robbers who plan two large robberies in Spain, with a plot full of twists." }
+    questions:
+      - { id: "q1", prompt: { en: "Who leads the robbery?" }, options: { en: ["Tokyo", "Berlín", "The Professor"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "Which building is the first target of the robbery?" }, options: { en: ["The Royal Mint", "The Bank of Spain", "A museum"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Who tells the story of the robbery?" }, options: { en: ["Raquel", "The Professor", "Tokyo"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "es-rec-cien-anos-de-soledad"
+    medium: "book"
+    title: { text: "Cien años de soledad" }
+    creator: ["es-gabriel-garcia-marquez"]
+    year: 1967
+    level: "B2"
+    script: "latin"
+    briefing: { en: "A novel about the Buendía family over seven generations in an imaginary village called Macondo. The village grows, is changed by civil war and a banana company, and finally falls into ruin." }
+    questions:
+      - { id: "q1", prompt: { en: "In which country is the village of Macondo?" }, options: { en: ["Colombia", "Mexico", "Argentina"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who founds the village of Macondo?" }, options: { en: ["Aureliano Buendía", "José Arcadio Buendía", "Melquíades"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What does Aureliano Babilonia discover in Melquíades' parchments?" }, options: { en: ["A map to a treasure", "A recipe for gold", "The history of the Buendía family"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "es-rec-la-sombra-del-viento"
+    medium: "book"
+    title: { text: "La sombra del viento" }
+    creator: ["es-carlos-ruiz-zafon"]
+    year: 2001
+    level: "B2"
+    script: "latin"
+    briefing: { en: "A novel set in a city after the Spanish Civil War. A boy named Daniel finds a book by an unknown author, Julián Carax, among many old books. As he grows up, he looks into the author's past and finds that someone is burning all of Carax's books." }
+    questions:
+      - { id: "q1", prompt: { en: "In which city is the story set?" }, options: { en: ["Barcelona", "Madrid", "Valencia"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Where does Daniel's father first take him to choose a book?" }, options: { en: ["A library in Madrid", "The Cemetery of Forgotten Books", "A bookshop on the coast"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What was Fermín Romero de Torres when Daniel first met him?" }, options: { en: ["A police inspector", "A bookseller", "A vagabond"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "es-rec-la-casa-de-los-espiritus"
+    medium: "book"
+    title: { text: "La casa de los espíritus" }
+    creator: ["es-isabel-allende"]
+    year: 1982
+    level: "B2"
+    script: "latin"
+    briefing: { en: "A novel about the Trueba family over four generations, from the early 1900s to the 1970s. It mixes family drama with magic, such as a clairvoyant grandmother, and with the political changes of the country where the story is set. The story includes a military coup." }
+    questions:
+      - { id: "q1", prompt: { en: "Which country is the family's story set in?" }, options: { en: ["Chile", "Argentina", "Peru"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Whose notebooks does Alba find?" }, options: { en: ["Rosa's", "Clara's", "Blanca's"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What happens to Jaime, Blanca's brother, during the coup?" }, options: { en: ["He becomes a senator", "He flees to Canada", "He is shot"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "es-rec-rayuela"
+    medium: "book"
+    title: { text: "Rayuela" }
+    creator: ["es-julio-cortazar"]
+    year: 1963
+    level: "B2"
+    script: "latin"
+    briefing: { en: "An Argentine novel that can be read in several orders, so the reader chooses the path. It follows Horacio Oliveira, a restless man who searches for meaning with a woman called la Maga, first in one city and then in his home country." }
+    questions:
+      - { id: "q1", prompt: { en: "In which city does the first part of the novel take place?" }, options: { en: ["Paris", "Buenos Aires", "Montevideo"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "What is the name of the group of friends who talk about art and philosophy?" }, options: { en: ["Club de la Luna", "Club de la Serpiente", "Club de los Poetas"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "How many chapters does the novel have?" }, options: { en: ["56", "62", "155"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "es-rec-mafalda"
+    medium: "comic"
+    title: { text: "Mafalda" }
+    creator: ["es-quino"]
+    year: 1964
+    level: "B1"
+    briefing: { en: "A comic strip about a young girl who rebels against the world she has inherited from adults. It is known in many countries and has been translated into more than thirty languages." }
+    questions:
+      - { id: "q1", prompt: { en: "In which country was the comic strip created?" }, options: { en: ["Argentina", "Spain", "Mexico"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "What does Mafalda worry about?" }, options: { en: ["Her school marks", "World peace and humanity", "Football"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "In which year did the last strip appear?" }, options: { en: ["1971", "1975", "1973"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "es-rec-condorito"
+    medium: "comic"
+    title: { text: "Condorito" }
+    creator: ["es-rene-rios-boettiger"]
+    year: 1949
+    level: "B1"
+    briefing: { en: "A comic strip about Condorito, a cheerful condor from a humble background who loves parties and tries to do as little work as possible, although he is honest and kind-hearted. The strips are set in a small provincial town." }
+    questions:
+      - { id: "q1", prompt: { en: "In which country is Condorito from?" }, options: { en: ["Chile", "Peru", "Argentina"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who is Condorito's girlfriend?" }, options: { en: ["Doña Tremebunda", "Yayita", "Huevoduro"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What is the name of the town where the strips are set?" }, options: { en: ["Macondo", "Comala", "Pelotillehue"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "es-rec-gracias-a-la-vida"
+    medium: "song"
+    title: { text: "Gracias a la vida" }
+    creator: ["es-violeta-parra"]
+    year: 1966
+    level: "B1"
+    briefing: { en: "A song written in 1966 by the Chilean singer Violeta Parra, who was living abroad at the time. Its title means thanks to life. It is often called a humanist anthem and is one of the best-known songs in the Spanish language." }
+    questions:
+      - { id: "q1", prompt: { en: "In which city was the song written?" }, options: { en: ["La Paz", "Santiago", "Lima"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Which Argentine singer made the song known around the world in 1971?" }, options: { en: ["Joan Baez", "Mercedes Sosa", "Isabel Parra"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Which album does the song open?" }, options: { en: ["Homenaje a Violeta Parra", "El Llano en llamas", "Las últimas composiciones"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "es-rec-radio-ambulante"
+    medium: "podcast"
+    title: { text: "Radio Ambulante" }
+    creator: ["es-daniel-alarcon"]
+    year: 2012
+    level: "B2"
+    briefing: { en: "A podcast in Spanish that publishes long audio stories from Latin America, on topics such as human rights, migration and political crises." }
+    questions:
+      - { id: "q1", prompt: { en: "Who presents the podcast?" }, options: { en: ["Daniel Alarcón", "Julio Cortázar", "Isabel Allende"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Where is the team that makes the podcast based?" }, options: { en: ["Madrid", "San Francisco", "Mexico City"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "How long is each episode?" }, options: { en: ["Between 2 and 5 minutes", "More than two hours", "Between 25 and 55 minutes"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "es-rec-pedro-paramo"
+    medium: "book"
+    title: { text: "Pedro Páramo" }
+    creator: ["es-juan-rulfo"]
+    year: 1955
+    level: "B2"
+    script: "latin"
+    briefing: { en: "A novel by the Mexican writer Juan Rulfo about a young man who travels to a village to find his father. As he walks through the village, he slowly realises that many of the people he meets are dead." }
+    questions:
+      - { id: "q1", prompt: { en: "Where does Juan Preciado go to look for his father?" }, options: { en: ["Comala", "Macondo", "Pelotillehue"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "What did Juan promise his dying mother?" }, options: { en: ["To become a priest", "To go and find his father", "To sell the family house"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Which period is the story set in?" }, options: { en: ["The Spanish conquest", "The Spanish Civil War", "The Mexican Revolution and the Cristero War"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "es-rec-la-ciudad-y-los-perros"
+    medium: "book"
+    title: { text: "La ciudad y los perros" }
+    creator: ["es-mario-vargas-llosa"]
+    year: 1963
+    level: "B2"
+    script: "latin"
+    briefing: { en: "The first novel by the Peruvian writer Mario Vargas Llosa. It is set in a military school in Lima, where teenage cadets live under strict discipline. Their friendships and rivalries grow, and the story jumps between several cadets and their different points of view." }
+    questions:
+      - { id: "q1", prompt: { en: "What is the name of the lieutenant who leads the morning lineups?" }, options: { en: ["Teniente Gamboa", "Brigadier Arróspide", "Negro Vallano"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Which school subject is the exam whose questions are stolen?" }, options: { en: ["Mathematics", "Chemistry", "History"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Which cadet is called the Poet?" }, options: { en: ["Ricardo Arana", "Jaguar", "Alberto Fernández"] }, answer: 3 }
+    tags: ["unreviewed"]

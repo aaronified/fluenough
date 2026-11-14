@@ -273,3 +273,17 @@ cards:
     tags: ["sentence"]
     bases: [{ word: "Antes", ref: "es-0335" }, { word: "de", base: "de" }, { word: "salir", ref: "es-0690" }, { word: "miro", ref: "es-0292" }, { word: "el", base: "el" }, { word: "itinerario", ref: "es-1718" }, { word: "la", base: "la" }, { word: "ciudad", ref: "es-0016" }]
     confusables: [{ id: "mapa", ref: "es-0710", kind: "word" }, { id: "destino", ref: "es-1711", kind: "word" }]
+  - id: "es-4610"
+    target: "Un billete de ida, por favor."
+    ipa: "un biˈʝete de ˈida poɾ faˈboɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Un", base: "un" }, { word: "billete", ref: "es-0685" }, { word: "de", base: "de" }, { word: "ida", ref: "es-1698" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+    confusables: [{ id: "taquilla", ref: "es-1695", kind: "word" }, { id: "ticket", ref: "es-1706", kind: "word" }]
+  - id: "es-4611"
+    target: "Un billete de ida y vuelta."
+    ipa: "un biˈʝete de ˈida i ˈbwelta"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Un", base: "un" }, { word: "billete", ref: "es-0685" }, { word: "de", base: "de" }, { word: "ida", ref: "es-1698" }, { word: "y", ref: "es-0048" }, { word: "vuelta", ref: "es-1699" }]
+    confusables: [{ id: "tarifa", ref: "es-1705", kind: "word" }, { id: "asiento", ref: "es-1697", kind: "word" }]
