@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- `tools/transcribe.py`, `tools/test_transcribe.py`: the Telugu transcription writes a word-final anusvara as `ṁ` (annaṁ, IPA `m`), keeps it before s and v (māṁsaṁ); other languages are unchanged (#1292).
+
 ## [0.10.2] - 2026-11-14
 
 - `lib/core/models/character.dart`, `lib/core/data/deck_character.dart`, `tools/validate_decks.py`, `tools/deck_index.py`: a script deck's cards may carry a structured `character` block (readings by kind, level, strokes, radical) read against the deck's `character_scheme`; the validator checks it, and a deck file that uses it is put behind app 0.10.2 in the index (#1226).
