@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- `lib/core/models/character.dart`, `lib/core/data/deck_character.dart`, `tools/validate_decks.py`, `tools/deck_index.py`: a script deck's cards may carry a structured `character` block (readings by kind, level, strokes, radical) read against the deck's `character_scheme`; the validator checks it, and a deck file that uses it is put behind app 0.10.2 in the index (#1226).
+
 ## [0.10.1] - 2026-11-13
 
 - **Extra tiles in word order.** When a sentence has look-alike wrong words or marks, they now sit among its tiles, and an answer that uses one is not right.

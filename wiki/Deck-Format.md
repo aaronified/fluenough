@@ -809,6 +809,78 @@ release that carries this, and each such file is held to it with
 `decks/min_app.json`
 ([ADR-0052](ADR-0052-Minimum-App-Version-In-The-Deck-Index)).
 
+### Character data (`character_scheme`, `character`)
+
+A card of a script deck (`pos: "letter"` or `"digit"`: one character on the
+card) may carry structured data about its character, so that a filter, a
+question or a search can use it instead of reading prose in a note (#1226).
+It is the same for every language and every script: the deck says which kinds
+of reading and which level schemes its characters have, and each card gives
+its values. No language or script is named in the app or in the tools.
+
+The deck's header (a single-file deck, or a core) names the kinds and the
+schemes:
+
+```yaml
+character_scheme:
+  readings:
+    first:  { name: { en: "First reading", es: "Primera lectura" }, script: "bengali" }
+    second: { name: { en: "Second reading" }, script: "latin" }
+  levels:
+    grade: { name: { en: "School grade" }, values: [1, 2, 3, 4, 5, 6] }
+    exam:  { name: { en: "Exam" }, values: ["E2", "E1"] }
+```
+
+- `readings`: a mapping of kind id (`[a-z0-9-]+`) to `name` (text by
+  language code, `en` required: what the app shows) and `script`, the script
+  id the kind's readings are written in. A language with one way of reading a
+  character has one kind; one with two (a Han character read two ways) has
+  two. At least one of `readings` and `levels` is there.
+- `levels`: a mapping of scheme id to `name` (as above) and optional
+  `values`, the allowed values in order, whole numbers or text, none twice.
+  Without `values` any value is allowed.
+
+A card's block, in a core or a single-file deck (never in a layer, which
+carries no `character`: the validator and the app refuse it there):
+
+```yaml
+  - id: "zz-9801"
+    target: "ক"
+    pos: "letter"
+    character:
+      readings:
+        - { kind: "first", text: "কা", reading: "kaa" }
+        - { kind: "second", text: "ka" }
+      level: { grade: 1, exam: "E2" }
+      strokes: 4
+      radical: "ক"
+```
+
+| Field | Rule |
+|---|---|
+| `readings` | A non-empty list of `{ kind, text, reading? }`. `kind` is one of the header's reading kinds; `text` is the reading, written in that kind's `script` (letters and marks only are checked, as for `target_scripts`; a script the validator has no blocks for is not checked); `reading` is its romanisation, optional. The same kind and text is not listed twice. |
+| `level` | A mapping of scheme id to value, each scheme one of the header's `levels` and each value one of its `values` where it has them. |
+| `strokes` | A whole number from 1 to 64. |
+| `radical` | One character (one code point). |
+
+Every field is optional, but the block is not empty. The block needs the
+header's `character_scheme`, and the card needs `pos: "letter"` or `"digit"`.
+A deck that uses neither is checked as before. The app reads the block into
+`Card.character` and the header into `Deck.characterScheme`
+(`lib/core/models/character.dart`); nothing shows or drills it yet.
+
+**A released app refuses a card field it does not know, so a file that has a
+`character` block, or a `character_scheme`, waits for the app that reads
+them.** `tools/deck_index.py` writes that itself: the validator marks the file
+as using a new card field, and the index gives its entry `min_app` of
+`CARD_FIELD_MIN_APP["character"]` (today `0.10.2`, the first release that
+reads it), with no line in `decks/min_app.json`
+([ADR-0052](ADR-0052-Minimum-App-Version-In-The-Deck-Index)). A hand entry
+newer than that wins; an older one does not lower it. Until the kanji tasks
+move over, the readings stay in the fixed note shape. The fixtures are the
+`zz` decks of `tools/test_validate_character.py` and
+`test/character_data_test.dart`.
+
 ### A note on `id`
 
 Card ids are the primary key of the user's entire review history. Changing an

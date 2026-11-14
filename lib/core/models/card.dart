@@ -1,5 +1,6 @@
 import 'level.dart';
 import 'card_source.dart';
+import 'character.dart';
 import 'drill_mode.dart';
 import 'rule.dart';
 
@@ -389,6 +390,7 @@ class CardRef {
       creators: written.creators,
       sourceBlock: written.sourceBlock,
       legacy: written.legacy,
+      character: written.character,
     );
   }
 }
@@ -453,6 +455,7 @@ class Card {
     this.creators = const <String>[],
     this.sourceBlock,
     this.legacy,
+    this.character,
   });
 
   /// Stable for the life of the card. This is the key the user's entire review
@@ -694,6 +697,11 @@ class Card {
   /// the deck gives, read tolerantly and not shown yet. Null for a card with
   /// none.
   final Map<String, Object?>? legacy;
+
+  /// Structured data about the character a script deck's card teaches
+  /// (`character`, #1226): readings by kind, levels, strokes, radical. Null
+  /// for a card with none. Read against the deck's [CharacterScheme].
+  final CardCharacter? character;
 
   /// The drills this card can actually be used for, given whether the device
   /// has a voice for the language, and whether it can recognise speech in it.
