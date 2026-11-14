@@ -1,0 +1,151 @@
+# Telugu compound verbs: a verbal participle (-ఇ) and an auxiliary that adds completion, departure or preparation.
+schema: 1
+id: "te-multiword-compound-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+genre: "multiword"
+pattern_family: "aspectual-compound"
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - id: "te-9150"
+    target: "వెళ్ళిపోవడం"
+    words: ["వెళ్ళి", "పోవడం"]
+    reading: "veḷḷipōvaḍaṁ"
+    ipa: "ʋeɭɭipoːʋaɖam"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "వెళ్ళి", ref: "te-0622" }
+      - { word: "పోవడం", base: "పోవడం", reading: "pōvaḍaṁ" }
+  - id: "te-9151"
+    target: "పడిపోవడం"
+    words: ["పడి", "పోవడం"]
+    reading: "paḍipōvaḍaṁ"
+    ipa: "paɖipoːʋaɖam"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "పడి", ref: "te-0839" }
+      - { word: "పోవడం", base: "పోవడం", reading: "pōvaḍaṁ" }
+  - id: "te-9152"
+    target: "ఎగిరిపోవడం"
+    words: ["ఎగిరి", "పోవడం"]
+    reading: "egiripōvaḍaṁ"
+    ipa: "eɡiripoːʋaɖam"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ఎగిరి", ref: "te-0845" }
+      - { word: "పోవడం", base: "పోవడం", reading: "pōvaḍaṁ" }
+  - id: "te-9153"
+    target: "అయిపోవడం"
+    words: ["అయి", "పోవడం"]
+    reading: "ayipōvaḍaṁ"
+    ipa: "ajipoːʋaɖam"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "అయి", ref: "te-0646" }
+      - { word: "పోవడం", base: "పోవడం", reading: "pōvaḍaṁ" }
+  - id: "te-9154"
+    target: "తెచ్చిపెట్టడం"
+    words: ["తెచ్చి", "పెట్టడం"]
+    reading: "teccipeṭṭaḍaṁ"
+    ipa: "t̪etʃtʃipeʈʈaɖam"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "తెచ్చి", ref: "te-0632" }
+      - { word: "పెట్టడం", ref: "te-0830" }
+  - id: "te-9155"
+    target: "ఆగిపోవడం"
+    words: ["ఆగి", "పోవడం"]
+    reading: "āgipōvaḍaṁ"
+    ipa: "aːɡipoːʋaɖam"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ఆగి", ref: "te-0648" }
+      - { word: "పోవడం", base: "పోవడం", reading: "pōvaḍaṁ" }
+  - id: "te-9156"
+    target: "తినేయడం"
+    words: ["తినేయడం"]
+    reading: "tinēyaḍaṁ"
+    ipa: "t̪ineːjaɖam"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "తినేయడం", ref: "te-0624" }
+  - id: "te-9157"
+    target: "చెప్పేయడం"
+    words: ["చెప్పేయడం"]
+    reading: "ceppēyaḍaṁ"
+    ipa: "tʃeppeːjaɖam"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "చెప్పేయడం", ref: "te-0628" }
+  - id: "te-9158"
+    target: "కొనుక్కోవడం"
+    words: ["కొనుక్కోవడం"]
+    reading: "konukkōvaḍaṁ"
+    ipa: "konukkoːʋaɖam"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "కొనుక్కోవడం", ref: "te-0641" }
+  - id: "te-9159"
+    target: "చేసుకోవడం"
+    words: ["చేసుకోవడం"]
+    reading: "cēsukōvaḍaṁ"
+    ipa: "tʃeːsukoːʋaɖam"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "చేసుకోవడం", ref: "te-0621" }
+  - id: "te-9160"
+    target: "చూసుకోవడం"
+    words: ["చూసుకోవడం"]
+    reading: "cūsukōvaḍaṁ"
+    ipa: "tʃuːsukoːʋaɖam"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "చూసుకోవడం", ref: "te-0626" }
