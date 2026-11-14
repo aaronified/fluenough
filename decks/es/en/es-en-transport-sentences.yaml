@@ -5,7 +5,7 @@ core: "es-transport-sentences"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Sentences: getting around"
 license: "CC-BY-SA-4.0"
-description: "Six sentences about travel by bus, train and plane, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+description: "Nine sentences about travel by bus, train and plane, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
 cards:
   "es-0694":
     notes:
@@ -41,3 +41,17 @@ cards:
     native: "The road is good and the airport is far."
     bases: {"La": "the", "el": "the"}
     confusables: {"calle": { why: "Calle is a street, in a town." }, "barco": { why: "Barco is a boat, not a road." }}
+  "es-4600":
+    native: "To the station, please."
+    bases: {"A": "to", "la": "the", "por": "for", "favor": "please"}
+    confusables: {"aeropuerto": { why: "Aeropuerto is the airport, where planes leave from." }, "parada": { why: "Parada is a stop, where a bus or tram halts." }}
+  "es-4601":
+    native: "How much is the trip?"
+    bases: {"el": "the"}
+    confusables: {"precio": { why: "Precio is the price, a noun; here cuesta is the verb." }, "tarifa": { why: "Tarifa is the fare, the set rate for a ride." }}
+  "es-4602":
+    notes:
+      "n1": "Pare is the usted command of parar, to stop; to a driver you say it politely."
+    native: "Stop here, please."
+    bases: {"Pare": "stop", "por": "for", "favor": "please"}
+    confusables: {"esperar": { why: "Esperar is to wait, not to stop the car." }, "bajar": { why: "Bajar is to get off, what you do after the car stops." }}

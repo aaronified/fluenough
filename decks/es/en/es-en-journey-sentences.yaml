@@ -5,7 +5,7 @@ core: "es-journey-sentences"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Sentences: journey"
 license: "CC-BY-SA-4.0"
-description: "Thirty-one sentences about travel, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+description: "Thirty-three sentences about travel, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
 cards:
   "es-1724":
     native: "I buy a single ticket for the train."
@@ -131,3 +131,11 @@ cards:
     native: "Before leaving, I look at the itinerary of the city."
     bases: { "de": "of", "el": "the", "la": "the" }
     confusables: { "mapa": { why: "Mapa is a map, a flat drawing of an area." }, "destino": { why: "Destino is the destination, not the plan." } }
+  "es-4610":
+    native: "A single ticket, please."
+    bases: {"Un": "a", "de": "of", "por": "for", "favor": "please"}
+    confusables: {"taquilla": { why: "Taquilla is the ticket office, where you buy the billete." }, "ticket": { why: "Ticket is informal; billete is the usual word for a train ticket." }}
+  "es-4611":
+    native: "A return ticket."
+    bases: {"Un": "a", "de": "of"}
+    confusables: {"tarifa": { why: "Tarifa is the fare, the price of the ticket." }, "asiento": { why: "Asiento is a seat, not the ticket." }}

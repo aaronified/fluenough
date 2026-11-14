@@ -70,3 +70,26 @@ cards:
     tags: ["sentence"]
     bases: [{ word: "La", base: "la" }, { word: "carretera", ref: "es-0687" }, { word: "es", ref: "es-0022" }, { word: "buena", ref: "es-0033" }, { word: "y", ref: "es-0048" }, { word: "el", base: "el" }, { word: "aeropuerto", ref: "es-0686" }, { word: "está", ref: "es-0023" }, { word: "lejos", ref: "es-0718" }]
     confusables: [{ id: "calle", ref: "es-0017", kind: "word" }, { id: "barco", ref: "es-0682", kind: "word" }]
+  - id: "es-4600"
+    target: "A la estación, por favor."
+    ipa: "a la estaˈθjon poɾ faˈboɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "A", base: "a" }, { word: "la", base: "la" }, { word: "estación", ref: "es-0684" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+    confusables: [{ id: "aeropuerto", ref: "es-0686", kind: "word" }, { id: "parada", ref: "es-0683", kind: "word" }]
+  - id: "es-4601"
+    target: "¿Cuánto cuesta el viaje?"
+    ipa: "ˈkwanto ˈkwesta el ˈbjaxe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Cuánto", ref: "es-0060" }, { word: "cuesta", ref: "es-0587" }, { word: "el", base: "el" }, { word: "viaje", ref: "es-1690" }]
+    confusables: [{ id: "precio", ref: "es-0580", kind: "word" }, { id: "tarifa", ref: "es-1705", kind: "word" }]
+  - id: "es-4602"
+    notes:
+      - { id: "n1", kind: "usage" }
+    target: "Pare aquí, por favor."
+    ipa: "ˈpaɾe aˈki poɾ faˈboɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Pare", base: "parar" }, { word: "aquí", ref: "es-0051" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+    confusables: [{ id: "esperar", ref: "es-0693", kind: "word" }, { id: "bajar", ref: "es-0692", kind: "word" }]

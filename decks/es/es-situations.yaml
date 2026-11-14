@@ -1,0 +1,42 @@
+# Spanish's situation sheets (#724): lists of card ids, never card text. Every id
+# is a card of a Spanish deck, so progress, audio and notes are the card's own.
+# Draft: the choice of cards and the Spanish titles need a Spanish reviewer.
+schema: 1
+id: es-situations
+name: "Spanish situations"
+kind: situations
+language: { code: es, iso639_3: spa, name: Spanish, script: latin, tts: es-ES, icon: "Es" }
+license: "CC-BY-SA-4.0"
+description: "Key phrases and words for everyday moments. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["unreviewed"]
+situations:
+  - id: "taxi"
+    icon: "taxi"
+    title: { en: "Taxi", es: "Taxi" }
+    phrases: ["es-4600", "es-4601", "es-4602", "es-4603", "es-0078", "es-0038", "es-0037", "es-0045"]
+    words: ["es-0677", "es-0684", "es-0686", "es-0687", "es-0706", "es-0714", "es-0715", "es-0716", "es-0717", "es-0718", "es-0586", "es-0720"]
+  - id: "shops"
+    icon: "shops"
+    title: { en: "Shopping", es: "De compras" }
+    phrases: ["es-1241", "es-1055", "es-3324", "es-1237", "es-3320", "es-3325", "es-1244", "es-0037"]
+    words: ["es-0584", "es-0580", "es-1212", "es-1214", "es-1220", "es-0879", "es-1230", "es-1236", "es-1235", "es-0588", "es-0587", "es-1225"]
+  - id: "eat"
+    icon: "eat"
+    title: { en: "Eating out", es: "En el restaurante" }
+    phrases: ["es-1290", "es-1291", "es-4604", "es-4605", "es-3247", "es-3243", "es-3253", "es-3248", "es-0038"]
+    words: ["es-1257", "es-1259", "es-1260", "es-1264", "es-1267", "es-1279", "es-0012", "es-0013", "es-0620", "es-0653", "es-0651", "es-1269"]
+  - id: "doctor"
+    icon: "doctor"
+    title: { en: "Doctor and pharmacy", es: "Médico y farmacia" }
+    phrases: ["es-0886", "es-0760", "es-1496", "es-4606", "es-4607", "es-4608", "es-1495", "es-1498"]
+    words: ["es-1468", "es-0771", "es-0772", "es-1464", "es-1465", "es-1460", "es-1461", "es-1477", "es-0873", "es-0754", "es-1469", "es-1475"]
+  - id: "traffic"
+    icon: "traffic"
+    title: { en: "Traffic stop", es: "Control policial" }
+    phrases: ["es-0039", "es-0041", "es-0045", "es-0078", "es-0529", "es-0882", "es-0881", "es-4609"]
+    words: ["es-0868", "es-0678", "es-0687", "es-0707", "es-0878", "es-0871", "es-1715", "es-1716", "es-1717", "es-0709", "es-2283", "es-1636"]
+  - id: "rail"
+    icon: "rail"
+    title: { en: "Rail station", es: "Estación de tren" }
+    phrases: ["es-0070", "es-0071", "es-3400", "es-0695", "es-3401", "es-3417", "es-4610", "es-4611"]
+    words: ["es-0676", "es-0684", "es-0685", "es-1693", "es-1694", "es-1695", "es-1696", "es-1697", "es-1698", "es-1699", "es-1700", "es-0689"]
