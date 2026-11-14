@@ -73,11 +73,17 @@ cards:
     target_scripts: { kana: "てら" }
     words: ["寺"]
     reading: "tera"
-    ipa: "tera"
+    ipa: "teɾa"
     pos: "letter"
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "お寺はどこですか。"
+        target_scripts: { kana: "おてらはどこですか。" }
+        words: ["お寺", "は", "どこ", "です", "か"]
+        reading: "otera wa doko desu ka."
+        ipa: "oteɾa wa doko desɯ ka"
   - id: "ja-5305"
     target: "自"
     target_scripts: { kana: "みずから" }
@@ -104,11 +110,6 @@ cards:
         words: ["時間", "が", "少ない", "です"]
         reading: "jikan ga sukunai desu."
         ipa: "dʑikaɴ ɡa sɯkɯnai desɯ"
-      - target: "時間はいそがしいです。"
-        target_scripts: { kana: "じかんはいそがしいです。" }
-        words: ["時間", "は", "いそがしい", "です"]
-        reading: "jikan wa isogashii desu."
-        ipa: "dʑikaɴ wa isoɡaɕiː desɯ"
   - id: "ja-5307"
     target: "室"
     target_scripts: { kana: "むろ" }
@@ -220,11 +221,6 @@ cards:
         words: ["今週", "は", "いそがしい", "です"]
         reading: "konshuu wa isogashii desu."
         ipa: "koɴɕɯː wa isoɡaɕiː desɯ"
-      - target: "先週はやすみです。"
-        target_scripts: { kana: "せんしゅうはやすみです。" }
-        words: ["先週", "は", "やすみ", "です"]
-        reading: "senshuu wa yasumi desu."
-        ipa: "seɴɕɯː wa jasɯmi desɯ"
   - id: "ja-5313"
     target: "春"
     target_scripts: { kana: "はる" }
@@ -282,7 +278,7 @@ cards:
         target_scripts: { kana: "おかねがすくないです。" }
         words: ["お金", "が", "少ない", "です"]
         reading: "okane ga sukunai desu."
-        ipa: "okaɲe ɡa sɯkɯnai desɯ"
+        ipa: "okane ɡa sɯkɯnai desɯ"
       - target: "やすみが少ないです。"
         target_scripts: { kana: "やすみがすくないです。" }
         words: ["やすみ", "が", "少ない", "です"]
@@ -408,7 +404,7 @@ cards:
     target_scripts: { kana: "ず" }
     words: ["図"]
     reading: "zu"
-    ipa: "zɯ"
+    ipa: "dzɯ"
     pos: "letter"
     notes:
       - { id: "n1", kind: "usage" }
@@ -428,7 +424,7 @@ cards:
         target_scripts: { kana: "おかねをかぞえます。" }
         words: ["お金", "を", "数えます"]
         reading: "okane o kazoemasu."
-        ipa: "okaɲe o kazoemasɯ"
+        ipa: "okane o kazoemasɯ"
       - target: "ゆびを数えます。"
         target_scripts: { kana: "ゆびをかぞえます。" }
         words: ["ゆび", "を", "数えます"]
@@ -445,11 +441,11 @@ cards:
       - { id: "n1", kind: "usage" }
     bases: "self"
     examples:
-      - target: "西はさむいです。"
-        target_scripts: { kana: "にしはさむいです。" }
-        words: ["西", "は", "さむい", "です"]
-        reading: "nishi wa samui desu."
-        ipa: "niɕi wa samɯi desɯ"
+      - target: "西はどこですか。"
+        target_scripts: { kana: "にしはどこですか。" }
+        words: ["西", "は", "どこ", "です", "か"]
+        reading: "nishi wa doko desu ka."
+        ipa: "niɕi wa doko desɯ ka"
   - id: "ja-5325"
     target: "声"
     target_scripts: { kana: "こえ" }
@@ -486,7 +482,7 @@ cards:
     target_scripts: { kana: "はれる" }
     words: ["晴"]
     reading: "hareru"
-    ipa: "hareɾɯ"
+    ipa: "haɾeɾɯ"
     pos: "letter"
     notes:
       - { id: "n1", kind: "usage" }
@@ -496,12 +492,12 @@ cards:
         target_scripts: { kana: "あしたははれです。" }
         words: ["あした", "は", "晴れ", "です"]
         reading: "ashita wa hare desu."
-        ipa: "aɕita wa hare desɯ"
+        ipa: "aɕita wa haɾe desɯ"
       - target: "天気は晴れです。"
         target_scripts: { kana: "てんきははれです。" }
         words: ["天気", "は", "晴れ", "です"]
         reading: "tenki wa hare desu."
-        ipa: "teŋki wa hare desɯ"
+        ipa: "teɴki wa haɾe desɯ"
   - id: "ja-5328"
     target: "切"
     target_scripts: { kana: "きる" }
@@ -517,7 +513,12 @@ cards:
         target_scripts: { kana: "ともだちはしんせつです。" }
         words: ["ともだち", "は", "親切", "です"]
         reading: "tomodachi wa shinsetsu desu."
-        ipa: "tomodatɕi wa ɕinsetsɯ desɯ"
+        ipa: "tomodatɕi wa ɕiɴsetsɯ desɯ"
+      - target: "切手はどこですか。"
+        target_scripts: { kana: "きってはどこですか。" }
+        words: ["切手", "は", "どこ", "です", "か"]
+        reading: "kitte wa doko desu ka."
+        ipa: "kitte wa doko desɯ ka"
   - id: "ja-5329"
     target: "雪"
     target_scripts: { kana: "ゆき" }
