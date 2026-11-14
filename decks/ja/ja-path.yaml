@@ -94,6 +94,7 @@ regions:
 alphabet:
   - "ja-hiragana"
   - "ja-kanji-1"
+  - "ja-kanji-2"
   - "ja-kanji-3"
   - "ja-katakana"
   - "ja-katakana-combos"
@@ -351,11 +352,8 @@ units:
       - { id: "a-normal-day", text: { "en": "Someone talks through an ordinary working day" } }
     reading_passages:
       - { id: "daily-timetable", text: { "en": "A timetable for a day: wake, work, eat, bathe, sleep" } }
-  - planned: { id: "ja-kanji-2", grammar: "script-kanji-2", words: 0 }
-    listening_passages:
-      - { id: "kanji-2-heard", text: { "en": "Hearing words whose kanji unit 2 teaches" } }
-    reading_passages:
-      - { id: "kanji-2-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 2" } }
+  - decks: ["ja-kanji-2"]
+    words: 0
   - decks: ["ja-grammar-te-form", "ja-grammar-te-form-sentences"]
     words: 0
     grammar: ["te-form", "te-ending"]
