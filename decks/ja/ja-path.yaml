@@ -112,6 +112,7 @@ alphabet:
   - "ja-kanji-17"
   - "ja-kanji-18"
   - "ja-kanji-19"
+  - "ja-kanji-20"
   - "ja-katakana"
   - "ja-katakana-combos"
   - "ja-hiragana-marks"
@@ -600,11 +601,8 @@ units:
       - { id: "phone-call", text: { "en": "A phone call to arrange a meeting" } }
     reading_passages:
       - { id: "text-messages", text: { "en": "A few text messages between friends" } }
-  - planned: { id: "ja-kanji-20", grammar: "script-kanji-20", words: 0 }
-    listening_passages:
-      - { id: "kanji-20-heard", text: { "en": "Hearing words whose kanji unit 20 teaches" } }
-    reading_passages:
-      - { id: "kanji-20-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 20" } }
+  - decks: ["ja-kanji-20"]
+    words: 0
   - decks: ["ja-journey", "ja-journey-sentences", "ja-reading-journey", "*"]
     words: 55
     listening_passages:
