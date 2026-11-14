@@ -8,6 +8,8 @@ tags: ["beginner", "unreviewed"]
 
 cards:
   - id: "es-0225"
+    notes:
+      - { id: "n1", kind: "usage" }
     target: "Dos y dos son cuatro."
     ipa: "dos i dos son ˈkwatɾo"
     phonetic: "[d̪os i ðos son ˈkwat̪ɾo]"
@@ -17,6 +19,8 @@ cards:
     bases: [{ word: "Dos", ref: "es-0206" }, { word: "y", ref: "es-0048" }, { word: "son", ref: "es-0022" }, { word: "cuatro", ref: "es-0208" }]
     confusables: [{ id: "three", ref: "es-0207", kind: "word" }, { id: "six", ref: "es-0210", kind: "word" }]
   - id: "es-0226"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     target: "Hay cinco sillas en la cocina."
     ipa: "aj ˈθinko ˈsiʝas en la koˈθina"
     phonetic: "[aj ˈθiŋko ˈsiʝas en la koˈθina]"
@@ -26,6 +30,8 @@ cards:
     bases: [{ word: "Hay", base: "haber" }, { word: "cinco", ref: "es-0209" }, { word: "sillas", base: "silla" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "cocina", ref: "es-0806" }]
     confusables: [{ id: "six", ref: "es-0210", kind: "word" }, { id: "seven", ref: "es-0211", kind: "word" }]
   - id: "es-0227"
+    notes:
+      - { id: "n1", kind: "usage" }
     target: "Son las ocho de la mañana."
     ipa: "son las ˈotʃo de la maˈɲana"
     phonetic: "[son las ˈotʃo ðe la maˈɲana]"
@@ -62,6 +68,8 @@ cards:
     bases: [{ word: "Uno", ref: "es-0205" }, { word: "más", base: "más" }, { word: "son", ref: "es-0022" }, { word: "dos", ref: "es-0206" }]
     confusables: [{ id: "three", ref: "es-0207", kind: "word" }, { id: "ten", ref: "es-0214", kind: "word" }]
   - id: "es-0231"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     target: "Un año tiene doce meses."
     ipa: "un ˈaɲo ˈtjene ˈdoθe ˈmeses"
     phonetic: "[un ˈaɲo ˈt̪jene ˈðoθe ˈmeses]"
