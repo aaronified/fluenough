@@ -1,0 +1,113 @@
+schema: 1
+id: "es-en-multiword-prepositional"
+kind: "layer"
+core: "es-multiword-prepositional"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Multi-word verbs: prepositions"
+description: "Twenty verb phrases of a verb and its fixed preposition: think about, dream of, depend on, remember, marry, fall in love with, complain about, trust, insist on, notice, count on, try to, be about, put an end to, lack, doubt, help to, learn to, refuse to, and dare to. Not yet checked by a Spanish speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "es-4400":
+    native: "to think about her"
+    notes:
+      "u1": "Pensar en means to think about someone or something: pienso en ella, I think about her. Pensar alone means to think, in general."
+  "es-4401":
+    native: "to dream of travelling"
+    notes:
+      "u1": "Soñar con means to dream about something or to dream of doing it: sueño con viajar, I dream of travelling. Soñar alone means to dream, asleep or awake."
+  "es-4402":
+    native: "to depend on her"
+    notes:
+      "u1": "Depender de means to depend on someone or something: depende de ella, it depends on her. Depender alone does not take a complement."
+    bases:
+      "depender": { meaning: "to depend" }
+  "es-4403":
+    native: "to remember that"
+    notes:
+      "u1": "Acordarse de means to remember someone or something: me acuerdo de eso, I remember that. Acordarse always takes the reflexive me, te, se."
+    bases:
+      "acordarse": { meaning: "to remember; reflexive form of acordar" }
+  "es-4404":
+    native: "to marry her"
+    notes:
+      "u1": "Casarse con means to marry someone: se casó con ella, he married her. Casarse alone means to get married, without a partner named."
+  "es-4405":
+    native: "to fall in love with her"
+    notes:
+      "u1": "Enamorarse de means to fall in love with someone: se enamoró de ella, he fell in love with her. The de comes before the person."
+  "es-4406":
+    native: "to complain about that"
+    notes:
+      "u1": "Quejarse de means to complain about something: se queja de eso, he complains about that. Quejarse alone means to complain in general."
+    bases:
+      "quejarse": { meaning: "to complain; reflexive form of quejar" }
+  "es-4407":
+    native: "to trust her"
+    notes:
+      "u1": "Confiar en means to trust someone or something: confío en ella, I trust her. The preposition is en, not a."
+  "es-4408":
+    native: "to insist on travelling"
+    notes:
+      "u1": "Insistir en and an infinitive mean to insist on doing something: insiste en viajar, he insists on travelling. The preposition is en."
+    bases:
+      "insistir": { meaning: "to insist" }
+  "es-4409":
+    native: "to notice that"
+    notes:
+      "u1": "Fijarse en means to notice something: me fijé en eso, I noticed that. Fijarse takes the reflexive, and the en comes before the thing noticed."
+    bases:
+      "fijarse": { meaning: "to notice; reflexive form of fijar, to fix" }
+  "es-4410":
+    native: "to count on her"
+    notes:
+      "u1": "Contar con means to count on someone or something: cuento con ella, I count on her. Contar alone means to count or to tell."
+  "es-4411":
+    native: "to try to swim"
+    notes:
+      "u1": "Tratar de and an infinitive mean to try to do something: trato de nadar, I try to swim. Tratar alone means to treat someone or to deal with something."
+    bases:
+      "tratar": { meaning: "to treat; to try (with de)" }
+  "es-4412":
+    native: "it is about money"
+    notes:
+      "u1": "Tratarse de means to be about something, the subject of a book or a conversation: se trata de dinero, it is about money. It is used in the third person and takes no infinitive."
+    bases:
+      "tratarse": { meaning: "to be about; reflexive form of tratar" }
+      "dinero": { meaning: "money" }
+  "es-4413":
+    native: "to put an end to that"
+    notes:
+      "u1": "Acabar con means to put an end to something or destroy it: acabar con eso, to put an end to that. Acabar alone means to finish."
+  "es-4414":
+    native: "to lack money"
+    notes:
+      "u1": "Carecer de means to lack something: carece de dinero, he lacks money. It is more formal than no tener."
+    bases:
+      "carecer": { meaning: "to lack" }
+      "dinero": { meaning: "money" }
+  "es-4415":
+    native: "to doubt her"
+    notes:
+      "u1": "Dudar de means to doubt someone or something: dudo de ella, I doubt her. Dudar alone means to hesitate or be unsure."
+  "es-4416":
+    native: "to help study"
+    notes:
+      "u1": "Ayudar a and an infinitive mean to help someone do something: te ayudo a estudiar, I help you study. The a comes before the infinitive."
+  "es-4417":
+    native: "to learn to swim"
+    notes:
+      "u1": "Aprender a and an infinitive mean to learn how to do something: aprendo a nadar, I am learning to swim. Aprender alone means to learn something."
+  "es-4418":
+    native: "to refuse to travel"
+    notes:
+      "u1": "Negarse a and an infinitive mean to refuse to do something: se niega a viajar, he refuses to travel. Negarse takes the reflexive and the a comes before the infinitive."
+    bases:
+      "negarse": { meaning: "to refuse; reflexive form of negar, to deny" }
+  "es-4419":
+    native: "to dare to swim"
+    notes:
+      "u1": "Atreverse a and an infinitive mean to dare to do something: se atreve a nadar, he dares to swim. Atreverse takes the reflexive and the a comes before the infinitive."
+    bases:
+      "atreverse": { meaning: "to dare; reflexive form of atrever, to dare" }
