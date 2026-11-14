@@ -48,3 +48,178 @@ cards:
     tags: ["sentence"]
     bases: [{ word: "Me", base: "me" }, { word: "divierto", ref: "es-1429" }, { word: "mucho", ref: "es-0053" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "club", ref: "es-1411" }, { word: "de", base: "de" }, { word: "ajedrez", ref: "es-1418" }]
     confusables: [{ id: "aburrido", ref: "es-0423", kind: "word" }, { id: "tiempo", ref: "es-1112", kind: "word" }]
+  - id: "es-3360"
+    target: "Yo toco la guitarra en mi casa."
+    ipa: "ʝo ˈtoko la ɡiˈtara en mi ˈkasa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Yo", ref: "es-0119" }, { word: "toco", ref: "es-1406" }, { word: "la", base: "la" }, { word: "guitarra", ref: "es-1407" }, { word: "en", base: "en" }, { word: "mi", ref: "es-0129" }, { word: "casa", ref: "es-0006" }]
+    confusables: [{ id: "violín", ref: "es-1409", kind: "word" }, { id: "canción", ref: "es-1425", kind: "word" }]
+  - id: "es-3361"
+    target: "¿Tocas el piano en la escuela?"
+    ipa: "ˈtokas el ˈpjano en la esˈkwela"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tocas", ref: "es-1406" }, { word: "el", base: "el" }, { word: "piano", ref: "es-1408" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "escuela", ref: "es-1355" }]
+    confusables: [{ id: "violín", ref: "es-1409", kind: "word" }, { id: "concierto", ref: "es-1424", kind: "word" }]
+  - id: "es-3362"
+    target: "Nunca compro revistas de fútbol."
+    ipa: "ˈnunka ˈkompɾo reˈbistas de ˈfutbol"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Nunca", ref: "es-0321" }, { word: "compro", ref: "es-0280" }, { word: "revistas", ref: "es-1428" }, { word: "de", base: "de" }, { word: "fútbol", ref: "es-1433" }]
+    confusables: [{ id: "libro", ref: "es-0011", kind: "word" }, { id: "tienda", ref: "es-0584", kind: "word" }]
+  - id: "es-3363"
+    target: "Mi padre enseña el ajedrez a mis hermanos."
+    ipa: "mi ˈpadɾe enˈseɲa el axeˈdɾeθ a mis eɾˈmanos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "padre", ref: "es-0159" }, { word: "enseña", ref: "es-1375" }, { word: "el", base: "el" }, { word: "ajedrez", ref: "es-1418" }, { word: "a", base: "a" }, { word: "mis", ref: "es-0129" }, { word: "hermanos", ref: "es-0161" }]
+    confusables: [{ id: "deporte", ref: "es-1402", kind: "word" }, { id: "videojuego", ref: "es-1416", kind: "word" }]
+  - id: "es-3364"
+    target: "¿Qué deporte te gusta más?"
+    ipa: "ke deˈpoɾte te ˈɡusta mas"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Qué", ref: "es-0054" }, { word: "deporte", ref: "es-1402" }, { word: "te", base: "te" }, { word: "gusta", ref: "es-1432" }, { word: "más", ref: "es-0363" }]
+    confusables: [{ id: "afición", ref: "es-1400", kind: "word" }, { id: "club", ref: "es-1411", kind: "word" }]
+  - id: "es-3365"
+    target: "Estoy leyendo una revista."
+    ipa: "esˈtoj leˈʝendo ˈuna reˈbista"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Estoy", ref: "es-0023" }, { word: "leyendo", ref: "es-0296" }, { word: "una", base: "una" }, { word: "revista", ref: "es-1428" }]
+    confusables: [{ id: "fotografía", ref: "es-1410", kind: "word" }, { id: "libro", ref: "es-0011", kind: "word" }]
+  - id: "es-3366"
+    target: "Mi equipo es muy bueno."
+    ipa: "mi eˈkipo es mwi ˈbweno"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "equipo", ref: "es-1412" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "bueno", ref: "es-0033" }]
+    confusables: [{ id: "club", ref: "es-1411", kind: "word" }, { id: "amigo", ref: "es-0005", kind: "word" }]
+  - id: "es-3367"
+    target: "¿Quién canta en el concierto?"
+    ipa: "kjen ˈkanta en el konˈθjeɾto"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Quién", ref: "es-0055" }, { word: "canta", ref: "es-1405" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "concierto", ref: "es-1424" }]
+    confusables: [{ id: "escuchar", ref: "es-0291", kind: "word" }, { id: "bailar", ref: "es-0294", kind: "word" }]
+  - id: "es-3368"
+    target: "Ayer bailé con mis amigos en el concierto."
+    ipa: "aˈʝeɾ bajˈle kon mis aˈmiɡos en el konˈθjeɾto"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Ayer", ref: "es-0332" }, { word: "bailé", ref: "es-0294" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "concierto", ref: "es-1424" }]
+    confusables: [{ id: "canción", ref: "es-1425", kind: "word" }, { id: "baile", ref: "es-1426", kind: "word" }]
+  - id: "es-3369"
+    target: "Aprendo yoga en el gimnasio, pero me cuesta mucho."
+    ipa: "aˈpɾendo ˈʝoɡa en el ximˈnasjo ˈpeɾo me ˈkwesta ˈmutʃo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Aprendo", ref: "es-0299" }, { word: "yoga", ref: "es-1422" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "gimnasio", ref: "es-0912" }, { word: "pero", ref: "es-0050" }, { word: "me", base: "me" }, { word: "cuesta", ref: "es-0587" }, { word: "mucho", ref: "es-0053" }]
+    confusables: [{ id: "piscina", ref: "es-1423", kind: "word" }, { id: "natación", ref: "es-1434", kind: "word" }]
+  - id: "es-3370"
+    target: "¿Cuándo vas al club?"
+    ipa: "ˈkwando bas al klub"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Cuándo", ref: "es-0057" }, { word: "vas", ref: "es-0026" }, { word: "al", base: "al" }, { word: "club", ref: "es-1411" }]
+    confusables: [{ id: "equipo", ref: "es-1412", kind: "word" }, { id: "escuela", ref: "es-1355", kind: "word" }]
+  - id: "es-3371"
+    target: "Ella juega al tenis los domingos."
+    ipa: "ˈeʝa ˈxweɡa al ˈtenis los doˈminɡos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Ella", ref: "es-0121" }, { word: "juega", ref: "es-1403" }, { word: "al", base: "al" }, { word: "tenis", ref: "es-1436" }, { word: "los", base: "los" }, { word: "domingos", ref: "es-0964" }]
+    confusables: [{ id: "fútbol", ref: "es-1433", kind: "word" }, { id: "baloncesto", ref: "es-1435", kind: "word" }]
+  - id: "es-3372"
+    target: "Mi hermana compró una guitarra nueva en el mercado."
+    ipa: "mi eɾˈmana komˈpɾo ˈuna ɡiˈtara ˈnweba en el meɾˈkado"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermana", ref: "es-0162" }, { word: "compró", ref: "es-0280" }, { word: "una", base: "una" }, { word: "guitarra", ref: "es-1407" }, { word: "nueva", ref: "es-0035" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "mercado", ref: "es-0567" }]
+    confusables: [{ id: "tienda", ref: "es-0584", kind: "word" }, { id: "supermercado", ref: "es-0601", kind: "word" }]
+  - id: "es-3373"
+    target: "Nos divertimos en la piscina."
+    ipa: "nos dibeɾˈtimos en la pisˈθina"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Nos", base: "nos" }, { word: "divertimos", ref: "es-1429" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "piscina", ref: "es-1423" }]
+    confusables: [{ id: "playa", ref: "es-0784", kind: "word" }, { id: "parque", ref: "es-0777", kind: "word" }]
+  - id: "es-3374"
+    target: "Estoy muy cansado después de esquiar."
+    ipa: "esˈtoj mwi kanˈsado desˈpwes de esˈkjaɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Estoy", ref: "es-0023" }, { word: "muy", ref: "es-0330" }, { word: "cansado", ref: "es-0420" }, { word: "después", ref: "es-0336" }, { word: "de", base: "de" }, { word: "esquiar", ref: "es-1421" }]
+    confusables: [{ id: "nadar", ref: "es-1066", kind: "word" }, { id: "escalar", ref: "es-1420", kind: "word" }]
+  - id: "es-3375"
+    target: "Mis hermanos pescan cada tarde."
+    ipa: "mis eɾˈmanos ˈpeskan ˈkada ˈtaɾde"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mis", ref: "es-0129" }, { word: "hermanos", ref: "es-0161" }, { word: "pescan", ref: "es-1419" }, { word: "cada", ref: "es-0366" }, { word: "tarde", ref: "es-0910" }]
+    confusables: [{ id: "pescado", ref: "es-0616", kind: "word" }, { id: "montar", ref: "es-1413", kind: "word" }]
+  - id: "es-3376"
+    target: "Es divertido jugar al baloncesto."
+    ipa: "es dibeɾˈtido xuˈɡaɾ al balonˈθesto"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Es", ref: "es-0022" }, { word: "divertido", ref: "es-0434" }, { word: "jugar", ref: "es-1403" }, { word: "al", base: "al" }, { word: "baloncesto", ref: "es-1435" }]
+    confusables: [{ id: "tenis", ref: "es-1436", kind: "word" }, { id: "fútbol", ref: "es-1433", kind: "word" }]
+  - id: "es-3377"
+    target: "No me gusta nadar en invierno."
+    ipa: "no me ˈɡusta naˈdaɾ en inˈbjeɾno"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "No", ref: "es-0043" }, { word: "me", base: "me" }, { word: "gusta", ref: "es-1432" }, { word: "nadar", ref: "es-1066" }, { word: "en", base: "en" }, { word: "invierno", ref: "es-0990" }]
+    confusables: [{ id: "piscina", ref: "es-1423", kind: "word" }, { id: "escalar", ref: "es-1420", kind: "word" }]
+  - id: "es-3378"
+    target: "Voy a pintar en el parque mañana."
+    ipa: "boj a pinˈtaɾ en el ˈpaɾke maˈɲana"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Voy", ref: "es-0026" }, { word: "a", base: "a" }, { word: "pintar", ref: "es-1404" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "parque", ref: "es-0777" }, { word: "mañana", ref: "es-0978" }]
+    confusables: [{ id: "dibujo", ref: "es-1437", kind: "word" }, { id: "jugar", ref: "es-1403", kind: "word" }]
+  - id: "es-3379"
+    target: "¿Cuánto dinero gastas en tus pasatiempos cada mes?"
+    ipa: "ˈkwanto diˈneɾo ˈɡastas en tus pasaˈtjempos ˈkada mes"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Cuánto", ref: "es-0060" }, { word: "dinero", ref: "es-0513" }, { word: "gastas", ref: "es-1228" }, { word: "en", base: "en" }, { word: "tus", ref: "es-0130" }, { word: "pasatiempos", ref: "es-1401" }, { word: "cada", ref: "es-0366" }, { word: "mes", ref: "es-0980" }]
+    confusables: [{ id: "precio", ref: "es-0580", kind: "word" }, { id: "descuento", ref: "es-1212", kind: "word" }]
+  - id: "es-3380"
+    target: "Tengo una colección de libros."
+    ipa: "ˈtenɡo ˈuna kolekˈθjon de ˈlibɾos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "colección", ref: "es-1414" }, { word: "de", base: "de" }, { word: "libros", ref: "es-0011" }]
+    confusables: [{ id: "revista", ref: "es-1428", kind: "word" }, { id: "fotografía", ref: "es-1410", kind: "word" }]
+  - id: "es-3381"
+    target: "Salgo con mis amigos al club los viernes."
+    ipa: "ˈsalɡo kon mis aˈmiɡos al klub los ˈbjeɾnes"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Salgo", ref: "es-0690" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }, { word: "al", base: "al" }, { word: "club", ref: "es-1411" }, { word: "los", base: "los" }, { word: "viernes", ref: "es-0962" }]
+    confusables: [{ id: "cine", ref: "es-0779", kind: "word" }, { id: "teatro", ref: "es-0780", kind: "word" }]
+  - id: "es-3382"
+    target: "Quiero aprender a cantar canciones."
+    ipa: "ˈkjeɾo apɾenˈdeɾ a kanˈtaɾ kanˈθjones"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Quiero", ref: "es-0661" }, { word: "aprender", ref: "es-0299" }, { word: "a", base: "a" }, { word: "cantar", ref: "es-1405" }, { word: "canciones", ref: "es-1425" }]
+    confusables: [{ id: "tocar", ref: "es-1406", kind: "word" }, { id: "baile", ref: "es-1426", kind: "word" }]
+  - id: "es-3383"
+    target: "Llego a la piscina a las ocho."
+    ipa: "ˈʝeɡo a la pisˈθina a las ˈotʃo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Llego", ref: "es-0290" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "piscina", ref: "es-1423" }, { word: "las", base: "las" }, { word: "ocho", ref: "es-0212" }]
+    confusables: [{ id: "estación", ref: "es-0684", kind: "word" }, { id: "parada", ref: "es-0683", kind: "word" }]
+  - id: "es-3384"
+    target: "Yo miro la serie con mi madre cada noche."
+    ipa: "ʝo ˈmiɾo la ˈseɾje kon mi ˈmadɾe ˈkada ˈnotʃe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Yo", ref: "es-0119" }, { word: "miro", ref: "es-0292" }, { word: "la", base: "la" }, { word: "serie", ref: "es-1417" }, { word: "con", base: "con" }, { word: "mi", ref: "es-0129" }, { word: "madre", ref: "es-0160" }, { word: "cada", ref: "es-0366" }, { word: "noche", ref: "es-0020" }]
+    confusables: [{ id: "canción", ref: "es-1425", kind: "word" }, { id: "concierto", ref: "es-1424", kind: "word" }]
