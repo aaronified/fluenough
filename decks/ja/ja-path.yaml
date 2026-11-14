@@ -103,6 +103,8 @@ alphabet:
   - "ja-kanji-8"
   - "ja-kanji-9"
   - "ja-kanji-10"
+  - "ja-kanji-11"
+  - "ja-kanji-12"
   - "ja-katakana"
   - "ja-katakana-combos"
   - "ja-hiragana-marks"
@@ -470,11 +472,8 @@ units:
       - { id: "at-an-izakaya", text: { "en": "Ordering at a small izakaya and asking for the bill" } }
     reading_passages:
       - { id: "ticket-machine", text: { "en": "The buttons of a restaurant's meal-ticket machine" } }
-  - planned: { id: "ja-kanji-11", grammar: "script-kanji-11", words: 0 }
-    listening_passages:
-      - { id: "kanji-11-heard", text: { "en": "Hearing words whose kanji unit 11 teaches" } }
-    reading_passages:
-      - { id: "kanji-11-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 11" } }
+  - decks: ["ja-kanji-11"]
+    words: 0
   - decks: ["ja-cooking", "ja-cooking-sentences", "ja-reading-cooking", "*"]
     words: 31
     listening_passages:
@@ -488,11 +487,8 @@ units:
       - { id: "may-i-sit-here", text: { "en": "Asking whether you may sit, take photos and smoke, and being told no" } }
     reading_passages:
       - { id: "temple-rules", text: { "en": "The rules on a sign at a temple gate" } }
-  - planned: { id: "ja-kanji-12", grammar: "script-kanji-12", words: 0 }
-    listening_passages:
-      - { id: "kanji-12-heard", text: { "en": "Hearing words whose kanji unit 12 teaches" } }
-    reading_passages:
-      - { id: "kanji-12-signs", text: { "en": "Reading signs and short lines that use the kanji taught up to unit 12" } }
+  - decks: ["ja-kanji-12"]
+    words: 0
   - decks: ["ja-school", "ja-school-sentences", "ja-reading-school", "*"]
     words: 36
     listening_passages:
