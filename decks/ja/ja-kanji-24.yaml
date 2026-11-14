@@ -16,6 +16,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "これは旗です。"
+        target_scripts: { kana: "これははたです。" }
+        words: ["これ", "は", "旗", "です"]
+        reading: "kore wa hata desu."
+        ipa: "koɾe wa hata desɯ"
   - id: "ja-6321"
     target: "漁"
     target_scripts: { kana: "りょう" }
@@ -36,6 +42,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "熊はおおきいです。"
+        target_scripts: { kana: "くまはおおきいです。" }
+        words: ["熊", "は", "おおきい", "です"]
+        reading: "kuma wa ookii desu."
+        ipa: "kɯma wa oːkiː desɯ"
   - id: "ja-6323"
     target: "種"
     target_scripts: { kana: "たね" }
@@ -46,6 +58,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "これは種です。"
+        target_scripts: { kana: "これはたねです。" }
+        words: ["これ", "は", "種", "です"]
+        reading: "kore wa tane desu."
+        ipa: "koɾe wa tane desɯ"
   - id: "ja-6324"
     target: "管"
     target_scripts: { kana: "くだ" }
@@ -86,6 +104,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "学校は静かです。"
+        target_scripts: { kana: "がっこうはしずかです。" }
+        words: ["学校", "は", "静か", "です"]
+        reading: "gakkou wa shizuka desu."
+        ipa: "ɡakkoː wa ɕidzɯka desɯ"
   - id: "ja-6328"
     target: "億"
     target_scripts: { kana: "おく" }
@@ -96,6 +120,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "億はおおきいです。"
+        target_scripts: { kana: "おくはおおきいです。" }
+        words: ["億", "は", "おおきい", "です"]
+        reading: "oku wa ookii desu."
+        ipa: "okɯ wa oːkiː desɯ"
   - id: "ja-6329"
     target: "器"
     target_scripts: { kana: "うつわ" }
@@ -106,12 +136,18 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "食器はきれいです。"
+        target_scripts: { kana: "しょっきはきれいです。" }
+        words: ["食器", "は", "きれい", "です"]
+        reading: "shokki wa kirei desu."
+        ipa: "ɕokki wa kiɾeː desɯ"
   - id: "ja-6330"
     target: "標"
-    target_scripts: { kana: "ひょう" }
+    target_scripts: { kana: "もくひょう" }
     words: ["標"]
-    reading: "hyou"
-    ipa: "çoː"
+    reading: "mokuhyou"
+    ipa: "mokɯçoː"
     pos: "letter"
     notes:
       - { id: "n1", kind: "usage" }
@@ -136,6 +172,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "熱はたかいです。"
+        target_scripts: { kana: "ねつはたかいです。" }
+        words: ["熱", "は", "たかい", "です"]
+        reading: "netsu wa takai desu."
+        ipa: "netsɯ wa takai desɯ"
   - id: "ja-6333"
     target: "縄"
     target_scripts: { kana: "なわ" }
@@ -156,6 +198,17 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "これは課長です。"
+        target_scripts: { kana: "これはかちょうです。" }
+        words: ["これ", "は", "課長", "です"]
+        reading: "kore wa kachou desu."
+        ipa: "koɾe wa katɕoː desɯ"
+      - target: "これは放課後です。"
+        target_scripts: { kana: "これはほうかごです。" }
+        words: ["これ", "は", "放課後", "です"]
+        reading: "kore wa houkago desu."
+        ipa: "koɾe wa hoːkaɡo desɯ"
   - id: "ja-6335"
     target: "輪"
     target_scripts: { kana: "わ" }
@@ -166,6 +219,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "これは指輪です。"
+        target_scripts: { kana: "これはゆびわです。" }
+        words: ["これ", "は", "指輪", "です"]
+        reading: "kore wa yubiwa desu."
+        ipa: "koɾe wa jɯbiwa desɯ"
   - id: "ja-6336"
     target: "選"
     target_scripts: { kana: "えらぶ" }
@@ -176,6 +235,17 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "わたしはこれを選びます。"
+        target_scripts: { kana: "わたしはこれをえらびます。" }
+        words: ["わたし", "は", "これ", "を", "選びます"]
+        reading: "watashi wa kore o erabimasu."
+        ipa: "wataɕi wa koɾe o eɾabimasɯ"
+      - target: "選手ははしります。"
+        target_scripts: { kana: "せんしゅははしります。" }
+        words: ["選手", "は", "はしります"]
+        reading: "senshu wa hashirimasu."
+        ipa: "seɴɕɯ wa haɕiɾimasɯ"
   - id: "ja-6337"
     target: "養"
     target_scripts: { kana: "やしなう" }
@@ -188,44 +258,72 @@ cards:
     bases: "self"
   - id: "ja-6338"
     target: "機"
-    target_scripts: { kana: "き" }
+    target_scripts: { kana: "きかい" }
     words: ["機"]
-    reading: "ki"
-    ipa: "ki"
+    reading: "kikai"
+    ipa: "kikai"
     pos: "letter"
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "飛行機ははやいです。"
+        target_scripts: { kana: "ひこうきははやいです。" }
+        words: ["飛行機", "は", "はやい", "です"]
+        reading: "hikouki wa hayai desu."
+        ipa: "çikoːki wa hajai desɯ"
   - id: "ja-6339"
     target: "積"
-    target_scripts: { kana: "せき" }
+    target_scripts: { kana: "つむ" }
     words: ["積"]
-    reading: "seki"
-    ipa: "seki"
+    reading: "tsumu"
+    ipa: "tsɯmɯ"
     pos: "letter"
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
   - id: "ja-6340"
     target: "録"
-    target_scripts: { kana: "ろく" }
+    target_scripts: { kana: "きろく" }
     words: ["録"]
-    reading: "roku"
-    ipa: "ɾokɯ"
+    reading: "kiroku"
+    ipa: "kiɾokɯ"
     pos: "letter"
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "記録はあたらしいです。"
+        target_scripts: { kana: "きろくはあたらしいです。" }
+        words: ["記録", "は", "あたらしい", "です"]
+        reading: "kiroku wa atarashii desu."
+        ipa: "kiɾokɯ wa ataɾaɕiː desɯ"
+      - target: "登録はおわりました。"
+        target_scripts: { kana: "とうろくはおわりました。" }
+        words: ["登録", "は", "おわりました"]
+        reading: "touroku wa owarimashita."
+        ipa: "toːɾokɯ wa owaɾimaɕita"
   - id: "ja-6341"
     target: "観"
-    target_scripts: { kana: "かん" }
+    target_scripts: { kana: "かんこう" }
     words: ["観"]
-    reading: "kan"
-    ipa: "kaɴ"
+    reading: "kankou"
+    ipa: "kaɴkoː"
     pos: "letter"
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "観光にいきます。"
+        target_scripts: { kana: "かんこうにいきます。" }
+        words: ["観光", "に", "いきます"]
+        reading: "kankou ni ikimasu."
+        ipa: "kaɴkoː ni ikimasɯ"
+      - target: "観客はおおいです。"
+        target_scripts: { kana: "かんきゃくはおおいです。" }
+        words: ["観客", "は", "おおい", "です"]
+        reading: "kankyaku wa ooi desu."
+        ipa: "kaɴkjakɯ wa oːi desɯ"
   - id: "ja-6342"
     target: "類"
     target_scripts: { kana: "たぐい" }
@@ -246,6 +344,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "試験はむずかしいです。"
+        target_scripts: { kana: "しけんはむずかしいです。" }
+        words: ["試験", "は", "むずかしい", "です"]
+        reading: "shiken wa muzukashii desu."
+        ipa: "ɕikeɴ wa mɯdzɯkaɕiː desɯ"
   - id: "ja-6344"
     target: "鏡"
     target_scripts: { kana: "かがみ" }
@@ -256,6 +360,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "鏡はきれいです。"
+        target_scripts: { kana: "かがみはきれいです。" }
+        words: ["鏡", "は", "きれい", "です"]
+        reading: "kagami wa kirei desu."
+        ipa: "kaɡami wa kiɾeː desɯ"
   - id: "ja-6345"
     target: "願"
     target_scripts: { kana: "ねがう" }
@@ -276,13 +386,25 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "競走はたのしいです。"
+        target_scripts: { kana: "きょうそうはたのしいです。" }
+        words: ["競走", "は", "たのしい", "です"]
+        reading: "kyousou wa tanoshii desu."
+        ipa: "kjoːsoː wa tanoɕiː desɯ"
   - id: "ja-6347"
     target: "議"
-    target_scripts: { kana: "ぎ" }
+    target_scripts: { kana: "かいぎ" }
     words: ["議"]
-    reading: "gi"
-    ipa: "ɡi"
+    reading: "kaigi"
+    ipa: "kaiɡi"
     pos: "letter"
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "会議はおわりました。"
+        target_scripts: { kana: "かいぎはおわりました。" }
+        words: ["会議", "は", "おわりました"]
+        reading: "kaigi wa owarimashita."
+        ipa: "kaiɡi wa owaɾimaɕita"
