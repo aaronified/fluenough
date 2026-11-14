@@ -1,0 +1,63 @@
+schema: 1
+id: "te-en-groceries-sentences"
+kind: "layer"
+core: "te-groceries-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Groceries: sentences"
+description: "Ten sentences about buying and cooking food, with the words of the groceries unit and the units before it. They unlock once their words and rules are known. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "te-7068":
+    native: "I drink milk every day."
+    confusables:
+      "c1": { why: "బియ్యం (biyyaṁ) 'rice (uncooked)', is a grain, not a drink." }
+      "c2": { why: "గుడ్డు (guḍḍu) 'egg', is an egg, a different food." }
+  "te-7069":
+    native: "Mum buys rice."
+    confusables:
+      "c1": { why: "పాలు (pālu) 'milk', is a drink, not a grain." }
+      "c2": { why: "పప్పు (pappu) 'lentils', is a pulse, a different food." }
+  "te-7070":
+    native: "Do you eat fish?"
+    confusables:
+      "c1": { why: "మటన్ (maṭan) 'mutton (goat meat)', is goat meat, not fish." }
+      "c2": { why: "కోడి (kōḍi) 'chicken', is chicken, a different meat." }
+  "te-7071":
+    native: "They cook the chicken at night."
+    confusables:
+      "c1": { why: "చేప (cēpa) 'fish', is a fish, a different food." }
+      "c2": { why: "మటన్ (maṭan) 'mutton (goat meat)', is goat meat, another meat." }
+  "te-7072":
+    native: "There is rice in my house."
+    alt_native: ["I have rice at home."]
+    confusables:
+      "c1": { why: "పప్పు (pappu) 'lentils', is a pulse, another food." }
+      "c2": { why: "కుటుంబం (kuṭumbaṁ) 'family', names a family, not a place." }
+  "te-7073":
+    native: "Please take this dal."
+    confusables:
+      "c1": { why: "పాలు (pālu) 'milk', is a drink, not a pulse." }
+      "c2": { why: "ఇవ్వడం (ivvaḍaṁ) 'to give', is to give, a different verb." }
+  "te-7074":
+    native: "I cook fish together with Mum."
+    confusables:
+      "c1": { why: "కూరగాయలు (kūragāyalu) 'vegetables', is a vegetable, not a fish." }
+      "c2": { why: "నాన్న (nānna) 'father', is a father, not a mother." }
+  "te-7075":
+    native: "I take milk from the farmer."
+    bases:
+      "నుంచి": "from"
+    confusables:
+      "c1": { why: "దుకాణదారు (dukāṇadāru) 'shopkeeper', names a shopkeeper, who sells and does not farm." }
+      "c2": { why: "వంటవాడు (vaṇṭavāḍu) 'cook', names a cook, who cooks food." }
+  "te-7076":
+    native: "Will you give me two eggs?"
+    confusables:
+      "c1": { why: "కోడి (kōḍi) 'chicken', is chicken, a different food." }
+      "c2": { why: "మూడు (mūḍu) '3, three', is three, not two." }
+  "te-7077":
+    native: "He eats only lentils."
+    confusables:
+      "c1": { why: "చేప (cēpa) 'fish', is a fish, a different food." }
+      "c2": { why: "పాలు (pālu) 'milk', is a drink, not a pulse." }
