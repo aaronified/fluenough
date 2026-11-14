@@ -47,16 +47,16 @@ cards:
       - { id: "c1", ref: "te-0163", kind: "word" }
       - { id: "c2", ref: "te-0164", kind: "word" }
   - id: "te-7133"
-    target: "ఈ ఇంట్లో లైటు ఉంది."
-    reading: "ī iṇṭlō laiṭu undi."
-    ipa: "iː iɳʈloː laiʈu und̪i"
+    target: "ఈ ఇంట్లో లైటు వేయండి."
+    reading: "ī iṇṭlō laiṭu vēyaṇḍi."
+    ipa: "iː iɳʈloː laiʈu ʋeːjaɳɖi"
     pos: "phrase"
-    rules: ["te-rule-lo"]
+    rules: ["te-rule-lo", "te-rule-polite-request"]
     bases:
       - { word: "ఈ", ref: "te-0607" }
       - { word: "ఇంట్లో", ref: "te-0195" }
       - { word: "లైటు", ref: "te-0434" }
-      - { word: "ఉంది", ref: "te-0633" }
+      - { word: "వేయండి", ref: "te-0837" }
     confusables:
       - { id: "c1", ref: "te-0433", kind: "word" }
       - { id: "c2", ref: "te-0426", kind: "word" }
@@ -86,14 +86,15 @@ cards:
       - { id: "c1", ref: "te-0426", kind: "word" }
       - { id: "c2", ref: "te-0427", kind: "word" }
   - id: "te-7136"
-    target: "కిటికీ మూయండి."
-    reading: "kiṭikī mūyaṇḍi."
-    ipa: "kiʈikiː muːjaɳɖi"
+    target: "నేను కిటికీ తెరుస్తాను."
+    reading: "nēnu kiṭikī terustānu."
+    ipa: "neːnu kiʈikiː t̪erust̪aːnu"
     pos: "phrase"
-    rules: ["te-rule-polite-request"]
+    rules: ["te-rule-present-first"]
     bases:
+      - { word: "నేను", ref: "te-0593" }
       - { word: "కిటికీ", ref: "te-0426" }
-      - { word: "మూయండి", ref: "te-0826" }
+      - { word: "తెరుస్తాను", ref: "te-0825" }
     confusables:
       - { id: "c1", ref: "te-0425", kind: "word" }
       - { id: "c2", ref: "te-0433", kind: "word" }
