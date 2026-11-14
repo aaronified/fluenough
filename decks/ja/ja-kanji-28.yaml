@@ -59,11 +59,11 @@ cards:
       - { id: "n1", kind: "usage" }
     bases: "self"
     examples:
-      - target: "バスは停まります。"
-        target_scripts: { kana: "バスはとまります。" }
-        words: ["バス", "は", "停まります"]
-        reading: "basu wa tomarimasu."
-        ipa: "basɯ wa tomaɾimasɯ"
+      - target: "バス停は近いです。"
+        target_scripts: { kana: "バスていはちかいです。" }
+        words: ["バス停", "は", "近い", "です"]
+        reading: "basutei wa chikai desu."
+        ipa: "basɯteː wa tɕikai desɯ"
   - id: "ja-6564"
     target: "務"
     target_scripts: { kana: "つとめる" }
@@ -80,6 +80,11 @@ cards:
         words: ["業務", "は", "大切", "です"]
         reading: "gyoumu wa taisetsu desu."
         ipa: "ɡjoːmɯ wa taisetsɯ desɯ"
+      - target: "事務所は大きいです。"
+        target_scripts: { kana: "じむしょはおおきいです。" }
+        words: ["事務所", "は", "大きい", "です"]
+        reading: "jimusho wa ookii desu."
+        ipa: "dʑimɯɕo wa oːkiː desɯ"
   - id: "ja-6565"
     target: "基"
     target_scripts: { kana: "もと" }
@@ -110,6 +115,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "産婦人科は近いです。"
+        target_scripts: { kana: "さんふじんかはちかいです。" }
+        words: ["産婦人科", "は", "近い", "です"]
+        reading: "sanfujinka wa chikai desu."
+        ipa: "saɴɸɯdʑiɴka wa tɕikai desɯ"
   - id: "ja-6568"
     target: "寄"
     target_scripts: { kana: "よる" }
@@ -140,6 +151,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "出張は大変です。"
+        target_scripts: { kana: "しゅっちょうはたいへんです。" }
+        words: ["出張", "は", "大変", "です"]
+        reading: "shutchou wa taihen desu."
+        ipa: "ɕɯttɕoː wa taiheɴ desɯ"
   - id: "ja-6571"
     target: "得"
     target_scripts: { kana: "える" }
@@ -177,7 +194,7 @@ cards:
     target_scripts: { kana: "さずける" }
     words: ["授"]
     reading: "sazukeru"
-    ipa: "sazɯkeɾɯ"
+    ipa: "sadzɯkeɾɯ"
     pos: "letter"
     notes:
       - { id: "n1", kind: "usage" }
@@ -203,7 +220,7 @@ cards:
     target_scripts: { kana: "せつぞく" }
     words: ["接"]
     reading: "setsuzoku"
-    ipa: "setsɯzokɯ"
+    ipa: "setsɯdzokɯ"
     pos: "letter"
     notes:
       - { id: "n1", kind: "usage" }
@@ -218,6 +235,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "救急車は速いです。"
+        target_scripts: { kana: "きゅうきゅうしゃははやいです。" }
+        words: ["救急車", "は", "速い", "です"]
+        reading: "kyuukyuusha wa hayai desu."
+        ipa: "kjɯːkjɯːɕa wa hajai desɯ"
   - id: "ja-6577"
     target: "断"
     target_scripts: { kana: "ことわる" }
@@ -265,7 +288,7 @@ cards:
         target_scripts: { kana: "たまごをまぜます。" }
         words: ["たまご", "を", "混ぜます"]
         reading: "tamago o mazemasu."
-        ipa: "tamaɡo o madzeɾimasɯ"
+        ipa: "tamaɡo o madzemasɯ"
   - id: "ja-6580"
     target: "率"
     target_scripts: { kana: "ひきいる" }
@@ -304,20 +327,20 @@ cards:
     bases: "self"
   - id: "ja-6583"
     target: "眼"
-    target_scripts: { kana: "めがね" }
+    target_scripts: { kana: "がんか" }
     words: ["眼"]
-    reading: "megane"
-    ipa: "meɡane"
+    reading: "ganka"
+    ipa: "ɡaɴka"
     pos: "letter"
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
     examples:
-      - target: "眼鏡は重いです。"
-        target_scripts: { kana: "めがねはおもいです。" }
-        words: ["眼鏡", "は", "重い", "です"]
-        reading: "megane wa omoi desu."
-        ipa: "meɡane wa omoi desɯ"
+      - target: "眼科は近いです。"
+        target_scripts: { kana: "がんかはちかいです。" }
+        words: ["眼科", "は", "近い", "です"]
+        reading: "ganka wa chikai desu."
+        ipa: "ɡaɴka wa tɕikai desɯ"
   - id: "ja-6584"
     target: "移"
     target_scripts: { kana: "うつる" }
@@ -376,3 +399,9 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "規則は大切です。"
+        target_scripts: { kana: "きそくはたいせつです。" }
+        words: ["規則", "は", "大切", "です"]
+        reading: "kisoku wa taisetsu desu."
+        ipa: "kisokɯ wa taisetsɯ desɯ"
