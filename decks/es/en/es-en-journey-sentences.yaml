@@ -5,7 +5,7 @@ core: "es-journey-sentences"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Sentences: journey"
 license: "CC-BY-SA-4.0"
-description: "Six sentences about travel, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+description: "Thirty-one sentences about travel, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
 cards:
   "es-1724":
     native: "I buy a single ticket for the train."
@@ -31,3 +31,103 @@ cards:
     native: "I pay the toll and buy petrol."
     bases: { "el": "the" }
     confusables: { "gasolinera": { why: "Gasolinera is the petrol station, the place." }, "tarifa": { why: "Tarifa is a fare, a price for a trip." } }
+  "es-3400":
+    native: "Where is the platform?"
+    bases: { "el": "the" }
+    confusables: { "es-1712": { why: "Vía is the railway track, not the platform." }, "control": { why: "Control is the checkpoint, where papers are checked." } }
+  "es-3401":
+    native: "I do not have the ticket."
+    bases: { "el": "the" }
+    confusables: { "tarifa": { why: "Tarifa is a fare, the price of a trip." }, "tarjeta": { why: "Tarjeta is a card, such as a bank card." } }
+  "es-3402":
+    native: "I arrive late at the boarding area."
+    bases: { "al": "to the" }
+    confusables: { "llegada": { why: "Llegada is an arrival, the noun for coming in." }, "retraso": { why: "Retraso is a delay, when something is late." } }
+  "es-3403":
+    native: "My luggage is big, but the bag is small."
+    bases: { "el": "the" }
+    confusables: { "maleta": { why: "Maleta is a suitcase, one piece of luggage." }, "mochila": { why: "Mochila is a backpack, worn on the back." } }
+  "es-3404":
+    native: "Who carries the luggage?"
+    bases: { "el": "the" }
+    confusables: { "pasajero": { why: "Pasajero is a passenger, a person who travels." }, "viajero": { why: "Viajero is a traveller, a person on a journey." } }
+  "es-3405":
+    native: "I pay for the petrol with the card."
+    bases: { "la": "the", "con": "with" }
+    confusables: { "gasolinera": { why: "Gasolinera is the petrol station, the place where you buy it." }, "peaje": { why: "Peaje is the toll, paid on some roads." } }
+  "es-3406":
+    native: "Yesterday I checked in the suitcase at the airport."
+    bases: { "la": "the", "en": "at", "el": "the" }
+    confusables: { "aduana": { why: "Aduana is customs, the check at a border." }, "equipaje": { why: "Equipaje is all the luggage, the general word." } }
+  "es-3407":
+    native: "We get on the carriage now."
+    bases: { "al": "to the" }
+    confusables: { "es-1693": { why: "Andén is the platform, where you wait for the train." }, "tren": { why: "Tren is the train as a whole, not one carriage." } }
+  "es-3408":
+    native: "A passenger waits on the platform."
+    bases: { "Un": "a", "en": "on", "el": "the" }
+    confusables: { "es-1712": { why: "Vía is the railway track, where the train runs." }, "taquilla": { why: "Taquilla is the ticket office, where you buy tickets." } }
+  "es-3409":
+    native: "We miss the flight today."
+    bases: { "el": "the" }
+    confusables: { "cancelar": { why: "Cancelar is to cancel, which is not the same as missing it." }, "retrasarse": { why: "Retrasarse is to be delayed, not to miss." } }
+  "es-3410":
+    native: "At what time does the plane take off?"
+    bases: { "A": "at", "el": "the" }
+    confusables: { "aterrizar": { why: "Aterrizar is to land, the opposite of take off." }, "vuelo": { why: "Vuelo is the flight, the whole journey by air." } }
+  "es-3411":
+    native: "I buy a single ticket at the ticket office."
+    bases: { "un": "a", "de": "of", "en": "at", "la": "the" }
+    confusables: { "vuelta": { why: "Vuelta is the return journey, going back." }, "tarifa": { why: "Tarifa is a fare, the price you pay for a trip." } }
+  "es-3412":
+    native: "We are going to travel by metro tomorrow."
+    bases: { "a": "to", "en": "by" }
+    confusables: { "ida": { why: "Ida is the outward, one-way trip." }, "destino": { why: "Destino is the destination, the place you go to." } }
+  "es-3413":
+    native: "The passenger has no seat."
+    bases: { "El": "the" }
+    confusables: { "viajero": { why: "Viajero is a traveller, a person on a trip." }, "es-1696": { why: "Vagón is a carriage, the part of the train where seats are." } }
+  "es-3414":
+    native: "I take a taxi to the hostel."
+    bases: { "un": "a", "al": "to the" }
+    confusables: { "hotel": { why: "Hotel is a hotel, a larger place to stay." }, "es-0684": { why: "Estación is a station, the place for trains and buses." } }
+  "es-3415":
+    native: "My sister travels a lot by bus and by metro."
+    bases: { "en": "by" }
+    confusables: { "tren": { why: "Tren is a train, a rail vehicle." }, "taxi": { why: "Taxi is a taxi, a car you hail in the street." } }
+  "es-3416":
+    native: "The plane lands at ten at night."
+    bases: { "El": "the", "a": "at", "las": "the", "de": "of", "la": "the" }
+    confusables: { "despegar": { why: "Despegar is to take off, the opposite of landing." }, "vuelo": { why: "Vuelo is the flight, not the landing." } }
+  "es-3417":
+    native: "How long does the trip last?"
+    bases: { "el": "the" }
+    confusables: { "vuelta": { why: "Vuelta is the return trip, not its length." }, "itinerario": { why: "Itinerario is the plan of the route and its stops." } }
+  "es-3418":
+    native: "I want a room at the hostel."
+    bases: { "una": "a", "en": "at", "el": "the" }
+    confusables: { "cuarto": { why: "Cuarto is a room, the general word for one." }, "piso": { why: "Piso is a flat, an apartment in a building." } }
+  "es-3419":
+    native: "I sit in the aisle seat."
+    bases: { "Me": "myself", "en": "in", "el": "the", "del": "of the" }
+    confusables: { "es-0813": { why: "Sofá is a sofa, a seat at home." }, "silla": { why: "Silla is a chair, a seat with a back." } }
+  "es-3420":
+    native: "She looks for the city guide."
+    bases: { "la": "the", "de": "of" }
+    confusables: { "mapa": { why: "Mapa is a map, a flat drawing of an area." }, "itinerario": { why: "Itinerario is the plan of the route, not a guide book." } }
+  "es-3421":
+    native: "Do you need your passport for the checkpoint?"
+    bases: { "el": "the", "para": "for" }
+    confusables: { "tarjeta": { why: "Tarjeta is a card, such as a bank card." }, "billete": { why: "Billete is a ticket or a banknote, depending on the word." } }
+  "es-3422":
+    native: "They arrive at the airport at five and look for the boarding area."
+    bases: { "al": "to the", "a": "at", "las": "the", "el": "the" }
+    confusables: { "embarcar": { why: "Embarcar is the verb to board, the action of getting on." }, "destino": { why: "Destino is the destination, where a trip ends." } }
+  "es-3423":
+    native: "The train is an hour late."
+    bases: { "El": "the", "un": "a", "de": "of", "una": "an" }
+    confusables: { "retrasarse": { why: "Retrasarse is to be delayed, the verb." }, "llegada": { why: "Llegada is an arrival, when something gets there." } }
+  "es-3424":
+    native: "Before leaving, I look at the itinerary of the city."
+    bases: { "de": "of", "el": "the", "la": "the" }
+    confusables: { "mapa": { why: "Mapa is a map, a flat drawing of an area." }, "destino": { why: "Destino is the destination, not the plan." } }
