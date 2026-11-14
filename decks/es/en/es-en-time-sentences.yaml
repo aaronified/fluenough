@@ -5,7 +5,7 @@ core: "es-time-sentences"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Sentences: time"
 license: "CC-BY-SA-4.0"
-description: "Fourteen sentences about the time of day, appointments and daily routines, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+description: "Thirteen sentences about the time of day, appointments and daily routines, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
 cards:
   "es-0853":
     native: "The meeting starts at nine."
@@ -36,9 +36,9 @@ cards:
     bases: {"nombre": "name", "Carmen": "Carmen", "una": "an"}
     confusables: {"hora": { why: "Hora is an hour, or the time of day, not an appointment." }, "minuto": { why: "Minuto is a minute, a short time." }}
   "es-3521":
-    native: "I have breakfast at this time every day."
-    bases: {"a": "at", "esta": "this", "los": "the"}
-    confusables: {"comer": { why: "Comer is to eat; breakfast is desayunar." }, "desayuno": { why: "El desayuno is the breakfast, the meal itself, not the verb." }}
+    native: "I have breakfast early every day."
+    bases: {"los": "the"}
+    confusables: {"comer": { why: "Comer is to eat; breakfast is desayunar." }, "cena": { why: "La cena is dinner, the evening meal, not breakfast." }}
   "es-3522":
     native: "At what time does today's meeting start?"
     bases: {"A": "At", "la": "the", "de": "of"}
@@ -50,15 +50,11 @@ cards:
   "es-3524":
     native: "I do not work in the morning."
     bases: {"por": "in", "la": "the"}
-    confusables: {"trabajo": { why: "El trabajo is work or a job, a noun." }, "noche": { why: "La noche is the night, not the morning." }}
+    confusables: {"estudiar": { why: "Estudiar is to study, not to work." }, "noche": { why: "La noche is the night, not the morning." }}
   "es-3525":
     native: "What time do you have dinner?"
     bases: {"A": "At"}
-    confusables: {"cena": { why: "La cena is dinner, the meal; here the verb is cenar." }, "desayunar": { why: "Desayunar is to have breakfast, not dinner." }}
-  "es-3526":
-    native: "I go to the park at this time every day."
-    bases: {"al": "to the", "a": "at", "esta": "this", "los": "the"}
-    confusables: {"calle": { why: "La calle is a street, not a park." }, "trabajo": { why: "El trabajo is work, the job." }}
+    confusables: {"comer": { why: "Comer is to eat, a general verb; the verb for dinner is cenar." }, "desayunar": { why: "Desayunar is to have breakfast, not dinner." }}
   "es-3527":
     native: "I am Tomás and I eat at midday."
     bases: {"Tomás": "Tomás", "al": "at"}
