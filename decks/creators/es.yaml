@@ -1,0 +1,82 @@
+# The people behind the Spanish culture decks (wiki/Plan-Deck-Kinds-And-Topics.md, D5).
+# Dates are the years of birth and death, circa where the page does not give the year. The eras follow the Spanish periods.
+# No pictures: none has a licence checked yet.
+schema: 1
+kind: "creators"
+id: "creators-es"
+language: "es"
+license: "CC-BY-SA-4.0"
+eras:
+  - id: "edad-media"
+    name: { es: "Edad Media", en: "Middle Ages" }
+    from: 1000
+    to: 1492
+  - id: "siglo-de-oro"
+    name: { es: "Siglo de Oro", en: "Golden Age" }
+    from: 1492
+    to: 1700
+  - id: "ilustracion"
+    name: { es: "Ilustración", en: "Enlightenment" }
+    from: 1700
+    to: 1808
+  - id: "siglo-xix"
+    name: { es: "Siglo XIX", en: "Nineteenth century" }
+    from: 1808
+    to: 1900
+  - id: "siglo-xx"
+    name: { es: "Siglo XX", en: "Twentieth century" }
+    from: 1900
+    to: 2000
+creators:
+  - id: "es-jorge-manrique"
+    name:
+      es: { text: "Jorge Manrique", ipa: "ˈxoɾxe manˈrike" }
+      en: { text: "Jorge Manrique" }
+    born: { year: 1440, circa: true }
+    died: 1479
+    era: "edad-media"
+    bio:
+      en: "Jorge Manrique was a Castilian poet and soldier from the noble Manrique family. He lived in the second half of the 1400s. He is known for one long poem written after his father died. The year of his birth is not certain."
+    legacy:
+      text: { en: "His poem for his father is one of the best-known works of Castilian verse." }
+      items:
+        - { kind: "music", text: { en: "The Coplas have been set to music in several versions, which the Spanish Wikipedia article lists." }, source: { url: "https://es.wikipedia.org/wiki/Coplas_por_la_muerte_de_su_padre", accessed: "2026-11-14" } }
+  - id: "es-miguel-de-cervantes"
+    name:
+      es: { text: "Miguel de Cervantes", ipa: "miˈɡel de θeɾˈbantes" }
+      en: { text: "Miguel de Cervantes" }
+    born: { year: 1547, circa: true }
+    died: 1616
+    era: "siglo-de-oro"
+    bio:
+      en: "Miguel de Cervantes was a Spanish novelist, poet and soldier of the Golden Age. He wrote Don Quijote in two parts, the first in 1605. He died in Madrid in 1616."
+    legacy:
+      text: { en: "Don Quijote is one of the most translated books in the world." }
+      items:
+        - { kind: "other", text: { en: "The number of editions and translations of Don Quijote is surpassed only by the Bible, the Spanish Wikipedia article says." }, source: { url: "https://es.wikipedia.org/wiki/Miguel_de_Cervantes", accessed: "2026-11-14" } }
+  - id: "es-juan-de-la-cruz"
+    name:
+      es: { text: "Juan de la Cruz", ipa: "xwan de la kɾuθ" }
+      en: { text: "John of the Cross" }
+    born: 1542
+    died: 1591
+    era: "siglo-de-oro"
+    bio:
+      en: "John of the Cross was a Spanish friar, mystic and poet of the Golden Age. With Saint Teresa of Avila he helped found the Discalced Carmelites. He died in 1591."
+    legacy:
+      text: { en: "The Church has named him a Doctor of the Church, a title for teachers of the faith." }
+      items:
+        - { kind: "other", text: { en: "The Spanish Wikipedia article lists the title Doctor de la Iglesia among his honours." }, source: { url: "https://es.wikipedia.org/wiki/Juan_de_la_Cruz", accessed: "2026-11-14" } }
+  - id: "es-pedro-calderon-de-la-barca"
+    name:
+      es: { text: "Pedro Calderón de la Barca", ipa: "ˈpedɾo kaldeˈɾon de la ˈbaɾka" }
+      en: { text: "Pedro Calderón de la Barca" }
+    born: 1600
+    died: 1681
+    era: "siglo-de-oro"
+    bio:
+      en: "Pedro Calderón de la Barca was a Spanish playwright, poet and priest of the Golden Age. He wrote La vida es sueño. He was born in Madrid in 1600 and died in 1681."
+    legacy:
+      text: { en: "Madrid honoured him with a marble statue in 1880." }
+      items:
+        - { kind: "commemoration", year: 1880, text: { en: "A marble statue by Juan Figueras y Vila was placed in Madrid's Plaza de Santa Ana in 1880, in his memory, the Spanish Wikipedia article says." }, source: { url: "https://es.wikipedia.org/wiki/Pedro_Calder%C3%B3n_de_la_Barca", accessed: "2026-11-14" } }

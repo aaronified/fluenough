@@ -1,0 +1,140 @@
+# A culture deck of Spanish works that are in the public domain: short lines of poems, a sentence of prose and a line of a play,
+# each with its source, its rights basis and its creator (wiki/Plan-Deck-Kinds-And-Topics.md). Built from Spanish Wikipedia pages
+# only; the items whose text or dates could not be read on the page were left out.
+# The text is shown in modern spelling where the cited copy is archaic, and the edition says so.
+schema: 1
+id: "es-culture-1"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+genre: "culture"
+level: "B1"
+tags: ["unreviewed"]
+cards:
+  - id: "es-4000"
+    target: "Recuerde el alma dormida, avive el seso y despierte"
+    words: ["Recuerde", "el", "alma", "dormida", "avive", "el", "seso", "y", "despierte"]
+    ipa: "reˈkweɾde el ˈalma doɾˈmida aˈbibe el ˈseso i desˈpjeɾte"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "es-jorge-manrique"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Recuerde", base: "recordar" }
+      - { word: "el", base: "el" }
+      - { word: "alma", base: "alma" }
+      - { word: "dormida", base: "dormido" }
+      - { word: "avive", base: "avivar" }
+      - { word: "seso", base: "seso" }
+      - { word: "y", base: "y" }
+      - { word: "despierte", base: "despertar" }
+    source:
+      author: "Jorge Manrique"
+      work: "Coplas por la muerte de su padre, first stanza"
+      date: "1476-1479"
+      edition: "Coplas por la muerte de su padre, first stanza, shown in modern spelling (the copy on the Spanish Wikipedia page has abive); written after the father's death in 1476 and before the author's death in 1479"
+      url: "https://es.wikipedia.org/wiki/Coplas_por_la_muerte_de_su_padre"
+      basis: "public-domain"
+      author_died: 1479
+      jurisdiction: "ES"
+      rights_checked: "2026-11-14"
+  - id: "es-4001"
+    target: "En un lugar de la Mancha, de cuyo nombre no quiero acordarme"
+    words: ["En", "un", "lugar", "de", "la", "Mancha", "de", "cuyo", "nombre", "no", "quiero", "acordarme"]
+    ipa: "en un luˈɡaɾ de la ˈmantʃa de ˈkuʝo ˈnombɾe no ˈkjeɾo akoɾˈdaɾme"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "es-miguel-de-cervantes"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "En", base: "en" }
+      - { word: "un", base: "un" }
+      - { word: "lugar", base: "lugar" }
+      - { word: "de", base: "de" }
+      - { word: "la", base: "la" }
+      - { word: "Mancha", base: "Mancha" }
+      - { word: "cuyo", base: "cuyo" }
+      - { word: "nombre", base: "nombre" }
+      - { word: "no", base: "no" }
+      - { word: "quiero", base: "querer" }
+      - { word: "acordarme", base: "acordarse" }
+    source:
+      author: "Miguel de Cervantes"
+      work: "Don Quijote de la Mancha, first part, opening line"
+      date: 1605
+      edition: "El ingenioso hidalgo Don Quijote de la Mancha, first part, 1605; opening line as quoted on the Spanish Wikipedia page, in the spelling of that page"
+      url: "https://es.wikipedia.org/wiki/Don_Quijote_de_la_Mancha"
+      basis: "public-domain"
+      author_died: 1616
+      jurisdiction: "ES"
+      rights_checked: "2026-11-14"
+  - id: "es-4002"
+    target: "En una noche oscura, con ansias, en amores inflamada, ¡oh dichosa ventura!"
+    words: ["En", "una", "noche", "oscura", "con", "ansias", "en", "amores", "inflamada", "oh", "dichosa", "ventura"]
+    ipa: "en ˈuna ˈnotʃe osˈkuɾa kon ˈansjas en aˈmoɾes inflaˈmada o diˈtʃosa benˈtuɾa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "es-juan-de-la-cruz"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "En", base: "en" }
+      - { word: "una", base: "uno" }
+      - { word: "noche", base: "noche" }
+      - { word: "oscura", base: "oscuro" }
+      - { word: "con", base: "con" }
+      - { word: "ansias", base: "ansia" }
+      - { word: "en", base: "en" }
+      - { word: "amores", base: "amor" }
+      - { word: "inflamada", base: "inflamado" }
+      - { word: "oh", base: "oh" }
+      - { word: "dichosa", base: "dichoso" }
+      - { word: "ventura", base: "ventura" }
+    source:
+      author: "Juan de la Cruz"
+      work: "Noche oscura del alma, first stanza"
+      date: "1577-1579"
+      edition: "Noche oscura del alma, first stanza, as quoted on the Spanish Wikipedia page for the author; the date is the span that the Noche oscura page gives as possible ('quizás', perhaps), so it is flagged for review"
+      url: "https://es.wikipedia.org/wiki/Juan_de_la_Cruz"
+      basis: "public-domain"
+      author_died: 1591
+      jurisdiction: "ES"
+      rights_checked: "2026-11-14"
+  - id: "es-4003"
+    target: "¿Qué es la vida? Un frenesí. ¿Qué es la vida? Una ilusión, una sombra, una ficción"
+    words: ["Qué", "es", "la", "vida", "Un", "frenesí", "Qué", "es", "la", "vida", "Una", "ilusión", "una", "sombra", "una", "ficción"]
+    ipa: "ke es la ˈbida un fɾeneˈsi ke es la ˈbida ˈuna iluˈsjon ˈuna ˈsombɾa ˈuna fikˈθjon"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "es-pedro-calderon-de-la-barca"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Qué", base: "qué" }
+      - { word: "es", base: "ser" }
+      - { word: "la", base: "la" }
+      - { word: "vida", base: "vida" }
+      - { word: "Un", base: "un" }
+      - { word: "frenesí", base: "frenesí" }
+      - { word: "Una", base: "uno" }
+      - { word: "ilusión", base: "ilusión" }
+      - { word: "una", base: "uno" }
+      - { word: "sombra", base: "sombra" }
+      - { word: "ficción", base: "ficción" }
+    source:
+      author: "Pedro Calderón de la Barca"
+      work: "La vida es sueño, the speech beginning ¿Qué es la vida?"
+      date: 1635
+      edition: "La vida es sueño, dated 1635 on the Spanish Wikipedia page; the lines are quoted as printed on that page"
+      url: "https://es.wikipedia.org/wiki/La_vida_es_sue%C3%B1o"
+      basis: "public-domain"
+      author_died: 1681
+      jurisdiction: "ES"
+      rights_checked: "2026-11-14"
