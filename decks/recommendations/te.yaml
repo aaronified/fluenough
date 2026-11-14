@@ -1,4 +1,4 @@
-# Popular works of India in Telugu that are not in the public domain: the learner finds them (a library, a shop, a service) and the app asks
+# Popular works of India in Telugu, recommended for the learner to find (some are in the public domain): the learner finds them (a library, a shop, a service) and the app asks
 # the questions after the learner has marked the work as seen, read or heard. Nothing of a work is quoted (wiki/Plan-Language-Completeness.md,
 # "Source-it-yourself works"). No links are given: no link has been checked.
 schema: 1
@@ -16,8 +16,8 @@ recommendations:
     briefing: { en: "A musical drama about Shankara Sastri, a classical musician, and Tulasi, a young woman he shelters after she escapes from a landlord. The music is at the centre of the story." }
     questions:
       - { id: "q1", prompt: { en: "Why does Tulasi escape by train?" }, options: { en: ["Her mother tries to sell her to a wealthy landlord", "She wants to join a dance troupe", "She is running from the police"] }, answer: 1 }
-      - { id: "q2", prompt: { en: "Who stabs the landlord to death after he assaults her?" }, options: { en: ["Sastri", "Madhava", "Tulasi"] }, answer: 3 }
-      - { id: "q3", prompt: { en: "Whose marriage does Tulasi arrange using her late mother's wealth?" }, options: { en: ["Sarada and Kameswara Rao", "Madhava and Sarada", "Sastri and Tulasi"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who stabs the landlord to death after he assaults her?" }, options: { en: ["Sastri", "Tulasi", "Madhava"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Whose marriage does Tulasi arrange using her late mother's wealth?" }, options: { en: ["Madhava and Sarada", "Sastri and Tulasi", "Sarada and Kameswara Rao"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "te-rec-sagara-sangamam"
     medium: "film"
@@ -28,8 +28,8 @@ recommendations:
     briefing: { en: "A dance film about a gifted classical dancer who will not lower his art to suit commercial films, and the people whose lives change around him." }
     questions:
       - { id: "q1", prompt: { en: "What is the dancer's name?" }, options: { en: ["Balakrishna, called Balu", "Kishore", "Prasanth"] }, answer: 1 }
-      - { id: "q2", prompt: { en: "What does Madhavi keep from Balu?" }, options: { en: ["Her widowhood", "Her real name", "Her job"] }, answer: 1 }
-      - { id: "q3", prompt: { en: "What happens to Balu after Kishore fires him?" }, options: { en: ["He is diagnosed with liver cirrhosis", "He moves to Delhi", "He becomes a film star"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "What does Madhavi keep from Balu?" }, options: { en: ["Her real name", "Her widowhood", "Her job"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What happens to Balu after Kishore fires him?" }, options: { en: ["He moves to Delhi", "He becomes a film star", "He is diagnosed with liver cirrhosis"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "te-rec-pelli-choopulu"
     medium: "film"
@@ -39,13 +39,13 @@ recommendations:
     level: "A2"
     briefing: { en: "A romantic comedy about two young people who are stuck in a room together, and a food truck business that their plans turn into." }
     questions:
-      - { id: "q1", prompt: { en: "Why are Prasanth and Chitra stuck in a room?" }, options: { en: ["There is a power cut", "Her younger cousin locks a door that often jams", "Her father locks them in"] }, answer: 2 }
+      - { id: "q1", prompt: { en: "Why are Prasanth and Chitra stuck in a room?" }, options: { en: ["Her younger cousin locks a door that often jams", "There is a power cut", "Her father locks them in"] }, answer: 1 }
       - { id: "q2", prompt: { en: "Who had planned a food truck business with Chitra?" }, options: { en: ["Prasanth", "Vikram", "Her father"] }, answer: 2 }
-      - { id: "q3", prompt: { en: "What job does Prasanth take in the food truck?" }, options: { en: ["He is the chef", "He keeps the accounts", "He drives the truck"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What job does Prasanth take in the food truck?" }, options: { en: ["He keeps the accounts", "He drives the truck", "He is the chef"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "te-rec-baahubali-the-beginning"
     medium: "film"
-    title: { text: "బాహుబలి:ద బిగినింగ్", reading: "bāhubali:da biginiṅg" }
+    title: { text: "బాహుబలి: ది బిగినింగ్", reading: "bāhubali: di biginiṅg" }
     creator: ["te-s-s-rajamouli"]
     year: 2015
     level: "B1"
@@ -53,7 +53,7 @@ recommendations:
     questions:
       - { id: "q1", prompt: { en: "Who adopts the baby who is rescued from the river?" }, options: { en: ["Sanga, the wife of the Amburi chieftain", "Sivagami, the regent", "Devasena"] }, answer: 1 }
       - { id: "q2", prompt: { en: "For how long has Bhallaladeva kept Devasena imprisoned?" }, options: { en: ["Five years", "Twenty-five years", "Ten years"] }, answer: 2 }
-      - { id: "q3", prompt: { en: "What does Sivagami say about the throne after King Vikramadeva dies?" }, options: { en: ["The eldest prince will inherit it", "The more worthy prince will inherit it", "The court's chief minister will take it"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What does Sivagami say about the throne after King Vikramadeva dies?" }, options: { en: ["The eldest prince will inherit it", "The court's chief minister will take it", "The more worthy prince will inherit it"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "te-rec-rrr"
     medium: "film"
@@ -64,8 +64,8 @@ recommendations:
     briefing: { en: "An epic period action film set in 1920 under British rule, about a police officer and a rebel from a forest community who first meet as opponents." }
     questions:
       - { id: "q1", prompt: { en: "Who does Catherine recruit to capture Komaram Bheem?" }, options: { en: ["Alluri Sitarama Raju", "Scott Buxton", "Malli"] }, answer: 1 }
-      - { id: "q2", prompt: { en: "Where do Scott Buxton and Catherine take Malli?" }, options: { en: ["To Delhi", "To London", "To Hyderabad"] }, answer: 1 }
-      - { id: "q3", prompt: { en: "How do Ram and Bheem first form a bond?" }, options: { en: ["Each rescues a boy trapped under a burning train wreck", "They win a wrestling match", "They share a prison cell"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Where do Scott Buxton and Catherine take Malli?" }, options: { en: ["To London", "To Delhi", "To Hyderabad"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "How do Ram and Bheem first form a bond?" }, options: { en: ["They win a wrestling match", "They share a prison cell", "Each rescues a boy trapped under a burning train wreck"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "te-rec-mahanati"
     medium: "film"
@@ -76,8 +76,8 @@ recommendations:
     briefing: { en: "A biographical drama based on the life of the film actress Savitri, told through a reporter who looks into her story." }
     questions:
       - { id: "q1", prompt: { en: "Who finds the actress unconscious in 1980?" }, options: { en: ["Her son", "A reporter", "Her husband"] }, answer: 1 }
-      - { id: "q2", prompt: { en: "Who is given the job of covering her case?" }, options: { en: ["Madhuravani and Vijay Anthony", "Shankarayya and Savitri", "Vijay Anthony alone"] }, answer: 1 }
-      - { id: "q3", prompt: { en: "What turns out to be Shankarayya?" }, options: { en: ["A roadside statue", "A doctor", "Her father"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who is given the job of covering her case?" }, options: { en: ["Shankarayya and Savitri", "Madhuravani and Vijay Anthony", "Vijay Anthony alone"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What turns out to be Shankarayya?" }, options: { en: ["A doctor", "Her father", "A roadside statue"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "te-rec-eega"
     medium: "film"
@@ -88,8 +88,8 @@ recommendations:
     briefing: { en: "A fantasy action film about a man who is murdered and returns as a housefly to take revenge on his killer." }
     questions:
       - { id: "q1", prompt: { en: "What does Nani make for a living?" }, options: { en: ["Fireworks", "Furniture", "Films"] }, answer: 1 }
-      - { id: "q2", prompt: { en: "Who strangles Nani?" }, options: { en: ["Sudeep", "Bindu", "Vijay"] }, answer: 1 }
-      - { id: "q3", prompt: { en: "What does Nani come back as?" }, options: { en: ["A housefly", "A bird", "A ghost"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who strangles Nani?" }, options: { en: ["Bindu", "Sudeep", "Vijay"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What does Nani come back as?" }, options: { en: ["A bird", "A ghost", "A housefly"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "te-rec-swathi-muthyam"
     medium: "film"
@@ -100,8 +100,8 @@ recommendations:
     briefing: { en: "A romantic drama about an elderly man with a cognitive disability who ties a thaali around the neck of a young widow, and the village that is scandalised by it." }
     questions:
       - { id: "q1", prompt: { en: "Who is Sivayya?" }, options: { en: ["An elderly man with a cognitive disability", "A village priest", "A landlord"] }, answer: 1 }
-      - { id: "q2", prompt: { en: "Who is Lalitha?" }, options: { en: ["A young widow with a five-year-old son", "Sivayya's sister", "A schoolteacher"] }, answer: 1 }
-      - { id: "q3", prompt: { en: "During which festival does Sivayya tie the thaali?" }, options: { en: ["Sri Rama Navami", "Diwali", "Sankranti"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who is Lalitha?" }, options: { en: ["Sivayya's sister", "A young widow with a five-year-old son", "A schoolteacher"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "During which festival does Sivayya tie the thaali?" }, options: { en: ["Diwali", "Sankranti", "Sri Rama Navami"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "te-rec-chivaraku-migiledi"
     medium: "book"
@@ -110,11 +110,11 @@ recommendations:
     year: 1946
     level: "B1"
     script: "telugu"
-    briefing: { en: "A novel by Butchi Babu about a man whose quest brings him into conflict with society. It leads him to self-knowledge, acceptance and peace, and it is the best-known work of its author." }
+    briefing: { en: "A novel by Butchi Babu, serialised from 1946 and published as a book in 1952. Its protagonist's quest brings him into conflict with society and leads him to self-knowledge, acceptance and peace." }
     questions:
       - { id: "q1", prompt: { en: "Where was the novel first published in serial form?" }, options: { en: ["In the magazine Navodaya", "In the newspaper Andhra Patrika", "In a radio broadcast"] }, answer: 1 }
-      - { id: "q2", prompt: { en: "What does the protagonist's quest finally lead him to?" }, options: { en: ["Self-knowledge, acceptance and peace", "Wealth and a new job", "Exile in a foreign city"] }, answer: 1 }
-      - { id: "q3", prompt: { en: "Who translated the novel into English?" }, options: { en: ["Kakani Chakrapani", "Katyayani Vidmahe", "Butchi Babu himself"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "What does the protagonist's quest finally lead him to?" }, options: { en: ["Wealth and a new job", "Self-knowledge, acceptance and peace", "Exile in a foreign city"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Who translated the novel into English?" }, options: { en: ["Katyayani Vidmahe", "Butchi Babu himself", "Kakani Chakrapani"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "te-rec-maidanam"
     medium: "book"
@@ -126,8 +126,8 @@ recommendations:
     briefing: { en: "A novel by Chalam from 1927 about the life of a woman. It is known for its frank style and for its treatment of women's freedom." }
     questions:
       - { id: "q1", prompt: { en: "In which year was the novel written?" }, options: { en: ["1927", "1952", "1964"] }, answer: 1 }
-      - { id: "q2", prompt: { en: "What is the novel chiefly about?" }, options: { en: ["Women's freedom", "Village politics", "The life of a sailor"] }, answer: 1 }
-      - { id: "q3", prompt: { en: "How does the novel treat the relationship between a man and a woman?" }, options: { en: ["Shaped by caste and creed", "Free of caste and creed", "Seen only through a family's eyes"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "What is the novel chiefly about?" }, options: { en: ["Village politics", "Women's freedom", "The life of a sailor"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "How does the novel treat the relationship between a man and a woman?" }, options: { en: ["Shaped by caste and creed", "Seen only through a family's eyes", "Free of caste and creed"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "te-rec-amaravati-kathalu"
     medium: "book"
@@ -138,9 +138,9 @@ recommendations:
     script: "telugu"
     briefing: { en: "A collection of one hundred short stories about the village of Amaravati near Guntur and the people who live there. The stories were first published in a weekly magazine over about two years." }
     questions:
-      - { id: "q1", prompt: { en: "How many stories are in the collection?" }, options: { en: ["50", "100", "200"] }, answer: 2 }
-      - { id: "q2", prompt: { en: "Where were the stories first published?" }, options: { en: ["In the weekly Andhra Jyothi", "In the magazine Navodaya", "On All India Radio"] }, answer: 1 }
-      - { id: "q3", prompt: { en: "Near which city is the village of Amaravati?" }, options: { en: ["Guntur", "Tenali", "Vijayawada"] }, answer: 1 }
+      - { id: "q1", prompt: { en: "How many stories are in the collection?" }, options: { en: ["100", "50", "200"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Where were the stories first published?" }, options: { en: ["In the magazine Navodaya", "In the weekly Andhra Jyothi", "On All India Radio"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Near which city is the village of Amaravati?" }, options: { en: ["Tenali", "Vijayawada", "Guntur"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "te-rec-veyipadagalu"
     medium: "book"
@@ -152,8 +152,8 @@ recommendations:
     briefing: { en: "A long novel about village life, written in 1934 for a competition and later published as a serial. Its title refers to the hoods of a serpent god who protects the village." }
     questions:
       - { id: "q1", prompt: { en: "Which competition was the novel written for?" }, options: { en: ["An Andhra University competition", "A film script contest", "A Sahitya Akademi prize"] }, answer: 1 }
-      - { id: "q2", prompt: { en: "Who wrote the novel down as Viswanatha dictated it?" }, options: { en: ["His younger brother Venkateswarlu", "His son", "His teacher Chellapilla Venkata Sastry"] }, answer: 1 }
-      - { id: "q3", prompt: { en: "What do the hoods in the title refer to?" }, options: { en: ["The hoods of a thousand-hooded serpent god", "Cloaks worn by village priests", "Umbrellas carried at a festival"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who wrote the novel down as Viswanatha dictated it?" }, options: { en: ["His son", "His younger brother Venkateswarlu", "His teacher Chellapilla Venkata Sastry"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What do the hoods in the title refer to?" }, options: { en: ["Cloaks worn by village priests", "Umbrellas carried at a festival", "The hoods of a thousand-hooded serpent god"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "te-rec-pathala-bhairavi"
     medium: "film"
@@ -164,8 +164,8 @@ recommendations:
     briefing: { en: "A 1951 fantasy film about a gardener's son who must gain great wealth before he can marry, and a sorcerer who seeks a statuette that grants any wish." }
     questions:
       - { id: "q1", prompt: { en: "Who directed the film?" }, options: { en: ["K. V. Reddy", "N. T. Rama Rao", "Nagi Reddi"] }, answer: 1 }
-      - { id: "q2", prompt: { en: "How much wealth must the gardener's son amass before he can marry?" }, options: { en: ["Wealth equal to the king of Ujjain", "Wealth equal to the sorcerer", "Wealth equal to a whole village"] }, answer: 1 }
-      - { id: "q3", prompt: { en: "What must the sorcerer sacrifice to gain access to the statuette?" }, options: { en: ["An intelligent and brave young man", "A black goat", "His own daughter"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "How much wealth must the gardener's son amass before he can marry?" }, options: { en: ["Wealth equal to the sorcerer", "Wealth equal to the king of Ujjain", "Wealth equal to a whole village"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What must the sorcerer sacrifice to gain access to the statuette?" }, options: { en: ["A black goat", "His own daughter", "An intelligent and brave young man"] }, answer: 3 }
       - { id: "q4", prompt: { en: "What can the statuette grant?" }, options: { en: ["Any wish", "Eternal youth", "Victory in war"] }, answer: 1 }
     tags: ["unreviewed"]
   - id: "te-rec-kanyasulkam"
@@ -176,20 +176,20 @@ recommendations:
     level: "B1"
     briefing: { en: "A play from 1892 about the custom of bride price among priestly Brahmins. It is one of the earliest modern Telugu plays to deal with social issues." }
     questions:
-      - { id: "q1", prompt: { en: "What practice does the play portray?" }, options: { en: ["Bride price", "Widow remarriage", "Child labour"] }, answer: 1 }
-      - { id: "q2", prompt: { en: "Among which community was this practice common, in the play?" }, options: { en: ["Priestly Brahmins in Telugu-speaking areas", "Farmers in coastal villages", "Merchants of Madras"] }, answer: 1 }
+      - { id: "q1", prompt: { en: "What practice does the play portray?" }, options: { en: ["Widow remarriage", "Bride price", "Child labour"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Among which community was this practice common, in the play?" }, options: { en: ["Farmers in coastal villages", "Merchants of Madras", "Priestly Brahmins in Telugu-speaking areas"] }, answer: 3 }
       - { id: "q3", prompt: { en: "In which year was the first version of the play written?" }, options: { en: ["1892", "1909", "1915"] }, answer: 1 }
     tags: ["unreviewed"]
   - id: "te-rec-maa-telugu-talliki"
     medium: "song"
-    title: { text: "మా తెలుగు తల్లికి మల్లె పూదండ", reading: "mā telugu talliki malle pūdaṇḍa" }
+    title: { text: "మా తెలుగు తల్లికి మల్లెపూదండ", reading: "mā telugu talliki mallepūdaṇḍa" }
     creator: ["te-shankarambadi-sundarachari"]
     year: 1942
     level: "A2"
     briefing: { en: "The state song of Andhra Pradesh. It honours Mother Telugu as a sacred symbol of the Telugu people and names the rivers, culture and literature of the region." }
     questions:
-      - { id: "q1", prompt: { en: "Which state's official song is this?" }, options: { en: ["Andhra Pradesh", "Tamil Nadu", "Karnataka"] }, answer: 1 }
-      - { id: "q2", prompt: { en: "Who wrote the words of the song?" }, options: { en: ["Shankarambadi Sundarachari", "Gurajada Apparao", "Viswanatha Satyanarayana"] }, answer: 1 }
+      - { id: "q1", prompt: { en: "Which state's official song is this?" }, options: { en: ["Tamil Nadu", "Andhra Pradesh", "Karnataka"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Who wrote the words of the song?" }, options: { en: ["Gurajada Apparao", "Viswanatha Satyanarayana", "Shankarambadi Sundarachari"] }, answer: 3 }
       - { id: "q3", prompt: { en: "Which 1942 film was the song first composed for?" }, options: { en: ["Deena Bandhu", "Pathala Bhairavi", "Maya Bazaar"] }, answer: 1 }
-      - { id: "q4", prompt: { en: "Who composed and sang the first version of the song?" }, options: { en: ["Tanguturi Suryakumari", "Ghantasala", "S. Rajeswara Rao"] }, answer: 1 }
+      - { id: "q4", prompt: { en: "Who composed and sang the first version of the song?" }, options: { en: ["Ghantasala", "Tanguturi Suryakumari", "S. Rajeswara Rao"] }, answer: 2 }
     tags: ["unreviewed"]
