@@ -134,24 +134,24 @@ recommendations:
     year: 1967
     level: "B2"
     script: "latin"
-    briefing: { en: "A novel about the Buendía family over seven generations in an imaginary village called Macondo. The village is founded by José Arcadio Buendía and his wife Úrsula, and it grows, is changed by civil war and a banana company, and finally falls into ruin." }
+    briefing: { en: "A novel about the Buendía family over seven generations in an imaginary village called Macondo. The village grows, is changed by civil war and a banana company, and finally falls into ruin." }
     questions:
-      - { id: "q1", prompt: { en: "In which country is the village of Macondo?" }, options: { en: ["Mexico", "Colombia", "Argentina"] }, answer: 2 }
-      - { id: "q2", prompt: { en: "Who founds the village of Macondo?" }, options: { en: ["Aureliano Buendía", "Melquíades", "José Arcadio Buendía"] }, answer: 3 }
-      - { id: "q3", prompt: { en: "What does Aureliano Babilonia discover in Melquíades' parchments?" }, options: { en: ["A map to a treasure", "The history of the Buendía family", "A recipe for gold"] }, answer: 2 }
+      - { id: "q1", prompt: { en: "In which country is the village of Macondo?" }, options: { en: ["Colombia", "Mexico", "Argentina"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who founds the village of Macondo?" }, options: { en: ["Aureliano Buendía", "José Arcadio Buendía", "Melquíades"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What does Aureliano Babilonia discover in Melquíades' parchments?" }, options: { en: ["A map to a treasure", "A recipe for gold", "The history of the Buendía family"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "es-rec-la-sombra-del-viento"
     medium: "book"
     title: { text: "La sombra del viento" }
     creator: ["es-carlos-ruiz-zafon"]
     year: 2001
-    level: "B1"
+    level: "B2"
     script: "latin"
-    briefing: { en: "A novel set in Barcelona after the Spanish Civil War. A boy named Daniel finds a book by an unknown author, Julián Carax, in a hidden place called the Cemetery of Forgotten Books. As he grows up, he looks into the author's past and finds that someone is burning all of Carax's books." }
+    briefing: { en: "A novel set in a city after the Spanish Civil War. A boy named Daniel finds a book by an unknown author, Julián Carax, among many old books. As he grows up, he looks into the author's past and finds that someone is burning all of Carax's books." }
     questions:
-      - { id: "q1", prompt: { en: "In which city is the story set?" }, options: { en: ["Madrid", "Barcelona", "Valencia"] }, answer: 2 }
+      - { id: "q1", prompt: { en: "In which city is the story set?" }, options: { en: ["Barcelona", "Madrid", "Valencia"] }, answer: 1 }
       - { id: "q2", prompt: { en: "Where does Daniel's father first take him to choose a book?" }, options: { en: ["A library in Madrid", "The Cemetery of Forgotten Books", "A bookshop on the coast"] }, answer: 2 }
-      - { id: "q3", prompt: { en: "What was Fermín Romero de Torres when Daniel first met him?" }, options: { en: ["A police inspector", "A vagabond", "A bookseller"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What was Fermín Romero de Torres when Daniel first met him?" }, options: { en: ["A police inspector", "A bookseller", "A vagabond"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "es-rec-la-casa-de-los-espiritus"
     medium: "book"
@@ -162,9 +162,9 @@ recommendations:
     script: "latin"
     briefing: { en: "A novel about the Trueba family over four generations, from the early 1900s to the 1970s. It mixes family drama with magic, such as a clairvoyant grandmother, and with the political changes of the country where the story is set. The story includes a military coup." }
     questions:
-      - { id: "q1", prompt: { en: "Which country is the family's story set in?" }, options: { en: ["Argentina", "Chile", "Peru"] }, answer: 2 }
+      - { id: "q1", prompt: { en: "Which country is the family's story set in?" }, options: { en: ["Chile", "Argentina", "Peru"] }, answer: 1 }
       - { id: "q2", prompt: { en: "Whose notebooks does Alba find?" }, options: { en: ["Rosa's", "Clara's", "Blanca's"] }, answer: 2 }
-      - { id: "q3", prompt: { en: "What happens to Jaime, Blanca's brother, during the coup?" }, options: { en: ["He becomes a senator", "He is shot", "He flees to Canada"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What happens to Jaime, Blanca's brother, during the coup?" }, options: { en: ["He becomes a senator", "He flees to Canada", "He is shot"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "es-rec-rayuela"
     medium: "book"
@@ -173,10 +173,10 @@ recommendations:
     year: 1963
     level: "B2"
     script: "latin"
-    briefing: { en: "An Argentine novel that can be read in several orders, so the reader chooses the path. It follows Horacio Oliveira, who searches for meaning in Paris with a woman called la Maga, and later in Buenos Aires." }
+    briefing: { en: "An Argentine novel that can be read in several orders, so the reader chooses the path. It follows Horacio Oliveira, a restless man who searches for meaning with a woman called la Maga, first in one city and then in his home country." }
     questions:
-      - { id: "q1", prompt: { en: "In which city does the first part of the novel take place?" }, options: { en: ["Buenos Aires", "Paris", "Montevideo"] }, answer: 2 }
-      - { id: "q2", prompt: { en: "What is the name of the group of friends who talk about art and philosophy?" }, options: { en: ["Club de la Serpiente", "Club de la Luna", "Club de los Poetas"] }, answer: 1 }
+      - { id: "q1", prompt: { en: "In which city does the first part of the novel take place?" }, options: { en: ["Paris", "Buenos Aires", "Montevideo"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "What is the name of the group of friends who talk about art and philosophy?" }, options: { en: ["Club de la Luna", "Club de la Serpiente", "Club de los Poetas"] }, answer: 2 }
       - { id: "q3", prompt: { en: "How many chapters does the novel have?" }, options: { en: ["56", "62", "155"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "es-rec-mafalda"
@@ -185,11 +185,11 @@ recommendations:
     creator: ["es-quino"]
     year: 1964
     level: "B1"
-    briefing: { en: "An Argentine comic strip about a young girl who worries about the world and about world peace, and who rebels against the world she has inherited from adults. It shows the middle class of Argentina and is known in many countries." }
+    briefing: { en: "A comic strip about a young girl who rebels against the world she has inherited from adults. It is known in many countries and has been translated into more than thirty languages." }
     questions:
-      - { id: "q1", prompt: { en: "In which country was the comic strip created?" }, options: { en: ["Spain", "Argentina", "Mexico"] }, answer: 2 }
+      - { id: "q1", prompt: { en: "In which country was the comic strip created?" }, options: { en: ["Argentina", "Spain", "Mexico"] }, answer: 1 }
       - { id: "q2", prompt: { en: "What does Mafalda worry about?" }, options: { en: ["Her school marks", "World peace and humanity", "Football"] }, answer: 2 }
-      - { id: "q3", prompt: { en: "In which year did the last strip appear?" }, options: { en: ["1971", "1973", "1975"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "In which year did the last strip appear?" }, options: { en: ["1971", "1975", "1973"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "es-rec-condorito"
     medium: "comic"
@@ -197,11 +197,11 @@ recommendations:
     creator: ["es-rene-rios-boettiger"]
     year: 1949
     level: "B1"
-    briefing: { en: "A Chilean comic strip about Condorito, a cheerful condor from a humble background who loves parties and tries to do as little work as possible, although he is honest and kind-hearted. The strips are set in a small provincial town." }
+    briefing: { en: "A comic strip about Condorito, a cheerful condor from a humble background who loves parties and tries to do as little work as possible, although he is honest and kind-hearted. The strips are set in a small provincial town." }
     questions:
-      - { id: "q1", prompt: { en: "In which country is Condorito from?" }, options: { en: ["Peru", "Chile", "Argentina"] }, answer: 2 }
+      - { id: "q1", prompt: { en: "In which country is Condorito from?" }, options: { en: ["Chile", "Peru", "Argentina"] }, answer: 1 }
       - { id: "q2", prompt: { en: "Who is Condorito's girlfriend?" }, options: { en: ["Doña Tremebunda", "Yayita", "Huevoduro"] }, answer: 2 }
-      - { id: "q3", prompt: { en: "What is the name of the town where the strips are set?" }, options: { en: ["Pelotillehue", "Macondo", "Comala"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What is the name of the town where the strips are set?" }, options: { en: ["Macondo", "Comala", "Pelotillehue"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "es-rec-gracias-a-la-vida"
     medium: "song"
@@ -211,21 +211,21 @@ recommendations:
     level: "B1"
     briefing: { en: "A song written in 1966 by the Chilean singer Violeta Parra, who was living abroad at the time. Its title means thanks to life. It is often called a humanist anthem and is one of the best-known songs in the Spanish language." }
     questions:
-      - { id: "q1", prompt: { en: "In which city was the song written?" }, options: { en: ["Santiago", "La Paz", "Lima"] }, answer: 2 }
+      - { id: "q1", prompt: { en: "In which city was the song written?" }, options: { en: ["La Paz", "Santiago", "Lima"] }, answer: 1 }
       - { id: "q2", prompt: { en: "Which Argentine singer made the song known around the world in 1971?" }, options: { en: ["Joan Baez", "Mercedes Sosa", "Isabel Parra"] }, answer: 2 }
-      - { id: "q3", prompt: { en: "Which album does the song open?" }, options: { en: ["Homenaje a Violeta Parra", "Las últimas composiciones", "El Llano en llamas"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Which album does the song open?" }, options: { en: ["Homenaje a Violeta Parra", "El Llano en llamas", "Las últimas composiciones"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "es-rec-radio-ambulante"
     medium: "podcast"
     title: { text: "Radio Ambulante" }
     creator: ["es-daniel-alarcon"]
     year: 2012
-    level: "B1"
-    briefing: { en: "A Spanish-language podcast that publishes long audio stories from Latin America. It is presented by a Peruvian writer and covers topics such as human rights, migration and political crises." }
+    level: "B2"
+    briefing: { en: "A podcast in Spanish that publishes long audio stories from Latin America, on topics such as human rights, migration and political crises." }
     questions:
-      - { id: "q1", prompt: { en: "Who presents the podcast?" }, options: { en: ["Julio Cortázar", "Daniel Alarcón", "Isabel Allende"] }, answer: 2 }
+      - { id: "q1", prompt: { en: "Who presents the podcast?" }, options: { en: ["Daniel Alarcón", "Julio Cortázar", "Isabel Allende"] }, answer: 1 }
       - { id: "q2", prompt: { en: "Where is the team that makes the podcast based?" }, options: { en: ["Madrid", "San Francisco", "Mexico City"] }, answer: 2 }
-      - { id: "q3", prompt: { en: "How long is each episode?" }, options: { en: ["Between 2 and 5 minutes", "Between 25 and 55 minutes", "More than two hours"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "How long is each episode?" }, options: { en: ["Between 2 and 5 minutes", "More than two hours", "Between 25 and 55 minutes"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "es-rec-pedro-paramo"
     medium: "book"
@@ -234,11 +234,11 @@ recommendations:
     year: 1955
     level: "B2"
     script: "latin"
-    briefing: { en: "A novel by the Mexican writer Juan Rulfo about a young man who goes to a village to find his father, as his dying mother asked him to. As he walks through the village, he slowly realises that many of the people he meets are dead." }
+    briefing: { en: "A novel by the Mexican writer Juan Rulfo about a young man who travels to a village to find his father. As he walks through the village, he slowly realises that many of the people he meets are dead." }
     questions:
       - { id: "q1", prompt: { en: "Where does Juan Preciado go to look for his father?" }, options: { en: ["Comala", "Macondo", "Pelotillehue"] }, answer: 1 }
-      - { id: "q2", prompt: { en: "What promise did Juan make to his mother?" }, options: { en: ["To return and claim his father", "To become a priest", "To sell the family house"] }, answer: 1 }
-      - { id: "q3", prompt: { en: "Which period is the story set in?" }, options: { en: ["The Spanish conquest", "The Mexican Revolution and the Cristero War", "The Spanish Civil War"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "What did Juan promise his dying mother?" }, options: { en: ["To become a priest", "To go and find his father", "To sell the family house"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Which period is the story set in?" }, options: { en: ["The Spanish conquest", "The Spanish Civil War", "The Mexican Revolution and the Cristero War"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "es-rec-la-ciudad-y-los-perros"
     medium: "book"
