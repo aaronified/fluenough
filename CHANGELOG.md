@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - `tools/validate_decks.py`, `tools/topic_chars.py`, `tools/test_topic_chars.py`: a script topic's `chars` must be targets of the cards of its `decks` (or letters of its `script_units`), a one-character card left out of `chars` is a warning, and `tools/topic_chars.py` writes `chars` from the decks (#1228).
+- **Find my level sentence questions make sense.** Sentences you hear or read now always come with their own English meaning among four sentences of the same kind, and the question asks what the sentence means.
 
 ## [0.10.1] - 2026-11-13
 
