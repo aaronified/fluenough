@@ -56,7 +56,7 @@ def _scalar(value: object) -> str:
     return json.dumps(value, ensure_ascii=False)
 
 
-def render_chars(chars: list[str], existing: dict[str, dict]) -> str:
+def render_chars(chars: list[str], existing: dict[str, dict], indent: int = 4) -> str:
     """The `chars` line: a flow list of quoted characters, a character that
     carried a mapping before keeping it."""
     items = []
@@ -66,7 +66,7 @@ def render_chars(chars: list[str], existing: dict[str, dict]) -> str:
             items.append("{ " + body + " }")
         else:
             items.append(_scalar(ch))
-    return "    chars: [" + ", ".join(items) + "]"
+    return " " * indent + "chars: [" + ", ".join(items) + "]"
 
 
 def existing_mappings(t: dict) -> dict[str, dict]:
@@ -103,11 +103,18 @@ def value_end(lines: list[str], at: int, key_indent: int, end: int) -> int:
     return stop
 
 
-def patch(lines: list[str], tid: str, new_line: str) -> bool:
+def patch(lines: list[str], tid: str, chars: list[str],
+          existing: dict[str, dict]) -> bool:
     """Replace, or add after the `decks` line, the `chars` of topic [tid] in
-    the file's [lines]. False when the topic's block is not found."""
-    start = next((i for i, ln in enumerate(lines)
-                  if re.match(rf'\s*-\s+id:\s*["\']?{re.escape(tid)}["\']?\s*(#.*)?$', ln)), None)
+    the file's [lines], written at the indentation of the topic's own keys and
+    with the file's line ending. False, nothing changed, when the topic's
+    block is not found or the `chars` it would replace holds a comment."""
+    crlf = bool(lines) and lines[0].endswith("\r")
+    top = next((i for i, ln in enumerate(lines) if re.match(r"topics:\s*(#.*)?\r?$", ln)), None)
+    if top is None:
+        return False
+    start = next((i for i in range(top + 1, len(lines))
+                  if re.match(rf'\s*-\s+id:\s*["\']?{re.escape(tid)}["\']?\s*(#.*)?\r?$', lines[i])), None)
     if start is None:
         return False
     indent = len(lines[start]) - len(lines[start].lstrip())
@@ -122,8 +129,12 @@ def patch(lines: list[str], tid: str, new_line: str) -> bool:
     key_indent = indent + 2
     chars_at = next((i for i in range(start + 1, end)
                      if re.match(rf"\s{{{key_indent}}}chars:", lines[i])), None)
+    new_line = render_chars(chars, existing, key_indent) + ("\r" if crlf else "")
     if chars_at is not None:
-        lines[chars_at:value_end(lines, chars_at, key_indent, end)] = [new_line]
+        stop = value_end(lines, chars_at, key_indent, end)
+        if any("#" in ln for ln in lines[chars_at:stop]):
+            return False
+        lines[chars_at:stop] = [new_line]
         return True
     decks_at = next((i for i in range(start + 1, end)
                      if re.match(rf"\s{{{key_indent}}}decks:", lines[i])), None)
@@ -166,8 +177,8 @@ def run(lang: str, decks: Path, write: bool, all_targets: bool) -> tuple[list[st
         reordered = "" if (added or gone) else ", reordered"
         report.append(f"{tid}: {len(have)} -> {len(wanted)} characters "
                       f"(+{len(added)}, -{len(gone)}{reordered})")
-        if write and not patch(lines, tid, render_chars(wanted, existing_mappings(t))):
-            report.append(f"{tid}: could not find its block to patch, left alone")
+        if write and not patch(lines, tid, wanted, existing_mappings(t)):
+            report.append(f"{tid}: could not patch it (block not found, or a comment in its chars), left alone")
     if write and differ:
         topics_path.write_text("\n".join(lines), encoding="utf-8")
     return report, differ

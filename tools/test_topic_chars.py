@@ -160,6 +160,43 @@ class Tool(TopicCharsCase):
         self.assertEqual(self.chars(), ["ক", {"text": "খ", "reading": "kha"}, "ক্ষ"])
         self.assertValid()
 
+    def test_a_topic_after_the_rewritten_one_is_kept(self) -> None:
+        def change(d: dict) -> None:
+            d["topics"].insert(-1, {"id": "zz-before", "name": {"en": "Before"},
+                                    "kind": "script", "decks": ["zz-glyphs"],
+                                    "chars": ["ক"]})
+            d["topics"].append({"id": "zz-after", "name": {"en": "After"},
+                                "kind": "verbs", "decks": ["zz-glyphs"]})
+        self.set_topic(chars=["ক"])
+        self.edit(TOPICS, change)
+        before = {t["id"]: t for t in self.data(TOPICS)["topics"]}
+        self.run_tool(write=True)
+        after = {t["id"]: t for t in self.data(TOPICS)["topics"]}
+        self.assertEqual(after["zz-after"], before["zz-after"])
+        self.assertEqual(after["zz-juktakkhor"], before["zz-juktakkhor"])
+        self.assertEqual(after[TOPIC]["chars"], ["ক", "খ", "ক্ষ"])
+
+    def test_write_keeps_the_files_line_endings(self) -> None:
+        self.set_topic(chars=["ক"])
+        path = self.p(TOPICS)
+        text = path.read_text(encoding="utf-8")
+        path.write_bytes(text.replace("\n", "\r\n").encode("utf-8"))
+        self.run_tool(write=True)
+        raw = path.read_bytes().decode("utf-8")
+        self.assertEqual(raw.count("\n"), raw.count("\r\n"))
+        self.assertEqual(self.chars(), ["ক", "খ", "ক্ষ"])
+
+    def test_a_chars_line_with_a_comment_is_left_alone(self) -> None:
+        self.set_topic(chars=["ক"])
+        path = self.p(TOPICS)
+        text = path.read_text(encoding="utf-8")
+        marked = text.replace("- ক\n", "- ক  # keep\n") if "- ক\n" in text else text
+        self.assertNotEqual(marked, text)
+        path.write_text(marked, encoding="utf-8")
+        report, differ = self.run_tool(write=True)
+        self.assertEqual(self.chars(), ["ক"])
+        self.assertTrue(any("could not patch" in line for line in report), report)
+
     def test_all_targets_lists_the_two_character_card_too(self) -> None:
         self.run_tool(write=True, all_targets=True)
         self.assertEqual(self.chars(), ["ক", "খ", "ক্ষ", "কখ"])
