@@ -1,0 +1,144 @@
+schema: 1
+id: "te-transport-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-7120"
+    target: "నేను బస్సులో వెళ్తాను."
+    reading: "nēnu bassulō veḷtānu."
+    ipa: "neːnu bassuloː ʋeɭt̪aːnu"
+    pos: "phrase"
+    rules: ["te-rule-present-first", "te-rule-lo"]
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "బస్సులో", ref: "te-0271" }
+      - { word: "వెళ్తాను", ref: "te-0622" }
+    confusables:
+      - { id: "c1", ref: "te-0272", kind: "word" }
+      - { id: "c2", ref: "te-0273", kind: "word" }
+  - id: "te-7121"
+    target: "ఆటో చార్జీ ఎంత?"
+    reading: "āṭō cārjī enta?"
+    ipa: "aːʈoː tʃaːrdʒiː ent̪a"
+    pos: "phrase"
+    bases:
+      - { word: "ఆటో", ref: "te-0272" }
+      - { word: "చార్జీ", ref: "te-0274" }
+      - { word: "ఎంత", ref: "te-0166" }
+    confusables:
+      - { id: "c1", ref: "te-0271", kind: "word" }
+      - { id: "c2", ref: "te-0280", kind: "word" }
+  - id: "te-7122"
+    target: "టాక్సీ స్టేషన్ దగ్గర ఆగుతుంది."
+    reading: "ṭāksī sṭēṣan daggara āgutundi."
+    ipa: "ʈaːksiː sʈeːʂan d̪aɡɡara aːɡut̪und̪i"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "టాక్సీ", ref: "te-0273" }
+      - { word: "స్టేషన్", ref: "te-0279" }
+      - { word: "దగ్గర", ref: "te-0300" }
+      - { word: "ఆగుతుంది", ref: "te-0648" }
+    confusables:
+      - { id: "c1", ref: "te-0272", kind: "word" }
+      - { id: "c2", ref: "te-0281", kind: "word" }
+  - id: "te-7123"
+    target: "నాకు ఒక టికెట్ ఇవ్వండి."
+    reading: "nāku oka ṭikeṭ ivvaṇḍi."
+    ipa: "naːku oka ʈikeʈ iʋʋaɳɖi"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-dat", "te-rule-polite-request"]
+    bases:
+      - { word: "నాకు", base: "నేను", reading: "nāku" }
+      - { word: "ఒక", ref: "te-1034" }
+      - { word: "టికెట్", ref: "te-0280" }
+      - { word: "ఇవ్వండి", ref: "te-0247" }
+    confusables:
+      - { id: "c1", ref: "te-0281", kind: "word" }
+      - { id: "c2", ref: "te-0271", kind: "word" }
+  - id: "te-7124"
+    target: "మీరు ఏ స్టేషన్‌లో దిగుతారు?"
+    reading: "mīru ē sṭēṣanlō digutāru?"
+    ipa: "miːru eː sʈeːʂanloː d̪iɡut̪aːru"
+    pos: "phrase"
+    rules: ["te-rule-lo"]
+    bases:
+      - { word: "మీరు", ref: "te-0136" }
+      - { word: "ఏ", ref: "te-0609" }
+      - { word: "స్టేషన్‌లో", ref: "te-0279" }
+      - { word: "దిగుతారు", ref: "te-0828" }
+    confusables:
+      - { id: "c1", ref: "te-0280", kind: "word" }
+      - { id: "c2", ref: "te-0305", kind: "word" }
+  - id: "te-7125"
+    target: "సీటు ఖాళీగా ఉంది."
+    reading: "sīṭu khāḷīgā undi."
+    ipa: "siːʈu kʰaːɭiːɡaː und̪i"
+    pos: "phrase"
+    bases:
+      - { word: "సీటు", ref: "te-0281" }
+      - { word: "ఖాళీగా", base: "ఖాళీ", reading: "khāḷīgā" }
+      - { word: "ఉంది", ref: "te-0633" }
+    confusables:
+      - { id: "c1", ref: "te-0280", kind: "word" }
+      - { id: "c2", ref: "te-0279", kind: "word" }
+  - id: "te-7126"
+    target: "బస్సు ఆలస్యంగా వస్తుంది."
+    reading: "bassu ālasyaṅgā vastundi."
+    ipa: "bassu aːlasjaŋɡaː ʋast̪und̪i"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "బస్సు", ref: "te-0271" }
+      - { word: "ఆలస్యంగా", ref: "te-1068" }
+      - { word: "వస్తుంది", ref: "te-0623" }
+    confusables:
+      - { id: "c1", ref: "te-0272", kind: "word" }
+      - { id: "c2", ref: "te-0273", kind: "word" }
+  - id: "te-7127"
+    target: "ఆటో ఇక్కడ ఆగుతుందా?"
+    reading: "āṭō ikkaḍa āgutundā?"
+    ipa: "aːʈoː ikkaɖa aːɡut̪und̪aː"
+    pos: "phrase"
+    bases:
+      - { word: "ఆటో", ref: "te-0272" }
+      - { word: "ఇక్కడ", ref: "te-0302" }
+      - { word: "ఆగుతుందా", ref: "te-0648" }
+    confusables:
+      - { id: "c1", ref: "te-0273", kind: "word" }
+      - { id: "c2", ref: "te-0279", kind: "word" }
+  - id: "te-7128"
+    target: "అమ్మ రేపు టాక్సీ తీసుకుంటుంది."
+    reading: "amma rēpu ṭāksī tīsukuṇṭundi."
+    ipa: "amma reːpu ʈaːksiː t̪iːsukuɳʈund̪i"
+    pos: "phrase"
+    rules: ["te-rule-present-third"]
+    bases:
+      - { word: "అమ్మ", ref: "te-0059" }
+      - { word: "రేపు", ref: "te-0307" }
+      - { word: "టాక్సీ", ref: "te-0273" }
+      - { word: "తీసుకుంటుంది", ref: "te-0631" }
+    confusables:
+      - { id: "c1", ref: "te-0271", kind: "word" }
+      - { id: "c2", ref: "te-0280", kind: "word" }
+  - id: "te-7129"
+    target: "నా దగ్గర హెల్మెట్ ఉంది."
+    reading: "nā daggara helmeṭ undi."
+    ipa: "naː d̪aɡɡara helmeʈ und̪i"
+    pos: "phrase"
+    rules: ["te-rule-pronoun-gen"]
+    bases:
+      - { word: "నా", base: "నేను", reading: "nā" }
+      - { word: "దగ్గర", ref: "te-0300" }
+      - { word: "హెల్మెట్", ref: "te-6647" }
+      - { word: "ఉంది", ref: "te-0633" }
+    confusables:
+      - { id: "c1", ref: "te-0281", kind: "word" }
+      - { id: "c2", ref: "te-0280", kind: "word" }
