@@ -92,7 +92,7 @@ units:
     words: 7
   - decks: ["te-verbs", "*"]
     words: 33
-  - decks: ["te-adverbs", "*"]
+  - decks: ["te-adverbs", "te-reading-adverbs", "*"]
     words: 50
     listening_passages:
       - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
@@ -143,19 +143,19 @@ units:
   - decks: ["te-market", "te-market-sentences", "te-grammar-nouns", "*"]
     words: 7
     grammar: ["nouns"]
-  - decks: ["te-pronouns-sentences"]
+  - decks: ["te-pronouns-sentences", "te-reading-pronouns"]
     words: 0
     listening_passages:
       - { id: "introducing-friends", text: { "en": "Introducing two friends: who is who, he and she" } }
     reading_passages:
       - { id: "name-tags", text: { "en": "Name tags at a meeting: who is who and what they do" } }
-  - decks: ["te-verbs-sentences"]
+  - decks: ["te-verbs-sentences", "te-reading-verbs"]
     words: 0
     listening_passages:
       - { id: "morning-at-home", text: { "en": "A family member says what she does every morning" } }
     reading_passages:
       - { id: "note-on-the-fridge", text: { "en": "A short note: what to eat and drink" } }
-  - decks: ["te-noun-forms-sentences"]
+  - decks: ["te-noun-forms-sentences", "te-reading-noun-forms"]
     words: 0
     listening_passages:
       - { id: "which-way-home", text: { "en": "Two people say where they go, with whom, and where from" } }
@@ -170,7 +170,7 @@ units:
   - decks: ["te-grammar-sentences"]
     words: 0
     grammar: ["sentences"]
-  - decks: ["te-food-sentences"]
+  - decks: ["te-food-sentences", "te-reading-food"]
     words: 0
     listening_passages:
       - { id: "at-the-tiffin-stall", text: { "en": "Ordering breakfast at a tiffin stall" } }
