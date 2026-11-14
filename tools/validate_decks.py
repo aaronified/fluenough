@@ -8315,8 +8315,11 @@ def check_gating_file(r: Report, raw: dict, path: Path) -> None:
                 for b in given:
                     m = _BLOCK_RE.fullmatch(b) if isinstance(b, str) else None
                     if m is None or int(m[1], 16) > int(m[2], 16):
+                        hint = "" if isinstance(b, str) else (
+                            " (a bare number, not a range: the deck reader turns "
+                            "0980 into 980)")
                         r.error(where, f"block {b!r} must be 'XXXX-YYYY', hexadecimal, "
-                                       f"the first not after the second")
+                                       f"the first not after the second{hint}")
                         ok = False
                     else:
                         blocks.append((int(m[1], 16), int(m[2], 16)))

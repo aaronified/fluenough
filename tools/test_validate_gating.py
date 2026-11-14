@@ -175,7 +175,11 @@ class Gate(GatingCase):
     def test_a_long_run_of_reports_is_cut_short(self) -> None:
         self.sentences(*[card(f"zz-{9811 + i}", C) for i in range(25)])
         code, text = self.run_text()
-        self.assertEqual(text.count(f"writes {C!r}"), validate_decks.GATING_MAX_REPORTS)
+        # The validator prints a cross-file error twice, where it happens and
+        # again in the closing "Errors:" recap, so count the inline lines only.
+        inline = [line for line in text.splitlines()
+                  if line.startswith("error: ") and f"writes {C!r}" in line]
+        self.assertEqual(len(inline), validate_decks.GATING_MAX_REPORTS)
         self.assertIn("5 more glyph characters not yet taught", text)
 
     def test_without_a_gating_file_nothing_is_checked(self) -> None:
@@ -227,7 +231,11 @@ class File(GatingCase):
         self.check(data, "no Unicode blocks for the script 'glyph'")
 
     def test_a_block_is_a_hexadecimal_range(self) -> None:
-        self.check(gating(blocks=["0980"]), "block '0980' must be 'XXXX-YYYY'")
+        self.check(gating(blocks=["09A0"]), "block '09A0' must be 'XXXX-YYYY'")
+        # Written bare, 0980 is the number 980 to the deck reader (and the
+        # app), so the original text is gone: the error says it is a number.
+        self.check(gating(blocks=["0980"]), "block 980 must be 'XXXX-YYYY'")
+        self.check(gating(blocks=["0980"]), "a bare number")
         self.check(gating(blocks=["09FF-0980"]), "the first not after the second")
 
     def test_an_allowed_entry_is_one_character(self) -> None:
