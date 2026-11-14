@@ -1,0 +1,50 @@
+schema: 1
+id: "ja-en-multiword-idiomatic-verbs"
+kind: "layer"
+core: "ja-multiword-idiomatic-verbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Multi-word verbs: idiomatic verbs"
+description: "Seven idiomatic verbs, a noun with its particle and a verb: to worry, to take care, to be attentive, and more. The meaning is not the literal one; the literal reading is in the usage note. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ja-4950":
+    native: "to be concerned about; to be curious about"
+    notes:
+      "u1": "Literally the mind (気 (ki)) with に (ni) becomes (なる (naru)). Something becomes a matter on one's mind. Example: その (sono) ニュース (nyūsu) が (ga) 気になります (ki ni narimasu): I am worried about that news."
+    bases:
+      "きに": { meaning: "mind; spirit" }
+  "ja-4951":
+    native: "to take care; to be careful"
+    notes:
+      "u1": "Literally the mind (気 (ki)) with を (o) is attached (つける (tsukeru)) to something. Example: あめに (ame ni) 気をつけて (ki o tsukete) ください (kudasai): please be careful of the rain."
+    bases:
+      "きを": { meaning: "mind; spirit" }
+  "ja-4952":
+    native: "to be considerate; to be attentive"
+    notes:
+      "u1": "Literally the mind (気 (ki)) with が (ga) works well (きく (kiku)). It describes a person who notices what others need. Do not confuse it with 気がつく (ki ga tsuku), to notice something."
+      "u2": "きく (kiku) here means to work well or be effective. It is the same reading as the verb 聞く (kiku), to listen, in ja-0344."
+    bases:
+      "きが": { meaning: "mind; spirit" }
+      "きく": { meaning: "to work well; to be effective" }
+  "ja-4953":
+    native: "to mind; to worry about"
+    notes:
+      "u1": "Literally the mind (気 (ki)) with に (ni) and する (suru): to make something a matter of the mind. Usually used in the negative: 気にしないで (ki ni shinaide) ください (kudasai): please do not mind."
+    bases:
+      "きに": { meaning: "mind; spirit" }
+  "ja-4954":
+    native: "to calm down; to cool one's head"
+    notes:
+      "u1": "Literally to cool (冷やす (hiyasu)) the head (頭 (atama)). The particle を (o) marks the head as the thing that is cooled."
+  "ja-4955":
+    native: "to be annoying; to get on one's nerves"
+    notes:
+      "u1": "Literally a thing sticks (つく (tsuku)) to the nose (鼻 (hana)). It describes something that is too much, such as a sweetness or a manner that is offensive. Example: その (sono) あまさ (amasa) が (ga) 鼻につく (hana ni tsuku): that sweetness is annoying."
+    bases:
+      "つく": { meaning: "to stick; to attach" }
+  "ja-4956":
+    native: "to hear about; to hear by chance"
+    notes:
+      "u1": "Literally to do (する (suru)) something to the ear (耳 (mimi)). Used when a piece of news reaches one's ears by chance. Example: そんな (sonna) うわさ (uwasa) を (o) 耳にしました (mimi ni shimashita): I heard that rumour."
