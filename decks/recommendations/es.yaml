@@ -13,10 +13,10 @@ recommendations:
     creator: ["es-guillermo-del-toro"]
     year: 2006
     level: "B1"
-    briefing: { en: "A dark fantasy film set in Spain in 1944, after the civil war. A girl moves with her pregnant mother to the countryside, where her stepfather is a cruel army captain. In the woods near the mill she finds an old labyrinth and a strange creature." }
+    briefing: { en: "A dark fantasy film set in Spain in 1944, after the civil war. A girl moves with her pregnant mother to the countryside, where her stepfather is a cruel captain. In the woods she finds an old labyrinth and a strange creature." }
     questions:
-      - { id: "q1", prompt: { en: "What is the job of the girl's stepfather, Captain Vidal?" }, options: { en: ["He is a doctor", "He is an army officer", "He runs a mill"] }, answer: 2 }
-      - { id: "q2", prompt: { en: "What is the name of the girl's mother?" }, options: { en: ["Mercedes", "Elena", "Carmen"] }, answer: 3 }
+      - { id: "q1", prompt: { en: "In which kind of building is Captain Vidal's post?" }, options: { en: ["A church", "A castle", "A mill"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "What is the name of the girl's mother?" }, options: { en: ["Carmen", "Mercedes", "Elena"] }, answer: 1 }
       - { id: "q3", prompt: { en: "What does the faun ask Ofelia to give him for her third task?" }, options: { en: ["Her mother's ring", "The key from the toad", "Her baby brother's blood"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "es-rec-volver"
@@ -25,11 +25,11 @@ recommendations:
     creator: ["es-pedro-almodovar"]
     year: 2006
     level: "B1"
-    briefing: { en: "A comedy-drama about a family of women from a village in La Mancha. The story moves between Madrid and the village, and a dead mother returns as a ghost to help her family." }
+    briefing: { en: "A comedy-drama about a family of women from a village. The story moves between Madrid and the village, and a family secret comes back to life." }
     questions:
-      - { id: "q1", prompt: { en: "In which region is the village where the family comes from?" }, options: { en: ["Andalusia", "La Mancha", "Galicia"] }, answer: 2 }
-      - { id: "q2", prompt: { en: "Which character returns from the dead as a ghost?" }, options: { en: ["Irene", "Sole", "Agustina"] }, answer: 1 }
-      - { id: "q3", prompt: { en: "What is the name of the hot wind that blows over the village?" }, options: { en: ["Levante", "Solano", "Tramontana"] }, answer: 2 }
+      - { id: "q1", prompt: { en: "In which region is the village where the family comes from?" }, options: { en: ["La Mancha", "Andalusia", "Galicia"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Which character returns from the dead as a ghost?" }, options: { en: ["Sole", "Irene", "Agustina"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What is the name of the hot wind that blows over the village?" }, options: { en: ["Mistral", "Solano", "Tramontana"] }, answer: 2 }
     tags: ["unreviewed"]
   - id: "es-rec-todo-sobre-mi-madre"
     medium: "film"
@@ -37,11 +37,11 @@ recommendations:
     creator: ["es-pedro-almodovar"]
     year: 1999
     level: "B2"
-    briefing: { en: "A nurse in Madrid loses her son in a sudden accident and goes to Barcelona to find the boy's father. There she meets a group of women connected with the theatre and a pregnant nun." }
+    briefing: { en: "A nurse in Madrid loses her son in a sudden accident and goes to Barcelona to find the boy's father. There she meets actresses and other people who change her life." }
     questions:
-      - { id: "q1", prompt: { en: "Why does the son go out at night in the film?" }, options: { en: ["To get an actress's autograph", "To buy medicine", "To meet his father"] }, answer: 1 }
-      - { id: "q2", prompt: { en: "Who is the actress Manuela helps in Barcelona?" }, options: { en: ["Huma Rojo", "Rosa", "Agrado"] }, answer: 1 }
-      - { id: "q3", prompt: { en: "Which character is a transgender woman who becomes Manuela's friend?" }, options: { en: ["Rosa", "Agrado", "Huma"] }, answer: 2 }
+      - { id: "q1", prompt: { en: "How does the son die?" }, options: { en: ["He falls from a balcony", "He is hit by a car", "He drowns in the sea"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Which actress was Esteban chasing for an autograph?" }, options: { en: ["Rosa", "Huma Rojo", "Lola"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Who is the boy's father, whom Manuela looks for in Barcelona?" }, options: { en: ["Huma Rojo", "Rosa", "Lola"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "es-rec-roma"
     medium: "film"
@@ -49,10 +49,10 @@ recommendations:
     creator: ["es-alfonso-cuaron"]
     year: 2018
     level: "B2"
-    briefing: { en: "A black-and-white film about a live-in housekeeper in a middle-class family in Mexico City. It is based on the director's own childhood and shows the family's daily life and some turbulent events of the early 1970s." }
+    briefing: { en: "A black-and-white film about a live-in housekeeper in a middle-class family in Mexico City. It is based on the director's own childhood and shows the family's daily life and some turbulent events in the city." }
     questions:
-      - { id: "q1", prompt: { en: "What is the name of the housekeeper at the centre of the film?" }, options: { en: ["Sofía", "Cleo", "Carmen"] }, answer: 2 }
-      - { id: "q2", prompt: { en: "When is the film set?" }, options: { en: ["In the 1950s", "In the early 1970s", "In the 1990s"] }, answer: 2 }
+      - { id: "q1", prompt: { en: "What is the name of the housekeeper at the centre of the film?" }, options: { en: ["Sofía", "Carmen", "Cleo"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "When is the film set?" }, options: { en: ["In the early 1970s", "In the 1950s", "In the 1990s"] }, answer: 1 }
       - { id: "q3", prompt: { en: "What violent event happens in the city during a street protest?" }, options: { en: ["A football match", "A massacre of protesters", "A wedding"] }, answer: 2 }
     tags: ["unreviewed"]
   - id: "es-rec-amores-perros"
@@ -61,7 +61,7 @@ recommendations:
     creator: ["es-alejandro-gonzalez-inarritu"]
     year: 2000
     level: "C1"
-    briefing: { en: "Three stories set in Mexico City that are joined by a car crash. The film shows love, violence and chance through the lives of people from very different backgrounds." }
+    briefing: { en: "Three stories set in Mexico City that are connected in ways the viewer slowly discovers. The film shows love, violence and chance through the lives of people from very different backgrounds." }
     questions:
       - { id: "q1", prompt: { en: "What links the three stories in the film?" }, options: { en: ["A car crash", "A wedding", "A lottery ticket"] }, answer: 1 }
       - { id: "q2", prompt: { en: "What does Octavio do with his dog in the first story?" }, options: { en: ["He trains it to guard sheep", "He enters it in illegal dog fights", "He sells it to a neighbour"] }, answer: 2 }
@@ -73,11 +73,11 @@ recommendations:
     creator: ["es-juan-jose-campanella"]
     year: 2009
     level: "B2"
-    briefing: { en: "A retired court clerk in Buenos Aires writes a novel about a murder case he could never solve. Writing it brings back the people and the feelings of that time, and the story moves between the 1970s and the present." }
+    briefing: { en: "A retired man in Buenos Aires writes a novel about a murder case he could never solve. Writing it brings back the people and the feelings of that time, and the story moves between the past and the present." }
     questions:
-      - { id: "q1", prompt: { en: "What is the job of the main character, Benjamín Esposito?" }, options: { en: ["Journalist", "Court clerk", "Police officer"] }, answer: 2 }
+      - { id: "q1", prompt: { en: "What is the job of the main character, Benjamín Esposito?" }, options: { en: ["Journalist", "Police officer", "A court official"] }, answer: 3 }
       - { id: "q2", prompt: { en: "In which year was the crime committed that he writes about?" }, options: { en: ["1964", "1974", "1984"] }, answer: 2 }
-      - { id: "q3", prompt: { en: "What is the name of the judge he has feelings for?" }, options: { en: ["Irene", "Liliana", "Sandoval"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What is the name of the new department chief at the court, the woman he loves?" }, options: { en: ["Irene", "Liliana", "Sandoval"] }, answer: 1 }
     tags: ["unreviewed"]
   - id: "es-rec-y-tu-mama-tambien"
     medium: "film"
@@ -85,11 +85,11 @@ recommendations:
     creator: ["es-alfonso-cuaron"]
     year: 2001
     level: "C1"
-    briefing: { en: "Two young men from Mexico City take a woman they have just met on a road trip to a beach they invent. The trip shows the friendship between them and the changes in their lives, in a country that is going through social change." }
+    briefing: { en: "Two young men take a woman they have just met on a road trip to a beach they hope to reach. The trip shows the friendship between them and the changes in their lives." }
     questions:
       - { id: "q1", prompt: { en: "What is the name of the older woman who joins the two young men?" }, options: { en: ["Luisa", "Mariana", "Carmen"] }, answer: 1 }
-      - { id: "q2", prompt: { en: "What is the name of the beach they plan to visit?" }, options: { en: ["Acapulco", "Cancún", "Boca del Cielo"] }, answer: 3 }
-      - { id: "q3", prompt: { en: "Which country is the film set in?" }, options: { en: ["Spain", "Mexico", "Argentina"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "What is the name of the beach they plan to visit?" }, options: { en: ["Acapulco", "Boca del Cielo", "Cancún"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Which country is the film set in?" }, options: { en: ["Spain", "Argentina", "Mexico"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "es-rec-la-historia-oficial"
     medium: "film"
@@ -97,11 +97,11 @@ recommendations:
     creator: ["es-luis-puenzo"]
     year: 1985
     level: "B2"
-    briefing: { en: "A history teacher in Buenos Aires in 1983 begins to doubt what she has always believed about her family and her country. The film is set at the end of a military dictatorship, when many people had disappeared." }
+    briefing: { en: "A woman in Buenos Aires begins to doubt what she has always believed about her family and her country. The story is set against the political events of its time." }
     questions:
-      - { id: "q1", prompt: { en: "What is Alicia's job?" }, options: { en: ["History teacher", "Doctor", "Lawyer"] }, answer: 1 }
-      - { id: "q2", prompt: { en: "What is the background of the film's story?" }, options: { en: ["A football World Cup", "An economic crisis", "The end of the military dictatorship"] }, answer: 3 }
-      - { id: "q3", prompt: { en: "What does Alicia learn about her adopted daughter, Gaby?" }, options: { en: ["That she is Roberto's daughter", "That she is the child of people who were disappeared", "That she was born in Spain"] }, answer: 2 }
+      - { id: "q1", prompt: { en: "What is Alicia's job?" }, options: { en: ["Doctor", "Lawyer", "History teacher"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "What is the background of the film's story?" }, options: { en: ["An economic crisis", "The last military dictatorship", "A war with a neighbour"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What does Alicia learn about her adopted daughter, Gaby?" }, options: { en: ["That she is Roberto's daughter", "That she was born in Spain", "That she is the child of people who were disappeared"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "es-rec-los-lunes-al-sol"
     medium: "film"
@@ -109,10 +109,10 @@ recommendations:
     creator: ["es-fernando-leon-de-aranoa"]
     year: 2002
     level: "B1"
-    briefing: { en: "A group of men who have lost their jobs at a shipyard in a port city in Galicia spend their days together. Their friendship and their hopes are tested as the years pass." }
+    briefing: { en: "A group of men who have lost their jobs in a port city spend their days together. Their friendship and their hopes are tested as the years pass." }
     questions:
-      - { id: "q1", prompt: { en: "Who is the leader of the group of unemployed men?" }, options: { en: ["Rico", "Santa", "Amador"] }, answer: 2 }
-      - { id: "q2", prompt: { en: "What kind of work did the men lose?" }, options: { en: ["Farm work", "Fishing", "Shipyard work"] }, answer: 3 }
+      - { id: "q1", prompt: { en: "Which actor plays the character Santa?" }, options: { en: ["Luis Tosar", "Joaquín Climent", "Javier Bardem"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "What caused the men to lose their jobs?" }, options: { en: ["An industrial restructuring", "A flood", "A war"] }, answer: 1 }
       - { id: "q3", prompt: { en: "Which city is the film set in?" }, options: { en: ["Madrid", "Vigo", "Bilbao"] }, answer: 2 }
     tags: ["unreviewed"]
   - id: "es-rec-la-casa-de-papel"
@@ -121,11 +121,11 @@ recommendations:
     creator: ["es-alex-pina"]
     year: 2017
     level: "B1"
-    briefing: { en: "A television series about a group of robbers who are led by a mysterious man called the Professor. They plan a robbery at the national mint of Spain, and the story is told by one of the robbers." }
+    briefing: { en: "A television series about a group of robbers who plan two large robberies in Spain, with a plot full of twists." }
     questions:
-      - { id: "q1", prompt: { en: "Who leads the robbery?" }, options: { en: ["Tokyo", "The Professor", "Berlín"] }, answer: 2 }
-      - { id: "q2", prompt: { en: "Which building is the first target of the robbery?" }, options: { en: ["The Bank of Spain", "The Royal Mint", "A museum"] }, answer: 2 }
-      - { id: "q3", prompt: { en: "Who tells the story of the robbery?" }, options: { en: ["The Professor", "Tokyo", "Raquel"] }, answer: 2 }
+      - { id: "q1", prompt: { en: "Who leads the robbery?" }, options: { en: ["Tokyo", "Berlín", "The Professor"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "Which building is the first target of the robbery?" }, options: { en: ["The Royal Mint", "The Bank of Spain", "A museum"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Who tells the story of the robbery?" }, options: { en: ["Raquel", "The Professor", "Tokyo"] }, answer: 3 }
     tags: ["unreviewed"]
   - id: "es-rec-cien-anos-de-soledad"
     medium: "book"
