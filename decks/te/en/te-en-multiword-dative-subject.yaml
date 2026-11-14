@@ -1,0 +1,112 @@
+schema: 1
+id: "te-en-multiword-dative-subject"
+kind: "layer"
+core: "te-multiword-dative-subject"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Multi-word phrases: dative subjects"
+description: "Twenty phrases where the person is in the dative: I like it, I do not like it, I know, I remember, I need money, I have no patience, I have a doubt, I am confident, I am hungry, thirsty, sleepy, angry, I feel like laughing, afraid, cold, hot, sad, ashamed, surprised, and like crying. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "te-9200":
+    native: "I like it; I am fond of it"
+    notes:
+      "u1": "నాకు (nāku) ఇష్టం (iṣṭaṁ) says that the speaker likes something. The thing liked is named before it, as in నాకు (nāku) టీ (ṭī) ఇష్టం (iṣṭaṁ), I like tea."
+  "te-9201":
+    native: "I do not like it; I dislike it"
+    notes:
+      "u1": "నాకు (nāku) ఇష్టం (iṣṭaṁ) లేదు (lēdu) is the negative of నాకు (nāku) ఇష్టం (iṣṭaṁ): the speaker does not like it. Use it for a thing or a food the speaker dislikes."
+  "te-9202":
+    native: "I know"
+    notes:
+      "u1": "నాకు (nāku) తెలుసు (telusu) means I know: a fact, a person or how to do something. Its negative is నాకు (nāku) తెలియదు (teliyadu), I do not know."
+  "te-9203":
+    native: "I remember; I have it in mind"
+    notes:
+      "u1": "నాకు (nāku) గుర్తు (gurtu) ఉంది (undi) says that the speaker remembers something. The thing remembered comes before the phrase, as in అది (adi) నాకు (nāku) గుర్తు (gurtu) ఉంది (undi), I remember it."
+    bases:
+      "గుర్తు": { meaning: "memory; a mark kept in the mind" }
+  "te-9204":
+    native: "I need money"
+    notes:
+      "u1": "నాకు (nāku) డబ్బు (ḍabbu) కావాలి (kāvāli): the thing needed is the subject of కావాలి (kāvāli), and the person who needs it is in the dative. The phrase is said for what the speaker needs or wants."
+  "te-9205":
+    native: "I have no patience; I have no energy for it"
+    notes:
+      "u1": "నాకు (nāku) ఓపిక (ōpika) లేదు (lēdu) says that the speaker has no patience or energy left for something."
+    bases:
+      "ఓపిక": { meaning: "patience; the energy to bear or do something" }
+  "te-9206":
+    native: "I have a doubt; I suspect"
+    notes:
+      "u1": "నాకు (nāku) అనుమానం (anumānaṁ) ఉంది (undi) says that the speaker has a doubt or suspects something. The doubtful thing is named before the phrase."
+  "te-9207":
+    native: "I am confident; I trust it"
+    notes:
+      "u1": "నాకు (nāku) నమ్మకం (nammakaṁ) ఉంది (undi) says that the speaker is sure of something or trusts it. It is the feeling of confidence, not a promise."
+  "te-9208":
+    native: "I am getting hungry; I feel hungry"
+    notes:
+      "u1": "ఆకలి (ākali) వేస్తోంది (vēstōndi) is the usual way to say you are getting hungry: the hunger comes on you. For the state of being hungry, the card నాకు (nāku) ఆకలిగా (ākaligā) ఉంది (undi) is also used."
+    bases:
+      "వేస్తోంది": { meaning: "is coming on; is being felt" }
+  "te-9209":
+    native: "I am getting thirsty; I feel thirsty"
+    notes:
+      "u1": "దాహం (dāhaṁ) వేస్తోంది (vēstōndi) is the way to say you are getting thirsty, like ఆకలి (ākali) వేస్తోంది (vēstōndi) for hunger."
+    bases:
+      "వేస్తోంది": { meaning: "is coming on; is being felt" }
+  "te-9210":
+    native: "I am getting sleepy"
+    notes:
+      "u1": "నిద్ర (nidra) వస్తోంది (vastōndi): sleep is coming to the speaker. The verb is రావడం (rāvaḍaṁ), to come, and the sleep is its subject."
+    bases:
+      "వస్తోంది": { meaning: "is coming" }
+  "te-9211":
+    native: "I got angry"
+    notes:
+      "u1": "కోపం (kōpaṁ) వచ్చింది (vaccindi): anger came to the speaker, a sudden feeling. The verb is రావడం (rāvaḍaṁ), to come, in the past tense."
+    bases:
+      "వచ్చింది": { meaning: "came" }
+  "te-9212":
+    native: "I feel like laughing; I am about to laugh"
+    notes:
+      "u1": "నవ్వు (navvu) వస్తోంది (vastōndi) means the urge to laugh is coming over the speaker. The verb of laughing is నవ్వడం (navvaḍaṁ), to laugh."
+    bases:
+      "వస్తోంది": { meaning: "is coming" }
+  "te-9213":
+    native: "I am scared; I feel afraid"
+    notes:
+      "u1": "భయం (bhayaṁ) వేస్తోంది (vēstōndi) means fear is coming over the speaker."
+    bases:
+      "వేస్తోంది": { meaning: "is coming on; is being felt" }
+  "te-9214":
+    native: "I am cold"
+    notes:
+      "u1": "చలిగా (caligā) ఉంది (undi) is the adjective form of చలి (cali), cold, with ఉంది (undi), is: the speaker feels cold. The opposite is నాకు (nāku) వేడిగా (vēḍigā) ఉంది (undi), I am hot."
+    bases:
+      "చలిగా": { meaning: "cold (as a feeling)" }
+  "te-9215":
+    native: "I am hot"
+    notes:
+      "u1": "వేడిగా (vēḍigā) ఉంది (undi) says that the speaker feels hot. The opposite is నాకు (nāku) చలిగా (caligā) ఉంది (undi), I am cold."
+  "te-9216":
+    native: "I am sad; I feel hurt"
+    notes:
+      "u1": "బాధగా (bādhagā) ఉంది (undi) says that the speaker feels sad or hurt. The feeling is in the dative, as with every phrase here: నాకు (nāku), to me."
+  "te-9217":
+    native: "I am ashamed; I feel shy"
+    notes:
+      "u1": "సిగ్గుగా (siggugā) ఉంది (undi) says that the speaker feels shy or embarrassed."
+  "te-9218":
+    native: "I am surprised"
+    notes:
+      "u1": "ఆశ్చర్యంగా (āścaryaṅgā) ఉంది (undi) says that the speaker is surprised. The thing that surprised the speaker can come before the phrase."
+  "te-9219":
+    native: "I feel like crying"
+    notes:
+      "u1": "ఏడుపు (ēḍupu) వస్తోంది (vastōndi): crying is coming on the speaker. The verb of crying is ఏడవడం (ēḍavaḍaṁ), to cry."
+    bases:
+      "ఏడుపు": { meaning: "crying; a fit of crying" }
+      "వస్తోంది": { meaning: "is coming" }
