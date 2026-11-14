@@ -3,8 +3,8 @@ id: "ja-en-kanji-2"
 kind: "layer"
 core: "ja-kanji-2"
 native: { code: "en", iso639_3: "eng", name: "English" }
-name: "Kanji 2: grade 1, the first 22 school kanji"
-description: "Grade 1 kanji for one, right, rain, yen, king, sound, below, flower, shellfish, spirit, nine, rest, jewel, sky, dog, see, five, mouth, left, three, mountain and child: each taught by the kana reading of the word it stands for. Not yet checked by a Japanese speaker: please report any mistake."
+name: "Kanji 2: grade 1, part 1"
+description: "The first 24 grade 1 kanji: numbers, nature, people and everyday things, each taught by the kana reading of the word it stands for. Not yet checked by a Japanese speaker: please report any mistake."
 license: "CC-BY-SA-4.0"
 tags: ["script", "unreviewed"]
 cards:
@@ -21,63 +21,61 @@ cards:
       "n1": "右 (migi): on readings ウ (u) and ユウ (yuu); kun reading みぎ (migi). It is in 右 (migi), right."
     examples:
         "右はどこですか。": "Where is the right side?"
-        "右にあります。": "It is on the right."
   "ja-5002":
     native: "rain"
     notes:
       "n1": "雨 (ame): on reading ウ (u); kun readings あめ (ame) and あま (ama). It is in 雨 (ame), rain."
     examples:
         "雨がきました。": "The rain has come."
-        "雨がすきです。": "I like rain."
   "ja-5003":
     native: "yen; circle"
     notes:
       "n1": "円 (en): on reading エン (en); kun reading まる (maru). It is in 円 (en), yen."
     examples:
         "円はおかねです。": "The yen is money."
-        "円はいくらですか。": "How many yen is it?"
   "ja-5004":
     native: "king"
     notes:
       "n1": "王 (ou): on reading オウ (ou); kun reading きみ (kimi). It is in 王 (ou), king."
     examples:
         "王はわたしです。": "I am the king."
-        "王がいます。": "There is a king."
   "ja-5005":
     native: "sound"
     notes:
       "n1": "音 (oto): on reading オン (on); kun readings ね (ne) and おと (oto). It is in 音 (oto), sound."
     examples:
         "音がします。": "There is a sound."
-        "その音はなんですか。": "What is that sound?"
   "ja-5006":
     native: "below; under"
     notes:
       "n1": "下 (shita): on readings カ (ka) and ゲ (ge); kun readings した (shita), しも (shimo) and もと (moto). It is in 下 (shita), below."
     examples:
         "ねこは下にいます。": "The cat is under it."
-        "下にあります。": "It is underneath."
   "ja-5007":
     native: "flower"
     notes:
       "n1": "花 (hana): on reading カ (ka); kun reading はな (hana). It is in 花 (hana), flower."
     examples:
         "花がきれいです。": "The flower is pretty."
-        "花がすきです。": "I like flowers."
   "ja-5008":
     native: "shellfish"
     notes:
       "n1": "貝 (kai): on reading バイ (bai); kun reading かい (kai). It is in 貝 (kai), shellfish."
     examples:
         "うみに貝があります。": "There is a shellfish in the sea."
-        "貝をたべます。": "I eat shellfish."
+  "ja-5009":
+    native: "study; learning"
+    notes:
+      "n1": "学 (gaku): on reading ガク (gaku); kun reading まなぶ (manabu). It is in 学校 (gakkou), school."
+    examples:
+        "学校にいきます。": "I go to school."
+        "学校はたのしいです。": "School is fun."
   "ja-5010":
     native: "spirit; air; mood"
     notes:
       "n1": "気 (ki): on readings キ (ki) and ケ (ke); kun reading いき (iki). It is in 気 (ki), mood."
     examples:
         "気をつけてください。": "Please be careful."
-        "気がします。": "I have a feeling."
   "ja-5011":
     native: "nine"
     notes:
@@ -98,21 +96,18 @@ cards:
       "n1": "玉 (tama): on reading ギョク (gyoku); kun reading たま (tama). It is in 玉 (tama), ball."
     examples:
         "玉はどこですか。": "Where is the ball?"
-        "玉がありません。": "There is no ball."
   "ja-5014":
     native: "sky; empty"
     notes:
       "n1": "空 (sora): on reading クウ (kuu); kun readings そら (sora), あく (aku) and から (kara). It is in 空 (sora), sky."
     examples:
         "空がきれいです。": "The sky is pretty."
-        "空にとりがいます。": "There is a bird in the sky."
   "ja-5015":
     native: "dog"
     notes:
       "n1": "犬 (inu): on reading ケン (ken); kun reading いぬ (inu). It is in 犬 (inu), dog."
     examples:
         "犬がいます。": "There is a dog."
-        "犬がすきです。": "I like dogs."
   "ja-5016":
     native: "to see; look"
     notes:
@@ -133,14 +128,19 @@ cards:
       "n1": "口 (kuchi): on reading コウ (kou); kun reading くち (kuchi). It is in 口 (kuchi), mouth."
     examples:
         "口をあけます。": "I open my mouth."
-        "口がいたいです。": "My mouth hurts."
+  "ja-5019":
+    native: "school"
+    notes:
+      "n1": "校 (kou): on reading コウ (kou); kun reading かせ (kase). It is in 学校 (gakkou), school."
+    examples:
+        "学校がすきです。": "I like school."
+        "学校にともだちがいます。": "There is a friend at school."
   "ja-5020":
     native: "left"
     notes:
       "n1": "左 (hidari): on reading サ (sa); kun reading ひだり (hidari). It is in 左 (hidari), left."
     examples:
         "左にあります。": "It is on the left."
-        "左がすきです。": "I like the left one."
   "ja-5021":
     native: "three"
     notes:
@@ -154,7 +154,6 @@ cards:
       "n1": "山 (yama): on reading サン (san); kun reading やま (yama). It is in 山 (yama), mountain."
     examples:
         "山がきれいです。": "The mountain is pretty."
-        "山にいきます。": "I go to the mountain."
   "ja-5023":
     native: "child"
     notes:

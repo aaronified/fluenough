@@ -42,11 +42,6 @@ cards:
         words: ["右", "は", "どこ", "です", "か"]
         reading: "migi wa doko desu ka."
         ipa: "miɡihadokodesɯka"
-      - target: "右にあります。"
-        target_scripts: { kana: "みぎにあります。" }
-        words: ["右", "に", "あります"]
-        reading: "migi ni arimasu."
-        ipa: "miɡiniaɾimasɯ"
     bases: "self"
   - id: "ja-5002"
     target: "雨"
@@ -63,11 +58,6 @@ cards:
         words: ["雨", "が", "きました"]
         reading: "ame ga kimashita."
         ipa: "ameɡakimaɕita"
-      - target: "雨がすきです。"
-        target_scripts: { kana: "あめがすきです。" }
-        words: ["雨", "が", "すき", "です"]
-        reading: "ame ga suki desu."
-        ipa: "ameɡasɯkidesɯ"
     bases: "self"
   - id: "ja-5003"
     target: "円"
@@ -84,11 +74,6 @@ cards:
         words: ["円", "は", "おかね", "です"]
         reading: "en wa okane desu."
         ipa: "eɴhaokanedesɯ"
-      - target: "円はいくらですか。"
-        target_scripts: { kana: "えんはいくらですか。" }
-        words: ["円", "は", "いくら", "です", "か"]
-        reading: "en wa ikura desu ka."
-        ipa: "eɴhaikɯɾadesɯka"
     bases: "self"
   - id: "ja-5004"
     target: "王"
@@ -105,11 +90,6 @@ cards:
         words: ["王", "は", "わたし", "です"]
         reading: "ou wa watashi desu."
         ipa: "oːhawataɕidesɯ"
-      - target: "王がいます。"
-        target_scripts: { kana: "おうがいます。" }
-        words: ["王", "が", "います"]
-        reading: "ou ga imasu."
-        ipa: "oːɡaimasɯ"
     bases: "self"
   - id: "ja-5005"
     target: "音"
@@ -126,11 +106,6 @@ cards:
         words: ["音", "が", "します"]
         reading: "oto ga shimasu."
         ipa: "otoɡaɕimasɯ"
-      - target: "その音はなんですか。"
-        target_scripts: { kana: "そのおとはなんですか。" }
-        words: ["その", "音", "は", "なん", "です", "か"]
-        reading: "sono oto wa nan desu ka."
-        ipa: "sonoːtohanaɴdesɯka"
     bases: "self"
   - id: "ja-5006"
     target: "下"
@@ -147,11 +122,6 @@ cards:
         words: ["ねこ", "は", "下", "に", "います"]
         reading: "neko wa shita ni imasu."
         ipa: "nekohaɕitaniːmasɯ"
-      - target: "下にあります。"
-        target_scripts: { kana: "したにあります。" }
-        words: ["下", "に", "あります"]
-        reading: "shita ni arimasu."
-        ipa: "ɕitaniaɾimasɯ"
     bases: "self"
   - id: "ja-5007"
     target: "花"
@@ -168,11 +138,6 @@ cards:
         words: ["花", "が", "きれい", "です"]
         reading: "hana ga kirei desu."
         ipa: "hanaɡakiɾeːdesɯ"
-      - target: "花がすきです。"
-        target_scripts: { kana: "はながすきです。" }
-        words: ["花", "が", "すき", "です"]
-        reading: "hana ga suki desu."
-        ipa: "hanaɡasɯkidesɯ"
     bases: "self"
   - id: "ja-5008"
     target: "貝"
@@ -189,11 +154,27 @@ cards:
         words: ["うみ", "に", "貝", "が", "あります"]
         reading: "umi ni kai ga arimasu."
         ipa: "ɯminikaiɡaːɾimasɯ"
-      - target: "貝をたべます。"
-        target_scripts: { kana: "かいをたべます。" }
-        words: ["貝", "を", "たべます"]
-        reading: "kai o tabemasu."
-        ipa: "kaiotabemasɯ"
+    bases: "self"
+  - id: "ja-5009"
+    target: "学"
+    target_scripts: { kana: "がく" }
+    words: ["学"]
+    reading: "gaku"
+    ipa: "ɡakɯ"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "学校にいきます。"
+        target_scripts: { kana: "がっこうにいきます。" }
+        words: ["学校", "に", "いきます"]
+        reading: "gakkou ni ikimasu."
+        ipa: "ɡakkoːniːkimasɯ"
+      - target: "学校はたのしいです。"
+        target_scripts: { kana: "がっこうはたのしいです。" }
+        words: ["学校", "は", "たのしい", "です"]
+        reading: "gakkou wa tanoshii desu."
+        ipa: "ɡakkoːhatanoɕiːdesɯ"
     bases: "self"
   - id: "ja-5010"
     target: "気"
@@ -210,11 +191,6 @@ cards:
         words: ["気", "を", "つけて", "ください"]
         reading: "ki o tsukete kudasai."
         ipa: "kiotsɯketekɯdasai"
-      - target: "気がします。"
-        target_scripts: { kana: "きがします。" }
-        words: ["気", "が", "します"]
-        reading: "ki ga shimasu."
-        ipa: "kiɡaɕimasɯ"
     bases: "self"
   - id: "ja-5011"
     target: "九"
@@ -273,11 +249,6 @@ cards:
         words: ["玉", "は", "どこ", "です", "か"]
         reading: "tama wa doko desu ka."
         ipa: "tamahadokodesɯka"
-      - target: "玉がありません。"
-        target_scripts: { kana: "たまがありません。" }
-        words: ["玉", "が", "ありません"]
-        reading: "tama ga arimasen."
-        ipa: "tamaɡaːɾimaseɴ"
     bases: "self"
   - id: "ja-5014"
     target: "空"
@@ -294,11 +265,6 @@ cards:
         words: ["空", "が", "きれい", "です"]
         reading: "sora ga kirei desu."
         ipa: "soɾaɡakiɾeːdesɯ"
-      - target: "空にとりがいます。"
-        target_scripts: { kana: "そらにとりがいます。" }
-        words: ["空", "に", "とり", "が", "います"]
-        reading: "sora ni tori ga imasu."
-        ipa: "soɾanitoɾiɡaimasɯ"
     bases: "self"
   - id: "ja-5015"
     target: "犬"
@@ -315,11 +281,6 @@ cards:
         words: ["犬", "が", "います"]
         reading: "inu ga imasu."
         ipa: "inɯɡaimasɯ"
-      - target: "犬がすきです。"
-        target_scripts: { kana: "いぬがすきです。" }
-        words: ["犬", "が", "すき", "です"]
-        reading: "inu ga suki desu."
-        ipa: "inɯɡasɯkidesɯ"
     bases: "self"
   - id: "ja-5016"
     target: "見"
@@ -378,11 +339,27 @@ cards:
         words: ["口", "を", "あけます"]
         reading: "kuchi o akemasu."
         ipa: "kɯtɕioakemasɯ"
-      - target: "口がいたいです。"
-        target_scripts: { kana: "くちがいたいです。" }
-        words: ["口", "が", "いたい", "です"]
-        reading: "kuchi ga itai desu."
-        ipa: "kɯtɕiɡaitaidesɯ"
+    bases: "self"
+  - id: "ja-5019"
+    target: "校"
+    target_scripts: { kana: "こう" }
+    words: ["校"]
+    reading: "kou"
+    ipa: "koː"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "学校がすきです。"
+        target_scripts: { kana: "がっこうがすきです。" }
+        words: ["学校", "が", "すき", "です"]
+        reading: "gakkou ga suki desu."
+        ipa: "ɡakkoːɡasɯkidesɯ"
+      - target: "学校にともだちがいます。"
+        target_scripts: { kana: "がっこうにともだちがいます。" }
+        words: ["学校", "に", "ともだち", "が", "います"]
+        reading: "gakkou ni tomodachi ga imasu."
+        ipa: "ɡakkoːnitomodatɕiɡaimasɯ"
     bases: "self"
   - id: "ja-5020"
     target: "左"
@@ -399,11 +376,6 @@ cards:
         words: ["左", "に", "あります"]
         reading: "hidari ni arimasu."
         ipa: "çidaɾiniaɾimasɯ"
-      - target: "左がすきです。"
-        target_scripts: { kana: "ひだりがすきです。" }
-        words: ["左", "が", "すき", "です"]
-        reading: "hidari ga suki desu."
-        ipa: "çidaɾiɡasɯkidesɯ"
     bases: "self"
   - id: "ja-5021"
     target: "三"
@@ -441,11 +413,6 @@ cards:
         words: ["山", "が", "きれい", "です"]
         reading: "yama ga kirei desu."
         ipa: "jamaɡakiɾeːdesɯ"
-      - target: "山にいきます。"
-        target_scripts: { kana: "やまにいきます。" }
-        words: ["山", "に", "いきます"]
-        reading: "yama ni ikimasu."
-        ipa: "jamaniːkimasɯ"
     bases: "self"
   - id: "ja-5023"
     target: "子"
