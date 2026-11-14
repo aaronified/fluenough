@@ -455,32 +455,32 @@ units:
   - decks: ["te-grammar-can-must"]
     words: 0
     grammar: ["can-must"]
-  - decks: ["te-grammar-conditional"]
+  - decks: ["te-grammar-conditional", "te-reading-conditional"]
     words: 0
     grammar: ["conditional"]
     listening_passages:
       - { id: "rain-plans", text: { "en": "A friend's plans if it rains" } }
     reading_passages:
       - { id: "late-train", text: { "en": "A message: if the train is late" } }
-  - decks: ["te-travel", "*"]
+  - decks: ["te-travel", "te-reading-travel", "*"]
     words: 60
     listening_passages:
       - { id: "hotel-booking", text: { "en": "Booking a hotel room over the phone" } }
     reading_passages:
       - { id: "itinerary", text: { "en": "A two-day trip itinerary" } }
-  - decks: ["te-services", "*"]
+  - decks: ["te-services", "te-reading-services", "*"]
     words: 50
     listening_passages:
       - { id: "at-the-bank", text: { "en": "Opening an account at a bank counter" } }
     reading_passages:
       - { id: "bank-form", text: { "en": "A simple bank form" } }
-  - decks: ["te-government", "*"]
+  - decks: ["te-government", "te-reading-government", "*"]
     words: 45
     listening_passages:
       - { id: "at-the-office", text: { "en": "Asking an officer which document is needed" } }
     reading_passages:
       - { id: "form-instructions", text: { "en": "Instructions on an application form" } }
-  - decks: ["te-grammar-purpose"]
+  - decks: ["te-grammar-purpose", "te-reading-purpose"]
     words: 0
     grammar: ["purpose"]
     listening_passages:
