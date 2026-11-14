@@ -56,6 +56,8 @@ Issue #378's checklist (2026-11-13) is out of date: batches 1 to 4 have merged s
 | Review queue | 262 rows in `docs/review-queue/ja.md` |
 | Ids in use | 1 to 4577; the ranges below sit above them |
 
+Kanji decks `ja-kanji-2` to `ja-kanji-13` (JA-101 to JA-112) are merged to decks-live (2026-11-14).
+
 ### A. Everything still open on the Japanese checklist
 
 | # | Open item | Size | Tasks |
@@ -282,7 +284,7 @@ Owner, 2026-11-14: "More clean Spanish and Hindi sentences would bring them back
 
 ### Spanish (`es`)
 
-State on decks-live ddcff92f: 102 path units, none planned; 2,536 cards, highest id `es-3124` (the ranges below start at `es-3200`); 66 sentences decks, each with about six sentences, so a deck grows by appending. Spanish conventions: `ipa` from `python3 tools/transcribe.py es "<sentence>"` (the decks use the Spain pronunciation, `θ`), no `reading` (Latin script), meanings in the layer, `native` capitalised with the Spanish inverted marks kept on the target (`¿...?`), the target starts with a capital and ends with its mark.
+State on decks-live ddcff92f: 102 path units, none planned; 2,742 cards, highest id `es-3527` (the ranges below start at `es-3200`); 66 sentences decks, each with about six sentences, so a deck grows by appending. Spanish conventions: `ipa` from `python3 tools/transcribe.py es "<sentence>"` (the decks use the Spain pronunciation, `θ`), no `reading` (Latin script), meanings in the layer, `native` capitalised with the Spanish inverted marks kept on the target (`¿...?`), the target starts with a capital and ends with its mark.
 
 #### Spanish repairs (failing cards in `docs/placement-bad-sentences.md`)
 
@@ -305,19 +307,21 @@ Each ES-001 to ES-008 appends 25 sentences to **one existing sentences deck** (c
 
 | Id | Branch | Edits (append only) | Taught-words scope (path units up to) | Ids | Cards |
 |---|---|---|---|---|---|
-| ES-001 | decks/es-sent-about-me | `decks/es/es-about-me-sentences.yaml`, `decks/es/en/es-en-about-me-sentences.yaml` | unit of `es-about-me` (7) | es-3200 to 3239 | 25 |
-| ES-002 | decks/es-sent-food | `es-food-sentences`, `es-en-food-sentences` | `es-food` (26) | es-3240 to 3279 | 25 |
-| ES-003 | decks/es-sent-directions | `es-directions-sentences`, `es-en-directions-sentences` | `es-directions` (28) | es-3280 to 3319 | 25 |
-| ES-004 | decks/es-sent-shopping | `es-shopping-sentences`, `es-en-shopping-sentences` | `es-shopping` (43) | es-3320 to 3359 | 25 |
-| ES-005 | decks/es-sent-hobbies | `es-hobbies-sentences`, `es-en-hobbies-sentences` | `es-hobbies` (49) | es-3360 to 3399 | 25 |
-| ES-006 | decks/es-sent-journey | `es-journey-sentences`, `es-en-journey-sentences` | `es-journey` (57) | es-3400 to 3439 | 25 |
-| ES-007 | decks/es-sent-health | `es-health-sentences`, `es-en-health-sentences` | `es-health` (65) | es-3440 to 3479 | 25 |
-| ES-008 | decks/es-sent-travel | `es-travel-sentences`, `es-en-travel-sentences` | `es-travel` (72) | es-3480 to 3519 | 25 |
-| ES-009 | decks/es-sent-repairs | `es-time-sentences`, `es-en-time-sentences` | `es-time` (32); a function whose words are not taught by then is reported and skipped | es-3520 to 3559 | 12 (the table above) |
-| ES-010 | decks/es-sent-phonetics | every new card of ES-001 to 009 via the tools | after all nine merge | none | tool run |
-| ES-011 | none (Sonnet, no PR) | runs the placement audit on the new Spanish bank and reports F5 and F17 accuracy against 0.32 at the new n; if it fails, the architect orders ES-012 onward (the same shape, other units: `es-money`, `es-news`, `es-weather`, `es-places`, ids from es-3600) | after ES-010 | none | audit |
+| ES-001 | decks/es-sent-about-me | `decks/es/es-about-me-sentences.yaml`, `decks/es/en/es-en-about-me-sentences.yaml` | unit of `es-about-me` (7) | es-3200 to 3239 | 25. **Done:** merged to decks-live 2026-11-14. |
+| ES-002 | decks/es-sent-food | `es-food-sentences`, `es-en-food-sentences` | `es-food` (26) | es-3240 to 3279 | 25. **Done:** merged to decks-live 2026-11-14. |
+| ES-003 | decks/es-sent-directions | `es-directions-sentences`, `es-en-directions-sentences` | `es-directions` (28) | es-3280 to 3319 | 25. **Done:** merged to decks-live 2026-11-14. |
+| ES-004 | decks/es-sent-shopping | `es-shopping-sentences`, `es-en-shopping-sentences` | `es-shopping` (43) | es-3320 to 3359 | 25. **Done:** merged to decks-live 2026-11-14. |
+| ES-005 | decks/es-sent-hobbies | `es-hobbies-sentences`, `es-en-hobbies-sentences` | `es-hobbies` (49) | es-3360 to 3399 | 25. **Done:** merged to decks-live 2026-11-14. |
+| ES-006 | decks/es-sent-journey | `es-journey-sentences`, `es-en-journey-sentences` | `es-journey` (57) | es-3400 to 3439 | 25. **Done:** merged to decks-live 2026-11-14. |
+| ES-007 | decks/es-sent-health | `es-health-sentences`, `es-en-health-sentences` | `es-health` (65) | es-3440 to 3479 | 25. **Done:** merged to decks-live 2026-11-14. |
+| ES-008 | decks/es-sent-travel | `es-travel-sentences`, `es-en-travel-sentences` | `es-travel` (72) | es-3480 to 3519 | 25. **Done:** merged to decks-live 2026-11-14. |
+| ES-009 | decks/es-sent-repairs | `es-time-sentences`, `es-en-time-sentences` | `es-time` (32); a function whose words are not taught by then is reported and skipped | es-3520 to 3559 | 7 of 12 (**Done:** merged 2026-11-14; two topics skipped because their words are taught after unit 32) |
+| ES-010 | decks/es-sent-phonetics | every new card of ES-001 to 009 via the tools | after all nine merge | none | tool run. **Done:** merged 2026-11-14. |
+| ES-011 | none (Sonnet, no PR) | runs the placement audit on the new Spanish bank and reports F5 and F17 accuracy against 0.32 at the new n; if it fails, the architect orders ES-012 onward (the same shape, other units: `es-money`, `es-news`, `es-weather`, `es-places`, ids from es-3600) | after ES-010 | none | audit. **DONE** 2026-11-14, passes: F5:clean and F17:clean n=269, accuracy 0.2714, upper bound 0.3181 against 0.32 (margin 0.0019); excluded classes F17:cognate, F28:clean, F28:cognate, F5:cognate; sentence cards 673. The conditional top-up ES-046 to ES-049 is not triggered. |
 
 **Renumbering note (2026-11-14):** the conditional top-up that the ES-011 row above reserves as "ES-012 onward" (`es-money`, `es-news`, `es-weather`, `es-places`, ids from es-3600) is now ES-046 to ES-049, ids es-3600 to es-3799, if ES-011 fails. The numbers ES-012 to ES-045 belong to [Deck-Work-Queue-ES-TE](Deck-Work-Queue-ES-TE.md). Nothing else in this section is renumbered.
+
+**Status (2026-11-14):** ES-001 to ES-010 are merged to decks-live (PRs #1247 to #1256 and #1267; the PR for each row is not recorded here). ES-011 passed, so the conditional top-up is not needed. **Finding (Spanish and Hindustani, 2026-11-14):** the real admission audit runs when the bank is built, so turning sentence questions on needs only the data, no code change. The stored admission entry is keyed to one deck snapshot (issue #1270).
 
 **Verb pools, counted from the path position of each deck** (verb cards of the decks listed up to the unit; ES-001 also counts the verbs its unit's grammar teaches, 11 in all as its builder found: ser, estar, tener, ir, hablar, comer, estudiar, trabajar, sentir, llamarse, vivir):
 
@@ -357,14 +361,14 @@ Each task creates one new sentences deck (core and layer) and edits **only one l
 
 | Id | Branch | Creates | Path line edited (unit's first deck) | Taught-words scope | Ids | Cards |
 |---|---|---|---|---|---|---|
-| HI-001 | decks/hi-sent-work | `decks/hi/hi-work-sentences.yaml`, `decks/hi/en/hi-en-work-sentences.yaml` | the unit of `hi-work` (19; its line is `decks: ["hi-work", "*"]`) | up to unit 19 | hi-2900 to 2939 | 25 |
-| HI-002 | decks/hi-sent-food | `hi-food-sentences`, `hi-en-food-sentences` | `hi-food` (29) | up to 29 | hi-2940 to 2979 | 25 |
-| HI-003 | decks/hi-sent-directions | `hi-directions-sentences`, `hi-en-directions-sentences` | `hi-directions` (36; its line lists `hi-grammar-continuous` after it) | up to 36 | hi-2980 to 3019 | 25 |
-| HI-004 | decks/hi-sent-shopping | `hi-shopping-sentences`, `hi-en-shopping-sentences` | `hi-shopping` (53) | up to 53 | hi-3020 to 3059 | 25 |
-| HI-005 | decks/hi-sent-health | `hi-health-sentences`, `hi-en-health-sentences` | `hi-health` (76) | up to 76 | hi-3060 to 3099 | 25 |
+| HI-001 | decks/hi-sent-work | `decks/hi/hi-work-sentences.yaml`, `decks/hi/en/hi-en-work-sentences.yaml` | the unit of `hi-work` (19; its line is `decks: ["hi-work", "*"]`) | up to unit 19 | hi-2900 to 2939 | 25. **Done:** merged to decks-live 2026-11-14. |
+| HI-002 | decks/hi-sent-food | `hi-food-sentences`, `hi-en-food-sentences` | `hi-food` (29) | up to 29 | hi-2940 to 2979 | 25. **Done:** merged to decks-live 2026-11-14. |
+| HI-003 | decks/hi-sent-directions | `hi-directions-sentences`, `hi-en-directions-sentences` | `hi-directions` (36; its line lists `hi-grammar-continuous` after it) | up to 36 | hi-2980 to 3019 | 25. **Done:** merged to decks-live 2026-11-14. |
+| HI-004 | decks/hi-sent-shopping | `hi-shopping-sentences`, `hi-en-shopping-sentences` | `hi-shopping` (53) | up to 53 | hi-3020 to 3059 | 25. **Done:** merged to decks-live 2026-11-14. |
+| HI-005 | decks/hi-sent-health | `hi-health-sentences`, `hi-en-health-sentences` | `hi-health` (76) | up to 76 | hi-3060 to 3099 | 25. **Done:** merged to decks-live 2026-11-14. |
 | HI-006 | DROPPED | Dropped 2026-11-14 by the architect: the vocabulary taught by unit 17 (hi-time) cannot support it. None of the six phrase functions (teeth, lunch, dinner, work, bedroom, usually) has its words taught by unit 17, no personal name is taught, and the only real place taught is दिल्ली, so at most 2 to 9 sentences were possible against the 12-sentence minimum. The unit has no sentences deck; its words are covered by the sentences decks of later units (HI-002, HI-003, HI-005). | none | none | none | none |
-| HI-007 | decks/hi-sent-phonetics | every new card of HI-001 to 006 via the tools | none | after HI-001 to HI-005 merge | none | tool run |
-| HI-008 | none (Sonnet, no PR) | runs the placement audit on the new Hindustani bank, reports F5 and F17 against 0.32 at the new n (need about 130 eligible or more; the task adds about 140); if it fails, follow-ups HI-009 onward are ordered with the same shape (`hi-work`, `hi-home`, `hi-weather`, `hi-money`, ids from hi-3200) | after HI-007 | none | audit |
+| HI-007 | decks/hi-sent-phonetics | every new card of HI-001 to 006 via the tools | none | after HI-001 to HI-005 merge | none | tool run. **Done:** merged 2026-11-14 (5 of 119 cards got `phonetic`). |
+| HI-008 | none (Sonnet, no PR) | runs the placement audit on the new Hindustani bank, reports F5 and F17 against 0.32 at the new n (need about 130 eligible or more; the task adds about 140); if it fails, follow-ups HI-009 onward are ordered with the same shape (`hi-work`, `hi-home`, `hi-weather`, `hi-money`, ids from hi-3200) | after HI-007 | none | audit. **DONE** 2026-11-14, passes: F5:clean and F17:clean n=172, upper bound 0.3079 against 0.32. |
 
 **Verb pools, counted from the path position of each deck** (verb cards of the decks listed up to the unit): 
 
@@ -376,6 +380,8 @@ Each task creates one new sentences deck (core and layer) and edits **only one l
 | HI-004 (unit 53) | 66 | 2 | 25 |
 | HI-005 (unit 76) | 169 | 2 | 25 |
 | HI-006 (unit 17) | 25 | 2 | DROPPED (see HI-006) |
+
+**Status (2026-11-14):** HI-001 to HI-005 are merged to decks-live (PRs #1249, #1257, #1263, #1266, #1275; the PR for each row is not recorded here). HI-007 is merged (PR #1277). HI-008 is DONE and passes. **Finding:** as for Spanish above, the real admission audit runs when the bank is built, and the stored admission entry is keyed to one deck snapshot (issue #1270).
 
 Content rules: the gate and variety rules above. HI-007: `python3 tools/import_phonetic.py hi --write` then `python3 tools/derive_phonetic.py hi --write` (`decks/hi/hi-phonetics.yaml` exists), counts reported. Not touched: other decks, `decks/min_app.json`, existing cards. Review-queue rows in the report: every Perso-Arabic spelling the builder is not sure of, every gender or honorific choice, and every translation with a nuance.
 
