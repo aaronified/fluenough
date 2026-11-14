@@ -1,4 +1,4 @@
-# Japanese idiomatic verbs: a noun with its particle, and a verb or adjective. Each part taught earlier is written by ref. Seven of the twenty planned idioms: the others are not attested on ja.wiktionary or have no bare verb card yet.
+# Japanese idiomatic verbs: a noun with its particle, and a verb or adjective. A part that is a card of the course is written by ref; 気 (ki), つく (tsuku) and きく (kiku) are not cards of the course and are written with base and reading. Seven of the twenty planned idioms: the others are not attested on ja.wiktionary or have no bare verb card yet.
 schema: 1
 id: "ja-multiword-idiomatic-verbs"
 part: "core"
@@ -21,7 +21,7 @@ cards:
     notes:
       - { id: "u1", kind: "usage" }
     bases:
-      - { word: "きに", ref: "ja-0007" }
+      - { word: "きに", base: "き", reading: "ki ni" }
       - { word: "なる", ref: "ja-2220" }
   - id: "ja-4951"
     target: "きをつける"
@@ -34,13 +34,13 @@ cards:
     notes:
       - { id: "u1", kind: "usage" }
     bases:
-      - { word: "きを", ref: "ja-0007" }
+      - { word: "きを", base: "き", reading: "ki o" }
       - { word: "つける", ref: "ja-2223" }
   - id: "ja-4952"
     target: "きがきく"
     words: ["きが", "きく"]
     reading: "ki ga kiku"
-    ipa: "ki ga kiku"
+    ipa: "ki ga kikɯ"
     pos: "phrase"
     level: "B1"
     modes: ["recognition", "production", "listening"]
@@ -48,8 +48,8 @@ cards:
       - { id: "u1", kind: "usage" }
       - { id: "u2", kind: "homograph", ref: "ja-0344" }
     bases:
-      - { word: "きが", ref: "ja-0007" }
-      - { word: "きく", ref: "ja-0344" }
+      - { word: "きが", base: "き", reading: "ki ga" }
+      - { word: "きく", base: "きく", reading: "kiku" }
   - id: "ja-4953"
     target: "きにする"
     words: ["きに", "する"]
@@ -61,7 +61,7 @@ cards:
     notes:
       - { id: "u1", kind: "usage" }
     bases:
-      - { word: "きに", ref: "ja-0007" }
+      - { word: "きに", base: "き", reading: "ki ni" }
       - { word: "する", ref: "ja-0375" }
   - id: "ja-4954"
     target: "あたまをひやす"
@@ -88,7 +88,7 @@ cards:
       - { id: "u1", kind: "usage" }
     bases:
       - { word: "はなに", ref: "ja-1084" }
-      - { word: "つく", ref: "ja-2222" }
+      - { word: "つく", base: "つく", reading: "tsuku" }
   - id: "ja-4956"
     target: "みみにする"
     words: ["みみに", "する"]
