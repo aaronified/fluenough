@@ -137,6 +137,7 @@ cards:
     modes: ["recognition", "production", "listening"]
     notes:
       - { id: "u1", kind: "usage" }
+      - { id: "u2", kind: "register" }
     bases:
       - { word: "ね", ref: "ja-0352" }
       - { word: "すぎる", ref: "ja-2252" }
@@ -152,7 +153,7 @@ cards:
       - { id: "u1", kind: "usage" }
     bases:
       - { word: "み", ref: "ja-0343" }
-      - { word: "あう", ref: "ja-0357" }
+      - { word: "あう", base: "あう", reading: "au" }
   - id: "ja-4911"
     target: "はなしあう"
     words: ["はなし", "あう"]
@@ -165,4 +166,16 @@ cards:
       - { id: "u1", kind: "usage" }
     bases:
       - { word: "はなし", ref: "ja-0347" }
-      - { word: "あう", ref: "ja-0357" }
+      - { word: "あう", base: "あう", reading: "au" }
+  - id: "ja-4912"
+    target: "あう"
+    words: ["あう"]
+    reading: "au"
+    ipa: "aɯ"
+    pos: "verb"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+      - { id: "u2", kind: "homograph", ref: "ja-0357" }
+    bases: "self"
