@@ -272,3 +272,8 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-8194 | ja-society | Is the sense 'advanced age' right for こうれい (kourei), and are its two examples natural? | Haiku builder | 2026-11-15 |
 | ja-8185 | ja-society | Is the note on じんしゅ (jinshu) (a term to use with care) the right wording for a learner, and is the example on dividing people by race natural? | Haiku builder | 2026-11-15 |
 | ja-8183 | ja-society | Are the examples for せいべつ (seibetsu) natural, and is 'gender; sex' the right gloss for a card that names a person's sex on forms? | Haiku builder | 2026-11-15 |
+| ja-8490 | ja-food-culture | Is こってり (kotteri) natural as a bare predicate ("Ramen is rich" with です), or should the example use a different form? | Haiku builder | 2026-11-15 |
+| ja-8491 | ja-food-culture | Is あっさり (assari) natural as a bare predicate with です ("Boiled tofu is light"), or should the example use a different form? | Haiku builder | 2026-11-15 |
+| ja-8489 | ja-food-culture | Is 'savoury; aromatic' the right gloss for こうばしい (koubashii), and are its two examples natural? | Haiku builder | 2026-11-15 |
+| ja-8483 | ja-food-culture | Is 'season (of food)' the right gloss for しゅん (shun), and is 'fish in season' a natural example? | Haiku builder | 2026-11-15 |
+| ja-8465 | ja-food-culture | The note on しょうじんりょうり (shoujin ryouri) says it is the vegetarian food of Buddhist temples; is the first example natural for a learner? | Haiku builder | 2026-11-15 |
