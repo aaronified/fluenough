@@ -381,7 +381,9 @@ units:
       - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain and wind" } }
     reading_passages:
       - { id: "weather-message", text: { "en": "A message to a friend about the weather" } }
-  - planned: { id: "fr-grammar-passe-compose-avoir", grammar: "passe-compose-avoir" }
+  - decks: ["fr-grammar-passe-compose-avoir"]
+    words: 0
+    grammar: ["passe-compose-avoir"]
     listening_passages:
       - { id: "what-i-did-yesterday", text: { "en": "Saying what you did yesterday" } }
     reading_passages:
