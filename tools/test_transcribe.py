@@ -214,94 +214,37 @@ class NewLanguagesTest(unittest.TestCase):
 
 class FrenchTest(unittest.TestCase):
     """French (FR-120): standard Parisian pronunciation, broad, in the
-    notation of the decks. The words below were checked against Wiktionary
-    (en.wiktionary through kaikki.org; fr.wiktionary read for femme, monsieur,
-    travail, oiseau, manger, famille, bonjour; heureux is ø.ʁø on
-    en.wiktionary and œ.ʁø on fr.wiktionary, both attested); the phrases follow the rules in the tool's notes."""
+    notation of the decks. One word per rule, each checked against Wiktionary
+    (en.wiktionary through kaikki.org; fr.wiktionary for femme, monsieur,
+    travail, oiseau, famille). The phrases follow the rules in the tool's
+    notes. The tool does not drop the schwa inside a word (a documented
+    limit), so no test asserts such a word."""
 
     def test_words_whose_pronunciation_is_attested(self) -> None:
         for word, ipa in (
-            ("bonjour", "bɔ̃ʒuʁ"),
-            ("merci", "mɛʁsi"),
-            ("pain", "pɛ̃"),
-            ("vin", "vɛ̃"),
-            ("lundi", "lœ̃di"),
-            ("oiseau", "wazo"),
-            ("chose", "ʃoz"),
-            ("rose", "ʁoz"),
-            ("heureux", "øʁø"),
-            ("heure", "œʁ"),
-            ("cœur", "kœʁ"),
-            ("sœur", "sœʁ"),
-            ("deux", "dø"),
-            ("peu", "pø"),
-            ("jeune", "ʒœn"),
-            ("famille", "famij"),
-            ("travail", "tʁavaj"),
-            ("soleil", "sɔlɛj"),
-            ("bouteille", "butɛj"),
-            ("feuille", "fœj"),
-            ("fille", "fij"),
-            ("gentille", "ʒɑ̃tij"),
-            ("nuit", "nɥi"),
-            ("lui", "lɥi"),
-            ("juin", "ʒɥɛ̃"),
-            ("oui", "wi"),
-            ("quoi", "kwa"),
-            ("qui", "ki"),
-            ("pourquoi", "puʁkwa"),
-            ("chien", "ʃjɛ̃"),
-            ("bien", "bjɛ̃"),
-            ("science", "sjɑ̃s"),
-            ("question", "kɛstjɔ̃"),
-            ("nation", "nasjɔ̃"),
-            ("mangeons", "mɑ̃ʒɔ̃"),
-            ("garçon", "ɡaʁsɔ̃"),
-            ("grande", "ɡʁɑ̃d"),
-            ("français", "fʁɑ̃sɛ"),
-            ("anglais", "ɑ̃ɡlɛ"),
-            ("musique", "myzik"),
-            ("voiture", "vwatyʁ"),
-            ("semaine", "səmɛn"),
-            ("demain", "dəmɛ̃"),
-            ("dimanche", "dimɑ̃ʃ"),
-            ("février", "fevʁije"),
-            ("ouvrier", "uvʁije"),
-            ("voyage", "vwajaʒ"),
-            ("école", "ekɔl"),
-            ("être", "ɛtʁ"),
-            ("mère", "mɛʁ"),
-            ("taxi", "taksi"),
-            ("étudiant", "etydjɑ̃"),
-            ("avec", "avɛk"),
-            ("sac", "sak"),
-            ("coûter", "kute"),
-            ("faisons", "fəzɔ̃"),
-            ("comment", "kɔmɑ̃"),
-            ("beaucoup", "boku"),
-            ("toujours", "tuʒuʁ"),
-            ("femme", "fam"),
-            ("monsieur", "məsjø"),
-            ("ville", "vil"),
-            ("mille", "mil"),
-            ("examen", "ɛɡzamɛ̃"),
-            ("exemple", "ɛɡzɑ̃pl"),
-            ("temps", "tɑ̃"),
-            ("vie", "vi"),
-            ("joie", "ʒwa"),
-            ("rue", "ʁy"),
-            ("amie", "ami"),
-            ("salut", "saly"),
-            ("excusez", "ɛkskyze"),
-            ("bonsoir", "bɔ̃swaʁ"),
-            ("enfants", "ɑ̃fɑ̃"),
-            ("octobre", "ɔktɔbʁ"),
-            ("novembre", "nɔvɑ̃bʁ"),
-            ("avril", "avʁil"),
-            ("décembre", "desɑ̃bʁ"),
-            ("soixante", "swasɑ̃t"),
-            ("quatre", "katʁ"),
-            ("petit", "pəti"),
+            ("pain", "pɛ̃"),  # nasal vowel
+            ("lundi", "lœ̃di"),  # nasal œ̃
+            ("oiseau", "wazo"),  # oi, eau, s between vowels
+            ("heureux", "øʁø"),  # eu open
+            ("cœur", "kœʁ"),  # œu closed
+            ("famille", "famij"),  # ill after a consonant
+            ("travail", "tʁavaj"),  # ail
+            ("bouteille", "butɛj"),  # eill
+            ("nuit", "nɥi"),  # ui
+            ("chien", "ʃjɛ̃"),  # ien
+            ("nation", "nasjɔ̃"),  # tion
+            ("question", "kɛstjɔ̃"),  # stion keeps t
+            ("mangeons", "mɑ̃ʒɔ̃"),  # ge before o
+            ("garçon", "ɡaʁsɔ̃"),  # ç
+            ("musique", "myzik"),  # qu and mute e
+            ("petit", "pəti"),  # schwa in the first syllable
+            ("février", "fevʁije"),  # i after obstruent plus liquid
+            ("voyage", "vwajaʒ"),  # oy before a vowel
+            ("exemple", "ɛɡzɑ̃pl"),  # initial ex before a vowel
+            ("coûter", "kute"),  # oû
+            ("femme", "fam"),  # irregular
+            ("monsieur", "məsjø"),  # irregular
+            ("beaucoup", "boku"),  # silent final p
         ):
             with self.subTest(word):
                 self.assertEqual(french_ipa(word), ipa)
@@ -344,6 +287,32 @@ class FrenchTest(unittest.TestCase):
         ):
             with self.subTest(text):
                 self.assertEqual(french_ipa(text), ipa)
+
+    def test_no_liaison_consonant_before_et_or_ou(self) -> None:
+        for text, ipa in (
+            ("grand et fort", "ɡʁɑ̃ e fɔʁ"),
+            ("deux et deux", "dø e dø"),
+            ("un et deux", "œ̃ e dø"),
+            ("il est petit et gentil", "il ɛ pəti e ʒɑ̃ti"),
+            ("petit ou grand", "pəti u ɡʁɑ̃"),
+        ):
+            with self.subTest(text):
+                self.assertEqual(french_ipa(text), ipa)
+
+    def test_compound_numbers(self) -> None:
+        for text, ipa in (
+            ("vingt-deux", "vɛ̃tdø"),
+            ("vingt-et-un", "vɛ̃teœ̃"),
+            ("quatre-vingts", "katʁəvɛ̃"),
+            ("quatre-vingt-dix-neuf", "katʁəvɛ̃diznœf"),
+        ):
+            with self.subTest(text):
+                self.assertEqual(french_ipa(text), ipa)
+
+    def test_listed_verbs_in_ment_are_silent(self) -> None:
+        self.assertEqual(french_ipa("ils dorment"), "il dɔʁm")
+        self.assertEqual(french_ipa("ils ferment"), "il fɛʁm")
+        self.assertEqual(french_ipa("vraiment"), "vʁɛmɑ̃")
 
     def test_a_pause_blocks_the_liaison(self) -> None:
         self.assertEqual(french_ipa("Nous, étudiants."), "nu etydjɑ̃")

@@ -1128,8 +1128,10 @@ def _es_letter(p: str) -> str:
 # What is NOT guessed (a contributor or a source decides):
 #   * liaison, except the obligatory kind listed in _FR_LIAISON_Z and
 #     _FR_LIAISON_N below (determiners and pronouns before a vowel);
-#   * the dropped e inside a word (`samedi` is written `samədi`, as the
-#     decks write the schwa, not `samdi`);
+#   * the dropped e inside a word. The decks drop the medial schwa after a
+#     vowel and a single consonant (`samdi`, `tɛlmɑ̃`, `mɛ̃tnɑ̃`, `aple`) and
+#     keep it in the first syllable (`pətit`, `səmɛn`, `dəmɛ̃`). This tool
+#     does NOT drop it (`samədi`): a known limit, left to a follow-up;
 #   * the plural/verb ending -ent: a word ending in -ent (not -ment) with a
 #     vowel before it is read as a verb ending and left silent (`parlent`
 #     `paʁl`); nouns and adjectives in _FR_ENT_WORDS are read as -ent said
@@ -1182,6 +1184,9 @@ _FR_WORDS = {
     "examen": "ɛɡzamɛ̃", "eue": "y", "eues": "y", "eus": "y", "eut": "y",
 }
 # Singulars whose plural (+ s) is said the same way.
+# Verbs in -ment (3rd person plural) whose ending is silent.
+_FR_MENT_VERBS = {"dorment", "ferment", "forment", "nomment", "estiment",
+                  "animent", "arment"}
 _FR_PLURAL_OK = {"femme", "ville", "villa", "village", "oignon", "doigt",
                  "gentil", "outil", "dossier"}
 
@@ -1246,7 +1251,8 @@ def french_ipa(text: str) -> str:
     out: list[str] = []
     for k, (ipa, word, pause) in enumerate(toks):
         nxt = toks[k + 1] if k + 1 < len(toks) and not pause else None
-        vowel_next = nxt is not None and _fr_vowel_initial(nxt[1])
+        vowel_next = (nxt is not None and nxt[1] not in ("et", "ou")
+                      and _fr_vowel_initial(nxt[1]))
         if word in ("six", "dix"):
             # Said alone sis, dis; before a vowel siz, diz; before a
             # consonant si, di.
@@ -1281,8 +1287,14 @@ def _fr_token(word: str) -> str:
         if piece == "t" and 0 < n < len(pieces) - 1:
             ipa = "t"                       # a-t-il
         nxt = pieces[n + 1] if n + 1 < len(pieces) else ""
+        if piece == "vingt" and n == 0 and nxt:
+            ipa = "vɛ̃t"                    # vingt-deux, vingt-et-un
+        elif piece == "quatre" and nxt in ("vingt", "vingts"):
+            ipa = "katʁə"                   # quatre-vingts
+        elif piece == "dix" and nxt == "neuf":
+            ipa = "diz"
         if nxt and _fr_vowel_initial(nxt) and n + 1 == len(pieces) - 1 \
-                and piece not in ("t",):
+                and piece not in ("t", "et"):
             # inverted subject: the said consonant of est-il, dit-il, vas-y
             if piece.endswith(("t", "d")) and not ipa.endswith("t"):
                 ipa += "t"
@@ -1343,6 +1355,8 @@ def _fr_split_end(w: str) -> tuple[str, bool]:
             and w not in _FR_ER_WORDS:
         return w[:-3] + "é", False
     # -ent of a verb is silent; a noun's or adjective's is said.
+    if w in _FR_MENT_VERBS:
+        return w[:-3], True
     if w.endswith("ent") and not w.endswith("ment") \
             and w not in _FR_ENT_WORDS and _fr_has_vowel(w[:-3]):
         return w[:-3], True
