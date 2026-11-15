@@ -1,0 +1,174 @@
+schema: 1
+id: "hi-time-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-4660"
+    target: "आज रविवार है।"
+    reading: "āj ravivār hai."
+    ipa: "aːdʒ rəʋɪʋaːr ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "आज", ref: "hi-0299" }
+      - { word: "रविवार", ref: "hi-0316" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0315", kind: "word" }
+      - { id: "w2", ref: "hi-0310", kind: "word" }
+  - id: "hi-4661"
+    target: "कल सोमवार है।"
+    reading: "kal sōmvār hai."
+    ipa: "kəl soːmʋaːr ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "कल", ref: "hi-0300" }
+      - { word: "सोमवार", ref: "hi-0310" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0299", kind: "word" }
+      - { id: "w2", ref: "hi-0314", kind: "word" }
+  - id: "hi-4662"
+    target: "सुबह आठ बजे मिलते हैं।"
+    reading: "subah āṭh bajē miltē haim̐."
+    ipa: "sʊbəɦ aːʈʰ bədʒeː mɪlt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "सुबह", ref: "hi-0302" }
+      - { word: "आठ", ref: "hi-0205" }
+      - { word: "बजे", ref: "hi-0305" }
+      - { word: "मिलते", base: "मिलना", reading: "miltē" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0303", kind: "word" }
+      - { id: "w2", ref: "hi-0304", kind: "word" }
+  - id: "hi-4663"
+    target: "शाम को हम घर जाते हैं।"
+    reading: "śām kō ham ghar jātē haim̐."
+    ipa: "ʃaːm koː ɦəm ɡʱər dʒaːt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "शाम", ref: "hi-0303" }
+      - { word: "को", ref: "hi-0277" }
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "जाते", base: "जाना", reading: "jātē" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0302", kind: "word" }
+      - { id: "w2", ref: "hi-0304", kind: "word" }
+  - id: "hi-4664"
+    target: "अभी नौ बजे हैं।"
+    reading: "abhī nau bajē haim̐."
+    ipa: "əbʱiː nɔː bədʒeː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "अभी", ref: "hi-0301" }
+      - { word: "नौ", ref: "hi-0206" }
+      - { word: "बजे", ref: "hi-0305" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0207", kind: "word" }
+      - { id: "w2", ref: "hi-0205", kind: "word" }
+  - id: "hi-4665"
+    target: "साढ़े तीन बजे हैं।"
+    reading: "sāṛhē tīn bajē haim̐."
+    ipa: "saːɽʱeː t̪iːn bədʒeː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "साढ़े", ref: "hi-0306" }
+      - { word: "तीन", ref: "hi-0200" }
+      - { word: "बजे", ref: "hi-0305" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0201", kind: "word" }
+      - { id: "w2", ref: "hi-0202", kind: "word" }
+  - id: "hi-4666"
+    target: "आप कितने बजे आएँगे?"
+    reading: "āp kitnē bajē āēm̐gē?"
+    ipa: "aːp kɪt̪neː bədʒeː aːẽːɡeː"
+    pos: "phrase"
+    bases:
+      - { word: "आप", ref: "hi-0134" }
+      - { word: "कितने", base: "कितना", reading: "kitnē" }
+      - { word: "बजे", ref: "hi-0305" }
+      - { word: "आएँगे", base: "आना", reading: "āēm̐gē" }
+    confusables:
+      - { id: "w1", ref: "hi-0160", kind: "word" }
+      - { id: "w2", ref: "hi-0158", kind: "word" }
+  - id: "hi-4667"
+    target: "मैं कल स्कूल जाऊँगा।"
+    reading: "maim̐ kal skūl jāūm̐gā."
+    ipa: "mɛ̃ː kəl skuːl dʒaːũːɡaː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "कल", ref: "hi-0300" }
+      - { word: "स्कूल", ref: "hi-1056" }
+      - { word: "जाऊँगा", base: "जाना", reading: "jāūm̐gā" }
+    confusables:
+      - { id: "w1", ref: "hi-0299", kind: "word" }
+      - { id: "w2", ref: "hi-0301", kind: "word" }
+  - id: "hi-4668"
+    target: "हफ़्ते में पाँच दिन काम करता हूँ।"
+    reading: "haftē mēm̐ pām̐c din kām kartā hūm̐."
+    ipa: "ɦəft̪eː mẽː pãːtʃ d̪ɪn kaːm kərt̪aː ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "हफ़्ते", base: "हफ़्ता", reading: "haftē" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "पाँच", ref: "hi-0202" }
+      - { word: "दिन", ref: "hi-0308" }
+      - { word: "काम", ref: "hi-0194" }
+      - { word: "करता", base: "करना", reading: "kartā" }
+      - { word: "हूँ", base: "होना", reading: "hūm̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0304", kind: "word" }
+      - { id: "w2", ref: "hi-0302", kind: "word" }
+  - id: "hi-4669"
+    target: "बुधवार को क्या करना है?"
+    reading: "budhvār kō kyā karnā hai?"
+    ipa: "bʊd̪ʱʋaːr koː kjaː kərnaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "बुधवार", ref: "hi-0312" }
+      - { word: "को", ref: "hi-0277" }
+      - { word: "क्या", ref: "hi-0157" }
+      - { word: "करना", ref: "hi-0779" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0313", kind: "word" }
+      - { id: "w2", ref: "hi-0311", kind: "word" }
+  - id: "hi-4670"
+    target: "सोमवार से शुक्रवार तक काम है।"
+    reading: "sōmvār sē śukravār tak kām hai."
+    ipa: "soːmʋaːr seː ʃʊkrəʋaːr t̪ək kaːm ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "सोमवार", ref: "hi-0310" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "शुक्रवार", ref: "hi-0314" }
+      - { word: "तक", ref: "hi-0278" }
+      - { word: "काम", ref: "hi-0194" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0315", kind: "word" }
+      - { id: "w2", ref: "hi-0313", kind: "word" }
+  - id: "hi-4671"
+    target: "मैं रविवार को घर पर रहता हूँ।"
+    reading: "maim̐ ravivār kō ghar par rahtā hūm̐."
+    ipa: "mɛ̃ː rəʋɪʋaːr koː ɡʱər pər rəɦt̪aː ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "रविवार", ref: "hi-0316" }
+      - { word: "को", ref: "hi-0277" }
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "रहता", base: "रहना", reading: "rahtā" }
+      - { word: "हूँ", base: "होना", reading: "hūm̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0315", kind: "word" }
+      - { id: "w2", ref: "hi-0310", kind: "word" }

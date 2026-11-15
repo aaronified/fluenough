@@ -1,0 +1,540 @@
+# A culture deck of French-language works of the Renaissance that are in the public domain: short lines, each with its
+# source, its rights basis and its creator (wiki/Plan-Deck-Kinds-And-Topics.md). Built from French Wikipedia and French Wikisource pages only, read there.
+# Eighteen items (fr-4100 to fr-4118; fr-4104 unused). Dropped, with the reason read on the page: Villon (death only 'après 1463', no exact
+# year read); Charles d'Orleans (rondeau text read, but no composition date); Christine de Pizan (Middle French, death only 'vers 1430');
+# Marot and Scève (no text found on Wikisource); the Chanson de Roland and the other Old French texts (no modern-French text found);
+# Heptaméron (index page only); Pantagruel (the Wikisource hit is Jarry's play, not Rabelais).
+schema: 1
+id: "fr-culture-1"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+genre: "culture"
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - id: "fr-4100"
+    target: "Mieux est de rire que de larmes écrire, pour ce que rire est le propre de l'homme."
+    words: ["Mieux", "est", "de", "rire", "que", "de", "larmes", "écrire", "pour", "ce", "que", "rire", "est", "le", "propre", "de", "l'homme"]
+    ipa: "mjø ɛ də ʁiʁ kə də laʁm ekʁiʁ puʁ sə kə ʁiʁ ɛ lə pʁɔpʁ də lɔm"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-francois-rabelais"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Mieux", base: "mieux" }
+      - { word: "est", base: "être" }
+      - { word: "de", base: "de" }
+      - { word: "rire", base: "rire" }
+      - { word: "que", base: "que" }
+      - { word: "larmes", base: "larme" }
+      - { word: "écrire", base: "écrire" }
+      - { word: "pour", base: "pour" }
+      - { word: "ce", base: "ce" }
+      - { word: "le", base: "le" }
+      - { word: "propre", base: "propre" }
+      - { word: "l'homme", base: "homme" }
+    source:
+      author: "François Rabelais"
+      work: "Gargantua, the verse before the author's prologue"
+      date: 1535
+      edition: "Gargantua, Lyon, Claude Juste, 1535, as shown on French Wikisource (Gargantua/Édition Juste, 1535); spelling modernised: ris to rire, escrire to écrire"
+      url: "https://fr.wikisource.org/wiki/Gargantua/%C3%89dition_Juste,_1535"
+      basis: "public-domain"
+      author_died: 1553
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4101"
+    target: "Fais ce que voudras."
+    words: ["Fais", "ce", "que", "voudras"]
+    ipa: "fɛ sə kə vudʁa"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "fr-francois-rabelais"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Fais", base: "faire" }
+      - { word: "ce", base: "ce" }
+      - { word: "que", base: "que" }
+      - { word: "voudras", base: "vouloir" }
+    source:
+      author: "François Rabelais"
+      work: "Gargantua, the rule of the Abbey of Thélème"
+      date: 1535
+      edition: "Gargantua, Lyon, Claude Juste, 1535, as shown on French Wikisource (Gargantua/Édition Juste, 1535); spelling modernised: FAICTZ CE QUE VOULDRAS to Fais ce que voudras"
+      url: "https://fr.wikisource.org/wiki/Gargantua/%C3%89dition_Juste,_1535"
+      basis: "public-domain"
+      author_died: 1553
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4102"
+    target: "Heureux qui, comme Ulysse, a fait un beau voyage."
+    words: ["Heureux", "qui", "comme", "Ulysse", "a", "fait", "un", "beau", "voyage"]
+    ipa: "œʁø ki kɔm ylis a fɛ œ̃ bo vwajaʒ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-joachim-du-bellay"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Heureux", base: "heureux" }
+      - { word: "qui", base: "qui" }
+      - { word: "comme", base: "comme" }
+      - { word: "Ulysse", base: "Ulysse" }
+      - { word: "a", base: "avoir" }
+      - { word: "fait", base: "faire" }
+      - { word: "un", base: "un" }
+      - { word: "beau", base: "beau" }
+      - { word: "voyage", base: "voyage" }
+    source:
+      author: "Joachim du Bellay"
+      work: "Les Regrets, sonnet XXXI, first line"
+      date: 1558
+      edition: "Les Regrets, edition of Séché (Revue de la Renaissance, 1903), as shown on French Wikisource (Les Regrets (du Bellay)), which is dated 1558"
+      url: "https://fr.wikisource.org/wiki/Les_Regrets_(du_Bellay)"
+      basis: "public-domain"
+      author_died: 1560
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4103"
+    target: "Je vis, je meurs : je me brûle et me noie."
+    words: ["Je", "vis", "je", "meurs", "je", "me", "brûle", "et", "me", "noie"]
+    ipa: "ʒə vi ʒə mœʁ ʒə mə bʁyl e mə nwa"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "fr-louise-labe"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Je", base: "je" }
+      - { word: "vis", base: "vivre" }
+      - { word: "meurs", base: "mourir" }
+      - { word: "me", base: "me" }
+      - { word: "brûle", base: "brûler" }
+      - { word: "et", base: "et" }
+      - { word: "noie", base: "noyer" }
+    source:
+      author: "Louise Labé"
+      work: "Sonnet VIII, first line"
+      date: 1555
+      edition: "Élégies et Sonnets, text by Tancrède de Visan (Sansot, 1910, p. 72), as shown on French Wikisource; the work was printed at Lyon in 1555 (French Wikipedia); spelling modernised: Ie to Je, brule to brûle, noye to noie"
+      url: "https://fr.wikisource.org/wiki/Je_vis,_je_meurs_:_je_me_brule_et_me_noie%E2%80%A6"
+      basis: "public-domain"
+      author_died: 1566
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4105"
+    target: "Que philosopher, c'est apprendre à mourir."
+    words: ["Que", "philosopher", "c'est", "apprendre", "à", "mourir"]
+    ipa: "kə filɔzɔfe sɛ apʁɑ̃dʁ a muʁiʁ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-michel-de-montaigne"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Que", base: "que" }
+      - { word: "philosopher", base: "philosopher" }
+      - { word: "c'est", base: "ce" }
+      - { word: "apprendre", base: "apprendre" }
+      - { word: "à", base: "à" }
+      - { word: "mourir", base: "mourir" }
+    source:
+      author: "Michel de Montaigne"
+      work: "Essais, Book I, chapter XIX (title)"
+      date: 1595
+      edition: "Essais, the 1595 text as shown beside the Michaud translation of 1907 on French Wikisource (Essais/édition Michaud, 1907/Livre I/Chapitre 19); the chapter is numbered 20 in other editions"
+      url: "https://fr.wikisource.org/wiki/Essais/%C3%A9dition_Michaud,_1907/Livre_I/Chapitre_19"
+      basis: "public-domain"
+      author_died: 1592
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4106"
+    target: "Cueillez dès aujourd'hui les roses de la vie."
+    words: ["Cueillez", "dès", "aujourd'hui", "les", "roses", "de", "la", "vie"]
+    ipa: "kœje dɛz oʒuʁdɥi le ʁoz də la vi"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-pierre-de-ronsard"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Cueillez", base: "cueillir" }
+      - { word: "dès", base: "dès" }
+      - { word: "aujourd'hui", base: "aujourd'hui" }
+      - { word: "les", base: "le" }
+      - { word: "roses", base: "rose" }
+      - { word: "de", base: "de" }
+      - { word: "la", base: "le" }
+      - { word: "vie", base: "vie" }
+    source:
+      author: "Pierre de Ronsard"
+      work: "Sonnets pour Hélène, 'Quand vous serez bien vieille', last line"
+      date: 1578
+      edition: "Le Livre des sonnets, text as shown on French Wikisource (Le Livre des sonnets/Quand vous serez bien vieille, au soir à la chandelle); the Sonnets pour Hélène are dated 1578 on French Wikipedia; spelling modernised: aujourd'huy to aujourd'hui, roſes to roses"
+      url: "https://fr.wikisource.org/wiki/Le_Livre_des_sonnets/Quand_vous_serez_bien_vieille,_au_soir_%C3%A0_la_chandelle"
+      basis: "public-domain"
+      author_died: 1585
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4107"
+    target: "Mignonne, allons voir si la rose"
+    words: ["Mignonne", "allons", "voir", "si", "la", "rose"]
+    ipa: "miɲɔn alɔ̃ vwaʁ si la ʁoz"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "fr-pierre-de-ronsard"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Mignonne", base: "mignon" }
+      - { word: "allons", base: "aller" }
+      - { word: "voir", base: "voir" }
+      - { word: "si", base: "si" }
+      - { word: "la", base: "le" }
+      - { word: "rose", base: "rose" }
+    source:
+      author: "Pierre de Ronsard"
+      work: "Les Odes, Book I, ode XVII, first line"
+      date: 1550
+      edition: "Les Odes (Ronsard), as shown on French Wikisource (Les Odes (Ronsard)/« Mignonne, allons voir si la rose »); the Odes are dated 1550-1552 on French Wikipedia; spelling as printed"
+      url: "https://fr.wikisource.org/wiki/Les_Odes_(Ronsard)/%C2%AB_Mignonne,_allons_voir_si_la_rose_%C2%BB"
+      basis: "public-domain"
+      author_died: 1585
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4108"
+    target: "Baise m'encor, rebaise-moi et baise."
+    words: ["Baise", "m'encor", "rebaise", "moi", "et", "baise"]
+    ipa: "bɛz mɑ̃kɔʁ ʁəbɛzmwa e bɛz"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-louise-labe"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Baise", base: "baiser" }
+      - { word: "m'encor", base: "encore" }
+      - { word: "rebaise", base: "rebaiser" }
+      - { word: "moi", base: "moi" }
+      - { word: "et", base: "et" }
+    source:
+      author: "Louise Labé"
+      work: "Élégies et Sonnets, first line of the poem 'Baise m'encor'"
+      date: 1555
+      edition: "Élégies et Sonnets, text by Tancrède de Visan (Sansot, 1910), as shown on French Wikisource (Élégies et Sonnets/Baise m'encor, rebaise moy et baise…); the work was printed at Lyon in 1555 (French Wikipedia); spelling modernised: moy to moi"
+      url: "https://fr.wikisource.org/wiki/%C3%89l%C3%A9gies_et_Sonnets/Baise_m%E2%80%99encor,_rebaise_moy_et_baise%E2%80%A6"
+      basis: "public-domain"
+      author_died: 1566
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4109"
+    target: "Ainsi, lecteur, je suis moi-même la matière de mon livre."
+    words: ["Ainsi", "lecteur", "je", "suis", "moi", "même", "la", "matière", "de", "mon", "livre"]
+    ipa: "ɛ̃si lɛktœʁ ʒə sɥi mwamɛm la matjɛʁ də mɔ̃ livʁ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-michel-de-montaigne"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Ainsi", base: "ainsi" }
+      - { word: "lecteur", base: "lecteur" }
+      - { word: "je", base: "je" }
+      - { word: "suis", base: "être" }
+      - { word: "moi", base: "moi" }
+      - { word: "même", base: "même" }
+      - { word: "la", base: "le" }
+      - { word: "matière", base: "matière" }
+      - { word: "de", base: "de" }
+      - { word: "mon", base: "mon" }
+      - { word: "livre", base: "livre" }
+    source:
+      author: "Michel de Montaigne"
+      work: "Essais, 'Au Lecteur', first sentence"
+      date: 1580
+      edition: "Essais, Musart edition of 1847, 'Au Lecteur', as shown on French Wikisource (Essais/édition Musart, 1847/Au Lecteur); the preface is dated 1 March 1580 and the first edition was printed at Bordeaux in 1580 (French Wikipedia)"
+      url: "https://fr.wikisource.org/wiki/Essais/%C3%A9dition_Musart,_1847/Au_Lecteur"
+      basis: "public-domain"
+      author_died: 1592
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4110"
+    target: "France, mère des arts, des armes et des lois."
+    words: ["France", "mère", "des", "arts", "des", "armes", "et", "des", "lois"]
+    ipa: "fʁɑ̃s mɛʁ de aʁ de aʁm e de lwa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-joachim-du-bellay"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "France", base: "France" }
+      - { word: "mère", base: "mère" }
+      - { word: "des", base: "des" }
+      - { word: "arts", base: "art" }
+      - { word: "armes", base: "arme" }
+      - { word: "et", base: "et" }
+      - { word: "lois", base: "loi" }
+    source:
+      author: "Joachim du Bellay"
+      work: "Les Regrets, sonnet IX, first line"
+      date: 1558
+      edition: "Les Regrets, Séché edition (Revue de la Renaissance, 1903), as shown on French Wikisource (Les Regrets (du Bellay)), dated 1558; spelling modernised: loix to lois"
+      url: "https://fr.wikisource.org/wiki/Les_Regrets_(du_Bellay)"
+      basis: "public-domain"
+      author_died: 1560
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4111"
+    target: "Je ne veux point fouiller au sein de la nature."
+    words: ["Je", "ne", "veux", "point", "fouiller", "au", "sein", "de", "la", "nature"]
+    ipa: "ʒə nə vø pwɛ̃ fuje o sɛ̃ də la natyʁ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-joachim-du-bellay"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Je", base: "je" }
+      - { word: "ne", base: "ne" }
+      - { word: "veux", base: "vouloir" }
+      - { word: "point", base: "point" }
+      - { word: "fouiller", base: "fouiller" }
+      - { word: "au", base: "à" }
+      - { word: "sein", base: "sein" }
+      - { word: "de", base: "de" }
+      - { word: "la", base: "le" }
+      - { word: "nature", base: "nature" }
+    source:
+      author: "Joachim du Bellay"
+      work: "Les Regrets, sonnet I, first line"
+      date: 1558
+      edition: "Les Regrets, Séché edition (Revue de la Renaissance, 1903), as shown on French Wikisource (Les Regrets (du Bellay)), dated 1558"
+      url: "https://fr.wikisource.org/wiki/Les_Regrets_(du_Bellay)"
+      basis: "public-domain"
+      author_died: 1560
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4112"
+    target: "Ô qu'heureux est celui qui peut passer son âge."
+    words: ["Ô", "qu'heureux", "est", "celui", "qui", "peut", "passer", "son", "âge"]
+    ipa: "o kœʁø ɛ səlɥi ki pø pase sɔ̃ aʒ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-joachim-du-bellay"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Ô", base: "ô" }
+      - { word: "qu'heureux", base: "heureux" }
+      - { word: "est", base: "être" }
+      - { word: "celui", base: "celui" }
+      - { word: "qui", base: "qui" }
+      - { word: "peut", base: "pouvoir" }
+      - { word: "passer", base: "passer" }
+      - { word: "son", base: "son" }
+      - { word: "âge", base: "âge" }
+    source:
+      author: "Joachim du Bellay"
+      work: "Les Regrets, sonnet XXXVIII, first line"
+      date: 1558
+      edition: "Les Regrets, Séché edition (Revue de la Renaissance, 1903), as shown on French Wikisource (Les Regrets (du Bellay)), dated 1558; spelling modernised: celuy to celui, aage to âge"
+      url: "https://fr.wikisource.org/wiki/Les_Regrets_(du_Bellay)"
+      basis: "public-domain"
+      author_died: 1560
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4113"
+    target: "Ô combien est heureux qui n'est contraint de feindre."
+    words: ["Ô", "combien", "est", "heureux", "qui", "n'est", "contraint", "de", "feindre"]
+    ipa: "o kɔ̃bjɛ̃ ɛ œʁø ki nɛ kɔ̃tʁɛ̃ də fɛ̃dʁ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-joachim-du-bellay"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Ô", base: "ô" }
+      - { word: "combien", base: "combien" }
+      - { word: "est", base: "être" }
+      - { word: "heureux", base: "heureux" }
+      - { word: "qui", base: "qui" }
+      - { word: "n'est", base: "être" }
+      - { word: "contraint", base: "contraindre" }
+      - { word: "de", base: "de" }
+      - { word: "feindre", base: "feindre" }
+    source:
+      author: "Joachim du Bellay"
+      work: "Les Regrets, sonnet XLVIII, first line"
+      date: 1558
+      edition: "Les Regrets, Séché edition (Revue de la Renaissance, 1903), as shown on French Wikisource (Les Regrets (du Bellay)), dated 1558; spelling modernised: est to est"
+      url: "https://fr.wikisource.org/wiki/Les_Regrets_(du_Bellay)"
+      basis: "public-domain"
+      author_died: 1560
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4114"
+    target: "Ce n'est le fleuve Thusque au superbe rivage."
+    words: ["Ce", "n'est", "le", "fleuve", "Thusque", "au", "superbe", "rivage"]
+    ipa: "sə nɛ lə flœv tysk o sypɛʁb ʁivaʒ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-joachim-du-bellay"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Ce", base: "ce" }
+      - { word: "n'est", base: "être" }
+      - { word: "le", base: "le" }
+      - { word: "fleuve", base: "fleuve" }
+      - { word: "Thusque", base: "Thusque" }
+      - { word: "au", base: "à" }
+      - { word: "superbe", base: "superbe" }
+      - { word: "rivage", base: "rivage" }
+    source:
+      author: "Joachim du Bellay"
+      work: "Les Regrets, sonnet X, first line"
+      date: 1558
+      edition: "Les Regrets, Séché edition (Revue de la Renaissance, 1903), as shown on French Wikisource (Les Regrets (du Bellay)), dated 1558"
+      url: "https://fr.wikisource.org/wiki/Les_Regrets_(du_Bellay)"
+      basis: "public-domain"
+      author_died: 1560
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4115"
+    target: "Si onques de pitié ton âme fut atteinte."
+    words: ["Si", "onques", "de", "pitié", "ton", "âme", "fut", "atteinte"]
+    ipa: "si ɔ̃k də pitje tɔ̃ am fy atɛ̃t"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-joachim-du-bellay"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Si", base: "si" }
+      - { word: "onques", base: "onques" }
+      - { word: "de", base: "de" }
+      - { word: "pitié", base: "pitié" }
+      - { word: "ton", base: "ton" }
+      - { word: "âme", base: "âme" }
+      - { word: "fut", base: "être" }
+      - { word: "atteinte", base: "atteindre" }
+    source:
+      author: "Joachim du Bellay"
+      work: "Les Regrets, sonnet XLVII, first line"
+      date: 1558
+      edition: "Les Regrets, Séché edition (Revue de la Renaissance, 1903), as shown on French Wikisource (Les Regrets (du Bellay)), dated 1558; spelling modernised: ame to âme"
+      url: "https://fr.wikisource.org/wiki/Les_Regrets_(du_Bellay)"
+      basis: "public-domain"
+      author_died: 1560
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4116"
+    target: "Je hais plus que la mort un jeune casanier."
+    words: ["Je", "hais", "plus", "que", "la", "mort", "un", "jeune", "casanier"]
+    ipa: "ʒə ɛ ply kə la mɔʁ œ̃ ʒœn kazanje"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-joachim-du-bellay"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Je", base: "je" }
+      - { word: "hais", base: "haïr" }
+      - { word: "plus", base: "plus" }
+      - { word: "que", base: "que" }
+      - { word: "la", base: "le" }
+      - { word: "mort", base: "mort" }
+      - { word: "un", base: "un" }
+      - { word: "jeune", base: "jeune" }
+      - { word: "casanier", base: "casanier" }
+    source:
+      author: "Joachim du Bellay"
+      work: "Les Regrets, sonnet XXIX, first line"
+      date: 1558
+      edition: "Les Regrets, Séché edition (Revue de la Renaissance, 1903), as shown on French Wikisource (Les Regrets (du Bellay)), dated 1558; spelling modernised: hay to hais"
+      url: "https://fr.wikisource.org/wiki/Les_Regrets_(du_Bellay)"
+      basis: "public-domain"
+      author_died: 1560
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4117"
+    target: "Cicéron dit que philosopher ce n'est autre chose que s'apprêter à la mort."
+    words: ["Cicéron", "dit", "que", "philosopher", "ce", "n'est", "autre", "chose", "que", "s'apprêter", "à", "la", "mort"]
+    ipa: "siseʁɔ̃ di kə filɔzɔfe sə nɛ otʁ ʃoz kə sapʁɛte a la mɔʁ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-michel-de-montaigne"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Cicéron", base: "Cicéron" }
+      - { word: "dit", base: "dire" }
+      - { word: "que", base: "que" }
+      - { word: "philosopher", base: "philosopher" }
+      - { word: "ce", base: "ce" }
+      - { word: "n'est", base: "être" }
+      - { word: "autre", base: "autre" }
+      - { word: "chose", base: "chose" }
+      - { word: "s'apprêter", base: "apprêter" }
+      - { word: "à", base: "à" }
+      - { word: "la", base: "le" }
+      - { word: "mort", base: "mort" }
+    source:
+      author: "Michel de Montaigne"
+      work: "Essais, Book I, chapter XIX, second sentence"
+      date: 1595
+      edition: "Essais, the 1595 text as shown beside the Michaud translation of 1907 on French Wikisource (Essais/édition Michaud, 1907/Livre I/Chapitre 19); spelling modernised"
+      url: "https://fr.wikisource.org/wiki/Essais/%C3%A9dition_Michaud,_1907/Livre_I/Chapitre_19"
+      basis: "public-domain"
+      author_died: 1592
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4118"
+    target: "Si par peine, et sueur, et par fidélité."
+    words: ["Si", "par", "peine", "et", "sueur", "et", "par", "fidélité"]
+    ipa: "si paʁ pɛn e sɥœʁ e paʁ fidelite"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-joachim-du-bellay"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Si", base: "si" }
+      - { word: "par", base: "par" }
+      - { word: "peine", base: "peine" }
+      - { word: "et", base: "et" }
+      - { word: "sueur", base: "sueur" }
+      - { word: "fidélité", base: "fidélité" }
+    source:
+      author: "Joachim du Bellay"
+      work: "Les Regrets, sonnet XLVI, first line"
+      date: 1558
+      edition: "Les Regrets, Séché edition (Revue de la Renaissance, 1903), as shown on French Wikisource (Les Regrets (du Bellay)), dated 1558; spelling modernised: fidelite to fidélité"
+      url: "https://fr.wikisource.org/wiki/Les_Regrets_(du_Bellay)"
+      basis: "public-domain"
+      author_died: 1560
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"

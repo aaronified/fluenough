@@ -1,0 +1,172 @@
+schema: 1
+id: "hi-addressing-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-4613"
+    target: "सुनिए, स्टेशन कहाँ है?"
+    reading: "suniē, sṭēśan kahām̐ hai?"
+    ipa: "sʊnɪeː sʈeːʃən kəɦãː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "सुनिए", ref: "hi-0186" }
+      - { word: "स्टेशन", ref: "hi-0270" }
+      - { word: "कहाँ", ref: "hi-0159" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0160", kind: "word" }
+      - { id: "w2", ref: "hi-0158", kind: "word" }
+  - id: "hi-4614"
+    target: "भैया, यह मेरा घर है।"
+    reading: "bhaiyā, yah mērā ghar hai."
+    ipa: "bʱɛːjaː jəɦ meːraː ɡʱər ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "भैया", ref: "hi-0177" }
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0178", kind: "word" }
+      - { id: "w2", ref: "hi-0184", kind: "word" }
+  - id: "hi-4615"
+    target: "दीदी, आप कैसे हैं?"
+    reading: "dīdī, āp kaisē haim̐?"
+    ipa: "d̪iːd̪iː aːp kɛːseː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "दीदी", ref: "hi-0178" }
+      - { word: "आप", ref: "hi-0134" }
+      - { word: "कैसे", ref: "hi-0162" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0177", kind: "word" }
+      - { id: "w2", ref: "hi-0183", kind: "word" }
+  - id: "hi-4616"
+    target: "अंकल, यह आपका घर है?"
+    reading: "aṅkla, yah āpkā ghar hai?"
+    ipa: "əŋklə jəɦ aːpkaː ɡʱər ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "अंकल", ref: "hi-0180" }
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "आपका", ref: "hi-0755" }
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0181", kind: "word" }
+      - { id: "w2", ref: "hi-0182", kind: "word" }
+  - id: "hi-4617"
+    target: "आंटी, आप बहुत अच्छी हैं।"
+    reading: "āṇṭī, āp bahut acchī haim̐."
+    ipa: "aːɳʈiː aːp bəɦʊt̪ ətʃtʃʰiː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "आंटी", ref: "hi-0181" }
+      - { word: "आप", ref: "hi-0134" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "अच्छी", base: "अच्छा", reading: "acchī" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0180", kind: "word" }
+      - { id: "w2", ref: "hi-0183", kind: "word" }
+  - id: "hi-4618"
+    target: "साहब, यह आपकी किताब है?"
+    reading: "sāhab, yah āpkī kitāb hai?"
+    ipa: "saːɦəb jəɦ aːpkiː kɪt̪aːb ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "साहब", ref: "hi-0182" }
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "आपकी", base: "आपका", reading: "āpkī" }
+      - { word: "किताब", ref: "hi-1095" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0183", kind: "word" }
+      - { id: "w2", ref: "hi-0184", kind: "word" }
+  - id: "hi-4619"
+    target: "मैडम, आपका नाम क्या है?"
+    reading: "maiḍam, āpkā nām kyā hai?"
+    ipa: "mɛːɖəm aːpkaː naːm kjaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मैडम", ref: "hi-0183" }
+      - { word: "आपका", ref: "hi-0755" }
+      - { word: "नाम", ref: "hi-0187" }
+      - { word: "क्या", ref: "hi-0157" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0182", kind: "word" }
+      - { id: "w2", ref: "hi-0178", kind: "word" }
+  - id: "hi-4620"
+    target: "भाई साहब, मैं ठीक हूँ।"
+    reading: "bhāī sāhab, maim̐ ṭhīk hūm̐."
+    ipa: "bʱaːiː saːɦəb mɛ̃ː ʈʰiːk ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "ठीक", ref: "hi-1703" }
+      - { word: "हूँ", base: "होना", reading: "hūm̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0180", kind: "word" }
+      - { id: "w2", ref: "hi-0177", kind: "word" }
+  - id: "hi-4621"
+    target: "बेटा, तुम कहाँ हो?"
+    reading: "bēṭā, tum kahām̐ hō?"
+    ipa: "beːʈaː t̪ʊm kəɦãː ɦoː"
+    pos: "phrase"
+    bases:
+      - { word: "बेटा", ref: "hi-0184" }
+      - { word: "तुम", ref: "hi-0747" }
+      - { word: "कहाँ", ref: "hi-0159" }
+      - { word: "हो", base: "होना", reading: "hō" }
+    confusables:
+      - { id: "w1", ref: "hi-0380", kind: "word" }
+      - { id: "w2", ref: "hi-0185", kind: "word" }
+  - id: "hi-4622"
+    target: "दोस्त, यह मेरा शहर है।"
+    reading: "dōst, yah mērā śahar hai."
+    ipa: "d̪oːst̪ jəɦ meːraː ʃəɦər ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "दोस्त", ref: "hi-0185" }
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "शहर", ref: "hi-0195" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0177", kind: "word" }
+      - { id: "w2", ref: "hi-0184", kind: "word" }
+  - id: "hi-4623"
+    target: "अंकल, आपका घर कहाँ है?"
+    reading: "aṅkla, āpkā ghar kahām̐ hai?"
+    ipa: "əŋklə aːpkaː ɡʱər kəɦãː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "अंकल", ref: "hi-0180" }
+      - { word: "आपका", ref: "hi-0755" }
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "कहाँ", ref: "hi-0159" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0181", kind: "word" }
+      - { id: "w2", ref: "hi-0158", kind: "word" }
+  - id: "hi-4624"
+    target: "आंटी, यह मेरी बहन है।"
+    reading: "āṇṭī, yah mērī bahan hai."
+    ipa: "aːɳʈiː jəɦ meːriː bəɦən ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "आंटी", ref: "hi-0181" }
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "मेरी", base: "मेरा", reading: "mērī" }
+      - { word: "बहन", ref: "hi-0379" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0380", kind: "word" }
+      - { id: "w2", ref: "hi-0183", kind: "word" }

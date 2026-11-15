@@ -1,0 +1,539 @@
+# A culture deck of French-language poems and novels of the nineteenth century that are in the public domain: one opening line
+# each, with its source, its rights basis and its creator (wiki/Plan-Deck-Kinds-And-Topics.md). Built from French Wikipedia and French
+# Wikisource pages only, read there. Eighteen items (fr-4200 to fr-4217; fr-4218 to fr-4249 unused). Dropped, with the reason read on the page:
+# Leconte de Lisle, Poèmes antiques (no first-printing date read on a page); Flaubert, Madame Bovary (no chapter text found); Jules Renard,
+# Poil de Carotte (index page only); George Sand (no text found); Verlaine's other poems and Hugo's other poems are not needed for the 18.
+schema: 1
+id: "fr-culture-3"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+genre: "culture"
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - id: "fr-4200"
+    target: "Demain, dès l'aube, à l'heure où blanchit la campagne."
+    words: ["Demain", "dès", "l'aube", "à", "l'heure", "où", "blanchit", "la", "campagne"]
+    ipa: "dəmɛ̃ dɛz ob a lœʁ u blɑ̃ʃi la kɑ̃paɲ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-victor-hugo"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Demain", base: "demain" }
+      - { word: "dès", base: "dès" }
+      - { word: "l'aube", base: "aube" }
+      - { word: "à", base: "à" }
+      - { word: "l'heure", base: "heure" }
+      - { word: "où", base: "où" }
+      - { word: "blanchit", base: "blanchir" }
+      - { word: "la", base: "le" }
+      - { word: "campagne", base: "campagne" }
+    source:
+      author: "Victor Hugo"
+      work: "Les Contemplations, 'Demain, dès l'aube', first line"
+      date: 1856
+      edition: "Les Contemplations, Nelson 1911, p. 253, as shown on French Wikisource (Les Contemplations/« Demain, dès l'aube… »); the book is dated 1856 on French Wikipedia"
+      url: "https://fr.wikisource.org/wiki/Les_Contemplations/%C2%AB_Demain,_d%C3%A8s_l%E2%80%99aube,_%C3%A0_l%E2%80%99heure_o%C3%B9_blanchit_la_campagne_%C2%BB"
+      basis: "public-domain"
+      author_died: 1885
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4201"
+    target: "Ainsi, toujours poussés vers de nouveaux rivages."
+    words: ["Ainsi", "toujours", "poussés", "vers", "de", "nouveaux", "rivages"]
+    ipa: "ɛ̃si tuʒuʁ puse vɛʁ də nuvo ʁivaʒ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-alphonse-de-lamartine"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Ainsi", base: "ainsi" }
+      - { word: "toujours", base: "toujours" }
+      - { word: "poussés", base: "pousser" }
+      - { word: "vers", base: "vers" }
+      - { word: "de", base: "de" }
+      - { word: "nouveaux", base: "nouveau" }
+      - { word: "rivages", base: "rivage" }
+    source:
+      author: "Alphonse de Lamartine"
+      work: "Méditations poétiques, 'Le Lac', first line"
+      date: 1820
+      edition: "Méditations poétiques, first edition of 1820, Meditation X, as shown on French Wikisource (Méditations poétiques (éd. originale 1820)/Le Lac)"
+      url: "https://fr.wikisource.org/wiki/M%C3%A9ditations_po%C3%A9tiques_(%C3%A9d._originale_1820)/Le_Lac"
+      basis: "public-domain"
+      author_died: 1869
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4202"
+    target: "Souvent, pour s'amuser, les hommes d'équipage."
+    words: ["Souvent", "pour", "s'amuser", "les", "hommes", "d'équipage"]
+    ipa: "suvɑ̃ puʁ samyze le zɔm dekipaʒ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-charles-baudelaire"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Souvent", base: "souvent" }
+      - { word: "pour", base: "pour" }
+      - { word: "s'amuser", base: "amuser" }
+      - { word: "les", base: "le" }
+      - { word: "hommes", base: "homme" }
+      - { word: "d'équipage", base: "équipage" }
+    source:
+      author: "Charles Baudelaire"
+      work: "Les Fleurs du mal, 'L'Albatros', first line"
+      date: 1861
+      edition: "Les Fleurs du mal, 1861 edition (Poulet-Malassis), as shown on French Wikisource (Les Fleurs du mal (1861)/L'Albatros)"
+      url: "https://fr.wikisource.org/wiki/Les_Fleurs_du_mal_(1861)/L%E2%80%99Albatros"
+      basis: "public-domain"
+      author_died: 1867
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4203"
+    target: "La chair est triste, hélas ! et j'ai lu tous les livres."
+    words: ["La", "chair", "est", "triste", "hélas", "et", "j'ai", "lu", "tous", "les", "livres"]
+    ipa: "la ʃɛʁ ɛ tʁist ela e ʒe ly tu le livʁ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-stephane-mallarme"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "La", base: "le" }
+      - { word: "chair", base: "chair" }
+      - { word: "est", base: "être" }
+      - { word: "triste", base: "triste" }
+      - { word: "hélas", base: "hélas" }
+      - { word: "et", base: "et" }
+      - { word: "j'ai", base: "avoir" }
+      - { word: "lu", base: "lire" }
+      - { word: "tous", base: "tout" }
+      - { word: "les", base: "le" }
+      - { word: "livres", base: "livre" }
+    source:
+      author: "Stéphane Mallarmé"
+      work: "Brise marine, first line"
+      date: 1865
+      edition: "Brise marine, text as shown on French Wikisource (Brise marine (Stéphane Mallarmé) (1887)); the poem is dated 1865 on French Wikipedia"
+      url: "https://fr.wikisource.org/wiki/Brise_marine_(St%C3%A9phane_Mallarm%C3%A9)_(1887)"
+      basis: "public-domain"
+      author_died: 1898
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4204"
+    target: "C'est un trou de verdure où chante une rivière."
+    words: ["C'est", "un", "trou", "de", "verdure", "où", "chante", "une", "rivière"]
+    ipa: "sɛ œ̃ tʁu də vɛʁdyʁ u ʃɑ̃t yn ʁivjɛʁ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-arthur-rimbaud"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "C'est", base: "ce" }
+      - { word: "un", base: "un" }
+      - { word: "trou", base: "trou" }
+      - { word: "de", base: "de" }
+      - { word: "verdure", base: "verdure" }
+      - { word: "où", base: "où" }
+      - { word: "chante", base: "chanter" }
+      - { word: "une", base: "un" }
+      - { word: "rivière", base: "rivière" }
+    source:
+      author: "Arthur Rimbaud"
+      work: "Le Dormeur du val, first line"
+      date: 1888
+      edition: "First published in Anthologie des poètes français, vol. IV, Lemerre 1888 (French Wikipedia); the text is shown as in Poésies complètes, Vanier 1895, p. 84, on French Wikisource (Poésies (Rimbaud)/éd. Vanier, 1895/Le Dormeur du val); the poem is dated October 1870 in the manuscript"
+      url: "https://fr.wikisource.org/wiki/Po%C3%A9sies_(Rimbaud)/%C3%A9d._Vanier,_1895/Le_Dormeur_du_val"
+      basis: "public-domain"
+      author_died: 1891
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4205"
+    target: "Gémir, pleurer, prier, est également lâche."
+    words: ["Gémir", "pleurer", "prier", "est", "également", "lâche"]
+    ipa: "ʒemiʁ plœʁe pʁije ɛ egalmɑ̃ laʃ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-alfred-de-vigny"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Gémir", base: "gémir" }
+      - { word: "pleurer", base: "pleurer" }
+      - { word: "prier", base: "prier" }
+      - { word: "est", base: "être" }
+      - { word: "également", base: "également" }
+      - { word: "lâche", base: "lâche" }
+    source:
+      author: "Alfred de Vigny"
+      work: "La Mort du loup, in Les Destinées, line"
+      date: 1864
+      edition: "Les Destinées (recueil), 'La Mort du loup', as shown on French Wikisource (Les Destinées (recueil)/La Mort du loup); the collection is published in 1864 (French Wikipedia)"
+      url: "https://fr.wikisource.org/wiki/Les_Destin%C3%A9es_(recueil)/La_Mort_du_loup"
+      basis: "public-domain"
+      author_died: 1863
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4206"
+    target: "Je suis le ténébreux, le veuf, l'inconsolé."
+    words: ["Je", "suis", "le", "ténébreux", "le", "veuf", "l'inconsolé"]
+    ipa: "ʒə sɥi lə tenebʁø lə vœf lɛ̃kɔ̃sɔle"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-gerard-de-nerval"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Je", base: "je" }
+      - { word: "suis", base: "être" }
+      - { word: "le", base: "le" }
+      - { word: "ténébreux", base: "ténébreux" }
+      - { word: "veuf", base: "veuf" }
+      - { word: "l'inconsolé", base: "inconsolé" }
+    source:
+      author: "Gérard de Nerval"
+      work: "El Desdichado, first line"
+      date: 1854
+      edition: "Les Chimères, text of 'El Desdichado' as shown on French Wikisource (Les Chimères/El Desdichado); Les Filles du feu and Les Chimères are dated 1854 on French Wikipedia"
+      url: "https://fr.wikisource.org/wiki/Les_Chim%C3%A8res/El_Desdichado"
+      basis: "public-domain"
+      author_died: 1855
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4207"
+    target: "Sculpte, lime, cisèle."
+    words: ["Sculpte", "lime", "cisèle"]
+    ipa: "skylt lim sizɛl"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "fr-theophile-gautier"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Sculpte", base: "sculpter" }
+      - { word: "lime", base: "limer" }
+      - { word: "cisèle", base: "ciseler" }
+    source:
+      author: "Théophile Gautier"
+      work: "L'Art, in Émaux et Camées, first line"
+      date: 1852
+      edition: "Émaux et Camées, as shown on French Wikisource (Émaux et Camées/L'Art); Émaux et Camées is published in 1852 (French Wikipedia)"
+      url: "https://fr.wikisource.org/wiki/%C3%89maux_et_Cam%C3%A9es/L%E2%80%99Art"
+      basis: "public-domain"
+      author_died: 1872
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4208"
+    target: "Poète, prends ton luth, et me donne un baiser."
+    words: ["Poète", "prends", "ton", "luth", "et", "me", "donne", "un", "baiser"]
+    ipa: "pɔɛt pʁɑ̃ tɔ̃ lyt e mə dɔn œ̃ bɛze"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-alfred-de-musset"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Poète", base: "poète" }
+      - { word: "prends", base: "prendre" }
+      - { word: "ton", base: "ton" }
+      - { word: "luth", base: "luth" }
+      - { word: "et", base: "et" }
+      - { word: "me", base: "me" }
+      - { word: "donne", base: "donner" }
+      - { word: "un", base: "un" }
+      - { word: "baiser", base: "baiser" }
+    source:
+      author: "Alfred de Musset"
+      work: "La Nuit de mai, the Muse's first line"
+      date: 1835
+      edition: "La Nuit de mai, text of the 1835 edition (tome 2), as shown on French Wikisource (La Nuit de mai (RDDM))"
+      url: "https://fr.wikisource.org/wiki/La_Nuit_de_mai_(RDDM)"
+      basis: "public-domain"
+      author_died: 1857
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4209"
+    target: "Les sanglots longs des violons de l'automne."
+    words: ["Les", "sanglots", "longs", "des", "violons", "de", "l'automne"]
+    ipa: "le sɑ̃glo lɔ̃ de vjɔlɔ̃ də lotɔn"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "fr-paul-verlaine"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Les", base: "le" }
+      - { word: "sanglots", base: "sanglot" }
+      - { word: "longs", base: "long" }
+      - { word: "des", base: "des" }
+      - { word: "violons", base: "violon" }
+      - { word: "de", base: "de" }
+      - { word: "l'automne", base: "automne" }
+    source:
+      author: "Paul Verlaine"
+      work: "Chanson d'automne, first line"
+      date: 1866
+      edition: "Poèmes saturniens, 1902 edition, Chanson d'automne, as shown on French Wikisource (Poèmes saturniens (1902)/Chanson d'automne); the poem is dated 1866 on French Wikisource (Chanson d'automne (Verlaine))"
+      url: "https://fr.wikisource.org/wiki/Po%C3%A8mes_saturniens_(1902)/Chanson_d%E2%80%99automne"
+      basis: "public-domain"
+      author_died: 1896
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4210"
+    target: "Booz s'était couché de fatigue accablé."
+    words: ["Booz", "s'était", "couché", "de", "fatigue", "accablé"]
+    ipa: "bɔz setɛ kuʃe də fatiɡ akable"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-victor-hugo"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Booz", base: "Booz" }
+      - { word: "s'était", base: "être" }
+      - { word: "couché", base: "coucher" }
+      - { word: "de", base: "de" }
+      - { word: "fatigue", base: "fatigue" }
+      - { word: "accablé", base: "accabler" }
+    source:
+      author: "Victor Hugo"
+      work: "Booz endormi, first line"
+      date: 1859
+      edition: "La Légende des siècles, Hetzel edition of 1859, as shown on French Wikisource (La Légende des siècles/Booz endormi); La Légende des siècles is dated 1859 on French Wikipedia"
+      url: "https://fr.wikisource.org/wiki/La_L%C3%A9gende_des_si%C3%A8cles/Booz_endormi"
+      basis: "public-domain"
+      author_died: 1885
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4211"
+    target: "Madame Vauquer, née de Conflans, est une vieille femme…"
+    words: ["Madame", "Vauquer", "née", "de", "Conflans", "est", "une", "vieille", "femme"]
+    ipa: "madam vokɛʁ ne də kɔ̃flɑ̃ ɛ yn vjɛj fam"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "fr-honore-de-balzac"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Madame", base: "madame" }
+      - { word: "Vauquer", base: "Vauquer" }
+      - { word: "née", base: "né" }
+      - { word: "de", base: "de" }
+      - { word: "Conflans", base: "Conflans" }
+      - { word: "est", base: "être" }
+      - { word: "une", base: "un" }
+      - { word: "vieille", base: "vieux" }
+      - { word: "femme", base: "femme" }
+    source:
+      author: "Honoré de Balzac"
+      work: "Le Père Goriot, chapter I, first sentence"
+      date: 1835
+      edition: "Le Père Goriot (1910), chapter I, as shown on French Wikisource (Le Père Goriot (1910)/I); Le Père Goriot is dated 1835 on French Wikipedia"
+      url: "https://fr.wikisource.org/wiki/Le_P%C3%A8re_Goriot_(1910)/I"
+      basis: "public-domain"
+      author_died: 1850
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4212"
+    target: "Verrières est abritée du côté du nord par une haute montagne."
+    words: ["Verrières", "est", "abritée", "du", "côté", "du", "nord", "par", "une", "haute", "montagne"]
+    ipa: "vɛʁjɛʁ ɛ abʁite dy kote dy nɔʁ paʁ yn ot mɔ̃taɲ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-stendhal"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Verrières", base: "Verrières" }
+      - { word: "est", base: "être" }
+      - { word: "abritée", base: "abriter" }
+      - { word: "du", base: "de" }
+      - { word: "côté", base: "côté" }
+      - { word: "nord", base: "nord" }
+      - { word: "par", base: "par" }
+      - { word: "une", base: "un" }
+      - { word: "haute", base: "haut" }
+      - { word: "montagne", base: "montagne" }
+    source:
+      author: "Stendhal"
+      work: "Le Rouge et le Noir, chapter I, a sentence"
+      date: 1830
+      edition: "Le Rouge et le Noir, chapter I, as shown on French Wikisource (Le Rouge et le Noir/Chapitre I); the novel is dated 1830 on French Wikipedia"
+      url: "https://fr.wikisource.org/wiki/Le_Rouge_et_le_Noir/Chapitre_I"
+      basis: "public-domain"
+      author_died: 1842
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4213"
+    target: "C'était une de ces jolies et charmantes filles…"
+    words: ["C'était", "une", "de", "ces", "jolies", "et", "charmantes", "filles"]
+    ipa: "setɛ yn də sɛ ʒɔli e ʃaʁmɑ̃t fij"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "fr-guy-de-maupassant"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "C'était", base: "être" }
+      - { word: "une", base: "un" }
+      - { word: "de", base: "de" }
+      - { word: "ces", base: "ce" }
+      - { word: "jolies", base: "joli" }
+      - { word: "et", base: "et" }
+      - { word: "charmantes", base: "charmant" }
+      - { word: "filles", base: "fille" }
+    source:
+      author: "Guy de Maupassant"
+      work: "La Parure, first sentence"
+      date: 1885
+      edition: "Contes du jour et de la nuit, Flammarion 1885, 'La Parure', as shown on French Wikisource (Contes du jour et de la nuit (éd. Flammarion, 1885)/La Parure); the collection is dated 1885 on French Wikipedia"
+      url: "https://fr.wikisource.org/wiki/Contes_du_jour_et_de_la_nuit_(%C3%A9d._Flammarion,_1885)/La_Parure"
+      basis: "public-domain"
+      author_died: 1893
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4214"
+    target: "J'accuse le lieutenant-colonel du Paty de Clam d'avoir été l'ouvrier diabolique de l'erreur judiciaire."
+    words: ["J'accuse", "le", "lieutenant", "colonel", "du", "Paty", "de", "Clam", "d'avoir", "été", "l'ouvrier", "diabolique", "de", "l'erreur", "judiciaire"]
+    ipa: "ʒakyz lə ljøtnɑ̃kɔlɔnɛl dy pati də klam davwaʁ ete luvʁije djabɔlik də lɛʁœʁ ʒydisjɛʁ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-emile-zola"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "J'accuse", base: "accuser" }
+      - { word: "le", base: "le" }
+      - { word: "lieutenant", base: "lieutenant" }
+      - { word: "colonel", base: "colonel" }
+      - { word: "du", base: "de" }
+      - { word: "Paty", base: "Paty" }
+      - { word: "de", base: "de" }
+      - { word: "Clam", base: "Clam" }
+      - { word: "d'avoir", base: "avoir" }
+      - { word: "été", base: "être" }
+      - { word: "l'ouvrier", base: "ouvrier" }
+      - { word: "diabolique", base: "diabolique" }
+      - { word: "l'erreur", base: "erreur" }
+      - { word: "judiciaire", base: "judiciaire" }
+    source:
+      author: "Émile Zola"
+      work: "J'accuse…!, open letter to Félix Faure, a sentence on the lieutenant-colonel"
+      date: 1898
+      edition: "L'Aurore, 13 January 1898, as shown on French Wikisource (J’accuse…!)"
+      url: "https://fr.wikisource.org/wiki/J%E2%80%99accuse%E2%80%A6!"
+      basis: "public-domain"
+      author_died: 1902
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4215"
+    target: "Toute la sagesse humaine sera dans ces deux mots : Attendre et espérer."
+    words: ["Toute", "la", "sagesse", "humaine", "sera", "dans", "ces", "deux", "mots", "Attendre", "et", "espérer"]
+    ipa: "tut la saʒɛs ymɛn səʁa dɑ̃ se dø mo atɑ̃dʁ e ɛspeʁe"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-alexandre-dumas"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Toute", base: "tout" }
+      - { word: "la", base: "le" }
+      - { word: "sagesse", base: "sagesse" }
+      - { word: "humaine", base: "humain" }
+      - { word: "sera", base: "être" }
+      - { word: "dans", base: "dans" }
+      - { word: "ces", base: "ce" }
+      - { word: "deux", base: "deux" }
+      - { word: "mots", base: "mot" }
+      - { word: "Attendre", base: "attendre" }
+      - { word: "et", base: "et" }
+      - { word: "espérer", base: "espérer" }
+    source:
+      author: "Alexandre Dumas"
+      work: "Le Comte de Monte-Cristo, chapter 117, the closing words"
+      date: "1844-1846"
+      edition: "Le Comte de Monte-Cristo, chapter 117, as shown on French Wikisource (Le Comte de Monte-Cristo/Chapitre 117); dated 1844-1846 on French Wikipedia"
+      url: "https://fr.wikisource.org/wiki/Le_Comte_de_Monte-Cristo/Chapitre_117"
+      basis: "public-domain"
+      author_died: 1870
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4216"
+    target: "Un événement bizarre, un phénomène inexpliqué."
+    words: ["Un", "événement", "bizarre", "un", "phénomène", "inexpliqué"]
+    ipa: "œ̃ evɛnmɑ̃ bizaʁ œ̃ fenɔmɛn inɛksplike"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-jules-verne"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Un", base: "un" }
+      - { word: "événement", base: "événement" }
+      - { word: "bizarre", base: "bizarre" }
+      - { word: "phénomène", base: "phénomène" }
+      - { word: "inexpliqué", base: "inexpliqué" }
+    source:
+      author: "Jules Verne"
+      work: "Vingt mille lieues sous les mers, Part 1, chapter 1, opening"
+      date: 1870
+      edition: "Vingt mille lieues sous les mers, Part 1, chapter 1, as shown on French Wikisource (Vingt mille lieues sous les mers/Partie 1/Chapitre 1); dated 1870 on French Wikipedia"
+      url: "https://fr.wikisource.org/wiki/Vingt_mille_lieues_sous_les_mers/Partie_1/Chapitre_1"
+      basis: "public-domain"
+      author_died: 1905
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4217"
+    target: "Tous les ans, à la Chandeleur, les poètes provençaux publient…"
+    words: ["Tous", "les", "ans", "à", "la", "Chandeleur", "les", "poètes", "provençaux", "publient"]
+    ipa: "tu le zɑ̃ a la ʃɑ̃dlœʁ le pɔɛt pʁɔvɑ̃so pybli"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-alphonse-daudet"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Tous", base: "tout" }
+      - { word: "les", base: "le" }
+      - { word: "ans", base: "an" }
+      - { word: "à", base: "à" }
+      - { word: "la", base: "le" }
+      - { word: "Chandeleur", base: "Chandeleur" }
+      - { word: "poètes", base: "poète" }
+      - { word: "provençaux", base: "provençal" }
+      - { word: "publient", base: "publier" }
+    source:
+      author: "Alphonse Daudet"
+      work: "Lettres de mon moulin, 'Le Curé de Cucugnan', opening"
+      date: 1869
+      edition: "Lettres de mon moulin, as shown on French Wikisource (Lettres de mon moulin/Le curé de Cucugnan); dated 1869 on French Wikipedia"
+      url: "https://fr.wikisource.org/wiki/Lettres_de_mon_moulin/Le_cur%C3%A9_de_Cucugnan"
+      basis: "public-domain"
+      author_died: 1897
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
