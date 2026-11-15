@@ -1,0 +1,92 @@
+schema: 1
+id: "bn-en-reading-appearance"
+name: "Reading: appearance"
+kind: "reading"
+language:
+  code: "bn"
+  iso639_3: "ben"
+  name: "Bengali"
+  script: "bengali"
+  tts: "bn-IN"
+  icon: "বা"
+native:
+  code: "en"
+  iso639_3: "eng"
+  name: "English"
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Short passages, one to be heard and one to be read, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags:
+- "reading"
+- "unreviewed"
+passages:
+- id: "bn-describing-a-friend"
+  title: "Describing a friend"
+  theme: "appearance"
+  sentences:
+  - text: "আমার এক বন্ধু আছে।"
+    reading: "āmār ek bondhu āche."
+    ipa: "amar ek bond̪ʱu atʃʰe"
+  - text: "সে মাঝারি লম্বা।"
+    reading: "se mājhāri lômbā."
+    ipa: "se madʒʱari lɔmba"
+  - text: "তার চুল কোঁকড়া আর ঘন।"
+    reading: "tār cul kom̐kṛā ār ghôn."
+    ipa: "t̪ar tʃul kõkɽa ar ɡʱɔn"
+  - text: "তার মুখে হাসি থাকে।"
+    reading: "tār mukhe hāśi thāke."
+    ipa: "t̪ar mukʰe ɦaʃi t̪ʰake"
+  - text: "তার একটা নীল জামা আছে।"
+    reading: "tār ekṭā nil jāmā āche."
+    ipa: "t̪ar ekʈa nil dʒama atʃʰe"
+  questions:
+  - id: "bn-5462"
+    prompt:
+      en: "The friend is of medium height."
+    answer: true
+  - id: "bn-5463"
+    prompt:
+      en: "What is the friend's hair like?"
+    options:
+    - en: "সোজা (śojā)"
+    - en: "কোঁকড়া (kom̐kṛā)"
+    answer: 2
+  - id: "bn-5464"
+    prompt:
+      en: "The friend has a red shirt."
+    answer: false
+- id: "bn-lost-and-found-notice"
+  title: "Lost and found"
+  theme: "appearance"
+  sentences:
+  - text: "হারানো জিনিস: একটা ব্যাগ।"
+    reading: "hārāno jiniś: ekṭā bêg."
+    ipa: "ɦarano dʒiniʃ ekʈa bæɡ"
+  - text: "ব্যাগটা কালো আর বড়।"
+    reading: "bêgṭā kālo ār bôṛo."
+    ipa: "bæɡʈa kalo ar bɔɽo"
+  - text: "ব্যাগে একটা লাল বই আছে।"
+    reading: "bêge ekṭā lāl boi āche."
+    ipa: "bæɡe ekʈa lal boi atʃʰe"
+  - text: "ব্যাগের উপরে একটা দাগ আছে।"
+    reading: "bêger upore ekṭā dāg āche."
+    ipa: "bæɡer upore ekʈa d̪aɡ atʃʰe"
+  - text: "মালিক অফিসে আসুন।"
+    reading: "mālik ôphise āśun."
+    ipa: "malik ɔpʰise aʃun"
+  questions:
+  - id: "bn-5465"
+    prompt:
+      en: "The bag is black and big."
+    answer: true
+  - id: "bn-5466"
+    prompt:
+      en: "The bag has a mark on it."
+    answer: true
+  - id: "bn-5467"
+    prompt:
+      en: "Where should the owner come?"
+    options:
+    - en: "অফিসে (ôfise)"
+    - en: "বাড়িতে (bāṛite)"
+    answer: 1

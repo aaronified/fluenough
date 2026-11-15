@@ -1,0 +1,51 @@
+schema: 1
+id: "bn-en-reading-describing"
+name: "Reading: describing"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Describing feelings and places: a short talk to be heard and a postcard to be read, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-how-are-you-feeling"
+    title: "How are you feeling?"
+    theme: "describing"
+    sentences:
+      - { text: "শুভ সকাল!", reading: "śubho sôkāl!", ipa: "ʃubʱo sɔkal" }
+      - { text: "কী হয়েছে?", reading: "ki hôyeche?", ipa: "ki ɦɔjetʃʰe" }
+      - { text: "আজ একটু ক্লান্ত।", reading: "āj ekṭu klānto.", ipa: "adʒ ekʈu klant̪o" }
+      - { text: "কিন্তু আমি খুশি।", reading: "kintu āmi khuśi.", ipa: "kint̪u ami kʰuʃi" }
+      - { text: "ঠিক আছে।", reading: "ṭhik āche.", ipa: "ʈʰik atʃʰe" }
+    questions:
+      - id: "bn-5400"
+        prompt: { en: "The friend asks what has happened." }
+        answer: true
+      - id: "bn-5401"
+        prompt: { en: "How does the speaker feel today?" }
+        options: [{ en: "Tired, but happy" }, { en: "Ill" }]
+        answer: 1
+      - id: "bn-5402"
+        prompt: { en: "The speaker says that everything is wrong." }
+        answer: false
+  - id: "bn-postcard-from-the-hills"
+    title: "A postcard from the hills"
+    theme: "describing"
+    sentences:
+      - { text: "প্রিয় বন্ধু,", reading: "priyo bondhu,", ipa: "prijo bond̪ʱu" }
+      - { text: "এখানে পাহাড় খুব সুন্দর।", reading: "ekhāne pāhāṛ khub sundor.", ipa: "ekʰane paɦaɽ kʰub sund̪or" }
+      - { text: "এখানে ঠান্ডা, কিন্তু পরিষ্কার।", reading: "ekhāne ṭhānḍā, kintu poriskār.", ipa: "ekʰane ʈʰanɖa kint̪u poriskar" }
+      - { text: "মাছ খুব সুস্বাদু।", reading: "māch khub śuśśādu.", ipa: "matʃʰ kʰub ʃuʃʃad̪u" }
+      - { text: "আবার দেখা হবে।", reading: "ābār dekhā hôbe.", ipa: "abar d̪ekʰa ɦɔbe" }
+    questions:
+      - id: "bn-5403"
+        prompt: { en: "Where is the writer?" }
+        options: [{ en: "In the hills" }, { en: "At the market" }]
+        answer: 1
+      - id: "bn-5404"
+        prompt: { en: "The writer says the weather there is cold but clean." }
+        answer: true
+      - id: "bn-5405"
+        prompt: { en: "The writer says the fish is bad." }
+        answer: false
