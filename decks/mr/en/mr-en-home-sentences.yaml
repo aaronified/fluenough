@@ -1,0 +1,58 @@
+schema: 1
+id: "mr-en-home-sentences"
+kind: "layer"
+core: "mr-home-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Home: sentences"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the home words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-5848":
+    native: "Our house is big."
+    bases: { "आमचे": "our", "मोठे": "big", "आहे": "is" }
+    confusables: { "w1": { why: "आम्ही (āmhi) means we; आमचे (āmce) means our." }, "f1": { why: "आहेत (āhet) is plural; one house takes आहे (āhe)." } }
+  "mr-5849":
+    native: "Food is ready in the kitchen."
+    bases: { "स्वयंपाकघरात": "in the kitchen", "आहे": "is" }
+    confusables: { "w1": { why: "इथे (ithe) means here, not in the kitchen." }, "w2": { why: "बाहेर (bāhera) means outside, the opposite of स्वयंपाकघरात (svayampākgharāt)." } }
+  "mr-5850":
+    native: "My room is on the upper floor."
+    bases: { "माझी": "my", "वरच्या": "upper", "मजल्यावर": "on the floor", "आहे": "is" }
+    confusables: { "w1": { why: "तू (tu) means you; माझी (mājhi) means my." }, "w2": { why: "खाली (khāli) means below, the opposite of वरच्या (varcyā)." } }
+  "mr-5851":
+    native: "Open the window."
+    bases: { "उघडा": "open (polite)" }
+    confusables: { "w1": { why: "तू (tu) means you; the sentence is a polite command." }, "w2": { why: "बंद (band) means closed, the opposite of उघडा (ughḍā)." } }
+  "mr-5852":
+    native: "Switch off the fan."
+    bases: { "करा": "do (polite)" }
+    confusables: { "w1": { why: "तू (tu) means you; the sentence is a polite command." }, "w2": { why: "उघडा (ughḍā) means open, the opposite of बंद (band)." } }
+  "mr-5853":
+    native: "Turn on the lamp."
+    bases: { "लावा": "switch on (polite)" }
+    confusables: { "w1": { why: "तू (tu) means you; the sentence is a polite command." }, "w2": { why: "विझवा (vijhavā) means put out, the opposite of लावा (lāvā)." } }
+  "mr-5854":
+    native: "There is a book on the table."
+    bases: { "टेबलावर": "on the table", "आहे": "is" }
+    confusables: { "w1": { why: "खुर्ची (khurci) means chair; टेबलावर (ṭebalāvar) means on the table." }, "f1": { why: "आहेत (āhet) is plural; one book takes आहे (āhe)." } }
+  "mr-5855":
+    native: "Our neighbours are very good."
+    bases: { "आमचे": "our", "चांगले": "good", "आहेत": "are" }
+    confusables: { "w1": { why: "आम्ही (āmhi) means we; आमचे (āmce) means our." }, "f1": { why: "आहे (āhe) is for one; the neighbours are plural, so आहेत (āhet) is used." } }
+  "mr-5856":
+    native: "I pay the rent on time."
+    bases: { "देतो": "pay", "वेळेवर": "on time" }
+    confusables: { "w1": { why: "तो (to) means he; मी (mi) means I." }, "f1": { why: "देते (dete) is the feminine form, for a woman who pays." } }
+  "mr-5857":
+    native: "There are flowers in the garden."
+    bases: { "बागेत": "in the garden", "आहेत": "are" }
+    confusables: { "w1": { why: "इथे (ithe) means here, not in the garden." }, "f1": { why: "आहे (āhe) is for one thing; फुले (phule) is plural, so आहेत (āhet) is used." } }
+  "mr-5858":
+    native: "Where is my key?"
+    bases: { "माझी": "my", "आहे": "is" }
+    confusables: { "w1": { why: "कधी (kadhi) asks when, not where." }, "f1": { why: "आहेत (āhet) is plural; a key is one thing, so आहे (āhe) is used." } }
+  "mr-5859":
+    native: "This building is old."
+    bases: { "जुनी": "old", "आहे": "is" }
+    confusables: { "w1": { why: "हे (he) is this for a neuter noun; इमारत (imārat) is feminine, so ही (hi) is used." }, "w2": { why: "आधुनिक (ādhunik) means modern, the opposite of old." } }

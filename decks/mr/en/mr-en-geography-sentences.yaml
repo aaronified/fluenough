@@ -1,0 +1,50 @@
+schema: 1
+id: "mr-en-geography-sentences"
+kind: "layer"
+core: "mr-geography-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with geography"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the geography words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-5675":
+    native: "Maharashtra is a state."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "Capital, not state: राजधानी (rājdhāni) means capital city." }, "f1": { why: "Plural: आहेत (āhet) is for several things; the sentence is about one state." } }
+  "mr-5676":
+    native: "Delhi is the capital."
+    bases: { "ही": "this (feminine)", "आहे": "is" }
+    confusables: { "w1": { why: "Masculine: हा (hā) agrees with a masculine noun; दिल्ली (dilli) is feminine." }, "w2": { why: "District, not capital: जिल्हा (jilhā) means district." } }
+  "mr-5677":
+    native: "Gujarat is to the west."
+    bases: { "पश्चिमेला": "to the west", "आहे": "is" }
+    confusables: { "w1": { why: "East, not west: पूर्व (purv) means east." }, "w2": { why: "North, not west: उत्तर (uttar) means north." } }
+  "mr-5678":
+    native: "Karnataka is to the south."
+    bases: { "दक्षिणेला": "to the south", "आहे": "is" }
+    confusables: { "w1": { why: "North, not south: उत्तर (uttar) means north." }, "w2": { why: "West, not south: पश्चिम (paścim) means west." } }
+  "mr-5679":
+    native: "Soldiers are at the border."
+    bases: { "सीमेवर": "at the border", "आहेत": "are" }
+    confusables: { "w1": { why: "Citizen, not soldier: नागरिक (nāgrik) means citizen." }, "f1": { why: "Singular: आहे (āhe) is for one thing; several soldiers take आहेत (āhet)." } }
+  "mr-5680":
+    native: "Maharashtra's population is large."
+    bases: { "महाराष्ट्राची": "of Maharashtra", "मोठी": "large", "आहे": "is" }
+    confusables: { "w1": { why: "District, not population: जिल्हा (jilhā) means district." }, "f1": { why: "Masculine: मोठा (moṭhā) agrees with a masculine noun; लोकसंख्या (loksaṅkhyā) is feminine." } }
+  "mr-5681":
+    native: "Do you like geography?"
+    bases: { "आवडतो": "like" }
+    confusables: { "w1": { why: "I, not you: मी (mi) means I." }, "f1": { why: "Feminine: आवडते (āvaḍte) is for a feminine thing; भूगोल (bhugol) is masculine." } }
+  "mr-5682":
+    native: "Where is the state's capital?"
+    bases: { "राज्याची": "of the state", "आहे": "is" }
+    confusables: { "w1": { why: "District, not capital: जिल्हा (jilhā) means district." }, "f1": { why: "Plural: आहेत (āhet) is for several things; the capital is one city." } }
+  "mr-5683":
+    native: "Delhi is to the north."
+    bases: { "उत्तरेला": "to the north", "आहे": "is" }
+    confusables: { "w1": { why: "East, not north: पूर्व (purv) means east." }, "w2": { why: "West, not north: पश्चिम (paścim) means west." } }
+  "mr-5684":
+    native: "This district is big."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "Capital, not district: राजधानी (rājdhāni) means capital city." }, "f1": { why: "Feminine: मोठी (moṭhi) agrees with a feminine noun; जिल्हा (jilhā) is masculine." } }

@@ -1,0 +1,64 @@
+schema: 1
+id: "mr-cooking-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-5355"
+    target: "हे जेवण खूप चविष्ट आहे."
+    reading: "he jevaṇ khup caviṣṭa āhe."
+    ipa: "ɦe dʒeʋəɳ kʰup tsəʋiʂʈə aɦe"
+    pos: "phrase"
+    bases: [{ word: "खूप", ref: "mr-0742" }, { word: "आहे", base: "असणे", reading: "asṇe" }]
+    confusables: [{ id: "w1", ref: "mr-1113", kind: "word" }, { id: "f1", word: "आहेत", reading: "āhet", kind: "form" }]
+  - id: "mr-5356"
+    target: "आई भाजीत तूप घालते."
+    reading: "āi bhājit tup ghālte."
+    ipa: "ai bʱadʒit̪ t̪up ɡʱalt̪e"
+    pos: "phrase"
+    bases: [{ word: "भाजीत", ref: "mr-0390" }, { word: "घालते", ref: "mr-0792" }]
+    confusables: [{ id: "f1", word: "घालतो", reading: "ghālto", kind: "form" }, { id: "w1", ref: "mr-1108", kind: "word" }]
+  - id: "mr-5357"
+    target: "ती कणिक मळते."
+    reading: "ti kaṇik maḷte."
+    ipa: "t̪i kəɳik məɭt̪e"
+    pos: "phrase"
+    bases: [{ word: "मळते", base: "मळणे", reading: "maḷṇe" }]
+    confusables: [{ id: "f1", word: "मळतो", reading: "maḷto", kind: "form" }, { id: "w1", ref: "mr-1111", kind: "word" }]
+  - id: "mr-5358"
+    target: "भाजी खारट आहे."
+    reading: "bhāji khāraṭ āhe."
+    ipa: "bʱadʒi kʰarəʈ aɦe"
+    pos: "phrase"
+    bases: [{ word: "भाजी", base: "भाजी", reading: "bhāji" }, { word: "आहे", base: "असणे", reading: "asṇe" }]
+    confusables: [{ id: "w1", ref: "mr-1112", kind: "word" }, { id: "f1", word: "आहेत", reading: "āhet", kind: "form" }]
+  - id: "mr-5359"
+    target: "मला चविष्ट भाजी आवडते."
+    reading: "malā caviṣṭa bhāji āvaḍte."
+    ipa: "məla tsəʋiʂʈə bʱadʒi aʋəɖt̪e"
+    pos: "phrase"
+    bases: [{ word: "मला", base: "मी", reading: "mi" }, { word: "आवडते", ref: "mr-0585" }]
+    confusables: [{ id: "f1", word: "आवडतो", reading: "āvaḍto", kind: "form" }, { id: "w1", ref: "mr-0169", kind: "word" }]
+  - id: "mr-5360"
+    target: "थोडा मसाला घाला."
+    reading: "thoḍā masālā ghālā."
+    ipa: "t̪ʰoɖa məsala ɡʱala"
+    pos: "phrase"
+    bases: [{ word: "थोडा", base: "थोडा", reading: "thoḍā" }, { word: "घाला", ref: "mr-0792" }]
+    confusables: [{ id: "f1", word: "घाल", reading: "ghāl", kind: "form" }, { id: "w1", ref: "mr-1110", kind: "word" }]
+  - id: "mr-5361"
+    target: "आता स्वयंपाक करा."
+    reading: "ātā svayampāk karā."
+    ipa: "at̪a sʋəjəmpak kəra"
+    pos: "phrase"
+    bases: [{ word: "आता", ref: "mr-0476" }, { word: "करा", ref: "mr-0712" }]
+    confusables: [{ id: "f1", word: "कर", reading: "kar", kind: "form" }, { id: "w1", ref: "mr-1108", kind: "word" }]
+  - id: "mr-5362"
+    target: "ती पोळ्या भाजते."
+    reading: "ti poḷyā bhājte."
+    ipa: "t̪i poɭja bʱadzt̪e"
+    pos: "phrase"
+    bases: [{ word: "पोळ्या", ref: "mr-0570" }, { word: "भाजते", ref: "mr-1108" }]
+    confusables: [{ id: "f1", word: "भाजतो", reading: "bhājto", kind: "form" }, { id: "w1", ref: "mr-1109", kind: "word" }]

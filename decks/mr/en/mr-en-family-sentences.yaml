@@ -1,0 +1,54 @@
+schema: 1
+id: "mr-en-family-sentences"
+kind: "layer"
+core: "mr-family-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about family"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-5540":
+    native: "My family is large."
+    bases: { "माझे": "my", "मोठे": "large", "आहे": "is" }
+    confusables: { "w1": { why: "वडील (vaḍil) is father, one person, not the family." }, "w2": { why: "आई-वडील (āi-vaḍil) means parents, not the whole family." } }
+  "mr-5541":
+    native: "My mother is a teacher."
+    bases: { "माझी": "my", "आहे": "is" }
+    confusables: { "w1": { why: "बहीण (bahiṇ) is sister, not mother." }, "w2": { why: "वडील (vaḍil) is father, not mother." } }
+  "mr-5542":
+    native: "My brother is older."
+    bases: { "माझा": "my", "मोठा": "older", "आहे": "is" }
+    confusables: { "w1": { why: "बहीण (bahiṇ) is sister, not brother." }, "w2": { why: "मुलगा (mulgā) is a son or a boy." } }
+  "mr-5543":
+    native: "My daughter goes to school."
+    bases: { "माझी": "my", "शाळेत": "to school", "जाते": "goes" }
+    confusables: { "w1": { why: "मुलगा (mulgā) is a son or a boy, not a daughter." }, "f1": { why: "जातो (jāto) is said of a man or a boy; a girl takes जाते (jāte)." } }
+  "mr-5544":
+    native: "Mother and dad are at home."
+    bases: { "घरी": "at home", "आहेत": "are" }
+    confusables: { "w1": { why: "वडील (vaḍil) is the more formal word for father, not dad." }, "f1": { why: "आहे (āhe) is for one; two people take आहेत (āhet)." } }
+  "mr-5545":
+    native: "Aunt is coming home."
+    bases: { "घरी": "home", "येत": "coming", "आहे": "is" }
+    confusables: { "w1": { why: "मामा (māmā) is the mother's brother, not the father's sister." }, "w2": { why: "मामी (māmi) is a mother's brother's wife, not a father's sister." } }
+  "mr-5546":
+    native: "Is uncle at my house?"
+    bases: { "माझ्या": "my", "घरी": "at home", "आहे": "is", "का": "a question marker" }
+    confusables: { "w1": { why: "मामी (māmi) is an aunt by marriage, not an uncle." }, "w2": { why: "आत्या (ātyā) is the father's sister, not the mother's brother." } }
+  "mr-5547":
+    native: "My wife and husband are at work."
+    bases: { "माझी": "my", "कामावर": "at work", "आहेत": "are" }
+    confusables: { "w1": { why: "सासू (sāsu) is a mother-in-law, not a wife." }, "w2": { why: "बहीण (bahiṇ) is a sister, not a wife or husband." } }
+  "mr-5548":
+    native: "Father-in-law and mother-in-law are at home."
+    bases: { "घरी": "at home", "आहेत": "are" }
+    confusables: { "w1": { why: "कुटुंब (kuṭumb) means the whole family, not two people." }, "f1": { why: "आहे (āhe) is for one person; two take आहेत (āhet)." } }
+  "mr-5549":
+    native: "The child is playing."
+    bases: { "खेळत": "playing", "आहे": "is" }
+    confusables: { "w1": { why: "मुलगी (mulgi) is a girl, not a child in general." }, "w2": { why: "मुलगा (mulgā) is a boy or a son." } }
+  "mr-5550":
+    native: "The sister went to the market."
+    bases: { "बाजारात": "to the market", "गेली": "went" }
+    confusables: { "w1": { why: "भाऊ (bhāu) is brother, not sister." }, "f1": { why: "गेला (gelā) is for a man; बहीण (bahiṇ) is a woman, so गेली (geli)." } }

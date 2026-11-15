@@ -1,0 +1,62 @@
+schema: 1
+id: "mr-en-directions-sentences"
+kind: "layer"
+core: "mr-directions-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with directions"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-5480":
+    native: "Turn left, please."
+    bases: { "वळा": "turn (please)" }
+    confusables: { "w1": { why: "उजवीकडे (ujvikaḍe) means right, the other way." }, "w2": { why: "सरळ (saraḷ) means straight on, not a turn." } }
+  "mr-5481":
+    native: "The bridge is ahead."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "मागे (māge) means behind, not ahead." }, "f1": { why: "Plural: आहेत (āhet) is for two or more things; here पूल (pul) is one bridge." } }
+  "mr-5482":
+    native: "Is the station near?"
+    bases: { "आहे": "is", "का": "a question marker" }
+    confusables: { "w1": { why: "लांब (lāmb) means far, the opposite of near." }, "w2": { why: "पुढे (puḍhe) means ahead, not near." } }
+  "mr-5483":
+    native: "I go ahead."
+    bases: { "जातो": "go (said by a man)" }
+    confusables: { "w1": { why: "मागे (māge) means behind or back, not ahead." }, "f1": { why: "A woman says जाते (jāte); this sentence uses जातो (jāto), said by a man." } }
+  "mr-5484":
+    native: "The house is behind."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "पुढे (puḍhe) means ahead, the other way." }, "w2": { why: "समोर (samor) means in front or opposite, not behind." } }
+  "mr-5485":
+    native: "My house is near."
+    bases: { "माझे": "my", "आहे": "is" }
+    confusables: { "w1": { why: "लांब (lāmb) means far, not near." }, "w2": { why: "समोर (samor) means opposite or in front, not near." } }
+  "mr-5486":
+    native: "This road goes to the left."
+    bases: { "हा": "this", "जातो": "goes" }
+    confusables: { "w1": { why: "उजवीकडे (ujvikaḍe) means to the right, the other way." }, "f1": { why: "जाते (jāte) goes with a feminine noun; रस्ता (rastā) is masculine, so जातो (jāto)." } }
+  "mr-5487":
+    native: "Go a little further on."
+    bases: { "थोडे": "a little", "जा": "go" }
+    confusables: { "w1": { why: "जवळ (javaḷ) means near, not further on." }, "w2": { why: "मागे (māge) means behind, the other way." } }
+  "mr-5488":
+    native: "This bridge is long."
+    bases: { "हा": "this", "आहे": "is" }
+    confusables: { "w1": { why: "जवळ (javaḷ) means near, not long." }, "w2": { why: "समोर (samor) means in front or opposite, not long." } }
+  "mr-5489":
+    native: "Go there and turn left."
+    bases: { "तिथे": "there", "जा": "go", "वळा": "turn (please)" }
+    confusables: { "w1": { why: "उजवीकडे (ujvikaḍe) means right, not left." }, "w2": { why: "सरळ (saraḷ) means straight on, not a turn." } }
+  "mr-5490":
+    native: "Stop near the traffic lights."
+    bases: { "सिग्नलजवळ": "near the traffic lights", "थांबा": "stop (please)" }
+    confusables: { "w1": { why: "समोर (samor) means opposite or in front, not near." }, "w2": { why: "चौक (cauk) is a square or crossroads, not the lights." } }
+  "mr-5491":
+    native: "Where is the bridge?"
+    bases: { "कुठे": "where", "आहे": "is" }
+    confusables: { "w1": { why: "सिग्नल (signal) means traffic lights, not a bridge." }, "w2": { why: "चौक (cauk) is a square or crossroads, not a bridge." } }
+  "mr-5492":
+    native: "I turn at the crossroads."
+    bases: { "चौकात": "at the crossroads", "वळतो": "turn (said by a man)" }
+    confusables: { "w1": { why: "कोपरा (koprā) means a corner, not the crossroads." }, "w2": { why: "वळा (vaḷā) is the command 'turn'; this sentence says that I turn." } }

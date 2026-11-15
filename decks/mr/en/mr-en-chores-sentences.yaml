@@ -1,0 +1,53 @@
+schema: 1
+id: "mr-en-chores-sentences"
+kind: "layer"
+core: "mr-chores-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with housework"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the words of the chores unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-5320":
+    native: "Mother does the housework every day."
+    confusables: { "w1": { why: "ते (te) means they, not one woman: this sentence is about a mother." }, "f1": { why: "करतो (karto) is for one man; a mother is a woman, so करते (karte) is right." } }
+  "mr-5321":
+    native: "Who washed the dishes?"
+    bases: { "कोणी": "who (the one who did it)" }
+    confusables: { "f1": { why: "धुतले (dhutle) is for a neuter noun such as clothes; भांडी (bhāṇḍi) is feminine, so धुतली (dhutli) is right." }, "w1": { why: "कधी (kadhi) asks when, not who." } }
+  "mr-5322":
+    native: "Wash the clothes."
+    bases: { "कपडे": "clothes" }
+    confusables: { "f1": { why: "धू (dhu) is the informal wash, said to a child or a friend; धुवा (dhuvā) is polite." }, "w1": { why: "घासा (ghāsā) means scrub; this sentence says wash." } }
+  "mr-5323":
+    native: "Scrub the dishes properly."
+    bases: { "नीट": "properly; carefully" }
+    confusables: { "f1": { why: "घासतो (ghāsto) is a statement that one man scrubs; घासा (ghāsā) is a polite order." }, "w1": { why: "साफ करणे (sāph karṇe) means to clean in general; this sentence means the specific job of scrubbing." } }
+  "mr-5324":
+    native: "Throw the rubbish outside."
+    bases: { "बाहेर": "outside", "टाका": "throw; put" }
+    confusables: { "f1": { why: "टाक (ṭāk) is the informal order, said to a child or a friend." }, "w1": { why: "इथे (ithe) means here, not outside." } }
+  "mr-5325":
+    native: "She fills the bucket with water."
+    confusables: { "f1": { why: "भरतो (bharto) is for one man; this sentence has a woman." }, "w1": { why: "तो (to) means he; this sentence is about a woman." } }
+  "mr-5326":
+    native: "Keep the broom in the cupboard."
+    confusables: { "f1": { why: "ठेव (ṭhev) is the informal order, said to a child or a friend." }, "w1": { why: "काढा (kāḍhā) means take out; ठेवा (ṭhevā) means keep or put." } }
+  "mr-5327":
+    native: "She irons the clothes."
+    bases: { "कपडे": "clothes" }
+    confusables: { "f1": { why: "करतो (karto) is for one man; this sentence has a woman." }, "w1": { why: "धुते (dhute) means washes; the sentence says irons." } }
+  "mr-5328":
+    native: "They clean the house on Saturday."
+    confusables: { "f1": { why: "करते (karte) is for one woman; the subject is more than one person, so करतात (kartāt) is right." }, "w1": { why: "ती (ti) means she, not they." } }
+  "mr-5329":
+    native: "Bring a new bucket."
+    confusables: { "f1": { why: "आणला (āṇlā) is the past for one man, not an order." }, "w1": { why: "घ्या (ghyā) means take, not bring." } }
+  "mr-5330":
+    native: "She helps me."
+    bases: { "मला": "me; to me" }
+    confusables: { "f1": { why: "करतो (karto) is for one man; this sentence has a woman." }, "w1": { why: "ते (te) means they, not she." } }
+  "mr-5331":
+    native: "The cleanliness of the house is good."
+    bases: { "आहे": "is" }
+    confusables: { "f1": { why: "आहेत (āhet) is for more than one thing; स्वच्छता (svacchatā) is one thing." }, "w1": { why: "स्वच्छ (svacch) is the adjective clean; this sentence needs the noun." } }
