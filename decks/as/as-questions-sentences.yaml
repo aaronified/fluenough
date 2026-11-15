@@ -1,0 +1,141 @@
+schema: 1
+id: "as-questions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-5000"
+    target: "ভাত খোৱা নেকি?"
+    reading: "bhāt khuwā neki?"
+    ipa: "bʱat kʰʊwa neki"
+    pos: "phrase"
+    bases:
+      - { word: "ভাত", ref: "as-0111" }
+      - { word: "খোৱা", ref: "as-0109" }
+      - { word: "নেকি", ref: "as-0151" }
+    confusables:
+      - { id: "c1", word: "কোৱা", reading: "kuwā", kind: "word" }
+      - { id: "c2", word: "বাত", reading: "bāt", kind: "word" }
+  - id: "as-5001"
+    target: "ঠিক নেকি?"
+    reading: "ṭhik neki?"
+    ipa: "ʈʰik neki"
+    pos: "phrase"
+    bases:
+      - { word: "ঠিক", ref: "as-2531" }
+      - { word: "নেকি", ref: "as-0151" }
+    confusables:
+      - { id: "c1", word: "নহয়", reading: "nôhôy", kind: "word" }
+      - { id: "c2", word: "কোন", reading: "kun", kind: "word" }
+  - id: "as-5002"
+    target: "কেনেকৈ কওক?"
+    reading: "kenekôi kôuk?"
+    ipa: "kenekɔi kɔʊk"
+    pos: "phrase"
+    bases:
+      - { word: "কেনেকৈ", ref: "as-0148" }
+      - { word: "কওক", base: "কোৱা", reading: "kuwā" }
+    confusables:
+      - { id: "c1", word: "কিয়", reading: "kiyô", kind: "word" }
+      - { id: "c2", word: "কেতিয়া", reading: "ketiyā", kind: "word" }
+  - id: "as-5003"
+    target: "কি কওক?"
+    reading: "ki kôuk?"
+    ipa: "ki kɔʊk"
+    pos: "phrase"
+    bases:
+      - { word: "কি", ref: "as-0143" }
+      - { word: "কওক", base: "কোৱা", reading: "kuwā" }
+    confusables:
+      - { id: "c1", word: "কোন", reading: "kun", kind: "word" }
+      - { id: "c2", word: "কিমান", reading: "kimān", kind: "word" }
+  - id: "as-5004"
+    target: "কিয় নাই?"
+    reading: "kiyô nāi?"
+    ipa: "kijɔ nai"
+    pos: "phrase"
+    bases:
+      - { word: "কিয়", ref: "as-0147" }
+      - { word: "নাই", ref: "as-0142" }
+    confusables:
+      - { id: "c1", word: "কেনেকৈ", reading: "kenekôi", kind: "word" }
+      - { id: "c2", word: "কেতিয়া", reading: "ketiyā", kind: "word" }
+  - id: "as-5005"
+    target: "কিমান ভাত?"
+    reading: "kimān bhāt?"
+    ipa: "kiman bʱat"
+    pos: "phrase"
+    bases:
+      - { word: "কিমান", ref: "as-0149" }
+      - { word: "ভাত", ref: "as-0111" }
+    confusables:
+      - { id: "c1", word: "কোনটো", reading: "kuntu", kind: "word" }
+      - { id: "c2", word: "কি", reading: "ki", kind: "word" }
+  - id: "as-5006"
+    target: "হয়, ঠিক।"
+    reading: "hôy, ṭhik."
+    ipa: "hɔj ʈʰik"
+    pos: "phrase"
+    bases:
+      - { word: "হয়", ref: "as-0140" }
+      - { word: "ঠিক", ref: "as-2531" }
+    confusables:
+      - { id: "c1", word: "নহয়", reading: "nôhôy", kind: "word" }
+      - { id: "c2", word: "নেকি", reading: "neki", kind: "word" }
+  - id: "as-5007"
+    target: "কোন বাত?"
+    reading: "kun bāt?"
+    ipa: "kʊn bat"
+    pos: "phrase"
+    bases:
+      - { word: "কোন", ref: "as-0144" }
+      - { word: "বাত", ref: "as-0110" }
+    confusables:
+      - { id: "c1", word: "কোনটো", reading: "kuntu", kind: "word" }
+      - { id: "c2", word: "কি", reading: "ki", kind: "word" }
+  - id: "as-5008"
+    target: "কোনটো কাম?"
+    reading: "kuntu kām?"
+    ipa: "kʊntʊ kam"
+    pos: "phrase"
+    bases:
+      - { word: "কোনটো", ref: "as-0150" }
+      - { word: "কাম", ref: "as-0120" }
+    confusables:
+      - { id: "c1", word: "কোন", reading: "kun", kind: "word" }
+      - { id: "c2", word: "কিমান", reading: "kimān", kind: "word" }
+  - id: "as-5009"
+    target: "কি কাম?"
+    reading: "ki kām?"
+    ipa: "ki kam"
+    pos: "phrase"
+    bases:
+      - { word: "কি", ref: "as-0143" }
+      - { word: "কাম", ref: "as-0120" }
+    confusables:
+      - { id: "c1", word: "কোনটো", reading: "kuntu", kind: "word" }
+      - { id: "c2", word: "কেনেকৈ", reading: "kenekôi", kind: "word" }
+  - id: "as-5010"
+    target: "ক'ত আছে?"
+    reading: "kot āse?"
+    ipa: "kot ase"
+    pos: "phrase"
+    bases:
+      - { word: "ক'ত", ref: "as-0145" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "কেতিয়া", reading: "ketiyā", kind: "word" }
+      - { id: "c2", word: "কেনেকৈ", reading: "kenekôi", kind: "word" }
+  - id: "as-5011"
+    target: "কোনটো ভাল?"
+    reading: "kuntu bhāl?"
+    ipa: "kʊntʊ bʱal"
+    pos: "phrase"
+    bases:
+      - { word: "কোনটো", ref: "as-0150" }
+      - { word: "ভাল", base: "ভাল", reading: "bhāl" }
+    confusables:
+      - { id: "c1", word: "কোন", reading: "kun", kind: "word" }
+      - { id: "c2", word: "কিমান", reading: "kimān", kind: "word" }
