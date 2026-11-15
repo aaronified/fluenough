@@ -62,6 +62,8 @@ cards:
     phonetic_source: "rules"
     pos: "noun"
     gender: "m"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     "examples": [
       {"target": "दुकानदार ने कीमत घटाई।", "reading": "dukāndār nē kīmat ghaṭāī.", "ipa": "d̪ʊkaːnd̪aːr neː kiːmət̪ ɡʱəʈaːiː", "bases": [{"word": "दुकानदार", "base": "दुकानदार", "reading": "dukāndār"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "कीमत", "ref": "hi-1342"}, {"word": "घटाई", "base": "घटाना", "reading": "ghaṭānā"}]},
       {"target": "दुकानदार ने रसीद दी।", "reading": "dukāndār nē rasīd dī.", "ipa": "d̪ʊkaːnd̪aːr neː rəsiːd̪ d̪iː", "bases": [{"word": "दुकानदार", "base": "दुकानदार", "reading": "dukāndār"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "दी", "ref": "hi-0785"}]}
@@ -98,6 +100,8 @@ cards:
     phonetic_source: "wiktionary"
     pos: "noun"
     gender: "f"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     "examples": [
       {"target": "नर्स ने इंजेक्शन लगाया।", "reading": "nars nē iñjēkśan lagāyā.", "ipa": "nərs neː ɪɲdʒeːkʃən ləɡaːjaː", "bases": [{"word": "नर्स", "base": "नर्स", "reading": "nars"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "इंजेक्शन", "base": "इंजेक्शन", "reading": "iñjēkśan"}, {"word": "लगाया", "base": "लगाना", "reading": "lagānā"}]},
       {"target": "नर्स ने सुई लगाई।", "reading": "nars nē suī lagāī.", "ipa": "nərs neː sʊiː ləɡaːiː", "bases": [{"word": "नर्स", "base": "नर्स", "reading": "nars"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "सुई", "base": "सुई", "reading": "suī"}, {"word": "लगाई", "base": "लगाना", "reading": "lagānā"}]}
@@ -221,6 +225,8 @@ cards:
     pos: "phrase"
     bases:
       - { word: "करते", base: "करना", reading: "karnā" }
+    notes:
+      - { id: "n1", kind: "behaviour" }
   - id: "hi-0418"
     target: "मैं एक दफ़्तर में काम करता हूँ।"
     target_scripts: { perso_arabic: "میں ایک دفتر میں کام کرتا ہوں۔" }

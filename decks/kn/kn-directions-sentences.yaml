@@ -1,0 +1,88 @@
+schema: 1
+id: "kn-directions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-7409"
+    target: "ಬಲಕ್ಕೆ ತಿರುಗಿ."
+    reading: "balakke tirugi."
+    ipa: "balakke t̪iruɡi"
+    pos: "phrase"
+    bases:
+      - { word: "ಬಲಕ್ಕೆ", ref: "kn-0367" }
+      - { word: "ತಿರುಗಿ", ref: "kn-0370" }
+  - id: "kn-7410"
+    target: "ಎಡಕ್ಕೆ ತಿರುಗಿ."
+    reading: "eḍakke tirugi."
+    ipa: "eɖakke t̪iruɡi"
+    pos: "phrase"
+    bases:
+      - { word: "ಎಡಕ್ಕೆ", ref: "kn-0368" }
+      - { word: "ತಿರುಗಿ", ref: "kn-0370" }
+  - id: "kn-7411"
+    target: "ನೇರವಾಗಿ ಹೋಗಿ."
+    reading: "nēravāgi hōgi."
+    ipa: "neːraʋaːɡi hoːɡi"
+    pos: "phrase"
+    bases:
+      - { word: "ನೇರವಾಗಿ", ref: "kn-0369" }
+      - { word: "ಹೋಗಿ", base: "ಹೋಗು", reading: "hōgu" }
+  - id: "kn-7412"
+    target: "ಮುಂದೆ ರಸ್ತೆ ಇದೆ."
+    reading: "munde raste ide."
+    ipa: "mund̪e rast̪e id̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ಮುಂದೆ", ref: "kn-0684" }
+      - { word: "ರಸ್ತೆ", ref: "kn-0378" }
+      - { word: "ಇದೆ", base: "ಇರು", reading: "iru" }
+  - id: "kn-7413"
+    target: "ನಿಮ್ಮ ಮನೆ ಹತ್ತಿರ ಇದೆಯಾ?"
+    reading: "nimma mane hattira ideyā?"
+    ipa: "nimma mane hat̪t̪ira id̪ejaː"
+    pos: "phrase"
+    bases:
+      - { word: "ನಿಮ್ಮ", ref: "kn-0621" }
+      - { word: "ಮನೆ", ref: "kn-0201" }
+      - { word: "ಹತ್ತಿರ", ref: "kn-0373" }
+      - { word: "ಇದೆಯಾ", base: "ಇರು", reading: "iru" }
+  - id: "kn-7414"
+    target: "ಇದು ದೂರ."
+    reading: "idu dūra."
+    ipa: "id̪u d̪uːra"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ದೂರ", ref: "kn-0374" }
+  - id: "kn-7415"
+    target: "ಅವನು ಹಿಂದೆ ಇದ್ದಾನೆ."
+    reading: "avanu hinde iddāne."
+    ipa: "aʋanu hind̪e id̪d̪aːne"
+    pos: "phrase"
+    bases:
+      - { word: "ಅವನು", ref: "kn-0612" }
+      - { word: "ಹಿಂದೆ", ref: "kn-0685" }
+      - { word: "ಇದ್ದಾನೆ", base: "ಇರು", reading: "iru" }
+  - id: "kn-7416"
+    target: "ಇದು ದಾರಿ ಅಲ್ಲ."
+    reading: "idu dāri alla."
+    ipa: "id̪u d̪aːri alla"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ದಾರಿ", ref: "kn-0377" }
+      - { word: "ಅಲ್ಲ", ref: "kn-0166" }
+  - id: "kn-7417"
+    target: "ನಾನು ಇಲ್ಲಿ ಇದ್ದೇನೆ."
+    reading: "nānu illi iddēne."
+    ipa: "naːnu illi id̪d̪eːne"
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", ref: "kn-0610" }
+      - { word: "ಇಲ್ಲಿ", ref: "kn-0375" }
+      - { word: "ಇದ್ದೇನೆ", base: "ಇರು", reading: "iru" }

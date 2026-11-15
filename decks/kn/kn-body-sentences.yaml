@@ -1,0 +1,83 @@
+schema: 1
+id: "kn-body-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-8173"
+    target: "ನನ್ನ ತಲೆ ಭಾರ."
+    reading: "nanna tale bhāra."
+    ipa: "nanna t̪ale bʱaːra"
+    pos: "phrase"
+    bases:
+      - { word: "ನನ್ನ", ref: "kn-0619" }
+      - { word: "ತಲೆ", ref: "kn-0795" }
+      - { word: "ಭಾರ", ref: "kn-0720" }
+  - id: "kn-8174"
+    target: "ನನ್ನ ಕಿವಿ ಸರಿಯಾಗಿ ಕೇಳುತ್ತದೆ."
+    reading: "nanna kivi sariyāgi kēḷuttade."
+    ipa: "nanna kiʋi sarijaːɡi keːɭut̪t̪ad̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ನನ್ನ", ref: "kn-0619" }
+      - { word: "ಕಿವಿ", ref: "kn-0797" }
+      - { word: "ಸರಿಯಾಗಿ", ref: "kn-0674" }
+      - { word: "ಕೇಳುತ್ತದೆ", base: "ಕೇಳು", reading: "kēḷu" }
+  - id: "kn-8175"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    target: "ನನ್ನ ಹೊಟ್ಟೆ ಹಸಿದಿದೆ."
+    reading: "nanna hoṭṭe hasidide."
+    ipa: "nanna hoʈʈe hasid̪id̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ನನ್ನ", ref: "kn-0619" }
+      - { word: "ಹೊಟ್ಟೆ", ref: "kn-0805" }
+      - { word: "ಹಸಿದಿದೆ", base: "ಹಸಿದ", reading: "hasida" }
+  - id: "kn-8176"
+    target: "ಬಾಯಿ ತೆರೆ."
+    reading: "bāyi tere."
+    ipa: "baːji t̪ere"
+    pos: "phrase"
+    bases:
+      - { word: "ಬಾಯಿ", ref: "kn-0799" }
+      - { word: "ತೆರೆ", ref: "kn-0746" }
+  - id: "kn-8177"
+    target: "ಕಣ್ಣು ಮುಚ್ಚು."
+    reading: "kaṇṇu muccu."
+    ipa: "kaɳɳu mutʃtʃu"
+    pos: "phrase"
+    bases:
+      - { word: "ಕಣ್ಣು", ref: "kn-0796" }
+      - { word: "ಮುಚ್ಚು", ref: "kn-0747" }
+  - id: "kn-8178"
+    target: "ನಾನು ಕಣ್ಣು ತೆರೆಯುತ್ತೇನೆ."
+    reading: "nānu kaṇṇu tereyuttēne."
+    ipa: "naːnu kaɳɳu t̪erejut̪t̪eːne"
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", ref: "kn-0610" }
+      - { word: "ಕಣ್ಣು", ref: "kn-0796" }
+      - { word: "ತೆರೆಯುತ್ತೇನೆ", base: "ತೆರೆ", reading: "tere" }
+  - id: "kn-8179"
+    target: "ನನ್ನ ಬೆನ್ನು ಭಾರ."
+    reading: "nanna bennu bhāra."
+    ipa: "nanna bennu bʱaːra"
+    pos: "phrase"
+    bases:
+      - { word: "ನನ್ನ", ref: "kn-0619" }
+      - { word: "ಬೆನ್ನು", ref: "kn-0808" }
+      - { word: "ಭಾರ", ref: "kn-0720" }
+  - id: "kn-8180"
+    target: "ಅವಳ ಮುಖ ನಗುತ್ತದೆ."
+    reading: "avaḷa mukha naguttade."
+    ipa: "aʋaɭa mukʰa naɡut̪t̪ad̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ಅವಳ", ref: "kn-0623" }
+      - { word: "ಮುಖ", ref: "kn-0812" }
+      - { word: "ನಗುತ್ತದೆ", base: "ನಗು", reading: "nagu" }

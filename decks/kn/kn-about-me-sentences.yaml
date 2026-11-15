@@ -1,0 +1,87 @@
+schema: 1
+id: "kn-about-me-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-7384"
+    target: "ನನ್ನ ಹೆಸರು ರವಿ."
+    reading: "nanna hesaru ravi."
+    ipa: "nanna hesaru raʋi"
+    pos: "phrase"
+    bases:
+      - { word: "ನನ್ನ", ref: "kn-0619" }
+      - { word: "ಹೆಸರು", ref: "kn-0196" }
+      - { word: "ರವಿ", base: "ರವಿ", reading: "ravi" }
+  - id: "kn-7385"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    target: "ನಾನು ಊರಿನಲ್ಲಿ ಇದ್ದೇನೆ."
+    reading: "nānu ūrinalli iddēne."
+    ipa: "naːnu uːrinalli id̪d̪eːne"
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", ref: "kn-0610" }
+      - { word: "ಊರಿನಲ್ಲಿ", base: "ಊರು", reading: "ūru" }
+      - { word: "ಇದ್ದೇನೆ", base: "ಇರು", reading: "iru" }
+  - id: "kn-7386"
+    target: "ನಾನು ಕೆಲಸ ಮಾಡುತ್ತೇನೆ."
+    reading: "nānu kelasa māḍuttēne."
+    ipa: "naːnu kelasa maːɖut̪t̪eːne"
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", ref: "kn-0610" }
+      - { word: "ಕೆಲಸ", ref: "kn-0203" }
+      - { word: "ಮಾಡುತ್ತೇನೆ", base: "ಮಾಡು", reading: "māḍu" }
+  - id: "kn-7387"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    target: "ನನ್ನ ಕುಟುಂಬ ಬೆಂಗಳೂರಿನಲ್ಲಿ ಇದೆ."
+    reading: "nanna kuṭumba beṅgaḷūrinalli ide."
+    ipa: "nanna kuʈumba beŋɡaɭuːrinalli id̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ನನ್ನ", ref: "kn-0619" }
+      - { word: "ಕುಟುಂಬ", ref: "kn-0202" }
+      - { word: "ಬೆಂಗಳೂರಿನಲ್ಲಿ", base: "ಬೆಂಗಳೂರು", reading: "beṅgaḷūru" }
+      - { word: "ಇದೆ", base: "ಇರು", reading: "iru" }
+  - id: "kn-7388"
+    target: "ನನ್ನ ಭಾಷೆ ಕನ್ನಡ."
+    reading: "nanna bhāṣe kannaḍa."
+    ipa: "nanna bʱaːʂe kannaɖa"
+    pos: "phrase"
+    bases:
+      - { word: "ನನ್ನ", ref: "kn-0619" }
+      - { word: "ಭಾಷೆ", ref: "kn-0206" }
+      - { word: "ಕನ್ನಡ", base: "ಕನ್ನಡ", reading: "kannaḍa" }
+  - id: "kn-7389"
+    target: "ನನ್ನ ದೇಶ ಇಂಗ್ಲೆಂಡ್."
+    reading: "nanna dēśa iṅgleṇḍ."
+    ipa: "nanna d̪eːʃa iŋɡleɳɖ"
+    pos: "phrase"
+    bases:
+      - { word: "ನನ್ನ", ref: "kn-0619" }
+      - { word: "ದೇಶ", ref: "kn-0205" }
+      - { word: "ಇಂಗ್ಲೆಂಡ್", base: "ಇಂಗ್ಲೆಂಡ್", reading: "iṅgleṇḍ" }
+  - id: "kn-7390"
+    target: "ನೀವು ಎಲ್ಲಿ ಇದ್ದೀರಿ?"
+    reading: "nīvu elli iddīri?"
+    ipa: "niːʋu elli id̪d̪iːri"
+    pos: "phrase"
+    bases:
+      - { word: "ನೀವು", ref: "kn-0143" }
+      - { word: "ಎಲ್ಲಿ", ref: "kn-0169" }
+      - { word: "ಇದ್ದೀರಿ", base: "ಇರು", reading: "iru" }
+  - id: "kn-7391"
+    target: "ನಿಮ್ಮ ಕೆಲಸ ಏನು?"
+    reading: "nimma kelasa ēnu?"
+    ipa: "nimma kelasa eːnu"
+    pos: "phrase"
+    bases:
+      - { word: "ನಿಮ್ಮ", ref: "kn-0621" }
+      - { word: "ಕೆಲಸ", ref: "kn-0203" }
+      - { word: "ಏನು", ref: "kn-0167" }
