@@ -1,0 +1,62 @@
+schema: 1
+id: "mr-en-law-sentences"
+kind: "layer"
+core: "mr-law-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Law words in sentences"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-6025":
+    native: "A theft happened in the house."
+    bases: { "घरात": "in the house", "झाली": "happened" }
+    confusables: { "w1": { why: "Thief, not theft: चोर (cor) is a person who steals." }, "f1": { why: "Masculine: झाला (jhālā) fits a masculine noun; चोरी (cori) is feminine, so झाली (jhāli)." } }
+  "mr-6026":
+    native: "The police recorded the complaint."
+    bases: { "पोलिसांनी": "the police", "नोंदवली": "recorded" }
+    confusables: { "w1": { why: "Law, not complaint: कायदा (kāydā) means law." }, "f1": { why: "Masculine: नोंदवला (nondavlā) fits a masculine noun; तक्रार (takrār) is feminine, so नोंदवली (nondavli)." } }
+  "mr-6027":
+    native: "File a complaint at the police station."
+    bases: { "पोलिसात": "at the police station", "करा": "do" }
+    confusables: { "w1": { why: "Accusation, a formal charge, not a complaint: आरोप (ārop) is a charge." }, "f1": { why: "Past: केली (keli) means did; करा (karā) is the order." } }
+  "mr-6028":
+    native: "Give the evidence."
+    bases: { "द्या": "give" }
+    confusables: { "w1": { why: "Take, not give: घ्या (ghyā) means take." }, "f1": { why: "Plural: पुरावे (purāve) means several pieces of evidence; पुरावा (purāvā) is one." } }
+  "mr-6029":
+    native: "The judge will give the decision."
+    bases: { "निर्णय": "decision", "देतील": "will give" }
+    confusables: { "w1": { why: "Court, the place, not the judge: कोर्ट (korṭ) is the court itself." }, "f1": { why: "Past: दिला (dilā) means gave; देतील (detil) is future." } }
+  "mr-6030":
+    native: "The accusation is false."
+    bases: { "खोटा": "false", "आहे": "is" }
+    confusables: { "w1": { why: "True, not false: खरा (kharā) means true." }, "f1": { why: "Plural: आहेत (āhet) is for more than one thing; आरोप (ārop) is one accusation." } }
+  "mr-6031":
+    native: "He got bail."
+    bases: { "त्याला": "to him", "मिळाला": "got" }
+    confusables: { "w1": { why: "Arrest, not bail: अटक (aṭak) means arrest." }, "f1": { why: "Future: मिळणार (miḷṇār) means will get; मिळाला (miḷālā) is past." } }
+  "mr-6032":
+    native: "The case will be next week."
+    bases: { "पुढच्या": "next", "आठवड्यात": "in the week", "होईल": "will be" }
+    confusables: { "w1": { why: "Law, not case: कायदा (kāydā) means law." }, "f1": { why: "Past: झाला (jhālā) means happened; होईल (hoil) is future." } }
+  "mr-6033":
+    native: "This right belongs to everyone."
+    bases: { "प्रत्येकाचा": "of everyone", "आहे": "is" }
+    confusables: { "w1": { why: "Duty, not right: कर्तव्य (kartavya) means duty." }, "f1": { why: "Plural: आहेत (āhet) is for several things; हक्क (hakk) is one right." } }
+  "mr-6034":
+    native: "Everyone, obey the law."
+    bases: { "सर्वांनी": "everyone", "पाळा": "obey" }
+    confusables: { "w1": { why: "Crime, not law: गुन्हा (gunhā) means crime." }, "f1": { why: "I obey: पाळतो (pāḷto) is a statement; पाळा (pāḷā) is an order." } }
+  "mr-6035":
+    native: "Is he a criminal?"
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "Witness, not criminal: साक्षीदार (sākṣidār) is a person who saw the event." }, "w2": { why: "Crime as a whole: गुन्हेगारी (gunhegāri) means criminality, not a person." } }
+  "mr-6036":
+    native: "The witness told the truth."
+    bases: { "साक्षीदाराने": "the witness", "सांगितलं": "told" }
+    confusables: { "w1": { why: "Lie, not truth: खोटं (khoṭam̐) means a lie." }, "f1": { why: "Order: सांगा (sāṅgā) means tell; सांगितलं (sāṅgitlam̐) is past." } }
+  "mr-6037":
+    native: "The evidence was not found."
+    bases: { "सापडले": "were found", "नाहीत": "are not" }
+    confusables: { "w1": { why: "Singular: पुरावा (purāvā) is one piece of evidence." }, "f1": { why: "Masculine singular: सापडला (sāpḍlā) is for one thing found." } }

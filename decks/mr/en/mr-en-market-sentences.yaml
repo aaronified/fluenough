@@ -1,0 +1,58 @@
+schema: 1
+id: "mr-en-market-sentences"
+kind: "layer"
+core: "mr-market-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Market words in sentences"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-6051":
+    native: "How much did it come to in total?"
+    bases: { "एकूण": "in total", "झाले": "came to" }
+    confusables: { "w1": { why: "Price of one item, not the total: किंमत (kimmat) is a price." }, "f1": { why: "Future: होईल (hoil) means will come to; झाले (jhāle) is past." } }
+  "mr-6052":
+    native: "Give me small change."
+    bases: { "मला": "to me", "सुटे": "small", "द्या": "give" }
+    confusables: { "w1": { why: "Rupee, one unit of money, not change: रुपया (rupyā) is one rupee." }, "f1": { why: "I give: देतो (deto) is a statement; द्या (dyā) is an order." } }
+  "mr-6053":
+    native: "This bag is cheap."
+    bases: { "ही": "this", "आहे": "is" }
+    confusables: { "w1": { why: "Expensive, not cheap: महाग (mahāg) means expensive." }, "f1": { why: "Plural: आहेत (āhet) is for more than one thing; पिशवी (piśvi) is one bag." } }
+  "mr-6054":
+    native: "Where is the shop?"
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "Market, bigger than one shop: बाजार (bājār) is a whole market." }, "f1": { why: "Plural: आहेत (āhet) is for several shops; दुकान (dukān) is one shop." } }
+  "mr-6055":
+    native: "There is a big crowd in the market."
+    bases: { "बाजारात": "in the market", "गर्दी": "crowd", "आहे": "is" }
+    confusables: { "w1": { why: "Shop, one place to buy, not the market: दुकान (dukān) is one shop." }, "f1": { why: "Form: गर्दीत (gardit) means in the crowd; गर्दी (gardi) is the crowd itself." } }
+  "mr-6056":
+    native: "Reduce the price."
+    bases: { "कमी": "less", "करा": "do" }
+    confusables: { "w1": { why: "Increase, the opposite order: वाढवा (vāḍhvā) means raise." }, "f1": { why: "Future: करेन (karen) is a promise, not an order; करा (karā) is the order." } }
+  "mr-6057":
+    native: "I bought two kilos of onions."
+    bases: { "दोन": "two", "कांदे": "onions", "घेतले": "bought" }
+    confusables: { "w1": { why: "Bag, not weight: पिशवी (piśvi) is a bag." }, "f1": { why: "Singular masculine: घेतला (ghetlā) is for one thing; कांदे (kānde) is plural." } }
+  "mr-6058":
+    native: "Give me one bag."
+    bases: { "मला": "to me", "एक": "one", "द्या": "give" }
+    confusables: { "w1": { why: "Not wanted, the opposite: नको (nako) means not wanted." }, "f1": { why: "Past: दिली (dili) means gave, for a feminine thing; द्या (dyā) is an order." } }
+  "mr-6059":
+    native: "The market opens in the morning."
+    bases: { "सकाळी": "in the morning", "उघडतो": "opens" }
+    confusables: { "w1": { why: "Evening, not morning: संध्याकाळी (sandhyākāḷi) means in the evening." }, "f1": { why: "Feminine: उघडते (ughḍte) fits a feminine subject; बाजार (bājār) is masculine, so उघडतो (ughḍto)." } }
+  "mr-6060":
+    native: "Give these back."
+    bases: { "हे": "these", "परत": "back", "द्या": "give back" }
+    confusables: { "w1": { why: "Take, the opposite: घ्या (ghyā) means take." }, "f1": { why: "Singular: पैसा (paisā) is one unit of money; पैसे (paise) is plural." } }
+  "mr-6061":
+    native: "He brings bags from the market."
+    bases: { "बाजारातून": "from the market", "पिशव्या": "bags", "आणतो": "brings" }
+    confusables: { "w1": { why: "From one shop: दुकानातून (dukānātun) means from a shop." }, "f1": { why: "Feminine: आणते (āṇte) fits a feminine subject; तो (to) is masculine, so आणतो (āṇto)." } }
+  "mr-6062":
+    native: "Do you have small change?"
+    bases: { "सुटे": "small", "आहेत": "are" }
+    confusables: { "w1": { why: "Rupee, one coin or note: रुपया (rupyā) is one rupee." }, "f1": { why: "Singular: आहे (āhe) is for one thing; पैसे (paise) is plural." } }

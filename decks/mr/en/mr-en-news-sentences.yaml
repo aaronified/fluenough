@@ -1,0 +1,54 @@
+schema: 1
+id: "mr-en-news-sentences"
+kind: "layer"
+core: "mr-news-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with the news words of this unit"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the news words and verbs of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-6188":
+    native: "Today I read the news."
+    bases: { "वाचतो": "read" }
+    confusables: { "w1": { why: "Newspaper: वृत्तपत्र (vruttapatr) is a printed paper, not news itself." }, "f1": { why: "Plural: वाचतात (vāctāt) is for more than one reader." } }
+  "mr-6189":
+    native: "I hear the news on the radio."
+    bases: { "रेडिओवर": "on the radio", "ऐकतो": "hear" }
+    confusables: { "w1": { why: "TV: टीव्ही (ṭivhi) is a television set, not a radio." }, "f1": { why: "Feminine: ऐकते (aikte) is for a feminine subject, and मी (mi) is the subject here." } }
+  "mr-6190":
+    native: "She writes an article in the newspaper."
+    bases: { "वृत्तपत्रात": "in the newspaper", "लिहिते": "writes" }
+    confusables: { "w1": { why: "Journalist: पत्रकार (patrakār) is a person, not a paper." }, "f1": { why: "Masculine: लिहितो (lihito) is for a masculine subject, and ती (ti) is feminine." } }
+  "mr-6191":
+    native: "The journalist reports a new story."
+    bases: { "नवी": "new", "कळवतो": "reports" }
+    confusables: { "w1": { why: "Happen: घडणे (ghaḍṇe) means to happen." }, "f1": { why: "Masculine: नवा (navā) is for a masculine noun, and बातमी (bātmi) is feminine." } }
+  "mr-6192":
+    native: "The editor checks the article."
+    bases: { "तपासतो": "checks" }
+    confusables: { "w1": { why: "Newspaper: वृत्तपत्र (vruttapatr) is the paper, not the person checking." }, "f1": { why: "Feminine: तपासते (tapāste) is for a feminine subject, and संपादक (sampādak) is masculine." } }
+  "mr-6193":
+    native: "Today's event is important."
+    bases: { "आजची": "today's", "महत्त्वाची": "important", "आहे": "is" }
+    confusables: { "w1": { why: "Happen: घडणे (ghaḍṇe) is a verb, not an event." }, "f1": { why: "Masculine: आजचा (ājcā) is for a masculine noun, and घटना (ghaṭnā) is feminine." } }
+  "mr-6194":
+    native: "There is national news on the news channel."
+    bases: { "वृत्तवाहिनीवर": "on the news channel", "राष्ट्रीय": "national", "आहे": "is" }
+    confusables: { "w1": { why: "TV: टीव्ही (ṭivhi) is a television set, not a channel." }, "f1": { why: "Plural: आहेत (āhet) is for two or more things, and here there is one news item." } }
+  "mr-6195":
+    native: "He gives information."
+    bases: { "देतो": "gives" }
+    confusables: { "w1": { why: "Take: घेणे (gheṇe) means to take." }, "f1": { why: "Feminine: देते (dete) is for a feminine subject, and तो (to) is masculine." } }
+  "mr-6196":
+    native: "The local news is in the headline."
+    bases: { "स्थानिक": "local", "मथळ्यात": "in the headline", "आहे": "is" }
+    confusables: { "w1": { why: "International: आंतरराष्ट्रीय (āntarrāṣṭriy) means international, not local." }, "f1": { why: "Plural: आहेत (āhet) is for two or more; here there is one news item." } }
+  "mr-6197":
+    native: "This event happened yesterday."
+    bases: { "काल": "yesterday", "घडली": "happened" }
+    confusables: { "w1": { why: "Inform: कळवणे (kaḷvṇe) means to inform." }, "f1": { why: "Masculine: घडला (ghaḍlā) is for a masculine subject, and घटना (ghaṭnā) is feminine." } }
+  "mr-6198":
+    native: "The news spreads everywhere."
+    bases: { "पसरते": "spreads", "सगळीकडे": "everywhere" }
+    confusables: { "w1": { why: "Event: घटना (ghaṭnā) is an event, not news that spreads." }, "f1": { why: "Masculine: पसरतो (pasarto) is for a masculine subject, and बातमी (bātmi) is feminine." } }

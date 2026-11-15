@@ -1,0 +1,92 @@
+schema: 1
+id: "mr-work-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-6848"
+    target: "माझी आई डॉक्टर आहे."
+    reading: "mājhi āi ḍôkṭar āhe."
+    ipa: "madʒʱi ai ɖɔkʈər aɦe"
+    pos: "phrase"
+    bases: [{ word: "माझी", reading: "mi", base: "मी" }, { word: "आहे", reading: "asṇe", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-0237", kind: "word" }, { id: "f1", word: "आहेत", reading: "āhet", kind: "form" }, { id: "w2", ref: "mr-0241", kind: "word" }]
+  - id: "mr-6849"
+    target: "तो रोज ऑफिसमध्ये जातो."
+    reading: "to roj ôfisamadhye jāto."
+    ipa: "t̪o rodz ɔfisəməd̪ʱje dzat̪o"
+    pos: "phrase"
+    bases: [{ word: "ऑफिसमध्ये", ref: "mr-0236" }, { word: "जातो", ref: "mr-0710" }]
+    confusables: [{ id: "w1", ref: "mr-0711", kind: "word" }, { id: "f1", word: "जाते", reading: "jāte", kind: "form" }, { id: "w2", ref: "mr-0235", kind: "word" }]
+  - id: "mr-6850"
+    target: "माझे काम चांगले आहे."
+    reading: "mājhe kām cāṅgle āhe."
+    ipa: "madʒʱe kam tsaŋɡle aɦe"
+    pos: "phrase"
+    bases: [{ word: "माझे", reading: "mi", base: "मी" }, { word: "चांगले", ref: "mr-0759" }, { word: "आहे", reading: "asṇe", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-0235", kind: "word" }, { id: "f1", word: "आहेत", reading: "āhet", kind: "form" }, { id: "w2", ref: "mr-0250", kind: "word" }]
+  - id: "mr-6851"
+    target: "पगार महिन्याला मिळतो."
+    reading: "pagār mahinyālā miḷto."
+    ipa: "pəɡar məɦinjala miɭt̪o"
+    pos: "phrase"
+    bases: [{ word: "महिन्याला", reading: "mahinā", base: "महिना" }, { word: "मिळतो", reading: "miḷṇe", base: "मिळणे" }]
+    confusables: [{ id: "w1", ref: "mr-0244", kind: "word" }, { id: "f1", word: "मिळते", reading: "miḷte", kind: "form" }, { id: "w2", ref: "mr-0372", kind: "word" }]
+  - id: "mr-6852"
+    target: "उद्या सुट्टी आहे."
+    reading: "udyā suṭṭi āhe."
+    ipa: "ud̪ja suʈʈi aɦe"
+    pos: "phrase"
+    bases: [{ word: "आहे", reading: "asṇe", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-0474", kind: "word" }, { id: "f1", word: "सुट्ट्या", reading: "suṭṭyā", kind: "word" }, { id: "w2", ref: "mr-0245", kind: "word" }]
+  - id: "mr-6853"
+    target: "मीटिंग दुपारी आहे."
+    reading: "miṭiṅg dupāri āhe."
+    ipa: "miʈiŋɡ d̪upari aɦe"
+    pos: "phrase"
+    bases: [{ word: "दुपारी", reading: "dupār", base: "दुपार" }, { word: "आहे", reading: "asṇe", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-1269", kind: "word" }, { id: "f1", word: "आहेत", reading: "āhet", kind: "form" }, { id: "w2", ref: "mr-0736", kind: "word" }]
+  - id: "mr-6854"
+    target: "शेतकरी शेतात काम करतो."
+    reading: "śetkari śetāt kām karto."
+    ipa: "ʃet̪kəri ʃet̪at̪ kam kərt̪o"
+    pos: "phrase"
+    bases: [{ word: "शेतात", reading: "śet", base: "शेत" }, { word: "करतो", ref: "mr-0712" }]
+    confusables: [{ id: "w1", ref: "mr-0240", kind: "word" }, { id: "f1", word: "करते", reading: "karte", kind: "form" }, { id: "w2", ref: "mr-0237", kind: "word" }]
+  - id: "mr-6855"
+    target: "मालक ऑफिसमध्ये आहे."
+    reading: "mālak ôfisamadhye āhe."
+    ipa: "malək ɔfisəməd̪ʱje aɦe"
+    pos: "phrase"
+    bases: [{ word: "ऑफिसमध्ये", ref: "mr-0236" }, { word: "आहे", reading: "asṇe", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-1264", kind: "word" }, { id: "f1", word: "आहेत", reading: "āhet", kind: "form" }, { id: "w2", ref: "mr-0250", kind: "word" }]
+  - id: "mr-6856"
+    target: "तू काय काम करतोस?"
+    reading: "tu kāy kām karatos?"
+    ipa: "t̪u kaj kam kərət̪os"
+    pos: "phrase"
+    bases: [{ word: "करतोस", ref: "mr-0712" }]
+    confusables: [{ id: "w1", ref: "mr-0676", kind: "word" }, { id: "f1", word: "करता", reading: "kartā", kind: "form" }, { id: "w2", ref: "mr-0145", kind: "word" }]
+  - id: "mr-6857"
+    target: "तो इंजिनिअर आहे."
+    reading: "to iñjiniar āhe."
+    ipa: "t̪o iɲdʒiniər aɦe"
+    pos: "phrase"
+    bases: [{ word: "आहे", reading: "asṇe", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-0241", kind: "word" }, { id: "f1", word: "आहेत", reading: "āhet", kind: "form" }, { id: "w2", ref: "mr-0248", kind: "word" }]
+  - id: "mr-6858"
+    target: "विद्यार्थी शाळेत शिकतात."
+    reading: "vidyārthi śāḷet śiktāt."
+    ipa: "ʋid̪jart̪ʰi ʃaɭet̪ ʃikt̪at̪"
+    pos: "phrase"
+    bases: [{ word: "शाळेत", ref: "mr-0957" }, { word: "शिकतात", ref: "mr-0717" }]
+    confusables: [{ id: "w1", ref: "mr-0237", kind: "word" }, { id: "f1", word: "शिकतो", reading: "śikto", kind: "form" }, { id: "w2", ref: "mr-0718", kind: "word" }]
+  - id: "mr-6859"
+    target: "कंपनी मोठी आहे."
+    reading: "kampani moṭhi āhe."
+    ipa: "kəmpəni moʈʰi aɦe"
+    pos: "phrase"
+    bases: [{ word: "मोठी", reading: "moṭhā", base: "मोठा" }, { word: "आहे", reading: "asṇe", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-0236", kind: "word" }, { id: "f1", word: "आहेत", reading: "āhet", kind: "form" }, { id: "w2", ref: "mr-0250", kind: "word" }]
