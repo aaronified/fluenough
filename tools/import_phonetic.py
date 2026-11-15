@@ -47,6 +47,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import shutil
 import sys
 import urllib.request
@@ -81,6 +82,16 @@ class Variety:
     notes: frozenset[str] = frozenset()
     tags: frozenset[str] = frozenset()
     untagged: bool = True
+    # (regex, replacement) pairs applied in order to every Wiktionary form,
+    # so it reads in the conventions of the course's own rules file. Opt-in
+    # per language in the registry's `normalise:` list; empty for the rest.
+    normalise: tuple[tuple[str, str], ...] = ()
+
+    def normalised(self, form: str) -> str:
+        """[form] with this language's `normalise` pairs applied."""
+        for pattern, replace in self.normalise:
+            form = re.sub(pattern, replace, form)
+        return form
 
     def rank(self, sound: dict) -> int | None:
         """0 for a form marked as this variety, 1 for an untagged one, None
@@ -118,9 +129,15 @@ def load_registry(path: Path = REGISTRY) -> tuple[dict[str, str], dict[str, Vari
                 str(v.get("name") or lang),
                 notes=frozenset(map(str, v.get("notes") or [])),
                 tags=frozenset(map(str, v.get("tags") or [])),
-                untagged=bool(v.get("untagged", True)))
-        except (KeyError, TypeError, AttributeError) as e:
-            raise ValueError(f"{path}: {lang}: needs `dump` and `variety` ({e!r})") from e
+                untagged=bool(v.get("untagged", True)),
+                normalise=tuple(
+                    (str(n["pattern"]), str(n["replace"]))
+                    for n in entry.get("normalise") or []))
+            for pattern, _ in varieties[str(lang)].normalise:
+                re.compile(pattern)
+        except (KeyError, TypeError, AttributeError, re.error) as e:
+            raise ValueError(f"{path}: {lang}: needs `dump` and `variety`, and "
+                             f"`normalise` pairs of `pattern` and `replace` ({e!r})") from e
     return dumps, varieties
 
 
@@ -198,6 +215,8 @@ def narrow_forms(entry: dict, variety: Variety) -> tuple[list[str], bool, bool]:
             other = True
             continue
         form = pp.normalise(ipa)
+        if form is not None:
+            form = pp.normalise(variety.normalised(form))
         if form is None:
             invalid = True
         else:
@@ -261,6 +280,39 @@ def run(lang: str, dump: Path, decks: Path, write: bool) -> tuple[pp.Coverage, d
     return coverage, fills
 
 
+def renormalise(lang: str, decks: Path, write: bool) -> tuple[pp.Coverage, dict]:
+    """Apply [lang]'s `normalise` pairs to the `phonetic` of every card
+    whose `phonetic_source` is `wiktionary`, in place. Needs no dump. A card
+    already in the course's conventions is `unchanged`; the others are
+    `renormalised`. Cards from the rules, or with no source, are never
+    touched."""
+    variety = VARIETIES[lang]
+    coverage = pp.Coverage()
+    fills: dict[Path, dict[str, tuple[str, str]]] = {}
+    outcomes: dict[tuple[Path, str], tuple[str, str]] = {}
+    for card in pp.core_cards(decks, lang):
+        deck = card.file.stem
+        if card.phonetic is None or card.phonetic_source != "wiktionary":
+            coverage.add(deck, "not wiktionary")
+            continue
+        form = pp.normalise(variety.normalised(card.phonetic))
+        if form is None:
+            coverage.add(deck, "invalid")
+        elif form == card.phonetic:
+            coverage.add(deck, "unchanged")
+        else:
+            coverage.add(deck, "renormalised")
+            fills.setdefault(card.file, {})[card.cid] = (form, "wiktionary")
+            outcomes[(card.file, card.cid)] = (deck, "renormalised")
+    pp.apply_fills(fills, outcomes, coverage, write,
+                   replace_rules=True, replace_source="wiktionary")
+    return coverage, fills
+
+
+RENORMALISE_OUTCOMES = ["renormalised", "unchanged", "not wiktionary", "invalid",
+                        pp.UNWRITABLE]
+
+
 def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(
         description="Write narrow IPA from Wiktionary into a language's decks.")
@@ -273,6 +325,10 @@ def main(argv: list[str]) -> int:
                         help="where the download is kept (default: .cache/phonetic)")
     parser.add_argument("--refresh", action="store_true",
                         help="download the dump again")
+    parser.add_argument("--renormalise", action="store_true",
+                        help="instead of importing, apply the language's `normalise` "
+                             "pairs to the Wiktionary cards already in the decks "
+                             "(no dump needed)")
     parser.add_argument("--write", action="store_true",
                         help="patch the decks; without it, only report")
     parser.add_argument("--report", type=Path, help="write the report here")
@@ -284,6 +340,15 @@ def main(argv: list[str]) -> int:
     if not (args.decks / args.lang).is_dir():
         print(f"error: no decks for {args.lang!r} in {args.decks}", file=sys.stderr)
         return 2
+    if args.renormalise:
+        coverage, _ = renormalise(args.lang, args.decks, args.write)
+        report = (f"# Narrow IPA from Wiktionary, renormalised: {args.lang}\n\n"
+                  f"{'Written.' if args.write else 'Report only; nothing was written.'}\n\n"
+                  + coverage.render(args.lang, RENORMALISE_OUTCOMES, title="Coverage"))
+        if args.report:
+            args.report.write_text(report, encoding="utf-8")
+        print(report)
+        return pp.unwritable_exit(coverage, args.write)
     dump = args.dump
     if dump is None:
         try:
