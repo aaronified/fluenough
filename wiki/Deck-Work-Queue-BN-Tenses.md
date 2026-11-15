@@ -22,10 +22,10 @@ Notation: S = past stem (the stem of the present `ami` form with its ending remo
 | BN-032 pilot, DONE | `past` | `bn-grammar-past` | S+লাম / লি / লে / লেন / ল / লেন |
 | BN-033 | `continuous` | `bn-grammar-continuous` | consonant S: S+ছি / ছিস / [ছো, ছ] / ছেন / ছে / ছেন (`করছি করছিস করছো করছ করছেন করছে`); vowel S: S+চ্ছি / চ্ছিস / [চ্ছো, চ্ছ] / চ্ছেন / চ্ছে / চ্ছেন (`যাচ্ছি`, `খাচ্ছে`); S+ছি uses the unchanged stem (`আসছি`, `লিখছি`) |
 | BN-034 | `future` | `bn-grammar-future` | S+ব (shown first) and S+বো / বি / বে / বেন / বে / বেন: ami is a LIST `[করব, করবো]` |
-| BN-035 | `perfect` | `bn-grammar-perfect` | consonant S: S+েছি / েছিস / [েছো, েছ] / েছেন / েছে / েছেন (`করেছি`, `দেখেছে`); vowel S (ā-stem, ো-stem): S with the final vowel sign turned into `ি` + `য়েছি...` (`দাঁড়িয়েছি`, `ঘুমিয়েছি`, `পাঠিয়েছি`, `বেরিয়েছি`) |
+| BN-035 | `perfect` | `bn-grammar-perfect` | **perfect = the course's conjunctive form (`bn-grammar-conjunctive`, slot `conjunctive`, last word of the verb) + ending, with the 11 corrections of 3.1.** Endings: ami ছি / tui ছিস / tumi list [ছো, ছ] / apni ছেন / se ছে / tini ছেন (`করে`->`করেছি`, `জেনে`->`জেনেছি`, `খেয়ে`->`খেয়েছি`, `এসে`->`এসেছি`). Do NOT derive it as stem+েছি: that is wrong for 70 verbs (3.1). `যাই` is the one verb with variants (3.2) |
 | BN-036 | `past-negative` | `bn-grammar-perfect` (same unit as perfect) | present form + নি: ami `করিনি`, tui `করিসনি`, tumi `[করোনি, করনি]` (vowel stems: one form `যাওনি`), apni `করেননি`, se `করেনি`, tini `করেননি`; vowel stems `যাইনি যাসনি যাওনি যাননি যায়নি যাননি`; this is the **present table's six forms + নি**, mechanical; readings by the tool |
 | BN-037 | `past-continuous` | `bn-grammar-past-continuous` | continuous stem (BN-033) + ছিলাম / ছিলি / ছিলে / ছিলেন / ছিল / ছিলেন (`করছিলাম`, vowel S `যাচ্ছিলাম`) |
-| BN-038 | `past-perfect` | `bn-grammar-past-more` | perfect stem (BN-035) + েছিলাম / েছিলি / েছিলে / েছিলেন / েছিল / েছিলেন (`করেছিলাম`, `খেয়েছিলাম`) |
+| BN-038 | `past-perfect` | `bn-grammar-past-more` | the perfect stem of BN-035 (conjunctive form, 3.1 corrections included) + ছিলাম / ছিলি / ছিলে / ছিলেন / ছিল / ছিলেন (`করেছিলাম`, `জেনেছিলাম`, `খেয়েছিলাম`); `যাই` has the list variants of 3.2 |
 | BN-039 | `habitual-past` | `bn-grammar-habitual-past` | S+তাম / তিস / তে / তেন / [তো, ত] / তেন; se is a list; irregular vowel-stem verbs change the stem (`যেতাম`, `খেতাম`, `পেতাম`, `দিতাম`, `নিতাম`, `হতাম`, `এলাম`->`আসতাম`) |
 | BN-040 | `imperative` | `bn-grammar-imperatives` | **slots `["tui", "tumi", "apni"]`, one rule `bn-rule-imperative`.** tui = bare stem as the present tumi form minus its final ো / ও (`দেখো`->`দেখ`, `শোনো`->`শোন`, `লেখো`->`লেখ`, `খাও`->`খা`, `পাঠাও`->`পাঠা`); tumi = the present table's tumi form (`দেখো`); apni = the present table's `please` form (`দেখুন`). The imperative apni repeats the present table's `please` slot: kept (the pattern deck `bn-grammar-imperatives` teaches the three together), owner may drop it (open question OQ-1) |
 
@@ -44,6 +44,99 @@ By the verb word's present `ami` form (the key, last word). Everything else is r
 - A present `ami` ending in `ই` whose stem is a vowel sign is a vowel stem; ending in `ি` is a consonant stem.
 - Present-table spelling quirks the generator must not copy: `ওঠি` (bn-2467 `গাড়িতে ওঠি`) -> stem `উঠ` (the pilot's `IRR` entry `ওঠি`); `ছুঁইস` (bn-2358 tui) is a present-table oddity, derive tui from the ami stem like the others. Wrong-looking source rows that were left as they are and reported (section 5): bn-4168 `ছোঁড়া`, bn-2789, bn-2793, bn-3351.
 - Any form with no real equivalent (none found for the past) -> `null` in `forms`; never leave a slot empty, never invent; the row keeps >= 2 non-null forms.
+
+### 3.1 Changed stems in the perfect and past perfect (added after BN-035 stopped)
+
+**Rule (a -> e).** In a consonant stem whose last vowel is আ (া), the perfect stem has এ (ে): `জানা` `জানি` -> `জেনেছি`, `মারা` -> `মেরেছি`, `থাকা` -> `থেকেছি`, `আনা` -> `এনেছি`, `আসা` -> `এসেছি`, `ভালোবাসা` -> `ভালোবেসেছি`. The same stem is the conjunctive stem (`জেনে`, `মেরে`), which is why the course's conjunctive table is the source for it. Other stem-vowel changes are already in the present `ami` stem (`লেখা` -> `লিখি` -> `লিখেছি`, `শোনা` -> `শুনি` -> `শুনেছি`); derived stems in -ানো raise ো -> ু and এ -> ই and take `-িয়ে-` (`শেখানো` -> `শিখিয়েছি`, `ঘোরানো` -> `ঘুরিয়েছি`, `ভেজানো` -> `ভিজিয়েছি`), and these too are already in the conjunctive table. Source (fetched and read 2026-11-15): Wikipedia, "Bengali grammar", section Verbs, passage on vowel harmony: "the following transformations take place: ô → o, o → u, æ → e, e → i, and a → e", with a → e "only in the perfect tenses" and the example `জানা` -> `আমি জেনেছি`; it does not say "monosyllabic", so the scope below is taken from the course's own 418 verbs. Scope check (script on the YAML, not the validator): of all consonant-stem verbs of the present table with an আ vowel, **none keeps আ** in the perfect, so the rule has no exceptions among the 418, in single and compound verbs alike (`সাঁতার কাটা` -> `সাঁতার কেটেছি`, only the last word changes).
+
+**Mechanical derivation for BN-035 and BN-038.** For each row, take the course's conjunctive form (`decks/bn/bn-grammar-conjunctive.yaml`, row with the same `word`, slot `conjunctive`; present in all 418 rows). Perfect ami = that form + `ছি`; the other slots add the endings of section 2 to the same form (it already ends in `ে`). Past perfect: the same form + `ছিলাম` etc. Of the 418 rows, 348 give exactly the pilot-style forms (stem + `েছি`, vowel stems `-িয়েছি`, the irregulars of section 3); **70 differ from "S + েছি" and are listed below, so a generator that adds `েছি` to the present stem is wrong for exactly these.** The first 59 are right in the conjunctive table; the last 11 are wrong in the course's conjunctive table (it keeps আ: `মারে`) and must be corrected by hand in the new deck; they are reviewer-queue rows for the conjunctive table (do not change that table here).
+
+Changed stem from the conjunctive table (59):
+- `bn-0875` থাকা: present `থাকি` -> perfect stem form `থেকে` (`থেকেছি`)
+- `bn-0881` জানা: present `জানি` -> perfect stem form `জেনে` (`জেনেছি`)
+- `bn-0893` আনা: present `আনি` -> perfect stem form `এনে` (`এনেছি`)
+- `bn-0894` রাখা: present `রাখি` -> perfect stem form `রেখে` (`রেখেছি`)
+- `bn-0896` হাঁটা: present `হাঁটি` -> perfect stem form `হেঁটে` (`হেঁটেছি`)
+- `bn-0898` ডাকা: present `ডাকি` -> perfect stem form `ডেকে` (`ডেকেছি`)
+- `bn-0899` হাসা: present `হাসি` -> perfect stem form `হেসে` (`হেসেছি`)
+- `bn-0736` পারা: present `পারি` -> perfect stem form `পেরে` (`পেরেছি`)
+- `bn-1099` রাঁধা: present `রাঁধি` -> perfect stem form `রেঁধে` (`রেঁধেছি`)
+- `bn-1101` কাটা: present `কাটি` -> perfect stem form `কেটে` (`কেটেছি`)
+- `bn-1102` ভাঙা: present `ভাঙি` -> perfect stem form `ভেঙে` (`ভেঙেছি`)
+- `bn-1109` পৌঁছানো: present `পৌঁছাই` -> perfect stem form `পৌঁছে` (`পৌঁছেছি`)
+- `bn-1111` থামা: present `থামি` -> perfect stem form `থেমে` (`থেমেছি`)
+- `bn-1112` ঢালা: present `ঢালি` -> perfect stem form `ঢেলে` (`ঢেলেছি`)
+- `bn-1114` শেখানো: present `শেখাই` -> perfect stem form `শিখিয়ে` (`শিখিয়েছি`)
+- `bn-1118` ভাবা: present `ভাবি` -> perfect stem form `ভেবে` (`ভেবেছি`)
+- `bn-1119` কাঁদা: present `কাঁদি` -> perfect stem form `কেঁদে` (`কেঁদেছি`)
+- `bn-2098` বাটা: present `বাটি` -> perfect stem form `বেটে` (`বেটেছি`)
+- `bn-2111` মাখা: present `মাখি` -> perfect stem form `মেখে` (`মেখেছি`)
+- `bn-2112` নাড়া: present `নাড়ি` -> perfect stem form `নেড়ে` (`নেড়েছি`)
+- `bn-2114` মেশানো: present `মেশাই` -> perfect stem form `মিশিয়ে` (`মিশিয়েছি`)
+- `bn-2115` ছাঁকা: present `ছাঁকি` -> perfect stem form `ছেঁকে` (`ছেঁকেছি`)
+- `bn-2131` ভেজানো: present `ভেজাই` -> perfect stem form `ভিজিয়ে` (`ভিজিয়েছি`)
+- `bn-2217` আঁকা: present `আঁকি` -> perfect stem form `এঁকে` (`এঁকেছি`)
+- `bn-2230` হারা: present `হারি` -> perfect stem form `হেরে` (`হেরেছি`)
+- `bn-2245` নাচা: present `নাচি` -> perfect stem form `নেচে` (`নেচেছি`)
+- `bn-2248` ভালোবাসা: present `ভালোবাসি` -> perfect stem form `ভালোবেসে` (`ভালোবেসেছি`)
+- `bn-2266` ধুলো ঝাড়া: present `ধুলো ঝাড়ি` -> perfect stem form `ধুলো ঝেড়ে` (`ধুলো ঝেড়েছি`)
+- `bn-2271` বাসন মাজা: present `বাসন মাজি` -> perfect stem form `বাসন মেজে` (`বাসন মেজেছি`)
+- `bn-2272` কাপড় কাচা: present `কাপড় কাচি` -> perfect stem form `কাপড় কেচে` (`কাপড় কেচেছি`)
+- `bn-2276` ঝোলানো: present `ঝোলাই` -> perfect stem form `ঝুলিয়ে` (`ঝুলিয়েছি`)
+- `bn-2277` গোছানো: present `গোছাই` -> perfect stem form `গুছিয়ে` (`গুছিয়েছি`)
+- `bn-2344` কাচা: present `কাচি` -> perfect stem form `কেচে` (`কেচেছি`)
+- `bn-2345` জাগা: present `জাগি` -> perfect stem form `জেগে` (`জেগেছি`)
+- `bn-2347` নেভানো: present `নেভাই` -> perfect stem form `নিভিয়ে` (`নিভিয়েছি`)
+- `bn-2356` বোঝানো: present `বোঝাই` -> perfect stem form `বুঝিয়ে` (`বুঝিয়েছি`)
+- `bn-2360` টানা: present `টানি` -> perfect stem form `টেনে` (`টেনেছি`)
+- `bn-2363` লাগা: present `লাগি` -> perfect stem form `লেগে` (`লেগেছি`)
+- `bn-2364` কাঁপা: present `কাঁপি` -> perfect stem form `কেঁপে` (`কেঁপেছি`)
+- `bn-2365` নামা: present `নামি` -> perfect stem form `নেমে` (`নেমেছি`)
+- `bn-2366` ঘোরানো: present `ঘোরাই` -> perfect stem form `ঘুরিয়ে` (`ঘুরিয়েছি`)
+- `bn-2373` ছাঁটা: present `ছাঁটি` -> perfect stem form `ছেঁটে` (`ছেঁটেছি`)
+- `bn-2376` সাঁতার কাটা: present `সাঁতার কাটি` -> perfect stem form `সাঁতার কেটে` (`সাঁতার কেটেছি`)
+- `bn-2419` ফোন রাখা: present `ফোন রাখি` -> perfect stem form `ফোন রেখে` (`ফোন রেখেছি`)
+- `bn-2423` বাজা: present `বাজি` -> perfect stem form `বেজে` (`বেজেছি`)
+- `bn-2460` টিকিট কাটা: present `টিকিট কাটি` -> perfect stem form `টিকিট কেটে` (`টিকিট কেটেছি`)
+- `bn-2468` গাড়ি থেকে নামা: present `গাড়ি থেকে নামি` -> perfect stem form `গাড়ি থেকে নেমে` (`গাড়ি থেকে নেমেছি`)
+- `bn-2470` গন্তব্যে পৌঁছানো: present `গন্তব্যে পৌঁছাই` -> perfect stem form `গন্তব্যে পৌঁছে` (`গন্তব্যে পৌঁছেছি`)
+- `bn-3092` টিকিট কাটা: present `টিকিট কাটি` -> perfect stem form `টিকিট কেটে` (`টিকিট কেটেছি`)
+- `bn-3498` ফসল কাটা: present `ফসল কাটি` -> perfect stem form `ফসল কেটে` (`ফসল কেটেছি`)
+- `bn-3926` পাশে থাকা: present `পাশে থাকি` -> perfect stem form `পাশে থেকে` (`পাশে থেকেছি`)
+- `bn-3928` মনে রাখা: present `মনে রাখি` -> perfect stem form `মনে রেখে` (`মনে রেখেছি`)
+- `bn-4173` লেখানো: present `লেখাই` -> perfect stem form `লিখিয়ে` (`লিখিয়েছি`)
+- `bn-4194` শোয়ানো: present `শোয়াই` -> perfect stem form `শুইয়ে` (`শুইয়েছি`); the course conjunctive table has a typo `শুইিয়ে`, do not copy it
+- `bn-4480` জোড়ানো: present `জোড়াই` -> perfect stem form `জুড়িয়ে` (`জুড়িয়েছি`)
+- `bn-4482` মেলানো: present `মেলাই` -> perfect stem form `মিলিয়ে` (`মিলিয়েছি`)
+- `bn-4484` ফেরানো: present `ফেরাই` -> perfect stem form `ফিরিয়ে` (`ফিরিয়েছি`)
+- `bn-4485` খোলানো: present `খোলাই` -> perfect stem form `খুলিয়ে` (`খুলিয়েছি`)
+- `bn-4488` ঢোকানো: present `ঢোকাই` -> perfect stem form `ঢুকিয়ে` (`ঢুকিয়েছি`)
+
+Corrected by hand, the conjunctive table is wrong (11):
+- `bn-4145` মারা: course conjunctive table has `মারে` (wrong) -> use `মেরে` (`মেরেছি`)
+- `bn-4148` ঝাড়া: course conjunctive table has `ঝাড়ে` (wrong) -> use `ঝেড়ে` (`ঝেড়েছি`)
+- `bn-4149` মাপা: course conjunctive table has `মাপে` (wrong) -> use `মেপে` (`মেপেছি`)
+- `bn-4151` বাছা: course conjunctive table has `বাছে` (wrong) -> use `বেছে` (`বেছেছি`)
+- `bn-4152` চাখা: course conjunctive table has `চাখে` (wrong) -> use `চেখে` (`চেখেছি`)
+- `bn-4154` ভাসা: course conjunctive table has `ভাসে` (wrong) -> use `ভেসে` (`ভেসেছি`)
+- `bn-4155` চাটা: course conjunctive table has `চাটে` (wrong) -> use `চেটে` (`চেটেছি`)
+- `bn-4157` সাজা: course conjunctive table has `সাজে` (wrong) -> use `সেজে` (`সেজেছি`)
+- `bn-4160` বাঁচা: course conjunctive table has `বাঁচে` (wrong) -> use `বেঁচে` (`বেঁচেছি`)
+- `bn-4164` হাঁকা: course conjunctive table has `হাঁকে` (wrong) -> use `হেঁকে` (`হেঁকেছি`)
+- `bn-4167` চাপা: course conjunctive table has `চাপে` (wrong) -> use `চেপে` (`চেপেছি`)
+
+Present-table spellings that are not raised, so the perfect follows the present and conjunctive spelling and is queued for a bilingual reviewer (standard `ছুঁড়ে`, `মুড়ে`, `পুঁছে`): `bn-4168` `ছোঁড়েছি`, `bn-4170` `মোড়েছি`, `bn-4169` `পোঁছেছি`.
+
+**Verbs that must NOT change:** every other row (348): vowel-final stems keep their own pattern (`দাঁড়া` -> `দাঁড়িয়েছি`), and stems with এ, ো, ই, উ, অ or an already raised vowel keep it (`দেখেছি`, `বলেছি`, `লিখেছি`, `শুনেছি`, `বুঝেছি`, `খেলেছি`, `ফেলেছি`, `পড়েছি`, `ধরেছি`, `উঠেছি`). Check every generated row against the conjunctive form + `ছি` by script; the only allowed differences are the 11 corrections and `যাই`.
+
+### 3.2 List-valued slots in the perfect (and past perfect)
+
+- **tumi is always a list** `[ছো, ছ]` in the perfect: `["করেছো", "করেছ"]`, readings a list of the same length written by the tool (`kôrecho`, `kôreche` is the tool's to decide, not a hand edit).
+- **`যাই` (bn-0873) has two stems, so every slot is a list**: ami `["গিয়েছি", "গেছি"]`, tui `["গিয়েছিস", "গেছিস"]`, tumi `["গিয়েছো", "গিয়েছ", "গেছো", "গেছ"]`, apni `["গিয়েছেন", "গেছেন"]`, se `["গিয়েছে", "গেছে"]`, tini `["গিয়েছেন", "গেছেন"]` (the pattern deck `bn-grammar-perfect` has them). Past perfect of `যাই`: `["গিয়েছিলাম", "গেছিলাম"]`, `["গিয়েছিলি", "গেছিলি"]`, `["গিয়েছিলে", "গেছিলে"]`, `["গিয়েছিলেন", "গেছিলেন"]`, `["গিয়েছিল", "গেছিল"]`, `["গিয়েছিলেন", "গেছিলেন"]` (`bn-grammar-past-more` has them). No other verb has a variant stem; the compound `হেঁটে যাই`, `রেগে যাই`, `হাঁটতে যাই` (last word `যাই`) take the same variants on the last word.
+
+### 3.3 The other tables are NOT affected
+
+BN-036 (past negative) is the present forms + `নি`, so `জানিনি`, `জানেননি`, `থাকিনি`: the present stem is kept. BN-037 (past continuous) is the continuous stem, which is the unchanged present stem (`জানছিলাম`, `থাকছিলাম`). BN-039 (habitual past, `-তাম`) uses the present stem (`জানতাম`, `মারতাম`, `থাকতাম`; its irregulars are only the vowel stems of section 3). BN-040 (imperative: bare stem, tumi, polite) and BN-034 (future `জানব`, `মারব`) keep the stem too. The pilot (past `জানলাম`) was already right. The a -> e change belongs only to the perfect and past perfect (conjunctive and `-ে`-participle stems). Lists: none needed for those four beyond the irregular ones already in section 3.
 
 ## 4. Readings (exact procedure)
 
@@ -153,7 +246,7 @@ Output: `python3 gen_past.py <worktree> rows.txt`, then cat `header + rows.txt +
 ## 7. Task checklist for a Haiku worker (BN-033 to BN-040)
 
 1. New worktree from `origin/decks-live`; merge `origin/decks/bn-tenses` (it has the pilot, this design and the path edits of the earlier workers); branch `decks/bn-tenses` (shared, rule 17).
-2. Copy the generator, change `SUF`, `IRR` and the stem function for the tense (section 2 and 3); run it; read the printed differences; list every hand exception.
+2. For BN-035 and BN-038 take the stem from the conjunctive table plus the 11 corrections of 3.1, never "stem + েছি"; make the generator assert every row against it. Copy the generator, change `SUF`, `IRR` and the stem function for the tense (section 2 and 3); run it; read the printed differences; list every hand exception.
 3. Write core (header, rows, rules), layer, path edit; check by a script (not the validator): 418 rows, same word order as the present table, every slot filled, every placeholder used, no Bengali in prose outside placeholders and readings.
 4. Commit small, merge `origin/decks-live`, push fast-forward to `origin/decks/bn-tenses`; never open a PR (the architect opens one for the branch); never run tests or the validator.
 5. Report: row count, except count, the irregular list, the tool-vs-expected differences, anything unclear (stop and report, never improvise).
