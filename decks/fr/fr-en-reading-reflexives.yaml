@@ -1,0 +1,79 @@
+schema: 1
+id: "fr-en-reading-reflexives"
+name: "Reading: reflexive verbs"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts, one heard and one read, using reflexive verbs with the words taught up to this unit. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-getting-ready"
+    title: "Getting ready"
+    theme: "daily-life"
+    sentences:
+      - text: "Je me réveille à sept heures."
+        ipa: "ʒə mə ʁevɛj a sɛt œʁ"
+      - text: "Je me lave et je me prépare."
+        ipa: "ʒə mə lav e ʒə mə pʁepaʁ"
+      - text: "Après, elle se change."
+        ipa: "apʁɛ ɛl sə ʃɑ̃ʒ"
+      - text: "Nous nous préparons vite."
+        ipa: "nu nu pʁepaʁɔ̃ vit"
+    questions:
+      - id: "fr-3800"
+        prompt: { en: "What time does the speaker wake up?" }
+        options:
+          - { en: "At six" }
+          - { en: "At seven" }
+          - { en: "At eight" }
+        answer: 2
+      - id: "fr-3801"
+        prompt: { en: "What does 'she' do after that?" }
+        options:
+          - { en: "She sleeps" }
+          - { en: "She changes" }
+          - { en: "She leaves" }
+        answer: 2
+      - id: "fr-3802"
+        prompt: { en: "What do 'we' do quickly?" }
+        options:
+          - { en: "Sleep" }
+          - { en: "Eat" }
+          - { en: "Get ready" }
+        answer: 3
+  - id: "fr-morning-checklist"
+    title: "Morning checklist"
+    theme: "time"
+    sentences:
+      - text: "Chaque matin, je me réveille tôt."
+        ipa: "ʃak matɛ̃ ʒə mə ʁevɛj to"
+      - text: "Je me lave le visage et les mains."
+        ipa: "ʒə mə lav lə vizaʒ e le mɛ̃"
+      - text: "Je me prépare avant le travail."
+        ipa: "ʒə mə pʁepaʁ avɑ̃ lə tʁavaj"
+      - text: "Ma sœur se trouve dans la cuisine."
+        ipa: "ma sœʁ sə tʁuv dɑ̃ la kɥizin"
+    questions:
+      - id: "fr-3803"
+        prompt: { en: "When does the speaker wake up?" }
+        options:
+          - { en: "Early" }
+          - { en: "Late" }
+          - { en: "Never" }
+        answer: 1
+      - id: "fr-3804"
+        prompt: { en: "What does the speaker wash?" }
+        options:
+          - { en: "The car" }
+          - { en: "The face and hands" }
+          - { en: "The dog" }
+        answer: 2
+      - id: "fr-3805"
+        prompt: { en: "Where is the speaker's sister?" }
+        options:
+          - { en: "At school" }
+          - { en: "In the kitchen" }
+          - { en: "At work" }
+        answer: 2
