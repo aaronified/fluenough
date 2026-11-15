@@ -6,6 +6,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ## Released
 
+- **v0.10.6**
 - **v0.10.4**
 - **v0.10.3**
 - **v0.10.2**
@@ -365,7 +366,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1361](https://github.com/aaronified/fluenough/issues/1361) Telugu transcription: no reading for rare letters (ఌ ౡ ఁ ౘ ౙ), wrong for ఱ
 - [#1369](https://github.com/aaronified/fluenough/issues/1369) Spanish narrow IPA rules: five gaps found reviewing the first whole-course run
 - [#1428](https://github.com/aaronified/fluenough/issues/1428) Japanese tools: transcribe.py ja emits ASCII g for ぎゃ/ぎょ/ぎゅ; derive/import skip decks/ja/ja-en-hiragana.yaml
-- [#1466](https://github.com/aaronified/fluenough/issues/1466) IPA_RE rejects precomposed ä that import_phonetic's NFC step produces (475 Hindi forms)
 - [#1476](https://github.com/aaronified/fluenough/issues/1476) Marathi: add "mr" to tools/phonetic_languages.yaml (narrow IPA, MR-110)
 - [#1480](https://github.com/aaronified/fluenough/issues/1480) Chinese: Mandarin broad IPA tooling (shared tools change, branch tools/zh-phonetics)
 - [#1483](https://github.com/aaronified/fluenough/issues/1483) Tamil transcription engine in tools/transcribe.py (TA-110)
