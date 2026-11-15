@@ -78,21 +78,21 @@ Task T23 of the kinds plan is where it lands.
 
 | Deliverable | ja | es | fr | te | mr | bn | as | gu |
 |---|---|---|---|---|---|---|---|---|
-| Path to B1 | partial | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
-| Cores and layers | partial | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
-| Sentences, readings | partial | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
+| Path to B1 | partial | done: 102 of 102 units built (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
+| Cores and layers | partial | done: 71 core and 32 grammar decks (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
+| Sentences, readings | partial | done: 68 sentence and 98 reading decks (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
 | Script decks | partial: kana (`ja-en-hiragana`, combos, marks, katakana), kanji `ja-kanji-1` to `-38` (1,026 cards; basic kanji only) | not audited | not audited | partial: `te-script-conjuncts-2` (9 cards) and `te-script-archaic` (1 card), PR #1360 | not audited | not audited | not audited | not audited |
-| Phrasebook | done | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
-| Situations | partial: `ja-situations` at 10 sheets on decks-live | partial: ES-026 merged (PR #1355), `es-situations.yaml` gains four sheets | not audited | partial: `te-situations` at 10 sheets (TE-004, PR #1354) | not audited | not audited | not audited | not audited |
-| Topics incl. script topics | partial: `ja-topics` on decks-live, 22 topics incl. the two kana and six kanji-grade script topics | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
-| Culture, creators, legacy | partial: culture 1 to 4 on decks-live; `creators/ja.yaml` on decks-live (59 creators) | partial: `es-culture-2`, `-3`, `-4` merged (PR #1348) | not audited | partial: `te-culture-2`, `-3`, `-4` merged (PR #1352); culture 1 not built | not audited | not audited | not audited | not audited |
-| Proverbs | partial: proverbs 1 to 3 on decks-live (52 cards) | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
-| Multi-word verbs | partial: five families on decks-live (57 cards) | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
-| Professional | none | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
-| Recommendations, source-it-yourself | partial: 29 entries in `decks/recommendations/ja.yaml` | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
-| Narrow IPA | none | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
-| Review-queue entries | partial | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
-| Sourcing list | batch 1 | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
+| Phrasebook | done | done: 15 cards (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
+| Situations | partial: `ja-situations` at 10 sheets on decks-live | partial: 10 sheets in `es-situations.yaml` (verified 2026-11-15) | not audited | partial: `te-situations` at 10 sheets (TE-004, PR #1354) | not audited | not audited | not audited | not audited |
+| Topics incl. script topics | partial: `ja-topics` on decks-live, 22 topics incl. the two kana and six kanji-grade script topics | partial: 22 topics in `es-topics.yaml` (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
+| Culture, creators, legacy | partial: culture 1 to 4 on decks-live; `creators/ja.yaml` on decks-live (59 creators) | partial: 21 culture items of a target of 72 (`es-culture-1` to `-4`: 6, 2, 9, 4); 34 creators; es-4004, es-4150 and es-4151 have no creator (verified 2026-11-15) | not audited | partial: `te-culture-2`, `-3`, `-4` merged (PR #1352); culture 1 not built | not audited | not audited | not audited | not audited |
+| Proverbs | partial: proverbs 1 to 3 on decks-live (52 cards) | partial: 60 items (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
+| Multi-word verbs | partial: five families on decks-live (57 cards) | partial: 80 items (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
+| Professional | none | held: empty (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
+| Recommendations, source-it-yourself | partial: 29 entries in `decks/recommendations/ja.yaml` | partial: 20 entries in `decks/recommendations/es.yaml` (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
+| Narrow IPA | none | done: narrow and broad IPA on all 2,917 non-set cards (verified 2026-11-15); issue #1369 follow-up (PR #1372) open | not audited | not audited | not audited | not audited | not audited | not audited |
+| Review-queue entries | partial | partial: 12 rows in `docs/review-queue/es.md` on decks-live, all for es-core-100 (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
+| Sourcing list | batch 1 | partial: `Plan-Culture-Spanish` (candidates only, nothing verified) | not audited | not audited | not audited | not audited | not audited | not audited |
 
 Counts on decks-live of all files under `decks/<code>/`, layers included, for orientation only (2026-11-13): ja 442, es 442, fr 380, te 302, mr 266, bn 465, as 436, gu 115. A file count says nothing about coverage.
 
