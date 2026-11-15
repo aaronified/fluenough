@@ -76,6 +76,30 @@ class ReadingTest(unittest.TestCase):
         self.check("te", "గంట", "ganta", "gaṇṭa", "ɡaɳʈa")
         self.check("te", "పంపండి", "pampandi", "pampaṇḍi", "pampaɳɖi")
 
+    def test_telugu_medial_anusvara_rule(self) -> None:
+        # The rule (Plan-Ipa-Revamp-And-Language-Phonology, "Telugu medial
+        # anusvara", #1295): the nasal of the next stop; ṁ word-final and
+        # before s, v, l; m before another letter. With a hint or without.
+        for hint in ("sanchi", None):
+            with self.subTest(hint):
+                t = transcribe("సంచి", "te", hint)
+                self.assertEqual((t.reading, t.ipa), ("sañci", "saɲtʃi"))
+        for word, reading in (
+            ("ఉందా", "undā"),          # before a dental stop: n
+            ("సంపాదన", "sampādana"),     # labial: m
+            ("పంట", "paṇṭa"),           # retroflex: ṇ
+            ("మంచి", "mañci"),          # palatal: ñ
+            ("అన్నంలో", "annaṁlō"),      # final anusvara, then the suffix -lō
+            ("సంయోగం", "samyōgaṁ"),      # before y: m
+        ):
+            with self.subTest(word):
+                self.assertEqual(transcribe(word, "te").reading, reading)
+
+    def test_telugu_anusvara_does_not_follow_the_typed_hint(self) -> None:
+        # A hint typed with m before a dental stop does not make it m.
+        t = transcribe("ఉందా", "te", "umda")
+        self.assertEqual(t.reading, "undā")
+
     def test_other_languages_keep_their_anusvara(self) -> None:
         self.check("hi", "संसार", "sansar", "saṁsār", "sə̃saːr")
 
