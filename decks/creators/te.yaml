@@ -5,7 +5,19 @@ kind: "creators"
 id: "creators-te"
 language: "te"
 license: "CC-BY-SA-4.0"
-eras: []
+eras:
+  - id: "vijayanagara"
+    name: { en: "Vijayanagara" }
+    from: 1336
+    to: 1565
+  - id: "nayaka"
+    name: { en: "Nayaka" }
+    from: 1529
+    to: 1757
+  - id: "colonial"
+    name: { en: "Colonial" }
+    from: 1757
+    to: 1947
 creators:
   - id: "te-k-viswanath"
     name:
@@ -84,3 +96,51 @@ creators:
     died: 1977
     bio:
       en: "Shankarambadi Sundarachari was a Telugu writer. He wrote the words of Maa Telugu Talliki, the state song of Andhra Pradesh."
+  - id: "te-tallapaka-annamacharya"
+    name:
+      en: { text: "Tallapaka Annamacharya" }
+    born: 1408
+    died: 1503
+    era: "vijayanagara"
+    bio:
+      en: "Tallapaka Annamacharya, also called Annamayya, was a Telugu composer and Hindu saint. He wrote devotional songs in praise of Venkateswara, a form of Vishnu."
+    legacy:
+      text: { en: "He is called the grandfather of Telugu songwriting in Telugu literature." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article says that Telugu literature calls him the grandfather of Telugu songwriting, and that he is the earliest known Indian musician to use this song form." }, source: { url: "https://en.wikipedia.org/wiki/Annamacharya", accessed: "2026-11-15" } }
+  - id: "te-tyagaraja"
+    name:
+      en: { text: "Tyagaraja" }
+    born: 1767
+    died: 1847
+    era: "colonial"
+    bio:
+      en: "Tyagaraja was a Carnatic composer and singer. He wrote hundreds of devotional songs, mostly in Telugu, in praise of the god Rama."
+    legacy:
+      text: { en: "He is one of the three great composers of Carnatic music." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article says that Tyagaraja, with Syama Sastri and Muthuswami Dikshitar, is regarded as the Trinity of Carnatic music." }, source: { url: "https://en.wikipedia.org/wiki/Tyagaraja", accessed: "2026-11-15" } }
+  - id: "te-bhadrachala-ramadasu"
+    name:
+      en: { text: "Bhadrachala Ramadasu" }
+    born: { year: 1620, circa: true }
+    died: { year: 1688, circa: true }
+    era: "nayaka"
+    bio:
+      en: "Bhadrachala Ramadasu, also called Kancharla Gopanna, was a devotee of Rama and a poet and composer. He lived in the seventeenth century."
+    legacy:
+      text: { en: "He is remembered as a famous classical composer of the Telugu classical era." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article calls him a famous classical composer of the Telugu classical era and a devotee of Rama." }, source: { url: "https://en.wikipedia.org/wiki/Bhadrachala_Ramadasu", accessed: "2026-11-15" } }
+  - id: "te-kshetrayya"
+    name:
+      en: { text: "Kshetrayya" }
+    born: { year: 1600, circa: true }
+    died: { year: 1680, circa: true }
+    era: "nayaka"
+    bio:
+      en: "Kshetrayya was a Telugu poet who wrote short devotional love songs about the god Krishna in the seventeenth century."
+    legacy:
+      text: { en: "He is credited with more than four thousand compositions, though only a handful survive." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article says he is credited with more than 4000 compositions, although only a handful have survived." }, source: { url: "https://en.wikipedia.org/wiki/Kshetrayya", accessed: "2026-11-15" } }
