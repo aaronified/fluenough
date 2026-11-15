@@ -1,0 +1,50 @@
+schema: 1
+id: "bn-en-reading-comparison"
+name: "Reading: comparison"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Comparing two phones and two places, one to be heard and one to be read, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-which-is-better"
+    title: "Which one is better?"
+    theme: "describing"
+    sentences:
+      - { text: "কোনটা ভালো?", reading: "konṭā bhālo?", ipa: "konʈa bʱalo" }
+      - { text: "এটা ওটার চেয়ে ভালো।", reading: "eṭā oṭār ceye bhālo.", ipa: "eʈa oʈar tʃeje bʱalo" }
+      - { text: "ওটা বেশি দামি।", reading: "oṭā beśi dāmi.", ipa: "oʈa beʃi d̪ami" }
+      - { text: "এটা কম দামি।", reading: "eṭā kôm dāmi.", ipa: "eʈa kɔm d̪ami" }
+      - { text: "এটা সবচেয়ে ভালো।", reading: "eṭā sôbceye bhālo.", ipa: "eʈa sɔbtʃeje bʱalo" }
+    questions:
+      - id: "bn-5412"
+        prompt: { en: "The friend asks which one is better." }
+        answer: true
+      - id: "bn-5413"
+        prompt: { en: "The speaker says that one phone is more expensive." }
+        answer: true
+      - id: "bn-5414"
+        prompt: { en: "The speaker says this phone is cheaper." }
+        answer: true
+  - id: "bn-two-cities"
+    title: "Village and town"
+    theme: "describing"
+    sentences:
+      - { text: "গ্রাম ছোট।", reading: "grām choṭo.", ipa: "ɡram tʃʰoʈo" }
+      - { text: "গ্রামে নদী আর পাহাড়।", reading: "grāme nodi ār pāhāṛ.", ipa: "ɡrame nod̪i ar paɦaɽ" }
+      - { text: "শহরে দোকান বেশি।", reading: "śôhore dokān beśi.", ipa: "ʃɔɦore d̪okan beʃi" }
+      - { text: "শহরে বাস আর ট্রেন।", reading: "śôhore bāś ār ṭren.", ipa: "ʃɔɦore baʃ ar ʈren" }
+      - { text: "গ্রামের বাতাস পরিষ্কার।", reading: "grāmer bātās poriskār.", ipa: "ɡramer bat̪as poriskar" }
+    questions:
+      - id: "bn-5415"
+        prompt: { en: "The text says the village is small." }
+        answer: true
+      - id: "bn-5416"
+        prompt: { en: "Where are there more shops?" }
+        options: [{ en: "In the village" }, { en: "In the town" }]
+        answer: 2
+      - id: "bn-5417"
+        prompt: { en: "The text says the air in the village is clean." }
+        answer: true
