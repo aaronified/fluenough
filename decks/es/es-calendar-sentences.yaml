@@ -8,6 +8,8 @@ tags: ["beginner", "unreviewed"]
 
 cards:
   - id: "es-0997"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     target: "Hoy es jueves y mañana es viernes."
     ipa: "oj es ˈxwebes i maˈɲana es ˈbjeɾnes"
     pos: "phrase"
@@ -15,6 +17,8 @@ cards:
     bases: [{ word: "Hoy", ref: "es-0331" }, { word: "es", ref: "es-0022" }, { word: "jueves", ref: "es-0961" }, { word: "y", ref: "es-0048" }, { word: "mañana", ref: "es-0978" }, { word: "viernes", ref: "es-0962" }]
     confusables: [{ id: "monday", ref: "es-0958", kind: "word" }, { id: "tuesday", ref: "es-0959", kind: "word" }]
   - id: "es-0998"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     target: "La reunión es el martes a las diez."
     ipa: "la rewˈnjon es el ˈmaɾtes a las djeθ"
     pos: "phrase"

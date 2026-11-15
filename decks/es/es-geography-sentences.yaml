@@ -7,6 +7,8 @@ license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed"]
 cards:
   - id: "es-1926"
+    notes:
+      - { id: "n1", kind: "usage" }
     target: "La capital de España es Madrid."
     ipa: "la kapiˈtal de esˈpaɲa es maˈdɾid"
     pos: "phrase"
@@ -21,6 +23,8 @@ cards:
     bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "frontera", ref: "es-1898" }, { word: "entre", ref: "es-0719" }, { word: "Francia", base: "francia" }, { word: "y", ref: "es-0048" }, { word: "España", ref: "es-1910" }]
     confusables: [{ id: "region", ref: "es-1899", kind: "word" }, { id: "zona", ref: "es-1905", kind: "word" }]
   - id: "es-1928"
+    notes:
+      - { id: "n1", kind: "usage" }
     target: "Argentina está en el hemisferio sur."
     ipa: "aɾxenˈtina esˈta en el emisˈfeɾjo suɾ"
     pos: "phrase"
@@ -42,6 +46,8 @@ cards:
     bases: [{ word: "Lima", base: "lima" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "capital", ref: "es-1895" }, { word: "de", base: "de" }, { word: "Perú", ref: "es-1914" }]
     confusables: [{ id: "chile", ref: "es-1915", kind: "word" }, { id: "colombia", ref: "es-1913", kind: "word" }]
   - id: "es-1931"
+    notes:
+      - { id: "n1", kind: "usage" }
     target: "Viajo por el mundo con mis amigos."
     ipa: "ˈbjaxo poɾ el ˈmundo kon mis aˈmiɡos"
     pos: "phrase"

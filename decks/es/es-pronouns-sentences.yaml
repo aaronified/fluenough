@@ -126,6 +126,7 @@ cards:
     phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
+    notes: [{ id: "llamar", kind: "usage" }]
     bases:
       - { word: "Alguien", ref: "es-0132" }
       - { word: "llama", base: "llamar" }
@@ -163,6 +164,7 @@ cards:
     phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
+    notes: [{ id: "de", kind: "usage" }]
     bases:
       - { word: "El", base: "el" }
       - { word: "chico", ref: "es-0136" }
@@ -182,6 +184,7 @@ cards:
     phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
+    notes: [{ id: "mi", kind: "behaviour" }]
     bases:
       - { word: "La", base: "la" }
       - { word: "persona", ref: "es-0135" }
