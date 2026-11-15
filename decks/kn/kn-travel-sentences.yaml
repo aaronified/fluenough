@@ -1,0 +1,97 @@
+schema: 1
+id: "kn-travel-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-8251"
+    target: "ನನಗೆ ಒಂದು ಕೊಠಡಿ ಬೇಕು."
+    reading: "nanage ondu koṭhaḍi bēku."
+    ipa: "nanaɡe ond̪u koʈʰaɖi beːku"
+    pos: "phrase"
+    bases:
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಒಂದು", ref: "kn-0244" }
+      - { word: "ಕೊಠಡಿ", ref: "kn-1386" }
+      - { word: "ಬೇಕು", ref: "kn-0332" }
+  - id: "kn-8252"
+    target: "ನಿಮ್ಮ ಪಾಸ್ಪೋರ್ಟ್ ತೋರಿಸಿ."
+    reading: "nimma pāspōrṭ tōrisi."
+    ipa: "nimma paːspoːrʈ t̪oːrisi"
+    pos: "phrase"
+    bases:
+      - { word: "ನಿಮ್ಮ", ref: "kn-0621" }
+      - { word: "ಪಾಸ್ಪೋರ್ಟ್", ref: "kn-1390" }
+      - { word: "ತೋರಿಸಿ", base: "ತೋರಿಸು", reading: "tōrisu" }
+  - id: "kn-8253"
+    target: "ಸೂಟ್ಕೇಸ್ ಎಲ್ಲಿ?"
+    reading: "sūṭkēs elli?"
+    ipa: "suːʈkeːs elli"
+    pos: "phrase"
+    bases:
+      - { word: "ಸೂಟ್ಕೇಸ್", ref: "kn-1393" }
+      - { word: "ಎಲ್ಲಿ", ref: "kn-0169" }
+  - id: "kn-8254"
+    target: "ನಿಮ್ಮ ಬುಕಿಂಗ್ ಇದೆ."
+    reading: "nimma bukiṅg ide."
+    ipa: "nimma bukiŋɡ id̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ನಿಮ್ಮ", ref: "kn-0621" }
+      - { word: "ಬುಕಿಂಗ್", ref: "kn-1388" }
+      - { word: "ಇದೆ", base: "ಇರು", reading: "iru" }
+  - id: "kn-8255"
+    target: "ಇದು ನಿಮ್ಮ ಕೊಠಡಿ."
+    reading: "idu nimma koṭhaḍi."
+    ipa: "id̪u nimma koʈʰaɖi"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ನಿಮ್ಮ", ref: "kn-0621" }
+      - { word: "ಕೊಠಡಿ", ref: "kn-1386" }
+  - id: "kn-8256"
+    target: "ಸ್ಮಾರಕ ತುಂಬಾ ಹಳೆಯದು."
+    reading: "smāraka tumbā haḷeyadu."
+    ipa: "smaːraka t̪umbaː haɭejad̪u"
+    pos: "phrase"
+    bases:
+      - { word: "ಸ್ಮಾರಕ", ref: "kn-1395" }
+      - { word: "ತುಂಬಾ", ref: "kn-0668" }
+      - { word: "ಹಳೆಯದು", base: "ಹಳೆಯ", reading: "haḷeya" }
+  - id: "kn-8257"
+    target: "ಬೀಚ್ ಸುರಕ್ಷಿತ?"
+    reading: "bīc surakṣita?"
+    ipa: "biːtʃ surakʂit̪a"
+    pos: "phrase"
+    bases:
+      - { word: "ಬೀಚ್", ref: "kn-1396" }
+      - { word: "ಸುರಕ್ಷಿತ", ref: "kn-1400" }
+  - id: "kn-8258"
+    target: "ಸ್ಥಳ ಪ್ರೇಕ್ಷಣೀಯ."
+    reading: "sthaḷa prēkṣaṇīya."
+    ipa: "st̪ʰaɭa preːkʂaɳiːja"
+    pos: "phrase"
+    bases:
+      - { word: "ಸ್ಥಳ", ref: "kn-1394" }
+      - { word: "ಪ್ರೇಕ್ಷಣೀಯ", ref: "kn-1398" }
+  - id: "kn-8259"
+    target: "ನೀನು ಯಾವಾಗ ಹೊರಡುತ್ತೀಯ?"
+    reading: "nīnu yāvāga horaḍuttīya?"
+    ipa: "niːnu jaːʋaːɡa horaɖut̪t̪iːja"
+    pos: "phrase"
+    bases:
+      - { word: "ನೀನು", ref: "kn-0611" }
+      - { word: "ಯಾವಾಗ", ref: "kn-0170" }
+      - { word: "ಹೊರಡುತ್ತೀಯ", base: "ಹೊರಡು", reading: "horaḍu" }
+  - id: "kn-8260"
+    target: "ಕೊಠಡಿ ಕಾಯ್ದಿರಿಸು."
+    reading: "koṭhaḍi kāydirisu."
+    ipa: "koʈʰaɖi kaːjd̪irisu"
+    pos: "phrase"
+    bases:
+      - { word: "ಕೊಠಡಿ", ref: "kn-1386" }
+      - { word: "ಕಾಯ್ದಿರಿಸು", ref: "kn-1389" }
