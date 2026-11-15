@@ -1,0 +1,79 @@
+schema: 1
+id: "fr-en-reading-conditional"
+name: "Reading: would: conditionnel présent"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about what someone would like and what they could do, and polite requests in a shop, with the conditional of common verbs. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-what-would-you-do"
+    title: "What would you do"
+    theme: "daily-life"
+    sentences:
+      - text: "Moi, je voudrais un café."
+        ipa: "mwa ʒə vudʁɛ œ̃ kafe"
+      - text: "Tu pourrais venir demain ?"
+        ipa: "ty puʁɛ vəniʁ dəmɛ̃"
+      - text: "Nous aimerions aller au parc."
+        ipa: "nu ɛmʁijɔ̃ ale o paʁk"
+      - text: "Vous devriez dormir plus."
+        ipa: "vu dəvʁije dɔʁmiʁ plys"
+    questions:
+      - id: "fr-3920"
+        prompt: { en: "What would the speaker like?" }
+        options:
+          - { en: "A taxi" }
+          - { en: "A coffee" }
+          - { en: "A bed" }
+        answer: 2
+      - id: "fr-3921"
+        prompt: { en: "What could 'you' do?" }
+        options:
+          - { en: "Leave now" }
+          - { en: "Pay later" }
+          - { en: "Come tomorrow" }
+        answer: 3
+      - id: "fr-3922"
+        prompt: { en: "What should 'you' do?" }
+        options:
+          - { en: "Sleep more" }
+          - { en: "Work more" }
+          - { en: "Eat less" }
+        answer: 1
+  - id: "fr-polite-requests"
+    title: "Polite requests"
+    theme: "shopping"
+    sentences:
+      - text: "Je voudrais un sac, s'il vous plaît."
+        ipa: "ʒə vudʁɛ œ̃ sak sil vu plɛ"
+      - text: "Pourriez-vous m'aider ?"
+        ipa: "puʁje vu mede"
+      - text: "Auriez-vous une chambre ?"
+        ipa: "ɔʁje vu yn ʃɑ̃bʁ"
+      - text: "Je voudrais partir demain."
+        ipa: "ʒə vudʁɛ paʁtiʁ dəmɛ̃"
+    questions:
+      - id: "fr-3923"
+        prompt: { en: "What does the speaker ask for politely?" }
+        options:
+          - { en: "A ticket" }
+          - { en: "A bag" }
+          - { en: "A key" }
+        answer: 2
+      - id: "fr-3924"
+        prompt: { en: "What does the speaker ask the shop assistant?" }
+        options:
+          - { en: "Money" }
+          - { en: "A receipt" }
+          - { en: "Help" }
+        answer: 3
+      - id: "fr-3925"
+        prompt: { en: "When does the speaker want to leave?" }
+        options:
+          - { en: "Tomorrow" }
+          - { en: "Today" }
+          - { en: "Never" }
+        answer: 1

@@ -1,0 +1,79 @@
+schema: 1
+id: "fr-en-reading-passe-compose-imparfait"
+name: "Reading: the past: passé composé and imparfait"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about a bus that came late and a holiday, with the passé composé for what happened and the imparfait for what was going on. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-it-was-raining-when"
+    title: "It was raining"
+    theme: "transport"
+    sentences:
+      - text: "Il pleuvait quand le bus est arrivé."
+        ipa: "il pløvɛ kɑ̃ lə bys ɛt aʁive"
+      - text: "Nous attendions le bus."
+        ipa: "nu ɑ̃tɑ̃djɔ̃ lə bys"
+      - text: "Hier, j'ai eu froid dans le bus."
+        ipa: "jɛʁ ʒe y fʁwa dɑ̃ lə bys"
+      - text: "Mon frère a joué dehors."
+        ipa: "mɔ̃ fʁɛʁ a ʒwe dəɔʁ"
+    questions:
+      - id: "fr-3900"
+        prompt: { en: "What was happening when the bus arrived?" }
+        options:
+          - { en: "It was snowing" }
+          - { en: "It was hot" }
+          - { en: "It was raining" }
+        answer: 3
+      - id: "fr-3901"
+        prompt: { en: "What were 'we' doing?" }
+        options:
+          - { en: "Waiting for the bus" }
+          - { en: "Eating at a restaurant" }
+          - { en: "Sleeping" }
+        answer: 1
+      - id: "fr-3902"
+        prompt: { en: "How did the speaker feel on the bus?" }
+        options:
+          - { en: "Hungry" }
+          - { en: "Cold" }
+          - { en: "Tired" }
+        answer: 2
+  - id: "fr-holiday-story"
+    title: "A holiday"
+    theme: "travel"
+    sentences:
+      - text: "Nous avons mangé au restaurant."
+        ipa: "nu zavɔ̃ mɑ̃ʒe o ʁɛstɔʁɑ̃"
+      - text: "Il faisait toujours chaud."
+        ipa: "il fəzɛ tuʒuʁ ʃo"
+      - text: "Hier, elle a regardé par la fenêtre."
+        ipa: "jɛʁ ɛl a ʁəɡaʁde paʁ la fənɛtʁ"
+      - text: "Elle regardait souvent la rue."
+        ipa: "ɛl ʁəɡaʁdɛ suvɑ̃ la ʁy"
+    questions:
+      - id: "fr-3903"
+        prompt: { en: "What was the weather like?" }
+        options:
+          - { en: "It was cold" }
+          - { en: "It was raining" }
+          - { en: "It was hot" }
+        answer: 3
+      - id: "fr-3904"
+        prompt: { en: "What did she do yesterday?" }
+        options:
+          - { en: "She looked out of the window" }
+          - { en: "She went to bed" }
+          - { en: "She cooked" }
+        answer: 1
+      - id: "fr-3905"
+        prompt: { en: "What did she often look at?" }
+        options:
+          - { en: "The bus" }
+          - { en: "The street" }
+          - { en: "The menu" }
+        answer: 2
