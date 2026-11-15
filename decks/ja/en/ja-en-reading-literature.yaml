@@ -1,0 +1,74 @@
+"schema": 1
+"id": "ja-en-reading-literature"
+"name": "Japanese reading: literature"
+"kind": "reading"
+"language":
+  "code": "ja"
+  "iso639_3": "jpn"
+  "name": "Japanese"
+  "script": "kana"
+  "tts": "ja-JP"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+  - "beginner"
+  - "unreviewed"
+"passages":
+  - "id": "ja-literature-1"
+    "title": "A back-cover blurb"
+    "sentences":
+      - "text": "このしょうせつは、ゆうめいなちょさくです。"
+        "reading": "kono shousetsu wa, yuumeina chosaku desu."
+      - "text": "ちょしゃはあたらしいほんをかきました。"
+        "reading": "chosha wa atarashii hon o kakimashita."
+      - "text": "はなしはとてもおもしろいです。"
+        "reading": "hanashi wa totemo omoshiroi desu."
+      - "text": "どくしゃはきっとすきになります。"
+        "reading": "dokusha wa kitto suki ni narimasu."
+    "questions":
+      - "id": "ja-8658"
+        "prompt":
+          "en": "The book is a famous literary work."
+        "answer": true
+      - "id": "ja-8659"
+        "prompt":
+          "en": "Who wrote the new book?"
+        "options":
+          - "en": "The author"
+          - "en": "The editor"
+        "answer": 1
+      - "id": "ja-8660"
+        "prompt":
+          "en": "The story is boring."
+        "answer": false
+  - "id": "ja-literature-2"
+    "title": "A haiku in class"
+    "sentences":
+      - "text": "せんせいははいくをよみます。"
+        "reading": "sensei wa haiku o yomimasu."
+      - "text": "はいくはみじかいうたです。"
+        "reading": "haiku wa mijikai uta desu."
+      - "text": "きごはきせつをあらわします。"
+        "reading": "kigo wa kisetsu o arawashimasu."
+      - "text": "わたしはたんかもすきです。"
+        "reading": "watashi wa tanka mo suki desu."
+    "questions":
+      - "id": "ja-8661"
+        "prompt":
+          "en": "A season word shows the season."
+        "answer": true
+      - "id": "ja-8662"
+        "prompt":
+          "en": "The haiku is a long poem."
+        "answer": false
+      - "id": "ja-8663"
+        "prompt":
+          "en": "Which poem does the speaker also like?"
+        "options":
+          - "en": "Tanka"
+          - "en": "Senryu"
+        "answer": 1
