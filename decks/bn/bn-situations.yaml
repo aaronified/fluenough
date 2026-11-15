@@ -1,0 +1,42 @@
+# Bengali's situation sheets (#724): lists of card ids, never card text. Every id
+# is a card of a Bengali deck, so progress, audio and notes are the card's own.
+# Draft: the choice of cards and the Bengali titles need a Bengali reviewer.
+schema: 1
+id: bn-situations
+name: "Bengali situations"
+kind: situations
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+license: "CC-BY-SA-4.0"
+description: "Key phrases and words for everyday moments. Not yet checked by a Bengali speaker: please report any mistake."
+tags: ["unreviewed"]
+situations:
+  - id: "taxi"
+    icon: "taxi"
+    title: { en: "Taxi and rickshaw", bn: "ট্যাক্সি ও রিকশা (ṭêksi o rikśā)" }
+    phrases: ["bn-2484", "bn-0284", "bn-0285", "bn-0286", "bn-0287", "bn-6250", "bn-6251", "bn-6252"]
+    words: ["bn-0282", "bn-0584", "bn-0281", "bn-0283", "bn-0303", "bn-0304", "bn-0306", "bn-0288", "bn-0310", "bn-0305"]
+  - id: "shops"
+    icon: "shops"
+    title: { en: "Shopping", bn: "কেনাকাটা" }
+    phrases: ["bn-0243", "bn-0249", "bn-0545", "bn-0547", "bn-0548", "bn-1749", "bn-0253", "bn-1741"]
+    words: ["bn-0244", "bn-0246", "bn-0248", "bn-0247", "bn-1696", "bn-1697", "bn-1714", "bn-1700", "bn-0252", "bn-0245"]
+  - id: "eat"
+    icon: "eat"
+    title: { en: "Eating out", bn: "বাইরে খাওয়া (bāire khāoyā)" }
+    phrases: ["bn-0359", "bn-0354", "bn-0360", "bn-1342", "bn-1348", "bn-6253", "bn-6254", "bn-6255"]
+    words: ["bn-0349", "bn-0350", "bn-0351", "bn-0352", "bn-0353", "bn-0356", "bn-0357", "bn-0358", "bn-0355"]
+  - id: "doctor"
+    icon: "doctor"
+    title: { en: "Doctor and pharmacy", bn: "ডাক্তার ও ওষুধের দোকান (ḍāktār o ośudher dokān)" }
+    phrases: ["bn-0726", "bn-0735", "bn-1026", "bn-1815", "bn-1824", "bn-1796", "bn-1812", "bn-1801"]
+    words: ["bn-0376", "bn-0377", "bn-0378", "bn-0379", "bn-0727", "bn-0728", "bn-0729", "bn-0733", "bn-0734"]
+  - id: "traffic"
+    icon: "traffic"
+    title: { en: "Traffic stop", bn: "ট্রাফিক থামানো (ṭrāfik thāmāno)" }
+    phrases: ["bn-0372", "bn-0373", "bn-0380", "bn-0287", "bn-6256", "bn-6257"]
+    words: ["bn-0375", "bn-0313", "bn-0314", "bn-0371", "bn-2454", "bn-2455", "bn-2453", "bn-2896"]
+  - id: "rail"
+    icon: "rail"
+    title: { en: "Rail station", bn: "রেল স্টেশন (rel sṭeśon)" }
+    phrases: ["bn-2482", "bn-2486", "bn-0285", "bn-4237", "bn-6258", "bn-6259", "bn-6260"]
+    words: ["bn-0288", "bn-0289", "bn-0290", "bn-2445", "bn-2446", "bn-2452", "bn-2451", "bn-1164"]
