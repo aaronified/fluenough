@@ -1218,7 +1218,7 @@ class IsoMacronReadings(unittest.TestCase):
         self.assertEqual(self.errors("l\u0325\u0304", "kl\u0325\u0304ti"), [])
 
     def test_a_bogus_combining_mark_still_fails(self) -> None:
-        errors = self.errors("l\u0325\u0301")
+        errors = self.errors("l\u0325\u0308")
         self.assertTrue(any("not in the te romanisation" in e for e in errors),
                         errors)
 
