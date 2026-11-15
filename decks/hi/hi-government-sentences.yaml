@@ -1,0 +1,179 @@
+schema: 1
+id: "hi-government-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-5372"
+    target: "सरकार ने नई नीति बनाई।"
+    reading: "sarkār nē naī nīti banāī."
+    ipa: "sərkaːr neː nəiː niːt̪ɪ bənaːiː"
+    pos: "phrase"
+    bases:
+      - { word: "सरकार", ref: "hi-2276" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "नई", base: "नया", reading: "naī" }
+      - { word: "नीति", ref: "hi-2289" }
+      - { word: "बनाई", base: "बनाना", reading: "banāī" }
+    confusables:
+      - { id: "w1", word: "सरकारी", reading: "sarkārī", kind: "word" }
+      - { id: "w2", word: "नियम", reading: "niyam", kind: "word" }
+  - id: "hi-5373"
+    target: "यह सरकारी दफ़्तर कहाँ है?"
+    reading: "yah sarkārī daftar kahām̐ hai?"
+    ipa: "jəɦ sərkaːriː d̪əft̪ər kəɦãː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "सरकारी", ref: "hi-2277" }
+      - { word: "दफ़्तर", base: "दफ़्तर", reading: "daftar" }
+      - { word: "कहाँ", ref: "hi-0159" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "विभाग", reading: "vibhāg", kind: "word" }
+      - { id: "w2", word: "मंत्रालय", reading: "mantrālay", kind: "word" }
+  - id: "hi-5374"
+    target: "मतदाता अपना वोट डालते हैं।"
+    reading: "matdātā apnā vōṭ ḍāltē haim̐."
+    ipa: "mət̪d̪aːt̪aː əpnaː ʋoːʈ ɖaːlt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "मतदाता", ref: "hi-2286" }
+      - { word: "अपना", base: "अपना", reading: "apnā" }
+      - { word: "वोट", base: "वोट", reading: "vōṭ" }
+      - { word: "डालते", base: "डालना", reading: "ḍāltē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "मतदान", reading: "matdān", kind: "word" }
+      - { id: "w2", word: "नागरिक", reading: "nāgrik", kind: "word" }
+  - id: "hi-5375"
+    target: "पंचायत का मुखिया कौन है?"
+    reading: "pañcāyat kā mukhiyā kaun hai?"
+    ipa: "pəɲtʃaːjət̪ kaː mʊkʰɪjaː kɔːn ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "पंचायत", ref: "hi-2278" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "मुखिया", base: "मुखिया", reading: "mukhiyā" }
+      - { word: "कौन", ref: "hi-0158" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "सचिव", reading: "saciv", kind: "word" }
+      - { id: "w2", word: "अधिकारी", reading: "adhikārī", kind: "word" }
+  - id: "hi-5376"
+    target: "आपको अनुमति चाहिए।"
+    reading: "āpkō anumati cāhiē."
+    ipa: "aːpkoː ənʊmət̪ɪ tʃaːɦɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "आपको", base: "आप", reading: "āpkō" }
+      - { word: "अनुमति", ref: "hi-2290" }
+      - { word: "चाहिए", ref: "hi-0460" }
+    confusables:
+      - { id: "w1", word: "अधिकार", reading: "adhikār", kind: "word" }
+      - { id: "w2", word: "प्रमाणपत्र", reading: "pramāṇpatr", kind: "word" }
+  - id: "hi-5377"
+    target: "ड्राइविंग लाइसेंस के लिए फ़ॉर्म भरिए।"
+    reading: "ḍrāiviṅg lāisēṁs kē liē fôrm bhariē."
+    ipa: "ɖraːɪʋɪŋɡ laːɪsẽːs keː lɪeː fɔrm bʱərɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "ड्राइविंग", base: "ड्राइविंग", reading: "ḍrāiviṅg" }
+      - { word: "लाइसेंस", ref: "hi-2292" }
+      - { word: "के", ref: "hi-0065" }
+      - { word: "लिए", base: "लिए", reading: "liē" }
+      - { word: "फ़ॉर्म", ref: "hi-2259" }
+      - { word: "भरिए", base: "भरना", reading: "bhariē" }
+    confusables:
+      - { id: "w1", word: "आवेदन", reading: "āvēdan", kind: "word" }
+      - { id: "w2", word: "प्रमाणपत्र", reading: "pramāṇpatr", kind: "word" }
+  - id: "hi-5378"
+    target: "हर नागरिक को वोट का अधिकार है।"
+    reading: "har nāgrik kō vōṭ kā adhikār hai."
+    ipa: "ɦər naːɡrɪk koː ʋoːʈ kaː əd̪ʱɪkaːr ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "हर", base: "हर", reading: "har" }
+      - { word: "नागरिक", ref: "hi-2295" }
+      - { word: "को", ref: "hi-0277" }
+      - { word: "वोट", base: "वोट", reading: "vōṭ" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "अधिकार", ref: "hi-2296" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "मतदाता", reading: "matdātā", kind: "word" }
+      - { id: "w2", word: "अनुमति", reading: "anumti", kind: "word" }
+  - id: "hi-5379"
+    target: "संसद का सत्र कल शुरू होगा।"
+    reading: "saṁsad kā satr kal śurū hōgā."
+    ipa: "sə̃səd̪ kaː sət̪r kəl ʃʊruː ɦoːɡaː"
+    pos: "phrase"
+    bases:
+      - { word: "संसद", ref: "hi-2283" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "सत्र", ref: "hi-2298" }
+      - { word: "कल", ref: "hi-0300" }
+      - { word: "शुरू", base: "शुरू", reading: "śurū" }
+      - { word: "होगा", base: "होना", reading: "hōgā" }
+    confusables:
+      - { id: "w1", word: "विधानसभा", reading: "vidhānsbhā", kind: "word" }
+      - { id: "w2", word: "परिषद", reading: "pariśad", kind: "word" }
+  - id: "hi-5380"
+    target: "सरकार ने कर बढ़ाया।"
+    reading: "sarkār nē kar baṛhāyā."
+    ipa: "sərkaːr neː kər bəɽʱaːjaː"
+    pos: "phrase"
+    bases:
+      - { word: "सरकार", ref: "hi-2276" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "कर", ref: "hi-2293" }
+      - { word: "बढ़ाया", base: "बढ़ाना", reading: "baṛhāyā" }
+    confusables:
+      - { id: "w1", word: "आयोग", reading: "āyōg", kind: "word" }
+      - { id: "w2", word: "नियम", reading: "niyam", kind: "word" }
+  - id: "hi-5381"
+    target: "सेना ने गाँव में मदद दी।"
+    reading: "sēnā nē gām̐v mēm̐ madad dī."
+    ipa: "seːnaː neː ɡãːʋ mẽː məd̪əd̪ d̪iː"
+    pos: "phrase"
+    bases:
+      - { word: "सेना", ref: "hi-2297" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "गाँव", base: "गाँव", reading: "gām̐v" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "मदद", ref: "hi-0352" }
+      - { word: "दी", base: "देना", reading: "dī" }
+    confusables:
+      - { id: "w1", word: "सेवा", reading: "sēvā", kind: "word" }
+      - { id: "w2", word: "सचिव", reading: "saciv", kind: "word" }
+  - id: "hi-5382"
+    target: "नियम सबके लिए बराबर है।"
+    reading: "niyam sabkē liē barābar hai."
+    ipa: "nɪjəm səbkeː lɪeː bəraːbər ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "नियम", ref: "hi-2281" }
+      - { word: "सबके", base: "सब", reading: "sabkē" }
+      - { word: "लिए", base: "लिए", reading: "liē" }
+      - { word: "बराबर", base: "बराबर", reading: "barābar" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "अधिकार", reading: "adhikār", kind: "word" }
+      - { id: "w2", word: "नीति", reading: "nīti", kind: "word" }
+  - id: "hi-5383"
+    target: "मेरे सचिव ने फ़ाइल भेजी।"
+    reading: "mērē saciv nē fāil bhējī."
+    ipa: "meːreː sətʃɪʋ neː faːɪl bʱeːdʒiː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरे", base: "मैं", reading: "mērē" }
+      - { word: "सचिव", ref: "hi-2288" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "फ़ाइल", base: "फ़ाइल", reading: "fāil" }
+      - { word: "भेजी", base: "भेजना", reading: "bhējī" }
+    confusables:
+      - { id: "w1", word: "अधिकारी", reading: "adhikārī", kind: "word" }
+      - { id: "w2", word: "विभाग", reading: "vibhāg", kind: "word" }

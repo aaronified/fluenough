@@ -1,0 +1,175 @@
+schema: 1
+id: "hi-services-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-5360"
+    target: "मेरा खाता खुल गया।"
+    reading: "mērā khātā khul gayā."
+    ipa: "meːraː kʰaːt̪aː kʰʊl ɡəjaː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरा", base: "मैं", reading: "mērā" }
+      - { word: "खाता", ref: "hi-2244" }
+      - { word: "खुल", base: "खुलना", reading: "khul" }
+      - { word: "गया", base: "जाना", reading: "gayā" }
+    confusables:
+      - { id: "w1", word: "जमा", reading: "jamā", kind: "word" }
+      - { id: "w2", word: "उपलब्ध", reading: "uplabdh", kind: "word" }
+  - id: "hi-5361"
+    target: "एटीएम कहाँ है?"
+    reading: "ēṭīēm kahām̐ hai?"
+    ipa: "eːʈiːeːm kəɦãː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "एटीएम", ref: "hi-2245" }
+      - { word: "कहाँ", ref: "hi-0159" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "बैंक", reading: "baiṅk", kind: "word" }
+      - { id: "w2", word: "डाक", reading: "ḍāk", kind: "word" }
+  - id: "hi-5362"
+    target: "यह पार्सल कल डाक से जाएगा।"
+    reading: "yah pārsal kal ḍāk sē jāēgā."
+    ipa: "jəɦ paːrsəl kəl ɖaːk seː dʒaːeːɡaː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "पार्सल", ref: "hi-2247" }
+      - { word: "कल", ref: "hi-0300" }
+      - { word: "डाक", ref: "hi-2246" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "जाएगा", base: "जाना", reading: "jāēgā" }
+    confusables:
+      - { id: "w1", word: "भुगतान", reading: "bhugtān", kind: "word" }
+      - { id: "w2", word: "दस्तावेज़", reading: "dastāvēz", kind: "word" }
+  - id: "hi-5363"
+    target: "दर्ज़ी ने कपड़ा ठीक कर दिया।"
+    reading: "darzī nē kapṛā ṭhīk kar diyā."
+    ipa: "d̪ərziː neː kəpɽaː ʈʰiːk kər d̪ɪjaː"
+    pos: "phrase"
+    bases:
+      - { word: "दर्ज़ी", ref: "hi-2252" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "कपड़ा", base: "कपड़ा", reading: "kapṛā" }
+      - { word: "ठीक", ref: "hi-1703" }
+      - { word: "कर", base: "करना", reading: "kar" }
+      - { word: "दिया", base: "देना", reading: "diyā" }
+    confusables:
+      - { id: "w1", word: "धोबी", reading: "dhōbī", kind: "word" }
+      - { id: "w2", word: "नाई", reading: "nāī", kind: "word" }
+  - id: "hi-5364"
+    target: "मोची ने मेरे जूते की मरम्मत कर दी।"
+    reading: "mōcī nē mērē jūtē kī marammat kar dī."
+    ipa: "moːtʃiː neː meːreː dʒuːt̪eː kiː mərəmmət̪ kər d̪iː"
+    pos: "phrase"
+    bases:
+      - { word: "मोची", ref: "hi-2253" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "मेरे", base: "मैं", reading: "mērē" }
+      - { word: "जूते", base: "जूता", reading: "jūtē" }
+      - { word: "की", ref: "hi-0061" }
+      - { word: "मरम्मत", ref: "hi-2248" }
+      - { word: "कर", base: "करना", reading: "kar" }
+      - { word: "दी", base: "देना", reading: "dī" }
+    confusables:
+      - { id: "w1", word: "प्लंबर", reading: "plambar", kind: "word" }
+      - { id: "w2", word: "मिस्त्री", reading: "mistrī", kind: "word" }
+  - id: "hi-5365"
+    target: "प्लंबर कब आएगा?"
+    reading: "plambar kab āēgā?"
+    ipa: "pləmbər kəb aːeːɡaː"
+    pos: "phrase"
+    bases:
+      - { word: "प्लंबर", ref: "hi-2254" }
+      - { word: "कब", ref: "hi-0160" }
+      - { word: "आएगा", base: "आना", reading: "āēgā" }
+    confusables:
+      - { id: "w1", word: "मिस्त्री", reading: "mistrī", kind: "word" }
+      - { id: "w2", word: "कारीगर", reading: "kārīgar", kind: "word" }
+  - id: "hi-5366"
+    target: "कृपया यह फ़ॉर्म भरिए।"
+    reading: "kripyā yah fôrm bhariē."
+    ipa: "krɪpjaː jəɦ fɔrm bʱərɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "कृपया", base: "कृपया", reading: "kripyā" }
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "फ़ॉर्म", ref: "hi-2259" }
+      - { word: "भरिए", base: "भरना", reading: "bhariē" }
+    confusables:
+      - { id: "w1", word: "आवेदन", reading: "āvēdan", kind: "word" }
+      - { id: "w2", word: "दस्तावेज़", reading: "dastāvēz", kind: "word" }
+  - id: "hi-5367"
+    target: "उनका भुगतान हो गया।"
+    reading: "unkā bhugtān hō gayā."
+    ipa: "ʊnkaː bʱʊɡt̪aːn ɦoː ɡəjaː"
+    pos: "phrase"
+    bases:
+      - { word: "उनका", base: "वह", reading: "unkā" }
+      - { word: "भुगतान", ref: "hi-2267" }
+      - { word: "हो", base: "होना", reading: "hō" }
+      - { word: "गया", base: "जाना", reading: "gayā" }
+    confusables:
+      - { id: "w1", word: "जमा", reading: "jamā", kind: "word" }
+      - { id: "w2", word: "ब्याज", reading: "byāj", kind: "word" }
+  - id: "hi-5368"
+    target: "मुझे बैंक से कर्ज़ चाहिए।"
+    reading: "mujhē baiṅk sē karz cāhiē."
+    ipa: "mʊdʒʱeː bɛːŋk seː kərz tʃaːɦɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "मुझे", base: "मैं", reading: "mujhē" }
+      - { word: "बैंक", ref: "hi-1057" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "कर्ज़", ref: "hi-2261" }
+      - { word: "चाहिए", ref: "hi-0460" }
+    confusables:
+      - { id: "w1", word: "निवेश", reading: "nivēś", kind: "word" }
+      - { id: "w2", word: "ब्याज", reading: "byāj", kind: "word" }
+  - id: "hi-5369"
+    target: "इस खाते में पैसा जमा कीजिए।"
+    reading: "is khātē mēm̐ paisā jamā kījiē."
+    ipa: "ɪs kʰaːt̪eː mẽː pɛːsaː dʒəmaː kiːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "इस", base: "यह", reading: "is" }
+      - { word: "खाते", base: "खाता", reading: "khātē" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "पैसा", ref: "hi-2227" }
+      - { word: "जमा", ref: "hi-2264" }
+      - { word: "कीजिए", base: "करना", reading: "kījiē" }
+    confusables:
+      - { id: "w1", word: "चेक", reading: "cēk", kind: "word" }
+      - { id: "w2", word: "निवेश", reading: "nivēś", kind: "word" }
+  - id: "hi-5370"
+    target: "क्या यह सेवा उपलब्ध है?"
+    reading: "kyā yah sēvā uplabdh hai?"
+    ipa: "kjaː jəɦ seːʋaː ʊpləbd̪ʱ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "क्या", ref: "hi-0157" }
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "सेवा", ref: "hi-2249" }
+      - { word: "उपलब्ध", ref: "hi-2269" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "शिकायत", reading: "śikāyat", kind: "word" }
+      - { id: "w2", word: "आवेदन", reading: "āvēdan", kind: "word" }
+  - id: "hi-5371"
+    target: "मेरी शिकायत दर्ज कीजिए।"
+    reading: "mērī śikāyat darj kījiē."
+    ipa: "meːriː ʃɪkaːjət̪ d̪ərdʒ kiːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", base: "मैं", reading: "mērī" }
+      - { word: "शिकायत", ref: "hi-2257" }
+      - { word: "दर्ज", base: "दर्ज", reading: "darj" }
+      - { word: "कीजिए", base: "करना", reading: "kījiē" }
+    confusables:
+      - { id: "w1", word: "सेवा", reading: "sēvā", kind: "word" }
+      - { id: "w2", word: "आवेदन", reading: "āvēdan", kind: "word" }
