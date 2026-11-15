@@ -177,8 +177,15 @@ language), which the owner rejected.
     read). Spanish: the untagged form, which Wiktionary does not say is
     Castilian or Latin American while the decks' `ipa` writes θ, so a
     Latin-American learner's card shows a Castilian broad form beside a
-    form of unknown accent: left for the owner. Any other language needs its
-    variety named in `VARIETIES` first.
+    form of unknown accent: left for the owner. The languages are data (#1285): the
+    dump name and variety of each are in `tools/phonetic_languages.yaml`,
+    read by the tool, and a new language is an entry there with no code
+    change. Telugu and Japanese are registered as the untagged form of
+    their dumps (measured on the kaikki.org dumps, 2026-11: Telugu 1,655
+    of 1,670 narrow forms carry no note or tag, Japanese 26,661 of 26,689;
+    the rest are regional, letter names or alternative readings and are not
+    taken). Telugu has few narrow forms (about 5% of cards), so its narrow
+    IPA comes mostly from rules.
   - **Rules.** One YAML file per language, `decks/<lang>/<lang>-phonetics.yaml`
     (kind `phonetics`, a new file kind, see "Phonetic rules files" in
     [Deck-Format](Deck-Format)): ordered regular-expression rules, each with a
@@ -361,6 +368,52 @@ Colloquial variety together with others; the deck must say which it teaches.
 **Order:** the owner's deck priority (Telugu, Bengali, Spanish, Marathi,
 Kannada, Assamese, Chinese, Hindustani, Japanese, Korean, Toki Pona), with
 Bengali as the pilot because the owner named it (**Proposed**).
+
+## Telugu medial anusvara (decided 2026-11-15, #1295)
+
+Telugu readings are based on ISO 15919, which writes every anusvara as ṁ. The
+course already departs from that before a stop, where the cards write the
+nasal that is said (owner, 2026-10-19: a word-final anusvara is `ṁ`,
+course-wide). Counted on the stored Telugu cards and examples (3,413
+distinct target and reading pairs with an anusvara on 2026-11-15, of which
+3,287 could be analysed; the issue's 3,387 counts targets only; the counts
+below are occurrences), by the letter that follows the anusvara:
+
+| Next letter | Stored nasal |
+|---|---|
+| a stop (k g c j ṭ ḍ t d p b and their aspirates) | the stop's nasal in about 96% (ṅ 345 of 368 before k and g; ñ 366 of 380 before c and j; ṇ 1,029 of 1,038 before ṭ and ḍ; n 1,489 of 1,564 before t and d; m 147 of 156 before p and b), `ṁ` in nearly all the rest |
+| word-final | `ṁ` 1,597, `m` 3 |
+| s | `ṁ` 25, `m` 3 |
+| v | `ṁ` 9, `m` 3 |
+| l | `ṁ` 59, `m` 59 |
+| ś, r, h | `m` 12, `ṁ` 3 |
+| y, ṣ, ḷ, ṟ | no card in the decks has an anusvara before them |
+
+**The rule** (`tools/transcribe.py`, `te`; decided by the architect under the
+issue's mandate; the owner may veto): before a stop or a nasal the anusvara is
+the nasal of that letter (uṇḍi, saṅgītaṁ, mañci, sampādana); word-final, and
+before s, v or l, it is `ṁ` (annaṁ, māṁsaṁ, annaṁlō); before every other
+letter (ś, ṣ, h, y, r, ḷ, ṟ) it is `m` (samyōgaṁ, samśayaṁ, samhāraṁ,
+samrakṣaṇa). A hint that types an m or n does not change it. A hint with no
+nasal at all still gives `m̐` (unchanged by this change).
+
+**`m` before ś, ṣ, h, y, r, ḷ, ṟ is a deliberate departure from ISO 15919**,
+which writes `ṁ` there. It is kept because it matches the existing cards (12
+readings against 3 before ś, r and h) and makes the deck pass smaller.
+
+Reasons for the rest: before a stop the cards' majority is overwhelming and it
+is what is said. `m` before l is more common in the cards (every such word is
+a -lō word: prapañcamlō), but `ṁ` is chosen because it is the owner's
+word-final letter (the anusvara ends the stem; -lō is a suffix) and ISO's; `s`
+and `v` were already `ṁ`. IPA writes `m` for `ṁ` and the stop's nasal for the
+others.
+
+**Deck pass** (deck content, done on `decks-live` by deck workers, never by
+hand): rewrite the stored `reading` and `ipa` of every Telugu card and example
+whose nasal differs from the rule. About 192 of the 3,287 readings differ
+(mostly `ṁ` before a stop, `m` before l). Other differences the tool shows
+(ph for f, r̥ for ṛ, word-initial vowels) are separate and are not part of
+this rule.
 
 ## Steps (Proposed, each one pull request)
 

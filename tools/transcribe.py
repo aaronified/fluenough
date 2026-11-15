@@ -659,7 +659,7 @@ HOMORGANIC = {"k": "ṅ", "kh": "ṅ", "g": "ṅ", "gh": "ṅ", "ṅ": "ṅ",
               "ṭ": "ṇ", "ṭh": "ṇ", "ḍ": "ṇ", "ḍh": "ṇ", "ṇ": "ṇ",
               "t": "n", "th": "n", "d": "n", "dh": "n", "n": "n",
               "p": "m", "ph": "m", "b": "m", "bh": "m", "m": "m"}
-TE_ANUSVARA_BEFORE = {"s", "v"}
+TE_ANUSVARA_BEFORE = {"s", "v", "l"}
 HOMORGANIC_IPA = {"ṅ": "ŋ", "ñ": "ɲ", "ṇ": "ɳ", "n": "n", "m": "m"}
 FRONT = {"i", "ii", "e", "se", "ai", "ce"}
 
@@ -783,11 +783,23 @@ def _transcribe(text: str, lang: str, hint: str | None) -> Transcription:
                 i_iso, i_ipa = "ṅ", "ŋ"
             else:
                 nxt = _next_letter(units, k)
-                if lang == "te" and (nxt is None or nxt in TE_ANUSVARA_BEFORE):
-                    # The course writes a word-final anusvara ṁ: annaṁ, and
-                    # one before s or v: māṁsaṁ, saṁvatsaraṁ.
-                    # Before a stop it is the nasal of that stop (saṅgītaṁ).
-                    i_iso, i_ipa = "ṁ", "m"
+                if lang == "te":
+                    # Telugu (Plan-Ipa-Revamp-And-Language-Phonology,
+                    # "Telugu medial anusvara"): before a stop or a nasal
+                    # the anusvara is written as that letter's nasal, as the
+                    # course's cards do: uṇḍi, saṅgītaṁ, mañci. Word-final
+                    # and before s, v or l it is ṁ, ISO 15919's letter for
+                    # it: annaṁ, māṁsaṁ, annaṁlō. Before any other letter
+                    # (ś, ṣ, h, y, r, ḷ, ṟ) it is m: samyōgaṁ (a deliberate
+                    # departure from ISO 15919, kept to match the cards). A
+                    # hint that types an m or n does not change this.
+                    if nxt in HOMORGANIC:
+                        n = HOMORGANIC[nxt]
+                        i_iso, i_ipa = n, HOMORGANIC_IPA[n]
+                    elif nxt is None or nxt in TE_ANUSVARA_BEFORE:
+                        i_iso, i_ipa = "ṁ", "m"
+                    else:
+                        i_iso, i_ipa = "m", "m"
                 elif typed.startswith("m") and (nxt is None or
                                               nxt not in HOMORGANIC or
                                               HOMORGANIC[nxt] == "m"):
