@@ -1,0 +1,58 @@
+schema: 1
+id: "mr-en-health-sentences"
+kind: "layer"
+core: "mr-health-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Health: sentences"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the health words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-5800":
+    native: "I exercise every day."
+    bases: { "करतो": "do" }
+    confusables: { "w1": { why: "तो (to) means he, not I: मी (mi) is I." }, "f1": { why: "करते (karte) is the feminine form, so it would say that a woman does it." } }
+  "mr-5801":
+    native: "Is your diet nutritious?"
+    bases: { "तुमचा": "your", "आहे": "is", "का": "a question marker" }
+    confusables: { "w1": { why: "नाही (nāhi) means not, which would turn the question into a negative one." }, "f1": { why: "आहेत (āhet) is for two or more; आहार (āhār) is one thing, so आहे (āhe) is used." } }
+  "mr-5802":
+    native: "I get good sleep at night."
+    bases: { "मला": "to me", "चांगली": "good", "लागते": "get" }
+    confusables: { "w1": { why: "रोज (roj) means every day; the sentence says at night, रात्री (rātri)." }, "f1": { why: "लागतो (lāgto) is for a masculine thing; झोप (jhop) is feminine, so लागते (lāgte) is used." } }
+  "mr-5803":
+    native: "My father has diabetes."
+    bases: { "माझ्या": "my", "वडिलांना": "to the father", "आहे": "has" }
+    confusables: { "w1": { why: "ती (ti) means she; this sentence is about a father." }, "f1": { why: "आहेत (āhet) is for two or more; मधुमेह (madhumeh) is one illness, so आहे (āhe) is used." } }
+  "mr-5804":
+    native: "The doctor told me to exercise."
+    bases: { "डॉक्टरांनी": "the doctor", "मला": "me", "करायला": "to do", "सांगितले": "told" }
+    confusables: { "w1": { why: "तू (tu) means you; the doctor told मला (malā), so the listener is not the one told." }, "w2": { why: "आता (ātā) means now; the advice was given in the past." } }
+  "mr-5805":
+    native: "Smoking is bad for health."
+    bases: { "आरोग्यासाठी": "for health", "आहे": "is" }
+    confusables: { "w1": { why: "चांगले (cāṅgale) means good, the opposite of वाईट (vāiṭ)." }, "w2": { why: "नाही (nāhi) means not, which would reverse the sentence." } }
+  "mr-5806":
+    native: "I got the vaccine."
+    bases: { "घेतली": "got" }
+    confusables: { "w1": { why: "तो (to) means he, not I." }, "f1": { why: "घेतला (ghetlā) is masculine; लस (las) is feminine, so घेतली (ghetli) is used." } }
+  "mr-5807":
+    native: "Is there a treatment for this disease?"
+    bases: { "आजारावर": "for this disease", "आहे": "is", "का": "a question marker" }
+    confusables: { "w1": { why: "कधी (kadhi) asks when, not whether there is a treatment." }, "f1": { why: "आहेत (āhet) is plural; उपचार (upcār) is one thing, so आहे (āhe) is used." } }
+  "mr-5808":
+    native: "I know first aid."
+    bases: { "मला": "to me", "आहे": "is" }
+    confusables: { "w1": { why: "नाही (nāhi) means not, which would reverse the meaning." }, "f1": { why: "आहेत (āhet) is plural, but the subject here is one person, so आहे (āhe) is used." } }
+  "mr-5809":
+    native: "Take care."
+    bases: { "घ्या": "take (polite)" }
+    confusables: { "w1": { why: "नाही (nāhi) means not; the sentence is a polite command." }, "f1": { why: "घे (ghe) is the command for one person you know well; घ्या (ghyā) is polite." } }
+  "mr-5810":
+    native: "He will recover soon."
+    bases: { "होईल": "will become" }
+    confusables: { "w1": { why: "आता (ātā) means now; लवकर (lavkar) means soon." }, "f1": { why: "होतो (hoto) is the past tense, not the future." }, "w2": { why: "ती (ti) means she; the sentence is about a man." } }
+  "mr-5811":
+    native: "Eat food that has vitamins."
+    bases: { "असलेले": "that has", "खा": "eat" }
+    confusables: { "w1": { why: "इथे (ithe) means here; the sentence is about food." }, "f1": { why: "असलेली (asleli) is feminine; अन्न (anna) is neuter, so असलेले (aslele) is used." } }

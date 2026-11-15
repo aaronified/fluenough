@@ -1,0 +1,39 @@
+schema: 1
+id: "mr-en-cooking-sentences"
+kind: "layer"
+core: "mr-cooking-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about cooking"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the words of the cooking unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-5355":
+    native: "This meal is very tasty."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "खारट (khāraṭ) means salty, not tasty." }, "f1": { why: "आहेत (āhet) is for more than one thing; this sentence has one meal." } }
+  "mr-5356":
+    native: "Mother adds ghee to the vegetable dish."
+    confusables: { "f1": { why: "घालतो (ghālto) is for one man, not a mother." }, "w1": { why: "भाजणे (bhājṇe) means to roast, not to put in." } }
+  "mr-5357":
+    native: "She kneads the dough."
+    bases: { "मळते": "knead" }
+    confusables: { "f1": { why: "मळतो (maḷto) is for one man; this sentence has a woman." }, "w1": { why: "मसाला (masālā) is a spice mix, not dough." } }
+  "mr-5358":
+    native: "The vegetable is salty."
+    bases: { "भाजी": "vegetable dish", "आहे": "is" }
+    confusables: { "w1": { why: "चविष्ट (caviṣṭa) means tasty, the opposite." }, "f1": { why: "आहेत (āhet) is for more than one thing; this sentence has one dish." } }
+  "mr-5359":
+    native: "I like tasty vegetable dishes."
+    bases: { "मला": "to me" }
+    confusables: { "f1": { why: "आवडतो (āvaḍto) agrees with a masculine thing, and भाजी (bhāji) is feminine." }, "w1": { why: "नाही (nāhi) means no or not; with this sentence it would say I dislike it." } }
+  "mr-5360":
+    native: "Add a little spice mix."
+    bases: { "थोडा": "a little" }
+    confusables: { "f1": { why: "घाल (ghāl) is the informal order, said to a child or a friend." }, "w1": { why: "तूप (tup) is ghee, not a spice mix." } }
+  "mr-5361":
+    native: "Now cook."
+    confusables: { "f1": { why: "कर (kar) is the informal order, said to a child or a friend." }, "w1": { why: "भाजणे (bhājṇe) means to roast, a particular way of cooking." } }
+  "mr-5362":
+    native: "She roasts the flatbreads."
+    confusables: { "f1": { why: "भाजतो (bhājto) is for one man; this sentence has a woman." }, "w1": { why: "कणिक (kaṇik) is dough, not a roasted bread." } }
