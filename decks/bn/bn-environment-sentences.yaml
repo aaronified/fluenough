@@ -16,6 +16,7 @@ cards:
     phonetic_source: "rules"
     pos: "phrase"
     bases: [{ word: "নদীতে", ref: "bn-1050" }, { word: "দূষণ", ref: "bn-3392" }, { word: "বেশি", ref: "bn-0555" }]
+    notes: [{ id: "n1", kind: "behaviour" }]
     confusables: [{ id: "c1", word: "ঝরনা", reading: "jharnā", kind: "word" }, { id: "c2", word: "খাল", reading: "khāl", kind: "word" }]
   - id: "bn-3442"
     target: "গাছ লাগাও, বায়ু পরিষ্কার হবে।"
@@ -25,6 +26,7 @@ cards:
     phonetic_source: "rules"
     pos: "phrase"
     bases: [{ word: "গাছ", ref: "bn-2285" }, { word: "লাগাও", base: "লাগানো", reading: "lāgāo" }, { word: "বায়ু", ref: "bn-3415" }, { word: "পরিষ্কার", ref: "bn-0626" }, { word: "হবে", ref: "bn-0874" }]
+    notes: [{ id: "n1", kind: "behaviour" }]
     confusables: [{ id: "c1", word: "ধুলো", reading: "dhulo", kind: "word" }, { id: "c2", word: "কুয়াশা", reading: "kuyāśā", kind: "word" }]
   - id: "bn-3443"
     target: "পৃথিবী ক্রমশ গরম হচ্ছে।"
@@ -34,6 +36,7 @@ cards:
     phonetic_source: "rules"
     pos: "phrase"
     bases: [{ word: "পৃথিবী", ref: "bn-3426" }, { word: "ক্রমশ", ref: "bn-3438" }, { word: "গরম", ref: "bn-0060" }, { word: "হচ্ছে", ref: "bn-0874" }]
+    notes: [{ id: "n1", kind: "behaviour" }]
     confusables: [{ id: "c1", word: "ঠান্ডা", reading: "ṭhānḍā", kind: "word" }, { id: "c2", word: "শীতল", reading: "śītal", kind: "word" }]
   - id: "bn-3444"
     target: "বর্জ্য ফেলো না, পরিবেশ বাঁচাও।"
@@ -43,6 +46,7 @@ cards:
     phonetic_source: "rules"
     pos: "phrase"
     bases: [{ word: "বর্জ্য", ref: "bn-3398" }, { word: "ফেলো", ref: "bn-1103" }, { word: "না", base: "না", reading: "nā" }, { word: "পরিবেশ", ref: "bn-3391" }, { word: "বাঁচাও", base: "বাঁচানো", reading: "bām̐cāo" }]
+    notes: [{ id: "n1", kind: "usage" }]
     confusables: [{ id: "c1", word: "পুনর্ব্যবহার", reading: "punarbyabahār", kind: "word" }, { id: "c2", word: "কুড়ানো", reading: "kuṛānō", kind: "word" }]
   - id: "bn-3445"
     target: "প্লাস্টিক কম ব্যবহার করো।"
@@ -62,6 +66,7 @@ cards:
     pos: "phrase"
     rules: ["bn-rule-present-third"]
     bases: [{ word: "বন্যপ্রাণী", ref: "bn-3400" }, { word: "বনে", ref: "bn-0053" }, { word: "থাকে", ref: "bn-0875" }]
+    notes: [{ id: "n1", kind: "behaviour" }]
     confusables: [{ id: "c1", word: "গৃহপালিত", reading: "gṛhapālit", kind: "word" }, { id: "c2", word: "শহুরে", reading: "śahure", kind: "word" }]
   - id: "bn-3447"
     target: "কার্বন কমানো দরকার।"
@@ -71,6 +76,7 @@ cards:
     phonetic_source: "rules"
     pos: "phrase"
     bases: [{ word: "কার্বন", ref: "bn-3403" }, { word: "কমানো", base: "কমানো", reading: "kômāno" }, { word: "দরকার", ref: "bn-0577" }]
+    notes: [{ id: "n1", kind: "usage" }]
     confusables: [{ id: "c1", word: "অক্সিজেন", reading: "oksijen", kind: "word" }, { id: "c2", word: "ধোঁয়া", reading: "dhoẏā", kind: "word" }]
   - id: "bn-3448"
     target: "ভূমিকম্পের সময় সাবধান থাকো।"
@@ -80,6 +86,7 @@ cards:
     phonetic_source: "rules"
     pos: "phrase"
     bases: [{ word: "ভূমিকম্পের", ref: "bn-3406" }, { word: "সময়", ref: "bn-0061" }, { word: "সাবধান", base: "সাবধান", reading: "sābodhān" }, { word: "থাকো", ref: "bn-0875" }]
+    notes: [{ id: "n1", kind: "usage" }]
     confusables: [{ id: "c1", word: "বন্যা", reading: "banyā", kind: "word" }, { id: "c2", word: "ঝড়", reading: "jhôṛ", kind: "word" }]
   - id: "bn-3449"
     target: "এই মাটি উর্বর।"
@@ -107,4 +114,5 @@ cards:
     phonetic_source: "rules"
     pos: "phrase"
     bases: [{ word: "দিনে", ref: "bn-0325" }, { word: "বায়ু", ref: "bn-3415" }, { word: "খারাপ", ref: "bn-0618" }, { word: "হচ্ছে", ref: "bn-0874" }]
+    notes: [{ id: "n1", kind: "usage" }]
     confusables: [{ id: "c1", word: "ভালো", reading: "bhālo", kind: "word" }, { id: "c2", word: "পরিষ্কার", reading: "pariṣkār", kind: "word" }]
