@@ -1,0 +1,205 @@
+# Popular works of Karnataka in Kannada, recommended for the learner to find (some are in the public domain): the learner finds them (a library, a shop, a service) and the app asks
+# the questions after the learner has marked the work as seen, read or heard. Nothing of a work is quoted (wiki/Plan-Language-Completeness.md,
+# "Source-it-yourself works"). No links are given: no link has been checked. Briefings and questions use only what the page named in the creators file or the work's own
+# Wikipedia article says (read 2026-11-15). Levels are defaults (B1) until a reviewer sets them. Not reviewed by a Kannada speaker (docs/review-queue/kn.md).
+schema: 1
+kind: "recommendations"
+id: "recommendations-kn"
+language: "kn"
+license: "CC-BY-SA-4.0"
+recommendations:
+  - id: "kn-rec-kittur-chennamma"
+    medium: "film"
+    title: { text: "ಕಿತ್ತೂರು ಚೆನ್ನಮ್ಮ", reading: "kittūru cennamma" }
+    creator: ["kn-b-r-panthulu"]
+    year: 1961
+    level: "B1"
+    basis: "source-yourself"
+    rights_checked: "2026-11-15"
+    jurisdiction: "IN"
+    briefing: { en: "A 1961 historical film, directed by B. R. Panthulu, about Kittur Chennamma, a ruler in the Karnataka region who led an armed uprising against the British East India Company. The film is based on a play by A. N. Krishna Rao." }
+    questions:
+      - { id: "q1", prompt: { en: "Which company does the queen fight in her armed uprising?" }, options: { en: ["The Portuguese East India Company", "The British East India Company", "The Dutch East India Company"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "In which year did the uprising take place?" }, options: { en: ["1824", "1829", "1857"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Who directed the film?" }, options: { en: ["G. V. Iyer", "B. R. Panthulu", "Girish Karnad"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-samskara"
+    medium: "film"
+    title: { text: "ಸಂಸ್ಕಾರ", reading: "samskāra" }
+    creator: ["kn-pattabhirama-reddy", "kn-u-r-ananthamurthy"]
+    year: 1970
+    level: "B1"
+    basis: "source-yourself"
+    rights_checked: "2026-11-15"
+    jurisdiction: "IN"
+    briefing: { en: "A 1970 film, directed by Pattabhirama Reddy and based on U. R. Ananthamurthy's novel. A respected Brahmin priest in a rural village faces a crisis when a rebellious man who broke the community's customs dies and no one will cremate the body." }
+    questions:
+      - { id: "q1", prompt: { en: "Who wrote the novel the film is based on?" }, options: { en: ["S. L. Bhyrappa", "U. R. Ananthamurthy", "Kuvempu"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Who plays Praneshacharya, the village's Brahmin leader?" }, options: { en: ["Dr. Rajkumar", "Girish Karnad", "Vishnuvardhan"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What does the village's fear of ritual pollution stop them from doing?" }, options: { en: ["Holding a festival", "Cremating the body", "Building a temple"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-vamsha-vriksha"
+    medium: "film"
+    title: { text: "ವಂಶವೃಕ್ಷ", reading: "vamśavrukṣa" }
+    creator: ["kn-b-v-karanth", "kn-girish-karnad", "kn-s-l-bhyrappa"]
+    year: 1971
+    level: "B1"
+    basis: "source-yourself"
+    rights_checked: "2026-11-15"
+    jurisdiction: "IN"
+    briefing: { en: "A 1971 family drama directed by B. V. Karanth and Girish Karnad, based on S. L. Bhyrappa's novel. Set in 1920s Karnataka, it follows a young widow who goes to college and falls for a professor, while his brother's research and second marriage bring trouble to the family." }
+    questions:
+      - { id: "q1", prompt: { en: "Who wrote the novel the film is based on?" }, options: { en: ["S. L. Bhyrappa", "K. Shivaram Karanth", "U. R. Ananthamurthy"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "In which decade is the story set?" }, options: { en: ["1890s", "1920s", "1950s"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Whose film debut does the film mark?" }, options: { en: ["Vishnuvardhan", "Dr. Rajkumar", "Shankar Nag"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-bangarada-manushya"
+    medium: "film"
+    title: { text: "ಬಂಗಾರದ ಮನುಷ್ಯ", reading: "baṅgārada manuṣya" }
+    creator: ["kn-s-siddalingaiah"]
+    year: 1972
+    level: "B1"
+    basis: "source-yourself"
+    rights_checked: "2026-11-15"
+    jurisdiction: "IN"
+    briefing: { en: "A 1972 Kannada drama directed by S. Siddalingaiah. A man goes to his sister's village after her husband dies, takes responsibility for her family, and becomes prosperous and respected, while he keeps a hidden second life." }
+    questions:
+      - { id: "q1", prompt: { en: "Who plays Rajiva?" }, options: { en: ["Dr. Rajkumar", "Vishnuvardhan", "Shankar Nag"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who plays Lakshmi, Rajiva's wife?" }, options: { en: ["Bharathi", "Uma Shivakumar", "Kalpana"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Where was most of the film shot?" }, options: { en: ["Kalasapura and Chikmagalur", "Mysore Palace", "Hampi"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-mayura"
+    medium: "film"
+    title: { text: "ಮಯೂರ", reading: "mayūra" }
+    creator: ["kn-b-vijaya-reddy"]
+    year: 1975
+    level: "B1"
+    basis: "source-yourself"
+    rights_checked: "2026-11-15"
+    jurisdiction: "IN"
+    briefing: { en: "A 1975 Kannada film directed by Vijay, adapted from a novel by Devudu Narasimha Sastri. A Brahmin youth wins a wrestling bout, angers a prince and flees, then learns he is the son of a murdered king and returns in disguise to reclaim his family's realm." }
+    questions:
+      - { id: "q1", prompt: { en: "Who plays the title role, Mayurasharma?" }, options: { en: ["Dr. Rajkumar", "Shankar Nag", "Vishnuvardhan"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "In which city does the youth win the wrestling bout that angers a prince?" }, options: { en: ["Kanchi", "Badami", "Mysore"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Whose hand in marriage does he win?" }, options: { en: ["Premavati", "Kathyayani", "Lakshmi"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-chomana-dudi"
+    medium: "film"
+    title: { text: "ಚೋಮನ ದುಡಿ", reading: "cōmana duḍi" }
+    creator: ["kn-b-v-karanth", "kn-k-shivaram-karanth"]
+    year: 1975
+    level: "B1"
+    basis: "source-yourself"
+    rights_checked: "2026-11-15"
+    jurisdiction: "IN"
+    briefing: { en: "A 1975 drama directed by B. V. Karanth, based on K. Shivaram Karanth's novel. A bonded labourer from a low caste is forbidden from farming the land he wants, and his family suffers debt, disease and a drowning that no one helps prevent." }
+    questions:
+      - { id: "q1", prompt: { en: "Who directed the film?" }, options: { en: ["B. V. Karanth", "Girish Karnad", "Vijay"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "How does Choma end the film?" }, options: { en: ["He leaves the village", "He shuts himself in his house and plays his drum until he dies", "He takes the land by force"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Which national award did the film win?" }, options: { en: ["The Swarna Kamal, the National Award for best film", "The Filmfare Award for best film", "The Padma Shri"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-ghatashraddha"
+    medium: "film"
+    title: { text: "ಘಟಶ್ರಾದ್ಧ", reading: "ghaṭaśrāddha" }
+    creator: ["kn-girish-kasaravalli", "kn-u-r-ananthamurthy"]
+    year: 1977
+    level: "B1"
+    basis: "source-yourself"
+    rights_checked: "2026-11-15"
+    jurisdiction: "IN"
+    briefing: { en: "A 1977 Kannada film directed by Girish Kasaravalli, based on a novella by U. R. Ananthamurthy. A Vedic teacher's daughter becomes pregnant, the village casts her out, and her father performs her mourning rites while she is still alive." }
+    questions:
+      - { id: "q1", prompt: { en: "Who directed the film?" }, options: { en: ["Girish Kasaravalli", "Girish Karnad", "Shankar Nag"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who plays Yamuna?" }, options: { en: ["Meena Kuttappa", "Tara", "Kavita Krishnamurthy"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What does the village do when it learns of the pregnancy?" }, options: { en: ["Holds a festival for her", "Casts her out", "Sends her to the city"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-ondanondu-kaladalli"
+    medium: "film"
+    title: { text: "ಒಂದಾನೊಂದು ಕಾಲದಲ್ಲಿ", reading: "ondānondu kāladalli" }
+    creator: ["kn-girish-karnad"]
+    year: 1978
+    level: "B1"
+    basis: "source-yourself"
+    rights_checked: "2026-11-15"
+    jurisdiction: "IN"
+    briefing: { en: "A 1978 Kannada film directed by Girish Karnad. A mercenary is hired to train a chieftain's soldiers, befriends the chieftain's nephew, and is caught in a feud between two families that ends in tragedy." }
+    questions:
+      - { id: "q1", prompt: { en: "Who is hired by the chieftain to train his soldiers?" }, options: { en: ["Gandugali", "Peramadi", "Jayakeshi"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Which actor won a Silver Peacock award for playing the mercenary?" }, options: { en: ["Dr. Rajkumar", "Vishnuvardhan", "Shankar Nag"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "How does the story end?" }, options: { en: ["The mercenary becomes chief", "The mercenary dies in the final battle", "The nephew leaves the kingdom"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-kanooru-heggadithi"
+    medium: "film"
+    title: { text: "ಕಾನೂರು ಹೆಗ್ಗಡತಿ", reading: "kānūru heggaḍati" }
+    creator: ["kn-girish-karnad", "kn-kuvempu"]
+    year: 1999
+    level: "B1"
+    basis: "source-yourself"
+    rights_checked: "2026-11-15"
+    jurisdiction: "IN"
+    briefing: { en: "A 1999 film directed by Girish Karnad, based on Kuvempu's 1936 novel. Set in pre-independence Malnad, it follows Subbamma, the rebellious third wife of a landowner, who urges women to defy the men of their households." }
+    questions:
+      - { id: "q1", prompt: { en: "Who directed the film?" }, options: { en: ["Girish Karnad", "Kuvempu", "Girish Kasaravalli"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who plays Subbamma?" }, options: { en: ["Tara", "Meena Kuttappa", "Vijayalakshmi"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "In which region is the story set?" }, options: { en: ["The coast of Goa", "Malnad, at the foothills of the Western Ghats", "The Deccan plateau"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-nagamandala"
+    medium: "play"
+    title: { text: "ನಾಗಮಂಡಲ", reading: "nāgamaṇḍala" }
+    creator: ["kn-girish-karnad"]
+    year: 1988
+    level: "B1"
+    basis: "source-yourself"
+    rights_checked: "2026-11-15"
+    jurisdiction: "IN"
+    briefing: { en: "A play from 1988 by Girish Karnad, about a young man whose wife turns to a folk remedy, and a cobra that takes his form begins a secret relationship with her. The village tests her with a snake ordeal when she becomes pregnant." }
+    questions:
+      - { id: "q1", prompt: { en: "Who pressures her son Appanna to marry Rani?" }, options: { en: ["Kurudamma, his blind mother", "Naga, the cobra", "The village headman"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "What does Appanna eventually do to the cobra?" }, options: { en: ["Makes it his friend", "Confronts it and kills it", "Sends it away to the forest"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What does the village put Rani through when she becomes pregnant?" }, options: { en: ["A snake ordeal", "A trial by fire", "An exile"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-marali-mannige"
+    medium: "book"
+    title: { text: "ಮರಳಿ ಮಣ್ಣಿಗೆ", reading: "maraḷi maṇṇige" }
+    creator: ["kn-k-shivaram-karanth"]
+    year: 1941
+    level: "B1"
+    basis: "source-yourself"
+    rights_checked: "2026-11-15"
+    jurisdiction: "IN"
+    briefing: { en: "A 1941 Kannada novel by K. Shivaram Karanth. It follows several generations of one farming family from about 1850 to 1940, as the community meets modern ideas and the independence movement. The author writes in the Dakshina Kannada dialect." }
+    questions:
+      - { id: "q1", prompt: { en: "Which years does the story cover?" }, options: { en: ["About 1850 to 1940", "About 1900 to 1947", "About 1800 to 1857"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Which dialect is the novel written in?" }, options: { en: ["Dakshina Kannada", "Malnad", "Kodava"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Who translated the novel into English?" }, options: { en: ["Padma Ramachandra Sharma", "Girish Karnad", "Kuvempu"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-mysooru-mallige"
+    medium: "book"
+    title: { text: "ಮೈಸೂರು ಮಲ್ಲಿಗೆ", reading: "maisūru mallige" }
+    creator: ["kn-ks-narasimhaswamy"]
+    year: 1942
+    level: "B1"
+    basis: "source-yourself"
+    rights_checked: "2026-11-15"
+    jurisdiction: "IN"
+    briefing: { en: "A 1942 poetry collection by K. S. Narasimhaswamy, named after the jasmine of Mysuru. Seen through the eyes of a theatre director, it follows the poet's life from youth to old age and reflects on social and economic change after Independence." }
+    questions:
+      - { id: "q1", prompt: { en: "Which flower is the collection named after?" }, options: { en: ["Rose", "Jasmine", "Lotus"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Who is the bangle seller who comments on post-Independence change?" }, options: { en: ["Balegaara Channayya", "Kikkeri Subbarao", "Padma Ramachandra Sharma"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Who directed the 1992 film adaptation?" }, options: { en: ["T. S. Nagabharana", "B. V. Karanth", "Girish Kasaravalli"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-karnata-bharata-katha-manjari"
+    medium: "book"
+    title: { text: "ಕರ್ಣಾಟ ಭಾರತ ಕಥಾಮಂಜರಿ", reading: "karṇāṭa bhārata kathāmañjari" }
+    creator: ["kn-kumara-vyasa"]
+    year: 1430
+    level: "B1"
+    basis: "source-yourself"
+    rights_checked: "2026-11-15"
+    jurisdiction: "IN"
+    briefing: { en: "A Kannada verse retelling of the first ten books of the Mahabharata, completed in 1430. It is written in six-line stanzas, follows the epic through the great war up to the death of Duryodhana, and is also called Dasha Parva Bharata." }
+    questions:
+      - { id: "q1", prompt: { en: "How are the stanzas of the poem built?" }, options: { en: ["Six-line stanzas", "Four-line verses", "Prose"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Which fight ends the narrative?" }, options: { en: ["The mace duel between Duryodhana and Bheema", "The archery contest of Arjuna", "The dice game at Hastinapura"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Which temple does legend link with the poet's writing?" }, options: { en: ["The Veeranarayana temple in Gadag", "The Virupaksha temple in Hampi", "The Chennakeshava temple in Belur"] }, answer: 1 }
+    tags: ["unreviewed"]
