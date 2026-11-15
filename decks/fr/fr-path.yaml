@@ -740,7 +740,9 @@ units:
       - { id: "a-poem-read-aloud", text: { "en": "A teacher reads a short poem and explains it" } }
     reading_passages:
       - { id: "book-blurb", text: { "en": "The back-cover blurb of a novel" } }
-  - planned: { id: "fr-grammar-passe-simple", grammar: "passe-simple-reading" }
+  - decks: ["fr-grammar-passe-simple-reading"]
+    words: 0
+    grammar: ["passe-simple-reading"]
     listening_passages:
       - { id: "a-tale-read-aloud", text: { "en": "A folk tale read aloud: il était une fois, and what the hero did" } }
     reading_passages:
