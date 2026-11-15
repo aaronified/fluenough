@@ -4096,7 +4096,7 @@ situations file only, and a language has one file, named
 released app; `hotel`, `post`, `bank`, `greeting`, `emergency`, `school`, `work`
 and `travel` are drawn from app **0.10.3**, the next patch release after
 0.10.2 (blocker code ships as a patch release). An older app would draw such a
-button with a plain icon and no name. So a situations file that uses any of them
+button with a plain icon (but the sheet's own title). So a situations file that uses any of them
 is marked by the validator (`CARD_FIELD_MIN_APP["situation_icons"]`) and
 `tools/deck_index.py` gives its index entry `min_app` `0.10.3`, with no line in
 `decks/min_app.json`, as for the `character` block (ADR-0052): older apps keep

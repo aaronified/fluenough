@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **A language can have up to 14 situation sheets, not six.** New icons: hotel, post, bank, greetings, emergency, school, work and travel. Apps older than 0.10.3 keep the sheets they already have.
+
 - `tools/transcribe.py`, `tools/test_transcribe.py`: the Telugu transcription writes a word-final anusvara as `ṁ` (annaṁ, IPA `m`), keeps it before s and v (māṁsaṁ); other languages are unchanged (#1292).
 
 ## [0.10.2] - 2026-11-14
@@ -41,7 +45,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **Situation sheets: more icon keys (hotel, post, bank, greeting, emergency, school, work, travel).** A language can now have up to 14 situations, not six, each key once per file. A situations file that uses a new key is held back from apps older than 0.10.3, which would show it with a plain icon. Refs #1269.
 - **Search results by type, and topic pages.** The Decks tab's search shows a tab for each kind of result that has any (situations, topics, decks, grammar concepts, words, units, culture and proverbs), the best match first, with a row of its own for each kind, and a typo put right with a way to search exactly what you typed. A professional situation is found only here, marked Professional, with "Add to my courses". What is above your level is listed marked with its level and cannot be started, or left out with the new setting "Hide what is above my level". A topic has its own page with its units, decks and cards, how much of it you know, and "Drill this topic" with a chooser for how many cards and which skills; a unit lists its topics as chips, and a script topic lists its characters. Creators' images download only when shown (#1137, #1139, #1140).
 - **Culture in the course, and recommended works.** A proverb, a line of verse or a passage at your level is woven into the path's units and offered on Today (one a unit by default, a bonus, never above your level), with its source line (author, work, date and why it may be quoted), the person behind it as a card (picture with its credit and licence, or a placeholder; a bio at your level; "Still alive today") and a timeline to today; the whole culture deck lists its items and its people, and Settings gets a Culture page (the switch, items above your level, how many a unit gets, counting toward progress, creator and legacy). Culture recommendations list popular books, films, series, songs, plays and podcasts to find elsewhere, with a briefing, the legal ways to get them and "I've completed this"; the works you completed are on Today, and their questions join your lessons and reviews as reading items while the mark is there, and ride in your backups. Books show only to learners who learn scripts (#1133, #1134, #1135, #1140).
 - `tools/validate_decks.py`: deck tools for deck kinds, levels, hidden decks, sources, creators, topics and recommendations (data only, no app change yet): `tools/validate_decks.py` checks the new deck header fields (`genre`, `level`, `hidden`, `professional`, `section`, `weave`), a card's `source` block with a public-domain floor, and the creators, topics, sections and recommendations files; `tools/deck_index.py` writes `shelves`, per-language `topics`, `shared_media` and the new `shared` files with their `min_app`; `decks/sections.yaml` is the starter list of genres, sections and search kinds (#1133, #1135, #1136, #1137, #1139, #1140).

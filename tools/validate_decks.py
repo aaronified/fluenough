@@ -7686,8 +7686,8 @@ MAX_STROKES = 64
 # card field it does not know. Raise it to the real number if the release that
 # holds the parser is not this one.
 # "situation_icons" (#1269) is not a card field but a situations file's icon
-# keys: the released app draws a button of an unknown key with a plain icon and
-# the wrong name, so a file with a new key waits for the next patch release.
+# keys: the released app draws a button of an unknown key with a plain icon (and
+# the sheet's own title), so a file with a new key waits for the next patch release.
 CARD_FIELD_MIN_APP = {"character": "0.10.2", "situation_icons": "0.10.3"}
 
 
