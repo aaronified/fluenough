@@ -34,7 +34,8 @@ from dataclasses import dataclass, field
 # The Indic blocks share one layout: a letter's offset from its block's
 # start is the same in each script (ISCII order).
 BLOCKS = {"hi": 0x0900, "mr": 0x0900, "bn": 0x0980, "as": 0x0980,
-          "gu": 0x0A80, "te": 0x0C00, "kn": 0x0C80, "ml": 0x0D00}
+          "gu": 0x0A80, "ta": 0x0B80, "te": 0x0C00, "kn": 0x0C80,
+          "ml": 0x0D00}
 
 # Offsets of the independent vowels, and the vowel signs, to a vowel name.
 VOWELS = {0x05: "a", 0x06: "aa", 0x07: "i", 0x08: "ii", 0x09: "u", 0x0A: "uu",
@@ -318,6 +319,12 @@ VOWEL_TABLES = {
            "co": ("ô", "ɔ")},
     "te": _VOWELS_TE,
     "kn": _VOWELS_TE,
+    # Tamil: five short and five long vowels and two diphthongs; the decks
+    # say the short ones as they are written (no schwa), ஐ ai and ஔ au.
+    "ta": {"a": ("a", "a"), "aa": ("ā", "aː"), "i": ("i", "i"),
+           "ii": ("ī", "iː"), "u": ("u", "u"), "uu": ("ū", "uː"),
+           "se": ("e", "e"), "e": ("ē", "eː"), "ai": ("ai", "ai"),
+           "so": ("o", "o"), "o": ("ō", "oː"), "au": ("au", "au")},
     # Malayalam: ഋ is said ru. The inherent a is said [ə] unless it is the
     # word's last vowel (malayalam() below).
     "ml": {"a": ("a", "ə"), "aa": ("ā", "aː"), "i": ("i", "i"),
@@ -356,6 +363,12 @@ CONSONANT_TABLES: dict[str, dict[str, tuple[str, str]]] = {
            "ṛh": ("rh", "ɹ"), "ś": ("x", "x"), "ṣ": ("x", "x"),
            "s": ("x", "x"), "h": ("h", "h"), "v": ("b", "b"),
            "w": ("w", "w")},
+    # Tamil's stops are one letter each: the decks write and say them
+    # voiceless (the voicing between vowels is the narrow IPA's job,
+    # tools/derive_phonetic.py). ச is s, but tʃ doubled or after ஞ
+    # (tamil() below). ற is [r], ர the tap [ɾ].
+    "ta": {"c": ("c", "s"), "r": ("r", "ɾ"), "ṟ": ("ṟ", "r"),
+           "h": ("h", "h")},
     "te": {"ṟ": ("ṟ", "r"), "h": ("h", "h")},
     "kn": {"ṟ": ("r", "r"), "ḻ": ("ḷ", "ɭ"), "h": ("h", "h")},
     # Malayalam's ര and റ are both a tap; ḻ (ഴ) is kept apart from ḷ (ള).
@@ -730,6 +743,8 @@ def transcribe(text: str, lang: str, hint: str | None = None
         return toki_pona(text)
     if lang == "ml":
         return malayalam(text, hint)
+    if lang == "ta":
+        return tamil(text)
     if (lang, text) in WORDS:
         reading, ipa = WORDS[(lang, text)]
         return Transcription(reading, ipa, True)
@@ -2164,6 +2179,63 @@ def _malayalam_word(units: list[Unit]) -> tuple[str, str]:
         elif u.kind == "P":
             iso.append(u.letter if u.letter not in "'\"" else "'")
     return "".join(iso), "".join(ipa)
+
+
+# --- Tamil -------------------------------------------------------------------
+
+# Tamil is written as it is said, so it is read from its letters with no hint.
+# The decks' conventions (decks/ta):
+#  - the pulli ் ends a consonant; there are no ligatures, so a cluster is
+#    just consonants in a row, and a geminate is written and said doubled;
+#  - க ச ட த ப are written k c ṭ t p and said voiceless: the voiced or
+#    fricative sounds between vowels are the narrow IPA's, not the broad;
+#  - ச is [s], but [tʃ] after a stop or a nasal (cc, ñc, ṉc, ṭc), and ஜ
+#    is [dʒ];
+#  - ற is ṟ [r] and ர r [ɾ]; ன ṉ and ந n are both [n]; ழ ḻ [ɻ], ள ḷ [ɭ];
+#  - a word-final ம் is m (not ṁ: it is a consonant, not an anusvara);
+#  - ஃ (aytam) is ḵ, said [x].
+
+
+TA_STOPS_NASALS = {"k", "c", "ṭ", "t", "p", "ṅ", "ñ", "ṇ", "n", "ṉ", "m"}
+
+
+def tamil(text: str) -> Transcription:
+    """[text]'s reading and broad IPA, by Tamil's letters."""
+    units = parse(text, "ta")
+    iso: list[str] = []
+    ipa: list[str] = []
+    for k, u in enumerate(units):
+        prev = units[k - 1] if k > 0 else None
+        if u.kind == "C":
+            i_iso, i_ipa = consonant(u.letter, "ta")
+            if u.letter == "c":
+                nxt = units[k + 1] if k + 1 < len(units) else None
+                if (prev is not None and prev.kind == "C" and
+                        prev.letter in TA_STOPS_NASALS) or \
+                        (nxt is not None and nxt.kind == "C" and
+                         nxt.letter == "c"):
+                    i_ipa = "tʃ"
+            iso.append(i_iso)
+            ipa.append(i_ipa)
+        elif u.kind in ("V", "S", "I"):
+            i_iso, i_ipa = VOWEL_TABLES["ta"]["a" if u.kind == "I"
+                                              else u.letter]
+            iso.append(i_iso)
+            ipa.append(i_ipa)
+        elif u.kind == "N":
+            iso.append("ṁ")
+            ipa.append("m")
+        elif u.kind == "H":
+            iso.append("ḵ")
+            ipa.append("x")
+        elif u.kind == "SP":
+            iso.append(" ")
+            ipa.append(" ")
+        elif u.kind == "P":
+            iso.append(u.letter if u.letter not in "'\"" else "'")
+    return Transcription(
+        _tidy("".join(iso)),
+        unicodedata.normalize("NFC", " ".join("".join(ipa).split())), True)
 
 
 def main(argv: list[str]) -> int:
