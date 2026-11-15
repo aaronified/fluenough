@@ -511,7 +511,9 @@ units:
       - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
     reading_passages:
       - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
-  - planned: { id: "fr-grammar-passe-compose-imparfait", grammar: "passe-compose-imparfait" }
+  - decks: ["fr-grammar-passe-compose-imparfait"]
+    words: 0
+    grammar: ["passe-compose-imparfait"]
     listening_passages:
       - { id: "it-was-raining-when", text: { "en": "Telling a story: it was raining when the bus arrived" } }
     reading_passages:
