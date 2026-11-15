@@ -672,3 +672,30 @@ cards:
     examples:
       - { target: "আমার ভ্রমণসঙ্গী বন্ধু।", reading: "āmār bhrômonosoṅgi bondhu.", ipa: "amar bʱrɔmonosoŋɡi bond̪ʱu", bases: [{ word: "আমার", ref: "bn-0833" }, { word: "বন্ধু", ref: "bn-0189" }] }
       - { target: "ভ্রমণসঙ্গীরা এসেছে।", reading: "bhrômonosoṅgirā eseche.", ipa: "bʱrɔmonosoŋɡira esetʃʰe", bases: [{ word: "ভ্রমণসঙ্গীরা", base: "ভ্রমণসঙ্গী", reading: "bhrômonosoṅgirā" }, { word: "এসেছে", ref: "bn-0872" }] }
+  - id: "bn-6261"
+    target: "একটা রুম আছে?"
+    reading: "ekṭā rum āche?"
+    ipa: "ekʈa rum atʃʰe"
+    pos: "phrase"
+    bases:
+      - { word: "একটা", ref: "bn-0202" }
+      - { word: "রুম", ref: "bn-3982" }
+      - { word: "আছে", base: "আছে", reading: "āche" }
+  - id: "bn-6262"
+    target: "আমার নামে বুকিং আছে।"
+    reading: "āmār nāme bukiṅ āche."
+    ipa: "amar name bukiŋ atʃʰe"
+    pos: "phrase"
+    bases:
+      - { word: "আমার", base: "আমি", reading: "āmār" }
+      - { word: "নামে", base: "নাম", reading: "nāme" }
+      - { word: "বুকিং", ref: "bn-2461" }
+      - { word: "আছে", base: "আছে", reading: "āche" }
+  - id: "bn-6263"
+    target: "চাবিটা দিন।"
+    reading: "cābiṭā din."
+    ipa: "tʃabiʈa d̪in"
+    pos: "phrase"
+    bases:
+      - { word: "চাবিটা", ref: "bn-0605" }
+      - { word: "দিন", base: "দেওয়া", reading: "din" }
