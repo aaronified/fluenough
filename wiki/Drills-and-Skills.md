@@ -46,7 +46,7 @@ After a wrong answer, the screen shows the right one, and what you typed or said
 
 ## Rating yourself
 
-For some questions, such as seen words, you decide how well you knew it. Four buttons in one row show when the word comes back: Again, Hard, Good and Easy. Pick Again if you did not know it, Easy if it was no effort. Swiping the card, or tapping the chevron that shows while you touch the screen, is Good.
+For some questions, such as seen words, you decide how well you knew it. Four buttons in one row show when the word comes back: Again, Hard, Okay and Easy. Pick Again if you did not know it, Easy if it was no effort. Swiping the card, or tapping the chevron that shows while you touch the screen, is Okay.
 
 ## How words come back
 

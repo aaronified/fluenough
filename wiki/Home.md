@@ -26,6 +26,7 @@ Code and decks live in the [repository](https://github.com/aaronified/fluenough)
 
 - [Deck Building Guide](Deck-Building-Guide): how to build a deck, step by step
 - [Deck Format](Deck-Format): the deck file format
+- [Private Language Package](Private-Language-Package): bring a whole language, or your own version of a course, as a `.fnzip` file
 - [Romanising Indic Languages](Romanising-Indic-Languages): readings per language
 - [Deck Licences and Quoted Books](Deck-Licences-and-Quoted-Books): licences and quoted books
 - [Deck Tools](Deck-Tools): the Python deck tools

@@ -36,6 +36,14 @@ overhaul with its onboarding) goes in 0.7.0.
 Each entry gives the sentence that stood in `CLAUDE.md`, then the earlier
 rule it replaced, as it was written (from the file's git history).
 
+### The agent limit (owner, 2026-10-22)
+
+2026-10-22 limit: at most three agents at once, never more than two Sonnet; replaced 2026-11-11 by: at most two agents at once, even if both are Haiku.
+
+### The deck builder limit (owner, 2026-11-06, 2026-11-14)
+
+2026-11-06 slots: "one Haiku deck builder", and the queue's 2026-11-14 order "Up to three Haiku deck builders work in parallel"; replaced for deck workers 2026-11-14 by rule 17 in [Deck-Work-Queue](Deck-Work-Queue.md): as many Haiku deck workers as the work needs, all committing to one shared branch per language level, one pull request and one Sonnet review for that branch. When the reviews will run, drop 2 deck workers for each sonnet review (owner, 2026-11-14: "When the reviews will run, drop 2 deck workers for each sonnet reviews."). While a Sonnet review runs, the architect runs two fewer deck workers for each review running, so the total number of agents stays about the same; no new deck worker starts in the freed slots until that review has finished, and deck workers already running are never stopped.
+
 ### The agent slot split (owner, 2026-10-22, 2026-10-23)
 
 Replaced by the 2026-11-06 rule in `CLAUDE.md`, under "Which model does what":
@@ -127,6 +135,10 @@ Japanese, 10. Korean, 11. Toki Pona (owner, 2026-10-20: "Make it high priority
 (11th language)"; built next week). "Once these decks are done till B1 and we
 have added the movies songs books parts, we can finally start advertising the
 app." Other languages' paths and decks follow."
+
+### The second list to B1 (owner, 2026-11-06, replaced the same day)
+
+The first correction of 2026-11-06 made the second list a B1 target: "Complete the placement fix, then carry on with the decks. On the 1st list of languages, get the situations cards before the all A1. Both will come after the 2nd list gets B1." The owner then replaced it the same day: "Ok, sorry. 2nd list A1 and all languages first deck only. Only classical sanskrit to B1." The second list therefore stays at A1 as set on 2026-11-02 ("the second list to A1"), and only Classical Sanskrit goes to B1. See "Deck order after the placement fix" in `CLAUDE.md`. Nothing about A1 was superseded.
 
 ### Push straight to main (owner, 2026-10-11)
 

@@ -16,6 +16,21 @@ The numbers are for the language picked in the language bar at the top, or for e
 
 A card is **known** when its last review was right and FSRS predicted at least 85% recall at that review (#680), by the parameters that schedule that skill, so Progress and the scheduler agree. The B1 total is the whole B1 plan: the planned words (or the words written, if more) for read, write, hear and say, the grammar cells written for grammar, and both skills of every letter of the alphabet decks for script.
 
+## Placed (owner decisions, 2026-11-07)
+
+Find my level credits words, forms and letters you already know. Progress shows that credit apart from what you earned:
+
+- **Placed** is a word, form or letter that placement credited and that you have not answered since. It is never counted as known and never as taught, so the star's outline (known of taught) stays earned-only. The star draws placed as a **hatched layer under the solid fill**, reaching as far as placed and earned together; the Words tile reads "312 known of 540 taught (+90 placed)", and Rules likewise.
+- Once you answer a placed pair it is earned: known if the answer was right and recalled at 85%, else taught and not known. A placed pair you lapsed drops out of the placed layer into taught, not known.
+- Credit you took back (Languages sheet, "Check your level again") is not placed.
+- The course's level shows with a **Placed** mark until a unit of that milestone has an earned review.
+- Credit written by Find my level in 0.9.0 and 0.9.1 that is not yet confirmed counts as placed like the rest on Progress; only the Languages sheet marks it unconfirmed.
+- Progress shows only the lower-edge point of a placement, never its range.
+- Whether the credit was set in stone or left to be reviewed as usual does not change what Progress shows: placement is reflected either way.
+- Placed words do not hold back new lessons (they are not "in progress"), and they do not open sentences that wait for known words.
+
+The core is built (`lib/core/progress/mastery.dart`, `unlocks.dart`: `SkillScore.placed`, `WordCounts.placed`, `UnlockCounts.wordsPlaced` and `rulesPlaced`); the drawing (the hatched layer, the legend, the tile wording, the Placed mark) follows with the placement screens.
+
 Until you finish a session, it says there are no reviews yet.
 
 ## Leeches

@@ -99,6 +99,8 @@ is made once, by "Decks: index", and shared with the jobs that need it. The
 tools' tests run in two parts, plus a real-decks job and a today's-decks job,
 and "Decks: tools' tests" gathers them (`.github/workflows/ci.yml`).
 
+The heavy placement suites (about 60% of the test time, listed in `test/heavy_tests.json`) run only when a pull request or push changes placement (`lib/core/placement/`, `lib/app/placement*`, `lib/features/placement/`, `test/placement_*`, `test/support/placement_*`, `test/fixtures/placement/`, `assets/placement_profiles.json`, `tools/placement*`, the shard tool, the shard weights or the workflow), every night at 03:17 UTC on main, and on a manual run. Otherwise the 8 shards still run, balanced on the remaining files (`tools/test_shard.py --exclude-heavy`).
+
 The `wiki/` folder is published to the GitHub wiki by `.github/workflows/wiki-sync.yml`; edits made in the wiki's web editor are overwritten by the next sync.
 
 See also: [Contributing](Contributing) · [Home](Home)
