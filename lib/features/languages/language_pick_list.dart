@@ -170,7 +170,10 @@ class _LanguagePickListState extends State<LanguagePickList> {
   /// How much of A1, A2 and B1 is written for [view], and what a screen
   /// reader reads for a line with nothing in it: no decks yet, or only first
   /// words (a course, no path written).
-  (List<double>, String?) _line(BuildContext context, LanguageView view) {
+  (List<double>, double, String?) _line(
+    BuildContext context,
+    LanguageView view,
+  ) {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.read(context);
     final progress = view.course?.progressFor(
@@ -178,11 +181,14 @@ class _LanguagePickListState extends State<LanguagePickList> {
       native: state.courseNative(view.code),
     );
     final levels = progress?.levels ?? const <double>[0, 0, 0];
-    if (view.course == null) return (levels, l10n.languagesNoDecksLabel);
-    if (levels.every((x) => x == 0)) {
-      return (levels, l10n.languagesFirstWordsLabel);
+    final culture = progress?.culture ?? 0.0;
+    if (view.course == null) {
+      return (levels, culture, l10n.languagesNoDecksLabel);
     }
-    return (levels, null);
+    if (levels.every((x) => x == 0)) {
+      return (levels, culture, l10n.languagesFirstWordsLabel);
+    }
+    return (levels, culture, null);
   }
 
   Widget _row(BuildContext context, LanguageView view, {bool popular = false}) {
@@ -195,7 +201,7 @@ class _LanguagePickListState extends State<LanguagePickList> {
     // version it needs; a tap opens where the app is downloaded (ADR-0052).
     final needs = view.needsApp;
     final haptics = AppScope.maybeRead(context)?.haptics;
-    final (levels, lineLabel) = _line(context, view);
+    final (levels, culture, lineLabel) = _line(context, view);
     // One button for a screen reader, reading the names, the line and the
     // verification together.
     return MergeSemantics(
@@ -346,7 +352,11 @@ class _LanguagePickListState extends State<LanguagePickList> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      CourseLine(levels: levels, label: lineLabel),
+                      CourseLine(
+                        levels: levels,
+                        culture: culture,
+                        label: lineLabel,
+                      ),
                       const SizedBox(height: 6),
                       VerificationMark(state: view.language.verification),
                     ],

@@ -442,8 +442,27 @@ and marks, NFC, and every entry that fits agrees. The variety per language
 is data in `tools/phonetic_languages.yaml` (dump name and variety): Bengali
 the Kolkata standard (Wiktionary's Rarh), Hindustani the Standard Hindi
 forms, Spanish, Telugu and Japanese the untagged form. Another language is
-one more entry there, with no change to the tool. Words and set phrases
+one more entry there, with no change to the tool. Assamese is registered
+with `untagged: false`, so no Wiktionary form is taken (its 60 narrow forms
+are untagged, mix conventions and some are wrong); its cards get their narrow
+form from the rules. Words and set phrases
 are covered; sentences are not on Wiktionary.
+
+A language may opt in to a `normalise:` list in the same file, regex
+`pattern` and `replace` pairs applied in order to each Wiktionary form so it
+reads in the conventions of the language's rules file (#1369, gap 5). Only
+Spanish has one: lowered approximants ð̞ β̞ ɣ̞ lose U+031E (the rules write
+bare ð β ɣ), tie-barred t͡ʃ d͡ʒ become tʃ dʒ, and n̟ before θ becomes n̪. The
+tie-barred ɟ͡ʝ is left as written (the rules write it the same way), and
+nasalised vowels stay, being real allophony. `--renormalise` applies the
+pairs to the cards already imported (those whose `phonetic_source` is
+`wiktionary`), in place and with no dump; rules cards are never touched, and
+a second run changes nothing.
+
+```sh
+python3 tools/import_phonetic.py es --renormalise            # report
+python3 tools/import_phonetic.py es --renormalise --write    # rewrite them
+```
 
 Pronunciations in [ ] adapted from [Wiktionary](https://en.wiktionary.org), licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The app's Sources screen carries the same line.
 

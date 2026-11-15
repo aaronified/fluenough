@@ -9,6 +9,10 @@
 #     tags:     sound `tags` values taken as this variety (default: none)
 #     untagged: whether a form with no note and no tag is taken as the
 #               language's default (default: true)
+#   normalise: optional list of {pattern, replace} regexes, applied in order
+#     to each Wiktionary form so it matches the conventions of the language's
+#     rules file (opt in per language; `tools/import_phonetic.py <lang>
+#     --renormalise` applies them to cards already imported)
 #
 # A new language is added here and nowhere else: the tool needs no code
 # change (tools/test_phonetic.py checks that). The rationale of each variety
@@ -47,6 +51,22 @@
     # forms (Andalusia, Latin America, ...) carry a tag and are not taken.
     # The decks' `ipa` writes θ, so the course is Castilian: see the plan.
     name: "Standard Spanish, Wiktionary's untagged form"
+  # Wiktionary and decks/es/es-phonetics.yaml write the same sounds
+  # differently (#1369, gap 5). The rules' conventions win. Nasalised vowels
+  # are real allophony and stay. The tie-barred ɟ͡ʝ is written the same by
+  # both and is not touched.
+  normalise:
+    # Lowered approximants ð̞ β̞ ɣ̞ (U+031E) become bare ð β ɣ.
+    - pattern: '([ðβɣ])\u031e'
+      replace: "\\1"
+    # (Patterns are single-quoted: the regex reads \u escapes. Replacements are
+    # double-quoted: YAML reads \u, and \\1 is a back-reference.)
+    # Tie-barred affricates t͡ʃ d͡ʒ (U+0361 or U+035C) become tʃ dʒ.
+    - pattern: '([td])[\u0361\u035c]([ʃʒ])'
+      replace: "\\1\\2"
+    # Advanced n̟ (U+031F) before θ becomes the dental n̪ (U+032A).
+    - pattern: 'n\u031f(?=ˈ?θ)'
+      replace: "n\u032a"
 
 "te":
   dump: "Telugu"
@@ -78,3 +98,20 @@
     # Wiktionary has few narrow French forms, so most cards get theirs from
     # the course's rules file instead.
     name: "Standard French of France, Wiktionary's untagged form"
+
+"as":
+  dump: "Assamese"
+  variety:
+    # Measured on the kaikki.org dump (2026-11): 60 narrow forms for 45 words,
+    # all untagged, 17 of those words in the course's decks. They do not agree
+    # with the course's broad `ipa` or with each other: some write r, ɦ, ɪ or
+    # a lowered ɔ̞ where the decks write ɹ, h, i and ɔ (ধৰ্ম [dʱɔrmɔ], বহুত
+    # [bɔɦut], দৈ [dɔɪ]), some are wrong or garbled (তথ্য [tɔɪt.tʱɔ], অভ্যাস
+    # [ɔɪd.bʱaˣ]), and ছাঁ and ক্ৰিকেট have two forms that differ. So the
+    # untagged form is NOT taken (untagged: false, no notes, no tags): nothing
+    # is imported from Wiktionary, and every Assamese card gets its narrow form
+    # from decks/as/as-phonetics.yaml, in one convention. Flip `untagged` to
+    # true only together with a `normalise` list for r, ɦ, ɪ and U+031E, which
+    # needs the Spanish-only test in tools/test_phonetic.py widened first.
+    name: "Standard Assamese; no Wiktionary form is taken (rules only)"
+    untagged: false

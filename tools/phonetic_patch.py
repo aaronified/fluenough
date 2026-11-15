@@ -127,7 +127,8 @@ def _card_block(lines: list[str], cid: str) -> _Block | None:
 
 
 def patch(text: str, fills: dict[str, tuple[str, str]],
-          replace_rules: bool = False) -> tuple[str, dict[str, str]]:
+          replace_rules: bool = False,
+          replace_source: str = "rules") -> tuple[str, dict[str, str]]:
     """[text] with `phonetic` and `phonetic_source` added after the `ipa:`
     line of each card in [fills] (card id to the form and its source).
 
@@ -142,11 +143,12 @@ def patch(text: str, fills: dict[str, tuple[str, str]],
     last key is `"unsupported layout"`: a line cannot go in after it without
     adding a comma to the `ipa` line, and the file is only ever inserted into.
 
-    With [replace_rules], a card whose `phonetic_source` is `rules` has its
-    `phonetic` value replaced in place; any other card that has a `phonetic`
-    is still left alone.
+    With [replace_rules], a card whose `phonetic_source` is [replace_source]
+    (`rules` unless given) has its `phonetic` value replaced in place; any
+    other card that has a `phonetic` is still left alone.
     """
     eol = "\r\n" if "\r\n" in text else "\n"
+    rs = re.escape(replace_source)
     lines = text.split("\n")
     left: dict[str, str] = {}
     for cid, (form, source) in fills.items():
@@ -168,7 +170,7 @@ def patch(text: str, fills: dict[str, tuple[str, str]],
             at_p = next((k for k in range(start, end)
                          if re.match(rf'^{pad}"?phonetic"?:', lines[k])), None)
             by_rules = any(re.match(
-                rf'^{pad}"?phonetic_source"?:\s*(?:"rules"|\'rules\'|rules)'
+                rf'^{pad}"?phonetic_source"?:\s*(?:"{rs}"|\'{rs}\'|{rs})'
                 rf'{comma}\s*(?:#.*)?$', lines[k].rstrip("\r"))
                 for k in range(start, end))
             if replace_rules and at_p is not None and by_rules:
@@ -198,7 +200,8 @@ UNWRITABLE = "could not write (layout)"
 
 def apply_fills(fills: dict[Path, dict[str, tuple[str, str]]],
                 outcomes: dict[tuple[Path, str], tuple[str, str]],
-                coverage: "Coverage", write: bool, replace_rules: bool = False) -> None:
+                coverage: "Coverage", write: bool, replace_rules: bool = False,
+                replace_source: str = "rules") -> None:
     """Patch every file in [fills] (written only when [write]) and move each
     card the patcher could not write from its outcome in [coverage] to
     `UNWRITABLE`, so a miss is counted whether or not the run writes.
@@ -206,7 +209,8 @@ def apply_fills(fills: dict[Path, dict[str, tuple[str, str]]],
     """
     for path, fill in fills.items():
         text = path.read_text(encoding="utf-8")
-        new, left = patch(text, fill, replace_rules=replace_rules)
+        new, left = patch(text, fill, replace_rules=replace_rules,
+                          replace_source=replace_source)
         for cid, why in left.items():
             deck, outcome = outcomes[(path, cid)]
             print(f"warning: {path}: {cid} not written ({why})", file=sys.stderr)

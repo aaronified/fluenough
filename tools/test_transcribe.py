@@ -416,6 +416,18 @@ class FrenchTest(unittest.TestCase):
         self.assertEqual(transcribe("la casa", "es").ipa, spanish_ipa("la casa"))
 
 
+class SpanishCqTest(unittest.TestCase):
+    def test_cqu_is_one_k(self) -> None:
+        self.assertEqual(spanish_ipa("Bécquer"), "ˈbekeɾ")
+        self.assertEqual(spanish_ipa("Jacquelin"), "xaˈkelin")
+
+    def test_real_doubled_c_and_plain_que_are_unchanged(self) -> None:
+        self.assertEqual(spanish_ipa("acción"), "akˈθjon")
+        self.assertEqual(spanish_ipa("que"), "ke")
+        self.assertEqual(spanish_ipa("quiero"), "ˈkjeɾo")
+        self.assertEqual(spanish_ipa("Bécquer"), transcribe("Bécquer", "es").ipa)
+
+
 class MalayalamTest(unittest.TestCase):
     """Malayalam (ml), read from its letters the way the decks write it
     (decks/ml, and the review queue's notes on its conventions)."""

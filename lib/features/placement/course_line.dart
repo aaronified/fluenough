@@ -6,7 +6,8 @@ import '../../l10n/app_localizations.dart';
 /// A course's A1, A2, B1 and culture line (#626, the approved mockup
 /// `docs/mockups/languages-learning.html`): the course card's levels drawn
 /// thin, one short bar for each, filled by how much of that level is written
-/// (`B1Progress.levels`). The culture part has nothing written yet.
+/// (`B1Progress.levels`). The culture part is filled by the cards of the
+/// culture decks.
 ///
 /// Its figures are in the text around it, so a screen reader reads one
 /// label for the whole line, not four bars.
