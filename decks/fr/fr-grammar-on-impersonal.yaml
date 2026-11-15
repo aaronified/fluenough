@@ -1,0 +1,51 @@
+schema: 1
+id: "fr-grammar-on-impersonal"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["on", "nous"]
+  entries:
+    - lemma: "manger"
+      ipa: "mɑ̃ʒe"
+      forms:
+        "on": "on mange à midi."
+        "nous": "nous mangeons à midi."
+    - lemma: "aller"
+      ipa: "ale"
+      forms:
+        "on": "on va au parc."
+        "nous": "nous allons au parc."
+    - lemma: "parler"
+      ipa: "paʁle"
+      forms:
+        "on": "on parle français ici."
+        "nous": "nous parlons français ici."
+    - lemma: "finir"
+      ipa: "finiʁ"
+      forms:
+        "on": "on finit à six heures."
+        "nous": "nous finissons à six heures."
+    - lemma: "être"
+      key: "etre"
+      ipa: "ɛtʁ"
+      forms:
+        "on": "on est ici."
+        "nous": "nous sommes ici."
+    - lemma: "faire"
+      ipa: "fɛʁ"
+      forms:
+        "on": "on fait un gâteau."
+        "nous": "nous faisons un gâteau."
+    - lemma: "prendre"
+      ipa: "pʁɑ̃dʁ"
+      forms:
+        "on": "on prend le train."
+        "nous": "nous prenons le train."
+    - lemma: "voir"
+      ipa: "vwaʁ"
+      forms:
+        "on": "on voit la mer."
+        "nous": "nous voyons la mer."
