@@ -150,7 +150,8 @@ def parse(text: str, lang: str) -> list[Unit]:
                         i += 1
                         i = _vowel_after(chars, i, off, units, lang)
                         continue
-                    if nxt == 0x2C and unit.letter not in ("m", "b"):
+                    # র্ব is r and b, not a ব-ফলা: পূর্ব purbo.
+                    if nxt == 0x2C and unit.letter not in ("m", "b", "r"):
                         unit.vaphala = True
                         i += 1
                         i = _vowel_after(chars, i, off, units, lang)
@@ -609,8 +610,12 @@ def default_choices(units: list[Unit], lang: str) -> list[Choice]:
         if lang in ("hi", "mr", "gu", "bn", "as"):
             end = k + 1 >= len(units) or units[k + 1].kind in ("SP", "P")
             # Bengali says a word's last vowel after a ব-ফলা: বিশ্ব biśśo.
+            # After a য-ফলা too: সত্য śotto. And after র্ব, which is r and b,
+            # not a ফলা: পূর্ব purbo.
             if end and lang in ("bn", "as") and k > 0 and \
-                    units[k - 1].kind == "C" and units[k - 1].vaphala:
+                    units[k - 1].kind == "C" and \
+                    (units[k - 1].vaphala or units[k - 1].yaphala or
+                     _rba_cluster(units, k - 1)):
                 continue
             # A word's last inherent vowel is not said, unless the word is a
             # single letter.
@@ -933,6 +938,13 @@ def _cluster_initial(units: list[Unit], k: int) -> bool:
     while j >= 0 and units[j].kind == "C":
         j -= 1
     return j < 0 or units[j].kind in ("SP", "P")
+
+
+def _rba_cluster(units: list[Unit], k: int) -> bool:
+    """Whether unit [k] is a ব written after a র with a virama (র্ব): the
+    two consonants are said r and b, not as a ব-ফলা."""
+    return k > 0 and units[k].kind == "C" and units[k].letter == "b" and \
+        units[k - 1].kind == "C" and units[k - 1].letter == "r"
 
 
 def _already_held(units: list[Unit], k: int) -> bool:
