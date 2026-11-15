@@ -1,0 +1,70 @@
+schema: 1
+id: "mr-en-opinions-sentences"
+kind: "layer"
+core: "mr-opinions-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with the opinion words of this unit"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the opinion and argument words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-6223":
+    native: "My opinion is different."
+    bases: { "माझे": "my", "वेगळे": "different", "आहे": "is" }
+    confusables: { "w1": { why: "Idea: विचार (vicār) is a thought, not an opinion held as a view." }, "f1": { why: "Masculine: माझा (mājhā) agrees with a masculine noun, and मत (mat) is neuter." } }
+  "mr-6224":
+    native: "I agree with you."
+    bases: { "तुमच्याशी": "with you", "सहमत": "in agreement", "आहे": "am" }
+    confusables: { "w1": { why: "Disagree: असहमत (asahmat) means disagree, the opposite." }, "f1": { why: "Plural: आहेत (āhet) is for more than one; this sentence has one speaker, so आहे (āhe) is used." } }
+  "mr-6225":
+    native: "She disagrees with him."
+    bases: { "त्याच्याशी": "with him", "असहमत": "in disagreement", "आहे": "is" }
+    confusables: { "w1": { why: "Agree: सहमत (sahmat) means agree, the opposite." }, "f1": { why: "Polite plural: आहात (āhāt) is said to you, and ती (ti) takes आहे (āhe)." } }
+  "mr-6226":
+    native: "This idea convinces me."
+    bases: { "मला": "to me", "पटतो": "convinces" }
+    confusables: { "w1": { why: "Suggest: सुचवणे (sucvṇe) means to suggest." }, "f1": { why: "Feminine: पटते (paṭte) agrees with a feminine subject, and विचार (vicār) is masculine." } }
+  "mr-6227":
+    native: "His opinion is true."
+    bases: { "त्याचं": "his", "खरं": "true", "आहे": "is" }
+    confusables: { "w1": { why: "False: खोटं (khoṭam̐) means false, the opposite." }, "f1": { why: "Masculine: खरा (kharā) agrees with a masculine noun, and मत (mat) is neuter." } }
+  "mr-6228":
+    native: "I am sure."
+    bases: { "मला": "to me", "खात्री": "certainty", "आहे": "is" }
+    confusables: { "w1": { why: "Possibility: शक्यता (śakyatā) means possibility, which is less sure." }, "w2": { why: "Perhaps: कदाचित (kadācit) means perhaps, which is less sure." } }
+  "mr-6229":
+    native: "Perhaps it will rain."
+    bases: { "पडेल": "will fall" }
+    confusables: { "w1": { why: "Certainty: खात्री (khātri) means certainty, not a guess." }, "f1": { why: "Past: पडला (paḍlā) means fell, and this sentence is about the future." } }
+  "mr-6230":
+    native: "There is a lot of benefit in this work."
+    bases: { "कामात": "in this work", "खूप": "a lot of", "आहे": "is" }
+    confusables: { "w1": { why: "Loss: तोटा (toṭā) means loss, the opposite of benefit." }, "f1": { why: "Plural: आहेत (āhet) is for more than one thing; फायदा (phāydā) is singular." } }
+  "mr-6231":
+    native: "He gives me good advice."
+    bases: { "मला": "to me", "चांगला": "good", "देतो": "gives" }
+    confusables: { "w1": { why: "Criticism: टीका (ṭikā) means criticism, not advice." }, "f1": { why: "Feminine: देते (dete) is for a feminine subject, and तो (to) is masculine." } }
+  "mr-6232":
+    native: "She supports my opinion."
+    bases: { "माझ्या": "my", "मताला": "opinion", "देते": "gives" }
+    confusables: { "w1": { why: "Oppose: विरोध करणे (virodh karṇe) means to oppose, the opposite." }, "f1": { why: "Masculine: देतो (deto) is for a masculine subject, and ती (ti) is feminine." } }
+  "mr-6233":
+    native: "I oppose his ideas."
+    bases: { "त्याच्या": "his", "विचारांना": "ideas", "करतो": "do (oppose)" }
+    confusables: { "w1": { why: "Accept: मान्य करणे (mānya karṇe) means to accept, the opposite." }, "f1": { why: "Plural: करतात (kartāt) is for more than one subject, and this sentence has one speaker." } }
+  "mr-6234":
+    native: "Everyone accepted his advice."
+    bases: { "सगळ्यांनी": "everyone", "त्याचा": "his", "केला": "accepted" }
+    confusables: { "w1": { why: "Oppose: विरोध करणे (virodh karṇe) means to oppose." }, "f1": { why: "Feminine: केली (keli) agrees with a feminine object, and सल्ला (sallā) is masculine." } }
+  "mr-6235":
+    native: "I do not like his criticism."
+    bases: { "मला": "to me", "त्याची": "his", "आवडत": "liking", "नाही": "not" }
+    confusables: { "w1": { why: "Support: पाठिंबा (pāṭhimbā) means support, the opposite." }, "f1": { why: "Masculine: आवडतो (āvḍto) is for a masculine subject, and टीका (ṭikā) is feminine." } }
+  "mr-6236":
+    native: "The possibility is low."
+    bases: { "कमी": "low", "आहे": "is" }
+    confusables: { "w1": { why: "Perhaps: कदाचित (kadācit) is an adverb, not a noun of chance." }, "w2": { why: "Certainty: खात्री (khātri) means certainty, the opposite of a possibility." } }
+  "mr-6237":
+    native: "He suggests a new idea."
+    bases: { "नवीन": "new", "सुचवतो": "suggests" }
+    confusables: { "w1": { why: "Convince: पटणे (paṭṇe) means to be convincing, not to suggest." }, "f1": { why: "Feminine: सुचवते (sucavte) is for a feminine subject, and तो (to) is masculine." } }

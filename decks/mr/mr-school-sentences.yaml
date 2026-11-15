@@ -1,0 +1,92 @@
+schema: 1
+id: "mr-school-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-6480"
+    target: "माझी शिक्षिका खूप चांगली आहे."
+    reading: "mājhi śikṣikā khup cāṅgali āhe."
+    ipa: "madʒʱi ʃikʂika kʰup tsaŋɡəli aɦe"
+    pos: "phrase"
+    bases: [{ word: "माझी", base: "मी", reading: "mi" }, { word: "खूप", base: "खूप", reading: "khup" }, { word: "चांगली", base: "चांगला", reading: "cāṅgalā" }, { word: "आहे", base: "असणे", reading: "asṇe" }]
+    confusables: [{ id: "w1", ref: "mr-0676", kind: "word" }, { id: "f1", word: "आहेत", reading: "āhet", kind: "form" }]
+  - id: "mr-6481"
+    target: "आज गृहपाठ आहे का?"
+    reading: "āj gruhpāṭh āhe kā?"
+    ipa: "adz ɡruɦpaʈʰ aɦe ka"
+    pos: "phrase"
+    bases: [{ word: "आज", ref: "mr-0474" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "का", base: "का", reading: "kā" }]
+    confusables: [{ id: "w1", ref: "mr-0475", kind: "word" }, { id: "f1", word: "आहेत", reading: "āhet", kind: "form" }]
+  - id: "mr-6482"
+    target: "तो रोज अभ्यास करतो."
+    reading: "to roj abhyās karto."
+    ipa: "t̪o rodz əbʱjas kərt̪o"
+    pos: "phrase"
+    bases: [{ word: "रोज", base: "रोज", reading: "roj" }, { word: "करतो", ref: "mr-0712" }]
+    confusables: [{ id: "w1", ref: "mr-0677", kind: "word" }, { id: "f1", word: "करते", reading: "karte", kind: "form" }]
+  - id: "mr-6483"
+    target: "परीक्षेत ती चांगले गुण मिळवते."
+    reading: "parikṣet ti cāṅgale guṇ miḷvte."
+    ipa: "pərikʂet̪ t̪i tsaŋɡəle ɡuɳ miɭʋt̪e"
+    pos: "phrase"
+    bases: [{ word: "परीक्षेत", ref: "mr-1117" }, { word: "चांगले", base: "चांगला", reading: "cāṅgalā" }, { word: "गुण", base: "गुण", reading: "guṇ" }, { word: "मिळवते", ref: "mr-1422" }]
+    confusables: [{ id: "w1", ref: "mr-0676", kind: "word" }, { id: "f1", word: "मिळवतो", reading: "miḷvto", kind: "form" }]
+  - id: "mr-6484"
+    target: "निकाल उद्या येणार आहे."
+    reading: "nikāl udyā yeṇār āhe."
+    ipa: "nikal ud̪ja jeɳar aɦe"
+    pos: "phrase"
+    bases: [{ word: "उद्या", ref: "mr-0475" }, { word: "येणार", ref: "mr-0711" }, { word: "आहे", base: "असणे", reading: "asṇe" }]
+    confusables: [{ id: "w1", ref: "mr-0474", kind: "word" }, { id: "f1", word: "येतो", reading: "yeto", kind: "form" }]
+  - id: "mr-6485"
+    target: "माझं दप्तर कुठे आहे?"
+    reading: "mājham̐ daptar kuṭhe āhe?"
+    ipa: "madzʱə̃ d̪əpt̪ər kuʈʰe aɦe"
+    pos: "phrase"
+    bases: [{ word: "माझं", base: "मी", reading: "mi" }, { word: "कुठे", base: "कुठे", reading: "kuṭhe" }, { word: "आहे", base: "असणे", reading: "asṇe" }]
+    confusables: [{ id: "w1", ref: "mr-0738", kind: "word" }, { id: "f1", word: "माझा", reading: "mājhā", kind: "form" }]
+  - id: "mr-6486"
+    target: "तो प्रयोगशाळेत जातो."
+    reading: "to prayogśāḷet jāto."
+    ipa: "t̪o prəjoɡʃaɭet̪ dzat̪o"
+    pos: "phrase"
+    bases: [{ word: "प्रयोगशाळेत", ref: "mr-1125" }, { word: "जातो", ref: "mr-0710" }]
+    confusables: [{ id: "w1", ref: "mr-0677", kind: "word" }, { id: "f1", word: "जाते", reading: "jāte", kind: "form" }]
+  - id: "mr-6487"
+    target: "ती फळ्यावर लिहिते."
+    reading: "ti phaḷyāvar lihite."
+    ipa: "t̪i pʰəɭjaʋər liɦit̪e"
+    pos: "phrase"
+    bases: [{ word: "फळ्यावर", ref: "mr-1121" }, { word: "लिहिते", ref: "mr-0716" }]
+    confusables: [{ id: "w1", ref: "mr-0676", kind: "word" }, { id: "f1", word: "लिहितो", reading: "lihito", kind: "form" }]
+  - id: "mr-6488"
+    target: "खडू आणि खोडरबर दप्तरात आहेत."
+    reading: "khaḍu āṇi khoḍrbar daptarāt āhet."
+    ipa: "kʰəɖu aɳi kʰoɖrbər d̪əpt̪ərat̪ aɦet̪"
+    pos: "phrase"
+    bases: [{ word: "आणि", ref: "mr-0575" }, { word: "दप्तरात", ref: "mr-1120" }, { word: "आहेत", base: "असणे", reading: "asṇe" }]
+    confusables: [{ id: "w1", ref: "mr-0678", kind: "word" }, { id: "f1", word: "आहे", reading: "āhe", kind: "form" }]
+  - id: "mr-6489"
+    target: "तो परीक्षेत उत्तीर्ण झाला."
+    reading: "to parikṣet uttirṇa jhālā."
+    ipa: "t̪o pərikʂet̪ ut̪t̪irɳə dzʱala"
+    pos: "phrase"
+    bases: [{ word: "परीक्षेत", ref: "mr-1117" }, { word: "उत्तीर्ण", ref: "mr-1126" }, { word: "झाला", base: "होणे", reading: "hoṇe" }]
+    confusables: [{ id: "w1", ref: "mr-0677", kind: "word" }, { id: "f1", word: "झाली", reading: "jhāli", kind: "form" }]
+  - id: "mr-6490"
+    target: "वेळापत्रकात विज्ञान कधी आहे?"
+    reading: "veḷāpatrakāt vidnyān kadhi āhe?"
+    ipa: "ʋeɭapət̪rəkat̪ ʋid̪ɲan kəd̪ʱi aɦe"
+    pos: "phrase"
+    bases: [{ word: "वेळापत्रकात", ref: "mr-1127" }, { word: "कधी", base: "कधी", reading: "kadhi" }, { word: "आहे", base: "असणे", reading: "asṇe" }]
+    confusables: [{ id: "w1", ref: "mr-0738", kind: "word" }, { id: "f1", word: "आहेत", reading: "āhet", kind: "form" }]
+  - id: "mr-6491"
+    target: "मधली सुट्टी संपली."
+    reading: "madhli suṭṭi sampali."
+    ipa: "məd̪ʱli suʈʈi səmpəli"
+    pos: "phrase"
+    bases: [{ word: "मधली", base: "मधला", reading: "madhlā" }, { word: "संपली", base: "संपणे", reading: "sampaṇe" }]
+    confusables: [{ id: "w1", ref: "mr-0474", kind: "word" }, { id: "f1", word: "संपला", reading: "sampalā", kind: "form" }]

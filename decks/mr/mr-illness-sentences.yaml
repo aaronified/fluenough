@@ -1,0 +1,99 @@
+schema: 1
+id: "mr-illness-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-6000"
+    target: "मला सर्दी आणि खोकला आहे."
+    reading: "malā sardi āṇi khoklā āhe."
+    ipa: "məla sərd̪i aɳi kʰokla aɦe"
+    pos: "phrase"
+    bases: [{ word: "मला", reading: "malā", base: "मी" }, { word: "आहे", reading: "āhe", base: "असणे" }]
+    confusables: [{ id: "w1", word: "मी", reading: "mi", kind: "word" }, { id: "f1", word: "आहेस", reading: "āhes", kind: "form" }]
+  - id: "mr-6001"
+    target: "नर्स तुला गोळी देईल."
+    reading: "nars tulā goḷi deil."
+    ipa: "nərs t̪ula ɡoɭi d̪eil"
+    pos: "phrase"
+    bases: [{ word: "तुला", reading: "tulā", base: "तू" }, { word: "देईल", reading: "deil", base: "देणे" }]
+    confusables: [{ id: "w1", word: "तुम्ही", reading: "tumhi", kind: "word" }, { id: "f1", word: "देते", reading: "dete", kind: "form" }]
+  - id: "mr-6002"
+    target: "नर्स उद्या तपासणी करेल."
+    reading: "nars udyā tapāsṇi karel."
+    ipa: "nərs ud̪ja t̪əpasɳi kərel"
+    pos: "phrase"
+    bases: [{ word: "करेल", reading: "karel", base: "करणे" }]
+    confusables: [{ id: "w1", word: "काल", reading: "kāl", kind: "word" }, { id: "f1", word: "करतील", reading: "kartil", kind: "form" }]
+  - id: "mr-6003"
+    target: "रुग्ण बरा झाला."
+    reading: "rugṇa barā jhālā."
+    ipa: "ruɡɳə bəra dzʱala"
+    pos: "phrase"
+    bases: [{ word: "बरा", reading: "barā", base: "बरा" }, { word: "झाला", reading: "jhālā", base: "होणे" }]
+    confusables: [{ id: "w1", word: "नर्स", reading: "nars", kind: "word" }, { id: "f1", word: "झाली", reading: "jhāli", kind: "form" }]
+  - id: "mr-6004"
+    target: "तुझं डोकं दुखतं का?"
+    reading: "tujham̐ ḍokam̐ dukhtam̐ kā?"
+    ipa: "t̪udzʱə̃ ɖokə̃ d̪ukʰt̪ə̃ ka"
+    pos: "phrase"
+    bases: [{ word: "तुझं", reading: "tujham̐", base: "तू" }, { word: "दुखतं", reading: "dukhtam̐", base: "दुखणे" }]
+    confusables: [{ id: "w1", word: "पाय", reading: "pāy", kind: "word" }, { id: "f1", word: "दुखतो", reading: "dukhto", kind: "form" }]
+  - id: "mr-6005"
+    target: "सकाळी उलटी झाली."
+    reading: "sakāḷi ulṭi jhāli."
+    ipa: "səkaɭi ulʈi dzʱali"
+    pos: "phrase"
+    bases: [{ word: "सकाळी", reading: "sakāḷi", base: "सकाळ" }, { word: "झाली", reading: "jhāli", base: "होणे" }]
+    confusables: [{ id: "w1", word: "रात्री", reading: "rātri", kind: "word" }, { id: "f1", word: "झाला", reading: "jhālā", kind: "form" }]
+  - id: "mr-6006"
+    target: "जखमेवर पट्टी बांधा."
+    reading: "jakhmevar paṭṭi bāndhā."
+    ipa: "dzəkʰmeʋər pəʈʈi band̪ʱa"
+    pos: "phrase"
+    bases: [{ word: "जखमेवर", reading: "jakhmevar", base: "जखम" }, { word: "बांधा", reading: "bāndhā", base: "बांधणे" }]
+    confusables: [{ id: "w1", word: "करा", reading: "karā", kind: "word" }, { id: "f1", word: "बांधला", reading: "bāndhalā", kind: "form" }]
+  - id: "mr-6007"
+    target: "त्याला चक्कर आली का?"
+    reading: "tyālā cakkar āli kā?"
+    ipa: "t̪jala tsəkkər ali ka"
+    pos: "phrase"
+    bases: [{ word: "त्याला", reading: "tyālā", base: "तो" }, { word: "आली", reading: "āli", base: "येणे" }]
+    confusables: [{ id: "w1", word: "तिला", reading: "tilā", kind: "word" }, { id: "f1", word: "आला", reading: "ālā", kind: "form" }]
+  - id: "mr-6008"
+    target: "नर्सला लगेच बोलवा."
+    reading: "narsalā lagec bolvā."
+    ipa: "nərsəla ləɡets bolʋa"
+    pos: "phrase"
+    bases: [{ word: "नर्सला", reading: "narsalā", base: "नर्स" }, { word: "बोलवा", reading: "bolvā", base: "बोलवणे" }]
+    confusables: [{ id: "w1", word: "सांगा", reading: "sāṅgā", kind: "word" }, { id: "f1", word: "बोलवतो", reading: "bolvto", kind: "form" }]
+  - id: "mr-6009"
+    target: "तापामुळे थकवा येतो."
+    reading: "tāpāmuḷe thakvā yeto."
+    ipa: "t̪apamuɭe t̪ʰəkʋa jet̪o"
+    pos: "phrase"
+    bases: [{ word: "तापामुळे", reading: "tāpāmuḷe", base: "ताप" }, { word: "येतो", reading: "yeto", base: "येणे" }]
+    confusables: [{ id: "w1", word: "साठी", reading: "sāṭhi", kind: "word" }, { id: "f1", word: "येते", reading: "yete", kind: "form" }]
+  - id: "mr-6010"
+    target: "गोळी रोज घ्या."
+    reading: "goḷi roj ghyā."
+    ipa: "ɡoɭi rodz ɡʱja"
+    pos: "phrase"
+    bases: [{ word: "रोज", reading: "roj", base: "रोज" }, { word: "घ्या", reading: "ghyā", base: "घेणे" }]
+    confusables: [{ id: "w1", word: "दिवस", reading: "divas", kind: "word" }, { id: "f1", word: "घेतो", reading: "gheto", kind: "form" }]
+  - id: "mr-6011"
+    target: "त्याची तपासणी झाली."
+    reading: "tyāci tapāsṇi jhāli."
+    ipa: "t̪jatʃi t̪əpasɳi dzʱali"
+    pos: "phrase"
+    bases: [{ word: "त्याची", reading: "tyāci", base: "तो" }, { word: "झाली", reading: "jhāli", base: "होणे" }]
+    confusables: [{ id: "w1", word: "त्याला", reading: "tyālā", kind: "word" }, { id: "f1", word: "झाला", reading: "jhālā", kind: "form" }]
+  - id: "mr-6012"
+    target: "सर्दीवर गरम पाणी प्या."
+    reading: "sardivar garam pāṇi pyā."
+    ipa: "sərd̪iʋər ɡərəm paɳi pja"
+    pos: "phrase"
+    bases: [{ word: "सर्दीवर", reading: "sardivar", base: "सर्दी" }, { word: "गरम", reading: "garam", base: "गरम" }, { word: "प्या", reading: "pyā", base: "पिणे" }]
+    confusables: [{ id: "w1", word: "चहा", reading: "cahā", kind: "word" }, { id: "f1", word: "पितो", reading: "pito", kind: "form" }]
