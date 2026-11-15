@@ -536,7 +536,9 @@ units:
       - { id: "what-do-you-like", text: { "en": "Saying what you like and are good at, and what you are not" } }
     reading_passages:
       - { id: "pen-pal-letter", text: { "en": "A pen-pal letter about likes and skills" } }
-  - planned: { id: "ja-grammar-comparison", grammar: ["yori", "ichiban"] }
+  - decks: ["ja-grammar-yori", "ja-grammar-ichiban", "ja-grammar-comparison-sentences"]
+    words: 0
+    grammar: ["yori", "ichiban"]
     listening_passages:
       - { id: "which-is-better", text: { "en": "Two friends compare two phones, and pick the best" } }
     reading_passages:
