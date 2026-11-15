@@ -26,6 +26,7 @@ cards:
     pos: "phrase"
     bases: [{ word: "দোকানে", ref: "bn-0250" }, { word: "বড়", ref: "bn-0062" }, { word: "ডিসকাউন্ট", ref: "bn-4341" }, { word: "আছে", base: "আছে", reading: "āche" }]
     confusables: [{ id: "c1", word: "দাম বাড়ল", reading: "dām bāṛal", kind: "word" }, { id: "c2", word: "কমিশন", reading: "kamiśan", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
   - id: "bn-4364"
     target: "এই মাসে লাভ কম হলো।"
     reading: "ei māse lābh kôm hôlo."
@@ -35,6 +36,7 @@ cards:
     pos: "phrase"
     bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "মাসে", ref: "bn-0334" }, { word: "লাভ", ref: "bn-4317" }, { word: "কম", ref: "bn-0556" }, { word: "হলো", ref: "bn-0874" }]
     confusables: [{ id: "c1", word: "লোকসান", reading: "lokasān", kind: "word" }, { id: "c2", word: "মুনাফা", reading: "munāphā", kind: "word" }]
+    notes: [{ id: "n1", kind: "behaviour" }]
   - id: "bn-4365"
     target: "ঋণদাতা টাকা ফেরত চাইলেন।"
     reading: "rinodātā ṭākā pherot cāilen."
@@ -44,6 +46,7 @@ cards:
     pos: "phrase"
     bases: [{ word: "ঋণদাতা", ref: "bn-4347" }, { word: "টাকা", ref: "bn-0245" }, { word: "ফেরত", ref: "bn-1700" }, { word: "চাইলেন", ref: "bn-0741" }]
     confusables: [{ id: "c1", word: "ধার", reading: "dhār", kind: "word" }, { id: "c2", word: "উপহার", reading: "upahār", kind: "word" }]
+    notes: [{ id: "n1", kind: "behaviour" }]
   - id: "bn-4366"
     target: "বিদ্যুতের বিল বাকি আছে।"
     reading: "bidduter bil bāki āche."
@@ -53,6 +56,7 @@ cards:
     pos: "phrase"
     bases: [{ word: "বিদ্যুতের", ref: "bn-1583" }, { word: "বিল", ref: "bn-1696" }, { word: "বাকি", ref: "bn-4339" }, { word: "আছে", base: "আছে", reading: "āche" }]
     confusables: [{ id: "c1", word: "রসিদ", reading: "rasid", kind: "word" }, { id: "c2", word: "পাওনা", reading: "pāonā", kind: "word" }]
+    notes: [{ id: "n1", kind: "usage" }]
   - id: "bn-4367"
     target: "মাসিক কিস্তি সময়মতো দিও।"
     reading: "māsik kisti sômoyomoto dio."
