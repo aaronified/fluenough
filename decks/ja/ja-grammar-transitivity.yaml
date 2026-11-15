@@ -1,0 +1,512 @@
+schema: 1
+id: "ja-grammar-transitivity"
+part: "core"
+kind: "rules"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except:
+      - "ja-0085"
+      - "ja-0341"
+      - "ja-0342"
+      - "ja-0343"
+      - "ja-0344"
+      - "ja-0345"
+      - "ja-0346"
+      - "ja-0347"
+      - "ja-0348"
+      - "ja-0349"
+      - "ja-0350"
+      - "ja-0351"
+      - "ja-0352"
+      - "ja-0353"
+      - "ja-0354"
+      - "ja-0356"
+      - "ja-0357"
+      - "ja-0358"
+      - "ja-0359"
+      - "ja-0360"
+      - "ja-0361"
+      - "ja-0362"
+      - "ja-0363"
+      - "ja-0364"
+      - "ja-0365"
+      - "ja-0366"
+      - "ja-0367"
+      - "ja-0368"
+      - "ja-0369"
+      - "ja-0370"
+      - "ja-0371"
+      - "ja-0374"
+      - "ja-0375"
+      - "ja-0516"
+      - "ja-0571"
+      - "ja-0572"
+      - "ja-0573"
+      - "ja-0574"
+      - "ja-0575"
+      - "ja-0576"
+      - "ja-0577"
+      - "ja-0578"
+      - "ja-0579"
+      - "ja-0580"
+      - "ja-0581"
+      - "ja-0582"
+      - "ja-0583"
+      - "ja-0584"
+      - "ja-0585"
+      - "ja-0586"
+      - "ja-0587"
+      - "ja-0588"
+      - "ja-0589"
+      - "ja-0590"
+      - "ja-0591"
+      - "ja-0593"
+      - "ja-0594"
+      - "ja-0595"
+      - "ja-0597"
+      - "ja-0598"
+      - "ja-0599"
+      - "ja-0600"
+      - "ja-0711"
+      - "ja-0949"
+      - "ja-1050"
+      - "ja-1060"
+      - "ja-1061"
+      - "ja-1062"
+      - "ja-1070"
+      - "ja-1078"
+      - "ja-1226"
+      - "ja-1227"
+      - "ja-1228"
+      - "ja-1236"
+      - "ja-1237"
+      - "ja-1240"
+      - "ja-1334"
+      - "ja-1335"
+      - "ja-1336"
+      - "ja-1341"
+      - "ja-1349"
+      - "ja-1350"
+      - "ja-1351"
+      - "ja-1352"
+      - "ja-1353"
+      - "ja-1354"
+      - "ja-1368"
+      - "ja-1539"
+      - "ja-1542"
+      - "ja-1718"
+      - "ja-1719"
+      - "ja-1720"
+      - "ja-1721"
+      - "ja-1758"
+      - "ja-1759"
+      - "ja-1790"
+      - "ja-1791"
+      - "ja-1792"
+      - "ja-1793"
+      - "ja-1794"
+      - "ja-1799"
+      - "ja-1800"
+      - "ja-1801"
+      - "ja-1802"
+      - "ja-1803"
+      - "ja-1804"
+      - "ja-1805"
+      - "ja-1850"
+      - "ja-1861"
+      - "ja-1862"
+      - "ja-1863"
+      - "ja-1864"
+      - "ja-1865"
+      - "ja-1892"
+      - "ja-1893"
+      - "ja-1896"
+      - "ja-1900"
+      - "ja-1901"
+      - "ja-1907"
+      - "ja-1910"
+      - "ja-1933"
+      - "ja-1934"
+      - "ja-1935"
+      - "ja-1939"
+      - "ja-1940"
+      - "ja-1941"
+      - "ja-1996"
+      - "ja-1997"
+      - "ja-1998"
+      - "ja-1999"
+      - "ja-2000"
+      - "ja-2001"
+      - "ja-2002"
+      - "ja-2049"
+      - "ja-2052"
+      - "ja-2053"
+      - "ja-2054"
+      - "ja-2115"
+      - "ja-2116"
+      - "ja-2117"
+      - "ja-2118"
+      - "ja-2120"
+      - "ja-2121"
+      - "ja-2122"
+      - "ja-2123"
+      - "ja-2124"
+      - "ja-2125"
+      - "ja-2126"
+      - "ja-2129"
+      - "ja-2164"
+      - "ja-2165"
+      - "ja-2217"
+      - "ja-2220"
+      - "ja-2221"
+      - "ja-2222"
+      - "ja-2223"
+      - "ja-2228"
+      - "ja-2229"
+      - "ja-2230"
+      - "ja-2231"
+      - "ja-2234"
+      - "ja-2235"
+      - "ja-2236"
+      - "ja-2237"
+      - "ja-2238"
+      - "ja-2239"
+      - "ja-2240"
+      - "ja-2241"
+      - "ja-2244"
+      - "ja-2245"
+      - "ja-2246"
+      - "ja-2247"
+      - "ja-2248"
+      - "ja-2249"
+      - "ja-2250"
+      - "ja-2252"
+      - "ja-2261"
+      - "ja-2262"
+      - "ja-2268"
+      - "ja-2269"
+      - "ja-2270"
+      - "ja-2271"
+      - "ja-2272"
+      - "ja-2273"
+      - "ja-2274"
+      - "ja-2276"
+      - "ja-2322"
+      - "ja-2323"
+      - "ja-2364"
+      - "ja-2365"
+      - "ja-2407"
+      - "ja-2470"
+      - "ja-2471"
+      - "ja-2472"
+      - "ja-2473"
+      - "ja-2600"
+      - "ja-2601"
+      - "ja-2602"
+      - "ja-2603"
+      - "ja-2604"
+      - "ja-2605"
+      - "ja-2606"
+      - "ja-2716"
+      - "ja-2768"
+      - "ja-2769"
+      - "ja-2770"
+      - "ja-2771"
+      - "ja-2772"
+      - "ja-2773"
+      - "ja-2774"
+      - "ja-2794"
+      - "ja-2795"
+      - "ja-2796"
+      - "ja-2797"
+      - "ja-2798"
+      - "ja-2799"
+      - "ja-2800"
+      - "ja-2801"
+      - "ja-2803"
+      - "ja-2806"
+      - "ja-2812"
+      - "ja-2876"
+      - "ja-2877"
+      - "ja-2925"
+      - "ja-2926"
+      - "ja-2944"
+      - "ja-2945"
+      - "ja-2982"
+      - "ja-3062"
+      - "ja-3140"
+      - "ja-3195"
+      - "ja-3294"
+      - "ja-3309"
+      - "ja-3310"
+      - "ja-3311"
+      - "ja-3319"
+      - "ja-3320"
+      - "ja-3321"
+      - "ja-3322"
+      - "ja-3383"
+      - "ja-3389"
+      - "ja-3390"
+      - "ja-3434"
+      - "ja-3452"
+      - "ja-3564"
+      - "ja-3568"
+      - "ja-3569"
+      - "ja-3571"
+      - "ja-3611"
+      - "ja-3612"
+      - "ja-3690"
+      - "ja-3691"
+      - "ja-3779"
+      - "ja-3780"
+      - "ja-3781"
+      - "ja-3782"
+      - "ja-3783"
+      - "ja-3784"
+      - "ja-3785"
+      - "ja-3786"
+      - "ja-3790"
+      - "ja-3791"
+      - "ja-3833"
+      - "ja-3857"
+      - "ja-3887"
+      - "ja-3898"
+      - "ja-3963"
+      - "ja-3965"
+      - "ja-4046"
+      - "ja-4047"
+      - "ja-4048"
+      - "ja-4049"
+      - "ja-4050"
+      - "ja-4051"
+      - "ja-4052"
+      - "ja-4053"
+      - "ja-4056"
+      - "ja-4057"
+      - "ja-4058"
+      - "ja-4059"
+      - "ja-4060"
+      - "ja-4061"
+      - "ja-4062"
+      - "ja-4063"
+      - "ja-4064"
+      - "ja-4065"
+      - "ja-4066"
+      - "ja-4067"
+      - "ja-4068"
+      - "ja-4069"
+      - "ja-4072"
+      - "ja-4073"
+      - "ja-4074"
+      - "ja-4075"
+      - "ja-4076"
+      - "ja-4077"
+      - "ja-4078"
+      - "ja-4079"
+      - "ja-4080"
+      - "ja-4083"
+      - "ja-4084"
+      - "ja-4085"
+      - "ja-4086"
+      - "ja-4089"
+      - "ja-4090"
+      - "ja-4093"
+      - "ja-4095"
+      - "ja-4096"
+      - "ja-4099"
+      - "ja-4100"
+      - "ja-4101"
+      - "ja-4102"
+      - "ja-4103"
+      - "ja-4104"
+      - "ja-4105"
+      - "ja-4185"
+      - "ja-4186"
+      - "ja-4187"
+      - "ja-4192"
+      - "ja-4912"
+  slots: ["intransitive", "transitive"]
+  rows:
+    - word: "ja-2226"
+      forms: { "intransitive": "あきます", "transitive": "あけます" }
+      readings: { "intransitive": "akimasu", "transitive": "akemasu" }
+    - word: "ja-0372"
+      forms: { "intransitive": "あきます", "transitive": "あけます" }
+      readings: { "intransitive": "akimasu", "transitive": "akemasu" }
+    - word: "ja-2225"
+      forms: { "intransitive": "きえます", "transitive": "けします" }
+      readings: { "intransitive": "kiemasu", "transitive": "keshimasu" }
+    - word: "ja-2224"
+      forms: { "intransitive": "きえます", "transitive": "けします" }
+      readings: { "intransitive": "kiemasu", "transitive": "keshimasu" }
+    - word: "ja-2275"
+      forms: { "intransitive": "はじまります", "transitive": "はじめます" }
+      readings: { "intransitive": "hajimarimasu", "transitive": "hajimemasu" }
+    - word: "ja-0596"
+      forms: { "intransitive": "はじまります", "transitive": "はじめます" }
+      readings: { "intransitive": "hajimarimasu", "transitive": "hajimemasu" }
+    - word: "ja-2267"
+      forms: { "intransitive": "ふえます", "transitive": "ふやします" }
+      readings: { "intransitive": "fuemasu", "transitive": "fuyashimasu" }
+    - word: "ja-3384"
+      forms: { "intransitive": "ふえます", "transitive": "ふやします" }
+      readings: { "intransitive": "fuemasu", "transitive": "fuyashimasu" }
+    - word: "ja-2050"
+      forms: { "intransitive": "なおります", "transitive": "なおします" }
+      readings: { "intransitive": "naorimasu", "transitive": "naoshimasu" }
+    - word: "ja-2051"
+      forms: { "intransitive": "なおります", "transitive": "なおします" }
+      readings: { "intransitive": "naorimasu", "transitive": "naoshimasu" }
+    - word: "ja-1071"
+      forms: { "intransitive": "でます", "transitive": "だします" }
+      readings: { "intransitive": "demasu", "transitive": "dashimasu" }
+    - word: "ja-1348"
+      forms: { "intransitive": "でます", "transitive": "だします" }
+      readings: { "intransitive": "demasu", "transitive": "dashimasu" }
+    - word: "ja-0355"
+      forms: { "intransitive": "はいります", "transitive": "いれます" }
+      readings: { "intransitive": "hairimasu", "transitive": "iremasu" }
+    - word: "ja-0592"
+      forms: { "intransitive": "はいります", "transitive": "いれます" }
+      readings: { "intransitive": "hairimasu", "transitive": "iremasu" }
+    - word: "ja-2233"
+      forms: { "intransitive": "おちます", "transitive": "おとします" }
+      readings: { "intransitive": "ochimasu", "transitive": "otoshimasu" }
+    - word: "ja-2232"
+      forms: { "intransitive": "おちます", "transitive": "おとします" }
+      readings: { "intransitive": "ochimasu", "transitive": "otoshimasu" }
+    - word: "ja-2257"
+      forms: { "intransitive": "のこります", "transitive": "のこします" }
+      readings: { "intransitive": "nokorimasu", "transitive": "nokoshimasu" }
+    - word: "ja-2258"
+      forms: { "intransitive": "のこります", "transitive": "のこします" }
+      readings: { "intransitive": "nokorimasu", "transitive": "nokoshimasu" }
+    - word: "ja-3386"
+      forms: { "intransitive": "こわれます", "transitive": "こわします" }
+      readings: { "intransitive": "kowaremasu", "transitive": "kowashimasu" }
+    - word: "ja-3385"
+      forms: { "intransitive": "こわれます", "transitive": "こわします" }
+      readings: { "intransitive": "kowaremasu", "transitive": "kowashimasu" }
+    - word: "ja-2127"
+      forms: { "intransitive": "よごれます", "transitive": "よごします" }
+      readings: { "intransitive": "yogoremasu", "transitive": "yogoshimasu" }
+    - word: "ja-2128"
+      forms: { "intransitive": "よごれます", "transitive": "よごします" }
+      readings: { "intransitive": "yogoremasu", "transitive": "yogoshimasu" }
+    - word: "ja-1364"
+      forms: { "intransitive": "かわきます", "transitive": "かわかします" }
+      readings: { "intransitive": "kawakimasu", "transitive": "kawakashimasu" }
+    - word: "ja-2119"
+      forms: { "intransitive": "かわきます", "transitive": "かわかします" }
+      readings: { "intransitive": "kawakimasu", "transitive": "kawakashimasu" }
+    - word: "ja-2218"
+      forms: { "intransitive": "きまります", "transitive": "きめます" }
+      readings: { "intransitive": "kimarimasu", "transitive": "kimemasu" }
+    - word: "ja-2219"
+      forms: { "intransitive": "きまります", "transitive": "きめます" }
+      readings: { "intransitive": "kimarimasu", "transitive": "kimemasu" }
+    - word: "ja-2227"
+      forms: { "intransitive": "しまります", "transitive": "しめます" }
+      readings: { "intransitive": "shimarimasu", "transitive": "shimemasu" }
+    - word: "ja-0373"
+      forms: { "intransitive": "しまります", "transitive": "しめます" }
+      readings: { "intransitive": "shimarimasu", "transitive": "shimemasu" }
+    - word: "ja-2255"
+      forms: { "intransitive": "うごきます", "transitive": "うごかします" }
+      readings: { "intransitive": "ugokimasu", "transitive": "ugokashimasu" }
+    - word: "ja-2256"
+      forms: { "intransitive": "うごきます", "transitive": "うごかします" }
+      readings: { "intransitive": "ugokimasu", "transitive": "ugokashimasu" }
+    - word: "ja-2253"
+      forms: { "intransitive": "まわります", "transitive": "まわします" }
+      readings: { "intransitive": "mawarimasu", "transitive": "mawashimasu" }
+    - word: "ja-2254"
+      forms: { "intransitive": "まわります", "transitive": "まわします" }
+      readings: { "intransitive": "mawarimasu", "transitive": "mawashimasu" }
+    - word: "ja-2265"
+      forms: { "intransitive": "みつかります", "transitive": "みつけます" }
+      readings: { "intransitive": "mitsukarimasu", "transitive": "mitsukemasu" }
+    - word: "ja-2266"
+      forms: { "intransitive": "みつかります", "transitive": "みつけます" }
+      readings: { "intransitive": "mitsukarimasu", "transitive": "mitsukemasu" }
+    - word: "ja-4092"
+      forms: { "intransitive": "つぶれます", "transitive": "つぶします" }
+      readings: { "intransitive": "tsuburemasu", "transitive": "tsubushimasu" }
+    - word: "ja-4091"
+      forms: { "intransitive": "つぶれます", "transitive": "つぶします" }
+      readings: { "intransitive": "tsuburemasu", "transitive": "tsubushimasu" }
+    - word: "ja-4087"
+      forms: { "intransitive": "ちぢみます", "transitive": "ちぢめます" }
+      readings: { "intransitive": "chijimimasu", "transitive": "chijimemasu" }
+    - word: "ja-4088"
+      forms: { "intransitive": "ちぢみます", "transitive": "ちぢめます" }
+      readings: { "intransitive": "chijimimasu", "transitive": "chijimemasu" }
+    - word: "ja-3914"
+      forms: { "intransitive": "にげます", "transitive": "にがします" }
+      readings: { "intransitive": "nigemasu", "transitive": "nigashimasu" }
+    - word: "ja-3915"
+      forms: { "intransitive": "にげます", "transitive": "にがします" }
+      readings: { "intransitive": "nigemasu", "transitive": "nigashimasu" }
+    - word: "ja-2320"
+      forms: { "intransitive": "つながります", "transitive": "つなぎます" }
+      readings: { "intransitive": "tsunagarimasu", "transitive": "tsunagimasu" }
+    - word: "ja-2321"
+      forms: { "intransitive": "つながります", "transitive": "つなぎます" }
+      readings: { "intransitive": "tsunagarimasu", "transitive": "tsunagimasu" }
+    - word: "ja-4054"
+      forms: { "intransitive": "かさなります", "transitive": "かさねます" }
+      readings: { "intransitive": "kasanarimasu", "transitive": "kasanemasu" }
+    - word: "ja-4055"
+      forms: { "intransitive": "かさなります", "transitive": "かさねます" }
+      readings: { "intransitive": "kasanarimasu", "transitive": "kasanemasu" }
+    - word: "ja-4081"
+      forms: { "intransitive": "そまります", "transitive": "そめます" }
+      readings: { "intransitive": "somarimasu", "transitive": "somemasu" }
+    - word: "ja-4082"
+      forms: { "intransitive": "そまります", "transitive": "そめます" }
+      readings: { "intransitive": "somarimasu", "transitive": "somemasu" }
+    - word: "ja-4070"
+      forms: { "intransitive": "しずみます", "transitive": "しずめます" }
+      readings: { "intransitive": "shizumimasu", "transitive": "shizumemasu" }
+    - word: "ja-4071"
+      forms: { "intransitive": "しずみます", "transitive": "しずめます" }
+      readings: { "intransitive": "shizumimasu", "transitive": "shizumemasu" }
+    - word: "ja-2251"
+      forms: { "intransitive": "とおります", "transitive": "とおします" }
+      readings: { "intransitive": "toorimasu", "transitive": "tooshimasu" }
+    - word: "ja-4094"
+      forms: { "intransitive": "とおります", "transitive": "とおします" }
+      readings: { "intransitive": "toorimasu", "transitive": "tooshimasu" }
+    - word: "ja-2242"
+      forms: { "intransitive": "とどきます", "transitive": "とどけます" }
+      readings: { "intransitive": "todokimasu", "transitive": "todokemasu" }
+    - word: "ja-2243"
+      forms: { "intransitive": "とどきます", "transitive": "とどけます" }
+      readings: { "intransitive": "todokimasu", "transitive": "todokemasu" }
+    - word: "ja-4097"
+      forms: { "intransitive": "ととのいます", "transitive": "ととのえます" }
+      readings: { "intransitive": "totonoimasu", "transitive": "totonoemasu" }
+    - word: "ja-4098"
+      forms: { "intransitive": "ととのいます", "transitive": "ととのえます" }
+      readings: { "intransitive": "totonoimasu", "transitive": "totonoemasu" }
+    - word: "ja-2259"
+      forms: { "intransitive": "あつまります", "transitive": "あつめます" }
+      readings: { "intransitive": "atsumarimasu", "transitive": "atsumemasu" }
+    - word: "ja-2260"
+      forms: { "intransitive": "あつまります", "transitive": "あつめます" }
+      readings: { "intransitive": "atsumarimasu", "transitive": "atsumemasu" }
+    - word: "ja-2263"
+      forms: { "intransitive": "かくれます", "transitive": "かくします" }
+      readings: { "intransitive": "kakuremasu", "transitive": "kakushimasu" }
+    - word: "ja-2264"
+      forms: { "intransitive": "かくれます", "transitive": "かくします" }
+      readings: { "intransitive": "kakuremasu", "transitive": "kakushimasu" }
+rules:
+  - id: "ja-rule-intransitive"
+    slots: ["intransitive"]
+  - id: "ja-rule-transitive"
+    slots: ["transitive"]

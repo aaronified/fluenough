@@ -1,0 +1,296 @@
+schema: 1
+id: "ja-grammar-transitivity-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-9520"
+    target: "ドアがあきました。"
+    words: ["ドア", "が", "あきました"]
+    reading: "doa ga akimashita."
+    ipa: "doa ɡa akimaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "ドア", ref: "ja-0859" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "あきました", ref: "ja-2226" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-0372", kind: "word" }
+      - { id: "w2", ref: "ja-2225", kind: "word" }
+    rules: ["ja-rule-intransitive"]
+  - id: "ja-9521"
+    target: "ドアをあけました。"
+    words: ["ドア", "を", "あけました"]
+    reading: "doa o akemashita."
+    ipa: "doa o akemaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "ドア", ref: "ja-0859" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "あけました", ref: "ja-0372" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-2226", kind: "word" }
+      - { id: "w2", ref: "ja-2224", kind: "word" }
+    rules: ["ja-rule-transitive"]
+  - id: "ja-9522"
+    target: "でんきがきえました。"
+    words: ["でんき", "が", "きえました"]
+    reading: "denki ga kiemashita."
+    ipa: "deɴki ɡa kiemaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "でんき", ref: "ja-0092" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "きえました", ref: "ja-2225" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-2224", kind: "word" }
+      - { id: "w2", ref: "ja-2233", kind: "word" }
+    rules: ["ja-rule-intransitive"]
+  - id: "ja-9523"
+    target: "でんきをけしました。"
+    words: ["でんき", "を", "けしました"]
+    reading: "denki o keshimashita."
+    ipa: "deɴki o keɕimaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "でんき", ref: "ja-0092" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "けしました", ref: "ja-2224" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-2225", kind: "word" }
+      - { id: "w2", ref: "ja-0372", kind: "word" }
+    rules: ["ja-rule-transitive"]
+  - id: "ja-9524"
+    target: "かいぎがはじまりました。"
+    words: ["かいぎ", "が", "はじまりました"]
+    reading: "kaigi ga hajimarimashita."
+    ipa: "kaiɡi ɡa hadʑimaɾimaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "かいぎ", ref: "ja-0703" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "はじまりました", ref: "ja-2275" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-0596", kind: "word" }
+      - { id: "w2", ref: "ja-0516", kind: "word" }
+    rules: ["ja-rule-intransitive"]
+  - id: "ja-9525"
+    target: "かいぎをはじめました。"
+    words: ["かいぎ", "を", "はじめました"]
+    reading: "kaigi o hajimemashita."
+    ipa: "kaiɡi o hadʑimemaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "かいぎ", ref: "ja-0703" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "はじめました", ref: "ja-0596" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-2275", kind: "word" }
+      - { id: "w2", ref: "ja-0516", kind: "word" }
+    rules: ["ja-rule-transitive"]
+  - id: "ja-9526"
+    target: "ふくがよごれました。"
+    words: ["ふく", "が", "よごれました"]
+    reading: "fuku ga yogoremashita."
+    ipa: "ɸɯkɯ ɡa joɡoɾemaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "ふく", ref: "ja-1512" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "よごれました", ref: "ja-2127" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-2128", kind: "word" }
+      - { id: "w2", ref: "ja-2233", kind: "word" }
+    rules: ["ja-rule-intransitive"]
+  - id: "ja-9527"
+    target: "ふくをよごしました。"
+    words: ["ふく", "を", "よごしました"]
+    reading: "fuku o yogoshimashita."
+    ipa: "ɸɯkɯ o joɡoɕimaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "ふく", ref: "ja-1512" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "よごしました", ref: "ja-2128" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-2127", kind: "word" }
+      - { id: "w2", ref: "ja-2119", kind: "word" }
+    rules: ["ja-rule-transitive"]
+  - id: "ja-9528"
+    target: "てがみがとどきました。"
+    words: ["てがみ", "が", "とどきました"]
+    reading: "tegami ga todokimashita."
+    ipa: "teɡami ɡa todokimaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "てがみ", ref: "ja-1356" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "とどきました", ref: "ja-2242" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-2243", kind: "word" }
+      - { id: "w2", ref: "ja-2241", kind: "word" }
+    rules: ["ja-rule-intransitive"]
+  - id: "ja-9529"
+    target: "てがみをとどけました。"
+    words: ["てがみ", "を", "とどけました"]
+    reading: "tegami o todokemashita."
+    ipa: "teɡami o todokemaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "てがみ", ref: "ja-1356" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "とどけました", ref: "ja-2243" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-2242", kind: "word" }
+      - { id: "w2", ref: "ja-2241", kind: "word" }
+    rules: ["ja-rule-transitive"]
+  - id: "ja-9530"
+    target: "まどがしまりました。"
+    words: ["まど", "が", "しまりました"]
+    reading: "mado ga shimarimashita."
+    ipa: "mado ɡa ɕimaɾimaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "まど", ref: "ja-1170" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "しまりました", ref: "ja-2227" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-0373", kind: "word" }
+      - { id: "w2", ref: "ja-2235", kind: "word" }
+    rules: ["ja-rule-intransitive"]
+  - id: "ja-9531"
+    target: "まどをしめました。"
+    words: ["まど", "を", "しめました"]
+    reading: "mado o shimemashita."
+    ipa: "mado o ɕimemaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "まど", ref: "ja-1170" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "しめました", ref: "ja-0373" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-2227", kind: "word" }
+      - { id: "w2", ref: "ja-2235", kind: "word" }
+    rules: ["ja-rule-transitive"]
+  - id: "ja-9532"
+    target: "はこがおちました。"
+    words: ["はこ", "が", "おちました"]
+    reading: "hako ga ochimashita."
+    ipa: "hako ɡa otɕimaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "はこ", ref: "ja-0448" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "おちました", ref: "ja-2233" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-2232", kind: "word" }
+      - { id: "w2", ref: "ja-2229", kind: "word" }
+    rules: ["ja-rule-intransitive"]
+  - id: "ja-9533"
+    target: "はこをおとしました。"
+    words: ["はこ", "を", "おとしました"]
+    reading: "hako o otoshimashita."
+    ipa: "hako o otoɕimaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "はこ", ref: "ja-0448" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "おとしました", ref: "ja-2232" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-2233", kind: "word" }
+      - { id: "w2", ref: "ja-2229", kind: "word" }
+    rules: ["ja-rule-transitive"]
+  - id: "ja-9534"
+    target: "かさがみつかりました。"
+    words: ["かさ", "が", "みつかりました"]
+    reading: "kasa ga mitsukarimashita."
+    ipa: "kasa ɡa mitsɯkaɾimaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "かさ", ref: "ja-1029" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "みつかりました", ref: "ja-2265" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-2266", kind: "word" }
+      - { id: "w2", ref: "ja-2264", kind: "word" }
+    rules: ["ja-rule-intransitive"]
+  - id: "ja-9535"
+    target: "かさをみつけました。"
+    words: ["かさ", "を", "みつけました"]
+    reading: "kasa o mitsukemashita."
+    ipa: "kasa o mitsɯkemaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "かさ", ref: "ja-1029" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "みつけました", ref: "ja-2266" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-2265", kind: "word" }
+      - { id: "w2", ref: "ja-2263", kind: "word" }
+    rules: ["ja-rule-transitive"]
+  - id: "ja-9536"
+    target: "みずがふえました。"
+    words: ["みず", "が", "ふえました"]
+    reading: "mizu ga fuemashita."
+    ipa: "midzɯ ɡa ɸɯemaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "みず", ref: "ja-0073" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "ふえました", ref: "ja-2267" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-3384", kind: "word" }
+      - { id: "w2", ref: "ja-2268", kind: "word" }
+    rules: ["ja-rule-intransitive"]
+  - id: "ja-9537"
+    target: "みずをふやしました。"
+    words: ["みず", "を", "ふやしました"]
+    reading: "mizu o fuyashimashita."
+    ipa: "midzɯ o ɸɯjaɕimaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "みず", ref: "ja-0073" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "ふやしました", ref: "ja-3384" }
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "w1", ref: "ja-2267", kind: "word" }
+      - { id: "w2", ref: "ja-3383", kind: "word" }
+    rules: ["ja-rule-transitive"]
