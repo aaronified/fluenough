@@ -273,3 +273,24 @@ cards:
     tags: ["sentence"]
     bases: [{ word: "Dónde", ref: "es-0056" }, { word: "está", ref: "es-0023" }, { word: "la", base: "la" }, { word: "recepción", ref: "es-2171" }, { word: "del", base: "del" }, { word: "hotel", ref: "es-0769" }]
     confusables: [{ id: "cerca", ref: "es-0717", kind: "word" }, { id: "metro", ref: "es-0675", kind: "word" }]
+  - id: "es-4650"
+    target: "Tengo una reserva."
+    ipa: "ˈtenɡo ˈuna reˈseɾba"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "reserva", ref: "es-1257" }]
+    confusables: [{ id: "reservar", ref: "es-1258", kind: "word" }, { id: "hotel", ref: "es-0769", kind: "word" }]
+  - id: "es-4651"
+    target: "¿Tiene una habitación libre?"
+    ipa: "ˈtjene ˈuna abitaˈθjon ˈlibɾe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tiene", ref: "es-0024" }, { word: "una", base: "una" }, { word: "habitación", ref: "es-0802" }, { word: "libre", ref: "es-0426" }]
+    confusables: [{ id: "hotel", ref: "es-0769", kind: "word" }, { id: "reserva", ref: "es-1257", kind: "word" }]
+  - id: "es-4652"
+    target: "¿Me da la llave, por favor?"
+    ipa: "me da la ˈʝabe poɾ faˈboɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Me", base: "me" }, { word: "da", ref: "es-1629" }, { word: "la", base: "la" }, { word: "llave", ref: "es-0877" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+    confusables: [{ id: "tarjeta", ref: "es-0879", kind: "word" }, { id: "pasaporte", ref: "es-0878", kind: "word" }]

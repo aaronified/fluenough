@@ -48,3 +48,28 @@ cards:
     tags: ["sentence"]
     bases: [{ word: "Aviso", base: "aviso" }, { word: "a", base: "a" }, { word: "los", base: "los" }, { word: "bomberos", ref: "es-0872" }, { word: "del", base: "del" }, { word: "incendio", ref: "es-2063" }]
     confusables: [{ id: "avisar", ref: "es-2829", kind: "word" }, { id: "ahogarse", ref: "es-2830", kind: "word" }]
+  - id: "es-4658"
+    target: "¡Socorro!"
+    ipa: "soˈkoro"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Socorro", ref: "es-2811" }]
+  - id: "es-4659"
+    target: "Llame una ambulancia, por favor."
+    ipa: "ˈʝame ˈuna ambuˈlanθja poɾ faˈboɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Llame", base: "llamar" }, { word: "una", base: "una" }, { word: "ambulancia", ref: "es-0870" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+    confusables: [{ id: "policia", ref: "es-0868", kind: "word" }, { id: "hospital", ref: "es-0772", kind: "word" }]
+  - id: "es-4660"
+    target: "Estoy herido."
+    ipa: "esˈtoj eˈɾido"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Estoy", ref: "es-0023" }, { word: "herido", ref: "es-2825" }]
+    confusables: [{ id: "herida", ref: "es-1471", kind: "word" }, { id: "accidente", ref: "es-0871", kind: "word" }]
+  - id: "es-4661"
+    target: "¡Cuidado!"
+    ipa: "kwiˈdado"
+    pos: "phrase"
+    bases: [{ word: "Cuidado", base: "cuidado" }]
