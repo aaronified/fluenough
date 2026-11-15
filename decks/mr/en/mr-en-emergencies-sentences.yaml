@@ -1,0 +1,58 @@
+schema: 1
+id: "mr-en-emergencies-sentences"
+kind: "layer"
+core: "mr-emergencies-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about emergencies"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-5510":
+    native: "Call an ambulance."
+    bases: { "बोलवा": "call (please)" }
+    confusables: { "w1": { why: "अग्निशमन (agniśaman) is the fire brigade, not an ambulance." }, "w2": { why: "सायरन (sāyran) is a siren, a sound, not a call." } }
+  "mr-5511":
+    native: "Did an earthquake happen?"
+    bases: { "झाला": "happened", "का": "a question marker" }
+    confusables: { "w1": { why: "आपत्ती (āpatti) is a disaster in general, not an earthquake." }, "w2": { why: "दुर्घटना (durghaṭnā) is an accident, not an earthquake." } }
+  "mr-5512":
+    native: "Is anyone injured?"
+    bases: { "कोणी": "anyone", "आहे": "is", "का": "a question marker" }
+    confusables: { "w1": { why: "मृत्यू (mrutyu) is death, far more serious than an injury." }, "w2": { why: "सुरक्षित (surakṣit) means safe, the opposite of injured." } }
+  "mr-5513":
+    native: "We are safe."
+    bases: { "आहोत": "are (we)" }
+    confusables: { "w1": { why: "जखमी (jakhmi) means injured, not safe." }, "f1": { why: "आहे (āhe) is for one person or thing; for we, the verb is आहोत (āhot)." } }
+  "mr-5514":
+    native: "Listen to the siren."
+    bases: { "ऐका": "listen (please)" }
+    confusables: { "w1": { why: "इशारा (iśārā) is a warning, which a siren gives; this sentence says listen." }, "w2": { why: "बचाव (bacāv) is rescue, not sound." } }
+  "mr-5515":
+    native: "Get out from here."
+    bases: { "इथून": "from here", "बाहेर": "out", "पडा": "get (please)" }
+    confusables: { "w1": { why: "बोलवणे (bolvṇe) is to call for help, not to leave." }, "w2": { why: "ओरडणे (orḍṇe) is to shout, not to leave." } }
+  "mr-5516":
+    native: "There is a gas leak."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "विजेचा धक्का (vijecā dhakkā) is an electric shock, not a gas leak." }, "w2": { why: "भूकंप (bhukamp) is an earthquake, not a leak." } }
+  "mr-5517":
+    native: "An accident happened."
+    bases: { "झाली": "happened" }
+    confusables: { "w1": { why: "आपत्ती (āpatti) is a disaster in general, not an accident." }, "w2": { why: "गॅस गळती (gês gaḷti) is a gas leak, one kind of accident." } }
+  "mr-5518":
+    native: "This is the emergency number."
+    bases: { "हा": "this", "आहे": "is", "क्रमांक": "number" }
+    confusables: { "w1": { why: "सुरक्षित (surakṣit) means safe, not an emergency." }, "w2": { why: "आपत्ती (āpatti) is a disaster, a noun; आपत्कालीन (āpatkālin) is the adjective for emergency." } }
+  "mr-5519":
+    native: "The siren sounded."
+    bases: { "वाजला": "sounded" }
+    confusables: { "w1": { why: "इशारा (iśārā) is a warning, the meaning of a siren, not its sound." }, "w2": { why: "अग्निशमन (agniśaman) is the fire brigade, not a siren." } }
+  "mr-5520":
+    native: "The fire brigade is coming."
+    bases: { "येत": "coming", "आहे": "is", "दल": "team" }
+    confusables: { "w1": { why: "रुग्णवाहिका (rugṇavāhikā) is an ambulance, not the fire brigade." }, "w2": { why: "बचाव (bacāv) is rescue, the work the brigade does." } }
+  "mr-5521":
+    native: "Go to a safe place."
+    bases: { "ठिकाणी": "to a place", "जा": "go (please)" }
+    confusables: { "w1": { why: "जखमी (jakhmi) means injured, not a place." }, "w2": { why: "आपत्कालीन (āpatkālin) means emergency, not safe." } }

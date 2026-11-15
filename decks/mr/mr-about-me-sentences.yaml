@@ -1,0 +1,85 @@
+schema: 1
+id: "mr-about-me-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-5000"
+    target: "माझे नाव सुनीता आहे."
+    reading: "mājhe nāv sunitā āhe."
+    ipa: "madʒʱe naʋ sunit̪a aɦe"
+    pos: "phrase"
+    bases: [{ word: "माझे", reading: "mi", base: "मी" }, { word: "नाव", reading: "nāv", base: "नाव" }, { word: "सुनीता", reading: "sunitā", base: "सुनीता" }, { word: "आहे", reading: "asṇe", base: "असणे" }]
+    confusables: [{ id: "w1", word: "माझा", reading: "mājhā", kind: "word" }, { id: "f1", word: "आहेत", reading: "āhet", kind: "form" }]
+  - id: "mr-5001"
+    target: "माझे गाव पुण्याजवळ आहे."
+    reading: "mājhe gāv puṇyājvaḷ āhe."
+    ipa: "madʒʱe ɡaʋ puɳjadzʋəɭ aɦe"
+    pos: "phrase"
+    bases: [{ word: "माझे", reading: "mi", base: "मी" }, { word: "गाव", reading: "gāv", base: "गाव" }, { word: "पुण्याजवळ", reading: "puṇe", base: "पुणे" }, { word: "आहे", reading: "asṇe", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-0208", kind: "word" }, { id: "w2", word: "जवळ", reading: "javaḷ", kind: "word" }]
+  - id: "mr-5002"
+    target: "माझे वय तीस आहे."
+    reading: "mājhe vay tis āhe."
+    ipa: "madʒʱe ʋəj t̪is aɦe"
+    pos: "phrase"
+    bases: [{ word: "माझे", reading: "mi", base: "मी" }, { word: "वय", reading: "vay", base: "वय" }, { word: "तीस", reading: "tis", base: "तीस" }, { word: "आहे", reading: "asṇe", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-0204", kind: "word" }, { id: "f1", word: "आहेत", reading: "āhet", kind: "form" }]
+  - id: "mr-5003"
+    target: "आज माझ्या मित्राचे लग्न आहे."
+    reading: "āj mājhyā mitrāce lagna āhe."
+    ipa: "adz madʒʱja mit̪ratʃe ləɡnə aɦe"
+    pos: "phrase"
+    bases: [{ word: "आज", reading: "āj", base: "आज" }, { word: "माझ्या", reading: "mi", base: "मी" }, { word: "मित्राचे", reading: "mitra", base: "मित्र" }, { word: "लग्न", reading: "lagna", base: "लग्न" }, { word: "आहे", reading: "asṇe", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-0213", kind: "word" }, { id: "f1", word: "आहेत", reading: "āhet", kind: "form" }]
+  - id: "mr-5004"
+    target: "माझी मैत्रीण मुंबईची आहे."
+    reading: "mājhi maitriṇ mumbaici āhe."
+    ipa: "madʒʱi məit̪riɳ mumbəitʃi aɦe"
+    pos: "phrase"
+    bases: [{ word: "माझी", reading: "mi", base: "मी" }, { word: "मैत्रीण", reading: "maitriṇ", base: "मैत्रीण" }, { word: "मुंबईची", reading: "mumbai", base: "मुंबई" }, { word: "आहे", reading: "asṇe", base: "असणे" }]
+    confusables: [{ id: "w1", word: "माझा", reading: "mājhā", kind: "word" }, { id: "w2", ref: "mr-0677", kind: "word" }]
+  - id: "mr-5005"
+    target: "मी मराठी भाषा शिकतो."
+    reading: "mi marāṭhi bhāṣā śikto."
+    ipa: "mi məraʈʰi bʱaʂa ʃikt̪o"
+    pos: "phrase"
+    bases: [{ word: "मी", reading: "mi", base: "मी" }, { word: "मराठी", reading: "marāṭhi", base: "मराठी" }, { word: "भाषा", reading: "bhāṣā", base: "भाषा" }, { word: "शिकतो", reading: "śikṇe", base: "शिकणे" }]
+    confusables: [{ id: "f1", word: "शिकते", reading: "śikte", kind: "form" }, { id: "w1", word: "शिकवतो", reading: "śikvto", kind: "word" }]
+  - id: "mr-5006"
+    target: "तुझे नाव काय आहे?"
+    reading: "tujhe nāv kāy āhe?"
+    ipa: "t̪udʒʱe naʋ kaj aɦe"
+    pos: "phrase"
+    bases: [{ word: "तुझे", reading: "tu", base: "तू" }, { word: "नाव", reading: "nāv", base: "नाव" }, { word: "काय", reading: "kāy", base: "काय" }, { word: "आहे", reading: "asṇe", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-0172", kind: "word" }, { id: "w2", ref: "mr-0173", kind: "word" }]
+  - id: "mr-5007"
+    target: "माझा मित्र त्याच्या गावात राहतो."
+    reading: "mājhā mitra tyācyā gāvāt rāhto."
+    ipa: "madzʱa mit̪rə t̪jatʃja ɡaʋat̪ raɦt̪o"
+    pos: "phrase"
+    bases: [{ word: "माझा", reading: "mi", base: "मी" }, { word: "मित्र", reading: "mitra", base: "मित्र" }, { word: "त्याच्या", reading: "to", base: "तो" }, { word: "गावात", reading: "gāv", base: "गाव" }, { word: "राहतो", reading: "rāhṇe", base: "राहणे" }]
+    confusables: [{ id: "w1", ref: "mr-0214", kind: "word" }, { id: "f1", word: "राहते", reading: "rāhte", kind: "form" }]
+  - id: "mr-5008"
+    target: "भारत हा माझा देश आहे."
+    reading: "bhārat hā mājhā deś āhe."
+    ipa: "bʱarət̪ ɦa madzʱa d̪eʃ aɦe"
+    pos: "phrase"
+    bases: [{ word: "भारत", reading: "bhārat", base: "भारत" }, { word: "हा", reading: "hā", base: "हा" }, { word: "माझा", reading: "mi", base: "मी" }, { word: "देश", reading: "deś", base: "देश" }, { word: "आहे", reading: "asṇe", base: "असणे" }]
+    confusables: [{ id: "w1", word: "हे", reading: "he", kind: "word" }, { id: "f1", word: "आहेत", reading: "āhet", kind: "form" }]
+  - id: "mr-5009"
+    target: "तो माझा मित्र आहे."
+    reading: "to mājhā mitra āhe."
+    ipa: "t̪o madzʱa mit̪rə aɦe"
+    pos: "phrase"
+    bases: [{ word: "तो", reading: "to", base: "तो" }, { word: "माझा", reading: "mi", base: "मी" }, { word: "मित्र", reading: "mitra", base: "मित्र" }, { word: "आहे", reading: "asṇe", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-0677", kind: "word" }, { id: "w2", word: "माझी", reading: "mājhi", kind: "word" }]
+  - id: "mr-5010"
+    target: "ती माझी मैत्रीण आहे."
+    reading: "ti mājhi maitriṇ āhe."
+    ipa: "t̪i madʒʱi məit̪riɳ aɦe"
+    pos: "phrase"
+    bases: [{ word: "ती", reading: "ti", base: "ती" }, { word: "माझी", reading: "mi", base: "मी" }, { word: "मैत्रीण", reading: "maitriṇ", base: "मैत्रीण" }, { word: "आहे", reading: "asṇe", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-0676", kind: "word" }, { id: "w2", word: "माझा", reading: "mājhā", kind: "word" }]
