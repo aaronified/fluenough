@@ -1,0 +1,235 @@
+# Layer for fr-proverbs-1: each proverb's literal sense and plain English meaning, and English glosses of its words.
+schema: 1
+id: "fr-en-proverbs-1"
+kind: "layer"
+core: "fr-proverbs-1"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Proverbs: proverbes 1"
+description: "Twenty French proverbs from an 1842 printed dictionary of proverbs, each with its literal sense and plain English meaning. Not yet checked by a French speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "fr-4300":
+    native: "One swallow does not make a spring."
+    notes:
+      "literal": "Literally, one swallow does not make the spring; plain meaning: one example is no proof, so do not draw a conclusion from it."
+    bases:
+      "Une": { meaning: "a" }
+      "hirondelle": { meaning: "swallow" }
+      "ne": { meaning: "not" }
+      "fait": { meaning: "makes" }
+      "pas": { meaning: "not" }
+      "le": { meaning: "the" }
+      "printemps": { meaning: "spring" }
+  "fr-4301":
+    native: "At Candlemas come the great pains, the hard cold."
+    notes:
+      "literal": "Literally, the great pains are the severe frosts of early February, when Candlemas is kept; plain meaning: the cold often comes hardest at the start of February."
+    bases:
+      "À": { meaning: "at" }
+      "la": { meaning: "the" }
+      "Chandeleur": { meaning: "Candlemas" }
+      "les": { meaning: "the" }
+      "grandes": { meaning: "great" }
+      "douleurs": { meaning: "pains" }
+  "fr-4302":
+    native: "The sun shines for everyone."
+    notes:
+      "literal": "Literally, the sun shines for the whole world; plain meaning: some advantages belong to everyone, and everyone has the right to enjoy them."
+    bases:
+      "Le": { meaning: "the" }
+      "soleil": { meaning: "sun" }
+      "luit": { meaning: "shines" }
+      "pour": { meaning: "for" }
+      "tout": { meaning: "all" }
+      "monde": { meaning: "world" }
+  "fr-4303":
+    native: "Appetite comes while eating."
+    notes:
+      "literal": "Literally, appetite comes while you eat; plain meaning: the more you have, the more you want, and eating makes you hungrier."
+    bases:
+      "L'appétit": { meaning: "appetite" }
+      "vient": { meaning: "comes" }
+      "en": { meaning: "while" }
+      "mangeant": { meaning: "eating" }
+  "fr-4304":
+    native: "Eat to live, and do not live to eat."
+    notes:
+      "literal": "Literally, eat in order to live and do not live in order to eat; plain meaning: food is for health, not the main purpose of life."
+    bases:
+      "Mange": { meaning: "eat" }
+      "pour": { meaning: "in order to" }
+      "vivre": { meaning: "live" }
+      "et": { meaning: "and" }
+      "ne": { meaning: "not" }
+      "vis": { meaning: "live" }
+      "pas": { meaning: "not" }
+      "manger": { meaning: "to eat" }
+  "fr-4305":
+    native: "After a full belly comes the dance."
+    notes:
+      "literal": "Literally, after the belly, the dance; plain meaning: people enjoy themselves once they have eaten well."
+    bases:
+      "Après": { meaning: "after" }
+      "la": { meaning: "the" }
+      "panse": { meaning: "belly" }
+      "danse": { meaning: "dance" }
+  "fr-4306":
+    native: "Plenty of goods never does harm."
+    notes:
+      "literal": "Literally, abundance of goods does not harm; plain meaning: having more than enough is never a problem."
+    bases:
+      "Abondance": { meaning: "abundance" }
+      "de": { meaning: "of" }
+      "biens": { meaning: "goods" }
+      "ne": { meaning: "not" }
+      "nuit": { meaning: "harms" }
+      "pas": { meaning: "not" }
+  "fr-4307":
+    native: "Money is a good servant but a bad master."
+    notes:
+      "literal": "Literally, money is a good servant but a bad master; plain meaning: money is useful while you control it, and harmful when it controls you."
+    bases:
+      "L'argent": { meaning: "money" }
+      "est": { meaning: "is" }
+      "un": { meaning: "a" }
+      "bon": { meaning: "good" }
+      "serviteur": { meaning: "servant" }
+      "mais": { meaning: "but" }
+      "c'est": { meaning: "it is" }
+      "mauvais": { meaning: "bad" }
+      "maître": { meaning: "master" }
+  "fr-4308":
+    native: "Good accounts make good friends."
+    notes:
+      "literal": "Literally, clear accounts make good friends; plain meaning: settling money matters clearly keeps friendships intact."
+    bases:
+      "Les": { meaning: "the" }
+      "bons": { meaning: "good" }
+      "comptes": { meaning: "accounts" }
+      "font": { meaning: "make" }
+      "amis": { meaning: "friends" }
+  "fr-4309":
+    native: "In time of need you recognise a friend."
+    notes:
+      "literal": "Literally, one knows the friend in time of need; plain meaning: real friends show themselves when you are in difficulty."
+    bases:
+      "Au": { meaning: "at" }
+      "besoin": { meaning: "need" }
+      "on": { meaning: "one" }
+      "connaît": { meaning: "knows" }
+      "l'ami": { meaning: "the friend" }
+  "fr-4310":
+    native: "The table is the go-between of friendship."
+    notes:
+      "literal": "Literally, the table is the matchmaker of friendship; plain meaning: sharing a meal brings people together and strengthens friendship."
+    bases:
+      "La": { meaning: "the" }
+      "table": { meaning: "table" }
+      "est": { meaning: "is" }
+      "l'entremetteuse": { meaning: "go-between" }
+      "de": { meaning: "of" }
+      "l'amitié": { meaning: "friendship" }
+  "fr-4311":
+    native: "You cannot please everyone, not even your own father."
+    notes:
+      "literal": "Literally, one cannot please everyone and one's father; plain meaning: you cannot make everyone happy, and even your own father may not be pleased."
+    bases:
+      "On": { meaning: "one" }
+      "ne": { meaning: "not" }
+      "peut": { meaning: "can" }
+      "contenter": { meaning: "please" }
+      "tout": { meaning: "all" }
+      "le": { meaning: "the" }
+      "monde": { meaning: "world" }
+      "et": { meaning: "and" }
+      "son": { meaning: "one's" }
+      "père": { meaning: "father" }
+  "fr-4312":
+    native: "By forging again and again, one becomes a blacksmith."
+    notes:
+      "literal": "Literally, by dint of forging one becomes a smith; plain meaning: practice makes you skilled at a task."
+    bases:
+      "À": { meaning: "by" }
+      "force": { meaning: "dint" }
+      "de": { meaning: "of" }
+      "forger": { meaning: "forging" }
+      "on": { meaning: "one" }
+      "devient": { meaning: "becomes" }
+      "forgeron": { meaning: "blacksmith" }
+  "fr-4313":
+    native: "The master's eye fattens the horse."
+    notes:
+      "literal": "Literally, the master's eye fattens the horse; plain meaning: things go better when the owner watches over his own affairs."
+    bases:
+      "L'œil": { meaning: "eye" }
+      "du": { meaning: "of the" }
+      "maître": { meaning: "master" }
+      "engraisse": { meaning: "fattens" }
+      "le": { meaning: "the" }
+      "cheval": { meaning: "horse" }
+  "fr-4314":
+    native: "You must strike the iron while it is hot."
+    notes:
+      "literal": "Literally, strike the iron while it is hot; plain meaning: act while the moment is right."
+    bases:
+      "Il": { meaning: "one" }
+      "faut": { meaning: "must" }
+      "battre": { meaning: "strike" }
+      "le": { meaning: "the" }
+      "fer": { meaning: "iron" }
+      "pendant": { meaning: "while" }
+      "qu'il": { meaning: "that he" }
+      "est": { meaning: "is" }
+      "chaud": { meaning: "hot" }
+  "fr-4315":
+    native: "A barking dog does not bite."
+    notes:
+      "literal": "Literally, a dog that barks does not bite; plain meaning: the person who makes the most threats is not always the most dangerous."
+    bases:
+      "Chien": { meaning: "dog" }
+      "qui": { meaning: "that" }
+      "aboie": { meaning: "barks" }
+      "ne": { meaning: "not" }
+      "mord": { meaning: "bites" }
+      "pas": { meaning: "not" }
+  "fr-4316":
+    native: "A scalded cat fears cold water."
+    notes:
+      "literal": "Literally, a cat that has been scalded fears cold water; plain meaning: someone who has been tricked once is wary of anything that looks like a new trick."
+    bases:
+      "Chat": { meaning: "cat" }
+      "échaudé": { meaning: "scalded" }
+      "craint": { meaning: "fears" }
+      "l'eau": { meaning: "the water" }
+      "froide": { meaning: "cold" }
+  "fr-4317":
+    native: "One donkey scratches another."
+    notes:
+      "literal": "Literally, one donkey scratches another; plain meaning: people help and flatter one another for their mutual benefit."
+    bases:
+      "Un": { meaning: "one" }
+      "âne": { meaning: "donkey" }
+      "en": { meaning: "one of" }
+      "gratte": { meaning: "scratches" }
+      "autre": { meaning: "another" }
+  "fr-4318":
+    native: "Whoever sleeps dines."
+    notes:
+      "literal": "Literally, the one who sleeps dines; plain meaning: sleep can take the place of a meal, so a sleeper does not feel hungry."
+    bases:
+      "Qui": { meaning: "whoever" }
+      "dort": { meaning: "sleeps" }
+      "dîne": { meaning: "dines" }
+  "fr-4319":
+    native: "Lost time is never recovered."
+    notes:
+      "literal": "Literally, lost time is never repaired; plain meaning: time you waste cannot be won back."
+    bases:
+      "Le": { meaning: "the" }
+      "temps": { meaning: "time" }
+      "perdu": { meaning: "lost" }
+      "ne": { meaning: "not" }
+      "se": { meaning: "itself" }
+      "répare": { meaning: "repairs" }
+      "jamais": { meaning: "ever" }
