@@ -47,8 +47,9 @@ Before you start:
   only by the tools: `tools/import_phonetic.py` takes Wiktionary's form where
   there is one, and `tools/derive_phonetic.py` derives the rest from the
   language's rule file. A builder does not write one from memory or from rules
-  in their head. **Status: the fields and the tools are not built yet.** Until
-  a release reads them (released apps reject unknown fields), leave them out.
+  in their head. **Status: the fields and both tools exist** (the registry is
+  `tools/phonetic_languages.yaml`; 0.6.6 reads the fields). For Japanese, the
+  rules-derived forms wait for its rule file `decks/ja/ja-phonetics.yaml` (JA-040).
 - Every question-word card (where, when, who, what, why, how, which, how
   many) gets a `picture` plus `picture_ask: true` (DECK-FORMAT, "A question
   word's picture"; owner, 2026-10-22, #707: "So that all future decks can
