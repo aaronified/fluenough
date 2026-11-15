@@ -37,6 +37,8 @@ cards:
     reading: "śojā"
     ipa: "ʃodʒa"
     pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
     "examples": [
       {"target": "তার চুল সোজা।", "reading": "tār cul śojā.", "ipa": "t̪ar tʃul ʃodʒa", "bases": [{"word": "তার", "ref": "bn-0839"}]},
       {"target": "সোজা হয়ে দাঁড়াও।", "reading": "śojā hôye dām̐ṛāo.", "ipa": "ʃodʒa ɦɔje d̪ãɽao", "bases": [{"word": "হয়ে", "base": "হওয়া", "reading": "hôye"}, {"word": "দাঁড়াও", "base": "দাঁড়ানো", "reading": "dām̐ṛāo"}]}
@@ -90,6 +92,8 @@ cards:
     reading: "ekhāne"
     ipa: "ekʰane"
     pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
     "examples": [
       {"target": "এখানে থামুন।", "reading": "ekhāne thāmun.", "ipa": "ekʰane t̪ʰamun", "bases": [{"word": "থামুন", "ref": "bn-1111"}]},
       {"target": "এখানে নামুন।", "reading": "ekhāne nāmun.", "ipa": "ekʰane namun", "bases": [{"word": "নামুন", "ref": "bn-2365"}]}
@@ -99,11 +103,15 @@ cards:
     reading: "okhāne"
     ipa: "okʰane"
     pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
   - id: "bn-0313"
     target: "রাস্তা"
     reading: "rāstā"
     ipa: "rast̪a"
     pos: "noun"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     "examples": [
       {"target": "রাস্তাটা ঝুঁকিপূর্ণ।", "reading": "rāstāṭā jhum̐kipurno.", "ipa": "rast̪aʈa dʒʱũkipurn", "bases": [{"word": "রাস্তাটা", "base": "রাস্তা", "reading": "rāstā"}]},
       {"target": "রাস্তায় জ্যাম।", "reading": "rāstāy jêm.", "ipa": "rast̪aj dʒæm", "bases": [{"word": "রাস্তায়", "base": "রাস্তা", "reading": "rāstā"}]}
@@ -124,6 +132,8 @@ cards:
     reading: "ḍāne ghurun."
     ipa: "ɖane ɡʱurun"
     pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     bases:
       - { word: "ডানে", base: "ডান", reading: "ḍān" }
       - { word: "ঘুরুন", ref: "bn-0306" }
@@ -132,6 +142,8 @@ cards:
     reading: "sojā jān."
     ipa: "sodʒa dʒan"
     pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     bases:
       - { word: "সোজা", ref: "bn-0305" }
       - { word: "যান", base: "যাওয়া", reading: "jāoā" }

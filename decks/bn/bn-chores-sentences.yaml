@@ -32,6 +32,7 @@ cards:
     rules: ["bn-rule-present-third"]
     bases: [{ word: "কাচেন", base: "কাচা", reading: "kācen" }]
     confusables: [{ id: "c1", word: "খান", reading: "khān", kind: "word" }, { id: "c2", word: "যান", reading: "jān", kind: "word" }]
+    notes: [{ id: "n1", kind: "behaviour" }]
   - id: "bn-2292"
     target: "আপনি বিছানাটা করুন।"
     reading: "āpni bichānāṭā korun."
@@ -40,6 +41,7 @@ cards:
     rules: ["bn-rule-polite-request"]
     bases: [{ word: "বিছানাটা", ref: "bn-0606" }, { word: "করুন", ref: "bn-0102" }]
     confusables: [{ id: "c1", word: "বই", reading: "boi", kind: "word" }, { id: "c2", word: "খাতা", reading: "khātā", kind: "word" }]
+    notes: [{ id: "n1", kind: "behaviour" }]
   - id: "bn-2293"
     target: "আমার ঘরটা পরিষ্কার।"
     reading: "āmār ghôrṭā poriśkār."
@@ -71,6 +73,7 @@ cards:
     pos: "phrase"
     bases: [{ word: "ঝাড়ার", base: "ঝাড়া", reading: "jhāṛār" }, { word: "মোছো", ref: "bn-1121" }]
     confusables: [{ id: "c1", word: "দরজা", reading: "dôrjā", kind: "word" }, { id: "c2", word: "ছাদ", reading: "chād", kind: "word" }]
+    notes: [{ id: "n1", kind: "behaviour" }]
   - id: "bn-2297"
     target: "থালাগুলো টেবিলে সাজিয়ে রাখো।"
     reading: "thālāgulo ṭebile sājiye rākho."
@@ -79,6 +82,7 @@ cards:
     rules: ["bn-rule-plural", "bn-rule-loc"]
     bases: [{ word: "থালাগুলো", ref: "bn-2270" }, { word: "টেবিলে", base: "টেবিল", reading: "ṭebile" }, { word: "সাজিয়ে", base: "সাজানো", reading: "sājiye" }, { word: "রাখো", base: "রাখা", reading: "rākho" }]
     confusables: [{ id: "c1", word: "চামচ", reading: "cāmco", kind: "word" }, { id: "c2", word: "গ্লাস", reading: "glās", kind: "word" }]
+    notes: [{ id: "n1", kind: "behaviour" }]
   - id: "bn-2298"
     target: "তোমার বালিশটা কোথায়?"
     reading: "tomār bāliśṭā kothāy?"
