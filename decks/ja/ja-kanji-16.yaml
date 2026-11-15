@@ -260,6 +260,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "言葉はむずかしいです。"
+        target_scripts: { kana: "ことばはむずかしいです。" }
+        words: ["言葉", "は", "むずかしい", "です"]
+        reading: "kotoba wa muzukashii desu."
+        ipa: "kotoba wa mɯdzɯkaɕiː desɯ"
   - id: "ja-5856"
     target: "軽"
     target_scripts: { kana: "かるい" }

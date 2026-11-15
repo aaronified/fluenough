@@ -181,6 +181,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "あなたの住まいはどこですか。"
+        target_scripts: { kana: "あなたのすまいはどこですか。" }
+        words: ["あなた", "の", "住まい", "は", "どこ", "です", "か"]
+        reading: "anata no sumai wa doko desu ka?"
+        ipa: "anata no sɯmai wa doko desɯ ka"
   - id: "ja-5552"
     target: "助"
     target_scripts: { kana: "たすける" }
