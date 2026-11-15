@@ -96,6 +96,8 @@ Task T23 of the kinds plan is where it lands.
 
 **Hindustani (`hi`), verified 2026-11-15 on decks-live** (full audit in [Deck-Work-Queue-HI](Deck-Work-Queue-HI.md)): path, cores, script decks, phrasebook and facts done; sentences partly (20 of 74 word decks have one); readings partly (52 decks); situations, topics, culture, creators, proverbs, multi-word verbs, recommendations and the sourcing list missing; professional held; narrow IPA partly (1,403 of 2,635 own cards); Urdu spelling on 1,975 of 2,635 own cards; review queue 10 rows.
 
+**Kannada (`kn`), verified 2026-11-15 on decks-live** (full audit in [Deck-Work-Queue-KN](Deck-Work-Queue-KN.md)): path (110 units, all built), cores and layers (96 vocab, 30 grammar), script decks, phrasebook (20) and facts (44) done; sentences missing (none for 96 vocab decks); readings missing (1); situations, topics, culture, creators, proverbs, multi-word verbs, recommendations and the sourcing list missing; professional held; narrow IPA none (no registry entry or rules file; broad `ipa` on 1,715 of 2,003 cards); review queue 12 rows.
+
 Counts on decks-live of all files under `decks/<code>/`, layers included, for orientation only (2026-11-13; ja re-counted 2026-11-15): ja 703, es 442, fr 380, te 302, mr 266, bn 465, as 436, gu 115. A file count says nothing about coverage.
 
 **First task of the stream, before any build:** one audit per language filling the grid, from decks-live, one Haiku agent for the reads. Nothing is built for a language on a guess.
@@ -138,7 +140,7 @@ Owner (2026-11-13): "Deck work issues to be updated with the full deck format as
 | Bodo | brx | #1169 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
 | Dogri | doi | #1170 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
 | Gujarati | gu | #1171 | not on a numbered list; owner's culture-priority language (8th) | culture priority 8 of 8 | path of 117 units, 42 built; 60 core files |
-| Kannada | kn | #1172 | first list (to B1) | deck priority 5 of the first list | path of 115 units, 114 built; 133 core files |
+| Kannada | kn | #1172 | first list (to B1) | deck priority 5 of the first list | path of 115 units, 114 built; 133 core files; audit and task plan in [Deck-Work-Queue-KN](Deck-Work-Queue-KN.md) (2026-11-15) |
 | Kashmiri | ks | #1173 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
 | Konkani | kok | #1174 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
 | Maithili | mai | #1175 | third list and others (first words only) | no ranked priority | path of 121 units, 1 built; 3 core files |
