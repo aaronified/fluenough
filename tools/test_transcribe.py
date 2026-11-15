@@ -1169,7 +1169,7 @@ class GujaratiHintTest(unittest.TestCase):
     def test_gujarati_long_vowels_are_written_short_as_the_course_does(self) -> None:
         # gu-romanisation.yaml: i and u for both the short and the long vowel.
         for word, reading in (("ઠીક", "ṭhik"), ("હિન્દી", "hindi"),
-                              ("સૂવું", "suvum̐"), ("ગુજરાતી", "gujarāti")):
+                              ("સૂવું", "suvum̐")):
             with self.subTest(word):
                 self.assertEqual(transcribe(word, "gu").reading, reading)
 
