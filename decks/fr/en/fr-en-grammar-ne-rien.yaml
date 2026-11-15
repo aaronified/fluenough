@@ -1,0 +1,22 @@
+schema: 1
+id: "fr-en-grammar-ne-rien"
+kind: "layer"
+core: "fr-grammar-ne-rien"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nothing: ne … rien"
+license: "CC-BY-SA-4.0"
+description: "Ne … rien means nothing; it replaces quelque chose. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Ne … rien"
+  slot_name: "sentence"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "positive": "positive sentence", "negative": "negative sentence" }
+  entries:
+    "voir": "to see"
+    "faire": "to do"
+    "entendre": "to hear"
+    "comprendre": "to understand"
+    "manger": "to eat"
+    "boire": "to drink"
+    "savoir": "to know"
+  notes: "Ne … rien means nothing, and replaces quelque chose (something): je vois quelque chose becomes je ne vois rien. Ne goes before the verb and rien after it, and ne becomes n' before a vowel sound: il n'entend rien. In the passé composé, rien stands between the auxiliary and the participle: je n'ai rien vu. Rien can also begin a sentence: rien ne change."

@@ -1,0 +1,22 @@
+schema: 1
+id: "fr-en-grammar-ne-plus"
+kind: "layer"
+core: "fr-grammar-ne-plus"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "No longer: ne … plus"
+license: "CC-BY-SA-4.0"
+description: "Ne … plus means no longer or not any more; it replaces encore. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Ne … plus"
+  slot_name: "sentence"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "positive": "positive sentence", "negative": "negative sentence" }
+  entries:
+    "travailler": "to work"
+    "habiter": "to live (in a place)"
+    "dormir": "to sleep"
+    "jouer": "to play"
+    "etudier": "to study"
+    "pleuvoir": "to rain"
+    "attendre": "to wait"
+  notes: "Ne … plus means no longer, or not any more, and replaces encore (still): il travaille encore becomes il ne travaille plus. Ne goes before the verb and plus after it, and ne becomes n' before a vowel sound: je n'habite plus ici. In the passé composé, ne and plus go around the auxiliary: je n'ai plus mangé. Do not confuse it with ne … pas, which only says not."

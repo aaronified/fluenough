@@ -506,7 +506,9 @@ units:
       - { id: "describing-a-room", text: { "en": "Describing a rented room" } }
     reading_passages:
       - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
-  - planned: { id: "fr-grammar-negation-more", grammar: ["ne-jamais", "ne-rien", "ne-personne", "ne-plus"] }
+  - decks: ["fr-grammar-ne-jamais", "fr-grammar-ne-rien", "fr-grammar-ne-personne", "fr-grammar-ne-plus"]
+    words: 0
+    grammar: ["ne-jamais", "ne-rien", "ne-personne", "ne-plus"]
     listening_passages:
       - { id: "never-again", text: { "en": "Saying you never, no longer, nothing and nobody" } }
     reading_passages:

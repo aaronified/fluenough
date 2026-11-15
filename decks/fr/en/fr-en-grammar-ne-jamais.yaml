@@ -1,0 +1,22 @@
+schema: 1
+id: "fr-en-grammar-ne-jamais"
+kind: "layer"
+core: "fr-grammar-ne-jamais"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Never: ne … jamais"
+license: "CC-BY-SA-4.0"
+description: "Ne … jamais means never; it goes around the verb the way ne … pas does. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Ne … jamais"
+  slot_name: "sentence"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "positive": "positive sentence", "negative": "negative sentence" }
+  entries:
+    "manger": "to eat"
+    "travailler": "to work"
+    "dormir": "to sleep"
+    "lire": "to read"
+    "jouer": "to play"
+    "voyager": "to travel"
+    "etudier": "to study"
+  notes: "Ne … jamais means never, and goes around the verb as ne … pas does: il mange toujours (he always eats) becomes il ne mange jamais (he never eats). Ne becomes n' before a vowel sound: vous n'étudiez jamais. In the passé composé, ne and jamais go around the auxiliary: je n'ai jamais mangé. Jamais can also answer a question on its own: Jamais !"
