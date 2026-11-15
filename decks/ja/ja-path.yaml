@@ -901,7 +901,9 @@ units:
       - { id: "rental-terms", text: { "en": "The terms of a rental, with key money and deposit" } }
   - decks: ["ja-kanji-34"]
     words: 0
-  - planned: { id: "ja-grammar-transitivity", grammar: "transitive-intransitive" }
+  - decks: ["ja-grammar-transitivity", "ja-grammar-transitivity-sentences", "ja-reading-grammar-transitivity"]
+    words: 0
+    grammar: ["intransitive", "transitive"]
     listening_passages:
       - { id: "the-door-opened", text: { "en": "Saying I opened the door and the door opened" } }
     reading_passages:
