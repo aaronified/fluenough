@@ -269,3 +269,10 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-0308 | ja-hiragana-marks | Judgement call: the broad IPA of っ, ッ and ー is written ː (length) since they have no sound of their own; is that right? | Sonnet builder | 2026-11-13 |
 | unit-level | ja-grammar-relative-clauses (ja-9340 to ja-9351) | Are the relative-clause sentences natural (きのうかったほん, ははがつくったりょうり, ともだちがすきなえいが), and is it right that a clause may hold a place with で and still describe the head noun? | Sonnet builder | 2026-11-15 |
 | ja-9348 | ja-grammar-relative-clauses-sentences | Is ひと (a person) in おさけをのまないひとはおちゃがすきです natural as a general "a person who", or should it be ひとびと or a named person? | Sonnet builder | 2026-11-15 |
+| ja-9100 | ja-grammar-conjunctions | Is そして (soshite) with the meaning 'and then; and so' the natural word for a sequence of events, and is the note's contrast with でも (demo) right? | Haiku builder | 2026-11-15 |
+| ja-9106 | ja-grammar-conjunctions | Is ところで (tokorode) natural as 'by the way' at the start of a new topic in these examples? | Haiku builder | 2026-11-15 |
+| ja-9108 | ja-grammar-conjunctions | Are じゃあ (jaa) and それなら (sorenara) both natural as 'well then' and 'in that case', and do the two notes keep them apart? | Haiku builder | 2026-11-15 |
+| ja-9105 | ja-grammar-conjunctions | Is それとも (soretomo) used only in questions, as its note says, and is the question example natural? | Haiku builder | 2026-11-15 |
+| ja-9124 | ja-grammar-conjunctions-sentences | Is いきますか。それとも、ねますか。 natural as a question offering two plans? | Haiku builder | 2026-11-15 |
+| ja-9130 | ja-reading-grammar-conjunctions | Are the reading passage lines natural Japanese, and do the three questions match the lines as written? | Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-conjunctions | This conjunctions unit is a vocabulary core with a set card (as bn-grammar-conjunctions), not a rules core: conjunctions do not inflect, so no rules table has rows for them. Is that right? | Haiku builder | 2026-11-15 |
