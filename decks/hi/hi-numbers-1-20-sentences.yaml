@@ -1,0 +1,159 @@
+schema: 1
+id: "hi-numbers-1-20-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-4638"
+    target: "मेरे दो भाई हैं।"
+    reading: "mērē dō bhāī haim̐."
+    ipa: "meːreː d̪oː bʱaːiː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरे", base: "मेरा", reading: "mērē" }
+      - { word: "दो", ref: "hi-0199" }
+      - { word: "भाई", ref: "hi-0378" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0200", kind: "word" }
+      - { id: "w2", ref: "hi-0198", kind: "word" }
+  - id: "hi-4639"
+    target: "मेरी उम्र बीस साल है।"
+    reading: "mērī umr bīs sāl hai."
+    ipa: "meːriː ʊmr biːs saːl ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", base: "मेरा", reading: "mērī" }
+      - { word: "उम्र", ref: "hi-1763" }
+      - { word: "बीस", ref: "hi-0217" }
+      - { word: "साल", ref: "hi-0318" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0207", kind: "word" }
+      - { id: "w2", ref: "hi-0212", kind: "word" }
+  - id: "hi-4640"
+    target: "मेरा घर नौ नंबर में है।"
+    reading: "mērā ghar nau nambar mēm̐ hai."
+    ipa: "meːraː ɡʱər nɔː nəmbər mẽː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "नौ", ref: "hi-0206" }
+      - { word: "नंबर", ref: "hi-1585" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0205", kind: "word" }
+      - { id: "w2", ref: "hi-0202", kind: "word" }
+  - id: "hi-4641"
+    target: "आज सात तारीख है।"
+    reading: "āj sāt tārīkh hai."
+    ipa: "aːdʒ saːt̪ t̪aːriːkʰ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "आज", ref: "hi-0299" }
+      - { word: "सात", ref: "hi-0204" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0203", kind: "word" }
+      - { id: "w2", ref: "hi-0205", kind: "word" }
+  - id: "hi-4642"
+    target: "मेरे पास पाँच रुपये हैं।"
+    reading: "mērē pās pām̐c rupayē haim̐."
+    ipa: "meːreː paːs pãːtʃ rʊpəjeː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरे", base: "मेरा", reading: "mērē" }
+      - { word: "पाँच", ref: "hi-0202" }
+      - { word: "रुपये", base: "रुपया", reading: "rupayē" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0201", kind: "word" }
+      - { id: "w2", ref: "hi-0203", kind: "word" }
+  - id: "hi-4643"
+    target: "मेरी बहन बारह साल की है।"
+    reading: "mērī bahan bārah sāl kī hai."
+    ipa: "meːriː bəɦən baːrəɦ saːl kiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", base: "मेरा", reading: "mērī" }
+      - { word: "बहन", ref: "hi-0379" }
+      - { word: "बारह", ref: "hi-0209" }
+      - { word: "साल", ref: "hi-0318" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0210", kind: "word" }
+      - { id: "w2", ref: "hi-0211", kind: "word" }
+  - id: "hi-4644"
+    target: "हम सोलह लोग हैं।"
+    reading: "ham sōlah lōg haim̐."
+    ipa: "ɦəm soːləɦ loːɡ ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "सोलह", ref: "hi-0213" }
+      - { word: "लोग", ref: "hi-0761" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0215", kind: "word" }
+      - { id: "w2", ref: "hi-0214", kind: "word" }
+  - id: "hi-4645"
+    target: "पंद्रह मिनट काफ़ी हैं।"
+    reading: "pandrah minaṭ kāfī haim̐."
+    ipa: "pənd̪rəɦ mɪnəʈ kaːfiː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "पंद्रह", ref: "hi-0212" }
+      - { word: "काफ़ी", ref: "hi-0870" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0211", kind: "word" }
+      - { id: "w2", ref: "hi-0213", kind: "word" }
+  - id: "hi-4646"
+    target: "मेरी सड़क पर बारह घर हैं।"
+    reading: "mērī saṛak par bārah ghar haim̐."
+    ipa: "meːriː səɽək pər baːrəɦ ɡʱər ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", base: "मेरा", reading: "mērī" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "बारह", ref: "hi-0209" }
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0210", kind: "word" }
+      - { id: "w2", ref: "hi-0208", kind: "word" }
+  - id: "hi-4647"
+    target: "यह बच्चा ग्यारह साल का है।"
+    reading: "yah baccā gyārah sāl kā hai."
+    ipa: "jəɦ bətʃtʃaː ɡjaːrəɦ saːl kaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "बच्चा", ref: "hi-0111" }
+      - { word: "ग्यारह", ref: "hi-0208" }
+      - { word: "साल", ref: "hi-0318" }
+      - { word: "का", base: "का", reading: "kā" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0209", kind: "word" }
+      - { id: "w2", ref: "hi-0207", kind: "word" }
+  - id: "hi-4648"
+    target: "हमारे घर में नौ लोग हैं।"
+    reading: "hamārē ghar mēm̐ nau lōg haim̐."
+    ipa: "ɦəmaːreː ɡʱər mẽː nɔː loːɡ ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "हमारे", base: "हमारा", reading: "hamārē" }
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "नौ", ref: "hi-0206" }
+      - { word: "लोग", ref: "hi-0761" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0207", kind: "word" }
+      - { id: "w2", ref: "hi-0205", kind: "word" }

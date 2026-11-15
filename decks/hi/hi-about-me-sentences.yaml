@@ -1,0 +1,150 @@
+schema: 1
+id: "hi-about-me-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-4649"
+    target: "मेरा नाम आरव है।"
+    reading: "mērā nām ārav hai."
+    ipa: "meːraː naːm aːrəʋ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "नाम", ref: "hi-0187" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0195", kind: "word" }
+      - { id: "w2", ref: "hi-0196", kind: "word" }
+  - id: "hi-4650"
+    target: "मैं दिल्ली में रहता हूँ।"
+    reading: "maim̐ dillī mēm̐ rahtā hūm̐."
+    ipa: "mɛ̃ː d̪ɪlliː mẽː rəɦt̪aː ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "रहता", base: "रहना", reading: "rahtā" }
+      - { word: "हूँ", base: "होना", reading: "hūm̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0195", kind: "word" }
+      - { id: "w2", ref: "hi-0192", kind: "word" }
+  - id: "hi-4651"
+    target: "मैं भारत से हूँ।"
+    reading: "maim̐ bhārat sē hūm̐."
+    ipa: "mɛ̃ː bʱaːrət̪ seː ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "हूँ", base: "होना", reading: "hūm̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0196", kind: "word" }
+      - { id: "w2", ref: "hi-0195", kind: "word" }
+  - id: "hi-4652"
+    target: "मेरा घर बड़ा है।"
+    reading: "mērā ghar baṛā hai."
+    ipa: "meːraː ɡʱər bəɽaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "बड़ा", ref: "hi-0894" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0193", kind: "word" }
+      - { id: "w2", ref: "hi-0895", kind: "word" }
+  - id: "hi-4653"
+    target: "मेरा परिवार छोटा है।"
+    reading: "mērā parivār chōṭā hai."
+    ipa: "meːraː pərɪʋaːr tʃʰoːʈaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "परिवार", ref: "hi-0193" }
+      - { word: "छोटा", ref: "hi-0895" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0192", kind: "word" }
+      - { id: "w2", ref: "hi-0894", kind: "word" }
+  - id: "hi-4654"
+    target: "मेरा काम बैंक में है।"
+    reading: "mērā kām baiṅk mēm̐ hai."
+    ipa: "meːraː kaːm bɛːŋk mẽː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "काम", ref: "hi-0194" }
+      - { word: "बैंक", ref: "hi-1057" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0192", kind: "word" }
+      - { id: "w2", ref: "hi-0197", kind: "word" }
+  - id: "hi-4655"
+    target: "मेरी भाषा हिंदी है।"
+    reading: "mērī bhāśā hindī hai."
+    ipa: "meːriː bʱaːʃaː ɦɪnd̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", base: "मेरा", reading: "mērī" }
+      - { word: "भाषा", ref: "hi-0197" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0196", kind: "word" }
+      - { id: "w2", ref: "hi-0187", kind: "word" }
+  - id: "hi-4656"
+    target: "आप कहाँ से हैं?"
+    reading: "āp kahām̐ sē haim̐?"
+    ipa: "aːp kəɦãː seː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "आप", ref: "hi-0134" }
+      - { word: "कहाँ", ref: "hi-0159" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0158", kind: "word" }
+      - { id: "w2", ref: "hi-0157", kind: "word" }
+  - id: "hi-4657"
+    target: "आपका देश कौन-सा है?"
+    reading: "āpkā dēś kaun-sā hai?"
+    ipa: "aːpkaː d̪eːʃ kɔːnsaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "आपका", ref: "hi-0755" }
+      - { word: "देश", ref: "hi-0196" }
+      - { word: "कौन-सा", ref: "hi-0164" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0157", kind: "word" }
+      - { id: "w2", ref: "hi-0158", kind: "word" }
+  - id: "hi-4658"
+    target: "मैं एक शिक्षक हूँ।"
+    reading: "maim̐ ēk śikśak hūm̐."
+    ipa: "mɛ̃ː eːk ʃɪkʃək ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "एक", ref: "hi-0198" }
+      - { word: "शिक्षक", ref: "hi-1574" }
+      - { word: "हूँ", base: "होना", reading: "hūm̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0762", kind: "word" }
+      - { id: "w2", ref: "hi-0763", kind: "word" }
+  - id: "hi-4659"
+    target: "यह मेरा शहर है।"
+    reading: "yah mērā śahar hai."
+    ipa: "jəɦ meːraː ʃəɦər ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "शहर", ref: "hi-0195" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0192", kind: "word" }
+      - { id: "w2", ref: "hi-0196", kind: "word" }
