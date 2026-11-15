@@ -502,7 +502,8 @@ units:
       - { id: "when-i-was-small", text: { "en": "Telling what you used to do when you were small" } }
     reading_passages:
       - { id: "childhood-note", text: { "en": "A short note remembering a childhood summer" } }
-  - planned: { id: "fr-nature", theme: "nature", words: 40 }
+  - decks: ["fr-nature", "fr-nature-sentences", "fr-reading-nature", "*"]
+    words: 40
     listening_passages:
       - { id: "walk-by-the-river", text: { "en": "Two people describe a walk by the river at dusk" } }
     reading_passages:

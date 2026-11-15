@@ -1,0 +1,450 @@
+schema: 1
+id: "fr-nature"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "nature"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-3480"
+    target: "rivière"
+    ipa: "ʁivjɛʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La rivière coule vers la mer.", ipa: "la ʁivjɛʁ kul vɛʁ la mɛʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "rivière", base: "rivière" }, { word: "coule", base: "couler" }, { word: "vers", ref: "fr-0594" }, { word: "mer", ref: "fr-1939" }] }
+      - { target: "Nous marchons le long de la rivière.", ipa: "nu maʁʃɔ̃ lə lɔ̃ də la ʁivjɛʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "marchons", base: "marcher" }, { word: "le", ref: "fr-0543" }, { word: "long", ref: "fr-0421" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "rivière", base: "rivière" }] }
+  - id: "fr-3481"
+    target: "lac"
+    ipa: "lak"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le lac est calme ce soir.", ipa: "lə lak ɛ kalm sə swaʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "lac", base: "lac" }, { word: "est", base: "être" }, { word: "calme", ref: "fr-0433" }, { word: "ce", ref: "fr-0143" }, { word: "soir", ref: "fr-1034" }] }
+      - { target: "Nous nageons dans le lac.", ipa: "nu naʒɔ̃ dɑ̃ lə lak", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "nageons", base: "nager" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "lac", base: "lac" }] }
+  - id: "fr-3482"
+    target: "colline"
+    ipa: "kɔlin"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La colline est verte au printemps.", ipa: "la kɔlin ɛ vɛʁt o pʁɛ̃tɑ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "colline", base: "colline" }, { word: "est", base: "être" }, { word: "verte", base: "vert" }, { word: "au", base: "à" }, { word: "printemps", ref: "fr-1169" }] }
+      - { target: "Une maison est sur la colline.", ipa: "yn mɛzɔ̃ ɛ syʁ la kɔlin", bases: [{ word: "Une", ref: "fr-0545" }, { word: "maison", ref: "fr-0996" }, { word: "est", base: "être" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "colline", base: "colline" }] }
+  - id: "fr-3483"
+    target: "champ"
+    ipa: "ʃɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les vaches sont dans le champ.", ipa: "le vaʃ sɔ̃ dɑ̃ lə ʃɑ̃", bases: [{ word: "Les", ref: "fr-0043" }, { word: "vaches", base: "vache" }, { word: "sont", base: "être" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "champ", base: "champ" }] }
+      - { target: "Le champ est couvert de fleurs.", ipa: "lə ʃɑ̃ ɛ kuvɛʁ də flœʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "champ", base: "champ" }, { word: "est", base: "être" }, { word: "couvert", ref: "fr-1328" }, { word: "de", base: "de" }, { word: "fleurs", base: "fleur" }] }
+  - id: "fr-3484"
+    target: "fleur"
+    ipa: "flœʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette fleur est jaune.", ipa: "sɛt flœʁ ɛ ʒon", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "fleur", base: "fleur" }, { word: "est", base: "être" }, { word: "jaune", base: "jaune" }] }
+      - { target: "Des fleurs sont partout.", ipa: "de flœʁ sɔ̃ paʁtu", bases: [{ word: "Des", ref: "fr-0546" }, { word: "fleurs", base: "fleur" }, { word: "sont", base: "être" }, { word: "partout", ref: "fr-0356" }] }
+  - id: "fr-3485"
+    target: "herbe"
+    ipa: "ɛʁb"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'herbe est mouillée.", ipa: "lɛʁb ɛ muje", bases: [{ word: "L'herbe", base: "herbe" }, { word: "est", base: "être" }, { word: "mouillée", base: "mouillé" }] }
+      - { target: "Nous nous asseyons sur l'herbe.", ipa: "nu nuz asɛjɔ̃ syʁ lɛʁb", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "asseyons", base: "asseoir" }, { word: "sur", ref: "fr-0469" }, { word: "l'herbe", base: "herbe" }] }
+  - id: "fr-3486"
+    target: "sentier"
+    ipa: "sɑ̃tje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le sentier monte vers la forêt.", ipa: "lə sɑ̃tje mɔ̃t vɛʁ la fɔʁɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "sentier", base: "sentier" }, { word: "monte", base: "monter" }, { word: "vers", ref: "fr-0594" }, { word: "la", ref: "fr-0544" }, { word: "forêt", ref: "fr-2169" }] }
+      - { target: "Ce sentier est joli.", ipa: "sə sɑ̃tje ɛ ʒoli", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "sentier", base: "sentier" }, { word: "est", base: "être" }, { word: "joli", ref: "fr-0414" }] }
+  - id: "fr-3487"
+    target: "vallée"
+    ipa: "vale"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La vallée est très belle.", ipa: "la vale ɛ tʁɛ bɛl", bases: [{ word: "La", ref: "fr-0544" }, { word: "vallée", base: "vallée" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "belle", base: "beau" }] }
+      - { target: "La rivière traverse la vallée.", ipa: "la ʁivjɛʁ tʁavɛʁs la vale", bases: [{ word: "La", ref: "fr-0544" }, { word: "rivière", base: "rivière" }, { word: "traverse", base: "traverser" }, { word: "vallée", base: "vallée" }] }
+  - id: "fr-3488"
+    target: "ruisseau"
+    ipa: "ʁɥiso"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le ruisseau coule doucement.", ipa: "lə ʁɥiso kul dusmɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "ruisseau", base: "ruisseau" }, { word: "coule", base: "couler" }, { word: "doucement", base: "doucement" }] }
+      - { target: "On entend le ruisseau.", ipa: "ɔ̃ ɑ̃tɑ̃ lə ʁɥiso", bases: [{ word: "On", ref: "fr-0132" }, { word: "entend", base: "entendre" }, { word: "le", ref: "fr-0543" }, { word: "ruisseau", base: "ruisseau" }] }
+  - id: "fr-3489"
+    target: "étang"
+    ipa: "etɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les canards nagent dans l'étang.", ipa: "le kanaʁ naʒɑ̃ dɑ̃ letɑ̃", bases: [{ word: "Les", ref: "fr-0043" }, { word: "canards", base: "canard" }, { word: "nagent", base: "nager" }, { word: "dans", ref: "fr-0049" }, { word: "l'étang", base: "étang" }] }
+      - { target: "L'étang est très calme.", ipa: "letɑ̃ ɛ tʁɛ kalm", bases: [{ word: "L'étang", base: "étang" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "calme", ref: "fr-0433" }] }
+  - id: "fr-3490"
+    target: "bois"
+    ipa: "bwa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous marchons dans le bois.", ipa: "nu maʁʃɔ̃ dɑ̃ lə bwa", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "marchons", base: "marcher" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "bois", base: "bois" }] }
+      - { target: "Le bois est plein d'oiseaux.", ipa: "lə bwa ɛ plɛ̃ dwazo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bois", base: "bois" }, { word: "est", base: "être" }, { word: "plein", ref: "fr-0439" }, { word: "d'oiseaux", base: "oiseau" }] }
+  - id: "fr-3491"
+    target: "pierre"
+    ipa: "pjɛʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Une grosse pierre est au bord du chemin.", ipa: "yn ɡʁɔs pjɛʁ ɛt o bɔʁ dy ʃəmɛ̃", bases: [{ word: "Une", ref: "fr-0545" }, { word: "grosse", base: "gros" }, { word: "pierre", base: "pierre" }, { word: "est", base: "être" }, { word: "au", base: "à" }, { word: "bord", base: "bord" }, { word: "du", base: "de" }, { word: "chemin", ref: "fr-0893" }] }
+      - { target: "La pierre est grise et froide.", ipa: "la pjɛʁ ɛ ɡʁiz e fʁwad", bases: [{ word: "La", ref: "fr-0544" }, { word: "pierre", base: "pierre" }, { word: "est", base: "être" }, { word: "grise", base: "gris" }, { word: "et", ref: "fr-0027" }, { word: "froide", base: "froid" }] }
+  - id: "fr-3492"
+    target: "sable"
+    ipa: "sabl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les enfants jouent dans le sable.", ipa: "lez ɑ̃fɑ̃ ʒwɑ̃ dɑ̃ lə sabl", bases: [{ word: "Les", ref: "fr-0043" }, { word: "enfants", base: "enfant" }, { word: "jouent", base: "jouer" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "sable", base: "sable" }] }
+      - { target: "Le sable est chaud.", ipa: "lə sabl ɛ ʃo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "sable", base: "sable" }, { word: "est", base: "être" }, { word: "chaud", ref: "fr-0419" }] }
+  - id: "fr-3493"
+    target: "falaise"
+    ipa: "falɛz"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La falaise est très haute.", ipa: "la falɛz ɛ tʁɛ ot", bases: [{ word: "La", ref: "fr-0544" }, { word: "falaise", base: "falaise" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "haute", base: "haut" }] }
+      - { target: "Nous regardons la mer depuis la falaise.", ipa: "nu ʁəɡaʁdɔ̃ la mɛʁ dəpɥi la falɛz", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "regardons", base: "regarder" }, { word: "la", ref: "fr-0544" }, { word: "mer", ref: "fr-1939" }, { word: "depuis", base: "depuis" }, { word: "falaise", base: "falaise" }] }
+  - id: "fr-3494"
+    target: "rocher"
+    ipa: "ʁɔʃe"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le rocher est couvert de mousse.", ipa: "lə ʁɔʃe ɛ kuvɛʁ də mus", bases: [{ word: "Le", ref: "fr-0543" }, { word: "rocher", base: "rocher" }, { word: "est", base: "être" }, { word: "couvert", ref: "fr-1328" }, { word: "de", base: "de" }, { word: "mousse", base: "mousse" }] }
+      - { target: "Il monte sur le rocher.", ipa: "il mɔ̃t syʁ lə ʁɔʃe", bases: [{ word: "Il", ref: "fr-0127" }, { word: "monte", base: "monter" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "rocher", base: "rocher" }] }
+  - id: "fr-3495"
+    target: "cascade"
+    ipa: "kaskad"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La cascade est magnifique.", ipa: "la kaskad ɛ maɲifik", bases: [{ word: "La", ref: "fr-0544" }, { word: "cascade", base: "cascade" }, { word: "est", base: "être" }, { word: "magnifique", base: "magnifique" }] }
+      - { target: "Nous entendons la cascade.", ipa: "nuz ɑ̃tɑ̃dɔ̃ la kaskad", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "entendons", base: "entendre" }, { word: "la", ref: "fr-0544" }, { word: "cascade", base: "cascade" }] }
+  - id: "fr-3496"
+    target: "vague"
+    ipa: "vaɡ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les vagues sont grandes aujourd'hui.", ipa: "le vaɡ sɔ̃ ɡʁɑ̃d oʒuʁdɥi", bases: [{ word: "Les", ref: "fr-0043" }, { word: "vagues", base: "vague" }, { word: "sont", base: "être" }, { word: "grandes", base: "grand" }, { word: "aujourd'hui", ref: "fr-0079" }] }
+      - { target: "Une petite vague arrive sur le sable.", ipa: "yn pətit vaɡ aʁiv syʁ lə sabl", bases: [{ word: "Une", ref: "fr-0545" }, { word: "petite", base: "petit" }, { word: "vague", base: "vague" }, { word: "arrive", base: "arriver" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "sable", base: "sable" }] }
+  - id: "fr-3497"
+    target: "feuille"
+    ipa: "fœj"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La feuille tombe de l'arbre.", ipa: "la fœj tɔ̃b də laʁbʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "feuille", base: "feuille" }, { word: "tombe", base: "tomber" }, { word: "de", base: "de" }, { word: "l'arbre", base: "arbre" }] }
+      - { target: "Les feuilles sont vertes en été.", ipa: "le fœj sɔ̃ vɛʁt ɑ̃n ete", bases: [{ word: "Les", ref: "fr-0043" }, { word: "feuilles", base: "feuille" }, { word: "sont", base: "être" }, { word: "vertes", base: "vert" }, { word: "en", base: "en" }, { word: "été", ref: "fr-1170" }] }
+  - id: "fr-3498"
+    target: "branche"
+    ipa: "bʁɑ̃ʃ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La branche casse.", ipa: "la bʁɑ̃ʃ kas", bases: [{ word: "La", ref: "fr-0544" }, { word: "branche", base: "branche" }, { word: "casse", base: "casser" }] }
+      - { target: "Un oiseau est assis sur la branche.", ipa: "œ̃n wazo ɛt asi syʁ la bʁɑ̃ʃ", bases: [{ word: "Un", ref: "fr-0208" }, { word: "oiseau", ref: "fr-1254" }, { word: "est", base: "être" }, { word: "assis", base: "asseoir" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "branche", base: "branche" }] }
+  - id: "fr-3499"
+    target: "racine"
+    ipa: "ʁasin"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les racines sont profondes.", ipa: "le ʁasin sɔ̃ pʁɔfɔ̃d", bases: [{ word: "Les", ref: "fr-0043" }, { word: "racines", base: "racine" }, { word: "sont", base: "être" }, { word: "profondes", base: "profond" }] }
+      - { target: "La racine de l'arbre est grosse.", ipa: "la ʁasin də laʁbʁ ɛ ɡʁɔs", bases: [{ word: "La", ref: "fr-0544" }, { word: "racine", base: "racine" }, { word: "de", base: "de" }, { word: "l'arbre", base: "arbre" }, { word: "est", base: "être" }, { word: "grosse", base: "gros" }] }
+  - id: "fr-3500"
+    target: "graine"
+    ipa: "ɡʁɛn"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La graine pousse au printemps.", ipa: "la ɡʁɛn pus o pʁɛ̃tɑ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "graine", base: "graine" }, { word: "pousse", base: "pousser" }, { word: "au", base: "à" }, { word: "printemps", ref: "fr-1169" }] }
+      - { target: "Une graine est dans la main.", ipa: "yn ɡʁɛn ɛ dɑ̃ la mɛ̃", bases: [{ word: "Une", ref: "fr-0545" }, { word: "graine", base: "graine" }, { word: "est", base: "être" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "main", ref: "fr-0038" }] }
+  - id: "fr-3501"
+    target: "tronc"
+    ipa: "tʁɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le tronc de cet arbre est très gros.", ipa: "lə tʁɔ̃ də sɛt aʁbʁ ɛ tʁɛ ɡʁo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "tronc", base: "tronc" }, { word: "de", base: "de" }, { word: "cet", ref: "fr-0644" }, { word: "arbre", ref: "fr-2170" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "gros", ref: "fr-3185" }] }
+      - { target: "Nous mettons la main sur le tronc.", ipa: "nu mɛtɔ̃ la mɛ̃ syʁ lə tʁɔ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "mettons", base: "mettre" }, { word: "la", ref: "fr-0544" }, { word: "main", ref: "fr-0038" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "tronc", base: "tronc" }] }
+  - id: "fr-3502"
+    target: "buisson"
+    ipa: "bɥisɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Un buisson de roses pousse ici.", ipa: "œ̃ bɥisɔ̃ də ʁoz pus isi", bases: [{ word: "Un", ref: "fr-0208" }, { word: "buisson", base: "buisson" }, { word: "de", base: "de" }, { word: "roses", base: "rose" }, { word: "pousse", base: "pousser" }, { word: "ici", ref: "fr-0029" }] }
+      - { target: "Le lapin se cache dans le buisson.", ipa: "lə lapɛ̃ sə kaʃ dɑ̃ lə bɥisɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "lapin", ref: "fr-1262" }, { word: "se", base: "se" }, { word: "cache", base: "cacher" }, { word: "dans", ref: "fr-0049" }, { word: "buisson", base: "buisson" }] }
+  - id: "fr-3503"
+    target: "île"
+    ipa: "il"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'île est petite.", ipa: "lil ɛ pətit", bases: [{ word: "L'île", base: "île" }, { word: "est", base: "être" }, { word: "petite", base: "petit" }] }
+      - { target: "Nous prenons le bateau pour l'île.", ipa: "nu pʁənɔ̃ lə bato puʁ lil", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "prenons", base: "prendre" }, { word: "le", ref: "fr-0543" }, { word: "bateau", base: "bateau" }, { word: "pour", ref: "fr-0591" }, { word: "l'île", base: "île" }] }
+  - id: "fr-3504"
+    target: "rive"
+    ipa: "ʁiv"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous marchons sur la rive.", ipa: "nu maʁʃɔ̃ syʁ la ʁiv", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "marchons", base: "marcher" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "rive", base: "rive" }] }
+      - { target: "La rive est très verte.", ipa: "la ʁiv ɛ tʁɛ vɛʁt", bases: [{ word: "La", ref: "fr-0544" }, { word: "rive", base: "rive" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "verte", base: "vert" }] }
+  - id: "fr-3505"
+    target: "sommet"
+    ipa: "sɔmɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le sommet est couvert de neige.", ipa: "lə sɔmɛ ɛ kuvɛʁ də nɛʒ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "sommet", base: "sommet" }, { word: "est", base: "être" }, { word: "couvert", ref: "fr-1328" }, { word: "de", base: "de" }, { word: "neige", ref: "fr-1306" }] }
+      - { target: "Nous arrivons au sommet.", ipa: "nuz aʁivɔ̃ o sɔmɛ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "arrivons", base: "arriver" }, { word: "au", base: "à" }, { word: "sommet", base: "sommet" }] }
+  - id: "fr-3506"
+    target: "pente"
+    ipa: "pɑ̃t"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La pente est raide.", ipa: "la pɑ̃t ɛ ʁɛd", bases: [{ word: "La", ref: "fr-0544" }, { word: "pente", base: "pente" }, { word: "est", base: "être" }, { word: "raide", base: "raide" }] }
+      - { target: "Nous descendons la pente en courant.", ipa: "nu desɑ̃dɔ̃ la pɑ̃t ɑ̃ kuʁɑ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "descendons", base: "descendre" }, { word: "la", ref: "fr-0544" }, { word: "pente", base: "pente" }, { word: "en", base: "en" }, { word: "courant", base: "courir" }] }
+  - id: "fr-3507"
+    target: "marais"
+    ipa: "maʁɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le marais est plein d'oiseaux.", ipa: "lə maʁɛ ɛ plɛ̃ dwazo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "marais", base: "marais" }, { word: "est", base: "être" }, { word: "plein", ref: "fr-0439" }, { word: "d'oiseaux", base: "oiseau" }] }
+      - { target: "Le sol du marais est mouillé.", ipa: "lə sɔl dy maʁɛ ɛ muje", bases: [{ word: "Le", ref: "fr-0543" }, { word: "sol", ref: "fr-1016" }, { word: "du", base: "de" }, { word: "marais", base: "marais" }, { word: "est", base: "être" }, { word: "mouillé", ref: "fr-1327" }] }
+  - id: "fr-3508"
+    target: "prairie"
+    ipa: "pʁɛʁi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les vaches mangent dans la prairie.", ipa: "le vaʃ mɑ̃ʒɑ̃ dɑ̃ la pʁɛʁi", bases: [{ word: "Les", ref: "fr-0043" }, { word: "vaches", base: "vache" }, { word: "mangent", base: "manger" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "prairie", base: "prairie" }] }
+      - { target: "La prairie est verte.", ipa: "la pʁɛʁi ɛ vɛʁt", bases: [{ word: "La", ref: "fr-0544" }, { word: "prairie", base: "prairie" }, { word: "est", base: "être" }, { word: "verte", base: "vert" }] }
+  - id: "fr-3509"
+    target: "pelouse"
+    ipa: "pəluz"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ne marchez pas sur la pelouse.", ipa: "nə maʁʃe pa syʁ la pəluz", bases: [{ word: "Ne", base: "ne" }, { word: "marchez", base: "marcher" }, { word: "pas", base: "pas" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "pelouse", base: "pelouse" }] }
+      - { target: "La pelouse est très verte.", ipa: "la pəluz ɛ tʁɛ vɛʁt", bases: [{ word: "La", ref: "fr-0544" }, { word: "pelouse", base: "pelouse" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "verte", base: "vert" }] }
+  - id: "fr-3510"
+    target: "mousse"
+    ipa: "mus"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La mousse pousse sur les pierres.", ipa: "la mus pus syʁ le pjɛʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "mousse", base: "mousse" }, { word: "pousse", base: "pousser" }, { word: "sur", ref: "fr-0469" }, { word: "les", ref: "fr-0043" }, { word: "pierres", base: "pierre" }] }
+      - { target: "La mousse de la rivière est blanche.", ipa: "la mus də la ʁivjɛʁ ɛ blɑ̃ʃ", bases: [{ word: "La", ref: "fr-0544" }, { word: "mousse", base: "mousse" }, { word: "de", base: "de" }, { word: "rivière", base: "rivière" }, { word: "est", base: "être" }, { word: "blanche", base: "blanc" }] }
+  - id: "fr-3511"
+    target: "golfe"
+    ipa: "ɡɔlf"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le bateau entre dans le golfe.", ipa: "lə bato ɑ̃tʁ dɑ̃ lə ɡɔlf", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bateau", base: "bateau" }, { word: "entre", ref: "fr-0470" }, { word: "dans", ref: "fr-0049" }, { word: "golfe", base: "golfe" }] }
+      - { target: "Le golfe est très calme.", ipa: "lə ɡɔlf ɛ tʁɛ kalm", bases: [{ word: "Le", ref: "fr-0543" }, { word: "golfe", base: "golfe" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "calme", ref: "fr-0433" }] }
+  - id: "fr-3512"
+    target: "volcan"
+    ipa: "vɔlkɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le volcan est très haut.", ipa: "lə vɔlkɑ̃ ɛ tʁɛ o", bases: [{ word: "Le", ref: "fr-0543" }, { word: "volcan", base: "volcan" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "haut", ref: "fr-0423" }] }
+      - { target: "Le volcan fume.", ipa: "lə vɔlkɑ̃ fym", bases: [{ word: "Le", ref: "fr-0543" }, { word: "volcan", base: "volcan" }, { word: "fume", base: "fumer" }] }
+  - id: "fr-3513"
+    target: "nature"
+    ipa: "natyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La nature est calme ici.", ipa: "la natyʁ ɛ kalm isi", bases: [{ word: "La", ref: "fr-0544" }, { word: "nature", base: "nature" }, { word: "est", base: "être" }, { word: "calme", ref: "fr-0433" }, { word: "ici", ref: "fr-0029" }] }
+      - { target: "La nature est très belle ici.", ipa: "la natyʁ ɛ tʁɛ bɛl isi", bases: [{ word: "La", ref: "fr-0544" }, { word: "nature", base: "nature" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "belle", base: "beau" }, { word: "ici", ref: "fr-0029" }] }
+  - id: "fr-3514"
+    target: "côte"
+    ipa: "kot"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La côte est rocheuse.", ipa: "la kot ɛ ʁɔʃøz", bases: [{ word: "La", ref: "fr-0544" }, { word: "côte", base: "côte" }, { word: "est", base: "être" }, { word: "rocheuse", base: "rocheux" }] }
+      - { target: "Nous marchons sur la côte.", ipa: "nu maʁʃɔ̃ syʁ la kot", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "marchons", base: "marcher" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "côte", base: "côte" }] }
+  - id: "fr-3515"
+    target: "roseau"
+    ipa: "ʁozo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les roseaux bougent avec le vent.", ipa: "le ʁozo buʒɑ̃ avɛk lə vɑ̃", bases: [{ word: "Les", ref: "fr-0043" }, { word: "roseaux", base: "roseau" }, { word: "bougent", base: "bouger" }, { word: "avec", ref: "fr-0590" }, { word: "le", ref: "fr-0543" }, { word: "vent", ref: "fr-0036" }] }
+      - { target: "Le roseau est très long.", ipa: "lə ʁozo ɛ tʁɛ lɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "roseau", base: "roseau" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "long", ref: "fr-0421" }] }
+  - id: "fr-3516"
+    target: "ombre"
+    ipa: "ɔ̃bʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous nous reposons à l'ombre de l'arbre.", ipa: "nu nu ʁəpozɔ̃ a lɔ̃bʁ də laʁbʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "reposons", base: "reposer" }, { word: "à", base: "à" }, { word: "l'ombre", base: "ombre" }, { word: "de", base: "de" }, { word: "l'arbre", base: "arbre" }] }
+      - { target: "L'ombre de l'arbre est grande.", ipa: "lɔ̃bʁ də laʁbʁ ɛ ɡʁɑ̃d", bases: [{ word: "L'ombre", base: "ombre" }, { word: "de", base: "de" }, { word: "l'arbre", base: "arbre" }, { word: "est", base: "être" }, { word: "grande", base: "grand" }] }
+  - id: "fr-3517"
+    target: "caillou"
+    ipa: "kaju"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Un caillou est dans ma chaussure.", ipa: "œ̃ kaju ɛ dɑ̃ ma ʃosyʁ", bases: [{ word: "Un", ref: "fr-0208" }, { word: "caillou", base: "caillou" }, { word: "est", base: "être" }, { word: "dans", ref: "fr-0049" }, { word: "ma", ref: "fr-0137" }, { word: "chaussure", ref: "fr-1208" }] }
+      - { target: "Le caillou est lisse.", ipa: "lə kaju ɛ lis", bases: [{ word: "Le", ref: "fr-0543" }, { word: "caillou", base: "caillou" }, { word: "est", base: "être" }, { word: "lisse", base: "lisse" }] }
+  - id: "fr-3518"
+    target: "plante"
+    ipa: "plɑ̃t"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La plante a besoin d'eau.", ipa: "la plɑ̃t a bəzwɛ̃ do", bases: [{ word: "La", ref: "fr-0544" }, { word: "plante", base: "plante" }, { word: "a", base: "avoir" }, { word: "besoin", ref: "fr-1080" }, { word: "d'eau", base: "eau" }] }
+      - { target: "Cette plante est verte.", ipa: "sɛt plɑ̃t ɛ vɛʁt", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "plante", base: "plante" }, { word: "est", base: "être" }, { word: "verte", base: "vert" }] }
+  - id: "fr-3519"
+    target: "nid"
+    ipa: "ni"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Un nid est dans l'arbre.", ipa: "œ̃ ni ɛ dɑ̃ laʁbʁ", bases: [{ word: "Un", ref: "fr-0208" }, { word: "nid", base: "nid" }, { word: "est", base: "être" }, { word: "dans", ref: "fr-0049" }, { word: "l'arbre", base: "arbre" }] }
+      - { target: "Le nid est petit.", ipa: "lə ni ɛ pəti", bases: [{ word: "Le", ref: "fr-0543" }, { word: "nid", base: "nid" }, { word: "est", base: "être" }, { word: "petit", ref: "fr-0411" }] }

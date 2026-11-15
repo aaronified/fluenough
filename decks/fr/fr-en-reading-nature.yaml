@@ -1,0 +1,63 @@
+schema: 1
+id: "fr-en-reading-nature"
+name: "Reading: nature"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about nature. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-walk-by-the-river"
+    title: "Two people describe a walk by the river at dusk"
+    theme: "nature"
+    sentences:
+      - { text: "Nous marchons le long de la rivière le soir." }
+      - { text: "L'eau est calme et les arbres sont sombres." }
+      - { text: "On voit des oiseaux sur le lac." }
+      - { text: "Les feuilles bougent un peu avec le vent." }
+    questions:
+      - id: "fr-3530"
+        prompt: { en: "When do the two people walk by the river?" }
+        options:
+          - { en: "At dusk" }
+          - { en: "At midday" }
+          - { en: "In the morning" }
+        answer: 1
+      - id: "fr-3531"
+        prompt: { en: "What is the water like?" }
+        options:
+          - { en: "Calm" }
+          - { en: "Very loud" }
+          - { en: "Dirty" }
+        answer: 1
+      - id: "fr-3532"
+        prompt: { en: "They see birds on the lake." }
+        answer: true
+  - id: "fr-park-signs"
+    title: "Signs in a park"
+    theme: "nature"
+    sentences:
+      - { text: "Pelouse interdite : merci de ne pas marcher sur l'herbe." }
+      - { text: "Sentier fermé après la pluie." }
+      - { text: "Attention aux branches tombées." }
+      - { text: "Ne pas cueillir les fleurs." }
+    questions:
+      - id: "fr-3533"
+        prompt: { en: "What must visitors not do on the lawn?" }
+        options:
+          - { en: "Walk on it" }
+          - { en: "Sit on it" }
+          - { en: "Water it" }
+        answer: 1
+      - id: "fr-3534"
+        prompt: { en: "Why is the path closed?" }
+        options:
+          - { en: "There was rain" }
+          - { en: "There is a strike" }
+          - { en: "It is night" }
+        answer: 1
+      - id: "fr-3535"
+        prompt: { en: "Visitors may pick flowers." }
+        answer: false

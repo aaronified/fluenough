@@ -1,0 +1,683 @@
+schema: 1
+id: "fr-en-nature"
+kind: "layer"
+core: "fr-nature"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nature"
+license: "CC-BY-SA-4.0"
+description: "Landscape and plants: water, land, trees and the small things you see on a walk. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-3480":
+    native: "river"
+    notes:
+      "n1": "A rivière flows into a larger river or the sea; the plural is rivières."
+    examples:
+      "La rivière coule vers la mer.":
+        native: "The river flows towards the sea."
+        bases:
+          "rivière": "river"
+          "coule": "flows"
+      "Nous marchons le long de la rivière.":
+        native: "We walk along the river."
+        bases:
+          "marchons": "we walk"
+          "de": "of, from"
+          "rivière": "river"
+  "fr-3481":
+    native: "lake"
+    notes:
+      "n1": "Un lac is a large area of still fresh water; the plural is lacs."
+    examples:
+      "Le lac est calme ce soir.":
+        native: "The lake is calm this evening."
+        bases:
+          "lac": "lake"
+          "est": "is"
+      "Nous nageons dans le lac.":
+        native: "We swim in the lake."
+        bases:
+          "nageons": "we swim"
+          "lac": "lake"
+  "fr-3482":
+    native: "hill"
+    notes:
+      "n1": "Une colline is a small hill, lower than a montagne."
+    examples:
+      "La colline est verte au printemps.":
+        native: "The hill is green in spring."
+        bases:
+          "colline": "hill"
+          "est": "is"
+          "verte": "green"
+          "au": "to the"
+      "Une maison est sur la colline.":
+        native: "There is a house on the hill."
+        bases:
+          "est": "is"
+          "colline": "hill"
+  "fr-3483":
+    native: "field"
+    notes:
+      "n1": "Un champ is an open area of land for crops or grass; the plural is champs."
+    examples:
+      "Les vaches sont dans le champ.":
+        native: "The cows are in the field."
+        bases:
+          "vaches": "cows"
+          "sont": "are"
+          "champ": "field"
+      "Le champ est couvert de fleurs.":
+        native: "The field is covered with flowers."
+        bases:
+          "champ": "field"
+          "est": "is"
+          "de": "of, from"
+          "fleurs": "flowers"
+  "fr-3484":
+    native: "flower"
+    notes:
+      "n1": "Une fleur is the coloured part of a plant; the adjective fleuri means full of flowers."
+    examples:
+      "Cette fleur est jaune.":
+        native: "This flower is yellow."
+        bases:
+          "fleur": "flower"
+          "est": "is"
+          "jaune": "yellow"
+      "Des fleurs sont partout.":
+        native: "There are flowers everywhere."
+        bases:
+          "fleurs": "flowers"
+          "sont": "are"
+  "fr-3485":
+    native: "grass"
+    notes:
+      "n1": "L'herbe is the green plant that covers the ground; the plural is herbes, for herbs in cooking."
+    examples:
+      "L'herbe est mouillée.":
+        native: "The grass is wet."
+        bases:
+          "L'herbe": "grass"
+          "est": "is"
+          "mouillée": "wet"
+      "Nous nous asseyons sur l'herbe.":
+        native: "We sit down on the grass."
+        bases:
+          "asseyons": "we sit"
+          "l'herbe": "grass"
+  "fr-3486":
+    native: "path"
+    notes:
+      "n1": "Un sentier is a small path through fields or woods, for walking."
+    examples:
+      "Le sentier monte vers la forêt.":
+        native: "The path goes up towards the forest."
+        bases:
+          "sentier": "path"
+          "monte": "climbs"
+      "Ce sentier est joli.":
+        native: "This path is narrow."
+        bases:
+          "sentier": "path"
+          "est": "is"
+  "fr-3487":
+    native: "valley"
+    notes:
+      "n1": "Une vallée is the low land between two hills or mountains."
+    examples:
+      "La vallée est très belle.":
+        native: "The valley is very beautiful."
+        bases:
+          "vallée": "valley"
+          "est": "is"
+          "belle": "beautiful"
+      "La rivière traverse la vallée.":
+        native: "The river crosses the valley."
+        bases:
+          "rivière": "river"
+          "traverse": "crosses"
+          "vallée": "valley"
+  "fr-3488":
+    native: "stream"
+    notes:
+      "n1": "Un ruisseau is a small river, smaller than a rivière."
+    examples:
+      "Le ruisseau coule doucement.":
+        native: "The stream runs slowly."
+        bases:
+          "ruisseau": "stream"
+          "coule": "runs"
+          "doucement": "gently"
+      "On entend le ruisseau.":
+        native: "You can hear the stream."
+        bases:
+          "entend": "hears"
+          "ruisseau": "stream"
+  "fr-3489":
+    native: "pond"
+    notes:
+      "n1": "Un étang is a small lake of still water, smaller than a lac."
+    examples:
+      "Les canards nagent dans l'étang.":
+        native: "The ducks swim in the pond."
+        bases:
+          "canards": "ducks"
+          "nagent": "swim"
+          "l'étang": "pond"
+      "L'étang est très calme.":
+        native: "The pond is very calm."
+        bases:
+          "L'étang": "pond"
+          "est": "is"
+  "fr-3490":
+    native: "wood"
+    notes:
+      "n1": "Un bois is a small wood; la forêt is larger."
+    examples:
+      "Nous marchons dans le bois.":
+        native: "We walk in the wood."
+        bases:
+          "marchons": "we walk"
+          "bois": "wood"
+      "Le bois est plein d'oiseaux.":
+        native: "The wood is full of birds."
+        bases:
+          "bois": "wood"
+          "est": "is"
+          "d'oiseaux": "birds"
+  "fr-3491":
+    native: "stone"
+    notes:
+      "n1": "Une pierre is a small piece of rock; the diminutive caillou means pebble."
+    examples:
+      "Une grosse pierre est au bord du chemin.":
+        native: "There is a big stone at the edge of the path."
+        bases:
+          "grosse": "big"
+          "pierre": "stone"
+          "est": "is"
+          "au": "to the"
+          "bord": "edge"
+          "du": "of the"
+      "La pierre est grise et froide.":
+        native: "The stone is grey and cold."
+        bases:
+          "pierre": "stone"
+          "est": "is"
+          "grise": "grey"
+          "froide": "cold"
+  "fr-3492":
+    native: "sand"
+    notes:
+      "n1": "Le sable is the fine grains on a beach or in the desert."
+    examples:
+      "Les enfants jouent dans le sable.":
+        native: "The children play in the sand."
+        bases:
+          "enfants": "children"
+          "jouent": "play"
+          "sable": "sand"
+      "Le sable est chaud.":
+        native: "The sand is hot."
+        bases:
+          "sable": "sand"
+          "est": "is"
+  "fr-3493":
+    native: "cliff"
+    notes:
+      "n1": "Une falaise is a steep high rock by the sea or a river."
+    examples:
+      "La falaise est très haute.":
+        native: "The cliff is very high."
+        bases:
+          "falaise": "cliff"
+          "est": "is"
+          "haute": "high"
+      "Nous regardons la mer depuis la falaise.":
+        native: "We look at the sea from the cliff."
+        bases:
+          "regardons": "we look at"
+          "depuis": "since, from"
+          "falaise": "cliff"
+  "fr-3494":
+    native: "rock"
+    notes:
+      "n1": "Un rocher is a large rock, often on a hill or by the sea."
+    examples:
+      "Le rocher est couvert de mousse.":
+        native: "The rock is covered with moss."
+        bases:
+          "rocher": "rock"
+          "est": "is"
+          "de": "of, from"
+          "mousse": "moss, foam"
+      "Il monte sur le rocher.":
+        native: "He climbs onto the rock."
+        bases:
+          "monte": "climbs"
+          "rocher": "rock"
+  "fr-3495":
+    native: "waterfall"
+    notes:
+      "n1": "Une cascade is water falling from a high place."
+    examples:
+      "La cascade est magnifique.":
+        native: "The waterfall is magnificent."
+        bases:
+          "cascade": "waterfall"
+          "est": "is"
+          "magnifique": "magnificent"
+      "Nous entendons la cascade.":
+        native: "We hear the waterfall."
+        bases:
+          "entendons": "we hear"
+          "cascade": "waterfall"
+  "fr-3496":
+    native: "wave"
+    notes:
+      "n1": "Une vague is a moving mass of water on the sea; the adjective vague means vague."
+    examples:
+      "Les vagues sont grandes aujourd'hui.":
+        native: "The waves are big today."
+        bases:
+          "vagues": "waves"
+          "sont": "are"
+          "grandes": "big"
+      "Une petite vague arrive sur le sable.":
+        native: "A small wave reaches the sand."
+        bases:
+          "petite": "small"
+          "vague": "wave"
+          "arrive": "arrives"
+          "sable": "sand"
+  "fr-3497":
+    native: "leaf"
+    notes:
+      "n1": "Une feuille is the flat green part of a tree or plant; a sheet of paper is also une feuille."
+    examples:
+      "La feuille tombe de l'arbre.":
+        native: "The leaf falls from the tree."
+        bases:
+          "feuille": "leaf"
+          "tombe": "falls"
+          "de": "of, from"
+          "l'arbre": "tree"
+      "Les feuilles sont vertes en été.":
+        native: "The leaves are green in summer."
+        bases:
+          "feuilles": "leaves"
+          "sont": "are"
+          "vertes": "green"
+          "en": "in"
+  "fr-3498":
+    native: "branch"
+    notes:
+      "n1": "Une branche is a part of a tree that grows from the trunk."
+    examples:
+      "La branche casse.":
+        native: "The branch breaks."
+        bases:
+          "branche": "branch"
+          "casse": "breaks"
+      "Un oiseau est assis sur la branche.":
+        native: "A bird is sitting on the branch."
+        bases:
+          "est": "is"
+          "assis": "sitting"
+          "branche": "branch"
+  "fr-3499":
+    native: "root"
+    notes:
+      "n1": "Une racine is the part of a plant that grows under the ground."
+    examples:
+      "Les racines sont profondes.":
+        native: "The roots are deep."
+        bases:
+          "racines": "roots"
+          "sont": "are"
+          "profondes": "deep"
+      "La racine de l'arbre est grosse.":
+        native: "The root of the tree is thick."
+        bases:
+          "racine": "root"
+          "de": "of, from"
+          "l'arbre": "tree"
+          "est": "is"
+          "grosse": "big"
+  "fr-3500":
+    native: "seed"
+    notes:
+      "n1": "Une graine is the small part of a plant from which a new plant grows."
+    examples:
+      "La graine pousse au printemps.":
+        native: "The seed grows in spring."
+        bases:
+          "graine": "seed"
+          "pousse": "grows"
+          "au": "to the"
+      "Une graine est dans la main.":
+        native: "I have a seed in my hand."
+        bases:
+          "graine": "seed"
+          "est": "is"
+  "fr-3501":
+    native: "trunk"
+    notes:
+      "n1": "Le tronc is the thick main stem of a tree."
+    examples:
+      "Le tronc de cet arbre est très gros.":
+        native: "The trunk of this tree is very thick."
+        bases:
+          "tronc": "trunk"
+          "de": "of, from"
+          "est": "is"
+      "Nous mettons la main sur le tronc.":
+        native: "We put our hand on the trunk."
+        bases:
+          "mettons": "we put"
+          "tronc": "trunk"
+  "fr-3502":
+    native: "bush"
+    notes:
+      "n1": "Un buisson is a low plant with many branches."
+    examples:
+      "Un buisson de roses pousse ici.":
+        native: "There is a bush of roses."
+        bases:
+          "buisson": "bush"
+          "de": "of, from"
+          "roses": "roses"
+          "pousse": "grows"
+      "Le lapin se cache dans le buisson.":
+        native: "The rabbit hides in the bush."
+        bases:
+          "se": "oneself"
+          "cache": "hides"
+          "buisson": "bush"
+  "fr-3503":
+    native: "island"
+    notes:
+      "n1": "Une île is land with water all around it; the plural is îles."
+    examples:
+      "L'île est petite.":
+        native: "The island is small."
+        bases:
+          "L'île": "island"
+          "est": "is"
+          "petite": "small"
+      "Nous prenons le bateau pour l'île.":
+        native: "We take the boat to the island."
+        bases:
+          "prenons": "we take"
+          "bateau": "boat"
+          "l'île": "island"
+  "fr-3504":
+    native: "bank, shore"
+    notes:
+      "n1": "La rive is the edge of a river, a lake or the sea; the plural is rives."
+    examples:
+      "Nous marchons sur la rive.":
+        native: "We walk on the bank."
+        bases:
+          "marchons": "we walk"
+          "rive": "bank, shore"
+      "La rive est très verte.":
+        native: "The bank is very green."
+        bases:
+          "rive": "bank, shore"
+          "est": "is"
+          "verte": "green"
+  "fr-3505":
+    native: "summit, top"
+    notes:
+      "n1": "Le sommet is the highest point of a mountain or a hill."
+    examples:
+      "Le sommet est couvert de neige.":
+        native: "The top is covered with snow."
+        bases:
+          "sommet": "summit, top"
+          "est": "is"
+          "de": "of, from"
+      "Nous arrivons au sommet.":
+        native: "We reach the summit."
+        bases:
+          "arrivons": "we arrive"
+          "au": "to the"
+          "sommet": "summit, top"
+  "fr-3506":
+    native: "slope"
+    notes:
+      "n1": "Une pente is ground that goes up or down at an angle."
+    examples:
+      "La pente est raide.":
+        native: "The slope is steep."
+        bases:
+          "pente": "slope"
+          "est": "is"
+          "raide": "steep"
+      "Nous descendons la pente en courant.":
+        native: "We run down the slope."
+        bases:
+          "descendons": "we go down"
+          "pente": "slope"
+          "en": "in"
+          "courant": "running"
+  "fr-3507":
+    native: "marsh"
+    notes:
+      "n1": "Un marais is wet land with water and plants, where the ground is soft."
+    examples:
+      "Le marais est plein d'oiseaux.":
+        native: "The marsh is full of birds."
+        bases:
+          "marais": "marsh"
+          "est": "is"
+          "d'oiseaux": "birds"
+      "Le sol du marais est mouillé.":
+        native: "The ground of the marsh is wet."
+        bases:
+          "du": "of the"
+          "marais": "marsh"
+          "est": "is"
+  "fr-3508":
+    native: "meadow"
+    notes:
+      "n1": "Une prairie is a large field of grass, often for animals."
+    examples:
+      "Les vaches mangent dans la prairie.":
+        native: "The cows eat in the meadow."
+        bases:
+          "vaches": "cows"
+          "mangent": "eat"
+          "prairie": "meadow"
+      "La prairie est verte.":
+        native: "The meadow is green."
+        bases:
+          "prairie": "meadow"
+          "est": "is"
+          "verte": "green"
+  "fr-3509":
+    native: "lawn"
+    notes:
+      "n1": "La pelouse is the short grass of a garden or park; it is walked on only where a sign allows it."
+    examples:
+      "Ne marchez pas sur la pelouse.":
+        native: "Do not walk on the lawn."
+        bases:
+          "Ne": "not"
+          "marchez": "walk"
+          "pas": "not"
+          "pelouse": "lawn"
+      "La pelouse est très verte.":
+        native: "The lawn is very green."
+        bases:
+          "pelouse": "lawn"
+          "est": "is"
+          "verte": "green"
+  "fr-3510":
+    native: "moss, foam"
+    notes:
+      "n1": "La mousse is a soft green plant on rocks and trees; the same word means foam."
+    examples:
+      "La mousse pousse sur les pierres.":
+        native: "Moss grows on the stones."
+        bases:
+          "mousse": "moss, foam"
+          "pousse": "grows"
+          "pierres": "stones"
+      "La mousse de la rivière est blanche.":
+        native: "The foam of the river is white."
+        bases:
+          "mousse": "moss, foam"
+          "de": "of, from"
+          "rivière": "river"
+          "est": "is"
+          "blanche": "white"
+  "fr-3511":
+    native: "gulf"
+    notes:
+      "n1": "Un golfe is a large part of the sea that goes into the land."
+    examples:
+      "Le bateau entre dans le golfe.":
+        native: "The boat enters the gulf."
+        bases:
+          "bateau": "boat"
+          "golfe": "gulf"
+      "Le golfe est très calme.":
+        native: "The gulf is very calm."
+        bases:
+          "golfe": "gulf"
+          "est": "is"
+  "fr-3512":
+    native: "volcano"
+    notes:
+      "n1": "Un volcan is a mountain that can send out hot lava."
+    examples:
+      "Le volcan est très haut.":
+        native: "The volcano is very high."
+        bases:
+          "volcan": "volcano"
+          "est": "is"
+      "Le volcan fume.":
+        native: "The volcano is smoking."
+        bases:
+          "volcan": "volcano"
+          "fume": "smokes"
+  "fr-3513":
+    native: "nature"
+    notes:
+      "n1": "La nature is everything that is not made by people: plants, animals, land and water."
+    examples:
+      "La nature est calme ici.":
+        native: "I love nature."
+        bases:
+          "nature": "nature"
+          "est": "is"
+      "La nature est très belle ici.":
+        native: "Nature is very beautiful here."
+        bases:
+          "nature": "nature"
+          "est": "is"
+          "belle": "beautiful"
+  "fr-3514":
+    native: "coast"
+    notes:
+      "n1": "La côte is the land along the edge of the sea."
+    examples:
+      "La côte est rocheuse.":
+        native: "The coast is rocky."
+        bases:
+          "côte": "coast"
+          "est": "is"
+          "rocheuse": "rocky"
+      "Nous marchons sur la côte.":
+        native: "We walk along the coast."
+        bases:
+          "marchons": "we walk"
+          "côte": "coast"
+  "fr-3515":
+    native: "reed"
+    notes:
+      "n1": "Un roseau is a tall thin plant that grows in water."
+    examples:
+      "Les roseaux bougent avec le vent.":
+        native: "The reeds move in the wind."
+        bases:
+          "roseaux": "reeds"
+          "bougent": "move"
+      "Le roseau est très long.":
+        native: "The reed is very long."
+        bases:
+          "roseau": "reed"
+          "est": "is"
+  "fr-3516":
+    native: "shade, shadow"
+    notes:
+      "n1": "L'ombre is the dark place where the sun does not reach; the same word means shadow."
+    examples:
+      "Nous nous reposons à l'ombre de l'arbre.":
+        native: "We rest in the shade of the tree."
+        bases:
+          "reposons": "rest"
+          "à": "to, at"
+          "l'ombre": "shade"
+          "de": "of, from"
+          "l'arbre": "tree"
+      "L'ombre de l'arbre est grande.":
+        native: "The shadow of the tree is large."
+        bases:
+          "L'ombre": "shade, shadow"
+          "de": "of, from"
+          "l'arbre": "tree"
+          "est": "is"
+          "grande": "high"
+  "fr-3517":
+    native: "pebble"
+    notes:
+      "n1": "Un caillou is a small stone; the plural is cailloux."
+    examples:
+      "Un caillou est dans ma chaussure.":
+        native: "I have a pebble in my shoe."
+        bases:
+          "caillou": "pebble"
+          "est": "is"
+      "Le caillou est lisse.":
+        native: "The pebble is smooth."
+        bases:
+          "caillou": "pebble"
+          "est": "is"
+          "lisse": "smooth"
+  "fr-3518":
+    native: "plant"
+    notes:
+      "n1": "Une plante is a living thing that grows in the earth, with leaves and roots."
+    examples:
+      "La plante a besoin d'eau.":
+        native: "The plant needs water."
+        bases:
+          "plante": "plant"
+          "a": "has"
+          "d'eau": "water"
+      "Cette plante est verte.":
+        native: "This plant is green."
+        bases:
+          "plante": "plant"
+          "est": "is"
+          "verte": "green"
+  "fr-3519":
+    native: "nest"
+    notes:
+      "n1": "Un nid is the place where a bird lays its eggs."
+    examples:
+      "Un nid est dans l'arbre.":
+        native: "There is a nest in the tree."
+        bases:
+          "nid": "nest"
+          "est": "is"
+          "l'arbre": "tree"
+      "Le nid est petit.":
+        native: "The nest is small."
+        bases:
+          "nid": "nest"
+          "est": "is"
