@@ -1,0 +1,78 @@
+schema: 1
+id: "as-en-questions-sentences"
+kind: "layer"
+core: "as-questions-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Questions: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-5000":
+    native: "Have you eaten rice?"
+    confusables:
+      "c1": { why: "To say, not to eat." }
+      "c2": { why: "A matter, not food." }
+  "as-5001":
+    native: "Is it right?"
+    confusables:
+      "c1": { why: "No, the opposite of yes." }
+      "c2": { why: "Which, a question word, not a yes or no." }
+  "as-5002":
+    native: "How should I say it?"
+    bases:
+      "কওক": "to say"
+    confusables:
+      "c1": { why: "Why, not how." }
+      "c2": { why: "When, not how." }
+  "as-5003":
+    native: "What do you say?"
+    bases:
+      "কওক": "to say"
+    confusables:
+      "c1": { why: "Which, not what." }
+      "c2": { why: "How much, not what." }
+  "as-5004":
+    native: "Why not?"
+    confusables:
+      "c1": { why: "How, not why." }
+      "c2": { why: "When, not why." }
+  "as-5005":
+    native: "How much rice?"
+    confusables:
+      "c1": { why: "Which one, not how much." }
+      "c2": { why: "What, not how much." }
+  "as-5006":
+    native: "Yes, that is right."
+    confusables:
+      "c1": { why: "No, the opposite of yes." }
+      "c2": { why: "A question word, not an answer." }
+  "as-5007":
+    native: "Which matter?"
+    confusables:
+      "c1": { why: "Which one, used to choose one thing." }
+      "c2": { why: "What, not which." }
+  "as-5008":
+    native: "Which work?"
+    confusables:
+      "c1": { why: "Which, used before a noun on its own." }
+      "c2": { why: "How much, not which." }
+  "as-5009":
+    native: "What work?"
+    confusables:
+      "c1": { why: "Which one, not what." }
+      "c2": { why: "How, not what." }
+  "as-5010":
+    native: "Where is it?"
+    bases:
+      "আছে": "to be; to exist"
+    confusables:
+      "c1": { why: "When, not where." }
+      "c2": { why: "How, not where." }
+  "as-5011":
+    native: "Which one is good?"
+    bases:
+      "ভাল": "good"
+    confusables:
+      "c1": { why: "Which, before a noun, not on its own." }
+      "c2": { why: "How much, not which one." }
