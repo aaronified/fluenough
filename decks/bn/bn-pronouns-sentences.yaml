@@ -13,6 +13,8 @@ cards:
     reading: "ini āmār dādā."
     ipa: "ini amar d̪ad̪a"
     pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
     rules: ["bn-rule-pronoun-gen"]
     bases:
       - { word: "আমার", ref: "bn-0833" }
@@ -21,6 +23,8 @@ cards:
     reading: "uni āmār didi."
     ipa: "uni amar d̪id̪i"
     pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
     rules: ["bn-rule-pronoun-gen"]
     bases:
       - { word: "আমার", ref: "bn-0833" }
@@ -37,6 +41,8 @@ cards:
     reading: "orā āmāder bondhu."
     ipa: "ora amad̪er bond̪ʱu"
     pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     rules: ["bn-rule-pronoun-gen"]
     bases:
       - { word: "আমাদের", ref: "bn-0834" }
@@ -53,21 +59,29 @@ cards:
     reading: "egulo ki?"
     ipa: "eɡulo ki"
     pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
   - id: "bn-0862"
     target: "ওটা কার?"
     reading: "oṭā kār?"
     ipa: "oʈa kar"
     pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
   - id: "bn-0863"
     target: "ওগুলো কার?"
     reading: "ogulo kār?"
     ipa: "oɡulo kar"
     pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
   - id: "bn-0864"
     target: "এটা তোমার না।"
     reading: "eṭā tomār nā."
     ipa: "eʈa t̪omar na"
     pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     rules: ["bn-rule-pronoun-gen"]
     bases:
       - { word: "তোমার", ref: "bn-0835" }
@@ -84,6 +98,8 @@ cards:
     reading: "tomār bondhu kothāy?"
     ipa: "t̪omar bond̪ʱu kot̪ʰaj"
     pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
     rules: ["bn-rule-pronoun-gen"]
     bases:
       - { word: "তোমার", ref: "bn-0835" }
@@ -92,6 +108,8 @@ cards:
     reading: "āpnār bondhu ke?"
     ipa: "apnar bond̪ʱu ke"
     pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
     rules: ["bn-rule-pronoun-gen"]
     bases:
       - { word: "আপনার", ref: "bn-0138" }
@@ -100,20 +118,28 @@ cards:
     reading: "śôbāi kothāy?"
     ipa: "ʃɔbai kot̪ʰaj"
     pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
   - id: "bn-0869"
     target: "তারা কারা?"
     reading: "tārā kārā?"
     ipa: "t̪ara kara"
     pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
   - id: "bn-0870"
     target: "আমরা বন্ধু।"
     reading: "āmrā bondhu."
     ipa: "amra bond̪ʱu"
     pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
   - id: "bn-0871"
     target: "আপনারা কেমন আছেন?"
     reading: "āpnārā kemon āchen?"
     ipa: "apnara kemon atʃʰen"
     pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
     bases:
       - { word: "আছেন", base: "আছে", reading: "āche" }
