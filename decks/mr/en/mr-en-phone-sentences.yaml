@@ -1,0 +1,58 @@
+schema: 1
+id: "mr-en-phone-sentences"
+kind: "layer"
+core: "mr-phone-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Phone: sentences"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the phone words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-6320":
+    native: "My mobile phone is switched off."
+    bases: { "माझा": "my", "बंद": "off", "आहे": "is" }
+    confusables: { "w1": { why: "चालू (cālu) means on or working, the opposite of बंद (band)." }, "f1": { why: "आहेत (āhet) is plural; one phone takes आहे (āhe)." }, "w2": { why: "सुरू (suru) means started or on; this sentence says the phone is off." } }
+  "mr-6321":
+    native: "I want to make a call."
+    bases: { "मला": "to me", "करायचा": "to make", "आहे": "want" }
+    confusables: { "w1": { why: "तुला (tulā) means to you, not to me." }, "f1": { why: "करतो (karto) is a plain statement, I do; करायचा (karāycā) आहे (āhe) is a wish." }, "w2": { why: "घ्यायचा (ghyāycā) means to take, not to make." } }
+  "mr-6322":
+    native: "Tell me your number."
+    bases: { "तुमचा": "your", "सांगा": "tell (polite)" }
+    confusables: { "w1": { why: "माझा (mājhā) means my, not your." }, "f1": { why: "सांगतो (sāṅgato) is a statement, I tell, not an order." }, "w2": { why: "पत्ता (pattā) means address, not number." } }
+  "mr-6323":
+    native: "I send you a message."
+    bases: { "मी": "I", "तुला": "you", "पाठवतो": "send" }
+    confusables: { "w1": { why: "तो (to) means he, not I." }, "f1": { why: "पाठवा (pāṭhvā) is an order: send." }, "w2": { why: "फोन (phon) means phone or call, not a text message." } }
+  "mr-6324":
+    native: "Charge the mobile phone."
+    bases: { "चार्ज": "charge", "कर": "do (informal)" }
+    confusables: { "w1": { why: "चार्जर (cārjar) is the charger, the thing you plug in." }, "f1": { why: "करा (karā) is the polite order; कर (kar) is for a friend." }, "w2": { why: "बॅटरी (bêṭri) is the battery, not the charging." } }
+  "mr-6325":
+    native: "There is no internet connection."
+    bases: { "कनेक्शन": "connection", "नाही": "there is not" }
+    confusables: { "w1": { why: "आहे (āhe) means is; नाही (nāhi) means is not." }, "f1": { why: "नाहीत (nāhit) is for more than one thing." }, "w2": { why: "सुरू (suru) means on or working." } }
+  "mr-6326":
+    native: "Where is the password?"
+    bases: { "कुठे": "where", "आहे": "is" }
+    confusables: { "w1": { why: "कोण (koṇ) asks who, not where." }, "f1": { why: "आहेत (āhet) is plural." }, "w2": { why: "कधी (kadhi) asks when." } }
+  "mr-6327":
+    native: "Send the photo."
+    bases: { "पाठवा": "send (polite)" }
+    confusables: { "w1": { why: "व्हिडिओ (vhiḍio) is a video, not a photo." }, "f1": { why: "पाठवतो (pāṭhvto) means I send, a statement." }, "w2": { why: "मेसेज (mesej) is a message, not a photo." } }
+  "mr-6328":
+    native: "Download the video."
+    bases: { "डाउनलोड": "download", "करा": "do (polite)" }
+    confusables: { "w1": { why: "फोटो (phoṭo) is a photo, not a video." }, "f1": { why: "करतो (karto) means I do, a statement, not an order." }, "w2": { why: "कर (kar) is the informal order; करा (karā) is polite." } }
+  "mr-6329":
+    native: "Is the internet working?"
+    bases: { "चालू": "working", "आहे": "is", "का": "question marker" }
+    confusables: { "w1": { why: "नाही (nāhi) answers no." }, "f1": { why: "आहेत (āhet) is plural." }, "w2": { why: "बंद (band) means off, the opposite of चालू (cālu)." } }
+  "mr-6330":
+    native: "I download the app."
+    bases: { "मी": "I", "डाउनलोड": "download", "करतो": "do" }
+    confusables: { "w1": { why: "तो (to) means he; मी (mi) means I." }, "f1": { why: "करतात (kartāt) is for more than one person." }, "w2": { why: "व्हिडिओ (vhiḍio) is a video, not an app." } }
+  "mr-6331":
+    native: "My battery is low."
+    bases: { "माझी": "my", "कमी": "low", "आहे": "is" }
+    confusables: { "w1": { why: "जास्त (jāst) means more or too much, the opposite of कमी (kami)." }, "f1": { why: "आहेत (āhet) is plural." }, "w2": { why: "भरपूर (bharpur) means plenty." } }
