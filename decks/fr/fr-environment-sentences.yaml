@@ -92,8 +92,8 @@ cards:
       - { id: "dechet", ref: "fr-2167", kind: "word" }
       - { id: "espece", ref: "fr-2175", kind: "word" }
   - id: "fr-2202"
-    target: "Nous trions les déchets et composter les restes."
-    ipa: "nu tʁijɔ̃ le deʃɛ e kɔ̃pɔste le ʁɛst"
+    target: "Nous trions les déchets et compostons les restes."
+    ipa: "nu tʁijɔ̃ le deʃɛ e kɔ̃pɔstɔ̃ le ʁɛst"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -102,7 +102,7 @@ cards:
       - { word: "les", ref: "fr-0543" }
       - { word: "déchets", ref: "fr-2167" }
       - { word: "et", ref: "fr-0027" }
-      - { word: "composter", ref: "fr-2195" }
+      - { word: "compostons", base: "composter" }
       - { word: "restes", base: "reste" }
     confusables:
       - { id: "recycler", ref: "fr-2180", kind: "word" }
