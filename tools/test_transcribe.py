@@ -1,8 +1,11 @@
 """Tests for transcribe.py: readings in ISO 15919 letters as said, and IPA
 (ADR-0025)."""
 
+import tempfile
 import unittest
+from pathlib import Path
 
+import transcribe_decks
 from transcribe import CannotRead, spanish_ipa, transcribe
 
 
@@ -426,6 +429,105 @@ class MalayalamTest(unittest.TestCase):
         t = transcribe("ഞാൻ വരുന്നു", "ml")
         self.assertTrue(t.fitted)
         self.assertEqual(t.ipa, "ɲaːn ʋəɾunnu")
+
+
+DECK = """# a comment that must survive
+schema: 1
+id: "te-x"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu" }
+cards:
+  - id: "te-9001"
+    target: "పొలంలో"   # trailing comment
+    reading: "polamlō"
+    ipa: "polamloː"
+  - id: "te-9002"
+    target: "చేను"
+    reading: 'cēnu'
+    ipa: "t͡ɕeːnu"
+  - id: "te-9003"
+    target: "దూరంగా"
+    reading: "dūraṅgā"
+    ipa: "d̪uːraŋɡaː"
+"""
+
+AMBIGUOUS = """schema: 1
+id: "te-y"
+part: "core"
+cards:
+  - id: "te-9101"
+    target: "పొలంలో"
+    reading: "polamlō"
+    reading: "polamlō"
+  - id: "te-9102"
+    target: "పొలంలో"
+    reading: "polamlō"
+  - id: "te-9102"
+    target: "పొలంలో"
+    reading: "polamlō"
+"""
+
+
+class DeckModeTest(unittest.TestCase):
+    def deck(self, text: str) -> Path:
+        d = tempfile.TemporaryDirectory()
+        self.addCleanup(d.cleanup)
+        path = Path(d.name) / "te-x.yaml"
+        path.write_bytes(text.encode("utf-8"))
+        return path
+
+    def test_a_medial_anusvara_is_corrected_and_nothing_else_moves(
+            self) -> None:
+        path = self.deck(DECK)
+        report = transcribe_decks.run(path.parent, "te")
+        anus = [d for d in report.differences if d.anusvara]
+        self.assertEqual([(d.entry, d.field, d.stored, d.computed)
+                          for d in anus],
+                         [("te-9001", "reading", "polamlō", "polaṁlō")])
+        changed, refused = transcribe_decks.apply_fixes(report, False)
+        self.assertEqual((changed, refused), (1, []))
+        after = path.read_bytes().decode("utf-8")
+        self.assertEqual(after, DECK.replace('"polamlō"', '"polaṁlō"'))
+
+    def test_another_difference_is_reported_and_kept_without_all(
+            self) -> None:
+        path = self.deck(DECK)
+        report = transcribe_decks.run(path.parent, "te")
+        other = [d for d in report.differences if not d.anusvara]
+        self.assertIn(("te-9002", "ipa"),
+                      [(d.entry, d.field) for d in other])
+        self.assertTrue(all(d.entry != "te-9001" for d in other))
+        transcribe_decks.apply_fixes(report, False)
+        self.assertIn('ipa: "t͡ɕeːnu"', path.read_bytes().decode("utf-8"))
+
+    def test_all_fixes_the_other_differences_and_keeps_quoting(self) -> None:
+        path = self.deck(DECK)
+        report = transcribe_decks.run(path.parent, "te")
+        transcribe_decks.apply_fixes(report, True)
+        after = path.read_bytes().decode("utf-8")
+        self.assertIn('ipa: "tʃeːnu"', after)
+        self.assertIn("reading: 'cēnu'", after)
+        self.assertIn('target: "పొలంలో"   # trailing comment', after)
+        self.assertTrue(after.startswith("# a comment that must survive\n"))
+
+    def test_check_exit_codes(self) -> None:
+        path = self.deck(DECK)
+        self.assertEqual(transcribe_decks.main(
+            ["x", "--check", str(path.parent), "te"]), 1)
+        self.assertEqual(transcribe_decks.main(
+            ["x", "--fix", "--all", str(path.parent), "te"]), 0)
+        self.assertEqual(transcribe_decks.main(
+            ["x", "--check", str(path.parent), "te"]), 0)
+
+    def test_an_ambiguous_entry_is_reported_and_not_changed(self) -> None:
+        path = self.deck(AMBIGUOUS)
+        report = transcribe_decks.run(path.parent, "te")
+        self.assertEqual(report.differences, [])
+        self.assertEqual(len(report.unreadable), 3)
+        changed, _ = transcribe_decks.apply_fixes(report, True)
+        self.assertEqual(changed, 0)
+        self.assertEqual(path.read_bytes().decode("utf-8"), AMBIGUOUS)
 
 
 if __name__ == "__main__":

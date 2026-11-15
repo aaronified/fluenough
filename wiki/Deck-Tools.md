@@ -318,6 +318,33 @@ when a topic differs, `--all-targets` also lists two-character cards). The
 validator checks `chars` against the same decks. See
 [Deck-Format](Deck-Format#script-topics), "Script topics".
 
+## `transcribe_decks.py`
+
+Checks, and fixes, a language's stored `reading` and `ipa` against
+`tools/transcribe.py` (#1295). It walks the core deck files of one directory
+(the `en/` layers are not read): every card, every card example and every
+`{ word: ..., reading: ... }` entry (bases, note words), and re-transcribes
+each from its target text exactly as the single-word mode does, with the
+stored reading as the typed hint.
+
+```sh
+python3 tools/transcribe_decks.py --check decks/te te       # exit 1 if any differ
+python3 tools/transcribe_decks.py --fix decks/te te         # anusvara only
+python3 tools/transcribe_decks.py --fix --all decks/te te   # every difference
+```
+
+`--check` prints each id, field, stored value and recomputed value, in two
+lists: "anusvara differences" (the target holds an anusvara and the two values
+agree once every nasal is treated as one, the medial-anusvara rule of
+[Plan-Ipa-Revamp-And-Language-Phonology](Plan-Ipa-Revamp-And-Language-Phonology#telugu-medial-anusvara))
+and "other differences" (`ph` against `f`, `ṛ` against `r̥`, IPA spelling
+choices), then the total. `--fix` replaces only the exact stored value on its
+own line, so comments, quoting and ordering stay byte for byte, and leaves the
+other differences alone unless `--all` is given. An entry with a repeated or
+non-plain `reading` or `ipa` line, or a card id repeated in the file, is
+listed under "not checked or not changeable" and never changed. Run it on a
+`decks-live` checkout, not on main's frozen `decks/`.
+
 ## `import_phonetic.py` and `derive_phonetic.py`
 
 Write each card's narrow `[ ]` IPA into its `phonetic` field, with
