@@ -129,17 +129,21 @@ class ReadingTest(unittest.TestCase):
         self.check("te", "-ిన", "-ina", "-ina", "ina")
 
     def test_telugu_rare_letters(self) -> None:
-        # #1361: ఱ is ṟa (IPA as ర), ఌ ౡ follow ఋ, ౘ ౙ are ts and dz (ISO
-        # 15919 has no letter for them), ఁ is silent.
+        # #1361: ఱ is ṟa (IPA as ర), ఌ ౡ read ISO l̥ and l̥̄, ౘ ౙ are ts
+        # and dz (ISO 15919 has no letter for them), ఁ is silent.
         for word, reading, ipa in (
             ("ఱ", "ṟa", "ra"),
             ("ఱు", "ṟu", "ru"),
-            ("ఌ", "lu", "lu"),
-            ("ౡ", "lū", "luː"),
+            ("ఌ", "l\u0325", "lu"),
+            ("ౡ", "l\u0325\u0304", "luː"),
+            ("ౢ", "l\u0325", "lu"),
+            ("ౣ", "l\u0325\u0304", "luː"),
             ("ౠ", "rū", "ruː"),
             ("ౘ", "tsa", "tsa"),
             ("ౙ", "dza", "dza"),
-            ("కౢ", "klu", "klu"),
+            ("కౢ", "kl\u0325", "klu"),
+            ("కౣ", "kl\u0325\u0304", "kluː"),
+            ("కౢప్తి", "kl\u0325pti", "klupt\u032ai"),
             ("ఁ", "", ""),
             ("ః", "ḥ", "h"),
         ):
@@ -712,6 +716,56 @@ cards:
     target: "పొలంలో"
     reading: "polamlō"
 """
+
+
+class TamilTest(unittest.TestCase):
+    """Tamil (ta), read from its letters the way the decks write it
+    (decks/ta on decks-live)."""
+
+    # Cards of the Tamil decks: reading and broad IPA, as the cards have
+    # them (the decks' ʧ is written tʃ, as in the other courses).
+    WORDS = (
+        ("வணக்கம்", "vaṇakkam", "ʋaɳakkam"),
+        ("நன்றி", "naṉṟi", "nanri"),
+        ("தமிழ்", "tamiḻ", "t̪amiɻ"),
+        ("கழிவறை எங்கே?", "kaḻivaṟai eṅkē?", "kaɻiʋarai eŋkeː"),
+        ("சாப்பாடு", "cāppāṭu", "saːppaːʈu"),
+        ("கொஞ்சம்", "koñcam", "koɲtʃam"),
+        ("இறைச்சி", "iṟaicci", "iraitʃtʃi"),
+        ("பென்சில்", "peṉcil", "pentʃil"),
+        ("டாக்சி", "ṭākci", "ʈaːktʃi"),
+        ("ஜன்னல்", "jaṉṉal", "dʒannal"),
+        ("மகள்", "makaḷ", "makaɭ"),
+        ("போய் வருகிறேன்", "pōy varukiṟēṉ", "poːj ʋaɾukireːn"),
+        ("ரசம்", "racam", "ɾasam"),
+        ("எண்ணெய்", "eṇṇey", "eɳɳej"),
+        ("ஆம்", "ām", "aːm"),
+    )
+
+    def test_deck_words_are_read_as_the_decks_write_them(self) -> None:
+        for word, reading, ipa in self.WORDS:
+            with self.subTest(word):
+                t = transcribe(word, "ta")
+                self.assertEqual((t.reading, t.ipa), (reading, ipa))
+
+    def test_no_inherent_vowel_after_a_pulli(self) -> None:
+        self.assertEqual(transcribe("க்", "ta").reading, "k")
+        self.assertEqual(transcribe("கல்", "ta").reading, "kal")
+
+    def test_a_stop_is_voiceless_between_vowels_in_the_broad_ipa(
+            self) -> None:
+        self.assertEqual(transcribe("அகம்", "ta").ipa, "akam")
+        self.assertEqual(transcribe("அபாடு", "ta").ipa, "apaːʈu")
+
+    def test_grantha_letters_and_aytam(self) -> None:
+        self.assertEqual(transcribe("க்ஷமை", "ta").ipa, "kʂamai")
+        self.assertEqual(transcribe("ஸ்ரீ", "ta").reading, "srī")
+        self.assertEqual(transcribe("ஃபோன்", "ta").reading, "ḵpōṉ")
+
+    def test_c_is_s_alone_and_tʃ_after_a_stop_or_nasal(self) -> None:
+        self.assertEqual(transcribe("சரி", "ta").ipa, "saɾi")
+        self.assertEqual(transcribe("பச்சை", "ta").ipa, "patʃtʃai")
+        self.assertEqual(transcribe("மஞ்சள்", "ta").ipa, "maɲtʃaɭ")
 
 
 class DeckModeTest(unittest.TestCase):

@@ -437,6 +437,31 @@ class PhoneticField(Validated):
                     self._with(f"phonetic: {bad}", 'phonetic_source: "rules"'),
                     "square brackets")
 
+    def test_a_precomposed_ipa_letter_is_a_valid_phonetic(self) -> None:
+        # NFC composes a + U+0308 into the one letter ä (#1466)
+        for good in ("[k\u00e4\u02d0.fi\u02d0]", "[\u00e4\u02d0]"):
+            with self.subTest(good=good):
+                self.assertValid(self._with(f'phonetic: "{good}"',
+                                            'phonetic_source: "wiktionary"'))
+
+    def test_a_decomposed_ipa_letter_is_still_refused_as_not_nfc(self) -> None:
+        # the letters are IPA, but the spelling must be NFC
+        self.assertRejected(self._with('phonetic: "[ka\u0308\u02d0]"',
+                                       'phonetic_source: "wiktionary"'),
+                            "not NFC-normalised")
+
+    def test_ipa_pattern_takes_both_spellings_of_a_diacritic_letter(self) -> None:
+        for good in ("\u00e4\u02d0", "a\u0308\u02d0", "\u00f6", "\u00e9"):
+            with self.subTest(good=good):
+                self.assertTrue(validate_decks.IPA_RE.fullmatch(good))
+
+    def test_a_bogus_mark_in_a_phonetic_is_still_refused(self) -> None:
+        for bad in ("[k\u00e4\u0488]", "[k\u00e4\u0300\u2603]", "[k\u00e4\u0e01]"):
+            with self.subTest(bad=bad):
+                self.assertRejected(
+                    self._with(f'phonetic: "{bad}"', 'phonetic_source: "wiktionary"'),
+                    "square brackets")
+
     def test_greek_letters_in_the_ipa_need_no_reading(self) -> None:
         self.assertValid(self._with('phonetic: "[ˈbe\u03b2e \u03b8a]"',
                                     'phonetic_source: "rules"'))
