@@ -1277,6 +1277,7 @@ void main() {
       scriptFonts: ScriptFonts(
         register: (family, bytes) async => registered[family] = bytes,
       ),
+      mismatchRetryDelays: const <Duration>[],
     );
 
     /// The remote serving [fonts] for each language, and the font files.

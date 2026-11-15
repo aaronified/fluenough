@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- **Decks download reliably right after an update.** A deck that arrives out of step with the list is now fetched again before the app reports a problem.
+- **Decks no longer fail to download right after new decks are published.** The app now tries a deck that arrived incomplete again before telling you something went wrong.
 
 ## [0.10.3] - 2026-11-15
 

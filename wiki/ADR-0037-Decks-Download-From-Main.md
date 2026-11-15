@@ -183,6 +183,8 @@ matches. Only these retries skip the cache; every first request uses it. If it
 still does not match, the download reads the index fresh, works out its files
 again from it (a file the new index no longer lists is skipped, one it moved
 on is fetched as listed) and tries once more; only then does the learner see
-"A deck didn't arrive whole", and the app log holds the sizes and hashes.
+"A deck didn't arrive whole", and the app log holds the sizes and hashes. A file that is newer than an
+index the workflow has not yet regenerated still fails until that workflow
+finishes; "Try again" works once it has.
 
 See also: [Contributing](Contributing) · [ADR-Index](ADR-Index) · [Home](Home)
