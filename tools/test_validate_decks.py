@@ -1199,6 +1199,30 @@ pattern:
                     fresh.doCleanups()
 
 
+class IsoMacronReadings(unittest.TestCase):
+    """A Telugu reading of the long vocalic l or r keeps its combining macron
+    (U+0304) after the ring below: l̥̄ (ౡ, ౣ), kl̥̄ti (#1442)."""
+
+    def errors(self, *readings: str) -> list[str]:
+        tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, tmp, True)
+        (tmp / "te-romanisation.yaml").write_text(
+            'standard: "ISO 15919"\n', encoding="utf-8")
+        raw = {"cards": [{"reading": x} for x in readings]}
+        report = validate_decks.Report(path=tmp / "te-probe.yaml")
+        validate_decks.check_romanised(report, raw, tmp / "te-probe.yaml",
+                                       lang="te", directory=tmp)
+        return report.errors
+
+    def test_long_vocalic_l_readings_pass(self) -> None:
+        self.assertEqual(self.errors("l\u0325\u0304", "kl\u0325\u0304ti"), [])
+
+    def test_a_bogus_combining_mark_still_fails(self) -> None:
+        errors = self.errors("l\u0325\u0301")
+        self.assertTrue(any("not in the te romanisation" in e for e in errors),
+                        errors)
+
+
 class PlainScalars(unittest.TestCase):
     """The validator reads plain (unquoted) scalars as YAML 1.2's core schema
     does, which is how the app's `package:yaml` reads them (ADR-0036). One
