@@ -1,0 +1,47 @@
+schema: 1
+id: "kn-en-reading-technology"
+name: "Reading: app instructions"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A Kannada passage written for this course with the words taught up to its unit (instructions inside a phone app). Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-app-instructions"
+    title: "App instructions"
+    sentences:
+      - text: "ಆ್ಯಪ್ ಡೌನ್ಲೋಡ್ ಮಾಡಿ."
+        reading: "ā್yap ḍaunlōḍ māḍi."
+        ipa: "aːjap ɖaunloːɖ maːɖi"
+      - text: "ಪಾಸ್ವರ್ಡ್ ಬರೆಯಿರಿ."
+        reading: "pāsvarḍ bareyiri."
+        ipa: "paːsʋarɖ barejiri"
+      - text: "ಕೆಳಗಿನ ಬಟನ್ ಕ್ಲಿಕ್ ಮಾಡಿ."
+        reading: "keḷagina baṭan klik māḍi."
+        ipa: "keɭaɡina baʈan klik maːɖi"
+      - text: "ಫೈಲ್ ಅಪ್ಲೋಡ್ ಆಗುತ್ತದೆ."
+        reading: "phail aplōḍ āguttade."
+        ipa: "pʰail aploːɖ aːɡut̪t̪ad̪e"
+      - text: "ಒಂದು ಆಯ್ಕೆ ಮಾಡಿ."
+        reading: "ondu āyke māḍi."
+        ipa: "ond̪u aːjke maːɖi"
+    questions:
+      - id: "kn-9364"
+        prompt: { en: "What does the first step ask you to do?" }
+        options:
+          - { en: "Download the app" }
+          - { en: "Sing a song" }
+          - { en: "Cook food" }
+        answer: 1
+      - id: "kn-9365"
+        prompt: { en: "The button is below." }
+        answer: true
+      - id: "kn-9366"
+        prompt: { en: "What gets uploaded?" }
+        options:
+          - { en: "The file" }
+          - { en: "The password" }
+          - { en: "The phone" }
+        answer: 1
