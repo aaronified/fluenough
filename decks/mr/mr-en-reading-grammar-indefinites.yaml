@@ -1,0 +1,31 @@
+schema: 1
+id: "mr-en-reading-grammar-indefinites"
+name: "Reading: lost property"
+kind: "reading"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A notice about something someone lost. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["reading", "intermediate", "unreviewed"]
+passages:
+  - id: "mr-lost-property-notice"
+    title: "Lost property"
+    sentences:
+      - { text: "काल कोणाची तरी पिशवी हरवली.", reading: "kāl koṇāci tari piśvi harvli.", ipa: "kal koɳatʃi t̪əri piʃʋi ɦərʋli" }
+      - { text: "त्यात काहीतरी महत्त्वाचं होतं.", reading: "tyāt kāhitri mahattvācam̐ hotam̐.", ipa: "t̪jat̪ kaɦit̪ri məɦət̪t̪ʋatsə̃ ɦot̪ə̃" }
+      - { text: "ती कदाचित बसमध्ये राहिली असेल.", reading: "ti kadācit basmadhye rāhili asel.", ipa: "t̪i kəd̪atʃit̪ bəsməd̪ʱje raɦili əsel" }
+      - { text: "जर तुम्हाला काही दिसलं, तर इथे कळवा.", reading: "jar tumhālā kāhi dislam̐, tar ithe kaḷvā.", ipa: "dzər t̪umɦala kaɦi d̪islə̃ t̪ər it̪ʰe kəɭʋa" }
+    questions:
+      - id: "mr-7527"
+        prompt: { en: "What was lost?" }
+        options: [{ en: "A bag" }, { en: "A phone" }, { en: "A book" }]
+        answer: 1
+      - id: "mr-7528"
+        prompt: { en: "Where might the bag be?" }
+        options: [{ en: "In a shop" }, { en: "On a bus" }, { en: "At school" }]
+        answer: 2
+      - id: "mr-7529"
+        prompt: { en: "What should a finder do?" }
+        options: [{ en: "Keep it" }, { en: "Tell them here" }, { en: "Throw it away" }]
+        answer: 2

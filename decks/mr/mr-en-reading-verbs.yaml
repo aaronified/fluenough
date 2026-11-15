@@ -1,0 +1,54 @@
+schema: 1
+id: "mr-en-reading-verbs"
+name: "Reading: verbs"
+kind: "reading"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A note on the fridge: what to eat, what to drink and where things are. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "mr-fridge-note"
+    title: "Fridge note"
+    sentences:
+      - text: "फ्रिजमध्ये दूध आहे."
+        reading: "phrijmadhye dudh āhe."
+        ipa: "pʰridzməd̪ʱje d̪ud̪ʱ aɦe"
+      - text: "दूध प्या."
+        reading: "dudh pyā."
+        ipa: "d̪ud̪ʱ pja"
+      - text: "भात आणि भाजी खा."
+        reading: "bhāt āṇi bhāji khā."
+        ipa: "bʱat̪ aɳi bʱadʒi kʰa"
+      - text: "फळे फ्रिजमध्ये ठेवा."
+        reading: "phaḷe phrijmadhye ṭhevā."
+        ipa: "pʰəɭe pʰridzməd̪ʱje ʈʰeʋa"
+      - text: "मी उद्या बाजारात जाईन."
+        reading: "mi udyā bājārāt jāin."
+        ipa: "mi ud̪ja badzarat̪ dzain"
+    questions:
+      - id: "mr-7000"
+        prompt:
+          en: "What should the reader drink?"
+        options:
+        - en: "Milk"
+        - en: "Tea"
+        - en: "Water"
+        answer: 1
+      - id: "mr-7001"
+        prompt:
+          en: "Where is the milk?"
+        options:
+        - en: "On the table"
+        - en: "In the fridge"
+        - en: "In the market"
+        answer: 2
+      - id: "mr-7002"
+        prompt:
+          en: "When will the writer go to the market?"
+        options:
+        - en: "Today"
+        - en: "Tomorrow"
+        - en: "Never"
+        answer: 2

@@ -1,0 +1,31 @@
+schema: 1
+id: "mr-en-reading-grammar-passive"
+name: "Reading: notice board"
+kind: "reading"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A notice board with announcements. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["reading", "intermediate", "unreviewed"]
+passages:
+  - id: "mr-notice-board"
+    title: "Notice board"
+    sentences:
+      - { text: "पुढच्या सोमवारी सभा घेतली जाईल.", reading: "puḍhacyā somvāri sabhā ghetli jāil.", ipa: "puɖʱətʃja somʋari səbʱa ɡʱet̪li dzail" }
+      - { text: "वर्गाची वेळ बदलली आहे.", reading: "vargāci veḷ badlli āhe.", ipa: "ʋərɡatʃi ʋeɭ bəd̪lli aɦe" }
+      - { text: "परीक्षेचा निकाल शुक्रवारी जाहीर केला जाईल.", reading: "parikṣecā nikāl śukravāri jāhir kelā jāil.", ipa: "pərikʂetsa nikal ʃukrəʋari dzaɦir kela dzail" }
+      - { text: "कृपया सगळ्यांनी वेळेवर या.", reading: "krupyā sagaḷyānni veḷevar yā.", ipa: "krupja səɡəɭjanni ʋeɭeʋər ja" }
+    questions:
+      - id: "mr-7530"
+        prompt: { en: "When will the meeting be held?" }
+        options: [{ en: "Next Monday" }, { en: "Next Friday" }, { en: "Today" }]
+        answer: 1
+      - id: "mr-7531"
+        prompt: { en: "What has changed?" }
+        options: [{ en: "The room" }, { en: "The class time" }, { en: "The teacher" }]
+        answer: 2
+      - id: "mr-7532"
+        prompt: { en: "When will the results be announced?" }
+        options: [{ en: "On Monday" }, { en: "On Friday" }, { en: "Next year" }]
+        answer: 2
