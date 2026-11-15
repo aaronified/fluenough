@@ -374,7 +374,7 @@ creators:
     legacy:
       text: { en: "César Vallejo is one of the best-known Peruvian poets of the twentieth century." }
       items:
-        - { kind: "other", text: { en: "The Spanish Wikipedia article lists Los heraldos negros (1918) and Trilce (1922) among his books of poetry." }, source: { url: "https://es.wikipedia.org/wiki/C%C3%A9sar_Vallejo", accessed: "2026-11-15" } }
+        - { kind: "other", text: { en: "The Spanish Wikipedia article lists Los heraldos negros (1919) and Trilce (1922) among his books of poetry." }, source: { url: "https://es.wikipedia.org/wiki/C%C3%A9sar_Vallejo", accessed: "2026-11-15" } }
   - id: "es-horacio-quiroga"
     name:
       es: { text: "Horacio Quiroga", ipa: "oˈɾaθjo kiˈɾoɡa" }
@@ -432,17 +432,19 @@ creators:
       es: { text: "Gonzalo de Berceo", ipa: "ɡonˈθalo de beɾˈθeo" }
       en: { text: "Gonzalo de Berceo" }
     born: { year: 1196, circa: true }
-    died: 1264
+    died: { year: 1264, circa: true }
     era: "edad-media"
     bio:
       en: "Gonzalo de Berceo was a Castilian poet and monk of the monastery of San Millán de la Cogolla. He lived in the 1200s; the years of his birth and death are not certain. He wrote saints' lives and the Milagros de Nuestra Señora, stories of miracles of the Virgin Mary."
     legacy:
       text: { en: "He is one of the main poets of the mester de clerecía, a learned form of verse in Castilian." }
+      items:
+        - { kind: "other", text: { en: "The Spanish Wikipedia article names the Milagros de Nuestra Señora as his main work." }, source: { url: "https://es.wikipedia.org/wiki/Gonzalo_de_Berceo", accessed: "2026-11-15" } }
   - id: "es-jose-marti"
     name:
       es: { text: "José Martí", ipa: "xoˈse maɾˈti" }
       en: { text: "José Martí" }
-    born: { year: 1853, circa: false }
+    born: 1853
     died: 1895
     era: "siglo-xix"
     bio:
@@ -455,7 +457,7 @@ creators:
     name:
       es: { text: "José Hernández", ipa: "xoˈse eɾˈnandeθ" }
       en: { text: "José Hernández" }
-    born: { year: 1834, circa: false }
+    born: 1834
     died: 1886
     era: "siglo-xix"
     bio:
