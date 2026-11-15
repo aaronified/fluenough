@@ -19,7 +19,7 @@
 | kn-7073 | see card | ಹಸಿ ಸೊಪ್ಪು is translated 'fresh greens' but ಹಸಿ means raw: is the gloss right? | Haiku builder | 2026-11-15 |
 | kn-7115 | see card | ಸಿನಿಮಾ ಚಿಂದಿ is Bengaluru slang: should a register note say so? | Haiku builder | 2026-11-15 |
 | kn-7146 | see card | ಯುದ್ಧ ಯಾವಾಗ? has no verb, so the tense is open: is 'When was the war?' right? | Haiku builder | 2026-11-15 |
-| kn-7381 | see card | ಚಿಕ್ಕಮ್ಮ-style address sentence with no object ('Aunty, will you drink?'): natural? | Haiku builder | 2026-11-15 |
+| kn-7381 | see card | ಆಂಟಿ, ನೀವು ಕುಡಿಯುತ್ತೀರಾ? has no object ('Aunty, will you drink?'): natural? | Haiku builder | 2026-11-15 |
 | kn-7504 | see card | ಮಂಟಪ glossed as wedding stage: right gloss? | Haiku builder | 2026-11-15 |
 | kn-7515 | see card | ಅಗ್ನಿಶಾಮಕ: does it mean the fire service or the station? | Haiku builder | 2026-11-15 |
 | kn-7520 | see card | ಲೆಕ್ಕ ಬರುವುದಿಲ್ಲ for 'I cannot do sums': word choice right? | Haiku builder | 2026-11-15 |
@@ -29,8 +29,8 @@
 | kn-8245 | see card | ಅಮ್ಮನ ಪ್ರೀತಿ ಒಳ್ಳೆಯದು: word order and meaning right? | Haiku builder | 2026-11-15 |
 | kn-8256 | see card | ಹಳೆಯದು is an inline form of ಹಳೆಯ: right form? | Haiku builder | 2026-11-15 |
 | kn-8220 | see card | ಸ್ಪರ್ಧೆ ಇವತ್ತು has no verb: natural? | Haiku builder | 2026-11-15 |
-| kn-7116 | see card | slang ಎಣ್ಣೆ ಎಲ್ಲಿ? reads as cooking oil but ಎಣ್ಣೆ is also slang for alcohol: clear enough? | Haiku builder | 2026-11-15 |
-| kn-7761 | see card | ಜಾಸ್ತಿ for 'worse' (illness, ಈಗ ತಲೆನೋವು ಜಾಸ್ತಿ): natural? | Haiku builder | 2026-11-15 |
+| kn-7117 | see card | slang ಎಣ್ಣೆ ಎಲ್ಲಿ? reads as cooking oil but ಎಣ್ಣೆ is also slang for alcohol: clear enough? | Haiku builder | 2026-11-15 |
+| kn-7820 | see card | ಜಾಸ್ತಿ for 'worse' (illness, ಈಗ ತಲೆನೋವು ಜಾಸ್ತಿ): natural? | Haiku builder | 2026-11-15 |
 | kn-6205 | see card | proverb pairing (rice and millet; bird and wolf): meaning right? | Haiku builder | 2026-11-15 |
 | kn-6219 | see card | second clause of the proverb: meaning right? | Haiku builder | 2026-11-15 |
 | kn-6256 | see card | ಆಬ್ಬರ as printed on kn.wikiquote: is ಅಬ್ಬರ the usual spelling? | Haiku builder | 2026-11-15 |
