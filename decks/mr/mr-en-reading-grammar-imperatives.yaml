@@ -1,0 +1,32 @@
+schema: 1
+id: "mr-en-reading-grammar-imperatives"
+name: "Reading: signs and rules"
+kind: "reading"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "Signs saying what to do and what not to do. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "mr-signs-and-rules"
+    title: "Signs and rules"
+    sentences:
+      - { text: "येथे गाडी उभी करू नका.", reading: "yethe gāḍi ubhi karu nakā.", ipa: "jet̪ʰe ɡaɖi ubʱi kəru nəka" }
+      - { text: "कचरा इथे टाका.", reading: "kacrā ithe ṭākā.", ipa: "kətsra it̪ʰe ʈaka" }
+      - { text: "रांगेत उभे राहा.", reading: "rāṅget ubhe rāhā.", ipa: "raŋɡet̪ ubʱe raɦa" }
+      - { text: "फोटो काढू नका.", reading: "phoṭo kāḍhu nakā.", ipa: "pʰoʈo kaɖʱu nəka" }
+      - { text: "शांत राहा.", reading: "śānt rāhā.", ipa: "ʃant̪ raɦa" }
+    questions:
+      - id: "mr-7500"
+        prompt: { en: "What should people do with rubbish?" }
+        options: [{ en: "Throw it here" }, { en: "Take it home" }, { en: "Give it to a friend" }]
+        answer: 1
+      - id: "mr-7501"
+        prompt: { en: "What is not allowed?" }
+        options: [{ en: "Standing in a queue" }, { en: "Taking photos" }, { en: "Putting rubbish here" }]
+        answer: 2
+      - id: "mr-7502"
+        prompt: { en: "Where should people stand?" }
+        options: [{ en: "On the road" }, { en: "In the queue" }, { en: "Next to the car" }]
+        answer: 2
