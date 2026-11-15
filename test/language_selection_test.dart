@@ -181,7 +181,7 @@ languages:
       });
 
       testWidgets('each row carries the A1 A2 B1 line and the verification '
-          'flag as icon and word; a notation has neither the line nor the flag', (tester) async {
+          'flag as icon and word; a notation has neither', (tester) async {
         await pumpAdd(tester, mode: mode);
         final text = l10n(tester);
         for (final (code, word) in <(String, String)>[
