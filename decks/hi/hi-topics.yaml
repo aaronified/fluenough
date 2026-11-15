@@ -1,0 +1,80 @@
+# Topics a learner of Hindustani would search for: what each one is, and the decks that teach it (wiki/Plan-Deck-Kinds-And-Topics.md, D6).
+# A topic holds no card text of its own; it names the decks that already teach it.
+schema: 1
+kind: "topics"
+id: "hi-topics"
+language: "hi"
+license: "CC-BY-SA-4.0"
+topics:
+  - id: "hi-postpositions"
+    name: { en: "Postpositions" }
+    summary: { en: "The small words that come after a noun and mark its role, such as place, direction, possession and the object of an action, which take the place English prepositions fill." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["hi-grammar-postpositions"]
+  - id: "hi-ne-ergativity"
+    name: { en: "The ne marker and ergativity" }
+    summary: { en: "The particle ne that follows the doer of a transitive verb in the past tense, and how the verb then agrees with the object instead of the doer." }
+    kind: "grammar"
+    level: "A2"
+    decks: ["hi-grammar-ne"]
+  - id: "hi-honorifics"
+    name: { en: "Honorifics and politeness" }
+    summary: { en: "The forms of address and verb endings that show respect or familiarity, from the polite form used with strangers and elders to the familiar form used with close friends and children." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["hi-grammar-honorifics"]
+  - id: "hi-noun-gender"
+    name: { en: "Noun gender" }
+    summary: { en: "How each noun is masculine or feminine, how the ending of a noun often shows its gender, and how adjectives and verbs agree with it." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["hi-grammar-nouns"]
+  - id: "hi-verb-to-be"
+    name: { en: "The verb to be" }
+    summary: { en: "The forms of the verb 'to be' used for identity, location, states and the present and past tenses, with their short and full forms." }
+    kind: "verbs"
+    level: "A1"
+    decks: ["hi-grammar-be"]
+  - id: "hi-tenses"
+    name: { en: "The tenses" }
+    summary: { en: "The present, future, past, continuous, perfect and habitual forms of the verb, and how each one is built from the verb stem and its endings." }
+    kind: "verbs"
+    level: "A1"
+    decks: ["hi-grammar-present", "hi-grammar-past", "hi-grammar-future", "hi-grammar-continuous", "hi-grammar-perfect", "hi-grammar-past-continuous", "hi-grammar-past-more", "hi-grammar-habitual-past"]
+  - id: "hi-conditionals"
+    name: { en: "Conditionals" }
+    summary: { en: "Sentences with an 'if' clause and a result, for real, unreal and past situations, and how the verb forms change in each kind." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["hi-grammar-conditional"]
+  - id: "hi-subjunctive"
+    name: { en: "The subjunctive" }
+    summary: { en: "The verb mood used after expressions of wish, doubt, obligation and purpose, and in clauses about things that have not happened yet." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["hi-grammar-subjunctive"]
+  - id: "hi-compound-conjunct-verbs"
+    name: { en: "Compound and conjunct verbs" }
+    summary: { en: "Verbs built from two parts: a verb stem joined to a second verb that adds a meaning, and a noun or adjective joined to a light verb such as 'do' or 'become'." }
+    kind: "verbs"
+    level: "A2"
+    decks: ["hi-grammar-compound-verbs", "hi-grammar-conjunct-verbs"]
+  - id: "hi-loanwords"
+    name: { en: "Persian and Arabic loanwords" }
+    summary: { en: "Words that came into Hindustani from Persian and Arabic, with the Persian compound and affix patterns and the Arabic roots and plurals that many of them keep." }
+    kind: "words"
+    level: "A2"
+    decks: ["hi-arabic-words", "hi-grammar-persian-affixes", "hi-grammar-persian-compounds", "hi-grammar-arabic-plurals", "hi-grammar-arabic-roots"]
+  - id: "hi-devanagari"
+    name: { en: "The Devanagari script" }
+    summary: { en: "The script that writes Hindi: its vowels, consonants, vowel signs, conjunct letters, digits and how to read a whole word from them." }
+    kind: "script"
+    level: "A1"
+    decks: ["hi-script-vowels", "hi-script-consonants", "hi-script-vowel-signs", "hi-script-conjuncts", "hi-script-digits", "hi-script-reading"]
+  - id: "hi-perso-arabic-urdu"
+    name: { en: "The Perso-Arabic script (Urdu)" }
+    summary: { en: "The right-to-left script that writes Urdu and Hindustani: its letters and their joining forms, the vowels, the digits and how to read a whole word from them." }
+    kind: "script"
+    level: "A1"
+    decks: ["hi-script-perso-arabic-letters", "hi-script-perso-arabic-shapes", "hi-script-perso-arabic-vowels", "hi-script-perso-arabic-reading", "hi-script-perso-arabic-digits", "hi-perso-arabic-script"]
