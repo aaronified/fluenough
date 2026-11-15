@@ -489,7 +489,8 @@ units:
       - { id: "just-arrived", text: { "en": "Saying what has just happened: I have just arrived, she has just left" } }
     reading_passages:
       - { id: "quick-updates", text: { "en": "Quick messages about what someone has just done" } }
-  - planned: { id: "fr-journey", theme: "journey", words: 45 }
+  - decks: ["fr-journey", "fr-journey-sentences", "fr-reading-journey", "*"]
+    words: 45
     listening_passages:
       - { id: "ticket-counter", text: { "en": "Buying a train ticket at the counter" } }
     reading_passages:

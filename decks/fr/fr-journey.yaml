@@ -1,0 +1,495 @@
+schema: 1
+id: "fr-journey"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "journey"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-3400"
+    target: "aller-retour"
+    ipa: "aleʁətuʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je voudrais un aller-retour pour demain.", ipa: "ʒə vudʁɛ œ̃n aleʁətuʁ puʁ dəmɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "voudrais", base: "vouloir" }, { word: "un", ref: "fr-0208" }, { word: "aller-retour", base: "aller-retour" }, { word: "pour", ref: "fr-0591" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "L'aller-retour coûte moins cher que deux billets.", ipa: "laleʁətuʁ kut mwɛ̃ ʃɛʁ kə dø bijɛ", bases: [{ word: "L'aller-retour", base: "aller-retour" }, { word: "coûte", base: "coûter" }, { word: "moins", ref: "fr-0346" }, { word: "cher", ref: "fr-0104" }, { word: "que", base: "que" }, { word: "deux", ref: "fr-0209" }, { word: "billets", base: "billet" }] }
+  - id: "fr-3401"
+    target: "voie"
+    ipa: "vwa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le train part de la voie numéro trois.", ipa: "lə tʁɛ̃ paʁ də la vwa nymeʁo tʁwa", bases: [{ word: "Le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "part", base: "partir" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "voie", base: "voie" }, { word: "numéro", ref: "fr-1070" }, { word: "trois", ref: "fr-0210" }] }
+      - { target: "La voie est indiquée sur le panneau.", ipa: "la vwa ɛt ɛ̃dike syʁ lə pano", bases: [{ word: "La", ref: "fr-0544" }, { word: "voie", base: "voie" }, { word: "est", base: "être" }, { word: "indiquée", base: "indiquer" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "panneau", base: "panneau" }] }
+  - id: "fr-3402"
+    target: "compartiment"
+    ipa: "kɔ̃paʁtimɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Notre compartiment est au milieu du train.", ipa: "nɔtʁ kɔ̃paʁtimɑ̃ ɛt o miljø dy tʁɛ̃", bases: [{ word: "Notre", ref: "fr-0139" }, { word: "compartiment", base: "compartiment" }, { word: "est", base: "être" }, { word: "au", base: "à" }, { word: "milieu", ref: "fr-0475" }, { word: "du", base: "de" }, { word: "train", ref: "fr-0076" }] }
+      - { target: "Ce compartiment a six places.", ipa: "sə kɔ̃paʁtimɑ̃ a sis plas", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "compartiment", base: "compartiment" }, { word: "a", base: "avoir" }, { word: "six", ref: "fr-0213" }, { word: "places", base: "place" }] }
+  - id: "fr-3403"
+    target: "correspondance"
+    ipa: "kɔʁɛspɔ̃dɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous avons une correspondance courte.", ipa: "nuz avɔ̃ yn kɔʁɛspɔ̃dɑ̃s kuʁt", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "avons", base: "avoir" }, { word: "une", ref: "fr-0545" }, { word: "correspondance", base: "correspondance" }, { word: "courte", base: "court" }] }
+      - { target: "La correspondance est courte : dix minutes.", ipa: "la kɔʁɛspɔ̃dɑ̃s ɛ kuʁt dis minyt", bases: [{ word: "La", ref: "fr-0544" }, { word: "correspondance", base: "correspondance" }, { word: "est", base: "être" }, { word: "courte", base: "court" }, { word: "dix", ref: "fr-0217" }, { word: "minutes", base: "minute" }] }
+  - id: "fr-3404"
+    target: "contrôleur"
+    ipa: "kɔ̃tʁolœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le contrôleur demande mon billet.", ipa: "lə kɔ̃tʁolœʁ dəmɑ̃d mɔ̃ bijɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "contrôleur", base: "contrôleur" }, { word: "demande", base: "demander" }, { word: "mon", ref: "fr-0037" }, { word: "billet", ref: "fr-0856" }] }
+      - { target: "Le contrôleur passe dans le wagon.", ipa: "lə kɔ̃tʁolœʁ pas dɑ̃ lə waɡɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "contrôleur", base: "contrôleur" }, { word: "passe", base: "passer" }, { word: "dans", ref: "fr-0049" }, { word: "wagon", base: "wagon" }] }
+  - id: "fr-3405"
+    target: "annulation"
+    ipa: "anylasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'annulation du train est annoncée.", ipa: "lanylasjɔ̃ dy tʁɛ̃ ɛt anɔ̃se", bases: [{ word: "L'annulation", base: "annulation" }, { word: "du", base: "de" }, { word: "train", ref: "fr-0076" }, { word: "est", base: "être" }, { word: "annoncée", base: "annoncer" }] }
+      - { target: "Une annulation gratuite est possible.", ipa: "yn anylasjɔ̃ ɡʁatɥit ɛ pɔsibl", bases: [{ word: "Une", ref: "fr-0545" }, { word: "annulation", base: "annulation" }, { word: "gratuite", base: "gratuit" }, { word: "est", base: "être" }, { word: "possible", ref: "fr-1886" }] }
+  - id: "fr-3406"
+    target: "supplément"
+    ipa: "syplemɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le TGV a un supplément.", ipa: "lə tɡv a œ̃ syplemɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "TGV", base: "TGV" }, { word: "a", base: "avoir" }, { word: "un", ref: "fr-0208" }, { word: "supplément", base: "supplément" }] }
+      - { target: "Le supplément est payé au guichet.", ipa: "lə syplemɑ̃ ɛ pɛje o ɡiʃɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "supplément", base: "supplément" }, { word: "est", base: "être" }, { word: "payé", base: "payer" }, { word: "au", base: "à" }, { word: "guichet", ref: "fr-1973" }] }
+  - id: "fr-3407"
+    target: "wagon"
+    ipa: "waɡɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le wagon numéro cinq est complet.", ipa: "lə waɡɔ̃ nymeʁo sɛ̃k ɛ kɔ̃plɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "wagon", base: "wagon" }, { word: "numéro", ref: "fr-1070" }, { word: "cinq", ref: "fr-0212" }, { word: "est", base: "être" }, { word: "complet", base: "complet" }] }
+      - { target: "Chaque wagon a des toilettes.", ipa: "ʃak waɡɔ̃ a de twalɛt", bases: [{ word: "Chaque", ref: "fr-0375" }, { word: "wagon", base: "wagon" }, { word: "a", base: "avoir" }, { word: "des", ref: "fr-0546" }, { word: "toilettes", base: "toilette" }] }
+  - id: "fr-3408"
+    target: "complet"
+    ipa: "kɔ̃plɛ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le train est complet ce soir.", ipa: "lə tʁɛ̃ ɛ kɔ̃plɛ sə swaʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "est", base: "être" }, { word: "complet", base: "complet" }, { word: "ce", ref: "fr-0143" }, { word: "soir", ref: "fr-1034" }] }
+      - { target: "La salle est complète.", ipa: "la sal ɛ kɔ̃plɛt", bases: [{ word: "La", ref: "fr-0544" }, { word: "salle", ref: "fr-1014" }, { word: "est", base: "être" }, { word: "complète", base: "complet" }] }
+  - id: "fr-3409"
+    target: "panneau"
+    ipa: "pano"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le panneau indique la sortie.", ipa: "lə pano ɛ̃dik la sɔʁti", bases: [{ word: "Le", ref: "fr-0543" }, { word: "panneau", base: "panneau" }, { word: "indique", base: "indiquer" }, { word: "la", ref: "fr-0544" }, { word: "sortie", ref: "fr-2227" }] }
+      - { target: "Un grand panneau affiche les horaires.", ipa: "œ̃ ɡʁɑ̃ pano afiʃ le ɔʁɛʁ", bases: [{ word: "Un", ref: "fr-0208" }, { word: "grand", ref: "fr-0410" }, { word: "panneau", base: "panneau" }, { word: "affiche", base: "afficher" }, { word: "les", ref: "fr-0043" }, { word: "horaires", base: "horaire" }] }
+  - id: "fr-3410"
+    target: "affichage"
+    ipa: "afiʃaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le train est sur l'affichage.", ipa: "lə tʁɛ̃ ɛ syʁ lafiʃaʒ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "est", base: "être" }, { word: "sur", ref: "fr-0469" }, { word: "l'affichage", base: "affichage" }] }
+      - { target: "L'affichage montre le numéro de la voie.", ipa: "lafiʃaʒ mɔ̃tʁ lə nymeʁo də la vwa", bases: [{ word: "L'affichage", base: "affichage" }, { word: "montre", ref: "fr-1120" }, { word: "le", ref: "fr-0543" }, { word: "numéro", ref: "fr-1070" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "voie", base: "voie" }] }
+  - id: "fr-3411"
+    target: "valider"
+    ipa: "valide"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je valide mon billet avant de monter.", ipa: "ʒə valid mɔ̃ bijɛ avɑ̃ də mɔ̃te", bases: [{ word: "Je", ref: "fr-0126" }, { word: "valide", base: "valider" }, { word: "mon", ref: "fr-0037" }, { word: "billet", ref: "fr-0856" }, { word: "avant", ref: "fr-0596" }, { word: "de", base: "de" }, { word: "monter", ref: "fr-0516" }] }
+      - { target: "Il faut valider le billet.", ipa: "il fo valide lə bijɛ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "faut", base: "falloir" }, { word: "valider", base: "valider" }, { word: "le", ref: "fr-0543" }, { word: "billet", ref: "fr-0856" }] }
+  - id: "fr-3412"
+    target: "ponctuel"
+    ipa: "pɔ̃ktɥɛl"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le train est toujours ponctuel.", ipa: "lə tʁɛ̃ ɛ tuʒuʁ pɔ̃ktɥɛl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "est", base: "être" }, { word: "toujours", ref: "fr-0327" }, { word: "ponctuel", base: "ponctuel" }] }
+      - { target: "Il est très ponctuel.", ipa: "il ɛ tʁɛ pɔ̃ktɥɛl", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "ponctuel", base: "ponctuel" }] }
+  - id: "fr-3413"
+    target: "ponctualité"
+    ipa: "pɔ̃ktɥalite"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La ponctualité du train est bonne.", ipa: "la pɔ̃ktɥalite dy tʁɛ̃ ɛ bɔn", bases: [{ word: "La", ref: "fr-0544" }, { word: "ponctualité", base: "ponctualité" }, { word: "du", base: "de" }, { word: "train", ref: "fr-0076" }, { word: "est", base: "être" }, { word: "bonne", base: "bon" }] }
+      - { target: "Je compte sur la ponctualité du conducteur.", ipa: "ʒə kɔ̃t syʁ la pɔ̃ktɥalite dy kɔ̃dyktœʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "compte", ref: "fr-1974" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "ponctualité", base: "ponctualité" }, { word: "du", base: "de" }, { word: "conducteur", base: "conducteur" }] }
+  - id: "fr-3414"
+    target: "bifurquer"
+    ipa: "bifyʁke"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le train bifurque à la gare.", ipa: "lə tʁɛ̃ bifyʁk a la ɡaʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "bifurque", base: "bifurquer" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "gare", ref: "fr-0075" }] }
+      - { target: "Nous devons bifurquer ici.", ipa: "nu dəvɔ̃ bifyʁke isi", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "devons", base: "devoir" }, { word: "bifurquer", base: "bifurquer" }, { word: "ici", ref: "fr-0029" }] }
+  - id: "fr-3415"
+    target: "guichetier"
+    ipa: "ɡiʃətje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le guichetier répond à la question.", ipa: "lə ɡiʃətje ʁepɔ̃ a la kɛstjɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "guichetier", base: "guichetier" }, { word: "répond", base: "répondre" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "question", ref: "fr-1593" }] }
+      - { target: "Je parle au guichetier.", ipa: "ʒə paʁl o ɡiʃətje", bases: [{ word: "Je", ref: "fr-0126" }, { word: "parle", base: "parler" }, { word: "au", base: "à" }, { word: "guichetier", base: "guichetier" }] }
+  - id: "fr-3416"
+    target: "correspondant"
+    ipa: "kɔʁɛspɔ̃dɑ̃"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le train correspondant part à dix heures.", ipa: "lə tʁɛ̃ kɔʁɛspɔ̃dɑ̃ paʁ a dis œʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "correspondant", base: "correspondant" }, { word: "part", base: "partir" }, { word: "à", base: "à" }, { word: "dix", ref: "fr-0217" }, { word: "heures", base: "heure" }] }
+      - { target: "Je prends le train correspondant.", ipa: "ʒə pʁɑ̃ lə tʁɛ̃ kɔʁɛspɔ̃dɑ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", base: "prendre" }, { word: "le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "correspondant", base: "correspondant" }] }
+  - id: "fr-3417"
+    target: "grève"
+    ipa: "ɡʁɛv"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Une grève des trains est prévue demain.", ipa: "yn ɡʁɛv de tʁɛ̃ ɛ pʁevy dəmɛ̃", bases: [{ word: "Une", ref: "fr-0545" }, { word: "grève", base: "grève" }, { word: "des", ref: "fr-0546" }, { word: "trains", base: "train" }, { word: "est", base: "être" }, { word: "prévue", base: "prévoir" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "La grève commence à six heures.", ipa: "la ɡʁɛv kɔmɑ̃s a sis œʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "grève", base: "grève" }, { word: "commence", base: "commencer" }, { word: "à", base: "à" }, { word: "six", ref: "fr-0213" }, { word: "heures", base: "heure" }] }
+  - id: "fr-3418"
+    target: "billetterie"
+    ipa: "bijɛtʁi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La billetterie est ouverte jusqu'à dix-huit heures.", ipa: "la bijɛtʁi ɛt uvɛʁt ʒyska dizɥit œʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "billetterie", base: "billetterie" }, { word: "est", base: "être" }, { word: "ouverte", base: "ouvert" }, { word: "jusqu'à", base: "jusqu'à" }, { word: "dix-huit", ref: "fr-0225" }, { word: "heures", base: "heure" }] }
+      - { target: "Je vais à la billetterie.", ipa: "ʒə vɛ a la bijɛtʁi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vais", base: "aller" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "billetterie", base: "billetterie" }] }
+  - id: "fr-3419"
+    target: "débarquer"
+    ipa: "debaʁke"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous débarquons à la gare.", ipa: "nu debaʁkɔ̃ a la ɡaʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "débarquons", base: "débarquer" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "gare", ref: "fr-0075" }] }
+      - { target: "Les passagers débarquent sur le quai.", ipa: "le pasaʒe debaʁkɑ̃ syʁ lə kɛ", bases: [{ word: "Les", ref: "fr-0043" }, { word: "passagers", base: "passager" }, { word: "débarquent", base: "débarquer" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "quai", ref: "fr-0866" }] }
+  - id: "fr-3420"
+    target: "terminus"
+    ipa: "tɛʁminy"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le train arrive au terminus.", ipa: "lə tʁɛ̃ aʁiv o tɛʁminy", bases: [{ word: "Le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "arrive", base: "arriver" }, { word: "au", base: "à" }, { word: "terminus", base: "terminus" }] }
+      - { target: "Le terminus est là, tout le monde descend.", ipa: "lə tɛʁminy ɛ la tu lə mɔ̃d desɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "terminus", base: "terminus" }, { word: "est", base: "être" }, { word: "là", ref: "fr-0030" }, { word: "tout", ref: "fr-0372" }, { word: "monde", base: "monde" }, { word: "descend", base: "descendre" }] }
+  - id: "fr-3421"
+    target: "vitesse"
+    ipa: "vitɛs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le train roule à grande vitesse.", ipa: "lə tʁɛ̃ ʁul a ɡʁɑ̃d vitɛs", bases: [{ word: "Le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "roule", base: "rouler" }, { word: "à", base: "à" }, { word: "grande", base: "grand" }, { word: "vitesse", base: "vitesse" }] }
+      - { target: "La vitesse est de trois cents kilomètres.", ipa: "la vitɛs ɛ də tʁwa sɑ̃ kilɔmɛtʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "vitesse", base: "vitesse" }, { word: "est", base: "être" }, { word: "de", base: "de" }, { word: "trois", ref: "fr-0210" }, { word: "cents", base: "cent" }, { word: "kilomètres", base: "kilomètre" }] }
+  - id: "fr-3422"
+    target: "retour"
+    ipa: "ʁətuʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le retour est à dix-huit heures.", ipa: "lə ʁətuʁ ɛt a dizɥit œʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "retour", base: "retour" }, { word: "est", base: "être" }, { word: "à", base: "à" }, { word: "dix-huit", ref: "fr-0225" }, { word: "heures", base: "heure" }] }
+      - { target: "Je prends le train du retour.", ipa: "ʒə pʁɑ̃ lə tʁɛ̃ dy ʁətuʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", base: "prendre" }, { word: "le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "du", base: "de" }, { word: "retour", base: "retour" }] }
+  - id: "fr-3423"
+    target: "annonce"
+    ipa: "anɔ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'entends une annonce dans la gare.", ipa: "ʒɑ̃tɑ̃ yn anɔ̃s dɑ̃ la ɡaʁ", bases: [{ word: "J'entends", base: "entendre" }, { word: "une", ref: "fr-0545" }, { word: "annonce", base: "annonce" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "gare", ref: "fr-0075" }] }
+      - { target: "L'annonce dit que le train a du retard.", ipa: "lanɔ̃s di kə lə tʁɛ̃ a dy ʁətaʁ", bases: [{ word: "L'annonce", base: "annonce" }, { word: "dit", base: "dire" }, { word: "que", base: "que" }, { word: "le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "a", base: "avoir" }, { word: "du", base: "de" }, { word: "retard", ref: "fr-0870" }] }
+  - id: "fr-3424"
+    target: "compostage"
+    ipa: "kɔ̃pɔstaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le compostage du billet est obligatoire.", ipa: "lə kɔ̃pɔstaʒ dy bijɛ ɛt ɔbliɡatwaʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "compostage", base: "compostage" }, { word: "du", base: "de" }, { word: "billet", ref: "fr-0856" }, { word: "est", base: "être" }, { word: "obligatoire", base: "obligatoire" }] }
+      - { target: "Je fais le compostage au quai.", ipa: "ʒə fɛ lə kɔ̃pɔstaʒ o kɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", base: "faire" }, { word: "le", ref: "fr-0543" }, { word: "compostage", base: "compostage" }, { word: "au", base: "à" }, { word: "quai", ref: "fr-0866" }] }
+  - id: "fr-3425"
+    target: "couchette"
+    ipa: "kuʃɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je réserve une couchette pour la nuit.", ipa: "ʒə ʁezɛʁv yn kuʃɛt puʁ la nɥi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "réserve", base: "réserver" }, { word: "une", ref: "fr-0545" }, { word: "couchette", base: "couchette" }, { word: "pour", ref: "fr-0591" }, { word: "la", ref: "fr-0544" }, { word: "nuit", ref: "fr-1035" }] }
+      - { target: "La couchette est en haut.", ipa: "la kuʃɛt ɛt ɑ̃ o", bases: [{ word: "La", ref: "fr-0544" }, { word: "couchette", base: "couchette" }, { word: "est", base: "être" }, { word: "en", base: "en" }, { word: "haut", ref: "fr-0423" }] }
+  - id: "fr-3426"
+    target: "première"
+    ipa: "pʁəmjɛʁ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je voyage en première classe.", ipa: "ʒə vwajaʒ ɑ̃ pʁəmjɛʁ klas", bases: [{ word: "Je", ref: "fr-0126" }, { word: "voyage", base: "voyager" }, { word: "en", base: "en" }, { word: "première", base: "première" }, { word: "classe", ref: "fr-1589" }] }
+      - { target: "La première classe est plus confortable.", ipa: "la pʁəmjɛʁ klas ɛ ply kɔ̃fɔʁtabl", bases: [{ word: "La", ref: "fr-0544" }, { word: "première", base: "première" }, { word: "classe", ref: "fr-1589" }, { word: "est", base: "être" }, { word: "plus", ref: "fr-0345" }, { word: "confortable", base: "confortable" }] }
+  - id: "fr-3427"
+    target: "seconde"
+    ipa: "səkɔ̃d"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le billet en seconde coûte moins cher.", ipa: "lə bijɛ ɑ̃ səkɔ̃d kut mwɛ̃ ʃɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "billet", ref: "fr-0856" }, { word: "en", base: "en" }, { word: "seconde", base: "seconde" }, { word: "coûte", base: "coûter" }, { word: "moins", ref: "fr-0346" }, { word: "cher", ref: "fr-0104" }] }
+      - { target: "La seconde classe est pleine.", ipa: "la səkɔ̃d klas ɛ plɛn", bases: [{ word: "La", ref: "fr-0544" }, { word: "seconde", base: "seconde" }, { word: "classe", ref: "fr-1589" }, { word: "est", base: "être" }, { word: "pleine", base: "plein" }] }
+  - id: "fr-3428"
+    target: "valable"
+    ipa: "valabl"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce billet est valable deux mois.", ipa: "sə bijɛ ɛ valabl dø mwa", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "billet", ref: "fr-0856" }, { word: "est", base: "être" }, { word: "valable", base: "valable" }, { word: "deux", ref: "fr-0209" }, { word: "mois", ref: "fr-1165" }] }
+      - { target: "La carte est valable jusqu'en juin.", ipa: "la kaʁt ɛ valabl ʒyskɑ̃ ʒɥɛ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "carte", ref: "fr-0824" }, { word: "est", base: "être" }, { word: "valable", base: "valable" }, { word: "jusqu'en", base: "jusqu'en" }, { word: "juin", ref: "fr-1157" }] }
+  - id: "fr-3429"
+    target: "conducteur"
+    ipa: "kɔ̃dyktœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le conducteur annonce le départ.", ipa: "lə kɔ̃dyktœʁ anɔ̃s lə depaʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "conducteur", base: "conducteur" }, { word: "annonce", base: "annonce" }, { word: "départ", ref: "fr-1915" }] }
+      - { target: "Le conducteur du train est très gentil.", ipa: "lə kɔ̃dyktœʁ dy tʁɛ̃ ɛ tʁɛ ʒɑ̃ti", bases: [{ word: "Le", ref: "fr-0543" }, { word: "conducteur", base: "conducteur" }, { word: "du", base: "de" }, { word: "train", ref: "fr-0076" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "gentil", ref: "fr-0434" }] }
+  - id: "fr-3430"
+    target: "kiosque"
+    ipa: "kjɔsk"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'achète un journal au kiosque.", ipa: "ʒaʃɛt œ̃ ʒuʁnal o kjɔsk", bases: [{ word: "J'achète", base: "acheter" }, { word: "un", ref: "fr-0208" }, { word: "journal", ref: "fr-1367" }, { word: "au", base: "à" }, { word: "kiosque", base: "kiosque" }] }
+      - { target: "Le kiosque est à côté de la sortie.", ipa: "lə kjɔsk ɛt a kote də la sɔʁti", bases: [{ word: "Le", ref: "fr-0543" }, { word: "kiosque", base: "kiosque" }, { word: "est", base: "être" }, { word: "à", base: "à" }, { word: "côté", ref: "fr-0473" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "sortie", ref: "fr-2227" }] }
+  - id: "fr-3431"
+    target: "automate"
+    ipa: "otɔmat"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'achète le billet à l'automate.", ipa: "ʒaʃɛt lə bijɛ a lotɔmat", bases: [{ word: "J'achète", base: "acheter" }, { word: "le", ref: "fr-0543" }, { word: "billet", ref: "fr-0856" }, { word: "à", base: "à" }, { word: "l'automate", base: "automate" }] }
+      - { target: "L'automate ne marche pas.", ipa: "lotɔmat nə maʁʃ pa", bases: [{ word: "L'automate", base: "automate" }, { word: "ne", base: "ne" }, { word: "marche", base: "marcher" }, { word: "pas", base: "pas" }] }
+  - id: "fr-3432"
+    target: "machine"
+    ipa: "maʃin"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette machine est près du quai.", ipa: "sɛt maʃin ɛ pʁɛ dy kɛ", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "machine", base: "machine" }, { word: "est", base: "être" }, { word: "près", ref: "fr-0464" }, { word: "du", base: "de" }, { word: "quai", ref: "fr-0866" }] }
+      - { target: "Je mets ma carte dans la machine.", ipa: "ʒə mɛ ma kaʁt dɑ̃ la maʃin", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", base: "mettre" }, { word: "ma", ref: "fr-0137" }, { word: "carte", ref: "fr-0824" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "machine", base: "machine" }] }
+  - id: "fr-3433"
+    target: "remboursement"
+    ipa: "ʁɑ̃buʁsəmɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je demande un remboursement.", ipa: "ʒə dəmɑ̃d œ̃ ʁɑ̃buʁsəmɑ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "demande", base: "demander" }, { word: "un", ref: "fr-0208" }, { word: "remboursement", base: "remboursement" }] }
+      - { target: "Le remboursement arrive dans trois jours.", ipa: "lə ʁɑ̃buʁsəmɑ̃ aʁiv dɑ̃ tʁwa ʒuʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "remboursement", base: "remboursement" }, { word: "arrive", base: "arriver" }, { word: "dans", ref: "fr-0049" }, { word: "trois", ref: "fr-0210" }, { word: "jours", base: "jour" }] }
+  - id: "fr-3434"
+    target: "retarder"
+    ipa: "ʁətaʁde"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le train est retardé de dix minutes.", ipa: "lə tʁɛ̃ ɛ ʁətaʁde də dis minyt", bases: [{ word: "Le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "est", base: "être" }, { word: "retardé", base: "retarder" }, { word: "de", base: "de" }, { word: "dix", ref: "fr-0217" }, { word: "minutes", base: "minute" }] }
+      - { target: "Ce problème retarde le départ.", ipa: "sə pʁɔblɛm ʁətaʁd lə depaʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "problème", ref: "fr-0684" }, { word: "retarde", base: "retarder" }, { word: "le", ref: "fr-0543" }, { word: "départ", ref: "fr-1915" }] }
+  - id: "fr-3435"
+    target: "rame"
+    ipa: "ʁam"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La rame arrive dans une minute.", ipa: "la ʁam aʁiv dɑ̃ yn minyt", bases: [{ word: "La", ref: "fr-0544" }, { word: "rame", base: "rame" }, { word: "arrive", base: "arriver" }, { word: "dans", ref: "fr-0049" }, { word: "une", ref: "fr-0545" }, { word: "minute", ref: "fr-1031" }] }
+      - { target: "Cette rame est très bondée.", ipa: "sɛt ʁam ɛ tʁɛ bɔ̃de", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "rame", base: "rame" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "bondée", base: "bondé" }] }
+  - id: "fr-3436"
+    target: "tunnel"
+    ipa: "tynɛl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le train passe dans le tunnel.", ipa: "lə tʁɛ̃ pas dɑ̃ lə tynɛl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "passe", base: "passer" }, { word: "dans", ref: "fr-0049" }, { word: "tunnel", base: "tunnel" }] }
+      - { target: "Le tunnel est très long.", ipa: "lə tynɛl ɛ tʁɛ lɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "tunnel", base: "tunnel" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "long", ref: "fr-0421" }] }
+  - id: "fr-3437"
+    target: "locomotive"
+    ipa: "lɔkɔmɔtiv"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La locomotive tire les wagons.", ipa: "la lɔkɔmɔtiv tiʁ le waɡɔ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "locomotive", base: "locomotive" }, { word: "tire", base: "tirer" }, { word: "les", ref: "fr-0043" }, { word: "wagons", base: "wagon" }] }
+      - { target: "Une locomotive électrique est silencieuse.", ipa: "yn lɔkɔmɔtiv elɛktʁik ɛ silɑ̃sjøz", bases: [{ word: "Une", ref: "fr-0545" }, { word: "locomotive", base: "locomotive" }, { word: "électrique", base: "électrique" }, { word: "est", base: "être" }, { word: "silencieuse", base: "silencieux" }] }
+  - id: "fr-3438"
+    target: "rail"
+    ipa: "ʁaj"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le train roule sur les rails.", ipa: "lə tʁɛ̃ ʁul syʁ le ʁaj", bases: [{ word: "Le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "roule", base: "rouler" }, { word: "sur", ref: "fr-0469" }, { word: "les", ref: "fr-0043" }, { word: "rails", base: "rail" }] }
+      - { target: "Un rail est cassé.", ipa: "œ̃ ʁaj ɛ kase", bases: [{ word: "Un", ref: "fr-0208" }, { word: "rail", base: "rail" }, { word: "est", base: "être" }, { word: "cassé", ref: "fr-1738" }] }
+  - id: "fr-3439"
+    target: "ouverture"
+    ipa: "uvɛʁtyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'ouverture de la gare est à six heures.", ipa: "luvɛʁtyʁ də la ɡaʁ ɛt a sis œʁ", bases: [{ word: "L'ouverture", base: "ouverture" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "gare", ref: "fr-0075" }, { word: "est", base: "être" }, { word: "à", base: "à" }, { word: "six", ref: "fr-0213" }, { word: "heures", base: "heure" }] }
+      - { target: "L'ouverture du guichet est annoncée.", ipa: "luvɛʁtyʁ dy ɡiʃɛ ɛt anɔ̃se", bases: [{ word: "L'ouverture", base: "ouverture" }, { word: "du", base: "de" }, { word: "guichet", ref: "fr-1973" }, { word: "est", base: "être" }, { word: "annoncée", base: "annoncer" }] }
+  - id: "fr-3440"
+    target: "fermeture"
+    ipa: "fɛʁmətyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La fermeture du guichet est à dix-huit heures.", ipa: "la fɛʁmətyʁ dy ɡiʃɛ ɛt a dizɥit œʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "fermeture", base: "fermeture" }, { word: "du", base: "de" }, { word: "guichet", ref: "fr-1973" }, { word: "est", base: "être" }, { word: "à", base: "à" }, { word: "dix-huit", ref: "fr-0225" }, { word: "heures", base: "heure" }] }
+      - { target: "La fermeture des portes est automatique.", ipa: "la fɛʁmətyʁ de pɔʁt ɛt otɔmatik", bases: [{ word: "La", ref: "fr-0544" }, { word: "fermeture", base: "fermeture" }, { word: "des", ref: "fr-0546" }, { word: "portes", base: "porte" }, { word: "est", base: "être" }, { word: "automatique", base: "automatique" }] }
+  - id: "fr-3441"
+    target: "bagagiste"
+    ipa: "baɡaʒist"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le bagagiste porte ma valise.", ipa: "lə baɡaʒist pɔʁt ma valiz", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bagagiste", base: "bagagiste" }, { word: "porte", base: "porter" }, { word: "ma", ref: "fr-0137" }, { word: "valise", ref: "fr-0876" }] }
+      - { target: "Je cherche un bagagiste.", ipa: "ʒə ʃɛʁʃ œ̃ baɡaʒist", bases: [{ word: "Je", ref: "fr-0126" }, { word: "cherche", base: "chercher" }, { word: "un", ref: "fr-0208" }, { word: "bagagiste", base: "bagagiste" }] }
+  - id: "fr-3442"
+    target: "descente"
+    ipa: "desɑ̃t"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La descente du train est rapide.", ipa: "la desɑ̃t dy tʁɛ̃ ɛ ʁapid", bases: [{ word: "La", ref: "fr-0544" }, { word: "descente", base: "descente" }, { word: "du", base: "de" }, { word: "train", ref: "fr-0076" }, { word: "est", base: "être" }, { word: "rapide", ref: "fr-0447" }] }
+      - { target: "Pour la descente, prenez la porte de gauche.", ipa: "puʁ la desɑ̃t pʁəne la pɔʁt də ɡoʃ", bases: [{ word: "Pour", ref: "fr-0591" }, { word: "la", ref: "fr-0544" }, { word: "descente", base: "descente" }, { word: "prenez", base: "prendre" }, { word: "porte", ref: "fr-1003" }, { word: "de", base: "de" }, { word: "gauche", ref: "fr-0478" }] }
+  - id: "fr-3443"
+    target: "carnet"
+    ipa: "kaʁnɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'achète un carnet de dix billets.", ipa: "ʒaʃɛt œ̃ kaʁnɛ də dis bijɛ", bases: [{ word: "J'achète", base: "acheter" }, { word: "un", ref: "fr-0208" }, { word: "carnet", base: "carnet" }, { word: "de", base: "de" }, { word: "dix", ref: "fr-0217" }, { word: "billets", base: "billet" }] }
+      - { target: "Le carnet coûte moins cher que dix billets simples.", ipa: "lə kaʁnɛ kut mwɛ̃ ʃɛʁ kə dis bijɛ sɛ̃pl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "carnet", base: "carnet" }, { word: "coûte", base: "coûter" }, { word: "moins", ref: "fr-0346" }, { word: "cher", ref: "fr-0104" }, { word: "que", base: "que" }, { word: "dix", ref: "fr-0217" }, { word: "billets", base: "billet" }, { word: "simples", base: "simple" }] }
+  - id: "fr-3444"
+    target: "hall"
+    ipa: "al"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le hall est grand et très calme.", ipa: "lə al ɛ ɡʁɑ̃t e tʁɛ kalm", bases: [{ word: "Le", ref: "fr-0543" }, { word: "hall", base: "hall" }, { word: "est", base: "être" }, { word: "grand", ref: "fr-0410" }, { word: "et", ref: "fr-0027" }, { word: "très", ref: "fr-0031" }, { word: "calme", ref: "fr-0433" }] }
+      - { target: "J'attends dans le hall.", ipa: "ʒatɑ̃ dɑ̃ lə al", bases: [{ word: "J'attends", base: "attendre" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "hall", base: "hall" }] }
