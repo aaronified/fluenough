@@ -98,3 +98,20 @@
     # Wiktionary has few narrow French forms, so most cards get theirs from
     # the course's rules file instead.
     name: "Standard French of France, Wiktionary's untagged form"
+
+"as":
+  dump: "Assamese"
+  variety:
+    # Measured on the kaikki.org dump (2026-11): 60 narrow forms for 45 words,
+    # all untagged, 17 of those words in the course's decks. They do not agree
+    # with the course's broad `ipa` or with each other: some write r, ɦ, ɪ or
+    # a lowered ɔ̞ where the decks write ɹ, h, i and ɔ (ধৰ্ম [dʱɔrmɔ], বহুত
+    # [bɔɦut], দৈ [dɔɪ]), some are wrong or garbled (তথ্য [tɔɪt.tʱɔ], অভ্যাস
+    # [ɔɪd.bʱaˣ]), and ছাঁ and ক্ৰিকেট have two forms that differ. So the
+    # untagged form is NOT taken (untagged: false, no notes, no tags): nothing
+    # is imported from Wiktionary, and every Assamese card gets its narrow form
+    # from decks/as/as-phonetics.yaml, in one convention. Flip `untagged` to
+    # true only together with a `normalise` list for r, ɦ, ɪ and U+031E, which
+    # needs the Spanish-only test in tools/test_phonetic.py widened first.
+    name: "Standard Assamese; no Wiktionary form is taken (rules only)"
+    untagged: false

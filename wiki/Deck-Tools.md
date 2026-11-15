@@ -439,7 +439,10 @@ and marks, NFC, and every entry that fits agrees. The variety per language
 is data in `tools/phonetic_languages.yaml` (dump name and variety): Bengali
 the Kolkata standard (Wiktionary's Rarh), Hindustani the Standard Hindi
 forms, Spanish, Telugu and Japanese the untagged form. Another language is
-one more entry there, with no change to the tool. Words and set phrases
+one more entry there, with no change to the tool. Assamese is registered
+with `untagged: false`, so no Wiktionary form is taken (its 60 narrow forms
+are untagged, mix conventions and some are wrong); its cards get their narrow
+form from the rules. Words and set phrases
 are covered; sentences are not on Wiktionary.
 
 A language may opt in to a `normalise:` list in the same file, regex
