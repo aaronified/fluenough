@@ -61,7 +61,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Le Québec est en français.", ipa: "lə kebɛk ɛt ɑ̃ fʁɑ̃sɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "Québec", base: "Québec" }, { word: "est", base: "être" }, { word: "en", base: "en" }, { word: "français", ref: "fr-0246" }] }
+      - { target: "Au Québec, on parle français.", ipa: "o kebɛk ɔ̃ paʁl fʁɑ̃sɛ", bases: [{ word: "Au", base: "à" }, { word: "Québec", base: "Québec" }, { word: "on", ref: "fr-0132" }, { word: "parle", ref: "fr-0023" }, { word: "français", ref: "fr-0246" }] }
       - { target: "Je voyage au Québec.", ipa: "ʒə vwajaʒ o kebɛk", bases: [{ word: "Je", ref: "fr-0126" }, { word: "voyage", ref: "fr-0867" }, { word: "au", base: "à" }, { word: "Québec", base: "Québec" }] }
   - id: "fr-3725"
     target: "Maroc"
@@ -83,7 +83,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Mes parents visitent l'Algérie.", ipa: "me paʁɑ̃ vizitɑ̃ lalʒeʁi", bases: [{ word: "Mes", ref: "fr-0623" }, { word: "parents", base: "parent" }, { word: "visitent", base: "visiter" }, { word: "l'Algérie", base: "Algérie" }] }
+      - { target: "Mes parents visitent l'Algérie.", ipa: "me paʁɑ̃ vizit lalʒeʁi", bases: [{ word: "Mes", ref: "fr-0623" }, { word: "parents", base: "parent" }, { word: "visitent", base: "visiter" }, { word: "l'Algérie", base: "Algérie" }] }
       - { target: "L'Algérie est un grand pays.", ipa: "lalʒeʁi ɛt œ̃ ɡʁɑ̃ pei", bases: [{ word: "L'Algérie", base: "Algérie" }, { word: "est", base: "être" }, { word: "un", ref: "fr-0208" }, { word: "grand", ref: "fr-0410" }, { word: "pays", ref: "fr-0243" }] }
   - id: "fr-3727"
     target: "Sénégal"
@@ -383,14 +383,14 @@ cards:
       - { target: "Mon voisin est sénégalais.", ipa: "mɔ̃ vwazɛ̃ ɛ seneɡalɛ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "voisin", ref: "fr-0101" }, { word: "est", base: "être" }, { word: "sénégalais", base: "sénégalais" }] }
   - id: "fr-3755"
     target: "Lille"
-    ipa: "lij"
+    ipa: "lil"
     pos: "other"
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Lille est près de la Belgique.", ipa: "lij ɛ pʁɛ də la bɛlʒik", bases: [{ word: "Lille", base: "Lille" }, { word: "est", base: "être" }, { word: "près", ref: "fr-0464" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "Belgique", base: "Belgique" }] }
-      - { target: "Je prends le train pour Lille.", ipa: "ʒə pʁɑ̃ lə tʁɛ̃ puʁ lij", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", base: "prendre" }, { word: "le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "pour", ref: "fr-0591" }, { word: "Lille", base: "Lille" }] }
+      - { target: "Lille est près de la Belgique.", ipa: "lil ɛ pʁɛ də la bɛlʒik", bases: [{ word: "Lille", base: "Lille" }, { word: "est", base: "être" }, { word: "près", ref: "fr-0464" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "Belgique", base: "Belgique" }] }
+      - { target: "Je prends le train pour Lille.", ipa: "ʒə pʁɑ̃ lə tʁɛ̃ puʁ lil", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", base: "prendre" }, { word: "le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "pour", ref: "fr-0591" }, { word: "Lille", base: "Lille" }] }
   - id: "fr-3756"
     target: "Toulouse"
     ipa: "tuluz"
