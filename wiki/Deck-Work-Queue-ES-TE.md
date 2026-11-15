@@ -32,29 +32,29 @@ Planning output of 2026-11-14. Nothing here was built, run or pushed. Owner orde
 | BLOCKED by code | 0 (ES-026 was blocked by #1269; #1269 done 2026-11-15) | 0 (TE-004 was blocked by #1269; TE-058 was blocked by BL-1, closed by #1285) |
 | Held (no task: needs the owner) | professional decks | professional decks |
 
-### 1.2 Spanish checklist grid (decks-live bcd0e532)
+### 1.2 Spanish checklist grid (decks-live, verified 2026-11-15)
 
 | # | Deliverable | State | Evidence | Tasks |
 |---|---|---|---|---|
-| 1 | Path to B1 | **DONE** | `es-path.yaml`: 103 entries (102 units + the `*` line), 0 planned, milestones present | none |
-| 2 | Cores and English layers | **DONE** | 139 core vocab files with a layer each (0 core without layer); 271 core files incl. readings; 2,742 own cards, highest id es-3527 | none |
-| 3 | Sentences decks | **DONE** | 66 `*-sentences` decks, 674 sentence cards; only `es-phrasebook` and `es-core-100` units have none (by design); ES-001..010 merged. ES-011 (placement audit) is its own Sonnet job; its result is not recorded on #1244 | none (ES-011 stays as specified) |
-| 4 | Reading decks | **DONE** | 95 `es-en-reading-*` single-file decks, every path unit that names `reading_passages` (59) has one | none |
+| 1 | Path to B1 | **DONE** | `es-path.yaml`: 102 of 102 units built (verified 2026-11-15) | none |
+| 2 | Cores and English layers | **DONE** | 71 core decks and 32 grammar decks; cores and layers done (verified 2026-11-15) | none |
+| 3 | Sentences decks | **DONE** | 68 sentence decks (verified 2026-11-15); the 674-card count of 2026-11-14 is not re-counted | none |
+| 4 | Reading decks | **DONE** | 98 reading decks (verified 2026-11-15) | none |
 | 5 | Script decks | n/a (Latin script) | | none |
-| 6 | Phrasebook | **DONE** | `es-phrasebook` | none |
-| 7 | Situations | PARTLY | `es-situations.yaml` exists; ES-026 merged (PR #1355): four more sheets (hotel, post and bank, greetings and apologies, emergencies), 12 new cards es-4650 to es-4661 | ES-025, ES-026 (ES-026 done) |
-| 8 | Topics | MISSING | no `es-topics.yaml` | ES-029, ES-030 |
-| 9 | Culture decks | PARTLY | `es-culture-2`, `es-culture-3`, `es-culture-4` merged (PR #1348): 2 of 18, 9 of 18 and 4 of 18 items (ES-015..017 partly done; the rest dropped for unverifiable sources or dates, not padded) | ES-014..017 |
-| 10 | Creators, eras, legacy | MISSING | `decks/creators/` holds `ja.yaml` only | rides on ES-014..017, 027, 028 |
-| 11 | Proverbs | MISSING | | ES-018..020 |
-| 12 | Multi-word verbs | MISSING | | ES-021..024 |
-| 13 | Professional | HELD | `professions: []` in `decks/sections.yaml`; needs the owner's list | none |
-| 14 | Recommendations | MISSING | `decks/recommendations/` holds `ja.yaml` only | ES-027, ES-028 |
-| 15 | Narrow IPA and broad `ipa` | PARTLY | 892 of 2,742 cards have `phonetic` (193 of 206 new, 699 of 2,536 old); `es-phonetics.yaml` exists; 10 cards lack broad `ipa` (es-pronouns 3, es-addressing 2, es-calendar 2, es-clothes 1, es-numbers-1-20 1, es-questions 1) | ES-040, ES-041 |
-| 16 | Review-queue rows | PARTLY | `docs/review-queue/es.md` exists (18 lines); rows for new batches not written | ES-042..044 |
-| 17 | Sourcing list | MISSING | no `Plan-Culture-Spanish` | ES-012 |
-| 18 | Facts file | MISSING | no `es-facts.yaml` (fr, bn, hi, as, gu, kn, mr, te all have one) | ES-013 |
-| + | Notes gap | PARTLY | 721 cards without a note before ES-031..039 (674 sentence cards, 47 on word cards/phrasebook/core-100). ES-031..039 merged (PR #1358): 240 notes added; only cards without a note were in scope, so the card counts in the task rows are stale | ES-031..039 done |
+| 6 | Phrasebook | **DONE** | `es-phrasebook`: 15 cards (verified 2026-11-15) | none |
+| 7 | Situations | PARTLY | `es-situations.yaml`: 10 sheets (verified 2026-11-15); ES-026 merged (PR #1355) | ES-025, ES-026 (ES-026 done) |
+| 8 | Topics | PARTLY | `es-topics.yaml`: 22 topics (verified 2026-11-15) | ES-029, ES-030 |
+| 9 | Culture decks | PARTLY | `es-culture-1` to `-4`: 6, 2, 9 and 4 items, 21 of a target of 72 (verified 2026-11-15); PR #1348 merged `-2` to `-4` | ES-014..017 |
+| 10 | Creators, eras, legacy | PARTLY | `decks/creators/es.yaml`: 34 creators (verified 2026-11-15); culture items es-4004, es-4150 and es-4151 are anonymous and have no creator | rides on ES-014..017, 027, 028 |
+| 11 | Proverbs | PARTLY | 60 items (verified 2026-11-15) | ES-018..020 |
+| 12 | Multi-word verbs | PARTLY | 80 items (verified 2026-11-15) | ES-021..024 |
+| 13 | Professional | HELD | held and empty (verified 2026-11-15) | none |
+| 14 | Recommendations | PARTLY | 20 entries in `decks/recommendations/es.yaml` (verified 2026-11-15) | ES-027, ES-028 |
+| 15 | Narrow IPA and broad `ipa` | **DONE** | narrow IPA and broad `ipa` on all 2,917 non-set cards (verified 2026-11-15); the issue #1369 follow-up pass (rules fixes and `--rederive`, PR #1372) is open | ES-040, ES-041 (PR #1372 open) |
+| 16 | Review-queue rows | PARTLY | `docs/review-queue/es.md` on decks-live: 12 rows, all for es-core-100 (verified 2026-11-15); the file is not on main | ES-042..044 |
+| 17 | Sourcing list | PARTLY | `wiki/Plan-Culture-Spanish.md` on main (ES-012): candidates only, nothing verified | ES-012 (done) |
+| 18 | Facts file | PARTLY | `es-facts.yaml`: 30 entries (verified 2026-11-15) | ES-013 |
+| + | Notes gap | PARTLY | 355 non-set cards still have no note (verified 2026-11-15). ES-031..039 merged (PR #1358) | ES-031..039 done |
 | + | Resources file (`es-resources.yaml`) | MISSING, not on the grid | `ja-resources.yaml` exists | not planned; add only if the owner asks |
 
 ### 1.3 Telugu checklist grid (decks-live bcd0e532)

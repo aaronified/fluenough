@@ -7,6 +7,7 @@ Usage:
     python3 tools/derive_phonetic.py es                 # report only
     python3 tools/derive_phonetic.py es --write         # patch the decks
     python3 tools/derive_phonetic.py es --bracket-unchanged --write
+    python3 tools/derive_phonetic.py es --rederive --write
     python3 tools/derive_phonetic.py es --report es-rules.md
 
 Run it after `tools/import_phonetic.py`: a card that already has a
@@ -22,6 +23,14 @@ result is different from its broad form: a card the rules do not change has
 nothing narrower to say, and writing its broad form in brackets would claim a
 precision nobody checked. `--bracket-unchanged` writes those too (the owner's
 "every card gets the full [] notation"); the report counts them either way.
+
+`--rederive` also re-derives the cards whose `phonetic_source` is `rules`,
+from the current rules file, replacing their `phonetic`. A card sourced from
+Wiktionary, a card with a `phonetic` and no `phonetic_source`, and a card
+without a `phonetic` are never touched by it (with `--rederive` the first
+derivation is not run: those cards are counted `no phonetic`). Like a first derivation, a
+card the rules now leave unchanged is rewritten (as its broad form in
+brackets) only with `--bracket-unchanged`.
 
 A result that is not IPA letters and marks in square brackets is refused (the
 validator's own test) and counted `invalid`; it is never written.
@@ -44,7 +53,8 @@ import validate_decks as vd  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 
-OUTCOMES = ["filled", "unchanged", "has phonetic", "no ipa line", "invalid"]
+OUTCOMES = ["filled", "rederived", "unchanged", "has phonetic", "no phonetic",
+            "no ipa line", "invalid"]
 
 
 @dataclass(frozen=True)
@@ -103,17 +113,31 @@ def derive(ipa: str, rules: list[Rule]) -> tuple[str | None, str]:
     return form, ("unchanged" if out == ipa else "filled")
 
 
-def run(lang: str, decks: Path, write: bool, bracket_unchanged: bool = False
-        ) -> tuple[pp.Coverage, dict[Path, dict[str, tuple[str, str]]]]:
+def run(lang: str, decks: Path, write: bool, bracket_unchanged: bool = False,
+        rederive: bool = False) -> tuple[pp.Coverage, dict[Path, dict[str, tuple[str, str]]]]:
     ruleset = load_rules(decks / lang / f"{lang}-phonetics.yaml")
     coverage = pp.Coverage()
     fills: dict[Path, dict[str, tuple[str, str]]] = {}
     for card in pp.core_cards(decks, lang):
         deck = card.file.stem
-        if card.phonetic is not None:
+        if card.phonetic is not None and not (
+                rederive and card.phonetic_source == "rules"
+                and card.ipa is not None and card.block):
             coverage.add(deck, "has phonetic")
+        elif card.phonetic is not None:
+            form, outcome = derive(card.ipa, ruleset.rules)
+            if form is None:
+                coverage.add(deck, "invalid")
+            elif (outcome == "filled" or bracket_unchanged) and form != card.phonetic:
+                coverage.add(deck, "rederived")
+                fills.setdefault(card.file, {})[card.cid] = (form, "rules")
+            else:
+                coverage.add(deck, "has phonetic")
         elif card.ipa is None or not card.block:
             coverage.add(deck, "no ipa line")
+        elif rederive:
+            # --rederive never gives a first phonetic to a card without one.
+            coverage.add(deck, "no phonetic")
         else:
             form, outcome = derive(card.ipa, ruleset.rules)
             coverage.add(deck, outcome)
@@ -122,7 +146,7 @@ def run(lang: str, decks: Path, write: bool, bracket_unchanged: bool = False
     if write:
         for path, fill in fills.items():
             text = path.read_text(encoding="utf-8")
-            new, _ = pp.patch(text, fill)
+            new, _ = pp.patch(text, fill, replace_rules=rederive)
             if new != text:
                 path.write_text(new, encoding="utf-8", newline="")
     return coverage, fills
@@ -139,6 +163,9 @@ def main(argv: list[str]) -> int:
     parser.add_argument("--bracket-unchanged", action="store_true",
                         help="also write the broad form in brackets for a card the "
                              "rules leave as it is")
+    parser.add_argument("--rederive", action="store_true",
+                        help="also re-derive cards whose phonetic_source is rules, "
+                             "from the current rules file")
     parser.add_argument("--report", type=Path, help="write the report here")
     args = parser.parse_args(argv[1:])
     if not (args.decks / args.lang / f"{args.lang}-phonetics.yaml").is_file():
@@ -146,7 +173,8 @@ def main(argv: list[str]) -> int:
               f"decks/{args.lang}/{args.lang}-phonetics.yaml", file=sys.stderr)
         return 2
     try:
-        coverage, _ = run(args.lang, args.decks, args.write, args.bracket_unchanged)
+        coverage, _ = run(args.lang, args.decks, args.write, args.bracket_unchanged,
+                           args.rederive)
     except RulesError as e:
         print(f"error: {e}", file=sys.stderr)
         return 2

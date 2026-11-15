@@ -306,6 +306,93 @@ class Deriving(Tree):
         dp.run("zz", self.decks, write=False)
         self.assertEqual(self.core.read_text(encoding="utf-8"), CORE)
 
+    def seed_sources(self) -> None:
+        """zz-0001 rules-sourced, zz-0003 wiktionary-sourced, zz-0005 with a
+        phonetic and no source; zz-0004 has no ipa and no phonetic."""
+        text = self.core.read_text(encoding="utf-8")
+        text = text.replace(
+            '    ipa: "kat"\n', '    ipa: "kat"\n    phonetic: "[kat̚]"\n'
+            '    phonetic_source: "rules"\n')
+        text = text.replace(
+            '    ipa: "bat"\n', '    ipa: "bat"\n    phonetic: "[bat]"\n'
+            '    phonetic_source: "wiktionary"\n')
+        text = text.replace(
+            '    ipa: "pen"\n', '    ipa: "pen"\n    phonetic: "[pen]"\n')
+        self.core.write_text(text, encoding="utf-8")
+
+    def test_rederive_updates_a_rules_card_when_the_rule_changed(self) -> None:
+        self.seed_sources()
+        self.write_rules(("t$", "t̪"))
+        cov, _ = dp.run("zz", self.decks, write=True, rederive=True)
+        text = self.core.read_text(encoding="utf-8")
+        self.assertIn('    phonetic: "[kat̪]"\n    phonetic_source: "rules"\n', text)
+        self.assertNotIn("[kat̚]", text)
+        self.assertEqual(cov.decks["zz-home"]["rederived"], 1)
+
+    def test_rederive_never_touches_wiktionary_or_unsourced_or_empty(self) -> None:
+        self.seed_sources()
+        before = self.core.read_text(encoding="utf-8")
+        self.write_rules(("t$", "t̪"), ("n$", "ŋ"))
+        dp.run("zz", self.decks, write=True, rederive=True, bracket_unchanged=True)
+        after = self.core.read_text(encoding="utf-8")
+        self.assertIn('    phonetic: "[bat]"\n    phonetic_source: "wiktionary"\n', after)
+        self.assertIn('    ipa: "pen"\n    phonetic: "[pen]"\n    pos:', after)
+        self.assertIn('    phonetic: "[dɔɡ̊]"\n    phonetic_source: "wiktionary"\n', after)
+        card4 = after.split('id: "zz-0004"')[1].split('id: "zz-0005"')[0]
+        self.assertNotIn("phonetic", card4)
+        self.assertNotEqual(before, after)
+
+    def test_without_rederive_a_rules_card_keeps_its_old_phonetic(self) -> None:
+        self.seed_sources()
+        self.write_rules(("t$", "t̪"))
+        cov, _ = dp.run("zz", self.decks, write=True)
+        text = self.core.read_text(encoding="utf-8")
+        self.assertIn('    phonetic: "[kat̚]"\n', text)
+        self.assertNotIn("rederived", {k for r in cov.decks.values() for k, v in r.items() if v})
+
+    def test_rederive_is_a_no_op_without_write(self) -> None:
+        self.seed_sources()
+        before = self.core.read_text(encoding="utf-8")
+        self.write_rules(("t$", "t̪"))
+        _, fills = dp.run("zz", self.decks, write=False, rederive=True)
+        self.assertEqual(fills[self.core]["zz-0001"], ("[kat̪]", "rules"))
+        self.assertEqual(self.core.read_text(encoding="utf-8"), before)
+
+    def test_rederive_leaves_a_now_unchanged_card_unless_bracket_unchanged(self) -> None:
+        self.seed_sources()
+        self.write_rules(("x$", "y"))
+        dp.run("zz", self.decks, write=True, rederive=True)
+        self.assertIn('"[kat̚]"', self.core.read_text(encoding="utf-8"))
+        dp.run("zz", self.decks, write=True, rederive=True, bracket_unchanged=True)
+        self.assertIn('    phonetic: "[kat]"\n    phonetic_source: "rules"\n',
+                      self.core.read_text(encoding="utf-8"))
+
+    def test_rederive_does_not_give_a_first_phonetic(self) -> None:
+        self.write_rules(("t$", "t̪"))
+        cov, fills = dp.run("zz", self.decks, write=True, rederive=True)
+        self.assertEqual(self.core.read_text(encoding="utf-8"), CORE)
+        self.assertEqual(fills, {})
+        self.assertEqual(cov.decks["zz-home"]["no phonetic"], 4)
+
+    def test_rederive_reads_an_unquoted_rules_source(self) -> None:
+        self.seed_sources()
+        text = self.core.read_text(encoding="utf-8").replace(
+            'phonetic_source: "rules"', "phonetic_source: rules  # derived")
+        self.core.write_text(text, encoding="utf-8")
+        self.write_rules(("t$", "t̪"))
+        dp.run("zz", self.decks, write=True, rederive=True)
+        self.assertIn('    phonetic: "[kat̪]"\n    phonetic_source: rules',
+                      self.core.read_text(encoding="utf-8"))
+
+    def test_rederive_twice_changes_nothing_the_second_time(self) -> None:
+        self.seed_sources()
+        self.write_rules(("t$", "t̪"))
+        dp.run("zz", self.decks, write=True, rederive=True)
+        once = self.core.read_text(encoding="utf-8")
+        cov, _ = dp.run("zz", self.decks, write=True, rederive=True)
+        self.assertEqual(self.core.read_text(encoding="utf-8"), once)
+        self.assertEqual(cov.decks["zz-home"].get("rederived", 0), 0)
+
 
 class TheRulesFiles(unittest.TestCase):
     """The shipped rules, on words whose narrow form is well known."""

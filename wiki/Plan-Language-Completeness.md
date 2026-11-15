@@ -14,26 +14,26 @@ its sections); the Japanese culture batch is
 
 ## (a) Deliverables per language
 
-State is for Japanese (`ja`), read from `origin/decks-live` and `origin/main` on 2026-11-13. "Done" means the files are on decks-live. Counts are of files, not of quality or coverage.
+State is for Japanese (`ja`). The Japanese rows are re-read from `origin/decks-live` and `origin/main` on 2026-11-15 (the other rows on 2026-11-13). "Done" means the files are on decks-live. Counts are of files, not of quality or coverage.
 
 | # | Deliverable | Specified in | State for `ja` |
 |---|---|---|---|
-| 1 | Path to B1 (`<code>-path.yaml`, units, regions, alphabet, grammar) | [Deck-Format](Deck-Format.md) "Paths", "Writing a B1 course" | Partial. `decks/ja/ja-path.yaml` exists with about 138 units. Built units against planned units: not audited. Main has 40 `decks/ja` files (frozen); decks-live has 442 |
-| 2 | Cores and English layers (vocab and grammar) | Deck-Format "Core and layer files" | Partial: 190 non-layer files in `decks/ja/` on decks-live, each with a layer in `decks/ja/en/`. Gaps against the path: not audited |
+| 1 | Path to B1 (`<code>-path.yaml`, units, regions, alphabet, grammar) | [Deck-Format](Deck-Format.md) "Paths", "Writing a B1 course" | Partial. `decks/ja/ja-path.yaml` on decks-live has 170 units. Built units against planned units: not audited. Main has 40 files under `decks/ja/` (frozen); decks-live has 626 (283 directly in `decks/ja/`, 343 in `decks/ja/en/`) |
+| 2 | Cores and English layers (vocab and grammar) | Deck-Format "Core and layer files" | Partial: 283 files directly in `decks/ja/` on decks-live, with 343 layers in `decks/ja/en/`. Grammar: 36 `ja-grammar-*` files, 68 rules, 166 example words. Gaps against the path: not audited |
 | 3 | Sentences decks | Deck-Format "Vocab decks" | Partial: most word units have a `-sentences` file; sentence and reading decks for units 17 to 36 were still owed on 2026-11-02, not re-checked |
 | 4 | Reading decks | Deck-Format "Reading decks" | Partial: six `ja-en-reading-*` files at the top of `decks/ja/`. Not audited further |
-| 5 | Script decks (hiragana, katakana, marks, combos, basic kanji) | Deck-Format "Japanese kanji"; issue #1146 | Partial: hiragana, katakana, their combos and marks, and `ja-kanji-1` are done. Basic kanji only; about 1000 kanji by B1 is deferred (#1146) |
+| 5 | Script decks (hiragana, katakana, marks, combos, basic kanji) | Deck-Format "Japanese kanji"; issue #1146 | Partial: `ja-en-hiragana` (46 cards), hiragana and katakana combos and marks, katakana, and `ja-kanji-1` to `ja-kanji-38`: 1,026 cards, one per character, the same set as the six grade topics. Basic kanji only; about 1000 kanji by B1 is deferred (#1146) |
 | 6 | Phrasebook | Deck-Format "The phrasebook" | Done: `ja-phrasebook` with its layer |
-| 7 | Situations (one file per language, only widely used words and phrases, no over-translation) | Issue #1145; `lib/core/data/situations_parser.dart`; CLAUDE.md "Situations" | `ja-situations` exists on decks-live with 6 sheets; JA-013 (PR #1356) adds 4, so 10 sheets. `decks/te/te-situations.yaml` exists, on decks-live, at 10 sheets (TE-004, PR #1354). Japanese sheets (#1124, draft) no longer wait for 0.10.0 (released, owner 2026-11-13), then their own PR |
-| 8 | Topics, including script topics (`<code>-topics.yaml`, scripts are topics) | D6 | Built, not merged: `decks/ja/ja-topics.yaml` on branch `decks/ja-culture-1` |
-| 9 | Culture decks (`genre: culture`) | D1, D4; Plan-Culture-Japanese | Built, not merged: `ja-culture-1` with 18 items, branch `decks/ja-culture-1` (one commit, 2026-11-13) |
-| 10 | Creators, eras and legacy | D5, D5b, D5c | Built, not merged: `decks/creators/ja.yaml` (16 creators, 7 eras, no images) on the same branch |
-| 11 | Proverbs (`genre: proverbs`, `basis: oral-tradition`) | D1, D4, #1135 | None. Named in Plan-Culture-Japanese as batch 2 |
-| 12 | Multi-word verbs (`genre: multiword`) | D1, #1136 | None |
+| 7 | Situations (one file per language, only widely used words and phrases, no over-translation) | Issue #1145; `lib/core/data/situations_parser.dart`; CLAUDE.md "Situations" | `ja-situations` on decks-live has 10 sheets (JA-013, PR #1356, merged). `decks/te/te-situations.yaml` exists, on decks-live, at 10 sheets (TE-004, PR #1354). Japanese sheets (#1124, draft) no longer wait for 0.10.0 (released, owner 2026-11-13), then their own PR |
+| 8 | Topics, including script topics (`<code>-topics.yaml`, scripts are topics) | D6 | On decks-live: `decks/ja/ja-topics.yaml`, 22 topics: the two kana scripts, six kanji grades (`ja-kanji-grade-1` to `-6`), and 14 grammar, word and culture topics |
+| 9 | Culture decks (`genre: culture`) | D1, D4; Plan-Culture-Japanese | On decks-live: `ja-culture-1` to `ja-culture-4`, with 18, 18, 4 and 18 cards (`genre: culture`) |
+| 10 | Creators, eras and legacy | D5, D5b, D5c | On decks-live: `decks/creators/ja.yaml` with 59 creators and 10 eras |
+| 11 | Proverbs (`genre: proverbs`, `basis: oral-tradition`) | D1, D4, #1135 | Partial: `ja-proverbs-1` to `-3` on decks-live, with 12, 20 and 20 cards. Named in Plan-Culture-Japanese as batch 2 |
+| 12 | Multi-word verbs (`genre: multiword`) | D1, #1136 | Partial: five families on decks-live, 57 cards: `ja-multiword-compound-verbs` 8, `-compound-verbs-2` 13, `-idiomatic-verbs` 7, `-suru-verbs` 20, `-te-auxiliaries` 9. The idiomatic-verb file's header says seven of twenty planned idioms are in it |
 | 13 | Professional situations (`genre: professional`, hidden) | D1, D3, D8, #1139 | None. `professions: []` in `decks/sections.yaml` |
-| 14 | Recommendations, public-domain and source-it-yourself, with quiz questions | D13, this page | None. `decks/recommendations/ja.yaml` is named in Plan-Culture-Japanese as a later file. The source-it-yourself mode is new (below) |
+| 14 | Recommendations, public-domain and source-it-yourself, with quiz questions | D13, this page | Partial: `decks/recommendations/ja.yaml` on decks-live has 29 entries. The source-it-yourself mode is new (below) |
 | 15 | Narrow IPA (`phonetic`) and a broad `ipa` on every card | [Plan-Ipa-Revamp-And-Language-Phonology](Plan-Ipa-Revamp-And-Language-Phonology.md) | Not done: no `phonetic:` key in any `decks/ja` file on decks-live. Broad `ipa` coverage: not audited. Written by the plan's tools, never by hand |
-| 16 | Review-queue entries for everything uncertain | [Plan-Reviewing-Scope](Plan-Reviewing-Scope.md); `decks/review-queue.json` (generated on decks-live) | Partial: `docs/review-queue/ja.md` on the culture branch (21 lines). Queue for the rest: not audited |
+| 16 | Review-queue entries for everything uncertain | [Plan-Reviewing-Scope](Plan-Reviewing-Scope.md); `decks/review-queue.json` (generated on decks-live) | Partial: `docs/review-queue/ja.md` on decks-live (269 lines). Queue for the rest: not audited |
 | 17 | Sourcing list (the works, rights basis and checks) | Plan-Culture-Japanese; [Sources-and-Attributions](Sources-and-Attributions.md) | Batch 1 done in Plan-Culture-Japanese (18 items, candidates for next batches). None for proverbs, multi-word verbs or recommendations |
 | 18 | Facts file (path facts, issue-held) | Deck-Format "Writing a B1 course" | Not audited |
 
@@ -78,21 +78,21 @@ Task T23 of the kinds plan is where it lands.
 
 | Deliverable | ja | es | fr | te | mr | bn | as | gu |
 |---|---|---|---|---|---|---|---|---|
-| Path to B1 | partial | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
-| Cores and layers | partial | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
-| Sentences, readings | partial | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
-| Script decks | partial (basic kanji only) | not audited | not audited | partial: `te-script-conjuncts-2` (9 cards) and `te-script-archaic` (1 card), PR #1360 | not audited | not audited | not audited | not audited |
-| Phrasebook | done | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
-| Situations | partial: JA-013 merged (PR #1356), `ja-situations` at 10 sheets | partial: ES-026 merged (PR #1355), `es-situations.yaml` gains four sheets | not audited | partial: `te-situations` at 10 sheets (TE-004, PR #1354) | not audited | not audited | not audited | not audited |
-| Topics incl. script topics | on branch | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
-| Culture, creators, legacy | on branch | partial: `es-culture-2`, `-3`, `-4` merged (PR #1348) | not audited | partial: `te-culture-2`, `-3`, `-4` merged (PR #1352); culture 1 not built | not audited | not audited | not audited | not audited |
-| Proverbs | none | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
-| Multi-word verbs | none | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
-| Professional | none | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
-| Recommendations, source-it-yourself | none | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
-| Narrow IPA | none | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
-| Review-queue entries | partial | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
-| Sourcing list | batch 1 | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
+| Path to B1 | partial | done: 102 of 102 units built (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
+| Cores and layers | partial | done: 71 core and 32 grammar decks (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
+| Sentences, readings | partial | done: 68 sentence and 98 reading decks (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
+| Script decks | partial: kana (`ja-en-hiragana`, combos, marks, katakana), kanji `ja-kanji-1` to `-38` (1,026 cards; basic kanji only) | n/a (Latin script) | not audited | partial: `te-script-conjuncts-2` (9 cards) and `te-script-archaic` (1 card), PR #1360 | not audited | not audited | not audited | not audited |
+| Phrasebook | done | done: 15 cards (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
+| Situations | partial: `ja-situations` at 10 sheets on decks-live | partial: 10 sheets in `es-situations.yaml` (verified 2026-11-15) | not audited | partial: `te-situations` at 10 sheets (TE-004, PR #1354) | not audited | not audited | not audited | not audited |
+| Topics incl. script topics | partial: `ja-topics` on decks-live, 22 topics incl. the two kana and six kanji-grade script topics | partial: 22 topics in `es-topics.yaml` (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
+| Culture, creators, legacy | partial: culture 1 to 4 on decks-live; `creators/ja.yaml` on decks-live (59 creators) | partial: 21 culture items of a target of 72 (`es-culture-1` to `-4`: 6, 2, 9, 4); 34 creators; es-4004, es-4150 and es-4151 have no creator (verified 2026-11-15) | not audited | partial: `te-culture-2`, `-3`, `-4` merged (PR #1352); culture 1 not built | not audited | not audited | not audited | not audited |
+| Proverbs | partial: proverbs 1 to 3 on decks-live (52 cards) | partial: 60 items (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
+| Multi-word verbs | partial: five families on decks-live (57 cards) | partial: 80 items (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
+| Professional | none | held: empty (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
+| Recommendations, source-it-yourself | partial: 29 entries in `decks/recommendations/ja.yaml` | partial: 20 entries in `decks/recommendations/es.yaml` (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
+| Narrow IPA | none | done: narrow and broad IPA on all 2,917 non-set cards (verified 2026-11-15); issue #1369 follow-up (PR #1372) open | not audited | not audited | not audited | not audited | not audited | not audited |
+| Review-queue entries | partial | partial: 12 rows in `docs/review-queue/es.md` on decks-live, all for es-core-100 (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
+| Sourcing list | batch 1 | partial: `Plan-Culture-Spanish` (candidates only, nothing verified) | not audited | not audited | not audited | not audited | not audited | not audited |
 
 Counts on decks-live of all files under `decks/<code>/`, layers included, for orientation only (2026-11-13): ja 442, es 442, fr 380, te 302, mr 266, bn 465, as 436, gu 115. A file count says nothing about coverage.
 
@@ -164,7 +164,7 @@ Owner (2026-11-13): "Deck work issues to be updated with the full deck format as
 | Khasi | kha | #1190 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
 | Goan Konkani | gom | #1191 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
 | French | fr | #359 | first list (to B1) | deck priority 10 of the first list, culture priority 3 of 8 | path of 113 units, 77 built; 229 core files |
-| Spanish | es | #1192 | first list (to B1) | deck priority 3 of the first list, culture priority 2 of 8 | path of 103 units, 102 built; 271 core files |
+| Spanish | es | #1192 | first list (to B1) | deck priority 3 of the first list, culture priority 2 of 8 | path of 102 units, all built; 271 core files |
 | German | de | #361 | second list (to A1; Classical Sanskrit to B1) | second-list position 7 | path of 111 units, 1 built; 3 core files |
 | Mandarin Chinese | zh | #376 | first list (to B1) | deck priority 7 of the first list | path of 130 units, 129 built; 377 core files |
 | Japanese | ja | #378 | first list (to B1) | deck priority 9 of the first list, culture priority 1 of 8 | path of 138 units, 95 built; 193 core files (closest to complete, not complete) |
