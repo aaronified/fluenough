@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-verbs"
+name: "Reading: a morning"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Short passages, one to be heard and one to be read, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-morning-routine"
+    title: "What each person does in the morning"
+    theme: "daily-life"
+    sentences:
+      - { text: "বাবা সকালে ওঠেন।", reading: "bābā sôkāle oṭhen.", ipa: "baba sɔkale oʈʰen" }
+      - { text: "মা রোজ সকালে হাঁটেন।", reading: "mā roj sôkāle hām̐ṭen.", ipa: "ma rodʒ sɔkale ɦãʈen" }
+      - { text: "আমি সকালে কাজ করি।", reading: "āmi sôkāle kāj kori.", ipa: "ami sɔkale kadʒ kori" }
+      - { text: "ছেলে সকালে খেলে।", reading: "chele sôkāle khele.", ipa: "tʃʰele sɔkale kʰele" }
+      - { text: "তুমি কখন ওঠো?", reading: "tumi kôkhon oṭho?", ipa: "t̪umi kɔkʰon oʈʰo" }
+    questions:
+      - id: "bn-5306"
+        prompt: { en: "The mother walks in the morning." }
+        answer: true
+      - id: "bn-5307"
+        prompt: { en: "Which word means 'to walk'?" }
+        options: [{ en: "হাঁটেন (hām̐ṭen)" }, { en: "খেলে (khele)" }]
+        answer: 1
+      - id: "bn-5308"
+        prompt: { en: "What does the speaker ask the listener?" }
+        options: [{ en: "What time they get up" }, { en: "Where they live" }]
+        answer: 1
+  - id: "bn-fridge-note"
+    title: "A note on the fridge"
+    theme: "food"
+    sentences:
+      - { text: "আপনি দুধ রাখুন।", reading: "āpni dudh rākhun.", ipa: "apni d̪ud̪ʱ rakʰun" }
+      - { text: "মাছ আর ডিম রাখো।", reading: "māch ār ḍim rākho.", ipa: "matʃʰ ar ɖim rakʰo" }
+      - { text: "ফল খাও।", reading: "phôl khāo.", ipa: "pʰɔl kʰao" }
+      - { text: "আমাকে আপেল দিন।", reading: "āmāke āpel din.", ipa: "amake apel d̪in" }
+      - { text: "তুমি কী খাও?", reading: "tumi ki khāo?", ipa: "t̪umi ki kʰao" }
+    questions:
+      - id: "bn-5309"
+        prompt: { en: "The note asks the reader to buy milk." }
+        answer: false
+      - id: "bn-5310"
+        prompt: { en: "Which word means 'fruit'?" }
+        options: [{ en: "মাছ (māch)" }, { en: "ফল (phôl)" }]
+        answer: 2
+      - id: "bn-5311"
+        prompt: { en: "What does 'আমাকে আপেল দিন (āmāke āpel din)' ask for?" }
+        options: [{ en: "An apple, to be given to the speaker" }, { en: "A taxi" }]
+        answer: 1

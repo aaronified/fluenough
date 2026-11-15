@@ -1,0 +1,51 @@
+schema: 1
+id: "bn-en-reading-places"
+name: "Reading: places"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Short passages, one to be heard and one to be read, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-walk-to-the-market"
+    title: "Walking to the market"
+    theme: "places"
+    sentences:
+      - { text: "তুমি রাস্তা দিয়ে যাও।", reading: "tumi rāstā diye jāo.", ipa: "t̪umi rast̪a d̪ije dʒao" }
+      - { text: "স্কুলের পাশে ব্যাংক।", reading: "skuler pāśe bêṅk.", ipa: "skuler paʃe bæŋk" }
+      - { text: "ব্যাংকের পরে ডাকঘর।", reading: "bêṅker pôre ḍākghor.", ipa: "bæŋker pɔre ɖakɡʱor" }
+      - { text: "ডাকঘরের সামনে মন্দির।", reading: "ḍākghorer sāmne mondir.", ipa: "ɖakɡʱorer samne mond̪ir" }
+      - { text: "মন্দিরের পরে বাজার।", reading: "mondirer pôre bājār.", ipa: "mond̪irer pɔre badʒar" }
+    questions:
+      - id: "bn-5350"
+        prompt: { en: "The bank is after the post office." }
+        answer: false
+      - id: "bn-5351"
+        prompt: { en: "What is in front of the post office?" }
+        options: [{ en: "মন্দির (mondir)" }, { en: "বাজার (bājār)" }]
+        answer: 1
+      - id: "bn-5352"
+        prompt: { en: "The market comes after the temple." }
+        answer: true
+  - id: "bn-street-signs"
+    title: "Signs along a street"
+    theme: "places"
+    sentences:
+      - { text: "ফার্মেসি: সামনে ডান দিকে।", reading: "phārmesi: sāmne ḍān dike.", ipa: "pʰarmesi samne ɖan d̪ike" }
+      - { text: "স্কুল: ধীরে চলুন।", reading: "skul: dhire colun.", ipa: "skul d̪ʱire tʃolun" }
+      - { text: "ব্যাংক: বাঁ দিকে।", reading: "bêṅk: bām̐ dike.", ipa: "bæŋk bã d̪ike" }
+      - { text: "মন্দির: সামনে।", reading: "mondir: sāmne.", ipa: "mond̪ir samne" }
+      - { text: "থানা: এখানে থামুন।", reading: "thānā: ekhāne thāmun.", ipa: "t̪ʰana ekʰane t̪ʰamun" }
+    questions:
+      - id: "bn-5353"
+        prompt: { en: "The pharmacy is on the right." }
+        answer: true
+      - id: "bn-5354"
+        prompt: { en: "Which sign tells you to walk slowly?" }
+        options: [{ en: "থানা (thānā)" }, { en: "স্কুল (skul)" }]
+        answer: 2
+      - id: "bn-5355"
+        prompt: { en: "The temple is on the left." }
+        answer: false

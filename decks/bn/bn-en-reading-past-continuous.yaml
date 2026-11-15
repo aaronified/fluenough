@@ -1,0 +1,92 @@
+schema: 1
+id: "bn-en-reading-past-continuous"
+name: "Reading: past continuous"
+kind: "reading"
+language:
+  code: "bn"
+  iso639_3: "ben"
+  name: "Bengali"
+  script: "bengali"
+  tts: "bn-IN"
+  icon: "বা"
+native:
+  code: "en"
+  iso639_3: "eng"
+  name: "English"
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Short passages, one to be heard and one to be read, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags:
+- "reading"
+- "unreviewed"
+passages:
+- id: "bn-what-was-happening"
+  title: "What was happening"
+  theme: "home"
+  sentences:
+  - text: "হঠাৎ আলো চলে গেল!"
+    reading: "hôṭhāt ālo côle gelo!"
+    ipa: "ɦɔʈʰat̪ alo tʃɔle ɡelo"
+  - text: "তুমি কী করছিলে?"
+    reading: "tumi ki kôrchile?"
+    ipa: "t̪umi ki kɔrtʃʰile"
+  - text: "আমি রান্না করছিলাম।"
+    reading: "āmi rānnā kôrchilām."
+    ipa: "ami ranna kɔrtʃʰilam"
+  - text: "বাবা কী করছিলেন?"
+    reading: "bābā ki kôrchilen?"
+    ipa: "baba ki kɔrtʃʰilen"
+  - text: "বাবা ভাত খাচ্ছিলেন।"
+    reading: "bābā bhāt khācchilen."
+    ipa: "baba bʱat̪ kʰatʃtʃʰilen"
+  questions:
+  - id: "bn-5450"
+    prompt:
+      en: "The lights went out suddenly."
+    answer: true
+  - id: "bn-5451"
+    prompt:
+      en: "What was the speaker doing?"
+    options:
+    - en: "রান্না (rānnā)"
+    - en: "ঘুম (ghum)"
+    answer: 1
+  - id: "bn-5452"
+    prompt:
+      en: "The father was eating."
+    answer: true
+- id: "bn-power-cut-story"
+  title: "A power cut in the evening"
+  theme: "home"
+  sentences:
+  - text: "সন্ধ্যায় হঠাৎ বিদ্যুৎ চলে গেল।"
+    reading: "śônddhāy hôṭhāt biddut côle gelo."
+    ipa: "ʃɔnd̪d̪ʱaj ɦɔʈʰat̪ bid̪d̪ut̪ tʃɔle ɡelo"
+  - text: "ঘরে আলো ছিল না।"
+    reading: "ghôre ālo chilo nā."
+    ipa: "ɡʱɔre alo tʃʰilo na"
+  - text: "মা রান্নাঘরে কাজ করছিলেন।"
+    reading: "mā rānnāghore kāj kôrchilen."
+    ipa: "ma rannaɡʱore kadʒ kɔrtʃʰilen"
+  - text: "ভাই ঘরে ভাত খাচ্ছিল, আর আমি জানালার কাছে যাচ্ছিলাম।"
+    reading: "bhāi ghôre bhāt khācchilo, ār āmi jānālār kāche jācchilām."
+    ipa: "bʱai ɡʱɔre bʱat̪ kʰatʃtʃʰilo ar ami dʒanalar katʃʰe dʒatʃtʃʰilam"
+  - text: "তারপর আমরা সবাই বাইরে গেলাম।"
+    reading: "tārpor āmrā śôbāi bāire gelām."
+    ipa: "t̪arpor amra ʃɔbai baire ɡelam"
+  questions:
+  - id: "bn-5453"
+    prompt:
+      en: "The power went off in the morning."
+    answer: false
+  - id: "bn-5454"
+    prompt:
+      en: "Who was in the kitchen?"
+    options:
+    - en: "মা (mā)"
+    - en: "ভাই (bhāi)"
+    answer: 1
+  - id: "bn-5455"
+    prompt:
+      en: "The family went outside."
+    answer: true
