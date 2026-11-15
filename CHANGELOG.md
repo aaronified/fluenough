@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **Notations are no longer measured like languages.** In Add a language, the IPA and English Braille no longer show the A1, A2, B1 and Culture bars, and Telugu now appears under Popular.
+
 ## [0.10.4] - 2026-11-15
 
 ### Fixed
