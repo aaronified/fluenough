@@ -1,0 +1,80 @@
+# Topics a learner of French would search for: what each one is, and the decks that teach it (wiki/Plan-Deck-Kinds-And-Topics.md, D6).
+# A topic holds no card text of its own; it names the decks that already teach it.
+schema: 1
+kind: "topics"
+id: "fr-topics"
+language: "fr"
+license: "CC-BY-SA-4.0"
+topics:
+  - id: "fr-articles-gender"
+    name: { en: "Articles and gender" }
+    summary: { en: "The French articles le, la, l', les, un and une, and whether each noun is masculine or feminine. Le, la, je and ne drop their vowel before a vowel, which is elision: l'ami, j'habite." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["fr-articles", "fr-grammar-articles-gender", "fr-grammar-elision"]
+  - id: "fr-plural-liaison"
+    name: { en: "Plurals and liaison" }
+    summary: { en: "How French nouns form their plural, and liaison: the s of les, des, nous, vous and ils, and the n of un and mon, is said before a vowel, as in les amis." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["fr-grammar-plural", "fr-grammar-liaison"]
+  - id: "fr-adjectives"
+    name: { en: "Adjective agreement and position" }
+    summary: { en: "How adjectives agree with their noun in gender and number, and where they go: most come after the noun, while beau, bon, grand, petit and a few others often come before it, and some change meaning with their place." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["fr-grammar-adjective-agreement", "fr-grammar-adjective-position"]
+  - id: "fr-etre"
+    name: { en: "The verb être" }
+    summary: { en: "The verb être, 'to be', used to say who someone is and where they are, such as je suis étudiant or nous sommes à la gare." }
+    kind: "verbs"
+    level: "A1"
+    decks: ["fr-grammar-etre"]
+  - id: "fr-avoir-il-y-a"
+    name: { en: "The verb avoir and il y a" }
+    summary: { en: "The verb avoir, 'to have', with idioms such as avoir chaud and avoir froid, and il y a, 'there is' or 'there are', which stays the same for one thing and for many." }
+    kind: "verbs"
+    level: "A1"
+    decks: ["fr-grammar-avoir", "fr-grammar-il-y-a"]
+  - id: "fr-present-tense"
+    name: { en: "The present tense" }
+    summary: { en: "The present tense of regular -er, -ir and -re verbs, and of the irregular verbs, which follow no single pattern and have to be learnt row by row." }
+    kind: "verbs"
+    level: "A1"
+    decks: ["fr-grammar-present-er", "fr-grammar-present-ir", "fr-grammar-present-re", "fr-grammar-present-irregular"]
+  - id: "fr-negation-questions"
+    name: { en: "Negation and questions" }
+    summary: { en: "How to make a sentence negative with ne ... pas, and how to ask a question with est-ce que or by inversion, as in parles-tu ? and habite-t-il ?." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["fr-grammar-ne-pas", "fr-grammar-est-ce-que", "fr-grammar-inversion"]
+  - id: "fr-prepositions-contractions"
+    name: { en: "Prepositions and contractions" }
+    summary: { en: "Prepositions in sentences, and how à and de join le and les to make au, aux, du and des, as in au marché, while before la and a vowel they stay apart, as in à la gare." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["fr-grammar-prepositions", "fr-grammar-au-du-contractions"]
+  - id: "fr-possessives-demonstratives"
+    name: { en: "Possessives and demonstratives" }
+    summary: { en: "Possessives such as mon, ma and mes, which show who owns something, and demonstratives such as ce, cet, cette and ces, meaning 'this' and 'these', with each noun." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["fr-grammar-possessives", "fr-grammar-demonstratives"]
+  - id: "fr-partitive"
+    name: { en: "The partitive" }
+    summary: { en: "Du, de la, de l' and des, meaning 'some' with things that are not counted, such as du lait or de la musique, and how de alone is used after a negative, as in pas de lait." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["fr-grammar-partitive"]
+  - id: "fr-numbers"
+    name: { en: "Numbers" }
+    summary: { en: "Counting from one to twenty, then on to larger numbers such as soixante-dix (70), quatre-vingts (80) and quatre-vingt-dix-neuf (99), used for prices, years and phone numbers." }
+    kind: "words"
+    level: "A1"
+    decks: ["fr-numbers-1-20", "fr-numbers-big"]
+  - id: "fr-imperatives-near-future"
+    name: { en: "Imperatives and the near future" }
+    summary: { en: "Telling someone what to do with the imperative, such as parle, parlons and parlez, and saying what is going to happen with aller and an infinitive, as in je vais manger." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["fr-grammar-imperatives", "fr-grammar-futur-proche"]
