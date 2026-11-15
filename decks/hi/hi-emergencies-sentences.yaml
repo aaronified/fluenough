@@ -1,0 +1,169 @@
+schema: 1
+id: "hi-emergencies-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-5762"
+    target: "जल्दी एम्बुलेंस बुलाइए।"
+    reading: "jaldī ēmbulēṁs bulāiē."
+    ipa: "dʒəld̪iː eːmbʊlẽːs bʊlaːɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "जल्दी", ref: "hi-0819" }
+      - { word: "एम्बुलेंस", ref: "hi-2654" }
+      - { word: "बुलाइए", base: "बुलाना", reading: "bulāiē" }
+    confusables:
+      - { id: "w1", word: "दमकल", reading: "damkal", kind: "word" }
+      - { id: "w2", word: "हेल्पलाइन", reading: "hēlpalāin", kind: "word" }
+  - id: "hi-5763"
+    target: "दुर्घटना में दो लोग घायल हुए।"
+    reading: "durghaṭnā mēm̐ dō lōg ghāyal huē."
+    ipa: "d̪ʊrɡʱəʈnaː mẽː d̪oː loːɡ ɡʱaːjəl ɦʊeː"
+    pos: "phrase"
+    bases:
+      - { word: "दुर्घटना", ref: "hi-2653" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "दो", ref: "hi-0199" }
+      - { word: "लोग", ref: "hi-0761" }
+      - { word: "घायल", ref: "hi-2664" }
+      - { word: "हुए", base: "होना", reading: "huē" }
+    confusables:
+      - { id: "w1", word: "बचाव", reading: "bacāv", kind: "word" }
+      - { id: "w2", word: "आपदा", reading: "āpdā", kind: "word" }
+  - id: "hi-5764"
+    target: "सावधान रहिए, यहाँ खतरा है।"
+    reading: "sāvdhān rahiē, yahām̐ khatrā hai."
+    ipa: "saːʋd̪ʱaːn rəɦɪeː jəɦãː kʰət̪raː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "सावधान", ref: "hi-2657" }
+      - { word: "रहिए", base: "रहना", reading: "rahiē" }
+      - { word: "यहाँ", ref: "hi-0295" }
+      - { word: "खतरा", ref: "hi-2659" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "खतरनाक", reading: "khatrnāk", kind: "word" }
+      - { id: "w2", word: "चेतावनी", reading: "cētāvnī", kind: "word" }
+  - id: "hi-5765"
+    target: "निकास कहाँ है?"
+    reading: "nikās kahām̐ hai?"
+    ipa: "nɪkaːs kəɦãː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "निकास", ref: "hi-2661" }
+      - { word: "कहाँ", ref: "hi-0159" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "यहाँ", reading: "yahām̐", kind: "word" }
+      - { id: "w2", word: "कौन", reading: "kaun", kind: "word" }
+  - id: "hi-5766"
+    target: "दमकल जल्दी पहुँची।"
+    reading: "damkal jaldī pahum̐cī."
+    ipa: "d̪əmkəl dʒəld̪iː pəɦʊ̃tʃiː"
+    pos: "phrase"
+    bases:
+      - { word: "दमकल", ref: "hi-2655" }
+      - { word: "जल्दी", ref: "hi-0819" }
+      - { word: "पहुँची", base: "पहुँचना", reading: "pahum̐cī" }
+    confusables:
+      - { id: "w1", word: "एम्बुलेंस", reading: "ēmbulēṁs", kind: "word" }
+      - { id: "w2", word: "बचाव", reading: "bacāv", kind: "word" }
+  - id: "hi-5767"
+    target: "यह बहुत खतरनाक है।"
+    reading: "yah bahut khatarnāk hai."
+    ipa: "jəɦ bəɦʊt̪ kʰət̪ərnaːk ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "खतरनाक", ref: "hi-2660" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "खतरा", reading: "khatrā", kind: "word" }
+      - { id: "w2", word: "सावधान", reading: "sāvdhān", kind: "word" }
+  - id: "hi-5768"
+    target: "हेल्पलाइन पर फ़ोन कीजिए।"
+    reading: "hēlpalāin par fōna kījiē."
+    ipa: "ɦeːlpəlaːɪn pər foːnə kiːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "हेल्पलाइन", ref: "hi-2663" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "फ़ोन", base: "फ़ोन", reading: "fōna" }
+      - { word: "कीजिए", base: "करना", reading: "kījiē" }
+    confusables:
+      - { id: "w1", word: "दमकल", reading: "damkal", kind: "word" }
+      - { id: "w2", word: "एम्बुलेंस", reading: "ēmbulēṁs", kind: "word" }
+  - id: "hi-5769"
+    target: "आपदा में बचाव ज़रूरी है।"
+    reading: "āpdā mēm̐ bacāv zarūrī hai."
+    ipa: "aːpd̪aː mẽː bətʃaːʋ zəruːriː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "आपदा", ref: "hi-2662" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "बचाव", ref: "hi-2656" }
+      - { word: "ज़रूरी", base: "ज़रूरी", reading: "zarūrī" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "दुर्घटना", reading: "durghaṭnā", kind: "word" }
+      - { id: "w2", word: "खतरा", reading: "khatrā", kind: "word" }
+  - id: "hi-5770"
+    target: "ध्यान से चेतावनी पढ़िए।"
+    reading: "dhyān sē cētāvnī paṛhiē."
+    ipa: "d̪ʱjaːn seː tʃeːt̪aːʋniː pəɽʱɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "ध्यान", base: "ध्यान", reading: "dhyān" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "चेतावनी", ref: "hi-2658" }
+      - { word: "पढ़िए", base: "पढ़ना", reading: "paṛhiē" }
+    confusables:
+      - { id: "w1", word: "सावधान", reading: "sāvdhān", kind: "word" }
+      - { id: "w2", word: "खतरा", reading: "khatrā", kind: "word" }
+  - id: "hi-5771"
+    target: "दुर्घटना के बाद वह ज़ख़्मी हो गया।"
+    reading: "durghaṭnā kē bād vah zak͟hmī hō gayā."
+    ipa: "d̪ʊrɡʱəʈnaː keː baːd̪ ʋəɦ zəxmiː ɦoː ɡəjaː"
+    pos: "phrase"
+    bases:
+      - { word: "दुर्घटना", ref: "hi-2653" }
+      - { word: "के", base: "का", reading: "kē" }
+      - { word: "बाद", base: "बाद", reading: "bād" }
+      - { word: "वह", ref: "hi-0749" }
+      - { word: "ज़ख़्मी", ref: "hi-2665" }
+      - { word: "हो", base: "होना", reading: "hō" }
+      - { word: "गया", base: "जाना", reading: "gayā" }
+    confusables:
+      - { id: "w1", word: "दमकल", reading: "damkal", kind: "word" }
+      - { id: "w2", word: "एम्बुलेंस", reading: "ēmbulēṁs", kind: "word" }
+  - id: "hi-5772"
+    target: "आपातकाल में ध्यान रखिए।"
+    reading: "āpātkāl mēm̐ dhyān rakhiē."
+    ipa: "aːpaːt̪kaːl mẽː d̪ʱjaːn rəkʰɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "आपातकाल", ref: "hi-2650" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "ध्यान", base: "ध्यान", reading: "dhyān" }
+      - { word: "रखिए", base: "रखना", reading: "rakhiē" }
+    confusables:
+      - { id: "w1", word: "आपात", reading: "āpāt", kind: "word" }
+      - { id: "w2", word: "निकास", reading: "nikās", kind: "word" }
+  - id: "hi-5773"
+    target: "यह आपातकालीन दरवाज़ा है।"
+    reading: "yah āpātkālīn darvāzā hai."
+    ipa: "jəɦ aːpaːt̪kaːliːn d̪ərʋaːzaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "आपातकालीन", ref: "hi-2652" }
+      - { word: "दरवाज़ा", ref: "hi-0426" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "घर", reading: "ghar", kind: "word" }
+      - { id: "w2", word: "निकास", reading: "nikās", kind: "word" }
