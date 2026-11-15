@@ -1,0 +1,164 @@
+schema: 1
+id: "hi-sound-differences-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-5846"
+    target: "एक पल रुकिए।"
+    reading: "ēk pal rukiē."
+    ipa: "eːk pəl rʊkɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "एक", ref: "hi-0198" }
+      - { word: "पल", ref: "hi-0100" }
+      - { word: "रुकिए", base: "रुकना", reading: "rukiē" }
+    confusables:
+      - { id: "w1", word: "दान", reading: "dān", kind: "word" }
+      - { id: "w2", word: "धान", reading: "dhān", kind: "word" }
+  - id: "hi-5847"
+    target: "उसने दान दिया।"
+    reading: "usnē dān diyā."
+    ipa: "ʊsneː d̪aːn d̪ɪjaː"
+    pos: "phrase"
+    bases:
+      - { word: "उसने", base: "वह", reading: "usnē" }
+      - { word: "दान", ref: "hi-0101" }
+      - { word: "दिया", base: "देना", reading: "diyā" }
+    confusables:
+      - { id: "w1", word: "धान", reading: "dhān", kind: "word" }
+      - { id: "w2", word: "पल", reading: "pal", kind: "word" }
+  - id: "hi-5848"
+    target: "दाल और चावल बनाइए।"
+    reading: "dāl aur cāval banāiē."
+    ipa: "d̪aːl ɔːr tʃaːʋəl bənaːɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "दाल", ref: "hi-0261" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "चावल", ref: "hi-0260" }
+      - { word: "बनाइए", base: "बनाना", reading: "banāiē" }
+    confusables:
+      - { id: "w1", word: "धान", reading: "dhān", kind: "word" }
+      - { id: "w2", word: "डाल", reading: "ḍāl", kind: "word" }
+  - id: "hi-5849"
+    target: "धान के खेत हरे हैं।"
+    reading: "dhān kē khēt harē haim̐."
+    ipa: "d̪ʱaːn keː kʰeːt̪ ɦəreː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "धान", ref: "hi-0102" }
+      - { word: "के", base: "का", reading: "kē" }
+      - { word: "खेत", ref: "hi-1070" }
+      - { word: "हरे", base: "हरा", reading: "harē" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", word: "दाल", reading: "dāl", kind: "word" }
+      - { id: "w2", word: "डाल", reading: "ḍāl", kind: "word" }
+  - id: "hi-5850"
+    target: "पेड़ की डाल टूट गई।"
+    reading: "pēṛ kī ḍāl ṭūṭ gaī."
+    ipa: "peːɽ kiː ɖaːl ʈuːʈ ɡəiː"
+    pos: "phrase"
+    bases:
+      - { word: "पेड़", ref: "hi-1926" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "डाल", ref: "hi-0103" }
+      - { word: "टूट", base: "टूटना", reading: "ṭūṭ" }
+      - { word: "गई", base: "जाना", reading: "gaī" }
+    confusables:
+      - { id: "w1", word: "दान", reading: "dān", kind: "word" }
+      - { id: "w2", word: "दीन", reading: "dīn", kind: "word" }
+  - id: "hi-5851"
+    target: "मैंने यह बात सुनी।"
+    reading: "maim̐nē yah bāt sunī."
+    ipa: "mɛ̃ːneː jəɦ baːt̪ sʊniː"
+    pos: "phrase"
+    bases:
+      - { word: "मैंने", base: "मैं", reading: "maim̐nē" }
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "बात", ref: "hi-1864" }
+      - { word: "सुनी", base: "सुनना", reading: "sunī" }
+    confusables:
+      - { id: "w1", word: "सूना", reading: "sūnā", kind: "word" }
+      - { id: "w2", word: "पका", reading: "pakā", kind: "word" }
+  - id: "hi-5852"
+    target: "घर सूना है।"
+    reading: "ghar sūnā hai."
+    ipa: "ɡʱər suːnaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "सूना", ref: "hi-0107" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "खाली", reading: "khālī", kind: "word" }
+      - { id: "w2", word: "सुना", reading: "sunā", kind: "word" }
+  - id: "hi-5853"
+    target: "खाना पका है।"
+    reading: "khānā pakā hai."
+    ipa: "kʰaːnaː pəkaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "खाना", ref: "hi-0332" }
+      - { word: "पका", ref: "hi-0108" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "बचा", reading: "bacā", kind: "word" }
+      - { id: "w2", word: "पक्का", reading: "pakkā", kind: "word" }
+  - id: "hi-5854"
+    target: "यह बात पक्की है।"
+    reading: "yah bāt pakkī hai."
+    ipa: "jəɦ baːt̪ pəkkiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "बात", ref: "hi-1864" }
+      - { word: "पक्की", base: "पक्का", reading: "pakkī" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "पका", reading: "pakā", kind: "word" }
+      - { id: "w2", word: "बचा", reading: "bacā", kind: "word" }
+  - id: "hi-5855"
+    target: "सिर्फ़ थोड़ा खाना बचा है।"
+    reading: "sirf thōṛā khānā bacā hai."
+    ipa: "sɪrf t̪ʰoːɽaː kʰaːnaː bətʃaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "सिर्फ़", ref: "hi-0832" }
+      - { word: "थोड़ा", ref: "hi-0865" }
+      - { word: "खाना", ref: "hi-0332" }
+      - { word: "बचा", ref: "hi-0110" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "पका", reading: "pakā", kind: "word" }
+      - { id: "w2", word: "सूना", reading: "sūnā", kind: "word" }
+  - id: "hi-5856"
+    target: "यह बच्चा बहुत अच्छा है।"
+    reading: "yah baccā bahut acchā hai."
+    ipa: "jəɦ bətʃtʃaː bəɦʊt̪ ətʃtʃʰaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "बच्चा", ref: "hi-0111" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "अच्छा", ref: "hi-0898" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "है", reading: "hai", kind: "word" }
+      - { id: "w2", word: "हैं", reading: "haim̐", kind: "word" }
+  - id: "hi-5857"
+    target: "मुझे पढ़ना है।"
+    reading: "mujhē paṛhnā hai."
+    ipa: "mʊdʒʱeː pəɽʱnaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मुझे", base: "मैं", reading: "mujhē" }
+      - { word: "पढ़ना", ref: "hi-0114" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "पड़ना", reading: "paṛnā", kind: "word" }
+      - { id: "w2", word: "हैं", reading: "haim̐", kind: "word" }
