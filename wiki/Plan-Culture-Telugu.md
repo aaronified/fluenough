@@ -46,6 +46,18 @@ Rights basis, dates and text are **to be read** in every row and are not repeate
 
 Reserve: another Pothana verse, another Peddana verse. This task creates `decks/creators/te.yaml` with its eras and the creators.
 
+**Second sourcing attempt, 2026-11-15.** NO new cards were added; the deck stays at 4 verified items (te-8750 to te-8753; PR #1381). Per poet:
+
+- **Nannaya:** dates agree on en.wikipedia and te.wikipedia only as "c. 11th century" (no lifespan years); the te.wikisource page (Adi Parvam, first ashvasa, 1968) is a PDF scan with no text, so no verse can be read: dropped.
+- **Tikkana:** dates 1205-1288 agree on en.wikipedia and te.wikipedia; the te.wikisource Virata Parvam page (1915) is a PDF scan with no text: dropped; the Nirvachanottara Ramayanam attribution is uncorroborated (one source) and stays unchecked.
+- **Errana:** te.wikipedia c. 1280-1364 (estimate) vs en.wikipedia court period 1325-1353 only; Aranya Parvam page missing on te.wikisource: no new verse.
+- **Srinatha:** en.wikipedia c. 1355-1360 to 1441 vs te.wikipedia 1360-1470 (they disagree on death; a covering range would be c. 1358 to c. 1455); te.wikisource Shringara Naishadham page missing: dropped.
+- **Allasani Peddana:** te.wikipedia birth Saka 1430 (about 1508 CE); no death year in any source; the Manucharitra first-ashvasa page on te.wikisource has readable text but the dates fail: dropped.
+- **Nandi Thimmana:** c. 15th and 16th centuries (en.wikipedia), 16th century (te.wikipedia); no lifespan: dropped.
+- **Gaurana:** en.wikipedia page missing; te.wikipedia says first half of the 15th century: one source only: dropped.
+
+**What would unblock it:** readable te.wikisource text (a transcription, not a PDF scan) for these works, plus two sources giving lifespan years.
+
 ### TE-036, `te-culture-2`: devotional verse and music (te-8800 to 8849)
 
 The plan gives candidates in no fixed order. The builder keeps only items whose text it reads on the cited Wikisource page.
