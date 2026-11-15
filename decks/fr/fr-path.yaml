@@ -689,7 +689,9 @@ units:
       - { id: "calling-for-help", text: { "en": "Calling for help after an accident" } }
     reading_passages:
       - { id: "safety-notice", text: { "en": "A safety notice in a building" } }
-  - planned: { id: "fr-grammar-gerondif", grammar: "gerondif" }
+  - decks: ["fr-grammar-gerondif"]
+    words: 0
+    grammar: ["gerondif"]
     listening_passages:
       - { id: "while-walking", text: { "en": "Saying what you do while doing something else: listening while walking" } }
     reading_passages:

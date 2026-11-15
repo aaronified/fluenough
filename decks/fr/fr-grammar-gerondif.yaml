@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-grammar-gerondif"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["participle", "gerondif"]
+  entries:
+    - lemma: "parler"
+      ipa: "paʁle"
+      forms:
+        "participle": "parlant"
+        "gerondif": "en parlant"
+    - lemma: "marcher"
+      ipa: "maʁʃe"
+      forms:
+        "participle": "marchant"
+        "gerondif": "en marchant"
+    - lemma: "manger"
+      ipa: "mɑ̃ʒe"
+      forms:
+        "participle": "mangeant"
+        "gerondif": "en mangeant"
+    - lemma: "finir"
+      ipa: "finiʁ"
+      forms:
+        "participle": "finissant"
+        "gerondif": "en finissant"
+    - lemma: "attendre"
+      ipa: "atɑ̃dʁ"
+      forms:
+        "participle": "attendant"
+        "gerondif": "en attendant"
+    - lemma: "faire"
+      ipa: "fɛʁ"
+      forms:
+        "participle": "faisant"
+        "gerondif": "en faisant"
+    - lemma: "prendre"
+      ipa: "pʁɑ̃dʁ"
+      forms:
+        "participle": "prenant"
+        "gerondif": "en prenant"
+    - lemma: "lire"
+      ipa: "liʁ"
+      forms:
+        "participle": "lisant"
+        "gerondif": "en lisant"
+    - lemma: "voir"
+      ipa: "vwaʁ"
+      forms:
+        "participle": "voyant"
+        "gerondif": "en voyant"
+    - lemma: "être"
+      key: "etre"
+      ipa: "ɛtʁ"
+      forms:
+        "participle": "étant"
+        "gerondif": "en étant"
+    - lemma: "avoir"
+      ipa: "avwaʁ"
+      forms:
+        "participle": "ayant"
+        "gerondif": "en ayant"
+    - lemma: "savoir"
+      ipa: "savwaʁ"
+      forms:
+        "participle": "sachant"
+        "gerondif": "en sachant"
