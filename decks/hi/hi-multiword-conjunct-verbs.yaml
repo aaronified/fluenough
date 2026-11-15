@@ -1,0 +1,254 @@
+schema: 1
+id: "hi-multiword-conjunct-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+genre: "multiword"
+pattern_family: "conjunct-verb"
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - id: "hi-4350"
+    target: "पसंद करना"
+    target_scripts: { perso_arabic: "پسند کرنا" }
+    words: ["पसंद", "करना"]
+    reading: "pasand karnā"
+    ipa: "pəsənd̪ kərnaː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "पसंद", ref: "hi-0469" }
+      - { word: "करना", ref: "hi-0779" }
+  - id: "hi-4351"
+    target: "प्यार करना"
+    target_scripts: { perso_arabic: "پیار کرنا" }
+    words: ["प्यार", "करना"]
+    reading: "pyār karnā"
+    ipa: "pjaːr kərnaː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "प्यार", ref: "hi-0475" }
+      - { word: "करना", ref: "hi-0779" }
+  - id: "hi-4352"
+    target: "मंज़ूर करना"
+    target_scripts: { perso_arabic: "منظور کرنا" }
+    words: ["मंज़ूर", "करना"]
+    reading: "maṁzūr karnā"
+    ipa: "mə̃zuːr kərnaː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "मंज़ूर", ref: "hi-2033" }
+      - { word: "करना", ref: "hi-0779" }
+  - id: "hi-4353"
+    target: "इनकार करना"
+    target_scripts: { perso_arabic: "انکار کرنا" }
+    words: ["इनकार", "करना"]
+    reading: "inkār karnā"
+    ipa: "ɪnkaːr kərnaː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "इनकार", ref: "hi-2204" }
+      - { word: "करना", ref: "hi-0779" }
+  - id: "hi-4354"
+    target: "बंद करना"
+    target_scripts: { perso_arabic: "بند کرنا" }
+    words: ["बंद", "करना"]
+    reading: "band karnā"
+    ipa: "bənd̪ kərnaː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "बंद", ref: "hi-1358" }
+      - { word: "करना", ref: "hi-0779" }
+  - id: "hi-4355"
+    target: "पता चलना"
+    target_scripts: { perso_arabic: "پتہ چلنا" }
+    words: ["पता", "चलना"]
+    reading: "patā calnā"
+    ipa: "pət̪aː tʃəlnaː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "पता", ref: "hi-2604" }
+      - { word: "चलना", ref: "hi-0801" }
+  - id: "hi-4356"
+    target: "वादा करना"
+    words: ["वादा", "करना"]
+    reading: "vādā karnā"
+    ipa: "ʋaːd̪aː kərnaː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "वादा", ref: "hi-2170" }
+      - { word: "करना", ref: "hi-0779" }
+  - id: "hi-4357"
+    target: "जवाब देना"
+    words: ["जवाब", "देना"]
+    reading: "javāb dēnā"
+    ipa: "dʒəʋaːb d̪eːnaː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "जवाब", ref: "hi-1596" }
+      - { word: "देना", ref: "hi-0785" }
+  - id: "hi-4358"
+    target: "इलाज करना"
+    target_scripts: { perso_arabic: "علاج کرنا" }
+    words: ["इलाज", "करना"]
+    reading: "ilāj karnā"
+    ipa: "ɪlaːdʒ kərnaː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "इलाज", ref: "hi-1445" }
+      - { word: "करना", ref: "hi-0779" }
+  - id: "hi-4359"
+    target: "भरोसा करना"
+    words: ["भरोसा", "करना"]
+    reading: "bharōsā karnā"
+    ipa: "bʱəroːsaː kərnaː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "भरोसा", ref: "hi-2116" }
+      - { word: "करना", ref: "hi-0779" }
+  - id: "hi-4360"
+    target: "ख़याल रखना"
+    words: ["ख़याल", "रखना"]
+    reading: "k͟hayāl rakhnā"
+    ipa: "xəjaːl rəkʰnaː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ख़याल", ref: "hi-2190" }
+      - { word: "रखना", ref: "hi-0950" }
+  - id: "hi-4361"
+    target: "परेशान करना"
+    words: ["परेशान", "करना"]
+    reading: "parēśān karnā"
+    ipa: "pəreːʃaːn kərnaː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "परेशान", ref: "hi-2129" }
+      - { word: "करना", ref: "hi-0779" }
+  - id: "hi-4362"
+    target: "पैसे देना"
+    target_scripts: { perso_arabic: "پیسے دینا" }
+    words: ["पैसे", "देना"]
+    reading: "paisē dēnā"
+    ipa: "pɛːseː d̪eːnaː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "पैसे", ref: "hi-0234" }
+      - { word: "देना", ref: "hi-0785" }
+  - id: "hi-4363"
+    target: "यात्रा करना"
+    words: ["यात्रा", "करना"]
+    reading: "yātrā karnā"
+    ipa: "jaːt̪raː kərnaː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "यात्रा", ref: "hi-1890" }
+      - { word: "करना", ref: "hi-0779" }
+  - id: "hi-4364"
+    target: "ख़र्च करना"
+    target_scripts: { perso_arabic: "خرچ کرنا" }
+    words: ["ख़र्च", "करना"]
+    reading: "k͟harc karnā"
+    ipa: "xərtʃ kərnaː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ख़र्च", ref: "hi-2743" }
+      - { word: "करना", ref: "hi-0779" }
+  - id: "hi-4365"
+    target: "प्रयोग करना"
+    words: ["प्रयोग", "करना"]
+    reading: "prayōg karnā"
+    ipa: "prəjoːɡ kərnaː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "प्रयोग", ref: "hi-0606" }
+      - { word: "करना", ref: "hi-0779" }
+  - id: "hi-4366"
+    target: "सहायता करना"
+    words: ["सहायता", "करना"]
+    reading: "sahāyatā karnā"
+    ipa: "səɦaːjət̪aː kərnaː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "सहायता", ref: "hi-0608" }
+      - { word: "करना", ref: "hi-0779" }
+  - id: "hi-4367"
+    target: "प्रेम करना"
+    words: ["प्रेम", "करना"]
+    reading: "prēm karnā"
+    ipa: "preːm kərnaː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "प्रेम", ref: "hi-2563" }
+      - { word: "करना", ref: "hi-0779" }
