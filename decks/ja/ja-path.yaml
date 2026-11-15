@@ -485,7 +485,9 @@ units:
       - { id: "what-did-you-do", text: { "en": "Friends say casually what they did and did not do" } }
     reading_passages:
       - { id: "plain-diary", text: { "en": "A diary entry in plain past forms" } }
-  - planned: { id: "ja-grammar-adjective-past", grammar: "adjective-past" }
+  - decks: ["ja-grammar-adjective-past", "ja-grammar-adjective-past-sentences"]
+    words: 0
+    grammar: ["i-nakatta", "i-polite-past", "na-datta", "na-janakatta", "na-polite-past"]
     listening_passages:
       - { id: "how-was-it", text: { "en": "Asking how a trip was: fun, cold, not expensive" } }
     reading_passages:
