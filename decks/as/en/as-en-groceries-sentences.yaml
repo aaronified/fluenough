@@ -1,0 +1,99 @@
+schema: 1
+id: "as-en-groceries-sentences"
+kind: "layer"
+core: "as-groceries-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Groceries: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-5527":
+    native: "I buy potatoes."
+    bases:
+      "কিনোঁ": "buy (I)"
+    confusables:
+      "c1": { why: "Onion, a different vegetable." }
+      "c2": { why: "Carrot, a different vegetable." }
+  "as-5528":
+    native: "He buys fish."
+    bases:
+      "কিনে": "buys (he or she)"
+    confusables:
+      "c1": { why: "Meat, not fish." }
+      "c2": { why: "Egg, not fish." }
+  "as-5529":
+    native: "He or she buys milk."
+    bases:
+      "কিনে": "buys (he or she, polite)"
+    confusables:
+      "c1": { why: "Yoghurt, made from milk." }
+      "c2": { why: "Ghee, made from milk." }
+  "as-5530":
+    native: "I buy onions and garlic."
+    bases:
+      "কিনোঁ": "buy (I)"
+    confusables:
+      "c1": { why: "Turmeric, a spice." }
+      "c2": { why: "Chilli, a spice." }
+  "as-5531":
+    native: "The fish is good."
+    bases:
+      "মাছটো": "the fish"
+    confusables:
+      "c1": { why: "Meat, not fish." }
+      "c2": { why: "Mutton, goat meat." }
+  "as-5532":
+    native: "He buys a chicken."
+    bases:
+      "কিনে": "buys (he or she)"
+    confusables:
+      "c1": { why: "Fish, not chicken." }
+      "c2": { why: "Meat, a different food." }
+  "as-5533":
+    native: "I buy rice and lentils."
+    bases:
+      "কিনোঁ": "buy (I)"
+    confusables:
+      "c1": { why: "Oil, a different item." }
+      "c2": { why: "Salt, a different item." }
+  "as-5534":
+    native: "Buy salt and oil."
+    bases:
+      "কিনক": "buy (please)"
+    confusables:
+      "c1": { why: "Rice, a different item." }
+      "c2": { why: "Lentils, a different item." }
+  "as-5535":
+    native: "Please give me a hundred grams of ginger."
+    bases:
+      "দিয়ক": "give (please)"
+    confusables:
+      "c1": { why: "Garlic, a different spice." }
+      "c2": { why: "Turmeric, a different spice." }
+  "as-5536":
+    native: "The banana is ripe."
+    bases:
+      "কলটো": "the banana"
+    confusables:
+      "c1": { why: "Mango, a different fruit." }
+      "c2": { why: "Apple, a different fruit." }
+  "as-5537":
+    native: "He eats two bananas."
+    bases:
+      "খায়": "eats (he or she)"
+    confusables:
+      "c1": { why: "One, not two." }
+      "c2": { why: "Three, one more." }
+  "as-5538":
+    native: "This is rice, that is lentils."
+    confusables:
+      "c1": { why: "Salt, a different item." }
+      "c2": { why: "Oil, a different item." }
+  "as-5539":
+    native: "I buy eggs."
+    bases:
+      "কিনোঁ": "buy (I)"
+    confusables:
+      "c1": { why: "Fish, not eggs." }
+      "c2": { why: "Milk, not eggs." }
