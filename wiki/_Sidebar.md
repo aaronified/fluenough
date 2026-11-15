@@ -18,7 +18,6 @@
 **2. Deck building guides**
 - [Deck Building Guide](Deck-Building-Guide)
 - [Deck Format](Deck-Format)
-- [Private Language Package](Private-Language-Package)
 - [Romanising Indic Languages](Romanising-Indic-Languages)
 - [Deck Licences and Quoted Books](Deck-Licences-and-Quoted-Books)
 - [Deck Tools](Deck-Tools)

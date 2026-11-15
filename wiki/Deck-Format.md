@@ -125,12 +125,6 @@ Common to every kind.
 | `description` | no | One or two sentences. |
 | `tags` | no | Deck-level tags, e.g. `[beginner, core]`. The tag `unreviewed` marks a deck no native speaker has checked: the app says so on the deck's screen. `reviewed` marks one a speaker has checked; a deck is one or the other, never both. A file with a [culture note](#notes) must carry one of them. A deck of offensive words is tagged `offensive`; until native speakers have rated its words it is seen by the Offensive words review alone, and once rated it gains the tag `rated` and follows the adult gate (#630); `rated` on a deck not tagged `offensive` is an error. |
 | `theme` | no | On a vocab deck: the theme it teaches, by its id in [`decks/themes.yaml`](#themes). |
-| `genre` | no | `culture`, `proverbs`, `multiword` or `professional`: what a deck is about beyond the path ([Deck kinds](#deck-kinds-levels-hidden-decks-sources-creators-and-topics)). On a core or a single file, never a layer. Not `kind`: that is the file's structure. |
-| `level` | on a genre deck | `A1` to `C2`: the lowest level the deck suits. |
-| `hidden` | no (`true` on `professional`) | Left out of the Decks tab, Today and the path; found by search. |
-| `professional` | on `professional` | A profession id from `decks/sections.yaml`. |
-| `section` | no | Where the Decks tab lists it; defaults to its genre's section. |
-| `weave` | no | Whether the courses weave its items in; defaults to its genre's. |
 
 ### `language`
 
@@ -532,9 +526,9 @@ and refuses to write a split that, merged back, would not be the old deck.
 5. **The old file is deleted in the same change.** The validator refuses the
    two side by side: they have the same id.
 6. **Nothing goes in `pubspec.yaml`.** The app bundles no deck: it downloads
-   them from `decks-live` ([ADR-0037](ADR-0037-Decks-Download-From-Main)), so a
+   them from `main` ([ADR-0037](ADR-0037-Decks-Download-From-Main)), so a
    new layer folder needs no asset line. `decks/index.json` is regenerated
-   on decks-live after the merge
+   on main after the merge
    ([How the app gets decks](#how-the-app-gets-decks-indexjson)).
 7. The path does not change: it lists the deck's core id, `te-home`, which
    the single-file deck had too. Once a language has a core, its path needs
@@ -767,7 +761,7 @@ cards:
   in a kana deck keeps its id and its history; the kanji spelling lands as a
   new card of a kanji deck only where the word is new.
 
-**A script unit of kanji** (`script-kanji-1` to `script-kanji-38`, deck ids
+**A script unit of kanji** (`script-kanji-1` to `script-kanji-6`, deck ids
 `ja-kanji-N`, listed under the path's `alphabet`) is a vocab deck tagged
 `script`, as Chinese's `characters-N` is, and its cards are single kanji:
 
@@ -808,78 +802,6 @@ app before this version. A kanji deck therefore lands after the
 release that carries this, and each such file is held to it with
 `decks/min_app.json`
 ([ADR-0052](ADR-0052-Minimum-App-Version-In-The-Deck-Index)).
-
-### Character data (`character_scheme`, `character`)
-
-A card of a script deck (`pos: "letter"` or `"digit"`: one character on the
-card) may carry structured data about its character, so that a filter, a
-question or a search can use it instead of reading prose in a note (#1226).
-It is the same for every language and every script: the deck says which kinds
-of reading and which level schemes its characters have, and each card gives
-its values. No language or script is named in the app or in the tools.
-
-The deck's header (a single-file deck, or a core) names the kinds and the
-schemes:
-
-```yaml
-character_scheme:
-  readings:
-    first:  { name: { en: "First reading", es: "Primera lectura" }, script: "bengali" }
-    second: { name: { en: "Second reading" }, script: "latin" }
-  levels:
-    grade: { name: { en: "School grade" }, values: [1, 2, 3, 4, 5, 6] }
-    exam:  { name: { en: "Exam" }, values: ["E2", "E1"] }
-```
-
-- `readings`: a mapping of kind id (`[a-z0-9-]+`) to `name` (text by
-  language code, `en` required: what the app shows) and `script`, the script
-  id the kind's readings are written in. A language with one way of reading a
-  character has one kind; one with two (a Han character read two ways) has
-  two. At least one of `readings` and `levels` is there.
-- `levels`: a mapping of scheme id to `name` (as above) and optional
-  `values`, the allowed values in order, whole numbers or text, none twice.
-  Without `values` any value is allowed.
-
-A card's block, in a core or a single-file deck (never in a layer, which
-carries no `character`: the validator and the app refuse it there):
-
-```yaml
-  - id: "zz-9801"
-    target: "ক"
-    pos: "letter"
-    character:
-      readings:
-        - { kind: "first", text: "কা", reading: "kaa" }
-        - { kind: "second", text: "ka" }
-      level: { grade: 1, exam: "E2" }
-      strokes: 4
-      radical: "ক"
-```
-
-| Field | Rule |
-|---|---|
-| `readings` | A non-empty list of `{ kind, text, reading? }`. `kind` is one of the header's reading kinds; `text` is the reading, written in that kind's `script` (letters and marks only are checked, as for `target_scripts`; a script the validator has no blocks for is not checked); `reading` is its romanisation, optional. The same kind and text is not listed twice. |
-| `level` | A mapping of scheme id to value, each scheme one of the header's `levels` and each value one of its `values` where it has them. |
-| `strokes` | A whole number from 1 to 64. |
-| `radical` | One character (one code point). |
-
-Every field is optional, but the block is not empty. The block needs the
-header's `character_scheme`, and the card needs `pos: "letter"` or `"digit"`.
-A deck that uses neither is checked as before. The app reads the block into
-`Card.character` and the header into `Deck.characterScheme`
-(`lib/core/models/character.dart`); nothing shows or drills it yet.
-
-**A released app refuses a card field it does not know, so a file that has a
-`character` block, or a `character_scheme`, waits for the app that reads
-them.** `tools/deck_index.py` writes that itself: the validator marks the file
-as using a new card field, and the index gives its entry `min_app` of
-`CARD_FIELD_MIN_APP["character"]` (today `0.10.2`, the first release that
-reads it), with no line in `decks/min_app.json`
-([ADR-0052](ADR-0052-Minimum-App-Version-In-The-Deck-Index)). A hand entry
-newer than that wins; an older one does not lower it. Until the kanji tasks
-move over, the readings stay in the fixed note shape. The fixtures are the
-`zz` decks of `tools/test_validate_character.py` and
-`test/character_data_test.dart`.
 
 ### A note on `id`
 
@@ -3061,7 +2983,7 @@ error before moving on. Read the warnings; do not leave them unexplained.
 ## How the app gets decks: `index.json`
 
 The app bundles no deck. It downloads each language's files from this
-repository's `decks-live` branch, on `raw.githubusercontent.com`, the first time
+repository's `main` branch, on `raw.githubusercontent.com`, the first time
 a learner chooses the language, and checks for changes at most once a day
 after that ([ADR-0037](ADR-0037-Decks-Download-From-Main)). What it
 downloads is listed in `decks/index.json`:
@@ -3112,19 +3034,11 @@ downloads is listed in `decks/index.json`:
   has one: `path`, `size`, `sha256`, `schema` and `kind`, `"resources"`. It
   is listed apart from `files`, so that an app too old to read it passes it
   by, and the language's `size` does not count it. The app fetches it alone.
-- **`bundled`**: `decks/themes.yaml`, the copy that ships inside the app, for
-  an app that does not know `shared` (kept for old apps).
-- **`shared`**: the deck-owned files that belong to no one language and
-  change with the decks (owner, 2026-11-11), today `decks/themes.yaml`: each
-  `path`, `size`, `sha256`, `content_sha256`, `schema`, `kind` and, when
-  `decks/min_app.json` gates it, `min_app`. The app downloads them with the
-  decks update, checks size, hash, schema, `min_app` and that it parses, keeps
-  them on the phone and reads them before its bundled copy (the fallback for an
-  offline first start). `SHARED` in `tools/deck_index.py` names them
-  ([Plan-Deck-Owned-Data](Plan-Deck-Owned-Data)).
+- **`bundled`**: `decks/themes.yaml`, which ships inside the app and is
+  not downloaded.
 
 **You do not write the index.** A workflow (`deck-index.yml`) runs
-`python3 tools/deck_index.py` on decks-live after each merge that touches `decks/`
+`python3 tools/deck_index.py` on main after each merge that touches `decks/`
 and commits the result (owner, 2026-10-23), so a pull request is not failed
 for a stale index: the validate job and the tools' test that validates the real decks set `FLUENOUGH_SKIP_INDEX_CHECK`. The validator still checks it when run locally. A phone
 checks each file against its hash and refuses one that does not match.
@@ -3342,42 +3256,61 @@ skips them (#519, owner, 2026-10-30: "a `verified` field on cards").
 ## Adding your own deck
 
 A learner's own deck is **one file**: the target and the native text
-together, with no core and layer split, and no rules deck (owner, 2026-10-12,
-#495: "For custom decks, we need to keep it as simple as possible. So, no
-split."). Any deck the app can read in that form can be added, a vocab deck,
-a grammar deck or a reading deck. A custom deck lives only in the app's data
-on the phone and in its backups; **nothing is sent anywhere**. Sending a deck
-to the project was retired (owner, 2026-11-06, #1017: "File to file. Offline
-sharing. Nothing to build.").
+together, with no core and layer split, and no rules deck. A learner can
+also get a template for a full language, which is one file too and keeps
+its path (owner, 2026-10-12, #495: "For custom decks, we need to keep it as
+simple as possible. So, no split."). Any deck the app can read in that form
+can be added, a vocab deck, a grammar deck or a reading deck. A custom deck
+lives only in the app's data on the phone and in its backups.
 
-Settings, Your decks, Get a template saves the template
-([`assets/deck-template.yaml`](https://github.com/aaronified/fluenough/blob/main/assets/deck-template.yaml)).
-The app refuses a file that is not a deck or does not parse (its file, line
-and message are shown), the id of a deck that comes with the app, and a card
-id another deck has: write `<language>-my-NNNN`, which no deck in the
-repository uses, and list a word another deck has by `ref`. The same file
-again replaces the deck with that id.
+**What is decided (owner, 2026-10-12, #495; built there, not built yet):**
 
-The **sample deck pack**, `fluenough-sample-decks.zip`, is attached to every
-[release](https://github.com/aaronified/fluenough/releases/latest/download/fluenough-sample-decks.zip):
-one deck of every kind the fixtures cover (`test/fixtures/deck-kinds`, the
-made-up language `zz`) and the Spanish and Telugu sample course
-(`test/fixtures/sample-decks`), built by `tools/build_sample_pack.py`.
+- **The app numbers every deck and card.** "It will thus use a generated
+  USER series name sequence for the decks and cards to make sure zero
+  overlaps." On upload the app replaces whatever ids the file has. A custom
+  deck's id is **`user-<target>-<native>-NNNN`**, as `user-bn-en-0001`, and
+  a custom card's id is **`<target>-user-NNNNNN`**, as `bn-user-000001`,
+  numbered in order on that phone. The next number is stored and never
+  reused, and a backup and restore keep every id. Course decks never use
+  these series, so a custom deck cannot clash with one, and an id problem
+  is never an error on the review screen.
+- **The codes are two letters** where the language has a two-letter ISO
+  639-1 code (`bn`); a three-letter ISO 639-3 code only for a language with
+  none (`bho`). `ben` is a warning with the fix "Use 'bn'".
+- **The same file again** is recognised by its content: replace it or keep
+  both.
+- **Sending a deck to us** is offered only after it is added. A maintainer
+  then splits it into a core and a layer and gives its cards repo ids
+  `<target>-NNNN`; the repo deck ships a map from the sender's ids, so the
+  sender's progress moves onto the new ids and no other learner is affected
+  (owner, 2026-10-12: "Renumber on adding").
+- **Templates ship without ids,** or with placeholders, and say the app
+  will number the cards. The file the app saves today,
+  [`assets/deck-template.yaml`](https://github.com/aaronified/fluenough/blob/main/assets/deck-template.yaml), still uses
+  the older `hi-my-NNNN` ids that the app asks the learner to write; #495
+  replaces it.
+
+**The validator change this needs.** `tools/validate_decks.py` knows two
+shapes of card id and of deck id, the language and at least four digits
+(`hi-0042`), and a deck id that starts with the language learnt and then
+the language taught from. A custom deck's ids are neither. The review screen
+runs the same checks as the validator ([#495](https://github.com/aaronified/fluenough/issues/495)),
+so the validator needs a mode for a custom deck: it accepts the two user
+series and refuses them in any file under `decks/`, so that the repository
+never holds one and `--next-id` never hands one out. How that mode is
+switched on is for #495 to settle.
+
+**Until #495 is built,** Decks > Add a deck > From a file adds a deck written
+from the template, and the app refuses a file that is not a deck or does
+not parse (its file, line and message are shown), the id of a deck that
+comes with the app, and a card id another deck has: write
+`<language>-my-NNNN`, which no deck in the repository uses, and list a word
+another deck has by `ref`.
 
 An added deck that names a theme goes at the bottom of that theme's unit,
 through the path's wildcards; one with no theme, or a theme the course
 does not have, goes at the end. An added deck can be removed; what was
 learned from it stays.
-
-**A whole language, or your own version of a course, is not a single file.**
-It is a private language package, a `.fnzip` with the repository's own files
-(cores, layers, a path) and ids that start `fnpd-<code>-`: see
-[Private-Language-Package](Private-Language-Package) and
-[Plan-Private-Languages](Plan-Private-Languages). The app-numbered `user-` ids
-and the renumbering of a deck on adding that #495 planned are replaced by that
-plan: the author writes the ids and the app never renumbers them. A card of a
-private package may carry `replaces: "<built-in card id>"`, which the app reads
-and the repository's validator refuses.
 
 ## Romanisation
 
@@ -3667,213 +3600,6 @@ its layers, under the language's `script_guides` instead of `files`
 ([How the app gets decks](#how-the-app-gets-decks-indexjson)): an app that does not know the key
 passes them by, as it does `media`, and keeps showing the default guide.
 
-## Building script decks
-
-A script deck teaches a language's letters, signs, conjuncts, digits and
-reading before its words; the [script guide](#script-guides) explains how the
-script works. The existing script decks are on `decks-live`, and are the
-model for new ones: `decks/bn/bn-script-*.yaml` (Bengali),
-`decks/hi/hi-script-*.yaml` (Hindustani in Devanagari),
-`decks/hi/hi-script-perso-arabic-*.yaml` (Hindustani in the Perso-Arabic
-script), and the same for Assamese, Gujarati, Kannada, Marathi and Telugu.
-
-### Which decks
-
-| Deck | Teaches | Example, Bengali |
-|---|---|---|
-| `<lang>-script-vowels` | the independent vowels | `bn-0001` অ |
-| `<lang>-script-consonants` | each consonant, with its inherent vowel | `bn-0012` ক |
-| `<lang>-script-vowel-signs` | the vowel signs, each on a host consonant | `bn-0063` কা |
-| `<lang>-script-conjuncts` | the conjuncts | `bn-0081` ক্ষ |
-| `<lang>-script-digits` | the digits | `bn-1352` ০ |
-| `<lang>-script-reading` | words written in the script, to read | `bn-0052` কলম |
-
-Hindustani's Perso-Arabic decks are `hi-script-perso-arabic-letters`,
-`-shapes`, `-vowels`, `-digits` and `-reading`.
-
-Every deck is `kind: vocab` (the default) with `part: "core"`, and its
-English layer is `decks/<lang>/en/<lang>-en-script-<part>.yaml`
-([Core and layer files](#core-and-layer-files)). The header gives the
-language's `script` and `tts`, `license: "CC-BY-SA-4.0"`, and the tags
-`beginner`, `script` and `unreviewed` (the existing decks carry all three;
-the English layers say they are not yet checked by a native speaker).
-
-### Card fields
-
-- **`target`**: the letter, sign, syllable, conjunct or digit, in its script.
-- **`reading`**: the romanisation of the sound as it is said, in the
-  language's scheme ([Romanisation](#romanisation)). A consonant card carries
-  its inherent vowel: ক is `kô`, and অ is `ô`. A vowel-sign card reads the
-  syllable: কা is `kā`.
-- **`ipa`**: the broad IPA of the sound (`ক` is `kɔ`, `কা` is `ka`). The
-  `ipa` is what the app compares.
-- **`pos`**: `letter` for a letter, a vowel sign or a conjunct; `digit` for a
-  digit ([`pos`](#card-fields)).
-- **`notes`**: as the existing decks give it, `[{ id: "n1", kind: "note" }]`.
-  The note's text is in the English layer, as for any core
-  ([Core and layer files](#core-and-layer-files)).
-- **`examples`**: one or two sentences that use the letter, each with its
-  `target`, `reading`, `ipa` and `bases`, as any card's examples are.
-- **`modes`**: on a letter that sounds exactly like another, `modes:
-  [recognition, production]`, so that it is drilled by reading and writing
-  only ([Paths](#paths)).
-- **`hears: "form"`**: on a word of a `<lang>-script-reading` deck, which is
-  heard and typed as its form ([`hears`](#card-fields)).
-- **`ref`**: a reading-deck card may name a card of another deck by its id,
-  as `bn-script-reading` does for words the course teaches elsewhere.
-- **`tags`**: `own-letter` on a letter the language adds to, or writes
-  differently from, a script it shares with others (Assamese ৰ and ৱ, see
-  [Card fields](#card-fields)).
-
-### Letters, combos and marks
-
-- **One letter, one card.** Each letter is its own card; a letter that is
-  said as another is written as that one ([Romanisation](#romanisation)).
-- **Vowel signs are drilled on a host consonant.** The card's `target` is the
-  written syllable, a consonant with its sign, such as কি (`ki`) or কী
-  (`ki`); a sign is not drilled alone in the existing decks. The sign is
-  written before the consonant in Bengali and read after it, so the reading
-  is the order of the sound. Whether a sign is also drilled alone is **to
-  decide**.
-- **Conjuncts are one card each.** The `target` is the written cluster with
-  its virama, such as ক্ষ (`kkhô`), not its parts.
-- **Signs with no sound of their own** (the virama and the nukta) take no
-  reading of their own in prose ([Script in prose](#script-in-prose-always-with-its-reading)).
-- **The examples carry the combos.** A vowel sign or conjunct is learnt
-  through the words that contain it, in the examples, as the consonants'
-  examples do.
-
-### Reading and IPA
-
-- The `reading` is in the language's romanisation, as said, not strictly ISO
-  15919; for Bengali an inherent vowel is written `ô` (see
-  [Romanisation](#romanisation)).
-- The `ipa` is broad. Existing script decks do **not** give a `phonetic`
-  (narrow) IPA. Whether they get one, as the owner's rule for every card
-  asks, is **to decide**.
-- A script quoted in any prose field follows the
-  [script in prose](#script-in-prose-always-with-its-reading) rule; the
-  `target`, `reading` and `ipa` fields are the word itself and need none.
-
-### Script topics
-
-A script topic in the language's topics file has `kind: "script"`. It names
-the script guide's features with `script_units` (their `features[].id` in
-`<lang>-script`, or `<lang>-<script>-script`), and/or lists its own `chars`,
-the characters as strings. `decks/ja/ja-topics.yaml` has examples (hiragana
-and katakana, with `chars` and `decks`). The fields and their rules are
-defined in [Plan-Deck-Kinds-And-Topics](Plan-Deck-Kinds-And-Topics), under
-"Scripts are topics too".
-
-### Character gating: a card shows only the characters the path has taught
-
-A language whose path teaches a script's characters one at a time can have the
-validator check that no card or example writes a character before the path has
-taught it (#1227). Nothing is checked for a language without the file below, so
-no existing deck changes.
-
-The data is a **gating file**, `decks/<code>/<code>-gating.yaml` (`kind:
-"gating"`), beside the path:
-
-```yaml
-schema: 1
-kind: "gating"
-id: "zz-gating"
-language: "zz"
-license: "CC-BY-SA-4.0"
-character_gating:
-  - script: "han"
-    mode: "warn"
-    allow: ["々"]
-    blocks: ["4E00-9FFF"]
-```
-
-| Field | Rule |
-|---|---|
-| `script` | The gated script's id, once per file. |
-| `mode` | `warn` (a warning, the build goes on) or `error`. Start with `warn`, and move to `error` once the language's decks pass. |
-| `allow` | Optional list of characters taught from the start (a repeat mark, say), one character each. |
-| `blocks` | Optional list of `"XXXX-YYYY"` hexadecimal code point ranges that say which characters belong to the script. Left out, the validator's own table for that script id is used; a script it has no table for needs `blocks`. |
-
-**It is not a key of the path** on purpose: a released app refuses a path file
-with a field it does not know, and a path cannot be put behind `min_app`
-because the apps already hold it. The gating file is read by the validator
-alone, as the phonetic rules are: `tools/deck_index.py` lists it nowhere, and
-the app never downloads it.
-
-For each unit of the path, in order, the validator knows the characters taught
-so far: those of the **character decks** (a deck in the path's `alphabet`
-tagged `script`) of earlier units, each card of one character teaching that
-character. A card whose `target`, `alt_target`, `target_scripts` spelling, or
-example `target` or `target_scripts` spelling writes a character of the gated
-script that is not yet taught is reported, naming the card, where in it, the
-character and the unit. What counts as taught:
-
-- A deck of the unit is checked against the earlier units' characters and the
-  characters of the unit's own character decks, so a sentence deck may share a
-  unit with the characters it uses.
-- Inside a character deck, a card is checked against the characters of the
-  cards before it and its own: the card teaches its character before its
-  examples use it.
-- A spelling in another script has no character of the gated script, so it is
-  not asked about: a word may be written in that script until its characters
-  are taught.
-- A deck the path does not list is not checked, and neither is a layer.
-
-At most 20 reports are written for one deck, then a line says how many more.
-The fixture is the made-up script `glyph` of `tools/test_validate_gating.py`
-over the `zz` decks.
-
-**`chars` is checked against the topic's `decks`** (#1228). For a script topic
-that lists `decks`, every character in `chars` must be the `target` of a card
-of those decks (a layer writes no target, so the core or the single-file deck
-is read), or a letter or example of one of its `script_units`; one that is
-neither is an error ("chars lists 'x', which is no card's target ..."). The
-reverse, a one-character card of those decks that `chars` leaves out, is a
-**warning** for now (`TOPIC_CHARS_MISSING_IS_ERROR` in
-`tools/validate_decks.py`), because decks-live's hiragana and katakana topics
-list the 46 basic letters but also name the marks, combos and small-kana decks.
-What counts as one character is Unicode's own (a letter with its marks, a
-conjunct joined by a virama), never a script's name. A topic with `chars` and
-`script_units` but no `decks` is checked against the script units' letters
-only; a topic that is not `kind: "script"` is not checked.
-
-`tools/topic_chars.py <lang>` writes `chars` from the decks, so a topic of
-200 characters is never copied by hand:
-
-```sh
-python3 tools/topic_chars.py ja                 # report what would change
-python3 tools/topic_chars.py ja --write         # patch decks/ja/ja-topics.yaml
-python3 tools/topic_chars.py ja --check         # exit 1 if a topic differs
-python3 tools/topic_chars.py ja --all-targets   # also two-character cards
-```
-
-It lists the one-character cards of each script topic's `decks` in deck and
-card order, keeps a character's `{ text, reading }` mapping, rewrites only the
-`chars` line, and leaves a topic with no `decks` alone. The fixture is a deck
-of single characters added to `zz` in `tools/test_topic_chars.py`.
-
-### Where script decks sit on the path
-
-- **After the first words.** The script comes after a course's first themes,
-  before the rest. In `decks/bn/bn-path.yaml` the script is units 7 and 8:
-  `bn-script-vowels`, `bn-script-consonants` and `bn-script-reading`, then
-  `bn-script-vowel-signs`, `bn-script-conjuncts` and `bn-script-digits`
-  ([Paths](#paths)).
-- **Listed in `alphabet`.** Each script deck is listed in the path's
-  `alphabet`, and must be on the path. A learner who already reads the script
-  skips them, and until a learner is past them answers typed in Latin letters
-  count in full ([Paths](#paths)).
-
-### Positional forms for Arabic-script languages: not yet built
-
-Not yet built. Urdu and Shahmukhi need the positional forms of a letter
-(isolated, initial, medial, final) taught as one letter. The issue's plan to
-reuse the grammar `slots` table is **to decide**, with the Urdu work (#40).
-Hindustani's `hi-script-perso-arabic-shapes` lists the forms as text in the
-`target`, such as `بـ ـبـ ـب`; that is what exists today, and it is not a
-`slots` table.
-
 ## Facts files
 
 One short, true and surprising thing about the language, shown to the learner
@@ -3953,95 +3679,6 @@ fact carries its own text in every language it is written in. It has
 
 ---
 
-## Deck kinds, levels, hidden decks, sources, creators and topics
-
-Culture, proverb, multi-word-verb and professional decks arrive as data on
-`decks-live`; the design and the reasons are in
-[Plan-Deck-Kinds-And-Topics](Plan-Deck-Kinds-And-Topics). The question types
-stay the fixed set of #107: a genre only narrows which a card may carry.
-
-**Header.** `genre`, `level`, `hidden`, `professional`, `section` and `weave`
-(table above), all on the core or single file and never on a layer.
-
-| `genre` | Header `kind` | A card may carry `modes` | Also required |
-|---|---|---|---|
-| `culture` | `vocab` (`pos: phrase`), `reading` | `recognition`, `listening` (a reading deck's questions take `reading`); never `production` or `grammar` | `level`, a `source` block and a `creator` on every card |
-| `proverbs` | `vocab` | `recognition`, `listening` | `level`, a `source` block and a `register` on every card |
-| `multiword` | `vocab`, `grammar` | `recognition`, `production`, `listening`, `grammar` on a pattern's cells | `level`, a `usage` note on every card |
-| `professional` | `vocab`, `reading` | `recognition`, `production`, `listening` | `professional`, `hidden: true`, `level`; one deck is one situation of one profession in one language |
-
-**Levels.** `A1 < A2 < B1 < B2 < C1 < C2`. A deck's `level` is the lowest it
-suits; a card's `level` (optional) may not be lower. A learner's level in a
-language is the level of the furthest path unit they have reached (a unit's
-level is the first milestone at or after it). An item above it is never
-drilled or shown as content; decks, topics and situations above it are listed
-in search marked with their level; culture and proverb cards above it are not
-indexed for that learner.
-
-**Hidden decks.** `hidden: true` keeps a deck out of the Decks tab, Today, the
-path (the `"*"` wildcard skips it; a path may not name it), placement and
-completeness counts. It is listed by search from the index (`shelves`) and
-downloaded when the learner adds it.
-
-**A card's `source`** (culture and proverb decks require it on every card):
-
-```yaml
-source:
-  author: "Gurajada Apparao"      # or "anonymous"
-  work: "Kanyasulkam"             # proverbs: `collection:`
-  date: 1892                      # a year, "1892-1909" or "c. 1750"
-  edition: "Visalandhra, 1962"    # edition or url
-  url: "https://example.org/..."
-  basis: "public-domain"          # public-domain | licensed | quotation | oral-tradition
-  author_died: 1915               # public-domain
-  jurisdiction: "IN"              # ISO 3166-1 alpha-2
-  licence: "CC-BY-4.0"            # licensed (SPDX) or quotation (the note)
-  licence_url: "https://..."      # licensed
-  rights_checked: "2026-11-12"
-```
-
-The validator requires `date`, `basis`, `jurisdiction`, `rights_checked`,
-`author`, `work` or `collection`, and `edition` or `url`; checks the
-public-domain floor; limits `quotation` to 25 words and 5 cards a deck; and
-allows `oral-tradition` for proverbs and folk items only.
-
-**Creators.** A culture card names its creator, `creator: "te-gurajada"`. A
-creator appears once, in `decks/creators/<code>.yaml` (`kind: creators`), a
-deck-owned file listed in the index `shared` list: `id`, `name` per language
-(`text`, `reading`, `ipa`), `born`, `died` (or `living: true`), `era` (an id of
-the file's own `eras`, named in the language's tradition), `region`, `bio` per
-UI language (and optionally `bio_target` by level), an optional `image`
-(`file`, `credit`, `author`, `licence`, `licence_url`, `source_url`,
-`retrieved`; a licence that allows copying, never NC or ND; absent means a
-placeholder), `legacy` (`text` per UI language and one to six `items`, each a
-`kind`, `text` and a `source`, which is required), and `related`. Dates must be
-sane (born before died, no later than this year, an era that contains them).
-A creator or legacy claim without a source, or an image without its credit and
-licence, fails the validator. The timeline is derived from creators' dates, eras
-and works' `source.date`, ending at the present year.
-
-**Topics.** `decks/<code>/<code>-topics.yaml`, `kind: topics`, one per
-language: `topics` with `id` (`<code>-<slug>`, permanent), `name` and `summary`
-per UI language (`en` required), `term`, `level`, `kind` (display only) and
-what it covers, any of `decks` (core ids), `units`, `cards`, `grammar` (path
-concept ids), `situations` (sheet ids) and `topics`. It holds no card text.
-
-**Recommendations.** `decks/recommendations/<code>.yaml`, `kind: recommendations`, deck-owned (index `shared`): works to find elsewhere, never reproduced. Each has `id` (`<code>-rec-<slug>`), `medium` (`book`, `film`, `series`, `song`, `play`, `podcast`, `comic`), `title` (`text`, `reading`, `ipa`), `creator` ids, `year`, a suggested `level`, `script` (books), `briefing` per UI language, 3 to 8 authored `questions`, optional `legal` links (https, a library, publisher, store or stream; never a pirate host) and `quoted_in` (a culture deck that quotes the work when it is in the public domain). A learner's "completed" mark is progress data, not deck data; questions are asked only on completed works. Books are recommended only when the course includes script learning.
-
-**Sections file.** `decks/sections.yaml`, `kind: sections`, deck-owned (index
-`shared`): `sections`, `genres` (each with its `section`, `search_kind` and
-`weave`), `professions` and `search_kinds` (`id`, `name`, `row`, `order`). A
-new profession or search kind that reuses a row template is a row here, no code.
-
-**In the index.** Genre decks, hidden ones included, are listed per language
-under `shelves` (a `files` entry plus `genre`, `level`, `hidden`,
-`professional`, `section`, `weave`, `title` and `cards`) and never in `files`;
-the topics file under `topics`; creators and `sections.yaml` under `shared`,
-creator images under `shared_media`. Each carries `min_app`, written by the
-tool.
-
----
-
 ## Situations files
 
 Cheatsheets for everyday moments (#724): hailing a cab, shopping, the doctor.
@@ -4073,7 +3710,7 @@ The header is a facts file's: no `native`. The file name stem is its `id`.
 | Field | Required | Notes |
 |---|---|---|
 | `id` | yes | Unique in the file, `[a-z0-9-]+`, permanent. |
-| `icon` | yes | One of `taxi`, `shops`, `eat`, `doctor`, `traffic`, `rail`, `hotel`, `post`, `bank`, `greeting`, `emergency`, `school`, `work`, `travel`: it picks the button's icon and its own colour on Today. Each icon is used once per file, so a language has at most 14 situations. `post` and `bank` are separate keys: a post-and-bank sheet picks one. |
+| `icon` | yes | One of `taxi`, `shops`, `eat`, `doctor`, `traffic`, `rail`: it picks the button's icon and its own colour on Today. Each icon is used once per file. |
 | `title` | yes | The sheet's title keyed by language code as a fact's text is; `en` is required. The learner sees the first of the languages they speak that it is written in. |
 | `phrases` | one of these | Card ids shown first, in this order. |
 | `words` | one of these | Card ids shown after the phrases, in this order. |
@@ -4091,21 +3728,6 @@ downloads it with the decks; an older app never sees it. A situations
 file is counted in the language's `size`. The `situations:` key belongs to a
 situations file only, and a language has one file, named
 `<code>-situations.yaml`; the validator refuses anything else.
-
-**The new icon keys are gated** (#1269). The first six keys are drawn by every
-released app; `hotel`, `post`, `bank`, `greeting`, `emergency`, `school`, `work`
-and `travel` are drawn from app **0.10.3**, the next patch release after
-0.10.2 (blocker code ships as a patch release). An older app would draw such a
-button with a plain icon (but the sheet's own title). So a situations file that uses any of them
-is marked by the validator (`CARD_FIELD_MIN_APP["situation_icons"]`) and
-`tools/deck_index.py` gives its index entry `min_app` `0.10.3`, with no line in
-`decks/min_app.json`, as for the `character` block (ADR-0052): older apps keep
-the file they have. Raise the number if the release that carries it is not
-0.10.3.
-
-### What new situations teach (owner, 2026-11-12)
-
-New situations, professional ones included, teach only words and phrases that are very widely used in that situation, and are not over-translated: one natural phrase per idea, the common register only, short glosses, no list of every synonym or variant, a handful of phrases per scene. The learner chooses which situations show on the situations screen (issue #1145); professional situations are hidden by default and found by search (issue #1139).
 
 ---
 
