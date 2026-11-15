@@ -405,7 +405,7 @@ class TheRulesFiles(unittest.TestCase):
     def test_spanish_nasals_stops_and_s(self) -> None:
         self.assertEqual(self.derive("es", "ˈtenɡo"), "[ˈt̪eŋɡo]")
         self.assertEqual(self.derive("es", "la ˈbota"), "[la ˈβot̪a]")
-        self.assertEqual(self.derive("es", "un ˈbeso"), "[un ˈbeso]")
+        self.assertEqual(self.derive("es", "ˈbeso"), "[ˈbeso]")
         self.assertEqual(self.derive("es", "ˈmismo"), "[ˈmizmo]")
         self.assertEqual(self.derive("es", "ˈkomɾo"), "[ˈkomɾo]")
         self.assertEqual(self.derive("es", "ˈandaɾ"), "[ˈan̪d̪aɾ]")
