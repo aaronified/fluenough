@@ -1,0 +1,58 @@
+schema: 1
+id: "mr-en-journey-sentences"
+kind: "layer"
+core: "mr-journey-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Travel words in sentences"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-6013":
+    native: "The train will be late."
+    bases: { "गाडीला": "for the train", "होणार": "will be", "आहे": "is" }
+    confusables: { "w1": { why: "On time, not late: वेळेवर (veḷevar) means on time." }, "f1": { why: "Past: झाला (jhālā) means happened; होणार (hoṇār) is future." } }
+  "mr-6014":
+    native: "The visa will expire tomorrow."
+    bases: { "व्हिसाची": "of the visa", "संपेल": "will end" }
+    confusables: { "w1": { why: "Passport, not visa: पासपोर्ट (pāsporṭ) is the travel book." }, "f1": { why: "Past: संपली (sampali) means ended; संपेल (sampel) is future." } }
+  "mr-6015":
+    native: "Where is the stop?"
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "Route, not stop: मार्ग (mārg) means route." }, "f1": { why: "Plural: आहेत (āhet) is for more than one stop; थांबा (thāmbā) is one stop." } }
+  "mr-6016":
+    native: "I will travel by train tomorrow."
+    bases: { "ट्रेनने": "by train", "करेन": "will do" }
+    confusables: { "w1": { why: "Aeroplane, not train: विमान (vimān) means aeroplane." }, "f1": { why: "Present: करतो (karto) is now; करेन (karen) is future." } }
+  "mr-6017":
+    native: "The plane will take off tomorrow."
+    bases: { "उडेल": "will take off" }
+    confusables: { "w1": { why: "Delay, not take-off: उशीर (uśir) means delay." }, "f1": { why: "Past: उडालं (uḍālam̐) means took off; उडेल (uḍel) is future." } }
+  "mr-6018":
+    native: "Is your booking done?"
+    bases: { "तुमचे": "your", "झाले": "was done" }
+    confusables: { "w1": { why: "Cancelled, not booked: रद्द (radd) means cancelled." }, "f1": { why: "Feminine: झाली (jhāli) agrees with a feminine noun; आरक्षण (ārakṣaṇ) is neuter, so झाले (jhāle)." } }
+  "mr-6019":
+    native: "Where is the map?"
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "Road, not map: रस्ता (rastā) means road." }, "f1": { why: "Plural: आहेत (āhet) is for more than one map; नकाशा (nakāśā) is one map." } }
+  "mr-6020":
+    native: "The train stopped on the platform."
+    bases: { "प्लॅटफॉर्मवर": "on the platform", "थांबली": "stopped" }
+    confusables: { "w1": { why: "Stop, the place where a bus or train halts: थांबा (thāmbā) is a place, not an action." }, "f1": { why: "Masculine: थांबला (thāmbalā) fits a masculine noun; गाडी (gāḍi) is feminine, so थांबली (thāmbali)." } }
+  "mr-6021":
+    native: "Do not board the train."
+    bases: { "रेल्वेत": "into the train", "चढू": "board" }
+    confusables: { "w1": { why: "Get off, the opposite: उतरणे (utrṇe) means to get off." }, "f1": { why: "Past: चढला (caḍhlā) means boarded; चढू (caḍhu) नका (nakā) is a warning." } }
+  "mr-6022":
+    native: "Did you make the reservation?"
+    bases: { "केलं": "did" }
+    confusables: { "w1": { why: "Ticket, the paper itself: तिकीट (tikiṭ) is the ticket." }, "f1": { why: "Present: करतो (karto) means do now; केलं (kelam̐) is past." } }
+  "mr-6023":
+    native: "The passengers will arrive tomorrow morning."
+    bases: { "सकाळी": "in the morning", "पोहोचतील": "will arrive" }
+    confusables: { "w1": { why: "Journey, the trip itself, not a traveller: प्रवास (pravās) is the trip." }, "f1": { why: "Past: पोहोचली (pohocli) means arrived; पोहोचतील (pohoctil) is future." } }
+  "mr-6024":
+    native: "Is this route correct?"
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "Map, not route: नकाशा (nakāśā) is a map." }, "f1": { why: "Plural: आहेत (āhet) is for more than one route." } }

@@ -1,0 +1,58 @@
+schema: 1
+id: "mr-en-money-sentences"
+kind: "layer"
+core: "mr-money-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Money words in sentences"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-6063":
+    native: "My earnings rose every month."
+    bases: { "माझी": "my", "महिन्याला": "every month", "वाढली": "rose" }
+    confusables: { "w1": { why: "Spending, not earnings: खर्च (kharc) is money you spend." }, "f1": { why: "Masculine: वाढला (vāḍhlā) fits a masculine noun; कमाई (kamāi) is feminine, so वाढली (vāḍhli)." } }
+  "mr-6064":
+    native: "Cut your spending."
+    bases: { "कमी": "less", "करा": "do" }
+    confusables: { "w1": { why: "Saving, what you keep: बचत (bacat) is money kept, not spent." }, "f1": { why: "Increase: वाढवा (vāḍhvā) is the opposite order." } }
+  "mr-6065":
+    native: "Save a little every month."
+    bases: { "थोडी": "a little", "करा": "do" }
+    confusables: { "w1": { why: "Investment, money put to work: गुंतवणूक (guntavṇuk) is an investment." }, "f1": { why: "Past: केली (keli) means did; करा (karā) is the order." } }
+  "mr-6066":
+    native: "He took a loan for the house."
+    bases: { "त्याने": "he", "घरासाठी": "for the house", "घेतलं": "took" }
+    confusables: { "w1": { why: "Interest, the extra paid on a loan: व्याज (vyāj) is extra money on a loan." }, "f1": { why: "Masculine: घेतला (ghetlā) fits a masculine noun; कर्ज (karj) is neuter, so घेतलं (ghetlam̐)." } }
+  "mr-6067":
+    native: "Repay the loan soon."
+    bases: { "फेडा": "repay" }
+    confusables: { "w1": { why: "Take, the opposite of repay: घ्या (ghyā) means take." }, "f1": { why: "I repay: फेडतो (pheḍto) is a statement; फेडा (pheḍā) is an order." } }
+  "mr-6068":
+    native: "What is the monthly spending?"
+    bases: { "महिन्याचा": "monthly", "आहे": "is" }
+    confusables: { "w1": { why: "Income, money coming in: उत्पन्न (utpanna) is money you receive." }, "f1": { why: "Plural: आहेत (āhet) is for more than one amount; खर्च (kharc) is one amount." } }
+  "mr-6069":
+    native: "Prepare a budget."
+    bases: { "तयार": "ready", "करा": "do" }
+    confusables: { "w1": { why: "Insurance, a policy, not a budget: विमा (vimā) is insurance." }, "f1": { why: "Past: केलं (kelam̐) means did; करा (karā) is the order." } }
+  "mr-6070":
+    native: "Someone paid the insurance instalment."
+    bases: { "विम्याचा": "of insurance", "भरला": "paid" }
+    confusables: { "w1": { why: "Loan, borrowed money, not insurance: कर्ज (karj) is a loan." }, "f1": { why: "Feminine: भरली (bharli) agrees with a feminine noun; हप्ता (haptā) is masculine, so भरला (bharlā)." } }
+  "mr-6071":
+    native: "His salary is good."
+    bases: { "त्याचे": "his", "चांगले": "good", "आहे": "is" }
+    confusables: { "w1": { why: "Earnings, all the money you make: कमाई (kamāi) is what you earn in all." }, "w2": { why: "Poor, not well paid: गरीब (garib) means poor." } }
+  "mr-6072":
+    native: "Help people who are unemployed."
+    bases: { "बेरोजगार": "unemployed", "लोकांना": "people", "करा": "do" }
+    confusables: { "w1": { why: "Poor, a different word: गरीब (garib) means poor." }, "w2": { why: "Financial, about money: आर्थिक (ārthik) means money related." } }
+  "mr-6073":
+    native: "There is a financial problem."
+    bases: { "अडचण": "problem", "आहे": "is" }
+    confusables: { "w1": { why: "Profit, money gained, not a problem: नफा (naphā) is profit." }, "f1": { why: "Plural: आहेत (āhet) is for more than one problem; अडचण (aḍcaṇ) is one." } }
+  "mr-6074":
+    native: "The business made a profit."
+    bases: { "व्यापारात": "in the business", "झाला": "happened" }
+    confusables: { "w1": { why: "Spending, the opposite: खर्च (kharc) is spending." }, "f1": { why: "Feminine: झाली (jhāli) agrees with a feminine noun; नफा (naphā) is masculine, so झाला (jhālā)." } }
