@@ -793,7 +793,11 @@ def _transcribe(text: str, lang: str, hint: str | None) -> Transcription:
                     # (ś, ṣ, h, y, r, ḷ, ṟ) it is m: samyōgaṁ (a deliberate
                     # departure from ISO 15919, kept to match the cards). A
                     # hint that types an m or n does not change this.
-                    if nxt in HOMORGANIC:
+                    # Before a vowel it is the consonant m, as in a letter
+                    # name: ఎస్‌ఎంఎస్ esemes.
+                    if k + 1 < len(units) and units[k + 1].kind == "V":
+                        i_iso, i_ipa = "m", "m"
+                    elif nxt in HOMORGANIC:
                         n = HOMORGANIC[nxt]
                         i_iso, i_ipa = n, HOMORGANIC_IPA[n]
                     elif nxt is None or nxt in TE_ANUSVARA_BEFORE:

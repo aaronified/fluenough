@@ -351,9 +351,21 @@ reads "checked N files, M entries, skipped K files". `--all` leaves alone
 entries whose text has no letter of the deck's script (IPA letter cards) and
 words that start with a hyphen (suffixes), and lists them as skipped. After
 `--fix` the scan runs again and prints the differences left. Exit codes:
-`--check` 0 if all match, 1 if any value differs or any entry could not be
-checked; `--fix` 0, or 1 if it refused a value; 2 for a bad directory. Run it on a
-`decks-live` checkout, not on main's frozen `decks/`.
+`--check` 0 if all match, 1 if any value differs, any entry could not be
+checked, or (with `--propagate`) any occurrence or ambiguous word is left; `--fix` 0, or 1 if it refused a value; 2 for a bad directory. Plain `--fix` also corrects the nasals of a value that differs in
+more than its nasals (the rest of the stored value is kept character for
+character; listed as "nasals only"), and a stored ṇḍ for a target with ంద
+(ఉందా) becomes the dental `nd`.
+
+`--propagate` (with `--check` to list, with `--fix` to write) carries the
+corrections to what `--fix` does not read: paradigm `readings: { ... }` maps,
+prose in the `en/` layer, and files with no `part` key. Old readings are taken
+word by word from the readings the run changes and replaced whole, inside
+quoted values only; keys, `ipa`/`phonetic`/`id`/`ref` values and Telugu-script
+runs are never touched. An old word that is also a correct reading of some
+card, that becomes two words, or that is an ASCII word of three letters or
+fewer in English prose is reported as ambiguous and left unchanged. Words that
+occur only in prose, and in no core reading, are not found. Run it on a
 
 ## `import_phonetic.py` and `derive_phonetic.py`
 

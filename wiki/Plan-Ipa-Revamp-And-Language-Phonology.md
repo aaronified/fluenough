@@ -394,7 +394,9 @@ issue's mandate; the owner may veto): before a stop or a nasal the anusvara is
 the nasal of that letter (uṇḍi, saṅgītaṁ, mañci, sampādana); word-final, and
 before s, v or l, it is `ṁ` (annaṁ, māṁsaṁ, annaṁlō); before every other
 letter (ś, ṣ, h, y, r, ḷ, ṟ) it is `m` (samyōgaṁ, samśayaṁ, samhāraṁ,
-samrakṣaṇa). A hint that types an m or n does not change it. A hint with no
+samrakṣaṇa). Before a vowel it is `m` too (added 2026-11-15, #1295): in a
+letter-name word such as ఎస్‌ఎంఎస్ (es-em-es) the ం is the consonant m, so the
+reading is `esemes`, not `eseṁes`. A hint that types an m or n does not change it. A hint with no
 nasal at all still gives `m̐` (unchanged by this change).
 
 **`m` before ś, ṣ, h, y, r, ḷ, ṟ is a deliberate departure from ISO 15919**,
