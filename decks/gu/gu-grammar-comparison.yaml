@@ -1,0 +1,113 @@
+"schema": 1
+"id": "gu-grammar-comparison"
+"part": "core"
+"kind": "rules"
+"language":
+  "code": "gu"
+  "iso639_3": "guj"
+  "name": "Gujarati"
+  "script": "gujarati"
+  "tts": "gu-IN"
+  "icon": "ગુ"
+"license": "CC-BY-SA-4.0"
+"tags":
+- "grammar"
+- "unreviewed"
+"table":
+  "applies_to":
+    "pos":
+    - "adj"
+    "except": []
+  "slots":
+  - "comparative"
+  - "superlative"
+  "rows":
+  - "word": "gu-0571"
+    "forms":
+      "comparative": "વધારે તીખું"
+      "superlative": "સૌથી તીખું"
+    "readings":
+      "comparative": "vadhāre tikhum̐"
+      "superlative": "sauthi tikhum̐"
+  - "word": "gu-0572"
+    "forms":
+      "comparative": "વધારે ગળ્યું"
+      "superlative": "સૌથી ગળ્યું"
+    "readings":
+      "comparative": "vadhāre gaḷyum̐"
+      "superlative": "sauthi gaḷyum̐"
+  - "word": "gu-0691"
+    "forms":
+      "comparative": "વધારે સારું"
+      "superlative": "સૌથી સારું"
+    "readings":
+      "comparative": "vadhāre sāru"
+      "superlative": "sauthi sāru"
+  - "word": "gu-0377"
+    "forms":
+      "comparative": "વધારે મોંઘું"
+      "superlative": "સૌથી મોંઘું"
+    "readings":
+      "comparative": "vadhāre moṅghum̐"
+      "superlative": "sauthi moṅghum̐"
+  - "word": "gu-0378"
+    "forms":
+      "comparative": "વધારે સસ્તું"
+      "superlative": "સૌથી સસ્તું"
+    "readings":
+      "comparative": "vadhāre sastum̐"
+      "superlative": "sauthi sastum̐"
+  - "word": "gu-0637"
+    "forms":
+      "comparative": "વધારે મસ્ત"
+      "superlative": "સૌથી મસ્ત"
+    "readings":
+      "comparative": "vadhāre mast"
+      "superlative": "sauthi mast"
+  - "word": "gu-0646"
+    "forms":
+      "comparative": "વધારે ગાંડો"
+      "superlative": "સૌથી ગાંડો"
+    "readings":
+      "comparative": "vadhāre gāṇḍo"
+      "superlative": "sauthi gāṇḍo"
+  - "word": "gu-2633"
+    "forms":
+      "comparative": "વધારે મુશ્કેલ"
+      "superlative": "સૌથી મુશ્કેલ"
+    "readings":
+      "comparative": "vadhāre muśkel"
+      "superlative": "sauthi muśkel"
+  - "word": "gu-2710"
+    "forms":
+      "comparative": "વધારે ઉત્સાહી"
+      "superlative": "સૌથી ઉત્સાહી"
+    "readings":
+      "comparative": "vadhāre utsāhi"
+      "superlative": "sauthi utsāhi"
+  - "word": "gu-2711"
+    "forms":
+      "comparative": "વધારે શોખીન"
+      "superlative": "સૌથી શોખીન"
+    "readings":
+      "comparative": "vadhāre śokhin"
+      "superlative": "sauthi śokhin"
+  - "word": "gu-2712"
+    "forms":
+      "comparative": "વધારે નવરું"
+      "superlative": "સૌથી નવરું"
+    "readings":
+      "comparative": "vadhāre navarum̐"
+      "superlative": "sauthi navarum̐"
+"rules":
+- "id": "gu-rule-comparison"
+  "slots":
+  - "comparative"
+  - "superlative"
+  "words":
+  - "word": "વધારે"
+    "reading": "vadhāre"
+  - "word": "સૌથી"
+    "reading": "sauthi"
+  - "word": "કરતાં"
+    "reading": "karatām̐"

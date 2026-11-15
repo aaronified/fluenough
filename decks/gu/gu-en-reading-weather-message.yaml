@@ -1,0 +1,66 @@
+schema: 1
+id: gu-en-reading-weather-message
+name: "Reading: A message about the monsoon"
+kind: reading
+language: { code: gu, iso639_3: guj, name: Gujarati, script: gujarati, tts: gu-IN, icon: "ગુ" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck, and released under CC BY-SA 4.0"
+description: "A short message from a friend about the monsoon, written for this deck and released under CC BY-SA 4.0, not quoted from any source: the rain, the sun, the cold at night and the rain to come. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "gu-weather-message"
+    title: "A message about the monsoon"
+    theme: "weather"
+    sentences:
+      - text: "પ્રિય મિત્ર, અહીં ચોમાસું શરૂ થયું છે."
+        reading: "priy mitra, ahim̐ comāsum̐ śaru thayum̐ che."
+        ipa: "prij mit̪rə əɦĩ tʃomasũ ʃəru t̪ʰəjũ tʃʰe"
+      - text: "રોજ બપોરે ભારે વરસાદ પડે છે."
+        reading: "roj bapore bhāre varsād paḍe che."
+        ipa: "rodʒ bəpore bʱare ʋərsad̪ pəɖe tʃʰe"
+      - text: "સવારે તડકો હોય છે, પણ પછી વાદળ આવે છે."
+        reading: "savāre taḍko hoy che, paṇ pachi vādaḷ āve che."
+        ipa: "səʋare t̪əɖko ɦoj tʃʰe pəɳ pətʃʰi ʋad̪əɭ aʋe tʃʰe"
+      - text: "રાત્રે ઠંડી પડે છે અને હવા સારી લાગે છે."
+        reading: "rātre ṭhaṇḍi paḍe che ane havā sāri lāge che."
+        ipa: "rat̪re ʈʰəɳɖi pəɖe tʃʰe əne ɦəʋa sari laɡe tʃʰe"
+      - text: "કાલે ફરી વરસાદ આવશે."
+        reading: "kāle phari varsād āvśe."
+        ipa: "kale pʰəri ʋərsad̪ aʋʃe"
+    glossary:
+      - { word: "પ્રિય", modern: "પ્રિય", reading: "priy", ipa: "prij", meaning: { en: "dear" } }
+      - { word: "મિત્ર", modern: "મિત્ર", reading: "mitra", ipa: "mit̪rə", meaning: { en: "friend" } }
+      - { word: "શરૂ", modern: "શરૂ", reading: "śaru", ipa: "ʃəru", meaning: { en: "begun, started" } }
+      - { word: "થયું", modern: "થયું", reading: "thayum̐", ipa: "t̪ʰəjũ", meaning: { en: "has happened, has started" } }
+      - { word: "છે", modern: "છે", reading: "che", ipa: "tʃʰe", meaning: { en: "is" } }
+      - { word: "રોજ", modern: "રોજ", reading: "roj", ipa: "rodʒ", meaning: { en: "every day" } }
+      - { word: "બપોરે", modern: "બપોરે", reading: "bapore", ipa: "bəpore", meaning: { en: "in the afternoon" } }
+      - { word: "પડે", modern: "પડે", reading: "paḍe", ipa: "pəɖe", meaning: { en: "falls, comes down" } }
+      - { word: "સવારે", modern: "સવારે", reading: "savāre", ipa: "səʋare", meaning: { en: "in the morning" } }
+      - { word: "હોય", modern: "હોય", reading: "hoy", ipa: "ɦoj", meaning: { en: "is (usually)" } }
+      - { word: "પછી", modern: "પછી", reading: "pachi", ipa: "pətʃʰi", meaning: { en: "then, after that" } }
+      - { word: "આવે", modern: "આવે", reading: "āve", ipa: "aʋe", meaning: { en: "comes" } }
+      - { word: "રાત્રે", modern: "રાત્રે", reading: "rātre", ipa: "rat̪re", meaning: { en: "at night" } }
+      - { word: "સારી", modern: "સારી", reading: "sāri", ipa: "sari", meaning: { en: "good" } }
+      - { word: "લાગે", modern: "લાગે", reading: "lāge", ipa: "laɡe", meaning: { en: "feels" } }
+      - { word: "ફરી", modern: "ફરી", reading: "phari", ipa: "pʰəri", meaning: { en: "again" } }
+      - { word: "આવશે", modern: "આવશે", reading: "āvśe", ipa: "aʋʃe", meaning: { en: "will come" } }
+    questions:
+      - id: "gu-2053"
+        prompt: { en: "When does the heavy rain fall?" }
+        options:
+          - { en: "In the morning" }
+          - { en: "In the afternoon" }
+          - { en: "At night" }
+        answer: 2
+      - id: "gu-2054"
+        prompt: { en: "The sun shines all day with no clouds." }
+        answer: false
+      - id: "gu-2055"
+        prompt: { en: "What feels good at night?" }
+        options:
+          - { en: "The air" }
+          - { en: "The rain" }
+          - { en: "The sun" }
+        answer: 1
