@@ -1,0 +1,53 @@
+schema: 1
+id: "mr-en-clothes-sentences"
+kind: "layer"
+core: "mr-clothes-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with clothes and colours"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the words of the clothes unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-5344":
+    native: "My shirt is blue."
+    bases: { "माझा": "my", "आहे": "is" }
+    confusables: { "f1": { why: "निळी (niḷi) is feminine, and शर्ट (śarṭ) is masculine." }, "w1": { why: "हिरवा (hirvā) means green, not blue." } }
+  "mr-5345":
+    native: "That sari is red."
+    bases: { "आहे": "is" }
+    confusables: { "f1": { why: "आहेत (āhet) is for more than one thing; this sentence has one sari." }, "w1": { why: "पांढरा (pāṇḍharā) means white, not red." } }
+  "mr-5346":
+    native: "This kurta is big."
+    bases: { "आहे": "is" }
+    confusables: { "f1": { why: "मोठी (moṭhi) is feminine; कुर्ता (kurtā) is masculine." }, "w1": { why: "लहान (lahān) means small, the opposite." } }
+  "mr-5347":
+    native: "He buys new boots."
+    bases: { "घेतो": "buys; takes" }
+    confusables: { "f1": { why: "घेते (ghete) is for a woman; तो (to) is a man." }, "w1": { why: "चप्पल (cappal) is a sandal, not a boot." } }
+  "mr-5348":
+    native: "The socks and the sweater are in the cupboard."
+    bases: { "आहेत": "are" }
+    confusables: { "f1": { why: "आहे (āhe) is for one thing; here there are two things." }, "w1": { why: "बाहेर (bāher) means outside; the sentence says in the cupboard." } }
+  "mr-5349":
+    native: "A white shirt and black trousers."
+    confusables: { "f1": { why: "काळा (kāḷā) is for a masculine noun; पँट (pam̐ṭ) is feminine." }, "w1": { why: "पिवळा (pivḷā) means yellow, not black." } }
+  "mr-5350":
+    native: "This ring is pink."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "निळा (niḷā) means blue, not pink." }, "w2": { why: "काळा (kāḷā) means black, not pink." } }
+  "mr-5351":
+    native: "The handkerchief is in the pocket."
+    bases: { "खिशात": "in the pocket", "आहे": "is" }
+    confusables: { "w1": { why: "बेल्ट (belṭ) is a belt, not a handkerchief." }, "w2": { why: "अंगठी (aṅgaṭhi) is a ring, not a handkerchief." } }
+  "mr-5352":
+    native: "Where did you put the scarf?"
+    bases: { "कुठे": "where" }
+    confusables: { "f1": { why: "ठेवले (ṭhevle) is for a neuter noun, and ओढणी (oḍhṇi) is feminine." }, "w1": { why: "सापडली (sāpḍali) means was found; the sentence asks where it was put." } }
+  "mr-5353":
+    native: "Wear the jacket and the coat in the cold."
+    bases: { "घाला": "wear; put on" }
+    confusables: { "f1": { why: "घाल (ghāl) is the informal order, said to a child or a friend." }, "w1": { why: "ओढणी (oḍhṇi) is a scarf, a different piece of clothing." } }
+  "mr-5354":
+    native: "The colour of my socks is green."
+    bases: { "माझ्या": "my", "आहे": "is" }
+    confusables: { "f1": { why: "हिरवी (hirvi) is feminine, and रंग (raṅg) is masculine." }, "w1": { why: "पिवळा (pivḷā) means yellow, not green." } }
