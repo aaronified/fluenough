@@ -1,0 +1,205 @@
+# Topics a learner of Mandarin Chinese would search for: what each one is, and the decks that teach it (wiki/Plan-Deck-Kinds-And-Topics.md, D6).
+# A script topic lists its characters; a topic holds no card text of its own.
+schema: 1
+kind: "topics"
+id: "zh-topics"
+language: "zh"
+license: "CC-BY-SA-4.0"
+topics:
+  - id: "zh-pinyin"
+    name: { en: "Pinyin" }
+    summary: { en: "The romanisation of Mandarin Chinese: the letters that spell its sounds, how tone marks are written over them, and how syllables are spelled." }
+    term: { text: "拼音", reading: "pīnyīn" }
+    kind: "script"
+    level: "A1"
+    decks: ["zh-pinyin", "zh-grammar-pinyin-spelling"]
+    grammar: ["pinyin-spelling"]
+  - id: "zh-tones"
+    name: { en: "Tones" }
+    summary: { en: "The four tones and the neutral tone, which change the meaning of a syllable, and the tone changes that happen when two third tones meet." }
+    term: { text: "声调", reading: "shēngdiào" }
+    kind: "script"
+    level: "A1"
+    decks: ["zh-tones", "zh-grammar-tone-sandhi"]
+    grammar: ["tone-sandhi"]
+  - id: "zh-strokes-radicals"
+    name: { en: "Strokes and radicals" }
+    summary: { en: "The strokes that make up a character, the order in which they are written, and the radicals that group characters by their meaning." }
+    term: { text: "笔画", reading: "bǐhuà" }
+    kind: "script"
+    level: "A1"
+    decks: ["zh-strokes-radicals"]
+    script_units: ["strokes", "stroke-order", "radicals"]
+    chars: ["口", "水", "手", "木", "日", "月", "火", "山", "心", "子"]
+  - id: "zh-characters-1"
+    name: { en: "Basic characters, set 1" }
+    summary: { en: "The first set of basic characters, in simplified form, each with its reading and the words that use it." }
+    kind: "script"
+    level: "A1"
+    decks: ["zh-characters-1"]
+    chars: ["大", "小", "们", "千", "万", "国", "学", "生", "师", "中"]
+  - id: "zh-characters-2"
+    name: { en: "Basic characters, set 2" }
+    summary: { en: "The second set of basic characters, in simplified form, each with its reading and the words that use it." }
+    kind: "script"
+    level: "A1"
+    decks: ["zh-characters-2"]
+    chars: ["星", "周", "店", "城", "市", "园", "院", "房", "馆", "场"]
+  - id: "zh-characters-3"
+    name: { en: "Basic characters, set 3" }
+    summary: { en: "The third set of basic characters, in simplified form, each with its reading and the words that use it." }
+    kind: "script"
+    level: "A2"
+    decks: ["zh-characters-3"]
+    chars: ["入", "出", "轨", "线", "台", "道", "检", "厅", "候", "迟"]
+  - id: "zh-characters-4"
+    name: { en: "Basic characters, set 4" }
+    summary: { en: "The fourth set of basic characters, in simplified form, each with its reading and the words that use it." }
+    kind: "script"
+    level: "A2"
+    decks: ["zh-characters-4"]
+    chars: ["室", "医", "公", "司", "语", "文", "报", "银", "身", "体"]
+  - id: "zh-characters-5"
+    name: { en: "Basic characters, set 5" }
+    summary: { en: "The fifth set of basic characters, in simplified form, each with its reading and the words that use it." }
+    kind: "script"
+    level: "B1"
+    decks: ["zh-characters-5"]
+    chars: ["闻", "视", "播", "讯", "政", "府", "济", "业", "布", "版"]
+  - id: "zh-characters-6"
+    name: { en: "Basic characters, set 6" }
+    summary: { en: "The sixth set of basic characters, in simplified form, each with its reading and the words that use it." }
+    kind: "script"
+    level: "B1"
+    decks: ["zh-characters-6"]
+    chars: ["议", "员", "团", "队", "作", "料", "资", "告", "务", "职"]
+  - id: "zh-characters-7"
+    name: { en: "Basic characters, set 7" }
+    summary: { en: "The seventh set of basic characters, in simplified form, each with its reading and the words that use it." }
+    kind: "script"
+    level: "B1"
+    decks: ["zh-characters-7"]
+    chars: ["经", "社", "会", "化", "环", "境", "保", "护", "展", "决"]
+  - id: "zh-word-order"
+    name: { en: "Word order, and be, have and location" }
+    summary: { en: "The order of a basic sentence, where time and place go, and the patterns with shi (is), you (have) and zai (be at)." }
+    term: { text: "语序", reading: "yǔxù" }
+    kind: "grammar"
+    level: "A1"
+    decks: ["zh-grammar-svo", "zh-grammar-time-place-order", "zh-grammar-shi", "zh-grammar-you", "zh-grammar-zai-location"]
+    grammar: ["svo", "time-place-order", "shi", "you", "zai-location"]
+  - id: "zh-questions-negation"
+    name: { en: "Questions and negation" }
+    summary: { en: "How to ask questions with ma, with question words, with the A-not-A form and with haishi (or), and how to say no with bu and mei." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["zh-grammar-question-ma", "zh-grammar-question-words", "zh-grammar-a-not-a", "zh-grammar-haishi-huozhe", "zh-grammar-rhetorical-questions", "zh-grammar-bu-negation", "zh-grammar-mei-you"]
+    grammar: ["question-ma", "question-words", "a-not-a", "haishi-huozhe", "rhetorical-questions", "bu-negation", "mei-you"]
+  - id: "zh-measure-de"
+    name: { en: "Measure words and the particle de" }
+    summary: { en: "The measure words that stand between a number or this and a noun, and the particle de that joins a possessor, a describing word or a clause to a noun." }
+    term: { text: "量词", reading: "liàngcí" }
+    kind: "grammar"
+    level: "A1"
+    decks: ["zh-grammar-measure-ge", "zh-grammar-number-measure-noun", "zh-grammar-zhe-na-measure", "zh-grammar-measure-words-common", "zh-grammar-de-possessive", "zh-grammar-de-attributive", "zh-grammar-de-relative-clause", "zh-grammar-de-adverbial"]
+    grammar: ["measure-ge", "number-measure-noun", "zhe-na-measure", "measure-words-common", "de-possessive", "de-attributive", "de-relative-clause", "de-adverbial"]
+  - id: "zh-describing-comparing"
+    name: { en: "Describing and comparing" }
+    summary: { en: "How an adjective works as the predicate of a sentence, how reduplication softens it, and how to compare things with bi and with mei-you." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["zh-grammar-adjective-predicate", "zh-grammar-hen-adjective", "zh-grammar-adjective-reduplication", "zh-grammar-bi", "zh-grammar-gen-yiyang", "zh-grammar-mei-you-comparison"]
+    grammar: ["adjective-predicate", "hen-adjective", "adjective-reduplication", "bi", "gen-yiyang", "mei-you-comparison"]
+  - id: "zh-aspect-emphasis"
+    name: { en: "Aspect particles and emphasis" }
+    summary: { en: "The small words that show whether an action is done, changed, tried before or still going on, and the shi-de pattern that stresses when, how or by whom." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["zh-grammar-le-completed", "zh-grammar-le-change-of-state", "zh-grammar-guo-experience", "zh-grammar-zhe-continuous", "zh-grammar-zai-progressive", "zh-grammar-zhengzai-ne", "zh-grammar-le-guo-zhe", "zh-grammar-shi-de"]
+    grammar: ["le-completed", "le-change-of-state", "guo-experience", "zhe-continuous", "zai-progressive", "zhengzai-ne", "le-guo-zhe", "shi-de"]
+  - id: "zh-verb-complements"
+    name: { en: "Verb complements" }
+    summary: { en: "Words added after a verb to show its result, direction, degree, possibility, length of time or number of times." }
+    kind: "verbs"
+    level: "A2"
+    decks: ["zh-grammar-result-complement", "zh-grammar-direction-complement", "zh-grammar-compound-direction-complement", "zh-grammar-potential-complement", "zh-grammar-degree-complement", "zh-grammar-duration-complement", "zh-grammar-frequency-ci", "zh-grammar-de-complement"]
+    grammar: ["result-complement", "direction-complement", "compound-direction-complement", "potential-complement", "degree-complement", "duration-complement", "frequency-ci", "de-complement"]
+  - id: "zh-modal-verbs"
+    name: { en: "Wanting, ability and soon" }
+    summary: { en: "How to say want to, can or may, please when asking, and about to happen soon, with the verbs placed before the main verb." }
+    kind: "verbs"
+    level: "A1"
+    decks: ["zh-grammar-xiang-yao", "zh-grammar-hui-neng-keyi", "zh-grammar-polite-requests", "zh-grammar-yao-le"]
+    grammar: ["xiang-yao", "hui-neng-keyi", "polite-requests", "yao-le"]
+  - id: "zh-verb-extensions"
+    name: { en: "Verb extensions and opinions" }
+    summary: { en: "The verb endings qilai, xiaqu and chulai, verbs said twice, the I-think pattern and reported speech." }
+    kind: "verbs"
+    level: "A2"
+    decks: ["zh-grammar-qilai", "zh-grammar-xiaqu", "zh-grammar-chulai", "zh-grammar-verb-reduplication", "zh-grammar-juede-renwei", "zh-grammar-ting-shuo"]
+    grammar: ["qilai", "xiaqu", "chulai", "verb-reduplication", "juede-renwei", "ting-shuo"]
+  - id: "zh-ba-bei"
+    name: { en: "The ba and bei patterns" }
+    summary: { en: "The ba pattern, which moves the object before the verb to say what is done to it, and the bei pattern for passive sentences, with the difference between them." }
+    term: { text: "把", reading: "bǎ" }
+    kind: "grammar"
+    level: "A1"
+    decks: ["zh-grammar-ba-construction", "zh-grammar-ba-suggestion", "zh-grammar-ba-with-complements", "zh-grammar-ba-bei-contrast", "zh-grammar-bei-passive"]
+    grammar: ["ba-construction", "ba-suggestion", "ba-with-complements", "ba-bei-contrast", "bei-passive"]
+  - id: "zh-connectors"
+    name: { en: "Connecting words" }
+    summary: { en: "Pairs and single words that join clauses: because and so, although and but, if and then, even if, no matter, both and also, even, first and then, and as soon as." }
+    kind: "grammar"
+    level: "A2"
+    decks: ["zh-grammar-yinwei-suoyi", "zh-grammar-suiran-danshi", "zh-grammar-ruguo-jiu", "zh-grammar-zhiyao-jiu", "zh-grammar-chufei", "zh-grammar-jishi-ye", "zh-grammar-buguan-dou", "zh-grammar-budan-erqie", "zh-grammar-lian-dou", "zh-grammar-xian-ranhou", "zh-grammar-yi-jiu", "zh-grammar-jiu-cai"]
+    grammar: ["yinwei-suoyi", "suiran-danshi", "ruguo-jiu", "zhiyao-jiu", "chufei", "jishi-ye", "buguan-dou", "budan-erqie", "lian-dou", "xian-ranhou", "yi-jiu", "jiu-cai"]
+  - id: "zh-written-register"
+    name: { en: "Written Chinese" }
+    summary: { en: "The grammar of written and formal Chinese, which differs from speech, such as the written forms of common sentence patterns." }
+    kind: "register"
+    level: "B1"
+    decks: ["zh-grammar-written-register"]
+    grammar: ["written-register"]
+  - id: "zh-people-family"
+    name: { en: "People and relationships" }
+    summary: { en: "Words for family, yourself, how to address people, pronouns, relationships, weddings and appearance." }
+    kind: "words"
+    level: "A1"
+    decks: ["zh-family", "zh-about-me", "zh-addressing", "zh-pronouns", "zh-relationships", "zh-weddings", "zh-appearance"]
+  - id: "zh-food-shopping"
+    name: { en: "Food, shopping and clothes" }
+    summary: { en: "Words for groceries, food, eating out, cooking, markets, shops, clothes and paying for them." }
+    kind: "words"
+    level: "A1"
+    decks: ["zh-groceries", "zh-food", "zh-eating-out", "zh-cooking", "zh-market", "zh-shopping", "zh-clothes"]
+  - id: "zh-travel-places"
+    name: { en: "Travel, places and directions" }
+    summary: { en: "Words for travel, transport, asking the way, journeys, places, locations and geography." }
+    kind: "words"
+    level: "A1"
+    decks: ["zh-travel", "zh-transport", "zh-directions", "zh-journey", "zh-places", "zh-location", "zh-geography"]
+  - id: "zh-work-school"
+    name: { en: "Work, school and society" }
+    summary: { en: "Words for work, workplaces, careers, business, school, university, society, government and law." }
+    kind: "words"
+    level: "A1"
+    decks: ["zh-work", "zh-workplace", "zh-careers", "zh-business", "zh-school", "zh-university", "zh-society", "zh-government", "zh-law"]
+  - id: "zh-numbers-time-money"
+    name: { en: "Numbers, dates, time and money" }
+    summary: { en: "Counting, the calendar, telling the time and prices, with the grammar of dates, clock times and kuai and mao." }
+    kind: "words"
+    level: "A1"
+    decks: ["zh-numbers-1-20", "zh-numbers-big", "zh-time", "zh-calendar", "zh-money", "zh-grammar-clock-time", "zh-grammar-dates", "zh-grammar-money-kuai-mao"]
+    grammar: ["clock-time", "dates", "money-kuai-mao"]
+  - id: "zh-nature-weather"
+    name: { en: "Nature, weather and animals" }
+    summary: { en: "Words for the weather, the seasons, nature, animals and the environment." }
+    kind: "words"
+    level: "A2"
+    decks: ["zh-nature", "zh-weather", "zh-seasons", "zh-animals", "zh-environment"]
+  - id: "zh-home-health"
+    name: { en: "Home, body and health" }
+    summary: { en: "Words for the home and housing, daily life and chores, the body, health, illness and emergencies." }
+    kind: "words"
+    level: "A1"
+    decks: ["zh-home", "zh-housing", "zh-daily-life", "zh-chores", "zh-body", "zh-health", "zh-illness", "zh-emergencies"]
