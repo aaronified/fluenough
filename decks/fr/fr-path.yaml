@@ -489,7 +489,9 @@ units:
       - { id: "ticket-counter", text: { "en": "Buying a train ticket at the counter" } }
     reading_passages:
       - { id: "train-timetable", text: { "en": "A train timetable and a platform notice" } }
-  - planned: { id: "fr-grammar-imparfait", grammar: "imparfait" }
+  - decks: ["fr-grammar-imparfait"]
+    words: 0
+    grammar: ["imparfait"]
     listening_passages:
       - { id: "when-i-was-small", text: { "en": "Telling what you used to do when you were small" } }
     reading_passages:
