@@ -25,9 +25,9 @@ cards:
     rules: ["ja-rule-sonkeigo"]
   - id: "ja-9401"
     target: "ぶちょうはいつおもどりになりますか。"
-    words: ["ぶちょう", "は", "いつ", "おもどりになりますか"]
-    reading: "buchou wa itsu omodorininarimasuka."
-    ipa: "bɯtɕoː wa itsɯ omodoɾininaɾimasɯka"
+    words: ["ぶちょう", "は", "いつ", "おもどりになります", "か"]
+    reading: "buchou wa itsu omodorininarimasu ka."
+    ipa: "bɯtɕoː wa itsɯ omodoɾininaɾimasɯ ka"
     pos: "phrase"
     notes:
       - { id: "n1", kind: "usage" }
@@ -35,7 +35,8 @@ cards:
       - { word: "ぶちょう", ref: "ja-0712" }
       - { word: "は", base: "は", reading: "wa" }
       - { word: "いつ", ref: "ja-0111" }
-      - { word: "おもどりになりますか", base: "もどる", reading: "modoru" }
+      - { word: "おもどりになります", ref: "ja-0588" }
+      - { word: "か", base: "か", reading: "ka" }
     confusables:
       - { id: "w1", ref: "ja-0348", kind: "word" }
       - { id: "w2", ref: "ja-0353", kind: "word" }
@@ -180,9 +181,9 @@ cards:
     rules: ["ja-rule-sonkeigo"]
   - id: "ja-9410"
     target: "おきゃくさまはなにをめしあがりますか。"
-    words: ["おきゃくさま", "は", "なに", "を", "めしあがりますか"]
-    reading: "okyakusama wa nani o meshiagarimasuka."
-    ipa: "okjakɯsama wa nani o meɕiaɡaɾimasɯka"
+    words: ["おきゃくさま", "は", "なに", "を", "めしあがります", "か"]
+    reading: "okyakusama wa nani o meshiagarimasu ka."
+    ipa: "okjakɯsama wa nani o meɕiaɡaɾimasɯ ka"
     pos: "phrase"
     notes:
       - { id: "n1", kind: "behaviour" }
@@ -191,7 +192,8 @@ cards:
       - { word: "は", base: "は", reading: "wa" }
       - { word: "なに", ref: "ja-0109" }
       - { word: "を", base: "を", reading: "o" }
-      - { word: "めしあがりますか", base: "めしあがる", reading: "meshiagaru" }
+      - { word: "めしあがります", base: "めしあがる", reading: "meshiagaru" }
+      - { word: "か", base: "か", reading: "ka" }
     confusables:
       - { id: "w1", ref: "ja-0348", kind: "word" }
       - { id: "w2", ref: "ja-0364", kind: "word" }
