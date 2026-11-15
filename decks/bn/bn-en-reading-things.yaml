@@ -1,0 +1,91 @@
+schema: 1
+id: "bn-en-reading-things"
+name: "Reading: things around you"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Short passages, one to be heard and one to be read, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-packing-for-a-trip"
+    title: "Packing a bag"
+    theme: "things"
+    sentences:
+      - { text: "ব্যাগে জামা রাখো।", reading: "bêge jāmā rākho.", ipa: "bæɡe dʒama rakʰo" }
+      - { text: "ছাতা নাও।", reading: "chātā nāo.", ipa: "tʃʰat̪a nao" }
+      - { text: "চশমা কোথায়?", reading: "côśmā kothāy?", ipa: "tʃɔʃma kot̪ʰaj" }
+      - { text: "চশমা বাক্সে।", reading: "côśmā bākśe.", ipa: "tʃɔʃma bakʃe" }
+      - { text: "ঠিক। চলো।", reading: "ṭhik. côlo.", ipa: "ʈʰik tʃɔlo" }
+    questions:
+      - id: "bn-5356"
+        prompt: { en: "The speaker tells the other person to put clothes in the bag." }
+        answer: true
+      - id: "bn-5357"
+        prompt: { en: "Where are the glasses?" }
+        options: [{ en: "ব্যাগে (bêge)" }, { en: "বাক্সে (bākśe)" }]
+        answer: 2
+      - id: "bn-5358"
+        prompt: { en: "The speaker asks where the umbrella is." }
+        answer: false
+  - id: "bn-kitchen-help"
+    title: "Help in the kitchen"
+    theme: "things"
+    sentences:
+      - { text: "রান্নাঘরে যাও।", reading: "rānnāghore jāo.", ipa: "rannaɡʱore dʒao" }
+      - { text: "থালা রাখো।", reading: "thālā rākho.", ipa: "t̪ʰala rakʰo" }
+      - { text: "জল গরম করো।", reading: "jôl gôrom kôro.", ipa: "dʒɔl ɡɔrom kɔro" }
+      - { text: "চা পাতা দাও।", reading: "cā pātā dāo.", ipa: "tʃa pat̪a d̪ao" }
+      - { text: "চিনি এখানে।", reading: "cini ekhāne.", ipa: "tʃini ekʰane" }
+    questions:
+      - id: "bn-5359"
+        prompt: { en: "The helper is asked to go to the kitchen." }
+        answer: true
+      - id: "bn-5360"
+        prompt: { en: "What must be heated?" }
+        options: [{ en: "জল (jôl)" }, { en: "চিনি (cini)" }]
+        answer: 1
+      - id: "bn-5361"
+        prompt: { en: "The speaker asks for milk." }
+        answer: false
+  - id: "bn-lost-property-list"
+    title: "Lost property at the station"
+    theme: "things"
+    sentences:
+      - { text: "ব্যাগ: এক।", reading: "bêg: ek.", ipa: "bæɡ ek" }
+      - { text: "ছাতা: এক।", reading: "chātā: ek.", ipa: "tʃʰat̪a ek" }
+      - { text: "বই: দুই।", reading: "boi: dui.", ipa: "boi d̪ui" }
+      - { text: "চশমা: এক।", reading: "côśmā: ek.", ipa: "tʃɔʃma ek" }
+      - { text: "মোবাইল ফোন: এক।", reading: "mobāil phon: ek.", ipa: "mobail pʰon ek" }
+    questions:
+      - id: "bn-5362"
+        prompt: { en: "There are two books." }
+        answer: true
+      - id: "bn-5363"
+        prompt: { en: "Which item has two of them?" }
+        options: [{ en: "ছাতা (chātā)" }, { en: "বই (boi)" }]
+        answer: 2
+      - id: "bn-5364"
+        prompt: { en: "There are two mobile phones." }
+        answer: false
+  - id: "bn-how-to-make-tea"
+    title: "How to make tea"
+    theme: "things"
+    sentences:
+      - { text: "জল গরম করো।", reading: "jôl gôrom kôro.", ipa: "dʒɔl ɡɔrom kɔro" }
+      - { text: "চা পাতা দাও।", reading: "cā pātā dāo.", ipa: "tʃa pat̪a d̪ao" }
+      - { text: "পাঁচ মিনিট রাখো।", reading: "pām̐c miniṭ rākho.", ipa: "pãtʃ miniʈ rakʰo" }
+      - { text: "দুধ আর চিনি দাও।", reading: "dudh ār cini dāo.", ipa: "d̪ud̪ʱ ar tʃini d̪ao" }
+      - { text: "পরে গ্লাসে ঢালো।", reading: "pôre glāse ḍhālo.", ipa: "pɔre ɡlase ɖʱalo" }
+    questions:
+      - id: "bn-5365"
+        prompt: { en: "You heat the water first." }
+        answer: true
+      - id: "bn-5366"
+        prompt: { en: "How long do you keep the tea?" }
+        options: [{ en: "পাঁচ মিনিট (pām̐c miniṭ)" }, { en: "দশ মিনিট (dôś miniṭ)" }]
+        answer: 1
+      - id: "bn-5367"
+        prompt: { en: "The card says to add salt." }
+        answer: false

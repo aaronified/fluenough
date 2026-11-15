@@ -1,0 +1,52 @@
+schema: 1
+id: "bn-en-reading-body"
+name: "Reading: the body"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Short passages, one to be heard and one to be read, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-at-the-doctors"
+    title: "Telling where it hurts"
+    theme: "body"
+    sentences:
+      - { text: "আমার পিঠে কী হয়েছে?", reading: "āmār piṭhe ki hôyeche?", ipa: "amar piʈʰe ki ɦɔjetʃʰe" }
+      - { text: "আমার হাঁটুতে কী হয়েছে?", reading: "āmār hām̐ṭute ki hôyeche?", ipa: "amar ɦãʈut̪e ki ɦɔjetʃʰe" }
+      - { text: "আপনার আঙুলে কী হয়েছে?", reading: "āpnār āṅule ki hôyeche?", ipa: "apnar aŋule ki ɦɔjetʃʰe" }
+      - { text: "আপনি মুখ খুলুন।", reading: "āpni mukh khulun.", ipa: "apni mukʰ kʰulun" }
+      - { text: "আপনার শরীর কেমন?", reading: "āpnār śorir kemon?", ipa: "apnar ʃorir kemon" }
+    questions:
+      - id: "bn-5324"
+        prompt: { en: "Someone asks what has happened to the speaker's back." }
+        answer: true
+      - id: "bn-5325"
+        prompt: { en: "Which word means 'knee'?" }
+        options: [{ en: "কান (kān)" }, { en: "হাঁটু (hām̐ṭu)" }]
+        answer: 2
+      - id: "bn-5326"
+        prompt: { en: "What does the speaker tell the listener to do?" }
+        options: [{ en: "Open the mouth" }, { en: "Close the eyes" }]
+        answer: 1
+  - id: "bn-stretching-chart"
+    title: "A chart for slow morning movements"
+    theme: "body"
+    sentences:
+      - { text: "সকালে ধীরে উঠুন।", reading: "sôkāle dhire uṭhun.", ipa: "sɔkale d̪ʱire uʈʰun" }
+      - { text: "ধীরে বসুন।", reading: "dhire bośun.", ipa: "d̪ʱire boʃun" }
+      - { text: "মুখ খুলুন এবং বন্ধ করুন।", reading: "mukh khulun eboṅ bôndho korun.", ipa: "mukʰ kʰulun eboŋ bɔnd̪ʱo korun" }
+      - { text: "শরীর সুস্থ রাখুন।", reading: "śorir sustho rākhun.", ipa: "ʃorir sust̪ʰo rakʰun" }
+    questions:
+      - id: "bn-5327"
+        prompt: { en: "The chart tells the reader to get up slowly." }
+        answer: true
+      - id: "bn-5328"
+        prompt: { en: "Which word means 'body'?" }
+        options: [{ en: "সুস্থ (sustho)" }, { en: "শরীর (śorir)" }]
+        answer: 2
+      - id: "bn-5329"
+        prompt: { en: "What does the chart ask the reader to do with the mouth?" }
+        options: [{ en: "Open it and close it" }, { en: "Wash it" }]
+        answer: 1

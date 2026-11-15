@@ -1,0 +1,51 @@
+schema: 1
+id: "bn-en-reading-phone"
+name: "Reading: phone and messages"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Short passages, one to be heard and one to be read, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-phone-call"
+    title: "Arranging a meeting by phone"
+    theme: "phone"
+    sentences:
+      - { text: "কে কথা বলছেন?", reading: "ke kôthā bôlchen?", ipa: "ke kɔt̪ʰa bɔltʃʰen" }
+      - { text: "আমি তোমার মেসেজ পেয়েছি।", reading: "āmi tomār mesej peyechi.", ipa: "ami t̪omar mesedʒ pejetʃʰi" }
+      - { text: "কাল কখন দেখা হবে?", reading: "kāl kôkhon dekhā hôbe?", ipa: "kal kɔkʰon d̪ekʰa ɦɔbe" }
+      - { text: "আমি বিকেলে আসব।", reading: "āmi bikele āśbo.", ipa: "ami bikele aʃbo" }
+      - { text: "ঠিক আছে, পরে ফোন করব।", reading: "ṭhik āche, pôre phon kôrbo.", ipa: "ʈʰik atʃʰe pɔre pʰon kɔrbo" }
+    questions:
+      - id: "bn-5500"
+        prompt: { en: "The speaker has received a message." }
+        answer: true
+      - id: "bn-5501"
+        prompt: { en: "When will the speaker come?" }
+        options: [{ en: "In the morning" }, { en: "In the afternoon" }]
+        answer: 2
+      - id: "bn-5502"
+        prompt: { en: "The speaker will call right now." }
+        answer: false
+  - id: "bn-text-messages"
+    title: "Text messages between friends"
+    theme: "phone"
+    sentences:
+      - { text: "তুমি এখন কোথায়?", reading: "tumi ekhon kothāy?", ipa: "t̪umi ekʰon kot̪ʰaj" }
+      - { text: "আমি বাসে আছি।", reading: "āmi bāśe āchi.", ipa: "ami baʃe atʃʰi" }
+      - { text: "ফোনের ব্যাটারি কম, চার্জার আনো।", reading: "phoner bêṭāri kôm, cārjār āno.", ipa: "pʰoner bæʈari kɔm tʃardʒar ano" }
+      - { text: "ঠিক আছে, আমি অপেক্ষা করছি।", reading: "ṭhik āche, āmi ôpekkhā kôrchi.", ipa: "ʈʰik atʃʰe ami ɔpekkʰa kɔrtʃʰi" }
+      - { text: "দশ মিনিট পরে কল করো।", reading: "dôś miniṭ pôre kôl kôro.", ipa: "d̪ɔʃ miniʈ pɔre kɔl kɔro" }
+    questions:
+      - id: "bn-5503"
+        prompt: { en: "The phone's battery is low." }
+        answer: true
+      - id: "bn-5504"
+        prompt: { en: "Where is the speaker?" }
+        options: [{ en: "On a bus" }, { en: "At home" }]
+        answer: 1
+      - id: "bn-5505"
+        prompt: { en: "The friend is asked to call back after ten minutes." }
+        answer: true
