@@ -1,0 +1,45 @@
+schema: 1
+id: "fr-grammar-dont"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["sentences", "joined"]
+  entries:
+    - lemma: "livre"
+      ipa: "livʁ"
+      forms:
+        "sentences": "voici le livre. je parle de ce livre."
+        "joined": "voici le livre dont je parle."
+    - lemma: "maison"
+      ipa: "mɛzɔ̃"
+      forms:
+        "sentences": "voici la maison. je rêve de cette maison."
+        "joined": "voici la maison dont je rêve."
+    - lemma: "voiture"
+      ipa: "vwatyʁ"
+      forms:
+        "sentences": "voici la voiture. j'ai besoin de cette voiture."
+        "joined": "voici la voiture dont j'ai besoin."
+    - lemma: "chien"
+      ipa: "ʃjɛ̃"
+      forms:
+        "sentences": "voici le chien. j'ai peur de ce chien."
+        "joined": "voici le chien dont j'ai peur."
+    - lemma: "film"
+      ipa: "film"
+      forms:
+        "sentences": "voici le film. nous parlons de ce film."
+        "joined": "voici le film dont nous parlons."
+    - lemma: "ami"
+      ipa: "ami"
+      forms:
+        "sentences": "c'est un ami. le frère de cet ami habite ici."
+        "joined": "c'est un ami dont le frère habite ici."
+    - lemma: "voisin"
+      ipa: "vwazɛ̃"
+      forms:
+        "sentences": "c'est un voisin. la fille de ce voisin travaille ici."
+        "joined": "c'est un voisin dont la fille travaille ici."

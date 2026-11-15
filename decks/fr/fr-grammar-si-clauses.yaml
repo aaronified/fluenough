@@ -1,0 +1,56 @@
+schema: 1
+id: "fr-grammar-si-clauses"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["si-present", "si-imparfait"]
+  entries:
+    - lemma: "rester"
+      ipa: "ʁɛste"
+      forms:
+        "si-present": "s'il pleut, nous resterons à la maison."
+        "si-imparfait": "s'il pleuvait, nous resterions à la maison."
+    - lemma: "venir"
+      ipa: "vəniʁ"
+      forms:
+        "si-present": "si tu as le temps, tu viendras."
+        "si-imparfait": "si tu avais le temps, tu viendrais."
+    - lemma: "partir"
+      ipa: "paʁtiʁ"
+      forms:
+        "si-present": "si je suis prêt, je partirai."
+        "si-imparfait": "si j'étais prêt, je partirais."
+    - lemma: "acheter"
+      ipa: "aʃte"
+      forms:
+        "si-present": "si j'ai de l'argent, j'achèterai une voiture."
+        "si-imparfait": "si j'avais de l'argent, j'achèterais une voiture."
+    - lemma: "aller"
+      ipa: "ale"
+      forms:
+        "si-present": "s'il fait beau, nous irons au parc."
+        "si-imparfait": "s'il faisait beau, nous irions au parc."
+    - lemma: "dormir"
+      ipa: "dɔʁmiʁ"
+      forms:
+        "si-present": "si nous sommes fatigués, nous dormirons."
+        "si-imparfait": "si nous étions fatigués, nous dormirions."
+    - lemma: "voir"
+      ipa: "vwaʁ"
+      forms:
+        "si-present": "si tu viens, tu verras la mer."
+        "si-imparfait": "si tu venais, tu verrais la mer."
+    - lemma: "être"
+      key: "etre"
+      ipa: "ɛtʁ"
+      forms:
+        "si-present": "si vous êtes là, je serai content."
+        "si-imparfait": "si vous étiez là, je serais content."
+    - lemma: "voyager"
+      ipa: "vwajaʒe"
+      forms:
+        "si-present": "si nous pouvons, nous voyagerons."
+        "si-imparfait": "si nous pouvions, nous voyagerions."

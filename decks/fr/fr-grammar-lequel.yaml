@@ -1,0 +1,67 @@
+schema: 1
+id: "fr-grammar-lequel"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["m-sg", "f-sg", "m-pl", "f-pl"]
+  entries:
+    - lemma: "à"
+      key: "a"
+      ipa: "a"
+      forms:
+        "m-sg": "auquel"
+        "f-sg": "à laquelle"
+        "m-pl": "auxquels"
+        "f-pl": "auxquelles"
+    - lemma: "de"
+      ipa: "də"
+      forms:
+        "m-sg": "duquel"
+        "f-sg": "de laquelle"
+        "m-pl": "desquels"
+        "f-pl": "desquelles"
+    - lemma: "avec"
+      ipa: "avɛk"
+      forms:
+        "m-sg": "avec lequel"
+        "f-sg": "avec laquelle"
+        "m-pl": "avec lesquels"
+        "f-pl": "avec lesquelles"
+    - lemma: "pour"
+      ipa: "puʁ"
+      forms:
+        "m-sg": "pour lequel"
+        "f-sg": "pour laquelle"
+        "m-pl": "pour lesquels"
+        "f-pl": "pour lesquelles"
+    - lemma: "dans"
+      ipa: "dɑ̃"
+      forms:
+        "m-sg": "dans lequel"
+        "f-sg": "dans laquelle"
+        "m-pl": "dans lesquels"
+        "f-pl": "dans lesquelles"
+    - lemma: "sur"
+      ipa: "syʁ"
+      forms:
+        "m-sg": "sur lequel"
+        "f-sg": "sur laquelle"
+        "m-pl": "sur lesquels"
+        "f-pl": "sur lesquelles"
+    - lemma: "sans"
+      ipa: "sɑ̃"
+      forms:
+        "m-sg": "sans lequel"
+        "f-sg": "sans laquelle"
+        "m-pl": "sans lesquels"
+        "f-pl": "sans lesquelles"
+    - lemma: "devant"
+      ipa: "dəvɑ̃"
+      forms:
+        "m-sg": "devant lequel"
+        "f-sg": "devant laquelle"
+        "m-pl": "devant lesquels"
+        "f-pl": "devant lesquelles"

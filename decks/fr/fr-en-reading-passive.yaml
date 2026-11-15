@@ -1,0 +1,79 @@
+schema: 1
+id: "fr-en-reading-passive"
+name: "Reading: what is done: the passive and on"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about what is done by someone, with the passive and with on, in notices and talk. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-it-was-done"
+    title: "It was done"
+    theme: "daily-life"
+    sentences:
+      - text: "La porte est fermée par mon frère."
+        ipa: "la pɔʁt ɛ fɛʁme paʁ mɔ̃ fʁɛʁ"
+      - text: "Le repas est préparé par ma mère."
+        ipa: "lə ʁəpa ɛ pʁepaʁe paʁ ma mɛʁ"
+      - text: "Ici, on parle français."
+        ipa: "isi ɔ̃ paʁl fʁɑ̃sɛ"
+      - text: "On prend le train à six heures."
+        ipa: "ɔ̃ pʁɑ̃ lə tʁɛ̃ a si zœʁ"
+    questions:
+      - id: "fr-3990"
+        prompt: { en: "Who prepared the meal?" }
+        options:
+          - { en: "The mother" }
+          - { en: "The father" }
+          - { en: "The brother" }
+        answer: 1
+      - id: "fr-3991"
+        prompt: { en: "What do people speak here?" }
+        options:
+          - { en: "English" }
+          - { en: "French" }
+          - { en: "Spanish" }
+        answer: 2
+      - id: "fr-3992"
+        prompt: { en: "What did the brother close?" }
+        options:
+          - { en: "The window" }
+          - { en: "The shop" }
+          - { en: "The door" }
+        answer: 3
+  - id: "fr-notice-board"
+    title: "A notice board"
+    theme: "school"
+    sentences:
+      - text: "Les livres sont vendus par ce magasin."
+        ipa: "le livʁ sɔ̃ vɑ̃dy paʁ sə magazɛ̃"
+      - text: "La fête est organisée par l'école."
+        ipa: "la fɛt ɛ tɔʁɡanize paʁ lekɔl"
+      - text: "On mange à midi."
+        ipa: "ɔ̃ mɑ̃ʒ a midi"
+      - text: "L'article est publié par le journal."
+        ipa: "laʁtikl ɛ pyblje paʁ lə ʒuʁnal"
+    questions:
+      - id: "fr-3993"
+        prompt: { en: "Who organises the party?" }
+        options:
+          - { en: "The school" }
+          - { en: "The shop" }
+          - { en: "The newspaper" }
+        answer: 1
+      - id: "fr-3994"
+        prompt: { en: "What is sold by the shop?" }
+        options:
+          - { en: "Bread" }
+          - { en: "Books" }
+          - { en: "Shoes" }
+        answer: 2
+      - id: "fr-3995"
+        prompt: { en: "When do people eat?" }
+        options:
+          - { en: "At night" }
+          - { en: "At breakfast" }
+          - { en: "At midday" }
+        answer: 3

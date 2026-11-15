@@ -1,0 +1,52 @@
+schema: 1
+id: "fr-grammar-qui-que"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["qui", "que"]
+  entries:
+    - lemma: "livre"
+      ipa: "livʁ"
+      forms:
+        "qui": "le livre qui est sur la table"
+        "que": "le livre que je lis"
+    - lemma: "ami"
+      ipa: "ami"
+      forms:
+        "qui": "l'ami qui habite ici"
+        "que": "l'ami que j'attends"
+    - lemma: "voisin"
+      ipa: "vwazɛ̃"
+      forms:
+        "qui": "le voisin qui travaille ici"
+        "que": "le voisin que je connais"
+    - lemma: "gâteau"
+      key: "gateau"
+      ipa: "ɡato"
+      forms:
+        "qui": "le gâteau qui est bon"
+        "que": "le gâteau qu'elle mange"
+    - lemma: "voiture"
+      ipa: "vwatyʁ"
+      forms:
+        "qui": "la voiture qui arrive"
+        "que": "la voiture que j'aime"
+    - lemma: "chat"
+      ipa: "ʃa"
+      forms:
+        "qui": "le chat qui dort"
+        "que": "le chat que je cherche"
+    - lemma: "café"
+      key: "cafe"
+      ipa: "kafe"
+      forms:
+        "qui": "le café qui est chaud"
+        "que": "le café que je bois"
+    - lemma: "maison"
+      ipa: "mɛzɔ̃"
+      forms:
+        "qui": "la maison qui est grande"
+        "que": "la maison que je vois"

@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-grammar-passe-simple-reading"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["il-elle", "ils-elles"]
+  entries:
+    - lemma: "parler"
+      ipa: "paʁle"
+      forms:
+        "il-elle": "il parla"
+        "ils-elles": "ils parlèrent"
+    - lemma: "arriver"
+      ipa: "aʁive"
+      forms:
+        "il-elle": "il arriva"
+        "ils-elles": "ils arrivèrent"
+    - lemma: "aller"
+      ipa: "ale"
+      forms:
+        "il-elle": "il alla"
+        "ils-elles": "ils allèrent"
+    - lemma: "finir"
+      ipa: "finiʁ"
+      forms:
+        "il-elle": "il finit"
+        "ils-elles": "ils finirent"
+    - lemma: "partir"
+      ipa: "paʁtiʁ"
+      forms:
+        "il-elle": "il partit"
+        "ils-elles": "ils partirent"
+    - lemma: "attendre"
+      ipa: "atɑ̃dʁ"
+      forms:
+        "il-elle": "il attendit"
+        "ils-elles": "ils attendirent"
+    - lemma: "être"
+      key: "etre"
+      ipa: "ɛtʁ"
+      forms:
+        "il-elle": "il fut"
+        "ils-elles": "ils furent"
+    - lemma: "avoir"
+      ipa: "avwaʁ"
+      forms:
+        "il-elle": "il eut"
+        "ils-elles": "ils eurent"
+    - lemma: "faire"
+      ipa: "fɛʁ"
+      forms:
+        "il-elle": "il fit"
+        "ils-elles": "ils firent"
+    - lemma: "voir"
+      ipa: "vwaʁ"
+      forms:
+        "il-elle": "il vit"
+        "ils-elles": "ils virent"
+    - lemma: "prendre"
+      ipa: "pʁɑ̃dʁ"
+      forms:
+        "il-elle": "il prit"
+        "ils-elles": "ils prirent"
+    - lemma: "venir"
+      ipa: "vəniʁ"
+      forms:
+        "il-elle": "il vint"
+        "ils-elles": "ils vinrent"

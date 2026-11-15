@@ -1,0 +1,47 @@
+schema: 1
+id: "fr-grammar-passive"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["active", "passive"]
+  entries:
+    - lemma: "fermer"
+      ipa: "fɛʁme"
+      forms:
+        "active": "mon frère ferme la porte."
+        "passive": "la porte est fermée par mon frère."
+    - lemma: "écrire"
+      key: "ecrire"
+      ipa: "ekʁiʁ"
+      forms:
+        "active": "un ami écrit la lettre."
+        "passive": "la lettre est écrite par un ami."
+    - lemma: "préparer"
+      key: "preparer"
+      ipa: "pʁepaʁe"
+      forms:
+        "active": "ma mère prépare le repas."
+        "passive": "le repas est préparé par ma mère."
+    - lemma: "vendre"
+      ipa: "vɑ̃dʁ"
+      forms:
+        "active": "ce magasin vend les livres."
+        "passive": "les livres sont vendus par ce magasin."
+    - lemma: "organiser"
+      ipa: "ɔʁɡanize"
+      forms:
+        "active": "l'école organise la fête."
+        "passive": "la fête est organisée par l'école."
+    - lemma: "publier"
+      ipa: "pyblje"
+      forms:
+        "active": "le journal publie l'article."
+        "passive": "l'article est publié par le journal."
+    - lemma: "inviter"
+      ipa: "ɛ̃vite"
+      forms:
+        "active": "mes amis invitent mon frère."
+        "passive": "mon frère est invité par mes amis."

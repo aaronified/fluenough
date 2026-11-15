@@ -1,0 +1,79 @@
+schema: 1
+id: "fr-en-reading-reported-speech"
+name: "Reading: reported speech: what someone said"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts that pass on what someone said, with que, si, où and de after verbs of saying and asking. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-he-said-that"
+    title: "He said that"
+    theme: "daily-life"
+    sentences:
+      - text: "Elle répond qu'elle vient."
+        ipa: "ɛl ʁepɔ̃ kɛl vjɛ̃"
+      - text: "Il annonce qu'il part demain."
+        ipa: "il anɔ̃s kil paʁ dəmɛ̃"
+      - text: "Il a répété qu'il arrivait tard."
+        ipa: "il a ʁepete kil aʁivɛ taʁ"
+      - text: "Elle demande si je viens."
+        ipa: "ɛl dəmɑ̃d si ʒə vjɛ̃"
+    questions:
+      - id: "fr-3960"
+        prompt: { en: "When does he say he is leaving?" }
+        options:
+          - { en: "Tomorrow" }
+          - { en: "Today" }
+          - { en: "Never" }
+        answer: 1
+      - id: "fr-3961"
+        prompt: { en: "Who is coming, according to the message?" }
+        options:
+          - { en: "He" }
+          - { en: "She" }
+          - { en: "They" }
+        answer: 2
+      - id: "fr-3962"
+        prompt: { en: "What did he repeat?" }
+        options:
+          - { en: "He was leaving early" }
+          - { en: "He was sleeping" }
+          - { en: "He was arriving late" }
+        answer: 3
+  - id: "fr-message-thread"
+    title: "A message thread"
+    theme: "daily-life"
+    sentences:
+      - text: "Il écrit qu'ils arrivent demain."
+        ipa: "il ekʁi kil zaʁiv dəmɛ̃"
+      - text: "Elle demande où j'habite."
+        ipa: "ɛl dəmɑ̃d u ʒabit"
+      - text: "Elle nous demande de fermer la porte."
+        ipa: "ɛl nu dəmɑ̃d də fɛʁme la pɔʁt"
+      - text: "Il a raconté qu'il travaillait tard."
+        ipa: "il a ʁakɔ̃te kil tʁavajɛ taʁ"
+    questions:
+      - id: "fr-3963"
+        prompt: { en: "What does she ask?" }
+        options:
+          - { en: "Where I live" }
+          - { en: "What I eat" }
+          - { en: "When I sleep" }
+        answer: 1
+      - id: "fr-3964"
+        prompt: { en: "What does 'she' ask 'us' to do?" }
+        options:
+          - { en: "Open the window" }
+          - { en: "Close the door" }
+          - { en: "Call her" }
+        answer: 2
+      - id: "fr-3965"
+        prompt: { en: "When are 'they' arriving?" }
+        options:
+          - { en: "Yesterday" }
+          - { en: "Tonight" }
+          - { en: "Tomorrow" }
+        answer: 3

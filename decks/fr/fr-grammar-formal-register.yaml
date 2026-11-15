@@ -1,0 +1,62 @@
+schema: 1
+id: "fr-grammar-formal-register"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["informal", "formal"]
+  entries:
+    - lemma: "aller"
+      ipa: "ale"
+      forms:
+        "informal": "comment vas-tu ?"
+        "formal": "comment allez-vous ?"
+    - lemma: "avoir"
+      ipa: "avwaʁ"
+      forms:
+        "informal": "tu as raison."
+        "formal": "vous avez raison."
+    - lemma: "vouloir"
+      ipa: "vulwaʁ"
+      forms:
+        "informal": "tu veux un café ?"
+        "formal": "voulez-vous un café ?"
+    - lemma: "pouvoir"
+      ipa: "puvwaʁ"
+      forms:
+        "informal": "tu peux m'aider ?"
+        "formal": "pouvez-vous m'aider ?"
+    - lemma: "savoir"
+      ipa: "savwaʁ"
+      forms:
+        "informal": "tu sais où c'est ?"
+        "formal": "savez-vous où c'est ?"
+    - lemma: "venir"
+      ipa: "vəniʁ"
+      forms:
+        "informal": "viens demain."
+        "formal": "venez demain."
+    - lemma: "remercier"
+      ipa: "ʁəmɛʁsje"
+      forms:
+        "informal": "je te remercie."
+        "formal": "je vous remercie."
+    - lemma: "s'excuser"
+      key: "s-excuser"
+      ipa: "sɛkskyze"
+      forms:
+        "informal": "excuse-moi."
+        "formal": "excusez-moi."
+    - lemma: "s'appeler"
+      key: "s-appeler"
+      ipa: "saple"
+      forms:
+        "informal": "comment t'appelles-tu ?"
+        "formal": "comment vous appelez-vous ?"
+    - lemma: "lettre"
+      ipa: "lɛtʁ"
+      forms:
+        "informal": "Cher Paul,"
+        "formal": "Madame, Monsieur,"

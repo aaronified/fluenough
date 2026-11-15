@@ -1,0 +1,27 @@
+schema: 1
+id: "fr-en-grammar-passe-simple-reading"
+kind: "layer"
+core: "fr-grammar-passe-simple-reading"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The passé simple: the tense of written stories"
+license: "CC-BY-SA-4.0"
+description: "The passé simple is a literary past tense, met in tales and novels and read rather than said: il parla, ils arrivèrent, il fut, il fit. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Passé simple (for reading)"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "il-elle": "he or she (third person singular)", "ils-elles": "they (third person plural)" }
+  entries:
+    "parler": "to speak"
+    "arriver": "to arrive"
+    "aller": "to go"
+    "finir": "to finish"
+    "partir": "to leave"
+    "attendre": "to wait for"
+    "etre": "to be"
+    "avoir": "to have"
+    "faire": "to do or make"
+    "voir": "to see"
+    "prendre": "to take"
+    "venir": "to come"
+  notes: "The passé simple is a past tense of written stories: tales, novels and histories. It tells a finished event, as the passé composé does in speech, but people do not use it when they speak, so this unit is for recognising it when you read. Only the third person is shown, because that is the form most stories use. Verbs in -er take -a in the singular and -èrent in the plural: il parla, ils parlèrent; il arriva, ils arrivèrent; il alla, ils allèrent. Regular verbs in -ir and verbs in -dre take -it and -irent: il finit, ils finirent; il partit, ils partirent; il attendit, ils attendirent. Note that il finit looks like the present tense and is only told apart by the story. Many common verbs have an irregular stem to learn: être il fut, ils furent; avoir il eut, ils eurent; faire il fit, ils firent; voir il vit, ils virent; prendre il prit, ils prirent; venir il vint, ils vinrent. In a story, the passé simple moves the action on while the imperfect describes the scene, as the passé composé and the imperfect do in speech."

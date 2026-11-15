@@ -1,0 +1,79 @@
+schema: 1
+id: "fr-en-reading-future"
+name: "Reading: the future: futur simple"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about next year and a horoscope column, with the future tense of common verbs. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-next-year"
+    title: "Next year"
+    theme: "time"
+    sentences:
+      - text: "L'an prochain, je serai ici."
+        ipa: "lɑ̃ pʁɔʃɛ̃ ʒə səʁɛ isi"
+      - text: "Nous aurons une grande maison."
+        ipa: "nu zoʁɔ̃ yn ɡʁɑ̃d mɛzɔ̃"
+      - text: "Tu verras la ville en été."
+        ipa: "ty vəʁa la vil ɑ̃ ete"
+      - text: "Il pourra venir avec nous."
+        ipa: "il puʁa vəniʁ avɛk nu"
+    questions:
+      - id: "fr-3910"
+        prompt: { en: "Where will the speaker be next year?" }
+        options:
+          - { en: "At school" }
+          - { en: "Here" }
+          - { en: "At the sea" }
+        answer: 2
+      - id: "fr-3911"
+        prompt: { en: "What will 'we' have?" }
+        options:
+          - { en: "A new car" }
+          - { en: "A dog" }
+          - { en: "A big house" }
+        answer: 3
+      - id: "fr-3912"
+        prompt: { en: "Who will be able to come?" }
+        options:
+          - { en: "He" }
+          - { en: "We" }
+          - { en: "You" }
+        answer: 1
+  - id: "fr-horoscope-column"
+    title: "A horoscope column"
+    theme: "daily-life"
+    sentences:
+      - text: "Demain, vous aurez un bon jour."
+        ipa: "dəmɛ̃ vu zoʁe œ̃ bɔ̃ ʒuʁ"
+      - text: "Vous ferez un beau voyage."
+        ipa: "vu fʁe œ̃ bo vwajaʒ"
+      - text: "Vos amis viendront vous voir."
+        ipa: "vo zami vjɛ̃dʁɔ̃ vu vwaʁ"
+      - text: "Vous saurez quoi faire."
+        ipa: "vu soʁe kwa fɛʁ"
+    questions:
+      - id: "fr-3913"
+        prompt: { en: "What will 'you' have tomorrow?" }
+        options:
+          - { en: "Rain" }
+          - { en: "A good day" }
+          - { en: "A holiday" }
+        answer: 2
+      - id: "fr-3914"
+        prompt: { en: "What will 'you' make?" }
+        options:
+          - { en: "A cake" }
+          - { en: "A phone call" }
+          - { en: "A trip" }
+        answer: 3
+      - id: "fr-3915"
+        prompt: { en: "Who will come to see 'you'?" }
+        options:
+          - { en: "Your friends" }
+          - { en: "Your parents" }
+          - { en: "Your teachers" }
+        answer: 1

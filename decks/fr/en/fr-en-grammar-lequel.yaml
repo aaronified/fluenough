@@ -1,0 +1,23 @@
+schema: 1
+id: "fr-en-grammar-lequel"
+kind: "layer"
+core: "fr-grammar-lequel"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Lequel: which, after a preposition"
+license: "CC-BY-SA-4.0"
+description: "After a preposition a relative pronoun is lequel, laquelle, lesquels or lesquelles, and à and de fuse with it: auquel, duquel. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Lequel and its forms"
+  slot_name: "gender and number"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "m-sg": "masculine singular", "f-sg": "feminine singular", "m-pl": "masculine plural", "f-pl": "feminine plural" }
+  entries:
+    "a": "to, at"
+    "de": "of, from"
+    "avec": "with"
+    "pour": "for"
+    "dans": "in"
+    "sur": "on"
+    "sans": "without"
+    "devant": "in front of"
+  notes: "After a preposition, a thing is replaced by lequel (masculine singular), laquelle (feminine singular), lesquels (masculine plural) or lesquelles (feminine plural), matching the noun it stands for: le stylo avec lequel j'écris, la chambre dans laquelle je dors, les amis chez lesquels nous mangeons. With the prepositions à and de, the preposition and the pronoun fuse in three of the four forms: à plus lequel is auquel, à plus lesquels is auxquels, à plus lesquelles is auxquelles, while à laquelle stays apart. In the same way de plus lequel is duquel, de plus lesquels is desquels, de plus lesquelles is desquelles, while de laquelle stays apart. When the noun is a person, qui is also common after a preposition: l'ami avec qui je parle. For de, the pronoun dont is the usual choice (le livre dont je parle); the forms of de plus lequel are needed after a longer preposition such as près de (la ville près de laquelle j'habite, le lac près duquel nous mangeons)."

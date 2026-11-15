@@ -1,0 +1,53 @@
+schema: 1
+id: "fr-grammar-ou-relative"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["sentences", "joined"]
+  entries:
+    - lemma: "ville"
+      ipa: "vil"
+      forms:
+        "sentences": "c'est la ville. j'habite dans cette ville."
+        "joined": "c'est la ville où j'habite."
+    - lemma: "maison"
+      ipa: "mɛzɔ̃"
+      forms:
+        "sentences": "c'est la maison. nous dormons dans cette maison."
+        "joined": "c'est la maison où nous dormons."
+    - lemma: "restaurant"
+      ipa: "ʁɛstɔʁɑ̃"
+      forms:
+        "sentences": "c'est le restaurant. nous mangeons dans ce restaurant."
+        "joined": "c'est le restaurant où nous mangeons."
+    - lemma: "école"
+      key: "ecole"
+      ipa: "ekɔl"
+      forms:
+        "sentences": "c'est l'école. mon frère travaille dans cette école."
+        "joined": "c'est l'école où mon frère travaille."
+    - lemma: "parc"
+      ipa: "paʁk"
+      forms:
+        "sentences": "c'est le parc. nous jouons dans ce parc."
+        "joined": "c'est le parc où nous jouons."
+    - lemma: "jour"
+      ipa: "ʒuʁ"
+      forms:
+        "sentences": "c'est le jour. je suis arrivé ce jour-là."
+        "joined": "c'est le jour où je suis arrivé."
+    - lemma: "année"
+      key: "annee"
+      ipa: "ane"
+      forms:
+        "sentences": "c'est l'année. nous avons voyagé cette année-là."
+        "joined": "c'est l'année où nous avons voyagé."
+    - lemma: "été"
+      key: "ete"
+      ipa: "ete"
+      forms:
+        "sentences": "c'est l'été. nous voyageons en été."
+        "joined": "c'est l'été où nous voyageons."
