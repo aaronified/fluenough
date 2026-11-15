@@ -1,0 +1,42 @@
+# The people behind the Assamese culture decks (wiki/Plan-Deck-Kinds-And-Topics.md, D5).
+# Dates are the years of birth and death read on English Wikipedia, circa where the pages disagree. The eras are those of the English Wikipedia article on Assamese literature (the Shankari era 1490-1700, the missionary era 1826-1870, the era of Hemchandra Barua and Gunabhiram Barua 1870-1890, and the romantic era, or Bezbaroa's era, 1890-1940).
+# No pictures: none has a licence checked yet.
+schema: 1
+kind: "creators"
+id: "creators-as"
+language: "as"
+license: "CC-BY-SA-4.0"
+eras:
+  - id: "shankari"
+    name: { en: "Shankari literature" }
+    from: 1490
+    to: 1700
+creators:
+  - id: "as-sankardev"
+    name:
+      as: { text: "শ্ৰীমন্ত শংকৰদেৱ", reading: "xrimônt xôṅkôrôdew", ipa: "xɹimɔnt xɔŋkɔɹɔdew" }
+      en: { text: "Srimanta Sankardev" }
+    born: 1449
+    died: 1568
+    era: "shankari"
+    bio:
+      en: "Srimanta Sankardev was a 15th and 16th century Assamese saint, scholar, poet and playwright, and a figure of importance in the Bhakti movement in Assam. He is credited with devising new forms of music, theatre and dance, and a literary language called Brajavali."
+    legacy:
+      text: { en: "He is credited with new forms of music (the Borgeet), theatre (Ankia Naat and Bhaona) and dance (Sattriya)." }
+      items:
+        - { kind: "music", text: { en: "He is credited with devising a new form of music, the Borgeet." }, source: { url: "https://en.wikipedia.org/wiki/Srimanta_Sankardev", accessed: "2026-11-15" } }
+        - { kind: "other", text: { en: "He is credited with devising the theatrical forms Ankia Naat and Bhaona, and the dance Sattriya." }, source: { url: "https://en.wikipedia.org/wiki/Srimanta_Sankardev", accessed: "2026-11-15" } }
+  - id: "as-madhavdev"
+    name:
+      as: { text: "মাধৱদেৱ", reading: "mādhôwôdew", ipa: "madʱɔwɔdew" }
+      en: { text: "Madhavdev" }
+    born: { year: 1489, circa: true }
+    died: 1596
+    era: "shankari"
+    bio:
+      en: "Madhavdev was a preceptor of the Ekasarana Dharma and the most prominent disciple of Srimanta Sankardev. He became the religious and artistic successor of Sankardev after the latter died in 1568. The English Wikipedia gives his birth as May 1489, but other pages give other years, so the year of his birth is not certain."
+    legacy:
+      text: { en: "He is known for his book of hymns, the Naam Ghosa, and for a large selection of songs called Borgeets." }
+      items:
+        - { kind: "other", text: { en: "He is known for his book of hymns, the Naam Ghosa." }, source: { url: "https://en.wikipedia.org/wiki/Madhavdev", accessed: "2026-11-15" } }
+        - { kind: "music", text: { en: "He is known for a large selection of songs called Borgeets." }, source: { url: "https://en.wikipedia.org/wiki/Madhavdev", accessed: "2026-11-15" } }
