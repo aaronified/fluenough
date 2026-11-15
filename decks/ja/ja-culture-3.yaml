@@ -1,6 +1,8 @@
 # A culture deck of Japanese works that are in the public domain: short poems, children's songs and lines from stories,
 # each with its source, its rights basis and its creator (wiki/Plan-Deck-Kinds-And-Topics.md).
-# Every text here was read on the cited Japanese Wikipedia page; a text that could not be read there is not in this deck.
+# Each text was read on the cited ja.wikipedia page, or on ja.wikisource for the items ja-4655, ja-4660, ja-4663 and ja-4665
+# (checked against Wikisource: Kumo no Ito, the Kandata line this-spider-thread-is-mine; the first sentence of Lemon; the opening of Botchan;
+# Takuboku's Ichiaku no Suna tanka). A text that could not be read on a page is not in this deck.
 # The text is shown in modern kana, with kanji left out, so that a learner who knows only the kana can read it.
 schema: 1
 id: "ja-culture-3"
@@ -209,38 +211,6 @@ cards:
       author_died: 1927
       jurisdiction: "JP"
       rights_checked: "2026-11-15"
-  - id: "ja-4656"
-    target: "ごんおまえだったのかいつもくりをくれたのは"
-    words: ["ごん", "おまえ", "だった", "の", "か", "いつも", "くり", "を", "くれた", "の", "は"]
-    reading: "gon omae datta no ka itsumo kuri o kureta no wa"
-    ipa: "ɡoɴ omae datta no ka itsɯmo kɯɾi o kɯɾeta no wa"
-    pos: "phrase"
-    level: "A2"
-    modes: ["recognition", "listening"]
-    creator: "ja-niimi-nankichi"
-    notes:
-      - { id: "n1", kind: "note" }
-    bases:
-      - { word: "ごん", base: "ごん", reading: "gon" }
-      - { word: "おまえ", base: "おまえ", reading: "omae" }
-      - { word: "だった", base: "だ", reading: "da" }
-      - { word: "の", base: "の", reading: "no" }
-      - { word: "か", base: "か", reading: "ka" }
-      - { word: "いつも", base: "いつも", reading: "itsumo" }
-      - { word: "くり", base: "くり", reading: "kuri" }
-      - { word: "を", base: "を", reading: "o" }
-      - { word: "くれた", base: "くれる", reading: "kureru" }
-      - { word: "は", base: "は", reading: "wa" }
-    source:
-      author: "Niimi Nankichi"
-      work: "Gon-gitsune (Gon the Fox), Hyoju's line near the end"
-      date: "1932"
-      edition: "Gon-gitsune, first printed in the magazine Akai Tori in January 1932, as quoted on the Japanese Wikipedia page of the story; in modern kana. The page gives the word for you in two forms, omae and omai; omae is used here"
-      url: "https://ja.wikipedia.org/wiki/%E3%81%94%E3%82%93%E7%8B%90"
-      basis: "public-domain"
-      author_died: 1943
-      jurisdiction: "JP"
-      rights_checked: "2026-11-15"
   - id: "ja-4657"
     target: "からたちのはながさいたよしろいしろいはながさいたよ"
     words: ["からたち", "の", "はな", "が", "さいた", "よ", "しろい", "しろい", "はな", "が", "さいた", "よ"]
@@ -361,7 +331,7 @@ cards:
       author: "Kajii Motojiro"
       work: "Lemon, a phrase from the story"
       date: "1925"
-      edition: "Lemon, printed in the magazine Aozora in January 1925, as quoted on the Japanese Wikipedia page of the story; a phrase from the page's summary, in modern kana. The page does not give the reading of the last word"
+      edition: "Lemon, printed in the magazine Aozora in January 1925, as quoted on the Japanese Wikipedia page of the story; the first sentence of the story, read on Wikisource, in modern kana. The Wikipedia page does not give the reading of the last word"
       url: "https://ja.wikipedia.org/wiki/%E6%AA%B8%E6%AA%AC_(%E5%B0%8F%E8%AA%AC)"
       basis: "public-domain"
       author_died: 1932
@@ -483,7 +453,7 @@ cards:
       - { word: "おきて", base: "おく", reading: "oku" }
       - { word: "は", base: "は", reading: "wa" }
       - { word: "こぼれ", base: "こぼれる", reading: "koboreru" }
-      - { word: "こぼれて", base: "こぼれて", reading: "koborete" }
+      - { word: "こぼれて", base: "こぼれる", reading: "koboreru" }
       - { word: "おく", base: "おく", reading: "oku" }
     source:
       author: "Masaoka Shiki"
