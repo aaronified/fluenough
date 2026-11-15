@@ -84,6 +84,37 @@ HI-130..137: typed notes only where a card has one teachable point; ids in the c
 | HI-120..122 | Haiku | Append review-queue rows from each wave's reports to `docs/review-queue/hi.md` |
 | HI-140 | Haiku, docs to main | Update the Hindustani row of [Plan-Language-Completeness](Plan-Language-Completeness.md) and issue #1167 from a re-read, claiming only what is verified |
 
+### 3.6 Grammar tables (HI-093 audit, 2026-11-15; follow-ups HI-094 to HI-099)
+
+**Audit result** (a read of `decks-live`, not a build):
+
+- Hindustani has no rules decks. All 34 `hi-grammar-*` cores with `kind: "grammar"` use `pattern.entries` keyed by lemma, with hand-picked lemmas. The other 16 `hi-grammar-*` cores are vocabulary. No `table:` or `rules:` appears in `decks/hi`.
+- Bengali has 14 rules cores (noun-forms 1,634 rows; verb tenses about 418 rows each). Hindustani is therefore 0 of 14 against the owner's full-table rule (2026-10-23).
+- Taught words (cards of the cores on the path to the B1 mark, by part of speech; repeated cards may be double-counted): nouns 1,245, verbs 232, adjectives 181, pronouns 16.
+- Coverage by the grammar decks (union):
+  - nouns: 11 of 1,245
+  - verbs: 211 of 232 (21 missing, e.g. मुड़िए, चलिए, बढ़ना, बढ़ाना, गुज़रना, झपटना)
+  - adjectives: 11 of 181
+  - pronouns: 8 of 16 (missing मेरा, तेरा, तुम्हारा, आपका, हमारा, उसका, कुछ, अपना)
+- The 12-slot tense decks (present, future, past, perfect, continuous) cover only 2 to 4 verbs each.
+- Habitual-past (211 of 232), subjunctive, conditional, conjunctive, purpose, before-after and while (162 to 177 of 232) are nearly full.
+- Other decks: imperatives 77, past-continuous 82, causative 31, passive 27, reported-speech 3, honorifics 4, irregular 6.
+
+**Follow-ups, ranked.** Each is a rules core plus its English layer `decks/hi/en/hi-en-grammar-*.yaml`, converting the existing grammar deck, with Bengali's layout as the reference.
+
+- **HI-094 (XL)**: `hi-grammar-noun-forms`, 1,245 rows, with slots plural, singular oblique and plural oblique; indeclinables go in `except`.
+- **HI-095 (XL)**: verb tense rules cores for present, future, past, perfect and continuous, 232 rows each, with 12 person-gender-number slots (about 2,800 cells each).
+- **HI-096 (L)**: complete imperatives (77 to 232), past-continuous (82 to 232) and the 21 verbs missing from the near-full decks; decide whether these become rules cores.
+- **HI-097 (L)**: `hi-grammar-adjective-forms`, 181 rows, with agreement slots, plus the comparative.
+- **HI-098 (S)**: `hi-grammar-pronoun-forms`, 16 rows, including the possessives and कुछ.
+- **HI-099 (S/M)**: decide causative, passive, reported-speech, honorifics and irregular: rules cores, or stay grammar decks.
+
+**Open**
+
+- The tables for HI-094 and HI-095 are thousands of cells of inflected Hindi. They must be written by a rule-based generator with a reviewed rule set (as Bengali's were), not by hand. A Sonnet designs the generator first.
+- It is not yet determined whether the validator accepts a per-tense `except` list of defective verbs.
+- **Owner decision needed:** whether this is in scope for Hindustani now, given its size.
+
 ## 4. Order
 
 1. HI-001 (docs, main) first; HI-040, HI-050, HI-092, HI-093 and wave C-1 have no dependency and run at once.
