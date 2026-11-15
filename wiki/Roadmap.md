@@ -365,6 +365,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1295](https://github.com/aaronified/fluenough/issues/1295) Telugu cards disagree on the medial anusvara reading (ṁ, ṅ, n, m)
 - [#1361](https://github.com/aaronified/fluenough/issues/1361) Telugu transcription: no reading for rare letters (ఌ ౡ ఁ ౘ ౙ), wrong for ఱ
 - [#1369](https://github.com/aaronified/fluenough/issues/1369) Spanish narrow IPA rules: five gaps found reviewing the first whole-course run
+- [#1395](https://github.com/aaronified/fluenough/issues/1395) phonetic_patch.py cannot patch ~half of the Japanese cards (JSON-style and quoted-key YAML layouts)
 
 ## Plans
 
@@ -376,6 +377,7 @@ A plan with no tracking issue is flagged.
 - [a B1 plan in every path](https://github.com/aaronified/fluenough/wiki/Plan-B1-Plans) (Written 2026-10-06), tracks #209
 - [books, films and songs you bring, with questions on them](https://github.com/aaronified/fluenough/wiki/Plan-Books-Films-Songs) (Written 2026-10-06), tracks #215
 - [French genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations, situations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-French), **no tracking issue**
+- [Hindustani genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Hindustani), **no tracking issue**
 - [Japanese culture decks, sourcing list (batch 1)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Japanese), **no tracking issue**
 - [Spanish genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Spanish), **no tracking issue**
 - [Telugu genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Telugu), **no tracking issue**
