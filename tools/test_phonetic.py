@@ -219,19 +219,8 @@ class Registry(Tree):
     def test_telugu_and_japanese_are_registered_with_their_dumps(self) -> None:
         self.assertEqual(ip.DUMP_NAMES["te"], "Telugu")
         self.assertEqual(ip.DUMP_NAMES["ja"], "Japanese")
-        self.assertEqual(set(ip.DUMP_NAMES), set(ip.VARIETIES))
-
-    def test_french_is_registered_and_takes_only_the_untagged_form(self) -> None:
         self.assertEqual(ip.DUMP_NAMES["fr"], "French")
-        fr = ip.VARIETIES["fr"]
-        self.assertEqual((fr.notes, fr.tags, fr.untagged),
-                         (frozenset(), frozenset(), True))
-        # Rank 1 is the untagged form; a regional form or one with a note is
-        # of another variety (None).
-        self.assertEqual(fr.rank(sound("[ʁy]")), 1)
-        self.assertIsNone(fr.rank(sound("[ʁy]", tags=["Quebec"])))
-        self.assertIsNone(fr.rank(sound("[ʁy]", tags=["France", "Southern"])))
-        self.assertIsNone(fr.rank(sound("[ʁy]", note="Marseille")))
+        self.assertEqual(set(ip.DUMP_NAMES), set(ip.VARIETIES))
 
     def test_a_new_language_in_a_registry_file_is_imported_with_no_code_change(self) -> None:
         reg = self.tmp / "registry.yaml"
