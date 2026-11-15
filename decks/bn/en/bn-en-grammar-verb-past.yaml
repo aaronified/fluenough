@@ -1,0 +1,28 @@
+schema: 1
+id: "bn-en-grammar-verb-past"
+kind: "layer"
+core: "bn-grammar-verb-past"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verbs: what I, you, he, she did"
+description: "Every verb the course teaches, in the simple past for something that happened and is over, for each person and each level of respect. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "person"
+  slots:
+    "ami": "I or we, in the past"
+    "tui": "you (intimate), in the past"
+    "tumi": "you (familiar), in the past"
+    "apni": "you (respectful), in the past"
+    "se": "he, she or they, in the past"
+    "tini": "he or she (respectful), in the past"
+rules:
+  "bn-rule-past-first":
+    name: "-লাম (-lām): I, we"
+    explanation: "{1} joins the stem and is for 'I' and for 'we' alike: {2}, {3}. The stem is the one the present uses after 'I': {4} gives {5}, and {6} gives {7}. A few verbs change their stem: {8} gives {9}, {10} gives {11}, and {12} gives {13}. One form serves for something that happened and is over."
+  "bn-rule-past-second":
+    name: "-লি (-li), -লে (-le), -লেন (-len): you"
+    explanation: "The three words for you keep their three endings in the past, and the stem does not change between them. {1}, for a friend or a younger person, takes {2}: {3}. {4}, the familiar one, takes {5}: {6}. {7}, the respectful one, takes {8}: {9}. A verb with a changed stem keeps it: {10}, {11}, {12}."
+  "bn-rule-past-third":
+    name: "-ল (-l), -লেন (-len): he, she, they"
+    explanation: "For someone who is not there, {1} is the ordinary ending: {2}, {3}. It does not change for one or for many. For someone you respect it is {4}, as for {5}: {6}. A verb with a changed stem keeps it: {7}, {8}."

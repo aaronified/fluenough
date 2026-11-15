@@ -1,0 +1,28 @@
+schema: 1
+id: "bn-en-grammar-verb-continuous"
+kind: "layer"
+core: "bn-grammar-verb-continuous"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verbs: what I, you, he, she are doing"
+description: "Every verb the course teaches, for something that is going on now, for each person and each level of respect. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "person"
+  slots:
+    "ami": "I or we, in the continuous"
+    "tui": "you (intimate), in the continuous"
+    "tumi": "you (familiar), in the continuous"
+    "apni": "you (respectful), in the continuous"
+    "se": "he, she or they, in the continuous"
+    "tini": "he or she (respectful), in the continuous"
+rules:
+  "bn-rule-continuous-first":
+    name: "-ছি (-chi), -চ্ছি (-cchi): I, we"
+    explanation: "{1} joins a stem that ends in a consonant, and {2} a stem that ends in a vowel, for 'I' and for 'we' alike: {3}, {4} and {5}. The stem does not change in the continuous, so {6} keeps the stem of the present."
+  "bn-rule-continuous-second":
+    name: "-ছিস (-chiś), -ছো (-cho), -ছ (-ch), -ছেন (-chen): you"
+    explanation: "{1}, for a friend or a younger person, takes {2} after a consonant stem and {3} after a vowel stem: {4}, and {12} after a vowel stem. {5}, the familiar one, takes {6} or the shorter {7}: {8}. {9}, the respectful one, takes {10}: {11}."
+  "bn-rule-continuous-third":
+    name: "-ছে (-che), -চ্ছে (-cche), -ছেন (-chen): he, she, they"
+    explanation: "For someone who is not there, {1} is the ordinary ending after a consonant stem and {2} after a vowel stem: {3} and {4}. It does not change for one or for many. For someone you respect it is {5}, as in {6}. A vowel stem takes {2} as well: {7} for the ordinary form and {8} for the respectful one."
