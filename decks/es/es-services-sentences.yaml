@@ -48,3 +48,31 @@ cards:
     tags: ["sentence"]
     bases: [{ word: "Llevo", ref: "es-0623" }, { word: "el", base: "el" }, { word: "abrigo", ref: "es-1023" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "tintorería", ref: "es-2221" }, { word: "y", ref: "es-0048" }, { word: "lavandería", ref: "es-2222" }]
     confusables: [{ id: "servicio", ref: "es-2234", kind: "word" }, { id: "arreglo", ref: "es-2236", kind: "word" }]
+  - id: "es-4653"
+    target: "Quiero enviar un paquete."
+    ipa: "ˈkjeɾo enˈbjaɾ un paˈkete"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Quiero", ref: "es-0661" }, { word: "enviar", ref: "es-1652" }, { word: "un", base: "un" }, { word: "paquete", ref: "es-0378" }]
+    confusables: [{ id: "correo", ref: "es-0248", kind: "word" }, { id: "sobre", ref: "es-2243", kind: "word" }]
+  - id: "es-4654"
+    target: "Necesito un sello, por favor."
+    ipa: "neθeˈsito un ˈseʝo poɾ faˈboɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Necesito", ref: "es-0288" }, { word: "un", base: "un" }, { word: "sello", ref: "es-2216" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+    confusables: [{ id: "sobre", ref: "es-2243", kind: "word" }, { id: "correo", ref: "es-0248", kind: "word" }]
+  - id: "es-4655"
+    target: "Quiero sacar dinero."
+    ipa: "ˈkjeɾo saˈkaɾ diˈneɾo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Quiero", ref: "es-0661" }, { word: "sacar", ref: "es-1623" }, { word: "dinero", ref: "es-0513" }]
+    confusables: [{ id: "cambiar", ref: "es-0588", kind: "word" }, { id: "cajero", ref: "es-2214", kind: "word" }]
+  - id: "es-4656"
+    target: "¿Puedo pagar con tarjeta?"
+    ipa: "ˈpwedo paˈɡaɾ kon taɾˈxeta"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Puedo", ref: "es-1633" }, { word: "pagar", ref: "es-0295" }, { word: "con", base: "con" }, { word: "tarjeta", ref: "es-0879" }]
+    confusables: [{ id: "efectivo", ref: "es-1220", kind: "word" }, { id: "dinero", ref: "es-0513", kind: "word" }]
