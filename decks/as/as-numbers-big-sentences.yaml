@@ -1,0 +1,130 @@
+schema: 1
+id: "as-numbers-big-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-5500"
+    target: "মোৰ বয়স বিশ।"
+    reading: "mur bôyôx bix."
+    ipa: "mʊɹ bɔjɔx bix"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "বয়স", ref: "as-0177" }
+      - { word: "বিশ", ref: "as-0238" }
+    confusables:
+      - { id: "c1", word: "ষাঠি", reading: "xāthi", kind: "word" }
+      - { id: "c2", word: "পঁচিশ", reading: "pom̐six", kind: "word" }
+  - id: "as-5501"
+    target: "তেওঁৰ বয়স ষাঠি।"
+    reading: "teum̐r bôyôx xāthi."
+    ipa: "teʊ̃ɹ bɔjɔx xatʰi"
+    pos: "phrase"
+    bases:
+      - { word: "তেওঁৰ", ref: "as-2190" }
+      - { word: "বয়স", ref: "as-0177" }
+      - { word: "ষাঠি", ref: "as-0242" }
+    confusables:
+      - { id: "c1", word: "বিশ", reading: "bix", kind: "word" }
+      - { id: "c2", word: "সত্তৰ", reading: "xôttôr", kind: "word" }
+  - id: "as-5502"
+    target: "মোৰ দৰমহা দুহাজাৰ।"
+    reading: "mur dôrmôhā duhāzār."
+    ipa: "mʊɹ dɔɹmɔha duhazaɹ"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "দৰমহা", ref: "as-0215" }
+      - { word: "দুহাজাৰ", ref: "as-0257" }
+    confusables:
+      - { id: "c1", word: "হাজাৰ", reading: "hāzār", kind: "word" }
+      - { id: "c2", word: "দুশ", reading: "dux", kind: "word" }
+  - id: "as-5503"
+    target: "এশ নহয়, দুশ।"
+    reading: "ex nôhôy, dux."
+    ipa: "ex nɔhɔj dux"
+    pos: "phrase"
+    bases:
+      - { word: "এশ", ref: "as-0247" }
+      - { word: "নহয়", ref: "as-0141" }
+      - { word: "দুশ", ref: "as-0248" }
+    confusables:
+      - { id: "c1", word: "হাজাৰ", reading: "hāzār", kind: "word" }
+      - { id: "c2", word: "পাঁচশ", reading: "pām̐sôx", kind: "word" }
+  - id: "as-5504"
+    target: "এতিয়া সাত বজা।"
+    reading: "etiyā xāt bôzā."
+    ipa: "etija xat bɔza"
+    pos: "phrase"
+    bases:
+      - { word: "এতিয়া", ref: "as-0353" }
+      - { word: "সাত", ref: "as-0114" }
+      - { word: "বজা", ref: "as-0358" }
+    confusables:
+      - { id: "c1", word: "দহ", reading: "dôh", kind: "word" }
+      - { id: "c2", word: "ছয়", reading: "sôy", kind: "word" }
+  - id: "as-5505"
+    target: "এতিয়া এঘাৰ বজা।"
+    reading: "etiyā eghār bôzā."
+    ipa: "etija eɡʱaɹ bɔza"
+    pos: "phrase"
+    bases:
+      - { word: "এতিয়া", ref: "as-0353" }
+      - { word: "এঘাৰ", ref: "as-0229" }
+      - { word: "বজা", ref: "as-0358" }
+    confusables:
+      - { id: "c1", word: "বাৰ", reading: "bār", kind: "word" }
+      - { id: "c2", word: "দহ", reading: "dôh", kind: "word" }
+  - id: "as-5506"
+    target: "মোক পাঁচশ গ্ৰাম দিয়ক।"
+    reading: "muk pām̐sôx grām diyôk."
+    ipa: "mʊk pãsɔx ɡɹam dijɔk"
+    pos: "phrase"
+    bases:
+      - { word: "মোক", ref: "as-2198" }
+      - { word: "পাঁচশ", ref: "as-0251" }
+      - { word: "গ্ৰাম", ref: "as-2270" }
+      - { word: "দিয়ক", base: "দিয়া", reading: "diyā" }
+    confusables:
+      - { id: "c1", word: "লিটাৰ", reading: "litār", kind: "word" }
+      - { id: "c2", word: "দুশ", reading: "dux", kind: "word" }
+  - id: "as-5507"
+    target: "মোক এক লিটাৰ দিয়ক।"
+    reading: "muk ek litār diyôk."
+    ipa: "mʊk ek litaɹ dijɔk"
+    pos: "phrase"
+    bases:
+      - { word: "মোক", ref: "as-2198" }
+      - { word: "এক", ref: "as-0222" }
+      - { word: "লিটাৰ", ref: "as-2271" }
+      - { word: "দিয়ক", base: "দিয়া", reading: "diyā" }
+    confusables:
+      - { id: "c1", word: "গ্ৰাম", reading: "grām", kind: "word" }
+      - { id: "c2", word: "দুহাজাৰ", reading: "duhāzār", kind: "word" }
+  - id: "as-5508"
+    target: "দুহাজাৰ বিশ।"
+    reading: "duhāzār bix."
+    ipa: "duhazaɹ bix"
+    pos: "phrase"
+    bases:
+      - { word: "দুহাজাৰ", ref: "as-0257" }
+      - { word: "বিশ", ref: "as-0238" }
+    confusables:
+      - { id: "c1", word: "হাজাৰ", reading: "hāzār", kind: "word" }
+      - { id: "c2", word: "ষাঠি", reading: "xāthi", kind: "word" }
+  - id: "as-5509"
+    target: "মোৰ দৰমহা বহুত নহয়।"
+    reading: "mur dôrmôhā bohut nôhôy."
+    ipa: "mʊɹ dɔɹmɔha bohut nɔhɔj"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "দৰমহা", ref: "as-0215" }
+      - { word: "বহুত", ref: "as-2227" }
+      - { word: "নহয়", ref: "as-0141" }
+    confusables:
+      - { id: "c1", word: "দুহাজাৰ", reading: "duhāzār", kind: "word" }
+      - { id: "c2", word: "অলপ", reading: "ôlôp", kind: "word" }

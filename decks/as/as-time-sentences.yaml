@@ -1,0 +1,124 @@
+schema: 1
+id: "as-time-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-5305"
+    target: "আজি সোমবাৰ।"
+    reading: "āzi xumbār."
+    ipa: "azi xʊmbaɹ"
+    pos: "phrase"
+    bases:
+      - { word: "আজি", ref: "as-0350" }
+      - { word: "সোমবাৰ", ref: "as-0363" }
+    confusables:
+      - { id: "c1", word: "মঙলবাৰ", reading: "môṅôlbār", kind: "word" }
+      - { id: "c2", word: "দেওবাৰ", reading: "deubār", kind: "word" }
+  - id: "as-5306"
+    target: "কাইলৈ শুক্ৰবাৰ।"
+    reading: "kāilôi xukrôbār."
+    ipa: "kailɔi xukɹɔbaɹ"
+    pos: "phrase"
+    bases:
+      - { word: "কাইলৈ", ref: "as-0351" }
+      - { word: "শুক্ৰবাৰ", ref: "as-0367" }
+    confusables:
+      - { id: "c1", word: "বৃহস্পতিবাৰ", reading: "brihôspotibār", kind: "word" }
+      - { id: "c2", word: "শনিবাৰ", reading: "xonibār", kind: "word" }
+  - id: "as-5307"
+    target: "কালি ভাল আছিল।"
+    reading: "kāli bhāl āsil."
+    ipa: "kali bʱal asil"
+    pos: "phrase"
+    bases:
+      - { word: "কালি", ref: "as-0352" }
+      - { word: "ভাল", base: "ভাল", reading: "bhāl" }
+      - { word: "আছিল", base: "আছে", reading: "āsil" }
+    confusables:
+      - { id: "c1", word: "আজি", reading: "āzi", kind: "word" }
+      - { id: "c2", word: "কাইলৈ", reading: "kāilôi", kind: "word" }
+  - id: "as-5308"
+    target: "এতিয়া শীত।"
+    reading: "etiyā xit."
+    ipa: "etija xit"
+    pos: "phrase"
+    bases:
+      - { word: "এতিয়া", ref: "as-0353" }
+      - { word: "শীত", base: "শীত", reading: "xit" }
+    confusables:
+      - { id: "c1", word: "ৰাতিপুৱা", reading: "rātipuwā", kind: "word" }
+      - { id: "c2", word: "গধূলি", reading: "godhuli", kind: "word" }
+  - id: "as-5309"
+    target: "ৰাতিপুৱা ভাল।"
+    reading: "rātipuwā bhāl."
+    ipa: "ɹatipuwa bʱal"
+    pos: "phrase"
+    bases:
+      - { word: "ৰাতিপুৱা", ref: "as-0354" }
+      - { word: "ভাল", base: "ভাল", reading: "bhāl" }
+    confusables:
+      - { id: "c1", word: "গধূলি", reading: "godhuli", kind: "word" }
+      - { id: "c2", word: "দুপৰীয়া", reading: "duporiyā", kind: "word" }
+  - id: "as-5310"
+    target: "মই ৰাতিপুৱা জলপান খাওঁ।"
+    reading: "moi rātipuwā zôlôpān khāum̐."
+    ipa: "moi ɹatipuwa zɔlɔpan kʰaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "ৰাতিপুৱা", ref: "as-0354" }
+      - { word: "জলপান", base: "জলপান", reading: "zôlôpān" }
+      - { word: "খাওঁ", base: "খোৱা", reading: "khuwā" }
+    confusables:
+      - { id: "c1", word: "গধূলি", reading: "godhuli", kind: "word" }
+      - { id: "c2", word: "আজি", reading: "āzi", kind: "word" }
+  - id: "as-5311"
+    target: "দুপৰীয়া তাপ বহুত।"
+    reading: "duporiyā tāp bohut."
+    ipa: "dupoɹija tap bohut"
+    pos: "phrase"
+    bases:
+      - { word: "দুপৰীয়া", ref: "as-0355" }
+      - { word: "তাপ", base: "তাপ", reading: "tāp" }
+      - { word: "বহুত", ref: "as-2227" }
+    confusables:
+      - { id: "c1", word: "গধূলি", reading: "godhuli", kind: "word" }
+      - { id: "c2", word: "ৰাতি", reading: "rāti", kind: "word" }
+  - id: "as-5312"
+    target: "গধূলি মই ঘৰত।"
+    reading: "godhuli moi ghôrôt."
+    ipa: "ɡodʱuli moi ɡʱɔɹɔt"
+    pos: "phrase"
+    bases:
+      - { word: "গধূলি", ref: "as-0356" }
+      - { word: "মই", ref: "as-2178" }
+      - { word: "ঘৰত", base: "ঘৰ", reading: "ghôr" }
+    confusables:
+      - { id: "c1", word: "ৰাতিপুৱা", reading: "rātipuwā", kind: "word" }
+      - { id: "c2", word: "দুপৰীয়া", reading: "duporiyā", kind: "word" }
+  - id: "as-5313"
+    target: "এটা সপ্তাহ।"
+    reading: "etā sôptāh."
+    ipa: "eta sɔptah"
+    pos: "phrase"
+    bases:
+      - { word: "এটা", ref: "as-2258" }
+      - { word: "সপ্তাহ", base: "সপ্তাহ", reading: "sôptāh" }
+    confusables:
+      - { id: "c1", word: "দিন", reading: "din", kind: "word" }
+      - { id: "c2", word: "বজা", reading: "bôzā", kind: "word" }
+  - id: "as-5314"
+    target: "আজি কালিতকৈ গৰম।"
+    reading: "āzi kālitôkôi gôrôm."
+    ipa: "azi kalitɔkɔi ɡɔɹɔm"
+    pos: "phrase"
+    bases:
+      - { word: "আজি", ref: "as-0350" }
+      - { word: "কালিতকৈ", base: "কালি", reading: "kāli" }
+      - { word: "গৰম", base: "গৰম", reading: "gôrôm" }
+    confusables:
+      - { id: "c1", word: "বহুত", reading: "bohut", kind: "word" }
+      - { id: "c2", word: "অতি", reading: "ôti", kind: "word" }

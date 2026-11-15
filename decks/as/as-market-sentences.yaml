@@ -1,0 +1,177 @@
+schema: 1
+id: "as-market-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-5540"
+    target: "মই বজাৰলৈ যাওঁ।"
+    reading: "moi bôzārôlôi zāum̐."
+    ipa: "moi bɔzaɹɔlɔi zaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "বজাৰলৈ", base: "বজাৰ", reading: "bôzār" }
+      - { word: "যাওঁ", base: "যোৱা", reading: "zuwā" }
+    confusables:
+      - { id: "c1", word: "দোকান", reading: "dukān", kind: "word" }
+      - { id: "c2", word: "ঘৰ", reading: "ghôr", kind: "word" }
+  - id: "as-5541"
+    target: "এইটোৰ দাম কিমান?"
+    reading: "eitur dām kimān?"
+    ipa: "eitʊɹ dam kiman"
+    pos: "phrase"
+    bases:
+      - { word: "এইটোৰ", base: "এইটো", reading: "eitu" }
+      - { word: "দাম", ref: "as-0268" }
+      - { word: "কিমান", ref: "as-0149" }
+    confusables:
+      - { id: "c1", word: "টকা", reading: "tôkā", kind: "word" }
+      - { id: "c2", word: "পইচা", reading: "poisā", kind: "word" }
+  - id: "as-5542"
+    target: "দাম বেছি।"
+    reading: "dām besi."
+    ipa: "dam besi"
+    pos: "phrase"
+    bases:
+      - { word: "দাম", ref: "as-0268" }
+      - { word: "বেছি", ref: "as-2248" }
+    confusables:
+      - { id: "c1", word: "খুচুৰা", reading: "khusurā", kind: "word" }
+      - { id: "c2", word: "দৰদাম", reading: "dôrdām", kind: "word" }
+  - id: "as-5543"
+    target: "দাম অলপ কম কৰক।"
+    reading: "dām ôlôp kôm kôrôk."
+    ipa: "dam ɔlɔp kɔm kɔɹɔk"
+    pos: "phrase"
+    bases:
+      - { word: "দাম", ref: "as-0268" }
+      - { word: "অলপ", ref: "as-2228" }
+      - { word: "কম", ref: "as-0064" }
+      - { word: "কৰক", base: "কৰা", reading: "kôrā" }
+    confusables:
+      - { id: "c1", word: "বেছি", reading: "besi", kind: "word" }
+      - { id: "c2", word: "খুচুৰা", reading: "khusurā", kind: "word" }
+  - id: "as-5544"
+    target: "মোক খুচুৰা দিয়ক।"
+    reading: "muk khusurā diyôk."
+    ipa: "mʊk kʰusuɹa dijɔk"
+    pos: "phrase"
+    bases:
+      - { word: "মোক", ref: "as-2198" }
+      - { word: "খুচুৰা", ref: "as-0271" }
+      - { word: "দিয়ক", base: "দিয়া", reading: "diyā" }
+    confusables:
+      - { id: "c1", word: "টকা", reading: "tôkā", kind: "word" }
+      - { id: "c2", word: "দাম", reading: "dām", kind: "word" }
+  - id: "as-5545"
+    target: "মই এক কিলো আলু লওঁ।"
+    reading: "moi ek kilo ālu lôum̐."
+    ipa: "moi ek kilo alu lɔʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "এক", ref: "as-0222" }
+      - { word: "কিলো", ref: "as-0277" }
+      - { word: "আলু", ref: "as-0281" }
+      - { word: "লওঁ", base: "লোৱা", reading: "luwā" }
+    confusables:
+      - { id: "c1", word: "দুটা", reading: "dutā", kind: "word" }
+      - { id: "c2", word: "গ্ৰাম", reading: "grām", kind: "word" }
+  - id: "as-5546"
+    target: "মোনাটো ভাৰী।"
+    reading: "munātu bhāri."
+    ipa: "mʊnatʊ bʱaɹi"
+    pos: "phrase"
+    bases:
+      - { word: "মোনাটো", base: "মোনা", reading: "munā" }
+      - { word: "ভাৰী", ref: "as-2282" }
+    confusables:
+      - { id: "c1", word: "হাল্কা", reading: "hālkā", kind: "word" }
+      - { id: "c2", word: "শক্ত", reading: "xôkt", kind: "word" }
+  - id: "as-5547"
+    target: "দোকান ক'ত?"
+    reading: "dukān kot?"
+    ipa: "dʊkan kot"
+    pos: "phrase"
+    bases:
+      - { word: "দোকান", ref: "as-0275" }
+      - { word: "ক'ত", ref: "as-0145" }
+    confusables:
+      - { id: "c1", word: "বজাৰ", reading: "bôzār", kind: "word" }
+      - { id: "c2", word: "ঘৰ", reading: "ghôr", kind: "word" }
+  - id: "as-5548"
+    target: "দোকানটো বজাৰত আছে।"
+    reading: "dukānôtu bôzārôt āse."
+    ipa: "dʊkanɔtʊ bɔzaɹɔt ase"
+    pos: "phrase"
+    bases:
+      - { word: "দোকানটো", base: "দোকান", reading: "dukān" }
+      - { word: "বজাৰত", base: "বজাৰ", reading: "bôzār" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "ভিতৰত", reading: "bhitôrôt", kind: "word" }
+      - { id: "c2", word: "ওপৰত", reading: "upôrôt", kind: "word" }
+  - id: "as-5549"
+    target: "মই বজাৰত দৰদাম কৰোঁ।"
+    reading: "moi bôzārôt dôrdām kôrum̐."
+    ipa: "moi bɔzaɹɔt dɔɹdam kɔɹʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "বজাৰত", base: "বজাৰ", reading: "bôzār" }
+      - { word: "দৰদাম", ref: "as-0279" }
+      - { word: "কৰোঁ", base: "কৰা", reading: "kôrā" }
+    confusables:
+      - { id: "c1", word: "কিনা", reading: "kinā", kind: "word" }
+      - { id: "c2", word: "দিয়া", reading: "diyā", kind: "word" }
+  - id: "as-5550"
+    target: "তেওঁ বজাৰত মাছ কিনে।"
+    reading: "teum̐ bôzārôt mās kine."
+    ipa: "teʊ̃ bɔzaɹɔt mas kine"
+    pos: "phrase"
+    bases:
+      - { word: "তেওঁ", ref: "as-2181" }
+      - { word: "বজাৰত", base: "বজাৰ", reading: "bôzār" }
+      - { word: "মাছ", ref: "as-0287" }
+      - { word: "কিনে", base: "কিনা", reading: "kinā" }
+    confusables:
+      - { id: "c1", word: "মাংস", reading: "māṅxô", kind: "word" }
+      - { id: "c2", word: "আলু", reading: "ālu", kind: "word" }
+  - id: "as-5551"
+    target: "মোৰ পইচা নাই।"
+    reading: "mur poisā nāi."
+    ipa: "mʊɹ poisa nai"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "পইচা", ref: "as-0270" }
+      - { word: "নাই", ref: "as-0142" }
+    confusables:
+      - { id: "c1", word: "টকা", reading: "tôkā", kind: "word" }
+      - { id: "c2", word: "খুচুৰা", reading: "khusurā", kind: "word" }
+  - id: "as-5552"
+    target: "বজাৰটো ডাঙৰ।"
+    reading: "bôzārôtu dāṅôr."
+    ipa: "bɔzaɹɔtʊ daŋɔɹ"
+    pos: "phrase"
+    bases:
+      - { word: "বজাৰটো", base: "বজাৰ", reading: "bôzār" }
+      - { word: "ডাঙৰ", ref: "as-2086" }
+    confusables:
+      - { id: "c1", word: "সৰু", reading: "xoru", kind: "word" }
+      - { id: "c2", word: "নতুন", reading: "notun", kind: "word" }
+  - id: "as-5553"
+    target: "মোনাত কি আছে?"
+    reading: "munāt ki āse?"
+    ipa: "mʊnat ki ase"
+    pos: "phrase"
+    bases:
+      - { word: "মোনাত", base: "মোনা", reading: "munā" }
+      - { word: "কি", ref: "as-0143" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "খুচুৰা", reading: "khusurā", kind: "word" }
+      - { id: "c2", word: "কিলো", reading: "kilo", kind: "word" }
