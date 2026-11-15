@@ -203,6 +203,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "これはお土産です。"
+        target_scripts: { kana: "これはおみやげです。" }
+        words: ["これ", "は", "お土産", "です"]
+        reading: "kore wa omiyage desu."
+        ipa: "koɾe wa omijaɡe desɯ"
   - id: "ja-6218"
     target: "票"
     target_scripts: { kana: "とうひょう" }
