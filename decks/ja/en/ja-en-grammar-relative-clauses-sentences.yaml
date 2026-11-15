@@ -1,0 +1,152 @@
+schema: 1
+id: "ja-en-grammar-relative-clauses-sentences"
+kind: "layer"
+core: "ja-grammar-relative-clauses-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Describing a noun with a clause, in sentences"
+description: "Sentences in which a plain-form clause comes before a noun and describes it, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-9340":
+    native: "The book I bought yesterday is interesting."
+    notes:
+      "n1": "The clause かった (katta) comes right before ほん (hon): きのう かった ほん (kinou katta hon), the book I bought yesterday. Japanese has no word for that or which, and no の (no) between the clause and the noun."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      f1: { why: "Inside the clause the verb stays plain: かった (katta), not かいました (kaimashita)." }
+      w1: { why: "Do not put の (no) after the clause: かった の ほん (katta no hon) is wrong." }
+      w2: { why: "よむ (yomu) means to read." }
+  "ja-9341":
+    native: "The dish my mother made is delicious."
+    notes:
+      "n1": "Inside the clause, who made it is marked with が (ga): はは が つくった (haha ga tsukutta). The thing made, りょうり (ryouri), is the noun the clause describes, and it loses its を (o)."
+    bases:
+      "が": { meaning: "(marks the one who does the action)" }
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      f1: { why: "Inside the clause the verb stays plain: つくった (tsukutta), not つくりました (tsukurimashita)." }
+      w1: { why: "を (o) would make the mother the thing that was made." }
+      w2: { why: "たべる (taberu) means to eat." }
+  "ja-9342":
+    native: "The person I will meet tomorrow is a teacher."
+    notes:
+      "n1": "The plain present あう (au) in the clause can mean the future, and あした (ashita) says when. The clause has its own time: it does not have to match the time of the main sentence."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      f1: { why: "あった (atta) is the plain past of あう (au): the meeting is tomorrow, so the present あう (au) is needed." }
+      w1: { why: "くる (kuru) means to come." }
+      w2: { why: "いく (iku) means to go." }
+  "ja-9343":
+    native: "The person who did not come to school yesterday is my friend."
+    notes:
+      "n1": "こなかった (konakatta) is the plain negative past of くる (kuru). A negative clause stands before the noun just as a positive one does, and the clause may hold a place, a time or anything the sentence could."
+    bases:
+      "に": { meaning: "(in, at, to)" }
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      f1: { why: "こない (konai) is the present negative: the meaning here is past." }
+      w1: { why: "いく (iku) means to go." }
+      w2: { why: "で (de) marks where something happens; the place a person comes to is marked with に (ni)." }
+  "ja-9344":
+    native: "I read the letter she wrote."
+    notes:
+      "n1": "The whole clause かのじょ が かいた (kanojo ga kaita) is one long word describing てがみ (tegami). Then the main sentence goes on: てがみ を (tegami o) is what I read, and よみました (yomimashita) is the main verb, in the polite form."
+    bases:
+      "が": { meaning: "(marks the one who does the action)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      f1: { why: "Inside the clause the verb stays plain: かいた (kaita), not かきました (kakimashita)." }
+      w1: { why: "きく (kiku) means to listen; to hear; to ask." }
+      w2: { why: "みる (miru) means to see; to look at; to watch." }
+  "ja-9345":
+    native: "The film my friend likes is interesting."
+    notes:
+      "n1": "A clause can end in an adjective too. すき (suki) is a na-adjective, so it takes な (na) before the noun: ともだち が すきな えいが (tomodachi ga sukina eiga)."
+    bases:
+      "が": { meaning: "(marks the one who does the action)" }
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      f1: { why: "すきだ (sukida) ends a sentence; before a noun the form is すきな (sukina)." }
+      w1: { why: "たのしい (tanoshii) means fun; enjoyable." }
+      w2: { why: "じょうず (jouzu) means good at; skilled; well done." }
+  "ja-9346":
+    native: "The shoes I bought at that shop are new."
+    notes:
+      "n1": "みせで (mise de), at the shop, stays inside the clause. The noun the clause describes is くつ (kutsu), the shoes, and it comes last."
+    bases:
+      "で": { meaning: "(at, in, by)" }
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "に (ni) marks where someone goes or is; the place where something is bought takes で (de)." }
+      w2: { why: "かばん (kaban) means bag." }
+      w3: { why: "ふく (fuku) means clothes." }
+  "ja-9347":
+    native: "Who is the person who made the cake?"
+    notes:
+      "n1": "ケーキ を つくった (keeki o tsukutta) is a clause that describes ひと (hito). Here the person is the one who did the action, so the noun is the doer and ケーキ を (keeki o) stays in the clause."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+      "か": { meaning: "(marks a question)" }
+    confusables:
+      f1: { why: "Inside the clause the verb stays plain: つくった (tsukutta), not つくりました (tsukurimashita)." }
+      w1: { why: "が (ga) would make the cake the one who made something." }
+      w2: { why: "たべる (taberu) means to eat." }
+  "ja-9348":
+    native: "A person who does not drink sake likes tea."
+    notes:
+      "n1": "のまない (nomanai) is the negative of のむ (nomu), and the clause おさけ を のまない (osake o nomanai) describes ひと (hito). The noun ひと (hito) here means a person in general."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "は": { meaning: "(marks the topic)" }
+      "が": { meaning: "(marks the one who does the action)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      f1: { why: "Inside the clause the verb stays plain: のまない (nomanai), not のみません (nomimasen)." }
+      f2: { why: "のまなかった (nomanakatta) is the past: the meaning here is a person who never drinks." }
+      w1: { why: "たべる (taberu) means to eat." }
+  "ja-9349":
+    native: "The children who played in the park are well."
+    notes:
+      "n1": "こうえんで (kouen de) says where they played and stays inside the clause. The clause あそんだ (asonda) is the plain past of あそぶ (asobu), and it describes こども (kodomo)."
+    bases:
+      "で": { meaning: "(at, in, by)" }
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      f1: { why: "Inside the clause the verb stays plain: あそんだ (asonda), not あそびました (asobimashita)." }
+      w1: { why: "でる (deru) means to go out; to leave." }
+      w2: { why: "に (ni) marks where someone goes; for where something happens the particle is で (de)." }
+  "ja-9350":
+    native: "The coffee he often drinks is delicious."
+    notes:
+      "n1": "The plain present のむ (nomu) in the clause says what he does regularly. An adverb such as よく (yoku) belongs to the clause, before its verb."
+    bases:
+      "が": { meaning: "(marks the one who does the action)" }
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      f1: { why: "のんだ (nonda) is the past: it would mean the coffee he drank once." }
+      w1: { why: "よむ (yomu) means to read." }
+      w2: { why: "Do not put の (no) after the clause: のむ の コーヒー (nomu no koohii) is wrong." }
+  "ja-9351":
+    native: "I looked at the photo my father took."
+    notes:
+      "n1": "ちち が とった (chichi ga totta) describes しゃしん (shashin). The clause is plain, とった (totta), and only the main verb is polite, みました (mimashita): the style of the whole sentence is set at its end."
+    bases:
+      "が": { meaning: "(marks the one who does the action)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      f1: { why: "Inside the clause the verb stays plain: とった (totta), not とりました (torimashita)." }
+      w1: { why: "よむ (yomu) means to read." }
+      w2: { why: "きく (kiku) means to listen; to hear; to ask." }

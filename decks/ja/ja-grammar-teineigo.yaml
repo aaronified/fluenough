@@ -1,0 +1,86 @@
+schema: 1
+id: "ja-grammar-teineigo"
+part: "core"
+kind: "grammar"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["past", "very-polite", "very-polite-past", "guess"]
+  entries:
+    - lemma: "です"
+      key: "desu"
+      reading: "desu"
+      ipa: "desɯ"
+      forms:
+        "past": "でした"
+        "very-polite": "でございます"
+        "very-polite-past": "でございました"
+        "guess": "でしょう"
+      readings:
+        "past": "deshita"
+        "very-polite": "de gozaimasu"
+        "very-polite-past": "de gozaimashita"
+        "guess": "deshou"
+      ipas:
+        "past": "deɕita"
+        "very-polite": "de ɡodzaimasɯ"
+        "very-polite-past": "de ɡodzaimaɕita"
+        "guess": "deɕoː"
+    - lemma: "あります"
+      key: "arimasu"
+      reading: "arimasu"
+      ipa: "aɾimasɯ"
+      forms:
+        "past": "ありました"
+        "very-polite": "ございます"
+        "very-polite-past": "ございました"
+        "guess": "あるでしょう"
+      readings:
+        "past": "arimashita"
+        "very-polite": "gozaimasu"
+        "very-polite-past": "gozaimashita"
+        "guess": "aru deshou"
+      ipas:
+        "past": "aɾimaɕita"
+        "very-polite": "ɡodzaimasɯ"
+        "very-polite-past": "ɡodzaimaɕita"
+        "guess": "aɾɯ deɕoː"
+    - lemma: "ではありません"
+      key: "dewa-arimasen"
+      reading: "de wa arimasen"
+      ipa: "de wa aɾimaseɴ"
+      forms:
+        "past": "ではありませんでした"
+        "very-polite": "ではございません"
+        "very-polite-past": "ではございませんでした"
+        "guess": "ではないでしょう"
+      readings:
+        "past": "de wa arimasendeshita"
+        "very-polite": "de wa gozaimasen"
+        "very-polite-past": "de wa gozaimasendeshita"
+        "guess": "de wa nai deshou"
+      ipas:
+        "past": "de wa aɾimaseɴdeɕita"
+        "very-polite": "de wa ɡodzaimaseɴ"
+        "very-polite-past": "de wa ɡodzaimaseɴdeɕita"
+        "guess": "de wa nai deɕoː"
+    - lemma: "ありません"
+      key: "arimasen"
+      reading: "arimasen"
+      ipa: "aɾimaseɴ"
+      forms:
+        "past": "ありませんでした"
+        "very-polite": "ございません"
+        "very-polite-past": "ございませんでした"
+        "guess": "ないでしょう"
+      readings:
+        "past": "arimasendeshita"
+        "very-polite": "gozaimasen"
+        "very-polite-past": "gozaimasendeshita"
+        "guess": "nai deshou"
+      ipas:
+        "past": "aɾimaseɴdeɕita"
+        "very-polite": "ɡodzaimaseɴ"
+        "very-polite-past": "ɡodzaimaseɴdeɕita"
+        "guess": "nai deɕoː"

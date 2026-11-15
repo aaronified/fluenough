@@ -1,0 +1,186 @@
+schema: 1
+id: "ja-grammar-relative-clauses"
+part: "core"
+kind: "grammar"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["sentence", "relative-clause", "negative-clause"]
+  entries:
+    - lemma: "ほん"
+      key: "hon"
+      reading: "hon"
+      ipa: "hoɴ"
+      forms:
+        "sentence": "わたしはきのうほんをかった"
+        "relative-clause": "きのうかったほん"
+        "negative-clause": "きのうかわなかったほん"
+      readings:
+        "sentence": "watashi wa kinou hon o katta"
+        "relative-clause": "kinou katta hon"
+        "negative-clause": "kinou kawanakatta hon"
+      ipas:
+        "sentence": "wataɕi wa kinoː hoɴ o katta"
+        "relative-clause": "kinoː katta hoɴ"
+        "negative-clause": "kinoː kawanakatta hoɴ"
+    - lemma: "ひと"
+      key: "hito"
+      reading: "hito"
+      ipa: "çito"
+      forms:
+        "sentence": "あのひとはにほんごをおしえる"
+        "relative-clause": "にほんごをおしえるひと"
+        "negative-clause": "にほんごをおしえないひと"
+      readings:
+        "sentence": "ano hito wa nihongo o oshieru"
+        "relative-clause": "nihongo o oshieru hito"
+        "negative-clause": "nihongo o oshienai hito"
+      ipas:
+        "sentence": "ano çito wa nihoɴɡo o oɕieɾɯ"
+        "relative-clause": "nihoɴɡo o oɕieɾɯ çito"
+        "negative-clause": "nihoɴɡo o oɕienai çito"
+    - lemma: "りょうり"
+      key: "ryouri"
+      reading: "ryouri"
+      ipa: "ɾjoːɾi"
+      forms:
+        "sentence": "せんせいはりょうりをつくった"
+        "relative-clause": "せんせいがつくったりょうり"
+        "negative-clause": "せんせいがつくらなかったりょうり"
+      readings:
+        "sentence": "sensei wa ryouri o tsukutta"
+        "relative-clause": "sensei ga tsukutta ryouri"
+        "negative-clause": "sensei ga tsukuranakatta ryouri"
+      ipas:
+        "sentence": "seɴseː wa ɾjoːɾi o tsɯkɯtta"
+        "relative-clause": "seɴseː ɡa tsɯkɯtta ɾjoːɾi"
+        "negative-clause": "seɴseː ɡa tsɯkɯɾanakatta ɾjoːɾi"
+    - lemma: "てがみ"
+      key: "tegami"
+      reading: "tegami"
+      ipa: "teɡami"
+      forms:
+        "sentence": "かのじょはてがみをかいた"
+        "relative-clause": "かのじょがかいたてがみ"
+        "negative-clause": "かのじょがかかなかったてがみ"
+      readings:
+        "sentence": "kanojo wa tegami o kaita"
+        "relative-clause": "kanojo ga kaita tegami"
+        "negative-clause": "kanojo ga kakanakatta tegami"
+      ipas:
+        "sentence": "kanodʑo wa teɡami o kaita"
+        "relative-clause": "kanodʑo ɡa kaita teɡami"
+        "negative-clause": "kanodʑo ɡa kakanakatta teɡami"
+    - lemma: "みせ"
+      key: "mise"
+      reading: "mise"
+      ipa: "mise"
+      forms:
+        "sentence": "わたしはみせでくつをかった"
+        "relative-clause": "くつをかったみせ"
+        "negative-clause": "くつをかわなかったみせ"
+      readings:
+        "sentence": "watashi wa mise de kutsu o katta"
+        "relative-clause": "kutsu o katta mise"
+        "negative-clause": "kutsu o kawanakatta mise"
+      ipas:
+        "sentence": "wataɕi wa mise de kɯtsɯ o katta"
+        "relative-clause": "kɯtsɯ o katta mise"
+        "negative-clause": "kɯtsɯ o kawanakatta mise"
+    - lemma: "えいが"
+      key: "eiga"
+      reading: "eiga"
+      ipa: "eːɡa"
+      forms:
+        "sentence": "ともだちはえいがをみた"
+        "relative-clause": "ともだちがみたえいが"
+        "negative-clause": "ともだちがみなかったえいが"
+      readings:
+        "sentence": "tomodachi wa eiga o mita"
+        "relative-clause": "tomodachi ga mita eiga"
+        "negative-clause": "tomodachi ga minakatta eiga"
+      ipas:
+        "sentence": "tomodatɕi wa eːɡa o mita"
+        "relative-clause": "tomodatɕi ɡa mita eːɡa"
+        "negative-clause": "tomodatɕi ɡa minakatta eːɡa"
+    - lemma: "こうえん"
+      key: "kouen"
+      reading: "kouen"
+      ipa: "koːeɴ"
+      forms:
+        "sentence": "こどもはこうえんであそんだ"
+        "relative-clause": "こどもがあそんだこうえん"
+        "negative-clause": "こどもがあそばなかったこうえん"
+      readings:
+        "sentence": "kodomo wa kouen de asonda"
+        "relative-clause": "kodomo ga asonda kouen"
+        "negative-clause": "kodomo ga asobanakatta kouen"
+      ipas:
+        "sentence": "kodomo wa koːeɴ de asoɴda"
+        "relative-clause": "kodomo ɡa asoɴda koːeɴ"
+        "negative-clause": "kodomo ɡa asobanakatta koːeɴ"
+    - lemma: "ケーキ"
+      key: "keeki"
+      reading: "keeki"
+      ipa: "keːki"
+      forms:
+        "sentence": "ちちはケーキをかった"
+        "relative-clause": "ちちがかったケーキ"
+        "negative-clause": "ちちがかわなかったケーキ"
+      readings:
+        "sentence": "chichi wa keeki o katta"
+        "relative-clause": "chichi ga katta keeki"
+        "negative-clause": "chichi ga kawanakatta keeki"
+      ipas:
+        "sentence": "tɕitɕi wa keːki o katta"
+        "relative-clause": "tɕitɕi ɡa katta keːki"
+        "negative-clause": "tɕitɕi ɡa kawanakatta keːki"
+    - lemma: "コーヒー"
+      key: "koohii"
+      reading: "koohii"
+      ipa: "koːçiː"
+      forms:
+        "sentence": "かれはコーヒーをのむ"
+        "relative-clause": "かれがのむコーヒー"
+        "negative-clause": "かれがのまないコーヒー"
+      readings:
+        "sentence": "kare wa koohii o nomu"
+        "relative-clause": "kare ga nomu koohii"
+        "negative-clause": "kare ga nomanai koohii"
+      ipas:
+        "sentence": "kaɾe wa koːçiː o nomɯ"
+        "relative-clause": "kaɾe ɡa nomɯ koːçiː"
+        "negative-clause": "kaɾe ɡa nomanai koːçiː"
+    - lemma: "くつ"
+      key: "kutsu"
+      reading: "kutsu"
+      ipa: "kɯtsɯ"
+      forms:
+        "sentence": "あねはくつをもらった"
+        "relative-clause": "あねがもらったくつ"
+        "negative-clause": "あねがもらわなかったくつ"
+      readings:
+        "sentence": "ane wa kutsu o moratta"
+        "relative-clause": "ane ga moratta kutsu"
+        "negative-clause": "ane ga morawanakatta kutsu"
+      ipas:
+        "sentence": "ane wa kɯtsɯ o moɾatta"
+        "relative-clause": "ane ɡa moɾatta kɯtsɯ"
+        "negative-clause": "ane ɡa moɾawanakatta kɯtsɯ"
+    - lemma: "しゃしん"
+      key: "shashin"
+      reading: "shashin"
+      ipa: "ɕaɕiɴ"
+      forms:
+        "sentence": "ちちはしゃしんをとった"
+        "relative-clause": "ちちがとったしゃしん"
+        "negative-clause": "ちちがとらなかったしゃしん"
+      readings:
+        "sentence": "chichi wa shashin o totta"
+        "relative-clause": "chichi ga totta shashin"
+        "negative-clause": "chichi ga toranakatta shashin"
+      ipas:
+        "sentence": "tɕitɕi wa ɕaɕiɴ o totta"
+        "relative-clause": "tɕitɕi ɡa totta ɕaɕiɴ"
+        "negative-clause": "tɕitɕi ɡa toɾanakatta ɕaɕiɴ"
