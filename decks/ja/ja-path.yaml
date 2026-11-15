@@ -941,7 +941,8 @@ units:
       - { id: "manga-panel", text: { "en": "The sound words in a few manga panels" } }
   - decks: ["ja-kanji-36"]
     words: 0
-  - planned: { id: "ja-abstract-words", theme: "abstract-words", words: 55 }
+  - decks: ["ja-abstract-words", "ja-abstract-words-sentences", "ja-reading-abstract-words", "*"]
+    words: 55
     listening_passages:
       - { id: "a-discussion", text: { "en": "A short discussion of an idea" } }
     reading_passages:
@@ -968,7 +969,8 @@ units:
       - { id: "new-year-food", text: { "en": "A family explains the dishes they eat at New Year" } }
     reading_passages:
       - { id: "washoku-article", text: { "en": "A short article about traditional Japanese food" } }
-  - planned: { id: "ja-literature", theme: "literature", words: 50 }
+  - decks: ["ja-literature", "ja-literature-sentences", "ja-reading-literature", "*"]
+    words: 50
     listening_passages:
       - { id: "a-haiku-explained", text: { "en": "A teacher reads a haiku and explains it" } }
     reading_passages:
