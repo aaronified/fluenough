@@ -126,6 +126,143 @@ def _card_block(lines: list[str], cid: str) -> _Block | None:
     return None
 
 
+# --- One-line flow cards ------------------------------------------------------
+# Some decks (nine Chinese files) write each card on one line:
+#   - {"id": "zh-0644", "target": "公司", "reading": "gōngsī", ..., "examples": [...]}
+# A key is added to such a card by splicing text into its line, after the value
+# of a named top-level key; the rest of the line is untouched. Nested lists and
+# mappings (`words`, `notes`, `examples`) are skipped, so a nested `reading` or
+# `ipa` is never mistaken for the card's own.
+
+def _flow_string_end(line: str, i: int) -> int:
+    """Index just past the double-quoted string that starts at [i]."""
+    j = i + 1
+    while j < len(line):
+        if line[j] == "\\":
+            j += 2
+            continue
+        if line[j] == '"':
+            return j + 1
+        j += 1
+    raise ValueError("unterminated string")
+
+
+def _flow_value_end(line: str, i: int) -> int:
+    """Index just past the flow value that starts at [i]: a string, a nested
+    `{...}` or `[...]`, or a bare scalar."""
+    if line[i] == '"':
+        return _flow_string_end(line, i)
+    if line[i] in "{[":
+        depth = 0
+        while i < len(line):
+            c = line[i]
+            if c == '"':
+                i = _flow_string_end(line, i)
+                continue
+            if c in "{[":
+                depth += 1
+            elif c in "}]":
+                depth -= 1
+                if depth == 0:
+                    return i + 1
+            i += 1
+        raise ValueError("unterminated value")
+    while i < len(line) and line[i] not in ",}":
+        i += 1
+    return i
+
+
+def _flow_keys(line: str) -> dict[str, tuple[int, int, int]]:
+    """The top-level keys of the card on [line] (a `- {` line) to (start of
+    the key, start of its value, end of its value) as string indexes."""
+    i = line.index("{")
+    n = len(line)
+    keys: dict[str, tuple[int, int, int]] = {}
+    i += 1
+    while i < n:
+        while i < n and line[i] in " \t,":
+            i += 1
+        if i >= n or line[i] == "}":
+            break
+        if line[i] != '"':
+            raise ValueError("not a quoted key")
+        kend = _flow_string_end(line, i)
+        key = line[i + 1:kend - 1]
+        j = kend
+        while j < n and line[j] in " \t":
+            j += 1
+        if j >= n or line[j] != ":":
+            raise ValueError("no colon")
+        j += 1
+        while j < n and line[j] in " \t":
+            j += 1
+        vend = _flow_value_end(line, j)
+        keys[key] = (i, j, vend)
+        i = vend
+    return keys
+
+
+def _flow_line(lines: list[str], cid: str) -> int | None:
+    """The index of the one-line flow card [cid], or None."""
+    c = re.escape(cid)
+    rx = re.compile(rf'^\s*- \{{"id": "{c}"[,}}]')
+    for i, raw in enumerate(lines):
+        if rx.match(raw.rstrip("\r")):
+            return i
+    return None
+
+
+def _flow_scalar(line: str, span: tuple[int, int, int]) -> str | None:
+    """The text of a double-quoted value at [span], without its quotes."""
+    _, vs, ve = span
+    v = line[vs:ve]
+    return v[1:-1] if len(v) >= 2 and v[0] == '"' and v[-1] == '"' else None
+
+
+def flow_insert(line: str, after: str, pairs: list[tuple[str, str]]
+                ) -> str | None:
+    """[line] with `, "key": "value"` for each of [pairs] spliced in after the
+    value of the top-level key [after]; None when the key is not there or the
+    line is not a flow card that can be read."""
+    try:
+        keys = _flow_keys(line)
+    except ValueError:
+        return None
+    if after not in keys:
+        return None
+    end = keys[after][2]
+    add = "".join(f", {quote(k)}: {quote(v)}" for k, v in pairs)
+    return line[:end] + add + line[end:]
+
+
+def _patch_flow(lines: list[str], at: int, form: str, source: str,
+                replace_rules: bool, replace_source: str) -> str | None:
+    """Add (or, for a `rules` card under [replace_rules], replace) `phonetic`
+    and `phonetic_source` on the one-line card at lines[at]. None when done,
+    else why not: `"has phonetic"`, `"no ipa line"`, `"unsupported layout"`."""
+    raw = lines[at]
+    cr = "\r" if raw.endswith("\r") else ""
+    line = raw[:-1] if cr else raw
+    try:
+        keys = _flow_keys(line)
+    except ValueError:
+        return "unsupported layout"
+    if "phonetic" in keys or "phonetic_source" in keys:
+        src = _flow_scalar(line, keys["phonetic_source"]) if "phonetic_source" in keys else None
+        if replace_rules and "phonetic" in keys and src == replace_source:
+            ks, vs, ve = keys["phonetic"]
+            lines[at] = line[:vs] + quote(form) + line[ve:] + cr
+            return None
+        return "has phonetic"
+    if "ipa" not in keys:
+        return "no ipa line"
+    new = flow_insert(line, "ipa", [("phonetic", form), ("phonetic_source", source)])
+    if new is None:
+        return "unsupported layout"
+    lines[at] = new + cr
+    return None
+
+
 def patch(text: str, fills: dict[str, tuple[str, str]],
           replace_rules: bool = False,
           replace_source: str = "rules") -> tuple[str, dict[str, str]]:
@@ -154,7 +291,13 @@ def patch(text: str, fills: dict[str, tuple[str, str]],
     for cid, (form, source) in fills.items():
         block = _card_block(lines, cid)
         if block is None:
-            left[cid] = "not in file"
+            fl = _flow_line(lines, cid)
+            if fl is None:
+                left[cid] = "not in file"
+                continue
+            why = _patch_flow(lines, fl, form, source, replace_rules, replace_source)
+            if why:
+                left[cid] = why
             continue
         start, end = block.start, block.end
         pad = " " * block.indent
@@ -260,7 +403,7 @@ def core_cards(decks: Path, lang: str) -> list[Card]:
                     or not vd._is_str(card.get("target")):
                 continue
             found = _card_block(text.split("\n"), card["id"])
-            block = found is not None
+            block = found is not None or _flow_line(text.split("\n"), card["id"]) is not None
             if found is not None and found.json:
                 # `ipa` as the last key of a JSON-style card cannot be patched.
                 ln = text.split("\n")[found.start:found.end]

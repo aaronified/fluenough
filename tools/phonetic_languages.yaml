@@ -115,3 +115,22 @@
     # needs the Spanish-only test in tools/test_phonetic.py widened first.
     name: "Standard Assamese; no Wiktionary form is taken (rules only)"
     untagged: false
+
+"zh":
+  dump: "Chinese"
+  variety:
+    # Not usable, measured 2026-11-15. kaikki.org has one dump "Chinese" for
+    # every variety, 1.2 GB (Content-Length 1,214,692,243, modified
+    # 2026-10-30), so a first run of `import_phonetic.py zh` would fetch all
+    # of it. The first 6 MB (291 entries, 5,213 sounds) hold no `[ ... ]` form
+    # at all: every sound is a `/ ... /` one, and the 465 tagged Mandarin
+    # ("Mandarin", "Standard-Chinese", "Sinological-IPA") are phonemic forms
+    # the zh-pron template makes from the pinyin, written with Chao tone
+    # digits as superscripts (/t͡ɕi̯ɛn⁵⁵/, /ˀeɪ̯⁵⁵/), which the validator's IPA
+    # test refuses (U+2070 to U+2079 are not allowed). So nothing is imported
+    # (untagged: false, no notes, no tags), and every Chinese card gets its
+    # broad ipa from tools/transcribe.py (`mandarin_ipa`, from the pinyin) and
+    # its narrow form from decks/zh/zh-phonetics.yaml. Only the first 6 MB were
+    # read, not the whole dump: a full count is open.
+    name: "Standard Mandarin; no Wiktionary form is taken (rules only)"
+    untagged: false
