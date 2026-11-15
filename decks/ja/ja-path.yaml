@@ -947,7 +947,8 @@ units:
       - { id: "a-discussion", text: { "en": "A short discussion of an idea" } }
     reading_passages:
       - { id: "opinion-column", text: { "en": "A short opinion column" } }
-  - planned: { id: "ja-money", theme: "money", words: 45 }
+  - decks: ["ja-money", "ja-money-sentences", "ja-reading-money", "*"]
+    words: 45
     listening_passages:
       - { id: "at-the-bank", text: { "en": "Opening an account at a bank counter" } }
     reading_passages:
@@ -960,7 +961,8 @@ units:
       - { id: "survey-results", text: { "en": "The results of a short survey on work and life" } }
   - decks: ["ja-kanji-37"]
     words: 0
-  - planned: { id: "ja-university", theme: "university", words: 50 }
+  - decks: ["ja-university", "ja-university-sentences", "ja-reading-university", "*"]
+    words: 50
     listening_passages:
       - { id: "choosing-a-seminar", text: { "en": "Students talk about which seminar to choose" } }
     reading_passages:
