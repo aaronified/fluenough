@@ -1,0 +1,123 @@
+schema: 1
+id: "as-en-about-me-sentences"
+kind: "layer"
+core: "as-about-me-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "About me: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-5100":
+    native: "What is your name?"
+    confusables:
+      "c1": { why: "Your, the polite form used in the phrasebook." }
+      "c2": { why: "Which, not what, for a name." }
+  "as-5101":
+    native: "My language is Assamese."
+    confusables:
+      "c1": { why: "English, a different language." }
+      "c2": { why: "I, not my." }
+  "as-5102":
+    native: "I know Assamese."
+    bases:
+      "জানো": "to know"
+    confusables:
+      "c1": { why: "English, not Assamese." }
+      "c2": { why: "No, not a verb." }
+  "as-5103":
+    native: "I don't know English."
+    bases:
+      "নাজানো": "not to know"
+    confusables:
+      "c1": { why: "Assamese, a different language." }
+      "c2": { why: "Language, a noun, not a verb." }
+  "as-5104":
+    native: "Do you know English?"
+    bases:
+      "জানা": "to know"
+    confusables:
+      "c1": { why: "Assamese, a different language." }
+      "c2": { why: "Language, a noun." }
+  "as-5105":
+    native: "I am twenty years old."
+    confusables:
+      "c1": { why: "Twelve, not twenty." }
+      "c2": { why: "Ten, not twenty." }
+  "as-5106":
+    native: "How old are you?"
+    confusables:
+      "c1": { why: "Which one, not how much." }
+      "c2": { why: "How, not how old." }
+  "as-5107":
+    native: "I am six years old."
+    confusables:
+      "c1": { why: "Seven, not six." }
+      "c2": { why: "Five, not six." }
+  "as-5108":
+    native: "Where is my village?"
+    confusables:
+      "c1": { why: "Country, a bigger place than a village." }
+      "c2": { why: "House, a smaller place." }
+  "as-5109":
+    native: "Where is your country?"
+    confusables:
+      "c1": { why: "Village, not country." }
+      "c2": { why: "My, not your." }
+  "as-5110":
+    native: "I live in a village."
+    bases:
+      "গাঁওত": "village"
+      "থাকোঁ": "to stay; to live"
+    confusables:
+      "c1": { why: "House, a place, not a village." }
+      "c2": { why: "Family, not a place." }
+  "as-5111":
+    native: "I come from the village."
+    bases:
+      "গাঁওৰ": "village"
+      "পৰা": "from"
+      "আহিছোঁ": "to come"
+    confusables:
+      "c1": { why: "House, not a village." }
+      "c2": { why: "Country, a larger place." }
+  "as-5112":
+    native: "My country is good."
+    bases:
+      "ভাল": "good"
+    confusables:
+      "c1": { why: "Village, a smaller place." }
+      "c2": { why: "Language, not country." }
+  "as-5113":
+    native: "My family is big."
+    bases:
+      "ডাঙৰ": "big"
+    confusables:
+      "c1": { why: "Age, not size." }
+      "c2": { why: "Relatives, a group; not the family itself." }
+  "as-5114":
+    native: "Where is my family?"
+    confusables:
+      "c1": { why: "Relatives, not the household." }
+      "c2": { why: "Village, not family." }
+  "as-5115":
+    native: "English is good."
+    bases:
+      "ভাল": "good"
+    confusables:
+      "c1": { why: "Assamese, a different language." }
+      "c2": { why: "Language, a noun." }
+  "as-5116":
+    native: "I live at home."
+    bases:
+      "থাকোঁ": "to stay; to live"
+    confusables:
+      "c1": { why: "Village, not home." }
+      "c2": { why: "Country, a larger place, not home." }
+  "as-5117":
+    native: "Assamese is a good language."
+    bases:
+      "ভাল": "good"
+    confusables:
+      "c1": { why: "English, a different language." }
+      "c2": { why: "Country, not a language." }

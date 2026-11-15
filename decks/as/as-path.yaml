@@ -70,17 +70,17 @@ units:
   # 2. The first word units.
   - decks: ["as-sound-differences"]
     words: 20
-  - decks: ["as-questions", "*"]
+  - decks: ["as-questions", "as-questions-sentences", "*"]
     words: 10
-  - decks: ["as-addressing", "*"]
+  - decks: ["as-addressing", "as-addressing-sentences", "*"]
     words: 13
-  - decks: ["as-pronouns", "*"]
+  - decks: ["as-pronouns", "as-pronouns-sentences", "*"]
     words: 24
     listening_passages:
       - { id: "who-is-who", text: { "en": "Pointing out who is who at a family gathering: he, she, they" } }
     reading_passages:
       - { id: "seating-chart", text: { "en": "A seating chart for a wedding lunch, with names and who is related to whom" } }
-  - decks: ["as-family", "*"]
+  - decks: ["as-family", "as-family-sentences", "*"]
     words: 25
   # 3. The script, after the first six units (#554: skipped by a learner
   # who already reads it).
@@ -91,41 +91,41 @@ units:
     words: 20
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
-  - decks: ["as-about-me", "*"]
+  - decks: ["as-about-me", "as-about-me-sentences", "*"]
     words: 10
-  - decks: ["as-verbs", "*"]
+  - decks: ["as-verbs", "as-verbs-sentences", "*"]
     words: 30
     listening_passages:
       - { id: "morning-routine", text: { "en": "A mother says what each person in the house does in the morning" } }
     reading_passages:
       - { id: "fridge-note", text: { "en": "A note on the fridge: what to eat, what to drink and where things are" } }
-  - decks: ["as-adverbs", "*"]
+  - decks: ["as-adverbs", "as-adverbs-sentences", "*"]
     words: 45
     listening_passages:
       - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
     reading_passages:
       - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
-  - decks: ["as-quantities", "*"]
+  - decks: ["as-quantities", "as-quantities-sentences", "*"]
     words: 23
     listening_passages:
       - { id: "at-the-grocers", text: { "en": "Asking how much and how many at a grocer's" } }
     reading_passages:
       - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
-  - decks: ["as-describing", "*"]
+  - decks: ["as-describing", "as-describing-sentences", "*"]
     words: 28
     listening_passages:
       - { id: "how-are-you-feeling", text: { "en": "A friend asks how you feel today, and you answer" } }
     reading_passages:
       - { id: "postcard-from-the-hills", text: { "en": "A short postcard: the weather and the food" } }
-  - decks: ["as-time", "*"]
+  - decks: ["as-time", "as-time-sentences", "*"]
     words: 18
-  - decks: ["as-more-verbs", "*"]
+  - decks: ["as-more-verbs", "as-more-verbs-sentences", "*"]
     words: 25
     listening_passages:
       - { id: "kitchen-help", text: { "en": "Someone tells a helper what to do in the kitchen" } }
     reading_passages:
       - { id: "how-to-make-tea", text: { "en": "A short card on how to make tea" } }
-  - decks: ["as-work", "*"]
+  - decks: ["as-work", "as-work-sentences", "*"]
     words: 19
   # 5. Rules as forms, practised on the words known: noun forms and
   # conjunctions first, then pronoun and verb forms. The postpositions deck
@@ -164,17 +164,17 @@ units:
     grammar: ["adjectives"]
   # 6. Sentences, each after its words and rules; then the other A1
   # themes, each its words, its rules, then its sentences.
-  - decks: ["as-numbers-big", "*"]
+  - decks: ["as-numbers-big", "as-numbers-big-sentences", "*"]
     words: 24
-  - decks: ["as-food", "*"]
+  - decks: ["as-food", "as-food-sentences", "*"]
     words: 58
     listening_passages:
       - { id: "at-the-sweet-shop", text: { "en": "Choosing sweets and snacks at a sweet shop" } }
     reading_passages:
       - { id: "menu-card", text: { "en": "A restaurant menu card with dishes and prices" } }
-  - decks: ["as-groceries", "*"]
+  - decks: ["as-groceries", "as-groceries-sentences", "*"]
     words: 18
-  - decks: ["as-market", "*"]
+  - decks: ["as-market", "as-market-sentences", "*"]
     words: 10
   - decks: ["as-grammar-questions"]
     words: 0
@@ -191,27 +191,27 @@ units:
   - decks: ["as-directions", "as-grammar-continuous", "*"]
     words: 12
     grammar: ["continuous"]
-  - decks: ["as-transport", "*"]
+  - decks: ["as-transport", "as-transport-sentences", "*"]
     words: 12
-  - decks: ["as-body", "*"]
+  - decks: ["as-body", "as-body-sentences", "*"]
     words: 35
     listening_passages:
       - { id: "at-the-doctors", text: { "en": "Telling a doctor where it hurts" } }
     reading_passages:
       - { id: "stretching-chart", text: { "en": "A chart of simple morning stretches" } }
-  - decks: ["as-places", "*"]
+  - decks: ["as-places", "as-places-sentences", "*"]
     words: 55
     listening_passages:
       - { id: "walk-to-the-market", text: { "en": "A neighbour names the places you pass on the way to the market" } }
     reading_passages:
       - { id: "street-signs", text: { "en": "Signs along a street: pharmacy, school, bank, temple" } }
-  - decks: ["as-things", "*"]
+  - decks: ["as-things", "as-things-sentences", "*"]
     words: 32
     listening_passages:
       - { id: "packing-for-a-trip", text: { "en": "Two people pack a bag for a trip to the hills" } }
     reading_passages:
       - { id: "lost-property-list", text: { "en": "A lost-property list at a railway station" } }
-  - decks: ["as-home", "*"]
+  - decks: ["as-home", "as-home-sentences", "*"]
     words: 20
   - decks: ["as-grammar-postpositions"]
     words: 4
@@ -226,13 +226,13 @@ units:
   - decks: ["as-grammar-articles", "as-grammar-gender-number"]
     words: 5
     grammar: ["articles", "gender-number"]
-  - decks: ["as-clothes", "*"]
+  - decks: ["as-clothes", "as-clothes-sentences", "*"]
     words: 25
     listening_passages:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
     reading_passages:
       - { id: "shop-offer-sign", text: { "en": "A clothes shop's sign with its offers" } }
-  - decks: ["as-animals", "*"]
+  - decks: ["as-animals", "as-animals-sentences", "*"]
     words: 23
     listening_passages:
       - { id: "village-visit", text: { "en": "A child names the animals seen on a visit to a village" } }
@@ -300,7 +300,7 @@ units:
       - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
   - decks: ["as-reading-illness"]
     words: 0
-  - decks: ["as-eating-out", "*"]
+  - decks: ["as-eating-out", "as-eating-out-sentences", "*"]
     words: 11
   - decks: ["as-cooking", "as-cooking-sentences", "*"]
     words: 16
@@ -430,7 +430,7 @@ units:
   - decks: ["as-reading-geography"]
     words: 0
   # B1: the themes and grammar of the CEFR's B1.
-  - decks: ["as-registers"]
+  - decks: ["as-registers", "as-registers-sentences"]
     words: 13
   - decks: ["as-health", "as-health-sentences", "*"]
     words: 15
@@ -448,7 +448,7 @@ units:
       - { id: "letter-to-a-friend", text: { "en": "A letter to a friend about worries and hopes" } }
   - decks: ["as-reading-feelings"]
     words: 0
-  - decks: ["as-slang"]
+  - decks: ["as-slang", "as-slang-sentences"]
     words: 9
   - decks: ["as-grammar-relative", "as-grammar-relative-sentences"]
     words: 0

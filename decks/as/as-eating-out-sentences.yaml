@@ -1,0 +1,146 @@
+schema: 1
+id: "as-eating-out-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-5804"
+    target: "মই চাহ খাওঁ।"
+    reading: "moi sāh khāum̐."
+    ipa: "moi sah kʰaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "চাহ", ref: "as-0409" }
+      - { word: "খাওঁ", ref: "as-0109" }
+    confusables:
+      - { id: "c1", word: "কফি", reading: "kophi", kind: "word" }
+      - { id: "c2", word: "পানী", reading: "pāni", kind: "word" }
+  - id: "as-5805"
+    target: "মই পানী খাওঁ।"
+    reading: "moi pāni khāum̐."
+    ipa: "moi pani kʰaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "পানী", ref: "as-0408" }
+      - { word: "খাওঁ", ref: "as-0109" }
+    confusables:
+      - { id: "c1", word: "চাহ", reading: "sāh", kind: "word" }
+      - { id: "c2", word: "কফি", reading: "kophi", kind: "word" }
+  - id: "as-5806"
+    target: "আহাৰ ভাল।"
+    reading: "āhār bhāl."
+    ipa: "ahaɹ bʱal"
+    pos: "phrase"
+    bases:
+      - { word: "আহাৰ", ref: "as-0407" }
+      - { word: "ভাল", ref: "as-2084" }
+    confusables:
+      - { id: "c1", word: "ভাত", reading: "bhāt", kind: "word" }
+      - { id: "c2", word: "পিঠা", reading: "pithā", kind: "word" }
+  - id: "as-5807"
+    target: "কফি গৰম।"
+    reading: "kofi gôrôm."
+    ipa: "kofi ɡɔɹɔm"
+    pos: "phrase"
+    bases:
+      - { word: "কফি", ref: "as-0410" }
+      - { word: "গৰম", ref: "as-2090" }
+    confusables:
+      - { id: "c1", word: "চাহ", reading: "sāh", kind: "word" }
+      - { id: "c2", word: "পানী", reading: "pāni", kind: "word" }
+  - id: "as-5808"
+    target: "পানী ঠাণ্ডা।"
+    reading: "pāni thāndā."
+    ipa: "pani tʰanda"
+    pos: "phrase"
+    bases:
+      - { word: "পানী", ref: "as-0408" }
+      - { word: "ঠাণ্ডা", ref: "as-2091" }
+    confusables:
+      - { id: "c1", word: "গৰম", reading: "gôrôm", kind: "word" }
+      - { id: "c2", word: "চাহ", reading: "sāh", kind: "word" }
+  - id: "as-5809"
+    target: "ভাত ভাল।"
+    reading: "bhāt bhāl."
+    ipa: "bʱat bʱal"
+    pos: "phrase"
+    bases:
+      - { word: "ভাত", ref: "as-0111" }
+      - { word: "ভাল", ref: "as-2084" }
+    confusables:
+      - { id: "c1", word: "পিঠা", reading: "pithā", kind: "word" }
+      - { id: "c2", word: "আহাৰ", reading: "āhār", kind: "word" }
+  - id: "as-5810"
+    target: "তেওঁ ভাত খায়।"
+    reading: "teum̐ bhāt khāy."
+    ipa: "teʊ̃ bʱat kʰaj"
+    pos: "phrase"
+    bases:
+      - { word: "তেওঁ", ref: "as-2181" }
+      - { word: "ভাত", ref: "as-0111" }
+      - { word: "খায়", ref: "as-0109" }
+    confusables:
+      - { id: "c1", word: "পিঠা", reading: "pithā", kind: "word" }
+      - { id: "c2", word: "পানী", reading: "pāni", kind: "word" }
+  - id: "as-5811"
+    target: "তুমি চাহ খাবনে?"
+    reading: "tumi sāh khābône?"
+    ipa: "tumi sah kʰabɔne"
+    pos: "phrase"
+    bases:
+      - { word: "তুমি", ref: "as-2179" }
+      - { word: "চাহ", ref: "as-0409" }
+      - { word: "খাবনে", ref: "as-0109" }
+    confusables:
+      - { id: "c1", word: "কফি", reading: "kophi", kind: "word" }
+      - { id: "c2", word: "পানী", reading: "pāni", kind: "word" }
+  - id: "as-5812"
+    target: "মোক পানী লাগে।"
+    reading: "muk pāni lāge."
+    ipa: "mʊk pani laɡe"
+    pos: "phrase"
+    bases:
+      - { word: "মোক", ref: "as-2198" }
+      - { word: "পানী", ref: "as-0408" }
+      - { word: "লাগে", ref: "as-2062" }
+    confusables:
+      - { id: "c1", word: "চাহ", reading: "sāh", kind: "word" }
+      - { id: "c2", word: "কফি", reading: "kophi", kind: "word" }
+  - id: "as-5813"
+    target: "মোক চাহ লাগে।"
+    reading: "muk sāh lāge."
+    ipa: "mʊk sah laɡe"
+    pos: "phrase"
+    bases:
+      - { word: "মোক", ref: "as-2198" }
+      - { word: "চাহ", ref: "as-0409" }
+      - { word: "লাগে", ref: "as-2062" }
+    confusables:
+      - { id: "c1", word: "কফি", reading: "kophi", kind: "word" }
+      - { id: "c2", word: "পানী", reading: "pāni", kind: "word" }
+  - id: "as-5814"
+    target: "দৈ টেঙা।"
+    reading: "dôi teṅā."
+    ipa: "dɔi teŋa"
+    pos: "phrase"
+    bases:
+      - { word: "দৈ", ref: "as-2315" }
+      - { word: "টেঙা", ref: "as-0415" }
+    confusables:
+      - { id: "c1", word: "মিঠা", reading: "mithā", kind: "word" }
+      - { id: "c2", word: "জলা", reading: "zôlā", kind: "word" }
+  - id: "as-5815"
+    target: "ভাত ঠাণ্ডা।"
+    reading: "bhāt thāndā."
+    ipa: "bʱat tʰanda"
+    pos: "phrase"
+    bases:
+      - { word: "ভাত", ref: "as-0111" }
+      - { word: "ঠাণ্ডা", ref: "as-2091" }
+    confusables:
+      - { id: "c1", word: "গৰম", reading: "gôrôm", kind: "word" }
+      - { id: "c2", word: "আহাৰ", reading: "āhār", kind: "word" }

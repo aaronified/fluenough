@@ -1,0 +1,171 @@
+schema: 1
+id: "as-groceries-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-5527"
+    target: "মই আলু কিনোঁ।"
+    reading: "moi ālu kinum̐."
+    ipa: "moi alu kinʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "আলু", ref: "as-0281" }
+      - { word: "কিনোঁ", base: "কিনা", reading: "kinā" }
+    confusables:
+      - { id: "c1", word: "পিঁয়াজ", reading: "pim̐yāz", kind: "word" }
+      - { id: "c2", word: "গাজৰ", reading: "gāzôr", kind: "word" }
+  - id: "as-5528"
+    target: "সি মাছ কিনে।"
+    reading: "si mās kine."
+    ipa: "si mas kine"
+    pos: "phrase"
+    bases:
+      - { word: "সি", ref: "as-2180" }
+      - { word: "মাছ", ref: "as-0287" }
+      - { word: "কিনে", base: "কিনা", reading: "kinā" }
+    confusables:
+      - { id: "c1", word: "মাংস", reading: "māṅxô", kind: "word" }
+      - { id: "c2", word: "কণী", reading: "koni", kind: "word" }
+  - id: "as-5529"
+    target: "তেওঁ গাখীৰ কিনে।"
+    reading: "teum̐ gākhir kine."
+    ipa: "teʊ̃ ɡakʰiɹ kine"
+    pos: "phrase"
+    bases:
+      - { word: "তেওঁ", ref: "as-2181" }
+      - { word: "গাখীৰ", ref: "as-0292" }
+      - { word: "কিনে", base: "কিনা", reading: "kinā" }
+    confusables:
+      - { id: "c1", word: "দৈ", reading: "dôi", kind: "word" }
+      - { id: "c2", word: "ঘী", reading: "ghi", kind: "word" }
+  - id: "as-5530"
+    target: "মই পিঁয়াজ আৰু নহৰু কিনোঁ।"
+    reading: "moi pim̐yāz āru nôhoru kinum̐."
+    ipa: "moi pĩjaz aɹu nɔhoɹu kinʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "পিঁয়াজ", ref: "as-0282" }
+      - { word: "আৰু", ref: "as-2126" }
+      - { word: "নহৰু", ref: "as-0285" }
+      - { word: "কিনোঁ", base: "কিনা", reading: "kinā" }
+    confusables:
+      - { id: "c1", word: "হালধি", reading: "hālodhi", kind: "word" }
+      - { id: "c2", word: "মৰিচ", reading: "moris", kind: "word" }
+  - id: "as-5531"
+    target: "মাছটো ভাল।"
+    reading: "māsôtu bhāl."
+    ipa: "masɔtʊ bʱal"
+    pos: "phrase"
+    bases:
+      - { word: "মাছটো", base: "মাছ", reading: "mās" }
+      - { word: "ভাল", ref: "as-2084" }
+    confusables:
+      - { id: "c1", word: "মাংস", reading: "māṅxô", kind: "word" }
+      - { id: "c2", word: "মাটন", reading: "mātôn", kind: "word" }
+  - id: "as-5532"
+    target: "সি কুকুৰা কিনে।"
+    reading: "si kukurā kine."
+    ipa: "si kukuɹa kine"
+    pos: "phrase"
+    bases:
+      - { word: "সি", ref: "as-2180" }
+      - { word: "কুকুৰা", ref: "as-0290" }
+      - { word: "কিনে", base: "কিনা", reading: "kinā" }
+    confusables:
+      - { id: "c1", word: "মাছ", reading: "mās", kind: "word" }
+      - { id: "c2", word: "মাংস", reading: "māṅxô", kind: "word" }
+  - id: "as-5533"
+    target: "মই চাউল আৰু দাইল কিনোঁ।"
+    reading: "moi sāul āru dāil kinum̐."
+    ipa: "moi saul aɹu dail kinʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "চাউল", ref: "as-0293" }
+      - { word: "আৰু", ref: "as-2126" }
+      - { word: "দাইল", ref: "as-0294" }
+      - { word: "কিনোঁ", base: "কিনা", reading: "kinā" }
+    confusables:
+      - { id: "c1", word: "তেল", reading: "tel", kind: "word" }
+      - { id: "c2", word: "নিমখ", reading: "nimôkh", kind: "word" }
+  - id: "as-5534"
+    target: "নিমখ আৰু তেল কিনক।"
+    reading: "nimôkh āru tel kinôk."
+    ipa: "nimɔkʰ aɹu tel kinɔk"
+    pos: "phrase"
+    bases:
+      - { word: "নিমখ", ref: "as-0295" }
+      - { word: "আৰু", ref: "as-2126" }
+      - { word: "তেল", ref: "as-0296" }
+      - { word: "কিনক", base: "কিনা", reading: "kinā" }
+    confusables:
+      - { id: "c1", word: "চাউল", reading: "sāul", kind: "word" }
+      - { id: "c2", word: "দাইল", reading: "dāil", kind: "word" }
+  - id: "as-5535"
+    target: "মোক এশ গ্ৰাম আদা দিয়ক।"
+    reading: "muk ex grām ādā diyôk."
+    ipa: "mʊk ex ɡɹam ada dijɔk"
+    pos: "phrase"
+    bases:
+      - { word: "মোক", ref: "as-2198" }
+      - { word: "এশ", ref: "as-0247" }
+      - { word: "গ্ৰাম", ref: "as-2270" }
+      - { word: "আদা", ref: "as-0286" }
+      - { word: "দিয়ক", base: "দিয়া", reading: "diyā" }
+    confusables:
+      - { id: "c1", word: "ৰসুন", reading: "rosun", kind: "word" }
+      - { id: "c2", word: "হালধি", reading: "hālodhi", kind: "word" }
+  - id: "as-5536"
+    target: "কলটো পকা।"
+    reading: "kôlôtu pôkā."
+    ipa: "kɔlɔtʊ pɔka"
+    pos: "phrase"
+    bases:
+      - { word: "কলটো", base: "কল", reading: "kôl" }
+      - { word: "পকা", ref: "as-2365" }
+    confusables:
+      - { id: "c1", word: "আম", reading: "ām", kind: "word" }
+      - { id: "c2", word: "আপেল", reading: "āpel", kind: "word" }
+  - id: "as-5537"
+    target: "সি দুটা কল খায়।"
+    reading: "si dutā kôl khāy."
+    ipa: "si duta kɔl kʰaj"
+    pos: "phrase"
+    bases:
+      - { word: "সি", ref: "as-2180" }
+      - { word: "দুটা", ref: "as-2259" }
+      - { word: "কল", ref: "as-0297" }
+      - { word: "খায়", base: "খোৱা", reading: "khuwā" }
+    confusables:
+      - { id: "c1", word: "এটা", reading: "etā", kind: "word" }
+      - { id: "c2", word: "তিনিটা", reading: "tinitā", kind: "word" }
+  - id: "as-5538"
+    target: "এইটো চাউল, সেইটো দাইল।"
+    reading: "eitu sāul, seitu dāil."
+    ipa: "eitʊ saul seitʊ dail"
+    pos: "phrase"
+    bases:
+      - { word: "এইটো", ref: "as-2193" }
+      - { word: "চাউল", ref: "as-0293" }
+      - { word: "সেইটো", ref: "as-2194" }
+      - { word: "দাইল", ref: "as-0294" }
+    confusables:
+      - { id: "c1", word: "নিমখ", reading: "nimôkh", kind: "word" }
+      - { id: "c2", word: "তেল", reading: "tel", kind: "word" }
+  - id: "as-5539"
+    target: "মই কণী কিনোঁ।"
+    reading: "moi koni kinum̐."
+    ipa: "moi koni kinʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "কণী", ref: "as-0291" }
+      - { word: "কিনোঁ", base: "কিনা", reading: "kinā" }
+    confusables:
+      - { id: "c1", word: "মাছ", reading: "mās", kind: "word" }
+      - { id: "c2", word: "গাখীৰ", reading: "gākhir", kind: "word" }

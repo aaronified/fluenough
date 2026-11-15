@@ -1,0 +1,97 @@
+schema: 1
+id: "as-en-transport-sentences"
+kind: "layer"
+core: "as-transport-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Transport: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-5554":
+    native: "I go by bus."
+    bases:
+      "বাছত": "by bus"
+      "যাওঁ": "go (I)"
+    confusables:
+      "c1": { why: "Taxi, a different vehicle." }
+      "c2": { why: "Cycle rickshaw, a different vehicle." }
+  "as-5555":
+    native: "He goes by auto-rickshaw."
+    bases:
+      "অটোত": "by auto-rickshaw"
+      "যায়": "goes (he or she)"
+    confusables:
+      "c1": { why: "Boat, a different vehicle." }
+      "c2": { why: "Bus, a different vehicle." }
+  "as-5556":
+    native: "He or she takes a taxi."
+    bases:
+      "লয়": "takes (he or she)"
+    confusables:
+      "c1": { why: "Cycle rickshaw, a different vehicle." }
+      "c2": { why: "Auto-rickshaw, a different vehicle." }
+  "as-5557":
+    native: "I go to the station."
+    bases:
+      "ষ্টেচনলৈ": "to the station"
+      "যাওঁ": "go (I)"
+    confusables:
+      "c1": { why: "Boat, a different vehicle." }
+      "c2": { why: "Bus, a different vehicle." }
+  "as-5558":
+    native: "Please give me a ticket."
+    bases:
+      "দিয়ক": "give (please)"
+    confusables:
+      "c1": { why: "Seat, not a ticket." }
+      "c2": { why: "Fare, the price of a ride." }
+  "as-5559":
+    native: "There is an empty seat."
+    bases:
+      "আছে": "is (there)"
+    confusables:
+      "c1": { why: "Crowd, the opposite." }
+      "c2": { why: "Full, the opposite of empty." }
+  "as-5560":
+    native: "The bus is very crowded."
+    bases:
+      "বাছত": "on the bus"
+    confusables:
+      "c1": { why: "Empty, the opposite of crowded." }
+      "c2": { why: "Seat, a place to sit." }
+  "as-5561":
+    native: "How much is the cycle rickshaw fare?"
+    bases:
+      "ৰিক্সাৰ": "of the cycle rickshaw"
+    confusables:
+      "c1": { why: "Taxi, a different vehicle." }
+      "c2": { why: "Bus, a different vehicle." }
+  "as-5562":
+    native: "Stop here."
+    bases:
+      "ইয়াতে": "here"
+      "ৰখক": "stop (please)"
+    confusables:
+      "c1": { why: "Station, a different place." }
+      "c2": { why: "Ticket, not a place." }
+  "as-5563":
+    native: "I go by boat."
+    bases:
+      "নাওত": "by boat"
+      "যাওঁ": "go (I)"
+    confusables:
+      "c1": { why: "Bus, a different vehicle." }
+      "c2": { why: "Taxi, a different vehicle." }
+  "as-5564":
+    native: "How much is the ticket?"
+    bases:
+      "টিকটৰ": "of the ticket"
+    confusables:
+      "c1": { why: "Fare, the price of a ride." }
+      "c2": { why: "Rupee, the money." }
+  "as-5565":
+    native: "Where is the station?"
+    confusables:
+      "c1": { why: "Bus, a vehicle not a place." }
+      "c2": { why: "Ticket, not a place." }
