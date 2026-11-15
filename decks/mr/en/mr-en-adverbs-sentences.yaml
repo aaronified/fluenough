@@ -1,0 +1,66 @@
+schema: 1
+id: "mr-en-adverbs-sentences"
+kind: "layer"
+core: "mr-adverbs-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with adverbs"
+license: "CC-BY-SA-4.0"
+description: "Short sentences about how often, how well, when and where things are done, built from the adverbs of Adverbs. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-5048":
+    native: "I rarely watch films."
+    bases: { "मी": "I", "क्वचित": "rarely", "चित्रपट": "film", "पाहतो": "watch" }
+    confusables: { "w1": { why: "Often, the opposite: अनेकदा (anekdā) means often." }, "w2": { why: "Usually, a different frequency: सहसा (sahsā) means usually." } }
+  "mr-5049":
+    native: "She is often at home."
+    bases: { "ती": "she", "अनेकदा": "often", "घरी": "at home", "असते": "is" }
+    confusables: { "w1": { why: "Rarely, the opposite: क्वचित (kvacit) means rarely." }, "f1": { why: "Masculine: असतो (asto) goes with a man; ती (ti) is a woman, so असते (aste) is used." } }
+  "mr-5050":
+    native: "We usually walk in the morning."
+    bases: { "आम्ही": "we", "सहसा": "usually", "सकाळी": "in the morning", "फिरतो": "walk" }
+    confusables: { "w1": { why: "In the evening: संध्याकाळी (sandhyākāḷi) means in the evening, not in the morning." }, "w2": { why: "Before: आधी (ādhi) means before or first." } }
+  "mr-5051":
+    native: "He works properly."
+    bases: { "तो": "he", "नीट": "properly", "काम": "work", "करतो": "does" }
+    confusables: { "w1": { why: "Badly, the opposite: वाईट (vāiṭ) means badly." }, "w2": { why: "Slowly, a different manner: हळू (haḷu) means slowly." } }
+  "mr-5052":
+    native: "She sings well."
+    bases: { "ती": "she", "चांगले": "well", "गाते": "sings" }
+    confusables: { "w1": { why: "Badly: वाईट (vāiṭ) means badly." }, "f1": { why: "Masculine: गातो (gāto) goes with a man; ती (ti) is a woman, so गाते (gāte) is used." } }
+  "mr-5053":
+    native: "He speaks slowly."
+    bases: { "तो": "he", "हळू": "slowly", "बोलतो": "speaks" }
+    confusables: { "w1": { why: "Quickly, the opposite speed: पटकन (paṭkan) means quickly." }, "f1": { why: "Feminine: बोलते (bolte) goes with a woman; तो (to) is a man, so बोलतो (bolto) is used." } }
+  "mr-5054":
+    native: "Children learn quickly."
+    bases: { "मुले": "children", "पटकन": "quickly", "शिकतात": "learn" }
+    confusables: { "w1": { why: "Slowly: हळू (haḷu) means slowly, not quickly." }, "f1": { why: "Singular: शिकतो (śikto) is for one man; several children take शिकतात (śiktāt)." } }
+  "mr-5055":
+    native: "I eat first, then sleep."
+    bases: { "मी": "I", "आधी": "first", "जेवतो": "eat", "नंतर": "then", "झोपतो": "sleep" }
+    confusables: { "w1": { why: "Up or on top: वर (var) means on top, not a time." }, "w2": { why: "Here: इथे (ithe) means here, not a time." } }
+  "mr-5056":
+    native: "We come home in the evening."
+    bases: { "आम्ही": "we", "संध्याकाळी": "in the evening", "घरी": "home", "येतो": "come" }
+    confusables: { "w1": { why: "In the morning: सकाळी (sakāḷi) means in the morning, not in the evening." }, "w2": { why: "There: तिथे (tithe) means there, not home." } }
+  "mr-5057":
+    native: "Sit here."
+    bases: { "इथे": "here", "बसा": "sit" }
+    confusables: { "w1": { why: "There, not here: तिथे (tithe) means there." }, "w2": { why: "Get up: उठा (uṭhā) means get up, a different action from sitting, बसा (basā)." } }
+  "mr-5058":
+    native: "There is a book there."
+    bases: { "तिथे": "there", "पुस्तक": "book", "आहे": "is" }
+    confusables: { "w1": { why: "Here, not there: इथे (ithe) means here." }, "f1": { why: "Plural: आहेत (āhet) is for several things; one book takes आहे (āhe)." } }
+  "mr-5059":
+    native: "Put the book on top."
+    bases: { "पुस्तक": "book", "वर": "on top", "ठेवा": "put" }
+    confusables: { "w1": { why: "Inside, not on top: आत (āt) means inside." }, "w2": { why: "Below: खाली (khāli) means below, the opposite of on top." } }
+  "mr-5060":
+    native: "The bag is inside."
+    bases: { "पिशवी": "bag", "आत": "inside", "आहे": "is" }
+    confusables: { "w1": { why: "On top, not inside: वर (var) means on top." }, "w2": { why: "Outside: बाहेर (bāher) means outside, the opposite of inside." } }
+  "mr-5061":
+    native: "I often drink tea."
+    bases: { "मी": "I", "अनेकदा": "often", "चहा": "tea", "पितो": "drink" }
+    confusables: { "w1": { why: "Rarely, the opposite: क्वचित (kvacit) means rarely." }, "w2": { why: "Water, not tea: पाणी (pāṇi) means water." } }
