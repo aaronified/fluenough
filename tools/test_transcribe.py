@@ -205,6 +205,25 @@ class NoHintTest(unittest.TestCase):
         self.assertEqual(self.read("bn", "সত্ত্ব"), "śôtto")
         self.assertEqual(self.read("bn", "তত্ত্ব"), "tôtto")
 
+    def test_reph_and_ba_is_r_and_b_not_a_ba_phala(self) -> None:
+        # র্ব says both letters, and its last vowel (#1402).
+        self.assertEqual(self.read("bn", "পূর্ব"), "purbo")
+        self.assertEqual(self.read("bn", "গর্ব"), "gôrbo")
+        self.assertEqual(self.read("bn", "দুর্বলতা"), "durboltā")
+
+    def test_a_bengali_ya_phala_word_keeps_its_last_vowel(self) -> None:
+        self.assertEqual(self.read("bn", "বাক্য"), "bākko")
+        self.assertEqual(self.read("bn", "সত্য"), "śotto")
+        self.assertEqual(self.read("bn", "অসাম্য"), "ôśāmmo")
+
+    def test_a_doubled_consonant_with_a_ya_phala_is_held_twice_only(
+            self) -> None:
+        self.assertEqual(self.read("bn", "উজ্জ্য"), "ujjo")
+
+    def test_an_assamese_ba_phala_holds_the_consonant(self) -> None:
+        self.assertEqual(self.read("as", "বিশ্ব"), "bixxô")
+        self.assertEqual(self.read("as", "ৰাজত্ব"), "rāzôttô")
+
     def test_sibilants_follow_the_table_unless_before_a_stop(self) -> None:
         self.assertEqual(self.read("bn", "সকাল"), "śôkāl")
         self.assertEqual(self.read("as", "সকাল"), "xôkāl")
