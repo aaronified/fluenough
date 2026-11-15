@@ -1,0 +1,81 @@
+schema: 1
+id: "kn-appearance-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-7452"
+    target: "ಅವನು ಎತ್ತರ, ನಾನು ಗಿಡ್ಡ."
+    reading: "avanu ettara, nānu giḍḍa."
+    ipa: "aʋanu et̪t̪ara naːnu ɡiɖɖa"
+    pos: "phrase"
+    bases:
+      - { word: "ಅವನು", ref: "kn-0612" }
+      - { word: "ಎತ್ತರ", ref: "kn-0719" }
+      - { word: "ನಾನು", ref: "kn-0610" }
+      - { word: "ಗಿಡ್ಡ", ref: "kn-1159" }
+  - id: "kn-7453"
+    target: "ಅವನ ಗಡ್ಡ ಬಿಳಿ."
+    reading: "avana gaḍḍa biḷi."
+    ipa: "aʋana ɡaɖɖa biɭi"
+    pos: "phrase"
+    bases:
+      - { word: "ಅವನ", ref: "kn-0622" }
+      - { word: "ಗಡ್ಡ", ref: "kn-1164" }
+      - { word: "ಬಿಳಿ", ref: "kn-1169" }
+  - id: "kn-7454"
+    target: "ಅವಳು ತೆಳ್ಳಗೆ ಇದ್ದಾಳೆ."
+    reading: "avaḷu teḷḷage iddāḷe."
+    ipa: "aʋaɭu t̪eɭɭaɡe id̪d̪aːɭe"
+    pos: "phrase"
+    bases:
+      - { word: "ಅವಳು", ref: "kn-0613" }
+      - { word: "ತೆಳ್ಳಗೆ", ref: "kn-1167" }
+      - { word: "ಇದ್ದಾಳೆ", base: "ಇರು", reading: "iru" }
+  - id: "kn-7455"
+    target: "ಅವನು ಯುವಕ."
+    reading: "avanu yuvaka."
+    ipa: "aʋanu juʋaka"
+    pos: "phrase"
+    bases:
+      - { word: "ಅವನು", ref: "kn-0612" }
+      - { word: "ಯುವಕ", ref: "kn-1163" }
+  - id: "kn-7456"
+    target: "ನನ್ನ ಮೀಸೆ ಕಪ್ಪು."
+    reading: "nanna mīse kappu."
+    ipa: "nanna miːse kappu"
+    pos: "phrase"
+    bases:
+      - { word: "ನನ್ನ", ref: "kn-0619" }
+      - { word: "ಮೀಸೆ", ref: "kn-1165" }
+      - { word: "ಕಪ್ಪು", ref: "kn-1168" }
+  - id: "kn-7457"
+    target: "ಅವನು ಬೋಳು."
+    reading: "avanu bōḷu."
+    ipa: "aʋanu boːɭu"
+    pos: "phrase"
+    bases:
+      - { word: "ಅವನು", ref: "kn-0612" }
+      - { word: "ಬೋಳು", ref: "kn-1174" }
+  - id: "kn-7458"
+    target: "ನನ್ನ ವಯಸ್ಸು ಮೂವತ್ತು."
+    reading: "nanna vayassu mūvattu."
+    ipa: "nanna ʋajassu muːʋat̪t̪u"
+    pos: "phrase"
+    bases:
+      - { word: "ನನ್ನ", ref: "kn-0619" }
+      - { word: "ವಯಸ್ಸು", ref: "kn-1161" }
+      - { word: "ಮೂವತ್ತು", ref: "kn-0264" }
+  - id: "kn-7459"
+    target: "ನಾನು ದಪ್ಪ ಅಲ್ಲ."
+    reading: "nānu dappa alla."
+    ipa: "naːnu d̪appa alla"
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", ref: "kn-0610" }
+      - { word: "ದಪ್ಪ", ref: "kn-1166" }
+      - { word: "ಅಲ್ಲ", ref: "kn-0166" }

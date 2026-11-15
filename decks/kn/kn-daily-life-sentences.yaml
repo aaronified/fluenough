@@ -1,0 +1,87 @@
+schema: 1
+id: "kn-daily-life-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-7427"
+    target: "ನಾನು ಪ್ರತಿದಿನ ತಿಂಡಿ ತಿನ್ನುತ್ತೇನೆ."
+    reading: "nānu pratidina tiṇḍi tinnuttēne."
+    ipa: "naːnu prat̪id̪ina t̪iɳɖi t̪innut̪t̪eːne"
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", ref: "kn-0610" }
+      - { word: "ಪ್ರತಿದಿನ", ref: "kn-0442" }
+      - { word: "ತಿಂಡಿ", ref: "kn-0435" }
+      - { word: "ತಿನ್ನುತ್ತೇನೆ", base: "ತಿನ್ನು", reading: "tinnu" }
+  - id: "kn-7428"
+    target: "ಅವನು ಯಾವಾಗಲೂ ಮಲಗುತ್ತಾನೆ."
+    reading: "avanu yāvāgalū malaguttāne."
+    ipa: "aʋanu jaːʋaːɡaluː malaɡut̪t̪aːne"
+    pos: "phrase"
+    bases:
+      - { word: "ಅವನು", ref: "kn-0612" }
+      - { word: "ಯಾವಾಗಲೂ", ref: "kn-0444" }
+      - { word: "ಮಲಗುತ್ತಾನೆ", base: "ಮಲಗು", reading: "malagu" }
+  - id: "kn-7429"
+    target: "ಅವಳು ಸಾಮಾನ್ಯವಾಗಿ ಅಡುಗೆ ಮಾಡುತ್ತಾಳೆ."
+    reading: "avaḷu sāmānyavāgi aḍuge māḍuttāḷe."
+    ipa: "aʋaɭu saːmaːnjaʋaːɡi aɖuɡe maːɖut̪t̪aːɭe"
+    pos: "phrase"
+    bases:
+      - { word: "ಅವಳು", ref: "kn-0613" }
+      - { word: "ಸಾಮಾನ್ಯವಾಗಿ", ref: "kn-0673" }
+      - { word: "ಅಡುಗೆ", base: "ಅಡುಗೆ", reading: "aḍuge" }
+      - { word: "ಮಾಡುತ್ತಾಳೆ", base: "ಮಾಡು", reading: "māḍu" }
+  - id: "kn-7430"
+    target: "ಕೆಲವೊಮ್ಮೆ ನಾನು ಆಮೇಲೆ ಕೆಲಸಕ್ಕೆ ಹೋಗುತ್ತೇನೆ."
+    reading: "kelavomme nānu āmēle kelasakke hōguttēne."
+    ipa: "kelaʋomme naːnu aːmeːle kelasakke hoːɡut̪t̪eːne"
+    pos: "phrase"
+    bases:
+      - { word: "ಕೆಲವೊಮ್ಮೆ", ref: "kn-0657" }
+      - { word: "ನಾನು", ref: "kn-0610" }
+      - { word: "ಆಮೇಲೆ", ref: "kn-0691" }
+      - { word: "ಕೆಲಸಕ್ಕೆ", base: "ಕೆಲಸ", reading: "kelasa" }
+      - { word: "ಹೋಗುತ್ತೇನೆ", base: "ಹೋಗು", reading: "hōgu" }
+  - id: "kn-7431"
+    target: "ನಾನು ಸ್ನಾನ ಮಾಡುತ್ತೇನೆ."
+    reading: "nānu snāna māḍuttēne."
+    ipa: "naːnu snaːna maːɖut̪t̪eːne"
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", ref: "kn-0610" }
+      - { word: "ಸ್ನಾನ", base: "ಸ್ನಾನ", reading: "snāna" }
+      - { word: "ಮಾಡುತ್ತೇನೆ", base: "ಮಾಡು", reading: "māḍu" }
+  - id: "kn-7432"
+    target: "ನೀವು ಹಲ್ಲು ಉಜ್ಜುತ್ತೀರಾ?"
+    reading: "nīvu hallu ujjuttīrā?"
+    ipa: "niːʋu hallu udʒdʒut̪t̪iːraː"
+    pos: "phrase"
+    bases:
+      - { word: "ನೀವು", ref: "kn-0143" }
+      - { word: "ಹಲ್ಲು", base: "ಹಲ್ಲು", reading: "hallu" }
+      - { word: "ಉಜ್ಜುತ್ತೀರಾ", base: "ಉಜ್ಜು", reading: "ujju" }
+  - id: "kn-7433"
+    target: "ನಾನು ರಾತ್ರಿ ಊಟ ಮಾಡುತ್ತೇನೆ."
+    reading: "nānu rātri ūṭa māḍuttēne."
+    ipa: "naːnu raːt̪ri uːʈa maːɖut̪t̪eːne"
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", ref: "kn-0610" }
+      - { word: "ರಾತ್ರಿ", base: "ರಾತ್ರಿ", reading: "rātri" }
+      - { word: "ಊಟ", base: "ಊಟ", reading: "ūṭa" }
+      - { word: "ಮಾಡುತ್ತೇನೆ", base: "ಮಾಡು", reading: "māḍu" }
+  - id: "kn-7434"
+    target: "ನೀವು ಮನೆಗೆ ಬರುತ್ತೀರಾ?"
+    reading: "nīvu manege baruttīrā?"
+    ipa: "niːʋu maneɡe barut̪t̪iːraː"
+    pos: "phrase"
+    bases:
+      - { word: "ನೀವು", ref: "kn-0143" }
+      - { word: "ಮನೆಗೆ", base: "ಮನೆ", reading: "mane" }
+      - { word: "ಬರುತ್ತೀರಾ", base: "ಬಾ", reading: "bā" }

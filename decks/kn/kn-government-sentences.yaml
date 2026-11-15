@@ -1,0 +1,78 @@
+schema: 1
+id: "kn-government-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-7485"
+    target: "ಇದು ಸರ್ಕಾರಿ ಕಾರ್ಯಾಲಯ."
+    reading: "idu sarkāri kāryālaya."
+    ipa: "id̪u sarkaːri kaːrjaːlaja"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ಸರ್ಕಾರಿ", ref: "kn-1418" }
+      - { word: "ಕಾರ್ಯಾಲಯ", ref: "kn-1430" }
+  - id: "kn-7486"
+    target: "ನನಗೆ ಫಾರ್ಮ್ ಬೇಕು."
+    reading: "nanage phārm bēku."
+    ipa: "nanaɡe pʰaːrm beːku"
+    pos: "phrase"
+    bases:
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಫಾರ್ಮ್", ref: "kn-1426" }
+      - { word: "ಬೇಕು", base: "ಬೇಕು", reading: "bēku" }
+  - id: "kn-7487"
+    target: "ಅಧಿಕಾರಿ ಇಲ್ಲಿ ಇದ್ದಾರೆ."
+    reading: "adhikāri illi iddāre."
+    ipa: "ad̪ʱikaːri illi id̪d̪aːre"
+    pos: "phrase"
+    bases:
+      - { word: "ಅಧಿಕಾರಿ", ref: "kn-1420" }
+      - { word: "ಇಲ್ಲಿ", ref: "kn-0375" }
+      - { word: "ಇದ್ದಾರೆ", base: "ಇರು", reading: "iru" }
+  - id: "kn-7488"
+    target: "ಇದು ನಿಯಮ."
+    reading: "idu niyama."
+    ipa: "id̪u nijama"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ನಿಯಮ", ref: "kn-1421" }
+  - id: "kn-7489"
+    target: "ನಾನು ತೆರಿಗೆ ಪಾವತಿಸುತ್ತೇನೆ."
+    reading: "nānu terige pāvatisuttēne."
+    ipa: "naːnu t̪eriɡe paːʋat̪isut̪t̪eːne"
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", ref: "kn-0610" }
+      - { word: "ತೆರಿಗೆ", ref: "kn-1423" }
+      - { word: "ಪಾವತಿಸುತ್ತೇನೆ", base: "ಪಾವತಿಸು", reading: "pāvatisu" }
+  - id: "kn-7490"
+    target: "ನಾನು ನಾಗರಿಕ."
+    reading: "nānu nāgarika."
+    ipa: "naːnu naːɡarika"
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", ref: "kn-0610" }
+      - { word: "ನಾಗರಿಕ", ref: "kn-1424" }
+  - id: "kn-7491"
+    target: "ಆದೇಶ ಇದೆ."
+    reading: "ādēśa ide."
+    ipa: "aːd̪eːʃa id̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ಆದೇಶ", ref: "kn-1432" }
+      - { word: "ಇದೆ", base: "ಇರು", reading: "iru" }
+  - id: "kn-7492"
+    target: "ಅನುಮತಿ ಬೇಕು."
+    reading: "anumati bēku."
+    ipa: "anumat̪i beːku"
+    pos: "phrase"
+    bases:
+      - { word: "ಅನುಮತಿ", ref: "kn-1425" }
+      - { word: "ಬೇಕು", base: "ಬೇಕು", reading: "bēku" }

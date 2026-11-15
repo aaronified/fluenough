@@ -1,0 +1,124 @@
+schema: 1
+id: "kn-groceries-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-8161"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    target: "ನನಗೆ ಎರಡು ಕಿಲೋ ಈರುಳ್ಳಿ ಕೊಡಿ."
+    reading: "nanage eraḍu kilō īruḷḷi koḍi."
+    ipa: "nanaɡe eraɖu kiloː iːruɭɭi koɖi"
+    pos: "phrase"
+    bases:
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಎರಡು", ref: "kn-0245" }
+      - { word: "ಕಿಲೋ", ref: "kn-0699" }
+      - { word: "ಈರುಳ್ಳಿ", ref: "kn-0316" }
+      - { word: "ಕೊಡಿ", base: "ಕೊಡು", reading: "koḍu" }
+  - id: "kn-8162"
+    target: "ಅಕ್ಕಿ ಎಷ್ಟು ಕಿಲೋ?"
+    reading: "akki eṣṭu kilō?"
+    ipa: "akki eʂʈu kiloː"
+    pos: "phrase"
+    bases:
+      - { word: "ಅಕ್ಕಿ", ref: "kn-0324" }
+      - { word: "ಎಷ್ಟು", ref: "kn-0173" }
+      - { word: "ಕಿಲೋ", ref: "kn-0699" }
+  - id: "kn-8163"
+    target: "ಒಂದು ಡಜನ್ ಮೊಟ್ಟೆ ಕೊಡಿ."
+    reading: "ondu ḍajan moṭṭe koḍi."
+    ipa: "ond̪u ɖadʒan moʈʈe koɖi"
+    pos: "phrase"
+    bases:
+      - { word: "ಒಂದು", ref: "kn-0244" }
+      - { word: "ಡಜನ್", ref: "kn-0698" }
+      - { word: "ಮೊಟ್ಟೆ", ref: "kn-0323" }
+      - { word: "ಕೊಡಿ", base: "ಕೊಡು", reading: "koḍu" }
+  - id: "kn-8164"
+    target: "ನಾನು ಮೀನನ್ನು ಬೇಯಿಸುತ್ತೇನೆ."
+    reading: "nānu mīnannu bēyisuttēne."
+    ipa: "naːnu miːnannu beːjisut̪t̪eːne"
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", ref: "kn-0610" }
+      - { word: "ಮೀನನ್ನು", base: "ಮೀನು", reading: "mīnu" }
+      - { word: "ಬೇಯಿಸುತ್ತೇನೆ", base: "ಬೇಯಿಸು", reading: "bēyisu" }
+  - id: "kn-8165"
+    target: "ಅವಳು ಬೆಳ್ಳುಳ್ಳಿಯನ್ನು ಕತ್ತರಿಸುತ್ತಾಳೆ."
+    reading: "avaḷu beḷḷuḷḷiyannu kattarisuttāḷe."
+    ipa: "aʋaɭu beɭɭuɭɭijannu kat̪t̪arisut̪t̪aːɭe"
+    pos: "phrase"
+    bases:
+      - { word: "ಅವಳು", ref: "kn-0613" }
+      - { word: "ಬೆಳ್ಳುಳ್ಳಿಯನ್ನು", base: "ಬೆಳ್ಳುಳ್ಳಿ", reading: "beḷḷuḷḷi" }
+      - { word: "ಕತ್ತರಿಸುತ್ತಾಳೆ", base: "ಕತ್ತರಿಸು", reading: "kattarisu" }
+  - id: "kn-8166"
+    target: "ಟೊಮೆಟೊ ತುಂಬಾ ಹುಳಿ."
+    reading: "ṭomeṭo tumbā huḷi."
+    ipa: "ʈomeʈo t̪umbaː huɭi"
+    pos: "phrase"
+    bases:
+      - { word: "ಟೊಮೆಟೊ", ref: "kn-0317" }
+      - { word: "ತುಂಬಾ", ref: "kn-0668" }
+      - { word: "ಹುಳಿ", ref: "kn-0731" }
+  - id: "kn-8167"
+    target: "ಬಾಳೆಹಣ್ಣು ಒಳ್ಳೆಯದು."
+    reading: "bāḷehaṇṇu oḷḷeyadu."
+    ipa: "baːɭehaɳɳu oɭɭejad̪u"
+    pos: "phrase"
+    bases:
+      - { word: "ಬಾಳೆಹಣ್ಣು", ref: "kn-0327" }
+      - { word: "ಒಳ್ಳೆಯದು", ref: "kn-0950" }
+  - id: "kn-8168"
+    target: "ಮೊಸರು ಎಷ್ಟು?"
+    reading: "mosaru eṣṭu?"
+    ipa: "mosaru eʂʈu"
+    pos: "phrase"
+    bases:
+      - { word: "ಮೊಸರು", ref: "kn-0326" }
+      - { word: "ಎಷ್ಟು", ref: "kn-0173" }
+  - id: "kn-8169"
+    target: "ನನಗೆ ಒಂದು ಪೊಟ್ಟಣ ಅಕ್ಕಿ ಕೊಡಿ."
+    reading: "nanage ondu poṭṭaṇa akki koḍi."
+    ipa: "nanaɡe ond̪u poʈʈaɳa akki koɖi"
+    pos: "phrase"
+    bases:
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಒಂದು", ref: "kn-0244" }
+      - { word: "ಪೊಟ್ಟಣ", ref: "kn-0706" }
+      - { word: "ಅಕ್ಕಿ", ref: "kn-0324" }
+      - { word: "ಕೊಡಿ", base: "ಕೊಡು", reading: "koḍu" }
+  - id: "kn-8170"
+    target: "ಅವಳು ಈರುಳ್ಳಿಯನ್ನು ಹುರಿಯುತ್ತಾಳೆ."
+    reading: "avaḷu īruḷḷiyannu huriyuttāḷe."
+    ipa: "aʋaɭu iːruɭɭijannu hurijut̪t̪aːɭe"
+    pos: "phrase"
+    bases:
+      - { word: "ಅವಳು", ref: "kn-0613" }
+      - { word: "ಈರುಳ್ಳಿಯನ್ನು", base: "ಈರುಳ್ಳಿ", reading: "īruḷḷi" }
+      - { word: "ಹುರಿಯುತ್ತಾಳೆ", base: "ಹುರಿ", reading: "huri" }
+  - id: "kn-8171"
+    target: "ಅವನು ಕೋಳಿಯನ್ನು ಖರೀದಿಸುತ್ತಾನೆ."
+    reading: "avanu kōḷiyannu kharīdisuttāne."
+    ipa: "aʋanu koːɭijannu kʰariːd̪isut̪t̪aːne"
+    pos: "phrase"
+    bases:
+      - { word: "ಅವನು", ref: "kn-0612" }
+      - { word: "ಕೋಳಿಯನ್ನು", base: "ಕೋಳಿ", reading: "kōḷi" }
+      - { word: "ಖರೀದಿಸುತ್ತಾನೆ", base: "ಖರೀದಿಸು", reading: "kharīdisu" }
+  - id: "kn-8172"
+    target: "ನೀವು ತರಕಾರಿಯನ್ನು ಎಲ್ಲಿ ಖರೀದಿಸುತ್ತೀರಿ?"
+    reading: "nīvu tarakāriyannu elli kharīdisuttīri?"
+    ipa: "niːʋu t̪arakaːrijannu elli kʰariːd̪isut̪t̪iːri"
+    pos: "phrase"
+    bases:
+      - { word: "ನೀವು", ref: "kn-0143" }
+      - { word: "ತರಕಾರಿಯನ್ನು", base: "ತರಕಾರಿ", reading: "tarakāri" }
+      - { word: "ಎಲ್ಲಿ", ref: "kn-0169" }
+      - { word: "ಖರೀದಿಸುತ್ತೀರಿ", base: "ಖರೀದಿಸು", reading: "kharīdisu" }
