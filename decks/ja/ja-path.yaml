@@ -952,7 +952,8 @@ units:
       - { id: "at-the-bank", text: { "en": "Opening an account at a bank counter" } }
     reading_passages:
       - { id: "bill-and-receipt", text: { "en": "A utility bill and a receipt" } }
-  - planned: { id: "ja-society", theme: "society", words: 50 }
+  - decks: ["ja-society", "ja-society-sentences", "ja-reading-society", "*"]
+    words: 50
     listening_passages:
       - { id: "an-ageing-town", text: { "en": "Residents talk about an ageing town" } }
     reading_passages:
