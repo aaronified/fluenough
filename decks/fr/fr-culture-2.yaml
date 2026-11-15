@@ -1,12 +1,9 @@
 # A culture deck of French-language works of the seventeenth and eighteenth centuries that are in the public domain: short
-# lines, each with its source, its rights basis and its creator (wiki/Plan-Deck-Kinds-And-Topics.md). Built from French
-# Wikipedia and French Wikisource pages only, and read there. Partial: five of the plan's eighteen (ids fr-4150 to fr-4154;
-# fr-4155 to fr-4199 unused). Dropped, with the reason read on the page: La Fontaine, Le Loup et l'Agneau (the Wikisource page
-# had no text); Racine, Phèdre (no Phèdre text page found, the only hit was a quotation elsewhere); Pascal, Pensées (no
-# Pensées text page found, the only hits were quotations); Boileau, L'Art poétique (no text page found); Corneille (no birth
-# and death years read on the French Wikipedia page); Beaumarchais (no birth year read); Molière, Le Malade imaginaire and
-# Tartuffe (not searched, only the play dates were read); Madame de Sévigné, La Rochefoucauld, La Bruyère, Marivaux, Montesquieu
-# and the rest of the reserve (not searched).
+# lines, each with its source, its rights basis and its creator (wiki/Plan-Deck-Kinds-And-Topics.md). Built from French Wikipedia and
+# French Wikisource pages only, read there. Eighteen items (fr-4150 to fr-4167; fr-4168 to fr-4199 unused). Dropped, with the reason read
+# on the page: Le Loup et l'Agneau (the Wikisource hit is a parody, not La Fontaine's text); Corneille's Horace and Cinna (no text found);
+# Beaumarchais (only a quotation in another page); La Princesse de Clèves (no text found); Sévigné and Marivaux (no text found);
+# Montesquieu's Lettres persanes (table of contents only); Racine's other lines (no page found).
 schema: 1
 id: "fr-culture-2"
 part: "core"
@@ -163,5 +160,382 @@ cards:
       url: "https://fr.wikisource.org/wiki/Du_contrat_social/%C3%89dition_1762/Livre_I/Chapitre_1"
       basis: "public-domain"
       author_died: 1778
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4155"
+    target: "Le cœur a ses raisons, que la raison ne connaît point."
+    words: ["Le", "cœur", "a", "ses", "raisons", "que", "la", "raison", "ne", "connaît", "point"]
+    ipa: "lə kœʁ a se ʁɛzɔ̃ kə la ʁɛzɔ̃ nə kɔnɛ pwɛ̃"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-blaise-pascal"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Le", base: "le" }
+      - { word: "cœur", base: "cœur" }
+      - { word: "a", base: "avoir" }
+      - { word: "ses", base: "son" }
+      - { word: "raisons", base: "raison" }
+      - { word: "que", base: "que" }
+      - { word: "la", base: "le" }
+      - { word: "raison", base: "raison" }
+      - { word: "ne", base: "ne" }
+      - { word: "connaît", base: "connaître" }
+      - { word: "point", base: "point" }
+    source:
+      author: "Blaise Pascal"
+      work: "Pensées, fragment on the reasons of the heart"
+      date: 1670
+      edition: "Pensées, 2nd edition of Desprez, as shown on French Wikisource (Pensées (Pascal)/2e éd. Desprez/XXVIII); the Pensées are dated 1670 on French Wikipedia"
+      url: "https://fr.wikisource.org/wiki/Pens%C3%A9es_(Pascal)/2e_%C3%A9d._Desprez/XXVIII"
+      basis: "public-domain"
+      author_died: 1662
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4156"
+    target: "L'homme n'est qu'un roseau."
+    words: ["L'homme", "n'est", "qu'un", "roseau"]
+    ipa: "lɔm nɛ kœ̃ ʁozo"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "fr-blaise-pascal"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "L'homme", base: "homme" }
+      - { word: "n'est", base: "être" }
+      - { word: "qu'un", base: "un" }
+      - { word: "roseau", base: "roseau" }
+    source:
+      author: "Blaise Pascal"
+      work: "Pensées, fragment on the reed"
+      date: 1670
+      edition: "Pensées, 2nd edition of Desprez, as shown on French Wikisource (Pensées (Pascal)/2e éd. Desprez/XXIII); dated 1670 on French Wikipedia"
+      url: "https://fr.wikisource.org/wiki/Pens%C3%A9es_(Pascal)/2e_%C3%A9d._Desprez/XXIII"
+      basis: "public-domain"
+      author_died: 1662
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4157"
+    target: "Le silence éternel de ces espaces infinis m'effraie."
+    words: ["Le", "silence", "éternel", "de", "ces", "espaces", "infinis", "m'effraie"]
+    ipa: "lə silɑ̃s etɛʁnɛl də sɛz ɛspas ɛ̃fini mefʁɛ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-blaise-pascal"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Le", base: "le" }
+      - { word: "silence", base: "silence" }
+      - { word: "éternel", base: "éternel" }
+      - { word: "de", base: "de" }
+      - { word: "ces", base: "ce" }
+      - { word: "espaces", base: "espace" }
+      - { word: "infinis", base: "infini" }
+      - { word: "m'effraie", base: "effrayer" }
+    source:
+      author: "Blaise Pascal"
+      work: "Pensées, fragment on the silence of the spaces"
+      date: 1670
+      edition: "Œuvres complètes de Blaise Pascal, Hachette 1871, vol. 1, Pensées, as shown on French Wikisource; the Pensées are dated 1670 on French Wikipedia; spelling modernised: effraye to effraie"
+      url: "https://fr.wikisource.org/wiki/%C5%92uvres_compl%C3%A8tes_de_Blaise_Pascal_Hachette_1871,_vol1/Pens%C3%A9es/Article_25"
+      basis: "public-domain"
+      author_died: 1662
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4158"
+    target: "Percé jusques au fond du cœur d'une atteinte imprévue."
+    words: ["Percé", "jusques", "au", "fond", "du", "cœur", "d'une", "atteinte", "imprévue"]
+    ipa: "pɛʁse ʒysk o fɔ̃ dy kœʁ dyn atɛ̃t ɛ̃pʁevy"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-pierre-corneille"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Percé", base: "percer" }
+      - { word: "jusques", base: "jusque" }
+      - { word: "au", base: "à" }
+      - { word: "fond", base: "fond" }
+      - { word: "du", base: "de" }
+      - { word: "cœur", base: "cœur" }
+      - { word: "d'une", base: "un" }
+      - { word: "atteinte", base: "atteinte" }
+      - { word: "imprévue", base: "imprévu" }
+    source:
+      author: "Pierre Corneille"
+      work: "Le Cid, act I, scene 6, Rodrigue's line"
+      date: 1637
+      edition: "Le Cid, Ginn edition, act I, as shown on French Wikisource (Le Cid/Édition Ginn/Acte I); the play is dated 1637 (French Wikipedia)"
+      url: "https://fr.wikisource.org/wiki/Le_Cid/%C3%89dition_Ginn/Acte_I"
+      basis: "public-domain"
+      author_died: 1684
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4159"
+    target: "C'est Vénus tout entière à sa proie attachée."
+    words: ["C'est", "Vénus", "tout", "entière", "à", "sa", "proie", "attachée"]
+    ipa: "sɛ venys tu tɑ̃tjɛʁ a sa pʁwa ataʃe"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-jean-racine"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "C'est", base: "ce" }
+      - { word: "Vénus", base: "Vénus" }
+      - { word: "tout", base: "tout" }
+      - { word: "entière", base: "entier" }
+      - { word: "à", base: "à" }
+      - { word: "sa", base: "son" }
+      - { word: "proie", base: "proie" }
+      - { word: "attachée", base: "attacher" }
+    source:
+      author: "Jean Racine"
+      work: "Phèdre, act I, Phèdre's speech"
+      date: 1677
+      edition: "Phèdre (Racine), Didot 1854 edition, act I, as shown on French Wikisource (Phèdre (Racine), Didot, 1854/Acte I); Phèdre is dated 1677 on French Wikipedia"
+      url: "https://fr.wikisource.org/wiki/Ph%C3%A8dre_(Racine),_Didot,_1854/Acte_I"
+      basis: "public-domain"
+      author_died: 1699
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4160"
+    target: "Il faut que, par la disposition des choses, le pouvoir arrête le pouvoir."
+    words: ["Il", "faut", "que", "par", "la", "disposition", "des", "choses", "le", "pouvoir", "arrête", "le", "pouvoir"]
+    ipa: "il fo kə paʁ la dispozisjɔ̃ de ʃoz lə puvwaʁ aʁɛt lə puvwaʁ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-montesquieu"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Il", base: "il" }
+      - { word: "faut", base: "falloir" }
+      - { word: "que", base: "que" }
+      - { word: "par", base: "par" }
+      - { word: "la", base: "le" }
+      - { word: "disposition", base: "disposition" }
+      - { word: "des", base: "des" }
+      - { word: "choses", base: "chose" }
+      - { word: "le", base: "le" }
+      - { word: "pouvoir", base: "pouvoir" }
+      - { word: "arrête", base: "arrêter" }
+    source:
+      author: "Montesquieu"
+      work: "De l'esprit des lois, Book XI, chapter 4"
+      date: 1748
+      edition: "De l'esprit des lois, 1777 edition, Book XI, chapter 4, as shown on French Wikisource (Esprit des lois (1777)/L11/C4); the book is dated 1748 on French Wikipedia"
+      url: "https://fr.wikisource.org/wiki/Esprit_des_lois_(1777)/L11/C4"
+      basis: "public-domain"
+      author_died: 1755
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4161"
+    target: "Couvrez ce sein que je ne saurais voir."
+    words: ["Couvrez", "ce", "sein", "que", "je", "ne", "saurais", "voir"]
+    ipa: "kuvʁe sə sɛ̃ kə ʒə nə soʁɛ vwaʁ"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "fr-moliere"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Couvrez", base: "couvrir" }
+      - { word: "ce", base: "ce" }
+      - { word: "sein", base: "sein" }
+      - { word: "que", base: "que" }
+      - { word: "je", base: "je" }
+      - { word: "ne", base: "ne" }
+      - { word: "saurais", base: "savoir" }
+      - { word: "voir", base: "voir" }
+    source:
+      author: "Molière"
+      work: "Tartuffe, act III, Tartuffe's line"
+      date: 1669
+      edition: "Tartuffe ou l'Imposteur, Louandre 1910 edition, act III, as shown on French Wikisource; the play is dated 1669 on French Wikipedia"
+      url: "https://fr.wikisource.org/wiki/Tartuffe_ou_l%E2%80%99Imposteur/%C3%89dition_Louandre,_1910/Acte_III"
+      basis: "public-domain"
+      author_died: 1673
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4162"
+    target: "Ce que l'on conçoit bien s'énonce clairement."
+    words: ["Ce", "que", "l'on", "conçoit", "bien", "s'énonce", "clairement"]
+    ipa: "sə kə lɔ̃ kɔ̃swa bjɛ̃ senɔ̃s klɛʁmɑ̃"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-nicolas-boileau"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Ce", base: "ce" }
+      - { word: "que", base: "que" }
+      - { word: "l'on", base: "on" }
+      - { word: "conçoit", base: "concevoir" }
+      - { word: "bien", base: "bien" }
+      - { word: "s'énonce", base: "énoncer" }
+      - { word: "clairement", base: "clairement" }
+    source:
+      author: "Nicolas Boileau"
+      work: "L'Art poétique, canto I, first line of the couplet"
+      date: 1674
+      edition: "Boileau, Œuvres poétiques, L'Art poétique, chant I, as shown on French Wikisource (Boileau - Œuvres poétiques/L'Art poétique/Chant I); the poem is the poem is dated 1674 (Boileau, Œuvres poétiques)"
+      url: "https://fr.wikisource.org/wiki/Boileau_-_%C5%92uvres_po%C3%A9tiques/L%E2%80%99Art_po%C3%A9tique/Chant_I"
+      basis: "public-domain"
+      author_died: 1711
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4163"
+    target: "Par hasard, comme tout le monde."
+    words: ["Par", "hasard", "comme", "tout", "le", "monde"]
+    ipa: "paʁ azaʁ kɔm tu lə mɔ̃d"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "fr-denis-diderot"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Par", base: "par" }
+      - { word: "hasard", base: "hasard" }
+      - { word: "comme", base: "comme" }
+      - { word: "tout", base: "tout" }
+      - { word: "le", base: "le" }
+      - { word: "monde", base: "monde" }
+    source:
+      author: "Denis Diderot"
+      work: "Jacques le fataliste et son maître, opening"
+      date: 1796
+      edition: "Jacques le fataliste et son maître, as shown on French Wikisource (Jacques le Fataliste et son maître); first published in 1796 (French Wikipedia)"
+      url: "https://fr.wikisource.org/wiki/Jacques_le_Fataliste_et_son_ma%C3%AEtre"
+      basis: "public-domain"
+      author_died: 1784
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4164"
+    target: "Les grandes pensées viennent du cœur."
+    words: ["Les", "grandes", "pensées", "viennent", "du", "cœur"]
+    ipa: "lez ɡʁɑ̃d pɑ̃se vjɛn dy kœʁ"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "fr-vauvenargues"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Les", base: "le" }
+      - { word: "grandes", base: "grand" }
+      - { word: "pensées", base: "pensée" }
+      - { word: "viennent", base: "venir" }
+      - { word: "du", base: "de" }
+      - { word: "cœur", base: "cœur" }
+    source:
+      author: "Vauvenargues"
+      work: "Réflexions et maximes, maxim 127"
+      date: 1746
+      edition: "Réflexions et Maximes (Vauvenargues), as shown on French Wikisource (Réflexions et Maximes (Vauvenargues)/1-330); the book is dated 1746 on French Wikipedia"
+      url: "https://fr.wikisource.org/wiki/R%C3%A9flexions_et_Maximes_(Vauvenargues)/1-330"
+      basis: "public-domain"
+      author_died: 1747
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4165"
+    target: "Nous avons tous assez de force pour supporter les maux d'autrui."
+    words: ["Nous", "avons", "tous", "assez", "de", "force", "pour", "supporter", "les", "maux", "d'autrui"]
+    ipa: "nu zavɔ̃ tu zase də fɔʁs puʁ sypɔʁte le mo dotʁɥi"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-francois-de-la-rochefoucauld"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Nous", base: "nous" }
+      - { word: "avons", base: "avoir" }
+      - { word: "tous", base: "tout" }
+      - { word: "assez", base: "assez" }
+      - { word: "de", base: "de" }
+      - { word: "force", base: "force" }
+      - { word: "pour", base: "pour" }
+      - { word: "supporter", base: "supporter" }
+      - { word: "les", base: "le" }
+      - { word: "maux", base: "mal" }
+      - { word: "d'autrui", base: "autrui" }
+    source:
+      author: "François de La Rochefoucauld"
+      work: "Réflexions ou sentences et maximes morales, maxim XIX"
+      date: 1665
+      edition: "Œuvres de La Rochefoucauld, tome 1, Réflexions ou sentences et maximes morales, as shown on French Wikisource; the Maximes are dated 1665 on French Wikipedia"
+      url: "https://fr.wikisource.org/wiki/%C5%92uvres_de_La_Rochefoucauld_-_T.1/R%C3%A9flexions_ou_sentences_et_maximes_morales"
+      basis: "public-domain"
+      author_died: 1680
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4166"
+    target: "L'Épi naissant mûrit de la faux respecté."
+    words: ["L'Épi", "naissant", "mûrit", "de", "la", "faux", "respecté"]
+    ipa: "lepi nɛsɑ̃ myʁi də la fo ʁɛspɛkte"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-andre-chenier"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "L'Épi", base: "épi" }
+      - { word: "naissant", base: "naissant" }
+      - { word: "mûrit", base: "mûrir" }
+      - { word: "de", base: "de" }
+      - { word: "la", base: "le" }
+      - { word: "faux", base: "faux" }
+      - { word: "respecté", base: "respecter" }
+    source:
+      author: "André Chénier"
+      work: "La Jeune Captive, first line"
+      date: 1794
+      edition: "La Jeune Captive, as shown on French Wikisource (La jeune captive), which dates the poem 1794"
+      url: "https://fr.wikisource.org/wiki/La_jeune_captive"
+      basis: "public-domain"
+      author_died: 1794
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4167"
+    target: "Tout est dit, et l'on vient trop tard."
+    words: ["Tout", "est", "dit", "et", "l'on", "vient", "trop", "tard"]
+    ipa: "tu ɛ di e lɔ̃ vjɛ̃ tʁo taʁ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-jean-de-la-bruyere"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Tout", base: "tout" }
+      - { word: "est", base: "être" }
+      - { word: "dit", base: "dire" }
+      - { word: "et", base: "et" }
+      - { word: "l'on", base: "on" }
+      - { word: "vient", base: "venir" }
+      - { word: "trop", base: "trop" }
+      - { word: "tard", base: "tard" }
+    source:
+      author: "Jean de La Bruyère"
+      work: "Les Caractères, chapter 'Des ouvrages de l'esprit', first sentence"
+      date: 1688
+      edition: "Les Caractères, 1872 edition, text, as shown on French Wikisource (Les Caractères, édition 1872/Texte entier); the book is dated 1688 on French Wikipedia"
+      url: "https://fr.wikisource.org/wiki/Les_Caract%C3%A8res,_%C3%A9dition_1872/Texte_entier"
+      basis: "public-domain"
+      author_died: 1696
       jurisdiction: "FR"
       rights_checked: "2026-11-15"
