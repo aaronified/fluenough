@@ -415,7 +415,7 @@ class FrenchTest(unittest.TestCase):
 class SpanishCqTest(unittest.TestCase):
     def test_cqu_is_one_k(self) -> None:
         self.assertEqual(spanish_ipa("Bécquer"), "ˈbekeɾ")
-        self.assertEqual(spanish_ipa("Jacquelin"), "xakeˈlin")
+        self.assertEqual(spanish_ipa("Jacquelin"), "xaˈkelin")
 
     def test_real_doubled_c_and_plain_que_are_unchanged(self) -> None:
         self.assertEqual(spanish_ipa("acción"), "akˈθjon")
