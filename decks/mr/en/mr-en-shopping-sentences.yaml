@@ -1,0 +1,50 @@
+schema: 1
+id: "mr-en-shopping-sentences"
+kind: "layer"
+core: "mr-shopping-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with shopping words"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the shopping and payment words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-6504":
+    native: "The customer buys in the shop."
+    confusables: { "w1": { why: "Seller, not customer: विक्रेता (vikretā) means seller." }, "f1": { why: "Feminine: करते (karte) goes with a feminine subject; ग्राहक (grāhak) is masculine, so करतो (karto)." } }
+  "mr-6505":
+    native: "The seller gives a discount."
+    confusables: { "w1": { why: "Customer, not seller: ग्राहक (grāhak) means customer." }, "f1": { why: "Feminine: देते (dete) is for a feminine subject; विक्रेता (vikretā) is masculine, so देतो (deto)." } }
+  "mr-6506":
+    native: "What is the price of this item?"
+    bases: { "या": "this", "किंमत": "price", "किती": "how much", "आहे": "is" }
+    confusables: { "w1": { why: "Free, not the price: मोफत (mophat) means free of charge." }, "f1": { why: "Plural: आहेत (āhet) is for more than one; a price is one, so आहे (āhe)." } }
+  "mr-6507":
+    native: "This item is not free."
+    bases: { "ही": "this" }
+    confusables: { "w1": { why: "Masculine: हा (hā) goes with a masculine noun; वस्तू (vastu) is feminine, so ही (hi)." }, "f1": { why: "Plural: नाहीत (nāhit) is for more than one; one item takes नाही (nāhi)." } }
+  "mr-6508":
+    native: "He returned the item."
+    bases: { "परत": "back" }
+    confusables: { "w1": { why: "She, not he: ती (ti) means she." }, "f1": { why: "Masculine: केला (kelā) goes with a masculine object; वस्तू (vastu) is feminine, so केली (keli)." } }
+  "mr-6509":
+    native: "Count the money."
+    confusables: { "w1": { why: "Cash, not money: रोकड (rokaḍ) means cash." }, "f1": { why: "Present, a statement: मोजतो (mojto) means counts; मोजा (mojā) is a polite request." } }
+  "mr-6510":
+    native: "This brand is good."
+    bases: { "हा": "this", "चांगला": "good", "आहे": "is" }
+    confusables: { "w1": { why: "That one, not this: तो (to) means he or that." }, "f1": { why: "Plural: आहेत (āhet) is for more than one; one brand takes आहे (āhe)." } }
+  "mr-6511":
+    native: "The discount is today."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "Tomorrow, not today: उद्या (udyā) means tomorrow." }, "f1": { why: "Plural: आहेत (āhet) is for more than one; सवलत (savlat) is one offer, so आहे (āhe)." } }
+  "mr-6512":
+    native: "Give me coins and a note."
+    confusables: { "w1": { why: "Cash, not coins: रोकड (rokaḍ) means cash." }, "f1": { why: "Present, a statement: देतो (deto) means gives; द्या (dyā) is a polite request." } }
+  "mr-6513":
+    native: "Does the seller exchange the item?"
+    bases: { "का": "question marker" }
+    confusables: { "w1": { why: "Customer, not seller: ग्राहक (grāhak) means customer." }, "f1": { why: "Feminine: बदलते (badlte) is for a feminine subject; विक्रेता (vikretā) is masculine, so बदलतो (badlto)." } }
+  "mr-6514":
+    native: "Where is the tag?"
+    bases: { "कुठे": "where", "आहे": "is" }
+    confusables: { "w1": { why: "Here, not where: इथे (ithe) means here." }, "f1": { why: "Plural: आहेत (āhet) is for more than one; one tag takes आहे (āhe)." } }
