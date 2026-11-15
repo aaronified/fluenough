@@ -1,0 +1,171 @@
+schema: 1
+id: "hi-verbs-3-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-5082"
+    target: "उसने रस्सी बाँधी।"
+    reading: "usnē rassī bām̐dhī."
+    ipa: "ʊsneː rəssiː bãːd̪ʱiː"
+    pos: "phrase"
+    bases:
+      - { word: "उसने", ref: "hi-0749" }
+      - { word: "बाँधी", ref: "hi-1811" }
+    confusables:
+      - { id: "w1", word: "खींचना", reading: "khīñcanā", kind: "word" }
+      - { id: "w2", word: "गिराना", reading: "girānā", kind: "word" }
+  - id: "hi-5083"
+    target: "मैंने बच्चे को पानी पिलाया।"
+    reading: "maim̐nē baccē kō pānī pilāyā."
+    ipa: "mɛ̃ːneː bətʃtʃeː koː paːniː pɪlaːjaː"
+    pos: "phrase"
+    bases:
+      - { word: "मैंने", ref: "hi-0745" }
+      - { word: "बच्चे", ref: "hi-0111" }
+      - { word: "पिलाया", ref: "hi-1836" }
+    confusables:
+      - { id: "w1", word: "जगाना", reading: "jagānā", kind: "word" }
+      - { id: "w2", word: "खिलाना", reading: "khilānā", kind: "word" }
+  - id: "hi-5084"
+    target: "उसने दीवार पर तस्वीर टाँगी।"
+    reading: "usnē dīvār par tasvīr ṭām̐gī."
+    ipa: "ʊsneː d̪iːʋaːr pər t̪əsʋiːr ʈãːɡiː"
+    pos: "phrase"
+    bases:
+      - { word: "उसने", ref: "hi-0749" }
+      - { word: "दीवार", base: "दीवार", reading: "dīvār" }
+      - { word: "टाँगी", ref: "hi-1830" }
+    confusables:
+      - { id: "w1", word: "चिपकाना", reading: "cipkānā", kind: "word" }
+      - { id: "w2", word: "ढकना", reading: "ḍhaknā", kind: "word" }
+  - id: "hi-5085"
+    target: "उसने चाबी छुपाई।"
+    reading: "usnē cābī chupāī."
+    ipa: "ʊsneː tʃaːbiː tʃʰʊpaːiː"
+    pos: "phrase"
+    bases:
+      - { word: "उसने", ref: "hi-0749" }
+      - { word: "छुपाई", ref: "hi-1814" }
+    confusables:
+      - { id: "w1", word: "दिखाना", reading: "dikhānā", kind: "word" }
+      - { id: "w2", word: "चुनना", reading: "cunnā", kind: "word" }
+  - id: "hi-5086"
+    target: "चोर पुलिस से भागा।"
+    reading: "cōr pulis sē bhāgā."
+    ipa: "tʃoːr pʊlɪs seː bʱaːɡaː"
+    pos: "phrase"
+    bases:
+      - { word: "चोर", base: "चोर", reading: "cōr" }
+      - { word: "भागा", ref: "hi-1819" }
+    confusables:
+      - { id: "w1", word: "चिल्लाना", reading: "cillānā", kind: "word" }
+      - { id: "w2", word: "डरना", reading: "ḍarnā", kind: "word" }
+  - id: "hi-5087"
+    target: "बच्चे ने गेंद पकड़ी।"
+    reading: "baccē nē gēnd pakṛī."
+    ipa: "bətʃtʃeː neː ɡeːnd̪ pəkɽiː"
+    pos: "phrase"
+    bases:
+      - { word: "बच्चे", ref: "hi-0111" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "पकड़ी", ref: "hi-1798" }
+    confusables:
+      - { id: "w1", word: "मारना", reading: "mārnā", kind: "word" }
+      - { id: "w2", word: "छूना", reading: "chūnā", kind: "word" }
+  - id: "hi-5088"
+    target: "उसने दरवाज़ा धकेला।"
+    reading: "usnē darvāzā dhakēlā."
+    ipa: "ʊsneː d̪ərʋaːzaː d̪ʱəkeːlaː"
+    pos: "phrase"
+    bases:
+      - { word: "उसने", ref: "hi-0749" }
+      - { word: "धकेला", ref: "hi-1800" }
+    confusables:
+      - { id: "w1", word: "खींचना", reading: "khīñcanā", kind: "word" }
+      - { id: "w2", word: "दबाना", reading: "dabānā", kind: "word" }
+  - id: "hi-5089"
+    target: "सिपाही ने चोर को पकड़ा।"
+    reading: "sipāhī nē cōr kō pakṛā."
+    ipa: "sɪpaːɦiː neː tʃoːr koː pəkɽaː"
+    pos: "phrase"
+    bases:
+      - { word: "सिपाही", base: "सिपाही", reading: "sipāhī" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "चोर", base: "चोर", reading: "cōr" }
+      - { word: "पकड़ा", ref: "hi-1798" }
+    confusables:
+      - { id: "w1", word: "रोकना", reading: "rōknā", kind: "word" }
+      - { id: "w2", word: "बचना", reading: "bacnā", kind: "word" }
+  - id: "hi-5090"
+    target: "बच्चे ने पैसे गिने।"
+    reading: "baccē nē paisē ginē."
+    ipa: "bətʃtʃeː neː pɛːseː ɡɪneː"
+    pos: "phrase"
+    bases:
+      - { word: "बच्चे", ref: "hi-0111" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "गिने", ref: "hi-1807" }
+    confusables:
+      - { id: "w1", word: "नापना", reading: "nāpnā", kind: "word" }
+      - { id: "w2", word: "जोड़ना", reading: "jōṛnā", kind: "word" }
+  - id: "hi-5091"
+    target: "छत से पानी टपकता है।"
+    reading: "chat sē pānī ṭapaktā hai."
+    ipa: "tʃʰət̪ seː paːniː ʈəpəkt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "टपकता", ref: "hi-1818" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "फोड़ना", reading: "phōṛnā", kind: "word" }
+      - { id: "w2", word: "बचना", reading: "bacnā", kind: "word" }
+  - id: "hi-5092"
+    target: "मैं रात को कंबल ओढ़ता हूँ।"
+    reading: "maim̐ rāt kō kambal ōṛhtā hūm̐."
+    ipa: "mɛ̃ː raːt̪ koː kəmbəl oːɽʱt̪aː ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "कंबल", base: "कंबल", reading: "kambal" }
+      - { word: "ओढ़ता", ref: "hi-1795" }
+      - { word: "हूँ", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "सहना", reading: "sahnā", kind: "word" }
+      - { id: "w2", word: "डरना", reading: "ḍarnā", kind: "word" }
+  - id: "hi-5093"
+    target: "माँ ने बच्चे को सुबह जगाया।"
+    reading: "mām̐ nē baccē kō subah jagāyā."
+    ipa: "mãː neː bətʃtʃeː koː sʊbəɦ dʒəɡaːjaː"
+    pos: "phrase"
+    bases:
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "बच्चे", ref: "hi-0111" }
+      - { word: "जगाया", ref: "hi-1837" }
+    confusables:
+      - { id: "w1", word: "खिलाना", reading: "khilānā", kind: "word" }
+      - { id: "w2", word: "पिलाना", reading: "pilānā", kind: "word" }
+  - id: "hi-5094"
+    target: "उसने पूरी बात समझाई।"
+    reading: "usnē pūrī bāt samjhāī."
+    ipa: "ʊsneː puːriː baːt̪ səmdʒʱaːiː"
+    pos: "phrase"
+    bases:
+      - { word: "उसने", ref: "hi-0749" }
+      - { word: "समझाई", ref: "hi-1822" }
+    confusables:
+      - { id: "w1", word: "सुलझाना", reading: "suljhānā", kind: "word" }
+      - { id: "w2", word: "रोकना", reading: "rōknā", kind: "word" }
+  - id: "hi-5095"
+    target: "हम खतरे से बच गए।"
+    reading: "ham khatrē sē bac gaē."
+    ipa: "ɦəm kʰət̪reː seː bətʃ ɡəeː"
+    pos: "phrase"
+    bases:
+      - { word: "खतरे", ref: "hi-2659" }
+      - { word: "बच", ref: "hi-1826" }
+      - { word: "गए", ref: "hi-0777" }
+    confusables:
+      - { id: "w1", word: "बचाना", reading: "bacānā", kind: "word" }
+      - { id: "w2", word: "भागना", reading: "bhāgnā", kind: "word" }

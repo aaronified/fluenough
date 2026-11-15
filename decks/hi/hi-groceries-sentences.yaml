@@ -1,0 +1,155 @@
+schema: 1
+id: "hi-groceries-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-4684"
+    target: "मुझे आलू और प्याज़ चाहिए।"
+    reading: "mujhē ālū aur pyāz cāhiē."
+    ipa: "mʊdʒʱeː aːluː ɔːr pjaːz tʃaːɦɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "मुझे", base: "मैं", reading: "mujhē" }
+      - { word: "आलू", ref: "hi-0250" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "प्याज़", ref: "hi-0251" }
+      - { word: "चाहिए", ref: "hi-0460" }
+    confusables:
+      - { id: "w1", ref: "hi-0252", kind: "word" }
+      - { id: "w2", ref: "hi-0254", kind: "word" }
+  - id: "hi-4685"
+    target: "दो किलो आलू दीजिए।"
+    reading: "dō kilō ālū dījiē."
+    ipa: "d̪oː kɪloː aːluː d̪iːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "दो", ref: "hi-0199" }
+      - { word: "किलो", ref: "hi-0241" }
+      - { word: "आलू", ref: "hi-0250" }
+      - { word: "दीजिए", base: "देना", reading: "dījiē" }
+    confusables:
+      - { id: "w1", ref: "hi-0251", kind: "word" }
+      - { id: "w2", ref: "hi-0252", kind: "word" }
+  - id: "hi-4686"
+    target: "टमाटर बहुत महँगे हैं।"
+    reading: "ṭamāṭar bahut maham̐gē haim̐."
+    ipa: "ʈəmaːʈər bəɦʊt̪ məɦə̃ɡeː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "टमाटर", ref: "hi-0252" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "महँगे", base: "महँगा", reading: "maham̐gē" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0250", kind: "word" }
+      - { id: "w2", ref: "hi-0251", kind: "word" }
+  - id: "hi-4687"
+    target: "क्या मछली ताज़ा है?"
+    reading: "kyā machlī tāzā hai?"
+    ipa: "kjaː mətʃʰliː t̪aːzaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "क्या", ref: "hi-0157" }
+      - { word: "मछली", ref: "hi-0255" }
+      - { word: "ताज़ा", ref: "hi-0903" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0257", kind: "word" }
+      - { id: "w2", ref: "hi-0256", kind: "word" }
+  - id: "hi-4688"
+    target: "दूध और चावल ख़रीदिए।"
+    reading: "dūdh aur cāval k͟harīdiē."
+    ipa: "d̪uːd̪ʱ ɔːr tʃaːʋəl xəriːd̪ɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "दूध", ref: "hi-0259" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "चावल", ref: "hi-0260" }
+      - { word: "ख़रीदिए", base: "ख़रीदना", reading: "k͟harīdiē" }
+    confusables:
+      - { id: "w1", ref: "hi-0261", kind: "word" }
+      - { id: "w2", ref: "hi-0258", kind: "word" }
+  - id: "hi-4689"
+    target: "मेरे पास दाल नहीं है।"
+    reading: "mērē pās dāl nahīm̐ hai."
+    ipa: "meːreː paːs d̪aːl nəɦĩː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरे", base: "मेरा", reading: "mērē" }
+      - { word: "दाल", ref: "hi-0261" }
+      - { word: "नहीं", ref: "hi-0156" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0260", kind: "word" }
+      - { id: "w2", ref: "hi-0259", kind: "word" }
+  - id: "hi-4690"
+    target: "लहसुन और मिर्च की चटनी अच्छी है।"
+    reading: "lahsun aur mirc kī caṭnī acchī hai."
+    ipa: "ləɦsʊn ɔːr mɪrtʃ kiː tʃəʈniː ətʃtʃʰiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "लहसुन", ref: "hi-0254" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "मिर्च", ref: "hi-0253" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "चटनी", ref: "hi-1006" }
+      - { word: "अच्छी", base: "अच्छा", reading: "acchī" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0251", kind: "word" }
+      - { id: "w2", ref: "hi-0250", kind: "word" }
+  - id: "hi-4691"
+    target: "सब्ज़ी में आलू डालिए।"
+    reading: "sabzī mēm̐ ālū ḍāliē."
+    ipa: "səbziː mẽː aːluː ɖaːlɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "सब्ज़ी", ref: "hi-0249" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "आलू", ref: "hi-0250" }
+      - { word: "डालिए", base: "डालना", reading: "ḍāliē" }
+    confusables:
+      - { id: "w1", ref: "hi-0253", kind: "word" }
+      - { id: "w2", ref: "hi-0251", kind: "word" }
+  - id: "hi-4692"
+    target: "मटन आज नहीं मिलेगा।"
+    reading: "maṭan āj nahīm̐ milēgā."
+    ipa: "məʈən aːdʒ nəɦĩː mɪleːɡaː"
+    pos: "phrase"
+    bases:
+      - { word: "मटन", ref: "hi-0256" }
+      - { word: "आज", ref: "hi-0299" }
+      - { word: "नहीं", ref: "hi-0156" }
+      - { word: "मिलेगा", base: "मिलना", reading: "milēgā" }
+    confusables:
+      - { id: "w1", ref: "hi-0257", kind: "word" }
+      - { id: "w2", ref: "hi-0255", kind: "word" }
+  - id: "hi-4693"
+    target: "अंडे कितने के हैं?"
+    reading: "aṇḍē kitnē kē haim̐?"
+    ipa: "əɳɖeː kɪt̪neː keː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "अंडे", base: "अंडा", reading: "aṇḍē" }
+      - { word: "कितने", base: "कितना", reading: "kitnē" }
+      - { word: "के", base: "का", reading: "kē" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0259", kind: "word" }
+      - { id: "w2", ref: "hi-0261", kind: "word" }
+  - id: "hi-4694"
+    target: "दूध ठंडा रखिए।"
+    reading: "dūdh ṭhaṇḍā rakhiē."
+    ipa: "d̪uːd̪ʱ ʈʰəɳɖaː rəkʰɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "दूध", ref: "hi-0259" }
+      - { word: "ठंडा", ref: "hi-0911" }
+      - { word: "रखिए", base: "रखना", reading: "rakhiē" }
+    confusables:
+      - { id: "w1", ref: "hi-0258", kind: "word" }
+      - { id: "w2", ref: "hi-0260", kind: "word" }

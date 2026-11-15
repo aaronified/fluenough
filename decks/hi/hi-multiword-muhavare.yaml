@@ -1,0 +1,259 @@
+schema: 1
+id: "hi-multiword-muhavare"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+genre: "multiword"
+pattern_family: "idiom"
+level: "B1"
+tags: ["unreviewed"]
+cards:
+  - id: "hi-4450"
+    target: "आईना दिखाना"
+    words: ["आईना", "दिखाना"]
+    reading: "āīnā dikhānā"
+    ipa: "aːiːnaː d̪ɪkʰaːnaː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "आईना", base: "आईना", reading: "āīnā" }
+      - { word: "दिखाना", ref: "hi-1815" }
+  - id: "hi-4451"
+    target: "अपना उल्लू सीधा करना"
+    words: ["अपना", "उल्लू", "सीधा", "करना"]
+    reading: "apnā ullū sīdhā karnā"
+    ipa: "əpnaː ʊlluː siːd̪ʱaː kərnaː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "अपना", ref: "hi-0760" }
+      - { word: "उल्लू", base: "उल्लू", reading: "ullū" }
+      - { word: "सीधा", ref: "hi-1969" }
+      - { word: "करना", ref: "hi-0779" }
+  - id: "hi-4452"
+    target: "आटे दाल का भाव मालूम होना"
+    target_scripts: { perso_arabic: "آٹے دال کا بھاو مالوم ہونا" }
+    words: ["आटे", "दाल", "का", "भाव", "मालूम", "होना"]
+    reading: "āṭē dāl kā bhāv mālūm hōnā"
+    ipa: "aːʈeː d̪aːl kaː bʱaːʋ maːluːm ɦoːnaː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "आटे", base: "आटा", reading: "āṭā" }
+      - { word: "दाल", ref: "hi-0261" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "भाव", ref: "hi-1378" }
+      - { word: "मालूम", ref: "hi-2817" }
+      - { word: "होना", ref: "hi-0780" }
+  - id: "hi-4453"
+    target: "कलेजा फटना"
+    target_scripts: { perso_arabic: "کلیجا پھٹنا" }
+    words: ["कलेजा", "फटना"]
+    reading: "kalējā phaṭnā"
+    ipa: "kəleːdʒaː pʰəʈnaː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "कलेजा", base: "कलेजा", reading: "kalējā" }
+      - { word: "फटना", base: "फटना", reading: "phaṭnā" }
+  - id: "hi-4454"
+    target: "कमर तोड़ना"
+    target_scripts: { perso_arabic: "کمر توڑنا" }
+    words: ["कमर", "तोड़ना"]
+    reading: "kamar tōṛnā"
+    ipa: "kəmər t̪oːɽnaː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "कमर", ref: "hi-1052" }
+      - { word: "तोड़ना", ref: "hi-2625" }
+  - id: "hi-4455"
+    target: "खट्टे अंगूर"
+    words: ["खट्टे", "अंगूर"]
+    reading: "khaṭṭē aṅgūr"
+    ipa: "kʰəʈʈeː əŋɡuːr"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "खट्टे", base: "खट्टा", reading: "khaṭṭā" }
+      - { word: "अंगूर", ref: "hi-0982" }
+  - id: "hi-4456"
+    target: "ख़याली पुलाव"
+    target_scripts: { perso_arabic: "خیالی پلاؤ" }
+    words: ["ख़याली", "पुलाव"]
+    reading: "k͟hayālī pulāv"
+    ipa: "xəjaːliː pʊlaːʋ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ख़याली", base: "ख़याली", reading: "k͟hayālī" }
+      - { word: "पुलाव", base: "पुलाव", reading: "pulāv" }
+  - id: "hi-4457"
+    target: "घड़ियाली आँसू"
+    words: ["घड़ियाली", "आँसू"]
+    reading: "ghaṛiyālī ām̐sū"
+    ipa: "ɡʱəɽɪjaːliː ãːsuː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "घड़ियाली", base: "घड़ियाली", reading: "ghaṛiyālī" }
+      - { word: "आँसू", base: "आँसू", reading: "ām̐sū" }
+  - id: "hi-4458"
+    target: "घोड़े बेचकर सोना"
+    words: ["घोड़े", "बेचकर", "सोना"]
+    reading: "ghōṛē bēckar sōnā"
+    ipa: "ɡʱoːɽeː beːtʃkər soːnaː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "घोड़े", base: "घोड़ा", reading: "ghōṛā" }
+      - { word: "बेचकर", base: "बेचना", reading: "bēcnā" }
+      - { word: "सोना", ref: "hi-0450" }
+  - id: "hi-4459"
+    target: "चुल्लू भर पानी में डूब मरना"
+    target_scripts: { perso_arabic: "چلو بھر پانی میں ڈوب مرنا" }
+    words: ["चुल्लू", "भर", "पानी", "में", "डूब", "मरना"]
+    reading: "cullū bhar pānī mēm̐ ḍūb marnā"
+    ipa: "tʃʊlluː bʱər paːniː mẽː ɖuːb mərnaː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "चुल्लू", base: "चुल्लू", reading: "cullū" }
+      - { word: "भर", base: "भर", reading: "bhar" }
+      - { word: "पानी", ref: "hi-0333" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "डूब", base: "डूबना", reading: "ḍūbnā" }
+      - { word: "मरना", base: "मरना", reading: "marnā" }
+  - id: "hi-4460"
+    target: "छत्तीस का आँकड़ा"
+    words: ["छत्तीस", "का", "आँकड़ा"]
+    reading: "chattīs kā ām̐kṛā"
+    ipa: "tʃʰət̪t̪iːs kaː ãːkɽaː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "छत्तीस", ref: "hi-0537" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "आँकड़ा", base: "आँकड़ा", reading: "ām̐kṛā" }
+  - id: "hi-4461"
+    target: "दाल में कुछ काला होना"
+    words: ["दाल", "में", "कुछ", "काला", "होना"]
+    reading: "dāl mēm̐ kuch kālā hōnā"
+    ipa: "d̪aːl mẽː kʊtʃʰ kaːlaː ɦoːnaː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "दाल", ref: "hi-0261" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "कुछ", ref: "hi-0759" }
+      - { word: "काला", ref: "hi-0920" }
+      - { word: "होना", ref: "hi-0780" }
+  - id: "hi-4462"
+    target: "दिन में तारे देखना"
+    words: ["दिन", "में", "तारे", "देखना"]
+    reading: "din mēm̐ tārē dēkhnā"
+    ipa: "d̪ɪn mẽː t̪aːreː d̪eːkʰnaː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "दिन", ref: "hi-0308" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "तारे", base: "तारा", reading: "tārā" }
+      - { word: "देखना", ref: "hi-0784" }
+  - id: "hi-4463"
+    target: "नौ दो ग्यारह होना"
+    words: ["नौ", "दो", "ग्यारह", "होना"]
+    reading: "nau dō gyārah hōnā"
+    ipa: "nɔː d̪oː ɡjaːrəɦ ɦoːnaː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "नौ", ref: "hi-0206" }
+      - { word: "दो", ref: "hi-0199" }
+      - { word: "ग्यारह", ref: "hi-0208" }
+      - { word: "होना", ref: "hi-0780" }
+  - id: "hi-4464"
+    target: "नाक कटना"
+    words: ["नाक", "कटना"]
+    reading: "nāk kaṭnā"
+    ipa: "naːk kəʈnaː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "नाक", ref: "hi-1027" }
+      - { word: "कटना", base: "कटना", reading: "kaṭnā" }
+  - id: "hi-4465"
+    target: "मुँह मीठा करना"
+    words: ["मुँह", "मीठा", "करना"]
+    reading: "mum̐h mīṭhā karnā"
+    ipa: "mʊ̃ɦ miːʈʰaː kərnaː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "मुँह", ref: "hi-1028" }
+      - { word: "मीठा", ref: "hi-0339" }
+      - { word: "करना", ref: "hi-0779" }
+  - id: "hi-4466"
+    target: "दम नाक में आना"
+    words: ["दम", "नाक", "में", "आना"]
+    reading: "dam nāk mēm̐ ānā"
+    ipa: "d̪əm naːk mẽː aːnaː"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "दम", base: "दम", reading: "dam" }
+      - { word: "नाक", ref: "hi-1027" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "आना", ref: "hi-0778" }

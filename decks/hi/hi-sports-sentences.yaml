@@ -1,0 +1,193 @@
+schema: 1
+id: "hi-sports-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-5604"
+    target: "वह रोज़ सुबह जिम जाता है।"
+    reading: "vah rōz subah jim jātā hai."
+    ipa: "ʋəɦ roːz sʊbəɦ dʒɪm dʒaːt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "वह", ref: "hi-0749" }
+      - { word: "रोज़", ref: "hi-0451" }
+      - { word: "सुबह", ref: "hi-0302" }
+      - { word: "जिम", ref: "hi-2549" }
+      - { word: "जाता", base: "जाना", reading: "jātā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "कोच", reading: "kōc", kind: "word" }
+      - { id: "w2", word: "फ़िटनेस", reading: "fiṭnēs", kind: "word" }
+  - id: "hi-5605"
+    target: "भारत ने मैच जीता।"
+    reading: "bhārat nē maic jītā."
+    ipa: "bʱaːrət̪ neː mɛːtʃ dʒiːt̪aː"
+    pos: "phrase"
+    bases:
+      - { word: "भारत", base: "भारत", reading: "bhārat" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "मैच", base: "मैच", reading: "maic" }
+      - { word: "जीता", base: "जीतना", reading: "jītā" }
+    confusables:
+      - { id: "w1", word: "हार", reading: "hār", kind: "word" }
+      - { id: "w2", word: "विजेता", reading: "vijētā", kind: "word" }
+  - id: "hi-5606"
+    target: "टीम की हार पर कोच दुखी हैं।"
+    reading: "ṭīm kī hār par kōc dukhī haim̐."
+    ipa: "ʈiːm kiː ɦaːr pər koːtʃ d̪ʊkʰiː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "टीम", base: "टीम", reading: "ṭīm" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "हार", ref: "hi-2538" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "कोच", ref: "hi-2539" }
+      - { word: "दुखी", base: "दुखी", reading: "dukhī" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "जीत", reading: "jīt", kind: "word" }
+      - { id: "w2", word: "विजेता", reading: "vijētā", kind: "word" }
+  - id: "hi-5607"
+    target: "खिलाड़ी स्टेडियम में दौड़ रहे हैं।"
+    reading: "khilāṛī sṭēḍiam mēm̐ dauṛ rahē haim̐."
+    ipa: "kʰɪlaːɽiː sʈeːɖɪəm mẽː d̪ɔːɽ rəɦeː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "खिलाड़ी", base: "खिलाड़ी", reading: "khilāṛī" }
+      - { word: "स्टेडियम", ref: "hi-2536" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "दौड़", base: "दौड़ना", reading: "dauṛ" }
+      - { word: "रहे", base: "रहना", reading: "rahē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "रेफ़री", reading: "rēfrī", kind: "word" }
+      - { id: "w2", word: "कोच", reading: "kōc", kind: "word" }
+  - id: "hi-5608"
+    target: "विजेता को पदक मिला।"
+    reading: "vijētā kō padak milā."
+    ipa: "ʋɪdʒeːt̪aː koː pəd̪ək mɪlaː"
+    pos: "phrase"
+    bases:
+      - { word: "विजेता", ref: "hi-2552" }
+      - { word: "को", ref: "hi-0277" }
+      - { word: "पदक", ref: "hi-2543" }
+      - { word: "मिला", base: "मिलना", reading: "milā" }
+    confusables:
+      - { id: "w1", word: "कप", reading: "kap", kind: "word" }
+      - { id: "w2", word: "सीटी", reading: "sīṭī", kind: "word" }
+  - id: "hi-5609"
+    target: "कोच ने नई रणनीति समझाई।"
+    reading: "kōc nē naī raṇnīti samjhāī."
+    ipa: "koːtʃ neː nəiː rəɳniːt̪ɪ səmdʒʱaːiː"
+    pos: "phrase"
+    bases:
+      - { word: "कोच", ref: "hi-2539" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "नई", base: "नया", reading: "naī" }
+      - { word: "रणनीति", base: "रणनीति", reading: "raṇnīti" }
+      - { word: "समझाई", base: "समझाना", reading: "samjhāī" }
+    confusables:
+      - { id: "w1", word: "अभ्यास", reading: "abhyās", kind: "word" }
+      - { id: "w2", word: "रिकॉर्ड", reading: "rikôrḍ", kind: "word" }
+  - id: "hi-5610"
+    target: "हमने अभ्यास के बाद टेनिस खेला।"
+    reading: "hamnē abhyās kē bād ṭēnis khēlā."
+    ipa: "ɦəmneː əbʱjaːs keː baːd̪ ʈeːnɪs kʰeːlaː"
+    pos: "phrase"
+    bases:
+      - { word: "हमने", base: "हम", reading: "hamnē" }
+      - { word: "अभ्यास", ref: "hi-2548" }
+      - { word: "के", base: "का", reading: "kē" }
+      - { word: "बाद", base: "बाद", reading: "bād" }
+      - { word: "टेनिस", ref: "hi-2542" }
+      - { word: "खेला", base: "खेलना", reading: "khēlā" }
+    confusables:
+      - { id: "w1", word: "हॉकी", reading: "hôkī", kind: "word" }
+      - { id: "w2", word: "वॉलीबॉल", reading: "vôlībôl", kind: "word" }
+  - id: "hi-5611"
+    target: "ओलंपिक में पदक जीतना बड़ी बात है।"
+    reading: "ōlampik mēm̐ padak jītnā baṛī bāt hai."
+    ipa: "oːləmpɪk mẽː pəd̪ək dʒiːt̪naː bəɽiː baːt̪ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "ओलंपिक", ref: "hi-2551" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "पदक", ref: "hi-2543" }
+      - { word: "जीतना", base: "जीतना", reading: "jītnā" }
+      - { word: "बड़ी", base: "बड़ा", reading: "baṛī" }
+      - { word: "बात", base: "बात", reading: "bāt" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "प्रतियोगिता", reading: "pratiyōgitā", kind: "word" }
+      - { id: "w2", word: "टूर्नामेंट", reading: "ṭūrnāmēṇṭ", kind: "word" }
+  - id: "hi-5612"
+    target: "रेफ़री ने सीटी बजाई।"
+    reading: "rēfrī nē sīṭī bajāī."
+    ipa: "reːfriː neː siːʈiː bədʒaːiː"
+    pos: "phrase"
+    bases:
+      - { word: "रेफ़री", ref: "hi-2547" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "सीटी", ref: "hi-2546" }
+      - { word: "बजाई", base: "बजाना", reading: "bajāī" }
+    confusables:
+      - { id: "w1", word: "कोच", reading: "kōc", kind: "word" }
+      - { id: "w2", word: "विजेता", reading: "vijētā", kind: "word" }
+  - id: "hi-5613"
+    target: "उसका रिकॉर्ड अब भी नहीं टूटा।"
+    reading: "uskā rikôrḍ ab bhī nahīm̐ ṭūṭā."
+    ipa: "ʊskaː rɪkɔrɖ əb bʱiː nəɦĩː ʈuːʈaː"
+    pos: "phrase"
+    bases:
+      - { word: "उसका", base: "वह", reading: "uskā" }
+      - { word: "रिकॉर्ड", ref: "hi-2544" }
+      - { word: "अब", ref: "hi-1704" }
+      - { word: "भी", ref: "hi-0350" }
+      - { word: "नहीं", ref: "hi-0156" }
+      - { word: "टूटा", base: "टूटना", reading: "ṭūṭā" }
+    confusables:
+      - { id: "w1", word: "पदक", reading: "padak", kind: "word" }
+      - { id: "w2", word: "कप", reading: "kap", kind: "word" }
+  - id: "hi-5614"
+    target: "फ़िटनेस के लिए रोज़ दौड़िए।"
+    reading: "fiṭnēs kē liē rōz dauṛiē."
+    ipa: "fɪʈneːs keː lɪeː roːz d̪ɔːɽɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "फ़िटनेस", ref: "hi-2555" }
+      - { word: "के", base: "का", reading: "kē" }
+      - { word: "लिए", base: "लिए", reading: "liē" }
+      - { word: "रोज़", ref: "hi-0451" }
+      - { word: "दौड़िए", base: "दौड़ना", reading: "dauṛiē" }
+    confusables:
+      - { id: "w1", word: "जिम", reading: "jim", kind: "word" }
+      - { id: "w2", word: "अभ्यास", reading: "abhyās", kind: "word" }
+  - id: "hi-5615"
+    target: "गोलकीपर ने गेंद पकड़ी।"
+    reading: "gōlkīpar nē gēnd pakṛī."
+    ipa: "ɡoːlkiːpər neː ɡeːnd̪ pəkɽiː"
+    pos: "phrase"
+    bases:
+      - { word: "गोलकीपर", ref: "hi-2556" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "गेंद", base: "गेंद", reading: "gēnd" }
+      - { word: "पकड़ी", base: "पकड़ना", reading: "pakṛī" }
+    confusables:
+      - { id: "w1", word: "रेफ़री", reading: "rēfrī", kind: "word" }
+      - { id: "w2", word: "कोच", reading: "kōc", kind: "word" }
+  - id: "hi-5616"
+    target: "प्रतियोगिता में कौन जीतेगा?"
+    reading: "pratiyōgitā mēm̐ kaun jītēgā?"
+    ipa: "prət̪ɪjoːɡɪt̪aː mẽː kɔːn dʒiːt̪eːɡaː"
+    pos: "phrase"
+    bases:
+      - { word: "प्रतियोगिता", ref: "hi-2545" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "कौन", ref: "hi-0158" }
+      - { word: "जीतेगा", base: "जीतना", reading: "jītēgā" }
+    confusables:
+      - { id: "w1", word: "टूर्नामेंट", reading: "ṭūrnāmēṇṭ", kind: "word" }
+      - { id: "w2", word: "विजेता", reading: "vijētā", kind: "word" }

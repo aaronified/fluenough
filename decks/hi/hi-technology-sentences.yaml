@@ -1,0 +1,175 @@
+schema: 1
+id: "hi-technology-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-5384"
+    target: "यह नई तकनीक बहुत उपयोगी है।"
+    reading: "yah naī taknīk bahut upyōgī hai."
+    ipa: "jəɦ nəiː t̪əkniːk bəɦʊt̪ ʊpjoːɡiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "नई", base: "नया", reading: "naī" }
+      - { word: "तकनीक", ref: "hi-2305" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "उपयोगी", base: "उपयोगी", reading: "upyōgī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "मशीन", reading: "maśīn", kind: "word" }
+      - { id: "w2", word: "उपकरण", reading: "upkraṇ", kind: "word" }
+  - id: "hi-5385"
+    target: "मेरा फ़ोन रोबोट जैसा है।"
+    reading: "mērā fōn rōbōṭ jaisā hai."
+    ipa: "meːraː foːn roːboːʈ dʒɛːsaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरा", base: "मैं", reading: "mērā" }
+      - { word: "फ़ोन", base: "फ़ोन", reading: "fōn" }
+      - { word: "रोबोट", ref: "hi-2311" }
+      - { word: "जैसा", base: "जैसा", reading: "jaisā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "मशीन", reading: "maśīn", kind: "word" }
+      - { id: "w2", word: "सेंसर", reading: "sēṁsar", kind: "word" }
+  - id: "hi-5386"
+    target: "कृपया बटन दबाइए।"
+    reading: "kripyā baṭan dabāiē."
+    ipa: "krɪpjaː bəʈən d̪əbaːɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "कृपया", base: "कृपया", reading: "kripyā" }
+      - { word: "बटन", ref: "hi-2315" }
+      - { word: "दबाइए", base: "दबाना", reading: "dabāiē" }
+    confusables:
+      - { id: "w1", word: "स्विच", reading: "svic", kind: "word" }
+      - { id: "w2", word: "बल्ब", reading: "balb", kind: "word" }
+  - id: "hi-5387"
+    target: "वेबसाइट पर डेटा सुरक्षित है।"
+    reading: "vēbsāiṭ par ḍēṭā surakśit hai."
+    ipa: "ʋeːbsaːɪʈ pər ɖeːʈaː sʊrəkʃɪt̪ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "वेबसाइट", ref: "hi-2307" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "डेटा", ref: "hi-2320" }
+      - { word: "सुरक्षित", base: "सुरक्षित", reading: "surakśit" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "सर्वर", reading: "sarvar", kind: "word" }
+      - { id: "w2", word: "सॉफ़्टवेयर", reading: "sôfṭavēyar", kind: "word" }
+  - id: "hi-5388"
+    target: "सर्वर बंद है।"
+    reading: "sarvar band hai."
+    ipa: "sərʋər bənd̪ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "सर्वर", ref: "hi-2321" }
+      - { word: "बंद", base: "बंद", reading: "band" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "कोड", reading: "kōḍ", kind: "word" }
+      - { id: "w2", word: "डेटा", reading: "ḍēṭā", kind: "word" }
+  - id: "hi-5389"
+    target: "मेरी बैटरी सौर ऊर्जा से चलती है।"
+    reading: "mērī baiṭrī saur ūrjā sē caltī hai."
+    ipa: "meːriː bɛːʈriː sɔːr uːrdʒaː seː tʃəlt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", base: "मैं", reading: "mērī" }
+      - { word: "बैटरी", base: "बैटरी", reading: "baiṭrī" }
+      - { word: "सौर", ref: "hi-2318" }
+      - { word: "ऊर्जा", ref: "hi-2319" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "चलती", base: "चलना", reading: "caltī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "बल्ब", reading: "balb", kind: "word" }
+      - { id: "w2", word: "सेंसर", reading: "sēṁsar", kind: "word" }
+  - id: "hi-5390"
+    target: "ब्लॉग पर नई पोस्ट आई।"
+    reading: "blôg par naī pōsṭ āī."
+    ipa: "blɔɡ pər nəiː poːsʈ aːiː"
+    pos: "phrase"
+    bases:
+      - { word: "ब्लॉग", ref: "hi-2322" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "नई", base: "नया", reading: "naī" }
+      - { word: "पोस्ट", ref: "hi-2323" }
+      - { word: "आई", base: "आना", reading: "āī" }
+    confusables:
+      - { id: "w1", word: "चैट", reading: "caiṭ", kind: "word" }
+      - { id: "w2", word: "मीडिया", reading: "mīḍiyā", kind: "word" }
+  - id: "hi-5391"
+    target: "वैज्ञानिक ने नई खोज की।"
+    reading: "vaigyānik nē naī khōj kī."
+    ipa: "ʋɛːɡjaːnɪk neː nəiː kʰoːdʒ kiː"
+    pos: "phrase"
+    bases:
+      - { word: "वैज्ञानिक", ref: "hi-2328" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "नई", base: "नया", reading: "naī" }
+      - { word: "खोज", ref: "hi-2327" }
+      - { word: "की", ref: "hi-0061" }
+    confusables:
+      - { id: "w1", word: "आविष्कार", reading: "āviśkār", kind: "word" }
+      - { id: "w2", word: "रोबोट", reading: "rōbōṭ", kind: "word" }
+  - id: "hi-5392"
+    target: "यह प्रोग्राम स्मार्ट है।"
+    reading: "yah prōgrām smārṭ hai."
+    ipa: "jəɦ proːɡraːm smaːrʈ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "प्रोग्राम", ref: "hi-2309" }
+      - { word: "स्मार्ट", ref: "hi-2329" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "सॉफ़्टवेयर", reading: "sôfṭavēyar", kind: "word" }
+      - { id: "w2", word: "कोड", reading: "kōḍ", kind: "word" }
+  - id: "hi-5393"
+    target: "कोड में गलती है।"
+    reading: "kōḍ mēm̐ galtī hai."
+    ipa: "koːɖ mẽː ɡəlt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "कोड", ref: "hi-2310" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "गलती", base: "गलती", reading: "galtī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "प्रोग्राम", reading: "prōgrām", kind: "word" }
+      - { id: "w2", word: "सर्वर", reading: "sarvar", kind: "word" }
+  - id: "hi-5394"
+    target: "चैट पर मीडिया की खबर आई।"
+    reading: "caiṭ par mīḍiyā kī khabar āī."
+    ipa: "tʃɛːʈ pər miːɖɪjaː kiː kʰəbər aːiː"
+    pos: "phrase"
+    bases:
+      - { word: "चैट", ref: "hi-2324" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "मीडिया", ref: "hi-2325" }
+      - { word: "की", ref: "hi-0061" }
+      - { word: "खबर", ref: "hi-2147" }
+      - { word: "आई", base: "आना", reading: "āī" }
+    confusables:
+      - { id: "w1", word: "ब्लॉग", reading: "blôg", kind: "word" }
+      - { id: "w2", word: "पोस्ट", reading: "pōsṭ", kind: "word" }
+  - id: "hi-5395"
+    target: "आविष्कार बहुत पुराना नहीं है।"
+    reading: "āviśkār bahut purānā nahīm̐ hai."
+    ipa: "aːʋɪʃkaːr bəɦʊt̪ pʊraːnaː nəɦĩː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "आविष्कार", ref: "hi-2326" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "पुराना", ref: "hi-0897" }
+      - { word: "नहीं", ref: "hi-0156" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "खोज", reading: "khōj", kind: "word" }
+      - { id: "w2", word: "नया", reading: "nayā", kind: "word" }

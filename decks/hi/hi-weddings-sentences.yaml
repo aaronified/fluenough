@@ -1,0 +1,189 @@
+schema: 1
+id: "hi-weddings-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-5592"
+    target: "दूल्हा और दुल्हन के फेरे मंडप में हुए।"
+    reading: "dūlhā aur dulhan kē phērē maṇḍap mēm̐ huē."
+    ipa: "d̪uːlɦaː ɔːr d̪ʊlɦən keː pʰeːreː məɳɖəp mẽː ɦʊeː"
+    pos: "phrase"
+    bases:
+      - { word: "दूल्हा", ref: "hi-2505" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "दुल्हन", ref: "hi-2506" }
+      - { word: "के", ref: "hi-0065" }
+      - { word: "फेरे", base: "फेरा", reading: "phērē" }
+      - { word: "मंडप", ref: "hi-2508" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "हुए", base: "होना", reading: "huē" }
+    confusables:
+      - { id: "w1", word: "बारात", reading: "bārāt", kind: "word" }
+      - { id: "w2", word: "डोली", reading: "ḍōlī", kind: "word" }
+  - id: "hi-5593"
+    target: "बारात में हम शहनाई सुनते हैं।"
+    reading: "bārāt mēm̐ ham śahnāī suntē haim̐."
+    ipa: "baːraːt̪ mẽː ɦəm ʃəɦnaːiː sʊnt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "बारात", ref: "hi-2507" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "हम", ref: "hi-0053" }
+      - { word: "शहनाई", ref: "hi-2522" }
+      - { word: "सुनते", base: "सुनना", reading: "suntē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "उपहार", reading: "uphār", kind: "word" }
+      - { id: "w2", word: "पंडित", reading: "paṇḍit", kind: "word" }
+  - id: "hi-5594"
+    target: "पंडित विवाह की रस्म बताते हैं।"
+    reading: "paṇḍit vivāh kī rasm batātē haim̐."
+    ipa: "pəɳɖɪt̪ ʋɪʋaːɦ kiː rəsm bət̪aːt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "पंडित", ref: "hi-2515" }
+      - { word: "विवाह", ref: "hi-2510" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "रस्म", ref: "hi-2521" }
+      - { word: "बताते", base: "बताना", reading: "batātē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "निमंत्रण", reading: "nimantraṇ", kind: "word" }
+      - { id: "w2", word: "प्रथा", reading: "prathā", kind: "word" }
+  - id: "hi-5595"
+    target: "दुल्हन की विदा पर सब रोते हैं।"
+    reading: "dulhan kī vidā par sab rōtē haim̐."
+    ipa: "d̪ʊlɦən kiː ʋɪd̪aː pər səb roːt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "दुल्हन", ref: "hi-2506" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "विदा", ref: "hi-2518" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "सब", ref: "hi-0054" }
+      - { word: "रोते", base: "रोना", reading: "rōtē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "दूल्हा", reading: "dūlhā", kind: "word" }
+      - { id: "w2", word: "कन्या", reading: "kanyā", kind: "word" }
+  - id: "hi-5596"
+    target: "मेहंदी की रस्म में सब गाते हैं।"
+    reading: "mēhndī kī rasm mēm̐ sab gātē haim̐."
+    ipa: "meːɦnd̪iː kiː rəsm mẽː səb ɡaːt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "मेहंदी", ref: "hi-2516" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "रस्म", ref: "hi-2521" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "सब", ref: "hi-0054" }
+      - { word: "गाते", base: "गाना", reading: "gātē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "तोहफ़ा", reading: "tōhfā", kind: "word" }
+      - { id: "w2", word: "प्रथा", reading: "prathā", kind: "word" }
+  - id: "hi-5597"
+    target: "शादी का निमंत्रण आज मिला।"
+    reading: "śādī kā nimantraṇ āj milā."
+    ipa: "ʃaːd̪iː kaː nɪmənt̪rəɳ aːdʒ mɪlaː"
+    pos: "phrase"
+    bases:
+      - { word: "शादी", base: "शादी", reading: "śādī" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "निमंत्रण", ref: "hi-2511" }
+      - { word: "आज", ref: "hi-0299" }
+      - { word: "मिला", base: "मिलना", reading: "milā" }
+    confusables:
+      - { id: "w1", word: "विवाह", reading: "vivāh", kind: "word" }
+      - { id: "w2", word: "सगाई", reading: "sagāī", kind: "word" }
+  - id: "hi-5598"
+    target: "हम दुल्हन को तोहफ़ा देंगे।"
+    reading: "ham dulhan kō tōhfā dēṅgē."
+    ipa: "ɦəm d̪ʊlɦən koː t̪oːɦfaː d̪eːŋɡeː"
+    pos: "phrase"
+    bases:
+      - { word: "हम", ref: "hi-0053" }
+      - { word: "दुल्हन", ref: "hi-2506" }
+      - { word: "को", ref: "hi-0277" }
+      - { word: "तोहफ़ा", ref: "hi-2520" }
+      - { word: "देंगे", base: "देना", reading: "dēṅgē" }
+    confusables:
+      - { id: "w1", word: "दूल्हा", reading: "dūlhā", kind: "word" }
+      - { id: "w2", word: "उपहार", reading: "uphār", kind: "word" }
+  - id: "hi-5599"
+    target: "आशीर्वाद के साथ घर लौटिए।"
+    reading: "āśīrvād kē sāth ghar lauṭiē."
+    ipa: "aːʃiːrʋaːd̪ keː saːt̪ʰ ɡʱər lɔːʈɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "आशीर्वाद", ref: "hi-2525" }
+      - { word: "के", base: "का", reading: "kē" }
+      - { word: "साथ", ref: "hi-0838" }
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "लौटिए", base: "लौटना", reading: "lauṭiē" }
+    confusables:
+      - { id: "w1", word: "रिश्ता", reading: "riśtā", kind: "word" }
+      - { id: "w2", word: "प्रथा", reading: "prathā", kind: "word" }
+  - id: "hi-5600"
+    target: "शादी का समारोह कल होगा।"
+    reading: "śādī kā samārōh kal hōgā."
+    ipa: "ʃaːd̪iː kaː səmaːroːɦ kəl ɦoːɡaː"
+    pos: "phrase"
+    bases:
+      - { word: "शादी", base: "शादी", reading: "śādī" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "समारोह", ref: "hi-2527" }
+      - { word: "कल", ref: "hi-0300" }
+      - { word: "होगा", base: "होना", reading: "hōgā" }
+    confusables:
+      - { id: "w1", word: "सगाई", reading: "sagāī", kind: "word" }
+      - { id: "w2", word: "विवाह", reading: "vivāh", kind: "word" }
+  - id: "hi-5601"
+    target: "दुल्हन की डोली आ गई।"
+    reading: "dulhan kī ḍōlī ā gaī."
+    ipa: "d̪ʊlɦən kiː ɖoːliː aː ɡəiː"
+    pos: "phrase"
+    bases:
+      - { word: "दुल्हन", ref: "hi-2506" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "डोली", ref: "hi-2517" }
+      - { word: "आ", base: "आना", reading: "ā" }
+      - { word: "गई", base: "जाना", reading: "gaī" }
+    confusables:
+      - { id: "w1", word: "बारात", reading: "bārāt", kind: "word" }
+      - { id: "w2", word: "मंडप", reading: "maṇḍap", kind: "word" }
+  - id: "hi-5602"
+    target: "मेरे भाई की सगाई कल है।"
+    reading: "mērē bhāī kī sagāī kal hai."
+    ipa: "meːreː bʱaːiː kiː səɡaːiː kəl ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरे", base: "मेरा", reading: "mērē" }
+      - { word: "भाई", base: "भाई", reading: "bhāī" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "सगाई", ref: "hi-2524" }
+      - { word: "कल", ref: "hi-0300" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "विवाह", reading: "vivāh", kind: "word" }
+      - { id: "w2", word: "रिश्ता", reading: "riśtā", kind: "word" }
+  - id: "hi-5603"
+    target: "हर रिश्ता प्रेम और आशीर्वाद से बनता है।"
+    reading: "har riśtā prēm aur āśīrvād sē bantā hai."
+    ipa: "ɦər rɪʃt̪aː preːm ɔːr aːʃiːrʋaːd̪ seː bənt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "हर", base: "हर", reading: "har" }
+      - { word: "रिश्ता", ref: "hi-2523" }
+      - { word: "प्रेम", base: "प्रेम", reading: "prēm" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "आशीर्वाद", ref: "hi-2525" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "बनता", base: "बनना", reading: "bantā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "अपनापन", reading: "apnāpan", kind: "word" }
+      - { id: "w2", word: "प्रथा", reading: "prathā", kind: "word" }

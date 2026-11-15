@@ -1,0 +1,163 @@
+schema: 1
+id: "hi-money-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-5810"
+    target: "मेरी आमदनी कम है।"
+    reading: "mērī āmdanī kam hai."
+    ipa: "meːriː aːmd̪əniː kəm ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", base: "मेरा", reading: "mērī" }
+      - { word: "आमदनी", ref: "hi-2744" }
+      - { word: "कम", ref: "hi-0105" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "कमाई", reading: "kamāī", kind: "word" }
+      - { id: "w2", word: "लाभ", reading: "lābh", kind: "word" }
+  - id: "hi-5811"
+    target: "पहले बजट बनाइए।"
+    reading: "pahlē bajaṭ banāiē."
+    ipa: "pəɦleː bədʒəʈ bənaːɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "पहले", ref: "hi-0823" }
+      - { word: "बजट", ref: "hi-2746" }
+      - { word: "बनाइए", base: "बनाना", reading: "banāiē" }
+    confusables:
+      - { id: "w1", word: "उधार", reading: "udhār", kind: "word" }
+      - { id: "w2", word: "चंदा", reading: "candā", kind: "word" }
+  - id: "hi-5812"
+    target: "ख़र्च कम कीजिए।"
+    reading: "k͟harc kam kījiē."
+    ipa: "xərtʃ kəm kiːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "ख़र्च", ref: "hi-2743" }
+      - { word: "कम", ref: "hi-0105" }
+      - { word: "कीजिए", base: "करना", reading: "kījiē" }
+    confusables:
+      - { id: "w1", word: "आमदनी", reading: "āmdnī", kind: "word" }
+      - { id: "w2", word: "लाभ", reading: "lābh", kind: "word" }
+  - id: "hi-5813"
+    target: "मैंने दोस्त से उधार लिया।"
+    reading: "maim̐nē dōst sē udhār liyā."
+    ipa: "mɛ̃ːneː d̪oːst̪ seː ʊd̪ʱaːr lɪjaː"
+    pos: "phrase"
+    bases:
+      - { word: "मैंने", base: "मैं", reading: "maim̐nē" }
+      - { word: "दोस्त", ref: "hi-0185" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "उधार", ref: "hi-2747" }
+      - { word: "लिया", base: "लेना", reading: "liyā" }
+    confusables:
+      - { id: "w1", word: "चंदा", reading: "candā", kind: "word" }
+      - { id: "w2", word: "नुकसान", reading: "nuksān", kind: "word" }
+  - id: "hi-5814"
+    target: "इस साल हमें लाभ हुआ।"
+    reading: "is sāl hamēm̐ lābh huā."
+    ipa: "ɪs saːl ɦəmẽː laːbʱ ɦʊaː"
+    pos: "phrase"
+    bases:
+      - { word: "इस", base: "यह", reading: "is" }
+      - { word: "साल", ref: "hi-0318" }
+      - { word: "हमें", base: "हम", reading: "hamēm̐" }
+      - { word: "लाभ", ref: "hi-2748" }
+      - { word: "हुआ", base: "होना", reading: "huā" }
+    confusables:
+      - { id: "w1", word: "घाटा", reading: "ghāṭā", kind: "word" }
+      - { id: "w2", word: "नुकसान", reading: "nuksān", kind: "word" }
+  - id: "hi-5815"
+    target: "उसका नुकसान हुआ।"
+    reading: "uskā nuksān huā."
+    ipa: "ʊskaː nʊksaːn ɦʊaː"
+    pos: "phrase"
+    bases:
+      - { word: "उसका", ref: "hi-0757" }
+      - { word: "नुकसान", ref: "hi-2752" }
+      - { word: "हुआ", base: "होना", reading: "huā" }
+    confusables:
+      - { id: "w1", word: "घाटा", reading: "ghāṭā", kind: "word" }
+      - { id: "w2", word: "लाभ", reading: "lābh", kind: "word" }
+  - id: "hi-5816"
+    target: "फ़िज़ूलख़र्ची अच्छी नहीं है।"
+    reading: "fizūlk͟harcī acchī nahīm̐ hai."
+    ipa: "fɪzuːlxərtʃiː ətʃtʃʰiː nəɦĩː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "फ़िज़ूलख़र्ची", ref: "hi-2757" }
+      - { word: "अच्छी", base: "अच्छा", reading: "acchī" }
+      - { word: "नहीं", ref: "hi-0156" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "किफ़ायत", reading: "kifāyat", kind: "word" }
+      - { id: "w2", word: "कंजूस", reading: "kañjūs", kind: "word" }
+  - id: "hi-5817"
+    target: "मज़दूरी कब मिलेगी?"
+    reading: "mazdūrī kab milēgī?"
+    ipa: "məzd̪uːriː kəb mɪleːɡiː"
+    pos: "phrase"
+    bases:
+      - { word: "मज़दूरी", ref: "hi-2759" }
+      - { word: "कब", ref: "hi-0160" }
+      - { word: "मिलेगी", base: "मिलना", reading: "milēgī" }
+    confusables:
+      - { id: "w1", word: "चंदा", reading: "candā", kind: "word" }
+      - { id: "w2", word: "दौलत", reading: "daulat", kind: "word" }
+  - id: "hi-5818"
+    target: "वह बहुत कंजूस है।"
+    reading: "vah bahut kañjūs hai."
+    ipa: "ʋəɦ bəɦʊt̪ kəɲdʒuːs ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "वह", ref: "hi-0749" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "कंजूस", ref: "hi-2750" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "किफ़ायत", reading: "kifāyat", kind: "word" }
+      - { id: "w2", word: "फ़िज़ूलख़र्ची", reading: "fizūlk͟harcī", kind: "word" }
+  - id: "hi-5819"
+    target: "किफ़ायत से ख़र्च कीजिए।"
+    reading: "kifāyat sē k͟harc kījiē."
+    ipa: "kɪfaːjət̪ seː xərtʃ kiːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "किफ़ायत", ref: "hi-2756" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "ख़र्च", ref: "hi-2743" }
+      - { word: "कीजिए", base: "करना", reading: "kījiē" }
+    confusables:
+      - { id: "w1", word: "फ़िज़ूलख़र्ची", reading: "fizūlk͟harcī", kind: "word" }
+      - { id: "w2", word: "आमदनी", reading: "āmdnī", kind: "word" }
+  - id: "hi-5820"
+    target: "उसके पास बहुत दौलत है।"
+    reading: "uskē pās bahut daulat hai."
+    ipa: "ʊskeː paːs bəɦʊt̪ d̪ɔːlət̪ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "उसके", base: "वह", reading: "uskē" }
+      - { word: "पास", ref: "hi-0293" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "दौलत", ref: "hi-2753" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "दिवालिया", reading: "divāliyā", kind: "word" }
+      - { id: "w2", word: "पूँजी", reading: "pūm̐jī", kind: "word" }
+  - id: "hi-5821"
+    target: "आज चंदा दीजिए।"
+    reading: "āj candā dījiē."
+    ipa: "aːdʒ tʃənd̪aː d̪iːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "आज", ref: "hi-0299" }
+      - { word: "चंदा", ref: "hi-2758" }
+      - { word: "दीजिए", base: "देना", reading: "dījiē" }
+    confusables:
+      - { id: "w1", word: "मज़दूरी", reading: "mazdūrī", kind: "word" }
+      - { id: "w2", word: "लाभ", reading: "lābh", kind: "word" }

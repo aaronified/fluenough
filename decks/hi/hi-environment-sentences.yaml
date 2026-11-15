@@ -1,0 +1,191 @@
+schema: 1
+id: "hi-environment-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-5532"
+    target: "हमें पर्यावरण की रक्षा करनी चाहिए।"
+    reading: "hamēm̐ paryāvaraṇ kī rakśā karnī cāhiē."
+    ipa: "ɦəmẽː pərjaːʋərəɳ kiː rəkʃaː kərniː tʃaːɦɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "हमें", base: "हम", reading: "hamēm̐" }
+      - { word: "पर्यावरण", ref: "hi-2368" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "रक्षा", base: "रक्षा", reading: "rakśā" }
+      - { word: "करनी", base: "करना", reading: "karnī" }
+      - { word: "चाहिए", base: "चाहिए", reading: "cāhiē" }
+    confusables:
+      - { id: "w1", word: "प्रदूषण", reading: "pradūśaṇ", kind: "word" }
+      - { id: "w2", word: "जानवर", reading: "jānvar", kind: "word" }
+  - id: "hi-5533"
+    target: "कारखाने नदियों को दूषित करते हैं।"
+    reading: "kārkhānē nadiyōm̐ kō dūśit kartē haim̐."
+    ipa: "kaːrkʰaːneː nəd̪ɪjõː koː d̪uːʃɪt̪ kərt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "कारखाने", base: "कारखाना", reading: "kārkhānē" }
+      - { word: "नदियों", base: "नदी", reading: "nadiyōm̐" }
+      - { word: "को", ref: "hi-0277" }
+      - { word: "दूषित", ref: "hi-2385" }
+      - { word: "करते", base: "करना", reading: "kartē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "स्वच्छ", reading: "svacch", kind: "word" }
+      - { id: "w2", word: "बंजर", reading: "bañjar", kind: "word" }
+  - id: "hi-5534"
+    target: "कूड़ा सड़क पर मत फेंकिए।"
+    reading: "kūṛā saṛak par mat phēṅkiē."
+    ipa: "kuːɽaː səɽək pər mət̪ pʰeːŋkɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "कूड़ा", ref: "hi-2370" }
+      - { word: "सड़क", base: "सड़क", reading: "saṛak" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "मत", base: "मत", reading: "mat" }
+      - { word: "फेंकिए", base: "फेंकना", reading: "phēṅkiē" }
+    confusables:
+      - { id: "w1", word: "प्रदूषण", reading: "pradūśaṇ", kind: "word" }
+      - { id: "w2", word: "पुनर्चक्रण", reading: "punarcakraṇ", kind: "word" }
+  - id: "hi-5535"
+    target: "पक्षी और जानवर जंगल में रहते हैं।"
+    reading: "pakśī aur jānvar jaṅgal mēm̐ rahtē haim̐."
+    ipa: "pəkʃiː ɔːr dʒaːnʋər dʒəŋɡəl mẽː rəɦt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "पक्षी", ref: "hi-2373" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "जानवर", ref: "hi-2372" }
+      - { word: "जंगल", base: "जंगल", reading: "jaṅgal" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "रहते", base: "रहना", reading: "rahtē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "वन्य", reading: "vany", kind: "word" }
+      - { id: "w2", word: "लुप्त", reading: "lupt", kind: "word" }
+  - id: "hi-5536"
+    target: "सरकार वन्य जीव का संरक्षण करती है।"
+    reading: "sarkār vanya jīv kā saṁrakśaṇ kartī hai."
+    ipa: "sərkaːr ʋənjə dʒiːʋ kaː sə̃rəkʃəɳ kərt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "सरकार", base: "सरकार", reading: "sarkār" }
+      - { word: "वन्य", ref: "hi-2375" }
+      - { word: "जीव", ref: "hi-2376" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "संरक्षण", ref: "hi-2377" }
+      - { word: "करती", base: "करना", reading: "kartī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "हरित", reading: "harit", kind: "word" }
+      - { id: "w2", word: "सुरक्षा", reading: "surakśā", kind: "word" }
+  - id: "hi-5537"
+    target: "कटाई से जंगल कम हो रहा है।"
+    reading: "kaṭāī sē jaṅgal kam hō rahā hai."
+    ipa: "kəʈaːiː seː dʒəŋɡəl kəm ɦoː rəɦaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "कटाई", ref: "hi-2371" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "जंगल", base: "जंगल", reading: "jaṅgal" }
+      - { word: "कम", ref: "hi-0105" }
+      - { word: "हो", base: "होना", reading: "hō" }
+      - { word: "रहा", base: "रहना", reading: "rahā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "बंजर", reading: "bañjar", kind: "word" }
+      - { id: "w2", word: "पुनर्चक्रण", reading: "punarcakraṇ", kind: "word" }
+  - id: "hi-5538"
+    target: "पुनर्चक्रण से कूड़ा कम होता है।"
+    reading: "punarcakraṇ sē kūṛā kam hōtā hai."
+    ipa: "pʊnərtʃəkrəɳ seː kuːɽaː kəm ɦoːt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "पुनर्चक्रण", ref: "hi-2382" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "कूड़ा", ref: "hi-2370" }
+      - { word: "कम", ref: "hi-0105" }
+      - { word: "होता", base: "होना", reading: "hōtā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "प्रदूषण", reading: "pradūśaṇ", kind: "word" }
+      - { id: "w2", word: "परिवर्तन", reading: "parivartan", kind: "word" }
+  - id: "hi-5539"
+    target: "स्वच्छ पवन सेहत के लिए अच्छा है।"
+    reading: "svacch pavan sēhat kē liē acchā hai."
+    ipa: "sʋətʃtʃʰ pəʋən seːɦət̪ keː lɪeː ətʃtʃʰaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "स्वच्छ", ref: "hi-2384" }
+      - { word: "पवन", ref: "hi-2378" }
+      - { word: "सेहत", base: "सेहत", reading: "sēhat" }
+      - { word: "के", base: "का", reading: "kē" }
+      - { word: "लिए", base: "लिए", reading: "liē" }
+      - { word: "अच्छा", ref: "hi-0898" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "दूषित", reading: "dūśit", kind: "word" }
+      - { id: "w2", word: "ग्लोबल", reading: "glōbal", kind: "word" }
+  - id: "hi-5540"
+    target: "प्रकृति की सुरक्षा सबकी ज़िम्मेदारी है।"
+    reading: "prakriti kī surakśā sabkī zimmēdārī hai."
+    ipa: "prəkrɪt̪ɪ kiː sʊrəkʃaː səbkiː zɪmmeːd̪aːriː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "प्रकृति", base: "प्रकृति", reading: "prakriti" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "सुरक्षा", ref: "hi-2386" }
+      - { word: "सबकी", base: "सब", reading: "sabkī" }
+      - { word: "ज़िम्मेदारी", base: "ज़िम्मेदारी", reading: "zimmēdārī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "परिवर्तन", reading: "parivartan", kind: "word" }
+      - { id: "w2", word: "विविधता", reading: "vividhtā", kind: "word" }
+  - id: "hi-5541"
+    target: "ग्लोबल वार्मिंग से बर्फ़ पिघल रही है।"
+    reading: "glōbal vārmiṅg sē barf pighal rahī hai."
+    ipa: "ɡloːbəl ʋaːrmɪŋɡ seː bərf pɪɡʱəl rəɦiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "ग्लोबल", ref: "hi-2380" }
+      - { word: "वार्मिंग", base: "वार्मिंग", reading: "vārmiṅg" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "बर्फ़", base: "बर्फ़", reading: "barf" }
+      - { word: "पिघल", base: "पिघलना", reading: "pighal" }
+      - { word: "रही", base: "रहना", reading: "rahī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "ओज़ोन", reading: "ōzōn", kind: "word" }
+      - { id: "w2", word: "जीव", reading: "jīv", kind: "word" }
+  - id: "hi-5542"
+    target: "नदी का पानी स्वच्छ रखिए।"
+    reading: "nadī kā pānī svacch rakhiē."
+    ipa: "nəd̪iː kaː paːniː sʋətʃtʃʰ rəkʰɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "नदी", base: "नदी", reading: "nadī" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "पानी", base: "पानी", reading: "pānī" }
+      - { word: "स्वच्छ", ref: "hi-2384" }
+      - { word: "रखिए", base: "रखना", reading: "rakhiē" }
+    confusables:
+      - { id: "w1", word: "दूषित", reading: "dūśit", kind: "word" }
+      - { id: "w2", word: "प्रदूषण", reading: "pradūśaṇ", kind: "word" }
+  - id: "hi-5543"
+    target: "लुप्त होते जानवरों की रक्षा कीजिए।"
+    reading: "lupt hōtē jānvarōm̐ kī rakśā kījiē."
+    ipa: "lʊpt̪ ɦoːt̪eː dʒaːnʋərõː kiː rəkʃaː kiːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "लुप्त", ref: "hi-2387" }
+      - { word: "होते", base: "होना", reading: "hōtē" }
+      - { word: "जानवरों", base: "जानवर", reading: "jānvarōm̐" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "रक्षा", base: "रक्षा", reading: "rakśā" }
+      - { word: "कीजिए", base: "करना", reading: "kījiē" }
+    confusables:
+      - { id: "w1", word: "पक्षी", reading: "pakśī", kind: "word" }
+      - { id: "w2", word: "जीव", reading: "jīv", kind: "word" }
