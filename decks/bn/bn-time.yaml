@@ -36,6 +36,8 @@ cards:
       {"target": "আমি এখন শিক্ষানবিস।", "reading": "āmi ekhon śikkhānobis.", "ipa": "ami ekʰon ʃikkʰanobis", "bases": [{"word": "আমি", "ref": "bn-0833"}, {"word": "এখন", "base": "এখন", "reading": "ekhon"}]},
       {"target": "এখন কেমন লাগছে?", "reading": "ekhon kemon lāgche?", "ipa": "ekʰon kemon laɡtʃʰe", "bases": [{"word": "এখন", "base": "এখন", "reading": "ekhon"}, {"word": "কেমন", "base": "কেমন", "reading": "kemon", "ipa": "kemon"}, {"word": "লাগছে", "base": "লাগা", "reading": "lāgā", "ipa": "laɡa"}]}
     ]
+    notes:
+      - { id: "n1", kind: "usage" }
   - id: "bn-0318"
     target: "সকাল"
     reading: "śôkāl"
@@ -45,6 +47,8 @@ cards:
       {"target": "শুভ সকাল!", "reading": "śubho śôkāl!", "ipa": "ʃubʱo ʃɔkal", "bases": [{"word": "শুভ", "base": "শুভ", "reading": "śubho"}]},
       {"target": "আমার শিফট সকালে।", "reading": "āmār śiphoṭ sôkāle.", "ipa": "amar ʃipʰoʈ sɔkale", "bases": [{"word": "আমার", "ref": "bn-0833"}, {"word": "সকালে", "base": "সকাল", "reading": "śôkāl"}]}
     ]
+    notes:
+      - { id: "n1", kind: "behaviour" }
   - id: "bn-0319"
     target: "বিকেল"
     reading: "bikel"
@@ -136,11 +140,15 @@ cards:
     reading: "môṅgolbār"
     ipa: "mɔŋɡolbar"
     pos: "noun"
+    notes:
+      - { id: "n1", kind: "behaviour" }
   - id: "bn-0329"
     target: "বুধবার"
     reading: "budhbār"
     ipa: "bud̪ʱbar"
     pos: "noun"
+    notes:
+      - { id: "n1", kind: "behaviour" }
   - id: "bn-0330"
     target: "বৃহস্পতিবার"
     reading: "brihośpotibār"
@@ -154,6 +162,8 @@ cards:
     reading: "śukrobār"
     ipa: "ʃukrobar"
     pos: "noun"
+    notes:
+      - { id: "n1", kind: "behaviour" }
   - id: "bn-0332"
     target: "শনিবার"
     reading: "śonibār"
@@ -162,11 +172,15 @@ cards:
     "examples": [
       {"target": "আমরা শনিবার বাজারে কেনাকাটা করি।", "reading": "āmrā śonibār bājāre kenākāṭā kori.", "ipa": "amra ʃonibar badʒare kenakaʈa kori", "bases": [{"word": "বাজারে", "ref": "bn-1040"}, {"word": "করি", "ref": "bn-0102"}]}
     ]
+    notes:
+      - { id: "n1", kind: "behaviour" }
   - id: "bn-0333"
     target: "রবিবার"
     reading: "robibār"
     ipa: "robibar"
     pos: "noun"
+    notes:
+      - { id: "n1", kind: "behaviour" }
   - id: "bn-0645"
     target: "দুপুর"
     reading: "dupur"
@@ -176,6 +190,8 @@ cards:
       {"target": "দুপুরে এক ঘণ্টার বিরতি।", "reading": "dupure ek ghônṭār biroti.", "ipa": "d̪upure ek ɡʱɔnʈar birot̪i", "bases": [{"word": "দুপুরে", "base": "দুপুর", "reading": "dupur"}, {"word": "ঘণ্টার", "base": "ঘণ্টা", "reading": "ghônṭār"}]},
       {"target": "দুপুরে বাড়িটা নির্জন থাকে।", "reading": "dupure bāṛiṭā nirjon thāke.", "ipa": "d̪upure baɽiʈa nirdʒon t̪ʰake", "bases": [{"word": "দুপুরে", "base": "দুপুর", "reading": "dupur"}, {"word": "বাড়িটা", "ref": "bn-0196"}, {"word": "থাকে", "ref": "bn-0875"}]}
     ]
+    notes:
+      - { id: "n1", kind: "behaviour" }
   - id: "bn-0646"
     target: "ভোর"
     reading: "bhor"
@@ -185,6 +201,8 @@ cards:
       {"target": "ভোরে ঘন কুয়াশা থাকে।", "reading": "bhore ghôn kuyāśā thāke.", "ipa": "bʱore ɡʱɔn kujaʃa t̪ʰake", "bases": [{"word": "ভোরে", "base": "ভোর", "reading": "bhor", "ipa": "bʱor"}, {"word": "ঘন", "base": "ঘন", "reading": "ghôn", "ipa": "ɡʱɔn"}, {"word": "থাকে", "base": "থাকা", "reading": "thākā", "ipa": "t̪ʰaka"}]},
       {"target": "ভোরে ঘাসে শিশির পড়ে।", "reading": "bhore ghāse śiśir pôṛe.", "ipa": "bʱore ɡʱase ʃiʃir pɔɽe", "bases": [{"word": "ভোরে", "base": "ভোর", "reading": "bhor", "ipa": "bʱor"}, {"word": "ঘাসে", "base": "ঘাস", "reading": "ghās", "ipa": "ɡʱas"}, {"word": "পড়ে", "base": "পড়া", "reading": "pôṛā", "ipa": "pɔɽa"}]}
     ]
+    notes:
+      - { id: "n1", kind: "behaviour" }
   - id: "bn-0647"
     target: "সোয়া"
     reading: "śoyā"
@@ -217,12 +235,16 @@ cards:
       {"target": "গতকাল ভূমিকম্প হয়েছে।", "reading": "gôtokāl bhumikompo hôyeche.", "ipa": "ɡɔt̪okal bʱumikomp ɦɔjetʃʰe", "bases": [{"word": "গতকাল", "base": "গতকাল", "reading": "gôtokāl"}, {"word": "হয়েছে", "ref": "bn-0874"}]},
       {"target": "গতকাল একটা ঘটনা ঘটেছে।", "reading": "gôtokāl ekoṭā ghôṭonā ghôṭeche.", "ipa": "ɡɔt̪okal ekoʈa ɡʱɔʈona ɡʱɔʈetʃʰe", "bases": [{"word": "গতকাল", "base": "গতকাল", "reading": "gôtokāl"}, {"word": "একটা", "ref": "bn-0202"}, {"word": "ঘটেছে", "base": "ঘটা", "reading": "ghôṭeche"}]}
     ]
+    notes:
+      - { id: "n1", kind: "usage" }
   - id: "bn-0651"
     target: "আগামীকাল"
     reading: "āgāmikāl"
     ipa: "aɡamikal"
     alt_target: ["কাল"]
     pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
   - id: "bn-0652"
     target: "পরশু"
     reading: "pôrśu"
@@ -238,6 +260,8 @@ cards:
     bases:
       - { word: "গত", base: "গত", reading: "gôto" }
       - { word: "সপ্তাহে", ref: "bn-0326" }
+    notes:
+      - { id: "n1", kind: "behaviour" }
   - id: "bn-0654"
     target: "পরের সপ্তাহে"
     reading: "pôrer śôptāhe"
@@ -247,6 +271,8 @@ cards:
     bases:
       - { word: "পরের", ref: "bn-0114" }
       - { word: "সপ্তাহে", ref: "bn-0326" }
+    notes:
+      - { id: "n1", kind: "usage" }
   - id: "bn-0655"
     target: "ঘণ্টা"
     reading: "ghônṭā"
@@ -263,6 +289,8 @@ cards:
     reading: "miniṭ"
     ipa: "miniʈ"
     pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
   - id: "bn-1366"
     kind: "set"
     members: [{ ref: "bn-0327" }, { ref: "bn-0328" }, { ref: "bn-0329" }, { ref: "bn-0330" }, { ref: "bn-0331" }, { ref: "bn-0332" }, { ref: "bn-0333" }]
