@@ -1,0 +1,24 @@
+schema: 1
+id: "fr-en-grammar-si-clauses"
+kind: "layer"
+core: "fr-grammar-si-clauses"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "If sentences with si"
+license: "CC-BY-SA-4.0"
+description: "An if sentence joins a si clause to a result: s'il pleut, nous resterons; s'il pleuvait, nous resterions. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Si clauses"
+  slot_name: "type"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "si-present": "si plus the present; the result is in the future", "si-imparfait": "si plus the imperfect; the result is in the conditional" }
+  entries:
+    "rester": "to stay"
+    "venir": "to come"
+    "partir": "to leave"
+    "acheter": "to buy"
+    "aller": "to go"
+    "dormir": "to sleep"
+    "voir": "to see"
+    "etre": "to be"
+    "voyager": "to travel"
+  notes: "An if sentence has two parts, the si clause and the result. For something that may well happen, put the si clause in the present and the result in the future: si tu as le temps, tu viendras. For something that is unlikely or imagined, put the si clause in the imperfect and the result in the conditional: si tu avais le temps, tu viendrais. The same verb can be drilled in both: s'il pleut, nous resterons; s'il pleuvait, nous resterions. The verb right after si is never in the future or the conditional, whatever the result says. Si becomes s' before il and ils, but not before elle: s'il fait beau, but si elle vient. Acheter changes its stem in the future and the conditional: j'achèterai, j'achèterais. A third type, for the past (si plus the pluperfect, with the past conditional in the result), comes later with the past conditional unit."

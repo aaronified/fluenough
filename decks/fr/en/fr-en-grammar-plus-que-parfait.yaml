@@ -1,0 +1,25 @@
+schema: 1
+id: "fr-en-grammar-plus-que-parfait"
+kind: "layer"
+core: "fr-grammar-plus-que-parfait"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The pluperfect: what had already happened"
+license: "CC-BY-SA-4.0"
+description: "The pluperfect says that something had already happened before another past moment: j'avais mangé, elle était partie. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Pluperfect"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "je": "I", "tu": "you (informal)", "il-elle": "he or she", "nous": "we", "vous": "you (formal or plural)", "ils-elles": "they" }
+  entries:
+    "manger": "to eat"
+    "finir": "to finish"
+    "attendre": "to wait for"
+    "faire": "to do or make"
+    "voir": "to see"
+    "prendre": "to take"
+    "aller": "to go"
+    "arriver": "to arrive"
+    "partir": "to leave"
+    "venir": "to come"
+  notes: "The pluperfect (plus-que-parfait) is made like the passé composé, but the auxiliary is in the imperfect: j'avais mangé, tu avais fini, il avait fait; and with être, j'étais allé, elle était partie. It tells what had already happened before another moment in the past: quand je suis arrivé, il avait déjà mangé means that when I arrived he had already eaten. The participles are the same as in the passé composé. Verbs that take être keep their agreement with the subject: elle était partie, ils étaient arrivés, and the first form shown is only the commonest, since the others fit a woman or more than one person. Verbs with avoir do not agree with the subject. J'avais and j'étais lose the vowel of je. The pluperfect is mostly met in stories and explanations, together with the passé composé or the imperfect, and gives the earlier step."

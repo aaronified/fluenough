@@ -1,0 +1,25 @@
+schema: 1
+id: "fr-en-grammar-passe-compose-imparfait"
+kind: "layer"
+core: "fr-grammar-passe-compose-imparfait"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Two pasts: what happened and how things were"
+license: "CC-BY-SA-4.0"
+description: "The passé composé tells what happened; the imperfect sets the scene or says what used to happen: hier, il a plu; il pleuvait souvent. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Passé composé or imperfect"
+  slot_name: "tense"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "event": "an event: one thing that happened (passé composé)", "background": "the background: how things were, or what used to happen (imparfait)" }
+  entries:
+    "pleuvoir": "to rain"
+    "arriver": "to arrive"
+    "regarder": "to look at"
+    "travailler": "to work"
+    "attendre": "to wait for"
+    "manger": "to eat"
+    "etre": "to be"
+    "avoir": "to have"
+    "faire": "to do or make"
+    "jouer": "to play"
+  notes: "French has two everyday pasts, and the choice is about how you look at the action. The passé composé tells an event: something that happened and is finished, on one occasion (hier, il a plu; hier, j'ai travaillé tôt). The imperfect gives the background: how things were, a description, or what used to happen again and again (il pleuvait souvent; je travaillais toujours tôt). Time words help you choose: hier points to one event, while souvent and toujours point to a habit, though the word alone never decides. Each row gives the same verb in both tenses. The forms are those of the passé composé with avoir (j'ai travaillé), with être (le bus est arrivé) and of the imperfect (je travaillais). Be and have are the same: il a été malade says he fell ill on one occasion, il était souvent malade says it was how things were. In a story the two work together: the imperfect sets the scene and the passé composé moves it on."

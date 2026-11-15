@@ -1,0 +1,26 @@
+schema: 1
+id: "fr-en-grammar-conditionnel-present"
+kind: "layer"
+core: "fr-grammar-conditionnel-present"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The conditional: what would happen, and polite requests"
+license: "CC-BY-SA-4.0"
+description: "The present conditional says what would happen and softens a request: je voudrais un café; pourriez-vous m'aider ? It uses the future stem plus -ais, -ais, -ait, -ions, -iez, -aient. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Present conditional"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "je": "I", "tu": "you (informal)", "il-elle": "he or she", "nous": "we", "vous": "you (formal or plural)", "ils-elles": "they" }
+  entries:
+    "vouloir": "to want"
+    "pouvoir": "to be able to"
+    "aimer": "to like or love"
+    "devoir": "to have to"
+    "savoir": "to know"
+    "etre": "to be"
+    "avoir": "to have"
+    "aller": "to go"
+    "faire": "to do or make"
+    "parler": "to speak"
+    "finir": "to finish"
+  notes: "The present conditional is made from the same stem as the simple future plus the endings of the imperfect: -ais, -ais, -ait, -ions, -iez, -aient. So parler gives je parlerais, finir gives je finirais, and the irregular future stems carry over: être ser- (je serais), avoir aur- (j'aurais), aller ir- (j'irais), faire fer- (je ferais), vouloir voudr- (je voudrais), pouvoir pourr- (je pourrais), devoir devr- (je devrais), savoir saur- (je saurais). Aimer follows the regular pattern: j'aimerais. It says what would happen or what you would like (j'aimerais voyager) and, above all, makes a request polite: je voudrais is gentler than je veux, and pourriez-vous... is gentler than pouvez-vous... Compare the endings: the future ends in -ai, -as, -a, -ons, -ez, -ont, the conditional in -ais, -ais, -ait, -ions, -iez, -aient, so je parlerai (future) and je parlerais (conditional) differ only in their endings. Je becomes j' before a vowel sound: j'aimerais, j'aurais, j'irais. The conditional also appears in the result of an if sentence with the imperfect, which is a later unit."

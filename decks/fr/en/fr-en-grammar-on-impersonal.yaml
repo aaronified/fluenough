@@ -1,0 +1,23 @@
+schema: 1
+id: "fr-en-grammar-on-impersonal"
+kind: "layer"
+core: "fr-grammar-on-impersonal"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "On: we, or people in general"
+license: "CC-BY-SA-4.0"
+description: "On takes the verb in the third person singular and means we in speech, or people in general: on parle français ici. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "The pronoun on"
+  slot_name: "pronoun"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "on": "on: we, or people in general", "nous": "nous: we (the written or careful form)" }
+  entries:
+    "manger": "to eat"
+    "aller": "to go"
+    "parler": "to speak"
+    "finir": "to finish"
+    "etre": "to be"
+    "faire": "to do or make"
+    "prendre": "to take"
+    "voir": "to see"
+  notes: "On is a subject pronoun that always takes the verb in the third person singular, like il. It has two main uses. In everyday speech it replaces nous: on mange à midi, on va au parc, which is the same as nous mangeons à midi, nous allons au parc. And it speaks of people in general, with no one in particular: on parle français ici means French is spoken here, people speak French here. Because the verb ending is that of il, on is easier than nous: compare on finit with nous finissons. French often uses on where English uses a passive or you or they, and it is a common way to avoid the passive. In writing and in formal speech, nous is still preferred when it means we. Before a vowel sound, the l' of l'on is sometimes added, as in si l'on veut, mainly in writing."

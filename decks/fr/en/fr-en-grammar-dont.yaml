@@ -1,0 +1,22 @@
+schema: 1
+id: "fr-en-grammar-dont"
+kind: "layer"
+core: "fr-grammar-dont"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Dont: whose, of which, about which"
+license: "CC-BY-SA-4.0"
+description: "Dont joins a clause to a noun and replaces de plus that noun: le livre dont je parle, un ami dont le frère habite ici. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Dont"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "sentences": "two separate sentences", "joined": "one sentence joined with dont" }
+  entries:
+    "livre": "book"
+    "maison": "house"
+    "voiture": "car"
+    "chien": "dog"
+    "film": "film"
+    "ami": "friend"
+    "voisin": "neighbour"
+  notes: "Dont is a relative pronoun that replaces de plus a noun. It is used with verbs and expressions that take de: parler de (le livre dont je parle, the book I am talking about), rêver de (la maison dont je rêve), avoir besoin de (la voiture dont j'ai besoin), avoir peur de (le chien dont j'ai peur). It also means whose, and then the noun it belongs to follows it directly: c'est un ami dont le frère habite ici means he is a friend whose brother lives here. After dont come the subject and the verb, in that order (dont je parle, dont nous parlons), and dont never loses its vowel. Dont does not change for gender or number. Qui and que cannot do this job: you cannot say le livre que je parle, because parler takes de, so French says le livre dont je parle."

@@ -541,7 +541,9 @@ units:
       - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
     reading_passages:
       - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
-  - planned: { id: "fr-grammar-passe-compose-imparfait", grammar: "passe-compose-imparfait" }
+  - decks: ["fr-grammar-passe-compose-imparfait", "fr-reading-passe-compose-imparfait"]
+    words: 0
+    grammar: ["passe-compose-imparfait"]
     listening_passages:
       - { id: "it-was-raining-when", text: { "en": "Telling a story: it was raining when the bus arrived" } }
     reading_passages:
@@ -552,7 +554,9 @@ units:
       - { id: "a-hard-week", text: { "en": "A friend says how the week made them feel" } }
     reading_passages:
       - { id: "letter-to-a-friend", text: { "en": "A letter to a friend about worries and hopes" } }
-  - planned: { id: "fr-grammar-future", grammar: "futur-simple" }
+  - decks: ["fr-grammar-futur-simple", "fr-reading-future"]
+    words: 0
+    grammar: ["futur-simple"]
     listening_passages:
       - { id: "next-year", text: { "en": "Saying what will happen next year" } }
     reading_passages:
@@ -569,7 +573,9 @@ units:
       - { id: "agreeing-and-disagreeing", text: { "en": "Two friends agree and disagree politely over coffee" } }
     reading_passages:
       - { id: "readers-letters", text: { "en": "Two short letters to a newspaper" } }
-  - planned: { id: "fr-grammar-conditional", grammar: "conditionnel-present" }
+  - decks: ["fr-grammar-conditionnel-present", "fr-reading-conditional"]
+    words: 0
+    grammar: ["conditionnel-present"]
     listening_passages:
       - { id: "what-would-you-do", text: { "en": "Saying what you would do in another situation" } }
     reading_passages:
@@ -580,7 +586,9 @@ units:
       - { id: "hotel-booking", text: { "en": "Booking a hotel room over the phone" } }
     reading_passages:
       - { id: "itinerary", text: { "en": "A two-day trip itinerary" } }
-  - planned: { id: "fr-grammar-relative-pronouns", grammar: ["qui-que", "ou-relative"] }
+  - decks: ["fr-grammar-qui-que", "fr-grammar-ou-relative", "fr-reading-relative-pronouns"]
+    words: 0
+    grammar: ["qui-que", "ou-relative"]
     listening_passages:
       - { id: "the-man-who-came", text: { "en": "Describing people and places by what happened: the one who came, the town where we met" } }
     reading_passages:
@@ -597,7 +605,9 @@ units:
       - { id: "at-the-office", text: { "en": "Asking an officer which document is needed" } }
     reading_passages:
       - { id: "form-instructions", text: { "en": "Instructions on an application form" } }
-  - planned: { id: "fr-grammar-subjunctive-present", grammar: "subjonctif-present" }
+  - decks: ["fr-grammar-subjonctif-present", "fr-reading-subjunctive-present"]
+    words: 0
+    grammar: ["subjonctif-present"]
     listening_passages:
       - { id: "wishes-and-advice", text: { "en": "Friends make wishes and give advice: I want you to come, you must rest" } }
     reading_passages:
@@ -614,7 +624,9 @@ units:
       - { id: "job-interview", text: { "en": "A short job interview" } }
     reading_passages:
       - { id: "job-advert", text: { "en": "A job advert" } }
-  - planned: { id: "fr-grammar-subjunctive-uses", grammar: "subjonctif-uses" }
+  - decks: ["fr-grammar-subjonctif-uses", "fr-reading-subjunctive-uses"]
+    words: 0
+    grammar: ["subjonctif-uses"]
     listening_passages:
       - { id: "doubts-and-hopes", text: { "en": "Saying what you doubt, fear or are glad of" } }
     reading_passages:
@@ -631,7 +643,9 @@ units:
       - { id: "after-the-film", text: { "en": "Friends talk about a film they saw" } }
     reading_passages:
       - { id: "film-review", text: { "en": "A short film review" } }
-  - planned: { id: "fr-grammar-reported-speech", grammar: "discours-indirect" }
+  - decks: ["fr-grammar-discours-indirect", "fr-reading-reported-speech"]
+    words: 0
+    grammar: ["discours-indirect"]
     listening_passages:
       - { id: "he-said-that", text: { "en": "Telling someone what a third person said" } }
     reading_passages:
@@ -648,7 +662,9 @@ units:
       - { id: "a-castle-visit", text: { "en": "A guide tells the story of an old castle" } }
     reading_passages:
       - { id: "museum-card", text: { "en": "A museum card about a ruler" } }
-  - planned: { id: "fr-grammar-plus-que-parfait", grammar: "plus-que-parfait" }
+  - decks: ["fr-grammar-plus-que-parfait", "fr-reading-plus-que-parfait"]
+    words: 0
+    grammar: ["plus-que-parfait"]
     listening_passages:
       - { id: "it-had-already-happened", text: { "en": "Saying what had already happened when something else began" } }
     reading_passages:
@@ -665,7 +681,9 @@ units:
       - { id: "wedding-plans", text: { "en": "Relatives plan a wedding" } }
     reading_passages:
       - { id: "wedding-card", text: { "en": "A wedding invitation card" } }
-  - planned: { id: "fr-grammar-si-clauses", grammar: "si-clauses" }
+  - decks: ["fr-grammar-si-clauses", "fr-reading-si-clauses"]
+    words: 0
+    grammar: ["si-clauses"]
     listening_passages:
       - { id: "rain-plans", text: { "en": "A friend's plans if it rains, and what they would do if they could" } }
     reading_passages:
@@ -682,7 +700,9 @@ units:
       - { id: "neighbours-and-friends", text: { "en": "Talking about neighbours and old friends" } }
     reading_passages:
       - { id: "thank-you-note", text: { "en": "A thank-you note to a neighbour" } }
-  - planned: { id: "fr-grammar-passive", grammar: ["passive", "on-impersonal"] }
+  - decks: ["fr-grammar-passive", "fr-grammar-on-impersonal", "fr-reading-passive"]
+    words: 0
+    grammar: ["passive", "on-impersonal"]
     listening_passages:
       - { id: "it-was-done", text: { "en": "Saying what is done or was done, with on and with the passive" } }
     reading_passages:
@@ -699,7 +719,9 @@ units:
       - { id: "calling-for-help", text: { "en": "Calling for help after an accident" } }
     reading_passages:
       - { id: "safety-notice", text: { "en": "A safety notice in a building" } }
-  - planned: { id: "fr-grammar-gerondif", grammar: "gerondif" }
+  - decks: ["fr-grammar-gerondif", "fr-reading-gerondif"]
+    words: 0
+    grammar: ["gerondif"]
     listening_passages:
       - { id: "while-walking", text: { "en": "Saying what you do while doing something else: listening while walking" } }
     reading_passages:
@@ -716,7 +738,9 @@ units:
       - { id: "a-long-story", text: { "en": "A story told in a sequence of events" } }
     reading_passages:
       - { id: "short-story", text: { "en": "A short story with a turn" } }
-  - planned: { id: "fr-grammar-relative-pronouns-2", grammar: ["dont", "lequel"] }
+  - decks: ["fr-grammar-dont", "fr-grammar-lequel", "fr-reading-relative-pronouns-2"]
+    words: 0
+    grammar: ["dont", "lequel"]
     listening_passages:
       - { id: "the-book-i-told-you-about", text: { "en": "Talking about the book I told you about and the friend I travelled with" } }
     reading_passages:
@@ -733,7 +757,9 @@ units:
       - { id: "at-the-bank", text: { "en": "Opening an account at a bank counter" } }
     reading_passages:
       - { id: "bill-and-receipt", text: { "en": "A bill and a receipt" } }
-  - planned: { id: "fr-grammar-conditionnel-passe", grammar: "conditionnel-passe" }
+  - decks: ["fr-grammar-conditionnel-passe", "fr-reading-conditionnel-passe"]
+    words: 0
+    grammar: ["conditionnel-passe"]
     listening_passages:
       - { id: "i-would-have-come", text: { "en": "Saying what you would have done, and regrets: I should have left earlier" } }
     reading_passages:
@@ -744,7 +770,9 @@ units:
       - { id: "a-poem-read-aloud", text: { "en": "A teacher reads a short poem and explains it" } }
     reading_passages:
       - { id: "book-blurb", text: { "en": "The back-cover blurb of a novel" } }
-  - planned: { id: "fr-grammar-passe-simple", grammar: "passe-simple-reading" }
+  - decks: ["fr-grammar-passe-simple-reading", "fr-reading-passe-simple"]
+    words: 0
+    grammar: ["passe-simple-reading"]
     listening_passages:
       - { id: "a-tale-read-aloud", text: { "en": "A folk tale read aloud: il était une fois, and what the hero did" } }
     reading_passages:
@@ -755,7 +783,9 @@ units:
       - { id: "what-happened-next", text: { "en": "Telling a long story with every step in order" } }
     reading_passages:
       - { id: "newspaper-feature", text: { "en": "A newspaper feature with a short interview" } }
-  - planned: { id: "fr-grammar-formal-address", grammar: "formal-register" }
+  - decks: ["fr-grammar-formal-register", "fr-reading-formal-address"]
+    words: 0
+    grammar: ["formal-register"]
     listening_passages:
       - { id: "addressing-an-elder", text: { "en": "Speaking to an elder, a stranger and a friend: vous and tu" } }
     reading_passages:

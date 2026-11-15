@@ -1,0 +1,79 @@
+schema: 1
+id: "fr-en-reading-relative-pronouns-2"
+name: "Reading: whom and which: dont and lequel"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about the things and people we talk about, with dont for of or about and lequel after a preposition. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-the-book-i-told-you-about"
+    title: "The book I told you about"
+    theme: "daily-life"
+    sentences:
+      - text: "Voici le livre dont je parle."
+        ipa: "vwasi lə livʁ dɔ̃ ʒə paʁl"
+      - text: "Voici le film dont nous parlons."
+        ipa: "vwasi lə film dɔ̃ nu paʁlɔ̃"
+      - text: "C'est un ami dont le frère habite ici."
+        ipa: "sɛ tœ̃n ami dɔ̃ lə fʁɛʁ abit isi"
+      - text: "Voici la maison dont je rêve."
+        ipa: "vwasi la mɛzɔ̃ dɔ̃ ʒə ʁɛv"
+    questions:
+      - id: "fr-4010"
+        prompt: { en: "What is the speaker talking about?" }
+        options:
+          - { en: "The book" }
+          - { en: "The bus" }
+          - { en: "The car" }
+        answer: 1
+      - id: "fr-4011"
+        prompt: { en: "What does 'I' dream about?" }
+        options:
+          - { en: "The film" }
+          - { en: "The house" }
+          - { en: "The dog" }
+        answer: 2
+      - id: "fr-4012"
+        prompt: { en: "Where does the friend's brother live?" }
+        options:
+          - { en: "Abroad" }
+          - { en: "At school" }
+          - { en: "Here" }
+        answer: 3
+  - id: "fr-classified-ads"
+    title: "Classified ads"
+    theme: "housing"
+    sentences:
+      - text: "C'est la chambre dans laquelle je dors."
+        ipa: "sɛ la ʃɑ̃bʁ dɑ̃ lakɛl ʒə dɔʁ"
+      - text: "Voici le sac avec lequel je voyage."
+        ipa: "vwasi lə sak avɛk ləkɛl ʒə vwajaʒ"
+      - text: "C'est la boutique à laquelle je pense."
+        ipa: "sɛ la butik a lakɛl ʒə pɑ̃s"
+      - text: "Voici les livres sur lesquels je travaille."
+        ipa: "vwasi le livʁ syʁ lekɛl ʒə tʁavaj"
+    questions:
+      - id: "fr-4013"
+        prompt: { en: "Where does the speaker sleep?" }
+        options:
+          - { en: "In the room" }
+          - { en: "In the car" }
+          - { en: "On the street" }
+        answer: 1
+      - id: "fr-4014"
+        prompt: { en: "What does the speaker travel with?" }
+        options:
+          - { en: "The car" }
+          - { en: "The bag" }
+          - { en: "The bike" }
+        answer: 2
+      - id: "fr-4015"
+        prompt: { en: "What does the speaker work on?" }
+        options:
+          - { en: "The food" }
+          - { en: "The photos" }
+          - { en: "The books" }
+        answer: 3

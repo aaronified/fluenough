@@ -1,0 +1,91 @@
+schema: 1
+id: "fr-grammar-conditionnel-passe"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["je", "tu", "il-elle", "nous", "vous", "ils-elles"]
+  entries:
+    - lemma: "manger"
+      ipa: "mɑ̃ʒe"
+      forms:
+        "je": "j'aurais mangé"
+        "tu": "tu aurais mangé"
+        "il-elle": "il aurait mangé"
+        "nous": "nous aurions mangé"
+        "vous": "vous auriez mangé"
+        "ils-elles": "ils auraient mangé"
+    - lemma: "finir"
+      ipa: "finiʁ"
+      forms:
+        "je": "j'aurais fini"
+        "tu": "tu aurais fini"
+        "il-elle": "il aurait fini"
+        "nous": "nous aurions fini"
+        "vous": "vous auriez fini"
+        "ils-elles": "ils auraient fini"
+    - lemma: "faire"
+      ipa: "fɛʁ"
+      forms:
+        "je": "j'aurais fait"
+        "tu": "tu aurais fait"
+        "il-elle": "il aurait fait"
+        "nous": "nous aurions fait"
+        "vous": "vous auriez fait"
+        "ils-elles": "ils auraient fait"
+    - lemma: "voir"
+      ipa: "vwaʁ"
+      forms:
+        "je": "j'aurais vu"
+        "tu": "tu aurais vu"
+        "il-elle": "il aurait vu"
+        "nous": "nous aurions vu"
+        "vous": "vous auriez vu"
+        "ils-elles": "ils auraient vu"
+    - lemma: "prendre"
+      ipa: "pʁɑ̃dʁ"
+      forms:
+        "je": "j'aurais pris"
+        "tu": "tu aurais pris"
+        "il-elle": "il aurait pris"
+        "nous": "nous aurions pris"
+        "vous": "vous auriez pris"
+        "ils-elles": "ils auraient pris"
+    - lemma: "devoir"
+      ipa: "dəvwaʁ"
+      forms:
+        "je": "j'aurais dû"
+        "tu": "tu aurais dû"
+        "il-elle": "il aurait dû"
+        "nous": "nous aurions dû"
+        "vous": "vous auriez dû"
+        "ils-elles": "ils auraient dû"
+    - lemma: "aller"
+      ipa: "ale"
+      forms:
+        "je": ["je serais allé", "je serais allée"]
+        "tu": ["tu serais allé", "tu serais allée"]
+        "il-elle": ["il serait allé", "elle serait allée"]
+        "nous": ["nous serions allés", "nous serions allées"]
+        "vous": ["vous seriez allé", "vous seriez allée", "vous seriez allés", "vous seriez allées"]
+        "ils-elles": ["ils seraient allés", "elles seraient allées"]
+    - lemma: "venir"
+      ipa: "vəniʁ"
+      forms:
+        "je": ["je serais venu", "je serais venue"]
+        "tu": ["tu serais venu", "tu serais venue"]
+        "il-elle": ["il serait venu", "elle serait venue"]
+        "nous": ["nous serions venus", "nous serions venues"]
+        "vous": ["vous seriez venu", "vous seriez venue", "vous seriez venus", "vous seriez venues"]
+        "ils-elles": ["ils seraient venus", "elles seraient venues"]
+    - lemma: "partir"
+      ipa: "paʁtiʁ"
+      forms:
+        "je": ["je serais parti", "je serais partie"]
+        "tu": ["tu serais parti", "tu serais partie"]
+        "il-elle": ["il serait parti", "elle serait partie"]
+        "nous": ["nous serions partis", "nous serions parties"]
+        "vous": ["vous seriez parti", "vous seriez partie", "vous seriez partis", "vous seriez parties"]
+        "ils-elles": ["ils seraient partis", "elles seraient parties"]

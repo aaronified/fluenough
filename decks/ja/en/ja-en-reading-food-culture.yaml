@@ -1,0 +1,132 @@
+{
+  "schema": 1,
+  "id": "ja-en-reading-food-culture",
+  "name": "Japanese reading: food culture",
+  "kind": "reading",
+  "language": {
+    "code": "ja",
+    "iso639_3": "jpn",
+    "name": "Japanese",
+    "script": "kana",
+    "tts": "ja-JP"
+  },
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "license": "CC-BY-SA-4.0",
+  "source": "Written for this course",
+  "tags": [
+    "beginner",
+    "unreviewed"
+  ],
+  "passages": [
+    {
+      "id": "ja-food-culture-1",
+      "title": "Food at home",
+      "sentences": [
+        {
+          "text": "わたし の かぞく は ようしょく と わしょく が すき です。",
+          "reading": "watashi no kazoku wa youshoku to washoku ga suki desu."
+        },
+        {
+          "text": "ちち は あさ に ぞうすい を たべます。",
+          "reading": "chichi wa asa ni zousui o tabemasu."
+        },
+        {
+          "text": "はは は ちゃわんむし を つくります。",
+          "reading": "haha wa chawanmushi o tsukurimasu."
+        },
+        {
+          "text": "わたし は しゅん の やさい を あじわいます。",
+          "reading": "watashi wa shun no yasai o ajiwaimasu."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ja-8520",
+          "prompt": {
+            "en": "Dad eats rice soup in the morning."
+          },
+          "answer": true
+        },
+        {
+          "id": "ja-8521",
+          "prompt": {
+            "en": "Which dish does mum make?"
+          },
+          "options": [
+            {
+              "en": "Chawanmushi"
+            },
+            {
+              "en": "Oden"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "id": "ja-8522",
+          "prompt": {
+            "en": "The family likes only Western food."
+          },
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "ja-food-culture-2",
+      "title": "At the sweet shop",
+      "sentences": [
+        {
+          "text": "わがし は あまい です。",
+          "reading": "wagashi wa amai desu."
+        },
+        {
+          "text": "わたし は だいふく と どらやき を かいます。",
+          "reading": "watashi wa daifuku to dorayaki o kaimasu."
+        },
+        {
+          "text": "まっちゃ は にがい です。",
+          "reading": "matcha wa nigai desu."
+        },
+        {
+          "text": "ようがし は わがし と ちがいます。",
+          "reading": "yougashi wa wagashi to chigaimasu."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ja-8523",
+          "prompt": {
+            "en": "I buy dorayaki at the shop."
+          },
+          "answer": true
+        },
+        {
+          "id": "ja-8524",
+          "prompt": {
+            "en": "Which one is bitter?"
+          },
+          "options": [
+            {
+              "en": "Matcha"
+            },
+            {
+              "en": "Wagashi"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "id": "ja-8525",
+          "prompt": {
+            "en": "Western sweets are the same as Japanese sweets."
+          },
+          "answer": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+schema: 1
+id: "fr-en-grammar-ou-relative"
+kind: "layer"
+core: "fr-grammar-ou-relative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Où: the place or time when"
+license: "CC-BY-SA-4.0"
+description: "Où joins a noun of place or time to a clause: la ville où j'habite, le jour où je suis arrivé. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Où as a relative pronoun"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "sentences": "two separate sentences", "joined": "one sentence joined with où" }
+  entries:
+    "ville": "town or city"
+    "maison": "house"
+    "restaurant": "restaurant"
+    "ecole": "school"
+    "parc": "park"
+    "jour": "day"
+    "annee": "year"
+    "ete": "summer"
+  notes: "Où is also a relative pronoun: after a noun of place or of time it joins a second clause and replaces the phrase that says where or when. C'est la ville. J'habite dans cette ville becomes c'est la ville où j'habite, and c'est le jour. Je suis arrivé ce jour-là becomes c'est le jour où je suis arrivé. After où the clause keeps its subject and verb in the usual order, and où never loses its vowel. The same word starts questions (où habites-tu ?), but here it joins two clauses. For a place, où takes the place of dans plus the noun (dans cette ville becomes où); for a time it takes the place of a phrase such as ce jour-là."
