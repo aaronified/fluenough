@@ -1,0 +1,22 @@
+"schema": 1
+"id": "gu-en-grammar-comparison"
+"kind": "layer"
+"core": "gu-grammar-comparison"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "Comparison: more and most"
+"license": "CC-BY-SA-4.0"
+"description": "Gujarati says 'more' and 'most' with a word before the adjective, and 'than' after the thing compared with. Not yet checked by a Gujarati speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"table":
+  "slot_name": "degree"
+  "slots":
+    "comparative": "more (than)"
+    "superlative": "most"
+"rules":
+  "gu-rule-comparison":
+    "name": "More and most"
+    "explanation": "{1} (vadhāre) goes before the adjective to say 'more', and {2} (sauthi) before it to say 'most'; the adjective keeps its basic form. {3} (karatām̐) comes after the thing compared with, as in 'more than this'."
