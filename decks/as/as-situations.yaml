@@ -1,0 +1,62 @@
+# Assamese's situation sheets (#724, #1145): lists of card ids, never card text. Every id
+# is a card of an Assamese deck, so progress, audio and notes are the card's own.
+# Phrases and words are only those already taught in the as decks; no new cards are added here.
+schema: 1
+id: as-situations
+name: "Assamese situations"
+kind: situations
+language: { code: as, iso639_3: asm, name: Assamese, script: bengali, tts: as-IN, icon: "অ" }
+license: "CC-BY-SA-4.0"
+description: "Key phrases and words for everyday moments. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+situations:
+  - id: "taxi"
+    icon: "taxi"
+    title: { en: "Taxi" }
+    phrases: ["as-0303", "as-0304", "as-0305", "as-0306", "as-0314", "as-0411", "as-0130", "as-0131"]
+    words: ["as-0300", "as-0302", "as-0307", "as-0308", "as-0323", "as-0317", "as-0318", "as-0315", "as-0316", "as-0321", "as-0322", "as-0298"]
+  - id: "shops"
+    icon: "shops"
+    title: { en: "Shopping" }
+    phrases: ["as-0267", "as-0272", "as-0273", "as-0276", "as-0278", "as-0411", "as-0130", "as-0131"]
+    words: ["as-0268", "as-0269", "as-0271", "as-0274", "as-0275", "as-0279", "as-2640", "as-2646", "as-2641", "as-2642", "as-2650", "as-2651"]
+  - id: "eat"
+    icon: "eat"
+    title: { en: "Eating out" }
+    phrases: ["as-0411", "as-0418", "as-0419", "as-0420", "as-0278", "as-0133", "as-0130", "as-0131"]
+    words: ["as-0407", "as-0408", "as-0409", "as-0410", "as-0413", "as-0414", "as-0415", "as-0416", "as-0417", "as-2344", "as-2314", "as-2363"]
+  - id: "doctor"
+    icon: "doctor"
+    title: { en: "Doctor and pharmacy" }
+    phrases: ["as-2691", "as-2692", "as-3176", "as-0424", "as-0429", "as-0137", "as-0136", "as-0134"]
+    words: ["as-2673", "as-2674", "as-2675", "as-2676", "as-2677", "as-2679", "as-2680", "as-2681", "as-2686", "as-2688", "as-2689", "as-2690"]
+  - id: "traffic"
+    icon: "traffic"
+    title: { en: "Traffic stop" }
+    phrases: ["as-0136", "as-0137", "as-0429", "as-0134", "as-0133", "as-0314", "as-0317", "as-0318"]
+    words: ["as-0325", "as-0326", "as-0327", "as-0319", "as-0320", "as-0321", "as-0322", "as-0315", "as-0316", "as-0323", "as-0324", "as-2225"]
+  - id: "rail"
+    icon: "rail"
+    title: { en: "Rail station" }
+    phrases: ["as-0304", "as-0305", "as-2984", "as-2994", "as-0312", "as-0306", "as-0303", "as-0411"]
+    words: ["as-2977", "as-2978", "as-2980", "as-0307", "as-0308", "as-0309", "as-0310", "as-2991", "as-2992", "as-2985", "as-2976", "as-0311"]
+  - id: "hotel"
+    icon: "hotel"
+    title: { en: "Hotel" }
+    phrases: ["as-3343", "as-2984", "as-0411", "as-0430", "as-0314", "as-0424", "as-0130", "as-0168"]
+    words: ["as-3330", "as-3331", "as-3333", "as-3334", "as-3341", "as-3342", "as-2985", "as-3335", "as-0361", "as-0362"]
+  - id: "post"
+    icon: "post"
+    title: { en: "Post and bank" }
+    phrases: ["as-3372", "as-3373", "as-3973", "as-3974", "as-3975", "as-0305", "as-0411", "as-0130"]
+    words: ["as-3360", "as-3361", "as-3362", "as-3363", "as-3364", "as-3969", "as-3970", "as-3971", "as-2650", "as-2651", "as-3370", "as-3371"]
+  - id: "greeting"
+    icon: "greeting"
+    title: { en: "Greetings and apologies" }
+    phrases: ["as-0126", "as-0128", "as-0129", "as-0130", "as-0132", "as-0133", "as-0138", "as-0139"]
+    words: ["as-0127", "as-0140", "as-0142", "as-0153", "as-0154", "as-0157", "as-0158", "as-0161", "as-0162", "as-0163", "as-0164", "as-0165"]
+  - id: "emergency"
+    icon: "emergency"
+    title: { en: "Emergencies" }
+    phrases: ["as-0422", "as-0423", "as-0428", "as-3828", "as-3829", "as-0429", "as-0136", "as-0137"]
+    words: ["as-3818", "as-3819", "as-3820", "as-3821", "as-3822", "as-3823", "as-3824", "as-3825", "as-3826", "as-3827", "as-0425", "as-0421"]

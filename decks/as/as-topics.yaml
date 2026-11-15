@@ -1,0 +1,75 @@
+# Topics a learner of Assamese would search for: what each one is, and the decks that teach it (wiki/Plan-Deck-Kinds-And-Topics.md, D6).
+# A topic holds no card text of its own; it names the decks that already teach it.
+# A script topic lists the language's script decks; no `chars` yet (tools/topic_chars.py writes them).
+schema: 1
+kind: "topics"
+id: "as-topics"
+language: "as"
+license: "CC-BY-SA-4.0"
+topics:
+  - id: "as-classifiers-articles"
+    name: { en: "Classifiers and articles" }
+    summary: { en: "Assamese has no word for 'the' or 'a'. A classifier after the noun does that job, and the kind of thing decides which classifier is used." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["as-grammar-articles", "as-grammar-differences"]
+  - id: "as-pronouns"
+    name: { en: "Pronouns" }
+    summary: { en: "The words for I, you, he, she and we, their polite and plural forms, and the possessive and object forms that change with each pronoun." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["as-pronouns", "as-grammar-pronouns"]
+  - id: "as-honorifics"
+    name: { en: "Honorifics" }
+    summary: { en: "How Assamese marks respect and familiarity: the polite and familiar forms of 'you', the verb endings that go with them, and the words used to address elders and strangers." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["as-grammar-honorifics"]
+  - id: "as-tenses"
+    name: { en: "Tenses" }
+    summary: { en: "How Assamese places an action in the past, the future and the perfect, and how it says that something was going on, with the verb endings that show each one." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["as-grammar-future", "as-grammar-past", "as-grammar-past-continuous", "as-grammar-past-more", "as-grammar-perfect"]
+  - id: "as-verbs"
+    name: { en: "Common verbs" }
+    summary: { en: "The verbs a learner meets first, such as go, come, do, read, eat and sleep, and the verbs of daily life that follow them." }
+    kind: "verbs"
+    level: "A1"
+    decks: ["as-verbs", "as-verbs-3", "as-verbs-4", "as-verbs-5"]
+  - id: "as-postpositions"
+    name: { en: "Postpositions" }
+    summary: { en: "Small words that come after a noun to show place, direction, reason or company, such as 'in', 'with' and 'for', instead of coming before it as in English." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["as-grammar-postpositions"]
+  - id: "as-conditionals"
+    name: { en: "Conditionals" }
+    summary: { en: "If-clauses such as 'if it rains, I will stay home', and the verb forms that say what would happen under a condition." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["as-grammar-conditional"]
+  - id: "as-compound-verbs"
+    name: { en: "Compound and conjunct verbs" }
+    summary: { en: "Verbs made from two parts: a verb joined to another verb, or a noun joined to a light verb such as 'do' or 'be', which together mean one action." }
+    kind: "verbs"
+    level: "A2"
+    decks: ["as-grammar-compound-verbs", "as-grammar-conjunct-verbs"]
+  - id: "as-sounds"
+    name: { en: "Sounds and contrasts" }
+    summary: { en: "Pairs of letters that are easy to confuse, such as the aspirated and unaspirated consonants, the x sound, and the vowel that is dropped at the end of a word." }
+    kind: "other"
+    level: "A1"
+    decks: ["as-sound-differences", "as-sounds"]
+  - id: "as-script-alphabet"
+    name: { en: "The alphabet" }
+    summary: { en: "The Assamese letters that are used in the Bengali-style script: the vowels, the consonants and the vowel signs that attach to them." }
+    kind: "script"
+    level: "A1"
+    decks: ["as-script-vowels", "as-script-consonants", "as-script-vowel-signs"]
+  - id: "as-script-conjuncts-digits"
+    name: { en: "Conjuncts and digits" }
+    summary: { en: "Consonants joined into one shape that is read as one unit, and the Assamese digits from zero to nine." }
+    kind: "script"
+    level: "A1"
+    decks: ["as-script-conjuncts", "as-script-digits"]
