@@ -40,3 +40,8 @@
 | kn-6302 | see card | proverb image of lac and wood: meaning right? | Haiku builder | 2026-11-15 |
 | kn-6303 | see card | ಅರೆ ವಯಸ್ಸು: meaning right? | Haiku builder | 2026-11-15 |
 | kn-6000 | see card | Pampa lines are the first line of each verse only, meanings from the Wikisource summary: check? | Haiku builder | 2026-11-15 |
+| kn-6204 | see card | ಚತುರೆ is rendered 'clever woman': is the sense right? | Sonnet review | 2026-11-15 |
+| kn-6300 | see card | The line reads like a generic sentence, not a folk saying: keep it as a proverb? | Sonnet review | 2026-11-15 |
+| kn-6268 | see card | The meaning given is speculative: what does the saying mean? | Sonnet review | 2026-11-15 |
+| kn-6269 | see card | The meaning given is speculative: what does the saying mean? | Sonnet review | 2026-11-15 |
+| kn-6303 | see card | The meaning given is speculative (likely: moaning 'alas' ages you): what is the sense? | Sonnet review | 2026-11-15 |
