@@ -8,6 +8,7 @@ Usage:
     python3 tools/transcribe_decks.py --fix --all decks/te te   # every difference
     python3 tools/transcribe_decks.py --check --propagate decks/te te
     python3 tools/transcribe_decks.py --fix --propagate decks/te te
+    python3 tools/transcribe_decks.py --check --layer-anusvara decks/te te
 
 For each core deck file directly in the directory (the English layers in
 `en/` are not read), every card, every card example and every
@@ -81,6 +82,19 @@ works in the block and the flow form, and not with `--all` or `--propagate`
 (exit 2):
     python3 tools/transcribe_decks.py --check --citations decks/te te
     python3 tools/transcribe_decks.py --fix --citations decks/te te
+
+`--layer-anusvara` is a pass of its own (#1295) over the English layers
+(`en/*.yaml`) only: the Telugu words that prose repeats with their reading in
+parentheses, `అందం (andam)`, `చేయడం (cēyaḍam, to do)`. A Telugu-script word
+(or, when the reading holds several words, as many Telugu words as the reading
+has, as in `ఒకే పుస్తకం (oke pustakam)`) directly followed by ` (reading)` or
+` (reading, gloss)`, inside a quoted value, has its reading's final `m` rewritten
+to `ṁ` when `transcribe(words, lang)` equals the stored reading with exactly
+that change. Nothing else is read or changed: no other reading, no gloss, no
+key, no `ipa`, no id; a word whose computed reading differs in any other way is
+left alone. Not with `--all`, `--propagate` or `--citations` (exit 2):
+    python3 tools/transcribe_decks.py --check --layer-anusvara decks/te te
+    python3 tools/transcribe_decks.py --fix --layer-anusvara decks/te te
 
 Exit codes: `--check` 0 when every entry matches, 1 when any value differs,
 any entry could not be checked, or (with `--propagate`) any occurrence or
@@ -639,6 +653,70 @@ def propagate(directory: Path, mapping: dict[str, str], ambiguous: dict,
     return per_file, skipped
 
 
+# --- layer prose: Telugu words repeated with a reading in parentheses ------
+
+_LAYER_SPAN = re.compile(
+    r"((?:[\u0c00-\u0c7f]+ )*[\u0c00-\u0c7f]+) \(([^()\n]*)\)")
+
+
+def layer_anusvara(directory: Path, lang: str, write: bool
+                   ) -> list[tuple[Path, int, str, str, str]]:
+    """The `<word> (<reading>[, gloss])` readings of the English layers
+    whose final `m` the rules write `ṁ`. Returns (file, line number, words,
+    stored, new) for each; with [write] the files are patched in place, only
+    at the reading's last letter."""
+    out: list[tuple[Path, int, str, str, str]] = []
+    en = directory / "en"
+    for path in sorted(en.glob("*.yaml")) if en.is_dir() else []:
+        lines = path.read_bytes().decode("utf-8").split("\n")
+        changed = False
+        for i, ln in enumerate(lines):
+            spans = list(_STRING.finditer(ln))
+            cutoff = _comment_start(ln, spans)
+            hits: list[int] = []
+            for sm in spans:
+                if sm.end() > cutoff:
+                    break
+                if ln[sm.end():].lstrip().startswith(":"):
+                    continue  # a key
+                keys = list(_KEY_BEFORE.finditer(ln[:sm.start()]))
+                if keys and keys[-1].group(1) in _NOT_READING:
+                    continue
+                for m in _LAYER_SPAN.finditer(sm.group()):
+                    stored = m.group(2).split(",")[0]
+                    if not stored.endswith("m") or "ṁ" in stored:
+                        continue
+                    n = len(stored.split())
+                    words = m.group(1).split(" ")
+                    if n < 1 or len(words) < n:
+                        continue
+                    text = " ".join(words[-n:])
+                    try:
+                        computed = transcribe(text, lang).reading
+                    except Exception:
+                        continue
+                    if computed != stored[:-1] + "ṁ":
+                        continue
+                    pos = sm.start() + m.start(2) + len(stored) - 1
+                    hits.append(pos)
+                    out.append((path, i + 1, text, stored, computed))
+            for pos in sorted(hits, reverse=True):
+                ln = ln[:pos] + "ṁ" + ln[pos + 1:]
+                changed = True
+            lines[i] = ln
+        if write and changed:
+            path.write_bytes("\n".join(lines).encode("utf-8"))
+    return out
+
+
+def _print_layer(rows, verb: str) -> int:
+    for path, n, text, stored, new in rows:
+        print(f"  {path.name}:{n} {text} ({stored}) -> ({new})")
+    print(f"layer prose: {verb} {len(rows)} readings in "
+          f"{len({r[0] for r in rows})} files")
+    return len(rows)
+
+
 def _print_propagation(mapping, ambiguous, per_file, skipped, verb) -> None:
     print(f"propagation: {len(mapping)} old readings to replace "
           f"elsewhere, {len(ambiguous)} ambiguous")
@@ -691,6 +769,10 @@ def main(argv: list[str]) -> int:
     ap.add_argument("--citations", action="store_true",
                     help="check or fix only the word-final anusvara of the "
                     "reading of inline bases (the base's citation form)")
+    ap.add_argument("--layer-anusvara", action="store_true",
+                    help="check or fix only the word-final anusvara of the "
+                    "readings in parentheses after a Telugu word in the "
+                    "English layers")
     ap.add_argument("directory", type=Path)
     ap.add_argument("lang")
     args = ap.parse_args(argv[1:])
@@ -706,6 +788,14 @@ def main(argv: list[str]) -> int:
         print("--citations is a pass of its own: not with --all or "
               "--propagate", file=sys.stderr)
         return 2
+    if args.layer_anusvara:
+        if args.all or args.propagate or args.citations:
+            print("--layer-anusvara is a pass of its own: not with --all, "
+                  "--propagate or --citations", file=sys.stderr)
+            return 2
+        rows = layer_anusvara(args.directory, args.lang, args.fix)
+        _print_layer(rows, "replaced" if args.fix else "would replace")
+        return 1 if (args.check and rows) else 0
     report = run(args.directory, args.lang, args.citations)
     _print(report)
     mapping, ambiguous = token_map(report, args.all)

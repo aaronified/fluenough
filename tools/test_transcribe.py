@@ -775,6 +775,70 @@ class CitationTest(unittest.TestCase):
             ["x", "--fix", "--citations", "--all", d, "te"]), 2)
 
 
+LAYER_EN = """# kept
+part: "en"
+cards:
+  - id: "te-9701"
+    note: "Telugu says అందం (andam) and చేయడం (cēyaḍam, to do), also ఒకే పుస్తకం (oke pustakam)."
+    ipa: "అందం (andam)"
+  - id: "te-9702"
+    note: "మేడమ్ (mēḍam) keeps m, ఇల్లు (illu) has none, ఇంటికి (inṭiki), and రావడం (rāvaḍaṁ) is done; ఖండం (khandam) differs."
+  - { id: "te-9703", note: "ఇది నా పుస్తకం (pustakam)" }
+"""
+
+
+class LayerAnusvaraTest(unittest.TestCase):
+    def tree(self, crlf: bool = False) -> Path:
+        d = tempfile.TemporaryDirectory()
+        self.addCleanup(d.cleanup)
+        root = Path(d.name) / "te"
+        (root / "en").mkdir(parents=True)
+        text = LAYER_EN.replace("\n", "\r\n") if crlf else LAYER_EN
+        (root / "en" / "te-en-l.yaml").write_bytes(text.encode("utf-8"))
+        return root
+
+    def test_only_the_final_m_of_a_matching_reading_changes(self) -> None:
+        root = self.tree()
+        rows = transcribe_decks.layer_anusvara(root, "te", True)
+        self.assertEqual([r[3] for r in rows],
+                         ["andam", "cēyaḍam", "pustakam"])
+        after = (root / "en" / "te-en-l.yaml").read_bytes().decode("utf-8")
+        expected = (LAYER_EN.replace("(andam) and", "(andaṁ) and")
+                    .replace("(cēyaḍam, to do)", "(cēyaḍaṁ, to do)")
+                    .replace("(pustakam)", "(pustakaṁ)"))
+        self.assertEqual(after, expected)
+
+    def test_multi_word_reading_and_others_stay(self) -> None:
+        root = self.tree()
+        transcribe_decks.layer_anusvara(root, "te", True)
+        after = (root / "en" / "te-en-l.yaml").read_bytes().decode("utf-8")
+        self.assertIn("(oke pustakam)", after)   # okē, not oke: differs
+        self.assertIn("(mēḍam)", after)           # the rules keep m
+        self.assertIn('ipa: "అందం (andam)"', after)  # ipa never read
+        self.assertIn("(khandam)", after)
+
+    def test_check_does_not_write_and_crlf_is_kept(self) -> None:
+        root = self.tree(crlf=True)
+        path = root / "en" / "te-en-l.yaml"
+        before = path.read_bytes()
+        d = str(root)
+        self.assertEqual(transcribe_decks.main(
+            ["x", "--check", "--layer-anusvara", d, "te"]), 1)
+        self.assertEqual(path.read_bytes(), before)
+        self.assertEqual(transcribe_decks.main(
+            ["x", "--fix", "--layer-anusvara", d, "te"]), 0)
+        after = path.read_bytes()
+        self.assertEqual(after.count(b"\r\n"), before.count(b"\r\n"))
+        self.assertEqual(transcribe_decks.main(
+            ["x", "--check", "--layer-anusvara", d, "te"]), 0)
+
+    def test_refused_with_the_other_passes(self) -> None:
+        d = str(self.tree())
+        for other in ("--all", "--propagate", "--citations"):
+            self.assertEqual(transcribe_decks.main(
+                ["x", "--fix", "--layer-anusvara", other, d, "te"]), 2)
+
+
 class PropagateTest(unittest.TestCase):
     def tree(self, crlf: bool = False) -> Path:
         d = tempfile.TemporaryDirectory()
