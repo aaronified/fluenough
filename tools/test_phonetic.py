@@ -530,7 +530,7 @@ class Unwritable(Tree):
             '    replace: \'t̚\'\n    source: "A source, 2000"\n', encoding="utf-8")
 
     def refuse(self):
-        return mock.patch.object(pp, "patch", lambda text, fills, replace_rules=False: (
+        return mock.patch.object(pp, "patch", lambda text, fills, replace_rules=False, **kw: (
             text, {cid: "no ipa line" for cid in fills}))
 
     def test_the_mixed_file_is_now_written_and_nothing_is_unwritable(self) -> None:

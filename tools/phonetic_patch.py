@@ -127,7 +127,8 @@ def _card_block(lines: list[str], cid: str) -> _Block | None:
 
 
 def patch(text: str, fills: dict[str, tuple[str, str]],
-          replace_rules: bool = False, replace_source: str = "rules") -> tuple[str, dict[str, str]]:
+          replace_rules: bool = False,
+          replace_source: str = "rules") -> tuple[str, dict[str, str]]:
     """[text] with `phonetic` and `phonetic_source` added after the `ipa:`
     line of each card in [fills] (card id to the form and its source).
 
@@ -143,8 +144,8 @@ def patch(text: str, fills: dict[str, tuple[str, str]],
     adding a comma to the `ipa` line, and the file is only ever inserted into.
 
     With [replace_rules], a card whose `phonetic_source` is [replace_source]
-    (`rules` unless given) has its `phonetic` value replaced in place; any other card that has a `phonetic`
-    is still left alone.
+    (`rules` unless given) has its `phonetic` value replaced in place; any
+    other card that has a `phonetic` is still left alone.
     """
     eol = "\r\n" if "\r\n" in text else "\n"
     rs = re.escape(replace_source)
