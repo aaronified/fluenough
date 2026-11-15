@@ -1,0 +1,79 @@
+schema: 1
+id: "fr-en-reading-passe-simple"
+name: "Reading: a folk tale: the passé simple for reading"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts in the passé simple, for reading and not for speaking: a folk tale and a page of a fairy tale. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-a-tale-read-aloud"
+    title: "A folk tale"
+    theme: "stories"
+    sentences:
+      - text: "Il était une fois un homme."
+        ipa: "il etɛ ynfwa œ̃ nɔm"
+      - text: "Un jour, il partit dans la forêt."
+        ipa: "œ̃ ʒuʁ il paʁti dɑ̃ la fɔʁɛ"
+      - text: "Il vit une maison."
+        ipa: "il vi yn mɛzɔ̃"
+      - text: "Il fut content et il alla au parc."
+        ipa: "il fy kɔ̃tɑ̃ e il ala o paʁk"
+    questions:
+      - id: "fr-4030"
+        prompt: { en: "Who is the story about?" }
+        options:
+          - { en: "A woman" }
+          - { en: "A child" }
+          - { en: "A man" }
+        answer: 3
+      - id: "fr-4031"
+        prompt: { en: "Where did he go one day?" }
+        options:
+          - { en: "Into the forest" }
+          - { en: "To school" }
+          - { en: "To the sea" }
+        answer: 1
+      - id: "fr-4032"
+        prompt: { en: "What did he see?" }
+        options:
+          - { en: "A bus" }
+          - { en: "A house" }
+          - { en: "A car" }
+        answer: 2
+  - id: "fr-fairy-tale-page"
+    title: "A fairy tale page"
+    theme: "stories"
+    sentences:
+      - text: "Il parla avec sa mère."
+        ipa: "il paʁla avɛk sa mɛʁ"
+      - text: "Elle arriva le soir."
+        ipa: "ɛl aʁiva lə swaʁ"
+      - text: "Ils parlèrent longtemps."
+        ipa: "il paʁlɛʁ lɔ̃tɑ̃"
+      - text: "Il prit la route et il finit son voyage."
+        ipa: "il pʁi la ʁut e il fini sɔ̃ vwajaʒ"
+    questions:
+      - id: "fr-4033"
+        prompt: { en: "Who did he speak with?" }
+        options:
+          - { en: "His friend" }
+          - { en: "A teacher" }
+          - { en: "His mother" }
+        answer: 3
+      - id: "fr-4034"
+        prompt: { en: "When did she arrive?" }
+        options:
+          - { en: "In the evening" }
+          - { en: "In the morning" }
+          - { en: "At noon" }
+        answer: 1
+      - id: "fr-4035"
+        prompt: { en: "What did he do?" }
+        options:
+          - { en: "Stayed home" }
+          - { en: "Took the road" }
+          - { en: "Slept" }
+        answer: 2

@@ -1,0 +1,79 @@
+schema: 1
+id: "fr-en-reading-gerondif"
+name: "Reading: while doing: the gérondif with en"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about doing one thing while doing another, and safety tips with en followed by the gérondif. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-while-walking"
+    title: "While walking"
+    theme: "daily-life"
+    sentences:
+      - text: "J'écoute la radio en marchant."
+        ipa: "ʒekut la ʁadjo ɑ̃ maʁʃɑ̃"
+      - text: "Elle lit en mangeant."
+        ipa: "ɛl li ɑ̃ mɑ̃ʒɑ̃"
+      - text: "Il parle en prenant le train."
+        ipa: "il paʁl ɑ̃ pʁənɑ̃ lə tʁɛ̃"
+      - text: "Nous attendons en lisant."
+        ipa: "nu atɑ̃dɔ̃ ɑ̃ lizɑ̃"
+    questions:
+      - id: "fr-4000"
+        prompt: { en: "What does the speaker do while walking?" }
+        options:
+          - { en: "Listen to the radio" }
+          - { en: "Sleep" }
+          - { en: "Eat" }
+        answer: 1
+      - id: "fr-4001"
+        prompt: { en: "What does she do while eating?" }
+        options:
+          - { en: "Sleep" }
+          - { en: "Read" }
+          - { en: "Walk" }
+        answer: 2
+      - id: "fr-4002"
+        prompt: { en: "What does he do while taking the train?" }
+        options:
+          - { en: "Sleep" }
+          - { en: "Eat" }
+          - { en: "Speak" }
+        answer: 3
+  - id: "fr-safety-tips"
+    title: "Safety tips"
+    theme: "emergencies"
+    sentences:
+      - text: "Il faut traverser en faisant attention."
+        ipa: "il fo tʁavɛʁse ɑ̃ fəzɑ̃ atɑ̃sjɔ̃"
+      - text: "En attendant le bus, on est près de l'arrêt."
+        ipa: "ɑ̃ natɑ̃dɑ̃ lə bys ɔ̃ ɛ pʁɛ də laʁɛ"
+      - text: "En sachant le chemin, vous allez vite."
+        ipa: "ɑ̃ saʃɑ̃ lə ʃəmɛ̃ vu ale vit"
+      - text: "En étant seul, vous êtes en danger."
+        ipa: "ɑ̃ netɑ̃ sœl vu zɛt ɑ̃ dɑ̃ʒe"
+    questions:
+      - id: "fr-4003"
+        prompt: { en: "Where is one while waiting for the bus?" }
+        options:
+          - { en: "Near the stop" }
+          - { en: "On the road" }
+          - { en: "In the bus" }
+        answer: 1
+      - id: "fr-4004"
+        prompt: { en: "What should you do while crossing?" }
+        options:
+          - { en: "Sing" }
+          - { en: "Pay attention" }
+          - { en: "Run" }
+        answer: 2
+      - id: "fr-4005"
+        prompt: { en: "When are you in danger?" }
+        options:
+          - { en: "When sleeping" }
+          - { en: "When eating" }
+          - { en: "When alone" }
+        answer: 3

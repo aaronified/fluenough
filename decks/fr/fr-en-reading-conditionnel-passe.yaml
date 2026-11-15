@@ -1,0 +1,79 @@
+schema: 1
+id: "fr-en-reading-conditionnel-passe"
+name: "Reading: would have: conditionnel passé"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about regrets and advice about what would have happened, with the past conditional of common verbs. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-i-would-have-come"
+    title: "I should have left"
+    theme: "daily-life"
+    sentences:
+      - text: "J'aurais pris le train."
+        ipa: "ʒoʁɛ pʁi lə tʁɛ̃"
+      - text: "J'aurais dû partir plus tôt."
+        ipa: "ʒoʁɛ dy paʁtiʁ ply to"
+      - text: "Nous aurions mangé ici."
+        ipa: "nu ɔʁjɔ̃ mɑ̃ʒe isi"
+      - text: "Elle serait venue avec nous."
+        ipa: "ɛl səʁɛ vəny avɛk nu"
+    questions:
+      - id: "fr-4020"
+        prompt: { en: "What would the speaker have taken?" }
+        options:
+          - { en: "The train" }
+          - { en: "The bus" }
+          - { en: "A taxi" }
+        answer: 1
+      - id: "fr-4021"
+        prompt: { en: "What should the speaker have done?" }
+        options:
+          - { en: "Stayed home" }
+          - { en: "Left earlier" }
+          - { en: "Eaten lunch" }
+        answer: 2
+      - id: "fr-4022"
+        prompt: { en: "Who would have come?" }
+        options:
+          - { en: "He" }
+          - { en: "We" }
+          - { en: "She" }
+        answer: 3
+  - id: "fr-advice-column"
+    title: "An advice column"
+    theme: "relationships"
+    sentences:
+      - text: "Vous auriez fait mieux."
+        ipa: "vu ɔʁje fɛ mjø"
+      - text: "Tu aurais vu la mer."
+        ipa: "ty ɔʁɛ vy la mɛʁ"
+      - text: "Ils seraient allés au parc."
+        ipa: "il səʁɛ tale o paʁk"
+      - text: "Je serais parti sans toi."
+        ipa: "ʒə səʁɛ paʁti sɑ̃ twa"
+    questions:
+      - id: "fr-4023"
+        prompt: { en: "What would 'you' have done?" }
+        options:
+          - { en: "Better" }
+          - { en: "Worse" }
+          - { en: "Nothing" }
+        answer: 1
+      - id: "fr-4024"
+        prompt: { en: "What would 'you' have seen?" }
+        options:
+          - { en: "The bus" }
+          - { en: "The sea" }
+          - { en: "The city" }
+        answer: 2
+      - id: "fr-4025"
+        prompt: { en: "Who would have gone to the park?" }
+        options:
+          - { en: "I" }
+          - { en: "You" }
+          - { en: "They" }
+        answer: 3
