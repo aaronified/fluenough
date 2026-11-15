@@ -333,25 +333,25 @@ class _LanguagePickListState extends State<LanguagePickList> {
               ),
               // The two markers, under the names (the glyph's 36 dp and its gap
               // indent them): the course's line, the one new state of which is
-              // the empty line, and whether native speakers have checked it.
-              Padding(
-                padding: const EdgeInsetsDirectional.only(
-                  start: 48,
-                  top: 2,
-                  bottom: 10,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    CourseLine(levels: levels, label: lineLabel),
-                    // A notation has no native speakers to have checked it.
-                    if (!view.language.isNotation) ...<Widget>[
+              // the empty line, and whether native speakers have checked it. A
+              // notation is no language to measure against A1, A2 and B1 and has
+              // no native speakers, so it has neither.
+              if (!view.language.isNotation)
+                Padding(
+                  padding: const EdgeInsetsDirectional.only(
+                    start: 48,
+                    top: 2,
+                    bottom: 10,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      CourseLine(levels: levels, label: lineLabel),
                       const SizedBox(height: 6),
                       VerificationMark(state: view.language.verification),
                     ],
-                  ],
+                  ),
                 ),
-              ),
             ],
           ),
         ),

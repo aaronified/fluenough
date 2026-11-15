@@ -125,7 +125,7 @@ languages:
       );
     });
 
-    test('Popular is the owner\'s eight, and no language is verified yet', () {
+    test('Popular is the owner\'s nine, and no language is verified yet', () {
       final all = parseSpokenLanguages(
         File('assets/languages.yaml').readAsStringSync(),
       );
@@ -140,6 +140,7 @@ languages:
         'Mandarin Chinese',
         'Marathi',
         'Spanish',
+        'Telugu',
       ]);
       expect(
         all.every((l) => l.verification == NativeVerification.none),
@@ -180,7 +181,7 @@ languages:
       });
 
       testWidgets('each row carries the A1 A2 B1 line and the verification '
-          'flag as icon and word; a notation has no flag', (tester) async {
+          'flag as icon and word; a notation has neither the line nor the flag', (tester) async {
         await pumpAdd(tester, mode: mode);
         final text = l10n(tester);
         for (final (code, word) in <(String, String)>[
@@ -234,7 +235,7 @@ languages:
             of: key('add-ipa'),
             matching: find.byType(CourseLine),
           ),
-          findsOneWidget,
+          findsNothing,
         );
         expect(tester.takeException(), isNull);
       });

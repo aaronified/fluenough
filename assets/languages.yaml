@@ -93,7 +93,8 @@
 #   popular         optional, `true` on the languages Add a language lists
 #                   first under "Popular", alphabetical by name (owner,
 #                   2026-11-06: Bengali, French, Hindustani, Japanese,
-#                   Kannada, Mandarin Chinese, Marathi, Spanish). Hand-kept,
+#                   Kannada, Mandarin Chinese, Marathi, Spanish; Telugu
+#                   added 2026-11-15). Hand-kept,
 #                   not worked out from the decks, so the list changes by
 #                   editing this file; the file is bundled, so a change
 #                   needs an app release. A popular language is also in the full
@@ -169,7 +170,7 @@ languages:
       script_can_read: { perso_arabic: "مون کي فارسي-عربي لپي پڙهڻ اچي ٿي", devanagari: "مون کي ديوناگري لپي پڙهڻ اچي ٿي" }, script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "ta", iso639_3: "tam", name: "Tamil", own_name: "தமிழ்", scripts: ["tamil"], family: "dravidian",
       script_question: "உங்களால் தமிழ் எழுத்துமுறையைப் படிக்க முடியுமா?", script_can_read: "என்னால் தமிழ் எழுத்துமுறையைப் படிக்க முடியும்", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
-  - { code: "te", iso639_3: "tel", name: "Telugu", own_name: "తెలుగు", scripts: ["telugu"], family: "dravidian",
+  - { code: "te", popular: true, iso639_3: "tel", name: "Telugu", own_name: "తెలుగు", scripts: ["telugu"], family: "dravidian",
       script_question: "మీరు తెలుగు లిపిని చదవగలరా?", script_can_read: "నేను తెలుగు లిపిని చదవగలను", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "bho", iso639_3: "bho", name: "Bhojpuri", own_name: "भोजपुरी", scripts: ["devanagari"], family: "indo_aryan",
       script_question: "का रउआ देवनागरी लिपि पढ़ सकत बानी?", script_can_read: "हम देवनागरी लिपि पढ़ सकत बानी", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
