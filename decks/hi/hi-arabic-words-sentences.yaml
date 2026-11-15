@@ -1,0 +1,180 @@
+schema: 1
+id: "hi-arabic-words-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-5290"
+    target: "क्या यह आपको मालूम है?"
+    reading: "kyā yah āpkō mālūm hai?"
+    ipa: "kjaː jəɦ aːpkoː maːluːm ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "क्या", ref: "hi-0157" }
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "आपको", base: "आप", reading: "āpkō" }
+      - { word: "मालूम", ref: "hi-2817" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "मालूमात", reading: "mālūmāt", kind: "word" }
+      - { id: "w2", word: "पता", reading: "patā", kind: "word" }
+  - id: "hi-5291"
+    target: "उनका इल्म बहुत गहरा है।"
+    reading: "unkā ilm bahut gahrā hai."
+    ipa: "ʊnkaː ɪlm bəɦʊt̪ ɡəɦraː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "उनका", base: "वह", reading: "unkā" }
+      - { word: "इल्म", ref: "hi-2815" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "गहरा", base: "गहरा", reading: "gahrā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "आलिम", reading: "ālim", kind: "word" }
+      - { id: "w2", word: "ख़याल", reading: "k͟hayāl", kind: "word" }
+  - id: "hi-5292"
+    target: "मदरसे में अच्छी तालीम मिलती है।"
+    reading: "madrasē mēm̐ acchī tālīm miltī hai."
+    ipa: "məd̪rəseː mẽː ətʃtʃʰiː t̪aːliːm mɪlt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मदरसे", base: "मदरसा", reading: "madrasē" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "अच्छी", base: "अच्छा", reading: "acchī" }
+      - { word: "तालीम", ref: "hi-2818" }
+      - { word: "मिलती", base: "मिलना", reading: "miltī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "स्कूल", reading: "skūl", kind: "word" }
+      - { id: "w2", word: "कॉलेज", reading: "kôlēj", kind: "word" }
+  - id: "hi-5293"
+    target: "हुकूमत ने नया कानून बनाया।"
+    reading: "hukūmat nē nayā kānūn banāyā."
+    ipa: "ɦʊkuːmət̪ neː nəjaː kaːnuːn bənaːjaː"
+    pos: "phrase"
+    bases:
+      - { word: "हुकूमत", ref: "hi-2827" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "नया", ref: "hi-0896" }
+      - { word: "कानून", base: "कानून", reading: "kānūn" }
+      - { word: "बनाया", base: "बनाना", reading: "banāyā" }
+    confusables:
+      - { id: "w1", word: "मुल्क", reading: "mulk", kind: "word" }
+      - { id: "w2", word: "सरकारी", reading: "sarkārī", kind: "word" }
+  - id: "hi-5294"
+    target: "मेरे मुल्क की ज़बान हिंदी है।"
+    reading: "mērē mulk kī zabān hindī hai."
+    ipa: "meːreː mʊlk kiː zəbaːn ɦɪnd̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरे", base: "मैं", reading: "mērē" }
+      - { word: "मुल्क", ref: "hi-2828" }
+      - { word: "की", ref: "hi-0061" }
+      - { word: "ज़बान", ref: "hi-2829" }
+      - { word: "हिंदी", base: "हिंदी", reading: "hindī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "भाषा", reading: "bhāśā", kind: "word" }
+      - { id: "w2", word: "शब्द", reading: "śabd", kind: "word" }
+  - id: "hi-5295"
+    target: "उसका मसला मुझे मालूम नहीं।"
+    reading: "uskā maslā mujhē mālūm nahīm̐."
+    ipa: "ʊskaː məslaː mʊdʒʱeː maːluːm nəɦĩː"
+    pos: "phrase"
+    bases:
+      - { word: "उसका", base: "वह", reading: "uskā" }
+      - { word: "मसला", ref: "hi-2822" }
+      - { word: "मुझे", base: "मैं", reading: "mujhē" }
+      - { word: "मालूम", ref: "hi-2817" }
+      - { word: "नहीं", ref: "hi-0156" }
+    confusables:
+      - { id: "w1", word: "बात", reading: "bāt", kind: "word" }
+      - { id: "w2", word: "हादसा", reading: "hādsā", kind: "word" }
+  - id: "hi-5296"
+    target: "इस मदरसे में बच्चे पढ़ते हैं।"
+    reading: "is madrasē mēm̐ baccē paṛhtē haim̐."
+    ipa: "ɪs məd̪rəseː mẽː bətʃtʃeː pəɽʱt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "इस", base: "यह", reading: "is" }
+      - { word: "मदरसे", base: "मदरसा", reading: "madrasē" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "बच्चे", ref: "hi-0383" }
+      - { word: "पढ़ते", base: "पढ़ना", reading: "paṛhtē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "मुअल्लिम", reading: "muallim", kind: "word" }
+      - { id: "w2", word: "आलिम", reading: "ālim", kind: "word" }
+  - id: "hi-5297"
+    target: "आलिम साहब ने एक ख़ास किताब सुनाई।"
+    reading: "ālim sāhab nē ēk k͟hās kitāb sunāī."
+    ipa: "aːlɪm saːɦəb neː eːk xaːs kɪt̪aːb sʊnaːiː"
+    pos: "phrase"
+    bases:
+      - { word: "आलिम", ref: "hi-2816" }
+      - { word: "साहब", base: "साहब", reading: "sāhab" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "एक", ref: "hi-0198" }
+      - { word: "ख़ास", ref: "hi-2826" }
+      - { word: "किताब", base: "किताब", reading: "kitāb" }
+      - { word: "सुनाई", base: "सुनाना", reading: "sunāī" }
+    confusables:
+      - { id: "w1", word: "लेख", reading: "lēkh", kind: "word" }
+      - { id: "w2", word: "सूचना", reading: "sūcnā", kind: "word" }
+  - id: "hi-5298"
+    target: "वक़्त पर खबर आई।"
+    reading: "vaqt par khabar āī."
+    ipa: "ʋəqt̪ pər kʰəbər aːiː"
+    pos: "phrase"
+    bases:
+      - { word: "वक़्त", ref: "hi-2825" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "खबर", ref: "hi-2147" }
+      - { word: "आई", base: "आना", reading: "āī" }
+    confusables:
+      - { id: "w1", word: "कागज़ात", reading: "kāgzāt", kind: "word" }
+      - { id: "w2", word: "हादसा", reading: "hādsā", kind: "word" }
+  - id: "hi-5299"
+    target: "कागज़ात दफ़्तर में हैं।"
+    reading: "kāgzāt daftar mēm̐ haim̐."
+    ipa: "kaːɡzaːt̪ d̪əft̪ər mẽː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "कागज़ात", ref: "hi-2821" }
+      - { word: "दफ़्तर", base: "दफ़्तर", reading: "daftar" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "दस्तावेज़", reading: "dastāvēz", kind: "word" }
+      - { id: "w2", word: "फ़ॉर्म", reading: "fôrm", kind: "word" }
+  - id: "hi-5300"
+    target: "मदरसा यहाँ से नज़दीक है।"
+    reading: "madrasā yahām̐ sē nazdīk hai."
+    ipa: "məd̪rəsaː jəɦãː seː nəzd̪iːk ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मदरसा", ref: "hi-2823" }
+      - { word: "यहाँ", ref: "hi-0295" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "नज़दीक", base: "नज़दीक", reading: "nazdīk" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "दूर", reading: "dūr", kind: "word" }
+      - { id: "w2", word: "शहर", reading: "śahar", kind: "word" }
+  - id: "hi-5301"
+    target: "यह शख़्स बहुत भला है।"
+    reading: "yah śak͟hs bahut bhalā hai."
+    ipa: "jəɦ ʃəxs bəɦʊt̪ bʱəlaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "शख़्स", ref: "hi-2824" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "भला", base: "भला", reading: "bhalā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "आदमी", reading: "ādmī", kind: "word" }
+      - { id: "w2", word: "लोग", reading: "lōg", kind: "word" }
