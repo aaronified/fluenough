@@ -1050,6 +1050,10 @@ def _es_word(word: str) -> str:
                 i += 1
             elif nxt in ("e", "i", "é", "í"):
                 out.append(("θ", False))
+            elif nxt == "q":
+                # `cq` (Bécquer, Jacquelin) is one /k/, said by the q:
+                # the c adds no sound of its own.
+                pass
             else:
                 out.append(("k", False))
         elif c == "g":
