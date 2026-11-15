@@ -1,0 +1,74 @@
+name: Placement audit (live decks)
+
+# Prints the admission verdict entries for the LIVE decks (#1270), to paste
+# into lib/core/placement/admission.dart with source: kLiveDecks. Manual only;
+# read-only token. Run it whenever the live decks of es or hi change: CI does
+# not detect a stale live entry. Setup steps are copied from the "App: tests"
+# job of ci.yml (see tests-only.yml).
+on:
+  workflow_dispatch:
+    inputs:
+      languages:
+        description: "Comma-separated language codes"
+        required: false
+        default: "es,hi"
+
+permissions:
+  contents: read
+
+env:
+  FLUTTER_VERSION: "3.47.6"
+
+jobs:
+  audit:
+    name: "Audit live decks"
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Validate the language list
+        env:
+          LANGS: ${{ inputs.languages }}
+        run: |
+          set -eu
+          printf '%s\n' "$LANGS" | grep -Eq '^[a-z]{2,3}(,[a-z]{2,3})*$' || {
+            echo "::error::Not a language list: $LANGS"; exit 1; }
+
+      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7
+        with:
+          ref: decks-live
+          path: live
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      - run: flutter create . --org app --project-name fluenough --platforms=android
+      - run: rm -f test/widget_test.dart
+      - run: flutter pub get
+      - run: dart run build_runner build
+
+      # Main's decks/ is frozen; the live decks take its place for the audit.
+      - name: Use the live decks
+        run: |
+          set -eu
+          rm -rf decks
+          cp -r live/decks decks
+
+      - name: Audit
+        env:
+          LANGS: ${{ inputs.languages }}
+        run: |
+          set -eu
+          dart run tool/placement_audit_entries.dart --source live --languages "$LANGS" | tee entries.txt
+          {
+            echo "### Live admission entries (decks-live $(git -C live rev-parse --short HEAD))"
+            echo
+            echo "Add each line to its language's list in lib/core/placement/admission.dart."
+            echo
+            echo '```dart'
+            cat entries.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

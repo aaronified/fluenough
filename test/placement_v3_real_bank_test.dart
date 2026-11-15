@@ -80,9 +80,18 @@ void main() {
         // The app takes this verdict instead of auditing (the audit is the
         // slow part of making a bank): a change of the decks or of a
         // generator that changes the audit's answer must change the entry.
-        final profile = kAdmissionProfiles[language]!;
+        // One verdict per deck source: this checkout's decks (frozen on main,
+        // live on decks-live) are matched by their key, and the entry of the
+        // other source is not this test's business.
         final real = ItemBank.auditRuntime(data);
-        expect(profile.deckKey, real.deckKey, reason: 'regenerate $language');
+        final profile = kAdmissionProfiles[language]!.firstWhere(
+          (p) => p.deckKey == real.deckKey,
+          orElse: () => fail(
+            'no stored verdict for the $language decks of this checkout '
+            '(key ${real.deckKey}): regenerate with tool/placement_audit.dart '
+            'and add the entry (--source live on decks-live)',
+          ),
+        );
         expect(profile.excluded, real.excluded, reason: 'regenerate $language');
         expect(profile.decoys, real.decoys, reason: 'regenerate $language');
         expect(AdmissionProfile.of(data), same(profile));
@@ -175,8 +184,7 @@ void main() {
         );
         expect(
           starters.single.every(
-            (i) =>
-                !kAdmissionProfiles[language]!.excluded.contains(i.auditClass),
+            (i) => !AdmissionProfile.of(data)!.excluded.contains(i.auditClass),
           ),
           isTrue,
         );

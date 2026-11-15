@@ -3,7 +3,7 @@
 // best solver's expected accuracy against the admission bound.
 //
 //   dart run tool/placement_audit.dart [--root decks] [--native en] \
-//     [--languages es,hi] [--out test/fixtures/placement/adversary/audit_profile.json]
+//     [--languages es,hi] [--source frozen|live] [--out test/fixtures/placement/adversary/audit_profile.json]
 //
 // The replay harness reads the file as the leak rates of the "fixed" bank.
 // Not the test suite; pure Dart, run with the Flutter-bundled dart.
@@ -22,6 +22,9 @@ Future<void> main(List<String> args) async {
   final native = options['native'] ?? 'en';
   final out =
       options['out'] ?? 'test/fixtures/placement/adversary/audit_profile.json';
+  // Which decks `--root` holds: the printed entry says (`kFrozenDecks` for
+  // main's `decks/`, `kLiveDecks` for a checkout of `decks-live`).
+  final source = options['source'] ?? 'frozen';
   final languages = (options['languages'] ?? 'es,hi').split(',');
   final result = <String, Object?>{};
   for (final language in languages) {
@@ -66,9 +69,10 @@ Future<void> main(List<String> args) async {
       '$language: ${bank.items.length} items, excluded ${bank.excluded}',
     );
     // The verdict on what the app makes, as `admission.dart` stores it.
-    final shipped = ItemBank.auditRuntime(course.data);
+    final shipped = ItemBank.auditRuntime(course.data, source: source);
     stdout.writeln(
-      "  '$language': AdmissionProfile(deckKey: '${shipped.deckKey}', "
+      "  '$language': AdmissionProfile(source: '${shipped.source}', "
+      "deckKey: '${shipped.deckKey}', "
       'excluded: <String>[${shipped.excluded.map((c) => "'$c'").join(', ')}], '
       'decoys: ${shipped.decoys}),',
     );

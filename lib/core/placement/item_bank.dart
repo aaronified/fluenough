@@ -116,9 +116,11 @@ class ItemBank {
   static AdmissionProfile auditRuntime(
     PlacementLanguageData data, {
     int seed = 1,
+    String source = kFrozenDecks,
   }) {
     final bank = build(data, seed: seed, runtime: true);
     return AdmissionProfile(
+      source: source,
       deckKey: admissionKey(data),
       excluded: bank.excluded,
       decoys: bank.decoys,
