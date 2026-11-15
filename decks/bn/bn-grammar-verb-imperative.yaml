@@ -1,0 +1,1270 @@
+schema: 1
+id: "bn-grammar-verb-imperative"
+part: "core"
+kind: "rules"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["bn-0251", "bn-0291", "bn-0306", "bn-0322", "bn-0696", "bn-0697", "bn-2330", "bn-0736"]
+  slots: ["tui", "tumi", "apni"]
+  rows:
+    - word: "bn-0872"
+      forms: { "tui": "আয়", "tumi": "এসো", "apni": "আসুন" }
+      readings: { "tui": "āy", "tumi": "eśo", "apni": "āśun" }
+    - word: "bn-0873"
+      forms: { "tui": "যা", "tumi": "যাও", "apni": "যান" }
+      readings: { "tui": "jā", "tumi": "jāo", "apni": "jān" }
+    - word: "bn-0874"
+      forms: { "tui": "হ", "tumi": "হও", "apni": "হোন" }
+      readings: { "tui": "hô", "tumi": "ho", "apni": "hon" }
+    - word: "bn-0875"
+      forms: { "tui": "থাক", "tumi": "থাকো", "apni": "থাকুন" }
+      readings: { "tui": "thāk", "tumi": "thāko", "apni": "thākun" }
+    - word: "bn-0876"
+      forms: { "tui": "খা", "tumi": "খাও", "apni": "খান" }
+      readings: { "tui": "khā", "tumi": "khāo", "apni": "khān" }
+    - word: "bn-0877"
+      forms: { "tui": "দেখ", "tumi": "দেখো", "apni": "দেখুন" }
+      readings: { "tui": "dekh", "tumi": "dekho", "apni": "dekhun" }
+    - word: "bn-0878"
+      forms: { "tui": "শোন", "tumi": "শোনো", "apni": "শুনুন" }
+      readings: { "tui": "śon", "tumi": "śono", "apni": "śunun" }
+    - word: "bn-0879"
+      forms: { "tui": "বল", "tumi": "বলো", "apni": "বলুন" }
+      readings: { "tui": "bôl", "tumi": "bôlo", "apni": "bolun" }
+    - word: "bn-0880"
+      forms: { "tui": "লেখ", "tumi": "লেখো", "apni": "লিখুন" }
+      readings: { "tui": "lekh", "tumi": "lekho", "apni": "likhun" }
+    - word: "bn-0881"
+      forms: { "tui": "জান", "tumi": "জানো", "apni": "জানুন" }
+      readings: { "tui": "jān", "tumi": "jāno", "apni": "jānun" }
+    - word: "bn-0882"
+      forms: { "tui": "বোঝ", "tumi": "বোঝো", "apni": "বুঝুন" }
+      readings: { "tui": "bojh", "tumi": "bojho", "apni": "bujhun" }
+    - word: "bn-0883"
+      forms: { "tui": "শেখ", "tumi": "শেখো", "apni": "শিখুন" }
+      readings: { "tui": "śekh", "tumi": "śekho", "apni": "śikhun" }
+    - word: "bn-0884"
+      forms: { "tui": "বস", "tumi": "বসো", "apni": "বসুন" }
+      readings: { "tui": "bôś", "tumi": "bôśo", "apni": "bośun" }
+    - word: "bn-0885"
+      forms: { "tui": "ওঠ", "tumi": "ওঠো", "apni": "উঠুন" }
+      readings: { "tui": "oṭh", "tumi": "oṭho", "apni": "uṭhun" }
+    - word: "bn-0886"
+      forms: { "tui": "দাঁড়া", "tumi": "দাঁড়াও", "apni": "দাঁড়ান" }
+      readings: { "tui": "dām̐ṛā", "tumi": "dām̐ṛāo", "apni": "dām̐ṛān" }
+    - word: "bn-0887"
+      forms: { "tui": "ঘুমো", "tumi": "ঘুমোও", "apni": "ঘুমোন" }
+      readings: { "tui": "ghumo", "tumi": "ghumoo", "apni": "ghumon" }
+    - word: "bn-0888"
+      forms: { "tui": "দে", "tumi": "দাও", "apni": "দিন" }
+      readings: { "tui": "de", "tumi": "dāo", "apni": "din" }
+    - word: "bn-0889"
+      forms: { "tui": "নে", "tumi": "নাও", "apni": "নিন" }
+      readings: { "tui": "ne", "tumi": "nāo", "apni": "nin" }
+    - word: "bn-0890"
+      forms: { "tui": "কেন", "tumi": "কেনো", "apni": "কিনুন" }
+      readings: { "tui": "ken", "tumi": "keno", "apni": "kinun" }
+    - word: "bn-0891"
+      forms: { "tui": "পা", "tumi": "পাও", "apni": "পান" }
+      readings: { "tui": "pā", "tumi": "pāo", "apni": "pān" }
+    - word: "bn-0892"
+      forms: { "tui": "চল", "tumi": "চলো", "apni": "চলুন" }
+      readings: { "tui": "côl", "tumi": "côlo", "apni": "colun" }
+    - word: "bn-0893"
+      forms: { "tui": "আন", "tumi": "আনো", "apni": "আনুন" }
+      readings: { "tui": "ān", "tumi": "āno", "apni": "ānun" }
+    - word: "bn-0894"
+      forms: { "tui": "রাখ", "tumi": "রাখো", "apni": "রাখুন" }
+      readings: { "tui": "rākh", "tumi": "rākho", "apni": "rākhun" }
+    - word: "bn-0895"
+      forms: { "tui": "খেল", "tumi": "খেলো", "apni": "খেলুন" }
+      readings: { "tui": "khel", "tumi": "khelo", "apni": "khelun" }
+    - word: "bn-0896"
+      forms: { "tui": "হাঁট", "tumi": "হাঁটো", "apni": "হাঁটুন" }
+      readings: { "tui": "hām̐ṭ", "tumi": "hām̐ṭo", "apni": "hām̐ṭun" }
+    - word: "bn-0897"
+      forms: { "tui": "খোল", "tumi": "খোলো", "apni": "খুলুন" }
+      readings: { "tui": "khol", "tumi": "kholo", "apni": "khulun" }
+    - word: "bn-0898"
+      forms: { "tui": "ডাক", "tumi": "ডাকো", "apni": "ডাকুন" }
+      readings: { "tui": "ḍāk", "tumi": "ḍāko", "apni": "ḍākun" }
+    - word: "bn-0899"
+      forms: { "tui": "হাস", "tumi": "হাসো", "apni": "হাসুন" }
+      readings: { "tui": "hāś", "tumi": "hāśo", "apni": "hāśun" }
+    - word: "bn-0677"
+      forms: { "tui": "কাজ কর", "tumi": "কাজ করো", "apni": "কাজ করুন" }
+      readings: { "tui": "kāj kôr", "tumi": "kāj kôro", "apni": "kāj korun" }
+    - word: "bn-0678"
+      forms: { "tui": "বাজার কর", "tumi": "বাজার করো", "apni": "বাজার করুন" }
+      readings: { "tui": "bājār kôr", "tumi": "bājār kôro", "apni": "bājār korun" }
+    - word: "bn-0679"
+      forms: { "tui": "ফোন কর", "tumi": "ফোন করো", "apni": "ফোন করুন" }
+      readings: { "tui": "phon kôr", "tumi": "phon kôro", "apni": "phon korun" }
+    - word: "bn-0680"
+      forms: { "tui": "গল্প কর", "tumi": "গল্প করো", "apni": "গল্প করুন" }
+      readings: { "tui": "gôlpo kôr", "tumi": "gôlpo kôro", "apni": "gôlpo korun" }
+    - word: "bn-0681"
+      forms: { "tui": "বিশ্রাম কর", "tumi": "বিশ্রাম করো", "apni": "বিশ্রাম করুন" }
+      readings: { "tui": "biśrām kôr", "tumi": "biśrām kôro", "apni": "biśrām korun" }
+    - word: "bn-0682"
+      forms: { "tui": "ব্যায়াম কর", "tumi": "ব্যায়াম করো", "apni": "ব্যায়াম করুন" }
+      readings: { "tui": "bêyām kôr", "tumi": "bêyām kôro", "apni": "bêyām korun" }
+    - word: "bn-0683"
+      forms: { "tui": "পরিষ্কার কর", "tumi": "পরিষ্কার করো", "apni": "পরিষ্কার করুন" }
+      readings: { "tui": "poriśkār kôr", "tumi": "poriśkār kôro", "apni": "poriśkār korun" }
+    - word: "bn-0684"
+      forms: { "tui": "বিয়ে কর", "tumi": "বিয়ে করো", "apni": "বিয়ে করুন" }
+      readings: { "tui": "biye kôr", "tumi": "biye kôro", "apni": "biye korun" }
+    - word: "bn-0685"
+      forms: { "tui": "জিজ্ঞেস কর", "tumi": "জিজ্ঞেস করো", "apni": "জিজ্ঞেস করুন" }
+      readings: { "tui": "jiggeś kôr", "tumi": "jiggeś kôro", "apni": "jiggeś korun" }
+    - word: "bn-0686"
+      forms: { "tui": "শুরু কর", "tumi": "শুরু করো", "apni": "শুরু করুন" }
+      readings: { "tui": "śuru kôr", "tumi": "śuru kôro", "apni": "śuru korun" }
+    - word: "bn-0687"
+      forms: { "tui": "শেষ কর", "tumi": "শেষ করো", "apni": "শেষ করুন" }
+      readings: { "tui": "śeś kôr", "tumi": "śeś kôro", "apni": "śeś korun" }
+    - word: "bn-0688"
+      forms: { "tui": "ভুল কর", "tumi": "ভুল করো", "apni": "ভুল করুন" }
+      readings: { "tui": "bhul kôr", "tumi": "bhul kôro", "apni": "bhul korun" }
+    - word: "bn-0689"
+      forms: { "tui": "ঠিক কর", "tumi": "ঠিক করো", "apni": "ঠিক করুন" }
+      readings: { "tui": "ṭhik kôr", "tumi": "ṭhik kôro", "apni": "ṭhik korun" }
+    - word: "bn-0690"
+      forms: { "tui": "সাহায্য কর", "tumi": "সাহায্য করো", "apni": "সাহায্য করুন" }
+      readings: { "tui": "śāhājjo kôr", "tumi": "śāhājjo kôro", "apni": "śāhājjo korun" }
+    - word: "bn-0691"
+      forms: { "tui": "চেষ্টা কর", "tumi": "চেষ্টা করো", "apni": "চেষ্টা করুন" }
+      readings: { "tui": "ceśṭā kôr", "tumi": "ceśṭā kôro", "apni": "ceśṭā korun" }
+    - word: "bn-0692"
+      forms: { "tui": "অপেক্ষা কর", "tumi": "অপেক্ষা করো", "apni": "অপেক্ষা করুন" }
+      readings: { "tui": "ôpekkhā kôr", "tumi": "ôpekkhā kôro", "apni": "ôpekkhā korun" }
+    - word: "bn-0693"
+      forms: { "tui": "পছন্দ কর", "tumi": "পছন্দ করো", "apni": "পছন্দ করুন" }
+      readings: { "tui": "pôchondo kôr", "tumi": "pôchondo kôro", "apni": "pôchondo korun" }
+    - word: "bn-0694"
+      forms: { "tui": "গান কর", "tumi": "গান করো", "apni": "গান করুন" }
+      readings: { "tui": "gān kôr", "tumi": "gān kôro", "apni": "gān korun" }
+    - word: "bn-0695"
+      forms: { "tui": "রাগ কর", "tumi": "রাগ করো", "apni": "রাগ করুন" }
+      readings: { "tui": "rāg kôr", "tumi": "rāg kôro", "apni": "rāg korun" }
+    - word: "bn-0741"
+      forms: { "tui": "চা", "tumi": "চাও", "apni": "চান" }
+      readings: { "tui": "cā", "tumi": "cāo", "apni": "cān" }
+    - word: "bn-1099"
+      forms: { "tui": "রাঁধ", "tumi": "রাঁধো", "apni": "রাঁধুন" }
+      readings: { "tui": "rām̐dh", "tumi": "rām̐dho", "apni": "rām̐dhun" }
+    - word: "bn-1100"
+      forms: { "tui": "ধো", "tumi": "ধোও", "apni": "ধুন" }
+      readings: { "tui": "dho", "tumi": "dhoo", "apni": "dhun" }
+    - word: "bn-1101"
+      forms: { "tui": "কাট", "tumi": "কাটো", "apni": "কাটুন" }
+      readings: { "tui": "kāṭ", "tumi": "kāṭo", "apni": "kāṭun" }
+    - word: "bn-1102"
+      forms: { "tui": "ভাঙ", "tumi": "ভাঙো", "apni": "ভাঙুন" }
+      readings: { "tui": "bhāṅ", "tumi": "bhāṅo", "apni": "bhāṅun" }
+    - word: "bn-1103"
+      forms: { "tui": "ফেল", "tumi": "ফেলো", "apni": "ফেলুন" }
+      readings: { "tui": "phel", "tumi": "phelo", "apni": "phelun" }
+    - word: "bn-1104"
+      forms: { "tui": "তোল", "tumi": "তোলো", "apni": "তুলুন" }
+      readings: { "tui": "tol", "tumi": "tolo", "apni": "tulun" }
+    - word: "bn-1105"
+      forms: { "tui": "খোঁজ", "tumi": "খোঁজো", "apni": "খুঁজুন" }
+      readings: { "tui": "khom̐j", "tumi": "khom̐jo", "apni": "khum̐jun" }
+    - word: "bn-1106"
+      forms: { "tui": "হারা", "tumi": "হারাও", "apni": "হারান" }
+      readings: { "tui": "hārā", "tumi": "hārāo", "apni": "hārān" }
+    - word: "bn-1107"
+      forms: { "tui": "ধর", "tumi": "ধরো", "apni": "ধরুন" }
+      readings: { "tui": "dhôr", "tumi": "dhôro", "apni": "dhorun" }
+    - word: "bn-1108"
+      forms: { "tui": "পাঠা", "tumi": "পাঠাও", "apni": "পাঠান" }
+      readings: { "tui": "pāṭhā", "tumi": "pāṭhāo", "apni": "pāṭhān" }
+    - word: "bn-1109"
+      forms: { "tui": "পৌঁছা", "tumi": "পৌঁছাও", "apni": "পৌঁছান" }
+      readings: { "tui": "poum̐chā", "tumi": "poum̐chāo", "apni": "poum̐chān" }
+    - word: "bn-1110"
+      forms: { "tui": "ফের", "tumi": "ফেরো", "apni": "ফিরুন" }
+      readings: { "tui": "pher", "tumi": "phero", "apni": "phirun" }
+    - word: "bn-1111"
+      forms: { "tui": "থাম", "tumi": "থামো", "apni": "থামুন" }
+      readings: { "tui": "thām", "tumi": "thāmo", "apni": "thāmun" }
+    - word: "bn-1112"
+      forms: { "tui": "ঢাল", "tumi": "ঢালো", "apni": "ঢালুন" }
+      readings: { "tui": "ḍhāl", "tumi": "ḍhālo", "apni": "ḍhālun" }
+    - word: "bn-1113"
+      forms: { "tui": "গোন", "tumi": "গোনো", "apni": "গুনুন" }
+      readings: { "tui": "gon", "tumi": "gono", "apni": "gunun" }
+    - word: "bn-1114"
+      forms: { "tui": "শেখা", "tumi": "শেখাও", "apni": "শেখান" }
+      readings: { "tui": "śekhā", "tumi": "śekhāo", "apni": "śekhān" }
+    - word: "bn-1115"
+      forms: { "tui": "দৌড়া", "tumi": "দৌড়াও", "apni": "দৌড়ান" }
+      readings: { "tui": "douṛā", "tumi": "douṛāo", "apni": "douṛān" }
+    - word: "bn-1116"
+      forms: { "tui": "ওড়", "tumi": "ওড়ো", "apni": "উড়ুন" }
+      readings: { "tui": "oṛ", "tumi": "oṛo", "apni": "uṛun" }
+    - word: "bn-1117"
+      forms: { "tui": "লাফা", "tumi": "লাফাও", "apni": "লাফান" }
+      readings: { "tui": "lāphā", "tumi": "lāphāo", "apni": "lāphān" }
+    - word: "bn-1118"
+      forms: { "tui": "ভাব", "tumi": "ভাবো", "apni": "ভাবুন" }
+      readings: { "tui": "bhāb", "tumi": "bhābo", "apni": "bhābun" }
+    - word: "bn-1119"
+      forms: { "tui": "কাঁদ", "tumi": "কাঁদো", "apni": "কাঁদুন" }
+      readings: { "tui": "kām̐d", "tumi": "kām̐do", "apni": "kām̐dun" }
+    - word: "bn-1120"
+      forms: { "tui": "শো", "tumi": "শোও", "apni": null }
+      readings: { "tui": "śo", "tumi": "śoo", "apni": null }
+    - word: "bn-1121"
+      forms: { "tui": "মোছ", "tumi": "মোছো", "apni": "মুছুন" }
+      readings: { "tui": "moch", "tumi": "mocho", "apni": "muchun" }
+    - word: "bn-1122"
+      forms: { "tui": "ঘোর", "tumi": "ঘোরো", "apni": "ঘুরুন" }
+      readings: { "tui": "ghor", "tumi": "ghoro", "apni": "ghurun" }
+    - word: "bn-0119"
+      forms: { "tui": "পড়", "tumi": "পড়ো", "apni": "পড়ুন" }
+      readings: { "tui": "pôṛ", "tumi": "pôṛo", "apni": "poṛun" }
+    - word: "bn-1689"
+      forms: { "tui": "বেচ", "tumi": "বেচো", "apni": "বেচুন" }
+      readings: { "tui": "bec", "tumi": "beco", "apni": "becun" }
+    - word: "bn-1701"
+      forms: { "tui": "বদলা", "tumi": "বদলাও", "apni": "বদলান" }
+      readings: { "tui": "bôdlā", "tumi": "bôdlāo", "apni": "bôdlān" }
+    - word: "bn-1715"
+      forms: { "tui": "কমা", "tumi": "কমাও", "apni": "কমান" }
+      readings: { "tui": "kômā", "tumi": "kômāo", "apni": "kômān" }
+    - word: "bn-2097"
+      forms: { "tui": "ফোট", "tumi": "ফোটো", "apni": "ফুটুন" }
+      readings: { "tui": "phoṭ", "tumi": "phoṭo", "apni": "phuṭun" }
+    - word: "bn-2098"
+      forms: { "tui": "বাট", "tumi": "বাটো", "apni": "বাটুন" }
+      readings: { "tui": "bāṭ", "tumi": "bāṭo", "apni": "bāṭun" }
+    - word: "bn-2099"
+      forms: { "tui": "কোট", "tumi": "কোটো", "apni": "কুটুন" }
+      readings: { "tui": "koṭ", "tumi": "koṭo", "apni": "kuṭun" }
+    - word: "bn-2111"
+      forms: { "tui": "মাখ", "tumi": "মাখো", "apni": "মাখুন" }
+      readings: { "tui": "mākh", "tumi": "mākho", "apni": "mākhun" }
+    - word: "bn-2112"
+      forms: { "tui": "নাড়", "tumi": "নাড়ো", "apni": "নাড়ুন" }
+      readings: { "tui": "nāṛ", "tumi": "nāṛo", "apni": "nāṛun" }
+    - word: "bn-2113"
+      forms: { "tui": "কষ", "tumi": "কষো", "apni": "কষুন" }
+      readings: { "tui": "kôś", "tumi": "kôśo", "apni": "kośun" }
+    - word: "bn-2114"
+      forms: { "tui": "মেশা", "tumi": "মেশাও", "apni": "মেশান" }
+      readings: { "tui": "meśā", "tumi": "meśāo", "apni": "meśān" }
+    - word: "bn-2115"
+      forms: { "tui": "ছাঁক", "tumi": "ছাঁকো", "apni": "ছাঁকুন" }
+      readings: { "tui": "chām̐k", "tumi": "chām̐ko", "apni": "chām̐kun" }
+    - word: "bn-2123"
+      forms: { "tui": "কুচা", "tumi": "কুচাও", "apni": "কুচান" }
+      readings: { "tui": "kucā", "tumi": "kucāo", "apni": "kucān" }
+    - word: "bn-2128"
+      forms: { "tui": "সেঁক", "tumi": "সেঁকো", "apni": "সেঁকুন" }
+      readings: { "tui": "sem̐k", "tumi": "sem̐ko", "apni": "sem̐kun" }
+    - word: "bn-2130"
+      forms: { "tui": "ভাপা", "tumi": "ভাপাও", "apni": "ভাপান" }
+      readings: { "tui": "bhāpā", "tumi": "bhāpāo", "apni": "bhāpān" }
+    - word: "bn-2131"
+      forms: { "tui": "ভেজা", "tumi": "ভেজাও", "apni": "ভেজান" }
+      readings: { "tui": "bhejā", "tumi": "bhejāo", "apni": "bhejān" }
+    - word: "bn-2159"
+      forms: { "tui": "পড়া", "tumi": "পড়াও", "apni": "পড়ান" }
+      readings: { "tui": "pôṛā", "tumi": "pôṛāo", "apni": "pôṛān" }
+    - word: "bn-2217"
+      forms: { "tui": "আঁক", "tumi": "আঁকো", "apni": "আঁকুন" }
+      readings: { "tui": "ām̐k", "tumi": "ām̐ko", "apni": "ām̐kun" }
+    - word: "bn-2221"
+      forms: { "tui": "বাজা", "tumi": "বাজাও", "apni": "বাজান" }
+      readings: { "tui": "bājā", "tumi": "bājāo", "apni": "bājān" }
+    - word: "bn-2222"
+      forms: { "tui": "গা", "tumi": "গাও", "apni": "গান" }
+      readings: { "tui": "gā", "tumi": "gāo", "apni": "gān" }
+    - word: "bn-2229"
+      forms: { "tui": "জেত", "tumi": "জেতো", "apni": "জিতুন" }
+      readings: { "tui": "jet", "tumi": "jeto", "apni": "jitun" }
+    - word: "bn-2230"
+      forms: { "tui": "হার", "tumi": "হারো", "apni": "হারুন" }
+      readings: { "tui": "hār", "tumi": "hāro", "apni": "hārun" }
+    - word: "bn-2245"
+      forms: { "tui": "নাচ", "tumi": "নাচো", "apni": "নাচুন" }
+      readings: { "tui": "nāc", "tumi": "nāco", "apni": "nācun" }
+    - word: "bn-2248"
+      forms: { "tui": "ভালোবাস", "tumi": "ভালোবাসো", "apni": "ভালোবাসুন" }
+      readings: { "tui": "bhālobās", "tumi": "bhālobāso", "apni": "bhālobāsun" }
+    - word: "bn-2264"
+      forms: { "tui": "ঝাড়ু দে", "tumi": "ঝাড়ু দাও", "apni": "ঝাড়ু দিন" }
+      readings: { "tui": "jhāṛu de", "tumi": "jhāṛu dāo", "apni": "jhāṛu din" }
+    - word: "bn-2266"
+      forms: { "tui": "ধুলো ঝাড়", "tumi": "ধুলো ঝাড়ো", "apni": "ধুলো ঝাড়ুন" }
+      readings: { "tui": "dhulo jhāṛ", "tumi": "dhulo jhāṛo", "apni": "dhulo jhāṛun" }
+    - word: "bn-2271"
+      forms: { "tui": "বাসন মাজ", "tumi": "বাসন মাজো", "apni": "বাসন মাজুন" }
+      readings: { "tui": "bāśôn māj", "tumi": "bāśôn mājo", "apni": "bāśôn mājun" }
+    - word: "bn-2272"
+      forms: { "tui": "কাপড় কাচ", "tumi": "কাপড় কাচো", "apni": "কাপড় কাচুন" }
+      readings: { "tui": "kāpoṛ kāc", "tumi": "kāpoṛ kāco", "apni": "kāpoṛ kācun" }
+    - word: "bn-2273"
+      forms: { "tui": "ইস্ত্রি কর", "tumi": "ইস্ত্রি করো", "apni": "ইস্ত্রি করুন" }
+      readings: { "tui": "istri kôr", "tumi": "istri kôro", "apni": "istri korun" }
+    - word: "bn-2274"
+      forms: { "tui": "ভাঁজ কর", "tumi": "ভাঁজ করো", "apni": "ভাঁজ করুন" }
+      readings: { "tui": "bhāñj kôr", "tumi": "bhāñj kôro", "apni": "bhāñj korun" }
+    - word: "bn-2275"
+      forms: { "tui": "শুকা", "tumi": "শুকাও", "apni": "শুকান" }
+      readings: { "tui": "śukā", "tumi": "śukāo", "apni": "śukān" }
+    - word: "bn-2276"
+      forms: { "tui": "ঝোলা", "tumi": "ঝোলাও", "apni": "ঝোলান" }
+      readings: { "tui": "jholā", "tumi": "jholāo", "apni": "jholān" }
+    - word: "bn-2277"
+      forms: { "tui": "গোছা", "tumi": "গোছাও", "apni": "গোছান" }
+      readings: { "tui": "gochā", "tumi": "gochāo", "apni": "gochān" }
+    - word: "bn-2278"
+      forms: { "tui": "সাজা", "tumi": "সাজাও", "apni": "সাজান" }
+      readings: { "tui": "sājā", "tumi": "sājāo", "apni": "sājān" }
+    - word: "bn-2279"
+      forms: { "tui": "বিছানা কর", "tumi": "বিছানা করো", "apni": "বিছানা করুন" }
+      readings: { "tui": "bichānā kôr", "tumi": "bichānā kôro", "apni": "bichānā korun" }
+    - word: "bn-2282"
+      forms: { "tui": "ভাগ কর", "tumi": "ভাগ করো", "apni": "ভাগ করুন" }
+      readings: { "tui": "bhāg kôr", "tumi": "bhāg kôro", "apni": "bhāg korun" }
+    - word: "bn-2286"
+      forms: { "tui": "গাছে জল দে", "tumi": "গাছে জল দাও", "apni": "গাছে জল দিন" }
+      readings: { "tui": "gāche jôl de", "tumi": "gāche jôl dāo", "apni": "gāche jôl din" }
+    - word: "bn-2343"
+      forms: { "tui": "চুল আঁচড়া", "tumi": "চুল আঁচড়াও", "apni": "চুল আঁচড়ান" }
+      readings: { "tui": "cul ām̐coṛā", "tumi": "cul ām̐coṛāo", "apni": "cul ām̐coṛān" }
+    - word: "bn-2344"
+      forms: { "tui": "কাচ", "tumi": "কাচো", "apni": "কাচুন" }
+      readings: { "tui": "kāc", "tumi": "kāco", "apni": "kācun" }
+    - word: "bn-2345"
+      forms: { "tui": "জাগ", "tumi": "জাগো", "apni": "জাগুন" }
+      readings: { "tui": "jāg", "tumi": "jāgo", "apni": "jāgun" }
+    - word: "bn-2346"
+      forms: { "tui": "জ্বালা", "tumi": "জ্বালাও", "apni": "জ্বালান" }
+      readings: { "tui": "jālā", "tumi": "jālāo", "apni": "jālān" }
+    - word: "bn-2347"
+      forms: { "tui": "নেভা", "tumi": "নেভাও", "apni": "নেভান" }
+      readings: { "tui": "nebhā", "tumi": "nebhāo", "apni": "nebhān" }
+    - word: "bn-2348"
+      forms: { "tui": "বন্ধ কর", "tumi": "বন্ধ করো", "apni": "বন্ধ করুন" }
+      readings: { "tui": "bôndho kôr", "tumi": "bôndho kôro", "apni": "bôndho korun" }
+    - word: "bn-2349"
+      forms: { "tui": "গরম কর", "tumi": "গরম করো", "apni": "গরম করুন" }
+      readings: { "tui": "gôrom kôr", "tumi": "gôrom kôro", "apni": "gôrom korun" }
+    - word: "bn-2352"
+      forms: { "tui": "ভোল", "tumi": "ভোলো", "apni": "ভুলুন" }
+      readings: { "tui": "bhol", "tumi": "bholo", "apni": "bhulun" }
+    - word: "bn-2353"
+      forms: { "tui": "বেরো", "tumi": "বেরোও", "apni": "বেরোন" }
+      readings: { "tui": "bero", "tumi": "beroo", "apni": "beron" }
+    - word: "bn-2354"
+      forms: { "tui": "ঢোক", "tumi": "ঢোকো", "apni": "ঢুকুন" }
+      readings: { "tui": "ḍhok", "tumi": "ḍhoko", "apni": "ḍhukun" }
+    - word: "bn-2355"
+      forms: { "tui": "দেখা", "tumi": "দেখাও", "apni": "দেখান" }
+      readings: { "tui": "dekhā", "tumi": "dekhāo", "apni": "dekhān" }
+    - word: "bn-2356"
+      forms: { "tui": "বোঝা", "tumi": "বোঝাও", "apni": "বোঝান" }
+      readings: { "tui": "bojhā", "tumi": "bojhāo", "apni": "bojhān" }
+    - word: "bn-2357"
+      forms: { "tui": "চেন", "tumi": "চেনো", "apni": "চিনুন" }
+      readings: { "tui": "cen", "tumi": "ceno", "apni": "cinun" }
+    - word: "bn-2358"
+      forms: { "tui": "ছোঁ", "tumi": "ছোঁও", "apni": "ছুঁন" }
+      readings: { "tui": "chom̐", "tumi": "chom̐o", "apni": "chum̐n" }
+    - word: "bn-2359"
+      forms: { "tui": "ঠেল", "tumi": "ঠেলো", "apni": "ঠেলুন" }
+      readings: { "tui": "ṭhel", "tumi": "ṭhelo", "apni": "ṭhelun" }
+    - word: "bn-2360"
+      forms: { "tui": "টান", "tumi": "টানো", "apni": "টানুন" }
+      readings: { "tui": "ṭān", "tumi": "ṭāno", "apni": "ṭānun" }
+    - word: "bn-2361"
+      forms: { "tui": "চালা", "tumi": "চালাও", "apni": "চালান" }
+      readings: { "tui": "cālā", "tumi": "cālāo", "apni": "cālān" }
+    - word: "bn-2363"
+      forms: { "tui": "লাগ", "tumi": "লাগো", "apni": "লাগুন" }
+      readings: { "tui": "lāg", "tumi": "lāgo", "apni": "lāgun" }
+    - word: "bn-2364"
+      forms: { "tui": "কাঁপ", "tumi": "কাঁপো", "apni": "কাঁপুন" }
+      readings: { "tui": "kām̐p", "tumi": "kām̐po", "apni": "kām̐pun" }
+    - word: "bn-2365"
+      forms: { "tui": "নাম", "tumi": "নামো", "apni": "নামুন" }
+      readings: { "tui": "nām", "tumi": "nāmo", "apni": "nāmun" }
+    - word: "bn-2366"
+      forms: { "tui": "ঘোরা", "tumi": "ঘোরাও", "apni": "ঘোরান" }
+      readings: { "tui": "ghorā", "tumi": "ghorāo", "apni": "ghorān" }
+    - word: "bn-2367"
+      forms: { "tui": "চালু কর", "tumi": "চালু করো", "apni": "চালু করুন" }
+      readings: { "tui": "cālu kôr", "tumi": "cālu kôro", "apni": "cālu korun" }
+    - word: "bn-2372"
+      forms: { "tui": "কামা", "tumi": "কামাও", "apni": "কামান" }
+      readings: { "tui": "kāmā", "tumi": "kāmāo", "apni": "kāmān" }
+    - word: "bn-2373"
+      forms: { "tui": "ছাঁট", "tumi": "ছাঁটো", "apni": "ছাঁটুন" }
+      readings: { "tui": "chām̐ṭ", "tumi": "chām̐ṭo", "apni": "chām̐ṭun" }
+    - word: "bn-2374"
+      forms: { "tui": "তৈরি কর", "tumi": "তৈরি করো", "apni": "তৈরি করুন" }
+      readings: { "tui": "toiri kôr", "tumi": "toiri kôro", "apni": "toiri korun" }
+    - word: "bn-2375"
+      forms: { "tui": "ব্যবহার কর", "tumi": "ব্যবহার করো", "apni": "ব্যবহার করুন" }
+      readings: { "tui": "bêbôhār kôr", "tumi": "bêbôhār kôro", "apni": "bêbôhār korun" }
+    - word: "bn-2376"
+      forms: { "tui": "সাঁতার কাট", "tumi": "সাঁতার কাটো", "apni": "সাঁতার কাটুন" }
+      readings: { "tui": "śām̐tār kāṭ", "tumi": "śām̐tār kāṭo", "apni": "śām̐tār kāṭun" }
+    - word: "bn-2418"
+      forms: { "tui": "ফোন ধর", "tumi": "ফোন ধরো", "apni": "ফোন ধরুন" }
+      readings: { "tui": "phon dhôr", "tumi": "phon dhôro", "apni": "phon dhorun" }
+    - word: "bn-2419"
+      forms: { "tui": "ফোন রাখ", "tumi": "ফোন রাখো", "apni": "ফোন রাখুন" }
+      readings: { "tui": "phon rākh", "tumi": "phon rākho", "apni": "phon rākhun" }
+    - word: "bn-2420"
+      forms: { "tui": "চার্জ দে", "tumi": "চার্জ দাও", "apni": "চার্জ দিন" }
+      readings: { "tui": "cārj de", "tumi": "cārj dāo", "apni": "cārj din" }
+    - word: "bn-2421"
+      forms: { "tui": "ডাউনলোড কর", "tumi": "ডাউনলোড করো", "apni": "ডাউনলোড করুন" }
+      readings: { "tui": "ḍāunoloḍ kôr", "tumi": "ḍāunoloḍ kôro", "apni": "ḍāunoloḍ korun" }
+    - word: "bn-2422"
+      forms: { "tui": "আপডেট কর", "tumi": "আপডেট করো", "apni": "আপডেট করুন" }
+      readings: { "tui": "āpoḍeṭ kôr", "tumi": "āpoḍeṭ kôro", "apni": "āpoḍeṭ korun" }
+    - word: "bn-2423"
+      forms: { "tui": "বাজ", "tumi": "বাজো", "apni": "বাজুন" }
+      readings: { "tui": "bāj", "tumi": "bājo", "apni": "bājun" }
+    - word: "bn-2424"
+      forms: { "tui": "চালু কর", "tumi": "চালু করো", "apni": "চালু করুন" }
+      readings: { "tui": "cālu kôr", "tumi": "cālu kôro", "apni": "cālu korun" }
+    - word: "bn-2425"
+      forms: { "tui": "বন্ধ কর", "tumi": "বন্ধ করো", "apni": "বন্ধ করুন" }
+      readings: { "tui": "bôndh kôr", "tumi": "bôndh kôro", "apni": "bôndh korun" }
+    - word: "bn-2426"
+      forms: { "tui": "জবাব দে", "tumi": "জবাব দাও", "apni": "জবাব দিন" }
+      readings: { "tui": "jôbāb de", "tumi": "jôbāb dāo", "apni": "jôbāb din" }
+    - word: "bn-2427"
+      forms: { "tui": "অপেক্ষা কর", "tumi": "অপেক্ষা করো", "apni": "অপেক্ষা করুন" }
+      readings: { "tui": "ôpekkhā kôr", "tumi": "ôpekkhā kôro", "apni": "ôpekkhā korun" }
+    - word: "bn-2428"
+      forms: { "tui": "মেসেজ পাঠা", "tumi": "মেসেজ পাঠাও", "apni": "মেসেজ পাঠান" }
+      readings: { "tui": "mesej pāṭhā", "tumi": "mesej pāṭhāo", "apni": "mesej pāṭhān" }
+    - word: "bn-2429"
+      forms: { "tui": "কল কর", "tumi": "কল করো", "apni": "কল করুন" }
+      readings: { "tui": "kôl kôr", "tumi": "kôl kôro", "apni": "kôl korun" }
+    - word: "bn-2430"
+      forms: { "tui": "ছবি পাঠা", "tumi": "ছবি পাঠাও", "apni": "ছবি পাঠান" }
+      readings: { "tui": "chobi pāṭhā", "tumi": "chobi pāṭhāo", "apni": "chobi pāṭhān" }
+    - word: "bn-2458"
+      forms: { "tui": "থামা", "tumi": "থামাও", "apni": "থামান" }
+      readings: { "tui": "thāmā", "tumi": "thāmāo", "apni": "thāmān" }
+    - word: "bn-2459"
+      forms: { "tui": "ফিরে আয়", "tumi": "ফিরে এসো", "apni": "ফিরে আসুন" }
+      readings: { "tui": "phire āy", "tumi": "phire eśo", "apni": "phire āsun" }
+    - word: "bn-2460"
+      forms: { "tui": "টিকিট কাট", "tumi": "টিকিট কাটো", "apni": "টিকিট কাটুন" }
+      readings: { "tui": "ṭikiṭ kāṭ", "tumi": "ṭikiṭ kāṭo", "apni": "ṭikiṭ kāṭun" }
+    - word: "bn-2466"
+      forms: { "tui": "দেরি কর", "tumi": "দেরি করো", "apni": "দেরি করুন" }
+      readings: { "tui": "deri kôr", "tumi": "deri kôro", "apni": "deri korun" }
+    - word: "bn-2467"
+      forms: { "tui": "গাড়িতে ওঠ", "tumi": "গাড়িতে ওঠো", "apni": "গাড়িতে ওঠুন" }
+      readings: { "tui": "gāṛite oṭh", "tumi": "gāṛite oṭho", "apni": "gāṛite oṭhun" }
+    - word: "bn-2468"
+      forms: { "tui": "গাড়ি থেকে নাম", "tumi": "গাড়ি থেকে নামো", "apni": "গাড়ি থেকে নামুন" }
+      readings: { "tui": "gāṛi theke nām", "tumi": "gāṛi theke nāmo", "apni": "gāṛi theke nāmun" }
+    - word: "bn-2469"
+      forms: { "tui": "ট্রেন ধর", "tumi": "ট্রেন ধরো", "apni": "ট্রেন ধরুন" }
+      readings: { "tui": "ṭren dhôr", "tumi": "ṭren dhôro", "apni": "ṭren dhorun" }
+    - word: "bn-2470"
+      forms: { "tui": "গন্তব্যে পৌঁছা", "tumi": "গন্তব্যে পৌঁছাও", "apni": "গন্তব্যে পৌঁছান" }
+      readings: { "tui": "gôntobbe poum̐chā", "tumi": "gôntobbe poum̐chāo", "apni": "gôntobbe poum̐chān" }
+    - word: "bn-2471"
+      forms: { "tui": "হেঁটে যা", "tumi": "হেঁটে যাও", "apni": "হেঁটে যান" }
+      readings: { "tui": "hem̐ṭe jā", "tumi": "hem̐ṭe jāo", "apni": "hem̐ṭe jān" }
+    - word: "bn-2472"
+      forms: { "tui": "রিকশা নে", "tumi": "রিকশা নাও", "apni": "রিকশা নিন" }
+      readings: { "tui": "rikośā ne", "tumi": "rikośā nāo", "apni": "rikośā nin" }
+    - word: "bn-2473"
+      forms: { "tui": "ট্যাক্সি নে", "tumi": "ট্যাক্সি নাও", "apni": "ট্যাক্সি নিন" }
+      readings: { "tui": "ṭêksi ne", "tumi": "ṭêksi nāo", "apni": "ṭêksi nin" }
+    - word: "bn-2474"
+      forms: { "tui": "গাড়ি চালা", "tumi": "গাড়ি চালাও", "apni": "গাড়ি চালান" }
+      readings: { "tui": "gāṛi cālā", "tumi": "gāṛi cālāo", "apni": "gāṛi cālān" }
+    - word: "bn-2478"
+      forms: { "tui": "ভ্রমণ কর", "tumi": "ভ্রমণ করো", "apni": "ভ্রমণ করুন" }
+      readings: { "tui": "bhrômon kôr", "tumi": "bhrômon kôro", "apni": "bhrômon korun" }
+    - word: "bn-2514"
+      forms: { "tui": "চাষ কর", "tumi": "চাষ করো", "apni": "চাষ করুন" }
+      readings: { "tui": "cāś kôr", "tumi": "cāś kôro", "apni": "cāś korun" }
+    - word: "bn-2515"
+      forms: { "tui": "ফুল ফোট", "tumi": "ফুল ফোটো", "apni": "ফুল ফুটুন" }
+      readings: { "tui": "phul phoṭ", "tumi": "phul phoṭo", "apni": "phul phuṭun" }
+    - word: "bn-2524"
+      forms: { "tui": "ঝর", "tumi": "ঝরো", "apni": "ঝরুন" }
+      readings: { "tui": "jhôr", "tumi": "jhôro", "apni": "jhorun" }
+    - word: "bn-2525"
+      forms: { "tui": "গজা", "tumi": "গজাও", "apni": "গজান" }
+      readings: { "tui": "gôjā", "tumi": "gôjāo", "apni": "gôjān" }
+    - word: "bn-2526"
+      forms: { "tui": "বড় হ", "tumi": "বড় হও", "apni": "বড় হোন" }
+      readings: { "tui": "bôṛ hô", "tumi": "bôṛ ho", "apni": "bôṛ hon" }
+    - word: "bn-2600"
+      forms: { "tui": "মেরামত কর", "tumi": "মেরামত করো", "apni": "মেরামত করুন" }
+      readings: { "tui": "merāmot kôr", "tumi": "merāmot kôro", "apni": "merāmot korun" }
+    - word: "bn-2601"
+      forms: { "tui": "রং কর", "tumi": "রং করো", "apni": "রং করুন" }
+      readings: { "tui": "rôṅ kôr", "tumi": "rôṅ kôro", "apni": "rôṅ korun" }
+    - word: "bn-2602"
+      forms: { "tui": "ভাড়া দে", "tumi": "ভাড়া দাও", "apni": "ভাড়া দিন" }
+      readings: { "tui": "bhāṛā de", "tumi": "bhāṛā dāo", "apni": "bhāṛā din" }
+    - word: "bn-2603"
+      forms: { "tui": "ভাড়া নে", "tumi": "ভাড়া নাও", "apni": "ভাড়া নিন" }
+      readings: { "tui": "bhāṛā ne", "tumi": "bhāṛā nāo", "apni": "bhāṛā nin" }
+    - word: "bn-2656"
+      forms: { "tui": "যোগ দে", "tumi": "যোগ দাও", "apni": "যোগ দিন" }
+      readings: { "tui": "jôg de", "tumi": "jôg dāo", "apni": "jôg din" }
+    - word: "bn-2657"
+      forms: { "tui": "ইস্তফা দে", "tumi": "ইস্তফা দাও", "apni": "ইস্তফা দিন" }
+      readings: { "tui": "istafā de", "tumi": "istafā dāo", "apni": "istafā din" }
+    - word: "bn-2658"
+      forms: { "tui": "শেষ কর", "tumi": "শেষ করো", "apni": "শেষ করুন" }
+      readings: { "tui": "śeṣ kôr", "tumi": "śeṣ kôro", "apni": "śeṣ korun" }
+    - word: "bn-2659"
+      forms: { "tui": "টাইপ কর", "tumi": "টাইপ করো", "apni": "টাইপ করুন" }
+      readings: { "tui": "ṭāip kôr", "tumi": "ṭāip kôro", "apni": "ṭāip korun" }
+    - word: "bn-2660"
+      forms: { "tui": "সই কর", "tumi": "সই করো", "apni": "সই করুন" }
+      readings: { "tui": "sôi kôr", "tumi": "sôi kôro", "apni": "sôi korun" }
+    - word: "bn-2661"
+      forms: { "tui": "জমা দে", "tumi": "জমা দাও", "apni": "জমা দিন" }
+      readings: { "tui": "jômā de", "tumi": "jômā dāo", "apni": "jômā din" }
+    - word: "bn-2662"
+      forms: { "tui": "দেরি কর", "tumi": "দেরি করো", "apni": "দেরি করুন" }
+      readings: { "tui": "deri kôr", "tumi": "deri kôro", "apni": "deri korun" }
+    - word: "bn-2723"
+      forms: { "tui": "অবস্থিত হ", "tumi": "অবস্থিত হও", "apni": "অবস্থিত হোন" }
+      readings: { "tui": "ôbôsthit hô", "tumi": "ôbôsthit ho", "apni": "ôbôsthit hon" }
+    - word: "bn-2724"
+      forms: { "tui": "প্রবাহিত হ", "tumi": "প্রবাহিত হও", "apni": "প্রবাহিত হোন" }
+      readings: { "tui": "prôbāhit hô", "tumi": "prôbāhit ho", "apni": "prôbāhit hon" }
+    - word: "bn-2725"
+      forms: { "tui": "পার হ", "tumi": "পার হও", "apni": "পার হোন" }
+      readings: { "tui": "pār hô", "tumi": "pār ho", "apni": "pār hon" }
+    - word: "bn-2787"
+      forms: { "tui": "ব্যায়াম কর", "tumi": "ব্যায়াম করো", "apni": "ব্যায়াম করুন" }
+      readings: { "tui": "byāyām kôr", "tumi": "byāyām kôro", "apni": "byāyām korun" }
+    - word: "bn-2788"
+      forms: { "tui": "হাঁটতে যা", "tumi": "হাঁটতে যাও", "apni": "হাঁটতে যান" }
+      readings: { "tui": "hāṭte jā", "tumi": "hāṭte jāo", "apni": "hāṭte jān" }
+    - word: "bn-2789"
+      forms: { "tui": "ওজন কমা", "tumi": "ওজন কমাও", "apni": "ওজন কমান" }
+      readings: { "tui": "ojôn kômā", "tumi": "ojôn kômāo", "apni": "ojôn kômān" }
+    - word: "bn-2790"
+      forms: { "tui": "ডাক্তার দেখা", "tumi": "ডাক্তার দেখাও", "apni": "ডাক্তার দেখান" }
+      readings: { "tui": "ḍākṭār dekhā", "tumi": "ḍākṭār dekhāo", "apni": "ḍākṭār dekhān" }
+    - word: "bn-2791"
+      forms: { "tui": "অ্যাপয়েন্টমেন্ট নে", "tumi": "অ্যাপয়েন্টমেন্ট নাও", "apni": "অ্যাপয়েন্টমেন্ট নিন" }
+      readings: { "tui": "êpoyenṭomenṭ ne", "tumi": "êpoyenṭomenṭ nāo", "apni": "êpoyenṭomenṭ nin" }
+    - word: "bn-2792"
+      forms: { "tui": "টিকা নে", "tumi": "টিকা নাও", "apni": "টিকা নিন" }
+      readings: { "tui": "ṭikā ne", "tumi": "ṭikā nāo", "apni": "ṭikā nin" }
+    - word: "bn-2793"
+      forms: { "tui": "পরীক্ষা করা", "tumi": "পরীক্ষা করাও", "apni": "পরীক্ষা করান" }
+      readings: { "tui": "parīkṣā kôrā", "tumi": "parīkṣā kôrāo", "apni": "parīkṣā kôrān" }
+    - word: "bn-2794"
+      forms: { "tui": "সুস্থ হ", "tumi": "সুস্থ হও", "apni": "সুস্থ হোন" }
+      readings: { "tui": "susthô hô", "tumi": "susthô ho", "apni": "susthô hon" }
+    - word: "bn-2856"
+      forms: { "tui": "অনুভব কর", "tumi": "অনুভব করো", "apni": "অনুভব করুন" }
+      readings: { "tui": "anubhab kôr", "tumi": "anubhab kôro", "apni": "anubhab korun" }
+    - word: "bn-2857"
+      forms: { "tui": "মিস কর", "tumi": "মিস করো", "apni": "মিস করুন" }
+      readings: { "tui": "mis kôr", "tumi": "mis kôro", "apni": "mis korun" }
+    - word: "bn-2858"
+      forms: { "tui": "রেগে যা", "tumi": "রেগে যাও", "apni": "রেগে যান" }
+      readings: { "tui": "rege jā", "tumi": "rege jāo", "apni": "rege jān" }
+    - word: "bn-2859"
+      forms: { "tui": "অবাক হ", "tumi": "অবাক হও", "apni": "অবাক হোন" }
+      readings: { "tui": "abāk hô", "tumi": "abāk ho", "apni": "abāk hon" }
+    - word: "bn-2860"
+      forms: { "tui": "ভয় পা", "tumi": "ভয় পাও", "apni": "ভয় পান" }
+      readings: { "tui": "bhôy pā", "tumi": "bhôy pāo", "apni": "bhôy pān" }
+    - word: "bn-2861"
+      forms: { "tui": "ক্ষমা কর", "tumi": "ক্ষমা করো", "apni": "ক্ষমা করুন" }
+      readings: { "tui": "kṣamā kôr", "tumi": "kṣamā kôro", "apni": "kṣamā korun" }
+    - word: "bn-2862"
+      forms: { "tui": "আশা কর", "tumi": "আশা করো", "apni": "আশা করুন" }
+      readings: { "tui": "āśā kôr", "tumi": "āśā kôro", "apni": "āśā korun" }
+    - word: "bn-2863"
+      forms: { "tui": "চিন্তা কর", "tumi": "চিন্তা করো", "apni": "চিন্তা করুন" }
+      readings: { "tui": "cintā kôr", "tumi": "cintā kôro", "apni": "cintā korun" }
+    - word: "bn-2926"
+      forms: { "tui": "খবর দে", "tumi": "খবর দাও", "apni": "খবর দিন" }
+      readings: { "tui": "khabar de", "tumi": "khabar dāo", "apni": "khabar din" }
+    - word: "bn-2927"
+      forms: { "tui": "ঘোষণা কর", "tumi": "ঘোষণা করো", "apni": "ঘোষণা করুন" }
+      readings: { "tui": "ghoṣaṇā kôr", "tumi": "ghoṣaṇā kôro", "apni": "ghoṣaṇā korun" }
+    - word: "bn-2928"
+      forms: { "tui": "প্রকাশ কর", "tumi": "প্রকাশ করো", "apni": "প্রকাশ করুন" }
+      readings: { "tui": "prakāś kôr", "tumi": "prakāś kôro", "apni": "prakāś korun" }
+    - word: "bn-2929"
+      forms: { "tui": "সম্প্রচার কর", "tumi": "সম্প্রচার করো", "apni": "সম্প্রচার করুন" }
+      readings: { "tui": "sampracār kôr", "tumi": "sampracār kôro", "apni": "sampracār korun" }
+    - word: "bn-2930"
+      forms: { "tui": "প্রতিবাদ কর", "tumi": "প্রতিবাদ করো", "apni": "প্রতিবাদ করুন" }
+      readings: { "tui": "protibād kôr", "tumi": "protibād kôro", "apni": "protibād korun" }
+    - word: "bn-2931"
+      forms: { "tui": "বিশ্বাস কর", "tumi": "বিশ্বাস করো", "apni": "বিশ্বাস করুন" }
+      readings: { "tui": "biśvās kôr", "tumi": "biśvās kôro", "apni": "biśvās korun" }
+    - word: "bn-2932"
+      forms: { "tui": "শেয়ার কর", "tumi": "শেয়ার করো", "apni": "শেয়ার করুন" }
+      readings: { "tui": "śeyār kôr", "tumi": "śeyār kôro", "apni": "śeyār korun" }
+    - word: "bn-2933"
+      forms: { "tui": "খোঁজ নে", "tumi": "খোঁজ নাও", "apni": "খোঁজ নিন" }
+      readings: { "tui": "khoṅj ne", "tumi": "khoṅj nāo", "apni": "khoṅj nin" }
+    - word: "bn-2998"
+      forms: { "tui": "মত দে", "tumi": "মত দাও", "apni": "মত দিন" }
+      readings: { "tui": "mat de", "tumi": "mat dāo", "apni": "mat din" }
+    - word: "bn-2999"
+      forms: { "tui": "একমত হ", "tumi": "একমত হও", "apni": "একমত হোন" }
+      readings: { "tui": "ekmat hô", "tumi": "ekmat ho", "apni": "ekmat hon" }
+    - word: "bn-3000"
+      forms: { "tui": "মনে কর", "tumi": "মনে করো", "apni": "মনে করুন" }
+      readings: { "tui": "mône kôr", "tumi": "mône kôro", "apni": "mône korun" }
+    - word: "bn-3001"
+      forms: { "tui": "তর্ক কর", "tumi": "তর্ক করো", "apni": "তর্ক করুন" }
+      readings: { "tui": "tarka kôr", "tumi": "tarka kôro", "apni": "tarka korun" }
+    - word: "bn-3002"
+      forms: { "tui": "প্রস্তাব কর", "tumi": "প্রস্তাব করো", "apni": "প্রস্তাব করুন" }
+      readings: { "tui": "prôstāb kôr", "tumi": "prôstāb kôro", "apni": "prôstāb korun" }
+    - word: "bn-3003"
+      forms: { "tui": "পরামর্শ দে", "tumi": "পরামর্শ দাও", "apni": "পরামর্শ দিন" }
+      readings: { "tui": "parāmarś de", "tumi": "parāmarś dāo", "apni": "parāmarś din" }
+    - word: "bn-3004"
+      forms: { "tui": "সমর্থন কর", "tumi": "সমর্থন করো", "apni": "সমর্থন করুন" }
+      readings: { "tui": "samarthan kôr", "tumi": "samarthan kôro", "apni": "samarthan korun" }
+    - word: "bn-3005"
+      forms: { "tui": "সমালোচনা কর", "tumi": "সমালোচনা করো", "apni": "সমালোচনা করুন" }
+      readings: { "tui": "samālocanā kôr", "tumi": "samālocanā kôro", "apni": "samālocanā korun" }
+    - word: "bn-3085"
+      forms: { "tui": "ভ্রমণ কর", "tumi": "ভ্রমণ করো", "apni": "ভ্রমণ করুন" }
+      readings: { "tui": "bhrômôṇ kôr", "tumi": "bhrômôṇ kôro", "apni": "bhrômôṇ korun" }
+    - word: "bn-3086"
+      forms: { "tui": "ঘুরে দেখ", "tumi": "ঘুরে দেখো", "apni": "ঘুরে দেখুন" }
+      readings: { "tui": "ghure dekh", "tumi": "ghure dekho", "apni": "ghure dekhun" }
+    - word: "bn-3087"
+      forms: { "tui": "বুক কর", "tumi": "বুক করো", "apni": "বুক করুন" }
+      readings: { "tui": "buk kôr", "tumi": "buk kôro", "apni": "buk korun" }
+    - word: "bn-3088"
+      forms: { "tui": "বাতিল কর", "tumi": "বাতিল করো", "apni": "বাতিল করুন" }
+      readings: { "tui": "bātil kôr", "tumi": "bātil kôro", "apni": "bātil korun" }
+    - word: "bn-3089"
+      forms: { "tui": "চেক ইন কর", "tumi": "চেক ইন করো", "apni": "চেক ইন করুন" }
+      readings: { "tui": "ceka in kôr", "tumi": "ceka in kôro", "apni": "ceka in korun" }
+    - word: "bn-3090"
+      forms: { "tui": "প্রস্থান কর", "tumi": "প্রস্থান করো", "apni": "প্রস্থান করুন" }
+      readings: { "tui": "prasthān kôr", "tumi": "prasthān kôro", "apni": "prasthān korun" }
+    - word: "bn-3091"
+      forms: { "tui": "মুদ্রা বিনিময় কর", "tumi": "মুদ্রা বিনিময় করো", "apni": "মুদ্রা বিনিময় করুন" }
+      readings: { "tui": "mudrā biniymay kôr", "tumi": "mudrā biniymay kôro", "apni": "mudrā biniymay korun" }
+    - word: "bn-3092"
+      forms: { "tui": "টিকিট কাট", "tumi": "টিকিট কাটো", "apni": "টিকিট কাটুন" }
+      readings: { "tui": "ṭikiṭ kāṭ", "tumi": "ṭikiṭ kāṭo", "apni": "ṭikiṭ kāṭun" }
+    - word: "bn-3150"
+      forms: { "tui": "আবেদন কর", "tumi": "আবেদন করো", "apni": "আবেদন করুন" }
+      readings: { "tui": "ābedan kôr", "tumi": "ābedan kôro", "apni": "ābedan korun" }
+    - word: "bn-3151"
+      forms: { "tui": "নিবন্ধন কর", "tumi": "নিবন্ধন করো", "apni": "নিবন্ধন করুন" }
+      readings: { "tui": "nibandhan kôr", "tumi": "nibandhan kôro", "apni": "nibandhan korun" }
+    - word: "bn-3152"
+      forms: { "tui": "অনুমতি নে", "tumi": "অনুমতি নাও", "apni": "অনুমতি নিন" }
+      readings: { "tui": "anumati ne", "tumi": "anumati nāo", "apni": "anumati nin" }
+    - word: "bn-3153"
+      forms: { "tui": "টাকা তোল", "tumi": "টাকা তোলো", "apni": "টাকা তুলুন" }
+      readings: { "tui": "ṭākā tol", "tumi": "ṭākā tolo", "apni": "ṭākā tulun" }
+    - word: "bn-3154"
+      forms: { "tui": "টাকা পাঠা", "tumi": "টাকা পাঠাও", "apni": "টাকা পাঠান" }
+      readings: { "tui": "ṭākā pāṭhā", "tumi": "ṭākā pāṭhāo", "apni": "ṭākā pāṭhān" }
+    - word: "bn-3155"
+      forms: { "tui": "পার্সেল পাঠা", "tumi": "পার্সেল পাঠাও", "apni": "পার্সেল পাঠান" }
+      readings: { "tui": "pārsel pāṭhā", "tumi": "pārsel pāṭhāo", "apni": "pārsel pāṭhān" }
+    - word: "bn-3156"
+      forms: { "tui": "অপেক্ষা কর", "tumi": "অপেক্ষা করো", "apni": "অপেক্ষা করুন" }
+      readings: { "tui": "apekṣā kôr", "tumi": "apekṣā kôro", "apni": "apekṣā korun" }
+    - word: "bn-3157"
+      forms: { "tui": "ফর্ম পূরণ কর", "tumi": "ফর্ম পূরণ করো", "apni": "ফর্ম পূরণ করুন" }
+      readings: { "tui": "pharm purṇa kôr", "tumi": "pharm purṇa kôro", "apni": "pharm purṇa korun" }
+    - word: "bn-3158"
+      forms: { "tui": "রসিদ নে", "tumi": "রসিদ নাও", "apni": "রসিদ নিন" }
+      readings: { "tui": "rasid ne", "tumi": "rasid nāo", "apni": "rasid nin" }
+    - word: "bn-3209"
+      forms: { "tui": "ভোট দে", "tumi": "ভোট দাও", "apni": "ভোট দিন" }
+      readings: { "tui": "bhot de", "tumi": "bhot dāo", "apni": "bhot din" }
+    - word: "bn-3210"
+      forms: { "tui": "নির্বাচিত হ", "tumi": "নির্বাচিত হও", "apni": "নির্বাচিত হোন" }
+      readings: { "tui": "nirbācit hô", "tumi": "nirbācit ho", "apni": "nirbācit hon" }
+    - word: "bn-3211"
+      forms: { "tui": "শপথ নে", "tumi": "শপথ নাও", "apni": "শপথ নিন" }
+      readings: { "tui": "śôpôth ne", "tumi": "śôpôth nāo", "apni": "śôpôth nin" }
+    - word: "bn-3212"
+      forms: { "tui": "আইন পাস কর", "tumi": "আইন পাস করো", "apni": "আইন পাস করুন" }
+      readings: { "tui": "āin pās kôr", "tumi": "āin pās kôro", "apni": "āin pās korun" }
+    - word: "bn-3213"
+      forms: { "tui": "কর দে", "tumi": "কর দাও", "apni": "কর দিন" }
+      readings: { "tui": "kar de", "tumi": "kar dāo", "apni": "kar din" }
+    - word: "bn-3214"
+      forms: { "tui": "মামলা কর", "tumi": "মামলা করো", "apni": "মামলা করুন" }
+      readings: { "tui": "māmlā kôr", "tumi": "māmlā kôro", "apni": "māmlā korun" }
+    - word: "bn-3283"
+      forms: { "tui": "ডাউনলোড কর", "tumi": "ডাউনলোড করো", "apni": "ডাউনলোড করুন" }
+      readings: { "tui": "ḍāunlod kôr", "tumi": "ḍāunlod kôro", "apni": "ḍāunlod korun" }
+    - word: "bn-3284"
+      forms: { "tui": "আপলোড কর", "tumi": "আপলোড করো", "apni": "আপলোড করুন" }
+      readings: { "tui": "āplod kôr", "tumi": "āplod kôro", "apni": "āplod korun" }
+    - word: "bn-3285"
+      forms: { "tui": "ইনস্টল কর", "tumi": "ইনস্টল করো", "apni": "ইনস্টল করুন" }
+      readings: { "tui": "insṭal kôr", "tumi": "insṭal kôro", "apni": "insṭal korun" }
+    - word: "bn-3286"
+      forms: { "tui": "আপডেট কর", "tumi": "আপডেট করো", "apni": "আপডেট করুন" }
+      readings: { "tui": "āpḍeṭ kôr", "tumi": "āpḍeṭ kôro", "apni": "āpḍeṭ korun" }
+    - word: "bn-3287"
+      forms: { "tui": "ক্লিক কর", "tumi": "ক্লিক করো", "apni": "ক্লিক করুন" }
+      readings: { "tui": "klik kôr", "tumi": "klik kôro", "apni": "klik korun" }
+    - word: "bn-3288"
+      forms: { "tui": "অনুসন্ধান কর", "tumi": "অনুসন্ধান করো", "apni": "অনুসন্ধান করুন" }
+      readings: { "tui": "anusandhān kôr", "tumi": "anusandhān kôro", "apni": "anusandhān korun" }
+    - word: "bn-3289"
+      forms: { "tui": "চালু কর", "tumi": "চালু করো", "apni": "চালু করুন" }
+      readings: { "tui": "cālu kôr", "tumi": "cālu kôro", "apni": "cālu korun" }
+    - word: "bn-3290"
+      forms: { "tui": "লগইন কর", "tumi": "লগইন করো", "apni": "লগইন করুন" }
+      readings: { "tui": "lagin kôr", "tumi": "lagin kôro", "apni": "lagin korun" }
+    - word: "bn-3351"
+      forms: { "tui": "চাকরি খোঁজ", "tumi": "চাকরি খোঁজো", "apni": "চাকরি খুঁজুন" }
+      readings: { "tui": "cākri khom̐j", "tumi": "cākri khom̐jo", "apni": "cākri khum̐jun" }
+    - word: "bn-3352"
+      forms: { "tui": "নিয়োগ দে", "tumi": "নিয়োগ দাও", "apni": "নিয়োগ দিন" }
+      readings: { "tui": "niyog de", "tumi": "niyog dāo", "apni": "niyog din" }
+    - word: "bn-3353"
+      forms: { "tui": "প্রশিক্ষণ নে", "tumi": "প্রশিক্ষণ নাও", "apni": "প্রশিক্ষণ নিন" }
+      readings: { "tui": "praśikṣaṇ ne", "tumi": "praśikṣaṇ nāo", "apni": "praśikṣaṇ nin" }
+    - word: "bn-3354"
+      forms: { "tui": "অবসর নে", "tumi": "অবসর নাও", "apni": "অবসর নিন" }
+      readings: { "tui": "abasar ne", "tumi": "abasar nāo", "apni": "abasar nin" }
+    - word: "bn-3355"
+      forms: { "tui": "ব্যবসা শুরু কর", "tumi": "ব্যবসা শুরু করো", "apni": "ব্যবসা শুরু করুন" }
+      readings: { "tui": "byabsā śuru kôr", "tumi": "byabsā śuru kôro", "apni": "byabsā śuru korun" }
+    - word: "bn-3356"
+      forms: { "tui": "পরীক্ষা দে", "tumi": "পরীক্ষা দাও", "apni": "পরীক্ষা দিন" }
+      readings: { "tui": "parīkṣā de", "tumi": "parīkṣā dāo", "apni": "parīkṣā din" }
+    - word: "bn-3357"
+      forms: { "tui": "সফল হ", "tumi": "সফল হও", "apni": "সফল হোন" }
+      readings: { "tui": "sophôl hô", "tumi": "sophôl ho", "apni": "sophôl hon" }
+    - word: "bn-3358"
+      forms: { "tui": "দক্ষতা অর্জন কর", "tumi": "দক্ষতা অর্জন করো", "apni": "দক্ষতা অর্জন করুন" }
+      readings: { "tui": "dôkkhotā arjan kôr", "tumi": "dôkkhotā arjan kôro", "apni": "dôkkhotā arjan korun" }
+    - word: "bn-3431"
+      forms: { "tui": "বৃক্ষরোপণ কর", "tumi": "বৃক্ষরোপণ করো", "apni": "বৃক্ষরোপণ করুন" }
+      readings: { "tui": "bṛkṣaropaṇ kôr", "tumi": "bṛkṣaropaṇ kôro", "apni": "bṛkṣaropaṇ korun" }
+    - word: "bn-3432"
+      forms: { "tui": "পরিষ্কার কর", "tumi": "পরিষ্কার করো", "apni": "পরিষ্কার করুন" }
+      readings: { "tui": "pariṣkār kôr", "tumi": "pariṣkār kôro", "apni": "pariṣkār korun" }
+    - word: "bn-3433"
+      forms: { "tui": "সংরক্ষণ কর", "tumi": "সংরক্ষণ করো", "apni": "সংরক্ষণ করুন" }
+      readings: { "tui": "saṅrakṣaṇ kôr", "tumi": "saṅrakṣaṇ kôro", "apni": "saṅrakṣaṇ korun" }
+    - word: "bn-3434"
+      forms: { "tui": "পুনর্ব্যবহার কর", "tumi": "পুনর্ব্যবহার করো", "apni": "পুনর্ব্যবহার করুন" }
+      readings: { "tui": "punarbyabahār kôr", "tumi": "punarbyabahār kôro", "apni": "punarbyabahār korun" }
+    - word: "bn-3435"
+      forms: { "tui": "দূষণ কর", "tumi": "দূষণ করো", "apni": "দূষণ করুন" }
+      readings: { "tui": "dūṣaṇ kôr", "tumi": "dūṣaṇ kôro", "apni": "dūṣaṇ korun" }
+    - word: "bn-3436"
+      forms: { "tui": "সচেতন হ", "tumi": "সচেতন হও", "apni": "সচেতন হোন" }
+      readings: { "tui": "sacetan hô", "tumi": "sacetan ho", "apni": "sacetan hon" }
+    - word: "bn-3437"
+      forms: { "tui": "গাছ লাগা", "tumi": "গাছ লাগাও", "apni": "গাছ লাগান" }
+      readings: { "tui": "gāch lāgā", "tumi": "gāch lāgāo", "apni": "gāch lāgān" }
+    - word: "bn-3496"
+      forms: { "tui": "চাষ কর", "tumi": "চাষ করো", "apni": "চাষ করুন" }
+      readings: { "tui": "cāṣ kôr", "tumi": "cāṣ kôro", "apni": "cāṣ korun" }
+    - word: "bn-3497"
+      forms: { "tui": "বীজ বপন কর", "tumi": "বীজ বপন করো", "apni": "বীজ বপন করুন" }
+      readings: { "tui": "bīj bapan kôr", "tumi": "bīj bapan kôro", "apni": "bīj bapan korun" }
+    - word: "bn-3498"
+      forms: { "tui": "ফসল কাট", "tumi": "ফসল কাটো", "apni": "ফসল কাটুন" }
+      readings: { "tui": "phasal kāṭ", "tumi": "phasal kāṭo", "apni": "phasal kāṭun" }
+    - word: "bn-3499"
+      forms: { "tui": "সার দে", "tumi": "সার দাও", "apni": "সার দিন" }
+      readings: { "tui": "sār de", "tumi": "sār dāo", "apni": "sār din" }
+    - word: "bn-3500"
+      forms: { "tui": "সেচ দে", "tumi": "সেচ দাও", "apni": "সেচ দিন" }
+      readings: { "tui": "seca de", "tumi": "seca dāo", "apni": "seca din" }
+    - word: "bn-3501"
+      forms: { "tui": "ফসল তোল", "tumi": "ফসল তোলো", "apni": "ফসল তুলুন" }
+      readings: { "tui": "phasal tol", "tumi": "phasal tolo", "apni": "phasal tulun" }
+    - word: "bn-3502"
+      forms: { "tui": "ফলন হ", "tumi": "ফলন হও", "apni": "ফলন হোন" }
+      readings: { "tui": "phalan hô", "tumi": "phalan ho", "apni": "phalan hon" }
+    - word: "bn-3503"
+      forms: { "tui": "বিক্রি কর", "tumi": "বিক্রি করো", "apni": "বিক্রি করুন" }
+      readings: { "tui": "bikri kôr", "tumi": "bikri kôro", "apni": "bikri korun" }
+    - word: "bn-3581"
+      forms: { "tui": "অভিনয় কর", "tumi": "অভিনয় করো", "apni": "অভিনয় করুন" }
+      readings: { "tui": "ābhinay kôr", "tumi": "ābhinay kôro", "apni": "ābhinay korun" }
+    - word: "bn-3582"
+      forms: { "tui": "গান গা", "tumi": "গান গাও", "apni": "গান গান" }
+      readings: { "tui": "gān gā", "tumi": "gān gāo", "apni": "gān gān" }
+    - word: "bn-3583"
+      forms: { "tui": "ছবি দেখ", "tumi": "ছবি দেখো", "apni": "ছবি দেখুন" }
+      readings: { "tui": "chabi dekh", "tumi": "chabi dekho", "apni": "chabi dekhun" }
+    - word: "bn-3584"
+      forms: { "tui": "শুটিং কর", "tumi": "শুটিং করো", "apni": "শুটিং করুন" }
+      readings: { "tui": "śuṭiṅ kôr", "tumi": "śuṭiṅ kôro", "apni": "śuṭiṅ korun" }
+    - word: "bn-3585"
+      forms: { "tui": "নির্মাণ কর", "tumi": "নির্মাণ করো", "apni": "নির্মাণ করুন" }
+      readings: { "tui": "nirmāṇ kôr", "tumi": "nirmāṇ kôro", "apni": "nirmāṇ korun" }
+    - word: "bn-3586"
+      forms: { "tui": "মুক্তি পা", "tumi": "মুক্তি পাও", "apni": "মুক্তি পান" }
+      readings: { "tui": "mukti pā", "tumi": "mukti pāo", "apni": "mukti pān" }
+    - word: "bn-3587"
+      forms: { "tui": "হাততালি দে", "tumi": "হাততালি দাও", "apni": "হাততালি দিন" }
+      readings: { "tui": "hāttāli de", "tumi": "hāttāli dāo", "apni": "hāttāli din" }
+    - word: "bn-3588"
+      forms: { "tui": "চরিত্র হ", "tumi": "চরিত্র হও", "apni": "চরিত্র হোন" }
+      readings: { "tui": "caritra hô", "tumi": "caritra ho", "apni": "caritra hon" }
+    - word: "bn-3651"
+      forms: { "tui": "অঙ্কন কর", "tumi": "অঙ্কন করো", "apni": "অঙ্কন করুন" }
+      readings: { "tui": "ôṅkon kôr", "tumi": "ôṅkon kôro", "apni": "ôṅkon korun" }
+    - word: "bn-3652"
+      forms: { "tui": "প্রদর্শন কর", "tumi": "প্রদর্শন করো", "apni": "প্রদর্শন করুন" }
+      readings: { "tui": "pradarśôn kôr", "tumi": "pradarśôn kôro", "apni": "pradarśôn korun" }
+    - word: "bn-3733"
+      forms: { "tui": "যুদ্ধ কর", "tumi": "যুদ্ধ করো", "apni": "যুদ্ধ করুন" }
+      readings: { "tui": "juddho kôr", "tumi": "juddho kôro", "apni": "juddho korun" }
+    - word: "bn-3734"
+      forms: { "tui": "শাসন কর", "tumi": "শাসন করো", "apni": "শাসন করুন" }
+      readings: { "tui": "śāsôn kôr", "tumi": "śāsôn kôro", "apni": "śāsôn korun" }
+    - word: "bn-3794"
+      forms: { "tui": "মালা বদল কর", "tumi": "মালা বদল করো", "apni": "মালা বদল করুন" }
+      readings: { "tui": "mālā badal kôr", "tumi": "mālā badal kôro", "apni": "mālā badal korun" }
+    - word: "bn-3795"
+      forms: { "tui": "নিমন্ত্রণ কর", "tumi": "নিমন্ত্রণ করো", "apni": "নিমন্ত্রণ করুন" }
+      readings: { "tui": "nimantraṇ kôr", "tumi": "nimantraṇ kôro", "apni": "nimantraṇ korun" }
+    - word: "bn-3796"
+      forms: { "tui": "আশীর্বাদ কর", "tumi": "আশীর্বাদ করো", "apni": "আশীর্বাদ করুন" }
+      readings: { "tui": "āśīrbād kôr", "tumi": "āśīrbād kôro", "apni": "āśīrbād korun" }
+    - word: "bn-3868"
+      forms: { "tui": "ব্যাট কর", "tumi": "ব্যাট করো", "apni": "ব্যাট করুন" }
+      readings: { "tui": "byāṭ kôr", "tumi": "byāṭ kôro", "apni": "byāṭ korun" }
+    - word: "bn-3869"
+      forms: { "tui": "গোল কর", "tumi": "গোল করো", "apni": "গোল করুন" }
+      readings: { "tui": "gol kôr", "tumi": "gol kôro", "apni": "gol korun" }
+    - word: "bn-3926"
+      forms: { "tui": "পাশে থাক", "tumi": "পাশে থাকো", "apni": "পাশে থাকুন" }
+      readings: { "tui": "pāśe thāk", "tumi": "pāśe thāko", "apni": "pāśe thākun" }
+    - word: "bn-3927"
+      forms: { "tui": "যত্ন নে", "tumi": "যত্ন নাও", "apni": "যত্ন নিন" }
+      readings: { "tui": "yatna ne", "tumi": "yatna nāo", "apni": "yatna nin" }
+    - word: "bn-3928"
+      forms: { "tui": "মনে রাখ", "tumi": "মনে রাখো", "apni": "মনে রাখুন" }
+      readings: { "tui": "mane rākh", "tumi": "mane rākho", "apni": "mane rākhun" }
+    - word: "bn-3929"
+      forms: { "tui": "দেখা কর", "tumi": "দেখা করো", "apni": "দেখা করুন" }
+      readings: { "tui": "dekhā kôr", "tumi": "dekhā kôro", "apni": "dekhā korun" }
+    - word: "bn-3930"
+      forms: { "tui": "ঝগড়া কর", "tumi": "ঝগড়া করো", "apni": "ঝগড়া করুন" }
+      readings: { "tui": "jhagṛā kôr", "tumi": "jhagṛā kôro", "apni": "jhagṛā korun" }
+    - word: "bn-3931"
+      forms: { "tui": "আলাপ কর", "tumi": "আলাপ করো", "apni": "আলাপ করুন" }
+      readings: { "tui": "ālāp kôr", "tumi": "ālāp kôro", "apni": "ālāp korun" }
+    - word: "bn-4002"
+      forms: { "tui": "সংস্কার কর", "tumi": "সংস্কার করো", "apni": "সংস্কার করুন" }
+      readings: { "tui": "sôṅskār kôr", "tumi": "sôṅskār kôro", "apni": "sôṅskār korun" }
+    - word: "bn-4004"
+      forms: { "tui": "বসবাস কর", "tumi": "বসবাস করো", "apni": "বসবাস করুন" }
+      readings: { "tui": "basbās kôr", "tumi": "basbās kôro", "apni": "basbās korun" }
+    - word: "bn-4054"
+      forms: { "tui": "উদ্ধার কর", "tumi": "উদ্ধার করো", "apni": "উদ্ধার করুন" }
+      readings: { "tui": "uddhār kôr", "tumi": "uddhār kôro", "apni": "uddhār korun" }
+    - word: "bn-4055"
+      forms: { "tui": "সরিয়ে নে", "tumi": "সরিয়ে নাও", "apni": "সরিয়ে নিন" }
+      readings: { "tui": "soriẏe ne", "tumi": "soriẏe nāo", "apni": "soriẏe nin" }
+    - word: "bn-4056"
+      forms: { "tui": "আগুন নেভা", "tumi": "আগুন নেভাও", "apni": "আগুন নেভান" }
+      readings: { "tui": "āgun nebhā", "tumi": "āgun nebhāo", "apni": "āgun nebhān" }
+    - word: "bn-4057"
+      forms: { "tui": "পালা", "tumi": "পালাও", "apni": "পালান" }
+      readings: { "tui": "pālā", "tumi": "pālāo", "apni": "pālān" }
+    - word: "bn-4122"
+      forms: { "tui": "অভিযোগ কর", "tumi": "অভিযোগ করো", "apni": "অভিযোগ করুন" }
+      readings: { "tui": "abhiyog kôr", "tumi": "abhiyog kôro", "apni": "abhiyog korun" }
+    - word: "bn-4123"
+      forms: { "tui": "বিচার কর", "tumi": "বিচার করো", "apni": "বিচার করুন" }
+      readings: { "tui": "bicār kôr", "tumi": "bicār kôro", "apni": "bicār korun" }
+    - word: "bn-4124"
+      forms: { "tui": "শাস্তি দে", "tumi": "শাস্তি দাও", "apni": "শাস্তি দিন" }
+      readings: { "tui": "śāsti de", "tumi": "śāsti dāo", "apni": "śāsti din" }
+    - word: "bn-4125"
+      forms: { "tui": "গ্রেফতার কর", "tumi": "গ্রেফতার করো", "apni": "গ্রেফতার করুন" }
+      readings: { "tui": "grephtār kôr", "tumi": "grephtār kôro", "apni": "grephtār korun" }
+    - word: "bn-4144"
+      forms: { "tui": "গড়", "tumi": "গড়ো", "apni": "গড়ুন" }
+      readings: { "tui": "gôṛ", "tumi": "gôṛo", "apni": "goṛun" }
+    - word: "bn-4145"
+      forms: { "tui": "মার", "tumi": "মারো", "apni": "মারুন" }
+      readings: { "tui": "mār", "tumi": "māro", "apni": "mārun" }
+    - word: "bn-4146"
+      forms: { "tui": "ছুট", "tumi": "ছুটো", "apni": "ছুটুন" }
+      readings: { "tui": "chuṭ", "tumi": "chuṭo", "apni": "chuṭun" }
+    - word: "bn-4147"
+      forms: { "tui": "উড়", "tumi": "উড়ো", "apni": "উড়ুন" }
+      readings: { "tui": "uṛ", "tumi": "uṛo", "apni": "uṛun" }
+    - word: "bn-4148"
+      forms: { "tui": "ঝাড়", "tumi": "ঝাড়ো", "apni": "ঝাড়ুন" }
+      readings: { "tui": "jhāṛ", "tumi": "jhāṛo", "apni": "jhāṛun" }
+    - word: "bn-4149"
+      forms: { "tui": "মাপ", "tumi": "মাপো", "apni": "মাপুন" }
+      readings: { "tui": "māp", "tumi": "māpo", "apni": "māpun" }
+    - word: "bn-4150"
+      forms: { "tui": "ছিঁড়", "tumi": "ছিঁড়ো", "apni": "ছিঁড়ুন" }
+      readings: { "tui": "chim̐ṛ", "tumi": "chim̐ṛo", "apni": "chim̐ṛun" }
+    - word: "bn-4151"
+      forms: { "tui": "বাছ", "tumi": "বাছো", "apni": "বাছুন" }
+      readings: { "tui": "bāch", "tumi": "bācho", "apni": "bāchun" }
+    - word: "bn-4152"
+      forms: { "tui": "চাখ", "tumi": "চাখো", "apni": "চাখুন" }
+      readings: { "tui": "cākh", "tumi": "cākho", "apni": "cākhun" }
+    - word: "bn-4153"
+      forms: { "tui": "শুঁক", "tumi": "শুঁকো", "apni": "শুঁকুন" }
+      readings: { "tui": "śum̐k", "tumi": "śum̐ko", "apni": "śum̐kun" }
+    - word: "bn-4154"
+      forms: { "tui": "ভাস", "tumi": "ভাসো", "apni": "ভাসুন" }
+      readings: { "tui": "bhās", "tumi": "bhāso", "apni": "bhāsun" }
+    - word: "bn-4155"
+      forms: { "tui": "চাট", "tumi": "চাটো", "apni": "চাটুন" }
+      readings: { "tui": "cāṭ", "tumi": "cāṭo", "apni": "cāṭun" }
+    - word: "bn-4156"
+      forms: { "tui": "ঘষ", "tumi": "ঘষো", "apni": "ঘষুন" }
+      readings: { "tui": "ghôś", "tumi": "ghôśo", "apni": "ghośun" }
+    - word: "bn-4157"
+      forms: { "tui": "সাজ", "tumi": "সাজো", "apni": "সাজুন" }
+      readings: { "tui": "sāj", "tumi": "sājo", "apni": "sājun" }
+    - word: "bn-4158"
+      forms: { "tui": "খুল", "tumi": "খুলো", "apni": "খুলুন" }
+      readings: { "tui": "khul", "tumi": "khulo", "apni": "khulun" }
+    - word: "bn-4159"
+      forms: { "tui": "চড়", "tumi": "চড়ো", "apni": "চড়ুন" }
+      readings: { "tui": "côṛ", "tumi": "côṛo", "apni": "coṛun" }
+    - word: "bn-4160"
+      forms: { "tui": "বাঁচ", "tumi": "বাঁচো", "apni": "বাঁচুন" }
+      readings: { "tui": "bām̐c", "tumi": "bām̐co", "apni": "bām̐cun" }
+    - word: "bn-4161"
+      forms: { "tui": "মর", "tumi": "মরো", "apni": "মরুন" }
+      readings: { "tui": "môr", "tumi": "môro", "apni": "morun" }
+    - word: "bn-4162"
+      forms: { "tui": "ডুব", "tumi": "ডুবো", "apni": "ডুবুন" }
+      readings: { "tui": "ḍub", "tumi": "ḍubo", "apni": "ḍubun" }
+    - word: "bn-4163"
+      forms: { "tui": "ঝুল", "tumi": "ঝুলো", "apni": "ঝুলুন" }
+      readings: { "tui": "jhul", "tumi": "jhulo", "apni": "jhulun" }
+    - word: "bn-4164"
+      forms: { "tui": "হাঁক", "tumi": "হাঁকো", "apni": "হাঁকুন" }
+      readings: { "tui": "hām̐k", "tumi": "hām̐ko", "apni": "hām̐kun" }
+    - word: "bn-4165"
+      forms: { "tui": "ফুল", "tumi": "ফুলো", "apni": "ফুলুন" }
+      readings: { "tui": "phul", "tumi": "phulo", "apni": "phulun" }
+    - word: "bn-4166"
+      forms: { "tui": "ঘুর", "tumi": "ঘুরো", "apni": "ঘুরুন" }
+      readings: { "tui": "ghur", "tumi": "ghuro", "apni": "ghurun" }
+    - word: "bn-4167"
+      forms: { "tui": "চাপ", "tumi": "চাপো", "apni": "চাপুন" }
+      readings: { "tui": "cāp", "tumi": "cāpo", "apni": "cāpun" }
+    - word: "bn-4168"
+      forms: { "tui": "ছোঁড়", "tumi": "ছোঁড়ো", "apni": "ছোঁড়ুন" }
+      readings: { "tui": "chom̐ṛ", "tumi": "chom̐ṛo", "apni": "chom̐ṛun" }
+    - word: "bn-4169"
+      forms: { "tui": "পোঁছ", "tumi": "পোঁছো", "apni": "পোঁছুন" }
+      readings: { "tui": "pom̐ch", "tumi": "pom̐cho", "apni": "pom̐chun" }
+    - word: "bn-4170"
+      forms: { "tui": "মোড়", "tumi": "মোড়ো", "apni": "মোড়ুন" }
+      readings: { "tui": "moṛ", "tumi": "moṛo", "apni": "moṛun" }
+    - word: "bn-4171"
+      forms: { "tui": "ঘুমা", "tumi": "ঘুমাও", "apni": "ঘুমান" }
+      readings: { "tui": "ghumā", "tumi": "ghumāo", "apni": "ghumān" }
+    - word: "bn-4172"
+      forms: { "tui": "বসা", "tumi": "বসাও", "apni": "বসান" }
+      readings: { "tui": "bôsā", "tumi": "bôsāo", "apni": "bôsān" }
+    - word: "bn-4173"
+      forms: { "tui": "লেখা", "tumi": "লেখাও", "apni": "লেখান" }
+      readings: { "tui": "lekhā", "tumi": "lekhāo", "apni": "lekhān" }
+    - word: "bn-4174"
+      forms: { "tui": "সরা", "tumi": "সরাও", "apni": "সরান" }
+      readings: { "tui": "sôrā", "tumi": "sôrāo", "apni": "sôrān" }
+    - word: "bn-4175"
+      forms: { "tui": "জড়া", "tumi": "জড়াও", "apni": "জড়ান" }
+      readings: { "tui": "jôṛā", "tumi": "jôṛāo", "apni": "jôṛān" }
+    - word: "bn-4176"
+      forms: { "tui": "কুড়া", "tumi": "কুড়াও", "apni": "কুড়ান" }
+      readings: { "tui": "kuṛā", "tumi": "kuṛāo", "apni": "kuṛān" }
+    - word: "bn-4177"
+      forms: { "tui": "তাড়া", "tumi": "তাড়াও", "apni": "তাড়ান" }
+      readings: { "tui": "tāṛā", "tumi": "tāṛāo", "apni": "tāṛān" }
+    - word: "bn-4178"
+      forms: { "tui": "কামড়া", "tumi": "কামড়াও", "apni": "কামড়ান" }
+      readings: { "tui": "kāmoṛā", "tumi": "kāmoṛāo", "apni": "kāmoṛān" }
+    - word: "bn-4179"
+      forms: { "tui": "কাঁপা", "tumi": "কাঁপাও", "apni": "কাঁপান" }
+      readings: { "tui": "kām̐pā", "tumi": "kām̐pāo", "apni": "kām̐pān" }
+    - word: "bn-4180"
+      forms: { "tui": "চমকা", "tumi": "চমকাও", "apni": "চমকান" }
+      readings: { "tui": "cômokā", "tumi": "cômokāo", "apni": "cômokān" }
+    - word: "bn-4181"
+      forms: { "tui": "হাসা", "tumi": "হাসাও", "apni": "হাসান" }
+      readings: { "tui": "hāsā", "tumi": "hāsāo", "apni": "hāsān" }
+    - word: "bn-4182"
+      forms: { "tui": "কাঁদা", "tumi": "কাঁদাও", "apni": "কাঁদান" }
+      readings: { "tui": "kām̐dā", "tumi": "kām̐dāo", "apni": "kām̐dān" }
+    - word: "bn-4183"
+      forms: { "tui": "রাগা", "tumi": "রাগাও", "apni": "রাগান" }
+      readings: { "tui": "rāgā", "tumi": "rāgāo", "apni": "rāgān" }
+    - word: "bn-4184"
+      forms: { "tui": "নামা", "tumi": "নামাও", "apni": "নামান" }
+      readings: { "tui": "nāmā", "tumi": "nāmāo", "apni": "nāmān" }
+    - word: "bn-4185"
+      forms: { "tui": "উঠা", "tumi": "উঠাও", "apni": "উঠান" }
+      readings: { "tui": "uṭhā", "tumi": "uṭhāo", "apni": "uṭhān" }
+    - word: "bn-4186"
+      forms: { "tui": "লুকা", "tumi": "লুকাও", "apni": "লুকান" }
+      readings: { "tui": "lukā", "tumi": "lukāo", "apni": "lukān" }
+    - word: "bn-4187"
+      forms: { "tui": "বাঁচা", "tumi": "বাঁচাও", "apni": "বাঁচান" }
+      readings: { "tui": "bām̐cā", "tumi": "bām̐cāo", "apni": "bām̐cān" }
+    - word: "bn-4188"
+      forms: { "tui": "ধমকা", "tumi": "ধমকাও", "apni": "ধমকান" }
+      readings: { "tui": "dhômokā", "tumi": "dhômokāo", "apni": "dhômokān" }
+    - word: "bn-4189"
+      forms: { "tui": "জাগা", "tumi": "জাগাও", "apni": "জাগান" }
+      readings: { "tui": "jāgā", "tumi": "jāgāo", "apni": "jāgān" }
+    - word: "bn-4190"
+      forms: { "tui": "নাচা", "tumi": "নাচাও", "apni": "নাচান" }
+      readings: { "tui": "nācā", "tumi": "nācāo", "apni": "nācān" }
+    - word: "bn-4191"
+      forms: { "tui": "ভাবা", "tumi": "ভাবাও", "apni": "ভাবান" }
+      readings: { "tui": "bhābā", "tumi": "bhābāo", "apni": "bhābān" }
+    - word: "bn-4192"
+      forms: { "tui": "ঠেকা", "tumi": "ঠেকাও", "apni": "ঠেকান" }
+      readings: { "tui": "ṭhekā", "tumi": "ṭhekāo", "apni": "ṭhekān" }
+    - word: "bn-4193"
+      forms: { "tui": "কাটা", "tumi": "কাটাও", "apni": "কাটান" }
+      readings: { "tui": "kāṭā", "tumi": "kāṭāo", "apni": "kāṭān" }
+    - word: "bn-4194"
+      forms: { "tui": "শোয়া", "tumi": "শোয়াও", "apni": "শোয়ান" }
+      readings: { "tui": "śoyā", "tumi": "śoyāo", "apni": "śoyān" }
+    - word: "bn-4195"
+      forms: { "tui": "ঝরা", "tumi": "ঝরাও", "apni": "ঝরান" }
+      readings: { "tui": "jhôrā", "tumi": "jhôrāo", "apni": "jhôrān" }
+    - word: "bn-4196"
+      forms: { "tui": "পিছলা", "tumi": "পিছলাও", "apni": "পিছলান" }
+      readings: { "tui": "picholā", "tumi": "picholāo", "apni": "picholān" }
+    - word: "bn-4197"
+      forms: { "tui": "খালি কর", "tumi": "খালি করো", "apni": "খালি করুন" }
+      readings: { "tui": "khāli kôr", "tumi": "khāli kôro", "apni": "khāli korun" }
+    - word: "bn-4198"
+      forms: { "tui": "ওজন কর", "tumi": "ওজন করো", "apni": "ওজন করুন" }
+      readings: { "tui": "ojon kôr", "tumi": "ojon kôro", "apni": "ojon korun" }
+    - word: "bn-4199"
+      forms: { "tui": "হিসাব কর", "tumi": "হিসাব করো", "apni": "হিসাব করুন" }
+      readings: { "tui": "hisāb kôr", "tumi": "hisāb kôro", "apni": "hisāb korun" }
+    - word: "bn-4200"
+      forms: { "tui": "সেলাই কর", "tumi": "সেলাই করো", "apni": "সেলাই করুন" }
+      readings: { "tui": "selāi kôr", "tumi": "selāi kôro", "apni": "selāi korun" }
+    - word: "bn-4201"
+      forms: { "tui": "সেদ্ধ কর", "tumi": "সেদ্ধ করো", "apni": "সেদ্ধ করুন" }
+      readings: { "tui": "seddh kôr", "tumi": "seddh kôro", "apni": "seddh korun" }
+    - word: "bn-4202"
+      forms: { "tui": "ঠান্ডা কর", "tumi": "ঠান্ডা করো", "apni": "ঠান্ডা করুন" }
+      readings: { "tui": "ṭhānḍā kôr", "tumi": "ṭhānḍā kôro", "apni": "ṭhānḍā korun" }
+    - word: "bn-4203"
+      forms: { "tui": "ভরসা কর", "tumi": "ভরসা করো", "apni": "ভরসা করুন" }
+      readings: { "tui": "bhôrosā kôr", "tumi": "bhôrosā kôro", "apni": "bhôrosā korun" }
+    - word: "bn-4204"
+      forms: { "tui": "দাবি কর", "tumi": "দাবি করো", "apni": "দাবি করুন" }
+      readings: { "tui": "dābi kôr", "tumi": "dābi kôro", "apni": "dābi korun" }
+    - word: "bn-4205"
+      forms: { "tui": "প্রশ্ন কর", "tumi": "প্রশ্ন করো", "apni": "প্রশ্ন করুন" }
+      readings: { "tui": "prôśn kôr", "tumi": "prôśn kôro", "apni": "prôśn korun" }
+    - word: "bn-4206"
+      forms: { "tui": "চিৎকার কর", "tumi": "চিৎকার করো", "apni": "চিৎকার করুন" }
+      readings: { "tui": "citkār kôr", "tumi": "citkār kôro", "apni": "citkār korun" }
+    - word: "bn-4207"
+      forms: { "tui": "ব্যাখ্যা কর", "tumi": "ব্যাখ্যা করো", "apni": "ব্যাখ্যা করুন" }
+      readings: { "tui": "bêkkhā kôr", "tumi": "bêkkhā kôro", "apni": "bêkkhā korun" }
+    - word: "bn-4208"
+      forms: { "tui": "স্বপ্ন দেখ", "tumi": "স্বপ্ন দেখো", "apni": "স্বপ্ন দেখুন" }
+      readings: { "tui": "sôpno dekh", "tumi": "sôpno dekho", "apni": "sôpno dekhun" }
+    - word: "bn-4359"
+      forms: { "tui": "খরচ কর", "tumi": "খরচ করো", "apni": "খরচ করুন" }
+      readings: { "tui": "khôroc kôr", "tumi": "khôroc kôro", "apni": "khôroc korun" }
+    - word: "bn-4360"
+      forms: { "tui": "সঞ্চয় কর", "tumi": "সঞ্চয় করো", "apni": "সঞ্চয় করুন" }
+      readings: { "tui": "sôncoy kôr", "tumi": "sôncoy kôro", "apni": "sôncoy korun" }
+    - word: "bn-4361"
+      forms: { "tui": "পরিশোধ কর", "tumi": "পরিশোধ করো", "apni": "পরিশোধ করুন" }
+      readings: { "tui": "poriśodh kôr", "tumi": "poriśodh kôro", "apni": "poriśodh korun" }
+    - word: "bn-4442"
+      forms: { "tui": "আবৃত্তি কর", "tumi": "আবৃত্তি করো", "apni": "আবৃত্তি করুন" }
+      readings: { "tui": "ābritti kôr", "tumi": "ābritti kôro", "apni": "ābritti korun" }
+    - word: "bn-4443"
+      forms: { "tui": "মুখস্থ কর", "tumi": "মুখস্থ করো", "apni": "মুখস্থ করুন" }
+      readings: { "tui": "mukhosth kôr", "tumi": "mukhosth kôro", "apni": "mukhosth korun" }
+    - word: "bn-4444"
+      forms: { "tui": "অনুবাদ কর", "tumi": "অনুবাদ করো", "apni": "অনুবাদ করুন" }
+      readings: { "tui": "ônubād kôr", "tumi": "ônubād kôro", "apni": "ônubād korun" }
+    - word: "bn-4445"
+      forms: { "tui": "রচনা কর", "tumi": "রচনা করো", "apni": "রচনা করুন" }
+      readings: { "tui": "rôconā kôr", "tumi": "rôconā kôro", "apni": "rôconā korun" }
+    - word: "bn-4480"
+      forms: { "tui": "জোড়া", "tumi": "জোড়াও", "apni": "জোড়ান" }
+      readings: { "tui": "joṛā", "tumi": "joṛāo", "apni": "joṛān" }
+    - word: "bn-4481"
+      forms: { "tui": "ভাঙা", "tumi": "ভাঙাও", "apni": "ভাঙান" }
+      readings: { "tui": "bhāṅā", "tumi": "bhāṅāo", "apni": "bhāṅān" }
+    - word: "bn-4482"
+      forms: { "tui": "মেলা", "tumi": "মেলাও", "apni": "মেলান" }
+      readings: { "tui": "melā", "tumi": "melāo", "apni": "melān" }
+    - word: "bn-4483"
+      forms: { "tui": "ডাকা", "tumi": "ডাকাও", "apni": "ডাকান" }
+      readings: { "tui": "ḍākā", "tumi": "ḍākāo", "apni": "ḍākān" }
+    - word: "bn-4484"
+      forms: { "tui": "ফেরা", "tumi": "ফেরাও", "apni": "ফেরান" }
+      readings: { "tui": "pherā", "tumi": "pherāo", "apni": "pherān" }
+    - word: "bn-4485"
+      forms: { "tui": "খোলা", "tumi": "খোলাও", "apni": "খোলান" }
+      readings: { "tui": "kholā", "tumi": "kholāo", "apni": "kholān" }
+    - word: "bn-4486"
+      forms: { "tui": "বাঁধা", "tumi": "বাঁধাও", "apni": "বাঁধান" }
+      readings: { "tui": "bām̐dhā", "tumi": "bām̐dhāo", "apni": "bām̐dhān" }
+    - word: "bn-4487"
+      forms: { "tui": "জমা", "tumi": "জমাও", "apni": "জমান" }
+      readings: { "tui": "jômā", "tumi": "jômāo", "apni": "jômān" }
+    - word: "bn-4488"
+      forms: { "tui": "ঢোকা", "tumi": "ঢোকাও", "apni": "ঢোকান" }
+      readings: { "tui": "ḍhokā", "tumi": "ḍhokāo", "apni": "ḍhokān" }
+    - word: "bn-4489"
+      forms: { "tui": "ঝাড়া", "tumi": "ঝাড়াও", "apni": "ঝাড়ান" }
+      readings: { "tui": "jhāṛā", "tumi": "jhāṛāo", "apni": "jhāṛān" }
+    - word: "bn-4490"
+      forms: { "tui": "মাখা", "tumi": "মাখাও", "apni": "মাখান" }
+      readings: { "tui": "mākhā", "tumi": "mākhāo", "apni": "mākhān" }
+    - word: "bn-4491"
+      forms: { "tui": "রাঁধা", "tumi": "রাঁধাও", "apni": "রাঁধান" }
+      readings: { "tui": "rām̐dhā", "tumi": "rām̐dhāo", "apni": "rām̐dhān" }
+    - word: "bn-4492"
+      forms: { "tui": "ধরা", "tumi": "ধরাও", "apni": "ধরান" }
+      readings: { "tui": "dhôrā", "tumi": "dhôrāo", "apni": "dhôrān" }
+    - word: "bn-4493"
+      forms: { "tui": "ছাড়া", "tumi": "ছাড়াও", "apni": "ছাড়ান" }
+      readings: { "tui": "chāṛā", "tumi": "chāṛāo", "apni": "chāṛān" }
+    - word: "bn-4494"
+      forms: { "tui": "সর", "tumi": "সরো", "apni": "সরুন" }
+      readings: { "tui": "sôr", "tumi": "sôro", "apni": "sorun" }
+    - word: "bn-4495"
+      forms: { "tui": "আলোচনা কর", "tumi": "আলোচনা করো", "apni": "আলোচনা করুন" }
+      readings: { "tui": "āloconā kôr", "tumi": "āloconā kôro", "apni": "āloconā korun" }
+    - word: "bn-4496"
+      forms: { "tui": "পরীক্ষা কর", "tumi": "পরীক্ষা করো", "apni": "পরীক্ষা করুন" }
+      readings: { "tui": "porikkhā kôr", "tumi": "porikkhā kôro", "apni": "porikkhā korun" }
+    - word: "bn-4497"
+      forms: { "tui": "যাচাই কর", "tumi": "যাচাই করো", "apni": "যাচাই করুন" }
+      readings: { "tui": "jācāi kôr", "tumi": "jācāi kôro", "apni": "jācāi korun" }
+    - word: "bn-4498"
+      forms: { "tui": "প্রস্তুত কর", "tumi": "প্রস্তুত করো", "apni": "প্রস্তুত করুন" }
+      readings: { "tui": "prostut kôr", "tumi": "prostut kôro", "apni": "prostut korun" }
+    - word: "bn-4499"
+      forms: { "tui": "পরিকল্পনা কর", "tumi": "পরিকল্পনা করো", "apni": "পরিকল্পনা করুন" }
+      readings: { "tui": "porikolponā kôr", "tumi": "porikolponā kôro", "apni": "porikolponā korun" }
+    - word: "bn-4500"
+      forms: { "tui": "অনুশীলন কর", "tumi": "অনুশীলন করো", "apni": "অনুশীলন করুন" }
+      readings: { "tui": "ônuśilon kôr", "tumi": "ônuśilon kôro", "apni": "ônuśilon korun" }
+    - word: "bn-4501"
+      forms: { "tui": "সম্পন্ন কর", "tumi": "সম্পন্ন করো", "apni": "সম্পন্ন করুন" }
+      readings: { "tui": "sômponn kôr", "tumi": "sômponn kôro", "apni": "sômponn korun" }
+    - word: "bn-4502"
+      forms: { "tui": "নির্বাচন কর", "tumi": "নির্বাচন করো", "apni": "নির্বাচন করুন" }
+      readings: { "tui": "nirrācon kôr", "tumi": "nirrācon kôro", "apni": "nirrācon korun" }
+    - word: "bn-4503"
+      forms: { "tui": "মূল্যায়ন কর", "tumi": "মূল্যায়ন করো", "apni": "মূল্যায়ন করুন" }
+      readings: { "tui": "mullāyon kôr", "tumi": "mullāyon kôro", "apni": "mullāyon korun" }
+    - word: "bn-4504"
+      forms: { "tui": "সমাধান কর", "tumi": "সমাধান করো", "apni": "সমাধান করুন" }
+      readings: { "tui": "sômādhān kôr", "tumi": "sômādhān kôro", "apni": "sômādhān korun" }
+    - word: "bn-4505"
+      forms: { "tui": "গ্রহণ কর", "tumi": "গ্রহণ করো", "apni": "গ্রহণ করুন" }
+      readings: { "tui": "grôhon kôr", "tumi": "grôhon kôro", "apni": "grôhon korun" }
+    - word: "bn-4506"
+      forms: { "tui": "বর্জন কর", "tumi": "বর্জন করো", "apni": "বর্জন করুন" }
+      readings: { "tui": "bôrjon kôr", "tumi": "bôrjon kôro", "apni": "bôrjon korun" }
+    - word: "bn-4507"
+      forms: { "tui": "অর্জন কর", "tumi": "অর্জন করো", "apni": "অর্জন করুন" }
+      readings: { "tui": "ôrjon kôr", "tumi": "ôrjon kôro", "apni": "ôrjon korun" }
+    - word: "bn-4508"
+      forms: { "tui": "উপভোগ কর", "tumi": "উপভোগ করো", "apni": "উপভোগ করুন" }
+      readings: { "tui": "upobhog kôr", "tumi": "upobhog kôro", "apni": "upobhog korun" }
+    - word: "bn-4509"
+      forms: { "tui": "সংগ্রহ কর", "tumi": "সংগ্রহ করো", "apni": "সংগ্রহ করুন" }
+      readings: { "tui": "sôṅgroh kôr", "tumi": "sôṅgroh kôro", "apni": "sôṅgroh korun" }
+    - word: "bn-4510"
+      forms: { "tui": "বিবেচনা কর", "tumi": "বিবেচনা করো", "apni": "বিবেচনা করুন" }
+      readings: { "tui": "bibeconā kôr", "tumi": "bibeconā kôro", "apni": "bibeconā korun" }
+    - word: "bn-4511"
+      forms: { "tui": "সংশোধন কর", "tumi": "সংশোধন করো", "apni": "সংশোধন করুন" }
+      readings: { "tui": "sôṅśodhon kôr", "tumi": "sôṅśodhon kôro", "apni": "sôṅśodhon korun" }
+    - word: "bn-4512"
+      forms: { "tui": "অনুমান কর", "tumi": "অনুমান করো", "apni": "অনুমান করুন" }
+      readings: { "tui": "ônumān kôr", "tumi": "ônumān kôro", "apni": "ônumān korun" }
+    - word: "bn-4513"
+      forms: { "tui": "স্বীকার কর", "tumi": "স্বীকার করো", "apni": "স্বীকার করুন" }
+      readings: { "tui": "sikār kôr", "tumi": "sikār kôro", "apni": "sikār korun" }
+    - word: "bn-4514"
+      forms: { "tui": "পর্যবেক্ষণ কর", "tumi": "পর্যবেক্ষণ করো", "apni": "পর্যবেক্ষণ করুন" }
+      readings: { "tui": "pôrjobekkhon kôr", "tumi": "pôrjobekkhon kôro", "apni": "pôrjobekkhon korun" }
+    - word: "bn-4515"
+      forms: { "tui": "পরিদর্শন কর", "tumi": "পরিদর্শন করো", "apni": "পরিদর্শন করুন" }
+      readings: { "tui": "poridorśon kôr", "tumi": "poridorśon kôro", "apni": "poridorśon korun" }
+    - word: "bn-4516"
+      forms: { "tui": "স্থাপন কর", "tumi": "স্থাপন করো", "apni": "স্থাপন করুন" }
+      readings: { "tui": "sthāpon kôr", "tumi": "sthāpon kôro", "apni": "sthāpon korun" }
+    - word: "bn-4517"
+      forms: { "tui": "আয়োজন কর", "tumi": "আয়োজন করো", "apni": "আয়োজন করুন" }
+      readings: { "tui": "āyojon kôr", "tumi": "āyojon kôro", "apni": "āyojon korun" }
+    - word: "bn-4518"
+      forms: { "tui": "প্রয়োগ কর", "tumi": "প্রয়োগ করো", "apni": "প্রয়োগ করুন" }
+      readings: { "tui": "prôyog kôr", "tumi": "prôyog kôro", "apni": "prôyog korun" }
+    - word: "bn-4519"
+      forms: { "tui": "বিশ্লেষণ কর", "tumi": "বিশ্লেষণ করো", "apni": "বিশ্লেষণ করুন" }
+      readings: { "tui": "biśleśon kôr", "tumi": "biśleśon kôro", "apni": "biśleśon korun" }
+    - word: "bn-4520"
+      forms: { "tui": "উল্লেখ কর", "tumi": "উল্লেখ করো", "apni": "উল্লেখ করুন" }
+      readings: { "tui": "ullekh kôr", "tumi": "ullekh kôro", "apni": "ullekh korun" }
+    - word: "bn-4521"
+      forms: { "tui": "পর্যালোচনা কর", "tumi": "পর্যালোচনা করো", "apni": "পর্যালোচনা করুন" }
+      readings: { "tui": "pôrjāloconā kôr", "tumi": "pôrjāloconā kôro", "apni": "pôrjāloconā korun" }
+    - word: "bn-4522"
+      forms: { "tui": "বিতরণ কর", "tumi": "বিতরণ করো", "apni": "বিতরণ করুন" }
+      readings: { "tui": "bitoron kôr", "tumi": "bitoron kôro", "apni": "bitoron korun" }
+    - word: "bn-4523"
+      forms: { "tui": "সংযোজন কর", "tumi": "সংযোজন করো", "apni": "সংযোজন করুন" }
+      readings: { "tui": "sôṅjojon kôr", "tumi": "sôṅjojon kôro", "apni": "sôṅjojon korun" }
+    - word: "bn-4524"
+      forms: { "tui": "প্রতিষ্ঠা কর", "tumi": "প্রতিষ্ঠা করো", "apni": "প্রতিষ্ঠা করুন" }
+      readings: { "tui": "protiśṭhā kôr", "tumi": "protiśṭhā kôro", "apni": "protiśṭhā korun" }
+rules:
+  - id: "bn-rule-imperative"
+    slots: ["tui", "tumi", "apni"]
+    words: [{ word: "তুই", reading: "tui" }, { word: "খা", reading: "khā" }, { word: "তুই খা", reading: "tui khā" }, { word: "তুই দে", reading: "tui de" }, { word: "-ো", reading: "-o" }, { word: "তুমি দেখো", reading: "tumi dekho" }, { word: "-ও", reading: "-o" }, { word: "তুমি খাও", reading: "tumi khāo" }, { word: "আপনি", reading: "āpni" }, { word: "-ুন", reading: "-un" }, { word: "আপনি দেখুন", reading: "āpni dekhun" }, { word: "-ন", reading: "-n" }, { word: "আপনি খান", reading: "āpni khān" }, { word: "আয়", reading: "āy" }, { word: "এসো", reading: "eśo" }]
