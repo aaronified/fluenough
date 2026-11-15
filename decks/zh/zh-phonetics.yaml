@@ -1,0 +1,59 @@
+schema: 1
+kind: "phonetics"
+id: "zh-phonetics"
+language: "zh"
+variety: "Standard Mandarin (Putonghua, the Beijing standard), as the course's pinyin and broad ipa write it"
+description: "Rules that turn a card's broad ipa into its narrow [ ] form, in order. Written for tools/derive_phonetic.py, never read by the app. The broad ipa of the Chinese course is written by tools/transcribe.py from the card's pinyin: Chao tone letters at the end of every syllable (1 ˥˥, 2 ˧˥, 3 ˨˩˦, 4 ˥˩), ˙ for the neutral tone, ɨ for the apical vowels of zhi chi shi ri zi ci si, ɚ and ɻ for erhua, no punctuation, no syllable dots. What these rules add is the surface tone and the vowel allophones: the pitch of a neutral syllable from the tone before it, third-tone sandhi (the first of two third tones is a second tone) and the half-third before any other syllable, the apical vowels ɹ̩ and ɻ̩, and the backness of /a/ and /ə/ by the coda. Decided and recorded: (1) the two tone rules look across a single space, because a pinyin word boundary is not a pause; the broad ipa drops punctuation, so a pair of third tones across a comma or a full stop (about 20 pairs in the course on 2026-11-15, of 346 across a space) is wrongly changed; the rules cannot see it. (2) A neutral syllable after another neutral syllable (one card, háizimen) and a neutral-tone card on its own (four cards) keep ˙, which has no value of its own. (3) 不 and 一 are written as said in the pinyin, so no rule changes them. Left out, not claimed absent: the vowel length of open syllables, the voicing of unaspirated stops in weak syllables, the tone changes of tones 2 and 4 in connected speech, the realisation of h as [x] or [h], r as [ʐ] or [ɻ], the creaky voice of tone 3, the labiodental [ʋ] for w, the incomplete closure of coda nasals, and the vowel reduction of weak syllables. The variety is the Beijing standard (Putonghua), the one the pinyin describes. Not reviewed by a phonetician; every source below was read through a Wikipedia summary, not in the primary works."
+rules:
+  # Neutral tone: its pitch comes from the tone before it (contourless values).
+  - id: "zh-neutral-after-1"
+    pattern: '(?<=˥˥)( ?[^˥˦˧˨˩˙ ]+)˙'
+    replace: '\1˨'
+    source: "Wikipedia, Standard Chinese phonology, \"Tones\" (CC BY-SA 4.0), read 2026-11-15 through a page summary; the primary works it cites were not read. Neutral tone after tone 1, contourless value 2 (Chao ˨)."
+  - id: "zh-neutral-after-2"
+    pattern: '(?<=˧˥)( ?[^˥˦˧˨˩˙ ]+)˙'
+    replace: '\1˧'
+    source: "Wikipedia, Standard Chinese phonology, \"Tones\" (CC BY-SA 4.0), read 2026-11-15 through a page summary; the primary works it cites were not read. Neutral tone after tone 2, contourless value 3 (˧)."
+  - id: "zh-neutral-after-3"
+    pattern: '(?<=˨˩˦)( ?[^˥˦˧˨˩˙ ]+)˙'
+    replace: '\1˦'
+    source: "Wikipedia, Standard Chinese phonology, \"Tones\" (CC BY-SA 4.0), read 2026-11-15 through a page summary; the primary works it cites were not read. Neutral tone after tone 3, contourless value 4 (˦)."
+  - id: "zh-neutral-after-4"
+    pattern: '(?<=˥˩)( ?[^˥˦˧˨˩˙ ]+)˙'
+    replace: '\1˩'
+    source: "Wikipedia, Standard Chinese phonology, \"Tones\" (CC BY-SA 4.0), read 2026-11-15 through a page summary; the primary works it cites were not read. Neutral tone after tone 4, contourless value 1 (˩)."
+  # Tone 3 before tone 3 is tone 2; any other tone 3 followed by a syllable is the half-third. Both run after the neutral rules, which read the original tone 3.
+  - id: "zh-tone3-sandhi"
+    pattern: '˨˩˦(?= ?[^˥˦˧˨˩˙ ]+˨˩˦)'
+    replace: '˧˥'
+    source: "Wikipedia, Standard Chinese phonology, \"Tones\" (CC BY-SA 4.0), read 2026-11-15 through a page summary; the primary works it cites were not read. \"When there are two consecutive third-tone syllables, the first of them is pronounced with second tone.\""
+  - id: "zh-tone3-half"
+    pattern: '˨˩˦(?= ?[^˥˦˧˨˩˙ ])'
+    replace: '˨˩'
+    source: "Wikipedia, Standard Chinese phonology, \"Tones\" (CC BY-SA 4.0), read 2026-11-15 through a page summary; the primary works it cites were not read. The full rise of tone 3 is heard only at the end of a sentence or before a pause and on stressed monosyllables; before another syllable it is the low half-third."
+  # The apical vowels (written ɨ in the broad ipa).
+  - id: "zh-apical-dental"
+    pattern: '(?:(?<=ts)|(?<=tsʰ)|(?<=s))ɨ'
+    replace: "ɹ\u0329"
+    source: "Wikipedia, Standard Chinese phonology, \"Vowels\" and \"Apical vowels\" (CC BY-SA 4.0), read 2026-11-15 through a page summary; the primary works it cites (Lee and Zee, \"Standard Chinese (Beijing)\", JIPA 33(1), 2003, and others) were not read. The vowel of zi ci si is the dental apical [ɹ̩ ~ z̩]."
+  - id: "zh-apical-retroflex"
+    pattern: '(?:(?<=ʈʂ)|(?<=ʈʂʰ)|(?<=ʂ)|(?<=ɻ))ɨ'
+    replace: "ɻ\u0329"
+    source: "Wikipedia, Standard Chinese phonology, \"Vowels\" and \"Apical vowels\" (CC BY-SA 4.0), read 2026-11-15 through a page summary; the primary works it cites (Lee and Zee, \"Standard Chinese (Beijing)\", JIPA 33(1), 2003, and others) were not read. The vowel of zhi chi shi ri is the retroflex apical [ɻ̩ ~ ʐ̩]."
+  # Backness of /a/ and /ə/ by the coda (a coda sits in the same syllable: every syllable ends in a tone mark, so a vowel followed directly by i n u ŋ has it as its coda).
+  - id: "zh-a-fronted"
+    pattern: 'a(?=[in])'
+    replace: "a\u031f"
+    source: "Wikipedia, Standard Chinese phonology, \"Vowels\" and \"Apical vowels\" (CC BY-SA 4.0), read 2026-11-15 through a page summary; the primary works it cites (Lee and Zee, \"Standard Chinese (Beijing)\", JIPA 33(1), 2003, and others) were not read. /a/ is [a̟] before /i, n/."
+  - id: "zh-a-backed"
+    pattern: 'a(?=[uŋ])'
+    replace: "a\u0320"
+    source: "Wikipedia, Standard Chinese phonology, \"Vowels\" and \"Apical vowels\" (CC BY-SA 4.0), read 2026-11-15 through a page summary; the primary works it cites (Lee and Zee, \"Standard Chinese (Beijing)\", JIPA 33(1), 2003, and others) were not read. /a/ is [a̠] before /u, ŋ/."
+  - id: "zh-schwa-fronted"
+    pattern: 'ə(?=n)'
+    replace: "ə\u031f"
+    source: "Wikipedia, Standard Chinese phonology, \"Vowels\" and \"Apical vowels\" (CC BY-SA 4.0), read 2026-11-15 through a page summary; the primary works it cites (Lee and Zee, \"Standard Chinese (Beijing)\", JIPA 33(1), 2003, and others) were not read. /ə/ is [ə̟] before /n/."
+  - id: "zh-schwa-backed"
+    pattern: 'ə(?=ŋ)'
+    replace: "ə\u0320"
+    source: "Wikipedia, Standard Chinese phonology, \"Vowels\" and \"Apical vowels\" (CC BY-SA 4.0), read 2026-11-15 through a page summary; the primary works it cites (Lee and Zee, \"Standard Chinese (Beijing)\", JIPA 33(1), 2003, and others) were not read. /ə/ is [ə̠] before /ŋ/."
