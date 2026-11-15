@@ -345,9 +345,10 @@ uses one you have). It finds a card's entries as `import_wiktionary.py` does
 the first narrow `[ ]` pronunciation of the language's variety, drops the
 syllable dots, writes Latin g as ɡ, and keeps it only if it is IPA letters
 and marks, NFC, and every entry that fits agrees. The variety per language
-is in `VARIETIES` in the tool: Bengali the Kolkata standard (Wiktionary's
-Rarh), Hindustani the Standard Hindi forms, Spanish the untagged form.
-Another language needs its variety named there first. Words and set phrases
+is data in `tools/phonetic_languages.yaml` (dump name and variety): Bengali
+the Kolkata standard (Wiktionary's Rarh), Hindustani the Standard Hindi
+forms, Spanish, Telugu and Japanese the untagged form. Another language is
+one more entry there, with no change to the tool. Words and set phrases
 are covered; sentences are not on Wiktionary.
 
 Pronunciations in [ ] adapted from [Wiktionary](https://en.wiktionary.org), licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The app's Sources screen carries the same line.

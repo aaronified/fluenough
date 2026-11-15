@@ -1,0 +1,64 @@
+# The languages tools/import_phonetic.py can fill with Wiktionary's narrow
+# `[ ... ]` IPA, keyed by language code (#1285). One entry per language:
+#
+#   dump:     what kaikki.org calls the language, in the dump's file name
+#             (https://kaikki.org/dictionary/<dump>/kaikki.org-dictionary-<dump>.jsonl)
+#   variety:  which of Wiktionary's pronunciations the course teaches
+#     name:     a sentence for the report
+#     notes:    sound `note` values taken as this variety (default: none)
+#     tags:     sound `tags` values taken as this variety (default: none)
+#     untagged: whether a form with no note and no tag is taken as the
+#               language's default (default: true)
+#
+# A new language is added here and nowhere else: the tool needs no code
+# change (tools/test_phonetic.py checks that). The rationale of each variety
+# is in wiki/Plan-Ipa-Revamp-And-Language-Phonology.md; a language that
+# needs rules instead has them in decks/<lang>/<lang>-phonetics.yaml.
+#
+# Tool data only: the app does not read it.
+
+bn:
+  dump: Bengali
+  variety:
+    # Standard Colloquial Bengali of Kolkata, which Wiktionary marks Rarh.
+    # The decks' `ipa` is the Kolkata standard too. Dhaka (Bangladeshi
+    # Standard), Vanga and the rest are not taken.
+    name: "Standard Colloquial Bengali (Kolkata), Wiktionary's Rarh"
+    notes: ["Rarh"]
+    untagged: true
+
+hi:
+  dump: Hindi
+  variety:
+    # Standard Hindi: Wiktionary tags nearly all of its Hindi forms
+    # "Hindi, Standard". Forms tagged dialectal, colloquial, Persianized,
+    # formal or with a note are not taken.
+    name: "Standard Hindi (Hindustani), Wiktionary's Hindi Standard"
+    tags: ["Hindi", "Standard"]
+    untagged: true
+
+es:
+  dump: Spanish
+  variety:
+    # Wiktionary's untagged form, which is the general standard. Regional
+    # forms (Andalusia, Latin America, ...) carry a tag and are not taken.
+    # The decks' `ipa` writes θ, so the course is Castilian: see the plan.
+    name: "Standard Spanish, Wiktionary's untagged form"
+
+te:
+  dump: Telugu
+  variety:
+    # Measured on the kaikki.org dump (2026-11): of 1,670 narrow forms, 1,655
+    # carry no note and no tag; the rest are "stand-alone", "accompanied" or
+    # letter names, which are not taken. Wiktionary has few narrow Telugu
+    # forms (about 5% of cards), so most cards still get theirs from rules.
+    name: "Standard Telugu, Wiktionary's untagged form"
+
+ja:
+  dump: Japanese
+  variety:
+    # Measured on the kaikki.org dump (2026-11): of 26,689 narrow forms,
+    # 26,661 carry no note and no tag (the Tokyo standard); the rest are
+    # regional (Kagoshima, Tohoku, Nagoya, Osaka) or an alternative
+    # morpheme-medial reading, and are not taken.
+    name: "Standard Japanese (Tokyo), Wiktionary's untagged form"

@@ -54,6 +54,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable, Iterable
 
+import yaml
+
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import import_wiktionary as iw  # noqa: E402
@@ -64,8 +66,7 @@ CACHE = ROOT / ".cache" / "phonetic"
 USER_AGENT = iw.USER_AGENT
 DUMP_URL = "https://kaikki.org/dictionary/{name}/kaikki.org-dictionary-{name}.jsonl"
 
-# What the dump calls each language on kaikki.org.
-DUMP_NAMES = {"bn": "Bengali", "hi": "Hindi", "es": "Spanish"}
+REGISTRY = ROOT / "tools" / "phonetic_languages.yaml"
 
 
 @dataclass(frozen=True)
@@ -95,26 +96,34 @@ class Variety:
         return 0
 
 
-# The variety per language: the plan's "Which variety per language" (open
-# question 4), decided here and recorded in the plan. Only these languages
-# are configured; another needs its variety named here first.
-VARIETIES = {
-    # Standard Colloquial Bengali of Kolkata, which Wiktionary marks Rarh.
-    # The decks' `ipa` is the Kolkata standard too. Dhaka (Bangladeshi
-    # Standard), Vanga and the rest are not taken.
-    "bn": Variety("Standard Colloquial Bengali (Kolkata), Wiktionary's Rarh",
-                  notes=frozenset({"Rarh"})),
-    # Standard Hindi: Wiktionary tags nearly all of its Hindi forms
-    # "Hindi, Standard". Forms tagged dialectal, colloquial, Persianized,
-    # formal or with a note are not taken.
-    "hi": Variety("Standard Hindi (Hindustani), Wiktionary's Hindi Standard",
-                  tags=frozenset({"Hindi", "Standard"})),
-    # Spanish: Wiktionary's untagged form, which is the general standard.
-    # Regional forms (Andalusia, Latin America, ...) carry a tag and are not
-    # taken. The decks' `ipa` writes θ, so the course is Castilian: see the
-    # plan's note on this.
-    "es": Variety("Standard Spanish, Wiktionary's untagged form"),
-}
+def load_registry(path: Path = REGISTRY) -> tuple[dict[str, str], dict[str, Variety]]:
+    """The languages the import knows, from the registry file: what the dump
+    calls each (`DUMP_NAMES`) and the variety each course teaches
+    (`VARIETIES`), both by language code. A new language is an entry in the
+    file, never a change here. Raises ValueError naming the entry that is
+    wrong."""
+    raw = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    dumps: dict[str, str] = {}
+    varieties: dict[str, Variety] = {}
+    for lang, entry in raw.items():
+        try:
+            v = entry["variety"]
+            dumps[str(lang)] = str(entry["dump"])
+            varieties[str(lang)] = Variety(
+                str(v.get("name") or lang),
+                notes=frozenset(map(str, v.get("notes") or [])),
+                tags=frozenset(map(str, v.get("tags") or [])),
+                untagged=bool(v.get("untagged", True)))
+        except (KeyError, TypeError, AttributeError) as e:
+            raise ValueError(f"{path}: {lang}: needs `dump` and `variety` ({e!r})") from e
+    return dumps, varieties
+
+
+# What the dump calls each language on kaikki.org, and the variety per
+# language (the plan's "Which variety per language"): read from the registry
+# file `tools/phonetic_languages.yaml`. Another language needs only an entry
+# there.
+DUMP_NAMES, VARIETIES = load_registry()
 
 OUTCOMES = ["filled", "has phonetic", "no ipa line", "no entry", "no narrow form",
             "other variety", "ambiguous", "invalid"]
@@ -268,7 +277,7 @@ def main(argv: list[str]) -> int:
     args = parser.parse_args(argv[1:])
     if args.lang not in VARIETIES:
         print(f"error: no variety is named for {args.lang!r} yet; add it to "
-              f"VARIETIES (configured: {', '.join(sorted(VARIETIES))})", file=sys.stderr)
+              f"tools/phonetic_languages.yaml (configured: {', '.join(sorted(VARIETIES))})", file=sys.stderr)
         return 2
     if not (args.decks / args.lang).is_dir():
         print(f"error: no decks for {args.lang!r} in {args.decks}", file=sys.stderr)

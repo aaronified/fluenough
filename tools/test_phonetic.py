@@ -200,6 +200,52 @@ class Importing(Tree):
         self.assertTrue(calls[0].endswith("/Zed/kaikki.org-dictionary-Zed.jsonl"))
 
 
+class Registry(Tree):
+    """The languages are data (tools/phonetic_languages.yaml, #1285): a new
+    language needs an entry, never a change of the tool."""
+
+    def test_the_first_three_languages_keep_their_dump_and_variety(self) -> None:
+        self.assertEqual(
+            {k: ip.DUMP_NAMES[k] for k in ("bn", "hi", "es")},
+            {"bn": "Bengali", "hi": "Hindi", "es": "Spanish"})
+        bn, hi, es = (ip.VARIETIES[k] for k in ("bn", "hi", "es"))
+        self.assertEqual((bn.notes, bn.tags, bn.untagged),
+                         (frozenset({"Rarh"}), frozenset(), True))
+        self.assertEqual((hi.notes, hi.tags, hi.untagged),
+                         (frozenset(), frozenset({"Hindi", "Standard"}), True))
+        self.assertEqual((es.notes, es.tags, es.untagged),
+                         (frozenset(), frozenset(), True))
+
+    def test_telugu_and_japanese_are_registered_with_their_dumps(self) -> None:
+        self.assertEqual(ip.DUMP_NAMES["te"], "Telugu")
+        self.assertEqual(ip.DUMP_NAMES["ja"], "Japanese")
+        self.assertEqual(set(ip.DUMP_NAMES), set(ip.VARIETIES))
+
+    def test_a_new_language_in_a_registry_file_is_imported_with_no_code_change(self) -> None:
+        reg = self.tmp / "registry.yaml"
+        reg.write_text(
+            "zz:\n  dump: Zed\n  variety:\n    name: \"Zed standard\"\n"
+            "    notes: [\"Std\"]\n    untagged: false\n", encoding="utf-8")
+        dumps, varieties = ip.load_registry(reg)
+        self.assertEqual(dumps, {"zz": "Zed"})
+        with mock.patch.dict(ip.DUMP_NAMES, dumps), \
+                mock.patch.dict(ip.VARIETIES, varieties):
+            self.assertTrue(str(ip.dump_path("zz", self.tmp)).endswith(
+                "kaikki.org-dictionary-Zed.jsonl"))
+            cov, fills = ip.run(
+                "zz", self.dump(
+                    entry("kat", sound("[kat]"), sound("[kʰat]", note="Std"))),
+                self.decks, False)
+        # The marked variety is taken; the untagged form is not (untagged: false).
+        self.assertEqual(fills[self.core]["zz-0001"][0], "[kʰat]")
+
+    def test_an_entry_without_a_dump_or_variety_names_itself_in_the_error(self) -> None:
+        reg = self.tmp / "bad.yaml"
+        reg.write_text("qq:\n  dump: Qux\n", encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "qq"):
+            ip.load_registry(reg)
+
+
 class Deriving(Tree):
     @staticmethod
     def rules(*pairs: tuple[str, str]) -> list[dp.Rule]:
