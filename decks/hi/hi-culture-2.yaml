@@ -1,45 +1,507 @@
 schema: 1
-id: "hi-culture-2"
-part: "core"
-kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
-license: "CC-BY-SA-4.0"
-genre: "culture"
-level: "B1"
-tags: ["unreviewed"]
+id: hi-culture-2
+part: core
+kind: vocab
+language:
+  code: hi
+  iso639_3: hin
+  name: Hindustani
+  script: devanagari
+  scripts:
+  - devanagari
+  - perso_arabic
+  tts: hi-IN
+  icon: हि
+license: CC-BY-SA-4.0
+genre: culture
+level: B1
+tags:
+- unreviewed
 cards:
-  - id: "hi-4050"
-    target: "देख तो दिल के जाँ से उठता है। ये धुँआ सा कहाँ से उठता है।।"
-    target_scripts: { perso_arabic: "دیکھ تو دل کہ جاں سے اٹھتا ہے یہ دھواں سا کہاں سے اٹھتا ہے" }
-    words: ["देख", "तो", "दिल", "के", "जाँ", "से", "उठता", "है", "ये", "धुँआ", "सा", "कहाँ", "से", "उठता", "है"]
-    reading: "dēkh tō dil kē jām̐ sē uṭhtā hai yē dhum̐ā sā kahām̐ sē uṭhtā hai"
-    ipa: "d̪eːkʰ t̪oː d̪ɪl keː dʒãː seː ʊʈʰt̪aː ɦɛː jeː d̪ʱʊ̃aː saː kəɦãː seː ʊʈʰt̪aː ɦɛː"
-    pos: "phrase"
-    level: "B1"
-    modes: ["recognition", "listening"]
-    creator: "hi-mir-taqi-mir"
-    notes:
-      - { id: "n1", kind: "note" }
-    bases:
-      - { word: "देख", base: "देखना" }
-      - { word: "तो", base: "तो" }
-      - { word: "दिल", base: "दिल" }
-      - { word: "के", base: "का" }
-      - { word: "जाँ", base: "जान" }
-      - { word: "से", base: "से" }
-      - { word: "उठता", base: "उठना" }
-      - { word: "है", base: "होना" }
-      - { word: "ये", base: "यह" }
-      - { word: "धुँआ", base: "धुआँ" }
-      - { word: "सा", base: "सा" }
-      - { word: "कहाँ", base: "कहाँ" }
-    source:
-      author: "Mir Taqi Mir"
-      work: "Ghazal, couplet as titled on Urdu Wikisource (Mir's ghazal Dekh to dil ke jaan se uthta hai)"
-      date: "1723-1810"
-      edition: "Urdu text on https://ur.wikisource.org/wiki/دیکھ_تو_دل_کہ_جاں_سے_اُٹھتا_ہے; Devanagari on https://hi.wikipedia.org/wiki/मीर_तक़ी_मीर; the date is the span of his life, because the ghazal's own date is not given"
-      url: "https://ur.wikisource.org/wiki/دیکھ_تو_دل_کہ_جاں_سے_اُٹھتا_ہے"
-      basis: "public-domain"
-      author_died: 1810
-      jurisdiction: "IN"
-      rights_checked: "2026-11-15"
+- id: hi-4050
+  target: देख तो दिल के जाँ से उठता है। ये धुँआ सा कहाँ से उठता है।।
+  target_scripts:
+    perso_arabic: دیکھ تو دل کہ جاں سے اٹھتا ہے یہ دھواں سا کہاں سے اٹھتا ہے
+  words:
+  - देख
+  - तो
+  - दिल
+  - के
+  - जाँ
+  - से
+  - उठता
+  - है
+  - ये
+  - धुँआ
+  - सा
+  - कहाँ
+  - से
+  - उठता
+  - है
+  reading: dēkh tō dil kē jām̐ sē uṭhtā hai yē dhum̐ā sā kahām̐ sē uṭhtā hai
+  ipa: d̪eːkʰ t̪oː d̪ɪl keː dʒãː seː ʊʈʰt̪aː ɦɛː jeː d̪ʱʊ̃aː saː kəɦãː seː ʊʈʰt̪aː ɦɛː
+  pos: phrase
+  level: B1
+  modes:
+  - recognition
+  - listening
+  creator: hi-mir-taqi-mir
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: देख
+    base: देखना
+  - word: तो
+    base: तो
+  - word: दिल
+    base: दिल
+  - word: के
+    base: का
+  - word: जाँ
+    base: जान
+  - word: से
+    base: से
+  - word: उठता
+    base: उठना
+  - word: है
+    base: होना
+  - word: ये
+    base: यह
+  - word: धुँआ
+    base: धुआँ
+  - word: सा
+    base: सा
+  - word: कहाँ
+    base: कहाँ
+  source:
+    author: Mir Taqi Mir
+    work: Ghazal, couplet as titled on Urdu Wikisource (Mir's ghazal Dekh to dil ke jaan se uthta hai)
+    date: 1723-1810
+    edition: Urdu text on https://ur.wikisource.org/wiki/دیکھ_تو_دل_کہ_جاں_سے_اُٹھتا_ہے; Devanagari on https://hi.wikipedia.org/wiki/मीर_तक़ी_मीर; the date is the span of his life, because the ghazal's own date is not given
+    url: https://ur.wikisource.org/wiki/دیکھ_تو_دل_کہ_جاں_سے_اُٹھتا_ہے
+    basis: public-domain
+    author_died: 1810
+    jurisdiction: IN
+    rights_checked: '2026-11-15'
+- id: hi-4051
+  target: हैं और भी दुनिया में सुख़नवर बहुत अच्छे कहते हैं कि 'ग़ालिब' का है अंदाज़-ए-बयाँ और
+  words:
+  - हैं
+  - और
+  - भी
+  - दुनिया
+  - में
+  - सुख़नवर
+  - बहुत
+  - अच्छे
+  - कहते
+  - हैं
+  - कि
+  - ग़ालिब
+  - का
+  - है
+  - अंदाज़-ए-बयाँ
+  - और
+  reading: haim̐ aur bhī duniyā mēm̐ suk͟hnvar bahut acchē kahtē haim̐ ki ġālib kā hai andāz-ē-bayām̐ aur
+  ipa: ɦɛ̃ː ɔːr bʱiː d̪ʊnɪjaː mẽː sʊxnʋər bəɦʊt̪ ətʃtʃʰeː kəɦt̪eː ɦɛ̃ː kɪ ɣaːlɪb kaː ɦɛː ənd̪aːzeːbəjãː ɔːr
+  pos: phrase
+  level: B1
+  modes:
+  - recognition
+  - listening
+  creator: hi-ghalib
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: हैं
+    base: हैं
+  - word: और
+    base: और
+  - word: भी
+    base: भी
+  - word: दुनिया
+    base: दुनिया
+  - word: में
+    base: में
+  - word: सुख़नवर
+    base: सुख़नवर
+  - word: बहुत
+    base: बहुत
+  - word: अच्छे
+    base: अच्छे
+  - word: कहते
+    base: कहते
+  - word: कि
+    base: कि
+  - word: ग़ालिब
+    base: ग़ालिब
+  - word: का
+    base: का
+  - word: है
+    base: है
+  - word: अंदाज़-ए-बयाँ
+    base: अंदाज़-ए-बयाँ
+  source:
+    author: Mirza Ghalib
+    work: Ghazal couplet, as quoted on the Hindi Wikipedia page about Ghalib
+    date: 1797-1869
+    edition: Quoted on the Hindi Wikipedia page https://hi.wikipedia.org/wiki/मिर्ज़ा_ग़ालिब; the date is the span of the poet's life, because the couplet's own date is not given
+    url: https://hi.wikipedia.org/wiki/मिर्ज़ा_ग़ालिब
+    basis: public-domain
+    author_died: 1869
+    jurisdiction: IN
+    rights_checked: '2026-11-15'
+- id: hi-4052
+  target: मर्ज़-ए-इश्क़ जिसे हो उसे क्या याद रहे न दवा याद रहे और न दुआ याद रहे
+  words:
+  - मर्ज़-ए-इश्क़
+  - जिसे
+  - हो
+  - उसे
+  - क्या
+  - याद
+  - रहे
+  - न
+  - दवा
+  - याद
+  - रहे
+  - और
+  - न
+  - दुआ
+  - याद
+  - रहे
+  reading: marz-ē-iśq jisē hō usē kyā yād rahē na davā yād rahē aur na duā yād rahē
+  ipa: mərzeːɪʃq dʒɪseː ɦoː ʊseː kjaː jaːd̪ rəɦeː nə d̪əʋaː jaːd̪ rəɦeː ɔːr nə d̪ʊaː jaːd̪ rəɦeː
+  pos: phrase
+  level: B1
+  modes:
+  - recognition
+  - listening
+  creator: hi-zauq
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: मर्ज़-ए-इश्क़
+    base: मर्ज़-ए-इश्क़
+  - word: जिसे
+    base: जिसे
+  - word: हो
+    base: हो
+  - word: उसे
+    base: उसे
+  - word: क्या
+    base: क्या
+  - word: याद
+    base: याद
+  - word: रहे
+    base: रहे
+  - word: न
+    base: न
+  - word: दवा
+    base: दवा
+  - word: और
+    base: और
+  - word: दुआ
+    base: दुआ
+  source:
+    author: Zauq
+    work: Ghazal couplet, as quoted on the Hindi Wikipedia page about Zauq
+    date: 1789-1854
+    edition: Quoted on the Hindi Wikipedia page https://hi.wikipedia.org/wiki/ज़ौक़; the date is the span of the poet's life, because the couplet's own date is not given
+    url: https://hi.wikipedia.org/wiki/ज़ौक़
+    basis: public-domain
+    author_died: 1854
+    jurisdiction: IN
+    rights_checked: '2026-11-15'
+- id: hi-4053
+  target: तुम जिसे याद करो फिर उसे क्या याद रहे न ख़ुदाई की हो परवा न ख़ुदा याद रहे
+  words:
+  - तुम
+  - जिसे
+  - याद
+  - करो
+  - फिर
+  - उसे
+  - क्या
+  - याद
+  - रहे
+  - न
+  - ख़ुदाई
+  - की
+  - हो
+  - परवा
+  - न
+  - ख़ुदा
+  - याद
+  - रहे
+  reading: tum jisē yād karō phir usē kyā yād rahē na k͟hudāī kī hō parvā na k͟hudā yād rahē
+  ipa: t̪ʊm dʒɪseː jaːd̪ kəroː pʰɪr ʊseː kjaː jaːd̪ rəɦeː nə xʊd̪aːiː kiː ɦoː pərʋaː nə xʊd̪aː jaːd̪ rəɦeː
+  pos: phrase
+  level: B1
+  modes:
+  - recognition
+  - listening
+  creator: hi-zauq
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: तुम
+    base: तुम
+  - word: जिसे
+    base: जिसे
+  - word: याद
+    base: याद
+  - word: करो
+    base: करो
+  - word: फिर
+    base: फिर
+  - word: उसे
+    base: उसे
+  - word: क्या
+    base: क्या
+  - word: रहे
+    base: रहे
+  - word: न
+    base: न
+  - word: ख़ुदाई
+    base: ख़ुदाई
+  - word: की
+    base: की
+  - word: हो
+    base: हो
+  - word: परवा
+    base: परवा
+  - word: ख़ुदा
+    base: ख़ुदा
+  source:
+    author: Zauq
+    work: Ghazal couplet, as quoted on the Hindi Wikipedia page about Zauq
+    date: 1789-1854
+    edition: Quoted on the Hindi Wikipedia page https://hi.wikipedia.org/wiki/ज़ौक़; the date is the span of the poet's life, because the couplet's own date is not given
+    url: https://hi.wikipedia.org/wiki/ज़ौक़
+    basis: public-domain
+    author_died: 1854
+    jurisdiction: IN
+    rights_checked: '2026-11-15'
+- id: hi-4054
+  target: हमको शायर न कहो मीर कि साहिब हमने दर्दो ग़म कितने किए जमा तो दीवान किया
+  words:
+  - हमको
+  - शायर
+  - न
+  - कहो
+  - मीर
+  - कि
+  - साहिब
+  - हमने
+  - दर्दो
+  - ग़म
+  - कितने
+  - किए
+  - जमा
+  - तो
+  - दीवान
+  - किया
+  reading: hamkō śāyar na kahō mīr ki sāhib hamnē dardō ġam kitnē kiē jamā tō dīvān kiyā
+  ipa: ɦəmkoː ʃaːjər nə kəɦoː miːr kɪ saːɦɪb ɦəmneː d̪ərd̪oː ɣəm kɪt̪neː kɪeː dʒəmaː t̪oː d̪iːʋaːn kɪjaː
+  pos: phrase
+  level: B1
+  modes:
+  - recognition
+  - listening
+  creator: hi-mir-taqi-mir
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: हमको
+    base: हमको
+  - word: शायर
+    base: शायर
+  - word: न
+    base: न
+  - word: कहो
+    base: कहो
+  - word: मीर
+    base: मीर
+  - word: कि
+    base: कि
+  - word: साहिब
+    base: साहिब
+  - word: हमने
+    base: हमने
+  - word: दर्दो
+    base: दर्दो
+  - word: ग़म
+    base: ग़म
+  - word: कितने
+    base: कितने
+  - word: किए
+    base: किए
+  - word: जमा
+    base: जमा
+  - word: तो
+    base: तो
+  - word: दीवान
+    base: दीवान
+  - word: किया
+    base: किया
+  source:
+    author: Mir Taqi Mir
+    work: Ghazal couplet, as quoted on the Hindi Wikipedia page about Mir
+    date: 1723-1810
+    edition: Quoted on the Hindi Wikipedia page https://hi.wikipedia.org/wiki/मीर_तक़ी_मीर; the date is the span of the poet's life, because the couplet's own date is not given
+    url: https://hi.wikipedia.org/wiki/मीर_तक़ी_मीर
+    basis: public-domain
+    author_died: 1810
+    jurisdiction: IN
+    rights_checked: '2026-11-15'
+- id: hi-4055
+  target: कितना है बदनसीब 'ज़फर' दफ्न के लिए, दो गज़ ज़मीन भी न मिली कू-ए-यार में॥
+  words:
+  - कितना
+  - है
+  - बदनसीब
+  - ज़फर
+  - दफ्न
+  - के
+  - लिए
+  - दो
+  - गज़
+  - ज़मीन
+  - भी
+  - न
+  - मिली
+  - कू-ए-यार
+  - में
+  reading: kitnā hai badnsīb zaphar daphn kē liē dō gaz zamīn bhī na milī kū-ē-yār mēm̐
+  ipa: kɪt̪naː ɦɛː bəd̪nsiːb zəpʰər d̪əpʰn keː lɪeː d̪oː ɡəz zəmiːn bʱiː nə mɪliː kuːeːjaːr mẽː
+  pos: phrase
+  level: B1
+  modes:
+  - recognition
+  - listening
+  creator: hi-zafar
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: कितना
+    base: कितना
+  - word: है
+    base: है
+  - word: बदनसीब
+    base: बदनसीब
+  - word: ज़फर
+    base: ज़फर
+  - word: दफ्न
+    base: दफ्न
+  - word: के
+    base: के
+  - word: लिए
+    base: लिए
+  - word: दो
+    base: दो
+  - word: गज़
+    base: गज़
+  - word: ज़मीन
+    base: ज़मीन
+  - word: भी
+    base: भी
+  - word: न
+    base: न
+  - word: मिली
+    base: मिली
+  - word: कू-ए-यार
+    base: कू-ए-यार
+  - word: में
+    base: में
+  source:
+    author: Bahadur Shah Zafar
+    work: Ghazal couplet, as quoted on the Hindi Wikipedia page about Bahadur Shah Zafar
+    date: 1775-1862
+    edition: Quoted on the Hindi Wikipedia page https://hi.wikipedia.org/wiki/बहादुर_शाह_ज़फ़र; the date is the span of the poet's life, because the couplet's own date is not given
+    url: https://hi.wikipedia.org/wiki/बहादुर_शाह_ज़फ़र
+    basis: public-domain
+    author_died: 1862
+    jurisdiction: IN
+    rights_checked: '2026-11-15'
+- id: hi-4056
+  target: किसी का दर्द-ए-दिल प्यारे तुम्हारा नाज़ क्या समझे जो गुज़रे सैद के दिल पर उसे शाहबाज़ क्या समझे
+  words:
+  - किसी
+  - का
+  - दर्द-ए-दिल
+  - प्यारे
+  - तुम्हारा
+  - नाज़
+  - क्या
+  - समझे
+  - जो
+  - गुज़रे
+  - सैद
+  - के
+  - दिल
+  - पर
+  - उसे
+  - शाहबाज़
+  - क्या
+  - समझे
+  reading: kisī kā dard-ē-dil pyārē tumhārā nāz kyā samjhē jō guzrē said kē dil par usē śāhbāz kyā samjhē
+  ipa: kɪsiː kaː d̪ərd̪eːd̪ɪl pjaːreː t̪ʊmɦaːraː naːz kjaː səmdʒʱeː dʒoː ɡʊzreː sɛːd̪ keː d̪ɪl pər ʊseː ʃaːɦbaːz kjaː səmdʒʱeː
+  pos: phrase
+  level: B1
+  modes:
+  - recognition
+  - listening
+  creator: hi-sauda
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: किसी
+    base: किसी
+  - word: का
+    base: का
+  - word: दर्द-ए-दिल
+    base: दर्द-ए-दिल
+  - word: प्यारे
+    base: प्यारे
+  - word: तुम्हारा
+    base: तुम्हारा
+  - word: नाज़
+    base: नाज़
+  - word: क्या
+    base: क्या
+  - word: समझे
+    base: समझे
+  - word: जो
+    base: जो
+  - word: गुज़रे
+    base: गुज़रे
+  - word: सैद
+    base: सैद
+  - word: के
+    base: के
+  - word: दिल
+    base: दिल
+  - word: पर
+    base: पर
+  - word: उसे
+    base: उसे
+  - word: शाहबाज़
+    base: शाहबाज़
+  source:
+    author: Sauda
+    work: Ghazal couplet, as quoted on the Hindi Wikipedia page about Sauda
+    date: 1713-1781
+    edition: Quoted on the Hindi Wikipedia page https://hi.wikipedia.org/wiki/मिर्ज़ा_रफ़ी_सौदा; the date is the span of the poet's life, because the couplet's own date is not given
+    url: https://hi.wikipedia.org/wiki/मिर्ज़ा_रफ़ी_सौदा
+    basis: public-domain
+    author_died: 1781
+    jurisdiction: IN
+    rights_checked: '2026-11-15'
