@@ -1,0 +1,216 @@
+# Layer for te-proverbs-3: each proverb's literal English rendering and its meaning.
+schema: 1
+id: "te-en-proverbs-3"
+kind: "layer"
+core: "te-proverbs-3"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Proverbs 3"
+description: "Twenty Telugu proverbs from M. W. Carr's 1868 supplement to A Collection of Telugu Proverbs, each with a literal English rendering and its meaning. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "te-9050":
+    native: "Even on festival day it is the same old husband."
+    notes:
+      "literal": "Said of a marriage gone dull, where even a festival brings nothing new from the husband."
+    bases:
+      "పండగనాడూ": { meaning: "on festival day, too" }
+      "మొగుడేనా": { meaning: "husband (emphatic)" }
+  "te-9051":
+    native: "Is there a lie that the mind does not know?"
+    notes:
+      "literal": "Said that one's own conscience always knows when one is lying. Stem: మనసెరుగని (manaserugani) is based on ఎరుగు (erugu). Stem: వున్నాదా (vunnādā) is based on ఉండడం (uṇḍaḍaṁ)."
+    bases:
+      "మనసెరుగని": { meaning: "that the mind does not know" }
+      "అబద్దము": { meaning: "lie (printed spelling అబద్దము (abaddamu))" }
+      "వున్నాదా": { meaning: "is there?" }
+  "te-9052":
+    native: "A mother knows her son's origins."
+    notes:
+      "literal": "Said that a mother knows her child's true birth and nature better than anyone. Stem: యెరుగును (yerugunu) is based on ఎరుగు (erugu)."
+    bases:
+      "తనయుని": { meaning: "son (of)" }
+      "పుట్టుక": { meaning: "birth; origin" }
+      "తల్లి": { meaning: "mother" }
+      "యెరుగును": { meaning: "knows" }
+  "te-9053":
+    native: "Even when you lie, lie as firmly as a built wall."
+    notes:
+      "literal": "Literally, even when lying, let the lie stand like a wall; said that a lie must be built carefully and kept consistent, or it falls. Stem: వుండవలెను (vuṇḍavalenu) is based on ఉండడం (uṇḍaḍaṁ)."
+    bases:
+      "అబద్ధమాడినా": { meaning: "even when lying" }
+      "పెట్టినట్టు": { meaning: "as if built" }
+      "వుండవలెను": { meaning: "should be" }
+  "te-9054":
+    native: "For one who is determined, even a ladle becomes a weapon."
+    notes:
+      "literal": "Said that a person who is resolved will make a weapon of whatever is at hand."
+    bases:
+      "తెగించిన": { meaning: "determined" }
+      "వానికి": { meaning: "for him" }
+      "తెడ్డే": { meaning: "paddle; ladle (emphatic)" }
+      "ఆయుధము": { meaning: "weapon (printed spelling ఆయుధము (āyudhamu))" }
+  "te-9055":
+    native: "Eating like an ox and sleeping like a log."
+    notes:
+      "literal": "Said of an idle person who eats heartily and sleeps soundly without doing any useful work."
+    bases:
+      "ఎద్దువలె": { meaning: "like an ox" }
+      "తిని": { meaning: "having eaten" }
+      "మొద్దువలె": { meaning: "like a log (dullard)" }
+      "నిద్రపోయినట్టు": { meaning: "as if having slept" }
+  "te-9056":
+    native: "'I have studied all the secrets of learning,' he said."
+    notes:
+      "literal": "Said of a self-important man who claims to know all the secrets of learning after little study."
+    bases:
+      "చదువులలో": { meaning: "in learning" }
+      "మర్మమంతా": { meaning: "all the secrets" }
+      "చదివినాను": { meaning: "I have studied" }
+      "అన్నాడట": { meaning: "said (reportedly)" }
+  "te-9057":
+    native: "He is the man who turns the elder into the younger and the younger into the elder."
+    notes:
+      "literal": "Said of someone who mixes up the proper order of seniority, treating the younger sister as the elder and the elder as the younger."
+    bases:
+      "చిన్నక్కను": { meaning: "younger sister (as object)" }
+      "పెద్దక్కను": { meaning: "elder sister (as object)" }
+      "చేశేవాడు": { meaning: "one who makes" }
+  "te-9058":
+    native: "Even if the mother were gold, the goldsmith would not stop stealing."
+    notes:
+      "literal": "Said that a habitual thief keeps stealing whatever the prize, so greed does not stop."
+    bases:
+      "తల్లి": { meaning: "mother" }
+      "బంగారు": { meaning: "golden" }
+      "కంసలవాడు": { meaning: "goldsmith" }
+      "దొంగిలక": { meaning: "stealing" }
+      "మానడు": { meaning: "does not stop" }
+  "te-9059":
+    native: "Jewellery bought for show is no help when a calamity comes."
+    notes:
+      "literal": "Said that what is spent on adornment does not help in hardship, so savings should be kept for emergencies."
+    bases:
+      "అందానకు": { meaning: "for beauty" }
+      "పెట్టిన": { meaning: "spent on" }
+      "సొమ్ము": { meaning: "jewellery; wealth" }
+      "ఆపదకు": { meaning: "in hardship" }
+      "అడ్డం": { meaning: "obstacle" }
+      "వస్తుంది": { meaning: "becomes" }
+  "te-9060":
+    native: "A snake is just as dangerous whether it is small or big."
+    notes:
+      "literal": "Said that size does not change danger, so a small or young snake must be treated as seriously as a big one. Stem: వకటే (vakaṭē) is based on ఒకటే (okaṭē)."
+    bases:
+      "చిన్నది": { meaning: "small one" }
+      "వకటే": { meaning: "the same (printed spelling వకటే (vakaṭē))" }
+      "పెద్దది": { meaning: "big one" }
+  "te-9061":
+    native: "'I trusted you, Rayanna?' 'I will drown you in mid-river, Lakshmanna!' he said."
+    notes:
+      "literal": "Said of someone who betrays a trust: asked whether he was trusted, he answers that he will drown the other in mid-river."
+    bases:
+      "నమ్మినాను": { meaning: "I trusted" }
+      "రాయన్నా": { meaning: "Rayanna (a name)" }
+      "అంటే": { meaning: "if (one) says" }
+      "నట్టేట్లో": { meaning: "in mid-river" }
+      "ముంచుతాను": { meaning: "I will drown" }
+      "లక్ష్మన్నా": { meaning: "Lakshmanna (a name)" }
+      "అన్నాడట": { meaning: "said (reportedly)" }
+  "te-9062":
+    native: "Whose house are you planning to rob in this jangam's disguise?"
+    notes:
+      "literal": "Said to someone in a disguise who is obviously up to no good; a jangam is a Lingayat ascetic. Stem: యీ (yī) is based on ఈ (ī)."
+    bases:
+      "కొంప": { meaning: "house" }
+      "తియ్యడానకు": { meaning: "to open (to rob)" }
+      "యీ": { meaning: "this" }
+      "జంగం": { meaning: "jangam (ascetic)" }
+      "వేశినావు": { meaning: "you put on" }
+  "te-9063":
+    native: "A mother's coarse flatbread tastes better than a wife's grand feast."
+    notes:
+      "literal": "Literally, the coarse bread from the mother's hand is better than the five-course feast from the wife's hand; said that a mother's plain care can outweigh a wife's show."
+    bases:
+      "చేతి": { meaning: "hand (of)" }
+      "పంచభక్ష్యపరమాన్నములకన్నా": { meaning: "five kinds of food and sweets, rather than" }
+      "తల్లి": { meaning: "mother" }
+      "తవిటి": { meaning: "coarse (flour)" }
+      "రొట్టి": { meaning: "flatbread" }
+      "నయమి": { meaning: "better" }
+  "te-9064":
+    native: "Dress a child in jewels and look; whitewash a wall with lime and look."
+    notes:
+      "literal": "Said that outward decoration does not change what a thing is underneath, as a child in jewels is still a child."
+    bases:
+      "పిల్లకు": { meaning: "child (to)" }
+      "సొమ్ము": { meaning: "jewels" }
+      "పెట్టి": { meaning: "putting on" }
+      "చూడు": { meaning: "look" }
+      "గోడకు": { meaning: "wall (to)" }
+      "సున్నపు": { meaning: "lime (for whitewash)" }
+  "te-9065":
+    native: "'Who ruined you, Virannā?' 'My mouth ruined me, Kāṭamarāja!' he said."
+    notes:
+      "literal": "Said of someone whose own loose talk brings trouble on him."
+    bases:
+      "ఎవరివల్ల": { meaning: "by whom" }
+      "చెడ్డావోయి": { meaning: "you were ruined" }
+      "వీరన్నా": { meaning: "Virannā (a name)" }
+      "అంటే": { meaning: "if (one) asks" }
+      "నోటివల్ల": { meaning: "by the mouth" }
+      "చెడ్డానోయి": { meaning: "I was ruined" }
+      "కాటమరాజా": { meaning: "Kāṭamarāja (a name)" }
+      "అన్నాడట": { meaning: "said (reportedly)" }
+  "te-9066":
+    native: "'Do I get some too?' 'Nothing for you, and nothing for your father either!' he said."
+    notes:
+      "literal": "Said of a dismissive refusal; bebbe is an interjection of refusal meaning nothing."
+    bases:
+      "నాకూ": { meaning: "to me, too" }
+      "బెబ్బేనా": { meaning: "nothing? (refusal)" }
+      "అంటే": { meaning: "if (one) asks" }
+      "నీకు": { meaning: "to you" }
+      "బెబ్బే": { meaning: "nothing (refusal)" }
+      "నీ": { meaning: "your" }
+      "అబ్బకూ": { meaning: "to your father, too" }
+      "అన్నాడట": { meaning: "said (reportedly)" }
+  "te-9067":
+    native: "When the lenders take back the borrowed jewels, the bridegroom's face is left splashed with cow-dung water."
+    notes:
+      "literal": "Said of a man whose borrowed finery is taken back, leaving him shamed in front of everyone. Stem: యెరువులవారు (yeruvulavāru) is based on ఎరువులవారు (eruvulavāru). Stem: యెత్తుకొని (yettukoni) is based on ఎత్తుకొను (ettukonu). Stem: వుంటుంది (vuṇṭundi) is based on ఉండడం (uṇḍaḍaṁ)."
+    bases:
+      "ఎరువుల": { meaning: "borrowed" }
+      "సొమ్ములు": { meaning: "jewels" }
+      "యెరువులవారు": { meaning: "the lenders" }
+      "యెత్తుకొని": { meaning: "taking away" }
+      "పొతే": { meaning: "if (they) go" }
+      "పెండ్లికొడుకు": { meaning: "bridegroom" }
+      "ముఖాన": { meaning: "on the face" }
+      "పేడనీళ్ళు": { meaning: "cow-dung water" }
+      "చల్లినట్టే": { meaning: "as if sprinkled" }
+      "వుంటుంది": { meaning: "is" }
+  "te-9068":
+    native: "'Who will look after your buffalo calf?' 'My purse's money will look after it,' he said."
+    notes:
+      "literal": "Said of a man for whom money does everything, so that his purse takes care of his animal. Stem: నాతిత్తిలోని (nātittilōni) is based on తిత్తి (titti)."
+    bases:
+      "నీ": { meaning: "your" }
+      "బర్రె": { meaning: "buffalo" }
+      "గొడ్డును": { meaning: "calf (object)" }
+      "కాస్తారుచూతాము": { meaning: "will tend (we will see)" }
+      "అంటే": { meaning: "if (one) asks" }
+      "నాతిత్తిలోని": { meaning: "in my purse" }
+      "డబ్బే": { meaning: "money (emphatic)" }
+      "కాస్తున్నది": { meaning: "is tending" }
+      "అన్నాడట": { meaning: "said (reportedly)" }
+  "te-9069":
+    native: "No one has suffered hardship for thirty years, and no one has enjoyed ease for thirty years."
+    notes:
+      "literal": "Said that fortune turns, so no one's misery or happiness lasts a full thirty years. Stem: యేండ్లు (yēṇḍlu) is based on ఏండ్లు (ēṇḍlu)."
+    bases:
+      "యేండ్లు": { meaning: "years" }
+      "కష్టము": { meaning: "hardship (printed spelling కష్టము (kaṣṭamu))" }
+      "అనుభవించినవాడూ": { meaning: "one who has experienced" }
+      "లేడు": { meaning: "there is no one" }
+      "సుఖము": { meaning: "ease; pleasure" }
