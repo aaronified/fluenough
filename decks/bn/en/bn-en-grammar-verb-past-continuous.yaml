@@ -1,0 +1,28 @@
+schema: 1
+id: "bn-en-grammar-verb-past-continuous"
+kind: "layer"
+core: "bn-grammar-verb-past-continuous"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verbs: what I, you, he, she were doing"
+description: "Every verb the course teaches, for something that was going on at a time in the past, for each person and each level of respect. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "person"
+  slots:
+    "ami": "I or we, in the past continuous"
+    "tui": "you (intimate), in the past continuous"
+    "tumi": "you (familiar), in the past continuous"
+    "apni": "you (respectful), in the past continuous"
+    "se": "he, she or they, in the past continuous"
+    "tini": "he or she (respectful), in the past continuous"
+rules:
+  "bn-rule-past-continuous-first":
+    name: "-ছিলাম (-chilām), -চ্ছিলাম (-cchilām): I, we"
+    explanation: "{1} joins a stem that ends in a consonant, and {2} one that ends in a vowel, for 'I' and for 'we' alike: {3}, {4} and {5}. A stem that does not change keeps its form: {6}."
+  "bn-rule-past-continuous-second":
+    name: "-ছিলি (-chili), -ছিলে (-chile), -ছিলেন (-chilen): you"
+    explanation: "{1}, for a friend or a younger person, takes {2} after a consonant stem and {3} after a vowel stem: {4}. {5}, the familiar one, takes {6} after a consonant stem and {7} after a vowel stem: {8}. {9}, the respectful one, takes {10} after a consonant stem and {11} after a vowel stem: {12}."
+  "bn-rule-past-continuous-third":
+    name: "-ছিল (-chil), -ছিলেন (-chilen): he, she, they"
+    explanation: "For someone who is not there, {1} is the ordinary ending after a consonant stem and {2} after a vowel stem: {3} and {4}. It does not change for one or for many. For someone you respect it is {5} after a consonant stem and {6} after a vowel stem, as in {7} and {8}."

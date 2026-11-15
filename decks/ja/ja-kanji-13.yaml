@@ -16,6 +16,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "体育はおもしろいです。"
+        target_scripts: { kana: "たいいくはおもしろいです。" }
+        words: ["体育", "は", "おもしろい", "です"]
+        reading: "taiiku wa omoshiroi desu."
+        ipa: "taiːkɯ wa omoɕiɾoi desɯ"
   - id: "ja-5661"
     target: "苦"
     target_scripts: { kana: "にがい" }
@@ -63,6 +69,11 @@ cards:
         words: ["わたし", "は", "バス", "に", "乗ります"]
         reading: "watashi wa basu ni norimasu."
         ipa: "wataɕi wa basɯ ni noɾimasɯ"
+      - target: "バス乗り場はどこですか。"
+        target_scripts: { kana: "バスのりばはどこですか。" }
+        words: ["バス", "乗り場", "は", "どこ", "です", "か"]
+        reading: "basu noriba wa doko desu ka?"
+        ipa: "basɯ noɾiba wa doko desɯ ka"
   - id: "ja-5664"
     target: "係"
     target_scripts: { kana: "かかり" }
