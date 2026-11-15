@@ -140,13 +140,13 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - target: "あしたまたはきのうにいきます。"
-        words: ["あした", "または", "きのう", "に", "いきます"]
-        reading: "ashita matawa kinou ni ikimasu."
-        ipa: "aɕita matawa kinoː ni ikimasɯ"
+      - target: "あしたまたはあさってにいきます。"
+        words: ["あした", "または", "あさって", "に", "いきます"]
+        reading: "ashita matawa asatte ni ikimasu."
+        ipa: "aɕita matawa asatte ni ikimasɯ"
         bases:
           - { word: "あした", ref: "ja-0513" }
-          - { word: "きのう", ref: "ja-0514" }
+          - { word: "あさって", ref: "ja-1412" }
           - { word: "に", base: "に", reading: "ni" }
           - { word: "いきます", base: "いく", reading: "iku" }
       - target: "がっこうまたはいえにいます。"

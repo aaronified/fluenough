@@ -126,16 +126,17 @@ cards:
       - { id: "w2", ref: "ja-0849", kind: "word" }
   - id: "ja-9587"
     target: "きのうはへやがございませんでした。"
-    words: ["きのう", "は", "へや", "が", "ございませんでした"]
-    reading: "kinou wa heya ga gozaimasendeshita."
-    ipa: "kinoː wa heja ɡa ɡodzaimaseɴdeɕita"
+    words: ["きのう", "は", "へや", "が", "ございません", "でした"]
+    reading: "kinou wa heya ga gozaimasen deshita."
+    ipa: "kinoː wa heja ɡa ɡodzaimaseɴ deɕita"
     pos: "phrase"
     bases:
       - { word: "きのう", ref: "ja-0514" }
       - { word: "は", base: "は", reading: "wa" }
       - { word: "へや", ref: "ja-1168" }
       - { word: "が", base: "が", reading: "ga" }
-      - { word: "ございませんでした", base: "ございます", reading: "gozaimasu" }
+      - { word: "ございません", base: "ございます", reading: "gozaimasu" }
+      - { word: "でした", base: "です", reading: "desu" }
     notes:
       - { id: "n1", kind: "behaviour" }
     confusables:

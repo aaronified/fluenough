@@ -37,19 +37,19 @@ cards:
       - { id: "w1", ref: "ja-9104", kind: "word" }
       - { id: "w2", ref: "ja-9103", kind: "word" }
   - id: "ja-9122"
-    target: "あしたはやすみです。それで、いえにいます。"
-    words: ["あした", "は", "やすみ", "です", "それで", "いえ", "に", "います"]
-    reading: "ashita wa yasumi desu. sorede, ie ni imasu."
-    ipa: "aɕita wa jasɯmi desɯ soɾede ie ni imasɯ"
+    target: "きのうはあめでした。それで、いえにいました。"
+    words: ["きのう", "は", "あめ", "でした", "それで", "いえ", "に", "いました"]
+    reading: "kinou wa ame deshita. sorede, ie ni imashita."
+    ipa: "kinoː wa ame deɕita soɾede ie ni imaɕita"
     pos: "phrase"
     bases:
-      - { word: "あした", ref: "ja-0513" }
+      - { word: "きのう", ref: "ja-0514" }
       - { word: "は", base: "は", reading: "wa" }
-      - { word: "やすみ", ref: "ja-0321" }
-      - { word: "です", base: "です", reading: "desu" }
+      - { word: "あめ", ref: "ja-1454" }
+      - { word: "でした", base: "です", reading: "desu" }
       - { word: "いえ", ref: "ja-1153" }
       - { word: "に", base: "に", reading: "ni" }
-      - { word: "います", base: "いる", reading: "iru" }
+      - { word: "いました", base: "いる", reading: "iru" }
     confusables:
       - { id: "w1", ref: "ja-9105", kind: "word" }
       - { id: "w2", ref: "ja-9102", kind: "word" }
