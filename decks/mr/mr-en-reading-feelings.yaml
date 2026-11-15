@@ -1,0 +1,32 @@
+schema: 1
+id: "mr-en-reading-feelings"
+name: "Reading: a letter to a friend"
+kind: "reading"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A letter to a friend about worries and hopes. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "mr-letter-to-a-friend"
+    title: "A letter to a friend"
+    sentences:
+      - { text: "प्रिय मित्रा, कसा आहेस?", reading: "priy mitrā, kasā āhes?", ipa: "prij mit̪ra kəsa aɦes" }
+      - { text: "मला थोडी काळजी वाटते.", reading: "malā thoḍi kāḷji vāṭte.", ipa: "məla t̪ʰoɖi kaɭdʒi ʋaʈt̪e" }
+      - { text: "पण मला आशा आहे की सगळं ठीक होईल.", reading: "paṇ malā āśā āhe ki sagḷam̐ ṭhik hoil.", ipa: "pəɳ məla aʃa aɦe ki səɡɭə̃ ʈʰik ɦoil" }
+      - { text: "तुझी आठवण येते.", reading: "tujhi āṭhvaṇ yete.", ipa: "t̪udʒʱi aʈʰʋəɳ jet̪e" }
+      - { text: "लवकर भेटू.", reading: "lavkar bheṭu.", ipa: "ləʋkər bʱeʈu" }
+    questions:
+      - id: "mr-7515"
+        prompt: { en: "How does the writer feel?" }
+        options: [{ en: "Worried" }, { en: "Angry" }, { en: "Bored" }]
+        answer: 1
+      - id: "mr-7516"
+        prompt: { en: "What does the writer hope?" }
+        options: [{ en: "It will rain" }, { en: "That everything will be fine" }, { en: "The friend will move" }]
+        answer: 2
+      - id: "mr-7517"
+        prompt: { en: "What does the writer say about the friend?" }
+        options: [{ en: "They miss the friend" }, { en: "The friend is angry" }, { en: "The friend is ill" }]
+        answer: 1

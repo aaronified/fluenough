@@ -1,0 +1,32 @@
+schema: 1
+id: "mr-en-reading-grammar-causative"
+name: "Reading: service request"
+kind: "reading"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A written service request. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["reading", "intermediate", "unreviewed"]
+passages:
+  - id: "mr-service-request"
+    title: "Service request"
+    sentences:
+      - { text: "माझ्या घरातला नळ गळतो.", reading: "mājhyā gharātlā naḷ gaḷto.", ipa: "madʒʱja ɡʱərat̪la nəɭ ɡəɭt̪o" }
+      - { text: "कृपया तो नळ दुरुस्त करून द्या.", reading: "krupyā to naḷ durust karun dyā.", ipa: "krupja t̪o nəɭ d̪urust̪ kərun d̪ja" }
+      - { text: "पंखाही बंद आहे.", reading: "paṅkhāhi band āhe.", ipa: "pəŋkʰaɦi bənd̪ aɦe" }
+      - { text: "मी उद्या सकाळी घरी असेन.", reading: "mi udyā sakāḷi ghari asen.", ipa: "mi ud̪ja səkaɭi ɡʱəri əsen" }
+      - { text: "कृपया लवकर या.", reading: "krupyā lavkar yā.", ipa: "krupja ləʋkər ja" }
+    questions:
+      - id: "mr-7524"
+        prompt: { en: "What is wrong with the tap?" }
+        options: [{ en: "It leaks" }, { en: "It is missing" }, { en: "It is too hot" }]
+        answer: 1
+      - id: "mr-7525"
+        prompt: { en: "What else does not work?" }
+        options: [{ en: "The door" }, { en: "The lift" }, { en: "The fan" }]
+        answer: 3
+      - id: "mr-7526"
+        prompt: { en: "When will the writer be at home?" }
+        options: [{ en: "Tomorrow morning" }, { en: "Tonight" }, { en: "Next week" }]
+        answer: 1

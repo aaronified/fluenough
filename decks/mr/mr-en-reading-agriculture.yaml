@@ -1,0 +1,62 @@
+"schema": 1
+"id": "mr-en-reading-agriculture"
+"name": "Reading: market prices"
+"kind": "reading"
+"language":
+  "code": "mr"
+  "iso639_3": "mar"
+  "name": "Marathi"
+  "script": "devanagari"
+  "tts": "mr-IN"
+  "icon": "म"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"description": "A crop price board at a market, with the price per kilogram of three crops. Not yet checked by a Marathi speaker: please report any mistake."
+"tags":
+- "reading"
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "mr-market-prices"
+  "title": "Market prices"
+  "sentences":
+  - "text": "आजचे बाजारभाव."
+    "reading": "ājce bājārbhāv."
+    "ipa": "adztʃe badzarbʱaʋ"
+  - "text": "गहू: किलोला तीस रुपये."
+    "reading": "gahu: kilolā tis rupye."
+    "ipa": "ɡəɦu kilola t̪is rupje"
+  - "text": "ज्वारी: किलोला पंचवीस रुपये."
+    "reading": "jvāri: kilolā pañcavis rupye."
+    "ipa": "dzʋari kilola pəɲtsəʋis rupje"
+  - "text": "कांदा: किलोला वीस रुपये."
+    "reading": "kāndā: kilolā vis rupye."
+    "ipa": "kand̪a kilola ʋis rupje"
+  - "text": "सर्वात महाग पीक गहू आहे."
+    "reading": "sarvāt mahāg pik gahu āhe."
+    "ipa": "sərʋat̪ məɦaɡ pik ɡəɦu aɦe"
+  "questions":
+  - "id": "mr-7121"
+    "prompt":
+      "en": "How much is one kilogram of jowar?"
+    "options":
+    - "en": "20 rupees"
+    - "en": "25 rupees"
+    - "en": "30 rupees"
+    "answer": 2
+  - "id": "mr-7122"
+    "prompt":
+      "en": "Which crop is the most expensive?"
+    "options":
+    - "en": "Wheat"
+    - "en": "Jowar"
+    - "en": "Onion"
+    "answer": 1
+  - "id": "mr-7123"
+    "prompt":
+      "en": "Onion costs 25 rupees per kilo."
+    "answer": false
