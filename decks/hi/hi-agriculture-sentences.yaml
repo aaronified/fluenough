@@ -1,0 +1,188 @@
+schema: 1
+id: "hi-agriculture-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-5544"
+    target: "किसान गेहूँ की बुवाई करते हैं।"
+    reading: "kisān gēhūm̐ kī buvāī kartē haim̐."
+    ipa: "kɪsaːn ɡeːɦũː kiː bʊʋaːiː kərt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "किसान", base: "किसान", reading: "kisān" }
+      - { word: "गेहूँ", ref: "hi-2409" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "बुवाई", ref: "hi-2407" }
+      - { word: "करते", base: "करना", reading: "kartē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "बाजरा", reading: "bājrā", kind: "word" }
+      - { id: "w2", word: "गन्ना", reading: "gannā", kind: "word" }
+  - id: "hi-5545"
+    target: "बैल हल खींचता है।"
+    reading: "bail hal khīñctā hai."
+    ipa: "bɛːl ɦəl kʰiːɲtʃt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "बैल", ref: "hi-2400" }
+      - { word: "हल", ref: "hi-2399" }
+      - { word: "खींचता", base: "खींचना", reading: "khīñctā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "ट्रैक्टर", reading: "ṭraikṭar", kind: "word" }
+      - { id: "w2", word: "दराँती", reading: "darām̐tī", kind: "word" }
+  - id: "hi-5546"
+    target: "किसान ट्रैक्टर से खेती करते हैं।"
+    reading: "kisān ṭraikṭar sē khētī kartē haim̐."
+    ipa: "kɪsaːn ʈrɛːkʈər seː kʰeːt̪iː kərt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "किसान", base: "किसान", reading: "kisān" }
+      - { word: "ट्रैक्टर", ref: "hi-2401" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "खेती", ref: "hi-2395" }
+      - { word: "करते", base: "करना", reading: "kartē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "हल", reading: "hal", kind: "word" }
+      - { id: "w2", word: "फावड़ा", reading: "phāvṛā", kind: "word" }
+  - id: "hi-5547"
+    target: "सिंचाई के लिए पानी डालिए।"
+    reading: "siñcāī kē liē pānī ḍāliē."
+    ipa: "sɪɲtʃaːiː keː lɪeː paːniː ɖaːlɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "सिंचाई", ref: "hi-2398" }
+      - { word: "के", base: "का", reading: "kē" }
+      - { word: "लिए", base: "लिए", reading: "liē" }
+      - { word: "पानी", base: "पानी", reading: "pānī" }
+      - { word: "डालिए", base: "डालना", reading: "ḍāliē" }
+    confusables:
+      - { id: "w1", word: "खाद", reading: "khād", kind: "word" }
+      - { id: "w2", word: "कटाई", reading: "kaṭāī", kind: "word" }
+  - id: "hi-5548"
+    target: "खाद डालने से उपज बढ़ती है।"
+    reading: "khād ḍālnē sē upaj baṛhtī hai."
+    ipa: "kʰaːd̪ ɖaːlneː seː ʊpədʒ bəɽʱt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "खाद", ref: "hi-2397" }
+      - { word: "डालने", base: "डालना", reading: "ḍālnē" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "उपज", ref: "hi-2408" }
+      - { word: "बढ़ती", base: "बढ़ना", reading: "baṛhtī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "अनाज", reading: "anāj", kind: "word" }
+      - { id: "w2", word: "ज्वार", reading: "jvār", kind: "word" }
+  - id: "hi-5549"
+    target: "गन्ना और कपास हमारी मुख्य फ़सलें हैं।"
+    reading: "gannā aur kapās hamārī mukhya fasalēm̐ haim̐."
+    ipa: "ɡənnaː ɔːr kəpaːs ɦəmaːriː mʊkʰjə fəsəlẽː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "गन्ना", ref: "hi-2405" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "कपास", ref: "hi-2406" }
+      - { word: "हमारी", base: "हमारा", reading: "hamārī" }
+      - { word: "मुख्य", base: "मुख्य", reading: "mukhya" }
+      - { word: "फ़सलें", base: "फ़सल", reading: "fasalēm̐" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "गेहूँ", reading: "gēhūm̐", kind: "word" }
+      - { id: "w2", word: "सरसों", reading: "sarsōm̐", kind: "word" }
+  - id: "hi-5550"
+    target: "किसान सर्दी में सरसों उगाते हैं।"
+    reading: "kisān sardī mēm̐ sarsōm̐ ugātē haim̐."
+    ipa: "kɪsaːn sərd̪iː mẽː sərsõː ʊɡaːt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "किसान", base: "किसान", reading: "kisān" }
+      - { word: "सर्दी", base: "सर्दी", reading: "sardī" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "सरसों", ref: "hi-2410" }
+      - { word: "उगाते", base: "उगाना", reading: "ugātē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "ज्वार", reading: "jvār", kind: "word" }
+      - { id: "w2", word: "बाजरा", reading: "bājrā", kind: "word" }
+  - id: "hi-5551"
+    target: "बुवाई से पहले खेत में खाद डालिए।"
+    reading: "buvāī sē pahlē khēt mēm̐ khād ḍāliē."
+    ipa: "bʊʋaːiː seː pəɦleː kʰeːt̪ mẽː kʰaːd̪ ɖaːlɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "बुवाई", ref: "hi-2407" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "पहले", ref: "hi-0823" }
+      - { word: "खेत", base: "खेत", reading: "khēt" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "खाद", ref: "hi-2397" }
+      - { word: "डालिए", base: "डालना", reading: "ḍāliē" }
+    confusables:
+      - { id: "w1", word: "कटाई", reading: "kaṭāī", kind: "word" }
+      - { id: "w2", word: "सिंचाई", reading: "siñcāī", kind: "word" }
+  - id: "hi-5552"
+    target: "पशु खेत में काम करते हैं।"
+    reading: "paśu khēt mēm̐ kām kartē haim̐."
+    ipa: "pəʃʊ kʰeːt̪ mẽː kaːm kərt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "पशु", ref: "hi-2413" }
+      - { word: "खेत", base: "खेत", reading: "khēt" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "काम", base: "काम", reading: "kām" }
+      - { word: "करते", base: "करना", reading: "kartē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "बैल", reading: "bail", kind: "word" }
+      - { id: "w2", word: "हल", reading: "hal", kind: "word" }
+  - id: "hi-5553"
+    target: "किसान दराँती से गन्ना काटते हैं।"
+    reading: "kisān darām̐tī sē gannā kāṭtē haim̐."
+    ipa: "kɪsaːn d̪ərãːt̪iː seː ɡənnaː kaːʈt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "किसान", base: "किसान", reading: "kisān" }
+      - { word: "दराँती", ref: "hi-2403" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "गन्ना", ref: "hi-2405" }
+      - { word: "काटते", base: "काटना", reading: "kāṭtē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "फावड़ा", reading: "phāvṛā", kind: "word" }
+      - { id: "w2", word: "हल", reading: "hal", kind: "word" }
+  - id: "hi-5554"
+    target: "अनाज के बोरे सस्ते नहीं हैं।"
+    reading: "anāj kē bōrē sastē nahīm̐ haim̐."
+    ipa: "ənaːdʒ keː boːreː səst̪eː nəɦĩː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "अनाज", ref: "hi-2404" }
+      - { word: "के", base: "का", reading: "kē" }
+      - { word: "बोरे", base: "बोरा", reading: "bōrē" }
+      - { word: "सस्ते", base: "सस्ता", reading: "sastē" }
+      - { word: "नहीं", ref: "hi-0156" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "कपास", reading: "kapās", kind: "word" }
+      - { id: "w2", word: "फ़सल", reading: "fasal", kind: "word" }
+  - id: "hi-5555"
+    target: "ट्रैक्टर आने से खेती आसान हुई है।"
+    reading: "ṭraikṭar ānē sē khētī āsān huī hai."
+    ipa: "ʈrɛːkʈər aːneː seː kʰeːt̪iː aːsaːn ɦʊiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "ट्रैक्टर", ref: "hi-2401" }
+      - { word: "आने", base: "आना", reading: "ānē" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "खेती", ref: "hi-2395" }
+      - { word: "आसान", base: "आसान", reading: "āsān" }
+      - { word: "हुई", base: "होना", reading: "huī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "बुवाई", reading: "buvāī", kind: "word" }
+      - { id: "w2", word: "कटाई", reading: "kaṭāī", kind: "word" }
