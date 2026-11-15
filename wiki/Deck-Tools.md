@@ -331,7 +331,17 @@ stored reading as the typed hint.
 python3 tools/transcribe_decks.py --check decks/te te       # exit 1 if any differ
 python3 tools/transcribe_decks.py --fix decks/te te         # anusvara only
 python3 tools/transcribe_decks.py --fix --all decks/te te   # every difference
+python3 tools/transcribe_decks.py --fix --citations decks/te te  # base citation readings
 ```
+
+`--citations` is a pass of its own for the `reading` of an inline base
+(`{ word, base, reading }`: the reading of the base's dictionary form, which
+the other modes skip when `base` differs from `word`). It rewrites only a
+stored word-final `m` where the rules write `ṁ` for the base (`andam` to
+`andaṁ`, `uṇḍaḍam` to `uṇḍaḍaṁ`, the owner's final-anusvara rule), in the block
+and the flow form, and reads no card, example or other reading. `--check
+--citations` lists them (exit 1 if any). It is refused with `--all` and
+`--propagate`.
 
 `--check` prints each id, field, stored value and recomputed value, in two
 lists: "anusvara differences" (the target holds an anusvara and the two values
