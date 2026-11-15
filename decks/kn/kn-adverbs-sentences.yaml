@@ -1,0 +1,123 @@
+schema: 1
+id: "kn-adverbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-8137"
+    target: "ನಾನು ಬೇಗ ಹೋಗುತ್ತೇನೆ."
+    reading: "nānu bēga hōguttēne."
+    ipa: "naːnu beːɡa hoːɡut̪t̪eːne"
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", ref: "kn-0610" }
+      - { word: "ಬೇಗ", ref: "kn-0661" }
+      - { word: "ಹೋಗುತ್ತೇನೆ", base: "ಹೋಗು", reading: "hōgu" }
+  - id: "kn-8138"
+    target: "ಅವಳು ಚೆನ್ನಾಗಿ ಹಾಡುತ್ತಾಳೆ."
+    reading: "avaḷu cennāgi hāḍuttāḷe."
+    ipa: "aʋaɭu tʃennaːɡi haːɖut̪t̪aːɭe"
+    pos: "phrase"
+    bases:
+      - { word: "ಅವಳು", ref: "kn-0613" }
+      - { word: "ಚೆನ್ನಾಗಿ", ref: "kn-0664" }
+      - { word: "ಹಾಡುತ್ತಾಳೆ", base: "ಹಾಡು", reading: "hāḍu" }
+  - id: "kn-8139"
+    target: "ನೀನು ತುಂಬಾ ಓದುತ್ತೀಯ."
+    reading: "nīnu tumbā ōduttīya."
+    ipa: "niːnu t̪umbaː oːd̪ut̪t̪iːja"
+    pos: "phrase"
+    bases:
+      - { word: "ನೀನು", ref: "kn-0611" }
+      - { word: "ತುಂಬಾ", ref: "kn-0668" }
+      - { word: "ಓದುತ್ತೀಯ", base: "ಓದು", reading: "ōdu" }
+  - id: "kn-8140"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    target: "ನಾನು ಆಗಾಗ ನಿನ್ನನ್ನು ನೋಡುತ್ತೇನೆ."
+    reading: "nānu āgāga ninnannu nōḍuttēne."
+    ipa: "naːnu aːɡaːɡa ninnannu noːɖut̪t̪eːne"
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", ref: "kn-0610" }
+      - { word: "ಆಗಾಗ", ref: "kn-0659" }
+      - { word: "ನಿನ್ನನ್ನು", base: "ನೀನು", reading: "nīnu" }
+      - { word: "ನೋಡುತ್ತೇನೆ", base: "ನೋಡು", reading: "nōḍu" }
+  - id: "kn-8141"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    target: "ಅವನು ಕೆಲವೊಮ್ಮೆ ತಡವಾಗಿ ಬರುತ್ತಾನೆ."
+    reading: "avanu kelavomme taḍavāgi baruttāne."
+    ipa: "aʋanu kelaʋomme t̪aɖaʋaːɡi barut̪t̪aːne"
+    pos: "phrase"
+    bases:
+      - { word: "ಅವನು", ref: "kn-0612" }
+      - { word: "ಕೆಲವೊಮ್ಮೆ", ref: "kn-0657" }
+      - { word: "ತಡವಾಗಿ", ref: "kn-0662" }
+      - { word: "ಬರುತ್ತಾನೆ", base: "ಬಾ", reading: "bā" }
+  - id: "kn-8142"
+    target: "ಅವಳು ನಿಧಾನವಾಗಿ ನಡೆಯುತ್ತಾಳೆ."
+    reading: "avaḷu nidhānavāgi naḍeyuttāḷe."
+    ipa: "aʋaɭu nid̪ʱaːnaʋaːɡi naɖejut̪t̪aːɭe"
+    pos: "phrase"
+    bases:
+      - { word: "ಅವಳು", ref: "kn-0613" }
+      - { word: "ನಿಧಾನವಾಗಿ", ref: "kn-0663" }
+      - { word: "ನಡೆಯುತ್ತಾಳೆ", base: "ನಡೆ", reading: "naḍe" }
+  - id: "kn-8143"
+    target: "ಮಕ್ಕಳು ಜೋರಾಗಿ ಹಾಡುತ್ತಾರೆ."
+    reading: "makkaḷu jōrāgi hāḍuttāre."
+    ipa: "makkaɭu dʒoːraːɡi haːɖut̪t̪aːre"
+    pos: "phrase"
+    bases:
+      - { word: "ಮಕ್ಕಳು", ref: "kn-0212" }
+      - { word: "ಜೋರಾಗಿ", ref: "kn-0675" }
+      - { word: "ಹಾಡುತ್ತಾರೆ", base: "ಹಾಡು", reading: "hāḍu" }
+  - id: "kn-8144"
+    target: "ಮೆಲ್ಲಗೆ ನಡೆ."
+    reading: "mellage naḍe."
+    ipa: "mellaɡe naɖe"
+    pos: "phrase"
+    bases:
+      - { word: "ಮೆಲ್ಲಗೆ", ref: "kn-0676" }
+      - { word: "ನಡೆ", ref: "kn-0643" }
+  - id: "kn-8145"
+    target: "ನೀವು ಬೇಗ ಬನ್ನಿ."
+    reading: "nīvu bēga banni."
+    ipa: "niːʋu beːɡa banni"
+    pos: "phrase"
+    bases:
+      - { word: "ನೀವು", ref: "kn-0143" }
+      - { word: "ಬೇಗ", ref: "kn-0661" }
+      - { word: "ಬನ್ನಿ", base: "ಬಾ", reading: "bā" }
+  - id: "kn-8146"
+    target: "ಅವರು ಈಗಾಗಲೇ ಹೋದರು."
+    reading: "avaru īgāgalē hōdaru."
+    ipa: "aʋaru iːɡaːɡaleː hoːd̪aru"
+    pos: "phrase"
+    bases:
+      - { word: "ಅವರು", ref: "kn-0188" }
+      - { word: "ಈಗಾಗಲೇ", ref: "kn-0687" }
+      - { word: "ಹೋದರು", base: "ಹೋಗು", reading: "hōgu" }
+  - id: "kn-8147"
+    target: "ನಾನು ಸರಿಯಾಗಿ ಓದುತ್ತೇನೆ."
+    reading: "nānu sariyāgi ōduttēne."
+    ipa: "naːnu sarijaːɡi oːd̪ut̪t̪eːne"
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", ref: "kn-0610" }
+      - { word: "ಸರಿಯಾಗಿ", ref: "kn-0674" }
+      - { word: "ಓದುತ್ತೇನೆ", base: "ಓದು", reading: "ōdu" }
+  - id: "kn-8148"
+    target: "ನೀವು ಯಾವಾಗ ಬರುತ್ತೀರಿ?"
+    reading: "nīvu yāvāga baruttīri?"
+    ipa: "niːʋu jaːʋaːɡa barut̪t̪iːri"
+    pos: "phrase"
+    bases:
+      - { word: "ನೀವು", ref: "kn-0143" }
+      - { word: "ಯಾವಾಗ", ref: "kn-0170" }
+      - { word: "ಬರುತ್ತೀರಿ", base: "ಬಾ", reading: "bā" }

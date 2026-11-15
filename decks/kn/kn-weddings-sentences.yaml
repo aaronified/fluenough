@@ -1,0 +1,82 @@
+schema: 1
+id: "kn-weddings-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-7501"
+    target: "ನನಗೆ ಆಮಂತ್ರಣ ಬಂದಿದೆ."
+    reading: "nanage āmantraṇa bandide."
+    ipa: "nanaɡe aːmant̪raɳa band̪id̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಆಮಂತ್ರಣ", ref: "kn-1558" }
+      - { word: "ಬಂದಿದೆ", base: "ಬಾ", reading: "bā" }
+  - id: "kn-7502"
+    target: "ಅವನು ವರ, ಅವಳು ವಧು."
+    reading: "avanu vara, avaḷu vadhu."
+    ipa: "aʋanu ʋara aʋaɭu ʋad̪ʱu"
+    pos: "phrase"
+    bases:
+      - { word: "ಅವನು", ref: "kn-0612" }
+      - { word: "ವರ", ref: "kn-1556" }
+      - { word: "ಅವಳು", ref: "kn-0613" }
+      - { word: "ವಧು", ref: "kn-1557" }
+  - id: "kn-7503"
+    target: "ಇದು ಮದುವೆ ಸಮಾರಂಭ."
+    reading: "idu maduve samārambha."
+    ipa: "id̪u mad̪uʋe samaːrambʱa"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ಮದುವೆ", base: "ಮದುವೆ", reading: "maduve" }
+      - { word: "ಸಮಾರಂಭ", ref: "kn-1572" }
+  - id: "kn-7504"
+    target: "ನನ್ನ ಸಂಬಂಧಿ ಇಲ್ಲಿ ಇದ್ದಾರೆ."
+    reading: "nanna sambandhi illi iddāre."
+    ipa: "nanna samband̪ʱi illi id̪d̪aːre"
+    pos: "phrase"
+    bases:
+      - { word: "ನನ್ನ", ref: "kn-0619" }
+      - { word: "ಸಂಬಂಧಿ", ref: "kn-1560" }
+      - { word: "ಇಲ್ಲಿ", ref: "kn-0375" }
+      - { word: "ಇದ್ದಾರೆ", base: "ಇರು", reading: "iru" }
+  - id: "kn-7505"
+    target: "ಮಂಟಪ ಎಲ್ಲಿ?"
+    reading: "maṇṭapa elli?"
+    ipa: "maɳʈapa elli"
+    pos: "phrase"
+    bases:
+      - { word: "ಮಂಟಪ", ref: "kn-1564" }
+      - { word: "ಎಲ್ಲಿ", ref: "kn-0169" }
+  - id: "kn-7506"
+    target: "ಅವಳು ಹಾರ ಹಾಕುತ್ತಾಳೆ."
+    reading: "avaḷu hāra hākuttāḷe."
+    ipa: "aʋaɭu haːra haːkut̪t̪aːɭe"
+    pos: "phrase"
+    bases:
+      - { word: "ಅವಳು", ref: "kn-0613" }
+      - { word: "ಹಾರ", ref: "kn-1561" }
+      - { word: "ಹಾಕುತ್ತಾಳೆ", base: "ಹಾಕು", reading: "hāku" }
+  - id: "kn-7507"
+    target: "ಹಿರಿಯರ ಆಶೀರ್ವಾದ ಇದೆ."
+    reading: "hiriyara āśīrvāda ide."
+    ipa: "hirijara aːʃiːrʋaːd̪a id̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ಹಿರಿಯರ", base: "ಹಿರಿಯ", reading: "hiriya" }
+      - { word: "ಆಶೀರ್ವಾದ", ref: "kn-1570" }
+      - { word: "ಇದೆ", base: "ಇರು", reading: "iru" }
+  - id: "kn-7508"
+    target: "ದಯವಿಟ್ಟು ಬನ್ನಿ."
+    reading: "dayaviṭṭu banni."
+    ipa: "d̪ajaʋiʈʈu banni"
+    pos: "phrase"
+    bases:
+      - { word: "ದಯವಿಟ್ಟು", ref: "kn-0550" }
+      - { word: "ಬನ್ನಿ", base: "ಬಾ", reading: "bā" }

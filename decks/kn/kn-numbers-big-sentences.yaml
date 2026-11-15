@@ -1,0 +1,89 @@
+schema: 1
+id: "kn-numbers-big-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-7400"
+    target: "ಇದು ಐವತ್ತು."
+    reading: "idu aivattu."
+    ipa: "id̪u aiʋat̪t̪u"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ಐವತ್ತು", ref: "kn-0266" }
+  - id: "kn-7401"
+    target: "ನನಗೆ ನೂರು ಬೇಕು."
+    reading: "nanage nūru bēku."
+    ipa: "nanaɡe nuːru beːku"
+    pos: "phrase"
+    bases:
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
+      - { word: "ನೂರು", ref: "kn-0272" }
+      - { word: "ಬೇಕು", base: "ಬೇಕು", reading: "bēku" }
+  - id: "kn-7402"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    target: "ಅದು ನೂರ ಐವತ್ತು."
+    reading: "adu nūra aivattu."
+    ipa: "ad̪u nuːra aiʋat̪t̪u"
+    pos: "phrase"
+    bases:
+      - { word: "ಅದು", ref: "kn-0614" }
+      - { word: "ನೂರ", base: "ನೂರು", reading: "nūru" }
+      - { word: "ಐವತ್ತು", ref: "kn-0266" }
+  - id: "kn-7403"
+    target: "ಇದು ಇನ್ನೂರ ಐವತ್ತು."
+    reading: "idu innūra aivattu."
+    ipa: "id̪u innuːra aiʋat̪t̪u"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ಇನ್ನೂರ", base: "ಇನ್ನೂರು", reading: "innūru" }
+      - { word: "ಐವತ್ತು", ref: "kn-0266" }
+  - id: "kn-7404"
+    target: "ಎರಡೂವರೆ."
+    reading: "eraḍūvare."
+    ipa: "eraɖuːʋare"
+    pos: "phrase"
+    bases:
+      - { word: "ಎರಡೂವರೆ", ref: "kn-0296" }
+  - id: "kn-7405"
+    target: "ನನಗೆ ಅರ್ಧ ಬೇಕು."
+    reading: "nanage ardha bēku."
+    ipa: "nanaɡe ard̪ʱa beːku"
+    pos: "phrase"
+    bases:
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಅರ್ಧ", ref: "kn-0294" }
+      - { word: "ಬೇಕು", base: "ಬೇಕು", reading: "bēku" }
+  - id: "kn-7406"
+    target: "ಇದು ಒಂಬೈನೂರು."
+    reading: "idu ombainūru."
+    ipa: "id̪u ombainuːru"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ಒಂಬೈನೂರು", ref: "kn-0288" }
+  - id: "kn-7407"
+    target: "ಇದು ಎರಡು ಸಾವಿರದ ಇಪ್ಪತ್ತಾರು."
+    reading: "idu eraḍu sāvirada ippattāru."
+    ipa: "id̪u eraɖu saːʋirad̪a ippat̪t̪aːru"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ಎರಡು", ref: "kn-0245" }
+      - { word: "ಸಾವಿರದ", base: "ಸಾವಿರ", reading: "sāvira" }
+      - { word: "ಇಪ್ಪತ್ತಾರು", base: "ಇಪ್ಪತ್ತಾರು", reading: "ippattāru" }
+  - id: "kn-7408"
+    target: "ಇದು ಸಾವಿರ."
+    reading: "idu sāvira."
+    ipa: "id̪u saːʋira"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ಸಾವಿರ", ref: "kn-0290" }
