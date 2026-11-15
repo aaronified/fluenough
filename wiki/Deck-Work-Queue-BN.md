@@ -1,6 +1,6 @@
 # Deck work queue: Bengali completion plan
 
-Status: planning output of 2026-11-15. Nothing here was built, run or pushed. The state was read from `origin/decks-live` (c57783c5, 2026-11-15) with PyYAML over every `decks/bn/*.yaml` and `decks/bn/en/*.yaml`, the path, `decks/sections.yaml`, `decks/creators`, `decks/recommendations`, `docs/review-queue/bn.md`, `tools/phonetic_languages.yaml` and `decks/bn/bn-phonetics.yaml` (the audit scripts read, they did not run the validator or the tests). Task ids: `BN-001` to `BN-069`. Reserved id ranges: `bn-5000` to `bn-6349` (section 2). Highest bn id in use: `bn-4554` on a card, `bn-4560` on a reading question (the two share one namespace); `bn-4561` to `bn-4999` stay free for repairs. Blockers: none (BL-1 and BL-2 of [Deck-Work-Queue-ES-TE](Deck-Work-Queue-ES-TE.md) section 4 are closed; every tool a task needs is on `main`).
+Status (2026-11-15, after the BN wave): the plan below was built and merged to `decks-live` in 14 pull requests, #1401 to #1458; see section 9 for what is done, what is short and what remains. The rest of this page is the original plan of 2026-11-15, kept as written: its counts and gap lists are the state before the wave. Original status: planning output of 2026-11-15. Nothing here was built, run or pushed. The state was read from `origin/decks-live` (c57783c5, 2026-11-15) with PyYAML over every `decks/bn/*.yaml` and `decks/bn/en/*.yaml`, the path, `decks/sections.yaml`, `decks/creators`, `decks/recommendations`, `docs/review-queue/bn.md`, `tools/phonetic_languages.yaml` and `decks/bn/bn-phonetics.yaml` (the audit scripts read, they did not run the validator or the tests). Task ids: `BN-001` to `BN-069`. Reserved id ranges: `bn-5000` to `bn-6349` (section 2). Highest bn id in use: `bn-4554` on a card, `bn-4560` on a reading question (the two share one namespace); `bn-4561` to `bn-4999` stay free for repairs. Blockers: none (BL-1 and BL-2 of [Deck-Work-Queue-ES-TE](Deck-Work-Queue-ES-TE.md) section 4 are closed; every tool a task needs is on `main`).
 
 This page follows the shape of [Deck-Work-Queue-ES-TE](Deck-Work-Queue-ES-TE.md) and obeys the rules of the [Deck-Work-Queue](Deck-Work-Queue.md). It fills the Bengali column of the grid of [Plan-Language-Completeness](Plan-Language-Completeness.md). Under rule 16 of the Deck-Work-Queue no Bengali build starts before Japanese, Spanish and Telugu are complete: this page is a plan, and the two tasks that touch no deck content, BN-001 (the sourcing page, docs) and BN-032 (the tense-table design), are the only ones the audit suggests may run ahead.
 
@@ -377,3 +377,57 @@ Creators named are the works' creators as the builder reads them; none is checke
 - Culture, proverbs and multiword decks are woven into the app only once the language-list culture setting exists; building them does not wait for it.
 - Under rule 17 the architect runs as many Haiku workers as the work needs, minus two for each running Sonnet review. BN-001 and BN-032 are the two Sonnet jobs besides the reviews.
 - No task here sets a `phrasebook` flag, changes a card id, or adds a noun, verb or adjective to a path deck.
+
+## 9. Progress 2026-11-15
+
+Re-read from `origin/decks-live` (a2e24af3, 2026-11-15) with read-only PyYAML scripts; the counts below are of files, not of quality. Nothing was run through the validator or the tests (CI only). The grid in [Plan-Language-Completeness](Plan-Language-Completeness.md) section (b) carries the same numbers.
+
+### 9.1 Pull requests merged to decks-live
+
+#1401 script (conjuncts 2 and 3, reading 2), #1403 situations, #1404 reading decks for 21 units, #1405 sentences decks for 17 units, #1410 tense tables as rules tables, #1415 proverbs 1 to 3, #1416 multi-word verbs, #1420 notes, #1430 culture 1 to 4 and creators, #1434 readings (ba-phala and garble fixes), #1447 topics, #1448 review-queue rows, #1454 recommendations, #1458 narrow IPA.
+
+### 9.2 Done per task range
+
+| Tasks | State | Verified count |
+|---|---|---|
+| BN-001 | done | `Plan-Culture-Bengali` on main |
+| BN-002 to 006 sentences | done | 83 sentence decks (was 66), 916 own cards; the 17 themed word units that had none now have one |
+| BN-007 to 011 reading | done | 73 reading files, 154 passages; all 72 path units that name reading passages have a reading deck (was 21 without) |
+| BN-012 to 014 script | done | conjuncts 25 + 25 + 25, reading words 16 + 30, plus vowels 11, consonants 39, signs 18, digits 10 |
+| BN-015, 016 situations | done | `bn-situations`, 10 sheets; 18 new phrase cards bn-6250 to bn-6267 |
+| BN-017 to 020 culture | partly short | `bn-culture-1` to `-4` hold 13, 15, 15 and 15 cards instead of 18 each; 38 creators and 5 eras in `decks/creators/bn.yaml` |
+| BN-021 to 023 proverbs | done | 20, 20, 20 |
+| BN-024 to 027 multi-word | done, one short | 19 (`conjunct-kora`, BN-024), 20 (`conjunct-other`, BN-025), 20 (`aspectual`), 20 (`idiomatic`) |
+| BN-028, 029 recommendations | done | 20 entries (10 films, 6 books, 2 comics, 1 song, 1 podcast) |
+| BN-030, 031 topics | done | 23 topics |
+| BN-032 to 040 tense tables | done | 10 rules decks (`bn-grammar-verb-*`, 417 to 418 verb rows each), added beside the pattern decks (Q1 default) |
+| BN-041 to 051 notes | done for the planned decks | 640 own non-set cards still have no `notes` in their core file (638 when a note in the English layer counts; 476 of them are sentence cards); the plan counted 1,035 |
+| BN-052 to 064 examples | not built | owner question Q2; about 600 of 2,780 word cards still have fewer than 2 examples (counted as vocab cards that are not genre, sentence, script or phrase cards) |
+| BN-065 IPA | rules-derived only | `phonetic` and `ipa` on 4,296 of 4,305 non-set cards, all `phonetic_source: "rules"`; the 9 without are sound-concept cards (bn-2055 to bn-2062, bn-2089) |
+| BN-066 to 068 review queue | done | 77 rows in `docs/review-queue/bn.md` (9 from 2026-11-07, 68 from 2026-11-15) |
+| BN-069 | this section, the grid and the #1166 comment | |
+
+Other counts: path 173 entries, every deck it names has a file, 2,833 words; 244 cores (198 vocab, 30 grammar, 14 rules, `bn-script`, `bn-sounds`) and 244 layers, none orphaned; 4,305 non-set own cards, 27 set cards, 175 refs, no duplicate id; phrasebook 20 cards; facts 41.
+
+### 9.3 Decisions taken by default (the owner may overturn)
+
+- **Readings:** the course's hand conventions stay (Q6); `transcribe_decks.py --fix --all` was not run for Bengali; only the ba-phala and garble fixes were applied (#1434), and four stale cards were rederived.
+- **Narrow IPA:** the Wiktionary narrow form was dropped; every `phonetic` is from the rules (`derive_phonetic.py`).
+- **Tense tables:** rules decks added beside the pattern decks, nothing replaced (Q1).
+
+### 9.4 Gaps that remain
+
+- **Professional decks:** held, `professions` is empty until the owner supplies the list.
+- **Examples wave** (BN-052 to 064): not built.
+- **Culture:** 58 of 72 planned cards exist (13, 15, 15 and 15); the missing items are those whose text or date could not be read on a cited page, so they were dropped instead of filled in from memory.
+- **Recommendations:** 20 entries, no links checked.
+- **Reviewer decisions:** every deck is `unreviewed`; the situations sheets are draft; the 77 queue rows wait for a bilingual reviewer.
+- **Notes:** 640 cards without a note (see the table).
+
+### 9.5 Open owner questions
+
+Q2 (examples wave: build or drop), Q3 (clause forms as rules tables: not planned), Q4 (rights for authors who died 1941 to 1955), Q5 (Dhaka pronunciation), Q6 (hand conventions in readings), and the professional list. Q1 was taken by default (above).
+
+### 9.6 Leftover remote branches for the owner to delete
+
+Agents cannot delete a remote branch. On the remote (`git ls-remote --heads origin`, 2026-11-15) only one Bengali branch is left: `deck/bn-b1-3` (last commit 2026-10-23, not an open PR, no shared history with `decks-live`). All 14 branches of this wave (`decks/bn-sentences`, `-reading`, `-readings`, `-script`, `-situations`, `-culture`, `-proverbs`, `-multiword`, `-recommendations`, `-topics`, `-tenses`, `-notes`, `-ipa`, `-queue`) were merged by PRs #1401 to #1458 and are no longer on the remote (the local remote-tracking refs are stale until `git fetch --prune`).
