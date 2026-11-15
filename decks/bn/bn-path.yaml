@@ -200,7 +200,7 @@ units:
   - decks: ["bn-directions", "bn-grammar-continuous", "bn-directions-sentences", "*"]
     words: 12
     grammar: ["continuous"]
-  - decks: ["bn-transport", "*"]
+  - decks: ["bn-transport", "bn-transport-sentences", "*"]
     words: 9
   - decks: ["bn-body", "bn-body-sentences", "*"]
     words: 35
@@ -216,7 +216,7 @@ units:
       - { id: "street-signs", text: { "en": "Signs along a street: pharmacy, school, bank, temple" } }
   - decks: ["bn-things", "*"]
     words: 32
-  - decks: ["bn-home", "*"]
+  - decks: ["bn-home", "bn-home-sentences", "*"]
     words: 21
   - decks: ["bn-things-sentences", "bn-more-verbs-sentences"]
     words: 0
@@ -263,7 +263,7 @@ units:
     milestone: "A1"
   # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
   # then its sentences.
-  - decks: ["bn-daily-life", "bn-grammar-conjunct-verbs", "*"]
+  - decks: ["bn-daily-life", "bn-daily-life-sentences", "bn-grammar-conjunct-verbs", "*"]
     words: 26
     grammar: ["conjunct-verbs"]
   - decks: ["bn-weather", "bn-weather-sentences", "*"]
@@ -277,7 +277,7 @@ units:
   - decks: ["bn-sadhu-cholito"]
     words: 23
   - ["bn-reading-sahaj-path-1"]
-  - decks: ["bn-calendar", "bn-grammar-past", "*"]
+  - decks: ["bn-calendar", "bn-calendar-sentences", "bn-grammar-past", "*"]
     words: 27
     grammar: ["past"]
   - decks: ["bn-grammar-ordinals", "bn-reading-ordinals"]
@@ -326,9 +326,9 @@ units:
       - { id: "small-accident-news", text: { "en": "A short news item about a small accident on the road" } }
   - decks: ["bn-reading-compound-verbs"]
     words: 0
-  - decks: ["bn-eating-out", "*"]
+  - decks: ["bn-eating-out", "bn-eating-out-sentences", "*"]
     words: 9
-  - decks: ["bn-cooking", "*"]
+  - decks: ["bn-cooking", "bn-cooking-sentences", "*"]
     words: 50
     listening_passages:
       - { id: "fish-curry-aloud", text: { "en": "A grandmother says how she cooks a fish curry" } }
@@ -343,10 +343,10 @@ units:
       - { id: "which-is-better", text: { "en": "Two friends compare two phones" } }
     reading_passages:
       - { id: "two-cities", text: { "en": "A short text comparing Kolkata and Dhaka" } }
-  - decks: ["bn-help", "bn-grammar-irregular", "bn-grammar-pitfalls", "*"]
+  - decks: ["bn-help", "bn-help-sentences", "bn-grammar-irregular", "bn-grammar-pitfalls", "*"]
     words: 14
     grammar: ["irregular", "pitfalls"]
-  - decks: ["bn-school", "*"]
+  - decks: ["bn-school", "bn-school-sentences", "*"]
     words: 50
     listening_passages:
       - { id: "school-day", text: { "en": "A child describes the school day" } }
@@ -354,7 +354,7 @@ units:
       - { id: "class-timetable", text: { "en": "A school timetable" } }
   - decks: ["bn-reading-school"]
     words: 0
-  - decks: ["bn-hobbies", "*"]
+  - decks: ["bn-hobbies", "bn-hobbies-sentences", "*"]
     words: 50
     listening_passages:
       - { id: "weekend-hobbies", text: { "en": "Friends talk about what they do at weekends: football, music, adda" } }
