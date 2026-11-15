@@ -1,0 +1,29 @@
+# The people behind the Gujarati culture decks (wiki/Plan-Deck-Kinds-And-Topics.md, D5).
+# Dates are read on en.wikipedia (Narsinh Mehta) and gu.wikipedia (Premanand); circa where the page says "believed" or gives two sets of years. No pictures: none has a licence checked yet.
+schema: 1
+kind: "creators"
+id: "creators-gu"
+language: "gu"
+license: "CC-BY-SA-4.0"
+eras:
+  - id: "bhakti"
+    name: { en: "Bhakti poetry" }
+    from: 1400
+    to: 1800
+creators:
+  - id: "gu-narsinh-mehta"
+    name:
+      en: { text: "Narsinh Mehta" }
+    born: { year: 1414, circa: true }
+    died: { year: 1488, circa: true }
+    era: "bhakti"
+    bio:
+      en: "Narsinh Mehta was a Gujarati devotional poet, known for his bhajans and songs about Krishna. His dates are approximate: his birth is believed to be about 1414, and his death is given as 1488."
+  - id: "gu-premanand"
+    name:
+      en: { text: "Premanand" }
+    born: { year: 1649, circa: true }
+    died: { year: 1714, circa: true }
+    era: "bhakti"
+    bio:
+      en: "Premanand was a Gujarati poet, known for narrative poems such as Sudama Charit, about Krishna and his friend Sudama. Sources give different years for his life, so both dates are approximate."
