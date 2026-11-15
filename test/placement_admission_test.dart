@@ -150,7 +150,7 @@ void main() {
           <Card>[card, ...more],
         ]);
 
-    final skipped = <Card>[
+    const skipped = <Card>[
       Card(
         id: 'xx-l',
         deckId: 'xx-001',
@@ -204,9 +204,9 @@ void main() {
       final decorated = PlacementLanguageData(
         language: 'xx',
         decks: <PlacementDeck>[
-          PlacementDeck(
+          const PlacementDeck(
             id: 'xx-renamed',
-            grammarFamilies: const <String>['plural'],
+            grammarFamilies: <String>['plural'],
             cards: <Card>[
               Card(
                 id: 'xx-1',
@@ -216,7 +216,7 @@ void main() {
                 pos: 'noun',
                 ipa: '/ka.sa/',
                 phonetic: '[ka.sa]',
-                tags: const <String>['home'],
+                tags: <String>['home'],
                 audio: 'a.mp3',
               ),
             ],
@@ -299,7 +299,7 @@ void main() {
       final latin = admissionKey(one(word()));
       // More letters of other scripts than Latin ones among all the cards,
       // the cards the audit skips included.
-      final nonLatin = Card(
+      const nonLatin = Card(
         id: 'xx-n',
         deckId: 'xx-001',
         target: 'कककककककक',
