@@ -1,0 +1,92 @@
+schema: 1
+id: "fr-en-chores-sentences"
+kind: "layer"
+core: "fr-chores-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: chores"
+license: "CC-BY-SA-4.0"
+description: "Ten sentences about the household chores, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-3115":
+    native: "I wash the dishes after the meal."
+    confusables:
+      "torchon": { why: "a cloth for drying, not the washing" }
+      "evier": { why: "the sink where the washing happens" }
+    bases:
+      "fais": "do"
+  "fr-3116":
+    native: "Are you vacuuming tonight?"
+    confusables:
+      "balayer": { why: "to sweep, not to vacuum" }
+      "serpilliere": { why: "a mop, not a vacuum cleaner" }
+    bases:
+      "passes": "vacuum"
+      "l'aspirateur": "vacuum cleaner"
+  "fr-3117":
+    native: "The dishwasher is full; we must empty it."
+    confusables:
+      "robinet": { why: "a tap, not a machine" }
+      "seche-linge": { why: "a tumble dryer, not a dishwasher" }
+    bases:
+      "est": "is"
+      "faut": "need"
+  "fr-3118":
+    native: "Don't throw away this cloth, it is clean."
+    confusables:
+      "torchon": { why: "a dish cloth, a different cloth" }
+      "ordure": { why: "rubbish, not a cloth" }
+    bases:
+      "Ne": "not"
+      "jette": "throw"
+      "pas": "not"
+      "est": "is"
+  "fr-3119":
+    native: "Where are the clean sheets?"
+    confusables:
+      "serpilliere": { why: "a mop, not a sheet" }
+      "chiffon": { why: "a cloth for cleaning, not a bed sheet" }
+    bases:
+      "sont": "are"
+      "draps": "sheets"
+      "propres": "clean"
+  "fr-3120":
+    native: "Dusting the furniture takes time."
+    confusables:
+      "aspirateur": { why: "a vacuum cleaner, not a duster" }
+      "balayer": { why: "to sweep the floor, not to dust" }
+    bases:
+      "meubles": "furniture"
+      "prend": "takes"
+      "du": "some"
+  "fr-3121":
+    native: "I hang the laundry out to dry."
+    confusables:
+      "lessive": { why: "washing powder, not the laundry itself" }
+      "seche-linge": { why: "a tumble dryer, not the line outside" }
+    bases:
+      "mets": "hang"
+      "linge": "laundry"
+      "à": "out"
+  "fr-3122":
+    native: "Which detergent is for the dishes?"
+    confusables:
+      "lessive": { why: "washing powder for clothes, not for dishes" }
+      "essuyer": { why: "to wipe; a verb, not a product" }
+    bases:
+      "est": "is"
+  "fr-3123":
+    native: "Wipe the table with the cloth."
+    confusables:
+      "torchon": { why: "a dish cloth, not the cloth for the table" }
+      "eponge": { why: "a sponge, not a cloth" }
+    bases:
+      "Essuie": "wipe"
+  "fr-3124":
+    native: "The kitchen floor is dirty."
+    confusables:
+      "serpilliere": { why: "the mop that cleans it" }
+      "poussiere": { why: "dust, not the floor" }
+    bases:
+      "de": "of"
+      "est": "is"

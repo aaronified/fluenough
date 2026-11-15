@@ -1,0 +1,549 @@
+schema: 1
+id: "fr-en-chores"
+kind: "layer"
+core: "fr-chores"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Chores"
+license: "CC-BY-SA-4.0"
+description: "Thirty-five words for the household chores: cleaning, washing, tidying and the things used for them. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-3080":
+    native: "housework"
+    notes:
+      "n1": "Le ménage is housework, a masculine noun; faire le ménage is to do the housework."
+    examples:
+      "Je fais le ménage le samedi.":
+        native: "I do the housework on Saturday."
+        bases:
+          "fais": "do"
+          "ménage": "housework"
+      "Le ménage est fini.":
+        native: "The housework is finished."
+        bases:
+          "ménage": "housework"
+          "est": "is"
+          "fini": "finished"
+  "fr-3081":
+    native: "dishes, washing up"
+    notes:
+      "n1": "La vaisselle is the dishes; faire la vaisselle is to wash up."
+    examples:
+      "Je fais la vaisselle après le repas.":
+        native: "I wash the dishes after the meal."
+        bases:
+          "fais": "do"
+          "vaisselle": "dishes, washing up"
+      "Il range la vaisselle dans le placard.":
+        native: "He puts the dishes away in the cupboard."
+        bases:
+          "range": "puts away"
+          "vaisselle": "dishes, washing up"
+          "placard": "cupboard"
+  "fr-3082":
+    native: "laundry, washing powder"
+    notes:
+      "n1": "La lessive is both the laundry and the washing powder; faire la lessive is to do the washing."
+    examples:
+      "Ma mère fait la lessive le lundi.":
+        native: "My mother does the washing on Monday."
+        bases:
+          "fait": "does"
+          "lessive": "laundry, washing powder"
+      "La lessive est dans le placard.":
+        native: "The washing powder is in the cupboard."
+        bases:
+          "lessive": "laundry, washing powder"
+          "est": "is"
+          "placard": "cupboard"
+  "fr-3083":
+    native: "vacuum cleaner"
+    notes:
+      "n1": "Un aspirateur is a vacuum cleaner; passer l'aspirateur is to vacuum."
+    examples:
+      "Il passe l'aspirateur le dimanche.":
+        native: "He vacuums on Sunday."
+        bases:
+          "passe": "vacuums"
+          "l'aspirateur": "vacuum cleaner"
+      "L'aspirateur est dans le couloir.":
+        native: "The vacuum cleaner is in the hall."
+        bases:
+          "L'aspirateur": "vacuum cleaner"
+          "est": "is"
+  "fr-3084":
+    native: "tidying, storage"
+    notes:
+      "n1": "Le rangement is tidying up or storage; it is masculine."
+    examples:
+      "Le rangement prend du temps.":
+        native: "Tidying takes time."
+        bases:
+          "rangement": "tidying, storage"
+          "prend": "takes"
+          "du": "some"
+      "Fais le rangement avant le dîner.":
+        native: "Tidy up before dinner."
+        bases:
+          "Fais": "do"
+          "rangement": "tidying, storage"
+  "fr-3085":
+    native: "to wipe"
+    notes:
+      "n1": "Essuyer is to wipe; in the je form it changes y to i: j'essuie."
+    examples:
+      "Essuie la table, s'il te plaît.":
+        native: "Wipe the table, please."
+        bases:
+          "Essuie": "wipe"
+          "s'il": "if"
+          "te": "you"
+          "plaît": "please"
+      "J'essuie les assiettes.":
+        native: "I wipe the plates."
+        bases:
+          "J'essuie": "wipe"
+          "assiettes": "plates"
+  "fr-3086":
+    native: "to sweep"
+    notes:
+      "n1": "Balayer is to sweep; the noun for the brush is le balai."
+    examples:
+      "Il balaie la cuisine.":
+        native: "He sweeps the kitchen."
+        bases:
+          "balaie": "sweeps"
+      "Nous balayons le sol.":
+        native: "We sweep the floor."
+        bases:
+          "balayons": "sweep"
+  "fr-3087":
+    native: "mop"
+    notes:
+      "n1": "La serpillière is the mop for the floor; it is feminine."
+    examples:
+      "La serpillière est sale.":
+        native: "The mop is dirty."
+        bases:
+          "serpillière": "mop"
+          "est": "is"
+      "Je passe la serpillière dans la cuisine.":
+        native: "I mop the kitchen."
+        bases:
+          "passe": "mop"
+          "serpillière": "mop"
+  "fr-3088":
+    native: "detergent"
+    notes:
+      "n1": "Un détergent is a cleaning liquid or powder; it is masculine."
+    examples:
+      "Ce détergent sent bon.":
+        native: "This detergent smells good."
+        bases:
+          "détergent": "detergent"
+          "sent": "smells"
+      "Mets un peu de détergent dans l'eau.":
+        native: "Put a little detergent in the water."
+        bases:
+          "Mets": "put"
+          "de": "of"
+          "détergent": "detergent"
+          "l'eau": "water"
+  "fr-3089":
+    native: "dish towel, cloth"
+    notes:
+      "n1": "Un torchon is a cloth for drying dishes; it is masculine."
+    examples:
+      "Le torchon est mouillé.":
+        native: "The cloth is wet."
+        bases:
+          "torchon": "dish towel, cloth"
+          "est": "is"
+      "Prends un torchon pour sécher les verres.":
+        native: "Take a cloth to dry the glasses."
+        bases:
+          "Prends": "take"
+          "torchon": "dish towel, cloth"
+          "verres": "glasses"
+  "fr-3090":
+    native: "to dry"
+    notes:
+      "n1": "Sécher is to dry; je sèche, nous séchons."
+    examples:
+      "Je sèche la vaisselle.":
+        native: "I dry the dishes."
+        bases:
+          "sèche": "dry"
+      "Le linge sèche au soleil.":
+        native: "The laundry dries in the sun."
+        bases:
+          "linge": "laundry"
+          "sèche": "dries"
+          "au": "in"
+  "fr-3091":
+    native: "to fold"
+    notes:
+      "n1": "Plier is to fold; its past participle is plié."
+    examples:
+      "Plie le drap.":
+        native: "Fold the sheet."
+        bases:
+          "Plie": "fold"
+      "Il plie ses vêtements.":
+        native: "He folds his clothes."
+        bases:
+          "plie": "folds"
+          "vêtements": "clothes"
+  "fr-3092":
+    native: "chore, drudgery"
+    notes:
+      "n1": "Une corvée is a boring chore; it is feminine."
+    examples:
+      "La vaisselle est une corvée.":
+        native: "Washing up is a chore."
+        bases:
+          "est": "is"
+          "corvée": "chore, drudgery"
+      "Sortir la poubelle est ma corvée.":
+        native: "Taking out the bin is my job."
+        bases:
+          "est": "is"
+          "corvée": "chore, drudgery"
+  "fr-3093":
+    native: "to clear away"
+    notes:
+      "n1": "Débarrasser la table is to clear the table; the verb takes an object."
+    examples:
+      "Débarrasse la table après le repas.":
+        native: "Clear the table after the meal."
+        bases:
+          "Débarrasse": "clear"
+      "Je débarrasse les assiettes.":
+        native: "I clear the plates."
+        bases:
+          "débarrasse": "clear"
+          "assiettes": "plates"
+  "fr-3094":
+    native: "to throw away"
+    notes:
+      "n1": "Jeter is to throw, and to throw away; the je form is je jette."
+    examples:
+      "Tu jettes les ordures ?":
+        native: "Do you throw away the rubbish?"
+        bases:
+          "jettes": "throw away"
+          "ordures": "rubbish"
+      "Ne jette pas ce torchon.":
+        native: "Don't throw this cloth away."
+        bases:
+          "Ne": "not"
+          "jette": "throw away"
+          "pas": "not"
+  "fr-3095":
+    native: "to empty"
+    notes:
+      "n1": "Vider is to empty; it is regular in -er."
+    examples:
+      "Je vide la poubelle.":
+        native: "I empty the bin."
+        bases:
+          "vide": "empty"
+      "Le lave-vaisselle est vide.":
+        native: "The dishwasher is empty."
+        bases:
+          "est": "is"
+  "fr-3096":
+    native: "dust"
+    notes:
+      "n1": "La poussière is dust; it is feminine."
+    examples:
+      "Il y a de la poussière sur la table.":
+        native: "There is dust on the table."
+        bases:
+          "y": "there"
+          "a": "is"
+          "de": "some"
+          "poussière": "dust"
+      "Épousseter enlève la poussière.":
+        native: "Dusting removes the dust."
+        bases:
+          "enlève": "removes"
+          "poussière": "dust"
+  "fr-3097":
+    native: "piece of rubbish"
+    notes:
+      "n1": "Une ordure is one piece of rubbish; the plural les ordures means rubbish in general."
+    examples:
+      "Cette ordure est sur le sol.":
+        native: "This piece of rubbish is on the floor."
+        bases:
+          "ordure": "piece of rubbish"
+          "est": "is"
+      "Les ordures sont dans le couloir.":
+        native: "The rubbish is in the hall."
+        bases:
+          "ordures": "rubbish"
+          "sont": "are"
+  "fr-3098":
+    native: "cloth, rag"
+    notes:
+      "n1": "Un chiffon is a cloth for cleaning; it is masculine."
+    examples:
+      "Prends un chiffon et essuie la table.":
+        native: "Take a cloth and wipe the table."
+        bases:
+          "Prends": "take"
+          "chiffon": "cloth, rag"
+          "essuie": "wipe"
+      "Le chiffon est sale.":
+        native: "The cloth is dirty."
+        bases:
+          "chiffon": "cloth, rag"
+          "est": "is"
+  "fr-3099":
+    native: "kitchen sink"
+    notes:
+      "n1": "L'évier is the kitchen sink; it is masculine."
+    examples:
+      "L'évier est plein.":
+        native: "The sink is full."
+        bases:
+          "L'évier": "kitchen sink"
+          "est": "is"
+      "Lave la tasse dans l'évier.":
+        native: "Wash the cup in the sink."
+        bases:
+          "Lave": "wash"
+          "l'évier": "kitchen sink"
+  "fr-3100":
+    native: "tap"
+    notes:
+      "n1": "Un robinet is a tap; ouvrir le robinet is to turn the tap on."
+    examples:
+      "Ferme le robinet, s'il te plaît.":
+        native: "Turn off the tap, please."
+        bases:
+          "Ferme": "close"
+          "robinet": "tap"
+          "s'il": "if"
+          "te": "you"
+          "plaît": "please"
+      "Le robinet de l'évier coule.":
+        native: "The sink tap is running."
+        bases:
+          "robinet": "tap"
+          "de": "of"
+          "l'évier": "kitchen sink"
+          "coule": "runs"
+  "fr-3101":
+    native: "tumble dryer"
+    notes:
+      "n1": "Un sèche-linge is a tumble dryer; it is masculine."
+    examples:
+      "Le sèche-linge tourne toute la nuit.":
+        native: "The dryer runs all night."
+        bases:
+          "sèche-linge": "tumble dryer"
+          "tourne": "runs"
+          "toute": "all"
+      "Mets les draps dans le sèche-linge.":
+        native: "Put the sheets in the tumble dryer."
+        bases:
+          "Mets": "put"
+          "draps": "sheets"
+          "sèche-linge": "tumble dryer"
+  "fr-3102":
+    native: "to scrub"
+    notes:
+      "n1": "Récurer is to scrub hard; je récure."
+    examples:
+      "Je récure la baignoire.":
+        native: "I scrub the bath."
+        bases:
+          "récure": "scrub"
+      "Il faut récurer le lavabo.":
+        native: "You need to scrub the washbasin."
+        bases:
+          "faut": "need"
+          "récurer": "scrub"
+  "fr-3103":
+    native: "to rub, to scrub"
+    notes:
+      "n1": "Frotter is to rub or scrub; frotter le sol is to scrub the floor."
+    examples:
+      "Frotte le plancher avec le torchon.":
+        native: "Scrub the floor with the cloth."
+        bases:
+          "Frotte": "scrub"
+          "plancher": "floor"
+      "Il frotte la tache.":
+        native: "He rubs the stain."
+        bases:
+          "frotte": "rubs"
+          "tache": "stain"
+  "fr-3104":
+    native: "to dust"
+    notes:
+      "n1": "Épousseter is to dust; the noun is la poussière."
+    examples:
+      "Épousse les meubles.":
+        native: "Dust the furniture."
+        bases:
+          "Épousse": "dust"
+          "meubles": "furniture"
+      "Il épousse la chambre.":
+        native: "He dusts the bedroom."
+        bases:
+          "épousse": "dusts"
+  "fr-3105":
+    native: "dishwasher"
+    notes:
+      "n1": "Un lave-vaisselle is a dishwasher; it is masculine."
+    examples:
+      "Le lave-vaisselle est plein.":
+        native: "The dishwasher is full."
+        bases:
+          "lave-vaisselle": "dishwasher"
+          "est": "is"
+      "Mets les verres dans le lave-vaisselle.":
+        native: "Put the glasses in the dishwasher."
+        bases:
+          "Mets": "put"
+          "verres": "glasses"
+          "lave-vaisselle": "dishwasher"
+  "fr-3106":
+    native: "to air"
+    notes:
+      "n1": "Aérer is to air out a room; it takes an accent: j'aère."
+    examples:
+      "J'aère la chambre le matin.":
+        native: "I air the bedroom in the morning."
+        bases:
+          "J'aère": "air"
+      "Il faut aérer la cuisine.":
+        native: "The kitchen needs airing."
+        bases:
+          "faut": "need"
+          "aérer": "air"
+  "fr-3107":
+    native: "to mop up"
+    notes:
+      "n1": "Éponger is to soak up or mop up; the noun éponge is a sponge."
+    examples:
+      "Éponge l'eau sur le sol.":
+        native: "Mop up the water on the floor."
+        bases:
+          "Éponge": "mop"
+          "l'eau": "water"
+      "Il éponge le café renversé.":
+        native: "He mops up the spilt coffee."
+        bases:
+          "éponge": "mops"
+          "renversé": "spilt"
+  "fr-3108":
+    native: "to disinfect"
+    notes:
+      "n1": "Désinfecter is to disinfect; the noun is le désinfectant."
+    examples:
+      "Je désinfecte la plaie.":
+        native: "I disinfect the wound."
+        bases:
+          "désinfecte": "disinfect"
+      "Il faut désinfecter le lavabo.":
+        native: "The washbasin needs disinfecting."
+        bases:
+          "faut": "need"
+          "désinfecter": "disinfect"
+  "fr-3109":
+    native: "to wring out, to spin"
+    notes:
+      "n1": "Essorer is to wring out a cloth, or to spin the washing in a machine."
+    examples:
+      "Essore le torchon.":
+        native: "Wring out the cloth."
+        bases:
+          "Essore": "wring out"
+      "La machine essore le linge.":
+        native: "The machine spins the laundry."
+        bases:
+          "machine": "machine"
+          "essore": "spins"
+          "linge": "laundry"
+  "fr-3110":
+    native: "bin, basket"
+    notes:
+      "n1": "Une corbeille is a waste bin or basket; corbeille à papier is a paper bin."
+    examples:
+      "Jette ce papier dans la corbeille.":
+        native: "Throw this paper in the bin."
+        bases:
+          "Jette": "throw"
+          "corbeille": "bin"
+      "La corbeille est pleine.":
+        native: "The bin is full."
+        bases:
+          "corbeille": "bin, basket"
+          "est": "is"
+          "pleine": "full"
+  "fr-3111":
+    native: "washbasin"
+    notes:
+      "n1": "Un lavabo is a washbasin in a bathroom; it is masculine."
+    examples:
+      "Le lavabo est propre.":
+        native: "The washbasin is clean."
+        bases:
+          "lavabo": "washbasin"
+          "est": "is"
+      "Je nettoie le lavabo avec un chiffon.":
+        native: "I clean the washbasin with a cloth."
+        bases:
+          "nettoie": "clean"
+          "lavabo": "washbasin"
+  "fr-3112":
+    native: "bath"
+    notes:
+      "n1": "Une baignoire is a bath; it is feminine."
+    examples:
+      "La baignoire est vide.":
+        native: "The bath is empty."
+        bases:
+          "baignoire": "bath"
+          "est": "is"
+      "Je nettoie la baignoire le samedi.":
+        native: "I clean the bath on Saturday."
+        bases:
+          "nettoie": "clean"
+          "baignoire": "bath"
+  "fr-3113":
+    native: "step ladder"
+    notes:
+      "n1": "Un escabeau is a small step ladder; it is masculine."
+    examples:
+      "Prends l'escabeau pour nettoyer le plafond.":
+        native: "Get the step ladder to clean the ceiling."
+        bases:
+          "Prends": "take"
+          "l'escabeau": "step ladder"
+          "plafond": "ceiling"
+      "L'escabeau est dans le placard.":
+        native: "The step ladder is in the cupboard."
+        bases:
+          "L'escabeau": "step ladder"
+          "est": "is"
+          "placard": "cupboard"
+  "fr-3114":
+    native: "sheet"
+    notes:
+      "n1": "Un drap is a bed sheet; it is masculine, and the plural is les draps."
+    examples:
+      "Je change les draps le dimanche.":
+        native: "I change the sheets on Sunday."
+        bases:
+          "change": "change"
+          "draps": "sheets"
+      "Ce drap est propre.":
+        native: "This sheet is clean."
+        bases:
+          "drap": "sheet"
+          "est": "is"

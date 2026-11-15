@@ -1,0 +1,99 @@
+schema: 1
+id: "fr-chores-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-3115"
+    target: "Je fais la vaisselle après le repas."
+    ipa: "ʒə fɛ la vɛsɛl apʁɛ lə ʁəpa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", base: "faire" }, { word: "la", ref: "fr-0544" }, { word: "vaisselle", ref: "fr-3081" }, { word: "après", ref: "fr-0595" }, { word: "le", ref: "fr-0543" }, { word: "repas", ref: "fr-0813" }]
+    confusables:
+      - { id: "torchon", ref: "fr-3089", kind: "word" }
+      - { id: "evier", ref: "fr-3099", kind: "word" }
+  - id: "fr-3116"
+    target: "Tu passes l'aspirateur ce soir ?"
+    ipa: "ty pas laspiʁatœʁ sə swaʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tu", ref: "fr-0095" }, { word: "passes", base: "passer" }, { word: "l'aspirateur", base: "aspirateur" }, { word: "ce", ref: "fr-0143" }, { word: "soir", ref: "fr-1034" }]
+    confusables:
+      - { id: "balayer", ref: "fr-3086", kind: "word" }
+      - { id: "serpilliere", ref: "fr-3087", kind: "word" }
+  - id: "fr-3117"
+    target: "Le lave-vaisselle est plein, il faut le vider."
+    ipa: "lə lavvɛsɛl ɛ plɛ̃ il fo lə vide"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Le", ref: "fr-0543" }, { word: "lave-vaisselle", ref: "fr-3105" }, { word: "est", base: "être" }, { word: "plein", ref: "fr-0439" }, { word: "il", ref: "fr-0127" }, { word: "faut", base: "falloir" }, { word: "le", ref: "fr-0543" }, { word: "vider", ref: "fr-3095" }]
+    confusables:
+      - { id: "robinet", ref: "fr-3100", kind: "word" }
+      - { id: "seche-linge", ref: "fr-3101", kind: "word" }
+  - id: "fr-3118"
+    target: "Ne jette pas ce chiffon, il est propre."
+    ipa: "nə ʒɛt pa sə ʃifɔ̃ il ɛ pʁɔpʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Ne", base: "ne" }, { word: "jette", base: "jeter" }, { word: "pas", base: "pas" }, { word: "ce", ref: "fr-0143" }, { word: "chiffon", ref: "fr-3098" }, { word: "il", ref: "fr-0127" }, { word: "est", base: "être" }, { word: "propre", ref: "fr-0427" }]
+    confusables:
+      - { id: "torchon", ref: "fr-3089", kind: "word" }
+      - { id: "ordure", ref: "fr-3097", kind: "word" }
+  - id: "fr-3119"
+    target: "Où sont les draps propres ?"
+    ipa: "u sɔ̃ le dʁa pʁɔpʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Où", ref: "fr-0067" }, { word: "sont", base: "être" }, { word: "les", ref: "fr-0043" }, { word: "draps", base: "drap" }, { word: "propres", base: "propre" }]
+    confusables:
+      - { id: "serpilliere", ref: "fr-3087", kind: "word" }
+      - { id: "chiffon", ref: "fr-3098", kind: "word" }
+  - id: "fr-3120"
+    target: "Épousseter les meubles prend du temps."
+    ipa: "epuste le mœbl pʁɑ̃ dy tɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Épousseter", ref: "fr-3104" }, { word: "les", ref: "fr-0043" }, { word: "meubles", base: "meuble" }, { word: "prend", base: "prendre" }, { word: "du", base: "de" }, { word: "temps", ref: "fr-1040" }]
+    confusables:
+      - { id: "aspirateur", ref: "fr-3083", kind: "word" }
+      - { id: "balayer", ref: "fr-3086", kind: "word" }
+  - id: "fr-3121"
+    target: "Je mets le linge à sécher dehors."
+    ipa: "ʒə mɛ lə lɛ̃ʒ a seʃe dəɔʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", base: "mettre" }, { word: "le", ref: "fr-0543" }, { word: "linge", base: "linge" }, { word: "à", base: "à" }, { word: "sécher", ref: "fr-3090" }, { word: "dehors", ref: "fr-0354" }]
+    confusables:
+      - { id: "lessive", ref: "fr-3082", kind: "word" }
+      - { id: "seche-linge", ref: "fr-3101", kind: "word" }
+  - id: "fr-3122"
+    target: "Quel est le détergent pour la vaisselle ?"
+    ipa: "kɛl ɛ lə detɛʁʒɑ̃ puʁ la vɛsɛl"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Quel", ref: "fr-0072" }, { word: "est", base: "être" }, { word: "le", ref: "fr-0543" }, { word: "détergent", ref: "fr-3088" }, { word: "pour", ref: "fr-0591" }, { word: "la", ref: "fr-0544" }, { word: "vaisselle", ref: "fr-3081" }]
+    confusables:
+      - { id: "lessive", ref: "fr-3082", kind: "word" }
+      - { id: "essuyer", ref: "fr-3085", kind: "word" }
+  - id: "fr-3123"
+    target: "Essuie la table avec le chiffon."
+    ipa: "esɥi la tabl avɛk lə ʃifɔ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Essuie", base: "essuyer" }, { word: "la", ref: "fr-0544" }, { word: "table", ref: "fr-0486" }, { word: "avec", ref: "fr-0590" }, { word: "le", ref: "fr-0543" }, { word: "chiffon", ref: "fr-3098" }]
+    confusables:
+      - { id: "torchon", ref: "fr-3089", kind: "word" }
+      - { id: "eponge", ref: "fr-1400", kind: "word" }
+  - id: "fr-3124"
+    target: "Le sol de la cuisine est sale."
+    ipa: "lə sɔl də la kɥizin ɛ sal"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Le", ref: "fr-0543" }, { word: "sol", ref: "fr-1016" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "cuisine", ref: "fr-0822" }, { word: "est", base: "être" }, { word: "sale", ref: "fr-0428" }]
+    confusables:
+      - { id: "serpilliere", ref: "fr-3087", kind: "word" }
+      - { id: "poussiere", ref: "fr-3096", kind: "word" }

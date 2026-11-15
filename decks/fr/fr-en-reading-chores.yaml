@@ -1,0 +1,63 @@
+schema: 1
+id: "fr-en-reading-chores"
+name: "Reading: chores"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a family's cleaning day, and a weekly chore list. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-cleaning-day"
+    title: "Cleaning day"
+    theme: "chores"
+    sentences:
+      - text: "Aujourd'hui, c'est le ménage à la maison !"
+      - text: "Papa passe l'aspirateur et maman fait la vaisselle."
+      - text: "Ma sœur essuie les tables, et mon frère sort la poubelle."
+      - text: "Après, nous changeons les draps."
+    questions:
+      - id: "fr-3125"
+        prompt: { en: "Who does the dishes?" }
+        options:
+          - { en: "Dad" }
+          - { en: "Mum" }
+          - { en: "The brother" }
+        answer: 2
+      - id: "fr-3126"
+        prompt: { en: "Who takes out the bin?" }
+        options:
+          - { en: "My sister" }
+          - { en: "My brother" }
+          - { en: "Dad" }
+        answer: 2
+      - id: "fr-3127"
+        prompt: { en: "Dad vacuums the house." }
+        answer: true
+  - id: "fr-chore-list"
+    title: "Weekly chore list"
+    theme: "chores"
+    sentences:
+      - text: "Liste des corvées de la semaine"
+      - text: "Lundi : vaisselle. Mardi : lessive."
+      - text: "Mercredi : passer l'aspirateur. Jeudi : nettoyer la salle de bain."
+      - text: "Samedi : sortir les ordures. Dimanche : changer les draps."
+    questions:
+      - id: "fr-3128"
+        prompt: { en: "On which day is the washing done?" }
+        options:
+          - { en: "Monday" }
+          - { en: "Tuesday" }
+          - { en: "Sunday" }
+        answer: 2
+      - id: "fr-3129"
+        prompt: { en: "What is on Saturday?" }
+        options:
+          - { en: "Taking out the rubbish" }
+          - { en: "Ironing" }
+          - { en: "Dusting" }
+        answer: 1
+      - id: "fr-3130"
+        prompt: { en: "The list says to change the sheets on Sunday." }
+        answer: true

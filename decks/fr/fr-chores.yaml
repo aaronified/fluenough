@@ -1,0 +1,381 @@
+schema: 1
+id: "fr-chores"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "chores"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-3080"
+    target: "ménage"
+    ipa: "menaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je fais le ménage le samedi.", ipa: "ʒə fɛ lə menaʒ lə samdi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", base: "faire" }, { word: "le", ref: "fr-0543" }, { word: "ménage", base: "ménage" }, { word: "le", ref: "fr-0543" }, { word: "samedi", ref: "fr-1049" }] }
+      - { target: "Le ménage est fini.", ipa: "lə menaʒ ɛ fini", bases: [{ word: "Le", ref: "fr-0543" }, { word: "ménage", base: "ménage" }, { word: "est", base: "être" }, { word: "fini", base: "fini" }] }
+  - id: "fr-3081"
+    target: "vaisselle"
+    ipa: "vɛsɛl"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je fais la vaisselle après le repas.", ipa: "ʒə fɛ la vɛsɛl apʁɛ lə ʁəpa", bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", base: "faire" }, { word: "la", ref: "fr-0544" }, { word: "vaisselle", base: "vaisselle" }, { word: "après", ref: "fr-0595" }, { word: "le", ref: "fr-0543" }, { word: "repas", ref: "fr-0813" }] }
+      - { target: "Il range la vaisselle dans le placard.", ipa: "il ʁɑ̃ʒ la vɛsɛl dɑ̃ lə plakaʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "range", base: "ranger" }, { word: "la", ref: "fr-0544" }, { word: "vaisselle", base: "vaisselle" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "placard", base: "placard" }] }
+  - id: "fr-3082"
+    target: "lessive"
+    ipa: "lɛsiv"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma mère fait la lessive le lundi.", ipa: "ma mɛʁ fɛ la lɛsiv lə lœ̃di", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "mère", ref: "fr-0166" }, { word: "fait", base: "faire" }, { word: "la", ref: "fr-0544" }, { word: "lessive", base: "lessive" }, { word: "le", ref: "fr-0543" }, { word: "lundi", ref: "fr-1044" }] }
+      - { target: "La lessive est dans le placard.", ipa: "la lɛsiv ɛ dɑ̃ lə plakaʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "lessive", base: "lessive" }, { word: "est", base: "être" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "placard", base: "placard" }] }
+  - id: "fr-3083"
+    target: "aspirateur"
+    ipa: "aspiʁatœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il passe l'aspirateur le dimanche.", ipa: "il pas laspiʁatœʁ lə dimɑ̃ʃ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "passe", base: "passer" }, { word: "l'aspirateur", base: "aspirateur" }, { word: "le", ref: "fr-0543" }, { word: "dimanche", ref: "fr-1050" }] }
+      - { target: "L'aspirateur est dans le couloir.", ipa: "laspiʁatœʁ ɛ dɑ̃ lə kulwaʁ", bases: [{ word: "L'aspirateur", base: "aspirateur" }, { word: "est", base: "être" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "couloir", ref: "fr-1115" }] }
+  - id: "fr-3084"
+    target: "rangement"
+    ipa: "ʁɑ̃ʒmɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le rangement prend du temps.", ipa: "lə ʁɑ̃ʒmɑ̃ pʁɑ̃ dy tɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "rangement", base: "rangement" }, { word: "prend", base: "prendre" }, { word: "du", base: "de" }, { word: "temps", ref: "fr-1040" }] }
+      - { target: "Fais le rangement avant le dîner.", ipa: "fɛ lə ʁɑ̃ʒmɑ̃ avɑ̃ lə dine", bases: [{ word: "Fais", base: "faire" }, { word: "le", ref: "fr-0543" }, { word: "rangement", base: "rangement" }, { word: "avant", ref: "fr-0596" }, { word: "le", ref: "fr-0543" }, { word: "dîner", ref: "fr-0815" }] }
+  - id: "fr-3085"
+    target: "essuyer"
+    ipa: "esɥije"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Essuie la table, s'il te plaît.", ipa: "esɥi la tabl sil tə plɛ", bases: [{ word: "Essuie", base: "essuyer" }, { word: "la", ref: "fr-0544" }, { word: "table", ref: "fr-0486" }, { word: "s'il", base: "il" }, { word: "te", base: "te" }, { word: "plaît", base: "plaire" }] }
+      - { target: "J'essuie les assiettes.", ipa: "ʒesɥi lez asjɛt", bases: [{ word: "J'essuie", base: "essuyer" }, { word: "les", ref: "fr-0043" }, { word: "assiettes", base: "assiette" }] }
+  - id: "fr-3086"
+    target: "balayer"
+    ipa: "balɛje"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il balaie la cuisine.", ipa: "il balɛ la kɥizin", bases: [{ word: "Il", ref: "fr-0127" }, { word: "balaie", base: "balayer" }, { word: "la", ref: "fr-0544" }, { word: "cuisine", ref: "fr-0822" }] }
+      - { target: "Nous balayons le sol.", ipa: "nu balɛjɔ̃ lə sɔl", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "balayons", base: "balayer" }, { word: "le", ref: "fr-0543" }, { word: "sol", ref: "fr-1016" }] }
+  - id: "fr-3087"
+    target: "serpillière"
+    ipa: "sɛʁpijjɛʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La serpillière est sale.", ipa: "la sɛʁpijjɛʁ ɛ sal", bases: [{ word: "La", ref: "fr-0544" }, { word: "serpillière", base: "serpillière" }, { word: "est", base: "être" }, { word: "sale", ref: "fr-0428" }] }
+      - { target: "Je passe la serpillière dans la cuisine.", ipa: "ʒə pas la sɛʁpijjɛʁ dɑ̃ la kɥizin", bases: [{ word: "Je", ref: "fr-0126" }, { word: "passe", base: "passer" }, { word: "la", ref: "fr-0544" }, { word: "serpillière", base: "serpillière" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "cuisine", ref: "fr-0822" }] }
+  - id: "fr-3088"
+    target: "détergent"
+    ipa: "detɛʁʒɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce détergent sent bon.", ipa: "sə detɛʁʒɑ̃ sɑ̃ bɔ̃", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "détergent", base: "détergent" }, { word: "sent", base: "sentir" }, { word: "bon", ref: "fr-0040" }] }
+      - { target: "Mets un peu de détergent dans l'eau.", ipa: "mɛ œ̃ pø də detɛʁʒɑ̃ dɑ̃ lo", bases: [{ word: "Mets", base: "mettre" }, { word: "un", ref: "fr-0208" }, { word: "peu", ref: "fr-0342" }, { word: "de", base: "de" }, { word: "détergent", base: "détergent" }, { word: "dans", ref: "fr-0049" }, { word: "l'eau", base: "eau" }] }
+  - id: "fr-3089"
+    target: "torchon"
+    ipa: "tɔʁʃɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le torchon est mouillé.", ipa: "lə tɔʁʃɔ̃ ɛ muje", bases: [{ word: "Le", ref: "fr-0543" }, { word: "torchon", base: "torchon" }, { word: "est", base: "être" }, { word: "mouillé", ref: "fr-1327" }] }
+      - { target: "Prends un torchon pour sécher les verres.", ipa: "pʁɑ̃ œ̃ tɔʁʃɔ̃ puʁ seʃe le vɛʁ", bases: [{ word: "Prends", base: "prendre" }, { word: "un", ref: "fr-0208" }, { word: "torchon", base: "torchon" }, { word: "pour", ref: "fr-0591" }, { word: "sécher", ref: "fr-3090" }, { word: "les", ref: "fr-0043" }, { word: "verres", base: "verre" }] }
+  - id: "fr-3090"
+    target: "sécher"
+    ipa: "seʃe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je sèche la vaisselle.", ipa: "ʒə sɛʃ la vɛsɛl", bases: [{ word: "Je", ref: "fr-0126" }, { word: "sèche", base: "sécher" }, { word: "la", ref: "fr-0544" }, { word: "vaisselle", ref: "fr-3081" }] }
+      - { target: "Le linge sèche au soleil.", ipa: "lə lɛ̃ʒ sɛʃ o sɔlɛj", bases: [{ word: "Le", ref: "fr-0543" }, { word: "linge", base: "linge" }, { word: "sèche", base: "sécher" }, { word: "au", base: "à" }, { word: "soleil", ref: "fr-1303" }] }
+  - id: "fr-3091"
+    target: "plier"
+    ipa: "plije"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Plie le drap.", ipa: "pli lə dʁa", bases: [{ word: "Plie", base: "plier" }, { word: "le", ref: "fr-0543" }, { word: "drap", ref: "fr-3114" }] }
+      - { target: "Il plie ses vêtements.", ipa: "il pli se vɛtmɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "plie", base: "plier" }, { word: "ses", ref: "fr-0625" }, { word: "vêtements", base: "vêtement" }] }
+  - id: "fr-3092"
+    target: "corvée"
+    ipa: "kɔʁve"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La vaisselle est une corvée.", ipa: "la vɛsɛl ɛ yn kɔʁve", bases: [{ word: "La", ref: "fr-0544" }, { word: "vaisselle", ref: "fr-3081" }, { word: "est", base: "être" }, { word: "une", ref: "fr-0545" }, { word: "corvée", base: "corvée" }] }
+      - { target: "Sortir la poubelle est ma corvée.", ipa: "sɔʁtiʁ la pubɛl ɛ ma kɔʁve", bases: [{ word: "Sortir", ref: "fr-1125" }, { word: "la", ref: "fr-0544" }, { word: "poubelle", ref: "fr-1401" }, { word: "est", base: "être" }, { word: "ma", ref: "fr-0137" }, { word: "corvée", base: "corvée" }] }
+  - id: "fr-3093"
+    target: "débarrasser"
+    ipa: "debaʁase"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Débarrasse la table après le repas.", ipa: "debaʁas la tabl apʁɛ lə ʁəpa", bases: [{ word: "Débarrasse", base: "débarrasser" }, { word: "la", ref: "fr-0544" }, { word: "table", ref: "fr-0486" }, { word: "après", ref: "fr-0595" }, { word: "le", ref: "fr-0543" }, { word: "repas", ref: "fr-0813" }] }
+      - { target: "Je débarrasse les assiettes.", ipa: "ʒə debaʁas lez asjɛt", bases: [{ word: "Je", ref: "fr-0126" }, { word: "débarrasse", base: "débarrasser" }, { word: "les", ref: "fr-0043" }, { word: "assiettes", base: "assiette" }] }
+  - id: "fr-3094"
+    target: "jeter"
+    ipa: "ʒəte"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tu jettes les ordures ?", ipa: "ty ʒɛt lez ɔʁdyʁ", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "jettes", base: "jeter" }, { word: "les", ref: "fr-0043" }, { word: "ordures", base: "ordure" }] }
+      - { target: "Ne jette pas ce torchon.", ipa: "nə ʒɛt pa sə tɔʁʃɔ̃", bases: [{ word: "Ne", base: "ne" }, { word: "jette", base: "jeter" }, { word: "pas", base: "pas" }, { word: "ce", ref: "fr-0143" }, { word: "torchon", ref: "fr-3089" }] }
+  - id: "fr-3095"
+    target: "vider"
+    ipa: "vide"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je vide la poubelle.", ipa: "ʒə vid la pubɛl", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vide", base: "vider" }, { word: "la", ref: "fr-0544" }, { word: "poubelle", ref: "fr-1401" }] }
+      - { target: "Le lave-vaisselle est vide.", ipa: "lə lavvɛsɛl ɛ vid", bases: [{ word: "Le", ref: "fr-0543" }, { word: "lave-vaisselle", ref: "fr-3105" }, { word: "est", base: "être" }, { word: "vide", ref: "fr-0440" }] }
+  - id: "fr-3096"
+    target: "poussière"
+    ipa: "pusjɛʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il y a de la poussière sur la table.", ipa: "il i a də la pusjɛʁ syʁ la tabl", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", base: "avoir" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "poussière", base: "poussière" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "table", ref: "fr-0486" }] }
+      - { target: "Épousseter enlève la poussière.", ipa: "epuste ɑ̃lɛv la pusjɛʁ", bases: [{ word: "Épousseter", ref: "fr-3104" }, { word: "enlève", base: "enlever" }, { word: "la", ref: "fr-0544" }, { word: "poussière", base: "poussière" }] }
+  - id: "fr-3097"
+    target: "ordure"
+    ipa: "ɔʁdyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette ordure est sur le sol.", ipa: "sɛt ɔʁdyʁ ɛ syʁ lə sɔl", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "ordure", base: "ordure" }, { word: "est", base: "être" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "sol", ref: "fr-1016" }] }
+      - { target: "Les ordures sont dans le couloir.", ipa: "lez ɔʁdyʁ sɔ̃ dɑ̃ lə kulwaʁ", bases: [{ word: "Les", ref: "fr-0043" }, { word: "ordures", base: "ordure" }, { word: "sont", base: "être" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "couloir", ref: "fr-1115" }] }
+  - id: "fr-3098"
+    target: "chiffon"
+    ipa: "ʃifɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Prends un chiffon et essuie la table.", ipa: "pʁɑ̃ œ̃ ʃifɔ̃ e esɥi la tabl", bases: [{ word: "Prends", base: "prendre" }, { word: "un", ref: "fr-0208" }, { word: "chiffon", base: "chiffon" }, { word: "et", ref: "fr-0027" }, { word: "essuie", base: "essuyer" }, { word: "la", ref: "fr-0544" }, { word: "table", ref: "fr-0486" }] }
+      - { target: "Le chiffon est sale.", ipa: "lə ʃifɔ̃ ɛ sal", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chiffon", base: "chiffon" }, { word: "est", base: "être" }, { word: "sale", ref: "fr-0428" }] }
+  - id: "fr-3099"
+    target: "évier"
+    ipa: "evje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'évier est plein.", ipa: "levje ɛ plɛ̃", bases: [{ word: "L'évier", base: "évier" }, { word: "est", base: "être" }, { word: "plein", ref: "fr-0439" }] }
+      - { target: "Lave la tasse dans l'évier.", ipa: "lav la tas dɑ̃ levje", bases: [{ word: "Lave", base: "laver" }, { word: "la", ref: "fr-0544" }, { word: "tasse", ref: "fr-0386" }, { word: "dans", ref: "fr-0049" }, { word: "l'évier", base: "évier" }] }
+  - id: "fr-3100"
+    target: "robinet"
+    ipa: "ʁɔbinɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ferme le robinet, s'il te plaît.", ipa: "fɛʁm lə ʁɔbinɛ sil tə plɛ", bases: [{ word: "Ferme", base: "fermer" }, { word: "le", ref: "fr-0543" }, { word: "robinet", base: "robinet" }, { word: "s'il", base: "il" }, { word: "te", base: "te" }, { word: "plaît", base: "plaire" }] }
+      - { target: "Le robinet de l'évier coule.", ipa: "lə ʁɔbinɛ də levje kul", bases: [{ word: "Le", ref: "fr-0543" }, { word: "robinet", base: "robinet" }, { word: "de", base: "de" }, { word: "l'évier", base: "évier" }, { word: "coule", base: "couler" }] }
+  - id: "fr-3101"
+    target: "sèche-linge"
+    ipa: "sɛʃlɛ̃ʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le sèche-linge tourne toute la nuit.", ipa: "lə sɛʃlɛ̃ʒ tuʁn tut la nɥi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "sèche-linge", base: "sèche-linge" }, { word: "tourne", base: "tourner" }, { word: "toute", base: "tout" }, { word: "la", ref: "fr-0544" }, { word: "nuit", ref: "fr-1035" }] }
+      - { target: "Mets les draps dans le sèche-linge.", ipa: "mɛ le dʁa dɑ̃ lə sɛʃlɛ̃ʒ", bases: [{ word: "Mets", base: "mettre" }, { word: "les", ref: "fr-0043" }, { word: "draps", base: "drap" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "sèche-linge", base: "sèche-linge" }] }
+  - id: "fr-3102"
+    target: "récurer"
+    ipa: "ʁekyʁe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je récure la baignoire.", ipa: "ʒə ʁekyʁ la bɛɲwaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "récure", base: "récurer" }, { word: "la", ref: "fr-0544" }, { word: "baignoire", ref: "fr-3112" }] }
+      - { target: "Il faut récurer le lavabo.", ipa: "il fo ʁekyʁe lə lavabo", bases: [{ word: "Il", ref: "fr-0127" }, { word: "faut", base: "falloir" }, { word: "récurer", base: "récurer" }, { word: "le", ref: "fr-0543" }, { word: "lavabo", ref: "fr-3111" }] }
+  - id: "fr-3103"
+    target: "frotter"
+    ipa: "fʁɔte"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Frotte le plancher avec le torchon.", ipa: "fʁɔt lə plɑ̃ʃe avɛk lə tɔʁʃɔ̃", bases: [{ word: "Frotte", base: "frotter" }, { word: "le", ref: "fr-0543" }, { word: "plancher", base: "plancher" }, { word: "avec", ref: "fr-0590" }, { word: "le", ref: "fr-0543" }, { word: "torchon", ref: "fr-3089" }] }
+      - { target: "Il frotte la tache.", ipa: "il fʁɔt la taʃ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "frotte", base: "frotter" }, { word: "la", ref: "fr-0544" }, { word: "tache", base: "tache" }] }
+  - id: "fr-3104"
+    target: "épousseter"
+    ipa: "epuste"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Épousse les meubles.", ipa: "epus le mœbl", bases: [{ word: "Épousse", base: "épousseter" }, { word: "les", ref: "fr-0043" }, { word: "meubles", base: "meuble" }] }
+      - { target: "Il épousse la chambre.", ipa: "il epus la ʃɑ̃bʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "épousse", base: "épousseter" }, { word: "la", ref: "fr-0544" }, { word: "chambre", ref: "fr-0998" }] }
+  - id: "fr-3105"
+    target: "lave-vaisselle"
+    ipa: "lavvɛsɛl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le lave-vaisselle est plein.", ipa: "lə lavvɛsɛl ɛ plɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "lave-vaisselle", base: "lave-vaisselle" }, { word: "est", base: "être" }, { word: "plein", ref: "fr-0439" }] }
+      - { target: "Mets les verres dans le lave-vaisselle.", ipa: "mɛ le vɛʁ dɑ̃ lə lavvɛsɛl", bases: [{ word: "Mets", base: "mettre" }, { word: "les", ref: "fr-0043" }, { word: "verres", base: "verre" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "lave-vaisselle", base: "lave-vaisselle" }] }
+  - id: "fr-3106"
+    target: "aérer"
+    ipa: "aeʁe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'aère la chambre le matin.", ipa: "ʒaɛʁ la ʃɑ̃bʁ lə matɛ̃", bases: [{ word: "J'aère", base: "aérer" }, { word: "la", ref: "fr-0544" }, { word: "chambre", ref: "fr-0998" }, { word: "le", ref: "fr-0543" }, { word: "matin", ref: "fr-1033" }] }
+      - { target: "Il faut aérer la cuisine.", ipa: "il fo aeʁe la kɥizin", bases: [{ word: "Il", ref: "fr-0127" }, { word: "faut", base: "falloir" }, { word: "aérer", base: "aérer" }, { word: "la", ref: "fr-0544" }, { word: "cuisine", ref: "fr-0822" }] }
+  - id: "fr-3107"
+    target: "éponger"
+    ipa: "epɔ̃ʒe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Éponge l'eau sur le sol.", ipa: "epɔ̃ʒ lo syʁ lə sɔl", bases: [{ word: "Éponge", base: "éponger" }, { word: "l'eau", base: "eau" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "sol", ref: "fr-1016" }] }
+      - { target: "Il éponge le café renversé.", ipa: "il epɔ̃ʒ lə kafe ʁɑ̃vɛʁse", bases: [{ word: "Il", ref: "fr-0127" }, { word: "éponge", base: "éponger" }, { word: "le", ref: "fr-0543" }, { word: "café", ref: "fr-0793" }, { word: "renversé", base: "renverser" }] }
+  - id: "fr-3108"
+    target: "désinfecter"
+    ipa: "dezɛ̃fɛkte"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je désinfecte la plaie.", ipa: "ʒə dezɛ̃fɛkt la plɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "désinfecte", base: "désinfecter" }, { word: "la", ref: "fr-0544" }, { word: "plaie", ref: "fr-3025" }] }
+      - { target: "Il faut désinfecter le lavabo.", ipa: "il fo dezɛ̃fɛkte lə lavabo", bases: [{ word: "Il", ref: "fr-0127" }, { word: "faut", base: "falloir" }, { word: "désinfecter", base: "désinfecter" }, { word: "le", ref: "fr-0543" }, { word: "lavabo", ref: "fr-3111" }] }
+  - id: "fr-3109"
+    target: "essorer"
+    ipa: "esɔʁe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Essore le torchon.", ipa: "esɔʁ lə tɔʁʃɔ̃", bases: [{ word: "Essore", base: "essorer" }, { word: "le", ref: "fr-0543" }, { word: "torchon", ref: "fr-3089" }] }
+      - { target: "La machine essore le linge.", ipa: "la maʃin esɔʁ lə lɛ̃ʒ", bases: [{ word: "La", ref: "fr-0544" }, { word: "machine", base: "machine" }, { word: "essore", base: "essorer" }, { word: "le", ref: "fr-0543" }, { word: "linge", base: "linge" }] }
+  - id: "fr-3110"
+    target: "corbeille"
+    ipa: "kɔʁbɛj"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Jette ce papier dans la corbeille.", ipa: "ʒɛt sə papje dɑ̃ la kɔʁbɛj", bases: [{ word: "Jette", base: "jeter" }, { word: "ce", ref: "fr-0143" }, { word: "papier", ref: "fr-1374" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "corbeille", base: "corbeille" }] }
+      - { target: "La corbeille est pleine.", ipa: "la kɔʁbɛj ɛ plɛn", bases: [{ word: "La", ref: "fr-0544" }, { word: "corbeille", base: "corbeille" }, { word: "est", base: "être" }, { word: "pleine", base: "plein" }] }
+  - id: "fr-3111"
+    target: "lavabo"
+    ipa: "lavabo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le lavabo est propre.", ipa: "lə lavabo ɛ pʁɔpʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "lavabo", base: "lavabo" }, { word: "est", base: "être" }, { word: "propre", ref: "fr-0427" }] }
+      - { target: "Je nettoie le lavabo avec un chiffon.", ipa: "ʒə nɛtwa lə lavabo avɛk œ̃ ʃifɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "nettoie", base: "nettoyer" }, { word: "le", ref: "fr-0543" }, { word: "lavabo", base: "lavabo" }, { word: "avec", ref: "fr-0590" }, { word: "un", ref: "fr-0208" }, { word: "chiffon", ref: "fr-3098" }] }
+  - id: "fr-3112"
+    target: "baignoire"
+    ipa: "bɛɲwaʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La baignoire est vide.", ipa: "la bɛɲwaʁ ɛ vid", bases: [{ word: "La", ref: "fr-0544" }, { word: "baignoire", base: "baignoire" }, { word: "est", base: "être" }, { word: "vide", ref: "fr-0440" }] }
+      - { target: "Je nettoie la baignoire le samedi.", ipa: "ʒə nɛtwa la bɛɲwaʁ lə samdi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "nettoie", base: "nettoyer" }, { word: "la", ref: "fr-0544" }, { word: "baignoire", base: "baignoire" }, { word: "le", ref: "fr-0543" }, { word: "samedi", ref: "fr-1049" }] }
+  - id: "fr-3113"
+    target: "escabeau"
+    ipa: "ɛskabo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Prends l'escabeau pour nettoyer le plafond.", ipa: "pʁɑ̃ lɛskabo puʁ nɛtwaje lə plafɔ̃", bases: [{ word: "Prends", base: "prendre" }, { word: "l'escabeau", base: "escabeau" }, { word: "pour", ref: "fr-0591" }, { word: "nettoyer", ref: "fr-0297" }, { word: "le", ref: "fr-0543" }, { word: "plafond", base: "plafond" }] }
+      - { target: "L'escabeau est dans le placard.", ipa: "lɛskabo ɛ dɑ̃ lə plakaʁ", bases: [{ word: "L'escabeau", base: "escabeau" }, { word: "est", base: "être" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "placard", base: "placard" }] }
+  - id: "fr-3114"
+    target: "drap"
+    ipa: "dʁa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je change les draps le dimanche.", ipa: "ʒə ʃɑ̃ʒ le dʁa lə dimɑ̃ʃ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "change", base: "changer" }, { word: "les", ref: "fr-0043" }, { word: "draps", base: "drap" }, { word: "le", ref: "fr-0543" }, { word: "dimanche", ref: "fr-1050" }] }
+      - { target: "Ce drap est propre.", ipa: "sə dʁa ɛ pʁɔpʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "drap", base: "drap" }, { word: "est", base: "être" }, { word: "propre", ref: "fr-0427" }] }
