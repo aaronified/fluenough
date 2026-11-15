@@ -1,0 +1,147 @@
+schema: 1
+id: "hi-geography-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-5151"
+    target: "भारत एक महाद्वीप नहीं, देश है।"
+    reading: "bhārat ēk mahādvīp nahīm̐, dēś hai."
+    ipa: "bʱaːrət̪ eːk məɦaːd̪ʋiːp nəɦĩː d̪eːʃ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "भारत", base: "भारत", reading: "bhārat" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "राज्य", reading: "rājy", kind: "word" }
+      - { id: "w2", word: "प्रदेश", reading: "pradēś", kind: "word" }
+  - id: "hi-5152"
+    target: "सूरज पूर्व में उगता है।"
+    reading: "sūraj pūrv mēm̐ ugtā hai."
+    ipa: "suːrədʒ puːrʋ mẽː ʊɡt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "उगता", ref: "hi-1950" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "पश्चिम", reading: "paścim", kind: "word" }
+      - { id: "w2", word: "दक्षिण", reading: "dakśiṇ", kind: "word" }
+  - id: "hi-5153"
+    target: "भारत के दक्षिण में समुद्र है।"
+    reading: "bhārat kē dakśiṇ mēm̐ samudra hai."
+    ipa: "bʱaːrət̪ keː d̪əkʃɪɳ mẽː səmʊd̪rə ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "भारत", base: "भारत", reading: "bhārat" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "पूर्व", reading: "pūrv", kind: "word" }
+      - { id: "w2", word: "द्वीप", reading: "dvīp", kind: "word" }
+  - id: "hi-5154"
+    target: "हिमालय एक पर्वत है।"
+    reading: "himālay ēk parvat hai."
+    ipa: "ɦɪmaːləj eːk pərʋət̪ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "हिमालय", base: "हिमालय", reading: "himālay" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "पठार", reading: "paṭhār", kind: "word" }
+      - { id: "w2", word: "ग्रह", reading: "grah", kind: "word" }
+  - id: "hi-5155"
+    target: "इस प्रदेश की आबादी ज़्यादा है।"
+    reading: "is pradēś kī ābādī zyādā hai."
+    ipa: "ɪs prəd̪eːʃ kiː aːbaːd̪iː zjaːd̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "इस", ref: "hi-0748" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "दूरी", reading: "dūrī", kind: "word" }
+      - { id: "w2", word: "ऊँचाई", reading: "ūm̐cāī", kind: "word" }
+  - id: "hi-5156"
+    target: "यह पहाड़ बहुत ऊँचा है।"
+    reading: "yah pahāṛ bahut ūm̐cā hai."
+    ipa: "jəɦ pəɦaːɽ bəɦʊt̪ ũːtʃaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "गहराई", reading: "gahrāī", kind: "word" }
+      - { id: "w2", word: "चौड़ाई", reading: "cauṛāī", kind: "word" }
+  - id: "hi-5157"
+    target: "राजमार्ग शहर तक जाता है।"
+    reading: "rājmārg śahar tak jātā hai."
+    ipa: "raːdʒmaːrɡ ʃəɦər t̪ək dʒaːt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "जाता", ref: "hi-0777" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "बंदरगाह", reading: "bandargāh", kind: "word" }
+      - { id: "w2", word: "तट", reading: "taṭ", kind: "word" }
+  - id: "hi-5158"
+    target: "कल रात भूकंप आया।"
+    reading: "kal rāt bhūkamp āyā."
+    ipa: "kəl raːt̪ bʱuːkəmp aːjaː"
+    pos: "phrase"
+    bases:
+      - { word: "आया", ref: "hi-0778" }
+    confusables:
+      - { id: "w1", word: "ज्वालामुखी", reading: "jvālāmukhī", kind: "word" }
+      - { id: "w2", word: "ग्रह", reading: "grah", kind: "word" }
+  - id: "hi-5159"
+    target: "यहाँ की जलवायु गरम है।"
+    reading: "yahām̐ kī jalvāyu garam hai."
+    ipa: "jəɦãː kiː dʒəlʋaːjʊ ɡərəm ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "मौसम", reading: "mausam", kind: "word" }
+      - { id: "w2", word: "खनिज", reading: "khanij", kind: "word" }
+  - id: "hi-5160"
+    target: "बंदरगाह पर जहाज़ रुका।"
+    reading: "bandargāh par jahāz rukā."
+    ipa: "bənd̪ərɡaːɦ pər dʒəɦaːz rʊkaː"
+    pos: "phrase"
+    bases:
+      - { word: "रुका", ref: "hi-1914" }
+    confusables:
+      - { id: "w1", word: "ज़िला", reading: "zilā", kind: "word" }
+      - { id: "w2", word: "सरहद", reading: "sarhad", kind: "word" }
+  - id: "hi-5161"
+    target: "सरहद पार करना मुश्किल है।"
+    reading: "sarhad pār karnā muśkil hai."
+    ipa: "sərɦəd̪ paːr kərnaː mʊʃkɪl ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "पार", base: "पार", reading: "pār" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "आसान", reading: "āsān", kind: "word" }
+      - { id: "w2", word: "सरल", reading: "saral", kind: "word" }
+  - id: "hi-5162"
+    target: "पश्चिम में सागर है।"
+    reading: "paścim mēm̐ sāgar hai."
+    ipa: "pəʃtʃɪm mẽː saːɡər ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "समुद्र", reading: "samudr", kind: "word" }
+      - { id: "w2", word: "द्वीप", reading: "dvīp", kind: "word" }
+  - id: "hi-5163"
+    target: "दोनों राज्य सरहद पर मिलते हैं।"
+    reading: "dōnōm̐ rājya sarhad par miltē haim̐."
+    ipa: "d̪oːnõː raːdʒjə sərɦəd̪ pər mɪlt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "दोनों", base: "दोनों", reading: "dōnōm̐" }
+      - { word: "मिलते", ref: "hi-0793" }
+      - { word: "हैं", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "ज़िला", reading: "zilā", kind: "word" }
+      - { id: "w2", word: "प्रदेश", reading: "pradēś", kind: "word" }

@@ -1,0 +1,107 @@
+schema: 1
+id: "hi-en-services-sentences"
+kind: "layer"
+core: "hi-services-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about services"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the words of this unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-5360":
+    native: "My account has been opened."
+    bases:
+      "मेरा": "my (masculine)"
+      "खुल": "open"
+      "गया": "went (here: been done)"
+    confusables:
+      "w1": { why: "Deposited, not opened: जमा (jamā) means deposited; paid in." }
+      "w2": { why: "Available, not opened: उपलब्ध (uplabdh) means available." }
+  "hi-5361":
+    native: "Where is the ATM?"
+    confusables:
+      "w1": { why: "Bank, not ATM: बैंक (baiṅk) means bank." }
+      "w2": { why: "Post, not ATM: डाक (ḍāk) means post; mail." }
+  "hi-5362":
+    native: "This parcel will go by post tomorrow."
+    bases:
+      "जाएगा": "will go"
+    confusables:
+      "w1": { why: "Payment, not parcel: भुगतान (bhugtān) means payment." }
+      "w2": { why: "Document, not parcel: दस्तावेज़ (dastāvēz) means document; paper." }
+  "hi-5363":
+    native: "The tailor fixed the cloth."
+    bases:
+      "ने": "(marks the doer)"
+      "कपड़ा": "cloth"
+      "कर": "did (here: fixed)"
+      "दिया": "did (for)"
+    confusables:
+      "w1": { why: "Launderer, not tailor: धोबी (dhōbī) means launderer; washerman." }
+      "w2": { why: "Barber, not tailor: नाई (nāī) means barber." }
+  "hi-5364":
+    native: "The cobbler repaired my shoes."
+    bases:
+      "ने": "(marks the doer)"
+      "मेरे": "my (oblique)"
+      "जूते": "shoes (oblique)"
+      "कर": "did (here: repaired)"
+      "दी": "did"
+    confusables:
+      "w1": { why: "Plumber, not cobbler: प्लंबर (plambar) means plumber." }
+      "w2": { why: "Mason or mechanic, not cobbler: मिस्त्री (mistrī) means mason; mechanic." }
+  "hi-5365":
+    native: "When will the plumber come?"
+    bases:
+      "आएगा": "will come"
+    confusables:
+      "w1": { why: "Mechanic: मिस्त्री (mistrī) means mason; mechanic." }
+      "w2": { why: "Craftsman, not plumber: कारीगर (kārīgar) means craftsman; skilled worker." }
+  "hi-5366":
+    native: "Please fill in this form."
+    bases:
+      "कृपया": "please"
+      "भरिए": "fill (polite)"
+    confusables:
+      "w1": { why: "Application, not form: आवेदन (āvēdan) means application." }
+      "w2": { why: "Document: दस्तावेज़ (dastāvēz) means document; paper." }
+  "hi-5367":
+    native: "Their payment has been made."
+    bases:
+      "उनका": "their"
+      "हो": "has become"
+      "गया": "went (here: done)"
+    confusables:
+      "w1": { why: "Deposited: जमा (jamā) means deposited; paid in." }
+      "w2": { why: "Interest, not payment: ब्याज (byāj) means interest on money." }
+  "hi-5368":
+    native: "I need a loan from the bank."
+    bases:
+      "मुझे": "to me"
+    confusables:
+      "w1": { why: "Investment, not loan: निवेश (nivēś) means investment." }
+      "w2": { why: "Interest: ब्याज (byāj) means interest on money." }
+  "hi-5369":
+    native: "Please deposit money in this account."
+    bases:
+      "इस": "this (oblique)"
+      "खाते": "account (oblique)"
+      "कीजिए": "please do"
+    confusables:
+      "w1": { why: "Cheque, not deposit: चेक (cēk) means cheque." }
+      "w2": { why: "Investment, not deposit: निवेश (nivēś) means investment." }
+  "hi-5370":
+    native: "Is this service available?"
+    confusables:
+      "w1": { why: "Complaint, not service: शिकायत (śikāyat) means complaint." }
+      "w2": { why: "Application, not service: आवेदन (āvēdan) means application." }
+  "hi-5371":
+    native: "Please register my complaint."
+    bases:
+      "मेरी": "my (feminine)"
+      "दर्ज": "entry; record"
+      "कीजिए": "please do"
+    confusables:
+      "w1": { why: "Service, not complaint: सेवा (sēvā) means service." }
+      "w2": { why: "Application: आवेदन (āvēdan) means application." }

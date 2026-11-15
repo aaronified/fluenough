@@ -1,0 +1,157 @@
+schema: 1
+id: "hi-adjectives-2-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-5123"
+    target: "यह कमरा खाली है।"
+    reading: "yah kamrā khālī hai."
+    ipa: "jəɦ kəmraː kʰaːliː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "भरा", reading: "bharā", kind: "word" }
+      - { id: "w2", word: "अधूरा", reading: "adhūrā", kind: "word" }
+  - id: "hi-5124"
+    target: "रास्ता सीधा है, टेढ़ा नहीं।"
+    reading: "rāstā sīdhā hai, ṭēṛhā nahīm̐."
+    ipa: "raːst̪aː siːd̪ʱaː ɦɛː ʈeːɽʱaː nəɦĩː"
+    pos: "phrase"
+    bases:
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "तिरछा", reading: "tirchā", kind: "word" }
+      - { id: "w2", word: "चौकोर", reading: "caukōr", kind: "word" }
+  - id: "hi-5125"
+    target: "मेज़ पर फल भरा है।"
+    reading: "mēz par phal bharā hai."
+    ipa: "meːz pər pʰəl bʱəraː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "खाली", reading: "khālī", kind: "word" }
+      - { id: "w2", word: "फीका", reading: "phīkā", kind: "word" }
+  - id: "hi-5126"
+    target: "उसका काम अधूरा है।"
+    reading: "uskā kām adhūrā hai."
+    ipa: "ʊskaː kaːm əd̪ʱuːraː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "उसका", ref: "hi-0749" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "दिलचस्प", reading: "dilcasp", kind: "word" }
+      - { id: "w2", word: "खाली", reading: "khālī", kind: "word" }
+  - id: "hi-5127"
+    target: "यह किताब बहुत दिलचस्प है।"
+    reading: "yah kitāb bahut dilcasp hai."
+    ipa: "jəɦ kɪt̪aːb bəɦʊt̪ d̪ɪltʃəsp ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "उबाऊ", reading: "ubāū", kind: "word" }
+      - { id: "w2", word: "अनोखा", reading: "anōkhā", kind: "word" }
+  - id: "hi-5128"
+    target: "रंग चमकदार और सुनहरा है।"
+    reading: "raṅg camakdār aur sunahrā hai."
+    ipa: "rəŋɡ tʃəməkd̪aːr ɔːr sʊnəɦraː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "बदसूरत", reading: "badsūrat", kind: "word" }
+      - { id: "w2", word: "फीका", reading: "phīkā", kind: "word" }
+  - id: "hi-5129"
+    target: "मिठाई फीकी नहीं, मीठी है।"
+    reading: "miṭhāī phīkī nahīm̐, mīṭhī hai."
+    ipa: "mɪʈʰaːiː pʰiːkiː nəɦĩː miːʈʰiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "फीकी", ref: "hi-1974" }
+      - { word: "मीठी", ref: "hi-0339" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "तीखा", reading: "tīkhā", kind: "word" }
+      - { id: "w2", word: "ठंडा", reading: "ṭhaṇḍā", kind: "word" }
+  - id: "hi-5130"
+    target: "वह एक भला आदमी है।"
+    reading: "vah ēk bhalā ādmī hai."
+    ipa: "ʋəɦ eːk bʱəlaː aːd̪miː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "सच्चा", reading: "saccā", kind: "word" }
+      - { id: "w2", word: "झूठा", reading: "jhūṭhā", kind: "word" }
+  - id: "hi-5131"
+    target: "उसकी बात झूठी थी।"
+    reading: "uskī bāt jhūṭhī thī."
+    ipa: "ʊskiː baːt̪ dʒʱuːʈʰiː t̪ʰiː"
+    pos: "phrase"
+    bases:
+      - { word: "उसकी", ref: "hi-0749" }
+      - { word: "झूठी", ref: "hi-1996" }
+      - { word: "थी", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "भला", reading: "bhalā", kind: "word" }
+      - { id: "w2", word: "शांत", reading: "śānt", kind: "word" }
+  - id: "hi-5132"
+    target: "यह मेज़ गोल नहीं, चौकोर है।"
+    reading: "yah mēz gōl nahīm̐, caukōr hai."
+    ipa: "jəɦ meːz ɡoːl nəɦĩː tʃɔːkoːr ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "चिकना", reading: "ciknā", kind: "word" }
+      - { id: "w2", word: "सीधा", reading: "sīdhā", kind: "word" }
+  - id: "hi-5133"
+    target: "उसकी आवाज़ मज़बूत है।"
+    reading: "uskī āvāz mazbūt hai."
+    ipa: "ʊskiː aːʋaːz məzbuːt̪ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "उसकी", ref: "hi-0749" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "कठोर", reading: "kaṭhōr", kind: "word" }
+      - { id: "w2", word: "शांत", reading: "śānt", kind: "word" }
+  - id: "hi-5134"
+    target: "रंग अलग-अलग हैं।"
+    reading: "raṅg alag-alag haim̐."
+    ipa: "rəŋɡ ələɡələɡ ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "हैं", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "समान", reading: "samān", kind: "word" }
+      - { id: "w2", word: "अनोखा", reading: "anōkhā", kind: "word" }
+  - id: "hi-5135"
+    target: "बच्चे की आँखें प्यारी हैं।"
+    reading: "baccē kī ām̐khēm̐ pyārī haim̐."
+    ipa: "bətʃtʃeː kiː ãːkʰẽː pjaːriː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "बच्चे", ref: "hi-0111" }
+      - { word: "आँखें", base: "आँख", reading: "ām̐khēm̐" }
+      - { word: "प्यारी", ref: "hi-1990" }
+      - { word: "हैं", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "प्रिय", reading: "priy", kind: "word" }
+      - { id: "w2", word: "डरावना", reading: "ḍarāvnā", kind: "word" }
+  - id: "hi-5136"
+    target: "यह बात अजीब है।"
+    reading: "yah bāt ajīb hai."
+    ipa: "jəɦ baːt̪ ədʒiːb ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "अनोखा", reading: "anōkhā", kind: "word" }
+      - { id: "w2", word: "शांत", reading: "śānt", kind: "word" }

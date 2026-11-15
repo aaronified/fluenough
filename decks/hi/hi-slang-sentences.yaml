@@ -1,0 +1,148 @@
+schema: 1
+id: "hi-slang-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-5314"
+    target: "अरे यार, यह तो मस्त है!"
+    reading: "arē yār, yah tō mast hai!"
+    ipa: "əreː jaːr jəɦ t̪oː məst̪ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "अरे", base: "अरे", reading: "arē" }
+      - { word: "यार", ref: "hi-0595" }
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "तो", base: "तो", reading: "tō" }
+      - { word: "मस्त", ref: "hi-0598" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "दोस्त", reading: "dōst", kind: "word" }
+      - { id: "w2", word: "बिंदास", reading: "bindās", kind: "word" }
+  - id: "hi-5315"
+    target: "यह काम जुगाड़ से चल गया।"
+    reading: "yah kām jugāṛ sē cal gayā."
+    ipa: "jəɦ kaːm dʒʊɡaːɽ seː tʃəl ɡəjaː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "काम", base: "काम", reading: "kām" }
+      - { word: "जुगाड़", ref: "hi-0596" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "चल", base: "चलना", reading: "cal" }
+      - { word: "गया", base: "जाना", reading: "gayā" }
+    confusables:
+      - { id: "w1", word: "टाइमपास", reading: "ṭāimpās", kind: "word" }
+      - { id: "w2", word: "मरम्मत", reading: "marammat", kind: "word" }
+  - id: "hi-5316"
+    target: "उसका टाइमपास बकवास है।"
+    reading: "uskā ṭāimpās bakvās hai."
+    ipa: "ʊskaː ʈaːɪmpaːs bəkʋaːs ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "उसका", base: "वह", reading: "uskā" }
+      - { word: "टाइमपास", ref: "hi-0597" }
+      - { word: "बकवास", ref: "hi-0600" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "मस्त", reading: "mast", kind: "word" }
+      - { id: "w2", word: "चलता है", reading: "caltā hai", kind: "word" }
+  - id: "hi-5317"
+    target: "तुम बिंदास बोलते हो।"
+    reading: "tum bindās bōltē hō."
+    ipa: "t̪ʊm bɪnd̪aːs boːlt̪eː ɦoː"
+    pos: "phrase"
+    bases:
+      - { word: "तुम", base: "तुम", reading: "tum" }
+      - { word: "बिंदास", ref: "hi-0599" }
+      - { word: "बोलते", base: "बोलना", reading: "bōltē" }
+      - { word: "हो", base: "होना", reading: "hō" }
+    confusables:
+      - { id: "w1", word: "मस्त", reading: "mast", kind: "word" }
+      - { id: "w2", word: "बकवास", reading: "bakvās", kind: "word" }
+  - id: "hi-5318"
+    target: "चलता है, कोई बात नहीं।"
+    reading: "caltā hai, kōī bāt nahīm̐."
+    ipa: "tʃəlt̪aː ɦɛː koːiː baːt̪ nəɦĩː"
+    pos: "phrase"
+    bases:
+      - { word: "चलता", base: "चलना", reading: "caltā" }
+      - { word: "है", ref: "hi-0112" }
+      - { word: "कोई", ref: "hi-0758" }
+      - { word: "बात", ref: "hi-1864" }
+      - { word: "नहीं", ref: "hi-0156" }
+    confusables:
+      - { id: "w1", word: "जुगाड़", reading: "jugāṛ", kind: "word" }
+      - { id: "w2", word: "टाइमपास", reading: "ṭāimpās", kind: "word" }
+  - id: "hi-5319"
+    target: "भाई, मस्त चाय बनाओ।"
+    reading: "bhāī, mast cāy banāō."
+    ipa: "bʱaːiː məst̪ tʃaːj bənaːoː"
+    pos: "phrase"
+    bases:
+      - { word: "भाई", base: "भाई", reading: "bhāī" }
+      - { word: "मस्त", ref: "hi-0598" }
+      - { word: "चाय", ref: "hi-0334" }
+      - { word: "बनाओ", base: "बनाना", reading: "banāō" }
+    confusables:
+      - { id: "w1", word: "दोस्त", reading: "dōst", kind: "word" }
+      - { id: "w2", word: "बिंदास", reading: "bindās", kind: "word" }
+  - id: "hi-5320"
+    target: "यह फ़िल्म बिंदास है।"
+    reading: "yah film bindās hai."
+    ipa: "jəɦ fɪlm bɪnd̪aːs ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "फ़िल्म", base: "फ़िल्म", reading: "film" }
+      - { word: "बिंदास", ref: "hi-0599" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "मस्त", reading: "mast", kind: "word" }
+      - { id: "w2", word: "बकवास", reading: "bakvās", kind: "word" }
+  - id: "hi-5321"
+    target: "मेरा यार कल आएगा।"
+    reading: "mērā yār kal āēgā."
+    ipa: "meːraː jaːr kəl aːeːɡaː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरा", base: "मैं", reading: "mērā" }
+      - { word: "यार", ref: "hi-0595" }
+      - { word: "कल", ref: "hi-0300" }
+      - { word: "आएगा", base: "आना", reading: "āēgā" }
+    confusables:
+      - { id: "w1", word: "दोस्त", reading: "dōst", kind: "word" }
+      - { id: "w2", word: "भाई", reading: "bhāī", kind: "word" }
+  - id: "hi-5322"
+    target: "सुनो यार, यह बकवास मत करो।"
+    reading: "sunō yār, yah bakvās mat karō."
+    ipa: "sʊnoː jaːr jəɦ bəkʋaːs mət̪ kəroː"
+    pos: "phrase"
+    bases:
+      - { word: "सुनो", base: "सुनना", reading: "sunō" }
+      - { word: "यार", ref: "hi-0595" }
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "बकवास", ref: "hi-0600" }
+      - { word: "मत", base: "मत", reading: "mat" }
+      - { word: "करो", base: "करना", reading: "karō" }
+    confusables:
+      - { id: "w1", word: "टाइमपास", reading: "ṭāimpās", kind: "word" }
+      - { id: "w2", word: "मस्त", reading: "mast", kind: "word" }
+  - id: "hi-5323"
+    target: "इस जुगाड़ पर भरोसा मत करो।"
+    reading: "is jugāṛ par bharōsā mat karō."
+    ipa: "ɪs dʒʊɡaːɽ pər bʱəroːsaː mət̪ kəroː"
+    pos: "phrase"
+    bases:
+      - { word: "इस", base: "यह", reading: "is" }
+      - { word: "जुगाड़", ref: "hi-0596" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "भरोसा", ref: "hi-2116" }
+      - { word: "मत", base: "मत", reading: "mat" }
+      - { word: "करो", base: "करना", reading: "karō" }
+    confusables:
+      - { id: "w1", word: "मरम्मत", reading: "marammat", kind: "word" }
+      - { id: "w2", word: "यकीन", reading: "yakīn", kind: "word" }

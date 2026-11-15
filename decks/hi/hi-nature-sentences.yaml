@@ -1,0 +1,160 @@
+schema: 1
+id: "hi-nature-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-5109"
+    target: "पेड़ की छाया में बैठो।"
+    reading: "pēṛ kī chāyā mēm̐ baiṭhō."
+    ipa: "peːɽ kiː tʃʰaːjaː mẽː bɛːʈʰoː"
+    pos: "phrase"
+    bases:
+      - { word: "बैठो", ref: "hi-0788" }
+    confusables:
+      - { id: "w1", word: "धूप", reading: "dhūp", kind: "word" }
+      - { id: "w2", word: "हवा", reading: "havā", kind: "word" }
+  - id: "hi-5110"
+    target: "रेगिस्तान में पानी कम है।"
+    reading: "rēgistān mēm̐ pānī kam hai."
+    ipa: "reːɡɪst̪aːn mẽː paːniː kəm ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "रेत", reading: "rēt", kind: "word" }
+      - { id: "w2", word: "पहाड़", reading: "pahāṛ", kind: "word" }
+  - id: "hi-5111"
+    target: "फूल खिल गए।"
+    reading: "phūl khil gaē."
+    ipa: "pʰuːl kʰɪl ɡəeː"
+    pos: "phrase"
+    bases:
+      - { word: "खिल", ref: "hi-1952" }
+      - { word: "गए", ref: "hi-0777" }
+    confusables:
+      - { id: "w1", word: "झड़ना", reading: "jhaṛnā", kind: "word" }
+      - { id: "w2", word: "डूबना", reading: "ḍūbnā", kind: "word" }
+  - id: "hi-5112"
+    target: "बीज से पौधा उगता है।"
+    reading: "bīj sē paudhā ugtā hai."
+    ipa: "biːdʒ seː pɔːd̪ʱaː ʊɡt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "उगता", ref: "hi-1950" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "कली", reading: "kalī", kind: "word" }
+      - { id: "w2", word: "जड़", reading: "jaṛ", kind: "word" }
+  - id: "hi-5113"
+    target: "नदी का पानी बह रहा है।"
+    reading: "nadī kā pānī bah rahā hai."
+    ipa: "nəd̪iː kaː paːniː bəɦ rəɦaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "बह", ref: "hi-1951" }
+      - { word: "रहा", ref: "hi-0791" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "धारा", reading: "dhārā", kind: "word" }
+      - { id: "w2", word: "कुआँ", reading: "kuām̐", kind: "word" }
+  - id: "hi-5114"
+    target: "चट्टान पर घास नहीं उगती।"
+    reading: "caṭṭān par ghās nahīm̐ ugtī."
+    ipa: "tʃəʈʈaːn pər ɡʱaːs nəɦĩː ʊɡt̪iː"
+    pos: "phrase"
+    bases:
+      - { word: "उगती", ref: "hi-1950" }
+    confusables:
+      - { id: "w1", word: "पत्ता", reading: "pattā", kind: "word" }
+      - { id: "w2", word: "फूल", reading: "phūl", kind: "word" }
+  - id: "hi-5115"
+    target: "सूरज डूब गया।"
+    reading: "sūraj ḍūb gayā."
+    ipa: "suːrədʒ ɖuːb ɡəjaː"
+    pos: "phrase"
+    bases:
+      - { word: "डूब", ref: "hi-1955" }
+      - { word: "गया", ref: "hi-0777" }
+    confusables:
+      - { id: "w1", word: "उड़ना", reading: "uṛnā", kind: "word" }
+      - { id: "w2", word: "खिलना", reading: "khilnā", kind: "word" }
+  - id: "hi-5116"
+    target: "पत्ते हवा में उड़ते हैं।"
+    reading: "pattē havā mēm̐ uṛtē haim̐."
+    ipa: "pət̪t̪eː ɦəʋaː mẽː ʊɽt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "पत्ते", ref: "hi-1927" }
+      - { word: "उड़ते", ref: "hi-1956" }
+      - { word: "हैं", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "फैलना", reading: "phailnā", kind: "word" }
+      - { id: "w2", word: "झड़ना", reading: "jhaṛnā", kind: "word" }
+  - id: "hi-5117"
+    target: "झरने का पानी ठंडा है।"
+    reading: "jharnē kā pānī ṭhaṇḍā hai."
+    ipa: "dʒʱərneː kaː paːniː ʈʰəɳɖaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "झरने", ref: "hi-1929" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "गरम", reading: "garam", kind: "word" }
+      - { id: "w2", word: "मीठा", reading: "mīṭhā", kind: "word" }
+  - id: "hi-5118"
+    target: "गड्ढा बहुत गहरा है।"
+    reading: "gaḍḍhā bahut gahrā hai."
+    ipa: "ɡəɖɖʱaː bəɦʊt̪ ɡəɦraː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "टीला", reading: "ṭīlā", kind: "word" }
+      - { id: "w2", word: "पत्थर", reading: "patthar", kind: "word" }
+  - id: "hi-5119"
+    target: "जंगल में शेर रहता है।"
+    reading: "jaṅgal mēm̐ śēr rahtā hai."
+    ipa: "dʒəŋɡəl mẽː ʃeːr rəɦt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "रहता", ref: "hi-0791" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "रेगिस्तान", reading: "rēgistān", kind: "word" }
+      - { id: "w2", word: "पहाड़", reading: "pahāṛ", kind: "word" }
+  - id: "hi-5120"
+    target: "धुआँ आसमान में फैल गया।"
+    reading: "dhuām̐ āsmān mēm̐ phail gayā."
+    ipa: "d̪ʱʊãː aːsmaːn mẽː pʰɛːl ɡəjaː"
+    pos: "phrase"
+    bases:
+      - { word: "फैल", ref: "hi-1954" }
+      - { word: "गया", ref: "hi-0777" }
+    confusables:
+      - { id: "w1", word: "आग", reading: "āg", kind: "word" }
+      - { id: "w2", word: "छाया", reading: "chāyā", kind: "word" }
+  - id: "hi-5121"
+    target: "आग से धुआँ निकलता है।"
+    reading: "āg sē dhuām̐ nikaltā hai."
+    ipa: "aːɡ seː d̪ʱʊãː nɪkəlt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "निकलता", ref: "hi-2635" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "छाया", reading: "chāyā", kind: "word" }
+      - { id: "w2", word: "पत्थर", reading: "patthar", kind: "word" }
+  - id: "hi-5122"
+    target: "चट्टान पर मत चढ़ो।"
+    reading: "caṭṭān par mat caṛhō."
+    ipa: "tʃəʈʈaːn pər mət̪ tʃəɽʱoː"
+    pos: "phrase"
+    bases:
+      - { word: "मत", base: "मत", reading: "mat" }
+      - { word: "चढ़ो", ref: "hi-1916" }
+    confusables:
+      - { id: "w1", word: "रेत", reading: "rēt", kind: "word" }
+      - { id: "w2", word: "पत्थर", reading: "patthar", kind: "word" }
