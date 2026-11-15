@@ -94,7 +94,7 @@ units:
   # f against ph. Devanagari writes them with a nukta (क़ ख़ ग़ ज़ फ़); the
   # Perso-Arabic script has a letter for each (ق خ غ ز ف), as in خدا حافظ
   # (k͟hudā hāfiz).
-  - decks: ["hi-sound-differences"]
+  - decks: ["hi-sound-differences", "hi-sound-differences-sentences"]
     words: 20
   - decks: ["hi-questions", "hi-questions-sentences", "*"]
     words: 9
@@ -203,36 +203,36 @@ units:
     grammar: ["continuous"]
   - decks: ["hi-transport", "hi-transport-sentences", "*"]
     words: 8
-  - decks: ["hi-body", "*"]
+  - decks: ["hi-body", "hi-body-sentences", "*"]
     words: 33
     listening_passages:
       - { id: "at-the-doctors", text: { "en": "Telling a doctor where it hurts" } }
     reading_passages:
       - { id: "stretching-chart", text: { "en": "A chart of simple morning stretches" } }
-  - decks: ["hi-places", "*"]
+  - decks: ["hi-places", "hi-places-sentences", "*"]
     words: 37
     listening_passages:
       - { id: "walk-to-the-market", text: { "en": "A neighbour names the places you pass on the way to the market" } }
     reading_passages:
       - { id: "street-signs", text: { "en": "Signs along a street: pharmacy, school, bank, temple" } }
-  - decks: ["hi-things", "*"]
+  - decks: ["hi-things", "hi-things-sentences", "*"]
     words: 30
     listening_passages:
       - { id: "packing-for-a-trip", text: { "en": "Two people pack a bag for a trip to the hills" } }
     reading_passages:
       - { id: "lost-property-list", text: { "en": "A lost-property list at a railway station" } }
-  - decks: ["hi-home", "*"]
+  - decks: ["hi-home", "hi-home-sentences", "*"]
     words: 21
   - decks: ["hi-grammar-articles"]
     words: 0
     grammar: ["articles"]
-  - decks: ["hi-clothes", "*"]
+  - decks: ["hi-clothes", "hi-clothes-sentences", "*"]
     words: 17
     listening_passages:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
     reading_passages:
       - { id: "shop-offer-sign", text: { "en": "A clothes shop's sign with its offers" } }
-  - decks: ["hi-animals", "*"]
+  - decks: ["hi-animals", "hi-animals-sentences", "*"]
     words: 26
     listening_passages:
       - { id: "village-visit", text: { "en": "A child names the animals seen on a visit to a village" } }
@@ -244,16 +244,16 @@ units:
     milestone: "A1"
   # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
   # then its sentences.
-  - decks: ["hi-daily-life", "hi-grammar-conjunct-verbs", "*"]
+  - decks: ["hi-daily-life", "hi-daily-life-sentences", "hi-grammar-conjunct-verbs", "*"]
     words: 7
     grammar: ["conjunct-verbs"]
-  - decks: ["hi-weather", "hi-reading-weather", "*"]
+  - decks: ["hi-weather", "hi-weather-sentences", "hi-reading-weather", "*"]
     words: 45
     listening_passages:
       - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain and wind" } }
     reading_passages:
       - { id: "weather-message", text: { "en": "A message to a friend about the monsoon" } }
-  - decks: ["hi-calendar", "hi-grammar-past", "*"]
+  - decks: ["hi-calendar", "hi-calendar-sentences", "hi-grammar-past", "*"]
     words: 15
     grammar: ["past"]
   - decks: ["hi-grammar-ordinals", "hi-reading-ordinals"]
@@ -263,7 +263,7 @@ units:
       - { id: "which-floor", text: { "en": "Finding a flat: the first floor, the second, the third" } }
     reading_passages:
       - { id: "month-calendar", text: { "en": "A calendar of events: the first, second and third week of the month" } }
-  - decks: ["hi-festivals", "hi-reading-festivals", "*"]
+  - decks: ["hi-festivals", "hi-festivals-sentences", "hi-reading-festivals", "*"]
     words: 40
     listening_passages:
       - { id: "festival-days", text: { "en": "Neighbours plan the days of a festival together" } }
@@ -300,7 +300,7 @@ units:
       - { id: "a-cold-and-a-fever", text: { "en": "Telling a friend you have a cold and a fever" } }
     reading_passages:
       - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
-  - decks: ["hi-eating-out", "*"]
+  - decks: ["hi-eating-out", "hi-eating-out-sentences", "*"]
     words: 8
   - decks: ["hi-cooking", "hi-cooking-sentences", "hi-reading-cooking", "*"]
     words: 50
@@ -315,7 +315,7 @@ units:
       - { id: "which-is-better", text: { "en": "Two friends compare two phones" } }
     reading_passages:
       - { id: "two-cities", text: { "en": "A short text comparing two cities" } }
-  - decks: ["hi-help", "hi-grammar-irregular", "hi-grammar-pitfalls", "*"]
+  - decks: ["hi-help", "hi-help-sentences", "hi-grammar-irregular", "hi-grammar-pitfalls", "*"]
     words: 6
     grammar: ["irregular", "pitfalls"]
   - decks: ["hi-school", "hi-school-sentences", "hi-reading-school", "*"]
@@ -356,7 +356,7 @@ units:
       - { id: "describing-a-friend", text: { "en": "Describing a friend to someone who will meet them at the station" } }
     reading_passages:
       - { id: "lost-and-found-notice", text: { "en": "A lost-and-found notice describing a bag" } }
-  - decks: ["hi-verbs-3", "hi-reading-verbs-3", "*"]
+  - decks: ["hi-verbs-3", "hi-verbs-3-sentences", "hi-reading-verbs-3", "*"]
     words: 44
     listening_passages:
       - { id: "a-busy-day", text: { "en": "Someone lists everything they did in a day" } }
@@ -368,13 +368,13 @@ units:
       - { id: "phone-call", text: { "en": "A phone call to arrange a meeting" } }
     reading_passages:
       - { id: "text-messages", text: { "en": "A few text messages between friends" } }
-  - decks: ["hi-journey", "hi-reading-journey", "*"]
+  - decks: ["hi-journey", "hi-journey-sentences", "hi-reading-journey", "*"]
     words: 30
     listening_passages:
       - { id: "ticket-counter", text: { "en": "Buying a train ticket at the counter" } }
     reading_passages:
       - { id: "train-timetable", text: { "en": "A train timetable and a platform notice" } }
-  - decks: ["hi-nature", "hi-reading-nature", "*"]
+  - decks: ["hi-nature", "hi-nature-sentences", "hi-reading-nature", "*"]
     words: 32
     listening_passages:
       - { id: "walk-by-the-river", text: { "en": "Two people describe a walk by the river at dusk" } }
@@ -387,19 +387,19 @@ units:
       - { id: "what-i-did-today", text: { "en": "Telling a day as one chain of actions" } }
     reading_passages:
       - { id: "travel-diary", text: { "en": "A travel diary that chains what happened" } }
-  - decks: ["hi-adjectives-2", "hi-reading-adjectives-2", "*"]
+  - decks: ["hi-adjectives-2", "hi-adjectives-2-sentences", "hi-reading-adjectives-2", "*"]
     words: 33
     listening_passages:
       - { id: "describing-a-room", text: { "en": "Describing a rented room" } }
     reading_passages:
       - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
-  - decks: ["hi-workplace", "hi-reading-workplace", "*"]
+  - decks: ["hi-workplace", "hi-workplace-sentences", "hi-reading-workplace", "*"]
     words: 29
     listening_passages:
       - { id: "first-day-at-work", text: { "en": "A new colleague's first day" } }
     reading_passages:
       - { id: "office-notice", text: { "en": "An office notice about a meeting" } }
-  - decks: ["hi-geography", "hi-reading-geography", "*"]
+  - decks: ["hi-geography", "hi-geography-sentences", "hi-reading-geography", "*"]
     words: 28
     listening_passages:
       - { id: "where-in-india", text: { "en": "Naming states and cities of India" } }
@@ -407,7 +407,7 @@ units:
       - { id: "hindi-states-map", text: { "en": "A map caption: the Hindi-speaking states" } }
     milestone: "A2"
   # B1: the themes and grammar of the CEFR's B1.
-  - decks: ["hi-registers"]
+  - decks: ["hi-registers", "hi-registers-sentences"]
     words: 17
   # Arabic roots and plurals (from #602): one root's family, علم (ʿilm,
   # "knowledge"), عالم (ʿālim, "scholar"), معلوم (maʿlūm, "known"), تعلیم
@@ -415,7 +415,7 @@ units:
   # and the broken plural, خبر (k͟habar, "news") and اخبار (ak͟hbār,
   # "newspaper"). The registers unit above sets these Perso-Arabic words of
   # formal speech beside the everyday words Hindustani shares.
-  - decks: ["hi-arabic-words", "hi-grammar-arabic-roots", "hi-grammar-arabic-plurals", "hi-reading-arabic-words", "*"]
+  - decks: ["hi-arabic-words", "hi-arabic-words-sentences", "hi-grammar-arabic-roots", "hi-grammar-arabic-plurals", "hi-reading-arabic-words", "*"]
     words: 15
     grammar: ["arabic-roots", "arabic-plurals"]
     listening_passages:
@@ -428,13 +428,13 @@ units:
       - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
     reading_passages:
       - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
-  - decks: ["hi-feelings", "hi-reading-feelings", "*"]
+  - decks: ["hi-feelings", "hi-feelings-sentences", "hi-reading-feelings", "*"]
     words: 36
     listening_passages:
       - { id: "a-hard-week", text: { "en": "A friend says how the week made them feel" } }
     reading_passages:
       - { id: "letter-to-a-friend", text: { "en": "A letter to a friend about worries and hopes" } }
-  - decks: ["hi-slang"]
+  - decks: ["hi-slang", "hi-slang-sentences"]
     words: 8
   - decks: ["hi-grammar-relative"]
     words: 0
@@ -443,13 +443,13 @@ units:
       - { id: "the-man-who-came", text: { "en": "Describing people by what they did: the one who came, the one who left" } }
     reading_passages:
       - { id: "shop-reviews", text: { "en": "Short reviews of a shop and its staff" } }
-  - decks: ["hi-news", "hi-reading-news", "*"]
+  - decks: ["hi-news", "hi-news-sentences", "hi-reading-news", "*"]
     words: 27
     listening_passages:
       - { id: "radio-news", text: { "en": "A short radio news bulletin" } }
     reading_passages:
       - { id: "headline-list", text: { "en": "A list of newspaper headlines" } }
-  - decks: ["hi-opinions", "hi-reading-opinions", "*"]
+  - decks: ["hi-opinions", "hi-opinions-sentences", "hi-reading-opinions", "*"]
     words: 27
     listening_passages:
       - { id: "agreeing-and-disagreeing", text: { "en": "Two friends agree and disagree politely over tea" } }
@@ -472,19 +472,19 @@ units:
       - { id: "rain-plans", text: { "en": "A friend's plans if it rains" } }
     reading_passages:
       - { id: "late-train", text: { "en": "A message: if the train is late" } }
-  - decks: ["hi-travel", "hi-reading-travel", "*"]
+  - decks: ["hi-travel", "hi-travel-sentences", "hi-reading-travel", "*"]
     words: 23
     listening_passages:
       - { id: "hotel-booking", text: { "en": "Booking a hotel room over the phone" } }
     reading_passages:
       - { id: "itinerary", text: { "en": "A two-day trip itinerary" } }
-  - decks: ["hi-services", "hi-reading-services", "*"]
+  - decks: ["hi-services", "hi-services-sentences", "hi-reading-services", "*"]
     words: 25
     listening_passages:
       - { id: "at-the-post-office", text: { "en": "Sending a parcel at the post office counter" } }
     reading_passages:
       - { id: "bank-form", text: { "en": "A simple bank form" } }
-  - decks: ["hi-government", "hi-reading-government", "*"]
+  - decks: ["hi-government", "hi-government-sentences", "hi-reading-government", "*"]
     words: 23
     listening_passages:
       - { id: "at-the-office", text: { "en": "Asking an officer which document is needed" } }
@@ -497,13 +497,13 @@ units:
       - { id: "why-are-you-going", text: { "en": "Saying what you are going somewhere to do" } }
     reading_passages:
       - { id: "course-advert", text: { "en": "An advert for a course: what it is for" } }
-  - decks: ["hi-technology", "hi-reading-technology", "*"]
+  - decks: ["hi-technology", "hi-technology-sentences", "hi-reading-technology", "*"]
     words: 25
     listening_passages:
       - { id: "fixing-a-phone", text: { "en": "Asking a shop to fix a phone" } }
     reading_passages:
       - { id: "app-instructions", text: { "en": "Instructions inside a phone app" } }
-  - decks: ["hi-careers", "hi-reading-careers", "*"]
+  - decks: ["hi-careers", "hi-careers-sentences", "hi-reading-careers", "*"]
     words: 25
     listening_passages:
       - { id: "job-interview", text: { "en": "A short job interview" } }
@@ -516,13 +516,13 @@ units:
       - { id: "order-of-events", text: { "en": "Saying what happens before and after what" } }
     reading_passages:
       - { id: "event-schedule", text: { "en": "A schedule of an event day" } }
-  - decks: ["hi-environment", "hi-reading-environment", "*"]
+  - decks: ["hi-environment", "hi-environment-sentences", "hi-reading-environment", "*"]
     words: 21
     listening_passages:
       - { id: "monsoon-floods", text: { "en": "Neighbours talk about the monsoon rains and a river in flood" } }
     reading_passages:
       - { id: "clean-up-notice", text: { "en": "A notice for a neighbourhood clean-up" } }
-  - decks: ["hi-agriculture", "hi-reading-agriculture", "*"]
+  - decks: ["hi-agriculture", "hi-agriculture-sentences", "hi-reading-agriculture", "*"]
     words: 19
     listening_passages:
       - { id: "a-farmer-talks", text: { "en": "A farmer talks about the season's wheat and sugarcane" } }
@@ -535,13 +535,13 @@ units:
       - { id: "doing-two-things", text: { "en": "Saying what people do while doing something else" } }
     reading_passages:
       - { id: "a-day-on-the-bus", text: { "en": "A short story of a bus ride" } }
-  - decks: ["hi-cinema", "hi-reading-cinema", "*"]
+  - decks: ["hi-cinema", "hi-cinema-sentences", "hi-reading-cinema", "*"]
     words: 24
     listening_passages:
       - { id: "after-the-film", text: { "en": "Friends talk about a film they saw" } }
     reading_passages:
       - { id: "film-review", text: { "en": "A short film review" } }
-  - decks: ["hi-arts", "hi-reading-arts", "*"]
+  - decks: ["hi-arts", "hi-arts-sentences", "hi-reading-arts", "*"]
     words: 17
     listening_passages:
       - { id: "a-music-class", text: { "en": "A teacher explains a music class" } }
@@ -554,13 +554,13 @@ units:
       - { id: "having-things-done", text: { "en": "Asking someone to get things done: have it made, have it repaired" } }
     reading_passages:
       - { id: "service-request", text: { "en": "A written service request" } }
-  - decks: ["hi-history", "hi-reading-history", "*"]
+  - decks: ["hi-history", "hi-history-sentences", "hi-reading-history", "*"]
     words: 26
     listening_passages:
       - { id: "a-fort-visit", text: { "en": "A guide tells the story of an old fort" } }
     reading_passages:
       - { id: "museum-card", text: { "en": "A museum card about a ruler" } }
-  - decks: ["hi-weddings", "hi-reading-weddings", "*"]
+  - decks: ["hi-weddings", "hi-weddings-sentences", "hi-reading-weddings", "*"]
     words: 23
     listening_passages:
       - { id: "wedding-plans", text: { "en": "Relatives plan a wedding" } }
@@ -573,13 +573,13 @@ units:
       - { id: "even-though", text: { "en": "Saying something happened even though it was hard" } }
     reading_passages:
       - { id: "a-hard-choice", text: { "en": "A short text about a hard choice" } }
-  - decks: ["hi-sports", "hi-reading-sports", "*"]
+  - decks: ["hi-sports", "hi-sports-sentences", "hi-reading-sports", "*"]
     words: 23
     listening_passages:
       - { id: "cricket-talk", text: { "en": "Friends talk about a cricket match" } }
     reading_passages:
       - { id: "match-report", text: { "en": "A short match report" } }
-  - decks: ["hi-relationships", "hi-reading-relationships", "*"]
+  - decks: ["hi-relationships", "hi-relationships-sentences", "hi-reading-relationships", "*"]
     words: 21
     listening_passages:
       - { id: "neighbours-and-friends", text: { "en": "Talking about neighbours and old friends" } }
@@ -592,13 +592,13 @@ units:
       - { id: "someone-somewhere", text: { "en": "Talking about someone, something and somewhere" } }
     reading_passages:
       - { id: "lost-property-notice", text: { "en": "A notice about something someone lost" } }
-  - decks: ["hi-housing", "hi-reading-housing", "*"]
+  - decks: ["hi-housing", "hi-housing-sentences", "hi-reading-housing", "*"]
     words: 18
     listening_passages:
       - { id: "renting-a-flat", text: { "en": "Asking an owner about a flat to rent" } }
     reading_passages:
       - { id: "rental-terms", text: { "en": "The terms of a rental" } }
-  - decks: ["hi-emergencies", "hi-reading-emergencies", "*"]
+  - decks: ["hi-emergencies", "hi-emergencies-sentences", "hi-reading-emergencies", "*"]
     words: 16
     listening_passages:
       - { id: "calling-for-help", text: { "en": "Calling for help after an accident" } }
@@ -611,13 +611,13 @@ units:
       - { id: "only-this-one", text: { "en": "Insisting on one choice" } }
     reading_passages:
       - { id: "advert-slogans", text: { "en": "Short advert slogans" } }
-  - decks: ["hi-law", "hi-reading-law", "*"]
+  - decks: ["hi-law", "hi-law-sentences", "hi-reading-law", "*"]
     words: 23
     listening_passages:
       - { id: "police-complaint", text: { "en": "Making a complaint at a police station" } }
     reading_passages:
       - { id: "rights-leaflet", text: { "en": "A leaflet on a tenant's rights" } }
-  - decks: ["hi-verbs-4", "hi-reading-verbs-4", "*"]
+  - decks: ["hi-verbs-4", "hi-verbs-4-sentences", "hi-reading-verbs-4", "*"]
     words: 30
     listening_passages:
       - { id: "a-long-story", text: { "en": "A story told in a sequence of events" } }
@@ -630,13 +630,13 @@ units:
       - { id: "it-was-done", text: { "en": "Saying what was done, without saying by whom" } }
     reading_passages:
       - { id: "notice-board", text: { "en": "A notice board with announcements" } }
-  - decks: ["hi-abstract-words", "hi-reading-abstract-words", "*"]
+  - decks: ["hi-abstract-words", "hi-abstract-words-sentences", "hi-reading-abstract-words", "*"]
     words: 36
     listening_passages:
       - { id: "a-discussion", text: { "en": "A short discussion of an idea" } }
     reading_passages:
       - { id: "opinion-column", text: { "en": "A short opinion column" } }
-  - decks: ["hi-money", "hi-reading-money", "*"]
+  - decks: ["hi-money", "hi-money-sentences", "hi-reading-money", "*"]
     words: 17
     listening_passages:
       - { id: "at-the-bank", text: { "en": "Opening an account at a bank counter" } }
@@ -649,7 +649,7 @@ units:
       - { id: "he-said-that", text: { "en": "Telling someone what a third person said" } }
     reading_passages:
       - { id: "message-thread", text: { "en": "A message thread passing on what someone said" } }
-  - decks: ["hi-literature", "hi-reading-literature", "*"]
+  - decks: ["hi-literature", "hi-literature-sentences", "hi-reading-literature", "*"]
     words: 18
     listening_passages:
       - { id: "a-poem-read-aloud", text: { "en": "A teacher reads a short poem and explains it" } }
@@ -662,7 +662,7 @@ units:
       - { id: "when-i-was-small", text: { "en": "Telling what you used to do when you were small" } }
     reading_passages:
       - { id: "memoir-extract", text: { "en": "An extract from a memoir about childhood" } }
-  - decks: ["hi-verbs-5", "hi-reading-verbs-5", "*"]
+  - decks: ["hi-verbs-5", "hi-verbs-5-sentences", "hi-reading-verbs-5", "*"]
     words: 18
     listening_passages:
       - { id: "what-happened-next", text: { "en": "Telling a long story with every step in order" } }

@@ -1,0 +1,176 @@
+schema: 1
+id: "hi-travel-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-5348"
+    target: "यह किला बहुत दर्शनीय है।"
+    reading: "yah kilā bahut darśanīy hai."
+    ipa: "jəɦ kɪlaː bəɦʊt̪ d̪ərʃəniːj ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "किला", ref: "hi-2217" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "दर्शनीय", ref: "hi-2214" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "महल", reading: "mahal", kind: "word" }
+      - { id: "w2", word: "स्मारक", reading: "smārak", kind: "word" }
+  - id: "hi-5349"
+    target: "हम संग्रहालय देखने जाएँगे।"
+    reading: "ham saṅgrahālay dēkhnē jāēm̐gē."
+    ipa: "ɦəm səŋɡrəɦaːləj d̪eːkʰneː dʒaːẽːɡeː"
+    pos: "phrase"
+    bases:
+      - { word: "हम", ref: "hi-0053" }
+      - { word: "संग्रहालय", ref: "hi-2219" }
+      - { word: "देखने", base: "देखना", reading: "dēkhnē" }
+      - { word: "जाएँगे", base: "जाना", reading: "jāēm̐gē" }
+    confusables:
+      - { id: "w1", word: "चिड़ियाघर", reading: "ciṛiyāghar", kind: "word" }
+      - { id: "w2", word: "मंच", reading: "mañc", kind: "word" }
+  - id: "hi-5350"
+    target: "गिरजा शहर के बीच में है।"
+    reading: "girjā śahar kē bīc mēm̐ hai."
+    ipa: "ɡɪrdʒaː ʃəɦər keː biːtʃ mẽː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "गिरजा", ref: "hi-2216" }
+      - { word: "शहर", ref: "hi-0195" }
+      - { word: "के", ref: "hi-0065" }
+      - { word: "बीच", base: "बीच", reading: "bīc" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "गुंबद", reading: "gumbad", kind: "word" }
+      - { id: "w2", word: "महल", reading: "mahal", kind: "word" }
+  - id: "hi-5351"
+    target: "टूर का मेज़बान बहुत अच्छा था।"
+    reading: "ṭūr kā mēzbān bahut acchā thā."
+    ipa: "ʈuːr kaː meːzbaːn bəɦʊt̪ ətʃtʃʰaː t̪ʰaː"
+    pos: "phrase"
+    bases:
+      - { word: "टूर", ref: "hi-2221" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "मेज़बान", ref: "hi-2222" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "अच्छा", ref: "hi-0898" }
+      - { word: "था", base: "होना", reading: "thā" }
+    confusables:
+      - { id: "w1", word: "अनजान", reading: "anjān", kind: "word" }
+      - { id: "w2", word: "यादगार", reading: "yādgār", kind: "word" }
+  - id: "hi-5352"
+    target: "विदेश में मुद्रा अलग होती है।"
+    reading: "vidēś mēm̐ mudrā alag hōtī hai."
+    ipa: "ʋɪd̪eːʃ mẽː mʊd̪raː ələɡ ɦoːt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "विदेश", ref: "hi-2224" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "मुद्रा", ref: "hi-2226" }
+      - { word: "अलग", ref: "hi-1985" }
+      - { word: "होती", base: "होना", reading: "hōtī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "पैसा", reading: "paisā", kind: "word" }
+      - { id: "w2", word: "विदेशी", reading: "vidēśī", kind: "word" }
+  - id: "hi-5353"
+    target: "हमें पर्यटन पसंद है।"
+    reading: "hamēm̐ paryaṭan pasand hai."
+    ipa: "ɦəmẽː pərjəʈən pəsənd̪ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "हमें", base: "हम", reading: "hamēm̐" }
+      - { word: "पर्यटन", ref: "hi-2228" }
+      - { word: "पसंद", base: "पसंद", reading: "pasand" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "यादगार", reading: "yādgār", kind: "word" }
+      - { id: "w2", word: "विदेशी", reading: "vidēśī", kind: "word" }
+  - id: "hi-5354"
+    target: "इस स्मारक का नज़ारा रंगीन है।"
+    reading: "is smārak kā nazārā raṅgīn hai."
+    ipa: "ɪs smaːrək kaː nəzaːraː rəŋɡiːn ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "इस", base: "यह", reading: "is" }
+      - { word: "स्मारक", ref: "hi-2231" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "नज़ारा", ref: "hi-2232" }
+      - { word: "रंगीन", ref: "hi-2236" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "मूर्ति", reading: "mūrti", kind: "word" }
+      - { id: "w2", word: "गुंबद", reading: "gumbad", kind: "word" }
+  - id: "hi-5355"
+    target: "हम उन्हें शहर घुमाएँगे।"
+    reading: "ham unhēm̐ śahar ghumāēm̐gē."
+    ipa: "ɦəm ʊnɦẽː ʃəɦər ɡʱʊmaːẽːɡeː"
+    pos: "phrase"
+    bases:
+      - { word: "हम", ref: "hi-0053" }
+      - { word: "उन्हें", base: "वह", reading: "unhēm̐" }
+      - { word: "शहर", ref: "hi-0195" }
+      - { word: "घुमाएँगे", base: "घुमाना", reading: "ghumāēm̐gē" }
+    confusables:
+      - { id: "w1", word: "मेज़बान", reading: "mēzbān", kind: "word" }
+      - { id: "w2", word: "टूर", reading: "ṭūr", kind: "word" }
+  - id: "hi-5356"
+    target: "चिड़ियाघर खुला है।"
+    reading: "ciṛiyāghar khulā hai."
+    ipa: "tʃɪɽɪjaːɡʱər kʰʊlaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "चिड़ियाघर", ref: "hi-2233" }
+      - { word: "खुला", base: "खुलना", reading: "khulā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "संग्रहालय", reading: "saṅgrahālay", kind: "word" }
+      - { id: "w2", word: "महल", reading: "mahal", kind: "word" }
+  - id: "hi-5357"
+    target: "महल की दीवारें लाल हैं।"
+    reading: "mahal kī dīvārēm̐ lāl haim̐."
+    ipa: "məɦəl kiː d̪iːʋaːrẽː laːl ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "महल", ref: "hi-2218" }
+      - { word: "की", ref: "hi-0061" }
+      - { word: "दीवारें", base: "दीवार", reading: "dīvārēm̐" }
+      - { word: "लाल", base: "लाल", reading: "lāl" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "किला", reading: "kilā", kind: "word" }
+      - { id: "w2", word: "मूर्ति", reading: "mūrti", kind: "word" }
+  - id: "hi-5358"
+    target: "हमारा होटल किला के पास है।"
+    reading: "hamārā hōṭal kilā kē pās hai."
+    ipa: "ɦəmaːraː ɦoːʈəl kɪlaː keː paːs ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "हमारा", base: "हम", reading: "hamārā" }
+      - { word: "होटल", base: "होटल", reading: "hōṭal" }
+      - { word: "किला", ref: "hi-2217" }
+      - { word: "के", ref: "hi-0065" }
+      - { word: "पास", ref: "hi-0293" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "गिरजा", reading: "girjā", kind: "word" }
+      - { id: "w2", word: "महल", reading: "mahal", kind: "word" }
+  - id: "hi-5359"
+    target: "यह यादगार यात्रा है।"
+    reading: "yah yādgār yātrā hai."
+    ipa: "jəɦ jaːd̪ɡaːr jaːt̪raː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "यादगार", ref: "hi-2220" }
+      - { word: "यात्रा", ref: "hi-1890" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "टूर", reading: "ṭūr", kind: "word" }
+      - { id: "w2", word: "विदेश", reading: "vidēś", kind: "word" }

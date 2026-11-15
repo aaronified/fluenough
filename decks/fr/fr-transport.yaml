@@ -279,3 +279,23 @@ cards:
     examples:
       - { target: "Le vol est direct.", ipa: "lə vɔl ɛ diʁɛkt", bases: [{ word: "Le", ref: "fr-0543" }, { word: "vol", ref: "fr-0863" }, { word: "est", ref: "fr-0021" }, { word: "direct", base: "direct" }] }
       - { target: "Le train est direct.", ipa: "lə tʁɛ̃ ɛ diʁɛkt", bases: [{ word: "Le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "est", ref: "fr-0021" }, { word: "direct", base: "direct" }] }
+  - id: "fr-4650"
+    target: "Emmenez-moi à l'aéroport, s'il vous plaît."
+    ipa: "ɑ̃mne mwa a laeʁɔpɔʁ sil vu plɛ"
+    pos: "phrase"
+    bases:
+      - { word: "Emmenez", base: "emmener" }
+      - { word: "moi", ref: "fr-0133" }
+      - { word: "à", base: "à" }
+      - { word: "l'aéroport", base: "aéroport" }
+      - { word: "s'il", base: "s'il" }
+      - { word: "vous", ref: "fr-0096" }
+      - { word: "plaît", base: "plaire" }
+  - id: "fr-4651"
+    target: "Déposez-moi ici."
+    ipa: "depoze mwa isi"
+    pos: "phrase"
+    bases:
+      - { word: "Déposez", base: "déposer" }
+      - { word: "moi", ref: "fr-0133" }
+      - { word: "ici", ref: "fr-0029" }

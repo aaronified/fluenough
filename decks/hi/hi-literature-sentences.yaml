@@ -1,0 +1,172 @@
+schema: 1
+id: "hi-literature-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-5822"
+    target: "यह उपन्यास मुझे बहुत पसंद है।"
+    reading: "yah upanyās mujhē bahut pasand hai."
+    ipa: "jəɦ ʊpənjaːs mʊdʒʱeː bəɦʊt̪ pəsənd̪ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "उपन्यास", ref: "hi-2766" }
+      - { word: "मुझे", base: "मैं", reading: "mujhē" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "पसंद", ref: "hi-0469" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "पाठक", reading: "pāṭhak", kind: "word" }
+      - { id: "w2", word: "ग़ज़ल", reading: "ġazal", kind: "word" }
+  - id: "hi-5823"
+    target: "पाठक इसे पसंद करते हैं।"
+    reading: "pāṭhak isē pasand kartē haim̐."
+    ipa: "paːʈʰək ɪseː pəsənd̪ kərt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "पाठक", ref: "hi-2767" }
+      - { word: "इसे", base: "यह", reading: "isē" }
+      - { word: "पसंद", ref: "hi-0469" }
+      - { word: "करते", base: "करना", reading: "kartē" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", word: "उपन्यास", reading: "upanyās", kind: "word" }
+      - { id: "w2", word: "पन्ना", reading: "pannā", kind: "word" }
+  - id: "hi-5824"
+    target: "पहला अध्याय पढ़िए।"
+    reading: "pahlā adhyāy paṛhiē."
+    ipa: "pəɦlaː əd̪ʱjaːj pəɽʱɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "पहला", base: "पहला", reading: "pahlā" }
+      - { word: "अध्याय", ref: "hi-2769" }
+      - { word: "पढ़िए", base: "पढ़ना", reading: "paṛhiē" }
+    confusables:
+      - { id: "w1", word: "पन्ना", reading: "pannā", kind: "word" }
+      - { id: "w2", word: "भूमिका", reading: "bhūmikā", kind: "word" }
+  - id: "hi-5825"
+    target: "इस किताब की भूमिका अच्छी है।"
+    reading: "is kitāb kī bhūmikā acchī hai."
+    ipa: "ɪs kɪt̪aːb kiː bʱuːmɪkaː ətʃtʃʰiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "इस", base: "यह", reading: "is" }
+      - { word: "किताब", ref: "hi-1095" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "भूमिका", ref: "hi-2770" }
+      - { word: "अच्छी", base: "अच्छा", reading: "acchī" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "शीर्षक", reading: "śīrśak", kind: "word" }
+      - { id: "w2", word: "अध्याय", reading: "adhyāy", kind: "word" }
+  - id: "hi-5826"
+    target: "एक ग़ज़ल सुनिए।"
+    reading: "ēk ġazal suniē."
+    ipa: "eːk ɣəzəl sʊnɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "एक", ref: "hi-0198" }
+      - { word: "ग़ज़ल", ref: "hi-2774" }
+      - { word: "सुनिए", base: "सुनना", reading: "suniē" }
+    confusables:
+      - { id: "w1", word: "नज़्म", reading: "nazm", kind: "word" }
+      - { id: "w2", word: "दोहा", reading: "dōhā", kind: "word" }
+  - id: "hi-5827"
+    target: "यह दोहा याद कीजिए।"
+    reading: "yah dōhā yād kījiē."
+    ipa: "jəɦ d̪oːɦaː jaːd̪ kiːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "दोहा", ref: "hi-2776" }
+      - { word: "याद", ref: "hi-1594" }
+      - { word: "कीजिए", base: "करना", reading: "kījiē" }
+    confusables:
+      - { id: "w1", word: "छंद", reading: "chand", kind: "word" }
+      - { id: "w2", word: "मुहावरा", reading: "muhāvrā", kind: "word" }
+  - id: "hi-5828"
+    target: "इस कहावत का अर्थ बताइए।"
+    reading: "is kahāvat kā arth batāiē."
+    ipa: "ɪs kəɦaːʋət̪ kaː ərt̪ʰ bət̪aːɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "इस", base: "यह", reading: "is" }
+      - { word: "कहावत", ref: "hi-2778" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "अर्थ", ref: "hi-2707" }
+      - { word: "बताइए", base: "बताना", reading: "batāiē" }
+    confusables:
+      - { id: "w1", word: "मुहावरा", reading: "muhāvrā", kind: "word" }
+      - { id: "w2", word: "व्याकरण", reading: "vyākraṇ", kind: "word" }
+  - id: "hi-5829"
+    target: "व्याकरण की किताब कहाँ है?"
+    reading: "vyākaraṇ kī kitāb kahām̐ hai?"
+    ipa: "ʋjaːkərəɳ kiː kɪt̪aːb kəɦãː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "व्याकरण", ref: "hi-2779" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "किताब", ref: "hi-1095" }
+      - { word: "कहाँ", ref: "hi-0159" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "शब्द", reading: "śabd", kind: "word" }
+      - { id: "w2", word: "प्रकाशक", reading: "prakāśak", kind: "word" }
+  - id: "hi-5830"
+    target: "शब्दकोश में यह शब्द देखिए।"
+    reading: "śabdkōś mēm̐ yah śabd dēkhiē."
+    ipa: "ʃəbd̪koːʃ mẽː jəɦ ʃəbd̪ d̪eːkʰɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "शब्दकोश", ref: "hi-2783" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "शब्द", ref: "hi-1587" }
+      - { word: "देखिए", base: "देखना", reading: "dēkhiē" }
+    confusables:
+      - { id: "w1", word: "व्याकरण", reading: "vyākraṇ", kind: "word" }
+      - { id: "w2", word: "संग्रह", reading: "saṅgrah", kind: "word" }
+  - id: "hi-5831"
+    target: "उसने नई कविता लिखी।"
+    reading: "usnē naī kavitā likhī."
+    ipa: "ʊsneː nəiː kəʋɪt̪aː lɪkʰiː"
+    pos: "phrase"
+    bases:
+      - { word: "उसने", base: "वह", reading: "usnē" }
+      - { word: "नई", base: "नया", reading: "naī" }
+      - { word: "कविता", ref: "hi-1682" }
+      - { word: "लिखी", base: "लिखना", reading: "likhī" }
+    confusables:
+      - { id: "w1", word: "प्रसंग", reading: "prasaṅg", kind: "word" }
+      - { id: "w2", word: "किताब", reading: "kitāb", kind: "word" }
+  - id: "hi-5832"
+    target: "कहानी का पात्र बहुत दिलचस्प है।"
+    reading: "kahānī kā pātr bahut dilcasp hai."
+    ipa: "kəɦaːniː kaː paːt̪r bəɦʊt̪ d̪ɪltʃəsp ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "कहानी", base: "कहानी", reading: "kahānī" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "पात्र", ref: "hi-2772" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "दिलचस्प", ref: "hi-1966" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "उपन्यास", reading: "upanyās", kind: "word" }
+      - { id: "w2", word: "पन्ना", reading: "pannā", kind: "word" }
+  - id: "hi-5833"
+    target: "कृपया पन्ना खोलिए।"
+    reading: "kripyā pannā khōliē."
+    ipa: "krɪpjaː pənnaː kʰoːlɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "कृपया", ref: "hi-0616" }
+      - { word: "पन्ना", ref: "hi-2768" }
+      - { word: "खोलिए", base: "खोलना", reading: "khōliē" }
+    confusables:
+      - { id: "w1", word: "अध्याय", reading: "adhyāy", kind: "word" }
+      - { id: "w2", word: "भूमिका", reading: "bhūmikā", kind: "word" }

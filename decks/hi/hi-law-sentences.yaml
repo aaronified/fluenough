@@ -1,0 +1,161 @@
+schema: 1
+id: "hi-law-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-5774"
+    target: "कानून का सम्मान कीजिए।"
+    reading: "kānūn kā sammān kījiē."
+    ipa: "kaːnuːn kaː səmmaːn kiːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "कानून", ref: "hi-2672" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "सम्मान", base: "सम्मान", reading: "sammān" }
+      - { word: "कीजिए", base: "करना", reading: "kījiē" }
+    confusables:
+      - { id: "w1", word: "जज", reading: "jaj", kind: "word" }
+      - { id: "w2", word: "कर्तव्य", reading: "kartavy", kind: "word" }
+  - id: "hi-5775"
+    target: "जज मुकदमा सुन रहा है।"
+    reading: "jaj mukadmā sun rahā hai."
+    ipa: "dʒədʒ mʊkəd̪maː sʊn rəɦaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "जज", ref: "hi-2674" }
+      - { word: "मुकदमा", ref: "hi-2675" }
+      - { word: "सुन", base: "सुनना", reading: "sun" }
+      - { word: "रहा", base: "रहना", reading: "rahā" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "गवाह", reading: "gavāh", kind: "word" }
+      - { id: "w2", word: "अपराधी", reading: "aprādhī", kind: "word" }
+  - id: "hi-5776"
+    target: "गवाह सब बताएगा।"
+    reading: "gavāh sab batāēgā."
+    ipa: "ɡəʋaːɦ səb bət̪aːeːɡaː"
+    pos: "phrase"
+    bases:
+      - { word: "गवाह", ref: "hi-2677" }
+      - { word: "सब", ref: "hi-0054" }
+      - { word: "बताएगा", base: "बताना", reading: "batāēgā" }
+    confusables:
+      - { id: "w1", word: "अपराधी", reading: "aprādhī", kind: "word" }
+      - { id: "w2", word: "जज", reading: "jaj", kind: "word" }
+  - id: "hi-5777"
+    target: "उसे सज़ा हुई।"
+    reading: "usē sazā huī."
+    ipa: "ʊseː səzaː ɦʊiː"
+    pos: "phrase"
+    bases:
+      - { word: "उसे", base: "वह", reading: "usē" }
+      - { word: "सज़ा", ref: "hi-2678" }
+      - { word: "हुई", base: "होना", reading: "huī" }
+    confusables:
+      - { id: "w1", word: "जुर्माना", reading: "jurmānā", kind: "word" }
+      - { id: "w2", word: "जेल", reading: "jēl", kind: "word" }
+  - id: "hi-5778"
+    target: "आरोपी जेल में है।"
+    reading: "ārōpī jēl mēm̐ hai."
+    ipa: "aːroːpiː dʒeːl mẽː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "आरोपी", ref: "hi-2690" }
+      - { word: "जेल", ref: "hi-2680" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "अपराधी", reading: "aprādhī", kind: "word" }
+      - { id: "w2", word: "आरोप", reading: "ārōp", kind: "word" }
+  - id: "hi-5779"
+    target: "वह निर्दोष है।"
+    reading: "vah nirdōś hai."
+    ipa: "ʋəɦ nɪrd̪oːʃ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "वह", ref: "hi-0749" }
+      - { word: "निर्दोष", ref: "hi-2692" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "दोष", reading: "dōś", kind: "word" }
+      - { id: "w2", word: "आरोपी", reading: "ārōpī", kind: "word" }
+  - id: "hi-5780"
+    target: "जुर्माना कितना है?"
+    reading: "jurmānā kitnā hai?"
+    ipa: "dʒʊrmaːnaː kɪt̪naː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "जुर्माना", ref: "hi-2679" }
+      - { word: "कितना", ref: "hi-0163" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "सज़ा", reading: "sazā", kind: "word" }
+      - { id: "w2", word: "ज़मानत", reading: "zamānat", kind: "word" }
+  - id: "hi-5781"
+    target: "यह कानूनी काम है।"
+    reading: "yah kānūnī kām hai."
+    ipa: "jəɦ kaːnuːniː kaːm ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "कानूनी", ref: "hi-2688" }
+      - { word: "काम", ref: "hi-0194" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "गैरकानूनी", reading: "gairkānūnī", kind: "word" }
+      - { id: "w2", word: "कानून", reading: "kānūn", kind: "word" }
+  - id: "hi-5782"
+    target: "ज़मानत मिल गई।"
+    reading: "zamānat mil gaī."
+    ipa: "zəmaːnət̪ mɪl ɡəiː"
+    pos: "phrase"
+    bases:
+      - { word: "ज़मानत", ref: "hi-2683" }
+      - { word: "मिल", base: "मिलना", reading: "mil" }
+      - { word: "गई", base: "जाना", reading: "gaī" }
+    confusables:
+      - { id: "w1", word: "वारंट", reading: "vāraṇṭ", kind: "word" }
+      - { id: "w2", word: "सज़ा", reading: "sazā", kind: "word" }
+  - id: "hi-5783"
+    target: "वह आरोप लगाता है।"
+    reading: "vah ārōp lagātā hai."
+    ipa: "ʋəɦ aːroːp ləɡaːt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "वह", ref: "hi-0749" }
+      - { word: "आरोप", ref: "hi-2689" }
+      - { word: "लगाता", base: "लगाना", reading: "lagātā" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "आरोपी", reading: "ārōpī", kind: "word" }
+      - { id: "w2", word: "दोष", reading: "dōś", kind: "word" }
+  - id: "hi-5784"
+    target: "कर्तव्य सबसे पहले है।"
+    reading: "kartavya sabsē pahlē hai."
+    ipa: "kərt̪əʋjə səbseː pəɦleː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "कर्तव्य", ref: "hi-2684" }
+      - { word: "सबसे", base: "सब", reading: "sabsē" }
+      - { word: "पहले", ref: "hi-0823" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "संविधान", reading: "saṁvidhān", kind: "word" }
+      - { id: "w2", word: "न्याय", reading: "nyāy", kind: "word" }
+  - id: "hi-5785"
+    target: "वह बरी हो गया।"
+    reading: "vah barī hō gayā."
+    ipa: "ʋəɦ bəriː ɦoː ɡəjaː"
+    pos: "phrase"
+    bases:
+      - { word: "वह", ref: "hi-0749" }
+      - { word: "बरी", ref: "hi-2694" }
+      - { word: "हो", base: "होना", reading: "hō" }
+      - { word: "गया", base: "जाना", reading: "gayā" }
+    confusables:
+      - { id: "w1", word: "निर्दोष", reading: "nirdōś", kind: "word" }
+      - { id: "w2", word: "ज़मानत", reading: "zamānat", kind: "word" }

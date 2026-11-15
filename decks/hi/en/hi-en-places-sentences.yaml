@@ -1,0 +1,89 @@
+schema: 1
+id: "hi-en-places-sentences"
+kind: "layer"
+core: "hi-places-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about places"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the place words of this unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-4842":
+    native: "The school is big."
+    confusables:
+      "w1": { why: "Temple, not school: मंदिर (mandir) is a temple." }
+      "w2": { why: "Market, not school: बाज़ार (bāzār) is a market." }
+  "hi-4843":
+    native: "The river is not clean."
+    confusables:
+      "w1": { why: "Pond, not river: तालाब (tālāb) is a pond." }
+      "w2": { why: "Sea, not river: समुद्र (samudr) is the sea." }
+  "hi-4844":
+    native: "We play in the park."
+    bases:
+      "खेलते": "play (plural habitual)"
+    confusables:
+      "w1": { why: "Ground, not park: मैदान (maidān) is a ground or field." }
+      "w2": { why: "Garden, not park: बाग़ (bāġ) is a garden." }
+  "hi-4845":
+    native: "There is a pond in the village."
+    confusables:
+      "w1": { why: "River, not pond: नदी (nadī) is a river." }
+      "w2": { why: "Lake, not pond: झील (jhīl) is a lake." }
+  "hi-4846":
+    native: "I go to the market every day."
+    bases:
+      "जाता": "go (masculine)"
+      "हूँ": "am (I)"
+    confusables:
+      "w1": { why: "Shop, not market: दुकान (dukān) is a shop." }
+      "w2": { why: "Park, not market: पार्क (pārk) is a park." }
+  "hi-4847":
+    native: "He is going to the hospital."
+    bases:
+      "जा": "go (stem)"
+      "रहा": "-ing (continuous marker)"
+    confusables:
+      "w1": { why: "Clinic, not hospital: क्लिनिक (klinik) is a clinic." }
+      "w2": { why: "School, not hospital: स्कूल (skūl) is a school." }
+  "hi-4848":
+    native: "There is water under the bridge."
+    bases:
+      "के": "of (oblique)"
+    confusables:
+      "w1": { why: "Above, not below: ऊपर (ūpar) means above." }
+      "w2": { why: "Inside, not below: अंदर (andar) means inside." }
+  "hi-4849":
+    native: "My office is near."
+    confusables:
+      "w1": { why: "Far, not near: दूर (dūr) means far." }
+      "w2": { why: "Home, not office: घर (ghar) means home or house." }
+  "hi-4850":
+    native: "The children are in the field."
+    confusables:
+      "w1": { why: "Farm field, not playing field: खेत (khēt) is a farm field." }
+      "w2": { why: "Park, not field: पार्क (pārk) is a park." }
+  "hi-4851":
+    native: "My school is on the road."
+    confusables:
+      "w1": { why: "Lane, not road: गली (galī) is a lane." }
+      "w2": { why: "Bank, not school: बैंक (baiṅk) is a bank." }
+  "hi-4852":
+    native: "The police station is near the market."
+    bases:
+      "के": "of (oblique)"
+    confusables:
+      "w1": { why: "Post office, not police station: डाकघर (ḍākghar) is a post office." }
+      "w2": { why: "Bank, not police station: बैंक (baiṅk) is a bank." }
+  "hi-4853":
+    native: "We live in the village."
+    bases:
+      "रहते": "live (plural habitual)"
+    confusables:
+      "w1": { why: "City, not village: शहर (śahar) is a city or town." }
+      "w2": { why: "Capital city, not village: राजधानी (rājdhānī) is a capital city." }
+  "hi-4854":
+    native: "The mountain is big."
+    confusables:
+      "w1": { why: "Forest, not mountain: जंगल (jaṅgal) is a forest." }
+      "w2": { why: "Bridge, not mountain: पुल (pul) is a bridge." }

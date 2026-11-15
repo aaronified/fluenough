@@ -1,0 +1,173 @@
+schema: 1
+id: "hi-clothes-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-4882"
+    target: "यह मेरी कमीज़ है।"
+    reading: "yah mērī kamīz hai."
+    ipa: "jəɦ meːriː kəmiːz ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "मेरी", base: "मेरा", reading: "mērī" }
+      - { word: "कमीज़", ref: "hi-1111" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1108", kind: "word" }
+      - { id: "w2", ref: "hi-1121", kind: "word" }
+  - id: "hi-4883"
+    target: "नीला कुर्ता अच्छा है।"
+    reading: "nīlā kurtā acchā hai."
+    ipa: "niːlaː kʊrt̪aː ətʃtʃʰaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "नीला", ref: "hi-0918" }
+      - { word: "कुर्ता", ref: "hi-1108" }
+      - { word: "अच्छा", ref: "hi-0898" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-0917", kind: "word" }
+      - { id: "w2", ref: "hi-0919", kind: "word" }
+  - id: "hi-4884"
+    target: "मुझे नीले जूते चाहिए।"
+    reading: "mujhē nīlē jūtē cāhiē."
+    ipa: "mʊdʒʱeː niːleː dʒuːt̪eː tʃaːɦɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "मुझे", base: "मैं", reading: "mujhē" }
+      - { word: "नीले", base: "नीला", reading: "nīlē" }
+      - { word: "जूते", base: "जूता", reading: "jūtē" }
+      - { word: "चाहिए", ref: "hi-0460" }
+    confusables:
+      - { id: "w1", ref: "hi-1113", kind: "word" }
+      - { id: "w2", ref: "hi-1114", kind: "word" }
+  - id: "hi-4885"
+    target: "टोपी बड़ी है।"
+    reading: "ṭōpī baṛī hai."
+    ipa: "ʈoːpiː bəɽiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "टोपी", ref: "hi-1115" }
+      - { word: "बड़ी", base: "बड़ा", reading: "baṛī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1120", kind: "word" }
+      - { id: "w2", ref: "hi-1109", kind: "word" }
+  - id: "hi-4886"
+    target: "मेरा दुपट्टा कहाँ है?"
+    reading: "mērā dupaṭṭā kahām̐ hai?"
+    ipa: "meːraː d̪ʊpəʈʈaː kəɦãː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "दुपट्टा", ref: "hi-1119" }
+      - { word: "कहाँ", ref: "hi-0159" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1110", kind: "word" }
+      - { id: "w2", ref: "hi-1109", kind: "word" }
+  - id: "hi-4887"
+    target: "माँ साड़ी ख़रीदती है।"
+    reading: "mām̐ sāṛī k͟harīdtī hai."
+    ipa: "mãː saːɽiː xəriːd̪t̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "माँ", ref: "hi-0377" }
+      - { word: "साड़ी", ref: "hi-1122" }
+      - { word: "ख़रीदती", base: "ख़रीदना", reading: "k͟harīdtī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1119", kind: "word" }
+      - { id: "w2", ref: "hi-1108", kind: "word" }
+  - id: "hi-4888"
+    target: "पैंट और कमीज़ लाइए।"
+    reading: "paiṇṭ aur kamīz lāiē."
+    ipa: "pɛːɳʈ ɔːr kəmiːz laːɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "पैंट", ref: "hi-1117" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "कमीज़", ref: "hi-1111" }
+      - { word: "लाइए", base: "लाना", reading: "lāiē" }
+    confusables:
+      - { id: "w1", ref: "hi-1121", kind: "word" }
+      - { id: "w2", ref: "hi-1107", kind: "word" }
+  - id: "hi-4889"
+    target: "यह बेल्ट सस्ती है।"
+    reading: "yah bēlṭ sastī hai."
+    ipa: "jəɦ beːlʈ səst̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "बेल्ट", ref: "hi-1118" }
+      - { word: "सस्ती", base: "सस्ता", reading: "sastī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1116", kind: "word" }
+      - { id: "w2", ref: "hi-1120", kind: "word" }
+  - id: "hi-4890"
+    target: "यह गहना मेरा है।"
+    reading: "yah gahnā mērā hai."
+    ipa: "jəɦ ɡəɦnaː meːraː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "गहना", ref: "hi-1116" }
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1118", kind: "word" }
+      - { id: "w2", ref: "hi-1115", kind: "word" }
+  - id: "hi-4891"
+    target: "रुमाल सफ़ेद है।"
+    reading: "rumāl safēd hai."
+    ipa: "rʊmaːl səfeːd̪ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "रुमाल", ref: "hi-1120" }
+      - { word: "सफ़ेद", ref: "hi-0921" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1114", kind: "word" }
+      - { id: "w2", ref: "hi-1115", kind: "word" }
+  - id: "hi-4892"
+    target: "पैंट काली है।"
+    reading: "paiṇṭ kālī hai."
+    ipa: "pɛːɳʈ kaːliː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "पैंट", ref: "hi-1117" }
+      - { word: "काली", base: "काला", reading: "kālī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1122", kind: "word" }
+      - { id: "w2", ref: "hi-1121", kind: "word" }
+  - id: "hi-4893"
+    target: "चप्पल कहाँ है?"
+    reading: "cappal kahām̐ hai?"
+    ipa: "tʃəppəl kəɦãː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "चप्पल", ref: "hi-1113" }
+      - { word: "कहाँ", ref: "hi-0159" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1112", kind: "word" }
+      - { id: "w2", ref: "hi-1114", kind: "word" }
+  - id: "hi-4894"
+    target: "मुझे नया कपड़ा चाहिए।"
+    reading: "mujhē nayā kapṛā cāhiē."
+    ipa: "mʊdʒʱeː nəjaː kəpɽaː tʃaːɦɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "मुझे", base: "मैं", reading: "mujhē" }
+      - { word: "नया", ref: "hi-0896" }
+      - { word: "कपड़ा", ref: "hi-1106" }
+      - { word: "चाहिए", ref: "hi-0460" }
+    confusables:
+      - { id: "w1", ref: "hi-1110", kind: "word" }
+      - { id: "w2", ref: "hi-1122", kind: "word" }
