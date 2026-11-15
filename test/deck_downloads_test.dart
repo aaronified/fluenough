@@ -615,14 +615,16 @@ void main() {
     late DateTime now;
     late int reloads;
 
-    DeckDownloads downloads() =>
-        DeckDownloads(
-            fetcher: remote,
-            files: phone,
-            clock: () => now,
-            mismatchRetryDelays: const <Duration>[Duration.zero, Duration.zero],
-          )
-          ..onFilesChanged = () async => reloads++;
+    DeckDownloads downloads() {
+      final d = DeckDownloads(
+        fetcher: remote,
+        files: phone,
+        clock: () => now,
+        mismatchRetryDelays: const <Duration>[Duration.zero, Duration.zero],
+      );
+      d.onFilesChanged = () async => reloads++;
+      return d;
+    }
 
     const english = <String>['en'];
 
