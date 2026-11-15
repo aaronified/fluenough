@@ -1,6 +1,8 @@
-# A culture deck of Japanese works that are in the public domain: short poems and the opening of a novel,
+# A culture deck of Japanese works that are in the public domain: short poems, children's songs and lines from stories,
 # each with its source, its rights basis and its creator (wiki/Plan-Deck-Kinds-And-Topics.md).
-# Every text here was read on the cited Japanese Wikipedia page; a text that could not be read there is not in this deck.
+# Each text was read on the cited ja.wikipedia page, or on ja.wikisource for the items ja-4655, ja-4660, ja-4663 and ja-4665
+# (checked against Wikisource: Kumo no Ito, the Kandata line this-spider-thread-is-mine; the first sentence of Lemon; the opening of Botchan;
+# Takuboku's Ichiaku no Suna tanka). A text that could not be read on a page is not in this deck.
 # The text is shown in modern kana, with kanji left out, so that a learner who knows only the kana can read it.
 schema: 1
 id: "ja-culture-3"
@@ -153,3 +155,409 @@ cards:
       author_died: 1916
       jurisdiction: "JP"
       rights_checked: "2026-11-14"
+  - id: "ja-4654"
+    target: "ゆあーんゆよーんゆやゆよん"
+    words: ["ゆあーん", "ゆよーん", "ゆやゆよん"]
+    reading: "yuaan yuyoon yuyayuyon"
+    ipa: "jɯaːɴ jɯjoːɴ jɯjajɯjoɴ"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "ja-nakahara-chuya"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ゆあーん", base: "ゆあーん", reading: "yuaan" }
+      - { word: "ゆよーん", base: "ゆよーん", reading: "yuyoon" }
+      - { word: "ゆやゆよん", base: "ゆやゆよん", reading: "yuyayuyon" }
+    source:
+      author: "Nakahara Chuya"
+      work: "Saakasu (Circus), the line of sounds"
+      date: "1907-1937"
+      edition: "Saakasu, as quoted on the Japanese Wikipedia page of Nakahara Chuya, where it is the sound he sang when he read the poem aloud; the year of the poem is not given on the page, so the date is the author's life span; shown in kana"
+      url: "https://ja.wikipedia.org/wiki/%E4%B8%AD%E5%8E%9F%E4%B8%AD%E4%B9%9F"
+      basis: "public-domain"
+      author_died: 1937
+      jurisdiction: "JP"
+      rights_checked: "2026-11-15"
+  - id: "ja-4655"
+    target: "このくものいとはおれのものだぞ"
+    words: ["この", "くも", "の", "いと", "は", "おれ", "の", "もの", "だ", "ぞ"]
+    reading: "kono kumo no ito wa ore no mono da zo"
+    ipa: "kono kɯmo no ito wa oɾe no mono da dzo"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "ja-akutagawa-ryunosuke"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "この", base: "この", reading: "kono" }
+      - { word: "くも", base: "くも", reading: "kumo" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "いと", base: "いと", reading: "ito" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "おれ", base: "おれ", reading: "ore" }
+      - { word: "もの", base: "もの", reading: "mono" }
+      - { word: "だ", base: "だ", reading: "da" }
+      - { word: "ぞ", base: "ぞ", reading: "zo" }
+    source:
+      author: "Akutagawa Ryunosuke"
+      work: "Kumo no Ito (The Spider's Thread), a line of Kandata"
+      date: "1918"
+      edition: "Kumo no Ito, first printed in the magazine Akai Tori in July 1918, as quoted on the Japanese Wikipedia page of the story; in modern kana. The page gives the word for I with its reading beside it"
+      url: "https://ja.wikipedia.org/wiki/%E8%9C%98%E8%9B%9B%E3%81%AE%E7%B3%B8"
+      basis: "public-domain"
+      author_died: 1927
+      jurisdiction: "JP"
+      rights_checked: "2026-11-15"
+  - id: "ja-4657"
+    target: "からたちのはながさいたよしろいしろいはながさいたよ"
+    words: ["からたち", "の", "はな", "が", "さいた", "よ", "しろい", "しろい", "はな", "が", "さいた", "よ"]
+    reading: "karatachi no hana ga saita yo shiroi shiroi hana ga saita yo"
+    ipa: "kaɾatatɕi no hana ɡa saita jo ɕiɾoi ɕiɾoi hana ɡa saita jo"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "ja-kitahara-hakushu"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "からたち", base: "からたち", reading: "karatachi" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "はな", base: "はな", reading: "hana" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "さいた", base: "さく", reading: "saku" }
+      - { word: "よ", base: "よ", reading: "yo" }
+      - { word: "しろい", base: "しろい", reading: "shiroi" }
+    source:
+      author: "Kitahara Hakushu"
+      work: "Karatachi no hana (The Karatachi Flower), the first lines"
+      date: "1924"
+      edition: "Karatachi no hana, the words printed in the magazine Akai Tori in 1924 and the song in 1925, as given in the lyrics section of the Japanese Wikipedia page of the song; shown in modern kana"
+      url: "https://ja.wikipedia.org/wiki/%E3%81%8B%E3%82%89%E3%81%9F%E3%81%A1%E3%81%AE%E8%8A%B1"
+      basis: "public-domain"
+      author_died: 1942
+      jurisdiction: "JP"
+      rights_checked: "2026-11-15"
+  - id: "ja-4658"
+    target: "からすなぜなくのからすはやまにかわいななつのこがあるからよ"
+    words: ["からす", "なぜ", "なく", "の", "からす", "は", "やま", "に", "かわい", "ななつ", "の", "こ", "が", "ある", "から", "よ"]
+    reading: "karasu naze naku no karasu wa yama ni kawai nanatsu no ko ga aru kara yo"
+    ipa: "kaɾasɯ nadze nakɯ no kaɾasɯ wa jama ni kawai nanatsɯ no ko ɡa aɾɯ kaɾa jo"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "ja-noguchi-ujo"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "からす", base: "からす", reading: "karasu" }
+      - { word: "なぜ", base: "なぜ", reading: "naze" }
+      - { word: "なく", base: "なく", reading: "naku" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "やま", base: "やま", reading: "yama" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "かわい", base: "かわいい", reading: "kawaii" }
+      - { word: "ななつ", base: "ななつ", reading: "nanatsu" }
+      - { word: "こ", base: "こ", reading: "ko" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "ある", base: "ある", reading: "aru" }
+      - { word: "から", base: "から", reading: "kara" }
+      - { word: "よ", base: "よ", reading: "yo" }
+    source:
+      author: "Noguchi Ujo"
+      work: "Nanatsu no ko (Seven Children), the first verse"
+      date: "1921"
+      edition: "Nanatsu no ko, printed in the magazine Kin no Fune in July 1921, as given in the lyrics section of the Japanese Wikipedia page of the song; shown in modern kana"
+      url: "https://ja.wikipedia.org/wiki/%E4%B8%83%E3%81%A4%E3%81%AE%E5%AD%90"
+      basis: "public-domain"
+      author_died: 1945
+      jurisdiction: "JP"
+      rights_checked: "2026-11-15"
+  - id: "ja-4659"
+    target: "このみちはいつかきたみちああそうだよあかしやのはながさいてる"
+    words: ["この", "みち", "は", "いつか", "きた", "みち", "ああ", "そうだよ", "あかしや", "の", "はな", "が", "さいてる"]
+    reading: "kono michi wa itsuka kita michi aa soudayo akashiya no hana ga saiteru"
+    ipa: "kono mitɕi wa itsɯka kita mitɕi aː soːdajo akaɕija no hana ɡa saiteɾɯ"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "ja-kitahara-hakushu"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "この", base: "この", reading: "kono" }
+      - { word: "みち", base: "みち", reading: "michi" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "いつか", base: "いつか", reading: "itsuka" }
+      - { word: "きた", base: "くる", reading: "kuru" }
+      - { word: "ああ", base: "ああ", reading: "aa" }
+      - { word: "そうだよ", base: "そうだ", reading: "souda" }
+      - { word: "あかしや", base: "あかしや", reading: "akashiya" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "はな", base: "はな", reading: "hana" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "さいてる", base: "さく", reading: "saku" }
+    source:
+      author: "Kitahara Hakushu"
+      work: "Kono michi (This Road), the first verse"
+      date: "1926"
+      edition: "Kono michi, the poem printed in the magazine Akai Tori in 1926 and set to music in 1927, as given in the lyrics section of the Japanese Wikipedia page of the song; shown in modern kana"
+      url: "https://ja.wikipedia.org/wiki/%E3%81%93%E3%81%AE%E9%81%93"
+      basis: "public-domain"
+      author_died: 1942
+      jurisdiction: "JP"
+      rights_checked: "2026-11-15"
+  - id: "ja-4660"
+    target: "えたいのしれないふきつなかたまり"
+    words: ["えたい", "の", "しれない", "ふきつな", "かたまり"]
+    reading: "etai no shirenai fukitsuna katamari"
+    ipa: "etai no ɕiɾenai ɸɯkitsɯna katamaɾi"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "ja-kajii-motojiro"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "えたい", base: "えたい", reading: "etai" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "しれない", base: "しれる", reading: "shireru" }
+      - { word: "ふきつな", base: "ふきつ", reading: "fukitsu" }
+      - { word: "かたまり", base: "かたまり", reading: "katamari" }
+    source:
+      author: "Kajii Motojiro"
+      work: "Lemon, a phrase from the story"
+      date: "1925"
+      edition: "Lemon, printed in the magazine Aozora in January 1925, as quoted on the Japanese Wikipedia page of the story; the first sentence of the story, read on Wikisource, in modern kana. The Wikipedia page does not give the reading of the last word"
+      url: "https://ja.wikipedia.org/wiki/%E6%AA%B8%E6%AA%AC_(%E5%B0%8F%E8%AA%AC)"
+      basis: "public-domain"
+      author_died: 1932
+      jurisdiction: "JP"
+      rights_checked: "2026-11-15"
+  - id: "ja-4661"
+    target: "あしたはまべをさまよえばむかしのことぞしのばるる"
+    words: ["あした", "はまべ", "を", "さまよえば", "むかし", "の", "こと", "ぞ", "しのばるる"]
+    reading: "ashita hamabe o samayoeba mukashi no koto zo shinobaruru"
+    ipa: "aɕita hamabe o samajoeba mɯkaɕi no koto dzo ɕinobaɾɯɾɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "ja-hayashi-kokei"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "あした", base: "あした", reading: "ashita" }
+      - { word: "はまべ", base: "はまべ", reading: "hamabe" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "さまよえば", base: "さまよう", reading: "samayou" }
+      - { word: "むかし", base: "むかし", reading: "mukashi" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "こと", base: "こと", reading: "koto" }
+      - { word: "ぞ", base: "ぞ", reading: "zo" }
+      - { word: "しのばるる", base: "しのぶ", reading: "shinobu" }
+    source:
+      author: "Hayashi Kokei"
+      work: "Hamabe no uta (Song of the Beach), the first two lines"
+      date: "1913"
+      edition: "Hamabe no uta, printed in 1913 under the title Hamabe in the magazine Ongaku, as given in the lyrics section of the Japanese Wikipedia page of the song; the page says the first verse was written all in hiragana; shown in modern kana spelling"
+      url: "https://ja.wikipedia.org/wiki/%E6%B5%9C%E8%BE%BA%E3%81%AE%E6%AD%8C"
+      basis: "public-domain"
+      author_died: 1947
+      jurisdiction: "JP"
+      rights_checked: "2026-11-15"
+  - id: "ja-4662"
+    target: "こもろなるこじょうのほとりくもしろくゆうしかなしむ"
+    words: ["こもろ", "なる", "こじょう", "の", "ほとり", "くも", "しろく", "ゆうし", "かなしむ"]
+    reading: "komoro naru kojou no hotori kumo shiroku yuushi kanashimu"
+    ipa: "komoɾo naɾɯ kodʑoː no hotoɾi kɯmo ɕiɾokɯ jɯːɕi kanaɕimɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "ja-shimazaki-toson"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "こもろ", base: "こもろ", reading: "komoro" }
+      - { word: "なる", base: "なり", reading: "nari" }
+      - { word: "こじょう", base: "こじょう", reading: "kojou" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "ほとり", base: "ほとり", reading: "hotori" }
+      - { word: "くも", base: "くも", reading: "kumo" }
+      - { word: "しろく", base: "しろい", reading: "shiroi" }
+      - { word: "ゆうし", base: "ゆうし", reading: "yuushi" }
+      - { word: "かなしむ", base: "かなしむ", reading: "kanashimu" }
+    source:
+      author: "Shimazaki Toson"
+      work: "Chikumagawa ryojo no uta (Song of a Journey by the Chikuma River), part 1, the first lines"
+      date: "1900"
+      edition: "Chikumagawa ryojo no uta, part 1 printed under the title Ryojo in the magazine Myojo in April 1900, as given on the Japanese Wikipedia page of the poem, where the poem is written in the old spelling with kana readings; shown in modern kana"
+      url: "https://ja.wikipedia.org/wiki/%E5%8D%83%E6%9B%B2%E5%B7%9D%E6%97%85%E6%83%85%E3%81%AE%E6%AD%8C"
+      basis: "public-domain"
+      author_died: 1943
+      jurisdiction: "JP"
+      rights_checked: "2026-11-15"
+  - id: "ja-4663"
+    target: "おやゆずりのむてっぽうでこどものころからそんばかりしている"
+    words: ["おやゆずり", "の", "むてっぽう", "で", "こども", "の", "ころ", "から", "そん", "ばかり", "して", "いる"]
+    reading: "oyayuzuri no muteppou de kodomo no koro kara son bakari shite iru"
+    ipa: "ojajɯdzɯɾi no mɯteppoː de kodomo no koɾo kaɾa soɴ bakaɾi ɕite iɾɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "ja-natsume-soseki"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "おやゆずり", base: "おやゆずり", reading: "oyayuzuri" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "むてっぽう", base: "むてっぽう", reading: "muteppou" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "こども", base: "こども", reading: "kodomo" }
+      - { word: "ころ", base: "ころ", reading: "koro" }
+      - { word: "から", base: "から", reading: "kara" }
+      - { word: "そん", base: "そん", reading: "son" }
+      - { word: "ばかり", base: "ばかり", reading: "bakari" }
+      - { word: "して", base: "する", reading: "suru" }
+      - { word: "いる", base: "いる", reading: "iru" }
+    source:
+      author: "Natsume Soseki"
+      work: "Botchan, the opening"
+      date: "1906"
+      edition: "Botchan, printed in the magazine Hototogisu in April 1906, as quoted on the Japanese Wikipedia page of the novel, which gives the opening words in a quotation; in modern kana"
+      url: "https://ja.wikipedia.org/wiki/%E5%9D%8A%E3%81%A4%E3%81%A1%E3%82%84%E3%82%93"
+      basis: "public-domain"
+      author_died: 1916
+      jurisdiction: "JP"
+      rights_checked: "2026-11-15"
+  - id: "ja-4664"
+    target: "まつのはのはごとにむすぶしらつゆのおきてはこぼれこぼれてはおく"
+    words: ["まつのは", "の", "はごと", "に", "むすぶ", "しらつゆ", "の", "おきて", "は", "こぼれ", "こぼれて", "は", "おく"]
+    reading: "matsunoha no hagoto ni musubu shiratsuyu no okite wa kobore koborete wa oku"
+    ipa: "matsɯnoha no haɡoto ni mɯsɯbɯ ɕiɾatsɯjɯ no okite wa koboɾe koboɾete wa okɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "ja-masaoka-shiki"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "まつのは", base: "まつのは", reading: "matsunoha" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "はごと", base: "はごと", reading: "hagoto" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "むすぶ", base: "むすぶ", reading: "musubu" }
+      - { word: "しらつゆ", base: "しらつゆ", reading: "shiratsuyu" }
+      - { word: "おきて", base: "おく", reading: "oku" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "こぼれ", base: "こぼれる", reading: "koboreru" }
+      - { word: "こぼれて", base: "こぼれる", reading: "koboreru" }
+      - { word: "おく", base: "おく", reading: "oku" }
+    source:
+      author: "Masaoka Shiki"
+      work: "a tanka on dew on pine needles"
+      date: "1867-1902"
+      edition: "A tanka listed with his famous tanka on the Japanese Wikipedia page of Masaoka Shiki; the year of writing is not given on the page, so the date is the author's life span; shown in modern kana"
+      url: "https://ja.wikipedia.org/wiki/%E6%AD%A3%E5%B2%A1%E5%AD%90%E8%A6%8F"
+      basis: "public-domain"
+      author_died: 1902
+      jurisdiction: "JP"
+      rights_checked: "2026-11-15"
+  - id: "ja-4665"
+    target: "たわむれにははをせおいてそのあまりかろきになきてさんぽあゆまず"
+    words: ["たわむれに", "はは", "を", "せおいて", "その", "あまり", "かろきに", "なきて", "さんぽ", "あゆまず"]
+    reading: "tawamureni haha o seoite sono amari karokini nakite sanpo ayumazu"
+    ipa: "tawamɯɾeni haha o seoite sono amaɾi kaɾokini nakite saɴpo ajɯmadzɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "ja-ishikawa-takuboku"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "たわむれに", base: "たわむれ", reading: "tawamure" }
+      - { word: "はは", base: "はは", reading: "haha" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "せおいて", base: "せおう", reading: "seou" }
+      - { word: "その", base: "その", reading: "sono" }
+      - { word: "あまり", base: "あまり", reading: "amari" }
+      - { word: "かろきに", base: "かろし", reading: "karoshi" }
+      - { word: "なきて", base: "なく", reading: "naku" }
+      - { word: "さんぽ", base: "さんぽ", reading: "sanpo" }
+      - { word: "あゆまず", base: "あゆむ", reading: "ayumu" }
+    source:
+      author: "Ishikawa Takuboku"
+      work: "Ichiaku no Suna (A Handful of Sand), a tanka on carrying his mother"
+      date: "1910"
+      edition: "Ichiaku no Suna, 1910, as quoted among the poems of the collection on the Japanese Wikipedia page of Ishikawa Takuboku; in modern kana spelling. The page gives the reading of the word for light, karo, beside it"
+      url: "https://ja.wikipedia.org/wiki/%E7%9F%B3%E5%B7%9D%E5%95%84%E6%9C%A8"
+      basis: "public-domain"
+      author_died: 1912
+      jurisdiction: "JP"
+      rights_checked: "2026-11-15"
+  - id: "ja-4666"
+    target: "かいていのみずのあかりにしたためしながきわかれのますらおのふみ"
+    words: ["かいてい", "の", "みず", "の", "あかり", "に", "したためし", "ながき", "わかれ", "の", "ますらお", "の", "ふみ"]
+    reading: "kaitei no mizu no akari ni shitatameshi nagaki wakare no masurao no fumi"
+    ipa: "kaiteː no midzɯ no akaɾi ni ɕitatameɕi naɡaki wakaɾe no masɯɾao no ɸɯmi"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "ja-yosano-akiko"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "かいてい", base: "かいてい", reading: "kaitei" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "みず", base: "みず", reading: "mizu" }
+      - { word: "あかり", base: "あかり", reading: "akari" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "したためし", base: "したためる", reading: "shitatameru" }
+      - { word: "ながき", base: "ながし", reading: "nagashi" }
+      - { word: "わかれ", base: "わかれ", reading: "wakare" }
+      - { word: "ますらお", base: "ますらお", reading: "masurao" }
+      - { word: "ふみ", base: "ふみ", reading: "fumi" }
+    source:
+      author: "Yosano Akiko"
+      work: "a tanka on the sinking of the Submarine No. 6"
+      date: "1910"
+      edition: "A tanka of 1910, as quoted on the Japanese Wikipedia page of Yosano Akiko, which gives it as one of about ten poems she wrote at the sinking of the Submarine No. 6; in modern kana. The page does not give the readings of the words for letter (fumi) or brave man (masurao)"
+      url: "https://ja.wikipedia.org/wiki/%E4%B8%8E%E8%AC%9D%E9%87%8E%E6%99%B6%E5%AD%90"
+      basis: "public-domain"
+      author_died: 1942
+      jurisdiction: "JP"
+      rights_checked: "2026-11-15"
+  - id: "ja-4667"
+    target: "くれないのにしゃくのびたるばらのめのはりやわらかにはるさめのふる"
+    words: ["くれない", "の", "にしゃく", "のびたる", "ばら", "の", "め", "の", "はり", "やわらかに", "はるさめ", "の", "ふる"]
+    reading: "kurenai no nishaku nobitaru bara no me no hari yawarakani harusame no furu"
+    ipa: "kɯɾenai no niɕakɯ nobitaɾɯ baɾa no me no haɾi jawaɾakani haɾɯsame no ɸɯɾɯ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "ja-masaoka-shiki"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "くれない", base: "くれない", reading: "kurenai" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "にしゃく", base: "にしゃく", reading: "nishaku" }
+      - { word: "のびたる", base: "のびる", reading: "nobiru" }
+      - { word: "ばら", base: "ばら", reading: "bara" }
+      - { word: "め", base: "め", reading: "me" }
+      - { word: "はり", base: "はり", reading: "hari" }
+      - { word: "やわらかに", base: "やわらか", reading: "yawaraka" }
+      - { word: "はるさめ", base: "はるさめ", reading: "harusame" }
+      - { word: "ふる", base: "ふる", reading: "furu" }
+    source:
+      author: "Masaoka Shiki"
+      work: "a tanka on rose shoots in spring rain"
+      date: "1867-1902"
+      edition: "A tanka listed with his famous tanka on the Japanese Wikipedia page of Masaoka Shiki; the year of writing is not given on the page, so the date is the author's life span; shown in modern kana spelling"
+      url: "https://ja.wikipedia.org/wiki/%E6%AD%A3%E5%B2%A1%E5%AD%90%E8%A6%8F"
+      basis: "public-domain"
+      author_died: 1902
+      jurisdiction: "JP"
+      rights_checked: "2026-11-15"
