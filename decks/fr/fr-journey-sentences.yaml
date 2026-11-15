@@ -23,6 +23,8 @@ cards:
     confusables:
       - { id: "conducteur", ref: "fr-3429", kind: "word" }
       - { id: "guichet", ref: "fr-1973", kind: "word" }
+    notes:
+      - { id: "controleur", kind: "behaviour" }
   - id: "fr-3446"
     target: "Mon train part à huit heures."
     ipa: "mɔ̃ tʁɛ̃ paʁ a ɥit œʁ"
@@ -96,6 +98,8 @@ cards:
     confusables:
       - { id: "retarder", ref: "fr-3434", kind: "word" }
       - { id: "annulation", ref: "fr-3405", kind: "word" }
+    notes:
+      - { id: "retard", kind: "behaviour" }
   - id: "fr-3450"
     target: "Je réserve une place près de la fenêtre."
     ipa: "ʒə ʁezɛʁv yn plas pʁɛ də la fənɛtʁ"
@@ -115,6 +119,8 @@ cards:
     confusables:
       - { id: "siege", ref: "fr-1920", kind: "word" }
       - { id: "compartiment", ref: "fr-3402", kind: "word" }
+    notes:
+      - { id: "place", kind: "behaviour" }
   - id: "fr-3451"
     target: "Le billet aller-retour coûte moins cher."
     ipa: "lə bijɛ aleʁətuʁ kut mwɛ̃ ʃɛʁ"
@@ -133,6 +139,8 @@ cards:
     confusables:
       - { id: "retour", ref: "fr-3422", kind: "word" }
       - { id: "supplement", ref: "fr-3406", kind: "word" }
+    notes:
+      - { id: "aller-retour", kind: "behaviour" }
   - id: "fr-3452"
     target: "La correspondance est à la gare."
     ipa: "la kɔʁɛspɔ̃dɑ̃s ɛt a la ɡaʁ"
@@ -149,6 +157,8 @@ cards:
     confusables:
       - { id: "arret", ref: "fr-0857", kind: "word" }
       - { id: "voie", ref: "fr-3401", kind: "word" }
+    notes:
+      - { id: "correspondance", kind: "behaviour" }
   - id: "fr-3453"
     target: "Le wagon numéro cinq est complet."
     ipa: "lə waɡɔ̃ nymeʁo sɛ̃k ɛ kɔ̃plɛ"
@@ -186,3 +196,5 @@ cards:
     confusables:
       - { id: "retard", ref: "fr-0870", kind: "word" }
       - { id: "annulation", ref: "fr-3405", kind: "word" }
+    notes:
+      - { id: "greve", kind: "behaviour" }

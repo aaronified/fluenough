@@ -1,0 +1,271 @@
+schema: 1
+id: "as-more-verbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-5315"
+    target: "মই পিঁয়াজ কটোঁ।"
+    reading: "moi pim̐yāz kôtum̐."
+    ipa: "moi pĩjaz kɔtʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "পিঁয়াজ", base: "পিঁয়াজ", reading: "pim̐yāz" }
+      - { word: "কটোঁ", base: "কটা", reading: "kôtā" }
+    confusables:
+      - { id: "c1", word: "ভজা", reading: "bhôzā", kind: "word" }
+      - { id: "c2", word: "ৰান্ধা", reading: "rāndhā", kind: "word" }
+  - id: "as-5316"
+    target: "মই মাছ ভজোঁ।"
+    reading: "moi mās bhôzum̐."
+    ipa: "moi mas bʱɔzʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "মাছ", base: "মাছ", reading: "mās" }
+      - { word: "ভজোঁ", base: "ভজা", reading: "bhôzā" }
+    confusables:
+      - { id: "c1", word: "সিজা", reading: "sizā", kind: "word" }
+      - { id: "c2", word: "কটা", reading: "kôtā", kind: "word" }
+  - id: "as-5317"
+    target: "ভাত সিজে।"
+    reading: "bhāt size."
+    ipa: "bʱat size"
+    pos: "phrase"
+    bases:
+      - { word: "ভাত", ref: "as-0111" }
+      - { word: "সিজে", base: "সিজা", reading: "sizā" }
+    confusables:
+      - { id: "c1", word: "ৰান্ধা", reading: "rāndhā", kind: "word" }
+      - { id: "c2", word: "ভজা", reading: "bhôzā", kind: "word" }
+  - id: "as-5318"
+    target: "মই বাকচটো খোলোঁ।"
+    reading: "moi bākôsôtu khulum̐."
+    ipa: "moi bakɔsɔtʊ kʰʊlʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "বাকচটো", base: "বাকচ", reading: "bākôs" }
+      - { word: "খোলোঁ", base: "খোলা", reading: "khulā" }
+    confusables:
+      - { id: "c1", word: "লুকুৱা", reading: "lukuwā", kind: "word" }
+      - { id: "c2", word: "ৰখা", reading: "rôkhā", kind: "word" }
+  - id: "as-5319"
+    target: "মই চিঠি পঠাওঁ।"
+    reading: "moi sithi pôthāum̐."
+    ipa: "moi sitʰi pɔtʰaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "চিঠি", base: "চিঠি", reading: "sithi" }
+      - { word: "পঠাওঁ", base: "পঠিওৱা", reading: "pothiuwā" }
+    confusables:
+      - { id: "c1", word: "আনা", reading: "ānā", kind: "word" }
+      - { id: "c2", word: "লিখা", reading: "likhā", kind: "word" }
+  - id: "as-5320"
+    target: "মই পানী আনোঁ।"
+    reading: "moi pāni ānum̐."
+    ipa: "moi pani anʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "পানী", base: "পানী", reading: "pāni" }
+      - { word: "আনোঁ", base: "আনা", reading: "ānā" }
+    confusables:
+      - { id: "c1", word: "নিয়া", reading: "niyā", kind: "word" }
+      - { id: "c2", word: "ঘূৰা", reading: "ghurā", kind: "word" }
+  - id: "as-5321"
+    target: "সি জানোলা খোলে।"
+    reading: "si zānulā khule."
+    ipa: "si zanʊla kʰʊle"
+    pos: "phrase"
+    bases:
+      - { word: "সি", ref: "as-2180" }
+      - { word: "জানোলা", base: "জানোলা", reading: "zānulā" }
+      - { word: "খোলে", base: "খোলা", reading: "khulā" }
+    confusables:
+      - { id: "c1", word: "ৰখা", reading: "rôkhā", kind: "word" }
+      - { id: "c2", word: "লুকুৱা", reading: "lukuwā", kind: "word" }
+  - id: "as-5322"
+    target: "মই দুৱাৰ টানোঁ।"
+    reading: "moi duwār tānum̐."
+    ipa: "moi duwaɹ tanʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "দুৱাৰ", base: "দুৱাৰ", reading: "duwār" }
+      - { word: "টানোঁ", base: "টানা", reading: "tānā" }
+    confusables:
+      - { id: "c1", word: "ঠেলা", reading: "thelā", kind: "word" }
+      - { id: "c2", word: "ধৰা", reading: "dhôrā", kind: "word" }
+  - id: "as-5323"
+    target: "মই দুৱাৰ ঠেলোঁ।"
+    reading: "moi duwār thelum̐."
+    ipa: "moi duwaɹ tʰelʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "দুৱাৰ", base: "দুৱাৰ", reading: "duwār" }
+      - { word: "ঠেলোঁ", base: "ঠেলা", reading: "thelā" }
+    confusables:
+      - { id: "c1", word: "টানা", reading: "tānā", kind: "word" }
+      - { id: "c2", word: "খোলা", reading: "khulā", kind: "word" }
+  - id: "as-5324"
+    target: "মই হাত ধৰোঁ।"
+    reading: "moi hāt dhôrum̐."
+    ipa: "moi hat dʱɔɹʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "হাত", ref: "as-0115" }
+      - { word: "ধৰোঁ", base: "ধৰা", reading: "dhôrā" }
+    confusables:
+      - { id: "c1", word: "পিন্ধা", reading: "pindhā", kind: "word" }
+      - { id: "c2", word: "মাৰা", reading: "mārā", kind: "word" }
+  - id: "as-5325"
+    target: "মই চাবি বিচাৰোঁ।"
+    reading: "moi sābi bisārum̐."
+    ipa: "moi sabi bisaɹʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "চাবি", base: "চাবি", reading: "sābi" }
+      - { word: "বিচাৰোঁ", base: "বিচাৰা", reading: "bisārā" }
+    confusables:
+      - { id: "c1", word: "খোজা", reading: "khuzā", kind: "word" }
+      - { id: "c2", word: "গণা", reading: "gônā", kind: "word" }
+  - id: "as-5326"
+    target: "মই কাপ ভাঙোঁ।"
+    reading: "moi kāp bhāṅum̐."
+    ipa: "moi kap bʱaŋʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "কাপ", base: "কাপ", reading: "kāp" }
+      - { word: "ভাঙোঁ", base: "ভাঙা", reading: "bhāṅā" }
+    confusables:
+      - { id: "c1", word: "মাৰা", reading: "mārā", kind: "word" }
+      - { id: "c2", word: "ঠেলা", reading: "thelā", kind: "word" }
+  - id: "as-5327"
+    target: "মই টকা গণোঁ।"
+    reading: "moi tôkā gônum̐."
+    ipa: "moi tɔka ɡɔnʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "টকা", base: "টকা", reading: "tôkā" }
+      - { word: "গণোঁ", base: "গণা", reading: "gônā" }
+    confusables:
+      - { id: "c1", word: "ৰাখা", reading: "rākhā", kind: "word" }
+      - { id: "c2", word: "বিচাৰা", reading: "bisārā", kind: "word" }
+  - id: "as-5328"
+    target: "মই কোঠা সাজোঁ।"
+    reading: "moi kuthā sāzum̐."
+    ipa: "moi kʊtʰa sazʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "কোঠা", base: "কোঠা", reading: "kuthā" }
+      - { word: "সাজোঁ", base: "সাজা", reading: "sāzā" }
+    confusables:
+      - { id: "c1", word: "ধোৱা", reading: "dhuwā", kind: "word" }
+      - { id: "c2", word: "মিহলোৱা", reading: "mihôluwā", kind: "word" }
+  - id: "as-5329"
+    target: "মই কিতাপ টেবুলত ৰাখোঁ।"
+    reading: "moi kitāp tebulôt rākhum̐."
+    ipa: "moi kitap tebulɔt ɹakʰʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "কিতাপ", base: "কিতাপ", reading: "kitāp" }
+      - { word: "টেবুলত", base: "টেবুল", reading: "tebul" }
+      - { word: "ৰাখোঁ", base: "ৰাখা", reading: "rākhā" }
+    confusables:
+      - { id: "c1", word: "লুকুৱা", reading: "lukuwā", kind: "word" }
+      - { id: "c2", word: "উলিওৱা", reading: "uliuwā", kind: "word" }
+  - id: "as-5330"
+    target: "মই জোতা পিন্ধোঁ।"
+    reading: "moi zutā pindhum̐."
+    ipa: "moi zʊta pindʱʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "জোতা", base: "জোতা", reading: "zutā" }
+      - { word: "পিন্ধোঁ", base: "পিন্ধা", reading: "pindhā" }
+    confusables:
+      - { id: "c1", word: "ধৰা", reading: "dhôrā", kind: "word" }
+      - { id: "c2", word: "মাৰা", reading: "mārā", kind: "word" }
+  - id: "as-5331"
+    target: "মই ঘৰলৈ ঘূৰোঁ।"
+    reading: "moi ghôrôlôi ghurum̐."
+    ipa: "moi ɡʱɔɹɔlɔi ɡʱuɹʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "ঘৰলৈ", base: "ঘৰ", reading: "ghôr" }
+      - { word: "ঘূৰোঁ", base: "ঘূৰা", reading: "ghurā" }
+    confusables:
+      - { id: "c1", word: "যোৱা", reading: "zuwā", kind: "word" }
+      - { id: "c2", word: "আনা", reading: "ānā", kind: "word" }
+  - id: "as-5332"
+    target: "মই বলটো মাৰোঁ।"
+    reading: "moi bôlôtu mārum̐."
+    ipa: "moi bɔlɔtʊ maɹʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "বলটো", base: "বল", reading: "bôl" }
+      - { word: "মাৰোঁ", base: "মাৰা", reading: "mārā" }
+    confusables:
+      - { id: "c1", word: "ধৰা", reading: "dhôrā", kind: "word" }
+      - { id: "c2", word: "ঠেলা", reading: "thelā", kind: "word" }
+  - id: "as-5333"
+    target: "মই কিতাপ লুকাওঁ।"
+    reading: "moi kitāp lukāum̐."
+    ipa: "moi kitap lukaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "কিতাপ", base: "কিতাপ", reading: "kitāp" }
+      - { word: "লুকাওঁ", base: "লুকুৱা", reading: "lukuwā" }
+    confusables:
+      - { id: "c1", word: "উলিওৱা", reading: "uliuwā", kind: "word" }
+      - { id: "c2", word: "ৰাখা", reading: "rākhā", kind: "word" }
+  - id: "as-5334"
+    target: "মই কাপোৰ শুকুৱাওঁ।"
+    reading: "moi kāpur xukuwāum̐."
+    ipa: "moi kapʊɹ xukuwaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "কাপোৰ", base: "কাপোৰ", reading: "kāpur" }
+      - { word: "শুকুৱাওঁ", base: "শুকুৱা", reading: "xukuwā" }
+    confusables:
+      - { id: "c1", word: "ধোৱা", reading: "dhuwā", kind: "word" }
+      - { id: "c2", word: "ভজা", reading: "bhôzā", kind: "word" }
+  - id: "as-5335"
+    target: "মই ফুৰোঁ।"
+    reading: "moi phurum̐."
+    ipa: "moi pʰuɹʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "ফুৰোঁ", base: "ফুৰা", reading: "phurā" }
+    confusables:
+      - { id: "c1", word: "চলা", reading: "sôlā", kind: "word" }
+      - { id: "c2", word: "থকা", reading: "thôkā", kind: "word" }
+  - id: "as-5336"
+    target: "তেওঁ কলম বিচাৰে।"
+    reading: "teum̐ kôlôm bisāre."
+    ipa: "teʊ̃ kɔlɔm bisaɹe"
+    pos: "phrase"
+    bases:
+      - { word: "তেওঁ", ref: "as-2181" }
+      - { word: "কলম", base: "কলম", reading: "kôlôm" }
+      - { word: "বিচাৰে", base: "বিচাৰা", reading: "bisārā" }
+    confusables:
+      - { id: "c1", word: "খোজা", reading: "khuzā", kind: "word" }
+      - { id: "c2", word: "গণা", reading: "gônā", kind: "word" }

@@ -1,0 +1,83 @@
+schema: 1
+id: "as-en-work-sentences"
+kind: "layer"
+core: "as-work-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Work: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-5337":
+    native: "My father is a farmer."
+    confusables:
+      "c1": { why: "Cook, a different job." }
+      "c2": { why: "Shopkeeper, a different job." }
+  "as-5338":
+    native: "Mother is a doctor."
+    confusables:
+      "c1": { why: "Nurse, a helper in health." }
+      "c2": { why: "Teacher, a different job." }
+  "as-5339":
+    native: "He is a writer."
+    confusables:
+      "c1": { why: "Journalist, a different writer." }
+      "c2": { why: "Teacher, a different job." }
+  "as-5340":
+    native: "I work in an office."
+    bases:
+      "অফিচত": "in an office"
+      "কৰোঁ": "do; work (I do)"
+    confusables:
+      "c1": { why: "Business, a different work." }
+      "c2": { why: "Job, close in meaning." }
+  "as-5341":
+    native: "The shopkeeper sells rice."
+    bases:
+      "চাউল": "rice (uncooked)"
+      "বেচে": "sell (she sells)"
+    confusables:
+      "c1": { why: "To buy, the opposite action." }
+      "c2": { why: "Cook, a different action." }
+  "as-5342":
+    native: "I have a day off."
+    bases:
+      "ছুটী": "day off"
+      "আছে": "to be; there is; to have"
+    confusables:
+      "c1": { why: "Salary, a different thing." }
+      "c2": { why: "Business, a different thing." }
+  "as-5343":
+    native: "My salary is good."
+    bases:
+      "ভাল": "good"
+    confusables:
+      "c1": { why: "Business, a different thing." }
+      "c2": { why: "Day off, a different thing." }
+  "as-5344":
+    native: "My business is here."
+    bases:
+      "ইয়াত": "here"
+    confusables:
+      "c1": { why: "Job, a different thing." }
+      "c2": { why: "Office, a different place." }
+  "as-5345":
+    native: "When do I go to the office?"
+    bases:
+      "অফিচলৈ": "to the office"
+      "যাওঁ": "go (I go)"
+    confusables:
+      "c1": { why: "Where, a different question." }
+      "c2": { why: "Why, a different question." }
+  "as-5346":
+    native: "He is a student."
+    confusables:
+      "c1": { why: "Teacher, the opposite role." }
+      "c2": { why: "Doctor, a different job." }
+  "as-5347":
+    native: "The police are here."
+    bases:
+      "ইয়াত": "here"
+    confusables:
+      "c1": { why: "Doctor, a different job." }
+      "c2": { why: "Student, a different person." }

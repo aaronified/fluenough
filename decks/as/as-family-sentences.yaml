@@ -1,0 +1,291 @@
+schema: 1
+id: "as-family-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-5070"
+    target: "মোৰ দেউতা ক'ত?"
+    reading: "mur deutā kot?"
+    ipa: "mʊɹ deuta kot"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "দেউতা", ref: "as-0179" }
+      - { word: "ক'ত", ref: "as-0145" }
+    confusables:
+      - { id: "c1", word: "মা", reading: "mā", kind: "word" }
+      - { id: "c2", word: "মামা", reading: "māmā", kind: "word" }
+  - id: "as-5071"
+    target: "মোৰ মা ভাল।"
+    reading: "mur mā bhāl."
+    ipa: "mʊɹ ma bʱal"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "মা", ref: "as-0180" }
+      - { word: "ভাল", base: "ভাল", reading: "bhāl" }
+    confusables:
+      - { id: "c1", word: "দেউতা", reading: "deutā", kind: "word" }
+      - { id: "c2", word: "মাহী", reading: "māhi", kind: "word" }
+  - id: "as-5072"
+    target: "মোৰ ককাই আছে।"
+    reading: "mur kôkāi āse."
+    ipa: "mʊɹ kɔkai ase"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "ককাই", ref: "as-0181" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "বাই", reading: "bāi", kind: "word" }
+      - { id: "c2", word: "ভাই-ককাই", reading: "bhāi-kôkāi", kind: "word" }
+  - id: "as-5073"
+    target: "মোৰ বাই আছে।"
+    reading: "mur bāi āse."
+    ipa: "mʊɹ bai ase"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "বাই", ref: "as-0182" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "ককাই", reading: "kôkāi", kind: "word" }
+      - { id: "c2", word: "ঘৈণী", reading: "ghôini", kind: "word" }
+  - id: "as-5074"
+    target: "মোৰ ল'ৰা আছে।"
+    reading: "mur lorā āse."
+    ipa: "mʊɹ loɹa ase"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "ল'ৰা", ref: "as-0184" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "ছোৱালী", reading: "suwāli", kind: "word" }
+      - { id: "c2", word: "ল'ৰা-ছোৱালী", reading: "lorā-suwāli", kind: "word" }
+  - id: "as-5075"
+    target: "মোৰ ছোৱালী নাই।"
+    reading: "mur suwāli nāi."
+    ipa: "mʊɹ sʊwali nai"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "ছোৱালী", ref: "as-0185" }
+      - { word: "নাই", ref: "as-0142" }
+    confusables:
+      - { id: "c1", word: "ল'ৰা", reading: "lorā", kind: "word" }
+      - { id: "c2", word: "ঘৈণী", reading: "ghôini", kind: "word" }
+  - id: "as-5076"
+    target: "মোৰ স্বামী ক'ত?"
+    reading: "mur xāmi kot?"
+    ipa: "mʊɹ xami kot"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "স্বামী", ref: "as-0187" }
+      - { word: "ক'ত", ref: "as-0145" }
+    confusables:
+      - { id: "c1", word: "ঘৈণী", reading: "ghôini", kind: "word" }
+      - { id: "c2", word: "দেউতা", reading: "deutā", kind: "word" }
+  - id: "as-5077"
+    target: "মোৰ ঘৈণী ক'ত?"
+    reading: "mur ghôini kot?"
+    ipa: "mʊɹ ɡʱɔini kot"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "ঘৈণী", ref: "as-0188" }
+      - { word: "ক'ত", ref: "as-0145" }
+    confusables:
+      - { id: "c1", word: "স্বামী", reading: "xāmi", kind: "word" }
+      - { id: "c2", word: "শাহু", reading: "xāhu", kind: "word" }
+  - id: "as-5078"
+    target: "তোমাৰ মা কেনে আছে?"
+    reading: "tumār mā kene āse?"
+    ipa: "tʊmaɹ ma kene ase"
+    pos: "phrase"
+    bases:
+      - { word: "তোমাৰ", ref: "as-2188" }
+      - { word: "মা", ref: "as-0180" }
+      - { word: "কেনে", base: "কেনে", reading: "kene" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "দেউতা", reading: "deutā", kind: "word" }
+      - { id: "c2", word: "আইতা", reading: "āitā", kind: "word" }
+  - id: "as-5079"
+    target: "আপোনাৰ দেউতা কেনে আছে?"
+    reading: "āpunār deutā kene āse?"
+    ipa: "apʊnaɹ deuta kene ase"
+    pos: "phrase"
+    bases:
+      - { word: "আপোনাৰ", ref: "as-2189" }
+      - { word: "দেউতা", ref: "as-0179" }
+      - { word: "কেনে", base: "কেনে", reading: "kene" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "মা", reading: "mā", kind: "word" }
+      - { id: "c2", word: "বৰদেউতা", reading: "bôrdeutā", kind: "word" }
+  - id: "as-5080"
+    target: "মোৰ বৰদেউতা ভাল আছে।"
+    reading: "mur bôrdeutā bhāl āse."
+    ipa: "mʊɹ bɔɹdeuta bʱal ase"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "বৰদেউতা", ref: "as-0189" }
+      - { word: "ভাল", base: "ভাল", reading: "bhāl" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "ককা", reading: "kôkā", kind: "word" }
+      - { id: "c2", word: "আইতা", reading: "āitā", kind: "word" }
+  - id: "as-5081"
+    target: "মামা, বহক।"
+    reading: "māmā, bôhôk."
+    ipa: "mama bɔhɔk"
+    pos: "phrase"
+    bases:
+      - { word: "মামা", ref: "as-0190" }
+      - { word: "বহক", base: "বহক", reading: "bôhôk" }
+    confusables:
+      - { id: "c1", word: "মাহী", reading: "māhi", kind: "word" }
+      - { id: "c2", word: "খুৰা", reading: "khurā", kind: "word" }
+  - id: "as-5082"
+    target: "মাহী, শুনক।"
+    reading: "māhi, xunôk."
+    ipa: "mahi xunɔk"
+    pos: "phrase"
+    bases:
+      - { word: "মাহী", ref: "as-0191" }
+      - { word: "শুনক", ref: "as-0165" }
+    confusables:
+      - { id: "c1", word: "মামা", reading: "māmā", kind: "word" }
+      - { id: "c2", word: "পেহী", reading: "pehi", kind: "word" }
+  - id: "as-5083"
+    target: "পেহী, আহক।"
+    reading: "pehi, āhôk."
+    ipa: "pehi ahɔk"
+    pos: "phrase"
+    bases:
+      - { word: "পেহী", ref: "as-0192" }
+      - { word: "আহক", base: "আহক", reading: "āhôk" }
+    confusables:
+      - { id: "c1", word: "মাহী", reading: "māhi", kind: "word" }
+      - { id: "c2", word: "আইতা", reading: "āitā", kind: "word" }
+  - id: "as-5084"
+    target: "শহুৰ, আহক।"
+    reading: "xohur, āhôk."
+    ipa: "xohuɹ ahɔk"
+    pos: "phrase"
+    bases:
+      - { word: "শহুৰ", ref: "as-0193" }
+      - { word: "আহক", base: "আহক", reading: "āhôk" }
+    confusables:
+      - { id: "c1", word: "শাহু", reading: "xāhu", kind: "word" }
+      - { id: "c2", word: "বৰদেউতা", reading: "bôrdeutā", kind: "word" }
+  - id: "as-5085"
+    target: "শাহু, শুনক।"
+    reading: "xāhu, xunôk."
+    ipa: "xahu xunɔk"
+    pos: "phrase"
+    bases:
+      - { word: "শাহু", ref: "as-0194" }
+      - { word: "শুনক", ref: "as-0165" }
+    confusables:
+      - { id: "c1", word: "শহুৰ", reading: "xohur", kind: "word" }
+      - { id: "c2", word: "মা", reading: "mā", kind: "word" }
+  - id: "as-5086"
+    target: "মোৰ আত্মীয় ক'ত?"
+    reading: "mur ātmiyô kot?"
+    ipa: "mʊɹ atmijɔ kot"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "আত্মীয়", ref: "as-0195" }
+      - { word: "ক'ত", ref: "as-0145" }
+    confusables:
+      - { id: "c1", word: "মা-দেউতা", reading: "mā-deutā", kind: "word" }
+      - { id: "c2", word: "বন্ধু", reading: "bondhu", kind: "word" }
+  - id: "as-5087"
+    target: "মা-দেউতা ক'ত?"
+    reading: "mā-deutā kot?"
+    ipa: "madeuta kot"
+    pos: "phrase"
+    bases:
+      - { word: "ক'ত", ref: "as-0145" }
+    confusables:
+      - { id: "c1", word: "দেউতা", reading: "deutā", kind: "word" }
+      - { id: "c2", word: "ল'ৰা-ছোৱালী", reading: "lorā-suwāli", kind: "word" }
+  - id: "as-5088"
+    target: "ল'ৰা-ছোৱালী খোৱা নেকি?"
+    reading: "lorā-suwāli khuwā neki?"
+    ipa: "loɹasʊwali kʰʊwa neki"
+    pos: "phrase"
+    bases:
+      - { word: "খোৱা", ref: "as-0109" }
+      - { word: "নেকি", ref: "as-0151" }
+    confusables:
+      - { id: "c1", word: "কোৱা", reading: "kuwā", kind: "word" }
+      - { id: "c2", word: "ভাই-ককাই", reading: "bhāi-kôkāi", kind: "word" }
+  - id: "as-5089"
+    target: "ভাই-ককাই কেনে আছে?"
+    reading: "bhāi-kôkāi kene āse?"
+    ipa: "bʱaikɔkai kene ase"
+    pos: "phrase"
+    bases:
+      - { word: "কেনে", base: "কেনে", reading: "kene" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "বাই", reading: "bāi", kind: "word" }
+      - { id: "c2", word: "ল'ৰা", reading: "lorā", kind: "word" }
+  - id: "as-5090"
+    target: "আমাৰ মা-দেউতা ভাল আছে।"
+    reading: "āmār mā-deutā bhāl āse."
+    ipa: "amaɹ madeuta bʱal ase"
+    pos: "phrase"
+    bases:
+      - { word: "আমাৰ", ref: "as-2192" }
+      - { word: "ভাল", base: "ভাল", reading: "bhāl" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "তেওঁলোক", reading: "teum̐luk", kind: "word" }
+      - { id: "c2", word: "মোৰ", reading: "mur", kind: "word" }
+  - id: "as-5091"
+    target: "শহুৰ শাহু ভাল আছে।"
+    reading: "xohur xāhu bhāl āse."
+    ipa: "xohuɹ xahu bʱal ase"
+    pos: "phrase"
+    bases:
+      - { word: "শহুৰ", ref: "as-0193" }
+      - { word: "শাহু", ref: "as-0194" }
+      - { word: "ভাল", base: "ভাল", reading: "bhāl" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "মা-দেউতা", reading: "mā-deutā", kind: "word" }
+      - { id: "c2", word: "ল'ৰা-ছোৱালী", reading: "lorā-suwāli", kind: "word" }
+  - id: "as-5092"
+    target: "তেওঁৰ ল'ৰা ক'ত?"
+    reading: "teum̐r lorā kot?"
+    ipa: "teʊ̃ɹ loɹa kot"
+    pos: "phrase"
+    bases:
+      - { word: "তেওঁৰ", ref: "as-2190" }
+      - { word: "ল'ৰা", ref: "as-0184" }
+      - { word: "ক'ত", ref: "as-0145" }
+    confusables:
+      - { id: "c1", word: "ছোৱালী", reading: "suwāli", kind: "word" }
+      - { id: "c2", word: "সিহঁতৰ", reading: "sihôm̐tôr", kind: "word" }
+  - id: "as-5093"
+    target: "তোমাৰ ভাই-ককাই আছে নেকি?"
+    reading: "tumār bhāi-kôkāi āse neki?"
+    ipa: "tʊmaɹ bʱaikɔkai ase neki"
+    pos: "phrase"
+    bases:
+      - { word: "তোমাৰ", ref: "as-2188" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+      - { word: "নেকি", ref: "as-0151" }
+    confusables:
+      - { id: "c1", word: "বাই", reading: "bāi", kind: "word" }
+      - { id: "c2", word: "ঘৈণী", reading: "ghôini", kind: "word" }

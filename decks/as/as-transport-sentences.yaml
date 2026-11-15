@@ -1,0 +1,151 @@
+schema: 1
+id: "as-transport-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-5554"
+    target: "মই বাছত যাওঁ।"
+    reading: "moi bāsôt zāum̐."
+    ipa: "moi basɔt zaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "বাছত", base: "বাছ", reading: "bās" }
+      - { word: "যাওঁ", base: "যোৱা", reading: "zuwā" }
+    confusables:
+      - { id: "c1", word: "টেক্সি", reading: "teksi", kind: "word" }
+      - { id: "c2", word: "ৰিক্সা", reading: "riksā", kind: "word" }
+  - id: "as-5555"
+    target: "সি অটোত যায়।"
+    reading: "si ôtot zāy."
+    ipa: "si ɔtot zaj"
+    pos: "phrase"
+    bases:
+      - { word: "সি", ref: "as-2180" }
+      - { word: "অটোত", base: "অটো", reading: "ôto" }
+      - { word: "যায়", base: "যোৱা", reading: "zuwā" }
+    confusables:
+      - { id: "c1", word: "নাও", reading: "nāo", kind: "word" }
+      - { id: "c2", word: "বাছ", reading: "bās", kind: "word" }
+  - id: "as-5556"
+    target: "তেওঁ টেক্সি লয়।"
+    reading: "teum̐ teksi lôy."
+    ipa: "teʊ̃ teksi lɔj"
+    pos: "phrase"
+    bases:
+      - { word: "তেওঁ", ref: "as-2181" }
+      - { word: "টেক্সি", ref: "as-0300" }
+      - { word: "লয়", base: "লোৱা", reading: "luwā" }
+    confusables:
+      - { id: "c1", word: "ৰিক্সা", reading: "riksā", kind: "word" }
+      - { id: "c2", word: "অটো", reading: "ôto", kind: "word" }
+  - id: "as-5557"
+    target: "মই ষ্টেচনলৈ যাওঁ।"
+    reading: "moi stesônôlôi zāum̐."
+    ipa: "moi stesɔnɔlɔi zaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "ষ্টেচনলৈ", base: "ষ্টেচন", reading: "stesôn" }
+      - { word: "যাওঁ", base: "যোৱা", reading: "zuwā" }
+    confusables:
+      - { id: "c1", word: "নাও", reading: "nāo", kind: "word" }
+      - { id: "c2", word: "বাছ", reading: "bās", kind: "word" }
+  - id: "as-5558"
+    target: "মোক এটা টিকট দিয়ক।"
+    reading: "muk etā tikôt diyôk."
+    ipa: "mʊk eta tikɔt dijɔk"
+    pos: "phrase"
+    bases:
+      - { word: "মোক", ref: "as-2198" }
+      - { word: "এটা", ref: "as-2258" }
+      - { word: "টিকট", ref: "as-0308" }
+      - { word: "দিয়ক", base: "দিয়া", reading: "diyā" }
+    confusables:
+      - { id: "c1", word: "ছিট", reading: "sit", kind: "word" }
+      - { id: "c2", word: "ভাড়া", reading: "bhārā", kind: "word" }
+  - id: "as-5559"
+    target: "ছিট খালী আছে।"
+    reading: "sit khāli āse."
+    ipa: "sit kʰali ase"
+    pos: "phrase"
+    bases:
+      - { word: "ছিট", ref: "as-0309" }
+      - { word: "খালী", ref: "as-0311" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "ভিৰ", reading: "bhir", kind: "word" }
+      - { id: "c2", word: "ভৰা", reading: "bhôrā", kind: "word" }
+  - id: "as-5560"
+    target: "বাছত বেছি ভিৰ।"
+    reading: "bāsôt besi bhir."
+    ipa: "basɔt besi bʱiɹ"
+    pos: "phrase"
+    bases:
+      - { word: "বাছত", base: "বাছ", reading: "bās" }
+      - { word: "বেছি", ref: "as-2248" }
+      - { word: "ভিৰ", ref: "as-0310" }
+    confusables:
+      - { id: "c1", word: "খালী", reading: "khāli", kind: "word" }
+      - { id: "c2", word: "ছিট", reading: "sit", kind: "word" }
+  - id: "as-5561"
+    target: "ৰিক্সাৰ ভাড়া কিমান?"
+    reading: "riksār bhārā kimān?"
+    ipa: "ɹiksaɹ bʱaɹa kiman"
+    pos: "phrase"
+    bases:
+      - { word: "ৰিক্সাৰ", base: "ৰিক্সা", reading: "riksā" }
+      - { word: "ভাড়া", ref: "as-0302" }
+      - { word: "কিমান", ref: "as-0149" }
+    confusables:
+      - { id: "c1", word: "টেক্সি", reading: "teksi", kind: "word" }
+      - { id: "c2", word: "বাছ", reading: "bās", kind: "word" }
+  - id: "as-5562"
+    target: "ইয়াতে ৰখক।"
+    reading: "iyāte rôkhôk."
+    ipa: "ijate ɹɔkʰɔk"
+    pos: "phrase"
+    bases:
+      - { word: "ইয়াতে", base: "ইয়াত", reading: "iyāt" }
+      - { word: "ৰখক", base: "ৰখা", reading: "rôkhā" }
+    confusables:
+      - { id: "c1", word: "ষ্টেচন", reading: "stesôn", kind: "word" }
+      - { id: "c2", word: "টিকট", reading: "tikôt", kind: "word" }
+  - id: "as-5563"
+    target: "মই নাওত যাওঁ।"
+    reading: "moi nāot zāum̐."
+    ipa: "moi naot zaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "নাওত", base: "নাও", reading: "nāo" }
+      - { word: "যাওঁ", base: "যোৱা", reading: "zuwā" }
+    confusables:
+      - { id: "c1", word: "বাছ", reading: "bās", kind: "word" }
+      - { id: "c2", word: "টেক্সি", reading: "teksi", kind: "word" }
+  - id: "as-5564"
+    target: "টিকটৰ দাম কিমান?"
+    reading: "tikôtôr dām kimān?"
+    ipa: "tikɔtɔɹ dam kiman"
+    pos: "phrase"
+    bases:
+      - { word: "টিকটৰ", base: "টিকট", reading: "tikôt" }
+      - { word: "দাম", ref: "as-0268" }
+      - { word: "কিমান", ref: "as-0149" }
+    confusables:
+      - { id: "c1", word: "ভাড়া", reading: "bhārā", kind: "word" }
+      - { id: "c2", word: "টকা", reading: "tôkā", kind: "word" }
+  - id: "as-5565"
+    target: "ষ্টেচন ক'ত?"
+    reading: "stesôn kot?"
+    ipa: "stesɔn kot"
+    pos: "phrase"
+    bases:
+      - { word: "ষ্টেচন", ref: "as-0307" }
+      - { word: "ক'ত", ref: "as-0145" }
+    confusables:
+      - { id: "c1", word: "বাছ", reading: "bās", kind: "word" }
+      - { id: "c2", word: "টিকট", reading: "tikôt", kind: "word" }

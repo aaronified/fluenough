@@ -1,0 +1,79 @@
+schema: 1
+id: "as-en-time-sentences"
+kind: "layer"
+core: "as-time-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Time and days: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-5305":
+    native: "Today is Monday."
+    confusables:
+      "c1": { why: "Tuesday, the next day." }
+      "c2": { why: "Sunday, a different day." }
+  "as-5306":
+    native: "Tomorrow is Friday."
+    confusables:
+      "c1": { why: "Thursday, the day before." }
+      "c2": { why: "Saturday, the day after." }
+  "as-5307":
+    native: "Yesterday was good."
+    bases:
+      "ভাল": "good"
+      "আছিল": "was (past of to be)"
+    confusables:
+      "c1": { why: "Today, a different day." }
+      "c2": { why: "Tomorrow, a different day." }
+  "as-5308":
+    native: "It is cold now."
+    bases:
+      "শীত": "cold; winter"
+    confusables:
+      "c1": { why: "Morning, a different time." }
+      "c2": { why: "Evening, a different time." }
+  "as-5309":
+    native: "The morning is good."
+    bases:
+      "ভাল": "good"
+    confusables:
+      "c1": { why: "Evening, the opposite time." }
+      "c2": { why: "Midday, a different time." }
+  "as-5310":
+    native: "I eat breakfast in the morning."
+    bases:
+      "জলপান": "breakfast; snack"
+      "খাওঁ": "eat (I eat)"
+    confusables:
+      "c1": { why: "Evening, a different time." }
+      "c2": { why: "Today, a different word." }
+  "as-5311":
+    native: "It is very hot at midday."
+    bases:
+      "তাপ": "heat"
+    confusables:
+      "c1": { why: "Evening, a different time." }
+      "c2": { why: "Night, a different time." }
+  "as-5312":
+    native: "In the evening I am at home."
+    bases:
+      "ঘৰত": "at home"
+    confusables:
+      "c1": { why: "Morning, a different time." }
+      "c2": { why: "Midday, a different time." }
+  "as-5313":
+    native: "One week."
+    bases:
+      "সপ্তাহ": "week"
+    confusables:
+      "c1": { why: "Day, a smaller unit." }
+      "c2": { why: "O'clock, a different unit." }
+  "as-5314":
+    native: "Today is hotter than yesterday."
+    bases:
+      "কালিতকৈ": "yesterday; than yesterday"
+      "গৰম": "hot"
+    confusables:
+      "c1": { why: "Much, a different word." }
+      "c2": { why: "Very, close in meaning." }
