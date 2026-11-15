@@ -63,6 +63,7 @@ alphabet:
   - "te-script-vowel-signs"
   - "te-script-conjuncts"
   - "te-script-digits"
+  - "te-script-archaic"
   - "te-spelling"
   - "te-reading-diddubatu"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
@@ -635,7 +636,7 @@ units:
       - { id: "formal-letter", text: { "en": "A formal letter and its closing" } }
     milestone: "B1"
   # After B1: spelling, and the first reader.
-  - ["te-spelling"]
+  - ["te-spelling", "te-script-archaic"]
   - ["te-reading-diddubatu"]
   # The phonology decks (owner, 2026-10-26: "add the language level IPA decks"):
   # optional, for learners who know the IPA or want to learn it. The path has no
