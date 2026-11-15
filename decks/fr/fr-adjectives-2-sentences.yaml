@@ -1,0 +1,155 @@
+schema: 1
+id: "fr-adjectives-2-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-3600"
+    target: "La chambre est lumineuse et calme."
+    ipa: "la ʃɑ̃bʁ ɛ lyminøz e kalm"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "chambre", ref: "fr-0998" }
+      - { word: "est", base: "être" }
+      - { word: "lumineuse", base: "lumineux" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "calme", ref: "fr-0433" }
+    confusables:
+      - { id: "sombre", ref: "fr-3561", kind: "word" }
+      - { id: "obscur", ref: "fr-3588", kind: "word" }
+  - id: "fr-3601"
+    target: "Le couloir est étroit, mais propre."
+    ipa: "lə kulwaʁ ɛt etʁwa mɛ pʁɔpʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "couloir", ref: "fr-1115" }
+      - { word: "est", base: "être" }
+      - { word: "étroit", base: "étroit" }
+      - { word: "mais", ref: "fr-0028" }
+      - { word: "propre", ref: "fr-0427" }
+    confusables:
+      - { id: "large", ref: "fr-3198", kind: "word" }
+      - { id: "spacieux", ref: "fr-3563", kind: "word" }
+  - id: "fr-3602"
+    target: "L'appartement est meublé et confortable."
+    ipa: "lapaʁtəmɑ̃ ɛ mœble e kɔ̃fɔʁtabl"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "L'appartement", base: "appartement" }
+      - { word: "est", base: "être" }
+      - { word: "meublé", base: "meublé" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "confortable", base: "confortable" }
+    confusables:
+      - { id: "renove", ref: "fr-3593", kind: "word" }
+      - { id: "equipe", ref: "fr-3585", kind: "word" }
+  - id: "fr-3603"
+    target: "La cuisine est pratique mais encombrée."
+    ipa: "la kɥizin ɛ pʁatik mɛ ɑ̃kɔ̃bʁe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "cuisine", ref: "fr-0822" }
+      - { word: "est", base: "être" }
+      - { word: "pratique", base: "pratique" }
+      - { word: "mais", ref: "fr-0028" }
+      - { word: "encombrée", base: "encombré" }
+    confusables:
+      - { id: "desordonne", ref: "fr-3571", kind: "word" }
+      - { id: "range", ref: "fr-3570", kind: "word" }
+  - id: "fr-3604"
+    target: "Le salon est clair et spacieux."
+    ipa: "lə salɔ̃ ɛ klɛʁ e spasjø"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "salon", ref: "fr-0999" }
+      - { word: "est", base: "être" }
+      - { word: "clair", ref: "fr-3191" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "spacieux", base: "spacieux" }
+    confusables:
+      - { id: "sombre", ref: "fr-3561", kind: "word" }
+      - { id: "vaste", ref: "fr-3577", kind: "word" }
+  - id: "fr-3605"
+    target: "L'escalier est dangereux, attention."
+    ipa: "lɛskalje ɛ dɑ̃ʒʁø atɑ̃sjɔ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "L'escalier", base: "escalier" }
+      - { word: "est", base: "être" }
+      - { word: "dangereux", base: "dangereux" }
+      - { word: "attention", ref: "fr-1075" }
+    confusables:
+      - { id: "fragile", ref: "fr-3580", kind: "word" }
+      - { id: "solide", ref: "fr-3581", kind: "word" }
+  - id: "fr-3606"
+    target: "La porte est abîmée et usée."
+    ipa: "la pɔʁt ɛt abime e yze"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "porte", ref: "fr-1003" }
+      - { word: "est", base: "être" }
+      - { word: "abîmée", base: "abîmer" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "usée", base: "usé" }
+    confusables:
+      - { id: "casse", ref: "fr-1738", kind: "word" }
+      - { id: "solide", ref: "fr-3581", kind: "word" }
+  - id: "fr-3607"
+    target: "La chambre est douillette et chaleureuse."
+    ipa: "la ʃɑ̃bʁ ɛ dujɛt e ʃalœʁøz"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "chambre", ref: "fr-0998" }
+      - { word: "est", base: "être" }
+      - { word: "douillette", base: "douillet" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "chaleureuse", base: "chaleureux" }
+    confusables:
+      - { id: "confortable", ref: "fr-3562", kind: "word" }
+      - { id: "agreable", ref: "fr-3565", kind: "word" }
+  - id: "fr-3608"
+    target: "Le salon est très éclairé le matin."
+    ipa: "lə salɔ̃ ɛ tʁɛz eklɛʁe lə matɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "salon", ref: "fr-0999" }
+      - { word: "est", base: "être" }
+      - { word: "très", ref: "fr-0031" }
+      - { word: "éclairé", base: "éclairé" }
+      - { word: "matin", ref: "fr-1033" }
+    confusables:
+      - { id: "eteint", ref: "fr-3590", kind: "word" }
+      - { id: "allume", ref: "fr-3591", kind: "word" }
+  - id: "fr-3609"
+    target: "L'appartement est proche du centre."
+    ipa: "lapaʁtəmɑ̃ ɛ pʁɔʃ dy sɑ̃tʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "L'appartement", base: "appartement" }
+      - { word: "est", base: "être" }
+      - { word: "proche", base: "proche" }
+      - { word: "du", base: "de" }
+      - { word: "centre", ref: "fr-0978" }
+    confusables:
+      - { id: "central", ref: "fr-3574", kind: "word" }
+      - { id: "gare", ref: "fr-0075", kind: "word" }

@@ -1,0 +1,576 @@
+schema: 1
+id: "fr-en-phone"
+kind: "layer"
+core: "fr-phone"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Phone and messages"
+license: "CC-BY-SA-4.0"
+description: "Thirty-four words for phones and messages: calls, texts, voicemail, settings and the parts of a phone. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-3320":
+    native: "mobile phone"
+    notes:
+      "n1": "Un portable is a mobile phone; the word is masculine: mon portable."
+    examples:
+      "Mon portable est dans le sac.":
+        native: "My phone is in the bag."
+        bases:
+          "portable": "mobile phone"
+          "est": "is"
+      "Je charge mon portable le soir.":
+        native: "I charge my phone in the evening."
+        bases:
+          "charge": "charge"
+          "portable": "mobile phone"
+  "fr-3321":
+    native: "ringtone, ring"
+    notes:
+      "n1": "La sonnerie is the ring or the ringtone; it is feminine."
+    examples:
+      "La sonnerie est trop forte.":
+        native: "The ringtone is too loud."
+        bases:
+          "sonnerie": "ringtone, ring"
+          "est": "is"
+          "forte": "loud"
+      "J'entends la sonnerie.":
+        native: "I can hear the ring."
+        bases:
+          "J'entends": "hear"
+          "sonnerie": "ringtone, ring"
+  "fr-3322":
+    native: "to hang up"
+    notes:
+      "n1": "Raccrocher is to hang up; the opposite is décrocher."
+    examples:
+      "Je raccroche maintenant.":
+        native: "I am hanging up now."
+        bases:
+          "raccroche": "hang up"
+      "Elle raccroche vite.":
+        native: "She hangs up quickly."
+        bases:
+          "raccroche": "hangs up"
+  "fr-3323":
+    native: "to pick up (a phone)"
+    notes:
+      "n1": "Décrocher is to pick up a phone; it is the opposite of raccrocher."
+    examples:
+      "Décroche, s'il te plaît !":
+        native: "Pick up, please!"
+        bases:
+          "Décroche": "pick up"
+          "s'il": "if"
+          "te": "you"
+          "plaît": "please"
+      "Il ne décroche jamais.":
+        native: "He never answers."
+        bases:
+          "ne": "not"
+          "décroche": "answers"
+  "fr-3324":
+    native: "answering machine"
+    notes:
+      "n1": "Un répondeur is an answering machine; it is masculine."
+    examples:
+      "Laisse un message sur le répondeur.":
+        native: "Leave a message on the answering machine."
+        bases:
+          "Laisse": "leave"
+          "répondeur": "answering machine"
+      "Le répondeur est plein.":
+        native: "The answering machine is full."
+        bases:
+          "répondeur": "answering machine"
+          "est": "is"
+  "fr-3325":
+    native: "beep"
+    notes:
+      "n1": "Un bip is a beep; it is masculine."
+    examples:
+      "J'entends un bip.":
+        native: "I hear a beep."
+        bases:
+          "J'entends": "hear"
+          "bip": "beep"
+      "Attends le bip, puis parle.":
+        native: "Wait for the beep, then speak."
+        bases:
+          "Attends": "wait"
+          "bip": "beep"
+          "parle": "speak"
+  "fr-3326":
+    native: "notification, alert"
+    notes:
+      "n1": "Une notification is an alert on the phone; it is feminine."
+    examples:
+      "J'ai une notification de ma banque.":
+        native: "I have a notification from my bank."
+        bases:
+          "J'ai": "have"
+          "notification": "notification, alert"
+          "de": "from"
+      "Je coupe les notifications la nuit.":
+        native: "I turn off notifications at night."
+        bases:
+          "coupe": "turn off"
+          "notifications": "notification, alert"
+  "fr-3327":
+    native: "signal"
+    notes:
+      "n1": "Le signal is the mobile signal; it is masculine."
+    examples:
+      "Il n'y a pas de signal ici.":
+        native: "There is no signal here."
+        bases:
+          "n'y": "there"
+          "a": "is"
+          "pas": "not"
+          "de": "of"
+          "signal": "signal"
+      "Le signal est faible dans le train.":
+        native: "The signal is weak on the train."
+        bases:
+          "signal": "signal"
+          "est": "is"
+  "fr-3328":
+    native: "contact, saved name"
+    notes:
+      "n1": "Un contact is a name saved in your phone; it is masculine."
+    examples:
+      "J'enregistre un nouveau contact.":
+        native: "I save a new contact."
+        bases:
+          "J'enregistre": "save"
+          "contact": "contact, saved name"
+      "Ce contact est dans mon portable.":
+        native: "This contact is in my phone."
+        bases:
+          "contact": "contact, saved name"
+          "est": "is"
+  "fr-3329":
+    native: "phone plan"
+    notes:
+      "n1": "Un forfait is a phone plan or package; it is masculine."
+    examples:
+      "Mon forfait coûte cher.":
+        native: "My phone plan is expensive."
+        bases:
+          "forfait": "phone plan"
+          "coûte": "costs"
+      "Je change de forfait ce mois.":
+        native: "I am changing my phone plan this month."
+        bases:
+          "change": "change"
+          "de": "of"
+          "forfait": "phone plan"
+  "fr-3330":
+    native: "to recharge"
+    notes:
+      "n1": "Recharger is to recharge; the noun is la recharge."
+    examples:
+      "Je recharge mon téléphone.":
+        native: "I recharge my phone."
+        bases:
+          "recharge": "recharge"
+      "Il faut recharger le portable.":
+        native: "The phone needs recharging."
+        bases:
+          "faut": "need"
+          "recharger": "recharge"
+  "fr-3331":
+    native: "wifi"
+    notes:
+      "n1": "Le wifi is the wifi; it is masculine."
+    examples:
+      "Le wifi marche ici.":
+        native: "The wifi works here."
+        bases:
+          "wifi": "wifi"
+          "marche": "works"
+      "Je me connecte au wifi.":
+        native: "I connect to the wifi."
+        bases:
+          "me": "me"
+          "connecte": "connect"
+          "au": "at the"
+          "wifi": "wifi"
+  "fr-3332":
+    native: "app"
+    notes:
+      "n1": "Une appli is the short, informal word for an app; it is feminine."
+    examples:
+      "J'ai téléchargé une appli.":
+        native: "I have downloaded an app."
+        bases:
+          "J'ai": "have"
+          "téléchargé": "downloaded"
+          "appli": "app"
+      "Cette appli est gratuite.":
+        native: "This app is free."
+        bases:
+          "appli": "app"
+          "est": "is"
+          "gratuite": "free"
+  "fr-3333":
+    native: "to block"
+    notes:
+      "n1": "Bloquer is to block; the noun is un blocage."
+    examples:
+      "Je bloque ce numéro.":
+        native: "I block this number."
+        bases:
+          "bloque": "block"
+      "Il bloque les appels.":
+        native: "He blocks the calls."
+        bases:
+          "bloque": "blocks"
+          "appels": "calls"
+  "fr-3334":
+    native: "to erase, to delete"
+    notes:
+      "n1": "Effacer is to erase or delete: j'efface, nous effaçons."
+    examples:
+      "J'efface le message.":
+        native: "I delete the message."
+        bases:
+          "J'efface": "delete"
+      "Efface les photos.":
+        native: "Delete the photos."
+        bases:
+          "Efface": "delete"
+          "photos": "photos"
+  "fr-3335":
+    native: "to wait, to hold"
+    notes:
+      "n1": "Patienter is to wait, often on the phone: patientez, s'il vous plaît."
+    examples:
+      "Patientez un instant, s'il vous plaît.":
+        native: "Please hold for a moment."
+        bases:
+          "Patientez": "wait"
+          "instant": "moment"
+          "s'il": "if"
+          "plaît": "please"
+      "Il faut patienter longtemps.":
+        native: "You have to wait a long time."
+        bases:
+          "faut": "need"
+          "patienter": "wait"
+  "fr-3336":
+    native: "headphones, headset"
+    notes:
+      "n1": "Un casque is headphones or a helmet; it is masculine."
+    examples:
+      "Je mets mon casque pour écouter.":
+        native: "I put on my headphones to listen."
+        bases:
+          "mets": "put on"
+          "casque": "headphones, headset"
+      "Le casque est sans fil.":
+        native: "The headset is wireless."
+        bases:
+          "casque": "headphones, headset"
+          "est": "is"
+          "fil": "wire"
+  "fr-3337":
+    native: "loudspeaker"
+    notes:
+      "n1": "Un haut-parleur is a loudspeaker; it is masculine, and the plural is haut-parleurs."
+    bases:
+      "parleur": "speaker"
+    examples:
+      "Mets le haut-parleur, s'il te plaît.":
+        native: "Turn on the loudspeaker, please."
+        bases:
+          "parleur": "speaker"
+          "Mets": "put"
+          "s'il": "if"
+          "te": "you"
+          "plaît": "please"
+      "Le son sort du haut-parleur.":
+        native: "The sound comes out of the loudspeaker."
+        bases:
+          "parleur": "speaker"
+          "sort": "comes out"
+          "du": "of the"
+  "fr-3338":
+    native: "microphone"
+    notes:
+      "n1": "Un micro is a microphone; it is informal and masculine."
+    examples:
+      "Le micro ne marche pas.":
+        native: "The microphone does not work."
+        bases:
+          "micro": "microphone"
+          "ne": "not"
+          "marche": "works"
+          "pas": "not"
+      "Parle près du micro.":
+        native: "Speak close to the microphone."
+        bases:
+          "Parle": "speak"
+          "du": "to the"
+          "micro": "microphone"
+  "fr-3339":
+    native: "vibrate setting"
+    notes:
+      "n1": "Le vibreur is the vibrate setting of a phone; it is masculine."
+    examples:
+      "Mets le téléphone sur vibreur.":
+        native: "Put the phone on vibrate."
+        bases:
+          "Mets": "put"
+          "vibreur": "vibrate"
+      "Le vibreur est activé.":
+        native: "Vibrate is switched on."
+        bases:
+          "vibreur": "vibrate setting"
+          "est": "is"
+          "activé": "switched on"
+  "fr-3340":
+    native: "silent, quiet"
+    notes:
+      "n1": "Silencieux means silent; un mode silencieux is silent mode; the feminine is silencieuse."
+    examples:
+      "Mets ton téléphone en mode silencieux.":
+        native: "Put your phone on silent mode."
+        bases:
+          "Mets": "put"
+          "en": "on"
+          "mode": "mode"
+          "silencieux": "silent"
+      "La salle est très silencieuse.":
+        native: "The room is very quiet."
+        bases:
+          "est": "is"
+          "silencieuse": "silent"
+  "fr-3341":
+    native: "messaging, voicemail service"
+    notes:
+      "n1": "La messagerie is the messaging or voicemail service; it is feminine."
+    examples:
+      "J'ouvre la messagerie.":
+        native: "I open the messages."
+        bases:
+          "J'ouvre": "open"
+          "messagerie": "messaging, voicemail service"
+      "Je consulte ma messagerie chaque matin.":
+        native: "I check my messages every morning."
+        bases:
+          "consulte": "check"
+          "messagerie": "messaging, voicemail service"
+  "fr-3342":
+    native: "reception, signal strength"
+    notes:
+      "n1": "La réception is the phone signal strength; it is feminine."
+    examples:
+      "La réception est mauvaise ici.":
+        native: "The reception is poor here."
+        bases:
+          "réception": "reception, signal strength"
+          "est": "is"
+          "mauvaise": "poor"
+      "Il n'y a pas de réception.":
+        native: "There is no reception."
+        bases:
+          "n'y": "there"
+          "a": "is"
+          "pas": "not"
+          "de": "of"
+          "réception": "reception"
+  "fr-3343":
+    native: "digital"
+    notes:
+      "n1": "Numérique means digital; the feminine is numérique too."
+    examples:
+      "Ce livre est numérique.":
+        native: "This book is digital."
+        bases:
+          "est": "is"
+          "numérique": "digital"
+      "Je lis un journal numérique.":
+        native: "I read a digital newspaper."
+        bases:
+          "lis": "read"
+          "numérique": "digital"
+  "fr-3344":
+    native: "voicemail"
+    notes:
+      "n1": "La boîte vocale is the voicemail; it is feminine."
+    bases:
+      "vocale": "voice (adjective)"
+    examples:
+      "Laisse un message dans la boîte vocale.":
+        native: "Leave a message in the voicemail."
+        bases:
+          "Laisse": "leave"
+          "vocale": "voice"
+      "Ma boîte vocale est pleine.":
+        native: "My voicemail is full."
+        bases:
+          "vocale": "voice"
+          "est": "is"
+          "pleine": "full"
+  "fr-3345":
+    native: "voice message"
+    notes:
+      "n1": "Un message vocal is a voice message; it is masculine."
+    bases:
+      "vocal": "voice (adjective)"
+    examples:
+      "Je reçois un message vocal.":
+        native: "I get a voice message."
+        bases:
+          "reçois": "get"
+          "vocal": "voice"
+      "Écoute ce message vocal, il est long.":
+        native: "Listen to this voice message, it is long."
+        bases:
+          "Écoute": "listen"
+          "vocal": "voice"
+          "est": "is"
+  "fr-3346":
+    native: "phone number"
+    notes:
+      "n1": "Un numéro de téléphone is a phone number; it is masculine."
+    bases:
+      "de": "of"
+    examples:
+      "Donne ton numéro de téléphone.":
+        native: "Give me your phone number."
+        bases:
+          "Donne": "give"
+          "de": "of"
+      "Ce numéro de téléphone est faux.":
+        native: "This phone number is wrong."
+        bases:
+          "de": "of"
+          "est": "is"
+          "faux": "wrong"
+  "fr-3347":
+    native: "missed call"
+    notes:
+      "n1": "Un appel manqué is a missed call; it is masculine."
+    examples:
+      "J'ai un appel manqué de ma sœur.":
+        native: "I have a missed call from my sister."
+        bases:
+          "J'ai": "have"
+          "appel": "call"
+          "manqué": "missed"
+          "de": "of"
+      "Il y a trois appels manqués.":
+        native: "There are three missed calls."
+        bases:
+          "y": "there"
+          "a": "has"
+          "appels": "calls"
+          "manqués": "missed"
+  "fr-3348":
+    native: "SIM card"
+    notes:
+      "n1": "Une carte SIM is a SIM card; it is feminine."
+    bases:
+      "SIM": "SIM card"
+    examples:
+      "Ma carte SIM est dans le téléphone.":
+        native: "My SIM card is in the phone."
+        bases:
+          "SIM": "SIM"
+          "est": "is"
+      "Je change la carte SIM à l'étranger.":
+        native: "I change the SIM card when abroad."
+        bases:
+          "change": "change"
+          "SIM": "SIM"
+          "à": "in"
+          "l'étranger": "abroad"
+  "fr-3349":
+    native: "landline"
+    notes:
+      "n1": "Le téléphone fixe is the landline; it is masculine."
+    bases:
+      "fixe": "fixed, landline"
+    examples:
+      "J'appelle sur le téléphone fixe.":
+        native: "I call on the landline."
+        bases:
+          "J'appelle": "call"
+          "fixe": "landline"
+      "Ce téléphone fixe est vieux.":
+        native: "This landline is old."
+        bases:
+          "fixe": "landline"
+          "est": "is"
+  "fr-3350":
+    native: "camera"
+    notes:
+      "n1": "Un appareil photo is a camera; it is masculine."
+    examples:
+      "Un appareil photo est cher.":
+        native: "A camera is expensive."
+        bases:
+          "appareil": "device"
+          "est": "is"
+      "Mon appareil photo est neuf.":
+        native: "My camera is new."
+        bases:
+          "appareil": "camera"
+          "est": "is"
+  "fr-3351":
+    native: "attachment"
+    notes:
+      "n1": "Une pièce jointe is an attachment to an email; it is feminine."
+    bases:
+      "jointe": "attached"
+    examples:
+      "Il y a une pièce jointe dans le message.":
+        native: "There is an attachment in the message."
+        bases:
+          "y": "there"
+          "a": "has"
+          "pièce": "piece"
+          "jointe": "attached"
+      "J'ouvre la pièce jointe.":
+        native: "I open the attachment."
+        bases:
+          "J'ouvre": "open"
+          "pièce": "attachment"
+          "jointe": "attached"
+  "fr-3352":
+    native: "to leave a message"
+    notes:
+      "n1": "Laisser un message is to leave a message; the verb is laisser."
+    bases:
+      "laisser": "to leave"
+    examples:
+      "Je laisse un message.":
+        native: "I leave a message."
+        bases:
+          "laisse": "leave"
+      "Vous pouvez laisser un message après le bip.":
+        native: "You can leave a message after the beep."
+        bases:
+          "pouvez": "can"
+          "laisser": "leave"
+  "fr-3353":
+    native: "touchscreen"
+    notes:
+      "n1": "Un écran tactile is a touchscreen; it is masculine."
+    bases:
+      "tactile": "touch (adjective)"
+    examples:
+      "L'écran tactile est cassé.":
+        native: "The touchscreen is broken."
+        bases:
+          "L'écran": "screen"
+          "tactile": "touch"
+          "est": "is"
+          "cassé": "broken"
+      "Mon écran tactile est grand.":
+        native: "My touchscreen is big."
+        bases:
+          "tactile": "touch"
+          "est": "is"

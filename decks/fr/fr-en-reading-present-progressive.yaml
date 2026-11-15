@@ -1,0 +1,79 @@
+schema: 1
+id: "fr-en-reading-present-progressive"
+name: "Reading: being in the middle of doing something (en train de)"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts, one heard and one read, using being in the middle of doing something (en train de) with the words taught up to this unit. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-right-now"
+    title: "Right now"
+    theme: "daily-life"
+    sentences:
+      - text: "Je suis en train de manger."
+        ipa: "ʒə sɥi ɑ̃ tʁɛ də mɑ̃ʒe"
+      - text: "Tu es en train de lire ?"
+        ipa: "ty ɛ ɑ̃ tʁɛ də liʁ"
+      - text: "Il est en train de cuisiner."
+        ipa: "il ɛ ɑ̃ tʁɛ də kɥizine"
+      - text: "Vous êtes en train d'écouter."
+        ipa: "vuz ɛt ɑ̃ tʁɛ dekute"
+    questions:
+      - id: "fr-3810"
+        prompt: { en: "What is the speaker doing?" }
+        options:
+          - { en: "Eating" }
+          - { en: "Sleeping" }
+          - { en: "Driving" }
+        answer: 1
+      - id: "fr-3811"
+        prompt: { en: "What is 'you' doing?" }
+        options:
+          - { en: "Writing" }
+          - { en: "Reading" }
+          - { en: "Sleeping" }
+        answer: 2
+      - id: "fr-3812"
+        prompt: { en: "Who is cooking?" }
+        options:
+          - { en: "We" }
+          - { en: "He" }
+          - { en: "They" }
+        answer: 2
+  - id: "fr-busy-messages"
+    title: "Busy messages"
+    theme: "work"
+    sentences:
+      - text: "Désolé, je suis en train de travailler."
+        ipa: "dezɔle ʒə sɥi ɑ̃ tʁɛ də tʁavaje"
+      - text: "Elle est en train de manger au bureau."
+        ipa: "ɛl ɛ ɑ̃ tʁɛ də mɑ̃ʒe o byʁo"
+      - text: "Nous sommes en train de boire un thé."
+        ipa: "nu sɔm ɑ̃ tʁɛ də bwaʁ œ̃ te"
+      - text: "Ils sont en train de parler."
+        ipa: "il sɔ̃ ɑ̃ tʁɛ də paʁle"
+    questions:
+      - id: "fr-3813"
+        prompt: { en: "Why can't the first person talk?" }
+        options:
+          - { en: "They are sleeping" }
+          - { en: "They are travelling" }
+          - { en: "They are working" }
+        answer: 3
+      - id: "fr-3814"
+        prompt: { en: "Where is she eating?" }
+        options:
+          - { en: "At home" }
+          - { en: "At the office" }
+          - { en: "At the shop" }
+        answer: 2
+      - id: "fr-3815"
+        prompt: { en: "What are 'we' drinking?" }
+        options:
+          - { en: "Water" }
+          - { en: "Tea" }
+          - { en: "Milk" }
+        answer: 2

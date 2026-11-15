@@ -1,0 +1,168 @@
+schema: 1
+id: "fr-journey-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-3445"
+    target: "Le contrôleur demande mon billet."
+    ipa: "lə kɔ̃tʁolœʁ dəmɑ̃d mɔ̃ bijɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "contrôleur", base: "contrôleur" }
+      - { word: "demande", base: "demander" }
+      - { word: "mon", ref: "fr-0037" }
+      - { word: "billet", ref: "fr-0856" }
+    confusables:
+      - { id: "conducteur", ref: "fr-3429", kind: "word" }
+      - { id: "guichet", ref: "fr-1973", kind: "word" }
+  - id: "fr-3446"
+    target: "Mon train part à huit heures."
+    ipa: "mɔ̃ tʁɛ̃ paʁ a ɥit œʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Mon", ref: "fr-0037" }
+      - { word: "train", ref: "fr-0076" }
+      - { word: "part", base: "partir" }
+      - { word: "à", base: "à" }
+      - { word: "huit", ref: "fr-0215" }
+      - { word: "heures", base: "heure" }
+    confusables:
+      - { id: "depart", ref: "fr-1915", kind: "word" }
+      - { id: "arrivee", ref: "fr-1916", kind: "word" }
+  - id: "fr-3447"
+    target: "Le quai numéro deux est là-bas."
+    ipa: "lə kɛ nymeʁo dø ɛ laba"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "quai", ref: "fr-0866" }
+      - { word: "numéro", ref: "fr-1070" }
+      - { word: "deux", ref: "fr-0209" }
+      - { word: "est", base: "être" }
+      - { word: "là", ref: "fr-0030" }
+      - { word: "bas", ref: "fr-0424" }
+    confusables:
+      - { id: "voie", ref: "fr-3401", kind: "word" }
+      - { id: "escalier", ref: "fr-1002", kind: "word" }
+  - id: "fr-3448"
+    target: "Il faut composter le billet avant de monter."
+    ipa: "il fo kɔ̃pɔste lə bijɛ avɑ̃ də mɔ̃te"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "faut", base: "falloir" }
+      - { word: "composter", ref: "fr-2195" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "billet", ref: "fr-0856" }
+      - { word: "avant", ref: "fr-0596" }
+      - { word: "de", base: "de" }
+      - { word: "monter", ref: "fr-0516" }
+    confusables:
+      - { id: "valider", ref: "fr-3411", kind: "word" }
+      - { id: "annuler", ref: "fr-3241", kind: "word" }
+  - id: "fr-3449"
+    target: "Le train est en retard de dix minutes."
+    ipa: "lə tʁɛ̃ ɛt ɑ̃ ʁətaʁ də dis minyt"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "train", ref: "fr-0076" }
+      - { word: "est", base: "être" }
+      - { word: "en", base: "en" }
+      - { word: "retard", ref: "fr-0870" }
+      - { word: "de", base: "de" }
+      - { word: "dix", ref: "fr-0217" }
+      - { word: "minutes", base: "minute" }
+    confusables:
+      - { id: "retarder", ref: "fr-3434", kind: "word" }
+      - { id: "annulation", ref: "fr-3405", kind: "word" }
+  - id: "fr-3450"
+    target: "Je réserve une place près de la fenêtre."
+    ipa: "ʒə ʁezɛʁv yn plas pʁɛ də la fənɛtʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "réserve", base: "réserver" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "place", ref: "fr-0901" }
+      - { word: "près", ref: "fr-0464" }
+      - { word: "de", base: "de" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "fenêtre", ref: "fr-1004" }
+    confusables:
+      - { id: "siege", ref: "fr-1920", kind: "word" }
+      - { id: "compartiment", ref: "fr-3402", kind: "word" }
+  - id: "fr-3451"
+    target: "Le billet aller-retour coûte moins cher."
+    ipa: "lə bijɛ aleʁətuʁ kut mwɛ̃ ʃɛʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "billet", ref: "fr-0856" }
+      - { word: "aller", ref: "fr-0286" }
+      - { word: "retour", ref: "fr-3422" }
+      - { word: "coûte", base: "coûter" }
+      - { word: "moins", ref: "fr-0346" }
+      - { word: "cher", ref: "fr-0104" }
+    confusables:
+      - { id: "retour", ref: "fr-3422", kind: "word" }
+      - { id: "supplement", ref: "fr-3406", kind: "word" }
+  - id: "fr-3452"
+    target: "La correspondance est à la gare."
+    ipa: "la kɔʁɛspɔ̃dɑ̃s ɛt a la ɡaʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "correspondance", base: "correspondance" }
+      - { word: "est", base: "être" }
+      - { word: "à", base: "à" }
+      - { word: "gare", ref: "fr-0075" }
+    confusables:
+      - { id: "arret", ref: "fr-0857", kind: "word" }
+      - { id: "voie", ref: "fr-3401", kind: "word" }
+  - id: "fr-3453"
+    target: "Le wagon numéro cinq est complet."
+    ipa: "lə waɡɔ̃ nymeʁo sɛ̃k ɛ kɔ̃plɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "wagon", base: "wagon" }
+      - { word: "numéro", ref: "fr-1070" }
+      - { word: "cinq", ref: "fr-0212" }
+      - { word: "est", base: "être" }
+      - { word: "complet", base: "complet" }
+    confusables:
+      - { id: "compartiment", ref: "fr-3402", kind: "word" }
+      - { id: "plein", ref: "fr-0439", kind: "word" }
+  - id: "fr-3454"
+    target: "Le train est annulé à cause de la grève."
+    ipa: "lə tʁɛ̃ ɛt anyle a koz də la ɡʁɛv"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "train", ref: "fr-0076" }
+      - { word: "est", base: "être" }
+      - { word: "annulé", base: "annuler" }
+      - { word: "à", base: "à" }
+      - { word: "cause", base: "cause" }
+      - { word: "de", base: "de" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "grève", base: "grève" }
+    confusables:
+      - { id: "retard", ref: "fr-0870", kind: "word" }
+      - { id: "annulation", ref: "fr-3405", kind: "word" }

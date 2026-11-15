@@ -1,0 +1,63 @@
+schema: 1
+id: "fr-en-reading-illness"
+name: "Reading: illness"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a phone call about a cold, and a medicine label. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-a-cold-and-a-fever"
+    title: "A cold and a fever"
+    theme: "illness"
+    sentences:
+      - text: "Salut, ça va ? Non, je suis enrhumé depuis lundi."
+      - text: "J'ai mal à la tête et j'ai de la fièvre."
+      - text: "Je prends un cachet et je reste au lit."
+      - text: "Le médecin dit que c'est une grippe, pas grave."
+    questions:
+      - id: "fr-3050"
+        prompt: { en: "What does the speaker have?" }
+        options:
+          - { en: "A cold and a fever" }
+          - { en: "A broken arm" }
+          - { en: "A stomach ache" }
+        answer: 1
+      - id: "fr-3051"
+        prompt: { en: "What is the speaker going to do?" }
+        options:
+          - { en: "Take a tablet and rest" }
+          - { en: "Go to the station" }
+          - { en: "Call a taxi" }
+        answer: 1
+      - id: "fr-3052"
+        prompt: { en: "The doctor says the illness is serious." }
+        answer: false
+  - id: "fr-medicine-label"
+    title: "Medicine label"
+    theme: "illness"
+    sentences:
+      - text: "Cachets contre la douleur et la fièvre."
+      - text: "Prendre un cachet trois fois par jour, pendant les repas."
+      - text: "Ne pas dépasser la dose indiquée."
+      - text: "Consulter un médecin si les symptômes durent. Tenir hors de portée des enfants."
+    questions:
+      - id: "fr-3053"
+        prompt: { en: "How often should you take one tablet?" }
+        options:
+          - { en: "Three times a day" }
+          - { en: "Once a week" }
+          - { en: "Only at night" }
+        answer: 1
+      - id: "fr-3054"
+        prompt: { en: "When should you see a doctor?" }
+        options:
+          - { en: "When the symptoms last" }
+          - { en: "Never" }
+          - { en: "Every morning" }
+        answer: 1
+      - id: "fr-3055"
+        prompt: { en: "The label says to keep the medicine away from children." }
+        answer: true

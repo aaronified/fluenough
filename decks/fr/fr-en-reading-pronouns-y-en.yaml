@@ -1,0 +1,79 @@
+schema: 1
+id: "fr-en-reading-pronouns-y-en"
+name: "Reading: the pronouns y and en"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts, one heard and one read, using the pronouns y and en with the words taught up to this unit. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-how-many-do-you-want"
+    title: "How many do you want"
+    theme: "groceries"
+    sentences:
+      - text: "Vous en voulez combien ?"
+        ipa: "vu zɑ̃ vule kɔ̃bjɛ̃"
+      - text: "J'en prends trois."
+        ipa: "ʒɑ̃ pʁɑ̃ tʁwa"
+      - text: "Il en a deux."
+        ipa: "il ɑ̃n a dø"
+      - text: "Nous en achetons quatre."
+        ipa: "nu zɑ̃n aʃtɔ̃ katʁ"
+    questions:
+      - id: "fr-3840"
+        prompt: { en: "How many does the speaker take?" }
+        options:
+          - { en: "One" }
+          - { en: "Three" }
+          - { en: "Five" }
+        answer: 2
+      - id: "fr-3841"
+        prompt: { en: "How many does 'he' have?" }
+        options:
+          - { en: "Two" }
+          - { en: "Four" }
+          - { en: "None" }
+        answer: 1
+      - id: "fr-3842"
+        prompt: { en: "How many do 'we' buy?" }
+        options:
+          - { en: "Two" }
+          - { en: "Three" }
+          - { en: "Four" }
+        answer: 3
+  - id: "fr-recipe-questions"
+    title: "Recipe questions"
+    theme: "cooking"
+    sentences:
+      - text: "Tu as des oignons ?"
+        ipa: "ty a dez ɔɲɔ̃"
+      - text: "Oui, j'en ai deux."
+        ipa: "wi ʒɑ̃n e dø"
+      - text: "Tu vas au marché demain ?"
+        ipa: "ty va o maʁʃe dəmɛ̃"
+      - text: "Oui, j'y vais."
+        ipa: "wi ʒi vɛ"
+    questions:
+      - id: "fr-3843"
+        prompt: { en: "What does the question ask about?" }
+        options:
+          - { en: "Onions" }
+          - { en: "Oil" }
+          - { en: "Rice" }
+        answer: 1
+      - id: "fr-3844"
+        prompt: { en: "How many does the speaker have?" }
+        options:
+          - { en: "Three" }
+          - { en: "Two" }
+          - { en: "One" }
+        answer: 2
+      - id: "fr-3845"
+        prompt: { en: "Where is 'you' going tomorrow?" }
+        options:
+          - { en: "To school" }
+          - { en: "To the market" }
+          - { en: "To the station" }
+        answer: 2

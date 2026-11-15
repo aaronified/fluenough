@@ -1,0 +1,45 @@
+schema: 1
+id: "fr-grammar-pronoun-en"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["question", "answer"]
+  entries:
+    - lemma: "vouloir"
+      ipa: "vulwaʁ"
+      forms:
+        "question": "Tu veux du pain ?"
+        "answer": "Oui, j'en veux."
+    - lemma: "prendre"
+      ipa: "pʁɑ̃dʁ"
+      forms:
+        "question": "Tu prends du café ?"
+        "answer": "Oui, j'en prends."
+    - lemma: "manger"
+      ipa: "mɑ̃ʒe"
+      forms:
+        "question": "Tu manges des pommes ?"
+        "answer": "Oui, j'en mange."
+    - lemma: "avoir"
+      ipa: "avwaʁ"
+      forms:
+        "question": "Tu as des frères ?"
+        "answer": "Oui, j'en ai deux."
+    - lemma: "acheter"
+      ipa: "aʃte"
+      forms:
+        "question": "Tu achètes des bananes ?"
+        "answer": "Oui, j'en achète quatre."
+    - lemma: "boire"
+      ipa: "bwaʁ"
+      forms:
+        "question": "Tu bois du thé ?"
+        "answer": "Oui, j'en bois."
+    - lemma: "faire"
+      ipa: "fɛʁ"
+      forms:
+        "question": "Tu fais de la salade ?"
+        "answer": "Oui, j'en fais."

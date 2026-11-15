@@ -1,0 +1,23 @@
+schema: 1
+id: "fr-en-grammar-en-train-de"
+kind: "layer"
+core: "fr-grammar-en-train-de"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Being in the middle of doing something: en train de"
+license: "CC-BY-SA-4.0"
+description: "Être en train de plus an infinitive says that someone is doing something right now. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "In the middle of doing"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "je": "I", "tu": "you (informal)", "il-elle": "he or she", "nous": "we", "vous": "you (formal or plural)", "ils-elles": "they" }
+  entries:
+    "manger": "to eat"
+    "boire": "to drink"
+    "lire": "to read"
+    "cuisiner": "to cook"
+    "travailler": "to work"
+    "regarder": "to watch"
+    "ecouter": "to listen"
+    "ecrire": "to write"
+  notes: "Être en train de plus an infinitive says that someone is in the middle of doing something: je suis en train de manger (I am eating right now). Only être changes with the person; en train de and the infinitive never change. De becomes d' before a vowel sound: je suis en train d'écrire. French often uses the plain present where English says 'am eating'; en train de stresses that it is happening at this moment. A form ending in -ant, as in en mangeant, does a different job and comes later."

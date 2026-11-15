@@ -1,0 +1,25 @@
+schema: 1
+id: "fr-en-grammar-passe-compose-etre"
+kind: "layer"
+core: "fr-grammar-passe-compose-etre"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The past with être: verbs of coming and going"
+license: "CC-BY-SA-4.0"
+description: "A few verbs of movement make their past with être, and the participle agrees with the subject: elle est allée. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Passé composé with être"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "je-m": "I (a man)", "je-f": "I (a woman)", "tu-m": "you (a man, informal)", "tu-f": "you (a woman, informal)", "il": "he", "elle": "she", "nous": "we", "vous": "you (formal or plural)", "ils": "they (men or mixed)", "elles": "they (women)" }
+  entries:
+    "aller": "to go"
+    "venir": "to come"
+    "arriver": "to arrive"
+    "partir": "to leave"
+    "entrer": "to enter"
+    "sortir": "to go out"
+    "rester": "to stay"
+    "tomber": "to fall"
+    "monter": "to go up"
+    "descendre": "to go down"
+  notes: "A few verbs of movement and change make the passé composé with the present of être plus a participle, and the participle agrees with the subject like an adjective: il est allé, elle est allée, ils sont allés, elles sont allées. Add -e for a woman and -s for more than one person. So je and tu are written with -e when a woman speaks or is spoken to: je suis allée. Nous and vous accept the masculine or feminine, singular or plural form that fits who is meant; the first one shown is only the commonest. The participles are allé, venu, arrivé, parti, entré, sorti, resté, tombé, monté and descendu. Monter, descendre and sortir take avoir when they have a direct object: elle a sorti la voiture. Reflexive verbs also take être."

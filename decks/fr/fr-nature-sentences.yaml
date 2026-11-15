@@ -1,0 +1,156 @@
+schema: 1
+id: "fr-nature-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-3520"
+    target: "Le ruisseau coule dans la vallée."
+    ipa: "lə ʁɥiso kul dɑ̃ la vale"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "ruisseau", base: "ruisseau" }
+      - { word: "coule", base: "couler" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "vallée", base: "vallée" }
+    confusables:
+      - { id: "riviere", ref: "fr-3480", kind: "word" }
+      - { id: "etang", ref: "fr-3489", kind: "word" }
+  - id: "fr-3521"
+    target: "Les vaches mangent dans le champ."
+    ipa: "le vaʃ mɑ̃ʒ dɑ̃ lə ʃɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Les", ref: "fr-0043" }
+      - { word: "vaches", base: "vache" }
+      - { word: "mangent", base: "manger" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "champ", base: "champ" }
+    confusables:
+      - { id: "prairie", ref: "fr-3508", kind: "word" }
+      - { id: "herbe", ref: "fr-3485", kind: "word" }
+  - id: "fr-3522"
+    target: "Le lac est calme le matin."
+    ipa: "lə lak ɛ kalm lə matɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "lac", base: "lac" }
+      - { word: "est", base: "être" }
+      - { word: "calme", ref: "fr-0433" }
+      - { word: "matin", ref: "fr-1033" }
+    confusables:
+      - { id: "etang", ref: "fr-3489", kind: "word" }
+      - { id: "mer", ref: "fr-1939", kind: "word" }
+  - id: "fr-3523"
+    target: "Une falaise domine la mer."
+    ipa: "yn falɛz dɔmin la mɛʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Une", ref: "fr-0545" }
+      - { word: "falaise", base: "falaise" }
+      - { word: "domine", base: "dominer" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "mer", ref: "fr-1939" }
+    confusables:
+      - { id: "cote", ref: "fr-3514", kind: "word" }
+      - { id: "rocher", ref: "fr-3494", kind: "word" }
+  - id: "fr-3524"
+    target: "Des fleurs poussent dans l'herbe."
+    ipa: "de flœʁ pus dɑ̃ lɛʁb"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Des", ref: "fr-0546" }
+      - { word: "fleurs", base: "fleur" }
+      - { word: "poussent", base: "pousser" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "l'herbe", base: "herbe" }
+    confusables:
+      - { id: "plante", ref: "fr-3518", kind: "word" }
+      - { id: "feuille", ref: "fr-3497", kind: "word" }
+  - id: "fr-3525"
+    target: "Le sentier monte vers la forêt."
+    ipa: "lə sɑ̃tje mɔ̃t vɛʁ la fɔʁɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "sentier", base: "sentier" }
+      - { word: "monte", base: "monter" }
+      - { word: "vers", ref: "fr-0594" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "forêt", ref: "fr-2169" }
+    confusables:
+      - { id: "colline", ref: "fr-3482", kind: "word" }
+      - { id: "pente", ref: "fr-3506", kind: "word" }
+  - id: "fr-3526"
+    target: "L'eau coule sur les rochers."
+    ipa: "lo kul syʁ le ʁɔʃe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "L'eau", base: "eau" }
+      - { word: "coule", base: "couler" }
+      - { word: "sur", ref: "fr-0469" }
+      - { word: "les", ref: "fr-0043" }
+      - { word: "rochers", base: "rocher" }
+    confusables:
+      - { id: "cascade", ref: "fr-3495", kind: "word" }
+      - { id: "vague", ref: "fr-3496", kind: "word" }
+  - id: "fr-3527"
+    target: "Le marais est plein d'oiseaux."
+    ipa: "lə maʁɛ ɛ plɛ̃ dwazo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "marais", base: "marais" }
+      - { word: "est", base: "être" }
+      - { word: "plein", ref: "fr-0439" }
+      - { word: "d'oiseaux", base: "oiseau" }
+    confusables:
+      - { id: "etang", ref: "fr-3489", kind: "word" }
+      - { id: "prairie", ref: "fr-3508", kind: "word" }
+  - id: "fr-3528"
+    target: "Le volcan fume au bord de la mer."
+    ipa: "lə vɔlkɑ̃ fym o bɔʁ də la mɛʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "volcan", base: "volcan" }
+      - { word: "fume", base: "fumer" }
+      - { word: "au", base: "à" }
+      - { word: "bord", base: "bord" }
+      - { word: "de", base: "de" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "mer", ref: "fr-1939" }
+    confusables:
+      - { id: "falaise", ref: "fr-3493", kind: "word" }
+      - { id: "golfe", ref: "fr-3511", kind: "word" }
+  - id: "fr-3529"
+    target: "La racine de l'arbre est profonde."
+    ipa: "la ʁasin də laʁbʁ ɛ pʁɔfɔ̃d"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "racine", base: "racine" }
+      - { word: "de", base: "de" }
+      - { word: "l'arbre", base: "arbre" }
+      - { word: "est", base: "être" }
+      - { word: "profonde", base: "profond" }
+    confusables:
+      - { id: "tronc", ref: "fr-3501", kind: "word" }
+      - { id: "branche", ref: "fr-3498", kind: "word" }

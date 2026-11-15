@@ -1,0 +1,23 @@
+schema: 1
+id: "fr-en-grammar-venir-de"
+kind: "layer"
+core: "fr-grammar-venir-de"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The recent past: venir de plus an infinitive"
+license: "CC-BY-SA-4.0"
+description: "Venir in the present, de and an infinitive says that something has just happened. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Just done"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "je": "I", "tu": "you (informal)", "il-elle": "he or she", "nous": "we", "vous": "you (formal or plural)", "ils-elles": "they" }
+  entries:
+    "manger": "to eat"
+    "finir": "to finish"
+    "partir": "to leave"
+    "acheter": "to buy"
+    "arriver": "to arrive"
+    "appeler": "to call"
+    "ecrire": "to write"
+    "rentrer": "to come home"
+  notes: "Venir in the present, then de and an infinitive, says that something has just happened: je viens de manger (I have just eaten). Only venir changes with the person (je viens, nous venons, ils viennent); de and the infinitive never change. De becomes d' before a vowel sound: je viens d'arriver, je viens d'écrire. It looks back, where aller plus an infinitive looks ahead."

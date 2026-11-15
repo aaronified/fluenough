@@ -1,0 +1,63 @@
+schema: 1
+id: "fr-en-reading-appearance"
+name: "Reading: appearance"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a friend described to someone at the station, and a lost-and-found notice. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-describing-a-friend"
+    title: "Describing a friend"
+    theme: "appearance"
+    sentences:
+      - text: "Tu vas le reconnaître facilement."
+      - text: "Il est grand, mince, et il a des cheveux bruns."
+      - text: "Il porte souvent une moustache et des lunettes."
+      - text: "Il a un sourire gentil."
+    questions:
+      - id: "fr-3210"
+        prompt: { en: "What kind of hair does the friend have?" }
+        options:
+          - { en: "Curly and blond" }
+          - { en: "Brown hair" }
+          - { en: "No hair" }
+        answer: 2
+      - id: "fr-3211"
+        prompt: { en: "What does the friend often wear?" }
+        options:
+          - { en: "A moustache and glasses" }
+          - { en: "A tattoo" }
+          - { en: "Earrings" }
+        answer: 1
+      - id: "fr-3212"
+        prompt: { en: "The friend is tall and thin." }
+        answer: true
+  - id: "fr-lost-and-found-notice"
+    title: "Lost-and-found notice"
+    theme: "appearance"
+    sentences:
+      - text: "Objet trouvé : un sac noir à côté du banc."
+      - text: "Il y a une tache de café sur le côté."
+      - text: "Le sac est petit et un peu usé."
+      - text: "Contactez le bureau de la gare avant 18 heures."
+    questions:
+      - id: "fr-3213"
+        prompt: { en: "Where was the bag found?" }
+        options:
+          - { en: "Next to a bench" }
+          - { en: "In a taxi" }
+          - { en: "On a train" }
+        answer: 1
+      - id: "fr-3214"
+        prompt: { en: "What is on the side of the bag?" }
+        options:
+          - { en: "A coffee stain" }
+          - { en: "A tattoo" }
+          - { en: "A name tag" }
+        answer: 1
+      - id: "fr-3215"
+        prompt: { en: "The bag is big." }
+        answer: false

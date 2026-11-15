@@ -1,0 +1,63 @@
+schema: 1
+id: "fr-en-reading-phone"
+name: "Reading: phone"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a phone call to arrange a meeting, and a few text messages between friends. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-phone-call"
+    title: "A phone call"
+    theme: "phone"
+    sentences:
+      - text: "Allô, c'est Marie. Tu es libre demain ?"
+      - text: "Oui, mais je suis occupée le matin."
+      - text: "Alors, on se voit à midi ?"
+      - text: "D'accord, je te rappelle ce soir."
+    questions:
+      - id: "fr-3364"
+        prompt: { en: "What does the caller ask?" }
+        options:
+          - { en: "If the other person is free tomorrow" }
+          - { en: "For the address" }
+          - { en: "For the price" }
+        answer: 1
+      - id: "fr-3365"
+        prompt: { en: "When will they meet?" }
+        options:
+          - { en: "At noon" }
+          - { en: "In the evening" }
+          - { en: "Tomorrow morning" }
+        answer: 1
+      - id: "fr-3366"
+        prompt: { en: "The speaker is free in the morning." }
+        answer: false
+  - id: "fr-text-messages"
+    title: "Text messages"
+    theme: "phone"
+    sentences:
+      - text: "Salut ! Tu viens au cinéma samedi ?"
+      - text: "Oui, avec plaisir ! À quelle heure ?"
+      - text: "À vingt heures. Je t'envoie le numéro du billet."
+      - text: "Parfait, je te rejoins devant le café."
+    questions:
+      - id: "fr-3367"
+        prompt: { en: "What day is the cinema trip?" }
+        options:
+          - { en: "Saturday" }
+          - { en: "Sunday" }
+          - { en: "Friday" }
+        answer: 1
+      - id: "fr-3368"
+        prompt: { en: "Where will they meet?" }
+        options:
+          - { en: "In front of the café" }
+          - { en: "At the station" }
+          - { en: "At home" }
+        answer: 1
+      - id: "fr-3369"
+        prompt: { en: "One friend sends the ticket number." }
+        answer: true

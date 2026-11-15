@@ -1,0 +1,107 @@
+schema: 1
+id: "fr-en-workplace-sentences"
+kind: "layer"
+core: "fr-workplace-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The workplace sentences"
+license: "CC-BY-SA-4.0"
+description: "Example sentences about the workplace, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-3680":
+    native: "The person in charge signs the contract."
+    bases:
+      "responsable": "person in charge"
+      "signe": "signs"
+    confusables:
+      "employeur": { why: "Employeur is the employer; responsable is the person who is in charge." }
+      "assistant": { why: "Assistant helps a manager; the one who signs is in charge." }
+  "fr-3681":
+    native: "I make a photocopy of the report."
+    bases:
+      "fais": "do"
+      "photocopie": "photocopy"
+      "du": "of the"
+      "rapport": "report"
+    confusables:
+      "copie": { why: "Copie is a copy in general; photocopie is a copy from a machine." }
+      "presentation": { why: "Présentation is a talk for others, not a copy." }
+  "fr-3682":
+    native: "The trainee arrives at nine."
+    bases:
+      "stagiaire": "trainee"
+      "arrive": "arrives"
+      "à": "to, at"
+      "heures": "hours"
+    confusables:
+      "assistant": { why: "Assistant is a helper with a job; stagiaire is a person who is learning." }
+      "employeur": { why: "Employeur is the one who employs; a trainee is not yet hired." }
+  "fr-3683":
+    native: "The meeting starts at ten."
+    bases:
+      "réunion": "meeting"
+      "commence": "starts"
+      "à": "to, at"
+      "heures": "hours"
+    confusables:
+      "presentation": { why: "Présentation is a talk; réunion is the meeting itself." }
+      "bilan": { why: "Bilan is a review of results, not the meeting." }
+  "fr-3684":
+    native: "The boss's email arrived this morning."
+    bases:
+      "mail": "email"
+      "du": "of the"
+      "est": "is"
+      "arrivé": "arrived"
+    confusables:
+      "courrier": { why: "Courrier is post; mail is an electronic message." }
+      "memo": { why: "Mémo is a written note inside the office, not an email." }
+  "fr-3685":
+    native: "The pay is paid on the thirtieth of the month."
+    bases:
+      "paie": "pay"
+      "est": "is"
+      "versée": "paid"
+      "du": "of the"
+    confusables:
+      "bulletin": { why: "Bulletin is the payslip that comes with the pay." }
+      "prime": { why: "Prime is a bonus, extra money, not the regular pay." }
+  "fr-3686":
+    native: "IT has been down since yesterday."
+    bases:
+      "L'informatique": "IT"
+      "est": "is"
+      "en": "in"
+      "depuis": "since, from"
+    confusables:
+      "ordinateur": { why: "Ordinateur is a computer; informatique is the whole field of computers." }
+      "logiciel": { why: "Logiciel is a program; informatique is the whole field." }
+  "fr-3687":
+    native: "The folder is on the director's desk."
+    bases:
+      "classeur": "folder, binder"
+      "est": "is"
+      "du": "of the"
+    confusables:
+      "pochette": { why: "Pochette is a thin folder; classeur is a thicker binder." }
+      "copieur": { why: "Copieur is a copying machine, not a place to keep folders." }
+  "fr-3688":
+    native: "The monthly review is posted on the wall."
+    bases:
+      "bilan": "review"
+      "du": "of the"
+      "est": "is"
+      "affiché": "posted"
+    confusables:
+      "planning": { why: "Planning is a schedule of who works when, not a review." }
+      "rapport": { why: "Rapport is a written report, the document a review is based on." }
+  "fr-3689":
+    native: "The client's form is in the binder."
+    bases:
+      "fiche": "form, record card"
+      "du": "of the"
+      "est": "is"
+      "classeur": "folder, binder"
+    confusables:
+      "dossier": { why: "Dossier is a file or case folder, not a form." }
+      "pochette": { why: "Pochette is a thin folder; classeur is a binder." }

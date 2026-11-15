@@ -1,0 +1,426 @@
+schema: 1
+id: "fr-appearance"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "appearance"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-3160"
+    target: "barbe"
+    ipa: "baʁb"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a une barbe courte.", ipa: "il a yn baʁb kuʁt", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", base: "avoir" }, { word: "une", ref: "fr-0545" }, { word: "barbe", base: "barbe" }, { word: "courte", base: "court" }] }
+      - { target: "Mon père porte la barbe.", ipa: "mɔ̃ pɛʁ pɔʁt la baʁb", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "père", ref: "fr-0165" }, { word: "porte", base: "porter" }, { word: "la", ref: "fr-0544" }, { word: "barbe", base: "barbe" }] }
+  - id: "fr-3161"
+    target: "moustache"
+    ipa: "mustaʃ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a une moustache.", ipa: "il a yn mustaʃ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", base: "avoir" }, { word: "une", ref: "fr-0545" }, { word: "moustache", base: "moustache" }] }
+      - { target: "La moustache lui va bien.", ipa: "la mustaʃ lɥi va bjɛ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "moustache", base: "moustache" }, { word: "lui", ref: "fr-0135" }, { word: "va", base: "aller" }, { word: "bien", ref: "fr-0032" }] }
+  - id: "fr-3162"
+    target: "front"
+    ipa: "fʁɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle a le front haut.", ipa: "ɛl a lə fʁɔ̃ o", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", base: "avoir" }, { word: "le", ref: "fr-0543" }, { word: "front", base: "front" }, { word: "haut", ref: "fr-0423" }] }
+      - { target: "Il a mal au front.", ipa: "il a mal o fʁɔ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", base: "avoir" }, { word: "mal", ref: "fr-0340" }, { word: "au", base: "à" }, { word: "front", base: "front" }] }
+  - id: "fr-3163"
+    target: "menton"
+    ipa: "mɑ̃tɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a un petit menton.", ipa: "il a œ̃ pəti mɑ̃tɔ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", base: "avoir" }, { word: "un", ref: "fr-0208" }, { word: "petit", ref: "fr-0411" }, { word: "menton", base: "menton" }] }
+      - { target: "Elle pose le menton sur la main.", ipa: "ɛl poz lə mɑ̃tɔ̃ syʁ la mɛ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "pose", base: "poser" }, { word: "le", ref: "fr-0543" }, { word: "menton", base: "menton" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "main", ref: "fr-0038" }] }
+  - id: "fr-3164"
+    target: "poids"
+    ipa: "pwa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a perdu du poids.", ipa: "il a pɛʁdy dy pwa", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", base: "avoir" }, { word: "perdu", base: "perdre" }, { word: "du", base: "de" }, { word: "poids", base: "poids" }] }
+      - { target: "Quel est ton poids ?", ipa: "kɛl ɛ tɔ̃ pwa", bases: [{ word: "Quel", ref: "fr-0072" }, { word: "est", base: "être" }, { word: "ton", ref: "fr-0141" }, { word: "poids", base: "poids" }] }
+  - id: "fr-3165"
+    target: "tatouage"
+    ipa: "tatwaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a un tatouage sur le bras.", ipa: "il a œ̃ tatwaʒ syʁ lə bʁa", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", base: "avoir" }, { word: "un", ref: "fr-0208" }, { word: "tatouage", base: "tatouage" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "bras", ref: "fr-0928" }] }
+      - { target: "Ce tatouage est très joli.", ipa: "sə tatwaʒ ɛ tʁɛ ʒɔli", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "tatouage", base: "tatouage" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "joli", ref: "fr-0414" }] }
+  - id: "fr-3166"
+    target: "cicatrice"
+    ipa: "sikatʁis"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle a une cicatrice au genou.", ipa: "ɛl a yn sikatʁis o ʒənu", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", base: "avoir" }, { word: "une", ref: "fr-0545" }, { word: "cicatrice", base: "cicatrice" }, { word: "au", base: "à" }, { word: "genou", ref: "fr-0931" }] }
+      - { target: "La cicatrice est petite.", ipa: "la sikatʁis ɛ pətit", bases: [{ word: "La", ref: "fr-0544" }, { word: "cicatrice", base: "cicatrice" }, { word: "est", base: "être" }, { word: "petite", base: "petit" }] }
+  - id: "fr-3167"
+    target: "ride"
+    ipa: "ʁid"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a des rides autour des yeux.", ipa: "il a de ʁid otuʁ dez jø", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", base: "avoir" }, { word: "des", ref: "fr-0546" }, { word: "rides", base: "ride" }, { word: "autour", ref: "fr-0482" }, { word: "yeux", base: "œil" }] }
+      - { target: "Ma grand-mère a beaucoup de rides.", ipa: "ma ɡʁɑ̃mɛʁ a boku də ʁid", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "grand", ref: "fr-0410" }, { word: "mère", ref: "fr-0166" }, { word: "a", base: "avoir" }, { word: "beaucoup", ref: "fr-0034" }, { word: "de", base: "de" }, { word: "rides", base: "ride" }] }
+  - id: "fr-3168"
+    target: "boucle"
+    ipa: "bukl"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle a de belles boucles.", ipa: "ɛl a də bɛl bukl", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", base: "avoir" }, { word: "de", base: "de" }, { word: "belles", base: "beau" }, { word: "boucles", base: "boucle" }] }
+      - { target: "Elle porte des boucles d'oreilles.", ipa: "ɛl pɔʁt de bukl dɔʁɛj", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "porte", ref: "fr-1003" }, { word: "des", ref: "fr-0546" }, { word: "boucles", base: "boucle" }, { word: "d'oreilles", base: "oreille" }] }
+  - id: "fr-3169"
+    target: "silhouette"
+    ipa: "silwɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je vois une silhouette dans le jardin.", ipa: "ʒə vwa yn silwɛt dɑ̃ lə ʒaʁdɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vois", base: "voir" }, { word: "une", ref: "fr-0545" }, { word: "silhouette", base: "silhouette" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "jardin", ref: "fr-1000" }] }
+      - { target: "Elle a une silhouette mince.", ipa: "ɛl a yn silwɛt mɛ̃s", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", base: "avoir" }, { word: "une", ref: "fr-0545" }, { word: "silhouette", base: "silhouette" }, { word: "mince", ref: "fr-3184" }] }
+  - id: "fr-3170"
+    target: "allure"
+    ipa: "alyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a une bonne allure.", ipa: "il a yn bɔn alyʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", base: "avoir" }, { word: "une", ref: "fr-0545" }, { word: "bonne", base: "bon" }, { word: "allure", base: "allure" }] }
+      - { target: "Elle marche avec une allure rapide.", ipa: "ɛl maʁʃ avɛk yn alyʁ ʁapid", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "marche", base: "marcher" }, { word: "avec", ref: "fr-0590" }, { word: "une", ref: "fr-0545" }, { word: "allure", base: "allure" }, { word: "rapide", ref: "fr-0447" }] }
+  - id: "fr-3171"
+    target: "regard"
+    ipa: "ʁəɡaʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle a un regard doux.", ipa: "ɛl a œ̃ ʁəɡaʁ du", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", base: "avoir" }, { word: "un", ref: "fr-0208" }, { word: "regard", base: "regard" }, { word: "doux", ref: "fr-1337" }] }
+      - { target: "Son regard est sérieux.", ipa: "sɔ̃ ʁəɡaʁ ɛ seʁjø", bases: [{ word: "Son", ref: "fr-0138" }, { word: "regard", base: "regard" }, { word: "est", base: "être" }, { word: "sérieux", ref: "fr-3188" }] }
+  - id: "fr-3172"
+    target: "lèvre"
+    ipa: "lɛvʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ses lèvres sont rouges.", ipa: "se lɛvʁ sɔ̃ ʁuʒ", bases: [{ word: "Ses", base: "son" }, { word: "lèvres", base: "lèvre" }, { word: "sont", base: "être" }, { word: "rouges", base: "rouge" }] }
+      - { target: "Elle pince les lèvres.", ipa: "ɛl pɛ̃s le lɛvʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "pince", base: "pincer" }, { word: "les", ref: "fr-0043" }, { word: "lèvres", base: "lèvre" }] }
+  - id: "fr-3173"
+    target: "sourcil"
+    ipa: "suʁsil"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a des sourcils épais.", ipa: "il a de suʁsil epɛ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", base: "avoir" }, { word: "des", ref: "fr-0546" }, { word: "sourcils", base: "sourcil" }, { word: "épais", base: "épais" }] }
+      - { target: "Elle lève un sourcil.", ipa: "ɛl lɛv œ̃ suʁsil", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "lève", base: "lever" }, { word: "un", ref: "fr-0208" }, { word: "sourcil", base: "sourcil" }] }
+  - id: "fr-3174"
+    target: "coiffure"
+    ipa: "kwafyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle a une nouvelle coiffure.", ipa: "ɛl a yn nuvɛl kwafyʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", base: "avoir" }, { word: "une", ref: "fr-0545" }, { word: "nouvelle", base: "nouveau" }, { word: "coiffure", base: "coiffure" }] }
+      - { target: "Sa coiffure est très belle.", ipa: "sa kwafyʁ ɛ tʁɛ bɛl", bases: [{ word: "Sa", ref: "fr-0627" }, { word: "coiffure", base: "coiffure" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "belle", base: "beau" }] }
+  - id: "fr-3175"
+    target: "teint"
+    ipa: "tɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle a le teint pâle.", ipa: "ɛl a lə tɛ̃ pal", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", base: "avoir" }, { word: "le", ref: "fr-0543" }, { word: "teint", base: "teint" }, { word: "pâle", ref: "fr-3180" }] }
+      - { target: "Il a le teint frais.", ipa: "il a lə tɛ̃ fʁɛ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", base: "avoir" }, { word: "le", ref: "fr-0543" }, { word: "teint", base: "teint" }, { word: "frais", ref: "fr-0753" }] }
+  - id: "fr-3176"
+    target: "chauve"
+    ipa: "ʃov"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon oncle est chauve.", ipa: "mɔ̃n ɔ̃kl ɛ ʃov", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "oncle", ref: "fr-0176" }, { word: "est", base: "être" }, { word: "chauve", base: "chauve" }] }
+      - { target: "Il devient chauve.", ipa: "il dəvjɛ̃ ʃov", bases: [{ word: "Il", ref: "fr-0127" }, { word: "devient", base: "devenir" }, { word: "chauve", base: "chauve" }] }
+  - id: "fr-3177"
+    target: "frisé"
+    ipa: "fʁize"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle a les cheveux frisés.", ipa: "ɛl a le ʃəvø fʁize", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", base: "avoir" }, { word: "les", ref: "fr-0043" }, { word: "cheveux", base: "cheveu" }, { word: "frisés", base: "frisé" }] }
+      - { target: "Sa fille a les cheveux frisés.", ipa: "sa fij a le ʃəvø fʁize", bases: [{ word: "Sa", ref: "fr-0627" }, { word: "fille", ref: "fr-0168" }, { word: "a", base: "avoir" }, { word: "les", ref: "fr-0043" }, { word: "cheveux", base: "cheveu" }, { word: "frisés", base: "frisé" }] }
+  - id: "fr-3178"
+    target: "raide"
+    ipa: "ʁɛd"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ses cheveux sont raides.", ipa: "se ʃəvø sɔ̃ ʁɛd", bases: [{ word: "Ses", ref: "fr-0625" }, { word: "cheveux", base: "cheveu" }, { word: "sont", base: "être" }, { word: "raides", base: "raide" }] }
+      - { target: "Il a les cheveux raides et courts.", ipa: "il a le ʃəvø ʁɛd e kuʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", base: "avoir" }, { word: "les", ref: "fr-0043" }, { word: "cheveux", base: "cheveu" }, { word: "raides", base: "raide" }, { word: "et", ref: "fr-0027" }, { word: "courts", base: "court" }] }
+  - id: "fr-3179"
+    target: "ondulé"
+    ipa: "ɔ̃dyle"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle a les cheveux ondulés.", ipa: "ɛl a le ʃəvø ɔ̃dyle", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", base: "avoir" }, { word: "les", ref: "fr-0043" }, { word: "cheveux", base: "cheveu" }, { word: "ondulés", base: "ondulé" }] }
+      - { target: "Ses cheveux sont ondulés et longs.", ipa: "se ʃəvø sɔ̃ ɔ̃dyle e lɔ̃", bases: [{ word: "Ses", ref: "fr-0625" }, { word: "cheveux", base: "cheveu" }, { word: "sont", base: "être" }, { word: "ondulés", base: "ondulé" }, { word: "et", ref: "fr-0027" }, { word: "longs", base: "long" }] }
+  - id: "fr-3180"
+    target: "pâle"
+    ipa: "pal"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est pâle ce matin.", ipa: "il ɛ pal sə matɛ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", base: "être" }, { word: "pâle", base: "pâle" }, { word: "ce", ref: "fr-0143" }, { word: "matin", ref: "fr-1033" }] }
+      - { target: "Elle a un visage pâle.", ipa: "ɛl a œ̃ vizaʒ pal", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", base: "avoir" }, { word: "un", ref: "fr-0208" }, { word: "visage", ref: "fr-0944" }, { word: "pâle", base: "pâle" }] }
+  - id: "fr-3181"
+    target: "bronzé"
+    ipa: "bʁɔ̃ze"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est bronzé après l'été.", ipa: "il ɛ bʁɔ̃ze apʁɛ lete", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", base: "être" }, { word: "bronzé", base: "bronzé" }, { word: "après", ref: "fr-0595" }, { word: "l'été", base: "été" }] }
+      - { target: "Elle est bronzée.", ipa: "ɛl ɛ bʁɔ̃ze", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", base: "être" }, { word: "bronzée", base: "bronzé" }] }
+  - id: "fr-3182"
+    target: "rond"
+    ipa: "ʁɔ̃"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle a un visage rond.", ipa: "ɛl a œ̃ vizaʒ ʁɔ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", base: "avoir" }, { word: "un", ref: "fr-0208" }, { word: "visage", ref: "fr-0944" }, { word: "rond", base: "rond" }] }
+      - { target: "Il a les yeux ronds.", ipa: "il a lez jø ʁɔ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", base: "avoir" }, { word: "les", ref: "fr-0043" }, { word: "yeux", base: "œil" }, { word: "ronds", base: "rond" }] }
+  - id: "fr-3183"
+    target: "carré"
+    ipa: "kaʁe"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a un visage carré.", ipa: "il a œ̃ vizaʒ kaʁe", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", base: "avoir" }, { word: "un", ref: "fr-0208" }, { word: "visage", ref: "fr-0944" }, { word: "carré", base: "carré" }] }
+      - { target: "Sa mâchoire est carrée.", ipa: "sa maʃwaʁ ɛ kaʁe", bases: [{ word: "Sa", ref: "fr-0627" }, { word: "mâchoire", base: "mâchoire" }, { word: "est", base: "être" }, { word: "carrée", base: "carré" }] }
+  - id: "fr-3184"
+    target: "mince"
+    ipa: "mɛ̃s"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle est mince et grande.", ipa: "ɛl ɛ mɛ̃s e ɡʁɑ̃d", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", base: "être" }, { word: "mince", base: "mince" }, { word: "et", ref: "fr-0027" }, { word: "grande", base: "grand" }] }
+      - { target: "Il est très mince.", ipa: "il ɛ tʁɛ mɛ̃s", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "mince", base: "mince" }] }
+  - id: "fr-3185"
+    target: "gros"
+    ipa: "ɡʁo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le chat est gros.", ipa: "lə ʃa ɛ ɡʁo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chat", ref: "fr-1252" }, { word: "est", base: "être" }, { word: "gros", base: "gros" }] }
+      - { target: "Elle a une grosse tête.", ipa: "ɛl a yn ɡʁɔs tɛt", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", base: "avoir" }, { word: "une", ref: "fr-0545" }, { word: "grosse", base: "gros" }, { word: "tête", ref: "fr-0927" }] }
+  - id: "fr-3186"
+    target: "costaud"
+    ipa: "kɔsto"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon frère est costaud.", ipa: "mɔ̃ fʁɛʁ ɛ kɔsto", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "frère", ref: "fr-0169" }, { word: "est", base: "être" }, { word: "costaud", base: "costaud" }] }
+      - { target: "Elle est costaude.", ipa: "ɛl ɛ kɔstod", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", base: "être" }, { word: "costaude", base: "costaud" }] }
+  - id: "fr-3187"
+    target: "athlétique"
+    ipa: "atletik"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est grand et athlétique.", ipa: "il ɛ ɡʁɑ̃ e atletik", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", base: "être" }, { word: "grand", ref: "fr-0410" }, { word: "et", ref: "fr-0027" }, { word: "athlétique", base: "athlétique" }] }
+      - { target: "Elle est athlétique.", ipa: "ɛl ɛ atletik", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", base: "être" }, { word: "athlétique", base: "athlétique" }] }
+  - id: "fr-3188"
+    target: "sérieux"
+    ipa: "seʁjø"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est sérieux.", ipa: "il ɛ seʁjø", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", base: "être" }, { word: "sérieux", base: "sérieux" }] }
+      - { target: "Elle a un air sérieux.", ipa: "ɛl a œ̃n ɛʁ seʁjø", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", base: "avoir" }, { word: "un", ref: "fr-0208" }, { word: "air", base: "air" }, { word: "sérieux", base: "sérieux" }] }
+  - id: "fr-3189"
+    target: "sympa"
+    ipa: "sɛ̃pa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle est très sympa.", ipa: "ɛl ɛ tʁɛ sɛ̃pa", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "sympa", base: "sympa" }] }
+      - { target: "Mon voisin est sympa.", ipa: "mɔ̃ vwazɛ̃ ɛ sɛ̃pa", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "voisin", ref: "fr-0101" }, { word: "est", base: "être" }, { word: "sympa", base: "sympa" }] }
+  - id: "fr-3190"
+    target: "moche"
+    ipa: "mɔʃ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce sac est moche.", ipa: "sə sak ɛ mɔʃ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "sac", ref: "fr-0485" }, { word: "est", base: "être" }, { word: "moche", base: "moche" }] }
+      - { target: "Il fait un temps moche.", ipa: "il fɛ œ̃ tɑ̃ mɔʃ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "fait", base: "faire" }, { word: "un", ref: "fr-0208" }, { word: "temps", ref: "fr-1040" }, { word: "moche", base: "moche" }] }
+  - id: "fr-3191"
+    target: "clair"
+    ipa: "klɛʁ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle a les yeux clairs.", ipa: "ɛl a lez jø klɛʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", base: "avoir" }, { word: "les", ref: "fr-0043" }, { word: "yeux", base: "œil" }, { word: "clairs", base: "clair" }] }
+      - { target: "Il a la peau claire.", ipa: "il a la po klɛʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", base: "avoir" }, { word: "la", ref: "fr-0544" }, { word: "peau", ref: "fr-0945" }, { word: "claire", base: "clair" }] }
+  - id: "fr-3192"
+    target: "foncé"
+    ipa: "fɔ̃se"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a les cheveux foncés.", ipa: "il a le ʃəvø fɔ̃se", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", base: "avoir" }, { word: "les", ref: "fr-0043" }, { word: "cheveux", base: "cheveu" }, { word: "foncés", base: "foncé" }] }
+      - { target: "Elle a la peau foncée.", ipa: "ɛl a la po fɔ̃se", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", base: "avoir" }, { word: "la", ref: "fr-0544" }, { word: "peau", ref: "fr-0945" }, { word: "foncée", base: "foncé" }] }
+  - id: "fr-3193"
+    target: "blond"
+    ipa: "blɔ̃"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle est blonde.", ipa: "ɛl ɛ blɔ̃d", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", base: "être" }, { word: "blonde", base: "blond" }] }
+      - { target: "Son fils est blond.", ipa: "sɔ̃ fil ɛ blɔ̃", bases: [{ word: "Son", ref: "fr-0138" }, { word: "fils", ref: "fr-0167" }, { word: "est", base: "être" }, { word: "blond", base: "blond" }] }
+  - id: "fr-3194"
+    target: "brun"
+    ipa: "bʁœ̃"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est brun.", ipa: "il ɛ bʁœ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", base: "être" }, { word: "brun", base: "brun" }] }
+      - { target: "Elle est brune et mince.", ipa: "ɛl ɛ bʁyn e mɛ̃s", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", base: "être" }, { word: "brune", base: "brun" }, { word: "et", ref: "fr-0027" }, { word: "mince", ref: "fr-3184" }] }
+  - id: "fr-3195"
+    target: "roux"
+    ipa: "ʁu"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon cousin est roux.", ipa: "mɔ̃ kuzɛ̃ ɛ ʁu", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "cousin", ref: "fr-0178" }, { word: "est", base: "être" }, { word: "roux", base: "roux" }] }
+      - { target: "Elle est rousse.", ipa: "ɛl ɛ ʁus", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", base: "être" }, { word: "rousse", base: "roux" }] }
+  - id: "fr-3196"
+    target: "châtain"
+    ipa: "ʃatɛ̃"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle a les cheveux châtains.", ipa: "ɛl a le ʃəvø ʃatɛ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", base: "avoir" }, { word: "les", ref: "fr-0043" }, { word: "cheveux", base: "cheveu" }, { word: "châtains", base: "châtain" }] }
+      - { target: "Il est châtain.", ipa: "il ɛ ʃatɛ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", base: "être" }, { word: "châtain", base: "châtain" }] }
+  - id: "fr-3197"
+    target: "musclé"
+    ipa: "myskle"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est musclé.", ipa: "il ɛ myskle", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", base: "être" }, { word: "musclé", base: "musclé" }] }
+      - { target: "Elle a les bras musclés.", ipa: "ɛl a le bʁa myskle", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", base: "avoir" }, { word: "les", ref: "fr-0043" }, { word: "bras", ref: "fr-0928" }, { word: "musclés", base: "musclé" }] }
+  - id: "fr-3198"
+    target: "large"
+    ipa: "laʁʒ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a les épaules larges.", ipa: "il a lez epol laʁʒ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", base: "avoir" }, { word: "les", ref: "fr-0043" }, { word: "épaules", base: "épaule" }, { word: "larges", base: "large" }] }
+      - { target: "La porte est large.", ipa: "la pɔʁt ɛ laʁʒ", bases: [{ word: "La", ref: "fr-0544" }, { word: "porte", ref: "fr-1003" }, { word: "est", base: "être" }, { word: "large", base: "large" }] }
+  - id: "fr-3199"
+    target: "âgé"
+    ipa: "aʒe"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon grand-père est âgé.", ipa: "mɔ̃ ɡʁɑ̃pɛʁ ɛ aʒe", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "grand", ref: "fr-0410" }, { word: "père", ref: "fr-0165" }, { word: "est", base: "être" }, { word: "âgé", base: "âgé" }] }
+      - { target: "Elle est âgée et très gentille.", ipa: "ɛl ɛ aʒe e tʁɛ ʒɑ̃tij", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", base: "être" }, { word: "âgée", base: "âgé" }, { word: "et", ref: "fr-0027" }, { word: "très", ref: "fr-0031" }, { word: "gentille", base: "gentil" }] }

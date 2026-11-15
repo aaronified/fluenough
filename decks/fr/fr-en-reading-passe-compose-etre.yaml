@@ -1,0 +1,79 @@
+schema: 1
+id: "fr-en-reading-passe-compose-etre"
+name: "Reading: the perfect tense with être (passé composé)"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts, one heard and one read, using the perfect tense with être (passé composé) with the words taught up to this unit. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-a-busy-weekend"
+    title: "A busy weekend"
+    theme: "daily-life"
+    sentences:
+      - text: "Samedi, je suis allé au marché."
+        ipa: "samdi ʒə sɥi ale o maʁʃe"
+      - text: "Elle est arrivée à midi."
+        ipa: "ɛl ɛ aʁive a midi"
+      - text: "Nous sommes partis tôt."
+        ipa: "nu sɔm paʁti to"
+      - text: "Ils sont restés à la maison."
+        ipa: "il sɔ̃ ʁɛste a la mɛzɔ̃"
+    questions:
+      - id: "fr-3860"
+        prompt: { en: "What day did the speaker go to the market?" }
+        options:
+          - { en: "Saturday" }
+          - { en: "Sunday" }
+          - { en: "Monday" }
+        answer: 1
+      - id: "fr-3861"
+        prompt: { en: "When did 'she' arrive?" }
+        options:
+          - { en: "At night" }
+          - { en: "At noon" }
+          - { en: "Late" }
+        answer: 2
+      - id: "fr-3862"
+        prompt: { en: "Where did 'they' stay?" }
+        options:
+          - { en: "At the station" }
+          - { en: "At the market" }
+          - { en: "At home" }
+        answer: 3
+  - id: "fr-trip-postcard"
+    title: "Trip postcard"
+    theme: "transport"
+    sentences:
+      - text: "Nous sommes allés en bus au parc."
+        ipa: "nu sɔm ale ɑ̃ bys o paʁk"
+      - text: "Je suis montée dans le train."
+        ipa: "ʒə sɥi mɔ̃te dɑ̃ lə tʁɛ̃"
+      - text: "Je suis descendue à la gare."
+        ipa: "ʒə sɥi desɑ̃dy a la ɡaʁ"
+      - text: "Elle est entrée dans le café."
+        ipa: "ɛl ɛ ɑ̃tʁe dɑ̃ lə kafe"
+    questions:
+      - id: "fr-3863"
+        prompt: { en: "How did 'we' go to the park?" }
+        options:
+          - { en: "By bus" }
+          - { en: "By car" }
+          - { en: "On foot" }
+        answer: 1
+      - id: "fr-3864"
+        prompt: { en: "Who got on the train?" }
+        options:
+          - { en: "The baker" }
+          - { en: "The writer" }
+          - { en: "The driver" }
+        answer: 2
+      - id: "fr-3865"
+        prompt: { en: "Where did the writer get off?" }
+        options:
+          - { en: "At the café" }
+          - { en: "At the station" }
+          - { en: "At school" }
+        answer: 2

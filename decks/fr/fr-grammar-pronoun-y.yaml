@@ -1,0 +1,52 @@
+schema: 1
+id: "fr-grammar-pronoun-y"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["question", "answer"]
+  entries:
+    - lemma: "aller"
+      ipa: "ale"
+      forms:
+        "question": "Tu vas à la gare ?"
+        "answer": "Oui, j'y vais."
+    - lemma: "travailler"
+      ipa: "tʁavaje"
+      forms:
+        "question": "Tu travailles au bureau ?"
+        "answer": "Oui, j'y travaille."
+    - lemma: "rester"
+      ipa: "ʁɛste"
+      forms:
+        "question": "Tu restes à la maison ?"
+        "answer": "Oui, j'y reste."
+    - lemma: "arriver"
+      ipa: "aʁive"
+      forms:
+        "question": "Tu arrives à la gare ?"
+        "answer": "Oui, j'y arrive."
+    - lemma: "répondre"
+      key: "repondre"
+      ipa: "ʁepɔ̃dʁ"
+      forms:
+        "question": "Tu réponds au message ?"
+        "answer": "Oui, j'y réponds."
+    - lemma: "jouer"
+      ipa: "ʒwe"
+      forms:
+        "question": "Tu joues au parc ?"
+        "answer": "Oui, j'y joue."
+    - lemma: "manger"
+      ipa: "mɑ̃ʒe"
+      forms:
+        "question": "Tu manges au restaurant ?"
+        "answer": "Oui, j'y mange."
+    - lemma: "étudier"
+      key: "etudier"
+      ipa: "etydje"
+      forms:
+        "question": "Tu étudies à l'école ?"
+        "answer": "Oui, j'y étudie."

@@ -1,0 +1,79 @@
+schema: 1
+id: "fr-en-reading-imparfait"
+name: "Reading: the imperfect (imparfait)"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts, one heard and one read, using the imperfect (imparfait) with the words taught up to this unit. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-when-i-was-small"
+    title: "When I was small"
+    theme: "family"
+    sentences:
+      - text: "Quand j'étais petit, j'habitais à la campagne."
+        ipa: "kɑ̃ ʒetɛ pəti ʒabite a la kɑ̃paɲ"
+      - text: "Ma mère faisait le pain le samedi."
+        ipa: "ma mɛʁ fəzɛ lə pɛ̃ lə samdi"
+      - text: "Nous allions à l'école à pied."
+        ipa: "nu zalɔ̃ a lekɔl a pje"
+      - text: "Mon père avait un chien."
+        ipa: "mɔ̃ pɛʁ avɛ œ̃ ʃjɛ̃"
+    questions:
+      - id: "fr-3880"
+        prompt: { en: "Where did the speaker live as a child?" }
+        options:
+          - { en: "In the city" }
+          - { en: "In the country" }
+          - { en: "At school" }
+        answer: 2
+      - id: "fr-3881"
+        prompt: { en: "What did the speaker's mother make on Saturdays?" }
+        options:
+          - { en: "Bread" }
+          - { en: "Cakes" }
+          - { en: "Soup" }
+        answer: 1
+      - id: "fr-3882"
+        prompt: { en: "How did the speaker go to school?" }
+        options:
+          - { en: "By car" }
+          - { en: "By bus" }
+          - { en: "On foot" }
+        answer: 3
+  - id: "fr-childhood-note"
+    title: "Childhood note"
+    theme: "school"
+    sentences:
+      - text: "Chaque jour, j'étais en classe avec mes amis."
+        ipa: "ʃak ʒuʁ ʒe tɛ ɑ̃ klas avɛk me zami"
+      - text: "Mes amis et moi, on était toujours ensemble."
+        ipa: "me zami e mwa ɔ̃n etɛ tuʒuʁ ɑ̃sɑ̃bl"
+      - text: "Le soir, nous faisions nos devoirs."
+        ipa: "lə swaʁ nu fəzjɔ̃ no dəvwaʁ"
+      - text: "Nous mangions beaucoup de pommes."
+        ipa: "nu mɑ̃ʒjɔ̃ boku də pɔm"
+    questions:
+      - id: "fr-3883"
+        prompt: { en: "Where was the speaker every day?" }
+        options:
+          - { en: "At home" }
+          - { en: "In class" }
+          - { en: "At the market" }
+        answer: 2
+      - id: "fr-3884"
+        prompt: { en: "Who was the speaker with?" }
+        options:
+          - { en: "Alone" }
+          - { en: "With friends" }
+          - { en: "With a teacher" }
+        answer: 2
+      - id: "fr-3885"
+        prompt: { en: "What did the speaker do in the evening?" }
+        options:
+          - { en: "Homework" }
+          - { en: "Shopping" }
+          - { en: "Cooking" }
+        answer: 1
