@@ -115,3 +115,22 @@
     # needs the Spanish-only test in tools/test_phonetic.py widened first.
     name: "Standard Assamese; no Wiktionary form is taken (rules only)"
     untagged: false
+
+"mr":
+  dump: "Marathi"
+  variety:
+    # Measured on the kaikki.org dump (modified 2026-10-30): of 1,626 narrow
+    # forms, 1,592 carry no note and no tag (the standard) and 34 are tagged
+    # formal or colloquial (the verb-ending pairs -णे and -णə, not taken). The
+    # untagged form is NOT taken (untagged: false, no notes, no tags): it
+    # covers about 9% of the course's words (251 of 2,719 targets) and writes
+    # a different convention from the course's broad `ipa` and rules file
+    # (t͡ɕ ɕ for tʃ ʃ, t͡s for ts, long iː uː, a flap ɾ), and some forms are
+    # wrong (सहा [sa], दहा [d̪ʱa], ऐंशी [əiu.ɕiː]). So nothing is imported
+    # from Wiktionary and every Marathi card gets its narrow form from
+    # decks/mr/mr-phonetics.yaml, in one convention, as Assamese does. Flip
+    # `untagged` to true only together with a `normalise` list (ɕ to ʃ, t͡ɕ to
+    # tʃ, t͡s to ts, drop ː), which needs the Spanish-only test in
+    # tools/test_phonetic.py widened first.
+    name: "Standard Marathi; no Wiktionary form is taken (rules only)"
+    untagged: false
