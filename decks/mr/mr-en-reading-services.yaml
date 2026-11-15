@@ -1,0 +1,54 @@
+schema: 1
+id: "mr-en-reading-services"
+name: "Reading: services"
+kind: "reading"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A simple bank form. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "mr-bank-form"
+    title: "Bank form"
+    sentences:
+      - text: "फॉर्मवर तुमचं नाव लिहा."
+        reading: "phôrmavar tumcam̐ nāv lihā."
+        ipa: "pʰɔrməʋər t̪umtsə̃ naʋ liɦa"
+      - text: "तुमचा पत्ता नीट लिहा."
+        reading: "tumcā pattā niṭ lihā."
+        ipa: "t̪umtsa pət̪t̪a niʈ liɦa"
+      - text: "पिन कोड बरोबर लिहा."
+        reading: "pin koḍ barobar lihā."
+        ipa: "pin koɖ bərobər liɦa"
+      - text: "शेवटी इथे सही करा."
+        reading: "śevṭi ithe sahi karā."
+        ipa: "ʃeʋʈi it̪ʰe səɦi kəra"
+      - text: "फॉर्म बँकेत द्या."
+        reading: "phôrma bam̐ket dyā."
+        ipa: "pʰɔrmə bə̃ket̪ d̪ja"
+    questions:
+      - id: "mr-7021"
+        prompt:
+          en: "What must the reader write on the form?"
+        options:
+        - en: "Their name"
+        - en: "Their favourite food"
+        - en: "Their age"
+        answer: 1
+      - id: "mr-7022"
+        prompt:
+          en: "Where should the form be given?"
+        options:
+        - en: "At the bank"
+        - en: "At a restaurant"
+        - en: "At a school"
+        answer: 1
+      - id: "mr-7023"
+        prompt:
+          en: "Where does the reader sign?"
+        options:
+        - en: "At the end"
+        - en: "At the top"
+        - en: "On the back"
+        answer: 1

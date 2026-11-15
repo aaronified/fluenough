@@ -1,0 +1,54 @@
+schema: 1
+id: "mr-en-reading-history"
+name: "Reading: history"
+kind: "reading"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A museum card about a ruler. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "mr-museum-card"
+    title: "Museum card"
+    sentences:
+      - text: "शिवाजी महाराज हे मराठा राजे होते."
+        reading: "śivāji mahārāj he marāṭhā rāje hote."
+        ipa: "ʃiʋadʒi məɦaradz ɦe məraʈʰa radʒe ɦot̪e"
+      - text: "त्यांनी अनेक किल्ले बांधले."
+        reading: "tyānni anek kille bāndhale."
+        ipa: "t̪janni ənek kille band̪ʱəle"
+      - text: "ते प्रजेची काळजी घेत असत."
+        reading: "te prajeci kāḷji ghet asat."
+        ipa: "t̪e prədʒetʃi kaɭdʒi ɡʱet̪ əsət̪"
+      - text: "हे संग्रहालय त्यांच्या काळातील वस्तू दाखवतं."
+        reading: "he saṅgrahālay tyāñcyā kāḷātil vastu dākhvtam̐."
+        ipa: "ɦe səŋɡrəɦaləj t̪jaɲtʃja kaɭat̪il ʋəst̪u d̪akʰʋt̪ə̃"
+      - text: "हे संग्रहालय सकाळी दहा वाजता उघडतं."
+        reading: "he saṅgrahālay sakāḷi dahā vājtā ughḍtam̐."
+        ipa: "ɦe səŋɡrəɦaləj səkaɭi d̪əɦa ʋadzt̪a uɡʱɖt̪ə̃"
+    questions:
+      - id: "mr-7027"
+        prompt:
+          en: "What did the ruler build?"
+        options:
+        - en: "Forts"
+        - en: "Bridges"
+        - en: "Schools"
+        answer: 1
+      - id: "mr-7028"
+        prompt:
+          en: "What does the museum show?"
+        options:
+        - en: "Things from his time"
+        - en: "New cars"
+        - en: "Modern clothes"
+        answer: 1
+      - id: "mr-7029"
+        prompt:
+          en: "When does the museum open?"
+        options:
+        - en: "At ten in the morning"
+        - en: "At six in the evening"
+        - en: "At noon"
+        answer: 1

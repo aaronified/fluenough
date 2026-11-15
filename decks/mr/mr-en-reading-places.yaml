@@ -1,0 +1,62 @@
+"schema": 1
+"id": "mr-en-reading-places"
+"name": "Reading: places"
+"kind": "reading"
+"language":
+  "code": "mr"
+  "iso639_3": "mar"
+  "name": "Marathi"
+  "script": "devanagari"
+  "tts": "mr-IN"
+  "icon": "म"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"description": "Signs along a street: a pharmacy, a school, a bank and a temple, and where each one is. Not yet checked by a Marathi speaker: please report any mistake."
+"tags":
+- "reading"
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "mr-street-signs"
+  "title": "Street signs"
+  "sentences":
+  - "text": "इथे मेडिकल आहे."
+    "reading": "ithe meḍikal āhe."
+    "ipa": "it̪ʰe meɖikəl aɦe"
+  - "text": "पुढे शाळा आहे."
+    "reading": "puḍhe śāḷā āhe."
+    "ipa": "puɖʱe ʃaɭa aɦe"
+  - "text": "डावीकडे बँक आहे."
+    "reading": "ḍāvikḍe bam̐k āhe."
+    "ipa": "ɖaʋikɖe bə̃k aɦe"
+  - "text": "उजवीकडे मंदिर आहे."
+    "reading": "ujvikḍe mandir āhe."
+    "ipa": "udzʋikɖe mənd̪ir aɦe"
+  - "text": "शाळा मेडिकलच्या जवळ आहे."
+    "reading": "śāḷā meḍiklacyā javaḷ āhe."
+    "ipa": "ʃaɭa meɖiklətʃja dzəʋəɭ aɦe"
+  "questions":
+  - "id": "mr-7203"
+    "prompt":
+      "en": "Where is the bank?"
+    "options":
+    - "en": "On the left"
+    - "en": "On the right"
+    - "en": "Ahead"
+    "answer": 1
+  - "id": "mr-7204"
+    "prompt":
+      "en": "What is ahead?"
+    "options":
+    - "en": "A school"
+    - "en": "A temple"
+    - "en": "A bank"
+    "answer": 1
+  - "id": "mr-7205"
+    "prompt":
+      "en": "The temple is on the left."
+    "answer": false

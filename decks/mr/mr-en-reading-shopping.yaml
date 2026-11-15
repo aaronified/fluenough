@@ -1,0 +1,32 @@
+schema: 1
+id: "mr-en-reading-shopping"
+name: "Reading: price list and offers"
+kind: "reading"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A shop's price list and its offers. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "mr-price-list"
+    title: "Price list and offers"
+    sentences:
+      - { text: "दूध पन्नास रुपये लिटर आहे.", reading: "dudh pannās rupye liṭar āhe.", ipa: "d̪ud̪ʱ pənnas rupje liʈər aɦe" }
+      - { text: "अंडी बारा रुपयांना आहेत.", reading: "aṇḍi bārā rupyānnā āhet.", ipa: "əɳɖi bara rupjanna aɦet̪" }
+      - { text: "पाव दहा रुपयांना आहे.", reading: "pāv dahā rupyānnā āhe.", ipa: "paʋ d̪əɦa rupjanna aɦe" }
+      - { text: "आज पंधरा टक्के सवलत आहे.", reading: "āj pandharā ṭakke savlat āhe.", ipa: "adz pənd̪ʱəra ʈəkke səʋlət̪ aɦe" }
+      - { text: "ही सवलत संध्याकाळपर्यंत आहे.", reading: "hi savlat sandhyākāḷparyant āhe.", ipa: "ɦi səʋlət̪ sənd̪ʱjakaɭpərjənt̪ aɦe" }
+    questions:
+      - id: "mr-7506"
+        prompt: { en: "How much is milk per litre?" }
+        options: [{ en: "Fifty rupees" }, { en: "Twelve rupees" }, { en: "Ten rupees" }]
+        answer: 1
+      - id: "mr-7507"
+        prompt: { en: "What is the discount today?" }
+        options: [{ en: "Ten per cent" }, { en: "Fifteen per cent" }, { en: "Fifty per cent" }]
+        answer: 2
+      - id: "mr-7508"
+        prompt: { en: "Until when is the discount valid?" }
+        options: [{ en: "Until the evening" }, { en: "Until the morning" }, { en: "Until tomorrow" }]
+        answer: 1
