@@ -7,6 +7,8 @@ license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed"]
 cards:
   - id: "es-2673"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     target: "La novia y el novio se casan en la iglesia."
     ipa: "la ˈnobja i el ˈnobjo se ˈkasan en la iˈɡlesja"
     phonetic: "[la ˈnoβja i el ˈnoβjo se ˈkasan en la iˈɣlesja]"
@@ -16,6 +18,8 @@ cards:
     bases: [{ word: "La", base: "la" }, { word: "novia", ref: "es-0175" }, { word: "y", ref: "es-0048" }, { word: "el", base: "el" }, { word: "novio", ref: "es-0174" }, { word: "se", base: "se" }, { word: "casan", base: "casar" }, { word: "en", base: "en" }, { word: "iglesia", ref: "es-0774" }]
     confusables: [{ id: "ceremonia", ref: "es-2661", kind: "word" }, { id: "boda", ref: "es-2651", kind: "word" }]
   - id: "es-2674"
+    notes:
+      - { id: "n1", kind: "usage" }
     target: "El padrino brinda por los novios."
     ipa: "el paˈdɾino ˈbɾinda poɾ los ˈnobjos"
     phonetic: "[el paˈðɾino ˈβɾin̪d̪a poɾ loz ˈnoβjos]"
