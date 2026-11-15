@@ -1,0 +1,285 @@
+schema: 1
+id: "ja-grammar-keigo-kenjougo-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-9460"
+    target: "わたしがおもちします。"
+    words: ["わたし", "が", "おもちします"]
+    reading: "watashi ga omochishimasu."
+    ipa: "wataɕi ɡa omotɕiɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "おもちします", ref: "ja-0359" }
+    confusables:
+      - { id: "w1", ref: "ja-0345", kind: "word" }
+      - { id: "w2", ref: "ja-0346", kind: "word" }
+    rules: ["ja-rule-kenjougo"]
+  - id: "ja-9461"
+    target: "あしたまいります。"
+    words: ["あした", "まいります"]
+    reading: "ashita mairimasu."
+    ipa: "aɕita maiɾimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "あした", ref: "ja-0513" }
+      - { word: "まいります", ref: "ja-0348" }
+    confusables:
+      - { id: "w1", ref: "ja-0346", kind: "word" }
+      - { id: "w2", ref: "ja-0360", kind: "word" }
+    rules: ["ja-rule-kenjougo"]
+  - id: "ja-9462"
+    target: "あしたうかがいます。"
+    words: ["あした", "うかがいます"]
+    reading: "ashita ukagaimasu."
+    ipa: "aɕita ɯkaɡaimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "あした", ref: "ja-0513" }
+      - { word: "うかがいます", ref: "ja-2945" }
+    confusables:
+      - { id: "w1", ref: "ja-0360", kind: "word" }
+      - { id: "w2", ref: "ja-0372", kind: "word" }
+    rules: ["ja-rule-kenjougo"]
+  - id: "ja-9463"
+    target: "でんわでおつたえします。"
+    words: ["でんわ", "で", "おつたえします"]
+    reading: "denwa de otsutaeshimasu."
+    ipa: "deɴwa de otsɯtaeɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "でんわ", ref: "ja-1202" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "おつたえします", ref: "ja-2238" }
+    confusables:
+      - { id: "w1", ref: "ja-0372", kind: "word" }
+      - { id: "w2", ref: "ja-0352", kind: "word" }
+    rules: ["ja-rule-kenjougo"]
+  - id: "ja-9464"
+    target: "しょるいをおおくりします。"
+    words: ["しょるい", "を", "おおくりします"]
+    reading: "shorui o ookurishimasu."
+    ipa: "ɕoɾɯi o oːkɯɾiɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "しょるい", ref: "ja-2984" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "おおくりします", ref: "ja-2241" }
+    confusables:
+      - { id: "w1", ref: "ja-0352", kind: "word" }
+      - { id: "w2", ref: "ja-0353", kind: "word" }
+    rules: ["ja-rule-kenjougo"]
+  - id: "ja-9465"
+    target: "てがみをおとどけします。"
+    words: ["てがみ", "を", "おとどけします"]
+    reading: "tegami o otodokeshimasu."
+    ipa: "teɡami o otodokeɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "てがみ", ref: "ja-1356" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "おとどけします", ref: "ja-2243" }
+    confusables:
+      - { id: "w1", ref: "ja-0353", kind: "word" }
+      - { id: "w2", ref: "ja-0369", kind: "word" }
+    rules: ["ja-rule-kenjougo"]
+  - id: "ja-9466"
+    target: "ほんをおかえしします。"
+    words: ["ほん", "を", "おかえしします"]
+    reading: "hon o okaeshishimasu."
+    ipa: "hoɴ o okaeɕiɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ほん", ref: "ja-1180" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "おかえしします", ref: "ja-0577" }
+    confusables:
+      - { id: "w1", ref: "ja-0369", kind: "word" }
+      - { id: "w2", ref: "ja-0345", kind: "word" }
+    rules: ["ja-rule-kenjougo"]
+  - id: "ja-9467"
+    target: "せんせいにおききします。"
+    words: ["せんせい", "に", "おききします"]
+    reading: "sensei ni okikishimasu."
+    ipa: "seɴseː ni okikiɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "せんせい", ref: "ja-0070" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "おききします", ref: "ja-0344" }
+    confusables:
+      - { id: "w1", ref: "ja-0345", kind: "word" }
+      - { id: "w2", ref: "ja-0346", kind: "word" }
+    rules: ["ja-rule-kenjougo"]
+  - id: "ja-9468"
+    target: "わたしがおおしえします。"
+    words: ["わたし", "が", "おおしえします"]
+    reading: "watashi ga ooshieshimasu."
+    ipa: "wataɕi ɡa oːɕieɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "おおしえします", ref: "ja-0368" }
+    confusables:
+      - { id: "w1", ref: "ja-0346", kind: "word" }
+      - { id: "w2", ref: "ja-0360", kind: "word" }
+    rules: ["ja-rule-kenjougo"]
+  - id: "ja-9469"
+    target: "かいぎしつでおまちします。"
+    words: ["かいぎしつ", "で", "おまちします"]
+    reading: "kaigishitsu de omachishimasu."
+    ipa: "kaiɡiɕitsɯ de omatɕiɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "かいぎしつ", ref: "ja-2575" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "おまちします", ref: "ja-0358" }
+    confusables:
+      - { id: "w1", ref: "ja-0360", kind: "word" }
+      - { id: "w2", ref: "ja-0372", kind: "word" }
+    rules: ["ja-rule-kenjougo"]
+  - id: "ja-9470"
+    target: "あなたにさしあげます。"
+    words: ["あなた", "に", "さしあげます"]
+    reading: "anata ni sashiagemasu."
+    ipa: "anata ni saɕiaɡemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "あなた", ref: "ja-0068" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "さしあげます", ref: "ja-0598" }
+    confusables:
+      - { id: "w1", ref: "ja-0372", kind: "word" }
+      - { id: "w2", ref: "ja-0352", kind: "word" }
+    rules: ["ja-rule-kenjougo"]
+  - id: "ja-9471"
+    target: "それをいただきます。"
+    words: ["それ", "を", "いただきます"]
+    reading: "sore o itadakimasu."
+    ipa: "soɾe o itadakimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "それ", ref: "ja-0662" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "いただきます", ref: "ja-0599" }
+    confusables:
+      - { id: "w1", ref: "ja-0352", kind: "word" }
+      - { id: "w2", ref: "ja-0353", kind: "word" }
+    rules: ["ja-rule-kenjougo"]
+  - id: "ja-9472"
+    target: "あしたおめにかかります。"
+    words: ["あした", "おめにかかります"]
+    reading: "ashita omenikakarimasu."
+    ipa: "aɕita omenikakaɾimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "あした", ref: "ja-0513" }
+      - { word: "おめにかかります", ref: "ja-0357" }
+    confusables:
+      - { id: "w1", ref: "ja-0353", kind: "word" }
+      - { id: "w2", ref: "ja-0369", kind: "word" }
+    rules: ["ja-rule-kenjougo"]
+  - id: "ja-9473"
+    target: "それをはいけんします。"
+    words: ["それ", "を", "はいけんします"]
+    reading: "sore o haikenshimasu."
+    ipa: "soɾe o haikeɴɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "それ", ref: "ja-0662" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "はいけんします", ref: "ja-0343" }
+    confusables:
+      - { id: "w1", ref: "ja-0369", kind: "word" }
+      - { id: "w2", ref: "ja-0345", kind: "word" }
+    rules: ["ja-rule-kenjougo"]
+  - id: "ja-9474"
+    target: "わたしがいたします。"
+    words: ["わたし", "が", "いたします"]
+    reading: "watashi ga itashimasu."
+    ipa: "wataɕi ɡa itaɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "いたします", ref: "ja-0375" }
+    confusables:
+      - { id: "w1", ref: "ja-0345", kind: "word" }
+      - { id: "w2", ref: "ja-0346", kind: "word" }
+    rules: ["ja-rule-kenjougo"]
+  - id: "ja-9475"
+    target: "わたしはぞんじております。"
+    words: ["わたし", "は", "ぞんじております"]
+    reading: "watashi wa zonjiteorimasu."
+    ipa: "wataɕi wa dzoɴdʑiteoɾimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ぞんじております", ref: "ja-0366" }
+    confusables:
+      - { id: "w1", ref: "ja-0346", kind: "word" }
+      - { id: "w2", ref: "ja-0360", kind: "word" }
+    rules: ["ja-rule-kenjougo"]
+  - id: "ja-9476"
+    target: "わたしがおてつだいします。"
+    words: ["わたし", "が", "おてつだいします"]
+    reading: "watashi ga otetsudaishimasu."
+    ipa: "wataɕi ɡa otetsɯdaiɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "おてつだいします", ref: "ja-0580" }
+    confusables:
+      - { id: "w1", ref: "ja-0360", kind: "word" }
+      - { id: "w2", ref: "ja-0372", kind: "word" }
+    rules: ["ja-rule-kenjougo"]
+  - id: "ja-9477"
+    target: "えきでおまちします。"
+    words: ["えき", "で", "おまちします"]
+    reading: "eki de omachishimasu."
+    ipa: "eki de omatɕiɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "えき", ref: "ja-1021" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "おまちします", ref: "ja-0358" }
+    confusables:
+      - { id: "w1", ref: "ja-0372", kind: "word" }
+      - { id: "w2", ref: "ja-0352", kind: "word" }
+    rules: ["ja-rule-kenjougo"]
+  - id: "ja-9478"
+    target: "おきゃくさまにおみせします。"
+    words: ["おきゃくさま", "に", "おみせします"]
+    reading: "okyakusama ni omiseshimasu."
+    ipa: "okjakɯsama ni omiseɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "おきゃくさま", ref: "ja-0138" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "おみせします", ref: "ja-0591" }
+    confusables:
+      - { id: "w1", ref: "ja-0352", kind: "word" }
+      - { id: "w2", ref: "ja-0353", kind: "word" }
+    rules: ["ja-rule-kenjougo"]
+  - id: "ja-9479"
+    target: "しゃちょうにおつたえします。"
+    words: ["しゃちょう", "に", "おつたえします"]
+    reading: "shachou ni otsutaeshimasu."
+    ipa: "ɕatɕoː ni otsɯtaeɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "しゃちょう", ref: "ja-0141" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "おつたえします", ref: "ja-2238" }
+    confusables:
+      - { id: "w1", ref: "ja-0353", kind: "word" }
+      - { id: "w2", ref: "ja-0369", kind: "word" }
+    rules: ["ja-rule-kenjougo"]
