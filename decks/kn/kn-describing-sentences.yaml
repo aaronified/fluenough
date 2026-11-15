@@ -1,0 +1,81 @@
+schema: 1
+id: "kn-describing-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-7392"
+    target: "ಇದು ಸುಲಭ."
+    reading: "idu sulabha."
+    ipa: "id̪u sulabʱa"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ಸುಲಭ", ref: "kn-0717" }
+  - id: "kn-7393"
+    target: "ಇದು ಕಷ್ಟ."
+    reading: "idu kaṣṭa."
+    ipa: "id̪u kaʂʈa"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ಕಷ್ಟ", ref: "kn-0718" }
+  - id: "kn-7394"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    target: "ನಾನು ಹಸಿದಿದ್ದೇನೆ."
+    reading: "nānu hasididdēne."
+    ipa: "naːnu hasid̪id̪d̪eːne"
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", ref: "kn-0610" }
+      - { word: "ಹಸಿದಿದ್ದೇನೆ", base: "ಹಸಿದ", reading: "hasida" }
+  - id: "kn-7395"
+    target: "ಇದು ಎತ್ತರ."
+    reading: "idu ettara."
+    ipa: "id̪u et̪t̪ara"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ಎತ್ತರ", ref: "kn-0719" }
+  - id: "kn-7396"
+    target: "ಅದು ಭಾರ, ಇದು ಹಗುರ."
+    reading: "adu bhāra, idu hagura."
+    ipa: "ad̪u bʱaːra id̪u haɡura"
+    pos: "phrase"
+    bases:
+      - { word: "ಅದು", ref: "kn-0614" }
+      - { word: "ಭಾರ", ref: "kn-0720" }
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ಹಗುರ", ref: "kn-0721" }
+  - id: "kn-7397"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    target: "ಅವಳು ಸಂತೋಷವಾಗಿದ್ದಾಳೆ."
+    reading: "avaḷu santōṣavāgiddāḷe."
+    ipa: "aʋaɭu sant̪oːʂaʋaːɡid̪d̪aːɭe"
+    pos: "phrase"
+    bases:
+      - { word: "ಅವಳು", ref: "kn-0613" }
+      - { word: "ಸಂತೋಷವಾಗಿದ್ದಾಳೆ", base: "ಸಂತೋಷ", reading: "santōṣa" }
+  - id: "kn-7398"
+    target: "ನನಗೆ ಕೋಪ ಬಂದಿದೆ."
+    reading: "nanage kōpa bandide."
+    ipa: "nanaɡe koːpa band̪id̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಕೋಪ", ref: "kn-0726" }
+      - { word: "ಬಂದಿದೆ", base: "ಬಾ", reading: "bā" }
+  - id: "kn-7399"
+    target: "ಇದು ಕಹಿ."
+    reading: "idu kahi."
+    ipa: "id̪u kahi"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ಕಹಿ", ref: "kn-0730" }
