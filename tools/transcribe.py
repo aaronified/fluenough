@@ -2168,6 +2168,7 @@ def _zh_word_ipa(word: str) -> str:
     """The broad IPA of one pinyin word (no spaces), or ValueError."""
     letters: list[str] = []
     tone_at: dict[int, int] = {}
+    word = word.replace("\u2019", "'")
     for ch in unicodedata.normalize("NFD", word.lower()):
         if ch in ZH_TONE_MARKS:
             if not letters:
