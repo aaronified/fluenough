@@ -1,0 +1,32 @@
+schema: 1
+id: "mr-en-reading-grammar-before-after"
+name: "Reading: event day"
+kind: "reading"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A schedule of an event day. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["reading", "intermediate", "unreviewed"]
+passages:
+  - id: "mr-event-schedule"
+    title: "Event day"
+    sentences:
+      - { text: "सकाळी आठ वाजता नोंदणी सुरू होईल.", reading: "sakāḷi āṭh vājtā nondaṇi suru hoil.", ipa: "səkaɭi aʈʰ ʋadzt̪a nond̪əɳi suru ɦoil" }
+      - { text: "नऊ वाजता उद्घाटन होईल.", reading: "nau vājtā udghāṭan hoil.", ipa: "nəu ʋadzt̪a ud̪ɡʱaʈən ɦoil" }
+      - { text: "उद्घाटनानंतर चहा मिळेल.", reading: "udghāṭnānantar cahā miḷel.", ipa: "ud̪ɡʱaʈnanənt̪ər tsəɦa miɭel" }
+      - { text: "दुपारी दोन वाजता कार्यक्रम होईल.", reading: "dupāri don vājtā kāryakram hoil.", ipa: "d̪upari d̪on ʋadzt̪a karjəkrəm ɦoil" }
+      - { text: "कार्यक्रमाच्या आधी जेवण असेल.", reading: "kāryakramācyā ādhi jevaṇ asel.", ipa: "karjəkrəmatʃja ad̪ʱi dʒeʋəɳ əsel" }
+    questions:
+      - id: "mr-7521"
+        prompt: { en: "When does registration start?" }
+        options: [{ en: "8 am" }, { en: "9 am" }, { en: "2 pm" }]
+        answer: 1
+      - id: "mr-7522"
+        prompt: { en: "What is served after the opening?" }
+        options: [{ en: "Lunch" }, { en: "Tea" }, { en: "Dinner" }]
+        answer: 2
+      - id: "mr-7523"
+        prompt: { en: "What is before the programme?" }
+        options: [{ en: "Lunch" }, { en: "Tea" }, { en: "The closing" }]
+        answer: 1

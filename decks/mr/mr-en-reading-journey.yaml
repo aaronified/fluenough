@@ -1,0 +1,62 @@
+"schema": 1
+"id": "mr-en-reading-journey"
+"name": "Reading: the train"
+"kind": "reading"
+"language":
+  "code": "mr"
+  "iso639_3": "mar"
+  "name": "Marathi"
+  "script": "devanagari"
+  "tts": "mr-IN"
+  "icon": "म"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"description": "A train timetable and a platform notice, with the times and a delay. Not yet checked by a Marathi speaker: please report any mistake."
+"tags":
+- "reading"
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "mr-train-timetable"
+  "title": "The train"
+  "sentences":
+  - "text": "ही गाडी पुण्याहून मुंबईला जाते."
+    "reading": "hi gāḍi puṇyāhun mumbailā jāte."
+    "ipa": "ɦi ɡaɖi puɳjaɦun mumbəila dzat̪e"
+  - "text": "गाडी सकाळी सहा वाजता सुटते."
+    "reading": "gāḍi sakāḷi sahā vājtā suṭte."
+    "ipa": "ɡaɖi səkaɭi səɦa ʋadzt̪a suʈt̪e"
+  - "text": "ती दुपारी बारा वाजता मुंबईला पोहोचते."
+    "reading": "ti dupāri bārā vājtā mumbailā pohocte."
+    "ipa": "t̪i d̪upari bara ʋadzt̪a mumbəila poɦotst̪e"
+  - "text": "गाडी प्लॅटफॉर्म नंबर तीनवर आहे."
+    "reading": "gāḍi plêṭphôrma nambar tinvar āhe."
+    "ipa": "ɡaɖi plæʈpʰɔrmə nəmbər t̪inʋər aɦe"
+  - "text": "गाडी दहा मिनिटे उशिरा आहे."
+    "reading": "gāḍi dahā miniṭe uśirā āhe."
+    "ipa": "ɡaɖi d̪əɦa miniʈe uʃira aɦe"
+  "questions":
+  - "id": "mr-7412"
+    "prompt":
+      "en": "Which city does the train leave from?"
+    "options":
+    - "en": "Mumbai"
+    - "en": "Pune"
+    - "en": "Nagpur"
+    "answer": 2
+  - "id": "mr-7413"
+    "prompt":
+      "en": "What time does the train reach Mumbai?"
+    "options":
+    - "en": "At six in the morning"
+    - "en": "At twelve noon"
+    - "en": "At six in the evening"
+    "answer": 2
+  - "id": "mr-7414"
+    "prompt":
+      "en": "The train is on time."
+    "answer": false

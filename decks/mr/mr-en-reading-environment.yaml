@@ -1,0 +1,54 @@
+schema: 1
+id: "mr-en-reading-environment"
+name: "Reading: environment"
+kind: "reading"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A notice for a neighbourhood clean-up. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "mr-clean-up-notice"
+    title: "Clean-up notice"
+    sentences:
+      - text: "शनिवारी सकाळी नऊ वाजता स्वच्छता मोहीम आहे."
+        reading: "śanivāri sakāḷi nau vājtā svacchatā mohim āhe."
+        ipa: "ʃəniʋari səkaɭi nəu ʋadzt̪a sʋətstʃʰət̪a moɦim aɦe"
+      - text: "सगळ्यांनी उद्यानात यावे."
+        reading: "sagaḷyānni udyānāt yāve."
+        ipa: "səɡəɭjanni ud̪janat̪ jaʋe"
+      - text: "कचरा पिशवीत भरा."
+        reading: "kacrā piśvit bharā."
+        ipa: "kətsra piʃʋit̪ bʱəra"
+      - text: "प्लास्टिक कचरा वेगळा ठेवा."
+        reading: "plāsṭik kacrā vegḷā ṭhevā."
+        ipa: "plasʈik kətsra ʋeɡɭa ʈʰeʋa"
+      - text: "पर्यावरण स्वच्छ ठेवणं आपलं काम आहे."
+        reading: "paryāvraṇ svacch ṭhevṇam̐ āplam̐ kām āhe."
+        ipa: "pərjaʋrəɳ sʋətstʃʰ ʈʰeʋɳə̃ aplə̃ kam aɦe"
+    questions:
+      - id: "mr-7024"
+        prompt:
+          en: "When is the clean-up?"
+        options:
+        - en: "Saturday morning at nine"
+        - en: "Sunday evening at six"
+        - en: "Friday afternoon at three"
+        answer: 1
+      - id: "mr-7025"
+        prompt:
+          en: "Where should the rubbish be put?"
+        options:
+        - en: "In a bag"
+        - en: "In the river"
+        - en: "On the road"
+        answer: 1
+      - id: "mr-7026"
+        prompt:
+          en: "What does the notice say about plastic?"
+        options:
+        - en: "Keep it separate from other rubbish"
+        - en: "Burn it at home"
+        - en: "Sell it at the market"
+        answer: 1
