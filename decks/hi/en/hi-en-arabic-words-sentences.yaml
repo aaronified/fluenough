@@ -1,0 +1,107 @@
+schema: 1
+id: "hi-en-arabic-words-sentences"
+kind: "layer"
+core: "hi-arabic-words-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with formal Arabic-origin words"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the words of this unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-5290":
+    native: "Do you know this?"
+    bases:
+      "आपको": "to you (polite)"
+    confusables:
+      "w1": { why: "Information, not known: मालूमात (mālūmāt) means information." }
+      "w2": { why: "Address, not knowledge: पता (patā) means address." }
+  "hi-5291":
+    native: "Their knowledge is very deep."
+    bases:
+      "उनका": "their"
+      "गहरा": "deep"
+    confusables:
+      "w1": { why: "Scholar, not knowledge: आलिम (ālim) means scholar." }
+      "w2": { why: "Idea or thought, not knowledge: ख़याल (k͟hayāl) means idea." }
+  "hi-5292":
+    native: "Good education is given at the madrasa."
+    bases:
+      "मदरसे": "madrasa (oblique)"
+      "अच्छी": "good (feminine)"
+      "मिलती": "is given; is found"
+    confusables:
+      "w1": { why: "School, the common word: स्कूल (skūl) means school." }
+      "w2": { why: "College, not madrasa: कॉलेज (kôlēj) means college." }
+  "hi-5293":
+    native: "The government made a new law."
+    bases:
+      "ने": "(marks the doer)"
+      "कानून": "law"
+      "बनाया": "made"
+    confusables:
+      "w1": { why: "Country, not government: मुल्क (mulk) means country; nation." }
+      "w2": { why: "Official, not government: सरकारी (sarkārī) means official; government-run." }
+  "hi-5294":
+    native: "My country's language is Hindi."
+    bases:
+      "मेरे": "my (oblique)"
+      "हिंदी": "Hindi"
+    confusables:
+      "w1": { why: "Language, the common word: भाषा (bhāśā) means language." }
+      "w2": { why: "Word, not language: शब्द (śabd) means word." }
+  "hi-5295":
+    native: "I do not know his problem."
+    bases:
+      "उसका": "his/her"
+      "मुझे": "to me"
+    confusables:
+      "w1": { why: "Matter or thing, not problem: बात (bāt) means word; matter; thing." }
+      "w2": { why: "Accident, not problem: हादसा (hādsā) means accident." }
+  "hi-5296":
+    native: "Children study at this madrasa."
+    bases:
+      "इस": "this (oblique)"
+      "मदरसे": "madrasa (oblique)"
+      "पढ़ते": "study (habitually)"
+    confusables:
+      "w1": { why: "Teacher, not child: मुअल्लिम (muallim) means teacher (formal)." }
+      "w2": { why: "Scholar, not child: आलिम (ālim) means scholar." }
+  "hi-5297":
+    native: "The scholar recited a special book."
+    bases:
+      "साहब": "sir; Mr."
+      "ने": "(marks the doer)"
+      "किताब": "book"
+      "सुनाई": "recited; told"
+    confusables:
+      "w1": { why: "Article, not book: लेख (lēkh) means article; essay." }
+      "w2": { why: "Information, not book: सूचना (sūcnā) means information; notice." }
+  "hi-5298":
+    native: "The news came on time."
+    bases:
+      "आई": "came"
+    confusables:
+      "w1": { why: "Papers, not news: कागज़ात (kāgzāt) means papers; documents." }
+      "w2": { why: "Accident, not news: हादसा (hādsā) means accident; disaster." }
+  "hi-5299":
+    native: "The papers are in the office."
+    bases:
+      "दफ़्तर": "office"
+    confusables:
+      "w1": { why: "Document, close to papers: दस्तावेज़ (dastāvēz) means document; paper." }
+      "w2": { why: "Form to fill in, not papers: फ़ॉर्म (fôrm) means form." }
+  "hi-5300":
+    native: "The madrasa is near here."
+    bases:
+      "नज़दीक": "near"
+    confusables:
+      "w1": { why: "Far, not near: दूर (dūr) means far." }
+      "w2": { why: "City, not madrasa: शहर (śahar) means city." }
+  "hi-5301":
+    native: "This person is very kind."
+    bases:
+      "भला": "good; kind"
+    confusables:
+      "w1": { why: "Man, not person: आदमी (ādmī) means man." }
+      "w2": { why: "People, plural: लोग (lōg) means people." }

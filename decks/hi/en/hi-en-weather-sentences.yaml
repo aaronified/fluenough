@@ -1,0 +1,89 @@
+schema: 1
+id: "hi-en-weather-sentences"
+kind: "layer"
+core: "hi-weather-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about the weather"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the weather words of this unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-4920":
+    native: "Today there is sunshine."
+    confusables:
+      "w1": { why: "Shade, not sunshine: छाँव (chām̐v) means shade." }
+      "w2": { why: "Rain, not sunshine: बारिश (bāriś) means rain." }
+  "hi-4921":
+    native: "There are clouds in the sky."
+    confusables:
+      "w1": { why: "Sun, not cloud: सूरज (sūraj) is the sun." }
+      "w2": { why: "Moon, not cloud: चाँद (cām̐d) is the moon." }
+  "hi-4922":
+    native: "It is very hot today."
+    confusables:
+      "w1": { why: "Cold, not heat: सर्दी (sardī) means cold or winter." }
+      "w2": { why: "Cold, not heat: ठंड (ṭhaṇḍ) means cold weather." }
+  "hi-4923":
+    native: "The rain is heavy."
+    confusables:
+      "w1": { why: "Drop, not rain: बूँद (būm̐d) is a drop." }
+      "w2": { why: "Flood, not rain: बाढ़ (bāṛh) is a flood." }
+  "hi-4924":
+    native: "The wind is cold."
+    bases:
+      "ठंडी": "cold (feminine)"
+    confusables:
+      "w1": { why: "Dust storm, not wind: आँधी (ām̐dhī) is a dust storm or gale." }
+      "w2": { why: "Storm, not wind: तूफ़ान (tūfān) is a storm." }
+  "hi-4925":
+    native: "The sun is shining."
+    bases:
+      "चमक": "shine (stem)"
+      "रहा": "-ing (continuous marker)"
+    confusables:
+      "w1": { why: "Moon, not sun: चाँद (cām̐d) is the moon." }
+      "w2": { why: "Star, not sun: तारा (tārā) is a star." }
+  "hi-4926":
+    native: "Clouds are thundering today."
+    bases:
+      "गरज": "thunder (stem)"
+      "रहे": "-ing (plural)"
+    confusables:
+      "w1": { why: "To rain, not thunder: बरसना (barsnā) means to rain or pour." }
+      "w2": { why: "To shine, not thunder: चमकना (camknā) means to shine or flash." }
+  "hi-4927":
+    native: "It rains a lot in the rainy season."
+    bases:
+      "बरसता": "rain (masculine)"
+    confusables:
+      "w1": { why: "Monsoon, not rainy season: मानसून (mānsūn) is the monsoon." }
+      "w2": { why: "Drought, not rainy season: सूखा (sūkhā) means drought." }
+  "hi-4928":
+    native: "Dew falls in this season."
+    bases:
+      "इस": "this (oblique)"
+      "पड़ती": "fall (feminine habitual)"
+    confusables:
+      "w1": { why: "Fog, not dew: कोहरा (kōhrā) means fog." }
+      "w2": { why: "Mist, not dew: धुंध (dhundh) means mist or haze." }
+  "hi-4929":
+    native: "There is fog in winter."
+    bases:
+      "होता": "happen (masculine habitual)"
+    confusables:
+      "w1": { why: "Heat, not winter: गर्मी (garmī) means heat or summer." }
+      "w2": { why: "Rainy season, not winter: बरसात (barsāt) means the rainy season." }
+  "hi-4930":
+    native: "The weather is pleasant today."
+    confusables:
+      "w1": { why: "Damp, not pleasant: नम (nam) means damp." }
+      "w2": { why: "Hazy, not pleasant: धुंधला (dhundhalā) means hazy or dim." }
+  "hi-4931":
+    native: "Drops are falling."
+    bases:
+      "बूँदें": "drops"
+      "गिर": "fall (stem)"
+      "रही": "-ing (feminine plural)"
+    confusables:
+      "w1": { why: "Hailstone, not drop: ओला (ōlā) means a hailstone." }
+      "w2": { why: "Dew, not drop: ओस (ōs) means dew." }

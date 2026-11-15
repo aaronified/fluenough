@@ -1,0 +1,167 @@
+schema: 1
+id: "hi-abstract-words-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-5798"
+    target: "ईमानदारी सबसे बड़ा गुण है।"
+    reading: "īmāndārī sabsē baṛā guṇ hai."
+    ipa: "iːmaːnd̪aːriː səbseː bəɽaː ɡʊɳ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "ईमानदारी", ref: "hi-2701" }
+      - { word: "सबसे", base: "सब", reading: "sabsē" }
+      - { word: "बड़ा", ref: "hi-0894" }
+      - { word: "गुण", ref: "hi-2718" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "सत्य", reading: "saty", kind: "word" }
+      - { id: "w2", word: "उम्मीद", reading: "ummīd", kind: "word" }
+  - id: "hi-5799"
+    target: "सत्य की जीत होगी।"
+    reading: "satya kī jīt hōgī."
+    ipa: "sət̪jə kiː dʒiːt̪ ɦoːɡiː"
+    pos: "phrase"
+    bases:
+      - { word: "सत्य", ref: "hi-2702" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "जीत", ref: "hi-2537" }
+      - { word: "होगी", base: "होना", reading: "hōgī" }
+    confusables:
+      - { id: "w1", word: "कल्पना", reading: "kalpanā", kind: "word" }
+      - { id: "w2", word: "ईमानदारी", reading: "īmāndārī", kind: "word" }
+  - id: "hi-5800"
+    target: "उम्मीद मत छोड़िए।"
+    reading: "ummīd mat chōṛiē."
+    ipa: "ʊmmiːd̪ mət̪ tʃʰoːɽɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "उम्मीद", ref: "hi-2704" }
+      - { word: "मत", base: "मत", reading: "mat" }
+      - { word: "छोड़िए", base: "छोड़ना", reading: "chōṛiē" }
+    confusables:
+      - { id: "w1", word: "दुख", reading: "dukh", kind: "word" }
+      - { id: "w2", word: "संतोष", reading: "santōś", kind: "word" }
+  - id: "hi-5801"
+    target: "इसका अर्थ क्या है?"
+    reading: "iskā arth kyā hai?"
+    ipa: "ɪskaː ərt̪ʰ kjaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "इसका", base: "यह", reading: "iskā" }
+      - { word: "अर्थ", ref: "hi-2707" }
+      - { word: "क्या", ref: "hi-0157" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "कारण", reading: "kāraṇ", kind: "word" }
+      - { id: "w2", word: "सुविधा", reading: "suvidhā", kind: "word" }
+  - id: "hi-5802"
+    target: "मुझे धैर्य रखना चाहिए।"
+    reading: "mujhē dhairya rakhnā cāhiē."
+    ipa: "mʊdʒʱeː d̪ʱɛːrjə rəkʰnaː tʃaːɦɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "मुझे", base: "मैं", reading: "mujhē" }
+      - { word: "धैर्य", ref: "hi-2726" }
+      - { word: "रखना", base: "रखना", reading: "rakhnā" }
+      - { word: "चाहिए", ref: "hi-0460" }
+    confusables:
+      - { id: "w1", word: "साहस", reading: "sāhas", kind: "word" }
+      - { id: "w2", word: "संबंध", reading: "sambandh", kind: "word" }
+  - id: "hi-5803"
+    target: "उसका स्वभाव बहुत अच्छा है।"
+    reading: "uskā svabhāv bahut acchā hai."
+    ipa: "ʊskaː sʋəbʱaːʋ bəɦʊt̪ ətʃtʃʰaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "उसका", ref: "hi-0757" }
+      - { word: "स्वभाव", ref: "hi-2731" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "अच्छा", ref: "hi-0898" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "प्रकृति", reading: "prakriti", kind: "word" }
+      - { id: "w2", word: "नैतिकता", reading: "naitiktā", kind: "word" }
+  - id: "hi-5804"
+    target: "मैं आपकी मदद करूँगा।"
+    reading: "maim̐ āpkī madad karūm̐gā."
+    ipa: "mɛ̃ː aːpkiː məd̪əd̪ kərũːɡaː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "आपकी", base: "आप", reading: "āpkī" }
+      - { word: "मदद", ref: "hi-0352" }
+      - { word: "करूँगा", base: "करना", reading: "karūm̐gā" }
+    confusables:
+      - { id: "w1", word: "दोस्त", reading: "dōst", kind: "word" }
+      - { id: "w2", word: "लोग", reading: "lōg", kind: "word" }
+  - id: "hi-5805"
+    target: "अवसर मत गँवाइए।"
+    reading: "avsar mat gam̐vāiē."
+    ipa: "əʋsər mət̪ ɡə̃ʋaːɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "अवसर", ref: "hi-2714" }
+      - { word: "मत", base: "मत", reading: "mat" }
+      - { word: "गँवाइए", base: "गँवाना", reading: "gam̐vāiē" }
+    confusables:
+      - { id: "w1", word: "महत्व", reading: "mahatv", kind: "word" }
+      - { id: "w2", word: "संभावना", reading: "sambhāvnā", kind: "word" }
+  - id: "hi-5806"
+    target: "इसका महत्व बहुत है।"
+    reading: "iskā mahatva bahut hai."
+    ipa: "ɪskaː məɦət̪ʋə bəɦʊt̪ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "इसका", base: "यह", reading: "iskā" }
+      - { word: "महत्व", ref: "hi-2708" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "अर्थ", reading: "arth", kind: "word" }
+      - { id: "w2", word: "उद्देश्य", reading: "uddēśy", kind: "word" }
+  - id: "hi-5807"
+    target: "समस्या का कारण क्या है?"
+    reading: "samasyā kā kāraṇ kyā hai?"
+    ipa: "səməsjaː kaː kaːrəɳ kjaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "समस्या", ref: "hi-2716" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "कारण", ref: "hi-2712" }
+      - { word: "क्या", ref: "hi-0157" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "सिद्धांत", reading: "siddhānt", kind: "word" }
+      - { id: "w2", word: "प्रभाव", reading: "prabhāv", kind: "word" }
+  - id: "hi-5808"
+    target: "उसे अपने काम पर गर्व है।"
+    reading: "usē apnē kām par garv hai."
+    ipa: "ʊseː əpneː kaːm pər ɡərʋ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "उसे", base: "वह", reading: "usē" }
+      - { word: "अपने", base: "अपना", reading: "apnē" }
+      - { word: "काम", ref: "hi-0194" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "गर्व", ref: "hi-2117" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "क्रोध", reading: "krōdh", kind: "word" }
+      - { id: "w2", word: "अहंकार", reading: "ahaṅkār", kind: "word" }
+  - id: "hi-5809"
+    target: "सिद्धांत मत बदलिए।"
+    reading: "siddhānt mat badaliē."
+    ipa: "sɪd̪d̪ʱaːnt̪ mət̪ bəd̪əlɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "सिद्धांत", ref: "hi-2717" }
+      - { word: "मत", base: "मत", reading: "mat" }
+      - { word: "बदलिए", base: "बदलना", reading: "badaliē" }
+    confusables:
+      - { id: "w1", word: "गुण", reading: "guṇ", kind: "word" }
+      - { id: "w2", word: "धर्म", reading: "dharm", kind: "word" }

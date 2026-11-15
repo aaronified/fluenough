@@ -1,0 +1,177 @@
+schema: 1
+id: "hi-calendar-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-4932"
+    target: "आज कौन-सी तारीख़ है?"
+    reading: "āj kaun-sī tārīk͟h hai?"
+    ipa: "aːdʒ kɔːnsiː t̪aːriːx ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "आज", ref: "hi-0299" }
+      - { word: "कौन-सी", base: "कौन-सा", reading: "kaun-sī" }
+      - { word: "तारीख़", ref: "hi-0319" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-0317", kind: "word" }
+      - { id: "w2", ref: "hi-0318", kind: "word" }
+  - id: "hi-4933"
+    target: "जून में बहुत गर्मी होती है।"
+    reading: "jūna mēm̐ bahut garmī hōtī hai."
+    ipa: "dʒuːnə mẽː bəɦʊt̪ ɡərmiː ɦoːt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "जून", ref: "hi-0325" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "गर्मी", ref: "hi-1270" }
+      - { word: "होती", base: "होना", reading: "hōtī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-0326", kind: "word" }
+      - { id: "w2", ref: "hi-0324", kind: "word" }
+  - id: "hi-4934"
+    target: "अगस्त में आप कहाँ गए थे?"
+    reading: "agast mēm̐ āp kahām̐ gaē thē?"
+    ipa: "əɡəst̪ mẽː aːp kəɦãː ɡəeː t̪ʰeː"
+    pos: "phrase"
+    bases:
+      - { word: "अगस्त", ref: "hi-0327" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "आप", ref: "hi-0134" }
+      - { word: "कहाँ", ref: "hi-0159" }
+      - { word: "गए", base: "जाना", reading: "gaē" }
+      - { word: "थे", base: "होना", reading: "thē" }
+    confusables:
+      - { id: "w1", ref: "hi-0328", kind: "word" }
+      - { id: "w2", ref: "hi-0326", kind: "word" }
+  - id: "hi-4935"
+    target: "कल मैं बाज़ार गया था।"
+    reading: "kal maim̐ bāzār gayā thā."
+    ipa: "kəl mɛ̃ː baːzaːr ɡəjaː t̪ʰaː"
+    pos: "phrase"
+    bases:
+      - { word: "कल", ref: "hi-0300" }
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "बाज़ार", ref: "hi-1081" }
+      - { word: "गया", base: "जाना", reading: "gayā" }
+      - { word: "था", base: "होना", reading: "thā" }
+    confusables:
+      - { id: "w1", ref: "hi-0299", kind: "word" }
+      - { id: "w2", ref: "hi-0302", kind: "word" }
+  - id: "hi-4936"
+    target: "दिसंबर में ठंड होती है।"
+    reading: "disambar mēm̐ ṭhaṇḍ hōtī hai."
+    ipa: "d̪ɪsəmbər mẽː ʈʰəɳɖ ɦoːt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "दिसंबर", ref: "hi-0331" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "ठंड", ref: "hi-1269" }
+      - { word: "होती", base: "होना", reading: "hōtī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-0330", kind: "word" }
+      - { id: "w2", ref: "hi-0320", kind: "word" }
+  - id: "hi-4937"
+    target: "सितंबर में मानसून आता है।"
+    reading: "sitambar mēm̐ mānsūn ātā hai."
+    ipa: "sɪt̪əmbər mẽː maːnsuːn aːt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "सितंबर", ref: "hi-0328" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "मानसून", ref: "hi-1273" }
+      - { word: "आता", base: "आना", reading: "ātā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1272", kind: "word" }
+      - { id: "w2", ref: "hi-0329", kind: "word" }
+  - id: "hi-4938"
+    target: "मेरी दीदी फ़रवरी में आई थी।"
+    reading: "mērī dīdī farvrī mēm̐ āī thī."
+    ipa: "meːriː d̪iːd̪iː fərʋriː mẽː aːiː t̪ʰiː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", base: "मेरा", reading: "mērī" }
+      - { word: "दीदी", ref: "hi-0178" }
+      - { word: "फ़रवरी", ref: "hi-0321" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "आई", base: "आना", reading: "āī" }
+      - { word: "थी", base: "होना", reading: "thī" }
+    confusables:
+      - { id: "w1", ref: "hi-0322", kind: "word" }
+      - { id: "w2", ref: "hi-0323", kind: "word" }
+  - id: "hi-4939"
+    target: "अप्रैल में बसंत आता है।"
+    reading: "aprail mēm̐ basant ātā hai."
+    ipa: "əprɛːl mẽː bəsənt̪ aːt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "अप्रैल", ref: "hi-0323" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "बसंत", ref: "hi-1283" }
+      - { word: "आता", base: "आना", reading: "ātā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1284", kind: "word" }
+      - { id: "w2", ref: "hi-1296", kind: "word" }
+  - id: "hi-4940"
+    target: "जुलाई में बरसात होती है।"
+    reading: "julāī mēm̐ barsāt hōtī hai."
+    ipa: "dʒʊlaːiː mẽː bərsaːt̪ ɦoːt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "जुलाई", ref: "hi-0326" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "बरसात", ref: "hi-1272" }
+      - { word: "होती", base: "होना", reading: "hōtī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-0327", kind: "word" }
+      - { id: "w2", ref: "hi-0325", kind: "word" }
+  - id: "hi-4941"
+    target: "जनवरी में सर्दी है।"
+    reading: "janvrī mēm̐ sardī hai."
+    ipa: "dʒənʋriː mẽː sərd̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "जनवरी", ref: "hi-0320" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "सर्दी", ref: "hi-1271" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-0331", kind: "word" }
+      - { id: "w2", ref: "hi-0321", kind: "word" }
+  - id: "hi-4942"
+    target: "आज तीन तारीख़ है।"
+    reading: "āj tīn tārīk͟h hai."
+    ipa: "aːdʒ t̪iːn t̪aːriːx ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "आज", ref: "hi-0299" }
+      - { word: "तीन", ref: "hi-0200" }
+      - { word: "तारीख़", ref: "hi-0319" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-0317", kind: "word" }
+      - { id: "w2", ref: "hi-0318", kind: "word" }
+  - id: "hi-4943"
+    target: "साल में बारह महीने होते हैं।"
+    reading: "sāl mēm̐ bārah mahīnē hōtē haim̐."
+    ipa: "saːl mẽː baːrəɦ məɦiːneː ɦoːt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "साल", ref: "hi-0318" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "बारह", ref: "hi-0209" }
+      - { word: "महीने", base: "महीना", reading: "mahīnē" }
+      - { word: "होते", base: "होना", reading: "hōtē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", ref: "hi-0319", kind: "word" }
+      - { id: "w2", ref: "hi-0308", kind: "word" }
