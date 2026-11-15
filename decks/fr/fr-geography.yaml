@@ -1,0 +1,445 @@
+schema: 1
+id: "fr-geography"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "geography"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-3720"
+    target: "France"
+    ipa: "fʁɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je vis en France.", ipa: "ʒə vi ɑ̃ fʁɑ̃s", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vis", base: "vivre" }, { word: "en", base: "en" }, { word: "France", base: "France" }] }
+      - { target: "La France est un grand pays.", ipa: "la fʁɑ̃s ɛt œ̃ ɡʁɑ̃ pei", bases: [{ word: "La", ref: "fr-0544" }, { word: "France", base: "France" }, { word: "est", base: "être" }, { word: "un", ref: "fr-0208" }, { word: "grand", ref: "fr-0410" }, { word: "pays", ref: "fr-0243" }] }
+  - id: "fr-3721"
+    target: "Belgique"
+    ipa: "bɛlʒik"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous allons en Belgique.", ipa: "nuz alɔ̃ ɑ̃ bɛlʒik", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "allons", base: "aller" }, { word: "en", base: "en" }, { word: "Belgique", base: "Belgique" }] }
+      - { target: "La Belgique a trois langues officielles.", ipa: "la bɛlʒik a tʁwa lɑ̃ɡ ɔfisjɛl", bases: [{ word: "La", ref: "fr-0544" }, { word: "Belgique", base: "Belgique" }, { word: "a", base: "avoir" }, { word: "trois", ref: "fr-0210" }, { word: "langues", base: "langue" }, { word: "officielles", base: "officiel" }] }
+  - id: "fr-3722"
+    target: "Suisse"
+    ipa: "sɥis"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon ami habite en Suisse.", ipa: "mɔ̃n ami abit ɑ̃ sɥis", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "ami", ref: "fr-0100" }, { word: "habite", base: "habiter" }, { word: "en", base: "en" }, { word: "Suisse", base: "Suisse" }] }
+      - { target: "La Suisse est très montagneuse.", ipa: "la sɥis ɛ tʁɛ mɔ̃taɲøz", bases: [{ word: "La", ref: "fr-0544" }, { word: "Suisse", base: "Suisse" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "montagneuse", base: "montagneux" }] }
+  - id: "fr-3723"
+    target: "Canada"
+    ipa: "kanada"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma sœur travaille au Canada.", ipa: "ma sœʁ tʁavaj o kanada", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "sœur", ref: "fr-0170" }, { word: "travaille", base: "travailler" }, { word: "au", base: "à" }, { word: "Canada", base: "Canada" }] }
+      - { target: "Le Canada est très grand.", ipa: "lə kanada ɛ tʁɛ ɡʁɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "Canada", base: "Canada" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "grand", ref: "fr-0410" }] }
+  - id: "fr-3724"
+    target: "Québec"
+    ipa: "kebɛk"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le Québec est en français.", ipa: "lə kebɛk ɛt ɑ̃ fʁɑ̃sɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "Québec", base: "Québec" }, { word: "est", base: "être" }, { word: "en", base: "en" }, { word: "français", ref: "fr-0246" }] }
+      - { target: "Je voyage au Québec.", ipa: "ʒə vwajaʒ o kebɛk", bases: [{ word: "Je", ref: "fr-0126" }, { word: "voyage", ref: "fr-0867" }, { word: "au", base: "à" }, { word: "Québec", base: "Québec" }] }
+  - id: "fr-3725"
+    target: "Maroc"
+    ipa: "maʁɔk"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je vais au Maroc.", ipa: "ʒə vɛ o maʁɔk", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vais", base: "aller" }, { word: "au", base: "à" }, { word: "Maroc", base: "Maroc" }] }
+      - { target: "Le Maroc est près de l'Espagne.", ipa: "lə maʁɔk ɛ pʁɛ də lɛspaɲ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "Maroc", base: "Maroc" }, { word: "est", base: "être" }, { word: "près", ref: "fr-0464" }, { word: "de", base: "de" }, { word: "l'Espagne", base: "Espagne" }] }
+  - id: "fr-3726"
+    target: "Algérie"
+    ipa: "alʒeʁi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mes parents visitent l'Algérie.", ipa: "me paʁɑ̃ vizitɑ̃ lalʒeʁi", bases: [{ word: "Mes", ref: "fr-0623" }, { word: "parents", base: "parent" }, { word: "visitent", base: "visiter" }, { word: "l'Algérie", base: "Algérie" }] }
+      - { target: "L'Algérie est un grand pays.", ipa: "lalʒeʁi ɛt œ̃ ɡʁɑ̃ pei", bases: [{ word: "L'Algérie", base: "Algérie" }, { word: "est", base: "être" }, { word: "un", ref: "fr-0208" }, { word: "grand", ref: "fr-0410" }, { word: "pays", ref: "fr-0243" }] }
+  - id: "fr-3727"
+    target: "Sénégal"
+    ipa: "seneɡal"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le Sénégal est sur la côte.", ipa: "lə seneɡal ɛ syʁ la kot", bases: [{ word: "Le", ref: "fr-0543" }, { word: "Sénégal", base: "Sénégal" }, { word: "est", base: "être" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "côte", base: "côte" }] }
+      - { target: "Je connais le Sénégal.", ipa: "ʒə kɔnɛ lə seneɡal", bases: [{ word: "Je", ref: "fr-0126" }, { word: "connais", base: "connaître" }, { word: "le", ref: "fr-0543" }, { word: "Sénégal", base: "Sénégal" }] }
+  - id: "fr-3728"
+    target: "Tunisie"
+    ipa: "tynizi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La Tunisie est près de la mer.", ipa: "la tynizi ɛ pʁɛ də la mɛʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "Tunisie", base: "Tunisie" }, { word: "est", base: "être" }, { word: "près", ref: "fr-0464" }, { word: "de", base: "de" }, { word: "mer", ref: "fr-1939" }] }
+      - { target: "Je pars en Tunisie en été.", ipa: "ʒə paʁ ɑ̃ tynizi ɑ̃n ete", bases: [{ word: "Je", ref: "fr-0126" }, { word: "pars", base: "partir" }, { word: "en", base: "en" }, { word: "Tunisie", base: "Tunisie" }, { word: "été", ref: "fr-1170" }] }
+  - id: "fr-3729"
+    target: "Italie"
+    ipa: "itali"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'Italie est belle.", ipa: "litali ɛ bɛl", bases: [{ word: "L'Italie", base: "Italie" }, { word: "est", base: "être" }, { word: "belle", base: "beau" }] }
+      - { target: "Nous mangeons en Italie.", ipa: "nu mɑ̃ʒɔ̃ ɑ̃n itali", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "mangeons", base: "manger" }, { word: "en", base: "en" }, { word: "Italie", base: "Italie" }] }
+  - id: "fr-3730"
+    target: "Espagne"
+    ipa: "ɛspaɲ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'Espagne est très chaude en été.", ipa: "lɛspaɲ ɛ tʁɛ ʃod ɑ̃n ete", bases: [{ word: "L'Espagne", base: "Espagne" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "chaude", base: "chaud" }, { word: "en", base: "en" }, { word: "été", ref: "fr-1170" }] }
+      - { target: "Je visite l'Espagne.", ipa: "ʒə vizit lɛspaɲ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "visite", ref: "fr-2493" }, { word: "l'Espagne", base: "Espagne" }] }
+  - id: "fr-3731"
+    target: "Angleterre"
+    ipa: "ɑ̃ɡlətɛʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'Angleterre est près de la France.", ipa: "lɑ̃ɡlətɛʁ ɛ pʁɛ də la fʁɑ̃s", bases: [{ word: "L'Angleterre", base: "Angleterre" }, { word: "est", base: "être" }, { word: "près", ref: "fr-0464" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "France", base: "France" }] }
+      - { target: "Je vais en Angleterre.", ipa: "ʒə vɛ ɑ̃n ɑ̃ɡlətɛʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vais", base: "aller" }, { word: "en", base: "en" }, { word: "Angleterre", base: "Angleterre" }] }
+  - id: "fr-3732"
+    target: "Europe"
+    ipa: "øʁɔp"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'Europe est un continent.", ipa: "løʁɔp ɛt œ̃ kɔ̃tinɑ̃", bases: [{ word: "L'Europe", base: "Europe" }, { word: "est", base: "être" }, { word: "un", ref: "fr-0208" }, { word: "continent", base: "continent" }] }
+      - { target: "La France est en Europe.", ipa: "la fʁɑ̃s ɛt ɑ̃n øʁɔp", bases: [{ word: "La", ref: "fr-0544" }, { word: "France", base: "France" }, { word: "est", base: "être" }, { word: "en", base: "en" }, { word: "Europe", base: "Europe" }] }
+  - id: "fr-3733"
+    target: "Afrique"
+    ipa: "afʁik"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'Afrique est un continent.", ipa: "lafʁik ɛt œ̃ kɔ̃tinɑ̃", bases: [{ word: "L'Afrique", base: "Afrique" }, { word: "est", base: "être" }, { word: "un", ref: "fr-0208" }, { word: "continent", base: "continent" }] }
+      - { target: "Le français est parlé en Afrique.", ipa: "lə fʁɑ̃sɛ ɛ paʁle ɑ̃n afʁik", bases: [{ word: "Le", ref: "fr-0543" }, { word: "français", ref: "fr-0246" }, { word: "est", base: "être" }, { word: "parlé", base: "parler" }, { word: "en", base: "en" }, { word: "Afrique", base: "Afrique" }] }
+  - id: "fr-3734"
+    target: "Wallonie"
+    ipa: "walɔni"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La Wallonie est au sud de la Belgique.", ipa: "la walɔni ɛt o syd də la bɛlʒik", bases: [{ word: "La", ref: "fr-0544" }, { word: "Wallonie", base: "Wallonie" }, { word: "est", base: "être" }, { word: "au", base: "à" }, { word: "sud", ref: "fr-0903" }, { word: "de", base: "de" }, { word: "Belgique", base: "Belgique" }] }
+      - { target: "Namur est en Wallonie.", ipa: "namyʁ ɛt ɑ̃ walɔni", bases: [{ word: "Namur", base: "Namur" }, { word: "est", base: "être" }, { word: "en", base: "en" }, { word: "Wallonie", base: "Wallonie" }] }
+  - id: "fr-3735"
+    target: "Provence"
+    ipa: "pʁɔvɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La Provence est très ensoleillée.", ipa: "la pʁɔvɑ̃s ɛ tʁɛz ɑ̃sɔlɛje", bases: [{ word: "La", ref: "fr-0544" }, { word: "Provence", base: "Provence" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "ensoleillée", base: "ensoleillé" }] }
+      - { target: "Je rêve de la Provence.", ipa: "ʒə ʁɛv də la pʁɔvɑ̃s", bases: [{ word: "Je", ref: "fr-0126" }, { word: "rêve", ref: "fr-1109" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "Provence", base: "Provence" }] }
+  - id: "fr-3736"
+    target: "Bretagne"
+    ipa: "bʁətaɲ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La Bretagne est sur la mer.", ipa: "la bʁətaɲ ɛ syʁ la mɛʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "Bretagne", base: "Bretagne" }, { word: "est", base: "être" }, { word: "sur", ref: "fr-0469" }, { word: "mer", ref: "fr-1939" }] }
+      - { target: "Je passe l'été en Bretagne.", ipa: "ʒə pas lete ɑ̃ bʁətaɲ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "passe", base: "passer" }, { word: "l'été", base: "été" }, { word: "en", base: "en" }, { word: "Bretagne", base: "Bretagne" }] }
+  - id: "fr-3737"
+    target: "Normandie"
+    ipa: "nɔʁmɑ̃di"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La Normandie est verte.", ipa: "la nɔʁmɑ̃di ɛ vɛʁt", bases: [{ word: "La", ref: "fr-0544" }, { word: "Normandie", base: "Normandie" }, { word: "est", base: "être" }, { word: "verte", base: "vert" }] }
+      - { target: "Nous visitons la Normandie.", ipa: "nu vizitɔ̃ la nɔʁmɑ̃di", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "visitons", base: "visiter" }, { word: "la", ref: "fr-0544" }, { word: "Normandie", base: "Normandie" }] }
+  - id: "fr-3738"
+    target: "Paris"
+    ipa: "paʁi"
+    pos: "noun"
+    gender: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je vais à Paris.", ipa: "ʒə vɛ a paʁi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vais", base: "aller" }, { word: "à", base: "à" }, { word: "Paris", base: "Paris" }] }
+      - { target: "Paris est une grande ville.", ipa: "paʁi ɛt yn ɡʁɑ̃d vil", bases: [{ word: "Paris", base: "Paris" }, { word: "est", base: "être" }, { word: "une", ref: "fr-0545" }, { word: "grande", base: "grand" }, { word: "ville", ref: "fr-0244" }] }
+  - id: "fr-3739"
+    target: "Lyon"
+    ipa: "ljɔ̃"
+    pos: "noun"
+    gender: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Lyon est près du Rhône.", ipa: "ljɔ̃ ɛ pʁɛ dy ʁon", bases: [{ word: "Lyon", base: "Lyon" }, { word: "est", base: "être" }, { word: "près", ref: "fr-0464" }, { word: "du", base: "de" }, { word: "Rhône", base: "Rhône" }] }
+      - { target: "Je prends le train pour Lyon.", ipa: "ʒə pʁɑ̃ lə tʁɛ̃ puʁ ljɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", base: "prendre" }, { word: "le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "pour", ref: "fr-0591" }, { word: "Lyon", base: "Lyon" }] }
+  - id: "fr-3740"
+    target: "Marseille"
+    ipa: "maʁsɛj"
+    pos: "noun"
+    gender: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Marseille est au bord de la mer.", ipa: "maʁsɛj ɛt o bɔʁ də la mɛʁ", bases: [{ word: "Marseille", base: "Marseille" }, { word: "est", base: "être" }, { word: "au", base: "à" }, { word: "bord", base: "bord" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "mer", ref: "fr-1939" }] }
+      - { target: "Nous mangeons à Marseille.", ipa: "nu mɑ̃ʒɔ̃ a maʁsɛj", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "mangeons", base: "manger" }, { word: "à", base: "à" }, { word: "Marseille", base: "Marseille" }] }
+  - id: "fr-3741"
+    target: "Bruxelles"
+    ipa: "bʁyksɛl"
+    pos: "noun"
+    gender: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Bruxelles est près de la France.", ipa: "bʁyksɛl ɛ pʁɛ də la fʁɑ̃s", bases: [{ word: "Bruxelles", base: "Bruxelles" }, { word: "est", base: "être" }, { word: "près", ref: "fr-0464" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "France", base: "France" }] }
+      - { target: "Je travaille à Bruxelles.", ipa: "ʒə tʁavaj a bʁyksɛl", bases: [{ word: "Je", ref: "fr-0126" }, { word: "travaille", base: "travailler" }, { word: "à", base: "à" }, { word: "Bruxelles", base: "Bruxelles" }] }
+  - id: "fr-3742"
+    target: "Genève"
+    ipa: "ʒənɛv"
+    pos: "noun"
+    gender: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Genève est au bord du lac.", ipa: "ʒənɛv ɛt o bɔʁ dy lak", bases: [{ word: "Genève", base: "Genève" }, { word: "est", base: "être" }, { word: "au", base: "à" }, { word: "bord", base: "bord" }, { word: "du", base: "de" }, { word: "lac", base: "lac" }] }
+      - { target: "Nous visitons Genève.", ipa: "nu vizitɔ̃ ʒənɛv", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "visitons", base: "visiter" }, { word: "Genève", base: "Genève" }] }
+  - id: "fr-3743"
+    target: "Montréal"
+    ipa: "mɔ̃tʁeal"
+    pos: "noun"
+    gender: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Montréal est une grande ville.", ipa: "mɔ̃tʁeal ɛt yn ɡʁɑ̃d vil", bases: [{ word: "Montréal", base: "Montréal" }, { word: "est", base: "être" }, { word: "une", ref: "fr-0545" }, { word: "grande", base: "grand" }, { word: "ville", ref: "fr-0244" }] }
+      - { target: "Je rentre de Montréal.", ipa: "ʒə ʁɑ̃tʁ də mɔ̃tʁeal", bases: [{ word: "Je", ref: "fr-0126" }, { word: "rentre", base: "rentrer" }, { word: "de", base: "de" }, { word: "Montréal", base: "Montréal" }] }
+  - id: "fr-3744"
+    target: "Londres"
+    ipa: "lɔ̃dʁ"
+    pos: "noun"
+    gender: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Londres est très grand.", ipa: "lɔ̃dʁ ɛ tʁɛ ɡʁɑ̃", bases: [{ word: "Londres", base: "Londres" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "grand", ref: "fr-0410" }] }
+      - { target: "Je vais à Londres.", ipa: "ʒə vɛ a lɔ̃dʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vais", base: "aller" }, { word: "à", base: "à" }, { word: "Londres", base: "Londres" }] }
+  - id: "fr-3745"
+    target: "Loire"
+    ipa: "lwaʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La Loire coule vers l'ouest.", ipa: "la lwaʁ kul vɛʁ lwɛst", bases: [{ word: "La", ref: "fr-0544" }, { word: "Loire", base: "Loire" }, { word: "coule", base: "couler" }, { word: "vers", ref: "fr-0594" }, { word: "l'ouest", base: "ouest" }] }
+      - { target: "Nous marchons le long de la Loire.", ipa: "nu maʁʃɔ̃ lə lɔ̃ də la lwaʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "marchons", base: "marcher" }, { word: "le", ref: "fr-0543" }, { word: "long", ref: "fr-0421" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "Loire", base: "Loire" }] }
+  - id: "fr-3746"
+    target: "Seine"
+    ipa: "sɛn"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La Seine traverse Paris.", ipa: "la sɛn tʁavɛʁs paʁi", bases: [{ word: "La", ref: "fr-0544" }, { word: "Seine", base: "Seine" }, { word: "traverse", base: "traverser" }, { word: "Paris", base: "Paris" }] }
+      - { target: "Le pont est sur la Seine.", ipa: "lə pɔ̃ ɛ syʁ la sɛn", bases: [{ word: "Le", ref: "fr-0543" }, { word: "pont", ref: "fr-0900" }, { word: "est", base: "être" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "Seine", base: "Seine" }] }
+  - id: "fr-3747"
+    target: "Rhône"
+    ipa: "ʁon"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le Rhône est très rapide.", ipa: "lə ʁon ɛ tʁɛ ʁapid", bases: [{ word: "Le", ref: "fr-0543" }, { word: "Rhône", base: "Rhône" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "rapide", ref: "fr-0447" }] }
+      - { target: "Lyon est au bord du Rhône.", ipa: "ljɔ̃ ɛt o bɔʁ dy ʁon", bases: [{ word: "Lyon", base: "Lyon" }, { word: "est", base: "être" }, { word: "au", base: "à" }, { word: "bord", base: "bord" }, { word: "du", base: "de" }, { word: "Rhône", base: "Rhône" }] }
+  - id: "fr-3748"
+    target: "Méditerranée"
+    ipa: "meditɛʁane"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La Méditerranée est bleue.", ipa: "la meditɛʁane ɛ blø", bases: [{ word: "La", ref: "fr-0544" }, { word: "Méditerranée", base: "Méditerranée" }, { word: "est", base: "être" }, { word: "bleue", base: "bleu" }] }
+      - { target: "Nous nageons dans la Méditerranée.", ipa: "nu naʒɔ̃ dɑ̃ la meditɛʁane", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "nageons", base: "nager" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "Méditerranée", base: "Méditerranée" }] }
+  - id: "fr-3749"
+    target: "Atlantique"
+    ipa: "atlɑ̃tik"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'Atlantique est froid en hiver.", ipa: "latlɑ̃tik ɛ fʁwa ɑ̃ ivɛʁ", bases: [{ word: "L'Atlantique", base: "Atlantique" }, { word: "est", base: "être" }, { word: "froid", ref: "fr-0420" }, { word: "en", base: "en" }, { word: "hiver", ref: "fr-1172" }] }
+      - { target: "Je surfe sur l'Atlantique.", ipa: "ʒə syʁf syʁ latlɑ̃tik", bases: [{ word: "Je", ref: "fr-0126" }, { word: "surfe", base: "surfer" }, { word: "sur", ref: "fr-0469" }, { word: "l'Atlantique", base: "Atlantique" }] }
+  - id: "fr-3750"
+    target: "belge"
+    ipa: "bɛlʒ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon voisin est belge.", ipa: "mɔ̃ vwazɛ̃ ɛ bɛlʒ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "voisin", ref: "fr-0101" }, { word: "est", base: "être" }, { word: "belge", base: "belge" }] }
+      - { target: "La ville est belge.", ipa: "la vij ɛ bɛlʒ", bases: [{ word: "La", ref: "fr-0544" }, { word: "ville", base: "ville" }, { word: "est", base: "être" }, { word: "belge", base: "belge" }] }
+  - id: "fr-3751"
+    target: "canadien"
+    ipa: "kanadjɛ̃"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon amie est canadienne.", ipa: "mɔ̃n ami ɛ kanadjɛn", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "amie", base: "ami" }, { word: "est", base: "être" }, { word: "canadienne", base: "canadien" }] }
+      - { target: "Le café est canadien.", ipa: "lə kafe ɛ kanadjɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "café", ref: "fr-0793" }, { word: "est", base: "être" }, { word: "canadien", base: "canadien" }] }
+  - id: "fr-3752"
+    target: "québécois"
+    ipa: "kebekwa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette musique est québécoise.", ipa: "sɛt myzik ɛ kebekwaz", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "musique", ref: "fr-0266" }, { word: "est", base: "être" }, { word: "québécoise", base: "québécois" }] }
+      - { target: "Le professeur est québécois.", ipa: "lə pʁɔfesœʁ ɛ kebekwa", bases: [{ word: "Le", ref: "fr-0543" }, { word: "professeur", ref: "fr-0105" }, { word: "est", base: "être" }, { word: "québécois", base: "québécois" }] }
+  - id: "fr-3753"
+    target: "marocain"
+    ipa: "maʁɔkɛ̃"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La cuisine marocaine est délicieuse.", ipa: "la kɥizin maʁɔkɛn ɛ delisjøz", bases: [{ word: "La", ref: "fr-0544" }, { word: "cuisine", ref: "fr-0822" }, { word: "marocaine", base: "marocain" }, { word: "est", base: "être" }, { word: "délicieuse", base: "délicieux" }] }
+      - { target: "Mon ami est marocain.", ipa: "mɔ̃n ami ɛ maʁɔkɛ̃", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "ami", ref: "fr-0100" }, { word: "est", base: "être" }, { word: "marocain", base: "marocain" }] }
+  - id: "fr-3754"
+    target: "sénégalais"
+    ipa: "seneɡalɛ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La musique sénégalaise est belle.", ipa: "la myzik seneɡalɛz ɛ bɛl", bases: [{ word: "La", ref: "fr-0544" }, { word: "musique", ref: "fr-0266" }, { word: "sénégalaise", base: "sénégalais" }, { word: "est", base: "être" }, { word: "belle", base: "beau" }] }
+      - { target: "Mon voisin est sénégalais.", ipa: "mɔ̃ vwazɛ̃ ɛ seneɡalɛ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "voisin", ref: "fr-0101" }, { word: "est", base: "être" }, { word: "sénégalais", base: "sénégalais" }] }
+  - id: "fr-3755"
+    target: "Lille"
+    ipa: "lij"
+    pos: "noun"
+    gender: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Lille est près de la Belgique.", ipa: "lij ɛ pʁɛ də la bɛlʒik", bases: [{ word: "Lille", base: "Lille" }, { word: "est", base: "être" }, { word: "près", ref: "fr-0464" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "Belgique", base: "Belgique" }] }
+      - { target: "Je prends le train pour Lille.", ipa: "ʒə pʁɑ̃ lə tʁɛ̃ puʁ lij", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", base: "prendre" }, { word: "le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "pour", ref: "fr-0591" }, { word: "Lille", base: "Lille" }] }
+  - id: "fr-3756"
+    target: "Toulouse"
+    ipa: "tuluz"
+    pos: "noun"
+    gender: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Toulouse est une ville rose.", ipa: "tuluz ɛt yn vil ʁoz", bases: [{ word: "Toulouse", base: "Toulouse" }, { word: "est", base: "être" }, { word: "une", ref: "fr-0545" }, { word: "ville", ref: "fr-0244" }, { word: "rose", base: "rose" }] }
+      - { target: "Nous visitons Toulouse.", ipa: "nu vizitɔ̃ tuluz", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "visitons", base: "visiter" }, { word: "Toulouse", base: "Toulouse" }] }
+  - id: "fr-3757"
+    target: "Bordeaux"
+    ipa: "bɔʁdo"
+    pos: "noun"
+    gender: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Bordeaux est près de l'océan.", ipa: "bɔʁdo ɛ pʁɛ də lɔseɑ̃", bases: [{ word: "Bordeaux", base: "Bordeaux" }, { word: "est", base: "être" }, { word: "près", ref: "fr-0464" }, { word: "de", base: "de" }, { word: "l'océan", base: "océan" }] }
+      - { target: "Je mange à Bordeaux.", ipa: "ʒə mɑ̃ʒ a bɔʁdo", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", base: "manger" }, { word: "à", base: "à" }, { word: "Bordeaux", base: "Bordeaux" }] }
+  - id: "fr-3758"
+    target: "Dakar"
+    ipa: "dakaʁ"
+    pos: "noun"
+    gender: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Dakar est au bord de la mer.", ipa: "dakaʁ ɛt o bɔʁ də la mɛʁ", bases: [{ word: "Dakar", base: "Dakar" }, { word: "est", base: "être" }, { word: "au", base: "à" }, { word: "bord", base: "bord" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "mer", ref: "fr-1939" }] }
+      - { target: "Mon ami habite à Dakar.", ipa: "mɔ̃n ami abit a dakaʁ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "ami", ref: "fr-0100" }, { word: "habite", base: "habiter" }, { word: "à", base: "à" }, { word: "Dakar", base: "Dakar" }] }
+  - id: "fr-3759"
+    target: "Ottawa"
+    ipa: "ɔtawa"
+    pos: "noun"
+    gender: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ottawa est la capitale du Canada.", ipa: "ɔtawa ɛ la kapital dy kanada", bases: [{ word: "Ottawa", base: "Ottawa" }, { word: "est", base: "être" }, { word: "la", ref: "fr-0544" }, { word: "capitale", base: "capitale" }, { word: "du", base: "de" }, { word: "Canada", base: "Canada" }] }
+      - { target: "Nous visitons Ottawa.", ipa: "nu vizitɔ̃ ɔtawa", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "visitons", base: "visiter" }, { word: "Ottawa", base: "Ottawa" }] }

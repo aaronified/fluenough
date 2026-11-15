@@ -1,0 +1,63 @@
+schema: 1
+id: "fr-en-reading-geography"
+name: "Reading: places in the french-speaking world"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about places in the french-speaking world. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-where-french-is-spoken"
+    title: "Naming regions and cities of the French-speaking world"
+    theme: "geography"
+    sentences:
+      - { text: "La France, la Belgique et la Suisse parlent français." }
+      - { text: "Au Canada, le Québec est francophone." }
+      - { text: "Le français est aussi parlé au Sénégal et au Maroc." }
+      - { text: "Bruxelles et Genève sont des villes francophones." }
+    questions:
+      - id: "fr-3770"
+        prompt: { en: "Which country is not named in the text?" }
+        options:
+          - { en: "Spain" }
+          - { en: "Belgium" }
+          - { en: "Switzerland" }
+        answer: 1
+      - id: "fr-3771"
+        prompt: { en: "What is French spoken in besides Canada?" }
+        options:
+          - { en: "Quebec" }
+          - { en: "Germany" }
+          - { en: "Italy" }
+        answer: 1
+      - id: "fr-3772"
+        prompt: { en: "Geneva is a French-speaking city." }
+        answer: true
+  - id: "fr-francophone-map"
+    title: "A map caption: where French is spoken"
+    theme: "geography"
+    sentences:
+      - { text: "Pays où le français est parlé : France, Belgique, Suisse, Canada." }
+      - { text: "En Afrique : Sénégal, Côte d'Ivoire, Cameroun." }
+      - { text: "Au Maghreb : Maroc, Algérie, Tunisie." }
+      - { text: "Les pays en vert sur la carte parlent français." }
+    questions:
+      - id: "fr-3773"
+        prompt: { en: "Which region is named as part of the Maghreb?" }
+        options:
+          - { en: "Morocco" }
+          - { en: "Senegal" }
+          - { en: "Canada" }
+        answer: 1
+      - id: "fr-3774"
+        prompt: { en: "What colour shows the countries on the map?" }
+        options:
+          - { en: "Green" }
+          - { en: "Red" }
+          - { en: "Blue" }
+        answer: 1
+      - id: "fr-3775"
+        prompt: { en: "Côte d'Ivoire is in Asia." }
+        answer: false
