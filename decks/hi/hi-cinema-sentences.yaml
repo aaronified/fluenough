@@ -1,0 +1,190 @@
+schema: 1
+id: "hi-cinema-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-5556"
+    target: "मुझे यह सिनेमा बहुत पसंद है।"
+    reading: "mujhē yah sinēmā bahut pasand hai."
+    ipa: "mʊdʒʱeː jəɦ sɪneːmaː bəɦʊt̪ pəsənd̪ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मुझे", base: "मैं", reading: "mujhē" }
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "सिनेमा", ref: "hi-2420" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "पसंद", ref: "hi-0469" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "कॉमेडी", reading: "kômēḍī", kind: "word" }
+      - { id: "w2", word: "ड्रामा", reading: "ḍrāmā", kind: "word" }
+  - id: "hi-5557"
+    target: "हीरो और हीरोइन की जोड़ी अच्छी है।"
+    reading: "hīrō aur hīrōin kī jōṛī acchī hai."
+    ipa: "ɦiːroː ɔːr ɦiːroːɪn kiː dʒoːɽiː ətʃtʃʰiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "हीरो", ref: "hi-2429" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "हीरोइन", ref: "hi-2430" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "जोड़ी", base: "जोड़ी", reading: "jōṛī" }
+      - { word: "अच्छी", base: "अच्छा", reading: "acchī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "विलेन", reading: "vilēn", kind: "word" }
+      - { id: "w2", word: "अभिनेता", reading: "abhinētā", kind: "word" }
+  - id: "hi-5558"
+    target: "निर्देशक ने नई फ़िल्म का ट्रेलर दिखाया।"
+    reading: "nirdēśak nē naī film kā ṭrēlar dikhāyā."
+    ipa: "nɪrd̪eːʃək neː nəiː fɪlm kaː ʈreːlər d̪ɪkʰaːjaː"
+    pos: "phrase"
+    bases:
+      - { word: "निर्देशक", ref: "hi-2423" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "नई", base: "नया", reading: "naī" }
+      - { word: "फ़िल्म", base: "फ़िल्म", reading: "film" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "ट्रेलर", ref: "hi-2434" }
+      - { word: "दिखाया", base: "दिखाना", reading: "dikhāyā" }
+    confusables:
+      - { id: "w1", word: "पोस्टर", reading: "pōsṭar", kind: "word" }
+      - { id: "w2", word: "संगीतकार", reading: "saṅgītkār", kind: "word" }
+  - id: "hi-5559"
+    target: "पहला सीन बहुत रोमांचक था।"
+    reading: "pahlā sīn bahut rōmāñcak thā."
+    ipa: "pəɦlaː siːn bəɦʊt̪ roːmaːɲtʃək t̪ʰaː"
+    pos: "phrase"
+    bases:
+      - { word: "पहला", base: "पहला", reading: "pahlā" }
+      - { word: "सीन", ref: "hi-2427" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "रोमांचक", ref: "hi-2442" }
+      - { word: "था", base: "होना", reading: "thā" }
+    confusables:
+      - { id: "w1", word: "सेट", reading: "sēṭ", kind: "word" }
+      - { id: "w2", word: "ड्रामा", reading: "ḍrāmā", kind: "word" }
+  - id: "hi-5560"
+    target: "दर्शक थिएटर में फ़िल्म देखते हैं।"
+    reading: "darśak thiēṭar mēm̐ film dēkhtē haim̐."
+    ipa: "d̪ərʃək t̪ʰɪeːʈər mẽː fɪlm d̪eːkʰt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "दर्शक", ref: "hi-2426" }
+      - { word: "थिएटर", ref: "hi-2424" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "फ़िल्म", base: "फ़िल्म", reading: "film" }
+      - { word: "देखते", base: "देखना", reading: "dēkhtē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "परदा", reading: "pardā", kind: "word" }
+      - { id: "w2", word: "सिनेमा", reading: "sinēmā", kind: "word" }
+  - id: "hi-5561"
+    target: "गीतकार ने नया गाना लिखा।"
+    reading: "gītkār nē nayā gānā likhā."
+    ipa: "ɡiːt̪kaːr neː nəjaː ɡaːnaː lɪkʰaː"
+    pos: "phrase"
+    bases:
+      - { word: "गीतकार", ref: "hi-2435" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "नया", ref: "hi-0896" }
+      - { word: "गाना", base: "गाना", reading: "gānā" }
+      - { word: "लिखा", base: "लिखना", reading: "likhā" }
+    confusables:
+      - { id: "w1", word: "संगीतकार", reading: "saṅgītkār", kind: "word" }
+      - { id: "w2", word: "अभिनेता", reading: "abhinētā", kind: "word" }
+  - id: "hi-5562"
+    target: "संगीतकार की धुन बहुत मीठी है।"
+    reading: "saṅgītkār kī dhun bahut mīṭhī hai."
+    ipa: "səŋɡiːt̪kaːr kiː d̪ʱʊn bəɦʊt̪ miːʈʰiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "संगीतकार", ref: "hi-2436" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "धुन", base: "धुन", reading: "dhun" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "मीठी", base: "मीठा", reading: "mīṭhī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "गीतकार", reading: "gītkār", kind: "word" }
+      - { id: "w2", word: "कॉमेडी", reading: "kômēḍī", kind: "word" }
+  - id: "hi-5563"
+    target: "कैमरामैन ने शूटिंग शुरू की।"
+    reading: "kaimrāmain nē śūṭiṅg śurū kī."
+    ipa: "kɛːmraːmɛːn neː ʃuːʈɪŋɡ ʃʊruː kiː"
+    pos: "phrase"
+    bases:
+      - { word: "कैमरामैन", ref: "hi-2437" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "शूटिंग", ref: "hi-2438" }
+      - { word: "शुरू", base: "शुरू", reading: "śurū" }
+      - { word: "की", base: "करना", reading: "kī" }
+    confusables:
+      - { id: "w1", word: "सेट", reading: "sēṭ", kind: "word" }
+      - { id: "w2", word: "निर्देशक", reading: "nirdēśak", kind: "word" }
+  - id: "hi-5564"
+    target: "फ़िल्म का मनोरंजन सबको पसंद आता है।"
+    reading: "film kā manōrañjan sabkō pasand ātā hai."
+    ipa: "fɪlm kaː mənoːrəɲdʒən səbkoː pəsənd̪ aːt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "फ़िल्म", base: "फ़िल्म", reading: "film" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "मनोरंजन", ref: "hi-2441" }
+      - { word: "सबको", base: "सब", reading: "sabkō" }
+      - { word: "पसंद", ref: "hi-0469" }
+      - { word: "आता", base: "आना", reading: "ātā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "ड्रामा", reading: "ḍrāmā", kind: "word" }
+      - { id: "w2", word: "कॉमेडी", reading: "kômēḍī", kind: "word" }
+  - id: "hi-5565"
+    target: "हीरो का पोस्टर सड़क पर लगा है।"
+    reading: "hīrō kā pōsṭar saṛak par lagā hai."
+    ipa: "ɦiːroː kaː poːsʈər səɽək pər ləɡaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "हीरो", ref: "hi-2429" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "पोस्टर", ref: "hi-2439" }
+      - { word: "सड़क", base: "सड़क", reading: "saṛak" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "लगा", base: "लगना", reading: "lagā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "ट्रेलर", reading: "ṭrēlar", kind: "word" }
+      - { id: "w2", word: "विलेन", reading: "vilēn", kind: "word" }
+  - id: "hi-5566"
+    target: "सिनेमा का परदा बहुत बड़ा है।"
+    reading: "sinēmā kā pardā bahut baṛā hai."
+    ipa: "sɪneːmaː kaː pərd̪aː bəɦʊt̪ bəɽaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "सिनेमा", ref: "hi-2420" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "परदा", ref: "hi-2425" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "बड़ा", ref: "hi-0894" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "थिएटर", reading: "thiēṭar", kind: "word" }
+      - { id: "w2", word: "पोस्टर", reading: "pōsṭar", kind: "word" }
+  - id: "hi-5567"
+    target: "शानदार सीन देखने के लिए थिएटर जाइए।"
+    reading: "śāndār sīn dēkhnē kē liē thiēṭar jāiē."
+    ipa: "ʃaːnd̪aːr siːn d̪eːkʰneː keː lɪeː t̪ʰɪeːʈər dʒaːɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "शानदार", base: "शानदार", reading: "śāndār" }
+      - { word: "सीन", ref: "hi-2427" }
+      - { word: "देखने", base: "देखना", reading: "dēkhnē" }
+      - { word: "के", base: "का", reading: "kē" }
+      - { word: "लिए", base: "लिए", reading: "liē" }
+      - { word: "थिएटर", ref: "hi-2424" }
+      - { word: "जाइए", base: "जाना", reading: "jāiē" }
+    confusables:
+      - { id: "w1", word: "परदा", reading: "pardā", kind: "word" }
+      - { id: "w2", word: "सेट", reading: "sēṭ", kind: "word" }

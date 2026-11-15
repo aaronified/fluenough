@@ -10,6 +10,8 @@ cards:
   - id: "fr-2563"
     target: "Le juge condamne l'accusé à une peine de prison."
     ipa: "lə ʒyʒ kɔ̃dan lakyze a yn pɛn də pʁizɔ̃"
+    phonetic: "[lə ʒyʒ kɔ̃d̪an̪ lakyz̪e a yn̪ pɛn̪ d̪ə pχiz̪ɔ̃]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -28,6 +30,8 @@ cards:
   - id: "fr-2564"
     target: "L'avocat présente une preuve au tribunal."
     ipa: "lavɔka pʁezɑ̃t yn pʁœv o tʁibynal"
+    phonetic: "[lavɔka pχez̪ɑ̃t̪ yn̪ pχœv o t̪χibyn̪al]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -40,9 +44,13 @@ cards:
     confusables:
       - { id: "dossier", ref: "fr-0665", kind: "word" }
       - { id: "temoin", ref: "fr-1820", kind: "word" }
+    notes:
+      - { id: "au", kind: "behaviour" }
   - id: "fr-2565"
     target: "La victime porte plainte contre le voisin."
     ipa: "la viktim pɔʁt plɛ̃t kɔ̃tʁ lə vwazɛ̃"
+    phonetic: "[la vikt̪im pɔχt̪ plɛ̃t̪ kɔ̃t̪χ lə vwaz̪ɛ̃]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -59,6 +67,8 @@ cards:
   - id: "fr-2566"
     target: "Ce contrat contient une clause illégale."
     ipa: "sə kɔ̃tʁa kɔ̃tjɛ̃ yn kloz ilegal"
+    phonetic: "[s̪ə kɔ̃t̪χa kɔ̃t̪jɛ̃ yn̪ kloz̪ ileɡal]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -71,9 +81,13 @@ cards:
     confusables:
       - { id: "legal", ref: "fr-2556", kind: "word" }
       - { id: "signature", ref: "fr-1991", kind: "word" }
+    notes:
+      - { id: "adjective-position", kind: "behaviour" }
   - id: "fr-2567"
     target: "Le jugement du tribunal est injuste."
     ipa: "lə ʒyʒmɑ̃ dy tʁibynal ɛ ɛ̃ʒyst"
+    phonetic: "[lə ʒyʒmɑ̃ d̪y t̪χibyn̪al ɛ ɛ̃ʒys̪t̪]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -86,9 +100,13 @@ cards:
     confusables:
       - { id: "juste", ref: "fr-1896", kind: "word" }
       - { id: "appel", ref: "fr-2519", kind: "word" }
+    notes:
+      - { id: "du", kind: "behaviour" }
   - id: "fr-2568"
     target: "L'enquêteur interroge la victime et le témoin."
     ipa: "lɑ̃kɛtœʁ ɛ̃tɛʁɔʒ la viktim e lə temwɛ̃"
+    phonetic: "[lɑ̃kɛt̪œʁ ɛ̃t̪ɛʁɔʒ la vikt̪im e lə t̪emwɛ̃]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:

@@ -10,6 +10,8 @@ cards:
   - id: "fr-1287"
     target: "Le lapin a peur du renard."
     ipa: "lə lapɛ̃ a pœʁ dy ʁənaʁ"
+    phonetic: "[lə lapɛ̃ a pœʁ d̪y ʁən̪aːʁ]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -19,9 +21,13 @@ cards:
       - { word: "peur", base: "peur" }
       - { word: "du", base: "du" }
       - { word: "renard", ref: "fr-1271" }
+    notes:
+      - { id: "du", kind: "behaviour" }
   - id: "fr-1288"
     target: "Les poules et les coqs vivent à la ferme."
     ipa: "le pul e le kɔk vivɑ̃ a la fɛʁm"
+    phonetic: "[le pul e le kɔk vivɑ̃ a la fɛʁm]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -36,6 +42,8 @@ cards:
   - id: "fr-1289"
     target: "Le cheval est plus grand que le chien."
     ipa: "lə ʃəval ɛ plys ɡʁɑ̃ kə lə ʃjɛ̃"
+    phonetic: "[lə ʃəval ɛ plys̪ ɡʁɑ̃ kə lə ʃjɛ̃]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -46,9 +54,13 @@ cards:
       - { word: "grand", ref: "fr-0410" }
       - { word: "que", base: "que" }
       - { word: "chien", ref: "fr-1253" }
+    notes:
+      - { id: "comparison", kind: "behaviour" }
   - id: "fr-1290"
     target: "Les oiseaux chantent le matin."
     ipa: "le zwazo ʃɑ̃t lə matɛ̃"
+    phonetic: "[le z̪waz̪o ʃɑ̃t̪ lə mat̪ɛ̃]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -63,6 +75,8 @@ cards:
   - id: "fr-1291"
     target: "Mon chat mange du poisson."
     ipa: "mɔ̃ ʃa mɑ̃ʒ dy pwasɔ̃"
+    phonetic: "[mɔ̃ ʃa mɑ̃ʒ d̪y pwas̪ɔ̃]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -74,9 +88,13 @@ cards:
     confusables:
       - { id: "chien", ref: "fr-1253", kind: "word" }
       - { id: "lait", ref: "fr-0044", kind: "word" }
+    notes:
+      - { id: "partitive", kind: "behaviour" }
   - id: "fr-1292"
     target: "Le tigre et le lion vivent en Afrique."
     ipa: "lə tiɡʁ e lə ljɔ̃ vivɑ̃ ɑ̃ afʁik"
+    phonetic: "[lə t̪iɡʁ e lə ljɔ̃ vivɑ̃ ɑ̃ afχik]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -90,6 +108,8 @@ cards:
   - id: "fr-1293"
     target: "La tortue est lente."
     ipa: "la tɔʁty ɛ lɑ̃t"
+    phonetic: "[la t̪ɔχt̪y ɛ lɑ̃ːt̪]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -97,9 +117,13 @@ cards:
       - { word: "tortue", ref: "fr-1274" }
       - { word: "est", ref: "fr-0021" }
       - { word: "lente", ref: "fr-0448" }
+    notes:
+      - { id: "agreement", kind: "behaviour" }
   - id: "fr-1294"
     target: "L'abeille et le papillon volent dans un jardin."
     ipa: "labɛj e lə papijɔ̃ vɔl dɑ̃ œ̃ ʒaʁdɛ̃"
+    phonetic: "[labɛj e lə papijɔ̃ vɔl d̪ɑ̃ œ̃ ʒaʁd̪ɛ̃]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -117,6 +141,8 @@ cards:
   - id: "fr-1295"
     target: "Le loup et le renard sont des animaux sauvages."
     ipa: "lə lu e lə ʁənaʁ sɔ̃ de animo sovaʒ"
+    phonetic: "[lə lu e lə ʁən̪aʁ s̪ɔ̃ d̪e an̪imo s̪ovaːʒ]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -128,9 +154,13 @@ cards:
       - { word: "des", ref: "fr-0546" }
       - { word: "animaux", ref: "fr-1284" }
       - { word: "sauvages", base: "sauvage" }
+    notes:
+      - { id: "adjective-position", kind: "behaviour" }
   - id: "fr-1296"
     target: "Le serpent et l'ours sont dangereux."
     ipa: "lə sɛʁpɑ̃ e luʁs sɔ̃ dɑ̃ʒʁø"
+    phonetic: "[lə s̪ɛχpɑ̃ e luχs̪ s̪ɔ̃ d̪ɑ̃ʒʁø]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:

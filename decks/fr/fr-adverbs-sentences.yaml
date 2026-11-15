@@ -10,6 +10,8 @@ cards:
   - id: "fr-0359"
     target: "Je mange souvent des pâtes."
     ipa: "ʒə mɑ̃ʒ suvɑ̃ de pɑt"
+    phonetic: "[ʒə mɑ̃ʒ s̪uvɑ̃ d̪e pɑːt̪]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -21,9 +23,13 @@ cards:
     confusables:
       - { id: "toujours", ref: "fr-0327", kind: "word" }
       - { id: "jamais", ref: "fr-0328", kind: "word" }
+    notes:
+      - { id: "adverb-position", kind: "behaviour" }
   - id: "fr-0360"
     target: "Il est déjà là."
     ipa: "il ɛ deʒa la"
+    phonetic: "[il ɛ d̪eʒa la]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -37,6 +43,8 @@ cards:
   - id: "fr-0361"
     target: "Elle arrive tôt."
     ipa: "ɛl aʁiv to"
+    phonetic: "[ɛl aʁiv t̪o]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -49,6 +57,8 @@ cards:
   - id: "fr-0362"
     target: "Nous mangeons maintenant."
     ipa: "nu mɑ̃ʒɔ̃ mɛ̃tnɑ̃"
+    phonetic: "[n̪u mɑ̃ʒɔ̃ mɛ̃t̪n̪ɑ̃]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -58,9 +68,13 @@ cards:
     confusables:
       - { id: "alors", ref: "fr-0351", kind: "word" }
       - { id: "bientot", ref: "fr-0335", kind: "word" }
+    notes:
+      - { id: "spelling", kind: "behaviour" }
   - id: "fr-0363"
     target: "Ma sœur aime surtout la musique."
     ipa: "ma sœʁ ɛm syʁtu la myzik"
+    phonetic: "[ma s̪œʁ ɛm s̪yχt̪u la myz̪ik]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -76,6 +90,8 @@ cards:
   - id: "fr-0364"
     target: "Je parle un peu français."
     ipa: "ʒə paʁl œ̃ pø fʁɑ̃sɛ"
+    phonetic: "[ʒə paʁl œ̃ pø fχɑ̃s̪ɛ]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -87,9 +103,13 @@ cards:
     confusables:
       - { id: "mal", ref: "fr-0340", kind: "word" }
       - { id: "assez", ref: "fr-0343", kind: "word" }
+    notes:
+      - { id: "article", kind: "behaviour" }
   - id: "fr-0365"
     target: "Ils cherchent partout."
     ipa: "il ʃɛʁʃ paʁtu"
+    phonetic: "[il ʃɛχʃ paχt̪u]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:

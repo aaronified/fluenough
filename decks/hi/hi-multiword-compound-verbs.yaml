@@ -1,0 +1,77 @@
+schema: 1
+id: "hi-multiword-compound-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+genre: "multiword"
+pattern_family: "vector-verb"
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - id: "hi-4400"
+    target: "ले आना"
+    words: ["ले", "आना"]
+    reading: "lē ānā"
+    ipa: "leː aːnaː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ले", base: "लेना", reading: "lē" }
+      - { word: "आना", ref: "hi-0778" }
+  - id: "hi-4401"
+    target: "ले जाना"
+    words: ["ले", "जाना"]
+    reading: "lē jānā"
+    ipa: "leː dʒaːnaː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ले", base: "लेना", reading: "lē" }
+      - { word: "जाना", ref: "hi-0777" }
+  - id: "hi-4402"
+    target: "निकल जाना"
+    words: ["निकल", "जाना"]
+    reading: "nikal jānā"
+    ipa: "nɪkəl dʒaːnaː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "निकल", base: "निकलना", reading: "nikal" }
+      - { word: "जाना", ref: "hi-0777" }
+  - id: "hi-4403"
+    target: "मार डालना"
+    words: ["मार", "डालना"]
+    reading: "mār ḍālnā"
+    ipa: "maːr ɖaːlnaː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "मार", base: "मारना", reading: "mār" }
+      - { word: "डालना", ref: "hi-0941" }
+  - id: "hi-4404"
+    target: "छोड़ देना"
+    target_scripts: { perso_arabic: "چھوڑ دینا" }
+    words: ["छोड़", "देना"]
+    reading: "chōṛ dēnā"
+    ipa: "tʃʰoːɽ d̪eːnaː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "छोड़", base: "छोड़ना", reading: "chōṛ" }
+      - { word: "देना", ref: "hi-0785" }

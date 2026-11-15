@@ -1,0 +1,178 @@
+schema: 1
+id: "hi-opinions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-5336"
+    target: "आपकी राय क्या है?"
+    reading: "āpkī rāy kyā hai?"
+    ipa: "aːpkiː raːj kjaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "आपकी", base: "आप", reading: "āpkī" }
+      - { word: "राय", ref: "hi-2180" }
+      - { word: "क्या", ref: "hi-0157" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "विचार", reading: "vicār", kind: "word" }
+      - { id: "w2", word: "सुझाव", reading: "sujhāv", kind: "word" }
+  - id: "hi-5337"
+    target: "मैं आपसे सहमत हूँ।"
+    reading: "maim̐ āpsē sahmat hūm̐."
+    ipa: "mɛ̃ː aːpseː səɦmət̪ ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "आपसे", base: "आप", reading: "āpsē" }
+      - { word: "सहमत", ref: "hi-2182" }
+      - { word: "हूँ", base: "होना", reading: "hūm̐" }
+    confusables:
+      - { id: "w1", word: "असहमत", reading: "ashmat", kind: "word" }
+      - { id: "w2", word: "नापसंद", reading: "nāpsand", kind: "word" }
+  - id: "hi-5338"
+    target: "मेरे तर्क में दम है।"
+    reading: "mērē tark mēm̐ dam hai."
+    ipa: "meːreː t̪ərk mẽː d̪əm ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरे", base: "मैं", reading: "mērē" }
+      - { word: "तर्क", ref: "hi-2186" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "दम", base: "दम", reading: "dam" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "दलील", reading: "dalīl", kind: "word" }
+      - { id: "w2", word: "सबूत", reading: "sabūt", kind: "word" }
+  - id: "hi-5339"
+    target: "इस बात का कोई सबूत नहीं।"
+    reading: "is bāt kā kōī sabūt nahīm̐."
+    ipa: "ɪs baːt̪ kaː koːiː səbuːt̪ nəɦĩː"
+    pos: "phrase"
+    bases:
+      - { word: "इस", base: "यह", reading: "is" }
+      - { word: "बात", ref: "hi-1864" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "कोई", ref: "hi-0758" }
+      - { word: "सबूत", ref: "hi-2187" }
+      - { word: "नहीं", ref: "hi-0156" }
+    confusables:
+      - { id: "w1", word: "सच्चाई", reading: "saccāī", kind: "word" }
+      - { id: "w2", word: "शक", reading: "śak", kind: "word" }
+  - id: "hi-5340"
+    target: "मुझे यकीन नहीं होता।"
+    reading: "mujhē yakīn nahīm̐ hōtā."
+    ipa: "mʊdʒʱeː jəkiːn nəɦĩː ɦoːt̪aː"
+    pos: "phrase"
+    bases:
+      - { word: "मुझे", base: "मैं", reading: "mujhē" }
+      - { word: "यकीन", ref: "hi-2197" }
+      - { word: "नहीं", ref: "hi-0156" }
+      - { word: "होता", base: "होना", reading: "hōtā" }
+    confusables:
+      - { id: "w1", word: "भरोसा", reading: "bharōsā", kind: "word" }
+      - { id: "w2", word: "शक", reading: "śak", kind: "word" }
+  - id: "hi-5341"
+    target: "यह प्रस्ताव संभव है।"
+    reading: "yah prastāv sambhav hai."
+    ipa: "jəɦ prəst̪aːʋ səmbʱəʋ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "प्रस्ताव", base: "प्रस्ताव", reading: "prastāv" }
+      - { word: "संभव", ref: "hi-2201" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "असंभव", reading: "asambhav", kind: "word" }
+      - { id: "w2", word: "निश्चित", reading: "niścit", kind: "word" }
+  - id: "hi-5342"
+    target: "आप जो कहते हैं, उसे मैं मानता हूँ।"
+    reading: "āp jō kahtē haim̐, usē maim̐ māntā hūm̐."
+    ipa: "aːp dʒoː kəɦt̪eː ɦɛ̃ː ʊseː mɛ̃ː maːnt̪aː ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "आप", ref: "hi-0134" }
+      - { word: "जो", base: "जो", reading: "jō" }
+      - { word: "कहते", base: "कहना", reading: "kahtē" }
+      - { word: "हैं", ref: "hi-0113" }
+      - { word: "उसे", base: "वह", reading: "usē" }
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "मानता", base: "मानना", reading: "māntā" }
+      - { word: "हूँ", base: "होना", reading: "hūm̐" }
+    confusables:
+      - { id: "w1", word: "स्वीकार", reading: "svīkār", kind: "word" }
+      - { id: "w2", word: "इनकार", reading: "inkār", kind: "word" }
+  - id: "hi-5343"
+    target: "हम एक समझौते पर पहुँचे।"
+    reading: "ham ēk samjhautē par pahum̐cē."
+    ipa: "ɦəm eːk səmdʒʱɔːt̪eː pər pəɦʊ̃tʃeː"
+    pos: "phrase"
+    bases:
+      - { word: "हम", ref: "hi-0053" }
+      - { word: "एक", ref: "hi-0198" }
+      - { word: "समझौते", base: "समझौता", reading: "samjhautē" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "पहुँचे", base: "पहुँचना", reading: "pahum̐cē" }
+    confusables:
+      - { id: "w1", word: "बहस", reading: "bahas", kind: "word" }
+      - { id: "w2", word: "इनकार", reading: "inkār", kind: "word" }
+  - id: "hi-5344"
+    target: "उसकी सलाह मान लो।"
+    reading: "uskī salāh mān lō."
+    ipa: "ʊskiː səlaːɦ maːn loː"
+    pos: "phrase"
+    bases:
+      - { word: "उसकी", base: "वह", reading: "uskī" }
+      - { word: "सलाह", ref: "hi-2195" }
+      - { word: "मान", base: "मानना", reading: "mān" }
+      - { word: "लो", base: "लेना", reading: "lō" }
+    confusables:
+      - { id: "w1", word: "सुझाव", reading: "sujhāv", kind: "word" }
+      - { id: "w2", word: "राय", reading: "rāy", kind: "word" }
+  - id: "hi-5345"
+    target: "बहस में कोई सुझाव दीजिए।"
+    reading: "bahas mēm̐ kōī sujhāv dījiē."
+    ipa: "bəɦəs mẽː koːiː sʊdʒʱaːʋ d̪iːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "बहस", ref: "hi-2193" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "कोई", ref: "hi-0758" }
+      - { word: "सुझाव", ref: "hi-2194" }
+      - { word: "दीजिए", base: "देना", reading: "dījiē" }
+    confusables:
+      - { id: "w1", word: "दलील", reading: "dalīl", kind: "word" }
+      - { id: "w2", word: "विचार", reading: "vicār", kind: "word" }
+  - id: "hi-5346"
+    target: "मेरा नज़रिया थोड़ा अलग है।"
+    reading: "mērā nazariyā thōṛā alag hai."
+    ipa: "meːraː nəzərɪjaː t̪ʰoːɽaː ələɡ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरा", base: "मैं", reading: "mērā" }
+      - { word: "नज़रिया", ref: "hi-2191" }
+      - { word: "थोड़ा", ref: "hi-0865" }
+      - { word: "अलग", base: "अलग", reading: "alag" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "ख़याल", reading: "k͟hayāl", kind: "word" }
+      - { id: "w2", word: "पक्ष", reading: "pakś", kind: "word" }
+  - id: "hi-5347"
+    target: "मैं इस बात से असहमत नहीं हूँ।"
+    reading: "maim̐ is bāt sē asahmat nahīm̐ hūm̐."
+    ipa: "mɛ̃ː ɪs baːt̪ seː əsəɦmət̪ nəɦĩː ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "इस", base: "यह", reading: "is" }
+      - { word: "बात", ref: "hi-1864" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "असहमत", ref: "hi-2183" }
+      - { word: "नहीं", ref: "hi-0156" }
+      - { word: "हूँ", base: "होना", reading: "hūm̐" }
+    confusables:
+      - { id: "w1", word: "सहमत", reading: "sahmat", kind: "word" }
+      - { id: "w2", word: "इनकार", reading: "inkār", kind: "word" }

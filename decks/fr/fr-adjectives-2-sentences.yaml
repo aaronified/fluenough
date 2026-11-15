@@ -10,6 +10,8 @@ cards:
   - id: "fr-3600"
     target: "La chambre est lumineuse et calme."
     ipa: "la ʃɑ̃bʁ ɛ lyminøz e kalm"
+    phonetic: "[la ʃɑ̃bʁ ɛ lymin̪øz̪ e kalm]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -22,9 +24,13 @@ cards:
     confusables:
       - { id: "sombre", ref: "fr-3561", kind: "word" }
       - { id: "obscur", ref: "fr-3588", kind: "word" }
+    notes:
+      - { id: "agreement", kind: "behaviour" }
   - id: "fr-3601"
     target: "Le couloir est étroit, mais propre."
     ipa: "lə kulwaʁ ɛt etʁwa mɛ pʁɔpʁ"
+    phonetic: "[lə kulwaʁ ɛt̪ et̪χwa mɛ pχɔpχ]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -40,6 +46,8 @@ cards:
   - id: "fr-3602"
     target: "L'appartement est meublé et confortable."
     ipa: "lapaʁtəmɑ̃ ɛ mœble e kɔ̃fɔʁtabl"
+    phonetic: "[lapaχt̪əmɑ̃ ɛ mœble e kɔ̃fɔχt̪abl]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -54,6 +62,8 @@ cards:
   - id: "fr-3603"
     target: "La cuisine est pratique mais encombrée."
     ipa: "la kɥizin ɛ pʁatik mɛ ɑ̃kɔ̃bʁe"
+    phonetic: "[la kɥiz̪in̪ ɛ pχat̪ik mɛ ɑ̃kɔ̃bʁe]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -69,6 +79,8 @@ cards:
   - id: "fr-3604"
     target: "Le salon est clair et spacieux."
     ipa: "lə salɔ̃ ɛ klɛʁ e spasjø"
+    phonetic: "[lə s̪alɔ̃ ɛ klɛʁ e s̪pas̪jø]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -84,6 +96,8 @@ cards:
   - id: "fr-3605"
     target: "L'escalier est dangereux, attention."
     ipa: "lɛskalje ɛ dɑ̃ʒʁø atɑ̃sjɔ̃"
+    phonetic: "[lɛs̪kalje ɛ d̪ɑ̃ʒʁø at̪ɑ̃s̪jɔ̃]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -97,6 +111,8 @@ cards:
   - id: "fr-3606"
     target: "La porte est abîmée et usée."
     ipa: "la pɔʁt ɛt abime e yze"
+    phonetic: "[la pɔχt̪ ɛt̪ abime e yz̪e]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -109,9 +125,13 @@ cards:
     confusables:
       - { id: "casse", ref: "fr-1738", kind: "word" }
       - { id: "solide", ref: "fr-3581", kind: "word" }
+    notes:
+      - { id: "agreement", kind: "behaviour" }
   - id: "fr-3607"
     target: "La chambre est douillette et chaleureuse."
     ipa: "la ʃɑ̃bʁ ɛ dujɛt e ʃalœʁøz"
+    phonetic: "[la ʃɑ̃bʁ ɛ d̪ujɛt̪ e ʃalœʁøːz̪]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -124,9 +144,13 @@ cards:
     confusables:
       - { id: "confortable", ref: "fr-3562", kind: "word" }
       - { id: "agreable", ref: "fr-3565", kind: "word" }
+    notes:
+      - { id: "agreement", kind: "behaviour" }
   - id: "fr-3608"
     target: "Le salon est très éclairé le matin."
     ipa: "lə salɔ̃ ɛ tʁɛz eklɛʁe lə matɛ̃"
+    phonetic: "[lə s̪alɔ̃ ɛ t̪χɛz̪ eklɛʁe lə mat̪ɛ̃]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -142,6 +166,8 @@ cards:
   - id: "fr-3609"
     target: "L'appartement est proche du centre."
     ipa: "lapaʁtəmɑ̃ ɛ pʁɔʃ dy sɑ̃tʁ"
+    phonetic: "[lapaχt̪əmɑ̃ ɛ pχɔʃ d̪y s̪ɑ̃t̪χ]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -153,3 +179,5 @@ cards:
     confusables:
       - { id: "central", ref: "fr-3574", kind: "word" }
       - { id: "gare", ref: "fr-0075", kind: "word" }
+    notes:
+      - { id: "du", kind: "behaviour" }

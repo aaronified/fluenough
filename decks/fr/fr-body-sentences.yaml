@@ -10,6 +10,8 @@ cards:
   - id: "fr-0950"
     target: "J'ai mal à la tête."
     ipa: "ʒe mal a la tɛt"
+    phonetic: "[ʒe mal a la t̪ɛt̪]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -24,6 +26,8 @@ cards:
   - id: "fr-0951"
     target: "Le genou est fatigué."
     ipa: "lə ʒənu ɛ fatiɡe"
+    phonetic: "[lə ʒən̪u ɛ fat̪iɡe]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -37,6 +41,8 @@ cards:
   - id: "fr-0952"
     target: "Ma bouche est petite."
     ipa: "ma buʃ ɛ pətit"
+    phonetic: "[ma buʃ ɛ pət̪it̪]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -47,9 +53,13 @@ cards:
     confusables:
       - { id: "nez", ref: "fr-0936", kind: "word" }
       - { id: "dent", ref: "fr-0935", kind: "word" }
+    notes:
+      - { id: "agreement", kind: "behaviour" }
   - id: "fr-0953"
     target: "Mes cheveux sont longs."
     ipa: "me ʃəvø sɔ̃ lɔ̃"
+    phonetic: "[me ʃəvø s̪ɔ̃ lɔ̃]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -60,9 +70,13 @@ cards:
     confusables:
       - { id: "tete", ref: "fr-0927", kind: "word" }
       - { id: "visage", ref: "fr-0944", kind: "word" }
+    notes:
+      - { id: "agreement", kind: "behaviour" }
   - id: "fr-0954"
     target: "J'ai mal au ventre."
     ipa: "ʒe mal o vɑ̃tʁ"
+    phonetic: "[ʒe mal o vɑ̃t̪χ]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -73,9 +87,13 @@ cards:
     confusables:
       - { id: "dos", ref: "fr-0932", kind: "word" }
       - { id: "gorge", ref: "fr-0948", kind: "word" }
+    notes:
+      - { id: "au", kind: "behaviour" }
   - id: "fr-0955"
     target: "La peau est froide."
     ipa: "la po ɛ fʁwad"
+    phonetic: "[la po ɛ fχwad̪]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -86,9 +104,13 @@ cards:
     confusables:
       - { id: "sang", ref: "fr-0947", kind: "word" }
       - { id: "visage", ref: "fr-0944", kind: "word" }
+    notes:
+      - { id: "agreement", kind: "behaviour" }
   - id: "fr-0956"
     target: "Je ne bouge pas."
     ipa: "ʒə nə buʒ pa"
+    phonetic: "[ʒə n̪ə buʒ pa]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -99,3 +121,5 @@ cards:
     confusables:
       - { id: "marcher", ref: "fr-0306", kind: "word" }
       - { id: "courir", ref: "fr-0307", kind: "word" }
+    notes:
+      - { id: "ne-pas", kind: "behaviour" }

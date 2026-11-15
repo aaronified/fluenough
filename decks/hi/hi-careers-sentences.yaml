@@ -1,0 +1,189 @@
+schema: 1
+id: "hi-careers-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-5520"
+    target: "मेरा सपना पायलट बनना है।"
+    reading: "mērā sapnā pāylaṭ bannā hai."
+    ipa: "meːraː səpnaː paːjləʈ bənnaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "सपना", ref: "hi-2350" }
+      - { word: "पायलट", ref: "hi-2340" }
+      - { word: "बनना", base: "बनना", reading: "bannā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "सैनिक", reading: "sainik", kind: "word" }
+      - { id: "w2", word: "कलाकार", reading: "kalākār", kind: "word" }
+  - id: "hi-5521"
+    target: "उसने नौकरी के लिए साक्षात्कार दिया।"
+    reading: "usnē naukrī kē liē sākśātkār diyā."
+    ipa: "ʊsneː nɔːkriː keː lɪeː saːkʃaːt̪kaːr d̪ɪjaː"
+    pos: "phrase"
+    bases:
+      - { word: "उसने", base: "वह", reading: "usnē" }
+      - { word: "नौकरी", base: "नौकरी", reading: "naukrī" }
+      - { word: "के", base: "का", reading: "kē" }
+      - { word: "लिए", base: "लिए", reading: "liē" }
+      - { word: "साक्षात्कार", ref: "hi-2339" }
+      - { word: "दिया", base: "देना", reading: "diyā" }
+    confusables:
+      - { id: "w1", word: "प्रशिक्षण", reading: "praśikśaṇ", kind: "word" }
+      - { id: "w2", word: "भर्ती", reading: "bhartī", kind: "word" }
+  - id: "hi-5522"
+    target: "मेरे पिता एक व्यवसायी हैं।"
+    reading: "mērē pitā ēk vyavsāyī haim̐."
+    ipa: "meːreː pɪt̪aː eːk ʋjəʋsaːjiː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरे", base: "मेरा", reading: "mērē" }
+      - { word: "पिता", base: "पिता", reading: "pitā" }
+      - { word: "एक", ref: "hi-0198" }
+      - { word: "व्यवसायी", ref: "hi-2344" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "कारोबार", reading: "kārōbār", kind: "word" }
+      - { id: "w2", word: "माली", reading: "mālī", kind: "word" }
+  - id: "hi-5523"
+    target: "वह बाग़ में माली का काम करता है।"
+    reading: "vah bāġ mēm̐ mālī kā kām kartā hai."
+    ipa: "ʋəɦ baːɣ mẽː maːliː kaː kaːm kərt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "वह", ref: "hi-0749" }
+      - { word: "बाग़", base: "बाग़", reading: "bāġ" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "माली", ref: "hi-2355" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "काम", base: "काम", reading: "kām" }
+      - { word: "करता", base: "करना", reading: "kartā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "नाविक", reading: "nāvik", kind: "word" }
+      - { id: "w2", word: "मजदूर", reading: "majdūr", kind: "word" }
+  - id: "hi-5524"
+    target: "नई नौकरी के लिए प्रशिक्षण ज़रूरी है।"
+    reading: "naī naukrī kē liē praśikśaṇ zarūrī hai."
+    ipa: "nəiː nɔːkriː keː lɪeː prəʃɪkʃəɳ zəruːriː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "नई", base: "नया", reading: "naī" }
+      - { word: "नौकरी", base: "नौकरी", reading: "naukrī" }
+      - { word: "के", base: "का", reading: "kē" }
+      - { word: "लिए", base: "लिए", reading: "liē" }
+      - { word: "प्रशिक्षण", ref: "hi-2353" }
+      - { word: "ज़रूरी", base: "ज़रूरी", reading: "zarūrī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "उन्नति", reading: "unnati", kind: "word" }
+      - { id: "w2", word: "कौशल", reading: "kauśal", kind: "word" }
+  - id: "hi-5525"
+    target: "हुनर के बिना सफलता मुश्किल है।"
+    reading: "hunar kē binā safaltā muśkil hai."
+    ipa: "ɦʊnər keː bɪnaː səfəlt̪aː mʊʃkɪl ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "हुनर", ref: "hi-2351" }
+      - { word: "के", base: "का", reading: "kē" }
+      - { word: "बिना", base: "बिना", reading: "binā" }
+      - { word: "सफलता", ref: "hi-2348" }
+      - { word: "मुश्किल", base: "मुश्किल", reading: "muśkil" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "असफलता", reading: "asphltā", kind: "word" }
+      - { id: "w2", word: "सपना", reading: "sapnā", kind: "word" }
+  - id: "hi-5526"
+    target: "पिछले साल वह बेरोज़गार था।"
+    reading: "pichlē sāl vah bērōzgār thā."
+    ipa: "pɪtʃʰleː saːl ʋəɦ beːroːzɡaːr t̪ʰaː"
+    pos: "phrase"
+    bases:
+      - { word: "पिछले", base: "पिछला", reading: "pichlē" }
+      - { word: "साल", ref: "hi-0318" }
+      - { word: "वह", ref: "hi-0749" }
+      - { word: "बेरोज़गार", ref: "hi-2360" }
+      - { word: "था", base: "होना", reading: "thā" }
+    confusables:
+      - { id: "w1", word: "सेवानिवृत्त", reading: "sēvānivritt", kind: "word" }
+      - { id: "w2", word: "सलाहकार", reading: "salāhkār", kind: "word" }
+  - id: "hi-5527"
+    target: "चपरासी ने दफ़्तर का दरवाज़ा खोला।"
+    reading: "caprāsī nē daftar kā darvāzā khōlā."
+    ipa: "tʃəpraːsiː neː d̪əft̪ər kaː d̪ərʋaːzaː kʰoːlaː"
+    pos: "phrase"
+    bases:
+      - { word: "चपरासी", ref: "hi-2358" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "दफ़्तर", base: "दफ़्तर", reading: "daftar" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "दरवाज़ा", base: "दरवाज़ा", reading: "darvāzā" }
+      - { word: "खोला", base: "खोलना", reading: "khōlā" }
+    confusables:
+      - { id: "w1", word: "पुलिसवाला", reading: "pulisvālā", kind: "word" }
+      - { id: "w2", word: "व्यवसायी", reading: "vyavsāyī", kind: "word" }
+  - id: "hi-5528"
+    target: "पायलट और नाविक दोनों मेहनत करते हैं।"
+    reading: "pāylaṭ aur nāvik dōnōm̐ mēhnat kartē haim̐."
+    ipa: "paːjləʈ ɔːr naːʋɪk d̪oːnõː meːɦnət̪ kərt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "पायलट", ref: "hi-2340" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "नाविक", ref: "hi-2356" }
+      - { word: "दोनों", base: "दोनों", reading: "dōnōm̐" }
+      - { word: "मेहनत", base: "मेहनत", reading: "mēhnat" }
+      - { word: "करते", base: "करना", reading: "kartē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "सैनिक", reading: "sainik", kind: "word" }
+      - { id: "w2", word: "मजदूर", reading: "majdūr", kind: "word" }
+  - id: "hi-5529"
+    target: "मजदूरों की मेहनत से कारोबार बढ़ता है।"
+    reading: "majdūrōm̐ kī mēhnat sē kārōbār baṛhtā hai."
+    ipa: "mədʒd̪uːrõː kiː meːɦnət̪ seː kaːroːbaːr bəɽʱt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मजदूरों", base: "मजदूर", reading: "majdūrōm̐" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "मेहनत", base: "मेहनत", reading: "mēhnat" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "कारोबार", ref: "hi-2345" }
+      - { word: "बढ़ता", base: "बढ़ना", reading: "baṛhtā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "उद्यम", reading: "udyam", kind: "word" }
+      - { id: "w2", word: "उन्नति", reading: "unnati", kind: "word" }
+  - id: "hi-5530"
+    target: "सेवानिवृत्त होकर वह एक सलाहकार बना।"
+    reading: "sēvānivritt hōkar vah ēk salāhkār banā."
+    ipa: "seːʋaːnɪʋrɪt̪t̪ ɦoːkər ʋəɦ eːk səlaːɦkaːr bənaː"
+    pos: "phrase"
+    bases:
+      - { word: "सेवानिवृत्त", ref: "hi-2361" }
+      - { word: "होकर", base: "होना", reading: "hōkar" }
+      - { word: "वह", ref: "hi-0749" }
+      - { word: "एक", ref: "hi-0198" }
+      - { word: "सलाहकार", ref: "hi-2359" }
+      - { word: "बना", base: "बनना", reading: "banā" }
+    confusables:
+      - { id: "w1", word: "बेरोज़गार", reading: "bērōzgār", kind: "word" }
+      - { id: "w2", word: "व्यवसायी", reading: "vyavsāyī", kind: "word" }
+  - id: "hi-5531"
+    target: "कौशल से सफलता मिलती है।"
+    reading: "kauśal sē safaltā miltī hai."
+    ipa: "kɔːʃəl seː səfəlt̪aː mɪlt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "कौशल", ref: "hi-2352" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "सफलता", ref: "hi-2348" }
+      - { word: "मिलती", base: "मिलना", reading: "miltī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "असफलता", reading: "asphltā", kind: "word" }
+      - { id: "w2", word: "हुनर", reading: "hunar", kind: "word" }

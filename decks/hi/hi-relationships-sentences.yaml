@@ -1,0 +1,206 @@
+schema: 1
+id: "hi-relationships-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-5617"
+    target: "मेरी सहेली बहुत अच्छी है।"
+    reading: "mērī sahēlī bahut acchī hai."
+    ipa: "meːriː səɦeːliː bəɦʊt̪ ətʃtʃʰiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", base: "मेरा", reading: "mērī" }
+      - { word: "सहेली", ref: "hi-2564" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "अच्छी", base: "अच्छा", reading: "acchī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "मित्र", reading: "mitr", kind: "word" }
+      - { id: "w2", word: "प्रेम", reading: "prēm", kind: "word" }
+  - id: "hi-5618"
+    target: "हम दोनों में झगड़ा हो गया।"
+    reading: "ham dōnōm̐ mēm̐ jhagṛā hō gayā."
+    ipa: "ɦəm d̪oːnõː mẽː dʒʱəɡɽaː ɦoː ɡəjaː"
+    pos: "phrase"
+    bases:
+      - { word: "हम", ref: "hi-0053" }
+      - { word: "दोनों", base: "दोनों", reading: "dōnōm̐" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "झगड़ा", ref: "hi-2566" }
+      - { word: "हो", base: "होना", reading: "hō" }
+      - { word: "गया", base: "जाना", reading: "gayā" }
+    confusables:
+      - { id: "w1", word: "माफ़ी", reading: "māfī", kind: "word" }
+      - { id: "w2", word: "प्रेम", reading: "prēm", kind: "word" }
+  - id: "hi-5619"
+    target: "उसने माफ़ी माँगी।"
+    reading: "usnē māfī mām̐gī."
+    ipa: "ʊsneː maːfiː mãːɡiː"
+    pos: "phrase"
+    bases:
+      - { word: "उसने", base: "वह", reading: "usnē" }
+      - { word: "माफ़ी", ref: "hi-2567" }
+      - { word: "माँगी", base: "माँगना", reading: "mām̐gī" }
+    confusables:
+      - { id: "w1", word: "झगड़ा", reading: "jhagṛā", kind: "word" }
+      - { id: "w2", word: "इज़्ज़त", reading: "izzat", kind: "word" }
+  - id: "hi-5620"
+    target: "बड़ों की इज़्ज़त करनी चाहिए।"
+    reading: "baṛōm̐ kī izzat karnī cāhiē."
+    ipa: "bəɽõː kiː ɪzzət̪ kərniː tʃaːɦɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "बड़ों", base: "बड़ा", reading: "baṛōm̐" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "इज़्ज़त", ref: "hi-2568" }
+      - { word: "करनी", base: "करना", reading: "karnī" }
+      - { word: "चाहिए", base: "चाहिए", reading: "cāhiē" }
+    confusables:
+      - { id: "w1", word: "बुराई", reading: "burāī", kind: "word" }
+      - { id: "w2", word: "अपनापन", reading: "apnāpan", kind: "word" }
+  - id: "hi-5621"
+    target: "जीजा और साली मज़ाक करते हैं।"
+    reading: "jījā aur sālī mazāk kartē haim̐."
+    ipa: "dʒiːdʒaː ɔːr saːliː məzaːk kərt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "जीजा", ref: "hi-2573" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "साली", base: "साली", reading: "sālī" }
+      - { word: "मज़ाक", base: "मज़ाक", reading: "mazāk" }
+      - { word: "करते", base: "करना", reading: "kartē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "भाभी", reading: "bhābhī", kind: "word" }
+      - { id: "w2", word: "दामाद", reading: "dāmād", kind: "word" }
+  - id: "hi-5622"
+    target: "भाभी ने ननद को तोहफ़ा दिया।"
+    reading: "bhābhī nē nanad kō tōhfā diyā."
+    ipa: "bʱaːbʱiː neː nənəd̪ koː t̪oːɦfaː d̪ɪjaː"
+    pos: "phrase"
+    bases:
+      - { word: "भाभी", ref: "hi-2574" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "ननद", ref: "hi-2576" }
+      - { word: "को", ref: "hi-0277" }
+      - { word: "तोहफ़ा", ref: "hi-2520" }
+      - { word: "दिया", base: "देना", reading: "diyā" }
+    confusables:
+      - { id: "w1", word: "देवर", reading: "dēvar", kind: "word" }
+      - { id: "w2", word: "बहू", reading: "bahū", kind: "word" }
+  - id: "hi-5623"
+    target: "बहू और दामाद घर आए हैं।"
+    reading: "bahū aur dāmād ghar āē haim̐."
+    ipa: "bəɦuː ɔːr d̪aːmaːd̪ ɡʱər aːeː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "बहू", ref: "hi-2577" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "दामाद", ref: "hi-2578" }
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "आए", base: "आना", reading: "āē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "जीजा", reading: "jījā", kind: "word" }
+      - { id: "w2", word: "देवर", reading: "dēvar", kind: "word" }
+  - id: "hi-5624"
+    target: "प्रेमी और प्रेमिका साथ हैं।"
+    reading: "prēmī aur prēmikā sāth haim̐."
+    ipa: "preːmiː ɔːr preːmɪkaː saːt̪ʰ ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "प्रेमी", ref: "hi-2579" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "प्रेमिका", ref: "hi-2580" }
+      - { word: "साथ", ref: "hi-0838" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "साथी", reading: "sāthī", kind: "word" }
+      - { id: "w2", word: "सहेली", reading: "sahēlī", kind: "word" }
+  - id: "hi-5625"
+    target: "हम पुराने साथी हैं।"
+    reading: "ham purānē sāthī haim̐."
+    ipa: "ɦəm pʊraːneː saːt̪ʰiː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "हम", ref: "hi-0053" }
+      - { word: "पुराने", base: "पुराना", reading: "purānē" }
+      - { word: "साथी", ref: "hi-2565" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "मित्र", reading: "mitr", kind: "word" }
+      - { id: "w2", word: "सहेली", reading: "sahēlī", kind: "word" }
+  - id: "hi-5626"
+    target: "बचपन के दोस्त कभी नहीं भूलते।"
+    reading: "bacpan kē dōst kabhī nahīm̐ bhūltē."
+    ipa: "bətʃpən keː d̪oːst̪ kəbʱiː nəɦĩː bʱuːlt̪eː"
+    pos: "phrase"
+    bases:
+      - { word: "बचपन", base: "बचपन", reading: "bacpan" }
+      - { word: "के", base: "का", reading: "kē" }
+      - { word: "दोस्त", ref: "hi-0185" }
+      - { word: "कभी", base: "कभी", reading: "kabhī" }
+      - { word: "नहीं", ref: "hi-0156" }
+      - { word: "भूलते", base: "भूलना", reading: "bhūltē" }
+    confusables:
+      - { id: "w1", word: "मित्र", reading: "mitr", kind: "word" }
+      - { id: "w2", word: "अपनापन", reading: "apnāpan", kind: "word" }
+  - id: "hi-5627"
+    target: "अपनापन सबसे बड़ी बात है।"
+    reading: "apnāpan sabsē baṛī bāt hai."
+    ipa: "əpnaːpən səbseː bəɽiː baːt̪ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "अपनापन", ref: "hi-2571" }
+      - { word: "सबसे", base: "सब", reading: "sabsē" }
+      - { word: "बड़ी", base: "बड़ा", reading: "baṛī" }
+      - { word: "बात", base: "बात", reading: "bāt" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "सम्मान", reading: "sammān", kind: "word" }
+      - { id: "w2", word: "बुराई", reading: "burāī", kind: "word" }
+  - id: "hi-5628"
+    target: "झगड़ा मत करो।"
+    reading: "jhagṛā mat karō."
+    ipa: "dʒʱəɡɽaː mət̪ kəroː"
+    pos: "phrase"
+    bases:
+      - { word: "झगड़ा", ref: "hi-2566" }
+      - { word: "मत", base: "मत", reading: "mat" }
+      - { word: "करो", base: "करना", reading: "karō" }
+    confusables:
+      - { id: "w1", word: "झगड़ना", reading: "jhagṛnā", kind: "word" }
+      - { id: "w2", word: "रूठना", reading: "rūṭhnā", kind: "word" }
+  - id: "hi-5629"
+    target: "सहेली से मिलना अच्छा लगता है।"
+    reading: "sahēlī sē milnā acchā lagtā hai."
+    ipa: "səɦeːliː seː mɪlnaː ətʃtʃʰaː ləɡt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "सहेली", ref: "hi-2564" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "मिलना", ref: "hi-0793" }
+      - { word: "अच्छा", ref: "hi-0898" }
+      - { word: "लगता", base: "लगना", reading: "lagtā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "प्रेम", reading: "prēm", kind: "word" }
+      - { id: "w2", word: "प्रेमिका", reading: "prēmikā", kind: "word" }
+  - id: "hi-5630"
+    target: "प्रेम में सम्मान भी ज़रूरी है।"
+    reading: "prēm mēm̐ sammān bhī zarūrī hai."
+    ipa: "preːm mẽː səmmaːn bʱiː zəruːriː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "प्रेम", base: "प्रेम", reading: "prēm" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "सम्मान", ref: "hi-2569" }
+      - { word: "भी", ref: "hi-0350" }
+      - { word: "ज़रूरी", base: "ज़रूरी", reading: "zarūrī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "बुराई", reading: "burāī", kind: "word" }
+      - { id: "w2", word: "अपनापन", reading: "apnāpan", kind: "word" }

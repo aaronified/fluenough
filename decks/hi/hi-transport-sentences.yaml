@@ -1,0 +1,166 @@
+schema: 1
+id: "hi-transport-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-4706"
+    target: "बस स्टेशन कहाँ है?"
+    reading: "bas sṭēśan kahām̐ hai?"
+    ipa: "bəs sʈeːʃən kəɦãː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "बस", ref: "hi-0262" }
+      - { word: "स्टेशन", ref: "hi-0270" }
+      - { word: "कहाँ", ref: "hi-0159" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0264", kind: "word" }
+      - { id: "w2", ref: "hi-0263", kind: "word" }
+  - id: "hi-4707"
+    target: "मैं स्टेशन जाऊँगा।"
+    reading: "maim̐ sṭēśan jāūm̐gā."
+    ipa: "mɛ̃ː sʈeːʃən dʒaːũːɡaː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "स्टेशन", ref: "hi-0270" }
+      - { word: "जाऊँगा", base: "जाना", reading: "jāūm̐gā" }
+    confusables:
+      - { id: "w1", ref: "hi-0262", kind: "word" }
+      - { id: "w2", ref: "hi-0271", kind: "word" }
+  - id: "hi-4708"
+    target: "ऑटो का किराया कितना है?"
+    reading: "ôṭō kā kirāyā kitnā hai?"
+    ipa: "ɔʈoː kaː kɪraːjaː kɪt̪naː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "ऑटो", ref: "hi-0263" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "किराया", ref: "hi-0265" }
+      - { word: "कितना", ref: "hi-0163" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0264", kind: "word" }
+      - { id: "w2", ref: "hi-0262", kind: "word" }
+  - id: "hi-4709"
+    target: "टैक्सी का किराया ज़्यादा है।"
+    reading: "ṭaiksī kā kirāyā zyādā hai."
+    ipa: "ʈɛːksiː kaː kɪraːjaː zjaːd̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "टैक्सी", ref: "hi-0264" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "किराया", ref: "hi-0265" }
+      - { word: "ज़्यादा", ref: "hi-0816" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0263", kind: "word" }
+      - { id: "w2", ref: "hi-0262", kind: "word" }
+  - id: "hi-4710"
+    target: "इस बस में सीट है?"
+    reading: "is bas mēm̐ sīṭ hai?"
+    ipa: "ɪs bəs mẽː siːʈ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "इस", base: "यह", reading: "is" }
+      - { word: "बस", ref: "hi-0262" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "सीट", ref: "hi-0272" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0271", kind: "word" }
+      - { id: "w2", ref: "hi-0270", kind: "word" }
+  - id: "hi-4711"
+    target: "यहाँ से बस चलती है?"
+    reading: "yahām̐ sē bas caltī hai?"
+    ipa: "jəɦãː seː bəs tʃəlt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यहाँ", ref: "hi-0295" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "बस", ref: "hi-0262" }
+      - { word: "चलती", base: "चलना", reading: "caltī" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0263", kind: "word" }
+      - { id: "w2", ref: "hi-0264", kind: "word" }
+  - id: "hi-4712"
+    target: "ऑटो दस मिनट में आएगा?"
+    reading: "ôṭō das minaṭ mēm̐ āēgā?"
+    ipa: "ɔʈoː d̪əs mɪnəʈ mẽː aːeːɡaː"
+    pos: "phrase"
+    bases:
+      - { word: "ऑटो", ref: "hi-0263" }
+      - { word: "दस", ref: "hi-0207" }
+      - { word: "मिनट", base: "मिनट", reading: "minaṭ" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "आएगा", base: "आना", reading: "āēgā" }
+    confusables:
+      - { id: "w1", ref: "hi-0262", kind: "word" }
+      - { id: "w2", ref: "hi-0264", kind: "word" }
+  - id: "hi-4713"
+    target: "टिकट कौन देगा?"
+    reading: "ṭikaṭ kaun dēgā?"
+    ipa: "ʈɪkəʈ kɔːn d̪eːɡaː"
+    pos: "phrase"
+    bases:
+      - { word: "टिकट", ref: "hi-0271" }
+      - { word: "कौन", ref: "hi-0158" }
+      - { word: "देगा", base: "देना", reading: "dēgā" }
+    confusables:
+      - { id: "w1", ref: "hi-0160", kind: "word" }
+      - { id: "w2", ref: "hi-0157", kind: "word" }
+  - id: "hi-4714"
+    target: "सीट खाली है?"
+    reading: "sīṭ khālī hai?"
+    ipa: "siːʈ kʰaːliː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "सीट", ref: "hi-0272" }
+      - { word: "खाली", ref: "hi-1976" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0271", kind: "word" }
+      - { id: "w2", ref: "hi-0270", kind: "word" }
+  - id: "hi-4715"
+    target: "बस कब आएगी?"
+    reading: "bas kab āēgī?"
+    ipa: "bəs kəb aːeːɡiː"
+    pos: "phrase"
+    bases:
+      - { word: "बस", ref: "hi-0262" }
+      - { word: "कब", ref: "hi-0160" }
+      - { word: "आएगी", base: "आना", reading: "āēgī" }
+    confusables:
+      - { id: "w1", ref: "hi-0158", kind: "word" }
+      - { id: "w2", ref: "hi-0159", kind: "word" }
+  - id: "hi-4716"
+    target: "टैक्सी में मेरा सामान है।"
+    reading: "ṭaiksī mēm̐ mērā sāmān hai."
+    ipa: "ʈɛːksiː mẽː meːraː saːmaːn ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "टैक्सी", ref: "hi-0264" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "सामान", ref: "hi-1350" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0262", kind: "word" }
+      - { id: "w2", ref: "hi-0263", kind: "word" }
+  - id: "hi-4717"
+    target: "स्टेशन जल्दी चलिए।"
+    reading: "sṭēśan jaldī caliē."
+    ipa: "sʈeːʃən dʒəld̪iː tʃəlɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "स्टेशन", ref: "hi-0270" }
+      - { word: "जल्दी", ref: "hi-0819" }
+      - { word: "चलिए", ref: "hi-0273" }
+    confusables:
+      - { id: "w1", ref: "hi-0271", kind: "word" }
+      - { id: "w2", ref: "hi-0272", kind: "word" }

@@ -1,0 +1,188 @@
+schema: 1
+id: "hi-feelings-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-5302"
+    target: "मुझे उसकी चिंता है।"
+    reading: "mujhē uskī cintā hai."
+    ipa: "mʊdʒʱeː ʊskiː tʃɪnt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मुझे", base: "मैं", reading: "mujhē" }
+      - { word: "उसकी", base: "वह", reading: "uskī" }
+      - { word: "चिंता", ref: "hi-2106" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "गुस्सा", reading: "gussā", kind: "word" }
+      - { id: "w2", word: "आशा", reading: "āśā", kind: "word" }
+  - id: "hi-5303"
+    target: "वह आज बहुत खुश है।"
+    reading: "vah āj bahut khuś hai."
+    ipa: "ʋəɦ aːdʒ bəɦʊt̪ kʰʊʃ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "वह", ref: "hi-0749" }
+      - { word: "आज", ref: "hi-0299" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "खुश", ref: "hi-0912" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "उदास", reading: "udās", kind: "word" }
+      - { id: "w2", word: "नाराज़", reading: "nārāz", kind: "word" }
+  - id: "hi-5304"
+    target: "उसकी बात सुनकर मुझे हैरानी हुई।"
+    reading: "uskī bāt sunkar mujhē hairānī huī."
+    ipa: "ʊskiː baːt̪ sʊnkər mʊdʒʱeː ɦɛːraːniː ɦʊiː"
+    pos: "phrase"
+    bases:
+      - { word: "उसकी", base: "वह", reading: "uskī" }
+      - { word: "बात", ref: "hi-1864" }
+      - { word: "सुनकर", base: "सुनना", reading: "sunkar" }
+      - { word: "मुझे", base: "मैं", reading: "mujhē" }
+      - { word: "हैरानी", ref: "hi-2121" }
+      - { word: "हुई", base: "होना", reading: "huī" }
+    confusables:
+      - { id: "w1", word: "दया", reading: "dayā", kind: "word" }
+      - { id: "w2", word: "शर्म", reading: "śarm", kind: "word" }
+  - id: "hi-5305"
+    target: "उसकी नाराज़गी समझ में आती है।"
+    reading: "uskī nārāzgī samajh mēm̐ ātī hai."
+    ipa: "ʊskiː naːraːzɡiː səmədʒʱ mẽː aːt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "उसकी", base: "वह", reading: "uskī" }
+      - { word: "नाराज़गी", ref: "hi-2125" }
+      - { word: "समझ", base: "समझ", reading: "samajh" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "आती", base: "आना", reading: "ātī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "नाराज़", reading: "nārāz", kind: "word" }
+      - { id: "w2", word: "निराशा", reading: "nirāśā", kind: "word" }
+  - id: "hi-5306"
+    target: "मुझे आपकी मदद पर भरोसा है।"
+    reading: "mujhē āpkī madad par bharōsā hai."
+    ipa: "mʊdʒʱeː aːpkiː məd̪əd̪ pər bʱəroːsaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मुझे", base: "मैं", reading: "mujhē" }
+      - { word: "आपकी", base: "आप", reading: "āpkī" }
+      - { word: "मदद", base: "मदद", reading: "madad" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "भरोसा", ref: "hi-2116" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "यकीन", reading: "yakīn", kind: "word" }
+      - { id: "w2", word: "शक", reading: "śak", kind: "word" }
+  - id: "hi-5307"
+    target: "वह हमेशा मुस्कान के साथ बोलता है।"
+    reading: "vah hamēśā muskān kē sāth bōltā hai."
+    ipa: "ʋəɦ ɦəmeːʃaː mʊskaːn keː saːt̪ʰ boːlt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "वह", ref: "hi-0749" }
+      - { word: "हमेशा", base: "हमेशा", reading: "hamēśā" }
+      - { word: "मुस्कान", ref: "hi-2120" }
+      - { word: "के", ref: "hi-0065" }
+      - { word: "साथ", ref: "hi-0838" }
+      - { word: "बोलता", base: "बोलना", reading: "bōltā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "हँसी", reading: "ham̐sī", kind: "word" }
+      - { id: "w2", word: "शर्म", reading: "śarm", kind: "word" }
+  - id: "hi-5308"
+    target: "बच्चे अकेले घर में डरते हैं।"
+    reading: "baccē akēlē ghar mēm̐ ḍartē haim̐."
+    ipa: "bətʃtʃeː əkeːleː ɡʱər mẽː ɖərt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "बच्चे", ref: "hi-0383" }
+      - { word: "अकेले", base: "अकेला", reading: "akēlē" }
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "डरते", base: "डरना", reading: "ḍartē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "घबराना", reading: "ghabrānā", kind: "word" }
+      - { id: "w2", word: "चिढ़ना", reading: "ciṛhnā", kind: "word" }
+  - id: "hi-5309"
+    target: "मन में गुस्सा मत रखो।"
+    reading: "man mēm̐ gussā mat rakhō."
+    ipa: "mən mẽː ɡʊssaː mət̪ rəkʰoː"
+    pos: "phrase"
+    bases:
+      - { word: "मन", ref: "hi-2124" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "गुस्सा", ref: "hi-2105" }
+      - { word: "मत", base: "मत", reading: "mat" }
+      - { word: "रखो", base: "रखना", reading: "rakhō" }
+    confusables:
+      - { id: "w1", word: "गर्व", reading: "garv", kind: "word" }
+      - { id: "w2", word: "सुकून", reading: "sukūn", kind: "word" }
+  - id: "hi-5310"
+    target: "हम तुम्हारी सफलता पर गर्व करते हैं।"
+    reading: "ham tumhārī safaltā par garv kartē haim̐."
+    ipa: "ɦəm t̪ʊmɦaːriː səfəlt̪aː pər ɡərʋ kərt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "हम", ref: "hi-0053" }
+      - { word: "तुम्हारी", base: "तुम", reading: "tumhārī" }
+      - { word: "सफलता", base: "सफलता", reading: "safaltā" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "गर्व", ref: "hi-2117" }
+      - { word: "करते", base: "करना", reading: "kartē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "दया", reading: "dayā", kind: "word" }
+      - { id: "w2", word: "उत्साह", reading: "utsāh", kind: "word" }
+  - id: "hi-5311"
+    target: "मेरे दिल में अफ़सोस है।"
+    reading: "mērē dil mēm̐ afsōs hai."
+    ipa: "meːreː d̪ɪl mẽː əfsoːs ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरे", base: "मैं", reading: "mērē" }
+      - { word: "दिल", base: "दिल", reading: "dil" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "अफ़सोस", ref: "hi-2122" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "निराशा", reading: "nirāśā", kind: "word" }
+      - { id: "w2", word: "शर्मिंदा", reading: "śarmindā", kind: "word" }
+  - id: "hi-5312"
+    target: "बारिश के कारण सब लोग उदास हैं।"
+    reading: "bāriś kē kāraṇ sab lōg udās haim̐."
+    ipa: "baːrɪʃ keː kaːrəɳ səb loːɡ ʊd̪aːs ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "बारिश", base: "बारिश", reading: "bāriś" }
+      - { word: "के", ref: "hi-0065" }
+      - { word: "कारण", base: "कारण", reading: "kāraṇ" }
+      - { word: "सब", ref: "hi-0054" }
+      - { word: "लोग", ref: "hi-0761" }
+      - { word: "उदास", ref: "hi-2128" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "परेशान", reading: "parēśān", kind: "word" }
+      - { id: "w2", word: "अकेला", reading: "akēlā", kind: "word" }
+  - id: "hi-5313"
+    target: "उसने जवाब देकर राहत की साँस ली।"
+    reading: "usnē javāb dēkar rāhat kī sām̐s lī."
+    ipa: "ʊsneː dʒəʋaːb d̪eːkər raːɦət̪ kiː sãːs liː"
+    pos: "phrase"
+    bases:
+      - { word: "उसने", base: "वह", reading: "usnē" }
+      - { word: "जवाब", base: "जवाब", reading: "javāb" }
+      - { word: "देकर", base: "देना", reading: "dēkar" }
+      - { word: "राहत", ref: "hi-2112" }
+      - { word: "की", ref: "hi-0061" }
+      - { word: "साँस", base: "साँस", reading: "sām̐s" }
+      - { word: "ली", base: "लेना", reading: "lī" }
+    confusables:
+      - { id: "w1", word: "सुकून", reading: "sukūn", kind: "word" }
+      - { id: "w2", word: "भावना", reading: "bhāvnā", kind: "word" }

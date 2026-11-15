@@ -10,6 +10,8 @@ cards:
   - id: "fr-0689"
     target: "Je travaille dans le bureau."
     ipa: "ʒə tʁavaj dɑ̃ lə byʁo"
+    phonetic: "[ʒə t̪χavaj d̪ɑ̃ lə byʁo]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -24,6 +26,8 @@ cards:
   - id: "fr-0690"
     target: "Le patron est gentil."
     ipa: "lə patʁɔ̃ ɛ ʒɑ̃ti"
+    phonetic: "[lə pat̪χɔ̃ ɛ ʒɑ̃t̪i]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -37,6 +41,8 @@ cards:
   - id: "fr-0691"
     target: "La réunion est à dix heures."
     ipa: "la ʁeynjɔ̃ ɛ a diz œʁ"
+    phonetic: "[la ʁeyn̪jɔ̃ ɛ a d̪iz̪ œːʁ]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -52,6 +58,8 @@ cards:
   - id: "fr-0692"
     target: "Je gagne un bon salaire."
     ipa: "ʒə ɡaɲ œ̃ bɔ̃ salɛʁ"
+    phonetic: "[ʒə ɡaɲ œ̃ bɔ̃ s̪alɛːʁ]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -63,9 +71,13 @@ cards:
     confusables:
       - { id: "reussir", ref: "fr-0674", kind: "word" }
       - { id: "emploi", ref: "fr-0677", kind: "word" }
+    notes:
+      - { id: "adjective-position", kind: "behaviour" }
   - id: "fr-0693"
     target: "Nous envoyons le dossier."
     ipa: "nu ɑ̃vwajɔ̃ lə dosje"
+    phonetic: "[n̪u ɑ̃vwajɔ̃ lə d̪os̪je]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -79,6 +91,8 @@ cards:
   - id: "fr-0694"
     target: "Je suis occupé."
     ipa: "ʒə sɥi ɔkype"
+    phonetic: "[ʒə s̪ɥi ɔkype]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -88,9 +102,13 @@ cards:
     confusables:
       - { id: "pret", ref: "fr-0687", kind: "word" }
       - { id: "dernier", ref: "fr-0688", kind: "word" }
+    notes:
+      - { id: "agreement", kind: "behaviour" }
   - id: "fr-0695"
     target: "C'est un bon poste."
     ipa: "sɛt œ̃ bɔ̃ pɔst"
+    phonetic: "[s̪ɛt̪ œ̃ bɔ̃ pɔs̪t̪]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -101,3 +119,5 @@ cards:
     confusables:
       - { id: "metier", ref: "fr-0659", kind: "word" }
       - { id: "emploi", ref: "fr-0677", kind: "word" }
+    notes:
+      - { id: "adjective-position", kind: "behaviour" }

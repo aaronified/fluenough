@@ -1,0 +1,170 @@
+schema: 1
+id: "hi-verbs-5-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-5834"
+    target: "दाम बढ़ गए।"
+    reading: "dām baṛh gaē."
+    ipa: "d̪aːm bəɽʱ ɡəeː"
+    pos: "phrase"
+    bases:
+      - { word: "दाम", ref: "hi-0232" }
+      - { word: "बढ़", base: "बढ़ना", reading: "baṛh" }
+      - { word: "गए", base: "जाना", reading: "gaē" }
+    confusables:
+      - { id: "w1", word: "बढ़ाना", reading: "baṛhānā", kind: "word" }
+      - { id: "w2", word: "चमकाना", reading: "camkānā", kind: "word" }
+  - id: "hi-5835"
+    target: "बच्चा झूले पर झूल रहा है।"
+    reading: "baccā jhūlē par jhūl rahā hai."
+    ipa: "bətʃtʃaː dʒʱuːleː pər dʒʱuːl rəɦaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "बच्चा", ref: "hi-0111" }
+      - { word: "झूले", base: "झूला", reading: "jhūlē" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "झूल", base: "झूलना", reading: "jhūl" }
+      - { word: "रहा", base: "रहना", reading: "rahā" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "हिलना", reading: "hilnā", kind: "word" }
+      - { id: "w2", word: "हिलाना", reading: "hilānā", kind: "word" }
+  - id: "hi-5836"
+    target: "कपड़ा पानी में भिगोइए।"
+    reading: "kapṛā pānī mēm̐ bhigōiē."
+    ipa: "kəpɽaː paːniː mẽː bʱɪɡoːɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "कपड़ा", ref: "hi-1106" }
+      - { word: "पानी", ref: "hi-0333" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "भिगोइए", base: "भिगोना", reading: "bhigōiē" }
+    confusables:
+      - { id: "w1", word: "बैग", reading: "baig", kind: "word" }
+      - { id: "w2", word: "कागज़", reading: "kāgaz", kind: "word" }
+  - id: "hi-5837"
+    target: "उसने मेरा हाथ पकड़ लिया।"
+    reading: "usnē mērā hāth pakaṛ liyā."
+    ipa: "ʊsneː meːraː ɦaːt̪ʰ pəkəɽ lɪjaː"
+    pos: "phrase"
+    bases:
+      - { word: "उसने", base: "वह", reading: "usnē" }
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "हाथ", ref: "hi-1042" }
+      - { word: "पकड़", base: "पकड़ना", reading: "pakaṛ" }
+      - { word: "लिया", base: "लेना", reading: "liyā" }
+    confusables:
+      - { id: "w1", word: "झपटना", reading: "jhapṭnā", kind: "word" }
+      - { id: "w2", word: "पकड़ाना", reading: "pakṛānā", kind: "word" }
+  - id: "hi-5838"
+    target: "उसने बैग झपट लिया।"
+    reading: "usnē baig jhapaṭ liyā."
+    ipa: "ʊsneː bɛːɡ dʒʱəpəʈ lɪjaː"
+    pos: "phrase"
+    bases:
+      - { word: "उसने", base: "वह", reading: "usnē" }
+      - { word: "बैग", ref: "hi-1102" }
+      - { word: "झपट", base: "झपटना", reading: "jhapaṭ" }
+      - { word: "लिया", base: "लेना", reading: "liyā" }
+    confusables:
+      - { id: "w1", word: "दबोचना", reading: "dabōcnā", kind: "word" }
+      - { id: "w2", word: "पकड़ना", reading: "pakṛnā", kind: "word" }
+  - id: "hi-5839"
+    target: "उसने कागज़ पलटा।"
+    reading: "usnē kāgaz palṭā."
+    ipa: "ʊsneː kaːɡəz pəlʈaː"
+    pos: "phrase"
+    bases:
+      - { word: "उसने", base: "वह", reading: "usnē" }
+      - { word: "कागज़", ref: "hi-1091" }
+      - { word: "पलटा", base: "पलटना", reading: "palṭā" }
+    confusables:
+      - { id: "w1", word: "बैग", reading: "baig", kind: "word" }
+      - { id: "w2", word: "चमकाना", reading: "camkānā", kind: "word" }
+  - id: "hi-5840"
+    target: "स्पंज पानी सोखता है।"
+    reading: "spañj pānī sōkhtā hai."
+    ipa: "spəɲdʒ paːniː soːkʰt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "स्पंज", base: "स्पंज", reading: "spañj" }
+      - { word: "पानी", ref: "hi-0333" }
+      - { word: "सोखता", base: "सोखना", reading: "sōkhtā" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "हवा", reading: "havā", kind: "word" }
+      - { id: "w2", word: "मरहम", reading: "marham", kind: "word" }
+  - id: "hi-5841"
+    target: "हाथ पर मरहम मलिए।"
+    reading: "hāth par marham maliē."
+    ipa: "ɦaːt̪ʰ pər mərɦəm məlɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "हाथ", ref: "hi-1042" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "मरहम", ref: "hi-1442" }
+      - { word: "मलिए", base: "मलना", reading: "maliē" }
+    confusables:
+      - { id: "w1", word: "कागज़", reading: "kāgaz", kind: "word" }
+      - { id: "w2", word: "भिगोना", reading: "bhigōnā", kind: "word" }
+  - id: "hi-5842"
+    target: "वह सेब चमका रहा है।"
+    reading: "vah sēb camkā rahā hai."
+    ipa: "ʋəɦ seːb tʃəmkaː rəɦaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "वह", ref: "hi-0749" }
+      - { word: "सेब", ref: "hi-0978" }
+      - { word: "चमका", base: "चमकाना", reading: "camkā" }
+      - { word: "रहा", base: "रहना", reading: "rahā" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "केला", reading: "kēlā", kind: "word" }
+      - { id: "w2", word: "रोटी", reading: "rōṭī", kind: "word" }
+  - id: "hi-5843"
+    target: "हवा से पेड़ हिल रहे हैं।"
+    reading: "havā sē pēṛ hil rahē haim̐."
+    ipa: "ɦəʋaː seː peːɽ ɦɪl rəɦeː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "हवा", ref: "hi-1257" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "पेड़", ref: "hi-1926" }
+      - { word: "हिल", base: "हिलना", reading: "hil" }
+      - { word: "रहे", base: "रहना", reading: "rahē" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", word: "हिलाना", reading: "hilānā", kind: "word" }
+      - { id: "w2", word: "बीज", reading: "bīj", kind: "word" }
+  - id: "hi-5844"
+    target: "रोटी तवे पर भुन रही है।"
+    reading: "rōṭī tavē par bhun rahī hai."
+    ipa: "roːʈiː t̪əʋeː pər bʱʊn rəɦiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "रोटी", ref: "hi-0335" }
+      - { word: "तवे", base: "तवा", reading: "tavē" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "भुन", base: "भुनना", reading: "bhun" }
+      - { word: "रही", base: "रहना", reading: "rahī" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "खाना", reading: "khānā", kind: "word" }
+      - { id: "w2", word: "भिगोना", reading: "bhigōnā", kind: "word" }
+  - id: "hi-5845"
+    target: "उसने पेड़ हिलाया।"
+    reading: "usnē pēṛ hilāyā."
+    ipa: "ʊsneː peːɽ ɦɪlaːjaː"
+    pos: "phrase"
+    bases:
+      - { word: "उसने", base: "वह", reading: "usnē" }
+      - { word: "पेड़", ref: "hi-1926" }
+      - { word: "हिलाया", base: "हिलाना", reading: "hilāyā" }
+    confusables:
+      - { id: "w1", word: "हवा", reading: "havā", kind: "word" }
+      - { id: "w2", word: "सेब", reading: "sēb", kind: "word" }

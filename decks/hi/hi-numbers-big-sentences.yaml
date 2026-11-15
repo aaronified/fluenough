@@ -1,0 +1,182 @@
+schema: 1
+id: "hi-numbers-big-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-4672"
+    target: "मेरे पापा की उम्र साठ साल है।"
+    reading: "mērē pāpā kī umr sāṭh sāl hai."
+    ipa: "meːreː paːpaː kiː ʊmr saːʈʰ saːl ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरे", base: "मेरा", reading: "mērē" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "उम्र", ref: "hi-1763" }
+      - { word: "साठ", ref: "hi-0221" }
+      - { word: "साल", ref: "hi-0318" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0222", kind: "word" }
+      - { id: "w2", ref: "hi-0220", kind: "word" }
+  - id: "hi-4673"
+    target: "यह किताब सौ रुपये की है।"
+    reading: "yah kitāb sau rupayē kī hai."
+    ipa: "jəɦ kɪt̪aːb sɔː rʊpəjeː kiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "किताब", ref: "hi-1095" }
+      - { word: "सौ", ref: "hi-0225" }
+      - { word: "रुपये", base: "रुपया", reading: "rupayē" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0226", kind: "word" }
+      - { id: "w2", ref: "hi-0220", kind: "word" }
+  - id: "hi-4674"
+    target: "एक हज़ार रुपये बहुत हैं।"
+    reading: "ēk hazār rupayē bahut haim̐."
+    ipa: "eːk ɦəzaːr rʊpəjeː bəɦʊt̪ ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "एक", ref: "hi-0198" }
+      - { word: "हज़ार", ref: "hi-0226" }
+      - { word: "रुपये", base: "रुपया", reading: "rupayē" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0227", kind: "word" }
+      - { id: "w2", ref: "hi-0225", kind: "word" }
+  - id: "hi-4675"
+    target: "मैं ढाई घंटे से यहाँ हूँ।"
+    reading: "maim̐ ḍhāī ghaṇṭē sē yahām̐ hūm̐."
+    ipa: "mɛ̃ː ɖʱaːiː ɡʱəɳʈeː seː jəɦãː ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "ढाई", ref: "hi-0230" }
+      - { word: "घंटे", base: "घंटा", reading: "ghaṇṭē" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "यहाँ", ref: "hi-0295" }
+      - { word: "हूँ", base: "होना", reading: "hūm̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0229", kind: "word" }
+      - { id: "w2", ref: "hi-0219", kind: "word" }
+  - id: "hi-4676"
+    target: "चालीस रुपये में सेब मिलते हैं।"
+    reading: "cālīs rupayē mēm̐ sēb miltē haim̐."
+    ipa: "tʃaːliːs rʊpəjeː mẽː seːb mɪlt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "चालीस", ref: "hi-0219" }
+      - { word: "रुपये", base: "रुपया", reading: "rupayē" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "सेब", ref: "hi-0978" }
+      - { word: "मिलते", base: "मिलना", reading: "miltē" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0220", kind: "word" }
+      - { id: "w2", ref: "hi-0218", kind: "word" }
+  - id: "hi-4677"
+    target: "मेरी बहन इक्कीस साल की है।"
+    reading: "mērī bahan ikkīs sāl kī hai."
+    ipa: "meːriː bəɦən ɪkkiːs saːl kiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", base: "मेरा", reading: "mērī" }
+      - { word: "बहन", ref: "hi-0379" }
+      - { word: "इक्कीस", ref: "hi-0523" }
+      - { word: "साल", ref: "hi-0318" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0524", kind: "word" }
+      - { id: "w2", ref: "hi-0217", kind: "word" }
+  - id: "hi-4678"
+    target: "पचास लोग यहाँ हैं।"
+    reading: "pacās lōg yahām̐ haim̐."
+    ipa: "pətʃaːs loːɡ jəɦãː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "पचास", ref: "hi-0220" }
+      - { word: "लोग", ref: "hi-0761" }
+      - { word: "यहाँ", ref: "hi-0295" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0221", kind: "word" }
+      - { id: "w2", ref: "hi-0219", kind: "word" }
+  - id: "hi-4679"
+    target: "सत्तर साल में भी काम करते हैं।"
+    reading: "sattar sāl mēm̐ bhī kām kartē haim̐."
+    ipa: "sət̪t̪ər saːl mẽː bʱiː kaːm kərt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "सत्तर", ref: "hi-0222" }
+      - { word: "साल", ref: "hi-0318" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "भी", ref: "hi-0350" }
+      - { word: "काम", ref: "hi-0194" }
+      - { word: "करते", base: "करना", reading: "kartē" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0221", kind: "word" }
+      - { id: "w2", ref: "hi-0223", kind: "word" }
+  - id: "hi-4680"
+    target: "सौ से ज़्यादा लोग हैं।"
+    reading: "sau sē zyādā lōg haim̐."
+    ipa: "sɔː seː zjaːd̪aː loːɡ ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "सौ", ref: "hi-0225" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "ज़्यादा", ref: "hi-0816" }
+      - { word: "लोग", ref: "hi-0761" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0224", kind: "word" }
+      - { id: "w2", ref: "hi-0226", kind: "word" }
+  - id: "hi-4681"
+    target: "पचहत्तर साल पुराना मकान है।"
+    reading: "pachattar sāl purānā makān hai."
+    ipa: "pətʃɦət̪t̪ər saːl pʊraːnaː məkaːn ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "पचहत्तर", ref: "hi-0572" }
+      - { word: "साल", ref: "hi-0318" }
+      - { word: "पुराना", ref: "hi-0897" }
+      - { word: "मकान", ref: "hi-0419" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0571", kind: "word" }
+      - { id: "w2", ref: "hi-0573", kind: "word" }
+  - id: "hi-4682"
+    target: "दस लाख लोग हैं।"
+    reading: "das lākh lōg haim̐."
+    ipa: "d̪əs laːkʰ loːɡ ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "दस", ref: "hi-0207" }
+      - { word: "लाख", ref: "hi-0227" }
+      - { word: "लोग", ref: "hi-0761" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0226", kind: "word" }
+      - { id: "w2", ref: "hi-0228", kind: "word" }
+  - id: "hi-4683"
+    target: "मेरी नानी बयासी साल की है।"
+    reading: "mērī nānī bayāsī sāl kī hai."
+    ipa: "meːriː naːniː bəjaːsiː saːl kiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", base: "मेरा", reading: "mērī" }
+      - { word: "नानी", ref: "hi-0387" }
+      - { word: "बयासी", ref: "hi-0578" }
+      - { word: "साल", ref: "hi-0318" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0577", kind: "word" }
+      - { id: "w2", ref: "hi-0579", kind: "word" }

@@ -1,0 +1,191 @@
+schema: 1
+id: "hi-animals-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-4895"
+    target: "यह कुत्ता है।"
+    reading: "yah kuttā hai."
+    ipa: "jəɦ kʊt̪t̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "कुत्ता", ref: "hi-1133" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1134", kind: "word" }
+      - { id: "w2", ref: "hi-1138", kind: "word" }
+  - id: "hi-4896"
+    target: "बिल्ली छोटी है।"
+    reading: "billī chōṭī hai."
+    ipa: "bɪlliː tʃʰoːʈiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "बिल्ली", ref: "hi-1134" }
+      - { word: "छोटी", base: "छोटा", reading: "chōṭī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1133", kind: "word" }
+      - { id: "w2", ref: "hi-1135", kind: "word" }
+  - id: "hi-4897"
+    target: "गाय दूध देती है।"
+    reading: "gāy dūdh dētī hai."
+    ipa: "ɡaːj d̪uːd̪ʱ d̪eːt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "गाय", ref: "hi-1128" }
+      - { word: "दूध", ref: "hi-0259" }
+      - { word: "देती", base: "देना", reading: "dētī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1130", kind: "word" }
+      - { id: "w2", ref: "hi-1129", kind: "word" }
+  - id: "hi-4898"
+    target: "हाथी बहुत बड़ा है।"
+    reading: "hāthī bahut baṛā hai."
+    ipa: "ɦaːt̪ʰiː bəɦʊt̪ bəɽaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "हाथी", ref: "hi-1125" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "बड़ा", ref: "hi-0894" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1136", kind: "word" }
+      - { id: "w2", ref: "hi-1139", kind: "word" }
+  - id: "hi-4899"
+    target: "शेर जंगल में रहता है।"
+    reading: "śēr jaṅgal mēm̐ rahtā hai."
+    ipa: "ʃeːr dʒəŋɡəl mẽː rəɦt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "शेर", ref: "hi-1138" }
+      - { word: "जंगल", ref: "hi-1066" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "रहता", base: "रहना", reading: "rahtā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1124", kind: "word" }
+      - { id: "w2", ref: "hi-1140", kind: "word" }
+  - id: "hi-4900"
+    target: "बंदर केला खाता है।"
+    reading: "bandar kēlā khātā hai."
+    ipa: "bənd̪ər keːlaː kʰaːt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "बंदर", ref: "hi-1126" }
+      - { word: "केला", ref: "hi-0977" }
+      - { word: "खाता", base: "खाना", reading: "khātā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1132", kind: "word" }
+      - { id: "w2", ref: "hi-1139", kind: "word" }
+  - id: "hi-4901"
+    target: "मुर्गी अंडे देती है।"
+    reading: "murgī aṇḍē dētī hai."
+    ipa: "mʊrɡiː əɳɖeː d̪eːt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मुर्गी", ref: "hi-1147" }
+      - { word: "अंडे", base: "अंडा", reading: "aṇḍē" }
+      - { word: "देती", base: "देना", reading: "dētī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1148", kind: "word" }
+      - { id: "w2", ref: "hi-1137", kind: "word" }
+  - id: "hi-4902"
+    target: "कौआ काला है।"
+    reading: "kauā kālā hai."
+    ipa: "kɔːaː kaːlaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "कौआ", ref: "hi-1146" }
+      - { word: "काला", ref: "hi-0920" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1145", kind: "word" }
+      - { id: "w2", ref: "hi-1137", kind: "word" }
+  - id: "hi-4903"
+    target: "तितली सफ़ेद है।"
+    reading: "titlī safēd hai."
+    ipa: "t̪ɪt̪liː səfeːd̪ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "तितली", ref: "hi-1142" }
+      - { word: "सफ़ेद", ref: "hi-0921" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1143", kind: "word" }
+      - { id: "w2", ref: "hi-1144", kind: "word" }
+  - id: "hi-4904"
+    target: "खरगोश भी गाजर खाता है।"
+    reading: "khargōś bhī gājar khātā hai."
+    ipa: "kʰərɡoːʃ bʱiː ɡaːdʒər kʰaːt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "खरगोश", ref: "hi-1141" }
+      - { word: "भी", ref: "hi-0350" }
+      - { word: "गाजर", ref: "hi-1019" }
+      - { word: "खाता", base: "खाना", reading: "khātā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1139", kind: "word" }
+      - { id: "w2", ref: "hi-1140", kind: "word" }
+  - id: "hi-4905"
+    target: "भैंस पानी में बैठती है।"
+    reading: "bhaiṁs pānī mēm̐ baiṭhtī hai."
+    ipa: "bʱɛ̃ːs paːniː mẽː bɛːʈʰt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "भैंस", ref: "hi-1129" }
+      - { word: "पानी", ref: "hi-0333" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "बैठती", base: "बैठना", reading: "baiṭhtī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1130", kind: "word" }
+      - { id: "w2", ref: "hi-1128", kind: "word" }
+  - id: "hi-4906"
+    target: "बकरी दौड़ती है।"
+    reading: "bakrī dauṛtī hai."
+    ipa: "bəkriː d̪ɔːɽt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "बकरी", ref: "hi-1130" }
+      - { word: "दौड़ती", base: "दौड़ना", reading: "dauṛtī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1131", kind: "word" }
+      - { id: "w2", ref: "hi-1129", kind: "word" }
+  - id: "hi-4907"
+    target: "बाघ और शेर जंगल में हैं।"
+    reading: "bāgh aur śēr jaṅgal mēm̐ haim̐."
+    ipa: "baːɡʱ ɔːr ʃeːr dʒəŋɡəl mẽː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "बाघ", ref: "hi-1124" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "शेर", ref: "hi-1138" }
+      - { word: "जंगल", ref: "hi-1066" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", ref: "hi-1139", kind: "word" }
+      - { id: "w2", ref: "hi-1140", kind: "word" }
+  - id: "hi-4908"
+    target: "कुत्ता घर के बाहर है।"
+    reading: "kuttā ghar kē bāhar hai."
+    ipa: "kʊt̪t̪aː ɡʱər keː baːɦər ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "कुत्ता", ref: "hi-1133" }
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "के", base: "का", reading: "kē" }
+      - { word: "बाहर", ref: "hi-0837" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1134", kind: "word" }
+      - { id: "w2", ref: "hi-1128", kind: "word" }

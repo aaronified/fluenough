@@ -10,6 +10,8 @@ cards:
   - id: "fr-0268"
     target: "Je m'appelle Paul, et j'habite à Lyon."
     ipa: "ʒə mapɛl pɔl e ʒabit a ljɔ̃"
+    phonetic: "[ʒə mapɛl pɔl e ʒabit̪ a ljɔ̃]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -23,9 +25,13 @@ cards:
     confusables:
       - { id: "travailler", ref: "fr-0252", kind: "word" }
       - { id: "pays", ref: "fr-0243", kind: "word" }
+    notes:
+      - { id: "preposition", kind: "behaviour" }
   - id: "fr-0269"
     target: "Je suis étudiante."
     ipa: "ʒə sɥi etydjɑ̃t"
+    phonetic: "[ʒə s̪ɥi et̪yd̪jɑ̃ːt̪]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -35,9 +41,13 @@ cards:
     confusables:
       - { id: "travail", ref: "fr-0255", kind: "word" }
       - { id: "anglais", ref: "fr-0247", kind: "word" }
+    notes:
+      - { id: "agreement", kind: "behaviour" }
   - id: "fr-0270"
     target: "Quelle est votre adresse et votre téléphone ?"
     ipa: "kɛl ɛ vɔtʁ adʁɛs e vɔtʁ telefɔn"
+    phonetic: "[kɛl ɛ vɔt̪χ ad̪ʁɛs̪ e vɔt̪χ t̪elefɔn̪]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -50,9 +60,13 @@ cards:
     confusables:
       - { id: "date", ref: "fr-0260", kind: "word" }
       - { id: "e-mail", ref: "fr-0258", kind: "word" }
+    notes:
+      - { id: "possessive", kind: "behaviour" }
   - id: "fr-0271"
     target: "Je suis marié et j'ai deux enfants."
     ipa: "ʒə sɥi maʁje e ʒe døz ɑ̃fɑ̃"
+    phonetic: "[ʒə s̪ɥi maʁje e ʒe d̪øz̪ ɑ̃fɑ̃]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -66,9 +80,13 @@ cards:
     confusables:
       - { id: "single", ref: "fr-0250", kind: "word" }
       - { id: "mari", ref: "fr-0171", kind: "word" }
+    notes:
+      - { id: "agreement", kind: "behaviour" }
   - id: "fr-0272"
     target: "Elle travaille à la gare."
     ipa: "ɛl tʁavaj a la ɡaʁ"
+    phonetic: "[ɛl t̪χavaj a la ɡaːʁ]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -80,9 +98,13 @@ cards:
     confusables:
       - { id: "museum", ref: "fr-0077", kind: "word" }
       - { id: "travail", ref: "fr-0255", kind: "word" }
+    notes:
+      - { id: "preposition", kind: "behaviour" }
   - id: "fr-0273"
     target: "Ma langue est le français."
     ipa: "ma lɑ̃ɡ ɛ lə fʁɑ̃sɛ"
+    phonetic: "[ma lɑ̃ɡ ɛ lə fχɑ̃s̪ɛ]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -94,9 +116,13 @@ cards:
     confusables:
       - { id: "anglais", ref: "fr-0247", kind: "word" }
       - { id: "nationality", ref: "fr-0245", kind: "word" }
+    notes:
+      - { id: "article", kind: "behaviour" }
   - id: "fr-0274"
     target: "Vous aimez la musique ?"
     ipa: "vu zɛme la myzik"
+    phonetic: "[vu z̪ɛme la myz̪ik]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -107,9 +133,13 @@ cards:
     confusables:
       - { id: "sport", ref: "fr-0265", kind: "word" }
       - { id: "content", ref: "fr-0264", kind: "word" }
+    notes:
+      - { id: "article", kind: "behaviour" }
   - id: "fr-0275"
     target: "C'est la date de naissance de ma sœur."
     ipa: "sɛ la dat də nɛsɑ̃s də ma sœʁ"
+    phonetic: "[s̪ɛ la d̪at̪ d̪ə n̪ɛs̪ɑ̃s̪ d̪ə ma s̪œːʁ]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -123,3 +153,5 @@ cards:
     confusables:
       - { id: "an", ref: "fr-0259", kind: "word" }
       - { id: "adresse", ref: "fr-0256", kind: "word" }
+    notes:
+      - { id: "elision", kind: "behaviour" }

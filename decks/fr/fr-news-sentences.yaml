@@ -10,6 +10,8 @@ cards:
   - id: "fr-1853"
     target: "Le journaliste lit le titre et annonce la nouvelle."
     ipa: "lə ʒuʁnalist li lə titʁ e anɔ̃s la nuvɛl"
+    phonetic: "[lə ʒuʁn̪alis̪t̪ li lə t̪it̪χ e an̪ɔ̃s̪ la n̪uvɛl]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -27,6 +29,8 @@ cards:
   - id: "fr-1854"
     target: "La rumeur n'est pas vérifiée."
     ipa: "la ʁymœʁ nɛ pa veʁifje"
+    phonetic: "[la ʁymœʁ n̪ɛ pa veʁifje]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -38,9 +42,13 @@ cards:
     confusables:
       - { id: "source", ref: "fr-1828", kind: "word" }
       - { id: "scoop", ref: "fr-1850", kind: "word" }
+    notes:
+      - { id: "ne-pas", kind: "behaviour" }
   - id: "fr-1855"
     target: "Le sondage montre que la guerre inquiète."
     ipa: "lə sɔ̃daʒ mɔ̃tʁ kə la ɡɛʁ ɛ̃kjɛt"
+    phonetic: "[lə s̪ɔ̃d̪aʒ mɔ̃t̪χ kə la ɡɛʁ ɛ̃kjɛt̪]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -57,6 +65,8 @@ cards:
   - id: "fr-1856"
     target: "Ce témoin parle à la radio de l'enquête."
     ipa: "sə temwɛ̃ paʁl a la ʁadjo də lɑ̃kɛt"
+    phonetic: "[s̪ə t̪emwɛ̃ paʁl a la ʁad̪jo d̪ə lɑ̃kɛt̪]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -74,6 +84,8 @@ cards:
   - id: "fr-1857"
     target: "La chaîne diffuse une émission sur l'économie."
     ipa: "la ʃɛn difyz yn emisjɔ̃ syʁ lekɔnɔmi"
+    phonetic: "[la ʃɛn̪ d̪ifyz̪ yn̪ emis̪jɔ̃ s̪yʁ lekɔn̪ɔmi]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -90,6 +102,8 @@ cards:
   - id: "fr-1858"
     target: "Le scandale fait la une du journal."
     ipa: "lə skɑ̃dal fɛ la yn dy ʒuʁnal"
+    phonetic: "[lə s̪kɑ̃d̪al fɛ la yn̪ d̪y ʒuʁn̪al]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -103,9 +117,13 @@ cards:
     confusables:
       - { id: "evenement", ref: "fr-1821", kind: "word" }
       - { id: "titre", ref: "fr-1810", kind: "word" }
+    notes:
+      - { id: "du", kind: "behaviour" }
   - id: "fr-1859"
     target: "Je vérifie la source avant de publier."
     ipa: "ʒə veʁifi la suʁs avɑ̃ də pyblje"
+    phonetic: "[ʒə veʁifi la s̪uχs̪ avɑ̃ d̪ə pyblje]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:

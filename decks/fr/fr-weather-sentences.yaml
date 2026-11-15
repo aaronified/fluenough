@@ -10,6 +10,8 @@ cards:
   - id: "fr-1343"
     target: "Le temps change souvent au printemps."
     ipa: "lə tɑ̃ ʃɑ̃ʒ suvɑ̃ o pʁɛ̃tɑ̃"
+    phonetic: "[lə t̪ɑ̃ ʃɑ̃ʒ s̪uvɑ̃ o pχɛ̃t̪ɑ̃]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -19,9 +21,13 @@ cards:
       - { word: "souvent", ref: "fr-0326" }
       - { word: "au", base: "au" }
       - { word: "printemps", ref: "fr-1169" }
+    notes:
+      - { id: "au", kind: "behaviour" }
   - id: "fr-1344"
     target: "Ce matin, la neige tombe sur les toits."
     ipa: "sə matɛ̃ la nɛʒ tɔ̃b syʁ le twa"
+    phonetic: "[s̪ə mat̪ɛ̃ la n̪ɛʒ t̪ɔ̃b s̪yʁ le t̪wa]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -39,6 +45,8 @@ cards:
   - id: "fr-1345"
     target: "Quelle est la météo de demain ?"
     ipa: "kɛl ɛ la meteo də dəmɛ̃"
+    phonetic: "[kɛl ɛ la met̪eo d̪ə d̪əmɛ̃]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -54,6 +62,8 @@ cards:
   - id: "fr-1346"
     target: "Le vent souffle, il fait froid."
     ipa: "lə vɑ̃ sufl il fɛ fʁwa"
+    phonetic: "[lə vɑ̃ s̪ufl il fɛ fχwa]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -63,9 +73,13 @@ cards:
       - { word: "il", ref: "fr-0127" }
       - { word: "fait", ref: "fr-0287" }
       - { word: "froid", ref: "fr-0420" }
+    notes:
+      - { id: "faire", kind: "behaviour" }
   - id: "fr-1347"
     target: "La pluie et l'orage arrivent ensemble."
     ipa: "la plɥi e lɔʁaʒ aʁiv ɑ̃sɑ̃bl"
+    phonetic: "[la plɥi e lɔʁaʒ aʁiv ɑ̃s̪ɑ̃bl]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -81,6 +95,8 @@ cards:
   - id: "fr-1348"
     target: "Un ciel bleu et un soleil chaud."
     ipa: "œ̃ sjɛl blø e œ̃ sɔlɛj ʃo"
+    phonetic: "[œ̃ s̪jɛl blø e œ̃ s̪ɔlɛj ʃo]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -90,9 +106,13 @@ cards:
       - { word: "et", ref: "fr-0027" }
       - { word: "soleil", ref: "fr-1303" }
       - { word: "chaud", ref: "fr-0419" }
+    notes:
+      - { id: "adjective-position", kind: "behaviour" }
   - id: "fr-1349"
     target: "Il neige, et les routes sont glissantes."
     ipa: "il nɛʒ e le ʁut sɔ̃ ɡlisɑ̃t"
+    phonetic: "[il n̪ɛʒ e le ʁut̪ s̪ɔ̃ ɡlis̪ɑ̃ːt̪]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -103,9 +123,13 @@ cards:
       - { word: "routes", ref: "fr-0892" }
       - { word: "sont", ref: "fr-0021" }
       - { word: "glissantes", base: "glissant" }
+    notes:
+      - { id: "agreement", kind: "behaviour" }
   - id: "fr-1350"
     target: "Le brouillard couvre la vallée."
     ipa: "lə bʁujaʁ kuvʁ la vale"
+    phonetic: "[lə bʁujaʁ kuvʁ la vale]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -120,6 +144,8 @@ cards:
   - id: "fr-1351"
     target: "Il y a dix degrés aujourd'hui."
     ipa: "il i a dis dəɡʁe oʒuʁdɥi"
+    phonetic: "[il i a d̪is̪ d̪əɡʁe oʒuʁd̪ɥi]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -129,9 +155,13 @@ cards:
       - { word: "dix", ref: "fr-0217" }
       - { word: "degrés", ref: "fr-1316" }
       - { word: "aujourd'hui", ref: "fr-0079" }
+    notes:
+      - { id: "il-y-a", kind: "behaviour" }
   - id: "fr-1352"
     target: "Je prends mon parapluie quand il pleut."
     ipa: "ʒə pʁɑ̃ mɔ̃ paʁaplɥi kɑ̃ il plø"
+    phonetic: "[ʒə pχɑ̃ mɔ̃ paʁaplɥi kɑ̃ il plø]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:

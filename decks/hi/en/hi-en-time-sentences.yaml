@@ -1,0 +1,101 @@
+schema: 1
+id: "hi-en-time-sentences"
+kind: "layer"
+core: "hi-time-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about time and days"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the time and day words of this unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-4660":
+    native: "Today is Sunday."
+    bases:
+      "है": "is"
+    confusables:
+      "w1": { why: "Saturday, not Sunday: शनिवार (śanivār) means Saturday." }
+      "w2": { why: "Monday, not Sunday: सोमवार (sōmvār) means Monday." }
+  "hi-4661":
+    native: "Tomorrow is Monday."
+    bases:
+      "है": "is"
+    confusables:
+      "w1": { why: "Today, not tomorrow: आज (āj) means today." }
+      "w2": { why: "Friday, not Monday: शुक्रवार (śukravār) means Friday." }
+  "hi-4662":
+    native: "We meet at eight in the morning."
+    bases:
+      "मिलते": "meet (habitual)"
+      "हैं": "are"
+    confusables:
+      "w1": { why: "Evening, not morning: शाम (śām) means evening." }
+      "w2": { why: "Night, not morning: रात (rāt) means night." }
+  "hi-4663":
+    native: "In the evening we go home."
+    bases:
+      "जाते": "go (habitual)"
+      "हैं": "are"
+    confusables:
+      "w1": { why: "Morning, not evening: सुबह (subah) means morning." }
+      "w2": { why: "Night, not evening: रात (rāt) means night." }
+  "hi-4664":
+    native: "It is nine o'clock now."
+    bases:
+      "हैं": "are"
+    confusables:
+      "w1": { why: "Ten, not nine: दस (das) means ten." }
+      "w2": { why: "Eight, not nine: आठ (āṭh) means eight." }
+  "hi-4665":
+    native: "It is half past three."
+    bases:
+      "हैं": "are"
+    confusables:
+      "w1": { why: "Four, not three: चार (cār) means four." }
+      "w2": { why: "Five, not three: पाँच (pām̐c) means five." }
+  "hi-4666":
+    native: "What time will you come?"
+    bases:
+      "कितने": "what (time)"
+      "आएँगे": "come (future)"
+    confusables:
+      "w1": { why: "When, not what time: कब (kab) means when." }
+      "w2": { why: "Who, not what time: कौन (kaun) means who." }
+  "hi-4667":
+    native: "I will go to school tomorrow."
+    bases:
+      "जाऊँगा": "will go"
+    confusables:
+      "w1": { why: "Today, not tomorrow: आज (āj) means today." }
+      "w2": { why: "Now, not tomorrow: अभी (abhī) means now." }
+  "hi-4668":
+    native: "I work five days a week."
+    bases:
+      "हफ़्ते": "week (oblique)"
+      "करता": "do; work (masculine, habitual)"
+      "हूँ": "am"
+    confusables:
+      "w1": { why: "Night, not week: रात (rāt) means night." }
+      "w2": { why: "Morning, not day: सुबह (subah) means morning." }
+  "hi-4669":
+    native: "What is there to do on Wednesday?"
+    bases:
+      "है": "is"
+    confusables:
+      "w1": { why: "Thursday, not Wednesday: गुरुवार (guruvār) means Thursday." }
+      "w2": { why: "Tuesday, not Wednesday: मंगलवार (maṅgalvār) means Tuesday." }
+  "hi-4670":
+    native: "Work is from Monday to Friday."
+    bases:
+      "है": "is"
+    confusables:
+      "w1": { why: "Saturday, not Friday: शनिवार (śanivār) means Saturday." }
+      "w2": { why: "Thursday, not Friday: गुरुवार (guruvār) means Thursday." }
+  "hi-4671":
+    native: "On Sundays I stay at home."
+    bases:
+      "रहता": "stay (masculine, habitual)"
+      "हूँ": "am"
+    confusables:
+      "w1": { why: "Saturday, not Sunday: शनिवार (śanivār) means Saturday." }
+      "w2": { why: "Monday, not Sunday: सोमवार (sōmvār) means Monday." }

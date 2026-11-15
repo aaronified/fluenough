@@ -10,6 +10,8 @@ cards:
   - id: "fr-2528"
     target: "Les pompiers éteignent l'incendie et la fumée."
     ipa: "le pɔ̃pje etɛɲ lɛ̃sɑ̃di e la fyme"
+    phonetic: "[le pɔ̃pje et̪ɛɲ lɛ̃s̪ɑ̃d̪i e la fyme]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -26,6 +28,8 @@ cards:
   - id: "fr-2529"
     target: "Appelez les secours, il y a un accident."
     ipa: "apəle le səkuʁ il i a œ̃ naksidɑ̃"
+    phonetic: "[apəle le s̪əkuʁ il i a œ̃ n̪aks̪id̪ɑ̃]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -40,9 +44,13 @@ cards:
     confusables:
       - { id: "police", ref: "fr-1067", kind: "word" }
       - { id: "ambulance", ref: "fr-2508", kind: "word" }
+    notes:
+      - { id: "il-y-a", kind: "behaviour" }
   - id: "fr-2530"
     target: "L'ambulance emmène le blessé à l'hôpital."
     ipa: "lɑ̃bylɑ̃s ɑ̃mɛn lə blese a lɔpital"
+    phonetic: "[lɑ̃bylɑ̃s̪ ɑ̃mɛn̪ lə bles̪e a lɔpit̪al]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -58,6 +66,8 @@ cards:
   - id: "fr-2531"
     target: "Le gendarme sauve un enfant de la fumée."
     ipa: "lə ʒɑ̃daʁm sov œ̃n ɑ̃fɑ̃ də la fyme"
+    phonetic: "[lə ʒɑ̃d̪aʁm s̪ov œ̃n̪ ɑ̃fɑ̃ d̪ə la fyme]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -75,6 +85,8 @@ cards:
   - id: "fr-2532"
     target: "Il a une fracture après sa chute."
     ipa: "il a yn fʁaktyʁ apʁɛ sa ʃyt"
+    phonetic: "[il a yn̪ fχakt̪yʁ apχɛ s̪a ʃyt̪]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -91,6 +103,8 @@ cards:
   - id: "fr-2533"
     target: "Il y a une fuite de gaz, sortez vite."
     ipa: "il i a yn fɥit də ɡaz sɔʁte vit"
+    phonetic: "[il i a yn̪ fɥit̪ d̪ə ɡaz̪ s̪ɔχt̪e vit̪]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -106,4 +120,6 @@ cards:
     confusables:
       - { id: "danger", ref: "fr-1074", kind: "word" }
       - { id: "evacuer", ref: "fr-2524", kind: "word" }
+    notes:
+      - { id: "il-y-a", kind: "behaviour" }
 

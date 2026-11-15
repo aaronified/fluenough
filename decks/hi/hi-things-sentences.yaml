@@ -1,0 +1,162 @@
+schema: 1
+id: "hi-things-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-4855"
+    target: "यह मेरी किताब है।"
+    reading: "yah mērī kitāb hai."
+    ipa: "jəɦ meːriː kɪt̪aːb ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "मेरी", base: "मेरा", reading: "mērī" }
+      - { word: "किताब", ref: "hi-1095" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1091", kind: "word" }
+      - { id: "w2", ref: "hi-1092", kind: "word" }
+  - id: "hi-4856"
+    target: "मेरी घड़ी कहाँ है?"
+    reading: "mērī ghaṛī kahām̐ hai?"
+    ipa: "meːriː ɡʱəɽiː kəɦãː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", base: "मेरा", reading: "mērī" }
+      - { word: "घड़ी", ref: "hi-1096" }
+      - { word: "कहाँ", ref: "hi-0159" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1097", kind: "word" }
+      - { id: "w2", ref: "hi-1098", kind: "word" }
+  - id: "hi-4857"
+    target: "क्या यह आपका बैग है?"
+    reading: "kyā yah āpkā baig hai?"
+    ipa: "kjaː jəɦ aːpkaː bɛːɡ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "क्या", ref: "hi-0157" }
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "आपका", ref: "hi-0755" }
+      - { word: "बैग", ref: "hi-1102" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1089", kind: "word" }
+      - { id: "w2", ref: "hi-1100", kind: "word" }
+  - id: "hi-4858"
+    target: "मुझे छाता चाहिए।"
+    reading: "mujhē chātā cāhiē."
+    ipa: "mʊdʒʱeː tʃʰaːt̪aː tʃaːɦɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "मुझे", base: "मैं", reading: "mujhē" }
+      - { word: "छाता", ref: "hi-1098" }
+      - { word: "चाहिए", ref: "hi-0460" }
+    confusables:
+      - { id: "w1", ref: "hi-1097", kind: "word" }
+      - { id: "w2", ref: "hi-1102", kind: "word" }
+  - id: "hi-4859"
+    target: "कैमरा नया है।"
+    reading: "kaimrā nayā hai."
+    ipa: "kɛːmraː nəjaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "कैमरा", ref: "hi-1100" }
+      - { word: "नया", ref: "hi-0896" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1099", kind: "word" }
+      - { id: "w2", ref: "hi-1101", kind: "word" }
+  - id: "hi-4860"
+    target: "तौलिया साफ़ है।"
+    reading: "tauliyā sāf hai."
+    ipa: "t̪ɔːlɪjaː saːf ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "तौलिया", ref: "hi-1093" }
+      - { word: "साफ़", ref: "hi-0901" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1105", kind: "word" }
+      - { id: "w2", ref: "hi-1094", kind: "word" }
+  - id: "hi-4861"
+    target: "साबुन और तौलिया लाइए।"
+    reading: "sābun aur tauliyā lāiē."
+    ipa: "saːbʊn ɔːr t̪ɔːlɪjaː laːɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "साबुन", ref: "hi-1105" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "तौलिया", ref: "hi-1093" }
+      - { word: "लाइए", base: "लाना", reading: "lāiē" }
+    confusables:
+      - { id: "w1", ref: "hi-1094", kind: "word" }
+      - { id: "w2", ref: "hi-1087", kind: "word" }
+  - id: "hi-4862"
+    target: "छुरी से काटिए।"
+    reading: "churī sē kāṭiē."
+    ipa: "tʃʰʊriː seː kaːʈɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "छुरी", ref: "hi-1088" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "काटिए", base: "काटना", reading: "kāṭiē" }
+    confusables:
+      - { id: "w1", ref: "hi-1086", kind: "word" }
+      - { id: "w2", ref: "hi-1087", kind: "word" }
+  - id: "hi-4863"
+    target: "यह डिब्बा खोलिए।"
+    reading: "yah ḍibbā khōliē."
+    ipa: "jəɦ ɖɪbbaː kʰoːlɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "डिब्बा", ref: "hi-1090" }
+      - { word: "खोलिए", base: "खोलना", reading: "khōliē" }
+    confusables:
+      - { id: "w1", ref: "hi-1089", kind: "word" }
+      - { id: "w2", ref: "hi-1102", kind: "word" }
+  - id: "hi-4864"
+    target: "मैं रोज़ घड़ी देखता हूँ।"
+    reading: "maim̐ rōz ghaṛī dēkhtā hūm̐."
+    ipa: "mɛ̃ː roːz ɡʱəɽiː d̪eːkʰt̪aː ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "रोज़", ref: "hi-0451" }
+      - { word: "घड़ी", ref: "hi-1096" }
+      - { word: "देखता", base: "देखना", reading: "dēkhtā" }
+      - { word: "हूँ", base: "होना", reading: "hūm̐" }
+    confusables:
+      - { id: "w1", ref: "hi-1100", kind: "word" }
+      - { id: "w2", ref: "hi-1099", kind: "word" }
+  - id: "hi-4865"
+    target: "मोबाइल बैग में है।"
+    reading: "mōbāil baig mēm̐ hai."
+    ipa: "moːbaːɪl bɛːɡ mẽː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मोबाइल", ref: "hi-1099" }
+      - { word: "बैग", ref: "hi-1102" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1100", kind: "word" }
+      - { id: "w2", ref: "hi-1101", kind: "word" }
+  - id: "hi-4866"
+    target: "पेंसिल मेरे बैग में है।"
+    reading: "pēṁsil mērē baig mēm̐ hai."
+    ipa: "pẽːsɪl meːreː bɛːɡ mẽː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "पेंसिल", ref: "hi-1092" }
+      - { word: "मेरे", base: "मेरा", reading: "mērē" }
+      - { word: "बैग", ref: "hi-1102" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1091", kind: "word" }
+      - { id: "w2", ref: "hi-1095", kind: "word" }

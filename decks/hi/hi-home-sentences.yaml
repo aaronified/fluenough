@@ -1,0 +1,202 @@
+schema: 1
+id: "hi-home-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-4867"
+    target: "यह मेरा मकान है।"
+    reading: "yah mērā makān hai."
+    ipa: "jəɦ meːraː məkaːn ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "मकान", ref: "hi-0419" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-0192", kind: "word" }
+      - { id: "w2", ref: "hi-0239", kind: "word" }
+  - id: "hi-4868"
+    target: "हमारा कमरा बड़ा है।"
+    reading: "hamārā kamrā baṛā hai."
+    ipa: "ɦəmaːraː kəmraː bəɽaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "हमारा", ref: "hi-0756" }
+      - { word: "कमरा", ref: "hi-0421" }
+      - { word: "बड़ा", ref: "hi-0894" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-0422", kind: "word" }
+      - { id: "w2", ref: "hi-0425", kind: "word" }
+  - id: "hi-4869"
+    target: "मैं रसोई में जाता हूँ।"
+    reading: "maim̐ rasōī mēm̐ jātā hūm̐."
+    ipa: "mɛ̃ː rəsoːiː mẽː dʒaːt̪aː ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "रसोई", ref: "hi-0422" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "जाता", base: "जाना", reading: "jātā" }
+      - { word: "हूँ", base: "होना", reading: "hūm̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0421", kind: "word" }
+      - { id: "w2", ref: "hi-0424", kind: "word" }
+  - id: "hi-4870"
+    target: "यह दरवाज़ा खोलिए।"
+    reading: "yah darvāzā khōliē."
+    ipa: "jəɦ d̪ərʋaːzaː kʰoːlɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "दरवाज़ा", ref: "hi-0426" }
+      - { word: "खोलिए", base: "खोलना", reading: "khōliē" }
+    confusables:
+      - { id: "w1", ref: "hi-0427", kind: "word" }
+      - { id: "w2", ref: "hi-0431", kind: "word" }
+  - id: "hi-4871"
+    target: "खिड़की बंद कीजिए।"
+    reading: "khiṛkī band kījiē."
+    ipa: "kʰɪɽkiː bənd̪ kiːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "खिड़की", ref: "hi-0427" }
+      - { word: "बंद", ref: "hi-1358" }
+      - { word: "कीजिए", base: "करना", reading: "kījiē" }
+    confusables:
+      - { id: "w1", ref: "hi-0426", kind: "word" }
+      - { id: "w2", ref: "hi-0428", kind: "word" }
+  - id: "hi-4872"
+    target: "चाबी मेज़ पर है।"
+    reading: "cābī mēz par hai."
+    ipa: "tʃaːbiː meːz pər ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "चाबी", ref: "hi-0431" }
+      - { word: "मेज़", ref: "hi-0434" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-0433", kind: "word" }
+      - { id: "w2", ref: "hi-0432", kind: "word" }
+  - id: "hi-4873"
+    target: "बत्ती बंद कीजिए।"
+    reading: "battī band kījiē."
+    ipa: "bət̪t̪iː bənd̪ kiːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "बत्ती", ref: "hi-0436" }
+      - { word: "बंद", ref: "hi-1358" }
+      - { word: "कीजिए", base: "करना", reading: "kījiē" }
+    confusables:
+      - { id: "w1", ref: "hi-0435", kind: "word" }
+      - { id: "w2", ref: "hi-0427", kind: "word" }
+  - id: "hi-4874"
+    target: "पंखा चल रहा है।"
+    reading: "paṅkhā cal rahā hai."
+    ipa: "pəŋkʰaː tʃəl rəɦaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "पंखा", ref: "hi-0435" }
+      - { word: "चल", base: "चलना", reading: "cal" }
+      - { word: "रहा", base: "रहना", reading: "rahā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-0436", kind: "word" }
+      - { id: "w2", ref: "hi-0434", kind: "word" }
+  - id: "hi-4875"
+    target: "मेरे पड़ोसी अच्छे हैं।"
+    reading: "mērē paṛōsī acchē haim̐."
+    ipa: "meːreː pəɽoːsiː ətʃtʃʰeː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरे", base: "मेरा", reading: "mērē" }
+      - { word: "पड़ोसी", ref: "hi-0437" }
+      - { word: "अच्छे", base: "अच्छा", reading: "acchē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", ref: "hi-0438", kind: "word" }
+      - { id: "w2", ref: "hi-0185", kind: "word" }
+  - id: "hi-4876"
+    target: "हमारा मोहल्ला अच्छा है।"
+    reading: "hamārā mōhallā acchā hai."
+    ipa: "ɦəmaːraː moːɦəllaː ətʃtʃʰaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "हमारा", ref: "hi-0756" }
+      - { word: "मोहल्ला", ref: "hi-0438" }
+      - { word: "अच्छा", ref: "hi-0898" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-0437", kind: "word" }
+      - { id: "w2", ref: "hi-1080", kind: "word" }
+  - id: "hi-4877"
+    target: "सीढ़ियाँ ऊपर जाती हैं।"
+    reading: "sīṛhiyām̐ ūpar jātī haim̐."
+    ipa: "siːɽʱɪjãː uːpər dʒaːt̪iː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "सीढ़ियाँ", ref: "hi-0429" }
+      - { word: "ऊपर", ref: "hi-0834" }
+      - { word: "जाती", base: "जाना", reading: "jātī" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", ref: "hi-0428", kind: "word" }
+      - { id: "w2", ref: "hi-0427", kind: "word" }
+  - id: "hi-4878"
+    target: "मेरा बिस्तर बड़ा है।"
+    reading: "mērā bistar baṛā hai."
+    ipa: "meːraː bɪst̪ər bəɽaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "बिस्तर", ref: "hi-0432" }
+      - { word: "बड़ा", ref: "hi-0894" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-0433", kind: "word" }
+      - { id: "w2", ref: "hi-0434", kind: "word" }
+  - id: "hi-4879"
+    target: "मेरा फ़्लैट ऊपर की मंज़िल पर है।"
+    reading: "mērā flaiṭ ūpar kī maṁzil par hai."
+    ipa: "meːraː flɛːʈ uːpər kiː mə̃zɪl pər ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "फ़्लैट", ref: "hi-0420" }
+      - { word: "ऊपर", ref: "hi-0834" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "मंज़िल", ref: "hi-0430" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-0419", kind: "word" }
+      - { id: "w2", ref: "hi-0428", kind: "word" }
+  - id: "hi-4880"
+    target: "बाथरूम कहाँ है?"
+    reading: "bāthrūm kahām̐ hai?"
+    ipa: "baːt̪ʰruːm kəɦãː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "बाथरूम", ref: "hi-0425" }
+      - { word: "कहाँ", ref: "hi-0159" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-0422", kind: "word" }
+      - { id: "w2", ref: "hi-0421", kind: "word" }
+  - id: "hi-4881"
+    target: "छत पर चलिए।"
+    reading: "chat par caliē."
+    ipa: "tʃʰət̪ pər tʃəlɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "छत", ref: "hi-0428" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "चलिए", ref: "hi-0273" }
+    confusables:
+      - { id: "w1", ref: "hi-0429", kind: "word" }
+      - { id: "w2", ref: "hi-0837", kind: "word" }
