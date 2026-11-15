@@ -433,7 +433,8 @@ units:
       - { id: "which-is-better", text: { "en": "Two friends compare two phones" } }
     reading_passages:
       - { id: "two-cities", text: { "en": "A short text comparing two cities" } }
-  - planned: { id: "fr-illness", theme: "illness", words: 40 }
+  - decks: ["fr-illness", "fr-illness-sentences", "fr-reading-illness", "*"]
+    words: 40
     listening_passages:
       - { id: "a-cold-and-a-fever", text: { "en": "Telling a friend you have a cold and a fever" } }
     reading_passages:

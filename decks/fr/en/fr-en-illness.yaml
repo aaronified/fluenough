@@ -1,0 +1,679 @@
+schema: 1
+id: "fr-en-illness"
+kind: "layer"
+core: "fr-illness"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Illness"
+license: "CC-BY-SA-4.0"
+description: "Forty words for being ill: symptoms, common illnesses, medicines and what a doctor says. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-3000":
+    native: "flu"
+    notes:
+      "n1": "Grippe is feminine: la grippe. It is a stronger illness than a cold."
+    examples:
+      "J'ai la grippe depuis lundi.":
+        native: "I have had the flu since Monday."
+        bases:
+          "J'ai": "have"
+          "grippe": "flu"
+          "depuis": "since"
+      "Ma sœur a la grippe.":
+        native: "My sister has the flu."
+        bases:
+          "a": "has"
+          "grippe": "flu"
+  "fr-3001":
+    native: "ointment"
+    notes:
+      "n1": "A pommade is rubbed on the skin, not swallowed: it is feminine."
+    examples:
+      "Mets de la pommade sur la coupure.":
+        native: "Put some ointment on the cut."
+        bases:
+          "Mets": "put"
+          "de": "some"
+          "pommade": "ointment"
+      "La pommade est dans le tiroir.":
+        native: "The ointment is in the drawer."
+        bases:
+          "pommade": "ointment"
+          "est": "is"
+          "tiroir": "drawer"
+  "fr-3002":
+    native: "symptom"
+    notes:
+      "n1": "A symptom is a sign of illness, such as a cough or a fever; it is masculine."
+    examples:
+      "Quels sont tes symptômes ?":
+        native: "What are your symptoms?"
+        bases:
+          "Quels": "which"
+          "sont": "are"
+          "tes": "your"
+          "symptômes": "symptom"
+      "Le symptôme est une douleur à la gorge.":
+        native: "The symptom is a pain in the throat."
+        bases:
+          "symptôme": "symptom"
+          "est": "is"
+          "à": "at"
+  "fr-3003":
+    native: "nausea, feeling sick"
+    notes:
+      "n1": "Nausée is the feeling of wanting to be sick; to be sick is vomir."
+    examples:
+      "J'ai la nausée depuis ce matin.":
+        native: "I have felt sick since this morning."
+        bases:
+          "J'ai": "have"
+          "nausée": "nausea, feeling sick"
+          "depuis": "since"
+          "matin": "morning"
+      "Cette odeur me donne la nausée.":
+        native: "This smell makes me feel sick."
+        bases:
+          "odeur": "smell"
+          "me": "me"
+          "donne": "gives"
+          "nausée": "nausea, feeling sick"
+  "fr-3004":
+    native: "diarrhoea"
+    notes:
+      "n1": "Diarrhée is feminine and is used with avoir: j'ai la diarrhée."
+    examples:
+      "Il a la diarrhée depuis hier.":
+        native: "He has had diarrhoea since yesterday."
+        bases:
+          "a": "has"
+          "diarrhée": "diarrhoea"
+          "depuis": "since"
+      "La diarrhée passe après deux jours.":
+        native: "The diarrhoea goes away after two days."
+        bases:
+          "diarrhée": "diarrhoea"
+          "passe": "goes away"
+          "après": "after"
+          "jours": "days"
+  "fr-3005":
+    native: "bandage"
+    notes:
+      "n1": "A bandage is a strip of cloth wrapped round a wound; it is masculine."
+    examples:
+      "Il faut mettre un bandage.":
+        native: "You need to put a bandage on."
+        bases:
+          "faut": "you need"
+          "bandage": "bandage"
+      "Le bandage est trop serré.":
+        native: "The bandage is too tight."
+        bases:
+          "bandage": "bandage"
+          "est": "is"
+          "serré": "tight"
+  "fr-3006":
+    native: "aspirin"
+    notes:
+      "n1": "Une aspirine is one tablet of aspirin; the word is feminine."
+    examples:
+      "Je prends une aspirine.":
+        native: "I am taking an aspirin."
+        bases:
+          "prends": "take"
+          "aspirine": "aspirin"
+      "L'aspirine est dans ma valise.":
+        native: "The aspirin is in my suitcase."
+        bases:
+          "L'aspirine": "aspirin"
+          "est": "is"
+  "fr-3007":
+    native: "antibiotic"
+    notes:
+      "n1": "An antibiotic kills bacteria, not viruses; it is masculine."
+    examples:
+      "Le médecin donne un antibiotique.":
+        native: "The doctor gives an antibiotic."
+        bases:
+          "donne": "gives"
+          "antibiotique": "antibiotic"
+      "Il prend un antibiotique depuis trois jours.":
+        native: "He has been taking an antibiotic for three days."
+        bases:
+          "prend": "takes"
+          "antibiotique": "antibiotic"
+          "depuis": "for"
+          "jours": "days"
+  "fr-3008":
+    native: "vaccine"
+    notes:
+      "n1": "Un vaccin is a vaccine; the verb is vacciner (to vaccinate)."
+    examples:
+      "Il faut un vaccin pour voyager.":
+        native: "You need a vaccine to travel."
+        bases:
+          "faut": "need"
+          "vaccin": "vaccine"
+          "voyager": "travel"
+      "J'ai reçu mon vaccin hier.":
+        native: "I had my vaccine yesterday."
+        bases:
+          "J'ai": "have"
+          "reçu": "had"
+          "vaccin": "vaccine"
+  "fr-3009":
+    native: "bite, sting, or injection"
+    notes:
+      "n1": "La piqûre is a bite or a sting, or an injection; the context says which."
+    examples:
+      "J'ai une piqûre sur le bras.":
+        native: "I have a bite on my arm."
+        bases:
+          "J'ai": "have"
+          "piqûre": "bite, sting, or injection"
+      "La piqûre est petite.":
+        native: "The bite is small."
+        bases:
+          "piqûre": "bite, sting, or injection"
+          "est": "is"
+          "petite": "small"
+  "fr-3010":
+    native: "shiver"
+    notes:
+      "n1": "Un frisson is a shiver from cold or fever; it is masculine."
+    examples:
+      "J'ai des frissons.":
+        native: "I have the shivers."
+        bases:
+          "J'ai": "have"
+          "frissons": "shivers"
+      "Le froid donne un frisson.":
+        native: "The cold gives a shiver."
+        bases:
+          "donne": "gives"
+          "frisson": "shiver"
+  "fr-3011":
+    native: "having a cold"
+    notes:
+      "n1": "Enrhumé is the adjective for having a cold; the feminine is enrhumée."
+    examples:
+      "Je suis enrhumé depuis lundi.":
+        native: "I have had a cold since Monday."
+        bases:
+          "suis": "am"
+          "enrhumé": "having a cold"
+          "depuis": "since"
+      "Elle est enrhumée.":
+        native: "She has a cold."
+        bases:
+          "est": "is"
+          "enrhumée": "having a cold"
+  "fr-3012":
+    native: "spot, pimple"
+    notes:
+      "n1": "Un bouton is a spot on the skin, and also a button on a shirt; the context decides."
+    examples:
+      "J'ai un bouton sur le visage.":
+        native: "I have a spot on the face."
+        bases:
+          "J'ai": "have"
+          "bouton": "spot, pimple"
+      "Le bouton de la chemise est cassé.":
+        native: "The button on the shirt is broken."
+        bases:
+          "bouton": "spot, pimple"
+          "de": "of"
+          "est": "is"
+          "cassé": "broken"
+  "fr-3013":
+    native: "rash"
+    notes:
+      "n1": "Une éruption is a rash of spots on the skin; it is feminine."
+    examples:
+      "Il a une éruption sur le bras.":
+        native: "He has a rash on his arm."
+        bases:
+          "a": "has"
+          "éruption": "rash"
+      "L'éruption disparaît après une semaine.":
+        native: "The rash goes away after a week."
+        bases:
+          "L'éruption": "rash"
+          "disparaît": "goes away"
+          "après": "after"
+          "semaine": "week"
+  "fr-3014":
+    native: "redness"
+    notes:
+      "n1": "La rougeur is redness of the skin; it comes from rouge and is feminine."
+    examples:
+      "Il y a une rougeur sur la joue.":
+        native: "There is a red mark on the cheek."
+        bases:
+          "y": "there"
+          "a": "is"
+          "rougeur": "redness"
+      "La rougeur part vite.":
+        native: "The redness goes away quickly."
+        bases:
+          "rougeur": "redness"
+          "part": "goes"
+          "vite": "quickly"
+  "fr-3015":
+    native: "swollen"
+    notes:
+      "n1": "Enflé means swollen; the feminine is enflée."
+    examples:
+      "Mon pied est enflé.":
+        native: "My foot is swollen."
+        bases:
+          "est": "is"
+          "enflé": "swollen"
+      "Ma cheville est enflée.":
+        native: "My ankle is swollen."
+        bases:
+          "cheville": "ankle"
+          "est": "is"
+          "enflée": "swollen"
+  "fr-3016":
+    native: "bump, lump"
+    notes:
+      "n1": "Une bosse is a bump or lump from a fall or a knock; it is feminine."
+    examples:
+      "Il a une bosse à la tête.":
+        native: "He has a bump on his head."
+        bases:
+          "a": "has"
+          "bosse": "bump, lump"
+          "à": "on"
+      "La bosse est grosse.":
+        native: "The bump is big."
+        bases:
+          "bosse": "bump, lump"
+          "est": "is"
+          "grosse": "big"
+  "fr-3017":
+    native: "indigestion"
+    notes:
+      "n1": "Une indigestion is stomach upset after eating too much; it is feminine."
+    examples:
+      "J'ai une indigestion après le repas.":
+        native: "I have indigestion after the meal."
+        bases:
+          "J'ai": "have"
+          "indigestion": "indigestion"
+          "après": "after"
+          "repas": "meal"
+      "Il mange trop et il a une indigestion.":
+        native: "He eats too much and has indigestion."
+        bases:
+          "mange": "eats"
+          "a": "has"
+          "indigestion": "indigestion"
+  "fr-3018":
+    native: "asthma"
+    notes:
+      "n1": "L'asthme is masculine: un asthme; it is a long-term breathing illness."
+    examples:
+      "Elle a de l'asthme.":
+        native: "She has asthma."
+        bases:
+          "a": "has"
+          "de": "of"
+          "l'asthme": "asthma"
+      "Son asthme est léger.":
+        native: "His asthma is mild."
+        bases:
+          "asthme": "asthma"
+          "est": "is"
+          "léger": "mild"
+  "fr-3019":
+    native: "migraine"
+    notes:
+      "n1": "Une migraine is a severe headache; the word is feminine."
+    examples:
+      "J'ai une migraine depuis ce matin.":
+        native: "I have had a migraine since this morning."
+        bases:
+          "J'ai": "have"
+          "migraine": "migraine"
+          "depuis": "since"
+          "matin": "morning"
+      "La lumière me donne la migraine.":
+        native: "The light gives me a migraine."
+        bases:
+          "me": "me"
+          "donne": "gives"
+          "migraine": "migraine"
+  "fr-3020":
+    native: "breathing"
+    notes:
+      "n1": "La respiration is breathing; the verb is respirer."
+    examples:
+      "Ta respiration est calme.":
+        native: "Your breathing is calm."
+        bases:
+          "respiration": "breathing"
+          "est": "is"
+          "calme": "calm"
+      "Il a des difficultés à respirer.":
+        native: "He has trouble breathing."
+        bases:
+          "a": "has"
+          "difficultés": "difficulties"
+          "à": "to"
+          "respirer": "breathe"
+  "fr-3021":
+    native: "eye drops"
+    notes:
+      "n1": "Un collyre is eye drops; it is masculine."
+    examples:
+      "Mets ce collyre dans l'œil.":
+        native: "Put these eye drops in your eye."
+        bases:
+          "Mets": "put"
+          "collyre": "eye drops"
+          "l'œil": "eye"
+      "Le collyre est dans la trousse.":
+        native: "The eye drops are in the bag."
+        bases:
+          "collyre": "eye drops"
+          "est": "is"
+          "trousse": "bag"
+  "fr-3022":
+    native: "injection, shot"
+    notes:
+      "n1": "Une injection is a shot given with a needle; it is feminine."
+    examples:
+      "Le médecin fait une injection.":
+        native: "The doctor gives an injection."
+        bases:
+          "fait": "gives"
+          "injection": "injection, shot"
+      "L'injection fait un peu mal.":
+        native: "The injection hurts a little."
+        bases:
+          "L'injection": "injection, shot"
+          "fait": "hurts"
+          "peu": "a little"
+  "fr-3023":
+    native: "medical appointment"
+    notes:
+      "n1": "Une consultation is a visit to a doctor; the verb is consulter."
+    examples:
+      "J'ai une consultation demain.":
+        native: "I have an appointment tomorrow."
+        bases:
+          "J'ai": "have"
+          "consultation": "medical appointment"
+      "La consultation dure une heure.":
+        native: "The appointment lasts one hour."
+        bases:
+          "consultation": "medical appointment"
+          "dure": "lasts"
+  "fr-3024":
+    native: "clinic"
+    notes:
+      "n1": "Une clinique is a small hospital, smaller than the hôpital."
+    examples:
+      "La clinique est près de la gare.":
+        native: "The clinic is near the station."
+        bases:
+          "clinique": "clinic"
+          "est": "is"
+          "près": "near"
+          "de": "of"
+      "Il travaille dans une clinique.":
+        native: "He works in a clinic."
+        bases:
+          "travaille": "works"
+          "clinique": "clinic"
+  "fr-3025":
+    native: "wound"
+    notes:
+      "n1": "Une plaie is an open wound; the word is feminine."
+    examples:
+      "La plaie est profonde.":
+        native: "The wound is deep."
+        bases:
+          "plaie": "wound"
+          "est": "is"
+          "profonde": "deep"
+      "Il nettoie la plaie avec de l'eau.":
+        native: "He cleans the wound with water."
+        bases:
+          "nettoie": "cleans"
+          "plaie": "wound"
+          "avec": "with"
+          "de": "some"
+          "l'eau": "water"
+  "fr-3026":
+    native: "cut"
+    notes:
+      "n1": "Une coupure is a cut; the verb is couper, and the word is feminine."
+    examples:
+      "J'ai une coupure au doigt.":
+        native: "I have a cut on my finger."
+        bases:
+          "J'ai": "have"
+          "coupure": "cut"
+          "au": "on"
+      "La coupure saigne.":
+        native: "The cut is bleeding."
+        bases:
+          "coupure": "cut"
+          "saigne": "bleeds"
+  "fr-3027":
+    native: "sprain"
+    notes:
+      "n1": "Une entorse is a sprain, a twisted joint; the word is feminine."
+    examples:
+      "J'ai une entorse à la cheville.":
+        native: "I have a sprained ankle."
+        bases:
+          "J'ai": "have"
+          "entorse": "sprain"
+          "à": "to"
+          "cheville": "ankle"
+      "L'entorse est grave.":
+        native: "The sprain is serious."
+        bases:
+          "L'entorse": "sprain"
+          "est": "is"
+          "grave": "serious"
+  "fr-3028":
+    native: "plaster cast"
+    notes:
+      "n1": "Un plâtre is a plaster cast for a broken bone; it is masculine."
+    examples:
+      "Il a un plâtre au bras.":
+        native: "He has a cast on his arm."
+        bases:
+          "a": "has"
+          "plâtre": "plaster cast"
+          "au": "on"
+      "Le plâtre reste trois semaines.":
+        native: "The cast stays on for three weeks."
+        bases:
+          "plâtre": "plaster cast"
+          "reste": "stays"
+          "semaines": "weeks"
+  "fr-3029":
+    native: "exhausted"
+    notes:
+      "n1": "Épuisé means exhausted; the feminine is épuisée."
+    examples:
+      "Je suis épuisé après le travail.":
+        native: "I am exhausted after work."
+        bases:
+          "suis": "am"
+          "épuisé": "exhausted"
+          "après": "after"
+      "Elle est épuisée.":
+        native: "She is exhausted."
+        bases:
+          "est": "is"
+          "épuisée": "exhausted"
+  "fr-3030":
+    native: "recovery"
+    notes:
+      "n1": "La guérison is recovery from an illness; the verb is guérir."
+    examples:
+      "La guérison prend deux semaines.":
+        native: "Recovery takes two weeks."
+        bases:
+          "guérison": "recovery"
+          "prend": "takes"
+          "semaines": "weeks"
+      "Bonne guérison !":
+        native: "Get well soon!"
+        bases:
+          "Bonne": "good"
+          "guérison": "recovery"
+  "fr-3031":
+    native: "convalescence"
+    notes:
+      "n1": "La convalescence is the time of rest after an illness; it is feminine."
+    examples:
+      "Il est en convalescence.":
+        native: "He is recovering."
+        bases:
+          "est": "is"
+          "en": "in"
+          "convalescence": "convalescence"
+      "La convalescence dure un mois.":
+        native: "Recovery lasts one month."
+        bases:
+          "convalescence": "convalescence"
+          "dure": "lasts"
+  "fr-3032":
+    native: "contagious"
+    notes:
+      "n1": "Contagieux means catching: the feminine is contagieuse."
+    examples:
+      "La grippe est contagieuse.":
+        native: "The flu is contagious."
+        bases:
+          "est": "is"
+          "contagieuse": "contagious"
+      "Ce rhume n'est pas contagieux.":
+        native: "This cold is not contagious."
+        bases:
+          "rhume": "cold"
+          "n'est": "is"
+          "pas": "not"
+          "contagieux": "contagious"
+  "fr-3033":
+    native: "blood pressure"
+    notes:
+      "n1": "La tension is blood pressure here (tension artérielle); it is feminine."
+    examples:
+      "Le médecin mesure ma tension.":
+        native: "The doctor measures my blood pressure."
+        bases:
+          "mesure": "measures"
+          "tension": "blood pressure"
+      "Ma tension est trop haute.":
+        native: "My blood pressure is too high."
+        bases:
+          "tension": "blood pressure"
+          "est": "is"
+          "haute": "high"
+  "fr-3034":
+    native: "tablet, pill"
+    notes:
+      "n1": "Un cachet is a tablet or pill; it is masculine."
+    examples:
+      "Je prends un cachet le matin.":
+        native: "I take a tablet in the morning."
+        bases:
+          "prends": "take"
+          "cachet": "tablet, pill"
+          "matin": "morning"
+      "Ce cachet est très petit.":
+        native: "This tablet is very small."
+        bases:
+          "cachet": "tablet, pill"
+          "est": "is"
+  "fr-3035":
+    native: "to limp"
+    notes:
+      "n1": "Boiter means to limp: il boite, elle boite."
+    examples:
+      "Il boite depuis son accident.":
+        native: "He has been limping since his accident."
+        bases:
+          "boite": "limps"
+          "depuis": "since"
+          "accident": "accident"
+      "Elle boite un peu.":
+        native: "She limps a little."
+        bases:
+          "boite": "limps"
+          "peu": "a little"
+  "fr-3036":
+    native: "to recommend, to advise"
+    notes:
+      "n1": "Recommander takes an object: recommander un médecin, recommander un repos."
+    examples:
+      "Le médecin recommande du repos.":
+        native: "The doctor recommends rest."
+        bases:
+          "recommande": "recommends"
+          "du": "some"
+      "Je te recommande cette pharmacie.":
+        native: "I recommend this pharmacy to you."
+        bases:
+          "te": "you"
+          "recommande": "recommend"
+  "fr-3037":
+    native: "bone"
+    notes:
+      "n1": "Un os is a bone; it is masculine, and the s is silent in the word itself."
+    examples:
+      "L'os est cassé.":
+        native: "The bone is broken."
+        bases:
+          "L'os": "bone"
+          "est": "is"
+          "cassé": "broken"
+      "Le chien ronge son os.":
+        native: "The dog chews its bone."
+        bases:
+          "ronge": "chews"
+          "os": "bone"
+  "fr-3038":
+    native: "allergic"
+    notes:
+      "n1": "Allergique means allergic; the noun is allergie."
+    examples:
+      "Je suis allergique au pollen.":
+        native: "I am allergic to pollen."
+        bases:
+          "suis": "am"
+          "allergique": "allergic"
+          "au": "to"
+          "pollen": "pollen"
+      "Il est allergique aux chats.":
+        native: "He is allergic to cats."
+        bases:
+          "est": "is"
+          "allergique": "allergic"
+          "aux": "to"
+          "chats": "cats"
+  "fr-3039":
+    native: "dizziness"
+    notes:
+      "n1": "Un vertige is dizziness; it is masculine."
+    examples:
+      "J'ai un vertige.":
+        native: "I feel dizzy."
+        bases:
+          "J'ai": "have"
+          "vertige": "dizziness"
+      "Le vertige passe vite.":
+        native: "The dizziness goes away quickly."
+        bases:
+          "vertige": "dizziness"
+          "passe": "goes away"
+          "vite": "quickly"
