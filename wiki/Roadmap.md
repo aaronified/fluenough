@@ -362,7 +362,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1269](https://github.com/aaronified/fluenough/issues/1269) Situations: more icon keys, so a language can have more than six situations
 - [#1270](https://github.com/aaronified/fluenough/issues/1270) Placement admission: stored verdict is keyed to one deck snapshot, so live decks have none
 - [#1295](https://github.com/aaronified/fluenough/issues/1295) Telugu cards disagree on the medial anusvara reading (ṁ, ṅ, n, m)
-- [#1357](https://github.com/aaronified/fluenough/issues/1357) Telugu transcription: hyphen-initial suffixes are mis-transcribed (-ina, -aṁ)
 - [#1361](https://github.com/aaronified/fluenough/issues/1361) Telugu transcription: no reading for rare letters (ఌ ౡ ఁ ౘ ౙ), wrong for ఱ
 - [#1369](https://github.com/aaronified/fluenough/issues/1369) Spanish narrow IPA rules: five gaps found reviewing the first whole-course run
 
