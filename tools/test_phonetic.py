@@ -447,9 +447,9 @@ class Normalising(Tree):
     """A language may opt in to `normalise` pairs (#1369, gap 5), so
     Wiktionary's forms read in the conventions of the course's rules."""
 
-    PAIRS = (("([ðβɣ])̞", "\\1"),
-             ("([td])[͜͡]([ʃʒ])", "\\1\\2"),
-             ("n̟(?=ˈ?θ)", "n̪"))
+    PAIRS = (("([\u00f0\u03b2\u0263])\u031e", "\\1"),
+             ("([td])[\u0361\u035c]([\u0283\u0292])", "\\1\\2"),
+             ("n\u031f(?=\u02c8?\u03b8)", "n\u032a"))
 
     def zz(self, normalise=()):
         return {"zz": ip.Variety("Zed", normalise=normalise)}
