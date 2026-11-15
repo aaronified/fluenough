@@ -1,0 +1,92 @@
+schema: 1
+id: "mr-daily-life-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-5363"
+    target: "ती रोज सकाळी लवकर उठते."
+    reading: "ti roj sakāḷi lavkar uṭhte."
+    ipa: "t̪i rodz səkaɭi ləʋkər uʈʰt̪e"
+    pos: "phrase"
+    bases: [{ word: "रोज", ref: "mr-0505" }, { word: "सकाळी", ref: "mr-0477" }, { word: "लवकर", ref: "mr-0509" }, { word: "उठते", ref: "mr-0494" }]
+    confusables: [{ id: "f1", word: "उठतो", reading: "uṭhto", kind: "form" }, { id: "w1", ref: "mr-0510", kind: "word" }]
+  - id: "mr-5364"
+    target: "ते नेहमी घरी नाश्ता करतात."
+    reading: "te nehmi ghari nāśtā kartāt."
+    ipa: "t̪e neɦmi ɡʱəri naʃt̪a kərt̪at̪"
+    pos: "phrase"
+    bases: [{ word: "नेहमी", ref: "mr-0506" }, { word: "घरी", ref: "mr-0433" }, { word: "करतात", ref: "mr-0712" }]
+    confusables: [{ id: "f1", word: "करतो", reading: "karto", kind: "form" }, { id: "w1", ref: "mr-0507", kind: "word" }]
+  - id: "mr-5365"
+    target: "मुले सात वाजता झोपतात."
+    reading: "mule sāt vājtā jhoptāt."
+    ipa: "mule sat̪ ʋadzt̪a dzʱopt̪at̪"
+    pos: "phrase"
+    bases: [{ word: "मुले", base: "मूल", reading: "mul" }, { word: "सात", ref: "mr-0258" }, { word: "वाजता", ref: "mr-0481" }, { word: "झोपतात", ref: "mr-0500" }]
+    confusables: [{ id: "f1", word: "झोपतो", reading: "jhopto", kind: "form" }, { id: "w1", ref: "mr-0509", kind: "word" }]
+  - id: "mr-5366"
+    target: "ती सकाळी दात घासते."
+    reading: "ti sakāḷi dāt ghāste."
+    ipa: "t̪i səkaɭi d̪at̪ ɡʱast̪e"
+    pos: "phrase"
+    bases: [{ word: "सकाळी", ref: "mr-0477" }, { word: "घासते", ref: "mr-1150" }]
+    confusables: [{ id: "f1", word: "घासतो", reading: "ghāsto", kind: "form" }, { id: "w1", ref: "mr-0494", kind: "word" }]
+  - id: "mr-5367"
+    target: "सकाळी नाश्ता करा."
+    reading: "sakāḷi nāśtā karā."
+    ipa: "səkaɭi naʃt̪a kəra"
+    pos: "phrase"
+    bases: [{ word: "सकाळी", ref: "mr-0477" }, { word: "करा", ref: "mr-0712" }]
+    confusables: [{ id: "f1", word: "कर", reading: "kar", kind: "form" }, { id: "w1", ref: "mr-0498", kind: "word" }]
+  - id: "mr-5368"
+    target: "ती रोज कामावर जाते."
+    reading: "ti roj kāmāvar jāte."
+    ipa: "t̪i rodz kamaʋər dzat̪e"
+    pos: "phrase"
+    bases: [{ word: "रोज", ref: "mr-0505" }, { word: "कामावर", ref: "mr-0234" }, { word: "जाते", ref: "mr-0710" }]
+    confusables: [{ id: "f1", word: "जातो", reading: "jāto", kind: "form" }, { id: "w1", ref: "mr-0433", kind: "word" }]
+  - id: "mr-5369"
+    target: "ते रात्री जेवून झोपतात."
+    reading: "te rātri jevun jhoptāt."
+    ipa: "t̪e rat̪ri dʒeʋun dzʱopt̪at̪"
+    pos: "phrase"
+    bases: [{ word: "रात्री", ref: "mr-0480" }, { word: "जेवून", ref: "mr-0499" }, { word: "झोपतात", ref: "mr-0500" }]
+    confusables: [{ id: "f1", word: "जेवतात", reading: "jevtāt", kind: "form" }, { id: "w1", ref: "mr-0498", kind: "word" }]
+  - id: "mr-5370"
+    target: "ती रोज सकाळी चालते."
+    reading: "ti roj sakāḷi cālte."
+    ipa: "t̪i rodz səkaɭi tsalt̪e"
+    pos: "phrase"
+    bases: [{ word: "रोज", ref: "mr-0505" }, { word: "सकाळी", ref: "mr-0477" }, { word: "चालते", ref: "mr-0512" }]
+    confusables: [{ id: "f1", word: "चालतो", reading: "cālto", kind: "form" }, { id: "w1", ref: "mr-0513", kind: "word" }]
+  - id: "mr-5371"
+    target: "आई रात्री पुस्तक वाचते."
+    reading: "āi rātri pustak vācte."
+    ipa: "ai rat̪ri pust̪ək ʋatst̪e"
+    pos: "phrase"
+    bases: [{ word: "रात्री", ref: "mr-0480" }, { word: "वाचते", ref: "mr-0513" }]
+    confusables: [{ id: "f1", word: "वाचतो", reading: "vācto", kind: "form" }, { id: "w1", ref: "mr-0512", kind: "word" }]
+  - id: "mr-5372"
+    target: "ती कधीकधी उशिरा जेवते."
+    reading: "ti kadhikadhi uśirā jevte."
+    ipa: "t̪i kəd̪ʱikəd̪ʱi uʃira dʒeʋt̪e"
+    pos: "phrase"
+    bases: [{ word: "कधीकधी", ref: "mr-0507" }, { word: "उशिरा", ref: "mr-0510" }, { word: "जेवते", ref: "mr-0499" }]
+    confusables: [{ id: "f1", word: "जेवतो", reading: "jevto", kind: "form" }, { id: "w1", ref: "mr-0506", kind: "word" }]
+  - id: "mr-5373"
+    target: "ती सोमवारी कपडे धुते."
+    reading: "ti somvāri kapḍe dhute."
+    ipa: "t̪i somʋari kəpɖe d̪ʱut̪e"
+    pos: "phrase"
+    bases: [{ word: "सोमवारी", ref: "mr-0487" }, { word: "कपडे", base: "कपडा", reading: "kapḍā" }, { word: "धुते", ref: "mr-1148" }]
+    confusables: [{ id: "f1", word: "धुतो", reading: "dhuto", kind: "form" }, { id: "w1", ref: "mr-0505", kind: "word" }]
+  - id: "mr-5374"
+    target: "ती घरी परत येते."
+    reading: "ti ghari parat yete."
+    ipa: "t̪i ɡʱəri pərət̪ jet̪e"
+    pos: "phrase"
+    bases: [{ word: "घरी", ref: "mr-0433" }, { word: "परत", base: "परत", reading: "parat" }, { word: "येते", ref: "mr-0711" }]
+    confusables: [{ id: "f1", word: "येतो", reading: "yeto", kind: "form" }, { id: "w1", ref: "mr-0501", kind: "word" }]

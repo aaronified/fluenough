@@ -1,0 +1,58 @@
+schema: 1
+id: "mr-en-history-sentences"
+kind: "layer"
+core: "mr-history-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "History: sentences"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the history words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-5824":
+    native: "I like history."
+    bases: { "मला": "to me", "आवडतो": "like" }
+    confusables: { "w1": { why: "नाही (nāhi) means not, which would say I do not like it." }, "f1": { why: "आवडते (āvaḍte) is for a feminine or neuter thing; इतिहास (itihās) is masculine, so आवडतो (āvaḍto) is used." } }
+  "mr-5825":
+    native: "Shivaji Maharaj was a king."
+    bases: { "शिवाजी": "Shivaji", "महाराज": "Maharaj, a royal title", "होते": "was" }
+    confusables: { "w1": { why: "राणी (rāṇi) means queen, not king." }, "f1": { why: "होती (hoti) is feminine; the sentence is about a man, so होते (hote) is used." } }
+  "mr-5826":
+    native: "This palace is very old."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "ऐतिहासिक (aitihāsik) means historical, not old." }, "f1": { why: "जुनी (juni) is feminine; राजवाडा (rājvāḍā) is masculine, so जुना (junā) is used." } }
+  "mr-5827":
+    native: "Our country's culture is very old."
+    bases: { "आपल्या": "our", "देशाची": "of the country", "जुनी": "old", "आहे": "is" }
+    confusables: { "w1": { why: "प्राचीन (prācin) means ancient; the sentence says old." }, "f1": { why: "जुना (junā) is masculine; संस्कृती (saṁskruti) is feminine, so जुनी (juni) is used." } }
+  "mr-5828":
+    native: "I read a history book."
+    bases: { "इतिहासाचे": "of history", "वाचतो": "read" }
+    confusables: { "w1": { why: "तू (tu) means you, not I: मी (mi) is I." }, "f1": { why: "वाचते (vācte) is the feminine form, for a woman reader." } }
+  "mr-5829":
+    native: "That queen ruled the kingdom."
+    bases: { "त्या": "that", "राणीने": "the queen", "केले": "did" }
+    confusables: { "w1": { why: "ती (ti) means she; त्या (tyā) points at the queen." }, "w2": { why: "राजा (rājā) means king, not queen." } }
+  "mr-5830":
+    native: "What will happen in the next century?"
+    bases: { "पुढच्या": "next", "शतकात": "in the century", "होईल": "will happen" }
+    confusables: { "w1": { why: "आता (ātā) means now; पुढच्या (puḍhcyā) means next." }, "w2": { why: "कधी (kadhi) asks when, not what." } }
+  "mr-5831":
+    native: "This ancient fort is very beautiful."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "आधुनिक (ādhunik) means modern, the opposite of ancient." }, "f1": { why: "आहेत (āhet) is plural; one fort takes आहे (āhe)." } }
+  "mr-5832":
+    native: "This house is modern."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "प्राचीन (prācin) means ancient, the opposite of modern." }, "w2": { why: "ही (hi) means this for a feminine noun; घर (ghar) is neuter, so हे (he) is used." } }
+  "mr-5833":
+    native: "People fought a battle for freedom."
+    bases: { "लोकांनी": "people", "स्वातंत्र्यासाठी": "for freedom", "लढली": "fought" }
+    confusables: { "w1": { why: "युद्ध (yuddh) means war; लढाई (laḍhāi) means a battle." }, "f1": { why: "लढला (laḍhlā) is masculine; लढाई (laḍhāi) is feminine, so लढली (laḍhli) is used." } }
+  "mr-5834":
+    native: "We will not forget their sacrifice."
+    bases: { "त्यांचे": "their", "विसरणार": "will forget" }
+    confusables: { "w1": { why: "आम्ही (āmhi) means we without the listener; आपण (āpaṇ) includes the listener." }, "f1": { why: "विसरलो (visarlo) is the past tense, not the future." } }
+  "mr-5835":
+    native: "Preserve our heritage."
+    bases: { "आपला": "our", "जपा": "preserve (polite)" }
+    confusables: { "w1": { why: "तू (tu) means you; जपा (japā) is the polite command." }, "f1": { why: "जपतो (japto) means I preserve, not an order." } }

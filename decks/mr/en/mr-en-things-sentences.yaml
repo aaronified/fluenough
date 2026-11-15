@@ -1,0 +1,70 @@
+schema: 1
+id: "mr-en-things-sentences"
+kind: "layer"
+core: "mr-things-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with things around you"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the words for things around you. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-6640":
+    native: "This is a pen."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "Pencil, not pen: पेन्सिल (pensil) is a pencil." }, "f1": { why: "Plural: आहेत (āhet) is for two or more things; this sentence has one pen." } }
+  "mr-6641":
+    native: "Where is my notebook?"
+    bases: { "माझी": "my", "कुठे": "where", "आहे": "is" }
+    confusables: { "w1": { why: "Who, not where: कोण (koṇ) asks who." }, "f1": { why: "Masculine: माझा (mājhā) goes with a masculine noun; वही (vahi) is feminine." } }
+  "mr-6642":
+    native: "Write with a pencil."
+    bases: { "पेन्सिलीने": "with a pencil", "लिहा": "write" }
+    confusables: { "w1": { why: "Paper, not a tool: कागद (kāgad) is paper, which you write on, not with." }, "f1": { why: "A statement about one man: लिहितो (lihito) means he writes; it is not an order." } }
+  "mr-6643":
+    native: "Write on paper."
+    bases: { "कागदावर": "on paper", "लिहा": "write" }
+    confusables: { "w1": { why: "The tool, not the place: पेन (pen) is what you write with." }, "f1": { why: "A statement about one man: लिहितो (lihito) means he writes; it is not an order." } }
+  "mr-6644":
+    native: "Look in the mirror."
+    bases: { "आरशात": "in the mirror", "बघा": "look" }
+    confusables: { "w1": { why: "Glasses you wear on the face: चष्मा (caṣmā) is not a place to look in." }, "f1": { why: "A statement about one man: बघतो (baghto) means he looks; it is not an order." } }
+  "mr-6645":
+    native: "Take an umbrella, since it is raining."
+    bases: { "घ्या": "take", "आहे": "is" }
+    confusables: { "w1": { why: "A cap, not for rain: टोपी (ṭopi) is worn on the head." }, "f1": { why: "Plural: आहेत (āhet) is for two or more; पाऊस (pāus) is one thing." } }
+  "mr-6646":
+    native: "The towel is here."
+    bases: { "इथे": "here", "आहे": "is" }
+    confusables: { "w1": { why: "Soap, not a towel: साबण (sābaṇ) is soap for washing." }, "f1": { why: "Plural: आहेत (āhet) is for two or more things; this sentence has one towel." } }
+  "mr-6647":
+    native: "The pillow and the sheet are on the bed."
+    bases: { "पलंगावर": "on the bed", "आहेत": "are" }
+    confusables: { "w1": { why: "A blanket is another bedding item, not a sheet: ब्लँकेट (blam̐keṭ)." }, "f1": { why: "Singular: आहे (āhe) is for one thing; two things take आहेत (āhet)." } }
+  "mr-6648":
+    native: "There is food on the plate."
+    bases: { "ताटात": "on the plate", "आहे": "is" }
+    confusables: { "w1": { why: "A drinking glass, not a plate: ग्लास (glās) holds water or milk." }, "f1": { why: "A verb, not a noun: जेवतो (jevto) means he eats." } }
+  "mr-6649":
+    native: "The water is in the bottle."
+    bases: { "बाटलीत": "in the bottle", "आहे": "is" }
+    confusables: { "w1": { why: "A tin or box, not a bottle: डबा (ḍabā) has a lid." }, "f1": { why: "Singular: पाणी (pāṇi) is one thing, so आहे (āhe) is used." } }
+  "mr-6650":
+    native: "Please give me a glass of water."
+    bases: { "मला": "to me", "द्या": "give" }
+    confusables: { "w1": { why: "A bottle, not a glass: बाटली (bāṭli) is a bottle; this sentence asks for a glass." }, "w2": { why: "Take, not give: घ्या (ghyā) means take." } }
+  "mr-6651":
+    native: "There is oil in the wok."
+    bases: { "कढईत": "in the wok", "आहे": "is" }
+    confusables: { "w1": { why: "A flat pan for bread, not a wok: तवा (tavā) is flat." }, "f1": { why: "To the wok, not in it: कढईला (kaḍhailā) means to the wok; कढईत (kaḍhait) means in it." } }
+  "mr-6652":
+    native: "This lock is closed."
+    bases: { "बंद": "closed", "आहे": "is" }
+    confusables: { "w1": { why: "A key, not the lock: चावी (cāvi) opens the lock." }, "f1": { why: "Plural: आहेत (āhet) is for two or more things; this sentence has one lock." } }
+  "mr-6653":
+    native: "Where is the phone?"
+    bases: { "कुठे": "where", "आहे": "is" }
+    confusables: { "w1": { why: "Who, not where: कोण (koṇ) asks who." }, "f1": { why: "Plural: आहेत (āhet) is for two or more things; this sentence has one phone." } }
+  "mr-6654":
+    native: "The card is in the bag."
+    bases: { "बॅगेत": "in the bag", "आहे": "is" }
+    confusables: { "w1": { why: "A box or case, not a bag: पेटी (peṭi) is a box." }, "f1": { why: "Plural: आहेत (āhet) is for two or more things; this sentence has one card." } }

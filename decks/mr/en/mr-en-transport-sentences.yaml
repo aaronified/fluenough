@@ -1,0 +1,54 @@
+schema: 1
+id: "mr-en-transport-sentences"
+kind: "layer"
+core: "mr-transport-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with transport"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the words for buses, autos, taxis and trains. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-6680":
+    native: "The auto-rickshaw has come."
+    bases: { "आली": "came" }
+    confusables: { "w1": { why: "A taxi, another vehicle: टॅक्सी (ṭêksi) is a taxi." }, "w2": { why: "A train, not an auto: लोकल (lokal) is a local train." } }
+  "mr-6681":
+    native: "Where is the taxi?"
+    bases: { "कुठे": "where", "आहे": "is" }
+    confusables: { "w1": { why: "A rickshaw, not a taxi: रिक्षा (rikṣā) is an auto-rickshaw." }, "w2": { why: "A station, not a vehicle: स्टेशन (sṭeśan) is a station." } }
+  "mr-6682":
+    native: "How far is the station?"
+    bases: { "किती": "how", "लांब": "far", "आहे": "is" }
+    confusables: { "w1": { why: "An airport, another place: विमानतळ (vimāntaḷ) is an airport." }, "w2": { why: "Near, the opposite of far: जवळ (javaḷ) means near." } }
+  "mr-6683":
+    native: "Where will I get a ticket?"
+    bases: { "कुठे": "where", "मिळेल": "will get" }
+    confusables: { "w1": { why: "A fare, the price: भाडे (bhāḍe) is the fare you pay." }, "w2": { why: "A vehicle, not a ticket: गाडी (gāḍi) is a vehicle or a train." } }
+  "mr-6684":
+    native: "How much is the fare?"
+    bases: { "किती": "how much", "आहे": "is" }
+    confusables: { "w1": { why: "A ticket, not the fare: तिकीट (tikiṭ) is a ticket." }, "w2": { why: "A vehicle, not a price: गाडी (gāḍi) is a vehicle." } }
+  "mr-6685":
+    native: "The local train stops here."
+    bases: { "इथे": "here", "थांबते": "stops" }
+    confusables: { "w1": { why: "An airport, not a stop: विमानतळ (vimāntaḷ) is an airport." }, "w2": { why: "An order, not a statement: थांबा (thāmbā) means wait or stop, said to someone." } }
+  "mr-6686":
+    native: "I want to go to the airport."
+    bases: { "मला": "to me", "विमानतळावर": "to the airport", "जायचे": "to go", "आहे": "is" }
+    confusables: { "w1": { why: "A station, another place: स्टेशन (sṭeśan) is a railway station." }, "w2": { why: "To get off, not to go: उतरायचे (utrāyce) means to get off." } }
+  "mr-6687":
+    native: "The train goes to the station."
+    bases: { "स्टेशनला": "to the station", "जाते": "goes" }
+    confusables: { "w1": { why: "A taxi, another vehicle: टॅक्सी (ṭêksi) is a taxi." }, "w2": { why: "Masculine: जातो (jāto) goes with a masculine noun; गाडी (gāḍi) is feminine." } }
+  "mr-6688":
+    native: "Where is the next station?"
+    bases: { "पुढचे": "next", "कुठे": "where", "आहे": "is" }
+    confusables: { "w1": { why: "Behind or the one before, not the next: मागचे (māgce) means the one behind." }, "w2": { why: "A local train, not a station: लोकल (lokal) is a local train." } }
+  "mr-6689":
+    native: "Let's go by vehicle."
+    bases: { "गाडीने": "by vehicle", "जाऊ": "let's go" }
+    confusables: { "w1": { why: "A taxi, one kind of vehicle: टॅक्सी (ṭêksi) is one kind of vehicle." }, "w2": { why: "On foot, not by vehicle: चालत (cālat) means walking." } }
+  "mr-6690":
+    native: "The auto-rickshaw runs by the meter."
+    bases: { "मीटरने": "by the meter", "चालते": "runs" }
+    confusables: { "w1": { why: "A vehicle, not a meter: गाडी (gāḍi) is a vehicle." }, "w2": { why: "The fare paid for the ride: भाडे (bhāḍe) is the fare, the money you pay." } }
