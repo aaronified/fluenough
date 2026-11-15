@@ -363,6 +363,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1270](https://github.com/aaronified/fluenough/issues/1270) Placement admission: stored verdict is keyed to one deck snapshot, so live decks have none
 - [#1295](https://github.com/aaronified/fluenough/issues/1295) Telugu cards disagree on the medial anusvara reading (ṁ, ṅ, n, m)
 - [#1357](https://github.com/aaronified/fluenough/issues/1357) Telugu transcription: hyphen-initial suffixes are mis-transcribed (-ina, -aṁ)
+- [#1361](https://github.com/aaronified/fluenough/issues/1361) Telugu transcription: no reading for rare letters (ఌ ౡ ఁ ౘ ౙ), wrong for ఱ
 
 ## Plans
 
