@@ -367,6 +367,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1428](https://github.com/aaronified/fluenough/issues/1428) Japanese tools: transcribe.py ja emits ASCII g for ぎゃ/ぎょ/ぎゅ; derive/import skip decks/ja/ja-en-hiragana.yaml
 - [#1466](https://github.com/aaronified/fluenough/issues/1466) IPA_RE rejects precomposed ä that import_phonetic's NFC step produces (475 Hindi forms)
 - [#1476](https://github.com/aaronified/fluenough/issues/1476) Marathi: add "mr" to tools/phonetic_languages.yaml (narrow IPA, MR-110)
+- [#1480](https://github.com/aaronified/fluenough/issues/1480) Chinese: Mandarin broad IPA tooling (shared tools change, branch tools/zh-phonetics)
 
 ## Plans
 
