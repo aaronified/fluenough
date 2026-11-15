@@ -1,0 +1,38 @@
+schema: 1
+id: "as-en-reading-more-verbs"
+name: "Assamese reading: more verbs"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-how-to-make-tea"
+    title: "How to make tea"
+    theme: "more-verbs"
+    sentences:
+      - text: "পানী গৰম কৰক।"
+        reading: "pāni gôrôm kôrôk."
+      - text: "চাহ বহুত গৰম।"
+        reading: "sāh bohut gôrôm."
+      - text: "তাৰ পাছত চাহ খাওঁ।"
+        reading: "tār pāsôt sāh khāum̐."
+    questions:
+      - id: "as-7153"
+        prompt: { en: "The tea is very hot." }
+        answer: true
+      - id: "as-7154"
+        prompt: { en: "What do you heat first?" }
+        options:
+          - { en: "The water" }
+          - { en: "The bread" }
+          - { en: "The chair" }
+        answer: 1
+      - id: "as-7155"
+        prompt: { en: "What do you do after that?" }
+        options:
+          - { en: "Drink the tea" }
+          - { en: "Go to sleep" }
+          - { en: "Wash the cup" }
+        answer: 1
