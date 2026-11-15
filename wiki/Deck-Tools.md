@@ -333,6 +333,15 @@ python3 tools/transcribe_decks.py --fix decks/te te         # anusvara only
 python3 tools/transcribe_decks.py --fix --all decks/te te   # every difference
 ```
 
+Telugu input the tool reads (#1357, #1361; defaults set by the architect,
+the owner can overturn them): a dependent vowel sign with no consonant before
+it, as in a suffix written `-ిన` or a bare ending `ాం`, reads as the vowel it
+stands for, with no inherent a (`-ina`, `āṁ`, `ā`); the hyphen is kept in the
+reading. ఱ reads `ṟa` (IPA as ర, `r`). ఌ and ౡ follow ఋ: `lu` and `lū`
+(IPA `lu`, `luː`); the signs ౢ ౣ read the same. ౘ and ౙ read `tsa` and `dza`
+(IPA `ts`, `dz`); ISO 15919 has no letter for them. ఁ is silent (empty reading
+and IPA), ః reads `ḥ` and ౠ `rū`, as before.
+
 `--check` prints each id, field, stored value and recomputed value, in two
 lists: "anusvara differences" (the target holds an anusvara and the two values
 agree once every nasal is treated as one, the medial-anusvara rule of

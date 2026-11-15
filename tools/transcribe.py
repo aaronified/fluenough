@@ -64,7 +64,12 @@ COMPOSED = {0x0958: "q", 0x0959: "k͟h", 0x095A: "ġ", 0x095B: "z", 0x095C: "ṛ
             0x09F0: "r",   # Assamese ৰ
             0x09F1: "v",   # Assamese ৱ
             0x0A5E: "f",
-            0x0CDE: "ḻ"}   # Kannada ೞ
+            0x0CDE: "ḻ",   # Kannada ೞ
+            0x0C58: "ts",  # Telugu ౘ, the archaic ts (not in ISO 15919)
+            0x0C59: "dz"}  # Telugu ౙ, the archaic dz (not in ISO 15919)
+# Telugu's vocalic l: ఌ ౡ, and the signs ౢ ౣ, by offset.
+TE_VOWELS = {0x0C: "l", 0x61: "ll"}
+TE_SIGNS = {0x62: "l", 0x63: "ll"}
 KHANDA_TA = 0x09CE        # Bengali ৎ: a t with no vowel
 # Malayalam's chillu letters, a consonant with no vowel, by offset: ൺ ൻ ർ ൽ
 # ൾ ൿ. ൻ is written ṉ, as the decks write it, where ന is n.
@@ -168,6 +173,17 @@ def parse(text: str, lang: str) -> list[Unit]:
             units.append(Unit("V", VOWELS[o]))
             i += 1
             continue
+        if lang == "te" and o is not None and o in TE_VOWELS:
+            units.append(Unit("V", TE_VOWELS[o]))
+            i += 1
+            continue
+        # A Telugu dependent vowel sign with no consonant before it (a
+        # suffix written -ిన, or a bare ending ాం) is read as the vowel
+        # it stands for, with no consonant and no inherent a (#1357).
+        if lang == "te" and o is not None and (o in SIGNS or o in TE_SIGNS):
+            units.append(Unit("V", SIGNS.get(o) or TE_SIGNS[o]))
+            i += 1
+            continue
         if o is not None and o in (ANUSVARA, CANDRABINDU, VISARGA) or \
                 (lang == "te" and ord(c) == 0x0C00):
             kind = {ANUSVARA: "N", CANDRABINDU: "M", VISARGA: "H"}.get(o, "M")
@@ -243,6 +259,9 @@ def _is_consonant(c: str, off) -> bool:
 
 
 def _vowel_after(chars, i, off, units, lang) -> int:
+    if lang == "te" and i < len(chars) and off(chars[i]) in TE_SIGNS:
+        units.append(Unit("S", TE_SIGNS[off(chars[i])]))
+        return i + 1
     if i < len(chars) and off(chars[i]) in SIGNS:
         units.append(Unit("V", SIGNS[off(chars[i])], ))
         units[-1].kind = "S"
@@ -260,6 +279,7 @@ def _vowel_after(chars, i, off, units, lang) -> int:
 _VOWELS_TE = {"a": ("a", "a"), "aa": ("ā", "aː"), "i": ("i", "i"),
               "ii": ("ī", "iː"), "u": ("u", "u"), "uu": ("ū", "uː"),
               "r": ("ru", "ru"), "rr": ("rū", "ruː"), "se": ("e", "e"),
+              "l": ("lu", "lu"), "ll": ("lū", "luː"),
               "e": ("ē", "eː"), "ai": ("ai", "ai"), "so": ("o", "o"),
               "o": ("ō", "oː"), "au": ("au", "au"), "ce": ("ê", "æ"),
               "co": ("ô", "ɔ")}
@@ -312,7 +332,7 @@ _IPA = {"k": "k", "kh": "kʰ", "g": "ɡ", "gh": "ɡʱ", "ṅ": "ŋ",
         "ṭ": "ʈ", "ṭh": "ʈʰ", "ḍ": "ɖ", "ḍh": "ɖʱ", "ṇ": "ɳ",
         "t": "t̪", "th": "t̪ʰ", "d": "d̪", "dh": "d̪ʱ", "n": "n", "ṉ": "n",
         "p": "p", "ph": "pʰ", "b": "b", "bh": "bʱ", "m": "m",
-        "y": "j", "r": "r", "ṟ": "r", "l": "l", "ḷ": "ɭ", "ḻ": "ɻ",
+        "y": "j", "r": "r", "ṟ": "r", "ts": "ts", "dz": "dz", "l": "l", "ḷ": "ɭ", "ḻ": "ɻ",
         "v": "ʋ", "w": "w", "ś": "ʃ", "ṣ": "ʂ", "s": "s", "h": "ɦ",
         "q": "q", "k͟h": "x", "ġ": "ɣ", "z": "z", "f": "f",
         "ṛ": "ɽ", "ṛh": "ɽʱ", "ẏ": "j", "x": "x"}
@@ -333,7 +353,7 @@ CONSONANT_TABLES: dict[str, dict[str, tuple[str, str]]] = {
            "ṛh": ("rh", "ɹ"), "ś": ("x", "x"), "ṣ": ("x", "x"),
            "s": ("x", "x"), "h": ("h", "h"), "v": ("b", "b"),
            "w": ("w", "w")},
-    "te": {"ṟ": ("r", "r"), "h": ("h", "h")},
+    "te": {"ṟ": ("ṟ", "r"), "h": ("h", "h")},
     "kn": {"ṟ": ("r", "r"), "ḻ": ("ḷ", "ɭ"), "h": ("h", "h")},
     # Malayalam's ര and റ are both a tap; ḻ (ഴ) is kept apart from ḷ (ള).
     "ml": {"r": ("r", "ɾ"), "ṟ": ("ṟ", "ɾ"), "h": ("h", "h")},
@@ -360,7 +380,8 @@ TYPED = {
     "l": ["l"], "ḷ": ["l", "zh"], "ḻ": ["l", "zh"],
     "v": ["v", "w", "b", "o", "u"], "w": ["w", "v", "o", "u"],
     "ś": ["sh", "s", "x"], "ṣ": ["sh", "s", "x", "kh"], "s": ["s", "sh", "x"],
-    "h": ["h"], "q": ["q", "k"], "k͟h": ["kh", "k"], "ġ": ["gh", "g"],
+    "h": ["h"], "ts": ["ts", "ch", "c", "s"], "dz": ["dz", "j", "z"],
+    "q": ["q", "k"], "k͟h": ["kh", "k"], "ġ": ["gh", "g"],
     "z": ["z", "j"], "f": ["f", "ph"], "ṛ": ["r", "d", "rr"],
     "ṛh": ["rh", "r", "dh", "d"], "ẏ": ["y", "e", "i"], "x": ["x"],
 }
@@ -368,6 +389,7 @@ TYPED_VOWELS = {
     "a": ["a", "o", "u"], "aa": ["aa", "a"], "i": ["i", "e", "ee"],
     "ii": ["ee", "ii", "i"], "u": ["u", "o", "oo"], "uu": ["oo", "uu", "u"],
     "r": ["ri", "ru", "r", "rri"], "rr": ["ri", "ru"],
+    "l": ["lu", "li", "l"], "ll": ["lu", "li", "l"],
     "e": ["e", "ae", "ee", "a", "ay", "ai", "ya", "i"],
     "se": ["e", "a", "ae"], "ai": ["ai", "ae", "ei", "oi", "e", "ay", "ay"],
     "o": ["o", "oo", "u"], "so": ["o", "u"],
