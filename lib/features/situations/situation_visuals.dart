@@ -19,6 +19,14 @@ extension SituationVisuals on String {
     'doctor' => Icons.local_pharmacy_outlined,
     'traffic' => Icons.traffic_outlined,
     'rail' => Icons.train_outlined,
+    'hotel' => Icons.hotel_outlined,
+    'post' => Icons.local_post_office_outlined,
+    'bank' => Icons.account_balance_outlined,
+    'greeting' => Icons.waving_hand_outlined,
+    'emergency' => Icons.emergency_outlined,
+    'school' => Icons.school_outlined,
+    'work' => Icons.work_outline,
+    'travel' => Icons.luggage_outlined,
     _ => Icons.chat_bubble_outline,
   };
 
@@ -32,6 +40,14 @@ extension SituationVisuals on String {
       'doctor' => modes.pair,
       'traffic' => modes.recognition,
       'rail' => modes.listening,
+      'hotel' => modes.gesture,
+      'post' => modes.reading,
+      'bank' => modes.production,
+      'greeting' => modes.speaking,
+      'emergency' => modes.pair,
+      'school' => modes.recognition,
+      'work' => modes.listening,
+      'travel' => modes.grammar,
       _ => modes.grammar,
     };
   }
@@ -45,6 +61,14 @@ extension SituationVisuals on String {
     'doctor' => l10n.situationDoctor,
     'traffic' => l10n.situationTraffic,
     'rail' => l10n.situationRail,
+    'hotel' => l10n.situationHotel,
+    'post' => l10n.situationPost,
+    'bank' => l10n.situationBank,
+    'greeting' => l10n.situationGreeting,
+    'emergency' => l10n.situationEmergency,
+    'school' => l10n.situationSchool,
+    'work' => l10n.situationWork,
+    'travel' => l10n.situationTravel,
     _ => this,
   };
 }

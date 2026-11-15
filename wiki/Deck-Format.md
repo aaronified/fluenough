@@ -4073,7 +4073,7 @@ The header is a facts file's: no `native`. The file name stem is its `id`.
 | Field | Required | Notes |
 |---|---|---|
 | `id` | yes | Unique in the file, `[a-z0-9-]+`, permanent. |
-| `icon` | yes | One of `taxi`, `shops`, `eat`, `doctor`, `traffic`, `rail`: it picks the button's icon and its own colour on Today. Each icon is used once per file. |
+| `icon` | yes | One of `taxi`, `shops`, `eat`, `doctor`, `traffic`, `rail`, `hotel`, `post`, `bank`, `greeting`, `emergency`, `school`, `work`, `travel`: it picks the button's icon and its own colour on Today. Each icon is used once per file, so a language has at most 14 situations. `post` and `bank` are separate keys: a post-and-bank sheet picks one. |
 | `title` | yes | The sheet's title keyed by language code as a fact's text is; `en` is required. The learner sees the first of the languages they speak that it is written in. |
 | `phrases` | one of these | Card ids shown first, in this order. |
 | `words` | one of these | Card ids shown after the phrases, in this order. |
@@ -4091,6 +4091,17 @@ downloads it with the decks; an older app never sees it. A situations
 file is counted in the language's `size`. The `situations:` key belongs to a
 situations file only, and a language has one file, named
 `<code>-situations.yaml`; the validator refuses anything else.
+
+**The new icon keys are gated** (#1269). The first six keys are drawn by every
+released app; `hotel`, `post`, `bank`, `greeting`, `emergency`, `school`, `work`
+and `travel` are drawn from app **0.10.3**, the next patch release after
+0.10.2 (blocker code ships as a patch release). An older app would draw such a
+button with a plain icon and no name. So a situations file that uses any of them
+is marked by the validator (`CARD_FIELD_MIN_APP["situation_icons"]`) and
+`tools/deck_index.py` gives its index entry `min_app` `0.10.3`, with no line in
+`decks/min_app.json`, as for the `character` block (ADR-0052): older apps keep
+the file they have. Raise the number if the release that carries it is not
+0.10.3.
 
 ### What new situations teach (owner, 2026-11-12)
 

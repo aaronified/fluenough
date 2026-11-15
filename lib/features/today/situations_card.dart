@@ -49,7 +49,7 @@ class SituationsCard extends StatelessWidget {
         for (final sheet in state.cardSituations(language))
           _spec(context, state, language, sheet, sheet.icon)
       else
-        for (final key in situationIcons)
+        for (final key in firstSituationIcons)
           _spec(context, state, language, null, key),
     ];
     return Column(
