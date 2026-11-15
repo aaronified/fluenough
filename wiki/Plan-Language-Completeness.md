@@ -94,6 +94,8 @@ Task T23 of the kinds plan is where it lands.
 | Review-queue entries | partial | partial: 12 rows in `docs/review-queue/es.md` on decks-live, all for es-core-100 (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
 | Sourcing list | batch 1 | partial: `Plan-Culture-Spanish` (candidates only, nothing verified) | not audited | not audited | not audited | not audited | not audited | not audited |
 
+**Hindustani (`hi`), verified 2026-11-15 on decks-live** (full audit in [Deck-Work-Queue-HI](Deck-Work-Queue-HI.md)): path, cores, script decks, phrasebook and facts done; sentences partly (20 of 74 word decks have one); readings partly (52 decks); situations, topics, culture, creators, proverbs, multi-word verbs, recommendations and the sourcing list missing; professional held; narrow IPA partly (1,403 of 2,635 own cards); Urdu spelling on 1,975 of 2,635 own cards; review queue 10 rows.
+
 Counts on decks-live of all files under `decks/<code>/`, layers included, for orientation only (2026-11-13): ja 442, es 442, fr 380, te 302, mr 266, bn 465, as 436, gu 115. A file count says nothing about coverage.
 
 **First task of the stream, before any build:** one audit per language filling the grid, from decks-live, one Haiku agent for the reads. Nothing is built for a language on a guess.
@@ -131,7 +133,7 @@ Owner (2026-11-13): "Deck work issues to be updated with the full deck format as
 | Language | Code | Issue | List | Priority | State |
 |---|---|---|---|---|---|
 | Bengali | bn | #1166 | first list (to B1) | deck priority 2 of the first list, culture priority 6 of 8 | path of 173 units, 172 built; 261 core files |
-| Hindustani | hi | #1167 | first list (to B1) | deck priority 8 of the first list | path of 120 units, 119 built; 217 core files |
+| Hindustani | hi | #1167 | first list (to B1) | deck priority 8 of the first list | path of 120 units, all built; 128 vocab and 34 grammar cores; audit and task plan in [Deck-Work-Queue-HI](Deck-Work-Queue-HI.md) (2026-11-15) |
 | Assamese | as | #1168 | first list (to B1) | deck priority 6 of the first list, culture priority 7 of 8 | path of 173 units, 172 built; 250 core files |
 | Bodo | brx | #1169 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
 | Dogri | doi | #1170 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
