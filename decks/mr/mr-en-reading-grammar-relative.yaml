@@ -1,0 +1,54 @@
+schema: 1
+id: "mr-en-reading-grammar-relative"
+name: "Reading: grammar relative"
+kind: "reading"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "Short reviews of a shop and its staff. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["reading", "intermediate", "unreviewed"]
+passages:
+  - id: "mr-shop-reviews"
+    title: "Shop reviews"
+    sentences:
+      - text: "हे दुकान चांगलं आहे."
+        reading: "he dukān cāṅgalam̐ āhe."
+        ipa: "ɦe d̪ukan tsaŋɡələ̃ aɦe"
+      - text: "जो माणूस दुकानात काम करतो तो खूप मदत करतो."
+        reading: "jo māṇus dukānāt kām karto to khup madat karto."
+        ipa: "dzo maɳus d̪ukanat̪ kam kərt̪o t̪o kʰup məd̪ət̪ kərt̪o"
+      - text: "जी मुलगी पैसे घेते ती छान बोलते."
+        reading: "ji mulgi paise ghete ti chān bolte."
+        ipa: "dʒi mulɡi pəise ɡʱet̪e t̪i tʃʰan bolt̪e"
+      - text: "पण दुकान थोडं महाग आहे."
+        reading: "paṇ dukān thoḍam̐ mahāg āhe."
+        ipa: "pəɳ d̪ukan t̪ʰoɖə̃ məɦaɡ aɦe"
+      - text: "मला इथे पुन्हा यायला आवडेल."
+        reading: "malā ithe punhā yāylā āvḍel."
+        ipa: "məla it̪ʰe punɦa jajla aʋɖel"
+    questions:
+      - id: "mr-7018"
+        prompt:
+          en: "What does the writer say about the shop?"
+        options:
+        - en: "It is good"
+        - en: "It is closed"
+        - en: "It is very far"
+        answer: 0
+      - id: "mr-7019"
+        prompt:
+          en: "Who helps a lot?"
+        options:
+        - en: "The man who works in the shop"
+        - en: "The girl who takes the money"
+        - en: "The owner's child"
+        answer: 0
+      - id: "mr-7020"
+        prompt:
+          en: "What is the problem with the shop?"
+        options:
+        - en: "It is a bit expensive"
+        - en: "It is dirty"
+        - en: "It has no staff"
+        answer: 0
