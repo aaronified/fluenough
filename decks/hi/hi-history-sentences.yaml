@@ -97,13 +97,14 @@ cards:
       - { id: "w1", word: "सभ्यता", reading: "sabhyatā", kind: "word" }
       - { id: "w2", word: "काल", reading: "kāl", kind: "word" }
   - id: "hi-5586"
-    target: "वह किला सदी में बना था।"
-    reading: "vah kilā sadī mēm̐ banā thā."
-    ipa: "ʋəɦ kɪlaː səd̪iː mẽː bənaː t̪ʰaː"
+    target: "वह किला उस सदी में बना था।"
+    reading: "vah kilā us sadī mēm̐ banā thā."
+    ipa: "ʋəɦ kɪlaː ʊs səd̪iː mẽː bənaː t̪ʰaː"
     pos: "phrase"
     bases:
       - { word: "वह", ref: "hi-0749" }
       - { word: "किला", base: "किला", reading: "kilā" }
+      - { word: "उस", base: "वह", reading: "us" }
       - { word: "सदी", ref: "hi-2498" }
       - { word: "में", ref: "hi-0274" }
       - { word: "बना", base: "बनना", reading: "banā" }

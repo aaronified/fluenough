@@ -62,14 +62,15 @@ cards:
       - { id: "w1", word: "झपटना", reading: "jhapṭnā", kind: "word" }
       - { id: "w2", word: "पकड़ाना", reading: "pakṛānā", kind: "word" }
   - id: "hi-5838"
-    target: "उसने बैग झपटा।"
-    reading: "usnē baig jhapṭā."
-    ipa: "ʊsneː bɛːɡ dʒʱəpʈaː"
+    target: "उसने बैग झपट लिया।"
+    reading: "usnē baig jhapaṭ liyā."
+    ipa: "ʊsneː bɛːɡ dʒʱəpəʈ lɪjaː"
     pos: "phrase"
     bases:
       - { word: "उसने", base: "वह", reading: "usnē" }
       - { word: "बैग", ref: "hi-1102" }
-      - { word: "झपटा", base: "झपटना", reading: "jhapṭā" }
+      - { word: "झपट", base: "झपटना", reading: "jhapaṭ" }
+      - { word: "लिया", base: "लेना", reading: "liyā" }
     confusables:
       - { id: "w1", word: "दबोचना", reading: "dabōcnā", kind: "word" }
       - { id: "w2", word: "पकड़ना", reading: "pakṛnā", kind: "word" }

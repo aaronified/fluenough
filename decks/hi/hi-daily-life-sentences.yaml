@@ -65,28 +65,30 @@ cards:
       - { id: "w2", ref: "hi-0450", kind: "word" }
   - id: "hi-4913"
     target: "रात को मैं घर लौटता हूँ।"
-    reading: "rāt kō maim̐ ghar lauṭatā hūm̐."
-    ipa: "raːt̪ koː mɛ̃ː ɡʱər lɔːʈət̪aː ɦũː"
+    reading: "rāt kō maim̐ ghar lauṭtā hūm̐."
+    ipa: "raːt̪ koː mɛ̃ː ɡʱər lɔːʈt̪aː ɦũː"
     pos: "phrase"
     bases:
       - { word: "रात", ref: "hi-0304" }
       - { word: "को", ref: "hi-0277" }
       - { word: "मैं", ref: "hi-0745" }
       - { word: "घर", ref: "hi-0192" }
-      - { word: "लौटता", base: "लौटना", reading: "lauṭatā" }
+      - { word: "लौटता", base: "लौटना", reading: "lauṭtā" }
       - { word: "हूँ", base: "होना", reading: "hūm̐" }
     confusables:
       - { id: "w1", ref: "hi-0302", kind: "word" }
       - { id: "w2", ref: "hi-0303", kind: "word" }
   - id: "hi-4914"
-    target: "वह हमेशा सात बजे सोती है।"
-    reading: "vah hamēśā sāt bajē sōtī hai."
-    ipa: "ʋəɦ ɦəmeːʃaː saːt̪ bədʒeː soːt̪iː ɦɛː"
+    target: "वह हमेशा रात को दस बजे सोती है।"
+    reading: "vah hamēśā rāt kō das bajē sōtī hai."
+    ipa: "ʋəɦ ɦəmeːʃaː raːt̪ koː d̪əs bədʒeː soːt̪iː ɦɛː"
     pos: "phrase"
     bases:
       - { word: "वह", ref: "hi-0749" }
       - { word: "हमेशा", ref: "hi-0453" }
-      - { word: "सात", ref: "hi-0204" }
+      - { word: "रात", ref: "hi-0304" }
+      - { word: "को", ref: "hi-0277" }
+      - { word: "दस", ref: "hi-0207" }
       - { word: "बजे", ref: "hi-0305" }
       - { word: "सोती", base: "सोना", reading: "sōtī" }
       - { word: "है", ref: "hi-0112" }
