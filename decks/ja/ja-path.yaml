@@ -941,7 +941,8 @@ units:
       - { id: "manga-panel", text: { "en": "The sound words in a few manga panels" } }
   - decks: ["ja-kanji-36"]
     words: 0
-  - planned: { id: "ja-abstract-words", theme: "abstract-words", words: 55 }
+  - decks: ["ja-abstract-words", "ja-abstract-words-sentences", "ja-reading-abstract-words", "*"]
+    words: 55
     listening_passages:
       - { id: "a-discussion", text: { "en": "A short discussion of an idea" } }
     reading_passages:
