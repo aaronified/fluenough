@@ -10,6 +10,7 @@ import 'dart:io';
 
 import 'package:fluenough/app.dart';
 import 'package:fluenough/app/app_info.dart';
+import 'package:fluenough/app/app_log.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/deck_downloads.dart';
@@ -149,8 +150,8 @@ class _CallAfter implements DeckFetcher {
   int _fetched = 0;
 
   @override
-  Future<Fetched> fetch(String path) async {
-    final result = await inner.fetch(path);
+  Future<Fetched> fetch(String path, {bool fresh = false}) async {
+    final result = await inner.fetch(path, fresh: fresh);
     if (path != 'decks/index.json' && ++_fetched == count) await onFetched();
     return result;
   }
@@ -615,7 +616,12 @@ void main() {
     late int reloads;
 
     DeckDownloads downloads() =>
-        DeckDownloads(fetcher: remote, files: phone, clock: () => now)
+        DeckDownloads(
+            fetcher: remote,
+            files: phone,
+            clock: () => now,
+            mismatchRetryDelays: const <Duration>[Duration.zero, Duration.zero],
+          )
           ..onFilesChanged = () async => reloads++;
 
     const english = <String>['en'];
@@ -831,6 +837,82 @@ void main() {
 
     group('an index read before a file changed on GitHub', () {
       const path = 'decks/hi/hi-path.yaml';
+
+      test('fetches a stale copy of one file again past the cache, and the '
+          'download succeeds', () async {
+        remote.cached[path] = remote.files[path]!.substring(0, 100);
+        final d = downloads();
+        await d.open();
+        expect(await d.downloadFirst('hi', english), isNull);
+        expect(await phone.read(path), remote.files[path]);
+        expect(remote.askedFresh, <String>[path]);
+        // Only the retry skips the cache: the first request never does.
+        expect(remote.asked.where((p) => p == path), hasLength(2));
+        expect(remote.askedFresh, isNot(contains('decks/index.json')));
+      });
+
+      test('reads the index fresh when it was old and the file is newer, and '
+          'keeps the file the new index lists', () async {
+        final old = remote.index ?? indexFor(remote.files);
+        remote.files[path] = '${remote.files[path]!}# a fix\n';
+        remote.cached['decks/index.json'] = old;
+        final d = downloads();
+        await d.open();
+        expect(await d.downloadFirst('hi', english), isNull);
+        expect(await phone.read(path), endsWith('# a fix\n'));
+        expect(remote.askedFresh, contains('decks/index.json'));
+        expect(d.failureOf('hi'), isNull);
+      });
+
+      test('fails as badFile after the fresh tries when a file never '
+          'matches, and logs the sizes and hashes', () async {
+        remote.served[path] = remote.files[path]!.substring(0, 100);
+        final log = AppLog();
+        final d = DeckDownloads(
+          fetcher: remote,
+          files: phone,
+          clock: () => now,
+          log: log,
+          mismatchRetryDelays: const <Duration>[Duration.zero, Duration.zero],
+        );
+        await d.open();
+        expect(
+          await d.downloadFirst('hi', english),
+          DeckDownloadFailure.badFile,
+        );
+        expect(phone.files, isEmpty);
+        // Two fresh tries on each of the two attempts, then no more.
+        expect(remote.askedFresh.where((p) => p == path), hasLength(4));
+        final logged = log.text;
+        expect(logged, contains('after 2 fresh tries'));
+        expect(logged, contains('100 bytes'));
+        expect(logged, contains(sha256Hex(utf8.encode(remote.files[path]!))));
+      });
+
+      test('skips a file that is gone from the fresh index too', () async {
+        final d = downloads();
+        await d.open();
+        await d.refreshIndex();
+        final first = d.index!.language('hi')!.firstFiles(english);
+        final gone = first.firstWhere((f) => f.path != path).path;
+        remote.files.remove(gone);
+        // The index kept still lists it; the fresh one does not.
+        expect(await d.downloadFirst('hi', english), isNull);
+        expect(phone.files.keys, isNot(contains(gone)));
+        expect(remote.askedFresh, <String>['decks/index.json']);
+      });
+
+      test('GitHubDeckFetcher adds a cache-busting query only when fresh', () {
+        final fetcher = GitHubDeckFetcher(userAgent: 'fluenough/test');
+        expect(
+          fetcher.uriFor(path).toString(),
+          'https://raw.githubusercontent.com/aaronified/fluenough/'
+          'decks-live/$path',
+        );
+        final fresh = fetcher.uriFor(path, fresh: true);
+        expect(fresh.path, '/aaronified/fluenough/decks-live/$path');
+        expect(fresh.queryParameters.keys, <String>['cb']);
+      });
 
       test('is read again, and the download goes on', () async {
         final d = downloads();
@@ -1452,8 +1534,8 @@ class _Traffic implements DeckFetcher {
   final List<String> unfair = <String>[];
 
   @override
-  Future<Fetched> fetch(String path) async {
-    if (path == 'decks/index.json') return inner.fetch(path);
+  Future<Fetched> fetch(String path, {bool fresh = false}) async {
+    if (path == 'decks/index.json') return inner.fetch(path, fresh: fresh);
     final code = path.split('/')[1];
     _inFlight[code] = (_inFlight[code] ?? 0) + 1;
     _started[code] = (_started[code] ?? 0) + 1;
@@ -1471,7 +1553,7 @@ class _Traffic implements DeckFetcher {
       }
     }
     await Future<void>.delayed(const Duration(milliseconds: 2));
-    final result = await inner.fetch(path);
+    final result = await inner.fetch(path, fresh: fresh);
     _inFlight[code] = _inFlight[code]! - 1;
     return result;
   }

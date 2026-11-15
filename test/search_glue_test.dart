@@ -28,7 +28,7 @@ class _Bytes implements DeckFetcher {
   final List<String> asked = <String>[];
 
   @override
-  Future<Fetched> fetch(String path) async {
+  Future<Fetched> fetch(String path, {bool fresh = false}) async {
     asked.add(path);
     final bytes = files[path];
     return bytes == null

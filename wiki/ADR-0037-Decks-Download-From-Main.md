@@ -171,4 +171,18 @@ agreement (rule 6): there is no HTTP or hashing package.
 - **A hashing package (`crypto`).** A new dependency for one function
   (rule 6); SHA-256 is short, and tested against the standard's examples.
 
+## Amendment (2026-11-15): a mismatch is fetched again past the cache
+
+`raw.githubusercontent.com` caches a response for minutes, and the index is
+rewritten by a workflow a little after each merge, so a file and the index
+read just before it can come from different moments. A file that does not
+match the index's size or SHA-256 is therefore not reported at once: the app
+waits 1 s, then 3 s, and fetches the file again with a cache-busting query
+(`?cb=...`, `DeckFetcher.fetch(path, fresh: true)`), accepting it if it
+matches. Only these retries skip the cache; every first request uses it. If it
+still does not match, the download reads the index fresh, works out its files
+again from it (a file the new index no longer lists is skipped, one it moved
+on is fetched as listed) and tries once more; only then does the learner see
+"A deck didn't arrive whole", and the app log holds the sizes and hashes.
+
 See also: [Contributing](Contributing) · [ADR-Index](ADR-Index) · [Home](Home)

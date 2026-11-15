@@ -41,8 +41,10 @@ class Fetched {
 /// `main.dart` names the one that reaches GitHub.
 abstract interface class DeckFetcher {
   /// Downloads [path], such as `decks/index.json`. Never throws: a failure
-  /// is a [Fetched.failed].
-  Future<Fetched> fetch(String path);
+  /// is a [Fetched.failed]. With [fresh], any copy a cache between GitHub
+  /// and the phone holds is bypassed: asked for only when a file did not
+  /// match the index, so that the cache serves every first request.
+  Future<Fetched> fetch(String path, {bool fresh = false});
 }
 
 /// No network: every download fails as [FetchFailure.offline]. The
@@ -51,7 +53,7 @@ class NullDeckFetcher implements DeckFetcher {
   const NullDeckFetcher();
 
   @override
-  Future<Fetched> fetch(String path) async =>
+  Future<Fetched> fetch(String path, {bool fresh = false}) async =>
       const Fetched.failed(FetchFailure.offline);
 }
 
@@ -65,7 +67,7 @@ class MemoryDeckFetcher implements DeckFetcher {
   FetchFailure? failure;
 
   @override
-  Future<Fetched> fetch(String path) async {
+  Future<Fetched> fetch(String path, {bool fresh = false}) async {
     if (failure case final failure?) return Fetched.failed(failure);
     final text = files[path];
     if (text == null) return const Fetched.failed(FetchFailure.notFound);
@@ -131,22 +133,38 @@ class GitHubDeckFetcher implements DeckFetcher {
   }
 
   @override
-  Future<Fetched> fetch(String path) async {
-    var fetched = await _fetchOnce(path);
+  Future<Fetched> fetch(String path, {bool fresh = false}) async {
+    var fetched = await _fetchOnce(path, fresh);
     for (final wait in retryDelays) {
       // Only a dropped connection is worth another try: a 404, a rate
       // limit or a file too large would answer the same.
       if (fetched.failure != FetchFailure.offline) break;
       await Future<void>.delayed(wait);
-      fetched = await _fetchOnce(path);
+      fetched = await _fetchOnce(path, fresh);
     }
     return fetched;
   }
 
-  Future<Fetched> _fetchOnce(String path) async {
+  /// The address of [path]. [fresh] adds a query nothing has cached, so that
+  /// `raw.githubusercontent.com` answers from the branch as it is now: its
+  /// cache holds a file for minutes, so a file and the index read just before
+  /// it can come from different moments.
+  Uri uriFor(String path, {bool fresh = false}) {
+    final uri = base.resolve(path);
+    return fresh ? withCacheBuster(uri) : uri;
+  }
+
+  /// [uri] with a query nothing has cached.
+  static Uri withCacheBuster(Uri uri) => uri.replace(
+    queryParameters: <String, String>{
+      'cb': DateTime.now().microsecondsSinceEpoch.toString(),
+    },
+  );
+
+  Future<Fetched> _fetchOnce(String path, bool fresh) async {
     final client = _client ??= HttpClient()..connectionTimeout = timeout;
     try {
-      return await _get(client, base.resolve(path)).timeout(timeout);
+      return await _get(client, uriFor(path, fresh: fresh)).timeout(timeout);
     } on _TooLarge {
       return const Fetched.failed(FetchFailure.badReply);
     } catch (e) {

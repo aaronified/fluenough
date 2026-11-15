@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- **Decks download reliably right after an update.** A deck that arrives out of step with the list is now fetched again before the app reports a problem.
+
 ## [0.10.3] - 2026-11-15
 
 ### Added
