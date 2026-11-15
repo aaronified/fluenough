@@ -521,7 +521,10 @@ class _LanguageSheetState extends State<LanguageSheet> {
         ],
         PickerHeading(l10n.pickerSectionCourse),
         if (progress != null && progress.hasPlan)
-          _Block(child: CourseLine(levels: progress.levels)),
+          _Block(child: CourseLine(
+              levels: progress.levels,
+              culture: progress.culture,
+            )),
         if (progress != null)
           _Kv(
             label: writing

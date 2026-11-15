@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **The Culture bar now fills.** In Add a language, the Culture bar under a language shows how much of its culture decks is written, instead of always being empty.
+
 ## [0.10.5] - 2026-11-15
 
 - **Notations are no longer measured like languages.** In Add a language, the IPA and English Braille no longer show the A1, A2, B1 and Culture bars, and Telugu now appears under Popular.
