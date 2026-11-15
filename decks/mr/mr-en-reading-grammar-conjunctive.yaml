@@ -1,0 +1,54 @@
+schema: 1
+id: "mr-en-reading-grammar-conjunctive"
+name: "Reading: grammar conjunctive"
+kind: "reading"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A travel diary that chains what happened. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["reading", "intermediate", "unreviewed"]
+passages:
+  - id: "mr-travel-diary"
+    title: "Travel diary"
+    sentences:
+      - text: "सकाळी मी उठून स्नान केलं."
+        reading: "sakāḷi mi uṭhun snān kelam̐."
+        ipa: "səkaɭi mi uʈʰun snan kelə̃"
+      - text: "नाश्ता करून मी बस पकडली."
+        reading: "nāśtā karun mi bas pakḍli."
+        ipa: "naʃt̪a kərun mi bəs pəkɖli"
+      - text: "बसने प्रवास करून मी किल्ल्यावर गेलो."
+        reading: "basne pravās karun mi killyāvar gelo."
+        ipa: "bəsne prəʋas kərun mi killjaʋər ɡelo"
+      - text: "तिथे फोटो काढून मी चहा प्याला."
+        reading: "tithe phoṭo kāḍhun mi cahā pyālā."
+        ipa: "t̪it̪ʰe pʰoʈo kaɖʱun mi tsəɦa pjala"
+      - text: "संध्याकाळी घरी येऊन मी झोपलो."
+        reading: "sandhyākāḷi ghari yeun mi jhoplo."
+        ipa: "sənd̪ʱjakaɭi ɡʱəri jeun mi dzʱoplo"
+    questions:
+      - id: "mr-7015"
+        prompt:
+          en: "Where did the writer go?"
+        options:
+        - en: "To a fort"
+        - en: "To the sea"
+        - en: "To a shop"
+        answer: 0
+      - id: "mr-7016"
+        prompt:
+          en: "What did the writer do at the fort?"
+        options:
+        - en: "Took photos"
+        - en: "Cooked food"
+        - en: "Went swimming"
+        answer: 0
+      - id: "mr-7017"
+        prompt:
+          en: "When did the writer come back home?"
+        options:
+        - en: "In the evening"
+        - en: "In the morning"
+        - en: "At night"
+        answer: 0
