@@ -397,6 +397,7 @@ A plan with no tracking issue is flagged.
 - [a recent fit for FSRS, with the window chosen from the learner's own reviews](https://github.com/aaronified/fluenough/wiki/Plan-Fsrs-Recent-Fit), **no tracking issue**
 - [handwriting the script, stroke by stroke](https://github.com/aaronified/fluenough/wiki/Plan-Handwriting) (Written 2026-10-05), tracks #226
 - [haptic feedback, one vocabulary for the whole app](https://github.com/aaronified/fluenough/wiki/Plan-Haptics) (Written 2026-11-02), **no tracking issue**
+- [Hindustani grammar tables as rules decks (HI-094 to HI-099)](https://github.com/aaronified/fluenough/wiki/Plan-Hindustani-Grammar-Tables), **no tracking issue**
 - [import any text, and make cards from its words](https://github.com/aaronified/fluenough/wiki/Plan-Import-Text) (Written 2026-10-05), tracks #220
 - [readings made in the app, for sentences the learner adds](https://github.com/aaronified/fluenough/wiki/Plan-In-App-Readings) (Written 2026-10-05), tracks #221
 - [the IPA, taught like a language](https://github.com/aaronified/fluenough/wiki/Plan-Ipa-Course), **no tracking issue**
