@@ -1,0 +1,641 @@
+schema: 1
+id: "fr-en-adjectives-2"
+kind: "layer"
+core: "fr-adjectives-2"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Describing a room"
+license: "CC-BY-SA-4.0"
+description: "Adjectives for describing a room, a flat and a thing, in pairs of opposites where possible. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-3560":
+    native: "bright, light (of a room)"
+    notes:
+      "n1": "Lumineux is masculine; the feminine is lumineuse."
+    examples:
+      "La chambre est lumineuse.":
+        native: "The room is bright."
+        bases:
+          "est": "is"
+          "lumineuse": "bright"
+      "Le salon est lumineux, avec un grand balcon.":
+        native: "The living room is bright, with a large balcony."
+        bases:
+          "est": "is"
+          "lumineux": "bright, light (of a room)"
+  "fr-3561":
+    native: "dark"
+    notes:
+      "n1": "Sombre is the same in both genders; the noun une ombre is a shadow."
+    examples:
+      "Le couloir est sombre.":
+        native: "The corridor is dark."
+        bases:
+          "est": "is"
+          "sombre": "dark"
+      "La cuisine est sombre le soir.":
+        native: "The kitchen is dark in the evening."
+        bases:
+          "est": "is"
+          "sombre": "dark"
+  "fr-3562":
+    native: "comfortable"
+    notes:
+      "n1": "Confortable is the same in both genders; the noun is le confort."
+    examples:
+      "Le lit est confortable.":
+        native: "The bed is comfortable."
+        bases:
+          "est": "is"
+          "confortable": "comfortable"
+      "Ce fauteuil est très confortable.":
+        native: "This armchair is very comfortable."
+        bases:
+          "fauteuil": "armchair"
+          "est": "is"
+          "confortable": "comfortable"
+  "fr-3563":
+    native: "spacious"
+    notes:
+      "n1": "Spacieux is masculine; the feminine is spacieuse."
+    examples:
+      "L'appartement est spacieux.":
+        native: "The flat is spacious."
+        bases:
+          "L'appartement": "flat"
+          "est": "is"
+          "spacieux": "spacious"
+      "La salle de bains est spacieuse.":
+        native: "The bathroom is spacious."
+        bases:
+          "de": "of, from"
+          "bains": "bathroom"
+          "est": "is"
+          "spacieuse": "spacious"
+  "fr-3564":
+    native: "narrow"
+    notes:
+      "n1": "Étroit is masculine; the feminine is étroite."
+    examples:
+      "Le couloir est étroit.":
+        native: "The corridor is narrow."
+        bases:
+          "est": "is"
+          "étroit": "narrow"
+      "La cuisine est étroite.":
+        native: "The kitchen is narrow."
+        bases:
+          "est": "is"
+          "étroite": "narrow"
+  "fr-3565":
+    native: "pleasant"
+    notes:
+      "n1": "Agréable is the same in both genders; it is the opposite of désagréable."
+    examples:
+      "L'appartement est agréable.":
+        native: "The flat is pleasant."
+        bases:
+          "L'appartement": "flat"
+          "est": "is"
+          "agréable": "pleasant"
+      "La vue est agréable.":
+        native: "The view is pleasant."
+        bases:
+          "vue": "view"
+          "est": "is"
+          "agréable": "pleasant"
+  "fr-3566":
+    native: "unpleasant"
+    notes:
+      "n1": "Désagréable is the same in both genders."
+    examples:
+      "L'odeur est désagréable.":
+        native: "The smell is unpleasant."
+        bases:
+          "L'odeur": "smell"
+          "est": "is"
+          "désagréable": "unpleasant"
+      "Le bruit est désagréable.":
+        native: "The noise is unpleasant."
+        bases:
+          "est": "is"
+          "désagréable": "unpleasant"
+  "fr-3567":
+    native: "practical, handy"
+    notes:
+      "n1": "Pratique is the same in both genders; it is also a noun, la pratique."
+    examples:
+      "La cuisine est très pratique.":
+        native: "The kitchen is very handy."
+        bases:
+          "est": "is"
+          "pratique": "practical, handy"
+      "Ce placard est pratique.":
+        native: "This cupboard is handy."
+        bases:
+          "placard": "cupboard"
+          "est": "is"
+          "pratique": "practical, handy"
+  "fr-3568":
+    native: "furnished"
+    notes:
+      "n1": "Meublé is masculine; the feminine is meublée; the verb is meubler."
+    examples:
+      "L'appartement est meublé.":
+        native: "The flat is furnished."
+        bases:
+          "L'appartement": "flat"
+          "est": "is"
+          "meublé": "furnished"
+      "Une chambre meublée est louée.":
+        native: "A furnished room is rented."
+        bases:
+          "meublée": "furnished"
+          "est": "is"
+          "louée": "rented"
+  "fr-3569":
+    native: "cluttered"
+    notes:
+      "n1": "Encombré is masculine; the feminine is encombrée."
+    examples:
+      "Le couloir est encombré.":
+        native: "The corridor is cluttered."
+        bases:
+          "est": "is"
+          "encombré": "cluttered"
+      "La cuisine est encombrée de cartons.":
+        native: "The kitchen is cluttered with boxes."
+        bases:
+          "est": "is"
+          "encombrée": "cluttered"
+          "de": "of, from"
+          "cartons": "boxes"
+  "fr-3570":
+    native: "tidy, put away"
+    notes:
+      "n1": "Rangé is masculine; the feminine is rangée; the verb is ranger."
+    examples:
+      "La chambre est rangée.":
+        native: "The room is tidy."
+        bases:
+          "est": "is"
+          "rangée": "tidy"
+      "Le bureau est bien rangé.":
+        native: "The desk is well kept."
+        bases:
+          "est": "is"
+          "rangé": "tidy"
+  "fr-3571":
+    native: "messy, untidy"
+    notes:
+      "n1": "Désordonné is masculine; the feminine is désordonnée."
+    examples:
+      "Le salon est désordonné.":
+        native: "The living room is messy."
+        bases:
+          "est": "is"
+          "désordonné": "messy, untidy"
+      "La chambre est désordonnée.":
+        native: "The room is untidy."
+        bases:
+          "est": "is"
+          "désordonnée": "messy"
+  "fr-3572":
+    native: "lit, lit up"
+    notes:
+      "n1": "Éclairé is masculine; the feminine is éclairée; the verb is éclairer."
+    examples:
+      "Le couloir est éclairé.":
+        native: "The corridor is lit."
+        bases:
+          "est": "is"
+          "éclairé": "lit, lit up"
+      "La salle est éclairée par la fenêtre.":
+        native: "The room is lit by the window."
+        bases:
+          "est": "is"
+          "éclairée": "lit"
+  "fr-3573":
+    native: "dangerous"
+    notes:
+      "n1": "Dangereux is masculine; the feminine is dangereuse."
+    examples:
+      "L'escalier est dangereux.":
+        native: "The staircase is dangerous."
+        bases:
+          "L'escalier": "staircase"
+          "est": "is"
+          "dangereux": "dangerous"
+      "Ce balcon est dangereux.":
+        native: "This balcony is dangerous."
+        bases:
+          "balcon": "balcony"
+          "est": "is"
+          "dangereux": "dangerous"
+  "fr-3574":
+    native: "central"
+    notes:
+      "n1": "Central is masculine; the feminine is centrale."
+    examples:
+      "L'appartement est central.":
+        native: "The flat is central."
+        bases:
+          "L'appartement": "flat"
+          "est": "is"
+          "central": "central"
+      "La gare est centrale.":
+        native: "The station is central."
+        bases:
+          "est": "is"
+          "centrale": "central"
+  "fr-3575":
+    native: "warm, welcoming"
+    notes:
+      "n1": "Chaleureux is masculine; the feminine is chaleureuse."
+    examples:
+      "Le salon est chaleureux.":
+        native: "The living room is warm and welcoming."
+        bases:
+          "est": "is"
+          "chaleureux": "warm, welcoming"
+      "L'accueil est chaleureux.":
+        native: "The welcome is warm."
+        bases:
+          "L'accueil": "welcome"
+          "est": "is"
+          "chaleureux": "warm"
+  "fr-3576":
+    native: "cosy"
+    notes:
+      "n1": "Douillet is masculine; the feminine is douillette."
+    examples:
+      "La chambre est douillette.":
+        native: "The room is cosy."
+        bases:
+          "est": "is"
+          "douillette": "cosy"
+      "Le canapé est douillet.":
+        native: "The sofa is cosy."
+        bases:
+          "canapé": "sofa"
+          "est": "is"
+          "douillet": "cosy"
+  "fr-3577":
+    native: "vast, large"
+    notes:
+      "n1": "Vaste is the same in both genders."
+    examples:
+      "Le salon est vaste.":
+        native: "The living room is large."
+        bases:
+          "est": "is"
+          "vaste": "vast, large"
+      "La maison est vaste.":
+        native: "The house is large."
+        bases:
+          "est": "is"
+          "vaste": "large"
+  "fr-3578":
+    native: "huge"
+    notes:
+      "n1": "Énorme is the same in both genders."
+    examples:
+      "La fenêtre est énorme.":
+        native: "The window is huge."
+        bases:
+          "est": "is"
+          "énorme": "huge"
+      "Le jardin est énorme.":
+        native: "The garden is huge."
+        bases:
+          "est": "is"
+          "énorme": "huge"
+  "fr-3579":
+    native: "tiny"
+    notes:
+      "n1": "Minuscule is the same in both genders."
+    examples:
+      "La chambre est minuscule.":
+        native: "The room is tiny."
+        bases:
+          "est": "is"
+          "minuscule": "tiny"
+      "La cuisine est minuscule.":
+        native: "The kitchen is tiny."
+        bases:
+          "est": "is"
+          "minuscule": "tiny"
+  "fr-3580":
+    native: "fragile"
+    notes:
+      "n1": "Fragile is the same in both genders."
+    examples:
+      "Le vase est fragile.":
+        native: "The vase is fragile."
+        bases:
+          "vase": "vase"
+          "est": "is"
+          "fragile": "fragile"
+      "La chaise est fragile.":
+        native: "The chair is fragile."
+        bases:
+          "est": "is"
+          "fragile": "fragile"
+  "fr-3581":
+    native: "solid, sturdy"
+    notes:
+      "n1": "Solide is the same in both genders."
+    examples:
+      "La table est solide.":
+        native: "The table is sturdy."
+        bases:
+          "est": "is"
+          "solide": "solid, sturdy"
+      "Le mur est solide.":
+        native: "The wall is solid."
+        bases:
+          "est": "is"
+          "solide": "solid, sturdy"
+  "fr-3582":
+    native: "worn, worn out"
+    notes:
+      "n1": "Usé is masculine; the feminine is usée."
+    examples:
+      "Le tapis est usé.":
+        native: "The rug is worn."
+        bases:
+          "tapis": "rug"
+          "est": "is"
+          "usé": "worn"
+      "La moquette est usée.":
+        native: "The carpet is worn."
+        bases:
+          "moquette": "carpet"
+          "est": "is"
+          "usée": "worn"
+  "fr-3583":
+    native: "damaged"
+    notes:
+      "n1": "Abîmé is masculine; the feminine is abîmée; the verb is abîmer."
+    examples:
+      "La porte est abîmée.":
+        native: "The door is damaged."
+        bases:
+          "est": "is"
+          "abîmée": "damaged"
+      "Le meuble est abîmé.":
+        native: "The piece of furniture is damaged."
+        bases:
+          "est": "is"
+          "abîmé": "damaged"
+  "fr-3584":
+    native: "near, close"
+    notes:
+      "n1": "Proche is the same in both genders; près is the adverb near."
+    examples:
+      "La gare est proche.":
+        native: "The station is near."
+        bases:
+          "est": "is"
+          "proche": "near, close"
+      "Le métro est proche.":
+        native: "The metro is close."
+        bases:
+          "est": "is"
+          "proche": "close"
+  "fr-3585":
+    native: "equipped"
+    notes:
+      "n1": "Équipé is masculine; the feminine is équipée."
+    examples:
+      "La cuisine est équipée.":
+        native: "The kitchen is equipped."
+        bases:
+          "est": "is"
+          "équipée": "equipped"
+      "L'appartement est bien équipé.":
+        native: "The flat is well equipped."
+        bases:
+          "L'appartement": "flat"
+          "est": "is"
+          "équipé": "equipped"
+  "fr-3586":
+    native: "heated"
+    notes:
+      "n1": "Chauffé is masculine; the feminine is chauffée."
+    examples:
+      "Le bureau est chauffé.":
+        native: "The office is heated."
+        bases:
+          "est": "is"
+          "chauffé": "heated"
+      "La salle est chauffée en hiver.":
+        native: "The room is heated in winter."
+        bases:
+          "est": "is"
+          "chauffée": "heated"
+          "en": "in"
+  "fr-3587":
+    native: "air-conditioned"
+    notes:
+      "n1": "Climatisé is masculine; the feminine is climatisée."
+    examples:
+      "Le train est climatisé.":
+        native: "The train is air-conditioned."
+        bases:
+          "est": "is"
+          "climatisé": "air-conditioned"
+      "La salle est climatisée.":
+        native: "The room is air-conditioned."
+        bases:
+          "est": "is"
+          "climatisée": "air-conditioned"
+  "fr-3588":
+    native: "dark"
+    notes:
+      "n1": "Obscur is masculine; the feminine is obscure; sombre is the usual word for a dark room."
+    examples:
+      "Le sous-sol est obscur.":
+        native: "The basement is dark."
+        bases:
+          "sous-sol": "basement"
+          "est": "is"
+          "obscur": "dark"
+      "La cave est obscure.":
+        native: "The cellar is dark."
+        bases:
+          "cave": "cellar"
+          "est": "is"
+          "obscure": "dark"
+  "fr-3589":
+    native: "shiny, bright"
+    notes:
+      "n1": "Brillant is masculine; the feminine is brillante."
+    examples:
+      "Le sol est brillant.":
+        native: "The floor is shiny."
+        bases:
+          "est": "is"
+          "brillant": "shiny, bright"
+      "La cuisine est brillante.":
+        native: "The kitchen is shiny."
+        bases:
+          "est": "is"
+          "brillante": "shiny"
+  "fr-3590":
+    native: "off (of a light)"
+    notes:
+      "n1": "Éteint is masculine; the feminine is éteinte; the verb is éteindre."
+    examples:
+      "La lampe est éteinte.":
+        native: "The lamp is off."
+        bases:
+          "lampe": "lamp"
+          "est": "is"
+          "éteinte": "off"
+      "La lumière est éteinte.":
+        native: "The light is off."
+        bases:
+          "lumière": "light"
+          "est": "is"
+          "éteinte": "off"
+  "fr-3591":
+    native: "on (of a light)"
+    notes:
+      "n1": "Allumé is masculine; the feminine is allumée; the verb is allumer."
+    examples:
+      "La lampe est allumée.":
+        native: "The lamp is on."
+        bases:
+          "est": "is"
+          "allumée": "on"
+      "Le couloir est allumé.":
+        native: "The corridor light is on."
+        bases:
+          "est": "is"
+          "allumé": "on"
+  "fr-3592":
+    native: "soft"
+    notes:
+      "n1": "Mou is masculine; the feminine is molle."
+    examples:
+      "Le canapé est mou.":
+        native: "The sofa is soft."
+        bases:
+          "est": "is"
+          "mou": "soft"
+      "Le lit est mou.":
+        native: "The bed is soft."
+        bases:
+          "est": "is"
+          "mou": "soft"
+  "fr-3593":
+    native: "renovated"
+    notes:
+      "n1": "Rénové is masculine; the feminine is rénovée; the verb is rénover."
+    examples:
+      "L'appartement est rénové.":
+        native: "The flat is renovated."
+        bases:
+          "L'appartement": "flat"
+          "est": "is"
+          "rénové": "renovated"
+      "La cuisine est rénovée.":
+        native: "The kitchen is renovated."
+        bases:
+          "est": "is"
+          "rénovée": "renovated"
+  "fr-3594":
+    native: "grey"
+    notes:
+      "n1": "Gris is masculine; the feminine is grise."
+    examples:
+      "Le mur est gris.":
+        native: "The wall is grey."
+        bases:
+          "est": "is"
+          "gris": "grey"
+      "La porte est grise.":
+        native: "The door is grey."
+        bases:
+          "est": "is"
+          "grise": "grey"
+  "fr-3595":
+    native: "deep"
+    notes:
+      "n1": "Profond is masculine; the feminine is profonde."
+    examples:
+      "Le placard est profond.":
+        native: "The cupboard is deep."
+        bases:
+          "placard": "cupboard"
+          "est": "is"
+          "profond": "deep"
+      "La cave est profonde.":
+        native: "The cellar is deep."
+        bases:
+          "est": "is"
+          "profonde": "deep"
+  "fr-3596":
+    native: "pink"
+    notes:
+      "n1": "Rose is the same in both genders; the noun la rose is the flower."
+    examples:
+      "Le mur est rose.":
+        native: "The wall is pink."
+        bases:
+          "est": "is"
+          "rose": "pink"
+      "La chambre est rose.":
+        native: "The room is pink."
+        bases:
+          "est": "is"
+          "rose": "pink"
+  "fr-3597":
+    native: "rough"
+    notes:
+      "n1": "Rugueux is masculine; the feminine is rugueuse; the opposite is lisse."
+    examples:
+      "Le mur est rugueux.":
+        native: "The wall is rough."
+        bases:
+          "est": "is"
+          "rugueux": "rough"
+      "Le sol de la cave est rugueux.":
+        native: "The cellar floor is rough."
+        bases:
+          "de": "of, from"
+          "est": "is"
+          "rugueux": "rough"
+  "fr-3598":
+    native: "thick"
+    notes:
+      "n1": "Épais is masculine; the feminine is épaisse."
+    examples:
+      "Le tapis est épais.":
+        native: "The rug is thick."
+        bases:
+          "est": "is"
+          "épais": "thick"
+      "Le mur est épais.":
+        native: "The wall is thick."
+        bases:
+          "est": "is"
+          "épais": "thick"
+  "fr-3599":
+    native: "stifling"
+    notes:
+      "n1": "Étouffant is the same in both genders; a stifling room is hot and has no air."
+    examples:
+      "La chambre est étouffante en été.":
+        native: "The room is stifling in summer."
+        bases:
+          "est": "is"
+          "étouffante": "stifling"
+          "en": "in"
+      "L'air est étouffant ici.":
+        native: "The air is stifling here."
+        bases:
+          "L'air": "air"
+          "est": "is"
+          "étouffant": "stifling"
