@@ -1,0 +1,99 @@
+schema: 1
+id: "fr-phone-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-3354"
+    target: "Je te rappelle demain."
+    ipa: "ʒə tə ʁapɛl dəmɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Je", ref: "fr-0126" }, { word: "te", base: "te" }, { word: "rappelle", base: "rappeler" }, { word: "demain", ref: "fr-0078" }]
+    confusables:
+      - { id: "raccrocher", ref: "fr-3322", kind: "word" }
+      - { id: "decrocher", ref: "fr-3323", kind: "word" }
+  - id: "fr-3355"
+    target: "Tu as reçu mon message ?"
+    ipa: "ty a ʁəsy mɔ̃ mɛsaʒ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tu", ref: "fr-0095" }, { word: "as", base: "avoir" }, { word: "reçu", base: "recevoir" }, { word: "mon", ref: "fr-0037" }, { word: "message", ref: "fr-1082" }]
+    confusables:
+      - { id: "repondeur", ref: "fr-3324", kind: "word" }
+      - { id: "notification", ref: "fr-3326", kind: "word" }
+  - id: "fr-3356"
+    target: "Ce forfait est trop cher."
+    ipa: "sə fɔʁfɛ ɛ tʁo ʃɛʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Ce", ref: "fr-0143" }, { word: "forfait", ref: "fr-3329" }, { word: "est", base: "être" }, { word: "trop", ref: "fr-0344" }, { word: "cher", ref: "fr-0104" }]
+    confusables:
+      - { id: "contact", ref: "fr-3328", kind: "word" }
+      - { id: "portable", ref: "fr-3320", kind: "word" }
+  - id: "fr-3357"
+    target: "Tu mets ton téléphone en silence ?"
+    ipa: "ty mɛ tɔ̃ telefɔn ɑ̃ silɑ̃s"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tu", ref: "fr-0095" }, { word: "mets", base: "mettre" }, { word: "ton", ref: "fr-0141" }, { word: "téléphone", ref: "fr-0257" }, { word: "en", base: "en" }, { word: "silence", ref: "fr-1112" }]
+    confusables:
+      - { id: "vibreur", ref: "fr-3339", kind: "word" }
+      - { id: "haut-parleur", ref: "fr-3337", kind: "word" }
+  - id: "fr-3358"
+    target: "Je recharge le portable avant le voyage."
+    ipa: "ʒə ʁəʃaʁʒ lə pɔʁtabl avɑ̃ lə vwajaʒ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Je", ref: "fr-0126" }, { word: "recharge", base: "recharger" }, { word: "le", ref: "fr-0543" }, { word: "portable", ref: "fr-3320" }, { word: "avant", ref: "fr-0596" }, { word: "le", ref: "fr-0543" }, { word: "voyage", ref: "fr-0867" }]
+    confusables:
+      - { id: "forfait", ref: "fr-3329", kind: "word" }
+      - { id: "chargeur", ref: "fr-1372", kind: "word" }
+  - id: "fr-3359"
+    target: "Ce casque est très confortable."
+    ipa: "sə kask ɛ tʁɛ kɔ̃fɔʁtabl"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Ce", ref: "fr-0143" }, { word: "casque", ref: "fr-3336" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "confortable", base: "confortable" }]
+    confusables:
+      - { id: "micro", ref: "fr-3338", kind: "word" }
+      - { id: "haut-parleur", ref: "fr-3337", kind: "word" }
+  - id: "fr-3360"
+    target: "Il n'y a pas de wifi ici."
+    ipa: "il ni a pa də wifi isi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Il", ref: "fr-0127" }, { word: "n'y", base: "y" }, { word: "a", base: "avoir" }, { word: "pas", base: "pas" }, { word: "de", base: "de" }, { word: "wifi", ref: "fr-3331" }, { word: "ici", ref: "fr-0029" }]
+    confusables:
+      - { id: "signal", ref: "fr-3327", kind: "word" }
+      - { id: "appli", ref: "fr-3332", kind: "word" }
+  - id: "fr-3361"
+    target: "Je n'ai pas reçu le message vocal."
+    ipa: "ʒə nɛ pa ʁəsy lə mɛsaʒ vɔkal"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Je", ref: "fr-0126" }, { word: "n'ai", base: "avoir" }, { word: "pas", base: "pas" }, { word: "reçu", base: "recevoir" }, { word: "le", ref: "fr-0543" }, { word: "message", ref: "fr-1082" }, { word: "vocal", base: "vocal" }]
+    confusables:
+      - { id: "messagerie", ref: "fr-3341", kind: "word" }
+      - { id: "notification", ref: "fr-3326", kind: "word" }
+  - id: "fr-3362"
+    target: "Tu as bloqué ce numéro ?"
+    ipa: "ty a blɔke sə nymeʁo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tu", ref: "fr-0095" }, { word: "as", base: "avoir" }, { word: "bloqué", base: "bloquer" }, { word: "ce", ref: "fr-0143" }, { word: "numéro", ref: "fr-1070" }]
+    confusables:
+      - { id: "contact", ref: "fr-3328", kind: "word" }
+      - { id: "effacer", ref: "fr-3334", kind: "word" }
+  - id: "fr-3363"
+    target: "Le répondeur de mon père est vieux."
+    ipa: "lə ʁepɔ̃dœʁ də mɔ̃ pɛʁ ɛ vjø"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Le", ref: "fr-0543" }, { word: "répondeur", ref: "fr-3324" }, { word: "de", base: "de" }, { word: "mon", ref: "fr-0037" }, { word: "père", ref: "fr-0165" }, { word: "est", base: "être" }, { word: "vieux", ref: "fr-0109" }]
+    confusables:
+      - { id: "portable", ref: "fr-3320", kind: "word" }
+      - { id: "bip", ref: "fr-3325", kind: "word" }

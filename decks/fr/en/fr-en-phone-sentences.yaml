@@ -1,0 +1,92 @@
+schema: 1
+id: "fr-en-phone-sentences"
+kind: "layer"
+core: "fr-phone-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: phone and messages"
+license: "CC-BY-SA-4.0"
+description: "Ten sentences about phones and messages, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-3354":
+    native: "I will call you back tomorrow."
+    confusables:
+      "raccrocher": { why: "to hang up, not to call back" }
+      "decrocher": { why: "to pick up, not to call back" }
+    bases:
+      "te": "you"
+      "rappelle": "call back"
+  "fr-3355":
+    native: "Did you get my message?"
+    confusables:
+      "repondeur": { why: "an answering machine, not a message" }
+      "notification": { why: "an alert, not a message" }
+    bases:
+      "as": "has"
+      "reçu": "received"
+  "fr-3356":
+    native: "This plan is too expensive."
+    confusables:
+      "contact": { why: "a saved name, not a plan" }
+      "portable": { why: "a phone, not a plan" }
+    bases:
+      "est": "is"
+  "fr-3357":
+    native: "Are you putting your phone on silent?"
+    confusables:
+      "vibreur": { why: "the vibrate setting, not silence" }
+      "haut-parleur": { why: "a loudspeaker, not silence" }
+    bases:
+      "mets": "put"
+      "en": "in"
+  "fr-3358":
+    native: "I recharge the phone before the trip."
+    confusables:
+      "forfait": { why: "a plan, not the charge" }
+      "chargeur": { why: "a charger, the thing you plug in" }
+    bases:
+      "recharge": "recharge"
+  "fr-3359":
+    native: "This headset is very comfortable."
+    confusables:
+      "micro": { why: "a microphone, not headphones" }
+      "haut-parleur": { why: "a loudspeaker, not headphones" }
+    bases:
+      "est": "is"
+      "confortable": "comfortable"
+  "fr-3360":
+    native: "There is no wifi here."
+    confusables:
+      "signal": { why: "mobile signal, not wifi" }
+      "appli": { why: "an app, not a network" }
+    bases:
+      "n'y": "there"
+      "a": "is"
+      "pas": "not"
+      "de": "of"
+  "fr-3361":
+    native: "I have not received the voice message."
+    confusables:
+      "messagerie": { why: "the messaging service, not one message" }
+      "notification": { why: "an alert, not the message itself" }
+    bases:
+      "n'ai": "have"
+      "pas": "not"
+      "reçu": "received"
+      "vocal": "voice"
+  "fr-3362":
+    native: "Have you blocked this number?"
+    confusables:
+      "contact": { why: "a saved name, not a blocked number" }
+      "effacer": { why: "to delete, not to block" }
+    bases:
+      "as": "has"
+      "bloqué": "blocked"
+  "fr-3363":
+    native: "My father's answering machine is old."
+    confusables:
+      "portable": { why: "a mobile phone, not an answering machine" }
+      "bip": { why: "a beep, not a machine" }
+    bases:
+      "de": "of"
+      "est": "is"
