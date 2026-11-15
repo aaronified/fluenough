@@ -6,6 +6,8 @@
 // dart.
 //
 //   dart run tool/placement_audit_entries.dart [--source live] [--languages es,hi]
+import 'dart:io';
+
 import 'package:fluenough/core/placement/admission.dart';
 import 'package:fluenough/core/placement/item_bank.dart';
 
@@ -20,7 +22,7 @@ void main(List<String> args) {
   for (final language in (options['languages'] ?? 'es,hi').split(',')) {
     final data = language == 'hi' ? hindustaniWithScript() : loadData(language);
     final p = ItemBank.auditRuntime(data, source: source);
-    print(
+    stdout.writeln(
       "  '$language': AdmissionProfile(source: '${p.source}', "
       "deckKey: '${p.deckKey}', "
       'excluded: <String>[${p.excluded.map((c) => "'$c'").join(', ')}], '
