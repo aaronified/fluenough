@@ -1633,10 +1633,7 @@ class _InfoDialog extends StatelessWidget {
             ),
             if (progress != null) ...<Widget>[
               const SizedBox(height: 12),
-              CourseLine(
-                levels: progress.levels,
-                culture: progress.culture,
-              ),
+              CourseLine(levels: progress.levels, culture: progress.culture),
             ],
             const SizedBox(height: 8),
             if (!view.language.isNotation)
