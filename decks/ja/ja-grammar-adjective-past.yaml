@@ -1,0 +1,2281 @@
+schema: 1
+id: "ja-grammar-adjective-past"
+part: "core"
+kind: "rules"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["adj"]
+  slots: ["i-nakatta", "i-katta-desu", "i-nakatta-desu", "na-datta", "na-janakatta", "na-deshita", "na-arimasen-deshita"]
+  rows:
+    - word: "ja-0318"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "すきだった"
+        "na-janakatta": ["すきじゃなかった", "すきではなかった"]
+        "na-deshita": "すきでした"
+        "na-arimasen-deshita": ["すきではありませんでした", "すきじゃありませんでした"]
+      readings:
+        "na-datta": "suki datta"
+        "na-janakatta": ["suki ja nakatta", "suki de wa nakatta"]
+        "na-deshita": "suki deshita"
+        "na-arimasen-deshita": ["suki de wa arimasen deshita", "suki ja arimasen deshita"]
+    - word: "ja-0319"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "きらいだった"
+        "na-janakatta": ["きらいじゃなかった", "きらいではなかった"]
+        "na-deshita": "きらいでした"
+        "na-arimasen-deshita": ["きらいではありませんでした", "きらいじゃありませんでした"]
+      readings:
+        "na-datta": "kirai datta"
+        "na-janakatta": ["kirai ja nakatta", "kirai de wa nakatta"]
+        "na-deshita": "kirai deshita"
+        "na-arimasen-deshita": ["kirai de wa arimasen deshita", "kirai ja arimasen deshita"]
+    - word: "ja-0320"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "じょうずだった"
+        "na-janakatta": ["じょうずじゃなかった", "じょうずではなかった"]
+        "na-deshita": "じょうずでした"
+        "na-arimasen-deshita": ["じょうずではありませんでした", "じょうずじゃありませんでした"]
+      readings:
+        "na-datta": "jouzu datta"
+        "na-janakatta": ["jouzu ja nakatta", "jouzu de wa nakatta"]
+        "na-deshita": "jouzu deshita"
+        "na-arimasen-deshita": ["jouzu de wa arimasen deshita", "jouzu ja arimasen deshita"]
+    - word: "ja-1106"
+      forms:
+        "i-nakatta": "いたくなかった"
+        "i-katta-desu": "いたかったです"
+        "i-nakatta-desu": ["いたくなかったです", "いたくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "itakunakatta"
+        "i-katta-desu": "itakatta desu"
+        "i-nakatta-desu": ["itakunakatta desu", "itaku arimasen deshita"]
+    - word: "ja-1107"
+      forms:
+        "i-nakatta": "かゆくなかった"
+        "i-katta-desu": "かゆかったです"
+        "i-nakatta-desu": ["かゆくなかったです", "かゆくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "kayukunakatta"
+        "i-katta-desu": "kayukatta desu"
+        "i-nakatta-desu": ["kayukunakatta desu", "kayuku arimasen deshita"]
+    - word: "ja-0462"
+      forms:
+        "i-nakatta": "あたらしくなかった"
+        "i-katta-desu": "あたらしかったです"
+        "i-nakatta-desu": ["あたらしくなかったです", "あたらしくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "atarashikunakatta"
+        "i-katta-desu": "atarashikatta desu"
+        "i-nakatta-desu": ["atarashikunakatta desu", "atarashiku arimasen deshita"]
+    - word: "ja-0463"
+      forms:
+        "i-nakatta": "ふるくなかった"
+        "i-katta-desu": "ふるかったです"
+        "i-nakatta-desu": ["ふるくなかったです", "ふるくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "furukunakatta"
+        "i-katta-desu": "furukatta desu"
+        "i-nakatta-desu": ["furukunakatta desu", "furuku arimasen deshita"]
+    - word: "ja-0464"
+      forms:
+        "i-nakatta": "よくなかった"
+        "i-katta-desu": "よかったです"
+        "i-nakatta-desu": ["よくなかったです", "よくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "yokunakatta"
+        "i-katta-desu": "yokatta desu"
+        "i-nakatta-desu": ["yokunakatta desu", "yoku arimasen deshita"]
+    - word: "ja-0465"
+      forms:
+        "i-nakatta": "わるくなかった"
+        "i-katta-desu": "わるかったです"
+        "i-nakatta-desu": ["わるくなかったです", "わるくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "warukunakatta"
+        "i-katta-desu": "warukatta desu"
+        "i-nakatta-desu": ["warukunakatta desu", "waruku arimasen deshita"]
+    - word: "ja-0466"
+      forms:
+        "i-nakatta": "あつくなかった"
+        "i-katta-desu": "あつかったです"
+        "i-nakatta-desu": ["あつくなかったです", "あつくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "atsukunakatta"
+        "i-katta-desu": "atsukatta desu"
+        "i-nakatta-desu": ["atsukunakatta desu", "atsuku arimasen deshita"]
+    - word: "ja-0467"
+      forms:
+        "i-nakatta": "さむくなかった"
+        "i-katta-desu": "さむかったです"
+        "i-nakatta-desu": ["さむくなかったです", "さむくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "samukunakatta"
+        "i-katta-desu": "samukatta desu"
+        "i-nakatta-desu": ["samukunakatta desu", "samuku arimasen deshita"]
+    - word: "ja-0468"
+      forms:
+        "i-nakatta": "あたたかくなかった"
+        "i-katta-desu": "あたたかかったです"
+        "i-nakatta-desu": ["あたたかくなかったです", "あたたかくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "atatakakunakatta"
+        "i-katta-desu": "atatakakatta desu"
+        "i-nakatta-desu": ["atatakakunakatta desu", "atatakaku arimasen deshita"]
+    - word: "ja-0469"
+      forms:
+        "i-nakatta": "つめたくなかった"
+        "i-katta-desu": "つめたかったです"
+        "i-nakatta-desu": ["つめたくなかったです", "つめたくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "tsumetakunakatta"
+        "i-katta-desu": "tsumetakatta desu"
+        "i-nakatta-desu": ["tsumetakunakatta desu", "tsumetaku arimasen deshita"]
+    - word: "ja-0470"
+      forms:
+        "i-nakatta": "ひくくなかった"
+        "i-katta-desu": "ひくかったです"
+        "i-nakatta-desu": ["ひくくなかったです", "ひくくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "hikukunakatta"
+        "i-katta-desu": "hikukatta desu"
+        "i-nakatta-desu": ["hikukunakatta desu", "hikuku arimasen deshita"]
+    - word: "ja-0471"
+      forms:
+        "i-nakatta": "おいしくなかった"
+        "i-katta-desu": "おいしかったです"
+        "i-nakatta-desu": ["おいしくなかったです", "おいしくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "oishikunakatta"
+        "i-katta-desu": "oishikatta desu"
+        "i-nakatta-desu": ["oishikunakatta desu", "oishiku arimasen deshita"]
+    - word: "ja-0472"
+      forms:
+        "i-nakatta": "おもしろくなかった"
+        "i-katta-desu": "おもしろかったです"
+        "i-nakatta-desu": ["おもしろくなかったです", "おもしろくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "omoshirokunakatta"
+        "i-katta-desu": "omoshirokatta desu"
+        "i-nakatta-desu": ["omoshirokunakatta desu", "omoshiroku arimasen deshita"]
+    - word: "ja-0473"
+      forms:
+        "i-nakatta": "むずかしくなかった"
+        "i-katta-desu": "むずかしかったです"
+        "i-nakatta-desu": ["むずかしくなかったです", "むずかしくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "muzukashikunakatta"
+        "i-katta-desu": "muzukashikatta desu"
+        "i-nakatta-desu": ["muzukashikunakatta desu", "muzukashiku arimasen deshita"]
+    - word: "ja-0474"
+      forms:
+        "i-nakatta": "やさしくなかった"
+        "i-katta-desu": "やさしかったです"
+        "i-nakatta-desu": ["やさしくなかったです", "やさしくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "yasashikunakatta"
+        "i-katta-desu": "yasashikatta desu"
+        "i-nakatta-desu": ["yasashikunakatta desu", "yasashiku arimasen deshita"]
+    - word: "ja-0475"
+      forms:
+        "i-nakatta": "たのしくなかった"
+        "i-katta-desu": "たのしかったです"
+        "i-nakatta-desu": ["たのしくなかったです", "たのしくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "tanoshikunakatta"
+        "i-katta-desu": "tanoshikatta desu"
+        "i-nakatta-desu": ["tanoshikunakatta desu", "tanoshiku arimasen deshita"]
+    - word: "ja-0476"
+      forms:
+        "i-nakatta": "いそがしくなかった"
+        "i-katta-desu": "いそがしかったです"
+        "i-nakatta-desu": ["いそがしくなかったです", "いそがしくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "isogashikunakatta"
+        "i-katta-desu": "isogashikatta desu"
+        "i-nakatta-desu": ["isogashikunakatta desu", "isogashiku arimasen deshita"]
+    - word: "ja-0477"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "しずかだった"
+        "na-janakatta": ["しずかじゃなかった", "しずかではなかった"]
+        "na-deshita": "しずかでした"
+        "na-arimasen-deshita": ["しずかではありませんでした", "しずかじゃありませんでした"]
+      readings:
+        "na-datta": "shizuka datta"
+        "na-janakatta": ["shizuka ja nakatta", "shizuka de wa nakatta"]
+        "na-deshita": "shizuka deshita"
+        "na-arimasen-deshita": ["shizuka de wa arimasen deshita", "shizuka ja arimasen deshita"]
+    - word: "ja-0478"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "べんりだった"
+        "na-janakatta": ["べんりじゃなかった", "べんりではなかった"]
+        "na-deshita": "べんりでした"
+        "na-arimasen-deshita": ["べんりではありませんでした", "べんりじゃありませんでした"]
+      readings:
+        "na-datta": "benri datta"
+        "na-janakatta": ["benri ja nakatta", "benri de wa nakatta"]
+        "na-deshita": "benri deshita"
+        "na-arimasen-deshita": ["benri de wa arimasen deshita", "benri ja arimasen deshita"]
+    - word: "ja-0479"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "きれいだった"
+        "na-janakatta": ["きれいじゃなかった", "きれいではなかった"]
+        "na-deshita": "きれいでした"
+        "na-arimasen-deshita": ["きれいではありませんでした", "きれいじゃありませんでした"]
+      readings:
+        "na-datta": "kirei datta"
+        "na-janakatta": ["kirei ja nakatta", "kirei de wa nakatta"]
+        "na-deshita": "kirei deshita"
+        "na-arimasen-deshita": ["kirei de wa arimasen deshita", "kirei ja arimasen deshita"]
+    - word: "ja-0480"
+      forms:
+        "i-nakatta": "きたなくなかった"
+        "i-katta-desu": "きたなかったです"
+        "i-nakatta-desu": ["きたなくなかったです", "きたなくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "kitanakunakatta"
+        "i-katta-desu": "kitanakatta desu"
+        "i-nakatta-desu": ["kitanakunakatta desu", "kitanaku arimasen deshita"]
+    - word: "ja-0481"
+      forms:
+        "i-nakatta": "あかるくなかった"
+        "i-katta-desu": "あかるかったです"
+        "i-nakatta-desu": ["あかるくなかったです", "あかるくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "akarukunakatta"
+        "i-katta-desu": "akarukatta desu"
+        "i-nakatta-desu": ["akarukunakatta desu", "akaruku arimasen deshita"]
+    - word: "ja-0482"
+      forms:
+        "i-nakatta": "ながくなかった"
+        "i-katta-desu": "ながかったです"
+        "i-nakatta-desu": ["ながくなかったです", "ながくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "nagakunakatta"
+        "i-katta-desu": "nagakatta desu"
+        "i-nakatta-desu": ["nagakunakatta desu", "nagaku arimasen deshita"]
+    - word: "ja-0483"
+      forms:
+        "i-nakatta": "みじかくなかった"
+        "i-katta-desu": "みじかかったです"
+        "i-nakatta-desu": ["みじかくなかったです", "みじかくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "mijikakunakatta"
+        "i-katta-desu": "mijikakatta desu"
+        "i-nakatta-desu": ["mijikakunakatta desu", "mijikaku arimasen deshita"]
+    - word: "ja-0484"
+      forms:
+        "i-nakatta": "ちかくなかった"
+        "i-katta-desu": "ちかかったです"
+        "i-nakatta-desu": ["ちかくなかったです", "ちかくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "chikakunakatta"
+        "i-katta-desu": "chikakatta desu"
+        "i-nakatta-desu": ["chikakunakatta desu", "chikaku arimasen deshita"]
+    - word: "ja-0485"
+      forms:
+        "i-nakatta": "とおくなかった"
+        "i-katta-desu": "とおかったです"
+        "i-nakatta-desu": ["とおくなかったです", "とおくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "tookunakatta"
+        "i-katta-desu": "tookatta desu"
+        "i-nakatta-desu": ["tookunakatta desu", "tooku arimasen deshita"]
+    - word: "ja-0486"
+      forms:
+        "i-nakatta": "おそくなかった"
+        "i-katta-desu": "おそかったです"
+        "i-nakatta-desu": ["おそくなかったです", "おそくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "osokunakatta"
+        "i-katta-desu": "osokatta desu"
+        "i-nakatta-desu": ["osokunakatta desu", "osoku arimasen deshita"]
+    - word: "ja-0487"
+      forms:
+        "i-nakatta": "おもくなかった"
+        "i-katta-desu": "おもかったです"
+        "i-nakatta-desu": ["おもくなかったです", "おもくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "omokunakatta"
+        "i-katta-desu": "omokatta desu"
+        "i-nakatta-desu": ["omokunakatta desu", "omoku arimasen deshita"]
+    - word: "ja-0488"
+      forms:
+        "i-nakatta": "かるくなかった"
+        "i-katta-desu": "かるかったです"
+        "i-nakatta-desu": ["かるくなかったです", "かるくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "karukunakatta"
+        "i-katta-desu": "karukatta desu"
+        "i-nakatta-desu": ["karukunakatta desu", "karuku arimasen deshita"]
+    - word: "ja-0489"
+      forms:
+        "i-nakatta": "うつくしくなかった"
+        "i-katta-desu": "うつくしかったです"
+        "i-nakatta-desu": ["うつくしくなかったです", "うつくしくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "utsukushikunakatta"
+        "i-katta-desu": "utsukushikatta desu"
+        "i-nakatta-desu": ["utsukushikunakatta desu", "utsukushiku arimasen deshita"]
+    - word: "ja-0490"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "しんせつだった"
+        "na-janakatta": ["しんせつじゃなかった", "しんせつではなかった"]
+        "na-deshita": "しんせつでした"
+        "na-arimasen-deshita": ["しんせつではありませんでした", "しんせつじゃありませんでした"]
+      readings:
+        "na-datta": "shinsetsu datta"
+        "na-janakatta": ["shinsetsu ja nakatta", "shinsetsu de wa nakatta"]
+        "na-deshita": "shinsetsu deshita"
+        "na-arimasen-deshita": ["shinsetsu de wa arimasen deshita", "shinsetsu ja arimasen deshita"]
+    - word: "ja-0491"
+      forms:
+        "i-nakatta": "つよくなかった"
+        "i-katta-desu": "つよかったです"
+        "i-nakatta-desu": ["つよくなかったです", "つよくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "tsuyokunakatta"
+        "i-katta-desu": "tsuyokatta desu"
+        "i-nakatta-desu": ["tsuyokunakatta desu", "tsuyoku arimasen deshita"]
+    - word: "ja-0492"
+      forms:
+        "i-nakatta": "よわくなかった"
+        "i-katta-desu": "よわかったです"
+        "i-nakatta-desu": ["よわくなかったです", "よわくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "yowakunakatta"
+        "i-katta-desu": "yowakatta desu"
+        "i-nakatta-desu": ["yowakunakatta desu", "yowaku arimasen deshita"]
+    - word: "ja-0493"
+      forms:
+        "i-nakatta": "あまくなかった"
+        "i-katta-desu": "あまかったです"
+        "i-nakatta-desu": ["あまくなかったです", "あまくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "amakunakatta"
+        "i-katta-desu": "amakatta desu"
+        "i-nakatta-desu": ["amakunakatta desu", "amaku arimasen deshita"]
+    - word: "ja-0494"
+      forms:
+        "i-nakatta": "からくなかった"
+        "i-katta-desu": "からかったです"
+        "i-nakatta-desu": ["からくなかったです", "からくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "karakunakatta"
+        "i-katta-desu": "karakatta desu"
+        "i-nakatta-desu": ["karakunakatta desu", "karaku arimasen deshita"]
+    - word: "ja-0077"
+      forms:
+        "i-nakatta": "おおきくなかった"
+        "i-katta-desu": "おおきかったです"
+        "i-nakatta-desu": ["おおきくなかったです", "おおきくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "ookikunakatta"
+        "i-katta-desu": "ookikatta desu"
+        "i-nakatta-desu": ["ookikunakatta desu", "ookiku arimasen deshita"]
+    - word: "ja-0078"
+      forms:
+        "i-nakatta": "ちいさくなかった"
+        "i-katta-desu": "ちいさかったです"
+        "i-nakatta-desu": ["ちいさくなかったです", "ちいさくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "chiisakunakatta"
+        "i-katta-desu": "chiisakatta desu"
+        "i-nakatta-desu": ["chiisakunakatta desu", "chiisaku arimasen deshita"]
+    - word: "ja-0977"
+      forms:
+        "i-nakatta": "すっぱくなかった"
+        "i-katta-desu": "すっぱかったです"
+        "i-nakatta-desu": ["すっぱくなかったです", "すっぱくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "suppakunakatta"
+        "i-katta-desu": "suppakatta desu"
+        "i-nakatta-desu": ["suppakunakatta desu", "suppaku arimasen deshita"]
+    - word: "ja-0978"
+      forms:
+        "i-nakatta": "にがくなかった"
+        "i-katta-desu": "にがかったです"
+        "i-nakatta-desu": ["にがくなかったです", "にがくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "nigakunakatta"
+        "i-katta-desu": "nigakatta desu"
+        "i-nakatta-desu": ["nigakunakatta desu", "nigaku arimasen deshita"]
+    - word: "ja-0979"
+      forms:
+        "i-nakatta": "しょっぱくなかった"
+        "i-katta-desu": "しょっぱかったです"
+        "i-nakatta-desu": ["しょっぱくなかったです", "しょっぱくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "shoppakunakatta"
+        "i-katta-desu": "shoppakatta desu"
+        "i-nakatta-desu": ["shoppakunakatta desu", "shoppaku arimasen deshita"]
+    - word: "ja-0980"
+      forms:
+        "i-nakatta": "まずくなかった"
+        "i-katta-desu": "まずかったです"
+        "i-nakatta-desu": ["まずくなかったです", "まずくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "mazukunakatta"
+        "i-katta-desu": "mazukatta desu"
+        "i-nakatta-desu": ["mazukunakatta desu", "mazuku arimasen deshita"]
+    - word: "ja-0951"
+      forms:
+        "i-nakatta": "まるくなかった"
+        "i-katta-desu": "まるかったです"
+        "i-nakatta-desu": ["まるくなかったです", "まるくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "marukunakatta"
+        "i-katta-desu": "marukatta desu"
+        "i-nakatta-desu": ["marukunakatta desu", "maruku arimasen deshita"]
+    - word: "ja-0952"
+      forms:
+        "i-nakatta": "かたくなかった"
+        "i-katta-desu": "かたかったです"
+        "i-nakatta-desu": ["かたくなかったです", "かたくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "katakunakatta"
+        "i-katta-desu": "katakatta desu"
+        "i-nakatta-desu": ["katakunakatta desu", "kataku arimasen deshita"]
+    - word: "ja-0953"
+      forms:
+        "i-nakatta": "やわらかくなかった"
+        "i-katta-desu": "やわらかかったです"
+        "i-nakatta-desu": ["やわらかくなかったです", "やわらかくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "yawarakakunakatta"
+        "i-katta-desu": "yawarakakatta desu"
+        "i-nakatta-desu": ["yawarakakunakatta desu", "yawarakaku arimasen deshita"]
+    - word: "ja-1224"
+      forms:
+        "i-nakatta": "あぶなくなかった"
+        "i-katta-desu": "あぶなかったです"
+        "i-nakatta-desu": ["あぶなくなかったです", "あぶなくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "abunakunakatta"
+        "i-katta-desu": "abunakatta desu"
+        "i-nakatta-desu": ["abunakunakatta desu", "abunaku arimasen deshita"]
+    - word: "ja-1225"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "だいじょうぶだった"
+        "na-janakatta": ["だいじょうぶじゃなかった", "だいじょうぶではなかった"]
+        "na-deshita": "だいじょうぶでした"
+        "na-arimasen-deshita": ["だいじょうぶではありませんでした", "だいじょうぶじゃありませんでした"]
+      readings:
+        "na-datta": "daijoubu datta"
+        "na-janakatta": ["daijoubu ja nakatta", "daijoubu de wa nakatta"]
+        "na-deshita": "daijoubu deshita"
+        "na-arimasen-deshita": ["daijoubu de wa arimasen deshita", "daijoubu ja arimasen deshita"]
+    - word: "ja-1230"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "あんぜんだった"
+        "na-janakatta": ["あんぜんじゃなかった", "あんぜんではなかった"]
+        "na-deshita": "あんぜんでした"
+        "na-arimasen-deshita": ["あんぜんではありませんでした", "あんぜんじゃありませんでした"]
+      readings:
+        "na-datta": "anzen datta"
+        "na-janakatta": ["anzen ja nakatta", "anzen de wa nakatta"]
+        "na-deshita": "anzen deshita"
+        "na-arimasen-deshita": ["anzen de wa arimasen deshita", "anzen ja arimasen deshita"]
+    - word: "ja-0430"
+      forms:
+        "i-nakatta": "おおくなかった"
+        "i-katta-desu": "おおかったです"
+        "i-nakatta-desu": ["おおくなかったです", "おおくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "ookunakatta"
+        "i-katta-desu": "ookatta desu"
+        "i-nakatta-desu": ["ookunakatta desu", "ooku arimasen deshita"]
+    - word: "ja-0431"
+      forms:
+        "i-nakatta": "すくなくなかった"
+        "i-katta-desu": "すくなかったです"
+        "i-nakatta-desu": ["すくなくなかったです", "すくなくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "sukunakunakatta"
+        "i-katta-desu": "sukunakatta desu"
+        "i-nakatta-desu": ["sukunakunakatta desu", "sukunaku arimasen deshita"]
+    - word: "ja-0438"
+      forms:
+        "i-nakatta": "やすくなかった"
+        "i-katta-desu": "やすかったです"
+        "i-nakatta-desu": ["やすくなかったです", "やすくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "yasukunakatta"
+        "i-katta-desu": "yasukatta desu"
+        "i-nakatta-desu": ["yasukunakatta desu", "yasuku arimasen deshita"]
+    - word: "ja-0439"
+      forms:
+        "i-nakatta": "たかくなかった"
+        "i-katta-desu": "たかかったです"
+        "i-nakatta-desu": ["たかくなかったです", "たかくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "takakunakatta"
+        "i-katta-desu": "takakatta desu"
+        "i-nakatta-desu": ["takakunakatta desu", "takaku arimasen deshita"]
+    - word: "ja-0517"
+      forms:
+        "i-nakatta": "はやくなかった"
+        "i-katta-desu": "はやかったです"
+        "i-nakatta-desu": ["はやくなかったです", "はやくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "hayakunakatta"
+        "i-katta-desu": "hayakatta desu"
+        "i-nakatta-desu": ["hayakunakatta desu", "hayaku arimasen deshita"]
+    - word: "ja-0528"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "ひまだった"
+        "na-janakatta": ["ひまじゃなかった", "ひまではなかった"]
+        "na-deshita": "ひまでした"
+        "na-arimasen-deshita": ["ひまではありませんでした", "ひまじゃありませんでした"]
+      readings:
+        "na-datta": "hima datta"
+        "na-janakatta": ["hima ja nakatta", "hima de wa nakatta"]
+        "na-deshita": "hima deshita"
+        "na-arimasen-deshita": ["hima de wa arimasen deshita", "hima ja arimasen deshita"]
+    - word: "ja-0719"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "たいへんだった"
+        "na-janakatta": ["たいへんじゃなかった", "たいへんではなかった"]
+        "na-deshita": "たいへんでした"
+        "na-arimasen-deshita": ["たいへんではありませんでした", "たいへんじゃありませんでした"]
+      readings:
+        "na-datta": "taihen datta"
+        "na-janakatta": ["taihen ja nakatta", "taihen de wa nakatta"]
+        "na-deshita": "taihen deshita"
+        "na-arimasen-deshita": ["taihen de wa arimasen deshita", "taihen ja arimasen deshita"]
+    - word: "ja-0722"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "とくいだった"
+        "na-janakatta": ["とくいじゃなかった", "とくいではなかった"]
+        "na-deshita": "とくいでした"
+        "na-arimasen-deshita": ["とくいではありませんでした", "とくいじゃありませんでした"]
+      readings:
+        "na-datta": "tokui datta"
+        "na-janakatta": ["tokui ja nakatta", "tokui de wa nakatta"]
+        "na-deshita": "tokui deshita"
+        "na-arimasen-deshita": ["tokui de wa arimasen deshita", "tokui ja arimasen deshita"]
+    - word: "ja-0723"
+      forms:
+        "i-nakatta": "すごくなかった"
+        "i-katta-desu": "すごかったです"
+        "i-nakatta-desu": ["すごくなかったです", "すごくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "sugokunakatta"
+        "i-katta-desu": "sugokatta desu"
+        "i-nakatta-desu": ["sugokunakatta desu", "sugoku arimasen deshita"]
+    - word: "ja-1340"
+      forms:
+        "i-nakatta": "ねむくなかった"
+        "i-katta-desu": "ねむかったです"
+        "i-nakatta-desu": ["ねむくなかったです", "ねむくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "nemukunakatta"
+        "i-katta-desu": "nemukatta desu"
+        "i-nakatta-desu": ["nemukunakatta desu", "nemuku arimasen deshita"]
+    - word: "ja-1342"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "げんきだった"
+        "na-janakatta": ["げんきじゃなかった", "げんきではなかった"]
+        "na-deshita": "げんきでした"
+        "na-arimasen-deshita": ["げんきではありませんでした", "げんきじゃありませんでした"]
+      readings:
+        "na-datta": "genki datta"
+        "na-janakatta": ["genki ja nakatta", "genki de wa nakatta"]
+        "na-deshita": "genki deshita"
+        "na-arimasen-deshita": ["genki de wa arimasen deshita", "genki ja arimasen deshita"]
+    - word: "ja-1359"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "むりだった"
+        "na-janakatta": ["むりじゃなかった", "むりではなかった"]
+        "na-deshita": "むりでした"
+        "na-arimasen-deshita": ["むりではありませんでした", "むりじゃありませんでした"]
+      readings:
+        "na-datta": "muri datta"
+        "na-janakatta": ["muri ja nakatta", "muri de wa nakatta"]
+        "na-deshita": "muri deshita"
+        "na-arimasen-deshita": ["muri de wa arimasen deshita", "muri ja arimasen deshita"]
+    - word: "ja-1360"
+      forms:
+        "i-nakatta": "つまらなくなかった"
+        "i-katta-desu": "つまらなかったです"
+        "i-nakatta-desu": ["つまらなくなかったです", "つまらなくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "tsumaranakunakatta"
+        "i-katta-desu": "tsumaranakatta desu"
+        "i-nakatta-desu": ["tsumaranakunakatta desu", "tsumaranaku arimasen deshita"]
+    - word: "ja-1367"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "あんしんだった"
+        "na-janakatta": ["あんしんじゃなかった", "あんしんではなかった"]
+        "na-deshita": "あんしんでした"
+        "na-arimasen-deshita": ["あんしんではありませんでした", "あんしんじゃありませんでした"]
+      readings:
+        "na-datta": "anshin datta"
+        "na-janakatta": ["anshin ja nakatta", "anshin de wa nakatta"]
+        "na-deshita": "anshin deshita"
+        "na-arimasen-deshita": ["anshin de wa arimasen deshita", "anshin ja arimasen deshita"]
+    - word: "ja-1375"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "じゅうぶんだった"
+        "na-janakatta": ["じゅうぶんじゃなかった", "じゅうぶんではなかった"]
+        "na-deshita": "じゅうぶんでした"
+        "na-arimasen-deshita": ["じゅうぶんではありませんでした", "じゅうぶんじゃありませんでした"]
+      readings:
+        "na-datta": "juubun datta"
+        "na-janakatta": ["juubun ja nakatta", "juubun de wa nakatta"]
+        "na-deshita": "juubun deshita"
+        "na-arimasen-deshita": ["juubun de wa arimasen deshita", "juubun ja arimasen deshita"]
+    - word: "ja-1462"
+      forms:
+        "i-nakatta": "すずしくなかった"
+        "i-katta-desu": "すずしかったです"
+        "i-nakatta-desu": ["すずしくなかったです", "すずしくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "suzushikunakatta"
+        "i-katta-desu": "suzushikatta desu"
+        "i-nakatta-desu": ["suzushikunakatta desu", "suzushiku arimasen deshita"]
+    - word: "ja-1536"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "ぴったりだった"
+        "na-janakatta": ["ぴったりじゃなかった", "ぴったりではなかった"]
+        "na-deshita": "ぴったりでした"
+        "na-arimasen-deshita": ["ぴったりではありませんでした", "ぴったりじゃありませんでした"]
+      readings:
+        "na-datta": "pittari datta"
+        "na-janakatta": ["pittari ja nakatta", "pittari de wa nakatta"]
+        "na-deshita": "pittari deshita"
+        "na-arimasen-deshita": ["pittari de wa arimasen deshita", "pittari ja arimasen deshita"]
+    - word: "ja-1537"
+      forms:
+        "i-nakatta": "ゆるくなかった"
+        "i-katta-desu": "ゆるかったです"
+        "i-nakatta-desu": ["ゆるくなかったです", "ゆるくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "yurukunakatta"
+        "i-katta-desu": "yurukatta desu"
+        "i-nakatta-desu": ["yurukunakatta desu", "yuruku arimasen deshita"]
+    - word: "ja-1538"
+      forms:
+        "i-nakatta": "きつくなかった"
+        "i-katta-desu": "きつかったです"
+        "i-nakatta-desu": ["きつくなかったです", "きつくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "kitsukunakatta"
+        "i-katta-desu": "kitsukatta desu"
+        "i-nakatta-desu": ["kitsukunakatta desu", "kitsuku arimasen deshita"]
+    - word: "ja-1620"
+      forms:
+        "i-nakatta": "はげしくなかった"
+        "i-katta-desu": "はげしかったです"
+        "i-nakatta-desu": ["はげしくなかったです", "はげしくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "hageshikunakatta"
+        "i-katta-desu": "hageshikatta desu"
+        "i-nakatta-desu": ["hageshikunakatta desu", "hageshiku arimasen deshita"]
+    - word: "ja-1621"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "さわやかだった"
+        "na-janakatta": ["さわやかじゃなかった", "さわやかではなかった"]
+        "na-deshita": "さわやかでした"
+        "na-arimasen-deshita": ["さわやかではありませんでした", "さわやかじゃありませんでした"]
+      readings:
+        "na-datta": "sawayaka datta"
+        "na-janakatta": ["sawayaka ja nakatta", "sawayaka de wa nakatta"]
+        "na-deshita": "sawayaka deshita"
+        "na-arimasen-deshita": ["sawayaka de wa arimasen deshita", "sawayaka ja arimasen deshita"]
+    - word: "ja-1622"
+      forms:
+        "i-nakatta": "むしあつくなかった"
+        "i-katta-desu": "むしあつかったです"
+        "i-nakatta-desu": ["むしあつくなかったです", "むしあつくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "mushiatsukunakatta"
+        "i-katta-desu": "mushiatsukatta desu"
+        "i-nakatta-desu": ["mushiatsukunakatta desu", "mushiatsuku arimasen deshita"]
+    - word: "ja-1623"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "おだやかだった"
+        "na-janakatta": ["おだやかじゃなかった", "おだやかではなかった"]
+        "na-deshita": "おだやかでした"
+        "na-arimasen-deshita": ["おだやかではありませんでした", "おだやかじゃありませんでした"]
+      readings:
+        "na-datta": "odayaka datta"
+        "na-janakatta": ["odayaka ja nakatta", "odayaka de wa nakatta"]
+        "na-deshita": "odayaka deshita"
+        "na-arimasen-deshita": ["odayaka de wa arimasen deshita", "odayaka ja arimasen deshita"]
+    - word: "ja-1624"
+      forms:
+        "i-nakatta": "くらくなかった"
+        "i-katta-desu": "くらかったです"
+        "i-nakatta-desu": ["くらくなかったです", "くらくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "kurakunakatta"
+        "i-katta-desu": "kurakatta desu"
+        "i-nakatta-desu": ["kurakunakatta desu", "kuraku arimasen deshita"]
+    - word: "ja-1644"
+      forms:
+        "i-nakatta": "ぬるくなかった"
+        "i-katta-desu": "ぬるかったです"
+        "i-nakatta-desu": ["ぬるくなかったです", "ぬるくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "nurukunakatta"
+        "i-katta-desu": "nurukatta desu"
+        "i-nakatta-desu": ["nurukunakatta desu", "nuruku arimasen deshita"]
+    - word: "ja-1652"
+      forms:
+        "i-nakatta": "ひどくなかった"
+        "i-katta-desu": "ひどかったです"
+        "i-nakatta-desu": ["ひどくなかったです", "ひどくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "hidokunakatta"
+        "i-katta-desu": "hidokatta desu"
+        "i-nakatta-desu": ["hidokunakatta desu", "hidoku arimasen deshita"]
+    - word: "ja-1732"
+      forms:
+        "i-nakatta": "ほしくなかった"
+        "i-katta-desu": "ほしかったです"
+        "i-nakatta-desu": ["ほしくなかったです", "ほしくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "hoshikunakatta"
+        "i-katta-desu": "hoshikatta desu"
+        "i-nakatta-desu": ["hoshikunakatta desu", "hoshiku arimasen deshita"]
+    - word: "ja-1733"
+      forms:
+        "i-nakatta": "ひろくなかった"
+        "i-katta-desu": "ひろかったです"
+        "i-nakatta-desu": ["ひろくなかったです", "ひろくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "hirokunakatta"
+        "i-katta-desu": "hirokatta desu"
+        "i-nakatta-desu": ["hirokunakatta desu", "hiroku arimasen deshita"]
+    - word: "ja-1734"
+      forms:
+        "i-nakatta": "せまくなかった"
+        "i-katta-desu": "せまかったです"
+        "i-nakatta-desu": ["せまくなかったです", "せまくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "semakunakatta"
+        "i-katta-desu": "semakatta desu"
+        "i-nakatta-desu": ["semakunakatta desu", "semaku arimasen deshita"]
+    - word: "ja-1735"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "じょうぶだった"
+        "na-janakatta": ["じょうぶじゃなかった", "じょうぶではなかった"]
+        "na-deshita": "じょうぶでした"
+        "na-arimasen-deshita": ["じょうぶではありませんでした", "じょうぶじゃありませんでした"]
+      readings:
+        "na-datta": "joubu datta"
+        "na-janakatta": ["joubu ja nakatta", "joubu de wa nakatta"]
+        "na-deshita": "joubu deshita"
+        "na-arimasen-deshita": ["joubu de wa arimasen deshita", "joubu ja arimasen deshita"]
+    - word: "ja-1736"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "らくだった"
+        "na-janakatta": ["らくじゃなかった", "らくではなかった"]
+        "na-deshita": "らくでした"
+        "na-arimasen-deshita": ["らくではありませんでした", "らくじゃありませんでした"]
+      readings:
+        "na-datta": "raku datta"
+        "na-janakatta": ["raku ja nakatta", "raku de wa nakatta"]
+        "na-deshita": "raku deshita"
+        "na-arimasen-deshita": ["raku de wa arimasen deshita", "raku ja arimasen deshita"]
+    - word: "ja-1761"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "まんぞくだった"
+        "na-janakatta": ["まんぞくじゃなかった", "まんぞくではなかった"]
+        "na-deshita": "まんぞくでした"
+        "na-arimasen-deshita": ["まんぞくではありませんでした", "まんぞくじゃありませんでした"]
+      readings:
+        "na-datta": "manzoku datta"
+        "na-janakatta": ["manzoku ja nakatta", "manzoku de wa nakatta"]
+        "na-deshita": "manzoku deshita"
+        "na-arimasen-deshita": ["manzoku de wa arimasen deshita", "manzoku ja arimasen deshita"]
+    - word: "ja-1795"
+      forms:
+        "i-nakatta": "うすくなかった"
+        "i-katta-desu": "うすかったです"
+        "i-nakatta-desu": ["うすくなかったです", "うすくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "usukunakatta"
+        "i-katta-desu": "usukatta desu"
+        "i-nakatta-desu": ["usukunakatta desu", "usuku arimasen deshita"]
+    - word: "ja-1796"
+      forms:
+        "i-nakatta": "こくなかった"
+        "i-katta-desu": "こかったです"
+        "i-nakatta-desu": ["こくなかったです", "こくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "kokunakatta"
+        "i-katta-desu": "kokatta desu"
+        "i-nakatta-desu": ["kokunakatta desu", "koku arimasen deshita"]
+    - word: "ja-1798"
+      forms:
+        "i-nakatta": "しおからくなかった"
+        "i-katta-desu": "しおからかったです"
+        "i-nakatta-desu": ["しおからくなかったです", "しおからくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "shiokarakunakatta"
+        "i-katta-desu": "shiokarakatta desu"
+        "i-nakatta-desu": ["shiokarakunakatta desu", "shiokaraku arimasen deshita"]
+    - word: "ja-1894"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "へただった"
+        "na-janakatta": ["へたじゃなかった", "へたではなかった"]
+        "na-deshita": "へたでした"
+        "na-arimasen-deshita": ["へたではありませんでした", "へたじゃありませんでした"]
+      readings:
+        "na-datta": "heta datta"
+        "na-janakatta": ["heta ja nakatta", "heta de wa nakatta"]
+        "na-deshita": "heta deshita"
+        "na-arimasen-deshita": ["heta de wa arimasen deshita", "heta ja arimasen deshita"]
+    - word: "ja-1908"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "にがてだった"
+        "na-janakatta": ["にがてじゃなかった", "にがてではなかった"]
+        "na-deshita": "にがてでした"
+        "na-arimasen-deshita": ["にがてではありませんでした", "にがてじゃありませんでした"]
+      readings:
+        "na-datta": "nigate datta"
+        "na-janakatta": ["nigate ja nakatta", "nigate de wa nakatta"]
+        "na-deshita": "nigate deshita"
+        "na-arimasen-deshita": ["nigate de wa arimasen deshita", "nigate ja arimasen deshita"]
+    - word: "ja-1909"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "かんたんだった"
+        "na-janakatta": ["かんたんじゃなかった", "かんたんではなかった"]
+        "na-deshita": "かんたんでした"
+        "na-arimasen-deshita": ["かんたんではありませんでした", "かんたんじゃありませんでした"]
+      readings:
+        "na-datta": "kantan datta"
+        "na-janakatta": ["kantan ja nakatta", "kantan de wa nakatta"]
+        "na-deshita": "kantan deshita"
+        "na-arimasen-deshita": ["kantan de wa arimasen deshita", "kantan ja arimasen deshita"]
+    - word: "ja-1936"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "すてきだった"
+        "na-janakatta": ["すてきじゃなかった", "すてきではなかった"]
+        "na-deshita": "すてきでした"
+        "na-arimasen-deshita": ["すてきではありませんでした", "すてきじゃありませんでした"]
+      readings:
+        "na-datta": "suteki datta"
+        "na-janakatta": ["suteki ja nakatta", "suteki de wa nakatta"]
+        "na-deshita": "suteki deshita"
+        "na-arimasen-deshita": ["suteki de wa arimasen deshita", "suteki ja arimasen deshita"]
+    - word: "ja-1937"
+      forms:
+        "i-nakatta": "うるさくなかった"
+        "i-katta-desu": "うるさかったです"
+        "i-nakatta-desu": ["うるさくなかったです", "うるさくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "urusakunakatta"
+        "i-katta-desu": "urusakatta desu"
+        "i-nakatta-desu": ["urusakunakatta desu", "urusaku arimasen deshita"]
+    - word: "ja-1938"
+      forms:
+        "i-nakatta": "かなしくなかった"
+        "i-katta-desu": "かなしかったです"
+        "i-nakatta-desu": ["かなしくなかったです", "かなしくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "kanashikunakatta"
+        "i-katta-desu": "kanashikatta desu"
+        "i-nakatta-desu": ["kanashikunakatta desu", "kanashiku arimasen deshita"]
+    - word: "ja-2055"
+      forms:
+        "i-nakatta": "きもちわるくなかった"
+        "i-katta-desu": "きもちわるかったです"
+        "i-nakatta-desu": ["きもちわるくなかったです", "きもちわるくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "kimochiwarukunakatta"
+        "i-katta-desu": "kimochiwarukatta desu"
+        "i-nakatta-desu": ["kimochiwarukunakatta desu", "kimochiwaruku arimasen deshita"]
+    - word: "ja-2056"
+      forms:
+        "i-nakatta": "くるしくなかった"
+        "i-katta-desu": "くるしかったです"
+        "i-nakatta-desu": ["くるしくなかったです", "くるしくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "kurushikunakatta"
+        "i-katta-desu": "kurushikatta desu"
+        "i-nakatta-desu": ["kurushikunakatta desu", "kurushiku arimasen deshita"]
+    - word: "ja-2154"
+      forms:
+        "i-nakatta": "ふとくなかった"
+        "i-katta-desu": "ふとかったです"
+        "i-nakatta-desu": ["ふとくなかったです", "ふとくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "futokunakatta"
+        "i-katta-desu": "futokatta desu"
+        "i-nakatta-desu": ["futokunakatta desu", "futoku arimasen deshita"]
+    - word: "ja-2155"
+      forms:
+        "i-nakatta": "ほそくなかった"
+        "i-katta-desu": "ほそかったです"
+        "i-nakatta-desu": ["ほそくなかったです", "ほそくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "hosokunakatta"
+        "i-katta-desu": "hosokatta desu"
+        "i-nakatta-desu": ["hosokunakatta desu", "hosoku arimasen deshita"]
+    - word: "ja-2156"
+      forms:
+        "i-nakatta": "かっこよくなかった"
+        "i-katta-desu": "かっこよかったです"
+        "i-nakatta-desu": ["かっこよくなかったです", "かっこよくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "kakkoyokunakatta"
+        "i-katta-desu": "kakkoyokatta desu"
+        "i-nakatta-desu": ["kakkoyokunakatta desu", "kakkoyoku arimasen deshita"]
+    - word: "ja-2157"
+      forms:
+        "i-nakatta": "かわいくなかった"
+        "i-katta-desu": "かわいかったです"
+        "i-nakatta-desu": ["かわいくなかったです", "かわいくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "kawaikunakatta"
+        "i-katta-desu": "kawaikatta desu"
+        "i-nakatta-desu": ["kawaikunakatta desu", "kawaiku arimasen deshita"]
+    - word: "ja-2158"
+      forms:
+        "i-nakatta": "かわいらしくなかった"
+        "i-katta-desu": "かわいらしかったです"
+        "i-nakatta-desu": ["かわいらしくなかったです", "かわいらしくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "kawairashikunakatta"
+        "i-katta-desu": "kawairashikatta desu"
+        "i-nakatta-desu": ["kawairashikunakatta desu", "kawairashiku arimasen deshita"]
+    - word: "ja-2159"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "ハンサムだった"
+        "na-janakatta": ["ハンサムじゃなかった", "ハンサムではなかった"]
+        "na-deshita": "ハンサムでした"
+        "na-arimasen-deshita": ["ハンサムではありませんでした", "ハンサムじゃありませんでした"]
+      readings:
+        "na-datta": "hansamu datta"
+        "na-janakatta": ["hansamu ja nakatta", "hansamu de wa nakatta"]
+        "na-deshita": "hansamu deshita"
+        "na-arimasen-deshita": ["hansamu de wa arimasen deshita", "hansamu ja arimasen deshita"]
+    - word: "ja-2160"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "おしゃれだった"
+        "na-janakatta": ["おしゃれじゃなかった", "おしゃれではなかった"]
+        "na-deshita": "おしゃれでした"
+        "na-arimasen-deshita": ["おしゃれではありませんでした", "おしゃれじゃありませんでした"]
+      readings:
+        "na-datta": "oshare datta"
+        "na-janakatta": ["oshare ja nakatta", "oshare de wa nakatta"]
+        "na-deshita": "oshare deshita"
+        "na-arimasen-deshita": ["oshare de wa arimasen deshita", "oshare ja arimasen deshita"]
+    - word: "ja-2161"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "じみだった"
+        "na-janakatta": ["じみじゃなかった", "じみではなかった"]
+        "na-deshita": "じみでした"
+        "na-arimasen-deshita": ["じみではありませんでした", "じみじゃありませんでした"]
+      readings:
+        "na-datta": "jimi datta"
+        "na-janakatta": ["jimi ja nakatta", "jimi de wa nakatta"]
+        "na-deshita": "jimi deshita"
+        "na-arimasen-deshita": ["jimi de wa arimasen deshita", "jimi ja arimasen deshita"]
+    - word: "ja-2162"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "はでだった"
+        "na-janakatta": ["はでじゃなかった", "はでではなかった"]
+        "na-deshita": "はででした"
+        "na-arimasen-deshita": ["はでではありませんでした", "はでじゃありませんでした"]
+      readings:
+        "na-datta": "hade datta"
+        "na-janakatta": ["hade ja nakatta", "hade de wa nakatta"]
+        "na-deshita": "hade deshita"
+        "na-arimasen-deshita": ["hade de wa arimasen deshita", "hade ja arimasen deshita"]
+    - word: "ja-2163"
+      forms:
+        "i-nakatta": "わかくなかった"
+        "i-katta-desu": "わかかったです"
+        "i-nakatta-desu": ["わかくなかったです", "わかくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "wakakunakatta"
+        "i-katta-desu": "wakakatta desu"
+        "i-nakatta-desu": ["wakakunakatta desu", "wakaku arimasen deshita"]
+    - word: "ja-2492"
+      forms:
+        "i-nakatta": "うれしくなかった"
+        "i-katta-desu": "うれしかったです"
+        "i-nakatta-desu": ["うれしくなかったです", "うれしくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "ureshikunakatta"
+        "i-katta-desu": "ureshikatta desu"
+        "i-nakatta-desu": ["ureshikunakatta desu", "ureshiku arimasen deshita"]
+    - word: "ja-2493"
+      forms:
+        "i-nakatta": "さびしくなかった"
+        "i-katta-desu": "さびしかったです"
+        "i-nakatta-desu": ["さびしくなかったです", "さびしくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "sabishikunakatta"
+        "i-katta-desu": "sabishikatta desu"
+        "i-nakatta-desu": ["sabishikunakatta desu", "sabishiku arimasen deshita"]
+    - word: "ja-2494"
+      forms:
+        "i-nakatta": "こわくなかった"
+        "i-katta-desu": "こわかったです"
+        "i-nakatta-desu": ["こわくなかったです", "こわくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "kowakunakatta"
+        "i-katta-desu": "kowakatta desu"
+        "i-nakatta-desu": ["kowakunakatta desu", "kowaku arimasen deshita"]
+    - word: "ja-2495"
+      forms:
+        "i-nakatta": "はずかしくなかった"
+        "i-katta-desu": "はずかしかったです"
+        "i-nakatta-desu": ["はずかしくなかったです", "はずかしくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "hazukashikunakatta"
+        "i-katta-desu": "hazukashikatta desu"
+        "i-nakatta-desu": ["hazukashikunakatta desu", "hazukashiku arimasen deshita"]
+    - word: "ja-2496"
+      forms:
+        "i-nakatta": "くやしくなかった"
+        "i-katta-desu": "くやしかったです"
+        "i-nakatta-desu": ["くやしくなかったです", "くやしくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "kuyashikunakatta"
+        "i-katta-desu": "kuyashikatta desu"
+        "i-nakatta-desu": ["kuyashikunakatta desu", "kuyashiku arimasen deshita"]
+    - word: "ja-2497"
+      forms:
+        "i-nakatta": "なつかしくなかった"
+        "i-katta-desu": "なつかしかったです"
+        "i-nakatta-desu": ["なつかしくなかったです", "なつかしくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "natsukashikunakatta"
+        "i-katta-desu": "natsukashikatta desu"
+        "i-nakatta-desu": ["natsukashikunakatta desu", "natsukashiku arimasen deshita"]
+    - word: "ja-2498"
+      forms:
+        "i-nakatta": "めずらしくなかった"
+        "i-katta-desu": "めずらしかったです"
+        "i-nakatta-desu": ["めずらしくなかったです", "めずらしくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "mezurashikunakatta"
+        "i-katta-desu": "mezurashikatta desu"
+        "i-nakatta-desu": ["mezurashikunakatta desu", "mezurashiku arimasen deshita"]
+    - word: "ja-2499"
+      forms:
+        "i-nakatta": "うらやましくなかった"
+        "i-katta-desu": "うらやましかったです"
+        "i-nakatta-desu": ["うらやましくなかったです", "うらやましくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "urayamashikunakatta"
+        "i-katta-desu": "urayamashikatta desu"
+        "i-nakatta-desu": ["urayamashikunakatta desu", "urayamashiku arimasen deshita"]
+    - word: "ja-2500"
+      forms:
+        "i-nakatta": "ありがたくなかった"
+        "i-katta-desu": "ありがたかったです"
+        "i-nakatta-desu": ["ありがたくなかったです", "ありがたくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "arigatakunakatta"
+        "i-katta-desu": "arigatakatta desu"
+        "i-nakatta-desu": ["arigatakunakatta desu", "arigataku arimasen deshita"]
+    - word: "ja-2501"
+      forms:
+        "i-nakatta": "こまかくなかった"
+        "i-katta-desu": "こまかかったです"
+        "i-nakatta-desu": ["こまかくなかったです", "こまかくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "komakakunakatta"
+        "i-katta-desu": "komakakatta desu"
+        "i-nakatta-desu": ["komakakunakatta desu", "komakaku arimasen deshita"]
+    - word: "ja-2502"
+      forms:
+        "i-nakatta": "あらくなかった"
+        "i-katta-desu": "あらかったです"
+        "i-nakatta-desu": ["あらくなかったです", "あらくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "arakunakatta"
+        "i-katta-desu": "arakatta desu"
+        "i-nakatta-desu": ["arakunakatta desu", "araku arimasen deshita"]
+    - word: "ja-2503"
+      forms:
+        "i-nakatta": "ふかくなかった"
+        "i-katta-desu": "ふかかったです"
+        "i-nakatta-desu": ["ふかくなかったです", "ふかくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "fukakunakatta"
+        "i-katta-desu": "fukakatta desu"
+        "i-nakatta-desu": ["fukakunakatta desu", "fukaku arimasen deshita"]
+    - word: "ja-2504"
+      forms:
+        "i-nakatta": "あさくなかった"
+        "i-katta-desu": "あさかったです"
+        "i-nakatta-desu": ["あさくなかったです", "あさくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "asakunakatta"
+        "i-katta-desu": "asakatta desu"
+        "i-nakatta-desu": ["asakunakatta desu", "asaku arimasen deshita"]
+    - word: "ja-2505"
+      forms:
+        "i-nakatta": "けむくなかった"
+        "i-katta-desu": "けむかったです"
+        "i-nakatta-desu": ["けむくなかったです", "けむくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "kemukunakatta"
+        "i-katta-desu": "kemukatta desu"
+        "i-nakatta-desu": ["kemukunakatta desu", "kemuku arimasen deshita"]
+    - word: "ja-2506"
+      forms:
+        "i-nakatta": "くさくなかった"
+        "i-katta-desu": "くさかったです"
+        "i-nakatta-desu": ["くさくなかったです", "くさくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "kusakunakatta"
+        "i-katta-desu": "kusakatta desu"
+        "i-nakatta-desu": ["kusakunakatta desu", "kusaku arimasen deshita"]
+    - word: "ja-2507"
+      forms:
+        "i-nakatta": "するどくなかった"
+        "i-katta-desu": "するどかったです"
+        "i-nakatta-desu": ["するどくなかったです", "するどくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "surudokunakatta"
+        "i-katta-desu": "surudokatta desu"
+        "i-nakatta-desu": ["surudokunakatta desu", "surudoku arimasen deshita"]
+    - word: "ja-2508"
+      forms:
+        "i-nakatta": "にぶくなかった"
+        "i-katta-desu": "にぶかったです"
+        "i-nakatta-desu": ["にぶくなかったです", "にぶくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "nibukunakatta"
+        "i-katta-desu": "nibukatta desu"
+        "i-nakatta-desu": ["nibukunakatta desu", "nibuku arimasen deshita"]
+    - word: "ja-2509"
+      forms:
+        "i-nakatta": "かしこくなかった"
+        "i-katta-desu": "かしこかったです"
+        "i-nakatta-desu": ["かしこくなかったです", "かしこくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "kashikokunakatta"
+        "i-katta-desu": "kashikokatta desu"
+        "i-nakatta-desu": ["kashikokunakatta desu", "kashikoku arimasen deshita"]
+    - word: "ja-2510"
+      forms:
+        "i-nakatta": "えらくなかった"
+        "i-katta-desu": "えらかったです"
+        "i-nakatta-desu": ["えらくなかったです", "えらくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "erakunakatta"
+        "i-katta-desu": "erakatta desu"
+        "i-nakatta-desu": ["erakunakatta desu", "eraku arimasen deshita"]
+    - word: "ja-2511"
+      forms:
+        "i-nakatta": "やかましくなかった"
+        "i-katta-desu": "やかましかったです"
+        "i-nakatta-desu": ["やかましくなかったです", "やかましくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "yakamashikunakatta"
+        "i-katta-desu": "yakamashikatta desu"
+        "i-nakatta-desu": ["yakamashikunakatta desu", "yakamashiku arimasen deshita"]
+    - word: "ja-2512"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "にぎやかだった"
+        "na-janakatta": ["にぎやかじゃなかった", "にぎやかではなかった"]
+        "na-deshita": "にぎやかでした"
+        "na-arimasen-deshita": ["にぎやかではありませんでした", "にぎやかじゃありませんでした"]
+      readings:
+        "na-datta": "nigiyaka datta"
+        "na-janakatta": ["nigiyaka ja nakatta", "nigiyaka de wa nakatta"]
+        "na-deshita": "nigiyaka deshita"
+        "na-arimasen-deshita": ["nigiyaka de wa arimasen deshita", "nigiyaka ja arimasen deshita"]
+    - word: "ja-2513"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "ゆうめいだった"
+        "na-janakatta": ["ゆうめいじゃなかった", "ゆうめいではなかった"]
+        "na-deshita": "ゆうめいでした"
+        "na-arimasen-deshita": ["ゆうめいではありませんでした", "ゆうめいじゃありませんでした"]
+      readings:
+        "na-datta": "yuumei datta"
+        "na-janakatta": ["yuumei ja nakatta", "yuumei de wa nakatta"]
+        "na-deshita": "yuumei deshita"
+        "na-arimasen-deshita": ["yuumei de wa arimasen deshita", "yuumei ja arimasen deshita"]
+    - word: "ja-2514"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "ていねいだった"
+        "na-janakatta": ["ていねいじゃなかった", "ていねいではなかった"]
+        "na-deshita": "ていねいでした"
+        "na-arimasen-deshita": ["ていねいではありませんでした", "ていねいじゃありませんでした"]
+      readings:
+        "na-datta": "teinei datta"
+        "na-janakatta": ["teinei ja nakatta", "teinei de wa nakatta"]
+        "na-deshita": "teinei deshita"
+        "na-arimasen-deshita": ["teinei de wa arimasen deshita", "teinei ja arimasen deshita"]
+    - word: "ja-2515"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "ざんねんだった"
+        "na-janakatta": ["ざんねんじゃなかった", "ざんねんではなかった"]
+        "na-deshita": "ざんねんでした"
+        "na-arimasen-deshita": ["ざんねんではありませんでした", "ざんねんじゃありませんでした"]
+      readings:
+        "na-datta": "zannen datta"
+        "na-janakatta": ["zannen ja nakatta", "zannen de wa nakatta"]
+        "na-deshita": "zannen deshita"
+        "na-arimasen-deshita": ["zannen de wa arimasen deshita", "zannen ja arimasen deshita"]
+    - word: "ja-2516"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "しんぱいだった"
+        "na-janakatta": ["しんぱいじゃなかった", "しんぱいではなかった"]
+        "na-deshita": "しんぱいでした"
+        "na-arimasen-deshita": ["しんぱいではありませんでした", "しんぱいじゃありませんでした"]
+      readings:
+        "na-datta": "shinpai datta"
+        "na-janakatta": ["shinpai ja nakatta", "shinpai de wa nakatta"]
+        "na-deshita": "shinpai deshita"
+        "na-arimasen-deshita": ["shinpai de wa arimasen deshita", "shinpai ja arimasen deshita"]
+    - word: "ja-2517"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "ふべんだった"
+        "na-janakatta": ["ふべんじゃなかった", "ふべんではなかった"]
+        "na-deshita": "ふべんでした"
+        "na-arimasen-deshita": ["ふべんではありませんでした", "ふべんじゃありませんでした"]
+      readings:
+        "na-datta": "fuben datta"
+        "na-janakatta": ["fuben ja nakatta", "fuben de wa nakatta"]
+        "na-deshita": "fuben deshita"
+        "na-arimasen-deshita": ["fuben de wa arimasen deshita", "fuben ja arimasen deshita"]
+    - word: "ja-2518"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "ふくざつだった"
+        "na-janakatta": ["ふくざつじゃなかった", "ふくざつではなかった"]
+        "na-deshita": "ふくざつでした"
+        "na-arimasen-deshita": ["ふくざつではありませんでした", "ふくざつじゃありませんでした"]
+      readings:
+        "na-datta": "fukuzatsu datta"
+        "na-janakatta": ["fukuzatsu ja nakatta", "fukuzatsu de wa nakatta"]
+        "na-deshita": "fukuzatsu deshita"
+        "na-arimasen-deshita": ["fukuzatsu de wa arimasen deshita", "fukuzatsu ja arimasen deshita"]
+    - word: "ja-2519"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "じゅうようだった"
+        "na-janakatta": ["じゅうようじゃなかった", "じゅうようではなかった"]
+        "na-deshita": "じゅうようでした"
+        "na-arimasen-deshita": ["じゅうようではありませんでした", "じゅうようじゃありませんでした"]
+      readings:
+        "na-datta": "juuyou datta"
+        "na-janakatta": ["juuyou ja nakatta", "juuyou de wa nakatta"]
+        "na-deshita": "juuyou deshita"
+        "na-arimasen-deshita": ["juuyou de wa arimasen deshita", "juuyou ja arimasen deshita"]
+    - word: "ja-2520"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "たいせつだった"
+        "na-janakatta": ["たいせつじゃなかった", "たいせつではなかった"]
+        "na-deshita": "たいせつでした"
+        "na-arimasen-deshita": ["たいせつではありませんでした", "たいせつじゃありませんでした"]
+      readings:
+        "na-datta": "taisetsu datta"
+        "na-janakatta": ["taisetsu ja nakatta", "taisetsu de wa nakatta"]
+        "na-deshita": "taisetsu deshita"
+        "na-arimasen-deshita": ["taisetsu de wa arimasen deshita", "taisetsu ja arimasen deshita"]
+    - word: "ja-2521"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "だいじだった"
+        "na-janakatta": ["だいじじゃなかった", "だいじではなかった"]
+        "na-deshita": "だいじでした"
+        "na-arimasen-deshita": ["だいじではありませんでした", "だいじじゃありませんでした"]
+      readings:
+        "na-datta": "daiji datta"
+        "na-janakatta": ["daiji ja nakatta", "daiji de wa nakatta"]
+        "na-deshita": "daiji deshita"
+        "na-arimasen-deshita": ["daiji de wa arimasen deshita", "daiji ja arimasen deshita"]
+    - word: "ja-2522"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "とくべつだった"
+        "na-janakatta": ["とくべつじゃなかった", "とくべつではなかった"]
+        "na-deshita": "とくべつでした"
+        "na-arimasen-deshita": ["とくべつではありませんでした", "とくべつじゃありませんでした"]
+      readings:
+        "na-datta": "tokubetsu datta"
+        "na-janakatta": ["tokubetsu ja nakatta", "tokubetsu de wa nakatta"]
+        "na-deshita": "tokubetsu deshita"
+        "na-arimasen-deshita": ["tokubetsu de wa arimasen deshita", "tokubetsu ja arimasen deshita"]
+    - word: "ja-2523"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "べつだった"
+        "na-janakatta": ["べつじゃなかった", "べつではなかった"]
+        "na-deshita": "べつでした"
+        "na-arimasen-deshita": ["べつではありませんでした", "べつじゃありませんでした"]
+      readings:
+        "na-datta": "betsu datta"
+        "na-janakatta": ["betsu ja nakatta", "betsu de wa nakatta"]
+        "na-deshita": "betsu deshita"
+        "na-arimasen-deshita": ["betsu de wa arimasen deshita", "betsu ja arimasen deshita"]
+    - word: "ja-2524"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "むだだった"
+        "na-janakatta": ["むだじゃなかった", "むだではなかった"]
+        "na-deshita": "むだでした"
+        "na-arimasen-deshita": ["むだではありませんでした", "むだじゃありませんでした"]
+      readings:
+        "na-datta": "muda datta"
+        "na-janakatta": ["muda ja nakatta", "muda de wa nakatta"]
+        "na-deshita": "muda deshita"
+        "na-arimasen-deshita": ["muda de wa arimasen deshita", "muda ja arimasen deshita"]
+    - word: "ja-2525"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "ひつようだった"
+        "na-janakatta": ["ひつようじゃなかった", "ひつようではなかった"]
+        "na-deshita": "ひつようでした"
+        "na-arimasen-deshita": ["ひつようではありませんでした", "ひつようじゃありませんでした"]
+      readings:
+        "na-datta": "hitsuyou datta"
+        "na-janakatta": ["hitsuyou ja nakatta", "hitsuyou de wa nakatta"]
+        "na-deshita": "hitsuyou deshita"
+        "na-arimasen-deshita": ["hitsuyou de wa arimasen deshita", "hitsuyou ja arimasen deshita"]
+    - word: "ja-2526"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "ふあんだった"
+        "na-janakatta": ["ふあんじゃなかった", "ふあんではなかった"]
+        "na-deshita": "ふあんでした"
+        "na-arimasen-deshita": ["ふあんではありませんでした", "ふあんじゃありませんでした"]
+      readings:
+        "na-datta": "fuan datta"
+        "na-janakatta": ["fuan ja nakatta", "fuan de wa nakatta"]
+        "na-deshita": "fuan deshita"
+        "na-arimasen-deshita": ["fuan de wa arimasen deshita", "fuan ja arimasen deshita"]
+    - word: "ja-2527"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "かんぺきだった"
+        "na-janakatta": ["かんぺきじゃなかった", "かんぺきではなかった"]
+        "na-deshita": "かんぺきでした"
+        "na-arimasen-deshita": ["かんぺきではありませんでした", "かんぺきじゃありませんでした"]
+      readings:
+        "na-datta": "kanpeki datta"
+        "na-janakatta": ["kanpeki ja nakatta", "kanpeki de wa nakatta"]
+        "na-deshita": "kanpeki deshita"
+        "na-arimasen-deshita": ["kanpeki de wa arimasen deshita", "kanpeki ja arimasen deshita"]
+    - word: "ja-2528"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "ざんこくだった"
+        "na-janakatta": ["ざんこくじゃなかった", "ざんこくではなかった"]
+        "na-deshita": "ざんこくでした"
+        "na-arimasen-deshita": ["ざんこくではありませんでした", "ざんこくじゃありませんでした"]
+      readings:
+        "na-datta": "zankoku datta"
+        "na-janakatta": ["zankoku ja nakatta", "zankoku de wa nakatta"]
+        "na-deshita": "zankoku deshita"
+        "na-arimasen-deshita": ["zankoku de wa arimasen deshita", "zankoku ja arimasen deshita"]
+    - word: "ja-2529"
+      forms:
+        "i-nakatta": "きびしくなかった"
+        "i-katta-desu": "きびしかったです"
+        "i-nakatta-desu": ["きびしくなかったです", "きびしくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "kibishikunakatta"
+        "i-katta-desu": "kibishikatta desu"
+        "i-nakatta-desu": ["kibishikunakatta desu", "kibishiku arimasen deshita"]
+    - word: "ja-2530"
+      forms:
+        "i-nakatta": "あやしくなかった"
+        "i-katta-desu": "あやしかったです"
+        "i-nakatta-desu": ["あやしくなかったです", "あやしくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "ayashikunakatta"
+        "i-katta-desu": "ayashikatta desu"
+        "i-nakatta-desu": ["ayashikunakatta desu", "ayashiku arimasen deshita"]
+    - word: "ja-2531"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "ぜいたくだった"
+        "na-janakatta": ["ぜいたくじゃなかった", "ぜいたくではなかった"]
+        "na-deshita": "ぜいたくでした"
+        "na-arimasen-deshita": ["ぜいたくではありませんでした", "ぜいたくじゃありませんでした"]
+      readings:
+        "na-datta": "zeitaku datta"
+        "na-janakatta": ["zeitaku ja nakatta", "zeitaku de wa nakatta"]
+        "na-deshita": "zeitaku deshita"
+        "na-arimasen-deshita": ["zeitaku de wa arimasen deshita", "zeitaku ja arimasen deshita"]
+    - word: "ja-2532"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "しんせんだった"
+        "na-janakatta": ["しんせんじゃなかった", "しんせんではなかった"]
+        "na-deshita": "しんせんでした"
+        "na-arimasen-deshita": ["しんせんではありませんでした", "しんせんじゃありませんでした"]
+      readings:
+        "na-datta": "shinsen datta"
+        "na-janakatta": ["shinsen ja nakatta", "shinsen de wa nakatta"]
+        "na-deshita": "shinsen deshita"
+        "na-arimasen-deshita": ["shinsen de wa arimasen deshita", "shinsen ja arimasen deshita"]
+    - word: "ja-2533"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "せいけつだった"
+        "na-janakatta": ["せいけつじゃなかった", "せいけつではなかった"]
+        "na-deshita": "せいけつでした"
+        "na-arimasen-deshita": ["せいけつではありませんでした", "せいけつじゃありませんでした"]
+      readings:
+        "na-datta": "seiketsu datta"
+        "na-janakatta": ["seiketsu ja nakatta", "seiketsu de wa nakatta"]
+        "na-deshita": "seiketsu deshita"
+        "na-arimasen-deshita": ["seiketsu de wa arimasen deshita", "seiketsu ja arimasen deshita"]
+    - word: "ja-2534"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "ふけつだった"
+        "na-janakatta": ["ふけつじゃなかった", "ふけつではなかった"]
+        "na-deshita": "ふけつでした"
+        "na-arimasen-deshita": ["ふけつではありませんでした", "ふけつじゃありませんでした"]
+      readings:
+        "na-datta": "fuketsu datta"
+        "na-janakatta": ["fuketsu ja nakatta", "fuketsu de wa nakatta"]
+        "na-deshita": "fuketsu deshita"
+        "na-arimasen-deshita": ["fuketsu de wa arimasen deshita", "fuketsu ja arimasen deshita"]
+    - word: "ja-2535"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "ゆたかだった"
+        "na-janakatta": ["ゆたかじゃなかった", "ゆたかではなかった"]
+        "na-deshita": "ゆたかでした"
+        "na-arimasen-deshita": ["ゆたかではありませんでした", "ゆたかじゃありませんでした"]
+      readings:
+        "na-datta": "yutaka datta"
+        "na-janakatta": ["yutaka ja nakatta", "yutaka de wa nakatta"]
+        "na-deshita": "yutaka deshita"
+        "na-arimasen-deshita": ["yutaka de wa arimasen deshita", "yutaka ja arimasen deshita"]
+    - word: "ja-2536"
+      forms:
+        "i-nakatta": "まずしくなかった"
+        "i-katta-desu": "まずしかったです"
+        "i-nakatta-desu": ["まずしくなかったです", "まずしくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "mazushikunakatta"
+        "i-katta-desu": "mazushikatta desu"
+        "i-nakatta-desu": ["mazushikunakatta desu", "mazushiku arimasen deshita"]
+    - word: "ja-2537"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "きらくだった"
+        "na-janakatta": ["きらくじゃなかった", "きらくではなかった"]
+        "na-deshita": "きらくでした"
+        "na-arimasen-deshita": ["きらくではありませんでした", "きらくじゃありませんでした"]
+      readings:
+        "na-datta": "kiraku datta"
+        "na-janakatta": ["kiraku ja nakatta", "kiraku de wa nakatta"]
+        "na-deshita": "kiraku deshita"
+        "na-arimasen-deshita": ["kiraku de wa arimasen deshita", "kiraku ja arimasen deshita"]
+    - word: "ja-2538"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "しょうじきだった"
+        "na-janakatta": ["しょうじきじゃなかった", "しょうじきではなかった"]
+        "na-deshita": "しょうじきでした"
+        "na-arimasen-deshita": ["しょうじきではありませんでした", "しょうじきじゃありませんでした"]
+      readings:
+        "na-datta": "shoujiki datta"
+        "na-janakatta": ["shoujiki ja nakatta", "shoujiki de wa nakatta"]
+        "na-deshita": "shoujiki deshita"
+        "na-arimasen-deshita": ["shoujiki de wa arimasen deshita", "shoujiki ja arimasen deshita"]
+    - word: "ja-2539"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "けちだった"
+        "na-janakatta": ["けちじゃなかった", "けちではなかった"]
+        "na-deshita": "けちでした"
+        "na-arimasen-deshita": ["けちではありませんでした", "けちじゃありませんでした"]
+      readings:
+        "na-datta": "kechi datta"
+        "na-janakatta": ["kechi ja nakatta", "kechi de wa nakatta"]
+        "na-deshita": "kechi deshita"
+        "na-arimasen-deshita": ["kechi de wa arimasen deshita", "kechi ja arimasen deshita"]
+    - word: "ja-2540"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "まじめだった"
+        "na-janakatta": ["まじめじゃなかった", "まじめではなかった"]
+        "na-deshita": "まじめでした"
+        "na-arimasen-deshita": ["まじめではありませんでした", "まじめじゃありませんでした"]
+      readings:
+        "na-datta": "majime datta"
+        "na-janakatta": ["majime ja nakatta", "majime de wa nakatta"]
+        "na-deshita": "majime deshita"
+        "na-arimasen-deshita": ["majime de wa arimasen deshita", "majime ja arimasen deshita"]
+    - word: "ja-2541"
+      forms:
+        "i-nakatta": "おそろしくなかった"
+        "i-katta-desu": "おそろしかったです"
+        "i-nakatta-desu": ["おそろしくなかったです", "おそろしくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "osoroshikunakatta"
+        "i-katta-desu": "osoroshikatta desu"
+        "i-nakatta-desu": ["osoroshikunakatta desu", "osoroshiku arimasen deshita"]
+    - word: "ja-2760"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "しあわせだった"
+        "na-janakatta": ["しあわせじゃなかった", "しあわせではなかった"]
+        "na-deshita": "しあわせでした"
+        "na-arimasen-deshita": ["しあわせではありませんでした", "しあわせじゃありませんでした"]
+      readings:
+        "na-datta": "shiawase datta"
+        "na-janakatta": ["shiawase ja nakatta", "shiawase de wa nakatta"]
+        "na-deshita": "shiawase deshita"
+        "na-arimasen-deshita": ["shiawase de wa arimasen deshita", "shiawase ja arimasen deshita"]
+    - word: "ja-2761"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "ふしあわせだった"
+        "na-janakatta": ["ふしあわせじゃなかった", "ふしあわせではなかった"]
+        "na-deshita": "ふしあわせでした"
+        "na-arimasen-deshita": ["ふしあわせではありませんでした", "ふしあわせじゃありませんでした"]
+      readings:
+        "na-datta": "fushiawase datta"
+        "na-janakatta": ["fushiawase ja nakatta", "fushiawase de wa nakatta"]
+        "na-deshita": "fushiawase deshita"
+        "na-arimasen-deshita": ["fushiawase de wa arimasen deshita", "fushiawase ja arimasen deshita"]
+    - word: "ja-2762"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "ふこうだった"
+        "na-janakatta": ["ふこうじゃなかった", "ふこうではなかった"]
+        "na-deshita": "ふこうでした"
+        "na-arimasen-deshita": ["ふこうではありませんでした", "ふこうじゃありませんでした"]
+      readings:
+        "na-datta": "fukou datta"
+        "na-janakatta": ["fukou ja nakatta", "fukou de wa nakatta"]
+        "na-deshita": "fukou deshita"
+        "na-arimasen-deshita": ["fukou de wa arimasen deshita", "fukou ja arimasen deshita"]
+    - word: "ja-2808"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "ふゆかいだった"
+        "na-janakatta": ["ふゆかいじゃなかった", "ふゆかいではなかった"]
+        "na-deshita": "ふゆかいでした"
+        "na-arimasen-deshita": ["ふゆかいではありませんでした", "ふゆかいじゃありませんでした"]
+      readings:
+        "na-datta": "fuyukai datta"
+        "na-janakatta": ["fuyukai ja nakatta", "fuyukai de wa nakatta"]
+        "na-deshita": "fuyukai deshita"
+        "na-arimasen-deshita": ["fuyukai de wa arimasen deshita", "fuyukai ja arimasen deshita"]
+    - word: "ja-2809"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "ゆかいだった"
+        "na-janakatta": ["ゆかいじゃなかった", "ゆかいではなかった"]
+        "na-deshita": "ゆかいでした"
+        "na-arimasen-deshita": ["ゆかいではありませんでした", "ゆかいじゃありませんでした"]
+      readings:
+        "na-datta": "yukai datta"
+        "na-janakatta": ["yukai ja nakatta", "yukai de wa nakatta"]
+        "na-deshita": "yukai deshita"
+        "na-arimasen-deshita": ["yukai de wa arimasen deshita", "yukai ja arimasen deshita"]
+    - word: "ja-2810"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "かなしげだった"
+        "na-janakatta": ["かなしげじゃなかった", "かなしげではなかった"]
+        "na-deshita": "かなしげでした"
+        "na-arimasen-deshita": ["かなしげではありませんでした", "かなしげじゃありませんでした"]
+      readings:
+        "na-datta": "kanashige datta"
+        "na-janakatta": ["kanashige ja nakatta", "kanashige de wa nakatta"]
+        "na-deshita": "kanashige deshita"
+        "na-arimasen-deshita": ["kanashige de wa arimasen deshita", "kanashige ja arimasen deshita"]
+    - word: "ja-2811"
+      forms:
+        "i-nakatta": "たのもしくなかった"
+        "i-katta-desu": "たのもしかったです"
+        "i-nakatta-desu": ["たのもしくなかったです", "たのもしくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "tanomoshikunakatta"
+        "i-katta-desu": "tanomoshikatta desu"
+        "i-nakatta-desu": ["tanomoshikunakatta desu", "tanomoshiku arimasen deshita"]
+    - word: "ja-3292"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "ぶしつけだった"
+        "na-janakatta": ["ぶしつけじゃなかった", "ぶしつけではなかった"]
+        "na-deshita": "ぶしつけでした"
+        "na-arimasen-deshita": ["ぶしつけではありませんでした", "ぶしつけじゃありませんでした"]
+      readings:
+        "na-datta": "bushitsuke datta"
+        "na-janakatta": ["bushitsuke ja nakatta", "bushitsuke de wa nakatta"]
+        "na-deshita": "bushitsuke deshita"
+        "na-arimasen-deshita": ["bushitsuke de wa arimasen deshita", "bushitsuke ja arimasen deshita"]
+    - word: "ja-3307"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "ひじょうしきだった"
+        "na-janakatta": ["ひじょうしきじゃなかった", "ひじょうしきではなかった"]
+        "na-deshita": "ひじょうしきでした"
+        "na-arimasen-deshita": ["ひじょうしきではありませんでした", "ひじょうしきじゃありませんでした"]
+      readings:
+        "na-datta": "hijoushiki datta"
+        "na-janakatta": ["hijoushiki ja nakatta", "hijoushiki de wa nakatta"]
+        "na-deshita": "hijoushiki deshita"
+        "na-arimasen-deshita": ["hijoushiki de wa arimasen deshita", "hijoushiki ja arimasen deshita"]
+    - word: "ja-3308"
+      forms:
+        "i-nakatta": "のぞましくなかった"
+        "i-katta-desu": "のぞましかったです"
+        "i-nakatta-desu": ["のぞましくなかったです", "のぞましくありませんでした"]
+        "na-datta": null
+        "na-janakatta": null
+        "na-deshita": null
+        "na-arimasen-deshita": null
+      readings:
+        "i-nakatta": "nozomashikunakatta"
+        "i-katta-desu": "nozomashikatta desu"
+        "i-nakatta-desu": ["nozomashikunakatta desu", "nozomashiku arimasen deshita"]
+    - word: "ja-3799"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "ちゅうじつだった"
+        "na-janakatta": ["ちゅうじつじゃなかった", "ちゅうじつではなかった"]
+        "na-deshita": "ちゅうじつでした"
+        "na-arimasen-deshita": ["ちゅうじつではありませんでした", "ちゅうじつじゃありませんでした"]
+      readings:
+        "na-datta": "chuujitsu datta"
+        "na-janakatta": ["chuujitsu ja nakatta", "chuujitsu de wa nakatta"]
+        "na-deshita": "chuujitsu deshita"
+        "na-arimasen-deshita": ["chuujitsu de wa arimasen deshita", "chuujitsu ja arimasen deshita"]
+    - word: "ja-4200"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "たしかだった"
+        "na-janakatta": ["たしかじゃなかった", "たしかではなかった"]
+        "na-deshita": "たしかでした"
+        "na-arimasen-deshita": ["たしかではありませんでした", "たしかじゃありませんでした"]
+      readings:
+        "na-datta": "tashika datta"
+        "na-janakatta": ["tashika ja nakatta", "tashika de wa nakatta"]
+        "na-deshita": "tashika deshita"
+        "na-arimasen-deshita": ["tashika de wa arimasen deshita", "tashika ja arimasen deshita"]
+    - word: "ja-4201"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "あきらかだった"
+        "na-janakatta": ["あきらかじゃなかった", "あきらかではなかった"]
+        "na-deshita": "あきらかでした"
+        "na-arimasen-deshita": ["あきらかではありませんでした", "あきらかじゃありませんでした"]
+      readings:
+        "na-datta": "akiraka datta"
+        "na-janakatta": ["akiraka ja nakatta", "akiraka de wa nakatta"]
+        "na-deshita": "akiraka deshita"
+        "na-arimasen-deshita": ["akiraka de wa arimasen deshita", "akiraka ja arimasen deshita"]
+    - word: "ja-4199"
+      forms:
+        "i-nakatta": null
+        "i-katta-desu": null
+        "i-nakatta-desu": null
+        "na-datta": "おなじだった"
+        "na-janakatta": ["おなじじゃなかった", "おなじではなかった"]
+        "na-deshita": "おなじでした"
+        "na-arimasen-deshita": ["おなじではありませんでした", "おなじじゃありませんでした"]
+      readings:
+        "na-datta": "onaji datta"
+        "na-janakatta": ["onaji ja nakatta", "onaji de wa nakatta"]
+        "na-deshita": "onaji deshita"
+        "na-arimasen-deshita": ["onaji de wa arimasen deshita", "onaji ja arimasen deshita"]
+rules:
+  - id: "ja-rule-i-nakatta"
+    slots: ["i-nakatta"]
+    words:
+      - { word: "おいしくなかった", reading: "oishikunakatta" }
+      - { word: "さむくなかった", reading: "samukunakatta" }
+      - { word: "よくなかった", reading: "yokunakatta" }
+  - id: "ja-rule-i-polite-past"
+    slots: ["i-katta-desu", "i-nakatta-desu"]
+    words:
+      - { word: "おいしかったです", reading: "oishikatta desu" }
+      - { word: "おいしくなかったです", reading: "oishikunakatta desu" }
+      - { word: "おいしくありませんでした", reading: "oishiku arimasen deshita" }
+      - { word: "よかったです", reading: "yokatta desu" }
+  - id: "ja-rule-na-datta"
+    slots: ["na-datta"]
+    words:
+      - { word: "しずかだった", reading: "shizuka datta" }
+      - { word: "きれいだった", reading: "kirei datta" }
+  - id: "ja-rule-na-janakatta"
+    slots: ["na-janakatta"]
+    words:
+      - { word: "しずかじゃなかった", reading: "shizuka ja nakatta" }
+      - { word: "きれいではなかった", reading: "kirei de wa nakatta" }
+  - id: "ja-rule-na-polite-past"
+    slots: ["na-deshita", "na-arimasen-deshita"]
+    words:
+      - { word: "しずかでした", reading: "shizuka deshita" }
+      - { word: "しずかではありませんでした", reading: "shizuka de wa arimasen deshita" }
+      - { word: "しずかじゃありませんでした", reading: "shizuka ja arimasen deshita" }
