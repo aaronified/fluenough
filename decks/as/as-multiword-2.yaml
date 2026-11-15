@@ -1,0 +1,208 @@
+# Assamese multi-word verbs: a noun or adjective with a verb other than কৰা (kôrā), the conjunct verbs not yet in as-grammar-conjunct-verbs.
+# Every verb is attested on its en.wiktionary page, named in the card's usage note.
+schema: 1
+id: "as-multiword-2"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+genre: "multiword"
+pattern_family: "conjunct-verb-other"
+level: "B1"
+tags: ["unreviewed"]
+cards:
+  - id: "as-4600"
+    target: "কাতি হোৱা"
+    words: ["কাতি", "হোৱা"]
+    reading: "kāti huwā"
+    ipa: "kati hʊwa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "কাতি", base: "কাতি", reading: "kāti" }
+      - { word: "হোৱা", base: "হোৱা", reading: "huwā" }
+  - id: "as-4601"
+    target: "চুটি হোৱা"
+    words: ["চুটি", "হোৱা"]
+    reading: "suti huwā"
+    ipa: "suti hʊwa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "চুটি", ref: "as-2275" }
+      - { word: "হোৱা", base: "হোৱা", reading: "huwā" }
+  - id: "as-4602"
+    target: "দীঘল হোৱা"
+    words: ["দীঘল", "হোৱা"]
+    reading: "dighôl huwā"
+    ipa: "diɡʱɔl hʊwa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "দীঘল", ref: "as-2276" }
+      - { word: "হোৱা", base: "হোৱা", reading: "huwā" }
+  - id: "as-4603"
+    target: "হজম হোৱা"
+    words: ["হজম", "হোৱা"]
+    reading: "hôzôm huwā"
+    ipa: "hɔzɔm hʊwa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "হজম", base: "হজম", reading: "hôzôm" }
+      - { word: "হোৱা", base: "হোৱা", reading: "huwā" }
+  - id: "as-4604"
+    target: "ৰঙা হোৱা"
+    words: ["ৰঙা", "হোৱা"]
+    reading: "rôṅā huwā"
+    ipa: "ɹɔŋa hʊwa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ৰঙা", ref: "as-2463" }
+      - { word: "হোৱা", base: "হোৱা", reading: "huwā" }
+  - id: "as-4605"
+    target: "গোট খোৱা"
+    words: ["গোট", "খোৱা"]
+    reading: "gut khuwā"
+    ipa: "ɡʊt kʰʊwa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "গোট", base: "গোট", reading: "gut" }
+      - { word: "খোৱা", ref: "as-0109" }
+  - id: "as-4606"
+    target: "মন যোৱা"
+    words: ["মন", "যোৱা"]
+    reading: "môn zuwā"
+    ipa: "mɔn zʊwa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "মন", ref: "as-0056" }
+      - { word: "যোৱা", ref: "as-2200" }
+  - id: "as-4607"
+    target: "গম পোৱা"
+    words: ["গম", "পোৱা"]
+    reading: "gôm puwā"
+    ipa: "ɡɔm pʊwa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "গম", base: "গম", reading: "gôm" }
+      - { word: "পোৱা", base: "পোৱা", reading: "puwā" }
+  - id: "as-4608"
+    target: "যোগান ধৰা"
+    words: ["যোগান", "ধৰা"]
+    reading: "zugān dhôrā"
+    ipa: "zʊɡan dʱɔɹa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "যোগান", base: "যোগান", reading: "zugān" }
+      - { word: "ধৰা", ref: "as-2297" }
+  - id: "as-4609"
+    target: "খোজ কঢ়া"
+    words: ["খোজ", "কঢ়া"]
+    reading: "khoz kôrhā"
+    ipa: "kʰoz kɔɹa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "খোজ", base: "খোজ", reading: "khoz" }
+      - { word: "কঢ়া", base: "কঢ়া", reading: "kôrhā" }
+  - id: "as-4610"
+    target: "থু পেলোৱা"
+    words: ["থু", "পেলোৱা"]
+    reading: "thu peluwā"
+    ipa: "tʰu pelʊwa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "থু", base: "থু", reading: "thu" }
+      - { word: "পেলোৱা", ref: "as-2850" }
+  - id: "as-4611"
+    target: "পিক পেলোৱা"
+    words: ["পিক", "পেলোৱা"]
+    reading: "pik peluwā"
+    ipa: "pik pelʊwa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "পিক", base: "পিক", reading: "pik" }
+      - { word: "পেলোৱা", ref: "as-2850" }
+  - id: "as-4612"
+    target: "কবৰ দিয়া"
+    words: ["কবৰ", "দিয়া"]
+    reading: "kôbôr diyā"
+    ipa: "kɔbɔɹ dija"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "কবৰ", base: "কবৰ", reading: "kôbôr" }
+      - { word: "দিয়া", ref: "as-2218" }
+  - id: "as-4613"
+    target: "উগাৰ মাৰা"
+    words: ["উগাৰ", "মাৰা"]
+    reading: "ugār mārā"
+    ipa: "uɡaɹ maɹa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "উগাৰ", base: "উগাৰ", reading: "ugār" }
+      - { word: "মাৰা", ref: "as-2311" }
+  - id: "as-4614"
+    target: "নাম কঢ়া"
+    words: ["নাম", "কঢ়া"]
+    reading: "nām kôrhā"
+    ipa: "nam kɔɹa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "নাম", ref: "as-0166" }
+      - { word: "কঢ়া", base: "কঢ়া", reading: "kôrhā" }
