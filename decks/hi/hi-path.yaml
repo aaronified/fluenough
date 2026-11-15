@@ -244,16 +244,16 @@ units:
     milestone: "A1"
   # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
   # then its sentences.
-  - decks: ["hi-daily-life", "hi-grammar-conjunct-verbs", "*"]
+  - decks: ["hi-daily-life", "hi-daily-life-sentences", "hi-grammar-conjunct-verbs", "*"]
     words: 7
     grammar: ["conjunct-verbs"]
-  - decks: ["hi-weather", "hi-reading-weather", "*"]
+  - decks: ["hi-weather", "hi-weather-sentences", "hi-reading-weather", "*"]
     words: 45
     listening_passages:
       - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain and wind" } }
     reading_passages:
       - { id: "weather-message", text: { "en": "A message to a friend about the monsoon" } }
-  - decks: ["hi-calendar", "hi-grammar-past", "*"]
+  - decks: ["hi-calendar", "hi-calendar-sentences", "hi-grammar-past", "*"]
     words: 15
     grammar: ["past"]
   - decks: ["hi-grammar-ordinals", "hi-reading-ordinals"]
@@ -263,7 +263,7 @@ units:
       - { id: "which-floor", text: { "en": "Finding a flat: the first floor, the second, the third" } }
     reading_passages:
       - { id: "month-calendar", text: { "en": "A calendar of events: the first, second and third week of the month" } }
-  - decks: ["hi-festivals", "hi-reading-festivals", "*"]
+  - decks: ["hi-festivals", "hi-festivals-sentences", "hi-reading-festivals", "*"]
     words: 40
     listening_passages:
       - { id: "festival-days", text: { "en": "Neighbours plan the days of a festival together" } }

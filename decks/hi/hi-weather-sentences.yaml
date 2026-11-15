@@ -1,0 +1,167 @@
+schema: 1
+id: "hi-weather-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-4920"
+    target: "आज धूप है।"
+    reading: "āj dhūp hai."
+    ipa: "aːdʒ d̪ʱuːp ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "आज", ref: "hi-0299" }
+      - { word: "धूप", ref: "hi-1255" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1256", kind: "word" }
+      - { id: "w2", ref: "hi-1254", kind: "word" }
+  - id: "hi-4921"
+    target: "आसमान में बादल हैं।"
+    reading: "āsmān mēm̐ bādal haim̐."
+    ipa: "aːsmaːn mẽː baːd̪əl ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "आसमान", ref: "hi-1261" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "बादल", ref: "hi-1260" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", ref: "hi-1262", kind: "word" }
+      - { id: "w2", ref: "hi-1263", kind: "word" }
+  - id: "hi-4922"
+    target: "आज बहुत गर्मी है।"
+    reading: "āj bahut garmī hai."
+    ipa: "aːdʒ bəɦʊt̪ ɡərmiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "आज", ref: "hi-0299" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "गर्मी", ref: "hi-1270" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1271", kind: "word" }
+      - { id: "w2", ref: "hi-1269", kind: "word" }
+  - id: "hi-4923"
+    target: "बारिश तेज़ है।"
+    reading: "bāriś tēz hai."
+    ipa: "baːrɪʃ t̪eːz ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "बारिश", ref: "hi-1254" }
+      - { word: "तेज़", ref: "hi-1289" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1275", kind: "word" }
+      - { id: "w2", ref: "hi-1276", kind: "word" }
+  - id: "hi-4924"
+    target: "हवा ठंडी है।"
+    reading: "havā ṭhaṇḍī hai."
+    ipa: "ɦəʋaː ʈʰəɳɖiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "हवा", ref: "hi-1257" }
+      - { word: "ठंडी", base: "ठंडा", reading: "ṭhaṇḍī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1258", kind: "word" }
+      - { id: "w2", ref: "hi-1259", kind: "word" }
+  - id: "hi-4925"
+    target: "सूरज चमक रहा है।"
+    reading: "sūraj camak rahā hai."
+    ipa: "suːrədʒ tʃəmək rəɦaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "सूरज", ref: "hi-1262" }
+      - { word: "चमक", base: "चमकना", reading: "camak" }
+      - { word: "रहा", base: "रहना", reading: "rahā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1263", kind: "word" }
+      - { id: "w2", ref: "hi-1264", kind: "word" }
+  - id: "hi-4926"
+    target: "आज बादल गरज रहे हैं।"
+    reading: "āj bādal garaj rahē haim̐."
+    ipa: "aːdʒ baːd̪əl ɡərədʒ rəɦeː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "आज", ref: "hi-0299" }
+      - { word: "बादल", ref: "hi-1260" }
+      - { word: "गरज", base: "गरजना", reading: "garaj" }
+      - { word: "रहे", base: "रहना", reading: "rahē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", ref: "hi-1292", kind: "word" }
+      - { id: "w2", ref: "hi-1294", kind: "word" }
+  - id: "hi-4927"
+    target: "बरसात में बहुत पानी बरसता है।"
+    reading: "barsāt mēm̐ bahut pānī barastā hai."
+    ipa: "bərsaːt̪ mẽː bəɦʊt̪ paːniː bərəst̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "बरसात", ref: "hi-1272" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "पानी", ref: "hi-0333" }
+      - { word: "बरसता", base: "बरसना", reading: "barastā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1273", kind: "word" }
+      - { id: "w2", ref: "hi-1277", kind: "word" }
+  - id: "hi-4928"
+    target: "इस मौसम में ओस पड़ती है।"
+    reading: "is mausam mēm̐ ōs paṛtī hai."
+    ipa: "ɪs mɔːsəm mẽː oːs pəɽt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "इस", base: "यह", reading: "is" }
+      - { word: "मौसम", ref: "hi-1253" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "ओस", ref: "hi-1281" }
+      - { word: "पड़ती", base: "पड़ना", reading: "paṛtī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1267", kind: "word" }
+      - { id: "w2", ref: "hi-1297", kind: "word" }
+  - id: "hi-4929"
+    target: "सर्दी में कोहरा होता है।"
+    reading: "sardī mēm̐ kōhrā hōtā hai."
+    ipa: "sərd̪iː mẽː koːɦraː ɦoːt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "सर्दी", ref: "hi-1271" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "कोहरा", ref: "hi-1267" }
+      - { word: "होता", base: "होना", reading: "hōtā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1270", kind: "word" }
+      - { id: "w2", ref: "hi-1272", kind: "word" }
+  - id: "hi-4930"
+    target: "आज मौसम सुहावना है।"
+    reading: "āj mausam suhāvnā hai."
+    ipa: "aːdʒ mɔːsəm sʊɦaːʋnaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "आज", ref: "hi-0299" }
+      - { word: "मौसम", ref: "hi-1253" }
+      - { word: "सुहावना", ref: "hi-1286" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1288", kind: "word" }
+      - { id: "w2", ref: "hi-1291", kind: "word" }
+  - id: "hi-4931"
+    target: "बूँदें गिर रही हैं।"
+    reading: "būm̐dēm̐ gir rahī haim̐."
+    ipa: "bũːd̪ẽː ɡɪr rəɦiː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "बूँदें", base: "बूँद", reading: "būm̐dēm̐" }
+      - { word: "गिर", base: "गिरना", reading: "gir" }
+      - { word: "रही", base: "रहना", reading: "rahī" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", ref: "hi-1268", kind: "word" }
+      - { id: "w2", ref: "hi-1281", kind: "word" }
