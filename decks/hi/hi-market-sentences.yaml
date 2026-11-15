@@ -1,0 +1,155 @@
+schema: 1
+id: "hi-market-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-4695"
+    target: "यह सब्ज़ी कितने की है?"
+    reading: "yah sabzī kitnē kī hai?"
+    ipa: "jəɦ səbziː kɪt̪neː kiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "सब्ज़ी", ref: "hi-0249" }
+      - { word: "कितने", base: "कितना", reading: "kitnē" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0157", kind: "word" }
+      - { id: "w2", ref: "hi-0162", kind: "word" }
+  - id: "hi-4696"
+    target: "दाम सौ रुपये है।"
+    reading: "dām sau rupayē hai."
+    ipa: "d̪aːm sɔː rʊpəjeː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "दाम", ref: "hi-0232" }
+      - { word: "सौ", ref: "hi-0225" }
+      - { word: "रुपये", base: "रुपया", reading: "rupayē" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0233", kind: "word" }
+      - { id: "w2", ref: "hi-0234", kind: "word" }
+  - id: "hi-4697"
+    target: "दाम थोड़ा कम कीजिए।"
+    reading: "dām thōṛā kam kījiē."
+    ipa: "d̪aːm t̪ʰoːɽaː kəm kiːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "दाम", ref: "hi-0232" }
+      - { word: "थोड़ा", ref: "hi-0865" }
+      - { word: "कम", ref: "hi-0105" }
+      - { word: "कीजिए", base: "करना", reading: "kījiē" }
+    confusables:
+      - { id: "w1", ref: "hi-0236", kind: "word" }
+      - { id: "w2", ref: "hi-0237", kind: "word" }
+  - id: "hi-4698"
+    target: "यह बहुत महँगा है।"
+    reading: "yah bahut maham̐gā hai."
+    ipa: "jəɦ bəɦʊt̪ məɦə̃ɡaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "महँगा", ref: "hi-0236" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0237", kind: "word" }
+      - { id: "w2", ref: "hi-0239", kind: "word" }
+  - id: "hi-4699"
+    target: "मेरे पास खुले पैसे नहीं हैं।"
+    reading: "mērē pās khulē paisē nahīm̐ haim̐."
+    ipa: "meːreː paːs kʰʊleː pɛːseː nəɦĩː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरे", base: "मेरा", reading: "mērē" }
+      - { word: "खुले", base: "खुला", reading: "khulē" }
+      - { word: "पैसे", ref: "hi-0234" }
+      - { word: "नहीं", ref: "hi-0156" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0233", kind: "word" }
+      - { id: "w2", ref: "hi-0232", kind: "word" }
+  - id: "hi-4700"
+    target: "पचास रुपये का नोट दीजिए।"
+    reading: "pacās rupayē kā nōṭa dījiē."
+    ipa: "pətʃaːs rʊpəjeː kaː noːʈə d̪iːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "पचास", ref: "hi-0220" }
+      - { word: "रुपये", base: "रुपया", reading: "rupayē" }
+      - { word: "का", base: "का", reading: "kā" }
+      - { word: "दीजिए", base: "देना", reading: "dījiē" }
+    confusables:
+      - { id: "w1", ref: "hi-0234", kind: "word" }
+      - { id: "w2", ref: "hi-0233", kind: "word" }
+  - id: "hi-4701"
+    target: "एक किलो टमाटर दीजिए।"
+    reading: "ēk kilō ṭamāṭar dījiē."
+    ipa: "eːk kɪloː ʈəmaːʈər d̪iːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "एक", ref: "hi-0198" }
+      - { word: "किलो", ref: "hi-0241" }
+      - { word: "टमाटर", ref: "hi-0252" }
+      - { word: "दीजिए", base: "देना", reading: "dījiē" }
+    confusables:
+      - { id: "w1", ref: "hi-0199", kind: "word" }
+      - { id: "w2", ref: "hi-0250", kind: "word" }
+  - id: "hi-4702"
+    target: "यह दुकान कहाँ है?"
+    reading: "yah dukān kahām̐ hai?"
+    ipa: "jəɦ d̪ʊkaːn kəɦãː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "दुकान", ref: "hi-0239" }
+      - { word: "कहाँ", ref: "hi-0159" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0160", kind: "word" }
+      - { id: "w2", ref: "hi-0158", kind: "word" }
+  - id: "hi-4703"
+    target: "मेरी दुकान पर सब कुछ सस्ता है।"
+    reading: "mērī dukān par sab kuch sastā hai."
+    ipa: "meːriː d̪ʊkaːn pər səb kʊtʃʰ səst̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", base: "मेरा", reading: "mērī" }
+      - { word: "दुकान", ref: "hi-0239" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "कुछ", ref: "hi-0759" }
+      - { word: "सस्ता", ref: "hi-0237" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0236", kind: "word" }
+      - { id: "w2", ref: "hi-0232", kind: "word" }
+  - id: "hi-4704"
+    target: "पैसे कौन देगा?"
+    reading: "paisē kaun dēgā?"
+    ipa: "pɛːseː kɔːn d̪eːɡaː"
+    pos: "phrase"
+    bases:
+      - { word: "पैसे", ref: "hi-0234" }
+      - { word: "कौन", ref: "hi-0158" }
+      - { word: "देगा", base: "देना", reading: "dēgā" }
+    confusables:
+      - { id: "w1", ref: "hi-0160", kind: "word" }
+      - { id: "w2", ref: "hi-0157", kind: "word" }
+  - id: "hi-4705"
+    target: "सौ रुपये में दो किलो आलू दीजिए।"
+    reading: "sau rupayē mēm̐ dō kilō ālū dījiē."
+    ipa: "sɔː rʊpəjeː mẽː d̪oː kɪloː aːluː d̪iːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "सौ", ref: "hi-0225" }
+      - { word: "रुपये", base: "रुपया", reading: "rupayē" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "दो", ref: "hi-0199" }
+      - { word: "किलो", ref: "hi-0241" }
+      - { word: "आलू", ref: "hi-0250" }
+      - { word: "दीजिए", base: "देना", reading: "dījiē" }
+    confusables:
+      - { id: "w1", ref: "hi-0251", kind: "word" }
+      - { id: "w2", ref: "hi-0252", kind: "word" }
