@@ -250,6 +250,45 @@ class Patching(Tree):
         self.assertEqual(new, JSONISH)
         self.assertEqual(left, {"zz-0003": "has phonetic", "n1": "not in file"})
 
+    # --- A plain id line over quoted field keys (decks-live's te files) ----
+
+    MIXED2 = ('"cards":\n- id: "zz-0001"\n  "target": "kat"\n  "ipa": "kat"\n'
+              '  "pos": "noun"\n  "examples":\n  - "target": "a kat"\n    "ipa": "a kat"\n')
+    MIXED4 = ('"cards":\n  - id: "zz-0001"\n    "target": "kat"\n    "ipa": "kat"\n'
+              '    "pos": "noun"\n    "examples":\n    - "target": "a kat"\n'
+              '      "ipa": "a kat"\n')
+
+    def test_plain_id_with_quoted_keys_is_patched_in_the_ipa_lines_style(self) -> None:
+        for name, text, pad in (("2", self.MIXED2, "  "), ("4", self.MIXED4, "    ")):
+            with self.subTest(indent=name):
+                new, left = pp.patch(text, {"zz-0001": ("[kʰat]", "rules")})
+                self.assertEqual(left, {})
+                self.assertIn(f'{pad}"ipa": "kat"\n{pad}"phonetic": "[kʰat]"\n'
+                              f'{pad}"phonetic_source": "rules"\n{pad}"pos"', new)
+                self.assertEqual(len(new.split("\n")), len(text.split("\n")) + 2)
+                self.assertEqual(new.count('"phonetic"'), 1)  # not the example's
+
+    def test_plain_id_with_quoted_keys_skips_and_replaces_like_the_others(self) -> None:
+        has = self.MIXED4.replace('    "pos"', '    "phonetic": "[kat̚]"\n'
+                                  '    "phonetic_source": "rules"\n    "pos"', 1)
+        new, left = pp.patch(has, {"zz-0001": ("[kʰat]", "rules")})
+        self.assertEqual((new, left), (has, {"zz-0001": "has phonetic"}))
+        new, left = pp.patch(has, {"zz-0001": ("[kʰat]", "rules")}, replace_rules=True)
+        self.assertEqual(left, {})
+        self.assertEqual(new, has.replace("[kat̚]", "[kʰat]"))
+
+    def test_quoted_id_with_plain_keys_is_patched_plain(self) -> None:
+        text = 'cards:\n  - "id": "zz-0001"\n    target: "kat"\n    ipa: "kat"\n    pos: "noun"\n'
+        new, left = pp.patch(text, {"zz-0001": ("[kʰat]", "rules")})
+        self.assertEqual(left, {})
+        self.assertIn('    ipa: "kat"\n    phonetic: "[kʰat]"\n    phonetic_source: "rules"\n', new)
+
+    def test_all_plain_and_all_quoted_files_are_unchanged_by_the_fix(self) -> None:
+        new, _ = pp.patch(CORE, {"zz-0001": ("[kʰat]", "rules")})
+        self.assertIn('    ipa: "kat"\n    phonetic: "[kʰat]"\n    phonetic_source: "rules"\n', new)
+        new, _ = pp.patch(QUOTED, {"zz-0001": ("[kʰat]", "rules")})
+        self.assertIn('  "ipa": "kat"\n  "phonetic": "[kʰat]"\n  "phonetic_source": "rules"\n', new)
+
     def test_a_card_in_every_layout_is_seen_by_core_cards(self) -> None:
         for name, text in (("zz-quoted", QUOTED), ("zz-json", JSONISH)):
             with self.subTest(name):
@@ -402,6 +441,60 @@ class Registry(Tree):
         reg.write_text("qq:\n  dump: Qux\n", encoding="utf-8")
         with self.assertRaisesRegex(ValueError, "qq"):
             ip.load_registry(reg)
+
+
+class Unwritable(Tree):
+    """A card the patcher cannot write is counted and fails a --write run."""
+
+    MIXED = ('schema: 1\n"id": "zz-mix"\n"part": "core"\n"kind": "vocab"\n'
+             '"language": { "code": "zz", "iso639_3": "zzz", "name": "Zed", "script": "latin" }\n'
+             '"license": "CC-BY-SA-4.0"\n"theme": "mix"\n"cards":\n'
+             '  - id: "zz-0101"\n    "target": "mat"\n    "ipa": "mat"\n    "pos": "noun"\n')
+
+    def setUp(self) -> None:
+        super().setUp()
+        (self.decks / "zz" / "zz-mix.yaml").write_text(self.MIXED, encoding="utf-8")
+        self.mix = self.decks / "zz" / "zz-mix.yaml"
+        (self.decks / "zz" / "zz-phonetics.yaml").write_text(
+            'schema: 1\nkind: "phonetics"\nid: "zz-phonetics"\nlanguage: "zz"\n'
+            'variety: "Zed"\nrules:\n  - id: "zz-r0"\n    pattern: \'t$\'\n'
+            '    replace: \'t̚\'\n    source: "A source, 2000"\n', encoding="utf-8")
+
+    def refuse(self):
+        return mock.patch.object(pp, "patch", lambda text, fills, replace_rules=False: (
+            text, {cid: "no ipa line" for cid in fills}))
+
+    def test_the_mixed_file_is_now_written_and_nothing_is_unwritable(self) -> None:
+        cov, _ = dp.run("zz", self.decks, write=True)
+        self.assertEqual(cov.total().get(pp.UNWRITABLE, 0), 0)
+        self.assertIn('"ipa": "mat"\n    "phonetic": "[mat̚]"\n    "phonetic_source": "rules"\n',
+                      self.mix.read_text(encoding="utf-8"))
+        self.assertEqual(dp.main(["derive", "zz", "--decks", str(self.decks), "--write"]), 0)
+
+    def test_derive_counts_a_miss_in_its_own_row_with_and_without_write(self) -> None:
+        for write in (False, True):
+            with self.subTest(write=write), self.refuse():
+                cov, _ = dp.run("zz", self.decks, write=write)
+                self.assertEqual(cov.decks["zz-mix"], {pp.UNWRITABLE: 1})
+                self.assertNotIn("filled", cov.decks["zz-mix"])
+                self.assertIn(pp.UNWRITABLE, cov.render("zz", dp.OUTCOMES, title="t"))
+
+    def test_derive_exits_1_under_write_and_0_without(self) -> None:
+        args = ["derive", "zz", "--decks", str(self.decks)]
+        with self.refuse():
+            self.assertEqual(dp.main(args), 0)
+            self.assertEqual(dp.main(args + ["--write"]), 1)
+
+    def test_import_counts_a_miss_and_exits_1_under_write(self) -> None:
+        dump = self.dump(entry("mat", sound("[kʰat]", note="Std")))
+        variety = {"zz": ip.Variety("Zed standard", notes=frozenset({"Std"}))}
+        with mock.patch.dict(ip.VARIETIES, variety), self.refuse():
+            cov, _ = ip.run("zz", dump, self.decks, False)
+            self.assertEqual(cov.decks["zz-mix"].get(pp.UNWRITABLE), 1)
+            self.assertEqual(ip.main(["import", "zz", "--decks", str(self.decks),
+                                      "--dump", str(dump)]), 0)
+            self.assertEqual(ip.main(["import", "zz", "--decks", str(self.decks),
+                                      "--dump", str(dump), "--write"]), 1)
 
 
 class Deriving(Tree):

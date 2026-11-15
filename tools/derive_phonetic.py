@@ -54,7 +54,7 @@ import validate_decks as vd  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 
 OUTCOMES = ["filled", "rederived", "unchanged", "has phonetic", "no phonetic",
-            "no ipa line", "invalid"]
+            "no ipa line", "invalid", pp.UNWRITABLE]
 
 
 @dataclass(frozen=True)
@@ -118,6 +118,7 @@ def run(lang: str, decks: Path, write: bool, bracket_unchanged: bool = False,
     ruleset = load_rules(decks / lang / f"{lang}-phonetics.yaml")
     coverage = pp.Coverage()
     fills: dict[Path, dict[str, tuple[str, str]]] = {}
+    outcomes: dict[tuple[Path, str], tuple[str, str]] = {}
     for card in pp.core_cards(decks, lang):
         deck = card.file.stem
         if card.phonetic is not None and not (
@@ -131,6 +132,7 @@ def run(lang: str, decks: Path, write: bool, bracket_unchanged: bool = False,
             elif (outcome == "filled" or bracket_unchanged) and form != card.phonetic:
                 coverage.add(deck, "rederived")
                 fills.setdefault(card.file, {})[card.cid] = (form, "rules")
+                outcomes[(card.file, card.cid)] = (deck, "rederived")
             else:
                 coverage.add(deck, "has phonetic")
         elif card.ipa is None or not card.block:
@@ -143,12 +145,8 @@ def run(lang: str, decks: Path, write: bool, bracket_unchanged: bool = False,
             coverage.add(deck, outcome)
             if form is not None and (outcome == "filled" or bracket_unchanged):
                 fills.setdefault(card.file, {})[card.cid] = (form, "rules")
-    if write:
-        for path, fill in fills.items():
-            text = path.read_text(encoding="utf-8")
-            new, _ = pp.patch(text, fill, replace_rules=rederive)
-            if new != text:
-                path.write_text(new, encoding="utf-8", newline="")
+                outcomes[(card.file, card.cid)] = (deck, outcome)
+    pp.apply_fills(fills, outcomes, coverage, write, replace_rules=rederive)
     return coverage, fills
 
 
@@ -186,7 +184,7 @@ def main(argv: list[str]) -> int:
     if args.report:
         args.report.write_text(report, encoding="utf-8")
     print(report)
-    return 0
+    return pp.unwritable_exit(coverage, args.write)
 
 
 if __name__ == "__main__":

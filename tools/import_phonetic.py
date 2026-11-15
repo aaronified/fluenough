@@ -131,7 +131,7 @@ def load_registry(path: Path = REGISTRY) -> tuple[dict[str, str], dict[str, Vari
 DUMP_NAMES, VARIETIES = load_registry()
 
 OUTCOMES = ["filled", "has phonetic", "no ipa line", "no entry", "no narrow form",
-            "other variety", "ambiguous", "invalid"]
+            "other variety", "ambiguous", "invalid", pp.UNWRITABLE]
 
 
 # --- The data ---------------------------------------------------------------
@@ -240,6 +240,7 @@ def run(lang: str, dump: Path, decks: Path, write: bool) -> tuple[pp.Coverage, d
         entries = read_entries(f, {c.target for c in cards})
     coverage = pp.Coverage()
     fills: dict[Path, dict[str, tuple[str, str]]] = {}
+    outcomes: dict[tuple[Path, str], tuple[str, str]] = {}
     for card in cards:
         deck = card.file.stem
         if card.phonetic is not None:
@@ -255,12 +256,8 @@ def run(lang: str, dump: Path, decks: Path, write: bool) -> tuple[pp.Coverage, d
             coverage.add(deck, outcome)
             if form is not None:
                 fills.setdefault(card.file, {})[card.cid] = (form, "wiktionary")
-    if write:
-        for path, fill in fills.items():
-            text = path.read_text(encoding="utf-8")
-            new, _ = pp.patch(text, fill)
-            if new != text:
-                path.write_text(new, encoding="utf-8", newline="")
+                outcomes[(card.file, card.cid)] = (deck, outcome)
+    pp.apply_fills(fills, outcomes, coverage, write)
     return coverage, fills
 
 
@@ -305,7 +302,7 @@ def main(argv: list[str]) -> int:
     if args.report:
         args.report.write_text(report, encoding="utf-8")
     print(report)
-    return 0
+    return pp.unwritable_exit(coverage, args.write)
 
 
 if __name__ == "__main__":
