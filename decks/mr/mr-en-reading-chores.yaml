@@ -1,0 +1,54 @@
+schema: 1
+id: "mr-en-reading-chores"
+name: "Reading: chores"
+kind: "reading"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A weekly chore list on the wall. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "mr-chore-list"
+    title: "Weekly chores"
+    sentences:
+      - text: "सोमवारी आई कपडे धुते."
+        reading: "somvāri āi kapḍe dhute."
+        ipa: "somʋari ai kəpɖe d̪ʱut̪e"
+      - text: "मंगळवारी मी भांडी घासतो."
+        reading: "maṅgaḷvāri mi bhāṇḍi ghāsto."
+        ipa: "məŋɡəɭʋari mi bʱaɳɖi ɡʱast̪o"
+      - text: "बुधवारी आपण खोली साफ करू."
+        reading: "budhvāri āpaṇ kholi sāph karu."
+        ipa: "bud̪ʱʋari apəɳ kʰoli sapʰ kəru"
+      - text: "शुक्रवारी कचरा बाहेर टाका."
+        reading: "śukravāri kacrā bāher ṭākā."
+        ipa: "ʃukrəʋari kətsra baɦer ʈaka"
+      - text: "रविवारी सगळे घरकाम करतात."
+        reading: "ravivāri sagḷe gharkām kartāt."
+        ipa: "rəʋiʋari səɡɭe ɡʱərkam kərt̪at̪"
+    questions:
+      - id: "mr-7012"
+        prompt:
+          en: "Who washes the clothes on Monday?"
+        options:
+        - en: "The mother"
+        - en: "The father"
+        - en: "The child"
+        answer: 0
+      - id: "mr-7013"
+        prompt:
+          en: "What has to be done on Friday?"
+        options:
+        - en: "Take out the rubbish"
+        - en: "Wash the clothes"
+        - en: "Clean the room"
+        answer: 0
+      - id: "mr-7014"
+        prompt:
+          en: "When does everyone do the housework?"
+        options:
+        - en: "On Sunday"
+        - en: "On Monday"
+        - en: "On Wednesday"
+        answer: 0
