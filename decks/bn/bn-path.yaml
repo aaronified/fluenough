@@ -200,9 +200,9 @@ units:
       - { id: "at-the-sweet-shop", text: { "en": "Choosing sweets and snacks at a sweet shop" } }
     reading_passages:
       - { id: "menu-card", text: { "en": "A restaurant menu card with dishes and prices" } }
-  - decks: ["bn-directions", "bn-grammar-continuous", "*"]
+  - decks: ["bn-directions", "bn-grammar-continuous", "bn-grammar-verb-continuous", "*"]
     words: 12
-    grammar: ["continuous"]
+    grammar: ["continuous", "continuous-first", "continuous-second", "continuous-third"]
   - decks: ["bn-transport", "*"]
     words: 9
   - decks: ["bn-body", "bn-body-sentences", "*"]
@@ -260,9 +260,9 @@ units:
       - { id: "village-visit", text: { "en": "A child names the animals seen on a visit to a village" } }
     reading_passages:
       - { id: "zoo-board", text: { "en": "A zoo board with each animal and what it eats" } }
-  - decks: ["bn-grammar-future"]
+  - decks: ["bn-grammar-future", "bn-grammar-verb-future"]
     words: 0
-    grammar: ["future"]
+    grammar: ["future", "future-first", "future-second", "future-third"]
     milestone: "A1"
   # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
   # then its sentences.
@@ -280,9 +280,9 @@ units:
   - decks: ["bn-sadhu-cholito"]
     words: 23
   - ["bn-reading-sahaj-path-1"]
-  - decks: ["bn-calendar", "bn-grammar-past", "*"]
+  - decks: ["bn-calendar", "bn-grammar-past", "bn-grammar-verb-past", "*"]
     words: 27
-    grammar: ["past"]
+    grammar: ["past", "past-first", "past-second", "past-third"]
   - decks: ["bn-grammar-ordinals", "bn-reading-ordinals"]
     words: 0
     grammar: ["ordinals"]
@@ -298,9 +298,9 @@ units:
       - { id: "festival-invitation", text: { "en": "An invitation to a festival meal" } }
   - decks: ["bn-reading-festivals"]
     words: 0
-  - decks: ["bn-grammar-perfect", "bn-grammar-past-negative"]
+  - decks: ["bn-grammar-perfect", "bn-grammar-verb-perfect", "bn-grammar-past-negative", "bn-grammar-verb-past-negative"]
     words: 0
-    grammar: ["perfect", "past-negative"]
+    grammar: ["perfect", "perfect-first", "perfect-second", "perfect-third", "past-negative", "past-negative-first", "past-negative-second", "past-negative-third"]
   - decks: ["bn-shopping", "bn-shopping-sentences", "*"]
     words: 49
     listening_passages:
@@ -309,9 +309,9 @@ units:
       - { id: "price-list", text: { "en": "A shop's price list and its offers" } }
   - decks: ["bn-reading-shopping"]
     words: 0
-  - decks: ["bn-grammar-past-more"]
+  - decks: ["bn-grammar-past-more", "bn-grammar-verb-past-perfect"]
     words: 0
-    grammar: ["past-more"]
+    grammar: ["past-more", "past-perfect-first", "past-perfect-second", "past-perfect-third"]
   - decks: ["bn-illness", "bn-illness-sentences", "*"]
     words: 50
     listening_passages:
@@ -365,16 +365,16 @@ units:
       - { id: "club-poster", text: { "en": "A poster for a sports and music club" } }
   - decks: ["bn-reading-hobbies"]
     words: 0
-  - decks: ["bn-grammar-imperatives"]
+  - decks: ["bn-grammar-imperatives", "bn-grammar-verb-imperative"]
     words: 0
-    grammar: ["imperatives"]
+    grammar: ["imperatives", "imperative"]
     listening_passages:
       - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class" } }
     reading_passages:
       - { id: "signs-and-rules", text: { "en": "Signs saying what to do and what not to do" } }
-  - decks: ["bn-grammar-past-continuous"]
+  - decks: ["bn-grammar-past-continuous", "bn-grammar-verb-past-continuous"]
     words: 0
-    grammar: ["past-continuous"]
+    grammar: ["past-continuous", "past-continuous-first", "past-continuous-second", "past-continuous-third"]
     listening_passages:
       - { id: "what-was-happening", text: { "en": "Saying what you were doing when the lights went out" } }
     reading_passages:
@@ -744,9 +744,9 @@ units:
       - { id: "book-blurb", text: { "en": "The back-cover blurb of a novel" } }
   - decks: ["bn-reading-literature"]
     words: 0
-  - decks: ["bn-grammar-habitual-past", "bn-grammar-habitual-past-sentences"]
+  - decks: ["bn-grammar-habitual-past", "bn-grammar-verb-habitual-past", "bn-grammar-habitual-past-sentences"]
     words: 0
-    grammar: ["habitual-past"]
+    grammar: ["habitual-past", "habitual-past-first", "habitual-past-second", "habitual-past-third"]
     listening_passages:
       - { id: "when-i-was-small", text: { "en": "Telling what you used to do when you were small" } }
     reading_passages:
