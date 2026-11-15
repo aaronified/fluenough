@@ -77,6 +77,9 @@ alphabet:
   - "bn-script-reading"
   - "bn-script-vowel-signs"
   - "bn-script-conjuncts"
+  - "bn-script-conjuncts-2"
+  - "bn-script-conjuncts-3"
+  - "bn-script-reading-2"
   - "bn-script-digits"
   - "bn-reading-sahaj-path-1"
   - "bn-spelling"
@@ -100,7 +103,7 @@ units:
   # 3. The script, after the first six units (#554: skipped by a learner
   # who already reads it).
   - ["bn-script-vowels", "bn-script-consonants", "bn-script-reading"]
-  - ["bn-script-vowel-signs", "bn-script-conjuncts", "bn-script-digits"]
+  - ["bn-script-vowel-signs", "bn-script-conjuncts", "bn-script-conjuncts-2", "bn-script-conjuncts-3", "bn-script-reading-2", "bn-script-digits"]
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
   - decks: ["bn-about-me", "*"]
@@ -142,7 +145,7 @@ units:
   - decks: ["bn-grammar-be"]
     words: 0
     grammar: ["be"]
-  - decks: ["bn-grammar-present", "bn-grammar-verb-present"]
+  - decks: ["bn-grammar-present", "bn-grammar-verb-present", "bn-adverbs-sentences", "bn-time-sentences", "bn-location-sentences"]
     words: 0
     grammar: ["present", "present-first", "present-second", "present-third", "polite-request"]
   - decks: ["bn-grammar-demonstratives"]
@@ -153,15 +156,15 @@ units:
     grammar: ["adjectives"]
   # 6. Sentences, each after its words and rules; then the other A1
   # themes, each its words, its rules, then its sentences.
-  - decks: ["bn-work", "*"]
+  - decks: ["bn-work", "bn-work-sentences", "*"]
     words: 21
-  - decks: ["bn-numbers-big", "*"]
+  - decks: ["bn-numbers-big", "bn-numbers-big-sentences", "*"]
     words: 93
   - decks: ["bn-food", "*"]
     words: 59
-  - decks: ["bn-groceries", "*"]
+  - decks: ["bn-groceries", "bn-groceries-sentences", "*"]
     words: 23
-  - decks: ["bn-market", "bn-grammar-nouns", "*"]
+  - decks: ["bn-market", "bn-grammar-nouns", "bn-market-sentences", "*"]
     words: 16
     grammar: ["nouns"]
   - decks: ["bn-pronouns-sentences"]
@@ -205,10 +208,10 @@ units:
       - { id: "menu-card", text: { "en": "A restaurant menu card with dishes and prices" } }
   - decks: ["bn-reading-food"]
     words: 0
-  - decks: ["bn-directions", "bn-grammar-continuous", "bn-grammar-verb-continuous", "*"]
+  - decks: ["bn-directions", "bn-grammar-continuous", "bn-directions-sentences", "bn-grammar-verb-continuous", "*"]
     words: 12
     grammar: ["continuous", "continuous-first", "continuous-second", "continuous-third"]
-  - decks: ["bn-transport", "*"]
+  - decks: ["bn-transport", "bn-transport-sentences", "*"]
     words: 9
   - decks: ["bn-body", "bn-body-sentences", "*"]
     words: 35
@@ -228,7 +231,7 @@ units:
     words: 0
   - decks: ["bn-things", "*"]
     words: 32
-  - decks: ["bn-home", "*"]
+  - decks: ["bn-home", "bn-home-sentences", "*"]
     words: 21
   - decks: ["bn-things-sentences", "bn-more-verbs-sentences"]
     words: 0
@@ -285,7 +288,7 @@ units:
     milestone: "A1"
   # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
   # then its sentences.
-  - decks: ["bn-daily-life", "bn-grammar-conjunct-verbs", "*"]
+  - decks: ["bn-daily-life", "bn-daily-life-sentences", "bn-grammar-conjunct-verbs", "*"]
     words: 26
     grammar: ["conjunct-verbs"]
   - decks: ["bn-weather", "bn-weather-sentences", "*"]
@@ -299,7 +302,7 @@ units:
   - decks: ["bn-sadhu-cholito"]
     words: 23
   - ["bn-reading-sahaj-path-1"]
-  - decks: ["bn-calendar", "bn-grammar-past", "bn-grammar-verb-past", "*"]
+  - decks: ["bn-calendar", "bn-calendar-sentences", "bn-grammar-past", "bn-grammar-verb-past", "*"]
     words: 27
     grammar: ["past", "past-first", "past-second", "past-third"]
   - decks: ["bn-grammar-ordinals", "bn-reading-ordinals"]
@@ -348,9 +351,9 @@ units:
       - { id: "small-accident-news", text: { "en": "A short news item about a small accident on the road" } }
   - decks: ["bn-reading-compound-verbs"]
     words: 0
-  - decks: ["bn-eating-out", "*"]
+  - decks: ["bn-eating-out", "bn-eating-out-sentences", "*"]
     words: 9
-  - decks: ["bn-cooking", "*"]
+  - decks: ["bn-cooking", "bn-cooking-sentences", "*"]
     words: 50
     listening_passages:
       - { id: "fish-curry-aloud", text: { "en": "A grandmother says how she cooks a fish curry" } }
@@ -367,10 +370,10 @@ units:
       - { id: "two-cities", text: { "en": "A short text comparing a village and a town" } }
   - decks: ["bn-reading-comparison"]
     words: 0
-  - decks: ["bn-help", "bn-grammar-irregular", "bn-grammar-pitfalls", "*"]
+  - decks: ["bn-help", "bn-help-sentences", "bn-grammar-irregular", "bn-grammar-pitfalls", "*"]
     words: 14
     grammar: ["irregular", "pitfalls"]
-  - decks: ["bn-school", "*"]
+  - decks: ["bn-school", "bn-school-sentences", "*"]
     words: 50
     listening_passages:
       - { id: "school-day", text: { "en": "A child describes the school day" } }
@@ -378,7 +381,7 @@ units:
       - { id: "class-timetable", text: { "en": "A school timetable" } }
   - decks: ["bn-reading-school"]
     words: 0
-  - decks: ["bn-hobbies", "*"]
+  - decks: ["bn-hobbies", "bn-hobbies-sentences", "*"]
     words: 50
     listening_passages:
       - { id: "weekend-hobbies", text: { "en": "Friends talk about what they do at weekends: football, music, adda" } }
