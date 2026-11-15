@@ -1,0 +1,62 @@
+schema: 1
+id: "mr-en-illness-sentences"
+kind: "layer"
+core: "mr-illness-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Illness words in sentences"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-6000":
+    native: "I have a cold and a cough."
+    bases: { "मला": "to me", "आहे": "is" }
+    confusables: { "w1": { why: "I, not to me: मी (mi) is the subject I, while मला (malā) is used for I have." }, "f1": { why: "You are, not I am: आहेस (āhes) is said to you." } }
+  "mr-6001":
+    native: "The nurse will give you a pill."
+    bases: { "तुला": "to you", "देईल": "will give" }
+    confusables: { "w1": { why: "You, polite or plural: तुम्ही (tumhi) is for more than one person or an elder; तुला (tulā) is to one friend." }, "f1": { why: "Present: देते (dete) means gives now; देईल (deil) is future." } }
+  "mr-6002":
+    native: "The nurse will do the check-up tomorrow."
+    bases: { "करेल": "will do" }
+    confusables: { "w1": { why: "Yesterday, not tomorrow: काल (kāl) means yesterday." }, "f1": { why: "Plural: करतील (kartil) is for more than one person; करेल (karel) is for one." } }
+  "mr-6003":
+    native: "The patient got well."
+    bases: { "बरा": "well", "झाला": "became" }
+    confusables: { "w1": { why: "Nurse, not patient: नर्स (nars) is the person who cares for patients." }, "f1": { why: "Feminine: झाली (jhāli) agrees with a feminine noun; रुग्ण (rugṇa) is masculine, so झाला (jhālā)." } }
+  "mr-6004":
+    native: "Does your head hurt?"
+    bases: { "तुझं": "your", "दुखतं": "hurts" }
+    confusables: { "w1": { why: "Leg or foot, not head: पाय (pāy) is a leg or foot." }, "f1": { why: "Masculine: दुखतो (dukhto) fits a masculine part such as a leg; a head is neuter, so दुखतं (dukhtam̐)." } }
+  "mr-6005":
+    native: "There was vomiting in the morning."
+    bases: { "सकाळी": "in the morning", "झाली": "happened" }
+    confusables: { "w1": { why: "Night, not morning: रात्री (rātri) means at night." }, "f1": { why: "Masculine: झाला (jhālā) fits a masculine noun; उलटी (ulṭi) is feminine, so झाली (jhāli)." } }
+  "mr-6006":
+    native: "Tie a bandage on the wound."
+    bases: { "जखमेवर": "on the wound", "बांधा": "tie" }
+    confusables: { "w1": { why: "Do, not tie: करा (karā) means do." }, "f1": { why: "Past: बांधला (bāndhalā) means tied; बांधा (bāndhā) is the order." } }
+  "mr-6007":
+    native: "Did he get dizzy?"
+    bases: { "त्याला": "to him", "आली": "came" }
+    confusables: { "w1": { why: "To her, not him: तिला (tilā) means to her." }, "f1": { why: "Masculine: आला (ālā) fits a masculine noun; चक्कर (cakkar) is feminine, so आली (āli)." } }
+  "mr-6008":
+    native: "Call the nurse at once."
+    bases: { "नर्सला": "the nurse", "बोलवा": "call" }
+    confusables: { "w1": { why: "Tell, not call: सांगा (sāṅgā) means tell." }, "f1": { why: "I call: बोलवतो (bolvto) is a statement; बोलवा (bolvā) is an order." } }
+  "mr-6009":
+    native: "Fever causes tiredness."
+    bases: { "तापामुळे": "because of fever", "येतो": "comes" }
+    confusables: { "w1": { why: "For, not because of: साठी (sāṭhi) means for." }, "f1": { why: "Feminine: येते (yete) fits a feminine subject; थकवा (thakvā) is masculine, so येतो (yeto)." } }
+  "mr-6010":
+    native: "Take the pill every day."
+    bases: { "रोज": "every day", "घ्या": "take" }
+    confusables: { "w1": { why: "Day, not every day: दिवस (divas) means a day." }, "f1": { why: "I take: घेतो (gheto) is a statement; घ्या (ghyā) is an order." } }
+  "mr-6011":
+    native: "His check-up was done."
+    bases: { "त्याची": "his", "झाली": "was done" }
+    confusables: { "w1": { why: "To him, not his: त्याला (tyālā) means to him." }, "f1": { why: "Masculine: झाला (jhālā) fits a masculine noun; तपासणी (tapāsṇi) is feminine, so झाली (jhāli)." } }
+  "mr-6012":
+    native: "Drink hot water for the cold."
+    bases: { "सर्दीवर": "for a cold", "गरम": "hot", "प्या": "drink" }
+    confusables: { "w1": { why: "Tea, not water: चहा (cahā) means tea." }, "f1": { why: "I drink: पितो (pito) is a statement; प्या (pyā) is an order." } }

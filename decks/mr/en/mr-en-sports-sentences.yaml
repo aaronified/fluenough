@@ -1,0 +1,49 @@
+schema: 1
+id: "mr-en-sports-sentences"
+kind: "layer"
+core: "mr-sports-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with sports words"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the sports and game words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-6525":
+    native: "Our team plays a match today."
+    bases: { "आमचा": "our", "खेळतो": "plays" }
+    confusables: { "w1": { why: "She, not our team: ती (ti) means she." }, "f1": { why: "Plural: खेळतात (kheḷtāt) is for many people; संघ (saṅgh) is one team." } }
+  "mr-6526":
+    native: "He scores a good goal."
+    bases: { "चांगला": "good" }
+    confusables: { "w1": { why: "She, not he: ती (ti) means she." }, "f1": { why: "Feminine: करते (karte) is for a woman; तो (to) is he, so करतो (karto)." } }
+  "mr-6527":
+    native: "The winning team won the gold medal."
+    bases: { "जिंकले": "won" }
+    confusables: { "w1": { why: "Defeat, not win: पराभव (parābhav) means defeat." }, "f1": { why: "Masculine singular: जिंकला (jiṅkalā) is for one man; the team won, so जिंकले (jiṅkale)." } }
+  "mr-6528":
+    native: "The captain throws the ball."
+    confusables: { "w1": { why: "Coach, not captain: प्रशिक्षक (praśikṣak) means coach." }, "f1": { why: "Plural: फेकतात (phektāt) is for more than one person; कर्णधार (karṇadhār) is one captain." } }
+  "mr-6529":
+    native: "They practised every day."
+    bases: { "त्यांनी": "they", "रोज": "every day", "सराव": "practice" }
+    confusables: { "w1": { why: "He, not they: तो (to) means he." }, "f1": { why: "Present, not past: करतो (karto) means does; केला (kelā) means did." } }
+  "mr-6530":
+    native: "I like hockey and cricket."
+    bases: { "मला": "to me", "आवडतात": "like" }
+    confusables: { "w1": { why: "You, not me: तू (tu) means you." }, "f1": { why: "Singular: आवडतो (āvḍto) is for one thing; hockey and cricket take आवडतात (āvḍtāt)." } }
+  "mr-6531":
+    native: "Where is my bat?"
+    bases: { "माझी": "my", "कुठे": "where", "आहे": "is" }
+    confusables: { "w1": { why: "Here, not where: इथे (ithe) means here." }, "f1": { why: "Plural: आहेत (āhet) is for more than one; one bat takes आहे (āhe)." } }
+  "mr-6532":
+    native: "The tennis match is tomorrow."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "Today, not tomorrow: आज (āj) means today." }, "f1": { why: "Plural: आहेत (āhet) is for more than one; one match takes आहे (āhe)." } }
+  "mr-6533":
+    native: "The coach runs practice today."
+    bases: { "सराव": "practice" }
+    confusables: { "w1": { why: "Team, not coach: संघ (saṅgh) means team." }, "f1": { why: "Plural: घेतात (ghetāt) is for more than one person; प्रशिक्षक (praśikṣak) is one coach." } }
+  "mr-6534":
+    native: "Playing kho-kho is fun."
+    bases: { "खेळायला": "to play", "मजा": "fun" }
+    confusables: { "w1": { why: "Kabaddi, not kho-kho: कबड्डी (kabaḍḍi) is a different game." }, "f1": { why: "Masculine: येतो (yeto) goes with a masculine subject; मजा (majā) is feminine, so येते (yete)." } }
