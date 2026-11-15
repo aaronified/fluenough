@@ -60,14 +60,14 @@ cards:
     pos: "phrase"
     tags: ["sentence"]
     bases: [{ word: "Llame", base: "llamar" }, { word: "una", base: "una" }, { word: "ambulancia", ref: "es-0870" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
-    confusables: [{ id: "policia", ref: "es-0868", kind: "word" }]
+    confusables: [{ id: "policia", ref: "es-0868", kind: "word" }, { id: "hospital", ref: "es-0772", kind: "word" }]
   - id: "es-4660"
     target: "Estoy herido."
     ipa: "esˈtoj eˈɾido"
     pos: "phrase"
     tags: ["sentence"]
     bases: [{ word: "Estoy", ref: "es-0023" }, { word: "herido", ref: "es-2825" }]
-    confusables: [{ id: "herida", ref: "es-1471", kind: "word" }]
+    confusables: [{ id: "herida", ref: "es-1471", kind: "word" }, { id: "accidente", ref: "es-0871", kind: "word" }]
   - id: "es-4661"
     target: "¡Cuidado!"
     ipa: "kwiˈdado"

@@ -34,15 +34,15 @@ cards:
   "es-4653":
     native: "I want to send a parcel."
     bases: { "un": "a" }
-    confusables: { "correo": { why: "Correo is the post as a whole, not the parcel you send." } }
+    confusables: { "correo": { why: "Correo is the post as a whole, not the parcel you send." }, "sobre": { why: "Sobre is an envelope, not the parcel you send." } }
   "es-4654":
     native: "I need a stamp, please."
     bases: { "un": "a", "por": "for", "favor": "please" }
-    confusables: { "sobre": { why: "Sobre is the envelope, not the stamp you stick on it." } }
+    confusables: { "sobre": { why: "Sobre is the envelope, not the stamp you stick on it." }, "correo": { why: "Correo is the post as a whole, not the stamp." } }
   "es-4655":
     native: "I want to take out money."
-    confusables: { "cambiar": { why: "Cambiar is to change money into another currency, not to take it out." } }
+    confusables: { "cambiar": { why: "Cambiar is to change money into another currency, not to take it out." }, "cajero": { why: "Cajero is the cash machine you take the money from, not the action." } }
   "es-4656":
     native: "Can I pay by card?"
     bases: { "con": "by" }
-    confusables: { "efectivo": { why: "Efectivo is cash, the other way to pay." } }
+    confusables: { "efectivo": { why: "Efectivo is cash, the other way to pay." }, "dinero": { why: "Dinero is money, a noun, not a way to pay." } }
