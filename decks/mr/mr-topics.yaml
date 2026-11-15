@@ -1,0 +1,80 @@
+# Topics a learner of Marathi would search for: what each one is, and the decks that teach it (wiki/Plan-Deck-Kinds-And-Topics.md, D6).
+# A script topic lists its script decks; a topic holds no card text of its own.
+schema: 1
+kind: "topics"
+id: "mr-topics"
+language: "mr"
+license: "CC-BY-SA-4.0"
+topics:
+  - id: "mr-postpositions"
+    name: { en: "Postpositions" }
+    summary: { en: "Marathi words that come after a noun, such as 'in', 'on', 'with' or 'for', and how they change the noun before them." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["mr-grammar-postpositions"]
+  - id: "mr-oblique-case"
+    name: { en: "The oblique case" }
+    summary: { en: "The oblique form of a noun or pronoun: the stem that changes before postpositions and before the -ne ending, as in 'in the house'." }
+    kind: "grammar"
+    level: "A2"
+    decks: ["mr-grammar-nouns", "mr-grammar-pronouns"]
+  - id: "mr-ergative-past"
+    name: { en: "The ergative past" }
+    summary: { en: "The past tense of many Marathi verbs, where the subject of a verb with an object takes the -ne ending and the verb agrees with the object." }
+    kind: "grammar"
+    level: "A2"
+    decks: ["mr-grammar-ergative-past"]
+  - id: "mr-gender"
+    name: { en: "Gender" }
+    summary: { en: "Whether Marathi nouns are masculine, feminine or neuter, and how verbs and adjectives agree with the noun they go with." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["mr-grammar-gender-number"]
+  - id: "mr-verb-to-be"
+    name: { en: "The verb to be" }
+    summary: { en: "The verb 'to be' in the present, past and future, and how its forms change with the person, number and gender of the subject." }
+    kind: "verbs"
+    level: "A1"
+    decks: ["mr-grammar-be"]
+  - id: "mr-tenses"
+    name: { en: "Tenses" }
+    summary: { en: "The present, past, future, perfect and continuous tenses, and how each one is built from the verb stem." }
+    kind: "verbs"
+    level: "A1"
+    decks: ["mr-grammar-present", "mr-grammar-past", "mr-grammar-future", "mr-grammar-perfect", "mr-grammar-continuous"]
+  - id: "mr-conditionals"
+    name: { en: "Conditionals" }
+    summary: { en: "If-clauses and the conditional form, for what would happen if something else were true." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["mr-grammar-conditional"]
+  - id: "mr-subjunctive"
+    name: { en: "The subjunctive" }
+    summary: { en: "The subjunctive verb form, used after wanting, asking and needing, and in clauses about what might or should happen." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["mr-grammar-subjunctive"]
+  - id: "mr-compound-verbs"
+    name: { en: "Compound and conjunct verbs" }
+    summary: { en: "Verbs built from two verbs, such as 'to eat up' or 'to forget', and verbs built from a noun and a helper verb, such as 'to work' or 'to help'." }
+    kind: "verbs"
+    level: "B1"
+    decks: ["mr-grammar-compound-verbs", "mr-grammar-conjunct-verbs"]
+  - id: "mr-honorifics"
+    name: { en: "Honorifics" }
+    summary: { en: "Respectful forms of address and of the verb, used with elders, strangers and people you want to show respect to." }
+    kind: "grammar"
+    level: "A2"
+    decks: ["mr-grammar-honorifics"]
+  - id: "mr-loanwords-registers"
+    name: { en: "Loanwords and registers" }
+    summary: { en: "Words borrowed from English that are common in everyday speech, and the formal and informal registers where they are used." }
+    kind: "words"
+    level: "B1"
+    decks: ["mr-registers", "mr-slang"]
+  - id: "mr-script"
+    name: { en: "The Devanagari script" }
+    summary: { en: "The Devanagari letters that write Marathi: vowels, consonants, vowel signs, conjunct letters and digits." }
+    kind: "script"
+    level: "A1"
+    decks: ["mr-script-vowels", "mr-script-consonants", "mr-script-vowel-signs", "mr-script-conjuncts", "mr-script-digits"]
