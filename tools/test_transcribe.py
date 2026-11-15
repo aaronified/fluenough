@@ -110,6 +110,43 @@ class ReadingTest(unittest.TestCase):
         t = transcribe("ఉందా", "te", "umda")
         self.assertEqual(t.reading, "undā")
 
+    def test_telugu_suffixes_and_bare_endings(self) -> None:
+        # #1357: a suffix written with a hyphen, and a bare ending, read as
+        # the vowel they stand for: no consonant, no inherent a, no script
+        # left in the reading.
+        for word, reading, ipa in (
+            ("-ిన", "-ina", "ina"),
+            ("-ఇన", "-ina", "ina"),
+            ("-అం", "-aṁ", "am"),
+            ("-ాం", "-āṁ", "aːm"),
+            ("ాం", "āṁ", "aːm"),
+            ("ా", "ā", "aː"),
+            ("ుంది", "undi", "und̪i"),
+        ):
+            with self.subTest(word):
+                t = transcribe(word, "te")
+                self.assertEqual((t.reading, t.ipa), (reading, ipa))
+        self.check("te", "-ిన", "-ina", "-ina", "ina")
+
+    def test_telugu_rare_letters(self) -> None:
+        # #1361: ఱ is ṟa (IPA as ర), ఌ ౡ follow ఋ, ౘ ౙ are ts and dz (ISO
+        # 15919 has no letter for them), ఁ is silent.
+        for word, reading, ipa in (
+            ("ఱ", "ṟa", "ra"),
+            ("ఱు", "ṟu", "ru"),
+            ("ఌ", "lu", "lu"),
+            ("ౡ", "lū", "luː"),
+            ("ౠ", "rū", "ruː"),
+            ("ౘ", "tsa", "tsa"),
+            ("ౙ", "dza", "dza"),
+            ("కౢ", "klu", "klu"),
+            ("ఁ", "", ""),
+            ("ః", "ḥ", "h"),
+        ):
+            with self.subTest(word):
+                t = transcribe(word, "te")
+                self.assertEqual((t.reading, t.ipa), (reading, ipa))
+
     def test_other_languages_keep_their_anusvara(self) -> None:
         self.check("hi", "संसार", "sansar", "saṁsār", "sə̃saːr")
 

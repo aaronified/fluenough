@@ -334,6 +334,15 @@ python3 tools/transcribe_decks.py --fix --all decks/te te   # every difference
 python3 tools/transcribe_decks.py --fix --citations decks/te te  # base citation readings
 ```
 
+Telugu input the tool reads (#1357, #1361; defaults set by the architect,
+the owner can overturn them): a dependent vowel sign with no consonant before
+it, as in a suffix written `-ిన` or a bare ending `ాం`, reads as the vowel it
+stands for, with no inherent a (`-ina`, `āṁ`, `ā`); the hyphen is kept in the
+reading. ఱ reads `ṟa` (IPA as ర, `r`). ఌ and ౡ follow ఋ: `lu` and `lū`
+(IPA `lu`, `luː`); the signs ౢ ౣ read the same. ౘ and ౙ read `tsa` and `dza`
+(IPA `ts`, `dz`); ISO 15919 has no letter for them. ఁ is silent (empty reading
+and IPA), ః reads `ḥ` and ౠ `rū`, as before.
+
 `--citations` is a pass of its own for the `reading` of an inline base
 (`{ word, base, reading }`: the reading of the base's dictionary form, which
 the other modes skip when `base` differs from `word`). It rewrites only a
