@@ -1,0 +1,19 @@
+schema: 1
+id: "bn-en-grammar-verb-imperative"
+kind: "layer"
+core: "bn-grammar-verb-imperative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verbs: commands to you (do it!)"
+description: "Every verb the course teaches, as a command (do it!) to each person you speak to: a child or close friend, a friend, and someone you respect. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "person"
+  slots:
+    "tui": "you (intimate), as a command"
+    "tumi": "you (familiar), as a command"
+    "apni": "you (respectful), as a command"
+rules:
+  "bn-rule-imperative":
+    name: "Commands: তুই (tui), তুমি (tumi), আপনি (apni)"
+    explanation: "{1}, for a child or a close friend, takes the bare stem with no ending: {2}, eat, as in {3}. For a friend or someone you know, the command takes {5} after a consonant, as in {6}, and {7} after a vowel, as in {8}. The command to someone you respect, {9}, takes {10} after a consonant, as in {11}, please look, and {12} after a vowel, as in {13}, please eat. Three commands change the stem: {4} is 'give' for {1}, {14} is 'come' for {1}, and {15} is 'come' for a friend."
