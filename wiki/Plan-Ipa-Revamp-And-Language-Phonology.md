@@ -431,6 +431,42 @@ and the deck majority. A tool-written pass (`tools/transcribe_decks.py --fix
 --all`, never by hand) applies them before the narrow-IPA run (TE-058), because
 the narrow forms derive from the broad `ipa`.
 
+### Telugu reading decisions (2026-11-15)
+
+**Decision** (owner-delegated, approved by the parent orchestrator session on
+2026-11-15; the owner can overturn it). The state below is what decks-live
+shows on 2026-11-15, not what is planned.
+
+1. **ṛ and ru.** The readings stay on ISO 15919 (ṛ, and r̥ in the narrow form),
+   consistent with "based on ISO 15919". The tool's `ru` stays only in
+   tool-derived IPA. The stored ISO readings are kept. Counted on decks-live
+   (2026-11-15, the `reading` lines containing ṛ or r̥): 29 lines.
+2. **Rare letters.** ౘ and ౙ read as tsa and dza: IPA `ts` and `dz`, since
+   ISO 15919 has no letter for them. ఌ and ౡ read as l̥ and l̥̄ in the readings
+   (ISO 15919), with IPA `lu` and `luː`. The tool change is PR #1441, which
+   waits on the validator fix for U+0304 (issue #1442, PR #1443); it is not
+   merged. No core card on decks-live contains ౘ, ౙ, ఌ or ౡ yet (checked
+   2026-11-15); the phonology layers `te-en-phonology-consonants` and
+   `te-en-phonology-spelling` name ౘ and ౙ.
+3. **Culture 1 (no guessing).** `te-culture-1` on decks-live has four verified
+   items, te-8750 to te-8753 (PR #1381). A second sourcing attempt for six
+   further poets is in progress. An item that cannot be sourced from two
+   sources stays out, and each gap is recorded here until it is closed.
+4. **Phonology and digit cards.** PR #1438 (commit 6ea8b8ca5) is on decks-live:
+   broad `ipa` follows the course convention (doubled geminates, `r` for ర), and
+   four review-queue rows are in `docs/review-queue/te.md`: te-6624 (`dz` in
+   రాజు), te-6599 and te-6640 (loanword ఫ, `f` or `ph`) and te-6604 (the tap
+   `ɾ` against `r` in broad `ipa`). The symbol cards stay reference-only where
+   they have no `ipa`, and the tool differences on them are kept.
+5. **Śatakam topic.** Skipped until a śatakam card exists. No card on
+   decks-live matches satakam, śatakam or శతకం (checked 2026-11-15).
+
+**Narrow IPA, merged (verified 2026-11-15 from decks-live).** TE-058 (PR #1431)
+and the `te-n-dental` rule (PR #1433, commit b0ab209f4) are on decks-live.
+Counted there: 2,960 `phonetic` fields, each with a `phonetic_source` line,
+of which 2,879 are `rules` and 81 `wiktionary`. This is the split after two
+cards were re-derived by the rules.
+
 ## Steps (Proposed, each one pull request)
 
 | # | Step | Done when |
