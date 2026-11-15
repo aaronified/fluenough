@@ -369,6 +369,7 @@ Creators named are the works' creators as the builder reads them; none is checke
 - **Q4. Rights.** The plan applies the validator's floor (died 1955 or earlier). Because India's term is life plus 60, an author who died in 1955 is out of copyright since 2016; items from authors who died 1941 to 1955 are flagged **to be read** rather than excluded. Jibanananda Das (died 1954) and Bibhutibhushan Bandyopadhyay (died 1950) are the cases the builder reads closely.
 - **Q5. Bangladeshi pronunciation** is not on the grid and not planned; the course is the Kolkata standard, as the registry says.
 - **Leftover branch:** `origin/deck/bn-b1-3` is not an open PR and shares no history with `decks-live`; agents cannot delete a remote branch, so it is listed for the owner.
+- **Q6. Existing Bengali readings and the transcribe tool.** Decision (parent session, 2026-11-15, default; the owner can overturn): after the ba-phala fix (#1398, #1399), `tools/transcribe_decks.py --check decks/bn bn` reports about 7,300 differences, mostly where the course's hand conventions (schwa kept, ś, final -o, ব-ফলা written as v) differ from the tool. The course's hand conventions stay; `--fix --all` is not run for Bengali and the tool stays advisory for bn. Only clear ba-phala and garble fixes were applied (PR #1434). The র্ব and য-ফলা garbles are fixed in the tool under #1402; schwa and ś tuning is out of scope. New cards are still written with the tool, using hints that match the course convention.
 
 ## 8. Notes for the architect
 
