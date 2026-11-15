@@ -1,0 +1,92 @@
+schema: 1
+id: "bn-en-reading-verbs-3"
+name: "Reading: more daily actions"
+kind: "reading"
+language:
+  code: "bn"
+  iso639_3: "ben"
+  name: "Bengali"
+  script: "bengali"
+  tts: "bn-IN"
+  icon: "বা"
+native:
+  code: "en"
+  iso639_3: "eng"
+  name: "English"
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Short passages, one to be heard and one to be read, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags:
+- "reading"
+- "unreviewed"
+passages:
+- id: "bn-a-busy-day"
+  title: "A busy day"
+  theme: "daily-life"
+  sentences:
+  - text: "আমি সকালে উঠি।"
+    reading: "āmi śôkāle uṭhi."
+    ipa: "ami ʃɔkale uʈʰi"
+  - text: "দুপুরে আমি বাইরে বেরোই।"
+    reading: "dupure āmi bāire beroi."
+    ipa: "d̪upure ami baire beroi"
+  - text: "বিকেলে বন্ধুকে বাড়িটা দেখাই।"
+    reading: "bikele bondhuke bāṛiṭā dekhāi."
+    ipa: "bikele bond̪ʱuke baɽiʈa d̪ekʰai"
+  - text: "রাতে আমি বাতিটা নেভাই।"
+    reading: "rāte āmi bātiṭā nebhāi."
+    ipa: "rat̪e ami bat̪iʈa nebʱai"
+  - text: "আমি চা খাই।"
+    reading: "āmi cā khāi."
+    ipa: "ami tʃa kʰai"
+  questions:
+  - id: "bn-5468"
+    prompt:
+      en: "The speaker goes out at midday."
+    answer: true
+  - id: "bn-5469"
+    prompt:
+      en: "What does the speaker switch off at night?"
+    options:
+    - en: "বাতি (bāti)"
+    - en: "জানালা (jānālā)"
+    answer: 1
+  - id: "bn-5470"
+    prompt:
+      en: "The speaker shows a friend the house."
+    answer: true
+- id: "bn-diary-entry"
+  title: "A diary entry"
+  theme: "verbs-3"
+  sentences:
+  - text: "আজ সোমবার।"
+    reading: "āj śombār."
+    ipa: "adʒ ʃombar"
+  - text: "দুপুরে আমি অফিসে যাই।"
+    reading: "dupure āmi ôphise jāi."
+    ipa: "d̪upure ami ɔpʰise dʒai"
+  - text: "বিকেলে আমি বাতি জ্বালাই।"
+    reading: "bikele āmi bāti jālāi."
+    ipa: "bikele ami bat̪i dʒalai"
+  - text: "রাতে আমি বই পড়ি।"
+    reading: "rāte āmi boi poṛi."
+    ipa: "rat̪e ami boi poɽi"
+  - text: "কাল আমি আবার চা খাব।"
+    reading: "kāl āmi ābār cā khābo."
+    ipa: "kal ami abar tʃa kʰabo"
+  questions:
+  - id: "bn-5471"
+    prompt:
+      en: "The writer goes to the office at midday."
+    answer: true
+  - id: "bn-5472"
+    prompt:
+      en: "What does the writer do at night?"
+    options:
+    - en: "বই পড়া (boi pôṛā)"
+    - en: "চা খাওয়া (cā khāoā)"
+    answer: 1
+  - id: "bn-5473"
+    prompt:
+      en: "The writer switches on the light in the morning."
+    answer: false

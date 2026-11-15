@@ -1,0 +1,51 @@
+schema: 1
+id: "bn-en-reading-conjunctive"
+name: "Reading: chaining actions"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Short passages, one to be heard and one to be read, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-what-i-did-today"
+    title: "What I did today"
+    theme: "daily-life"
+    sentences:
+      - { text: "সকালে উঠে চা খেয়ে অফিসে গেলাম।", reading: "śôkāle uṭhe cā kheye ôphiśe gelām.", ipa: "ʃɔkale uʈʰe tʃa kʰeje ɔpʰiʃe ɡelam" }
+      - { text: "অফিসে গিয়ে ফোনে মেসেজ দেখলাম।", reading: "ôphiśe giye phone meśej dekhlām.", ipa: "ɔpʰiʃe ɡije pʰone meʃedʒ d̪ekʰlam" }
+      - { text: "দুপুরে কাজ করে খাবার কিনলাম।", reading: "dupure kāj kôre khābār kinlām.", ipa: "d̪upure kadʒ kɔre kʰabar kinlam" }
+      - { text: "বিকেলে বন্ধুকে ফোন করে দেখা করলাম।", reading: "bikele bondhuke phon kôre dekhā kôrlām.", ipa: "bikele bond̪ʱuke pʰon kɔre d̪ekʰa kɔrlam" }
+      - { text: "রাতে খেয়ে ঘুমিয়ে গেলাম।", reading: "rāte kheye ghumiye gelām.", ipa: "rat̪e kʰeje ɡʱumije ɡelam" }
+    questions:
+      - id: "bn-5518"
+        prompt: { en: "The speaker had tea and then went to the office." }
+        answer: true
+      - id: "bn-5519"
+        prompt: { en: "What did the speaker do after working at midday?" }
+        options: [{ en: "Bought food" }, { en: "Went to sleep" }]
+        answer: 1
+      - id: "bn-5520"
+        prompt: { en: "The speaker met a friend after phoning them." }
+        answer: true
+  - id: "bn-travel-diary"
+    title: "A travel diary"
+    theme: "journey"
+    sentences:
+      - { text: "বাসে উঠে স্টেশনে গেলাম।", reading: "bāśe uṭhe sṭeśne gelām.", ipa: "baʃe uʈʰe sʈeʃne ɡelam" }
+      - { text: "ট্রেন ধরে শহরে গেলাম।", reading: "ṭren dhôre śôhore gelām.", ipa: "ʈren d̪ʱɔre ʃɔɦore ɡelam" }
+      - { text: "নদীর পাশে হেঁটে ছবি দেখলাম।", reading: "nodir pāśe hem̐ṭe chobi dekhlām.", ipa: "nod̪ir paʃe ɦẽʈe tʃʰobi d̪ekʰlam" }
+      - { text: "টিকিট কিনে প্ল্যাটফর্মে দাঁড়ালাম।", reading: "ṭikiṭ kine plêṭphorme dām̐ṛālām.", ipa: "ʈikiʈ kine plæʈpʰorme d̪ãɽalam" }
+      - { text: "ফিরে এসে ঘুমিয়ে গেলাম।", reading: "phire ese ghumiye gelām.", ipa: "pʰire ese ɡʱumije ɡelam" }
+    questions:
+      - id: "bn-5521"
+        prompt: { en: "The writer took a bus to the station." }
+        answer: true
+      - id: "bn-5522"
+        prompt: { en: "What did the writer do before standing on the platform?" }
+        options: [{ en: "Bought a ticket" }, { en: "Took a taxi" }]
+        answer: 1
+      - id: "bn-5523"
+        prompt: { en: "The writer went to sleep after coming back." }
+        answer: true

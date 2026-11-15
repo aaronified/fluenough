@@ -1,0 +1,52 @@
+schema: 1
+id: "bn-en-reading-noun-forms"
+name: "Reading: going places"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Short passages, one to be heard and one to be read, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-way-to-school"
+    title: "Where people go, and with whom"
+    theme: "places"
+    sentences:
+      - { text: "আমি বন্ধুর সঙ্গে যাই।", reading: "āmi bondhur śôṅge jāi.", ipa: "ami bond̪ʱur ʃɔŋɡe dʒai" }
+      - { text: "আমি বাড়ি থেকে আসি।", reading: "āmi bāṛi theke āsi.", ipa: "ami baɽi t̪ʰeke asi" }
+      - { text: "ভাই মায়ের সঙ্গে যায়।", reading: "bhāi māyer śôṅge jāy.", ipa: "bʱai majer ʃɔŋɡe dʒaj" }
+      - { text: "বোন বাড়িতে থাকে।", reading: "bon bāṛite thāke.", ipa: "bon baɽit̪e t̪ʰake" }
+      - { text: "বাবা অফিস থেকে আসেন।", reading: "bābā ôphis theke āsen.", ipa: "baba ɔpʰis t̪ʰeke asen" }
+    questions:
+      - id: "bn-5312"
+        prompt: { en: "The speaker goes out with a friend." }
+        answer: true
+      - id: "bn-5313"
+        prompt: { en: "Which word means 'at home'?" }
+        options: [{ en: "অফিসে (ôphise)" }, { en: "বাড়িতে (bāṛite)" }]
+        answer: 2
+      - id: "bn-5314"
+        prompt: { en: "Who does the speaker go with?" }
+        options: [{ en: "A friend" }, { en: "A teacher" }]
+        answer: 1
+  - id: "bn-school-notice"
+    title: "A notice: where to come and when"
+    theme: "family"
+    sentences:
+      - { text: "সকালে বাড়িতে আসুন।", reading: "sôkāle bāṛite āśun.", ipa: "sɔkale baɽit̪e aʃun" }
+      - { text: "বাবার সঙ্গে আসুন।", reading: "bābār śôṅge āśun.", ipa: "babar ʃɔŋɡe aʃun" }
+      - { text: "মায়ের নাম লিখুন।", reading: "māyer nām likhun.", ipa: "majer nam likʰun" }
+      - { text: "বিকেলে বাড়িতে যান।", reading: "bikele bāṛite jān.", ipa: "bikele baɽit̪e dʒan" }
+    questions:
+      - id: "bn-5315"
+        prompt: { en: "The notice asks people to come in the morning." }
+        answer: true
+      - id: "bn-5316"
+        prompt: { en: "Which word means 'write'?" }
+        options: [{ en: "খুলুন (khulun)" }, { en: "লিখুন (likhun)" }]
+        answer: 2
+      - id: "bn-5317"
+        prompt: { en: "When does the notice ask people to go home?" }
+        options: [{ en: "In the afternoon" }, { en: "At night" }]
+        answer: 1
