@@ -420,6 +420,17 @@ whose nasal differs from the rule. About 192 of the 3,287 readings differ
 (ph for f, r̥ for ṛ, word-initial vowels) are separate and are not part of
 this rule.
 
+### Other differences follow the tool (decided 2026-11-15)
+
+**Decision** (owner-delegated, approved by the parent orchestrator session on
+2026-11-15, recommended by the Telugu architect; the owner can overturn it).
+The Telugu "other differences" that `tools/transcribe_decks.py --check` reports
+(about 1,060: IPA spelling choices, such as a stored `t͡ɕ` against the computed
+`tʃ`, `ɾ` against `r`, `f` against `ph`, and `ṛ` against `ru`) follow the tool
+and the deck majority. A tool-written pass (`tools/transcribe_decks.py --fix
+--all`, never by hand) applies them before the narrow-IPA run (TE-058), because
+the narrow forms derive from the broad `ipa`.
+
 ## Steps (Proposed, each one pull request)
 
 | # | Step | Done when |
