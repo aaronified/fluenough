@@ -434,7 +434,9 @@ units:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
     reading_passages:
       - { id: "sale-sign", text: { "en": "A clothes shop's sale sign" } }
-  - planned: { id: "ja-grammar-conjunctions", grammar: "conjunctions" }
+  - decks: ["ja-grammar-conjunctions", "ja-grammar-conjunctions-sentences", "ja-reading-grammar-conjunctions"]
+    words: 10
+    grammar: ["conjunctions"]
     listening_passages:
       - { id: "but-and-so", text: { "en": "Joining two sentences: and, but, so, then" } }
     reading_passages:
