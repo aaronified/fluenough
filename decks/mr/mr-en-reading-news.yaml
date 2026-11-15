@@ -1,0 +1,59 @@
+"schema": 1
+"id": "mr-en-reading-news"
+"name": "Reading: news headlines"
+"kind": "reading"
+"language":
+  "code": "mr"
+  "iso639_3": "mar"
+  "name": "Marathi"
+  "script": "devanagari"
+  "tts": "mr-IN"
+  "icon": "म"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"description": "A list of newspaper headlines, each about a different event. Not yet checked by a Marathi speaker: please report any mistake."
+"tags":
+- "reading"
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "mr-headline-list"
+  "title": "Headline list"
+  "sentences":
+  - "text": "पहिला मथळा: नवीन रस्ता सुरू झाला."
+    "reading": "pahilā mathḷā: navin rastā suru jhālā."
+    "ipa": "pəɦila mət̪ʰɭa nəʋin rəst̪a suru dzʱala"
+  - "text": "दुसरा मथळा: शहरात पाऊस पडला."
+    "reading": "dusrā mathḷā: śahrāt pāus paḍlā."
+    "ipa": "d̪usra mət̪ʰɭa ʃəɦrat̪ paus pəɖla"
+  - "text": "तिसरा मथळा: शाळेची नवी इमारत तयार आहे."
+    "reading": "tisrā mathḷā: śāḷeci navi imārat tayār āhe."
+    "ipa": "t̪isra mət̪ʰɭa ʃaɭetʃi nəʋi imarət̪ t̪əjar aɦe"
+  - "text": "चौथा मथळा: उद्या क्रिकेट सामना आहे."
+    "reading": "cauthā mathḷā: udyā krikeṭ sāmnā āhe."
+    "ipa": "tsəut̪ʰa mət̪ʰɭa ud̪ja krikeʈ samna aɦe"
+  "questions":
+  - "id": "mr-7115"
+    "prompt":
+      "en": "Which headline is about rain?"
+    "options":
+    - "en": "First"
+    - "en": "Second"
+    - "en": "Fourth"
+    "answer": 2
+  - "id": "mr-7116"
+    "prompt":
+      "en": "What started in the first headline?"
+    "options":
+    - "en": "A school"
+    - "en": "A road"
+    - "en": "A bridge"
+    "answer": 2
+  - "id": "mr-7117"
+    "prompt":
+      "en": "The third headline is about a school building."
+    "answer": true
