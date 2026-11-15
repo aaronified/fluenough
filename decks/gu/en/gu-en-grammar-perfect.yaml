@@ -1,0 +1,19 @@
+schema: 1
+id: "gu-en-grammar-perfect"
+kind: "layer"
+core: "gu-grammar-perfect"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Perfect: have come, have gone"
+license: "CC-BY-SA-4.0"
+description: "I have come, she has gone: what has already happened, with the present of હોવું (hovum̐). The verb takes its past form and the present helper છું (chum̐), છે (che) or છીએ (chie). Not yet checked by a Gujarati speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Perfect, have come"
+  slot_name: "person and gender"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "javun": "to go"
+    "aavvun": "to come"
+    "uuthvun": "to get up"
+    "besvun": "to sit"
+  notes: "The past form of the verb (the same as the simple past, such as ગયો (gayo), gone, m) agrees with the doer, and the helper agrees with the person: હું આવ્યો છું (hum̐ āvyo chum̐), I have come (m), and તે આવી છે (te āvi che), she has come. With અમે (ame), we, the helper is છીએ (chie). This deck covers verbs without an object only: with an object the doer takes a different form and is not taught here."
