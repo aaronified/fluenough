@@ -1,0 +1,117 @@
+# Bengali multi-word verbs: a noun or adjective and হওয়া (hoā), পাওয়া (pāoā) or দেওয়া (deoā).
+# Every pattern is attested on its en.wiktionary page, named in the card's English note.
+schema: 1
+id: "bn-multiword-conjunct-other"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+genre: "multiword"
+pattern_family: "conjunct-verb-other"
+level: "B1"
+tags: ["unreviewed"]
+cards:
+  - id: "bn-6100"
+    target: "গন্ধ পাওয়া"
+    words: ["গন্ধ", "পাওয়া"]
+    reading: "gôndho pāoā"
+    ipa: "ɡɔnd̪ʱo paoa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "গন্ধ", ref: "bn-2120" }
+      - { word: "পাওয়া", ref: "bn-0891" }
+  - id: "bn-6101"
+    target: "ইচ্ছা হওয়া"
+    words: ["ইচ্ছা", "হওয়া"]
+    reading: "icchā hoā"
+    ipa: "itʃtʃʰa ɦoa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ইচ্ছা", ref: "bn-2848" }
+      - { word: "হওয়া", ref: "bn-0874" }
+  - id: "bn-6102"
+    target: "বৃষ্টি হওয়া"
+    words: ["বৃষ্টি", "হওয়া"]
+    reading: "briśṭi hoā"
+    ipa: "briʃʈi ɦoa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "বৃষ্টি", ref: "bn-1574" }
+      - { word: "হওয়া", ref: "bn-0874" }
+  - id: "bn-6103"
+    target: "ধাক্কা দেওয়া"
+    words: ["ধাক্কা", "দেওয়া"]
+    reading: "dhākkā deoā"
+    ipa: "d̪ʱakka d̪eoa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ধাক্কা", base: "ধাক্কা", reading: "dhākkā" }
+      - { word: "দেওয়া", ref: "bn-0888" }
+  - id: "bn-6104"
+    target: "শিক্ষা দেওয়া"
+    words: ["শিক্ষা", "দেওয়া"]
+    reading: "śikkhā deoā"
+    ipa: "ʃikkʰa d̪eoa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "শিক্ষা", ref: "bn-2179" }
+      - { word: "দেওয়া", ref: "bn-0888" }
+  - id: "bn-6105"
+    target: "প্রতিশোধ দেওয়া"
+    words: ["প্রতিশোধ", "দেওয়া"]
+    reading: "protiśodh deoā"
+    ipa: "prot̪iʃod̪ʱ d̪eoa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "প্রতিশোধ", base: "প্রতিশোধ", reading: "protiśodh" }
+      - { word: "দেওয়া", ref: "bn-0888" }
+  - id: "bn-6106"
+    target: "অক্কা পাওয়া"
+    words: ["অক্কা", "পাওয়া"]
+    reading: "ôkkā pāoā"
+    ipa: "ɔkka paoa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "অক্কা", base: "অক্কা", reading: "ôkkā" }
+      - { word: "পাওয়া", ref: "bn-0891" }
+  - id: "bn-6107"
+    target: "অঙ্কুরিত হওয়া"
+    words: ["অঙ্কুরিত", "হওয়া"]
+    reading: "ôṅkurito hoā"
+    ipa: "ɔŋkurit̪o ɦoa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "অঙ্কুরিত", base: "অঙ্কুরিত", reading: "ôṅkurito" }
+      - { word: "হওয়া", ref: "bn-0874" }

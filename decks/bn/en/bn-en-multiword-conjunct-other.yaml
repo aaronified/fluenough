@@ -1,0 +1,50 @@
+schema: 1
+id: "bn-en-multiword-conjunct-other"
+kind: "layer"
+core: "bn-multiword-conjunct-other"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Multi-word verbs: noun + হওয়া, পাওয়া, দেওয়া"
+description: "Eight Bengali verbs made of a noun or adjective and হওয়া (hoā), পাওয়া (pāoā) or দেওয়া (deoā): to smell, to feel like, to rain, to push, to educate, to avenge, to die, to germinate. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "bn-6100":
+    native: "to smell; to catch a scent"
+    notes:
+      "u1": "গন্ধ (gôndho), smell, with পাওয়া (pāoā): to smell something or catch its scent. Only পাওয়া changes with person and tense. Attested on en.wiktionary, page গন্ধ পাওয়া."
+  "bn-6101":
+    native: "to feel like; to wish"
+    notes:
+      "u1": "ইচ্ছা (icchā), wish, with হওয়া (hoā): to feel like doing something; the person feeling it takes -র, as in আমার ইচ্ছা হয় (āmār icchā hôy), I feel like it. Only হওয়া changes with person and tense. Attested on en.wiktionary, page ইচ্ছা হওয়া."
+  "bn-6102":
+    native: "to rain"
+    notes:
+      "u1": "বৃষ্টি (briśṭi), rain, with হওয়া (hoā): to rain; বৃষ্টি পড়া (briśṭi pôṛā) is the synonym. Only হওয়া changes with person and tense. Attested on en.wiktionary, page বৃষ্টি হওয়া."
+  "bn-6103":
+    native: "to push; to shove"
+    notes:
+      "u1": "ধাক্কা (dhākkā), push; shove, with দেওয়া (deoā): to push someone or something. Only দেওয়া changes with person and tense. Attested on en.wiktionary, page ধাক্কা দেওয়া."
+    bases:
+      "ধাক্কা": { meaning: "push; shove" }
+  "bn-6104":
+    native: "to educate; to teach"
+    notes:
+      "u1": "শিক্ষা (śikkhā), education, with দেওয়া (deoā): to educate or teach someone. Only দেওয়া changes with person and tense. Attested on en.wiktionary, page শিক্ষা দেওয়া."
+  "bn-6105":
+    native: "to avenge; to take revenge"
+    notes:
+      "u1": "প্রতিশোধ (protiśodh), revenge, with দেওয়া (deoā): to avenge; to take revenge on someone. Only দেওয়া changes with person and tense. Attested on en.wiktionary, page প্রতিশোধ দেওয়া."
+    bases:
+      "প্রতিশোধ": { meaning: "revenge" }
+  "bn-6106":
+    native: "to die (figurative)"
+    notes:
+      "u1": "অক্কা (ôkkā), death (slang), with পাওয়া (pāoā): a figurative way to say someone died; the page says it literally means to attain God. Only পাওয়া changes with person and tense. Attested on en.wiktionary, page অক্কা পাওয়া."
+    bases:
+      "অক্কা": { meaning: "death (slang)" }
+  "bn-6107":
+    native: "to germinate; to sprout"
+    notes:
+      "u1": "অঙ্কুরিত (ôṅkurito), sprouted, with হওয়া (hoā): to germinate or sprout, said of seeds. Only হওয়া changes with person and tense. Attested on en.wiktionary, page অঙ্কুরিত হওয়া."
+    bases:
+      "অঙ্কুরিত": { meaning: "sprouted" }
