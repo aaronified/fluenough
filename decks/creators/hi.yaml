@@ -1,0 +1,100 @@
+# The people behind the Hindustani culture decks (wiki/Plan-Deck-Kinds-And-Topics.md, D5).
+# Dates are the years of birth and death, circa where the Hindi Wikipedia pages disagree or give a range.
+# No pictures: none has a licence checked yet.
+schema: 1
+kind: "creators"
+id: "creators-hi"
+language: "hi"
+license: "CC-BY-SA-4.0"
+eras:
+  - id: "delhi-sultanate"
+    name: { hi: "दिल्ली सल्तनत", en: "Delhi Sultanate" }
+    from: 1206
+    to: 1526
+  - id: "bhakti"
+    name: { hi: "भक्ति काल", en: "Bhakti period" }
+    from: 1350
+    to: 1700
+  - id: "mughal"
+    name: { hi: "मुग़ल काल", en: "Mughal period" }
+    from: 1526
+    to: 1857
+creators:
+  - id: "hi-amir-khusro"
+    name:
+      hi: { text: "अमीर ख़ुसरो", reading: "amīr k͟husrō", ipa: "əmiːr xʊsroː" }
+      en: { text: "Amir Khusro" }
+    born: 1253
+    died: 1325
+    era: "delhi-sultanate"
+    bio:
+      en: "Amir Khusro was a poet and musician at the Delhi Sultanate. He wrote in Persian and also in the early Hindavi of the north. He lived from 1253 to 1325."
+    legacy:
+      text: { en: "A Hindavi couplet is attributed to him on the Hindi Wikipedia page about him." }
+      items:
+        - { kind: "saying", text: { en: "A Hindavi couplet beginning Gori soye sej par is attributed to him on the Hindi Wikipedia page about him." }, source: { url: "https://hi.wikipedia.org/wiki/अमीर_ख़ुसरो", accessed: "2026-11-15" } }
+  - id: "hi-baba-farid"
+    name:
+      hi: { text: "बाबा फ़रीद", reading: "bābā farīd", ipa: "baːbaː fəriːd" }
+      en: { text: "Baba Farid" }
+    born: { year: 1173, circa: true }
+    died: { year: 1266, circa: true }
+    era: "delhi-sultanate"
+    bio:
+      en: "Baba Farid was a Sufi teacher of the Chishti order. His verses are kept in the Sikh scripture. He lived in the 1100s and 1200s."
+    legacy:
+      text: { en: "A short verse on plain food is attributed to him on the Hindi Wikipedia page about him." }
+      items:
+        - { kind: "saying", text: { en: "A shloka beginning Rukhi sukhi khaay ke is attributed to him on the Hindi Wikipedia page about him." }, source: { url: "https://hi.wikipedia.org/wiki/बाबा_फ़रीद", accessed: "2026-11-15" } }
+  - id: "hi-kabir"
+    name:
+      hi: { text: "कबीर", reading: "kabīr", ipa: "kəbiːr" }
+      en: { text: "Kabir" }
+    born: { year: 1398, circa: true }
+    died: { year: 1518, circa: true }
+    era: "bhakti"
+    bio:
+      en: "Kabir was a poet and mystic of Varanasi. He wrote short couplets that criticise caste and empty ritual. The years of his birth and death are not certain."
+    legacy:
+      text: { en: "A couplet of his is quoted as a saying on the Hindi Wikipedia page about him." }
+      items:
+        - { kind: "saying", text: { en: "His couplet Jati na puchho sadhu ki, which says not to ask a holy man his caste, is quoted on the Hindi Wikipedia page about him." }, source: { url: "https://hi.wikipedia.org/wiki/कबीर", accessed: "2026-11-15" } }
+  - id: "hi-keshavdas"
+    name:
+      hi: { text: "केशवदास", reading: "kēśvdās", ipa: "keːʃʋd̪aːs" }
+      en: { text: "Keshavdas" }
+    born: { year: 1555, circa: true }
+    died: { year: 1618, circa: true }
+    era: "mughal"
+    bio:
+      en: "Keshavdas was a poet of the Hindi court tradition in Orchha. He wrote about poetry, love and verse rules. His birth and death years are given in more than one calendar on the page about him."
+    legacy:
+      text: { en: "A witty couplet of his about his white hair is quoted on the Hindi Wikipedia page about him." }
+      items:
+        - { kind: "saying", text: { en: "His couplet Keshav kesani asi kari, about being called old man by women at a well, is quoted on the Hindi Wikipedia page about him." }, source: { url: "https://hi.wikipedia.org/wiki/केशवदास", accessed: "2026-11-15" } }
+  - id: "hi-rahim"
+    name:
+      hi: { text: "रहीम", reading: "rahīm", ipa: "rəɦiːm" }
+      en: { text: "Rahim" }
+    born: 1556
+    died: 1627
+    era: "mughal"
+    bio:
+      en: "Rahim was a poet and courtier of the Mughal emperor Akbar. He wrote short couplets on everyday wisdom. He lived from 1556 to 1627."
+    legacy:
+      text: { en: "A couplet of his on forgiveness is quoted as a saying on the Hindi Wikipedia page about him." }
+      items:
+        - { kind: "saying", text: { en: "His couplet Chhima badan ko chahiye, about forgiveness suiting the great, is quoted on the Hindi Wikipedia page about him." }, source: { url: "https://hi.wikipedia.org/wiki/रहीम", accessed: "2026-11-15" } }
+  - id: "hi-tulsidas"
+    name:
+      hi: { text: "तुलसीदास", reading: "tulsīdās", ipa: "t̪ʊlsiːd̪aːs" }
+      en: { text: "Tulsidas" }
+    born: { year: 1497, circa: true }
+    died: 1623
+    era: "bhakti"
+    bio:
+      en: "Tulsidas was a poet and saint of Varanasi. He wrote the Ramcharitmanas in Awadhi, a version of the story of Ram. He died in 1623."
+    legacy:
+      text: { en: "A couplet of his is quoted as a saying on the Hindi Wikipedia page about him." }
+      items:
+        - { kind: "saying", text: { en: "His couplet Tulsi sampati chhaanh jyon, about wealth that slips away like a shadow, is quoted on the Hindi Wikipedia page about him." }, source: { url: "https://hi.wikipedia.org/wiki/तुलसीदास", accessed: "2026-11-15" } }
