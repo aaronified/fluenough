@@ -1,0 +1,32 @@
+schema: 1
+id: "mr-en-reading-travel"
+name: "Reading: two-day trip"
+kind: "reading"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A two-day trip itinerary. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "mr-itinerary"
+    title: "Two-day trip"
+    sentences:
+      - { text: "पहिल्या दिवशी आपण किल्ला पाहू.", reading: "pahilyā divśi āpaṇ killā pāhu.", ipa: "pəɦilja d̪iʋʃi apəɳ killa paɦu" }
+      - { text: "दुपारी आपण जेवू.", reading: "dupāri āpaṇ jevu.", ipa: "d̪upari apəɳ dʒeʋu" }
+      - { text: "संध्याकाळी आपण मंदिरात जाऊ.", reading: "sandhyākāḷi āpaṇ mandirāt jāu.", ipa: "sənd̪ʱjakaɭi apəɳ mənd̪irat̪ dzau" }
+      - { text: "दुसऱ्या दिवशी सकाळी बाजारात जाऊ.", reading: "dusaryā divśi sakāḷi bājārāt jāu.", ipa: "d̪usərja d̪iʋʃi səkaɭi badzarat̪ dzau" }
+      - { text: "रात्री आपण घरी परत येऊ.", reading: "rātri āpaṇ ghari parat yeu.", ipa: "rat̪ri apəɳ ɡʱəri pərət̪ jeu" }
+    questions:
+      - id: "mr-7518"
+        prompt: { en: "What will they see on the first day?" }
+        options: [{ en: "A fort" }, { en: "A market" }, { en: "A lake" }]
+        answer: 1
+      - id: "mr-7519"
+        prompt: { en: "When do they go to the temple?" }
+        options: [{ en: "In the morning" }, { en: "In the evening" }, { en: "At night" }]
+        answer: 2
+      - id: "mr-7520"
+        prompt: { en: "Where do they go on the second day?" }
+        options: [{ en: "Home" }, { en: "The fort" }, { en: "The market" }]
+        answer: 3

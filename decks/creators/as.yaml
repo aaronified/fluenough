@@ -1,0 +1,133 @@
+# The people behind the Assamese culture decks (wiki/Plan-Deck-Kinds-And-Topics.md, D5).
+# Dates are the years of birth and death read on English Wikipedia, circa where the pages disagree. The eras are those of the English Wikipedia article on Assamese literature (the Shankari era 1490-1700, the missionary era 1826-1870, the era of Hemchandra Barua and Gunabhiram Barua 1870-1890, and the romantic era, or Bezbaroa's era, 1890-1940).
+# No pictures: none has a licence checked yet.
+schema: 1
+kind: "creators"
+id: "creators-as"
+language: "as"
+license: "CC-BY-SA-4.0"
+eras:
+  - id: "shankari"
+    name: { en: "Shankari literature" }
+    from: 1490
+    to: 1700
+  - id: "missionary"
+    name: { en: "Missionary literature" }
+    from: 1826
+    to: 1870
+  - id: "hemchandra-gunabhiram"
+    name: { en: "The era of Hemchandra Barua and Gunabhiram Barua" }
+    from: 1870
+    to: 1890
+  - id: "romantic"
+    name: { en: "Romantic era, or Bezbaroa's era" }
+    from: 1890
+    to: 1940
+creators:
+  - id: "as-sankardev"
+    name:
+      as: { text: "শ্ৰীমন্ত শংকৰদেৱ", reading: "xrimônt xôṅkôrôdew", ipa: "xɹimɔnt xɔŋkɔɹɔdew" }
+      en: { text: "Srimanta Sankardev" }
+    born: 1449
+    died: 1568
+    era: "shankari"
+    bio:
+      en: "Srimanta Sankardev was a 15th and 16th century Assamese saint, scholar, poet and playwright, and a figure of importance in the Bhakti movement in Assam. He is credited with devising new forms of music, theatre and dance, and a literary language called Brajavali."
+    legacy:
+      text: { en: "He is credited with new forms of music (the Borgeet), theatre (Ankia Naat and Bhaona) and dance (Sattriya)." }
+      items:
+        - { kind: "music", text: { en: "He is credited with devising a new form of music, the Borgeet." }, source: { url: "https://en.wikipedia.org/wiki/Srimanta_Sankardev", accessed: "2026-11-15" } }
+        - { kind: "other", text: { en: "He is credited with devising the theatrical forms Ankia Naat and Bhaona, and the dance Sattriya." }, source: { url: "https://en.wikipedia.org/wiki/Srimanta_Sankardev", accessed: "2026-11-15" } }
+  - id: "as-madhavdev"
+    name:
+      as: { text: "মাধৱদেৱ", reading: "mādhôwôdew", ipa: "madʱɔwɔdew" }
+      en: { text: "Madhavdev" }
+    born: { year: 1489, circa: true }
+    died: 1596
+    era: "shankari"
+    bio:
+      en: "Madhavdev was a preceptor of the Ekasarana Dharma and the most prominent disciple of Srimanta Sankardev. He became the religious and artistic successor of Sankardev after the latter died in 1568. The English Wikipedia gives his birth as May 1489, but other pages give other years, so the year of his birth is not certain."
+    legacy:
+      text: { en: "He is known for his book of hymns, the Naam Ghosa, and for a large selection of songs called Borgeets." }
+      items:
+        - { kind: "other", text: { en: "He is known for his book of hymns, the Naam Ghosa." }, source: { url: "https://en.wikipedia.org/wiki/Madhavdev", accessed: "2026-11-15" } }
+        - { kind: "music", text: { en: "He is known for a large selection of songs called Borgeets." }, source: { url: "https://en.wikipedia.org/wiki/Madhavdev", accessed: "2026-11-15" } }
+  - id: "as-anandaram-dhekial-phukan"
+    name:
+      as: { text: "আনন্দৰাম ঢেকিয়াল ফুকন", reading: "ānôndôrām dhekiyāl phukôn", ipa: "anɔndɔɹam dʱekijal pʰukɔn" }
+      en: { text: "Anandaram Dhekial Phukan" }
+    born: 1829
+    died: 1859
+    era: "missionary"
+    bio:
+      en: "Anandaram Dhekial Phukan was one of the pioneers of Assamese literature in the Orunodoi era. He is remembered for his efforts to promote the Assamese language."
+    legacy:
+      text: { en: "He played a major role in reinstating Assamese as the official language of Assam." }
+      items:
+        - { kind: "other", text: { en: "He played a major role in reinstating the Assamese language as the official language of Assam." }, source: { url: "https://en.wikipedia.org/wiki/Anandaram_Dhekial_Phukan", accessed: "2026-11-15" } }
+  - id: "as-gunabhiram-barua"
+    name:
+      as: { text: "গুণাভিৰাম বৰুৱা", reading: "gunābhirām boruwā", ipa: "ɡunabʱiɹam boɹuwa" }
+      en: { text: "Gunabhiram Barua" }
+    born: { year: 1834, circa: true }
+    died: 1894
+    era: "hemchandra-gunabhiram"
+    bio:
+      en: "Gunabhiram Barua was a dramatist, historian, essayist and social reformer of Assam. The English Wikipedia gives 1834 as the year of his birth, while its categories say 1837, so the year is not certain."
+    legacy:
+      text: { en: "He is remembered as a dramatist, historian, essayist and social reformer." }
+      items:
+        - { kind: "other", text: { en: "He is remembered as a dramatist, historian, essayist and social reformer." }, source: { url: "https://en.wikipedia.org/wiki/Gunabhiram_Barua", accessed: "2026-11-15" } }
+  - id: "as-lakshminath-bezbaroa"
+    name:
+      as: { text: "লক্ষ্মীনাথ বেজবৰুৱা", reading: "lokkhmināth bezôboruwā", ipa: "lokkʰminatʰ bezɔboɹuwa" }
+      en: { text: "Lakshminath Bezbaroa" }
+    born: { year: 1864, circa: true }
+    died: 1938
+    era: "romantic"
+    bio:
+      en: "Lakshminath Bezbaroa was a poet, essayist, novelist and playwright from Assam, and one of the writers of the Jonaki era. The English Wikipedia gives 14 October 1864 as his birthday, while its infobox says 1868, so the year is not certain."
+    legacy:
+      text: { en: "He is commonly known as the father of the Assamese short story." }
+      items:
+        - { kind: "other", text: { en: "He is commonly known as the father of the Assamese short story." }, source: { url: "https://en.wikipedia.org/wiki/Lakshminath_Bezbaroa", accessed: "2026-11-15" } }
+        - { kind: "other", text: { en: "He compiled the folk tales of Burhi Aair Sadhu, first published in October and November 1911 and still one of the most popular texts of Assamese literature." }, source: { url: "https://en.wikipedia.org/wiki/Lakshminath_Bezbaroa", accessed: "2026-11-15" } }
+  - id: "as-rajanikanta-bordoloi"
+    name:
+      as: { text: "ৰজনীকান্ত বৰদলৈ", reading: "rôzonikānt bôrôdôlôi", ipa: "ɹɔzonikant bɔɹɔdɔlɔi" }
+      en: { text: "Rajanikanta Bordoloi" }
+    born: { year: 1867, circa: true }
+    died: { year: 1940, circa: true }
+    era: "romantic"
+    bio:
+      en: "Rajanikanta Bordoloi was a writer, journalist and tea planter from Assam, whom some critics called the Walter Scott of Assam. The years of his birth and death differ between the sources, so both are given as approximate."
+    legacy:
+      text: { en: "He was President of the Asam Sahitya Sabha in 1925, held at Nagaon." }
+      items:
+        - { kind: "other", text: { en: "He was President of the Asam Sahitya Sabha in 1925, which was held at Nagaon." }, source: { url: "https://en.wikipedia.org/wiki/Rajanikanta_Bordoloi", accessed: "2026-11-15" } }
+  - id: "as-chandra-kumar-agarwala"
+    name:
+      as: { text: "চন্দ্ৰকুমাৰ আগৰৱালা", reading: "sôndrokumār āgôrôwālā", ipa: "sɔndɹokumaɹ aɡɔɹɔwala" }
+      en: { text: "Chandra Kumar Agarwala" }
+    born: 1867
+    died: 1938
+    era: "romantic"
+    bio:
+      en: "Chandra Kumar Agarwala was a writer, poet and journalist from Assam and a pioneer of the Jonaki era. He was the first editor and financer of the Jonaki magazine."
+    legacy:
+      text: { en: "He was the first editor and financer of the Jonaki magazine, and was titled the Pratimar Khonikor (the miner of Pratima)." }
+      items:
+        - { kind: "other", text: { en: "He was the first editor and financer of the Jonaki magazine." }, source: { url: "https://en.wikipedia.org/wiki/Chandra_Kumar_Agarwala", accessed: "2026-11-15" } }
+  - id: "as-padmanath-gohain-baruah"
+    name:
+      as: { text: "পদ্মনাথ গোহাঞিবৰুৱা", reading: "pôdmônāth guhāniboruwā", ipa: "pɔdmɔnatʰ ɡʊhaniboɹuwa" }
+      en: { text: "Padmanath Gohain Baruah" }
+    born: 1871
+    died: 1946
+    era: "romantic"
+    bio:
+      en: "Padmanath Gohain Baruah was the first president of the Asam Sahitya Sabha and a prominent name in the early part of modern Assamese literature. He was a novelist, poet and dramatist."
+    legacy:
+      text: { en: "He was the first president of the Asam Sahitya Sabha." }
+      items:
+        - { kind: "other", text: { en: "He was the first president of the Asam Sahitya Sabha." }, source: { url: "https://en.wikipedia.org/wiki/Padmanath_Gohain_Baruah", accessed: "2026-11-15" } }
