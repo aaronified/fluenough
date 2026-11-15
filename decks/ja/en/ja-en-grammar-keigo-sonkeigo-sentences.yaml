@@ -1,0 +1,140 @@
+schema: 1
+id: "ja-en-grammar-keigo-sonkeigo-sentences"
+kind: "layer"
+core: "ja-grammar-keigo-sonkeigo-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Honorific verbs, in sentences"
+description: "Sentences with sonkeigo, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-9400":
+    native: "The teacher has already gone home."
+    notes:
+      "n1": "おかえりになりました (okaerininarimashita) is the honorific past of かえる (kaeru): お (o) and になりました (ni narimashita) go round the stem, and the teacher is the one raised."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "おかえりになりました": { meaning: "to go home (honorific), past" }
+    confusables:
+      "w1": { why: "みる (miru) means to see; to look at." }
+      "w2": { why: "きく (kiku) means to listen; to hear; to ask." }
+  "ja-9401":
+    native: "When will the manager come back?"
+    notes:
+      "n1": "おもどりになります (omodorininarimasu) with か (ka) asks politely when someone to be respected will return: もどる (modoru), to come back, takes お (o) and になります (ni narimasu)."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "か": { meaning: "(makes a question)" }
+    confusables:
+      "w1": { why: "いく (iku) means to go." }
+      "w2": { why: "はたらく (hataraku) means to work." }
+  "ja-9402":
+    native: "The customer will wait here."
+    notes:
+      "n1": "おまちになります (omachininarimasu) is the honorific of まつ (matsu), to wait: the customer is the one raised, so the verb takes お (o) and になります (ni narimasu)."
+    bases:
+      "おきゃくさま": { meaning: "customer" }
+      "は": { meaning: "(marks the topic)" }
+      "で": { meaning: "(marks the place where an action happens)" }
+      "おまちになります": { meaning: "to wait (honorific)" }
+    confusables:
+      "w1": { why: "のる (noru) means to get on; to ride." }
+      "w2": { why: "あう (au) means to meet." }
+  "ja-9403":
+    native: "The teacher read that book."
+    notes:
+      "n1": "およみになりました (oyomininarimashita) is the honorific past of よむ (yomu), to read: the teacher is raised, so the speaker does not use the plain polite form よみました (yomimashita) for them."
+    bases:
+      "が": { meaning: "(marks the doer of the action)" }
+      "その": { meaning: "(that)" }
+      "を": { meaning: "(marks the thing acted on)" }
+      "およみになりました": { meaning: "to read (honorific), past" }
+    confusables:
+      "w1": { why: "かく (kaku) means to write; to draw." }
+      "w2": { why: "みる (miru) means to see; to look at." }
+  "ja-9404":
+    native: "The manager watched the film."
+    notes:
+      "n1": "ごらんになりました (goran ninarimashita) is the honorific of みる (miru), to see or watch: it is a word of its own, and does not take お (o) like most verbs."
+    bases:
+      "が": { meaning: "(marks the doer of the action)" }
+      "を": { meaning: "(marks the thing acted on)" }
+      "ごらんになりました": { meaning: "to watch (honorific), past" }
+    confusables:
+      "w1": { why: "よむ (yomu) means to read." }
+      "w2": { why: "きく (kiku) means to listen; to hear; to ask." }
+  "ja-9405":
+    native: "The teacher studied."
+    notes:
+      "n1": "おべんきょうなさいました (obenkyou nasaimashita) is the honorific of べんきょうする (benkyou suru), to study: なさいます (nasaimasu) replaces する (suru), and お (o) goes before the noun."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "おべんきょうなさいました": { meaning: "to study (honorific), past" }
+    confusables:
+      "w1": { why: "たべる (taberu) means to eat." }
+      "w2": { why: "のむ (nomu) means to drink." }
+  "ja-9406":
+    native: "The customer went home."
+    notes:
+      "n1": "The speaker raises the customer and not himself: this is the same honorific as in the teacher's sentence, おかえりになりました (okaerininarimashita)."
+    bases:
+      "おきゃくさま": { meaning: "customer" }
+      "が": { meaning: "(marks the doer of the action)" }
+      "おかえりになりました": { meaning: "to go home (honorific), past" }
+    confusables:
+      "w1": { why: "いく (iku) means to go." }
+      "w2": { why: "くる (kuru) means to come." }
+  "ja-9407":
+    native: "The manager has gone to bed."
+    notes:
+      "n1": "おやすみになりました (oyasumininarimashita) is the honorific of ねる (neru), to sleep: it is a word of its own, not お (o) with ね (ne) and になります (ni narimasu)."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "おやすみになりました": { meaning: "to go to bed (honorific), past" }
+    confusables:
+      "w1": { why: "かく (kaku) means to write; to draw." }
+      "w2": { why: "はなす (hanasu) means to speak; to talk." }
+  "ja-9408":
+    native: "The manager spoke."
+    notes:
+      "n1": "おはなしになりました (ohanashininarimashita) is the honorific of はなす (hanasu), to speak: its stem はなし (hanashi) takes お (o) and になりました (ni narimashita)."
+    bases:
+      "が": { meaning: "(marks the doer of the action)" }
+      "おはなしになりました": { meaning: "to speak (honorific), past" }
+    confusables:
+      "w1": { why: "のむ (nomu) means to drink." }
+      "w2": { why: "よむ (yomu) means to read." }
+  "ja-9409":
+    native: "The teacher came here."
+    notes:
+      "n1": "いらっしゃいました (irasshaimashita) is the honorific of いく (iku), to go, and of くる (kuru), to come: a word of its own, not a regular form."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "に": { meaning: "(marks the place)" }
+      "いらっしゃいました": { meaning: "to go or come (honorific), past" }
+    confusables:
+      "w1": { why: "はいる (hairu) means to enter." }
+      "w2": { why: "のる (noru) means to get on; to ride." }
+  "ja-9410":
+    native: "What will the customer have?"
+    notes:
+      "n1": "めしあがります (meshiagarimasu) is the honorific of たべる (taberu) and のむ (nomu), to eat and to drink: it replaces both, while the speaker's own word is たべます (tabemasu) or のみます (nomimasu)."
+    bases:
+      "おきゃくさま": { meaning: "customer" }
+      "は": { meaning: "(marks the topic)" }
+      "を": { meaning: "(marks the thing acted on)" }
+      "めしあがります": { meaning: "to eat or drink (honorific)" }
+      "か": { meaning: "(makes a question)" }
+    confusables:
+      "w1": { why: "いく (iku) means to go." }
+      "w2": { why: "つくる (tsukuru) means to make." }
+  "ja-9411":
+    native: "The manager has not come yet."
+    notes:
+      "n1": "いらっしゃいません (irasshaimasen) is the polite negative of いらっしゃる (irassharu): it is the form a shop worker uses about a customer who is not there yet."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "いらっしゃいません": { meaning: "to come or go (honorific), negative" }
+    confusables:
+      "w1": { why: "あう (au) means to meet." }
+      "w2": { why: "とても (totemo) means very." }

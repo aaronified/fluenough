@@ -1,0 +1,250 @@
+schema: 1
+id: "ja-grammar-relative-clauses-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-9340"
+    target: "きのうかったほんはおもしろいです。"
+    words: ["きのう", "かった", "ほん", "は", "おもしろい", "です"]
+    reading: "kinou katta hon wa omoshiroi desu."
+    ipa: "kinoː katta hoɴ wa omoɕiɾoi desɯ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "きのう", ref: "ja-0514" }
+      - { word: "かった", ref: "ja-0356" }
+      - { word: "ほん", ref: "ja-1180" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "おもしろい", ref: "ja-0472" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "f1", word: "かいました", reading: "kaimashita", kind: "form" }
+      - { id: "w1", word: "の", reading: "no", kind: "word" }
+      - { id: "w2", ref: "ja-0345", kind: "word" }
+  - id: "ja-9341"
+    target: "ははがつくったりょうりはおいしいです。"
+    words: ["はは", "が", "つくった", "りょうり", "は", "おいしい", "です"]
+    reading: "haha ga tsukutta ryouri wa oishii desu."
+    ipa: "haha ɡa tsɯkɯtta ɾjoːɾi wa oiɕiː desɯ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "はは", ref: "ja-0201" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "つくった", ref: "ja-0364" }
+      - { word: "りょうり", ref: "ja-0994" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "おいしい", ref: "ja-0471" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "f1", word: "つくりました", reading: "tsukurimashita", kind: "form" }
+      - { id: "w1", word: "を", reading: "o", kind: "word" }
+      - { id: "w2", ref: "ja-0341", kind: "word" }
+  - id: "ja-9342"
+    target: "あしたあうひとはせんせいです。"
+    words: ["あした", "あう", "ひと", "は", "せんせい", "です"]
+    reading: "ashita au hito wa sensei desu."
+    ipa: "aɕita aɯ çito wa seɴseː desɯ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "あした", ref: "ja-0513" }
+      - { word: "あう", ref: "ja-0357" }
+      - { word: "ひと", ref: "ja-0147" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "せんせい", ref: "ja-0070" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "f1", word: "あった", reading: "atta", kind: "form" }
+      - { id: "w1", ref: "ja-0349", kind: "word" }
+      - { id: "w2", ref: "ja-0348", kind: "word" }
+  - id: "ja-9343"
+    target: "きのうがっこうにこなかったひとはともだちです。"
+    words: ["きのう", "がっこう", "に", "こなかった", "ひと", "は", "ともだち", "です"]
+    reading: "kinou gakkou ni konakatta hito wa tomodachi desu."
+    ipa: "kinoː ɡakkoː ni konakatta çito wa tomodatɕi desɯ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "きのう", ref: "ja-0514" }
+      - { word: "がっこう", ref: "ja-0313" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "こなかった", ref: "ja-0349" }
+      - { word: "ひと", ref: "ja-0147" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "f1", word: "こない", reading: "konai", kind: "form" }
+      - { id: "w1", ref: "ja-0348", kind: "word" }
+      - { id: "w2", word: "で", reading: "de", kind: "word" }
+  - id: "ja-9344"
+    target: "かのじょがかいたてがみをよみました。"
+    words: ["かのじょ", "が", "かいた", "てがみ", "を", "よみました"]
+    reading: "kanojo ga kaita tegami o yomimashita."
+    ipa: "kanodʑo ɡa kaita teɡami o jomimaɕita"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "かのじょ", ref: "ja-0171" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "かいた", ref: "ja-0346" }
+      - { word: "てがみ", ref: "ja-1356" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "よみました", ref: "ja-0345" }
+    confusables:
+      - { id: "f1", word: "かきました", reading: "kakimashita", kind: "form" }
+      - { id: "w1", ref: "ja-0344", kind: "word" }
+      - { id: "w2", ref: "ja-0343", kind: "word" }
+  - id: "ja-9345"
+    target: "ともだちがすきなえいがはおもしろいです。"
+    words: ["ともだち", "が", "すきな", "えいが", "は", "おもしろい", "です"]
+    reading: "tomodachi ga sukina eiga wa omoshiroi desu."
+    ipa: "tomodatɕi ɡa sɯkina eːɡa wa omoɕiɾoi desɯ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "すきな", ref: "ja-0318" }
+      - { word: "えいが", ref: "ja-1358" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "おもしろい", ref: "ja-0472" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "f1", word: "すきだ", reading: "sukida", kind: "form" }
+      - { id: "w1", ref: "ja-0475", kind: "word" }
+      - { id: "w2", ref: "ja-0320", kind: "word" }
+  - id: "ja-9346"
+    target: "あのみせでかったくつはあたらしいです。"
+    words: ["あの", "みせ", "で", "かった", "くつ", "は", "あたらしい", "です"]
+    reading: "ano mise de katta kutsu wa atarashii desu."
+    ipa: "ano mise de katta kɯtsɯ wa ataɾaɕiː desɯ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "あの", ref: "ja-0667" }
+      - { word: "みせ", ref: "ja-0915" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "かった", ref: "ja-0356" }
+      - { word: "くつ", ref: "ja-1522" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "あたらしい", ref: "ja-0462" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", word: "に", reading: "ni", kind: "word" }
+      - { id: "w2", ref: "ja-1346", kind: "word" }
+      - { id: "w3", ref: "ja-1512", kind: "word" }
+  - id: "ja-9347"
+    target: "ケーキをつくったひとはだれですか。"
+    words: ["ケーキ", "を", "つくった", "ひと", "は", "だれ", "です", "か"]
+    reading: "keeki o tsukutta hito wa dare desu ka."
+    ipa: "keːki o tsɯkɯtta çito wa daɾe desɯ ka"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "ケーキ", ref: "ja-0853" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "つくった", ref: "ja-0364" }
+      - { word: "ひと", ref: "ja-0147" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "だれ", ref: "ja-0107" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - { id: "f1", word: "つくりました", reading: "tsukurimashita", kind: "form" }
+      - { id: "w1", word: "が", reading: "ga", kind: "word" }
+      - { id: "w2", ref: "ja-0341", kind: "word" }
+  - id: "ja-9348"
+    target: "おさけをのまないひとはおちゃがすきです。"
+    words: ["おさけ", "を", "のまない", "ひと", "は", "おちゃ", "が", "すき", "です"]
+    reading: "osake o nomanai hito wa ocha ga suki desu."
+    ipa: "osake o nomanai çito wa otɕa ɡa sɯki desɯ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "おさけ", ref: "ja-0914" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "のまない", ref: "ja-0342" }
+      - { word: "ひと", ref: "ja-0147" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "おちゃ", ref: "ja-0911" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "すき", ref: "ja-0318" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "f1", word: "のみません", reading: "nomimasen", kind: "form" }
+      - { id: "f2", word: "のまなかった", reading: "nomanakatta", kind: "form" }
+      - { id: "w1", ref: "ja-0341", kind: "word" }
+  - id: "ja-9349"
+    target: "こうえんであそんだこどもはげんきです。"
+    words: ["こうえん", "で", "あそんだ", "こども", "は", "げんき", "です"]
+    reading: "kouen de asonda kodomo wa genki desu."
+    ipa: "koːeɴ de asoɴda kodomo wa ɡeɴki desɯ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "こうえん", ref: "ja-1069" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "あそんだ", ref: "ja-0374" }
+      - { word: "こども", ref: "ja-0225" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "げんき", ref: "ja-1342" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "f1", word: "あそびました", reading: "asobimashita", kind: "form" }
+      - { id: "w1", ref: "ja-1071", kind: "word" }
+      - { id: "w2", word: "に", reading: "ni", kind: "word" }
+  - id: "ja-9350"
+    target: "かれがよくのむコーヒーはおいしいです。"
+    words: ["かれ", "が", "よく", "のむ", "コーヒー", "は", "おいしい", "です"]
+    reading: "kare ga yoku nomu koohii wa oishii desu."
+    ipa: "kaɾe ɡa jokɯ nomɯ koːçiː wa oiɕiː desɯ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "かれ", ref: "ja-0170" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "よく", ref: "ja-0389" }
+      - { word: "のむ", ref: "ja-0342" }
+      - { word: "コーヒー", ref: "ja-0849" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "おいしい", ref: "ja-0471" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "f1", word: "のんだ", reading: "nonda", kind: "form" }
+      - { id: "w1", ref: "ja-0345", kind: "word" }
+      - { id: "w2", word: "の", reading: "no", kind: "word" }
+  - id: "ja-9351"
+    target: "ちちがとったしゃしんをみました。"
+    words: ["ちち", "が", "とった", "しゃしん", "を", "みました"]
+    reading: "chichi ga totta shashin o mimashita."
+    ipa: "tɕitɕi ɡa totta ɕaɕiɴ o mimaɕita"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ちち", ref: "ja-0200" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "とった", ref: "ja-1893" }
+      - { word: "しゃしん", ref: "ja-1693" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "みました", ref: "ja-0343" }
+    confusables:
+      - { id: "f1", word: "とりました", reading: "torimashita", kind: "form" }
+      - { id: "w1", ref: "ja-0345", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
