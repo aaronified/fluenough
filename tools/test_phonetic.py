@@ -95,6 +95,8 @@ QUOTED = '''"schema": !!int "1"
 JSONISH = '''{
   "schema": 1,
   "id": "zz-json",
+  "part": "core",
+  "kind": "vocab",
   "cards": [
     {
       "id": "zz-0001",
@@ -256,8 +258,11 @@ class Patching(Tree):
                 (tmp / "zz").mkdir()
                 (tmp / "zz" / f"{name}.yaml").write_text(text, encoding="utf-8")
                 cards = pp.core_cards(tmp, "zz")
-                self.assertTrue(cards)
-                self.assertTrue(all(c.block for c in cards))
+                self.assertEqual([c.cid for c in cards], ["zz-0001", "zz-0002", "zz-0003"])
+                # A JSON-style card whose ipa is its last key cannot be patched.
+                self.assertEqual({c.cid: c.block for c in cards},
+                                 {"zz-0001": True, "zz-0002": name != "zz-json",
+                                  "zz-0003": True})
 
     def test_a_form_that_is_not_narrow_ipa_in_brackets_is_refused(self) -> None:
         for bad in ("kat", "[]", "[kat!]", "/kat/", "[ka:t]", "[ ]"):
