@@ -790,8 +790,9 @@ def _transcribe(text: str, lang: str, hint: str | None) -> Transcription:
                     # course's cards do: uṇḍi, saṅgītaṁ, mañci. Word-final
                     # and before s, v or l it is ṁ, ISO 15919's letter for
                     # it: annaṁ, māṁsaṁ, annaṁlō. Before any other letter
-                    # (ś, ṣ, h, y, r) it is m: samstha. Typed letters do not
-                    # change this.
+                    # (ś, ṣ, h, y, r, ḷ, ṟ) it is m: samyōgaṁ (a deliberate
+                    # departure from ISO 15919, kept to match the cards). A
+                    # hint that types an m or n does not change this.
                     if nxt in HOMORGANIC:
                         n = HOMORGANIC[nxt]
                         i_iso, i_ipa = n, HOMORGANIC_IPA[n]

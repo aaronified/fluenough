@@ -84,16 +84,22 @@ class ReadingTest(unittest.TestCase):
             with self.subTest(hint):
                 t = transcribe("సంచి", "te", hint)
                 self.assertEqual((t.reading, t.ipa), ("sañci", "saɲtʃi"))
-        for word, reading in (
-            ("ఉందా", "undā"),          # before a dental stop: n
-            ("సంపాదన", "sampādana"),     # labial: m
-            ("పంట", "paṇṭa"),           # retroflex: ṇ
-            ("మంచి", "mañci"),          # palatal: ñ
-            ("అన్నంలో", "annaṁlō"),      # final anusvara, then the suffix -lō
-            ("సంయోగం", "samyōgaṁ"),      # before y: m
+        for word, reading, ipa in (
+            ("ఉందా", "undā", "und̪aː"),              # dental stop: n
+            ("సంపాదన", "sampādana", "sampaːd̪ana"),  # labial: m
+            ("పంట", "paṇṭa", "paɳʈa"),               # retroflex: ṇ
+            ("మంచి", "mañci", "maɲtʃi"),              # palatal: ñ
+            ("అన్నంలో", "annaṁlō", "annamloː"),       # final anusvara + -lō
+            ("సంయోగం", "samyōgaṁ", "samjoːɡam"),      # before y: m
+            ("సంస్థ", "saṁstha", "samst̪ʰa"),         # s of the cluster: ṁ
+            ("సంశయం", "samśayaṁ", "samʃajam"),        # before ś: m
+            ("సంహారం", "samhāraṁ", "samhaːram"),      # before h: m
+            ("సంరక్షణ", "samrakṣaṇa", "samrakʂaɳa"),  # before r: m
+            ("సంక్షేపం", "saṅkṣēpaṁ", "saŋkʂeːpam"),  # before the k of kṣ
         ):
             with self.subTest(word):
-                self.assertEqual(transcribe(word, "te").reading, reading)
+                t = transcribe(word, "te")
+                self.assertEqual((t.reading, t.ipa), (reading, ipa))
 
     def test_telugu_anusvara_does_not_follow_the_typed_hint(self) -> None:
         # A hint typed with m before a dental stop does not make it m.

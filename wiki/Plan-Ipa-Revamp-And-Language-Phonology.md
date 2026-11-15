@@ -367,8 +367,10 @@ Bengali as the pilot because the owner named it (**Proposed**).
 Telugu readings are based on ISO 15919, which writes every anusvara as ṁ. The
 course already departs from that before a stop, where the cards write the
 nasal that is said (owner, 2026-10-19: a word-final anusvara is `ṁ`,
-course-wide). Counted on the stored Telugu cards and examples (3,287
-distinct readings, 2026-11-15; the counts below are occurrences), by the letter that follows the anusvara:
+course-wide). Counted on the stored Telugu cards and examples (3,413
+distinct target and reading pairs with an anusvara on 2026-11-15, of which
+3,287 could be analysed; the issue's 3,387 counts targets only; the counts
+below are occurrences), by the letter that follows the anusvara:
 
 | Next letter | Stored nasal |
 |---|---|
@@ -376,20 +378,28 @@ distinct readings, 2026-11-15; the counts below are occurrences), by the letter 
 | word-final | `ṁ` 1,597, `m` 3 |
 | s | `ṁ` 25, `m` 3 |
 | v | `ṁ` 9, `m` 3 |
-| l | `ṁ` 59, `m` 59 (a tie) |
+| l | `ṁ` 59, `m` 59 |
 | ś, r, h | `m` 12, `ṁ` 3 |
+| y, ṣ, ḷ, ṟ | no card in the decks has an anusvara before them |
 
-**The rule** (`tools/transcribe.py`, `te`): before a stop or a nasal the
-anusvara is the nasal of that letter (uṇḍi, saṅgītaṁ, mañci, sampādana);
-word-final, and before s, v or l, it is `ṁ` (annaṁ, māṁsaṁ, annaṁlō); before
-any other letter (ś, ṣ, h, y, r) it is `m` (samyōgaṁ). The typed hint does not
-change it. Reasons: before a stop the cards' majority is overwhelming and it
-is what is said; the `l` tie breaks to `ṁ` because every such word is a
-word-final anusvara followed by the suffix -lō (annaṁlō, ālayaṁlō), which is
-the owner's word-final rule and ISO 15919's letter; `s` and `v` were already
-`ṁ`; the few `m` before ś, r, h are kept (twelve readings against three), a
-choice nobody needs to revisit unless more cards say otherwise. IPA writes
-`m` for `ṁ` and the stop's nasal for the others.
+**The rule** (`tools/transcribe.py`, `te`; decided by the architect under the
+issue's mandate; the owner may veto): before a stop or a nasal the anusvara is
+the nasal of that letter (uṇḍi, saṅgītaṁ, mañci, sampādana); word-final, and
+before s, v or l, it is `ṁ` (annaṁ, māṁsaṁ, annaṁlō); before every other
+letter (ś, ṣ, h, y, r, ḷ, ṟ) it is `m` (samyōgaṁ, samśayaṁ, samhāraṁ,
+samrakṣaṇa). A hint that types an m or n does not change it. A hint with no
+nasal at all still gives `m̐` (unchanged by this change).
+
+**`m` before ś, ṣ, h, y, r, ḷ, ṟ is a deliberate departure from ISO 15919**,
+which writes `ṁ` there. It is kept because it matches the existing cards (12
+readings against 3 before ś, r and h) and makes the deck pass smaller.
+
+Reasons for the rest: before a stop the cards' majority is overwhelming and it
+is what is said. `m` before l is more common in the cards (every such word is
+a -lō word: prapañcamlō), but `ṁ` is chosen because it is the owner's
+word-final letter (the anusvara ends the stem; -lō is a suffix) and ISO's; `s`
+and `v` were already `ṁ`. IPA writes `m` for `ṁ` and the stop's nasal for the
+others.
 
 **Deck pass** (deck content, done on `decks-live` by deck workers, never by
 hand): rewrite the stored `reading` and `ipa` of every Telugu card and example
