@@ -343,7 +343,9 @@ units:
       - { id: "a-normal-day", text: { "en": "Someone talks through an ordinary day" } }
     reading_passages:
       - { id: "daily-timetable", text: { "en": "A timetable for a day: wake, work, eat, sleep" } }
-  - planned: { id: "fr-grammar-reflexives", grammar: "reflexives" }
+  - decks: ["fr-grammar-reflexives"]
+    words: 0
+    grammar: ["reflexives"]
     listening_passages:
       - { id: "getting-ready", text: { "en": "Saying what you do to yourself in the morning: wake up, wash, dress" } }
     reading_passages:
