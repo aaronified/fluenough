@@ -161,7 +161,57 @@ const String kLiveDecks = 'live';
 /// per deck source that has been audited.
 const Map<String, List<AdmissionProfile>> kAdmissionProfiles =
     <String, List<AdmissionProfile>>{
-      // Step 2 of #1270 pastes the entries printed by the "Placement audit"
-      // workflow (frozen and live, es and hi) here; the keys of the earlier
-      // scheme (every card of every deck) no longer match anything.
+      'es': <AdmissionProfile>[
+        AdmissionProfile(
+          source: kFrozenDecks,
+          deckKey: '2526-29f1333d',
+          excluded: <String>[
+            'F17:clean',
+            'F17:cognate',
+            'F28:cognate',
+            'F5:clean',
+            'F5:cognate',
+          ],
+          decoys: 2,
+        ),
+        AdmissionProfile(
+          source: kLiveDecks,
+          deckKey: '2756-35ef9671',
+          excluded: <String>[
+            'F17:cognate',
+            'F28:clean',
+            'F28:cognate',
+            'F5:cognate',
+          ],
+          decoys: 2,
+        ),
+      ],
+      'hi': <AdmissionProfile>[
+        AdmissionProfile(
+          source: kFrozenDecks,
+          deckKey: '2263-52e7bffd',
+          excluded: <String>[
+            'F14:clean',
+            'F17:clean',
+            'F1:clean',
+            'F28:clean',
+            'F28:cognate',
+            'F5:clean',
+          ],
+          decoys: 2,
+        ),
+        AdmissionProfile(
+          source: kLiveDecks,
+          deckKey: '2382-b0419c3f',
+          excluded: <String>[
+            'F14:clean',
+            'F17:cognate',
+            'F1:clean',
+            'F28:clean',
+            'F28:cognate',
+            'F5:clean',
+          ],
+          decoys: 2,
+        ),
+      ],
     };
