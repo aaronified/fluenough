@@ -1,0 +1,143 @@
+schema: 1
+id: "as-describing-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-5293"
+    target: "মই ক্লান্ত।"
+    reading: "moi klānt."
+    ipa: "moi klant"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "ক্লান্ত", ref: "as-2289" }
+    confusables:
+      - { id: "c1", word: "খুচীয়া", reading: "khusiyā", kind: "word" }
+      - { id: "c2", word: "দুখী", reading: "dukhi", kind: "word" }
+  - id: "as-5294"
+    target: "মই খুচীয়া।"
+    reading: "moi khusiyā."
+    ipa: "moi kʰusija"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "খুচীয়া", ref: "as-2287" }
+    confusables:
+      - { id: "c1", word: "দুখী", reading: "dukhi", kind: "word" }
+      - { id: "c2", word: "ক্লান্ত", reading: "klānt", kind: "word" }
+  - id: "as-5295"
+    target: "তেওঁ দুখী।"
+    reading: "teum̐ dukhi."
+    ipa: "teʊ̃ dukʰi"
+    pos: "phrase"
+    bases:
+      - { word: "তেওঁ", ref: "as-2181" }
+      - { word: "দুখী", ref: "as-2288" }
+    confusables:
+      - { id: "c1", word: "খুচীয়া", reading: "khusiyā", kind: "word" }
+      - { id: "c2", word: "ক্লান্ত", reading: "klānt", kind: "word" }
+  - id: "as-5296"
+    target: "এইটো ওখ।"
+    reading: "eitu ukh."
+    ipa: "eitʊ ʊkʰ"
+    pos: "phrase"
+    bases:
+      - { word: "এইটো", ref: "as-2193" }
+      - { word: "ওখ", ref: "as-2274" }
+    confusables:
+      - { id: "c1", word: "চুটি", reading: "suti", kind: "word" }
+      - { id: "c2", word: "দীঘল", reading: "dighôl", kind: "word" }
+  - id: "as-5297"
+    target: "কাপোৰ ময়লা।"
+    reading: "kāpur môyôlā."
+    ipa: "kapʊɹ mɔjɔla"
+    pos: "phrase"
+    bases:
+      - { word: "কাপোৰ", base: "কাপোৰ", reading: "kāpur" }
+      - { word: "ময়লা", ref: "as-2284" }
+    confusables:
+      - { id: "c1", word: "পৰিষ্কাৰ", reading: "porixkār", kind: "word" }
+      - { id: "c2", word: "বহল", reading: "bôhôl", kind: "word" }
+  - id: "as-5298"
+    target: "কোঠাটো পৰিষ্কাৰ।"
+    reading: "kuthātu porixkār."
+    ipa: "kʊtʰatʊ poɹixkaɹ"
+    pos: "phrase"
+    bases:
+      - { word: "কোঠাটো", base: "কোঠা", reading: "kuthā" }
+      - { word: "পৰিষ্কাৰ", ref: "as-2285" }
+    confusables:
+      - { id: "c1", word: "ময়লা", reading: "môyôlā", kind: "word" }
+      - { id: "c2", word: "বহল", reading: "bôhôl", kind: "word" }
+  - id: "as-5299"
+    target: "কিতাপ ভাৰী।"
+    reading: "kitāp bhāri."
+    ipa: "kitap bʱaɹi"
+    pos: "phrase"
+    bases:
+      - { word: "কিতাপ", base: "কিতাপ", reading: "kitāp" }
+      - { word: "ভাৰী", ref: "as-2282" }
+    confusables:
+      - { id: "c1", word: "হাল্কা", reading: "hālkā", kind: "word" }
+      - { id: "c2", word: "শক্ত", reading: "xôkt", kind: "word" }
+  - id: "as-5300"
+    target: "বেগটো হাল্কা।"
+    reading: "begtu hālkā."
+    ipa: "beɡtʊ halka"
+    pos: "phrase"
+    bases:
+      - { word: "বেগটো", base: "বেগ", reading: "beg" }
+      - { word: "হাল্কা", ref: "as-2283" }
+    confusables:
+      - { id: "c1", word: "ভাৰী", reading: "bhāri", kind: "word" }
+      - { id: "c2", word: "নৰম", reading: "nôrôm", kind: "word" }
+  - id: "as-5301"
+    target: "পাত নৰম।"
+    reading: "pāt nôrôm."
+    ipa: "pat nɔɹɔm"
+    pos: "phrase"
+    bases:
+      - { word: "পাত", base: "পাত", reading: "pāt" }
+      - { word: "নৰম", ref: "as-2280" }
+    confusables:
+      - { id: "c1", word: "শক্ত", reading: "xôkt", kind: "word" }
+      - { id: "c2", word: "ভাৰী", reading: "bhāri", kind: "word" }
+  - id: "as-5302"
+    target: "তুমি ক্লান্ত নেকি?"
+    reading: "tumi klānt neki?"
+    ipa: "tumi klant neki"
+    pos: "phrase"
+    bases:
+      - { word: "তুমি", ref: "as-2179" }
+      - { word: "ক্লান্ত", ref: "as-2289" }
+      - { word: "নেকি", ref: "as-0151" }
+    confusables:
+      - { id: "c1", word: "খুচীয়া", reading: "khusiyā", kind: "word" }
+      - { id: "c2", word: "দুখী", reading: "dukhi", kind: "word" }
+  - id: "as-5303"
+    target: "পৰিষ্কাৰ পানী ভাল।"
+    reading: "porixkār pāni bhāl."
+    ipa: "poɹixkaɹ pani bʱal"
+    pos: "phrase"
+    bases:
+      - { word: "পৰিষ্কাৰ", ref: "as-2285" }
+      - { word: "পানী", base: "পানী", reading: "pāni" }
+      - { word: "ভাল", base: "ভাল", reading: "bhāl" }
+    confusables:
+      - { id: "c1", word: "ময়লা", reading: "môyôlā", kind: "word" }
+      - { id: "c2", word: "নোন", reading: "nun", kind: "word" }
+  - id: "as-5304"
+    target: "তেওঁ দুখী নহয়।"
+    reading: "teum̐ dukhi nôhôy."
+    ipa: "teʊ̃ dukʰi nɔhɔj"
+    pos: "phrase"
+    bases:
+      - { word: "তেওঁ", ref: "as-2181" }
+      - { word: "দুখী", ref: "as-2288" }
+      - { word: "নহয়", ref: "as-0141" }
+    confusables:
+      - { id: "c1", word: "খুচীয়া", reading: "khusiyā", kind: "word" }
+      - { id: "c2", word: "ক্লান্ত", reading: "klānt", kind: "word" }

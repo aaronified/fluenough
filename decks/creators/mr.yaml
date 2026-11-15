@@ -1,0 +1,58 @@
+# The people behind the Marathi culture 1 passages (wiki/Deck-Format.md, Creators; D5, D5b).
+# Dates are the years of birth and death as the mr.wikisource and en.wikipedia pages read; an uncertain year is {year, circa: true}.
+schema: 1
+kind: "creators"
+id: "creators-mr"
+language: "mr"
+license: "CC-BY-SA-4.0"
+eras:
+  - id: "sant-kavya"
+    name: { mr: "संतकाव्य काळ", en: "Age of the saint-poets" }
+    reading: { mr: "santakāvya" }
+    from: 1250
+    to: 1700
+creators:
+  - id: "mr-dnyaneshwar"
+    name:
+      mr: { text: "ज्ञानेश्वर", reading: "dnyāneśvar", ipa: "d̪ɲaneʃʋər" }
+      en: { text: "Dnyaneshwar" }
+    born: { year: 1275, circa: true }
+    died: 1296
+    era: "sant-kavya"
+    bio:
+      en: "Dnyaneshwar was a 13th-century Marathi saint, poet and philosopher, who wrote the Dnyaneshwari, a commentary on the Bhagavad Gita in Marathi, in 1290."
+    legacy:
+      text: { en: "Varkari devotees still carry his padukas in a palanquin each year, and the Dnyaneshwari is a central text of the Varkari sect." }
+      items:
+        - { kind: "festival", text: { en: "Varkari devotees carry the padukas (sandals) of Dnyaneshwar in a palanquin from Alandi to Pandharpur on the annual Wari pilgrimage in Ashadh." }, source: { url: "https://en.wikipedia.org/wiki/Dnyaneshwar", accessed: "2026-11-15" } }
+        - { kind: "film", year: 1940, text: { en: "A 1940 Marathi film, Sant Dnyaneshwar, was a biopic of his life." }, source: { url: "https://en.wikipedia.org/wiki/Dnyaneshwar", accessed: "2026-11-15" } }
+        - { kind: "other", text: { en: "The Dnyaneshwari became a fundamental text of the Varkari sect." }, source: { url: "https://en.wikipedia.org/wiki/Dnyaneshwar", accessed: "2026-11-15" } }
+        - { kind: "other", text: { en: "The Dnyaneshwari has been translated into Sanskrit, Hindi, Kannada, Tamil and English, and into 21 other languages." }, source: { url: "https://mr.wikisource.org/wiki/%E0%A4%9C%E0%A5%8D%E0%A4%9E%E0%A4%BE%E0%A4%A8%E0%A5%87%E0%A4%B6%E0%A5%8D%E0%A4%B5%E0%A4%B0%E0%A5%80", accessed: "2026-11-15" } }
+  - id: "mr-tukaram"
+    name:
+      mr: { text: "तुकाराम", reading: "tukārām", ipa: "t̪ukaram" }
+      en: { text: "Tukaram" }
+    born: { year: 1598, circa: true }
+    died: { year: 1650, circa: true }
+    era: "sant-kavya"
+    bio:
+      en: "Tukaram was a Marathi saint-poet whose devotional abhangs are collected in the Tukaram Gatha."
+    legacy:
+      text: { en: "His abhangs are read as guidance for everyday life, and the first modern printed edition of the Gatha appeared in 1869." }
+      items:
+        - { kind: "other", text: { en: "The Gatha is guidance given in aphoristic form on the many dealings of daily life, and a great commentary on life, according to its Wikisource page." }, source: { url: "https://mr.wikisource.org/wiki/%E0%A4%A4%E0%A5%81%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A4%BE%E0%A4%AE_%E0%A4%97%E0%A4%BE%E0%A4%A5%E0%A4%BE", accessed: "2026-11-15" } }
+        - { kind: "other", year: 1869, text: { en: "The first modern printed edition of the Gatha appeared in 1869, in the Indu Prakash." }, source: { url: "https://en.wikipedia.org/wiki/Tukaram", accessed: "2026-11-15" } }
+  - id: "mr-samarth-ramdas"
+    name:
+      mr: { text: "समर्थ रामदास", reading: "samarth rāmdās", ipa: "səmərt̪ʰ ramd̪as" }
+      en: { text: "Samarth Ramdas" }
+    born: { year: 1608, circa: true }
+    died: { year: 1682, circa: true }
+    era: "sant-kavya"
+    bio:
+      en: "Samarth Ramdas, born Narayan Suryaji Thosar, was a Marathi poet and the founder of the Samarth sect; the Manache Shlok is among his works."
+    legacy:
+      text: { en: "He is remembered as the founder of the Samarth sect and as a contemporary of Tukaram." }
+      items:
+        - { kind: "other", text: { en: "The Marathi Wikisource author page names him as the founder of the Samarth sect." }, source: { url: "https://mr.wikisource.org/wiki/%E0%A4%B8%E0%A4%BE%E0%A4%B9%E0%A4%BF%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A4%BF%E0%A4%95%3A%E0%A4%B8%E0%A4%AE%E0%A4%B0%E0%A5%8D%E0%A4%A5_%E0%A4%B0%E0%A4%BE%E0%A4%AE%E0%A4%A6%E0%A4%BE%E0%A4%B8_%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%BE%E0%A4%AE%E0%A5%80", accessed: "2026-11-15" } }
+        - { kind: "other", text: { en: "The Marathi Wikisource author page calls him a contemporary of the saint-poet Tukaram." }, source: { url: "https://mr.wikisource.org/wiki/%E0%A4%B8%E0%A4%BE%E0%A4%B9%E0%A4%BF%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A4%BF%E0%A4%95%3A%E0%A4%B8%E0%A4%AE%E0%A4%B0%E0%A5%8D%E0%A4%A5_%E0%A4%B0%E0%A4%BE%E0%A4%AE%E0%A4%A6%E0%A4%BE%E0%A4%B8_%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%BE%E0%A4%AE%E0%A5%80", accessed: "2026-11-15" } }
