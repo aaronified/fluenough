@@ -250,10 +250,7 @@ void main() {
         isNot(keyOne(<Card>[other, word()])),
         reason: 'order within a deck',
       );
-      expect(
-        keyOne(<Card>[word()]),
-        isNot(keyOne(<Card>[word(), other])),
-      );
+      expect(keyOne(<Card>[word()]), isNot(keyOne(<Card>[word(), other])));
       final yyDecks = <List<Card>>[
         <Card>[word()],
       ];
