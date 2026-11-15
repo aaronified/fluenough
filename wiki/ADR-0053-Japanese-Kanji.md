@@ -11,8 +11,8 @@ Source of truth: this wiki page.
 
 ## Context
 
-The Japanese path plans six kanji units (`script-kanji-1` to `-6`, path
-units 43, 56, 74, 93, 109 and 127) and the course's cards are all in kana
+The Japanese path plans 38 kanji units (`script-kanji-1` to `-38`; their path
+positions are in `decks/ja/ja-path.yaml`; updated 2026-11-14, owner: build the kanjis) and the course's cards are all in kana
 with a romaji reading. The owner was asked how kanji should enter the decks
 and chose "Kanji targets, kana readings (Recommended)" (2026-11-02): "From
 each kanji unit on, cards write the target in kanji with the kana reading

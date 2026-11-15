@@ -82,7 +82,7 @@ set in the language studied most recently, else the defaults.
 a file, the name of the copy of what was replaced, and the review count
 before and after. A confirmed restore is the one exception to `reviews` and
 `leech_actions` being append-only (AGENTS.md rule 9), and this is its
-log: append-only and guarded like them, and never cleared.
+log: append-only and guarded like them, and never cleared. The other exception is a language's data deleted from its sheet (#861): `AppDatabase.eraseReviews` removes one language's selected reviews after a backup, and the language's card states are rebuilt by replay.
 
 **`replay_snapshots`** — what opening the app works out from the whole review
 log, kept for the next launch (migration 10, #857, ADR-0051): one row, the

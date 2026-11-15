@@ -20,7 +20,8 @@ The owner's rules, as written in [CLAUDE.md](https://github.com/aaronified/fluen
 ## Decks that need a newer app
 
 Not every phone updates as soon as a release is out, and decks are fetched
-from `main` whatever the phone runs. When new decks or a new language need
+from `decks-live` whatever the phone runs (an older app reads main's frozen
+copy of `decks/`). When new decks or a new language need
 what a release added, list them in `decks/min_app.json` (language code, or a
 deck file's path, to the version, such as `"0.7.1"`) in the same pull request
 that adds them, once that version is released or will be before the decks

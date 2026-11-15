@@ -90,13 +90,13 @@ every card in the shipped decks, then deletes the old.
 1. **Pin today's behaviour.** A test that records, for every card in the
    decks and every skill, which `Ask` is chosen now. No code changes. It is
    the safety net for every step after. It reads a frozen copy of the decks
-   kept under `test/fixtures/ask_pin/` (te, es and ipa, whole), so that it
+   kept under `test/fixtures/sample-decks/` (te, es and ipa, whole), so that it
    fails only when code changes the asks, never when a deck changes, and a
    deck-only pull request cannot turn main red (#524; the 8 test shards run
    on every pull request, deck-only ones included). Owner, 2026-10-17,
    asked "What should it read?": "Frozen deck copy". Refresh it, with the
    golden, only for an intended change:
-   `python3 tools/snapshot_ask_pin.py`, then `UPDATE_ASK_PIN=1 flutter test
+   `python3 tools/snapshot_sample_decks.py`, then `UPDATE_ASK_PIN=1 flutter test
    test/core/scheduling/ask_pin_test.dart`; never in a deck pull request.
    `test/features/decks/decks_page_test.dart` reads the same copy for
    Telugu's path numbers (#567), so a refresh updates those too.
@@ -175,7 +175,7 @@ every card in the shipped decks, then deletes the old.
    eligibility. **Convert at release** (owner, 2026-10-23: "Convert at
    release"): the code lands on main first; `tools/convert_modes.py`
    rewrites every shipped list to its complement over the four vocabulary
-   skills, with no grammar names, on `decks-next`, merged when the release
+   skills, with no grammar names, on `decks-live`, merged when the release
    that reads the new meaning ships, so installed apps never read converted
    lists. The validator's "excludes every skill" check is not built.
 7. **Hear form or meaning by the card (#7).** Whether the heard form is
@@ -238,7 +238,7 @@ every card in the shipped decks, then deletes the old.
     error); DECK-FORMAT marks the field retired. **Released apps still need
     the key**, since they read it as required, so no shipped deck drops it
     yet: that is a deck change for a release after the one that ships this,
-    on `decks-next`, and the validator's warning stays until then. The
+    on `decks-live`, and the validator's warning stays until then. The
     default's wording is mine, taken from the most common shipped prompt;
     the cells of the 17 decks that wrote another would read differently
     once their `prompt` is removed.

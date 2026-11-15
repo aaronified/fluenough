@@ -4,7 +4,7 @@ Source of truth: this wiki page.
 
 Written 2026-11-02. A plan and a mockup only: no app code is written by it. The mockup of the Settings switch is `docs/mockups/haptics-settings.html` on the branch `mockup/haptics-settings`, with its notes and self-check in `haptics-settings.md` beside it. The owner wants this in the next release.
 
-**Status 2026-11-06: approved by the owner 2026-11-06; build after the web work.** Owner, 2026-11-06: "Approve haptics, build it after web" (after being shown the haptics settings mockup `docs/mockups/haptics-settings.html` on 2026-11-06). Nothing is built yet and no issue is filed. It is aimed at 0.9.x. The 0.9.0 milestone does not exist yet, so the issue is filed, and tagged, once the owner creates it.
+**Status 2026-11-07: built and released in 0.9.0** (CHANGELOG 0.9.0, "Your phone buzzes a little as you use the app": Settings > Look and language > Vibrate on touch, on by default, saved per profile and in backups, hidden on the web and desktop; `lib/core/haptics/`, `lib/app/haptics.dart`). Approved by the owner 2026-11-06 ("Approve haptics, build it after web", after being shown the haptics settings mockup, which is removed now it is built). What follows is the design as planned; where the build differs, the CHANGELOG and the code are right. Whether every step below shipped has not been audited line by line.
 
 ## What the owner asked
 

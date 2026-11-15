@@ -148,7 +148,7 @@ language), which the owner rejected.
   "all decks" means every card Wiktionary covers, not every card. Order: the
   field, its validator rule and the coverage table first (a pull request,
   then a release that reads it, since released apps reject unknown fields);
-  the import pull requests go to `decks-next` after that release. Until
+  the import pull requests go to `decks-live` after that release. Until
   then a deck builder writes no narrow form by hand (see
   `.claude/skills/build-deck/SKILL.md`).
 - **Built (owner asked, 2026-10-30: "make all decks compliant with the full []
@@ -177,8 +177,15 @@ language), which the owner rejected.
     read). Spanish: the untagged form, which Wiktionary does not say is
     Castilian or Latin American while the decks' `ipa` writes θ, so a
     Latin-American learner's card shows a Castilian broad form beside a
-    form of unknown accent: left for the owner. Any other language needs its
-    variety named in `VARIETIES` first.
+    form of unknown accent: left for the owner. The languages are data (#1285): the
+    dump name and variety of each are in `tools/phonetic_languages.yaml`,
+    read by the tool, and a new language is an entry there with no code
+    change. Telugu and Japanese are registered as the untagged form of
+    their dumps (measured on the kaikki.org dumps, 2026-11: Telugu 1,655
+    of 1,670 narrow forms carry no note or tag, Japanese 26,661 of 26,689;
+    the rest are regional, letter names or alternative readings and are not
+    taken). Telugu has few narrow forms (about 5% of cards), so its narrow
+    IPA comes mostly from rules.
   - **Rules.** One YAML file per language, `decks/<lang>/<lang>-phonetics.yaml`
     (kind `phonetics`, a new file kind, see "Phonetic rules files" in
     [Deck-Format](Deck-Format)): ordered regular-expression rules, each with a
@@ -362,6 +369,57 @@ Colloquial variety together with others; the deck must say which it teaches.
 Kannada, Assamese, Chinese, Hindustani, Japanese, Korean, Toki Pona), with
 Bengali as the pilot because the owner named it (**Proposed**).
 
+## Telugu medial anusvara (decided 2026-11-15, #1295)
+
+Telugu readings are based on ISO 15919, which writes every anusvara as ṁ. The
+course already departs from that before a stop, where the cards write the
+nasal that is said (owner, 2026-10-19: a word-final anusvara is `ṁ`,
+course-wide). Counted on the stored Telugu cards and examples (3,413
+distinct target and reading pairs with an anusvara on 2026-11-15, of which
+3,287 could be analysed; the issue's 3,387 counts targets only; the counts
+below are occurrences), by the letter that follows the anusvara:
+
+| Next letter | Stored nasal |
+|---|---|
+| a stop (k g c j ṭ ḍ t d p b and their aspirates) | the stop's nasal in about 96% (ṅ 345 of 368 before k and g; ñ 366 of 380 before c and j; ṇ 1,029 of 1,038 before ṭ and ḍ; n 1,489 of 1,564 before t and d; m 147 of 156 before p and b), `ṁ` in nearly all the rest |
+| word-final | `ṁ` 1,597, `m` 3 |
+| s | `ṁ` 25, `m` 3 |
+| v | `ṁ` 9, `m` 3 |
+| l | `ṁ` 59, `m` 59 |
+| ś, r, h | `m` 12, `ṁ` 3 |
+| y, ṣ, ḷ, ṟ | no card in the decks has an anusvara before them |
+
+**The rule** (`tools/transcribe.py`, `te`; decided by the architect under the
+issue's mandate; the owner may veto): before a stop or a nasal the anusvara is
+the nasal of that letter (uṇḍi, saṅgītaṁ, mañci, sampādana); word-final, and
+before s, v or l, it is `ṁ` (annaṁ, māṁsaṁ, annaṁlō); before every other
+letter (ś, ṣ, h, y, r, ḷ, ṟ) it is `m` (samyōgaṁ, samśayaṁ, samhāraṁ,
+samrakṣaṇa). Before a vowel it is `m` too (added 2026-11-15, #1295): in a
+letter-name word such as ఎస్‌ఎంఎస్ (es-em-es) the ం is the consonant m, so the
+reading is `esemes`, not `eseṁes`. A hint that types an m or n does not change it. The deck pass leaves the
+paradigm `readings:` maps half-fixed (`tools/transcribe_decks.py` rewrites a
+cell only when it equals a corrected core reading), so #1295 stays open for a
+paradigm-map pass. A hint with no
+nasal at all still gives `m̐` (unchanged by this change).
+
+**`m` before ś, ṣ, h, y, r, ḷ, ṟ is a deliberate departure from ISO 15919**,
+which writes `ṁ` there. It is kept because it matches the existing cards (12
+readings against 3 before ś, r and h) and makes the deck pass smaller.
+
+Reasons for the rest: before a stop the cards' majority is overwhelming and it
+is what is said. `m` before l is more common in the cards (every such word is
+a -lō word: prapañcamlō), but `ṁ` is chosen because it is the owner's
+word-final letter (the anusvara ends the stem; -lō is a suffix) and ISO's; `s`
+and `v` were already `ṁ`. IPA writes `m` for `ṁ` and the stop's nasal for the
+others.
+
+**Deck pass** (deck content, done on `decks-live` by deck workers, never by
+hand): rewrite the stored `reading` and `ipa` of every Telugu card and example
+whose nasal differs from the rule. About 192 of the 3,287 readings differ
+(mostly `ṁ` before a stop, `m` before l). Other differences the tool shows
+(ph for f, r̥ for ṛ, word-initial vowels) are separate and are not part of
+this rule.
+
 ## Steps (Proposed, each one pull request)
 
 | # | Step | Done when |
@@ -371,7 +429,7 @@ Bengali as the pilot because the owner named it (**Proposed**).
 | 2 | IPA course units 1 to 3 and 12 | they read in the app at 1.4x; the validator passes |
 | 3 | The whole-chart unit | the chart is shown and read by axes |
 | 4 | Phonology deck for Bengali, parts 1 to 6, | a Bengali speaker or phonetician has checked the inventory |
-| 5 | (Fields, validator and both tools are built, 2026-10-30; the runs per language are not.) The `phonetic` and `phonetic_source` fields: format, validator, `tools/import_phonetic.py` and `tools/derive_phonetic.py` (Sonnet), then a release; then Haiku runs the import per language (one pull request each on `decks-next`, one Sonnet review each), then the rules per language | the validator accepts both fields; every Wiktionary form is imported; each remaining card has a rules form marked `rules`; the app reads the source |
+| 5 | (Fields, validator and both tools are built, 2026-10-30; the runs per language are not.) The `phonetic` and `phonetic_source` fields: format, validator, `tools/import_phonetic.py` and `tools/derive_phonetic.py` (Sonnet), then a release; then Haiku runs the import per language (one pull request each on `decks-live`, one Sonnet review each), then the rules per language | the validator accepts both fields; every Wiktionary form is imported; each remaining card has a rules form marked `rules`; the app reads the source |
 | 6 | The rest of the languages in the owner's order | each one as in step 4 |
 | 7 | Pronouncing-words decks | after step 5, and after B1 for the path position |
 
