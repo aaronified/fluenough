@@ -1,0 +1,166 @@
+schema: 1
+id: "as-body-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-5566"
+    target: "মোৰ মূৰত ব্যথা।"
+    reading: "mur murôt byôthā."
+    ipa: "mʊɹ muɹɔt bjɔtʰa"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "মূৰত", base: "মূৰ", reading: "mur" }
+      - { word: "ব্যথা", ref: "as-2396" }
+    confusables:
+      - { id: "c1", word: "পেট", reading: "pet", kind: "word" }
+      - { id: "c2", word: "পাঁজৰ", reading: "pām̐zôr", kind: "word" }
+  - id: "as-5567"
+    target: "মোৰ পেটত ব্যথা।"
+    reading: "mur petôt byôthā."
+    ipa: "mʊɹ petɔt bjɔtʰa"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "পেটত", base: "পেট", reading: "pet" }
+      - { word: "ব্যথা", ref: "as-2396" }
+    confusables:
+      - { id: "c1", word: "মূৰ", reading: "mur", kind: "word" }
+      - { id: "c2", word: "ভৰি", reading: "bhori", kind: "word" }
+  - id: "as-5568"
+    target: "তেওঁৰ হাতত ব্যথা।"
+    reading: "teum̐r hātôt byôthā."
+    ipa: "teʊ̃ɹ hatɔt bjɔtʰa"
+    pos: "phrase"
+    bases:
+      - { word: "তেওঁৰ", ref: "as-2190" }
+      - { word: "হাতত", base: "হাত", reading: "hāt" }
+      - { word: "ব্যথা", ref: "as-2396" }
+    confusables:
+      - { id: "c1", word: "কান্ধ", reading: "kāndh", kind: "word" }
+      - { id: "c2", word: "কনুই", reading: "konui", kind: "word" }
+  - id: "as-5569"
+    target: "তেওঁৰ চকু ডাঙৰ।"
+    reading: "teum̐r soku dāṅôr."
+    ipa: "teʊ̃ɹ soku daŋɔɹ"
+    pos: "phrase"
+    bases:
+      - { word: "তেওঁৰ", ref: "as-2190" }
+      - { word: "চকু", ref: "as-2367" }
+      - { word: "ডাঙৰ", ref: "as-2086" }
+    confusables:
+      - { id: "c1", word: "কাণ", reading: "kān", kind: "word" }
+      - { id: "c2", word: "নাক", reading: "nāk", kind: "word" }
+  - id: "as-5570"
+    target: "মই মুখ ধোওঁ।"
+    reading: "moi mukh dhuum̐."
+    ipa: "moi mukʰ dʱʊʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "মুখ", ref: "as-2370" }
+      - { word: "ধোওঁ", base: "ধোৱা", reading: "dhuwā" }
+    confusables:
+      - { id: "c1", word: "দাঁত", reading: "dām̐t", kind: "word" }
+      - { id: "c2", word: "হাত", reading: "hāt", kind: "word" }
+  - id: "as-5571"
+    target: "মোৰ ভৰিত ব্যথা।"
+    reading: "mur bhorit byôthā."
+    ipa: "mʊɹ bʱoɹit bjɔtʰa"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "ভৰিত", base: "ভৰি", reading: "bhori" }
+      - { word: "ব্যথা", ref: "as-2396" }
+    confusables:
+      - { id: "c1", word: "হাঁঠু", reading: "hām̐thu", kind: "word" }
+      - { id: "c2", word: "পিঠি", reading: "pithi", kind: "word" }
+  - id: "as-5572"
+    target: "মোৰ শৰীৰ ভাল নাই।"
+    reading: "mur xorir bhāl nāi."
+    ipa: "mʊɹ xoɹiɹ bʱal nai"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "শৰীৰ", ref: "as-2395" }
+      - { word: "ভাল", ref: "as-2084" }
+      - { word: "নাই", ref: "as-0142" }
+    confusables:
+      - { id: "c1", word: "বেয়া", reading: "beyā", kind: "word" }
+      - { id: "c2", word: "ক্লান্ত", reading: "klānt", kind: "word" }
+  - id: "as-5573"
+    target: "তেওঁৰ কপাল গৰম।"
+    reading: "teum̐r kôpāl gôrôm."
+    ipa: "teʊ̃ɹ kɔpal ɡɔɹɔm"
+    pos: "phrase"
+    bases:
+      - { word: "তেওঁৰ", ref: "as-2190" }
+      - { word: "কপাল", ref: "as-2389" }
+      - { word: "গৰম", ref: "as-2090" }
+    confusables:
+      - { id: "c1", word: "ঠাণ্ডা", reading: "thāndā", kind: "word" }
+      - { id: "c2", word: "গা", reading: "gā", kind: "word" }
+  - id: "as-5574"
+    target: "মোৰ চুলি দীঘল।"
+    reading: "mur suli dighôl."
+    ipa: "mʊɹ suli diɡʱɔl"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "চুলি", ref: "as-2374" }
+      - { word: "দীঘল", ref: "as-2276" }
+    confusables:
+      - { id: "c1", word: "চুটি", reading: "suti", kind: "word" }
+      - { id: "c2", word: "নৰম", reading: "nôrôm", kind: "word" }
+  - id: "as-5575"
+    target: "আপুনি মূৰত ব্যথা আছে নেকি?"
+    reading: "āpuni murôt byôthā āse neki?"
+    ipa: "apuni muɹɔt bjɔtʰa ase neki"
+    pos: "phrase"
+    bases:
+      - { word: "আপুনি", ref: "as-0127" }
+      - { word: "মূৰত", base: "মূৰ", reading: "mur" }
+      - { word: "ব্যথা", ref: "as-2396" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+      - { word: "নেকি", ref: "as-0151" }
+    confusables:
+      - { id: "c1", word: "পেট", reading: "pet", kind: "word" }
+      - { id: "c2", word: "গা", reading: "gā", kind: "word" }
+  - id: "as-5576"
+    target: "মোৰ কান্ধত ব্যথা।"
+    reading: "mur kāndhôt byôthā."
+    ipa: "mʊɹ kandʱɔt bjɔtʰa"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "কান্ধত", base: "কান্ধ", reading: "kāndh" }
+      - { word: "ব্যথা", ref: "as-2396" }
+    confusables:
+      - { id: "c1", word: "বুকু", reading: "buku", kind: "word" }
+      - { id: "c2", word: "কোমৰ", reading: "kumôr", kind: "word" }
+  - id: "as-5577"
+    target: "পাঁজৰত ব্যথা।"
+    reading: "pām̐zôrôt byôthā."
+    ipa: "pãzɔɹɔt bjɔtʰa"
+    pos: "phrase"
+    bases:
+      - { word: "পাঁজৰত", base: "পাঁজৰ", reading: "pām̐zôr" }
+      - { word: "ব্যথা", ref: "as-2396" }
+    confusables:
+      - { id: "c1", word: "বুকু", reading: "buku", kind: "word" }
+      - { id: "c2", word: "পিঠি", reading: "pithi", kind: "word" }
+  - id: "as-5578"
+    target: "মোৰ হাড় শক্ত।"
+    reading: "mur hār xôkt."
+    ipa: "mʊɹ haɹ xɔkt"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "হাড়", ref: "as-2387" }
+      - { word: "শক্ত", ref: "as-2281" }
+    confusables:
+      - { id: "c1", word: "নৰম", reading: "nôrôm", kind: "word" }
+      - { id: "c2", word: "ভাৰী", reading: "bhāri", kind: "word" }
