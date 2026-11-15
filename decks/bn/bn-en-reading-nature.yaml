@@ -1,0 +1,51 @@
+schema: 1
+id: "bn-en-reading-nature"
+name: "Reading: nature"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Short passages, one to be heard and one to be read, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-walk-by-the-river"
+    title: "A walk by the river at dusk"
+    theme: "nature"
+    sentences:
+      - { text: "সূর্যাস্তের সময় আমরা নদীর তীরে হাঁটি।", reading: "surjāster śômoy āmrā nodir tire hām̐ṭi.", ipa: "surdʒast̪er ʃɔmoj amra nod̪ir t̪ire ɦãʈi" }
+      - { text: "বাতাস খুব ঠান্ডা।", reading: "bātāś khub ṭhānḍā.", ipa: "bat̪aʃ kʰub ʈʰanɖa" }
+      - { text: "আকাশে চাঁদ উঠেছে।", reading: "ākāśe cām̐d uṭheche.", ipa: "akaʃe tʃãd̪ uʈʰetʃʰe" }
+      - { text: "জলে ঢেউ আছে।", reading: "jôle ḍheu āche.", ipa: "dʒɔle ɖʱeu atʃʰe" }
+      - { text: "গাছে অনেক পাখি বসে।", reading: "gāche ônek pākhi bôse.", ipa: "ɡatʃʰe ɔnek pakʰi bɔse" }
+    questions:
+      - id: "bn-5512"
+        prompt: { en: "They walk by the river at sunrise." }
+        answer: false
+      - id: "bn-5513"
+        prompt: { en: "What can be seen in the sky?" }
+        options: [{ en: "The moon" }, { en: "A kite" }]
+        answer: 1
+      - id: "bn-5514"
+        prompt: { en: "There are birds in the trees." }
+        answer: true
+  - id: "bn-park-signs"
+    title: "Signs in a park"
+    theme: "nature"
+    sentences:
+      - { text: "ফুল দেখো, তুলো না।", reading: "phul dekho, tulo nā.", ipa: "pʰul d̪ekʰo t̪ulo na" }
+      - { text: "ঘাসে বসো না।", reading: "ghāse bôso nā.", ipa: "ɡʱase bɔso na" }
+      - { text: "পাহাড়ি রাস্তায় ধীরে যাও।", reading: "pāhāṛi rāstāy dhire jāo.", ipa: "paɦaɽi rast̪aj d̪ʱire dʒao" }
+      - { text: "এখানে ময়লা ফেলো না।", reading: "ekhāne môylā phelo nā.", ipa: "ekʰane mɔjla pʰelo na" }
+      - { text: "নদীর জলে নামো না।", reading: "nodir jôle nāmo nā.", ipa: "nod̪ir dʒɔle namo na" }
+    questions:
+      - id: "bn-5515"
+        prompt: { en: "The sign says not to pick the flowers." }
+        answer: true
+      - id: "bn-5516"
+        prompt: { en: "What should people do on the hill road?" }
+        options: [{ en: "Go slowly" }, { en: "Run fast" }]
+        answer: 1
+      - id: "bn-5517"
+        prompt: { en: "The sign says people may sit on the grass." }
+        answer: false
