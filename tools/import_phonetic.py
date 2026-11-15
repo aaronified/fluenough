@@ -102,7 +102,12 @@ def load_registry(path: Path = REGISTRY) -> tuple[dict[str, str], dict[str, Vari
     (`VARIETIES`), both by language code. A new language is an entry in the
     file, never a change here. Raises ValueError naming the entry that is
     wrong."""
-    raw = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    try:
+        raw = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    except yaml.YAMLError as e:
+        raise ValueError(f"{path}: not valid YAML ({e})") from e
+    if not isinstance(raw, dict):
+        raise ValueError(f"{path}: must map language codes to entries")
     dumps: dict[str, str] = {}
     varieties: dict[str, Variety] = {}
     for lang, entry in raw.items():

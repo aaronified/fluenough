@@ -15,10 +15,13 @@
 # is in wiki/Plan-Ipa-Revamp-And-Language-Phonology.md; a language that
 # needs rules instead has them in decks/<lang>/<lang>-phonetics.yaml.
 #
+# Language codes and dump names are quoted (YAML would read an unquoted `no:`
+# as a boolean).
+#
 # Tool data only: the app does not read it.
 
-bn:
-  dump: Bengali
+"bn":
+  dump: "Bengali"
   variety:
     # Standard Colloquial Bengali of Kolkata, which Wiktionary marks Rarh.
     # The decks' `ipa` is the Kolkata standard too. Dhaka (Bangladeshi
@@ -27,8 +30,8 @@ bn:
     notes: ["Rarh"]
     untagged: true
 
-hi:
-  dump: Hindi
+"hi":
+  dump: "Hindi"
   variety:
     # Standard Hindi: Wiktionary tags nearly all of its Hindi forms
     # "Hindi, Standard". Forms tagged dialectal, colloquial, Persianized,
@@ -37,16 +40,16 @@ hi:
     tags: ["Hindi", "Standard"]
     untagged: true
 
-es:
-  dump: Spanish
+"es":
+  dump: "Spanish"
   variety:
     # Wiktionary's untagged form, which is the general standard. Regional
     # forms (Andalusia, Latin America, ...) carry a tag and are not taken.
     # The decks' `ipa` writes θ, so the course is Castilian: see the plan.
     name: "Standard Spanish, Wiktionary's untagged form"
 
-te:
-  dump: Telugu
+"te":
+  dump: "Telugu"
   variety:
     # Measured on the kaikki.org dump (2026-11): of 1,670 narrow forms, 1,655
     # carry no note and no tag; the rest are "stand-alone", "accompanied" or
@@ -54,8 +57,8 @@ te:
     # forms (about 5% of cards), so most cards still get theirs from rules.
     name: "Standard Telugu, Wiktionary's untagged form"
 
-ja:
-  dump: Japanese
+"ja":
+  dump: "Japanese"
   variety:
     # Measured on the kaikki.org dump (2026-11): of 26,689 narrow forms,
     # 26,661 carry no note and no tag (the Tokyo standard); the rest are

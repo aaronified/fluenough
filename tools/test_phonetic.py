@@ -239,6 +239,16 @@ class Registry(Tree):
         # The marked variety is taken; the untagged form is not (untagged: false).
         self.assertEqual(fills[self.core]["zz-0001"][0], "[kʰat]")
 
+    def test_a_registry_that_is_not_a_mapping_or_not_yaml_names_the_file(self) -> None:
+        reg = self.tmp / "list.yaml"
+        reg.write_text('- "zz"\n', encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "list.yaml.*must map"):
+            ip.load_registry(reg)
+        bad = self.tmp / "broken.yaml"
+        bad.write_text('zz: [unclosed\n', encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "broken.yaml"):
+            ip.load_registry(bad)
+
     def test_an_entry_without_a_dump_or_variety_names_itself_in_the_error(self) -> None:
         reg = self.tmp / "bad.yaml"
         reg.write_text("qq:\n  dump: Qux\n", encoding="utf-8")
