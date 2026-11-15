@@ -1,0 +1,55 @@
+schema: 1
+id: "gu-en-multiword-dative-subject"
+kind: "layer"
+core: "gu-multiword-dative-subject"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Multi-word verbs: dative-subject verbs"
+license: "CC-BY-SA-4.0"
+description: "Three verbs whose experiencer is marked with -ને (ne) and whose thing is the subject: to like, to need or want, and to know how to. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "gu-6550":
+    native: "to like; to enjoy"
+    notes:
+      "u1": "The thing liked is the subject, and the person who likes takes -ને (ne): મને (mane) બિલાડી ગમે છે (game che), I like cats. The verb agrees with the thing liked, as ગમતી (gamti) does with the feminine બિલાડી (bilāḍi)."
+    examples:
+      "મને બિલાડી ગમતી નથી.":
+        native: "I don't like cats."
+        bases:
+          "ગમતી": "to like (agreeing with the thing liked)"
+          "નથી": "to be (negative)"
+      "તને શું ગમે છે?":
+        native: "What do you like?"
+        bases:
+          "ગમે": "to like"
+          "છે": "to be"
+  "gu-6551":
+    native: "to want; to need; should"
+    notes:
+      "u1": "A defective verb that takes the person with -ને (ne) or મારે (māre): મને (mane) જોઈએ છે (joie che), I want it; મારે (māre) કરવું જોઈએ (karvum̐ joie), I should do it."
+    examples:
+      "મને જોઈએ છે.":
+        native: "I want it."
+        bases:
+          "જોઈએ": "to want"
+          "છે": "to be"
+      "મારે કરવું જોઈએ.":
+        native: "I should do it."
+        bases:
+          "જોઈએ": "should"
+  "gu-6552":
+    native: "to know how to; to be able to do (a skill)"
+    notes:
+      "u1": "The skill is the subject and the person takes -ને (ne): મને (mane) તરવું (tarvum̐) આવડે છે (āvaḍe che), I know how to swim. A verb before it takes the -તાં (tām) form, as ચલાવતાં (calāvatām̐) does."
+    examples:
+      "મને ગાડી ચલાવતાં આવડે છે.":
+        native: "I know how to drive a car."
+        bases:
+          "ચલાવતાં": "to drive, in the -તાં form"
+          "આવડે": "to know how to"
+          "છે": "to be"
+      "મને તરવું આવડે છે.":
+        native: "I know how to swim."
+        bases:
+          "આવડે": "to know how to"
+          "છે": "to be"
