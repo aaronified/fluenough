@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-pronouns"
+name: "Reading: who is who"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Short passages, one to be heard and one to be read, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-who-is-who"
+    title: "Who is who at a family gathering"
+    theme: "pronouns"
+    sentences:
+      - { text: "এ আমার বাবা।", reading: "e āmār bābā.", ipa: "e amar baba" }
+      - { text: "ইনি আমার মা।", reading: "ini āmār mā.", ipa: "ini amar ma" }
+      - { text: "ও আমার দাদা।", reading: "o āmār dādā.", ipa: "o amar d̪ad̪a" }
+      - { text: "ওরা আমার বন্ধু।", reading: "orā āmār bondhu.", ipa: "ora amar bond̪ʱu" }
+      - { text: "উনি কে?", reading: "uni ke?", ipa: "uni ke" }
+    questions:
+      - id: "bn-5300"
+        prompt: { en: "The speaker's mother is the first person named." }
+        answer: false
+      - id: "bn-5301"
+        prompt: { en: "Which word means 'those people'?" }
+        options: [{ en: "এরা (erā)" }, { en: "ওরা (orā)" }]
+        answer: 2
+      - id: "bn-5302"
+        prompt: { en: "What does the speaker ask?" }
+        options: [{ en: "Who that person is" }, { en: "Where that person lives" }]
+        answer: 1
+  - id: "bn-seating-chart"
+    title: "A seating chart for a family lunch"
+    theme: "pronouns"
+    sentences:
+      - { text: "এ আমার বোন।", reading: "e āmār bon.", ipa: "e amar bon" }
+      - { text: "ও আমার ভাই।", reading: "o āmār bhāi.", ipa: "o amar bʱai" }
+      - { text: "ইনি আমার স্বামী।", reading: "ini āmār śāmi.", ipa: "ini amar ʃami" }
+      - { text: "উনি আমার ঠাকুমা।", reading: "uni āmār ṭhākumā.", ipa: "uni amar ʈʰakuma" }
+      - { text: "ওরা আমার ছেলেমেয়ে।", reading: "orā āmār chelemeye.", ipa: "ora amar tʃʰelemeje" }
+    questions:
+      - id: "bn-5303"
+        prompt: { en: "The chart names the speaker's son." }
+        answer: false
+      - id: "bn-5304"
+        prompt: { en: "Which word means 'sister'?" }
+        options: [{ en: "বোন (bon)" }, { en: "ঠাকুমা" }]
+        answer: 1
+      - id: "bn-5305"
+        prompt: { en: "What does 'ওরা আমার ছেলেমেয়ে' mean?" }
+        options: [{ en: "Those are my children" }, { en: "Those are my neighbours" }]
+        answer: 1

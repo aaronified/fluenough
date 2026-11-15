@@ -1,0 +1,50 @@
+schema: 1
+id: "bn-en-reading-food"
+name: "Reading: food and prices"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Short passages, one to be heard and one to be read, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-at-the-sweet-shop"
+    title: "Choosing snacks and sweets"
+    theme: "food"
+    sentences:
+      - { text: "আমাকে সন্দেশ দিন।", reading: "āmāke śôndeś din.", ipa: "amake ʃɔnd̪eʃ d̪in" }
+      - { text: "রসগোল্লা কত?", reading: "rôsogollā kôto?", ipa: "rɔsoɡolla kɔt̪o" }
+      - { text: "দাম কত?", reading: "dām kôto?", ipa: "d̪am kɔt̪o" }
+      - { text: "আমি চিনি খাই না।", reading: "āmi cini khāi nā.", ipa: "ami tʃini kʰai na" }
+      - { text: "আপনি লুচি খান?", reading: "āpni luci khān?", ipa: "apni lutʃi kʰan" }
+    questions:
+      - id: "bn-5318"
+        prompt: { en: "The speaker asks how much the rosogolla costs." }
+        answer: true
+      - id: "bn-5319"
+        prompt: { en: "Which word means 'price'?" }
+        options: [{ en: "চিনি (cini)" }, { en: "দাম (dām)" }]
+        answer: 2
+      - id: "bn-5320"
+        prompt: { en: "The speaker eats a lot of sugar." }
+        answer: false
+  - id: "bn-menu-card"
+    title: "A small restaurant menu"
+    theme: "food"
+    sentences:
+      - { text: "লুচি আর আলু: দশ টাকা।", reading: "luci ār ālu: dôś ṭākā.", ipa: "lutʃi ar alu d̪ɔʃ ʈaka" }
+      - { text: "মাংস: কুড়ি টাকা।", reading: "māṅśo: kuṛi ṭākā.", ipa: "maŋʃo kuɽi ʈaka" }
+      - { text: "কফি: পাঁচ টাকা।", reading: "kofi: pām̐c ṭākā.", ipa: "kofi pãtʃ ʈaka" }
+      - { text: "সন্দেশ: এক টাকা।", reading: "śôndeś: ek ṭākā.", ipa: "ʃɔnd̪eʃ ek ʈaka" }
+    questions:
+      - id: "bn-5321"
+        prompt: { en: "Luchi with potato costs ten taka." }
+        answer: true
+      - id: "bn-5322"
+        prompt: { en: "Which dish costs twenty taka?" }
+        options: [{ en: "মাংস (māṅśo)" }, { en: "কফি (kofi)" }]
+        answer: 1
+      - id: "bn-5323"
+        prompt: { en: "Coffee costs ten taka." }
+        answer: false
