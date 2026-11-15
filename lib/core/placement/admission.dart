@@ -1,4 +1,8 @@
+import 'dart:math' as math;
+
+import '../models/card.dart';
 import 'placement_data.dart';
+import 'sentence_gate.dart' show isNonLatinCourse;
 
 // What the offline admission audit decided for a course language
 // (wiki/Plan-Placement-V3.md, "The question bank"): the item classes it
@@ -10,8 +14,8 @@ import 'placement_data.dart';
 // made, and its run begins on the whole bank.
 //
 // The entries are checked against the real audit of the app's own output by
-// `test/placement_v3_real_bank_test.dart`: a change of the decks or of a
-// generator that changes the audit's answer fails it until the entry is
+// `test/placement_v3_real_bank_test.dart`: a change of what the audit reads or
+// of a generator that changes the audit's answer fails it until the entry is
 // regenerated (`dart run tool/placement_audit.dart --runtime`, which prints
 // the entry).
 //
@@ -23,11 +27,25 @@ import 'placement_data.dart';
 //
 // Pure Dart.
 
-/// A key of the decks a verdict was made on: the decks in path order with
-/// every card's id, word and meaning (FNV-1a), so that an edited card, not
-/// only an added one, makes the verdict stale. It does not include what a
-/// learner has already learned (`stableCardIds`), which a verdict does not
-/// depend on.
+/// Whether the admission audit reads [card]: the generators and the sentence
+/// gate (`ItemGenerators._read`, `sentenceRejections`) skip a card with a
+/// rule, a grammar cell or a letter or digit (`pos: letter|digit`). The
+/// cards of a rules deck, a letters deck and the like are not read.
+bool admissionReads(Card card) =>
+    card.rule == null && !card.isGrammarCell && !card.isLetterOrDigit;
+
+/// A key of what the audit reads of [data], and nothing else (#1270): the
+/// language, whether the course is written in a non-Latin script
+/// ([isNonLatinCourse], the one thing the audit takes from the cards it
+/// otherwise skips), the near-span of the decks, and, in path order and with
+/// the index of its deck, every card the audit reads ([admissionReads]) with
+/// the fields it reads (id, target, native, reading, pos, gender,
+/// practice-only mark, alternative targets, the word split and the bases'
+/// word and base), hashed with FNV-1a. A change to any of these changes the key;
+/// a card or deck the audit never reads (culture, situations, proverbs, notes,
+/// facts, topics, phonetic fields, rules and letters cards) does not. It does
+/// not include what a learner has already learned (`stableCardIds`), which a
+/// verdict does not depend on. Format: `<cards read>-<hex>`.
 String admissionKey(PlacementLanguageData data) {
   var hash = 0x811c9dc5;
   void mix(String text) {
@@ -37,15 +55,40 @@ String admissionKey(PlacementLanguageData data) {
     hash = ((hash ^ 0x1f) * 0x01000193) & 0xffffffff;
   }
 
-  for (final deck in data.decks) {
-    mix(deck.id);
+  void mixAll(Iterable<String> texts) {
+    for (final t in texts) {
+      mix(t);
+    }
+    mix('|');
+  }
+
+  mix(data.language);
+  mix(isNonLatinCourse(data) ? 'nonlatin' : 'latin');
+  // `ItemGenerators.near`: the span of decks a word's neighbours lie within.
+  mix('${math.max(6, data.deckCount ~/ 12)}');
+  var read = 0;
+  for (final (index, deck) in data.decks.indexed) {
     for (final card in deck.cards) {
+      if (!admissionReads(card)) continue;
+      read++;
+      mix('$index');
       mix(card.id);
       mix(card.target);
       mix(card.native);
+      mix(card.reading ?? '');
+      mix(card.pos ?? '');
+      mix(card.gender ?? '');
+      mix(card.practiceOnly ? '1' : '0');
+      mixAll(card.altTarget);
+      mixAll(card.words ?? const <String>[]);
+      for (final base in card.bases) {
+        mix(base.word);
+        mix(base.base ?? '');
+      }
+      mix('|');
     }
   }
-  return '${data.decks.length}-${hash.toRadixString(16)}';
+  return '$read-${hash.toRadixString(16)}';
 }
 
 /// The audit's verdict for one language on one set of decks.
@@ -106,31 +149,7 @@ const String kLiveDecks = 'live';
 /// per deck source that has been audited.
 const Map<String, List<AdmissionProfile>> kAdmissionProfiles =
     <String, List<AdmissionProfile>>{
-      'es': <AdmissionProfile>[
-        AdmissionProfile(
-          deckKey: '171-5453385b',
-          excluded: <String>[
-            'F17:clean',
-            'F17:cognate',
-            'F28:cognate',
-            'F5:clean',
-            'F5:cognate',
-          ],
-          decoys: 2,
-        ),
-      ],
-      'hi': <AdmissionProfile>[
-        AdmissionProfile(
-          deckKey: '139-84ae5a22',
-          excluded: <String>[
-            'F14:clean',
-            'F17:clean',
-            'F1:clean',
-            'F28:clean',
-            'F28:cognate',
-            'F5:clean',
-          ],
-          decoys: 2,
-        ),
-      ],
+      // Step 2 of #1270 pastes the entries printed by the "Placement audit"
+      // workflow (frozen and live, es and hi) here; the keys of the earlier
+      // scheme (every card of every deck) no longer match anything.
     };

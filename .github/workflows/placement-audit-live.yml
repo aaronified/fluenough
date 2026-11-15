@@ -1,9 +1,12 @@
 name: Placement audit (live decks)
 
-# Prints the admission verdict entries for the LIVE decks (#1270), to paste
-# into lib/core/placement/admission.dart with source: kLiveDecks. Manual only;
-# read-only token. Run it whenever the live decks of es or hi change: CI does
-# not detect a stale live entry. Setup steps are copied from the "App: tests"
+# Prints the admission verdict entries (#1270), to paste into
+# lib/core/placement/admission.dart: for the LIVE decks (decks-live, source:
+# kLiveDecks) or the FROZEN decks (main's decks/, source: kFrozenDecks). The
+# key holds only what the audit reads, so a live entry survives deck merges
+# that add culture, situations or proverbs; rerun it when the live word cards
+# of es or hi change or a generator changes (CI does not detect a stale live
+# entry). Manual only; read-only token. Setup steps are copied from the "App: tests"
 # job of ci.yml (see tests-only.yml).
 on:
   workflow_dispatch:
@@ -12,6 +15,14 @@ on:
         description: "Comma-separated language codes"
         required: false
         default: "es,hi"
+      source:
+        description: "Which decks: frozen (main's decks/) or live (decks-live)"
+        required: false
+        type: choice
+        options:
+          - live
+          - frozen
+        default: live
 
 permissions:
   contents: read
@@ -21,20 +32,24 @@ env:
 
 jobs:
   audit:
-    name: "Audit live decks"
+    name: "Audit decks"
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
-      - name: Validate the language list
+      - name: Validate the inputs
         env:
           LANGS: ${{ inputs.languages }}
+          SOURCE: ${{ inputs.source }}
         run: |
           set -eu
+          case "$SOURCE" in frozen|live) ;; *)
+            echo "::error::Not a source: $SOURCE"; exit 1;; esac
           printf '%s\n' "$LANGS" | grep -Eq '^[a-z]{2,3}(,[a-z]{2,3})*$' || {
             echo "::error::Not a language list: $LANGS"; exit 1; }
 
       - uses: actions/checkout@v7
       - uses: actions/checkout@v7
+        if: inputs.source != 'frozen'
         with:
           ref: decks-live
           path: live
@@ -52,6 +67,7 @@ jobs:
 
       # Main's decks/ is frozen; the live decks take its place for the audit.
       - name: Use the live decks
+        if: inputs.source != 'frozen'
         run: |
           set -eu
           rm -rf decks
@@ -60,11 +76,17 @@ jobs:
       - name: Audit
         env:
           LANGS: ${{ inputs.languages }}
+          SOURCE: ${{ inputs.source }}
         run: |
           set -eu
-          dart run tool/placement_audit_entries.dart --source live --languages "$LANGS" | tee entries.txt
+          dart run tool/placement_audit_entries.dart --source "$SOURCE" --languages "$LANGS" | tee entries.txt
+          if [ "$SOURCE" = live ]; then
+            WHERE="decks-live $(git -C live rev-parse --short HEAD)"
+          else
+            WHERE="main $(git rev-parse --short HEAD)"
+          fi
           {
-            echo "### Live admission entries (decks-live $(git -C live rev-parse --short HEAD))"
+            echo "### Admission entries, $SOURCE decks ($WHERE)"
             echo
             echo "Add each line to its language's list in lib/core/placement/admission.dart."
             echo
