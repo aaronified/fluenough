@@ -366,6 +366,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1369](https://github.com/aaronified/fluenough/issues/1369) Spanish narrow IPA rules: five gaps found reviewing the first whole-course run
 - [#1428](https://github.com/aaronified/fluenough/issues/1428) Japanese tools: transcribe.py ja emits ASCII g for ぎゃ/ぎょ/ぎゅ; derive/import skip decks/ja/ja-en-hiragana.yaml
 - [#1466](https://github.com/aaronified/fluenough/issues/1466) IPA_RE rejects precomposed ä that import_phonetic's NFC step produces (475 Hindi forms)
+- [#1476](https://github.com/aaronified/fluenough/issues/1476) Marathi: add "mr" to tools/phonetic_languages.yaml (narrow IPA, MR-110)
 
 ## Plans
 
