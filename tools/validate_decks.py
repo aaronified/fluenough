@@ -121,7 +121,8 @@ ROMANISATION_KEYS = {"schema", "kind", "id", "language", "scheme", "standard",
 # long vowels, the retroflex and other dotted consonants, ô and ê, and the
 # candrabindu m̐. Composed where Unicode has a composed letter.
 ISO15919_LETTERS = "āīūēōṭḍṇṅñḷḻṟṛśṣṁḥôêẏġ"
-ISO15919_MARKS = "\u0310\u0325\u035f"  # m̐, r̥, and the double macron of k͟h
+# m̐, r̥, the macron of l̥̄ and r̥̄ (ౡ, ౠ), and the double macron of k͟h
+ISO15919_MARKS = "\u0304\u0310\u0325\u035f"
 # A romanisation (#47): lowercase letters, digits, spaces and plain
 # punctuation. A language whose romanisation file names ISO 15919 also uses
 # its letters; any other uses ASCII only.
