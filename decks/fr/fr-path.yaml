@@ -708,7 +708,9 @@ units:
       - { id: "a-long-story", text: { "en": "A story told in a sequence of events" } }
     reading_passages:
       - { id: "short-story", text: { "en": "A short story with a turn" } }
-  - planned: { id: "fr-grammar-relative-pronouns-2", grammar: ["dont", "lequel"] }
+  - decks: ["fr-grammar-dont", "fr-grammar-lequel"]
+    words: 0
+    grammar: ["dont", "lequel"]
     listening_passages:
       - { id: "the-book-i-told-you-about", text: { "en": "Talking about the book I told you about and the friend I travelled with" } }
     reading_passages:
