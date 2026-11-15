@@ -1,0 +1,167 @@
+# A culture deck of French-language works of the seventeenth and eighteenth centuries that are in the public domain: short
+# lines, each with its source, its rights basis and its creator (wiki/Plan-Deck-Kinds-And-Topics.md). Built from French
+# Wikipedia and French Wikisource pages only, and read there. Partial: five of the plan's eighteen (ids fr-4150 to fr-4154;
+# fr-4155 to fr-4199 unused). Dropped, with the reason read on the page: La Fontaine, Le Loup et l'Agneau (the Wikisource page
+# had no text); Racine, Phèdre (no Phèdre text page found, the only hit was a quotation elsewhere); Pascal, Pensées (no
+# Pensées text page found, the only hits were quotations); Boileau, L'Art poétique (no text page found); Corneille (no birth
+# and death years read on the French Wikipedia page); Beaumarchais (no birth year read); Molière, Le Malade imaginaire and
+# Tartuffe (not searched, only the play dates were read); Madame de Sévigné, La Rochefoucauld, La Bruyère, Marivaux, Montesquieu
+# and the rest of the reserve (not searched).
+schema: 1
+id: "fr-culture-2"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+genre: "culture"
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - id: "fr-4150"
+    target: "Maître Corbeau, sur un arbre perché."
+    words: ["Maître", "Corbeau", "sur", "un", "arbre", "perché"]
+    ipa: "mɛtʁ kɔʁbo syʁ œ̃ aʁbʁ pɛʁʃe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "fr-jean-de-la-fontaine"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Maître", base: "maître" }
+      - { word: "Corbeau", base: "corbeau" }
+      - { word: "sur", base: "sur" }
+      - { word: "un", base: "un" }
+      - { word: "arbre", base: "arbre" }
+      - { word: "perché", base: "percher" }
+    source:
+      author: "Jean de La Fontaine"
+      work: "Fables, Book I, 'Le Corbeau et le Renard', first line"
+      date: 1668
+      edition: "Fables de La Fontaine (éd. 1874, Bernardin-Bechet), as shown on French Wikisource (Fables de La Fontaine (éd. 1874)/Le Corbeau et le Renard); Book I is dated from 1668 on French Wikipedia"
+      url: "https://fr.wikisource.org/wiki/Fables_de_La_Fontaine_(%C3%A9d._1874)/Le_Corbeau_et_le_Renard"
+      basis: "public-domain"
+      author_died: 1695
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4151"
+    target: "Rien ne sert de courir ; il faut partir à point."
+    words: ["Rien", "ne", "sert", "de", "courir", "il", "faut", "partir", "à", "point"]
+    ipa: "ʁjɛ̃ nə sɛʁ də kuʁiʁ il fo paʁtiʁ a pwɛ̃"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "fr-jean-de-la-fontaine"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Rien", base: "rien" }
+      - { word: "ne", base: "ne" }
+      - { word: "sert", base: "servir" }
+      - { word: "de", base: "de" }
+      - { word: "courir", base: "courir" }
+      - { word: "il", base: "il" }
+      - { word: "faut", base: "falloir" }
+      - { word: "partir", base: "partir" }
+      - { word: "à", base: "à" }
+      - { word: "point", base: "point" }
+    source:
+      author: "Jean de La Fontaine"
+      work: "Fables, Book VI, 'Le Lièvre et la Tortue', first line"
+      date: "1668-1694"
+      edition: "Fables de La Fontaine (éd. 1874, Bernardin-Bechet), as shown on French Wikisource (Fables de La Fontaine (éd. 1874)/Le Lièvre et la Tortue); the Fables are dated 1668-1694 on French Wikipedia"
+      url: "https://fr.wikisource.org/wiki/Fables_de_La_Fontaine_(%C3%A9d._1874)/Le_Li%C3%A8vre_et_la_Tortue"
+      basis: "public-domain"
+      author_died: 1695
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4152"
+    target: "Il y a plus de quarante ans que je dis de la prose."
+    words: ["Il", "y", "a", "plus", "de", "quarante", "ans", "que", "je", "dis", "de", "la", "prose"]
+    ipa: "il i a ply də kaʁɑ̃t ɑ̃ kə ʒə di də la pʁoz"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-moliere"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Il", base: "il" }
+      - { word: "y", base: "y" }
+      - { word: "a", base: "avoir" }
+      - { word: "plus", base: "plus" }
+      - { word: "de", base: "de" }
+      - { word: "quarante", base: "quarante" }
+      - { word: "ans", base: "an" }
+      - { word: "que", base: "que" }
+      - { word: "je", base: "je" }
+      - { word: "dis", base: "dire" }
+      - { word: "la", base: "le" }
+      - { word: "prose", base: "prose" }
+    source:
+      author: "Molière"
+      work: "Le Bourgeois gentilhomme, Act II, Monsieur Jourdain's line, first part"
+      date: 1670
+      edition: "Le Bourgeois gentilhomme, Garnier 1904 edition, as shown on French Wikisource (Le Bourgeois gentilhomme/Édition Garnier, 1904); the play is dated 1670 on French Wikipedia; the line is given without its opening exclamation"
+      url: "https://fr.wikisource.org/wiki/Le_Bourgeois_gentilhomme/%C3%89dition_Garnier,_1904"
+      basis: "public-domain"
+      author_died: 1673
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4153"
+    target: "Il faut cultiver notre jardin."
+    words: ["Il", "faut", "cultiver", "notre", "jardin"]
+    ipa: "il fo kyltive nɔtʁ ʒaʁdɛ̃"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "fr-voltaire"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Il", base: "il" }
+      - { word: "faut", base: "falloir" }
+      - { word: "cultiver", base: "cultiver" }
+      - { word: "notre", base: "notre" }
+      - { word: "jardin", base: "jardin" }
+    source:
+      author: "Voltaire"
+      work: "Candide, ou l'Optimisme, last chapter"
+      date: 1759
+      edition: "Candide, ou l'Optimisme, Garnier 1877 edition, chapter 30, as shown on French Wikisource (Candide, ou l'Optimisme/Garnier 1877/Chapitre 30); the book is dated 1759 on French Wikipedia"
+      url: "https://fr.wikisource.org/wiki/Candide,_ou_l%E2%80%99Optimisme/Garnier_1877/Chapitre_30"
+      basis: "public-domain"
+      author_died: 1778
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4154"
+    target: "L'homme est né libre, et partout il est dans les fers."
+    words: ["L'homme", "est", "né", "libre", "et", "partout", "il", "est", "dans", "les", "fers"]
+    ipa: "lɔm ɛ ne libʁ e paʁtu il ɛ dɑ̃ le fɛʁ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-jean-jacques-rousseau"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "L'homme", base: "homme" }
+      - { word: "est", base: "être" }
+      - { word: "né", base: "naître" }
+      - { word: "libre", base: "libre" }
+      - { word: "et", base: "et" }
+      - { word: "partout", base: "partout" }
+      - { word: "il", base: "il" }
+      - { word: "dans", base: "dans" }
+      - { word: "les", base: "le" }
+      - { word: "fers", base: "fer" }
+    source:
+      author: "Jean-Jacques Rousseau"
+      work: "Du contrat social, Book I, chapter 1, first sentence"
+      date: 1762
+      edition: "Du contrat social, edition of 1762, Book I, chapter 1, as shown on French Wikisource (Du contrat social/Édition 1762/Livre I/Chapitre 1); the original has '&' for 'et' and older spelling, shown here in modern spelling"
+      url: "https://fr.wikisource.org/wiki/Du_contrat_social/%C3%89dition_1762/Livre_I/Chapitre_1"
+      basis: "public-domain"
+      author_died: 1778
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
