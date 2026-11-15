@@ -1,0 +1,23 @@
+schema: 1
+id: "fr-en-grammar-comparison"
+kind: "layer"
+core: "fr-grammar-comparison"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Comparing: plus que, moins que, aussi que and le plus"
+license: "CC-BY-SA-4.0"
+description: "Plus, moins and aussi with que compare two things; le plus picks out the most. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Comparison"
+  slot_name: "degree"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "plus": "more … than", "moins": "less … than", "aussi": "as … as", "le-plus": "the most" }
+  entries:
+    "grand": "big or tall"
+    "petit": "small or short"
+    "rapide": "fast"
+    "cher": "expensive"
+    "facile": "easy"
+    "difficile": "difficult"
+    "bon": "good"
+    "bien": "well"
+  notes: "To compare, put plus (more), moins (less) or aussi (as) before the adjective and que (than, as) after it: plus grand que, moins cher que, aussi facile que. For the most, use le plus before the adjective: le plus grand; the le, la or les agrees with the noun (la plus grande, les plus grands). Bon has an irregular comparative: French says meilleur que, never plus bon que, and le meilleur for the best; but moins bon que and aussi bon que are regular. Bien (well) works the same way: mieux que and le mieux, but moins bien que and aussi bien que."

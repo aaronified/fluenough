@@ -343,12 +343,16 @@ units:
       - { id: "a-normal-day", text: { "en": "Someone talks through an ordinary day" } }
     reading_passages:
       - { id: "daily-timetable", text: { "en": "A timetable for a day: wake, work, eat, sleep" } }
-  - planned: { id: "fr-grammar-reflexives", grammar: "reflexives" }
+  - decks: ["fr-grammar-reflexives"]
+    words: 0
+    grammar: ["reflexives"]
     listening_passages:
       - { id: "getting-ready", text: { "en": "Saying what you do to yourself in the morning: wake up, wash, dress" } }
     reading_passages:
       - { id: "morning-checklist", text: { "en": "A checklist for getting ready in the morning" } }
-  - planned: { id: "fr-grammar-present-progressive", grammar: "en-train-de" }
+  - decks: ["fr-grammar-en-train-de"]
+    words: 0
+    grammar: ["en-train-de"]
     listening_passages:
       - { id: "right-now", text: { "en": "Saying what people are doing right now on the phone: je suis en train de manger" } }
     reading_passages:
@@ -377,7 +381,9 @@ units:
       - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain and wind" } }
     reading_passages:
       - { id: "weather-message", text: { "en": "A message to a friend about the weather" } }
-  - planned: { id: "fr-grammar-passe-compose-avoir", grammar: "passe-compose-avoir" }
+  - decks: ["fr-grammar-passe-compose-avoir"]
+    words: 0
+    grammar: ["passe-compose-avoir"]
     listening_passages:
       - { id: "what-i-did-yesterday", text: { "en": "Saying what you did yesterday" } }
     reading_passages:
@@ -394,7 +400,9 @@ units:
       - { id: "asking-the-price", text: { "en": "Asking about price and size at a shop" } }
     reading_passages:
       - { id: "price-list", text: { "en": "A shop's price list and its offers" } }
-  - planned: { id: "fr-grammar-object-pronouns", grammar: ["direct-object-pronouns", "indirect-object-pronouns"] }
+  - decks: ["fr-grammar-direct-object-pronouns", "fr-grammar-indirect-object-pronouns"]
+    words: 0
+    grammar: ["direct-object-pronouns", "indirect-object-pronouns"]
     listening_passages:
       - { id: "give-it-to-me", text: { "en": "Asking someone to pass, give and show things" } }
     reading_passages:
@@ -411,7 +419,9 @@ units:
       - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes a dish" } }
     reading_passages:
       - { id: "recipe-card", text: { "en": "A recipe card with its steps" } }
-  - planned: { id: "fr-grammar-pronouns-y-en", grammar: ["pronoun-y", "pronoun-en"] }
+  - decks: ["fr-grammar-pronoun-y", "fr-grammar-pronoun-en"]
+    words: 0
+    grammar: ["pronoun-y", "pronoun-en"]
     listening_passages:
       - { id: "how-many-do-you-want", text: { "en": "At a bakery: how many do you want? I'll take three of them" } }
     reading_passages:
@@ -428,7 +438,9 @@ units:
       - { id: "weekend-hobbies", text: { "en": "Friends talk about what they do at weekends" } }
     reading_passages:
       - { id: "club-poster", text: { "en": "A poster for a sports and music club" } }
-  - planned: { id: "fr-grammar-comparison", grammar: "comparison" }
+  - decks: ["fr-grammar-comparison"]
+    words: 0
+    grammar: ["comparison"]
     listening_passages:
       - { id: "which-is-better", text: { "en": "Two friends compare two phones" } }
     reading_passages:
@@ -449,7 +461,9 @@ units:
       - { id: "describing-a-friend", text: { "en": "Describing a friend to someone who will meet them at the station" } }
     reading_passages:
       - { id: "lost-and-found-notice", text: { "en": "A lost-and-found notice describing a bag" } }
-  - planned: { id: "fr-grammar-passe-compose-etre", grammar: "passe-compose-etre" }
+  - decks: ["fr-grammar-passe-compose-etre"]
+    words: 0
+    grammar: ["passe-compose-etre"]
     listening_passages:
       - { id: "a-busy-weekend", text: { "en": "Telling where you went, when you arrived and when you left last weekend" } }
     reading_passages:
@@ -464,7 +478,9 @@ units:
       - { id: "phone-call", text: { "en": "A phone call to arrange a meeting" } }
     reading_passages:
       - { id: "text-messages", text: { "en": "A few text messages between friends" } }
-  - planned: { id: "fr-grammar-venir-de", grammar: "venir-de" }
+  - decks: ["fr-grammar-venir-de"]
+    words: 0
+    grammar: ["venir-de"]
     listening_passages:
       - { id: "just-arrived", text: { "en": "Saying what has just happened: I have just arrived, she has just left" } }
     reading_passages:
@@ -474,7 +490,9 @@ units:
       - { id: "ticket-counter", text: { "en": "Buying a train ticket at the counter" } }
     reading_passages:
       - { id: "train-timetable", text: { "en": "A train timetable and a platform notice" } }
-  - planned: { id: "fr-grammar-imparfait", grammar: "imparfait" }
+  - decks: ["fr-grammar-imparfait"]
+    words: 0
+    grammar: ["imparfait"]
     listening_passages:
       - { id: "when-i-was-small", text: { "en": "Telling what you used to do when you were small" } }
     reading_passages:
@@ -489,7 +507,9 @@ units:
       - { id: "describing-a-room", text: { "en": "Describing a rented room" } }
     reading_passages:
       - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
-  - planned: { id: "fr-grammar-negation-more", grammar: ["ne-jamais", "ne-rien", "ne-personne", "ne-plus"] }
+  - decks: ["fr-grammar-ne-jamais", "fr-grammar-ne-rien", "fr-grammar-ne-personne", "fr-grammar-ne-plus"]
+    words: 0
+    grammar: ["ne-jamais", "ne-rien", "ne-personne", "ne-plus"]
     listening_passages:
       - { id: "never-again", text: { "en": "Saying you never, no longer, nothing and nobody" } }
     reading_passages:

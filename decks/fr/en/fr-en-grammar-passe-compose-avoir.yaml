@@ -1,0 +1,26 @@
+schema: 1
+id: "fr-en-grammar-passe-compose-avoir"
+kind: "layer"
+core: "fr-grammar-passe-compose-avoir"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The past with avoir: the passé composé"
+license: "CC-BY-SA-4.0"
+description: "Most verbs make their past from the present of avoir and a past participle: j'ai parlé. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Passé composé with avoir"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "je": "I", "tu": "you (informal)", "il-elle": "he or she", "nous": "we", "vous": "you (formal or plural)", "ils-elles": "they" }
+  entries:
+    "parler": "to speak"
+    "manger": "to eat"
+    "finir": "to finish"
+    "choisir": "to choose"
+    "attendre": "to wait"
+    "perdre": "to lose"
+    "faire": "to do or make"
+    "prendre": "to take"
+    "voir": "to see"
+    "lire": "to read"
+    "ecrire": "to write"
+  notes: "The passé composé says what happened: the present of avoir plus a past participle, as in j'ai parlé (I spoke, I have spoken). Verbs in -er have a participle in -é (parlé, mangé), verbs in -ir in -i (fini, choisi) and verbs in -re usually in -u (attendu, perdu). Faire, prendre, voir, lire and écrire have participles of their own: fait, pris, vu, lu, écrit. Je becomes j' before ai. The participle does not change with the subject here; it agrees only with a direct object that stands before the verb, which this deck does not drill. A few verbs of movement take être instead of avoir, and they come later."

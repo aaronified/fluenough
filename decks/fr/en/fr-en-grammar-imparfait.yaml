@@ -1,0 +1,25 @@
+schema: 1
+id: "fr-en-grammar-imparfait"
+kind: "layer"
+core: "fr-grammar-imparfait"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The imperfect: how things used to be"
+license: "CC-BY-SA-4.0"
+description: "The imperfect describes how things were or what used to happen, from the nous stem plus -ais, -ais, -ait, -ions, -iez, -aient. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Imperfect"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "je": "I", "tu": "you (informal)", "il-elle": "he or she", "nous": "we", "vous": "you (formal or plural)", "ils-elles": "they" }
+  entries:
+    "etre": "to be"
+    "avoir": "to have"
+    "aller": "to go"
+    "faire": "to do or make"
+    "parler": "to speak"
+    "habiter": "to live (in a place)"
+    "finir": "to finish"
+    "attendre": "to wait"
+    "manger": "to eat"
+    "commencer": "to begin"
+  notes: "The imperfect says how things were, or what used to happen again and again: j'habitais à Lyon, il faisait chaud. Take the nous form of the present, drop -ons, and add -ais, -ais, -ait, -ions, -iez, -aient: nous parlons gives je parlais; nous finissons gives je finissais; nous attendons gives j'attendais. Être is the one exception: its stem is ét-, as in j'étais. Verbs in -ger and -cer change their spelling to keep the sound: je mangeais but nous mangions; je commençais but nous commencions. Je becomes j' before a vowel sound: j'avais, j'allais, j'habitais. The imperfect is not used for a single finished event; that is the passé composé."

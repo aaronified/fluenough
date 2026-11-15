@@ -1,0 +1,46 @@
+schema: 1
+id: "fr-grammar-ne-jamais"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["positive", "negative"]
+  entries:
+    - lemma: "manger"
+      ipa: "mɑ̃ʒe"
+      forms:
+        "positive": "il mange toujours"
+        "negative": "il ne mange jamais"
+    - lemma: "travailler"
+      ipa: "tʁavaje"
+      forms:
+        "positive": "je travaille toujours"
+        "negative": "je ne travaille jamais"
+    - lemma: "dormir"
+      ipa: "dɔʁmiʁ"
+      forms:
+        "positive": "tu dors souvent"
+        "negative": "tu ne dors jamais"
+    - lemma: "lire"
+      ipa: "liʁ"
+      forms:
+        "positive": "elle lit souvent"
+        "negative": "elle ne lit jamais"
+    - lemma: "jouer"
+      ipa: "ʒwe"
+      forms:
+        "positive": "nous jouons souvent"
+        "negative": "nous ne jouons jamais"
+    - lemma: "voyager"
+      ipa: "vwajaʒe"
+      forms:
+        "positive": "ils voyagent souvent"
+        "negative": "ils ne voyagent jamais"
+    - lemma: "étudier"
+      key: "etudier"
+      ipa: "etydje"
+      forms:
+        "positive": "vous étudiez toujours"
+        "negative": "vous n'étudiez jamais"

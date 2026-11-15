@@ -1,0 +1,23 @@
+schema: 1
+id: "fr-en-grammar-pronoun-y"
+kind: "layer"
+core: "fr-grammar-pronoun-y"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The pronoun y: there, or to it"
+license: "CC-BY-SA-4.0"
+description: "Y replaces à or another place word with its noun, and stands before the verb. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "The pronoun y"
+  slot_name: "step"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "question": "question", "answer": "answer with y" }
+  entries:
+    "aller": "to go"
+    "travailler": "to work"
+    "rester": "to stay"
+    "arriver": "to arrive"
+    "repondre": "to answer"
+    "jouer": "to play"
+    "manger": "to eat"
+    "etudier": "to study"
+  notes: "Y replaces à plus a place or a thing, so the answer need not repeat it: Tu vas à la gare ? becomes Oui, j'y vais (Yes, I am going there). It stands before the verb, and je becomes j' in front of it. In the negative, ne goes before y: Non, je n'y vais pas. With répondre, y stands for à plus a thing (j'y réponds); for a person French uses lui or leur instead."

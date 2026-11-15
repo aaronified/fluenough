@@ -1,0 +1,22 @@
+schema: 1
+id: "fr-en-grammar-indirect-object-pronouns"
+kind: "layer"
+core: "fr-grammar-indirect-object-pronouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Indirect object pronouns: me, te, lui, nous, vous, leur"
+license: "CC-BY-SA-4.0"
+description: "An indirect object pronoun stands before the verb and replaces à plus a person. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Indirect object pronouns"
+  slot_name: "pronoun"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "me": "to me", "te": "to you (informal)", "lui": "to him or to her", "nous": "to us", "vous": "to you (formal or plural)", "leur": "to them" }
+  entries:
+    "donner": "to give"
+    "parler": "to speak (to)"
+    "repondre": "to answer"
+    "demander": "to ask"
+    "ecrire": "to write (to)"
+    "envoyer": "to send"
+    "raconter": "to tell (a story to)"
+  notes: "An indirect object pronoun replaces à plus a person, and it stands before the verb: il donne un livre à Anna becomes il lui donne un livre. Me, te, nous and vous are the same words as for direct objects; lui means to him or to her, and leur means to them. Me and te drop their vowel before a vowel sound: il m'écrit, il m'envoie. Verbs such as donner à, parler à, répondre à, demander à, écrire à, envoyer à and raconter à take an indirect object. In the negative, ne goes before the pronoun: il ne leur parle pas."
