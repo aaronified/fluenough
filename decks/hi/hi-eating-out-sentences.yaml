@@ -1,0 +1,129 @@
+schema: 1
+id: "hi-eating-out-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-5060"
+    target: "मुझे एक चाय चाहिए।"
+    reading: "mujhē ēk cāy cāhiē."
+    ipa: "mʊdʒʱeː eːk tʃaːj tʃaːɦɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "मुझे", ref: "hi-0745" }
+    confusables:
+      - { id: "w1", word: "पानी", reading: "pānī", kind: "word" }
+      - { id: "w2", word: "रोटी", reading: "rōṭī", kind: "word" }
+  - id: "hi-5061"
+    target: "यह खाना बहुत तीखा है।"
+    reading: "yah khānā bahut tīkhā hai."
+    ipa: "jəɦ kʰaːnaː bəɦʊt̪ t̪iːkʰaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "मीठा", reading: "mīṭhā", kind: "word" }
+      - { id: "w2", word: "ठंडा", reading: "ṭhaṇḍā", kind: "word" }
+  - id: "hi-5062"
+    target: "क्या आपको मीठा चाहिए?"
+    reading: "kyā āpkō mīṭhā cāhiē?"
+    ipa: "kjaː aːpkoː miːʈʰaː tʃaːɦɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "आपको", ref: "hi-0134" }
+    confusables:
+      - { id: "w1", word: "तीखा", reading: "tīkhā", kind: "word" }
+      - { id: "w2", word: "शाकाहारी", reading: "śākāhārī", kind: "word" }
+  - id: "hi-5063"
+    target: "हमें दो रोटी और पानी चाहिए।"
+    reading: "hamēm̐ dō rōṭī aur pānī cāhiē."
+    ipa: "ɦəmẽː d̪oː roːʈiː ɔːr paːniː tʃaːɦɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "हमें", ref: "hi-0053" }
+    confusables:
+      - { id: "w1", word: "एक", reading: "ēk", kind: "word" }
+      - { id: "w2", word: "चाय", reading: "cāy", kind: "word" }
+  - id: "hi-5064"
+    target: "बिल लाइए, खाना बहुत अच्छा था।"
+    reading: "bil lāiē, khānā bahut acchā thā."
+    ipa: "bɪl laːɪeː kʰaːnaː bəɦʊt̪ ətʃtʃʰaː t̪ʰaː"
+    pos: "phrase"
+    bases:
+      - { word: "लाइए", ref: "hi-0949" }
+      - { word: "था", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "बुरा", reading: "burā", kind: "word" }
+      - { id: "w2", word: "नया", reading: "nayā", kind: "word" }
+  - id: "hi-5065"
+    target: "मुझे मीठा पसंद नहीं है।"
+    reading: "mujhē mīṭhā pasand nahīm̐ hai."
+    ipa: "mʊdʒʱeː miːʈʰaː pəsənd̪ nəɦĩː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मुझे", ref: "hi-0745" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "ठंडा", reading: "ṭhaṇḍā", kind: "word" }
+      - { id: "w2", word: "गरम", reading: "garam", kind: "word" }
+  - id: "hi-5066"
+    target: "क्या यहाँ शाकाहारी खाना मिलता है?"
+    reading: "kyā yahām̐ śākāhārī khānā miltā hai?"
+    ipa: "kjaː jəɦãː ʃaːkaːɦaːriː kʰaːnaː mɪlt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मिलता", ref: "hi-0793" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "मीठा", reading: "mīṭhā", kind: "word" }
+      - { id: "w2", word: "तीखा", reading: "tīkhā", kind: "word" }
+  - id: "hi-5067"
+    target: "चाय में चीनी नहीं चाहिए।"
+    reading: "cāy mēm̐ cīnī nahīm̐ cāhiē."
+    ipa: "tʃaːj mẽː tʃiːniː nəɦĩː tʃaːɦɪeː"
+    pos: "phrase"
+    confusables:
+      - { id: "w1", word: "मीठा", reading: "mīṭhā", kind: "word" }
+      - { id: "w2", word: "तीखा", reading: "tīkhā", kind: "word" }
+  - id: "hi-5068"
+    target: "गरम रोटी लीजिए।"
+    reading: "garam rōṭī lījiē."
+    ipa: "ɡərəm roːʈiː liːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "लीजिए", ref: "hi-0786" }
+    confusables:
+      - { id: "w1", word: "ठंडा", reading: "ṭhaṇḍā", kind: "word" }
+      - { id: "w2", word: "मीठा", reading: "mīṭhā", kind: "word" }
+  - id: "hi-5069"
+    target: "ज़्यादा तीखा मत खाइए।"
+    reading: "zyādā tīkhā mat khāiē."
+    ipa: "zjaːd̪aː t̪iːkʰaː mət̪ kʰaːɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "खाइए", ref: "hi-0332" }
+    confusables:
+      - { id: "w1", word: "गरम", reading: "garam", kind: "word" }
+      - { id: "w2", word: "शाकाहारी", reading: "śākāhārī", kind: "word" }
+  - id: "hi-5070"
+    target: "मिठाई के बाद चाय लीजिए।"
+    reading: "miṭhāī kē bād cāy lījiē."
+    ipa: "mɪʈʰaːiː keː baːd̪ tʃaːj liːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "लीजिए", ref: "hi-0786" }
+    confusables:
+      - { id: "w1", word: "पानी", reading: "pānī", kind: "word" }
+      - { id: "w2", word: "रोटी", reading: "rōṭī", kind: "word" }
+  - id: "hi-5071"
+    target: "और पानी दीजिए।"
+    reading: "aur pānī dījiē."
+    ipa: "ɔːr paːniː d̪iːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "दीजिए", ref: "hi-0785" }
+    confusables:
+      - { id: "w1", word: "बहुत", reading: "bahut", kind: "word" }
+      - { id: "w2", word: "कुछ", reading: "kuch", kind: "word" }
