@@ -1,0 +1,1279 @@
+schema: 1
+id: "bn-grammar-verb-past-negative"
+part: "core"
+kind: "rules"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["bn-0251", "bn-0291", "bn-0306", "bn-0322", "bn-0696", "bn-0697", "bn-2330"]
+  slots: ["ami", "tui", "tumi", "apni", "se", "tini"]
+  rows:
+    - word: "bn-0872"
+      forms: { "ami": "আসিনি", "tui": "আসিসনি", "tumi": ["আসোনি", "আসনি"], "apni": "আসেননি", "se": "আসেনি", "tini": "আসেননি" }
+      readings: { "ami": "āśini", "tui": "āśiśni", "tumi": ["āśoni", "āśni"], "apni": "āśenni", "se": "āśeni", "tini": "āśenni" }
+    - word: "bn-0873"
+      forms: { "ami": "যাইনি", "tui": "যাসনি", "tumi": "যাওনি", "apni": "যাননি", "se": "যায়নি", "tini": "যাননি" }
+      readings: { "ami": "jāini", "tui": "jāśni", "tumi": "jāoni", "apni": "jānni", "se": "jāyni", "tini": "jānni" }
+    - word: "bn-0874"
+      forms: { "ami": "হইনি", "tui": "হসনি", "tumi": "হওনি", "apni": "হননি", "se": "হয়নি", "tini": "হননি" }
+      readings: { "ami": "hoini", "tui": "hôśni", "tumi": "honi", "apni": "hônni", "se": "hôyni", "tini": "hônni" }
+    - word: "bn-0875"
+      forms: { "ami": "থাকিনি", "tui": "থাকিসনি", "tumi": ["থাকোনি", "থাকনি"], "apni": "থাকেননি", "se": "থাকেনি", "tini": "থাকেননি" }
+      readings: { "ami": "thākini", "tui": "thākiśni", "tumi": ["thākoni", "thākni"], "apni": "thākenni", "se": "thākeni", "tini": "thākenni" }
+    - word: "bn-0876"
+      forms: { "ami": "খাইনি", "tui": "খাসনি", "tumi": "খাওনি", "apni": "খাননি", "se": "খায়নি", "tini": "খাননি" }
+      readings: { "ami": "khāini", "tui": "khāśni", "tumi": "khāoni", "apni": "khānni", "se": "khāyni", "tini": "khānni" }
+    - word: "bn-0877"
+      forms: { "ami": "দেখিনি", "tui": "দেখিসনি", "tumi": ["দেখোনি", "দেখনি"], "apni": "দেখেননি", "se": "দেখেনি", "tini": "দেখেননি" }
+      readings: { "ami": "dekhini", "tui": "dekhiśni", "tumi": ["dekhoni", "dekhni"], "apni": "dekhenni", "se": "dekheni", "tini": "dekhenni" }
+    - word: "bn-0878"
+      forms: { "ami": "শুনিনি", "tui": "শুনিসনি", "tumi": ["শোনোনি", "শোননি"], "apni": "শোনেননি", "se": "শোনেনি", "tini": "শোনেননি" }
+      readings: { "ami": "śunini", "tui": "śuniśni", "tumi": ["śononi", "śonni"], "apni": "śonenni", "se": "śoneni", "tini": "śonenni" }
+    - word: "bn-0879"
+      forms: { "ami": "বলিনি", "tui": "বলিসনি", "tumi": ["বলোনি", "বলনি"], "apni": "বলেননি", "se": "বলেনি", "tini": "বলেননি" }
+      readings: { "ami": "bolini", "tui": "boliśni", "tumi": ["bôloni", "bôlni"], "apni": "bôlenni", "se": "bôleni", "tini": "bôlenni" }
+    - word: "bn-0880"
+      forms: { "ami": "লিখিনি", "tui": "লিখিসনি", "tumi": ["লেখোনি", "লেখনি"], "apni": "লেখেননি", "se": "লেখেনি", "tini": "লেখেননি" }
+      readings: { "ami": "likhini", "tui": "likhiśni", "tumi": ["lekhoni", "lekhni"], "apni": "lekhenni", "se": "lekheni", "tini": "lekhenni" }
+    - word: "bn-0881"
+      forms: { "ami": "জানিনি", "tui": "জানিসনি", "tumi": ["জানোনি", "জাননি"], "apni": "জানেননি", "se": "জানেনি", "tini": "জানেননি" }
+      readings: { "ami": "jānini", "tui": "jāniśni", "tumi": ["jānoni", "jānni"], "apni": "jānenni", "se": "jāneni", "tini": "jānenni" }
+    - word: "bn-0882"
+      forms: { "ami": "বুঝিনি", "tui": "বুঝিসনি", "tumi": ["বোঝোনি", "বোঝনি"], "apni": "বোঝেননি", "se": "বোঝেনি", "tini": "বোঝেননি" }
+      readings: { "ami": "bujhini", "tui": "bujhiśni", "tumi": ["bojhoni", "bojhni"], "apni": "bojhenni", "se": "bojheni", "tini": "bojhenni" }
+    - word: "bn-0883"
+      forms: { "ami": "শিখিনি", "tui": "শিখিসনি", "tumi": ["শেখোনি", "শেখনি"], "apni": "শেখেননি", "se": "শেখেনি", "tini": "শেখেননি" }
+      readings: { "ami": "śikhini", "tui": "śikhiśni", "tumi": ["śekhoni", "śekhni"], "apni": "śekhenni", "se": "śekheni", "tini": "śekhenni" }
+    - word: "bn-0884"
+      forms: { "ami": "বসিনি", "tui": "বসিসনি", "tumi": ["বসোনি", "বসনি"], "apni": "বসেননি", "se": "বসেনি", "tini": "বসেননি" }
+      readings: { "ami": "bośini", "tui": "bośiśni", "tumi": ["bôśoni", "bôśni"], "apni": "bôśenni", "se": "bôśeni", "tini": "bôśenni" }
+    - word: "bn-0885"
+      forms: { "ami": "উঠিনি", "tui": "উঠিসনি", "tumi": ["উঠোনি", "উঠনি"], "apni": "উঠেননি", "se": "উঠেনি", "tini": "উঠেননি" }
+      readings: { "ami": "uṭhini", "tui": "uṭhiśni", "tumi": ["uṭhoni", "uṭhni"], "apni": "uṭhenni", "se": "uṭheni", "tini": "uṭhenni" }
+    - word: "bn-0886"
+      forms: { "ami": "দাঁড়াইনি", "tui": "দাঁড়াসনি", "tumi": "দাঁড়াওনি", "apni": "দাঁড়াননি", "se": "দাঁড়ায়নি", "tini": "দাঁড়াননি" }
+      readings: { "ami": "dām̐ṛāini", "tui": "dām̐ṛāśni", "tumi": "dām̐ṛāoni", "apni": "dām̐ṛānni", "se": "dām̐ṛāyni", "tini": "dām̐ṛānni" }
+    - word: "bn-0887"
+      forms: { "ami": "ঘুমোইনি", "tui": "ঘুমোসনি", "tumi": "ঘুমোওনি", "apni": "ঘুমোননি", "se": "ঘুমোয়নি", "tini": "ঘুমোননি" }
+      readings: { "ami": "ghumoini", "tui": "ghumośni", "tumi": "ghumooni", "apni": "ghumonni", "se": "ghumoyni", "tini": "ghumonni" }
+    - word: "bn-0888"
+      forms: { "ami": "দিইনি", "tui": "দিসনি", "tumi": "দাওনি", "apni": "দেননি", "se": "দেয়নি", "tini": "দেননি" }
+      readings: { "ami": "diini", "tui": "diśni", "tumi": "dāoni", "apni": "denni", "se": "deyni", "tini": "denni" }
+    - word: "bn-0889"
+      forms: { "ami": "নিইনি", "tui": "নিসনি", "tumi": "নাওনি", "apni": "নেননি", "se": "নেয়নি", "tini": "নেননি" }
+      readings: { "ami": "niini", "tui": "niśni", "tumi": "nāoni", "apni": "nenni", "se": "neyni", "tini": "nenni" }
+    - word: "bn-0890"
+      forms: { "ami": "কিনিনি", "tui": "কিনিসনি", "tumi": ["কেনোনি", "কেননি"], "apni": "কেনেননি", "se": "কেনেনি", "tini": "কেনেননি" }
+      readings: { "ami": "kinini", "tui": "kiniśni", "tumi": ["kenoni", "kenni"], "apni": "kenenni", "se": "keneni", "tini": "kenenni" }
+    - word: "bn-0891"
+      forms: { "ami": "পাইনি", "tui": "পাসনি", "tumi": "পাওনি", "apni": "পাননি", "se": "পায়নি", "tini": "পাননি" }
+      readings: { "ami": "pāini", "tui": "pāśni", "tumi": "pāoni", "apni": "pānni", "se": "pāyni", "tini": "pānni" }
+    - word: "bn-0892"
+      forms: { "ami": "চলিনি", "tui": "চলিসনি", "tumi": ["চলোনি", "চলনি"], "apni": "চলেননি", "se": "চলেনি", "tini": "চলেননি" }
+      readings: { "ami": "colini", "tui": "coliśni", "tumi": ["côloni", "côlni"], "apni": "côlenni", "se": "côleni", "tini": "côlenni" }
+    - word: "bn-0893"
+      forms: { "ami": "আনিনি", "tui": "আনিসনি", "tumi": ["আনোনি", "আননি"], "apni": "আনেননি", "se": "আনেনি", "tini": "আনেননি" }
+      readings: { "ami": "ānini", "tui": "āniśni", "tumi": ["ānoni", "ānni"], "apni": "ānenni", "se": "āneni", "tini": "ānenni" }
+    - word: "bn-0894"
+      forms: { "ami": "রাখিনি", "tui": "রাখিসনি", "tumi": ["রাখোনি", "রাখনি"], "apni": "রাখেননি", "se": "রাখেনি", "tini": "রাখেননি" }
+      readings: { "ami": "rākhini", "tui": "rākhiśni", "tumi": ["rākhoni", "rākhni"], "apni": "rākhenni", "se": "rākheni", "tini": "rākhenni" }
+    - word: "bn-0895"
+      forms: { "ami": "খেলিনি", "tui": "খেলিসনি", "tumi": ["খেলোনি", "খেলনি"], "apni": "খেলেননি", "se": "খেলেনি", "tini": "খেলেননি" }
+      readings: { "ami": "khelini", "tui": "kheliśni", "tumi": ["kheloni", "khelni"], "apni": "khelenni", "se": "kheleni", "tini": "khelenni" }
+    - word: "bn-0896"
+      forms: { "ami": "হাঁটিনি", "tui": "হাঁটিসনি", "tumi": ["হাঁটোনি", "হাঁটনি"], "apni": "হাঁটেননি", "se": "হাঁটেনি", "tini": "হাঁটেননি" }
+      readings: { "ami": "hām̐ṭini", "tui": "hām̐ṭiśni", "tumi": ["hām̐ṭoni", "hām̐ṭni"], "apni": "hām̐ṭenni", "se": "hām̐ṭeni", "tini": "hām̐ṭenni" }
+    - word: "bn-0897"
+      forms: { "ami": "খুলিনি", "tui": "খুলিসনি", "tumi": ["খোলোনি", "খোলনি"], "apni": "খোলেননি", "se": "খোলেনি", "tini": "খোলেননি" }
+      readings: { "ami": "khulini", "tui": "khuliśni", "tumi": ["kholoni", "kholni"], "apni": "kholenni", "se": "kholeni", "tini": "kholenni" }
+    - word: "bn-0898"
+      forms: { "ami": "ডাকিনি", "tui": "ডাকিসনি", "tumi": ["ডাকোনি", "ডাকনি"], "apni": "ডাকেননি", "se": "ডাকেনি", "tini": "ডাকেননি" }
+      readings: { "ami": "ḍākini", "tui": "ḍākiśni", "tumi": ["ḍākoni", "ḍākni"], "apni": "ḍākenni", "se": "ḍākeni", "tini": "ḍākenni" }
+    - word: "bn-0899"
+      forms: { "ami": "হাসিনি", "tui": "হাসিসনি", "tumi": ["হাসোনি", "হাসনি"], "apni": "হাসেননি", "se": "হাসেনি", "tini": "হাসেননি" }
+      readings: { "ami": "hāśini", "tui": "hāśiśni", "tumi": ["hāśoni", "hāśni"], "apni": "hāśenni", "se": "hāśeni", "tini": "hāśenni" }
+    - word: "bn-0677"
+      forms: { "ami": "কাজ করিনি", "tui": "কাজ করিসনি", "tumi": ["কাজ করোনি", "কাজ করনি"], "apni": "কাজ করেননি", "se": "কাজ করেনি", "tini": "কাজ করেননি" }
+      readings: { "ami": "kāj korini", "tui": "kāj koriśni", "tumi": ["kāj kôroni", "kāj kôrni"], "apni": "kāj kôrenni", "se": "kāj kôreni", "tini": "kāj kôrenni" }
+    - word: "bn-0678"
+      forms: { "ami": "বাজার করিনি", "tui": "বাজার করিসনি", "tumi": ["বাজার করোনি", "বাজার করনি"], "apni": "বাজার করেননি", "se": "বাজার করেনি", "tini": "বাজার করেননি" }
+      readings: { "ami": "bājār korini", "tui": "bājār koriśni", "tumi": ["bājār kôroni", "bājār kôrni"], "apni": "bājār kôrenni", "se": "bājār kôreni", "tini": "bājār kôrenni" }
+    - word: "bn-0679"
+      forms: { "ami": "ফোন করিনি", "tui": "ফোন করিসনি", "tumi": ["ফোন করোনি", "ফোন করনি"], "apni": "ফোন করেননি", "se": "ফোন করেনি", "tini": "ফোন করেননি" }
+      readings: { "ami": "phon korini", "tui": "phon koriśni", "tumi": ["phon kôroni", "phon kôrni"], "apni": "phon kôrenni", "se": "phon kôreni", "tini": "phon kôrenni" }
+    - word: "bn-0680"
+      forms: { "ami": "গল্প করিনি", "tui": "গল্প করিসনি", "tumi": ["গল্প করোনি", "গল্প করনি"], "apni": "গল্প করেননি", "se": "গল্প করেনি", "tini": "গল্প করেননি" }
+      readings: { "ami": "gôlpo korini", "tui": "gôlpo koriśni", "tumi": ["gôlpo kôroni", "gôlpo kôrni"], "apni": "gôlpo kôrenni", "se": "gôlpo kôreni", "tini": "gôlpo kôrenni" }
+    - word: "bn-0681"
+      forms: { "ami": "বিশ্রাম করিনি", "tui": "বিশ্রাম করিসনি", "tumi": ["বিশ্রাম করোনি", "বিশ্রাম করনি"], "apni": "বিশ্রাম করেননি", "se": "বিশ্রাম করেনি", "tini": "বিশ্রাম করেননি" }
+      readings: { "ami": "biśrām korini", "tui": "biśrām koriśni", "tumi": ["biśrām kôroni", "biśrām kôrni"], "apni": "biśrām kôrenni", "se": "biśrām kôreni", "tini": "biśrām kôrenni" }
+    - word: "bn-0682"
+      forms: { "ami": "ব্যায়াম করিনি", "tui": "ব্যায়াম করিসনি", "tumi": ["ব্যায়াম করোনি", "ব্যায়াম করনি"], "apni": "ব্যায়াম করেননি", "se": "ব্যায়াম করেনি", "tini": "ব্যায়াম করেননি" }
+      readings: { "ami": "bêyām korini", "tui": "bêyām koriśni", "tumi": ["bêyām kôroni", "bêyām kôrni"], "apni": "bêyām kôrenni", "se": "bêyām kôreni", "tini": "bêyām kôrenni" }
+    - word: "bn-0683"
+      forms: { "ami": "পরিষ্কার করিনি", "tui": "পরিষ্কার করিসনি", "tumi": ["পরিষ্কার করোনি", "পরিষ্কার করনি"], "apni": "পরিষ্কার করেননি", "se": "পরিষ্কার করেনি", "tini": "পরিষ্কার করেননি" }
+      readings: { "ami": "poriśkār korini", "tui": "poriśkār koriśni", "tumi": ["poriśkār kôroni", "poriśkār kôrni"], "apni": "poriśkār kôrenni", "se": "poriśkār kôreni", "tini": "poriśkār kôrenni" }
+    - word: "bn-0684"
+      forms: { "ami": "বিয়ে করিনি", "tui": "বিয়ে করিসনি", "tumi": ["বিয়ে করোনি", "বিয়ে করনি"], "apni": "বিয়ে করেননি", "se": "বিয়ে করেনি", "tini": "বিয়ে করেননি" }
+      readings: { "ami": "biye korini", "tui": "biye koriśni", "tumi": ["biye kôroni", "biye kôrni"], "apni": "biye kôrenni", "se": "biye kôreni", "tini": "biye kôrenni" }
+    - word: "bn-0685"
+      forms: { "ami": "জিজ্ঞেস করিনি", "tui": "জিজ্ঞেস করিসনি", "tumi": ["জিজ্ঞেস করোনি", "জিজ্ঞেস করনি"], "apni": "জিজ্ঞেস করেননি", "se": "জিজ্ঞেস করেনি", "tini": "জিজ্ঞেস করেননি" }
+      readings: { "ami": "jiggeś korini", "tui": "jiggeś koriśni", "tumi": ["jiggeś kôroni", "jiggeś kôrni"], "apni": "jiggeś kôrenni", "se": "jiggeś kôreni", "tini": "jiggeś kôrenni" }
+    - word: "bn-0686"
+      forms: { "ami": "শুরু করিনি", "tui": "শুরু করিসনি", "tumi": ["শুরু করোনি", "শুরু করনি"], "apni": "শুরু করেননি", "se": "শুরু করেনি", "tini": "শুরু করেননি" }
+      readings: { "ami": "śuru korini", "tui": "śuru koriśni", "tumi": ["śuru kôroni", "śuru kôrni"], "apni": "śuru kôrenni", "se": "śuru kôreni", "tini": "śuru kôrenni" }
+    - word: "bn-0687"
+      forms: { "ami": "শেষ করিনি", "tui": "শেষ করিসনি", "tumi": ["শেষ করোনি", "শেষ করনি"], "apni": "শেষ করেননি", "se": "শেষ করেনি", "tini": "শেষ করেননি" }
+      readings: { "ami": "śeś korini", "tui": "śeś koriśni", "tumi": ["śeś kôroni", "śeś kôrni"], "apni": "śeś kôrenni", "se": "śeś kôreni", "tini": "śeś kôrenni" }
+    - word: "bn-0688"
+      forms: { "ami": "ভুল করিনি", "tui": "ভুল করিসনি", "tumi": ["ভুল করোনি", "ভুল করনি"], "apni": "ভুল করেননি", "se": "ভুল করেনি", "tini": "ভুল করেননি" }
+      readings: { "ami": "bhul korini", "tui": "bhul koriśni", "tumi": ["bhul kôroni", "bhul kôrni"], "apni": "bhul kôrenni", "se": "bhul kôreni", "tini": "bhul kôrenni" }
+    - word: "bn-0689"
+      forms: { "ami": "ঠিক করিনি", "tui": "ঠিক করিসনি", "tumi": ["ঠিক করোনি", "ঠিক করনি"], "apni": "ঠিক করেননি", "se": "ঠিক করেনি", "tini": "ঠিক করেননি" }
+      readings: { "ami": "ṭhik korini", "tui": "ṭhik koriśni", "tumi": ["ṭhik kôroni", "ṭhik kôrni"], "apni": "ṭhik kôrenni", "se": "ṭhik kôreni", "tini": "ṭhik kôrenni" }
+    - word: "bn-0690"
+      forms: { "ami": "সাহায্য করিনি", "tui": "সাহায্য করিসনি", "tumi": ["সাহায্য করোনি", "সাহায্য করনি"], "apni": "সাহায্য করেননি", "se": "সাহায্য করেনি", "tini": "সাহায্য করেননি" }
+      readings: { "ami": "śāhājjo korini", "tui": "śāhājjo koriśni", "tumi": ["śāhājjo kôroni", "śāhājjo kôrni"], "apni": "śāhājjo kôrenni", "se": "śāhājjo kôreni", "tini": "śāhājjo kôrenni" }
+    - word: "bn-0691"
+      forms: { "ami": "চেষ্টা করিনি", "tui": "চেষ্টা করিসনি", "tumi": ["চেষ্টা করোনি", "চেষ্টা করনি"], "apni": "চেষ্টা করেননি", "se": "চেষ্টা করেনি", "tini": "চেষ্টা করেননি" }
+      readings: { "ami": "ceśṭā korini", "tui": "ceśṭā koriśni", "tumi": ["ceśṭā kôroni", "ceśṭā kôrni"], "apni": "ceśṭā kôrenni", "se": "ceśṭā kôreni", "tini": "ceśṭā kôrenni" }
+    - word: "bn-0692"
+      forms: { "ami": "অপেক্ষা করিনি", "tui": "অপেক্ষা করিসনি", "tumi": ["অপেক্ষা করোনি", "অপেক্ষা করনি"], "apni": "অপেক্ষা করেননি", "se": "অপেক্ষা করেনি", "tini": "অপেক্ষা করেননি" }
+      readings: { "ami": "ôpekkhā korini", "tui": "ôpekkhā koriśni", "tumi": ["ôpekkhā kôroni", "ôpekkhā kôrni"], "apni": "ôpekkhā kôrenni", "se": "ôpekkhā kôreni", "tini": "ôpekkhā kôrenni" }
+    - word: "bn-0693"
+      forms: { "ami": "পছন্দ করিনি", "tui": "পছন্দ করিসনি", "tumi": ["পছন্দ করোনি", "পছন্দ করনি"], "apni": "পছন্দ করেননি", "se": "পছন্দ করেনি", "tini": "পছন্দ করেননি" }
+      readings: { "ami": "pôchondo korini", "tui": "pôchondo koriśni", "tumi": ["pôchondo kôroni", "pôchondo kôrni"], "apni": "pôchondo kôrenni", "se": "pôchondo kôreni", "tini": "pôchondo kôrenni" }
+    - word: "bn-0694"
+      forms: { "ami": "গান করিনি", "tui": "গান করিসনি", "tumi": ["গান করোনি", "গান করনি"], "apni": "গান করেননি", "se": "গান করেনি", "tini": "গান করেননি" }
+      readings: { "ami": "gān korini", "tui": "gān koriśni", "tumi": ["gān kôroni", "gān kôrni"], "apni": "gān kôrenni", "se": "gān kôreni", "tini": "gān kôrenni" }
+    - word: "bn-0695"
+      forms: { "ami": "রাগ করিনি", "tui": "রাগ করিসনি", "tumi": ["রাগ করোনি", "রাগ করনি"], "apni": "রাগ করেননি", "se": "রাগ করেনি", "tini": "রাগ করেননি" }
+      readings: { "ami": "rāg korini", "tui": "rāg koriśni", "tumi": ["rāg kôroni", "rāg kôrni"], "apni": "rāg kôrenni", "se": "rāg kôreni", "tini": "rāg kôrenni" }
+    - word: "bn-0736"
+      forms: { "ami": "পারিনি", "tui": "পারিসনি", "tumi": ["পারোনি", "পারনি"], "apni": "পারেননি", "se": "পারেনি", "tini": "পারেননি" }
+      readings: { "ami": "pārini", "tui": "pāriśni", "tumi": ["pāroni", "pārni"], "apni": "pārenni", "se": "pāreni", "tini": "pārenni" }
+    - word: "bn-0741"
+      forms: { "ami": "চাইনি", "tui": "চাসনি", "tumi": "চাওনি", "apni": "চাননি", "se": "চায়নি", "tini": "চাননি" }
+      readings: { "ami": "cāini", "tui": "cāśni", "tumi": "cāoni", "apni": "cānni", "se": "cāyni", "tini": "cānni" }
+    - word: "bn-1099"
+      forms: { "ami": "রাঁধিনি", "tui": "রাঁধিসনি", "tumi": ["রাঁধোনি", "রাঁধনি"], "apni": "রাঁধেননি", "se": "রাঁধেনি", "tini": "রাঁধেননি" }
+      readings: { "ami": "rām̐dhini", "tui": "rām̐dhiśni", "tumi": ["rām̐dhoni", "rām̐dhni"], "apni": "rām̐dhenni", "se": "rām̐dheni", "tini": "rām̐dhenni" }
+    - word: "bn-1100"
+      forms: { "ami": "ধুইনি", "tui": "ধুসনি", "tumi": "ধোওনি", "apni": "ধোননি", "se": "ধোয়নি", "tini": "ধোননি" }
+      readings: { "ami": "dhuini", "tui": "dhuśni", "tumi": "dhooni", "apni": "dhonni", "se": "dhoyni", "tini": "dhonni" }
+    - word: "bn-1101"
+      forms: { "ami": "কাটিনি", "tui": "কাটিসনি", "tumi": ["কাটোনি", "কাটনি"], "apni": "কাটেননি", "se": "কাটেনি", "tini": "কাটেননি" }
+      readings: { "ami": "kāṭini", "tui": "kāṭiśni", "tumi": ["kāṭoni", "kāṭni"], "apni": "kāṭenni", "se": "kāṭeni", "tini": "kāṭenni" }
+    - word: "bn-1102"
+      forms: { "ami": "ভাঙিনি", "tui": "ভাঙিসনি", "tumi": ["ভাঙোনি", "ভাঙনি"], "apni": "ভাঙেননি", "se": "ভাঙেনি", "tini": "ভাঙেননি" }
+      readings: { "ami": "bhāṅini", "tui": "bhāṅiśni", "tumi": ["bhāṅoni", "bhāṅni"], "apni": "bhāṅenni", "se": "bhāṅeni", "tini": "bhāṅenni" }
+    - word: "bn-1103"
+      forms: { "ami": "ফেলিনি", "tui": "ফেলিসনি", "tumi": ["ফেলোনি", "ফেলনি"], "apni": "ফেলেননি", "se": "ফেলেনি", "tini": "ফেলেননি" }
+      readings: { "ami": "phelini", "tui": "pheliśni", "tumi": ["pheloni", "phelni"], "apni": "phelenni", "se": "pheleni", "tini": "phelenni" }
+    - word: "bn-1104"
+      forms: { "ami": "তুলিনি", "tui": "তুলিসনি", "tumi": ["তোলোনি", "তোলনি"], "apni": "তোলেননি", "se": "তোলেনি", "tini": "তোলেননি" }
+      readings: { "ami": "tulini", "tui": "tuliśni", "tumi": ["toloni", "tolni"], "apni": "tolenni", "se": "toleni", "tini": "tolenni" }
+    - word: "bn-1105"
+      forms: { "ami": "খুঁজিনি", "tui": "খুঁজিসনি", "tumi": ["খোঁজোনি", "খোঁজনি"], "apni": "খোঁজেননি", "se": "খোঁজেনি", "tini": "খোঁজেননি" }
+      readings: { "ami": "khum̐jini", "tui": "khum̐jiśni", "tumi": ["khom̐joni", "khom̐jni"], "apni": "khom̐jenni", "se": "khom̐jeni", "tini": "khom̐jenni" }
+    - word: "bn-1106"
+      forms: { "ami": "হারাইনি", "tui": "হারাসনি", "tumi": "হারাওনি", "apni": "হারাননি", "se": "হারায়নি", "tini": "হারাননি" }
+      readings: { "ami": "hārāini", "tui": "hārāśni", "tumi": "hārāoni", "apni": "hārānni", "se": "hārāyni", "tini": "hārānni" }
+    - word: "bn-1107"
+      forms: { "ami": "ধরিনি", "tui": "ধরিসনি", "tumi": ["ধরোনি", "ধরনি"], "apni": "ধরেননি", "se": "ধরেনি", "tini": "ধরেননি" }
+      readings: { "ami": "dhorini", "tui": "dhoriśni", "tumi": ["dhôroni", "dhôrni"], "apni": "dhôrenni", "se": "dhôreni", "tini": "dhôrenni" }
+    - word: "bn-1108"
+      forms: { "ami": "পাঠাইনি", "tui": "পাঠাসনি", "tumi": "পাঠাওনি", "apni": "পাঠাননি", "se": "পাঠায়নি", "tini": "পাঠাননি" }
+      readings: { "ami": "pāṭhāini", "tui": "pāṭhāśni", "tumi": "pāṭhāoni", "apni": "pāṭhānni", "se": "pāṭhāyni", "tini": "pāṭhānni" }
+    - word: "bn-1109"
+      forms: { "ami": "পৌঁছাইনি", "tui": "পৌঁছাসনি", "tumi": "পৌঁছাওনি", "apni": "পৌঁছাননি", "se": "পৌঁছায়নি", "tini": "পৌঁছাননি" }
+      readings: { "ami": "poum̐chāini", "tui": "poum̐chāśni", "tumi": "poum̐chāoni", "apni": "poum̐chānni", "se": "poum̐chāyni", "tini": "poum̐chānni" }
+    - word: "bn-1110"
+      forms: { "ami": "ফিরিনি", "tui": "ফিরিসনি", "tumi": ["ফেরোনি", "ফেরনি"], "apni": "ফেরেননি", "se": "ফেরেনি", "tini": "ফেরেননি" }
+      readings: { "ami": "phirini", "tui": "phiriśni", "tumi": ["pheroni", "pherni"], "apni": "pherenni", "se": "phereni", "tini": "pherenni" }
+    - word: "bn-1111"
+      forms: { "ami": "থামিনি", "tui": "থামিসনি", "tumi": ["থামোনি", "থামনি"], "apni": "থামেননি", "se": "থামেনি", "tini": "থামেননি" }
+      readings: { "ami": "thāmini", "tui": "thāmiśni", "tumi": ["thāmoni", "thāmni"], "apni": "thāmenni", "se": "thāmeni", "tini": "thāmenni" }
+    - word: "bn-1112"
+      forms: { "ami": "ঢালিনি", "tui": "ঢালিসনি", "tumi": ["ঢালোনি", "ঢালনি"], "apni": "ঢালেননি", "se": "ঢালেনি", "tini": "ঢালেননি" }
+      readings: { "ami": "ḍhālini", "tui": "ḍhāliśni", "tumi": ["ḍhāloni", "ḍhālni"], "apni": "ḍhālenni", "se": "ḍhāleni", "tini": "ḍhālenni" }
+    - word: "bn-1113"
+      forms: { "ami": "গুনিনি", "tui": "গুনিসনি", "tumi": ["গোনোনি", "গোননি"], "apni": "গোনেননি", "se": "গোনেনি", "tini": "গোনেননি" }
+      readings: { "ami": "gunini", "tui": "guniśni", "tumi": ["gononi", "gonni"], "apni": "gonenni", "se": "goneni", "tini": "gonenni" }
+    - word: "bn-1114"
+      forms: { "ami": "শেখাইনি", "tui": "শেখাসনি", "tumi": "শেখাওনি", "apni": "শেখাননি", "se": "শেখায়নি", "tini": "শেখাননি" }
+      readings: { "ami": "śekhāini", "tui": "śekhāśni", "tumi": "śekhāoni", "apni": "śekhānni", "se": "śekhāyni", "tini": "śekhānni" }
+    - word: "bn-1115"
+      forms: { "ami": "দৌড়াইনি", "tui": "দৌড়াসনি", "tumi": "দৌড়াওনি", "apni": "দৌড়াননি", "se": "দৌড়ায়নি", "tini": "দৌড়াননি" }
+      readings: { "ami": "douṛāini", "tui": "douṛāśni", "tumi": "douṛāoni", "apni": "douṛānni", "se": "douṛāyni", "tini": "douṛānni" }
+    - word: "bn-1116"
+      forms: { "ami": "উড়িনি", "tui": "উড়িসনি", "tumi": ["ওড়োনি", "ওড়নি"], "apni": "ওড়েননি", "se": "ওড়েনি", "tini": "ওড়েননি" }
+      readings: { "ami": "uṛini", "tui": "uṛiśni", "tumi": ["oṛoni", "oṛni"], "apni": "oṛenni", "se": "oṛeni", "tini": "oṛenni" }
+    - word: "bn-1117"
+      forms: { "ami": "লাফাইনি", "tui": "লাফাসনি", "tumi": "লাফাওনি", "apni": "লাফাননি", "se": "লাফায়নি", "tini": "লাফাননি" }
+      readings: { "ami": "lāphāini", "tui": "lāphāśni", "tumi": "lāphāoni", "apni": "lāphānni", "se": "lāphāyni", "tini": "lāphānni" }
+    - word: "bn-1118"
+      forms: { "ami": "ভাবিনি", "tui": "ভাবিসনি", "tumi": ["ভাবোনি", "ভাবনি"], "apni": "ভাবেননি", "se": "ভাবেনি", "tini": "ভাবেননি" }
+      readings: { "ami": "bhābini", "tui": "bhābiśni", "tumi": ["bhāboni", "bhābni"], "apni": "bhābenni", "se": "bhābeni", "tini": "bhābenni" }
+    - word: "bn-1119"
+      forms: { "ami": "কাঁদিনি", "tui": "কাঁদিসনি", "tumi": ["কাঁদোনি", "কাঁদনি"], "apni": "কাঁদেননি", "se": "কাঁদেনি", "tini": "কাঁদেননি" }
+      readings: { "ami": "kām̐dini", "tui": "kām̐diśni", "tumi": ["kām̐doni", "kām̐dni"], "apni": "kām̐denni", "se": "kām̐deni", "tini": "kām̐denni" }
+    - word: "bn-1120"
+      forms: { "ami": "শুইনি", "tui": "শুসনি", "tumi": "শোওনি", "apni": "শোননি", "se": "শোয়নি", "tini": "শোননি" }
+      readings: { "ami": "śuini", "tui": "śuśni", "tumi": "śooni", "apni": "śonni", "se": "śoyni", "tini": "śonni" }
+    - word: "bn-1121"
+      forms: { "ami": "মুছিনি", "tui": "মুছিসনি", "tumi": ["মোছোনি", "মোছনি"], "apni": "মোছেননি", "se": "মোছেনি", "tini": "মোছেননি" }
+      readings: { "ami": "muchini", "tui": "muchiśni", "tumi": ["mochoni", "mochni"], "apni": "mochenni", "se": "mocheni", "tini": "mochenni" }
+    - word: "bn-1122"
+      forms: { "ami": "ঘুরিনি", "tui": "ঘুরিসনি", "tumi": ["ঘোরোনি", "ঘোরনি"], "apni": "ঘোরেননি", "se": "ঘোরেনি", "tini": "ঘোরেননি" }
+      readings: { "ami": "ghurini", "tui": "ghuriśni", "tumi": ["ghoroni", "ghorni"], "apni": "ghorenni", "se": "ghoreni", "tini": "ghorenni" }
+    - word: "bn-0119"
+      forms: { "ami": "পড়িনি", "tui": "পড়িসনি", "tumi": ["পড়োনি", "পড়নি"], "apni": "পড়েননি", "se": "পড়েনি", "tini": "পড়েননি" }
+      readings: { "ami": "poṛini", "tui": "poṛiśni", "tumi": ["pôṛoni", "pôṛni"], "apni": "pôṛenni", "se": "pôṛeni", "tini": "pôṛenni" }
+    - word: "bn-1689"
+      forms: { "ami": "বেচিনি", "tui": "বেচিসনি", "tumi": ["বেচোনি", "বেচনি"], "apni": "বেচেননি", "se": "বেচেনি", "tini": "বেচেননি" }
+      readings: { "ami": "becini", "tui": "beciśni", "tumi": ["beconi", "becni"], "apni": "becenni", "se": "beceni", "tini": "becenni" }
+    - word: "bn-1701"
+      forms: { "ami": "বদলাইনি", "tui": "বদলাসনি", "tumi": "বদলাওনি", "apni": "বদলাননি", "se": "বদলায়নি", "tini": "বদলাননি" }
+      readings: { "ami": "bôdlāini", "tui": "bôdlāśni", "tumi": "bôdlāoni", "apni": "bôdlānni", "se": "bôdlāyni", "tini": "bôdlānni" }
+    - word: "bn-1715"
+      forms: { "ami": "কমাইনি", "tui": "কমাসনি", "tumi": "কমাওনি", "apni": "কমাননি", "se": "কমায়নি", "tini": "কমাননি" }
+      readings: { "ami": "kômāini", "tui": "kômāśni", "tumi": "kômāoni", "apni": "kômānni", "se": "kômāyni", "tini": "kômānni" }
+    - word: "bn-2097"
+      forms: { "ami": "ফুটিনি", "tui": "ফুটিসনি", "tumi": ["ফোটোনি", "ফোটনি"], "apni": "ফোটেননি", "se": "ফোটেনি", "tini": "ফোটেননি" }
+      readings: { "ami": "phuṭini", "tui": "phuṭiśni", "tumi": ["phoṭoni", "phoṭni"], "apni": "phoṭenni", "se": "phoṭeni", "tini": "phoṭenni" }
+    - word: "bn-2098"
+      forms: { "ami": "বাটিনি", "tui": "বাটিসনি", "tumi": ["বাটোনি", "বাটনি"], "apni": "বাটেননি", "se": "বাটেনি", "tini": "বাটেননি" }
+      readings: { "ami": "bāṭini", "tui": "bāṭiśni", "tumi": ["bāṭoni", "bāṭni"], "apni": "bāṭenni", "se": "bāṭeni", "tini": "bāṭenni" }
+    - word: "bn-2099"
+      forms: { "ami": "কুটিনি", "tui": "কুটিসনি", "tumi": ["কোটোনি", "কোটনি"], "apni": "কোটেননি", "se": "কোটেনি", "tini": "কোটেননি" }
+      readings: { "ami": "kuṭini", "tui": "kuṭiśni", "tumi": ["koṭoni", "koṭni"], "apni": "koṭenni", "se": "koṭeni", "tini": "koṭenni" }
+    - word: "bn-2111"
+      forms: { "ami": "মাখিনি", "tui": "মাখিসনি", "tumi": ["মাখোনি", "মাখনি"], "apni": "মাখেননি", "se": "মাখেনি", "tini": "মাখেননি" }
+      readings: { "ami": "mākhini", "tui": "mākhiśni", "tumi": ["mākhoni", "mākhni"], "apni": "mākhenni", "se": "mākheni", "tini": "mākhenni" }
+    - word: "bn-2112"
+      forms: { "ami": "নাড়িনি", "tui": "নাড়িসনি", "tumi": ["নাড়োনি", "নাড়নি"], "apni": "নাড়েননি", "se": "নাড়েনি", "tini": "নাড়েননি" }
+      readings: { "ami": "nāṛini", "tui": "nāṛiśni", "tumi": ["nāṛoni", "nāṛni"], "apni": "nāṛenni", "se": "nāṛeni", "tini": "nāṛenni" }
+    - word: "bn-2113"
+      forms: { "ami": "কষিনি", "tui": "কষিসনি", "tumi": ["কষোনি", "কষনি"], "apni": "কষেননি", "se": "কষেনি", "tini": "কষেননি" }
+      readings: { "ami": "kośini", "tui": "kośiśni", "tumi": ["kôśoni", "kôśni"], "apni": "kôśenni", "se": "kôśeni", "tini": "kôśenni" }
+    - word: "bn-2114"
+      forms: { "ami": "মেশাইনি", "tui": "মেশাসনি", "tumi": "মেশাওনি", "apni": "মেশাননি", "se": "মেশায়নি", "tini": "মেশাননি" }
+      readings: { "ami": "meśāini", "tui": "meśāśni", "tumi": "meśāoni", "apni": "meśānni", "se": "meśāyni", "tini": "meśānni" }
+    - word: "bn-2115"
+      forms: { "ami": "ছাঁকিনি", "tui": "ছাঁকিসনি", "tumi": ["ছাঁকোনি", "ছাঁকনি"], "apni": "ছাঁকেননি", "se": "ছাঁকেনি", "tini": "ছাঁকেননি" }
+      readings: { "ami": "chām̐kini", "tui": "chām̐kiśni", "tumi": ["chām̐koni", "chām̐kni"], "apni": "chām̐kenni", "se": "chām̐keni", "tini": "chām̐kenni" }
+    - word: "bn-2123"
+      forms: { "ami": "কুচাইনি", "tui": "কুচাসনি", "tumi": "কুচাওনি", "apni": "কুচাননি", "se": "কুচায়নি", "tini": "কুচাননি" }
+      readings: { "ami": "kucāini", "tui": "kucāśni", "tumi": "kucāoni", "apni": "kucānni", "se": "kucāyni", "tini": "kucānni" }
+    - word: "bn-2128"
+      forms: { "ami": "সেঁকিনি", "tui": "সেঁকিসনি", "tumi": ["সেঁকোনি", "সেঁকনি"], "apni": "সেঁকেননি", "se": "সেঁকেনি", "tini": "সেঁকেননি" }
+      readings: { "ami": "sem̐kini", "tui": "sem̐kiśni", "tumi": ["sem̐koni", "sem̐kni"], "apni": "sem̐kenni", "se": "sem̐keni", "tini": "sem̐kenni" }
+    - word: "bn-2130"
+      forms: { "ami": "ভাপাইনি", "tui": "ভাপাসনি", "tumi": "ভাপাওনি", "apni": "ভাপাননি", "se": "ভাপায়নি", "tini": "ভাপাননি" }
+      readings: { "ami": "bhāpāini", "tui": "bhāpāśni", "tumi": "bhāpāoni", "apni": "bhāpānni", "se": "bhāpāyni", "tini": "bhāpānni" }
+    - word: "bn-2131"
+      forms: { "ami": "ভেজাইনি", "tui": "ভেজাসনি", "tumi": "ভেজাওনি", "apni": "ভেজাননি", "se": "ভেজায়নি", "tini": "ভেজাননি" }
+      readings: { "ami": "bhejāini", "tui": "bhejāśni", "tumi": "bhejāoni", "apni": "bhejānni", "se": "bhejāyni", "tini": "bhejānni" }
+    - word: "bn-2159"
+      forms: { "ami": "পড়াইনি", "tui": "পড়াসনি", "tumi": "পড়াওনি", "apni": "পড়াননি", "se": "পড়ায়নি", "tini": "পড়াননি" }
+      readings: { "ami": "pôṛāini", "tui": "pôṛāśni", "tumi": "pôṛāoni", "apni": "pôṛānni", "se": "pôṛāyni", "tini": "pôṛānni" }
+    - word: "bn-2217"
+      forms: { "ami": "আঁকিনি", "tui": "আঁকিসনি", "tumi": ["আঁকোনি", "আঁকনি"], "apni": "আঁকেননি", "se": "আঁকেনি", "tini": "আঁকেননি" }
+      readings: { "ami": "ām̐kini", "tui": "ām̐kiśni", "tumi": ["ām̐koni", "ām̐kni"], "apni": "ām̐kenni", "se": "ām̐keni", "tini": "ām̐kenni" }
+    - word: "bn-2221"
+      forms: { "ami": "বাজাইনি", "tui": "বাজাসনি", "tumi": "বাজাওনি", "apni": "বাজাননি", "se": "বাজায়নি", "tini": "বাজাননি" }
+      readings: { "ami": "bājāini", "tui": "bājāśni", "tumi": "bājāoni", "apni": "bājānni", "se": "bājāyni", "tini": "bājānni" }
+    - word: "bn-2222"
+      forms: { "ami": "গাইনি", "tui": "গাসনি", "tumi": "গাওনি", "apni": "গাননি", "se": "গায়নি", "tini": "গাননি" }
+      readings: { "ami": "gāini", "tui": "gāśni", "tumi": "gāoni", "apni": "gānni", "se": "gāyni", "tini": "gānni" }
+    - word: "bn-2229"
+      forms: { "ami": "জিতিনি", "tui": "জিতিসনি", "tumi": ["জেতোনি", "জেতনি"], "apni": "জেতেননি", "se": "জেতেনি", "tini": "জেতেননি" }
+      readings: { "ami": "jitini", "tui": "jitiśni", "tumi": ["jetoni", "jetni"], "apni": "jetenni", "se": "jeteni", "tini": "jetenni" }
+    - word: "bn-2230"
+      forms: { "ami": "হারিনি", "tui": "হারিসনি", "tumi": ["হারোনি", "হারনি"], "apni": "হারেননি", "se": "হারেনি", "tini": "হারেননি" }
+      readings: { "ami": "hārini", "tui": "hāriśni", "tumi": ["hāroni", "hārni"], "apni": "hārenni", "se": "hāreni", "tini": "hārenni" }
+    - word: "bn-2245"
+      forms: { "ami": "নাচিনি", "tui": "নাচিসনি", "tumi": ["নাচোনি", "নাচনি"], "apni": "নাচেননি", "se": "নাচেনি", "tini": "নাচেননি" }
+      readings: { "ami": "nācini", "tui": "nāciśni", "tumi": ["nāconi", "nācni"], "apni": "nācenni", "se": "nāceni", "tini": "nācenni" }
+    - word: "bn-2248"
+      forms: { "ami": "ভালোবাসিনি", "tui": "ভালোবাসিসনি", "tumi": ["ভালোবাসোনি", "ভালোবাসনি"], "apni": "ভালোবাসেননি", "se": "ভালোবাসেনি", "tini": "ভালোবাসেননি" }
+      readings: { "ami": "bhālobāsini", "tui": "bhālobāsiśni", "tumi": ["bhālobāsoni", "bhālobāsni"], "apni": "bhālobāsenni", "se": "bhālobāseni", "tini": "bhālobāsenni" }
+    - word: "bn-2264"
+      forms: { "ami": "ঝাড়ু দিইনি", "tui": "ঝাড়ু দিসনি", "tumi": "ঝাড়ু দাওনি", "apni": "ঝাড়ু দেননি", "se": "ঝাড়ু দেয়নি", "tini": "ঝাড়ু দেননি" }
+      readings: { "ami": "jhāṛu diini", "tui": "jhāṛu diśni", "tumi": "jhāṛu dāoni", "apni": "jhāṛu denni", "se": "jhāṛu deyni", "tini": "jhāṛu denni" }
+    - word: "bn-2266"
+      forms: { "ami": "ধুলো ঝাড়িনি", "tui": "ধুলো ঝাড়িসনি", "tumi": ["ধুলো ঝাড়োনি", "ধুলো ঝাড়নি"], "apni": "ধুলো ঝাড়েননি", "se": "ধুলো ঝাড়েনি", "tini": "ধুলো ঝাড়েননি" }
+      readings: { "ami": "dhulo jhāṛini", "tui": "dhulo jhāṛiśni", "tumi": ["dhulo jhāṛoni", "dhulo jhāṛni"], "apni": "dhulo jhāṛenni", "se": "dhulo jhāṛeni", "tini": "dhulo jhāṛenni" }
+    - word: "bn-2271"
+      forms: { "ami": "বাসন মাজিনি", "tui": "বাসন মাজিসনি", "tumi": ["বাসন মাজোনি", "বাসন মাজনি"], "apni": "বাসন মাজেননি", "se": "বাসন মাজেনি", "tini": "বাসন মাজেননি" }
+      readings: { "ami": "bāśôn mājini", "tui": "bāśôn mājiśni", "tumi": ["bāśôn mājoni", "bāśôn mājni"], "apni": "bāśôn mājenni", "se": "bāśôn mājeni", "tini": "bāśôn mājenni" }
+    - word: "bn-2272"
+      forms: { "ami": "কাপড় কাচিনি", "tui": "কাপড় কাচিসনি", "tumi": ["কাপড় কাচোনি", "কাপড় কাচনি"], "apni": "কাপড় কাচেননি", "se": "কাপড় কাচেনি", "tini": "কাপড় কাচেননি" }
+      readings: { "ami": "kāpoṛ kācini", "tui": "kāpoṛ kāciśni", "tumi": ["kāpoṛ kāconi", "kāpoṛ kācni"], "apni": "kāpoṛ kācenni", "se": "kāpoṛ kāceni", "tini": "kāpoṛ kācenni" }
+    - word: "bn-2273"
+      forms: { "ami": "ইস্ত্রি করিনি", "tui": "ইস্ত্রি করিসনি", "tumi": ["ইস্ত্রি করোনি", "ইস্ত্রি করনি"], "apni": "ইস্ত্রি করেননি", "se": "ইস্ত্রি করেনি", "tini": "ইস্ত্রি করেননি" }
+      readings: { "ami": "istri korini", "tui": "istri koriśni", "tumi": ["istri kôroni", "istri kôrni"], "apni": "istri kôrenni", "se": "istri kôreni", "tini": "istri kôrenni" }
+    - word: "bn-2274"
+      forms: { "ami": "ভাঁজ করিনি", "tui": "ভাঁজ করিসনি", "tumi": ["ভাঁজ করোনি", "ভাঁজ করনি"], "apni": "ভাঁজ করেননি", "se": "ভাঁজ করেনি", "tini": "ভাঁজ করেননি" }
+      readings: { "ami": "bhāñj korini", "tui": "bhāñj koriśni", "tumi": ["bhāñj kôroni", "bhāñj kôrni"], "apni": "bhāñj kôrenni", "se": "bhāñj kôreni", "tini": "bhāñj kôrenni" }
+    - word: "bn-2275"
+      forms: { "ami": "শুকাইনি", "tui": "শুকাসনি", "tumi": "শুকাওনি", "apni": "শুকাননি", "se": "শুকায়নি", "tini": "শুকাননি" }
+      readings: { "ami": "śukāini", "tui": "śukāśni", "tumi": "śukāoni", "apni": "śukānni", "se": "śukāyni", "tini": "śukānni" }
+    - word: "bn-2276"
+      forms: { "ami": "ঝোলাইনি", "tui": "ঝোলাসনি", "tumi": "ঝোলাওনি", "apni": "ঝোলাননি", "se": "ঝোলায়নি", "tini": "ঝোলাননি" }
+      readings: { "ami": "jholāini", "tui": "jholāśni", "tumi": "jholāoni", "apni": "jholānni", "se": "jholāyni", "tini": "jholānni" }
+    - word: "bn-2277"
+      forms: { "ami": "গোছাইনি", "tui": "গোছাসনি", "tumi": "গোছাওনি", "apni": "গোছাননি", "se": "গোছায়নি", "tini": "গোছাননি" }
+      readings: { "ami": "gochāini", "tui": "gochāśni", "tumi": "gochāoni", "apni": "gochānni", "se": "gochāyni", "tini": "gochānni" }
+    - word: "bn-2278"
+      forms: { "ami": "সাজাইনি", "tui": "সাজাসনি", "tumi": "সাজাওনি", "apni": "সাজাননি", "se": "সাজায়নি", "tini": "সাজাননি" }
+      readings: { "ami": "sājāini", "tui": "sājāśni", "tumi": "sājāoni", "apni": "sājānni", "se": "sājāyni", "tini": "sājānni" }
+    - word: "bn-2279"
+      forms: { "ami": "বিছানা করিনি", "tui": "বিছানা করিসনি", "tumi": ["বিছানা করোনি", "বিছানা করনি"], "apni": "বিছানা করেননি", "se": "বিছানা করেনি", "tini": "বিছানা করেননি" }
+      readings: { "ami": "bichānā korini", "tui": "bichānā koriśni", "tumi": ["bichānā kôroni", "bichānā kôrni"], "apni": "bichānā kôrenni", "se": "bichānā kôreni", "tini": "bichānā kôrenni" }
+    - word: "bn-2282"
+      forms: { "ami": "ভাগ করিনি", "tui": "ভাগ করিসনি", "tumi": ["ভাগ করোনি", "ভাগ করনি"], "apni": "ভাগ করেননি", "se": "ভাগ করেনি", "tini": "ভাগ করেননি" }
+      readings: { "ami": "bhāg korini", "tui": "bhāg koriśni", "tumi": ["bhāg kôroni", "bhāg kôrni"], "apni": "bhāg kôrenni", "se": "bhāg kôreni", "tini": "bhāg kôrenni" }
+    - word: "bn-2286"
+      forms: { "ami": "গাছে জল দিইনি", "tui": "গাছে জল দিসনি", "tumi": "গাছে জল দাওনি", "apni": "গাছে জল দেননি", "se": "গাছে জল দেয়নি", "tini": "গাছে জল দেননি" }
+      readings: { "ami": "gāche jôl diini", "tui": "gāche jôl diśni", "tumi": "gāche jôl dāoni", "apni": "gāche jôl denni", "se": "gāche jôl deyni", "tini": "gāche jôl denni" }
+    - word: "bn-2343"
+      forms: { "ami": "চুল আঁচড়াইনি", "tui": "চুল আঁচড়াসনি", "tumi": "চুল আঁচড়াওনি", "apni": "চুল আঁচড়াননি", "se": "চুল আঁচড়ায়নি", "tini": "চুল আঁচড়াননি" }
+      readings: { "ami": "cul ām̐coṛāini", "tui": "cul ām̐coṛāśni", "tumi": "cul ām̐coṛāoni", "apni": "cul ām̐coṛānni", "se": "cul ām̐coṛāyni", "tini": "cul ām̐coṛānni" }
+    - word: "bn-2344"
+      forms: { "ami": "কাচিনি", "tui": "কাচিসনি", "tumi": ["কাচোনি", "কাচনি"], "apni": "কাচেননি", "se": "কাচেনি", "tini": "কাচেননি" }
+      readings: { "ami": "kācini", "tui": "kāciśni", "tumi": ["kāconi", "kācni"], "apni": "kācenni", "se": "kāceni", "tini": "kācenni" }
+    - word: "bn-2345"
+      forms: { "ami": "জাগিনি", "tui": "জাগিসনি", "tumi": ["জাগোনি", "জাগনি"], "apni": "জাগেননি", "se": "জাগেনি", "tini": "জাগেননি" }
+      readings: { "ami": "jāgini", "tui": "jāgiśni", "tumi": ["jāgoni", "jāgni"], "apni": "jāgenni", "se": "jāgeni", "tini": "jāgenni" }
+    - word: "bn-2346"
+      forms: { "ami": "জ্বালাইনি", "tui": "জ্বালাসনি", "tumi": "জ্বালাওনি", "apni": "জ্বালাননি", "se": "জ্বালায়নি", "tini": "জ্বালাননি" }
+      readings: { "ami": "jālāini", "tui": "jālāśni", "tumi": "jālāoni", "apni": "jālānni", "se": "jālāyni", "tini": "jālānni" }
+    - word: "bn-2347"
+      forms: { "ami": "নেভাইনি", "tui": "নেভাসনি", "tumi": "নেভাওনি", "apni": "নেভাননি", "se": "নেভায়নি", "tini": "নেভাননি" }
+      readings: { "ami": "nebhāini", "tui": "nebhāśni", "tumi": "nebhāoni", "apni": "nebhānni", "se": "nebhāyni", "tini": "nebhānni" }
+    - word: "bn-2348"
+      forms: { "ami": "বন্ধ করিনি", "tui": "বন্ধ করিসনি", "tumi": ["বন্ধ করোনি", "বন্ধ করনি"], "apni": "বন্ধ করেননি", "se": "বন্ধ করেনি", "tini": "বন্ধ করেননি" }
+      readings: { "ami": "bôndho korini", "tui": "bôndho koriśni", "tumi": ["bôndho kôroni", "bôndho kôrni"], "apni": "bôndho kôrenni", "se": "bôndho kôreni", "tini": "bôndho kôrenni" }
+    - word: "bn-2349"
+      forms: { "ami": "গরম করিনি", "tui": "গরম করিসনি", "tumi": ["গরম করোনি", "গরম করনি"], "apni": "গরম করেননি", "se": "গরম করেনি", "tini": "গরম করেননি" }
+      readings: { "ami": "gôrom korini", "tui": "gôrom koriśni", "tumi": ["gôrom kôroni", "gôrom kôrni"], "apni": "gôrom kôrenni", "se": "gôrom kôreni", "tini": "gôrom kôrenni" }
+    - word: "bn-2352"
+      forms: { "ami": "ভুলিনি", "tui": "ভুলিসনি", "tumi": ["ভোলোনি", "ভোলনি"], "apni": "ভোলেননি", "se": "ভোলেনি", "tini": "ভোলেননি" }
+      readings: { "ami": "bhulini", "tui": "bhuliśni", "tumi": ["bholoni", "bholni"], "apni": "bholenni", "se": "bholeni", "tini": "bholenni" }
+    - word: "bn-2353"
+      forms: { "ami": "বেরোইনি", "tui": "বেরোসনি", "tumi": "বেরোওনি", "apni": "বেরোননি", "se": "বেরোয়নি", "tini": "বেরোননি" }
+      readings: { "ami": "beroini", "tui": "berośni", "tumi": "berooni", "apni": "beronni", "se": "beroyni", "tini": "beronni" }
+    - word: "bn-2354"
+      forms: { "ami": "ঢুকিনি", "tui": "ঢুকিসনি", "tumi": ["ঢোকোনি", "ঢোকনি"], "apni": "ঢোকেননি", "se": "ঢোকেনি", "tini": "ঢোকেননি" }
+      readings: { "ami": "ḍhukini", "tui": "ḍhukiśni", "tumi": ["ḍhokoni", "ḍhokni"], "apni": "ḍhokenni", "se": "ḍhokeni", "tini": "ḍhokenni" }
+    - word: "bn-2355"
+      forms: { "ami": "দেখাইনি", "tui": "দেখাসনি", "tumi": "দেখাওনি", "apni": "দেখাননি", "se": "দেখায়নি", "tini": "দেখাননি" }
+      readings: { "ami": "dekhāini", "tui": "dekhāśni", "tumi": "dekhāoni", "apni": "dekhānni", "se": "dekhāyni", "tini": "dekhānni" }
+    - word: "bn-2356"
+      forms: { "ami": "বোঝাইনি", "tui": "বোঝাসনি", "tumi": "বোঝাওনি", "apni": "বোঝাননি", "se": "বোঝায়নি", "tini": "বোঝাননি" }
+      readings: { "ami": "bojhāini", "tui": "bojhāśni", "tumi": "bojhāoni", "apni": "bojhānni", "se": "bojhāyni", "tini": "bojhānni" }
+    - word: "bn-2357"
+      forms: { "ami": "চিনিনি", "tui": "চিনিসনি", "tumi": ["চেনোনি", "চেননি"], "apni": "চেনেননি", "se": "চেনেনি", "tini": "চেনেননি" }
+      readings: { "ami": "cinini", "tui": "ciniśni", "tumi": ["cenoni", "cenni"], "apni": "cenenni", "se": "ceneni", "tini": "cenenni" }
+    - word: "bn-2358"
+      forms: { "ami": "ছুঁইনি", "tui": "ছুঁইসনি", "tumi": "ছোঁওনি", "apni": "ছোঁননি", "se": "ছোঁয়নি", "tini": "ছোঁননি" }
+      readings: { "ami": "chum̐ini", "tui": "chum̐iśni", "tumi": "chom̐oni", "apni": "chom̐nni", "se": "chom̐yni", "tini": "chom̐nni" }
+    - word: "bn-2359"
+      forms: { "ami": "ঠেলিনি", "tui": "ঠেলিসনি", "tumi": ["ঠেলোনি", "ঠেলনি"], "apni": "ঠেলেননি", "se": "ঠেলেনি", "tini": "ঠেলেননি" }
+      readings: { "ami": "ṭhelini", "tui": "ṭheliśni", "tumi": ["ṭheloni", "ṭhelni"], "apni": "ṭhelenni", "se": "ṭheleni", "tini": "ṭhelenni" }
+    - word: "bn-2360"
+      forms: { "ami": "টানিনি", "tui": "টানিসনি", "tumi": ["টানোনি", "টাননি"], "apni": "টানেননি", "se": "টানেনি", "tini": "টানেননি" }
+      readings: { "ami": "ṭānini", "tui": "ṭāniśni", "tumi": ["ṭānoni", "ṭānni"], "apni": "ṭānenni", "se": "ṭāneni", "tini": "ṭānenni" }
+    - word: "bn-2361"
+      forms: { "ami": "চালাইনি", "tui": "চালাসনি", "tumi": "চালাওনি", "apni": "চালাননি", "se": "চালায়নি", "tini": "চালাননি" }
+      readings: { "ami": "cālāini", "tui": "cālāśni", "tumi": "cālāoni", "apni": "cālānni", "se": "cālāyni", "tini": "cālānni" }
+    - word: "bn-2363"
+      forms: { "ami": "লাগিনি", "tui": "লাগিসনি", "tumi": ["লাগোনি", "লাগনি"], "apni": "লাগেননি", "se": "লাগেনি", "tini": "লাগেননি" }
+      readings: { "ami": "lāgini", "tui": "lāgiśni", "tumi": ["lāgoni", "lāgni"], "apni": "lāgenni", "se": "lāgeni", "tini": "lāgenni" }
+    - word: "bn-2364"
+      forms: { "ami": "কাঁপিনি", "tui": "কাঁপিসনি", "tumi": ["কাঁপোনি", "কাঁপনি"], "apni": "কাঁপেননি", "se": "কাঁপেনি", "tini": "কাঁপেননি" }
+      readings: { "ami": "kām̐pini", "tui": "kām̐piśni", "tumi": ["kām̐poni", "kām̐pni"], "apni": "kām̐penni", "se": "kām̐peni", "tini": "kām̐penni" }
+    - word: "bn-2365"
+      forms: { "ami": "নামিনি", "tui": "নামিসনি", "tumi": ["নামোনি", "নামনি"], "apni": "নামেননি", "se": "নামেনি", "tini": "নামেননি" }
+      readings: { "ami": "nāmini", "tui": "nāmiśni", "tumi": ["nāmoni", "nāmni"], "apni": "nāmenni", "se": "nāmeni", "tini": "nāmenni" }
+    - word: "bn-2366"
+      forms: { "ami": "ঘোরাইনি", "tui": "ঘোরাসনি", "tumi": "ঘোরাওনি", "apni": "ঘোরাননি", "se": "ঘোরায়নি", "tini": "ঘোরাননি" }
+      readings: { "ami": "ghorāini", "tui": "ghorāśni", "tumi": "ghorāoni", "apni": "ghorānni", "se": "ghorāyni", "tini": "ghorānni" }
+    - word: "bn-2367"
+      forms: { "ami": "চালু করিনি", "tui": "চালু করিসনি", "tumi": ["চালু করোনি", "চালু করনি"], "apni": "চালু করেননি", "se": "চালু করেনি", "tini": "চালু করেননি" }
+      readings: { "ami": "cālu korini", "tui": "cālu koriśni", "tumi": ["cālu kôroni", "cālu kôrni"], "apni": "cālu kôrenni", "se": "cālu kôreni", "tini": "cālu kôrenni" }
+    - word: "bn-2372"
+      forms: { "ami": "কামাইনি", "tui": "কামাসনি", "tumi": "কামাওনি", "apni": "কামাননি", "se": "কামায়নি", "tini": "কামাননি" }
+      readings: { "ami": "kāmāini", "tui": "kāmāśni", "tumi": "kāmāoni", "apni": "kāmānni", "se": "kāmāyni", "tini": "kāmānni" }
+    - word: "bn-2373"
+      forms: { "ami": "ছাঁটিনি", "tui": "ছাঁটিসনি", "tumi": ["ছাঁটোনি", "ছাঁটনি"], "apni": "ছাঁটেননি", "se": "ছাঁটেনি", "tini": "ছাঁটেননি" }
+      readings: { "ami": "chām̐ṭini", "tui": "chām̐ṭiśni", "tumi": ["chām̐ṭoni", "chām̐ṭni"], "apni": "chām̐ṭenni", "se": "chām̐ṭeni", "tini": "chām̐ṭenni" }
+    - word: "bn-2374"
+      forms: { "ami": "তৈরি করিনি", "tui": "তৈরি করিসনি", "tumi": ["তৈরি করোনি", "তৈরি করনি"], "apni": "তৈরি করেননি", "se": "তৈরি করেনি", "tini": "তৈরি করেননি" }
+      readings: { "ami": "toiri korini", "tui": "toiri koriśni", "tumi": ["toiri kôroni", "toiri kôrni"], "apni": "toiri kôrenni", "se": "toiri kôreni", "tini": "toiri kôrenni" }
+    - word: "bn-2375"
+      forms: { "ami": "ব্যবহার করিনি", "tui": "ব্যবহার করিসনি", "tumi": ["ব্যবহার করোনি", "ব্যবহার করনি"], "apni": "ব্যবহার করেননি", "se": "ব্যবহার করেনি", "tini": "ব্যবহার করেননি" }
+      readings: { "ami": "bêbôhār korini", "tui": "bêbôhār koriśni", "tumi": ["bêbôhār kôroni", "bêbôhār kôrni"], "apni": "bêbôhār kôrenni", "se": "bêbôhār kôreni", "tini": "bêbôhār kôrenni" }
+    - word: "bn-2376"
+      forms: { "ami": "সাঁতার কাটিনি", "tui": "সাঁতার কাটিসনি", "tumi": ["সাঁতার কাটোনি", "সাঁতার কাটনি"], "apni": "সাঁতার কাটেননি", "se": "সাঁতার কাটেনি", "tini": "সাঁতার কাটেননি" }
+      readings: { "ami": "śām̐tār kāṭini", "tui": "śām̐tār kāṭiśni", "tumi": ["śām̐tār kāṭoni", "śām̐tār kāṭni"], "apni": "śām̐tār kāṭenni", "se": "śām̐tār kāṭeni", "tini": "śām̐tār kāṭenni" }
+    - word: "bn-2418"
+      forms: { "ami": "ফোন ধরিনি", "tui": "ফোন ধরিসনি", "tumi": ["ফোন ধরোনি", "ফোন ধরনি"], "apni": "ফোন ধরেননি", "se": "ফোন ধরেনি", "tini": "ফোন ধরেননি" }
+      readings: { "ami": "phon dhorini", "tui": "phon dhorisni", "tumi": ["phon dhôroni", "phon dhôrni"], "apni": "phon dhôrenni", "se": "phon dhôreni", "tini": "phon dhôrenni" }
+    - word: "bn-2419"
+      forms: { "ami": "ফোন রাখিনি", "tui": "ফোন রাখিসনি", "tumi": ["ফোন রাখোনি", "ফোন রাখনি"], "apni": "ফোন রাখেননি", "se": "ফোন রাখেনি", "tini": "ফোন রাখেননি" }
+      readings: { "ami": "phon rākhini", "tui": "phon rākhisni", "tumi": ["phon rākhoni", "phon rākhni"], "apni": "phon rākhenni", "se": "phon rākheni", "tini": "phon rākhenni" }
+    - word: "bn-2420"
+      forms: { "ami": "চার্জ দিইনি", "tui": "চার্জ দিসনি", "tumi": "চার্জ দাওনি", "apni": "চার্জ দেননি", "se": "চার্জ দেয়নি", "tini": "চার্জ দেননি" }
+      readings: { "ami": "cārj diini", "tui": "cārj disni", "tumi": "cārj dāoni", "apni": "cārj denni", "se": "cārj deyni", "tini": "cārj denni" }
+    - word: "bn-2421"
+      forms: { "ami": "ডাউনলোড করিনি", "tui": "ডাউনলোড করিসনি", "tumi": ["ডাউনলোড করোনি", "ডাউনলোড করনি"], "apni": "ডাউনলোড করেননি", "se": "ডাউনলোড করেনি", "tini": "ডাউনলোড করেননি" }
+      readings: { "ami": "ḍāunoloḍ korini", "tui": "ḍāunoloḍ korisni", "tumi": ["ḍāunoloḍ kôroni", "ḍāunoloḍ kôrni"], "apni": "ḍāunoloḍ kôrenni", "se": "ḍāunoloḍ kôreni", "tini": "ḍāunoloḍ kôrenni" }
+    - word: "bn-2422"
+      forms: { "ami": "আপডেট করিনি", "tui": "আপডেট করিসনি", "tumi": ["আপডেট করোনি", "আপডেট করনি"], "apni": "আপডেট করেননি", "se": "আপডেট করেনি", "tini": "আপডেট করেননি" }
+      readings: { "ami": "āpoḍeṭ korini", "tui": "āpoḍeṭ korisni", "tumi": ["āpoḍeṭ kôroni", "āpoḍeṭ kôrni"], "apni": "āpoḍeṭ kôrenni", "se": "āpoḍeṭ kôreni", "tini": "āpoḍeṭ kôrenni" }
+    - word: "bn-2423"
+      forms: { "ami": "বাজিনি", "tui": "বাজিসনি", "tumi": ["বাজোনি", "বাজনি"], "apni": "বাজেননি", "se": "বাজেনি", "tini": "বাজেননি" }
+      readings: { "ami": "bājini", "tui": "bājisni", "tumi": ["bājoni", "bājni"], "apni": "bājenni", "se": "bājeni", "tini": "bājenni" }
+    - word: "bn-2424"
+      forms: { "ami": "চালু করিনি", "tui": "চালু করিসনি", "tumi": ["চালু করোনি", "চালু করনি"], "apni": "চালু করেননি", "se": "চালু করেনি", "tini": "চালু করেননি" }
+      readings: { "ami": "cālu korini", "tui": "cālu korisni", "tumi": ["cālu kôroni", "cālu kôrni"], "apni": "cālu kôrenni", "se": "cālu kôreni", "tini": "cālu kôrenni" }
+    - word: "bn-2425"
+      forms: { "ami": "বন্ধ করিনি", "tui": "বন্ধ করিসনি", "tumi": ["বন্ধ করোনি", "বন্ধ করনি"], "apni": "বন্ধ করেননি", "se": "বন্ধ করেনি", "tini": "বন্ধ করেননি" }
+      readings: { "ami": "bôndh korini", "tui": "bôndh korisni", "tumi": ["bôndh kôroni", "bôndh kôrni"], "apni": "bôndh kôrenni", "se": "bôndh kôreni", "tini": "bôndh kôrenni" }
+    - word: "bn-2426"
+      forms: { "ami": "জবাব দিইনি", "tui": "জবাব দিসনি", "tumi": "জবাব দাওনি", "apni": "জবাব দেননি", "se": "জবাব দেয়নি", "tini": "জবাব দেননি" }
+      readings: { "ami": "jôbāb diini", "tui": "jôbāb disni", "tumi": "jôbāb dāoni", "apni": "jôbāb denni", "se": "jôbāb deyni", "tini": "jôbāb denni" }
+    - word: "bn-2427"
+      forms: { "ami": "অপেক্ষা করিনি", "tui": "অপেক্ষা করিসনি", "tumi": ["অপেক্ষা করোনি", "অপেক্ষা করনি"], "apni": "অপেক্ষা করেননি", "se": "অপেক্ষা করেনি", "tini": "অপেক্ষা করেননি" }
+      readings: { "ami": "ôpekkhā korini", "tui": "ôpekkhā korisni", "tumi": ["ôpekkhā kôroni", "ôpekkhā kôrni"], "apni": "ôpekkhā kôrenni", "se": "ôpekkhā kôreni", "tini": "ôpekkhā kôrenni" }
+    - word: "bn-2428"
+      forms: { "ami": "মেসেজ পাঠাইনি", "tui": "মেসেজ পাঠাসনি", "tumi": "মেসেজ পাঠাওনি", "apni": "মেসেজ পাঠাননি", "se": "মেসেজ পাঠায়নি", "tini": "মেসেজ পাঠাননি" }
+      readings: { "ami": "mesej pāṭhāini", "tui": "mesej pāṭhāsni", "tumi": "mesej pāṭhāoni", "apni": "mesej pāṭhānni", "se": "mesej pāṭhāyni", "tini": "mesej pāṭhānni" }
+    - word: "bn-2429"
+      forms: { "ami": "কল করিনি", "tui": "কল করিসনি", "tumi": ["কল করোনি", "কল করনি"], "apni": "কল করেননি", "se": "কল করেনি", "tini": "কল করেননি" }
+      readings: { "ami": "kôl korini", "tui": "kôl korisni", "tumi": ["kôl kôroni", "kôl kôrni"], "apni": "kôl kôrenni", "se": "kôl kôreni", "tini": "kôl kôrenni" }
+    - word: "bn-2430"
+      forms: { "ami": "ছবি পাঠাইনি", "tui": "ছবি পাঠাসনি", "tumi": "ছবি পাঠাওনি", "apni": "ছবি পাঠাননি", "se": "ছবি পাঠায়নি", "tini": "ছবি পাঠাননি" }
+      readings: { "ami": "chobi pāṭhāini", "tui": "chobi pāṭhāsni", "tumi": "chobi pāṭhāoni", "apni": "chobi pāṭhānni", "se": "chobi pāṭhāyni", "tini": "chobi pāṭhānni" }
+    - word: "bn-2458"
+      forms: { "ami": "থামাইনি", "tui": "থামাসনি", "tumi": "থামাওনি", "apni": "থামাননি", "se": "থামায়নি", "tini": "থামাননি" }
+      readings: { "ami": "thāmāini", "tui": "thāmāsni", "tumi": "thāmāoni", "apni": "thāmānni", "se": "thāmāyni", "tini": "thāmānni" }
+    - word: "bn-2459"
+      forms: { "ami": "ফিরে আসিনি", "tui": "ফিরে আসিসনি", "tumi": ["ফিরে আসোনি", "ফিরে আসনি"], "apni": "ফিরে আসেননি", "se": "ফিরে আসেনি", "tini": "ফিরে আসেননি" }
+      readings: { "ami": "phire āsini", "tui": "phire āsisni", "tumi": ["phire āsoni", "phire āsni"], "apni": "phire āsenni", "se": "phire āseni", "tini": "phire āsenni" }
+    - word: "bn-2460"
+      forms: { "ami": "টিকিট কাটিনি", "tui": "টিকিট কাটিসনি", "tumi": ["টিকিট কাটোনি", "টিকিট কাটনি"], "apni": "টিকিট কাটেননি", "se": "টিকিট কাটেনি", "tini": "টিকিট কাটেননি" }
+      readings: { "ami": "ṭikiṭ kāṭini", "tui": "ṭikiṭ kāṭisni", "tumi": ["ṭikiṭ kāṭoni", "ṭikiṭ kāṭni"], "apni": "ṭikiṭ kāṭenni", "se": "ṭikiṭ kāṭeni", "tini": "ṭikiṭ kāṭenni" }
+    - word: "bn-2466"
+      forms: { "ami": "দেরি করিনি", "tui": "দেরি করিসনি", "tumi": ["দেরি করোনি", "দেরি করনি"], "apni": "দেরি করেননি", "se": "দেরি করেনি", "tini": "দেরি করেননি" }
+      readings: { "ami": "deri korini", "tui": "deri korisni", "tumi": ["deri kôroni", "deri kôrni"], "apni": "deri kôrenni", "se": "deri kôreni", "tini": "deri kôrenni" }
+    - word: "bn-2467"
+      forms: { "ami": "গাড়িতে উঠিনি", "tui": "গাড়িতে উঠিসনি", "tumi": ["গাড়িতে উঠোনি", "গাড়িতে উঠনি"], "apni": "গাড়িতে উঠেননি", "se": "গাড়িতে উঠেনি", "tini": "গাড়িতে উঠেননি" }
+      readings: { "ami": "gāṛite uṭhini", "tui": "gāṛite uṭhisni", "tumi": ["gāṛite uṭhoni", "gāṛite uṭhni"], "apni": "gāṛite uṭhenni", "se": "gāṛite uṭheni", "tini": "gāṛite uṭhenni" }
+    - word: "bn-2468"
+      forms: { "ami": "গাড়ি থেকে নামিনি", "tui": "গাড়ি থেকে নামিসনি", "tumi": ["গাড়ি থেকে নামোনি", "গাড়ি থেকে নামনি"], "apni": "গাড়ি থেকে নামেননি", "se": "গাড়ি থেকে নামেনি", "tini": "গাড়ি থেকে নামেননি" }
+      readings: { "ami": "gāṛi theke nāmini", "tui": "gāṛi theke nāmisni", "tumi": ["gāṛi theke nāmoni", "gāṛi theke nāmni"], "apni": "gāṛi theke nāmenni", "se": "gāṛi theke nāmeni", "tini": "gāṛi theke nāmenni" }
+    - word: "bn-2469"
+      forms: { "ami": "ট্রেন ধরিনি", "tui": "ট্রেন ধরিসনি", "tumi": ["ট্রেন ধরোনি", "ট্রেন ধরনি"], "apni": "ট্রেন ধরেননি", "se": "ট্রেন ধরেনি", "tini": "ট্রেন ধরেননি" }
+      readings: { "ami": "ṭren dhorini", "tui": "ṭren dhorisni", "tumi": ["ṭren dhôroni", "ṭren dhôrni"], "apni": "ṭren dhôrenni", "se": "ṭren dhôreni", "tini": "ṭren dhôrenni" }
+    - word: "bn-2470"
+      forms: { "ami": "গন্তব্যে পৌঁছাইনি", "tui": "গন্তব্যে পৌঁছাসনি", "tumi": "গন্তব্যে পৌঁছাওনি", "apni": "গন্তব্যে পৌঁছাননি", "se": "গন্তব্যে পৌঁছায়নি", "tini": "গন্তব্যে পৌঁছাননি" }
+      readings: { "ami": "gôntobbe poum̐chāini", "tui": "gôntobbe poum̐chāsni", "tumi": "gôntobbe poum̐chāoni", "apni": "gôntobbe poum̐chānni", "se": "gôntobbe poum̐chāyni", "tini": "gôntobbe poum̐chānni" }
+    - word: "bn-2471"
+      forms: { "ami": "হেঁটে যাইনি", "tui": "হেঁটে যাসনি", "tumi": "হেঁটে যাওনি", "apni": "হেঁটে যাননি", "se": "হেঁটে যায়নি", "tini": "হেঁটে যাননি" }
+      readings: { "ami": "hem̐ṭe jāini", "tui": "hem̐ṭe jāsni", "tumi": "hem̐ṭe jāoni", "apni": "hem̐ṭe jānni", "se": "hem̐ṭe jāyni", "tini": "hem̐ṭe jānni" }
+    - word: "bn-2472"
+      forms: { "ami": "রিকশা নিইনি", "tui": "রিকশা নিসনি", "tumi": "রিকশা নাওনি", "apni": "রিকশা নেননি", "se": "রিকশা নেয়নি", "tini": "রিকশা নেননি" }
+      readings: { "ami": "rikośā niini", "tui": "rikośā nisni", "tumi": "rikośā nāoni", "apni": "rikośā nenni", "se": "rikośā neyni", "tini": "rikośā nenni" }
+    - word: "bn-2473"
+      forms: { "ami": "ট্যাক্সি নিইনি", "tui": "ট্যাক্সি নিসনি", "tumi": "ট্যাক্সি নাওনি", "apni": "ট্যাক্সি নেননি", "se": "ট্যাক্সি নেয়নি", "tini": "ট্যাক্সি নেননি" }
+      readings: { "ami": "ṭêksi niini", "tui": "ṭêksi nisni", "tumi": "ṭêksi nāoni", "apni": "ṭêksi nenni", "se": "ṭêksi neyni", "tini": "ṭêksi nenni" }
+    - word: "bn-2474"
+      forms: { "ami": "গাড়ি চালাইনি", "tui": "গাড়ি চালাসনি", "tumi": "গাড়ি চালাওনি", "apni": "গাড়ি চালাননি", "se": "গাড়ি চালায়নি", "tini": "গাড়ি চালাননি" }
+      readings: { "ami": "gāṛi cālāini", "tui": "gāṛi cālāsni", "tumi": "gāṛi cālāoni", "apni": "gāṛi cālānni", "se": "gāṛi cālāyni", "tini": "gāṛi cālānni" }
+    - word: "bn-2478"
+      forms: { "ami": "ভ্রমণ করিনি", "tui": "ভ্রমণ করিসনি", "tumi": ["ভ্রমণ করোনি", "ভ্রমণ করনি"], "apni": "ভ্রমণ করেননি", "se": "ভ্রমণ করেনি", "tini": "ভ্রমণ করেননি" }
+      readings: { "ami": "bhrômon korini", "tui": "bhrômon korisni", "tumi": ["bhrômon kôroni", "bhrômon kôrni"], "apni": "bhrômon kôrenni", "se": "bhrômon kôreni", "tini": "bhrômon kôrenni" }
+    - word: "bn-2514"
+      forms: { "ami": "চাষ করিনি", "tui": "চাষ করিসনি", "tumi": ["চাষ করোনি", "চাষ করনি"], "apni": "চাষ করেননি", "se": "চাষ করেনি", "tini": "চাষ করেননি" }
+      readings: { "ami": "cāś korini", "tui": "cāś korisni", "tumi": ["cāś kôroni", "cāś kôrni"], "apni": "cāś kôrenni", "se": "cāś kôreni", "tini": "cāś kôrenni" }
+    - word: "bn-2515"
+      forms: { "ami": "ফুল ফুটিনি", "tui": "ফুল ফুটিসনি", "tumi": ["ফুল ফোটোনি", "ফুল ফোটনি"], "apni": "ফুল ফোটেননি", "se": "ফুল ফোটেনি", "tini": "ফুল ফোটেননি" }
+      readings: { "ami": "phul phuṭini", "tui": "phul phuṭisni", "tumi": ["phul phoṭoni", "phul phoṭni"], "apni": "phul phoṭenni", "se": "phul phoṭeni", "tini": "phul phoṭenni" }
+    - word: "bn-2524"
+      forms: { "ami": "ঝরিনি", "tui": "ঝরিসনি", "tumi": ["ঝরোনি", "ঝরনি"], "apni": "ঝরেননি", "se": "ঝরেনি", "tini": "ঝরেননি" }
+      readings: { "ami": "jhorini", "tui": "jhorisni", "tumi": ["jhôroni", "jhôrni"], "apni": "jhôrenni", "se": "jhôreni", "tini": "jhôrenni" }
+    - word: "bn-2525"
+      forms: { "ami": "গজাইনি", "tui": "গজাসনি", "tumi": "গজাওনি", "apni": "গজাননি", "se": "গজায়নি", "tini": "গজাননি" }
+      readings: { "ami": "gôjāini", "tui": "gôjāsni", "tumi": "gôjāoni", "apni": "gôjānni", "se": "gôjāyni", "tini": "gôjānni" }
+    - word: "bn-2526"
+      forms: { "ami": "বড় হইনি", "tui": "বড় হসনি", "tumi": "বড় হওনি", "apni": "বড় হননি", "se": "বড় হয়নি", "tini": "বড় হননি" }
+      readings: { "ami": "bôṛ hoini", "tui": "bôṛ hôsni", "tumi": "bôṛ honi", "apni": "bôṛ hônni", "se": "bôṛ hôyni", "tini": "bôṛ hônni" }
+    - word: "bn-2600"
+      forms: { "ami": "মেরামত করিনি", "tui": "মেরামত করিসনি", "tumi": ["মেরামত করোনি", "মেরামত করনি"], "apni": "মেরামত করেননি", "se": "মেরামত করেনি", "tini": "মেরামত করেননি" }
+      readings: { "ami": "merāmot korini", "tui": "merāmot koriśni", "tumi": ["merāmot kôroni", "merāmot kôrni"], "apni": "merāmot kôrenni", "se": "merāmot kôreni", "tini": "merāmot kôrenni" }
+    - word: "bn-2601"
+      forms: { "ami": "রং করিনি", "tui": "রং করিসনি", "tumi": ["রং করোনি", "রং করনি"], "apni": "রং করেননি", "se": "রং করেনি", "tini": "রং করেননি" }
+      readings: { "ami": "rôṅ korini", "tui": "rôṅ koriśni", "tumi": ["rôṅ kôroni", "rôṅ kôrni"], "apni": "rôṅ kôrenni", "se": "rôṅ kôreni", "tini": "rôṅ kôrenni" }
+    - word: "bn-2602"
+      forms: { "ami": "ভাড়া দিইনি", "tui": "ভাড়া দিসনি", "tumi": "ভাড়া দাওনি", "apni": "ভাড়া দেননি", "se": "ভাড়া দেয়নি", "tini": "ভাড়া দেননি" }
+      readings: { "ami": "bhāṛā diini", "tui": "bhāṛā diśni", "tumi": "bhāṛā dāoni", "apni": "bhāṛā denni", "se": "bhāṛā deyni", "tini": "bhāṛā denni" }
+    - word: "bn-2603"
+      forms: { "ami": "ভাড়া নিইনি", "tui": "ভাড়া নিসনি", "tumi": "ভাড়া নাওনি", "apni": "ভাড়া নেননি", "se": "ভাড়া নেয়নি", "tini": "ভাড়া নেননি" }
+      readings: { "ami": "bhāṛā niini", "tui": "bhāṛā niśni", "tumi": "bhāṛā nāoni", "apni": "bhāṛā nenni", "se": "bhāṛā neyni", "tini": "bhāṛā nenni" }
+    - word: "bn-2656"
+      forms: { "ami": "যোগ দিইনি", "tui": "যোগ দিসনি", "tumi": "যোগ দাওনি", "apni": "যোগ দেননি", "se": "যোগ দেয়নি", "tini": "যোগ দেননি" }
+      readings: { "ami": "jôg diini", "tui": "jôg diśni", "tumi": "jôg dāoni", "apni": "jôg denni", "se": "jôg deyni", "tini": "jôg denni" }
+    - word: "bn-2657"
+      forms: { "ami": "ইস্তফা দিইনি", "tui": "ইস্তফা দিসনি", "tumi": "ইস্তফা দাওনি", "apni": "ইস্তফা দেননি", "se": "ইস্তফা দেয়নি", "tini": "ইস্তফা দেননি" }
+      readings: { "ami": "istafā diini", "tui": "istafā diśni", "tumi": "istafā dāoni", "apni": "istafā denni", "se": "istafā deyni", "tini": "istafā denni" }
+    - word: "bn-2658"
+      forms: { "ami": "শেষ করিনি", "tui": "শেষ করিসনি", "tumi": ["শেষ করোনি", "শেষ করনি"], "apni": "শেষ করেননি", "se": "শেষ করেনি", "tini": "শেষ করেননি" }
+      readings: { "ami": "śeṣ korini", "tui": "śeṣ koriśni", "tumi": ["śeṣ kôroni", "śeṣ kôrni"], "apni": "śeṣ kôrenni", "se": "śeṣ kôreni", "tini": "śeṣ kôrenni" }
+    - word: "bn-2659"
+      forms: { "ami": "টাইপ করিনি", "tui": "টাইপ করিসনি", "tumi": ["টাইপ করোনি", "টাইপ করনি"], "apni": "টাইপ করেননি", "se": "টাইপ করেনি", "tini": "টাইপ করেননি" }
+      readings: { "ami": "ṭāip korini", "tui": "ṭāip koriśni", "tumi": ["ṭāip kôroni", "ṭāip kôrni"], "apni": "ṭāip kôrenni", "se": "ṭāip kôreni", "tini": "ṭāip kôrenni" }
+    - word: "bn-2660"
+      forms: { "ami": "সই করিনি", "tui": "সই করিসনি", "tumi": ["সই করোনি", "সই করনি"], "apni": "সই করেননি", "se": "সই করেনি", "tini": "সই করেননি" }
+      readings: { "ami": "sôi korini", "tui": "sôi koriśni", "tumi": ["sôi kôroni", "sôi kôrni"], "apni": "sôi kôrenni", "se": "sôi kôreni", "tini": "sôi kôrenni" }
+    - word: "bn-2661"
+      forms: { "ami": "জমা দিইনি", "tui": "জমা দিসনি", "tumi": "জমা দাওনি", "apni": "জমা দেননি", "se": "জমা দেয়নি", "tini": "জমা দেননি" }
+      readings: { "ami": "jômā diini", "tui": "jômā diśni", "tumi": "jômā dāoni", "apni": "jômā denni", "se": "jômā deyni", "tini": "jômā denni" }
+    - word: "bn-2662"
+      forms: { "ami": "দেরি করিনি", "tui": "দেরি করিসনি", "tumi": ["দেরি করোনি", "দেরি করনি"], "apni": "দেরি করেননি", "se": "দেরি করেনি", "tini": "দেরি করেননি" }
+      readings: { "ami": "deri korini", "tui": "deri koriśni", "tumi": ["deri kôroni", "deri kôrni"], "apni": "deri kôrenni", "se": "deri kôreni", "tini": "deri kôrenni" }
+    - word: "bn-2723"
+      forms: { "ami": "অবস্থিত হইনি", "tui": "অবস্থিত হসনি", "tumi": "অবস্থিত হওনি", "apni": "অবস্থিত হননি", "se": "অবস্থিত হয়নি", "tini": "অবস্থিত হননি" }
+      readings: { "ami": "ôbôsthit hoini", "tui": "ôbôsthit hôśni", "tumi": "ôbôsthit honi", "apni": "ôbôsthit hônni", "se": "ôbôsthit hôyni", "tini": "ôbôsthit hônni" }
+    - word: "bn-2724"
+      forms: { "ami": "প্রবাহিত হইনি", "tui": "প্রবাহিত হসনি", "tumi": "প্রবাহিত হওনি", "apni": "প্রবাহিত হননি", "se": "প্রবাহিত হয়নি", "tini": "প্রবাহিত হননি" }
+      readings: { "ami": "prôbāhit hoini", "tui": "prôbāhit hôśni", "tumi": "prôbāhit honi", "apni": "prôbāhit hônni", "se": "prôbāhit hôyni", "tini": "prôbāhit hônni" }
+    - word: "bn-2725"
+      forms: { "ami": "পার হইনি", "tui": "পার হসনি", "tumi": "পার হওনি", "apni": "পার হননি", "se": "পার হয়নি", "tini": "পার হননি" }
+      readings: { "ami": "pār hoini", "tui": "pār hôśni", "tumi": "pār honi", "apni": "pār hônni", "se": "pār hôyni", "tini": "pār hônni" }
+    - word: "bn-2787"
+      forms: { "ami": "ব্যায়াম করিনি", "tui": "ব্যায়াম করিসনি", "tumi": ["ব্যায়াম করোনি", "ব্যায়াম করনি"], "apni": "ব্যায়াম করেননি", "se": "ব্যায়াম করেনি", "tini": "ব্যায়াম করেননি" }
+      readings: { "ami": "byāyām korini", "tui": "byāyām koriśni", "tumi": ["byāyām kôroni", "byāyām kôrni"], "apni": "byāyām kôrenni", "se": "byāyām kôreni", "tini": "byāyām kôrenni" }
+    - word: "bn-2788"
+      forms: { "ami": "হাঁটতে যাইনি", "tui": "হাঁটতে যাসনি", "tumi": "হাঁটতে যাওনি", "apni": "হাঁটতে যাননি", "se": "হাঁটতে যায়নি", "tini": "হাঁটতে যাননি" }
+      readings: { "ami": "hāṭte jāini", "tui": "hāṭte jāśni", "tumi": "hāṭte jāoni", "apni": "hāṭte jānni", "se": "hāṭte jāyni", "tini": "hāṭte jānni" }
+    - word: "bn-2789"
+      forms: { "ami": "ওজন কমাইনি", "tui": "ওজন কমাসনি", "tumi": "ওজন কমাওনি", "apni": "ওজন কমাননি", "se": "ওজন কমায়নি", "tini": "ওজন কমাননি" }
+      readings: { "ami": "ojôn kômāini", "tui": "ojôn kômāsni", "tumi": "ojôn kômāoni", "apni": "ojôn kômānni", "se": "ojôn kômāyni", "tini": "ojôn kômānni" }
+    - word: "bn-2790"
+      forms: { "ami": "ডাক্তার দেখাইনি", "tui": "ডাক্তার দেখাসনি", "tumi": "ডাক্তার দেখাওনি", "apni": "ডাক্তার দেখাননি", "se": "ডাক্তার দেখায়নি", "tini": "ডাক্তার দেখাননি" }
+      readings: { "ami": "ḍākṭār dekhāini", "tui": "ḍākṭār dekhāsni", "tumi": "ḍākṭār dekhāoni", "apni": "ḍākṭār dekhānni", "se": "ḍākṭār dekhāyni", "tini": "ḍākṭār dekhānni" }
+    - word: "bn-2791"
+      forms: { "ami": "অ্যাপয়েন্টমেন্ট নিইনি", "tui": "অ্যাপয়েন্টমেন্ট নিসনি", "tumi": "অ্যাপয়েন্টমেন্ট নাওনি", "apni": "অ্যাপয়েন্টমেন্ট নেননি", "se": "অ্যাপয়েন্টমেন্ট নেয়নি", "tini": "অ্যাপয়েন্টমেন্ট নেননি" }
+      readings: { "ami": "êpoyenṭomenṭ niini", "tui": "êpoyenṭomenṭ niśni", "tumi": "êpoyenṭomenṭ nāoni", "apni": "êpoyenṭomenṭ nenni", "se": "êpoyenṭomenṭ neyni", "tini": "êpoyenṭomenṭ nenni" }
+    - word: "bn-2792"
+      forms: { "ami": "টিকা নিইনি", "tui": "টিকা নিসনি", "tumi": "টিকা নাওনি", "apni": "টিকা নেননি", "se": "টিকা নেয়নি", "tini": "টিকা নেননি" }
+      readings: { "ami": "ṭikā niini", "tui": "ṭikā niśni", "tumi": "ṭikā nāoni", "apni": "ṭikā nenni", "se": "ṭikā neyni", "tini": "ṭikā nenni" }
+    - word: "bn-2793"
+      forms: { "ami": "পরীক্ষা করাইনি", "tui": "পরীক্ষা করাসনি", "tumi": "পরীক্ষা করাওনি", "apni": "পরীক্ষা করাননি", "se": "পরীক্ষা করায়নি", "tini": "পরীক্ষা করাননি" }
+      readings: { "ami": "parīkṣā kôrāini", "tui": "parīkṣā kôrāsni", "tumi": "parīkṣā kôrāoni", "apni": "parīkṣā kôrānni", "se": "parīkṣā kôrāyni", "tini": "parīkṣā kôrānni" }
+    - word: "bn-2794"
+      forms: { "ami": "সুস্থ হইনি", "tui": "সুস্থ হসনি", "tumi": "সুস্থ হওনি", "apni": "সুস্থ হননি", "se": "সুস্থ হয়নি", "tini": "সুস্থ হননি" }
+      readings: { "ami": "susthô hoini", "tui": "susthô hôśni", "tumi": "susthô honi", "apni": "susthô hônni", "se": "susthô hôyni", "tini": "susthô hônni" }
+    - word: "bn-2856"
+      forms: { "ami": "অনুভব করিনি", "tui": "অনুভব করিসনি", "tumi": ["অনুভব করোনি", "অনুভব করনি"], "apni": "অনুভব করেননি", "se": "অনুভব করেনি", "tini": "অনুভব করেননি" }
+      readings: { "ami": "anubhab korini", "tui": "anubhab koriśni", "tumi": ["anubhab kôroni", "anubhab kôrni"], "apni": "anubhab kôrenni", "se": "anubhab kôreni", "tini": "anubhab kôrenni" }
+    - word: "bn-2857"
+      forms: { "ami": "মিস করিনি", "tui": "মিস করিসনি", "tumi": ["মিস করোনি", "মিস করনি"], "apni": "মিস করেননি", "se": "মিস করেনি", "tini": "মিস করেননি" }
+      readings: { "ami": "mis korini", "tui": "mis koriśni", "tumi": ["mis kôroni", "mis kôrni"], "apni": "mis kôrenni", "se": "mis kôreni", "tini": "mis kôrenni" }
+    - word: "bn-2858"
+      forms: { "ami": "রেগে যাইনি", "tui": "রেগে যাসনি", "tumi": "রেগে যাওনি", "apni": "রেগে যাননি", "se": "রেগে যায়নি", "tini": "রেগে যাননি" }
+      readings: { "ami": "rege jāini", "tui": "rege jāśni", "tumi": "rege jāoni", "apni": "rege jānni", "se": "rege jāyni", "tini": "rege jānni" }
+    - word: "bn-2859"
+      forms: { "ami": "অবাক হইনি", "tui": "অবাক হসনি", "tumi": "অবাক হওনি", "apni": "অবাক হননি", "se": "অবাক হয়নি", "tini": "অবাক হননি" }
+      readings: { "ami": "abāk hoini", "tui": "abāk hôśni", "tumi": "abāk honi", "apni": "abāk hônni", "se": "abāk hôyni", "tini": "abāk hônni" }
+    - word: "bn-2860"
+      forms: { "ami": "ভয় পাইনি", "tui": "ভয় পাসনি", "tumi": "ভয় পাওনি", "apni": "ভয় পাননি", "se": "ভয় পায়নি", "tini": "ভয় পাননি" }
+      readings: { "ami": "bhôy pāini", "tui": "bhôy pāśni", "tumi": "bhôy pāoni", "apni": "bhôy pānni", "se": "bhôy pāyni", "tini": "bhôy pānni" }
+    - word: "bn-2861"
+      forms: { "ami": "ক্ষমা করিনি", "tui": "ক্ষমা করিসনি", "tumi": ["ক্ষমা করোনি", "ক্ষমা করনি"], "apni": "ক্ষমা করেননি", "se": "ক্ষমা করেনি", "tini": "ক্ষমা করেননি" }
+      readings: { "ami": "kṣamā korini", "tui": "kṣamā koriśni", "tumi": ["kṣamā kôroni", "kṣamā kôrni"], "apni": "kṣamā kôrenni", "se": "kṣamā kôreni", "tini": "kṣamā kôrenni" }
+    - word: "bn-2862"
+      forms: { "ami": "আশা করিনি", "tui": "আশা করিসনি", "tumi": ["আশা করোনি", "আশা করনি"], "apni": "আশা করেননি", "se": "আশা করেনি", "tini": "আশা করেননি" }
+      readings: { "ami": "āśā korini", "tui": "āśā koriśni", "tumi": ["āśā kôroni", "āśā kôrni"], "apni": "āśā kôrenni", "se": "āśā kôreni", "tini": "āśā kôrenni" }
+    - word: "bn-2863"
+      forms: { "ami": "চিন্তা করিনি", "tui": "চিন্তা করিসনি", "tumi": ["চিন্তা করোনি", "চিন্তা করনি"], "apni": "চিন্তা করেননি", "se": "চিন্তা করেনি", "tini": "চিন্তা করেননি" }
+      readings: { "ami": "cintā korini", "tui": "cintā koriśni", "tumi": ["cintā kôroni", "cintā kôrni"], "apni": "cintā kôrenni", "se": "cintā kôreni", "tini": "cintā kôrenni" }
+    - word: "bn-2926"
+      forms: { "ami": "খবর দিইনি", "tui": "খবর দিসনি", "tumi": "খবর দাওনি", "apni": "খবর দেননি", "se": "খবর দেয়নি", "tini": "খবর দেননি" }
+      readings: { "ami": "khabar diini", "tui": "khabar diśni", "tumi": "khabar dāoni", "apni": "khabar denni", "se": "khabar deyni", "tini": "khabar denni" }
+    - word: "bn-2927"
+      forms: { "ami": "ঘোষণা করিনি", "tui": "ঘোষণা করিসনি", "tumi": ["ঘোষণা করোনি", "ঘোষণা করনি"], "apni": "ঘোষণা করেননি", "se": "ঘোষণা করেনি", "tini": "ঘোষণা করেননি" }
+      readings: { "ami": "ghoṣaṇā korini", "tui": "ghoṣaṇā koriśni", "tumi": ["ghoṣaṇā kôroni", "ghoṣaṇā kôrni"], "apni": "ghoṣaṇā kôrenni", "se": "ghoṣaṇā kôreni", "tini": "ghoṣaṇā kôrenni" }
+    - word: "bn-2928"
+      forms: { "ami": "প্রকাশ করিনি", "tui": "প্রকাশ করিসনি", "tumi": ["প্রকাশ করোনি", "প্রকাশ করনি"], "apni": "প্রকাশ করেননি", "se": "প্রকাশ করেনি", "tini": "প্রকাশ করেননি" }
+      readings: { "ami": "prakāś korini", "tui": "prakāś koriśni", "tumi": ["prakāś kôroni", "prakāś kôrni"], "apni": "prakāś kôrenni", "se": "prakāś kôreni", "tini": "prakāś kôrenni" }
+    - word: "bn-2929"
+      forms: { "ami": "সম্প্রচার করিনি", "tui": "সম্প্রচার করিসনি", "tumi": ["সম্প্রচার করোনি", "সম্প্রচার করনি"], "apni": "সম্প্রচার করেননি", "se": "সম্প্রচার করেনি", "tini": "সম্প্রচার করেননি" }
+      readings: { "ami": "sampracār korini", "tui": "sampracār koriśni", "tumi": ["sampracār kôroni", "sampracār kôrni"], "apni": "sampracār kôrenni", "se": "sampracār kôreni", "tini": "sampracār kôrenni" }
+    - word: "bn-2930"
+      forms: { "ami": "প্রতিবাদ করিনি", "tui": "প্রতিবাদ করিসনি", "tumi": ["প্রতিবাদ করোনি", "প্রতিবাদ করনি"], "apni": "প্রতিবাদ করেননি", "se": "প্রতিবাদ করেনি", "tini": "প্রতিবাদ করেননি" }
+      readings: { "ami": "protibād korini", "tui": "protibād koriśni", "tumi": ["protibād kôroni", "protibād kôrni"], "apni": "protibād kôrenni", "se": "protibād kôreni", "tini": "protibād kôrenni" }
+    - word: "bn-2931"
+      forms: { "ami": "বিশ্বাস করিনি", "tui": "বিশ্বাস করিসনি", "tumi": ["বিশ্বাস করোনি", "বিশ্বাস করনি"], "apni": "বিশ্বাস করেননি", "se": "বিশ্বাস করেনি", "tini": "বিশ্বাস করেননি" }
+      readings: { "ami": "biśvās korini", "tui": "biśvās koriśni", "tumi": ["biśvās kôroni", "biśvās kôrni"], "apni": "biśvās kôrenni", "se": "biśvās kôreni", "tini": "biśvās kôrenni" }
+    - word: "bn-2932"
+      forms: { "ami": "শেয়ার করিনি", "tui": "শেয়ার করিসনি", "tumi": ["শেয়ার করোনি", "শেয়ার করনি"], "apni": "শেয়ার করেননি", "se": "শেয়ার করেনি", "tini": "শেয়ার করেননি" }
+      readings: { "ami": "śeyār korini", "tui": "śeyār koriśni", "tumi": ["śeyār kôroni", "śeyār kôrni"], "apni": "śeyār kôrenni", "se": "śeyār kôreni", "tini": "śeyār kôrenni" }
+    - word: "bn-2933"
+      forms: { "ami": "খোঁজ নিইনি", "tui": "খোঁজ নিসনি", "tumi": "খোঁজ নাওনি", "apni": "খোঁজ নেননি", "se": "খোঁজ নেয়নি", "tini": "খোঁজ নেননি" }
+      readings: { "ami": "khoṅj niini", "tui": "khoṅj niśni", "tumi": "khoṅj nāoni", "apni": "khoṅj nenni", "se": "khoṅj neyni", "tini": "khoṅj nenni" }
+    - word: "bn-2998"
+      forms: { "ami": "মত দিইনি", "tui": "মত দিসনি", "tumi": "মত দাওনি", "apni": "মত দেননি", "se": "মত দেয়নি", "tini": "মত দেননি" }
+      readings: { "ami": "mat diini", "tui": "mat diśni", "tumi": "mat dāoni", "apni": "mat denni", "se": "mat deyni", "tini": "mat denni" }
+    - word: "bn-2999"
+      forms: { "ami": "একমত হইনি", "tui": "একমত হসনি", "tumi": "একমত হওনি", "apni": "একমত হননি", "se": "একমত হয়নি", "tini": "একমত হননি" }
+      readings: { "ami": "ekmat hoini", "tui": "ekmat hôśni", "tumi": "ekmat honi", "apni": "ekmat hônni", "se": "ekmat hôyni", "tini": "ekmat hônni" }
+    - word: "bn-3000"
+      forms: { "ami": "মনে করিনি", "tui": "মনে করিসনি", "tumi": ["মনে করোনি", "মনে করনি"], "apni": "মনে করেননি", "se": "মনে করেনি", "tini": "মনে করেননি" }
+      readings: { "ami": "mône korini", "tui": "mône koriśni", "tumi": ["mône kôroni", "mône kôrni"], "apni": "mône kôrenni", "se": "mône kôreni", "tini": "mône kôrenni" }
+    - word: "bn-3001"
+      forms: { "ami": "তর্ক করিনি", "tui": "তর্ক করিসনি", "tumi": ["তর্ক করোনি", "তর্ক করনি"], "apni": "তর্ক করেননি", "se": "তর্ক করেনি", "tini": "তর্ক করেননি" }
+      readings: { "ami": "tarka korini", "tui": "tarka koriśni", "tumi": ["tarka kôroni", "tarka kôrni"], "apni": "tarka kôrenni", "se": "tarka kôreni", "tini": "tarka kôrenni" }
+    - word: "bn-3002"
+      forms: { "ami": "প্রস্তাব করিনি", "tui": "প্রস্তাব করিসনি", "tumi": ["প্রস্তাব করোনি", "প্রস্তাব করনি"], "apni": "প্রস্তাব করেননি", "se": "প্রস্তাব করেনি", "tini": "প্রস্তাব করেননি" }
+      readings: { "ami": "prôstāb korini", "tui": "prôstāb koriśni", "tumi": ["prôstāb kôroni", "prôstāb kôrni"], "apni": "prôstāb kôrenni", "se": "prôstāb kôreni", "tini": "prôstāb kôrenni" }
+    - word: "bn-3003"
+      forms: { "ami": "পরামর্শ দিইনি", "tui": "পরামর্শ দিসনি", "tumi": "পরামর্শ দাওনি", "apni": "পরামর্শ দেননি", "se": "পরামর্শ দেয়নি", "tini": "পরামর্শ দেননি" }
+      readings: { "ami": "parāmarś diini", "tui": "parāmarś diśni", "tumi": "parāmarś dāoni", "apni": "parāmarś denni", "se": "parāmarś deyni", "tini": "parāmarś denni" }
+    - word: "bn-3004"
+      forms: { "ami": "সমর্থন করিনি", "tui": "সমর্থন করিসনি", "tumi": ["সমর্থন করোনি", "সমর্থন করনি"], "apni": "সমর্থন করেননি", "se": "সমর্থন করেনি", "tini": "সমর্থন করেননি" }
+      readings: { "ami": "samarthan korini", "tui": "samarthan koriśni", "tumi": ["samarthan kôroni", "samarthan kôrni"], "apni": "samarthan kôrenni", "se": "samarthan kôreni", "tini": "samarthan kôrenni" }
+    - word: "bn-3005"
+      forms: { "ami": "সমালোচনা করিনি", "tui": "সমালোচনা করিসনি", "tumi": ["সমালোচনা করোনি", "সমালোচনা করনি"], "apni": "সমালোচনা করেননি", "se": "সমালোচনা করেনি", "tini": "সমালোচনা করেননি" }
+      readings: { "ami": "samālocanā korini", "tui": "samālocanā koriśni", "tumi": ["samālocanā kôroni", "samālocanā kôrni"], "apni": "samālocanā kôrenni", "se": "samālocanā kôreni", "tini": "samālocanā kôrenni" }
+    - word: "bn-3085"
+      forms: { "ami": "ভ্রমণ করিনি", "tui": "ভ্রমণ করিসনি", "tumi": ["ভ্রমণ করোনি", "ভ্রমণ করনি"], "apni": "ভ্রমণ করেননি", "se": "ভ্রমণ করেনি", "tini": "ভ্রমণ করেননি" }
+      readings: { "ami": "bhrômôṇ korini", "tui": "bhrômôṇ koriśni", "tumi": ["bhrômôṇ kôroni", "bhrômôṇ kôrni"], "apni": "bhrômôṇ kôrenni", "se": "bhrômôṇ kôreni", "tini": "bhrômôṇ kôrenni" }
+    - word: "bn-3086"
+      forms: { "ami": "ঘুরে দেখিনি", "tui": "ঘুরে দেখিসনি", "tumi": ["ঘুরে দেখোনি", "ঘুরে দেখনি"], "apni": "ঘুরে দেখেননি", "se": "ঘুরে দেখেনি", "tini": "ঘুরে দেখেননি" }
+      readings: { "ami": "ghure dekhini", "tui": "ghure dekhiśni", "tumi": ["ghure dekhoni", "ghure dekhni"], "apni": "ghure dekhenni", "se": "ghure dekheni", "tini": "ghure dekhenni" }
+    - word: "bn-3087"
+      forms: { "ami": "বুক করিনি", "tui": "বুক করিসনি", "tumi": ["বুক করোনি", "বুক করনি"], "apni": "বুক করেননি", "se": "বুক করেনি", "tini": "বুক করেননি" }
+      readings: { "ami": "buk korini", "tui": "buk koriśni", "tumi": ["buk kôroni", "buk kôrni"], "apni": "buk kôrenni", "se": "buk kôreni", "tini": "buk kôrenni" }
+    - word: "bn-3088"
+      forms: { "ami": "বাতিল করিনি", "tui": "বাতিল করিসনি", "tumi": ["বাতিল করোনি", "বাতিল করনি"], "apni": "বাতিল করেননি", "se": "বাতিল করেনি", "tini": "বাতিল করেননি" }
+      readings: { "ami": "bātil korini", "tui": "bātil koriśni", "tumi": ["bātil kôroni", "bātil kôrni"], "apni": "bātil kôrenni", "se": "bātil kôreni", "tini": "bātil kôrenni" }
+    - word: "bn-3089"
+      forms: { "ami": "চেক ইন করিনি", "tui": "চেক ইন করিসনি", "tumi": ["চেক ইন করোনি", "চেক ইন করনি"], "apni": "চেক ইন করেননি", "se": "চেক ইন করেনি", "tini": "চেক ইন করেননি" }
+      readings: { "ami": "ceka in korini", "tui": "ceka in koriśni", "tumi": ["ceka in kôroni", "ceka in kôrni"], "apni": "ceka in kôrenni", "se": "ceka in kôreni", "tini": "ceka in kôrenni" }
+    - word: "bn-3090"
+      forms: { "ami": "প্রস্থান করিনি", "tui": "প্রস্থান করিসনি", "tumi": ["প্রস্থান করোনি", "প্রস্থান করনি"], "apni": "প্রস্থান করেননি", "se": "প্রস্থান করেনি", "tini": "প্রস্থান করেননি" }
+      readings: { "ami": "prasthān korini", "tui": "prasthān koriśni", "tumi": ["prasthān kôroni", "prasthān kôrni"], "apni": "prasthān kôrenni", "se": "prasthān kôreni", "tini": "prasthān kôrenni" }
+    - word: "bn-3091"
+      forms: { "ami": "মুদ্রা বিনিময় করিনি", "tui": "মুদ্রা বিনিময় করিসনি", "tumi": ["মুদ্রা বিনিময় করোনি", "মুদ্রা বিনিময় করনি"], "apni": "মুদ্রা বিনিময় করেননি", "se": "মুদ্রা বিনিময় করেনি", "tini": "মুদ্রা বিনিময় করেননি" }
+      readings: { "ami": "mudrā biniymay korini", "tui": "mudrā biniymay koriśni", "tumi": ["mudrā biniymay kôroni", "mudrā biniymay kôrni"], "apni": "mudrā biniymay kôrenni", "se": "mudrā biniymay kôreni", "tini": "mudrā biniymay kôrenni" }
+    - word: "bn-3092"
+      forms: { "ami": "টিকিট কাটিনি", "tui": "টিকিট কাটিসনি", "tumi": ["টিকিট কাটোনি", "টিকিট কাটনি"], "apni": "টিকিট কাটেননি", "se": "টিকিট কাটেনি", "tini": "টিকিট কাটেননি" }
+      readings: { "ami": "ṭikiṭ kāṭini", "tui": "ṭikiṭ kāṭiśni", "tumi": ["ṭikiṭ kāṭoni", "ṭikiṭ kāṭni"], "apni": "ṭikiṭ kāṭenni", "se": "ṭikiṭ kāṭeni", "tini": "ṭikiṭ kāṭenni" }
+    - word: "bn-3150"
+      forms: { "ami": "আবেদন করিনি", "tui": "আবেদন করিসনি", "tumi": ["আবেদন করোনি", "আবেদন করনি"], "apni": "আবেদন করেননি", "se": "আবেদন করেনি", "tini": "আবেদন করেননি" }
+      readings: { "ami": "ābedan korini", "tui": "ābedan koriśni", "tumi": ["ābedan kôroni", "ābedan kôrni"], "apni": "ābedan kôrenni", "se": "ābedan kôreni", "tini": "ābedan kôrenni" }
+    - word: "bn-3151"
+      forms: { "ami": "নিবন্ধন করিনি", "tui": "নিবন্ধন করিসনি", "tumi": ["নিবন্ধন করোনি", "নিবন্ধন করনি"], "apni": "নিবন্ধন করেননি", "se": "নিবন্ধন করেনি", "tini": "নিবন্ধন করেননি" }
+      readings: { "ami": "nibandhan korini", "tui": "nibandhan koriśni", "tumi": ["nibandhan kôroni", "nibandhan kôrni"], "apni": "nibandhan kôrenni", "se": "nibandhan kôreni", "tini": "nibandhan kôrenni" }
+    - word: "bn-3152"
+      forms: { "ami": "অনুমতি নিইনি", "tui": "অনুমতি নিসনি", "tumi": "অনুমতি নাওনি", "apni": "অনুমতি নেননি", "se": "অনুমতি নেয়নি", "tini": "অনুমতি নেননি" }
+      readings: { "ami": "anumati niini", "tui": "anumati niśni", "tumi": "anumati nāoni", "apni": "anumati nenni", "se": "anumati neyni", "tini": "anumati nenni" }
+    - word: "bn-3153"
+      forms: { "ami": "টাকা তুলিনি", "tui": "টাকা তুলিসনি", "tumi": ["টাকা তোলোনি", "টাকা তোলনি"], "apni": "টাকা তোলেননি", "se": "টাকা তোলেনি", "tini": "টাকা তোলেননি" }
+      readings: { "ami": "ṭākā tulini", "tui": "ṭākā tuliśni", "tumi": ["ṭākā toloni", "ṭākā tolni"], "apni": "ṭākā tolenni", "se": "ṭākā toleni", "tini": "ṭākā tolenni" }
+    - word: "bn-3154"
+      forms: { "ami": "টাকা পাঠাইনি", "tui": "টাকা পাঠাসনি", "tumi": "টাকা পাঠাওনি", "apni": "টাকা পাঠাননি", "se": "টাকা পাঠায়নি", "tini": "টাকা পাঠাননি" }
+      readings: { "ami": "ṭākā pāṭhāini", "tui": "ṭākā pāṭhāsni", "tumi": "ṭākā pāṭhāoni", "apni": "ṭākā pāṭhānni", "se": "ṭākā pāṭhāyni", "tini": "ṭākā pāṭhānni" }
+    - word: "bn-3155"
+      forms: { "ami": "পার্সেল পাঠাইনি", "tui": "পার্সেল পাঠাসনি", "tumi": "পার্সেল পাঠাওনি", "apni": "পার্সেল পাঠাননি", "se": "পার্সেল পাঠায়নি", "tini": "পার্সেল পাঠাননি" }
+      readings: { "ami": "pārsel pāṭhāini", "tui": "pārsel pāṭhāsni", "tumi": "pārsel pāṭhāoni", "apni": "pārsel pāṭhānni", "se": "pārsel pāṭhāyni", "tini": "pārsel pāṭhānni" }
+    - word: "bn-3156"
+      forms: { "ami": "অপেক্ষা করিনি", "tui": "অপেক্ষা করিসনি", "tumi": ["অপেক্ষা করোনি", "অপেক্ষা করনি"], "apni": "অপেক্ষা করেননি", "se": "অপেক্ষা করেনি", "tini": "অপেক্ষা করেননি" }
+      readings: { "ami": "apekṣā korini", "tui": "apekṣā koriśni", "tumi": ["apekṣā kôroni", "apekṣā kôrni"], "apni": "apekṣā kôrenni", "se": "apekṣā kôreni", "tini": "apekṣā kôrenni" }
+    - word: "bn-3157"
+      forms: { "ami": "ফর্ম পূরণ করিনি", "tui": "ফর্ম পূরণ করিসনি", "tumi": ["ফর্ম পূরণ করোনি", "ফর্ম পূরণ করনি"], "apni": "ফর্ম পূরণ করেননি", "se": "ফর্ম পূরণ করেনি", "tini": "ফর্ম পূরণ করেননি" }
+      readings: { "ami": "pharm purṇa korini", "tui": "pharm purṇa koriśni", "tumi": ["pharm purṇa kôroni", "pharm purṇa kôrni"], "apni": "pharm purṇa kôrenni", "se": "pharm purṇa kôreni", "tini": "pharm purṇa kôrenni" }
+    - word: "bn-3158"
+      forms: { "ami": "রসিদ নিইনি", "tui": "রসিদ নিসনি", "tumi": "রসিদ নাওনি", "apni": "রসিদ নেননি", "se": "রসিদ নেয়নি", "tini": "রসিদ নেননি" }
+      readings: { "ami": "rasid niini", "tui": "rasid niśni", "tumi": "rasid nāoni", "apni": "rasid nenni", "se": "rasid neyni", "tini": "rasid nenni" }
+    - word: "bn-3209"
+      forms: { "ami": "ভোট দিইনি", "tui": "ভোট দিসনি", "tumi": "ভোট দাওনি", "apni": "ভোট দেননি", "se": "ভোট দেয়নি", "tini": "ভোট দেননি" }
+      readings: { "ami": "bhot diini", "tui": "bhot diśni", "tumi": "bhot dāoni", "apni": "bhot denni", "se": "bhot deyni", "tini": "bhot denni" }
+    - word: "bn-3210"
+      forms: { "ami": "নির্বাচিত হইনি", "tui": "নির্বাচিত হসনি", "tumi": "নির্বাচিত হওনি", "apni": "নির্বাচিত হননি", "se": "নির্বাচিত হয়নি", "tini": "নির্বাচিত হননি" }
+      readings: { "ami": "nirbācit hoini", "tui": "nirbācit hôśni", "tumi": "nirbācit honi", "apni": "nirbācit hônni", "se": "nirbācit hôyni", "tini": "nirbācit hônni" }
+    - word: "bn-3211"
+      forms: { "ami": "শপথ নিইনি", "tui": "শপথ নিসনি", "tumi": "শপথ নাওনি", "apni": "শপথ নেননি", "se": "শপথ নেয়নি", "tini": "শপথ নেননি" }
+      readings: { "ami": "śôpôth niini", "tui": "śôpôth niśni", "tumi": "śôpôth nāoni", "apni": "śôpôth nenni", "se": "śôpôth neyni", "tini": "śôpôth nenni" }
+    - word: "bn-3212"
+      forms: { "ami": "আইন পাস করিনি", "tui": "আইন পাস করিসনি", "tumi": ["আইন পাস করোনি", "আইন পাস করনি"], "apni": "আইন পাস করেননি", "se": "আইন পাস করেনি", "tini": "আইন পাস করেননি" }
+      readings: { "ami": "āin pās korini", "tui": "āin pās koriśni", "tumi": ["āin pās kôroni", "āin pās kôrni"], "apni": "āin pās kôrenni", "se": "āin pās kôreni", "tini": "āin pās kôrenni" }
+    - word: "bn-3213"
+      forms: { "ami": "কর দিইনি", "tui": "কর দিসনি", "tumi": "কর দাওনি", "apni": "কর দেননি", "se": "কর দেয়নি", "tini": "কর দেননি" }
+      readings: { "ami": "kar diini", "tui": "kar diśni", "tumi": "kar dāoni", "apni": "kar denni", "se": "kar deyni", "tini": "kar denni" }
+    - word: "bn-3214"
+      forms: { "ami": "মামলা করিনি", "tui": "মামলা করিসনি", "tumi": ["মামলা করোনি", "মামলা করনি"], "apni": "মামলা করেননি", "se": "মামলা করেনি", "tini": "মামলা করেননি" }
+      readings: { "ami": "māmlā korini", "tui": "māmlā koriśni", "tumi": ["māmlā kôroni", "māmlā kôrni"], "apni": "māmlā kôrenni", "se": "māmlā kôreni", "tini": "māmlā kôrenni" }
+    - word: "bn-3283"
+      forms: { "ami": "ডাউনলোড করিনি", "tui": "ডাউনলোড করিসনি", "tumi": ["ডাউনলোড করোনি", "ডাউনলোড করনি"], "apni": "ডাউনলোড করেননি", "se": "ডাউনলোড করেনি", "tini": "ডাউনলোড করেননি" }
+      readings: { "ami": "ḍāunlod korini", "tui": "ḍāunlod koriśni", "tumi": ["ḍāunlod kôroni", "ḍāunlod kôrni"], "apni": "ḍāunlod kôrenni", "se": "ḍāunlod kôreni", "tini": "ḍāunlod kôrenni" }
+    - word: "bn-3284"
+      forms: { "ami": "আপলোড করিনি", "tui": "আপলোড করিসনি", "tumi": ["আপলোড করোনি", "আপলোড করনি"], "apni": "আপলোড করেননি", "se": "আপলোড করেনি", "tini": "আপলোড করেননি" }
+      readings: { "ami": "āplod korini", "tui": "āplod koriśni", "tumi": ["āplod kôroni", "āplod kôrni"], "apni": "āplod kôrenni", "se": "āplod kôreni", "tini": "āplod kôrenni" }
+    - word: "bn-3285"
+      forms: { "ami": "ইনস্টল করিনি", "tui": "ইনস্টল করিসনি", "tumi": ["ইনস্টল করোনি", "ইনস্টল করনি"], "apni": "ইনস্টল করেননি", "se": "ইনস্টল করেনি", "tini": "ইনস্টল করেননি" }
+      readings: { "ami": "insṭal korini", "tui": "insṭal koriśni", "tumi": ["insṭal kôroni", "insṭal kôrni"], "apni": "insṭal kôrenni", "se": "insṭal kôreni", "tini": "insṭal kôrenni" }
+    - word: "bn-3286"
+      forms: { "ami": "আপডেট করিনি", "tui": "আপডেট করিসনি", "tumi": ["আপডেট করোনি", "আপডেট করনি"], "apni": "আপডেট করেননি", "se": "আপডেট করেনি", "tini": "আপডেট করেননি" }
+      readings: { "ami": "āpḍeṭ korini", "tui": "āpḍeṭ koriśni", "tumi": ["āpḍeṭ kôroni", "āpḍeṭ kôrni"], "apni": "āpḍeṭ kôrenni", "se": "āpḍeṭ kôreni", "tini": "āpḍeṭ kôrenni" }
+    - word: "bn-3287"
+      forms: { "ami": "ক্লিক করিনি", "tui": "ক্লিক করিসনি", "tumi": ["ক্লিক করোনি", "ক্লিক করনি"], "apni": "ক্লিক করেননি", "se": "ক্লিক করেনি", "tini": "ক্লিক করেননি" }
+      readings: { "ami": "klik korini", "tui": "klik koriśni", "tumi": ["klik kôroni", "klik kôrni"], "apni": "klik kôrenni", "se": "klik kôreni", "tini": "klik kôrenni" }
+    - word: "bn-3288"
+      forms: { "ami": "অনুসন্ধান করিনি", "tui": "অনুসন্ধান করিসনি", "tumi": ["অনুসন্ধান করোনি", "অনুসন্ধান করনি"], "apni": "অনুসন্ধান করেননি", "se": "অনুসন্ধান করেনি", "tini": "অনুসন্ধান করেননি" }
+      readings: { "ami": "anusandhān korini", "tui": "anusandhān koriśni", "tumi": ["anusandhān kôroni", "anusandhān kôrni"], "apni": "anusandhān kôrenni", "se": "anusandhān kôreni", "tini": "anusandhān kôrenni" }
+    - word: "bn-3289"
+      forms: { "ami": "চালু করিনি", "tui": "চালু করিসনি", "tumi": ["চালু করোনি", "চালু করনি"], "apni": "চালু করেননি", "se": "চালু করেনি", "tini": "চালু করেননি" }
+      readings: { "ami": "cālu korini", "tui": "cālu koriśni", "tumi": ["cālu kôroni", "cālu kôrni"], "apni": "cālu kôrenni", "se": "cālu kôreni", "tini": "cālu kôrenni" }
+    - word: "bn-3290"
+      forms: { "ami": "লগইন করিনি", "tui": "লগইন করিসনি", "tumi": ["লগইন করোনি", "লগইন করনি"], "apni": "লগইন করেননি", "se": "লগইন করেনি", "tini": "লগইন করেননি" }
+      readings: { "ami": "lagin korini", "tui": "lagin koriśni", "tumi": ["lagin kôroni", "lagin kôrni"], "apni": "lagin kôrenni", "se": "lagin kôreni", "tini": "lagin kôrenni" }
+    - word: "bn-3351"
+      forms: { "ami": "চাকরি খুঁজিনি", "tui": "চাকরি খুঁজিসনি", "tumi": ["চাকরি খোঁজোনি", "চাকরি খোঁজনি"], "apni": "চাকরি খোঁজেননি", "se": "চাকরি খোঁজেনি", "tini": "চাকরি খোঁজেননি" }
+      readings: { "ami": "cākri khum̐jini", "tui": "cākri khum̐jiśni", "tumi": ["cākri khom̐joni", "cākri khom̐jni"], "apni": "cākri khom̐jenni", "se": "cākri khom̐jeni", "tini": "cākri khom̐jenni" }
+    - word: "bn-3352"
+      forms: { "ami": "নিয়োগ দিইনি", "tui": "নিয়োগ দিসনি", "tumi": "নিয়োগ দাওনি", "apni": "নিয়োগ দেননি", "se": "নিয়োগ দেয়নি", "tini": "নিয়োগ দেননি" }
+      readings: { "ami": "niyog diini", "tui": "niyog diśni", "tumi": "niyog dāoni", "apni": "niyog denni", "se": "niyog deyni", "tini": "niyog denni" }
+    - word: "bn-3353"
+      forms: { "ami": "প্রশিক্ষণ নিইনি", "tui": "প্রশিক্ষণ নিসনি", "tumi": "প্রশিক্ষণ নাওনি", "apni": "প্রশিক্ষণ নেননি", "se": "প্রশিক্ষণ নেয়নি", "tini": "প্রশিক্ষণ নেননি" }
+      readings: { "ami": "praśikṣaṇ niini", "tui": "praśikṣaṇ niśni", "tumi": "praśikṣaṇ nāoni", "apni": "praśikṣaṇ nenni", "se": "praśikṣaṇ neyni", "tini": "praśikṣaṇ nenni" }
+    - word: "bn-3354"
+      forms: { "ami": "অবসর নিইনি", "tui": "অবসর নিসনি", "tumi": "অবসর নাওনি", "apni": "অবসর নেননি", "se": "অবসর নেয়নি", "tini": "অবসর নেননি" }
+      readings: { "ami": "abasar niini", "tui": "abasar niśni", "tumi": "abasar nāoni", "apni": "abasar nenni", "se": "abasar neyni", "tini": "abasar nenni" }
+    - word: "bn-3355"
+      forms: { "ami": "ব্যবসা শুরু করিনি", "tui": "ব্যবসা শুরু করিসনি", "tumi": ["ব্যবসা শুরু করোনি", "ব্যবসা শুরু করনি"], "apni": "ব্যবসা শুরু করেননি", "se": "ব্যবসা শুরু করেনি", "tini": "ব্যবসা শুরু করেননি" }
+      readings: { "ami": "byabsā śuru korini", "tui": "byabsā śuru koriśni", "tumi": ["byabsā śuru kôroni", "byabsā śuru kôrni"], "apni": "byabsā śuru kôrenni", "se": "byabsā śuru kôreni", "tini": "byabsā śuru kôrenni" }
+    - word: "bn-3356"
+      forms: { "ami": "পরীক্ষা দিইনি", "tui": "পরীক্ষা দিসনি", "tumi": "পরীক্ষা দাওনি", "apni": "পরীক্ষা দেননি", "se": "পরীক্ষা দেয়নি", "tini": "পরীক্ষা দেননি" }
+      readings: { "ami": "parīkṣā diini", "tui": "parīkṣā diśni", "tumi": "parīkṣā dāoni", "apni": "parīkṣā denni", "se": "parīkṣā deyni", "tini": "parīkṣā denni" }
+    - word: "bn-3357"
+      forms: { "ami": "সফল হইনি", "tui": "সফল হসনি", "tumi": "সফল হওনি", "apni": "সফল হননি", "se": "সফল হয়নি", "tini": "সফল হননি" }
+      readings: { "ami": "sophôl hoini", "tui": "sophôl hôśni", "tumi": "sophôl honi", "apni": "sophôl hônni", "se": "sophôl hôyni", "tini": "sophôl hônni" }
+    - word: "bn-3358"
+      forms: { "ami": "দক্ষতা অর্জন করিনি", "tui": "দক্ষতা অর্জন করিসনি", "tumi": ["দক্ষতা অর্জন করোনি", "দক্ষতা অর্জন করনি"], "apni": "দক্ষতা অর্জন করেননি", "se": "দক্ষতা অর্জন করেনি", "tini": "দক্ষতা অর্জন করেননি" }
+      readings: { "ami": "dôkkhotā arjan korini", "tui": "dôkkhotā arjan koriśni", "tumi": ["dôkkhotā arjan kôroni", "dôkkhotā arjan kôrni"], "apni": "dôkkhotā arjan kôrenni", "se": "dôkkhotā arjan kôreni", "tini": "dôkkhotā arjan kôrenni" }
+    - word: "bn-3431"
+      forms: { "ami": "বৃক্ষরোপণ করিনি", "tui": "বৃক্ষরোপণ করিসনি", "tumi": ["বৃক্ষরোপণ করোনি", "বৃক্ষরোপণ করনি"], "apni": "বৃক্ষরোপণ করেননি", "se": "বৃক্ষরোপণ করেনি", "tini": "বৃক্ষরোপণ করেননি" }
+      readings: { "ami": "bṛkṣaropaṇ korini", "tui": "bṛkṣaropaṇ koriśni", "tumi": ["bṛkṣaropaṇ kôroni", "bṛkṣaropaṇ kôrni"], "apni": "bṛkṣaropaṇ kôrenni", "se": "bṛkṣaropaṇ kôreni", "tini": "bṛkṣaropaṇ kôrenni" }
+    - word: "bn-3432"
+      forms: { "ami": "পরিষ্কার করিনি", "tui": "পরিষ্কার করিসনি", "tumi": ["পরিষ্কার করোনি", "পরিষ্কার করনি"], "apni": "পরিষ্কার করেননি", "se": "পরিষ্কার করেনি", "tini": "পরিষ্কার করেননি" }
+      readings: { "ami": "pariṣkār korini", "tui": "pariṣkār koriśni", "tumi": ["pariṣkār kôroni", "pariṣkār kôrni"], "apni": "pariṣkār kôrenni", "se": "pariṣkār kôreni", "tini": "pariṣkār kôrenni" }
+    - word: "bn-3433"
+      forms: { "ami": "সংরক্ষণ করিনি", "tui": "সংরক্ষণ করিসনি", "tumi": ["সংরক্ষণ করোনি", "সংরক্ষণ করনি"], "apni": "সংরক্ষণ করেননি", "se": "সংরক্ষণ করেনি", "tini": "সংরক্ষণ করেননি" }
+      readings: { "ami": "saṅrakṣaṇ korini", "tui": "saṅrakṣaṇ koriśni", "tumi": ["saṅrakṣaṇ kôroni", "saṅrakṣaṇ kôrni"], "apni": "saṅrakṣaṇ kôrenni", "se": "saṅrakṣaṇ kôreni", "tini": "saṅrakṣaṇ kôrenni" }
+    - word: "bn-3434"
+      forms: { "ami": "পুনর্ব্যবহার করিনি", "tui": "পুনর্ব্যবহার করিসনি", "tumi": ["পুনর্ব্যবহার করোনি", "পুনর্ব্যবহার করনি"], "apni": "পুনর্ব্যবহার করেননি", "se": "পুনর্ব্যবহার করেনি", "tini": "পুনর্ব্যবহার করেননি" }
+      readings: { "ami": "punarbyabahār korini", "tui": "punarbyabahār koriśni", "tumi": ["punarbyabahār kôroni", "punarbyabahār kôrni"], "apni": "punarbyabahār kôrenni", "se": "punarbyabahār kôreni", "tini": "punarbyabahār kôrenni" }
+    - word: "bn-3435"
+      forms: { "ami": "দূষণ করিনি", "tui": "দূষণ করিসনি", "tumi": ["দূষণ করোনি", "দূষণ করনি"], "apni": "দূষণ করেননি", "se": "দূষণ করেনি", "tini": "দূষণ করেননি" }
+      readings: { "ami": "dūṣaṇ korini", "tui": "dūṣaṇ koriśni", "tumi": ["dūṣaṇ kôroni", "dūṣaṇ kôrni"], "apni": "dūṣaṇ kôrenni", "se": "dūṣaṇ kôreni", "tini": "dūṣaṇ kôrenni" }
+    - word: "bn-3436"
+      forms: { "ami": "সচেতন হইনি", "tui": "সচেতন হসনি", "tumi": "সচেতন হওনি", "apni": "সচেতন হননি", "se": "সচেতন হয়নি", "tini": "সচেতন হননি" }
+      readings: { "ami": "sacetan hoini", "tui": "sacetan hôśni", "tumi": "sacetan honi", "apni": "sacetan hônni", "se": "sacetan hôyni", "tini": "sacetan hônni" }
+    - word: "bn-3437"
+      forms: { "ami": "গাছ লাগাইনি", "tui": "গাছ লাগাসনি", "tumi": "গাছ লাগাওনি", "apni": "গাছ লাগাননি", "se": "গাছ লাগায়নি", "tini": "গাছ লাগাননি" }
+      readings: { "ami": "gāch lāgāini", "tui": "gāch lāgāsni", "tumi": "gāch lāgāoni", "apni": "gāch lāgānni", "se": "gāch lāgāyni", "tini": "gāch lāgānni" }
+    - word: "bn-3496"
+      forms: { "ami": "চাষ করিনি", "tui": "চাষ করিসনি", "tumi": ["চাষ করোনি", "চাষ করনি"], "apni": "চাষ করেননি", "se": "চাষ করেনি", "tini": "চাষ করেননি" }
+      readings: { "ami": "cāṣ korini", "tui": "cāṣ koriśni", "tumi": ["cāṣ kôroni", "cāṣ kôrni"], "apni": "cāṣ kôrenni", "se": "cāṣ kôreni", "tini": "cāṣ kôrenni" }
+    - word: "bn-3497"
+      forms: { "ami": "বীজ বপন করিনি", "tui": "বীজ বপন করিসনি", "tumi": ["বীজ বপন করোনি", "বীজ বপন করনি"], "apni": "বীজ বপন করেননি", "se": "বীজ বপন করেনি", "tini": "বীজ বপন করেননি" }
+      readings: { "ami": "bīj bapan korini", "tui": "bīj bapan koriśni", "tumi": ["bīj bapan kôroni", "bīj bapan kôrni"], "apni": "bīj bapan kôrenni", "se": "bīj bapan kôreni", "tini": "bīj bapan kôrenni" }
+    - word: "bn-3498"
+      forms: { "ami": "ফসল কাটিনি", "tui": "ফসল কাটিসনি", "tumi": ["ফসল কাটোনি", "ফসল কাটনি"], "apni": "ফসল কাটেননি", "se": "ফসল কাটেনি", "tini": "ফসল কাটেননি" }
+      readings: { "ami": "phasal kāṭini", "tui": "phasal kāṭiśni", "tumi": ["phasal kāṭoni", "phasal kāṭni"], "apni": "phasal kāṭenni", "se": "phasal kāṭeni", "tini": "phasal kāṭenni" }
+    - word: "bn-3499"
+      forms: { "ami": "সার দিইনি", "tui": "সার দিসনি", "tumi": "সার দাওনি", "apni": "সার দেননি", "se": "সার দেয়নি", "tini": "সার দেননি" }
+      readings: { "ami": "sār diini", "tui": "sār diśni", "tumi": "sār dāoni", "apni": "sār denni", "se": "sār deyni", "tini": "sār denni" }
+    - word: "bn-3500"
+      forms: { "ami": "সেচ দিইনি", "tui": "সেচ দিসনি", "tumi": "সেচ দাওনি", "apni": "সেচ দেননি", "se": "সেচ দেয়নি", "tini": "সেচ দেননি" }
+      readings: { "ami": "seca diini", "tui": "seca diśni", "tumi": "seca dāoni", "apni": "seca denni", "se": "seca deyni", "tini": "seca denni" }
+    - word: "bn-3501"
+      forms: { "ami": "ফসল তুলিনি", "tui": "ফসল তুলিসনি", "tumi": ["ফসল তোলোনি", "ফসল তোলনি"], "apni": "ফসল তোলেননি", "se": "ফসল তোলেনি", "tini": "ফসল তোলেননি" }
+      readings: { "ami": "phasal tulini", "tui": "phasal tuliśni", "tumi": ["phasal toloni", "phasal tolni"], "apni": "phasal tolenni", "se": "phasal toleni", "tini": "phasal tolenni" }
+    - word: "bn-3502"
+      forms: { "ami": "ফলন হইনি", "tui": "ফলন হসনি", "tumi": "ফলন হওনি", "apni": "ফলন হননি", "se": "ফলন হয়নি", "tini": "ফলন হননি" }
+      readings: { "ami": "phalan hoini", "tui": "phalan hôśni", "tumi": "phalan honi", "apni": "phalan hônni", "se": "phalan hôyni", "tini": "phalan hônni" }
+    - word: "bn-3503"
+      forms: { "ami": "বিক্রি করিনি", "tui": "বিক্রি করিসনি", "tumi": ["বিক্রি করোনি", "বিক্রি করনি"], "apni": "বিক্রি করেননি", "se": "বিক্রি করেনি", "tini": "বিক্রি করেননি" }
+      readings: { "ami": "bikri korini", "tui": "bikri koriśni", "tumi": ["bikri kôroni", "bikri kôrni"], "apni": "bikri kôrenni", "se": "bikri kôreni", "tini": "bikri kôrenni" }
+    - word: "bn-3581"
+      forms: { "ami": "অভিনয় করিনি", "tui": "অভিনয় করিসনি", "tumi": ["অভিনয় করোনি", "অভিনয় করনি"], "apni": "অভিনয় করেননি", "se": "অভিনয় করেনি", "tini": "অভিনয় করেননি" }
+      readings: { "ami": "ābhinay korini", "tui": "ābhinay koriśni", "tumi": ["ābhinay kôroni", "ābhinay kôrni"], "apni": "ābhinay kôrenni", "se": "ābhinay kôreni", "tini": "ābhinay kôrenni" }
+    - word: "bn-3582"
+      forms: { "ami": "গান গাইনি", "tui": "গান গাসনি", "tumi": "গান গাওনি", "apni": "গান গাননি", "se": "গান গায়নি", "tini": "গান গাননি" }
+      readings: { "ami": "gān gāini", "tui": "gān gāsni", "tumi": "gān gāoni", "apni": "gān gānni", "se": "gān gāyni", "tini": "gān gānni" }
+    - word: "bn-3583"
+      forms: { "ami": "ছবি দেখিনি", "tui": "ছবি দেখিসনি", "tumi": ["ছবি দেখোনি", "ছবি দেখনি"], "apni": "ছবি দেখেননি", "se": "ছবি দেখেনি", "tini": "ছবি দেখেননি" }
+      readings: { "ami": "chabi dekhini", "tui": "chabi dekhiśni", "tumi": ["chabi dekhoni", "chabi dekhni"], "apni": "chabi dekhenni", "se": "chabi dekheni", "tini": "chabi dekhenni" }
+    - word: "bn-3584"
+      forms: { "ami": "শুটিং করিনি", "tui": "শুটিং করিসনি", "tumi": ["শুটিং করোনি", "শুটিং করনি"], "apni": "শুটিং করেননি", "se": "শুটিং করেনি", "tini": "শুটিং করেননি" }
+      readings: { "ami": "śuṭiṅ korini", "tui": "śuṭiṅ koriśni", "tumi": ["śuṭiṅ kôroni", "śuṭiṅ kôrni"], "apni": "śuṭiṅ kôrenni", "se": "śuṭiṅ kôreni", "tini": "śuṭiṅ kôrenni" }
+    - word: "bn-3585"
+      forms: { "ami": "নির্মাণ করিনি", "tui": "নির্মাণ করিসনি", "tumi": ["নির্মাণ করোনি", "নির্মাণ করনি"], "apni": "নির্মাণ করেননি", "se": "নির্মাণ করেনি", "tini": "নির্মাণ করেননি" }
+      readings: { "ami": "nirmāṇ korini", "tui": "nirmāṇ koriśni", "tumi": ["nirmāṇ kôroni", "nirmāṇ kôrni"], "apni": "nirmāṇ kôrenni", "se": "nirmāṇ kôreni", "tini": "nirmāṇ kôrenni" }
+    - word: "bn-3586"
+      forms: { "ami": "মুক্তি পাইনি", "tui": "মুক্তি পাসনি", "tumi": "মুক্তি পাওনি", "apni": "মুক্তি পাননি", "se": "মুক্তি পায়নি", "tini": "মুক্তি পাননি" }
+      readings: { "ami": "mukti pāini", "tui": "mukti pāsni", "tumi": "mukti pāoni", "apni": "mukti pānni", "se": "mukti pāyni", "tini": "mukti pānni" }
+    - word: "bn-3587"
+      forms: { "ami": "হাততালি দিইনি", "tui": "হাততালি দিসনি", "tumi": "হাততালি দাওনি", "apni": "হাততালি দেননি", "se": "হাততালি দেয়নি", "tini": "হাততালি দেননি" }
+      readings: { "ami": "hāttāli diini", "tui": "hāttāli diśni", "tumi": "hāttāli dāoni", "apni": "hāttāli denni", "se": "hāttāli deyni", "tini": "hāttāli denni" }
+    - word: "bn-3588"
+      forms: { "ami": "চরিত্র হইনি", "tui": "চরিত্র হসনি", "tumi": "চরিত্র হওনি", "apni": "চরিত্র হননি", "se": "চরিত্র হয়নি", "tini": "চরিত্র হননি" }
+      readings: { "ami": "caritra hoini", "tui": "caritra hôśni", "tumi": "caritra honi", "apni": "caritra hônni", "se": "caritra hôyni", "tini": "caritra hônni" }
+    - word: "bn-3651"
+      forms: { "ami": "অঙ্কন করিনি", "tui": "অঙ্কন করিসনি", "tumi": ["অঙ্কন করোনি", "অঙ্কন করনি"], "apni": "অঙ্কন করেননি", "se": "অঙ্কন করেনি", "tini": "অঙ্কন করেননি" }
+      readings: { "ami": "ôṅkon korini", "tui": "ôṅkon korisni", "tumi": ["ôṅkon kôroni", "ôṅkon kôrni"], "apni": "ôṅkon kôrenni", "se": "ôṅkon kôreni", "tini": "ôṅkon kôrenni" }
+    - word: "bn-3652"
+      forms: { "ami": "প্রদর্শন করিনি", "tui": "প্রদর্শন করিসনি", "tumi": ["প্রদর্শন করোনি", "প্রদর্শন করনি"], "apni": "প্রদর্শন করেননি", "se": "প্রদর্শন করেনি", "tini": "প্রদর্শন করেননি" }
+      readings: { "ami": "pradarśôn korini", "tui": "pradarśôn korisni", "tumi": ["pradarśôn kôroni", "pradarśôn kôrni"], "apni": "pradarśôn kôrenni", "se": "pradarśôn kôreni", "tini": "pradarśôn kôrenni" }
+    - word: "bn-3733"
+      forms: { "ami": "যুদ্ধ করিনি", "tui": "যুদ্ধ করিসনি", "tumi": ["যুদ্ধ করোনি", "যুদ্ধ করনি"], "apni": "যুদ্ধ করেননি", "se": "যুদ্ধ করেনি", "tini": "যুদ্ধ করেননি" }
+      readings: { "ami": "juddho korini", "tui": "juddho korisni", "tumi": ["juddho kôroni", "juddho kôrni"], "apni": "juddho kôrenni", "se": "juddho kôreni", "tini": "juddho kôrenni" }
+    - word: "bn-3734"
+      forms: { "ami": "শাসন করিনি", "tui": "শাসন করিসনি", "tumi": ["শাসন করোনি", "শাসন করনি"], "apni": "শাসন করেননি", "se": "শাসন করেনি", "tini": "শাসন করেননি" }
+      readings: { "ami": "śāsôn korini", "tui": "śāsôn korisni", "tumi": ["śāsôn kôroni", "śāsôn kôrni"], "apni": "śāsôn kôrenni", "se": "śāsôn kôreni", "tini": "śāsôn kôrenni" }
+    - word: "bn-3794"
+      forms: { "ami": "মালা বদল করিনি", "tui": "মালা বদল করিসনি", "tumi": ["মালা বদল করোনি", "মালা বদল করনি"], "apni": "মালা বদল করেননি", "se": "মালা বদল করেনি", "tini": "মালা বদল করেননি" }
+      readings: { "ami": "mālā badal korini", "tui": "mālā badal korisni", "tumi": ["mālā badal kôroni", "mālā badal kôrni"], "apni": "mālā badal kôrenni", "se": "mālā badal kôreni", "tini": "mālā badal kôrenni" }
+    - word: "bn-3795"
+      forms: { "ami": "নিমন্ত্রণ করিনি", "tui": "নিমন্ত্রণ করিসনি", "tumi": ["নিমন্ত্রণ করোনি", "নিমন্ত্রণ করনি"], "apni": "নিমন্ত্রণ করেননি", "se": "নিমন্ত্রণ করেনি", "tini": "নিমন্ত্রণ করেননি" }
+      readings: { "ami": "nimantraṇ korini", "tui": "nimantraṇ korisni", "tumi": ["nimantraṇ kôroni", "nimantraṇ kôrni"], "apni": "nimantraṇ kôrenni", "se": "nimantraṇ kôreni", "tini": "nimantraṇ kôrenni" }
+    - word: "bn-3796"
+      forms: { "ami": "আশীর্বাদ করিনি", "tui": "আশীর্বাদ করিসনি", "tumi": ["আশীর্বাদ করোনি", "আশীর্বাদ করনি"], "apni": "আশীর্বাদ করেননি", "se": "আশীর্বাদ করেনি", "tini": "আশীর্বাদ করেননি" }
+      readings: { "ami": "āśīrbād korini", "tui": "āśīrbād korisni", "tumi": ["āśīrbād kôroni", "āśīrbād kôrni"], "apni": "āśīrbād kôrenni", "se": "āśīrbād kôreni", "tini": "āśīrbād kôrenni" }
+    - word: "bn-3868"
+      forms: { "ami": "ব্যাট করিনি", "tui": "ব্যাট করিসনি", "tumi": ["ব্যাট করোনি", "ব্যাট করনি"], "apni": "ব্যাট করেননি", "se": "ব্যাট করেনি", "tini": "ব্যাট করেননি" }
+      readings: { "ami": "byāṭ korini", "tui": "byāṭ korisni", "tumi": ["byāṭ kôroni", "byāṭ kôrni"], "apni": "byāṭ kôrenni", "se": "byāṭ kôreni", "tini": "byāṭ kôrenni" }
+    - word: "bn-3869"
+      forms: { "ami": "গোল করিনি", "tui": "গোল করিসনি", "tumi": ["গোল করোনি", "গোল করনি"], "apni": "গোল করেননি", "se": "গোল করেনি", "tini": "গোল করেননি" }
+      readings: { "ami": "gol korini", "tui": "gol korisni", "tumi": ["gol kôroni", "gol kôrni"], "apni": "gol kôrenni", "se": "gol kôreni", "tini": "gol kôrenni" }
+    - word: "bn-3926"
+      forms: { "ami": "পাশে থাকিনি", "tui": "পাশে থাকিসনি", "tumi": ["পাশে থাকোনি", "পাশে থাকনি"], "apni": "পাশে থাকেননি", "se": "পাশে থাকেনি", "tini": "পাশে থাকেননি" }
+      readings: { "ami": "pāśe thākini", "tui": "pāśe thākiśni", "tumi": ["pāśe thākoni", "pāśe thākni"], "apni": "pāśe thākenni", "se": "pāśe thākeni", "tini": "pāśe thākenni" }
+    - word: "bn-3927"
+      forms: { "ami": "যত্ন নিইনি", "tui": "যত্ন নিসনি", "tumi": "যত্ন নাওনি", "apni": "যত্ন নেননি", "se": "যত্ন নেয়নি", "tini": "যত্ন নেননি" }
+      readings: { "ami": "yatna niini", "tui": "yatna nisni", "tumi": "yatna nāoni", "apni": "yatna nenni", "se": "yatna neyni", "tini": "yatna nenni" }
+    - word: "bn-3928"
+      forms: { "ami": "মনে রাখিনি", "tui": "মনে রাখিসনি", "tumi": ["মনে রাখোনি", "মনে রাখনি"], "apni": "মনে রাখেননি", "se": "মনে রাখেনি", "tini": "মনে রাখেননি" }
+      readings: { "ami": "mane rākhini", "tui": "mane rākhisni", "tumi": ["mane rākhoni", "mane rākhni"], "apni": "mane rākhenni", "se": "mane rākheni", "tini": "mane rākhenni" }
+    - word: "bn-3929"
+      forms: { "ami": "দেখা করিনি", "tui": "দেখা করিসনি", "tumi": ["দেখা করোনি", "দেখা করনি"], "apni": "দেখা করেননি", "se": "দেখা করেনি", "tini": "দেখা করেননি" }
+      readings: { "ami": "dekhā korini", "tui": "dekhā korisni", "tumi": ["dekhā kôroni", "dekhā kôrni"], "apni": "dekhā kôrenni", "se": "dekhā kôreni", "tini": "dekhā kôrenni" }
+    - word: "bn-3930"
+      forms: { "ami": "ঝগড়া করিনি", "tui": "ঝগড়া করিসনি", "tumi": ["ঝগড়া করোনি", "ঝগড়া করনি"], "apni": "ঝগড়া করেননি", "se": "ঝগড়া করেনি", "tini": "ঝগড়া করেননি" }
+      readings: { "ami": "jhagṛā korini", "tui": "jhagṛā korisni", "tumi": ["jhagṛā kôroni", "jhagṛā kôrni"], "apni": "jhagṛā kôrenni", "se": "jhagṛā kôreni", "tini": "jhagṛā kôrenni" }
+    - word: "bn-3931"
+      forms: { "ami": "আলাপ করিনি", "tui": "আলাপ করিসনি", "tumi": ["আলাপ করোনি", "আলাপ করনি"], "apni": "আলাপ করেননি", "se": "আলাপ করেনি", "tini": "আলাপ করেননি" }
+      readings: { "ami": "ālāp korini", "tui": "ālāp korisni", "tumi": ["ālāp kôroni", "ālāp kôrni"], "apni": "ālāp kôrenni", "se": "ālāp kôreni", "tini": "ālāp kôrenni" }
+    - word: "bn-4002"
+      forms: { "ami": "সংস্কার করিনি", "tui": "সংস্কার করিসনি", "tumi": ["সংস্কার করোনি", "সংস্কার করনি"], "apni": "সংস্কার করেননি", "se": "সংস্কার করেনি", "tini": "সংস্কার করেননি" }
+      readings: { "ami": "sôṅskār korini", "tui": "sôṅskār korisni", "tumi": ["sôṅskār kôroni", "sôṅskār kôrni"], "apni": "sôṅskār kôrenni", "se": "sôṅskār kôreni", "tini": "sôṅskār kôrenni" }
+    - word: "bn-4004"
+      forms: { "ami": "বসবাস করিনি", "tui": "বসবাস করিসনি", "tumi": ["বসবাস করোনি", "বসবাস করনি"], "apni": "বসবাস করেননি", "se": "বসবাস করেনি", "tini": "বসবাস করেননি" }
+      readings: { "ami": "basbās korini", "tui": "basbās korisni", "tumi": ["basbās kôroni", "basbās kôrni"], "apni": "basbās kôrenni", "se": "basbās kôreni", "tini": "basbās kôrenni" }
+    - word: "bn-4054"
+      forms: { "ami": "উদ্ধার করিনি", "tui": "উদ্ধার করিসনি", "tumi": ["উদ্ধার করোনি", "উদ্ধার করনি"], "apni": "উদ্ধার করেননি", "se": "উদ্ধার করেনি", "tini": "উদ্ধার করেননি" }
+      readings: { "ami": "uddhār korini", "tui": "uddhār korisni", "tumi": ["uddhār kôroni", "uddhār kôrni"], "apni": "uddhār kôrenni", "se": "uddhār kôreni", "tini": "uddhār kôrenni" }
+    - word: "bn-4055"
+      forms: { "ami": "সরিয়ে নিইনি", "tui": "সরিয়ে নিসনি", "tumi": "সরিয়ে নাওনি", "apni": "সরিয়ে নেননি", "se": "সরিয়ে নেয়নি", "tini": "সরিয়ে নেননি" }
+      readings: { "ami": "soriẏe niini", "tui": "soriẏe nisni", "tumi": "soriẏe nāoni", "apni": "soriẏe nenni", "se": "soriẏe neyni", "tini": "soriẏe nenni" }
+    - word: "bn-4056"
+      forms: { "ami": "আগুন নেভাইনি", "tui": "আগুন নেভাসনি", "tumi": "আগুন নেভাওনি", "apni": "আগুন নেভাননি", "se": "আগুন নেভায়নি", "tini": "আগুন নেভাননি" }
+      readings: { "ami": "āgun nebhāini", "tui": "āgun nebhāsni", "tumi": "āgun nebhāoni", "apni": "āgun nebhānni", "se": "āgun nebhāyni", "tini": "āgun nebhānni" }
+    - word: "bn-4057"
+      forms: { "ami": "পালাইনি", "tui": "পালাসনি", "tumi": "পালাওনি", "apni": "পালাননি", "se": "পালায়নি", "tini": "পালাননি" }
+      readings: { "ami": "pālāini", "tui": "pālāsni", "tumi": "pālāoni", "apni": "pālānni", "se": "pālāyni", "tini": "pālānni" }
+    - word: "bn-4122"
+      forms: { "ami": "অভিযোগ করিনি", "tui": "অভিযোগ করিসনি", "tumi": ["অভিযোগ করোনি", "অভিযোগ করনি"], "apni": "অভিযোগ করেননি", "se": "অভিযোগ করেনি", "tini": "অভিযোগ করেননি" }
+      readings: { "ami": "abhiyog korini", "tui": "abhiyog korisni", "tumi": ["abhiyog kôroni", "abhiyog kôrni"], "apni": "abhiyog kôrenni", "se": "abhiyog kôreni", "tini": "abhiyog kôrenni" }
+    - word: "bn-4123"
+      forms: { "ami": "বিচার করিনি", "tui": "বিচার করিসনি", "tumi": ["বিচার করোনি", "বিচার করনি"], "apni": "বিচার করেননি", "se": "বিচার করেনি", "tini": "বিচার করেননি" }
+      readings: { "ami": "bicār korini", "tui": "bicār korisni", "tumi": ["bicār kôroni", "bicār kôrni"], "apni": "bicār kôrenni", "se": "bicār kôreni", "tini": "bicār kôrenni" }
+    - word: "bn-4124"
+      forms: { "ami": "শাস্তি দিইনি", "tui": "শাস্তি দিসনি", "tumi": "শাস্তি দাওনি", "apni": "শাস্তি দেননি", "se": "শাস্তি দেয়নি", "tini": "শাস্তি দেননি" }
+      readings: { "ami": "śāsti diini", "tui": "śāsti diśni", "tumi": "śāsti dāoni", "apni": "śāsti denni", "se": "śāsti deyni", "tini": "śāsti denni" }
+    - word: "bn-4125"
+      forms: { "ami": "গ্রেফতার করিনি", "tui": "গ্রেফতার করিসনি", "tumi": ["গ্রেফতার করোনি", "গ্রেফতার করনি"], "apni": "গ্রেফতার করেননি", "se": "গ্রেফতার করেনি", "tini": "গ্রেফতার করেননি" }
+      readings: { "ami": "grephtār korini", "tui": "grephtār korisni", "tumi": ["grephtār kôroni", "grephtār kôrni"], "apni": "grephtār kôrenni", "se": "grephtār kôreni", "tini": "grephtār kôrenni" }
+    - word: "bn-4144"
+      forms: { "ami": "গড়িনি", "tui": "গড়িসনি", "tumi": ["গড়োনি", "গড়নি"], "apni": "গড়েননি", "se": "গড়েনি", "tini": "গড়েননি" }
+      readings: { "ami": "goṛini", "tui": "goṛisni", "tumi": ["gôṛoni", "gôṛni"], "apni": "gôṛenni", "se": "gôṛeni", "tini": "gôṛenni" }
+    - word: "bn-4145"
+      forms: { "ami": "মারিনি", "tui": "মারিসনি", "tumi": ["মারোনি", "মারনি"], "apni": "মারেননি", "se": "মারেনি", "tini": "মারেননি" }
+      readings: { "ami": "mārini", "tui": "mārisni", "tumi": ["māroni", "mārni"], "apni": "mārenni", "se": "māreni", "tini": "mārenni" }
+    - word: "bn-4146"
+      forms: { "ami": "ছুটিনি", "tui": "ছুটিসনি", "tumi": ["ছুটোনি", "ছুটনি"], "apni": "ছুটেননি", "se": "ছুটেনি", "tini": "ছুটেননি" }
+      readings: { "ami": "chuṭini", "tui": "chuṭisni", "tumi": ["chuṭoni", "chuṭni"], "apni": "chuṭenni", "se": "chuṭeni", "tini": "chuṭenni" }
+    - word: "bn-4147"
+      forms: { "ami": "উড়িনি", "tui": "উড়িসনি", "tumi": ["উড়োনি", "উড়নি"], "apni": "উড়েননি", "se": "উড়েনি", "tini": "উড়েননি" }
+      readings: { "ami": "uṛini", "tui": "uṛisni", "tumi": ["uṛoni", "uṛni"], "apni": "uṛenni", "se": "uṛeni", "tini": "uṛenni" }
+    - word: "bn-4148"
+      forms: { "ami": "ঝাড়িনি", "tui": "ঝাড়িসনি", "tumi": ["ঝাড়োনি", "ঝাড়নি"], "apni": "ঝাড়েননি", "se": "ঝাড়েনি", "tini": "ঝাড়েননি" }
+      readings: { "ami": "jhāṛini", "tui": "jhāṛisni", "tumi": ["jhāṛoni", "jhāṛni"], "apni": "jhāṛenni", "se": "jhāṛeni", "tini": "jhāṛenni" }
+    - word: "bn-4149"
+      forms: { "ami": "মাপিনি", "tui": "মাপিসনি", "tumi": ["মাপোনি", "মাপনি"], "apni": "মাপেননি", "se": "মাপেনি", "tini": "মাপেননি" }
+      readings: { "ami": "māpini", "tui": "māpisni", "tumi": ["māponi", "māpni"], "apni": "māpenni", "se": "māpeni", "tini": "māpenni" }
+    - word: "bn-4150"
+      forms: { "ami": "ছিঁড়িনি", "tui": "ছিঁড়িসনি", "tumi": ["ছিঁড়োনি", "ছিঁড়নি"], "apni": "ছিঁড়েননি", "se": "ছিঁড়েনি", "tini": "ছিঁড়েননি" }
+      readings: { "ami": "chim̐ṛini", "tui": "chim̐ṛisni", "tumi": ["chim̐ṛoni", "chim̐ṛni"], "apni": "chim̐ṛenni", "se": "chim̐ṛeni", "tini": "chim̐ṛenni" }
+    - word: "bn-4151"
+      forms: { "ami": "বাছিনি", "tui": "বাছিসনি", "tumi": ["বাছোনি", "বাছনি"], "apni": "বাছেননি", "se": "বাছেনি", "tini": "বাছেননি" }
+      readings: { "ami": "bāchini", "tui": "bāchisni", "tumi": ["bāchoni", "bāchni"], "apni": "bāchenni", "se": "bācheni", "tini": "bāchenni" }
+    - word: "bn-4152"
+      forms: { "ami": "চাখিনি", "tui": "চাখিসনি", "tumi": ["চাখোনি", "চাখনি"], "apni": "চাখেননি", "se": "চাখেনি", "tini": "চাখেননি" }
+      readings: { "ami": "cākhini", "tui": "cākhisni", "tumi": ["cākhoni", "cākhni"], "apni": "cākhenni", "se": "cākheni", "tini": "cākhenni" }
+    - word: "bn-4153"
+      forms: { "ami": "শুঁকিনি", "tui": "শুঁকিসনি", "tumi": ["শুঁকোনি", "শুঁকনি"], "apni": "শুঁকেননি", "se": "শুঁকেনি", "tini": "শুঁকেননি" }
+      readings: { "ami": "śum̐kini", "tui": "śum̐kisni", "tumi": ["śum̐koni", "śum̐kni"], "apni": "śum̐kenni", "se": "śum̐keni", "tini": "śum̐kenni" }
+    - word: "bn-4154"
+      forms: { "ami": "ভাসিনি", "tui": "ভাসিসনি", "tumi": ["ভাসোনি", "ভাসনি"], "apni": "ভাসেননি", "se": "ভাসেনি", "tini": "ভাসেননি" }
+      readings: { "ami": "bhāsini", "tui": "bhāsisni", "tumi": ["bhāsoni", "bhāsni"], "apni": "bhāsenni", "se": "bhāseni", "tini": "bhāsenni" }
+    - word: "bn-4155"
+      forms: { "ami": "চাটিনি", "tui": "চাটিসনি", "tumi": ["চাটোনি", "চাটনি"], "apni": "চাটেননি", "se": "চাটেনি", "tini": "চাটেননি" }
+      readings: { "ami": "cāṭini", "tui": "cāṭisni", "tumi": ["cāṭoni", "cāṭni"], "apni": "cāṭenni", "se": "cāṭeni", "tini": "cāṭenni" }
+    - word: "bn-4156"
+      forms: { "ami": "ঘষিনি", "tui": "ঘষিসনি", "tumi": ["ঘষোনি", "ঘষনি"], "apni": "ঘষেননি", "se": "ঘষেনি", "tini": "ঘষেননি" }
+      readings: { "ami": "ghośini", "tui": "ghośisni", "tumi": ["ghôśoni", "ghôśni"], "apni": "ghôśenni", "se": "ghôśeni", "tini": "ghôśenni" }
+    - word: "bn-4157"
+      forms: { "ami": "সাজিনি", "tui": "সাজিসনি", "tumi": ["সাজোনি", "সাজনি"], "apni": "সাজেননি", "se": "সাজেনি", "tini": "সাজেননি" }
+      readings: { "ami": "sājini", "tui": "sājisni", "tumi": ["sājoni", "sājni"], "apni": "sājenni", "se": "sājeni", "tini": "sājenni" }
+    - word: "bn-4158"
+      forms: { "ami": "খুলিনি", "tui": "খুলিসনি", "tumi": ["খুলোনি", "খুলনি"], "apni": "খুলেননি", "se": "খুলেনি", "tini": "খুলেননি" }
+      readings: { "ami": "khulini", "tui": "khulisni", "tumi": ["khuloni", "khulni"], "apni": "khulenni", "se": "khuleni", "tini": "khulenni" }
+    - word: "bn-4159"
+      forms: { "ami": "চড়িনি", "tui": "চড়িসনি", "tumi": ["চড়োনি", "চড়নি"], "apni": "চড়েননি", "se": "চড়েনি", "tini": "চড়েননি" }
+      readings: { "ami": "coṛini", "tui": "coṛisni", "tumi": ["côṛoni", "côṛni"], "apni": "côṛenni", "se": "côṛeni", "tini": "côṛenni" }
+    - word: "bn-4160"
+      forms: { "ami": "বাঁচিনি", "tui": "বাঁচিসনি", "tumi": ["বাঁচোনি", "বাঁচনি"], "apni": "বাঁচেননি", "se": "বাঁচেনি", "tini": "বাঁচেননি" }
+      readings: { "ami": "bām̐cini", "tui": "bām̐cisni", "tumi": ["bām̐coni", "bām̐cni"], "apni": "bām̐cenni", "se": "bām̐ceni", "tini": "bām̐cenni" }
+    - word: "bn-4161"
+      forms: { "ami": "মরিনি", "tui": "মরিসনি", "tumi": ["মরোনি", "মরনি"], "apni": "মরেননি", "se": "মরেনি", "tini": "মরেননি" }
+      readings: { "ami": "morini", "tui": "morisni", "tumi": ["môroni", "môrni"], "apni": "môrenni", "se": "môreni", "tini": "môrenni" }
+    - word: "bn-4162"
+      forms: { "ami": "ডুবিনি", "tui": "ডুবিসনি", "tumi": ["ডুবোনি", "ডুবনি"], "apni": "ডুবেননি", "se": "ডুবেনি", "tini": "ডুবেননি" }
+      readings: { "ami": "ḍubini", "tui": "ḍubisni", "tumi": ["ḍuboni", "ḍubni"], "apni": "ḍubenni", "se": "ḍubeni", "tini": "ḍubenni" }
+    - word: "bn-4163"
+      forms: { "ami": "ঝুলিনি", "tui": "ঝুলিসনি", "tumi": ["ঝুলোনি", "ঝুলনি"], "apni": "ঝুলেননি", "se": "ঝুলেনি", "tini": "ঝুলেননি" }
+      readings: { "ami": "jhulini", "tui": "jhulisni", "tumi": ["jhuloni", "jhulni"], "apni": "jhulenni", "se": "jhuleni", "tini": "jhulenni" }
+    - word: "bn-4164"
+      forms: { "ami": "হাঁকিনি", "tui": "হাঁকিসনি", "tumi": ["হাঁকোনি", "হাঁকনি"], "apni": "হাঁকেননি", "se": "হাঁকেনি", "tini": "হাঁকেননি" }
+      readings: { "ami": "hām̐kini", "tui": "hām̐kisni", "tumi": ["hām̐koni", "hām̐kni"], "apni": "hām̐kenni", "se": "hām̐keni", "tini": "hām̐kenni" }
+    - word: "bn-4165"
+      forms: { "ami": "ফুলিনি", "tui": "ফুলিসনি", "tumi": ["ফুলোনি", "ফুলনি"], "apni": "ফুলেননি", "se": "ফুলেনি", "tini": "ফুলেননি" }
+      readings: { "ami": "phulini", "tui": "phulisni", "tumi": ["phuloni", "phulni"], "apni": "phulenni", "se": "phuleni", "tini": "phulenni" }
+    - word: "bn-4166"
+      forms: { "ami": "ঘুরিনি", "tui": "ঘুরিসনি", "tumi": ["ঘুরোনি", "ঘুরনি"], "apni": "ঘুরেননি", "se": "ঘুরেনি", "tini": "ঘুরেননি" }
+      readings: { "ami": "ghurini", "tui": "ghurisni", "tumi": ["ghuroni", "ghurni"], "apni": "ghurenni", "se": "ghureni", "tini": "ghurenni" }
+    - word: "bn-4167"
+      forms: { "ami": "চাপিনি", "tui": "চাপিসনি", "tumi": ["চাপোনি", "চাপনি"], "apni": "চাপেননি", "se": "চাপেনি", "tini": "চাপেননি" }
+      readings: { "ami": "cāpini", "tui": "cāpisni", "tumi": ["cāponi", "cāpni"], "apni": "cāpenni", "se": "cāpeni", "tini": "cāpenni" }
+    - word: "bn-4168"
+      forms: { "ami": "ছোঁড়িনি", "tui": "ছোঁড়িসনি", "tumi": ["ছোঁড়োনি", "ছোঁড়নি"], "apni": "ছোঁড়েননি", "se": "ছোঁড়েনি", "tini": "ছোঁড়েননি" }
+      readings: { "ami": "chom̐ṛini", "tui": "chom̐ṛisni", "tumi": ["chom̐ṛoni", "chom̐ṛni"], "apni": "chom̐ṛenni", "se": "chom̐ṛeni", "tini": "chom̐ṛenni" }
+    - word: "bn-4169"
+      forms: { "ami": "পোঁছিনি", "tui": "পোঁছিসনি", "tumi": ["পোঁছোনি", "পোঁছনি"], "apni": "পোঁছেননি", "se": "পোঁছেনি", "tini": "পোঁছেননি" }
+      readings: { "ami": "pom̐chini", "tui": "pom̐chisni", "tumi": ["pom̐choni", "pom̐chni"], "apni": "pom̐chenni", "se": "pom̐cheni", "tini": "pom̐chenni" }
+    - word: "bn-4170"
+      forms: { "ami": "মোড়িনি", "tui": "মোড়িসনি", "tumi": ["মোড়োনি", "মোড়নি"], "apni": "মোড়েননি", "se": "মোড়েনি", "tini": "মোড়েননি" }
+      readings: { "ami": "moṛini", "tui": "moṛisni", "tumi": ["moṛoni", "moṛni"], "apni": "moṛenni", "se": "moṛeni", "tini": "moṛenni" }
+    - word: "bn-4171"
+      forms: { "ami": "ঘুমাইনি", "tui": "ঘুমাসনি", "tumi": "ঘুমাওনি", "apni": "ঘুমাননি", "se": "ঘুমায়নি", "tini": "ঘুমাননি" }
+      readings: { "ami": "ghumāini", "tui": "ghumāsni", "tumi": "ghumāoni", "apni": "ghumānni", "se": "ghumāyni", "tini": "ghumānni" }
+    - word: "bn-4172"
+      forms: { "ami": "বসাইনি", "tui": "বসাসনি", "tumi": "বসাওনি", "apni": "বসাননি", "se": "বসায়নি", "tini": "বসাননি" }
+      readings: { "ami": "bôsāini", "tui": "bôsāsni", "tumi": "bôsāoni", "apni": "bôsānni", "se": "bôsāyni", "tini": "bôsānni" }
+    - word: "bn-4173"
+      forms: { "ami": "লেখাইনি", "tui": "লেখাসনি", "tumi": "লেখাওনি", "apni": "লেখাননি", "se": "লেখায়নি", "tini": "লেখাননি" }
+      readings: { "ami": "lekhāini", "tui": "lekhāsni", "tumi": "lekhāoni", "apni": "lekhānni", "se": "lekhāyni", "tini": "lekhānni" }
+    - word: "bn-4174"
+      forms: { "ami": "সরাইনি", "tui": "সরাসনি", "tumi": "সরাওনি", "apni": "সরাননি", "se": "সরায়নি", "tini": "সরাননি" }
+      readings: { "ami": "sôrāini", "tui": "sôrāsni", "tumi": "sôrāoni", "apni": "sôrānni", "se": "sôrāyni", "tini": "sôrānni" }
+    - word: "bn-4175"
+      forms: { "ami": "জড়াইনি", "tui": "জড়াসনি", "tumi": "জড়াওনি", "apni": "জড়াননি", "se": "জড়ায়নি", "tini": "জড়াননি" }
+      readings: { "ami": "jôṛāini", "tui": "jôṛāsni", "tumi": "jôṛāoni", "apni": "jôṛānni", "se": "jôṛāyni", "tini": "jôṛānni" }
+    - word: "bn-4176"
+      forms: { "ami": "কুড়াইনি", "tui": "কুড়াসনি", "tumi": "কুড়াওনি", "apni": "কুড়াননি", "se": "কুড়ায়নি", "tini": "কুড়াননি" }
+      readings: { "ami": "kuṛāini", "tui": "kuṛāsni", "tumi": "kuṛāoni", "apni": "kuṛānni", "se": "kuṛāyni", "tini": "kuṛānni" }
+    - word: "bn-4177"
+      forms: { "ami": "তাড়াইনি", "tui": "তাড়াসনি", "tumi": "তাড়াওনি", "apni": "তাড়াননি", "se": "তাড়ায়নি", "tini": "তাড়াননি" }
+      readings: { "ami": "tāṛāini", "tui": "tāṛāsni", "tumi": "tāṛāoni", "apni": "tāṛānni", "se": "tāṛāyni", "tini": "tāṛānni" }
+    - word: "bn-4178"
+      forms: { "ami": "কামড়াইনি", "tui": "কামড়াসনি", "tumi": "কামড়াওনি", "apni": "কামড়াননি", "se": "কামড়ায়নি", "tini": "কামড়াননি" }
+      readings: { "ami": "kāmoṛāini", "tui": "kāmoṛāsni", "tumi": "kāmoṛāoni", "apni": "kāmoṛānni", "se": "kāmoṛāyni", "tini": "kāmoṛānni" }
+    - word: "bn-4179"
+      forms: { "ami": "কাঁপাইনি", "tui": "কাঁপাসনি", "tumi": "কাঁপাওনি", "apni": "কাঁপাননি", "se": "কাঁপায়নি", "tini": "কাঁপাননি" }
+      readings: { "ami": "kām̐pāini", "tui": "kām̐pāsni", "tumi": "kām̐pāoni", "apni": "kām̐pānni", "se": "kām̐pāyni", "tini": "kām̐pānni" }
+    - word: "bn-4180"
+      forms: { "ami": "চমকাইনি", "tui": "চমকাসনি", "tumi": "চমকাওনি", "apni": "চমকাননি", "se": "চমকায়নি", "tini": "চমকাননি" }
+      readings: { "ami": "cômokāini", "tui": "cômokāsni", "tumi": "cômokāoni", "apni": "cômokānni", "se": "cômokāyni", "tini": "cômokānni" }
+    - word: "bn-4181"
+      forms: { "ami": "হাসাইনি", "tui": "হাসাসনি", "tumi": "হাসাওনি", "apni": "হাসাননি", "se": "হাসায়নি", "tini": "হাসাননি" }
+      readings: { "ami": "hāsāini", "tui": "hāsāsni", "tumi": "hāsāoni", "apni": "hāsānni", "se": "hāsāyni", "tini": "hāsānni" }
+    - word: "bn-4182"
+      forms: { "ami": "কাঁদাইনি", "tui": "কাঁদাসনি", "tumi": "কাঁদাওনি", "apni": "কাঁদাননি", "se": "কাঁদায়নি", "tini": "কাঁদাননি" }
+      readings: { "ami": "kām̐dāini", "tui": "kām̐dāsni", "tumi": "kām̐dāoni", "apni": "kām̐dānni", "se": "kām̐dāyni", "tini": "kām̐dānni" }
+    - word: "bn-4183"
+      forms: { "ami": "রাগাইনি", "tui": "রাগাসনি", "tumi": "রাগাওনি", "apni": "রাগাননি", "se": "রাগায়নি", "tini": "রাগাননি" }
+      readings: { "ami": "rāgāini", "tui": "rāgāsni", "tumi": "rāgāoni", "apni": "rāgānni", "se": "rāgāyni", "tini": "rāgānni" }
+    - word: "bn-4184"
+      forms: { "ami": "নামাইনি", "tui": "নামাসনি", "tumi": "নামাওনি", "apni": "নামাননি", "se": "নামায়নি", "tini": "নামাননি" }
+      readings: { "ami": "nāmāini", "tui": "nāmāsni", "tumi": "nāmāoni", "apni": "nāmānni", "se": "nāmāyni", "tini": "nāmānni" }
+    - word: "bn-4185"
+      forms: { "ami": "উঠাইনি", "tui": "উঠাসনি", "tumi": "উঠাওনি", "apni": "উঠাননি", "se": "উঠায়নি", "tini": "উঠাননি" }
+      readings: { "ami": "uṭhāini", "tui": "uṭhāsni", "tumi": "uṭhāoni", "apni": "uṭhānni", "se": "uṭhāyni", "tini": "uṭhānni" }
+    - word: "bn-4186"
+      forms: { "ami": "লুকাইনি", "tui": "লুকাসনি", "tumi": "লুকাওনি", "apni": "লুকাননি", "se": "লুকায়নি", "tini": "লুকাননি" }
+      readings: { "ami": "lukāini", "tui": "lukāsni", "tumi": "lukāoni", "apni": "lukānni", "se": "lukāyni", "tini": "lukānni" }
+    - word: "bn-4187"
+      forms: { "ami": "বাঁচাইনি", "tui": "বাঁচাসনি", "tumi": "বাঁচাওনি", "apni": "বাঁচাননি", "se": "বাঁচায়নি", "tini": "বাঁচাননি" }
+      readings: { "ami": "bām̐cāini", "tui": "bām̐cāsni", "tumi": "bām̐cāoni", "apni": "bām̐cānni", "se": "bām̐cāyni", "tini": "bām̐cānni" }
+    - word: "bn-4188"
+      forms: { "ami": "ধমকাইনি", "tui": "ধমকাসনি", "tumi": "ধমকাওনি", "apni": "ধমকাননি", "se": "ধমকায়নি", "tini": "ধমকাননি" }
+      readings: { "ami": "dhômokāini", "tui": "dhômokāsni", "tumi": "dhômokāoni", "apni": "dhômokānni", "se": "dhômokāyni", "tini": "dhômokānni" }
+    - word: "bn-4189"
+      forms: { "ami": "জাগাইনি", "tui": "জাগাসনি", "tumi": "জাগাওনি", "apni": "জাগাননি", "se": "জাগায়নি", "tini": "জাগাননি" }
+      readings: { "ami": "jāgāini", "tui": "jāgāsni", "tumi": "jāgāoni", "apni": "jāgānni", "se": "jāgāyni", "tini": "jāgānni" }
+    - word: "bn-4190"
+      forms: { "ami": "নাচাইনি", "tui": "নাচাসনি", "tumi": "নাচাওনি", "apni": "নাচাননি", "se": "নাচায়নি", "tini": "নাচাননি" }
+      readings: { "ami": "nācāini", "tui": "nācāsni", "tumi": "nācāoni", "apni": "nācānni", "se": "nācāyni", "tini": "nācānni" }
+    - word: "bn-4191"
+      forms: { "ami": "ভাবাইনি", "tui": "ভাবাসনি", "tumi": "ভাবাওনি", "apni": "ভাবাননি", "se": "ভাবায়নি", "tini": "ভাবাননি" }
+      readings: { "ami": "bhābāini", "tui": "bhābāsni", "tumi": "bhābāoni", "apni": "bhābānni", "se": "bhābāyni", "tini": "bhābānni" }
+    - word: "bn-4192"
+      forms: { "ami": "ঠেকাইনি", "tui": "ঠেকাসনি", "tumi": "ঠেকাওনি", "apni": "ঠেকাননি", "se": "ঠেকায়নি", "tini": "ঠেকাননি" }
+      readings: { "ami": "ṭhekāini", "tui": "ṭhekāsni", "tumi": "ṭhekāoni", "apni": "ṭhekānni", "se": "ṭhekāyni", "tini": "ṭhekānni" }
+    - word: "bn-4193"
+      forms: { "ami": "কাটাইনি", "tui": "কাটাসনি", "tumi": "কাটাওনি", "apni": "কাটাননি", "se": "কাটায়নি", "tini": "কাটাননি" }
+      readings: { "ami": "kāṭāini", "tui": "kāṭāsni", "tumi": "kāṭāoni", "apni": "kāṭānni", "se": "kāṭāyni", "tini": "kāṭānni" }
+    - word: "bn-4194"
+      forms: { "ami": "শোয়াইনি", "tui": "শোয়াসনি", "tumi": "শোয়াওনি", "apni": "শোয়াননি", "se": "শোয়ায়নি", "tini": "শোয়াননি" }
+      readings: { "ami": "śoyāini", "tui": "śoyāsni", "tumi": "śoyāoni", "apni": "śoyānni", "se": "śoyāyni", "tini": "śoyānni" }
+    - word: "bn-4195"
+      forms: { "ami": "ঝরাইনি", "tui": "ঝরাসনি", "tumi": "ঝরাওনি", "apni": "ঝরাননি", "se": "ঝরায়নি", "tini": "ঝরাননি" }
+      readings: { "ami": "jhôrāini", "tui": "jhôrāsni", "tumi": "jhôrāoni", "apni": "jhôrānni", "se": "jhôrāyni", "tini": "jhôrānni" }
+    - word: "bn-4196"
+      forms: { "ami": "পিছলাইনি", "tui": "পিছলাসনি", "tumi": "পিছলাওনি", "apni": "পিছলাননি", "se": "পিছলায়নি", "tini": "পিছলাননি" }
+      readings: { "ami": "picholāini", "tui": "picholāsni", "tumi": "picholāoni", "apni": "picholānni", "se": "picholāyni", "tini": "picholānni" }
+    - word: "bn-4197"
+      forms: { "ami": "খালি করিনি", "tui": "খালি করিসনি", "tumi": ["খালি করোনি", "খালি করনি"], "apni": "খালি করেননি", "se": "খালি করেনি", "tini": "খালি করেননি" }
+      readings: { "ami": "khāli korini", "tui": "khāli korisni", "tumi": ["khāli kôroni", "khāli kôrni"], "apni": "khāli kôrenni", "se": "khāli kôreni", "tini": "khāli kôrenni" }
+    - word: "bn-4198"
+      forms: { "ami": "ওজন করিনি", "tui": "ওজন করিসনি", "tumi": ["ওজন করোনি", "ওজন করনি"], "apni": "ওজন করেননি", "se": "ওজন করেনি", "tini": "ওজন করেননি" }
+      readings: { "ami": "ojon korini", "tui": "ojon korisni", "tumi": ["ojon kôroni", "ojon kôrni"], "apni": "ojon kôrenni", "se": "ojon kôreni", "tini": "ojon kôrenni" }
+    - word: "bn-4199"
+      forms: { "ami": "হিসাব করিনি", "tui": "হিসাব করিসনি", "tumi": ["হিসাব করোনি", "হিসাব করনি"], "apni": "হিসাব করেননি", "se": "হিসাব করেনি", "tini": "হিসাব করেননি" }
+      readings: { "ami": "hisāb korini", "tui": "hisāb korisni", "tumi": ["hisāb kôroni", "hisāb kôrni"], "apni": "hisāb kôrenni", "se": "hisāb kôreni", "tini": "hisāb kôrenni" }
+    - word: "bn-4200"
+      forms: { "ami": "সেলাই করিনি", "tui": "সেলাই করিসনি", "tumi": ["সেলাই করোনি", "সেলাই করনি"], "apni": "সেলাই করেননি", "se": "সেলাই করেনি", "tini": "সেলাই করেননি" }
+      readings: { "ami": "selāi korini", "tui": "selāi korisni", "tumi": ["selāi kôroni", "selāi kôrni"], "apni": "selāi kôrenni", "se": "selāi kôreni", "tini": "selāi kôrenni" }
+    - word: "bn-4201"
+      forms: { "ami": "সেদ্ধ করিনি", "tui": "সেদ্ধ করিসনি", "tumi": ["সেদ্ধ করোনি", "সেদ্ধ করনি"], "apni": "সেদ্ধ করেননি", "se": "সেদ্ধ করেনি", "tini": "সেদ্ধ করেননি" }
+      readings: { "ami": "seddh korini", "tui": "seddh korisni", "tumi": ["seddh kôroni", "seddh kôrni"], "apni": "seddh kôrenni", "se": "seddh kôreni", "tini": "seddh kôrenni" }
+    - word: "bn-4202"
+      forms: { "ami": "ঠান্ডা করিনি", "tui": "ঠান্ডা করিসনি", "tumi": ["ঠান্ডা করোনি", "ঠান্ডা করনি"], "apni": "ঠান্ডা করেননি", "se": "ঠান্ডা করেনি", "tini": "ঠান্ডা করেননি" }
+      readings: { "ami": "ṭhānḍā korini", "tui": "ṭhānḍā korisni", "tumi": ["ṭhānḍā kôroni", "ṭhānḍā kôrni"], "apni": "ṭhānḍā kôrenni", "se": "ṭhānḍā kôreni", "tini": "ṭhānḍā kôrenni" }
+    - word: "bn-4203"
+      forms: { "ami": "ভরসা করিনি", "tui": "ভরসা করিসনি", "tumi": ["ভরসা করোনি", "ভরসা করনি"], "apni": "ভরসা করেননি", "se": "ভরসা করেনি", "tini": "ভরসা করেননি" }
+      readings: { "ami": "bhôrosā korini", "tui": "bhôrosā korisni", "tumi": ["bhôrosā kôroni", "bhôrosā kôrni"], "apni": "bhôrosā kôrenni", "se": "bhôrosā kôreni", "tini": "bhôrosā kôrenni" }
+    - word: "bn-4204"
+      forms: { "ami": "দাবি করিনি", "tui": "দাবি করিসনি", "tumi": ["দাবি করোনি", "দাবি করনি"], "apni": "দাবি করেননি", "se": "দাবি করেনি", "tini": "দাবি করেননি" }
+      readings: { "ami": "dābi korini", "tui": "dābi korisni", "tumi": ["dābi kôroni", "dābi kôrni"], "apni": "dābi kôrenni", "se": "dābi kôreni", "tini": "dābi kôrenni" }
+    - word: "bn-4205"
+      forms: { "ami": "প্রশ্ন করিনি", "tui": "প্রশ্ন করিসনি", "tumi": ["প্রশ্ন করোনি", "প্রশ্ন করনি"], "apni": "প্রশ্ন করেননি", "se": "প্রশ্ন করেনি", "tini": "প্রশ্ন করেননি" }
+      readings: { "ami": "prôśn korini", "tui": "prôśn korisni", "tumi": ["prôśn kôroni", "prôśn kôrni"], "apni": "prôśn kôrenni", "se": "prôśn kôreni", "tini": "prôśn kôrenni" }
+    - word: "bn-4206"
+      forms: { "ami": "চিৎকার করিনি", "tui": "চিৎকার করিসনি", "tumi": ["চিৎকার করোনি", "চিৎকার করনি"], "apni": "চিৎকার করেননি", "se": "চিৎকার করেনি", "tini": "চিৎকার করেননি" }
+      readings: { "ami": "citkār korini", "tui": "citkār korisni", "tumi": ["citkār kôroni", "citkār kôrni"], "apni": "citkār kôrenni", "se": "citkār kôreni", "tini": "citkār kôrenni" }
+    - word: "bn-4207"
+      forms: { "ami": "ব্যাখ্যা করিনি", "tui": "ব্যাখ্যা করিসনি", "tumi": ["ব্যাখ্যা করোনি", "ব্যাখ্যা করনি"], "apni": "ব্যাখ্যা করেননি", "se": "ব্যাখ্যা করেনি", "tini": "ব্যাখ্যা করেননি" }
+      readings: { "ami": "bêkkhā korini", "tui": "bêkkhā korisni", "tumi": ["bêkkhā kôroni", "bêkkhā kôrni"], "apni": "bêkkhā kôrenni", "se": "bêkkhā kôreni", "tini": "bêkkhā kôrenni" }
+    - word: "bn-4208"
+      forms: { "ami": "স্বপ্ন দেখিনি", "tui": "স্বপ্ন দেখিসনি", "tumi": ["স্বপ্ন দেখোনি", "স্বপ্ন দেখনি"], "apni": "স্বপ্ন দেখেননি", "se": "স্বপ্ন দেখেনি", "tini": "স্বপ্ন দেখেননি" }
+      readings: { "ami": "sôpno dekhini", "tui": "sôpno dekhisni", "tumi": ["sôpno dekhoni", "sôpno dekhni"], "apni": "sôpno dekhenni", "se": "sôpno dekheni", "tini": "sôpno dekhenni" }
+    - word: "bn-4359"
+      forms: { "ami": "খরচ করিনি", "tui": "খরচ করিসনি", "tumi": ["খরচ করোনি", "খরচ করনি"], "apni": "খরচ করেননি", "se": "খরচ করেনি", "tini": "খরচ করেননি" }
+      readings: { "ami": "khôroc korini", "tui": "khôroc korisni", "tumi": ["khôroc kôroni", "khôroc kôrni"], "apni": "khôroc kôrenni", "se": "khôroc kôreni", "tini": "khôroc kôrenni" }
+    - word: "bn-4360"
+      forms: { "ami": "সঞ্চয় করিনি", "tui": "সঞ্চয় করিসনি", "tumi": ["সঞ্চয় করোনি", "সঞ্চয় করনি"], "apni": "সঞ্চয় করেননি", "se": "সঞ্চয় করেনি", "tini": "সঞ্চয় করেননি" }
+      readings: { "ami": "sôncoy korini", "tui": "sôncoy korisni", "tumi": ["sôncoy kôroni", "sôncoy kôrni"], "apni": "sôncoy kôrenni", "se": "sôncoy kôreni", "tini": "sôncoy kôrenni" }
+    - word: "bn-4361"
+      forms: { "ami": "পরিশোধ করিনি", "tui": "পরিশোধ করিসনি", "tumi": ["পরিশোধ করোনি", "পরিশোধ করনি"], "apni": "পরিশোধ করেননি", "se": "পরিশোধ করেনি", "tini": "পরিশোধ করেননি" }
+      readings: { "ami": "poriśodh korini", "tui": "poriśodh korisni", "tumi": ["poriśodh kôroni", "poriśodh kôrni"], "apni": "poriśodh kôrenni", "se": "poriśodh kôreni", "tini": "poriśodh kôrenni" }
+    - word: "bn-4442"
+      forms: { "ami": "আবৃত্তি করিনি", "tui": "আবৃত্তি করিসনি", "tumi": ["আবৃত্তি করোনি", "আবৃত্তি করনি"], "apni": "আবৃত্তি করেননি", "se": "আবৃত্তি করেনি", "tini": "আবৃত্তি করেননি" }
+      readings: { "ami": "ābritti korini", "tui": "ābritti korisni", "tumi": ["ābritti kôroni", "ābritti kôrni"], "apni": "ābritti kôrenni", "se": "ābritti kôreni", "tini": "ābritti kôrenni" }
+    - word: "bn-4443"
+      forms: { "ami": "মুখস্থ করিনি", "tui": "মুখস্থ করিসনি", "tumi": ["মুখস্থ করোনি", "মুখস্থ করনি"], "apni": "মুখস্থ করেননি", "se": "মুখস্থ করেনি", "tini": "মুখস্থ করেননি" }
+      readings: { "ami": "mukhosth korini", "tui": "mukhosth korisni", "tumi": ["mukhosth kôroni", "mukhosth kôrni"], "apni": "mukhosth kôrenni", "se": "mukhosth kôreni", "tini": "mukhosth kôrenni" }
+    - word: "bn-4444"
+      forms: { "ami": "অনুবাদ করিনি", "tui": "অনুবাদ করিসনি", "tumi": ["অনুবাদ করোনি", "অনুবাদ করনি"], "apni": "অনুবাদ করেননি", "se": "অনুবাদ করেনি", "tini": "অনুবাদ করেননি" }
+      readings: { "ami": "ônubād korini", "tui": "ônubād korisni", "tumi": ["ônubād kôroni", "ônubād kôrni"], "apni": "ônubād kôrenni", "se": "ônubād kôreni", "tini": "ônubād kôrenni" }
+    - word: "bn-4445"
+      forms: { "ami": "রচনা করিনি", "tui": "রচনা করিসনি", "tumi": ["রচনা করোনি", "রচনা করনি"], "apni": "রচনা করেননি", "se": "রচনা করেনি", "tini": "রচনা করেননি" }
+      readings: { "ami": "rôconā korini", "tui": "rôconā korisni", "tumi": ["rôconā kôroni", "rôconā kôrni"], "apni": "rôconā kôrenni", "se": "rôconā kôreni", "tini": "rôconā kôrenni" }
+    - word: "bn-4480"
+      forms: { "ami": "জোড়াইনি", "tui": "জোড়াসনি", "tumi": "জোড়াওনি", "apni": "জোড়াননি", "se": "জোড়ায়নি", "tini": "জোড়াননি" }
+      readings: { "ami": "joṛāini", "tui": "joṛāsni", "tumi": "joṛāoni", "apni": "joṛānni", "se": "joṛāyni", "tini": "joṛānni" }
+    - word: "bn-4481"
+      forms: { "ami": "ভাঙাইনি", "tui": "ভাঙাসনি", "tumi": "ভাঙাওনি", "apni": "ভাঙাননি", "se": "ভাঙায়নি", "tini": "ভাঙাননি" }
+      readings: { "ami": "bhāṅāini", "tui": "bhāṅāsni", "tumi": "bhāṅāoni", "apni": "bhāṅānni", "se": "bhāṅāyni", "tini": "bhāṅānni" }
+    - word: "bn-4482"
+      forms: { "ami": "মেলাইনি", "tui": "মেলাসনি", "tumi": "মেলাওনি", "apni": "মেলাননি", "se": "মেলায়নি", "tini": "মেলাননি" }
+      readings: { "ami": "melāini", "tui": "melāsni", "tumi": "melāoni", "apni": "melānni", "se": "melāyni", "tini": "melānni" }
+    - word: "bn-4483"
+      forms: { "ami": "ডাকাইনি", "tui": "ডাকাসনি", "tumi": "ডাকাওনি", "apni": "ডাকাননি", "se": "ডাকায়নি", "tini": "ডাকাননি" }
+      readings: { "ami": "ḍākāini", "tui": "ḍākāsni", "tumi": "ḍākāoni", "apni": "ḍākānni", "se": "ḍākāyni", "tini": "ḍākānni" }
+    - word: "bn-4484"
+      forms: { "ami": "ফেরাইনি", "tui": "ফেরাসনি", "tumi": "ফেরাওনি", "apni": "ফেরাননি", "se": "ফেরায়নি", "tini": "ফেরাননি" }
+      readings: { "ami": "pherāini", "tui": "pherāsni", "tumi": "pherāoni", "apni": "pherānni", "se": "pherāyni", "tini": "pherānni" }
+    - word: "bn-4485"
+      forms: { "ami": "খোলাইনি", "tui": "খোলাসনি", "tumi": "খোলাওনি", "apni": "খোলাননি", "se": "খোলায়নি", "tini": "খোলাননি" }
+      readings: { "ami": "kholāini", "tui": "kholāsni", "tumi": "kholāoni", "apni": "kholānni", "se": "kholāyni", "tini": "kholānni" }
+    - word: "bn-4486"
+      forms: { "ami": "বাঁধাইনি", "tui": "বাঁধাসনি", "tumi": "বাঁধাওনি", "apni": "বাঁধাননি", "se": "বাঁধায়নি", "tini": "বাঁধাননি" }
+      readings: { "ami": "bām̐dhāini", "tui": "bām̐dhāsni", "tumi": "bām̐dhāoni", "apni": "bām̐dhānni", "se": "bām̐dhāyni", "tini": "bām̐dhānni" }
+    - word: "bn-4487"
+      forms: { "ami": "জমাইনি", "tui": "জমাসনি", "tumi": "জমাওনি", "apni": "জমাননি", "se": "জমায়নি", "tini": "জমাননি" }
+      readings: { "ami": "jômāini", "tui": "jômāsni", "tumi": "jômāoni", "apni": "jômānni", "se": "jômāyni", "tini": "jômānni" }
+    - word: "bn-4488"
+      forms: { "ami": "ঢোকাইনি", "tui": "ঢোকাসনি", "tumi": "ঢোকাওনি", "apni": "ঢোকাননি", "se": "ঢোকায়নি", "tini": "ঢোকাননি" }
+      readings: { "ami": "ḍhokāini", "tui": "ḍhokāsni", "tumi": "ḍhokāoni", "apni": "ḍhokānni", "se": "ḍhokāyni", "tini": "ḍhokānni" }
+    - word: "bn-4489"
+      forms: { "ami": "ঝাড়াইনি", "tui": "ঝাড়াসনি", "tumi": "ঝাড়াওনি", "apni": "ঝাড়াননি", "se": "ঝাড়ায়নি", "tini": "ঝাড়াননি" }
+      readings: { "ami": "jhāṛāini", "tui": "jhāṛāsni", "tumi": "jhāṛāoni", "apni": "jhāṛānni", "se": "jhāṛāyni", "tini": "jhāṛānni" }
+    - word: "bn-4490"
+      forms: { "ami": "মাখাইনি", "tui": "মাখাসনি", "tumi": "মাখাওনি", "apni": "মাখাননি", "se": "মাখায়নি", "tini": "মাখাননি" }
+      readings: { "ami": "mākhāini", "tui": "mākhāsni", "tumi": "mākhāoni", "apni": "mākhānni", "se": "mākhāyni", "tini": "mākhānni" }
+    - word: "bn-4491"
+      forms: { "ami": "রাঁধাইনি", "tui": "রাঁধাসনি", "tumi": "রাঁধাওনি", "apni": "রাঁধাননি", "se": "রাঁধায়নি", "tini": "রাঁধাননি" }
+      readings: { "ami": "rām̐dhāini", "tui": "rām̐dhāsni", "tumi": "rām̐dhāoni", "apni": "rām̐dhānni", "se": "rām̐dhāyni", "tini": "rām̐dhānni" }
+    - word: "bn-4492"
+      forms: { "ami": "ধরাইনি", "tui": "ধরাসনি", "tumi": "ধরাওনি", "apni": "ধরাননি", "se": "ধরায়নি", "tini": "ধরাননি" }
+      readings: { "ami": "dhôrāini", "tui": "dhôrāsni", "tumi": "dhôrāoni", "apni": "dhôrānni", "se": "dhôrāyni", "tini": "dhôrānni" }
+    - word: "bn-4493"
+      forms: { "ami": "ছাড়াইনি", "tui": "ছাড়াসনি", "tumi": "ছাড়াওনি", "apni": "ছাড়াননি", "se": "ছাড়ায়নি", "tini": "ছাড়াননি" }
+      readings: { "ami": "chāṛāini", "tui": "chāṛāsni", "tumi": "chāṛāoni", "apni": "chāṛānni", "se": "chāṛāyni", "tini": "chāṛānni" }
+    - word: "bn-4494"
+      forms: { "ami": "সরিনি", "tui": "সরিসনি", "tumi": ["সরোনি", "সরনি"], "apni": "সরেননি", "se": "সরেনি", "tini": "সরেননি" }
+      readings: { "ami": "sorini", "tui": "sorisni", "tumi": ["sôroni", "sôrni"], "apni": "sôrenni", "se": "sôreni", "tini": "sôrenni" }
+    - word: "bn-4495"
+      forms: { "ami": "আলোচনা করিনি", "tui": "আলোচনা করিসনি", "tumi": ["আলোচনা করোনি", "আলোচনা করনি"], "apni": "আলোচনা করেননি", "se": "আলোচনা করেনি", "tini": "আলোচনা করেননি" }
+      readings: { "ami": "āloconā korini", "tui": "āloconā korisni", "tumi": ["āloconā kôroni", "āloconā kôrni"], "apni": "āloconā kôrenni", "se": "āloconā kôreni", "tini": "āloconā kôrenni" }
+    - word: "bn-4496"
+      forms: { "ami": "পরীক্ষা করিনি", "tui": "পরীক্ষা করিসনি", "tumi": ["পরীক্ষা করোনি", "পরীক্ষা করনি"], "apni": "পরীক্ষা করেননি", "se": "পরীক্ষা করেনি", "tini": "পরীক্ষা করেননি" }
+      readings: { "ami": "porikkhā korini", "tui": "porikkhā korisni", "tumi": ["porikkhā kôroni", "porikkhā kôrni"], "apni": "porikkhā kôrenni", "se": "porikkhā kôreni", "tini": "porikkhā kôrenni" }
+    - word: "bn-4497"
+      forms: { "ami": "যাচাই করিনি", "tui": "যাচাই করিসনি", "tumi": ["যাচাই করোনি", "যাচাই করনি"], "apni": "যাচাই করেননি", "se": "যাচাই করেনি", "tini": "যাচাই করেননি" }
+      readings: { "ami": "jācāi korini", "tui": "jācāi korisni", "tumi": ["jācāi kôroni", "jācāi kôrni"], "apni": "jācāi kôrenni", "se": "jācāi kôreni", "tini": "jācāi kôrenni" }
+    - word: "bn-4498"
+      forms: { "ami": "প্রস্তুত করিনি", "tui": "প্রস্তুত করিসনি", "tumi": ["প্রস্তুত করোনি", "প্রস্তুত করনি"], "apni": "প্রস্তুত করেননি", "se": "প্রস্তুত করেনি", "tini": "প্রস্তুত করেননি" }
+      readings: { "ami": "prostut korini", "tui": "prostut korisni", "tumi": ["prostut kôroni", "prostut kôrni"], "apni": "prostut kôrenni", "se": "prostut kôreni", "tini": "prostut kôrenni" }
+    - word: "bn-4499"
+      forms: { "ami": "পরিকল্পনা করিনি", "tui": "পরিকল্পনা করিসনি", "tumi": ["পরিকল্পনা করোনি", "পরিকল্পনা করনি"], "apni": "পরিকল্পনা করেননি", "se": "পরিকল্পনা করেনি", "tini": "পরিকল্পনা করেননি" }
+      readings: { "ami": "porikolponā korini", "tui": "porikolponā korisni", "tumi": ["porikolponā kôroni", "porikolponā kôrni"], "apni": "porikolponā kôrenni", "se": "porikolponā kôreni", "tini": "porikolponā kôrenni" }
+    - word: "bn-4500"
+      forms: { "ami": "অনুশীলন করিনি", "tui": "অনুশীলন করিসনি", "tumi": ["অনুশীলন করোনি", "অনুশীলন করনি"], "apni": "অনুশীলন করেননি", "se": "অনুশীলন করেনি", "tini": "অনুশীলন করেননি" }
+      readings: { "ami": "ônuśilon korini", "tui": "ônuśilon korisni", "tumi": ["ônuśilon kôroni", "ônuśilon kôrni"], "apni": "ônuśilon kôrenni", "se": "ônuśilon kôreni", "tini": "ônuśilon kôrenni" }
+    - word: "bn-4501"
+      forms: { "ami": "সম্পন্ন করিনি", "tui": "সম্পন্ন করিসনি", "tumi": ["সম্পন্ন করোনি", "সম্পন্ন করনি"], "apni": "সম্পন্ন করেননি", "se": "সম্পন্ন করেনি", "tini": "সম্পন্ন করেননি" }
+      readings: { "ami": "sômponn korini", "tui": "sômponn korisni", "tumi": ["sômponn kôroni", "sômponn kôrni"], "apni": "sômponn kôrenni", "se": "sômponn kôreni", "tini": "sômponn kôrenni" }
+    - word: "bn-4502"
+      forms: { "ami": "নির্বাচন করিনি", "tui": "নির্বাচন করিসনি", "tumi": ["নির্বাচন করোনি", "নির্বাচন করনি"], "apni": "নির্বাচন করেননি", "se": "নির্বাচন করেনি", "tini": "নির্বাচন করেননি" }
+      readings: { "ami": "nirrācon korini", "tui": "nirrācon korisni", "tumi": ["nirrācon kôroni", "nirrācon kôrni"], "apni": "nirrācon kôrenni", "se": "nirrācon kôreni", "tini": "nirrācon kôrenni" }
+    - word: "bn-4503"
+      forms: { "ami": "মূল্যায়ন করিনি", "tui": "মূল্যায়ন করিসনি", "tumi": ["মূল্যায়ন করোনি", "মূল্যায়ন করনি"], "apni": "মূল্যায়ন করেননি", "se": "মূল্যায়ন করেনি", "tini": "মূল্যায়ন করেননি" }
+      readings: { "ami": "mullāyon korini", "tui": "mullāyon korisni", "tumi": ["mullāyon kôroni", "mullāyon kôrni"], "apni": "mullāyon kôrenni", "se": "mullāyon kôreni", "tini": "mullāyon kôrenni" }
+    - word: "bn-4504"
+      forms: { "ami": "সমাধান করিনি", "tui": "সমাধান করিসনি", "tumi": ["সমাধান করোনি", "সমাধান করনি"], "apni": "সমাধান করেননি", "se": "সমাধান করেনি", "tini": "সমাধান করেননি" }
+      readings: { "ami": "sômādhān korini", "tui": "sômādhān korisni", "tumi": ["sômādhān kôroni", "sômādhān kôrni"], "apni": "sômādhān kôrenni", "se": "sômādhān kôreni", "tini": "sômādhān kôrenni" }
+    - word: "bn-4505"
+      forms: { "ami": "গ্রহণ করিনি", "tui": "গ্রহণ করিসনি", "tumi": ["গ্রহণ করোনি", "গ্রহণ করনি"], "apni": "গ্রহণ করেননি", "se": "গ্রহণ করেনি", "tini": "গ্রহণ করেননি" }
+      readings: { "ami": "grôhon korini", "tui": "grôhon korisni", "tumi": ["grôhon kôroni", "grôhon kôrni"], "apni": "grôhon kôrenni", "se": "grôhon kôreni", "tini": "grôhon kôrenni" }
+    - word: "bn-4506"
+      forms: { "ami": "বর্জন করিনি", "tui": "বর্জন করিসনি", "tumi": ["বর্জন করোনি", "বর্জন করনি"], "apni": "বর্জন করেননি", "se": "বর্জন করেনি", "tini": "বর্জন করেননি" }
+      readings: { "ami": "bôrjon korini", "tui": "bôrjon korisni", "tumi": ["bôrjon kôroni", "bôrjon kôrni"], "apni": "bôrjon kôrenni", "se": "bôrjon kôreni", "tini": "bôrjon kôrenni" }
+    - word: "bn-4507"
+      forms: { "ami": "অর্জন করিনি", "tui": "অর্জন করিসনি", "tumi": ["অর্জন করোনি", "অর্জন করনি"], "apni": "অর্জন করেননি", "se": "অর্জন করেনি", "tini": "অর্জন করেননি" }
+      readings: { "ami": "ôrjon korini", "tui": "ôrjon korisni", "tumi": ["ôrjon kôroni", "ôrjon kôrni"], "apni": "ôrjon kôrenni", "se": "ôrjon kôreni", "tini": "ôrjon kôrenni" }
+    - word: "bn-4508"
+      forms: { "ami": "উপভোগ করিনি", "tui": "উপভোগ করিসনি", "tumi": ["উপভোগ করোনি", "উপভোগ করনি"], "apni": "উপভোগ করেননি", "se": "উপভোগ করেনি", "tini": "উপভোগ করেননি" }
+      readings: { "ami": "upobhog korini", "tui": "upobhog korisni", "tumi": ["upobhog kôroni", "upobhog kôrni"], "apni": "upobhog kôrenni", "se": "upobhog kôreni", "tini": "upobhog kôrenni" }
+    - word: "bn-4509"
+      forms: { "ami": "সংগ্রহ করিনি", "tui": "সংগ্রহ করিসনি", "tumi": ["সংগ্রহ করোনি", "সংগ্রহ করনি"], "apni": "সংগ্রহ করেননি", "se": "সংগ্রহ করেনি", "tini": "সংগ্রহ করেননি" }
+      readings: { "ami": "sôṅgroh korini", "tui": "sôṅgroh korisni", "tumi": ["sôṅgroh kôroni", "sôṅgroh kôrni"], "apni": "sôṅgroh kôrenni", "se": "sôṅgroh kôreni", "tini": "sôṅgroh kôrenni" }
+    - word: "bn-4510"
+      forms: { "ami": "বিবেচনা করিনি", "tui": "বিবেচনা করিসনি", "tumi": ["বিবেচনা করোনি", "বিবেচনা করনি"], "apni": "বিবেচনা করেননি", "se": "বিবেচনা করেনি", "tini": "বিবেচনা করেননি" }
+      readings: { "ami": "bibeconā korini", "tui": "bibeconā korisni", "tumi": ["bibeconā kôroni", "bibeconā kôrni"], "apni": "bibeconā kôrenni", "se": "bibeconā kôreni", "tini": "bibeconā kôrenni" }
+    - word: "bn-4511"
+      forms: { "ami": "সংশোধন করিনি", "tui": "সংশোধন করিসনি", "tumi": ["সংশোধন করোনি", "সংশোধন করনি"], "apni": "সংশোধন করেননি", "se": "সংশোধন করেনি", "tini": "সংশোধন করেননি" }
+      readings: { "ami": "sôṅśodhon korini", "tui": "sôṅśodhon korisni", "tumi": ["sôṅśodhon kôroni", "sôṅśodhon kôrni"], "apni": "sôṅśodhon kôrenni", "se": "sôṅśodhon kôreni", "tini": "sôṅśodhon kôrenni" }
+    - word: "bn-4512"
+      forms: { "ami": "অনুমান করিনি", "tui": "অনুমান করিসনি", "tumi": ["অনুমান করোনি", "অনুমান করনি"], "apni": "অনুমান করেননি", "se": "অনুমান করেনি", "tini": "অনুমান করেননি" }
+      readings: { "ami": "ônumān korini", "tui": "ônumān korisni", "tumi": ["ônumān kôroni", "ônumān kôrni"], "apni": "ônumān kôrenni", "se": "ônumān kôreni", "tini": "ônumān kôrenni" }
+    - word: "bn-4513"
+      forms: { "ami": "স্বীকার করিনি", "tui": "স্বীকার করিসনি", "tumi": ["স্বীকার করোনি", "স্বীকার করনি"], "apni": "স্বীকার করেননি", "se": "স্বীকার করেনি", "tini": "স্বীকার করেননি" }
+      readings: { "ami": "sikār korini", "tui": "sikār korisni", "tumi": ["sikār kôroni", "sikār kôrni"], "apni": "sikār kôrenni", "se": "sikār kôreni", "tini": "sikār kôrenni" }
+    - word: "bn-4514"
+      forms: { "ami": "পর্যবেক্ষণ করিনি", "tui": "পর্যবেক্ষণ করিসনি", "tumi": ["পর্যবেক্ষণ করোনি", "পর্যবেক্ষণ করনি"], "apni": "পর্যবেক্ষণ করেননি", "se": "পর্যবেক্ষণ করেনি", "tini": "পর্যবেক্ষণ করেননি" }
+      readings: { "ami": "pôrjobekkhon korini", "tui": "pôrjobekkhon korisni", "tumi": ["pôrjobekkhon kôroni", "pôrjobekkhon kôrni"], "apni": "pôrjobekkhon kôrenni", "se": "pôrjobekkhon kôreni", "tini": "pôrjobekkhon kôrenni" }
+    - word: "bn-4515"
+      forms: { "ami": "পরিদর্শন করিনি", "tui": "পরিদর্শন করিসনি", "tumi": ["পরিদর্শন করোনি", "পরিদর্শন করনি"], "apni": "পরিদর্শন করেননি", "se": "পরিদর্শন করেনি", "tini": "পরিদর্শন করেননি" }
+      readings: { "ami": "poridorśon korini", "tui": "poridorśon korisni", "tumi": ["poridorśon kôroni", "poridorśon kôrni"], "apni": "poridorśon kôrenni", "se": "poridorśon kôreni", "tini": "poridorśon kôrenni" }
+    - word: "bn-4516"
+      forms: { "ami": "স্থাপন করিনি", "tui": "স্থাপন করিসনি", "tumi": ["স্থাপন করোনি", "স্থাপন করনি"], "apni": "স্থাপন করেননি", "se": "স্থাপন করেনি", "tini": "স্থাপন করেননি" }
+      readings: { "ami": "sthāpon korini", "tui": "sthāpon korisni", "tumi": ["sthāpon kôroni", "sthāpon kôrni"], "apni": "sthāpon kôrenni", "se": "sthāpon kôreni", "tini": "sthāpon kôrenni" }
+    - word: "bn-4517"
+      forms: { "ami": "আয়োজন করিনি", "tui": "আয়োজন করিসনি", "tumi": ["আয়োজন করোনি", "আয়োজন করনি"], "apni": "আয়োজন করেননি", "se": "আয়োজন করেনি", "tini": "আয়োজন করেননি" }
+      readings: { "ami": "āyojon korini", "tui": "āyojon korisni", "tumi": ["āyojon kôroni", "āyojon kôrni"], "apni": "āyojon kôrenni", "se": "āyojon kôreni", "tini": "āyojon kôrenni" }
+    - word: "bn-4518"
+      forms: { "ami": "প্রয়োগ করিনি", "tui": "প্রয়োগ করিসনি", "tumi": ["প্রয়োগ করোনি", "প্রয়োগ করনি"], "apni": "প্রয়োগ করেননি", "se": "প্রয়োগ করেনি", "tini": "প্রয়োগ করেননি" }
+      readings: { "ami": "prôyog korini", "tui": "prôyog korisni", "tumi": ["prôyog kôroni", "prôyog kôrni"], "apni": "prôyog kôrenni", "se": "prôyog kôreni", "tini": "prôyog kôrenni" }
+    - word: "bn-4519"
+      forms: { "ami": "বিশ্লেষণ করিনি", "tui": "বিশ্লেষণ করিসনি", "tumi": ["বিশ্লেষণ করোনি", "বিশ্লেষণ করনি"], "apni": "বিশ্লেষণ করেননি", "se": "বিশ্লেষণ করেনি", "tini": "বিশ্লেষণ করেননি" }
+      readings: { "ami": "biśleśon korini", "tui": "biśleśon korisni", "tumi": ["biśleśon kôroni", "biśleśon kôrni"], "apni": "biśleśon kôrenni", "se": "biśleśon kôreni", "tini": "biśleśon kôrenni" }
+    - word: "bn-4520"
+      forms: { "ami": "উল্লেখ করিনি", "tui": "উল্লেখ করিসনি", "tumi": ["উল্লেখ করোনি", "উল্লেখ করনি"], "apni": "উল্লেখ করেননি", "se": "উল্লেখ করেনি", "tini": "উল্লেখ করেননি" }
+      readings: { "ami": "ullekh korini", "tui": "ullekh korisni", "tumi": ["ullekh kôroni", "ullekh kôrni"], "apni": "ullekh kôrenni", "se": "ullekh kôreni", "tini": "ullekh kôrenni" }
+    - word: "bn-4521"
+      forms: { "ami": "পর্যালোচনা করিনি", "tui": "পর্যালোচনা করিসনি", "tumi": ["পর্যালোচনা করোনি", "পর্যালোচনা করনি"], "apni": "পর্যালোচনা করেননি", "se": "পর্যালোচনা করেনি", "tini": "পর্যালোচনা করেননি" }
+      readings: { "ami": "pôrjāloconā korini", "tui": "pôrjāloconā korisni", "tumi": ["pôrjāloconā kôroni", "pôrjāloconā kôrni"], "apni": "pôrjāloconā kôrenni", "se": "pôrjāloconā kôreni", "tini": "pôrjāloconā kôrenni" }
+    - word: "bn-4522"
+      forms: { "ami": "বিতরণ করিনি", "tui": "বিতরণ করিসনি", "tumi": ["বিতরণ করোনি", "বিতরণ করনি"], "apni": "বিতরণ করেননি", "se": "বিতরণ করেনি", "tini": "বিতরণ করেননি" }
+      readings: { "ami": "bitoron korini", "tui": "bitoron korisni", "tumi": ["bitoron kôroni", "bitoron kôrni"], "apni": "bitoron kôrenni", "se": "bitoron kôreni", "tini": "bitoron kôrenni" }
+    - word: "bn-4523"
+      forms: { "ami": "সংযোজন করিনি", "tui": "সংযোজন করিসনি", "tumi": ["সংযোজন করোনি", "সংযোজন করনি"], "apni": "সংযোজন করেননি", "se": "সংযোজন করেনি", "tini": "সংযোজন করেননি" }
+      readings: { "ami": "sôṅjojon korini", "tui": "sôṅjojon korisni", "tumi": ["sôṅjojon kôroni", "sôṅjojon kôrni"], "apni": "sôṅjojon kôrenni", "se": "sôṅjojon kôreni", "tini": "sôṅjojon kôrenni" }
+    - word: "bn-4524"
+      forms: { "ami": "প্রতিষ্ঠা করিনি", "tui": "প্রতিষ্ঠা করিসনি", "tumi": ["প্রতিষ্ঠা করোনি", "প্রতিষ্ঠা করনি"], "apni": "প্রতিষ্ঠা করেননি", "se": "প্রতিষ্ঠা করেনি", "tini": "প্রতিষ্ঠা করেননি" }
+      readings: { "ami": "protiśṭhā korini", "tui": "protiśṭhā korisni", "tumi": ["protiśṭhā kôroni", "protiśṭhā kôrni"], "apni": "protiśṭhā kôrenni", "se": "protiśṭhā kôreni", "tini": "protiśṭhā kôrenni" }
+rules:
+  - id: "bn-rule-past-negative-first"
+    slots: ["ami"]
+    words: [{ word: "আমি", reading: "āmi" }, { word: "আমি দেখিনি", reading: "āmi dekhini" }, { word: "আমরা", reading: "āmrā" }, { word: "আমরা দেখিনি", reading: "āmrā dekhini" }, { word: "আমি যাইনি", reading: "āmi jāini" }, { word: "আমি করিনি", reading: "āmi korini" }]
+  - id: "bn-rule-past-negative-second"
+    slots: ["tui", "tumi", "apni"]
+    words: [{ word: "তুই", reading: "tui" }, { word: "তুই দেখিসনি", reading: "tui dekhisni" }, { word: "তুমি", reading: "tumi" }, { word: "তুমি দেখোনি", reading: "tumi dekhoni" }, { word: "তুমি করনি", reading: "tumi kôrni" }, { word: "আপনি", reading: "āpni" }, { word: "আপনি দেখেননি", reading: "āpni dekhenni" }, { word: "তুই যাসনি", reading: "tui jāsni" }, { word: "তুমি যাওনি", reading: "tumi jāoni" }, { word: "আপনি যাননি", reading: "āpni jānni" }]
+  - id: "bn-rule-past-negative-third"
+    slots: ["se", "tini"]
+    words: [{ word: "সে", reading: "se" }, { word: "সে দেখেনি", reading: "se dekheni" }, { word: "তারা দেখেনি", reading: "tārā dekheni" }, { word: "তিনি", reading: "tini" }, { word: "তিনি দেখেননি", reading: "tini dekhenni" }, { word: "সে যায়নি", reading: "se jāyni" }, { word: "তিনি যাননি", reading: "tini jānni" }]
