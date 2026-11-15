@@ -470,7 +470,8 @@ units:
       - { id: "a-busy-weekend", text: { "en": "Telling where you went, when you arrived and when you left last weekend" } }
     reading_passages:
       - { id: "trip-postcard", text: { "en": "A postcard about a weekend trip" } }
-  - planned: { id: "fr-verbs-3", theme: "verbs-3", words: 45 }
+  - decks: ["fr-verbs-3", "fr-verbs-3-sentences", "fr-reading-verbs-3", "*"]
+    words: 45
     listening_passages:
       - { id: "a-busy-day", text: { "en": "Someone lists everything they did in a day" } }
     reading_passages:

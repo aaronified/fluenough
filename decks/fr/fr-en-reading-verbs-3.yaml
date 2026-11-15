@@ -1,0 +1,63 @@
+schema: 1
+id: "fr-en-reading-verbs-3"
+name: "Reading: verbs (3)"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a busy day told in a few lines, and a short diary entry. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-a-busy-day"
+    title: "A busy day"
+    theme: "verbs-3"
+    sentences:
+      - text: "Ce matin, j'ai téléphoné à ma sœur et j'ai confirmé le rendez-vous."
+      - text: "Ensuite, j'ai rejoint mes amis au café, et nous avons bâillé de fatigue."
+      - text: "L'après-midi, j'ai annulé la réunion et j'ai rangé mon bureau."
+      - text: "Le soir, je prépare le dîner et je mets la table."
+    questions:
+      - id: "fr-3295"
+        prompt: { en: "Who did the speaker phone in the morning?" }
+        options:
+          - { en: "Their sister" }
+          - { en: "A doctor" }
+          - { en: "A teacher" }
+        answer: 1
+      - id: "fr-3296"
+        prompt: { en: "What did the speaker cancel?" }
+        options:
+          - { en: "The meeting" }
+          - { en: "The dinner" }
+          - { en: "The train" }
+        answer: 1
+      - id: "fr-3297"
+        prompt: { en: "The speaker met friends at the café." }
+        answer: true
+  - id: "fr-diary-entry"
+    title: "Diary entry"
+    theme: "verbs-3"
+    sentences:
+      - text: "Lundi 12 mars. Aujourd'hui, j'ai hésité avant de partir."
+      - text: "J'ai réuni mes documents et j'ai remplacé la lampe."
+      - text: "Mon voisin m'a montré son nouveau jardin."
+      - text: "Demain, je dois téléphoner à la banque."
+    questions:
+      - id: "fr-3298"
+        prompt: { en: "What did the writer do with the lamp?" }
+        options:
+          - { en: "Replaced it" }
+          - { en: "Broke it" }
+          - { en: "Sold it" }
+        answer: 1
+      - id: "fr-3299"
+        prompt: { en: "What will the writer do tomorrow?" }
+        options:
+          - { en: "Phone the bank" }
+          - { en: "Cancel a trip" }
+          - { en: "Visit a doctor" }
+        answer: 1
+      - id: "fr-3300"
+        prompt: { en: "The neighbour showed the writer a garden." }
+        answer: true
