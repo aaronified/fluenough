@@ -69,17 +69,17 @@ units:
   # 2. The first word units.
   - decks: ["kn-sound-differences"]
     words: 12
-  - decks: ["kn-questions", "*"]
+  - decks: ["kn-questions", "kn-questions-sentences", "*"]
     words: 9
-  - decks: ["kn-addressing", "*"]
+  - decks: ["kn-addressing", "kn-addressing-sentences", "*"]
     words: 12
-  - decks: ["kn-pronouns", "*"]
+  - decks: ["kn-pronouns", "kn-pronouns-sentences", "*"]
     words: 24
     listening_passages:
       - { id: "who-is-who", text: { "en": "Pointing out who is who at a family gathering: he, she, they" } }
     reading_passages:
       - { id: "seating-chart", text: { "en": "A seating chart for a wedding lunch, with names and who is related to whom" } }
-  - decks: ["kn-family", "*"]
+  - decks: ["kn-family", "kn-family-sentences", "*"]
     words: 23
   # 3. The script, after the first six units (#554: skipped by a learner
   # who already reads it).
@@ -90,15 +90,15 @@ units:
     words: 20
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
-  - decks: ["kn-about-me", "*"]
+  - decks: ["kn-about-me", "kn-about-me-sentences", "*"]
     words: 7
-  - decks: ["kn-verbs", "*"]
+  - decks: ["kn-verbs", "kn-verbs-sentences", "*"]
     words: 30
     listening_passages:
       - { id: "morning-routine", text: { "en": "A mother says what each person in the house does in the morning" } }
     reading_passages:
       - { id: "fridge-note", text: { "en": "A note on the fridge: what to eat, what to drink and where things are" } }
-  - decks: ["kn-adverbs", "*"]
+  - decks: ["kn-adverbs", "kn-adverbs-sentences", "*"]
     words: 45
     listening_passages:
       - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
@@ -110,21 +110,21 @@ units:
       - { id: "at-the-grocers", text: { "en": "Asking how much and how many at a grocer's" } }
     reading_passages:
       - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
-  - decks: ["kn-describing", "*"]
+  - decks: ["kn-describing", "kn-describing-sentences", "*"]
     words: 28
     listening_passages:
       - { id: "how-are-you-feeling", text: { "en": "A friend asks how you feel today, and you answer" } }
     reading_passages:
       - { id: "postcard-from-the-hills", text: { "en": "A short postcard: the weather and the food" } }
-  - decks: ["kn-time", "*"]
+  - decks: ["kn-time", "kn-time-sentences", "*"]
     words: 18
-  - decks: ["kn-more-verbs", "*"]
+  - decks: ["kn-more-verbs", "kn-more-verbs-sentences", "*"]
     words: 25
     listening_passages:
       - { id: "kitchen-help", text: { "en": "Someone tells a helper what to do in the kitchen" } }
     reading_passages:
       - { id: "how-to-make-tea", text: { "en": "A short card on how to make tea" } }
-  - decks: ["kn-work", "*"]
+  - decks: ["kn-work", "kn-work-sentences", "*"]
     words: 17
   # 5. Rules as forms, practised on the words known: noun forms and
   # conjunctions first, then pronoun and verb forms. The postpositions deck
@@ -163,17 +163,17 @@ units:
     grammar: ["adjectives"]
   # 6. Sentences, each after its words and rules; then the other A1
   # themes, each its words, its rules, then its sentences.
-  - decks: ["kn-numbers-big", "*"]
+  - decks: ["kn-numbers-big", "kn-numbers-big-sentences", "*"]
     words: 23
-  - decks: ["kn-food", "*"]
+  - decks: ["kn-food", "kn-food-sentences", "*"]
     words: 59
     listening_passages:
       - { id: "at-the-sweet-shop", text: { "en": "Choosing sweets and snacks at a sweet shop" } }
     reading_passages:
       - { id: "menu-card", text: { "en": "A restaurant menu card with dishes and prices" } }
-  - decks: ["kn-groceries", "*"]
+  - decks: ["kn-groceries", "kn-groceries-sentences", "*"]
     words: 15
-  - decks: ["kn-market", "*"]
+  - decks: ["kn-market", "kn-market-sentences", "*"]
     words: 8
   - decks: ["kn-grammar-questions"]
     words: 0
@@ -187,30 +187,30 @@ units:
   - decks: ["kn-grammar-differences"]
     words: 3
     grammar: ["differences"]
-  - decks: ["kn-directions", "kn-grammar-continuous", "*"]
+  - decks: ["kn-directions", "kn-directions-sentences", "kn-grammar-continuous", "*"]
     words: 12
     grammar: ["continuous"]
-  - decks: ["kn-transport", "*"]
+  - decks: ["kn-transport", "kn-transport-sentences", "*"]
     words: 9
-  - decks: ["kn-body", "*"]
+  - decks: ["kn-body", "kn-body-sentences", "*"]
     words: 35
     listening_passages:
       - { id: "at-the-doctors", text: { "en": "Telling a doctor where it hurts" } }
     reading_passages:
       - { id: "stretching-chart", text: { "en": "A chart of simple morning stretches" } }
-  - decks: ["kn-places", "*"]
+  - decks: ["kn-places", "kn-places-sentences", "*"]
     words: 56
     listening_passages:
       - { id: "walk-to-the-market", text: { "en": "A neighbour names the places you pass on the way to the market" } }
     reading_passages:
       - { id: "street-signs", text: { "en": "Signs along a street: pharmacy, school, bank, temple" } }
-  - decks: ["kn-things", "*"]
+  - decks: ["kn-things", "kn-things-sentences", "*"]
     words: 32
     listening_passages:
       - { id: "packing-for-a-trip", text: { "en": "Two people pack a bag for a trip to the hills" } }
     reading_passages:
       - { id: "lost-property-list", text: { "en": "A lost-property list at a railway station" } }
-  - decks: ["kn-home", "*"]
+  - decks: ["kn-home", "kn-home-sentences", "*"]
     words: 20
   - decks: ["kn-grammar-postpositions"]
     words: 4
@@ -221,13 +221,13 @@ units:
   - decks: ["kn-grammar-articles", "kn-grammar-gender-number"]
     words: 0
     grammar: ["articles", "gender-number"]
-  - decks: ["kn-clothes", "*"]
+  - decks: ["kn-clothes", "kn-clothes-sentences", "*"]
     words: 26
     listening_passages:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
     reading_passages:
       - { id: "shop-offer-sign", text: { "en": "A clothes shop's sign with its offers" } }
-  - decks: ["kn-animals", "*"]
+  - decks: ["kn-animals", "kn-animals-sentences", "*"]
     words: 26
     listening_passages:
       - { id: "village-visit", text: { "en": "A child names the animals seen on a visit to a village" } }
@@ -239,16 +239,16 @@ units:
     milestone: "A1"
   # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
   # then its sentences.
-  - decks: ["kn-daily-life", "kn-grammar-negative", "*"]
+  - decks: ["kn-daily-life", "kn-daily-life-sentences", "kn-grammar-negative", "*"]
     words: 15
     grammar: ["negative"]
-  - decks: ["kn-weather", "*"]
+  - decks: ["kn-weather", "kn-weather-sentences", "*"]
     words: 45
     listening_passages:
       - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain and wind" } }
     reading_passages:
       - { id: "weather-message", text: { "en": "A message to a friend about the monsoon" } }
-  - decks: ["kn-calendar", "kn-grammar-past", "*"]
+  - decks: ["kn-calendar", "kn-calendar-sentences", "kn-grammar-past", "*"]
     words: 16
     grammar: ["past"]
   - decks: ["kn-grammar-past-more", "kn-grammar-conjunct-verbs", "kn-grammar-compound-verbs"]
@@ -268,27 +268,27 @@ units:
       - { id: "which-floor", text: { "en": "Finding a flat: the first floor, the second, the third" } }
     reading_passages:
       - { id: "month-calendar", text: { "en": "A calendar of events: the first, second and third week of the month" } }
-  - decks: ["kn-festivals", "*"]
+  - decks: ["kn-festivals", "kn-festivals-sentences", "*"]
     words: 38
     listening_passages:
       - { id: "festival-days", text: { "en": "Neighbours plan the days of a festival together" } }
     reading_passages:
       - { id: "festival-invitation", text: { "en": "An invitation to a festival meal" } }
-  - decks: ["kn-shopping", "*"]
+  - decks: ["kn-shopping", "kn-shopping-sentences", "*"]
     words: 41
     listening_passages:
       - { id: "bargaining", text: { "en": "Bargaining politely at a market stall" } }
     reading_passages:
       - { id: "price-list", text: { "en": "A shop's price list and its offers" } }
-  - decks: ["kn-illness", "*"]
+  - decks: ["kn-illness", "kn-illness-sentences", "*"]
     words: 31
     listening_passages:
       - { id: "a-cold-and-a-fever", text: { "en": "Telling a friend you have a cold and a fever" } }
     reading_passages:
       - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
-  - decks: ["kn-eating-out", "*"]
+  - decks: ["kn-eating-out", "kn-eating-out-sentences", "*"]
     words: 9
-  - decks: ["kn-cooking", "*"]
+  - decks: ["kn-cooking", "kn-cooking-sentences", "*"]
     words: 48
     listening_passages:
       - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes a dish" } }
@@ -301,16 +301,16 @@ units:
       - { id: "which-is-better", text: { "en": "Two friends compare two phones" } }
     reading_passages:
       - { id: "two-cities", text: { "en": "A short text comparing two cities" } }
-  - decks: ["kn-help", "kn-grammar-irregular", "kn-grammar-pitfalls", "*"]
+  - decks: ["kn-help", "kn-help-sentences", "kn-grammar-irregular", "kn-grammar-pitfalls", "*"]
     words: 6
     grammar: ["irregular", "pitfalls"]
-  - decks: ["kn-school", "*"]
+  - decks: ["kn-school", "kn-school-sentences", "*"]
     words: 30
     listening_passages:
       - { id: "school-day", text: { "en": "A child describes the school day" } }
     reading_passages:
       - { id: "class-timetable", text: { "en": "A school timetable" } }
-  - decks: ["kn-hobbies", "*"]
+  - decks: ["kn-hobbies", "kn-hobbies-sentences", "*"]
     words: 22
     listening_passages:
       - { id: "weekend-hobbies", text: { "en": "Friends talk about what they do at weekends" } }
@@ -323,37 +323,37 @@ units:
       - { id: "what-was-happening", text: { "en": "Saying what you were doing when the lights went out" } }
     reading_passages:
       - { id: "power-cut-story", text: { "en": "A short story of an evening during a power cut" } }
-  - decks: ["kn-chores", "*"]
+  - decks: ["kn-chores", "kn-chores-sentences", "*"]
     words: 24
     listening_passages:
       - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
     reading_passages:
       - { id: "chore-list", text: { "en": "A weekly chore list on the wall" } }
-  - decks: ["kn-appearance", "*"]
+  - decks: ["kn-appearance", "kn-appearance-sentences", "*"]
     words: 27
     listening_passages:
       - { id: "describing-a-friend", text: { "en": "Describing a friend to someone who will meet them at the station" } }
     reading_passages:
       - { id: "lost-and-found-notice", text: { "en": "A lost-and-found notice describing a bag" } }
-  - decks: ["kn-verbs-3", "*"]
+  - decks: ["kn-verbs-3", "kn-verbs-3-sentences", "*"]
     words: 30
     listening_passages:
       - { id: "a-busy-day", text: { "en": "Someone lists everything they did in a day" } }
     reading_passages:
       - { id: "diary-entry", text: { "en": "A short diary entry" } }
-  - decks: ["kn-phone", "*"]
+  - decks: ["kn-phone", "kn-phone-sentences", "*"]
     words: 24
     listening_passages:
       - { id: "phone-call", text: { "en": "A phone call to arrange a meeting" } }
     reading_passages:
       - { id: "text-messages", text: { "en": "A few text messages between friends" } }
-  - decks: ["kn-journey", "*"]
+  - decks: ["kn-journey", "kn-journey-sentences", "*"]
     words: 22
     listening_passages:
       - { id: "ticket-counter", text: { "en": "Buying a train ticket at the counter" } }
     reading_passages:
       - { id: "train-timetable", text: { "en": "A train timetable and a platform notice" } }
-  - decks: ["kn-nature", "*"]
+  - decks: ["kn-nature", "kn-nature-sentences", "*"]
     words: 23
     listening_passages:
       - { id: "walk-by-the-river", text: { "en": "Two people describe a walk by the river at dusk" } }
@@ -366,19 +366,19 @@ units:
       - { id: "what-i-did-today", text: { "en": "Telling a day as one chain of actions" } }
     reading_passages:
       - { id: "travel-diary", text: { "en": "A travel diary that chains what happened" } }
-  - decks: ["kn-adjectives-2", "*"]
+  - decks: ["kn-adjectives-2", "kn-adjectives-2-sentences", "*"]
     words: 20
     listening_passages:
       - { id: "describing-a-room", text: { "en": "Describing a rented room" } }
     reading_passages:
       - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
-  - decks: ["kn-workplace", "*"]
+  - decks: ["kn-workplace", "kn-workplace-sentences", "*"]
     words: 22
     listening_passages:
       - { id: "first-day-at-work", text: { "en": "A new colleague's first day" } }
     reading_passages:
       - { id: "office-notice", text: { "en": "An office notice about a meeting" } }
-  - decks: ["kn-geography", "*"]
+  - decks: ["kn-geography", "kn-geography-sentences", "*"]
     words: 22
     listening_passages:
       - { id: "where-in-karnataka", text: { "en": "Naming districts and cities of Karnataka" } }
@@ -386,21 +386,21 @@ units:
       - { id: "karnataka-map", text: { "en": "A map caption: Karnataka and its districts" } }
     milestone: "A2"
   # B1: the themes and grammar of the CEFR's B1.
-  - decks: ["kn-registers"]
+  - decks: ["kn-registers", "kn-registers-sentences"]
     words: 15
-  - decks: ["kn-health", "*"]
+  - decks: ["kn-health", "kn-health-sentences", "*"]
     words: 21
     listening_passages:
       - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
     reading_passages:
       - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
-  - decks: ["kn-feelings", "*"]
+  - decks: ["kn-feelings", "kn-feelings-sentences", "*"]
     words: 26
     listening_passages:
       - { id: "a-hard-week", text: { "en": "A friend says how the week made them feel" } }
     reading_passages:
       - { id: "letter-to-a-friend", text: { "en": "A letter to a friend about worries and hopes" } }
-  - decks: ["kn-slang"]
+  - decks: ["kn-slang", "kn-slang-sentences"]
     words: 10
   - decks: ["kn-grammar-relative"]
     words: 0
@@ -409,13 +409,13 @@ units:
       - { id: "the-man-who-came", text: { "en": "Describing people by what they did: the one who came, the one who left" } }
     reading_passages:
       - { id: "shop-reviews", text: { "en": "Short reviews of a shop and its staff" } }
-  - decks: ["kn-news", "*"]
+  - decks: ["kn-news", "kn-news-sentences", "*"]
     words: 22
     listening_passages:
       - { id: "radio-news", text: { "en": "A short radio news bulletin" } }
     reading_passages:
       - { id: "headline-list", text: { "en": "A list of newspaper headlines" } }
-  - decks: ["kn-opinions", "*"]
+  - decks: ["kn-opinions", "kn-opinions-sentences", "*"]
     words: 23
     listening_passages:
       - { id: "agreeing-and-disagreeing", text: { "en": "Two friends agree and disagree politely over tea" } }
@@ -438,19 +438,19 @@ units:
       - { id: "rain-plans", text: { "en": "A friend's plans if it rains" } }
     reading_passages:
       - { id: "late-train", text: { "en": "A message: if the train is late" } }
-  - decks: ["kn-travel", "*"]
+  - decks: ["kn-travel", "kn-travel-sentences", "*"]
     words: 21
     listening_passages:
       - { id: "hotel-booking", text: { "en": "Booking a hotel room over the phone" } }
     reading_passages:
       - { id: "itinerary", text: { "en": "A two-day trip itinerary" } }
-  - decks: ["kn-services", "*"]
+  - decks: ["kn-services", "kn-services-sentences", "*"]
     words: 20
     listening_passages:
       - { id: "at-the-post-office", text: { "en": "Sending a parcel at the post office counter" } }
     reading_passages:
       - { id: "bank-form", text: { "en": "A simple bank form" } }
-  - decks: ["kn-government", "*"]
+  - decks: ["kn-government", "kn-government-sentences", "*"]
     words: 17
     listening_passages:
       - { id: "at-the-office", text: { "en": "Asking an officer which document is needed" } }
@@ -463,13 +463,13 @@ units:
       - { id: "why-are-you-going", text: { "en": "Saying what you are going somewhere to do" } }
     reading_passages:
       - { id: "course-advert", text: { "en": "An advert for a course: what it is for" } }
-  - decks: ["kn-technology", "*"]
+  - decks: ["kn-technology", "kn-technology-sentences", "*"]
     words: 20
     listening_passages:
       - { id: "fixing-a-phone", text: { "en": "Asking a shop to fix a phone" } }
     reading_passages:
       - { id: "app-instructions", text: { "en": "Instructions inside a phone app" } }
-  - decks: ["kn-careers", "*"]
+  - decks: ["kn-careers", "kn-careers-sentences", "*"]
     words: 19
     listening_passages:
       - { id: "job-interview", text: { "en": "A short job interview" } }
@@ -482,13 +482,13 @@ units:
       - { id: "order-of-events", text: { "en": "Saying what happens before and after what" } }
     reading_passages:
       - { id: "event-schedule", text: { "en": "A schedule of an event day" } }
-  - decks: ["kn-environment", "*"]
+  - decks: ["kn-environment", "kn-environment-sentences", "*"]
     words: 20
     listening_passages:
       - { id: "monsoon-and-the-river", text: { "en": "Neighbours talk about the monsoon and the Kaveri in flood" } }
     reading_passages:
       - { id: "clean-up-notice", text: { "en": "A notice for a neighbourhood clean-up" } }
-  - decks: ["kn-agriculture", "*"]
+  - decks: ["kn-agriculture", "kn-agriculture-sentences", "*"]
     words: 23
     listening_passages:
       - { id: "a-farmer-talks", text: { "en": "A farmer talks about the season's ragi, coffee and areca" } }
@@ -501,13 +501,13 @@ units:
       - { id: "doing-two-things", text: { "en": "Saying what people do while doing something else" } }
     reading_passages:
       - { id: "a-day-on-the-bus", text: { "en": "A short story of a bus ride" } }
-  - decks: ["kn-cinema", "*"]
+  - decks: ["kn-cinema", "kn-cinema-sentences", "*"]
     words: 19
     listening_passages:
       - { id: "after-the-film", text: { "en": "Friends talk about a film they saw" } }
     reading_passages:
       - { id: "film-review", text: { "en": "A short film review" } }
-  - decks: ["kn-arts", "*"]
+  - decks: ["kn-arts", "kn-arts-sentences", "*"]
     words: 17
     listening_passages:
       - { id: "a-music-class", text: { "en": "A teacher explains a music class" } }
@@ -520,13 +520,13 @@ units:
       - { id: "having-things-done", text: { "en": "Asking someone to get things done: have it made, have it repaired" } }
     reading_passages:
       - { id: "service-request", text: { "en": "A written service request" } }
-  - decks: ["kn-history", "*"]
+  - decks: ["kn-history", "kn-history-sentences", "*"]
     words: 17
     listening_passages:
       - { id: "a-fort-visit", text: { "en": "A guide tells the story of an old fort" } }
     reading_passages:
       - { id: "museum-card", text: { "en": "A museum card about a ruler" } }
-  - decks: ["kn-weddings", "*"]
+  - decks: ["kn-weddings", "kn-weddings-sentences", "*"]
     words: 18
     listening_passages:
       - { id: "wedding-plans", text: { "en": "Relatives plan a wedding" } }
@@ -539,13 +539,13 @@ units:
       - { id: "even-though", text: { "en": "Saying something happened even though it was hard" } }
     reading_passages:
       - { id: "a-hard-choice", text: { "en": "A short text about a hard choice" } }
-  - decks: ["kn-sports", "*"]
+  - decks: ["kn-sports", "kn-sports-sentences", "*"]
     words: 16
     listening_passages:
       - { id: "cricket-talk", text: { "en": "Friends talk about a cricket match" } }
     reading_passages:
       - { id: "match-report", text: { "en": "A short match report" } }
-  - decks: ["kn-relationships", "*"]
+  - decks: ["kn-relationships", "kn-relationships-sentences", "*"]
     words: 19
     listening_passages:
       - { id: "neighbours-and-friends", text: { "en": "Talking about neighbours and old friends" } }
@@ -558,13 +558,13 @@ units:
       - { id: "someone-somewhere", text: { "en": "Talking about someone, something and somewhere" } }
     reading_passages:
       - { id: "lost-property-notice", text: { "en": "A notice about something someone lost" } }
-  - decks: ["kn-housing", "*"]
+  - decks: ["kn-housing", "kn-housing-sentences", "*"]
     words: 15
     listening_passages:
       - { id: "renting-a-flat", text: { "en": "Asking an owner about a flat to rent" } }
     reading_passages:
       - { id: "rental-terms", text: { "en": "The terms of a rental" } }
-  - decks: ["kn-emergencies", "*"]
+  - decks: ["kn-emergencies", "kn-emergencies-sentences", "*"]
     words: 13
     listening_passages:
       - { id: "calling-for-help", text: { "en": "Calling for help after an accident" } }
@@ -577,13 +577,13 @@ units:
       - { id: "only-this-one", text: { "en": "Insisting on one choice" } }
     reading_passages:
       - { id: "advert-slogans", text: { "en": "Short advert slogans" } }
-  - decks: ["kn-law", "*"]
+  - decks: ["kn-law", "kn-law-sentences", "*"]
     words: 16
     listening_passages:
       - { id: "police-complaint", text: { "en": "Making a complaint at a police station" } }
     reading_passages:
       - { id: "rights-leaflet", text: { "en": "A leaflet on a tenant's rights" } }
-  - decks: ["kn-verbs-4", "*"]
+  - decks: ["kn-verbs-4", "kn-verbs-4-sentences", "*"]
     words: 22
     listening_passages:
       - { id: "a-long-story", text: { "en": "A story told in a sequence of events" } }
@@ -596,13 +596,13 @@ units:
       - { id: "it-was-done", text: { "en": "Saying what was done, without saying by whom" } }
     reading_passages:
       - { id: "notice-board", text: { "en": "A notice board with announcements" } }
-  - decks: ["kn-abstract-words", "*"]
+  - decks: ["kn-abstract-words", "kn-abstract-words-sentences", "*"]
     words: 24
     listening_passages:
       - { id: "a-discussion", text: { "en": "A short discussion of an idea" } }
     reading_passages:
       - { id: "opinion-column", text: { "en": "A short opinion column" } }
-  - decks: ["kn-money", "*"]
+  - decks: ["kn-money", "kn-money-sentences", "*"]
     words: 18
     listening_passages:
       - { id: "at-the-bank", text: { "en": "Opening an account at a bank counter" } }
@@ -615,13 +615,13 @@ units:
       - { id: "he-said-that", text: { "en": "Telling someone what a third person said" } }
     reading_passages:
       - { id: "message-thread", text: { "en": "A message thread passing on what someone said" } }
-  - decks: ["kn-literature", "*"]
+  - decks: ["kn-literature", "kn-literature-sentences", "*"]
     words: 21
     listening_passages:
       - { id: "a-poem-read-aloud", text: { "en": "A teacher reads a short poem and explains it" } }
     reading_passages:
       - { id: "book-blurb", text: { "en": "The back-cover blurb of a novel" } }
-  - decks: ["kn-verbs-5", "*"]
+  - decks: ["kn-verbs-5", "kn-verbs-5-sentences", "*"]
     words: 19
     listening_passages:
       - { id: "what-happened-next", text: { "en": "Telling a long story with every step in order" } }

@@ -1,0 +1,88 @@
+schema: 1
+id: "kn-things-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-7418"
+    target: "ಇದು ನನ್ನ ಪುಸ್ತಕ."
+    reading: "idu nanna pustaka."
+    ipa: "id̪u nanna pust̪aka"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ನನ್ನ", ref: "kn-0619" }
+      - { word: "ಪುಸ್ತಕ", ref: "kn-0875" }
+  - id: "kn-7419"
+    target: "ನನ್ನ ಪೆನ್ನು ಎಲ್ಲಿ?"
+    reading: "nanna pennu elli?"
+    ipa: "nanna pennu elli"
+    pos: "phrase"
+    bases:
+      - { word: "ನನ್ನ", ref: "kn-0619" }
+      - { word: "ಪೆನ್ನು", ref: "kn-0876" }
+      - { word: "ಎಲ್ಲಿ", ref: "kn-0169" }
+  - id: "kn-7420"
+    target: "ಗಡಿಯಾರ ಇಲ್ಲಿ ಇದೆ."
+    reading: "gaḍiyāra illi ide."
+    ipa: "ɡaɖijaːra illi id̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ಗಡಿಯಾರ", ref: "kn-0878" }
+      - { word: "ಇಲ್ಲಿ", ref: "kn-0375" }
+      - { word: "ಇದೆ", base: "ಇರು", reading: "iru" }
+  - id: "kn-7421"
+    target: "ನನಗೆ ಕೀಲಿ ಬೇಕು."
+    reading: "nanage kīli bēku."
+    ipa: "nanaɡe kiːli beːku"
+    pos: "phrase"
+    bases:
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಕೀಲಿ", ref: "kn-0880" }
+      - { word: "ಬೇಕು", base: "ಬೇಕು", reading: "bēku" }
+  - id: "kn-7422"
+    target: "ಇದು ನನ್ನ ಫೋನ್."
+    reading: "idu nanna phōn."
+    ipa: "id̪u nanna pʰoːn"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ನನ್ನ", ref: "kn-0619" }
+      - { word: "ಫೋನ್", ref: "kn-0879" }
+  - id: "kn-7423"
+    target: "ಕನ್ನಡಿ ಎಲ್ಲಿ?"
+    reading: "kannaḍi elli?"
+    ipa: "kannaɖi elli"
+    pos: "phrase"
+    bases:
+      - { word: "ಕನ್ನಡಿ", ref: "kn-0883" }
+      - { word: "ಎಲ್ಲಿ", ref: "kn-0169" }
+  - id: "kn-7424"
+    target: "ದಿಂಬು ಹಾಸಿಗೆಯಲ್ಲಿ ಇದೆ."
+    reading: "dimbu hāsigeyalli ide."
+    ipa: "d̪imbu haːsiɡejalli id̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ದಿಂಬು", ref: "kn-0886" }
+      - { word: "ಹಾಸಿಗೆಯಲ್ಲಿ", base: "ಹಾಸಿಗೆ", reading: "hāsige" }
+      - { word: "ಇದೆ", base: "ಇರು", reading: "iru" }
+  - id: "kn-7425"
+    target: "ಕಾಗದ ಇದೆ."
+    reading: "kāgada ide."
+    ipa: "kaːɡad̪a id̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ಕಾಗದ", ref: "kn-0877" }
+      - { word: "ಇದೆ", base: "ಇರು", reading: "iru" }
+  - id: "kn-7426"
+    target: "ಕತ್ತರಿ ಎಲ್ಲಿ?"
+    reading: "kattari elli?"
+    ipa: "kat̪t̪ari elli"
+    pos: "phrase"
+    bases:
+      - { word: "ಕತ್ತರಿ", ref: "kn-0893" }
+      - { word: "ಎಲ್ಲಿ", ref: "kn-0169" }
