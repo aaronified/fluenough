@@ -1,0 +1,45 @@
+schema: 1
+id: "hi-en-multiword-compound-verbs"
+kind: "layer"
+core: "hi-multiword-compound-verbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Compound verbs: a stem and a vector verb"
+description: "A verb stem with a second verb such as जाना (jānā) or देना (dēnā) that adds a direction or a sense: the second verb changes the meaning. Not yet checked by a Hindi speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "hi-4400":
+    native: "to bring"
+    notes:
+      "u1": "The stem ले (lē) of लेना (lenā), to take, with आना (ānā): आना adds movement toward the speaker, so the thing is brought here."
+    bases:
+      "ले": "take (stem)"
+      "आना": "to come"
+  "hi-4401":
+    native: "to take away"
+    notes:
+      "u1": "The stem ले (lē) with जाना (jānā): जाना adds movement away from the speaker, so the thing is taken there."
+    bases:
+      "ले": "take (stem)"
+      "जाना": "to go"
+  "hi-4402":
+    native: "to leave; to go off"
+    notes:
+      "u1": "The stem निकल (nikal) of निकलना (nikalnā), to come out, with जाना (jānā): जाना adds that the leaving is complete and the one leaving is gone."
+    bases:
+      "निकल": "come out (stem)"
+      "जाना": "to go"
+  "hi-4403":
+    native: "to kill"
+    notes:
+      "u1": "The stem मार (mār) of मारना (mārnā), to hit, with डालना (ḍālnā): डालना adds that the action is thorough, here to kill."
+    bases:
+      "मार": "hit (stem)"
+      "डालना": "to throw; to put"
+  "hi-4404":
+    native: "to let go; to leave"
+    notes:
+      "u1": "The stem छोड़ (chōṛ) of छोड़ना (chōṛnā), to leave, with देना (dēnā), to give: देना adds the sense of letting go, or of doing it for someone."
+    bases:
+      "छोड़": "leave (stem)"
+      "देना": "to give"
