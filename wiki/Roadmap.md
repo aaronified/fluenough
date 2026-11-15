@@ -6,6 +6,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ## Released
 
+- **v0.10.3**
 - **v0.10.2**
 - **v0.10.1**
 - **v0.10.0**
@@ -361,6 +362,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1269](https://github.com/aaronified/fluenough/issues/1269) Situations: more icon keys, so a language can have more than six situations
 - [#1270](https://github.com/aaronified/fluenough/issues/1270) Placement admission: stored verdict is keyed to one deck snapshot, so live decks have none
 - [#1295](https://github.com/aaronified/fluenough/issues/1295) Telugu cards disagree on the medial anusvara reading (ṁ, ṅ, n, m)
+- [#1357](https://github.com/aaronified/fluenough/issues/1357) Telugu transcription: hyphen-initial suffixes are mis-transcribed (-ina, -aṁ)
 
 ## Plans
 
