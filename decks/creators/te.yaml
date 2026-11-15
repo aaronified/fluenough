@@ -14,10 +14,6 @@ eras:
     name: { en: "Vijayanagara" }
     from: 1336
     to: 1646
-  - id: "nayaka"
-    name: { en: "Nayaka" }
-    from: 1529
-    to: 1800
   - id: "colonial"
     name: { en: "Colonial" }
     from: 1800
@@ -26,6 +22,11 @@ eras:
     name: { en: "Twentieth century" }
     from: 1900
     to: 2000
+  - id: "nayaka"
+    name: { te: "నాయక కాలం", en: "Nayaka period" }
+    reading: { te: "nāyaka kālaṁ" }
+    from: 1500
+    to: 1800
 creators:
   - id: "te-k-viswanath"
     name:
@@ -139,3 +140,15 @@ creators:
       items:
         - { kind: "other", text: { en: "The English Wikipedia article says he is called the Andhra Scott, after Walter Scott." }, source: { url: "https://en.wikipedia.org/wiki/Chilakamarti_Lakshmi_Narasimham", accessed: "2026-11-15" } }
         - { kind: "other", text: { en: "The same article dates his novel Hemalatha to 1896." }, source: { url: "https://en.wikipedia.org/wiki/Chilakamarti_Lakshmi_Narasimham", accessed: "2026-11-15" } }
+  - id: "te-vemana"
+    name:
+      en: { text: "Yogi Vemana" }
+    born: { year: 1652, circa: true }
+    died: { year: 1730, circa: true }
+    era: "nayaka"
+    bio:
+      en: "Yogi Vemana was a Telugu poet who wrote short verses about morals in a simple, everyday style. Scholars do not agree on his dates, so the years here are estimates."
+    legacy:
+      text: { en: "Many lines of his poems are now everyday Telugu sayings." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article says many lines of his poems are now colloquial phrases of the Telugu language." }, source: { url: "https://en.wikipedia.org/wiki/Vemana", accessed: "2026-11-15" } }
