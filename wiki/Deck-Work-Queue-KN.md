@@ -54,3 +54,41 @@ State was read from `origin/decks-live` on 2026-11-15 with PyYAML over every `de
 | KN-090..091 | Sonnet | report only | Read the 30 grammar cores against the full-table rule (owner 2026-10-23) and script-conjunct coverage |
 | KN-110..112 | Sonnet design, then tools | `phonetics/kn` (tools PR to main) | `kn` entry in `tools/phonetic_languages.yaml`, `decks/kn/kn-phonetics.yaml` rules (lessons of #1369 and Telugu #1390), then `import_phonetic.py`/`derive_phonetic.py` over all cards |
 | KN-120 | Haiku | rides on each wave | Review-queue rows for every uncertain card |
+
+## 4. KN-110: narrow IPA for Kannada (design and runbook, 2026-11-15)
+
+Status: designed and built on two branches, not merged. No pull request is open.
+
+| Part | Branch | What |
+|---|---|---|
+| Registry | `tools/kn-phonetics` (off main) | `kn` entry in `tools/phonetic_languages.yaml`: dump `Kannada`, `untagged: false`, no notes, no tags, no `normalise`. Rules only, as Assamese |
+| Rules and cards | `decks/kn-phonetics-wave1` (off decks-live) | `decks/kn/kn-phonetics.yaml` (7 rules) and `phonetic` plus `phonetic_source: "rules"` on the 1,715 cards that had a broad `ipa` |
+
+**Why no Wiktionary import.** The kaikki.org dump `Kannada` (9 MB, modified 2026-10-30, fetched through the proxy 2026-11-15) holds 27 narrow `[ ]` forms in all: letter and vowel-sign names, the anusvara with notes (`normally`, `before gutturals`, ...) and four words (ಕೊಟ್ಟಿಗೆ `[kɔʈ.ʈɪ.ɡɛ]`, ಬುಟ್ಟಿ `[buʈːi]`, ಪರ್ಣ `[parɳa]`, ಕಫ `[kɐ.fa]`) written with syllable dots and in three conventions. `import_phonetic.py kn --dump` reports 0 filled. The entry therefore takes no untagged form; flip `untagged` to true only after Wiktionary has word forms that agree with the rules.
+
+**The rules** (order matters; sources are in each rule's `source`, the Kannada section of Wikipedia read 2026-11-15; Krishnamurti 2003 and Sridhar 1990 were not read):
+
+| Id | Change | Why |
+|---|---|---|
+| `kn-n-dental` | n before t̪ or d̪ becomes n̪ | the broad `ipa` writes a plain n there (86 occurrences); the Telugu lesson of `te-n-dental` (PR #1433) |
+| `kn-r-tap` | r becomes ɾ (not rr) | the table gives ɾ for ರ; the trill ಱ is archaic |
+| `kn-a-central` | short a becomes ɐ, except in ai and au and aː | the vowel notes |
+| `kn-i-lowered`, `kn-u-lowered`, `kn-e-lowered`, `kn-o-lowered` | short i u e o become ɪ ʊ ɛ ɔ when not word-final and not next to a vowel | "tend to be pronounced [ɐ ɪ ʊ ɛ ɔ]; in a final position less frequently" |
+
+Retroflex and dental stops, aspirates, length, geminates and the nasals before velar, palatal and retroflex stops are already in the broad `ipa` (counted over decks-live: dental t̪ d̪ 783, ɖ ʈ 431, ɭ 152, ɳ 126, ʰ ʱ 150, ŋ ɲ 59), so no rule repeats them. Left out on purpose, and why, are in the file's `description`: ʂ to ʃ, palatalisation of k and ɡ before front vowels, glide onsets, the colloquial final e to i, the northern ts dz, and a reduced word-final u.
+
+### Lessons carried from Telugu (TE-058, #1390) and Spanish (#1369)
+
+- A rule is written only for what the broad `ipa` does not already say, and its order is checked: the three consonant rules never touch vowels, and `kn-a-central` runs before the lowering rules, whose lookbehind names ɐ.
+- A rule whose scope is not attested is left out, not guessed (Telugu's affricate rule). Each lowering rule skips a vowel next to another vowel, so a diphthong glide or a hiatus is never changed.
+- The tools write the cards, never a hand edit; the patch only adds two lines per card (`phonetic`, `phonetic_source`), nothing else changes.
+
+### Runbook
+
+Run last, serially, after every Kannada content PR (sentences, readings, culture, topics) has merged, because the narrow form derives from the broad `ipa` and a new card has none. Worktree off `origin/decks-live` with main's `tools/` laid over it (CI's `main-tools` does this); never in the main checkout; no tests and no validator locally.
+
+1. Merge `tools/kn-phonetics` to main (one registry entry). Merge `decks/kn-phonetics-wave1` to decks-live (one Sonnet review; deck-only CI: "Validate decks" and "Released app reads the decks").
+2. Cards added after that branch: `python3 tools/import_phonetic.py kn --write` (expected: 0 filled, a dump is fetched into `.cache/phonetic/` on the first run; to avoid the fetch, skip this step: nothing is imported), then `python3 tools/derive_phonetic.py kn --bracket-unchanged --write`. Expected: only the new cards are filled (cards that have a `phonetic` are skipped), `invalid` 0, `could not write (layout)` 0.
+3. After any change to the rules file: `python3 tools/derive_phonetic.py kn --rederive --bracket-unchanged --write` re-derives every `rules` card; a card whose form does not change is not rewritten.
+4. Counts on the branch (2026-11-15): 1,715 cards with a broad `ipa`: 1,513 filled, 202 unchanged and bracketed, 0 invalid. 288 cards have no broad `ipa` and get no `phonetic`: the broad `ipa` is the tools' job first (`tools/transcribe.py kn`).
+5. Open for a phonetician (rules ship `unreviewed`): whether the lowering of short i u e o should be written for the standard (it is a tendency in one source, plus Wiktionary's one entry), and whether ʂ and the k/ɡ palatalisation should join. Drop a rule by deleting its entry and running step 3.
