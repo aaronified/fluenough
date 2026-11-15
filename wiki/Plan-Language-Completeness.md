@@ -24,7 +24,7 @@ State is for Japanese (`ja`), read from `origin/decks-live` and `origin/main` on
 | 4 | Reading decks | Deck-Format "Reading decks" | Partial: six `ja-en-reading-*` files at the top of `decks/ja/`. Not audited further |
 | 5 | Script decks (hiragana, katakana, marks, combos, basic kanji) | Deck-Format "Japanese kanji"; issue #1146 | Partial: hiragana, katakana, their combos and marks, and `ja-kanji-1` are done. Basic kanji only; about 1000 kanji by B1 is deferred (#1146) |
 | 6 | Phrasebook | Deck-Format "The phrasebook" | Done: `ja-phrasebook` with its layer |
-| 7 | Situations (one file per language, only widely used words and phrases, no over-translation) | Issue #1145; `lib/core/data/situations_parser.dart`; CLAUDE.md "Situations" | None for `ja`. Only `decks/te/te-situations.yaml` exists, on decks-live. Japanese sheets (#1124, draft) no longer wait for 0.10.0 (released, owner 2026-11-13), then their own PR |
+| 7 | Situations (one file per language, only widely used words and phrases, no over-translation) | Issue #1145; `lib/core/data/situations_parser.dart`; CLAUDE.md "Situations" | `ja-situations` exists on decks-live with 6 sheets; JA-013 (PR #1356) adds 4, so 10 sheets. `decks/te/te-situations.yaml` exists, on decks-live, at 10 sheets (TE-004, PR #1354). Japanese sheets (#1124, draft) no longer wait for 0.10.0 (released, owner 2026-11-13), then their own PR |
 | 8 | Topics, including script topics (`<code>-topics.yaml`, scripts are topics) | D6 | Built, not merged: `decks/ja/ja-topics.yaml` on branch `decks/ja-culture-1` |
 | 9 | Culture decks (`genre: culture`) | D1, D4; Plan-Culture-Japanese | Built, not merged: `ja-culture-1` with 18 items, branch `decks/ja-culture-1` (one commit, 2026-11-13) |
 | 10 | Creators, eras and legacy | D5, D5b, D5c | Built, not merged: `decks/creators/ja.yaml` (16 creators, 7 eras, no images) on the same branch |
@@ -81,11 +81,11 @@ Task T23 of the kinds plan is where it lands.
 | Path to B1 | partial | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
 | Cores and layers | partial | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
 | Sentences, readings | partial | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
-| Script decks | partial (basic kanji only) | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
+| Script decks | partial (basic kanji only) | not audited | not audited | partial: `te-script-conjuncts-2` (9 cards) and `te-script-archaic` (1 card), PR #1360 | not audited | not audited | not audited | not audited |
 | Phrasebook | done | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
-| Situations | none | not audited | not audited | file exists (`te-situations`), coverage not audited | not audited | not audited | not audited | not audited |
+| Situations | partial: JA-013 merged (PR #1356), `ja-situations` at 10 sheets | partial: ES-026 merged (PR #1355), `es-situations.yaml` gains four sheets | not audited | partial: `te-situations` at 10 sheets (TE-004, PR #1354) | not audited | not audited | not audited | not audited |
 | Topics incl. script topics | on branch | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
-| Culture, creators, legacy | on branch | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
+| Culture, creators, legacy | on branch | partial: `es-culture-2`, `-3`, `-4` merged (PR #1348) | not audited | partial: `te-culture-2`, `-3`, `-4` merged (PR #1352); culture 1 not built | not audited | not audited | not audited | not audited |
 | Proverbs | none | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
 | Multi-word verbs | none | not audited | not audited | not audited | not audited | not audited | not audited | not audited |
 | Professional | none | not audited | not audited | not audited | not audited | not audited | not audited | not audited |

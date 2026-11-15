@@ -49,7 +49,7 @@ Issue #378's checklist (2026-11-13) is out of date: batches 1 to 4 have merged s
 | Listed decks missing a file | 0 (every deck a written unit lists exists, sentences and readings included) |
 | Culture | `ja-culture-1` (18 items), 25 creators, 8 eras, 9 recommendations |
 | Proverbs / multi-word | `ja-proverbs-1` 12 cards; `ja-multiword-compound-verbs` 8, `ja-multiword-te-auxiliaries` 9 |
-| Topics / situations | 9 topics; `ja-situations`, 6 sheets |
+| Topics / situations | 9 topics; `ja-situations`, 6 sheets (10 after JA-013, PR #1356, 2026-11-15) |
 | Kanji | `ja-kanji-1`, 7 cards (days of the week) |
 | Cards without notes | 900: 850 on sentence cards, 40 in `ja-en-hiragana`, 10 on word cards |
 | Broad `ipa` missing | 6 cards, all in `ja-family` |
@@ -72,7 +72,7 @@ Kanji decks `ja-kanji-2` to `ja-kanji-13` (JA-101 to JA-112) are merged to decks
 | 6 | Topics growth (9 now) | about 14 topics: 8 culture, 6 kanji | JA-010, JA-011 |
 | 7 | Creators and eras growth | rides on 3 | with JA-002, 005, 008 |
 | 8 | More recommendations (9 now, source-it-yourself) | 20 works | JA-012 |
-| 9 | Situations growth (6 sheets) | 4 sheets | JA-013 |
+| 9 | Situations growth (6 sheets) | done: 4 sheets (PR #1356) | JA-013 (done) |
 | 10 | Notes gap | 900 cards | JA-014 to JA-022 |
 | 11 | Professional decks (#1139, hidden) | none: `professions` is empty in `decks/sections.yaml` | held, nothing to build; needs the owner's list of professions first |
 | 12 | Narrow IPA for every card; broad `ipa` on the 6 missing | 4,032 cards plus all new | JA-039 to JA-041 |
@@ -211,7 +211,7 @@ Fields common to all rows: branch is `decks/ja-<topic>` off `decks-live`; "Not t
 | JA-010 | decks/ja-topics-culture | edit `ja-topics.yaml` | add 8 culture topics (haiku, waka and tanka, classical prose, Heian court, Edo literature, school songs, proverbs, modern literature): each `summary` in English, `decks` and `cards` of the culture, proverb and multiword decks that exist | merged culture decks | 8 topics | `ja-topics.yaml` (batch 3) | | A |
 | JA-011 | decks/ja-topics-kanji | edit `ja-topics.yaml` | 6 `kind: "script"` topics, one per grade: `decks` and `chars` copied from the merged kanji decks (no char taught in none of them) | merged kanji decks | 6 topics | `ja-topics.yaml` (after JA-010) | | B, after the grade decks merge |
 | JA-012 | decks/ja-recommendations-2 | edit `recommendations/ja.yaml`, `creators/ja.yaml` | 20 works not in the public domain (film, series, book, song, play, comic), the shape of the nine existing, 3 to 8 questions each, no quote, no link unless checked; creators added where needed | the file | 20 entries | recommendations, creators (batch 3) | | A |
-| JA-013 | decks/ja-situations-2 | edit `ja-situations.yaml`, layer | 4 sheets (hotel, post and bank, greetings and apologies, emergencies), widely used words and phrases only, no over-translation | situations rules | 4 sheets | situations file | | C |
+| JA-013 | decks/ja-situations-2 | edit `ja-situations.yaml`, layer | 4 sheets (hotel, post and bank, greetings and apologies, emergencies), widely used words and phrases only, no over-translation | situations rules | 4 sheets | situations file | | C. **Done:** merged in PR #1356 (5 new cards ja-7300 to ja-7304) |
 | JA-014 to 022 | decks/ja-notes-1 to -9 | edit the cores and layers named | RULE-NOTE. The files per task (cards without notes in brackets): 014 about-me 6, addressing 6, adjectives-2 14, adverbs 6, animals 10, appearance 17, arts 8, body 8, business 8, calendar 10, careers 8, chores 18 (all `-sentences`) plus `ja-calendar` 2; 015 cinema, clothes, cooking, daily-life, demonstratives, describing, directions, eating-out, emergencies, environment, everyday-verbs, family, feelings sentences, plus `ja-clothes`, `ja-demonstratives`, `ja-family` 1 each; 016 festivals, food, geography, government and the grammar sentences case-particles to more-particles; 017 grammar sentences nagara-tari to te-kudasai, groceries, health; 018 help to market sentences; 019 more-verbs to quantities sentences plus `ja-numbers-1-20` 2, `ja-pronouns` 1; 020 questions to things sentences plus `ja-questions`, `ja-seasons` 1; 021 time to workplace sentences; 022 `ja-en-hiragana` (40 cards: a note on the sound or the look-alike) | the named files | notes where a point exists | none | other files | any lane, PARALLEL with all |
 | JA-023 to 029 | decks/ja-unit-money, -society, -university, -food-culture, -literature, -verbs-5, -abstract-words | the unit's files (RULE-UNIT) | order: money 45 words, society 50, university 50, food-culture 50, literature 50, verbs-5 50, abstract-words 55; the rules rows | the path entries | per unit: core, layer, sentences, reading, rules rows, path entry | path and the rules decks (serial) | | D, serial |
 | JA-030 to 038 | decks/ja-gram-conjunctions, -adjective-past, -likes, -comparison, -relative, -sonkeigo, -kenjougo, -transitivity, -teineigo | RULE-UNIT | grammar units as planned in the path | the path entries | per unit: rules core, layer, sentences, reading | path and rules decks (serial) | | D, serial after 029 |
