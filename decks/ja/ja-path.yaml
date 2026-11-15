@@ -803,7 +803,9 @@ units:
       - { id: "business-email", text: { "en": "A short business email" } }
   - decks: ["ja-kanji-29"]
     words: 0
-  - planned: { id: "ja-grammar-keigo-sonkeigo", grammar: "sonkeigo" }
+  - decks: ["ja-grammar-keigo-sonkeigo", "ja-grammar-keigo-sonkeigo-sentences", "ja-reading-grammar-keigo-sonkeigo"]
+    words: 0
+    grammar: ["sonkeigo"]
     listening_passages:
       - { id: "the-manager-is-coming", text: { "en": "Speaking of a customer and a manager with honorific verbs" } }
     reading_passages:
