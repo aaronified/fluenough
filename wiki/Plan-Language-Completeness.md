@@ -100,6 +100,8 @@ Task T23 of the kinds plan is where it lands.
 
 **Mandarin Chinese (`zh`), verified 2026-11-15 on decks-live** (full audit in [Deck-Work-Queue-ZH](Deck-Work-Queue-ZH.md)): path (130 units, all built), cores and layers (377 cores, 287 layers, 4,366 cards), script decks and 89 reading decks done (the reading decks' answer-leak flaw to fix); sentences done except `zh-emergencies`; phrasebook present; situations, topics, culture, creators, proverbs, multi-word verbs, recommendations, facts and the sourcing list missing; professional held; broad and narrow IPA none (0 of 4,366 cards, no registry entry or rules file); review queue 105 lines.
 
+**Tamil (`ta`), verified 2026-11-15 on decks-live** (full audit in [Deck-Work-Queue-TA](Deck-Work-Queue-TA.md)): path 27 of 115 units built (all A1 grammar and script units planned); 43 vocab cores with layers, 332 cards, no grammar cores; 16 sentences decks, 10 word units without; no reading decks, script decks, topics, situations, culture, creators, proverbs, multi-word verbs, recommendations, facts or sourcing list; phrasebook done (20); professional held; no Tamil engine in `tools/transcribe.py`, so every reading and broad `ipa` is hand-written and narrow IPA is BLOCKED on it (0 `phonetic`); review queue 46 lines.
+
 Counts on decks-live of all files under `decks/<code>/`, layers included, for orientation only (2026-11-13; ja re-counted 2026-11-15): ja 703, es 442, fr 380, te 302, mr 266, bn 465, as 436, gu 115. A file count says nothing about coverage.
 
 **First task of the stream, before any build:** one audit per language filling the grid, from decks-live, one Haiku agent for the reads. Nothing is built for a language on a guess.
@@ -155,7 +157,7 @@ Owner (2026-11-13): "Deck work issues to be updated with the full deck format as
 | Classical Sanskrit | sa | #356 | second list (Classical Sanskrit: to B1) | second-list position 9 | no path or decks yet (language entry only) |
 | Santali | sat | #1178 | second list (to A1; Classical Sanskrit to B1) | second-list position 3 | no path or decks yet (language entry only) |
 | Sindhi | sd | #1179 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
-| Tamil | ta | #354 | second list (to A1; Classical Sanskrit to B1) | second-list position 1 | path of 115 units, 27 built; 45 core files |
+| Tamil | ta | #354 | second list (to A1; Classical Sanskrit to B1) | second-list position 1 | path of 115 units, 27 built (A1 mark at unit 45); 43 vocab cores, 332 cards, no grammar core; audit and task plan in [Deck-Work-Queue-TA](Deck-Work-Queue-TA.md) (2026-11-15) |
 | Telugu | te | #419 | first list (to B1) | deck priority 1 of the first list, culture priority 4 of 8 | path of 121 units, 120 built; 154 core files (closest to complete, not complete) |
 | Bhojpuri | bho | #1180 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
 | Tulu | tcy | #1181 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
