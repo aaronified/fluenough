@@ -1,0 +1,41 @@
+schema: 1
+kind: "phonetics"
+id: "ja-phonetics"
+language: "ja"
+variety: "Standard Japanese (Tokyo), as the course's broad ipa writes it (ɡ, ɴ before every consonant, ɾ, ɕ, ç, ɸ, long vowels with ː, no pitch accent)"
+description: "Rules that turn a card's broad ipa into its narrow [ ] form, in order. Written for tools/derive_phonetic.py, never read by the app. Each rule applies the regular expression to the whole ipa string and replaces every match; the next rule works on the result. Contexts cross a single space between words, as the spirant rules of the Spanish file do. Phrase-final devoicing is less consistent and is not expected before rising intonation. The broad ipa already writes ç before i, ɸ before ɯ, ɕ before i, tɕ and dʑ, so no rule for those. Vowel devoicing is written U+0325 (combining ring below) after the vowel. The rules are phonetic tendencies of connected speech, not exceptionless: devoicing is variable by speaker, speed and accent, and the course teaches the standard pronunciation."
+rules:
+  # Vowel devoicing: /i ɯ/ between voiceless consonants.
+  - id: "ja-devoice-before-stop"
+    pattern: '(?<=[ptkɕsçɸh])([iɯ])(?= ?[ptk])'
+    replace: '\1̥'
+    source: 'Wikipedia, "Japanese phonology" (CC BY-SA 4.0), subsection "Devoicing" (devoicing rules); Vance, The Sounds of Japanese (2008, CUP), on high-vowel devoicing; Tsuchida, "Phonetics and phonology of Japanese vowel devoicing" (1997, Cornell PhD); between voiceless consonants, the second a stop or affricate: very likely'
+  - id: "ja-devoice-before-fricative"
+    pattern: '(?<=[ptk])([iɯ])(?= ?[sɕ])'
+    replace: '\1̥'
+    source: 'Wikipedia, "Japanese phonology" (CC BY-SA 4.0), subsection "Devoicing" (devoicing rules); Vance, The Sounds of Japanese (2008, CUP), on high-vowel devoicing; Tsuchida, "Phonetics and phonology of Japanese vowel devoicing" (1997, Cornell PhD); after a stop and before a non-h voiceless fricative: likely'
+  - id: "ja-devoice-final"
+    pattern: '(?<=[ptkɕsçɸh])([iɯ])$'
+    replace: '\1̥'
+    source: 'Wikipedia, "Japanese phonology" (CC BY-SA 4.0), subsection "Devoicing" (devoicing rules); Vance, The Sounds of Japanese (2008, CUP), on high-vowel devoicing; Tsuchida, "Phonetics and phonology of Japanese vowel devoicing" (1997, Cornell PhD); between a voiceless consonant and a pause, less consistent'
+  # Moraic nasal ɴ takes the place of the consonant after it; before a vowel or a fricative it is a nasalised glide; at the end of an utterance it stays ɴ.
+  - id: "ja-nasal-palatal"
+    pattern: 'ɴ(?= ?(?:tɕ|dʑ|ɲ))'
+    replace: 'ɲ̟'
+    source: 'Wikipedia, "Japanese phonology" (CC BY-SA 4.0), subsection "Moraic nasal" (nasal rules); Vance, The Sounds of Japanese (2008, CUP), on the moraic nasal; Okada, "Japanese", Handbook of the International Phonetic Association (1999, CUP)'
+  - id: "ja-nasal-bilabial"
+    pattern: 'ɴ(?= ?[pbm])'
+    replace: 'm'
+    source: 'Wikipedia, "Japanese phonology" (CC BY-SA 4.0), subsection "Moraic nasal" (nasal rules); Vance, The Sounds of Japanese (2008, CUP), on the moraic nasal; Okada, "Japanese", Handbook of the International Phonetic Association (1999, CUP)'
+  - id: "ja-nasal-coronal"
+    pattern: 'ɴ(?= ?(?:t|d|n))'
+    replace: 'n'
+    source: 'Wikipedia, "Japanese phonology" (CC BY-SA 4.0), subsection "Moraic nasal" (nasal rules); Vance, The Sounds of Japanese (2008, CUP), on the moraic nasal; Okada, "Japanese", Handbook of the International Phonetic Association (1999, CUP)'
+  - id: "ja-nasal-velar"
+    pattern: 'ɴ(?= ?[kɡg])'
+    replace: 'ŋ'
+    source: 'Wikipedia, "Japanese phonology" (CC BY-SA 4.0), subsection "Moraic nasal" (nasal rules); Vance, The Sounds of Japanese (2008, CUP), on the moraic nasal; Okada, "Japanese", Handbook of the International Phonetic Association (1999, CUP)'
+  - id: "ja-nasal-before-vowel-or-fricative"
+    pattern: 'ɴ(?= ?[aeiouɯjwsɕhçɸ])'
+    replace: 'ɰ̃'
+    source: 'Wikipedia, "Japanese phonology" (CC BY-SA 4.0), subsection "Moraic nasal" (nasal rules); Vance, The Sounds of Japanese (2008, CUP), on the moraic nasal; Okada, "Japanese", Handbook of the International Phonetic Association (1999, CUP)'
