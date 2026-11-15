@@ -267,3 +267,5 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-4553 | ja-grammar-hearsay-appearance-sentences | Are the そうです (hearsay), そうです (appearance), ようです and らしいです examples natural and kept apart? | Sonnet builder | 2026-11-13 |
 | ja-4565 | ja-grammar-causative-sentences | Are the causative and causative-passive examples natural, in particular the use of を and に for the person made to do it? | Sonnet builder | 2026-11-13 |
 | ja-0308 | ja-hiragana-marks | Judgement call: the broad IPA of っ, ッ and ー is written ː (length) since they have no sound of their own; is that right? | Sonnet builder | 2026-11-13 |
+| unit-level | ja-grammar-relative-clauses (ja-9340 to ja-9351) | Are the relative-clause sentences natural (きのうかったほん, ははがつくったりょうり, ともだちがすきなえいが), and is it right that a clause may hold a place with で and still describe the head noun? | Sonnet builder | 2026-11-15 |
+| ja-9348 | ja-grammar-relative-clauses-sentences | Is ひと (a person) in おさけをのまないひとはおちゃがすきです natural as a general "a person who", or should it be ひとびと or a named person? | Sonnet builder | 2026-11-15 |
