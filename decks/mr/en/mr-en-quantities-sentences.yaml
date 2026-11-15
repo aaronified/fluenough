@@ -1,0 +1,54 @@
+schema: 1
+id: "mr-en-quantities-sentences"
+kind: "layer"
+core: "mr-quantities-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Quantities: sentences"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the quantities words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-6360":
+    native: "I want a litre of milk."
+    bases: { "मला": "to me", "एक": "one", "हवे": "wanted" }
+    confusables: { "w1": { why: "पाव (pāv) is a quarter, not a litre." }, "f1": { why: "हवी (havi) is the feminine form, so it does not fit here." }, "w2": { why: "ग्रॅम (grêm) is a gram, a weight, not a volume." } }
+  "mr-6361":
+    native: "All the children are at school."
+    bases: { "सर्व": "all", "मुलं": "children", "शाळेत": "at school", "आहेत": "are" }
+    confusables: { "w1": { why: "दोन्ही (donhi) means both, for two." }, "f1": { why: "आहे (āhe) is singular; a group of children takes आहेत (āhet)." }, "w2": { why: "काही (kāhi) means some." } }
+  "mr-6362":
+    native: "I need a lot of water."
+    bases: { "मला": "to me", "खूप": "a lot", "पाणी": "water", "हवे": "needed" }
+    confusables: { "w1": { why: "थोडे (thoḍe) means a little, the opposite of खूप (khup)." }, "f1": { why: "हवी (havi) is the feminine form, so it does not fit here." }, "w2": { why: "भरपूर (bharpur) means plenty." } }
+  "mr-6363":
+    native: "Please give me a quarter kilo of sugar."
+    bases: { "मला": "me", "किलो": "kilo", "साखर": "sugar", "द्या": "give (polite)" }
+    confusables: { "w1": { why: "लिटर (liṭar) is a litre, a volume, not a weight." }, "f1": { why: "दिला (dilā) means gave, the past tense." }, "w2": { why: "अर्धा (ardhā) means half, not a quarter." } }
+  "mr-6364":
+    native: "Give one spoon to each person."
+    bases: { "माणसाला": "to a person", "एक": "one", "द्या": "give (polite)" }
+    confusables: { "w1": { why: "सर्व (sarva) means all, not each." }, "f1": { why: "दिला (dilā) means gave, the past tense." }, "w2": { why: "वाटी (vāṭi) is a bowl, not a spoon." } }
+  "mr-6365":
+    native: "Both children go to school."
+    bases: { "मुले": "children", "शाळेत": "to school", "जातात": "go" }
+    confusables: { "w1": { why: "सर्व (sarva) means all, not both." }, "f1": { why: "जातो (jāto) is for one man." }, "w2": { why: "प्रत्येक (pratyek) means each." } }
+  "mr-6366":
+    native: "It rained a lot."
+    bases: { "पाऊस": "rain", "पडला": "fell" }
+    confusables: { "w1": { why: "खूप (khup) means very or a lot; भरपूर (bharpur) means plenty." }, "f1": { why: "पडतो (paḍto) is the present: it rains." }, "w2": { why: "थोडा (thoḍā) means a little." } }
+  "mr-6367":
+    native: "Give half a kilo of tomatoes."
+    bases: { "अर्धा": "half", "किलो": "kilo", "टोमॅटो": "tomato", "द्या": "give (polite)" }
+    confusables: { "w1": { why: "पाव (pāv) is a quarter." }, "f1": { why: "दिला (dilā) means gave, the past tense." }, "w2": { why: "लिटर (liṭar) is a litre, not a kilo." } }
+  "mr-6368":
+    native: "Drink a little water every day."
+    bases: { "दिवशी": "on the day", "थोडे": "a little", "पाणी": "water", "प्या": "drink (polite)" }
+    confusables: { "w1": { why: "भरपूर (bharpur) means plenty, not a little." }, "f1": { why: "पिते (pite) is the present for a woman; this sentence is an order." }, "w2": { why: "खूप (khup) means a lot, not a little." } }
+  "mr-6369":
+    native: "I want a bowl of rice."
+    bases: { "मला": "to me", "एक": "one", "भात": "rice", "हवा": "wanted" }
+    confusables: { "w1": { why: "चमचा (camcā) is a spoon, not a bowl." }, "f1": { why: "हवी (havi) is the feminine form, so it does not fit here." }, "w2": { why: "पाकीट (pākiṭ) is a packet, not a bowl." } }
+  "mr-6370":
+    native: "Some people drink tea."
+    bases: { "काही": "some", "लोक": "people", "चहा": "tea", "पितात": "drink" }
+    confusables: { "w1": { why: "सर्व (sarva) means all, not some." }, "f1": { why: "पितो (pito) is for one man." }, "w2": { why: "प्रत्येक (pratyek) means each." } }
