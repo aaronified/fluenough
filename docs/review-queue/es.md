@@ -16,3 +16,9 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | es-0016 | es-core-100 | "La ciudad se transforma.": the translation uses a passive ("is transformed"): is the reflexive better rendered as "changes"? | Haiku builder | 2026-11-07 |
 | es-0034 | es-core-100 | "El aburrimiento es malo.": very abstract for a learner; should a concrete example replace it? | Haiku builder | 2026-11-07 |
 | es-0025 | es-core-100 | The same sentence and seseo IPA appears in the source deck es-first-words (line 162, "Hace mucho calor."): its IPA should also use ˈaθe; the source deck is not changed in this PR. | Haiku builder | 2026-11-07 |
+| es-4004 | es-culture-1 | Should the Cantar de mio Cid line in es-4004 ("De los sus ojos tan fuertemente llorando") name a creator instead of "anonymous", since its creator field is empty? | Haiku builder | 2026-11-14 |
+| es-4005 | es-culture-1 | Is the line of Isabela in es-4005 ("Duque Octavio, por aquí podrás salir más seguro.") the same as in a dated print of El burlador de Sevilla, since the Wikisource page names no edition? | Haiku builder | 2026-11-14 |
+| es-4150 | es-culture-4 | Should the Romance del prisionero line in es-4150 ("que ni sé cuándo es de día, ni menos cuándo es de noche") name a creator instead of "anonymous", since its creator field is empty? | Haiku builder | 2026-11-15 |
+| es-4151 | es-culture-4 | Should the Romance del prisionero line in es-4151 (the little bird) name a creator instead of "anonymous", since its creator field is empty? | Haiku builder | 2026-11-15 |
+| unit-level | es-situations | Are the Spanish phrases and titles in the es-situations sheets natural and correct, since the file says no Spanish speaker has checked them yet? | Haiku builder | 2026-11-15 |
+| unit-level | es-facts | Are the Bengali and Hindi texts in the es-facts cards right, since the file says no native speaker has checked them yet? | Haiku builder | 2026-11-15 |
