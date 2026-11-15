@@ -32,14 +32,14 @@ cards:
     reading: "āmhi navā karār kelā."
     ipa: "amɦi nəʋa kərar kela"
     pos: "phrase"
-    bases: [{ word: "केला", reading: "karṇe", base: "करणे" }]
+    bases: [{ word: "नवा", base: "नवा", reading: "navā" }, { word: "केला", reading: "karṇe", base: "करणे" }]
     confusables: [{ id: "w1", ref: "mr-0675", kind: "word" }, { id: "f1", word: "केली", reading: "keli", kind: "form" }]
   - id: "mr-5864"
     target: "बाल्कनीत झाडे आहेत."
     reading: "bālkanit jhāḍe āhet."
     ipa: "balkənit̪ dzʱaɖe aɦet̪"
     pos: "phrase"
-    bases: [{ word: "बाल्कनीत", reading: "bālkani", base: "बाल्कनी" }, { word: "आहेत", reading: "asṇe", base: "असणे" }]
+    bases: [{ word: "बाल्कनीत", reading: "bālkani", base: "बाल्कनी" }, { word: "झाडे", base: "झाड", reading: "jhāḍ" }, { word: "आहेत", reading: "asṇe", base: "असणे" }]
     confusables: [{ id: "w1", ref: "mr-0738", kind: "word" }, { id: "f1", word: "आहे", reading: "āhe", kind: "form" }]
   - id: "mr-5865"
     target: "दरवाजा उघडा आहे."
@@ -60,7 +60,7 @@ cards:
     reading: "lifṭ band āhe."
     ipa: "lifʈ bənd̪ aɦe"
     pos: "phrase"
-    bases: [{ word: "आहे", reading: "asṇe", base: "असणे" }]
+    bases: [{ word: "बंद", base: "बंद", reading: "band" }, { word: "आहे", reading: "asṇe", base: "असणे" }]
     confusables: [{ id: "w1", word: "सुरू", reading: "suru", kind: "word" }, { id: "f1", word: "आहेत", reading: "āhet", kind: "form" }]
   - id: "mr-5868"
     target: "पार्किंग कुठे आहे?"

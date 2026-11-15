@@ -11,7 +11,7 @@ cards:
     reading: "śikṣak dhaḍā samjāvtāt."
     ipa: "ʃikʂək d̪ʱəɖa səmdzaʋt̪at̪"
     pos: "phrase"
-    bases: [{ word: "समजावतात", ref: "mr-1794" }]
+    bases: [{ word: "धडा", base: "धडा", reading: "dhaḍā" }, { word: "समजावतात", ref: "mr-1794" }]
     confusables: [{ id: "w1", ref: "mr-0248", kind: "word" }, { id: "f1", word: "समजावतो", reading: "samjāvto", kind: "form" }]
   - id: "mr-6801"
     target: "मी तुला ओळखतो."
@@ -32,7 +32,7 @@ cards:
     reading: "tyāci tabyet bighaḍte."
     ipa: "t̪jatʃi t̪əbjet̪ biɡʱəɖt̪e"
     pos: "phrase"
-    bases: [{ word: "त्याची", ref: "mr-0676" }, { word: "बिघडते", ref: "mr-1798" }]
+    bases: [{ word: "त्याची", ref: "mr-0676" }, { word: "तब्येत", base: "तब्येत", reading: "tabyet" }, { word: "बिघडते", ref: "mr-1798" }]
     confusables: [{ id: "w1", ref: "mr-1797", kind: "word" }, { id: "f1", word: "बिघडतो", reading: "bighaḍto", kind: "form" }]
   - id: "mr-6804"
     target: "मी तुमची ऑफर स्वीकारतो."
@@ -46,7 +46,7 @@ cards:
     reading: "hi dori tuṭte."
     ipa: "ɦi d̪ori t̪uʈt̪e"
     pos: "phrase"
-    bases: [{ word: "तुटते", ref: "mr-1803" }]
+    bases: [{ word: "दोरी", base: "दोरी", reading: "dori" }, { word: "तुटते", ref: "mr-1803" }]
     confusables: [{ id: "w1", ref: "mr-1805", kind: "word" }, { id: "f1", word: "तुटतो", reading: "tuṭto", kind: "form" }]
   - id: "mr-6806"
     target: "मी पत्र पोहोचवतो."
@@ -60,7 +60,7 @@ cards:
     reading: "mule phule goḷā kartāt."
     ipa: "mule pʰule ɡoɭa kərt̪at̪"
     pos: "phrase"
-    bases: [{ word: "मुले", ref: "mr-0224" }, { word: "फुले", reading: "phul", base: "फूल" }, { word: "करतात", ref: "mr-0712" }]
+    bases: [{ word: "मुले", ref: "mr-0224" }, { word: "फुले", reading: "phul", base: "फूल" }, { word: "गोळा", base: "गोळा", reading: "goḷā" }, { word: "करतात", ref: "mr-0712" }]
     confusables: [{ id: "w1", ref: "mr-0722", kind: "word" }, { id: "f1", word: "करतो", reading: "karto", kind: "form" }]
   - id: "mr-6808"
     target: "तो सगळ्यांना जमवतो."
@@ -88,5 +88,5 @@ cards:
     reading: "āi mulilā dhaḍā samjāvte."
     ipa: "ai mulila d̪ʱəɖa səmdzaʋt̪e"
     pos: "phrase"
-    bases: [{ word: "मुलीला", reading: "mulgi", base: "मुलगी" }, { word: "समजावते", ref: "mr-1794" }]
+    bases: [{ word: "मुलीला", reading: "mulgi", base: "मुलगी" }, { word: "धडा", base: "धडा", reading: "dhaḍā" }, { word: "समजावते", ref: "mr-1794" }]
     confusables: [{ id: "w1", ref: "mr-0221", kind: "word" }, { id: "w2", ref: "mr-0222", kind: "word" }, { id: "f1", word: "समजावतो", reading: "samjāvto", kind: "form" }]
