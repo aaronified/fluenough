@@ -1,0 +1,170 @@
+schema: 1
+id: "hi-body-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-4830"
+    target: "मेरे सिर में दर्द है।"
+    reading: "mērē sir mēm̐ dard hai."
+    ipa: "meːreː sɪr mẽː d̪ərd̪ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरे", base: "मेरा", reading: "mērē" }
+      - { word: "सिर", ref: "hi-1024" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "दर्द", ref: "hi-0360" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1036", kind: "word" }
+      - { id: "w2", ref: "hi-1039", kind: "word" }
+  - id: "hi-4831"
+    target: "मेरी आँख बड़ी है।"
+    reading: "mērī ām̐kh baṛī hai."
+    ipa: "meːriː ãːkʰ bəɽiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", base: "मेरा", reading: "mērī" }
+      - { word: "आँख", ref: "hi-1025" }
+      - { word: "बड़ी", base: "बड़ा", reading: "baṛī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1026", kind: "word" }
+      - { id: "w2", ref: "hi-1027", kind: "word" }
+  - id: "hi-4832"
+    target: "उसके बाल लंबे हैं।"
+    reading: "usakē bāl lambē haim̐."
+    ipa: "ʊsəkeː baːl ləmbeː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "उसके", base: "उसका", reading: "usakē" }
+      - { word: "बाल", ref: "hi-1032" }
+      - { word: "लंबे", base: "लंबा", reading: "lambē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", ref: "hi-1043", kind: "word" }
+      - { id: "w2", ref: "hi-1029", kind: "word" }
+  - id: "hi-4833"
+    target: "मेरे हाथ साफ़ हैं।"
+    reading: "mērē hāth sāf haim̐."
+    ipa: "meːreː ɦaːt̪ʰ saːf ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरे", base: "मेरा", reading: "mērē" }
+      - { word: "हाथ", ref: "hi-1042" }
+      - { word: "साफ़", ref: "hi-0901" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", ref: "hi-1039", kind: "word" }
+      - { id: "w2", ref: "hi-1043", kind: "word" }
+  - id: "hi-4834"
+    target: "वह बच्चा दौड़ रहा है।"
+    reading: "vah baccā dauṛ rahā hai."
+    ipa: "ʋəɦ bətʃtʃaː d̪ɔːɽ rəɦaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "वह", ref: "hi-0749" }
+      - { word: "बच्चा", ref: "hi-0111" }
+      - { word: "दौड़", base: "दौड़ना", reading: "dauṛ" }
+      - { word: "रहा", base: "रहना", reading: "rahā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-0788", kind: "word" }
+      - { id: "w2", ref: "hi-0801", kind: "word" }
+  - id: "hi-4835"
+    target: "मैं सुबह मुँह धोता हूँ।"
+    reading: "maim̐ subah mum̐h dhōtā hūm̐."
+    ipa: "mɛ̃ː sʊbəɦ mʊ̃ɦ d̪ʱoːt̪aː ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "सुबह", ref: "hi-0302" }
+      - { word: "मुँह", ref: "hi-1028" }
+      - { word: "धोता", base: "धोना", reading: "dhōtā" }
+      - { word: "हूँ", base: "होना", reading: "hūm̐" }
+    confusables:
+      - { id: "w1", ref: "hi-1024", kind: "word" }
+      - { id: "w2", ref: "hi-1031", kind: "word" }
+  - id: "hi-4836"
+    target: "मेरी नाक लाल है।"
+    reading: "mērī nāk lāl hai."
+    ipa: "meːriː naːk laːl ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", base: "मेरा", reading: "mērī" }
+      - { word: "नाक", ref: "hi-1027" }
+      - { word: "लाल", ref: "hi-0916" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1026", kind: "word" }
+      - { id: "w2", ref: "hi-1031", kind: "word" }
+  - id: "hi-4837"
+    target: "उसके कान छोटे हैं।"
+    reading: "usakē kān chōṭē haim̐."
+    ipa: "ʊsəkeː kaːn tʃʰoːʈeː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "उसके", base: "उसका", reading: "usakē" }
+      - { word: "कान", ref: "hi-1026" }
+      - { word: "छोटे", base: "छोटा", reading: "chōṭē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", ref: "hi-1025", kind: "word" }
+      - { id: "w2", ref: "hi-1032", kind: "word" }
+  - id: "hi-4838"
+    target: "बच्चे आँखें बंद करते हैं।"
+    reading: "baccē ām̐khēm̐ band kartē haim̐."
+    ipa: "bətʃtʃeː ãːkʰẽː bənd̪ kərt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "बच्चे", ref: "hi-0383" }
+      - { word: "आँखें", base: "आँख", reading: "ām̐khēm̐" }
+      - { word: "बंद", ref: "hi-1358" }
+      - { word: "करते", base: "करना", reading: "kartē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", ref: "hi-0937", kind: "word" }
+      - { id: "w2", ref: "hi-0784", kind: "word" }
+  - id: "hi-4839"
+    target: "वह दिल से हँसता है।"
+    reading: "vah dil sē ham̐stā hai."
+    ipa: "ʋəɦ d̪ɪl seː ɦə̃st̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "वह", ref: "hi-0749" }
+      - { word: "दिल", ref: "hi-1044" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "हँसता", base: "हँसना", reading: "ham̐stā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-0960", kind: "word" }
+      - { id: "w2", ref: "hi-1045", kind: "word" }
+  - id: "hi-4840"
+    target: "मेरे पैर बड़े हैं।"
+    reading: "mērē pair baṛē haim̐."
+    ipa: "meːreː pɛːr bəɽeː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरे", base: "मेरा", reading: "mērē" }
+      - { word: "पैर", ref: "hi-1039" }
+      - { word: "बड़े", base: "बड़ा", reading: "baṛē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", ref: "hi-1042", kind: "word" }
+      - { id: "w2", ref: "hi-1040", kind: "word" }
+  - id: "hi-4841"
+    target: "माँ मेरे बाल धोती है।"
+    reading: "mām̐ mērē bāl dhōtī hai."
+    ipa: "mãː meːreː baːl d̪ʱoːt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "माँ", ref: "hi-0377" }
+      - { word: "मेरे", base: "मेरा", reading: "mērē" }
+      - { word: "बाल", ref: "hi-1032" }
+      - { word: "धोती", base: "धोना", reading: "dhōtī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-0376", kind: "word" }
+      - { id: "w2", ref: "hi-0379", kind: "word" }

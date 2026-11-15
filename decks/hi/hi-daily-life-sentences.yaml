@@ -1,0 +1,164 @@
+schema: 1
+id: "hi-daily-life-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-4909"
+    target: "मैं सुबह जल्दी उठता हूँ।"
+    reading: "maim̐ subah jaldī uṭhtā hūm̐."
+    ipa: "mɛ̃ː sʊbəɦ dʒəld̪iː ʊʈʰt̪aː ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "सुबह", ref: "hi-0302" }
+      - { word: "जल्दी", ref: "hi-0819" }
+      - { word: "उठता", base: "उठना", reading: "uṭhtā" }
+      - { word: "हूँ", base: "होना", reading: "hūm̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0450", kind: "word" }
+      - { id: "w2", ref: "hi-0442", kind: "word" }
+  - id: "hi-4910"
+    target: "मैं रोज़ नहाता हूँ।"
+    reading: "maim̐ rōz nahātā hūm̐."
+    ipa: "mɛ̃ː roːz nəɦaːt̪aː ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "रोज़", ref: "hi-0451" }
+      - { word: "नहाता", base: "नहाना", reading: "nahātā" }
+      - { word: "हूँ", base: "होना", reading: "hūm̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0443", kind: "word" }
+      - { id: "w2", ref: "hi-0441", kind: "word" }
+  - id: "hi-4911"
+    target: "वह नाश्ता करता है।"
+    reading: "vah nāśtā kartā hai."
+    ipa: "ʋəɦ naːʃt̪aː kərt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "वह", ref: "hi-0749" }
+      - { word: "नाश्ता", ref: "hi-0444" }
+      - { word: "करता", base: "करना", reading: "kartā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-0445", kind: "word" }
+      - { id: "w2", ref: "hi-0446", kind: "word" }
+  - id: "hi-4912"
+    target: "मैं सुबह नौ बजे काम पर जाता हूँ।"
+    reading: "maim̐ subah nau bajē kām par jātā hūm̐."
+    ipa: "mɛ̃ː sʊbəɦ nɔː bədʒeː kaːm pər dʒaːt̪aː ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "सुबह", ref: "hi-0302" }
+      - { word: "नौ", ref: "hi-0206" }
+      - { word: "बजे", ref: "hi-0305" }
+      - { word: "काम", ref: "hi-0194" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "जाता", base: "जाना", reading: "jātā" }
+      - { word: "हूँ", base: "होना", reading: "hūm̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0448", kind: "word" }
+      - { id: "w2", ref: "hi-0450", kind: "word" }
+  - id: "hi-4913"
+    target: "रात को मैं घर लौटता हूँ।"
+    reading: "rāt kō maim̐ ghar lauṭatā hūm̐."
+    ipa: "raːt̪ koː mɛ̃ː ɡʱər lɔːʈət̪aː ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "रात", ref: "hi-0304" }
+      - { word: "को", ref: "hi-0277" }
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "लौटता", base: "लौटना", reading: "lauṭatā" }
+      - { word: "हूँ", base: "होना", reading: "hūm̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0302", kind: "word" }
+      - { id: "w2", ref: "hi-0303", kind: "word" }
+  - id: "hi-4914"
+    target: "वह हमेशा सात बजे सोती है।"
+    reading: "vah hamēśā sāt bajē sōtī hai."
+    ipa: "ʋəɦ ɦəmeːʃaː saːt̪ bədʒeː soːt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "वह", ref: "hi-0749" }
+      - { word: "हमेशा", ref: "hi-0453" }
+      - { word: "सात", ref: "hi-0204" }
+      - { word: "बजे", ref: "hi-0305" }
+      - { word: "सोती", base: "सोना", reading: "sōtī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-0441", kind: "word" }
+      - { id: "w2", ref: "hi-0442", kind: "word" }
+  - id: "hi-4915"
+    target: "हम कभी-कभी बाहर खाते हैं।"
+    reading: "ham kabhī-kabhī bāhar khātē haim̐."
+    ipa: "ɦəm kəbʱiːkəbʱiː baːɦər kʰaːt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "हम", ref: "hi-0053" }
+      - { word: "कभी-कभी", ref: "hi-0452" }
+      - { word: "बाहर", ref: "hi-0837" }
+      - { word: "खाते", base: "खाना", reading: "khātē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", ref: "hi-0448", kind: "word" }
+      - { id: "w2", ref: "hi-0453", kind: "word" }
+  - id: "hi-4916"
+    target: "फिर वह नहाती है।"
+    reading: "phir vah nahātī hai."
+    ipa: "pʰɪr ʋəɦ nəɦaːt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "फिर", ref: "hi-0351" }
+      - { word: "वह", ref: "hi-0749" }
+      - { word: "नहाती", base: "नहाना", reading: "nahātī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-0441", kind: "word" }
+      - { id: "w2", ref: "hi-0450", kind: "word" }
+  - id: "hi-4917"
+    target: "रात का खाना कब होता है?"
+    reading: "rāt kā khānā kab hōtā hai?"
+    ipa: "raːt̪ kaː kʰaːnaː kəb ɦoːt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "रात", ref: "hi-0304" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "खाना", ref: "hi-0332" }
+      - { word: "कब", ref: "hi-0160" }
+      - { word: "होता", base: "होना", reading: "hōtā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-0444", kind: "word" }
+      - { id: "w2", ref: "hi-0445", kind: "word" }
+  - id: "hi-4918"
+    target: "मैं खाना बनाता हूँ।"
+    reading: "maim̐ khānā banātā hūm̐."
+    ipa: "mɛ̃ː kʰaːnaː bənaːt̪aː ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "खाना", ref: "hi-0332" }
+      - { word: "बनाता", base: "बनाना", reading: "banātā" }
+      - { word: "हूँ", base: "होना", reading: "hūm̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0938", kind: "word" }
+      - { id: "w2", ref: "hi-0943", kind: "word" }
+  - id: "hi-4919"
+    target: "मैं दस बजे सोता हूँ।"
+    reading: "maim̐ das bajē sōtā hūm̐."
+    ipa: "mɛ̃ː d̪əs bədʒeː soːt̪aː ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "दस", ref: "hi-0207" }
+      - { word: "बजे", ref: "hi-0305" }
+      - { word: "सोता", base: "सोना", reading: "sōtā" }
+      - { word: "हूँ", base: "होना", reading: "hūm̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0441", kind: "word" }
+      - { id: "w2", ref: "hi-0442", kind: "word" }

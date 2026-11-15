@@ -1,0 +1,178 @@
+schema: 1
+id: "hi-festivals-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-4944"
+    target: "हम दिवाली मनाते हैं।"
+    reading: "ham divālī manātē haim̐."
+    ipa: "ɦəm d̪ɪʋaːliː mənaːt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "हम", ref: "hi-0053" }
+      - { word: "दिवाली", ref: "hi-1300" }
+      - { word: "मनाते", base: "मनाना", reading: "manātē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", ref: "hi-1301", kind: "word" }
+      - { id: "w2", ref: "hi-1302", kind: "word" }
+  - id: "hi-4945"
+    target: "घर में दीया जलाते हैं।"
+    reading: "ghar mēm̐ dīyā jalātē haim̐."
+    ipa: "ɡʱər mẽː d̪iːjaː dʒəlaːt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "दीया", ref: "hi-1308" }
+      - { word: "जलाते", base: "जलाना", reading: "jalātē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", ref: "hi-1311", kind: "word" }
+      - { id: "w2", ref: "hi-1312", kind: "word" }
+  - id: "hi-4946"
+    target: "मेहमान घर पर हैं।"
+    reading: "mēhmān ghar par haim̐."
+    ipa: "meːɦmaːn ɡʱər pər ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "मेहमान", ref: "hi-1321" }
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", ref: "hi-1322", kind: "word" }
+      - { id: "w2", ref: "hi-0185", kind: "word" }
+  - id: "hi-4947"
+    target: "आज दावत है।"
+    reading: "āj dāvat hai."
+    ipa: "aːdʒ d̪aːʋət̪ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "आज", ref: "hi-0299" }
+      - { word: "दावत", ref: "hi-1322" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1313", kind: "word" }
+      - { id: "w2", ref: "hi-1331", kind: "word" }
+  - id: "hi-4948"
+    target: "हम नए कपड़े पहनते हैं।"
+    reading: "ham naē kapṛē pahantē haim̐."
+    ipa: "ɦəm nəeː kəpɽeː pəɦənt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "हम", ref: "hi-0053" }
+      - { word: "नए", base: "नया", reading: "naē" }
+      - { word: "कपड़े", base: "कपड़ा", reading: "kapṛē" }
+      - { word: "पहनते", base: "पहनना", reading: "pahantē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", ref: "hi-1122", kind: "word" }
+      - { id: "w2", ref: "hi-1115", kind: "word" }
+  - id: "hi-4949"
+    target: "बाज़ार में बहुत रौनक है।"
+    reading: "bāzār mēm̐ bahut raunak hai."
+    ipa: "baːzaːr mẽː bəɦʊt̪ rɔːnək ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "बाज़ार", ref: "hi-1081" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "रौनक", ref: "hi-1325" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1072", kind: "word" }
+      - { id: "w2", ref: "hi-1318", kind: "word" }
+  - id: "hi-4950"
+    target: "हम गुरुद्वारा जाते हैं।"
+    reading: "ham gurudvārā jātē haim̐."
+    ipa: "ɦəm ɡʊrʊd̪ʋaːraː dʒaːt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "हम", ref: "hi-0053" }
+      - { word: "गुरुद्वारा", ref: "hi-1330" }
+      - { word: "जाते", base: "जाना", reading: "jātē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", ref: "hi-1058", kind: "word" }
+      - { id: "w2", ref: "hi-1060", kind: "word" }
+  - id: "hi-4951"
+    target: "नमाज़ मस्जिद में होती है।"
+    reading: "namāz masjid mēm̐ hōtī hai."
+    ipa: "nəmaːz məsdʒɪd̪ mẽː ɦoːt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "नमाज़", ref: "hi-1323" }
+      - { word: "मस्जिद", ref: "hi-1060" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "होती", base: "होना", reading: "hōtī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1058", kind: "word" }
+      - { id: "w2", ref: "hi-1059", kind: "word" }
+  - id: "hi-4952"
+    target: "बच्चे आरती गाते हैं।"
+    reading: "baccē ārtī gātē haim̐."
+    ipa: "bətʃtʃeː aːrt̪iː ɡaːt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "बच्चे", ref: "hi-0383" }
+      - { word: "आरती", ref: "hi-1329" }
+      - { word: "गाते", base: "गाना", reading: "gātē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", ref: "hi-1319", kind: "word" }
+      - { id: "w2", ref: "hi-1313", kind: "word" }
+  - id: "hi-4953"
+    target: "हम मिठाई बाँटते हैं।"
+    reading: "ham miṭhāī bām̐ṭtē haim̐."
+    ipa: "ɦəm mɪʈʰaːiː bãːʈt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "हम", ref: "hi-0053" }
+      - { word: "मिठाई", ref: "hi-0998" }
+      - { word: "बाँटते", base: "बाँटना", reading: "bām̐ṭtē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", ref: "hi-1310", kind: "word" }
+      - { id: "w2", ref: "hi-1307", kind: "word" }
+  - id: "hi-4954"
+    target: "जन्मदिन मुबारक हो!"
+    reading: "janmadin mubārak hō!"
+    ipa: "dʒənməd̪ɪn mʊbaːrək ɦoː"
+    pos: "phrase"
+    bases:
+      - { word: "जन्मदिन", ref: "hi-1314" }
+      - { word: "मुबारक", ref: "hi-1333" }
+      - { word: "हो", base: "होना", reading: "hō" }
+    confusables:
+      - { id: "w1", ref: "hi-1316", kind: "word" }
+      - { id: "w2", ref: "hi-1315", kind: "word" }
+  - id: "hi-4955"
+    target: "दिवाली की शुभकामनाएँ!"
+    reading: "divālī kī śubhkāmnāēm̐!"
+    ipa: "d̪ɪʋaːliː kiː ʃʊbʱkaːmnaːẽː"
+    pos: "phrase"
+    bases:
+      - { word: "दिवाली", ref: "hi-1300" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "शुभकामनाएँ", base: "शुभकामना", reading: "śubhkāmnāēm̐" }
+    confusables:
+      - { id: "w1", ref: "hi-1316", kind: "word" }
+      - { id: "w2", ref: "hi-1315", kind: "word" }
+  - id: "hi-4956"
+    target: "लाल रंग अच्छा है।"
+    reading: "lāl raṅg acchā hai."
+    ipa: "laːl rəŋɡ ətʃtʃʰaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "लाल", ref: "hi-0916" }
+      - { word: "रंग", ref: "hi-1309" }
+      - { word: "अच्छा", ref: "hi-0898" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1327", kind: "word" }
+      - { id: "w2", ref: "hi-1308", kind: "word" }
