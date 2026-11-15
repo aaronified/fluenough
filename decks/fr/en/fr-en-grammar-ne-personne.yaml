@@ -1,0 +1,22 @@
+schema: 1
+id: "fr-en-grammar-ne-personne"
+kind: "layer"
+core: "fr-grammar-ne-personne"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nobody: ne … personne"
+license: "CC-BY-SA-4.0"
+description: "Ne … personne means nobody; it replaces quelqu'un. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Ne … personne"
+  slot_name: "sentence"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "positive": "positive sentence", "negative": "negative sentence" }
+  entries:
+    "voir": "to see"
+    "attendre": "to wait for"
+    "connaitre": "to know (a person)"
+    "entendre": "to hear"
+    "appeler": "to call"
+    "chercher": "to look for"
+    "aider": "to help"
+  notes: "Ne … personne means nobody, and replaces quelqu'un (somebody): je vois quelqu'un becomes je ne vois personne. Ne goes before the verb and personne after it, and ne becomes n' before a vowel sound: tu n'attends personne. In the passé composé, personne comes after the participle: je n'ai vu personne, unlike rien, which comes before it (je n'ai rien vu). Personne can also begin a sentence: personne ne vient."

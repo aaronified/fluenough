@@ -1,0 +1,153 @@
+schema: 1
+id: "fr-geography-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-3760"
+    target: "La Belgique est près de la France."
+    ipa: "la bɛlʒik ɛ pʁɛ də la fʁɑ̃s"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "Belgique", base: "Belgique" }
+      - { word: "est", base: "être" }
+      - { word: "près", ref: "fr-0464" }
+      - { word: "de", base: "de" }
+      - { word: "France", base: "France" }
+    confusables:
+      - { id: "suisse", ref: "fr-3722", kind: "word" }
+      - { id: "wallonie", ref: "fr-3734", kind: "word" }
+  - id: "fr-3761"
+    target: "Le Canada est très grand."
+    ipa: "lə kanada ɛ tʁɛ ɡʁɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "Canada", base: "Canada" }
+      - { word: "est", base: "être" }
+      - { word: "très", ref: "fr-0031" }
+      - { word: "grand", ref: "fr-0410" }
+    confusables:
+      - { id: "quebec", ref: "fr-3724", kind: "word" }
+      - { id: "montreal", ref: "fr-3743", kind: "word" }
+  - id: "fr-3762"
+    target: "L'Afrique est un grand continent."
+    ipa: "lafʁik ɛt œ̃ ɡʁɑ̃ kɔ̃tinɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "L'Afrique", base: "Afrique" }
+      - { word: "est", base: "être" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "grand", ref: "fr-0410" }
+      - { word: "continent", base: "continent" }
+    confusables:
+      - { id: "europe", ref: "fr-3732", kind: "word" }
+      - { id: "algerie", ref: "fr-3726", kind: "word" }
+  - id: "fr-3763"
+    target: "Paris est sur la Seine."
+    ipa: "paʁi ɛ syʁ la sɛn"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Paris", base: "Paris" }
+      - { word: "est", base: "être" }
+      - { word: "sur", ref: "fr-0469" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "Seine", base: "Seine" }
+    confusables:
+      - { id: "lyon", ref: "fr-3739", kind: "word" }
+      - { id: "marseille", ref: "fr-3740", kind: "word" }
+  - id: "fr-3764"
+    target: "La Provence est au bord de la Méditerranée."
+    ipa: "la pʁɔvɑ̃s ɛt o bɔʁ də la meditɛʁane"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "Provence", base: "Provence" }
+      - { word: "est", base: "être" }
+      - { word: "au", base: "à" }
+      - { word: "bord", base: "bord" }
+      - { word: "de", base: "de" }
+      - { word: "Méditerranée", base: "Méditerranée" }
+    confusables:
+      - { id: "bretagne", ref: "fr-3736", kind: "word" }
+      - { id: "normandie", ref: "fr-3737", kind: "word" }
+  - id: "fr-3765"
+    target: "Le Maroc est près de l'Espagne."
+    ipa: "lə maʁɔk ɛ pʁɛ də lɛspaɲ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "Maroc", base: "Maroc" }
+      - { word: "est", base: "être" }
+      - { word: "près", ref: "fr-0464" }
+      - { word: "de", base: "de" }
+      - { word: "l'Espagne", base: "Espagne" }
+    confusables:
+      - { id: "algerie", ref: "fr-3726", kind: "word" }
+      - { id: "tunisie", ref: "fr-3728", kind: "word" }
+  - id: "fr-3766"
+    target: "Lyon est au bord du Rhône."
+    ipa: "ljɔ̃ ɛt o bɔʁ dy ʁon"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Lyon", base: "Lyon" }
+      - { word: "est", base: "être" }
+      - { word: "au", base: "à" }
+      - { word: "bord", base: "bord" }
+      - { word: "du", base: "de" }
+      - { word: "Rhône", base: "Rhône" }
+    confusables:
+      - { id: "loire", ref: "fr-3745", kind: "word" }
+      - { id: "seine", ref: "fr-3746", kind: "word" }
+  - id: "fr-3767"
+    target: "Genève est en Suisse."
+    ipa: "ʒənɛv ɛt ɑ̃ sɥis"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Genève", base: "Genève" }
+      - { word: "est", base: "être" }
+      - { word: "en", base: "en" }
+      - { word: "Suisse", base: "Suisse" }
+    confusables:
+      - { id: "bruxelles", ref: "fr-3741", kind: "word" }
+      - { id: "montreal", ref: "fr-3743", kind: "word" }
+  - id: "fr-3768"
+    target: "Le Sénégal est en Afrique."
+    ipa: "lə seneɡal ɛt ɑ̃n afʁik"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "Sénégal", base: "Sénégal" }
+      - { word: "est", base: "être" }
+      - { word: "en", base: "en" }
+      - { word: "Afrique", base: "Afrique" }
+    confusables:
+      - { id: "maroc", ref: "fr-3725", kind: "word" }
+      - { id: "tunisie", ref: "fr-3728", kind: "word" }
+  - id: "fr-3769"
+    target: "La Bretagne est sur l'Atlantique."
+    ipa: "la bʁətaɲ ɛ syʁ latlɑ̃tik"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "Bretagne", base: "Bretagne" }
+      - { word: "est", base: "être" }
+      - { word: "sur", ref: "fr-0469" }
+      - { word: "l'Atlantique", base: "Atlantique" }
+    confusables:
+      - { id: "normandie", ref: "fr-3737", kind: "word" }
+      - { id: "mediterranee", ref: "fr-3748", kind: "word" }

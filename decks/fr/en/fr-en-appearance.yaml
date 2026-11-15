@@ -1,0 +1,644 @@
+schema: 1
+id: "fr-en-appearance"
+kind: "layer"
+core: "fr-appearance"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Appearance"
+license: "CC-BY-SA-4.0"
+description: "Forty words for describing how a person looks: hair, face, build and some adjectives for appearance. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-3160":
+    native: "beard"
+    notes:
+      "n1": "La barbe is the beard; it is feminine: une barbe, la barbe."
+    examples:
+      "Il a une barbe courte.":
+        native: "He has a short beard."
+        bases:
+          "a": "has"
+          "barbe": "beard"
+          "courte": "short"
+      "Mon père porte la barbe.":
+        native: "My father has a beard."
+        bases:
+          "porte": "wears"
+          "barbe": "beard"
+  "fr-3161":
+    native: "moustache"
+    notes:
+      "n1": "La moustache is the moustache; it is feminine and is used in the singular."
+    examples:
+      "Il a une moustache.":
+        native: "He has a moustache."
+        bases:
+          "a": "has"
+          "moustache": "moustache"
+      "La moustache lui va bien.":
+        native: "The moustache suits him."
+        bases:
+          "moustache": "moustache"
+          "va": "suits"
+  "fr-3162":
+    native: "forehead"
+    notes:
+      "n1": "Le front is the forehead; it is masculine."
+    examples:
+      "Elle a le front haut.":
+        native: "She has a high forehead."
+        bases:
+          "a": "has"
+          "front": "forehead"
+      "Il a mal au front.":
+        native: "He has a pain in the forehead."
+        bases:
+          "a": "has"
+          "au": "at the"
+          "front": "forehead"
+  "fr-3163":
+    native: "chin"
+    notes:
+      "n1": "Le menton is the chin; it is masculine."
+    examples:
+      "Il a un petit menton.":
+        native: "He has a small chin."
+        bases:
+          "a": "has"
+          "menton": "chin"
+      "Elle pose le menton sur la main.":
+        native: "She rests her chin on her hand."
+        bases:
+          "pose": "rests"
+          "menton": "chin"
+  "fr-3164":
+    native: "weight"
+    notes:
+      "n1": "Le poids is weight; it is masculine, and avoir du poids is not used for a person's weight."
+    examples:
+      "Il a perdu du poids.":
+        native: "He has lost weight."
+        bases:
+          "a": "has"
+          "perdu": "lost"
+          "du": "some"
+          "poids": "weight"
+      "Quel est ton poids ?":
+        native: "What is your weight?"
+        bases:
+          "est": "is"
+          "poids": "weight"
+  "fr-3165":
+    native: "tattoo"
+    notes:
+      "n1": "Un tatouage is a tattoo; it is masculine."
+    examples:
+      "Il a un tatouage sur le bras.":
+        native: "He has a tattoo on his arm."
+        bases:
+          "a": "has"
+          "tatouage": "tattoo"
+      "Ce tatouage est très joli.":
+        native: "This tattoo is very pretty."
+        bases:
+          "tatouage": "tattoo"
+          "est": "is"
+  "fr-3166":
+    native: "scar"
+    notes:
+      "n1": "Une cicatrice is a scar from a wound; it is feminine."
+    examples:
+      "Elle a une cicatrice au genou.":
+        native: "She has a scar on her knee."
+        bases:
+          "a": "has"
+          "cicatrice": "scar"
+          "au": "at the"
+      "La cicatrice est petite.":
+        native: "The scar is small."
+        bases:
+          "cicatrice": "scar"
+          "est": "is"
+          "petite": "small"
+  "fr-3167":
+    native: "wrinkle"
+    notes:
+      "n1": "Une ride is a wrinkle; it is feminine and is often used in the plural: des rides."
+    examples:
+      "Il a des rides autour des yeux.":
+        native: "He has wrinkles around his eyes."
+        bases:
+          "a": "has"
+          "rides": "wrinkles"
+          "yeux": "eyes"
+      "Ma grand-mère a beaucoup de rides.":
+        native: "My grandmother has many wrinkles."
+        bases:
+          "a": "has"
+          "de": "of"
+          "rides": "wrinkle"
+  "fr-3168":
+    native: "curl, loop"
+    notes:
+      "n1": "Une boucle is a curl of hair or a loop; boucles d'oreilles are earrings."
+    examples:
+      "Elle a de belles boucles.":
+        native: "She has beautiful curls."
+        bases:
+          "a": "has"
+          "de": "of"
+          "belles": "beautiful"
+          "boucles": "curls"
+      "Elle porte des boucles d'oreilles.":
+        native: "She wears earrings."
+        bases:
+          "boucles": "earrings"
+          "d'oreilles": "ear"
+  "fr-3169":
+    native: "figure, outline"
+    notes:
+      "n1": "Une silhouette is the outline or figure of a person; it is feminine."
+    examples:
+      "Je vois une silhouette dans le jardin.":
+        native: "I see a figure in the garden."
+        bases:
+          "vois": "see"
+          "silhouette": "figure, outline"
+      "Elle a une silhouette mince.":
+        native: "She has a slim figure."
+        bases:
+          "a": "has"
+          "silhouette": "figure, outline"
+  "fr-3170":
+    native: "look, bearing"
+    notes:
+      "n1": "Une allure is the way someone looks or moves; it is feminine."
+    examples:
+      "Il a une bonne allure.":
+        native: "He looks good."
+        bases:
+          "a": "has"
+          "bonne": "good"
+          "allure": "look, bearing"
+      "Elle marche avec une allure rapide.":
+        native: "She walks at a quick pace."
+        bases:
+          "marche": "walks"
+          "allure": "look, bearing"
+  "fr-3171":
+    native: "look, gaze"
+    notes:
+      "n1": "Un regard is a look or a gaze; it is masculine."
+    examples:
+      "Elle a un regard doux.":
+        native: "She has a gentle look."
+        bases:
+          "a": "has"
+          "regard": "look, gaze"
+      "Son regard est sérieux.":
+        native: "His look is serious."
+        bases:
+          "regard": "look, gaze"
+          "est": "is"
+  "fr-3172":
+    native: "lip"
+    notes:
+      "n1": "Une lèvre is a lip; it is feminine and is used in the plural: les lèvres."
+    examples:
+      "Ses lèvres sont rouges.":
+        native: "Her lips are red."
+        bases:
+          "Ses": "her"
+          "lèvres": "lip"
+          "sont": "are"
+          "rouges": "red"
+      "Elle pince les lèvres.":
+        native: "She purses her lips."
+        bases:
+          "pince": "purses"
+          "lèvres": "lip"
+  "fr-3173":
+    native: "eyebrow"
+    notes:
+      "n1": "Un sourcil is an eyebrow; it is masculine."
+    examples:
+      "Il a des sourcils épais.":
+        native: "He has thick eyebrows."
+        bases:
+          "a": "has"
+          "sourcils": "eyebrows"
+          "épais": "thick"
+      "Elle lève un sourcil.":
+        native: "She raises an eyebrow."
+        bases:
+          "lève": "raises"
+          "sourcil": "eyebrow"
+  "fr-3174":
+    native: "hairstyle"
+    notes:
+      "n1": "Une coiffure is a hairstyle; it is feminine."
+    examples:
+      "Elle a une nouvelle coiffure.":
+        native: "She has a new hairstyle."
+        bases:
+          "a": "has"
+          "nouvelle": "new"
+          "coiffure": "hairstyle"
+      "Sa coiffure est très belle.":
+        native: "Her hairstyle is very beautiful."
+        bases:
+          "coiffure": "hairstyle"
+          "est": "is"
+          "belle": "beautiful"
+  "fr-3175":
+    native: "complexion"
+    notes:
+      "n1": "Le teint is the colour and look of the skin of the face; it is masculine."
+    examples:
+      "Elle a le teint pâle.":
+        native: "She has a pale complexion."
+        bases:
+          "a": "has"
+          "teint": "complexion"
+      "Il a le teint frais.":
+        native: "He has a fresh complexion."
+        bases:
+          "a": "has"
+          "teint": "complexion"
+  "fr-3176":
+    native: "bald"
+    notes:
+      "n1": "Chauve means bald; the feminine is chauve too."
+    examples:
+      "Mon oncle est chauve.":
+        native: "My uncle is bald."
+        bases:
+          "est": "is"
+          "chauve": "bald"
+      "Il devient chauve.":
+        native: "He is going bald."
+        bases:
+          "devient": "is becoming"
+          "chauve": "bald"
+  "fr-3177":
+    native: "curly"
+    notes:
+      "n1": "Frisé means curly; the feminine is frisée."
+    examples:
+      "Elle a les cheveux frisés.":
+        native: "She has curly hair."
+        bases:
+          "a": "has"
+          "cheveux": "hair"
+          "frisés": "curly"
+      "Sa fille a les cheveux frisés.":
+        native: "Her daughter has curly hair."
+        bases:
+          "a": "has"
+          "cheveux": "hair"
+          "frisés": "curly"
+  "fr-3178":
+    native: "straight, stiff"
+    notes:
+      "n1": "Raide means straight for hair, and stiff for a body; it does not change in the feminine."
+    examples:
+      "Ses cheveux sont raides.":
+        native: "Her hair is straight."
+        bases:
+          "cheveux": "hair"
+          "sont": "are"
+          "raides": "straight, stiff"
+      "Il a les cheveux raides et courts.":
+        native: "He has straight, short hair."
+        bases:
+          "a": "has"
+          "cheveux": "hair"
+          "raides": "straight, stiff"
+          "courts": "short"
+  "fr-3179":
+    native: "wavy"
+    notes:
+      "n1": "Ondulé means wavy; the feminine is ondulée."
+    examples:
+      "Elle a les cheveux ondulés.":
+        native: "She has wavy hair."
+        bases:
+          "a": "has"
+          "cheveux": "hair"
+          "ondulés": "wavy"
+      "Ses cheveux sont ondulés et longs.":
+        native: "Her hair is wavy and long."
+        bases:
+          "cheveux": "hair"
+          "sont": "are"
+          "ondulés": "wavy"
+          "longs": "long"
+  "fr-3180":
+    native: "pale"
+    notes:
+      "n1": "Pâle means pale; it is the same in both genders."
+    examples:
+      "Il est pâle ce matin.":
+        native: "He looks pale this morning."
+        bases:
+          "est": "is"
+          "pâle": "pale"
+      "Elle a un visage pâle.":
+        native: "She has a pale face."
+        bases:
+          "a": "has"
+          "pâle": "pale"
+  "fr-3181":
+    native: "tanned"
+    notes:
+      "n1": "Bronzé means tanned; the feminine is bronzée."
+    examples:
+      "Il est bronzé après l'été.":
+        native: "He is tanned after the summer."
+        bases:
+          "est": "is"
+          "bronzé": "tanned"
+          "l'été": "summer"
+      "Elle est bronzée.":
+        native: "She is tanned."
+        bases:
+          "est": "is"
+          "bronzée": "tanned"
+  "fr-3182":
+    native: "round"
+    notes:
+      "n1": "Rond means round; the feminine is ronde."
+    examples:
+      "Elle a un visage rond.":
+        native: "She has a round face."
+        bases:
+          "a": "has"
+          "rond": "round"
+      "Il a les yeux ronds.":
+        native: "He has round eyes."
+        bases:
+          "a": "has"
+          "yeux": "eyes"
+          "ronds": "round"
+  "fr-3183":
+    native: "square"
+    notes:
+      "n1": "Carré means square; it is also used for a square face."
+    examples:
+      "Il a un visage carré.":
+        native: "He has a square face."
+        bases:
+          "a": "has"
+          "carré": "square"
+      "Sa mâchoire est carrée.":
+        native: "His jaw is square."
+        bases:
+          "mâchoire": "jaw"
+          "est": "is"
+          "carrée": "square"
+  "fr-3184":
+    native: "thin, slim"
+    notes:
+      "n1": "Mince means thin or slim; it is the same in both genders."
+    examples:
+      "Elle est mince et grande.":
+        native: "She is slim and tall."
+        bases:
+          "est": "is"
+          "mince": "thin, slim"
+          "grande": "tall"
+      "Il est très mince.":
+        native: "He is very slim."
+        bases:
+          "est": "is"
+          "mince": "thin, slim"
+  "fr-3185":
+    native: "big, fat"
+    notes:
+      "n1": "Gros means big or fat; the feminine is grosse."
+    examples:
+      "Le chat est gros.":
+        native: "The cat is big."
+        bases:
+          "est": "is"
+          "gros": "big, fat"
+      "Elle a une grosse tête.":
+        native: "She has a big head."
+        bases:
+          "a": "has"
+          "grosse": "big"
+  "fr-3186":
+    native: "sturdy, strong"
+    notes:
+      "n1": "Costaud means strong and sturdy; the feminine is costaude."
+    examples:
+      "Mon frère est costaud.":
+        native: "My brother is strong."
+        bases:
+          "est": "is"
+          "costaud": "sturdy, strong"
+      "Elle est costaude.":
+        native: "She is sturdy."
+        bases:
+          "est": "is"
+          "costaude": "sturdy"
+  "fr-3187":
+    native: "athletic"
+    notes:
+      "n1": "Athlétique means athletic; the form is the same in both genders."
+    examples:
+      "Il est grand et athlétique.":
+        native: "He is tall and athletic."
+        bases:
+          "est": "is"
+          "athlétique": "athletic"
+      "Elle est athlétique.":
+        native: "She is athletic."
+        bases:
+          "est": "is"
+          "athlétique": "athletic"
+  "fr-3188":
+    native: "serious"
+    notes:
+      "n1": "Sérieux means serious; the feminine is sérieuse."
+    examples:
+      "Il est sérieux.":
+        native: "He is serious."
+        bases:
+          "est": "is"
+          "sérieux": "serious"
+      "Elle a un air sérieux.":
+        native: "She looks serious."
+        bases:
+          "a": "has"
+          "air": "look"
+          "sérieux": "serious"
+  "fr-3189":
+    native: "nice"
+    notes:
+      "n1": "Sympa means nice; it is informal and does not change: il est sympa, elle est sympa."
+    examples:
+      "Elle est très sympa.":
+        native: "She is very nice."
+        bases:
+          "est": "is"
+          "sympa": "nice"
+      "Mon voisin est sympa.":
+        native: "My neighbour is nice."
+        bases:
+          "est": "is"
+          "sympa": "nice"
+  "fr-3190":
+    native: "ugly"
+    notes:
+      "n1": "Moche means ugly and is informal; the standard word is laid."
+    examples:
+      "Ce sac est moche.":
+        native: "This bag is ugly."
+        bases:
+          "est": "is"
+          "moche": "ugly"
+      "Il fait un temps moche.":
+        native: "The weather is awful."
+        bases:
+          "fait": "is"
+          "moche": "ugly"
+  "fr-3191":
+    native: "light, fair"
+    notes:
+      "n1": "Clair means light or fair; the dark form is foncé."
+    examples:
+      "Elle a les yeux clairs.":
+        native: "She has light eyes."
+        bases:
+          "a": "has"
+          "yeux": "eyes"
+          "clairs": "light, fair"
+      "Il a la peau claire.":
+        native: "He has a fair skin."
+        bases:
+          "a": "has"
+          "claire": "light, fair"
+  "fr-3192":
+    native: "dark"
+    notes:
+      "n1": "Foncé means dark; the feminine is foncée."
+    examples:
+      "Il a les cheveux foncés.":
+        native: "He has dark hair."
+        bases:
+          "a": "has"
+          "cheveux": "hair"
+          "foncés": "dark"
+      "Elle a la peau foncée.":
+        native: "She has dark skin."
+        bases:
+          "a": "has"
+          "foncée": "dark"
+  "fr-3193":
+    native: "blond"
+    notes:
+      "n1": "Blond means blond; the feminine is blonde."
+    examples:
+      "Elle est blonde.":
+        native: "She is blonde."
+        bases:
+          "est": "is"
+          "blonde": "blond"
+      "Son fils est blond.":
+        native: "Her son is blond."
+        bases:
+          "est": "is"
+          "blond": "blond"
+  "fr-3194":
+    native: "dark-haired, brown"
+    notes:
+      "n1": "Brun means brown or dark-haired; the feminine is brune."
+    examples:
+      "Il est brun.":
+        native: "He has dark hair."
+        bases:
+          "est": "is"
+          "brun": "dark-haired, brown"
+      "Elle est brune et mince.":
+        native: "She has dark hair and is slim."
+        bases:
+          "est": "is"
+          "brune": "dark-haired"
+  "fr-3195":
+    native: "red-haired"
+    notes:
+      "n1": "Roux means red-haired; the feminine is rousse."
+    examples:
+      "Mon cousin est roux.":
+        native: "My cousin has red hair."
+        bases:
+          "est": "is"
+          "roux": "red-haired"
+      "Elle est rousse.":
+        native: "She has red hair."
+        bases:
+          "est": "is"
+          "rousse": "red-haired"
+  "fr-3196":
+    native: "chestnut-brown"
+    notes:
+      "n1": "Châtain means chestnut-brown; it is the same for both genders and takes -s in the plural."
+    examples:
+      "Elle a les cheveux châtains.":
+        native: "She has chestnut hair."
+        bases:
+          "a": "has"
+          "cheveux": "hair"
+          "châtains": "chestnut-brown"
+      "Il est châtain.":
+        native: "He has chestnut hair."
+        bases:
+          "est": "is"
+          "châtain": "chestnut-brown"
+  "fr-3197":
+    native: "muscular"
+    notes:
+      "n1": "Musclé means muscular; the feminine is musclée."
+    examples:
+      "Il est musclé.":
+        native: "He is muscular."
+        bases:
+          "est": "is"
+          "musclé": "muscular"
+      "Elle a les bras musclés.":
+        native: "She has muscular arms."
+        bases:
+          "a": "has"
+          "musclés": "muscular"
+  "fr-3198":
+    native: "broad, wide"
+    notes:
+      "n1": "Large means wide or broad, and is used for shoulders: les épaules larges."
+    examples:
+      "Il a les épaules larges.":
+        native: "He has broad shoulders."
+        bases:
+          "a": "has"
+          "épaules": "shoulders"
+          "larges": "broad, wide"
+      "La porte est large.":
+        native: "The door is wide."
+        bases:
+          "est": "is"
+          "large": "broad, wide"
+  "fr-3199":
+    native: "elderly"
+    notes:
+      "n1": "Âgé means old, used for people: une personne âgée. The feminine is âgée."
+    examples:
+      "Mon grand-père est âgé.":
+        native: "My grandfather is elderly."
+        bases:
+          "est": "is"
+          "âgé": "elderly"
+      "Elle est âgée et très gentille.":
+        native: "She is elderly and very kind."
+        bases:
+          "est": "is"
+          "âgée": "elderly"
+          "gentille": "kind"

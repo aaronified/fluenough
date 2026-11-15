@@ -1,0 +1,45 @@
+schema: 1
+id: "fr-grammar-ne-rien"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["positive", "negative"]
+  entries:
+    - lemma: "voir"
+      ipa: "vwaʁ"
+      forms:
+        "positive": "je vois quelque chose"
+        "negative": "je ne vois rien"
+    - lemma: "faire"
+      ipa: "fɛʁ"
+      forms:
+        "positive": "tu fais quelque chose"
+        "negative": "tu ne fais rien"
+    - lemma: "entendre"
+      ipa: "ɑ̃tɑ̃dʁ"
+      forms:
+        "positive": "il entend quelque chose"
+        "negative": "il n'entend rien"
+    - lemma: "comprendre"
+      ipa: "kɔ̃pʁɑ̃dʁ"
+      forms:
+        "positive": "elle comprend quelque chose"
+        "negative": "elle ne comprend rien"
+    - lemma: "manger"
+      ipa: "mɑ̃ʒe"
+      forms:
+        "positive": "nous mangeons quelque chose"
+        "negative": "nous ne mangeons rien"
+    - lemma: "boire"
+      ipa: "bwaʁ"
+      forms:
+        "positive": "vous buvez quelque chose"
+        "negative": "vous ne buvez rien"
+    - lemma: "savoir"
+      ipa: "savwaʁ"
+      forms:
+        "positive": "ils savent quelque chose"
+        "negative": "ils ne savent rien"

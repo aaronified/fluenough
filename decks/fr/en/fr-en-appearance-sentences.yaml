@@ -1,0 +1,91 @@
+schema: 1
+id: "fr-en-appearance-sentences"
+kind: "layer"
+core: "fr-appearance-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: appearance"
+license: "CC-BY-SA-4.0"
+description: "Ten sentences about how people look, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-3200":
+    native: "He has a beard and a moustache."
+    confusables:
+      "menton": { why: "the chin, which is not hair" }
+      "front": { why: "the forehead, which is not hair on the face" }
+    bases:
+      "a": "has"
+  "fr-3201":
+    native: "She has curly hair and green eyes."
+    confusables:
+      "ondule": { why: "wavy, not curly" }
+      "raide": { why: "straight, not curly" }
+    bases:
+      "a": "has"
+      "cheveux": "hair"
+      "frisés": "curly"
+      "yeux": "eyes"
+      "verts": "green"
+  "fr-3202":
+    native: "Are you tall or short?"
+    confusables:
+      "mince": { why: "slim, not tall" }
+      "costaud": { why: "sturdy, not tall" }
+    bases:
+      "es": "are"
+      "ou": "or"
+  "fr-3203":
+    native: "The tattoo is on the arm."
+    confusables:
+      "cicatrice": { why: "a scar is a mark from an injury, not a drawing" }
+      "bouton": { why: "a spot on the skin, not a drawing" }
+    bases:
+      "est": "is"
+  "fr-3204":
+    native: "Do you have a scar on your chin?"
+    confusables:
+      "ride": { why: "a wrinkle, not a scar" }
+      "tatouage": { why: "a tattoo is a drawing, not a mark from an injury" }
+    bases:
+      "as": "have"
+      "au": "at the"
+  "fr-3205":
+    native: "My uncle is bald and elderly."
+    confusables:
+      "costaud": { why: "sturdy, not bald" }
+      "sympa": { why: "nice, which says nothing about looks" }
+    bases:
+      "est": "is"
+  "fr-3206":
+    native: "His look is gentle and serious."
+    confusables:
+      "allure": { why: "the way someone moves, not the look" }
+      "silhouette": { why: "a figure, not a look" }
+    bases:
+      "est": "is"
+  "fr-3207":
+    native: "Is she wearing black earrings?"
+    confusables:
+      "bague": { why: "a ring, not an earring" }
+      "montre": { why: "a watch, not an earring" }
+    bases:
+      "porte": "wears"
+      "boucles": "earrings"
+      "d'oreilles": "ear"
+      "noires": "black"
+  "fr-3208":
+    native: "This boy is very sturdy."
+    confusables:
+      "athletique": { why: "athletic, which is about sport" }
+      "muscle": { why: "muscular, a different word for strength" }
+    bases:
+      "est": "is"
+  "fr-3209":
+    native: "He has a pale complexion and dry lips."
+    confusables:
+      "rond": { why: "round, a shape" }
+      "clair": { why: "light, not pale" }
+    bases:
+      "a": "has"
+      "lèvres": "lips"
+      "sèches": "dry"

@@ -1,0 +1,23 @@
+schema: 1
+id: "fr-en-grammar-reflexives"
+kind: "layer"
+core: "fr-grammar-reflexives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Reflexive verbs: doing something to yourself"
+license: "CC-BY-SA-4.0"
+description: "A reflexive verb has a pronoun before it that matches the subject: je me lave, nous nous lavons. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Reflexive verbs"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "je": "I", "tu": "you (informal)", "il-elle": "he or she", "nous": "we", "vous": "you (formal or plural)", "ils-elles": "they" }
+  entries:
+    "se-reveiller": "to wake up"
+    "se-laver": "to wash (oneself)"
+    "s-appeler": "to be called"
+    "se-preparer": "to get ready"
+    "se-trouver": "to be (located)"
+    "se-perdre": "to get lost"
+    "se-demander": "to wonder"
+    "se-changer": "to get changed"
+  notes: "A reflexive verb has a pronoun before the verb that matches the subject: je me, tu te, il se, nous nous, vous vous, ils se. Me, te and se lose their vowel before a vowel sound: je m'appelle, tu t'appelles, il s'appelle. S'appeler doubles its l in the singular and with ils (je m'appelle, ils s'appellent) but not with nous and vous (nous nous appelons). Se changer keeps its e before -ons: nous nous changeons. In the negative, ne goes before the pronoun: je ne me lave pas."

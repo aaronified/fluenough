@@ -1,0 +1,66 @@
+schema: 1
+id: "fr-grammar-comparison"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["plus", "moins", "aussi", "le-plus"]
+  entries:
+    - lemma: "grand"
+      ipa: "ɡʁɑ̃"
+      forms:
+        "plus": "plus grand que"
+        "moins": "moins grand que"
+        "aussi": "aussi grand que"
+        "le-plus": "le plus grand"
+    - lemma: "petit"
+      ipa: "pəti"
+      forms:
+        "plus": "plus petit que"
+        "moins": "moins petit que"
+        "aussi": "aussi petit que"
+        "le-plus": "le plus petit"
+    - lemma: "rapide"
+      ipa: "ʁapid"
+      forms:
+        "plus": "plus rapide que"
+        "moins": "moins rapide que"
+        "aussi": "aussi rapide que"
+        "le-plus": "le plus rapide"
+    - lemma: "cher"
+      ipa: "ʃɛʁ"
+      forms:
+        "plus": "plus cher que"
+        "moins": "moins cher que"
+        "aussi": "aussi cher que"
+        "le-plus": "le plus cher"
+    - lemma: "facile"
+      ipa: "fasil"
+      forms:
+        "plus": "plus facile que"
+        "moins": "moins facile que"
+        "aussi": "aussi facile que"
+        "le-plus": "le plus facile"
+    - lemma: "difficile"
+      ipa: "difisil"
+      forms:
+        "plus": "plus difficile que"
+        "moins": "moins difficile que"
+        "aussi": "aussi difficile que"
+        "le-plus": "le plus difficile"
+    - lemma: "bon"
+      ipa: "bɔ̃"
+      forms:
+        "plus": "meilleur que"
+        "moins": "moins bon que"
+        "aussi": "aussi bon que"
+        "le-plus": "le meilleur"
+    - lemma: "bien"
+      ipa: "bjɛ̃"
+      forms:
+        "plus": "mieux que"
+        "moins": "moins bien que"
+        "aussi": "aussi bien que"
+        "le-plus": "le mieux"

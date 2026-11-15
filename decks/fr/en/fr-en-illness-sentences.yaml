@@ -1,0 +1,92 @@
+schema: 1
+id: "fr-en-illness-sentences"
+kind: "layer"
+core: "fr-illness-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: illness"
+license: "CC-BY-SA-4.0"
+description: "Ten sentences about being ill and seeing a doctor, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-3040":
+    native: "I have a headache."
+    confusables:
+      "grippe": { why: "a flu is an illness, not a pain in the head" }
+      "pommade": { why: "an ointment is rubbed on the skin, not for a headache" }
+    bases:
+      "J'ai": "have"
+      "à": "at"
+  "fr-3041":
+    native: "Do you have a stomach ache?"
+    confusables:
+      "nausee": { why: "nausea is feeling sick, not a pain" }
+      "diarrhee": { why: "diarrhoea is a different illness" }
+    bases:
+      "as": "has"
+      "au": "in"
+  "fr-3042":
+    native: "I take a tablet in the morning."
+    confusables:
+      "aspirine": { why: "aspirin is one kind of tablet, not every tablet" }
+      "pommade": { why: "an ointment is rubbed on the skin, not swallowed" }
+    bases:
+      "prends": "take"
+  "fr-3043":
+    native: "Don't move, I'm putting on a bandage."
+    confusables:
+      "platre": { why: "a plaster cast is for a broken bone, not for a cut" }
+      "plaie": { why: "a wound is the cut itself, not the dressing" }
+    bases:
+      "Ne": "not"
+      "bouge": "move"
+      "pas": "not"
+      "mets": "put on"
+  "fr-3044":
+    native: "He has a bump on his head."
+    confusables:
+      "coupure": { why: "a cut is open, a bump is not" }
+      "entorse": { why: "a sprain is in a joint, not on the head" }
+    bases:
+      "a": "has"
+      "à": "at"
+  "fr-3045":
+    native: "The doctor recommends rest."
+    confusables:
+      "consultation": { why: "a consultation is the visit itself, not the advice" }
+      "cachet": { why: "a tablet is medicine, not rest" }
+    bases:
+      "recommande": "recommends"
+      "du": "some"
+  "fr-3046":
+    native: "I have had a cold since Monday."
+    confusables:
+      "grippe": { why: "flu is a stronger illness than a cold" }
+      "frisson": { why: "a shiver is a feeling, not an illness" }
+    bases:
+      "suis": "am"
+      "enrhumé": "having a cold"
+      "depuis": "since"
+  "fr-3047":
+    native: "Is the pharmacy open?"
+    confusables:
+      "clinique": { why: "a clinic is a small hospital, not a shop for medicine" }
+      "consultation": { why: "a consultation is a visit to a doctor, not a shop" }
+    bases:
+      "est": "is"
+      "ouverte": "open"
+  "fr-3048":
+    native: "Wait, I am calling the doctor."
+    confusables:
+      "consultation": { why: "a visit to a doctor, not the call itself" }
+      "injection": { why: "a shot given by a doctor, not a call" }
+    bases:
+      "Attends": "wait"
+      "j'appelle": "call"
+  "fr-3049":
+    native: "You need a vaccine to travel."
+    confusables:
+      "antibiotique": { why: "an antibiotic kills bacteria; a vaccine prevents illness" }
+      "piqure": { why: "a bite or a sting, not a vaccine" }
+    bases:
+      "faut": "need"
+      "voyager": "travel"

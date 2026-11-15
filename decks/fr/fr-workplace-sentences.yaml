@@ -1,0 +1,166 @@
+schema: 1
+id: "fr-workplace-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-3680"
+    target: "Le responsable signe le contrat."
+    ipa: "lə ʁɛspɔ̃sabl siɲ lə kɔ̃tʁa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "responsable", base: "responsable" }
+      - { word: "signe", base: "signer" }
+      - { word: "contrat", ref: "fr-2549" }
+    confusables:
+      - { id: "employeur", ref: "fr-3640", kind: "word" }
+      - { id: "assistant", ref: "fr-3643", kind: "word" }
+  - id: "fr-3681"
+    target: "Je fais une photocopie du rapport."
+    ipa: "ʒə fɛ yn fɔtɔkɔpi dy ʁapɔʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "fais", base: "faire" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "photocopie", base: "photocopie" }
+      - { word: "du", base: "de" }
+      - { word: "rapport", base: "rapport" }
+    confusables:
+      - { id: "copie", ref: "fr-3646", kind: "word" }
+      - { id: "presentation", ref: "fr-3661", kind: "word" }
+  - id: "fr-3682"
+    target: "Le stagiaire arrive à neuf heures."
+    ipa: "lə staʒjɛʁ aʁiv a nœf œʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "stagiaire", base: "stagiaire" }
+      - { word: "arrive", base: "arriver" }
+      - { word: "à", base: "à" }
+      - { word: "neuf", ref: "fr-0216" }
+      - { word: "heures", base: "heure" }
+    confusables:
+      - { id: "assistant", ref: "fr-3643", kind: "word" }
+      - { id: "employeur", ref: "fr-3640", kind: "word" }
+  - id: "fr-3683"
+    target: "La réunion commence à dix heures."
+    ipa: "la ʁeynjɔ̃ kɔmɑ̃s a dis œʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "réunion", base: "réunion" }
+      - { word: "commence", base: "commencer" }
+      - { word: "à", base: "à" }
+      - { word: "dix", ref: "fr-0217" }
+      - { word: "heures", base: "heure" }
+    confusables:
+      - { id: "presentation", ref: "fr-3661", kind: "word" }
+      - { id: "bilan", ref: "fr-3650", kind: "word" }
+  - id: "fr-3684"
+    target: "Le mail du patron est arrivé ce matin."
+    ipa: "lə maj dy patʁɔ̃ ɛt aʁive sə matɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "mail", base: "mail" }
+      - { word: "du", base: "de" }
+      - { word: "patron", ref: "fr-0662" }
+      - { word: "est", base: "être" }
+      - { word: "arrivé", base: "arriver" }
+      - { word: "ce", ref: "fr-0143" }
+      - { word: "matin", ref: "fr-1033" }
+    confusables:
+      - { id: "courrier", ref: "fr-3665", kind: "word" }
+      - { id: "memo", ref: "fr-3669", kind: "word" }
+  - id: "fr-3685"
+    target: "La paie est versée le trente du mois."
+    ipa: "la pɛ ɛ vɛʁse lə tʁɑ̃t dy mwa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "paie", base: "paie" }
+      - { word: "est", base: "être" }
+      - { word: "versée", base: "verser" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "trente", ref: "fr-0702" }
+      - { word: "du", base: "de" }
+      - { word: "mois", ref: "fr-1165" }
+    confusables:
+      - { id: "bulletin", ref: "fr-3678", kind: "word" }
+      - { id: "prime", ref: "fr-3644", kind: "word" }
+  - id: "fr-3686"
+    target: "L'informatique est en panne depuis hier."
+    ipa: "lɛ̃fɔʁmatik ɛt ɑ̃ pan dəpɥi jɛʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "L'informatique", base: "informatique" }
+      - { word: "est", base: "être" }
+      - { word: "en", base: "en" }
+      - { word: "panne", ref: "fr-2520" }
+      - { word: "depuis", base: "depuis" }
+      - { word: "hier", ref: "fr-1038" }
+    confusables:
+      - { id: "ordinateur", ref: "fr-0666", kind: "word" }
+      - { id: "logiciel", ref: "fr-2067", kind: "word" }
+  - id: "fr-3687"
+    target: "Le classeur est sur le bureau du directeur."
+    ipa: "lə klasœʁ ɛ syʁ lə byʁo dy diʁɛktœʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "classeur", base: "classeur" }
+      - { word: "est", base: "être" }
+      - { word: "sur", ref: "fr-0469" }
+      - { word: "bureau", ref: "fr-0660" }
+      - { word: "du", base: "de" }
+      - { word: "directeur", ref: "fr-0686" }
+    confusables:
+      - { id: "pochette", ref: "fr-3653", kind: "word" }
+      - { id: "copieur", ref: "fr-3651", kind: "word" }
+  - id: "fr-3688"
+    target: "Le bilan du mois est affiché sur le mur."
+    ipa: "lə bilɑ̃ dy mwa ɛt afiʃe syʁ lə myʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "bilan", base: "bilan" }
+      - { word: "du", base: "de" }
+      - { word: "mois", ref: "fr-1165" }
+      - { word: "est", base: "être" }
+      - { word: "affiché", base: "affiché" }
+      - { word: "sur", ref: "fr-0469" }
+      - { word: "mur", ref: "fr-1015" }
+    confusables:
+      - { id: "planning", ref: "fr-3655", kind: "word" }
+      - { id: "rapport", ref: "fr-3660", kind: "word" }
+  - id: "fr-3689"
+    target: "La fiche du client est dans le classeur."
+    ipa: "la fiʃ dy klijɑ̃ ɛ dɑ̃ lə klasœʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "fiche", base: "fiche" }
+      - { word: "du", base: "de" }
+      - { word: "client", ref: "fr-0685" }
+      - { word: "est", base: "être" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "classeur", base: "classeur" }
+    confusables:
+      - { id: "dossier", ref: "fr-0665", kind: "word" }
+      - { id: "pochette", ref: "fr-3653", kind: "word" }

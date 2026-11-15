@@ -1,0 +1,97 @@
+schema: 1
+id: "fr-en-journey-sentences"
+kind: "layer"
+core: "fr-journey-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Journey sentences"
+license: "CC-BY-SA-4.0"
+description: "Example sentences about journey, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-3445":
+    native: "The inspector asks for my ticket."
+    bases:
+      "contrôleur": "ticket inspector"
+      "demande": "asks for"
+    confusables:
+      "conducteur": { why: "Conducteur is 'driver', the person who drives the train, not the ticket inspector." }
+      "guichet": { why: "Guichet is the counter where tickets are bought, not the person who checks them." }
+  "fr-3446":
+    native: "My train leaves at eight o'clock."
+    bases:
+      "part": "leaves"
+      "à": "to, at"
+      "heures": "hours"
+    confusables:
+      "depart": { why: "Départ is the noun 'departure'; part is the verb 'leaves'." }
+      "arrivee": { why: "Arrivée is 'arrival', the opposite of départ." }
+  "fr-3447":
+    native: "Platform number two is over there."
+    bases:
+      "est": "is"
+    confusables:
+      "voie": { why: "Voie is the track the train runs on; quai is the platform you walk on." }
+      "escalier": { why: "Escalier is a staircase, not a platform." }
+  "fr-3448":
+    native: "You must stamp the ticket before getting on."
+    bases:
+      "faut": "must"
+      "de": "of, from"
+    confusables:
+      "valider": { why: "Valider is 'validate' in general; composter is the word for stamping a paper ticket." }
+      "annuler": { why: "Annuler is 'to cancel', not 'to stamp'." }
+  "fr-3449":
+    native: "The train is ten minutes late."
+    bases:
+      "est": "is"
+      "en": "in"
+      "de": "of, from"
+      "minutes": "minutes"
+    confusables:
+      "retarder": { why: "Retarder is the verb 'to delay'; en retard is the phrase 'late'." }
+      "annulation": { why: "Une annulation is a cancellation; the train still runs, only late." }
+  "fr-3450":
+    native: "I book a seat near the window."
+    bases:
+      "réserve": "book"
+      "de": "of, from"
+    confusables:
+      "siege": { why: "Siège is a seat in general; une place is a seat you have booked or paid for." }
+      "compartiment": { why: "Un compartiment is a closed part of the carriage, not a seat." }
+  "fr-3451":
+    native: "The return ticket costs less."
+    bases:
+      "coûte": "costs"
+    confusables:
+      "retour": { why: "Retour is the way back; aller-retour is the whole ticket for both ways." }
+      "supplement": { why: "Un supplément is an extra fee added to the ticket price." }
+  "fr-3452":
+    native: "The connection is at the station."
+    bases:
+      "correspondance": "connection, transfer"
+      "est": "is"
+      "à": "to, at"
+    confusables:
+      "arret": { why: "Arrêt is a stop, where the train stops, not a change of train." }
+      "voie": { why: "Voie is a track, not a change of train." }
+  "fr-3453":
+    native: "Carriage number five is full."
+    bases:
+      "wagon": "carriage"
+      "est": "is"
+      "complet": "full, no seats left"
+    confusables:
+      "compartiment": { why: "Compartiment is one closed part of the carriage, not the whole carriage." }
+      "plein": { why: "Plein is 'full' in the sense of filled, a word the learner may confuse with complet." }
+  "fr-3454":
+    native: "The train is cancelled because of the strike."
+    bases:
+      "est": "is"
+      "annulé": "cancelled"
+      "à": "to, at"
+      "cause": "cause"
+      "de": "of, from"
+      "grève": "strike"
+    confusables:
+      "retard": { why: "Retard is 'delay'; annulé means the train will not run at all." }
+      "annulation": { why: "Annulation is the noun 'cancellation'; annulé is the adjective used here." }

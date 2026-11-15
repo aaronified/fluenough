@@ -1,0 +1,79 @@
+schema: 1
+id: "fr-en-reading-object-pronouns"
+name: "Reading: direct and indirect object pronouns"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts, one heard and one read, using direct and indirect object pronouns with the words taught up to this unit. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-give-it-to-me"
+    title: "Give it to me"
+    theme: "market"
+    sentences:
+      - text: "Il me donne le sel ?"
+        ipa: "il mə dɔn lə sɛl"
+      - text: "Je te donne le sac."
+        ipa: "ʒə tə dɔn lə sak"
+      - text: "Elle nous donne les clés."
+        ipa: "ɛl nu dɔn le kle"
+      - text: "Vous leur donnez les fruits ?"
+        ipa: "vu lœʁ dɔne le fʁɥi"
+    questions:
+      - id: "fr-3830"
+        prompt: { en: "What does 'he' give the speaker?" }
+        options:
+          - { en: "The salt" }
+          - { en: "The bag" }
+          - { en: "The key" }
+        answer: 1
+      - id: "fr-3831"
+        prompt: { en: "What does the speaker give?" }
+        options:
+          - { en: "A plate" }
+          - { en: "A bag" }
+          - { en: "A coin" }
+        answer: 2
+      - id: "fr-3832"
+        prompt: { en: "What does 'she' give 'us'?" }
+        options:
+          - { en: "Bread" }
+          - { en: "Water" }
+          - { en: "Keys" }
+        answer: 3
+  - id: "fr-short-requests"
+    title: "Short requests"
+    theme: "shopping"
+    sentences:
+      - text: "Je vous demande le prix du sac."
+        ipa: "ʒə vu dəmɑ̃d lə pʁi dy sak"
+      - text: "Vous nous donnez la carte ?"
+        ipa: "vu nu dɔne la kaʁt"
+      - text: "Il lui donne le ticket."
+        ipa: "il lɥi dɔn lə tikɛ"
+      - text: "Je les achète demain."
+        ipa: "ʒə lez aʃɛt dəmɛ̃"
+    questions:
+      - id: "fr-3833"
+        prompt: { en: "What does the speaker ask for?" }
+        options:
+          - { en: "The price of the bag" }
+          - { en: "The time" }
+          - { en: "The way" }
+        answer: 1
+      - id: "fr-3834"
+        prompt: { en: "What do 'you' give 'us'?" }
+        options:
+          - { en: "The menu" }
+          - { en: "The bill" }
+          - { en: "The ticket" }
+        answer: 1
+      - id: "fr-3835"
+        prompt: { en: "When will the speaker buy them?" }
+        options:
+          - { en: "Today" }
+          - { en: "Tomorrow" }
+          - { en: "Never" }
+        answer: 2

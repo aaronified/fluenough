@@ -1,0 +1,81 @@
+schema: 1
+id: "fr-grammar-direct-object-pronouns"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["me", "te", "le", "la", "nous", "vous", "les"]
+  entries:
+    - lemma: "voir"
+      ipa: "vwaʁ"
+      forms:
+        "me": "il me voit"
+        "te": "il te voit"
+        "le": "il le voit"
+        "la": "il la voit"
+        "nous": "il nous voit"
+        "vous": "il vous voit"
+        "les": "il les voit"
+    - lemma: "regarder"
+      ipa: "ʁəɡaʁde"
+      forms:
+        "me": "il me regarde"
+        "te": "il te regarde"
+        "le": "il le regarde"
+        "la": "il la regarde"
+        "nous": "il nous regarde"
+        "vous": "il vous regarde"
+        "les": "il les regarde"
+    - lemma: "chercher"
+      ipa: "ʃɛʁʃe"
+      forms:
+        "me": "il me cherche"
+        "te": "il te cherche"
+        "le": "il le cherche"
+        "la": "il la cherche"
+        "nous": "il nous cherche"
+        "vous": "il vous cherche"
+        "les": "il les cherche"
+    - lemma: "prendre"
+      ipa: "pʁɑ̃dʁ"
+      forms:
+        "me": "il me prend"
+        "te": "il te prend"
+        "le": "il le prend"
+        "la": "il la prend"
+        "nous": "il nous prend"
+        "vous": "il vous prend"
+        "les": "il les prend"
+    - lemma: "attendre"
+      ipa: "atɑ̃dʁ"
+      forms:
+        "me": "il m'attend"
+        "te": "il t'attend"
+        "le": "il l'attend"
+        "la": null
+        "nous": "il nous attend"
+        "vous": "il vous attend"
+        "les": "il les attend"
+    - lemma: "écouter"
+      key: "ecouter"
+      ipa: "ekute"
+      forms:
+        "me": "il m'écoute"
+        "te": "il t'écoute"
+        "le": "il l'écoute"
+        "la": null
+        "nous": "il nous écoute"
+        "vous": "il vous écoute"
+        "les": "il les écoute"
+    - lemma: "aimer"
+      ipa: "ɛme"
+      forms:
+        "me": "il m'aime"
+        "te": "il t'aime"
+        "le": "il l'aime"
+        "la": null
+        "nous": "il nous aime"
+        "vous": "il vous aime"
+        "les": "il les aime"
