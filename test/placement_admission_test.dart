@@ -68,6 +68,7 @@ void main() {
         ),
       ],
     };
+    expect(AdmissionProfile.of(frozen, map), isNotNull);
     expect(AdmissionProfile.of(_data('xx', 'otra'), map), isNull);
     expect(AdmissionProfile.of(_data('yy', 'casa'), map), isNull);
     expect(AdmissionProfile.of(frozen, const {}), isNull);

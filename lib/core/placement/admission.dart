@@ -60,6 +60,9 @@ class AdmissionProfile {
   /// Which decks the verdict was made on: [kFrozenDecks] (main's `decks/`) or
   /// [kLiveDecks] (`decks-live`). Only a label for people; [of] picks by
   /// [deckKey], so a source nobody has audited costs nothing.
+  /// An audited-but-stale live entry (same key, changed generator) is not
+  /// detected by CI on decks-live, so the audit must be rerun when live decks
+  /// change.
   final String source;
 
   /// [admissionKey] of the decks it was made on.
