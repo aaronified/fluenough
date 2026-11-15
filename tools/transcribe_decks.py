@@ -1,0 +1,399 @@
+#!/usr/bin/env python3
+"""Check, and optionally fix, the stored `reading` and `ipa` of a language's
+core decks against `tools/transcribe.py` (issue #1295).
+
+Usage:
+    python3 tools/transcribe_decks.py --check decks/te te
+    python3 tools/transcribe_decks.py --fix decks/te te         # anusvara only
+    python3 tools/transcribe_decks.py --fix --all decks/te te   # every difference
+
+For each core deck file directly in the directory (the English layers in
+`en/` are not read), every card, every card example and every
+`{ word: ..., reading: ... }` entry (a card's bases and its notes' words) is
+re-transcribed from its target text with the same logic as the single-word
+mode: the stored reading is the typed hint, exactly as
+`python3 tools/transcribe.py te "<target>" "<reading>"` would take it. A
+stored value that differs from the recomputed one is printed with its id, the
+field, the stored value and the recomputed value.
+
+A difference is listed under "anusvara differences" when the target holds an
+anusvara and the two values are the same once every nasal is treated as one
+sound (the written nasal before a stop, ISO `ṁ`, IPA `ŋ ɲ ɳ n m`): that is
+the medial-anusvara rule ("Telugu medial anusvara" in
+wiki/Plan-Ipa-Revamp-And-Language-Phonology.md). Every other difference (ph
+for f, ṛ for ru, ...) is listed under "other differences".
+
+Keys may be bare or double-quoted (`target:` or `"target":`), also mixed in
+one file, and every value must be a plain double-quoted string. In a block
+entry the order of keys is id, target, reading, ipa: a `reading` or `ipa`
+before its `target`, a single-quoted or unquoted value, a repeated key, or a
+card id repeated in the file are reported under "not checked or not
+changeable" and never changed. A file whose `part` is not `core`, or that has
+no `part` key, is not read and is listed as skipped.
+
+`--fix` rewrites only the differing values, and only the anusvara ones unless
+`--all` is given. It never re-dumps the YAML: it replaces the stored value at
+its exact place on its line, so comments, quoting, line endings and ordering
+stay byte for byte. After it, the scan runs once more and the differences
+left are printed. `--all` leaves alone any entry whose text holds no letter
+of the deck's script (an IPA letter card, say) and any word that starts with
+a hyphen (a suffix); they are listed under "skipped (not the deck's script /
+suffix)".
+
+Exit codes: `--check` 0 when every entry matches, 1 when any value differs or
+any entry could not be checked; `--fix` 0, or 1 when it refused to change a
+value; 2 for a bad directory or arguments. Card ids are never touched.
+
+Standard library only, like the other deck tools.
+"""
+
+from __future__ import annotations
+
+import argparse
+import re
+import sys
+import unicodedata
+from dataclasses import dataclass, field
+from pathlib import Path
+
+from transcribe import transcribe
+
+_Q = r'"?'
+_ID = re.compile(r'^\s*- "?id"?: "([^"]+)"\s*(?:#.*)?$')
+_HEAD = re.compile(r'^(\s*)(- )?"?(target|word)"?: "([^"\\]*)"\s*(?:#.*)?$')
+_HEAD_LOOSE = re.compile(r'^(\s*)(?:- )?"?(target|word)"?:')
+_FIELD = re.compile(r'^(\s*)(?:- )?"?(reading|ipa|base)"?: "([^"\\]*)"\s*'
+                    r'(?:#.*)?$')
+_FIELD_LOOSE = re.compile(r'^\s*(?:- )?"?(reading|ipa|base)"?:')
+_PART = re.compile(r'^"?part"?:\s*"?([A-Za-z-]*)"?\s*$', re.M)
+_SCRIPT = re.compile(r'^\s*"?script"?:\s*"([a-z]+)"', re.M)
+_IN_FLOW_KEY = re.compile(r'"?(target|word|reading|ipa|base)"?: "([^"\\]*)"')
+
+_NASAL_ISO = re.compile("[ṁṃṅñṇnm]")
+_NASAL_IPA = re.compile("n̪|[ŋɲɳnm]")
+
+
+@dataclass
+class Difference:
+    file: Path
+    entry: str          # the card id, its example, or its word entry
+    field: str
+    stored: str
+    computed: str
+    line: int           # 0-based line holding the stored value
+    start: int          # column span of the stored value on that line
+    end: int
+    anusvara: bool
+    unsafe: bool = False  # not the deck's script, or a suffix: not for --all
+
+
+@dataclass
+class Report:
+    differences: list[Difference] = field(default_factory=list)
+    unreadable: list[str] = field(default_factory=list)
+    files: int = 0
+    entries: int = 0
+    skipped: list[str] = field(default_factory=list)
+
+
+def _has_anusvara(text: str) -> bool:
+    return any("ANUSVARA" in unicodedata.name(c, "") for c in text)
+
+
+def _same_but_nasals(field_name: str, stored: str, computed: str) -> bool:
+    rx = _NASAL_IPA if field_name == "ipa" else _NASAL_ISO
+    return rx.sub("N", stored) == rx.sub("N", computed)
+
+
+def _is_anusvara(target: str, name: str, stored: str, computed: str) -> bool:
+    return _has_anusvara(target) and _same_but_nasals(name, stored, computed)
+
+
+def _unsafe(text: str, script: str | None) -> bool:
+    """A suffix, or text without a letter of the deck's script."""
+    if text.startswith("-"):
+        return True
+    if script is None:
+        return False
+    return not any(c.isalpha() and unicodedata.name(c, "").startswith(
+        script.upper()) for c in text)
+
+
+def _block_fields(lines: list[str], i: int, indent: int,
+                  claimed: set[int]) -> dict:
+    """The `reading`, `ipa` and `base` lines of the block entry whose head is
+    on line [i] with its keys at [indent]: name -> (line, match) or
+    (reason, None) when repeated or not a plain double-quoted string."""
+    fields: dict[str, tuple] = {}
+    count: dict[str, int] = {}
+    for j in range(i + 1, len(lines)):
+        nxt = lines[j]
+        if nxt.strip() == "" or nxt.lstrip().startswith("#"):
+            continue
+        ind = len(nxt) - len(nxt.lstrip())
+        if ind < indent:
+            break
+        if ind != indent:
+            continue  # nested lines (a card's examples) are other entries
+        if nxt.lstrip().startswith("- ") or _HEAD_LOOSE.match(nxt):
+            break
+        loose = _FIELD_LOOSE.match(nxt)
+        if not loose:
+            continue
+        name = loose.group(1)
+        count[name] = count.get(name, 0) + 1
+        claimed.add(j)
+        fm = _FIELD.match(nxt)
+        fields[name] = ((j, fm) if fm else
+                        ("not a plain double-quoted value", None))
+    for name, n in count.items():
+        if n > 1:
+            fields[name] = (f"{name} given more than once", None)
+    return fields
+
+
+def _flow_spans(line: str):
+    """Each `{ ... }` of [line] as (start, text) with its nested braces and
+    brackets blanked, so a key found in it belongs to that mapping alone."""
+    stack: list[int] = []
+    out = []
+    for k, c in enumerate(line):
+        if c == "{":
+            stack.append(k)
+        elif c == "}" and stack:
+            out.append((stack.pop(), k))
+    for a, b in out:
+        text = list(line[a:b + 1])
+        for a2, b2 in out:
+            if a < a2 and b2 < b:
+                text[a2 - a:b2 - a + 1] = " " * (b2 - a2 + 1)
+        yield a, "".join(text)
+
+
+class _Scan:
+    def __init__(self, path: Path, lang: str, report: Report, script):
+        self.path, self.lang, self.report, self.script = (
+            path, lang, report, script)
+
+    def entry(self, name: str, head: str, text: str, fields: dict) -> None:
+        """[fields] maps reading/ipa/base to (line, start, end, value) or
+        (reason, None). A `word` entry is checked for its reading only."""
+        report = self.report
+        report.entries += 1
+        if head == "word":
+            fields.pop("ipa", None)
+            base = fields.get("base")
+            if base and base[1] is not None and base[3] != text:
+                return  # the reading may be the base's, not the word's
+        reading = fields.get("reading", (None, None))
+        hint = reading[3] if reading[1] is not None else None
+        try:
+            t = transcribe(text, self.lang, hint)
+        except Exception as e:  # CannotRead, or a rule's own error
+            report.unreadable.append(f"{self.path.name} {name}: {e!r}")
+            return
+        computed = {"reading": t.reading, "ipa": t.ipa}
+        for key in ("reading", "ipa"):
+            if key not in fields:
+                continue
+            f = fields[key]
+            if f[1] is None:
+                report.unreadable.append(
+                    f"{self.path.name} {name}: {key}: {f[0]}")
+                continue
+            line, start, end, stored = f
+            if stored != computed[key]:
+                report.differences.append(Difference(
+                    self.path, name, key, stored, computed[key], line,
+                    start, end,
+                    _is_anusvara(text, key, stored, computed[key]),
+                    _unsafe(text, self.script)))
+
+
+def scan(path: Path, lang: str, report: Report) -> None:
+    """Walk one deck file's lines, filling [report]."""
+    raw = path.read_bytes().decode("utf-8")
+    lines = raw.split("\n")
+    sm = _SCRIPT.search(raw)
+    sc = _Scan(path, lang, report, sm.group(1) if sm else None)
+    ids: dict[str, int] = {}
+    for ln in lines:
+        m = _ID.match(ln)
+        if m:
+            ids[m.group(1)] = ids.get(m.group(1), 0) + 1
+    card = "?"
+    claimed: set[int] = set()
+    flow_lines: set[int] = set()
+    for i, ln in enumerate(lines):
+        m = _ID.match(ln)
+        if m and not re.fullmatch(r"n\d+", m.group(1)):
+            card = m.group(1)
+        m = _HEAD.match(ln)
+        if m:
+            head, text = m.group(3), m.group(4)
+            claimed.add(i)
+            is_item = m.group(2) is not None
+            indent = len(m.group(1)) + (2 if is_item else 0)
+            raw_f = _block_fields(lines, i, indent, claimed)
+            fields = {}
+            for k, v in raw_f.items():
+                if v[1] is None:
+                    fields[k] = v
+                else:
+                    g = v[1]
+                    fields[k] = (v[0], g.start(3), g.end(3), g.group(3))
+            if head == "target" and not is_item and ids.get(card, 0) > 1:
+                fields = {k: (f"card id {card} repeated in the file", None)
+                          for k in fields}
+            name = (f"{card}/example@{i + 1}" if head == "target" and is_item
+                    else card if head == "target" else
+                    f"{card}/word:{text}")
+            sc.entry(name, head, text, fields)
+        elif _HEAD_LOOSE.match(ln) and not ln.lstrip().startswith("#"):
+            km = _HEAD_LOOSE.match(ln)
+            if km.group(2) == "target" and "{" not in ln:
+                report.unreadable.append(
+                    f"{path.name} {card}: target on line {i + 1} is not a "
+                    "plain double-quoted value")
+        for a, text in _flow_spans(ln):
+            flow_lines.add(i)
+            found: dict[str, list] = {}
+            for fm in _IN_FLOW_KEY.finditer(text):
+                found.setdefault(fm.group(1), []).append(fm)
+            head = next((h for h in ("target", "word") if h in found), None)
+            if head is None or len(found[head]) > 1:
+                continue
+            fields = {}
+            for k in ("reading", "ipa", "base"):
+                if k in found:
+                    if len(found[k]) > 1:
+                        fields[k] = (f"{k} given more than once", None)
+                    else:
+                        g = found[k][0]
+                        fields[k] = (i, a + g.start(2), a + g.end(2),
+                                     g.group(2))
+            text_v = found[head][0].group(2)
+            sc.entry(f"{card}/{head}:{text_v}", head, text_v, fields)
+    for i, ln in enumerate(lines):
+        loose = _FIELD_LOOSE.match(ln)
+        if i in claimed or i in flow_lines or not loose:
+            continue
+        if loose.group(1) == "base" or not _target_follows(lines, i):
+            continue  # other shapes (grammar tables) are not cards
+        report.unreadable.append(
+            f"{path.name}: line {i + 1} has a reading or ipa before its "
+            "target (key order is id, target, reading, ipa)")
+
+
+def _target_follows(lines: list[str], i: int) -> bool:
+    """Whether a target or word key of the same mapping comes after line i."""
+    ind = len(lines[i]) - len(lines[i].lstrip())
+    for nxt in lines[i + 1:]:
+        if nxt.strip() == "" or nxt.lstrip().startswith("#"):
+            continue
+        n = len(nxt) - len(nxt.lstrip())
+        if n < ind or (n == ind and nxt.lstrip().startswith("- ")):
+            return False
+        if n == ind and _HEAD_LOOSE.match(nxt):
+            return True
+    return False
+
+
+def deck_files(directory: Path, report: Report | None = None) -> list[Path]:
+    """The core deck files directly in [directory] (not its `en/` layers).
+    Every other `.yaml` there is listed in [report].skipped."""
+    out = []
+    for p in sorted(directory.glob("*.yaml")):
+        m = _PART.search(p.read_bytes().decode("utf-8"))
+        if m and m.group(1) == "core":
+            out.append(p)
+        elif report is not None:
+            report.skipped.append(
+                f"{p.name} (part {m.group(1)!r})" if m
+                else f"{p.name} (no part key)")
+    return out
+
+
+def run(directory: Path, lang: str) -> Report:
+    report = Report()
+    for p in deck_files(directory, report):
+        report.files += 1
+        scan(p, lang, report)
+    return report
+
+
+def apply_fixes(report: Report, include_other: bool) -> tuple[int, list[str]]:
+    """Patch the differing values in place. Returns (changed, refusals)."""
+    changed = 0
+    refused: list[str] = []
+    by_file: dict[Path, list[Difference]] = {}
+    for d in report.differences:
+        if d.anusvara or (include_other and not d.unsafe):
+            by_file.setdefault(d.file, []).append(d)
+    for path, diffs in by_file.items():
+        lines = path.read_bytes().decode("utf-8").split("\n")
+        for d in sorted(diffs, key=lambda d: (d.line, -d.start)):
+            if lines[d.line][d.start:d.end] != d.stored:
+                refused.append(f"{path.name} {d.entry} {d.field}: stored "
+                               "value not found where it was read")
+                continue
+            lines[d.line] = (lines[d.line][:d.start] + d.computed
+                             + lines[d.line][d.end:])
+            changed += 1
+        path.write_bytes("\n".join(lines).encode("utf-8"))
+    return changed, refused
+
+
+def _print(report: Report) -> None:
+    diffs = report.differences
+    groups = (
+        ("anusvara differences", [d for d in diffs if d.anusvara]),
+        ("other differences",
+         [d for d in diffs if not d.anusvara and not d.unsafe]),
+        ("skipped (not the deck's script / suffix)",
+         [d for d in diffs if not d.anusvara and d.unsafe]),
+    )
+    for title, rows in groups:
+        print(f"{title}: {len(rows)}")
+        for d in rows:
+            print(f"  {d.file.name} {d.entry} {d.field}: "
+                  f"stored {d.stored!r} -> computed {d.computed!r}")
+    if report.unreadable:
+        print(f"not checked or not changeable: {len(report.unreadable)}")
+        for u in report.unreadable:
+            print(f"  {u}")
+    for s in report.skipped:
+        print(f"skipped file: {s}")
+    print(f"total differences: {len(diffs)}")
+    print(f"checked {report.files} files, {report.entries} entries, "
+          f"skipped {len(report.skipped)} files")
+
+
+def main(argv: list[str]) -> int:
+    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    mode = ap.add_mutually_exclusive_group(required=True)
+    mode.add_argument("--check", action="store_true")
+    mode.add_argument("--fix", action="store_true")
+    ap.add_argument("--all", action="store_true",
+                    help="with --fix, also fix the other differences")
+    ap.add_argument("directory", type=Path)
+    ap.add_argument("lang")
+    args = ap.parse_args(argv[1:])
+    if not args.directory.is_dir():
+        print(f"not a directory: {args.directory}", file=sys.stderr)
+        return 2
+    report = run(args.directory, args.lang)
+    _print(report)
+    if args.check:
+        return 1 if report.differences or report.unreadable else 0
+    changed, refused = apply_fixes(report, args.all)
+    print(f"changed {changed} value(s)")
+    for r in refused:
+        print(f"  refused: {r}")
+    after = run(args.directory, args.lang)
+    print(f"differences left after the fix: {len(after.differences)}")
+    return 1 if refused else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv))

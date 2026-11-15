@@ -1,8 +1,11 @@
 """Tests for transcribe.py: readings in ISO 15919 letters as said, and IPA
 (ADR-0025)."""
 
+import tempfile
 import unittest
+from pathlib import Path
 
+import transcribe_decks
 from transcribe import CannotRead, spanish_ipa, transcribe
 
 
@@ -427,6 +430,185 @@ class MalayalamTest(unittest.TestCase):
         self.assertTrue(t.fitted)
         self.assertEqual(t.ipa, "ɲaːn ʋəɾunnu")
 
+
+DECK = """# a comment that must survive
+schema: 1
+id: "te-x"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu" }
+cards:
+  - id: "te-9001"
+    target: "పొలంలో"   # trailing comment
+    reading: "polamlō"
+    ipa: "polamloː"
+  - id: "te-9002"
+    target: "చేను"
+    reading: 'cēnu'
+    ipa: "t͡ɕeːnu"
+  - id: "te-9003"
+    target: "దూరంగా"
+    reading: "dūraṅgā"
+    ipa: "d̪uːraŋɡaː"
+"""
+
+AMBIGUOUS = """schema: 1
+id: "te-y"
+part: "core"
+cards:
+  - id: "te-9101"
+    target: "పొలంలో"
+    reading: "polamlō"
+    reading: "polamlō"
+  - id: "te-9102"
+    target: "పొలంలో"
+    reading: "polamlō"
+  - id: "te-9102"
+    target: "పొలంలో"
+    reading: "polamlō"
+"""
+
+
+class DeckModeTest(unittest.TestCase):
+    def deck(self, text: str) -> Path:
+        d = tempfile.TemporaryDirectory()
+        self.addCleanup(d.cleanup)
+        path = Path(d.name) / "te-x.yaml"
+        path.write_bytes(text.encode("utf-8"))
+        return path
+
+    def test_a_medial_anusvara_is_corrected_and_nothing_else_moves(
+            self) -> None:
+        path = self.deck(DECK)
+        report = transcribe_decks.run(path.parent, "te")
+        anus = [d for d in report.differences if d.anusvara]
+        self.assertEqual([(d.entry, d.field, d.stored, d.computed)
+                          for d in anus],
+                         [("te-9001", "reading", "polamlō", "polaṁlō")])
+        changed, refused = transcribe_decks.apply_fixes(report, False)
+        self.assertEqual((changed, refused), (1, []))
+        after = path.read_bytes().decode("utf-8")
+        self.assertEqual(after, DECK.replace('"polamlō"', '"polaṁlō"'))
+
+    def test_another_difference_is_reported_and_kept_without_all(
+            self) -> None:
+        path = self.deck(DECK)
+        report = transcribe_decks.run(path.parent, "te")
+        other = [d for d in report.differences if not d.anusvara]
+        self.assertIn(("te-9002", "ipa"),
+                      [(d.entry, d.field) for d in other])
+        self.assertTrue(all(d.entry != "te-9001" for d in other))
+        transcribe_decks.apply_fixes(report, False)
+        self.assertIn('ipa: "t͡ɕeːnu"', path.read_bytes().decode("utf-8"))
+
+    def test_all_fixes_the_other_differences_and_keeps_quoting(self) -> None:
+        path = self.deck(DECK)
+        report = transcribe_decks.run(path.parent, "te")
+        transcribe_decks.apply_fixes(report, True)
+        after = path.read_bytes().decode("utf-8")
+        self.assertIn('ipa: "tʃeːnu"', after)
+        self.assertIn("reading: 'cēnu'", after)
+        self.assertIn('target: "పొలంలో"   # trailing comment', after)
+        self.assertTrue(after.startswith("# a comment that must survive\n"))
+
+    def test_check_exit_codes(self) -> None:
+        path = self.deck(DECK.replace("'cēnu'", '"cēnu"'))
+        self.assertEqual(transcribe_decks.main(
+            ["x", "--check", str(path.parent), "te"]), 1)
+        self.assertEqual(transcribe_decks.main(
+            ["x", "--fix", "--all", str(path.parent), "te"]), 0)
+        self.assertEqual(transcribe_decks.main(
+            ["x", "--check", str(path.parent), "te"]), 0)
+
+    def test_an_ambiguous_entry_is_reported_and_not_changed(self) -> None:
+        path = self.deck(AMBIGUOUS)
+        report = transcribe_decks.run(path.parent, "te")
+        self.assertEqual(report.differences, [])
+        self.assertEqual(len(report.unreadable), 3)
+        changed, _ = transcribe_decks.apply_fixes(report, True)
+        self.assertEqual(changed, 0)
+        self.assertEqual(path.read_bytes().decode("utf-8"), AMBIGUOUS)
+
+
+    def test_quoted_and_mixed_keys_and_flow_entries_are_read(self) -> None:
+        quoted = ('"schema": 1\n"id": "te-q"\n"part": "core"\n"cards":\n'
+                  '- id: "te-9201"\n  "target": "పొలంలో"\n'
+                  '  "reading": "polamlō"\n  "ipa": "polamloː"\n'
+                  '  "examples":\n'
+                  '  - { "target": "పొలంలో", "reading": "polamlō" }\n'
+                  '  - { "word": "పొలంలో", "reading": "polamlō" }\n'
+                  '- id: "te-9202"\n  target: "పొలంలో"\n'
+                  '  "reading": "polamlō"\n')
+        path = self.deck(quoted)
+        report = transcribe_decks.run(path.parent, "te")
+        self.assertEqual(report.files, 1)
+        self.assertEqual(sorted(d.entry.split("@")[0] for d in
+                                report.differences),
+                         ["te-9201", "te-9201/target:పొలంలో",
+                          "te-9201/word:పొలంలో", "te-9202"])
+        transcribe_decks.apply_fixes(report, False)
+        self.assertEqual(path.read_bytes().decode("utf-8"),
+                         quoted.replace("polamlō", "polaṁlō"))
+
+    def test_crlf_and_a_trailing_comment_survive_byte_for_byte(self) -> None:
+        text = DECK.replace("\n", "\r\n").replace(
+            'reading: "polamlō"', 'reading: "polamlō"  # reading: "polamlō"')
+        path = self.deck(text)
+        report = transcribe_decks.run(path.parent, "te")
+        transcribe_decks.apply_fixes(report, False)
+        self.assertEqual(
+            path.read_bytes().decode("utf-8"),
+            text.replace('reading: "polamlō"  # reading: "polamlō"',
+                         'reading: "polaṁlō"  # reading: "polamlō"'))
+
+    def test_files_without_core_part_are_listed_as_skipped(self) -> None:
+        path = self.deck(DECK.replace('part: "core"\n', ""))
+        report = transcribe_decks.run(path.parent, "te")
+        self.assertEqual(report.files, 0)
+        self.assertEqual(report.skipped, ["te-x.yaml (no part key)"])
+
+    def test_unreadable_entries_make_check_fail_and_are_not_changed(
+            self) -> None:
+        text = DECK.replace('target: "చేను"', "target: 'చేను'", 1)
+        path = self.deck(text)
+        self.assertTrue(any("target" in u for u in
+                            transcribe_decks.run(path.parent, "te")
+                            .unreadable))
+        path = self.deck(AMBIGUOUS)
+        self.assertEqual(transcribe_decks.main(
+            ["x", "--check", str(path.parent), "te"]), 1)
+        self.assertEqual(path.read_bytes().decode("utf-8"), AMBIGUOUS)
+
+    def test_a_reading_before_its_target_is_reported(self) -> None:
+        text = ('part: "core"\ncards:\n  - id: "te-9301"\n'
+                '    reading: "polamlō"\n    target: "పొలంలో"\n')
+        path = self.deck(text)
+        report = transcribe_decks.run(path.parent, "te")
+        self.assertTrue(any("before its target" in u
+                            for u in report.unreadable))
+        self.assertEqual(report.differences, [])
+
+    def test_all_skips_suffixes_and_text_outside_the_script(self) -> None:
+        text = ('part: "core"\nlanguage:\n  script: "telugu"\ncards:\n'
+                '  - id: "te-9401"\n    target: "p"\n'
+                '    reading: "x"\n    ipa: "y"\n'
+                '  - id: "te-9402"\n    target: "-ిన"\n'
+                '    reading: "x"\n')
+        path = self.deck(text)
+        report = transcribe_decks.run(path.parent, "te")
+        self.assertTrue(report.differences)
+        self.assertTrue(all(d.unsafe for d in report.differences))
+        changed, _ = transcribe_decks.apply_fixes(report, True)
+        self.assertEqual(changed, 0)
+        self.assertEqual(path.read_bytes().decode("utf-8"), text)
+
+    def test_a_bad_directory_exits_2_and_fix_prints_what_is_left(
+            self) -> None:
+        self.assertEqual(transcribe_decks.main(
+            ["x", "--check", "/no/such/dir", "te"]), 2)
+        path = self.deck(DECK)
+        self.assertEqual(transcribe_decks.main(
+            ["x", "--fix", str(path.parent), "te"]), 0)
 
 if __name__ == "__main__":
     unittest.main()

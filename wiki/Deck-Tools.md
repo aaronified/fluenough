@@ -318,6 +318,43 @@ when a topic differs, `--all-targets` also lists two-character cards). The
 validator checks `chars` against the same decks. See
 [Deck-Format](Deck-Format#script-topics), "Script topics".
 
+## `transcribe_decks.py`
+
+Checks, and fixes, a language's stored `reading` and `ipa` against
+`tools/transcribe.py` (#1295). It walks the core deck files of one directory
+(the `en/` layers are not read): every card, every card example and every
+`{ word: ..., reading: ... }` entry (bases, note words), and re-transcribes
+each from its target text exactly as the single-word mode does, with the
+stored reading as the typed hint.
+
+```sh
+python3 tools/transcribe_decks.py --check decks/te te       # exit 1 if any differ
+python3 tools/transcribe_decks.py --fix decks/te te         # anusvara only
+python3 tools/transcribe_decks.py --fix --all decks/te te   # every difference
+```
+
+`--check` prints each id, field, stored value and recomputed value, in two
+lists: "anusvara differences" (the target holds an anusvara and the two values
+agree once every nasal is treated as one, the medial-anusvara rule of
+[Plan-Ipa-Revamp-And-Language-Phonology](Plan-Ipa-Revamp-And-Language-Phonology#telugu-medial-anusvara))
+and "other differences" (`ph` against `f`, `ṛ` against `ru` (ఋ is computed as `ru`), IPA spelling
+choices), then the total. `--fix` replaces only the exact stored value on its
+own line, so comments, quoting and ordering stay byte for byte, and leaves the
+other differences alone unless `--all` is given. An entry with a repeated or
+non-plain `reading` or `ipa` line, or a card id repeated in the file, is
+listed under "not checked or not changeable" and never changed. Keys may be
+bare or double-quoted, also mixed in one file; values must be plain
+double-quoted strings; the key order of a block entry is id, target, reading,
+ipa (a reading before its target is reported). A file whose `part` is not
+`core`, or that has no `part` key, is listed as skipped, and the last line
+reads "checked N files, M entries, skipped K files". `--all` leaves alone
+entries whose text has no letter of the deck's script (IPA letter cards) and
+words that start with a hyphen (suffixes), and lists them as skipped. After
+`--fix` the scan runs again and prints the differences left. Exit codes:
+`--check` 0 if all match, 1 if any value differs or any entry could not be
+checked; `--fix` 0, or 1 if it refused a value; 2 for a bad directory. Run it on a
+`decks-live` checkout, not on main's frozen `decks/`.
+
 ## `import_phonetic.py` and `derive_phonetic.py`
 
 Write each card's narrow `[ ]` IPA into its `phonetic` field, with
