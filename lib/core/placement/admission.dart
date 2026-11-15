@@ -15,6 +15,12 @@ import 'placement_data.dart';
 // regenerated (`dart run tool/placement_audit.dart --runtime`, which prints
 // the entry).
 //
+// A language holds one verdict per deck source (`AdmissionProfile.source`): the
+// frozen decks bundled under main's `decks/` and the live decks the apps
+// download from `decks-live` (#1270). Each has its own key, so a change of one
+// source's decks leaves the other's verdict intact, and a phone on live decks
+// is not left without one.
+//
 // Pure Dart.
 
 /// A key of the decks a verdict was made on: the decks in path order with
@@ -48,7 +54,13 @@ class AdmissionProfile {
     required this.deckKey,
     required this.excluded,
     required this.decoys,
+    this.source = kFrozenDecks,
   });
+
+  /// Which decks the verdict was made on: [kFrozenDecks] (main's `decks/`) or
+  /// [kLiveDecks] (`decks-live`). Only a label for people; [of] picks by
+  /// [deckKey], so a source nobody has audited costs nothing.
+  final String source;
 
   /// [admissionKey] of the decks it was made on.
   final String deckKey;
@@ -64,39 +76,58 @@ class AdmissionProfile {
 
   bool admits(String auditClass) => !excluded.contains(auditClass);
 
-  /// The verdict stored for [data]'s language, if it was made on these decks.
-  static AdmissionProfile? of(PlacementLanguageData data) {
-    final profile = kAdmissionProfiles[data.language];
-    return profile != null && profile.deckKey == admissionKey(data)
-        ? profile
-        : null;
+  /// The verdict stored for [data]'s language, if one was made on these decks
+  /// (whichever source). [profiles] is for tests; the app uses
+  /// [kAdmissionProfiles].
+  static AdmissionProfile? of(
+    PlacementLanguageData data, [
+    Map<String, List<AdmissionProfile>> profiles = kAdmissionProfiles,
+  ]) {
+    final entries = profiles[data.language];
+    if (entries == null || entries.isEmpty) return null;
+    final key = admissionKey(data);
+    for (final profile in entries) {
+      if (profile.deckKey == key) return profile;
+    }
+    return null;
   }
 }
 
-/// The verdicts of the languages audited so far, by language code.
-const Map<String, AdmissionProfile> kAdmissionProfiles =
-    <String, AdmissionProfile>{
-      'es': AdmissionProfile(
-        deckKey: '171-5453385b',
-        excluded: <String>[
-          'F17:clean',
-          'F17:cognate',
-          'F28:cognate',
-          'F5:clean',
-          'F5:cognate',
-        ],
-        decoys: 2,
-      ),
-      'hi': AdmissionProfile(
-        deckKey: '139-84ae5a22',
-        excluded: <String>[
-          'F14:clean',
-          'F17:clean',
-          'F1:clean',
-          'F28:clean',
-          'F28:cognate',
-          'F5:clean',
-        ],
-        decoys: 2,
-      ),
+/// [AdmissionProfile.source] of main's frozen `decks/`.
+const String kFrozenDecks = 'frozen';
+
+/// [AdmissionProfile.source] of the live decks (`decks-live`).
+const String kLiveDecks = 'live';
+
+/// The verdicts of the languages audited so far, by language code: one entry
+/// per deck source that has been audited.
+const Map<String, List<AdmissionProfile>> kAdmissionProfiles =
+    <String, List<AdmissionProfile>>{
+      'es': <AdmissionProfile>[
+        AdmissionProfile(
+          deckKey: '171-5453385b',
+          excluded: <String>[
+            'F17:clean',
+            'F17:cognate',
+            'F28:cognate',
+            'F5:clean',
+            'F5:cognate',
+          ],
+          decoys: 2,
+        ),
+      ],
+      'hi': <AdmissionProfile>[
+        AdmissionProfile(
+          deckKey: '139-84ae5a22',
+          excluded: <String>[
+            'F14:clean',
+            'F17:clean',
+            'F1:clean',
+            'F28:clean',
+            'F28:cognate',
+            'F5:clean',
+          ],
+          decoys: 2,
+        ),
+      ],
     };
