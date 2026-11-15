@@ -10,6 +10,8 @@ cards:
   - id: "fr-0229"
     target: "Il y a deux chats."
     ipa: "il i a dø ʃa"
+    phonetic: "[il i a d̪ø ʃa]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -21,9 +23,13 @@ cards:
     confusables:
       - { id: "trois", ref: "fr-0210", kind: "word" }
       - { id: "un", ref: "fr-0208", kind: "word" }
+    notes:
+      - { id: "il-y-a", kind: "behaviour" }
   - id: "fr-0230"
     target: "Mon père a quatre frères."
     ipa: "mɔ̃ pɛʁ a katʁ fʁɛʁ"
+    phonetic: "[mɔ̃ pɛʁ a kat̪χ fχɛːʁ]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -38,6 +44,8 @@ cards:
   - id: "fr-0231"
     target: "Nous sommes cinq."
     ipa: "nu sɔm sɛ̃k"
+    phonetic: "[n̪u s̪ɔm s̪ɛ̃ːk]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -50,6 +58,8 @@ cards:
   - id: "fr-0232"
     target: "Il est dix heures."
     ipa: "il ɛ diz œʁ"
+    phonetic: "[il ɛ d̪iz̪ œːʁ]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -60,9 +70,13 @@ cards:
     confusables:
       - { id: "onze", ref: "fr-0218", kind: "word" }
       - { id: "huit", ref: "fr-0215", kind: "word" }
+    notes:
+      - { id: "time", kind: "behaviour" }
   - id: "fr-0233"
     target: "Ma fille a quinze ans."
     ipa: "ma fij a kɛ̃z ɑ̃"
+    phonetic: "[ma fij a kɛ̃z̪ ɑ̃]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -74,9 +88,13 @@ cards:
     confusables:
       - { id: "seize", ref: "fr-0223", kind: "word" }
       - { id: "treize", ref: "fr-0220", kind: "word" }
+    notes:
+      - { id: "age", kind: "behaviour" }
   - id: "fr-0234"
     target: "Vingt amis sont là."
     ipa: "vɛ̃t ami sɔ̃ la"
+    phonetic: "[vɛ̃t̪ ami s̪ɔ̃ la]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -87,9 +105,13 @@ cards:
     confusables:
       - { id: "dix", ref: "fr-0217", kind: "word" }
       - { id: "trois", ref: "fr-0210", kind: "word" }
+    notes:
+      - { id: "liaison", kind: "behaviour" }
   - id: "fr-0235"
     target: "Mon cousin a dix-huit ans."
     ipa: "mɔ̃ kuzɛ̃ a dizɥit ɑ̃"
+    phonetic: "[mɔ̃ kuz̪ɛ̃ a d̪iz̪ɥit̪ ɑ̃]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -102,9 +124,13 @@ cards:
     confusables:
       - { id: "dix-neuf", ref: "fr-0226", kind: "word" }
       - { id: "dix-sept", ref: "fr-0224", kind: "word" }
+    notes:
+      - { id: "age", kind: "behaviour" }
   - id: "fr-0236"
     target: "Onze garçons jouent."
     ipa: "ɔ̃z ɡaʁsɔ̃ ʒu"
+    phonetic: "[ɔ̃z̪ ɡaχs̪ɔ̃ ʒu]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -114,3 +140,5 @@ cards:
     confusables:
       - { id: "douze", ref: "fr-0219", kind: "word" }
       - { id: "dix", ref: "fr-0217", kind: "word" }
+    notes:
+      - { id: "agreement", kind: "behaviour" }

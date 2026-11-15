@@ -1,0 +1,379 @@
+# The people behind the Bengali culture decks (wiki/Plan-Deck-Kinds-And-Topics.md, D5).
+# Dates are the years of birth and death read on English Wikipedia, circa where the page gives a circa year or the poet is uncertain. The eras follow Bengali literary history: the periods come from the English Wikipedia article on Bengali literature (ancient 650-1200, medieval 1200-1800), the Bengal Renaissance article (from the Battle of Plassey in 1757, ending with Tagore) and Tagore's years (1861-1941).
+# No pictures: none has a licence checked yet.
+schema: 1
+kind: "creators"
+id: "creators-bn"
+language: "bn"
+license: "CC-BY-SA-4.0"
+eras:
+  - id: "charyapada-period"
+    name: { bn: "চর্যাপদের যুগ", en: "Charyapada period" }
+    reading: { bn: "côrjāpoder jug" }
+    from: 650
+    to: 1200
+  - id: "medieval"
+    name: { bn: "মধ্যযুগ", en: "Medieval period" }
+    reading: { bn: "moddhojug" }
+    from: 1200
+    to: 1800
+  - id: "bengal-renaissance"
+    name: { bn: "বাংলার নবজাগরণ", en: "Bengal Renaissance" }
+    reading: { bn: "bāṅlār nôbojāgoron" }
+    from: 1757
+    to: 1941
+  - id: "tagore-age"
+    name: { bn: "রবীন্দ্রযুগ", en: "Age of Tagore" }
+    reading: { bn: "robindrojug" }
+    from: 1861
+    to: 1941
+  - id: "twentieth-century"
+    name: { bn: "বিংশ শতাব্দী", en: "Twentieth century" }
+    reading: { bn: "biṅśo śôtābdi" }
+    from: 1900
+    to: 2000
+creators:
+  - id: "bn-chandidas"
+    name:
+      bn: { text: "চণ্ডীদাস", reading: "conḍidāś", ipa: "tʃonɖid̪aʃ" }
+      en: { text: "Chandidas" }
+    born: { year: 1339, circa: true }
+    died: { year: 1399, circa: true }
+    era: "medieval"
+    bio:
+      en: "Chandidas was a medieval Bengali poet. He is known for poems about the love of Radha and Krishna. Some scholars think the poems under his name were written by more than one poet, so his dates are not certain."
+    legacy:
+      text: { en: "Poems of the love of Radha and Krishna are credited to him, over 1250 of them." }
+      items:
+        - { kind: "other", text: { en: "Poems of the love of Radha and Krishna are credited to him, over 1250 of them." }, source: { url: "https://en.wikipedia.org/wiki/Chandidas", accessed: "2026-11-15" } }
+  - id: "bn-krittibas-ojha"
+    name:
+      bn: { text: "কৃত্তিবাস ওঝা", reading: "krittibāś ojhā", ipa: "krit̪t̪ibaʃ odʒʱa" }
+      en: { text: "Krittibas Ojha" }
+    born: { year: 1381, circa: true }
+    died: { year: 1461, circa: true }
+    era: "medieval"
+    bio:
+      en: "Krittibas Ojha was a medieval Bengali poet. He retold the Ramayana in Bengali, and his version is called the Krittivasi Ramayan after him. He lived in the 1300s and 1400s."
+    legacy:
+      text: { en: "His Bengali Ramayana is known as the Krittivasi Ramayan, and it was printed at the Serampore Mission Press." }
+      items:
+        - { kind: "other", text: { en: "His Bengali Ramayana is known as the Krittivasi Ramayan, and it was printed at the Serampore Mission Press." }, source: { url: "https://en.wikipedia.org/wiki/Krittibas_Ojha", accessed: "2026-11-15" } }
+  - id: "bn-ramprasad-sen"
+    name:
+      bn: { text: "রামপ্রসাদ সেন", reading: "rāmprosād śen", ipa: "ramprosad̪ ʃen" }
+      en: { text: "Ramprasad Sen" }
+    born: { year: 1718, circa: true }
+    died: { year: 1775, circa: true }
+    era: "medieval"
+    bio:
+      en: "Ramprasad Sen was a poet and saint of eighteenth-century Bengal. He wrote devotional songs to the goddess Kali, called Ramprasadi. The exact years of his birth and death are not certain."
+    legacy:
+      text: { en: "His devotional songs, called Ramprasadi, are still popular in Bengal." }
+      items:
+        - { kind: "music", text: { en: "His devotional songs, called Ramprasadi, are still popular in Bengal." }, source: { url: "https://en.wikipedia.org/wiki/Ramprasad_Sen", accessed: "2026-11-15" } }
+  - id: "bn-bharatchandra-ray"
+    name:
+      bn: { text: "ভারতচন্দ্র রায়", reading: "bhārotcondro rāy", ipa: "bʱarot̪tʃond̪ro raj" }
+      en: { text: "Bharatchandra Ray" }
+    born: 1712
+    died: 1760
+    era: "medieval"
+    bio:
+      en: "Bharatchandra Ray was a Bengali poet at the court of Maharaja Krishnachandra of Nadia. He is best known for the long poem Annadamangal, which he wrote in 1752 and 1753. He died in 1760."
+    legacy:
+      text: { en: "The Maharaja gave him the title Gunakar, and he became known as Ray Gunakar Bharatchandra." }
+      items:
+        - { kind: "other", text: { en: "The Maharaja gave him the title Gunakar, and he became known as Ray Gunakar Bharatchandra." }, source: { url: "https://en.wikipedia.org/wiki/Bharatchandra_Ray", accessed: "2026-11-15" } }
+  - id: "bn-lalon"
+    name:
+      bn: { text: "লালন", reading: "lālon", ipa: "lalon" }
+      en: { text: "Lalon" }
+    born: { year: 1774, circa: true }
+    died: 1890
+    era: "bengal-renaissance"
+    bio:
+      en: "Lalon was a Bengali mystic, poet and singer of Baul songs. He was born in what is now Bangladesh. He is remembered for songs that reject the divisions of caste and religion."
+    legacy:
+      text: { en: "The English Wikipedia article says he inspired writers such as Tagore and Nazrul." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article says he inspired writers such as Tagore and Nazrul." }, source: { url: "https://en.wikipedia.org/wiki/Lalon", accessed: "2026-11-15" } }
+  - id: "bn-hason-raja"
+    name:
+      bn: { text: "হাসন রাজা", reading: "hāśon rājā", ipa: "ɦaʃon radʒa" }
+      en: { text: "Hason Raja" }
+    born: 1854
+    died: 1922
+    era: "tagore-age"
+    bio:
+      en: "Hason Raja was a mystic poet and songwriter from Sylhet. He wrote many songs, and his style made him a well-known figure of Bengali folk culture. He lived from 1854 to 1922."
+    legacy:
+      text: { en: "The English Wikipedia article calls him one of the most prominent figures in Bengali folk culture." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article calls him one of the most prominent figures in Bengali folk culture." }, source: { url: "https://en.wikipedia.org/wiki/Hason_Raja", accessed: "2026-11-15" } }
+  - id: "bn-nidhu-babu"
+    name:
+      bn: { text: "নিধুবাবু", reading: "nidhubābu", ipa: "nid̪ʱubabu" }
+      en: { text: "Nidhu Babu" }
+    born: 1741
+    died: 1839
+    era: "bengal-renaissance"
+    bio:
+      en: "Nidhu Babu, whose full name was Ramnidhi Gupta, was a Bengali musician and songwriter from Kolkata. He helped to shape Bengali tappa, a kind of love song. He lived to the age of about ninety-eight."
+    legacy:
+      text: { en: "He is counted as one of the reformers of Bengali tappa music." }
+      items:
+        - { kind: "music", text: { en: "He is counted as one of the reformers of Bengali tappa music." }, source: { url: "https://en.wikipedia.org/wiki/Nidhu_Babu", accessed: "2026-11-15" } }
+  - id: "bn-ishwar-chandra-vidyasagar"
+    name:
+      bn: { text: "ঈশ্বরচন্দ্র বিদ্যাসাগর", reading: "issorcondro biddāśāgor", ipa: "issortʃond̪ro bid̪d̪aʃaɡor" }
+      en: { text: "Ishwar Chandra Vidyasagar" }
+    born: 1820
+    died: 1891
+    era: "bengal-renaissance"
+    bio:
+      en: "Ishwar Chandra Vidyasagar was an educator and social reformer of the nineteenth century, and one of the leading figures of the Bengal Renaissance. His Bengali primer, Barnaparichay, and his Bengali versions of the Betal tales and the story of Sita's exile are on Bengali Wikisource."
+    legacy:
+      text: { en: "He was the most prominent campaigner for Hindu widow remarriage, and the Hindu Widows' Remarriage Act, 1856, was passed." }
+      items:
+        - { kind: "other", text: { en: "He was the most prominent campaigner for Hindu widow remarriage, and the Hindu Widows' Remarriage Act, 1856, was passed." }, source: { url: "https://en.wikipedia.org/wiki/Ishwar_Chandra_Vidyasagar", accessed: "2026-11-15" } }
+  - id: "bn-michael-madhusudan-dutt"
+    name:
+      bn: { text: "মাইকেল মধুসূদন দত্ত", reading: "māikel modhusudon dôtto", ipa: "maikel mod̪ʱusud̪on d̪ɔt̪t̪o" }
+      en: { text: "Michael Madhusudan Dutt" }
+    born: 1824
+    died: 1873
+    era: "bengal-renaissance"
+    bio:
+      en: "Michael Madhusudan Dutt was a Bengali poet and playwright, born in Sagardari in present-day Bangladesh. He wrote the epic Meghnad Badh Kavya and the sonnets of the Chaturdashapadi Kabitabali, which was printed in 1866."
+    legacy:
+      text: { en: "The English Wikipedia article calls him one of the pioneers of Bengali literature." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article calls him one of the pioneers of Bengali literature." }, source: { url: "https://en.wikipedia.org/wiki/Michael_Madhusudan_Dutt", accessed: "2026-11-15" } }
+  - id: "bn-bankim-chandra-chattopadhyay"
+    name:
+      bn: { text: "বঙ্কিমচন্দ্র চট্টোপাধ্যায়", reading: "boṅkimcondro côṭṭopāddhāy", ipa: "boŋkimtʃond̪ro tʃɔʈʈopad̪d̪ʱaj" }
+      en: { text: "Bankim Chandra Chattopadhyay" }
+    born: 1838
+    died: 1894
+    era: "bengal-renaissance"
+    bio:
+      en: "Bankim Chandra Chattopadhyay was a Bengali novelist, poet, essayist and journalist. He is known as Sahitya Samrat, the Emperor of Literature. His novels include Durgeshnandini, Kapalkundala and Anandamath, and he wrote the essays of Kamalakanter Daptar."
+    legacy:
+      text: { en: "He composed Vande Mataram, which appears in his 1882 novel Anandamath, one of the landmarks of modern Bengali and Indian literature." }
+      items:
+        - { kind: "music", text: { en: "He composed Vande Mataram, which appears in his 1882 novel Anandamath, one of the landmarks of modern Bengali and Indian literature." }, source: { url: "https://en.wikipedia.org/wiki/Bankim_Chandra_Chatterjee", accessed: "2026-11-15" } }
+  - id: "bn-peary-chand-mitra"
+    name:
+      bn: { text: "প্যারীচাঁদ মিত্র", reading: "pêricām̐d mitro", ipa: "pæritʃãd̪ mit̪ro" }
+      en: { text: "Peary Chand Mitra" }
+    born: 1814
+    died: 1883
+    era: "bengal-renaissance"
+    bio:
+      en: "Peary Chand Mitra was a writer, journalist and entrepreneur from Kolkata, and a member of Henry Derozio's Young Bengal group. He also wrote under the pen name Tek Chand Thakur."
+    legacy:
+      text: { en: "His Alaler Gharer Dulal pioneered the novel in Bengali, leading to a tradition taken up by Bankim Chandra Chatterjee and others." }
+      items:
+        - { kind: "other", text: { en: "His Alaler Gharer Dulal pioneered the novel in Bengali, leading to a tradition taken up by Bankim Chandra Chatterjee and others." }, source: { url: "https://en.wikipedia.org/wiki/Peary_Chand_Mitra", accessed: "2026-11-15" } }
+  - id: "bn-kaliprasanna-singha"
+    name:
+      bn: { text: "কালীপ্রসন্ন সিংহ", reading: "kāliprosonno śiṅho", ipa: "kaliprosonno ʃiŋɦo" }
+      en: { text: "Kaliprasanna Singha" }
+    born: 1840
+    died: 1870
+    era: "bengal-renaissance"
+    bio:
+      en: "Kaliprasanna Singha, known by the pen name Hootum Pyancha, was a Bengali author, playwright and philanthropist of Kolkata. The year of his birth is debated, so it is given here as 1840, the year of a newspaper notice of his birth."
+    legacy:
+      text: { en: "His Hootum Pyanchar Naksha is a collection of satirical social sketches that reflects the urban society of Bengal at that time." }
+      items:
+        - { kind: "other", text: { en: "His Hootum Pyanchar Naksha is a collection of satirical social sketches that reflects the urban society of Bengal at that time." }, source: { url: "https://en.wikipedia.org/wiki/Kaliprasanna_Singha", accessed: "2026-11-15" } }
+  - id: "bn-dinabandhu-mitra"
+    name:
+      bn: { text: "দীনবন্ধু মিত্র", reading: "dinobondhu mitro", ipa: "d̪inobond̪ʱu mit̪ro" }
+      en: { text: "Dinabandhu Mitra" }
+    born: 1829
+    died: 1873
+    era: "bengal-renaissance"
+    bio:
+      en: "Dinabandhu Mitra was a Bengali writer and dramatist, born in the village of Chowberia in North 24 Parganas."
+    legacy:
+      text: { en: "He is best known for his play Nil Darpan, written in 1860." }
+      items:
+        - { kind: "other", text: { en: "He is best known for his play Nil Darpan, written in 1860." }, source: { url: "https://en.wikipedia.org/wiki/Dinabandhu_Mitra", accessed: "2026-11-15" } }
+  - id: "bn-nabinchandra-sen"
+    name:
+      bn: { text: "নবীনচন্দ্র সেন", reading: "nobincondro śen", ipa: "nobintʃond̪ro ʃen" }
+      en: { text: "Nabinchandra Sen" }
+    born: 1847
+    died: 1909
+    era: "bengal-renaissance"
+    bio:
+      en: "Nabinchandra Sen was a Bengali poet and writer, born in Noapara near Chittagong. He worked as a deputy magistrate and retired in 1904."
+    legacy:
+      text: { en: "His long poem Palashir Juddha (1875) made his name as a poet; he is often considered one of the greatest poets before Tagore." }
+      items:
+        - { kind: "other", text: { en: "His long poem Palashir Juddha (1875) made his name as a poet; he is often considered one of the greatest poets before Tagore." }, source: { url: "https://en.wikipedia.org/wiki/Nabinchandra_Sen", accessed: "2026-11-15" } }
+  - id: "bn-rangalal-bandyopadhyay"
+    name:
+      bn: { text: "রঙ্গলাল বন্দ্যোপাধ্যায়", reading: "rôṅgolāl bônddopāddhāy", ipa: "rɔŋɡolal bɔnd̪d̪opad̪d̪ʱaj" }
+      en: { text: "Rangalal Bandyopadhyay" }
+    born: 1827
+    died: 1887
+    era: "bengal-renaissance"
+    bio:
+      en: "Rangalal Bandyopadhyay was a Bengali poet, journalist and author, born in the village of Bakulia in Hooghly district. His poems first appeared in the magazine Sangbad Prabhakar."
+    legacy:
+      text: { en: "His Padmini Upakhyan (1858) is called the first Bengali narrative romance published just after the Revolt of 1857." }
+      items:
+        - { kind: "other", text: { en: "His Padmini Upakhyan (1858) is called the first Bengali narrative romance published just after the Revolt of 1857." }, source: { url: "https://en.wikipedia.org/wiki/Rangalal_Bandyopadhyay", accessed: "2026-11-15" } }
+  - id: "bn-rabindranath-tagore"
+    name:
+      bn: { text: "রবীন্দ্রনাথ ঠাকুর", reading: "robindronāth ṭhākur", ipa: "robind̪ronat̪ʰ ʈʰakur" }
+      en: { text: "Rabindranath Tagore" }
+    born: 1861
+    died: 1941
+    era: "tagore-age"
+    bio:
+      en: "Rabindranath Tagore was a Bengali poet, author, playwright, composer and painter, and one of the leading figures of the Bengal Renaissance. The words of the national anthems of India and of Bangladesh are by him."
+    legacy:
+      text: { en: "He won the Nobel Prize in Literature in 1913." }
+      items:
+        - { kind: "other", text: { en: "He won the Nobel Prize in Literature in 1913." }, source: { url: "https://en.wikipedia.org/wiki/Rabindranath_Tagore", accessed: "2026-11-15" } }
+        - { kind: "other", text: { en: "He wrote the words of Jana Gana Mana, now India's national anthem, and of Amar Sonar Bangla, the national anthem of Bangladesh." }, source: { url: "https://en.wikipedia.org/wiki/Rabindranath_Tagore", accessed: "2026-11-15" } }
+  - id: "bn-dwijendralal-ray"
+    name:
+      bn: { text: "দ্বিজেন্দ্রলাল রায়", reading: "dijendrolāl rāy", ipa: "d̪idʒend̪rolal raj" }
+      en: { text: "Dwijendralal Ray" }
+    born: 1863
+    died: 1913
+    era: "tagore-age"
+    bio:
+      en: "Dwijendralal Ray, also known as D. L. Ray, was a Bengali poet, playwright and musician, born in Krishnanagar in Nadia. After the Partition of Bengal in 1905 he wrote several patriotic songs."
+    legacy:
+      text: { en: "His patriotic song Dhana Dhanya Pushpa Bhara, written after the Partition of Bengal in 1905, is still immensely popular today." }
+      items:
+        - { kind: "other", text: { en: "His patriotic song Dhana Dhanya Pushpa Bhara, written after the Partition of Bengal in 1905, is still immensely popular today." }, source: { url: "https://en.wikipedia.org/wiki/Dwijendralal_Ray", accessed: "2026-11-15" } }
+  - id: "bn-sukumar-ray"
+    name:
+      bn: { text: "সুকুমার রায়", reading: "sukumār rāy", ipa: "sukumar raj" }
+      en: { text: "Sukumar Ray" }
+    born: 1887
+    died: 1923
+    era: "tagore-age"
+    bio:
+      en: "Sukumar Ray was a Bengali writer and poet from British India, remembered mainly for his writings for children. He was the son of Upendrakishore Ray Chowdhury and the father of the film director Satyajit Ray."
+    legacy:
+      text: { en: "His nonsense verse collection Abol Tabol and his story HaJaBaRaLa are listed among his notable works." }
+      items:
+        - { kind: "other", text: { en: "His nonsense verse collection Abol Tabol and his story HaJaBaRaLa are listed among his notable works." }, source: { url: "https://en.wikipedia.org/wiki/Sukumar_Ray", accessed: "2026-11-15" } }
+  - id: "bn-upendrakishore-ray-chowdhury"
+    name:
+      bn: { text: "উপেন্দ্রকিশোর রায়চৌধুরী", reading: "upendrokiśor rāycoudhuri", ipa: "upend̪rokiʃor rajtʃoud̪ʱuri" }
+      en: { text: "Upendrakishore Ray Chowdhury" }
+    born: 1863
+    died: 1915
+    era: "tagore-age"
+    bio:
+      en: "Upendrakishore Ray Chowdhury was a Bengali writer, painter and entrepreneur, born in the village of Moshua in Mymensingh District. He wrote many stories and science articles for children."
+    legacy:
+      text: { en: "His Tuntunir Boi, a collection of children's stories about a clever tailorbird, was published in 1911." }
+      items:
+        - { kind: "other", text: { en: "His Tuntunir Boi, a collection of children's stories about a clever tailorbird, was published in 1911." }, source: { url: "https://en.wikipedia.org/wiki/Tuntunir_Boi", accessed: "2026-11-15" } }
+        - { kind: "other", text: { en: "He first introduced modern blockmaking, including half-tone and colour blockmaking, in South Asia." }, source: { url: "https://en.wikipedia.org/wiki/Upendrakishore_Ray_Chowdhury", accessed: "2026-11-15" } }
+  - id: "bn-abanindranath-tagore"
+    name:
+      bn: { text: "অবনীন্দ্রনাথ ঠাকুর", reading: "ôbonindronāth ṭhākur", ipa: "ɔbonind̪ronat̪ʰ ʈʰakur" }
+      en: { text: "Abanindranath Tagore" }
+    born: 1871
+    died: 1951
+    era: "tagore-age"
+    bio:
+      en: "Abanindranath Tagore was an Indian painter, born in Jorasanko in Calcutta, and a nephew of Rabindranath Tagore. He also wrote books for children, among them Kheerer Putul."
+    legacy:
+      text: { en: "He was the principal artist and creator of the Indian Society of Oriental Art, set up in 1907." }
+      items:
+        - { kind: "other", text: { en: "He was the principal artist and creator of the Indian Society of Oriental Art, set up in 1907." }, source: { url: "https://en.wikipedia.org/wiki/Abanindranath_Tagore", accessed: "2026-11-15" } }
+  - id: "bn-bibhutibhushan-bandyopadhyay"
+    name:
+      bn: { text: "বিভূতিভূষণ বন্দ্যোপাধ্যায়", reading: "bibhutibhuśon bônddopāddhāy", ipa: "bibʱut̪ibʱuʃon bɔnd̪d̪opad̪d̪ʱaj" }
+      en: { text: "Bibhutibhushan Bandyopadhyay" }
+    born: 1894
+    died: 1950
+    era: "twentieth-century"
+    bio:
+      en: "Bibhutibhushan Bandyopadhyay was an Indian novelist and short story writer in the Bengali language. He is best known for the novel Pather Panchali, and he worked for some years as an estate agent in Bihar."
+    legacy:
+      text: { en: "Pather Panchali, his first published novel, was adapted into a 1955 film of the same name by Satyajit Ray." }
+      items:
+        - { kind: "other", text: { en: "Pather Panchali, his first published novel, was adapted into a 1955 film of the same name by Satyajit Ray." }, source: { url: "https://en.wikipedia.org/wiki/Pather_Panchali_(novel)", accessed: "2026-11-15" } }
+        - { kind: "other", text: { en: "He received the Rabindra Puraskar after his death, in 1951." }, source: { url: "https://en.wikipedia.org/wiki/Bibhutibhushan_Bandyopadhyay", accessed: "2026-11-15" } }
+  - id: "bn-sarat-chandra-chattopadhyay"
+    name:
+      bn: { text: "শরৎচন্দ্র চট্টোপাধ্যায়", reading: "śôrotcondro côṭṭopāddhāy", ipa: "ʃɔrot̪tʃond̪ro tʃɔʈʈopad̪d̪ʱaj" }
+      en: { text: "Sarat Chandra Chattopadhyay" }
+    born: 1876
+    died: 1938
+    era: "tagore-age"
+    bio:
+      en: "Sarat Chandra Chattopadhyay was a Bengali novelist and short story writer of the early twentieth century. He wrote about the lives of Bengali families and society in cities and villages."
+    legacy:
+      text: { en: "The first English translation of his work, Srikanta, volume 1, was published by Oxford University Press in 1922." }
+      items:
+        - { kind: "other", text: { en: "The first English translation of his work, Srikanta, volume 1, was published by Oxford University Press in 1922." }, source: { url: "https://en.wikipedia.org/wiki/Sarat_Chandra_Chattopadhyay", accessed: "2026-11-15" } }
+        - { kind: "other", text: { en: "His novel Pather Dabi was banned by the British government on 4 January 1927." }, source: { url: "https://en.wikipedia.org/wiki/Pather_Dabi", accessed: "2026-11-15" } }
+  - id: "bn-jibanananda-das"
+    name:
+      bn: { text: "জীবনানন্দ দাশ", reading: "jibonānondo dāś", ipa: "dʒibonanond̪o d̪aʃ" }
+      en: { text: "Jibanananda Das" }
+    born: 1899
+    died: 1954
+    era: "twentieth-century"
+    bio:
+      en: "Jibanananda Das was a Bengali poet, writer and teacher, born in Barisal. He is widely seen as one of the major figures of twentieth-century Bengali poetry, and he is often called the poet of beautiful Bengal."
+    legacy:
+      text: { en: "He received the Rabindra Memorial Award for Banalata Sen in 1953." }
+      items:
+        - { kind: "other", text: { en: "He received the Rabindra Memorial Award for Banalata Sen in 1953." }, source: { url: "https://en.wikipedia.org/wiki/Jibanananda_Das", accessed: "2026-11-15" } }
+        - { kind: "other", text: { en: "His collection Shrestha Kavita was awarded the Sahitya Akademi Award in 1955, after his death." }, source: { url: "https://en.wikipedia.org/wiki/Jibanananda_Das", accessed: "2026-11-15" } }
+  - id: "bn-sukanta-bhattacharya"
+    name:
+      bn: { text: "সুকান্ত ভট্টাচার্য", reading: "śukānto bhôṭṭācārjo", ipa: "ʃukant̪o bʱɔʈʈatʃardʒo" }
+      en: { text: "Sukanta Bhattacharya" }
+    born: 1926
+    died: 1947
+    era: "twentieth-century"
+    bio:
+      en: "Sukanta Bhattacharya was a Bengali poet and revolutionary, born in Kalighat in Calcutta. He died of illness at the age of twenty."
+    legacy:
+      text: { en: "His book of poems Chharpatra was published after his death." }
+      items:
+        - { kind: "other", text: { en: "His book of poems Chharpatra was published after his death." }, source: { url: "https://en.wikipedia.org/wiki/Chhar_Patra", accessed: "2026-11-15" } }
+  - id: "bn-jagadish-chandra-bose"
+    name:
+      bn: { text: "জগদীশচন্দ্র বসু", reading: "jôgodiścondro bośu", ipa: "dʒɔɡod̪iʃtʃond̪ro boʃu" }
+      en: { text: "Jagadish Chandra Bose" }
+    born: 1858
+    died: 1937
+    era: "tagore-age"
+    bio:
+      en: "Sir Jagadish Chandra Bose was a scientist who worked in biology and physics, and he also wrote science fiction in Bengali. He is considered the father of Bengali science fiction."
+    legacy:
+      text: { en: "He founded the Bose Institute in 1917, one of the oldest research institutes in India." }
+      items:
+        - { kind: "other", text: { en: "He founded the Bose Institute in 1917, one of the oldest research institutes in India." }, source: { url: "https://en.wikipedia.org/wiki/Jagadish_Chandra_Bose", accessed: "2026-11-15" } }
+        - { kind: "other", text: { en: "He used his own invention, the crescograph, to measure how plants respond to stimuli." }, source: { url: "https://en.wikipedia.org/wiki/Jagadish_Chandra_Bose", accessed: "2026-11-15" } }
+  - id: "bn-pramatha-chaudhuri"
+    name:
+      bn: { text: "প্রমথ চৌধুরী", reading: "prômotho coudhuri", ipa: "prɔmot̪ʰo tʃoud̪ʱuri" }
+      en: { text: "Pramatha Chaudhuri" }
+    born: 1868
+    died: 1946
+    era: "tagore-age"
+    bio:
+      en: "Pramatha Chaudhuri, who also wrote under the name Birbal, was a Bengali essayist, poet and writer. He was a nephew of Rabindranath Tagore, and he married the musician and writer Indira Devi Chaudhurani."
+    legacy:
+      text: { en: "The magazine Sabuj Patra made its debut in April 1914, and in its first issue Chaudhuri explained the magazine's title." }
+      items:
+        - { kind: "other", text: { en: "The magazine Sabuj Patra made its debut in April 1914, and in its first issue Chaudhuri explained the magazine's title." }, source: { url: "https://en.wikipedia.org/wiki/Pramatha_Chaudhuri", accessed: "2026-11-15" } }

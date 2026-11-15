@@ -10,6 +10,8 @@ cards:
   - id: "fr-0487"
     target: "Le musée est près de la gare."
     ipa: "lə myze ɛ pʁɛ də la ɡaʁ"
+    phonetic: "[lə myz̪e ɛ pχɛ d̪ə la ɡaːʁ]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -26,6 +28,8 @@ cards:
   - id: "fr-0488"
     target: "La clé est sous le sac."
     ipa: "la kle ɛ su lə sak"
+    phonetic: "[la kle ɛ s̪u lə s̪ak]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -41,6 +45,8 @@ cards:
   - id: "fr-0489"
     target: "Ma sœur est entre mon père et ma mère."
     ipa: "ma sœʁ ɛ ɑ̃tʁ mɔ̃ pɛʁ e ma mɛʁ"
+    phonetic: "[ma s̪œʁ ɛ ɑ̃t̪χ mɔ̃ pɛʁ e ma mɛːʁ]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -58,6 +64,8 @@ cards:
   - id: "fr-0490"
     target: "Le sac est à côté de moi."
     ipa: "lə sak ɛ a kote də mwa"
+    phonetic: "[lə s̪ak ɛ a kot̪e d̪ə mwa]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -71,9 +79,13 @@ cards:
     confusables:
       - { id: "chez", ref: "fr-0472", kind: "word" }
       - { id: "contre", ref: "fr-0471", kind: "word" }
+    notes:
+      - { id: "stressed-pronoun", kind: "behaviour" }
   - id: "fr-0491"
     target: "Je mange chez moi."
     ipa: "ʒə mɑ̃ʒ ʃe mwa"
+    phonetic: "[ʒə mɑ̃ʒ ʃe mwa]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -84,9 +96,13 @@ cards:
     confusables:
       - { id: "ailleurs", ref: "fr-0483", kind: "word" }
       - { id: "dans", ref: "fr-0049", kind: "word" }
+    notes:
+      - { id: "chez", kind: "behaviour" }
   - id: "fr-0492"
     target: "La rue est à droite."
     ipa: "la ʁy ɛ a dʁwat"
+    phonetic: "[la ʁy ɛ a d̪ʁwat̪]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -101,6 +117,8 @@ cards:
   - id: "fr-0493"
     target: "Mon père est ailleurs."
     ipa: "mɔ̃ pɛʁ ɛ ajœʁ"
+    phonetic: "[mɔ̃ pɛʁ ɛ ajœːʁ]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:

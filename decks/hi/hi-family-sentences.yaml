@@ -1,0 +1,193 @@
+schema: 1
+id: "hi-family-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-4625"
+    target: "मेरी माँ डॉक्टर है।"
+    reading: "mērī mām̐ ḍôkṭar hai."
+    ipa: "meːriː mãː ɖɔkʈər ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", base: "मेरा", reading: "mērī" }
+      - { word: "माँ", ref: "hi-0377" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0376", kind: "word" }
+      - { id: "w2", ref: "hi-0380", kind: "word" }
+  - id: "hi-4626"
+    target: "मेरे पिता जी घर पर हैं।"
+    reading: "mērē pitā jī ghar par haim̐."
+    ipa: "meːreː pɪt̪aː dʒiː ɡʱər pər ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरे", base: "मेरा", reading: "mērē" }
+      - { word: "पिता", ref: "hi-0376" }
+      - { word: "जी", ref: "hi-0135" }
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0377", kind: "word" }
+      - { id: "w2", ref: "hi-0388", kind: "word" }
+  - id: "hi-4627"
+    target: "मेरी बहन पढ़ती है।"
+    reading: "mērī bahan paṛhtī hai."
+    ipa: "meːriː bəɦən pəɽʱt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", base: "मेरा", reading: "mērī" }
+      - { word: "बहन", ref: "hi-0379" }
+      - { word: "पढ़ती", base: "पढ़ना", reading: "paṛhtī" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0378", kind: "word" }
+      - { id: "w2", ref: "hi-0380", kind: "word" }
+  - id: "hi-4628"
+    target: "मेरे दादा जी बहुत अच्छे हैं।"
+    reading: "mērē dādā jī bahut acchē haim̐."
+    ipa: "meːreː d̪aːd̪aː dʒiː bəɦʊt̪ ətʃtʃʰeː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरे", base: "मेरा", reading: "mērē" }
+      - { word: "दादा", ref: "hi-0384" }
+      - { word: "जी", ref: "hi-0135" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "अच्छे", base: "अच्छा", reading: "acchē" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0385", kind: "word" }
+      - { id: "w2", ref: "hi-0387", kind: "word" }
+  - id: "hi-4629"
+    target: "नानी का घर बड़ा है।"
+    reading: "nānī kā ghar baṛā hai."
+    ipa: "naːniː kaː ɡʱər bəɽaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "नानी", ref: "hi-0387" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "बड़ा", ref: "hi-0894" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0386", kind: "word" }
+      - { id: "w2", ref: "hi-0391", kind: "word" }
+  - id: "hi-4630"
+    target: "मेरा पति अच्छा है।"
+    reading: "mērā pati acchā hai."
+    ipa: "meːraː pət̪ɪ ətʃtʃʰaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "पति", ref: "hi-0381" }
+      - { word: "अच्छा", ref: "hi-0898" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0382", kind: "word" }
+      - { id: "w2", ref: "hi-0393", kind: "word" }
+  - id: "hi-4631"
+    target: "मेरी सास बहुत अच्छी है।"
+    reading: "mērī sās bahut acchī hai."
+    ipa: "meːriː saːs bəɦʊt̪ ətʃtʃʰiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", base: "मेरा", reading: "mērī" }
+      - { word: "सास", ref: "hi-0394" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "अच्छी", base: "अच्छा", reading: "acchī" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0393", kind: "word" }
+      - { id: "w2", ref: "hi-0382", kind: "word" }
+  - id: "hi-4632"
+    target: "हमारे बच्चे स्कूल में हैं।"
+    reading: "hamārē baccē skūl mēm̐ haim̐."
+    ipa: "ɦəmaːreː bətʃtʃeː skuːl mẽː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "हमारे", base: "हमारा", reading: "hamārē" }
+      - { word: "बच्चे", ref: "hi-0383" }
+      - { word: "स्कूल", ref: "hi-1056" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0380", kind: "word" }
+      - { id: "w2", ref: "hi-0382", kind: "word" }
+  - id: "hi-4633"
+    target: "ताऊ जी आज घर पर हैं।"
+    reading: "tāū jī āj ghar par haim̐."
+    ipa: "t̪aːuː dʒiː aːdʒ ɡʱər pər ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "ताऊ", ref: "hi-0389" }
+      - { word: "जी", ref: "hi-0135" }
+      - { word: "आज", ref: "hi-0299" }
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0388", kind: "word" }
+      - { id: "w2", ref: "hi-0391", kind: "word" }
+  - id: "hi-4634"
+    target: "बुआ, मामा और मौसी मेरे रिश्तेदार हैं।"
+    reading: "buā, māmā aur mausī mērē riśtēdār haim̐."
+    ipa: "bʊaː maːmaː ɔːr mɔːsiː meːreː rɪʃt̪eːd̪aːr ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "बुआ", ref: "hi-0390" }
+      - { word: "मामा", ref: "hi-0391" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "मौसी", ref: "hi-0392" }
+      - { word: "मेरे", base: "मेरा", reading: "mērē" }
+      - { word: "रिश्तेदार", ref: "hi-0395" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0388", kind: "word" }
+      - { id: "w2", ref: "hi-0384", kind: "word" }
+  - id: "hi-4635"
+    target: "मेरा बेटा छोटा है।"
+    reading: "mērā bēṭā chōṭā hai."
+    ipa: "meːraː beːʈaː tʃʰoːʈaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "बेटा", ref: "hi-0184" }
+      - { word: "छोटा", ref: "hi-0895" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0380", kind: "word" }
+      - { id: "w2", ref: "hi-0383", kind: "word" }
+  - id: "hi-4636"
+    target: "ससुर जी घर पर हैं।"
+    reading: "sasur jī ghar par haim̐."
+    ipa: "səsʊr dʒiː ɡʱər pər ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "ससुर", ref: "hi-0393" }
+      - { word: "जी", ref: "hi-0135" }
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0394", kind: "word" }
+      - { id: "w2", ref: "hi-0384", kind: "word" }
+  - id: "hi-4637"
+    target: "मेरी पत्नी और बच्चे घर पर हैं।"
+    reading: "mērī patnī aur baccē ghar par haim̐."
+    ipa: "meːriː pət̪niː ɔːr bətʃtʃeː ɡʱər pər ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", base: "मेरा", reading: "mērī" }
+      - { word: "पत्नी", ref: "hi-0382" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "बच्चे", ref: "hi-0383" }
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0381", kind: "word" }
+      - { id: "w2", ref: "hi-0380", kind: "word" }

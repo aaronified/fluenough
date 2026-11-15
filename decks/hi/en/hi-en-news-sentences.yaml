@@ -1,0 +1,113 @@
+schema: 1
+id: "hi-en-news-sentences"
+kind: "layer"
+core: "hi-news-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about news"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the words of this unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-5324":
+    native: "A news item was printed in today's newspaper."
+    bases:
+      "छपी": "was printed"
+    confusables:
+      "w1": { why: "Headline, not news item: सुर्खी (surkhī) means headline." }
+      "w2": { why: "Article, not news item: लेख (lēkh) means article; essay." }
+  "hi-5325":
+    native: "Listen to the latest news on the radio."
+    bases:
+      "सुनिए": "listen (polite)"
+    confusables:
+      "w1": { why: "Broadcast, not news bulletin: प्रसारण (prasāraṇ) means broadcast." }
+      "w2": { why: "Announcement, not news: घोषणा (ghōśṇā) means announcement." }
+  "hi-5326":
+    native: "In the election, the leader made a promise."
+    bases:
+      "ने": "(marks the doer)"
+      "किया": "made"
+    confusables:
+      "w1": { why: "Minister, not leader: मंत्री (mantrī) means minister." }
+      "w2": { why: "Announcement, not promise: घोषणा (ghōśṇā) means announcement." }
+  "hi-5327":
+    native: "The police started investigating the crime."
+    bases:
+      "पुलिस": "police"
+      "ने": "(marks the doer)"
+      "जाँच": "investigation"
+      "शुरू": "start"
+    confusables:
+      "w1": { why: "Court, not police: अदालत (adālat) means court (of law)." }
+      "w2": { why: "Incident, not crime: घटना (ghaṭnā) means incident; event." }
+  "hi-5328":
+    native: "The court pronounced its verdict."
+    bases:
+      "ने": "(marks the doer)"
+      "सुनाया": "pronounced"
+    confusables:
+      "w1": { why: "Protest, not verdict: विरोध (virōdh) means protest; opposition." }
+      "w2": { why: "Statement, not verdict: बयान (bayān) means statement." }
+  "hi-5329":
+    native: "A protest demonstration took place on the road."
+    bases:
+      "सड़क": "road"
+      "हुआ": "took place"
+    confusables:
+      "w1": { why: "Movement, a larger campaign: आंदोलन (āndōlan) means movement; agitation." }
+      "w2": { why: "Accident, not protest: हादसा (hādsā) means accident; disaster." }
+  "hi-5330":
+    native: "No one was injured in the terrible accident."
+    bases:
+      "भयानक": "terrible"
+      "हादसे": "accident (oblique)"
+      "घायल": "injured"
+    confusables:
+      "w1": { why: "Incident, not accident: घटना (ghaṭnā) means incident; event." }
+      "w2": { why: "Crime, not accident: अपराध (aprādh) means crime; offence." }
+  "hi-5331":
+    native: "People are talking about the government's announcement."
+    bases:
+      "कर": "doing (talking)"
+      "रहे": "are (continuous)"
+    confusables:
+      "w1": { why: "Policy, not announcement: नीति (nīti) means policy." }
+      "w2": { why: "Statement, not announcement: बयान (bayān) means statement." }
+  "hi-5332":
+    native: "The editor gave permission to print the article."
+    bases:
+      "ने": "(marks the doer)"
+      "छापने": "to print"
+      "मंज़ूरी": "permission"
+      "दी": "gave"
+    confusables:
+      "w1": { why: "Advertisement, not article: विज्ञापन (vigyāpan) means advertisement." }
+      "w2": { why: "Headline, not article: सुर्खी (surkhī) means headline." }
+  "hi-5333":
+    native: "Today's headline is very big."
+    bases:
+      "बड़ी": "big (feminine)"
+    confusables:
+      "w1": { why: "Article, not headline: लेख (lēkh) means article; essay." }
+      "w2": { why: "Information, not headline: सूचना (sūcnā) means information; notice." }
+  "hi-5334":
+    native: "The reporter sent information from the spot."
+    bases:
+      "ने": "(marks the doer)"
+      "मौके": "spot (oblique)"
+      "भेजी": "sent"
+    confusables:
+      "w1": { why: "Editor, not reporter: संपादक (sampādak) means editor." }
+      "w2": { why: "Headline, not information: सुर्खी (surkhī) means headline." }
+  "hi-5335":
+    native: "The broadcast is on TV at nine at night."
+    bases:
+      "टीवी": "TV"
+      "रात": "night"
+      "नौ": "nine"
+      "बजे": "at (the hour)"
+      "होता": "is (happens)"
+    confusables:
+      "w1": { why: "News bulletin, not broadcast: समाचार (samācār) means news bulletin." }
+      "w2": { why: "Radio, not TV: रेडियो (rēḍiyō) means radio." }

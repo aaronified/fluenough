@@ -10,6 +10,8 @@ cards:
   - id: "fr-0001"
     target: "bonjour"
     ipa: "bɔ̃ʒuʁ"
+    phonetic: "[bɔ̃ʒuːʁ]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["courtesy"]
     phrasebook: true
@@ -18,6 +20,8 @@ cards:
   - id: "fr-0002"
     target: "merci"
     ipa: "mɛʁsi"
+    phonetic: "[mɛχs̪i]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["courtesy"]
     phrasebook: true
@@ -26,6 +30,8 @@ cards:
   - id: "fr-0003"
     target: "s'il vous plaît"
     ipa: "sil vu plɛ"
+    phonetic: "[s̪il vu plɛ]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["courtesy"]
     phrasebook: true
@@ -33,17 +39,25 @@ cards:
       - { word: "s'il", base: "s'il" }
       - { word: "vous", ref: "fr-0096" }
       - { word: "plaît", base: "plaire" }
+    notes:
+      - { id: "elision", kind: "behaviour" }
   - id: "fr-0004"
     target: "bonsoir"
     ipa: "bɔ̃swaʁ"
+    phonetic: "[bɔ̃s̪waːʁ]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["courtesy"]
     phrasebook: true
     bases:
       - { word: "bonsoir", base: "bonsoir" }
+    notes:
+      - { id: "evening", kind: "usage" }
   - id: "fr-0005"
     target: "bonne nuit"
     ipa: "bɔn nɥi"
+    phonetic: "[bɔn̪ n̪ɥi]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["courtesy"]
     phrasebook: true
@@ -55,6 +69,8 @@ cards:
   - id: "fr-0006"
     target: "au revoir"
     ipa: "o ʁəvwaʁ"
+    phonetic: "[o ʁəvwaːʁ]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["courtesy"]
     phrasebook: true
@@ -64,15 +80,21 @@ cards:
   - id: "fr-0007"
     target: "excusez-moi"
     ipa: "ɛkskyze mwa"
+    phonetic: "[ɛks̪kyz̪e mwa]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["courtesy"]
     phrasebook: true
     bases:
       - { word: "excusez", base: "excuser" }
       - { word: "moi", base: "moi" }
+    notes:
+      - { id: "vous", kind: "usage" }
   - id: "fr-0008"
     target: "pardon"
     ipa: "paʁdɔ̃"
+    phonetic: "[paʁd̪ɔ̃]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["courtesy"]
     phrasebook: true
@@ -81,6 +103,8 @@ cards:
   - id: "fr-0009"
     target: "je ne comprends pas"
     ipa: "ʒə nə kɔ̃pʁɑ̃ pa"
+    phonetic: "[ʒə n̪ə kɔ̃pχɑ̃ pa]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["survival"]
     phrasebook: true
@@ -89,9 +113,13 @@ cards:
       - { word: "ne", base: "ne" }
       - { word: "comprends", base: "comprendre" }
       - { word: "pas", base: "pas" }
+    notes:
+      - { id: "ne-pas", kind: "behaviour" }
   - id: "fr-0010"
     target: "je ne parle pas français"
     ipa: "ʒə nə paʁl pa fʁɑ̃sɛ"
+    phonetic: "[ʒə n̪ə paʁl pa fχɑ̃s̪ɛ]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["survival"]
     phrasebook: true
@@ -101,9 +129,13 @@ cards:
       - { word: "parle", ref: "fr-0023" }
       - { word: "pas", base: "pas" }
       - { word: "français", base: "français" }
+    notes:
+      - { id: "ne-pas", kind: "behaviour" }
   - id: "fr-0011"
     target: "Parlez plus lentement, s'il vous plaît."
     ipa: "paʁle ply lɑ̃tmɑ̃ sil vu plɛ"
+    phonetic: "[paʁle ply lɑ̃t̪mɑ̃ s̪il vu plɛ]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["survival"]
     phrasebook: true
@@ -114,9 +146,13 @@ cards:
       - { word: "s'il", base: "s'il" }
       - { word: "vous", ref: "fr-0096" }
       - { word: "plaît", base: "plaire" }
+    notes:
+      - { id: "adverb", kind: "behaviour" }
   - id: "fr-0012"
     target: "Comment dit-on ça ?"
     ipa: "kɔmɑ̃ di tɔ̃ sa"
+    phonetic: "[kɔmɑ̃ d̪i t̪ɔ̃ s̪a]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["survival"]
     phrasebook: true
@@ -125,9 +161,13 @@ cards:
       - { word: "dit", base: "dire" }
       - { word: "on", base: "on" }
       - { word: "ça", base: "ça" }
+    notes:
+      - { id: "inversion", kind: "behaviour" }
   - id: "fr-0013"
     target: "Où sont les toilettes ?"
     ipa: "u sɔ̃ le twalɛt"
+    phonetic: "[u s̪ɔ̃ le t̪walɛt̪]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["survival"]
     phrasebook: true
@@ -136,9 +176,13 @@ cards:
       - { word: "sont", ref: "fr-0021" }
       - { word: "les", ref: "fr-0043" }
       - { word: "toilettes", ref: "fr-1013" }
+    notes:
+      - { id: "plural", kind: "behaviour" }
   - id: "fr-0014"
     target: "Combien ça coûte ?"
     ipa: "kɔ̃bjɛ̃ sa kut"
+    phonetic: "[kɔ̃bjɛ̃ s̪a kut̪]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["survival"]
     phrasebook: true
@@ -146,9 +190,13 @@ cards:
       - { word: "Combien", ref: "fr-0071" }
       - { word: "ça", base: "ça" }
       - { word: "coûte", base: "coûter" }
+    notes:
+      - { id: "ca", kind: "usage" }
   - id: "fr-0015"
     target: "Je voudrais un café, s'il vous plaît."
     ipa: "ʒə vudʁɛ œ̃ kafe sil vu plɛ"
+    phonetic: "[ʒə vud̪ʁɛ œ̃ kafe s̪il vu plɛ]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["survival"]
     phrasebook: true
@@ -160,9 +208,13 @@ cards:
       - { word: "s'il", base: "s'il" }
       - { word: "vous", ref: "fr-0096" }
       - { word: "plaît", base: "plaire" }
+    notes:
+      - { id: "conditional", kind: "usage" }
   - id: "fr-0016"
     target: "Je suis désolé."
     ipa: "ʒə sɥi dezɔle"
+    phonetic: "[ʒə s̪ɥi d̪ez̪ɔle]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["survival"]
     phrasebook: true
@@ -170,9 +222,13 @@ cards:
       - { word: "Je", ref: "fr-0126" }
       - { word: "suis", ref: "fr-0021" }
       - { word: "désolé", base: "désolé" }
+    notes:
+      - { id: "agreement", kind: "behaviour" }
   - id: "fr-0017"
     target: "Je m'appelle Paul."
     ipa: "ʒə mapɛl pɔl"
+    phonetic: "[ʒə mapɛl pɔl]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["survival"]
     phrasebook: true
@@ -180,9 +236,13 @@ cards:
       - { word: "Je", ref: "fr-0126" }
       - { word: "m'appelle", base: "s'appeler" }
       - { word: "Paul", base: "Paul" }
+    notes:
+      - { id: "reflexive", kind: "behaviour" }
   - id: "fr-0018"
     target: "Parlez-vous anglais ?"
     ipa: "paʁle vu ɑ̃ɡlɛ"
+    phonetic: "[paʁle vu ɑ̃ɡlɛ]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["survival"]
     phrasebook: true
@@ -190,9 +250,13 @@ cards:
       - { word: "Parlez", ref: "fr-0023" }
       - { word: "vous", ref: "fr-0096" }
       - { word: "anglais", base: "anglais" }
+    notes:
+      - { id: "inversion", kind: "behaviour" }
   - id: "fr-0019"
     target: "Je ne sais pas."
     ipa: "ʒə nə sɛ pa"
+    phonetic: "[ʒə n̪ə s̪ɛ pa]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["survival"]
     phrasebook: true
@@ -201,18 +265,26 @@ cards:
       - { word: "ne", base: "ne" }
       - { word: "sais", base: "savoir" }
       - { word: "pas", base: "pas" }
+    notes:
+      - { id: "ne-dropped", kind: "usage" }
   - id: "fr-0020"
     target: "Bonne journée."
     ipa: "bɔn ʒuʁne"
+    phonetic: "[bɔn̪ ʒuʁn̪e]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["courtesy"]
     phrasebook: true
     bases:
       - { word: "Bonne", ref: "fr-0040" }
       - { word: "journée", base: "journée" }
+    notes:
+      - { id: "agreement", kind: "behaviour" }
   - id: "fr-0021"
     target: "être"
     ipa: "ɛtʁ"
+    phonetic: "[ɛt̪χ]"
+    phonetic_source: "rules"
     pos: "verb"
     tags: ["verb", "irregular"]
     phrasebook: true
@@ -226,6 +298,8 @@ cards:
   - id: "fr-0022"
     target: "avoir"
     ipa: "avwaʁ"
+    phonetic: "[avwaːʁ]"
+    phonetic_source: "rules"
     pos: "verb"
     tags: ["verb", "irregular"]
     phrasebook: true
@@ -239,6 +313,8 @@ cards:
   - id: "fr-0023"
     target: "parler"
     ipa: "paʁle"
+    phonetic: "[paʁle]"
+    phonetic_source: "rules"
     pos: "verb"
     tags: ["verb", "regular-er"]
     phrasebook: true
@@ -252,6 +328,8 @@ cards:
   - id: "fr-0024"
     target: "l'eau"
     ipa: "lo"
+    phonetic: "[lo]"
+    phonetic_source: "rules"
     pos: "noun"
     gender: "f"
     tags: ["food"]

@@ -1,0 +1,113 @@
+schema: 1
+id: "hi-help-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-5072"
+    target: "मुझे मदद चाहिए।"
+    reading: "mujhē madad cāhiē."
+    ipa: "mʊdʒʱeː məd̪əd̪ tʃaːɦɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "मुझे", ref: "hi-0745" }
+    confusables:
+      - { id: "w1", word: "दवाई", reading: "davāī", kind: "word" }
+      - { id: "w2", word: "पैसे", reading: "paisē", kind: "word" }
+  - id: "hi-5073"
+    target: "पुलिस मदद करेगी।"
+    reading: "pulis madad karēgī."
+    ipa: "pʊlɪs məd̪əd̪ kəreːɡiː"
+    pos: "phrase"
+    bases:
+      - { word: "करेगी", ref: "hi-0779" }
+    confusables:
+      - { id: "w1", word: "डॉक्टर", reading: "ḍôkṭar", kind: "word" }
+      - { id: "w2", word: "अस्पताल", reading: "aspatāl", kind: "word" }
+  - id: "hi-5074"
+    target: "मुझे डॉक्टर के पास जाना है।"
+    reading: "mujhē ḍôkṭar kē pās jānā hai."
+    ipa: "mʊdʒʱeː ɖɔkʈər keː paːs dʒaːnaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मुझे", ref: "hi-0745" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "अस्पताल", reading: "aspatāl", kind: "word" }
+      - { id: "w2", word: "पुलिस", reading: "pulis", kind: "word" }
+  - id: "hi-5075"
+    target: "मुझे दवाई की ज़रूरत है।"
+    reading: "mujhē davāī kī zarūrat hai."
+    ipa: "mʊdʒʱeː d̪əʋaːiː kiː zəruːrət̪ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मुझे", ref: "hi-0745" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "दर्द", reading: "dard", kind: "word" }
+      - { id: "w2", word: "अस्पताल", reading: "aspatāl", kind: "word" }
+  - id: "hi-5076"
+    target: "मेरे सिर में दर्द है।"
+    reading: "mērē sir mēm̐ dard hai."
+    ipa: "meːreː sɪr mẽː d̪ərd̪ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरे", ref: "hi-0752" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "दवाई", reading: "davāī", kind: "word" }
+      - { id: "w2", word: "डॉक्टर", reading: "ḍôkṭar", kind: "word" }
+  - id: "hi-5077"
+    target: "पुलिस को फ़ोन कीजिए।"
+    reading: "pulis kō fōn kījiē."
+    ipa: "pʊlɪs koː foːn kiːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "फ़ोन", base: "फ़ोन", reading: "fōn" }
+      - { word: "कीजिए", ref: "hi-0779" }
+    confusables:
+      - { id: "w1", word: "डॉक्टर", reading: "ḍôkṭar", kind: "word" }
+      - { id: "w2", word: "अस्पताल", reading: "aspatāl", kind: "word" }
+  - id: "hi-5078"
+    target: "अस्पताल कहाँ है?"
+    reading: "aspatāl kahām̐ hai?"
+    ipa: "əspət̪aːl kəɦãː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "कब", reading: "kab", kind: "word" }
+      - { id: "w2", word: "कौन", reading: "kaun", kind: "word" }
+  - id: "hi-5079"
+    target: "वह दर्द में है।"
+    reading: "vah dard mēm̐ hai."
+    ipa: "ʋəɦ d̪ərd̪ mẽː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "दवाई", reading: "davāī", kind: "word" }
+      - { id: "w2", word: "मदद", reading: "madad", kind: "word" }
+  - id: "hi-5080"
+    target: "डॉक्टर अभी आएँगे।"
+    reading: "ḍôkṭar abhī āēm̐gē."
+    ipa: "ɖɔkʈər əbʱiː aːẽːɡeː"
+    pos: "phrase"
+    bases:
+      - { word: "आएँगे", ref: "hi-0778" }
+    confusables:
+      - { id: "w1", word: "अस्पताल", reading: "aspatāl", kind: "word" }
+      - { id: "w2", word: "पुलिस", reading: "pulis", kind: "word" }
+  - id: "hi-5081"
+    target: "मदद के लिए शुक्रिया।"
+    reading: "madad kē liē śukriyā."
+    ipa: "məd̪əd̪ keː lɪeː ʃʊkrɪjaː"
+    pos: "phrase"
+    bases:
+      - { word: "लिए", base: "लिए", reading: "liē" }
+      - { word: "शुक्रिया", base: "शुक्रिया", reading: "śukriyā" }
+    confusables:
+      - { id: "w1", word: "कृपया", reading: "kripayā", kind: "word" }
+      - { id: "w2", word: "निषेध", reading: "niśēdh", kind: "word" }

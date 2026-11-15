@@ -1,0 +1,260 @@
+# Bengali multi-word verbs: a noun and করা (kôrā), the conjunct verbs beyond those in bn-grammar-conjunct-verbs.
+# Every pattern is attested on its en.wiktionary page, named in the card's English note.
+schema: 1
+id: "bn-multiword-conjunct-kora"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+genre: "multiword"
+pattern_family: "conjunct-verb"
+level: "B1"
+tags: ["unreviewed"]
+cards:
+  - id: "bn-6050"
+    target: "অনুসরণ করা"
+    words: ["অনুসরণ", "করা"]
+    reading: "ônuśoron kôrā"
+    ipa: "ɔnuʃoron kɔra"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "অনুসরণ", base: "অনুসরণ", reading: "ônuśoron" }
+      - { word: "করা", ref: "bn-0102" }
+  - id: "bn-6051"
+    target: "আচরণ করা"
+    words: ["আচরণ", "করা"]
+    reading: "ācoron kôrā"
+    ipa: "atʃoron kɔra"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "আচরণ", base: "আচরণ", reading: "ācoron" }
+      - { word: "করা", ref: "bn-0102" }
+  - id: "bn-6052"
+    target: "অনুরোধ করা"
+    words: ["অনুরোধ", "করা"]
+    reading: "ônurodh kôrā"
+    ipa: "ɔnurod̪ʱ kɔra"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "অনুরোধ", base: "অনুরোধ", reading: "ônurodh" }
+      - { word: "করা", ref: "bn-0102" }
+  - id: "bn-6053"
+    target: "অংশগ্রহণ করা"
+    words: ["অংশগ্রহণ", "করা"]
+    reading: "ôṅśogrohon kôrā"
+    ipa: "ɔŋʃoɡroɦon kɔra"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "অংশগ্রহণ", base: "অংশগ্রহণ", reading: "ôṅśogrohon" }
+      - { word: "করা", ref: "bn-0102" }
+  - id: "bn-6054"
+    target: "নিষিদ্ধ করা"
+    words: ["নিষিদ্ধ", "করা"]
+    reading: "niśiddho kôrā"
+    ipa: "niʃid̪d̪ʱo kɔra"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "নিষিদ্ধ", base: "নিষিদ্ধ", reading: "niśiddho" }
+      - { word: "করা", ref: "bn-0102" }
+  - id: "bn-6055"
+    target: "পেশ করা"
+    words: ["পেশ", "করা"]
+    reading: "peś kôrā"
+    ipa: "peʃ kɔra"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "পেশ", base: "পেশ", reading: "peś" }
+      - { word: "করা", ref: "bn-0102" }
+  - id: "bn-6056"
+    target: "চুম্বন করা"
+    words: ["চুম্বন", "করা"]
+    reading: "cumbon kôrā"
+    ipa: "tʃumbon kɔra"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "চুম্বন", base: "চুম্বন", reading: "cumbon" }
+      - { word: "করা", ref: "bn-0102" }
+  - id: "bn-6057"
+    target: "ঘৃণা করা"
+    words: ["ঘৃণা", "করা"]
+    reading: "ghrinā kôrā"
+    ipa: "ɡʱrina kɔra"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ঘৃণা", ref: "bn-2836" }
+      - { word: "করা", ref: "bn-0102" }
+  - id: "bn-6058"
+    target: "প্রমাণ করা"
+    words: ["প্রমাণ", "করা"]
+    reading: "prômān kôrā"
+    ipa: "prɔman kɔra"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "প্রমাণ", ref: "bn-3728" }
+      - { word: "করা", ref: "bn-0102" }
+  - id: "bn-6059"
+    target: "তর্জমা করা"
+    words: ["তর্জমা", "করা"]
+    reading: "tôrjomā kôrā"
+    ipa: "t̪ɔrdʒoma kɔra"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "তর্জমা", base: "তর্জমা", reading: "tôrjomā" }
+      - { word: "করা", ref: "bn-0102" }
+  - id: "bn-6060"
+    target: "হস্তক্ষেপ করা"
+    words: ["হস্তক্ষেপ", "করা"]
+    reading: "hôstokkhep kôrā"
+    ipa: "ɦɔst̪okkʰep kɔra"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "হস্তক্ষেপ", base: "হস্তক্ষেপ", reading: "hôstokkhep" }
+      - { word: "করা", ref: "bn-0102" }
+  - id: "bn-6061"
+    target: "অগ্রাহ্য করা"
+    words: ["অগ্রাহ্য", "করা"]
+    reading: "ôgrāhho kôrā"
+    ipa: "ɔɡraɦɦo kɔra"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "অগ্রাহ্য", base: "অগ্রাহ্য", reading: "ôgrāhho" }
+      - { word: "করা", ref: "bn-0102" }
+  - id: "bn-6062"
+    target: "ঘেন্না করা"
+    words: ["ঘেন্না", "করা"]
+    reading: "ghennā kôrā"
+    ipa: "ɡʱenna kɔra"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ঘেন্না", base: "ঘেন্না", reading: "ghennā" }
+      - { word: "করা", ref: "bn-0102" }
+  - id: "bn-6063"
+    target: "অঙ্ক করা"
+    words: ["অঙ্ক", "করা"]
+    reading: "ôṅko kôrā"
+    ipa: "ɔŋko kɔra"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "অঙ্ক", ref: "bn-2165" }
+      - { word: "করা", ref: "bn-0102" }
+  - id: "bn-6064"
+    target: "শিক্ষা করা"
+    words: ["শিক্ষা", "করা"]
+    reading: "śikkhā kôrā"
+    ipa: "ʃikkʰa kɔra"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "শিক্ষা", ref: "bn-2179" }
+      - { word: "করা", ref: "bn-0102" }
+  - id: "bn-6065"
+    target: "জ্বালাতন করা"
+    words: ["জ্বালাতন", "করা"]
+    reading: "jālāton kôrā"
+    ipa: "dʒalat̪on kɔra"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "জ্বালাতন", base: "জ্বালাতন", reading: "jālāton" }
+      - { word: "করা", ref: "bn-0102" }
+  - id: "bn-6066"
+    target: "স্মৃতিচারণ করা"
+    words: ["স্মৃতিচারণ", "করা"]
+    reading: "smriticāron kôrā"
+    ipa: "smrit̪itʃaron kɔra"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "স্মৃতিচারণ", base: "স্মৃতিচারণ", reading: "smriticāron" }
+      - { word: "করা", ref: "bn-0102" }
+  - id: "bn-6067"
+    target: "অংশ করা"
+    words: ["অংশ", "করা"]
+    reading: "ôṅśo kôrā"
+    ipa: "ɔŋʃo kɔra"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "অংশ", base: "অংশ", reading: "ôṅśo" }
+      - { word: "করা", ref: "bn-0102" }
+  - id: "bn-6068"
+    target: "শাদি করা"
+    words: ["শাদি", "করা"]
+    reading: "śādi kôrā"
+    ipa: "ʃad̪i kɔra"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "শাদি", base: "শাদি", reading: "śādi" }
+      - { word: "করা", ref: "bn-0102" }

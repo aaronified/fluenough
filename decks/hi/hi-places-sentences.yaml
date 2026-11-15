@@ -1,0 +1,183 @@
+schema: 1
+id: "hi-places-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-4842"
+    target: "स्कूल बड़ा है।"
+    reading: "skūl baṛā hai."
+    ipa: "skuːl bəɽaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "स्कूल", ref: "hi-1056" }
+      - { word: "बड़ा", ref: "hi-0894" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1058", kind: "word" }
+      - { id: "w2", ref: "hi-1081", kind: "word" }
+  - id: "hi-4843"
+    target: "नदी साफ़ नहीं है।"
+    reading: "nadī sāf nahīm̐ hai."
+    ipa: "nəd̪iː saːf nəɦĩː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "नदी", ref: "hi-1064" }
+      - { word: "साफ़", ref: "hi-0901" }
+      - { word: "नहीं", ref: "hi-0156" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1063", kind: "word" }
+      - { id: "w2", ref: "hi-1067", kind: "word" }
+  - id: "hi-4844"
+    target: "हम पार्क में खेलते हैं।"
+    reading: "ham pārk mēm̐ khēltē haim̐."
+    ipa: "ɦəm paːrk mẽː kʰeːlt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "हम", ref: "hi-0053" }
+      - { word: "पार्क", ref: "hi-1079" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "खेलते", base: "खेलना", reading: "khēltē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", ref: "hi-1085", kind: "word" }
+      - { id: "w2", ref: "hi-1069", kind: "word" }
+  - id: "hi-4845"
+    target: "गाँव में एक तालाब है।"
+    reading: "gām̐v mēm̐ ēk tālāb hai."
+    ipa: "ɡãːʋ mẽː eːk t̪aːlaːb ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "गाँव", ref: "hi-1080" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "एक", ref: "hi-0198" }
+      - { word: "तालाब", ref: "hi-1063" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1064", kind: "word" }
+      - { id: "w2", ref: "hi-1083", kind: "word" }
+  - id: "hi-4846"
+    target: "मैं रोज़ बाज़ार जाता हूँ।"
+    reading: "maim̐ rōz bāzār jātā hūm̐."
+    ipa: "mɛ̃ː roːz baːzaːr dʒaːt̪aː ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "रोज़", ref: "hi-0451" }
+      - { word: "बाज़ार", ref: "hi-1081" }
+      - { word: "जाता", base: "जाना", reading: "jātā" }
+      - { word: "हूँ", base: "होना", reading: "hūm̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0239", kind: "word" }
+      - { id: "w2", ref: "hi-1079", kind: "word" }
+  - id: "hi-4847"
+    target: "वह अस्पताल जा रहा है।"
+    reading: "vah aspatāl jā rahā hai."
+    ipa: "ʋəɦ əspət̪aːl dʒaː rəɦaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "वह", ref: "hi-0749" }
+      - { word: "अस्पताल", ref: "hi-0358" }
+      - { word: "जा", base: "जाना", reading: "jā" }
+      - { word: "रहा", base: "रहना", reading: "rahā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1076", kind: "word" }
+      - { id: "w2", ref: "hi-1056", kind: "word" }
+  - id: "hi-4848"
+    target: "पुल के नीचे पानी है।"
+    reading: "pul kē nīcē pānī hai."
+    ipa: "pʊl keː niːtʃeː paːniː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "पुल", ref: "hi-1068" }
+      - { word: "के", base: "का", reading: "kē" }
+      - { word: "नीचे", ref: "hi-0835" }
+      - { word: "पानी", ref: "hi-0333" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-0834", kind: "word" }
+      - { id: "w2", ref: "hi-0836", kind: "word" }
+  - id: "hi-4849"
+    target: "मेरा ऑफ़िस पास है।"
+    reading: "mērā ôfis pās hai."
+    ipa: "meːraː ɔfɪs paːs ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "ऑफ़िस", ref: "hi-1082" }
+      - { word: "पास", ref: "hi-0293" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-0294", kind: "word" }
+      - { id: "w2", ref: "hi-0192", kind: "word" }
+  - id: "hi-4850"
+    target: "बच्चे मैदान में हैं।"
+    reading: "baccē maidān mēm̐ haim̐."
+    ipa: "bətʃtʃeː mɛːd̪aːn mẽː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "बच्चे", ref: "hi-0383" }
+      - { word: "मैदान", ref: "hi-1085" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", ref: "hi-1070", kind: "word" }
+      - { id: "w2", ref: "hi-1079", kind: "word" }
+  - id: "hi-4851"
+    target: "मेरा स्कूल सड़क पर है।"
+    reading: "mērā skūl saṛak par hai."
+    ipa: "meːraː skuːl səɽək pər ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "स्कूल", ref: "hi-1056" }
+      - { word: "सड़क", ref: "hi-0298" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1084", kind: "word" }
+      - { id: "w2", ref: "hi-1057", kind: "word" }
+  - id: "hi-4852"
+    target: "थाना बाज़ार के पास है।"
+    reading: "thānā bāzār kē pās hai."
+    ipa: "t̪ʰaːnaː baːzaːr keː paːs ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "थाना", ref: "hi-1074" }
+      - { word: "बाज़ार", ref: "hi-1081" }
+      - { word: "के", base: "का", reading: "kē" }
+      - { word: "पास", ref: "hi-0293" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1073", kind: "word" }
+      - { id: "w2", ref: "hi-1057", kind: "word" }
+  - id: "hi-4853"
+    target: "हम गाँव में रहते हैं।"
+    reading: "ham gām̐v mēm̐ rahtē haim̐."
+    ipa: "ɦəm ɡãːʋ mẽː rəɦt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "हम", ref: "hi-0053" }
+      - { word: "गाँव", ref: "hi-1080" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "रहते", base: "रहना", reading: "rahtē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", ref: "hi-0195", kind: "word" }
+      - { id: "w2", ref: "hi-1077", kind: "word" }
+  - id: "hi-4854"
+    target: "पहाड़ बड़ा है।"
+    reading: "pahāṛ baṛā hai."
+    ipa: "pəɦaːɽ bəɽaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "पहाड़", ref: "hi-1065" }
+      - { word: "बड़ा", ref: "hi-0894" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", ref: "hi-1066", kind: "word" }
+      - { id: "w2", ref: "hi-1068", kind: "word" }

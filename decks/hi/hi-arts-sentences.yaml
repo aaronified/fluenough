@@ -1,0 +1,184 @@
+schema: 1
+id: "hi-arts-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-5568"
+    target: "वह एक अच्छा चित्रकार है।"
+    reading: "vah ēk acchā citrakār hai."
+    ipa: "ʋəɦ eːk ətʃtʃʰaː tʃɪt̪rəkaːr ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "वह", ref: "hi-0749" }
+      - { word: "एक", ref: "hi-0198" }
+      - { word: "अच्छा", ref: "hi-0898" }
+      - { word: "चित्रकार", ref: "hi-2450" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "मूर्तिकार", reading: "mūrtikār", kind: "word" }
+      - { id: "w2", word: "कवि", reading: "kavi", kind: "word" }
+  - id: "hi-5569"
+    target: "मेरी बहन सितार वादक है।"
+    reading: "mērī bahan sitār vādak hai."
+    ipa: "meːriː bəɦən sɪt̪aːr ʋaːd̪ək ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", base: "मेरा", reading: "mērī" }
+      - { word: "बहन", base: "बहन", reading: "bahan" }
+      - { word: "सितार", base: "सितार", reading: "sitār" }
+      - { word: "वादक", ref: "hi-2452" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "साज़", reading: "sāz", kind: "word" }
+      - { id: "w2", word: "नृत्यांगना", reading: "nrityāṅganā", kind: "word" }
+  - id: "hi-5570"
+    target: "कवि शायरी में प्रेम लिखते हैं।"
+    reading: "kavi śāyarī mēm̐ prēm likhtē haim̐."
+    ipa: "kəʋɪ ʃaːjəriː mẽː preːm lɪkʰt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "कवि", ref: "hi-2464" }
+      - { word: "शायरी", ref: "hi-2453" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "प्रेम", base: "प्रेम", reading: "prēm" }
+      - { word: "लिखते", base: "लिखना", reading: "likhtē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "लेखन", reading: "lēkhan", kind: "word" }
+      - { id: "w2", word: "साहित्य", reading: "sāhity", kind: "word" }
+  - id: "hi-5571"
+    target: "हम उस्ताद से सितार सीखते हैं।"
+    reading: "ham ustād sē sitār sīkhtē haim̐."
+    ipa: "ɦəm ʊst̪aːd̪ seː sɪt̪aːr siːkʰt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "हम", ref: "hi-0053" }
+      - { word: "उस्ताद", ref: "hi-2459" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "सितार", base: "सितार", reading: "sitār" }
+      - { word: "सीखते", base: "सीखना", reading: "sīkhtē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "वादक", reading: "vādak", kind: "word" }
+      - { id: "w2", word: "मूर्तिकार", reading: "mūrtikār", kind: "word" }
+  - id: "hi-5572"
+    target: "इस प्रदर्शनी में सुंदर कलाकृतियाँ हैं।"
+    reading: "is pradarśanī mēm̐ sundar kalākritiyām̐ haim̐."
+    ipa: "ɪs prəd̪ərʃəniː mẽː sʊnd̪ər kəlaːkrɪt̪ɪjãː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "इस", base: "यह", reading: "is" }
+      - { word: "प्रदर्शनी", ref: "hi-2454" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "सुंदर", base: "सुंदर", reading: "sundar" }
+      - { word: "कलाकृतियाँ", base: "कलाकृति", reading: "kalākritiyām̐" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "तूलिका", reading: "tūlikā", kind: "word" }
+      - { id: "w2", word: "रचना", reading: "racnā", kind: "word" }
+  - id: "hi-5573"
+    target: "उस्ताद सुर सिखाते हैं।"
+    reading: "ustād sur sikhātē haim̐."
+    ipa: "ʊst̪aːd̪ sʊr sɪkʰaːt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "उस्ताद", ref: "hi-2459" }
+      - { word: "सुर", ref: "hi-2463" }
+      - { word: "सिखाते", base: "सिखाना", reading: "sikhātē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "राग", reading: "rāg", kind: "word" }
+      - { id: "w2", word: "ताल", reading: "tāl", kind: "word" }
+  - id: "hi-5574"
+    target: "राग और ताल का मेल सुंदर है।"
+    reading: "rāg aur tāl kā mēl sundar hai."
+    ipa: "raːɡ ɔːr t̪aːl kaː meːl sʊnd̪ər ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "राग", ref: "hi-2461" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "ताल", ref: "hi-2462" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "मेल", base: "मेल", reading: "mēl" }
+      - { word: "सुंदर", base: "सुंदर", reading: "sundar" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "सुर", reading: "sur", kind: "word" }
+      - { id: "w2", word: "साज़", reading: "sāz", kind: "word" }
+  - id: "hi-5575"
+    target: "पुरानी रचना आज भी लोकप्रिय है।"
+    reading: "purānī racnā āj bhī lōkpriy hai."
+    ipa: "pʊraːniː rətʃnaː aːdʒ bʱiː loːkprɪj ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "पुरानी", base: "पुराना", reading: "purānī" }
+      - { word: "रचना", ref: "hi-2456" }
+      - { word: "आज", ref: "hi-0299" }
+      - { word: "भी", ref: "hi-0350" }
+      - { word: "लोकप्रिय", base: "लोकप्रिय", reading: "lōkpriy" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "कलाकृति", reading: "kalākriti", kind: "word" }
+      - { id: "w2", word: "प्रदर्शनी", reading: "pradarśanī", kind: "word" }
+  - id: "hi-5576"
+    target: "साज़ बजाने का अभ्यास रोज़ कीजिए।"
+    reading: "sāz bajānē kā abhyās rōz kījiē."
+    ipa: "saːz bədʒaːneː kaː əbʱjaːs roːz kiːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "साज़", ref: "hi-2460" }
+      - { word: "बजाने", base: "बजाना", reading: "bajānē" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "अभ्यास", ref: "hi-2548" }
+      - { word: "रोज़", ref: "hi-0451" }
+      - { word: "कीजिए", base: "करना", reading: "kījiē" }
+    confusables:
+      - { id: "w1", word: "वादक", reading: "vādak", kind: "word" }
+      - { id: "w2", word: "उस्ताद", reading: "ustād", kind: "word" }
+  - id: "hi-5577"
+    target: "तूलिका से चित्र बनता है।"
+    reading: "tūlikā sē citra bantā hai."
+    ipa: "t̪uːlɪkaː seː tʃɪt̪rə bənt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "तूलिका", ref: "hi-2466" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "चित्र", base: "चित्र", reading: "citra" }
+      - { word: "बनता", base: "बनना", reading: "bantā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "मूर्तिकार", reading: "mūrtikār", kind: "word" }
+      - { id: "w2", word: "कलाकृति", reading: "kalākriti", kind: "word" }
+  - id: "hi-5578"
+    target: "मूर्तिकार ने पत्थर की सुंदर मूर्ति बनाई।"
+    reading: "mūrtikār nē patthar kī sundar mūrti banāī."
+    ipa: "muːrt̪ɪkaːr neː pət̪t̪ʰər kiː sʊnd̪ər muːrt̪ɪ bənaːiː"
+    pos: "phrase"
+    bases:
+      - { word: "मूर्तिकार", ref: "hi-2451" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "पत्थर", base: "पत्थर", reading: "patthar" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "सुंदर", base: "सुंदर", reading: "sundar" }
+      - { word: "मूर्ति", base: "मूर्ति", reading: "mūrti" }
+      - { word: "बनाई", base: "बनाना", reading: "banāī" }
+    confusables:
+      - { id: "w1", word: "चित्रकार", reading: "citrakār", kind: "word" }
+      - { id: "w2", word: "तूलिका", reading: "tūlikā", kind: "word" }
+  - id: "hi-5579"
+    target: "उसने गीत का लेखन सीखा।"
+    reading: "usnē gīt kā lēkhan sīkhā."
+    ipa: "ʊsneː ɡiːt̪ kaː leːkʰən siːkʰaː"
+    pos: "phrase"
+    bases:
+      - { word: "उसने", base: "वह", reading: "usnē" }
+      - { word: "गीत", base: "गीत", reading: "gīt" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "लेखन", ref: "hi-2465" }
+      - { word: "सीखा", base: "सीखना", reading: "sīkhā" }
+    confusables:
+      - { id: "w1", word: "साहित्य", reading: "sāhity", kind: "word" }
+      - { id: "w2", word: "कवि", reading: "kavi", kind: "word" }

@@ -10,6 +10,8 @@ cards:
   - id: "fr-1404"
     target: "Je range mon sac et mon portefeuille."
     ipa: "ʒə ʁɑ̃ʒ mɔ̃ sak e mɔ̃ pɔʁtfœj"
+    phonetic: "[ʒə ʁɑ̃ʒ mɔ̃ s̪ak e mɔ̃ pɔχt̪fœj]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -25,6 +27,8 @@ cards:
   - id: "fr-1405"
     target: "Le journal est sur la table du salon."
     ipa: "lə ʒuʁnal ɛ syʁ la tabl dy salɔ̃"
+    phonetic: "[lə ʒuʁn̪al ɛ s̪yʁ la t̪abl d̪y s̪alɔ̃]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -39,9 +43,13 @@ cards:
     confusables:
       - { id: "enveloppe", ref: "fr-1368", kind: "word" }
       - { id: "timbre", ref: "fr-1369", kind: "word" }
+    notes:
+      - { id: "du", kind: "behaviour" }
   - id: "fr-1406"
     target: "Il faut acheter une pile."
     ipa: "il fo aʃte yn pil"
+    phonetic: "[il fo aʃt̪e yn̪ pil]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -56,6 +64,8 @@ cards:
   - id: "fr-1407"
     target: "Ma poubelle est pleine ce matin."
     ipa: "ma pubɛl ɛ plɛn sə matɛ̃"
+    phonetic: "[ma pubɛl ɛ plɛn̪ s̪ə mat̪ɛ̃]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -68,9 +78,13 @@ cards:
     confusables:
       - { id: "balai", ref: "fr-1399", kind: "word" }
       - { id: "eponge", ref: "fr-1400", kind: "word" }
+    notes:
+      - { id: "agreement", kind: "behaviour" }
   - id: "fr-1408"
     target: "Le chat dort dans le panier."
     ipa: "lə ʃa dɔʁ dɑ̃ lə panje"
+    phonetic: "[lə ʃa d̪ɔʁ d̪ɑ̃ lə pan̪je]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -85,6 +99,8 @@ cards:
   - id: "fr-1409"
     target: "Je ferme la fenêtre et le rideau."
     ipa: "ʒə fɛʁm la fənɛtʁ e lə ʁido"
+    phonetic: "[ʒə fɛʁm la fən̪ɛt̪χ e lə ʁid̪o]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -101,6 +117,8 @@ cards:
   - id: "fr-1410"
     target: "Tu prends ton parapluie, il pleut."
     ipa: "ty pʁɑ̃ tɔ̃ paʁapɥi il plø"
+    phonetic: "[t̪y pχɑ̃ t̪ɔ̃ paʁapɥi il plø]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -116,6 +134,8 @@ cards:
   - id: "fr-1411"
     target: "Je mets le couteau sur la table."
     ipa: "ʒə mɛ lə kuto syʁ la tabl"
+    phonetic: "[ʒə mɛ lə kut̪o s̪yʁ la t̪abl]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -132,6 +152,8 @@ cards:
   - id: "fr-1412"
     target: "Il y a une lampe dans la chambre."
     ipa: "il i a yn lɑ̃p dɑ̃ la ʃɑ̃bʁ"
+    phonetic: "[il i a yn̪ lɑ̃p d̪ɑ̃ la ʃɑ̃bʁ]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:
@@ -146,9 +168,13 @@ cards:
     confusables:
       - { id: "lit", ref: "fr-1005", kind: "word" }
       - { id: "fenetre", ref: "fr-1004", kind: "word" }
+    notes:
+      - { id: "il-y-a", kind: "behaviour" }
   - id: "fr-1413"
     target: "Une bougie et une boîte sont sur le lit."
     ipa: "yn buʒi e yn bwat sɔ̃ syʁ lə li"
+    phonetic: "[yn̪ buʒi e yn̪ bwat̪ s̪ɔ̃ s̪yʁ lə li]"
+    phonetic_source: "rules"
     pos: "phrase"
     tags: ["sentence"]
     bases:

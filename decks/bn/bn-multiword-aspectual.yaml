@@ -1,0 +1,273 @@
+# Bengali multi-word verbs: a verb's joined form (-e, -ye) and an auxiliary verb, aspectual compounds.
+# Every pattern is attested on a dictionary page (bn.wiktionary or en.wiktionary), named in the card's English note.
+schema: 1
+id: "bn-multiword-aspectual"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+genre: "multiword"
+pattern_family: "aspectual-compound"
+level: "B1"
+tags: ["unreviewed"]
+cards:
+  - id: "bn-6150"
+    target: "ধুয়ে ফেলা"
+    words: ["ধুয়ে", "ফেলা"]
+    reading: "dhuye phelā"
+    ipa: "d̪ʱuje pʰela"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ধুয়ে", ref: "bn-1100" }
+      - { word: "ফেলা", ref: "bn-1103" }
+  - id: "bn-6151"
+    target: "কেটে ফেলা"
+    words: ["কেটে", "ফেলা"]
+    reading: "keṭe phelā"
+    ipa: "keʈe pʰela"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "কেটে", ref: "bn-1101" }
+      - { word: "ফেলা", ref: "bn-1103" }
+  - id: "bn-6152"
+    target: "ভেঙে ফেলা"
+    words: ["ভেঙে", "ফেলা"]
+    reading: "bheṅe phelā"
+    ipa: "bʱeŋe pʰela"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ভেঙে", ref: "bn-1102" }
+      - { word: "ফেলা", ref: "bn-1103" }
+  - id: "bn-6153"
+    target: "খুলে ফেলা"
+    words: ["খুলে", "ফেলা"]
+    reading: "khule phelā"
+    ipa: "kʰule pʰela"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "খুলে", ref: "bn-0897" }
+      - { word: "ফেলা", ref: "bn-1103" }
+  - id: "bn-6154"
+    target: "ঘুমিয়ে পড়া"
+    words: ["ঘুমিয়ে", "পড়া"]
+    reading: "ghumiye pôṛā"
+    ipa: "ɡʱumije pɔɽa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ঘুমিয়ে", ref: "bn-0887" }
+      - { word: "পড়া", ref: "bn-0119" }
+  - id: "bn-6155"
+    target: "শুয়ে পড়া"
+    words: ["শুয়ে", "পড়া"]
+    reading: "śuye pôṛā"
+    ipa: "ʃuje pɔɽa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "শুয়ে", ref: "bn-1120" }
+      - { word: "পড়া", ref: "bn-0119" }
+  - id: "bn-6156"
+    target: "ঢুকে পড়া"
+    words: ["ঢুকে", "পড়া"]
+    reading: "ḍhuke pôṛā"
+    ipa: "ɖʱuke pɔɽa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ঢুকে", ref: "bn-2354" }
+      - { word: "পড়া", ref: "bn-0119" }
+  - id: "bn-6157"
+    target: "জেগে ওঠা"
+    words: ["জেগে", "ওঠা"]
+    reading: "jege oṭhā"
+    ipa: "dʒeɡe oʈʰa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "জেগে", ref: "bn-2345" }
+      - { word: "ওঠা", ref: "bn-0885" }
+  - id: "bn-6158"
+    target: "তুলে দেওয়া"
+    words: ["তুলে", "দেওয়া"]
+    reading: "tule deoyā"
+    ipa: "t̪ule d̪eoja"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "তুলে", ref: "bn-1104" }
+      - { word: "দেওয়া", ref: "bn-0888" }
+  - id: "bn-6159"
+    target: "ঢেলে দেওয়া"
+    words: ["ঢেলে", "দেওয়া"]
+    reading: "ḍhele deoyā"
+    ipa: "ɖʱele d̪eoja"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ঢেলে", ref: "bn-1112" }
+      - { word: "দেওয়া", ref: "bn-0888" }
+  - id: "bn-6160"
+    target: "জাগিয়ে দেওয়া"
+    words: ["জাগিয়ে", "দেওয়া"]
+    reading: "jāgiye deoyā"
+    ipa: "dʒaɡije d̪eoja"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "জাগিয়ে", ref: "bn-4189" }
+      - { word: "দেওয়া", ref: "bn-0888" }
+  - id: "bn-6161"
+    target: "শুনে নেওয়া"
+    words: ["শুনে", "নেওয়া"]
+    reading: "śune neoyā"
+    ipa: "ʃune neoja"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "শুনে", ref: "bn-0878" }
+      - { word: "নেওয়া", ref: "bn-0889" }
+  - id: "bn-6162"
+    target: "চিনে নেওয়া"
+    words: ["চিনে", "নেওয়া"]
+    reading: "cine neoyā"
+    ipa: "tʃine neoja"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "চিনে", ref: "bn-2357" }
+      - { word: "নেওয়া", ref: "bn-0889" }
+  - id: "bn-6163"
+    target: "চিনে রাখা"
+    words: ["চিনে", "রাখা"]
+    reading: "cine rākhā"
+    ipa: "tʃine rakʰa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "চিনে", ref: "bn-2357" }
+      - { word: "রাখা", ref: "bn-0894" }
+  - id: "bn-6164"
+    target: "বলে রাখা"
+    words: ["বলে", "রাখা"]
+    reading: "bôle rākhā"
+    ipa: "bɔle rakʰa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "বলে", ref: "bn-0879" }
+      - { word: "রাখা", ref: "bn-0894" }
+  - id: "bn-6165"
+    target: "ভুলে যাওয়া"
+    words: ["ভুলে", "যাওয়া"]
+    reading: "bhule jāoyā"
+    ipa: "bʱule dʒaoja"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ভুলে", ref: "bn-2352" }
+      - { word: "যাওয়া", ref: "bn-0873" }
+  - id: "bn-6166"
+    target: "চলে যাওয়া"
+    words: ["চলে", "যাওয়া"]
+    reading: "côle jāoyā"
+    ipa: "tʃɔle dʒaoja"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "চলে", ref: "bn-0892" }
+      - { word: "যাওয়া", ref: "bn-0873" }
+  - id: "bn-6167"
+    target: "বেরিয়ে যাওয়া"
+    words: ["বেরিয়ে", "যাওয়া"]
+    reading: "beriye jāoyā"
+    ipa: "berije dʒaoja"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "বেরিয়ে", ref: "bn-2353" }
+      - { word: "যাওয়া", ref: "bn-0873" }
+  - id: "bn-6168"
+    target: "বেরিয়ে আসা"
+    words: ["বেরিয়ে", "আসা"]
+    reading: "beriye āśā"
+    ipa: "berije aʃa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "বেরিয়ে", ref: "bn-2353" }
+      - { word: "আসা", ref: "bn-0872" }
+  - id: "bn-6169"
+    target: "জেগে বসা"
+    words: ["জেগে", "বসা"]
+    reading: "jege bôśā"
+    ipa: "dʒeɡe bɔʃa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "জেগে", ref: "bn-2345" }
+      - { word: "বসা", ref: "bn-0884" }

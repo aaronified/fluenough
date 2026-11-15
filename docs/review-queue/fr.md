@@ -72,3 +72,89 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | fr-1666 | fr-hobbies (A2) | "La lecture est mon loisir préféré.": is it the natural way to say reading is a favourite hobby? | Haiku builder | 2026-11-06 |
 | fr-1679 | fr-hobbies (A2) | "Le match est fini.": is "fini" natural for a finished match, or is "terminé" more usual? | Haiku builder | 2026-11-06 |
 | unit-level | fr-hobbies (A2) | Légère, blanc, belle, tous, aime and several other forms are taught as inline bases here, not as cards, and "loisir" and "amusant" are not cards either: should any become a card in a later unit? | Haiku builder | 2026-11-06 |
+| unit-level | fr-illness (unit 59, fr-3000 to fr-3039) | The example IPA is machine-derived or hand-composed with liaison rules: are the liaisons and the dropped schwas right in these sentences? | Haiku builder | 2026-11-15 |
+| unit-level | fr-illness (unit 59) | This unit overlaps the later health unit (unit 73, fr-health) in topic: should the repeated words stay in both, or move? | Haiku builder | 2026-11-15 |
+| unit-level | fr-chores (unit 60, fr-3080 to fr-3114, 35 words) | The example IPA is machine-derived or hand-composed with liaison rules: are the liaisons and the dropped schwas right? | Haiku builder | 2026-11-15 |
+| fr-3087 | fr-chores (unit 60) | The broad IPA sɛʁpijɛʁ is written for serpillière (mop): is that the right transcription, with the stress and the ending? | Haiku builder | 2026-11-15 |
+| unit-level | fr-appearance (unit 61, fr-3160 to fr-3199) | The example IPA is machine-derived or hand-composed with liaison rules: are the liaisons and the dropped schwas right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-verbs-3 (unit 63, fr-3240 to fr-3284) | The example IPA is machine-derived or hand-composed with liaison rules: are the liaisons and the dropped schwas right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-phone (unit 64, fr-3320 to fr-3353) | The example IPA is machine-derived or hand-composed with liaison rules: are the liaisons and the dropped schwas right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-phone (unit 64) | The unit has 34 words, not the 35 the plan gives: is a word missing, or is 34 the intended count? | Haiku builder | 2026-11-15 |
+| unit-level | fr-phone (unit 64) | SMS was dropped from this unit: should texting be taught here, and with which word or phrase? | Haiku builder | 2026-11-15 |
+| fr-4694 | fr-journey (unit 66, 51 cards from fr-3400 to fr-4694) | This card sits in the phrase range fr-4650 to fr-4695: is it in the right unit, and is its sentence IPA right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-journey (unit 66) | The example IPA is machine-derived or hand-composed with liaison rules: are the liaisons and the dropped schwas right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-nature (unit 68, fr-3480 to fr-3519) | The example IPA is machine-derived or hand-composed with liaison rules: are the liaisons and the dropped schwas right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-adjectives-2 (unit 69, fr-3560 to fr-3599) | The example IPA is machine-derived or hand-composed with liaison rules: are the liaisons and the dropped schwas right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-workplace (unit 71, fr-3640 to fr-3679) | The example IPA is machine-derived or hand-composed with liaison rules: are the liaisons and the dropped schwas right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-geography (unit 72, fr-3720 to fr-3759) | The example IPA is machine-derived or hand-composed with liaison rules: are the liaisons and the dropped schwas right? | Haiku builder | 2026-11-15 |
+| fr-3738 | fr-geography (unit 72) | Paris (fr-3738) and the other cities here (fr-3739 to fr-3744, fr-3755 to fr-3759) have pos other and no article: is other the right part of speech, and should each card show how the city takes à or de? | Haiku builder | 2026-11-15 |
+| unit-level | fr-grammar-reflexives (unit 43) | Notes and examples are from textbook knowledge and the reading deck's IPA is hand-written: are they right? s'appeler is taught here but is not a card: is its IPA right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-grammar-en-train-de (unit 44) | Notes and examples are from textbook knowledge and the reading deck's IPA is hand-written: are they right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-grammar-passe-compose-avoir (unit 49) | Notes and examples are from textbook knowledge and the reading deck's IPA is hand-written: are they right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-grammar-direct-object-pronouns and fr-grammar-indirect-object-pronouns (unit 52) | Notes and examples are from textbook knowledge and the reading deck's IPA is hand-written: are they right? The notes use dire before its card (fr-2616, unit 111): is that right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-grammar-pronoun-y and fr-grammar-pronoun-en (unit 55) | Notes and examples are from textbook knowledge and the reading deck's IPA is hand-written: are they right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-grammar-comparison (unit 58) | Notes and examples are from textbook knowledge and the reading deck's IPA is hand-written: are they right? bien que is used here but is not a card: is its IPA right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-grammar-passe-compose-etre (unit 62) | Notes and examples are from textbook knowledge and the reading deck's IPA is hand-written: are they right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-grammar-venir-de (unit 65) | Notes and examples are from textbook knowledge and the reading deck's IPA is hand-written: are they right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-grammar-imparfait (unit 67) | Notes and examples are from textbook knowledge and the reading deck's IPA is hand-written: are they right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-grammar-ne-jamais, fr-grammar-ne-rien, fr-grammar-ne-personne and fr-grammar-ne-plus (unit 70) | Notes and examples are from textbook knowledge and the reading deck's IPA is hand-written: are they right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-grammar-passe-compose-imparfait (unit 74) | Notes and examples are from textbook knowledge and the reading deck's IPA is hand-written: are they right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-grammar-futur-simple (unit 76) | Notes and examples are from textbook knowledge and the reading deck's IPA is hand-written: are they right? devoir has an irregular future stem and is not in this unit: should it be added? | Haiku builder | 2026-11-15 |
+| unit-level | fr-grammar-conditionnel-present (unit 79) | Notes and examples are from textbook knowledge and the reading deck's IPA is hand-written: are they right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-grammar-qui-que and fr-grammar-ou-relative (unit 81) | Notes and examples are from textbook knowledge and the reading deck's IPA is hand-written: are they right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-grammar-subjonctif-present (unit 84) | Notes and examples are from textbook knowledge and the reading deck's IPA is hand-written: are they right? falloir is used here but is not a card: is its IPA right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-grammar-subjonctif-uses (unit 87) | Notes and examples are from textbook knowledge and the reading deck's IPA is hand-written: are they right? falloir, avoir peur, être content, bien que, pour que and avant que are used here but are not cards: is their IPA right? douter que is not in the unit: should it be? | Haiku builder | 2026-11-15 |
+| unit-level | fr-grammar-discours-indirect (unit 90) | Notes and examples are from textbook knowledge and the reading deck's IPA is hand-written: are they right? demander si, demander où and demander de are used here but are not cards: is their IPA right? The notes use dire before its card (fr-2616, unit 111): is that right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-grammar-plus-que-parfait (unit 93) | Notes and examples are from textbook knowledge and the reading deck's IPA is hand-written: are they right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-grammar-si-clauses (unit 96) | Notes and examples are from textbook knowledge and the reading deck's IPA is hand-written: are they right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-grammar-passive and fr-grammar-on-impersonal (unit 99) | Notes and examples are from textbook knowledge and the reading deck's IPA is hand-written: are they right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-grammar-gerondif (unit 102) | Notes and examples are from textbook knowledge and the reading deck's IPA is hand-written: are they right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-grammar-dont and fr-grammar-lequel (unit 105) | Notes and examples are from textbook knowledge and the reading deck's IPA is hand-written: are they right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-grammar-conditionnel-passe (unit 108) | Notes and examples are from textbook knowledge and the reading deck's IPA is hand-written: are they right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-grammar-passe-simple-reading (unit 110) | Notes and examples are from textbook knowledge and the reading deck's IPA is hand-written: are they right? The notes use dire before its card (fr-2616, unit 111): is that right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-grammar-formal-register (unit 112) | Notes and examples are from textbook knowledge and the reading deck's IPA is hand-written: are they right? s'appeler is used here but is not a card: is its IPA right? | Haiku builder | 2026-11-15 |
+| fr-4250 | fr-culture-4 (Fabre d'Églantine) | The date 1802 comes from a posthumous printing (Œuvres mêlées et posthumes), and the author died in 1794: which date should the card give? | Haiku builder | 2026-11-15 |
+| fr-4151 | fr-culture-2 (La Fontaine) | The date is 1668-1694, the span of the Fables, for a text of Book VI: should the card give the span or the date of this book? | Haiku builder | 2026-11-15 |
+| fr-4203 | fr-culture-3 (Mallarmé) | The date is 1865 from French Wikipedia, but the text is from the 1887 Wikisource edition: which date should the card give? | Haiku builder | 2026-11-15 |
+| fr-4105 | fr-culture-1 (Montaigne) | This card uses the 1595 text while fr-4109 gives 1580, the first printing: should both cards give the same date, and which one? | Haiku builder | 2026-11-15 |
+| fr-4100 | fr-culture-1 (Rabelais, creator fr-francois-rabelais) | The creator entry gives Rabelais's birth as circa 1483, though sources also give 1494: is 1483 right? | Haiku builder | 2026-11-15 |
+| fr-4103 | fr-culture-1 (Labé) | The date 1555 comes from French Wikipedia, not a title page: should it be checked against the title page? | Haiku builder | 2026-11-15 |
+| fr-4204 | fr-culture-3 (Rimbaud) | The date is 1888, the first publication in the Anthologie, but the text is from the 1895 Vanier edition: is 1888 the date the card should give? | Haiku builder | 2026-11-15 |
+| fr-4253 | fr-culture-4 (Éluard) | Public-domain basis checked only against the validator floor, and wartime prolongations not assessed for Éluard (died 1952): is the basis right? | Haiku builder | 2026-11-15 |
+| fr-4254 | fr-culture-4 (Gide) | Public-domain basis checked only against the validator floor, and wartime prolongations not assessed for Gide (died 1951): is the basis right? | Haiku builder | 2026-11-15 |
+| fr-4255 | fr-culture-4 (Valéry) | Public-domain basis checked only against the validator floor, and wartime prolongations not assessed for Valéry (died 1945): is the basis right? | Haiku builder | 2026-11-15 |
+| fr-4265 | fr-culture-4 (Valéry) | Public-domain basis checked only against the validator floor, and wartime prolongations not assessed for Valéry (died 1945): is the basis right? | Haiku builder | 2026-11-15 |
+| fr-4158 | fr-culture-2 (Corneille) | The excerpt ends with an ellipsis: should it end at a full stop, or is the ellipsis right for a line of verse? | Haiku builder | 2026-11-15 |
+| fr-4211 | fr-culture-3 (Balzac) | The excerpt ends with an ellipsis: should it end at a full stop, or is the ellipsis right? | Haiku builder | 2026-11-15 |
+| fr-4213 | fr-culture-3 (Maupassant) | The excerpt ends with an ellipsis: should it end at a full stop, or is the ellipsis right? | Haiku builder | 2026-11-15 |
+| fr-4217 | fr-culture-3 (Daudet) | The excerpt ends with an ellipsis: should it end at a full stop, or is the ellipsis right? | Haiku builder | 2026-11-15 |
+| fr-4251 | fr-culture-4 (Perrault) | The excerpt ends with an ellipsis: should it end at a full stop, or is the ellipsis right? | Haiku builder | 2026-11-15 |
+| fr-4256 | fr-culture-4 (Perrault) | The excerpt ends with an ellipsis: should it end at a full stop, or is the ellipsis right? | Haiku builder | 2026-11-15 |
+| fr-4258 | fr-culture-4 (Perrault) | The excerpt ends with an ellipsis: should it end at a full stop, or is the ellipsis right? | Haiku builder | 2026-11-15 |
+| fr-4261 | fr-culture-4 (Perrault) | The excerpt ends with an ellipsis: should it end at a full stop, or is the ellipsis right? | Haiku builder | 2026-11-15 |
+| fr-4264 | fr-culture-4 (Proust) | The excerpt ends with an ellipsis: should it end at a full stop, or is the ellipsis right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-culture-1 to fr-culture-4 | Several excerpts use modernised spelling rather than the spelling of the edition shown: which excerpts should follow the edition, and should the source say so? | Haiku builder | 2026-11-15 |
+| unit-level | decks/creators/fr.yaml (44 creators) | The 44 creator bios have not been reviewed: are the dates and bios right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-proverbs-1 to fr-proverbs-3 (source Quitard 1842) | The health and saints themes are empty and the family theme is thin: should cards be added for them? | Haiku builder | 2026-11-15 |
+| unit-level | fr-proverbs-1 to fr-proverbs-3 | The phrase IPA is hand-assembled: are the readings right? | Haiku builder | 2026-11-15 |
+| fr-4406 | fr-proverbs-3 (Quitard 1842) | The meaning is read from Quitard's entry: is it the sense a French speaker would give? | Haiku builder | 2026-11-15 |
+| fr-4416 | fr-proverbs-3 (Quitard 1842) | The meaning is read from Quitard's entry: is it the sense a French speaker would give? | Haiku builder | 2026-11-15 |
+| unit-level | fr-multiword-pronominal (fr-4450 to fr-4469) | Grounded on fr.wiktionary entries, with the phrase IPA hand-composed: are the readings right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-multiword-verb-preposition (fr-4500 to fr-4519) | Grounded on fr.wiktionary entries, with the phrase IPA hand-composed: are the readings right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-multiword-idioms (fr-4550 to fr-4569) | Grounded on fr.wiktionary entries, with the phrase IPA hand-composed: are the readings right? | Haiku builder | 2026-11-15 |
+| unit-level | fr-multiword-light-verbs (fr-4600 to fr-4619) | Grounded on fr.wiktionary entries, with the phrase IPA hand-composed: are the readings right? | Haiku builder | 2026-11-15 |
+| fr-4616 | fr-multiword-light-verbs | Faire un tour and se promener (fr-4455, fr-multiword-pronominal) teach the same idea of a walk: should both stay? | Haiku builder | 2026-11-15 |
+| fr-4566 | fr-multiword-idioms | Ça marche is the weakest fit in this unit: is it the right idiom here, or is a more common phrase better? | Haiku builder | 2026-11-15 |
+| unit-level | fr-situations (hotel sheet) | The hotel sheet is the thinnest of the sheets: are its phrases and words enough for the situation? | Haiku builder | 2026-11-15 |
+| unit-level | fr-situations (post-bank sheet) | The post-office and bank sheet is among the thinnest: are its phrases and words enough for the situation? | Haiku builder | 2026-11-15 |
+| unit-level | fr-situations (phrases fr-4650 to fr-4695) | The phrase IPA is composed from the word IPA, and the sheets have not had a French reviewer: are the phrases and their readings right? | Haiku builder | 2026-11-15 |
+| fr-2195 | fr-environment (composter) | The note was corrected: is the note right now? | Haiku builder | 2026-11-15 |
+| fr-2202 | fr-environment-sentences | The sentence was corrected: is it right now? | Haiku builder | 2026-11-15 |
+| unit-level | all French sentence and phrasebook decks | 243 of 472 sentence and phrasebook cards carry a note: are the existing notes right, and which cards need one? | Haiku builder | 2026-11-15 |
+| unit-level | fr-en layer texts (all French layers) | The layer texts have not been reviewed: are the English texts right and clear? | Haiku builder | 2026-11-15 |
+| unit-level | fr-topics.yaml (21 topics) | The topic summaries have not been reviewed: are they right and clear? | Haiku builder | 2026-11-15 |
+| unit-level | fr-phonetics.yaml (six rules: fr-length-before-voiced-fricative, fr-length-o-oe-a-nasal, fr-r-devoiced, fr-t-d-dental, fr-n-dental, fr-s-z-dental) | The dental s and z marking and the end-of-card length anchoring rest on French Wikipedia's 'French phonology': are they right? | Haiku builder | 2026-11-15 |
+| fr-2250 | fr-cinema (héros) | The broad IPA was corrected here: is eʁo right for héros? | Haiku builder | 2026-11-15 |
+| fr-2162 | fr-environment (environnement) | The broad IPA was corrected here: is ɑ̃viʁɔnmɑ̃ right for environnement? | Haiku builder | 2026-11-15 |
+| fr-2192 | fr-environment (déforestation) | The broad IPA was corrected here: is defɔʁɛstasjɔ̃ right for déforestation? | Haiku builder | 2026-11-15 |
+| fr-2102 | fr-technology (supprimer) | The broad IPA was corrected here: is sypʁime right for supprimer? | Haiku builder | 2026-11-15 |

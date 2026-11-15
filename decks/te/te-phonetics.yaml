@@ -3,7 +3,7 @@ kind: "phonetics"
 id: "te-phonetics"
 language: "te"
 variety: "Standard Telugu, as the course's broad ipa writes it"
-description: "Rules that turn a card's broad ipa into its narrow [ ] form, in order. Written for tools/derive_phonetic.py, never read by the app. Each rule applies the regular expression to the whole ipa string and replaces every match; the next rule works on the result. Only rules that are well attested are here, so few cards change: the course's broad ipa for Telugu already writes the dental stops (t̪ d̪), the retroflexes (ʈ ɖ ɳ ɭ ʂ), vowel length (ː), geminates (doubled letters), aspirates and breathy voice (ʰ ʱ) and, by the tool's medial-anusvara rule, the nasal that is said before a stop, so the nasal rules only catch the few cards the tool left (a loan such as station). The affricate rule (tʃ and dʒ as the alveolar t͡s and d͡z before a non-front vowel) is left out: the sources attest it for native words only, and the broad ipa does not say which words are native, so it would mis-state Sanskrit loans (cakravarti), which educated speakers say with tʃ. A rule left out is not a claim that it does not exist: colloquial word-final m as [w̃], intervocalic dz as [z], and the rounding of ʋ near rounded vowels are attested only for colloquial speech or need a non-combining modifier letter, and are not taken."
+description: "Rules that turn a card's broad ipa into its narrow [ ] form, in order. Written for tools/derive_phonetic.py, never read by the app. Each rule applies the regular expression to the whole ipa string and replaces every match; the next rule works on the result. Only rules that are well attested are here, so few cards change: the course's broad ipa for Telugu already writes the dental stops (t̪ d̪), the retroflexes (ʈ ɖ ɳ ɭ ʂ), vowel length (ː), geminates (doubled letters), aspirates and breathy voice (ʰ ʱ) and, by the tool's medial-anusvara rule, the nasal that is said before a stop, so the velar, palatal, retroflex and bilabial nasal rules only catch the few cards the tool left (a loan such as station). The broad ipa writes the nasal before a dental stop as a plain n, so te-n-dental, the last rule, writes it dental (n̪) before t̪ or d̪ inside a word; no other rule changes an n before a dental, so the order cannot clash. The affricate rule (tʃ and dʒ as the alveolar t͡s and d͡z before a non-front vowel) is left out: the sources attest it for native words only, and the broad ipa does not say which words are native, so it would mis-state Sanskrit loans (cakravarti), which educated speakers say with tʃ. A rule left out is not a claim that it does not exist: colloquial word-final m as [w̃], intervocalic dz as [z], and the rounding of ʋ near rounded vowels are attested only for colloquial speech or need a non-combining modifier letter, and are not taken."
 rules:
   - id: "te-n-velar"
     pattern: 'n(?=ˈ?[kɡ])'
@@ -20,4 +20,8 @@ rules:
   - id: "te-n-bilabial"
     pattern: 'n(?=ˈ?[pb])'
     replace: 'm'
+    source: 'Krishnamurti, The Dravidian Languages (2003, CUP), the chapter on Telugu phonology (consonant clusters: nasals before stops are homorganic); Wikipedia, Telugu phonology, "Consonants" (CC BY-SA 4.0).'
+  - id: "te-n-dental"
+    pattern: 'n(?=ˈ?[td]̪)'
+    replace: 'n̪'
     source: 'Krishnamurti, The Dravidian Languages (2003, CUP), the chapter on Telugu phonology (consonant clusters: nasals before stops are homorganic); Wikipedia, Telugu phonology, "Consonants" (CC BY-SA 4.0).'
