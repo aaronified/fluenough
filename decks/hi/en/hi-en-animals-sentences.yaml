@@ -1,0 +1,99 @@
+schema: 1
+id: "hi-en-animals-sentences"
+kind: "layer"
+core: "hi-animals-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about animals"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the animal words of this unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-4895":
+    native: "This is a dog."
+    confusables:
+      "w1": { why: "Cat, not dog: बिल्ली (billī) is a cat." }
+      "w2": { why: "Lion, not dog: शेर (śēr) is a lion." }
+  "hi-4896":
+    native: "The cat is small."
+    bases:
+      "छोटी": "small (feminine)"
+    confusables:
+      "w1": { why: "Dog, not cat: कुत्ता (kuttā) is a dog." }
+      "w2": { why: "Bird, not cat: चिड़िया (ciṛiyā) is a bird." }
+  "hi-4897":
+    native: "The cow gives milk."
+    bases:
+      "देती": "give (feminine habitual)"
+    confusables:
+      "w1": { why: "Goat, not cow: बकरी (bakrī) is a goat." }
+      "w2": { why: "Buffalo, not cow: भैंस (bhaiṁs) is a buffalo." }
+  "hi-4898":
+    native: "The elephant is very big."
+    confusables:
+      "w1": { why: "Horse, not elephant: घोड़ा (ghōṛā) is a horse." }
+      "w2": { why: "Bear, not elephant: भालू (bhālū) is a bear." }
+  "hi-4899":
+    native: "The lion lives in the forest."
+    bases:
+      "रहता": "live (masculine)"
+    confusables:
+      "w1": { why: "Tiger, not lion: बाघ (bāgh) is a tiger." }
+      "w2": { why: "Deer, not lion: हिरन (hiran) is a deer." }
+  "hi-4900":
+    native: "The monkey eats a banana."
+    bases:
+      "खाता": "eat (masculine)"
+    confusables:
+      "w1": { why: "Fox, not monkey: लोमड़ी (lōmṛī) is a fox." }
+      "w2": { why: "Bear, not monkey: भालू (bhālū) is a bear." }
+  "hi-4901":
+    native: "The hen lays eggs."
+    bases:
+      "अंडे": "egg (plural)"
+      "देती": "lay (feminine habitual)"
+    confusables:
+      "w1": { why: "Rooster, not hen: मुर्गा (murgā) is a rooster." }
+      "w2": { why: "Duck, not hen: बत्तख (battakh) is a duck." }
+  "hi-4902":
+    native: "The crow is black."
+    confusables:
+      "w1": { why: "Heron, not crow: बगुला (bagulā) is a heron or crane." }
+      "w2": { why: "Duck, not crow: बत्तख (battakh) is a duck." }
+  "hi-4903":
+    native: "The butterfly is white."
+    confusables:
+      "w1": { why: "Fly, not butterfly: मक्खी (makkhī) is a fly." }
+      "w2": { why: "Insect, not butterfly: कीड़ा (kīṛā) is an insect or bug." }
+  "hi-4904":
+    native: "The rabbit also eats carrots."
+    bases:
+      "खाता": "eat (masculine)"
+    confusables:
+      "w1": { why: "Bear, not rabbit: भालू (bhālū) is a bear." }
+      "w2": { why: "Deer, not rabbit: हिरन (hiran) is a deer." }
+  "hi-4905":
+    native: "The buffalo sits in water."
+    bases:
+      "बैठती": "sit (feminine habitual)"
+    confusables:
+      "w1": { why: "Goat, not buffalo: बकरी (bakrī) is a goat." }
+      "w2": { why: "Cow, not buffalo: गाय (gāy) is a cow." }
+  "hi-4906":
+    native: "The goat runs."
+    bases:
+      "दौड़ती": "run (feminine habitual)"
+    confusables:
+      "w1": { why: "Sheep, not goat: भेड़ (bhēṛ) is a sheep." }
+      "w2": { why: "Buffalo, not goat: भैंस (bhaiṁs) is a buffalo." }
+  "hi-4907":
+    native: "Tigers and lions are in the forest."
+    confusables:
+      "w1": { why: "Bear, not tiger: भालू (bhālū) is a bear." }
+      "w2": { why: "Deer, not lion: हिरन (hiran) is a deer." }
+  "hi-4908":
+    native: "The dog is outside the house."
+    bases:
+      "के": "of (oblique)"
+    confusables:
+      "w1": { why: "Cat, not dog: बिल्ली (billī) is a cat." }
+      "w2": { why: "Cow, not dog: गाय (gāy) is a cow." }
