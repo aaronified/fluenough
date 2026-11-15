@@ -219,6 +219,7 @@ class Registry(Tree):
     def test_telugu_and_japanese_are_registered_with_their_dumps(self) -> None:
         self.assertEqual(ip.DUMP_NAMES["te"], "Telugu")
         self.assertEqual(ip.DUMP_NAMES["ja"], "Japanese")
+        self.assertEqual(ip.DUMP_NAMES["fr"], "French")
         self.assertEqual(set(ip.DUMP_NAMES), set(ip.VARIETIES))
 
     def test_a_new_language_in_a_registry_file_is_imported_with_no_code_change(self) -> None:
