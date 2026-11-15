@@ -177,8 +177,15 @@ language), which the owner rejected.
     read). Spanish: the untagged form, which Wiktionary does not say is
     Castilian or Latin American while the decks' `ipa` writes θ, so a
     Latin-American learner's card shows a Castilian broad form beside a
-    form of unknown accent: left for the owner. Any other language needs its
-    variety named in `VARIETIES` first.
+    form of unknown accent: left for the owner. The languages are data (#1285): the
+    dump name and variety of each are in `tools/phonetic_languages.yaml`,
+    read by the tool, and a new language is an entry there with no code
+    change. Telugu and Japanese are registered as the untagged form of
+    their dumps (measured on the kaikki.org dumps, 2026-11: Telugu 1,655
+    of 1,670 narrow forms carry no note or tag, Japanese 26,661 of 26,689;
+    the rest are regional, letter names or alternative readings and are not
+    taken). Telugu has few narrow forms (about 5% of cards), so its narrow
+    IPA comes mostly from rules.
   - **Rules.** One YAML file per language, `decks/<lang>/<lang>-phonetics.yaml`
     (kind `phonetics`, a new file kind, see "Phonetic rules files" in
     [Deck-Format](Deck-Format)): ordered regular-expression rules, each with a
