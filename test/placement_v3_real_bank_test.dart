@@ -184,8 +184,7 @@ void main() {
         );
         expect(
           starters.single.every(
-            (i) =>
-                !AdmissionProfile.of(data)!.excluded.contains(i.auditClass),
+            (i) => !AdmissionProfile.of(data)!.excluded.contains(i.auditClass),
           ),
           isTrue,
         );
