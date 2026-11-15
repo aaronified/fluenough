@@ -1,0 +1,25 @@
+schema: 1
+id: "ja-en-grammar-suki"
+kind: "layer"
+core: "ja-grammar-suki"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Liking: が (ga) with すき (suki) and きらい (kirai)"
+description: "The thing you like or dislike takes が (ga), and すき (suki), like, or きらい (kirai), dislike, comes after it with です (desu): おんがくがすきです (ongaku ga suki desu), I like music. Every cell is a whole sentence about one thing. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  name: "Liking: が (ga) with すき (suki) and きらい (kirai)"
+  slot_name: "feeling"
+  slots:
+    "suki": "likes it"
+    "kirai": "dislikes it"
+  entries:
+    "ongaku": "music"
+    "eiga": "movie"
+    "ryouri": "cooking"
+    "yakyuu": "baseball"
+    "sakana": "fish"
+    "neko": "cat"
+    "fuyu": "winter"
+    "origami": "origami"
+  notes: "Say what you like with the thing first, then が (ga), then すき (suki) and です (desu): おんがくがすきです (ongaku ga suki desu), I like music. The thing liked takes が (ga), not を (o), because すき (suki) is a describing word and not a verb. きらい (kirai) works the same way: やきゅうがきらいです (yakyuu ga kirai desu), I dislike baseball. To say who likes it, put the person first with は (wa): わたしはおんがくがすきです (watashi wa ongaku ga suki desu). The noun does not change, and neither do すき (suki) and きらい (kirai) before です (desu)."

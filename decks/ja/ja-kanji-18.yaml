@@ -26,6 +26,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "天井はたかいです。"
+        target_scripts: { kana: "てんじょうはたかいです。" }
+        words: ["天井", "は", "たかい", "です"]
+        reading: "tenjou wa takai desu."
+        ipa: "teɴdʑoː wa takai desɯ"
   - id: "ja-5962"
     target: "夫"
     target_scripts: { kana: "おっと" }
@@ -77,6 +83,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "今日の日付をおしえてください。"
+        target_scripts: { kana: "きょうのひづけをおしえてください。" }
+        words: ["今日", "の", "日付", "を", "おしえて", "ください"]
+        reading: "kyou no hizuke o oshiete kudasai."
+        ipa: "kjoː no çidzɯke o oɕiete kɯdasai"
   - id: "ja-5966"
     target: "令"
     target_scripts: { kana: "めいれい" }
@@ -248,6 +260,17 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "手伝ってください。"
+        target_scripts: { kana: "てつだってください。" }
+        words: ["手伝って", "ください"]
+        reading: "tetsudatte kudasai."
+        ipa: "tetsɯdatte kɯdasai"
+      - target: "家族の手伝いをします。"
+        target_scripts: { kana: "かぞくのてつだいをします。" }
+        words: ["家族", "の", "手伝い", "を", "します"]
+        reading: "kazoku no tetsudai o shimasu."
+        ipa: "kadzokɯ no tetsɯdai o ɕimasɯ"
   - id: "ja-5982"
     target: "兆"
     target_scripts: { kana: "ちょう" }

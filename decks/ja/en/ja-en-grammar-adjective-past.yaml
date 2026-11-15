@@ -1,0 +1,39 @@
+schema: 1
+id: "ja-en-grammar-adjective-past"
+kind: "layer"
+core: "ja-grammar-adjective-past"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Describing words: the negative past and the polite past"
+description: "An i-adjective makes its negative past with くなかった (kunakatta), as おいしくなかった (oishikunakatta), and its polite past by adding です (desu), as おいしかったです (oishikatta desu). A na-adjective takes だった (datta), じゃなかった (ja nakatta) and でした (deshita). The plain past of an i-adjective is taught with the first table of describing words. Every adjective a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "i-nakatta": "was not {meaning}"
+    "i-katta-desu": "was {meaning} (polite)"
+    "i-nakatta-desu": "was not {meaning} (polite)"
+    "na-datta": "was {meaning}"
+    "na-janakatta": "was not {meaning}"
+    "na-deshita": "was {meaning} (polite)"
+    "na-arimasen-deshita": "was not {meaning} (polite)"
+  prompts:
+    "ja-0318": { "na-datta": "liked", "na-janakatta": "did not like", "na-deshita": "liked (polite)", "na-arimasen-deshita": "did not like (polite)" }
+    "ja-0319": { "na-datta": "disliked", "na-janakatta": "did not dislike", "na-deshita": "disliked (polite)", "na-arimasen-deshita": "did not dislike (polite)" }
+    "ja-1732": { "i-nakatta": "did not want to have", "i-katta-desu": "wanted to have (polite)", "i-nakatta-desu": "did not want to have (polite)" }
+rules:
+  "ja-rule-i-nakatta":
+    name: "くなかった (kunakatta): the plain negative past of an i-adjective"
+    explanation: "Take the negative that ends in くない (kunai) and replace ない (nai) with なかった (nakatta): おいしくない (oishikunai) becomes {1}, and さむくない (samukunai) becomes {2}. いい (ii) is irregular and uses よく (yoku): よくない (yokunai) becomes {3}. The plain past かった (katta) and the negative くない (kunai) belong to the first table of describing words and are not repeated here."
+  "ja-rule-i-polite-past":
+    name: "かったです (katta desu): the polite past of an i-adjective"
+    explanation: "Put です (desu) after the plain past to make it polite: おいしかった (oishikatta) becomes {1}, and the negative past おいしくなかった (oishikunakatta) becomes {2}. The polite negative past has a second form with ありませんでした (arimasen deshita): {3}. いい (ii) is irregular: {4} means it was good."
+  "ja-rule-na-datta":
+    name: "だった (datta): the plain past of a na-adjective"
+    explanation: "A na-adjective is followed by だった (datta), the plain past of です (desu): しずか (shizuka) becomes {1}, and きれい (kirei) becomes {2}. It does not take the かった (katta) of an i-adjective, and the な (na) used before a noun is dropped: not しずかなだった (shizukana datta)."
+  "ja-rule-na-janakatta":
+    name: "じゃなかった (ja nakatta): the plain negative past of a na-adjective"
+    explanation: "The plain negative past is じゃなかった (ja nakatta), or ではなかった (de wa nakatta) when it is more formal: しずか (shizuka) becomes {1}, and きれい (kirei) becomes {2}. じゃ (ja) is the spoken form of では (de wa)."
+  "ja-rule-na-polite-past":
+    name: "でした (deshita): the polite past of a na-adjective"
+    explanation: "でした (deshita) is the polite past of です (desu): しずか (shizuka) becomes {1}. The polite negative past is ではありませんでした (de wa arimasen deshita), or in speech じゃありませんでした (ja arimasen deshita): {2} and {3}."

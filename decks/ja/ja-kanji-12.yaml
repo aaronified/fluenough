@@ -79,6 +79,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "ちり取りをください。"
+        target_scripts: { kana: "ちりとりをください。" }
+        words: ["ちり取り", "を", "ください"]
+        reading: "chiritori o kudasai."
+        ipa: "tɕiɾitoɾi o kɯdasai"
   - id: "ja-5604"
     target: "受"
     target_scripts: { kana: "うける" }
@@ -284,6 +290,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "まな板はきれいです。"
+        target_scripts: { kana: "まないたはきれいです。" }
+        words: ["まな板", "は", "きれい", "です"]
+        reading: "manaita wa kirei desu."
+        ipa: "manaita wa kiɾeː desɯ"
   - id: "ja-5619"
     target: "油"
     target_scripts: { kana: "あぶら" }

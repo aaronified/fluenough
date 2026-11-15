@@ -1,0 +1,33 @@
+schema: 1
+id: "ja-en-grammar-yori"
+kind: "layer"
+core: "ja-grammar-yori"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Comparing two things: より (yori)"
+license: "CC-BY-SA-4.0"
+description: "より (yori) means than and comes after the thing you compare with; どちらが (dochira ga) asks which of two: これよりおおきいです (kore yori ookii desu), it is bigger than this. Not yet checked by a Japanese speaker: please report any mistake."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Comparing two things: より (yori)"
+  slot_name: "form"
+  slots:
+    "than": "it is more … than this (polite)"
+    "which": "which one of two is more …? (polite question)"
+  entries:
+    "ookii": "big"
+    "chiisai": "small"
+    "takai": "expensive; high"
+    "yasui": "cheap"
+    "atarashii": "new"
+    "furui": "old (of things)"
+    "ii": "good"
+    "hayai": "fast; early"
+    "osoi": "slow; late"
+    "nagai": "long"
+    "mijikai": "short (of length)"
+    "omoshiroi": "interesting; funny"
+    "muzukashii": "difficult"
+    "suki": "liked; fond of"
+    "kirei": "clean; pretty"
+    "shizuka": "quiet; calm"
+  notes: "より (yori) comes after the thing you compare with, and the adjective stays in its plain form: これよりおおきいです (kore yori ookii desu), it is bigger than this. A full sentence names both things: とうきょうはおおさかよりおおきいです (toukyou wa oosaka yori ookii desu), Tokyo is bigger than Osaka. To ask which of two, put どちらが (dochira ga) before the adjective: どちらがおおきいですか (dochira ga ookii desu ka), which is bigger? The same frame works for the い (i) adjectives and for すき (suki), きれい (kirei) and しずか (shizuka), with no な (na) and no change to the adjective."
