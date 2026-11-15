@@ -366,3 +366,71 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ja-kanji-37 | one example: only one taught word uses this kanji: ja-7102, ja-7103, ja-7112, ja-7113, ja-7121, ja-7124 | Sonnet builder | 2026-11-15 |
 | unit-level | ja-kanji-38 | no example: no taught word uses this kanji: ja-7165, ja-7166, ja-7170, ja-7172, ja-7173, ja-7175, ja-7178, ja-7179, ja-7185 | Sonnet builder | 2026-11-15 |
 | unit-level | ja-kanji-38 | one example: only one taught word uses this kanji: ja-7160, ja-7161, ja-7163, ja-7168, ja-7174, ja-7176, ja-7177, ja-7181, ja-7182, ja-7184, ja-7186, ja-7187 | Sonnet builder | 2026-11-15 |
+| ja-8022 | ja-money | Is びんぼうをなくします (we will end poverty) natural Japanese? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8028 | ja-money | Is みせでねぎります natural for haggling with a shop? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8036 | ja-money | Is ねびきをおねがいします natural for asking a shop for a discount? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8054 | ja-money-sentences | Is むりょうのおちゃがあります (there is free tea) natural Japanese? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-money | Are the 45 words of ja-money the right first money list? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8308 | ja-university | Are the glosses of がくひ and じゅぎょうりょう (ja-8310) right, and do they stay distinct? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8345 | ja-university | Is the title sense of はかせ right for a learner card? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8315 | ja-university | Is the German etymology note on ゼミ right, and is it needed on the card? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8346 | ja-university | Is the course length note on しゅうし right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8317 | ja-university | Is the note on じっけん right and natural for a learner? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-university | Are the particle readings in the table cells (wa, e, o) right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8648 | ja-literature | Is the gloss of ひょうろん right, and is it kept apart from ひょうろんか (ja-8649)? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8649 | ja-literature | Is the gloss of ひょうろんか right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8632 | ja-literature | Is the gloss of こてん right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8610 | ja-literature | Is the gloss of ぶん right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8646 | ja-literature | Is the gloss of わか right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8645 | ja-literature | Is the gloss of かんし right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8623 | ja-literature | Are the glosses げんぶん and やくぶん right, and is the pair kept apart? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-literature | The deck reads を as o while the romanisation scheme text says wo: which should the card show? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-literature | Passage ids in the path do not match the reading deck ids: which should the passages keep? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8789 | ja-verbs-5 | Is the usage note on きわめる natural and right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8797 | ja-verbs-5 | Is the usage note on さずける natural and right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8799 | ja-verbs-5 | Is the usage note on しいる natural and right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8772 | ja-verbs-5 | Is the usage note on もうける natural and right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8794 | ja-verbs-5 | Is the usage note on こす natural and right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8788 | ja-verbs-5 | Is the usage note on きずく natural and right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8790 | ja-verbs-5 | Is the usage note on くいる natural and right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8786 | ja-verbs-5 | Is the usage note on おびる natural and right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8775 | ja-verbs-5 | Is the usage note on もよおす natural and right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8792 | ja-verbs-5 | Is the usage note on くらう natural, and is its blunt register right for a learner? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8763 | ja-verbs-5 | The humble use of まいる has no register note: should one be added, and is the usage note natural? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-verbs-5 | The second reading passage was written by the builder, not taken from the path: is it natural and right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8948 | ja-abstract-words | Is the part of speech of いっぱん right: noun or na-adjective? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8954 | ja-abstract-words | Is the adjective part of speech of かのう right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8953 | ja-abstract-words | Is the adjective part of speech of ふかのう right? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-abstract-words | The second passage of the reading deck is not a path passage: should it stay? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-abstract-words | Many targets are kana although the kanji units come before this one: should they be kanji under ADR-0053? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-likes-sentences | Are spaced cell readings accepted in this unit's tables? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-likes-sentences | Is the register of じょうず and へた right, and is it different from とくい and にがて? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-9224 | ja-grammar-likes-sentences | Is the wording of ちちはりょうりがへたです right: is へた natural for being bad at cooking? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-9226 | ja-grammar-likes-sentences | Is the wording of わたしはえいごがにがてです right: is にがて natural for being bad at English? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-conjunctions | Is the きます in an example, which the note says comes from きる and くる, right? The card cited for it, ja-9109, is それなら. | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-adjective-past | Plain だ is introduced here before any unit teaches it: should it be taught here? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-adjective-past | Are よくありませんでした and よくなかったです both right, and which should come first? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-adjective-past | Is the order じゃ and では right in these sentences? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-adjective-past | Is かっこよくなかった natural for "was not cool"? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-adjective-past | Are the すき and きらい prompts natural? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-comparison-sentences | Are the どちらがいい and どちらがすき cells natural? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-comparison-sentences | Is これよりすき natural? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-comparison-sentences | Is the elliptical 'which' cell with より right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-0664 | ja-demonstratives | どれ is on ja-0664 and on ja-0116 (ja-questions): should one of the two cards go? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-keigo-sonkeigo | Are these borderline お...になります verbs right to keep: わかる, きこえる, かんじる, つかれる, さわる, とる, もつ, わたる, すすむ, おどろく and よろこぶ? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-0344 | ja-everyday-verbs | Is おききします the right humble form for きく? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-0348 | ja-everyday-verbs | くる and いく both give まいります here (ja-0349 shares the form): should they be shown apart? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-0366 | ja-everyday-verbs | Is ぞんじております the right humble form for しる? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-0357 | ja-everyday-verbs | Is おめにかかります the right humble form for あう? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-0341 | ja-everyday-verbs | いただきます is given for ja-0341, ja-0342 and ja-0599 (ja-more-verbs): should the three share one form? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-9467 | ja-grammar-keigo-kenjougo-sentences | Is せんせいにおききします natural? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-9462 | ja-grammar-keigo-kenjougo-sentences | Is あしたうかがいます natural? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-transitivity | Is the gloss 'to cure' for なおす right? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-transitivity | Is the sentence みずがふえました natural? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8039 | ja-money | Is ためる paired correctly with たまる as a transitive and intransitive pair? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-transitivity | The pairs つく/つける, かわる/かえる and とまる/とめる were dropped: should they be restored? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-9588 | ja-grammar-teineigo-sentences | In this shop sentence, is いま right, or is the shop idiom ただいま used? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-9580 | ja-grammar-teineigo-sentences | Is ちかくでございます right, or should ちかくにございます be used? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-teineigo | Is teineigo a closed set? It overlaps kenjougo: where is the line between them? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | all kanji units (retrofit) | Second examples that reuse a card's first word were removed under the rule: is the rule right, and are the rest acceptable? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | all kanji units (retrofit) | Which template-like example sentences should be rewritten, e.g. 犬は可愛らしいです (the builder reports it removed, but it is still in ja-kanji-25 on decks-live)? | Sonnet/Haiku builder | 2026-11-15 |
