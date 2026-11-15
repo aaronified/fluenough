@@ -6,18 +6,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ## Released
 
-- **v0.10.4**
-- **v0.10.3**
-- **v0.10.2**
-- **v0.10.1**
-- **v0.10.0**
-- **models**
-- **v0.9.5**
-- **v0.9.4**
-- **v0.9.3**
-- **v0.9.2**
-- **v0.9.1**
-- **v0.9.0**
 - **v0.8.6**
 - **v0.8.5**
 - **v0.8.4**
@@ -56,7 +44,11 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.6.0
 
-5 approved open issues.
+8 approved open issues.
+
+**Bugs**
+
+- [#850](https://github.com/aaronified/fluenough/issues/850) App is sluggish: about 1 s before every interaction responds
 
 **Enhancements**
 
@@ -67,11 +59,13 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 **Other**
 
 - [#506](https://github.com/aaronified/fluenough/issues/506) Deck format review: card data list, questions from card data, DECK-FORMAT as the one guide
+- [#630](https://github.com/aaronified/fluenough/issues/630) Telugu offensive-words deck (te-offensive), rated before it ships
 - [#631](https://github.com/aaronified/fluenough/issues/631) Offensive-words decks for the priority languages
+- [#861](https://github.com/aaronified/fluenough/issues/861) Delete a language's data from its sheet in Languages I'm learning, confirmed by typing its name
 
 ### 0.7.0
 
-12 approved open issues.
+14 approved open issues.
 
 **Enhancements**
 
@@ -84,11 +78,13 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 **Other**
 
 - [#474](https://github.com/aaronified/fluenough/issues/474) Onboarding journey: where the major functions live and what they do, replayable from Settings
+- [#91](https://github.com/aaronified/fluenough/issues/91) Pictures as cues: image format, licence and validator, for Write and Hear
 - [#97](https://github.com/aaronified/fluenough/issues/97) Parental supervision: child profiles with no abuse-related content, and admin controls
 - [#403](https://github.com/aaronified/fluenough/issues/403) Plan: reviewing decks in the app, sent by mail
 - [#509](https://github.com/aaronified/fluenough/issues/509) Milestone exams: reading passages and questions at each B1 milestone, required to continue
 - [#523](https://github.com/aaronified/fluenough/issues/523) Card images: Wikimedia Commons and OpenMoji, shipped with decks
 - [#723](https://github.com/aaronified/fluenough/issues/723) Focused tracks: learn only one part of a course (a script, a grammar primer, verb forms, a theme)
+- [#724](https://github.com/aaronified/fluenough/issues/724) Situation cheatsheets on Today (hailing a cab, grocery shopping, …), with an inspect view
 - [#842](https://github.com/aaronified/fluenough/issues/842) Voices page: complete redesign, with a mockup
 
 ### 0.8.0
@@ -101,25 +97,11 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.9.0
 
-0 approved open issues.
-
-### 0.10.0
-
-5 approved open issues.
-
-**Bugs**
-
-- [#850](https://github.com/aaronified/fluenough/issues/850) App is sluggish: about 1 s before every interaction responds
-- [#1012](https://github.com/aaronified/fluenough/issues/1012) Check the web app (PWA): installability, offline, and core flows
-
-**Enhancements**
-
-- [#1004](https://github.com/aaronified/fluenough/issues/1004) On-device Telugu speech recognition (IndicConformer, int8, opt-in) for 0.9.0
+1 approved open issue.
 
 **Other**
 
 - [#1017](https://github.com/aaronified/fluenough/issues/1017) Plan: build entire languages as private decks (Your decks)
-- [#1096](https://github.com/aaronified/fluenough/issues/1096) Reviews: use the new placement question types
 
 ### 1 · Skill model + FSRS
 
@@ -133,12 +115,13 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 2 · B1 plans
 
-5 approved open issues.
+6 approved open issues.
 
 **Other**
 
 - [#39](https://github.com/aaronified/fluenough/issues/39) Telugu and Kannada: refit to the Dravidian order
 - [#209](https://github.com/aaronified/fluenough/issues/209) Plan: a B1 plan in every path
+- [#257](https://github.com/aaronified/fluenough/issues/257) B1 plans: the CEFR skeleton of themes and grammar per level
 - [#413](https://github.com/aaronified/fluenough/issues/413) Plan: a phrasebook, then words, then rules, then sentences
 - [#419](https://github.com/aaronified/fluenough/issues/419) Words, rules, sentences: Telugu content
 - [#420](https://github.com/aaronified/fluenough/issues/420) Words, rules, sentences: content for the other courses
@@ -157,6 +140,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ## Approved, not scheduled
 
+- [#1012](https://github.com/aaronified/fluenough/issues/1012) Check the web app (PWA): installability, offline, and core flows
 - [#169](https://github.com/aaronified/fluenough/issues/169) Lessons that start from songs and films learners already know
 - [#170](https://github.com/aaronified/fluenough/issues/170) Bengali: start the course with Ekla Chalo Re
 - [#411](https://github.com/aaronified/fluenough/issues/411) Shareable progress image or summary, built from the review log
@@ -172,17 +156,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#614](https://github.com/aaronified/fluenough/issues/614) A second reading field on cards: transliteration and normalised or vocalised form
 - [#681](https://github.com/aaronified/fluenough/issues/681) Language bar: a dot on languages with something to do, and a full-height IPA glyph
 - [#881](https://github.com/aaronified/fluenough/issues/881) Speaking: "Hear yourself" replays the answer the learner spoke, not a new recording
-- [#1133](https://github.com/aaronified/fluenough/issues/1133) Culture decks from real-world works (public domain first), for every first-list language
-- [#1135](https://github.com/aaronified/fluenough/issues/1135) Proverb decks, levelled, for every first-list language
-- [#1136](https://github.com/aaronified/fluenough/issues/1136) Phrasal and multi-word verb decks, levelled, in the languages that have them
-- [#1139](https://github.com/aaronified/fluenough/issues/1139) Professional decks: targeted situations for academia, engineering, computer science, medicine, archaeology and other travelling professions (hidden from the main screen, found by search)
-- [#1143](https://github.com/aaronified/fluenough/issues/1143) English Braille as a script of English, not a separate course (the IPA stays separate)
-- [#1145](https://github.com/aaronified/fluenough/issues/1145) Situations screen: the learner chooses which situations to show; new situations teach only widely used words and phrases
-- [#1146](https://github.com/aaronified/fluenough/issues/1146) Japanese: about 1000 kanji by B1 (deferred)
-- [#1158](https://github.com/aaronified/fluenough/issues/1158) Offline speech recognisers for every priority language (Indic, European, East Asian)
-- [#1221](https://github.com/aaronified/fluenough/issues/1221) IPA keyboard: follow-ups before it is switched on
-- [#1235](https://github.com/aaronified/fluenough/issues/1235) topic_chars tool: robustness follow-ups and the marks/combos decision
-- [#1242](https://github.com/aaronified/fluenough/issues/1242) Daily questions builder step: follow-ups
+- [#1004](https://github.com/aaronified/fluenough/issues/1004) On-device Telugu speech recognition (IndicConformer, int8, opt-in) for 0.9.0
 - [#25](https://github.com/aaronified/fluenough/issues/25) F-Droid metadata and submission
 - [#26](https://github.com/aaronified/fluenough/issues/26) Accessibility: a TalkBack pass on a phone
 - [#30](https://github.com/aaronified/fluenough/issues/30) Script decks: document their conventions; positional forms for Arabic-script languages
@@ -190,13 +164,22 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#34](https://github.com/aaronified/fluenough/issues/34) Complex script rendering: Nastaliq, conjuncts, matras
 - [#46](https://github.com/aaronified/fluenough/issues/46) Let the user choose the interface language, with translations in plain txt files
 - [#58](https://github.com/aaronified/fluenough/issues/58) Review the unreviewed Hindi and Bengali grammar decks
+- [#92](https://github.com/aaronified/fluenough/issues/92) Sample deck pack: one example of every deck kind, as a download
+- [#94](https://github.com/aaronified/fluenough/issues/94) Proverb and idiom decks
+- [#95](https://github.com/aaronified/fluenough/issues/95) Bengali compound-verb deck; phrasal verbs if English becomes a course
+- [#96](https://github.com/aaronified/fluenough/issues/96) Offensive words behind an adult gate
 - [#99](https://github.com/aaronified/fluenough/issues/99) Culture decks: beyond the basics (tracking)
+- [#100](https://github.com/aaronified/fluenough/issues/100) Culture deck: cultural heroes
 - [#101](https://github.com/aaronified/fluenough/issues/101) Culture deck: local mythology and folklore
 - [#102](https://github.com/aaronified/fluenough/issues/102) Culture deck: cuisine
+- [#103](https://github.com/aaronified/fluenough/issues/103) Culture deck: famous films
+- [#104](https://github.com/aaronified/fluenough/issues/104) Culture deck: classic literature
 - [#105](https://github.com/aaronified/fluenough/issues/105) Slang decks: add current (Gen Z) slang
 - [#106](https://github.com/aaronified/fluenough/issues/106) Culture deck: love
+- [#107](https://github.com/aaronified/fluenough/issues/107) New deck topics are data: a section field, and question types after the skill model
 - [#108](https://github.com/aaronified/fluenough/issues/108) Home-screen widget: cards due and the streak
 - [#110](https://github.com/aaronified/fluenough/issues/110) Dialogue decks: short role-plays, one side each
+- [#111](https://github.com/aaronified/fluenough/issues/111) Native-speaker audio for cards, where TTS is weak
 - [#214](https://github.com/aaronified/fluenough/issues/214) Plan: a Research and standards page, with the sources
 - [#215](https://github.com/aaronified/fluenough/issues/215) Plan: books, films and songs you bring, with questions on them
 - [#216](https://github.com/aaronified/fluenough/issues/216) Plan: a path for every language, by family
@@ -213,6 +196,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#229](https://github.com/aaronified/fluenough/issues/229) Plan: an ISO 15919 letters deck
 - [#230](https://github.com/aaronified/fluenough/issues/230) Plan: a listening tier in context
 - [#232](https://github.com/aaronified/fluenough/issues/232) Plan: Play Protect and developer verification
+- [#233](https://github.com/aaronified/fluenough/issues/233) Plan: say when speech works only online
 - [#234](https://github.com/aaronified/fluenough/issues/234) Plan: word-order tiles without giveaways, and with extra tiles
 - [#285](https://github.com/aaronified/fluenough/issues/285) Research and standards: owner decisions before building
 - [#286](https://github.com/aaronified/fluenough/issues/286) Research and standards: the citations file and parser
@@ -226,13 +210,22 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#294](https://github.com/aaronified/fluenough/issues/294) Shelf: item page, chapter progress and questions
 - [#295](https://github.com/aaronified/fluenough/issues/295) Shelf: first items per course, and the B1 finale
 - [#296](https://github.com/aaronified/fluenough/issues/296) Language paths: owner decisions
+- [#297](https://github.com/aaronified/fluenough/issues/297) Language paths: tiers and phases
+- [#298](https://github.com/aaronified/fluenough/issues/298) Language paths: pacing and the 30-minute day
 - [#299](https://github.com/aaronified/fluenough/issues/299) Language paths: variants and the common start
+- [#300](https://github.com/aaronified/fluenough/issues/300) Language paths: Indo-Aryan reorder
+- [#301](https://github.com/aaronified/fluenough/issues/301) Language paths: a full Spanish course
+- [#302](https://github.com/aaronified/fluenough/issues/302) Language paths: what new scripts need
 - [#305](https://github.com/aaronified/fluenough/issues/305) Wiktionary IPA: compare and list disagreements
+- [#307](https://github.com/aaronified/fluenough/issues/307) Web: installable
+- [#308](https://github.com/aaronified/fluenough/issues/308) Web: the database on the web
+- [#309](https://github.com/aaronified/fluenough/issues/309) Web: fallbacks and persistent storage
 - [#310](https://github.com/aaronified/fluenough/issues/310) AI conversation: the learner's limits, and keeping the model within them
 - [#311](https://github.com/aaronified/fluenough/issues/311) AI conversation: scenarios, feedback and optional speech
 - [#312](https://github.com/aaronified/fluenough/issues/312) AI conversation: privacy, and tests with a fake model
 - [#313](https://github.com/aaronified/fluenough/issues/313) Import text: the reader and matching words to cards
 - [#314](https://github.com/aaronified/fluenough/issues/314) Import text: the card maker
+- [#315](https://github.com/aaronified/fluenough/issues/315) In-app readings: the three no-hint fixes in tools/transcribe.py
 - [#316](https://github.com/aaronified/fluenough/issues/316) In-app readings: a Dart port in lib/core
 - [#317](https://github.com/aaronified/fluenough/issues/317) Sentence building: owner decisions before building
 - [#318](https://github.com/aaronified/fluenough/issues/318) Sentence building: the English sentence bank
@@ -259,6 +252,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#344](https://github.com/aaronified/fluenough/issues/344) Listening in context: content, in phases
 - [#345](https://github.com/aaronified/fluenough/issues/345) Release signing: developer console account and registration
 - [#346](https://github.com/aaronified/fluenough/issues/346) Release signing: prove ownership in the APK
+- [#348](https://github.com/aaronified/fluenough/issues/348) Word-order tiles: extra tiles per card
 - [#349](https://github.com/aaronified/fluenough/issues/349) Word-order tiles: content for 1,098 cards
 - [#350](https://github.com/aaronified/fluenough/issues/350) Language paths: new languages, one full course each
 - [#351](https://github.com/aaronified/fluenough/issues/351) New course: Punjabi
@@ -299,73 +293,15 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#386](https://github.com/aaronified/fluenough/issues/386) New course: Somali
 - [#387](https://github.com/aaronified/fluenough/issues/387) New course: Quechua
 - [#388](https://github.com/aaronified/fluenough/issues/388) New course: Esperanto
+- [#425](https://github.com/aaronified/fluenough/issues/425) Remove the analyzer bound once build_runner supports 14.5.0
 - [#472](https://github.com/aaronified/fluenough/issues/472) Language themes: a colour, icon and background image for each language
 - [#665](https://github.com/aaronified/fluenough/issues/665) English Braille: a facts file (qbe-facts.yaml)
 - [#722](https://github.com/aaronified/fluenough/issues/722) Conversation mode: transcribe two people talking, in real time
 - [#734](https://github.com/aaronified/fluenough/issues/734) Sounds deck for every language: its sounds, and how they differ from the learner's native sounds
 - [#836](https://github.com/aaronified/fluenough/issues/836) An IPA keyboard for typed answers in the IPA course
+- [#924](https://github.com/aaronified/fluenough/issues/924) Typed meaning answers: accept equivalent words (synonym dictionary) and unseparated alternatives
 - [#952](https://github.com/aaronified/fluenough/issues/952) Skill switches: matching and choosing switches (remainder of #243)
 - [#959](https://github.com/aaronified/fluenough/issues/959) Paths and starter decks (first words and phrases) for every planned language
-- [#1103](https://github.com/aaronified/fluenough/issues/1103) Play Store release: paid colour themes, pure black and wallpaper colours (free on GitHub)
-- [#1132](https://github.com/aaronified/fluenough/issues/1132) Placement: make the sentence fill-in (F28) pass the audit so it can be asked
-- [#1166](https://github.com/aaronified/fluenough/issues/1166) Language: Bengali: full deck format
-- [#1167](https://github.com/aaronified/fluenough/issues/1167) Language: Hindustani: full deck format
-- [#1168](https://github.com/aaronified/fluenough/issues/1168) Language: Assamese: full deck format
-- [#1169](https://github.com/aaronified/fluenough/issues/1169) Language: Bodo: full deck format
-- [#1170](https://github.com/aaronified/fluenough/issues/1170) Language: Dogri: full deck format
-- [#1171](https://github.com/aaronified/fluenough/issues/1171) Language: Gujarati: full deck format
-- [#1172](https://github.com/aaronified/fluenough/issues/1172) Language: Kannada: full deck format
-- [#1173](https://github.com/aaronified/fluenough/issues/1173) Language: Kashmiri: full deck format
-- [#1174](https://github.com/aaronified/fluenough/issues/1174) Language: Konkani: full deck format
-- [#1175](https://github.com/aaronified/fluenough/issues/1175) Language: Maithili: full deck format
-- [#1176](https://github.com/aaronified/fluenough/issues/1176) Language: Manipuri: full deck format
-- [#1177](https://github.com/aaronified/fluenough/issues/1177) Language: Marathi: full deck format
-- [#1178](https://github.com/aaronified/fluenough/issues/1178) Language: Santali: full deck format
-- [#1179](https://github.com/aaronified/fluenough/issues/1179) Language: Sindhi: full deck format
-- [#1180](https://github.com/aaronified/fluenough/issues/1180) Language: Bhojpuri: full deck format
-- [#1181](https://github.com/aaronified/fluenough/issues/1181) Language: Tulu: full deck format
-- [#1182](https://github.com/aaronified/fluenough/issues/1182) Language: Rajasthani: full deck format
-- [#1183](https://github.com/aaronified/fluenough/issues/1183) Language: Magahi: full deck format
-- [#1184](https://github.com/aaronified/fluenough/issues/1184) Language: Chhattisgarhi: full deck format
-- [#1185](https://github.com/aaronified/fluenough/issues/1185) Language: Awadhi: full deck format
-- [#1186](https://github.com/aaronified/fluenough/issues/1186) Language: Haryanvi: full deck format
-- [#1187](https://github.com/aaronified/fluenough/issues/1187) Language: Kumaoni: full deck format
-- [#1188](https://github.com/aaronified/fluenough/issues/1188) Language: Garhwali: full deck format
-- [#1189](https://github.com/aaronified/fluenough/issues/1189) Language: Mizo: full deck format
-- [#1190](https://github.com/aaronified/fluenough/issues/1190) Language: Khasi: full deck format
-- [#1191](https://github.com/aaronified/fluenough/issues/1191) Language: Goan Konkani: full deck format
-- [#1192](https://github.com/aaronified/fluenough/issues/1192) Language: Spanish: full deck format
-- [#1193](https://github.com/aaronified/fluenough/issues/1193) Language: Toki Pona: full deck format
-- [#1194](https://github.com/aaronified/fluenough/issues/1194) Language: Lojban: full deck format
-- [#1195](https://github.com/aaronified/fluenough/issues/1195) Language: Interslavic: full deck format
-- [#1196](https://github.com/aaronified/fluenough/issues/1196) Language: Afrikaans: full deck format
-- [#1197](https://github.com/aaronified/fluenough/issues/1197) Language: Dutch: full deck format
-- [#1198](https://github.com/aaronified/fluenough/issues/1198) Language: Ukrainian: full deck format
-- [#1199](https://github.com/aaronified/fluenough/issues/1199) Language: Indonesian: full deck format
-- [#1200](https://github.com/aaronified/fluenough/issues/1200) Language: Persian: full deck format
-- [#1201](https://github.com/aaronified/fluenough/issues/1201) Language: Pashto: full deck format
-- [#1202](https://github.com/aaronified/fluenough/issues/1202) Language: Mycenaean Greek: full deck format
-- [#1203](https://github.com/aaronified/fluenough/issues/1203) Language: Sumerian: full deck format
-- [#1204](https://github.com/aaronified/fluenough/issues/1204) Language: Egyptian: full deck format
-- [#1205](https://github.com/aaronified/fluenough/issues/1205) Language: Proto-Indo-European: full deck format
-- [#1206](https://github.com/aaronified/fluenough/issues/1206) Language: Vedic Sanskrit: full deck format
-- [#1207](https://github.com/aaronified/fluenough/issues/1207) Language: Latin: full deck format
-- [#1208](https://github.com/aaronified/fluenough/issues/1208) Language: Old English: full deck format
-- [#1209](https://github.com/aaronified/fluenough/issues/1209) Language: Middle English: full deck format
-- [#1210](https://github.com/aaronified/fluenough/issues/1210) Language: Classical Greek: full deck format
-- [#1211](https://github.com/aaronified/fluenough/issues/1211) Language: Archaic Greek: full deck format
-- [#1212](https://github.com/aaronified/fluenough/issues/1212) Language: Koine Greek: full deck format
-- [#1213](https://github.com/aaronified/fluenough/issues/1213) Language: Pali: full deck format
-- [#1214](https://github.com/aaronified/fluenough/issues/1214) Language: Aramaic (Imperial): full deck format
-- [#1215](https://github.com/aaronified/fluenough/issues/1215) Language: Ashokan Prakrit: full deck format
-- [#1244](https://github.com/aaronified/fluenough/issues/1244) Spanish: more clean sentences so Find my level can ask sentence picks again
-- [#1245](https://github.com/aaronified/fluenough/issues/1245) Hindustani: more clean sentences so Find my level can ask sentence picks
-- [#1269](https://github.com/aaronified/fluenough/issues/1269) Situations: more icon keys, so a language can have more than six situations
-- [#1270](https://github.com/aaronified/fluenough/issues/1270) Placement admission: stored verdict is keyed to one deck snapshot, so live decks have none
-- [#1295](https://github.com/aaronified/fluenough/issues/1295) Telugu cards disagree on the medial anusvara reading (ṁ, ṅ, n, m)
-- [#1361](https://github.com/aaronified/fluenough/issues/1361) Telugu transcription: no reading for rare letters (ఌ ౡ ఁ ౘ ౙ), wrong for ఱ
-- [#1369](https://github.com/aaronified/fluenough/issues/1369) Spanish narrow IPA rules: five gaps found reviewing the first whole-course run
-- [#1395](https://github.com/aaronified/fluenough/issues/1395) phonetic_patch.py cannot patch ~half of the Japanese cards (JSON-style and quoted-key YAML layouts)
 
 ## Plans
 
@@ -376,17 +312,9 @@ A plan with no tracking issue is flagged.
 - [hands-free audio drills](https://github.com/aaronified/fluenough/wiki/Plan-Audio-Drills) (Written 2026-10-05), tracks #224
 - [a B1 plan in every path](https://github.com/aaronified/fluenough/wiki/Plan-B1-Plans) (Written 2026-10-06), tracks #209
 - [books, films and songs you bring, with questions on them](https://github.com/aaronified/fluenough/wiki/Plan-Books-Films-Songs) (Written 2026-10-06), tracks #215
-- [French genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations, situations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-French), **no tracking issue**
-- [Hindustani genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Hindustani), **no tracking issue**
-- [Japanese culture decks, sourcing list (batch 1)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Japanese), **no tracking issue**
-- [Spanish genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Spanish), **no tracking issue**
-- [Telugu genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Telugu), **no tracking issue**
 - [reviewing decks in the app, sent by mail](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Browser) (Written 2026-10-06), tracks #403
-- [deck kinds, levels, hidden decks, sources, creators, recommendations, topics and search kinds as data](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Kinds-And-Topics), **no tracking issue**
-- [deck-owned data on decks-live](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Owned-Data), **no tracking issue**
 - [decks in a branch of their own](https://github.com/aaronified/fluenough/wiki/Plan-Decks-Branch), **no tracking issue**
 - [explain the mistake on a wrong grammar answer](https://github.com/aaronified/fluenough/wiki/Plan-Explain-Mistakes) (Written 2026-10-05), tracks #225
-- [a recent fit for FSRS, with the window chosen from the learner's own reviews](https://github.com/aaronified/fluenough/wiki/Plan-Fsrs-Recent-Fit), **no tracking issue**
 - [handwriting the script, stroke by stroke](https://github.com/aaronified/fluenough/wiki/Plan-Handwriting) (Written 2026-10-05), tracks #226
 - [haptic feedback, one vocabulary for the whole app](https://github.com/aaronified/fluenough/wiki/Plan-Haptics) (Written 2026-11-02), **no tracking issue**
 - [import any text, and make cards from its words](https://github.com/aaronified/fluenough/wiki/Plan-Import-Text) (Written 2026-10-05), tracks #220
@@ -395,26 +323,23 @@ A plan with no tracking issue is flagged.
 - [the IPA course revamp, and a phonology deck for every language](https://github.com/aaronified/fluenough/wiki/Plan-Ipa-Revamp-And-Language-Phonology) (Written 2026-10-26), **no tracking issue**
 - [a deck that teaches ISO 15919, in each language](https://github.com/aaronified/fluenough/wiki/Plan-Iso-15919-Deck), tracks #229
 - [Japanese B1 word lists](https://github.com/aaronified/fluenough/wiki/Plan-Japanese-B1-Wordlists) (Written 2026-11-06 (Sonnet, for the owner)), **no tracking issue**
-- [language completeness, everything the app plans for a language, in full](https://github.com/aaronified/fluenough/wiki/Plan-Language-Completeness), **no tracking issue**
 - [language paths, pacing by difficulty, and every language in the scheme](https://github.com/aaronified/fluenough/wiki/Plan-Language-Paths) (Written 2026-10-05), tracks #216
 - [Language Learning Paths (English Base, 30 min/day)](https://github.com/aaronified/fluenough/wiki/Plan-Language-Paths-Scheme), **no tracking issue**
 - [a look for each language (colour, icon, background image)](https://github.com/aaronified/fluenough/wiki/Plan-Language-Themes) (Written 2026-10-10; owner's answers recorded 2026-10-11), **no tracking issue**
 - [a listening tier in context](https://github.com/aaronified/fluenough/wiki/Plan-Listening-In-Context) (Written 2026-10-05), tracks #230
 - [offensive words, their level, and warnings on words like them](https://github.com/aaronified/fluenough/wiki/Plan-Offensive-Words) (Written 2026-10-09), tracks #96, #97
 - [placement, script first, then a three-skill check](https://github.com/aaronified/fluenough/wiki/Plan-Placement-V2), **no tracking issue**
-- [placement V3, find my level](https://github.com/aaronified/fluenough/wiki/Plan-Placement-V3), **no tracking issue**
-- [build entire languages as private decks (Your decks)](https://github.com/aaronified/fluenough/wiki/Plan-Private-Languages), tracks #1017
+- [build entire languages as private decks (Your decks)](https://github.com/aaronified/fluenough/wiki/Plan-Private-Languages) (Written 2026-11-04), tracks #1017
 - [profiles, a PIN lock, and parental supervision](https://github.com/aaronified/fluenough/wiki/Plan-Profiles) (Written 2026-10-10), tracks #97, #204
 - [progress screen revamp — mastery across all skills](https://github.com/aaronified/fluenough/wiki/Plan-Progress-Revamp), **no tracking issue**
 - [the question engine, derived from card data](https://github.com/aaronified/fluenough/wiki/Plan-Question-Engine) (Written 2026-10-13), **no tracking issue**
 - [question engine revamp and milestone exams](https://github.com/aaronified/fluenough/wiki/Plan-Question-Engine-2-And-Exams) (Written 2026-10-26, for **0), **no tracking issue**
 - [sign and publish the first release](https://github.com/aaronified/fluenough/wiki/Plan-Release-Signing), tracks #232
 - [a Research and standards page, with the sources](https://github.com/aaronified/fluenough/wiki/Plan-Research-And-Standards) (Written 2026-10-06), tracks #214
-- [a staging branch for review mails](https://github.com/aaronified/fluenough/wiki/Plan-Review-Staging), **no tracking issue**
 - [what reviewing covers, and how reviewers change cards](https://github.com/aaronified/fluenough/wiki/Plan-Reviewing-Scope) (Written 2026-10-11, for 0), tracks #476, #477
 - [building sentences by reasoning](https://github.com/aaronified/fluenough/wiki/Plan-Sentence-Building) (Written 2026-10-05), tracks #222
 - [settings that say what they do, on and off](https://github.com/aaronified/fluenough/wiki/Plan-Settings-Wording) (Written 2026-10-06), **no tracking issue**
-- [say when speech can't be recognised offline](https://github.com/aaronified/fluenough/wiki/Plan-Speech-Offline-Alert) (Written 2026-10-05), **no tracking issue**
+- [say when speech can't be recognised offline](https://github.com/aaronified/fluenough/wiki/Plan-Speech-Offline-Alert) (Written 2026-10-05), tracks #233
 - [synonym sets for typed English meanings](https://github.com/aaronified/fluenough/wiki/Plan-Synonym-Dictionary), **no tracking issue**
 - [cut the tests down to behaviour](https://github.com/aaronified/fluenough/wiki/Plan-Test-Cut) (Written 2026-10-20), **no tracking issue**
 - [Fluenough on the web, as a PWA on GitHub Pages](https://github.com/aaronified/fluenough/wiki/Plan-Web-Pwa), tracks #218

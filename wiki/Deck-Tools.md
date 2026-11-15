@@ -13,18 +13,10 @@ Checks decks against schema 1. CI runs this on every pull request.
 ```sh
 python3 tools/validate_decks.py decks/
 python3 tools/validate_decks.py decks/es/es-en-core-100.yaml
-python3 tools/validate_decks.py --private my-package/        # a private language package (folder or .fnzip)
 ```
 
 Errors fail the build; warnings do not. Exit status is 0 when every deck is
 valid, 1 on any error, 2 if the arguments are wrong.
-
-`--private` checks a private language package ([Private-Language-Package](Private-Language-Package),
-#1017) instead: its names, sizes, manifest, `fnpd-<code>-` ids and path, then each
-deck and layer with these rules (`tools/validate_private.py`; the package part
-mirrors the app's own import, and the two share the fixture
-`test/fixtures/private/qaa-tiny`). Outside `--private` the validator refuses a
-`fnpd-` id and a private manifest, so a private package never goes under `decks/`.
 
 It checks structure and field types, that the deck id matches the filename,
 that each card id names the deck's language and is written once in it, that
@@ -56,7 +48,7 @@ none twice.
 ## `deck_index.py`
 
 Writes `decks/index.json`, the list the app downloads decks from (#210,
-ADR-0037). The `deck-index.yml` workflow runs it on decks-live after each merge
+ADR-0037). The `deck-index.yml` workflow runs it on main after each merge
 that touches `decks/` and commits the result (owner, 2026-10-23); builders
 do not run it (it runs the full validator, up to an hour).
 
@@ -155,7 +147,7 @@ checked (#449). Each PR is merged as soon as its
 checks pass. The mail gets the Gmail label `fluenough-proposed` once its PR
 is merged or closed.
 
-Every branch, `review-bot/…`, starts afresh from `decks-live`, finds the card by
+Every branch, `review-bot/…`, starts afresh from `main`, finds the card by
 id across the language, writes only if the field still says what the
 proposer saw, rewrites the index and validates the language before it is
 pushed. Branches are named after their mail or proposals, so a rerun finds
@@ -310,94 +302,6 @@ left alone. Another native language's layer needs that edition's own
 extract, which the tool does not read yet. `test_mark_wiktionary.py` tests it
 on `fixtures/wiktionary`.
 
-## `topic_chars.py`
-
-Writes the `chars` of a language's script topics from the one-character cards
-of their `decks` (`python3 tools/topic_chars.py ja --write`; `--check` exits 1
-when a topic differs, `--all-targets` also lists two-character cards). The
-validator checks `chars` against the same decks. See
-[Deck-Format](Deck-Format#script-topics), "Script topics".
-
-## `transcribe_decks.py`
-
-Checks, and fixes, a language's stored `reading` and `ipa` against
-`tools/transcribe.py` (#1295). It walks the core deck files of one directory
-(the `en/` layers are not read): every card, every card example and every
-`{ word: ..., reading: ... }` entry (bases, note words), and re-transcribes
-each from its target text exactly as the single-word mode does, with the
-stored reading as the typed hint.
-
-```sh
-python3 tools/transcribe_decks.py --check decks/te te       # exit 1 if any differ
-python3 tools/transcribe_decks.py --fix decks/te te         # anusvara only
-python3 tools/transcribe_decks.py --fix --all decks/te te   # every difference
-python3 tools/transcribe_decks.py --fix --citations decks/te te  # base citation readings
-```
-
-Telugu input the tool reads (#1357, #1361; defaults set by the architect,
-the owner can overturn them): a dependent vowel sign with no consonant before
-it, as in a suffix written `-ిన` or a bare ending `ాం`, reads as the vowel it
-stands for, with no inherent a (`-ina`, `āṁ`, `ā`); the hyphen is kept in the
-reading. ఱ reads `ṟa` (IPA as ర, `r`). ఌ and ౡ follow ఋ: `lu` and `lū`
-(IPA `lu`, `luː`); the signs ౢ ౣ read the same. ౘ and ౙ read `tsa` and `dza`
-(IPA `ts`, `dz`); ISO 15919 has no letter for them. ఁ is silent (empty reading
-and IPA), ః reads `ḥ` and ౠ `rū`, as before.
-
-`--citations` is a pass of its own for the `reading` of an inline base
-(`{ word, base, reading }`: the reading of the base's dictionary form, which
-the other modes skip when `base` differs from `word`). It rewrites only a
-stored word-final `m` where the rules write `ṁ` for the base (`andam` to
-`andaṁ`, `uṇḍaḍam` to `uṇḍaḍaṁ`, the owner's final-anusvara rule), in the block
-and the flow form, and reads no card, example or other reading. `--check
---citations` lists them (exit 1 if any). It is refused with `--all` and
-`--propagate`.
-
-`--check` prints each id, field, stored value and recomputed value, in two
-lists: "anusvara differences" (the target holds an anusvara and the two values
-agree once every nasal is treated as one, the medial-anusvara rule of
-[Plan-Ipa-Revamp-And-Language-Phonology](Plan-Ipa-Revamp-And-Language-Phonology#telugu-medial-anusvara))
-and "other differences" (`ph` against `f`, `ṛ` against `ru` (ఋ is computed as `ru`), IPA spelling
-choices), then the total. `--fix` replaces only the exact stored value on its
-own line, so comments, quoting and ordering stay byte for byte, and leaves the
-other differences alone unless `--all` is given. An entry with a repeated or
-non-plain `reading` or `ipa` line, or a card id repeated in the file, is
-listed under "not checked or not changeable" and never changed. Keys may be
-bare or double-quoted, also mixed in one file; values must be plain
-double-quoted strings; the key order of a block entry is id, target, reading,
-ipa (a reading before its target is reported). A file whose `part` is not
-`core`, or that has no `part` key, is listed as skipped, and the last line
-reads "checked N files, M entries, skipped K files". `--all` leaves alone
-entries whose text has no letter of the deck's script (IPA letter cards) and
-words that start with a hyphen (suffixes), and lists them as skipped. After
-`--fix` the scan runs again and prints the differences left. Exit codes:
-`--check` 0 if all match, 1 if any value differs, any entry could not be
-checked, or (with `--propagate`) any occurrence or ambiguous word is left; `--fix` 0, or 1 if it refused a value; 2 for a bad directory. Plain `--fix` also corrects the nasals of a value that differs in
-more than its nasals (the rest of the stored value is kept character for
-character; listed as "nasals only"), and a stored ṇḍ for a target with ంద
-(ఉందా) becomes the dental `nd`.
-
-`--propagate` (with `--check` to list, with `--fix` to write; refused with
-`--all`, exit 2: it is for plain `--fix`, which writes anusvara corrections
-only) carries the corrections to what `--fix` does not read: paradigm
-`readings: { ... }` maps, prose in the `en/` layer, and files with no `part`
-key. Old readings are taken word by word from the readings the run changes and
-replaced whole, inside quoted values only. Never touched: keys, `ipa`,
-`phonetic`, `id` and `ref` values, strings that hold IPA letters, anything
-after an unquoted `#`, and Telugu-script runs. A word of three letters or
-fewer is never rewritten (`c`, `th`, ... are English and IPA too), nor is a
-word whose new form is plain ASCII under four letters. An old word that is
-also a correct reading of some card, or that becomes two different words, is
-reported as ambiguous and left unchanged. Limits: `--check --propagate` counts
-include the core values `--fix` itself writes; the homograph test knows only
-the readings of core files with a `part` key (not those kept in paradigm maps
-or in files without one); words that occur only in prose, and in no core
-reading, are not found; and a paradigm map is not re-derived, so it can end
-half-fixed (`cempalu` next to `ceṁpalō`). Issue #1295 stays open for a pass
-over the paradigm maps. Nasals are rewritten only where the target has an
-anusvara (never for a nasal consonant), and a stored `ṇḍ` becomes the dental
-`nd` only where the target has ంద. Run it on a `decks-live` checkout, not on
-main's frozen `decks/`.
-
 ## `import_phonetic.py` and `derive_phonetic.py`
 
 Write each card's narrow `[ ]` IPA into its `phonetic` field, with
@@ -425,10 +329,9 @@ uses one you have). It finds a card's entries as `import_wiktionary.py` does
 the first narrow `[ ]` pronunciation of the language's variety, drops the
 syllable dots, writes Latin g as ɡ, and keeps it only if it is IPA letters
 and marks, NFC, and every entry that fits agrees. The variety per language
-is data in `tools/phonetic_languages.yaml` (dump name and variety): Bengali
-the Kolkata standard (Wiktionary's Rarh), Hindustani the Standard Hindi
-forms, Spanish, Telugu and Japanese the untagged form. Another language is
-one more entry there, with no change to the tool. Words and set phrases
+is in `VARIETIES` in the tool: Bengali the Kolkata standard (Wiktionary's
+Rarh), Hindustani the Standard Hindi forms, Spanish the untagged form.
+Another language needs its variety named there first. Words and set phrases
 are covered; sentences are not on Wiktionary.
 
 Pronunciations in [ ] adapted from [Wiktionary](https://en.wiktionary.org), licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The app's Sources screen carries the same line.
@@ -436,21 +339,10 @@ Pronunciations in [ ] adapted from [Wiktionary](https://en.wiktionary.org), lice
 `derive_phonetic.py` applies the ordered rules of
 `decks/<lang>/<lang>-phonetics.yaml` ([format](Deck-Format#phonetic-rules-files))
 to the broad `ipa`. A card the rules do not change gets nothing unless
-`--bracket-unchanged`. `--rederive` also re-derives the cards whose
-`phonetic_source` is `rules`, from the current rules file, replacing their
-`phonetic` (the source stays `rules`) after a rule changes. It never touches
-a Wiktionary card, a card with a `phonetic` and no `phonetic_source`, or a card
-without a `phonetic`; a card the rules now leave unchanged is rewritten only
-with `--bracket-unchanged`. It composes with `--write` (without it, only a
-report) and the language argument.
+`--bracket-unchanged`.
 
-```sh
-python3 tools/derive_phonetic.py bn --rederive --write
-python3 tools/derive_phonetic.py bn --rederive --bracket-unchanged --report bn.md
-```
-
-Both report, per deck and in all, how many cards were filled (or, with `--rederive`, rederived), already had a
-`phonetic`, had none (`no phonetic`, under `--rederive` only), had no `ipa` line, and why the rest were not (no entry, no narrow
+Both report, per deck and in all, how many cards were filled, already had a
+`phonetic`, had no `ipa` line, and why the rest were not (no entry, no narrow
 form, another variety only, ambiguous, invalid; or, for the rules, unchanged
 or invalid). `test_phonetic.py` tests them on a fake dump and a tiny
 language, with no network.

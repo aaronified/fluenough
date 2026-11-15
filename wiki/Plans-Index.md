@@ -11,10 +11,9 @@ Every live plan in the wiki, one line each. Each plan has its own wiki page. Fin
 - [Books Films Songs](Plan-Books-Films-Songs): books, films and songs you bring, with questions on them
 - [Deck Browser](Plan-Deck-Browser): reviewing decks in the app, sent by mail
 - [Decks Branch](Plan-Decks-Branch): decks in a branch of their own, audit and migration plan
-- [Fsrs Recent Fit](Plan-Fsrs-Recent-Fit): a recent fit for FSRS, with the window chosen from the learner's own reviews
 - [Explain Mistakes](Plan-Explain-Mistakes): explain the mistake on a wrong grammar answer
 - [Handwriting](Plan-Handwriting): handwriting the script, stroke by stroke
-- [Haptics](Plan-Haptics): haptic feedback, one vocabulary for the whole app (built in 0.9.0)
+- [Haptics](Plan-Haptics): haptic feedback, one vocabulary for the whole app
 - [Import Text](Plan-Import-Text): import any text, and make cards from its words
 - [In App Readings](Plan-In-App-Readings): readings made in the app, for sentences the learner adds
 - [Ipa Revamp And Language Phonology](Plan-Ipa-Revamp-And-Language-Phonology): the IPA course revamp, and a phonology deck for every language
@@ -25,18 +24,16 @@ Every live plan in the wiki, one line each. Each plan has its own wiki page. Fin
 - [Language Themes](Plan-Language-Themes): a look for each language (colour, icon, background image)
 - [Listening In Context](Plan-Listening-In-Context): a listening tier in context
 - [Offensive Words](Plan-Offensive-Words): offensive words, their level, and warnings on words like them
-- [Placement V3](Plan-Placement-V3): find my level, mixed skills first, then drill into the skill that fails (approved 2026-11-07)
-- [Private Languages](Plan-Private-Languages): build entire languages as private decks, through Your decks (Priority 1 after the placement release (owner 2026-11-07); not built in the placement-release session)
+- [Private Languages](Plan-Private-Languages): build entire languages as private decks, through Your decks
 - [Profiles](Plan-Profiles): profiles, a PIN lock, and parental supervision
 - [Question Engine](Plan-Question-Engine): the question engine, derived from card data
 - [Question Engine 2 And Exams](Plan-Question-Engine-2-And-Exams): question engine revamp and milestone exams
 - [Release Signing](Plan-Release-Signing): sign and publish the first release
 - [Research And Standards](Plan-Research-And-Standards): a Research and standards page, with the sources
-- [Review Staging](Plan-Review-Staging): a decks-staging branch where review mails land, confirmed, then applied to decks-live (brainstorm)
 - [Reviewing Scope](Plan-Reviewing-Scope): what reviewing covers, and how reviewers change cards
 - [Sentence Building](Plan-Sentence-Building): building sentences by reasoning
 - [Settings Wording](Plan-Settings-Wording): settings that say what they do, on and off
-- [Speech Offline Alert](Plan-Speech-Offline-Alert): say when speech can't be recognised offline (Priority 2 after the placement release (owner 2026-11-07): on-device voice recognition, #1004; not built in the placement-release session)
+- [Speech Offline Alert](Plan-Speech-Offline-Alert): say when speech can't be recognised offline
 - [Synonym Dictionary](Plan-Synonym-Dictionary): synonym sets for typed English meanings
 - [Test Cut](Plan-Test-Cut): cut the tests down to behaviour
 - [Web Pwa](Plan-Web-Pwa): Fluenough on the web, as a PWA on GitHub Pages

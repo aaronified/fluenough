@@ -1,11 +1,5 @@
 # ADR-0037: Decks download from main, by an index, and update when asked
 
-> **Superseded by decks-live (2026-11-06).** Decks now download from the
-> permanent branch `decks-live`, not `main`. Main's `decks/` is frozen and
-> kept only for apps released before that change, and `decks-next` is retired.
-> The index and the review queue are regenerated on `decks-live`. The rest
-> of this record (the index, the hashes, the daily check) still holds.
-
 Source of truth: this wiki page.
 
 
@@ -170,21 +164,5 @@ agreement (rule 6): there is no HTTP or hashing package.
   apart.
 - **A hashing package (`crypto`).** A new dependency for one function
   (rule 6); SHA-256 is short, and tested against the standard's examples.
-
-## Amendment (2026-11-15): a mismatch is fetched again past the cache
-
-`raw.githubusercontent.com` caches a response for minutes, and the index is
-rewritten by a workflow a little after each merge, so a file and the index
-read just before it can come from different moments. A file that does not
-match the index's size or SHA-256 is therefore not reported at once: the app
-waits 1 s, then 3 s, and fetches the file again with a cache-busting query
-(`?cb=...`, `DeckFetcher.fetch(path, fresh: true)`), accepting it if it
-matches. Only these retries skip the cache; every first request uses it. If it
-still does not match, the download reads the index fresh, works out its files
-again from it (a file the new index no longer lists is skipped, one it moved
-on is fetched as listed) and tries once more; only then does the learner see
-"A deck didn't arrive whole", and the app log holds the sizes and hashes. A file that is newer than an
-index the workflow has not yet regenerated still fails until that workflow
-finishes; "Try again" works once it has.
 
 See also: [Contributing](Contributing) · [ADR-Index](ADR-Index) · [Home](Home)
