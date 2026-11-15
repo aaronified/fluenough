@@ -1,0 +1,217 @@
+schema: 1
+id: "as-places-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-5579"
+    target: "মই স্কুললৈ যাওঁ।"
+    reading: "moi skulôlôi zāum̐."
+    ipa: "moi skulɔlɔi zaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "স্কুললৈ", base: "স্কুল", reading: "skul" }
+      - { word: "যাওঁ", base: "যোৱা", reading: "zuwā" }
+    confusables:
+      - { id: "c1", word: "কলেজ", reading: "kôlez", kind: "word" }
+      - { id: "c2", word: "পাঠশালা", reading: "pāthôxālā", kind: "word" }
+  - id: "as-5580"
+    target: "বেংকটো ক'ত?"
+    reading: "beṅkôtu kot?"
+    ipa: "beŋkɔtʊ kot"
+    pos: "phrase"
+    bases:
+      - { word: "বেংকটো", base: "বেংক", reading: "beṅk" }
+      - { word: "ক'ত", ref: "as-0145" }
+    confusables:
+      - { id: "c1", word: "ডাকঘৰ", reading: "dākôghôr", kind: "word" }
+      - { id: "c2", word: "থানা", reading: "thānā", kind: "word" }
+  - id: "as-5581"
+    target: "ডাক্তৰখানা ক'ত?"
+    reading: "dāktôrôkhānā kot?"
+    ipa: "daktɔɹɔkʰana kot"
+    pos: "phrase"
+    bases:
+      - { word: "ডাক্তৰখানা", ref: "as-2421" }
+      - { word: "ক'ত", ref: "as-0145" }
+    confusables:
+      - { id: "c1", word: "বেংক", reading: "beṅk", kind: "word" }
+      - { id: "c2", word: "থানা", reading: "thānā", kind: "word" }
+  - id: "as-5582"
+    target: "মন্দিৰটো ডাঙৰ।"
+    reading: "mondirôtu dāṅôr."
+    ipa: "mondiɹɔtʊ daŋɔɹ"
+    pos: "phrase"
+    bases:
+      - { word: "মন্দিৰটো", base: "মন্দিৰ", reading: "mondir" }
+      - { word: "ডাঙৰ", ref: "as-2086" }
+    confusables:
+      - { id: "c1", word: "গীৰ্জা", reading: "girzā", kind: "word" }
+      - { id: "c2", word: "মছজিদ", reading: "môsozid", kind: "word" }
+  - id: "as-5583"
+    target: "নদীটো দীঘল।"
+    reading: "noditu dighôl."
+    ipa: "noditʊ diɡʱɔl"
+    pos: "phrase"
+    bases:
+      - { word: "নদীটো", base: "নদী", reading: "nodi" }
+      - { word: "দীঘল", ref: "as-2276" }
+    confusables:
+      - { id: "c1", word: "বহল", reading: "bôhôl", kind: "word" }
+      - { id: "c2", word: "পুখুৰী", reading: "pukhuri", kind: "word" }
+  - id: "as-5584"
+    target: "পাহাৰত ঠাণ্ডা।"
+    reading: "pāhārôt thāndā."
+    ipa: "pahaɹɔt tʰanda"
+    pos: "phrase"
+    bases:
+      - { word: "পাহাৰত", base: "পাহাৰ", reading: "pāhār" }
+      - { word: "ঠাণ্ডা", ref: "as-2091" }
+    confusables:
+      - { id: "c1", word: "গৰম", reading: "gôrôm", kind: "word" }
+      - { id: "c2", word: "বন", reading: "bôn", kind: "word" }
+  - id: "as-5585"
+    target: "সাগৰ দূৰত।"
+    reading: "sāgôr durôt."
+    ipa: "saɡɔɹ duɹɔt"
+    pos: "phrase"
+    bases:
+      - { word: "সাগৰ", ref: "as-2410" }
+      - { word: "দূৰত", ref: "as-2234" }
+    confusables:
+      - { id: "c1", word: "ওচৰত", reading: "usôrôt", kind: "word" }
+      - { id: "c2", word: "পাহাৰ", reading: "pāhār", kind: "word" }
+  - id: "as-5586"
+    target: "ৰাস্তাটো ভাল।"
+    reading: "rāstātu bhāl."
+    ipa: "ɹastatʊ bʱal"
+    pos: "phrase"
+    bases:
+      - { word: "ৰাস্তাটো", base: "ৰাস্তা", reading: "rāstā" }
+      - { word: "ভাল", ref: "as-2084" }
+    confusables:
+      - { id: "c1", word: "ৰাজপথ", reading: "rāzôpôth", kind: "word" }
+      - { id: "c2", word: "ৰেলপথ", reading: "relôpôth", kind: "word" }
+  - id: "as-5587"
+    target: "সেতুৰ ওচৰত বজাৰ আছে।"
+    reading: "setur usôrôt bôzār āse."
+    ipa: "setuɹ ʊsɔɹɔt bɔzaɹ ase"
+    pos: "phrase"
+    bases:
+      - { word: "সেতুৰ", base: "সেতু", reading: "setu" }
+      - { word: "ওচৰত", ref: "as-0321" }
+      - { word: "বজাৰ", ref: "as-0266" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "ঘাট", reading: "ghāt", kind: "word" }
+      - { id: "c2", word: "ৰাস্তা", reading: "rāstā", kind: "word" }
+  - id: "as-5588"
+    target: "মই উদ্যানত খেলোঁ।"
+    reading: "moi udyānôt khelum̐."
+    ipa: "moi udjanɔt kʰelʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "উদ্যানত", base: "উদ্যান", reading: "udyān" }
+      - { word: "খেলোঁ", base: "খেলা", reading: "khelā" }
+    confusables:
+      - { id: "c1", word: "পাৰ্ক", reading: "pārk", kind: "word" }
+      - { id: "c2", word: "খেলপথাৰ", reading: "khelôpôthār", kind: "word" }
+  - id: "as-5589"
+    target: "ডাকঘৰলৈ যাওঁ।"
+    reading: "dākôghôrôlôi zāum̐."
+    ipa: "dakɔɡʱɔɹɔlɔi zaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "ডাকঘৰলৈ", base: "ডাকঘৰ", reading: "dākôghôr" }
+      - { word: "যাওঁ", base: "যোৱা", reading: "zuwā" }
+    confusables:
+      - { id: "c1", word: "থানা", reading: "thānā", kind: "word" }
+      - { id: "c2", word: "বেংক", reading: "beṅk", kind: "word" }
+  - id: "as-5590"
+    target: "বাৰীত শাক আছে।"
+    reading: "bārit xāk āse."
+    ipa: "baɹit xak ase"
+    pos: "phrase"
+    bases:
+      - { word: "বাৰীত", base: "বাৰী", reading: "bāri" }
+      - { word: "শাক", ref: "as-2358" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "পথাৰ", reading: "pôthār", kind: "word" }
+      - { id: "c2", word: "পুখুৰী", reading: "pukhuri", kind: "word" }
+  - id: "as-5591"
+    target: "মেলাত বেছি ভিৰ।"
+    reading: "melāt besi bhir."
+    ipa: "melat besi bʱiɹ"
+    pos: "phrase"
+    bases:
+      - { word: "মেলাত", base: "মেলা", reading: "melā" }
+      - { word: "বেছি", ref: "as-2248" }
+      - { word: "ভিৰ", ref: "as-0310" }
+    confusables:
+      - { id: "c1", word: "বজাৰ", reading: "bôzār", kind: "word" }
+      - { id: "c2", word: "হোটেল", reading: "hutel", kind: "word" }
+  - id: "as-5592"
+    target: "তেওঁ কলেজত পঢ়ে।"
+    reading: "teum̐ kôlezôt pôrhe."
+    ipa: "teʊ̃ kɔlezɔt pɔɹe"
+    pos: "phrase"
+    bases:
+      - { word: "তেওঁ", ref: "as-2181" }
+      - { word: "কলেজত", base: "কলেজ", reading: "kôlez" }
+      - { word: "পঢ়ে", base: "পঢ়া", reading: "pôrhā" }
+    confusables:
+      - { id: "c1", word: "স্কুল", reading: "skul", kind: "word" }
+      - { id: "c2", word: "বিশ্ববিদ্যালয়", reading: "bixxobidyālôy", kind: "word" }
+  - id: "as-5593"
+    target: "খেতিয়ক পথাৰত কাম কৰে।"
+    reading: "khetiyôk pôthārôt kām kôre."
+    ipa: "kʰetijɔk pɔtʰaɹɔt kam kɔɹe"
+    pos: "phrase"
+    bases:
+      - { word: "খেতিয়ক", ref: "as-0207" }
+      - { word: "পথাৰত", base: "পথাৰ", reading: "pôthār" }
+      - { word: "কাম", ref: "as-0120" }
+      - { word: "কৰে", base: "কৰা", reading: "kôrā" }
+    confusables:
+      - { id: "c1", word: "ড্ৰাইভাৰ", reading: "drāibhār", kind: "word" }
+      - { id: "c2", word: "শিক্ষক", reading: "xikkhôk", kind: "word" }
+  - id: "as-5594"
+    target: "শহৰ ডাঙৰ।"
+    reading: "xôhôr dāṅôr."
+    ipa: "xɔhɔɹ daŋɔɹ"
+    pos: "phrase"
+    bases:
+      - { word: "শহৰ", ref: "as-2397" }
+      - { word: "ডাঙৰ", ref: "as-2086" }
+    confusables:
+      - { id: "c1", word: "গাঁও", reading: "gām̐o", kind: "word" }
+      - { id: "c2", word: "সৰু", reading: "xoru", kind: "word" }
+  - id: "as-5595"
+    target: "সাগৰ আৰু পাহাৰ ভাল।"
+    reading: "sāgôr āru pāhār bhāl."
+    ipa: "saɡɔɹ aɹu pahaɹ bʱal"
+    pos: "phrase"
+    bases:
+      - { word: "সাগৰ", ref: "as-2410" }
+      - { word: "আৰু", ref: "as-2126" }
+      - { word: "পাহাৰ", ref: "as-2408" }
+      - { word: "ভাল", ref: "as-2084" }
+    confusables:
+      - { id: "c1", word: "বন", reading: "bôn", kind: "word" }
+      - { id: "c2", word: "নদী", reading: "nodi", kind: "word" }
+  - id: "as-5596"
+    target: "নামঘৰ ক'ত?"
+    reading: "nāmôghôr kot?"
+    ipa: "namɔɡʱɔɹ kot"
+    pos: "phrase"
+    bases:
+      - { word: "নামঘৰ", ref: "as-2494" }
+      - { word: "ক'ত", ref: "as-0145" }
+    confusables:
+      - { id: "c1", word: "মন্দিৰ", reading: "mondir", kind: "word" }
+      - { id: "c2", word: "গীৰ্জা", reading: "girzā", kind: "word" }

@@ -1,0 +1,225 @@
+schema: 1
+id: "as-about-me-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-5100"
+    target: "তোমাৰ নাম কি?"
+    reading: "tumār nām ki?"
+    ipa: "tʊmaɹ nam ki"
+    pos: "phrase"
+    bases:
+      - { word: "তোমাৰ", ref: "as-2188" }
+      - { word: "নাম", ref: "as-0166" }
+      - { word: "কি", ref: "as-0143" }
+    confusables:
+      - { id: "c1", word: "আপোনাৰ", reading: "āpunār", kind: "word" }
+      - { id: "c2", word: "কোন", reading: "kun", kind: "word" }
+  - id: "as-5101"
+    target: "মোৰ ভাষা অসমীয়া।"
+    reading: "mur bhāxā ôxomiyā."
+    ipa: "mʊɹ bʱaxa ɔxomija"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "ভাষা", ref: "as-0174" }
+      - { word: "অসমীয়া", ref: "as-0175" }
+    confusables:
+      - { id: "c1", word: "ইংৰাজী", reading: "iṅrāzi", kind: "word" }
+      - { id: "c2", word: "মই", reading: "moi", kind: "word" }
+  - id: "as-5102"
+    target: "মই অসমীয়া জানো।"
+    reading: "moi ôxomiyā zānu."
+    ipa: "moi ɔxomija zanʊ"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "অসমীয়া", ref: "as-0175" }
+      - { word: "জানো", base: "জানা", reading: "zānā" }
+    confusables:
+      - { id: "c1", word: "ইংৰাজী", reading: "iṅrāzi", kind: "word" }
+      - { id: "c2", word: "নহয়", reading: "nôhôy", kind: "word" }
+  - id: "as-5103"
+    target: "মই ইংৰাজী নাজানো।"
+    reading: "moi iṅrāzi nāzānu."
+    ipa: "moi iŋɹazi nazanʊ"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "ইংৰাজী", ref: "as-0176" }
+      - { word: "নাজানো", base: "জানা", reading: "zānā" }
+    confusables:
+      - { id: "c1", word: "অসমীয়া", reading: "ôxomiyā", kind: "word" }
+      - { id: "c2", word: "ভাষা", reading: "bhāxā", kind: "word" }
+  - id: "as-5104"
+    target: "তুমি ইংৰাজী জানা নেকি?"
+    reading: "tumi iṅrāzi zānā neki?"
+    ipa: "tumi iŋɹazi zana neki"
+    pos: "phrase"
+    bases:
+      - { word: "তুমি", ref: "as-2179" }
+      - { word: "ইংৰাজী", ref: "as-0176" }
+      - { word: "জানা", base: "জানা", reading: "zānā" }
+      - { word: "নেকি", ref: "as-0151" }
+    confusables:
+      - { id: "c1", word: "অসমীয়া", reading: "ôxomiyā", kind: "word" }
+      - { id: "c2", word: "ভাষা", reading: "bhāxā", kind: "word" }
+  - id: "as-5105"
+    target: "মোৰ বয়স বিশ।"
+    reading: "mur bôyôx bix."
+    ipa: "mʊɹ bɔjɔx bix"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "বয়স", ref: "as-0177" }
+      - { word: "বিশ", ref: "as-0238" }
+    confusables:
+      - { id: "c1", word: "বাৰ", reading: "bār", kind: "word" }
+      - { id: "c2", word: "দহ", reading: "dôh", kind: "word" }
+  - id: "as-5106"
+    target: "তোমাৰ বয়স কিমান?"
+    reading: "tumār bôyôx kimān?"
+    ipa: "tʊmaɹ bɔjɔx kiman"
+    pos: "phrase"
+    bases:
+      - { word: "তোমাৰ", ref: "as-2188" }
+      - { word: "বয়স", ref: "as-0177" }
+      - { word: "কিমান", ref: "as-0149" }
+    confusables:
+      - { id: "c1", word: "কোনটো", reading: "kuntu", kind: "word" }
+      - { id: "c2", word: "কেনেকৈ", reading: "kenekôi", kind: "word" }
+  - id: "as-5107"
+    target: "মোৰ বয়স ছয়।"
+    reading: "mur bôyôx sôy."
+    ipa: "mʊɹ bɔjɔx sɔj"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "বয়স", ref: "as-0177" }
+      - { word: "ছয়", ref: "as-0225" }
+    confusables:
+      - { id: "c1", word: "সাত", reading: "xāt", kind: "word" }
+      - { id: "c2", word: "পাঁচ", reading: "pām̐s", kind: "word" }
+  - id: "as-5108"
+    target: "মোৰ গাঁও ক'ত?"
+    reading: "mur gām̐o kot?"
+    ipa: "mʊɹ ɡão kot"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "গাঁও", ref: "as-0172" }
+      - { word: "ক'ত", ref: "as-0145" }
+    confusables:
+      - { id: "c1", word: "দেশ", reading: "dex", kind: "word" }
+      - { id: "c2", word: "ঘৰ", reading: "ghôr", kind: "word" }
+  - id: "as-5109"
+    target: "তোমাৰ দেশ ক'ত?"
+    reading: "tumār dex kot?"
+    ipa: "tʊmaɹ dex kot"
+    pos: "phrase"
+    bases:
+      - { word: "তোমাৰ", ref: "as-2188" }
+      - { word: "দেশ", ref: "as-0173" }
+      - { word: "ক'ত", ref: "as-0145" }
+    confusables:
+      - { id: "c1", word: "গাঁও", reading: "gām̐o", kind: "word" }
+      - { id: "c2", word: "মোৰ", reading: "mur", kind: "word" }
+  - id: "as-5110"
+    target: "মই গাঁওত থাকোঁ।"
+    reading: "moi gām̐ot thākum̐."
+    ipa: "moi ɡãʊt tʰakʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "গাঁওত", base: "গাঁও", reading: "gām̐o" }
+      - { word: "থাকোঁ", base: "থাকা", reading: "thākā" }
+    confusables:
+      - { id: "c1", word: "ঘৰ", reading: "ghôr", kind: "word" }
+      - { id: "c2", word: "পৰিয়াল", reading: "poriyāl", kind: "word" }
+  - id: "as-5111"
+    target: "মই গাঁওৰ পৰা আহিছোঁ।"
+    reading: "moi gām̐ur pôrā āhisum̐."
+    ipa: "moi ɡãʊɹ pɔɹa ahisʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "গাঁওৰ", base: "গাঁও", reading: "gām̐o" }
+      - { word: "পৰা", base: "পৰা", reading: "pôrā" }
+      - { word: "আহিছোঁ", base: "আহা", reading: "āhā" }
+    confusables:
+      - { id: "c1", word: "ঘৰ", reading: "ghôr", kind: "word" }
+      - { id: "c2", word: "দেশ", reading: "dex", kind: "word" }
+  - id: "as-5112"
+    target: "মোৰ দেশ ভাল।"
+    reading: "mur dex bhāl."
+    ipa: "mʊɹ dex bʱal"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "দেশ", ref: "as-0173" }
+      - { word: "ভাল", base: "ভাল", reading: "bhāl" }
+    confusables:
+      - { id: "c1", word: "গাঁও", reading: "gām̐o", kind: "word" }
+      - { id: "c2", word: "ভাষা", reading: "bhāxā", kind: "word" }
+  - id: "as-5113"
+    target: "মোৰ পৰিয়াল ডাঙৰ।"
+    reading: "mur poriyāl dāṅôr."
+    ipa: "mʊɹ poɹijal daŋɔɹ"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "পৰিয়াল", ref: "as-0171" }
+      - { word: "ডাঙৰ", base: "ডাঙৰ", reading: "dāṅôr" }
+    confusables:
+      - { id: "c1", word: "বয়স", reading: "bôyôx", kind: "word" }
+      - { id: "c2", word: "আত্মীয়", reading: "ātmiyô", kind: "word" }
+  - id: "as-5114"
+    target: "মোৰ পৰিয়াল ক'ত?"
+    reading: "mur poriyāl kot?"
+    ipa: "mʊɹ poɹijal kot"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "পৰিয়াল", ref: "as-0171" }
+      - { word: "ক'ত", ref: "as-0145" }
+    confusables:
+      - { id: "c1", word: "আত্মীয়", reading: "ātmiyô", kind: "word" }
+      - { id: "c2", word: "গাঁও", reading: "gām̐o", kind: "word" }
+  - id: "as-5115"
+    target: "ইংৰাজী ভাল।"
+    reading: "iṅrāzi bhāl."
+    ipa: "iŋɹazi bʱal"
+    pos: "phrase"
+    bases:
+      - { word: "ইংৰাজী", ref: "as-0176" }
+      - { word: "ভাল", base: "ভাল", reading: "bhāl" }
+    confusables:
+      - { id: "c1", word: "অসমীয়া", reading: "ôxomiyā", kind: "word" }
+      - { id: "c2", word: "ভাষা", reading: "bhāxā", kind: "word" }
+  - id: "as-5116"
+    target: "মই ঘৰত থাকোঁ।"
+    reading: "moi ghôrôt thākum̐."
+    ipa: "moi ɡʱɔɹɔt tʰakʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "ঘৰত", ref: "as-0052" }
+      - { word: "থাকোঁ", base: "থাকা", reading: "thākā" }
+    confusables:
+      - { id: "c1", word: "গাঁও", reading: "gām̐o", kind: "word" }
+      - { id: "c2", word: "দেশ", reading: "dex", kind: "word" }
+  - id: "as-5117"
+    target: "অসমীয়া ভাষা ভাল।"
+    reading: "ôxomiyā bhāxā bhāl."
+    ipa: "ɔxomija bʱaxa bʱal"
+    pos: "phrase"
+    bases:
+      - { word: "অসমীয়া", ref: "as-0175" }
+      - { word: "ভাষা", ref: "as-0174" }
+      - { word: "ভাল", base: "ভাল", reading: "bhāl" }
+    confusables:
+      - { id: "c1", word: "ইংৰাজী", reading: "iṅrāzi", kind: "word" }
+      - { id: "c2", word: "দেশ", reading: "dex", kind: "word" }

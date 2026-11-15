@@ -1,0 +1,146 @@
+schema: 1
+id: "as-home-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-5765"
+    target: "পাকঘৰ ডাঙৰ।"
+    reading: "pākôghôr dāṅôr."
+    ipa: "pakɔɡʱɔɹ daŋɔɹ"
+    pos: "phrase"
+    bases:
+      - { word: "পাকঘৰ", ref: "as-0329" }
+      - { word: "ডাঙৰ", ref: "as-2086" }
+    confusables:
+      - { id: "c1", word: "বাথৰুম", reading: "bāthrum", kind: "word" }
+      - { id: "c2", word: "কোঠা", reading: "kuthā", kind: "word" }
+  - id: "as-5766"
+    target: "মোৰ কোঠা ঠাণ্ডা।"
+    reading: "mur kuthā thāndā."
+    ipa: "mʊɹ kʊtʰa tʰanda"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "কোঠা", ref: "as-0328" }
+      - { word: "ঠাণ্ডা", ref: "as-2091" }
+    confusables:
+      - { id: "c1", word: "গৰম", reading: "gôrôm", kind: "word" }
+      - { id: "c2", word: "পাকঘৰ", reading: "pākghôr", kind: "word" }
+  - id: "as-5767"
+    target: "চাবি ইয়াত।"
+    reading: "sābi iyāt."
+    ipa: "sabi ijat"
+    pos: "phrase"
+    bases:
+      - { word: "চাবি", ref: "as-0337" }
+      - { word: "ইয়াত", ref: "as-0323" }
+    confusables:
+      - { id: "c1", word: "তালা", reading: "tālā", kind: "word" }
+      - { id: "c2", word: "দুৱাৰ", reading: "duwār", kind: "word" }
+  - id: "as-5768"
+    target: "পাংখা ইয়াত।"
+    reading: "pāṅkhā iyāt."
+    ipa: "paŋkʰa ijat"
+    pos: "phrase"
+    bases:
+      - { word: "পাংখা", ref: "as-0341" }
+      - { word: "ইয়াত", ref: "as-0323" }
+    confusables:
+      - { id: "c1", word: "লাইট", reading: "lāit", kind: "word" }
+      - { id: "c2", word: "চকী", reading: "soki", kind: "word" }
+  - id: "as-5769"
+    target: "মেজৰ ওপৰত কিতাপ।"
+    reading: "mezôr upôrôt kitāp."
+    ipa: "mezɔɹ ʊpɔɹɔt kitap"
+    pos: "phrase"
+    bases:
+      - { word: "মেজৰ", ref: "as-0340" }
+      - { word: "ওপৰত", ref: "as-2235" }
+      - { word: "কিতাপ", ref: "as-2437" }
+    confusables:
+      - { id: "c1", word: "বিচনা", reading: "bisônā", kind: "word" }
+      - { id: "c2", word: "চকী", reading: "soki", kind: "word" }
+  - id: "as-5770"
+    target: "মোৰ চুবুৰীয়া ডাঙৰ।"
+    reading: "mur suburiyā dāṅôr."
+    ipa: "mʊɹ subuɹija daŋɔɹ"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "চুবুৰীয়া", ref: "as-0343" }
+      - { word: "ডাঙৰ", ref: "as-2086" }
+    confusables:
+      - { id: "c1", word: "পদূলি", reading: "poduli", kind: "word" }
+      - { id: "c2", word: "চোতাল", reading: "sutāl", kind: "word" }
+  - id: "as-5771"
+    target: "মই বাথৰুমলৈ যাওঁ।"
+    reading: "moi bāthorumôlôi zāum̐."
+    ipa: "moi batʰoɹumɔlɔi zaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "বাথৰুমলৈ", ref: "as-0332" }
+      - { word: "যাওঁ", ref: "as-2200" }
+    confusables:
+      - { id: "c1", word: "পাকঘৰ", reading: "pākghôr", kind: "word" }
+      - { id: "c2", word: "কোঠা", reading: "kuthā", kind: "word" }
+  - id: "as-5772"
+    target: "দুৱাৰ ওচৰত।"
+    reading: "duwār usôrôt."
+    ipa: "duwaɹ ʊsɔɹɔt"
+    pos: "phrase"
+    bases:
+      - { word: "দুৱাৰ", ref: "as-0333" }
+      - { word: "ওচৰত", ref: "as-0321" }
+    confusables:
+      - { id: "c1", word: "পদূলি", reading: "poduli", kind: "word" }
+      - { id: "c2", word: "খিৰিকী", reading: "khiriki", kind: "word" }
+  - id: "as-5773"
+    target: "চকী তলত।"
+    reading: "soki tôlôt."
+    ipa: "soki tɔlɔt"
+    pos: "phrase"
+    bases:
+      - { word: "চকী", ref: "as-0339" }
+      - { word: "তলত", ref: "as-2236" }
+    confusables:
+      - { id: "c1", word: "মেজ", reading: "mez", kind: "word" }
+      - { id: "c2", word: "বিচনা", reading: "bisônā", kind: "word" }
+  - id: "as-5774"
+    target: "লাইট ওপৰত।"
+    reading: "lāit upôrôt."
+    ipa: "lait ʊpɔɹɔt"
+    pos: "phrase"
+    bases:
+      - { word: "লাইট", ref: "as-0342" }
+      - { word: "ওপৰত", ref: "as-2235" }
+    confusables:
+      - { id: "c1", word: "পাংখা", reading: "pāṅkhā", kind: "word" }
+      - { id: "c2", word: "চিৰি", reading: "siri", kind: "word" }
+  - id: "as-5775"
+    target: "চাবি বাহিৰত।"
+    reading: "sābi bāhirôt."
+    ipa: "sabi bahiɹɔt"
+    pos: "phrase"
+    bases:
+      - { word: "চাবি", ref: "as-0337" }
+      - { word: "বাহিৰত", ref: "as-2238" }
+    confusables:
+      - { id: "c1", word: "তালা", reading: "tālā", kind: "word" }
+      - { id: "c2", word: "ভিতৰত", reading: "bhitôrôt", kind: "word" }
+  - id: "as-5776"
+    target: "মোৰ কোঠাত বিচনা নাই।"
+    reading: "mur kuthāt bisônā nāi."
+    ipa: "mʊɹ kʊtʰat bisɔna nai"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "কোঠাত", ref: "as-0328" }
+      - { word: "বিচনা", ref: "as-0338" }
+      - { word: "নাই", ref: "as-0142" }
+    confusables:
+      - { id: "c1", word: "চকী", reading: "soki", kind: "word" }
+      - { id: "c2", word: "মেজ", reading: "mez", kind: "word" }
