@@ -271,6 +271,8 @@ jobs:
           dart format lib test
           if ! git diff --quiet -- lib test; then
             git diff -- lib test > format.patch
+            git diff --stat -- lib test
+            cat format.patch
             echo "::error::Formatting differs. Run: dart format lib test"
             exit 1
           fi

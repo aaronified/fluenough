@@ -6,6 +6,7 @@
 @Timeout(Duration(minutes: 15))
 library;
 
+import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/placement/admission.dart';
 import 'package:fluenough/core/placement/item_bank.dart';
 import 'package:fluenough/core/placement/item_codec.dart';
@@ -84,24 +85,42 @@ void main() {
         // live on decks-live) are matched by their key, and the entry of the
         // other source is not this test's business.
         final real = ItemBank.auditRuntime(data);
-        final profile = kAdmissionProfiles[language]!.firstWhere(
-          (p) => p.deckKey == real.deckKey,
-          orElse: () => fail(
-            'no stored verdict for the $language decks of this checkout '
-            '(key ${real.deckKey}): regenerate with tool/placement_audit.dart '
-            'and add the entry (--source live on decks-live)',
-          ),
-        );
-        expect(profile.excluded, real.excluded, reason: 'regenerate $language');
-        expect(profile.decoys, real.decoys, reason: 'regenerate $language');
-        expect(AdmissionProfile.of(data), same(profile));
+        final entries =
+            kAdmissionProfiles[language] ?? const <AdmissionProfile>[];
+        if (entries.isEmpty) {
+          // Two-step change of the key (#1270): until the entries printed by
+          // the "Placement audit" workflow are pasted in, a language with no
+          // entry has no verdict, which the app handles (it audits when it
+          // builds the bank). Once a language has entries, one must match.
+          expect(AdmissionProfile.of(data), isNull);
+          markTestSkipped(
+            'no stored verdict for $language yet: run the Placement audit '
+            'workflow and add the entries (key ${real.deckKey})',
+          );
+        } else {
+          final profile = entries.firstWhere(
+            (p) => p.deckKey == real.deckKey,
+            orElse: () => fail(
+              'no stored verdict for the $language decks of this checkout '
+              '(key ${real.deckKey}): run the Placement audit workflow and '
+              'add the entry',
+            ),
+          );
+          expect(
+            profile.excluded,
+            real.excluded,
+            reason: 'regenerate $language',
+          );
+          expect(profile.decoys, real.decoys, reason: 'regenerate $language');
+          expect(AdmissionProfile.of(data), same(profile));
+        }
         // The verdict holds only classes the app makes.
         final made = <String>{
           for (final i in ItemBank.build(data, runtime: true).items)
             i.auditClass,
         };
         expect(
-          profile.excluded.every(
+          real.excluded.every(
             (c) =>
                 !c.startsWith('S2') &&
                 !c.startsWith('F6') &&
@@ -110,18 +129,28 @@ void main() {
           isTrue,
         );
         expect(made, isNotEmpty);
-        // Edited decks make the verdict stale, not wrong.
+        // An edit of what the audit reads makes a stored verdict stale, not
+        // wrong: a new word card in the first deck gives another key.
         final edited = PlacementLanguageData(
           language: data.language,
           decks: <PlacementDeck>[
             PlacementDeck(
-              id: '${data.decks.first.id}x',
-              cards: data.decks.first.cards,
+              id: data.decks.first.id,
+              cards: <Card>[
+                ...data.decks.first.cards,
+                Card(
+                  id: '$language-edit-probe',
+                  deckId: data.decks.first.id,
+                  target: 'probe',
+                  native: 'probe',
+                ),
+              ],
               grammarFamilies: data.decks.first.grammarFamilies,
             ),
             ...data.decks.skip(1),
           ],
         );
+        expect(admissionKey(edited), isNot(real.deckKey));
         expect(AdmissionProfile.of(edited), isNull);
       });
 
@@ -167,6 +196,20 @@ void main() {
             starters.add(s);
           },
         ))!;
+        final profile = AdmissionProfile.of(data);
+        if (profile == null) {
+          // No stored verdict for the language yet (#1270, step 1): no first
+          // formats are offered and the whole bank is still made. A language
+          // with entries must have one for these decks (checked above).
+          expect(
+            kAdmissionProfiles[language] ?? const <AdmissionProfile>[],
+            isEmpty,
+          );
+          expect(starters, isEmpty);
+          expect(made, isNotEmpty);
+          markTestSkipped('no stored verdict for the $language decks');
+          return;
+        }
         expect(starters, hasLength(1));
         // The first questions wait for the first generators only: well before
         // the whole bank (about a tenth of it on a quiet machine).
@@ -184,7 +227,7 @@ void main() {
         );
         expect(
           starters.single.every(
-            (i) => !AdmissionProfile.of(data)!.excluded.contains(i.auditClass),
+            (i) => !profile.excluded.contains(i.auditClass),
           ),
           isTrue,
         );
