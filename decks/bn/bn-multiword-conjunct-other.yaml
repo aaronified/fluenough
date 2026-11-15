@@ -1,5 +1,5 @@
-# Bengali multi-word verbs: a noun or adjective and হওয়া (hoā), পাওয়া (pāoā) or দেওয়া (deoā).
-# Every pattern is attested on its en.wiktionary page, named in the card's English note.
+# Bengali multi-word verbs: a noun or adjective and a light verb (hoa, paoa, deoa, asa, the verbs of becoming, getting, giving and coming).
+# Every pattern is attested on a cited bn.wiktionary or en.wiktionary page, named in the card's English note.
 schema: 1
 id: "bn-multiword-conjunct-other"
 part: "core"
@@ -114,4 +114,160 @@ cards:
       - { id: "u1", kind: "usage" }
     bases:
       - { word: "অঙ্কুরিত", base: "অঙ্কুরিত", reading: "ôṅkurito" }
+      - { word: "হওয়া", ref: "bn-0874" }
+  - id: "bn-6108"
+    target: "মনে হওয়া"
+    words: ["মনে", "হওয়া"]
+    reading: "mône hoā"
+    ipa: "mɔne ɦoa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "মনে", base: "মন", reading: "mône" }
+      - { word: "হওয়া", ref: "bn-0874" }
+  - id: "bn-6109"
+    target: "মনে আসা"
+    words: ["মনে", "আসা"]
+    reading: "mône āsā"
+    ipa: "mɔne asa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "মনে", base: "মন", reading: "mône" }
+      - { word: "আসা", ref: "bn-0872" }
+  - id: "bn-6110"
+    target: "মাথায় আসা"
+    words: ["মাথায়", "আসা"]
+    reading: "māthāy āsā"
+    ipa: "mat̪ʰaj asa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "মাথায়", base: "মাথা", reading: "māthāy" }
+      - { word: "আসা", ref: "bn-0872" }
+  - id: "bn-6111"
+    target: "মুখে আসা"
+    words: ["মুখে", "আসা"]
+    reading: "mukhe āsā"
+    ipa: "mukʰe asa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "মুখে", base: "মুখ", reading: "mukhe" }
+      - { word: "আসা", ref: "bn-0872" }
+  - id: "bn-6112"
+    target: "কথা দেওয়া"
+    words: ["কথা", "দেওয়া"]
+    reading: "kôthā deoā"
+    ipa: "kɔt̪ʰa d̪eoa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "কথা", ref: "bn-2409" }
+      - { word: "দেওয়া", ref: "bn-0888" }
+  - id: "bn-6113"
+    target: "তটস্থ হওয়া"
+    words: ["তটস্থ", "হওয়া"]
+    reading: "tôṭostho hoā"
+    ipa: "t̪ɔʈost̪ʰo ɦoa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "তটস্থ", base: "তটস্থ", reading: "tôṭostho" }
+      - { word: "হওয়া", ref: "bn-0874" }
+  - id: "bn-6114"
+    target: "হন্নে হওয়া"
+    words: ["হন্নে", "হওয়া"]
+    reading: "hônne hoā"
+    ipa: "ɦɔnne ɦoa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "হন্নে", base: "হন্নে", reading: "hônne" }
+      - { word: "হওয়া", ref: "bn-0874" }
+  - id: "bn-6115"
+    target: "পাথর হওয়া"
+    words: ["পাথর", "হওয়া"]
+    reading: "pāthor hoā"
+    ipa: "pat̪ʰor ɦoa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "পাথর", ref: "bn-2500" }
+      - { word: "হওয়া", ref: "bn-0874" }
+  - id: "bn-6116"
+    target: "মাটি হওয়া"
+    words: ["মাটি", "হওয়া"]
+    reading: "māṭi hoā"
+    ipa: "maʈi ɦoa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "মাটি", ref: "bn-2499" }
+      - { word: "হওয়া", ref: "bn-0874" }
+  - id: "bn-6117"
+    target: "হদিস পাওয়া"
+    words: ["হদিস", "পাওয়া"]
+    reading: "hodis pāoā"
+    ipa: "ɦod̪is paoa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "হদিস", base: "হদিস", reading: "hodis" }
+      - { word: "পাওয়া", ref: "bn-0891" }
+  - id: "bn-6118"
+    target: "ফাঁক পাওয়া"
+    words: ["ফাঁক", "পাওয়া"]
+    reading: "phām̐k pāoā"
+    ipa: "pʰãk paoa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ফাঁক", base: "ফাঁক", reading: "phām̐k" }
+      - { word: "পাওয়া", ref: "bn-0891" }
+  - id: "bn-6119"
+    target: "নাম হওয়া"
+    words: ["নাম", "হওয়া"]
+    reading: "nām hoā"
+    ipa: "nam ɦoa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "নাম", ref: "bn-0191" }
       - { word: "হওয়া", ref: "bn-0874" }
