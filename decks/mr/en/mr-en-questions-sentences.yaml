@@ -1,0 +1,54 @@
+schema: 1
+id: "mr-en-questions-sentences"
+kind: "layer"
+core: "mr-questions-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Questions: sentences"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the questions words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-6380":
+    native: "Who is this?"
+    bases: { "हा": "this", "आहे": "is" }
+    confusables: { "w1": { why: "काय (kāy) asks what." }, "f1": { why: "आहेत (āhet) is plural, for more than one person." }, "w2": { why: "कोणता (koṇtā) means which." } }
+  "mr-6381":
+    native: "Where do you live?"
+    bases: { "तुम्ही": "you", "राहता": "live" }
+    confusables: { "w1": { why: "कधी (kadhi) asks when." }, "f1": { why: "राहते (rāhte) is for a woman." }, "w2": { why: "कसे (kase) asks how." } }
+  "mr-6382":
+    native: "When will you come?"
+    bases: { "तू": "you", "येशील": "come" }
+    confusables: { "w1": { why: "कुठे (kuṭhe) asks where." }, "f1": { why: "येतो (yeto) is the simple present for one man." }, "w2": { why: "का (kā) asks why." } }
+  "mr-6383":
+    native: "How is this book?"
+    bases: { "हे": "this", "पुस्तक": "book", "आहे": "is" }
+    confusables: { "w1": { why: "काय (kāy) asks what." }, "f1": { why: "आहेत (āhet) is plural." }, "w2": { why: "कोण (koṇ) asks who." } }
+  "mr-6384":
+    native: "What time is it?"
+    bases: { "वाजले": "struck" }
+    confusables: { "w1": { why: "कधी (kadhi) asks when." }, "f1": { why: "वाजता (vājtā) means at a time, as in दोन (don) वाजता (vājtā)." }, "w2": { why: "काय (kāy) asks what." } }
+  "mr-6385":
+    native: "How many children do you have?"
+    bases: { "तुम्हाला": "you", "मुले": "children", "आहेत": "have" }
+    confusables: { "w1": { why: "काय (kāy) asks what." }, "f1": { why: "आहे (āhe) is singular; the answer is many." }, "w2": { why: "कधी (kadhi) asks when." } }
+  "mr-6386":
+    native: "Why are you not coming?"
+    bases: { "तू": "you", "येत": "coming", "नाहीस": "not" }
+    confusables: { "w1": { why: "कधी (kadhi) asks when." }, "f1": { why: "येशील (yeśil) is the future: will you come." }, "w2": { why: "कोण (koṇ) asks who." } }
+  "mr-6387":
+    native: "Which road is right?"
+    bases: { "रस्ता": "road", "बरोबर": "right", "आहे": "is" }
+    confusables: { "w1": { why: "कोण (koṇ) asks who." }, "f1": { why: "आहेत (āhet) is plural." }, "w2": { why: "कुठे (kuṭhe) asks where." } }
+  "mr-6388":
+    native: "Who is coming?"
+    bases: { "येणार": "come", "आहे": "is" }
+    confusables: { "w1": { why: "काय (kāy) asks what." }, "f1": { why: "येतो (yeto) is the simple present; येणार (yeṇār) आहे (āhe) is going to come." }, "w2": { why: "कधी (kadhi) asks when." } }
+  "mr-6389":
+    native: "Where did he go?"
+    bases: { "तो": "he", "गेला": "went" }
+    confusables: { "w1": { why: "कधी (kadhi) asks when." }, "f1": { why: "गेली (geli) is for a woman." }, "w2": { why: "कोण (koṇ) asks who." } }
+  "mr-6390":
+    native: "Does this road go to the school?"
+    bases: { "हा": "this", "शाळेकडे": "towards the school", "जातो": "go", "का": "question marker" }
+    confusables: { "w1": { why: "कुठे (kuṭhe) asks where." }, "f1": { why: "जाते (jāte) is for a woman." }, "w2": { why: "कोणता (koṇtā) means which." } }
