@@ -335,14 +335,17 @@ python3 tools/transcribe_decks.py --fix --citations decks/te te  # base citation
 python3 tools/transcribe_decks.py --fix --layer-anusvara decks/te te  # en/ prose readings
 ```
 
-Telugu input the tool reads (#1357, #1361; defaults set by the architect,
-the owner can overturn them): a dependent vowel sign with no consonant before
-it, as in a suffix written `-ిన` or a bare ending `ాం`, reads as the vowel it
-stands for, with no inherent a (`-ina`, `āṁ`, `ā`); the hyphen is kept in the
-reading. ఱ reads `ṟa` (IPA as ర, `r`). ఌ and ౡ follow ఋ: `lu` and `lū`
-(IPA `lu`, `luː`); the signs ౢ ౣ read the same. ౘ and ౙ read `tsa` and `dza`
-(IPA `ts`, `dz`); ISO 15919 has no letter for them. ఁ is silent (empty reading
-and IPA), ః reads `ḥ` and ౠ `rū`, as before.
+Telugu input the tool reads (#1357, #1361; defaults in this paragraph set by
+the architect, the owner can overturn them): a dependent vowel sign with no
+consonant before it, as in a suffix written `-ిన` or a bare ending `ాం`, reads
+as the vowel it stands for, with no inherent a (`-ina`, `āṁ`, `ā`); the hyphen
+is kept in the reading. ఱ reads `ṟa` (IPA as ర, `r`). ఌ and ౡ read with the
+ISO 15919 letters `l̥` and `l̥̄` (l with a ring below, U+0325, ISO 15919's mark
+for a vocalic liquid, then a macron, U+0304, for the long one), while the IPA
+stays tool-derived (`lu`, `luː`); the signs ౢ ౣ read the same (`kl̥`). The tool
+still computes `ru` for ఋ and `rū` for ౠ; this rule does not touch them. ౘ and
+ౙ read `tsa` and `dza` (IPA `ts`, `dz`); ISO 15919 has no letter for them. ఁ is
+silent (empty reading and IPA), ః reads `ḥ`.
 
 `--citations` is a pass of its own for the `reading` of an inline base
 (`{ word, base, reading }`: the reading of the base's dictionary form, which

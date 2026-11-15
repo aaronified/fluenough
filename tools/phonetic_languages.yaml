@@ -115,3 +115,20 @@
     # needs the Spanish-only test in tools/test_phonetic.py widened first.
     name: "Standard Assamese; no Wiktionary form is taken (rules only)"
     untagged: false
+
+"kn":
+  dump: "Kannada"
+  variety:
+    # Measured on the kaikki.org dump (modified 2026-10-30, 2026-11-15): of 27
+    # narrow forms, 20 carry no note and no tag, and all but two are the names
+    # of letters or vowel signs (ಕ [kə], ರ [r], ಇ [i], ೂ [uː]); the only word
+    # forms are ಕೊಟ್ಟಿಗೆ [kɔʈ.ʈɪ.ɡɛ], ಬುಟ್ಟಿ [buʈːi], ಪರ್ಣ [parɳa] and ಕಫ [kɐ.fa],
+    # written with syllable dots and in three different conventions (ə, ɐ, a
+    # for the short a). The rest are `normally` or `before ...` notes of the
+    # anusvara sign. So the untagged form is NOT taken (untagged: false, no
+    # notes, no tags): nothing is imported from Wiktionary, and every Kannada
+    # card gets its narrow form from decks/kn/kn-phonetics.yaml, in one
+    # convention (as Assamese). Flip `untagged` to true only after Wiktionary
+    # has word forms that agree with the rules file.
+    name: "Standard Kannada; no Wiktionary form is taken (rules only)"
+    untagged: false
