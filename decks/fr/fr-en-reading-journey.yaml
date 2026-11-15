@@ -1,0 +1,63 @@
+schema: 1
+id: "fr-en-reading-journey"
+name: "Reading: journey"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about journey. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-ticket-counter"
+    title: "Buying a train ticket at the counter"
+    theme: "journey"
+    sentences:
+      - { text: "Bonjour, un aller-retour pour demain, s'il vous plaît." }
+      - { text: "Le train part à quelle heure ?" }
+      - { text: "Le quai est-il loin ?" }
+      - { text: "Merci, c'est noté." }
+    questions:
+      - id: "fr-3455"
+        prompt: { en: "What ticket does the traveller want?" }
+        options:
+          - { en: "A single ticket" }
+          - { en: "A return ticket" }
+          - { en: "A monthly pass" }
+        answer: 2
+      - id: "fr-3456"
+        prompt: { en: "What does the traveller ask about?" }
+        options:
+          - { en: "The time of the train" }
+          - { en: "The price of a coffee" }
+          - { en: "The name of the station" }
+        answer: 1
+      - id: "fr-3457"
+        prompt: { en: "The traveller is buying the ticket at the counter." }
+        answer: true
+  - id: "fr-train-timetable"
+    title: "A train timetable and a platform notice"
+    theme: "journey"
+    sentences:
+      - { text: "Train numéro huit, départ à neuf heures quinze, voie quatre." }
+      - { text: "Arrivée à la gare à onze heures." }
+      - { text: "Attention : le train est en retard de cinq minutes." }
+      - { text: "Composter votre billet avant de monter." }
+    questions:
+      - id: "fr-3458"
+        prompt: { en: "Which track does the train leave from?" }
+        options:
+          - { en: "Track one" }
+          - { en: "Track four" }
+          - { en: "Track seven" }
+        answer: 2
+      - id: "fr-3459"
+        prompt: { en: "When does the train leave?" }
+        options:
+          - { en: "At nine fifteen" }
+          - { en: "At eleven o'clock" }
+          - { en: "At five past nine" }
+        answer: 1
+      - id: "fr-3460"
+        prompt: { en: "The train is late." }
+        answer: true

@@ -1,0 +1,79 @@
+schema: 1
+id: "fr-en-reading-formal-address"
+name: "Reading: formal address: vous, tu and the closing of a letter"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about speaking to an elder, a stranger or a friend with vous or tu, and a formal letter, with the forms of address of each. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-addressing-an-elder"
+    title: "Addressing an elder"
+    theme: "addressing"
+    sentences:
+      - text: "Comment allez-vous, Madame ?"
+        ipa: "kɔmɑ̃ tale vu madam"
+      - text: "Voulez-vous un café, Monsieur ?"
+        ipa: "vule vu œ̃ kafe məsjø"
+      - text: "Excusez-moi, je vous remercie."
+        ipa: "ɛkskyze mwa ʒə vu ʁəmɛʁsi"
+      - text: "Viens demain."
+        ipa: "vjɛ̃ dəmɛ̃"
+    questions:
+      - id: "fr-4040"
+        prompt: { en: "What does the speaker ask the lady?" }
+        options:
+          - { en: "Where she lives" }
+          - { en: "How she is" }
+          - { en: "Her name" }
+        answer: 2
+      - id: "fr-4041"
+        prompt: { en: "What does the speaker offer 'Monsieur'?" }
+        options:
+          - { en: "A ticket" }
+          - { en: "A bed" }
+          - { en: "A coffee" }
+        answer: 3
+      - id: "fr-4042"
+        prompt: { en: "What does the speaker ask a friend to do?" }
+        options:
+          - { en: "Come tomorrow" }
+          - { en: "Leave today" }
+          - { en: "Pay" }
+        answer: 1
+  - id: "fr-formal-letter"
+    title: "A formal letter"
+    theme: "government"
+    sentences:
+      - text: "Madame, Monsieur,"
+        ipa: "madam məsjø"
+      - text: "Je vous remercie de votre aide."
+        ipa: "ʒə vu ʁəmɛʁsi də vɔtʁ ɛd"
+      - text: "Pouvez-vous m'aider ?"
+        ipa: "puve vu mede"
+      - text: "Savez-vous où c'est ?"
+        ipa: "save vu u sɛ"
+    questions:
+      - id: "fr-4043"
+        prompt: { en: "How does the letter begin?" }
+        options:
+          - { en: "Dear Paul" }
+          - { en: "Madam, Sir" }
+          - { en: "Hi" }
+        answer: 2
+      - id: "fr-4044"
+        prompt: { en: "What does the writer thank 'you' for?" }
+        options:
+          - { en: "Your money" }
+          - { en: "Your visit" }
+          - { en: "Your help" }
+        answer: 3
+      - id: "fr-4045"
+        prompt: { en: "What does the writer ask 'you'?" }
+        options:
+          - { en: "To help" }
+          - { en: "To pay" }
+          - { en: "To leave" }
+        answer: 1

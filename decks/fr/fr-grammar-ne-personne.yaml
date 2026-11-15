@@ -1,0 +1,46 @@
+schema: 1
+id: "fr-grammar-ne-personne"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["positive", "negative"]
+  entries:
+    - lemma: "voir"
+      ipa: "vwaʁ"
+      forms:
+        "positive": "je vois quelqu'un"
+        "negative": "je ne vois personne"
+    - lemma: "attendre"
+      ipa: "atɑ̃dʁ"
+      forms:
+        "positive": "tu attends quelqu'un"
+        "negative": "tu n'attends personne"
+    - lemma: "connaître"
+      key: "connaitre"
+      ipa: "kɔnɛtʁ"
+      forms:
+        "positive": "il connaît quelqu'un"
+        "negative": "il ne connaît personne"
+    - lemma: "entendre"
+      ipa: "ɑ̃tɑ̃dʁ"
+      forms:
+        "positive": "elle entend quelqu'un"
+        "negative": "elle n'entend personne"
+    - lemma: "appeler"
+      ipa: "aple"
+      forms:
+        "positive": "nous appelons quelqu'un"
+        "negative": "nous n'appelons personne"
+    - lemma: "chercher"
+      ipa: "ʃɛʁʃe"
+      forms:
+        "positive": "vous cherchez quelqu'un"
+        "negative": "vous ne cherchez personne"
+    - lemma: "aider"
+      ipa: "ede"
+      forms:
+        "positive": "ils aident quelqu'un"
+        "negative": "ils n'aident personne"

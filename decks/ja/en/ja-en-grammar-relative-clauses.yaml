@@ -1,0 +1,29 @@
+schema: 1
+id: "ja-en-grammar-relative-clauses"
+kind: "layer"
+core: "ja-grammar-relative-clauses"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Describing a noun with a clause"
+description: "A plain-form clause before a noun describes it: きのう かった ほん (kinou katta hon), the book I bought yesterday. This drill turns a plain sentence into a noun with its clause, and then makes the clause negative. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  name: "Describing a noun with a clause"
+  slot_name: "form"
+  slots:
+    "sentence": "as a plain sentence"
+    "relative-clause": "as a noun with its clause before it"
+    "negative-clause": "with the clause made negative, before the noun"
+  entries:
+    "hon": "book: I bought it yesterday"
+    "hito": "person: that person teaches Japanese"
+    "ryouri": "dish: the teacher made it"
+    "tegami": "letter: she wrote it"
+    "mise": "shop: I bought shoes there"
+    "eiga": "film: my friend watched it"
+    "kouen": "park: the children played there"
+    "keeki": "cake: my father bought it"
+    "koohii": "coffee: he drinks it"
+    "kutsu": "shoes: my older sister received them"
+    "shashin": "photo: my father took it"
+  notes: "A clause before a noun describes it: きのう かった ほん (kinou katta hon), the book I bought yesterday. The clause is in the plain form, there is no word for that or which, and there is no の (no) between the clause and the noun. To make one, take the plain sentence わたし は きのう ほん を かった (watashi wa kinou hon o katta), I bought the book yesterday, and move the noun it talks about to the end. That noun loses its を (o) and the topic は (wa) drops out. If the clause has its own doer, the doer takes が (ga): せんせい が つくった りょうり (sensei ga tsukutta ryouri), the dish the teacher made. A place marker such as で (de) also drops when the place is the noun described: こども が あそんだ こうえん (kodomo ga asonda kouen), the park where the children played. The clause keeps its own tense and can be negative: きのう かった ほん (kinou katta hon), the book I bought; きのう かわなかった ほん (kinou kawanakatta hon), the book I did not buy. The base word changes its stem in these forms: かう (kau) becomes かわ (kawa) before なかった (nakatta) and かっ (kat) before た (ta); かく (kaku) becomes かか (kaka) before なかった (nakatta) and かい (kai) before た (ta); あそぶ (asobu) becomes あそば (asoba) before なかった (nakatta) and あそん (ason) before だ (da); のむ (nomu) becomes のま (noma) before ない (nai). Verbs such as おしえる (oshieru) and みる (miru) keep their stem."

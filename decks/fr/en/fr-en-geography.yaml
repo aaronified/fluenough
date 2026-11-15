@@ -1,0 +1,689 @@
+schema: 1
+id: "fr-en-geography"
+kind: "layer"
+core: "fr-geography"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Places in the French-speaking world"
+license: "CC-BY-SA-4.0"
+description: "Countries, regions, cities and rivers of the French-speaking world, and the words for naming them. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-3720":
+    native: "France"
+    notes:
+      "n1": "La France is the country; the article la is part of the name in French (la France); to say in France use en France."
+    examples:
+      "Je vis en France.":
+        native: "I live in France."
+        bases:
+          "vis": "live"
+          "en": "in"
+          "France": "France"
+      "La France est un grand pays.":
+        native: "France is a large country."
+        bases:
+          "France": "France"
+          "est": "is"
+  "fr-3721":
+    native: "Belgium"
+    notes:
+      "n1": "La Belgique is the country north of France; the adjective is belge."
+    examples:
+      "Nous allons en Belgique.":
+        native: "We are going to Belgium."
+        bases:
+          "allons": "go"
+          "en": "in"
+          "Belgique": "Belgium"
+      "La Belgique a trois langues officielles.":
+        native: "Belgium has three official languages."
+        bases:
+          "Belgique": "Belgium"
+          "a": "has"
+          "langues": "languages"
+          "officielles": "official"
+  "fr-3722":
+    native: "Switzerland"
+    notes:
+      "n1": "La Suisse is the country east of France; the adjective is suisse."
+    examples:
+      "Mon ami habite en Suisse.":
+        native: "My friend lives in Switzerland."
+        bases:
+          "habite": "lives"
+          "en": "in"
+          "Suisse": "Switzerland"
+      "La Suisse est très montagneuse.":
+        native: "Switzerland is very mountainous."
+        bases:
+          "Suisse": "Switzerland"
+          "est": "is"
+          "montagneuse": "mountainous"
+  "fr-3723":
+    native: "Canada"
+    notes:
+      "n1": "Le Canada is the country in North America; the adjective is canadien."
+    examples:
+      "Ma sœur travaille au Canada.":
+        native: "My sister works in Canada."
+        bases:
+          "travaille": "work"
+          "au": "to the"
+          "Canada": "Canada"
+      "Le Canada est très grand.":
+        native: "Canada is very large."
+        bases:
+          "Canada": "Canada"
+          "est": "is"
+  "fr-3724":
+    native: "Quebec"
+    notes:
+      "n1": "Le Québec is a province of Canada where French is the main language; the adjective is québécois."
+    examples:
+      "Au Québec, on parle français.":
+        native: "In Quebec, people speak French."
+        bases:
+          "Au": "to the, in the"
+          "Québec": "Quebec"
+      "Je voyage au Québec.":
+        native: "I travel to Quebec."
+        bases:
+          "au": "to the"
+          "Québec": "Quebec"
+  "fr-3725":
+    native: "Morocco"
+    notes:
+      "n1": "Le Maroc is the country in North Africa; the adjective is marocain."
+    examples:
+      "Je vais au Maroc.":
+        native: "I am going to Morocco."
+        bases:
+          "vais": "go"
+          "au": "to the"
+          "Maroc": "Morocco"
+      "Le Maroc est près de l'Espagne.":
+        native: "Morocco is near Spain."
+        bases:
+          "Maroc": "Morocco"
+          "est": "is"
+          "de": "of, from"
+          "l'Espagne": "Spain"
+  "fr-3726":
+    native: "Algeria"
+    notes:
+      "n1": "L'Algérie is the country east of Morocco; the gender is feminine."
+    examples:
+      "Mes parents visitent l'Algérie.":
+        native: "My parents visit Algeria."
+        bases:
+          "parents": "parents"
+          "visitent": "visit"
+          "l'Algérie": "Algeria"
+      "L'Algérie est un grand pays.":
+        native: "Algeria is a large country."
+        bases:
+          "L'Algérie": "Algeria"
+          "est": "is"
+  "fr-3727":
+    native: "Senegal"
+    notes:
+      "n1": "Le Sénégal is the country in West Africa; the adjective is sénégalais."
+    examples:
+      "Le Sénégal est sur la côte.":
+        native: "Senegal is on the coast."
+        bases:
+          "Sénégal": "Senegal"
+          "est": "is"
+          "côte": "coast"
+      "Je connais le Sénégal.":
+        native: "I know Senegal."
+        bases:
+          "connais": "know"
+          "Sénégal": "Senegal"
+  "fr-3728":
+    native: "Tunisia"
+    notes:
+      "n1": "La Tunisie is a country in North Africa."
+    examples:
+      "La Tunisie est près de la mer.":
+        native: "Tunisia is near the sea."
+        bases:
+          "Tunisie": "Tunisia"
+          "est": "is"
+          "de": "of, from"
+      "Je pars en Tunisie en été.":
+        native: "I leave for Tunisia in summer."
+        bases:
+          "pars": "leave"
+          "en": "in"
+          "Tunisie": "Tunisia"
+  "fr-3729":
+    native: "Italy"
+    notes:
+      "n1": "L'Italie is the country south of France; the adjective is italien."
+    examples:
+      "L'Italie est belle.":
+        native: "Italy is beautiful."
+        bases:
+          "L'Italie": "Italy"
+          "est": "is"
+          "belle": "beautiful"
+      "Nous mangeons en Italie.":
+        native: "We eat in Italy."
+        bases:
+          "mangeons": "eat"
+          "en": "in"
+          "Italie": "Italy"
+  "fr-3730":
+    native: "Spain"
+    notes:
+      "n1": "L'Espagne is the country south-west of France; the adjective is espagnol."
+    examples:
+      "L'Espagne est très chaude en été.":
+        native: "Spain is very hot in summer."
+        bases:
+          "L'Espagne": "Spain"
+          "est": "is"
+          "chaude": "hot"
+          "en": "in"
+      "Je visite l'Espagne.":
+        native: "I visit Spain."
+        bases:
+          "l'Espagne": "Spain"
+  "fr-3731":
+    native: "England"
+    notes:
+      "n1": "L'Angleterre is the country north of France across the sea; the adjective is anglais."
+    examples:
+      "L'Angleterre est près de la France.":
+        native: "England is near France."
+        bases:
+          "L'Angleterre": "England"
+          "est": "is"
+          "de": "of, from"
+          "France": "France"
+      "Je vais en Angleterre.":
+        native: "I go to England."
+        bases:
+          "vais": "go"
+          "en": "in"
+          "Angleterre": "England"
+  "fr-3732":
+    native: "Europe"
+    notes:
+      "n1": "L'Europe is the continent where France is."
+    examples:
+      "L'Europe est un continent.":
+        native: "Europe is a continent."
+        bases:
+          "L'Europe": "Europe"
+          "est": "is"
+          "continent": "continent"
+      "La France est en Europe.":
+        native: "France is in Europe."
+        bases:
+          "France": "France"
+          "est": "is"
+          "en": "in"
+          "Europe": "Europe"
+  "fr-3733":
+    native: "Africa"
+    notes:
+      "n1": "L'Afrique is the continent south of Europe."
+    examples:
+      "L'Afrique est un continent.":
+        native: "Africa is a continent."
+        bases:
+          "L'Afrique": "Africa"
+          "est": "is"
+          "continent": "continent"
+      "Le français est parlé en Afrique.":
+        native: "French is spoken in Africa."
+        bases:
+          "est": "is"
+          "parlé": "spoken"
+          "en": "in"
+          "Afrique": "Africa"
+  "fr-3734":
+    native: "Wallonia"
+    notes:
+      "n1": "La Wallonie is the French-speaking part of Belgium."
+    examples:
+      "La Wallonie est au sud de la Belgique.":
+        native: "Wallonia is in the south of Belgium."
+        bases:
+          "Wallonie": "Wallonia"
+          "est": "is"
+          "au": "to the"
+          "de": "of, from"
+          "Belgique": "Belgium"
+      "Namur est en Wallonie.":
+        native: "Namur is in Wallonia."
+        bases:
+          "Namur": "Namur"
+          "est": "is"
+          "en": "in"
+          "Wallonie": "Wallonia"
+  "fr-3735":
+    native: "Provence"
+    notes:
+      "n1": "La Provence is a region in the south-east of France, known for the sun."
+    examples:
+      "La Provence est très ensoleillée.":
+        native: "Provence is very sunny."
+        bases:
+          "Provence": "Provence"
+          "est": "is"
+          "ensoleillée": "sunny"
+      "Je rêve de la Provence.":
+        native: "I dream of Provence."
+        bases:
+          "de": "of, from"
+          "Provence": "Provence"
+  "fr-3736":
+    native: "Brittany"
+    notes:
+      "n1": "La Bretagne is a region in the west of France, by the sea."
+    examples:
+      "La Bretagne est sur la mer.":
+        native: "Brittany is by the sea."
+        bases:
+          "Bretagne": "Brittany"
+          "est": "is"
+      "Je passe l'été en Bretagne.":
+        native: "I spend the summer in Brittany."
+        bases:
+          "passe": "spend"
+          "l'été": "summer"
+          "en": "in"
+          "Bretagne": "Brittany"
+  "fr-3737":
+    native: "Normandy"
+    notes:
+      "n1": "La Normandie is a region in the north-west of France."
+    examples:
+      "La Normandie est verte.":
+        native: "Normandy is green."
+        bases:
+          "Normandie": "Normandy"
+          "est": "is"
+          "verte": "green"
+      "Nous visitons la Normandie.":
+        native: "We visit Normandy."
+        bases:
+          "visitons": "visit"
+          "Normandie": "Normandy"
+  "fr-3738":
+    native: "Paris"
+    notes:
+      "n1": "Paris is the capital of France; a city name takes no article."
+    examples:
+      "Je vais à Paris.":
+        native: "I am going to Paris."
+        bases:
+          "vais": "go"
+          "à": "to, at"
+          "Paris": "Paris"
+      "Paris est une grande ville.":
+        native: "Paris is a large city."
+        bases:
+          "Paris": "Paris"
+          "est": "is"
+          "grande": "high"
+  "fr-3739":
+    native: "Lyon"
+    notes:
+      "n1": "Lyon is a city in the east of France; it has no article."
+    examples:
+      "Lyon est près du Rhône.":
+        native: "Lyon is near the Rhône."
+        bases:
+          "Lyon": "Lyon"
+          "est": "is"
+          "du": "of the"
+          "Rhône": "Rhône"
+      "Je prends le train pour Lyon.":
+        native: "I take the train to Lyon."
+        bases:
+          "prends": "take"
+          "Lyon": "Lyon"
+  "fr-3740":
+    native: "Marseille"
+    notes:
+      "n1": "Marseille is a port city on the Mediterranean; it has no article."
+    examples:
+      "Marseille est au bord de la mer.":
+        native: "Marseille is by the sea."
+        bases:
+          "Marseille": "Marseille"
+          "est": "is"
+          "au": "to the"
+          "bord": "edge"
+          "de": "of, from"
+      "Nous mangeons à Marseille.":
+        native: "We eat in Marseille."
+        bases:
+          "mangeons": "eat"
+          "à": "to, at"
+          "Marseille": "Marseille"
+  "fr-3741":
+    native: "Brussels"
+    notes:
+      "n1": "Bruxelles is the capital of Belgium; it has no article."
+    examples:
+      "Bruxelles est près de la France.":
+        native: "Brussels is near France."
+        bases:
+          "Bruxelles": "Brussels"
+          "est": "is"
+          "de": "of, from"
+          "France": "France"
+      "Je travaille à Bruxelles.":
+        native: "I work in Brussels."
+        bases:
+          "travaille": "work"
+          "à": "to, at"
+          "Bruxelles": "Brussels"
+  "fr-3742":
+    native: "Geneva"
+    notes:
+      "n1": "Genève is a city in Switzerland by a lake; it has no article."
+    examples:
+      "Genève est au bord du lac.":
+        native: "Geneva is by the lake."
+        bases:
+          "Genève": "Geneva"
+          "est": "is"
+          "au": "to the"
+          "bord": "edge"
+          "du": "of the"
+          "lac": "lake"
+      "Nous visitons Genève.":
+        native: "We visit Geneva."
+        bases:
+          "visitons": "visit"
+          "Genève": "Geneva"
+  "fr-3743":
+    native: "Montreal"
+    notes:
+      "n1": "Montréal is a city in Quebec; it has no article."
+    examples:
+      "Montréal est une grande ville.":
+        native: "Montreal is a large city."
+        bases:
+          "Montréal": "Montreal"
+          "est": "is"
+          "grande": "high"
+      "Je rentre de Montréal.":
+        native: "I come back from Montreal."
+        bases:
+          "rentre": "come back"
+          "de": "of, from"
+          "Montréal": "Montreal"
+  "fr-3744":
+    native: "London"
+    notes:
+      "n1": "Londres is the capital of England; it has no article."
+    examples:
+      "Londres est très grand.":
+        native: "London is very large."
+        bases:
+          "Londres": "London"
+          "est": "is"
+      "Je vais à Londres.":
+        native: "I go to London."
+        bases:
+          "vais": "am going"
+          "à": "to, at"
+          "Londres": "London"
+  "fr-3745":
+    native: "the Loire"
+    notes:
+      "n1": "La Loire is the longest river in France."
+    examples:
+      "La Loire coule vers l'ouest.":
+        native: "The Loire flows to the west."
+        bases:
+          "Loire": "Loire"
+          "coule": "flows"
+          "l'ouest": "west"
+      "Nous marchons le long de la Loire.":
+        native: "We walk along the Loire."
+        bases:
+          "marchons": "we walk"
+          "de": "of, from"
+          "Loire": "Loire"
+  "fr-3746":
+    native: "the Seine"
+    notes:
+      "n1": "La Seine is the river that flows through Paris."
+    examples:
+      "La Seine traverse Paris.":
+        native: "The Seine flows through Paris."
+        bases:
+          "Seine": "Seine"
+          "traverse": "crosses"
+          "Paris": "Paris"
+      "Le pont est sur la Seine.":
+        native: "The bridge is over the Seine."
+        bases:
+          "est": "is"
+          "Seine": "Seine"
+  "fr-3747":
+    native: "the Rhône"
+    notes:
+      "n1": "Le Rhône is a river that flows through Lyon."
+    examples:
+      "Le Rhône est très rapide.":
+        native: "The Rhône is very fast."
+        bases:
+          "Rhône": "Rhône"
+          "est": "is"
+      "Lyon est au bord du Rhône.":
+        native: "Lyon is on the bank of the Rhône."
+        bases:
+          "Lyon": "Lyon"
+          "est": "is"
+          "au": "to the"
+          "bord": "edge"
+          "du": "of the"
+          "Rhône": "Rhône"
+  "fr-3748":
+    native: "the Mediterranean"
+    notes:
+      "n1": "La Méditerranée is the sea south of France."
+    examples:
+      "La Méditerranée est bleue.":
+        native: "The Mediterranean is blue."
+        bases:
+          "Méditerranée": "Mediterranean"
+          "est": "is"
+          "bleue": "blue"
+      "Nous nageons dans la Méditerranée.":
+        native: "We swim in the Mediterranean."
+        bases:
+          "nageons": "we swim"
+          "Méditerranée": "Mediterranean"
+  "fr-3749":
+    native: "the Atlantic"
+    notes:
+      "n1": "L'Atlantique is the ocean west of France."
+    examples:
+      "L'Atlantique est froid en hiver.":
+        native: "The Atlantic is cold in winter."
+        bases:
+          "L'Atlantique": "Atlantic"
+          "est": "is"
+          "en": "in"
+      "Je surfe sur l'Atlantique.":
+        native: "I surf on the Atlantic."
+        bases:
+          "surfe": "surf"
+          "l'Atlantique": "Atlantic"
+  "fr-3750":
+    native: "Belgian"
+    notes:
+      "n1": "Belge is the same in both genders; the noun is un Belge."
+    examples:
+      "Mon voisin est belge.":
+        native: "My neighbour is Belgian."
+        bases:
+          "est": "is"
+          "belge": "Belgian"
+      "La ville est belge.":
+        native: "The city is Belgian."
+        bases:
+          "ville": "city"
+          "est": "is"
+          "belge": "Belgian"
+  "fr-3751":
+    native: "Canadian"
+    notes:
+      "n1": "Canadien is masculine; the feminine is canadienne."
+    examples:
+      "Mon amie est canadienne.":
+        native: "My friend is Canadian."
+        bases:
+          "amie": "friend"
+          "est": "is"
+          "canadienne": "Canadian"
+      "Le café est canadien.":
+        native: "The café is Canadian."
+        bases:
+          "est": "is"
+          "canadien": "Canadian"
+  "fr-3752":
+    native: "from Quebec"
+    notes:
+      "n1": "Québécois is masculine; the feminine is québécoise."
+    examples:
+      "Cette musique est québécoise.":
+        native: "This music is from Quebec."
+        bases:
+          "est": "is"
+          "québécoise": "from Quebec"
+      "Le professeur est québécois.":
+        native: "The teacher is from Quebec."
+        bases:
+          "est": "is"
+          "québécois": "from Quebec"
+  "fr-3753":
+    native: "Moroccan"
+    notes:
+      "n1": "Marocain is masculine; the feminine is marocaine."
+    examples:
+      "La cuisine marocaine est délicieuse.":
+        native: "Moroccan cooking is delicious."
+        bases:
+          "marocaine": "Moroccan"
+          "est": "is"
+          "délicieuse": "delicious"
+      "Mon ami est marocain.":
+        native: "My friend is Moroccan."
+        bases:
+          "est": "is"
+          "marocain": "Moroccan"
+  "fr-3754":
+    native: "Senegalese"
+    notes:
+      "n1": "Sénégalais is masculine; the feminine is sénégalaise."
+    examples:
+      "La musique sénégalaise est belle.":
+        native: "Senegalese music is beautiful."
+        bases:
+          "sénégalaise": "Senegalese"
+          "est": "is"
+          "belle": "beautiful"
+      "Mon voisin est sénégalais.":
+        native: "My neighbour is Senegalese."
+        bases:
+          "est": "is"
+          "sénégalais": "Senegalese"
+  "fr-3755":
+    native: "Lille"
+    notes:
+      "n1": "Lille is a city in the north of France; it has no article."
+    examples:
+      "Lille est près de la Belgique.":
+        native: "Lille is near Belgium."
+        bases:
+          "Lille": "Lille"
+          "est": "is"
+          "de": "of, from"
+          "Belgique": "Belgium"
+      "Je prends le train pour Lille.":
+        native: "I take the train to Lille."
+        bases:
+          "prends": "take"
+          "Lille": "Lille"
+  "fr-3756":
+    native: "Toulouse"
+    notes:
+      "n1": "Toulouse is a city in the south-west of France; it has no article."
+    examples:
+      "Toulouse est une ville rose.":
+        native: "Toulouse is a pink city."
+        bases:
+          "Toulouse": "Toulouse"
+          "est": "is"
+          "rose": "pink"
+      "Nous visitons Toulouse.":
+        native: "We visit Toulouse."
+        bases:
+          "visitons": "visit"
+          "Toulouse": "Toulouse"
+  "fr-3757":
+    native: "Bordeaux"
+    notes:
+      "n1": "Bordeaux is a city in the south-west of France, known for its wine; it has no article."
+    examples:
+      "Bordeaux est près de l'océan.":
+        native: "Bordeaux is near the ocean."
+        bases:
+          "Bordeaux": "Bordeaux"
+          "est": "is"
+          "de": "of, from"
+          "l'océan": "ocean"
+      "Je mange à Bordeaux.":
+        native: "I eat in Bordeaux."
+        bases:
+          "mange": "eat"
+          "à": "to, at"
+          "Bordeaux": "Bordeaux"
+  "fr-3758":
+    native: "Dakar"
+    notes:
+      "n1": "Dakar is the capital of Senegal; it has no article."
+    examples:
+      "Dakar est au bord de la mer.":
+        native: "Dakar is by the sea."
+        bases:
+          "Dakar": "Dakar"
+          "est": "is"
+          "au": "to the"
+          "bord": "edge"
+          "de": "of, from"
+      "Mon ami habite à Dakar.":
+        native: "My friend lives in Dakar."
+        bases:
+          "habite": "lives"
+          "à": "to, at"
+          "Dakar": "Dakar"
+  "fr-3759":
+    native: "Ottawa"
+    notes:
+      "n1": "Ottawa is the capital of Canada; it has no article."
+    examples:
+      "Ottawa est la capitale du Canada.":
+        native: "Ottawa is the capital of Canada."
+        bases:
+          "Ottawa": "Ottawa"
+          "est": "is"
+          "capitale": "capital"
+          "du": "of the"
+          "Canada": "Canada"
+      "Nous visitons Ottawa.":
+        native: "We visit Ottawa."
+        bases:
+          "visitons": "visit"
+          "Ottawa": "Ottawa"

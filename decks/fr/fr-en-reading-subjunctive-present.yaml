@@ -1,0 +1,79 @@
+schema: 1
+id: "fr-en-reading-subjunctive-present"
+name: "Reading: wishes and advice: the present subjunctive"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts with wishes and advice after que, the present subjunctive forms of common verbs. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-wishes-and-advice"
+    title: "Wishes and advice"
+    theme: "feelings"
+    sentences:
+      - text: "Je veux que tu viennes demain."
+        ipa: "ʒə vø kə ty vjɛn dəmɛ̃"
+      - text: "Il faut que tu sois là à huit heures."
+        ipa: "il fo kə ty swa la a ɥit œʁ"
+      - text: "Il faut que nous ayons du temps."
+        ipa: "il fo kə nu zɛjɔ̃ dy tɑ̃"
+      - text: "Je veux que vous parliez français."
+        ipa: "ʒə vø kə vu paʁlje fʁɑ̃sɛ"
+    questions:
+      - id: "fr-3940"
+        prompt: { en: "What does the speaker want?" }
+        options:
+          - { en: "That you come tomorrow" }
+          - { en: "That you leave now" }
+          - { en: "That you pay" }
+        answer: 1
+      - id: "fr-3941"
+        prompt: { en: "What is needed at eight o'clock?" }
+        options:
+          - { en: "Eating" }
+          - { en: "Being there" }
+          - { en: "Sleeping" }
+        answer: 2
+      - id: "fr-3942"
+        prompt: { en: "What do 'we' need?" }
+        options:
+          - { en: "Money" }
+          - { en: "A car" }
+          - { en: "Time" }
+        answer: 3
+  - id: "fr-friendly-advice"
+    title: "A friendly note"
+    theme: "daily-life"
+    sentences:
+      - text: "Je veux que tu fasses attention."
+        ipa: "ʒə vø kə ty fas atɑ̃sjɔ̃"
+      - text: "Je veux que tu puisses venir."
+        ipa: "ʒə vø kə ty pɥis vəniʁ"
+      - text: "Il faut que tu ailles au parc."
+        ipa: "il fo kə ty aj o paʁk"
+      - text: "Je veux qu'il sache où je suis."
+        ipa: "ʒə vø kil saʃ u ʒə sɥi"
+    questions:
+      - id: "fr-3943"
+        prompt: { en: "What does the speaker want 'you' to do?" }
+        options:
+          - { en: "To be careful" }
+          - { en: "To sleep late" }
+          - { en: "To leave" }
+        answer: 1
+      - id: "fr-3944"
+        prompt: { en: "What is 'you' asked to be able to do?" }
+        options:
+          - { en: "Swim" }
+          - { en: "Come" }
+          - { en: "Drive" }
+        answer: 2
+      - id: "fr-3945"
+        prompt: { en: "What does the speaker want 'him' to know?" }
+        options:
+          - { en: "The price" }
+          - { en: "The time" }
+          - { en: "Where I am" }
+        answer: 3

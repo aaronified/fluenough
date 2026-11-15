@@ -1,0 +1,27 @@
+schema: 1
+id: "fr-en-grammar-gerondif"
+kind: "layer"
+core: "fr-grammar-gerondif"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The gérondif: doing two things at once"
+license: "CC-BY-SA-4.0"
+description: "The gérondif is en plus the present participle: en marchant, en mangeant. It says how or while someone does something. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Gérondif"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "participle": "the present participle (the -ant form)", "gerondif": "the gérondif: en plus the present participle" }
+  entries:
+    "parler": "to speak"
+    "marcher": "to walk"
+    "manger": "to eat"
+    "finir": "to finish"
+    "attendre": "to wait for"
+    "faire": "to do or make"
+    "prendre": "to take"
+    "lire": "to read"
+    "voir": "to see"
+    "etre": "to be"
+    "avoir": "to have"
+    "savoir": "to know"
+  notes: "The gérondif is made of en plus the present participle, and it says that two things happen at once, or how something is done: il écoute en marchant means he listens while walking. To make the present participle, take the nous form of the present, drop -ons, and add -ant: nous parlons gives parlant, nous finissons gives finissant, nous attendons gives attendant, nous prenons gives prenant. So the gérondif is en parlant, en finissant, en attendant, en prenant. Verbs in -ger keep the e before -ant to keep the g soft: mangeant, en mangeant. Three verbs have an irregular participle that does not come from nous: être étant, avoir ayant, savoir sachant, and the gérondif is en étant, en ayant, en sachant. Faire gives faisant, where ai sounds like the e of le, and voir gives voyant. The gérondif never changes with person or number, and its subject is always the subject of the main verb: je lis en mangeant means I read while I eat."

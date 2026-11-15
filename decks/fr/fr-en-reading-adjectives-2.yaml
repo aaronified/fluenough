@@ -1,0 +1,63 @@
+schema: 1
+id: "fr-en-reading-adjectives-2"
+name: "Reading: describing a room"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about describing a room. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-describing-a-room"
+    title: "Describing a rented room"
+    theme: "adjectives-2"
+    sentences:
+      - { text: "La chambre est petite mais lumineuse." }
+      - { text: "Un grand lit, un bureau et une armoire." }
+      - { text: "La cuisine est propre et très bien équipée." }
+      - { text: "Le loyer est raisonnable et le quartier est calme." }
+    questions:
+      - id: "fr-3610"
+        prompt: { en: "How is the room described first?" }
+        options:
+          - { en: "Small but bright" }
+          - { en: "Large and dark" }
+          - { en: "Old and noisy" }
+        answer: 1
+      - id: "fr-3611"
+        prompt: { en: "What is in the room?" }
+        options:
+          - { en: "A bed, a desk and a wardrobe" }
+          - { en: "A sofa and a TV" }
+          - { en: "A table and four chairs" }
+        answer: 1
+      - id: "fr-3612"
+        prompt: { en: "The kitchen is well equipped." }
+        answer: true
+  - id: "fr-room-to-let"
+    title: "A room-to-let advert"
+    theme: "adjectives-2"
+    sentences:
+      - { text: "Chambre à louer, meublée, dans un appartement calme." }
+      - { text: "Pièce lumineuse, spacieuse et propre." }
+      - { text: "Cuisine équipée. Salle de bains rénovée." }
+      - { text: "Libre à partir du premier mars." }
+    questions:
+      - id: "fr-3613"
+        prompt: { en: "Is the room furnished?" }
+        options:
+          - { en: "Yes" }
+          - { en: "No" }
+          - { en: "Not stated" }
+        answer: 1
+      - id: "fr-3614"
+        prompt: { en: "What is the bathroom like?" }
+        options:
+          - { en: "Renovated" }
+          - { en: "Cramped" }
+          - { en: "Dark" }
+        answer: 1
+      - id: "fr-3615"
+        prompt: { en: "The room is free from the first of March." }
+        answer: true

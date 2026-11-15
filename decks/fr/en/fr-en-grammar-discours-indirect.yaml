@@ -1,0 +1,23 @@
+schema: 1
+id: "fr-en-grammar-discours-indirect"
+kind: "layer"
+core: "fr-grammar-discours-indirect"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Reported speech: telling what someone said"
+license: "CC-BY-SA-4.0"
+description: "Reported speech tells what someone said without quoting the words: il annonce qu'il part; elle demande si je viens. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Direct and reported speech"
+  slot_name: "style"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "direct": "direct speech: the exact words", "reported": "reported speech: what was said, told by someone else" }
+  entries:
+    "annoncer": "to announce"
+    "repondre": "to answer"
+    "ecrire": "to write"
+    "raconter": "to tell (a story)"
+    "repeter": "to repeat"
+    "demander-si": "to ask whether"
+    "demander-ou": "to ask where"
+    "demander-de": "to ask someone to do something"
+  notes: "Direct speech gives the exact words after a colon (il annonce : je pars demain); reported speech tells them in a que clause (il annonce qu'il part demain). Pronouns and verb endings change to fit the new speaker: je pars becomes il part, and nous arrivons becomes ils arrivent. A question has no inversion and no question mark in the reported clause: tu viens ? becomes il demande si je viens, and a question word stays (où habites-tu ? becomes elle demande où j'habite). Si becomes s' before il or ils: il demande s'il vient. A command becomes de plus an infinitive: fermez la porte ! becomes elle nous demande de fermer la porte. When the verb that reports is in the past (il a raconté, il a répété), the tense of the reported clause usually shifts back: the present becomes the imperfect (je travaille becomes qu'il travaillait) and the future becomes the conditional (je viendrai becomes qu'il viendrait). Time words change too, so demain becomes le lendemain in a story told afterwards."

@@ -1,0 +1,63 @@
+schema: 1
+id: "fr-en-reading-workplace"
+name: "Reading: the workplace"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about the workplace. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-first-day-at-work"
+    title: "A new colleague's first day"
+    theme: "workplace"
+    sentences:
+      - { text: "Le premier jour, la nouvelle collègue arrive à neuf heures." }
+      - { text: "La responsable lui montre le bureau et la cafétéria." }
+      - { text: "Elle reçoit un badge, un ordinateur et le planning de la semaine." }
+      - { text: "La journée finit à dix-sept heures." }
+    questions:
+      - id: "fr-3690"
+        prompt: { en: "What does the new colleague receive?" }
+        options:
+          - { en: "A badge and a computer" }
+          - { en: "A car and a phone" }
+          - { en: "A bonus and a payslip" }
+        answer: 1
+      - id: "fr-3691"
+        prompt: { en: "Who shows her around?" }
+        options:
+          - { en: "The person in charge" }
+          - { en: "The trainee" }
+          - { en: "The accountant" }
+        answer: 1
+      - id: "fr-3692"
+        prompt: { en: "She arrives at nine." }
+        answer: true
+  - id: "fr-office-notice"
+    title: "An office notice about a meeting"
+    theme: "workplace"
+    sentences:
+      - { text: "Réunion de l'équipe jeudi à quatorze heures, salle trois." }
+      - { text: "Merci d'apporter le rapport du mois et le planning." }
+      - { text: "L'ordre du jour est envoyé par mail." }
+      - { text: "En cas d'absence, merci de prévenir le responsable." }
+    questions:
+      - id: "fr-3693"
+        prompt: { en: "When is the meeting?" }
+        options:
+          - { en: "Thursday at two" }
+          - { en: "Friday at nine" }
+          - { en: "Monday at noon" }
+        answer: 1
+      - id: "fr-3694"
+        prompt: { en: "What must people bring?" }
+        options:
+          - { en: "The monthly report and the planning" }
+          - { en: "A computer and a phone" }
+          - { en: "Their badge only" }
+        answer: 1
+      - id: "fr-3695"
+        prompt: { en: "People who are absent must tell the person in charge." }
+        answer: true

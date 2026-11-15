@@ -1,0 +1,46 @@
+schema: 1
+id: "fr-grammar-ne-plus"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["positive", "negative"]
+  entries:
+    - lemma: "travailler"
+      ipa: "tʁavaje"
+      forms:
+        "positive": "il travaille encore"
+        "negative": "il ne travaille plus"
+    - lemma: "habiter"
+      ipa: "abite"
+      forms:
+        "positive": "j'habite encore ici"
+        "negative": "je n'habite plus ici"
+    - lemma: "dormir"
+      ipa: "dɔʁmiʁ"
+      forms:
+        "positive": "tu dors encore"
+        "negative": "tu ne dors plus"
+    - lemma: "jouer"
+      ipa: "ʒwe"
+      forms:
+        "positive": "elle joue encore"
+        "negative": "elle ne joue plus"
+    - lemma: "étudier"
+      key: "etudier"
+      ipa: "etydje"
+      forms:
+        "positive": "nous étudions encore"
+        "negative": "nous n'étudions plus"
+    - lemma: "pleuvoir"
+      ipa: "pløvwaʁ"
+      forms:
+        "positive": "il pleut encore"
+        "negative": "il ne pleut plus"
+    - lemma: "attendre"
+      ipa: "atɑ̃dʁ"
+      forms:
+        "positive": "vous attendez encore"
+        "negative": "vous n'attendez plus"

@@ -434,7 +434,9 @@ units:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
     reading_passages:
       - { id: "sale-sign", text: { "en": "A clothes shop's sale sign" } }
-  - planned: { id: "ja-grammar-conjunctions", grammar: "conjunctions" }
+  - decks: ["ja-grammar-conjunctions", "ja-grammar-conjunctions-sentences"]
+    words: 10
+    grammar: ["conjunctions"]
     listening_passages:
       - { id: "but-and-so", text: { "en": "Joining two sentences: and, but, so, then" } }
     reading_passages:
@@ -485,7 +487,9 @@ units:
       - { id: "what-did-you-do", text: { "en": "Friends say casually what they did and did not do" } }
     reading_passages:
       - { id: "plain-diary", text: { "en": "A diary entry in plain past forms" } }
-  - planned: { id: "ja-grammar-adjective-past", grammar: "adjective-past" }
+  - decks: ["ja-grammar-adjective-past", "ja-grammar-adjective-past-sentences"]
+    words: 0
+    grammar: ["i-nakatta", "i-polite-past", "na-datta", "na-janakatta", "na-polite-past"]
     listening_passages:
       - { id: "how-was-it", text: { "en": "Asking how a trip was: fun, cold, not expensive" } }
     reading_passages:
@@ -529,12 +533,16 @@ units:
       - { id: "club-poster", text: { "en": "A poster for a school's sports and music clubs" } }
   - decks: ["ja-kanji-13"]
     words: 0
-  - planned: { id: "ja-grammar-likes", grammar: ["suki", "jouzu"] }
+  - decks: ["ja-grammar-suki", "ja-grammar-jouzu", "ja-grammar-likes-sentences"]
+    words: 0
+    grammar: ["suki", "jouzu"]
     listening_passages:
       - { id: "what-do-you-like", text: { "en": "Saying what you like and are good at, and what you are not" } }
     reading_passages:
       - { id: "pen-pal-letter", text: { "en": "A pen-pal letter about likes and skills" } }
-  - planned: { id: "ja-grammar-comparison", grammar: ["yori", "ichiban"] }
+  - decks: ["ja-grammar-yori", "ja-grammar-ichiban", "ja-grammar-comparison-sentences"]
+    words: 0
+    grammar: ["yori", "ichiban"]
     listening_passages:
       - { id: "which-is-better", text: { "en": "Two friends compare two phones, and pick the best" } }
     reading_passages:
@@ -759,7 +767,9 @@ units:
       - { id: "at-the-ward-office", text: { "en": "Asking at the ward office which document is needed" } }
     reading_passages:
       - { id: "form-instructions", text: { "en": "Instructions on a residence registration form" } }
-  - planned: { id: "ja-grammar-relative-clauses", grammar: "relative-clauses" }
+  - decks: ["ja-grammar-relative-clauses", "ja-grammar-relative-clauses-sentences"]
+    words: 0
+    grammar: ["relative-clauses"]
     listening_passages:
       - { id: "the-person-who-came", text: { "en": "Describing people and things by what they did: the person who came, the book I bought" } }
     reading_passages:
@@ -793,12 +803,16 @@ units:
       - { id: "business-email", text: { "en": "A short business email" } }
   - decks: ["ja-kanji-29"]
     words: 0
-  - planned: { id: "ja-grammar-keigo-sonkeigo", grammar: "sonkeigo" }
+  - decks: ["ja-grammar-keigo-sonkeigo", "ja-grammar-keigo-sonkeigo-sentences"]
+    words: 0
+    grammar: ["sonkeigo"]
     listening_passages:
       - { id: "the-manager-is-coming", text: { "en": "Speaking of a customer and a manager with honorific verbs" } }
     reading_passages:
       - { id: "shop-announcement", text: { "en": "A shop's announcement to its customers" } }
-  - planned: { id: "ja-grammar-keigo-kenjougo", grammar: "kenjougo" }
+  - decks: ["ja-grammar-keigo-kenjougo", "ja-grammar-keigo-kenjougo-sentences"]
+    words: 0
+    grammar: ["kenjougo"]
     listening_passages:
       - { id: "i-will-carry-it", text: { "en": "Speaking of yourself humbly to a customer: I will carry it, I will go" } }
     reading_passages:
@@ -901,7 +915,9 @@ units:
       - { id: "rental-terms", text: { "en": "The terms of a rental, with key money and deposit" } }
   - decks: ["ja-kanji-34"]
     words: 0
-  - planned: { id: "ja-grammar-transitivity", grammar: "transitive-intransitive" }
+  - decks: ["ja-grammar-transitivity", "ja-grammar-transitivity-sentences"]
+    words: 0
+    grammar: ["intransitive", "transitive"]
     listening_passages:
       - { id: "the-door-opened", text: { "en": "Saying I opened the door and the door opened" } }
     reading_passages:
@@ -941,46 +957,55 @@ units:
       - { id: "manga-panel", text: { "en": "The sound words in a few manga panels" } }
   - decks: ["ja-kanji-36"]
     words: 0
-  - planned: { id: "ja-abstract-words", theme: "abstract-words", words: 55 }
+  - decks: ["ja-abstract-words", "ja-abstract-words-sentences", "ja-reading-abstract-words", "*"]
+    words: 55
     listening_passages:
       - { id: "a-discussion", text: { "en": "A short discussion of an idea" } }
     reading_passages:
       - { id: "opinion-column", text: { "en": "A short opinion column" } }
-  - planned: { id: "ja-money", theme: "money", words: 45 }
+  - decks: ["ja-money", "ja-money-sentences", "ja-reading-money", "*"]
+    words: 45
     listening_passages:
       - { id: "at-the-bank", text: { "en": "Opening an account at a bank counter" } }
     reading_passages:
       - { id: "bill-and-receipt", text: { "en": "A utility bill and a receipt" } }
-  - planned: { id: "ja-society", theme: "society", words: 50 }
+  - decks: ["ja-society", "ja-society-sentences", "ja-reading-society", "*"]
+    words: 50
     listening_passages:
       - { id: "an-ageing-town", text: { "en": "Residents talk about an ageing town" } }
     reading_passages:
       - { id: "survey-results", text: { "en": "The results of a short survey on work and life" } }
   - decks: ["ja-kanji-37"]
     words: 0
-  - planned: { id: "ja-university", theme: "university", words: 50 }
+  - decks: ["ja-university", "ja-university-sentences", "ja-reading-university", "*"]
+    words: 50
     listening_passages:
       - { id: "choosing-a-seminar", text: { "en": "Students talk about which seminar to choose" } }
     reading_passages:
       - { id: "campus-notice", text: { "en": "A campus notice about exams" } }
-  - planned: { id: "ja-food-culture", theme: "food-culture", words: 50 }
+  - decks: ["ja-food-culture", "ja-food-culture-sentences", "ja-reading-food-culture", "*"]
+    words: 50
     listening_passages:
       - { id: "new-year-food", text: { "en": "A family explains the dishes they eat at New Year" } }
     reading_passages:
       - { id: "washoku-article", text: { "en": "A short article about traditional Japanese food" } }
-  - planned: { id: "ja-literature", theme: "literature", words: 50 }
+  - decks: ["ja-literature", "ja-literature-sentences", "ja-reading-literature", "*"]
+    words: 50
     listening_passages:
       - { id: "a-haiku-explained", text: { "en": "A teacher reads a haiku and explains it" } }
     reading_passages:
       - { id: "book-blurb", text: { "en": "The back-cover blurb of a novel" } }
-  - planned: { id: "ja-verbs-5", theme: "verbs-5", words: 50 }
+  - decks: ["ja-verbs-5", "ja-verbs-5-sentences", "ja-reading-verbs-5", "*"]
+    words: 50
     listening_passages:
       - { id: "what-happened-next", text: { "en": "Telling a long story with every step in order" } }
     reading_passages:
       - { id: "newspaper-feature", text: { "en": "A newspaper feature with a short interview" } }
   - decks: ["ja-kanji-38"]
     words: 0
-  - planned: { id: "ja-grammar-teineigo", grammar: "teineigo" }
+  - decks: ["ja-grammar-teineigo", "ja-grammar-teineigo-sentences"]
+    words: 0
+    grammar: ["teineigo"]
     listening_passages:
       - { id: "speaking-to-a-stranger", text: { "en": "Speaking to an elder, a stranger and a friend: three levels of politeness" } }
     reading_passages:

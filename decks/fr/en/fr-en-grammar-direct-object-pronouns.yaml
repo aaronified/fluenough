@@ -1,0 +1,22 @@
+schema: 1
+id: "fr-en-grammar-direct-object-pronouns"
+kind: "layer"
+core: "fr-grammar-direct-object-pronouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Direct object pronouns: me, te, le, la, nous, vous, les"
+license: "CC-BY-SA-4.0"
+description: "A direct object pronoun stands before the verb and replaces the person or thing the verb acts on. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Direct object pronouns"
+  slot_name: "pronoun"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "me": "me", "te": "you (informal)", "le": "him or it (masculine)", "la": "her or it (feminine)", "nous": "us", "vous": "you (formal or plural)", "les": "them" }
+  entries:
+    "voir": "to see"
+    "regarder": "to look at"
+    "chercher": "to look for"
+    "prendre": "to take"
+    "attendre": "to wait for"
+    "ecouter": "to listen to"
+    "aimer": "to love or like"
+  notes: "A direct object pronoun replaces the person or thing the verb acts on, and it stands before the verb: il voit le chat becomes il le voit. Me, te, nous and vous are for people; le (him or it), la (her or it) and les (them) agree with the noun they replace. Me, te, le and la drop their vowel before a vowel sound: il m'attend, il l'écoute. L' stands for le or la, so the cell for la is empty on those rows. In the negative, ne goes before the pronoun: il ne me voit pas."

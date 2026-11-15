@@ -267,3 +267,170 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-4553 | ja-grammar-hearsay-appearance-sentences | Are the そうです (hearsay), そうです (appearance), ようです and らしいです examples natural and kept apart? | Sonnet builder | 2026-11-13 |
 | ja-4565 | ja-grammar-causative-sentences | Are the causative and causative-passive examples natural, in particular the use of を and に for the person made to do it? | Sonnet builder | 2026-11-13 |
 | ja-0308 | ja-hiragana-marks | Judgement call: the broad IPA of っ, ッ and ー is written ː (length) since they have no sound of their own; is that right? | Sonnet builder | 2026-11-13 |
+| unit-level | ja-grammar-relative-clauses (ja-9340 to ja-9351) | Are the relative-clause sentences natural (きのうかったほん, ははがつくったりょうり, ともだちがすきなえいが), and is it right that a clause may hold a place with で and still describe the head noun? | Sonnet builder | 2026-11-15 |
+| ja-9348 | ja-grammar-relative-clauses-sentences | Is ひと (a person) in おさけをのまないひとはおちゃがすきです natural as a general "a person who", or should it be ひとびと or a named person? | Sonnet builder | 2026-11-15 |
+| ja-9100 | ja-grammar-conjunctions | Is そして (soshite) with the meaning 'and then; and so' the natural word for a sequence of events, and is the note's contrast with でも (demo) right? | Haiku builder | 2026-11-15 |
+| ja-9106 | ja-grammar-conjunctions | Is ところで (tokorode) natural as 'by the way' at the start of a new topic in these examples? | Haiku builder | 2026-11-15 |
+| ja-9108 | ja-grammar-conjunctions | Are じゃあ (jaa) and それなら (sorenara) both natural as 'well then' and 'in that case', and do the two notes keep them apart? | Haiku builder | 2026-11-15 |
+| ja-9105 | ja-grammar-conjunctions | Is それとも (soretomo) used only in questions, as its note says, and is the question example natural? | Haiku builder | 2026-11-15 |
+| ja-9124 | ja-grammar-conjunctions-sentences | Is いきますか。それとも、ねますか。 natural as a question offering two plans? | Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-conjunctions | This conjunctions unit is a vocabulary core with a set card (as bn-grammar-conjunctions), not a rules core: conjunctions do not inflect, so no rules table has rows for them. Is that right? | Haiku builder | 2026-11-15 |
+| ja-8156 | ja-society | Is ろうじん (roujin) a natural plain word for an elderly person in these two examples, or is こうれいしゃ (koureisha) the word a learner should meet first? | Haiku builder | 2026-11-15 |
+| ja-8193 | ja-society | Is ろうご (rougo) distinct enough from こうれい (kourei) to be taught as its own card in this unit (old age as a time, against an advanced age)? | Haiku builder | 2026-11-15 |
+| ja-8194 | ja-society | Is the sense 'advanced age' right for こうれい (kourei), and are its two examples natural? | Haiku builder | 2026-11-15 |
+| ja-8185 | ja-society | Is the note on じんしゅ (jinshu) (a term to use with care) the right wording for a learner, and is the example on dividing people by race natural? | Haiku builder | 2026-11-15 |
+| ja-8183 | ja-society | Are the examples for せいべつ (seibetsu) natural, and is 'gender; sex' the right gloss for a card that names a person's sex on forms? | Haiku builder | 2026-11-15 |
+| ja-8490 | ja-food-culture | Is こってり (kotteri) natural as a bare predicate ("Ramen is rich" with です), or should the example use a different form? | Haiku builder | 2026-11-15 |
+| ja-8491 | ja-food-culture | Is あっさり (assari) natural as a bare predicate with です ("Boiled tofu is light"), or should the example use a different form? | Haiku builder | 2026-11-15 |
+| ja-8489 | ja-food-culture | Is 'savoury; aromatic' the right gloss for こうばしい (koubashii), and are its two examples natural? | Haiku builder | 2026-11-15 |
+| ja-8483 | ja-food-culture | Is 'season (of food)' the right gloss for しゅん (shun), and is 'fish in season' a natural example? | Haiku builder | 2026-11-15 |
+| ja-8465 | ja-food-culture | The note on しょうじんりょうり (shoujin ryouri) says it is the vegetarian food of Buddhist temples; is the first example natural for a learner? | Haiku builder | 2026-11-15 |
+| ja-2945 | ja-grammar-keigo-kenjougo | Is うかがいます (ukagaimasu) the right humble form for おとずれる (otozureru), to visit, or is a regular おとずれします odd but still said? | Haiku builder | 2026-11-15 |
+| ja-1719 | ja-grammar-keigo-kenjougo | Is おしはらいします (oshiharaishimasu) a natural humble form of はらう (harau), to pay, in a shop or office? | Haiku builder | 2026-11-15 |
+| ja-9405 | ja-grammar-keigo-sonkeigo-sentences | For べんきょうする (benkyou suru), is ごべんきょう (gobenkyou) or おべんきょう (obenkyou) the right honorific prefix before なさいます (nasaimasu)? | Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-keigo-sonkeigo | Sonkeigo policy: a verb gets a row only if お plus its stem plus になります (o ... ni narimasu) is natural, with お doubled for お-initial verbs (おおぎないになります); every other verb is in `except`. Are the 23 added rows natural, and is the doubled お form said? | Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-keigo-sonkeigo, ja-grammar-keigo-kenjougo | The 54 new verbs of the units wave (ja-8028, ja-8038, ja-8039, ja-8487, ja-8750 to ja-8799) are in the keigo kenjougo table's `except` (and 31 in sonkeigo's): should any of them get a humble or honorific row? | Haiku builder | 2026-11-15 |
+| ja-5183 | ja-kanji-5 | 園: no example: the only candidate その is the demonstrative; 公園 needs 公 first taught in kanji 6 | Sonnet builder | 2026-11-15 |
+| ja-7171 | ja-kanji-38 | 遺: no example: 遺す's kun reading is not in the card's table | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-1 | no example: no taught word uses this kanji: ja-1253, ja-1254, ja-1255, ja-1256, ja-1257, ja-1258, ja-1259 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-2 | no example: no taught word uses this kanji: ja-5002, ja-5004, ja-5008, ja-5010, ja-5013, ja-5014 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-2 | one example: only one taught word uses this kanji: ja-5001, ja-5003, ja-5005, ja-5006, ja-5007, ja-5015, ja-5018, ja-5020, ja-5022 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-3 | no example: no taught word uses this kanji: ja-5075, ja-5076, ja-5078, ja-5080, ja-5081, ja-5082 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-3 | one example: only one taught word uses this kanji: ja-5077, ja-5083 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-4 | no example: no taught word uses this kanji: ja-5125, ja-5127, ja-5134, ja-5137, ja-5140, ja-5142, ja-5143 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-4 | one example: only one taught word uses this kanji: ja-5120, ja-5124, ja-5128, ja-5133, ja-5141 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-5 | no example: no taught word uses this kanji: ja-5180, ja-5181, ja-5182, ja-5186, ja-5190, ja-5191, ja-5194, ja-5201, ja-5203, ja-5204, ja-5206, ja-5207, ja-5209 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-5 | one example: only one taught word uses this kanji: ja-5184, ja-5185, ja-5188, ja-5189, ja-5192, ja-5193, ja-5195, ja-5196, ja-5198, ja-5199, ja-5200, ja-5202, ja-5205, ja-5208, ja-5210, ja-5211 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-6 | no example: no taught word uses this kanji: ja-5242, ja-5243, ja-5245, ja-5246, ja-5247, ja-5252, ja-5255, ja-5256, ja-5257, ja-5260, ja-5262, ja-5266, ja-5267, ja-5269, ja-5271 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-6 | one example: only one taught word uses this kanji: ja-5244, ja-5248, ja-5249, ja-5251, ja-5253, ja-5254, ja-5259, ja-5261, ja-5264 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-7 | no example: no taught word uses this kanji: ja-5300, ja-5302, ja-5305, ja-5319, ja-5322, ja-5325, ja-5331 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-7 | one example: only one taught word uses this kanji: ja-5304, ja-5307, ja-5310, ja-5324 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-8 | no example: no taught word uses this kanji: ja-5361, ja-5364, ja-5366, ja-5375, ja-5379, ja-5381, ja-5385, ja-5387, ja-5390 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-8 | one example: only one taught word uses this kanji: ja-5362, ja-5363, ja-5365, ja-5367, ja-5368, ja-5369, ja-5371, ja-5372, ja-5373, ja-5377, ja-5378, ja-5383, ja-5386, ja-5389, ja-5391 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-9 | no example: no taught word uses this kanji: ja-5424, ja-5440, ja-5441, ja-5442, ja-5444, ja-5445, ja-5446, ja-5449, ja-5450 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-9 | one example: only one taught word uses this kanji: ja-5426, ja-5428 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-10 | no example: no taught word uses this kanji: ja-5480, ja-5481, ja-5482, ja-5483, ja-5484, ja-5485, ja-5487, ja-5488, ja-5490, ja-5493, ja-5494, ja-5495, ja-5497, ja-5498, ja-5501, ja-5503, ja-5504 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-10 | one example: only one taught word uses this kanji: ja-5486, ja-5489, ja-5491, ja-5492, ja-5499 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-11 | no example: no taught word uses this kanji: ja-5543, ja-5544, ja-5546, ja-5547, ja-5548, ja-5550, ja-5553, ja-5557, ja-5558, ja-5559, ja-5560, ja-5561, ja-5562, ja-5563 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-11 | one example: only one taught word uses this kanji: ja-5551 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-12 | no example: no taught word uses this kanji: ja-5604, ja-5606, ja-5607, ja-5609, ja-5611, ja-5612, ja-5613, ja-5615, ja-5616, ja-5622 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-12 | one example: only one taught word uses this kanji: ja-5603, ja-5618 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-13 | no example: no taught word uses this kanji: ja-5662, ja-5664, ja-5665, ja-5668, ja-5674, ja-5675, ja-5676, ja-5677, ja-5681, ja-5682 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-13 | one example: only one taught word uses this kanji: ja-5660, ja-5669, ja-5671, ja-5672, ja-5673, ja-5678, ja-5679, ja-5680, ja-5684 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-14 | no example: no taught word uses this kanji: ja-5721 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-14 | one example: only one taught word uses this kanji: ja-5720, ja-5731, ja-5732, ja-5733, ja-5734 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-15 | no example: no taught word uses this kanji: ja-5780, ja-5785, ja-5786, ja-5787, ja-5790, ja-5793, ja-5795 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-16 | no example: no taught word uses this kanji: ja-5841, ja-5842, ja-5846, ja-5851, ja-5853, ja-5854, ja-5861, ja-5862, ja-5864 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-16 | one example: only one taught word uses this kanji: ja-5847, ja-5855 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-17 | no example: no taught word uses this kanji: ja-5901, ja-5905, ja-5906, ja-5907, ja-5919, ja-5920, ja-5921 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-17 | one example: only one taught word uses this kanji: ja-5903 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-18 | no example: no taught word uses this kanji: ja-5960, ja-5963, ja-5964, ja-5966, ja-5967, ja-5968, ja-5969, ja-5971, ja-5972, ja-5973, ja-5974, ja-5975, ja-5976, ja-5977, ja-5978, ja-5979, ja-5980, ja-5982, ja-5983, ja-5984, ja-5985, ja-5987, ja-5988 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-18 | one example: only one taught word uses this kanji: ja-5961, ja-5965, ja-5981 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-19 | no example: no taught word uses this kanji: ja-6021, ja-6023, ja-6025, ja-6026, ja-6027, ja-6030, ja-6031, ja-6032, ja-6033, ja-6034, ja-6035, ja-6036, ja-6039, ja-6040, ja-6041, ja-6042, ja-6043, ja-6045, ja-6046, ja-6047, ja-6048 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-19 | one example: only one taught word uses this kanji: ja-6020 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-20 | no example: no taught word uses this kanji: ja-6080, ja-6081, ja-6082, ja-6084, ja-6085, ja-6086, ja-6087, ja-6088, ja-6089, ja-6090, ja-6091, ja-6092, ja-6093, ja-6097, ja-6098, ja-6099, ja-6100, ja-6102, ja-6106, ja-6107 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-20 | one example: only one taught word uses this kanji: ja-6083, ja-6094, ja-6096, ja-6101, ja-6103, ja-6105 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-21 | no example: no taught word uses this kanji: ja-6142, ja-6143, ja-6144, ja-6145, ja-6148, ja-6149, ja-6150, ja-6152, ja-6157, ja-6161, ja-6162 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-21 | one example: only one taught word uses this kanji: ja-6140, ja-6146, ja-6153, ja-6154, ja-6155, ja-6156, ja-6160, ja-6164, ja-6165 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-22 | no example: no taught word uses this kanji: ja-6201, ja-6202, ja-6203, ja-6204, ja-6206, ja-6207, ja-6208, ja-6209, ja-6210, ja-6211, ja-6212, ja-6213, ja-6214, ja-6215, ja-6216, ja-6218, ja-6220, ja-6222, ja-6223, ja-6224, ja-6225 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-22 | one example: only one taught word uses this kanji: ja-6200, ja-6217, ja-6221, ja-6227 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-23 | no example: no taught word uses this kanji: ja-6260, ja-6262, ja-6266, ja-6270, ja-6273, ja-6274, ja-6278, ja-6279, ja-6283, ja-6286, ja-6287, ja-6288 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-23 | one example: only one taught word uses this kanji: ja-6261, ja-6263, ja-6268, ja-6271, ja-6272, ja-6276, ja-6277, ja-6280, ja-6282, ja-6284, ja-6285 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-24 | no example: no taught word uses this kanji: ja-6321, ja-6324, ja-6325, ja-6326, ja-6330, ja-6331, ja-6333, ja-6337, ja-6339, ja-6342, ja-6345 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-24 | one example: only one taught word uses this kanji: ja-6320, ja-6322, ja-6323, ja-6327, ja-6328, ja-6329, ja-6332, ja-6335, ja-6343, ja-6344 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-25 | no example: no taught word uses this kanji: ja-6380, ja-6382, ja-6385, ja-6386, ja-6388, ja-6392, ja-6393, ja-6394, ja-6395, ja-6396, ja-6397, ja-6399, ja-6400, ja-6402, ja-6405, ja-6406, ja-6407 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-25 | one example: only one taught word uses this kanji: ja-6381, ja-6383, ja-6384, ja-6387, ja-6389, ja-6391, ja-6401, ja-6403, ja-6404 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-26 | no example: no taught word uses this kanji: ja-6440, ja-6441, ja-6442, ja-6443, ja-6444, ja-6445, ja-6446, ja-6448, ja-6452, ja-6454, ja-6455, ja-6456, ja-6457, ja-6460, ja-6463, ja-6464, ja-6466, ja-6467 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-26 | one example: only one taught word uses this kanji: ja-6447, ja-6450, ja-6451, ja-6453, ja-6458, ja-6459, ja-6461, ja-6462, ja-6465 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-27 | no example: no taught word uses this kanji: ja-6501, ja-6502, ja-6503, ja-6509, ja-6511, ja-6512, ja-6514, ja-6516, ja-6521, ja-6522, ja-6524, ja-6525 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-27 | one example: only one taught word uses this kanji: ja-6500, ja-6505, ja-6506, ja-6507, ja-6513, ja-6515, ja-6517, ja-6518, ja-6519, ja-6520, ja-6523, ja-6526, ja-6527 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-28 | no example: no taught word uses this kanji: ja-6560, ja-6565, ja-6566, ja-6569, ja-6574, ja-6575, ja-6580, ja-6582 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-28 | one example: only one taught word uses this kanji: ja-6561, ja-6562, ja-6567, ja-6571, ja-6572, ja-6573, ja-6576, ja-6578, ja-6579, ja-6581, ja-6583, ja-6584, ja-6585, ja-6587 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-29 | no example: no taught word uses this kanji: ja-6620, ja-6623, ja-6629, ja-6638, ja-6640, ja-6642, ja-6643 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-29 | one example: only one taught word uses this kanji: ja-6622, ja-6630, ja-6631, ja-6633, ja-6634, ja-6635, ja-6637, ja-6641, ja-6645, ja-6647 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-30 | no example: no taught word uses this kanji: ja-6680, ja-6685, ja-6686, ja-6687, ja-6691, ja-6694, ja-6700, ja-6701, ja-6702, ja-6705 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-30 | one example: only one taught word uses this kanji: ja-6681, ja-6683, ja-6684, ja-6689, ja-6692, ja-6693, ja-6695, ja-6696, ja-6698, ja-6703, ja-6706, ja-6707 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-31 | no example: no taught word uses this kanji: ja-6740, ja-6741, ja-6744, ja-6745, ja-6750, ja-6751, ja-6755, ja-6760, ja-6762 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-31 | one example: only one taught word uses this kanji: ja-6743, ja-6749, ja-6753, ja-6754, ja-6757, ja-6758 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-32 | no example: no taught word uses this kanji: ja-6800, ja-6801, ja-6802, ja-6804, ja-6806, ja-6808, ja-6809, ja-6810, ja-6811, ja-6812, ja-6814, ja-6815, ja-6816, ja-6818, ja-6820, ja-6821, ja-6822, ja-6823 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-32 | one example: only one taught word uses this kanji: ja-6819, ja-6825 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-33 | no example: no taught word uses this kanji: ja-6860, ja-6862, ja-6872, ja-6875, ja-6877, ja-6878, ja-6879, ja-6880, ja-6882, ja-6883, ja-6884 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-33 | one example: only one taught word uses this kanji: ja-6863, ja-6864, ja-6865, ja-6866, ja-6867, ja-6873, ja-6874, ja-6876, ja-6885 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-34 | no example: no taught word uses this kanji: ja-6920, ja-6921, ja-6923, ja-6928, ja-6935, ja-6936, ja-6941, ja-6943 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-34 | one example: only one taught word uses this kanji: ja-6922, ja-6924, ja-6926, ja-6930, ja-6933, ja-6937, ja-6939, ja-6940, ja-6944, ja-6946 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-35 | no example: no taught word uses this kanji: ja-6981, ja-6982, ja-6983, ja-6985, ja-6986, ja-6988, ja-6990, ja-6991, ja-6992, ja-6994, ja-6995, ja-6997, ja-6998, ja-7001, ja-7004, ja-7005 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-35 | one example: only one taught word uses this kanji: ja-6984, ja-6989, ja-6999, ja-7000, ja-7002, ja-7003 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-36 | no example: no taught word uses this kanji: ja-7040, ja-7042, ja-7043, ja-7047, ja-7051, ja-7053, ja-7054, ja-7056, ja-7066 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-36 | one example: only one taught word uses this kanji: ja-7041, ja-7044, ja-7045, ja-7049, ja-7057, ja-7059, ja-7061, ja-7063, ja-7065 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-37 | no example: no taught word uses this kanji: ja-7100, ja-7101, ja-7106, ja-7107, ja-7109, ja-7110, ja-7114, ja-7117, ja-7119, ja-7122, ja-7125 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-37 | one example: only one taught word uses this kanji: ja-7102, ja-7103, ja-7112, ja-7113, ja-7121, ja-7124 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-38 | no example: no taught word uses this kanji: ja-7165, ja-7166, ja-7170, ja-7172, ja-7173, ja-7175, ja-7178, ja-7179, ja-7185 | Sonnet builder | 2026-11-15 |
+| unit-level | ja-kanji-38 | one example: only one taught word uses this kanji: ja-7160, ja-7161, ja-7163, ja-7168, ja-7174, ja-7176, ja-7177, ja-7181, ja-7182, ja-7184, ja-7186, ja-7187 | Sonnet builder | 2026-11-15 |
+| ja-8022 | ja-money | Is びんぼうをなくします (we will end poverty) natural Japanese? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8028 | ja-money | Is みせでねぎります natural for haggling with a shop? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8036 | ja-money | Is ねびきをおねがいします natural for asking a shop for a discount? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8054 | ja-money-sentences | Is むりょうのおちゃがあります (there is free tea) natural Japanese? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-money | Are the 45 words of ja-money the right first money list? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8308 | ja-university | Are the glosses of がくひ and じゅぎょうりょう (ja-8310) right, and do they stay distinct? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8345 | ja-university | Is the title sense of はかせ right for a learner card? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8315 | ja-university | Is the German etymology note on ゼミ right, and is it needed on the card? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8346 | ja-university | Is the course length note on しゅうし right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8317 | ja-university | Is the note on じっけん right and natural for a learner? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-university | Are the particle readings in the table cells (wa, e, o) right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8648 | ja-literature | Is the gloss of ひょうろん right, and is it kept apart from ひょうろんか (ja-8649)? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8649 | ja-literature | Is the gloss of ひょうろんか right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8632 | ja-literature | Is the gloss of こてん right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8610 | ja-literature | Is the gloss of ぶん right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8646 | ja-literature | Is the gloss of わか right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8645 | ja-literature | Is the gloss of かんし right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8623 | ja-literature | Are the glosses げんぶん and やくぶん right, and is the pair kept apart? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-literature | The deck reads を as o while the romanisation scheme text says wo: which should the card show? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-literature | Passage ids in the path do not match the reading deck ids: which should the passages keep? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8789 | ja-verbs-5 | Is the usage note on きわめる natural and right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8797 | ja-verbs-5 | Is the usage note on さずける natural and right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8799 | ja-verbs-5 | Is the usage note on しいる natural and right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8772 | ja-verbs-5 | Is the usage note on もうける natural and right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8794 | ja-verbs-5 | Is the usage note on こす natural and right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8788 | ja-verbs-5 | Is the usage note on きずく natural and right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8790 | ja-verbs-5 | Is the usage note on くいる natural and right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8786 | ja-verbs-5 | Is the usage note on おびる natural and right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8775 | ja-verbs-5 | Is the usage note on もよおす natural and right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8792 | ja-verbs-5 | Is the usage note on くらう natural, and is its blunt register right for a learner? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8763 | ja-verbs-5 | The humble use of まいる has no register note: should one be added, and is the usage note natural? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-verbs-5 | The second reading passage was written by the builder, not taken from the path: is it natural and right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8948 | ja-abstract-words | Is the part of speech of いっぱん right: noun or na-adjective? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8954 | ja-abstract-words | Is the adjective part of speech of かのう right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8953 | ja-abstract-words | Is the adjective part of speech of ふかのう right? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-abstract-words | The second passage of the reading deck is not a path passage: should it stay? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-abstract-words | Many targets are kana although the kanji units come before this one: should they be kanji under ADR-0053? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-likes-sentences | Are spaced cell readings accepted in this unit's tables? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-likes-sentences | Is the register of じょうず and へた right, and is it different from とくい and にがて? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-9224 | ja-grammar-likes-sentences | Is the wording of ちちはりょうりがへたです right: is へた natural for being bad at cooking? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-9226 | ja-grammar-likes-sentences | Is the wording of わたしはえいごがにがてです right: is にがて natural for being bad at English? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-conjunctions | Is the きます in an example, which the note says comes from きる and くる, right? The card cited for it, ja-9109, is それなら. | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-adjective-past | Plain だ is introduced here before any unit teaches it: should it be taught here? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-adjective-past | Are よくありませんでした and よくなかったです both right, and which should come first? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-adjective-past | Is the order じゃ and では right in these sentences? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-adjective-past | Is かっこよくなかった natural for "was not cool"? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-adjective-past | Are the すき and きらい prompts natural? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-comparison-sentences | Are the どちらがいい and どちらがすき cells natural? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-comparison-sentences | Is これよりすき natural? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-comparison-sentences | Is the elliptical 'which' cell with より right? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-0664 | ja-demonstratives | どれ is on ja-0664 and on ja-0116 (ja-questions): should one of the two cards go? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-keigo-sonkeigo | Are these borderline お...になります verbs right to keep: わかる, きこえる, かんじる, つかれる, さわる, とる, もつ, わたる, すすむ, おどろく and よろこぶ? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-0344 | ja-everyday-verbs | Is おききします the right humble form for きく? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-0348 | ja-everyday-verbs | くる and いく both give まいります here (ja-0349 shares the form): should they be shown apart? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-0366 | ja-everyday-verbs | Is ぞんじております the right humble form for しる? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-0357 | ja-everyday-verbs | Is おめにかかります the right humble form for あう? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-0341 | ja-everyday-verbs | いただきます is given for ja-0341, ja-0342 and ja-0599 (ja-more-verbs): should the three share one form? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-9467 | ja-grammar-keigo-kenjougo-sentences | Is せんせいにおききします natural? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-9462 | ja-grammar-keigo-kenjougo-sentences | Is あしたうかがいます natural? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-transitivity | Is the gloss 'to cure' for なおす right? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-transitivity | Is the sentence みずがふえました natural? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-8039 | ja-money | Is ためる paired correctly with たまる as a transitive and intransitive pair? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-transitivity | The pairs つく/つける, かわる/かえる and とまる/とめる were dropped: should they be restored? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-9588 | ja-grammar-teineigo-sentences | In this shop sentence, is いま right, or is the shop idiom ただいま used? | Sonnet/Haiku builder | 2026-11-15 |
+| ja-9580 | ja-grammar-teineigo-sentences | Is ちかくでございます right, or should ちかくにございます be used? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-teineigo | Is teineigo a closed set? It overlaps kenjougo: where is the line between them? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | all kanji units (retrofit) | Second examples that reuse a card's first word were removed under the rule: is the rule right, and are the rest acceptable? | Sonnet/Haiku builder | 2026-11-15 |
+| unit-level | all kanji units (retrofit) | Which template-like example sentences should be rewritten, e.g. 犬は可愛らしいです (the builder reports it removed, but it is still in ja-kanji-25 on decks-live)? | Sonnet/Haiku builder | 2026-11-15 |

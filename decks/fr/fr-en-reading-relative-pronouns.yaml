@@ -1,0 +1,79 @@
+schema: 1
+id: "fr-en-reading-relative-pronouns"
+name: "Reading: who and that: relative pronouns qui and que, and où"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts that describe people and places with qui, que and où, the kind of sentence that joins two ideas about one thing. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-the-man-who-came"
+    title: "The man who came"
+    theme: "daily-life"
+    sentences:
+      - text: "Le voisin qui travaille ici est gentil."
+        ipa: "lə vwazɛ̃ ki tʁavaj isi ɛ ʒɑ̃ti"
+      - text: "Le chat que je cherche dort."
+        ipa: "lə ʃa kə ʒə ʃɛʁʃ dɔʁ"
+      - text: "L'ami que j'attends arrive."
+        ipa: "lami kə ʒatɑ̃ aʁiv"
+      - text: "Le café que je bois est chaud."
+        ipa: "lə kafe kə ʒə bwa ɛ ʃo"
+    questions:
+      - id: "fr-3930"
+        prompt: { en: "Who works here?" }
+        options:
+          - { en: "The neighbour" }
+          - { en: "The friend" }
+          - { en: "The teacher" }
+        answer: 1
+      - id: "fr-3931"
+        prompt: { en: "Who is the speaker waiting for?" }
+        options:
+          - { en: "The cat" }
+          - { en: "The friend" }
+          - { en: "The neighbour" }
+        answer: 2
+      - id: "fr-3932"
+        prompt: { en: "What is hot?" }
+        options:
+          - { en: "The cat" }
+          - { en: "The house" }
+          - { en: "The coffee" }
+        answer: 3
+  - id: "fr-shop-reviews"
+    title: "Shop reviews"
+    theme: "shopping"
+    sentences:
+      - text: "C'est le magasin où j'achète mon pain."
+        ipa: "sɛ lə magazɛ̃ u ʒaʃɛt mɔ̃ pɛ̃"
+      - text: "La femme qui travaille ici est très gentille."
+        ipa: "la fam ki tʁavaj isi ɛ tʁɛ ʒɑ̃tij"
+      - text: "Le pain que j'achète est très bon."
+        ipa: "lə pɛ̃ kə ʒaʃɛt ɛ tʁɛ bɔ̃"
+      - text: "Le magasin est près de la gare."
+        ipa: "lə magazɛ̃ ɛ pʁɛ də la ɡaʁ"
+    questions:
+      - id: "fr-3933"
+        prompt: { en: "What does the shop sell?" }
+        options:
+          - { en: "Bread" }
+          - { en: "Shoes" }
+          - { en: "Phones" }
+        answer: 1
+      - id: "fr-3934"
+        prompt: { en: "What is said about the woman who works there?" }
+        options:
+          - { en: "She is late" }
+          - { en: "She is kind" }
+          - { en: "She is ill" }
+        answer: 2
+      - id: "fr-3935"
+        prompt: { en: "What is the bread like?" }
+        options:
+          - { en: "Cold" }
+          - { en: "Expensive" }
+          - { en: "Very good" }
+        answer: 3

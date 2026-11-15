@@ -38,6 +38,11 @@ cards:
         words: ["昨日", "は", "やすみました"]
         reading: "kinou wa yasumimashita."
         ipa: "kinoː wa jasɯmimaɕita"
+      - target: "一昨日はあめでした。"
+        target_scripts: { kana: "おとといはあめでした。" }
+        words: ["一昨日", "は", "あめ", "でした"]
+        reading: "ototoi wa ame deshita."
+        ipa: "ototoi wa ame deɕita"
   - id: "ja-6142"
     target: "栃"
     target_scripts: { kana: "とちぎ" }
@@ -161,6 +166,11 @@ cards:
         words: ["飛行場", "は", "ひろい", "です"]
         reading: "hikoujou wa hiroi desu."
         ipa: "çikoːdʑoː wa çiɾoi desɯ"
+      - target: "鳥は飛びます。"
+        target_scripts: { kana: "とりはとびます。" }
+        words: ["鳥", "は", "飛びます"]
+        reading: "tori wa tobimasu."
+        ipa: "toɾi wa tobimasɯ"
   - id: "ja-6152"
     target: "香"
     target_scripts: { kana: "かおり" }
@@ -255,6 +265,17 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "交差点はあそこです。"
+        target_scripts: { kana: "こうさてんはあそこです。" }
+        words: ["交差点", "は", "あそこ", "です"]
+        reading: "kousaten wa asoko desu."
+        ipa: "koːsateɴ wa asoko desɯ"
+      - target: "日差しがつよいです。"
+        target_scripts: { kana: "ひざしがつよいです。" }
+        words: ["日差し", "が", "つよい", "です"]
+        reading: "hizashi ga tsuyoi desu."
+        ipa: "çidzaɕi ɡa tsɯjoi desɯ"
   - id: "ja-6159"
     target: "席"
     target_scripts: { kana: "せき" }
@@ -265,6 +286,17 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "自由席はあそこです。"
+        target_scripts: { kana: "じゆうせきはあそこです。" }
+        words: ["自由席", "は", "あそこ", "です"]
+        reading: "jiyuuseki wa asoko desu."
+        ipa: "dʑijɯːseki wa asoko desɯ"
+      - target: "指定席はたかいです。"
+        target_scripts: { kana: "していせきはたかいです。" }
+        words: ["指定席", "は", "たかい", "です"]
+        reading: "shiteiseki wa takai desu."
+        ipa: "ɕiteːseki wa takai desɯ"
   - id: "ja-6160"
     target: "帯"
     target_scripts: { kana: "おび" }
@@ -275,6 +307,12 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
+    examples:
+      - target: "包帯をします。"
+        target_scripts: { kana: "ほうたいをします。" }
+        words: ["包帯", "を", "します"]
+        reading: "houtai o shimasu."
+        ipa: "hoːtai o ɕimasɯ"
   - id: "ja-6161"
     target: "徒"
     target_scripts: { kana: "せいと" }
@@ -385,6 +423,11 @@ cards:
         words: ["浴衣", "は", "きれい", "です"]
         reading: "yukata wa kirei desu."
         ipa: "jɯkata wa kiɾeː desɯ"
+      - target: "シャワーを浴びます。"
+        target_scripts: { kana: "シャワーをあびます。" }
+        words: ["シャワー", "を", "浴びます"]
+        reading: "shawaa o abimasu."
+        ipa: "ɕawaː o abimasɯ"
   - id: "ja-6168"
     target: "特"
     target_scripts: { kana: "とくべつ" }

@@ -1,0 +1,134 @@
+schema: 1
+id: "ja-en-grammar-likes-sentences"
+kind: "layer"
+core: "ja-grammar-likes-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Likes and skills in sentences"
+description: "Sentences about what people like and what they are good or poor at, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-9220":
+    native: "I like music."
+    notes:
+      "n1": "The thing you like takes が (ga), not を (o): おんがくがすきです (ongaku ga suki desu). は (wa) marks the person, and が (ga) marks what is liked."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "が": { meaning: "(marks the thing liked, or the skill)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "きらい (kirai) means dislike, the opposite of すき (suki)." }
+      w2: { why: "じょうず (jouzu) means good at; skilled." }
+  "ja-9221":
+    native: "Do you like cooking?"
+    notes:
+      "n1": "か (ka) at the end makes the question and the order stays the same: りょうりがすきですか (ryouri ga suki desu ka). A common answer is はい (hai), すきです (suki desu)."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "が": { meaning: "(marks the thing liked, or the skill)" }
+      "です": { meaning: "is (polite)" }
+      "か": { meaning: "(marks a question)" }
+    confusables:
+      w1: { why: "きらい (kirai) means dislike, the opposite of すき (suki)." }
+      w2: { why: "へた (heta) means poor at, the opposite of じょうず (jouzu)." }
+  "ja-9222":
+    native: "I dislike baseball."
+    notes:
+      "n1": "きらい (kirai) is strong. To say it more gently, use あまりすきではありません (amari suki de wa arimasen), I do not like it very much."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "が": { meaning: "(marks the thing liked, or the skill)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "すき (suki) means like, the opposite of きらい (kirai)." }
+      w2: { why: "へた (heta) means poor at, the opposite of じょうず (jouzu)." }
+  "ja-9223":
+    native: "My older sister is good at singing."
+    notes:
+      "n1": "じょうず (jouzu) praises how well someone does something. Say it of other people; about yourself, とくい (tokui) is more modest."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "が": { meaning: "(marks the thing liked, or the skill)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "へた (heta) means poor at, the opposite of じょうず (jouzu)." }
+      w2: { why: "とくい (tokui) means good at, as a strong point." }
+  "ja-9224":
+    native: "My father is poor at cooking."
+    notes:
+      "n1": "へた (heta) is blunt, so it is used of yourself or of family, and rarely to someone's face."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "が": { meaning: "(marks the thing liked, or the skill)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "じょうず (jouzu) means good at; skilled." }
+      w2: { why: "にがて (nigate) means not good at, as a weak point." }
+  "ja-9225":
+    native: "My older brother is good at swimming."
+    notes:
+      "n1": "とくい (tokui) names a strong point, something a person is confident at. It is a gentler way to say you are good at it."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "が": { meaning: "(marks the thing liked, or the skill)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "じょうず (jouzu) means good at; skilled." }
+      w2: { why: "にがて (nigate) means not good at, as a weak point." }
+  "ja-9226":
+    native: "I am not good at English."
+    notes:
+      "n1": "にがて (nigate) says something is a weak point, not that you dislike it: えいごがにがてです (eigo ga nigate desu) is not the same as えいごがきらいです (eigo ga kirai desu)."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "が": { meaning: "(marks the thing liked, or the skill)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "きらい (kirai) means dislike, the opposite of すき (suki)." }
+      w2: { why: "へた (heta) means poor at, the opposite of じょうず (jouzu)." }
+  "ja-9227":
+    native: "My friend does not like fish."
+    notes:
+      "n1": "The negative of すき (suki) is すきではありません (suki de wa arimasen). It says that the person does not like it, and it is softer than きらい (kirai)."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "が": { meaning: "(marks the thing liked, or the skill)" }
+      "で": { meaning: "(marks where or how; also part of ではありません (de wa arimasen))" }
+      "ありません": { meaning: "to be (of things); to exist" }
+    confusables:
+      w1: { why: "きらい (kirai) means dislike, the opposite of すき (suki)." }
+      w2: { why: "にがて (nigate) means not good at, as a weak point." }
+  "ja-9228":
+    native: "I am not very good at singing."
+    notes:
+      "n1": "あまり (amari), not very, goes before the describing word and is used with a negative: あまりじょうずではありません (amari jouzu de wa arimasen)."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "が": { meaning: "(marks the thing liked, or the skill)" }
+      "で": { meaning: "(marks where or how; also part of ではありません (de wa arimasen))" }
+      "ありません": { meaning: "to be (of things); to exist" }
+    confusables:
+      w1: { why: "へた (heta) means poor at, the opposite of じょうず (jouzu)." }
+      w2: { why: "とくい (tokui) means good at, as a strong point." }
+  "ja-9229":
+    native: "She is very good at dancing."
+    notes:
+      "n1": "とても (totemo), very, goes before the describing word: とてもじょうずです (totemo jouzu desu)."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "が": { meaning: "(marks the thing liked, or the skill)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "へた (heta) means poor at, the opposite of じょうず (jouzu)." }
+      w2: { why: "にがて (nigate) means not good at, as a weak point." }
+  "ja-9230":
+    native: "What do you like?"
+    notes:
+      "n1": "Ask what someone likes with なに (nani) and が (ga): なにがすきですか (nani ga suki desu ka). The answer uses the same pattern: おんがくがすきです (ongaku ga suki desu)."
+    bases:
+      "が": { meaning: "(marks the thing liked, or the skill)" }
+      "です": { meaning: "is (polite)" }
+      "か": { meaning: "(marks a question)" }
+    confusables:
+      w1: { why: "きらい (kirai) means dislike, the opposite of すき (suki)." }
+      w2: { why: "じょうず (jouzu) means good at; skilled." }

@@ -1,0 +1,17 @@
+schema: 1
+id: "ja-en-grammar-keigo-kenjougo"
+kind: "layer"
+core: "ja-grammar-keigo-kenjougo"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Humble speech: kenjougo"
+description: "Humble speech lowers the speaker's own side to show respect to the listener. Only verbs with a standard humble form are drilled; the others are left out of the table. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "humble": "humble form of: {meaning}"
+rules:
+  "ja-rule-kenjougo":
+    name: "The humble form (kenjougo)"
+    explanation: "Humble speech lowers your own side, to show respect to the person you speak to. Most verbs take お (o) before the polite stem and します (shimasu) after it: waiting becomes {1}. Some verbs have a humble form of their own: going and coming become {2}, eating and drinking become {3}, seeing becomes {4}, doing becomes {5} and giving becomes {6}. Knowing becomes {7}, listening or asking becomes {8}, and visiting becomes {9}."

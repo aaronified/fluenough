@@ -1,0 +1,79 @@
+schema: 1
+id: "fr-en-reading-passe-compose-avoir"
+name: "Reading: the perfect tense with avoir (passé composé)"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts, one heard and one read, using the perfect tense with avoir (passé composé) with the words taught up to this unit. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-what-i-did-yesterday"
+    title: "What I did yesterday"
+    theme: "daily-life"
+    sentences:
+      - text: "Hier, j'ai mangé à midi."
+        ipa: "jɛʁ ʒe mɑ̃ʒe a midi"
+      - text: "Tu as parlé à ta mère ?"
+        ipa: "ty a paʁle a ta mɛʁ"
+      - text: "Il a fini le travail."
+        ipa: "il a fini lə tʁavaj"
+      - text: "Nous avons perdu le bus."
+        ipa: "nu zavɔ̃ pɛʁdy lə bys"
+    questions:
+      - id: "fr-3820"
+        prompt: { en: "When did the speaker eat?" }
+        options:
+          - { en: "Tomorrow at noon" }
+          - { en: "Yesterday at noon" }
+          - { en: "Yesterday at night" }
+        answer: 2
+      - id: "fr-3821"
+        prompt: { en: "Who did 'you' talk to?" }
+        options:
+          - { en: "A friend" }
+          - { en: "Your mother" }
+          - { en: "The doctor" }
+        answer: 2
+      - id: "fr-3822"
+        prompt: { en: "What did he finish?" }
+        options:
+          - { en: "The meal" }
+          - { en: "The bread" }
+          - { en: "The work" }
+        answer: 3
+  - id: "fr-yesterday-diary"
+    title: "Yesterday's diary"
+    theme: "time"
+    sentences:
+      - text: "Hier, j'ai parlé toute la journée."
+        ipa: "jɛʁ ʒe paʁle tut la ʒuʁne"
+      - text: "Le soir, j'ai mangé avec mon amie."
+        ipa: "lə swaʁ ʒe mɑ̃ʒe avɛk mɔ̃n ami"
+      - text: "Nous avons fini à dix heures."
+        ipa: "nu zavɔ̃ fini a di zœʁ"
+      - text: "Ils ont attendu le bus."
+        ipa: "il zɔ̃ atɑ̃dy lə bys"
+    questions:
+      - id: "fr-3823"
+        prompt: { en: "How long did the speaker talk?" }
+        options:
+          - { en: "All day" }
+          - { en: "One hour" }
+          - { en: "Not at all" }
+        answer: 1
+      - id: "fr-3824"
+        prompt: { en: "Who did the speaker eat with?" }
+        options:
+          - { en: "Alone" }
+          - { en: "With a friend" }
+          - { en: "With the family" }
+        answer: 2
+      - id: "fr-3825"
+        prompt: { en: "When did 'we' finish?" }
+        options:
+          - { en: "At noon" }
+          - { en: "At ten" }
+          - { en: "At midnight" }
+        answer: 2

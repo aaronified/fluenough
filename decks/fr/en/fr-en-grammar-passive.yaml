@@ -1,0 +1,22 @@
+schema: 1
+id: "fr-en-grammar-passive"
+kind: "layer"
+core: "fr-grammar-passive"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The passive: the action happens to the subject"
+license: "CC-BY-SA-4.0"
+description: "The passive is être plus a past participle, with par for who does it: la porte est fermée par mon frère. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "The passive voice"
+  slot_name: "voice"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "active": "the active: the subject does the action", "passive": "the passive: the subject receives the action" }
+  entries:
+    "fermer": "to close"
+    "ecrire": "to write"
+    "preparer": "to prepare"
+    "vendre": "to sell"
+    "organiser": "to organise"
+    "publier": "to publish"
+    "inviter": "to invite"
+  notes: "In an active sentence the subject does the action (mon frère ferme la porte). In the passive, what received the action becomes the subject: la porte est fermée par mon frère. The passive is made with être, in the tense you need, plus the past participle, and the participle agrees with the new subject like an adjective: la porte est fermée, les livres sont vendus, la fête est organisée. The person or thing that does the action, if you say it, follows par. Often it is left out: la porte est fermée simply says the door is closed. The old object becomes the subject, so only a verb that takes a direct object can be made passive. The passive is common in writing, in the news and on notices; in speech, French often prefers on or an active sentence, as the next topic shows."

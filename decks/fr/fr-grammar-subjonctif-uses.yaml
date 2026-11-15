@@ -1,0 +1,61 @@
+schema: 1
+id: "fr-grammar-subjonctif-uses"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["trigger", "sentence"]
+  entries:
+    - lemma: "falloir"
+      ipa: "falwaʁ"
+      forms:
+        "trigger": "il faut que"
+        "sentence": "il faut que tu partes"
+    - lemma: "vouloir"
+      ipa: "vulwaʁ"
+      forms:
+        "trigger": "je veux que"
+        "sentence": "je veux que tu viennes"
+    - lemma: "avoir peur"
+      key: "avoir-peur"
+      ipa: "avwaʁ pœʁ"
+      forms:
+        "trigger": "j'ai peur que"
+        "sentence": "j'ai peur qu'il pleuve"
+    - lemma: "être content"
+      key: "etre-content"
+      ipa: "ɛtʁ kɔ̃tɑ̃"
+      forms:
+        "trigger": "je suis content que"
+        "sentence": "je suis content que tu sois là"
+    - lemma: "bien que"
+      key: "bien-que"
+      ipa: "bjɛ̃ kə"
+      forms:
+        "trigger": "bien que"
+        "sentence": "bien qu'il pleuve, nous sortons"
+    - lemma: "pour que"
+      key: "pour-que"
+      ipa: "puʁ kə"
+      forms:
+        "trigger": "pour que"
+        "sentence": "j'écris pour que tu comprennes"
+    - lemma: "avant que"
+      key: "avant-que"
+      ipa: "avɑ̃ kə"
+      forms:
+        "trigger": "avant que"
+        "sentence": "appelle-moi avant que tu partes"
+    - lemma: "penser"
+      ipa: "pɑ̃se"
+      forms:
+        "trigger": "je pense que"
+        "sentence": "je pense qu'il vient"
+    - lemma: "espérer"
+      key: "esperer"
+      ipa: "ɛspeʁe"
+      forms:
+        "trigger": "j'espère que"
+        "sentence": "j'espère qu'il vient"

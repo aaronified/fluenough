@@ -1,0 +1,140 @@
+schema: 1
+id: "fr-grammar-passe-compose-etre"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["je-m", "je-f", "tu-m", "tu-f", "il", "elle", "nous", "vous", "ils", "elles"]
+  entries:
+    - lemma: "aller"
+      ipa: "ale"
+      forms:
+        "je-m": "je suis allé"
+        "je-f": "je suis allée"
+        "tu-m": "tu es allé"
+        "tu-f": "tu es allée"
+        "il": "il est allé"
+        "elle": "elle est allée"
+        "nous": ["nous sommes allés", "nous sommes allées"]
+        "vous": ["vous êtes allé", "vous êtes allée", "vous êtes allés", "vous êtes allées"]
+        "ils": "ils sont allés"
+        "elles": "elles sont allées"
+    - lemma: "venir"
+      ipa: "vəniʁ"
+      forms:
+        "je-m": "je suis venu"
+        "je-f": "je suis venue"
+        "tu-m": "tu es venu"
+        "tu-f": "tu es venue"
+        "il": "il est venu"
+        "elle": "elle est venue"
+        "nous": ["nous sommes venus", "nous sommes venues"]
+        "vous": ["vous êtes venu", "vous êtes venue", "vous êtes venus", "vous êtes venues"]
+        "ils": "ils sont venus"
+        "elles": "elles sont venues"
+    - lemma: "arriver"
+      ipa: "aʁive"
+      forms:
+        "je-m": "je suis arrivé"
+        "je-f": "je suis arrivée"
+        "tu-m": "tu es arrivé"
+        "tu-f": "tu es arrivée"
+        "il": "il est arrivé"
+        "elle": "elle est arrivée"
+        "nous": ["nous sommes arrivés", "nous sommes arrivées"]
+        "vous": ["vous êtes arrivé", "vous êtes arrivée", "vous êtes arrivés", "vous êtes arrivées"]
+        "ils": "ils sont arrivés"
+        "elles": "elles sont arrivées"
+    - lemma: "partir"
+      ipa: "paʁtiʁ"
+      forms:
+        "je-m": "je suis parti"
+        "je-f": "je suis partie"
+        "tu-m": "tu es parti"
+        "tu-f": "tu es partie"
+        "il": "il est parti"
+        "elle": "elle est partie"
+        "nous": ["nous sommes partis", "nous sommes parties"]
+        "vous": ["vous êtes parti", "vous êtes partie", "vous êtes partis", "vous êtes parties"]
+        "ils": "ils sont partis"
+        "elles": "elles sont parties"
+    - lemma: "entrer"
+      ipa: "ɑ̃tʁe"
+      forms:
+        "je-m": "je suis entré"
+        "je-f": "je suis entrée"
+        "tu-m": "tu es entré"
+        "tu-f": "tu es entrée"
+        "il": "il est entré"
+        "elle": "elle est entrée"
+        "nous": ["nous sommes entrés", "nous sommes entrées"]
+        "vous": ["vous êtes entré", "vous êtes entrée", "vous êtes entrés", "vous êtes entrées"]
+        "ils": "ils sont entrés"
+        "elles": "elles sont entrées"
+    - lemma: "sortir"
+      ipa: "sɔʁtiʁ"
+      forms:
+        "je-m": "je suis sorti"
+        "je-f": "je suis sortie"
+        "tu-m": "tu es sorti"
+        "tu-f": "tu es sortie"
+        "il": "il est sorti"
+        "elle": "elle est sortie"
+        "nous": ["nous sommes sortis", "nous sommes sorties"]
+        "vous": ["vous êtes sorti", "vous êtes sortie", "vous êtes sortis", "vous êtes sorties"]
+        "ils": "ils sont sortis"
+        "elles": "elles sont sorties"
+    - lemma: "rester"
+      ipa: "ʁɛste"
+      forms:
+        "je-m": "je suis resté"
+        "je-f": "je suis restée"
+        "tu-m": "tu es resté"
+        "tu-f": "tu es restée"
+        "il": "il est resté"
+        "elle": "elle est restée"
+        "nous": ["nous sommes restés", "nous sommes restées"]
+        "vous": ["vous êtes resté", "vous êtes restée", "vous êtes restés", "vous êtes restées"]
+        "ils": "ils sont restés"
+        "elles": "elles sont restées"
+    - lemma: "tomber"
+      ipa: "tɔ̃be"
+      forms:
+        "je-m": "je suis tombé"
+        "je-f": "je suis tombée"
+        "tu-m": "tu es tombé"
+        "tu-f": "tu es tombée"
+        "il": "il est tombé"
+        "elle": "elle est tombée"
+        "nous": ["nous sommes tombés", "nous sommes tombées"]
+        "vous": ["vous êtes tombé", "vous êtes tombée", "vous êtes tombés", "vous êtes tombées"]
+        "ils": "ils sont tombés"
+        "elles": "elles sont tombées"
+    - lemma: "monter"
+      ipa: "mɔ̃te"
+      forms:
+        "je-m": "je suis monté"
+        "je-f": "je suis montée"
+        "tu-m": "tu es monté"
+        "tu-f": "tu es montée"
+        "il": "il est monté"
+        "elle": "elle est montée"
+        "nous": ["nous sommes montés", "nous sommes montées"]
+        "vous": ["vous êtes monté", "vous êtes montée", "vous êtes montés", "vous êtes montées"]
+        "ils": "ils sont montés"
+        "elles": "elles sont montées"
+    - lemma: "descendre"
+      ipa: "desɑ̃dʁ"
+      forms:
+        "je-m": "je suis descendu"
+        "je-f": "je suis descendue"
+        "tu-m": "tu es descendu"
+        "tu-f": "tu es descendue"
+        "il": "il est descendu"
+        "elle": "elle est descendue"
+        "nous": ["nous sommes descendus", "nous sommes descendues"]
+        "vous": ["vous êtes descendu", "vous êtes descendue", "vous êtes descendus", "vous êtes descendues"]
+        "ils": "ils sont descendus"
+        "elles": "elles sont descendues"

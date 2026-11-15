@@ -1,0 +1,450 @@
+schema: 1
+id: "fr-workplace"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "workplace"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-3640"
+    target: "employeur"
+    ipa: "ɑ̃plwajœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon employeur est très gentil.", ipa: "mɔ̃n ɑ̃plwajœʁ ɛ tʁɛ ʒɑ̃ti", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "employeur", base: "employeur" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "gentil", ref: "fr-0434" }] }
+      - { target: "L'employeur paie le salaire.", ipa: "lɑ̃plwajœʁ pɛ lə salɛʁ", bases: [{ word: "L'employeur", base: "employeur" }, { word: "paie", base: "paie" }, { word: "le", ref: "fr-0543" }, { word: "salaire", ref: "fr-0667" }] }
+  - id: "fr-3641"
+    target: "responsable"
+    ipa: "ʁɛspɔ̃sabl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le responsable arrive à neuf heures.", ipa: "lə ʁɛspɔ̃sabl aʁiv a nœf œʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "responsable", base: "responsable" }, { word: "arrive", base: "arriver" }, { word: "à", base: "à" }, { word: "neuf", ref: "fr-0216" }, { word: "heures", base: "heure" }] }
+      - { target: "La responsable de l'équipe est là.", ipa: "la ʁɛspɔ̃sabl də lekip ɛ la", bases: [{ word: "La", ref: "fr-0544" }, { word: "responsable", base: "responsable" }, { word: "de", base: "de" }, { word: "l'équipe", base: "équipe" }, { word: "est", base: "être" }, { word: "là", ref: "fr-0030" }] }
+  - id: "fr-3642"
+    target: "manager"
+    ipa: "manaʒe"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le manager parle avec l'équipe.", ipa: "lə manaʒe paʁl avɛk lekip", bases: [{ word: "Le", ref: "fr-0543" }, { word: "manager", base: "manager" }, { word: "parle", base: "parler" }, { word: "avec", ref: "fr-0590" }, { word: "l'équipe", base: "équipe" }] }
+      - { target: "Notre manager est très calme.", ipa: "nɔtʁ manaʒe ɛ tʁɛ kalm", bases: [{ word: "Notre", ref: "fr-0139" }, { word: "manager", base: "manager" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "calme", ref: "fr-0433" }] }
+  - id: "fr-3643"
+    target: "assistant"
+    ipa: "asistɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'assistant répond au téléphone.", ipa: "lasistɑ̃ ʁepɔ̃ o telefɔn", bases: [{ word: "L'assistant", base: "assistant" }, { word: "répond", base: "répondre" }, { word: "au", base: "à" }, { word: "téléphone", ref: "fr-0257" }] }
+      - { target: "Je suis assistant au bureau.", ipa: "ʒə sɥi asistɑ̃ o byʁo", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", base: "être" }, { word: "assistant", base: "assistant" }, { word: "au", base: "à" }, { word: "bureau", ref: "fr-0660" }] }
+  - id: "fr-3644"
+    target: "prime"
+    ipa: "pʁim"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je reçois une prime en décembre.", ipa: "ʒə ʁəswa yn pʁim ɑ̃ desɑ̃bʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "reçois", base: "recevoir" }, { word: "une", ref: "fr-0545" }, { word: "prime", base: "prime" }, { word: "en", base: "en" }, { word: "décembre", ref: "fr-1163" }] }
+      - { target: "La prime est importante cette année.", ipa: "la pʁim ɛt ɛ̃pɔʁtɑ̃t sɛt ane", bases: [{ word: "La", ref: "fr-0544" }, { word: "prime", base: "prime" }, { word: "est", base: "être" }, { word: "importante", base: "important" }, { word: "cette", ref: "fr-0144" }, { word: "année", ref: "fr-1166" }] }
+  - id: "fr-3645"
+    target: "absence"
+    ipa: "apsɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'absence du collègue dure une semaine.", ipa: "lapsɑ̃s dy kɔlɛɡ dyʁ yn səmɛn", bases: [{ word: "L'absence", base: "absence" }, { word: "du", base: "de" }, { word: "collègue", base: "collègue" }, { word: "dure", base: "durer" }, { word: "une", ref: "fr-0545" }, { word: "semaine", ref: "fr-0668" }] }
+      - { target: "Je signale mon absence.", ipa: "ʒə siɲal mɔ̃n apsɑ̃s", bases: [{ word: "Je", ref: "fr-0126" }, { word: "signale", base: "signaler" }, { word: "mon", ref: "fr-0037" }, { word: "absence", base: "absence" }] }
+  - id: "fr-3646"
+    target: "copie"
+    ipa: "kɔpi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je fais une copie du contrat.", ipa: "ʒə fɛ yn kɔpi dy kɔ̃tʁa", bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", base: "faire" }, { word: "une", ref: "fr-0545" }, { word: "copie", base: "copie" }, { word: "du", base: "de" }, { word: "contrat", ref: "fr-2549" }] }
+      - { target: "La copie est sur le bureau.", ipa: "la kɔpi ɛ syʁ lə byʁo", bases: [{ word: "La", ref: "fr-0544" }, { word: "copie", base: "copie" }, { word: "est", base: "être" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "bureau", ref: "fr-0660" }] }
+  - id: "fr-3647"
+    target: "photocopie"
+    ipa: "fɔtɔkɔpi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je fais une photocopie du rapport.", ipa: "ʒə fɛ yn fɔtɔkɔpi dy ʁapɔʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", base: "faire" }, { word: "une", ref: "fr-0545" }, { word: "photocopie", base: "photocopie" }, { word: "du", base: "de" }, { word: "rapport", base: "rapport" }] }
+      - { target: "La photocopie est en noir et blanc.", ipa: "la fɔtɔkɔpi ɛt ɑ̃ nwaʁ e blɑ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "photocopie", base: "photocopie" }, { word: "est", base: "être" }, { word: "en", base: "en" }, { word: "noir", ref: "fr-1235" }, { word: "et", ref: "fr-0027" }, { word: "blanc", base: "blanc" }] }
+  - id: "fr-3648"
+    target: "classeur"
+    ipa: "klasœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le classeur est sur l'étagère.", ipa: "lə klasœʁ ɛ syʁ letaʒɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "classeur", base: "classeur" }, { word: "est", base: "être" }, { word: "sur", ref: "fr-0469" }, { word: "l'étagère", base: "étagère" }] }
+      - { target: "Je range les papiers dans le classeur.", ipa: "ʒə ʁɑ̃ʒ le papje dɑ̃ lə klasœʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "range", base: "ranger" }, { word: "les", ref: "fr-0043" }, { word: "papiers", base: "papier" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "classeur", base: "classeur" }] }
+  - id: "fr-3649"
+    target: "badge"
+    ipa: "badʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'oublie mon badge au bureau.", ipa: "ʒubli mɔ̃ badʒ o byʁo", bases: [{ word: "J'oublie", base: "oublier" }, { word: "mon", ref: "fr-0037" }, { word: "badge", base: "badge" }, { word: "au", base: "à" }, { word: "bureau", ref: "fr-0660" }] }
+      - { target: "Le badge ouvre la porte.", ipa: "lə badʒ uvʁ la pɔʁt", bases: [{ word: "Le", ref: "fr-0543" }, { word: "badge", base: "badge" }, { word: "ouvre", base: "ouvrir" }, { word: "la", ref: "fr-0544" }, { word: "porte", ref: "fr-1003" }] }
+  - id: "fr-3650"
+    target: "bilan"
+    ipa: "bilɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le bilan du mois est bon.", ipa: "lə bilɑ̃ dy mwa ɛ bɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bilan", base: "bilan" }, { word: "du", base: "de" }, { word: "mois", ref: "fr-1165" }, { word: "est", base: "être" }, { word: "bon", ref: "fr-0040" }] }
+      - { target: "Nous faisons le bilan à la fin de l'année.", ipa: "nu fɛzɔ̃ lə bilɑ̃ a la fɛ̃ də lane", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "faisons", base: "faire" }, { word: "le", ref: "fr-0543" }, { word: "bilan", base: "faire" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "fin", ref: "fr-1110" }, { word: "de", base: "de" }, { word: "l'année", base: "année" }] }
+  - id: "fr-3651"
+    target: "copieur"
+    ipa: "kɔpjœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le copieur est en panne.", ipa: "lə kɔpjœʁ ɛt ɑ̃ pan", bases: [{ word: "Le", ref: "fr-0543" }, { word: "copieur", base: "copieur" }, { word: "est", base: "être" }, { word: "en", base: "en" }, { word: "panne", ref: "fr-2520" }] }
+      - { target: "Je mets du papier dans le copieur.", ipa: "ʒə mɛ dy papje dɑ̃ lə kɔpjœʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", base: "mettre" }, { word: "du", base: "de" }, { word: "papier", ref: "fr-1374" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "copieur", base: "copieur" }] }
+  - id: "fr-3652"
+    target: "mail"
+    ipa: "maj"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'envoie un mail au patron.", ipa: "ʒɑ̃vwa œ̃ maj o patʁɔ̃", bases: [{ word: "J'envoie", base: "envoyer" }, { word: "un", ref: "fr-0208" }, { word: "mail", base: "envoyer" }, { word: "au", base: "à" }, { word: "patron", ref: "fr-0662" }] }
+      - { target: "Le mail est arrivé ce matin.", ipa: "lə maj ɛt aʁive sə matɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "mail", base: "mail" }, { word: "est", base: "être" }, { word: "arrivé", base: "arriver" }, { word: "ce", ref: "fr-0143" }, { word: "matin", ref: "fr-1033" }] }
+  - id: "fr-3653"
+    target: "pochette"
+    ipa: "pɔʃɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les documents sont dans la pochette.", ipa: "le dɔkymɑ̃ sɔ̃ dɑ̃ la pɔʃɛt", bases: [{ word: "Les", ref: "fr-0043" }, { word: "documents", base: "document" }, { word: "sont", base: "être" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "pochette", base: "pochette" }] }
+      - { target: "Je prends une pochette vide.", ipa: "ʒə pʁɑ̃ yn pɔʃɛt vid", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", base: "prendre" }, { word: "une", ref: "fr-0545" }, { word: "pochette", base: "pochette" }, { word: "vide", ref: "fr-0440" }] }
+  - id: "fr-3654"
+    target: "agrafeuse"
+    ipa: "aɡʁaføz"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'agrafeuse est vide.", ipa: "laɡʁaføz ɛ vid", bases: [{ word: "L'agrafeuse", base: "agrafeuse" }, { word: "est", base: "être" }, { word: "vide", ref: "fr-0440" }] }
+      - { target: "Je cherche l'agrafeuse.", ipa: "ʒə ʃɛʁʃ laɡʁaføz", bases: [{ word: "Je", ref: "fr-0126" }, { word: "cherche", base: "chercher" }, { word: "l'agrafeuse", base: "agrafeuse" }] }
+  - id: "fr-3655"
+    target: "planning"
+    ipa: "planiŋ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le planning du mois est affiché.", ipa: "lə planiŋ dy mwa ɛt afiʃe", bases: [{ word: "Le", ref: "fr-0543" }, { word: "planning", base: "planning" }, { word: "du", base: "de" }, { word: "mois", ref: "fr-1165" }, { word: "est", base: "être" }, { word: "affiché", base: "afficher" }] }
+      - { target: "Je change le planning de la semaine.", ipa: "ʒə ʃɑ̃ʒ lə planiŋ də la səmɛn", bases: [{ word: "Je", ref: "fr-0126" }, { word: "change", base: "changer" }, { word: "le", ref: "fr-0543" }, { word: "planning", base: "planning" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "semaine", ref: "fr-0668" }] }
+  - id: "fr-3656"
+    target: "chiffre"
+    ipa: "ʃifʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le chiffre est en hausse.", ipa: "lə ʃifʁ ɛt ɑ̃ os", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chiffre", base: "chiffre" }, { word: "est", base: "être" }, { word: "en", base: "en" }, { word: "hausse", base: "hausse" }] }
+      - { target: "Les chiffres du mois sont bons.", ipa: "le ʃifʁ dy mwa sɔ̃ bɔ̃", bases: [{ word: "Les", ref: "fr-0043" }, { word: "chiffres", base: "chiffre" }, { word: "du", base: "de" }, { word: "mois", ref: "fr-1165" }, { word: "sont", base: "être" }, { word: "bons", base: "bon" }] }
+  - id: "fr-3657"
+    target: "résultat"
+    ipa: "ʁezylta"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le résultat est bon.", ipa: "lə ʁezylta ɛ bɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "résultat", base: "résultat" }, { word: "est", base: "être" }, { word: "bon", ref: "fr-0040" }] }
+      - { target: "Les résultats arrivent demain.", ipa: "le ʁezylta aʁiv dəmɛ̃", bases: [{ word: "Les", ref: "fr-0043" }, { word: "résultats", base: "résultat" }, { word: "arrivent", base: "arriver" }, { word: "demain", ref: "fr-0078" }] }
+  - id: "fr-3658"
+    target: "matériel"
+    ipa: "mateʁjɛl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le matériel est dans l'armoire.", ipa: "lə mateʁjɛl ɛ dɑ̃ laʁmwaʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "matériel", base: "matériel" }, { word: "est", base: "être" }, { word: "dans", ref: "fr-0049" }, { word: "l'armoire", base: "armoire" }] }
+      - { target: "Je demande du nouveau matériel.", ipa: "ʒə dəmɑ̃d dy nuvo mateʁjɛl", bases: [{ word: "Je", ref: "fr-0126" }, { word: "demande", ref: "fr-1980" }, { word: "du", base: "de" }, { word: "nouveau", ref: "fr-0413" }, { word: "matériel", base: "matériel" }] }
+  - id: "fr-3659"
+    target: "équipement"
+    ipa: "ekipmɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'équipement est neuf.", ipa: "lekipmɑ̃ ɛ nœf", bases: [{ word: "L'équipement", base: "équipement" }, { word: "est", base: "être" }, { word: "neuf", ref: "fr-0216" }] }
+      - { target: "Cet équipement est utile.", ipa: "sɛt ekipmɑ̃ ɛt ytil", bases: [{ word: "Cet", ref: "fr-0644" }, { word: "équipement", base: "équipement" }, { word: "est", base: "être" }, { word: "utile", base: "utile" }] }
+  - id: "fr-3660"
+    target: "rapport"
+    ipa: "ʁapɔʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'écris un rapport pour le patron.", ipa: "ʒekʁi œ̃ ʁapɔʁ puʁ lə patʁɔ̃", bases: [{ word: "J'écris", base: "écrire" }, { word: "un", ref: "fr-0208" }, { word: "rapport", base: "rapport" }, { word: "pour", ref: "fr-0591" }, { word: "le", ref: "fr-0543" }, { word: "patron", ref: "fr-0662" }] }
+      - { target: "Le rapport est prêt.", ipa: "lə ʁapɔʁ ɛ pʁɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "rapport", base: "rapport" }, { word: "est", base: "être" }, { word: "prêt", ref: "fr-0687" }] }
+  - id: "fr-3661"
+    target: "présentation"
+    ipa: "pʁezɑ̃tasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La présentation commence à dix heures.", ipa: "la pʁezɑ̃tasjɔ̃ kɔmɑ̃s a dis œʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "présentation", base: "présentation" }, { word: "commence", base: "commencer" }, { word: "à", base: "à" }, { word: "dix", ref: "fr-0217" }, { word: "heures", base: "heure" }] }
+      - { target: "Je prépare une présentation pour lundi.", ipa: "ʒə pʁepaʁ yn pʁezɑ̃tasjɔ̃ puʁ lœ̃di", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prépare", base: "préparer" }, { word: "une", ref: "fr-0545" }, { word: "présentation", base: "préparer" }, { word: "pour", ref: "fr-0591" }, { word: "lundi", ref: "fr-1044" }] }
+  - id: "fr-3662"
+    target: "stagiaire"
+    ipa: "staʒjɛʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le stagiaire apprend le travail.", ipa: "lə staʒjɛʁ apʁɑ̃ lə tʁavaj", bases: [{ word: "Le", ref: "fr-0543" }, { word: "stagiaire", base: "stagiaire" }, { word: "apprend", base: "apprendre" }, { word: "travail", ref: "fr-0255" }] }
+      - { target: "Le stagiaire est très motivé.", ipa: "lə staʒjɛʁ ɛ tʁɛ mɔtive", bases: [{ word: "Le", ref: "fr-0543" }, { word: "stagiaire", base: "stagiaire" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "motivé", base: "motivé" }] }
+  - id: "fr-3663"
+    target: "erreur"
+    ipa: "eʁœʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette erreur est grave.", ipa: "sɛt eʁœʁ ɛ ɡʁav", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "erreur", base: "erreur" }, { word: "est", base: "être" }, { word: "grave", base: "grave" }] }
+      - { target: "Il y a une erreur dans le rapport.", ipa: "il i a yn eʁœʁ dɑ̃ lə ʁapɔʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", base: "avoir" }, { word: "une", ref: "fr-0545" }, { word: "erreur", base: "erreur" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "rapport", base: "rapport" }] }
+  - id: "fr-3664"
+    target: "solution"
+    ipa: "sɔlysjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La solution est simple.", ipa: "la sɔlysjɔ̃ ɛ sɛ̃pl", bases: [{ word: "La", ref: "fr-0544" }, { word: "solution", base: "solution" }, { word: "est", base: "être" }, { word: "simple", base: "simple" }] }
+      - { target: "Nous trouvons une solution rapidement.", ipa: "nu tʁuvɔ̃ yn sɔlysjɔ̃ ʁapidmɑ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "trouvons", base: "trouver" }, { word: "une", ref: "fr-0545" }, { word: "solution", base: "trouver" }, { word: "rapidement", base: "rapidement" }] }
+  - id: "fr-3665"
+    target: "courrier"
+    ipa: "kuʁje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le courrier arrive à dix heures.", ipa: "lə kuʁje aʁiv a dis œʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "courrier", base: "courrier" }, { word: "arrive", base: "arriver" }, { word: "à", base: "à" }, { word: "dix", ref: "fr-0217" }, { word: "heures", base: "heure" }] }
+      - { target: "Je prends le courrier au bureau.", ipa: "ʒə pʁɑ̃ lə kuʁje o byʁo", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", base: "prendre" }, { word: "le", ref: "fr-0543" }, { word: "courrier", base: "courrier" }, { word: "au", base: "à" }, { word: "bureau", ref: "fr-0660" }] }
+  - id: "fr-3666"
+    target: "contrôle"
+    ipa: "kɔ̃tʁol"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le contrôle des comptes est demain.", ipa: "lə kɔ̃tʁol de kɔ̃t ɛ dəmɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "contrôle", base: "contrôle" }, { word: "des", ref: "fr-0546" }, { word: "comptes", base: "compte" }, { word: "est", base: "être" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "Le contrôle qualité est important.", ipa: "lə kɔ̃tʁol kalite ɛt ɛ̃poʁtɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "contrôle", base: "contrôle" }, { word: "qualité", ref: "fr-2682" }, { word: "est", base: "être" }, { word: "important", ref: "fr-0443" }] }
+  - id: "fr-3667"
+    target: "fiche"
+    ipa: "fiʃ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je remplis la fiche.", ipa: "ʒə ʁɑ̃pli la fiʃ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "remplis", base: "remplir" }, { word: "la", ref: "fr-0544" }, { word: "fiche", base: "remplir" }] }
+      - { target: "La fiche du client est sur le bureau.", ipa: "la fiʃ dy klijɑ̃ ɛ syʁ lə byʁo", bases: [{ word: "La", ref: "fr-0544" }, { word: "fiche", base: "fiche" }, { word: "du", base: "de" }, { word: "client", ref: "fr-0685" }, { word: "est", base: "être" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "bureau", ref: "fr-0660" }] }
+  - id: "fr-3668"
+    target: "tampon"
+    ipa: "tɑ̃pɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le tampon est sur le document.", ipa: "lə tɑ̃pɔ̃ ɛ syʁ lə dɔkymɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "tampon", base: "tampon" }, { word: "est", base: "être" }, { word: "sur", ref: "fr-0469" }, { word: "document", ref: "fr-1979" }] }
+      - { target: "Je cherche le tampon.", ipa: "ʒə ʃɛʁʃ lə tɑ̃pɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "cherche", base: "chercher" }, { word: "le", ref: "fr-0543" }, { word: "tampon", base: "tampon" }] }
+  - id: "fr-3669"
+    target: "mémo"
+    ipa: "memo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le mémo parle de la réunion.", ipa: "lə memo paʁl də la ʁeynjɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "mémo", base: "mémo" }, { word: "parle", base: "parler" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "réunion", ref: "fr-0664" }] }
+      - { target: "J'envoie un mémo à toute l'équipe.", ipa: "ʒɑ̃vwa œ̃ memo a tut lekip", bases: [{ word: "J'envoie", base: "envoyer" }, { word: "un", ref: "fr-0208" }, { word: "mémo", base: "mémo" }, { word: "à", base: "à" }, { word: "toute", base: "tout" }, { word: "l'équipe", base: "équipe" }] }
+  - id: "fr-3670"
+    target: "cafétéria"
+    ipa: "kafeteʁja"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La cafétéria est ouverte à midi.", ipa: "la kafeteʁja ɛt uvɛʁt a midi", bases: [{ word: "La", ref: "fr-0544" }, { word: "cafétéria", base: "cafétéria" }, { word: "est", base: "être" }, { word: "ouverte", base: "ouvert" }, { word: "à", base: "à" }, { word: "midi", ref: "fr-1036" }] }
+      - { target: "Je prends un café à la cafétéria.", ipa: "ʒə pʁɑ̃ œ̃ kafe a la kafeteʁja", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", base: "prendre" }, { word: "un", ref: "fr-0208" }, { word: "café", ref: "fr-0793" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "cafétéria", base: "cafétéria" }] }
+  - id: "fr-3671"
+    target: "parking"
+    ipa: "paʁkiŋ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le parking est plein.", ipa: "lə paʁkiŋ ɛ plɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "parking", base: "parking" }, { word: "est", base: "être" }, { word: "plein", ref: "fr-0439" }] }
+      - { target: "Ma voiture est dans le parking.", ipa: "ma vwatyʁ ɛ dɑ̃ lə paʁkiŋ", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "voiture", ref: "fr-0859" }, { word: "est", base: "être" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "parking", base: "parking" }] }
+  - id: "fr-3672"
+    target: "gestionnaire"
+    ipa: "ʒɛstjɔnɛʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le gestionnaire signe le contrat.", ipa: "lə ʒɛstjɔnɛʁ siɲ lə kɔ̃tʁa", bases: [{ word: "Le", ref: "fr-0543" }, { word: "gestionnaire", base: "gestionnaire" }, { word: "signe", base: "signer" }, { word: "contrat", ref: "fr-2549" }] }
+      - { target: "La gestionnaire est absente.", ipa: "la ʒɛstjɔnɛʁ ɛt apsɑ̃t", bases: [{ word: "La", ref: "fr-0544" }, { word: "gestionnaire", base: "gestionnaire" }, { word: "est", base: "être" }, { word: "absente", base: "absent" }] }
+  - id: "fr-3673"
+    target: "comptable"
+    ipa: "kɔ̃tabl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le comptable vérifie les chiffres.", ipa: "lə kɔ̃tabl veʁifi le ʃifʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "comptable", base: "comptable" }, { word: "vérifie", base: "vérifier" }, { word: "les", ref: "fr-0043" }, { word: "chiffres", base: "chiffre" }] }
+      - { target: "La comptable est à son bureau.", ipa: "la kɔ̃tabl ɛt a sɔ̃ byʁo", bases: [{ word: "La", ref: "fr-0544" }, { word: "comptable", base: "comptable" }, { word: "est", base: "être" }, { word: "à", base: "à" }, { word: "son", ref: "fr-0138" }, { word: "bureau", ref: "fr-0660" }] }
+  - id: "fr-3674"
+    target: "informatique"
+    ipa: "ɛ̃fɔʁmatik"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'informatique est en panne.", ipa: "lɛ̃fɔʁmatik ɛt ɑ̃ pan", bases: [{ word: "L'informatique", base: "informatique" }, { word: "est", base: "être" }, { word: "en", base: "en" }, { word: "panne", ref: "fr-2520" }] }
+      - { target: "Le service informatique est au deuxième étage.", ipa: "lə sɛʁvis ɛ̃fɔʁmatik ɛt o dœksjɛm etaʒ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "service", ref: "fr-1502" }, { word: "informatique", base: "informatique" }, { word: "est", base: "être" }, { word: "au", base: "à" }, { word: "deuxième", base: "deuxième" }, { word: "étage", ref: "fr-1010" }] }
+  - id: "fr-3675"
+    target: "embauche"
+    ipa: "ɑ̃boʃ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'embauche commence en janvier.", ipa: "lɑ̃boʃ kɔmɑ̃s ɑ̃ ʒɑ̃vje", bases: [{ word: "L'embauche", base: "embauche" }, { word: "commence", base: "commencer" }, { word: "en", base: "en" }, { word: "janvier", ref: "fr-1152" }] }
+      - { target: "Nous faisons une embauche cette année.", ipa: "nu fɛzɔ̃ yn ɑ̃boʃ sɛt ane", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "faisons", base: "faire" }, { word: "une", ref: "fr-0545" }, { word: "embauche", base: "faire" }, { word: "cette", ref: "fr-0144" }, { word: "année", ref: "fr-1166" }] }
+  - id: "fr-3676"
+    target: "atelier"
+    ipa: "atəlje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'atelier est au sous-sol.", ipa: "latəlje ɛt o susɔl", bases: [{ word: "L'atelier", base: "atelier" }, { word: "est", base: "être" }, { word: "au", base: "à" }, { word: "sous", ref: "fr-0468" }, { word: "sol", ref: "fr-1016" }] }
+      - { target: "Je travaille dans l'atelier.", ipa: "ʒə tʁavaj dɑ̃ latəlje", bases: [{ word: "Je", ref: "fr-0126" }, { word: "travaille", base: "travailler" }, { word: "dans", ref: "fr-0049" }, { word: "l'atelier", base: "atelier" }] }
+  - id: "fr-3677"
+    target: "paie"
+    ipa: "pɛ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La paie est versée le trente.", ipa: "la pɛ ɛ vɛʁse lə tʁɑ̃t", bases: [{ word: "La", ref: "fr-0544" }, { word: "paie", base: "paie" }, { word: "est", base: "être" }, { word: "versée", base: "verser" }, { word: "le", ref: "fr-0543" }, { word: "trente", ref: "fr-0702" }] }
+      - { target: "Ma paie est correcte.", ipa: "ma pɛ ɛ kɔʁɛkt", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "paie", base: "paie" }, { word: "est", base: "être" }, { word: "correcte", base: "correct" }] }
+  - id: "fr-3678"
+    target: "bulletin"
+    ipa: "byltɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le bulletin de paie est dans mon courriel.", ipa: "lə byltɛ̃ də pɛ ɛ dɑ̃ mɔ̃ kuʁjɛl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bulletin", base: "bulletin" }, { word: "de", base: "de" }, { word: "paie", base: "paie" }, { word: "est", base: "être" }, { word: "dans", ref: "fr-0049" }, { word: "mon", ref: "fr-0037" }, { word: "courriel", ref: "fr-2018" }] }
+      - { target: "Je regarde le bulletin du mois.", ipa: "ʒə ʁəɡaʁd lə byltɛ̃ dy mwa", bases: [{ word: "Je", ref: "fr-0126" }, { word: "regarde", base: "regarder" }, { word: "le", ref: "fr-0543" }, { word: "bulletin", base: "bulletin" }, { word: "du", base: "de" }, { word: "mois", ref: "fr-1165" }] }
+  - id: "fr-3679"
+    target: "prestation"
+    ipa: "pʁɛstasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La prestation est comprise dans le contrat.", ipa: "la pʁɛstasjɔ̃ ɛ kɔ̃pʁiz dɑ̃ lə kɔ̃tʁa", bases: [{ word: "La", ref: "fr-0544" }, { word: "prestation", base: "prestation" }, { word: "est", base: "être" }, { word: "comprise", base: "comprendre" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "contrat", ref: "fr-2549" }] }
+      - { target: "Cette prestation est gratuite.", ipa: "sɛt pʁɛstasjɔ̃ ɛ ɡʁatɥit", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "prestation", base: "prestation" }, { word: "est", base: "être" }, { word: "gratuite", base: "gratuit" }] }

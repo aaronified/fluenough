@@ -1,0 +1,443 @@
+schema: 1
+id: "fr-illness"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "illness"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-3000"
+    target: "grippe"
+    ipa: "ɡʁip"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai la grippe depuis lundi.", ipa: "ʒɛ la ɡʁip dəpɥi lœ̃di", bases: [{ word: "J'ai", base: "avoir" }, { word: "la", ref: "fr-0544" }, { word: "grippe", base: "grippe" }, { word: "depuis", base: "depuis" }, { word: "lundi", ref: "fr-1044" }] }
+      - { target: "Ma sœur a la grippe.", ipa: "ma sœʁ a la ɡʁip", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "sœur", ref: "fr-0170" }, { word: "a", base: "avoir" }, { word: "la", ref: "fr-0544" }, { word: "grippe", base: "grippe" }] }
+  - id: "fr-3001"
+    target: "pommade"
+    ipa: "pɔmad"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mets de la pommade sur la coupure.", ipa: "mɛ də la pɔmad syʁ la kupyʁ", bases: [{ word: "Mets", base: "mettre" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "pommade", base: "pommade" }, { word: "sur", ref: "fr-0469" }, { word: "coupure", ref: "fr-3026" }] }
+      - { target: "La pommade est dans le tiroir.", ipa: "la pɔmad ɛ dɑ̃ lə tiʁwaʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "pommade", base: "pommade" }, { word: "est", base: "être" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "tiroir", base: "tiroir" }] }
+  - id: "fr-3002"
+    target: "symptôme"
+    ipa: "sɛ̃ptom"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quels sont tes symptômes ?", ipa: "kɛl sɔ̃ te sɛ̃ptom", bases: [{ word: "Quels", base: "quel" }, { word: "sont", base: "être" }, { word: "tes", base: "ton" }, { word: "symptômes", base: "symptôme" }] }
+      - { target: "Le symptôme est une douleur à la gorge.", ipa: "lə sɛ̃ptom ɛ yn dulœʁ a la ɡɔʁʒ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "symptôme", base: "symptôme" }, { word: "est", base: "être" }, { word: "une", ref: "fr-0545" }, { word: "douleur", ref: "fr-0946" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "gorge", ref: "fr-0948" }] }
+  - id: "fr-3003"
+    target: "nausée"
+    ipa: "noze"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai la nausée depuis ce matin.", ipa: "ʒɛ la noze dəpɥi sə matɛ̃", bases: [{ word: "J'ai", base: "avoir" }, { word: "la", ref: "fr-0544" }, { word: "nausée", base: "nausée" }, { word: "depuis", base: "depuis" }, { word: "ce", ref: "fr-0143" }, { word: "matin", base: "matin" }] }
+      - { target: "Cette odeur me donne la nausée.", ipa: "sɛt ɔdœʁ mə dɔn la noze", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "odeur", base: "odeur" }, { word: "me", base: "me" }, { word: "donne", base: "donner" }, { word: "la", ref: "fr-0544" }, { word: "nausée", base: "nausée" }] }
+  - id: "fr-3004"
+    target: "diarrhée"
+    ipa: "djaʁe"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a la diarrhée depuis hier.", ipa: "il a la djaʁe dəpɥi je", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", base: "avoir" }, { word: "la", ref: "fr-0544" }, { word: "diarrhée", base: "diarrhée" }, { word: "depuis", base: "depuis" }, { word: "hier", ref: "fr-1038" }] }
+      - { target: "La diarrhée passe après deux jours.", ipa: "la djaʁe pas apʁɛ dø ʒuʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "diarrhée", base: "diarrhée" }, { word: "passe", base: "passer" }, { word: "après", base: "après" }, { word: "deux", ref: "fr-0209" }, { word: "jours", base: "jour" }] }
+  - id: "fr-3005"
+    target: "bandage"
+    ipa: "bɑ̃daʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il faut mettre un bandage.", ipa: "il fo mɛtʁ œ̃ bɑ̃daʒ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "faut", base: "falloir" }, { word: "mettre", ref: "fr-0529" }, { word: "un", ref: "fr-0208" }, { word: "bandage", base: "bandage" }] }
+      - { target: "Le bandage est trop serré.", ipa: "lə bɑ̃daʒ ɛ tʁo sɛʁe", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bandage", base: "bandage" }, { word: "est", base: "être" }, { word: "trop", ref: "fr-0344" }, { word: "serré", base: "serré" }] }
+  - id: "fr-3006"
+    target: "aspirine"
+    ipa: "aspiʁin"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je prends une aspirine.", ipa: "ʒə pʁɑ̃ yn aspiʁin", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", base: "prendre" }, { word: "une", ref: "fr-0545" }, { word: "aspirine", base: "aspirine" }] }
+      - { target: "L'aspirine est dans ma valise.", ipa: "laspiʁin ɛ dɑ̃ ma valiz", bases: [{ word: "L'aspirine", base: "aspirine" }, { word: "est", base: "être" }, { word: "dans", ref: "fr-0049" }, { word: "ma", ref: "fr-0137" }, { word: "valise", ref: "fr-0876" }] }
+  - id: "fr-3007"
+    target: "antibiotique"
+    ipa: "ɑ̃tibjɔtik"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le médecin donne un antibiotique.", ipa: "lə medsɛ̃ dɔn œ̃n ɑ̃tibjɔtik", bases: [{ word: "Le", ref: "fr-0543" }, { word: "médecin", ref: "fr-1073" }, { word: "donne", base: "donner" }, { word: "un", ref: "fr-0208" }, { word: "antibiotique", base: "antibiotique" }] }
+      - { target: "Il prend un antibiotique depuis trois jours.", ipa: "il pʁɑ̃ œ̃n ɑ̃tibjɔtik dəpɥi tʁwa ʒuʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "prend", base: "prendre" }, { word: "un", ref: "fr-0208" }, { word: "antibiotique", base: "antibiotique" }, { word: "depuis", base: "depuis" }, { word: "trois", ref: "fr-0210" }, { word: "jours", base: "jour" }] }
+  - id: "fr-3008"
+    target: "vaccin"
+    ipa: "vaksɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il faut un vaccin pour voyager.", ipa: "il fo œ̃ vaksɛ̃ puʁ vwajaʒe", bases: [{ word: "Il", ref: "fr-0127" }, { word: "faut", base: "falloir" }, { word: "un", ref: "fr-0208" }, { word: "vaccin", base: "vaccin" }, { word: "pour", ref: "fr-0591" }, { word: "voyager", base: "voyager" }] }
+      - { target: "J'ai reçu mon vaccin hier.", ipa: "ʒɛ ʁəsy mɔ̃ vaksɛ̃ je", bases: [{ word: "J'ai", base: "avoir" }, { word: "reçu", base: "recevoir" }, { word: "mon", ref: "fr-0037" }, { word: "vaccin", base: "vaccin" }, { word: "hier", ref: "fr-1038" }] }
+  - id: "fr-3009"
+    target: "piqûre"
+    ipa: "pikyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai une piqûre sur le bras.", ipa: "ʒɛ yn pikyʁ syʁ lə bʁa", bases: [{ word: "J'ai", base: "avoir" }, { word: "une", ref: "fr-0545" }, { word: "piqûre", base: "piqûre" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "bras", ref: "fr-0928" }] }
+      - { target: "La piqûre est petite.", ipa: "la pikyʁ ɛ pətit", bases: [{ word: "La", ref: "fr-0544" }, { word: "piqûre", base: "piqûre" }, { word: "est", base: "être" }, { word: "petite", base: "petit" }] }
+  - id: "fr-3010"
+    target: "frisson"
+    ipa: "fʁisɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai des frissons.", ipa: "ʒɛ de fʁisɔ̃", bases: [{ word: "J'ai", base: "avoir" }, { word: "des", ref: "fr-0546" }, { word: "frissons", base: "frisson" }] }
+      - { target: "Le froid donne un frisson.", ipa: "lə fʁwa dɔn œ̃ fʁisɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "froid", ref: "fr-0420" }, { word: "donne", base: "donner" }, { word: "un", ref: "fr-0208" }, { word: "frisson", base: "frisson" }] }
+  - id: "fr-3011"
+    target: "enrhumé"
+    ipa: "ɑ̃ʁyme"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis enrhumé depuis lundi.", ipa: "ʒə sɥi ɑ̃ʁyme dəpɥi lœ̃di", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", base: "être" }, { word: "enrhumé", base: "enrhumé" }, { word: "depuis", base: "depuis" }, { word: "lundi", ref: "fr-1044" }] }
+      - { target: "Elle est enrhumée.", ipa: "ɛl ɛ ɑ̃ʁyme", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", base: "être" }, { word: "enrhumée", base: "enrhumé" }] }
+  - id: "fr-3012"
+    target: "bouton"
+    ipa: "butɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai un bouton sur le visage.", ipa: "ʒɛ œ̃ butɔ̃ syʁ lə vizaʒ", bases: [{ word: "J'ai", base: "avoir" }, { word: "un", ref: "fr-0208" }, { word: "bouton", base: "bouton" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "visage", ref: "fr-0944" }] }
+      - { target: "Le bouton de la chemise est cassé.", ipa: "lə butɔ̃ də la ʃəmiz ɛ kase", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bouton", base: "bouton" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "chemise", ref: "fr-1201" }, { word: "est", base: "être" }, { word: "cassé", base: "casser" }] }
+  - id: "fr-3013"
+    target: "éruption"
+    ipa: "eʁypsjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a une éruption sur le bras.", ipa: "il a yn eʁypsjɔ̃ syʁ lə bʁa", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", base: "avoir" }, { word: "une", ref: "fr-0545" }, { word: "éruption", base: "éruption" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "bras", ref: "fr-0928" }] }
+      - { target: "L'éruption disparaît après une semaine.", ipa: "leʁypsjɔ̃ dispaʁɛ apʁɛ yn səmɛn", bases: [{ word: "L'éruption", base: "éruption" }, { word: "disparaît", base: "disparaître" }, { word: "après", base: "après" }, { word: "une", ref: "fr-0545" }, { word: "semaine", base: "semaine" }] }
+  - id: "fr-3014"
+    target: "rougeur"
+    ipa: "ʁuʒœʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il y a une rougeur sur la joue.", ipa: "il i a yn ʁuʒœʁ syʁ la ʒu", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", base: "avoir" }, { word: "une", ref: "fr-0545" }, { word: "rougeur", base: "rougeur" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "joue", ref: "fr-0048" }] }
+      - { target: "La rougeur part vite.", ipa: "la ʁuʒœʁ paʁ vit", bases: [{ word: "La", ref: "fr-0544" }, { word: "rougeur", base: "rougeur" }, { word: "part", base: "partir" }, { word: "vite", base: "vite" }] }
+  - id: "fr-3015"
+    target: "enflé"
+    ipa: "ɑ̃fle"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon pied est enflé.", ipa: "mɔ̃ pje ɛ ɑ̃fle", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "pied", ref: "fr-0930" }, { word: "est", base: "être" }, { word: "enflé", base: "enflé" }] }
+      - { target: "Ma cheville est enflée.", ipa: "ma ʃəvij ɛ ɑ̃fle", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "cheville", base: "cheville" }, { word: "est", base: "être" }, { word: "enflée", base: "enflé" }] }
+  - id: "fr-3016"
+    target: "bosse"
+    ipa: "bɔs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a une bosse à la tête.", ipa: "il a yn bɔs a la tɛt", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", base: "avoir" }, { word: "une", ref: "fr-0545" }, { word: "bosse", base: "bosse" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "tête", ref: "fr-0927" }] }
+      - { target: "La bosse est grosse.", ipa: "la bɔs ɛ ɡʁɔs", bases: [{ word: "La", ref: "fr-0544" }, { word: "bosse", base: "bosse" }, { word: "est", base: "être" }, { word: "grosse", base: "gros" }] }
+  - id: "fr-3017"
+    target: "indigestion"
+    ipa: "ɛ̃diʒɛstjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai une indigestion après le repas.", ipa: "ʒɛ yn ɛ̃diʒɛstjɔ̃ apʁɛ lə ʁəpa", bases: [{ word: "J'ai", base: "avoir" }, { word: "une", ref: "fr-0545" }, { word: "indigestion", base: "indigestion" }, { word: "après", base: "après" }, { word: "le", ref: "fr-0543" }, { word: "repas", base: "repas" }] }
+      - { target: "Il mange trop et il a une indigestion.", ipa: "il mɑ̃ʒ tʁo e il a yn ɛ̃diʒɛstjɔ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "mange", base: "manger" }, { word: "trop", ref: "fr-0344" }, { word: "et", ref: "fr-0027" }, { word: "a", base: "avoir" }, { word: "une", ref: "fr-0545" }, { word: "indigestion", base: "indigestion" }] }
+  - id: "fr-3018"
+    target: "asthme"
+    ipa: "astm"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle a de l'asthme.", ipa: "ɛl a də lastm", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", base: "avoir" }, { word: "de", base: "de" }, { word: "l'asthme", base: "asthme" }] }
+      - { target: "Son asthme est léger.", ipa: "sɔ̃n astm ɛ leʒe", bases: [{ word: "Son", ref: "fr-0138" }, { word: "asthme", base: "asthme" }, { word: "est", base: "être" }, { word: "léger", base: "léger" }] }
+  - id: "fr-3019"
+    target: "migraine"
+    ipa: "miɡʁɛn"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai une migraine depuis ce matin.", ipa: "ʒɛ yn miɡʁɛn dəpɥi sə matɛ̃", bases: [{ word: "J'ai", base: "avoir" }, { word: "une", ref: "fr-0545" }, { word: "migraine", base: "migraine" }, { word: "depuis", base: "depuis" }, { word: "ce", ref: "fr-0143" }, { word: "matin", base: "matin" }] }
+      - { target: "La lumière me donne la migraine.", ipa: "la lymjɛʁ mə dɔn la miɡʁɛn", bases: [{ word: "La", ref: "fr-0544" }, { word: "lumière", ref: "fr-1113" }, { word: "me", base: "me" }, { word: "donne", base: "donner" }, { word: "migraine", base: "migraine" }] }
+  - id: "fr-3020"
+    target: "respiration"
+    ipa: "ʁɛspiʁasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ta respiration est calme.", ipa: "ta ʁɛspiʁasjɔ̃ ɛ kalm", bases: [{ word: "Ta", ref: "fr-0626" }, { word: "respiration", base: "respiration" }, { word: "est", base: "être" }, { word: "calme", base: "calme" }] }
+      - { target: "Il a des difficultés à respirer.", ipa: "il a de difikylte a ʁɛspiʁe", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", base: "avoir" }, { word: "des", ref: "fr-0546" }, { word: "difficultés", base: "difficulté" }, { word: "à", base: "à" }, { word: "respirer", base: "respirer" }] }
+  - id: "fr-3021"
+    target: "collyre"
+    ipa: "kɔliʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mets ce collyre dans l'œil.", ipa: "mɛ sə kɔliʁ dɑ̃ lœj", bases: [{ word: "Mets", base: "mettre" }, { word: "ce", ref: "fr-0143" }, { word: "collyre", base: "collyre" }, { word: "dans", ref: "fr-0049" }, { word: "l'œil", base: "œil" }] }
+      - { target: "Le collyre est dans la trousse.", ipa: "lə kɔliʁ ɛ dɑ̃ la tʁus", bases: [{ word: "Le", ref: "fr-0543" }, { word: "collyre", base: "collyre" }, { word: "est", base: "être" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "trousse", base: "trousse" }] }
+  - id: "fr-3022"
+    target: "injection"
+    ipa: "ɛ̃ʒɛksjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le médecin fait une injection.", ipa: "lə medsɛ̃ fɛ yn ɛ̃ʒɛksjɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "médecin", ref: "fr-1073" }, { word: "fait", base: "faire" }, { word: "une", ref: "fr-0545" }, { word: "injection", base: "injection" }] }
+      - { target: "L'injection fait un peu mal.", ipa: "lɛ̃ʒɛksjɔ̃ fɛ œ̃ pø mal", bases: [{ word: "L'injection", base: "injection" }, { word: "fait", base: "faire" }, { word: "un", ref: "fr-0208" }, { word: "peu", base: "peu" }, { word: "mal", ref: "fr-0340" }] }
+  - id: "fr-3023"
+    target: "consultation"
+    ipa: "kɔ̃syltasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai une consultation demain.", ipa: "ʒɛ yn kɔ̃syltasjɔ̃ dəmɛ̃", bases: [{ word: "J'ai", base: "avoir" }, { word: "une", ref: "fr-0545" }, { word: "consultation", base: "consultation" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "La consultation dure une heure.", ipa: "la kɔ̃syltasjɔ̃ dyʁ yn œʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "consultation", base: "consultation" }, { word: "dure", base: "durer" }, { word: "une", ref: "fr-0545" }, { word: "heure", ref: "fr-0074" }] }
+  - id: "fr-3024"
+    target: "clinique"
+    ipa: "klinik"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La clinique est près de la gare.", ipa: "la klinik ɛ pʁɛ də la ɡaʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "clinique", base: "clinique" }, { word: "est", base: "être" }, { word: "près", base: "près" }, { word: "de", base: "de" }, { word: "gare", ref: "fr-0075" }] }
+      - { target: "Il travaille dans une clinique.", ipa: "il tʁavaj dɑ̃ yn klinik", bases: [{ word: "Il", ref: "fr-0127" }, { word: "travaille", base: "travailler" }, { word: "dans", ref: "fr-0049" }, { word: "une", ref: "fr-0545" }, { word: "clinique", base: "clinique" }] }
+  - id: "fr-3025"
+    target: "plaie"
+    ipa: "plɛ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La plaie est profonde.", ipa: "la plɛ ɛ pʁɔfɔ̃d", bases: [{ word: "La", ref: "fr-0544" }, { word: "plaie", base: "plaie" }, { word: "est", base: "être" }, { word: "profonde", base: "profond" }] }
+      - { target: "Il nettoie la plaie avec de l'eau.", ipa: "il nɛtwa la plɛ avɛk də lo", bases: [{ word: "Il", ref: "fr-0127" }, { word: "nettoie", base: "nettoyer" }, { word: "la", ref: "fr-0544" }, { word: "plaie", base: "plaie" }, { word: "avec", base: "avec" }, { word: "de", base: "de" }, { word: "l'eau", base: "eau" }] }
+  - id: "fr-3026"
+    target: "coupure"
+    ipa: "kupyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai une coupure au doigt.", ipa: "ʒɛ yn kupyʁ o dwaɡ", bases: [{ word: "J'ai", base: "avoir" }, { word: "une", ref: "fr-0545" }, { word: "coupure", base: "coupure" }, { word: "au", base: "à" }, { word: "doigt", ref: "fr-0941" }] }
+      - { target: "La coupure saigne.", ipa: "la kupyʁ sɛɲ", bases: [{ word: "La", ref: "fr-0544" }, { word: "coupure", base: "coupure" }, { word: "saigne", base: "saigner" }] }
+  - id: "fr-3027"
+    target: "entorse"
+    ipa: "ɑ̃tɔʁs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai une entorse à la cheville.", ipa: "ʒɛ yn ɑ̃tɔʁs a la ʃəvij", bases: [{ word: "J'ai", base: "avoir" }, { word: "une", ref: "fr-0545" }, { word: "entorse", base: "entorse" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "cheville", base: "cheville" }] }
+      - { target: "L'entorse est grave.", ipa: "lɑ̃tɔʁs ɛ ɡʁav", bases: [{ word: "L'entorse", base: "entorse" }, { word: "est", base: "être" }, { word: "grave", base: "grave" }] }
+  - id: "fr-3028"
+    target: "plâtre"
+    ipa: "platʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a un plâtre au bras.", ipa: "il a œ̃ platʁ o bʁa", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", base: "avoir" }, { word: "un", ref: "fr-0208" }, { word: "plâtre", base: "plâtre" }, { word: "au", base: "à" }, { word: "bras", ref: "fr-0928" }] }
+      - { target: "Le plâtre reste trois semaines.", ipa: "lə platʁ ʁɛst tʁwa səmɛn", bases: [{ word: "Le", ref: "fr-0543" }, { word: "plâtre", base: "plâtre" }, { word: "reste", base: "rester" }, { word: "trois", ref: "fr-0210" }, { word: "semaines", base: "semaine" }] }
+  - id: "fr-3029"
+    target: "épuisé"
+    ipa: "epɥize"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis épuisé après le travail.", ipa: "ʒə sɥi epɥize apʁɛ lə tʁavaj", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", base: "être" }, { word: "épuisé", base: "épuisé" }, { word: "après", base: "après" }, { word: "le", ref: "fr-0543" }, { word: "travail", ref: "fr-0255" }] }
+      - { target: "Elle est épuisée.", ipa: "ɛl ɛ epɥize", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", base: "être" }, { word: "épuisée", base: "épuisé" }] }
+  - id: "fr-3030"
+    target: "guérison"
+    ipa: "ɡeʁizɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La guérison prend deux semaines.", ipa: "la ɡeʁizɔ̃ pʁɑ̃ dø səmɛn", bases: [{ word: "La", ref: "fr-0544" }, { word: "guérison", base: "guérison" }, { word: "prend", base: "prendre" }, { word: "deux", ref: "fr-0209" }, { word: "semaines", base: "semaine" }] }
+      - { target: "Bonne guérison !", ipa: "bɔn ɡeʁizɔ̃", bases: [{ word: "Bonne", base: "bon" }, { word: "guérison", base: "guérison" }] }
+  - id: "fr-3031"
+    target: "convalescence"
+    ipa: "kɔ̃valɛsɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est en convalescence.", ipa: "il ɛ ɑ̃ kɔ̃valɛsɑ̃s", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", base: "être" }, { word: "en", base: "en" }, { word: "convalescence", base: "convalescence" }] }
+      - { target: "La convalescence dure un mois.", ipa: "la kɔ̃valɛsɑ̃s dyʁ œ̃ mwa", bases: [{ word: "La", ref: "fr-0544" }, { word: "convalescence", base: "convalescence" }, { word: "dure", base: "durer" }, { word: "un", ref: "fr-0208" }, { word: "mois", ref: "fr-1165" }] }
+  - id: "fr-3032"
+    target: "contagieux"
+    ipa: "kɔ̃taʒjø"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La grippe est contagieuse.", ipa: "la ɡʁip ɛ kɔ̃taʒjøz", bases: [{ word: "La", ref: "fr-0544" }, { word: "grippe", ref: "fr-3000" }, { word: "est", base: "être" }, { word: "contagieuse", base: "contagieux" }] }
+      - { target: "Ce rhume n'est pas contagieux.", ipa: "sə ʁym nɛ pa kɔ̃taʒjø", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "rhume", base: "rhume" }, { word: "n'est", base: "être" }, { word: "pas", base: "pas" }, { word: "contagieux", base: "contagieux" }] }
+  - id: "fr-3033"
+    target: "tension"
+    ipa: "tɑ̃sjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le médecin mesure ma tension.", ipa: "lə medsɛ̃ məzyʁ ma tɑ̃sjɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "médecin", ref: "fr-1073" }, { word: "mesure", base: "mesurer" }, { word: "ma", ref: "fr-0137" }, { word: "tension", base: "tension" }] }
+      - { target: "Ma tension est trop haute.", ipa: "ma tɑ̃sjɔ̃ ɛ tʁo ot", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "tension", base: "tension" }, { word: "est", base: "être" }, { word: "trop", ref: "fr-0344" }, { word: "haute", base: "haut" }] }
+  - id: "fr-3034"
+    target: "cachet"
+    ipa: "kaʃɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je prends un cachet le matin.", ipa: "ʒə pʁɑ̃ œ̃ kaʃɛ lə matɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", base: "prendre" }, { word: "un", ref: "fr-0208" }, { word: "cachet", base: "cachet" }, { word: "le", ref: "fr-0543" }, { word: "matin", base: "matin" }] }
+      - { target: "Ce cachet est très petit.", ipa: "sə kaʃɛ ɛ tʁɛ pəti", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "cachet", base: "cachet" }, { word: "est", base: "être" }, { word: "très", ref: "fr-0031" }, { word: "petit", ref: "fr-0411" }] }
+  - id: "fr-3035"
+    target: "boiter"
+    ipa: "bwate"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il boite depuis son accident.", ipa: "il bwat dəpɥi sɔ̃n aksidɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "boite", base: "boiter" }, { word: "depuis", base: "depuis" }, { word: "son", ref: "fr-0138" }, { word: "accident", base: "accident" }] }
+      - { target: "Elle boite un peu.", ipa: "ɛl bwat œ̃ pø", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "boite", base: "boiter" }, { word: "un", ref: "fr-0208" }, { word: "peu", base: "peu" }] }
+  - id: "fr-3036"
+    target: "recommander"
+    ipa: "ʁəkɔmɑ̃de"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le médecin recommande du repos.", ipa: "lə medsɛ̃ ʁəkɔmɑ̃d dy ʁəpo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "médecin", ref: "fr-1073" }, { word: "recommande", base: "recommander" }, { word: "du", base: "de" }, { word: "repos", ref: "fr-1105" }] }
+      - { target: "Je te recommande cette pharmacie.", ipa: "ʒə tə ʁəkɔmɑ̃d sɛt faʁmasi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "te", base: "te" }, { word: "recommande", base: "recommander" }, { word: "cette", ref: "fr-0144" }, { word: "pharmacie", ref: "fr-0963" }] }
+  - id: "fr-3037"
+    target: "os"
+    ipa: "ɔs"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'os est cassé.", ipa: "lɔs ɛ kase", bases: [{ word: "L'os", base: "os" }, { word: "est", base: "être" }, { word: "cassé", base: "casser" }] }
+      - { target: "Le chien ronge son os.", ipa: "lə ʃjɛ̃ ʁɔ̃ʒ sɔ̃n ɔs", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chien", ref: "fr-1253" }, { word: "ronge", base: "ronger" }, { word: "son", ref: "fr-0138" }, { word: "os", base: "os" }] }
+  - id: "fr-3038"
+    target: "allergique"
+    ipa: "alɛʁʒik"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis allergique au pollen.", ipa: "ʒə sɥi alɛʁʒik o pɔlɑ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", base: "être" }, { word: "allergique", base: "allergique" }, { word: "au", base: "à" }, { word: "pollen", base: "pollen" }] }
+      - { target: "Il est allergique aux chats.", ipa: "il ɛ alɛʁʒik o ʃa", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", base: "être" }, { word: "allergique", base: "allergique" }, { word: "aux", base: "à" }, { word: "chats", base: "chat" }] }
+  - id: "fr-3039"
+    target: "vertige"
+    ipa: "vɛʁtiʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai le vertige.", ipa: "ʒɛ lə vɛʁtiʒ", bases: [{ word: "J'ai", base: "avoir" }, { word: "le", ref: "fr-0543" }, { word: "vertige", base: "vertige" }] }
+      - { target: "Le vertige passe vite.", ipa: "lə vɛʁtiʒ pas vit", bases: [{ word: "Le", ref: "fr-0543" }, { word: "vertige", base: "vertige" }, { word: "passe", base: "passer" }, { word: "vite", base: "vite" }] }

@@ -1,0 +1,22 @@
+schema: 1
+id: "fr-en-grammar-pronoun-en"
+kind: "layer"
+core: "fr-grammar-pronoun-en"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The pronoun en: some of it, of them"
+license: "CC-BY-SA-4.0"
+description: "En replaces du, de la, des or de plus a noun, and stands before the verb. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "The pronoun en"
+  slot_name: "step"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "question": "question", "answer": "answer with en" }
+  entries:
+    "vouloir": "to want"
+    "prendre": "to take"
+    "manger": "to eat"
+    "avoir": "to have"
+    "acheter": "to buy"
+    "boire": "to drink"
+    "faire": "to make"
+  notes: "En replaces du, de la, de l', des or de plus a noun, so the answer need not repeat it: Tu veux du pain ? becomes Oui, j'en veux (Yes, I want some). It stands before the verb, and je becomes j' in front of it. When the answer gives a number, the number stays after the verb: j'en ai deux, j'en achète quatre. In the negative, ne goes before en: Non, je n'en veux pas."

@@ -1,0 +1,80 @@
+"schema": 1
+"id": "ja-en-reading-university"
+"name": "Japanese reading: university"
+"kind": "reading"
+"language":
+  "code": "ja"
+  "iso639_3": "jpn"
+  "name": "Japanese"
+  "script": "kana"
+  "tts": "ja-JP"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+  - "beginner"
+  - "unreviewed"
+"passages":
+  - "id": "ja-university-1"
+    "title": "A campus notice"
+    "sentences":
+      - "text": "きょうむかはげつようびにあきます。"
+        "reading": "kyoumuka wa getsuyoubi ni akimasu."
+      - "text": "てつづきをきょうむかでします。"
+        "reading": "tetsuzuki o kyoumuka de shimasu."
+      - "text": "じゅけんのけっかはらいしゅうにでます。"
+        "reading": "juken no kekka wa raishuu ni demasu."
+      - "text": "レポートのしめきりはきんようびです。"
+        "reading": "repooto no shimekiri wa kin'youbi desu."
+    "questions":
+      - "id": "ja-8380"
+        "prompt":
+          "en": "When does the academic affairs office open?"
+        "options":
+          - "en": "On Monday"
+          - "en": "On Friday"
+        "answer": 1
+      - "id": "ja-8381"
+        "prompt":
+          "en": "The notice says the results come out next week."
+        "answer": true
+      - "id": "ja-8382"
+        "prompt":
+          "en": "What is the deadline for the report?"
+        "options":
+          - "en": "On Friday"
+          - "en": "Tomorrow"
+        "answer": 1
+  - "id": "ja-university-2"
+    "title": "A seminar"
+    "sentences":
+      - "text": "わたしはぶんけいのがくせいです。"
+        "reading": "watashi wa bunkei no gakusei desu."
+      - "text": "ゼミでにほんごのぶんがくをよみます。"
+        "reading": "zemi de nihongo no bungaku o yomimasu."
+      - "text": "わたしのせんこうはぶんがくです。"
+        "reading": "watashi no senkou wa bungaku desu."
+      - "text": "しょうらいはがくしゃになります。"
+        "reading": "shourai wa gakusha ni narimasu."
+    "questions":
+      - "id": "ja-8383"
+        "prompt":
+          "en": "Which line says the person reads books in the seminar?"
+        "options":
+          - "en": "The second line"
+          - "en": "The fourth line"
+        "answer": 1
+      - "id": "ja-8384"
+        "prompt":
+          "en": "The person is a science-stream student."
+        "answer": false
+      - "id": "ja-8385"
+        "prompt":
+          "en": "Which line says the future goal is to become a scholar?"
+        "options":
+          - "en": "The first line"
+          - "en": "The fourth line"
+        "answer": 2

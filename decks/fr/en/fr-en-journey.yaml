@@ -1,0 +1,804 @@
+schema: 1
+id: "fr-en-journey"
+kind: "layer"
+core: "fr-journey"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Journey"
+license: "CC-BY-SA-4.0"
+description: "Buying a ticket and travelling by train: the words at the counter, on the platform and on the train. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-3400":
+    native: "return ticket"
+    notes:
+      "n1": "Un aller-retour is a ticket for the trip there and back; the plural is allers-retours."
+    examples:
+      "Je voudrais un aller-retour pour demain.":
+        native: "I would like a return ticket for tomorrow."
+        bases:
+          "voudrais": "would like"
+      "L'aller-retour coûte moins cher que deux billets.":
+        native: "The return ticket costs less than two tickets."
+        bases:
+          "coûte": "costs"
+          "que": "that, than"
+          "billets": "tickets"
+  "fr-3401":
+    native: "track"
+    notes:
+      "n1": "Voie is the railway track the train runs on; the platform the passenger walks on is the quai."
+    examples:
+      "Le train part de la voie numéro trois.":
+        native: "The train leaves from track number three."
+        bases:
+          "part": "leaves"
+          "de": "of, from"
+          "voie": "track"
+      "La voie est indiquée sur le panneau.":
+        native: "The track is shown on the sign."
+        bases:
+          "voie": "track"
+          "est": "is"
+          "indiquée": "shown"
+          "panneau": "sign, board"
+  "fr-3402":
+    native: "compartment"
+    notes:
+      "n1": "A compartiment is one closed part of a train carriage with its own seats."
+    examples:
+      "Notre compartiment est au milieu du train.":
+        native: "Our compartment is in the middle of the train."
+        bases:
+          "compartiment": "compartment"
+          "est": "is"
+          "au": "to the"
+          "du": "of the"
+      "Ce compartiment a six places.":
+        native: "There are six seats in this compartment."
+        bases:
+          "compartiment": "compartment"
+          "a": "has"
+          "places": "seats"
+  "fr-3403":
+    native: "connection, transfer"
+    notes:
+      "n1": "La correspondance is the change from one train or bus to another; faire une correspondance means to change trains."
+    examples:
+      "Nous avons une correspondance courte.":
+        native: "We have a short connection."
+        bases:
+          "avons": "have"
+          "correspondance": "connection, transfer"
+          "courte": "short"
+      "La correspondance est courte : dix minutes.":
+        native: "The connection is short: ten minutes."
+        bases:
+          "correspondance": "connection, transfer"
+          "est": "is"
+          "courte": "short"
+          "minutes": "minutes"
+  "fr-3404":
+    native: "ticket inspector"
+    notes:
+      "n1": "A contrôleur checks tickets on the train; the feminine is contrôleuse."
+    examples:
+      "Le contrôleur demande mon billet.":
+        native: "The inspector asks for my ticket."
+        bases:
+          "contrôleur": "ticket inspector"
+          "demande": "asks for"
+      "Le contrôleur passe dans le wagon.":
+        native: "The inspector walks through the carriage."
+        bases:
+          "contrôleur": "ticket inspector"
+          "passe": "walks"
+          "wagon": "carriage"
+  "fr-3405":
+    native: "cancellation"
+    notes:
+      "n1": "Une annulation is the act of cancelling; the verb is annuler."
+    examples:
+      "L'annulation du train est annoncée.":
+        native: "The cancellation of the train is announced."
+        bases:
+          "L'annulation": "cancellation"
+          "du": "of the"
+          "est": "is"
+          "annoncée": "announced"
+      "Une annulation gratuite est possible.":
+        native: "A free cancellation is possible."
+        bases:
+          "annulation": "cancellation"
+          "gratuite": "free"
+          "est": "is"
+  "fr-3406":
+    native: "supplement, extra fee"
+    notes:
+      "n1": "Un supplément is an extra charge on top of the ticket price."
+    examples:
+      "Le TGV a un supplément.":
+        native: "There is a supplement for the TGV."
+        bases:
+          "TGV": "TGV high-speed train"
+          "a": "has"
+          "supplément": "supplement, extra fee"
+      "Le supplément est payé au guichet.":
+        native: "The supplement is paid at the counter."
+        bases:
+          "supplément": "supplement, extra fee"
+          "est": "is"
+          "payé": "paid"
+          "au": "to the"
+  "fr-3407":
+    native: "carriage"
+    notes:
+      "n1": "Un wagon is one carriage of a train; the English word is almost the same."
+    examples:
+      "Le wagon numéro cinq est complet.":
+        native: "Carriage number five is full."
+        bases:
+          "wagon": "carriage"
+          "est": "is"
+          "complet": "full, no seats left"
+      "Chaque wagon a des toilettes.":
+        native: "Each carriage has a toilet."
+        bases:
+          "wagon": "carriage"
+          "a": "has"
+          "toilettes": "toilets"
+  "fr-3408":
+    native: "full, no seats left"
+    notes:
+      "n1": "Complet is masculine; the feminine is complète, used for a train with no seats left."
+    examples:
+      "Le train est complet ce soir.":
+        native: "The train is full tonight."
+        bases:
+          "est": "is"
+          "complet": "full, no seats left"
+      "La salle est complète.":
+        native: "The room is full."
+        bases:
+          "est": "is"
+          "complète": "full"
+  "fr-3409":
+    native: "sign, board"
+    notes:
+      "n1": "Un panneau is a sign or board; the plural is panneaux."
+    examples:
+      "Le panneau indique la sortie.":
+        native: "The sign shows the exit."
+        bases:
+          "panneau": "sign, board"
+          "indique": "shows"
+      "Un grand panneau affiche les horaires.":
+        native: "A large board displays the timetable."
+        bases:
+          "panneau": "sign, board"
+          "affiche": "displays"
+          "horaires": "timetable"
+  "fr-3410":
+    native: "display, departure board"
+    notes:
+      "n1": "L'affichage is the screen or board that shows the departure times."
+    examples:
+      "Le train est sur l'affichage.":
+        native: "The train is on the board."
+        bases:
+          "est": "is"
+          "l'affichage": "display"
+      "L'affichage montre le numéro de la voie.":
+        native: "The display shows the track number."
+        bases:
+          "L'affichage": "display"
+          "de": "of, from"
+          "voie": "track"
+  "fr-3411":
+    native: "to validate, to stamp"
+    notes:
+      "n1": "Valider a ticket means to stamp or validate it before the journey; the present is je valide."
+    examples:
+      "Je valide mon billet avant de monter.":
+        native: "I validate my ticket before getting on."
+        bases:
+          "valide": "validate"
+          "de": "of, from"
+      "Il faut valider le billet.":
+        native: "You must validate the ticket."
+        bases:
+          "faut": "must"
+          "valider": "to validate, to stamp"
+  "fr-3412":
+    native: "punctual, on time"
+    notes:
+      "n1": "Ponctuel is masculine; the feminine is ponctuelle."
+    examples:
+      "Le train est toujours ponctuel.":
+        native: "The train is always on time."
+        bases:
+          "est": "is"
+          "ponctuel": "punctual, on time"
+      "Il est très ponctuel.":
+        native: "He is very punctual."
+        bases:
+          "est": "is"
+          "ponctuel": "punctual, on time"
+  "fr-3413":
+    native: "punctuality"
+    notes:
+      "n1": "La ponctualité is the habit of arriving on time; the adjective is ponctuel."
+    examples:
+      "La ponctualité du train est bonne.":
+        native: "The punctuality of the train is good."
+        bases:
+          "ponctualité": "punctuality"
+          "du": "of the"
+          "est": "is"
+          "bonne": "good"
+      "Je compte sur la ponctualité du conducteur.":
+        native: "I rely on the driver's punctuality."
+        bases:
+          "ponctualité": "punctuality"
+          "du": "of the"
+          "conducteur": "driver"
+  "fr-3414":
+    native: "to turn off, to branch off"
+    notes:
+      "n1": "Bifurquer is regular; a road or a railway line bifurque when it forks or turns off in another direction."
+    examples:
+      "La route bifurque ici.":
+        native: "The road forks here."
+        bases:
+          "bifurque": "forks, branches off"
+      "Nous devons bifurquer à gauche.":
+        native: "We must turn off to the left."
+        bases:
+          "devons": "must"
+          "bifurquer": "turn off"
+          "à": "to, at"
+  "fr-3415":
+    native: "counter clerk"
+    notes:
+      "n1": "Un guichetier works at the ticket counter; the feminine is guichetière."
+    examples:
+      "Le guichetier répond à la question.":
+        native: "The counter clerk answers the question."
+        bases:
+          "guichetier": "counter clerk"
+          "répond": "answers"
+          "à": "to, at"
+      "Je parle au guichetier.":
+        native: "I speak to the counter clerk."
+        bases:
+          "parle": "talks"
+          "au": "to the"
+          "guichetier": "counter clerk"
+  "fr-3416":
+    native: "connecting"
+    notes:
+      "n1": "Correspondant is the adjective for a train that connects with another; the noun un correspondant is a contact."
+    examples:
+      "Le train correspondant part à dix heures.":
+        native: "The connecting train leaves at ten."
+        bases:
+          "correspondant": "connecting"
+          "part": "leaves"
+          "à": "to, at"
+          "heures": "hours"
+      "Je prends le train correspondant.":
+        native: "I take the connecting train."
+        bases:
+          "prends": "take"
+          "correspondant": "connecting"
+  "fr-3417":
+    native: "strike"
+    notes:
+      "n1": "La grève is the strike; it is feminine even though it is a work stoppage."
+    examples:
+      "Une grève des trains est prévue demain.":
+        native: "There is a train strike tomorrow."
+        bases:
+          "grève": "strike"
+          "trains": "trains"
+          "est": "is"
+          "prévue": "planned"
+      "La grève commence à six heures.":
+        native: "The strike starts at six o'clock."
+        bases:
+          "grève": "strike"
+          "commence": "starts"
+          "à": "to, at"
+          "heures": "hours"
+  "fr-3418":
+    native: "ticket office"
+    notes:
+      "n1": "La billetterie is the place where tickets are sold; guichet is the window in it."
+    examples:
+      "La billetterie est ouverte jusqu'à dix-huit heures.":
+        native: "The ticket office is open until six pm."
+        bases:
+          "billetterie": "ticket office"
+          "est": "is"
+          "ouverte": "open"
+          "jusqu'à": "until"
+          "heures": "hours"
+      "Je vais à la billetterie.":
+        native: "I am going to the ticket office."
+        bases:
+          "vais": "am going"
+          "à": "to, at"
+          "billetterie": "ticket office"
+  "fr-3419":
+    native: "to get off, to disembark"
+    notes:
+      "n1": "Débarquer is used for leaving a train or a boat; descendre is the usual word for leaving a train."
+    examples:
+      "Nous débarquons à la gare.":
+        native: "We get off at the station."
+        bases:
+          "débarquons": "get off"
+          "à": "to, at"
+      "Les passagers débarquent sur le quai.":
+        native: "The passengers get off onto the platform."
+        bases:
+          "passagers": "passengers"
+          "débarquent": "get off"
+  "fr-3420":
+    native: "terminus, last stop"
+    notes:
+      "n1": "Le terminus is the last stop of a line; the word is the same in the plural."
+    examples:
+      "Le train arrive au terminus.":
+        native: "The train arrives at the terminus."
+        bases:
+          "arrive": "arrives"
+          "au": "to the"
+          "terminus": "terminus, last stop"
+      "Le terminus est là, tout le monde descend.":
+        native: "This is the terminus, everybody gets off."
+        bases:
+          "terminus": "terminus, last stop"
+          "est": "is"
+          "monde": "people"
+          "descend": "get off"
+  "fr-3421":
+    native: "speed"
+    notes:
+      "n1": "La vitesse is speed; a high-speed train is un train à grande vitesse."
+    examples:
+      "Le train roule à grande vitesse.":
+        native: "The train travels at high speed."
+        bases:
+          "roule": "runs"
+          "à": "to, at"
+          "grande": "high"
+          "vitesse": "speed"
+      "La vitesse est de trois cents kilomètres à l'heure.":
+        native: "The speed is three hundred kilometres an hour."
+        bases:
+          "à": "to, at"
+          "vitesse": "speed"
+          "est": "is"
+          "de": "of, from"
+          "cents": "hundred"
+          "kilomètres": "kilometres"
+  "fr-3422":
+    native: "return journey"
+    notes:
+      "n1": "Le retour is the way back; le trajet retour is the return journey."
+    examples:
+      "Le retour est à dix-huit heures.":
+        native: "The return is at six pm."
+        bases:
+          "retour": "return journey"
+          "est": "is"
+          "à": "to, at"
+          "heures": "hours"
+      "Je prends le train du retour.":
+        native: "I take the return train."
+        bases:
+          "prends": "take"
+          "du": "of the"
+          "retour": "return journey"
+  "fr-3423":
+    native: "announcement"
+    notes:
+      "n1": "Une annonce is a message said over the speakers; the verb is annoncer."
+    examples:
+      "J'entends une annonce dans la gare.":
+        native: "I hear an announcement in the station."
+        bases:
+          "J'entends": "hear"
+          "annonce": "announcement"
+      "L'annonce dit que le train a du retard.":
+        native: "The announcement says the train is late."
+        bases:
+          "L'annonce": "announcement"
+          "dit": "says"
+          "que": "that, than"
+          "a": "has"
+          "du": "of the"
+  "fr-3424":
+    native: "ticket stamping"
+    notes:
+      "n1": "Le compostage is the stamping of a paper ticket before the journey; the verb is composter."
+    examples:
+      "Le compostage du billet est obligatoire.":
+        native: "Stamping the ticket is compulsory."
+        bases:
+          "compostage": "stamping"
+          "du": "of the"
+          "est": "is"
+          "obligatoire": "compulsory"
+      "Je fais le compostage au quai.":
+        native: "I stamp the ticket on the platform."
+        bases:
+          "fais": "do"
+          "compostage": "ticket stamping"
+          "au": "to the"
+  "fr-3425":
+    native: "couchette, sleeping berth"
+    notes:
+      "n1": "A couchette is a simple bed in a night train compartment."
+    examples:
+      "Je réserve une couchette pour la nuit.":
+        native: "I book a couchette for the night."
+        bases:
+          "réserve": "book"
+          "couchette": "couchette, sleeping berth"
+      "La couchette est en haut.":
+        native: "The couchette is on the top bunk."
+        bases:
+          "couchette": "couchette, sleeping berth"
+          "est": "is"
+          "en": "in"
+  "fr-3426":
+    native: "first class"
+    notes:
+      "n1": "Première is the feminine of premier; first-class travel is en première classe."
+    examples:
+      "Je voyage en première classe.":
+        native: "I travel first class."
+        bases:
+          "voyage": "travel"
+          "en": "in"
+          "première": "first class"
+      "La première classe est plus confortable.":
+        native: "First class is more comfortable."
+        bases:
+          "première": "first class"
+          "est": "is"
+          "confortable": "comfortable"
+  "fr-3427":
+    native: "second class"
+    notes:
+      "n1": "Seconde is the feminine of second; second-class travel is en seconde."
+    examples:
+      "Le billet en seconde coûte moins cher.":
+        native: "The second-class ticket costs less."
+        bases:
+          "en": "in"
+          "seconde": "second class"
+          "coûte": "costs"
+      "La seconde classe est pleine.":
+        native: "Second class is full."
+        bases:
+          "seconde": "second class"
+          "est": "is"
+          "pleine": "full"
+  "fr-3428":
+    native: "valid"
+    notes:
+      "n1": "Valable is the same in both genders; the ticket is valable for one day."
+    examples:
+      "Ce billet est valable deux mois.":
+        native: "This ticket is valid for two months."
+        bases:
+          "est": "is"
+          "valable": "valid"
+      "La carte est valable jusqu'en juin.":
+        native: "The card is valid until June."
+        bases:
+          "est": "is"
+          "valable": "valid"
+          "jusqu'en": "until"
+  "fr-3429":
+    native: "driver"
+    notes:
+      "n1": "Un conducteur drives the train; the feminine is conductrice."
+    examples:
+      "Le conducteur annonce le départ.":
+        native: "The driver announces the departure."
+        bases:
+          "conducteur": "driver"
+          "annonce": "announcement"
+      "Le conducteur du train est très gentil.":
+        native: "The train driver is very kind."
+        bases:
+          "conducteur": "driver"
+          "du": "of the"
+          "est": "is"
+  "fr-3430":
+    native: "kiosk"
+    notes:
+      "n1": "Un kiosque is a small stand that sells newspapers or tickets."
+    examples:
+      "J'achète un journal au kiosque.":
+        native: "I buy a newspaper at the kiosk."
+        bases:
+          "J'achète": "buy"
+          "au": "to the"
+          "kiosque": "kiosk"
+      "Le kiosque est à côté de la sortie.":
+        native: "The kiosk is next to the exit."
+        bases:
+          "kiosque": "kiosk"
+          "est": "is"
+          "à": "to, at"
+          "de": "of, from"
+  "fr-3431":
+    native: "ticket machine"
+    notes:
+      "n1": "Un automate is a machine that sells tickets without a person."
+    examples:
+      "J'achète le billet à l'automate.":
+        native: "I buy the ticket at the machine."
+        bases:
+          "J'achète": "buy"
+          "à": "to, at"
+          "l'automate": "ticket machine"
+      "L'automate ne marche pas.":
+        native: "The machine does not work."
+        bases:
+          "L'automate": "ticket machine"
+          "ne": "not"
+          "marche": "works"
+          "pas": "not"
+  "fr-3432":
+    native: "machine"
+    notes:
+      "n1": "La machine is any machine; une machine à billets is a ticket machine."
+    examples:
+      "Cette machine est près du quai.":
+        native: "This machine is near the platform."
+        bases:
+          "machine": "machine"
+          "est": "is"
+          "du": "of the"
+      "Je mets ma carte dans la machine.":
+        native: "I put my card in the machine."
+        bases:
+          "mets": "put"
+          "machine": "machine"
+  "fr-3433":
+    native: "refund"
+    notes:
+      "n1": "Le remboursement is the money given back; the verb is rembourser."
+    examples:
+      "Je demande un remboursement.":
+        native: "I ask for a refund."
+        bases:
+          "demande": "ask for"
+          "remboursement": "refund"
+      "Le remboursement arrive dans trois jours.":
+        native: "The refund arrives in three days."
+        bases:
+          "remboursement": "refund"
+          "arrive": "arrives"
+          "jours": "days"
+  "fr-3434":
+    native: "to delay"
+    notes:
+      "n1": "Retarder means to delay something or someone; for a train that is late the usual phrase is le train a du retard."
+    examples:
+      "Le train est retardé de dix minutes.":
+        native: "The train is delayed by ten minutes."
+        bases:
+          "est": "is"
+          "retardé": "delayed"
+          "de": "of, from"
+          "minutes": "minutes"
+      "Ce problème retarde le départ.":
+        native: "This problem delays the departure."
+        bases:
+          "retarde": "delays"
+  "fr-3435":
+    native: "train set"
+    notes:
+      "n1": "Une rame is a set of linked carriages, often on a metro or a suburban line."
+    examples:
+      "La rame arrive dans une minute.":
+        native: "The train arrives in one minute."
+        bases:
+          "rame": "train set"
+          "arrive": "arrives"
+      "Cette rame est très bondée.":
+        native: "This train set is very crowded."
+        bases:
+          "rame": "train set"
+          "est": "is"
+          "bondée": "crowded"
+  "fr-3436":
+    native: "tunnel"
+    notes:
+      "n1": "Un tunnel is a passage under a hill or under the sea."
+    examples:
+      "Le train passe dans le tunnel.":
+        native: "The train goes through the tunnel."
+        bases:
+          "passe": "goes"
+          "tunnel": "tunnel"
+      "Le tunnel est très long.":
+        native: "The tunnel is very long."
+        bases:
+          "tunnel": "tunnel"
+          "est": "is"
+  "fr-3437":
+    native: "locomotive"
+    notes:
+      "n1": "La locomotive is the engine that pulls the carriages."
+    examples:
+      "La locomotive tire les wagons.":
+        native: "The locomotive pulls the carriages."
+        bases:
+          "locomotive": "locomotive"
+          "tire": "pulls"
+          "wagons": "carriages"
+      "Une locomotive électrique est silencieuse.":
+        native: "An electric locomotive is quiet."
+        bases:
+          "locomotive": "locomotive"
+          "électrique": "electric"
+          "est": "is"
+          "silencieuse": "quiet"
+  "fr-3438":
+    native: "rail"
+    notes:
+      "n1": "Le rail is one metal bar of a railway; the railway itself is le chemin de fer."
+    examples:
+      "Le train roule sur les rails.":
+        native: "The train runs on the rails."
+        bases:
+          "roule": "runs"
+          "rails": "rails"
+      "Un rail est cassé.":
+        native: "A rail is broken."
+        bases:
+          "rail": "rail"
+          "est": "is"
+  "fr-3439":
+    native: "opening"
+    notes:
+      "n1": "L'ouverture is the time or act of opening; the verb is ouvrir."
+    examples:
+      "L'ouverture de la gare est à six heures.":
+        native: "The station opens at six."
+        bases:
+          "L'ouverture": "opening"
+          "de": "of, from"
+          "est": "is"
+          "à": "to, at"
+          "heures": "hours"
+      "L'ouverture du guichet est annoncée.":
+        native: "The opening of the counter is announced."
+        bases:
+          "L'ouverture": "opening"
+          "du": "of the"
+          "est": "is"
+          "annoncée": "announced"
+  "fr-3440":
+    native: "closing"
+    notes:
+      "n1": "La fermeture is the time or act of closing; the verb is fermer."
+    examples:
+      "La fermeture du guichet est à dix-huit heures.":
+        native: "The counter closes at six pm."
+        bases:
+          "fermeture": "closing"
+          "du": "of the"
+          "est": "is"
+          "à": "to, at"
+          "heures": "hours"
+      "La fermeture des portes est automatique.":
+        native: "The closing of the doors is automatic."
+        bases:
+          "fermeture": "closing"
+          "portes": "doors"
+          "est": "is"
+          "automatique": "automatic"
+  "fr-3441":
+    native: "porter"
+    notes:
+      "n1": "Un bagagiste carries luggage for travellers; the feminine is bagagiste too."
+    examples:
+      "Le bagagiste porte ma valise.":
+        native: "The porter carries my suitcase."
+        bases:
+          "bagagiste": "porter"
+          "porte": "carries"
+      "Je cherche un bagagiste.":
+        native: "I am looking for a porter."
+        bases:
+          "cherche": "look for"
+          "bagagiste": "porter"
+  "fr-3442":
+    native: "getting off"
+    notes:
+      "n1": "La descente is the act of getting off a train; the opposite is la montée."
+    examples:
+      "La descente du train est rapide.":
+        native: "Getting off the train is quick."
+        bases:
+          "descente": "getting off"
+          "du": "of the"
+          "est": "is"
+      "Pour la descente, prenez la porte de gauche.":
+        native: "To get off, use the left door."
+        bases:
+          "descente": "getting off"
+          "prenez": "take"
+          "de": "of, from"
+  "fr-3443":
+    native: "book of tickets"
+    notes:
+      "n1": "Un carnet is a book of tickets sold together, cheaper than single tickets."
+    examples:
+      "J'achète un carnet de dix billets.":
+        native: "I buy a book of ten tickets."
+        bases:
+          "J'achète": "buy"
+          "carnet": "book of tickets"
+          "de": "of, from"
+          "billets": "tickets"
+      "Le carnet coûte moins cher que dix billets simples.":
+        native: "The book costs less than ten single tickets."
+        bases:
+          "carnet": "book of tickets"
+          "coûte": "costs"
+          "que": "that, than"
+          "billets": "tickets"
+          "simples": "single"
+  "fr-3444":
+    native: "hall"
+    notes:
+      "n1": "Le hall is the large open space of a station where people wait."
+    examples:
+      "Le hall est grand et très calme.":
+        native: "The hall is large and very quiet."
+        bases:
+          "hall": "hall"
+          "est": "is"
+      "J'attends dans le hall.":
+        native: "I wait in the hall."
+        bases:
+          "J'attends": "wait"
+          "hall": "hall"
+  "fr-4656":
+    native: "A return ticket, please."
+    bases:
+      "s'il": "if"
+      "plaît": "to please"
+  "fr-4671":
+    native: "Which platform, please?"
+    bases:
+      "s'il": "if"
+      "plaît": "to please"
+  "fr-4673":
+    native: "Is this the train to Lyon?"
+    bases:
+      "C'est": "it is"
+  "fr-4674":
+    native: "Where is the ticket office?"
+    bases:
+      "est": "is"
+  "fr-4675":
+    native: "The ticket, please."
+    bases:
+      "s'il": "if"
+      "plaît": "to please"
+  "fr-4694":
+    native: "I get off here, please."
+    bases:
+      "descends": "get off"
+      "s'il": "if"
+      "plaît": "to please"

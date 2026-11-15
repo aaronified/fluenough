@@ -1,0 +1,27 @@
+schema: 1
+id: "fr-en-grammar-futur-simple"
+kind: "layer"
+core: "fr-grammar-futur-simple"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The future: what will happen"
+license: "CC-BY-SA-4.0"
+description: "The simple future says what will happen, from a stem plus -ai, -as, -a, -ons, -ez, -ont: je parlerai, nous irons. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Simple future"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "je": "I", "tu": "you (informal)", "il-elle": "he or she", "nous": "we", "vous": "you (formal or plural)", "ils-elles": "they" }
+  entries:
+    "parler": "to speak"
+    "finir": "to finish"
+    "attendre": "to wait for"
+    "etre": "to be"
+    "avoir": "to have"
+    "aller": "to go"
+    "faire": "to do or make"
+    "venir": "to come"
+    "voir": "to see"
+    "pouvoir": "to be able to"
+    "vouloir": "to want"
+    "savoir": "to know"
+  notes: "The simple future says what will happen: demain, je parlerai avec lui. For most verbs, take the infinitive and add -ai, -as, -a, -ons, -ez, -ont: parler gives je parlerai, finir gives je finirai. Verbs in -re lose their final e first: attendre gives j'attendrai. A group of common verbs keeps these endings but has an irregular stem, which you learn by heart: être ser- (je serai), avoir aur- (j'aurai), aller ir- (j'irai), faire fer- (je ferai), venir viendr- (je viendrai), voir verr- (je verrai), pouvoir pourr- (je pourrai), vouloir voudr- (je voudrai), savoir saur- (je saurai). Every future stem ends in r, so you always hear an r before the ending. Je becomes j' before a vowel sound: j'attendrai, j'aurai, j'irai. In everyday speech the near future (aller plus an infinitive, as in je vais parler) is more common for what will happen soon."

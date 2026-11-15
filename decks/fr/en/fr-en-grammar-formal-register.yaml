@@ -1,0 +1,25 @@
+schema: 1
+id: "fr-en-grammar-formal-register"
+kind: "layer"
+core: "fr-grammar-formal-register"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Tu and vous: informal and formal"
+license: "CC-BY-SA-4.0"
+description: "French has two ways of saying you: tu with friends, vous with strangers and in formal writing. The verb, the pronouns and the letter greetings change with it. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Informal and formal address"
+  slot_name: "register"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "informal": "informal: tu, for a friend, a relative or a child", "formal": "formal: vous, for a stranger, an older person or in a formal letter" }
+  entries:
+    "aller": "to go (how are you?)"
+    "avoir": "to have (to be right)"
+    "vouloir": "to want"
+    "pouvoir": "to be able to"
+    "savoir": "to know"
+    "venir": "to come"
+    "remercier": "to thank"
+    "s-excuser": "to apologise"
+    "s-appeler": "to be called"
+    "lettre": "letter (how it begins)"
+  notes: "French has two words for you: tu is informal and vous is formal. Use tu with friends, family, children and people you know well; use vous with someone you do not know, someone older or in a position of respect, in a formal setting, and always for more than one person. The choice changes the verb (tu as, vous avez; tu veux, voulez-vous), the pronouns (je te remercie, je vous remercie), the imperative (viens, venez; excuse-moi, excusez-moi) and the words in a letter: a friend is greeted with Cher Paul, a stranger or an office with Madame, Monsieur. A question can be asked without inversion in speech (tu veux un café ?), but the formal version often inverts the verb and the pronoun (voulez-vous un café ?), as in the unit on inversion. If you are unsure, vous is the safe choice: the other person can invite you to use tu, and French has a verb for it, tutoyer, and for saying vous, vouvoyer."

@@ -1,0 +1,24 @@
+schema: 1
+id: "fr-en-grammar-subjonctif-uses"
+kind: "layer"
+core: "fr-grammar-subjonctif-uses"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The subjunctive: when to use it"
+license: "CC-BY-SA-4.0"
+description: "The subjunctive follows certain phrases and conjunctions: il faut que tu partes, bien qu'il pleuve, pour que tu comprennes. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "When the subjunctive is used"
+  slot_name: "part"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "trigger": "the phrase that introduces the clause", "sentence": "a model sentence" }
+  entries:
+    "falloir": "to be necessary"
+    "vouloir": "to want"
+    "avoir-peur": "to be afraid"
+    "etre-content": "to be glad"
+    "bien-que": "although"
+    "pour-que": "so that"
+    "avant-que": "before"
+    "penser": "to think (takes the indicative)"
+    "esperer": "to hope (takes the indicative)"
+  notes: "The subjunctive is required after certain phrases. After expressions of necessity (il faut que), wishing (je veux que), feeling (j'ai peur que, je suis content que) and after the conjunctions bien que (although), pour que (so that) and avant que (before), the verb of the second clause is in the subjunctive: il faut que tu partes, je veux que tu viennes, bien qu'il pleuve, pour que tu comprennes, avant que tu partes. The forms are those of the previous unit. Not every que is a trigger: after verbs of thinking and saying, as penser que, and after espérer que, the indicative is used, and in the positive these two take the indicative: je pense qu'il vient, j'espère qu'il vient. A useful rule of thumb is that the subjunctive is for what is wanted, felt or not yet real, and the indicative for what is stated as a fact. When the two clauses have the same subject, French usually uses an infinitive instead (je veux partir, not je veux que je parte)."

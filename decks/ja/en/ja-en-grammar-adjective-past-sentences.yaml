@@ -1,0 +1,103 @@
+schema: 1
+id: "ja-en-grammar-adjective-past-sentences"
+kind: "layer"
+core: "ja-grammar-adjective-past-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Describing words in the past, in sentences"
+description: "Sentences with the negative past and the polite past of describing words, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-9160":
+    native: "The trip was fun."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "おもしろい (omoshiroi) means interesting; funny." }
+      w2: { why: "むずかしい (muzukashii) means difficult; hard." }
+  "ja-9161":
+    native: "Kyoto was cold."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "あつい (atsui) means hot (of weather, things)." }
+      w2: { why: "つめたい (tsumetai) means cold (to touch or taste)." }
+  "ja-9162":
+    native: "The hotel was not expensive."
+    notes:
+      "n1": "たかくなかった (takakunakatta): たかい (takai) becomes たかく (takaku), and なかった (nakatta) makes it the negative past. です (desu) after it makes it polite."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "やすい (yasui) means cheap; inexpensive." }
+      w2: { why: "ひくい (hikui) means low; short (of height)." }
+  "ja-9163":
+    native: "The meal was not tasty."
+    notes:
+      "n1": "おいしくなかった (oishikunakatta): おいしくない (oishikunai) changes ない (nai) to なかった (nakatta) for the past."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+    confusables:
+      w1: { why: "まずい (mazui) means tasting bad; unpalatable." }
+      w2: { why: "からい (karai) means spicy; salty." }
+  "ja-9164":
+    native: "The film was not interesting."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+    confusables:
+      w1: { why: "つまらない (tsumaranai) means boring." }
+      w2: { why: "たのしい (tanoshii) means fun; enjoyable." }
+  "ja-9165":
+    native: "The sea was beautiful."
+    notes:
+      "n1": "きれいだった (kirei datta): a na-adjective takes だった (datta) for the past, and きれい (kirei) ends in い (i) but is not an i-adjective, so it is never きれかった (kirekatta)."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "だった": { meaning: "was (plain)" }
+    confusables:
+      w1: { why: "きたない (kitanai) means dirty; untidy." }
+      w2: { why: "しずか (shizuka) means quiet; calm." }
+  "ja-9166":
+    native: "The town was not quiet."
+    notes:
+      "n1": "じゃ (ja) is the spoken form of では (de wa): しずかではなかった (shizuka de wa nakatta) says the same more formally."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "じゃなかった": { meaning: "was not (plain, spoken)" }
+    confusables:
+      w1: { why: "べんり (benri) means convenient; useful." }
+      w2: { why: "あかるい (akarui) means bright; cheerful." }
+  "ja-9167":
+    native: "I was free yesterday."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "でした": { meaning: "was (polite)" }
+    confusables:
+      w1: { why: "いそがしい (isogashii) means busy." }
+      w2: { why: "たいへん (taihen) means hard; tough; terrible." }
+  "ja-9168":
+    native: "The weather was not good."
+    notes:
+      "n1": "よく (yoku): いい (ii) uses よく (yoku) before ありません (arimasen) as it does in よくない (yokunai). よくなかったです (yokunakatta desu) says the same."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "ありません": { meaning: "to be (of things); to exist" }
+      "でした": { meaning: "was (polite)" }
+    confusables:
+      w1: { why: "わるい (warui) means bad; wrong." }
+      w2: { why: "さむい (samui) means cold (of weather)." }
+  "ja-9169":
+    native: "My friend was not well yesterday."
+    notes:
+      "n1": "じゃ (ja) is the spoken form of では (de wa): げんきではありませんでした (genki de wa arimasen deshita) is the more formal way."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "じゃ": { meaning: "(spoken form of では (de wa))" }
+      "ありません": { meaning: "to be (of things); to exist" }
+      "でした": { meaning: "was (polite)" }
+    confusables:
+      w1: { why: "ねむい (nemui) means sleepy." }
+      w2: { why: "だいじょうぶ (daijoubu) means all right; safe; fine." }

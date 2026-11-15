@@ -1,0 +1,101 @@
+schema: 1
+id: "fr-en-nature-sentences"
+kind: "layer"
+core: "fr-nature-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nature sentences"
+license: "CC-BY-SA-4.0"
+description: "Example sentences about nature, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-3520":
+    native: "The stream flows through the valley."
+    bases:
+      "ruisseau": "stream"
+      "coule": "flows"
+      "vallée": "valley"
+    confusables:
+      "riviere": { why: "Rivière is a river, larger than a ruisseau." }
+      "etang": { why: "Étang is a pond of still water, not a flowing stream." }
+  "fr-3521":
+    native: "The cows eat in the field."
+    bases:
+      "vaches": "cows"
+      "mangent": "eat"
+      "champ": "field"
+    confusables:
+      "prairie": { why: "Prairie is a meadow; champ is a field for crops." }
+      "herbe": { why: "Herbe is grass, the plant the cows eat." }
+  "fr-3522":
+    native: "The lake is calm in the morning."
+    bases:
+      "lac": "lake"
+      "est": "is"
+    confusables:
+      "etang": { why: "Étang is a small pond; lac is a large lake." }
+      "mer": { why: "Mer is the sea, not a lake." }
+  "fr-3523":
+    native: "A cliff overlooks the sea."
+    bases:
+      "falaise": "cliff"
+      "domine": "overlooks"
+    confusables:
+      "cote": { why: "Côte is the coast along the sea; falaise is the cliff rising above it." }
+      "rocher": { why: "Rocher is a rock; a falaise is a cliff." }
+  "fr-3524":
+    native: "Flowers grow in the grass."
+    bases:
+      "fleurs": "flowers"
+      "poussent": "grow"
+      "l'herbe": "grass"
+    confusables:
+      "plante": { why: "Plante is a plant in general; fleur is the flower part of it." }
+      "feuille": { why: "Feuille is a leaf, not a flower." }
+  "fr-3525":
+    native: "The path climbs towards the forest."
+    bases:
+      "sentier": "path"
+      "monte": "climbs"
+    confusables:
+      "colline": { why: "Colline is a hill; sentier is the path that climbs it." }
+      "pente": { why: "Pente is a slope, the part of the hill where the path rises." }
+  "fr-3526":
+    native: "The water runs over the rocks."
+    bases:
+      "L'eau": "water"
+      "coule": "runs"
+      "rochers": "rocks"
+    confusables:
+      "cascade": { why: "Cascade is a waterfall: water falling from a height." }
+      "vague": { why: "Vague is a wave on the sea, not water on the ground." }
+  "fr-3527":
+    native: "The marsh is full of birds."
+    bases:
+      "marais": "marsh"
+      "est": "is"
+      "d'oiseaux": "birds"
+    confusables:
+      "etang": { why: "Étang is a pond; marais is wet land with plants." }
+      "prairie": { why: "Prairie is grassland, not wet land." }
+  "fr-3528":
+    native: "The volcano smokes at the edge of the sea."
+    bases:
+      "volcan": "volcano"
+      "fume": "smokes"
+      "au": "to the"
+      "bord": "edge"
+      "de": "of, from"
+    confusables:
+      "falaise": { why: "Falaise is a cliff, the steep rock by the sea." }
+      "golfe": { why: "Golfe is a gulf, a part of the sea that goes into the land." }
+  "fr-3529":
+    native: "The root of the tree is deep."
+    bases:
+      "racine": "root"
+      "de": "of, from"
+      "l'arbre": "tree"
+      "est": "is"
+      "profonde": "deep"
+    confusables:
+      "tronc": { why: "Tronc is the trunk, the thick stem; racine is the root under the ground." }
+      "branche": { why: "Branche is a branch, the part above the trunk." }
