@@ -1,0 +1,186 @@
+schema: 1
+id: "hi-history-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-5580"
+    target: "प्राचीन सभ्यता के शिलालेख मिले हैं।"
+    reading: "prācīn sabhyatā kē śilālēkh milē haim̐."
+    ipa: "praːtʃiːn səbʱjət̪aː keː ʃɪlaːleːkʰ mɪleː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "प्राचीन", ref: "hi-2493" }
+      - { word: "सभ्यता", ref: "hi-2487" }
+      - { word: "के", base: "का", reading: "kē" }
+      - { word: "शिलालेख", ref: "hi-2490" }
+      - { word: "मिले", base: "मिलना", reading: "milē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "मध्यकालीन", reading: "madhyakālīn", kind: "word" }
+      - { id: "w2", word: "आधुनिक", reading: "ādhunik", kind: "word" }
+  - id: "hi-5581"
+    target: "राजा ने युद्ध जीता।"
+    reading: "rājā nē yuddh jītā."
+    ipa: "raːdʒaː neː jʊd̪d̪ʱ dʒiːt̪aː"
+    pos: "phrase"
+    bases:
+      - { word: "राजा", ref: "hi-2473" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "युद्ध", ref: "hi-2476" }
+      - { word: "जीता", base: "जीतना", reading: "jītā" }
+    confusables:
+      - { id: "w1", word: "लड़ाई", reading: "laṛāī", kind: "word" }
+      - { id: "w2", word: "सेनापति", reading: "sēnāpti", kind: "word" }
+  - id: "hi-5582"
+    target: "सम्राट का साम्राज्य बहुत बड़ा था।"
+    reading: "samrāṭ kā sāmrājya bahut baṛā thā."
+    ipa: "səmraːʈ kaː saːmraːdʒjə bəɦʊt̪ bəɽaː t̪ʰaː"
+    pos: "phrase"
+    bases:
+      - { word: "सम्राट", ref: "hi-2480" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "साम्राज्य", ref: "hi-2479" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "बड़ा", ref: "hi-0894" }
+      - { word: "था", base: "होना", reading: "thā" }
+    confusables:
+      - { id: "w1", word: "राजा", reading: "rājā", kind: "word" }
+      - { id: "w2", word: "दरबार", reading: "darbār", kind: "word" }
+  - id: "hi-5583"
+    target: "रानी ने दरबार में नया कानून बनाया।"
+    reading: "rānī nē darbār mēm̐ nayā kānūn banāyā."
+    ipa: "raːniː neː d̪ərbaːr mẽː nəjaː kaːnuːn bənaːjaː"
+    pos: "phrase"
+    bases:
+      - { word: "रानी", ref: "hi-2474" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "दरबार", ref: "hi-2492" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "नया", ref: "hi-0896" }
+      - { word: "कानून", base: "कानून", reading: "kānūn" }
+      - { word: "बनाया", base: "बनाना", reading: "banāyā" }
+    confusables:
+      - { id: "w1", word: "शासन", reading: "śāsan", kind: "word" }
+      - { id: "w2", word: "राजा", reading: "rājā", kind: "word" }
+  - id: "hi-5584"
+    target: "आज़ादी की लड़ाई में कई लोग शहीद हुए।"
+    reading: "āzādī kī laṛāī mēm̐ kaī lōg śahīd huē."
+    ipa: "aːzaːd̪iː kiː ləɽaːiː mẽː kəiː loːɡ ʃəɦiːd̪ ɦʊeː"
+    pos: "phrase"
+    bases:
+      - { word: "आज़ादी", ref: "hi-2483" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "लड़ाई", ref: "hi-2477" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "कई", base: "कई", reading: "kaī" }
+      - { word: "लोग", ref: "hi-0761" }
+      - { word: "शहीद", base: "शहीद", reading: "śahīd" }
+      - { word: "हुए", base: "होना", reading: "huē" }
+    confusables:
+      - { id: "w1", word: "स्वतंत्रता", reading: "svatantratā", kind: "word" }
+      - { id: "w2", word: "संधि", reading: "sandhi", kind: "word" }
+  - id: "hi-5585"
+    target: "हमारी संस्कृति बहुत पुरानी है।"
+    reading: "hamārī saṁskriti bahut purānī hai."
+    ipa: "ɦəmaːriː sə̃skrɪt̪ɪ bəɦʊt̪ pʊraːniː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "हमारी", base: "हमारा", reading: "hamārī" }
+      - { word: "संस्कृति", ref: "hi-2488" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "पुरानी", base: "पुराना", reading: "purānī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "सभ्यता", reading: "sabhyatā", kind: "word" }
+      - { id: "w2", word: "काल", reading: "kāl", kind: "word" }
+  - id: "hi-5586"
+    target: "वह किला सदी में बना था।"
+    reading: "vah kilā sadī mēm̐ banā thā."
+    ipa: "ʋəɦ kɪlaː səd̪iː mẽː bənaː t̪ʰaː"
+    pos: "phrase"
+    bases:
+      - { word: "वह", ref: "hi-0749" }
+      - { word: "किला", base: "किला", reading: "kilā" }
+      - { word: "सदी", ref: "hi-2498" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "बना", base: "बनना", reading: "banā" }
+      - { word: "था", base: "होना", reading: "thā" }
+    confusables:
+      - { id: "w1", word: "युग", reading: "yug", kind: "word" }
+      - { id: "w2", word: "काल", reading: "kāl", kind: "word" }
+  - id: "hi-5587"
+    target: "इस युग को आधुनिक कहते हैं।"
+    reading: "is yug kō ādhunik kahtē haim̐."
+    ipa: "ɪs jʊɡ koː aːd̪ʱʊnɪk kəɦt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "इस", base: "यह", reading: "is" }
+      - { word: "युग", ref: "hi-2496" }
+      - { word: "को", ref: "hi-0277" }
+      - { word: "आधुनिक", ref: "hi-2495" }
+      - { word: "कहते", base: "कहना", reading: "kahtē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "प्राचीन", reading: "prācīn", kind: "word" }
+      - { id: "w2", word: "मध्यकालीन", reading: "madhyakālīn", kind: "word" }
+  - id: "hi-5588"
+    target: "राजवंश की शक्ति कम हुई।"
+    reading: "rājvaṁś kī śakti kam huī."
+    ipa: "raːdʒʋə̃ʃ kiː ʃəkt̪ɪ kəm ɦʊiː"
+    pos: "phrase"
+    bases:
+      - { word: "राजवंश", ref: "hi-2475" }
+      - { word: "की", base: "का", reading: "kī" }
+      - { word: "शक्ति", base: "शक्ति", reading: "śakti" }
+      - { word: "कम", ref: "hi-0105" }
+      - { word: "हुई", base: "होना", reading: "huī" }
+    confusables:
+      - { id: "w1", word: "साम्राज्य", reading: "sāmrājy", kind: "word" }
+      - { id: "w2", word: "शासन", reading: "śāsan", kind: "word" }
+  - id: "hi-5589"
+    target: "पुरातत्व से सभ्यता का पता चलता है।"
+    reading: "purātatv sē sabhyatā kā patā caltā hai."
+    ipa: "pʊraːt̪ət̪ʋ seː səbʱjət̪aː kaː pət̪aː tʃəlt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "पुरातत्व", ref: "hi-2489" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "सभ्यता", ref: "hi-2487" }
+      - { word: "का", ref: "hi-0279" }
+      - { word: "पता", base: "पता", reading: "patā" }
+      - { word: "चलता", base: "चलना", reading: "caltā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "शिलालेख", reading: "śilālēkh", kind: "word" }
+      - { id: "w2", word: "ग्रंथ", reading: "granth", kind: "word" }
+  - id: "hi-5590"
+    target: "सेनापति युद्ध हार गया।"
+    reading: "sēnāpati yuddh hār gayā."
+    ipa: "seːnaːpət̪ɪ jʊd̪d̪ʱ ɦaːr ɡəjaː"
+    pos: "phrase"
+    bases:
+      - { word: "सेनापति", ref: "hi-2478" }
+      - { word: "युद्ध", ref: "hi-2476" }
+      - { word: "हार", base: "हारना", reading: "hār" }
+      - { word: "गया", base: "जाना", reading: "gayā" }
+    confusables:
+      - { id: "w1", word: "राजा", reading: "rājā", kind: "word" }
+      - { id: "w2", word: "शासन", reading: "śāsan", kind: "word" }
+  - id: "hi-5591"
+    target: "सदियों पुराना ग्रंथ दरबार में मिला।"
+    reading: "sadiyōm̐ purānā granth darbār mēm̐ milā."
+    ipa: "səd̪ɪjõː pʊraːnaː ɡrənt̪ʰ d̪ərbaːr mẽː mɪlaː"
+    pos: "phrase"
+    bases:
+      - { word: "सदियों", base: "सदी", reading: "sadiyōm̐" }
+      - { word: "पुराना", base: "पुराना", reading: "purānā" }
+      - { word: "ग्रंथ", ref: "hi-2491" }
+      - { word: "दरबार", ref: "hi-2492" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "मिला", base: "मिलना", reading: "milā" }
+    confusables:
+      - { id: "w1", word: "शिलालेख", reading: "śilālēkh", kind: "word" }
+      - { id: "w2", word: "सम्राट", reading: "samrāṭ", kind: "word" }
