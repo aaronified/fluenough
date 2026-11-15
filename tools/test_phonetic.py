@@ -443,6 +443,76 @@ class Registry(Tree):
             ip.load_registry(reg)
 
 
+class Normalising(Tree):
+    """A language may opt in to `normalise` pairs (#1369, gap 5), so
+    Wiktionary's forms read in the conventions of the course's rules."""
+
+    PAIRS = (("([\u00f0\u03b2\u0263])\u031e", "\\1"),
+             ("([td])[\u0361\u035c]([\u0283\u0292])", "\\1\\2"),
+             ("n\u031f(?=\u02c8?\u03b8)", "n\u032a"))
+
+    def zz(self, normalise=()):
+        return {"zz": ip.Variety("Zed", normalise=normalise)}
+
+    def run_import(self, *lines: str, normalise=PAIRS, write: bool = False):
+        with mock.patch.dict(ip.VARIETIES, self.zz(normalise)):
+            return ip.run("zz", self.dump(*lines), self.decks, write)
+
+    def form(self, ipa: str, **kw) -> str:
+        _, fills = self.run_import(entry("kat", sound(ipa)), **kw)
+        return fills[self.core]["zz-0001"][0]
+
+    def test_spanish_conventions_are_applied_to_an_imported_form(self) -> None:
+        self.assertEqual(self.form("[ˈkað̞β̞ɣ̞]"), "[ˈkaðβɣ]")
+        self.assertEqual(self.form("[t͡ʃa d͡ʒa]"), "[tʃa dʒa]")
+        self.assertEqual(self.form("[ˈan̟θo]"), "[ˈan̪θo]")
+
+    def test_the_tie_barred_palatal_and_nasal_vowels_are_left_alone(self) -> None:
+        for kept in ("[ˈkaɟ͡ʝo]", "[ˈkãn]", "[ˈan̟to]"):
+            self.assertEqual(self.form(kept), kept)
+
+    def test_a_language_without_pairs_keeps_the_form_as_wiktionary_wrote_it(self) -> None:
+        self.assertEqual(self.form("[ˈkað̞]", normalise=()), "[ˈkað̞]")
+
+    def test_the_real_registry_normalises_spanish_only(self) -> None:
+        es = ip.VARIETIES["es"]
+        self.assertEqual(es.normalised("[t͡ʃan̟θβ̞]"),
+                         "[tʃan̪θβ]")
+        for lang, v in ip.VARIETIES.items():
+            if lang != "es":
+                self.assertEqual(v.normalise, (), lang)
+
+    def test_a_registry_entry_loads_its_pairs_and_a_bad_pattern_names_the_language(self) -> None:
+        reg = self.tmp / "r.yaml"
+        reg.write_text('zz:\n  dump: Zed\n  variety:\n    name: "Zed"\n  normalise:\n'
+                       '    - pattern: \'x\\u031e\'\n      replace: "y"\n', encoding="utf-8")
+        _, varieties = ip.load_registry(reg)
+        self.assertEqual(varieties["zz"].normalised("[ax̞]"), "[ay]")
+        reg.write_text('zz:\n  dump: Zed\n  variety:\n    name: "Zed"\n  normalise:\n'
+                       '    - pattern: "("\n      replace: ""\n', encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "zz"):
+            ip.load_registry(reg)
+
+    def test_renormalise_rewrites_wiktionary_cards_in_place_and_only_those(self) -> None:
+        text = CORE.replace('"[dɔɡ̊]"', '"[ˈdɔð̞]"')
+        text = text.replace('    ipa: "bat"\n',
+                            '    ipa: "bat"\n    phonetic: "[baβ̞]"\n'
+                            '    phonetic_source: "rules"\n')
+        self.core.write_text(text, encoding="utf-8")
+        with mock.patch.dict(ip.VARIETIES, self.zz(self.PAIRS)):
+            cov, fills = ip.renormalise("zz", self.decks, write=False)
+            self.assertEqual(self.core.read_text(encoding="utf-8"), text)  # report only
+            self.assertEqual(fills[self.core], {"zz-0002": ("[ˈdɔð]", "wiktionary")})
+            self.assertEqual(cov.decks["zz-home"]["renormalised"], 1)
+            ip.renormalise("zz", self.decks, write=True)
+            again, _ = ip.renormalise("zz", self.decks, write=True)
+        out = self.core.read_text(encoding="utf-8")
+        self.assertIn('    phonetic: "[ˈdɔð]"\n    phonetic_source: "wiktionary"\n', out)
+        self.assertEqual(out, text.replace("[ˈdɔð̞]", "[ˈdɔð]"))  # the rules card is untouched
+        self.assertEqual(again.decks["zz-home"].get("renormalised", 0), 0)
+        self.assertEqual(again.decks["zz-home"]["unchanged"], 1)
+
+
 class Unwritable(Tree):
     """A card the patcher cannot write is counted and fails a --write run."""
 
@@ -461,7 +531,7 @@ class Unwritable(Tree):
             '    replace: \'t̚\'\n    source: "A source, 2000"\n', encoding="utf-8")
 
     def refuse(self):
-        return mock.patch.object(pp, "patch", lambda text, fills, replace_rules=False: (
+        return mock.patch.object(pp, "patch", lambda text, fills, replace_rules=False, **kw: (
             text, {cid: "no ipa line" for cid in fills}))
 
     def test_the_mixed_file_is_now_written_and_nothing_is_unwritable(self) -> None:
