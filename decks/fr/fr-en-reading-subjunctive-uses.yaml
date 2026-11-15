@@ -1,0 +1,79 @@
+schema: 1
+id: "fr-en-reading-subjunctive-uses"
+name: "Reading: doubts, fears and feelings: the subjunctive after que"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about what someone doubts, fears or is glad of, with il faut que, bien que and avant que. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-doubts-and-hopes"
+    title: "Doubts and hopes"
+    theme: "feelings"
+    sentences:
+      - text: "Il faut que tu partes."
+        ipa: "il fo kə ty paʁt"
+      - text: "J'ai peur qu'il pleuve."
+        ipa: "ʒe pœʁ kil plœv"
+      - text: "Je suis content que tu sois là."
+        ipa: "ʒə sɥi kɔ̃tɑ̃ kə ty swa la"
+      - text: "Bien qu'il pleuve, nous sortons."
+        ipa: "bjɛ̃ kil plœv nu sɔʁtɔ̃"
+    questions:
+      - id: "fr-3950"
+        prompt: { en: "What does the speaker fear?" }
+        options:
+          - { en: "That it will rain" }
+          - { en: "That it will snow" }
+          - { en: "That it will be hot" }
+        answer: 1
+      - id: "fr-3951"
+        prompt: { en: "What is the speaker glad about?" }
+        options:
+          - { en: "That you are late" }
+          - { en: "That you are there" }
+          - { en: "That you are ill" }
+        answer: 2
+      - id: "fr-3952"
+        prompt: { en: "What do 'we' do even though it rains?" }
+        options:
+          - { en: "Stay in" }
+          - { en: "Sleep" }
+          - { en: "Go out" }
+        answer: 3
+  - id: "fr-opinion-notes"
+    title: "Short notes"
+    theme: "opinions"
+    sentences:
+      - text: "Je veux que tu viennes."
+        ipa: "ʒə vø kə ty vjɛn"
+      - text: "Appelle-moi avant que tu partes."
+        ipa: "apɛl mwa avɑ̃ kə ty paʁt"
+      - text: "Pour que tu comprennes, j'écris."
+        ipa: "puʁ kə ty kɔ̃pʁɛn ʒekʁi"
+      - text: "J'ai peur que tu sois malade."
+        ipa: "ʒe pœʁ kə ty swa malad"
+    questions:
+      - id: "fr-3953"
+        prompt: { en: "What must 'you' do before leaving?" }
+        options:
+          - { en: "Call the speaker" }
+          - { en: "Pay the bill" }
+          - { en: "Close the door" }
+        answer: 1
+      - id: "fr-3954"
+        prompt: { en: "Why does the speaker write?" }
+        options:
+          - { en: "So that you sleep" }
+          - { en: "So that you understand" }
+          - { en: "So that you leave" }
+        answer: 2
+      - id: "fr-3955"
+        prompt: { en: "What does the speaker fear about 'you'?" }
+        options:
+          - { en: "That you are late" }
+          - { en: "That you are angry" }
+          - { en: "That you are ill" }
+        answer: 3

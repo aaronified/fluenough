@@ -1,0 +1,79 @@
+schema: 1
+id: "fr-en-reading-plus-que-parfait"
+name: "Reading: what had already happened: the plus-que-parfait"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about what had happened before something else began, with the plus-que-parfait of common verbs. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-it-had-already-happened"
+    title: "It had already happened"
+    theme: "daily-life"
+    sentences:
+      - text: "Quand je suis arrivé, il avait déjà mangé."
+        ipa: "kɑ̃ ʒə sɥi aʁive il avɛ deʒa mɑ̃ʒe"
+      - text: "Nous étions déjà partis."
+        ipa: "nu etjɔ̃ deʒa paʁti"
+      - text: "Elle avait fini le travail."
+        ipa: "ɛl avɛ fini lə tʁavaj"
+      - text: "Ils avaient pris le train."
+        ipa: "il zavɛ pʁi lə tʁɛ̃"
+    questions:
+      - id: "fr-3970"
+        prompt: { en: "What had already happened when the speaker arrived?" }
+        options:
+          - { en: "He had eaten" }
+          - { en: "He had left" }
+          - { en: "He had slept" }
+        answer: 1
+      - id: "fr-3971"
+        prompt: { en: "What had 'we' done?" }
+        options:
+          - { en: "Eaten at home" }
+          - { en: "Left already" }
+          - { en: "Gone to bed" }
+        answer: 2
+      - id: "fr-3972"
+        prompt: { en: "How did 'they' get there?" }
+        options:
+          - { en: "On foot" }
+          - { en: "By bike" }
+          - { en: "By train" }
+        answer: 3
+  - id: "fr-police-report"
+    title: "A short report"
+    theme: "law"
+    sentences:
+      - text: "Le client était parti avant la police."
+        ipa: "lə klijɑ̃ etɛ paʁti avɑ̃ la pɔlis"
+      - text: "J'avais vu la voiture devant la porte."
+        ipa: "ʒavɛ vy la vwatyʁ dəvɑ̃ la pɔʁt"
+      - text: "Les enfants avaient fait du bruit."
+        ipa: "le zɑ̃fɑ̃ avɛ fɛ dy bʁɥi"
+      - text: "Nous étions venus trop tard."
+        ipa: "nu etjɔ̃ vəny tʁo taʁ"
+    questions:
+      - id: "fr-3973"
+        prompt: { en: "Who had left before the police?" }
+        options:
+          - { en: "The customer" }
+          - { en: "The owner" }
+          - { en: "The neighbour" }
+        answer: 1
+      - id: "fr-3974"
+        prompt: { en: "What had the speaker seen?" }
+        options:
+          - { en: "The dog" }
+          - { en: "The car" }
+          - { en: "The bus" }
+        answer: 2
+      - id: "fr-3975"
+        prompt: { en: "How were 'we'?" }
+        options:
+          - { en: "Too early" }
+          - { en: "On time" }
+          - { en: "Too late" }
+        answer: 3

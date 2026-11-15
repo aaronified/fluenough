@@ -1,0 +1,79 @@
+schema: 1
+id: "fr-en-reading-si-clauses"
+name: "Reading: if-clauses: si with the present and the imperfect"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about plans that depend on the weather or on time and money, with si and the present or the imperfect. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-rain-plans"
+    title: "If it rains"
+    theme: "weather"
+    sentences:
+      - text: "S'il pleut, nous resterons à la maison."
+        ipa: "sil plø nu ʁɛstəʁɔ̃ a la mɛzɔ̃"
+      - text: "Si tu viens, tu verras la mer."
+        ipa: "si ty vjɛ̃ ty vəʁa la mɛʁ"
+      - text: "Si nous pouvons, nous voyagerons."
+        ipa: "si nu puvɔ̃ nu vwajaʒʁɔ̃"
+      - text: "S'il fait beau, nous irons au parc."
+        ipa: "sil fɛ bo nu iʁɔ̃ o paʁk"
+    questions:
+      - id: "fr-3980"
+        prompt: { en: "What will 'we' do if it rains?" }
+        options:
+          - { en: "Stay at home" }
+          - { en: "Go to the sea" }
+          - { en: "Go shopping" }
+        answer: 1
+      - id: "fr-3981"
+        prompt: { en: "What will 'you' see if you come?" }
+        options:
+          - { en: "The town" }
+          - { en: "The sea" }
+          - { en: "The mountain" }
+        answer: 2
+      - id: "fr-3982"
+        prompt: { en: "Where will 'we' go if it is nice?" }
+        options:
+          - { en: "To school" }
+          - { en: "To bed" }
+          - { en: "To the park" }
+        answer: 3
+  - id: "fr-late-train"
+    title: "A short message"
+    theme: "transport"
+    sentences:
+      - text: "Si tu avais le temps, tu viendrais."
+        ipa: "si ty avɛ lə tɑ̃ ty vjɛ̃dʁɛ"
+      - text: "Si j'étais prêt, je partirais."
+        ipa: "si ʒetɛ pʁɛ ʒə paʁtiʁɛ"
+      - text: "Si nous étions fatigués, nous dormirions."
+        ipa: "si nu etjɔ̃ fatiɡe nu dɔʁmiʁjɔ̃"
+      - text: "Si vous étiez là, je serais content."
+        ipa: "si vu etje la ʒə səʁɛ kɔ̃tɑ̃"
+    questions:
+      - id: "fr-3983"
+        prompt: { en: "Who would come if they had time?" }
+        options:
+          - { en: "You" }
+          - { en: "We" }
+          - { en: "They" }
+        answer: 1
+      - id: "fr-3984"
+        prompt: { en: "What would the speaker do if they were ready?" }
+        options:
+          - { en: "Stay" }
+          - { en: "Leave" }
+          - { en: "Sleep" }
+        answer: 2
+      - id: "fr-3985"
+        prompt: { en: "How would the speaker feel if 'you' were there?" }
+        options:
+          - { en: "Angry" }
+          - { en: "Tired" }
+          - { en: "Happy" }
+        answer: 3
