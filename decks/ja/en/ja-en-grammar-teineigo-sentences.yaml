@@ -1,0 +1,122 @@
+schema: 1
+id: "ja-en-grammar-teineigo-sentences"
+kind: "layer"
+core: "ja-grammar-teineigo-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Very polite speech in sentences"
+description: "Sentences in the very polite style staff use to a guest, and in the polite past and the polite guess, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-9580":
+    native: "The hotel is near the station."
+    notes:
+      "n1": "でございます (de gozaimasu) is です (desu) made very polite, the way staff speak to a guest. ございます (gozaimasu) never changes for the person or the number."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "の": { meaning: "(of; 's)" }
+      "で": { meaning: "(at, in, by; also part of でございます (de gozaimasu) and ではない (de wa nai))" }
+      "ございます": { meaning: "to be (very polite); to exist; is (very polite)" }
+    confusables:
+      w1: { why: "レストラン (resutoran) is a restaurant, not a hotel." }
+      w2: { why: "ぎんこう (ginkou) is a bank." }
+  "ja-9581":
+    native: "We do not have any coffee."
+    notes:
+      "n1": "ございません (gozaimasen) is the very polite ありません (arimasen). It comes from ございます (gozaimasu): only ます (masu) becomes ません (masen), and the stem ございま (gozaima) stays."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "ございません": { meaning: "to be (very polite); to exist; is (very polite)" }
+    confusables:
+      w1: { why: "おちゃ (ocha) is tea." }
+      w2: { why: "みず (mizu) is water." }
+  "ja-9582":
+    native: "This is not a bank."
+    notes:
+      "n1": "ではございません (de wa gozaimasen) is the very polite ではありません (de wa arimasen). It is ございます (gozaimasu) with ます (masu) changed to ません (masen)."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "で": { meaning: "(at, in, by; also part of でございます (de gozaimasu) and ではない (de wa nai))" }
+      "ございません": { meaning: "to be (very polite); to exist; is (very polite)" }
+    confusables:
+      w1: { why: "かいしゃ (kaisha) is a company; an office." }
+      w2: { why: "えき (eki) is a station." }
+  "ja-9583":
+    native: "It rained yesterday."
+    notes:
+      "n1": "でした (deshita) is the polite past of です (desu): です (desu) changes to でした (deshita), so あめでした (ame deshita) is it was rain."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "でした": { meaning: "was (polite); it was" }
+    confusables:
+      w1: { why: "はれ (hare) is sunny weather." }
+      w2: { why: "くもり (kumori) is cloudy weather." }
+  "ja-9584":
+    native: "It will probably rain tomorrow."
+    notes:
+      "n1": "でしょう (deshou) after a noun is the polite guess, probably. It comes from です (desu), and forecasts and polite speech use it."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "でしょう": { meaning: "probably (polite); it will probably be" }
+    confusables:
+      w1: { why: "ゆき (yuki) is snow." }
+      w2: { why: "はれ (hare) is sunny weather." }
+  "ja-9585":
+    native: "It will probably not snow tomorrow."
+    notes:
+      "n1": "ではないでしょう (de wa nai deshou) is the polite guess that something is not so: ない (nai) comes before でしょう (deshou), which comes from です (desu)."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "で": { meaning: "(at, in, by; also part of でございます (de gozaimasu) and ではない (de wa nai))" }
+      "ない": { meaning: "not; there is not (plain)" }
+      "でしょう": { meaning: "probably (polite); it will probably be" }
+    confusables:
+      w1: { why: "あめ (ame) is rain." }
+      w2: { why: "くもり (kumori) is cloudy weather." }
+  "ja-9586":
+    native: "The menu is here."
+    notes:
+      "n1": "ございます (gozaimasu) is the very polite あります (arimasu), there is. It is also the ending of おはようございます (ohayou gozaimasu) and ありがとうございます (arigatou gozaimasu)."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "に": { meaning: "(in, at, to)" }
+      "ございます": { meaning: "to be (very polite); to exist; is (very polite)" }
+    confusables:
+      w1: { why: "トイレ (toire) is a toilet." }
+      w2: { why: "コーヒー (koohii) is coffee." }
+  "ja-9587":
+    native: "We had no rooms yesterday."
+    notes:
+      "n1": "ございませんでした (gozaimasen deshita) is the very polite past of ありません (arimasen), there was not. It is built on ございます (gozaimasu): ございません (gozaimasen) plus でした (deshita)."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "が": { meaning: "(but; also marks the subject)" }
+      "ございません": { meaning: "to be (very polite); to exist; is (very polite)" }
+      "でした": { meaning: "was (polite)" }
+    confusables:
+      w1: { why: "ホテル (hoteru) is a hotel." }
+      w2: { why: "でんわ (denwa) is a telephone." }
+  "ja-9588":
+    native: "I am sorry, but we do not have any at the moment."
+    notes:
+      "n1": "ざんねんですが (zannen desu ga) softens a no, the way sorry, but does in English. ございません (gozaimasen) comes from ございます (gozaimasu)."
+    bases:
+      "です": { meaning: "is (polite)" }
+      "が": { meaning: "(but; also marks the subject)" }
+      "は": { meaning: "(marks the topic)" }
+      "ございません": { meaning: "to be (very polite); to exist; is (very polite)" }
+    confusables:
+      w1: { why: "ひま (hima) means free time; not busy." }
+      w2: { why: "むり (muri) means impossible; too much." }
+  "ja-9589":
+    native: "I am Tanaka."
+    notes:
+      "n1": "でございます (de gozaimasu) is the one very polite form staff also use about themselves, to give their own name to a customer or on the telephone; with a friend you say です (desu)."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "たなか": { meaning: "(a family name, Tanaka)" }
+      "で": { meaning: "(at, in, by; also part of でございます (de gozaimasu) and ではない (de wa nai))" }
+      "ございます": { meaning: "to be (very polite); to exist; is (very polite)" }
+    confusables:
+      w1: { why: "せんせい (sensei) is a teacher." }
+      w2: { why: "しゃちょう (shachou) is a company president." }

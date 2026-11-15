@@ -1,0 +1,172 @@
+schema: 1
+id: "ja-en-grammar-transitivity-sentences"
+kind: "layer"
+core: "ja-grammar-transitivity-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Intransitive and transitive verbs, in sentences"
+description: "Sentences with an intransitive verb, where the thing changes by itself, and its transitive partner, where someone does it, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-9520":
+    native: "The door opened."
+    notes:
+      "n1": "あきました (akimashita) is intransitive: the door opens by itself, with が (ga), so nobody is named as the doer."
+    bases:
+      "が": { meaning: "(marks the subject)" }
+    confusables:
+      w1: { why: "あける (akeru) is the transitive partner: someone opens something." }
+      w2: { why: "きえる (kieru) is another intransitive verb: a light goes out." }
+  "ja-9521":
+    native: "Someone opened the door."
+    notes:
+      "n1": "あけました (akemashita) is the transitive partner of あきました (akimashita): someone does the opening, and the door takes を (o)."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "あく (aku) is the intransitive partner: the door opens by itself." }
+      w2: { why: "けす (kesu) means to turn off, not to open." }
+  "ja-9522":
+    native: "The light went out."
+    notes:
+      "n1": "きえました (kiemashita) is intransitive: the light goes out by itself, with が (ga)."
+    bases:
+      "が": { meaning: "(marks the subject)" }
+    confusables:
+      w1: { why: "けす (kesu) is the transitive partner: someone turns the light off." }
+      w2: { why: "おちる (ochiru) means to fall, not to go out." }
+  "ja-9523":
+    native: "Someone turned the light off."
+    notes:
+      "n1": "けしました (keshimashita) is transitive: someone turns the light off, and it takes を (o)."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "きえる (kieru) is the intransitive partner: the light goes out by itself." }
+      w2: { why: "あける (akeru) means to open, not to turn off." }
+  "ja-9524":
+    native: "The meeting started."
+    notes:
+      "n1": "はじまりました (hajimarimashita) is intransitive: the meeting begins by itself, with が (ga)."
+    bases:
+      "が": { meaning: "(marks the subject)" }
+    confusables:
+      w1: { why: "はじめる (hajimeru) is the transitive partner: someone starts the meeting." }
+      w2: { why: "おわる (owaru) means to end, the opposite event." }
+  "ja-9525":
+    native: "I started the meeting."
+    notes:
+      "n1": "はじめました (hajimemashita) is transitive: someone starts the meeting, and it takes を (o)."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "はじまる (hajimaru) is the intransitive partner: the meeting starts by itself." }
+      w2: { why: "おわる (owaru) means to end." }
+  "ja-9526":
+    native: "The clothes got dirty."
+    notes:
+      "n1": "よごれました (yogoremashita) is intransitive: the clothes get dirty by themselves, with が (ga)."
+    bases:
+      "が": { meaning: "(marks the subject)" }
+    confusables:
+      w1: { why: "よごす (yogosu) is the transitive partner: someone makes the clothes dirty." }
+      w2: { why: "おちる (ochiru) means to fall." }
+  "ja-9527":
+    native: "I got the clothes dirty."
+    notes:
+      "n1": "よごしました (yogoshimashita) is transitive: someone makes the clothes dirty, and they take を (o)."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "よごれる (yogoreru) is the intransitive partner: the clothes get dirty by themselves." }
+      w2: { why: "かわかす (kawakasu) means to dry something, a different action." }
+  "ja-9528":
+    native: "The letter arrived."
+    notes:
+      "n1": "とどきました (todokimashita) is intransitive: the letter reaches its place, with が (ga)."
+    bases:
+      "が": { meaning: "(marks the subject)" }
+    confusables:
+      w1: { why: "とどける (todokeru) is the transitive partner: someone delivers the letter." }
+      w2: { why: "おくる (okuru) means to send." }
+  "ja-9529":
+    native: "I delivered the letter."
+    notes:
+      "n1": "とどけました (todokemashita) is transitive: someone delivers the letter, which takes を (o)."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "とどく (todoku) is the intransitive partner: the letter arrives by itself." }
+      w2: { why: "おくる (okuru) means to send." }
+  "ja-9530":
+    native: "The window closed."
+    notes:
+      "n1": "しまりました (shimarimashita) is intransitive: the window shuts by itself, with が (ga)."
+    bases:
+      "が": { meaning: "(marks the subject)" }
+    confusables:
+      w1: { why: "しめる (shimeru) is the transitive partner: someone shuts the window." }
+      w2: { why: "とじる (tojiru) is used for a book or the eyes." }
+  "ja-9531":
+    native: "I closed the window."
+    notes:
+      "n1": "しめました (shimemashita) is transitive: someone shuts the window, which takes を (o)."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "しまる (shimaru) is the intransitive partner: the window shuts by itself." }
+      w2: { why: "とじる (tojiru) is used for a book or the eyes." }
+  "ja-9532":
+    native: "The box fell."
+    notes:
+      "n1": "おちました (ochimashita) is intransitive: the box falls by itself, with が (ga)."
+    bases:
+      "が": { meaning: "(marks the subject)" }
+    confusables:
+      w1: { why: "おとす (otosu) is the transitive partner: someone drops the box." }
+      w2: { why: "つかむ (tsukamu) means to grab, a different action." }
+  "ja-9533":
+    native: "I dropped the box."
+    notes:
+      "n1": "おとしました (otoshimashita) is transitive: someone drops the box, which takes を (o)."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "おちる (ochiru) is the intransitive partner: the box falls by itself." }
+      w2: { why: "つかむ (tsukamu) means to grab." }
+  "ja-9534":
+    native: "The umbrella was found."
+    notes:
+      "n1": "みつかりました (mitsukarimashita) is intransitive: the umbrella is found, with が (ga), and nobody is named."
+    bases:
+      "が": { meaning: "(marks the subject)" }
+    confusables:
+      w1: { why: "みつける (mitsukeru) is the transitive partner: someone finds the umbrella." }
+      w2: { why: "かくす (kakusu) means to hide something." }
+  "ja-9535":
+    native: "I found the umbrella."
+    notes:
+      "n1": "みつけました (mitsukemashita) is transitive: someone finds the umbrella, which takes を (o)."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "みつかる (mitsukaru) is the intransitive partner: the umbrella is found." }
+      w2: { why: "かくれる (kakureru) means to hide oneself." }
+  "ja-9536":
+    native: "The amount of water went up."
+    notes:
+      "n1": "ふえました (fuemashita) is intransitive: the amount of water increases by itself, with が (ga)."
+    bases:
+      "が": { meaning: "(marks the subject)" }
+    confusables:
+      w1: { why: "ふやす (fuyasu) is the transitive partner: someone increases the water." }
+      w2: { why: "へる (heru) means to decrease." }
+  "ja-9537":
+    native: "I increased the water."
+    notes:
+      "n1": "ふやしました (fuyashimashita) is transitive: someone increases the water, which takes を (o)."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "ふえる (fueru) is the intransitive partner: the amount increases by itself." }
+      w2: { why: "へらす (herasu) means to reduce, the opposite action." }

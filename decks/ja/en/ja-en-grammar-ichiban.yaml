@@ -1,0 +1,33 @@
+schema: 1
+id: "ja-en-grammar-ichiban"
+kind: "layer"
+core: "ja-grammar-ichiban"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The most: いちばん (ichiban)"
+license: "CC-BY-SA-4.0"
+description: "いちばん (ichiban) goes before an adjective and means the most; どれが (dore ga) asks which one is the most: いちばんおおきいです (ichiban ookii desu), it is the biggest. Not yet checked by a Japanese speaker: please report any mistake."
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "The most: いちばん (ichiban)"
+  slot_name: "form"
+  slots:
+    "most": "it is the most … (polite)"
+    "which": "which one is the most …? (polite question, of three or more)"
+  entries:
+    "ookii": "big"
+    "chiisai": "small"
+    "takai": "expensive; high"
+    "yasui": "cheap"
+    "atarashii": "new"
+    "furui": "old (of things)"
+    "ii": "good"
+    "hayai": "fast; early"
+    "osoi": "slow; late"
+    "nagai": "long"
+    "mijikai": "short (of length)"
+    "omoshiroi": "interesting; funny"
+    "muzukashii": "difficult"
+    "suki": "liked; fond of"
+    "kirei": "clean; pretty"
+    "shizuka": "quiet; calm"
+  notes: "いちばん (ichiban) goes before the adjective and means the most: いちばんおおきいです (ichiban ookii desu), it is the biggest. The thing that is the biggest takes が (ga): このみせがいちばんやすいです (kono mise ga ichiban yasui desu), this shop is the cheapest. To ask which one, say どれがいちばんおおきいですか (dore ga ichiban ookii desu ka), which is the biggest? Use だれ (dare) for a person and どこ (doko) for a place. The adjective stays in its plain form, as it does after より (yori)."
