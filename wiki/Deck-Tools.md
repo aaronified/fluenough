@@ -417,7 +417,17 @@ Pronunciations in [ ] adapted from [Wiktionary](https://en.wiktionary.org), lice
 `derive_phonetic.py` applies the ordered rules of
 `decks/<lang>/<lang>-phonetics.yaml` ([format](Deck-Format#phonetic-rules-files))
 to the broad `ipa`. A card the rules do not change gets nothing unless
-`--bracket-unchanged`.
+`--bracket-unchanged`. `--rederive` also re-derives the cards whose
+`phonetic_source` is `rules`, from the current rules file, replacing their
+`phonetic` (the source stays `rules`) after a rule changes. It never touches
+a Wiktionary card, a card with a `phonetic` and no `phonetic_source`, or a card
+without a `phonetic`; a card the rules now leave unchanged is rewritten only
+with `--bracket-unchanged`. It composes with `--write` (without it, only a
+report) and the language argument.
+
+```sh
+python3 tools/derive_phonetic.py bn --rederive --write
+```
 
 Both report, per deck and in all, how many cards were filled, already had a
 `phonetic`, had no `ipa` line, and why the rest were not (no entry, no narrow
