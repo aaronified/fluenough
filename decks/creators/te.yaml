@@ -5,7 +5,12 @@ kind: "creators"
 id: "creators-te"
 language: "te"
 license: "CC-BY-SA-4.0"
-eras: []
+eras:
+  - id: "nayaka"
+    name: { te: "నాయక కాలం", en: "Nayaka period" }
+    reading: { te: "nāyaka kālaṁ" }
+    from: 1500
+    to: 1800
 creators:
   - id: "te-k-viswanath"
     name:
@@ -84,3 +89,15 @@ creators:
     died: 1977
     bio:
       en: "Shankarambadi Sundarachari was a Telugu writer. He wrote the words of Maa Telugu Talliki, the state song of Andhra Pradesh."
+  - id: "te-vemana"
+    name:
+      en: { text: "Yogi Vemana" }
+    born: { year: 1652, circa: true }
+    died: { year: 1730, circa: true }
+    era: "nayaka"
+    bio:
+      en: "Yogi Vemana was a Telugu poet who wrote short verses about morals in a simple, everyday style. Scholars do not agree on his dates, so the years here are estimates."
+    legacy:
+      text: { en: "Many lines of his poems are now everyday Telugu sayings." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article says many lines of his poems are now colloquial phrases of the Telugu language." }, source: { url: "https://en.wikipedia.org/wiki/Vemana", accessed: "2026-11-15" } }
