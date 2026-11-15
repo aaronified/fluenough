@@ -1,0 +1,265 @@
+schema: 1
+id: "as-pronouns-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-5040"
+    target: "মই ভাত খাওঁ।"
+    reading: "moi bhāt khāum̐."
+    ipa: "moi bʱat kʰaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "ভাত", ref: "as-0111" }
+      - { word: "খাওঁ", ref: "as-0109" }
+    confusables:
+      - { id: "c1", word: "কোৱা", reading: "kuwā", kind: "word" }
+      - { id: "c2", word: "বাত", reading: "bāt", kind: "word" }
+  - id: "as-5041"
+    target: "তুমি ভাত খোৱা নেকি?"
+    reading: "tumi bhāt khuwā neki?"
+    ipa: "tumi bʱat kʰʊwa neki"
+    pos: "phrase"
+    bases:
+      - { word: "তুমি", ref: "as-2179" }
+      - { word: "ভাত", ref: "as-0111" }
+      - { word: "খোৱা", ref: "as-0109" }
+      - { word: "নেকি", ref: "as-0151" }
+    confusables:
+      - { id: "c1", word: "মই", reading: "moi", kind: "word" }
+      - { id: "c2", word: "সি", reading: "si", kind: "word" }
+  - id: "as-5042"
+    target: "সি কোন?"
+    reading: "si kun?"
+    ipa: "si kʊn"
+    pos: "phrase"
+    bases:
+      - { word: "সি", ref: "as-2180" }
+      - { word: "কোন", ref: "as-0144" }
+    confusables:
+      - { id: "c1", word: "সিহঁত", reading: "sihôm̐t", kind: "word" }
+      - { id: "c2", word: "তেওঁ", reading: "teum̐", kind: "word" }
+  - id: "as-5043"
+    target: "তেওঁ ক'ত আছে?"
+    reading: "teum̐ kot āse?"
+    ipa: "teʊ̃ kot ase"
+    pos: "phrase"
+    bases:
+      - { word: "তেওঁ", ref: "as-2181" }
+      - { word: "ক'ত", ref: "as-0145" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "সি", reading: "si", kind: "word" }
+      - { id: "c2", word: "সিহঁত", reading: "sihôm̐t", kind: "word" }
+  - id: "as-5044"
+    target: "আমি বন্ধু।"
+    reading: "āmi bondhu."
+    ipa: "ami bondʱu"
+    pos: "phrase"
+    bases:
+      - { word: "আমি", ref: "as-2182" }
+      - { word: "বন্ধু", ref: "as-0164" }
+    confusables:
+      - { id: "c1", word: "তুমি", reading: "tumi", kind: "word" }
+      - { id: "c2", word: "মই", reading: "moi", kind: "word" }
+  - id: "as-5045"
+    target: "তোমালোক বহক।"
+    reading: "tumāluk bôhôk."
+    ipa: "tʊmalʊk bɔhɔk"
+    pos: "phrase"
+    bases:
+      - { word: "তোমালোক", ref: "as-2183" }
+      - { word: "বহক", base: "বহক", reading: "bôhôk" }
+    confusables:
+      - { id: "c1", word: "আপোনালোক", reading: "āpunāluk", kind: "word" }
+      - { id: "c2", word: "আমি", reading: "āmi", kind: "word" }
+  - id: "as-5046"
+    target: "আপোনালোক আহক।"
+    reading: "āpunāluk āhôk."
+    ipa: "apʊnalʊk ahɔk"
+    pos: "phrase"
+    bases:
+      - { word: "আপোনালোক", ref: "as-2184" }
+      - { word: "আহক", base: "আহক", reading: "āhôk" }
+    confusables:
+      - { id: "c1", word: "তোমালোক", reading: "tumāluk", kind: "word" }
+      - { id: "c2", word: "তেওঁলোক", reading: "teum̐luk", kind: "word" }
+  - id: "as-5047"
+    target: "তেওঁলোক ক'ত?"
+    reading: "teum̐luk kot?"
+    ipa: "teʊ̃lʊk kot"
+    pos: "phrase"
+    bases:
+      - { word: "তেওঁলোক", ref: "as-2185" }
+      - { word: "ক'ত", ref: "as-0145" }
+    confusables:
+      - { id: "c1", word: "সিহঁত", reading: "sihôm̐t", kind: "word" }
+      - { id: "c2", word: "আমি", reading: "āmi", kind: "word" }
+  - id: "as-5048"
+    target: "সিহঁতৰ ভাত ক'ত?"
+    reading: "sihôm̐tôr bhāt kot?"
+    ipa: "sihɔ̃tɔɹ bʱat kot"
+    pos: "phrase"
+    bases:
+      - { word: "সিহঁতৰ", ref: "as-2191" }
+      - { word: "ভাত", ref: "as-0111" }
+      - { word: "ক'ত", ref: "as-0145" }
+    confusables:
+      - { id: "c1", word: "তেওঁৰ", reading: "teum̐r", kind: "word" }
+      - { id: "c2", word: "আমাৰ", reading: "āmār", kind: "word" }
+  - id: "as-5049"
+    target: "মোৰ বন্ধু ক'ত?"
+    reading: "mur bondhu kot?"
+    ipa: "mʊɹ bondʱu kot"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "বন্ধু", ref: "as-0164" }
+      - { word: "ক'ত", ref: "as-0145" }
+    confusables:
+      - { id: "c1", word: "তোমাৰ", reading: "tumār", kind: "word" }
+      - { id: "c2", word: "আমাৰ", reading: "āmār", kind: "word" }
+  - id: "as-5050"
+    target: "আপোনাৰ ভাত ক'ত?"
+    reading: "āpunār bhāt kot?"
+    ipa: "apʊnaɹ bʱat kot"
+    pos: "phrase"
+    bases:
+      - { word: "আপোনাৰ", ref: "as-2189" }
+      - { word: "ভাত", ref: "as-0111" }
+      - { word: "ক'ত", ref: "as-0145" }
+    confusables:
+      - { id: "c1", word: "তোমাৰ", reading: "tumār", kind: "word" }
+      - { id: "c2", word: "তেওঁৰ", reading: "teum̐r", kind: "word" }
+  - id: "as-5051"
+    target: "আমাৰ বাথৰুম ক'ত?"
+    reading: "āmār bāthrum kot?"
+    ipa: "amaɹ batʰoɹum kot"
+    pos: "phrase"
+    bases:
+      - { word: "আমাৰ", ref: "as-2192" }
+      - { word: "বাথৰুম", base: "বাথৰুম", reading: "bāthorum" }
+      - { word: "ক'ত", ref: "as-0145" }
+    confusables:
+      - { id: "c1", word: "মোৰ", reading: "mur", kind: "word" }
+      - { id: "c2", word: "সিহঁতৰ", reading: "sihôm̐tôr", kind: "word" }
+  - id: "as-5052"
+    target: "এইটো মোৰ কাম।"
+    reading: "eitu mur kām."
+    ipa: "eitʊ mʊɹ kam"
+    pos: "phrase"
+    bases:
+      - { word: "এইটো", ref: "as-2193" }
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "কাম", ref: "as-0120" }
+    confusables:
+      - { id: "c1", word: "সেইটো", reading: "seitu", kind: "word" }
+      - { id: "c2", word: "মোক", reading: "muk", kind: "word" }
+  - id: "as-5053"
+    target: "সেইটো তোমাৰ ভাত।"
+    reading: "seitu tumār bhāt."
+    ipa: "seitʊ tʊmaɹ bʱat"
+    pos: "phrase"
+    bases:
+      - { word: "সেইটো", ref: "as-2194" }
+      - { word: "তোমাৰ", ref: "as-2188" }
+      - { word: "ভাত", ref: "as-0111" }
+    confusables:
+      - { id: "c1", word: "এইটো", reading: "eitu", kind: "word" }
+      - { id: "c2", word: "আপোনাৰ", reading: "āpunār", kind: "word" }
+  - id: "as-5054"
+    target: "এইজন কোন?"
+    reading: "eizôn kun?"
+    ipa: "eizɔn kʊn"
+    pos: "phrase"
+    bases:
+      - { word: "এইজন", ref: "as-2195" }
+      - { word: "কোন", ref: "as-0144" }
+    confusables:
+      - { id: "c1", word: "সেইজন", reading: "seizôn", kind: "word" }
+      - { id: "c2", word: "কোনটো", reading: "kuntu", kind: "word" }
+  - id: "as-5055"
+    target: "সেইজন মোৰ বন্ধু।"
+    reading: "seizôn mur bondhu."
+    ipa: "seizɔn mʊɹ bondʱu"
+    pos: "phrase"
+    bases:
+      - { word: "সেইজন", ref: "as-2196" }
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "বন্ধু", ref: "as-0164" }
+    confusables:
+      - { id: "c1", word: "এইজন", reading: "eizôn", kind: "word" }
+      - { id: "c2", word: "তোমাৰ", reading: "tumār", kind: "word" }
+  - id: "as-5056"
+    target: "কাৰ কাম?"
+    reading: "kār kām?"
+    ipa: "kaɹ kam"
+    pos: "phrase"
+    bases:
+      - { word: "কাৰ", ref: "as-2197" }
+      - { word: "কাম", ref: "as-0120" }
+    confusables:
+      - { id: "c1", word: "কি", reading: "ki", kind: "word" }
+      - { id: "c2", word: "কোন", reading: "kun", kind: "word" }
+  - id: "as-5057"
+    target: "মোক শুনক।"
+    reading: "muk xunôk."
+    ipa: "mʊk xunɔk"
+    pos: "phrase"
+    bases:
+      - { word: "মোক", ref: "as-2198" }
+      - { word: "শুনক", ref: "as-0165" }
+    confusables:
+      - { id: "c1", word: "মই", reading: "moi", kind: "word" }
+      - { id: "c2", word: "মোৰ", reading: "mur", kind: "word" }
+  - id: "as-5058"
+    target: "তেওঁৰ বাত ঠিক নহয়।"
+    reading: "teum̐r bāt ṭhik nôhôy."
+    ipa: "teʊ̃ɹ bat ʈʰik nɔhɔj"
+    pos: "phrase"
+    bases:
+      - { word: "তেওঁৰ", ref: "as-2190" }
+      - { word: "বাত", ref: "as-0110" }
+      - { word: "ঠিক", ref: "as-2531" }
+      - { word: "নহয়", ref: "as-0141" }
+    confusables:
+      - { id: "c1", word: "সিহঁতৰ", reading: "sihôm̐tôr", kind: "word" }
+      - { id: "c2", word: "কাৰ", reading: "kār", kind: "word" }
+  - id: "as-5059"
+    target: "আমাৰ খবৰ ভাল।"
+    reading: "āmār khôbôr bhāl."
+    ipa: "amaɹ kʰɔbɔɹ bʱal"
+    pos: "phrase"
+    bases:
+      - { word: "আমাৰ", ref: "as-2192" }
+      - { word: "খবৰ", base: "খবৰ", reading: "khôbôr" }
+      - { word: "ভাল", base: "ভাল", reading: "bhāl" }
+    confusables:
+      - { id: "c1", word: "মোৰ", reading: "mur", kind: "word" }
+      - { id: "c2", word: "তোমাৰ", reading: "tumār", kind: "word" }
+  - id: "as-5060"
+    target: "তোমাৰ কাম ভাল।"
+    reading: "tumār kām bhāl."
+    ipa: "tʊmaɹ kam bʱal"
+    pos: "phrase"
+    bases:
+      - { word: "তোমাৰ", ref: "as-2188" }
+      - { word: "কাম", ref: "as-0120" }
+      - { word: "ভাল", base: "ভাল", reading: "bhāl" }
+    confusables:
+      - { id: "c1", word: "আপোনাৰ", reading: "āpunār", kind: "word" }
+      - { id: "c2", word: "মোৰ", reading: "mur", kind: "word" }
+  - id: "as-5061"
+    target: "তুমি কোন?"
+    reading: "tumi kun?"
+    ipa: "tumi kʊn"
+    pos: "phrase"
+    bases:
+      - { word: "তুমি", ref: "as-2179" }
+      - { word: "কোন", ref: "as-0144" }
+    confusables:
+      - { id: "c1", word: "আপুনি", reading: "āpuni", kind: "word" }
+      - { id: "c2", word: "সি", reading: "si", kind: "word" }

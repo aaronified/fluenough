@@ -1,0 +1,107 @@
+schema: 1
+id: "as-en-addressing-sentences"
+kind: "layer"
+core: "as-addressing-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Addressing people: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-5020":
+    native: "Elder brother, listen."
+    confusables:
+      "c1": { why: "Elder sister, not elder brother." }
+      "c2": { why: "Grandfather, not an elder brother." }
+  "as-5021":
+    native: "Elder sister, what's the news?"
+    bases:
+      "খবৰ": "news"
+    confusables:
+      "c1": { why: "Aunt, a different relative." }
+      "c2": { why: "Madam, a form of address for a teacher." }
+  "as-5022":
+    native: "Younger brother, have you eaten rice?"
+    confusables:
+      "c1": { why: "Younger sister, not a brother." }
+      "c2": { why: "A friend, not a younger brother." }
+  "as-5023":
+    native: "Younger sister, listen."
+    confusables:
+      "c1": { why: "Younger brother, not a sister." }
+      "c2": { why: "Aunt, not a younger sister." }
+  "as-5024":
+    native: "Uncle, how are you?"
+    bases:
+      "কেনে": "how"
+      "আছা": "to be; you are, informal"
+    confusables:
+      "c1": { why: "Aunt, not an uncle." }
+      "c2": { why: "Grandfather, not an uncle." }
+  "as-5025":
+    native: "Aunt, thank you."
+    confusables:
+      "c1": { why: "Uncle, not an aunt." }
+      "c2": { why: "Grandmother, not an aunt." }
+  "as-5026":
+    native: "Grandfather, excuse me."
+    bases:
+      "মাফ": "forgiveness; excuse"
+      "কৰিব": "to do; with মাফ, to excuse"
+    confusables:
+      "c1": { why: "Grandmother, not grandfather." }
+      "c2": { why: "Elder sister, not a grandfather." }
+  "as-5027":
+    native: "Grandmother, sit down."
+    bases:
+      "বহক": "sit down"
+    confusables:
+      "c1": { why: "Grandfather, not grandmother." }
+      "c2": { why: "A respected man, not a grandmother." }
+  "as-5028":
+    native: "Respected sir, come."
+    bases:
+      "আহক": "come"
+    confusables:
+      "c1": { why: "Sir, a teacher's form of address." }
+      "c2": { why: "Listen, not come." }
+  "as-5029":
+    native: "Sir, excuse me."
+    bases:
+      "মাফ": "forgiveness; excuse"
+      "কৰিব": "to do; with মাফ, to excuse"
+    confusables:
+      "c1": { why: "Madam, for a woman teacher, not a man." }
+      "c2": { why: "A respected man, not a teacher." }
+  "as-5030":
+    native: "Madam, listen."
+    confusables:
+      "c1": { why: "Sir, not madam." }
+      "c2": { why: "Elder sister, not a teacher." }
+  "as-5031":
+    native: "Friend, yes."
+    confusables:
+      "c1": { why: "Younger brother, not a friend." }
+      "c2": { why: "Uncle, not a friend." }
+  "as-5032":
+    native: "Friend, is it true?"
+    bases:
+      "সঁচা": "true"
+    confusables:
+      "c1": { why: "No, not a question." }
+      "c2": { why: "Younger brother, not a friend." }
+  "as-5033":
+    native: "Younger brother, where?"
+    confusables:
+      "c1": { why: "Younger sister, not a brother." }
+      "c2": { why: "When, not where." }
+  "as-5034":
+    native: "Elder sister, which matter?"
+    confusables:
+      "c1": { why: "Elder brother, not a sister." }
+      "c2": { why: "Which one, not which matter." }
+  "as-5035":
+    native: "Grandmother, what did you eat?"
+    confusables:
+      "c1": { why: "Which, not what." }
+      "c2": { why: "Grandfather, not grandmother." }
