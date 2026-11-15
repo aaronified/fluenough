@@ -33,3 +33,7 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | te-9069 | see card | The printed proverb has కష్టము (kaṣṭamu), an old spelling of కష్టం (kaṣṭaṁ), and యేండ్లు (yēṇḍlu), printed with an older spelling of ఏండ్లు (ēṇḍlu): please check both spellings against the printed page. | Haiku builder | 2026-11-14 |
 | te-9062 | see card | జంగం (jaṅgaṁ) is glossed "jangam (ascetic)" with a note that a jangam is a Lingayat ascetic: please check the gloss and the note. | Haiku builder | 2026-11-14 |
 | te-9068 | see card | The printed run కాస్తారుచూతాము (kāstārucūtāmu) joins two words in one spelling and is read as one word: please check the spacing and the gloss "will tend (we will see)". | Haiku builder | 2026-11-14 |
+| te-8852 | culture (te-culture-3) | లాడుచు (lāḍucu) is glossed "moving about, swaying": is that the right sense in this line? | Haiku builder | 2026-11-15 |
+| te-8852 | culture (te-culture-3) | వేలనే (vēlanē) has no gloss: what does it mean in this poetic line, and should the card gloss it? | Haiku builder | 2026-11-15 |
+| te-8851 | culture (te-culture-3) | The Kanyasulkam sentence sits among English asides in the 1961 printing: which character says it? | Haiku builder | 2026-11-15 |
+| te-8853 | culture (te-culture-3) | The Hemalatha sentence is in bookish spelling: are the modern forms listed in the layer note right? | Haiku builder | 2026-11-15 |
