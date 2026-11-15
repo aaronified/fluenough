@@ -5,29 +5,40 @@ language: "es"
 variety: "Standard Spanish, as the course's broad ipa writes it (distincion, with θ)"
 description: "Rules that turn a card's broad ipa into its narrow [ ] form, in order. Written for tools/derive_phonetic.py, never read by the app. Each rule applies the regular expression to the whole ipa string and replaces every match; the next rule works on the result. Contexts are the sound before, and the sound after with an optional stress mark and, for the stops, a word boundary."
 rules:
-  # Nasals take the place of the consonant after them, inside a word.
+  # Nasals take the place of the consonant after them, inside a word or across a word boundary.
   # source: Navarro Tomas, Manual de pronunciacion espanola (1918), section on /n/; Hualde, The Sounds of Spanish (2005, CUP), ch. 6 "Nasal consonants"; Wikipedia, Spanish phonology, "Nasal consonants" (CC BY-SA 4.0).
   - id: "es-n-bilabial"
-    pattern: 'n(?=ˈ?[pbm])'
+    pattern: 'n(?=[ ˈ]*[pbm])'
     replace: 'm'
     source: 'Navarro Tomas, Manual de pronunciacion espanola (1918), section on /n/; Hualde, The Sounds of Spanish (2005, CUP), ch. 6 "Nasal consonants"; Wikipedia, Spanish phonology, "Nasal consonants" (CC BY-SA 4.0).'
   - id: "es-n-labiodental"
-    pattern: 'n(?=ˈ?f)'
+    pattern: 'n(?=[ ˈ]*f)'
     replace: 'ɱ'
     source: 'Navarro Tomas, Manual de pronunciacion espanola (1918), section on /n/; Hualde, The Sounds of Spanish (2005, CUP), ch. 6 "Nasal consonants"; Wikipedia, Spanish phonology, "Nasal consonants" (CC BY-SA 4.0).'
   # The palatal rule goes before the dental one: n before tʃ also has a t after it.
   - id: "es-n-palatal"
-    pattern: 'n(?=ˈ?(?:tʃ|ʝ))'
+    pattern: 'n(?=[ ˈ]*(?:tʃ|ʝ))'
     replace: 'ɲ'
     source: 'Navarro Tomas, Manual de pronunciacion espanola (1918), section on /n/; Hualde, The Sounds of Spanish (2005, CUP), ch. 6 "Nasal consonants"; Wikipedia, Spanish phonology, "Nasal consonants" (CC BY-SA 4.0).'
+  # /ʝ/ after a pause, /n/ or /l/ is the affricate allophone, ɟ͡ʝ.
+  # source: Navarro Tomas (1918), on /ʝ/ after a pause, /n/ or /l/; Hualde (2005), the section on /ʝ/ and its affricate allophone; Wikipedia, Spanish phonology, "Consonants" (CC BY-SA 4.0).
+  - id: "es-y-palatal-stop"
+    pattern: '(^ˈ?|[nlɲ][ ˈ]*)ʝ'
+    replace: '\1ɟ͡ʝ'
+    source: 'Navarro Tomas, Manual de pronunciacion espanola (1918), on /ʝ/ after a pause, /n/ or /l/; Hualde, The Sounds of Spanish (2005, CUP), the section on /ʝ/ and its affricate allophone; Wikipedia, Spanish phonology, "Consonants" (CC BY-SA 4.0).'
   - id: "es-n-dental"
-    pattern: 'n(?=ˈ?[tdθ])'
+    pattern: 'n(?=[ ˈ]*[tdθ])'
     replace: 'n̪'
     source: 'Navarro Tomas, Manual de pronunciacion espanola (1918), section on /n/; Hualde, The Sounds of Spanish (2005, CUP), ch. 6 "Nasal consonants"; Wikipedia, Spanish phonology, "Nasal consonants" (CC BY-SA 4.0).'
   - id: "es-n-velar"
-    pattern: 'n(?=ˈ?[kɡx])'
+    pattern: 'n(?=[ ˈ]*[kɡx])'
     replace: 'ŋ'
     source: 'Navarro Tomas, Manual de pronunciacion espanola (1918), section on /n/; Hualde, The Sounds of Spanish (2005, CUP), ch. 6 "Nasal consonants"; Wikipedia, Spanish phonology, "Nasal consonants" (CC BY-SA 4.0).'
+  # l assimilates to a following dental inside a word only; across a word boundary l stays plain.
+  - id: "es-l-dental"
+    pattern: 'l(?=ˈ?[tdθ])'
+    replace: 'l̪'
+    source: 'Navarro Tomas, Manual de pronunciacion espanola (1918), on /l/ before dental consonants; Hualde, The Sounds of Spanish (2005, CUP), the section on lateral assimilation; Wikipedia, Spanish phonology, "Consonants" (CC BY-SA 4.0).'
   # /b d ɡ/ are stops after a pause or a nasal (and /d/ after /l/), and
   # approximants everywhere else, across a word boundary too.
   # source: Hualde (2005), ch. 6 "Voiced stops and approximants"; Martinez-Celdran, Fernandez-Planas and Carrera-Sabate (2003), "Castilian Spanish", Journal of the International Phonetic Association 33(2): 255-259; Wikipedia, Spanish phonology, "Allophony of /b d ɡ/".
@@ -43,10 +54,10 @@ rules:
     pattern: '([aeiouwjɾrlsθxfʝzβðɣ])([ ˈ]*)ɡ'
     replace: '\1\2ɣ'
     source: 'Hualde (2005), ch. 6 "Voiced stops and approximants"; Martinez-Celdran, Fernandez-Planas and Carrera-Sabate (2003), "Castilian Spanish", Journal of the International Phonetic Association 33(2): 255-259; Wikipedia, Spanish phonology, "Allophony of /b d ɡ/".'
-  # /s/ is voiced before a voiced consonant in the same word.
+  # /s/ is voiced before a voiced consonant in the same word or across a word boundary.
   # source: Hualde (2005), ch. 7 "/s/"; Navarro Tomas (1918), on /s/ before voiced consonants; Wikipedia, Spanish phonology, "Fricatives".
   - id: "es-s-voiced"
-    pattern: 's(?=ˈ?[bdɡβðɣmnɲlʝ])'
+    pattern: 's(?=[ ˈ]*[bdɡβðɣmnɲlʝɾr])'
     replace: 'z'
     source: 'Hualde (2005), ch. 7 "/s/"; Navarro Tomas (1918), on /s/ before voiced consonants; Wikipedia, Spanish phonology, "Fricatives".'
   # /t/ and /d/ are dental, not alveolar, and not before their own affricate.

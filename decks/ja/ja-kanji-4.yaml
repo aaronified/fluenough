@@ -15,6 +15,12 @@ cards:
     pos: "letter"
     notes:
       - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ほうれん草はおいしいです。"
+        target_scripts: { kana: "ほうれんそうはおいしいです。" }
+        words: ["ほうれん草", "は", "おいしい", "です"]
+        reading: "hourensou wa oishii desu."
+        ipa: "hoːɾeɴsoː wa oiɕiː desɯ"
     bases: "self"
   - id: "ja-5121"
     target: "足"
@@ -94,6 +100,11 @@ cards:
         words: ["あの", "ひと", "は", "男", "です", "か"]
         reading: "ano hito wa otoko desu ka."
         ipa: "ano çito wa otoko desɯ ka"
+      - target: "男はしずかです。"
+        target_scripts: { kana: "おとこはしずかです。" }
+        words: ["男", "は", "しずか", "です"]
+        reading: "otoko wa shizuka desu."
+        ipa: "otoko wa ɕidzɯka desɯ"
     bases: "self"
   - id: "ja-5125"
     target: "竹"
@@ -151,6 +162,11 @@ cards:
         words: ["町", "は", "大きい", "です"]
         reading: "machi wa ookii desu."
         ipa: "matɕi wa oːkiː desɯ"
+      - target: "町はきれいです。"
+        target_scripts: { kana: "まちはきれいです。" }
+        words: ["町", "は", "きれい", "です"]
+        reading: "machi wa kirei desu."
+        ipa: "matɕi wa kiɾeː desɯ"
     bases: "self"
   - id: "ja-5129"
     target: "天"
@@ -230,6 +246,11 @@ cards:
         words: ["へや", "に", "入ります"]
         reading: "heya ni hairimasu."
         ipa: "heja ni hairimasɯ"
+      - target: "入口はどこですか。"
+        target_scripts: { kana: "いりぐちはどこですか。" }
+        words: ["入口", "は", "どこ", "です", "か"]
+        reading: "iriguchi wa doko desu ka."
+        ipa: "iɾiɡɯtɕi wa doko desɯ ka"
     bases: "self"
   - id: "ja-5133"
     target: "年"
@@ -246,6 +267,11 @@ cards:
         words: ["年", "は", "いくつ", "です", "か"]
         reading: "toshi wa ikutsu desu ka."
         ipa: "toɕi wa ikɯtsɯ desɯ ka"
+      - target: "いぬの年はいくつですか。"
+        target_scripts: { kana: "いぬのとしはいくつですか。" }
+        words: ["いぬ", "の", "年", "は", "いくつ", "です", "か"]
+        reading: "inu no toshi wa ikutsu desu ka."
+        ipa: "inɯ no toɕi wa ikɯtsɯ desɯ ka"
     bases: "self"
   - id: "ja-5134"
     target: "白"
@@ -293,6 +319,11 @@ cards:
         words: ["百", "は", "いくつ", "です", "か"]
         reading: "hyaku wa ikutsu desu ka."
         ipa: "çjakɯ wa ikɯtsɯ desɯ ka"
+      - target: "四百です。"
+        target_scripts: { kana: "よんひゃくです。" }
+        words: ["四百", "です"]
+        reading: "yonhyaku desu."
+        ipa: "joɴçakɯ desɯ"
     bases: "self"
   - id: "ja-5137"
     target: "文"
@@ -371,6 +402,11 @@ cards:
         words: ["ここ", "に", "立ちます"]
         reading: "koko ni tachimasu."
         ipa: "koko ni tatɕimasɯ"
+      - target: "立ってください。"
+        target_scripts: { kana: "たってください。" }
+        words: ["立って", "ください"]
+        reading: "tatte kudasai."
+        ipa: "tatte kɯdasai"
     bases: "self"
   - id: "ja-5142"
     target: "力"
