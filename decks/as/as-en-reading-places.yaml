@@ -1,0 +1,39 @@
+schema: 1
+id: "as-en-reading-places"
+name: "Assamese reading: places"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-street-signs"
+    title: "Signs along a street"
+    theme: "places"
+    sentences:
+      - text: "ইয়াত স্কুল আছে।"
+        reading: "iyāt skul āse."
+      - text: "ইয়াত বেংক আছে।"
+        reading: "iyāt beṅk āse."
+      - text: "ইয়াত মন্দিৰ আছে।"
+        reading: "iyāt mondir āse."
+      - text: "ইয়াত ডাক্তৰখানা আছে।"
+        reading: "iyāt dāktôrôkhānā āse."
+    questions:
+      - id: "as-7300"
+        prompt: { en: "There is a school here." }
+        answer: true
+      - id: "as-7301"
+        prompt: { en: "Which sign is for prayer?" }
+        options:
+          - { en: "School" }
+          - { en: "Temple" }
+          - { en: "Bank" }
+        answer: 2
+      - id: "as-7302"
+        prompt: { en: "Is there a clinic here?" }
+        options:
+          - { en: "Yes" }
+          - { en: "No" }
+        answer: 1

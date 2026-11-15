@@ -1,0 +1,40 @@
+schema: 1
+id: "as-en-reading-quantities"
+name: "Assamese reading: quantities"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-quantities-recipe-amounts"
+    title: "Recipe amounts"
+    theme: "quantities"
+    sentences:
+      - text: "দুধ এক লিটাৰ।"
+        reading: "dudh ek litār."
+      - text: "এক গ্ৰাম লবণ।"
+        reading: "ek grām lôbôn."
+      - text: "মোক সামান্য পানী দিয়ক।"
+        reading: "muk sāmāny pāni diyôk."
+      - text: "মোক চাৰিটা কলা দিয়ক।"
+        reading: "muk sāritā kôlā diyôk."
+    questions:
+      - id: "as-7009"
+        prompt: { en: "How much salt is in the recipe?" }
+        options:
+          - { en: "One gram" }
+          - { en: "One litre" }
+          - { en: "Two litres" }
+        answer: 1
+      - id: "as-7010"
+        prompt: { en: "The recipe asks for one litre of milk." }
+        answer: true
+      - id: "as-7011"
+        prompt: { en: "How many bananas does the last line ask for?" }
+        options:
+          - { en: "Two" }
+          - { en: "Three" }
+          - { en: "Four" }
+        answer: 3

@@ -1,0 +1,54 @@
+schema: 1
+id: "mr-en-reading-food"
+name: "Reading: food"
+kind: "reading"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A restaurant menu card with dishes and prices. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "mr-menu-card"
+    title: "Menu card"
+    sentences:
+      - text: "या हॉटेलमध्ये शाकाहारी जेवण आहे."
+        reading: "yā hôṭelmadhye śākāhāri jevaṇ āhe."
+        ipa: "ja ɦɔʈelməd̪ʱje ʃakaɦari dʒeʋəɳ aɦe"
+      - text: "डोसा चाळीस रुपये आहे."
+        reading: "ḍosā cāḷis rupye āhe."
+        ipa: "ɖosa tsaɭis rupje aɦe"
+      - text: "इडली तीस रुपये आहे."
+        reading: "iḍli tis rupye āhe."
+        ipa: "iɖli t̪is rupje aɦe"
+      - text: "समोसा वीस रुपये आहे."
+        reading: "samosā vis rupye āhe."
+        ipa: "səmosa ʋis rupje aɦe"
+      - text: "चहा दहा रुपये आहे."
+        reading: "cahā dahā rupye āhe."
+        ipa: "tsəɦa d̪əɦa rupje aɦe"
+    questions:
+      - id: "mr-7003"
+        prompt:
+          en: "How much is the dosa?"
+        options:
+        - en: "Twenty rupees"
+        - en: "Thirty rupees"
+        - en: "Forty rupees"
+        answer: 2
+      - id: "mr-7004"
+        prompt:
+          en: "Which dish costs twenty rupees?"
+        options:
+        - en: "Idli"
+        - en: "Samosa"
+        - en: "Tea"
+        answer: 1
+      - id: "mr-7005"
+        prompt:
+          en: "What kind of food does the hotel have?"
+        options:
+        - en: "Vegetarian food"
+        - en: "Only meat"
+        - en: "Only sweets"
+        answer: 0

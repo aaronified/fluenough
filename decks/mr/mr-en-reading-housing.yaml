@@ -1,0 +1,54 @@
+schema: 1
+id: "mr-en-reading-housing"
+name: "Reading: housing"
+kind: "reading"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "The terms of a rental. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "mr-rental-terms"
+    title: "Rental terms"
+    sentences:
+      - text: "भाडेकरार अकरा महिन्यांचा आहे."
+        reading: "bhāḍekrār akrā mahinyāñcā āhe."
+        ipa: "bʱaɖekrar əkra məɦinjaɲtsa aɦe"
+      - text: "दर महिन्याचं भाडं पाचव्या तारखेला द्या."
+        reading: "dar mahinyācam̐ bhāḍam̐ pācavyā tārkhelā dyā."
+        ipa: "d̪ər məɦinjatsə̃ bʱaɖə̃ patsəʋja t̪arkʰela d̪ja"
+      - text: "दोन महिन्यांची अनामत द्यावी लागेल."
+        reading: "don mahinyāñci anāmat dyāvi lāgel."
+        ipa: "d̪on məɦinjaɲtʃi ənamət̪ d̪jaʋi laɡel"
+      - text: "फ्लॅटमध्ये पार्किंग मोफत आहे."
+        reading: "phlêṭmadhye pārkiṅg mophat āhe."
+        ipa: "pʰlæʈməd̪ʱje parkiŋɡ mopʰət̪ aɦe"
+      - text: "नळ खराब झाला तर घरमालकाला फोन करा."
+        reading: "naḷ kharāb jhālā tar gharmālkālā phon karā."
+        ipa: "nəɭ kʰərab dzʱala t̪ər ɡʱərmalkala pʰon kəra"
+    questions:
+      - id: "mr-7030"
+        prompt:
+          en: "How long is the rental agreement?"
+        options:
+        - en: "Eleven months"
+        - en: "Two years"
+        - en: "Six months"
+        answer: 0
+      - id: "mr-7031"
+        prompt:
+          en: "How much is the deposit?"
+        options:
+        - en: "Two months"
+        - en: "One month"
+        - en: "Eleven months"
+        answer: 0
+      - id: "mr-7032"
+        prompt:
+          en: "Who should the tenant call if the tap breaks?"
+        options:
+        - en: "The house owner"
+        - en: "The police"
+        - en: "The neighbour"
+        answer: 0

@@ -1,0 +1,40 @@
+schema: 1
+id: "as-en-reading-pronouns"
+name: "Assamese reading: pronouns"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-pronouns-seating-chart"
+    title: "Seating chart"
+    theme: "pronouns"
+    sentences:
+      - text: "এইজন মোৰ ভাই।"
+        reading: "eizôn mur bhāi."
+      - text: "সেইজন মোৰ বন্ধু।"
+        reading: "seizôn mur bondhu."
+      - text: "তেওঁৰ নাম সীমা।"
+        reading: "teum̐r nām simā."
+      - text: "মোৰ বাইদেউ ইয়াত আছে।"
+        reading: "mur bāideu iyāt āse."
+    questions:
+      - id: "as-7000"
+        prompt: { en: "The first person is the speaker's brother." }
+        answer: true
+      - id: "as-7001"
+        prompt: { en: "Who is the speaker's friend?" }
+        options:
+          - { en: "The brother" }
+          - { en: "The friend" }
+          - { en: "The teacher" }
+        answer: 2
+      - id: "as-7002"
+        prompt: { en: "What is her name?" }
+        options:
+          - { en: "Seema" }
+          - { en: "Rama" }
+          - { en: "Mohon" }
+        answer: 1
