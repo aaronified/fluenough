@@ -1,0 +1,35 @@
+schema: 1
+kind: "phonetics"
+id: "fr-phonetics"
+language: "fr"
+variety: "Standard French of France (Parisian), as the course's broad ipa writes it"
+description: "Rules that turn a card's broad ipa into its narrow [ ] form, in order. Written for tools/derive_phonetic.py, never read by the app. Each rule applies the regular expression to the whole ipa string and replaces every match; the next rule works on the result. Only well attested rules are here. The course's broad ipa already writes the nasal vowels (ɛ̃ ɑ̃ ɔ̃ œ̃), ʁ, the semivowels (j w ɥ), the open and closed mid vowels and the written schwa, so the rules add what the broad form leaves out: the dental place of t d n s z, the voiceless [χ] of /ʁ/ next to a voiceless obstruent, and the length of a phrase-final stressed vowel. A rule left out is not a claim that it does not exist: the Parisian shift of the nasal vowels ([æ̃] for ɛ̃, [õ̞] for ɔ̃) is attributed to one source only, the quality of schwa (œ, ø or ɵ) and of /ɔ/ before ʁ is disputed, the palatalisation of k and ɡ before front vowels is variable and class-marked, the sentence-final devoicing of ʁ and of close vowels is optional, and the weakened schwa of rapid speech depends on a syllable analysis the broad ipa does not carry. The rules need no stress mark, so the two length rules are anchored at the end of the card, where stress falls."
+rules:
+  # Phrase-final stressed closed syllable: every vowel is long before /v z ʒ ʁ/ alone or before /vʁ/ (mer [mɛːʁ], crise [kʁiːz], livre [liːvʁ]). The pattern is anchored at the end of the card: stress is phrase-final, and the broad ipa marks no stress, so earlier words are left short.
+  - id: "fr-length-before-voiced-fricative"
+    pattern: '([aeiouyøœɛɔɑ]̃?)(?=(?:[vzʒʁ]|vʁ)$)'
+    replace: '\1ː'
+    source: 'Wikipedia, French phonology, "Length" (CC BY-SA 4.0), after Tranel, The Sounds of French (1987, CUP); Fougeron and Smith, "French", Handbook of the International Phonetic Association (1999, CUP)'
+  # Phrase-final stressed closed syllable: /o ø ɑ/ and the nasal vowels are long before any single consonant (saute [soːt], pâte [pɑːt], chante [ʃɑ̃ːt]). Runs after the rule above, so a vowel it already lengthened is not touched.
+  - id: "fr-length-o-ø-ɑ-nasal"
+    pattern: '(o|ø|ɑ̃|ɛ̃|ɔ̃|œ̃|ɑ)(?=[pbtdkɡfsʃmnɲlʒvzʁ]$)'
+    replace: '\1ː'
+    source: 'Wikipedia, French phonology, "Length" (CC BY-SA 4.0), after Tranel, The Sounds of French (1987, CUP); Fougeron and Smith, "French", Handbook of the International Phonetic Association (1999, CUP)'
+  # /ʁ/ is devoiced to [χ] before or after a voiceless obstruent, inside a word (trois [t̪χwa]). The sentence-final devoicing the same source mentions is left out: its own examples (mer [mɛːʁ]) keep [ʁ]. Runs before the dental rules so the context is the plain letter.
+  - id: "fr-r-devoiced"
+    pattern: '(?<=[ptkfsʃ])ʁ|ʁ(?=[ptkfsʃ])'
+    replace: 'χ'
+    source: 'Wikipedia, French phonology, "Consonants", on the rhotic (CC BY-SA 4.0), after Fougeron and Smith, "French", Handbook of the International Phonetic Association (1999, CUP), p. 75'
+  # /t d n/ are laminal denti-alveolar: t̪ d̪ n̪; /s z/ are dentalised laminal alveolar, written s̪ z̪.
+  - id: "fr-t-d-dental"
+    pattern: '([td])'
+    replace: '\1̪'
+    source: 'Fougeron and Smith, "French", Handbook of the International Phonetic Association (1999, CUP), p. 79 (the consonant chart); Ladefoged and Maddieson, The Sounds of the World''s Languages (1996, Blackwell), p. 192; Wikipedia, French phonology, "Consonants" (CC BY-SA 4.0)'
+  - id: "fr-n-dental"
+    pattern: 'n'
+    replace: 'n̪'
+    source: 'Fougeron and Smith, "French", Handbook of the International Phonetic Association (1999, CUP), p. 79 (the consonant chart); Ladefoged and Maddieson, The Sounds of the World''s Languages (1996, Blackwell), p. 192; Wikipedia, French phonology, "Consonants" (CC BY-SA 4.0)'
+  - id: "fr-s-z-dental"
+    pattern: '([sz])'
+    replace: '\1̪'
+    source: 'Fougeron and Smith, "French", Handbook of the International Phonetic Association (1999, CUP), p. 79 (the consonant chart); Ladefoged and Maddieson, The Sounds of the World''s Languages (1996, Blackwell), p. 192; Wikipedia, French phonology, "Consonants" (CC BY-SA 4.0)'
