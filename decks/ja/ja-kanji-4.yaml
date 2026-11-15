@@ -15,6 +15,12 @@ cards:
     pos: "letter"
     notes:
       - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ほうれん草はおいしいです。"
+        target_scripts: { kana: "ほうれんそうはおいしいです。" }
+        words: ["ほうれん草", "は", "おいしい", "です"]
+        reading: "hourensou wa oishii desu."
+        ipa: "hoːɾeɴsoː wa oiɕiː desɯ"
     bases: "self"
   - id: "ja-5121"
     target: "足"
@@ -230,6 +236,11 @@ cards:
         words: ["へや", "に", "入ります"]
         reading: "heya ni hairimasu."
         ipa: "heja ni hairimasɯ"
+      - target: "入口はどこですか。"
+        target_scripts: { kana: "いりぐちはどこですか。" }
+        words: ["入口", "は", "どこ", "です", "か"]
+        reading: "iriguchi wa doko desu ka."
+        ipa: "iɾiɡɯtɕi wa doko desɯ ka"
     bases: "self"
   - id: "ja-5133"
     target: "年"
@@ -293,6 +304,11 @@ cards:
         words: ["百", "は", "いくつ", "です", "か"]
         reading: "hyaku wa ikutsu desu ka."
         ipa: "çjakɯ wa ikɯtsɯ desɯ ka"
+      - target: "四百です。"
+        target_scripts: { kana: "よんひゃくです。" }
+        words: ["四百", "です"]
+        reading: "yonhyaku desu."
+        ipa: "joɴçakɯ desɯ"
     bases: "self"
   - id: "ja-5137"
     target: "文"
