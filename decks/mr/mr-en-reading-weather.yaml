@@ -1,0 +1,54 @@
+schema: 1
+id: "mr-en-reading-weather"
+name: "Reading: weather"
+kind: "reading"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A message to a friend about the monsoon. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "mr-weather-message"
+    title: "Monsoon message"
+    sentences:
+      - text: "प्रिय मित्रा, इथे पावसाळा सुरू झाला आहे."
+        reading: "priy mitrā, ithe pāvsāḷā suru jhālā āhe."
+        ipa: "prij mit̪ra it̪ʰe paʋsaɭa suru dzʱala aɦe"
+      - text: "आज खूप पाऊस पडत आहे."
+        reading: "āj khup pāus paḍat āhe."
+        ipa: "adz kʰup paus pəɖət̪ aɦe"
+      - text: "रस्त्यावर पाणी साचलं आहे."
+        reading: "rastyāvar pāṇi sāclam̐ āhe."
+        ipa: "rəst̪jaʋər paɳi satslə̃ aɦe"
+      - text: "म्हणून मी घरीच थांबतो."
+        reading: "mhaṇun mi gharic thāmbato."
+        ipa: "mɦəɳun mi ɡʱərits t̪ʰambət̪o"
+      - text: "तू कधी येशील?"
+        reading: "tu kadhi yeśil?"
+        ipa: "t̪u kəd̪ʱi jeʃil"
+    questions:
+      - id: "mr-7006"
+        prompt:
+          en: "Which season has started?"
+        options:
+        - en: "The monsoon"
+        - en: "Winter"
+        - en: "Summer"
+        answer: 1
+      - id: "mr-7007"
+        prompt:
+          en: "Why does the writer stay at home?"
+        options:
+        - en: "It is raining a lot"
+        - en: "It is very cold"
+        - en: "The shop is closed"
+        answer: 1
+      - id: "mr-7008"
+        prompt:
+          en: "What does the writer ask the friend?"
+        options:
+        - en: "When the friend will come"
+        - en: "Where the friend lives"
+        - en: "What the friend eats"
+        answer: 1

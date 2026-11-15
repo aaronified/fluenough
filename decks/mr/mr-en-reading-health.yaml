@@ -1,0 +1,65 @@
+"schema": 1
+"id": "mr-en-reading-health"
+"name": "Reading: the clinic"
+"kind": "reading"
+"language":
+  "code": "mr"
+  "iso639_3": "mar"
+  "name": "Marathi"
+  "script": "devanagari"
+  "tts": "mr-IN"
+  "icon": "म"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"description": "A notice at the clinic about its hours, the queue and where to get help. Not yet checked by a Marathi speaker: please report any mistake."
+"tags":
+- "reading"
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "mr-clinic-notice"
+  "title": "A notice at the clinic"
+  "sentences":
+  - "text": "दवाखाना सकाळी नऊ ते दुपारी एक उघडा असतो."
+    "reading": "davākhānā sakāḷi nau te dupāri ek ughḍā asto."
+    "ipa": "d̪əʋakʰana səkaɭi nəu t̪e d̪upari ek uɡʱɖa əst̪o"
+  - "text": "रविवारी दवाखाना बंद असतो."
+    "reading": "ravivāri davākhānā band asto."
+    "ipa": "rəʋiʋari d̪əʋakʰana bənd̪ əst̪o"
+  - "text": "रुग्णांनी रांगेत थांबा."
+    "reading": "rugṇānni rāṅget thāmbā."
+    "ipa": "ruɡɳanni raŋɡet̪ t̪ʰamba"
+  - "text": "डॉक्टर दहा मिनिटांत येतील."
+    "reading": "ḍôkṭar dahā miniṭānt yetil."
+    "ipa": "ɖɔkʈər d̪əɦa miniʈant̪ jet̪il"
+  - "text": "औषध घेण्यासाठी कृपया खिडकीकडे जा."
+    "reading": "auṣadh gheṇyāsāṭhi krupyā khiḍkikḍe jā."
+    "ipa": "əuʂəd̪ʱ ɡʱeɳjasaʈʰi krupja kʰiɖkikɖe dza"
+  - "text": "मदतीसाठी फोन करा."
+    "reading": "madtisāṭhi phon karā."
+    "ipa": "məd̪t̪isaʈʰi pʰon kəra"
+  "questions":
+  - "id": "mr-7415"
+    "prompt":
+      "en": "When is the clinic open on Sunday?"
+    "options":
+    - "en": "From nine to one"
+    - "en": "All day"
+    - "en": "It is closed"
+    "answer": 3
+  - "id": "mr-7416"
+    "prompt":
+      "en": "Where should patients wait?"
+    "options":
+    - "en": "In a line"
+    - "en": "In the garden"
+    - "en": "In the car"
+    "answer": 1
+  - "id": "mr-7417"
+    "prompt":
+      "en": "The doctor will come in ten minutes."
+    "answer": true

@@ -1,0 +1,59 @@
+"schema": 1
+"id": "mr-en-reading-grammar-conditional"
+"name": "Reading: if the train is late"
+"kind": "reading"
+"language":
+  "code": "mr"
+  "iso639_3": "mar"
+  "name": "Marathi"
+  "script": "devanagari"
+  "tts": "mr-IN"
+  "icon": "म"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"description": "A short message to a friend about what to do if the train is late. Not yet checked by a Marathi speaker: please report any mistake."
+"tags":
+- "reading"
+- "intermediate"
+- "unreviewed"
+"passages":
+- "id": "mr-late-train"
+  "title": "If the train is late"
+  "sentences":
+  - "text": "मित्रा, आज मी सात वाजता स्टेशनवर येईन."
+    "reading": "mitrā, āj mi sāt vājtā sṭeśnvar yein."
+    "ipa": "mit̪ra adz mi sat̪ ʋadzt̪a sʈeʃnʋər jein"
+  - "text": "जर गाडी उशिरा असेल, तर मी तुला फोन करीन."
+    "reading": "jar gāḍi uśirā asel, tar mi tulā phon karin."
+    "ipa": "dzər ɡaɖi uʃira əsel t̪ər mi t̪ula pʰon kərin"
+  - "text": "गाडी सात वाजून पाच मिनिटांनी येईल."
+    "reading": "gāḍi sāt vājun pāc miniṭānni yeil."
+    "ipa": "ɡaɖi sat̪ ʋadzun pats miniʈanni jeil"
+  - "text": "काळजी करू नकोस."
+    "reading": "kāḷji karu nakos."
+    "ipa": "kaɭdʒi kəru nəkos"
+  "questions":
+  - "id": "mr-7418"
+    "prompt":
+      "en": "When will the speaker call the friend?"
+    "options":
+    - "en": "If the train is late"
+    - "en": "If the train is on time"
+    - "en": "Never"
+    "answer": 1
+  - "id": "mr-7419"
+    "prompt":
+      "en": "What time is the train due?"
+    "options":
+    - "en": "At seven"
+    - "en": "At seven-oh-five"
+    - "en": "At seven-thirty"
+    "answer": 2
+  - "id": "mr-7420"
+    "prompt":
+      "en": "The speaker will come to the station at seven."
+    "answer": true

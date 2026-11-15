@@ -1,0 +1,32 @@
+schema: 1
+id: "mr-en-reading-grammar-past-continuous"
+name: "Reading: power cut"
+kind: "reading"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short story of an evening during a power cut. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "mr-power-cut-story"
+    title: "Power cut"
+    sentences:
+      - { text: "काल संध्याकाळी लाईट गेली.", reading: "kāl sandhyākāḷi lāiṭ geli.", ipa: "kal sənd̪ʱjakaɭi laiʈ ɡeli" }
+      - { text: "मी पुस्तक वाचत होतो.", reading: "mi pustak vācat hoto.", ipa: "mi pust̪ək ʋatsət̪ ɦot̪o" }
+      - { text: "आई स्वयंपाक करत होती.", reading: "āi svayampāk karat hoti.", ipa: "ai sʋəjəmpak kərət̪ ɦot̪i" }
+      - { text: "बाबा मेणबत्ती घेऊन आले.", reading: "bābā meṇbatti gheun āle.", ipa: "baba meɳbət̪t̪i ɡʱeun ale" }
+      - { text: "सगळे घरात बसले.", reading: "sagḷe gharāt basle.", ipa: "səɡɭe ɡʱərat̪ bəsle" }
+    questions:
+      - id: "mr-7509"
+        prompt: { en: "When did the power go?" }
+        options: [{ en: "In the evening" }, { en: "In the morning" }, { en: "At noon" }]
+        answer: 1
+      - id: "mr-7510"
+        prompt: { en: "What was the speaker doing?" }
+        options: [{ en: "Cooking" }, { en: "Reading a book" }, { en: "Sleeping" }]
+        answer: 2
+      - id: "mr-7511"
+        prompt: { en: "What did the father bring?" }
+        options: [{ en: "A candle" }, { en: "Water" }, { en: "A torch" }]
+        answer: 1

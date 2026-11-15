@@ -1,0 +1,78 @@
+schema: 1
+id: "kn-questions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-7000"
+    target: "ನೀವು ಯಾರು?"
+    reading: "nīvu yāru?"
+    ipa: "niːʋu jaːru"
+    pos: "phrase"
+    bases:
+      - { word: "ನೀವು", ref: "kn-0143" }
+      - { word: "ಯಾರು", ref: "kn-0168" }
+  - id: "kn-7001"
+    target: "ಅವಳು ಯಾರು?"
+    reading: "avaḷu yāru?"
+    ipa: "aʋaɭu jaːru"
+    pos: "phrase"
+    bases:
+      - { word: "ಅವಳು", ref: "kn-0613" }
+      - { word: "ಯಾರು", ref: "kn-0168" }
+  - id: "kn-7002"
+    target: "ಅದು ಯಾರು?"
+    reading: "adu yāru?"
+    ipa: "ad̪u jaːru"
+    pos: "phrase"
+    bases:
+      - { word: "ಅದು", ref: "kn-0614" }
+      - { word: "ಯಾರು", ref: "kn-0168" }
+  - id: "kn-7003"
+    target: "ಅದು ಅಲ್ಲ."
+    reading: "adu alla."
+    ipa: "ad̪u alla"
+    pos: "phrase"
+    bases:
+      - { word: "ಅದು", ref: "kn-0614" }
+      - { word: "ಅಲ್ಲ", ref: "kn-0166" }
+  - id: "kn-7004"
+    target: "ನಿಮ್ಮ ಕಾರು ಎಲ್ಲಿ?"
+    reading: "nimma kāru elli?"
+    ipa: "nimma kaːru elli"
+    pos: "phrase"
+    bases:
+      - { word: "ನಿಮ್ಮ", ref: "kn-0621" }
+      - { word: "ಕಾರು", ref: "kn-0113" }
+      - { word: "ಎಲ್ಲಿ", ref: "kn-0169" }
+  - id: "kn-7005"
+    target: "ಇದು ಎಷ್ಟು?"
+    reading: "idu eṣṭu?"
+    ipa: "id̪u eʂʈu"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ಎಷ್ಟು", ref: "kn-0173" }
+  - id: "kn-7006"
+    target: "ಇದು ಹೇಗೆ?"
+    reading: "idu hēge?"
+    ipa: "id̪u heːɡe"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ಹೇಗೆ", ref: "kn-0172" }
+  - id: "kn-7007"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    target: "ನೀವು ಯಾವಾಗ ಹೋಗುತ್ತೀರಿ?"
+    reading: "nīvu yāvāga hōguttīri?"
+    ipa: "niːʋu jaːʋaːɡa hoːɡut̪t̪iːri"
+    pos: "phrase"
+    bases:
+      - { word: "ನೀವು", ref: "kn-0143" }
+      - { word: "ಯಾವಾಗ", ref: "kn-0170" }
+      - { word: "ಹೋಗುತ್ತೀರಿ", ref: "kn-0631" }

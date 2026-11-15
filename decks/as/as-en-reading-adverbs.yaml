@@ -1,0 +1,40 @@
+schema: 1
+id: "as-en-reading-adverbs"
+name: "Assamese reading: adverbs"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-adverbs-habit-survey"
+    title: "Habit survey"
+    theme: "adverbs"
+    sentences:
+      - text: "মই প্ৰায়ই যাওঁ।"
+        reading: "moi prāyoi zāum̐."
+      - text: "সি বেয়াকৈ খেলে।"
+        reading: "si beyākôi khele."
+      - text: "মই সদায় সাত বজাত উঠোঁ।"
+        reading: "moi xôdāi xāt bôzāt uthum̐."
+      - text: "মই কেতিয়াও নাখাওঁ।"
+        reading: "moi ketiyāu nākhāum̐."
+    questions:
+      - id: "as-7006"
+        prompt: { en: "How often does the speaker go?" }
+        options:
+          - { en: "Often" }
+          - { en: "Never" }
+          - { en: "Once" }
+        answer: 1
+      - id: "as-7007"
+        prompt: { en: "The survey says he plays well." }
+        answer: false
+      - id: "as-7008"
+        prompt: { en: "At what time does the speaker get up?" }
+        options:
+          - { en: "At six" }
+          - { en: "At seven" }
+          - { en: "At eight" }
+        answer: 2

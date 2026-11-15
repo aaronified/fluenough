@@ -1,0 +1,93 @@
+schema: 1
+id: "kn-addressing-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-7375"
+    target: "ನಮಸ್ಕಾರ ಸರ್."
+    reading: "namaskāra sar."
+    ipa: "namaskaːra sar"
+    pos: "phrase"
+    bases:
+      - { word: "ನಮಸ್ಕಾರ", ref: "kn-0142" }
+      - { word: "ಸರ್", ref: "kn-0190" }
+  - id: "kn-7376"
+    target: "ಇವನು ನನ್ನ ತಮ್ಮ."
+    reading: "ivanu nanna tamma."
+    ipa: "iʋanu nanna t̪amma"
+    pos: "phrase"
+    bases:
+      - { word: "ಇವನು", base: "ಇವನು", reading: "ivanu" }
+      - { word: "ನನ್ನ", ref: "kn-0619" }
+      - { word: "ತಮ್ಮ", ref: "kn-0186" }
+  - id: "kn-7377"
+    target: "ಇವಳು ನನ್ನ ತಂಗಿ."
+    reading: "ivaḷu nanna taṅgi."
+    ipa: "iʋaɭu nanna t̪aŋɡi"
+    pos: "phrase"
+    bases:
+      - { word: "ಇವಳು", base: "ಇವಳು", reading: "ivaḷu" }
+      - { word: "ನನ್ನ", ref: "kn-0619" }
+      - { word: "ತಂಗಿ", ref: "kn-0187" }
+  - id: "kn-7378"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    target: "ಅಜ್ಜಿ, ನೀವು ಎಲ್ಲಿ ಹೋಗುತ್ತೀರಿ?"
+    reading: "ajji, nīvu elli hōguttīri?"
+    ipa: "adʒdʒi niːʋu elli hoːɡut̪t̪iːri"
+    pos: "phrase"
+    bases:
+      - { word: "ಅಜ್ಜಿ", ref: "kn-0194" }
+      - { word: "ನೀವು", ref: "kn-0143" }
+      - { word: "ಎಲ್ಲಿ", ref: "kn-0169" }
+      - { word: "ಹೋಗುತ್ತೀರಿ", base: "ಹೋಗು", reading: "hōgu" }
+  - id: "kn-7379"
+    target: "ಮೇಡಂ, ಧನ್ಯವಾದಗಳು."
+    reading: "mēḍam, dhanyavādagaḷu."
+    ipa: "meːɖam d̪ʱanjaʋaːd̪aɡaɭu"
+    pos: "phrase"
+    bases:
+      - { word: "ಮೇಡಂ", ref: "kn-0191" }
+      - { word: "ಧನ್ಯವಾದಗಳು", ref: "kn-0146" }
+  - id: "kn-7380"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    target: "ಸ್ವಾಮಿ, ನಾನು ಬರುತ್ತೇನೆ."
+    reading: "svāmi, nānu baruttēne."
+    ipa: "sʋaːmi naːnu barut̪t̪eːne"
+    pos: "phrase"
+    bases:
+      - { word: "ಸ್ವಾಮಿ", ref: "kn-0192" }
+      - { word: "ನಾನು", ref: "kn-0610" }
+      - { word: "ಬರುತ್ತೇನೆ", base: "ಬಾ", reading: "bā" }
+  - id: "kn-7381"
+    target: "ಆಂಟಿ, ನೀವು ಕುಡಿಯುತ್ತೀರಾ?"
+    reading: "āṇṭi, nīvu kuḍiyuttīrā?"
+    ipa: "aːɳʈi niːʋu kuɖijut̪t̪iːraː"
+    pos: "phrase"
+    bases:
+      - { word: "ಆಂಟಿ", ref: "kn-0193" }
+      - { word: "ನೀವು", ref: "kn-0143" }
+      - { word: "ಕುಡಿಯುತ್ತೀರಾ", base: "ಕುಡಿ", reading: "kuḍi" }
+  - id: "kn-7382"
+    target: "ತಮ್ಮ, ಬಾ."
+    reading: "tamma, bā."
+    ipa: "t̪amma baː"
+    pos: "phrase"
+    bases:
+      - { word: "ತಮ್ಮ", ref: "kn-0186" }
+      - { word: "ಬಾ", ref: "kn-0632" }
+  - id: "kn-7383"
+    target: "ಗೆಳೆಯ, ನೀನು ಯಾರು?"
+    reading: "geḷeya, nīnu yāru?"
+    ipa: "ɡeɭeja niːnu jaːru"
+    pos: "phrase"
+    bases:
+      - { word: "ಗೆಳೆಯ", ref: "kn-0195" }
+      - { word: "ನೀನು", ref: "kn-0611" }
+      - { word: "ಯಾರು", ref: "kn-0168" }

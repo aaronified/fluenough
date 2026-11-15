@@ -1,0 +1,58 @@
+schema: 1
+id: "mr-en-housing-sentences"
+kind: "layer"
+core: "mr-housing-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Housing: sentences"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the housing words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-5860":
+    native: "I want to rent a flat."
+    bases: { "मला": "to me", "भाड्याने": "on rent", "घ्यायचा": "to take", "आहे": "is" }
+    confusables: { "w1": { why: "नाही (nāhi) means not, which would say I do not want to rent a flat." }, "w2": { why: "भाड्याने देणे (bhāḍyāne deṇe) means to rent out, not to rent in." } }
+  "mr-5861":
+    native: "How much deposit does the landlord ask for?"
+    bases: { "मागतात": "ask for" }
+    confusables: { "w1": { why: "भाडेकरू (bhāḍekru) is the tenant, who pays; घरमालक (gharmālak) is the landlord." }, "w2": { why: "कुठे (kuṭhe) asks where, not how much." } }
+  "mr-5862":
+    native: "The tenant pays the rent on time."
+    bases: { "देतो": "pays" }
+    confusables: { "w1": { why: "घरमालक (gharmālak) is the landlord, who receives the rent." }, "w2": { why: "तो (to) means he; the tenant is not named." } }
+  "mr-5863":
+    native: "We signed a new agreement."
+    bases: { "नवा": "new", "केला": "made" }
+    confusables: { "w1": { why: "तू (tu) means you, not we." }, "f1": { why: "केली (keli) is feminine; करार (karār) is masculine, so केला (kelā) is used." } }
+  "mr-5864":
+    native: "There are trees on the balcony."
+    bases: { "बाल्कनीत": "on the balcony", "झाडे": "trees (plural)", "आहेत": "are" }
+    confusables: { "w1": { why: "इथे (ithe) means here, not on the balcony." }, "f1": { why: "आहे (āhe) is for one thing; झाडे (jhāḍe) is plural, so आहेत (āhet) is used." } }
+  "mr-5865":
+    native: "The door is open."
+    bases: { "उघडा": "open", "आहे": "is" }
+    confusables: { "w1": { why: "बंद (band) means closed, the opposite of उघडा (ughḍā)." }, "f1": { why: "उघडे (ughḍe) is for a neuter or plural noun; दरवाजा (darvājā) is masculine, so उघडा (ughḍā) is used." } }
+  "mr-5866":
+    native: "Clean the wall."
+    bases: { "करा": "do (polite)" }
+    confusables: { "w1": { why: "तू (tu) means you; the sentence is a polite command." }, "w2": { why: "घाण (ghāṇ) means dirt, the opposite of स्वच्छ (svacch)." } }
+  "mr-5867":
+    native: "The lift is out of order."
+    bases: { "बंद": "closed", "आहे": "is" }
+    confusables: { "w1": { why: "सुरू (suru) means running or working, the opposite of बंद (band)." }, "f1": { why: "आहेत (āhet) is plural; one lift takes आहे (āhe)." } }
+  "mr-5868":
+    native: "Where is the parking?"
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "इथे (ithe) means here, not where." }, "w2": { why: "छत (chat) means roof, not parking." } }
+  "mr-5869":
+    native: "There is furniture in the house."
+    bases: { "घरात": "in the house", "आहे": "is" }
+    confusables: { "w1": { why: "खुर्ची (khurci) means chair, one piece of furniture." }, "w2": { why: "इथे (ithe) means here, not in the house." } }
+  "mr-5870":
+    native: "I will rent out this house."
+    bases: { "भाड्याने": "on rent", "देणार": "will give", "आहे": "am" }
+    confusables: { "w1": { why: "भाड्याने घेणे (bhāḍyāne gheṇe) means to rent in, the opposite of renting out." }, "w2": { why: "तो (to) means he; मी (mi) means I." } }
+  "mr-5871":
+    native: "The roof leaks."
+    bases: { "गळते": "leaks" }
+    confusables: { "w1": { why: "भिंत (bhint) means wall, not roof." }, "f1": { why: "गळतो (gaḷto) is masculine; छत (chat) is feminine, so गळते (gaḷte) is used." } }

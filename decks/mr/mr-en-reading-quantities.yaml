@@ -1,0 +1,62 @@
+"schema": 1
+"id": "mr-en-reading-quantities"
+"name": "Reading: quantities"
+"kind": "reading"
+"language":
+  "code": "mr"
+  "iso639_3": "mar"
+  "name": "Marathi"
+  "script": "devanagari"
+  "tts": "mr-IN"
+  "icon": "म"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"description": "A recipe card with amounts: how many people it serves, and the cups, spoons, kilos and litres of each ingredient. Not yet checked by a Marathi speaker: please report any mistake."
+"tags":
+- "reading"
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "mr-recipe-amounts"
+  "title": "Recipe amounts"
+  "sentences":
+  - "text": "ही पाककृती चार माणसांसाठी आहे."
+    "reading": "hi pākkruti cār māṇsāṁsāṭhi āhe."
+    "ipa": "ɦi pakkrut̪i tsar maɳsãsaʈʰi aɦe"
+  - "text": "यासाठी दोन कप तांदूळ घ्या."
+    "reading": "yāsāṭhi don kap tānduḷ ghyā."
+    "ipa": "jasaʈʰi d̪on kəp t̪and̪uɭ ɡʱja"
+  - "text": "एक चमचा मीठ घाला."
+    "reading": "ek camcā miṭh ghālā."
+    "ipa": "ek tsəmtsa miʈʰ ɡʱala"
+  - "text": "पाव किलो साखर आणि अर्धा लिटर दूध घ्या."
+    "reading": "pāv kilo sākhar āṇi ardhā liṭar dudh ghyā."
+    "ipa": "paʋ kilo sakʰər aɳi ərd̪ʱa liʈər d̪ud̪ʱ ɡʱja"
+  - "text": "तीन कांदे बारीक चिरा."
+    "reading": "tin kānde bārik cirā."
+    "ipa": "t̪in kand̪e barik tʃira"
+  "questions":
+  - "id": "mr-7200"
+    "prompt":
+      "en": "How many people is this recipe for?"
+    "options":
+    - "en": "Two"
+    - "en": "Four"
+    - "en": "Six"
+    "answer": 2
+  - "id": "mr-7201"
+    "prompt":
+      "en": "How much sugar is needed?"
+    "options":
+    - "en": "A quarter kilo"
+    - "en": "One kilo"
+    - "en": "Two kilos"
+    "answer": 1
+  - "id": "mr-7202"
+    "prompt":
+      "en": "The recipe needs half a litre of milk."
+    "answer": true
