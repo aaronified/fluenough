@@ -66,6 +66,17 @@ def _indent(line: str) -> int:
     return len(line) - len(line.lstrip(" "))
 
 
+def _opens_card_list(lines: list[str], brace: int) -> bool:
+    """Whether the `{` at [brace] is an element of the card list: the nearest
+    earlier line that is less indented opens `"cards": [` (or is a bare `[`)."""
+    here = _indent(lines[brace])
+    for k in range(brace - 1, -1, -1):
+        ln = lines[k].rstrip("\r")
+        if ln.strip() and _indent(ln) < here:
+            return ln.strip() in ('"cards": [', "[")
+    return False
+
+
 def _card_block(lines: list[str], cid: str) -> _Block | None:
     """Where card [cid] sits in the file, in one of the layouts the decks use:
 
@@ -92,10 +103,12 @@ def _card_block(lines: list[str], cid: str) -> _Block | None:
                 break
         if found is None:
             m = json_head.match(line)
-            # A card's id is the first line after its own `{`; a note's or
-            # an example's id sits after a key, never directly after a `{`.
+            # A card's id is the first line after its own `{`, and that `{`
+            # sits directly in the card list. A note's or an example's `{`
+            # sits in another list (`"notes": [`), so its id is never a card's.
             if m and i > 0 and lines[i - 1].rstrip("\r").strip() in ("{", "- {") \
-                    and _indent(lines[i - 1]) == len(m.group(1)) - 2:
+                    and _indent(lines[i - 1]) == len(m.group(1)) - 2 \
+                    and _opens_card_list(lines, i - 1):
                 found = (len(m.group(1)), True, True)
         if found is None:
             continue
@@ -203,7 +216,13 @@ def core_cards(decks: Path, lang: str) -> list[Card]:
             if not isinstance(card, dict) or not vd._is_str(card.get("id")) \
                     or not vd._is_str(card.get("target")):
                 continue
-            block = _card_block(text.split("\n"), card["id"]) is not None
+            found = _card_block(text.split("\n"), card["id"])
+            block = found is not None
+            if found is not None and found.json:
+                # `ipa` as the last key of a JSON-style card cannot be patched.
+                ln = text.split("\n")[found.start:found.end]
+                at = next((x for x in ln if x.startswith(" " * found.indent + '"ipa":')), None)
+                block = at is None or at.rstrip("\r").rstrip().endswith(",")
             ipa = card.get("ipa")
             phonetic = card.get("phonetic")
             cards.append(Card(card["id"], unicodedata.normalize("NFC", card["target"]),

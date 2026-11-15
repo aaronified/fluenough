@@ -11,12 +11,12 @@ from __future__ import annotations
 import json
 import tempfile
 import unittest
-
-import yaml
 from pathlib import Path
 from unittest import mock
 
 import sys
+
+import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
@@ -212,7 +212,6 @@ class Patching(Tree):
     def test_quoted_key_yaml_with_the_list_indented_is_patched_too(self) -> None:
         indented = "\n".join(("  " + ln if ln.startswith("- ") or ln.startswith("  ") else ln)
                              for ln in QUOTED.split("\n"))
-        indented = indented.replace('"cards":', '"cards":', 1)
         new, left = pp.patch(indented, {"zz-0001": ("[kʰat]", "rules")})
         self.assertEqual(left, {})
         self.assertIn('    "ipa": "kat"\n    "phonetic": "[kʰat]"\n'
