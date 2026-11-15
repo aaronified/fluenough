@@ -367,6 +367,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1369](https://github.com/aaronified/fluenough/issues/1369) Spanish narrow IPA rules: five gaps found reviewing the first whole-course run
 - [#1395](https://github.com/aaronified/fluenough/issues/1395) phonetic_patch.py cannot patch ~half of the Japanese cards (JSON-style and quoted-key YAML layouts)
 - [#1398](https://github.com/aaronified/fluenough/issues/1398) tools/transcribe.py bn drops the ba-phala (second consonant ব) in conjunct readings
+- [#1402](https://github.com/aaronified/fluenough/issues/1402) tools/transcribe.py: র্ব (reph + ba) read as ba-phala; য-ফলা final vowel dropped
 
 ## Plans
 
