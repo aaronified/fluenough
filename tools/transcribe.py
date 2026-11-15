@@ -607,6 +607,10 @@ def default_choices(units: list[Unit], lang: str) -> list[Choice]:
         drop = False
         if lang in ("hi", "mr", "gu", "bn", "as"):
             end = k + 1 >= len(units) or units[k + 1].kind in ("SP", "P")
+            # Bengali says a word's last vowel after a ব-ফলা: বিশ্ব biśśo.
+            if end and lang in ("bn", "as") and k > 0 and \
+                    units[k - 1].kind == "C" and units[k - 1].vaphala:
+                continue
             # A word's last inherent vowel is not said, unless the word is a
             # single letter.
             first = k == 1 or (k >= 2 and units[k - 2].kind == "SP")
@@ -796,7 +800,9 @@ def _transcribe(text: str, lang: str, hint: str | None) -> Transcription:
                 # Assamese says a য-ফলা as a y glide: ব্যস্ত byôsto.
                 i_iso, i_ipa = i_iso + "y", i_ipa + "j"
             elif (u.yaphala or u.vaphala) and i_iso and \
-                    not _cluster_initial(units, k):
+                    (not _cluster_initial(units, k) or
+                     (u.vaphala and _bare_conjunct(units, k))) and \
+                    not _already_held(units, k):
                 i_iso, i_ipa = _held(i_iso, i_ipa)
         elif u.kind == "N":
             if ch.tag == "silent" or typed == "":
@@ -924,6 +930,23 @@ def _cluster_initial(units: list[Unit], k: int) -> bool:
     while j >= 0 and units[j].kind == "C":
         j -= 1
     return j < 0 or units[j].kind in ("SP", "P")
+
+
+def _already_held(units: list[Unit], k: int) -> bool:
+    """Whether the consonant before unit [k] is the same letter, written
+    as a conjunct with it: the doubling is already said, so a ফলা on the
+    second does not hold it a third time (উজ্জ্বল ujjôl)."""
+    return k > 0 and units[k - 1].kind == "C" and \
+        units[k - 1].letter == units[k].letter
+
+
+def _bare_conjunct(units: list[Unit], k: int) -> bool:
+    """Whether unit [k] with its ফলা is the whole word, as a conjunct is
+    shown on a card of its own: জ্ব is said jjô. Inside a word a ফলা at the
+    start says nothing (স্বামী śāmi)."""
+    return (k == 0 or units[k - 1].kind in ("SP", "P")) and \
+        k + 1 < len(units) and units[k + 1].kind == "I" and \
+        (k + 2 >= len(units) or units[k + 2].kind in ("SP", "P"))
 
 
 def _word_initial(units: list[Unit], k: int) -> bool:

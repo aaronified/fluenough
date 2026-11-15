@@ -182,6 +182,29 @@ class NoHintTest(unittest.TestCase):
     def test_bengali_drops_an_inherent_vowel_inside_a_word(self) -> None:
         self.assertEqual(self.read("bn", "আপনার"), "āpnār")
 
+    def test_a_bengali_conjunct_on_its_own_holds_its_consonant(self) -> None:
+        # The ব-ফলা is not dropped on a card of its own (#1398).
+        for word, reading in (("জ্ব", "jjô"), ("ত্ব", "ttô"),
+                              ("দ্ব", "ddô"), ("ধ্ব", "ddhô"),
+                              ("শ্ব", "śśô")):
+            self.assertEqual(self.read("bn", word), reading)
+
+    def test_a_bengali_ba_phala_inside_a_word_holds_the_consonant(self) -> None:
+        self.assertEqual(self.read("bn", "বিশ্ব"), "biśśo")
+        self.assertEqual(self.read("bn", "বিদ্বান"), "biddān")
+        self.assertEqual(self.read("bn", "অশ্ব"), "ôśśo")
+
+    def test_a_bengali_ba_phala_at_a_words_start_says_nothing(self) -> None:
+        self.assertEqual(self.read("bn", "স্বামী"), "śāmi")
+        self.assertEqual(self.read("bn", "দ্বার"), "dār")
+        self.assertEqual(self.read("bn", "ধ্বনি"), "dhoni")
+        self.assertEqual(self.read("bn", "জ্বর"), "jôr")
+
+    def test_a_doubled_consonant_with_a_ba_phala_is_held_twice_only(self) -> None:
+        self.assertEqual(self.read("bn", "উজ্জ্বল"), "ujjol")
+        self.assertEqual(self.read("bn", "সত্ত্ব"), "śôtto")
+        self.assertEqual(self.read("bn", "তত্ত্ব"), "tôtto")
+
     def test_sibilants_follow_the_table_unless_before_a_stop(self) -> None:
         self.assertEqual(self.read("bn", "সকাল"), "śôkāl")
         self.assertEqual(self.read("as", "সকাল"), "xôkāl")
