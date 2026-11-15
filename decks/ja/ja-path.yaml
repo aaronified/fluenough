@@ -798,7 +798,9 @@ units:
       - { id: "the-manager-is-coming", text: { "en": "Speaking of a customer and a manager with honorific verbs" } }
     reading_passages:
       - { id: "shop-announcement", text: { "en": "A shop's announcement to its customers" } }
-  - planned: { id: "ja-grammar-keigo-kenjougo", grammar: "kenjougo" }
+  - decks: ["ja-grammar-keigo-kenjougo", "ja-grammar-keigo-kenjougo-sentences"]
+    words: 0
+    grammar: ["kenjougo"]
     listening_passages:
       - { id: "i-will-carry-it", text: { "en": "Speaking of yourself humbly to a customer: I will carry it, I will go" } }
     reading_passages:
