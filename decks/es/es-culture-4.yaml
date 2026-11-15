@@ -1,0 +1,130 @@
+# A culture deck of Spanish works without a known author, and of a medieval poet whose text is in a printed edition of 1780: short lines
+# of a ballad and of a poem, each with its source, its rights basis and its creator (wiki/Plan-Deck-Kinds-And-Topics.md).
+# Built from Spanish Wikisource pages only, and only where the page names a printed witness of a date before 1900. Items that could not be
+# dated from a printed witness were left out (the reserve is listed in the report of the build).
+# The text is shown in modern spelling where the cited copy is archaic, and the edition says so.
+schema: 1
+id: "es-culture-4"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+genre: "culture"
+level: "B1"
+tags: ["unreviewed"]
+cards:
+  - id: "es-4150"
+    target: "que ni sé cuándo es de día, ni menos cuándo es de noche"
+    words: ["que", "ni", "sé", "cuándo", "es", "de", "día", "ni", "menos", "cuándo", "es", "de", "noche"]
+    ipa: "ke ni se ˈkwando es de ˈdia ni ˈmenos ˈkwando es de ˈnotʃe"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "que", base: "que" }
+      - { word: "ni", base: "ni" }
+      - { word: "sé", base: "saber" }
+      - { word: "cuándo", base: "cuándo" }
+      - { word: "es", base: "ser" }
+      - { word: "de", base: "de" }
+      - { word: "día", base: "día" }
+      - { word: "menos", base: "menos" }
+      - { word: "noche", base: "noche" }
+    source:
+      author: "anonymous"
+      work: "Romance del prisionero, first version, the lines of the prisoner"
+      date: "1511"
+      edition: "Cancionero general, edition of 1511, fol. 136 (the 1511 folio is the transcriber's citation, from Wolf and Hofmann, Primavera y flor de romances, Berlin 1856), as transcribed in Version 1 of the Romance del prisionero on Spanish Wikisource; spelling modernised (the print has dia and ménos, shown as día and menos)"
+      url: "https://es.wikisource.org/wiki/Romance_del_prisionero"
+      basis: "public-domain"
+      jurisdiction: "ES"
+      rights_checked: "2026-11-15"
+  - id: "es-4151"
+    target: "sino por una avecilla que me cantaba al albor; matómela un ballestero"
+    words: ["sino", "por", "una", "avecilla", "que", "me", "cantaba", "al", "albor", "matómela", "un", "ballestero"]
+    ipa: "ˈsino poɾ ˈuna abeˈθiʝa ke me kanˈtaba al alˈboɾ maˈtomela un baʝesˈteɾo"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "sino", base: "sino" }
+      - { word: "por", base: "por" }
+      - { word: "una", base: "una" }
+      - { word: "avecilla", base: "avecilla" }
+      - { word: "que", base: "que" }
+      - { word: "me", base: "me" }
+      - { word: "cantaba", base: "cantar" }
+      - { word: "al", base: "al" }
+      - { word: "albor", base: "albor" }
+      - { word: "matómela", base: "matar" }
+      - { word: "un", base: "un" }
+      - { word: "ballestero", base: "ballestero" }
+    source:
+      author: "anonymous"
+      work: "Romance del prisionero, first version, the lines about the little bird"
+      date: "1511"
+      edition: "Cancionero general, edition of 1511, fol. 136 (the 1511 folio is the transcriber's citation, from Wolf and Hofmann, Primavera y flor de romances, Berlin 1856), as transcribed in Version 1 of the Romance del prisionero on Spanish Wikisource; punctuation modernised (the print has a colon after albor)"
+      url: "https://es.wikisource.org/wiki/Romance_del_prisionero"
+      basis: "public-domain"
+      jurisdiction: "ES"
+      rights_checked: "2026-11-15"
+  - id: "es-4152"
+    target: "Era un hombre pobre que vivía de raciones"
+    words: ["Era", "un", "hombre", "pobre", "que", "vivía", "de", "raciones"]
+    ipa: "ˈeɾa un ˈombɾe ˈpobɾe ke biˈbia de raˈθjones"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "es-gonzalo-de-berceo"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Era", base: "ser" }
+      - { word: "un", base: "un" }
+      - { word: "hombre", base: "hombre" }
+      - { word: "pobre", base: "pobre" }
+      - { word: "que", base: "que" }
+      - { word: "vivía", base: "vivir" }
+      - { word: "de", base: "de" }
+      - { word: "raciones", base: "ración" }
+    source:
+      author: "Gonzalo de Berceo"
+      work: "Milagros de Nuestra Señora, Milagro V, El pobre caritativo, first stanza"
+      date: "1780"
+      edition: "Poemas de Gonzalo de Berceo, printed by Antonio de Sancha in Madrid, 1780 (Colección de poesías castellanas anteriores al siglo XV, Tomo II), from the Wikisource transcription, whose parent page names the Sancha 1780 print among its sources; spelling modernised (the print has omne, vivie and raçiones)"
+      url: "https://es.wikisource.org/wiki/Milagro_V_-_El_pobre_caritativo"
+      basis: "public-domain"
+      author_died: 1264
+      jurisdiction: "ES"
+      rights_checked: "2026-11-15"
+  - id: "es-4153"
+    target: "Amaba a su hijo y amaba a ella"
+    words: ["Amaba", "a", "su", "hijo", "y", "amaba", "a", "ella"]
+    ipa: "aˈmaba a su ˈixo i aˈmaba a ˈeʝa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "es-gonzalo-de-berceo"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Amaba", base: "amar" }
+      - { word: "a", base: "a" }
+      - { word: "su", base: "su" }
+      - { word: "hijo", base: "hijo" }
+      - { word: "y", base: "y" }
+      - { word: "ella", base: "ella" }
+    source:
+      author: "Gonzalo de Berceo"
+      work: "Milagros de Nuestra Señora, Milagro IV, El premio de la Virgen, one stanza"
+      date: "1780"
+      edition: "Poemas de Gonzalo de Berceo, printed by Antonio de Sancha in Madrid, 1780 (Colección de poesías castellanas anteriores al siglo XV, Tomo II), from the Wikisource transcription, whose parent page names the Sancha 1780 print among its sources; spelling modernised (the page has al so fijo e amaba a ella)"
+      url: "https://es.wikisource.org/wiki/Milagro_IV_-_El_premio_de_la_Virgen"
+      basis: "public-domain"
+      author_died: 1264
+      jurisdiction: "ES"
+      rights_checked: "2026-11-15"
