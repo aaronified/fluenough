@@ -129,17 +129,21 @@ class ReadingTest(unittest.TestCase):
         self.check("te", "-ిన", "-ina", "-ina", "ina")
 
     def test_telugu_rare_letters(self) -> None:
-        # #1361: ఱ is ṟa (IPA as ర), ఌ ౡ follow ఋ, ౘ ౙ are ts and dz (ISO
-        # 15919 has no letter for them), ఁ is silent.
+        # #1361: ఱ is ṟa (IPA as ర), ఌ ౡ read ISO l̥ and l̥̄, ౘ ౙ are ts
+        # and dz (ISO 15919 has no letter for them), ఁ is silent.
         for word, reading, ipa in (
             ("ఱ", "ṟa", "ra"),
             ("ఱు", "ṟu", "ru"),
-            ("ఌ", "lu", "lu"),
-            ("ౡ", "lū", "luː"),
+            ("ఌ", "l\u0325", "lu"),
+            ("ౡ", "l\u0325\u0304", "luː"),
+            ("ౢ", "l\u0325", "lu"),
+            ("ౣ", "l\u0325\u0304", "luː"),
             ("ౠ", "rū", "ruː"),
             ("ౘ", "tsa", "tsa"),
             ("ౙ", "dza", "dza"),
-            ("కౢ", "klu", "klu"),
+            ("కౢ", "kl\u0325", "klu"),
+            ("కౣ", "kl\u0325\u0304", "kluː"),
+            ("కౢప్తి", "kl\u0325pti", "klupt\u032ai"),
             ("ఁ", "", ""),
             ("ః", "ḥ", "h"),
         ):

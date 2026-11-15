@@ -16,7 +16,7 @@ State was read from `origin/decks-live` on 2026-11-15 with PyYAML over every `de
 | 6 | Phrasebook | **DONE** | `ta-phrasebook`: 20 cards (limit 25) | none |
 | 7 | Situations | **MISSING** | no `ta-situations.yaml` | TA-050 |
 | 8 | Topics incl. script topics | **MISSING** | no `ta-topics.yaml` | TA-040 |
-| 9 | Culture decks | **MISSING** | no `ta-culture-*` | TA-001, TA-010..013 |
+| 9 | Culture decks | **MISSING** (sourcing list DONE 2026-11-15) | no `ta-culture-*` on decks-live; [Plan-Culture-Tamil](Plan-Culture-Tamil.md) lists 25 works read to the text (deck 1: 9, deck 2: 6, deck 3: 6, deck 4: 4, so deck 4 ships short) and 40 dropped items | TA-010..013 (after TA-110 for readings) |
 | 10 | Creators, eras, legacy | **MISSING** | no `decks/creators/ta.yaml` | rides on TA-010..013, TA-060 |
 | 11 | Proverbs | **MISSING** | none (owner 2026-11-13: built for every priority language) | TA-020..022 |
 | 12 | Multi-word verbs | **MISSING** | planned units 57 and 65 (compound and conjunct verbs) are rules units, not genre decks | TA-030..032 |
@@ -24,7 +24,7 @@ State was read from `origin/decks-live` on 2026-11-15 with PyYAML over every `de
 | 14 | Recommendations | **MISSING** | no `decks/recommendations/ta.yaml` | TA-060 |
 | 15 | Narrow IPA and broad `ipa` | **BLOCKED** | no Tamil engine in `tools/transcribe.py` (Malayalam has one), no `ta` entry in `tools/phonetic_languages.yaml`, no `ta-phonetics.yaml`; broad `ipa` on 327 of 332 cards, **hand-written**; 0 `phonetic` | TA-110 first, then TA-111, TA-112 |
 | 16 | Review-queue rows | **PARTLY** | `docs/review-queue/ta.md`: 46 lines, all 2026-11-05 to 2026-11-07, including "course-wide: every reading and broad IPA is hand-written" | TA-120 |
-| 17 | Sourcing list | **MISSING** | no `Plan-Culture-Tamil` | TA-001 |
+| 17 | Sourcing list | **DONE** (2026-11-15, TA-001) | `wiki/Plan-Culture-Tamil.md`: culture 25 works read (4 decks), proverbs 60 from Percival 1874 (3 decks of 20), multi-word verbs 66 attested headwords (3 families), recommendations 20 (18 films, 2 novels), 40 dropped unverifiable; every entry read on a cited page, none from memory | none |
 | 18 | Facts file | **MISSING** | no `ta-facts.yaml` | TA-080 |
 
 ### A1 gap, from the path (units 1 to 45)
@@ -50,7 +50,7 @@ Ids: highest today `ta-0332`; reserved ranges (never reused, ascending inside a 
 | Id | Model | Branch | Spec |
 |---|---|---|---|
 | TA-110 | Sonnet | `tools/ta-transcribe` (tools PR to main, via parent) | `tamil()` engine in `tools/transcribe.py` and its tests; verified against `ta-phrasebook` and the 327 existing broad `ipa` forms (a disagreement goes to the review queue, never silently "fixed" by editing) |
-| TA-001 | Sonnet | main (docs) | `Plan-Culture-Tamil`: verified sourcing list for culture (4 decks), proverbs (3), multi-word families, recommendations; nothing from memory |
+| TA-001 | Sonnet | main (docs) | **DONE 2026-11-15.** `Plan-Culture-Tamil`: verified sourcing list for culture (4 decks), proverbs (3), multi-word families, recommendations; nothing from memory |
 | TA-070..075 | Haiku | `decks/ta-a1-wave1` | `ta-script-vowels`, `-consonants`, `-vowel-signs`, `-grantha`, `-digits`, `-reading`; set `alphabet` in the path; from TA-110 only |
 | TA-100..TA-1xx | Haiku (Sonnet specs the grammar tables first) | `decks/ta-a1-wave1` | A1 grammar rules units 17 to 22, 27, 29 to 32, 34, 40 to 42, 45 and their layers, in path order; path entries move from `planned` to `decks` in the same commit |
 | TA-130..139 | Haiku | `decks/ta-a1-wave1` | the 10 missing `-sentences` decks, 2 to 3 confusables per card |
