@@ -156,7 +156,8 @@ def _nasal_only(field_name: str, stored: str, computed: str,
                 target: str) -> str | None:
     """[stored] with only its nasals replaced by [computed]'s, in order, or
     None unless the target's nasals line up one to one with the right
-    reading's and every nasal that changes is an anusvara of the target. A
+    reading's, every nasal that changes is an anusvara of the target, and the
+    letter after it is the same in both (so no half-fixed cluster, ɳd). A
     stored retroflex pair (ṇḍ) is one nasal: it stays when the right reading
     has ṇḍ, and becomes nd when the right reading has the dental n and d and
     the target has ంద."""
@@ -184,6 +185,9 @@ def _nasal_only(field_name: str, stored: str, computed: str,
         if repl != m.group():
             if not is_anusvara:
                 return None
+            if m.group() != pair and (stored[m.end():m.end() + 1]
+                                      != computed[n.end():n.end() + 1]):
+                return None  # the letter after it would change too
             changed += 1
         out += [stored[last:m.start()], repl]
         last = m.end()
