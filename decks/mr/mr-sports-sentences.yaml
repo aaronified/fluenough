@@ -1,0 +1,78 @@
+schema: 1
+id: "mr-sports-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-6525"
+    target: "आमचा संघ आज सामना खेळतो."
+    reading: "āmcā saṅgh āj sāmnā kheḷto."
+    ipa: "amtsa səŋɡʱ adz samna kʰeɭt̪o"
+    pos: "phrase"
+    bases: [{ word: "आमचा", base: "आम्ही", reading: "āmhi" }, { word: "आज", ref: "mr-0474" }, { word: "खेळतो", base: "खेळणे", reading: "kheḷṇe" }]
+    confusables: [{ id: "w1", ref: "mr-0677", kind: "word" }, { id: "f1", word: "खेळतात", reading: "kheḷtāt", kind: "form" }]
+  - id: "mr-6526"
+    target: "तो चांगला गोल करतो."
+    reading: "to cāṅgalā gol karto."
+    ipa: "t̪o tsaŋɡəla ɡol kərt̪o"
+    pos: "phrase"
+    bases: [{ word: "चांगला", base: "चांगला", reading: "cāṅgalā" }, { word: "करतो", ref: "mr-0712" }]
+    confusables: [{ id: "w1", ref: "mr-0677", kind: "word" }, { id: "f1", word: "करते", reading: "karte", kind: "form" }]
+  - id: "mr-6527"
+    target: "विजेत्या संघाने सुवर्णपदक जिंकले."
+    reading: "vijetyā saṅghāne suvarṇapdak jiṅkale."
+    ipa: "ʋidʒet̪ja səŋɡʱane suʋərɳəpd̪ək dʒiŋkəle"
+    pos: "phrase"
+    bases: [{ word: "विजेत्या", ref: "mr-1620" }, { word: "संघाने", ref: "mr-1612" }, { word: "जिंकले", base: "जिंकणे", reading: "jiṅkaṇe" }]
+    confusables: [{ id: "w1", ref: "mr-1621", kind: "word" }, { id: "f1", word: "जिंकला", reading: "jiṅkalā", kind: "form" }]
+  - id: "mr-6528"
+    target: "कर्णधार बॉल फेकतो."
+    reading: "karṇadhār bôl phekto."
+    ipa: "kərɳəd̪ʱar bɔl pʰekt̪o"
+    pos: "phrase"
+    bases: [{ word: "फेकतो", ref: "mr-1627" }]
+    confusables: [{ id: "w1", ref: "mr-1614", kind: "word" }, { id: "f1", word: "फेकतात", reading: "phektāt", kind: "form" }]
+  - id: "mr-6529"
+    target: "त्यांनी रोज सराव केला."
+    reading: "tyānni roj sarāv kelā."
+    ipa: "t̪janni rodz səraʋ kela"
+    pos: "phrase"
+    bases: [{ word: "त्यांनी", base: "ते", reading: "te" }, { word: "रोज", base: "रोज", reading: "roj" }, { word: "सराव", base: "सराव", reading: "sarāv" }, { word: "केला", ref: "mr-0712" }]
+    confusables: [{ id: "w1", ref: "mr-0676", kind: "word" }, { id: "f1", word: "करतो", reading: "karto", kind: "form" }]
+  - id: "mr-6530"
+    target: "मला हॉकी आणि क्रिकेट आवडतात."
+    reading: "malā hôki āṇi krikeṭ āvḍtāt."
+    ipa: "məla ɦɔki aɳi krikeʈ aʋɖt̪at̪"
+    pos: "phrase"
+    bases: [{ word: "मला", base: "मी", reading: "mi" }, { word: "आणि", ref: "mr-0575" }, { word: "आवडतात", base: "आवडणे", reading: "āvḍṇe" }]
+    confusables: [{ id: "w1", ref: "mr-0675", kind: "word" }, { id: "f1", word: "आवडतो", reading: "āvḍto", kind: "form" }]
+  - id: "mr-6531"
+    target: "माझी बॅट कुठे आहे?"
+    reading: "mājhi bêṭ kuṭhe āhe?"
+    ipa: "madʒʱi bæʈ kuʈʰe aɦe"
+    pos: "phrase"
+    bases: [{ word: "माझी", base: "मी", reading: "mi" }, { word: "कुठे", base: "कुठे", reading: "kuṭhe" }, { word: "आहे", base: "असणे", reading: "asṇe" }]
+    confusables: [{ id: "w1", ref: "mr-0738", kind: "word" }, { id: "f1", word: "आहेत", reading: "āhet", kind: "form" }]
+  - id: "mr-6532"
+    target: "टेनिसचा सामना उद्या आहे."
+    reading: "ṭeniscā sāmnā udyā āhe."
+    ipa: "ʈenistsa samna ud̪ja aɦe"
+    pos: "phrase"
+    bases: [{ word: "टेनिसचा", ref: "mr-1611" }, { word: "उद्या", ref: "mr-0475" }, { word: "आहे", base: "असणे", reading: "asṇe" }]
+    confusables: [{ id: "w1", ref: "mr-0474", kind: "word" }, { id: "f1", word: "आहेत", reading: "āhet", kind: "form" }]
+  - id: "mr-6533"
+    target: "प्रशिक्षक आज सराव घेतो."
+    reading: "praśikṣak āj sarāv gheto."
+    ipa: "prəʃikʂək adz səraʋ ɡʱet̪o"
+    pos: "phrase"
+    bases: [{ word: "आज", ref: "mr-0474" }, { word: "सराव", base: "सराव", reading: "sarāv" }, { word: "घेतो", ref: "mr-0722" }]
+    confusables: [{ id: "w1", ref: "mr-1612", kind: "word" }, { id: "f1", word: "घेतात", reading: "ghetāt", kind: "form" }]
+  - id: "mr-6534"
+    target: "खो-खो खेळायला मजा येते."
+    reading: "kho-kho kheḷāylā majā yete."
+    ipa: "kʰokʰo kʰeɭajla mədza jet̪e"
+    pos: "phrase"
+    bases: [{ word: "खेळायला", base: "खेळणे", reading: "kheḷṇe" }, { word: "मजा", base: "मजा", reading: "majā" }, { word: "येते", ref: "mr-0711" }]
+    confusables: [{ id: "w1", ref: "mr-1607", kind: "word" }, { id: "f1", word: "येतो", reading: "yeto", kind: "form" }]
