@@ -68,7 +68,8 @@ def _card_block(lines: list[str], cid: str) -> tuple[int, int] | None:
     return None
 
 
-def patch(text: str, fills: dict[str, tuple[str, str]]) -> tuple[str, dict[str, str]]:
+def patch(text: str, fills: dict[str, tuple[str, str]],
+          replace_rules: bool = False) -> tuple[str, dict[str, str]]:
     """[text] with `phonetic` and `phonetic_source` added after the `ipa:`
     line of each card in [fills] (card id to the form and its source).
 
@@ -76,6 +77,10 @@ def patch(text: str, fills: dict[str, tuple[str, str]]) -> tuple[str, dict[str, 
     `"has phonetic"`, `"no ipa line"`, `"not in file"`. A card that was
     patched is not in the second result. Every other line of the file is
     exactly as it was.
+
+    With [replace_rules], a card whose `phonetic_source` is `rules` has its
+    `phonetic` value replaced in place; any other card that has a `phonetic`
+    is still left alone.
     """
     eol = "\r\n" if "\r\n" in text else "\n"
     lines = text.split("\n")
@@ -87,7 +92,15 @@ def patch(text: str, fills: dict[str, tuple[str, str]]) -> tuple[str, dict[str, 
             continue
         start, end = block
         if any(re.match(r"^    phonetic(?:_source)?:", ln) for ln in lines[start:end]):
-            left[cid] = "has phonetic"
+            at_p = next((k for k in range(start, end)
+                         if re.match(r"^    phonetic:", lines[k])), None)
+            by_rules = any(re.match(r"^    phonetic_source:\s*(?:\"rules\"|'rules'|rules)\s*(?:#.*)?$",
+                                    lines[k].rstrip("\r")) for k in range(start, end))
+            if replace_rules and at_p is not None and by_rules:
+                cr = "\r" if lines[at_p].endswith("\r") else ""
+                lines[at_p] = f"    phonetic: {quote(form)}{cr}"
+            else:
+                left[cid] = "has phonetic"
             continue
         at = next((k for k in range(start, end) if re.match(r"^    ipa:", lines[k])), None)
         if at is None:
@@ -115,6 +128,7 @@ class Card:
     # Whether the file has the card as a block (`  - id: "x"`), which is the
     # only shape `patch` writes into.
     block: bool = True
+    phonetic_source: str | None = None
 
 
 def core_cards(decks: Path, lang: str) -> list[Card]:
@@ -138,7 +152,9 @@ def core_cards(decks: Path, lang: str) -> list[Card]:
             cards.append(Card(card["id"], unicodedata.normalize("NFC", card["target"]),
                               ipa if vd._is_str(ipa) else None,
                               phonetic if vd._is_str(phonetic) else None,
-                              path, block))
+                              path, block,
+                              card.get("phonetic_source")
+                              if vd._is_str(card.get("phonetic_source")) else None))
     return cards
 
 

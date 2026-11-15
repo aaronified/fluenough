@@ -699,6 +699,82 @@ passages:
 """
 
 
+CITE = """# kept
+part: "core"
+language: { code: "te", name: "Telugu", script: "telugu" }
+cards:
+  - id: "te-9601"
+    target: "అందమైన ఉన్నాయి"
+    reading: "andamaina unnāyi"
+    ipa: "and̪amaina unnaːji"
+    bases:
+    - "word": "అందమైన"
+      "base": "అందం"
+      "reading": "andam"
+    - "word": "ఉన్నాయి"
+      "base": "ఉండడం"
+      "reading": "uṇḍaḍaṁ"
+  - id: "te-9602"
+    target: "పొలంలో"
+    reading: "polamlō"
+    ipa: "polamloː"
+    bases:
+      - { word: "ఖండంలో", base: "ఖండం", reading: "khaṇḍam" }
+      - { word: "ఇల్లు", base: "ఇల్లు", reading: "illu" }
+      - { word: "పేరు", ref: "te-0001", reading: "pēru" }
+      - { word: "ఇంటిలో", base: "ఇల్లు", reading: "illam" }
+"""
+
+
+class CitationTest(unittest.TestCase):
+    def deck(self) -> Path:
+        d = tempfile.TemporaryDirectory()
+        self.addCleanup(d.cleanup)
+        path = Path(d.name) / "te-c.yaml"
+        path.write_bytes(CITE.encode("utf-8"))
+        return path
+
+    def test_final_m_of_a_base_reading_becomes_anusvara_in_both_forms(
+            self) -> None:
+        path = self.deck()
+        report = transcribe_decks.run(path.parent, "te", True)
+        self.assertEqual(
+            sorted((d.stored, d.computed) for d in report.differences),
+            [("andam", "andaṁ"), ("khaṇḍam", "khaṇḍaṁ")])
+        changed, refused = transcribe_decks.apply_fixes(report, False)
+        self.assertEqual((changed, refused), (2, []))
+        after = path.read_bytes().decode("utf-8")
+        expected = (CITE.replace('"reading": "andam"', '"reading": "andaṁ"')
+                    .replace('reading: "khaṇḍam"', 'reading: "khaṇḍaṁ"'))
+        self.assertEqual(after, expected)
+
+    def test_cards_examples_and_other_base_differences_are_not_touched(
+            self) -> None:
+        path = self.deck()
+        report = transcribe_decks.run(path.parent, "te", True)
+        transcribe_decks.apply_fixes(report, False)
+        after = path.read_bytes().decode("utf-8")
+        self.assertIn('reading: "polamlō"', after)  # a card: other mode
+        self.assertIn('reading: "illam"', after)    # not a final-m case
+
+    def test_without_the_flag_base_readings_are_not_read(self) -> None:
+        path = self.deck()
+        report = transcribe_decks.run(path.parent, "te")
+        self.assertTrue(all(d.stored != "andam" for d in report.differences))
+
+    def test_second_run_is_clean_and_cli_codes(self) -> None:
+        path = self.deck()
+        d = str(path.parent)
+        self.assertEqual(transcribe_decks.main(
+            ["x", "--check", "--citations", d, "te"]), 1)
+        self.assertEqual(transcribe_decks.main(
+            ["x", "--fix", "--citations", d, "te"]), 0)
+        self.assertEqual(transcribe_decks.main(
+            ["x", "--check", "--citations", d, "te"]), 0)
+        self.assertEqual(transcribe_decks.main(
+            ["x", "--fix", "--citations", "--all", d, "te"]), 2)
+
+
 class PropagateTest(unittest.TestCase):
     def tree(self, crlf: bool = False) -> Path:
         d = tempfile.TemporaryDirectory()

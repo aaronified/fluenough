@@ -71,6 +71,17 @@ pass over them. `--check --propagate` lists the ambiguous words and the
 occurrences per file; words found only in prose, not in a core reading, are
 not propagated.
 
+`--citations` is a separate pass (#1295) for the one place the other modes do
+not read: the `reading` of an inline base, `{ word, base, reading }`, which is
+the reading of the base's dictionary form (the card's `base`, not its `word`).
+Only a word-final anusvara is checked: a stored final `m` where the rules write
+`ṁ` for the base (andam -> andaṁ, uṇḍaḍam -> uṇḍaḍaṁ) is rewritten in place;
+no other part of such a reading, and no other entry, is read or changed. It
+works in the block and the flow form, and not with `--all` or `--propagate`
+(exit 2):
+    python3 tools/transcribe_decks.py --check --citations decks/te te
+    python3 tools/transcribe_decks.py --fix --citations decks/te te
+
 Exit codes: `--check` 0 when every entry matches, 1 when any value differs,
 any entry could not be checked, or (with `--propagate`) any occurrence or
 ambiguous word is left; `--fix` 0, or 1 when it refused to change a value; 2
@@ -259,14 +270,44 @@ def _flow_spans(line: str):
 
 
 class _Scan:
-    def __init__(self, path: Path, lang: str, report: Report, script):
+    def __init__(self, path: Path, lang: str, report: Report, script,
+                 citations: bool = False):
         self.path, self.lang, self.report, self.script = (
             path, lang, report, script)
+        self.citations = citations
+
+    def citation(self, name: str, text: str, fields: dict) -> None:
+        """Citations mode: the `reading` of an inline base (a `word` entry
+        whose `base` is another text) is the base's dictionary form. Only its
+        word-final anusvara is checked: a stored final `m` where the rules
+        write `ṁ` (andam for andaṁ). Nothing else of it is touched."""
+        base, reading = fields.get("base"), fields.get("reading")
+        if not base or base[1] is None or base[3] == text:
+            return
+        if not reading or reading[1] is None:
+            return
+        self.report.entries += 1
+        line, start, end, stored = reading
+        try:
+            computed = transcribe(base[3], self.lang, stored).reading
+        except Exception as e:
+            self.report.unreadable.append(
+                f"{self.path.name} {name}: base {base[3]}: {e!r}")
+            return
+        if (computed.endswith("ṁ") and stored.endswith("m")
+                and stored[:-1] == computed[:-1]):
+            self.report.differences.append(Difference(
+                self.path, name, "reading", stored, computed, line, start,
+                end, True, _unsafe(base[3], self.script)))
 
     def entry(self, name: str, head: str, text: str, fields: dict) -> None:
         """[fields] maps reading/ipa/base to (line, start, end, value) or
         (reason, None). A `word` entry is checked for its reading only."""
         report = self.report
+        if self.citations:
+            if head == "word":
+                self.citation(name, text, fields)
+            return
         report.entries += 1
         if head == "word":
             fields.pop("ipa", None)
@@ -307,12 +348,13 @@ class _Scan:
                     True, unsafe, True))
 
 
-def scan(path: Path, lang: str, report: Report) -> None:
+def scan(path: Path, lang: str, report: Report,
+         citations: bool = False) -> None:
     """Walk one deck file's lines, filling [report]."""
     raw = path.read_bytes().decode("utf-8")
     lines = raw.split("\n")
     sm = _SCRIPT.search(raw)
-    sc = _Scan(path, lang, report, sm.group(1) if sm else None)
+    sc = _Scan(path, lang, report, sm.group(1) if sm else None, citations)
     ids: dict[str, int] = {}
     for ln in lines:
         m = _ID.match(ln)
@@ -411,11 +453,11 @@ def deck_files(directory: Path, report: Report | None = None) -> list[Path]:
     return out
 
 
-def run(directory: Path, lang: str) -> Report:
+def run(directory: Path, lang: str, citations: bool = False) -> Report:
     report = Report()
     for p in deck_files(directory, report):
         report.files += 1
-        scan(p, lang, report)
+        scan(p, lang, report, citations)
     return report
 
 
@@ -646,6 +688,9 @@ def main(argv: list[str]) -> int:
     ap.add_argument("--propagate", action="store_true",
                     help="also replace the old readings elsewhere (other "
                     "value kinds, English layers, files without a part)")
+    ap.add_argument("--citations", action="store_true",
+                    help="check or fix only the word-final anusvara of the "
+                    "reading of inline bases (the base's citation form)")
     ap.add_argument("directory", type=Path)
     ap.add_argument("lang")
     args = ap.parse_args(argv[1:])
@@ -657,7 +702,11 @@ def main(argv: list[str]) -> int:
               "holds short words that English prose and IPA data share",
               file=sys.stderr)
         return 2
-    report = run(args.directory, args.lang)
+    if args.citations and (args.all or args.propagate):
+        print("--citations is a pass of its own: not with --all or "
+              "--propagate", file=sys.stderr)
+        return 2
+    report = run(args.directory, args.lang, args.citations)
     _print(report)
     mapping, ambiguous = token_map(report, args.all)
     if args.check:
@@ -679,7 +728,7 @@ def main(argv: list[str]) -> int:
                                       True)
         _print_propagation(mapping, ambiguous, per_file, skipped,
                            "replaced")
-    after = run(args.directory, args.lang)
+    after = run(args.directory, args.lang, args.citations)
     print(f"differences left after the fix: "
           f"{len([d for d in after.differences if not d.partial])}")
     return 1 if refused else 0

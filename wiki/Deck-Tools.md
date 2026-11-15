@@ -331,6 +331,7 @@ stored reading as the typed hint.
 python3 tools/transcribe_decks.py --check decks/te te       # exit 1 if any differ
 python3 tools/transcribe_decks.py --fix decks/te te         # anusvara only
 python3 tools/transcribe_decks.py --fix --all decks/te te   # every difference
+python3 tools/transcribe_decks.py --fix --citations decks/te te  # base citation readings
 ```
 
 Telugu input the tool reads (#1357, #1361; defaults set by the architect,
@@ -341,6 +342,15 @@ reading. ఱ reads `ṟa` (IPA as ర, `r`). ఌ and ౡ follow ఋ: `lu` and `l
 (IPA `lu`, `luː`); the signs ౢ ౣ read the same. ౘ and ౙ read `tsa` and `dza`
 (IPA `ts`, `dz`); ISO 15919 has no letter for them. ఁ is silent (empty reading
 and IPA), ః reads `ḥ` and ౠ `rū`, as before.
+
+`--citations` is a pass of its own for the `reading` of an inline base
+(`{ word, base, reading }`: the reading of the base's dictionary form, which
+the other modes skip when `base` differs from `word`). It rewrites only a
+stored word-final `m` where the rules write `ṁ` for the base (`andam` to
+`andaṁ`, `uṇḍaḍam` to `uṇḍaḍaṁ`, the owner's final-anusvara rule), in the block
+and the flow form, and reads no card, example or other reading. `--check
+--citations` lists them (exit 1 if any). It is refused with `--all` and
+`--propagate`.
 
 `--check` prints each id, field, stored value and recomputed value, in two
 lists: "anusvara differences" (the target holds an anusvara and the two values
@@ -426,10 +436,21 @@ Pronunciations in [ ] adapted from [Wiktionary](https://en.wiktionary.org), lice
 `derive_phonetic.py` applies the ordered rules of
 `decks/<lang>/<lang>-phonetics.yaml` ([format](Deck-Format#phonetic-rules-files))
 to the broad `ipa`. A card the rules do not change gets nothing unless
-`--bracket-unchanged`.
+`--bracket-unchanged`. `--rederive` also re-derives the cards whose
+`phonetic_source` is `rules`, from the current rules file, replacing their
+`phonetic` (the source stays `rules`) after a rule changes. It never touches
+a Wiktionary card, a card with a `phonetic` and no `phonetic_source`, or a card
+without a `phonetic`; a card the rules now leave unchanged is rewritten only
+with `--bracket-unchanged`. It composes with `--write` (without it, only a
+report) and the language argument.
 
-Both report, per deck and in all, how many cards were filled, already had a
-`phonetic`, had no `ipa` line, and why the rest were not (no entry, no narrow
+```sh
+python3 tools/derive_phonetic.py bn --rederive --write
+python3 tools/derive_phonetic.py bn --rederive --bracket-unchanged --report bn.md
+```
+
+Both report, per deck and in all, how many cards were filled (or, with `--rederive`, rederived), already had a
+`phonetic`, had none (`no phonetic`, under `--rederive` only), had no `ipa` line, and why the rest were not (no entry, no narrow
 form, another variety only, ambiguous, invalid; or, for the rules, unchanged
 or invalid). `test_phonetic.py` tests them on a fake dump and a tiny
 language, with no network.
