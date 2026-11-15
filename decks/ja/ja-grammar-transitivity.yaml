@@ -82,8 +82,6 @@ table:
       - "ja-1226"
       - "ja-1227"
       - "ja-1228"
-      - "ja-1236"
-      - "ja-1237"
       - "ja-1240"
       - "ja-1334"
       - "ja-1335"
@@ -119,7 +117,6 @@ table:
       - "ja-1850"
       - "ja-1861"
       - "ja-1862"
-      - "ja-1863"
       - "ja-1864"
       - "ja-1865"
       - "ja-1892"
@@ -173,8 +170,6 @@ table:
       - "ja-2235"
       - "ja-2236"
       - "ja-2237"
-      - "ja-2238"
-      - "ja-2239"
       - "ja-2240"
       - "ja-2241"
       - "ja-2244"
@@ -188,8 +183,6 @@ table:
       - "ja-2261"
       - "ja-2262"
       - "ja-2268"
-      - "ja-2269"
-      - "ja-2270"
       - "ja-2271"
       - "ja-2272"
       - "ja-2273"
@@ -254,8 +247,6 @@ table:
       - "ja-3434"
       - "ja-3452"
       - "ja-3564"
-      - "ja-3568"
-      - "ja-3569"
       - "ja-3571"
       - "ja-3611"
       - "ja-3612"
@@ -279,8 +270,6 @@ table:
       - "ja-3965"
       - "ja-4046"
       - "ja-4047"
-      - "ja-4048"
-      - "ja-4049"
       - "ja-4050"
       - "ja-4051"
       - "ja-4052"
@@ -291,8 +280,6 @@ table:
       - "ja-4059"
       - "ja-4060"
       - "ja-4061"
-      - "ja-4062"
-      - "ja-4063"
       - "ja-4064"
       - "ja-4065"
       - "ja-4066"
@@ -313,10 +300,7 @@ table:
       - "ja-4085"
       - "ja-4086"
       - "ja-4089"
-      - "ja-4090"
       - "ja-4093"
-      - "ja-4095"
-      - "ja-4096"
       - "ja-4099"
       - "ja-4100"
       - "ja-4101"
@@ -505,6 +489,54 @@ table:
     - word: "ja-2264"
       forms: { "intransitive": "かくれます", "transitive": "かくします" }
       readings: { "intransitive": "kakuremasu", "transitive": "kakushimasu" }
+    - word: "ja-1237"
+      forms: { "intransitive": "たすかります", "transitive": "たすけます" }
+      readings: { "intransitive": "tasukarimasu", "transitive": "tasukemasu" }
+    - word: "ja-1236"
+      forms: { "intransitive": "たすかります", "transitive": "たすけます" }
+      readings: { "intransitive": "tasukarimasu", "transitive": "tasukemasu" }
+    - word: "ja-3568"
+      forms: { "intransitive": "ほろびます", "transitive": "ほろぼします" }
+      readings: { "intransitive": "horobimasu", "transitive": "horoboshimasu" }
+    - word: "ja-3569"
+      forms: { "intransitive": "ほろびます", "transitive": "ほろぼします" }
+      readings: { "intransitive": "horobimasu", "transitive": "horoboshimasu" }
+    - word: "ja-4048"
+      forms: { "intransitive": "おさまります", "transitive": "おさめます" }
+      readings: { "intransitive": "osamarimasu", "transitive": "osamemasu" }
+    - word: "ja-4049"
+      forms: { "intransitive": "おさまります", "transitive": "おさめます" }
+      readings: { "intransitive": "osamarimasu", "transitive": "osamemasu" }
+    - word: "ja-2239"
+      forms: { "intransitive": "つたわります", "transitive": "つたえます" }
+      readings: { "intransitive": "tsutawarimasu", "transitive": "tsutaemasu" }
+    - word: "ja-2238"
+      forms: { "intransitive": "つたわります", "transitive": "つたえます" }
+      readings: { "intransitive": "tsutawarimasu", "transitive": "tsutaemasu" }
+    - word: "ja-4096"
+      forms: { "intransitive": "とけます", "transitive": "とかします" }
+      readings: { "intransitive": "tokemasu", "transitive": "tokashimasu" }
+    - word: "ja-4095"
+      forms: { "intransitive": "とけます", "transitive": "とかします" }
+      readings: { "intransitive": "tokemasu", "transitive": "tokashimasu" }
+    - word: "ja-4090"
+      forms: { "intransitive": "つづきます", "transitive": "つづけます" }
+      readings: { "intransitive": "tsuzukimasu", "transitive": "tsuzukemasu" }
+    - word: "ja-1863"
+      forms: { "intransitive": "つづきます", "transitive": "つづけます" }
+      readings: { "intransitive": "tsuzukimasu", "transitive": "tsuzukemasu" }
+    - word: "ja-2270"
+      forms: { "intransitive": "そだちます", "transitive": "そだてます" }
+      readings: { "intransitive": "sodachimasu", "transitive": "sodatemasu" }
+    - word: "ja-2269"
+      forms: { "intransitive": "そだちます", "transitive": "そだてます" }
+      readings: { "intransitive": "sodachimasu", "transitive": "sodatemasu" }
+    - word: "ja-4062"
+      forms: { "intransitive": "くっつきます", "transitive": "くっつけます" }
+      readings: { "intransitive": "kuttsukimasu", "transitive": "kuttsukemasu" }
+    - word: "ja-4063"
+      forms: { "intransitive": "くっつきます", "transitive": "くっつけます" }
+      readings: { "intransitive": "kuttsukimasu", "transitive": "kuttsukemasu" }
 rules:
   - id: "ja-rule-intransitive"
     slots: ["intransitive"]
