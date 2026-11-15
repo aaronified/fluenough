@@ -94,7 +94,7 @@ def patch(text: str, fills: dict[str, tuple[str, str]],
         if any(re.match(r"^    phonetic(?:_source)?:", ln) for ln in lines[start:end]):
             at_p = next((k for k in range(start, end)
                          if re.match(r"^    phonetic:", lines[k])), None)
-            by_rules = any(re.match(r'^    phonetic_source:\s*"?rules"?\s*$',
+            by_rules = any(re.match(r"^    phonetic_source:\s*(?:\"rules\"|'rules'|rules)\s*(?:#.*)?$",
                                     lines[k].rstrip("\r")) for k in range(start, end))
             if replace_rules and at_p is not None and by_rules:
                 cr = "\r" if lines[at_p].endswith("\r") else ""

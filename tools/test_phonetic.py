@@ -367,6 +367,32 @@ class Deriving(Tree):
         self.assertIn('    phonetic: "[kat]"\n    phonetic_source: "rules"\n',
                       self.core.read_text(encoding="utf-8"))
 
+    def test_rederive_does_not_give_a_first_phonetic(self) -> None:
+        self.write_rules(("t$", "t̪"))
+        cov, fills = dp.run("zz", self.decks, write=True, rederive=True)
+        self.assertEqual(self.core.read_text(encoding="utf-8"), CORE)
+        self.assertEqual(fills, {})
+        self.assertEqual(cov.decks["zz-home"]["no phonetic"], 4)
+
+    def test_rederive_reads_an_unquoted_rules_source(self) -> None:
+        self.seed_sources()
+        text = self.core.read_text(encoding="utf-8").replace(
+            'phonetic_source: "rules"', "phonetic_source: rules  # derived")
+        self.core.write_text(text, encoding="utf-8")
+        self.write_rules(("t$", "t̪"))
+        dp.run("zz", self.decks, write=True, rederive=True)
+        self.assertIn('    phonetic: "[kat̪]"\n    phonetic_source: rules',
+                      self.core.read_text(encoding="utf-8"))
+
+    def test_rederive_twice_changes_nothing_the_second_time(self) -> None:
+        self.seed_sources()
+        self.write_rules(("t$", "t̪"))
+        dp.run("zz", self.decks, write=True, rederive=True)
+        once = self.core.read_text(encoding="utf-8")
+        cov, _ = dp.run("zz", self.decks, write=True, rederive=True)
+        self.assertEqual(self.core.read_text(encoding="utf-8"), once)
+        self.assertEqual(cov.decks["zz-home"].get("rederived", 0), 0)
+
 
 class TheRulesFiles(unittest.TestCase):
     """The shipped rules, on words whose narrow form is well known."""

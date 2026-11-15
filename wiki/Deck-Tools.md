@@ -427,10 +427,11 @@ report) and the language argument.
 
 ```sh
 python3 tools/derive_phonetic.py bn --rederive --write
+python3 tools/derive_phonetic.py bn --rederive --bracket-unchanged --report bn.md
 ```
 
-Both report, per deck and in all, how many cards were filled, already had a
-`phonetic`, had no `ipa` line, and why the rest were not (no entry, no narrow
+Both report, per deck and in all, how many cards were filled (or, with `--rederive`, rederived), already had a
+`phonetic`, had none (`no phonetic`, under `--rederive` only), had no `ipa` line, and why the rest were not (no entry, no narrow
 form, another variety only, ambiguous, invalid; or, for the rules, unchanged
 or invalid). `test_phonetic.py` tests them on a fake dump and a tiny
 language, with no network.

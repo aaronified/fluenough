@@ -27,7 +27,8 @@ precision nobody checked. `--bracket-unchanged` writes those too (the owner's
 `--rederive` also re-derives the cards whose `phonetic_source` is `rules`,
 from the current rules file, replacing their `phonetic`. A card sourced from
 Wiktionary, a card with a `phonetic` and no `phonetic_source`, and a card
-without a `phonetic` are never touched by it. Like a first derivation, a
+without a `phonetic` are never touched by it (with `--rederive` the first
+derivation is not run: those cards are counted `no phonetic`). Like a first derivation, a
 card the rules now leave unchanged is rewritten (as its broad form in
 brackets) only with `--bracket-unchanged`.
 
@@ -52,7 +53,8 @@ import validate_decks as vd  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 
-OUTCOMES = ["filled", "rederived", "unchanged", "has phonetic", "no ipa line", "invalid"]
+OUTCOMES = ["filled", "rederived", "unchanged", "has phonetic", "no phonetic",
+            "no ipa line", "invalid"]
 
 
 @dataclass(frozen=True)
@@ -133,6 +135,9 @@ def run(lang: str, decks: Path, write: bool, bracket_unchanged: bool = False,
                 coverage.add(deck, "has phonetic")
         elif card.ipa is None or not card.block:
             coverage.add(deck, "no ipa line")
+        elif rederive:
+            # --rederive never gives a first phonetic to a card without one.
+            coverage.add(deck, "no phonetic")
         else:
             form, outcome = derive(card.ipa, ruleset.rules)
             coverage.add(deck, outcome)
@@ -169,7 +174,7 @@ def main(argv: list[str]) -> int:
         return 2
     try:
         coverage, _ = run(args.lang, args.decks, args.write, args.bracket_unchanged,
-                               args.rederive)
+                           args.rederive)
     except RulesError as e:
         print(f"error: {e}", file=sys.stderr)
         return 2
