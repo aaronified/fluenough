@@ -1,0 +1,102 @@
+# The people behind the French culture decks (wiki/Plan-Deck-Kinds-And-Topics.md, D5). Dates are the years of birth and death,
+# circa where the French Wikipedia page gives an uncertain year. The eras follow the French periods. No pictures: none has a
+# licence checked yet. Built from French Wikipedia pages only, read on 2026-11-15; the legacy items cite those pages.
+schema: 1
+kind: "creators"
+id: "creators-fr"
+language: "fr"
+license: "CC-BY-SA-4.0"
+eras:
+  - id: "moyen-age"
+    name: { fr: "Moyen Âge", en: "Middle Ages" }
+    from: 1000
+    to: 1492
+  - id: "renaissance"
+    name: { fr: "Renaissance", en: "Renaissance" }
+    from: 1492
+    to: 1610
+  - id: "grand-siecle-lumieres"
+    name: { fr: "Grand Siècle et Lumières", en: "Grand Siècle and Enlightenment" }
+    from: 1610
+    to: 1789
+  - id: "xixe-siecle"
+    name: { fr: "XIXe siècle", en: "Nineteenth century" }
+    from: 1789
+    to: 1900
+  - id: "xxe-siecle"
+    name: { fr: "XXe siècle", en: "Twentieth century" }
+    from: 1900
+    to: 2000
+  - id: "xxie-siecle"
+    name: { fr: "XXIe siècle", en: "Twenty-first century" }
+    from: 2000
+    to: null
+creators:
+  - id: "fr-francois-rabelais"
+    name:
+      fr: { text: "François Rabelais", ipa: "fʁɑ̃swa ʁablɛ" }
+      en: { text: "François Rabelais" }
+    born: { year: 1483, circa: true }
+    died: 1553
+    era: "renaissance"
+    bio:
+      en: "François Rabelais was a French writer of the Renaissance. He was also a doctor and a monk, and he was born near Chinon. He wrote Gargantua. He died in Paris in 1553."
+    legacy:
+      text: { en: "The French Wikipedia article has a section on his heritage, which runs from the nineteenth century to the twentieth." }
+      items:
+        - { kind: "other", text: { en: "In the nineteenth century Victor Hugo called him 'the Aeschylus of good eating' (l'Eschyle de la mangeaille), the French Wikipedia article says." }, source: { url: "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_Rabelais", accessed: "2026-11-15" } }
+        - { kind: "other", text: { en: "The French Wikipedia article has a section on his heritage that lists novelists, dramatists, musicians and illustrators who came after him." }, source: { url: "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_Rabelais", accessed: "2026-11-15" } }
+  - id: "fr-joachim-du-bellay"
+    name:
+      fr: { text: "Joachim du Bellay", ipa: "ʒɔaʃim dy bɛlɛ" }
+      en: { text: "Joachim du Bellay" }
+    born: { year: 1522, circa: true }
+    died: 1560
+    era: "renaissance"
+    bio:
+      en: "Joachim du Bellay was a French poet of the Renaissance. He wrote Les Regrets, a book of sonnets. He died in Paris on 1 January 1560."
+    legacy:
+      text: { en: "His La Défense et illustration de la langue française is one of his main works." }
+      items:
+        - { kind: "other", text: { en: "The French Wikipedia article lists La Défense et illustration de la langue française among his main works." }, source: { url: "https://fr.wikipedia.org/wiki/Joachim_du_Bellay", accessed: "2026-11-15" } }
+  - id: "fr-louise-labe"
+    name:
+      fr: { text: "Louise Labé", ipa: "lwiz labe" }
+      en: { text: "Louise Labé" }
+    born: { year: 1524, circa: true }
+    died: 1566
+    era: "renaissance"
+    bio:
+      en: "Louise Labé was a French poet of the Renaissance, from Lyon, and was known as La Belle Cordière. She died in 1566 at Parcieux-en-Dombes."
+    legacy:
+      text: { en: "She is linked to the School of Lyon, a group of Renaissance writers in Lyon." }
+      items:
+        - { kind: "other", text: { en: "The French Wikipedia article gives the École de Lyon (the School of Lyon) as her literary movement, next to humanism." }, source: { url: "https://fr.wikipedia.org/wiki/Louise_Lab%C3%A9", accessed: "2026-11-15" } }
+        - { kind: "commemoration", text: { en: "The French Wikipedia article lists a commemorative plaque for her." }, source: { url: "https://fr.wikipedia.org/wiki/Louise_Lab%C3%A9", accessed: "2026-11-15" } }
+  - id: "fr-michel-de-montaigne"
+    name:
+      fr: { text: "Michel de Montaigne", ipa: "miʃɛl də mɔ̃tɛɲ" }
+      en: { text: "Michel de Montaigne" }
+    born: 1533
+    died: 1592
+    era: "renaissance"
+    bio:
+      en: "Michel de Montaigne was a French writer of the Renaissance and mayor of Bordeaux. He wrote the Essais, a book of essays. He died on 13 September 1592."
+    legacy:
+      text: { en: "His Essais are the book of his years as a writer, from 1571 to 1592." }
+      items:
+        - { kind: "other", text: { en: "The French Wikipedia article has a section on Les Essais within the years he was a writer, 1571 to 1592." }, source: { url: "https://fr.wikipedia.org/wiki/Michel_de_Montaigne", accessed: "2026-11-15" } }
+  - id: "fr-pierre-de-ronsard"
+    name:
+      fr: { text: "Pierre de Ronsard", ipa: "pjɛʁ də ʁɔ̃saʁ" }
+      en: { text: "Pierre de Ronsard" }
+    born: 1524
+    died: 1585
+    era: "renaissance"
+    bio:
+      en: "Pierre de Ronsard was a French poet of the Renaissance. He was born in September 1524 and died in Tours in 1585. The French Wikipedia article calls him 'Prince of poets'."
+    legacy:
+      text: { en: "The French Wikipedia article gives him a famous nickname and has a section on the Pléiade, a group of poets of his time." }
+      items:
+        - { kind: "other", text: { en: "His nickname on the French Wikipedia article is 'Prince des poètes et Poète des princes' (Prince of poets and poet of princes)." }, source: { url: "https://fr.wikipedia.org/wiki/Pierre_de_Ronsard", accessed: "2026-11-15" } }
+        - { kind: "other", text: { en: "The article has a section titled 'Naissance de la Pléiade' (the birth of the Pléiade)." }, source: { url: "https://fr.wikipedia.org/wiki/Pierre_de_Ronsard", accessed: "2026-11-15" } }
