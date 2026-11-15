@@ -53,18 +53,63 @@ def quote(text: str) -> str:
 
 # --- Patching a file --------------------------------------------------------
 
-def _card_block(lines: list[str], cid: str) -> tuple[int, int] | None:
-    head = re.compile(rf'^  - id: "?{re.escape(cid)}"?\s*$')
-    for i, line in enumerate(lines):
-        if head.match(line.rstrip("\r")):
-            j = i + 1
-            while j < len(lines) and (
-                    not lines[j].strip()
-                    or len(lines[j]) - len(lines[j].lstrip(" ")) > 2):
-                j += 1
-            while j > i + 1 and not lines[j - 1].strip():
-                j -= 1
-            return i, j
+@dataclass(frozen=True)
+class _Block:
+    start: int
+    end: int
+    indent: int       # indent of the card's own keys
+    quoted: bool      # keys are written `"ipa":` rather than `ipa:`
+    json: bool        # JSON-style layout: every value line ends in a comma
+
+
+def _indent(line: str) -> int:
+    return len(line) - len(line.lstrip(" "))
+
+
+def _card_block(lines: list[str], cid: str) -> _Block | None:
+    """Where card [cid] sits in the file, in one of the layouts the decks use:
+
+    - block YAML, `  - id: "x"` at two spaces (keys at four);
+    - the same list at column 0, `- id: "x"` (keys at two);
+    - machine-serialised quoted keys, `- "id": "x"` at column 0 (keys at
+      two) or `  - "id": "x"` at two spaces (keys at four);
+    - JSON-style, a `{` line and then `"id": "x",` (keys at the `{` plus two).
+    """
+    c = re.escape(cid)
+    heads = [
+        (re.compile(rf'^  - id: "?{c}"?\s*$'), 4, False),
+        (re.compile(rf'^  - "id": "{c}"\s*$'), 4, True),
+        (re.compile(rf'^- id: "?{c}"?\s*$'), 2, False),
+        (re.compile(rf'^- "id": "{c}"\s*$'), 2, True),
+    ]
+    json_head = re.compile(rf'^( +)"id": "{c}",\s*$')
+    for i, raw in enumerate(lines):
+        line = raw.rstrip("\r")
+        found: tuple[int, bool, bool] | None = None
+        for rx, indent, quoted in heads:
+            if rx.match(line):
+                found = (indent, quoted, False)
+                break
+        if found is None:
+            m = json_head.match(line)
+            # A card's id is the first line after its own `{`; a note's or
+            # an example's id sits after a key, never directly after a `{`.
+            if m and i > 0 and lines[i - 1].rstrip("\r").strip() in ("{", "- {") \
+                    and _indent(lines[i - 1]) == len(m.group(1)) - 2:
+                found = (len(m.group(1)), True, True)
+        if found is None:
+            continue
+        indent, quoted, is_json = found
+        # The block runs to the first line shallower than the card's keys
+        # (the card's `}` for JSON, the next `- ` or a top-level key for the
+        # column-0 layouts), blank lines excepted.
+        floor = indent if is_json else indent - 1
+        j = i + 1
+        while j < len(lines) and (not lines[j].strip() or _indent(lines[j]) >= floor):
+            j += 1
+        while j > i + 1 and not lines[j - 1].strip():
+            j -= 1
+        return _Block(i, j, indent, quoted, is_json)
     return None
 
 
@@ -74,9 +119,14 @@ def patch(text: str, fills: dict[str, tuple[str, str]],
     line of each card in [fills] (card id to the form and its source).
 
     Returns the new text and, for each card in [fills] left alone, why:
-    `"has phonetic"`, `"no ipa line"`, `"not in file"`. A card that was
-    patched is not in the second result. Every other line of the file is
-    exactly as it was.
+    `"has phonetic"`, `"no ipa line"`, `"not in file"`, `"unsupported
+    layout"`. A card that was patched is not in the second result. Every
+    other line of the file is exactly as it was.
+
+    The two lines copy the card's own style: plain or quoted keys, and a
+    trailing comma in a JSON-style file. A JSON-style card whose `ipa` is its
+    last key is `"unsupported layout"`: a line cannot go in after it without
+    adding a comma to the `ipa` line, and the file is only ever inserted into.
 
     With [replace_rules], a card whose `phonetic_source` is `rules` has its
     `phonetic` value replaced in place; any other card that has a `phonetic`
@@ -90,29 +140,37 @@ def patch(text: str, fills: dict[str, tuple[str, str]],
         if block is None:
             left[cid] = "not in file"
             continue
-        start, end = block
-        if any(re.match(r"^    phonetic(?:_source)?:", ln) for ln in lines[start:end]):
+        start, end = block.start, block.end
+        pad = " " * block.indent
+        q = '"' if block.quoted else ""
+        comma = "," if block.json else ""
+        key = lambda name: re.compile(rf'^{pad}{q}{name}{q}:')  # noqa: E731
+        if any(re.match(rf'^{pad}{q}phonetic(?:_source)?{q}:', ln) for ln in lines[start:end]):
             at_p = next((k for k in range(start, end)
-                         if re.match(r"^    phonetic:", lines[k])), None)
-            by_rules = any(re.match(r"^    phonetic_source:\s*(?:\"rules\"|'rules'|rules)\s*(?:#.*)?$",
-                                    lines[k].rstrip("\r")) for k in range(start, end))
+                         if key("phonetic").match(lines[k])), None)
+            by_rules = any(re.match(
+                rf'^{pad}{q}phonetic_source{q}:\s*(?:"rules"|\'rules\'|rules)'
+                rf'{comma}\s*(?:#.*)?$', lines[k].rstrip("\r"))
+                for k in range(start, end))
             if replace_rules and at_p is not None and by_rules:
                 cr = "\r" if lines[at_p].endswith("\r") else ""
-                lines[at_p] = f"    phonetic: {quote(form)}{cr}"
+                lines[at_p] = f"{pad}{q}phonetic{q}: {quote(form)}{comma}{cr}"
             else:
                 left[cid] = "has phonetic"
             continue
-        at = next((k for k in range(start, end) if re.match(r"^    ipa:", lines[k])), None)
+        at = next((k for k in range(start, end) if key("ipa").match(lines[k])), None)
         if at is None:
             left[cid] = "no ipa line"
             continue
+        if block.json and not lines[at].rstrip("\r").rstrip().endswith(","):
+            left[cid] = "unsupported layout"
+            continue
         j = at + 1
-        while j < end and len(lines[j]) - len(lines[j].lstrip(" ")) > 4 \
-                and lines[j].strip():
+        while j < end and _indent(lines[j]) > block.indent and lines[j].strip():
             j += 1
         cr = "\r" if eol == "\r\n" else ""
-        lines[j:j] = [f"    phonetic: {quote(form)}{cr}",
-                      f'    phonetic_source: "{source}"{cr}']
+        lines[j:j] = [f"{pad}{q}phonetic{q}: {quote(form)}{comma}{cr}",
+                      f'{pad}{q}phonetic_source{q}: "{source}"{comma}{cr}']
     return "\n".join(lines), left
 
 
@@ -125,8 +183,8 @@ class Card:
     ipa: str | None
     phonetic: str | None
     file: Path
-    # Whether the file has the card as a block (`  - id: "x"`), which is the
-    # only shape `patch` writes into.
+    # Whether the card sits in a layout `patch` writes into (block YAML,
+    # quoted-key YAML or JSON-style).
     block: bool = True
     phonetic_source: str | None = None
 
@@ -145,8 +203,7 @@ def core_cards(decks: Path, lang: str) -> list[Card]:
             if not isinstance(card, dict) or not vd._is_str(card.get("id")) \
                     or not vd._is_str(card.get("target")):
                 continue
-            block = bool(re.search(
-                rf'(?m)^  - id: "?{re.escape(card["id"])}"?\s*$', text))
+            block = _card_block(text.split("\n"), card["id"]) is not None
             ipa = card.get("ipa")
             phonetic = card.get("phonetic")
             cards.append(Card(card["id"], unicodedata.normalize("NFC", card["target"]),
