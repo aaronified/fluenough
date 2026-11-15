@@ -6,6 +6,8 @@ Usage:
     python3 tools/transcribe_decks.py --check decks/te te
     python3 tools/transcribe_decks.py --fix decks/te te         # anusvara only
     python3 tools/transcribe_decks.py --fix --all decks/te te   # every difference
+    python3 tools/transcribe_decks.py --check --propagate decks/te te
+    python3 tools/transcribe_decks.py --fix --propagate decks/te te
 
 For each core deck file directly in the directory (the English layers in
 `en/` are not read), every card, every card example and every
@@ -40,9 +42,39 @@ of the deck's script (an IPA letter card, say) and any word that starts with
 a hyphen (a suffix); they are listed under "skipped (not the deck's script /
 suffix)".
 
-Exit codes: `--check` 0 when every entry matches, 1 when any value differs or
-any entry could not be checked; `--fix` 0, or 1 when it refused to change a
-value; 2 for a bad directory or arguments. Card ids are never touched.
+A value that differs in more than its nasals (roḍḍu for rōḍḍu next to a
+wrong anusvara) is still fixed for its nasals under plain `--fix`: the stored
+value is kept character for character except its nasals, which take the
+recomputed ones (listed as "nasals only"). A stored ṇḍ whose target has ంద
+(ఉందా) becomes the dental nd. The other differences stay untouched.
+
+`--propagate` carries the corrections to the places `--fix` does not read:
+paradigm `readings: { ... }` maps, prose in the English layer (`en/`), and
+files with no `part` key (`te-en-reading-*.yaml`, ...). It builds old -> new
+from the readings the run changes (word by word, a word being a run of
+letters, so `-` and punctuation bound it) and replaces each old word, whole,
+inside quoted values of every `.yaml` in the directory and in `en/`. Never
+rewritten: keys, values under `ipa`, `ipas`, `phonetic`, `id`, `ref` and the
+like, and anything inside a Telugu-script run. An old word that is also a
+correct reading of some card, that becomes two different words, or that is an
+ASCII word of three letters or fewer is ambiguous: reported, and left
+unchanged. Words of three letters or fewer are never rewritten (c, th, ... are
+English and IPA), nor strings holding IPA letters, nor anything after an
+unquoted `#`. `--propagate` is refused with `--all` (exit 2): it is for plain
+`--fix`, which writes anusvara corrections only. Its occurrence count includes
+the core values `--fix` itself writes. The homograph test knows only the
+readings of core files with a `part` key; a reading kept only in a paradigm map
+or a file with no `part` key is not weighed. The paradigm maps are not
+re-derived: a cell of a map is rewritten only when it equals an old word, so a
+map can end half-fixed (`cempalu` next to `ceṁpalō`); #1295 stays open for a
+pass over them. `--check --propagate` lists the ambiguous words and the
+occurrences per file; words found only in prose, not in a core reading, are
+not propagated.
+
+Exit codes: `--check` 0 when every entry matches, 1 when any value differs,
+any entry could not be checked, or (with `--propagate`) any occurrence or
+ambiguous word is left; `--fix` 0, or 1 when it refused to change a value; 2
+for a bad directory or arguments. Card ids are never touched.
 
 Standard library only, like the other deck tools.
 """
@@ -69,8 +101,12 @@ _PART = re.compile(r'^"?part"?:\s*"?([A-Za-z-]*)"?\s*$', re.M)
 _SCRIPT = re.compile(r'^\s*"?script"?:\s*"([a-z]+)"', re.M)
 _IN_FLOW_KEY = re.compile(r'"?(target|word|reading|ipa|base)"?: "([^"\\]*)"')
 
+# A nasal as one token. In the stored value ṇḍ (IPA ɳɖ) is one token too, so
+# that ఉందా (stored uṇḍā, right undā) is a nasal difference and not a
+# difference in ḍ: see _nasal_only.
 _NASAL_ISO = re.compile("[ṁṃṅñṇnm]")
 _NASAL_IPA = re.compile("n̪|[ŋɲɳnm]")
+_RETROFLEX = {"ISO": ("ṇḍ", "ṇ", "ḍ", "d"), "IPA": ("ɳɖ", "ɳ", "ɖ", "d̪")}
 
 
 @dataclass
@@ -85,6 +121,7 @@ class Difference:
     end: int
     anusvara: bool
     unsafe: bool = False  # not the deck's script, or a suffix: not for --all
+    partial: bool = False  # only the nasals of a value that differs more
 
 
 @dataclass
@@ -94,19 +131,70 @@ class Report:
     files: int = 0
     entries: int = 0
     skipped: list[str] = field(default_factory=list)
+    # every reading checked: (file, line, start, stored, computed)
+    readings: list[tuple] = field(default_factory=list)
 
 
-def _has_anusvara(text: str) -> bool:
-    return any("ANUSVARA" in unicodedata.name(c, "") for c in text)
+_NASAL_LETTERS = {"NA", "MA", "NNA", "NYA", "NGA"}
 
 
-def _same_but_nasals(field_name: str, stored: str, computed: str) -> bool:
-    rx = _NASAL_IPA if field_name == "ipa" else _NASAL_ISO
-    return rx.sub("N", stored) == rx.sub("N", computed)
+def _nasal_sources(target: str) -> list[bool]:
+    """For each nasal of [target] in order, whether it is an anusvara (or
+    candrabindu) and not a nasal consonant."""
+    out = []
+    for c in target:
+        name = unicodedata.name(c, "")
+        if "ANUSVARA" in name or "CANDRABINDU" in name:
+            out.append(True)
+        elif name.split(" ")[-1:] and name.split(" ")[-1] in _NASAL_LETTERS \
+                and "LETTER" in name:
+            out.append(False)
+    return out
 
 
-def _is_anusvara(target: str, name: str, stored: str, computed: str) -> bool:
-    return _has_anusvara(target) and _same_but_nasals(name, stored, computed)
+def _nasal_only(field_name: str, stored: str, computed: str,
+                target: str) -> str | None:
+    """[stored] with only its nasals replaced by [computed]'s, in order, or
+    None unless the target's nasals line up one to one with the right
+    reading's, every nasal that changes is an anusvara of the target, and the
+    letter after it is the same in both (so no half-fixed cluster, ɳd). A
+    stored retroflex pair (ṇḍ) is one nasal: it stays when the right reading
+    has ṇḍ, and becomes nd when the right reading has the dental n and d and
+    the target has ంద."""
+    ipa = field_name == "ipa"
+    rx = _NASAL_IPA if ipa else _NASAL_ISO
+    pair, nas, stop, dental = _RETROFLEX["IPA" if ipa else "ISO"]
+    sources = _nasal_sources(target)
+    old = list(re.finditer(re.escape(pair) + "|" + rx.pattern, stored))
+    new = list(rx.finditer(computed))
+    if len(old) != len(new) or len(sources) != len(new):
+        return None
+    changed, out, last = 0, [], 0
+    for m, n, is_anusvara in zip(old, new, sources):
+        rest = computed[n.end():]
+        if m.group() == pair:
+            if n.group() == nas and rest.startswith(stop):
+                repl = pair
+            elif (n.group() == "n" and rest.startswith(dental)
+                  and is_anusvara and "\u0c02\u0c26" in target):
+                repl = "n" + dental
+            else:
+                return None
+        else:
+            repl = n.group()
+        if repl != m.group():
+            if not is_anusvara:
+                return None
+            if m.group() != pair and (stored[m.end():m.end() + 1]
+                                      != computed[n.end():n.end() + 1]):
+                return None  # the letter after it would change too
+            changed += 1
+        out += [stored[last:m.start()], repl]
+        last = m.end()
+    if changed == 0:
+        return None
+    out.append(stored[last:])
+    return "".join(out)
 
 
 def _unsafe(text: str, script: str | None) -> bool:
@@ -202,12 +290,21 @@ class _Scan:
                     f"{self.path.name} {name}: {key}: {f[0]}")
                 continue
             line, start, end, stored = f
-            if stored != computed[key]:
+            if key == "reading":
+                report.readings.append(
+                    (self.path, line, start, stored, computed[key]))
+            if stored == computed[key]:
+                continue
+            unsafe = _unsafe(text, self.script)
+            cand = _nasal_only(key, stored, computed[key], text)
+            full = cand == computed[key]
+            report.differences.append(Difference(
+                self.path, name, key, stored, computed[key], line, start,
+                end, full, unsafe))
+            if cand is not None and not full:
                 report.differences.append(Difference(
-                    self.path, name, key, stored, computed[key], line,
-                    start, end,
-                    _is_anusvara(text, key, stored, computed[key]),
-                    _unsafe(text, self.script)))
+                    self.path, name, key, stored, cand, line, start, end,
+                    True, unsafe, True))
 
 
 def scan(path: Path, lang: str, report: Report) -> None:
@@ -322,14 +419,30 @@ def run(directory: Path, lang: str) -> Report:
     return report
 
 
+def selected(report: Report, include_other: bool) -> list[Difference]:
+    """The differences a fix would write: the anusvara ones, and with
+    [include_other] the others too except the unsafe ones. A partial
+    difference gives way to the full one for the same value."""
+    full = {(d.file, d.line, d.start) for d in report.differences
+            if include_other and not d.anusvara and not d.unsafe}
+    out = []
+    for d in report.differences:
+        if d.anusvara:
+            if d.partial and (d.file, d.line, d.start) in full:
+                continue
+            out.append(d)
+        elif include_other and not d.unsafe:
+            out.append(d)
+    return out
+
+
 def apply_fixes(report: Report, include_other: bool) -> tuple[int, list[str]]:
     """Patch the differing values in place. Returns (changed, refusals)."""
     changed = 0
     refused: list[str] = []
     by_file: dict[Path, list[Difference]] = {}
-    for d in report.differences:
-        if d.anusvara or (include_other and not d.unsafe):
-            by_file.setdefault(d.file, []).append(d)
+    for d in selected(report, include_other):
+        by_file.setdefault(d.file, []).append(d)
     for path, diffs in by_file.items():
         lines = path.read_bytes().decode("utf-8").split("\n")
         for d in sorted(diffs, key=lambda d: (d.line, -d.start)):
@@ -344,10 +457,163 @@ def apply_fixes(report: Report, include_other: bool) -> tuple[int, list[str]]:
     return changed, refused
 
 
+# --- propagation: the old readings elsewhere in the decks -------------------
+
+_TOKEN = re.compile(r"(?:[^\W\d_]|[\u0300-\u036f])+")
+_STRING = re.compile(r'"(?:[^"\\\n]|\\.)*"')
+_KEY_BEFORE = re.compile(r'"?([A-Za-z_][A-Za-z0-9_]*)"?\s*:\s')
+# Values under these keys are not readings: never rewritten.
+_NOT_READING = {"ipa", "ipas", "phonetic", "phonetic_source", "id", "ref",
+                "key", "code", "core", "iso639_3", "tts", "icon", "tags",
+                "license", "schema", "kind", "part", "theme", "slug"}
+
+
+def _nfc(t: str) -> str:
+    return unicodedata.normalize("NFC", t)
+
+
+def _is_latin(token: str) -> bool:
+    return all(unicodedata.name(c, "").startswith(("LATIN", "COMBINING"))
+               for c in token)
+
+
+def _eligible(old: str, new: str) -> bool:
+    """Whether the word [old] may be rewritten anywhere: not three letters or
+    fewer (c, d, th, ...: English prose and IPA hold them), and neither word
+    plain ASCII of fewer than four letters."""
+    def plain(w: str) -> bool:
+        return w.isascii() and w.isalpha()
+    return (len(old) > 3 and not (plain(old) and len(old) < 4)
+            and not (plain(new) and len(new) < 4))
+
+
+def token_map(report: Report, include_other: bool):
+    """(old -> new, ambiguous) from the readings a fix would change: every
+    word of the stored reading that differs from the word at the same place
+    in the new one. A word is ambiguous, and never replaced, when it is also
+    a correct reading of some card, or becomes two different words, or is too
+    short to replace safely (see _eligible)."""
+    chosen = {(d.file, d.line, d.start): d.computed
+              for d in selected(report, include_other)
+              if d.field == "reading"}
+    pairs: dict[str, set[str]] = {}
+    correct: set[str] = set()
+    for path, line, start, stored, computed in report.readings:
+        new = chosen.get((path, line, start))
+        correct.update(_nfc(t) for t in _TOKEN.findall(computed))
+        if new is None:
+            correct.update(_nfc(t) for t in _TOKEN.findall(stored))
+            continue
+        a, b = _TOKEN.findall(stored), _TOKEN.findall(new)
+        if len(a) != len(b):
+            continue
+        for x, y in zip(a, b):
+            if x != y and _is_latin(x):
+                pairs.setdefault(_nfc(x), set()).add(_nfc(y))
+    mapping: dict[str, str] = {}
+    ambiguous: dict[str, str] = {}
+    for old, news in sorted(pairs.items()):
+        if not all(_eligible(old, n) for n in news):
+            ambiguous[old] = "too short to replace safely"
+        elif old in correct:
+            ambiguous[old] = "also a correct reading of another card"
+        elif len(news) > 1:
+            ambiguous[old] = "becomes " + " or ".join(sorted(news))
+        else:
+            mapping[old] = next(iter(news))
+    return mapping, ambiguous
+
+
+def layer_files(directory: Path) -> list[Path]:
+    """Every `.yaml` in [directory] and in its `en/` layer."""
+    out = sorted(directory.glob("*.yaml"))
+    en = directory / "en"
+    if en.is_dir():
+        out += sorted(en.glob("*.yaml"))
+    return out
+
+
+def _has_ipa(text: str) -> bool:
+    return any(0x250 <= ord(c) <= 0x2FF or c == "ŋ" for c in text)
+
+
+def _comment_start(line: str, spans: list[re.Match]) -> int:
+    """Where an unquoted `#` starts a comment, or the line's length."""
+    for i, c in enumerate(line):
+        if c == "#" and not any(m.start() < i < m.end() for m in spans):
+            return i
+    return len(line)
+
+
+def _rewrite_line(line: str, mapping: dict[str, str], ambiguous: dict,
+                  found: list[tuple[str, str]], skipped: set[str]) -> str:
+    spans = list(_STRING.finditer(line))
+    cutoff = _comment_start(line, spans)
+    out, last = [], 0
+    for m in spans:
+        if m.end() > cutoff:
+            break
+        if line[m.end():].lstrip().startswith(":"):
+            continue  # a key
+        if _has_ipa(m.group()):
+            continue  # IPA data, or prose holding IPA: left alone
+        keys = list(_KEY_BEFORE.finditer(line[:m.start()]))
+        if keys and keys[-1].group(1) in _NOT_READING:
+            continue
+
+        def sub(t: re.Match) -> str:
+            tok = _nfc(t.group())
+            if tok in ambiguous:
+                skipped.add(tok)
+                return t.group()
+            new = mapping.get(tok)
+            if new is None or not _eligible(tok, new):
+                return t.group()
+            found.append((tok, new))
+            return new
+
+        out += [line[last:m.start()], _TOKEN.sub(sub, m.group())]
+        last = m.end()
+    out.append(line[last:])
+    return "".join(out)
+
+
+def propagate(directory: Path, mapping: dict[str, str], ambiguous: dict,
+              write: bool) -> tuple[dict[Path, int], set[str]]:
+    """Replace every old reading of [mapping], as a whole word inside a
+    quoted value, in each deck file and English layer of [directory]. Returns
+    the replacements per file and the ambiguous words met."""
+    per_file: dict[Path, int] = {}
+    skipped: set[str] = set()
+    for path in layer_files(directory):
+        lines = path.read_bytes().decode("utf-8").split("\n")
+        found: list[tuple[str, str]] = []
+        new_lines = [_rewrite_line(ln, mapping, ambiguous, found, skipped)
+                     for ln in lines]
+        if found:
+            per_file[path] = len(found)
+            if write:
+                path.write_bytes("\n".join(new_lines).encode("utf-8"))
+    return per_file, skipped
+
+
+def _print_propagation(mapping, ambiguous, per_file, skipped, verb) -> None:
+    print(f"propagation: {len(mapping)} old readings to replace "
+          f"elsewhere, {len(ambiguous)} ambiguous")
+    for tok, why in sorted(ambiguous.items()):
+        met = " (met, left unchanged)" if tok in skipped else ""
+        print(f"  ambiguous {tok!r}: {why}{met}")
+    for path, n in sorted(per_file.items()):
+        print(f"  {verb} {n} in {path.parent.name}/{path.name}")
+    print(f"propagation {verb} {sum(per_file.values())} occurrences in "
+          f"{len(per_file)} files")
+
+
 def _print(report: Report) -> None:
-    diffs = report.differences
+    diffs = [d for d in report.differences]
     groups = (
-        ("anusvara differences", [d for d in diffs if d.anusvara]),
+        ("anusvara differences",
+         [d for d in diffs if d.anusvara]),
         ("other differences",
          [d for d in diffs if not d.anusvara and not d.unsafe]),
         ("skipped (not the deck's script / suffix)",
@@ -356,7 +622,8 @@ def _print(report: Report) -> None:
     for title, rows in groups:
         print(f"{title}: {len(rows)}")
         for d in rows:
-            print(f"  {d.file.name} {d.entry} {d.field}: "
+            note = " (nasals only)" if d.partial else ""
+            print(f"  {d.file.name} {d.entry} {d.field}{note}: "
                   f"stored {d.stored!r} -> computed {d.computed!r}")
     if report.unreadable:
         print(f"not checked or not changeable: {len(report.unreadable)}")
@@ -364,7 +631,7 @@ def _print(report: Report) -> None:
             print(f"  {u}")
     for s in report.skipped:
         print(f"skipped file: {s}")
-    print(f"total differences: {len(diffs)}")
+    print(f"total differences: {len([d for d in diffs if not d.partial])}")
     print(f"checked {report.files} files, {report.entries} entries, "
           f"skipped {len(report.skipped)} files")
 
@@ -376,22 +643,45 @@ def main(argv: list[str]) -> int:
     mode.add_argument("--fix", action="store_true")
     ap.add_argument("--all", action="store_true",
                     help="with --fix, also fix the other differences")
+    ap.add_argument("--propagate", action="store_true",
+                    help="also replace the old readings elsewhere (other "
+                    "value kinds, English layers, files without a part)")
     ap.add_argument("directory", type=Path)
     ap.add_argument("lang")
     args = ap.parse_args(argv[1:])
     if not args.directory.is_dir():
         print(f"not a directory: {args.directory}", file=sys.stderr)
         return 2
+    if args.propagate and args.all:
+        print("--propagate is for plain --fix only: with --all the map "
+              "holds short words that English prose and IPA data share",
+              file=sys.stderr)
+        return 2
     report = run(args.directory, args.lang)
     _print(report)
+    mapping, ambiguous = token_map(report, args.all)
     if args.check:
-        return 1 if report.differences or report.unreadable else 0
+        pending = ambiguous_n = 0
+        if args.propagate:
+            per_file, skipped = propagate(args.directory, mapping,
+                                          ambiguous, False)
+            _print_propagation(mapping, ambiguous, per_file, skipped,
+                               "would replace")
+            pending, ambiguous_n = sum(per_file.values()), len(ambiguous)
+        return 1 if (report.differences or report.unreadable or pending
+                     or ambiguous_n) else 0
     changed, refused = apply_fixes(report, args.all)
     print(f"changed {changed} value(s)")
     for r in refused:
         print(f"  refused: {r}")
+    if args.propagate:
+        per_file, skipped = propagate(args.directory, mapping, ambiguous,
+                                      True)
+        _print_propagation(mapping, ambiguous, per_file, skipped,
+                           "replaced")
     after = run(args.directory, args.lang)
-    print(f"differences left after the fix: {len(after.differences)}")
+    print(f"differences left after the fix: "
+          f"{len([d for d in after.differences if not d.partial])}")
     return 1 if refused else 0
 
 
