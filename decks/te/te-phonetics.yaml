@@ -1,0 +1,31 @@
+schema: 1
+kind: "phonetics"
+id: "te-phonetics"
+language: "te"
+variety: "Standard Telugu, as the course's broad ipa writes it"
+description: "Rules that turn a card's broad ipa into its narrow [ ] form, in order. Written for tools/derive_phonetic.py, never read by the app. Each rule applies the regular expression to the whole ipa string and replaces every match; the next rule works on the result. Only rules that are well attested are here, so few cards change: the course's broad ipa for Telugu already writes the dental stops (t̪ d̪), the retroflexes (ʈ ɖ ɳ ɭ ʂ), vowel length (ː), geminates (doubled letters), aspirates and breathy voice (ʰ ʱ) and, by the tool's medial-anusvara rule, the nasal that is said before a stop, so the nasal rules only catch the few cards the tool left (a loan such as station). The affricate rules apply to the broad ipa's tʃ and dʒ before a non-front vowel (a, o, u): the sources attest ts and dz for native words only, and the ipa does not say which words are native, so a Sanskrit loan (cakravarti) that educated speakers say with tʃ is also changed; the owner or architect may drop te-c-alveolar and te-j-alveolar. A rule left out is not a claim that it does not exist: colloquial word-final m as [w̃], intervocalic dz as [z], and the rounding of ʋ near rounded vowels are attested only for colloquial speech or need a non-combining modifier letter, and are not taken."
+rules:
+  - id: "te-n-velar"
+    pattern: 'n(?=ˈ?[kɡ])'
+    replace: 'ŋ'
+    source: 'Krishnamurti, The Dravidian Languages (2003, CUP), the chapter on Telugu phonology (consonant clusters: nasals before stops are homorganic); Wikipedia, Telugu phonology, "Consonants" (CC BY-SA 4.0).'
+  - id: "te-n-palatal"
+    pattern: 'n(?=ˈ?(?:tʃ|dʒ))'
+    replace: 'ɲ'
+    source: 'Krishnamurti, The Dravidian Languages (2003, CUP), the chapter on Telugu phonology (consonant clusters: nasals before stops are homorganic); Wikipedia, Telugu phonology, "Consonants" (CC BY-SA 4.0).'
+  - id: "te-n-retroflex"
+    pattern: 'n(?=ˈ?[ʈɖ])'
+    replace: 'ɳ'
+    source: 'Krishnamurti, The Dravidian Languages (2003, CUP), the chapter on Telugu phonology (consonant clusters: nasals before stops are homorganic); Wikipedia, Telugu phonology, "Consonants" (CC BY-SA 4.0).'
+  - id: "te-n-bilabial"
+    pattern: 'n(?=ˈ?[pb])'
+    replace: 'm'
+    source: 'Krishnamurti, The Dravidian Languages (2003, CUP), the chapter on Telugu phonology (consonant clusters: nasals before stops are homorganic); Wikipedia, Telugu phonology, "Consonants" (CC BY-SA 4.0).'
+  - id: "te-c-alveolar"
+    pattern: 'tʃ(?=(?:tʃ)?[aouʌə])'
+    replace: 't͡s'
+    source: 'Krishnamurti, The Dravidian Languages (2003, CUP), the chapter on Telugu phonology (the affricates c and j); Bhaskararao, "Telugu" (2017), as cited by Wikipedia, Telugu phonology, "Consonants" (CC BY-SA 4.0): native words with palatal affricates before non-front vowels have the alveolar affricates ts and dz, which occur only in native words.'
+  - id: "te-j-alveolar"
+    pattern: 'dʒ(?=(?:dʒ)?[aouʌə])'
+    replace: 'd͡z'
+    source: 'Krishnamurti, The Dravidian Languages (2003, CUP), the chapter on Telugu phonology (the affricates c and j); Bhaskararao, "Telugu" (2017), as cited by Wikipedia, Telugu phonology, "Consonants" (CC BY-SA 4.0): native words with palatal affricates before non-front vowels have the alveolar affricates ts and dz, which occur only in native words.'
