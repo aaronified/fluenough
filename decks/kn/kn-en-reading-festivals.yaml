@@ -1,0 +1,40 @@
+schema: 1
+id: "kn-en-reading-festivals"
+name: "Reading: festival invitation"
+kind: reading
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short passage written for this course, using only the words of its unit and the units before it. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-festival-invitation"
+    title: "Festival invitation"
+    sentences:
+      - text: "ನಮ್ಮ ಮನೆಯಲ್ಲಿ ದೀಪಾವಳಿ ಹಬ್ಬ ಇದೆ."
+        reading: "namma maneyalli dīpāvaḷi habba ide."
+        ipa: "namma manejalli d̪iːpaːʋaɭi habba id̪e"
+      - text: "ಬನ್ನಿ, ನಮ್ಮ ಜೊತೆ ಊಟ ಮಾಡಿ."
+        reading: "banni, namma jote ūṭa māḍi."
+        ipa: "banni namma dʒot̪e uːʈa maːɖi"
+      - text: "ಸಂಜೆ ಪೂಜೆ ಮತ್ತು ಆರತಿ ಇದೆ."
+        reading: "sañje pūje mattu ārati ide."
+        ipa: "saɲdʒe puːdʒe mat̪t̪u aːrat̪i id̪e"
+      - text: "ಹೋಳಿಗೆ ಮತ್ತು ಪಾಯಸ ಇದೆ."
+        reading: "hōḷige mattu pāyasa ide."
+        ipa: "hoːɭiɡe mat̪t̪u paːjasa id̪e"
+    questions:
+      - id: "kn-9682"
+        prompt: { en: "Which festival is the invitation for?" }
+        options:
+          - { en: "Diwali" }
+          - { en: "Christmas" }
+          - { en: "Ugadi" }
+        answer: 1
+      - id: "kn-9683"
+        prompt: { en: "Guests are asked to eat a meal." }
+        answer: true
+      - id: "kn-9684"
+        prompt: { en: "The evening has prayers and a lamp ceremony." }
+        answer: true

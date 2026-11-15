@@ -1,0 +1,43 @@
+schema: 1
+id: "kn-en-reading-feelings"
+name: "Reading: a letter to a friend"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short letter to a friend about worries and hopes, using the feeling words taught up to this unit. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-feelings-passage"
+    title: "A letter to a friend"
+    sentences:
+      - text: "ಗೆಳೆಯ, ನನಗೆ ಈಗ ಚಿಂತೆ ಇದೆ."
+        reading: "geḷeya, nanage īga cinte ide."
+        ipa: "ɡeɭeja nanaɡe iːɡa tʃint̪e id̪e"
+      - text: "ಪರೀಕ್ಷೆಯ ಭಯ ಇದೆ."
+        reading: "parīkṣeya bhaya ide."
+        ipa: "pariːkʂeja bʱaja id̪e"
+      - text: "ನಿನ್ನ ಸಹಾಯ ಇದೆ, ನೆಮ್ಮದಿ ಆಯಿತು."
+        reading: "ninna sahāya ide, nemmadi āyitu."
+        ipa: "ninna sahaːja id̪e nemmad̪i aːjit̪u"
+      - text: "ನಿನ್ನನ್ನು ನೋಡಿ ಖುಷಿ ಆಗುತ್ತಿದೆ."
+        reading: "ninnannu nōḍi khuṣi āguttide."
+        ipa: "ninnannu noːɖi kʰuʂi aːɡut̪t̪id̪e"
+      - text: "ಬೇಗ ಬಾ."
+        reading: "bēga bā."
+        ipa: "beːɡa baː"
+    questions:
+      - id: "kn-9024"
+        prompt: { en: "What does the writer feel about the exam?" }
+        options:
+          - { en: "Fear" }
+          - { en: "Pride" }
+          - { en: "Jealousy" }
+        answer: 1
+      - id: "kn-9025"
+        prompt: { en: "Your help brought peace to the writer." }
+        answer: true
+      - id: "kn-9026"
+        prompt: { en: "The writer asks the friend to come soon." }
+        answer: true

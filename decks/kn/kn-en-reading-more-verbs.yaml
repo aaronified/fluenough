@@ -1,0 +1,44 @@
+schema: 1
+id: "kn-en-reading-more-verbs"
+name: "Reading: a warm drink"
+kind: reading
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short passage written for this course, using only the words of its unit and the units before it. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-how-to-make-tea"
+    title: "A warm drink"
+    sentences:
+      - text: "ಮೊದಲು ಹಾಲನ್ನು ಕುದಿಸಿ."
+        reading: "modalu hālannu kudisi."
+        ipa: "mod̪alu haːlannu kud̪isi"
+      - text: "ನಂತರ ಅದನ್ನು ಲೋಟಕ್ಕೆ ಸುರಿಯಿರಿ."
+        reading: "nantara adannu lōṭakke suriyiri."
+        ipa: "nant̪ara ad̪annu loːʈakke surijiri"
+      - text: "ಚಮಚ ತೆಗೆದು ಚೆನ್ನಾಗಿ ಬೆರೆಸಿ."
+        reading: "camaca tegedu cennāgi beresi."
+        ipa: "tʃamatʃa t̪eɡed̪u tʃennaːɡi beresi"
+      - text: "ಮುಗಿದ ನಂತರ ಚಮಚವನ್ನು ತೊಳೆಯಿರಿ."
+        reading: "mugida nantara camacavannu toḷeyiri."
+        ipa: "muɡid̪a nant̪ara tʃamatʃaʋannu t̪oɭejiri"
+    questions:
+      - id: "kn-9670"
+        prompt: { en: "What do you boil first?" }
+        options:
+          - { en: "The milk" }
+          - { en: "The glass" }
+          - { en: "The spoon" }
+        answer: 1
+      - id: "kn-9671"
+        prompt: { en: "Mix the drink well." }
+        answer: true
+      - id: "kn-9672"
+        prompt: { en: "What do you wash at the end?" }
+        options:
+          - { en: "The spoon" }
+          - { en: "The bed" }
+          - { en: "The door" }
+        answer: 1

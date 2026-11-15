@@ -1,0 +1,40 @@
+schema: 1
+id: "kn-en-reading-careers"
+name: "Reading: job advert"
+kind: reading
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short passage written for this course, using only the words of its unit and the units before it. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-job-advert"
+    title: "Job advert"
+    sentences:
+      - text: "ಹೊಸ ನೌಕರಿ ಇದೆ: ಡ್ರೈವರ್ ಬೇಕು."
+        reading: "hosa naukari ide: ḍraivar bēku."
+        ipa: "hosa naukari id̪e ɖraiʋar beːku"
+      - text: "ಇದು ತಾತ್ಕಾಲಿಕ ಉದ್ಯೋಗ."
+        reading: "idu tātkālika udyōga."
+        ipa: "id̪u t̪aːt̪kaːlika ud̪joːɡa"
+      - text: "ಅನುಭವ ಬೇಕು ಮತ್ತು ಸಂಬಳ ಚೆನ್ನಾಗಿದೆ."
+        reading: "anubhava bēku mattu sambaḷa cennāgide."
+        ipa: "anubʱaʋa beːku mat̪t̪u sambaɭa tʃennaːɡid̪e"
+      - text: "ಸಂದರ್ಶನ ನಾಳೆ."
+        reading: "sandarśana nāḷe."
+        ipa: "sand̪arʃana naːɭe"
+    questions:
+      - id: "kn-9709"
+        prompt: { en: "Which job is offered?" }
+        options:
+          - { en: "Driver" }
+          - { en: "Doctor" }
+          - { en: "Cook" }
+        answer: 1
+      - id: "kn-9710"
+        prompt: { en: "The job is permanent." }
+        answer: false
+      - id: "kn-9711"
+        prompt: { en: "The interview is tomorrow." }
+        answer: true

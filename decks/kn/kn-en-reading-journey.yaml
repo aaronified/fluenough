@@ -1,0 +1,43 @@
+schema: 1
+id: "kn-en-reading-journey"
+name: "Reading: train timetable"
+kind: reading
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short passage written for this course, using only the words of its unit and the units before it. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-train-timetable"
+    title: "Train timetable"
+    sentences:
+      - text: "ರೈಲು ಬೆಳಿಗ್ಗೆ ಏಳು ಗಂಟೆಗೆ ಹೊರಡುತ್ತದೆ."
+        reading: "railu beḷigge ēḷu gaṇṭege horaḍuttade."
+        ipa: "railu beɭiɡɡe eːɭu ɡaɳʈeɡe horaɖut̪t̪ad̪e"
+      - text: "ರೈಲು ಸಂಜೆ ಆರು ಗಂಟೆಗೆ ತಲುಪುತ್ತದೆ."
+        reading: "railu sañje āru gaṇṭege taluputtade."
+        ipa: "railu saɲdʒe aːru ɡaɳʈeɡe t̪aluput̪t̪ad̪e"
+      - text: "ಪ್ಲಾಟ್ಫಾರ್ಮ್ ಒಂದು."
+        reading: "plāṭphārm ondu."
+        ipa: "plaːʈpʰaːrm ond̪u"
+      - text: "ಪ್ರಯಾಣಿಕರೇ, ಬೋಗಿ ಎರಡರಲ್ಲಿ ಏರಿ."
+        reading: "prayāṇikarē, bōgi eraḍaralli ēri."
+        ipa: "prajaːɳikareː boːɡi eraɖaralli eːri"
+      - text: "ಇವತ್ತು ರೈಲು ತಡ ಆಗಿದೆ."
+        reading: "ivattu railu taḍa āgide."
+        ipa: "iʋat̪t̪u railu t̪aɖa aːɡid̪e"
+    questions:
+      - id: "kn-9694"
+        prompt: { en: "What time does the train leave?" }
+        options:
+          - { en: "Seven in the morning" }
+          - { en: "Six in the evening" }
+          - { en: "Half past four" }
+        answer: 1
+      - id: "kn-9695"
+        prompt: { en: "The train reaches at six in the evening." }
+        answer: true
+      - id: "kn-9696"
+        prompt: { en: "Passengers should board coach two." }
+        answer: true
