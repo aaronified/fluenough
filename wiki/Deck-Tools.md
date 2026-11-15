@@ -332,6 +332,7 @@ python3 tools/transcribe_decks.py --check decks/te te       # exit 1 if any diff
 python3 tools/transcribe_decks.py --fix decks/te te         # anusvara only
 python3 tools/transcribe_decks.py --fix --all decks/te te   # every difference
 python3 tools/transcribe_decks.py --fix --citations decks/te te  # base citation readings
+python3 tools/transcribe_decks.py --fix --layer-anusvara decks/te te  # en/ prose readings
 ```
 
 Telugu input the tool reads (#1357, #1361; defaults set by the architect,
@@ -351,6 +352,16 @@ stored word-final `m` where the rules write `ṁ` for the base (`andam` to
 and the flow form, and reads no card, example or other reading. `--check
 --citations` lists them (exit 1 if any). It is refused with `--all` and
 `--propagate`.
+
+`--layer-anusvara` is a pass of its own for the English layers (`en/*.yaml`),
+which repeat Telugu words with their reading in parentheses (`అందం (andam)`,
+`చేయడం (cēyaḍam, to do)`). Inside a quoted value, a Telugu word (as many words as
+the reading has, for `ఒకే పుస్తకం (oke pustakam)`) followed by ` (reading)` or
+` (reading, gloss)` has its reading's final `m` rewritten to `ṁ` only when the
+rules compute exactly that reading with that one change. Nothing else is
+touched (no other reading, gloss, key, `ipa` or id). `--check` lists each change
+and exits 1 if any; `--fix` writes them. Refused with `--all`, `--propagate` and
+`--citations`.
 
 `--check` prints each id, field, stored value and recomputed value, in two
 lists: "anusvara differences" (the target holds an anusvara and the two values
