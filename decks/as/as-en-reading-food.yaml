@@ -1,0 +1,40 @@
+schema: 1
+id: "as-en-reading-food"
+name: "Assamese reading: food"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-menu-card"
+    title: "A menu card"
+    theme: "food"
+    sentences:
+      - text: "ভাত আৰু মাছ।"
+        reading: "bhāt āru mās."
+      - text: "বিৰিয়ানী, দুশ টকা।"
+        reading: "biriyāni, dux tôkā."
+      - text: "পনীৰ, পঞ্চাশ টকা।"
+        reading: "ponir, pônsāx tôkā."
+      - text: "ৰুটি, দহ টকা।"
+        reading: "ruti, dôh tôkā."
+    questions:
+      - id: "as-7150"
+        prompt: { en: "Biryani costs 200 rupees." }
+        answer: true
+      - id: "as-7151"
+        prompt: { en: "What comes with the rice on this card?" }
+        options:
+          - { en: "Fish" }
+          - { en: "Cake" }
+          - { en: "Tea" }
+        answer: 1
+      - id: "as-7152"
+        prompt: { en: "How much is the paneer?" }
+        options:
+          - { en: "10 rupees" }
+          - { en: "50 rupees" }
+          - { en: "200 rupees" }
+        answer: 2
