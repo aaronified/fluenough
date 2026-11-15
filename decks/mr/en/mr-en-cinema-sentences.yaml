@@ -1,0 +1,53 @@
+schema: 1
+id: "mr-en-cinema-sentences"
+kind: "layer"
+core: "mr-cinema-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about films and plays"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the words of the cinema unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-5332":
+    native: "I liked this film."
+    bases: { "मला": "me; to me" }
+    confusables: { "f1": { why: "आवडली (āvaḍli) would agree with a feminine noun, and चित्रपट (citrapaṭ) is masculine." }, "w1": { why: "नाटक (nāṭak) is a play on stage, not a film." } }
+  "mr-5333":
+    native: "The hero acts very well."
+    confusables: { "f1": { why: "करते (karte) is for a woman; the hero is a man." }, "w1": { why: "खलनायक (khalnāyak) is the villain, the opposite of the hero." } }
+  "mr-5334":
+    native: "The film starts."
+    bases: { "सुरू": "started; running", "होतो": "starts; becomes" }
+    confusables: { "f1": { why: "होते (hote) would be for a feminine subject like मालिका (mālikā), a serial." }, "w1": { why: "संपतो (sampato) means ends; this sentence says starts." } }
+  "mr-5335":
+    native: "This actress is very beautiful."
+    bases: { "आहे": "is" }
+    confusables: { "f1": { why: "आहेत (āhet) is for more than one person; this sentence has one actress." }, "w1": { why: "अभिनेता (abhinetā) means actor, a man." } }
+  "mr-5336":
+    native: "The director makes a new film."
+    confusables: { "f1": { why: "बनवते (banavte) is for a feminine subject; दिग्दर्शक (digdarśak) is masculine." }, "w1": { why: "संगीतकार (saṅgitkār) is the composer, who writes the music." } }
+  "mr-5337":
+    native: "The audience watches the song on the screen."
+    confusables: { "f1": { why: "पाहतो (pāhto) is for one man, and the audience is a group." }, "w1": { why: "ऐकतात (aikatāt) means they listen; the sentence says they watch." } }
+  "mr-5338":
+    native: "They show this serial every night."
+    confusables: { "f1": { why: "दाखवतो (dākhavto) is for one man, not a group showing the serial." }, "w1": { why: "सकाळी (sakāḷi) means in the morning; the sentence says at night." } }
+  "mr-5339":
+    native: "The story is very good."
+    bases: { "फार": "very", "आहे": "is" }
+    confusables: { "f1": { why: "चांगला (cāṅglā) is masculine; कथा (kathā) is feminine." }, "w1": { why: "कथानक (kathānak) is the plot of a story, not the whole story." } }
+  "mr-5340":
+    native: "This film is funny."
+    bases: { "आहे": "is" }
+    confusables: { "f1": { why: "आहेत (āhet) is for more than one thing; one film takes आहे (āhe)." }, "w1": { why: "भयपट (bhayapaṭ) is a horror film, a different kind of film." } }
+  "mr-5341":
+    native: "The actress learns her lines by heart."
+    bases: { "पाठ": "by heart" }
+    confusables: { "f1": { why: "करतो (karto) is for one man; अभिनेत्री (abhinetri) is a woman." }, "w1": { why: "प्रदर्शित करणे (pradarśit karṇe) means to release a film, not to learn lines." } }
+  "mr-5342":
+    native: "The plot is very romantic."
+    bases: { "आहे": "is" }
+    confusables: { "f1": { why: "आहेत (āhet) is for more than one thing; this sentence has one plot." }, "w1": { why: "भयपट (bhayapaṭ) is horror, not romance." } }
+  "mr-5343":
+    native: "He plays the villain's role."
+    confusables: { "f1": { why: "करते (karte) is for a woman; तो (to) here is a man." }, "w1": { why: "नायक (nāyak) is the hero, the opposite of the villain." } }
