@@ -1,0 +1,92 @@
+schema: 1
+id: "gu-multiword-idiomatic-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "gu", iso639_3: "guj", name: "Gujarati", script: "gujarati", tts: "gu-IN", icon: "ગુ" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+genre: "multiword"
+pattern_family: "idiomatic-verb"
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - id: "gu-6500"
+    target: "આડું પડવું"
+    words: ["આડું", "પડવું"]
+    reading: "āḍum̐ paḍvum"
+    ipa: "aɖũ pəɖʋum"
+    pos: "phrase"
+    level: "A2"
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "આડું", base: "આડું", reading: "āḍum̐" }
+      - { word: "પડવું", base: "પડવું", reading: "paḍvum" }
+    examples:
+      - target: "હું આડો પડું છું."
+        reading: "hum̐ āḍo paḍum̐ chum̐."
+        bases:
+          - { word: "હું", ref: "gu-0690" }
+          - { word: "આડો", base: "આડું", reading: "āḍum̐" }
+          - { word: "પડું", base: "પડવું", reading: "paḍvum" }
+          - { word: "છું", base: "હોવું", reading: "hovum" }
+      - target: "તે બપોરે આડો પડ્યો."
+        reading: "te bapore āḍo paḍyo."
+        bases:
+          - { word: "તે", ref: "gu-1000" }
+          - { word: "બપોરે", ref: "gu-1124" }
+          - { word: "આડો", base: "આડું", reading: "āḍum̐" }
+          - { word: "પડ્યો", base: "પડવું", reading: "paḍvum" }
+  - id: "gu-6501"
+    target: "આવી બનવું"
+    words: ["આવી", "બનવું"]
+    reading: "āvi banvum"
+    ipa: "aʋi bənʋum"
+    pos: "phrase"
+    level: "B1"
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "આવી", base: "આવી", reading: "āvi" }
+      - { word: "બનવું", base: "બનવું", reading: "banvum" }
+    examples:
+      - target: "મારું આવી બનશે."
+        reading: "mārum̐ āvi banśe."
+        bases:
+          - { word: "મારું", ref: "gu-1002" }
+          - { word: "આવી", base: "આવી", reading: "āvi" }
+          - { word: "બનશે", base: "બનવું", reading: "banvum" }
+      - target: "પોલીસ આવશે, તો તારું આવી બનશે."
+        reading: "polis āvśe, to tārum̐ āvi banśe."
+        bases:
+          - { word: "પોલીસ", ref: "gu-0602" }
+          - { word: "આવશે", ref: "gu-0509" }
+          - { word: "તો", base: "તો", reading: "to" }
+          - { word: "તારું", ref: "gu-1005" }
+          - { word: "આવી", base: "આવી", reading: "āvi" }
+          - { word: "બનશે", base: "બનવું", reading: "banvum" }
+  - id: "gu-6502"
+    target: "ખબર હોવી"
+    words: ["ખબર", "હોવી"]
+    reading: "khabar hovi"
+    ipa: "kʰəbər ɦoʋi"
+    pos: "phrase"
+    level: "A2"
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ખબર", ref: "gu-0059" }
+      - { word: "હોવી", base: "હોવું", reading: "hovum" }
+    examples:
+      - target: "મને ખબર છે."
+        reading: "mane khabar che."
+        bases:
+          - { word: "મને", ref: "gu-1008" }
+          - { word: "ખબર", ref: "gu-0059" }
+          - { word: "છે", base: "હોવું", reading: "hovum" }
+      - target: "તને ખબર છે?"
+        reading: "tane khabar che?"
+        bases:
+          - { word: "તને", ref: "gu-1009" }
+          - { word: "ખબર", ref: "gu-0059" }
+          - { word: "છે", base: "હોવું", reading: "hovum" }

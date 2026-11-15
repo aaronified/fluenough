@@ -1,0 +1,63 @@
+schema: 1
+id: "gu-en-multiword-idiomatic-verbs"
+kind: "layer"
+core: "gu-multiword-idiomatic-verbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Multi-word verbs: idiomatic verbs"
+license: "CC-BY-SA-4.0"
+description: "Three verb phrases whose meaning is not the sum of their parts: to lie down and rest, to be in trouble, and to know. Not yet checked by a Gujarati speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "gu-6500":
+    native: "to lie down; to rest; to go to sleep"
+    notes:
+      "u1": "Literal parts: આડું (āḍum̐), crosswise, and પડવું (paḍvum), to fall. The first word agrees with the person lying down, as in આડો (āḍo) for a man. It is used for a short rest."
+    bases:
+      "આડું": "crosswise; lying across"
+      "પડવું": "to fall; here, to lie down"
+    examples:
+      "હું આડો પડું છું.":
+        native: "I am lying down."
+        bases:
+          "આડો": "crosswise; lying across"
+          "પડું": "to fall; here, to lie down"
+          "છું": "to be"
+      "તે બપોરે આડો પડ્યો.":
+        native: "He lay down in the afternoon."
+        bases:
+          "આડો": "crosswise; lying across"
+          "પડ્યો": "to fall; here, to lie down"
+  "gu-6501":
+    native: "to be in trouble"
+    notes:
+      "u1": "An informal, spoken phrase for being in trouble with someone such as a parent or the police. The person in trouble is the subject of બનવું (banvum), to become."
+    bases:
+      "આવી": "part of the phrase: in trouble"
+      "બનવું": "to become"
+    examples:
+      "મારું આવી બનશે.":
+        native: "I will be in trouble."
+        bases:
+          "આવી": "part of the phrase: in trouble"
+          "બનશે": "to become"
+      "પોલીસ આવશે, તો તારું આવી બનશે.":
+        native: "If the police come, you will be in trouble."
+        bases:
+          "તો": "then; so"
+          "આવી": "part of the phrase: in trouble"
+          "બનશે": "to become"
+  "gu-6502":
+    native: "to know"
+    notes:
+      "u1": "Literal parts: ખબર (khabar), news or knowing, and હોવી (hovi), to be. The verb જાણવું (jāṇvum), to know, is a close synonym. The person who knows takes -ને (ne), as in મને (mane) ખબર છે, I know."
+    bases:
+      "હોવી": "to be"
+    examples:
+      "મને ખબર છે.":
+        native: "I know."
+        bases:
+          "છે": "to be"
+      "તને ખબર છે?":
+        native: "Do you know?"
+        bases:
+          "છે": "to be"
