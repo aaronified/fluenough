@@ -1,0 +1,70 @@
+schema: 1
+id: "ja-en-reading-grammar-conjunctions"
+name: "Japanese reading: joining words"
+kind: "reading"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "ja-weekend-blog"
+    title: "A short blog post about a weekend"
+    sentences:
+      - text: "きのうはあめでした。でも、たのしかったです。"
+        reading: "kinou wa ame deshita. demo, tanoshikatta desu."
+      - text: "あしたはやすみです。それで、いえにいます。"
+        reading: "ashita wa yasumi desu. sorede, ie ni imasu."
+      - text: "ごはんをたべます。それから、ねます。"
+        reading: "gohan o tabemasu. sorekara, nemasu."
+      - text: "あしたはともだちにあいます。そして、ごはんをたべます。"
+        reading: "ashita wa tomodachi ni aimasu. soshite, gohan o tabemasu."
+    questions:
+      - id: "ja-9130"
+        prompt:
+          en: "Which line says that it rained yesterday, but was fun?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 1
+      - id: "ja-9131"
+        prompt:
+          en: "The second line says that the speaker stays at home, because tomorrow is a day off."
+        answer: true
+      - id: "ja-9132"
+        prompt:
+          en: "Which line says that the speaker sleeps after eating a meal?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 1
+  - id: "ja-weekend-plans"
+    title: "A message about plans"
+    sentences:
+      - text: "じゃあ、いきましょう。"
+        reading: "jaa, ikimashou."
+      - text: "おちゃですか。それとも、みずですか。"
+        reading: "ocha desu ka. soretomo, mizu desu ka."
+      - text: "ところで、にほんごはたのしいですか。"
+        reading: "tokorode, nihongo wa tanoshii desu ka."
+      - text: "それなら、ともだちとたべましょう。"
+        reading: "sorenara, tomodachi to tabemashou."
+    questions:
+      - id: "ja-9133"
+        prompt:
+          en: "Which line asks whether it is tea or water?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 2
+      - id: "ja-9134"
+        prompt:
+          en: "The fourth line invites a friend to eat."
+        answer: true
+      - id: "ja-9135"
+        prompt:
+          en: "Which line changes the subject to something new?"
+        options:
+          - en: "The second line"
+          - en: "The third line"
+        answer: 2

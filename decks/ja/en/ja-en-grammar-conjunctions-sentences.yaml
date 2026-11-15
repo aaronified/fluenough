@@ -1,0 +1,62 @@
+schema: 1
+id: "ja-en-grammar-conjunctions-sentences"
+kind: "layer"
+core: "ja-grammar-conjunctions-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Joining words in sentences"
+description: "Sentences with the joining words of this unit, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  "ja-9120":
+    native: "Every day I go to school. And then I meet a friend."
+    bases:
+      "に": { meaning: "(marks a place, a time or the person reached)" }
+      "いきます": { meaning: "go (polite)" }
+      "あいます": { meaning: "meet (polite)" }
+    confusables:
+      w1: { why: "でも (demo) means but, a contrast; it adds no next step." }
+      w2: { why: "じゃあ (jaa) suggests a next step, not a step in order." }
+  "ja-9121":
+    native: "I eat a meal. After that, I sleep."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "たべます": { meaning: "eat (polite)" }
+      "ねます": { meaning: "sleep (polite)" }
+    confusables:
+      w1: { why: "または (matawa) means or, a choice, not one step after another." }
+      w2: { why: "それで (sorede) gives a result, not the next step." }
+  "ja-9122":
+    native: "Tomorrow is a day off. So I stay at home."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+      "に": { meaning: "(marks a place, a time or the person reached)" }
+      "います": { meaning: "am, is, are (of living things); have (polite)" }
+    confusables:
+      w1: { why: "それとも (soretomo) asks a choice in a question; this is a statement." }
+      w2: { why: "でも (demo) would mean but, a contrast, not a result." }
+  "ja-9123":
+    native: "It is a new house. But it is small."
+    bases:
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "それに (soreni) adds a point in the same direction; it does not contrast." }
+      w2: { why: "それで (sorede) gives a result, not a contrast." }
+  "ja-9124":
+    native: "Will you go? Or will you sleep?"
+    bases:
+      "いきます": { meaning: "go (polite)" }
+      "か": { meaning: "(makes a question)" }
+      "ねます": { meaning: "sleep (polite)" }
+    confusables:
+      w1: { why: "または (matawa) is or in a statement, not in a question." }
+      w2: { why: "それなら (sorenara) means in that case, not or." }
+  "ja-9125":
+    native: "In that case, let's eat with a friend."
+    bases:
+      "と": { meaning: "(with, or 'and' between two nouns)" }
+      "たべましょう": { meaning: "let's eat (polite)" }
+    confusables:
+      w1: { why: "じゃあ (jaa) suggests a plan too, but does not depend on what came before." }
+      w2: { why: "それに (soreni) adds a point; it does not suggest a plan." }
