@@ -1,0 +1,87 @@
+# The people behind the Hindustani culture decks (wiki/Plan-Deck-Kinds-And-Topics.md, D5).
+# Dates are the years of birth and death, circa where the Hindi Wikipedia pages disagree or give a range.
+# No pictures: none has a licence checked yet.
+schema: 1
+kind: "creators"
+id: "creators-hi"
+language: "hi"
+license: "CC-BY-SA-4.0"
+eras:
+  - id: "delhi-sultanate"
+    name: { hi: "दिल्ली सल्तनत", en: "Delhi Sultanate" }
+    from: 1206
+    to: 1526
+  - id: "bhakti"
+    name: { hi: "भक्ति काल", en: "Bhakti period" }
+    from: 1350
+    to: 1700
+  - id: "mughal"
+    name: { hi: "मुग़ल काल", en: "Mughal period" }
+    from: 1526
+    to: 1857
+creators:
+  - id: "hi-kabir"
+    name:
+      hi: { text: "कबीर", reading: "kabīr", ipa: "kəbiːr" }
+      en: { text: "Kabir" }
+    born: { year: 1398, circa: true }
+    died: { year: 1518, circa: true }
+    era: "bhakti"
+    bio:
+      en: "Kabir was a poet of Kashi (Varanasi). The Hindi Wikipedia page quotes his couplet on caste. The years of his birth and death are not certain."
+    legacy:
+      text: { en: "A couplet of his is quoted as a saying on the Hindi Wikipedia page about him." }
+      items:
+        - { kind: "saying", text: { en: "His couplet Jati na puchho sadhu ki, which says not to ask a holy man his caste, is quoted on the Hindi Wikipedia page about him." }, source: { url: "https://hi.wikipedia.org/wiki/कबीर", accessed: "2026-11-15" } }
+  - id: "hi-keshavdas"
+    name:
+      hi: { text: "केशवदास", reading: "kēśvdās", ipa: "keːʃʋd̪aːs" }
+      en: { text: "Keshavdas" }
+    born: { year: 1555, circa: true }
+    died: { year: 1618, circa: true }
+    era: "mughal"
+    bio:
+      en: "Keshavdas was a Hindi poet. The Hindi Wikipedia page gives his years as about 1555 and 1618, in Vikram Samvat and in CE."
+    legacy:
+      text: { en: "A witty couplet of his about his white hair is quoted on the Hindi Wikipedia page about him." }
+      items:
+        - { kind: "saying", text: { en: "His couplet Keshav kesani asi kari, about being called old man by women at a well, is quoted on the Hindi Wikipedia page about him." }, source: { url: "https://hi.wikipedia.org/wiki/केशवदास", accessed: "2026-11-15" } }
+  - id: "hi-rahim"
+    name:
+      hi: { text: "रहीम", reading: "rahīm", ipa: "rəɦiːm" }
+      en: { text: "Rahim" }
+    born: 1556
+    died: 1627
+    era: "mughal"
+    bio:
+      en: "Rahim was a Hindi poet. The Hindi Wikipedia page gives his birth as 1556 and his death as 1627."
+    legacy:
+      text: { en: "A couplet of his on forgiveness is quoted as a saying on the Hindi Wikipedia page about him." }
+      items:
+        - { kind: "saying", text: { en: "His couplet Chhima badan ko chahiye, about forgiveness suiting the great, is quoted on the Hindi Wikipedia page about him." }, source: { url: "https://hi.wikipedia.org/wiki/रहीम", accessed: "2026-11-15" } }
+  - id: "hi-tulsidas"
+    name:
+      hi: { text: "तुलसीदास", reading: "tulsīdās", ipa: "t̪ʊlsiːd̪aːs" }
+      en: { text: "Tulsidas" }
+    born: { year: 1497, circa: true }
+    died: 1623
+    era: "bhakti"
+    bio:
+      en: "Tulsidas was a Hindi poet. The Hindi Wikipedia page gives his birth as 1497 or 1511 and his death as 1623."
+    legacy:
+      text: { en: "A couplet of his is quoted as a saying on the Hindi Wikipedia page about him." }
+      items:
+        - { kind: "saying", text: { en: "His couplet Tulsi sampati chhaanh jyon, about wealth that slips away like a shadow, is quoted on the Hindi Wikipedia page about him." }, source: { url: "https://hi.wikipedia.org/wiki/तुलसीदास", accessed: "2026-11-15" } }
+  - id: "hi-raskhan"
+    name:
+      hi: { text: "रसखान", reading: "raskhān", ipa: "rəskʰaːn" }
+      en: { text: "Raskhan" }
+    born: { year: 1548, circa: true }
+    died: 1628
+    era: "mughal"
+    bio:
+      en: "Raskhan was a Hindi poet of Krishna devotion. The Hindi Wikipedia page gives his birth as 1548 and his death as 1628."
+    legacy:
+      text: { en: "A doha of his is quoted in the history of Hindi literature on Hindi Wikisource." }
+      items:
+        - { kind: "saying", text: { en: "His doha Tori maanini ten hiyo, from Prem-vatika, is quoted in the history of Hindi literature on Hindi Wikisource." }, source: { url: "https://hi.wikisource.org/wiki/हिंदी_साहित्य_का_इतिहास/भक्तिकाल/प्रकरण_५_सगुण_धारा/कृष्णभक्ति_शाखा", accessed: "2026-11-15" } }
