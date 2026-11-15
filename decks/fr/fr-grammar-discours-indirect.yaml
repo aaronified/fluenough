@@ -1,0 +1,56 @@
+schema: 1
+id: "fr-grammar-discours-indirect"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["direct", "reported"]
+  entries:
+    - lemma: "annoncer"
+      ipa: "anɔ̃se"
+      forms:
+        "direct": "il annonce : je pars demain"
+        "reported": "il annonce qu'il part demain"
+    - lemma: "répondre"
+      key: "repondre"
+      ipa: "ʁepɔ̃dʁ"
+      forms:
+        "direct": "elle répond : je viens"
+        "reported": "elle répond qu'elle vient"
+    - lemma: "écrire"
+      key: "ecrire"
+      ipa: "ekʁiʁ"
+      forms:
+        "direct": "il écrit : nous arrivons demain"
+        "reported": "il écrit qu'ils arrivent demain"
+    - lemma: "raconter"
+      ipa: "ʁakɔ̃te"
+      forms:
+        "direct": "il a raconté : je travaille tard"
+        "reported": "il a raconté qu'il travaillait tard"
+    - lemma: "répéter"
+      key: "repeter"
+      ipa: "ʁepete"
+      forms:
+        "direct": "il a répété : je viendrai"
+        "reported": "il a répété qu'il viendrait"
+    - lemma: "demander si"
+      key: "demander-si"
+      ipa: "dəmɑ̃de si"
+      forms:
+        "direct": "il demande : tu viens ?"
+        "reported": "il demande si je viens."
+    - lemma: "demander où"
+      key: "demander-ou"
+      ipa: "dəmɑ̃de u"
+      forms:
+        "direct": "elle demande : où habites-tu ?"
+        "reported": "elle demande où j'habite."
+    - lemma: "demander de"
+      key: "demander-de"
+      ipa: "dəmɑ̃de də"
+      forms:
+        "direct": "elle nous demande : fermez la porte !"
+        "reported": "elle nous demande de fermer la porte."
