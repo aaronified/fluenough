@@ -1,0 +1,64 @@
+schema: 1
+id: "as-en-numbers-big-sentences"
+kind: "layer"
+core: "as-numbers-big-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Big numbers: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-5500":
+    native: "My age is twenty."
+    confusables:
+      "c1": { why: "Sixty, a different number." }
+      "c2": { why: "Twenty-five, close to twenty." }
+  "as-5501":
+    native: "His or her age is sixty."
+    confusables:
+      "c1": { why: "Twenty, not sixty." }
+      "c2": { why: "Seventy, close to sixty." }
+  "as-5502":
+    native: "My salary is two thousand."
+    confusables:
+      "c1": { why: "A thousand, half of it." }
+      "c2": { why: "Two hundred, a tenth of it." }
+  "as-5503":
+    native: "Not a hundred, two hundred."
+    confusables:
+      "c1": { why: "A thousand, a larger number." }
+      "c2": { why: "Five hundred, a larger number." }
+  "as-5504":
+    native: "It is seven o'clock now."
+    confusables:
+      "c1": { why: "Ten o'clock, a different hour." }
+      "c2": { why: "Six, one less." }
+  "as-5505":
+    native: "It is eleven o'clock now."
+    confusables:
+      "c1": { why: "Twelve, one more." }
+      "c2": { why: "Ten, one less." }
+  "as-5506":
+    native: "Please give me five hundred grams."
+    bases:
+      "দিয়ক": "give (please)"
+    confusables:
+      "c1": { why: "A litre, a unit of volume." }
+      "c2": { why: "Two hundred, not five hundred." }
+  "as-5507":
+    native: "Please give me one litre."
+    bases:
+      "দিয়ক": "give (please)"
+    confusables:
+      "c1": { why: "A gram, a unit of weight." }
+      "c2": { why: "Two thousand, a larger number." }
+  "as-5508":
+    native: "Two thousand and twenty."
+    confusables:
+      "c1": { why: "A thousand, not two thousand." }
+      "c2": { why: "Sixty, a different number." }
+  "as-5509":
+    native: "My salary is not very much."
+    confusables:
+      "c1": { why: "Two thousand, a large sum." }
+      "c2": { why: "A little, the opposite of much." }

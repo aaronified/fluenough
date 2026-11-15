@@ -1,0 +1,88 @@
+schema: 1
+id: "as-en-quantities-sentences"
+kind: "layer"
+core: "as-quantities-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "How much and how many: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-5283":
+    native: "I have two books."
+    bases:
+      "কিতাপ": "book"
+      "আছে": "to be; there is; to have"
+    confusables:
+      "c1": { why: "Three things, the next number." }
+      "c2": { why: "One thing, a smaller number." }
+  "as-5284":
+    native: "I have one pen."
+    bases:
+      "কলম": "pen"
+      "আছে": "to be; there is; to have"
+    confusables:
+      "c1": { why: "Two things, a larger number." }
+      "c2": { why: "Three things, a larger number." }
+  "as-5285":
+    native: "He reads four books."
+    bases:
+      "কিতাপ": "book"
+      "পঢ়ে": "read (he reads)"
+    confusables:
+      "c1": { why: "Five things, the next number." }
+      "c2": { why: "Two things, a smaller number." }
+  "as-5286":
+    native: "I drink a lot of water."
+    bases:
+      "পানী": "water"
+      "খাওঁ": "drink (I drink)"
+    confusables:
+      "c1": { why: "A little, the opposite amount." }
+      "c2": { why: "A little, close in meaning." }
+  "as-5287":
+    native: "I read it twice."
+    bases:
+      "পঢ়োঁ": "read (I read)"
+    confusables:
+      "c1": { why: "Once, a different count." }
+      "c2": { why: "Every, a different word." }
+  "as-5288":
+    native: "I work every day."
+    bases:
+      "দিনে": "every day"
+      "কৰোঁ": "do; work (I do)"
+    confusables:
+      "c1": { why: "Whole, a different word." }
+      "c2": { why: "A few, a different amount." }
+  "as-5289":
+    native: "There are a few books."
+    bases:
+      "কিতাপ": "book"
+      "আছে": "to be; there is; to have"
+    confusables:
+      "c1": { why: "Many, a larger amount." }
+      "c2": { why: "One thing, a smaller amount." }
+  "as-5290":
+    native: "He drinks a little water."
+    bases:
+      "পানী": "water"
+      "খায়": "drink (he drinks)"
+    confusables:
+      "c1": { why: "Many, the opposite amount." }
+      "c2": { why: "A little, close in meaning." }
+  "as-5291":
+    native: "I have five books."
+    bases:
+      "কিতাপ": "book"
+      "আছে": "to be; there is; to have"
+    confusables:
+      "c1": { why: "Four things, the number before." }
+      "c2": { why: "Six, the next number." }
+  "as-5292":
+    native: "I write once."
+    bases:
+      "লিখোঁ": "write (I write)"
+    confusables:
+      "c1": { why: "Twice, a larger count." }
+      "c2": { why: "Ever, a different word." }
