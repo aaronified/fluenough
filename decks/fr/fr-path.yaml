@@ -419,7 +419,9 @@ units:
       - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes a dish" } }
     reading_passages:
       - { id: "recipe-card", text: { "en": "A recipe card with its steps" } }
-  - planned: { id: "fr-grammar-pronouns-y-en", grammar: ["pronoun-y", "pronoun-en"] }
+  - decks: ["fr-grammar-pronoun-y", "fr-grammar-pronoun-en"]
+    words: 0
+    grammar: ["pronoun-y", "pronoun-en"]
     listening_passages:
       - { id: "how-many-do-you-want", text: { "en": "At a bakery: how many do you want? I'll take three of them" } }
     reading_passages:
