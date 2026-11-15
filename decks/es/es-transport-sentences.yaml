@@ -78,6 +78,8 @@ cards:
     bases: [{ word: "A", base: "a" }, { word: "la", base: "la" }, { word: "estación", ref: "es-0684" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
     confusables: [{ id: "aeropuerto", ref: "es-0686", kind: "word" }, { id: "parada", ref: "es-0683", kind: "word" }]
   - id: "es-4601"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     target: "¿Cuánto cuesta el viaje?"
     ipa: "ˈkwanto ˈkwesta el ˈbjaxe"
     pos: "phrase"

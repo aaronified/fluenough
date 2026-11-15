@@ -16,6 +16,8 @@ cards:
     bases: [{ word: "Compro", ref: "es-0280" }, { word: "queso", ref: "es-0603" }, { word: "y", ref: "es-0048" }, { word: "leche", ref: "es-0014" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "supermercado", ref: "es-0601" }]
     confusables: [{ id: "tienda", ref: "es-0584", kind: "word" }, { id: "mercado", ref: "es-0567", kind: "word" }]
   - id: "es-0626"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     target: "Tengo una lista."
     ipa: "ˈtenɡo ˈuna ˈlista"
     phonetic: "[ˈt̪eŋɡo ˈuna ˈlist̪a]"
@@ -43,6 +45,8 @@ cards:
     bases: [{ word: "Bebo", ref: "es-0029" }, { word: "café", ref: "es-0611" }, { word: "con", base: "con" }, { word: "azúcar", ref: "es-0606" }]
     confusables: [{ id: "te", ref: "es-0612", kind: "word" }, { id: "zumo", ref: "es-0613", kind: "word" }]
   - id: "es-0629"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     target: "La carne es cara."
     ipa: "la ˈkaɾne es ˈkaɾa"
     pos: "phrase"
