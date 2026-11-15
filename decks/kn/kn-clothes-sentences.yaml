@@ -1,0 +1,95 @@
+schema: 1
+id: "kn-clothes-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-8181"
+    target: "ಇದು ನನ್ನ ಅಂಗಿ."
+    reading: "idu nanna aṅgi."
+    ipa: "id̪u nanna aŋɡi"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ನನ್ನ", ref: "kn-0619" }
+      - { word: "ಅಂಗಿ", ref: "kn-0901" }
+  - id: "kn-8182"
+    target: "ಅವಳ ಸೀರೆ ಒಳ್ಳೆಯದು."
+    reading: "avaḷa sīre oḷḷeyadu."
+    ipa: "aʋaɭa siːre oɭɭejad̪u"
+    pos: "phrase"
+    bases:
+      - { word: "ಅವಳ", ref: "kn-0623" }
+      - { word: "ಸೀರೆ", ref: "kn-0903" }
+      - { word: "ಒಳ್ಳೆಯದು", ref: "kn-0950" }
+  - id: "kn-8183"
+    target: "ನನಗೆ ಚಪ್ಪಲಿ ಕೊಡಿ."
+    reading: "nanage cappali koḍi."
+    ipa: "nanaɡe tʃappali koɖi"
+    pos: "phrase"
+    bases:
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಚಪ್ಪಲಿ", ref: "kn-0908" }
+      - { word: "ಕೊಡಿ", base: "ಕೊಡು", reading: "koḍu" }
+  - id: "kn-8184"
+    target: "ಶೂ ತೆಗೆ."
+    reading: "śū tege."
+    ipa: "ʃuː t̪eɡe"
+    pos: "phrase"
+    bases:
+      - { word: "ಶೂ", ref: "kn-0907" }
+      - { word: "ತೆಗೆ", ref: "kn-0633" }
+  - id: "kn-8185"
+    target: "ಟೋಪಿ ತೆಗೆ."
+    reading: "ṭōpi tege."
+    ipa: "ʈoːpi t̪eɡe"
+    pos: "phrase"
+    bases:
+      - { word: "ಟೋಪಿ", ref: "kn-0906" }
+      - { word: "ತೆಗೆ", ref: "kn-0633" }
+  - id: "kn-8186"
+    target: "ನನ್ನ ಕನ್ನಡಕ ಎಲ್ಲಿ?"
+    reading: "nanna kannaḍaka elli?"
+    ipa: "nanna kannaɖaka elli"
+    pos: "phrase"
+    bases:
+      - { word: "ನನ್ನ", ref: "kn-0619" }
+      - { word: "ಕನ್ನಡಕ", ref: "kn-0913" }
+      - { word: "ಎಲ್ಲಿ", ref: "kn-0169" }
+  - id: "kn-8187"
+    target: "ಉಂಗುರ ತೋರಿಸು."
+    reading: "uṅgura tōrisu."
+    ipa: "uŋɡura t̪oːrisu"
+    pos: "phrase"
+    bases:
+      - { word: "ಉಂಗುರ", ref: "kn-0914" }
+      - { word: "ತೋರಿಸು", ref: "kn-0653" }
+  - id: "kn-8188"
+    target: "ಬಟ್ಟೆ ಎಷ್ಟು?"
+    reading: "baṭṭe eṣṭu?"
+    ipa: "baʈʈe eʂʈu"
+    pos: "phrase"
+    bases:
+      - { word: "ಬಟ್ಟೆ", ref: "kn-0900" }
+      - { word: "ಎಷ್ಟು", ref: "kn-0173" }
+  - id: "kn-8189"
+    target: "ಸಾಕ್ಸ್ ತೊಳೆ."
+    reading: "sāks toḷe."
+    ipa: "saːks t̪oɭe"
+    pos: "phrase"
+    bases:
+      - { word: "ಸಾಕ್ಸ್", ref: "kn-0909" }
+      - { word: "ತೊಳೆ", ref: "kn-0647" }
+  - id: "kn-8190"
+    target: "ಅವಳು ದುಪ್ಪಟ್ಟವನ್ನು ತೊಳೆಯುತ್ತಾಳೆ."
+    reading: "avaḷu duppaṭṭavannu toḷeyuttāḷe."
+    ipa: "aʋaɭu d̪uppaʈʈaʋannu t̪oɭejut̪t̪aːɭe"
+    pos: "phrase"
+    bases:
+      - { word: "ಅವಳು", ref: "kn-0613" }
+      - { word: "ದುಪ್ಪಟ್ಟವನ್ನು", base: "ದುಪ್ಪಟ್ಟ", reading: "duppaṭṭa" }
+      - { word: "ತೊಳೆಯುತ್ತಾಳೆ", base: "ತೊಳೆ", reading: "toḷe" }
