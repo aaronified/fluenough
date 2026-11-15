@@ -1,0 +1,104 @@
+# Development setup
+
+Source of truth: this wiki page.
+
+
+## Requirements
+
+- Flutter 3.47+ (ships Dart 3.13+)
+- JDK 21 and the Android SDK, for Android builds
+- Python 3.11+ and PyYAML, for the deck tools only
+
+## First checkout
+
+The `android/` and `ios/` folders are generated, not committed. Recreate them:
+
+```sh
+flutter create . --org app --project-name fluenough --platforms=android,ios
+rm -f test/widget_test.dart   # generated boilerplate; references MyApp, not ours
+python3 tools/brand_android.py   # icon, label, launch screen, permissions, updater, voice settings
+flutter pub get
+dart run build_runner build
+flutter run
+```
+
+The application id is **`app.fluenough`**. Changing it later means touching the
+Gradle config, the iOS bundle id and every signing setup, so do not.
+
+## Immutable Linux distributions
+
+On Fedora Silverblue, Kinoite, Bazzite and similar, do not layer the JDK and
+Android SDK onto the base image. Use a container:
+
+```sh
+distrobox create --name fluenough-dev --image fedora:latest
+distrobox enter fluenough-dev
+# inside: dnf install java-21-openjdk-devel, then Flutter and Android cmdline-tools
+```
+
+`adb` reaches a USB device from inside the container when `/dev/bus/usb` is
+available; wireless debugging sidesteps the question entirely.
+
+## Testing on a device
+
+Three options, in descending order of usefulness:
+
+**A physical phone.** The only environment with real TTS voices and a real IME.
+Production drills for Japanese, Chinese and Korean cannot be meaningfully
+tested anywhere else.
+
+**An Android emulator (AVD) with a Google APIs system image.** Hardware
+accelerated where `/dev/kvm` exists. Has real Google TTS voices. Budget 2–3 GB
+of RAM.
+
+**Waydroid.** Fine for UI iteration and fast to start. But Waydroid images are
+LineageOS-based and ship **without Google Play Services**, which is what
+provides the TTS voices — so **listening drills will be silent** unless you add
+GApps or install a standalone TTS engine APK. Never conclude that audio is
+broken from a Waydroid run alone.
+
+## Accessibility
+
+The `test/accessibility_*_test.dart` files check automatically (#26):
+
+- Flutter's tap-target, label and WCAG AA contrast guidelines on every drill
+  state, the four tabs and the pushed screens, in both themes
+- tap targets and no clipping at font scale 2.0, Android's largest
+- no answer on the screen reader's tree before it is given
+- deck content in feedback marked with the deck's language
+
+A test cannot hear a voice. After a change to a drill, run TalkBack on a
+phone with the deck's voice installed. Check that:
+
+- a card's word is read in the deck's language, not English
+- the feedback is announced as it appears, with the answer in the deck's
+  language
+- recognition does not read the meaning before "Show answer"
+- every button says what it does
+
+## Before opening a pull request
+
+```sh
+python3 tools/validate_decks.py decks/   # if you touched decks
+dart format --set-exit-if-changed .
+flutter analyze
+flutter test
+```
+
+CI runs all four, so do not run them for a docs-only change. Write a test only as AGENTS.md says, "Tests check behaviour".
+
+A push to main that changes documentation only (README.md, CLAUDE.md,
+AGENTS.md, CONTRIBUTING.md, `docs/`, `wiki/`) starts no CI run, so it neither
+cancels a code push's pending run nor leaves the CI badge on "cancelled". The
+exceptions are `docs/REVIEWING.md` and `wiki/Reviewing-Guide.md`, which a test
+reads, and CHANGELOG.md, an app asset: they still run CI. Pull requests run
+it too. A pull request that changes only files under `decks/` (other than
+`decks/themes.yaml` and `decks/min_app.json`) skips "App: analyse", "App: live
+downloads" and "Build debug APK"; its 8 test shards always run. The deck index
+is made once, by "Decks: index", and shared with the jobs that need it. The
+tools' tests run in two parts, plus a real-decks job and a today's-decks job,
+and "Decks: tools' tests" gathers them (`.github/workflows/ci.yml`).
+
+The `wiki/` folder is published to the GitHub wiki by `.github/workflows/wiki-sync.yml`; edits made in the wiki's web editor are overwritten by the next sync.
+
+See also: [Contributing](Contributing) · [Home](Home)
