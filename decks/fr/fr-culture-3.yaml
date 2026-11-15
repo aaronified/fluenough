@@ -1,0 +1,164 @@
+# A culture deck of French-language poems of the nineteenth century that are in the public domain: one opening line each,
+# with its source, its rights basis and its creator (wiki/Plan-Deck-Kinds-And-Topics.md). Built from French Wikipedia and
+# French Wikisource pages only, and read there. Partial: five of the plan's eighteen (ids fr-4200 to fr-4204; fr-4205 to
+# fr-4249 unused). Dropped, with the reason read on the page: Verlaine, Chanson d'automne (the Wikisource page had no text);
+# Dumas, Monte-Cristo (no text page found, the search hit was another novel); Flaubert, Madame Bovary (search found no text
+# page); Lamartine's other poems, Musset, Nerval, Vigny, Gautier, Leconte de Lisle, Heredia, Renard, Sand, Daudet, Balzac,
+# Stendhal, Maupassant, Zola and Verne (not searched; not kept without a text read).
+schema: 1
+id: "fr-culture-3"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+genre: "culture"
+level: "B1"
+tags: ["unreviewed"]
+cards:
+  - id: "fr-4200"
+    target: "Demain, dès l'aube, à l'heure où blanchit la campagne."
+    words: ["Demain", "dès", "l'aube", "à", "l'heure", "où", "blanchit", "la", "campagne"]
+    ipa: "dəmɛ̃ dɛz ob a lœʁ u blɑ̃ʃi la kɑ̃paɲ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-victor-hugo"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Demain", base: "demain" }
+      - { word: "dès", base: "dès" }
+      - { word: "l'aube", base: "aube" }
+      - { word: "à", base: "à" }
+      - { word: "l'heure", base: "heure" }
+      - { word: "où", base: "où" }
+      - { word: "blanchit", base: "blanchir" }
+      - { word: "la", base: "le" }
+      - { word: "campagne", base: "campagne" }
+    source:
+      author: "Victor Hugo"
+      work: "Les Contemplations, 'Demain, dès l'aube', first line"
+      date: 1856
+      edition: "Les Contemplations, Nelson 1911, p. 253, as shown on French Wikisource (Les Contemplations/« Demain, dès l'aube… »); the book is dated 1856 on French Wikipedia"
+      url: "https://fr.wikisource.org/wiki/Les_Contemplations/%C2%AB_Demain,_d%C3%A8s_l%E2%80%99aube,_%C3%A0_l%E2%80%99heure_o%C3%B9_blanchit_la_campagne_%C2%BB"
+      basis: "public-domain"
+      author_died: 1885
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4201"
+    target: "Ainsi, toujours poussés vers de nouveaux rivages."
+    words: ["Ainsi", "toujours", "poussés", "vers", "de", "nouveaux", "rivages"]
+    ipa: "ɛ̃si tuʒuʁ puse vɛʁ də nuvo ʁivaʒ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-alphonse-de-lamartine"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Ainsi", base: "ainsi" }
+      - { word: "toujours", base: "toujours" }
+      - { word: "poussés", base: "pousser" }
+      - { word: "vers", base: "vers" }
+      - { word: "de", base: "de" }
+      - { word: "nouveaux", base: "nouveau" }
+      - { word: "rivages", base: "rivage" }
+    source:
+      author: "Alphonse de Lamartine"
+      work: "Méditations poétiques, 'Le Lac', first line"
+      date: 1820
+      edition: "Méditations poétiques, first edition of 1820, Meditation X, as shown on French Wikisource (Méditations poétiques (éd. originale 1820)/Le Lac)"
+      url: "https://fr.wikisource.org/wiki/M%C3%A9ditations_po%C3%A9tiques_(%C3%A9d._originale_1820)/Le_Lac"
+      basis: "public-domain"
+      author_died: 1869
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4202"
+    target: "Souvent, pour s'amuser, les hommes d'équipage."
+    words: ["Souvent", "pour", "s'amuser", "les", "hommes", "d'équipage"]
+    ipa: "suvɑ̃ puʁ samyze le zɔm dekipaʒ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-charles-baudelaire"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Souvent", base: "souvent" }
+      - { word: "pour", base: "pour" }
+      - { word: "s'amuser", base: "amuser" }
+      - { word: "les", base: "le" }
+      - { word: "hommes", base: "homme" }
+      - { word: "d'équipage", base: "équipage" }
+    source:
+      author: "Charles Baudelaire"
+      work: "Les Fleurs du mal, 'L'Albatros', first line"
+      date: 1861
+      edition: "Les Fleurs du mal, 1861 edition (Poulet-Malassis), as shown on French Wikisource (Les Fleurs du mal (1861)/L'Albatros)"
+      url: "https://fr.wikisource.org/wiki/Les_Fleurs_du_mal_(1861)/L%E2%80%99Albatros"
+      basis: "public-domain"
+      author_died: 1867
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4203"
+    target: "La chair est triste, hélas ! et j'ai lu tous les livres."
+    words: ["La", "chair", "est", "triste", "hélas", "et", "j'ai", "lu", "tous", "les", "livres"]
+    ipa: "la ʃɛʁ ɛ tʁist ela e ʒe ly tu le livʁ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-stephane-mallarme"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "La", base: "le" }
+      - { word: "chair", base: "chair" }
+      - { word: "est", base: "être" }
+      - { word: "triste", base: "triste" }
+      - { word: "hélas", base: "hélas" }
+      - { word: "et", base: "et" }
+      - { word: "j'ai", base: "avoir" }
+      - { word: "lu", base: "lire" }
+      - { word: "tous", base: "tout" }
+      - { word: "les", base: "le" }
+      - { word: "livres", base: "livre" }
+    source:
+      author: "Stéphane Mallarmé"
+      work: "Brise marine, first line"
+      date: 1865
+      edition: "Brise marine, text as shown on French Wikisource (Brise marine (Stéphane Mallarmé) (1887)); the poem is dated 1865 on French Wikipedia"
+      url: "https://fr.wikisource.org/wiki/Brise_marine_(St%C3%A9phane_Mallarm%C3%A9)_(1887)"
+      basis: "public-domain"
+      author_died: 1898
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4204"
+    target: "C'est un trou de verdure où chante une rivière."
+    words: ["C'est", "un", "trou", "de", "verdure", "où", "chante", "une", "rivière"]
+    ipa: "sɛ œ̃ tʁu də vɛʁdyʁ u ʃɑ̃t yn ʁivjɛʁ"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "fr-arthur-rimbaud"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "C'est", base: "ce" }
+      - { word: "un", base: "un" }
+      - { word: "trou", base: "trou" }
+      - { word: "de", base: "de" }
+      - { word: "verdure", base: "verdure" }
+      - { word: "où", base: "où" }
+      - { word: "chante", base: "chanter" }
+      - { word: "une", base: "un" }
+      - { word: "rivière", base: "rivière" }
+    source:
+      author: "Arthur Rimbaud"
+      work: "Le Dormeur du val, first line"
+      date: 1891
+      edition: "Poésies complètes, Vanier 1895, p. 84, as shown on French Wikisource (Poésies (Rimbaud)/éd. Vanier, 1895/Le Dormeur du val); the first printing is dated 1891 in the Wikisource list of editions of the poem"
+      url: "https://fr.wikisource.org/wiki/Po%C3%A9sies_(Rimbaud)/%C3%A9d._Vanier,_1895/Le_Dormeur_du_val"
+      basis: "public-domain"
+      author_died: 1891
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
