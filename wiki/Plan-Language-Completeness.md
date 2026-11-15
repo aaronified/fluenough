@@ -98,6 +98,8 @@ Task T23 of the kinds plan is where it lands.
 
 **Kannada (`kn`), verified 2026-11-15 on decks-live** (full audit in [Deck-Work-Queue-KN](Deck-Work-Queue-KN.md)): path (110 units, all built), cores and layers (96 vocab, 30 grammar), script decks, phrasebook (20) and facts (44) done; sentences missing (none for 96 vocab decks); readings missing (1); situations, topics, culture, creators, proverbs, multi-word verbs, recommendations and the sourcing list missing; professional held; narrow IPA none (no registry entry or rules file; broad `ipa` on 1,715 of 2,003 cards); review queue 12 rows.
 
+**Mandarin Chinese (`zh`), verified 2026-11-15 on decks-live** (full audit in [Deck-Work-Queue-ZH](Deck-Work-Queue-ZH.md)): path (130 units, all built), cores and layers (377 cores, 287 layers, 4,366 cards), script decks and 89 reading decks done (the reading decks' answer-leak flaw to fix); sentences done except `zh-emergencies`; phrasebook present; situations, topics, culture, creators, proverbs, multi-word verbs, recommendations, facts and the sourcing list missing; professional held; broad and narrow IPA none (0 of 4,366 cards, no registry entry or rules file); review queue 105 lines.
+
 Counts on decks-live of all files under `decks/<code>/`, layers included, for orientation only (2026-11-13; ja re-counted 2026-11-15): ja 703, es 442, fr 380, te 302, mr 266, bn 465, as 436, gu 115. A file count says nothing about coverage.
 
 **First task of the stream, before any build:** one audit per language filling the grid, from decks-live, one Haiku agent for the reads. Nothing is built for a language on a guess.
@@ -170,7 +172,7 @@ Owner (2026-11-13): "Deck work issues to be updated with the full deck format as
 | French | fr | #359 | first list (to B1) | deck priority 10 of the first list, culture priority 3 of 8 | path of 113 units, 77 built; 229 core files |
 | Spanish | es | #1192 | first list (to B1) | deck priority 3 of the first list, culture priority 2 of 8 | path of 102 units, all built; 271 core files |
 | German | de | #361 | second list (to A1; Classical Sanskrit to B1) | second-list position 7 | path of 111 units, 1 built; 3 core files |
-| Mandarin Chinese | zh | #376 | first list (to B1) | deck priority 7 of the first list | path of 130 units, 129 built; 377 core files |
+| Mandarin Chinese | zh | #376 | first list (to B1) | deck priority 7 of the first list | path of 130 units, all built; 377 core files; audit and task plan in [Deck-Work-Queue-ZH](Deck-Work-Queue-ZH.md) (2026-11-15) |
 | Japanese | ja | #378 | first list (to B1) | deck priority 9 of the first list, culture priority 1 of 8 | path of 138 units, 95 built; 193 core files (closest to complete, not complete) |
 | Korean | ko | #379 | second list (to A1; Classical Sanskrit to B1) | second-list position 4 | path of 136 units, 7 built; 16 core files |
 | Esperanto | eo | #388 | third list and others (first words only) | no ranked priority | path of 112 units, 1 built; 3 core files |
