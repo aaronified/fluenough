@@ -85,6 +85,7 @@ extension LanguageOffer on AppState {
             progress: B1Progress.of(
               b1Units(code, native.code),
               isNotation: first?.language.isNotation ?? false,
+              cultureCards: _cultureCards(code, native.code),
             ),
           ),
       ],
@@ -125,6 +126,17 @@ extension LanguageOffer on AppState {
         ),
     ];
   }
+
+  /// How many cards the culture decks of [language] taught from [native]
+  /// have, for the culture part of its course line.
+  int _cultureCards(String language, String native) => decks
+      .where(
+        (e) =>
+            e.language.code == language &&
+            e.deck.native.code == native &&
+            e.deck.genre == 'culture',
+      )
+      .fold(0, (sum, e) => sum + e.cards.length);
 
   /// The ids of the cards of [entries] that count as words, the decks in
   /// [alphabet] left out.
