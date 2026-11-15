@@ -1,0 +1,58 @@
+schema: 1
+id: "mr-en-places-sentences"
+kind: "layer"
+core: "mr-places-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Places: sentences"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the places words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-6340":
+    native: "I go to school every day."
+    bases: { "मी": "I", "रोज": "every day", "शाळेत": "to school", "जातो": "go" }
+    confusables: { "w1": { why: "घरी (ghari) means at home, not at school." }, "f1": { why: "जाते (jāte) is what a woman says for I go; जातो (jāto) is for a man." }, "w2": { why: "कॉलेज (kôlej) is a college, not a school." } }
+  "mr-6341":
+    native: "Where is the bank?"
+    bases: { "कुठे": "where", "आहे": "is" }
+    confusables: { "w1": { why: "टपाल (ṭapāl) means post office, not bank." }, "f1": { why: "आहेत (āhet) is plural." }, "w2": { why: "रस्ता (rastā) means road." } }
+  "mr-6342":
+    native: "The temple is near."
+    bases: { "जवळ": "near", "आहे": "is" }
+    confusables: { "w1": { why: "लांब (lāmb) means far, the opposite of जवळ (javaḷ)." }, "f1": { why: "आहेत (āhet) is plural." }, "w2": { why: "मागे (māge) means behind." } }
+  "mr-6343":
+    native: "Children play in the park."
+    bases: { "उद्यानात": "in the park", "मुले": "children", "खेळतात": "play" }
+    confusables: { "w1": { why: "रस्त्यावर (rastyāvar) means on the road." }, "f1": { why: "खेळतो (kheḷto) is for one man, not many children." }, "w2": { why: "शेत (śet) means a field, not a park." } }
+  "mr-6344":
+    native: "My school is big."
+    bases: { "माझी": "my", "मोठी": "big", "आहे": "is" }
+    confusables: { "w1": { why: "माझा (mājhā) is for a masculine noun; शाळा (śāḷā) is feminine." }, "f1": { why: "आहेत (āhet) is plural." }, "w2": { why: "छोटी (choṭi) means small, the opposite of मोठी (moṭhi)." } }
+  "mr-6345":
+    native: "There is a lot of crowd in the city."
+    bases: { "शहरात": "in the city", "खूप": "a lot", "गर्दी": "crowd", "आहे": "is" }
+    confusables: { "w1": { why: "तलाव (talāv) means lake." }, "f1": { why: "आहेत (āhet) is plural." }, "w2": { why: "शांत (śānt) means quiet, the opposite of गर्दी (gardi)." } }
+  "mr-6346":
+    native: "The petrol pump is on the road."
+    bases: { "पंप": "pump", "रस्त्यावर": "on the road", "आहे": "is" }
+    confusables: { "w1": { why: "फुटपाथ (phuṭpāth) means pavement." }, "f1": { why: "आहेत (āhet) is plural." }, "w2": { why: "रस्ता (rastā) means road, the place itself." } }
+  "mr-6347":
+    native: "I go to watch a film."
+    bases: { "मी": "I", "पाहायला": "to watch", "जातो": "go" }
+    confusables: { "w1": { why: "थिएटर (thieṭar) means theatre, a place for stage plays." }, "f1": { why: "जातात (jātāt) is for more than one person." }, "w2": { why: "घरी (ghari) means at home." } }
+  "mr-6348":
+    native: "I go to the library."
+    bases: { "मी": "I", "ग्रंथालयात": "to the library", "जातो": "go" }
+    confusables: { "w1": { why: "संग्रहालय (saṅgrahālay) is a museum." }, "f1": { why: "जाते (jāte) is what a woman says for I go." }, "w2": { why: "शाळेत (śāḷet) means at school." } }
+  "mr-6349":
+    native: "The pharmacy is near here."
+    bases: { "इथे": "here", "जवळ": "near", "आहे": "is" }
+    confusables: { "w1": { why: "दवाखाना (davākhānā) means clinic, not pharmacy." }, "f1": { why: "आहेत (āhet) is plural." }, "w2": { why: "लांब (lāmb) means far, the opposite of जवळ (javaḷ)." } }
+  "mr-6350":
+    native: "The lake is very beautiful."
+    bases: { "खूप": "very", "सुंदर": "beautiful", "आहे": "is" }
+    confusables: { "w1": { why: "नदी (nadi) means river, not lake." }, "f1": { why: "आहेत (āhet) is plural." }, "w2": { why: "डोंगर (ḍoṅgar) means hill." } }
+  "mr-6351":
+    native: "I do not go to church."
+    bases: { "मी": "I", "चर्चमध्ये": "in church", "जात": "going", "नाही": "not" }
+    confusables: { "w1": { why: "मशीद (maśid) is a mosque." }, "f1": { why: "जातो (jāto) is the positive: I go." }, "w2": { why: "मंदिर (mandir) is a temple." } }

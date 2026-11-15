@@ -1,0 +1,56 @@
+schema: 1
+id: "mr-en-school-sentences"
+kind: "layer"
+core: "mr-school-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with school words"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the school words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-6480":
+    native: "My teacher is very good."
+    bases: { "माझी": "my", "खूप": "very", "चांगली": "good", "आहे": "is" }
+    confusables: { "w1": { why: "He, not she: तो (to) means he." }, "f1": { why: "Plural: आहेत (āhet) is for more than one; one teacher takes आहे (āhe)." } }
+  "mr-6481":
+    native: "Is there homework today?"
+    bases: { "आहे": "is", "का": "question marker" }
+    confusables: { "w1": { why: "Tomorrow, not today: उद्या (udyā) means tomorrow." }, "f1": { why: "Plural: आहेत (āhet) is for more than one; homework is one thing, so आहे (āhe)." } }
+  "mr-6482":
+    native: "He studies every day."
+    bases: { "रोज": "every day" }
+    confusables: { "w1": { why: "She, not he: ती (ti) means she." }, "f1": { why: "Feminine: करते (karte) is for a woman; करतो (karto) is for a man." } }
+  "mr-6483":
+    native: "In the exam she gets good marks."
+    bases: { "चांगले": "good", "गुण": "marks" }
+    confusables: { "w1": { why: "He, not she: तो (to) means he." }, "f1": { why: "Masculine: मिळवतो (miḷvto) is for a man; she takes मिळवते (miḷvte)." } }
+  "mr-6484":
+    native: "The result will come tomorrow."
+    bases: { "आहे": "is (with the verb, future)" }
+    confusables: { "w1": { why: "Today, not tomorrow: आज (āj) means today." }, "f1": { why: "Present, not future: येतो (yeto) means comes; येणार (yeṇār) means will come." } }
+  "mr-6485":
+    native: "Where is my school bag?"
+    bases: { "माझं": "my", "कुठे": "where", "आहे": "is" }
+    confusables: { "w1": { why: "Here, not where: इथे (ithe) means here." }, "f1": { why: "Masculine: माझा (mājhā) goes with a masculine noun; the bag takes माझं (mājham̐)." } }
+  "mr-6486":
+    native: "He goes to the lab."
+    confusables: { "w1": { why: "She, not he: ती (ti) means she." }, "f1": { why: "Feminine: जाते (jāte) is for a woman; तो (to) is he, so जातो (jāto)." } }
+  "mr-6487":
+    native: "She writes on the board."
+    confusables: { "w1": { why: "He, not she: तो (to) means he." }, "f1": { why: "Masculine: लिहितो (lihito) is for a man; ती (ti) is she, so लिहिते (lihite)." } }
+  "mr-6488":
+    native: "Chalk and the eraser are in the bag."
+    bases: { "आहेत": "are" }
+    confusables: { "w1": { why: "They, for things: ते (te) means they." }, "f1": { why: "Singular: आहे (āhe) is for one thing; two things take आहेत (āhet)." } }
+  "mr-6489":
+    native: "He passed the exam."
+    bases: { "झाला": "became; here, passed" }
+    confusables: { "w1": { why: "She, not he: ती (ti) means she." }, "f1": { why: "Feminine: झाली (jhāli) goes with a feminine subject; he is masculine, so झाला (jhālā)." } }
+  "mr-6490":
+    native: "When is science on the timetable?"
+    bases: { "कधी": "when", "आहे": "is" }
+    confusables: { "w1": { why: "Here, not when: इथे (ithe) means here; कधी (kadhi) asks when." }, "f1": { why: "Plural: आहेत (āhet) is for more than one; science is one subject, so आहे (āhe)." } }
+  "mr-6491":
+    native: "The recess has ended."
+    bases: { "मधली": "middle", "संपली": "ended" }
+    confusables: { "w1": { why: "Today, not the recess: आज (āj) means today." }, "f1": { why: "Masculine: संपला (sampalā) goes with a masculine noun; सुट्टी (suṭṭi) is feminine, so संपली (sampali)." } }

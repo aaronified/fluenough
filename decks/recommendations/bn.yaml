@@ -1,0 +1,255 @@
+# Popular works of Bengal and Bangladesh that are not in the public domain: the learner finds them (a library, a shop, a service) and the app asks
+# the questions after the learner has marked the work as seen, read or heard. Nothing of a work is quoted (wiki/Plan-Language-Completeness.md,
+# "Source-it-yourself works"). No links are given: no link has been checked. Years and creators were read on the English Wikipedia page of each work.
+schema: 1
+kind: "recommendations"
+id: "recommendations-bn"
+language: "bn"
+license: "CC-BY-SA-4.0"
+recommendations:
+  - id: "bn-rec-pather-panchali"
+    medium: "film"
+    title: { text: "পথের পাঁচালী", reading: "pôther pām̐cāli" }
+    creator: ["bn-satyajit-ray"]
+    year: 1955
+    level: "B1"
+    briefing: { en: "Satyajit Ray's first film, about a poor family in a Bengali village in the late 1910s. It follows a brother and sister, Apu and Durga, as the family struggles to get by. A panchali (\u09aa\u09be\u0981\u099a\u09be\u09b2\u09c0, p\u0101m\u0310c\u0101li) is a kind of Bengali narrative folk song. The film is the first of the Apu Trilogy and one of the best-known Indian films abroad." }
+    questions:
+      - { id: "q1", prompt: { en: "Which old relative lives with the family and often takes food from the kitchen?" }, options: { en: ["Apu's grandmother", "A neighbour's mother", "Indir, an elderly cousin"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "What sound do Apu and Durga stop to listen for in the evening?" }, options: { en: ["A train whistle", "A temple bell", "A fisherman's song"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What does Apu do with the necklace he finds as the family packs to leave?" }, options: { en: ["He gives it to his mother", "He throws it into a pond", "He buries it under a tree"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "bn-rec-charulata"
+    medium: "film"
+    title: { text: "চারুলতা", reading: "cārulotā" }
+    creator: ["bn-satyajit-ray"]
+    year: 1964
+    level: "B1"
+    briefing: { en: "A quiet drama set in Calcutta in 1879 about Charulata, a clever and lonely wife whose husband is busy with his newspaper. A young cousin comes to stay and encourages her to write. The film is based on a novella by Rabindranath Tagore and is often called one of Ray's finest." }
+    questions:
+      - { id: "q1", prompt: { en: "What does Charu use to watch the world outside her window?" }, options: { en: ["A telescope", "A pair of binoculars", "A hand mirror"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Who encourages Charu to write?" }, options: { en: ["Her brother Umapada", "Bhupati's friend Nishikanta", "Bhupati's younger cousin Amal"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "What does Charu's brother Umapada do that breaks Bhupati's trust?" }, options: { en: ["He takes money from the safe and runs away", "He sells the printing press", "He writes against Bhupati in another paper"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "bn-rec-sonar-kella"
+    medium: "film"
+    title: { text: "সোনার কেল্লা", reading: "śonār kellā" }
+    creator: ["bn-satyajit-ray"]
+    year: 1974
+    level: "A2"
+    briefing: { en: "A detective adventure based on Ray's own novel. The detective Feluda travels to Rajasthan to protect a boy who says he remembers a golden fort from a past life. It is a good first film for learners because the story is easy to follow." }
+    questions:
+      - { id: "q1", prompt: { en: "Who is the parapsychologist who offers to help the boy Mukul?" }, options: { en: ["Dr. Hemanga Hajra", "Mandar Bose", "Amiyanath Burman"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "What small clue shows Feluda that the man posing as the doctor is an impostor?" }, options: { en: ["He cannot read a map", "He has no luggage", "The name in the circuit house register is spelled differently"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "In which city is the golden fort that the characters finally reach?" }, options: { en: ["Jaipur", "Jaisalmer", "Jodhpur"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "bn-rec-goopy-gyne-bagha-byne"
+    medium: "film"
+    title: { text: "গুপী গাইন বাঘা বাইন", reading: "gupi gāin bāghā bāin" }
+    creator: ["bn-satyajit-ray"]
+    year: 1969
+    level: "A2"
+    briefing: { en: "A musical fantasy about a bad singer and a bad drummer who are sent away from their villages and meet in a forest. Ghosts give them magic gifts, and they use music to stop a war between two kingdoms. Ray wrote the songs himself, and the film has stayed popular with children and adults." }
+    questions:
+      - { id: "q1", prompt: { en: "Why is Goopy driven out of his village?" }, options: { en: ["He stole from the king", "He sang badly outside the king's window", "He refused to pay a tax"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "What do the king of the ghosts give the two friends?" }, options: { en: ["Three wishes that work only when they are together", "A magic flute", "A bag of gold"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "How do the two friends stop the army of Halla from attacking?" }, options: { en: ["They fight with swords", "They hide in the forest", "They sing and drum so that the soldiers cannot move"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "bn-rec-meghe-dhaka-tara"
+    medium: "film"
+    title: { text: "মেঘে ঢাকা তারা", reading: "meghe ḍhākā tārā" }
+    creator: ["bn-ritwik-ghatak"]
+    year: 1960
+    level: "B1"
+    briefing: { en: "A sad black-and-white drama about Nita, a young woman in a refugee family on the edge of Calcutta after the Partition. She works to keep her family going while everyone takes her kindness for granted. It is the first film of Ghatak's Partition trilogy and is often shown at festivals around the world." }
+    questions:
+      - { id: "q1", prompt: { en: "What illness does Nita get?" }, options: { en: ["Cholera", "Malaria", "Tuberculosis"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "What does Nita's elder brother Shankar want to become?" }, options: { en: ["A doctor", "A singer", "A teacher"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Whom does Nita's lover Sanat leave her for?" }, options: { en: ["Her sister Geeta", "A rich neighbour", "A friend from work"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "bn-rec-jalsaghar"
+    medium: "film"
+    title: { text: "জলসাঘর", reading: "jôlśāghor" }
+    creator: ["bn-satyajit-ray"]
+    year: 1958
+    level: "B1"
+    briefing: { en: "A drama about Biswambhar Roy, a zamindar (\u099c\u09ae\u09bf\u09a6\u09be\u09b0, jomid\u0101r, a landowner of the old order) whose fortune is falling. He spends what is left on concerts in his music room, to show that he is still above his rich new neighbour. It is one of Ray's films with the most Indian classical music and dance." }
+    questions:
+      - { id: "q1", prompt: { en: "Who is Biswambhar's rival neighbour?" }, options: { en: ["A young musician", "Mahim Ganguly, who has newly become rich", "His own steward"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "What happened to Biswambhar's wife and son?" }, options: { en: ["They were killed when their boat was caught in a cyclone", "They left him for the city", "They moved abroad"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "How does the film end?" }, options: { en: ["He sells the palace", "He leaves for Calcutta by train", "He rides his white horse and is thrown and killed"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "bn-rec-matir-moina"
+    medium: "film"
+    title: { text: "মাটির ময়না", reading: "māṭir môynā" }
+    creator: ["bn-tareque-masud"]
+    year: 2002
+    level: "B1"
+    briefing: { en: "A film set in East Pakistan in the late 1960s, before the Liberation War of Bangladesh. A boy, Anu, is sent by his strict father to a madrasa (an Islamic school), while the country around him is changing. The director based it on his own childhood. It was Bangladesh's first submission for the Academy Award for Best Foreign Language Film." }
+    questions:
+      - { id: "q1", prompt: { en: "Who takes Anu to see Hindu festivals and the canoe race, against his father's wishes?" }, options: { en: ["His mother Ayesha", "His uncle Milon", "His friend Rokon"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "What game does Anu play with his friend Rokon?" }, options: { en: ["Marbles", "Kite flying", "Catch with an imaginary ball"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "Why does Anu's little sister Asma die?" }, options: { en: ["Her father refuses modern medicine", "She is lost in a flood", "She is hurt in a riot"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "bn-rec-autograph"
+    medium: "film"
+    title: { text: "অটোগ্রাফ", reading: "ôṭogrāph" }
+    creator: ["bn-srijit-mukherji"]
+    year: 2010
+    level: "B1"
+    briefing: { en: "A musical drama about a young director who wants to remake Ray's film Nayak. The film is a tribute to the actor Uttam Kumar. It was the first film of the director Srijit Mukherji." }
+    questions:
+      - { id: "q1", prompt: { en: "What is the name of the famous film star whom the young director approaches?" }, options: { en: ["Arun Chatterjee", "Uttam Kumar", "Shuvobrata"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "What does the star agree to do for the project?" }, options: { en: ["Direct it", "Write its songs", "Pay for it"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "What does the director do with the accidentally recorded conversation?" }, options: { en: ["He deletes it", "He leaks it to the press", "He shows it to the star"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "bn-rec-chokher-bali"
+    medium: "film"
+    title: { text: "চোখের বালি", reading: "cokher bāli" }
+    creator: ["bn-rituparno-ghosh"]
+    year: 2003
+    level: "B1"
+    briefing: { en: "A period drama based on a Tagore novel of 1903, set in Kolkata in the early twentieth century. A young widow, Binodini, moves into a family's house and changes the lives of everyone in it. The title is a nickname that means a grain of sand in the eye, and it also means an eyesore." }
+    questions:
+      - { id: "q1", prompt: { en: "What happens to Binodini's husband?" }, options: { en: ["He goes abroad", "He leaves her for another woman", "He dies the day after the wedding"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "Which two women call each other Chokher Bali?" }, options: { en: ["Binodini and Ashalata", "Binodini and Rajalakshmi", "Ashalata and Rajalakshmi"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What does Binodini do on the day she is to marry Behari?" }, options: { en: ["She marries someone else", "She disappears and leaves letters", "She asks Mahendra to stop it"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "bn-rec-apur-sansar"
+    medium: "film"
+    title: { text: "অপুর সংসার", reading: "ôpur śôṅśār" }
+    creator: ["bn-satyajit-ray"]
+    year: 1959
+    level: "B1"
+    briefing: { en: "The last film of the Apu Trilogy. Apu is a young graduate in Calcutta who wants to be a writer. A friend takes him to a village wedding, and his life takes a turn that he did not plan. It stars Soumitra Chatterjee in his first film role." }
+    questions:
+      - { id: "q1", prompt: { en: "Why is the first wedding at the village cancelled?" }, options: { en: ["The groom has a serious mental disorder", "The bride runs away", "The family cannot pay"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "What does Apu do with the manuscript of his novel?" }, options: { en: ["He publishes it", "He gives it to a friend", "He throws it away"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "Where does Pulu find Apu working years later?" }, options: { en: ["On a ship", "At a coal mine", "In a school"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "bn-rec-debi"
+    medium: "book"
+    script: "bengali"
+    title: { text: "দেবী", reading: "debi" }
+    creator: ["bn-humayun-ahmed"]
+    year: 1985
+    level: "B1"
+    briefing: { en: "A short mystery novel from Bangladesh. A young wife, Ranu, seems to know things she should not know, and her husband tries to explain it with logic. It is the book that introduced the character Misir Ali, a university lecturer who solves puzzles by reasoning. It is a quick read with an eerie ending." }
+    questions:
+      - { id: "q1", prompt: { en: "What is Ranu's neighbour Neelu studying?" }, options: { en: ["Medicine", "Law", "Psychology"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "What disappeared from the Vishnu temple after a man fled from it in fear?" }, options: { en: ["A bell", "A white idol", "A lamp"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What does Misir Ali notice about Neelu at the end?" }, options: { en: ["Her looks and manner begin to resemble Ranu's", "She forgets everything that happened", "She leaves the country"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "bn-rec-padma-nadir-majhi"
+    medium: "book"
+    script: "bengali"
+    title: { text: "পদ্মা নদীর মাঝি", reading: "pôdmā nodir mājhi" }
+    creator: ["bn-manik-bandyopadhyay"]
+    year: 1936
+    level: "B1"
+    briefing: { en: "A novel about poor fishermen on the Padma river in Bengal. It follows one man whose life changes when a trader promises a new life on a distant island. It was made into a well-known film in 1993 by Goutam Ghose, so a learner can compare the book with the screen version." }
+    questions:
+      - { id: "q1", prompt: { en: "In which year is the story set?" }, options: { en: ["1905", "1947", "1971"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "What does the trader take from the villagers as proof of his help after the storm?" }, options: { en: ["Their thumb impressions", "Their boats", "Their fishing nets"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What is the name of the island Kuber goes to at the end?" }, options: { en: ["Sandwip", "Bhola", "Moynadeep"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "bn-rec-hajar-churashir-maa"
+    medium: "book"
+    script: "bengali"
+    title: { text: "হাজার চুরাশির মা", reading: "hājār curāśir mā" }
+    creator: ["bn-mahasweta-devi"]
+    year: 1974
+    level: "B1"
+    briefing: { en: "A serious novel about a mother whose son was killed in the Naxalite movement of the 1970s. His body in the morgue was number 1084, which gives the book its title. It was made into a Hindi film in 1998 by Govind Nihalani." }
+    questions:
+      - { id: "q1", prompt: { en: "What is the name of the mother in the story?" }, options: { en: ["Sujata", "Nandini", "Dibyanath"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "What is the name of the mother's husband, a man of the kind her son fought against?" }, options: { en: ["Nandini", "Brati", "Dibyanath"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "Who is Brati's girlfriend?" }, options: { en: ["Sujata", "Nandini", "Durga"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "bn-rec-ganadevata"
+    medium: "book"
+    script: "bengali"
+    title: { text: "গণদেবতা", reading: "gônodebotā" }
+    creator: ["bn-tarashankar-bandyopadhyay"]
+    year: 1942
+    level: "B1"
+    briefing: { en: "A village novel set in Shibkalipur in rural Bengal. It shows how craftsmen, farmers and a rich landowner live together and quarrel, and how a young man tries to organise the village against poverty. The writer won India's Jnanpith Award for it in 1966. The language is rich, so it suits a patient reader." }
+    questions:
+      - { id: "q1", prompt: { en: "Who is the only blacksmith of the village?" }, options: { en: ["Girish Sutradhar", "Srihari Pal", "Aniruddha Karmakar"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "Which movement suddenly catches the young man Jatin?" }, options: { en: ["The Swadeshi movement", "The Language Movement", "The Quit India march"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Who goes to jail for beating a survey official?" }, options: { en: ["Jatin", "Debu Ghosh", "Srihari Pal"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "bn-rec-himu"
+    medium: "book"
+    script: "bengali"
+    title: { text: "হিমু", reading: "himu" }
+    creator: ["bn-humayun-ahmed"]
+    year: 1990
+    level: "A2"
+    briefing: { en: "Himu is a popular character who appears in a series of about twenty novels, beginning with Mayurakkhi in 1990. He is a wandering young man in Dhaka who owns almost nothing and walks the city at night. The books are short and easy to read, and they are loved by many young readers in Bangladesh." }
+    questions:
+      - { id: "q1", prompt: { en: "What colour is the panjabi Himu always wears?" }, options: { en: ["White", "Yellow", "Blue"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "What is unusual about his panjabi?" }, options: { en: ["It has no buttons", "It has no sleeves", "It has no pocket"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "What is Himu's real name?" }, options: { en: ["Himalay", "Humayun", "Misir"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "bn-rec-jai-baba-felunath"
+    medium: "book"
+    script: "bengali"
+    title: { text: "জয় বাবা ফেলুনাথ", reading: "jôy bābā phelunāth" }
+    creator: ["bn-satyajit-ray"]
+    year: 1975
+    level: "A2"
+    briefing: { en: "A Feluda detective story by Satyajit Ray. Feluda, his cousin Topshe and the writer Jatayu travel on holiday at the time of Durga Puja. A family they meet asks them to find a thief. The plot is clear and fast, so it is a good first novel for a learner." }
+    questions:
+      - { id: "q1", prompt: { en: "Which city do the three friends visit?" }, options: { en: ["Darjeeling", "Puri", "Varanasi"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "What do thieves want to steal from the Ghosal family?" }, options: { en: ["A golden Ganesh statue", "A diamond ring", "A painting"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Where had the statue been hidden?" }, options: { en: ["In a bank locker", "Inside the lion of the Durga idol", "Under a bed"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "bn-rec-nonte-phonte"
+    medium: "comic"
+    title: { text: "নন্টে ফন্টে", reading: "nônṭe phônṭe" }
+    creator: ["bn-narayan-debnath"]
+    year: 1969
+    level: "A2"
+    briefing: { en: "A funny comic strip about two schoolboys, Nonte and Phonte, who live in a school hostel in a small town in West Bengal. They love food and play tricks on the greedy hostel superintendent. Narayan Debnath drew it for the children's magazine Kishore Bharati, and it was also made into a cartoon series." }
+    questions:
+      - { id: "q1", prompt: { en: "Which older student has failed his class six times?" }, options: { en: ["Thakur", "Keltu", "Panga"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "What does the servant Thakur like to do?" }, options: { en: ["Sing in the bath", "Play cricket", "Dance to the radio"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "What colour does Nonte wear, so that he can be told apart from Fonte?" }, options: { en: ["Orange", "Blue", "Green"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "bn-rec-bantul-the-great"
+    medium: "comic"
+    title: { text: "বাঁটুল দি গ্রেট", reading: "bām̐ṭul di greṭ" }
+    creator: ["bn-narayan-debnath"]
+    year: 1965
+    level: "A2"
+    briefing: { en: "A comic strip about Bantul, a very strong man who fights robbers and protects good people. He lives with two naughty boys, Goja and Bhoja, and keeps a dog and an ostrich as pets. His strength often causes trouble, especially when he touches machines. It first appeared in the children's magazine Shuktara." }
+    questions:
+      - { id: "q1", prompt: { en: "What is the name of Bantul's pet ostrich?" }, options: { en: ["Vedo", "Uto", "Goja"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "What happens to bullets that hit Bantul?" }, options: { en: ["They bounce off him", "They hurt him a little", "He catches them"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What special power does the character Lambakarna have?" }, options: { en: ["Great speed", "Great sight", "Great hearing"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "bn-rec-ami-banglay-gaan-gai"
+    medium: "song"
+    title: { text: "আমি বাংলায় গান গাই", reading: "āmi bāṅlāy gān gāi" }
+    creator: ["bn-pratul-mukhopadhyay"]
+    year: 1994
+    level: "A2"
+    briefing: { en: "A famous patriotic song by Pratul Mukhopadhyay, who is its poet, composer and singer. The title means I sing in Bengali. It is a good song for a learner because the title is simple. Many singers have made new versions of it since." }
+    questions:
+      - { id: "q1", prompt: { en: "Where did BBC Bangla place the song in its list of the greatest Bengali songs?" }, options: { en: ["First", "Tenth", "Sixth"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "In which action film, starring Jeet, is the song sung?" }, options: { en: ["Autograph", "Kranti", "Chokher Bali"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Which popular artist of Bangladesh sang it after Pratul Mukhopadhyay?" }, options: { en: ["Mahmuduzzaman Babu", "Anupam Roy", "Iman Chakraborty"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "bn-rec-mahishasuramardini"
+    medium: "podcast"
+    title: { text: "মহিষাসুরমর্দিনী", reading: "mohiśāsuromordini" }
+    creator: ["bn-birendra-krishna-bhadra"]
+    year: 1931
+    level: "B1"
+    briefing: { en: "A radio programme of Sanskrit verses and songs about the goddess Durga and her fight with the demon Mahishasura. It is broadcast on Mahalaya, the day that begins the Durga Puja season, and many Bengali families wake up to listen. It has been aired since 1931." }
+    questions:
+      - { id: "q1", prompt: { en: "At about what time do listeners wake up on Mahalaya to tune in?" }, options: { en: ["4 am", "7 am", "10 am"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Whose voice was used in 1976, which the audience did not like?" }, options: { en: ["Satyajit Ray", "Pankaj Mullick", "Uttam Kumar"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "Who composed the music of the programme?" }, options: { en: ["Bani Kumar", "Pankaj Kumar Mallik", "Birendra Krishna Bhadra"] }, answer: 2 }
+    tags: ["unreviewed"]

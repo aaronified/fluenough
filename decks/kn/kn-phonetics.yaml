@@ -1,0 +1,35 @@
+schema: 1
+kind: "phonetics"
+id: "kn-phonetics"
+language: "kn"
+variety: "Standard spoken Kannada, as the course's broad ipa writes it"
+description: "Rules that turn a card's broad ipa into its narrow [ ] form, in order. Written for tools/derive_phonetic.py, never read by the app. Each rule applies the regular expression to the whole ipa string and replaces every match; the next rule works on the result. Only rules that are attested are here. The course's broad ipa for Kannada (tools/transcribe.py kn) already writes the dental stops (t̪ d̪), the retroflexes (ʈ ɖ ɳ ɭ ʂ), vowel length (ː), geminates (doubled letters), aspirates and breathy voice (ʰ ʱ), the glide ʋ and, by the tool's medial-anusvara rule, the nasal said before a velar, palatal or retroflex stop, so the rules here add what it does not say: the dental nasal (kn-n-dental, as Telugu's te-n-dental), the tap ɾ for ರ, the central short a and the lowering of the other short vowels away from the word end. Order: kn-n-dental and kn-r-tap touch consonants only; kn-a-central runs before the four lowering rules, whose conditions name ɐ; each lowering rule skips a vowel next to another vowel, so a diphthong (ai, au) and a hiatus are never changed. Left out, on purpose: the merger of ʂ with ʃ (Wikipedia: common except beside retroflexes, a merger of two letters' sounds that a learner of the standard should not be taught); palatalisation of k and ɡ before front vowels ([ciʋi] for kiʋi: Wikipedia says speakers 'frequently' do it, and Wiktionary's [kɔʈ.ʈɪ.ɡɛ] has none); the j and ʋ onsets before an initial vowel and the final e that becomes i in colloquial and northern speech; the ts dz of northern dialects and the aspirates (Wikipedia: aspiration 'depends entirely on the speaker'); a word-final u reduced in speech (no read source). A rule left out is not a claim that it does not exist. Sources are named per rule; the Kannada Wikipedia section was read on 2026-11-15, and Krishnamurti 2003 and Sridhar 1990 (Kannada, Routledge Descriptive Grammars) are named only as the works it and the field cite, not read for this file."
+rules:
+  - id: "kn-n-dental"
+    pattern: 'n(?=ˈ?[td]̪)'
+    replace: "n̪"
+    source: "Wikipedia, Kannada, \"Phonology\" (section of the Kannada article; Kannada phonology redirects there; CC BY-SA 4.0), fetched 2026-11-15: the dental and alveolar column holds t̪ d̪ with n written for the nasal, and the broad ipa (tools/transcribe.py kn) writes the nasal before a dental stop as a plain n (86 occurrences, counted on decks-live 2026-11-15: ant̪a, ʃaːnt̪a, band̪are), so the nasal is written dental (n̪) before t̪ or d̪ inside a word, as Telugu does (te-n-dental, PR #1433); the same assimilation is attested for Telugu in Krishnamurti, The Dravidian Languages (2003, CUP), whose Kannada chapter was not read for this file. The velar, palatal and retroflex nasals (ŋ ɲ ɳ) and m before b are already written by the broad ipa (tools/transcribe.py writes the medial anusvara by place), so no rule is needed for them; the Wikipedia note \"[ŋ, ɲ] are allophones before other palatal and velar consonants\" is already honoured there."
+  - id: "kn-r-tap"
+    pattern: '(?<!r)r(?!r)'
+    replace: "ɾ"
+    source: "Wikipedia, Kannada, \"Phonology\" (section of the Kannada article; Kannada phonology redirects there; CC BY-SA 4.0), fetched 2026-11-15, consonant table (the rhotic of ರ is ɾ) and the note \"The alveolar trill /r/ may be pronounced as an alveolar tap [ɾ]\"; the trill ಱ (ṟ) is archaic (\"dropped out of common usage in the 12th century\"), so the broad ipa's r for ರ is a tap in the standard. A doubled rr (loans) is left a trill."
+  - id: "kn-a-central"
+    pattern: 'a(?![ːiu])'
+    replace: "ɐ"
+    source: "Wikipedia, Kannada, \"Phonology\" (section of the Kannada article; Kannada phonology redirects there; CC BY-SA 4.0), fetched 2026-11-15, vowel notes: \"/ɐ/ and /aː/ are phonetically central [ɐ, äː]. /ɐ/ may be as open as /aː/ or higher\". The short a is written ɐ in every position, final included (the table gives the short vowel as ɐ; the lowering note says the effect is less frequent only for the other vowels); the long aː is left alone. The diphthong nuclei ai and au are not changed (Wiktionary writes the vowel signs ೈ ೌ as [ai] [au], Kannada entries ೈ and ೌ, kaikki.org dump read 2026-11-15)."
+  - id: "kn-i-lowered"
+    pattern: '(?<![aɐeiouɪʊɛɔæː])i(?!ː)(?=[^\sɐaeiouɪʊɛɔæː])'
+    replace: "ɪ"
+    source: "Wikipedia, Kannada, \"Phonology\" (section of the Kannada article; Kannada phonology redirects there; CC BY-SA 4.0), fetched 2026-11-15, vowel notes: \"The short vowels /a i u e o/, when in an initial or a medial position tend to be pronounced [ɐ ɪ ʊ ɛ ɔ]. In a final position, this phenomenon occurs less frequently\"; Wiktionary, ಕೊಟ್ಟಿಗೆ [kɔʈ.ʈɪ.ɡɛ] (kaikki.org dump read 2026-11-15). Applies to a short i that is not word-final and not next to another vowel (so not the glide of a diphthong or a hiatus); a word-final short vowel is left as the broad ipa writes it."
+  - id: "kn-u-lowered"
+    pattern: '(?<![aɐeiouɪʊɛɔæː])u(?!ː)(?=[^\sɐaeiouɪʊɛɔæː])'
+    replace: "ʊ"
+    source: "Wikipedia, Kannada, \"Phonology\" (section of the Kannada article; Kannada phonology redirects there; CC BY-SA 4.0), fetched 2026-11-15, vowel notes (as kn-i-lowered): short u, not word-final and not next to another vowel, tends to [ʊ]."
+  - id: "kn-e-lowered"
+    pattern: '(?<![aɐeiouɪʊɛɔæː])e(?!ː)(?=[^\sɐaeiouɪʊɛɔæː])'
+    replace: "ɛ"
+    source: "Wikipedia, Kannada, \"Phonology\" (section of the Kannada article; Kannada phonology redirects there; CC BY-SA 4.0), fetched 2026-11-15, vowel notes (as kn-i-lowered): short e, not word-final and not next to another vowel, tends to [ɛ]; Wiktionary, ಕೊಟ್ಟಿಗೆ [kɔʈ.ʈɪ.ɡɛ]."
+  - id: "kn-o-lowered"
+    pattern: '(?<![aɐeiouɪʊɛɔæː])o(?!ː)(?=[^\sɐaeiouɪʊɛɔæː])'
+    replace: "ɔ"
+    source: "Wikipedia, Kannada, \"Phonology\" (section of the Kannada article; Kannada phonology redirects there; CC BY-SA 4.0), fetched 2026-11-15, vowel notes (as kn-i-lowered): short o, not word-final and not next to another vowel, tends to [ɔ]; Wiktionary, ಕೊಟ್ಟಿಗೆ [kɔʈ.ʈɪ.ɡɛ]."
