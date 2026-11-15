@@ -556,7 +556,9 @@ units:
       - { id: "hotel-booking", text: { "en": "Booking a hotel room over the phone" } }
     reading_passages:
       - { id: "itinerary", text: { "en": "A two-day trip itinerary" } }
-  - planned: { id: "fr-grammar-relative-pronouns", grammar: ["qui-que", "ou-relative"] }
+  - decks: ["fr-grammar-qui-que", "fr-grammar-ou-relative"]
+    words: 0
+    grammar: ["qui-que", "ou-relative"]
     listening_passages:
       - { id: "the-man-who-came", text: { "en": "Describing people and places by what happened: the one who came, the town where we met" } }
     reading_passages:

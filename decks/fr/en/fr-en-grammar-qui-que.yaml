@@ -1,0 +1,23 @@
+schema: 1
+id: "fr-en-grammar-qui-que"
+kind: "layer"
+core: "fr-grammar-qui-que"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Qui and que: joining two sentences"
+license: "CC-BY-SA-4.0"
+description: "Qui and que join a noun to a second clause: le livre qui est sur la table, le livre que je lis. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Qui and que"
+  slot_name: "pronoun"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "qui": "with qui: the noun is the subject of the second verb", "que": "with que: the noun is the object of the second verb" }
+  entries:
+    "livre": "book"
+    "ami": "friend"
+    "voisin": "neighbour"
+    "gateau": "cake"
+    "voiture": "car"
+    "chat": "cat"
+    "cafe": "coffee"
+    "maison": "house"
+  notes: "A relative pronoun joins a second clause to a noun and saves repeating it. Qui stands for the subject of that clause: le livre qui est sur la table means the book that is on the table, because le livre is what is on the table. Que stands for its object: le livre que je lis means the book that I read, because I read le livre, and je is the subject. After qui comes the verb directly (l'ami qui habite ici); after que comes a subject and then the verb (l'ami que j'attends). Que becomes qu' before a vowel sound: le gâteau qu'elle mange, while qui never loses its vowel. Both pronouns are used for people and things, and the English that, which or who all become qui or que in French. In English you can leave the pronoun out (the book I read); in French you cannot: le livre que je lis. When a past participle follows que with avoir, it agrees with the noun that que stands for (la maison que j'ai vue), a point met in the past-tense units."
