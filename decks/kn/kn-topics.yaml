@@ -1,0 +1,331 @@
+# Topics a learner of Kannada would search for: what each one is, and the decks that teach it (wiki/Plan-Deck-Kinds-And-Topics.md, D6).
+# A script topic lists its characters; a topic holds no card text of its own.
+schema: 1
+kind: "topics"
+id: "kn-topics"
+language: "kn"
+license: "CC-BY-SA-4.0"
+topics:
+  - id: "kn-vowels-script"
+    name: { en: "Kannada vowels" }
+    summary: { en: "The Kannada vowel letters, written on their own, from the short a to the long vowels, including the vocalic r and the diphthongs ai and au." }
+    kind: "script"
+    level: "A1"
+    decks: ["kn-script-vowels"]
+    chars: ["ಅ", "ಆ", "ಇ", "ಈ", "ಉ", "ಊ", "ಋ", "ಎ", "ಏ", "ಐ", "ಒ", "ಓ", "ಔ"]
+  - id: "kn-consonants-script"
+    name: { en: "Kannada consonants" }
+    summary: { en: "The Kannada consonant letters, each written with the a vowel built in, in their groups from ka to la, including the retroflex letters and the nasals." }
+    kind: "script"
+    level: "A1"
+    decks: ["kn-script-consonants"]
+    chars: ["ಕ", "ಖ", "ಗ", "ಘ", "ಙ", "ಚ", "ಛ", "ಜ", "ಝ", "ಞ", "ಟ", "ಠ", "ಡ", "ಢ", "ಣ", "ತ", "ಥ", "ದ", "ಧ", "ನ", "ಪ", "ಫ", "ಬ", "ಭ", "ಮ", "ಯ", "ರ", "ಲ", "ವ", "ಶ", "ಷ", "ಸ", "ಹ", "ಳ"]
+  - id: "kn-vowel-signs-script"
+    name: { en: "Vowel signs: ಕಾಗುಣಿತ (kāguṇita)" }
+    summary: { en: "The vowel signs, the marks written around a consonant to change its vowel, such as the sign for a long a in kā, and the consonant with the halanta mark that has no vowel." }
+    kind: "script"
+    level: "A1"
+    decks: ["kn-script-vowel-signs"]
+    chars: ["ಕಾ", "ಕಿ", "ಕೀ", "ಕು", "ಕೂ", "ಕೃ", "ಕೆ", "ಕೇ", "ಕೈ", "ಕೊ", "ಕೋ", "ಕೌ", "ಕಂ", "ಕ್", "ಮಾ", "ಮಿ", "ಮೀ", "ಮು", "ಮೂ", "ಮೆ", "ಮೇ", "ಮೊ", "ಮೋ"]
+  - id: "kn-conjuncts-script"
+    name: { en: "Conjunct consonants: ಒತ್ತಕ್ಷರ (ottakṣara)" }
+    summary: { en: "Two consonants written together as one shape, called ottakṣara, such as the doubled k in kka and clusters such as kra and kṣa." }
+    kind: "script"
+    level: "A1"
+    decks: ["kn-script-conjuncts"]
+    chars: ["ಕ್ಕ", "ಗ್ಗ", "ಚ್ಚ", "ಟ್ಟ", "ಡ್ಡ", "ತ್ತ", "ದ್ದ", "ನ್ನ", "ಣ್ಣ", "ಪ್ಪ", "ಬ್ಬ", "ಮ್ಮ", "ಲ್ಲ", "ಳ್ಳ", "ಯ್ಯ", "ಕ್ರ", "ಪ್ರ", "ತ್ರ", "ಶ್ರ", "ವ್ಯ", "ದ್ಯ", "ಕ್ಷ", "ಸ್ತ", "ಸ್ಥ", "ಷ್ಟ", "ರ್ಕ"]
+  - id: "kn-digits-script"
+    name: { en: "Kannada digits" }
+    summary: { en: "The ten Kannada digits, 0 to 9, written in the Kannada numerals." }
+    kind: "script"
+    level: "A1"
+    decks: ["kn-script-digits"]
+    chars: ["೦", "೧", "೨", "೩", "೪", "೫", "೬", "೭", "೮", "೯"]
+  - id: "kn-kinship"
+    name: { en: "Kinship terms" }
+    summary: { en: "The Kannada words for family members, such as parents and siblings, as the family deck teaches them." }
+    kind: "words"
+    level: "A1"
+    decks: ["kn-family"]
+  - id: "kn-food-dishes"
+    name: { en: "Food and dishes" }
+    summary: { en: "Common Kannada words for food and cooking, and for buying food at the grocer and the market." }
+    kind: "words"
+    level: "A1"
+    decks: ["kn-food", "kn-cooking", "kn-groceries", "kn-market"]
+  - id: "kn-numbers-counting"
+    name: { en: "Numbers and counting" }
+    summary: { en: "Counting from one to twenty and on to bigger numbers." }
+    kind: "words"
+    level: "A1"
+    decks: ["kn-numbers-1-20", "kn-numbers-big"]
+  - id: "kn-body-health"
+    name: { en: "Body and health" }
+    summary: { en: "Parts of the body, common illnesses and the words used at the doctor." }
+    kind: "words"
+    level: "A1"
+    decks: ["kn-body", "kn-health", "kn-illness"]
+  - id: "kn-clothes-appearance"
+    name: { en: "Clothes and appearance" }
+    summary: { en: "Words for clothes and for how a person looks." }
+    kind: "words"
+    level: "A1"
+    decks: ["kn-clothes", "kn-appearance"]
+  - id: "kn-animals-nature"
+    name: { en: "Animals and nature" }
+    summary: { en: "Words for animals and for the natural world around us." }
+    kind: "words"
+    level: "A1"
+    decks: ["kn-animals", "kn-nature"]
+  - id: "kn-weather"
+    name: { en: "Weather" }
+    summary: { en: "Words for the weather and the seasons, with short sentences about it." }
+    kind: "words"
+    level: "A2"
+    decks: ["kn-weather"]
+  - id: "kn-time-calendar"
+    name: { en: "Time and the calendar" }
+    summary: { en: "Words for the time of day, the days, the months and the calendar." }
+    kind: "words"
+    level: "A1"
+    decks: ["kn-time", "kn-calendar"]
+  - id: "kn-travel"
+    name: { en: "Travel and transport" }
+    summary: { en: "Words for getting around, for vehicles, journeys and directions." }
+    kind: "words"
+    level: "A1"
+    decks: ["kn-travel", "kn-transport", "kn-journey", "kn-directions"]
+  - id: "kn-home-housing"
+    name: { en: "Home and housing" }
+    summary: { en: "Words for the home, its rooms and the places people live." }
+    kind: "words"
+    level: "A1"
+    decks: ["kn-home", "kn-housing"]
+  - id: "kn-money-shopping"
+    name: { en: "Money and shopping" }
+    summary: { en: "Words for money, prices and buying things." }
+    kind: "words"
+    level: "A2"
+    decks: ["kn-money", "kn-shopping"]
+  - id: "kn-work-careers"
+    name: { en: "Work and careers" }
+    summary: { en: "Words for jobs, careers and the workplace." }
+    kind: "words"
+    level: "A1"
+    decks: ["kn-work", "kn-careers", "kn-workplace"]
+  - id: "kn-school"
+    name: { en: "School" }
+    summary: { en: "Words for school, lessons and studying." }
+    kind: "words"
+    level: "A2"
+    decks: ["kn-school"]
+  - id: "kn-festivals-weddings"
+    name: { en: "Festivals and weddings" }
+    summary: { en: "Words for festivals and for weddings and the celebrations around them." }
+    kind: "words"
+    level: "A2"
+    decks: ["kn-festivals", "kn-weddings"]
+  - id: "kn-feelings"
+    name: { en: "Feelings" }
+    summary: { en: "Words for how a person feels, and for talking about feelings." }
+    kind: "words"
+    level: "B1"
+    decks: ["kn-feelings"]
+  - id: "kn-government-law"
+    name: { en: "Government and law" }
+    summary: { en: "Words for government, public services and the law." }
+    kind: "words"
+    level: "B1"
+    decks: ["kn-government", "kn-law"]
+  - id: "kn-arts-literature"
+    name: { en: "Arts, cinema and literature" }
+    summary: { en: "Words for the arts, films and books." }
+    kind: "words"
+    level: "B1"
+    decks: ["kn-arts", "kn-cinema", "kn-literature"]
+  - id: "kn-technology-phone"
+    name: { en: "Technology and the phone" }
+    summary: { en: "Words for technology and for using a phone." }
+    kind: "words"
+    level: "A2"
+    decks: ["kn-technology", "kn-phone"]
+  - id: "kn-emergencies"
+    name: { en: "Emergencies" }
+    summary: { en: "Words for asking for help in an emergency and for what to say when something goes wrong." }
+    kind: "words"
+    level: "A2"
+    decks: ["kn-emergencies", "kn-help"]
+  - id: "kn-abstract-ideas"
+    name: { en: "Abstract words and opinions" }
+    summary: { en: "Words for ideas, and for giving an opinion." }
+    kind: "words"
+    level: "B1"
+    decks: ["kn-abstract-words", "kn-opinions"]
+  - id: "kn-verbs-common"
+    name: { en: "Common verbs" }
+    summary: { en: "The everyday verbs, in their basic forms, as the verb decks teach them." }
+    kind: "verbs"
+    level: "A1"
+    decks: ["kn-verbs", "kn-verbs-3", "kn-verbs-4", "kn-verbs-5", "kn-more-verbs"]
+  - id: "kn-conjunct-verbs"
+    name: { en: "Conjunct verbs" }
+    summary: { en: "Verb phrases made from a noun and a light verb, which together act as one verb." }
+    kind: "verbs"
+    level: "A2"
+    decks: ["kn-grammar-conjunct-verbs"]
+  - id: "kn-compound-verbs"
+    name: { en: "Compound verbs" }
+    summary: { en: "Two verbs joined into one, where the second verb adds its own sense to the action." }
+    kind: "verbs"
+    level: "A2"
+    decks: ["kn-grammar-compound-verbs"]
+  - id: "kn-be"
+    name: { en: "The verb to be" }
+    summary: { en: "How to say that something is or is not something, as the be deck teaches it." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["kn-grammar-be"]
+  - id: "kn-present-tense"
+    name: { en: "Present tense and continuous" }
+    summary: { en: "How to say what happens now and what is going on, as the present and continuous decks teach them." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["kn-grammar-present", "kn-grammar-continuous"]
+  - id: "kn-past-tense"
+    name: { en: "Past tense" }
+    summary: { en: "How to talk about what has happened, from the simple past to the perfect and past continuous." }
+    kind: "grammar"
+    level: "A2"
+    decks: ["kn-grammar-past", "kn-grammar-past-more", "kn-grammar-past-continuous", "kn-grammar-perfect"]
+  - id: "kn-future-tense"
+    name: { en: "Future tense" }
+    summary: { en: "How to talk about what will happen, as the future deck teaches it." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["kn-grammar-future"]
+  - id: "kn-imperatives"
+    name: { en: "Commands and requests" }
+    summary: { en: "How to give commands and make requests, as the imperatives deck teaches them." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["kn-grammar-imperatives"]
+  - id: "kn-negation"
+    name: { en: "Negation" }
+    summary: { en: "How to say that something is not so, or does not happen, as the negative deck teaches it." }
+    kind: "grammar"
+    level: "A2"
+    decks: ["kn-grammar-negative"]
+  - id: "kn-questions"
+    name: { en: "Questions" }
+    summary: { en: "How to ask questions, as the questions decks teach them." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["kn-grammar-questions", "kn-questions"]
+  - id: "kn-nouns-gender-number"
+    name: { en: "Nouns, gender and number" }
+    summary: { en: "The rules for nouns, their gender and number, and the articles, as the noun decks teach them." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["kn-grammar-nouns", "kn-grammar-gender-number", "kn-grammar-articles"]
+  - id: "kn-pronouns"
+    name: { en: "Pronouns" }
+    summary: { en: "The words for I, you, he, she and the others, and how they change, as the pronoun decks teach them." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["kn-grammar-pronouns", "kn-pronouns"]
+  - id: "kn-demonstratives-adjectives"
+    name: { en: "Demonstratives and adjectives" }
+    summary: { en: "Words for this and that, and words that describe nouns, as the decks teach them." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["kn-grammar-demonstratives", "kn-grammar-adjectives", "kn-adjectives-2"]
+  - id: "kn-postpositions"
+    name: { en: "Postpositions" }
+    summary: { en: "Words that follow a noun to show place, direction and relation, as the postpositions deck teaches them." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["kn-grammar-postpositions"]
+  - id: "kn-likes-needs"
+    name: { en: "Likes and needs" }
+    summary: { en: "How to say what someone likes or needs, as the likes and needs decks teach them." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["kn-grammar-likes", "kn-grammar-needs"]
+  - id: "kn-ordinals-comparison"
+    name: { en: "Ordinals and comparison" }
+    summary: { en: "Words for first, second and the rest, and how to compare two things." }
+    kind: "grammar"
+    level: "A2"
+    decks: ["kn-grammar-ordinals", "kn-grammar-comparison"]
+  - id: "kn-conjunctions"
+    name: { en: "Conjunctions" }
+    summary: { en: "Words that join words and sentences, as the conjunction decks teach them." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["kn-grammar-conjunctions", "kn-grammar-conjunctive"]
+  - id: "kn-can-must"
+    name: { en: "Can and must" }
+    summary: { en: "How to say what someone can, may or must do, as the can and must deck teaches it." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["kn-grammar-can-must"]
+  - id: "kn-conditional-subjunctive"
+    name: { en: "Conditional and subjunctive" }
+    summary: { en: "How to say if something happened or might happen, and the subjunctive mood, as the decks teach them." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["kn-grammar-conditional", "kn-grammar-subjunctive"]
+  - id: "kn-relative-clauses"
+    name: { en: "Relative clauses" }
+    summary: { en: "How to add a clause that describes a noun, as the relative deck teaches it." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["kn-grammar-relative"]
+  - id: "kn-purpose-time"
+    name: { en: "Purpose and time clauses" }
+    summary: { en: "How to say why, and when, something happens, as the purpose, before-after and while decks teach them." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["kn-grammar-purpose", "kn-grammar-before-after", "kn-grammar-while"]
+  - id: "kn-concessive"
+    name: { en: "Concessive clauses" }
+    summary: { en: "How to say although something is so, as the concessive deck teaches it." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["kn-grammar-concessive"]
+  - id: "kn-indefinites-emphasis"
+    name: { en: "Indefinite words and emphasis" }
+    summary: { en: "Words such as some and any, and how to add emphasis, as the decks teach them." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["kn-grammar-indefinites", "kn-grammar-emphasis"]
+  - id: "kn-passive-causative"
+    name: { en: "Passive and causative verbs" }
+    summary: { en: "How to say that something is done to a subject, or that someone makes another do it, as the decks teach them." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["kn-grammar-passive", "kn-grammar-causative"]
+  - id: "kn-reported-speech"
+    name: { en: "Reported speech" }
+    summary: { en: "How to report what someone else said, as the reported speech deck teaches it." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["kn-grammar-reported-speech"]
+  - id: "kn-honorifics"
+    name: { en: "Honorific speech" }
+    summary: { en: "How to speak respectfully to elders and strangers, as the honorifics deck teaches it." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["kn-grammar-honorifics"]
+  - id: "kn-sentence-patterns"
+    name: { en: "Sentence patterns" }
+    summary: { en: "Common sentence shapes, with the words in order, as the sentences deck teaches them." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["kn-grammar-sentences"]
+  - id: "kn-common-mistakes"
+    name: { en: "Common mistakes" }
+    summary: { en: "The common pitfalls, as the pitfalls, differences and irregular decks teach them." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["kn-grammar-pitfalls", "kn-grammar-differences", "kn-grammar-irregular"]

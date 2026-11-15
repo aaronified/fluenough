@@ -1,0 +1,32 @@
+schema: 1
+id: "mr-en-reading-animals"
+name: "Reading: zoo board"
+kind: "reading"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A zoo board with each animal and what it eats. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "mr-zoo-board"
+    title: "Zoo board"
+    sentences:
+      - { text: "वाघ मांस खातो.", reading: "vāgh māṁs khāto.", ipa: "ʋaɡʱ mãs kʰat̪o" }
+      - { text: "सिंह मांस खातो.", reading: "siṁh māṁs khāto.", ipa: "sĩɦ mãs kʰat̪o" }
+      - { text: "गाय गवत खाते.", reading: "gāy gavat khāte.", ipa: "ɡaj ɡəʋət̪ kʰat̪e" }
+      - { text: "हत्ती गवत आणि फळं खातात.", reading: "hatti gavat āṇi phaḷam̐ khātāt.", ipa: "ɦət̪t̪i ɡəʋət̪ aɳi pʰəɭə̃ kʰat̪at̪" }
+      - { text: "माकडं केळी खातात.", reading: "mākḍam̐ keḷi khātāt.", ipa: "makɖə̃ keɭi kʰat̪at̪" }
+    questions:
+      - id: "mr-7503"
+        prompt: { en: "What does the tiger eat?" }
+        options: [{ en: "Meat" }, { en: "Grass" }, { en: "Bananas" }]
+        answer: 1
+      - id: "mr-7504"
+        prompt: { en: "Which animals eat grass and fruit?" }
+        options: [{ en: "Elephants" }, { en: "Lions" }, { en: "Monkeys" }]
+        answer: 1
+      - id: "mr-7505"
+        prompt: { en: "Which animal eats bananas?" }
+        options: [{ en: "The cow" }, { en: "The monkey" }, { en: "The lion" }]
+        answer: 2

@@ -1,0 +1,84 @@
+schema: 1
+id: "kn-nature-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-7460"
+    target: "ಇದು ಕಡಲು."
+    reading: "idu kaḍalu."
+    ipa: "id̪u kaɖalu"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ಕಡಲು", ref: "kn-1235" }
+  - id: "kn-7461"
+    target: "ಅಲೆ ಇದೆ."
+    reading: "ale ide."
+    ipa: "ale id̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ಅಲೆ", ref: "kn-1237" }
+      - { word: "ಇದೆ", base: "ಇರು", reading: "iru" }
+  - id: "kn-7462"
+    target: "ಪಕ್ಷಿ ಹಾರುತ್ತದೆ."
+    reading: "pakṣi hāruttade."
+    ipa: "pakʂi haːrut̪t̪ad̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ಪಕ್ಷಿ", ref: "kn-1242" }
+      - { word: "ಹಾರುತ್ತದೆ", base: "ಹಾರು", reading: "hāru" }
+  - id: "kn-7463"
+    target: "ಹುಲ್ಲು ಹಸಿರು."
+    reading: "hullu hasiru."
+    ipa: "hullu hasiru"
+    pos: "phrase"
+    bases:
+      - { word: "ಹುಲ್ಲು", ref: "kn-1233" }
+      - { word: "ಹಸಿರು", ref: "kn-1172" }
+  - id: "kn-7464"
+    target: "ಎಲೆ ಒಣಗುತ್ತದೆ."
+    reading: "ele oṇaguttade."
+    ipa: "ele oɳaɡut̪t̪ad̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ಎಲೆ", ref: "kn-1230" }
+      - { word: "ಒಣಗುತ್ತದೆ", base: "ಒಣಗು", reading: "oṇagu" }
+  - id: "kn-7465"
+    target: "ಮಣ್ಣು ಕಪ್ಪು."
+    reading: "maṇṇu kappu."
+    ipa: "maɳɳu kappu"
+    pos: "phrase"
+    bases:
+      - { word: "ಮಣ್ಣು", ref: "kn-1240" }
+      - { word: "ಕಪ್ಪು", ref: "kn-1168" }
+  - id: "kn-7466"
+    target: "ಮರಳು ತೀರದಲ್ಲಿ ಇದೆ."
+    reading: "maraḷu tīradalli ide."
+    ipa: "maraɭu t̪iːrad̪alli id̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ಮರಳು", ref: "kn-1238" }
+      - { word: "ತೀರದಲ್ಲಿ", base: "ತೀರ", reading: "tīra" }
+      - { word: "ಇದೆ", base: "ಇರು", reading: "iru" }
+  - id: "kn-7467"
+    target: "ಕಲ್ಲು ಇಲ್ಲಿ ಇದೆ."
+    reading: "kallu illi ide."
+    ipa: "kallu illi id̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ಕಲ್ಲು", ref: "kn-1239" }
+      - { word: "ಇಲ್ಲಿ", ref: "kn-0375" }
+      - { word: "ಇದೆ", base: "ಇರು", reading: "iru" }
+  - id: "kn-7468"
+    target: "ಕೀಟ ಸಾಯುತ್ತದೆ."
+    reading: "kīṭa sāyuttade."
+    ipa: "kiːʈa saːjut̪t̪ad̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ಕೀಟ", ref: "kn-1243" }
+      - { word: "ಸಾಯುತ್ತದೆ", base: "ಸಾಯು", reading: "sāyu" }

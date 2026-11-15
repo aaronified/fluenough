@@ -1,0 +1,32 @@
+schema: 1
+id: "mr-en-reading-grammar-honorifics"
+name: "Reading: formal letter"
+kind: "reading"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A formal letter and its closing. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["reading", "intermediate", "unreviewed"]
+passages:
+  - id: "mr-formal-letter"
+    title: "Formal letter"
+    sentences:
+      - { text: "आदरणीय सर,", reading: "ādrṇiy sar,", ipa: "ad̪rɳij sər" }
+      - { text: "मी आपल्याला एक विनंती करू इच्छितो.", reading: "mi āpalyālā ek vinanti karu icchito.", ipa: "mi apəljala ek ʋinənt̪i kəru itstʃʰit̪o" }
+      - { text: "मला तीन दिवसांची रजा हवी आहे.", reading: "malā tin divsāñci rajā havi āhe.", ipa: "məla t̪in d̪iʋsaɲtʃi rədza ɦəʋi aɦe" }
+      - { text: "कृपया माझी रजा मंजूर करावी.", reading: "krupyā mājhi rajā mañjur karāvi.", ipa: "krupja madʒʱi rədza məɲdzur kəraʋi" }
+      - { text: "आपला विश्वासू,", reading: "āplā viśvāsu,", ipa: "apla ʋiʃʋasu" }
+    questions:
+      - id: "mr-7533"
+        prompt: { en: "How long is the leave requested?" }
+        options: [{ en: "Three days" }, { en: "Three weeks" }, { en: "One day" }]
+        answer: 1
+      - id: "mr-7534"
+        prompt: { en: "What does the writer ask the reader to do?" }
+        options: [{ en: "Pay a fee" }, { en: "Approve the leave" }, { en: "Come to the office" }]
+        answer: 2
+      - id: "mr-7535"
+        prompt: { en: "How does the letter end?" }
+        options: [{ en: "Good night" }, { en: "Yours faithfully" }, { en: "See you soon" }]
+        answer: 2

@@ -1,0 +1,74 @@
+schema: 1
+id: "kn-verbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-7759"
+    target: "ನೀವು ಏನು ಕುಡಿಯುತ್ತೀರಿ?"
+    reading: "nīvu ēnu kuḍiyuttīri?"
+    ipa: "niːʋu eːnu kuɖijut̪t̪iːri"
+    pos: "phrase"
+    bases:
+      - { word: "ಕುಡಿಯುತ್ತೀರಿ", ref: "kn-0634" }
+  - id: "kn-7760"
+    target: "ನಾನು ಮನೆಗೆ ಹೋಗುತ್ತೇನೆ."
+    reading: "nānu manege hōguttēne."
+    ipa: "naːnu maneɡe hoːɡut̪t̪eːne"
+    pos: "phrase"
+    bases:
+      - { word: "ಮನೆಗೆ", ref: "kn-0201" }
+      - { word: "ಹೋಗುತ್ತೇನೆ", ref: "kn-0631" }
+  - id: "kn-7761"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    target: "ಅವನು ಮನೆಯಲ್ಲಿ ಓದುತ್ತಾನೆ."
+    reading: "avanu maneyalli ōduttāne."
+    ipa: "aʋanu manejalli oːd̪ut̪t̪aːne"
+    pos: "phrase"
+    bases:
+      - { word: "ಮನೆಯಲ್ಲಿ", ref: "kn-0201" }
+      - { word: "ಓದುತ್ತಾನೆ", ref: "kn-0638" }
+  - id: "kn-7762"
+    target: "ನೀವು ಇದನ್ನು ನೋಡುತ್ತೀರಾ?"
+    reading: "nīvu idannu nōḍuttīrā?"
+    ipa: "niːʋu id̪annu noːɖut̪t̪iːraː"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದನ್ನು", ref: "kn-0615" }
+      - { word: "ನೋಡುತ್ತೀರಾ", ref: "kn-0636" }
+  - id: "kn-7763"
+    target: "ನೀನು ಎಲ್ಲಿ ಓದುತ್ತೀಯ?"
+    reading: "nīnu elli ōduttīya?"
+    ipa: "niːnu elli oːd̪ut̪t̪iːja"
+    pos: "phrase"
+    bases:
+      - { word: "ಓದುತ್ತೀಯ", ref: "kn-0638" }
+  - id: "kn-7764"
+    target: "ಅವರು ಮನೆಗೆ ಹೋದರು."
+    reading: "avaru manege hōdaru."
+    ipa: "aʋaru maneɡe hoːd̪aru"
+    pos: "phrase"
+    bases:
+      - { word: "ಮನೆಗೆ", ref: "kn-0201" }
+      - { word: "ಹೋದರು", ref: "kn-0631" }
+  - id: "kn-7765"
+    target: "ನಾನು ಮನೆಯಲ್ಲಿ ಓದಿದೆ."
+    reading: "nānu maneyalli ōdide."
+    ipa: "naːnu manejalli oːd̪id̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ಮನೆಯಲ್ಲಿ", ref: "kn-0201" }
+      - { word: "ಓದಿದೆ", ref: "kn-0638" }
+  - id: "kn-7766"
+    target: "ಅವಳು ನನ್ನನ್ನು ನೋಡಿದಳು."
+    reading: "avaḷu nannannu nōḍidaḷu."
+    ipa: "aʋaɭu nannannu noːɖid̪aɭu"
+    pos: "phrase"
+    bases:
+      - { word: "ನನ್ನನ್ನು", ref: "kn-0610" }
+      - { word: "ನೋಡಿದಳು", ref: "kn-0636" }

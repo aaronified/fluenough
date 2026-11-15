@@ -1,0 +1,31 @@
+schema: 1
+id: "mr-en-reading-nature"
+name: "Reading: park signs"
+kind: "reading"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "Signs in a park. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "mr-park-signs"
+    title: "Park signs"
+    sentences:
+      - { text: "उद्यान सकाळी सहा ते रात्री आठ खुले आहे.", reading: "udyān sakāḷi sahā te rātri āṭh khule āhe.", ipa: "ud̪jan səkaɭi səɦa t̪e rat̪ri aʈʰ kʰule aɦe" }
+      - { text: "फुलं तोडू नका.", reading: "phulam̐ toḍu nakā.", ipa: "pʰulə̃ t̪oɖu nəka" }
+      - { text: "कचरा कुंडीत टाका.", reading: "kacrā kuṇḍit ṭākā.", ipa: "kətsra kuɳɖit̪ ʈaka" }
+      - { text: "झाडावर चढू नका.", reading: "jhāḍāvar caḍhu nakā.", ipa: "dzʱaɖaʋər tsəɖʱu nəka" }
+    questions:
+      - id: "mr-7512"
+        prompt: { en: "What time does the park open?" }
+        options: [{ en: "6 am" }, { en: "8 am" }, { en: "6 pm" }]
+        answer: 1
+      - id: "mr-7513"
+        prompt: { en: "What must visitors not pick?" }
+        options: [{ en: "Rubbish" }, { en: "Flowers" }, { en: "Fruit" }]
+        answer: 2
+      - id: "mr-7514"
+        prompt: { en: "Where should rubbish go?" }
+        options: [{ en: "On the grass" }, { en: "In the tree" }, { en: "In the bin" }]
+        answer: 3

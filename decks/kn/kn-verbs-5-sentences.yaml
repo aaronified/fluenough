@@ -1,0 +1,84 @@
+schema: 1
+id: "kn-verbs-5-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-8302"
+    target: "ಊಟ ತಯಾರಿಸು."
+    reading: "ūṭa tayārisu."
+    ipa: "uːʈa t̪ajaːrisu"
+    pos: "phrase"
+    bases:
+      - { word: "ಊಟ", ref: "kn-0491" }
+      - { word: "ತಯಾರಿಸು", ref: "kn-1720" }
+  - id: "kn-8303"
+    target: "ಕೆಲಸ ಮುಗಿಸು."
+    reading: "kelasa mugisu."
+    ipa: "kelasa muɡisu"
+    pos: "phrase"
+    bases:
+      - { word: "ಕೆಲಸ", ref: "kn-0203" }
+      - { word: "ಮುಗಿಸು", ref: "kn-1719" }
+  - id: "kn-8304"
+    target: "ಸಂಜೆ ಕತ್ತಲಾಗುತ್ತದೆ."
+    reading: "sañje kattalāguttade."
+    ipa: "saɲdʒe kat̪t̪alaːɡut̪t̪ad̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ಸಂಜೆ", ref: "kn-0418" }
+      - { word: "ಕತ್ತಲಾಗುತ್ತದೆ", base: "ಕತ್ತಲಾಗು", reading: "kattalāgu" }
+  - id: "kn-8305"
+    target: "ಮನೆಗೆ ಹಿಂತಿರುಗು."
+    reading: "manege hintirugu."
+    ipa: "maneɡe hint̪iruɡu"
+    pos: "phrase"
+    bases:
+      - { word: "ಮನೆಗೆ", base: "ಮನೆ", reading: "mane" }
+      - { word: "ಹಿಂತಿರುಗು", ref: "kn-1727" }
+  - id: "kn-8306"
+    target: "ಕೆಲಸ ಆರಂಭಿಸು."
+    reading: "kelasa ārambhisu."
+    ipa: "kelasa aːrambʱisu"
+    pos: "phrase"
+    bases:
+      - { word: "ಕೆಲಸ", ref: "kn-0203" }
+      - { word: "ಆರಂಭಿಸು", ref: "kn-1722" }
+  - id: "kn-8307"
+    target: "ಅಮ್ಮ ಅಪ್ಪನನ್ನು ಕರೆಸುತ್ತಾಳೆ."
+    reading: "amma appanannu karesuttāḷe."
+    ipa: "amma appanannu karesut̪t̪aːɭe"
+    pos: "phrase"
+    bases:
+      - { word: "ಅಮ್ಮ", ref: "kn-0058" }
+      - { word: "ಅಪ್ಪನನ್ನು", base: "ಅಪ್ಪ", reading: "appa" }
+      - { word: "ಕರೆಸುತ್ತಾಳೆ", base: "ಕರೆಸು", reading: "karesu" }
+  - id: "kn-8309"
+    target: "ಚಿತ್ರ ಅಂಟಿಸು."
+    reading: "citra aṇṭisu."
+    ipa: "tʃit̪ra aɳʈisu"
+    pos: "phrase"
+    bases:
+      - { word: "ಚಿತ್ರ", ref: "kn-1133" }
+      - { word: "ಅಂಟಿಸು", ref: "kn-1724" }
+  - id: "kn-8310"
+    target: "ಸಭೆ ಕೊನೆಗೊಳಿಸು."
+    reading: "sabhe konegoḷisu."
+    ipa: "sabʱe koneɡoɭisu"
+    pos: "phrase"
+    bases:
+      - { word: "ಸಭೆ", ref: "kn-1264" }
+      - { word: "ಕೊನೆಗೊಳಿಸು", ref: "kn-1723" }
+  - id: "kn-8311"
+    target: "ಇದು ಹೇಗೆ ಸಂಭವಿಸಿತು?"
+    reading: "idu hēge sambhavisitu?"
+    ipa: "id̪u heːɡe sambʱaʋisit̪u"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ಹೇಗೆ", ref: "kn-0172" }
+      - { word: "ಸಂಭವಿಸಿತು", base: "ಸಂಭವಿಸು", reading: "sambhavisu" }

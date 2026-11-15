@@ -1,0 +1,94 @@
+schema: 1
+id: "kn-relationships-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-8282"
+    target: "ಅವನು ನನ್ನ ಗೆಳೆಯ."
+    reading: "avanu nanna geḷeya."
+    ipa: "aʋanu nanna ɡeɭeja"
+    pos: "phrase"
+    bases:
+      - { word: "ಅವನು", ref: "kn-0612" }
+      - { word: "ನನ್ನ", ref: "kn-0619" }
+      - { word: "ಗೆಳೆಯ", ref: "kn-0195" }
+  - id: "kn-8283"
+    target: "ನಿನಗೆ ಧನ್ಯವಾದ."
+    reading: "ninage dhanyavāda."
+    ipa: "ninaɡe d̪ʱanjaʋaːd̪a"
+    pos: "phrase"
+    bases:
+      - { word: "ನಿನಗೆ", base: "ನೀನು", reading: "nīnu" }
+      - { word: "ಧನ್ಯವಾದ", ref: "kn-1591" }
+  - id: "kn-8284"
+    target: "ನಿಮಗೆ ಕೃತಜ್ಞತೆ."
+    reading: "nimage krutajñate."
+    ipa: "nimaɡe krut̪adʒɲat̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ನಿಮಗೆ", base: "ನೀವು", reading: "nīvu" }
+      - { word: "ಕೃತಜ್ಞತೆ", ref: "kn-1592" }
+  - id: "kn-8285"
+    target: "ನನ್ನನ್ನು ಕ್ಷಮಿಸಿ."
+    reading: "nannannu kṣamisi."
+    ipa: "nannannu kʂamisi"
+    pos: "phrase"
+    bases:
+      - { word: "ನನ್ನನ್ನು", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಕ್ಷಮಿಸಿ", ref: "kn-0153" }
+  - id: "kn-8286"
+    target: "ಜಗಳ ಇದೆ."
+    reading: "jagaḷa ide."
+    ipa: "dʒaɡaɭa id̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ಜಗಳ", ref: "kn-1595" }
+      - { word: "ಇದೆ", base: "ಇರು", reading: "iru" }
+  - id: "kn-8287"
+    target: "ನಮ್ಮ ನೆರೆಹೊರೆಯವರು ಯಾರು?"
+    reading: "namma nerehoreyavaru yāru?"
+    ipa: "namma nerehorejaʋaru jaːru"
+    pos: "phrase"
+    bases:
+      - { word: "ನಮ್ಮ", ref: "kn-0625" }
+      - { word: "ನೆರೆಹೊರೆಯವರು", ref: "kn-1590" }
+      - { word: "ಯಾರು", ref: "kn-0168" }
+  - id: "kn-8288"
+    target: "ಸ್ನೇಹ ಒಳ್ಳೆಯದು."
+    reading: "snēha oḷḷeyadu."
+    ipa: "sneːha oɭɭejad̪u"
+    pos: "phrase"
+    bases:
+      - { word: "ಸ್ನೇಹ", ref: "kn-1589" }
+      - { word: "ಒಳ್ಳೆಯದು", ref: "kn-0950" }
+  - id: "kn-8289"
+    target: "ಗೌರವ ಕೊಡು."
+    reading: "gaurava koḍu."
+    ipa: "ɡauraʋa koɖu"
+    pos: "phrase"
+    bases:
+      - { word: "ಗೌರವ", ref: "kn-1594" }
+      - { word: "ಕೊಡು", ref: "kn-0114" }
+  - id: "kn-8290"
+    target: "ಅವಳ ಒಡನಾಟ ಒಳ್ಳೆಯದು."
+    reading: "avaḷa oḍanāṭa oḷḷeyadu."
+    ipa: "aʋaɭa oɖanaːʈa oɭɭejad̪u"
+    pos: "phrase"
+    bases:
+      - { word: "ಅವಳ", ref: "kn-0623" }
+      - { word: "ಒಡನಾಟ", ref: "kn-1596" }
+      - { word: "ಒಳ್ಳೆಯದು", ref: "kn-0950" }
+  - id: "kn-8291"
+    target: "ನಾನು ಕ್ಷಮೆ ಕೇಳುತ್ತೇನೆ."
+    reading: "nānu kṣame kēḷuttēne."
+    ipa: "naːnu kʂame keːɭut̪t̪eːne"
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", ref: "kn-0610" }
+      - { word: "ಕ್ಷಮೆ", ref: "kn-1593" }
+      - { word: "ಕೇಳುತ್ತೇನೆ", base: "ಕೇಳು", reading: "kēḷu" }
