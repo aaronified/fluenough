@@ -388,6 +388,7 @@ search_kinds:
       clock: () => DateTime(2026, 11, 12),
       log: log,
       appVersion: appVersion,
+      mismatchRetryDelays: const <Duration>[],
     );
 
     setUp(() {

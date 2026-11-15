@@ -30,19 +30,22 @@ class WebDeckFetcher implements DeckFetcher {
   final List<Duration> retryDelays;
 
   @override
-  Future<Fetched> fetch(String path) async {
-    var fetched = await _fetchOnce(path);
+  Future<Fetched> fetch(String path, {bool fresh = false}) async {
+    var fetched = await _fetchOnce(path, fresh);
     for (final wait in retryDelays) {
       if (fetched.failure != FetchFailure.offline) break;
       await Future<void>.delayed(wait);
-      fetched = await _fetchOnce(path);
+      fetched = await _fetchOnce(path, fresh);
     }
     return fetched;
   }
 
-  Future<Fetched> _fetchOnce(String path) async {
+  Future<Fetched> _fetchOnce(String path, bool fresh) async {
     try {
-      final response = await _client.get(base.resolve(path)).timeout(timeout);
+      final uri = base.resolve(path);
+      final response = await _client
+          .get(fresh ? GitHubDeckFetcher.withCacheBuster(uri) : uri)
+          .timeout(timeout);
       if (response.statusCode != 200) {
         return Fetched.failed(
           GitHubDeckFetcher.failureFor(response.statusCode),

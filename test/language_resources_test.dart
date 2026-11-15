@@ -175,6 +175,7 @@ void main() {
       fetcher: remote,
       files: MemoryDownloadedDecks(),
       clock: () => DateTime(2026, 10, 24),
+      mismatchRetryDelays: const <Duration>[],
     );
 
     test(

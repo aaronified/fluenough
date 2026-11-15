@@ -112,7 +112,7 @@ class SteppedRemote extends FakeDeckRemote {
   void releaseAll() => release(1 << 30);
 
   @override
-  Future<Fetched> fetch(String path) async {
+  Future<Fetched> fetch(String path, {bool fresh = false}) async {
     if (path != 'decks/index.json') {
       if (_allowed > 0) {
         _allowed--;
@@ -122,7 +122,7 @@ class SteppedRemote extends FakeDeckRemote {
         await wait.future;
       }
     }
-    return super.fetch(path);
+    return super.fetch(path, fresh: fresh);
   }
 }
 

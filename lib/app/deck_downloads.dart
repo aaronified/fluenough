@@ -133,6 +133,10 @@ class DeckDownloads extends ChangeNotifier {
     ScriptFonts? scriptFonts,
     this.appVersion = AppInfo.version,
     this.reviewQueueTimeout = const Duration(seconds: 5),
+    this.mismatchRetryDelays = const <Duration>[
+      Duration(seconds: 1),
+      Duration(seconds: 3),
+    ],
   }) : fonts = scriptFonts ?? ScriptFonts();
 
   /// How long after the last check an automatic one is due.
@@ -163,6 +167,12 @@ class DeckDownloads extends ChangeNotifier {
   /// How long the review queue's read is waited for: one try, with none of
   /// the fetcher's retry waits, and the kept copy is used after it.
   final Duration reviewQueueTimeout;
+
+  /// The waits before each fresh refetch of a file that does not match the
+  /// index: GitHub's cache may hold an older copy of the file or of the
+  /// index for minutes, and the index is rewritten a little after a merge.
+  /// Empty for no refetch.
+  final List<Duration> mismatchRetryDelays;
 
   final DeckFetcher fetcher;
   final DownloadedDecks files;
@@ -520,11 +530,14 @@ class DeckDownloads extends ChangeNotifier {
 
   /// Reads the index from GitHub again, and keeps it. Returns whether it
   /// was read; [indexFailure] says why not.
-  Future<bool> refreshIndex() async {
+  ///
+  /// With [fresh], a copy of the index in a cache is bypassed: set once a
+  /// file has not matched the index.
+  Future<bool> refreshIndex({bool fresh = false}) async {
     _indexStatus = IndexStatus.loading;
     _indexFailure = null;
     _notify();
-    final fetched = await fetcher.fetch('decks/index.json');
+    final fetched = await fetcher.fetch('decks/index.json', fresh: fresh);
     final bytes = fetched.bytes;
     if (bytes == null) {
       return _indexFailed(_failureOf(fetched.failure!), 'not downloaded');
@@ -580,7 +593,7 @@ class DeckDownloads extends ChangeNotifier {
     final failure = await attempt();
     if (failure != DeckDownloadFailure.badFile) return failure;
     _log?.event('Deck files did not match the index: reading it again');
-    if (!await refreshIndex()) {
+    if (!await refreshIndex(fresh: true)) {
       return _failed(language, _indexFailure ?? DeckDownloadFailure.badFile);
     }
     if (_spoken case final spoken?) _findUpdates(spoken);
@@ -1372,20 +1385,42 @@ class DeckDownloads extends ChangeNotifier {
   Future<({List<int>? bytes, DeckDownloadFailure? failure})> _fetchChecked(
     IndexFile file,
   ) async {
-    final fetched = await fetcher.fetch(file.path);
-    final bytes = fetched.bytes;
-    if (bytes == null) {
+    var fetched = await fetcher.fetch(file.path);
+    var retries = 0;
+    while (true) {
+      final bytes = fetched.bytes;
+      if (bytes == null) {
+        _log?.warning(
+          'Deck download failed (${fetched.failure!.name}'
+          '${fetched.cause == null ? '' : ': ${fetched.cause}'}): '
+          '${file.path}',
+        );
+        return (bytes: null, failure: _failureOf(fetched.failure!));
+      }
+      final hash = sha256Hex(bytes);
+      if (bytes.length == file.size && hash == file.sha256) {
+        return (bytes: bytes, failure: null);
+      }
+      // A cache between GitHub and the phone may hold an older copy, or the
+      // file may be newer than the index: fetch it again past the cache. A
+      // file that is newer than the index is found out by the caller, which
+      // reads the index again ([_againIfStale]).
+      if (retries >= mismatchRetryDelays.length) {
+        _log?.warning(
+          'Deck download did not match the index after $retries fresh '
+          'tries: ${file.path} is ${bytes.length} bytes, $hash; the index '
+          'lists ${file.size} bytes, ${file.sha256}',
+        );
+        return (bytes: null, failure: DeckDownloadFailure.badFile);
+      }
       _log?.warning(
-        'Deck download failed (${fetched.failure!.name}'
-        '${fetched.cause == null ? '' : ': ${fetched.cause}'}): ${file.path}',
+        'Deck download did not match the index (${bytes.length} bytes, '
+        '$hash; wanted ${file.size}, ${file.sha256}): fetching '
+        '${file.path} again',
       );
-      return (bytes: null, failure: _failureOf(fetched.failure!));
+      await Future<void>.delayed(mismatchRetryDelays[retries++]);
+      fetched = await fetcher.fetch(file.path, fresh: true);
     }
-    if (bytes.length != file.size || sha256Hex(bytes) != file.sha256) {
-      _log?.warning('Deck download did not match the index: ${file.path}');
-      return (bytes: null, failure: DeckDownloadFailure.badFile);
-    }
-    return (bytes: bytes, failure: null);
   }
 
   /// Downloads [fonts] for [language], one at a time, keeps each as it

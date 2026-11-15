@@ -37,6 +37,14 @@ class FakeDeckRemote implements DeckFetcher {
   /// between the index and the file, or cut short on the way.
   final Map<String, String> served = <String, String>{};
 
+  /// Files whose older copy a cache still holds: served in place of the
+  /// current one, unless the request is [fetch]ed `fresh`. The index is
+  /// held by the key `decks/index.json`.
+  final Map<String, String> cached = <String, String>{};
+
+  /// Every path asked for with `fresh`, in order.
+  final List<String> askedFresh = <String>[];
+
   /// Fails every file after this many have been served.
   int? failAfter;
   FetchFailure failAfterWith = FetchFailure.offline;
@@ -48,8 +56,9 @@ class FakeDeckRemote implements DeckFetcher {
   Completer<void>? gate;
 
   @override
-  Future<Fetched> fetch(String path) async {
+  Future<Fetched> fetch(String path, {bool fresh = false}) async {
     asked.add(path);
+    if (fresh) askedFresh.add(path);
     await gate?.future;
     if (failAll case final failure?) return Fetched.failed(failure);
     if (failures[path] case final failure?) return Fetched.failed(failure);
@@ -58,7 +67,7 @@ class FakeDeckRemote implements DeckFetcher {
         asked.where((p) => p != 'decks/index.json').length > after) {
       return Fetched.failed(failAfterWith);
     }
-    final text = served[path] ?? _text(path);
+    final text = (fresh ? null : cached[path]) ?? served[path] ?? _text(path);
     if (text == null) return const Fetched.failed(FetchFailure.notFound);
     return Fetched(Uint8List.fromList(utf8.encode(text)));
   }
