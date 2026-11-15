@@ -1,0 +1,28 @@
+schema: 1
+id: "bn-en-grammar-verb-past-perfect"
+kind: "layer"
+core: "bn-grammar-verb-past-perfect"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verbs: what I, you, he, she had done"
+description: "Every verb the course teaches, in the past perfect for something that was already done before another past moment, for each person and each level of respect. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "person"
+  slots:
+    "ami": "I or we, in the past perfect"
+    "tui": "you (intimate), in the past perfect"
+    "tumi": "you (familiar), in the past perfect"
+    "apni": "you (respectful), in the past perfect"
+    "se": "he, she or they, in the past perfect"
+    "tini": "he or she (respectful), in the past perfect"
+rules:
+  "bn-rule-past-perfect-first":
+    name: "-ছিলাম (-chilām): I, we"
+    explanation: "{1} is the ending for 'I' and for 'we' alike, added to the perfect stem of the verb: {2}, {3}. The stem is the one the perfect uses: {4} gives {5}, and {6} gives {7}. A verb with a changed stem keeps it: {8} gives {9}."
+  "bn-rule-past-perfect-second":
+    name: "-ছিলি (-chili), -ছিলে (-chile), -ছিলেন (-chilen): you"
+    explanation: "{1}, for a friend or a younger person, takes {2}: {3}. {4}, the familiar one, takes {5}: {6}. {7}, the respectful one, takes {8}: {9}. A verb with a changed stem keeps it: {10}, {11}, {12}."
+  "bn-rule-past-perfect-third":
+    name: "-ছিল (-chilo), -ছিলেন (-chilen): he, she, they"
+    explanation: "For someone who is not there, {1} is the ordinary ending: {2}, {3}. It does not change for one or for many. For someone you respect it is {4}, as in {5}. A verb with a changed stem keeps it: {6}, {7}."
