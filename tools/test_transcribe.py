@@ -1162,5 +1162,41 @@ class PropagateSafetyTest(unittest.TestCase):
             "reading", "iṁka", "iṅkā", "ఇంకా"), "iṅka")
 
 
+class GujaratiHintTest(unittest.TestCase):
+    """A stored reading is passed as the hint (transcribe_decks), so a hint
+    in the course's own ISO letters must fit and be followed."""
+
+    def test_gujarati_long_vowels_are_written_short_as_the_course_does(self) -> None:
+        # gu-romanisation.yaml: i and u for both the short and the long vowel.
+        for word, reading in (("ઠીક", "ṭhik"), ("હિન્દી", "hindi"),
+                              ("સૂવું", "suvum̐"), ("ગુજરાતી", "gujarāti")):
+            with self.subTest(word):
+                self.assertEqual(transcribe(word, "gu").reading, reading)
+
+    def test_a_hint_that_writes_the_long_vowel_fits_and_reads_short(self) -> None:
+        for word, hint, reading in (("ઠીક", "ṭhīk", "ṭhik"),
+                                    ("હિન્દી", "hindī", "hindi"),
+                                    ("ગુજરાતી", "gujarātī", "gujarāti")):
+            with self.subTest(word):
+                t = transcribe(word, "gu", hint)
+                self.assertTrue(t.fitted)
+                self.assertEqual(t.reading, reading)
+
+    def test_a_hint_in_iso_letters_is_followed_not_dropped(self) -> None:
+        # Without the hint the medial a is dropped (śrimti); the hint keeps it.
+        self.assertEqual(transcribe("શ્રીમતી", "gu").reading, "śrimti")
+        t = transcribe("શ્રીમતી", "gu", "śrimati")
+        self.assertTrue(t.fitted)
+        self.assertEqual((t.reading, t.ipa), ("śrimati", "ʃrimət̪i"))
+        t = transcribe("ઝડપથી", "gu", "jhaḍapthi")
+        self.assertTrue(t.fitted)
+        self.assertEqual(t.reading, "jhaḍapthi")
+
+    def test_a_hint_keeps_the_nasal_mark_m_candrabindu(self) -> None:
+        t = transcribe("ઓગણીસ", "gu", "ogaṇis")
+        self.assertEqual(t.reading, "ogaṇis")
+        self.assertEqual(transcribe("કયું", "gu", "kayum̐").reading, "kayum̐")
+
+
 if __name__ == "__main__":
     unittest.main()

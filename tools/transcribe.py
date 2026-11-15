@@ -512,13 +512,27 @@ def _next_consonant(units: list[Unit], k: int) -> Unit | None:
     return None
 
 
+_LONG_TYPED = {"ii": "ī", "uu": "ū", "e": "ē", "o": "ō", "se": "ē",
+               "so": "ō", "aa": "ā"}
+
+
+def _iso_typed(ch: Choice, u: Unit) -> set[str]:
+    """Spellings in ISO 15919's own letters that also fit a choice."""
+    out = {ch.iso} if ch.iso else set()
+    if u.kind in ("V", "S") and u.letter in _LONG_TYPED:
+        out.add(_LONG_TYPED[u.letter])
+    return out
+
+
 def align(units: list[Unit], hint: str, lang: str) -> list[Choice] | None:
     """The cheapest way to read [hint] as [units], one choice per unit, or
     None when it does not fit."""
     hint = _lower(hint)
     # Punctuation in the hint is not matched letter for letter: it is
     # dropped, and the script's own punctuation is written.
-    hint = "".join(c for c in hint if c.isalnum() or c in " -")
+    # A combining mark (ISO 15919's m̐, r̥) is part of the letter before it.
+    hint = "".join(c for c in hint if c.isalnum() or c in " -" or
+                   unicodedata.category(c).startswith("M"))
     hint = " ".join(hint.split())
     n = len(units)
     INF = 10 ** 9
@@ -540,7 +554,11 @@ def align(units: list[Unit], hint: str, lang: str) -> list[Choice] | None:
                 best[k][p + 1] = best[k][p] + 1
                 back_skip[k][p + 1] = p
             for ci, ch in enumerate(opts[k]):
-                for t in set(ch.typed):
+                # A stored reading is passed as the hint (transcribe_decks):
+                # the choice's own ISO letters fit it, and so do the long
+                # vowels ī ū ē ō where the reading writes them, so a hint
+                # in the course's own letters is no longer dropped.
+                for t in set(ch.typed) | _iso_typed(ch, units[k]):
                     if hint.startswith(t, p):
                         q = p + len(t)
                         # A consonant may be typed twice: అమ్మ amma is one
