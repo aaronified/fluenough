@@ -1,0 +1,218 @@
+schema: 1
+id: "ja-facts"
+name: "Japanese facts"
+kind: "facts"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP", icon: "あ" }
+license: "CC-BY-SA-4.0"
+description: "One true, surprising thing about Japanese a day, in English, Bengali and Hindi. The Bengali and Hindi texts are not yet checked by a native speaker: please report any mistake."
+facts:
+  - id: "ja-fact-001"
+    tags: ["script"]
+    source: "https://en.wikipedia.org/wiki/Japanese_language"
+    text:
+      en: "Modern Japanese is written with three systems together: kanji, which are characters taken from Chinese, and the two syllabaries, hiragana and katakana."
+      bn: "আধুনিক জাপানি তিনটি লিখন-পদ্ধতি একসঙ্গে ব্যবহার করে: কানজি, যা চীনা অক্ষর থেকে নেওয়া, আর দুটি বর্ণমালা, হিরাগানা ও কাতাকানা।"
+      hi: "आधुनिक जापानी तीन लिखित प्रणालियों को एक साथ इस्तेमाल करती है: कांजी, जो चीनी अक्षरों से लिए गए हैं, और दो अक्षर-लिपियाँ, हिरागाना और काताकाना।"
+  - id: "ja-fact-002"
+    tags: ["script", "history"]
+    source: "https://en.wikipedia.org/wiki/Japanese_writing_system"
+    text:
+      en: "At first Chinese characters were not used to write Japanese, because literacy meant fluency in Classical Chinese, not the spoken Japanese language. No full script for written Japanese existed until a system using Chinese characters for their sounds was developed."
+      bn: "প্রথমদিকে জাপানি লিখতে চীনা অক্ষর ব্যবহার হতো না, কারণ সাক্ষরতা মানে ছিল ধ্রুপদী চীনা ভাষায় দক্ষতা, কথ্য জাপানি নয়। লিখিত জাপানির পূর্ণ লিপি তৈরি হয় যখন চীনা অক্ষরকে তাদের ধ্বনির জন্য ব্যবহার করা এক পদ্ধতি গড়ে ওঠে।"
+      hi: "शुरू में जापानी लिखने के लिए चीनी अक्षर इस्तेमाल नहीं होते थे, क्योंकि साक्षरता का मतलब शास्त्रीय चीनी में दक्षता था, बोली जाने वाली जापानी में नहीं। लिखित जापानी के लिए पूरी लिपि तब बनी जब चीनी अक्षरों को उनकी ध्वनि के लिए इस्तेमाल करने वाली एक पद्धति विकसित हुई।"
+  - id: "ja-fact-003"
+    tags: ["script", "history"]
+    source: "https://en.wikipedia.org/wiki/Hiragana"
+    text:
+      en: "Hiragana means something like 'plain' or 'common' kana. The name also carried the sense of 'easy', as contrasted with kanji."
+      bn: "হিরাগানা শব্দের অর্থ প্রায় 'সাধারণ' বা 'সরল' কানা। এই নামের মধ্যে 'সহজ' অর্থও ছিল, কানজির তুলনায়।"
+      hi: "हिरागाना का मतलब लगभग 'सादा' या 'आम' काना है। इस नाम में कांजी के मुकाबले 'आसान' का भाव भी था।"
+  - id: "ja-fact-004"
+    tags: ["script"]
+    source: "https://en.wikipedia.org/wiki/Hiragana"
+    text:
+      en: "The hiragana syllabary has 48 base characters, and two of them, ゐ (wi) and ゑ (we), are used only in some proper names."
+      bn: "হিরাগানা বর্ণমালায় ৪৮টি মূল অক্ষর আছে, আর তার দুটি, ゐ (wi) ও ゑ (we), শুধু কয়েকটি বিশেষ্য নামে ব্যবহৃত হয়।"
+      hi: "हिरागाना वर्णमाला में 48 मूल अक्षर हैं, और इनमें से दो, ゐ (wi) और ゑ (we), केवल कुछ व्यक्तिवाचक नामों में इस्तेमाल होते हैं।"
+  - id: "ja-fact-005"
+    tags: ["script", "history"]
+    source: "https://en.wikipedia.org/wiki/Katakana"
+    text:
+      en: "Katakana were made from parts of more complex kanji. The katakana ka comes from the left side of the kanji 加 (ka, increase)."
+      bn: "কাতাকানা তৈরি হয়েছিল জটিল কানজির অংশ থেকে। কাতাকানার ka এসেছে কানজি 加 (ka, বৃদ্ধি)-র বাঁ দিক থেকে।"
+      hi: "काताकाना अधिक जटिल कांजी के हिस्सों से बने थे। काताकाना का ka कांजी 加 (ka, बढ़ना) की बायीं ओर से आया है।"
+  - id: "ja-fact-006"
+    tags: ["script", "loanwords"]
+    source: "https://en.wikipedia.org/wiki/Katakana"
+    text:
+      en: "Katakana is used for foreign words and names, for onomatopoeia, and sometimes to show emphasis. Country names and foreign personal names are usually written in it."
+      bn: "কাতাকানা ব্যবহৃত হয় বিদেশি শব্দ ও নামে, ধ্বন্যাত্মক শব্দে, আর কখনো কখনো জোর দেখাতে। দেশের নাম ও বিদেশি ব্যক্তির নাম সাধারণত এতেই লেখা হয়।"
+      hi: "काताकाना विदेशी शब्दों और नामों, ध्वन्यात्मक शब्दों, और कभी-कभी ज़ोर दिखाने के लिए इस्तेमाल होती है। देशों के नाम और विदेशी व्यक्तियों के नाम आम तौर पर इसी में लिखे जाते हैं।"
+  - id: "ja-fact-007"
+    tags: ["script"]
+    source: "https://en.wikipedia.org/wiki/Japanese_writing_system"
+    text:
+      en: "Kanji are logographic characters, and one kanji can have several readings. Furigana are phonetic hiragana placed above or beside a kanji to show how it is read."
+      bn: "কানজি লোগোগ্রাফিক অক্ষর, আর একটি কানজির একাধিক উচ্চারণ থাকতে পারে। ফুরিগানা হলো ধ্বনিভিত্তিক হিরাগানা, যা কানজির উপরে বা পাশে বসে তা কীভাবে পড়তে হবে বোঝাতে।"
+      hi: "कांजी लोगोग्राफ़िक अक्षर हैं, और एक कांजी के कई उच्चारण हो सकते हैं। फ़ुरिगाना ध्वन्यात्मक हिरागाना होते हैं, जो कांजी के ऊपर या बगल में लगते हैं ताकि दिखे कि उसे कैसे पढ़ना है।"
+  - id: "ja-fact-008"
+    tags: ["script"]
+    source: "https://en.wikipedia.org/wiki/Japanese_writing_system"
+    text:
+      en: "The jōyō kanji list of 2,136 characters, as of 2010, is the set regarded as the common-use list. The 1981 list had 1,945 characters."
+      bn: "২০১০ সাল পর্যন্ত জোইয়ো কানজির তালিকায় ২,১৩৬টি অক্ষর আছে, যাকে সাধারণ ব্যবহারের তালিকা ধরা হয়। ১৯৮১ সালের তালিকায় ছিল ১,৯৪৫টি অক্ষর।"
+      hi: "2010 तक जोयो कांजी सूची में 2,136 अक्षर हैं, जिसे आम इस्तेमाल की सूची माना जाता है। 1981 की सूची में 1,945 अक्षर थे।"
+  - id: "ja-fact-009"
+    tags: ["script", "pronunciation"]
+    source: "https://en.wikipedia.org/wiki/Kanji"
+    text:
+      en: "Kanji have two kinds of reading. The on reading is the descendant of the Japanese approximation of the Chinese pronunciation, and the kun reading is based on a native Japanese word. The kanji 働 (dō) has the on reading dō and the kun reading hatara(ku)."
+      bn: "কানজির দুই ধরনের উচ্চারণ আছে। অন-উচ্চারণ চীনা উচ্চারণের জাপানি আনুমানিক রূপের উত্তরসূরি, আর কুন-উচ্চারণ একটি মূল জাপানি শব্দের উপর ভিত্তি করে। 働 (dō)-এর অন-উচ্চারণ dō এবং কুন-উচ্চারণ hatara(ku)।"
+      hi: "कांजी के दो तरह के उच्चारण होते हैं। ऑन उच्चारण चीनी उच्चारण के जापानी अनुमान से निकला है, और कुन उच्चारण एक मूल जापानी शब्द पर आधारित है। 働 (dō) का ऑन उच्चारण dō है और कुन उच्चारण hatara(ku)।"
+  - id: "ja-fact-010"
+    tags: ["script", "names"]
+    source: "https://en.wikipedia.org/wiki/Kanji"
+    text:
+      en: "Most Japanese place names and family names are read with the kun reading. Given names often have very irregular readings, and they do not follow any set rules."
+      bn: "বেশিরভাগ জাপানি স্থাননাম ও পারিবারিক নাম কুন-উচ্চারণে পড়া হয়। ব্যক্তিনামের উচ্চারণ প্রায়ই খুব অনিয়মিত, এবং তা কোনো নির্দিষ্ট নিয়ম মানে না।"
+      hi: "ज़्यादातर जापानी स्थान-नाम और पारिवारिक नाम कुन उच्चारण में पढ़े जाते हैं। व्यक्तिगत नामों के उच्चारण अक्सर बहुत अनियमित होते हैं, और वे किसी तय नियम को नहीं मानते।"
+  - id: "ja-fact-011"
+    tags: ["sounds", "pronunciation"]
+    source: "https://en.wikipedia.org/wiki/Japanese_language"
+    text:
+      en: "Japanese has five vowels, and vowel length is phonemic: each vowel has a short and a long form, and the difference can change a word's meaning."
+      bn: "জাপানিতে পাঁচটি স্বরধ্বনি আছে, এবং স্বরের দৈর্ঘ্য ধ্বনিগতভাবে গুরুত্বপূর্ণ: প্রতিটি স্বরের একটি হ্রস্ব ও একটি দীর্ঘ রূপ আছে, আর এই পার্থক্যে শব্দের অর্থ বদলাতে পারে।"
+      hi: "जापानी में पाँच स्वर हैं, और स्वर की लंबाई ध्वनिगत रूप से महत्वपूर्ण है: हर स्वर का एक छोटा और एक लंबा रूप होता है, और इस फ़र्क़ से शब्द का अर्थ बदल सकता है।"
+  - id: "ja-fact-012"
+    tags: ["sounds"]
+    source: "https://en.wikipedia.org/wiki/Japanese_phonology"
+    text:
+      en: "Japanese is a mora-timed language: the length of a word is counted in mora, a unit of timing whose name is the Latin word for delay."
+      bn: "জাপানি মোরা-নির্ভর ভাষা: শব্দের দৈর্ঘ্য গোনা হয় মোরায়, যা সময়ের একটি একক এবং যার নাম ল্যাটিন 'বিলম্ব' শব্দ থেকে এসেছে।"
+      hi: "जापानी मोरा-आधारित भाषा है: शब्द की लंबाई मोरा में गिनी जाती है, जो समय की एक इकाई है और जिसका नाम लैटिन के 'देरी' शब्द से आया है।"
+  - id: "ja-fact-013"
+    tags: ["sounds"]
+    source: "https://en.wikipedia.org/wiki/Japanese_phonology"
+    text:
+      en: "The moraic nasal ん is pronounced as a nasal that takes the place of the consonant after it. In 三枚 (sanmai, three sheets), the ん is said as the m of mai, so the word is pronounced [sammai]."
+      bn: "মোরাইক নাসাল ん এমন নাসিক্য ধ্বনি হয়ে ওঠে যা তার পরের ব্যঞ্জনের স্থান নেয়। 三枚 (sanmai, তিনটি পাতা)-তে ん উচ্চারিত হয় mai-এর m-এর মতো, তাই শব্দটি বলা হয় [sammai]।"
+      hi: "मोराइक नासल ん एक नासिक्य ध्वनि है जो अपने बाद के व्यंजन की जगह लेती है। 三枚 (sanmai, तीन पन्ने) में ん mai के m की तरह बोला जाता है, इसलिए शब्द [sammai] बोला जाता है।"
+  - id: "ja-fact-014"
+    tags: ["sounds", "script"]
+    source: "https://en.wikipedia.org/wiki/Japanese_phonology"
+    text:
+      en: "The small つ marks the first half of a geminate, a doubled consonant. 悪化 (akka, worsening) is written with a small tsu in the middle, so its k is doubled."
+      bn: "ছোট つ লেখা হলে তা দ্বিত্ব ব্যঞ্জনের প্রথম অর্ধেক বোঝায়। 悪化 (akka, অবনতি) লেখা হয় মাঝখানে ছোট つ দিয়ে, তাই তার k দ্বিত্ব হয়।"
+      hi: "छोटा つ दोहरे व्यंजन, यानी जेमिनेट, का पहला हिस्सा बताता है। 悪化 (akka, बिगड़ना) में बीच में छोटा つ लगता है, इसलिए उसका k दोहरा होता है।"
+  - id: "ja-fact-015"
+    tags: ["sounds", "pronunciation"]
+    source: "https://en.wikipedia.org/wiki/Japanese_pitch_accent"
+    text:
+      en: "Japanese has pitch accent, not stress. 橋 (hashi) with its accent on the last mora means bridge, while 箸 (hashi) with its accent on the first means chopsticks."
+      bn: "জাপানিতে আছে স্বরের উঁচু-নিচু (পিচ অ্যাকসেন্ট), জোর নয়। 橋 (hashi) যার অ্যাকসেন্ট শেষ মোরায়, তার মানে সেতু; আর 箸 (hashi) যার অ্যাকসেন্ট প্রথম মোরায়, তার মানে চপস্টিক।"
+      hi: "जापानी में पिच एक्सेंट है, स्ट्रेस नहीं। 橋 (hashi) जिसका एक्सेंट आख़िरी मोरा पर है, उसका अर्थ पुल है; और 箸 (hashi) जिसका एक्सेंट पहले मोरा पर है, उसका अर्थ चॉपस्टिक है।"
+  - id: "ja-fact-016"
+    tags: ["grammar"]
+    source: "https://en.wikipedia.org/wiki/Japanese_grammar"
+    text:
+      en: "Japanese nouns have no grammatical number or gender, and there are no articles. The noun 人 (hito, person) does not show whether one person or many is meant."
+      bn: "জাপানি বিশেষ্যের ব্যাকরণগত বচন বা লিঙ্গ নেই, এবং কোনো আর্টিকলও নেই। 人 (hito, মানুষ) দেখায় না এক জন না অনেক জন বোঝানো হচ্ছে।"
+      hi: "जापानी संज्ञाओं में व्याकरणिक वचन या लिंग नहीं होते, और कोई आर्टिकल भी नहीं होता। 人 (hito, व्यक्ति) यह नहीं दिखाता कि एक व्यक्ति की बात है या अनेक की।"
+  - id: "ja-fact-017"
+    tags: ["grammar"]
+    source: "https://en.wikipedia.org/wiki/Japanese_grammar"
+    text:
+      en: "The suffixes -tachi and -ra are the most common collectivising suffixes, but they are collective, not plural."
+      bn: "-tachi আর -ra সবচেয়ে সাধারণ সমষ্টিবাচক প্রত্যয়, কিন্তু এগুলি সমষ্টিগত, বহুবচন নয়।"
+      hi: "-tachi और -ra सबसे आम सामूहिकता-बोधक प्रत्यय हैं, पर ये सामूहिक हैं, बहुवचन नहीं।"
+  - id: "ja-fact-018"
+    tags: ["grammar"]
+    source: "https://en.wikipedia.org/wiki/Japanese_grammar"
+    text:
+      en: "Normal Japanese word order is subject, object, verb. The verb is rigidly placed at the end of the clause."
+      bn: "জাপানির স্বাভাবিক শব্দক্রম হলো কর্তা, কর্ম, ক্রিয়া। ক্রিয়া বাক্যাংশের শেষে কঠোরভাবে বসে।"
+      hi: "जापानी का सामान्य शब्द-क्रम कर्ता, कर्म, क्रिया है। क्रिया वाक्यांश के अंत में पक्के तौर पर आती है।"
+  - id: "ja-fact-019"
+    tags: ["grammar", "particles"]
+    source: "https://en.wikipedia.org/wiki/Japanese_grammar"
+    text:
+      en: "Particles placed after nouns mark their role. は (wa) marks the topic of a sentence, and が (ga) marks the subject."
+      bn: "বিশেষ্যের পরে বসা কণাগুলো তাদের ভূমিকা বোঝায়। は (wa) বাক্যের বিষয় বা টপিক বোঝায়, আর が (ga) বোঝায় কর্তা।"
+      hi: "संज्ञाओं के बाद लगने वाले कण उनकी भूमिका बताते हैं। は (wa) वाक्य का विषय (टॉपिक) दर्शाता है, और が (ga) कर्ता।"
+  - id: "ja-fact-020"
+    tags: ["numbers"]
+    source: "https://en.wikipedia.org/wiki/Japanese_numerals"
+    text:
+      en: "Large Japanese numbers are grouped by ten thousand, the myriad, not by thousands. 10000 is 一万 (ichiman), and a number that starts at a myriad begins with 一 (ichi) when no digit would otherwise come before it."
+      bn: "জাপানি বড় সংখ্যা গোনা হয় দশ হাজারের একক, অর্থাৎ মিরিয়াড ধরে, হাজার ধরে নয়। 10000 হলো 一万 (ichiman), আর মিরিয়াড থেকে শুরু হওয়া সংখ্যা 一 (ichi) দিয়ে শুরু হয়, যদি তার আগে অন্য অঙ্ক না থাকে।"
+      hi: "जापानी में बड़ी संख्याएँ दस हज़ार की इकाई, यानी मिरियाड, से गिनी जाती हैं, हज़ार से नहीं। 10000 है 一万 (ichiman), और मिरियाड से शुरू होने वाली संख्या तब 一 (ichi) से शुरू होती है जब उसके पहले कोई अंक न हो।"
+  - id: "ja-fact-021"
+    tags: ["numbers", "culture"]
+    source: "https://en.wikipedia.org/wiki/Japanese_numerals"
+    text:
+      en: "Most Japanese numbers have two readings. 4 is preferred as yon rather than shi, and 7 as nana rather than shichi, and it is said that this is because shi is also the reading of the word for death, 死 (shi)."
+      bn: "বেশিরভাগ জাপানি সংখ্যার দুটি উচ্চারণ আছে। ৪-এর জন্য shi-র বদলে yon, আর ৭-এর জন্য shichi-র বদলে nana বেশি পছন্দের; বলা হয় এর কারণ, shi মৃত্যু বোঝানো 死 (shi)-র উচ্চারণও।"
+      hi: "ज़्यादातर जापानी संख्याओं के दो उच्चारण होते हैं। 4 के लिए shi की जगह yon, और 7 के लिए shichi की जगह nana पसंद किया जाता है; कहा जाता है कि इसकी वजह यह है कि shi, मृत्यु बताने वाले 死 (shi) का भी उच्चारण है।"
+  - id: "ja-fact-022"
+    tags: ["numbers", "culture"]
+    source: "https://en.wikipedia.org/wiki/Japanese_numerals"
+    text:
+      en: "The number 9 is read ku, which is a homophone of the word for suffering, 苦 (ku). The month names follow the same pattern, so September is ku-gatsu."
+      bn: "৯-এর উচ্চারণ ku, যা কষ্ট বোঝানো 苦 (ku)-র সমধ্বনি। মাসের নামও একই নিয়ম মানে, তাই সেপ্টেম্বর হলো ku-gatsu।"
+      hi: "9 का उच्चारण ku है, जो कष्ट बताने वाले 苦 (ku) का समध्वनि है। महीनों के नाम भी इसी ढंग से बनते हैं, इसलिए सितंबर को ku-gatsu कहा जाता है।"
+  - id: "ja-fact-023"
+    tags: ["sounds", "rendaku"]
+    source: "https://en.wikipedia.org/wiki/Rendaku"
+    text:
+      en: "Rendaku is a pronunciation change inside some compound words, where a voiceless consonant becomes a voiced one. The word origami comes from ori (fold) plus kami, and its k becomes g."
+      bn: "রেনদাকু হলো কিছু যৌগিক শব্দের ভেতরের উচ্চারণ-পরিবর্তন, যেখানে অঘোষ ব্যঞ্জন ঘোষ ব্যঞ্জনে বদলায়। origami আসে ori (ভাঁজ) ও kami থেকে, এবং তার k হয়ে যায় g।"
+      hi: "रेंदाकू कुछ समास-शब्दों के भीतर उच्चारण का बदलाव है, जहाँ अघोष व्यंजन घोष व्यंजन बन जाता है। origami, ori (मोड़ना) और kami से बना है, और उसका k g हो जाता है।"
+  - id: "ja-fact-024"
+    tags: ["sounds", "rendaku"]
+    source: "https://en.wikipedia.org/wiki/Rendaku"
+    text:
+      en: "Rendaku is common, but it does not occur in all compound words. There are numerous exceptions, pronounced without the change."
+      bn: "রেনদাকু সাধারণ, কিন্তু সব যৌগিক শব্দে ঘটে না। অসংখ্য ব্যতিক্রম আছে, যেগুলো পরিবর্তন ছাড়াই উচ্চারিত হয়।"
+      hi: "रेंदाकू आम है, पर सभी समास-शब्दों में नहीं होता। बहुत से अपवाद हैं, जो बिना बदलाव के बोले जाते हैं।"
+  - id: "ja-fact-025"
+    tags: ["vocabulary", "loanwords"]
+    source: "https://en.wikipedia.org/wiki/Gairaigo"
+    text:
+      en: "Gairaigo are loanwords taken into Japanese from foreign languages. Most modern gairaigo come from English, but not all: Portuguese and Dutch loanwords such as tabako are still used."
+      bn: "গাইরাইগো হলো বিদেশি ভাষা থেকে জাপানিতে নেওয়া ঋণশব্দ। আধুনিক গাইরাইগোর বেশিরভাগ ইংরেজি থেকে এলেও সব নয়; পর্তুগিজ ও ডাচ থেকে নেওয়া tabako-র মতো শব্দ এখনো ব্যবহৃত হয়।"
+      hi: "गाइराइगो विदेशी भाषाओं से जापानी में लिए गए शब्द हैं। आधुनिक गाइराइगो ज़्यादातर अंग्रेज़ी से आए हैं, पर सभी नहीं; पुर्तगाली और डच से लिए tabako जैसे शब्द आज भी इस्तेमाल होते हैं।"
+  - id: "ja-fact-026"
+    tags: ["vocabulary", "loanwords"]
+    source: "https://en.wikipedia.org/wiki/Gairaigo"
+    text:
+      en: "The loanword arubaito (アルバイト (arubaito)), for part-time work, comes from the German Arbeit, meaning work."
+      bn: "アルバイト (arubaito) নামের ঋণশব্দটি, যার মানে খণ্ডকালীন কাজ, এসেছে জার্মান Arbeit থেকে, যার মানে কাজ।"
+      hi: "アルバイト (arubaito) नाम का उधार लिया शब्द, जिसका मतलब अंशकालिक काम है, जर्मन Arbeit से आया है, जिसका मतलब काम है।"
+  - id: "ja-fact-027"
+    tags: ["honorifics", "culture"]
+    source: "https://en.wikipedia.org/wiki/Japanese_honorifics"
+    text:
+      en: "The suffix -san is the most common honorific, a title of respect typically used between equals of any age, for men and women alike. The suffix -sama is more respectful, for someone of higher rank than oneself."
+      bn: "-san প্রত্যয়টি সবচেয়ে সাধারণ সম্মানসূচক, যা সমান মর্যাদার মানুষদের মধ্যে যেকোনো বয়সে, নারী-পুরুষ নির্বিশেষে ব্যবহৃত হয়। -sama আরও সম্মানজনক, নিজের চেয়ে উচ্চ পদের কারও জন্য।"
+      hi: "-san प्रत्यय सबसे आम सम्मानसूचक है, जो बराबर के लोगों के बीच किसी भी उम्र में, स्त्री-पुरुष दोनों के लिए इस्तेमाल होता है। -sama अधिक सम्मानजनक है, अपने से ऊँचे पद वाले व्यक्ति के लिए।"
+  - id: "ja-fact-028"
+    tags: ["honorifics", "culture"]
+    source: "https://en.wikipedia.org/wiki/Japanese_honorifics"
+    text:
+      en: "Teachers, doctors, politicians and lawyers are addressed as 先生 (sensei), a term for authority figures. When speaking to outsiders, people use neutral, descriptive nouns for their own family rather than honorific forms."
+      bn: "শিক্ষক, চিকিৎসক, রাজনীতিক ও আইনজীবীদের সম্বোধন করা হয় 先生 (sensei) বলে, যা কর্তৃপক্ষস্থানীয় মানুষদের জন্য ব্যবহৃত হয়। বাইরের মানুষের সঙ্গে কথা বললে মানুষ নিজের পরিবারের জন্য সম্মানসূচক রূপের বদলে নিরপেক্ষ, বর্ণনামূলক বিশেষ্য ব্যবহার করে।"
+      hi: "शिक्षकों, डॉक्टरों, राजनेताओं और वकीलों को 先生 (sensei) कहकर संबोधित किया जाता है, जो अधिकार वाले लोगों के लिए इस्तेमाल होता है। बाहर के लोगों से बात करते समय लोग अपने परिवार के लिए सम्मानसूचक रूप की जगह निष्पक्ष, वर्णनात्मक संज्ञाएँ बोलते हैं।"
+  - id: "ja-fact-029"
+    tags: ["vocabulary", "sound-symbolism"]
+    source: "https://en.wikipedia.org/wiki/Japanese_onomatopoeia"
+    text:
+      en: "Japanese has a large inventory of sound-symbolic words, called mimetic words or ideophones. A dog's bark is ワンワン (wan-wan), and the word for silently is しーんと (shīnto)."
+      bn: "জাপানিতে ধ্বনি-প্রতীকী শব্দের বড় সম্ভার আছে, যাদের বলা হয় মাইমেটিক শব্দ বা আইডিওফোন। কুকুরের ডাক ワンワン (wan-wan), আর 'নীরবে' বোঝাতে বলা হয় しーんと (shīnto)।"
+      hi: "जापानी में ध्वनि-प्रतीकात्मक शब्दों का बड़ा भंडार है, जिन्हें माइमेटिक शब्द या आइडियोफ़ोन कहते हैं। कुत्ते का भौंकना ワンワン (wan-wan) है, और 'चुपचाप' के लिए しーんと (shīnto) कहा जाता है।"
+  - id: "ja-fact-030"
+    tags: ["history", "sounds"]
+    source: "https://en.wikipedia.org/wiki/Japanese_language"
+    text:
+      en: "Old Japanese can be reconstructed as having 88 distinct morae. That number shrank to 67 in Early Middle Japanese."
+      bn: "প্রাচীন জাপানি পুনর্গঠন করলে দেখা যায় তাতে ৮৮টি আলাদা মোরা ছিল। প্রারম্ভিক মধ্যযুগীয় জাপানিতে এই সংখ্যা কমে দাঁড়ায় ৬৭-এ।"
+      hi: "प्राचीन जापानी के पुनर्निर्माण में 88 अलग-अलग मोरा पाए जाते हैं। शुरुआती मध्यकालीन जापानी तक यह संख्या घटकर 67 रह गई।"
