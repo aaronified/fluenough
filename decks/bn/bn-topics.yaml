@@ -1,0 +1,108 @@
+# Topics a learner of Bengali would search for: what each one is, and the decks that teach it (wiki/Plan-Deck-Kinds-And-Topics.md, D6).
+# A script topic lists its characters; a topic holds no card text of its own.
+schema: 1
+kind: "topics"
+id: "bn-topics"
+language: "bn"
+license: "CC-BY-SA-4.0"
+topics:
+  - id: "bn-vowels"
+    name: { en: "Vowel letters" }
+    summary: { en: "The vowel letters of Bengali that stand on their own, at the start of a word or where no consonant comes before the vowel sound." }
+    kind: "script"
+    level: "A1"
+    decks: ["bn-script-vowels"]
+    chars: ["অ", "আ", "ই", "ঈ", "উ", "ঊ", "ঋ", "এ", "ঐ", "ও", "ঔ"]
+  - id: "bn-consonants"
+    name: { en: "Consonant letters" }
+    summary: { en: "The consonant letters of Bengali, each of which carries an inherent 'o' sound unless a vowel sign or a hasanta changes it." }
+    term: { text: "ব্যঞ্জনবর্ণ", reading: "bênjonborno" }
+    kind: "script"
+    level: "A1"
+    decks: ["bn-script-consonants"]
+    chars: ["ক", "খ", "গ", "ঘ", "ঙ", "চ", "ছ", "জ", "ঝ", "ঞ", "ট", "ঠ", "ড", "ঢ", "ণ", "ত", "থ", "দ", "ধ", "ন", "প", "ফ", "ব", "ভ", "ম", "য", "র", "ল", "শ", "ষ", "স", "হ", "ড়", "ঢ়", "য়", "ৎ", "কং", "কঃ", "কাঁ"]
+  - id: "bn-vowel-signs"
+    name: { en: "Vowel signs" }
+    summary: { en: "The marks written with a consonant to show which vowel it carries, used in place of the independent vowel letter." }
+    kind: "script"
+    level: "A1"
+    decks: ["bn-script-vowel-signs"]
+    chars: ["কা", "কি", "কী", "কু", "কূ", "কৃ", "কে", "কৈ", "কো", "কৌ", "ক্", "মা", "মি", "মী", "মু", "মূ", "মে", "মো"]
+  - id: "bn-conjuncts"
+    name: { en: "Conjunct letters" }
+    summary: { en: "Two consonants with no vowel between them, joined into one written shape; the course teaches them in three decks of growing size." }
+    term: { text: "যুক্তাক্ষর", reading: "juktākkhor" }
+    kind: "script"
+    level: "A1"
+    decks: ["bn-script-conjuncts", "bn-script-conjuncts-2", "bn-script-conjuncts-3"]
+    chars: ["ক্ষ", "জ্ঞ", "ক্ত", "ক্র", "প্র", "ত্র", "র্ম", "ন্ত", "ন্দ", "স্ত", "স্থ", "শ্র", "ষ্ট", "ঙ্গ", "ঞ্চ", "ন্ন", "ত্ত", "দ্ধ", "ল্প", "স্ব", "ব্য", "স্ত্র", "ত্ম", "ম্ব", "ঙ্ক", "ক্ক", "ক্ট", "ক্স", "গ্ন", "গ্র", "গ্ধ", "চ্চ", "চ্ছ", "জ্জ", "জ্ব", "ঞ্জ", "ট্ট", "ট্র", "ড্র", "ণ্ড", "ণ্ঠ", "ত্ন", "ত্ব", "থ্য", "দ্দ", "দ্ব", "দ্ভ", "দ্য", "দ্র", "ধ্ব", "ন্ধ", "ন্ম", "প্ত", "প্স", "ব্দ", "ব্ধ", "ব্র", "ভ্র", "ম্প", "ম্ফ", "ম্ভ", "ম্ল", "ম্ম", "ল্ল", "শ্চ", "শ্ম", "ষ্ক", "ষ্ণ", "ষ্প", "ষ্ম", "স্ক", "স্খ", "স্ট", "স্ন", "স্প"]
+  - id: "bn-digits"
+    name: { en: "Bengali digits" }
+    summary: { en: "The digits of Bengali from zero to nine, which the script writes in its own shapes for numbers." }
+    kind: "script"
+    level: "A1"
+    decks: ["bn-script-digits"]
+    chars: ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"]
+  - id: "bn-case-endings"
+    name: { en: "Case endings on nouns" }
+    summary: { en: "The endings added to a noun to show its role in the sentence: the plural, the possessive, the place where, the to, from and with forms." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["bn-grammar-noun-forms", "bn-grammar-nouns"]
+    grammar: ["plural", "gen", "loc", "ke", "theke", "sathe", "nouns"]
+  - id: "bn-postpositions"
+    name: { en: "Postpositions" }
+    summary: { en: "Words placed after a noun to do the work that an English preposition does, such as near, with or before." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["bn-grammar-postpositions"]
+    grammar: ["postpositions"]
+  - id: "bn-present"
+    name: { en: "The present tense" }
+    summary: { en: "The present tense of Bengali verbs, with its endings for each person, and the continuous form for an action that is going on now." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["bn-grammar-present", "bn-grammar-verb-present", "bn-grammar-continuous", "bn-grammar-verb-continuous"]
+    grammar: ["present", "present-first", "present-second", "present-third", "continuous", "continuous-first", "continuous-second", "continuous-third"]
+  - id: "bn-past"
+    name: { en: "The past tenses" }
+    summary: { en: "The past tenses of Bengali verbs: the simple past, the perfect, the past negative, the past continuous, the past perfect and the habitual past for what used to happen." }
+    kind: "grammar"
+    level: "A2"
+    decks: ["bn-grammar-past", "bn-grammar-verb-past", "bn-grammar-perfect", "bn-grammar-verb-perfect", "bn-grammar-past-negative", "bn-grammar-verb-past-negative", "bn-grammar-past-more", "bn-grammar-verb-past-perfect", "bn-grammar-past-continuous", "bn-grammar-verb-past-continuous", "bn-grammar-habitual-past", "bn-grammar-verb-habitual-past"]
+    grammar: ["past", "past-first", "past-second", "past-third", "perfect", "perfect-first", "perfect-second", "perfect-third", "past-negative", "past-negative-first", "past-negative-second", "past-negative-third", "past-more", "past-perfect-first", "past-perfect-second", "past-perfect-third", "past-continuous", "past-continuous-first", "past-continuous-second", "past-continuous-third", "habitual-past", "habitual-past-first", "habitual-past-second", "habitual-past-third"]
+  - id: "bn-future"
+    name: { en: "The future tense" }
+    summary: { en: "The future tense of Bengali verbs, with its endings for each person." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["bn-grammar-future", "bn-grammar-verb-future"]
+    grammar: ["future", "future-first", "future-second", "future-third"]
+  - id: "bn-pronouns-and-respect"
+    name: { en: "Pronouns and the three words for you" }
+    summary: { en: "The words for I, you and he, she or it, their forms with postpositions, and the three words for you, which show respect or closeness." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["bn-grammar-pronouns", "bn-grammar-pronoun-forms", "bn-grammar-honorifics"]
+    grammar: ["pronouns", "pronoun-gen", "pronoun-obj", "pronoun-with", "honorifics"]
+  - id: "bn-questions-and-indefinites"
+    name: { en: "Questions and indefinite words" }
+    summary: { en: "How to ask a question in Bengali, and the indefinite words that mean someone, something or somewhere." }
+    kind: "grammar"
+    level: "A1"
+    decks: ["bn-grammar-questions", "bn-grammar-indefinites"]
+    grammar: ["questions", "indefinites"]
+  - id: "bn-clause-linking"
+    name: { en: "Linking clauses" }
+    summary: { en: "How to join two clauses: relative clauses that say which one, if clauses, clauses of purpose, before and after, while, and although." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["bn-grammar-relative", "bn-grammar-conditional", "bn-grammar-purpose", "bn-grammar-before-after", "bn-grammar-while", "bn-grammar-concessive"]
+    grammar: ["relative", "conditional", "purpose", "before-after", "while", "concessive"]
+  - id: "bn-passive-and-causative"
+    name: { en: "The passive and the causative" }
+    summary: { en: "The passive, where the thing that is done becomes the subject, and the causative, where the subject makes someone else do an action." }
+    kind: "grammar"
+    level: "B1"
+    decks: ["bn-grammar-passive", "bn-grammar-causative"]
+    grammar: ["passive", "causative"]
