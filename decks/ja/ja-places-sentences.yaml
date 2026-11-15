@@ -154,3 +154,25 @@ cards:
         word: "もり"
         reading: "mori"
         kind: "word"
+  - id: "ja-7303"
+    target: "ゆうびんきょくはどこですか。"
+    words:
+      - "ゆうびんきょく"
+      - "は"
+      - "どこ"
+      - "です"
+      - "か"
+    reading: "yuubinkyoku wa doko desu ka."
+    ipa: "jɯːbiɴkjokɯ wa doko desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - id: "w1"
+        ref: "ja-1021"
+        kind: "word"
+      - id: "w2"
+        ref: "ja-0701"
+        kind: "word"
