@@ -1,0 +1,67 @@
+schema: 1
+id: "kn-weather-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-7805"
+    target: "ಇವತ್ತು ಬಿಸಿಲು ಜಾಸ್ತಿ."
+    reading: "ivattu bisilu jāsti."
+    ipa: "iʋat̪t̪u bisilu dʒaːst̪i"
+    pos: "phrase"
+  - id: "kn-7806"
+    target: "ಈಗ ಚಳಿ."
+    reading: "īga caḷi."
+    ipa: "iːɡa tʃaɭi"
+    pos: "phrase"
+  - id: "kn-7807"
+    target: "ಆಕಾಶದಲ್ಲಿ ಸೂರ್ಯ ಉರಿಯುತ್ತಾನೆ."
+    reading: "ākāśadalli sūrya uriyuttāne."
+    ipa: "aːkaːʃad̪alli suːrja urijut̪t̪aːne"
+    pos: "phrase"
+    bases:
+      - { word: "ಆಕಾಶದಲ್ಲಿ", ref: "kn-0958" }
+      - { word: "ಉರಿಯುತ್ತಾನೆ", ref: "kn-0984" }
+  - id: "kn-7808"
+    target: "ಬೇಸಿಗೆಯಲ್ಲಿ ಸೆಕೆ ಜಾಸ್ತಿ."
+    reading: "bēsigeyalli seke jāsti."
+    ipa: "beːsiɡejalli seke dʒaːst̪i"
+    pos: "phrase"
+    bases:
+      - { word: "ಬೇಸಿಗೆಯಲ್ಲಿ", ref: "kn-0972" }
+  - id: "kn-7809"
+    target: "ಚಳಿಗಾಲದಲ್ಲಿ ಚಳಿ ಜಾಸ್ತಿ."
+    reading: "caḷigāladalli caḷi jāsti."
+    ipa: "tʃaɭiɡaːlad̪alli tʃaɭi dʒaːst̪i"
+    pos: "phrase"
+    bases:
+      - { word: "ಚಳಿಗಾಲದಲ್ಲಿ", ref: "kn-0973" }
+  - id: "kn-7810"
+    target: "ಗಾಳಿ ಜೋರಾಗಿ ಬೀಸುತ್ತದೆ."
+    reading: "gāḷi jōrāgi bīsuttade."
+    ipa: "ɡaːɭi dʒoːraːɡi biːsut̪t̪ad̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ಬೀಸುತ್ತದೆ", ref: "kn-0983" }
+  - id: "kn-7811"
+    target: "ರಾತ್ರಿ ಕತ್ತಲು."
+    reading: "rātri kattalu."
+    ipa: "raːt̪ri kat̪t̪alu"
+    pos: "phrase"
+  - id: "kn-7812"
+    target: "ನೆರಳಿನಲ್ಲಿ ಕೂರಿ."
+    reading: "neraḷinalli kūri."
+    ipa: "neraɭinalli kuːri"
+    pos: "phrase"
+    bases:
+      - { word: "ನೆರಳಿನಲ್ಲಿ", ref: "kn-0988" }
+      - { word: "ಕೂರಿ", ref: "kn-0651" }
+  - id: "kn-7813"
+    target: "ಬೆಳಿಗ್ಗೆ ಗಾಳಿ ತಂಪು."
+    reading: "beḷigge gāḷi tampu."
+    ipa: "beɭiɡɡe ɡaːɭi t̪ampu"
+    pos: "phrase"

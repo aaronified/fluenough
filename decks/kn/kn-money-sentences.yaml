@@ -1,0 +1,88 @@
+schema: 1
+id: "kn-money-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-7517"
+    target: "ನನ್ನ ಖರ್ಚು ಹೆಚ್ಚು."
+    reading: "nanna kharcu heccu."
+    ipa: "nanna kʰartʃu hetʃtʃu"
+    pos: "phrase"
+    bases:
+      - { word: "ನನ್ನ", ref: "kn-0619" }
+      - { word: "ಖರ್ಚು", ref: "kn-1685" }
+      - { word: "ಹೆಚ್ಚು", ref: "kn-1054" }
+  - id: "kn-7518"
+    target: "ನಾನು ಉಳಿತಾಯ ಮಾಡುತ್ತೇನೆ."
+    reading: "nānu uḷitāya māḍuttēne."
+    ipa: "naːnu uɭit̪aːja maːɖut̪t̪eːne"
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", ref: "kn-0610" }
+      - { word: "ಉಳಿತಾಯ", ref: "kn-1684" }
+      - { word: "ಮಾಡುತ್ತೇನೆ", base: "ಮಾಡು", reading: "māḍu" }
+  - id: "kn-7519"
+    target: "ಎಟಿಎಂ ಎಲ್ಲಿ?"
+    reading: "eṭiem elli?"
+    ipa: "eʈiem elli"
+    pos: "phrase"
+    bases:
+      - { word: "ಎಟಿಎಂ", ref: "kn-1691" }
+      - { word: "ಎಲ್ಲಿ", ref: "kn-0169" }
+  - id: "kn-7520"
+    target: "ಇದು ನೋಟು, ಅದು ನಾಣ್ಯ."
+    reading: "idu nōṭu, adu nāṇya."
+    ipa: "id̪u noːʈu ad̪u naːɳja"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ನೋಟು", ref: "kn-1682" }
+      - { word: "ಅದು", ref: "kn-0614" }
+      - { word: "ನಾಣ್ಯ", ref: "kn-1681" }
+  - id: "kn-7521"
+    target: "ನನಗೆ ಲೆಕ್ಕ ಬರುವುದಿಲ್ಲ."
+    reading: "nanage lekka baruvudilla."
+    ipa: "nanaɡe lekka baruʋud̪illa"
+    pos: "phrase"
+    bases:
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಲೆಕ್ಕ", ref: "kn-1692" }
+      - { word: "ಬರುವುದಿಲ್ಲ", base: "ಬಾ", reading: "bā" }
+  - id: "kn-7522"
+    target: "ಬಜೆಟ್ ಇದೆ."
+    reading: "bajeṭ ide."
+    ipa: "badʒeʈ id̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ಬಜೆಟ್", ref: "kn-1690" }
+      - { word: "ಇದೆ", base: "ಇರು", reading: "iru" }
+  - id: "kn-7523"
+    target: "ಲಾಭ ಆಯಿತು."
+    reading: "lābha āyitu."
+    ipa: "laːbʱa aːjit̪u"
+    pos: "phrase"
+    bases:
+      - { word: "ಲಾಭ", ref: "kn-1687" }
+      - { word: "ಆಯಿತು", ref: "kn-0951" }
+  - id: "kn-7524"
+    target: "ನಷ್ಟ ಆಯಿತು."
+    reading: "naṣṭa āyitu."
+    ipa: "naʂʈa aːjit̪u"
+    pos: "phrase"
+    bases:
+      - { word: "ನಷ್ಟ", ref: "kn-1688" }
+      - { word: "ಆಯಿತು", ref: "kn-0951" }
+  - id: "kn-7525"
+    target: "ನಾನು ನೋಟು ಎಣಿಸುತ್ತೇನೆ."
+    reading: "nānu nōṭu eṇisuttēne."
+    ipa: "naːnu noːʈu eɳisut̪t̪eːne"
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", ref: "kn-0610" }
+      - { word: "ನೋಟು", ref: "kn-1682" }
+      - { word: "ಎಣಿಸುತ್ತೇನೆ", base: "ಎಣಿಸು", reading: "eṇisu" }

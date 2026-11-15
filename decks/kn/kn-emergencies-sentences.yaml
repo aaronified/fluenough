@@ -1,0 +1,80 @@
+schema: 1
+id: "kn-emergencies-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-7509"
+    target: "ಇದು ತುರ್ತು."
+    reading: "idu turtu."
+    ipa: "id̪u t̪urt̪u"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ತುರ್ತು", ref: "kn-1610" }
+  - id: "kn-7510"
+    target: "ಅಪಾಯ! ಹೊರಗೆ ಬನ್ನಿ."
+    reading: "apāya! horage banni."
+    ipa: "apaːja horaɡe banni"
+    pos: "phrase"
+    bases:
+      - { word: "ಅಪಾಯ", ref: "kn-1611" }
+      - { word: "ಹೊರಗೆ", base: "ಹೊರ", reading: "hora" }
+      - { word: "ಬನ್ನಿ", base: "ಬಾ", reading: "bā" }
+  - id: "kn-7511"
+    target: "ನಮಗೆ ಆಂಬುಲೆನ್ಸ್ ಬೇಕು."
+    reading: "namage āmbulens bēku."
+    ipa: "namaɡe aːmbulens beːku"
+    pos: "phrase"
+    bases:
+      - { word: "ನಮಗೆ", base: "ನಾವು", reading: "nāvu" }
+      - { word: "ಆಂಬುಲೆನ್ಸ್", ref: "kn-1612" }
+      - { word: "ಬೇಕು", base: "ಬೇಕು", reading: "bēku" }
+  - id: "kn-7512"
+    target: "ದಯವಿಟ್ಟು ಸಹಾಯಕ್ಕೆ ಕೂಗು."
+    reading: "dayaviṭṭu sahāyakke kūgu."
+    ipa: "d̪ajaʋiʈʈu sahaːjakke kuːɡu"
+    pos: "phrase"
+    bases:
+      - { word: "ದಯವಿಟ್ಟು", ref: "kn-0550" }
+      - { word: "ಸಹಾಯಕ್ಕೆ", ref: "kn-1615" }
+      - { word: "ಕೂಗು", ref: "kn-1619" }
+  - id: "kn-7513"
+    target: "ಸೀಟಿ ಊದಿ."
+    reading: "sīṭi ūdi."
+    ipa: "siːʈi uːd̪i"
+    pos: "phrase"
+    bases:
+      - { word: "ಸೀಟಿ", ref: "kn-1620" }
+      - { word: "ಊದಿ", base: "ಊದು", reading: "ūdu" }
+  - id: "kn-7514"
+    target: "ನನಗೆ ಹೆದರಿಕೆ ಆಗುತ್ತಿದೆ."
+    reading: "nanage hedarike āguttide."
+    ipa: "nanaɡe hed̪arike aːɡut̪t̪id̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
+      - { word: "ಹೆದರಿಕೆ", ref: "kn-1621" }
+      - { word: "ಆಗುತ್ತಿದೆ", base: "ಆಗು", reading: "āgu" }
+  - id: "kn-7515"
+    target: "ಎಚ್ಚರ! ಆತುರ ಬೇಡ."
+    reading: "eccara! ātura bēḍa."
+    ipa: "etʃtʃara aːt̪ura beːɖa"
+    pos: "phrase"
+    bases:
+      - { word: "ಎಚ್ಚರ", ref: "kn-1617" }
+      - { word: "ಆತುರ", ref: "kn-1618" }
+      - { word: "ಬೇಡ", base: "ಬೇಡ", reading: "bēḍa" }
+  - id: "kn-7516"
+    target: "ಅಗ್ನಿಶಾಮಕ ಇಲ್ಲಿ ಇದೆ."
+    reading: "agniśāmaka illi ide."
+    ipa: "aɡniʃaːmaka illi id̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ಅಗ್ನಿಶಾಮಕ", ref: "kn-1613" }
+      - { word: "ಇಲ್ಲಿ", ref: "kn-0375" }
+      - { word: "ಇದೆ", base: "ಇರು", reading: "iru" }
