@@ -81,7 +81,7 @@ Task T23 of the kinds plan is where it lands.
 | Path to B1 | partial | done: 102 of 102 units built (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
 | Cores and layers | partial | done: 71 core and 32 grammar decks (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
 | Sentences, readings | partial | done: 68 sentence and 98 reading decks (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
-| Script decks | partial: kana (`ja-en-hiragana`, combos, marks, katakana), kanji `ja-kanji-1` to `-38` (1,026 cards; basic kanji only) | not audited | not audited | partial: `te-script-conjuncts-2` (9 cards) and `te-script-archaic` (1 card), PR #1360 | not audited | not audited | not audited | not audited |
+| Script decks | partial: kana (`ja-en-hiragana`, combos, marks, katakana), kanji `ja-kanji-1` to `-38` (1,026 cards; basic kanji only) | n/a (Latin script) | not audited | partial: `te-script-conjuncts-2` (9 cards) and `te-script-archaic` (1 card), PR #1360 | not audited | not audited | not audited | not audited |
 | Phrasebook | done | done: 15 cards (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
 | Situations | partial: `ja-situations` at 10 sheets on decks-live | partial: 10 sheets in `es-situations.yaml` (verified 2026-11-15) | not audited | partial: `te-situations` at 10 sheets (TE-004, PR #1354) | not audited | not audited | not audited | not audited |
 | Topics incl. script topics | partial: `ja-topics` on decks-live, 22 topics incl. the two kana and six kanji-grade script topics | partial: 22 topics in `es-topics.yaml` (verified 2026-11-15) | not audited | not audited | not audited | not audited | not audited | not audited |
@@ -164,7 +164,7 @@ Owner (2026-11-13): "Deck work issues to be updated with the full deck format as
 | Khasi | kha | #1190 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
 | Goan Konkani | gom | #1191 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
 | French | fr | #359 | first list (to B1) | deck priority 10 of the first list, culture priority 3 of 8 | path of 113 units, 77 built; 229 core files |
-| Spanish | es | #1192 | first list (to B1) | deck priority 3 of the first list, culture priority 2 of 8 | path of 103 units, 102 built; 271 core files |
+| Spanish | es | #1192 | first list (to B1) | deck priority 3 of the first list, culture priority 2 of 8 | path of 102 units, all built; 271 core files |
 | German | de | #361 | second list (to A1; Classical Sanskrit to B1) | second-list position 7 | path of 111 units, 1 built; 3 core files |
 | Mandarin Chinese | zh | #376 | first list (to B1) | deck priority 7 of the first list | path of 130 units, 129 built; 377 core files |
 | Japanese | ja | #378 | first list (to B1) | deck priority 9 of the first list, culture priority 1 of 8 | path of 138 units, 95 built; 193 core files (closest to complete, not complete) |
