@@ -30,6 +30,8 @@ cards:
     bases: [{ word: "Tengo", ref: "es-0024" }, { word: "veinte", ref: "es-0224" }, { word: "años", base: "año" }, { word: "y", ref: "es-0048" }, { word: "soy", ref: "es-0022" }, { word: "estudiante", base: "estudiante" }]
     confusables: [{ id: "single", ref: "es-0252", kind: "word" }, { id: "young", ref: "es-0256", kind: "word" }]
   - id: "es-0266"
+    notes:
+      - { id: "n1", kind: "usage" }
     target: "¿Cuál es tu profesión?"
     ipa: "kwal es tu pɾofeˈsjon"
     phonetic: "[kwal es t̪u pɾofeˈsjon]"
@@ -57,6 +59,8 @@ cards:
     bases: [{ word: "Cuál", ref: "es-0059" }, { word: "es", ref: "es-0022" }, { word: "tu", ref: "es-0130" }, { word: "número", base: "número" }, { word: "de", base: "de" }, { word: "teléfono", base: "teléfono" }]
     confusables: [{ id: "address", ref: "es-0249", kind: "word" }, { id: "email", ref: "es-0248", kind: "word" }]
   - id: "es-0269"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     target: "Vivo en un barrio tranquilo."
     ipa: "ˈbibo en un ˈbarjo tɾanˈkilo"
     phonetic: "[ˈbiβo en un ˈbarjo t̪ɾaŋˈkilo]"
@@ -154,6 +158,8 @@ cards:
     bases: [{ word: "Mi", ref: "es-0129" }, { word: "abuela", ref: "es-0166" }, { word: "está", ref: "es-0023" }, { word: "aquí", ref: "es-0051" }, { word: "y", ref: "es-0048" }, { word: "tía", ref: "es-0168" }, { word: "también", ref: "es-0052" }]
     confusables: [{ id: "grandfather", ref: "es-0165", kind: "word" }, { id: "uncle", ref: "es-0167", kind: "word" }]
   - id: "es-3204"
+    notes:
+      - { id: "n1", kind: "usage" }
     target: "Pedro tiene dos hijos y tres sobrinos."
     ipa: "ˈpedɾo ˈtjene dos ˈixos i tɾes soˈbɾinos"
     phonetic: "[ˈpeðɾo ˈt̪jene ðos ˈixos i t̪ɾes soˈβɾinos]"
@@ -163,6 +169,8 @@ cards:
     bases: [{ word: "Pedro", base: "Pedro" }, { word: "tiene", ref: "es-0024" }, { word: "dos", ref: "es-0206" }, { word: "hijos", ref: "es-0163" }, { word: "y", ref: "es-0048" }, { word: "tres", ref: "es-0207" }, { word: "sobrinos", ref: "es-0178" }]
     confusables: [{ id: "brother", ref: "es-0161", kind: "word" }, { id: "grandson", ref: "es-0176", kind: "word" }]
   - id: "es-3205"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     target: "Mi tía no tiene hijos, señora."
     ipa: "mi ˈtia no ˈtjene ˈixos seˈɲoɾa"
     phonetic: "[mi ˈt̪ia no ˈt̪jene ˈixos seˈɲoɾa]"
@@ -172,6 +180,8 @@ cards:
     bases: [{ word: "Mi", ref: "es-0129" }, { word: "tía", ref: "es-0168" }, { word: "no", ref: "es-0043" }, { word: "tiene", ref: "es-0024" }, { word: "hijos", ref: "es-0163" }, { word: "señora", ref: "es-0089" }]
     confusables: [{ id: "uncle", ref: "es-0167", kind: "word" }, { id: "daughter", ref: "es-0164", kind: "word" }]
   - id: "es-3206"
+    notes:
+      - { id: "n1", kind: "usage" }
     target: "Mi madre tiene tres hermanos y dos hijas."
     ipa: "mi ˈmadɾe ˈtjene tɾes eɾˈmanos i dos ˈixas"
     phonetic: "[mi ˈmaðɾe ˈt̪jene t̪ɾes eɾˈmanos i ðos ˈixas]"
@@ -181,6 +191,8 @@ cards:
     bases: [{ word: "Mi", ref: "es-0129" }, { word: "madre", ref: "es-0160" }, { word: "tiene", ref: "es-0024" }, { word: "tres", ref: "es-0207" }, { word: "hermanos", ref: "es-0161" }, { word: "y", ref: "es-0048" }, { word: "dos", ref: "es-0206" }, { word: "hijas", ref: "es-0164" }]
     confusables: [{ id: "sister", ref: "es-0162", kind: "word" }, { id: "aunt", ref: "es-0168", kind: "word" }]
   - id: "es-3207"
+    notes:
+      - { id: "n1", kind: "note" }
     target: "Ellos no comen aquí."
     ipa: "ˈeʝos no ˈkomen aˈki"
     pos: "phrase"
@@ -199,6 +211,8 @@ cards:
     bases: [{ word: "Nadie", ref: "es-0133" }, { word: "come", ref: "es-0028" }, { word: "aquí", ref: "es-0051" }, { word: "señora", ref: "es-0089" }]
     confusables: [{ id: "someone", ref: "es-0132", kind: "word" }, { id: "everyone", ref: "es-0134", kind: "word" }]
   - id: "es-3209"
+    notes:
+      - { id: "n1", kind: "note" }
     target: "Tú comes mucho también."
     ipa: "tu ˈkomes ˈmutʃo tamˈbjen"
     phonetic: "[t̪u ˈkomes ˈmutʃo t̪amˈbjen]"
@@ -228,6 +242,8 @@ cards:
     bases: [{ word: "Pedro", base: "Pedro" }, { word: "habla", ref: "es-0027" }, { word: "mucho", ref: "es-0053" }, { word: "de", base: "de" }, { word: "su", ref: "es-0131" }, { word: "familia", ref: "es-0158" }, { word: "y", ref: "es-0048" }, { word: "sus", ref: "es-0131" }, { word: "sobrinos", ref: "es-0178" }]
     confusables: [{ id: "father", ref: "es-0159", kind: "word" }, { id: "cousin", ref: "es-0169", kind: "word" }]
   - id: "es-3212"
+    notes:
+      - { id: "n1", kind: "usage" }
     target: "Mi hermana habla mucho."
     ipa: "mi eɾˈmana ˈabla ˈmutʃo"
     phonetic: "[mi eɾˈmana ˈaβla ˈmutʃo]"
@@ -284,6 +300,8 @@ cards:
     bases: [{ word: "Luis", base: "Luis" }, { word: "estudia", ref: "es-0258" }, { word: "mucho", ref: "es-0053" }, { word: "aquí", ref: "es-0051" }]
     confusables: [{ id: "work", ref: "es-0259", kind: "word" }, { id: "language", ref: "es-0244", kind: "word" }]
   - id: "es-3218"
+    notes:
+      - { id: "n1", kind: "usage" }
     target: "¿Estudias tú mucho aquí también?"
     ipa: "esˈtudjas tu ˈmutʃo aˈki tamˈbjen"
     phonetic: "[esˈt̪uðjas t̪u ˈmutʃo aˈki t̪amˈbjen]"
@@ -340,6 +358,8 @@ cards:
     bases: [{ word: "Dónde", ref: "es-0056" }, { word: "vives", base: "vivir" }, { word: "tú", ref: "es-0086" }, { word: "Luis", base: "Luis" }]
     confusables: [{ id: "when", ref: "es-0057", kind: "word" }, { id: "address", ref: "es-0249", kind: "word" }]
   - id: "es-3224"
+    notes:
+      - { id: "n1", kind: "usage" }
     target: "Yo estoy tranquilo aquí."
     ipa: "ʝo esˈtoj tɾanˈkilo aˈki"
     phonetic: "[ʝo esˈt̪oj t̪ɾaŋˈkilo aˈki]"
