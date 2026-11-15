@@ -1,0 +1,79 @@
+schema: 1
+id: "fr-en-reading-negation-more"
+name: "Reading: more negations (ne ... jamais, rien, personne, plus)"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts, one heard and one read, using more negations (ne ... jamais, rien, personne, plus) with the words taught up to this unit. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-never-again"
+    title: "Never again"
+    theme: "daily-life"
+    sentences:
+      - text: "Je ne mange jamais le matin."
+        ipa: "ʒə nə mɑ̃ʒ ʒamɛ lə matɛ̃"
+      - text: "Il ne travaille plus ici."
+        ipa: "il nə tʁavaj ply isi"
+      - text: "Elle ne voit personne."
+        ipa: "ɛl nə vwa pɛʁsɔn"
+      - text: "Nous ne faisons rien le dimanche."
+        ipa: "nu nə fəzɔ̃ ʁjɛ̃ lə dimɑ̃ʃ"
+    questions:
+      - id: "fr-3890"
+        prompt: { en: "When does the speaker never eat?" }
+        options:
+          - { en: "In the morning" }
+          - { en: "At night" }
+          - { en: "On Sundays" }
+        answer: 1
+      - id: "fr-3891"
+        prompt: { en: "Where does 'he' no longer work?" }
+        options:
+          - { en: "Abroad" }
+          - { en: "At home" }
+          - { en: "Here" }
+        answer: 3
+      - id: "fr-3892"
+        prompt: { en: "Who does 'she' see?" }
+        options:
+          - { en: "Nobody" }
+          - { en: "Her sister" }
+          - { en: "Everybody" }
+        answer: 1
+  - id: "fr-complaint-note"
+    title: "Complaint note"
+    theme: "home"
+    sentences:
+      - text: "Rien n'est prêt dans la cuisine."
+        ipa: "ʁjɛ̃ nɛ pʁɛ dɑ̃ la kɥizin"
+      - text: "Personne ne répond à la porte."
+        ipa: "pɛʁsɔn nə ʁepɔ̃ a la pɔʁt"
+      - text: "Vous n'êtes plus là."
+        ipa: "vu nɛt ply la"
+      - text: "Je ne veux plus attendre."
+        ipa: "ʒə nə vø ply atɑ̃dʁ"
+    questions:
+      - id: "fr-3893"
+        prompt: { en: "Where is nothing ready?" }
+        options:
+          - { en: "In the kitchen" }
+          - { en: "In the car" }
+          - { en: "At work" }
+        answer: 1
+      - id: "fr-3894"
+        prompt: { en: "Who does not answer the door?" }
+        options:
+          - { en: "The writer" }
+          - { en: "Nobody" }
+          - { en: "The mother" }
+        answer: 2
+      - id: "fr-3895"
+        prompt: { en: "What does the writer no longer want to do?" }
+        options:
+          - { en: "Wait" }
+          - { en: "Cook" }
+          - { en: "Clean" }
+        answer: 1

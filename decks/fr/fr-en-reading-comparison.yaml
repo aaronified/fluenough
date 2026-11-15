@@ -1,0 +1,79 @@
+schema: 1
+id: "fr-en-reading-comparison"
+name: "Reading: comparison (plus, moins, aussi)"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts, one heard and one read, using comparison (plus, moins, aussi) with the words taught up to this unit. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-which-is-better"
+    title: "Which is better"
+    theme: "shopping"
+    sentences:
+      - text: "Ce sac est plus cher que le livre."
+        ipa: "sə sak ɛ plys ʃɛʁ kə lə livʁ"
+      - text: "Ce livre est moins cher."
+        ipa: "sə livʁ ɛ mwɛ̃ ʃɛʁ"
+      - text: "Ce pull est aussi bon que la veste."
+        ipa: "sə pyl ɛ osi bɔ̃ kə la vɛst"
+      - text: "Cette veste est la plus chère."
+        ipa: "sɛt vɛst ɛ la ply ʃɛʁ"
+    questions:
+      - id: "fr-3850"
+        prompt: { en: "Which bag is more expensive?" }
+        options:
+          - { en: "This bag" }
+          - { en: "The book" }
+          - { en: "Neither" }
+        answer: 1
+      - id: "fr-3851"
+        prompt: { en: "What does the speaker say about the book?" }
+        options:
+          - { en: "It is more expensive" }
+          - { en: "It is less expensive" }
+          - { en: "It is as expensive" }
+        answer: 2
+      - id: "fr-3852"
+        prompt: { en: "What does the speaker say about the sweater?" }
+        options:
+          - { en: "Better" }
+          - { en: "Worse" }
+          - { en: "As good as the jacket" }
+        answer: 3
+  - id: "fr-two-cities"
+    title: "Comparing places"
+    theme: "places"
+    sentences:
+      - text: "La ville est plus grande que la maison."
+        ipa: "la vil ɛ plys ɡʁɑ̃d kə la mɛzɔ̃"
+      - text: "Le parc est plus calme que la ville."
+        ipa: "lə paʁk ɛ plys kalm kə la vil"
+      - text: "Le métro est plus rapide que le bus."
+        ipa: "lə metʁo ɛ plys ʁapid kə lə bys"
+      - text: "Le bus est moins cher que le taxi."
+        ipa: "lə bys ɛ mwɛ̃ ʃɛʁ kə lə taksi"
+    questions:
+      - id: "fr-3853"
+        prompt: { en: "Which place is bigger?" }
+        options:
+          - { en: "The house" }
+          - { en: "The city" }
+          - { en: "Neither" }
+        answer: 2
+      - id: "fr-3854"
+        prompt: { en: "Which place is calmer?" }
+        options:
+          - { en: "The park" }
+          - { en: "The city" }
+          - { en: "The metro" }
+        answer: 1
+      - id: "fr-3855"
+        prompt: { en: "Which is cheaper, the bus or the taxi?" }
+        options:
+          - { en: "The taxi" }
+          - { en: "The bus" }
+          - { en: "Neither" }
+        answer: 2

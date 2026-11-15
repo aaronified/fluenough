@@ -1,0 +1,79 @@
+schema: 1
+id: "fr-en-reading-venir-de"
+name: "Reading: the recent past (venir de)"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts, one heard and one read, using the recent past (venir de) with the words taught up to this unit. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-just-arrived"
+    title: "Just arrived"
+    theme: "transport"
+    sentences:
+      - text: "Je viens d'arriver."
+        ipa: "ʒə vjɛ̃ daʁive"
+      - text: "Elle vient de partir."
+        ipa: "ɛl vjɛ̃ də paʁtiʁ"
+      - text: "Il vient de manger."
+        ipa: "il vjɛ̃ də mɑ̃ʒe"
+      - text: "Vous venez d'acheter du pain ?"
+        ipa: "vu vənɛ daʃte dy pɛ̃"
+    questions:
+      - id: "fr-3870"
+        prompt: { en: "What has the speaker just done?" }
+        options:
+          - { en: "Arrived" }
+          - { en: "Left" }
+          - { en: "Slept" }
+        answer: 1
+      - id: "fr-3871"
+        prompt: { en: "What has 'she' just done?" }
+        options:
+          - { en: "Arrived" }
+          - { en: "Left" }
+          - { en: "Ate" }
+        answer: 2
+      - id: "fr-3872"
+        prompt: { en: "What has 'he' just done?" }
+        options:
+          - { en: "Left" }
+          - { en: "Ate" }
+          - { en: "Arrived" }
+        answer: 2
+  - id: "fr-quick-updates"
+    title: "Quick updates"
+    theme: "phone"
+    sentences:
+      - text: "Je viens de finir mon travail."
+        ipa: "ʒə vjɛ̃ də finiʁ mɔ̃ tʁavaj"
+      - text: "Ma sœur vient d'écrire un message."
+        ipa: "ma sœʁ vjɛ̃ dekʁiʁ œ̃ mesaʒ"
+      - text: "Nous venons de rentrer à la maison."
+        ipa: "nu vənɔ̃ də ʁɑ̃tʁe a la mɛzɔ̃"
+      - text: "Ils viennent d'arriver au bureau."
+        ipa: "il vjɛn daʁive o byʁo"
+    questions:
+      - id: "fr-3873"
+        prompt: { en: "What has the speaker just finished?" }
+        options:
+          - { en: "Work" }
+          - { en: "Lunch" }
+          - { en: "A message" }
+        answer: 1
+      - id: "fr-3874"
+        prompt: { en: "What did 'my sister' just write?" }
+        options:
+          - { en: "A letter" }
+          - { en: "A message" }
+          - { en: "A song" }
+        answer: 2
+      - id: "fr-3875"
+        prompt: { en: "Where have 'we' just arrived?" }
+        options:
+          - { en: "At the office" }
+          - { en: "At home" }
+          - { en: "At the station" }
+        answer: 2
