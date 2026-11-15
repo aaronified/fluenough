@@ -1,0 +1,51 @@
+schema: 1
+id: "bn-en-reading-animals"
+name: "Reading: animals"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Animals in a village and a zoo board, one to be heard and one to be read, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-village-visit"
+    title: "Animals in a village"
+    theme: "animals"
+    sentences:
+      - { text: "গরু, মোষ, ছাগল আর ভেড়া।", reading: "goru, moś, chāgol ār bheṛā.", ipa: "ɡoru moʃ tʃʰaɡol ar bʱeɽa" }
+      - { text: "কুকুর, বিড়াল আর ঘোড়া।", reading: "kukur, biṛāl ār ghoṛā.", ipa: "kukur biɽal ar ɡʱoɽa" }
+      - { text: "পাখি আর ময়ূর খুব সুন্দর।", reading: "pākhi ār moyur khub sundor.", ipa: "pakʰi ar mojur kʰub sund̪or" }
+      - { text: "সাপ? না, সাপ না!", reading: "śāp? nā, śāp nā!", ipa: "ʃap na ʃap na" }
+      - { text: "প্রজাপতি খুব সুন্দর।", reading: "prôjāpoti khub sundor.", ipa: "prɔdʒapot̪i kʰub sund̪or" }
+    questions:
+      - id: "bn-5406"
+        prompt: { en: "The child names a dog, a cat and a horse." }
+        answer: true
+      - id: "bn-5407"
+        prompt: { en: "The child says there is a snake." }
+        answer: false
+      - id: "bn-5408"
+        prompt: { en: "Which animal does the child call beautiful?" }
+        options: [{ en: "Peacock" }, { en: "Frog" }]
+        answer: 1
+  - id: "bn-zoo-board"
+    title: "Zoo board"
+    theme: "animals"
+    sentences:
+      - { text: "সিংহ, বাঘ আর ভালুক।", reading: "siṅho, bāgh ār bhāluk.", ipa: "siŋɦo baɡʱ ar bʱaluk" }
+      - { text: "সাবধান!", reading: "śābdhān!", ipa: "ʃabd̪ʱan" }
+      - { text: "হাতি খায়, ঘোড়া খায়।", reading: "hāti khāy, ghoṛā khāy.", ipa: "ɦat̪i kʰaj ɡʱoɽa kʰaj" }
+      - { text: "টিয়া আর হাঁস।", reading: "ṭiyā ār hām̐s.", ipa: "ʈija ar ɦãs" }
+      - { text: "ব্যাঙ আর মশা।", reading: "bêṅ ār môśā.", ipa: "bæŋ ar mɔʃa" }
+    questions:
+      - id: "bn-5409"
+        prompt: { en: "The board warns visitors to be careful." }
+        answer: true
+      - id: "bn-5410"
+        prompt: { en: "Which two animals does the board name with the lion?" }
+        options: [{ en: "Tiger and bear" }, { en: "Duck and parrot" }]
+        answer: 1
+      - id: "bn-5411"
+        prompt: { en: "The board says the elephant eats." }
+        answer: true
