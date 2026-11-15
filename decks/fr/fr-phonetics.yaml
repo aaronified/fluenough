@@ -11,7 +11,7 @@ rules:
     replace: '\1ː'
     source: 'Walker, The Pronunciation of Canadian French (1984), pp. 25-27; Tranel, The Sounds of French (1987, CUP), pp. 49-51; Wikipedia, French phonology, "Length" (CC BY-SA 4.0)'
   # Phrase-final stressed closed syllable: /o ø ɑ/ and the nasal vowels are long before any single consonant (saute [soːt], pâte [pɑːt], chante [ʃɑ̃ːt]). Runs after the rule above, so a vowel it already lengthened is not touched.
-  - id: "fr-length-o-ø-ɑ-nasal"
+  - id: "fr-length-o-oe-a-nasal"
     pattern: '(o|ø|ɑ̃|ɛ̃|ɔ̃|œ̃|ɑ)(?=[pbtdkɡgfsʃmnɲlʒvzʁ]$)'
     replace: '\1ː'
     source: 'Walker, The Pronunciation of Canadian French (1984), pp. 25-27; Tranel, The Sounds of French (1987, CUP), pp. 49-51; Wikipedia, French phonology, "Length" (CC BY-SA 4.0)'
