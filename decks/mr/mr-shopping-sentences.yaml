@@ -1,0 +1,85 @@
+schema: 1
+id: "mr-shopping-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-6504"
+    target: "ग्राहक दुकानात खरेदी करतो."
+    reading: "grāhak dukānāt kharedi karto."
+    ipa: "ɡraɦək d̪ukanat̪ kʰəred̪i kərt̪o"
+    pos: "phrase"
+    bases: [{ word: "दुकानात", ref: "mr-0376" }, { word: "करतो", ref: "mr-0712" }]
+    confusables: [{ id: "w1", ref: "mr-1071", kind: "word" }, { id: "f1", word: "करते", reading: "karte", kind: "form" }]
+  - id: "mr-6505"
+    target: "विक्रेता सवलत देतो."
+    reading: "vikretā savlat deto."
+    ipa: "ʋikret̪a səʋlət̪ d̪et̪o"
+    pos: "phrase"
+    bases: [{ word: "देतो", ref: "mr-0721" }]
+    confusables: [{ id: "w1", ref: "mr-1070", kind: "word" }, { id: "f1", word: "देते", reading: "dete", kind: "form" }]
+  - id: "mr-6506"
+    target: "या वस्तूची किंमत किती आहे?"
+    reading: "yā vastuci kimmat kiti āhe?"
+    ipa: "ja ʋəst̪utʃi kimmət̪ kit̪i aɦe"
+    pos: "phrase"
+    bases: [{ word: "या", base: "हा", reading: "hā" }, { word: "वस्तूची", ref: "mr-1079" }, { word: "किंमत", base: "किंमत", reading: "kimmat" }, { word: "किती", base: "किती", reading: "kiti" }, { word: "आहे", base: "असणे", reading: "asṇe" }]
+    confusables: [{ id: "w1", ref: "mr-1080", kind: "word" }, { id: "f1", word: "आहेत", reading: "āhet", kind: "form" }]
+  - id: "mr-6507"
+    target: "ही वस्तू मोफत नाही."
+    reading: "hi vastu mophat nāhi."
+    ipa: "ɦi ʋəst̪u mopʰət̪ naɦi"
+    pos: "phrase"
+    bases: [{ word: "ही", base: "ही", reading: "hi" }, { word: "मोफत", ref: "mr-1080" }, { word: "नाही", ref: "mr-0169" }]
+    confusables: [{ id: "w1", word: "हा", reading: "hā", kind: "word" }, { id: "f1", word: "नाहीत", reading: "nāhit", kind: "form" }]
+  - id: "mr-6508"
+    target: "त्याने वस्तू परत केली."
+    reading: "tyāne vastu parat keli."
+    ipa: "t̪jane ʋəst̪u pərət̪ keli"
+    pos: "phrase"
+    bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "परत", base: "परत", reading: "parat" }, { word: "केली", ref: "mr-0712" }]
+    confusables: [{ id: "w1", ref: "mr-0677", kind: "word" }, { id: "f1", word: "केला", reading: "kelā", kind: "form" }]
+  - id: "mr-6509"
+    target: "पैसे मोजा."
+    reading: "paise mojā."
+    ipa: "pəise modza"
+    pos: "phrase"
+    bases: [{ word: "मोजा", ref: "mr-1077" }]
+    confusables: [{ id: "w1", ref: "mr-1085", kind: "word" }, { id: "f1", word: "मोजतो", reading: "mojto", kind: "form" }]
+  - id: "mr-6510"
+    target: "हा ब्रँड चांगला आहे."
+    reading: "hā bram̐ḍ cāṅgalā āhe."
+    ipa: "ɦa brə̃ɖ tsaŋɡəla aɦe"
+    pos: "phrase"
+    bases: [{ word: "हा", base: "हा", reading: "hā" }, { word: "चांगला", base: "चांगला", reading: "cāṅgalā" }, { word: "आहे", base: "असणे", reading: "asṇe" }]
+    confusables: [{ id: "w1", ref: "mr-0676", kind: "word" }, { id: "f1", word: "आहेत", reading: "āhet", kind: "form" }]
+  - id: "mr-6511"
+    target: "सवलत आज आहे."
+    reading: "savlat āj āhe."
+    ipa: "səʋlət̪ adz aɦe"
+    pos: "phrase"
+    bases: [{ word: "आज", ref: "mr-0474" }, { word: "आहे", base: "असणे", reading: "asṇe" }]
+    confusables: [{ id: "w1", ref: "mr-0475", kind: "word" }, { id: "f1", word: "आहेत", reading: "āhet", kind: "form" }]
+  - id: "mr-6512"
+    target: "नाणे आणि नोट द्या."
+    reading: "nāṇe āṇi noṭ dyā."
+    ipa: "naɳe aɳi noʈ d̪ja"
+    pos: "phrase"
+    bases: [{ word: "आणि", ref: "mr-0575" }, { word: "द्या", ref: "mr-0721" }]
+    confusables: [{ id: "w1", ref: "mr-1085", kind: "word" }, { id: "f1", word: "देतो", reading: "deto", kind: "form" }]
+  - id: "mr-6513"
+    target: "विक्रेता वस्तू बदलतो का?"
+    reading: "vikretā vastu badlto kā?"
+    ipa: "ʋikret̪a ʋəst̪u bəd̪lt̪o ka"
+    pos: "phrase"
+    bases: [{ word: "वस्तू", ref: "mr-1079" }, { word: "बदलतो", ref: "mr-1078" }, { word: "का", base: "का", reading: "kā" }]
+    confusables: [{ id: "w1", ref: "mr-1070", kind: "word" }, { id: "f1", word: "बदलते", reading: "badlte", kind: "form" }]
+  - id: "mr-6514"
+    target: "टॅग कुठे आहे?"
+    reading: "ṭêg kuṭhe āhe?"
+    ipa: "ʈæɡ kuʈʰe aɦe"
+    pos: "phrase"
+    bases: [{ word: "कुठे", base: "कुठे", reading: "kuṭhe" }, { word: "आहे", base: "असणे", reading: "asṇe" }]
+    confusables: [{ id: "w1", ref: "mr-0738", kind: "word" }, { id: "f1", word: "आहेत", reading: "āhet", kind: "form" }]

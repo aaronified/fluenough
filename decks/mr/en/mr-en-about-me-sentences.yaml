@@ -1,0 +1,54 @@
+schema: 1
+id: "mr-en-about-me-sentences"
+kind: "layer"
+core: "mr-about-me-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about me"
+license: "CC-BY-SA-4.0"
+description: "Short sentences about your name, age, home, friends and language, built from the words of About me. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-5000":
+    native: "My name is Sunita."
+    bases: { "माझे": "my", "नाव": "name", "सुनीता": "Sunita (a woman's name)", "आहे": "is" }
+    confusables: { "w1": { why: "Masculine: माझा (mājhā) goes with a masculine noun; नाव (nāv) is neuter, so माझे (mājhe) is used." }, "f1": { why: "Plural: आहेत (āhet) is for more than one thing; one name takes आहे (āhe)." } }
+  "mr-5001":
+    native: "My village is near Pune."
+    bases: { "माझे": "my", "गाव": "village", "पुण्याजवळ": "near Pune", "आहे": "is" }
+    confusables: { "w1": { why: "Country, not village: देश (deś) is a country." }, "w2": { why: "Alone: जवळ (javaḷ) means near, but this sentence joins it to Pune as पुण्याजवळ (puṇyājvaḷ)." } }
+  "mr-5002":
+    native: "My age is thirty."
+    bases: { "माझे": "my", "वय": "age", "तीस": "thirty", "आहे": "is" }
+    confusables: { "w1": { why: "Name, not age: नाव (nāv) is a name." }, "f1": { why: "Plural: आहेत (āhet) would need several things; one age takes आहे (āhe)." } }
+  "mr-5003":
+    native: "Today is my friend's wedding."
+    bases: { "आज": "today", "माझ्या": "my", "मित्राचे": "friend's", "लग्न": "wedding", "आहे": "is" }
+    confusables: { "w1": { why: "Friend, not wedding: मित्र (mitra) is a friend, while this sentence is about लग्न (lagna)." }, "f1": { why: "Plural: आहेत (āhet) needs several things; one wedding takes आहे (āhe)." } }
+  "mr-5004":
+    native: "My woman friend is from Mumbai."
+    bases: { "माझी": "my", "मैत्रीण": "woman friend", "मुंबईची": "from Mumbai", "आहे": "is" }
+    confusables: { "w1": { why: "Masculine: माझा (mājhā) goes with a man friend; मैत्रीण (maitriṇ) is feminine, so माझी (mājhi) is used." }, "w2": { why: "She, not my friend: ती (ti) means she." } }
+  "mr-5005":
+    native: "I am learning the Marathi language."
+    bases: { "मी": "I", "मराठी": "Marathi", "भाषा": "language", "शिकतो": "learn" }
+    confusables: { "f1": { why: "Feminine: शिकते (śikte) is for a woman; शिकतो (śikto) is said by a man here." }, "w1": { why: "Teach, not learn: शिकवतो (śikvto) means teaches." } }
+  "mr-5006":
+    native: "What is your name?"
+    bases: { "तुझे": "your", "नाव": "name", "काय": "what", "आहे": "is" }
+    confusables: { "w1": { why: "Where, not what: कुठे (kuṭhe)? asks where." }, "w2": { why: "When, not what: कधी (kadhi)? asks when." } }
+  "mr-5007":
+    native: "My friend lives in his village."
+    bases: { "माझा": "my", "मित्र": "friend", "त्याच्या": "his", "गावात": "in the village", "राहतो": "lives" }
+    confusables: { "w1": { why: "Woman friend: मैत्रीण (maitriṇ) is a woman friend, while मित्र (mitra) is a man friend." }, "f1": { why: "Feminine: राहते (rāhte) goes with a woman; मित्र (mitra) is masculine, so राहतो (rāhto) is used." } }
+  "mr-5008":
+    native: "India is my country."
+    bases: { "भारत": "India", "हा": "emphasis on India", "माझा": "my", "देश": "country", "आहे": "is" }
+    confusables: { "w1": { why: "Neuter: हे (he) is for a neuter or plural thing; the subject भारत (bhārat) is masculine, so हा (hā) is used." }, "f1": { why: "Plural: आहेत (āhet) needs several things; one country takes आहे (āhe)." } }
+  "mr-5009":
+    native: "He is my friend."
+    bases: { "तो": "he", "माझा": "my", "मित्र": "friend", "आहे": "is" }
+    confusables: { "w1": { why: "She, not he: ती (ti) means she." }, "w2": { why: "Feminine: माझी (mājhi) goes with a feminine noun; मित्र (mitra) is masculine, so माझा (mājhā) is used." } }
+  "mr-5010":
+    native: "She is my woman friend."
+    bases: { "ती": "she", "माझी": "my", "मैत्रीण": "woman friend", "आहे": "is" }
+    confusables: { "w1": { why: "He, not she: तो (to) means he." }, "w2": { why: "Masculine: माझा (mājhā) goes with a masculine noun, but मैत्रीण (maitriṇ) is feminine." } }

@@ -1,0 +1,54 @@
+schema: 1
+id: "mr-en-government-sentences"
+kind: "layer"
+core: "mr-government-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with government"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the government words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-5685":
+    native: "Vote."
+    bases: { "करा": "do" }
+    confusables: { "w1": { why: "Voter, not vote: मतदार (matdār) is a voter." }, "f1": { why: "Present: करतो (karto) is the present for one man; करा (karā) is an order." } }
+  "mr-5686":
+    native: "MLAs get elected."
+    bases: { "निवडून": "elected", "येतात": "get" }
+    confusables: { "w1": { why: "MP, not MLA: खासदार (khāsdār) is a member of parliament." }, "f1": { why: "One man: येतो (yeto) is for one man; several आमदार (āmdār) take येतात (yetāt)." } }
+  "mr-5687":
+    native: "Citizens pay taxes."
+    bases: { "भरतात": "pay" }
+    confusables: { "w1": { why: "Voter, not citizen: मतदार (matdār) is a voter." }, "f1": { why: "One man: भरतो (bharto) is for one man; several citizens take भरतात (bharatāt)." } }
+  "mr-5688":
+    native: "This scheme is a government one."
+    bases: { "ही": "this (feminine)", "आहे": "is" }
+    confusables: { "w1": { why: "Noun, not adjective: सरकार (sarkār) means the government, while सरकारी (sarkāri) is the adjective." }, "f1": { why: "Masculine: हा (hā) agrees with a masculine noun; योजना (yojnā) is feminine." } }
+  "mr-5689":
+    native: "The election is today."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "Voting, not the election: मतदान (matdān) is the act of voting." }, "f1": { why: "Plural: आहेत (āhet) is for several things; निवडणूक (nivḍṇuk) is one event." } }
+  "mr-5690":
+    native: "The officials come here."
+    bases: { "येतात": "come" }
+    confusables: { "w1": { why: "Minister, not official: मंत्री (mantri) is a minister." }, "f1": { why: "Future: येईल (yeil) is the future; the sentence is present." } }
+  "mr-5691":
+    native: "Where are the ministers?"
+    bases: { "आहेत": "are" }
+    confusables: { "w1": { why: "MP, not minister: खासदार (khāsdār) is a member of parliament." }, "f1": { why: "Singular: आहे (āhe) is for one person; मंत्री (mantri) here is plural." } }
+  "mr-5692":
+    native: "Voters vote."
+    bases: { "करतात": "do (vote)" }
+    confusables: { "w1": { why: "Election, not voter: निवडणूक (nivḍṇuk) means election." }, "f1": { why: "One man: करतो (karto) is for one man; several voters take करतात (karatāt)." } }
+  "mr-5693":
+    native: "In a democracy, citizens vote."
+    bases: { "लोकशाहीत": "in a democracy", "करतात": "do (vote)" }
+    confusables: { "w1": { why: "Voter, not citizen: मतदार (matdār) is a voter." }, "f1": { why: "Order: करा (karā) is an order; करतात (karatāt) is a statement." } }
+  "mr-5694":
+    native: "The MPs are in Delhi."
+    bases: { "दिल्लीत": "in Delhi", "आहेत": "are" }
+    confusables: { "w1": { why: "MLA, not MP: आमदार (āmdār) is a member of the legislative assembly." }, "f1": { why: "Singular: आहे (āhe) is for one person." } }
+  "mr-5695":
+    native: "I have to pay tax."
+    bases: { "मला": "to me", "भरायचा": "to pay", "आहे": "is (here, must)" }
+    confusables: { "w1": { why: "I, not to me: मी (mi) means I, and मला (malā) means to me." }, "f1": { why: "Feminine: भरायची (bharāyaci) would agree with a feminine noun; कर (kar) is masculine." } }
