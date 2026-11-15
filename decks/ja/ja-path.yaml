@@ -957,39 +957,46 @@ units:
       - { id: "manga-panel", text: { "en": "The sound words in a few manga panels" } }
   - decks: ["ja-kanji-36"]
     words: 0
-  - planned: { id: "ja-abstract-words", theme: "abstract-words", words: 55 }
+  - decks: ["ja-abstract-words", "ja-abstract-words-sentences", "ja-reading-abstract-words", "*"]
+    words: 55
     listening_passages:
       - { id: "a-discussion", text: { "en": "A short discussion of an idea" } }
     reading_passages:
       - { id: "opinion-column", text: { "en": "A short opinion column" } }
-  - planned: { id: "ja-money", theme: "money", words: 45 }
+  - decks: ["ja-money", "ja-money-sentences", "ja-reading-money", "*"]
+    words: 45
     listening_passages:
       - { id: "at-the-bank", text: { "en": "Opening an account at a bank counter" } }
     reading_passages:
       - { id: "bill-and-receipt", text: { "en": "A utility bill and a receipt" } }
-  - planned: { id: "ja-society", theme: "society", words: 50 }
+  - decks: ["ja-society", "ja-society-sentences", "ja-reading-society", "*"]
+    words: 50
     listening_passages:
       - { id: "an-ageing-town", text: { "en": "Residents talk about an ageing town" } }
     reading_passages:
       - { id: "survey-results", text: { "en": "The results of a short survey on work and life" } }
   - decks: ["ja-kanji-37"]
     words: 0
-  - planned: { id: "ja-university", theme: "university", words: 50 }
+  - decks: ["ja-university", "ja-university-sentences", "ja-reading-university", "*"]
+    words: 50
     listening_passages:
       - { id: "choosing-a-seminar", text: { "en": "Students talk about which seminar to choose" } }
     reading_passages:
       - { id: "campus-notice", text: { "en": "A campus notice about exams" } }
-  - planned: { id: "ja-food-culture", theme: "food-culture", words: 50 }
+  - decks: ["ja-food-culture", "ja-food-culture-sentences", "ja-reading-food-culture", "*"]
+    words: 50
     listening_passages:
       - { id: "new-year-food", text: { "en": "A family explains the dishes they eat at New Year" } }
     reading_passages:
       - { id: "washoku-article", text: { "en": "A short article about traditional Japanese food" } }
-  - planned: { id: "ja-literature", theme: "literature", words: 50 }
+  - decks: ["ja-literature", "ja-literature-sentences", "ja-reading-literature", "*"]
+    words: 50
     listening_passages:
       - { id: "a-haiku-explained", text: { "en": "A teacher reads a haiku and explains it" } }
     reading_passages:
       - { id: "book-blurb", text: { "en": "The back-cover blurb of a novel" } }
-  - planned: { id: "ja-verbs-5", theme: "verbs-5", words: 50 }
+  - decks: ["ja-verbs-5", "ja-verbs-5-sentences", "ja-reading-verbs-5", "*"]
+    words: 50
     listening_passages:
       - { id: "what-happened-next", text: { "en": "Telling a long story with every step in order" } }
     reading_passages:
