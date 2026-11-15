@@ -1,0 +1,150 @@
+schema: 1
+id: "hi-multiword-ko-experiencer"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+genre: "multiword"
+pattern_family: "ko-experiencer"
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - id: "hi-4500"
+    target: "मुझे चाय पसंद है"
+    words: ["मुझे", "चाय", "पसंद", "है"]
+    reading: "mujhē cāy pasand hai"
+    ipa: "mʊdʒʱeː tʃaːj pəsənd̪ ɦɛː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "मुझे", ref: "hi-0745" }
+      - { word: "चाय", ref: "hi-0334" }
+      - { word: "पसंद", ref: "hi-0469" }
+      - { word: "है", ref: "hi-0780" }
+  - id: "hi-4501"
+    target: "मुझे उसकी याद आ रही है"
+    words: ["मुझे", "उसकी", "याद", "आ", "रही", "है"]
+    reading: "mujhē uskī yād ā rahī hai"
+    ipa: "mʊdʒʱeː ʊskiː jaːd̪ aː rəɦiː ɦɛː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "मुझे", ref: "hi-0745" }
+      - { word: "उसकी", ref: "hi-0749" }
+      - { word: "याद", ref: "hi-1594" }
+      - { word: "आ", ref: "hi-0778" }
+      - { word: "रही", ref: "hi-0791" }
+      - { word: "है", ref: "hi-0780" }
+  - id: "hi-4502"
+    target: "मुझे शर्म आती है"
+    words: ["मुझे", "शर्म", "आती", "है"]
+    reading: "mujhē śarm ātī hai"
+    ipa: "mʊdʒʱeː ʃərm aːt̪iː ɦɛː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "मुझे", ref: "hi-0745" }
+      - { word: "शर्म", ref: "hi-2127" }
+      - { word: "आती", ref: "hi-0778" }
+      - { word: "है", ref: "hi-0780" }
+  - id: "hi-4503"
+    target: "मुझे मालूम है"
+    words: ["मुझे", "मालूम", "है"]
+    reading: "mujhē mālūm hai"
+    ipa: "mʊdʒʱeː maːluːm ɦɛː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "मुझे", ref: "hi-0745" }
+      - { word: "मालूम", ref: "hi-2817" }
+      - { word: "है", ref: "hi-0780" }
+  - id: "hi-4504"
+    target: "मुझे दवा की ज़रूरत है"
+    words: ["मुझे", "दवा", "की", "ज़रूरत", "है"]
+    reading: "mujhē davā kī zarūrat hai"
+    ipa: "mʊdʒʱeː d̪əʋaː kiː zəruːrət̪ ɦɛː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "मुझे", ref: "hi-0745" }
+      - { word: "दवा", ref: "hi-2089" }
+      - { word: "की", ref: "hi-0279" }
+      - { word: "ज़रूरत", ref: "hi-0464" }
+      - { word: "है", ref: "hi-0780" }
+  - id: "hi-4505"
+    target: "मुझे भूख लगी है"
+    words: ["मुझे", "भूख", "लगी", "है"]
+    reading: "mujhē bhūkh lagī hai"
+    ipa: "mʊdʒʱeː bʱuːkʰ ləɡiː ɦɛː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "मुझे", ref: "hi-0745" }
+      - { word: "भूख", ref: "hi-1455" }
+      - { word: "लगी", ref: "hi-1780" }
+      - { word: "है", ref: "hi-0780" }
+  - id: "hi-4506"
+    target: "मुझे प्यास लगी है"
+    words: ["मुझे", "प्यास", "लगी", "है"]
+    reading: "mujhē pyās lagī hai"
+    ipa: "mʊdʒʱeː pjaːs ləɡiː ɦɛː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "मुझे", ref: "hi-0745" }
+      - { word: "प्यास", ref: "hi-1454" }
+      - { word: "लगी", ref: "hi-1780" }
+      - { word: "है", ref: "hi-0780" }
+  - id: "hi-4507"
+    target: "मुझे ठंड लग रही है"
+    words: ["मुझे", "ठंड", "लग", "रही", "है"]
+    reading: "mujhē ṭhaṁḍ lag rahī hai"
+    ipa: "mʊdʒʱeː ʈʰəɳɖ ləɡ rəɦiː ɦɛː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "मुझे", ref: "hi-0745" }
+      - { word: "ठंड", ref: "hi-1269" }
+      - { word: "लग", ref: "hi-1780" }
+      - { word: "रही", ref: "hi-0791" }
+      - { word: "है", ref: "hi-0780" }
+  - id: "hi-4508"
+    target: "मुझे दर्द हो रहा है"
+    words: ["मुझे", "दर्द", "हो", "रहा", "है"]
+    reading: "mujhē dard hō rahā hai"
+    ipa: "mʊdʒʱeː d̪ərd̪ ɦoː rəɦaː ɦɛː"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "मुझे", ref: "hi-0745" }
+      - { word: "दर्द", ref: "hi-0360" }
+      - { word: "हो", ref: "hi-0780" }
+      - { word: "रहा", ref: "hi-0791" }
+      - { word: "है", ref: "hi-0780" }
