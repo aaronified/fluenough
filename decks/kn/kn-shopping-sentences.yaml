@@ -1,0 +1,87 @@
+schema: 1
+id: "kn-shopping-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-7435"
+    target: "ಇದು ದುಬಾರಿ."
+    reading: "idu dubāri."
+    ipa: "id̪u d̪ubaːri"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ದುಬಾರಿ", ref: "kn-1045" }
+  - id: "kn-7436"
+    target: "ಇದು ಅಗ್ಗ."
+    reading: "idu agga."
+    ipa: "id̪u aɡɡa"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ಅಗ್ಗ", ref: "kn-1046" }
+  - id: "kn-7437"
+    target: "ನನಗೆ ರಸೀದಿ ಬೇಕು."
+    reading: "nanage rasīdi bēku."
+    ipa: "nanaɡe rasiːd̪i beːku"
+    pos: "phrase"
+    bases:
+      - { word: "ನನಗೆ", base: "ನಾನು", reading: "nānu" }
+      - { word: "ರಸೀದಿ", ref: "kn-1025" }
+      - { word: "ಬೇಕು", base: "ಬೇಕು", reading: "bēku" }
+  - id: "kn-7438"
+    target: "ನಾನು ಇದನ್ನು ಕೊಳ್ಳುತ್ತೇನೆ."
+    reading: "nānu idannu koḷḷuttēne."
+    ipa: "naːnu id̪annu koɭɭut̪t̪eːne"
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", ref: "kn-0610" }
+      - { word: "ಇದನ್ನು", base: "ಇದು", reading: "idu" }
+      - { word: "ಕೊಳ್ಳುತ್ತೇನೆ", base: "ಕೊಳ್ಳು", reading: "koḷḷu" }
+  - id: "kn-7439"
+    target: "ನಿಮ್ಮ ಬಳಿ ಕಾರ್ಡ್ ಇದೆಯಾ?"
+    reading: "nimma baḷi kārḍ ideyā?"
+    ipa: "nimma baɭi kaːrɖ id̪ejaː"
+    pos: "phrase"
+    bases:
+      - { word: "ನಿಮ್ಮ", ref: "kn-0621" }
+      - { word: "ಬಳಿ", base: "ಬಳಿ", reading: "baḷi" }
+      - { word: "ಕಾರ್ಡ್", ref: "kn-1040" }
+      - { word: "ಇದೆಯಾ", base: "ಇರು", reading: "iru" }
+  - id: "kn-7440"
+    target: "ದರ ಎಷ್ಟು?"
+    reading: "dara eṣṭu?"
+    ipa: "d̪ara eʂʈu"
+    pos: "phrase"
+    bases:
+      - { word: "ದರ", ref: "kn-1034" }
+      - { word: "ಎಷ್ಟು", ref: "kn-0173" }
+  - id: "kn-7441"
+    target: "ಇದು ಹೆಚ್ಚು."
+    reading: "idu heccu."
+    ipa: "id̪u hetʃtʃu"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ಹೆಚ್ಚು", ref: "kn-1054" }
+  - id: "kn-7442"
+    target: "ನಾನು ಪಾವತಿ ಮಾಡುತ್ತೇನೆ."
+    reading: "nānu pāvati māḍuttēne."
+    ipa: "naːnu paːʋat̪i maːɖut̪t̪eːne"
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", ref: "kn-0610" }
+      - { word: "ಪಾವತಿ", ref: "kn-1055" }
+      - { word: "ಮಾಡುತ್ತೇನೆ", base: "ಮಾಡು", reading: "māḍu" }
+  - id: "kn-7443"
+    target: "ಇದು ಬೆಳ್ಳಿ."
+    reading: "idu beḷḷi."
+    ipa: "id̪u beɭɭi"
+    pos: "phrase"
+    bases:
+      - { word: "ಇದು", ref: "kn-0615" }
+      - { word: "ಬೆಳ್ಳಿ", ref: "kn-1049" }

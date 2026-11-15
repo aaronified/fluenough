@@ -1,0 +1,54 @@
+schema: 1
+id: "mr-en-reading-abstract-words"
+name: "Reading: abstract words"
+kind: "reading"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short opinion column. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "mr-opinion-column"
+    title: "Opinion column"
+    sentences:
+      - text: "माझ्या मते, सत्य सांगणं महत्त्वाचं आहे."
+        reading: "mājhyā mate, satya sāṅgaṇam̐ mahattvācam̐ āhe."
+        ipa: "madʒʱja mət̪e sət̪jə saŋɡəɳə̃ məɦət̪t̪ʋatsə̃ aɦe"
+      - text: "असत्य बोलणं सोपं वाटतं, पण त्याने विश्वास तुटतो."
+        reading: "asatya bolṇam̐ sopam̐ vāṭtam̐, paṇ tyāne viśvās tuṭto."
+        ipa: "əsət̪jə bolɳə̃ sopə̃ ʋaʈt̪ə̃ pəɳ t̪jane ʋiʃʋas t̪uʈt̪o"
+      - text: "दया आणि करुणा या दोन्ही चांगल्या गोष्टी आहेत."
+        reading: "dayā āṇi karuṇā yā donhi cāṅgalyā goṣṭi āhet."
+        ipa: "d̪əja aɳi kəruɳa ja d̪onɦi tsaŋɡəlja ɡoʂʈi aɦet̪"
+      - text: "संयम ठेवा, कारण रागाने काही चांगलं होत नाही."
+        reading: "saṁyam ṭhevā, kāraṇ rāgāne kāhi cāṅgalam̐ hot nāhi."
+        ipa: "sə̃jəm ʈʰeʋa karəɳ raɡane kaɦi tsaŋɡələ̃ ɦot̪ naɦi"
+      - text: "नम्रता ठेवणं चांगलं आहे."
+        reading: "namratā ṭhevṇam̐ cāṅgalam̐ āhe."
+        ipa: "nəmrət̪a ʈʰeʋɳə̃ tsaŋɡələ̃ aɦe"
+    questions:
+      - id: "mr-7033"
+        prompt:
+          en: "What does the writer say is important?"
+        options:
+        - en: "Telling the truth"
+        - en: "Winning games"
+        - en: "Owning a car"
+        answer: 1
+      - id: "mr-7034"
+        prompt:
+          en: "What does the writer say about anger?"
+        options:
+        - en: "Nothing good comes from it"
+        - en: "It is always useful"
+        - en: "It makes people happy"
+        answer: 1
+      - id: "mr-7035"
+        prompt:
+          en: "How does the writer describe kindness and compassion?"
+        options:
+        - en: "As good things"
+        - en: "As bad things"
+        - en: "As things nobody needs"
+        answer: 1

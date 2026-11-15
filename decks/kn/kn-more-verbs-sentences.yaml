@@ -1,0 +1,122 @@
+schema: 1
+id: "kn-more-verbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-8149"
+    target: "ಅವಳು ಈಗ ಹಾಲು ಕುದಿಸುತ್ತಾಳೆ."
+    reading: "avaḷu īga hālu kudisuttāḷe."
+    ipa: "aʋaɭu iːɡa haːlu kud̪isut̪t̪aːɭe"
+    pos: "phrase"
+    bases:
+      - { word: "ಅವಳು", ref: "kn-0613" }
+      - { word: "ಈಗ", ref: "kn-0416" }
+      - { word: "ಹಾಲು", ref: "kn-0120" }
+      - { word: "ಕುದಿಸುತ್ತಾಳೆ", base: "ಕುದಿಸು", reading: "kudisu" }
+  - id: "kn-8150"
+    target: "ನಾನು ಲೋಟಕ್ಕೆ ಹಾಲು ಸುರಿಯುತ್ತೇನೆ."
+    reading: "nānu lōṭakke hālu suriyuttēne."
+    ipa: "naːnu loːʈakke haːlu surijut̪t̪eːne"
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", ref: "kn-0610" }
+      - { word: "ಲೋಟಕ್ಕೆ", base: "ಲೋಟ", reading: "lōṭa" }
+      - { word: "ಹಾಲು", ref: "kn-0120" }
+      - { word: "ಸುರಿಯುತ್ತೇನೆ", base: "ಸುರಿ", reading: "suri" }
+  - id: "kn-8151"
+    target: "ಅಮ್ಮ ಬಟ್ಟಲನ್ನು ತೊಳೆಯುತ್ತಾಳೆ."
+    reading: "amma baṭṭalannu toḷeyuttāḷe."
+    ipa: "amma baʈʈalannu t̪oɭejut̪t̪aːɭe"
+    pos: "phrase"
+    bases:
+      - { word: "ಅಮ್ಮ", ref: "kn-0058" }
+      - { word: "ಬಟ್ಟಲನ್ನು", base: "ಬಟ್ಟಲು", reading: "baṭṭalu" }
+      - { word: "ತೊಳೆಯುತ್ತಾಳೆ", base: "ತೊಳೆ", reading: "toḷe" }
+  - id: "kn-8152"
+    target: "ಅಮ್ಮ ಮನೆಯನ್ನು ಗುಡಿಸುತ್ತಾಳೆ."
+    reading: "amma maneyannu guḍisuttāḷe."
+    ipa: "amma manejannu ɡuɖisut̪t̪aːɭe"
+    pos: "phrase"
+    bases:
+      - { word: "ಅಮ್ಮ", ref: "kn-0058" }
+      - { word: "ಮನೆಯನ್ನು", base: "ಮನೆ", reading: "mane" }
+      - { word: "ಗುಡಿಸುತ್ತಾಳೆ", base: "ಗುಡಿಸು", reading: "guḍisu" }
+  - id: "kn-8153"
+    target: "ನೀನು ಕಾರನ್ನು ತೊಳೆಯುತ್ತೀಯ."
+    reading: "nīnu kārannu toḷeyuttīya."
+    ipa: "niːnu kaːrannu t̪oɭejut̪t̪iːja"
+    pos: "phrase"
+    bases:
+      - { word: "ನೀನು", ref: "kn-0611" }
+      - { word: "ಕಾರನ್ನು", base: "ಕಾರು", reading: "kāru" }
+      - { word: "ತೊಳೆಯುತ್ತೀಯ", base: "ತೊಳೆ", reading: "toḷe" }
+  - id: "kn-8154"
+    target: "ಅಪ್ಪ ರಾತ್ರಿ ಕಾರನ್ನು ನಿಲ್ಲಿಸುತ್ತಾನೆ."
+    reading: "appa rātri kārannu nillisuttāne."
+    ipa: "appa raːt̪ri kaːrannu nillisut̪t̪aːne"
+    pos: "phrase"
+    bases:
+      - { word: "ಅಪ್ಪ", ref: "kn-0059" }
+      - { word: "ರಾತ್ರಿ", ref: "kn-0419" }
+      - { word: "ಕಾರನ್ನು", base: "ಕಾರು", reading: "kāru" }
+      - { word: "ನಿಲ್ಲಿಸುತ್ತಾನೆ", base: "ನಿಲ್ಲಿಸು", reading: "nillisu" }
+  - id: "kn-8155"
+    target: "ನಾಳೆ ಅಣ್ಣ ಊರಿಗೆ ಹೋಗುತ್ತಾನೆ."
+    reading: "nāḷe aṇṇa ūrige hōguttāne."
+    ipa: "naːɭe aɳɳa uːriɡe hoːɡut̪t̪aːne"
+    pos: "phrase"
+    bases:
+      - { word: "ನಾಳೆ", ref: "kn-0414" }
+      - { word: "ಅಣ್ಣ", ref: "kn-0061" }
+      - { word: "ಊರಿಗೆ", base: "ಊರು", reading: "ūru" }
+      - { word: "ಹೋಗುತ್ತಾನೆ", base: "ಹೋಗು", reading: "hōgu" }
+  - id: "kn-8156"
+    target: "ಅಮ್ಮ ಮಗಳನ್ನು ಕರೆಯುತ್ತಾಳೆ."
+    reading: "amma magaḷannu kareyuttāḷe."
+    ipa: "amma maɡaɭannu karejut̪t̪aːɭe"
+    pos: "phrase"
+    bases:
+      - { word: "ಅಮ್ಮ", ref: "kn-0058" }
+      - { word: "ಮಗಳನ್ನು", base: "ಮಗಳು", reading: "magaḷu" }
+      - { word: "ಕರೆಯುತ್ತಾಳೆ", base: "ಕರೆ", reading: "kare" }
+  - id: "kn-8157"
+    target: "ಬೆಳಿಗ್ಗೆ ನೀನು ಎಲ್ಲಿ ಹೋಗುತ್ತೀಯ?"
+    reading: "beḷigge nīnu elli hōguttīya?"
+    ipa: "beɭiɡɡe niːnu elli hoːɡut̪t̪iːja"
+    pos: "phrase"
+    bases:
+      - { word: "ಬೆಳಿಗ್ಗೆ", ref: "kn-0417" }
+      - { word: "ನೀನು", ref: "kn-0611" }
+      - { word: "ಎಲ್ಲಿ", ref: "kn-0169" }
+      - { word: "ಹೋಗುತ್ತೀಯ", base: "ಹೋಗು", reading: "hōgu" }
+  - id: "kn-8158"
+    target: "ಮಳೆ ಸುರಿಯುತ್ತದೆ."
+    reading: "maḷe suriyuttade."
+    ipa: "maɭe surijut̪t̪ad̪e"
+    pos: "phrase"
+    bases:
+      - { word: "ಮಳೆ", ref: "kn-0122" }
+      - { word: "ಸುರಿಯುತ್ತದೆ", base: "ಸುರಿ", reading: "suri" }
+  - id: "kn-8159"
+    target: "ಬಾಟಲಿಯನ್ನು ತುಂಬು."
+    reading: "bāṭaliyannu tumbu."
+    ipa: "baːʈalijannu t̪umbu"
+    pos: "phrase"
+    bases:
+      - { word: "ಬಾಟಲಿಯನ್ನು", base: "ಬಾಟಲಿ", reading: "bāṭali" }
+      - { word: "ತುಂಬು", ref: "kn-0742" }
+  - id: "kn-8160"
+    target: "ನಾನು ಇವತ್ತು ಹಾಲು ಕುಡಿಯುತ್ತೇನೆ."
+    reading: "nānu ivattu hālu kuḍiyuttēne."
+    ipa: "naːnu iʋat̪t̪u haːlu kuɖijut̪t̪eːne"
+    pos: "phrase"
+    bases:
+      - { word: "ನಾನು", ref: "kn-0610" }
+      - { word: "ಇವತ್ತು", ref: "kn-0413" }
+      - { word: "ಹಾಲು", ref: "kn-0120" }
+      - { word: "ಕುಡಿಯುತ್ತೇನೆ", base: "ಕುಡಿ", reading: "kuḍi" }

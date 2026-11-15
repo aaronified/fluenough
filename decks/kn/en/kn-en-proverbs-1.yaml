@@ -1,0 +1,191 @@
+# Layer for kn-proverbs-1: each proverb's literal English rendering and its meaning.
+schema: 1
+id: "kn-en-proverbs-1"
+kind: "layer"
+core: "kn-proverbs-1"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Proverbs 1"
+description: "Twenty Kannada proverbs about animals, food, family, work, money and weather, each with a literal English rendering and its meaning. Not yet checked by a Kannada speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "kn-6200":
+    native: "A barking dog does not bite."
+    notes:
+      "literal": "Said of someone who threatens loudly but does not act."
+    bases:
+      "ಬೊಗಳುವ": { meaning: "barking" }
+      "ನಾಯಿ": { meaning: "dog" }
+      "ಕಚ್ಚುವುದಿಲ್ಲ": { meaning: "does not bite" }
+  "kn-6201":
+    native: "A dog's tail is crooked."
+    notes:
+      "literal": "Said that a bad nature cannot be straightened, however long one tries."
+    bases:
+      "ನಾಯಿ": { meaning: "dog" }
+      "ಬಾಲ": { meaning: "tail" }
+      "ಡೊಂಕು": { meaning: "crooked" }
+  "kn-6202":
+    native: "The cat is the witness in the mouse's case."
+    notes:
+      "literal": "Said when the one who is asked to judge is the enemy of the one who is judged, so the judgement cannot be fair."
+    bases:
+      "ಇಲಿಯ": { meaning: "of the mouse" }
+      "ವ್ಯಾಜ್ಯಕ್ಕೆ": { meaning: "for the case" }
+      "ಬೆಕ್ಕು": { meaning: "cat" }
+      "ಸಾಕ್ಷಿ": { meaning: "witness" }
+  "kn-6203":
+    native: "The fence itself rose and grazed the field."
+    notes:
+      "literal": "Said when the very person who should protect something destroys it."
+    bases:
+      "ಬೇಲಿನೆ": { meaning: "the fence itself" }
+      "ಎದ್ದು": { meaning: "rising" }
+      "ಹೊಲ": { meaning: "field" }
+      "ಮೇಯಿತಂತೆ": { meaning: "grazed" }
+  "kn-6204":
+    native: "A clever woman without control, a horse without a bridle."
+    notes:
+      "literal": "Said of anyone or anything with no restraint, which therefore goes wrong."
+    bases:
+      "ಅಂಕೆ": { meaning: "control" }
+      "ಇಲ್ಲದ": { meaning: "without" }
+      "ಚತುರೆ": { meaning: "a clever woman" }
+      "ಲಗಾಮು": { meaning: "bridle" }
+      "ಕುದುರೆ": { meaning: "horse" }
+  "kn-6205":
+    native: "One who ate rice is a bird; one who ate millet is a wolf."
+    notes:
+      "literal": "Said that a person is shaped by the food they are used to."
+    bases:
+      "ಅಕ್ಕಿ": { meaning: "rice" }
+      "ಉಂಡವ": { meaning: "one who ate" }
+      "ಹಕ್ಕಿ": { meaning: "bird" }
+      "ಜೋಳ": { meaning: "millet" }
+      "ತೋಳ": { meaning: "wolf" }
+  "kn-6206":
+    native: "Whoever has eaten salt must drink water."
+    notes:
+      "literal": "Said that every action has its natural result, which one must bear."
+    bases:
+      "ಉಪ್ಪು": { meaning: "salt" }
+      "ತಿಂದವನು": { meaning: "one who ate" }
+      "ನೀರು": { meaning: "water" }
+      "ಕುಡಿಯಲೇ": { meaning: "must drink" }
+      "ಬೇಕು": { meaning: "must" }
+  "kn-6207":
+    native: "What comes to one's share is the finest food."
+    notes:
+      "literal": "Said to be content with what one has been given."
+    bases:
+      "ಪಾಲಿಗೆ": { meaning: "to one's share" }
+      "ಬಂದದ್ದೆ": { meaning: "what has come" }
+      "ಪರಮಾನ್ನ": { meaning: "the finest food" }
+  "kn-6208":
+    native: "If the hand is muddy, the mouth gets curd."
+    notes:
+      "literal": "Said that work with the hands brings food to the mouth."
+    bases:
+      "ಕೈ": { meaning: "hand" }
+      "ಕೆಸರಾದ್ರೆ": { meaning: "if muddy" }
+      "ಬಾಯಿ": { meaning: "mouth" }
+      "ಮೊಸರು": { meaning: "curd" }
+  "kn-6209":
+    native: "Like breaking into the house that gave you food."
+    notes:
+      "literal": "Said of betraying someone who has fed or helped you."
+    bases:
+      "ಅನ್ನ": { meaning: "food" }
+      "ಹಾಕಿದ": { meaning: "given" }
+      "ಮನೆಗೆ": { meaning: "to the house" }
+      "ಕನ್ನ": { meaning: "a break-in" }
+      "ಹಾಕಿದಂತೆ": { meaning: "like doing" }
+  "kn-6210":
+    native: "If the father built the temple, the son placed the finial."
+    notes:
+      "literal": "Said that one person does the main work and another gets the last part and the credit."
+    bases:
+      "ಅಪ್ಪ": { meaning: "father" }
+      "ಗುಡಿ": { meaning: "temple" }
+      "ಕಟ್ಟಿದರೆ": { meaning: "if built" }
+      "ಮಗ": { meaning: "son" }
+      "ಕಳಸ": { meaning: "finial" }
+      "ಇಟ್ಟ": { meaning: "placed" }
+  "kn-6211":
+    native: "Will one who does not listen to his father listen to his mother?"
+    notes:
+      "literal": "Said of a child who ignores every elder, so no one can make him obey."
+    bases:
+      "ಅಪ್ಪನ": { meaning: "father's" }
+      "ಮಾತು": { meaning: "word" }
+      "ಕೇಳದವನು": { meaning: "one who does not listen" }
+      "ಅಮ್ಮನ": { meaning: "mother's" }
+      "ಕೇಳಿಯಾನೆ": { meaning: "will listen" }
+  "kn-6212":
+    native: "A time for the mother-in-law, a time for the daughter-in-law."
+    notes:
+      "literal": "Said that each person has a turn of power and a turn of submission in the family."
+    bases:
+      "ಅತ್ತೆಗೊಂದು": { meaning: "a time for the mother-in-law" }
+      "ಕಾಲ": { meaning: "time" }
+      "ಸೊಸೆಗೊಂದು": { meaning: "a time for the daughter-in-law" }
+  "kn-6213":
+    native: "The merit the father earned lasts into the children's time."
+    notes:
+      "literal": "Said that a parent's good deeds benefit the children later."
+    bases:
+      "ಅಪ್ಪ": { meaning: "father" }
+      "ಮಾಡಿದ": { meaning: "done" }
+      "ಪುಣ್ಯ": { meaning: "merit" }
+      "ಮಕ್ಕಳ": { meaning: "children's" }
+      "ಕಾಲಕ್ಕೆ": { meaning: "in the time" }
+  "kn-6214":
+    native: "Labour itself is God."
+    notes:
+      "literal": "Said that honest work is the highest worship."
+    bases:
+      "ದುಡಿಮೆಯೇ": { meaning: "labour itself" }
+      "ದೇವರು": { meaning: "God" }
+  "kn-6215":
+    native: "One who rises will win."
+    notes:
+      "literal": "Said that whoever gets up and acts early will succeed."
+    bases:
+      "ಎದ್ದವನು": { meaning: "one who rises" }
+      "ಗೆದ್ದಾನು": { meaning: "will win" }
+  "kn-6216":
+    native: "Effort suited to the desire is needed."
+    notes:
+      "literal": "Said that a big wish needs an equal amount of work."
+    bases:
+      "ಆಸೆಗೆ": { meaning: "for desire" }
+      "ತಕ್ಕ": { meaning: "suitable" }
+      "ಪರಿಶ್ರಮ": { meaning: "effort" }
+      "ಬೇಕು": { meaning: "is needed" }
+  "kn-6217":
+    native: "Even a corpse opens its mouth for money."
+    notes:
+      "literal": "Said that money can make anyone speak or give."
+    bases:
+      "ಹಣ": { meaning: "money" }
+      "ಅಂದ್ರೆ": { meaning: "if one says" }
+      "ಹೆಣವೂ": { meaning: "even a corpse" }
+      "ಬಾಯಿ": { meaning: "mouth" }
+      "ಬಿಡ್ತದೆ": { meaning: "opens" }
+  "kn-6218":
+    native: "Lakshmi is restless."
+    notes:
+      "literal": "Said that wealth does not stay long in one place."
+    bases:
+      "ಲಕ್ಷ್ಮಿ": { meaning: "Lakshmi, goddess of wealth" }
+      "ಚಂಚಲೆ": { meaning: "restless" }
+  "kn-6219":
+    native: "If it rains, it is no harm; if the son eats, it is no harm."
+    notes:
+      "literal": "Said that rain is never a harm."
+    bases:
+      "ಮಳೆ": { meaning: "rain" }
+      "ಹುಯ್ದರೆ": { meaning: "if it pours" }
+      "ಕೇಡಲ್ಲ": { meaning: "is no harm" }
+      "ಮಗ": { meaning: "son" }
+      "ಉಂಡರೆ": { meaning: "if he eats" }
