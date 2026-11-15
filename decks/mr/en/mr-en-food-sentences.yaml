@@ -1,0 +1,54 @@
+schema: 1
+id: "mr-en-food-sentences"
+kind: "layer"
+core: "mr-food-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with food"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the food words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-5664":
+    native: "I eat poha for breakfast."
+    bases: { "नाश्त्याला": "for breakfast", "खातो": "eat" }
+    confusables: { "w1": { why: "Rice, not poha: भात (bhāt) is cooked rice." }, "f1": { why: "Past: खाल्ला (khāllā) means ate, not eat." } }
+  "mr-5665":
+    native: "I like puri."
+    bases: { "मला": "to me", "आवडते": "like" }
+    confusables: { "w1": { why: "I, not to me: मी (mi) means I, and मला (malā) means to me." }, "f1": { why: "Masculine: आवडतो (āvaḍto) is for a masculine thing; पुरी (puri) is feminine." } }
+  "mr-5666":
+    native: "I like vada pav."
+    bases: { "मला": "to me", "आवडतो": "like" }
+    confusables: { "w1": { why: "I, not to me: मी (mi) means I, and मला (malā) means to me." }, "f1": { why: "Feminine: आवडते (āvaḍte) agrees with a feminine thing; वडापाव (vaḍāpāv) is masculine." } }
+  "mr-5667":
+    native: "I want to drink lassi."
+    bases: { "मला": "to me", "प्यायची": "to drink", "आहे": "is" }
+    confusables: { "w1": { why: "Tea, not lassi: चहा (cahā) is tea." }, "f1": { why: "Present: पितो (pito) is the present; प्यायची (pyāyaci) आहे (āhe) means want to drink." } }
+  "mr-5668":
+    native: "I do not like rice."
+    bases: { "मला": "to me", "आवडत": "like" }
+    confusables: { "w1": { why: "I, not to me: मी (mi) means I, and मला (malā) means to me." }, "f1": { why: "Feminine: आवडते (āvaḍte) is for a feminine thing; भात (bhāt) is masculine." } }
+  "mr-5669":
+    native: "Give me the bill."
+    bases: { "मला": "to me", "द्या": "give" }
+    confusables: { "w1": { why: "Take, not give: घ्या (ghyā) means take." }, "f1": { why: "Past: दिले (dile) is the past; the sentence is an order." } }
+  "mr-5670":
+    native: "I like the thali."
+    bases: { "मला": "to me", "आवडते": "like" }
+    confusables: { "w1": { why: "I, not to me: मी (mi) means I, and मला (malā) means to me." }, "f1": { why: "Masculine: आवडतो (āvaḍto) is for a masculine thing; थाळी (thāḷi) is feminine." } }
+  "mr-5671":
+    native: "I am vegetarian."
+    bases: { "आहे": "am" }
+    confusables: { "w1": { why: "Non-vegetarian: मांसाहारी (māṁsāhāri) is the opposite." }, "f1": { why: "Plural: आहेत (āhet) is for several people; this is one speaker." } }
+  "mr-5672":
+    native: "Eat the fritters."
+    bases: { "खा": "eat" }
+    confusables: { "w1": { why: "Drink, not eat: पी (pi) means drink." }, "f1": { why: "Past: खाल्ली (khālli) is the past; the sentence is a command." } }
+  "mr-5673":
+    native: "Eat curd rice."
+    bases: { "खा": "eat" }
+    confusables: { "w1": { why: "Tea, not curd rice: चहा (cahā) is tea." }, "f1": { why: "Past: खाल्ला (khāllā) is the past; खा (khā) is the order to eat." } }
+  "mr-5674":
+    native: "Is this vegetarian?"
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "Non-vegetarian: मांसाहारी (māṁsāhāri) is the opposite." }, "f1": { why: "Plural: आहेत (āhet) is for several things; हे (he) with one thing takes आहे (āhe)." } }

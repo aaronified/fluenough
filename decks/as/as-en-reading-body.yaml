@@ -1,0 +1,40 @@
+schema: 1
+id: "as-en-reading-body"
+name: "Assamese reading: body"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-stretching-chart"
+    title: "Morning stretches"
+    theme: "body"
+    sentences:
+      - text: "ৰাতিপুৱা মই উঠোঁ।"
+        reading: "rātipuwā moi uthum̐."
+      - text: "হাত ওপৰত কৰক।"
+        reading: "hāt upôrôt kôrôk."
+      - text: "কোমৰ ঘূৰক।"
+        reading: "kumôr ghurôk."
+      - text: "লাহে লাহে ঘূৰক।"
+        reading: "lāhe lāhe ghurôk."
+    questions:
+      - id: "as-7156"
+        prompt: { en: "The stretches start in the morning." }
+        answer: true
+      - id: "as-7157"
+        prompt: { en: "What do you turn?" }
+        options:
+          - { en: "Your waist" }
+          - { en: "Your book" }
+          - { en: "The door" }
+        answer: 1
+      - id: "as-7158"
+        prompt: { en: "How do you turn?" }
+        options:
+          - { en: "Slowly" }
+          - { en: "Quickly" }
+          - { en: "In the rain" }
+        answer: 1
