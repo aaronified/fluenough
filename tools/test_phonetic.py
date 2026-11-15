@@ -16,6 +16,8 @@ from unittest import mock
 
 import sys
 
+import yaml
+
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import derive_phonetic as dp  # noqa: E402
@@ -60,6 +62,76 @@ cards:
     target: "tin"
     ipa: "tin"
     pos: "noun"
+'''
+
+QUOTED = '''"schema": !!int "1"
+"id": "zz-quoted"
+"part": "core"
+"kind": "vocab"
+"cards":
+- "id": "zz-0001"
+  "target": "kat"
+  "words":
+  - "kat"
+  "ipa": "kat"
+  "pos": "noun"
+  "examples":
+  - "target": "a kat"
+    "ipa": "a kat"
+- "id": "zz-0002"
+  "target": "dog"
+  "ipa": "dɔɡ"
+  "phonetic": "[dɔɡ̊]"
+  "phonetic_source": "rules"
+  "pos": "noun"
+- "id": "zz-0003"
+  "target": "bat"
+  "pos": "noun"
+  "examples":
+  - "target": "a bat"
+    "ipa": "a bat"
+'''
+
+JSONISH = '''{
+  "schema": 1,
+  "id": "zz-json",
+  "part": "core",
+  "kind": "vocab",
+  "cards": [
+    {
+      "id": "zz-0001",
+      "target": "kat",
+      "notes": [
+        {
+          "id": "n1",
+          "kind": "usage"
+        }
+      ],
+      "ipa": "kat",
+      "pos": "noun",
+      "examples": [
+        {
+          "target": "a kat",
+          "ipa": "a kat"
+        }
+      ]
+    },
+    {
+      "id": "zz-0002",
+      "target": "bat",
+      "pos": "noun",
+      "ipa": "bat"
+    },
+    {
+      "id": "zz-0003",
+      "target": "tin",
+      "ipa": "tin",
+      "phonetic": "[tʰin]",
+      "phonetic_source": "wiktionary",
+      "pos": "noun"
+    }
+  ]
+}
 '''
 
 
@@ -116,6 +188,81 @@ class Patching(Tree):
                       '    pos: "noun"\n  - id: "zz-0004"', new)
         self.assertTrue(new.endswith('    ipa: "tin"\n    phonetic: "[tin]"\n'
                                      '    phonetic_source: "rules"\n    pos: "noun"\n'))
+
+    def test_quoted_key_yaml_at_column_0_gets_quoted_keys_and_nothing_else_changes(self) -> None:
+        new, left = pp.patch(QUOTED, {"zz-0001": ("[kʰat]", "rules")})
+        self.assertEqual(left, {})
+        old_lines, new_lines = QUOTED.split("\n"), new.split("\n")
+        at = old_lines.index('  "ipa": "kat"')
+        self.assertEqual(new_lines[at + 1:at + 3],
+                         ['  "phonetic": "[kʰat]"', '  "phonetic_source": "rules"'])
+        self.assertEqual(new_lines[:at + 1] + new_lines[at + 3:], old_lines)
+        self.assertEqual(yaml.safe_load(new)["cards"][0]["phonetic"], "[kʰat]")
+
+    def test_quoted_key_yaml_skips_has_phonetic_missing_ipa_and_example_ipa(self) -> None:
+        # zz-0003 has an ipa only inside an example: it has no card-level line.
+        new, left = pp.patch(QUOTED, {"zz-0002": ("[dɔɡ]", "rules"),
+                                      "zz-0003": ("[bat]", "rules")})
+        self.assertEqual(new, QUOTED)
+        self.assertEqual(left, {"zz-0002": "has phonetic", "zz-0003": "no ipa line"})
+
+    def test_quoted_key_yaml_replaces_a_rules_phonetic_in_place(self) -> None:
+        new, left = pp.patch(QUOTED, {"zz-0002": ("[dɔɡ]", "rules")}, replace_rules=True)
+        self.assertEqual(left, {})
+        self.assertEqual(new, QUOTED.replace('"phonetic": "[dɔɡ̊]"', '"phonetic": "[dɔɡ]"'))
+
+    def test_quoted_key_yaml_with_the_list_indented_is_patched_too(self) -> None:
+        indented = "\n".join(("  " + ln if ln.startswith("- ") or ln.startswith("  ") else ln)
+                             for ln in QUOTED.split("\n"))
+        new, left = pp.patch(indented, {"zz-0001": ("[kʰat]", "rules")})
+        self.assertEqual(left, {})
+        self.assertIn('    "ipa": "kat"\n    "phonetic": "[kʰat]"\n'
+                      '    "phonetic_source": "rules"\n    "pos": "noun"', new)
+        self.assertEqual(len(new.split("\n")), len(indented.split("\n")) + 2)
+
+    def test_quoted_key_yaml_keeps_crlf(self) -> None:
+        crlf = QUOTED.replace("\n", "\r\n")
+        new, _ = pp.patch(crlf, {"zz-0001": ("[kʰat]", "rules")})
+        self.assertIn('  "ipa": "kat"\r\n  "phonetic": "[kʰat]"\r\n'
+                      '  "phonetic_source": "rules"\r\n  "pos"', new)
+        self.assertEqual(new.count("\n"), crlf.count("\n") + 2)
+        self.assertEqual(new.count("\r\n"), new.count("\n"))
+
+    def test_json_style_gets_two_comma_terminated_lines_after_the_card_ipa(self) -> None:
+        new, left = pp.patch(JSONISH, {"zz-0001": ("[kʰat]", "rules")})
+        self.assertEqual(left, {})
+        old_lines, new_lines = JSONISH.split("\n"), new.split("\n")
+        at = old_lines.index('      "ipa": "kat",')
+        self.assertEqual(new_lines[at + 1:at + 3],
+                         ['      "phonetic": "[kʰat]",', '      "phonetic_source": "rules",'])
+        self.assertEqual(new_lines[:at + 1] + new_lines[at + 3:], old_lines)
+        card = json.loads(new)["cards"][0]
+        self.assertEqual((card["phonetic"], card["phonetic_source"]), ("[kʰat]", "rules"))
+        self.assertNotIn("phonetic", card["examples"][0])
+
+    def test_json_style_ipa_as_last_key_is_reported_not_patched(self) -> None:
+        new, left = pp.patch(JSONISH, {"zz-0002": ("[bat]", "rules")})
+        self.assertEqual(new, JSONISH)
+        self.assertEqual(left, {"zz-0002": "unsupported layout"})
+
+    def test_json_style_skips_has_phonetic_and_ignores_note_ids(self) -> None:
+        new, left = pp.patch(JSONISH, {"zz-0003": ("[tin]", "rules"), "n1": ("[x]", "rules")})
+        self.assertEqual(new, JSONISH)
+        self.assertEqual(left, {"zz-0003": "has phonetic", "n1": "not in file"})
+
+    def test_a_card_in_every_layout_is_seen_by_core_cards(self) -> None:
+        for name, text in (("zz-quoted", QUOTED), ("zz-json", JSONISH)):
+            with self.subTest(name):
+                tmp = Path(tempfile.mkdtemp())
+                self.addCleanup(lambda t=tmp: __import__("shutil").rmtree(t, True))
+                (tmp / "zz").mkdir()
+                (tmp / "zz" / f"{name}.yaml").write_text(text, encoding="utf-8")
+                cards = pp.core_cards(tmp, "zz")
+                self.assertEqual([c.cid for c in cards], ["zz-0001", "zz-0002", "zz-0003"])
+                # A JSON-style card whose ipa is its last key cannot be patched.
+                self.assertEqual({c.cid: c.block for c in cards},
+                                 {"zz-0001": True, "zz-0002": name != "zz-json",
+                                  "zz-0003": True})
 
     def test_a_form_that_is_not_narrow_ipa_in_brackets_is_refused(self) -> None:
         for bad in ("kat", "[]", "[kat!]", "/kat/", "[ka:t]", "[ ]"):
