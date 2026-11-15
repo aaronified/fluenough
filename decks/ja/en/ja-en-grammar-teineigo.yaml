@@ -1,0 +1,23 @@
+schema: 1
+id: "ja-en-grammar-teineigo"
+kind: "layer"
+core: "ja-grammar-teineigo"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Polite and very polite: でした (deshita), でございます (de gozaimasu), ございます (gozaimasu) and でしょう (deshou)"
+description: "The polite level, 丁寧語 (teineigo), and its very polite end. です (desu) and あります (arimasu) become でございます (de gozaimasu) and ございます (gozaimasu) when staff speak to a guest, でした (deshita) and ありました (arimashita) say it was, and でしょう (deshou) says probably. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  name: "Polite and very polite"
+  slot_name: "form"
+  slots:
+    "past": "polite past (it was)"
+    "very-polite": "very polite (what staff say to a guest)"
+    "very-polite-past": "very polite past (it was)"
+    "guess": "polite guess (probably)"
+  entries:
+    "desu": "is (polite)"
+    "arimasu": "there is; to be (polite)"
+    "dewa-arimasen": "is not (polite)"
+    "arimasen": "there is not (polite)"
+  notes: "Polite speech, 丁寧語 (teineigo), is the です (desu) and ます (masu) style. Its very polite end is the ございます (gozaimasu) family: です (desu) becomes でございます (de gozaimasu), あります (arimasu) becomes ございます (gozaimasu), and ありません (arimasen) becomes ございません (gozaimasen). Only the base word changes: ございます (gozaimasu) keeps the stem ございま (gozaima), and its ます (masu) turns into ません (masen), ました (mashita) or ませんでした (masen deshita) just as a verb's does. The past of です (desu) is でした (deshita), and the very polite past is でございました (de gozaimashita). でしょう (deshou) follows a noun, as あめでしょう (ame deshou), or plain ある (aru) and ない (nai), and means probably. Staff use the very polite forms to a guest, and you may hear them from anyone on the telephone, but with friends the plain or polite style is the right one."

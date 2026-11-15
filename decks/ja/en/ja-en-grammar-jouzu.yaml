@@ -1,0 +1,27 @@
+schema: 1
+id: "ja-en-grammar-jouzu"
+kind: "layer"
+core: "ja-grammar-jouzu"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Skill: が (ga) with じょうず (jouzu), へた (heta), とくい (tokui) and にがて (nigate)"
+description: "The thing you are good or bad at takes が (ga), and じょうず (jouzu), へた (heta), とくい (tokui) or にがて (nigate) comes after it with です (desu): うたがじょうずです (uta ga jouzu desu), good at singing. Every cell is a whole sentence about one thing. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  name: "Skill: が (ga) with じょうず (jouzu), へた (heta), とくい (tokui) and にがて (nigate)"
+  slot_name: "skill"
+  slots:
+    "jouzu": "is good at it (skilful)"
+    "heta": "is poor at it (unskilful)"
+    "tokui": "is good at it (a strong point)"
+    "nigate": "is not good at it (a weak point)"
+  entries:
+    "uta": "song"
+    "ryouri": "cooking"
+    "eigo": "English"
+    "odori": "dance"
+    "suiei": "swimming"
+    "yakyuu": "baseball"
+    "kakekko": "running race"
+    "shodou": "calligraphy"
+  notes: "A skill takes が (ga) the same way a liking does: うたがじょうずです (uta ga jouzu desu), good at singing. じょうず (jouzu) and へた (heta) judge how well something is done, so about yourself じょうず (jouzu) sounds proud and へた (heta) sounds blunt. とくい (tokui) and にがて (nigate) say what suits a person: とくい (tokui) is a strong point and にがて (nigate) a weak one, so they are the gentler words for yourself: えいごがにがてです (eigo ga nigate desu), English is not my strong point. Put the person first with は (wa) when you say who it is: あにはすいえいがとくいです (ani wa suiei ga tokui desu). The noun and the describing word do not change before です (desu)."

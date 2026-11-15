@@ -1,0 +1,94 @@
+schema: 1
+id: "ja-grammar-conjunctions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "ja-9120"
+    target: "まいにちがっこうにいきます。そして、ともだちにあいます。"
+    words: ["まいにち", "がっこう", "に", "いきます", "そして", "ともだち", "に", "あいます"]
+    reading: "mainichi gakkou ni ikimasu. soshite, tomodachi ni aimasu."
+    ipa: "mainitɕi ɡakkoː ni ikimasɯ soɕite tomodatɕi ni aimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "まいにち", ref: "ja-0515" }
+      - { word: "がっこう", ref: "ja-0313" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "いきます", base: "いく", reading: "iku" }
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "あいます", base: "あう", reading: "au" }
+    confusables:
+      - { id: "w1", ref: "ja-9102", kind: "word" }
+      - { id: "w2", ref: "ja-9108", kind: "word" }
+  - id: "ja-9121"
+    target: "ごはんをたべます。それから、ねます。"
+    words: ["ごはん", "を", "たべます", "それから", "ねます"]
+    reading: "gohan o tabemasu. sorekara, nemasu."
+    ipa: "ɡohaɴ o tabemasɯ soɾekaɾa nemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ごはん", ref: "ja-0074" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "たべます", base: "たべる", reading: "taberu" }
+      - { word: "ねます", base: "ねる", reading: "neru" }
+    confusables:
+      - { id: "w1", ref: "ja-9104", kind: "word" }
+      - { id: "w2", ref: "ja-9103", kind: "word" }
+  - id: "ja-9122"
+    target: "あしたはやすみです。それで、いえにいます。"
+    words: ["あした", "は", "やすみ", "です", "それで", "いえ", "に", "います"]
+    reading: "ashita wa yasumi desu. sorede, ie ni imasu."
+    ipa: "aɕita wa jasɯmi desɯ soɾede ie ni imasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "あした", ref: "ja-0513" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "やすみ", ref: "ja-0321" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "いえ", ref: "ja-1153" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "います", base: "いる", reading: "iru" }
+    confusables:
+      - { id: "w1", ref: "ja-9105", kind: "word" }
+      - { id: "w2", ref: "ja-9102", kind: "word" }
+  - id: "ja-9123"
+    target: "あたらしいいえです。でも、ちいさいです。"
+    words: ["あたらしい", "いえ", "です", "でも", "ちいさい", "です"]
+    reading: "atarashii ie desu. demo, chiisai desu."
+    ipa: "ataɾaɕiː ie desɯ demo tɕiːsai desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "いえ", ref: "ja-1153" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "ちいさい", ref: "ja-0078" }
+    confusables:
+      - { id: "w1", ref: "ja-9107", kind: "word" }
+      - { id: "w2", ref: "ja-9103", kind: "word" }
+  - id: "ja-9124"
+    target: "いきますか。それとも、ねますか。"
+    words: ["いきます", "か", "それとも", "ねます", "か"]
+    reading: "ikimasu ka. soretomo, nemasu ka."
+    ipa: "ikimasɯ ka soɾetomo nemasɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "いきます", base: "いく", reading: "iku" }
+      - { word: "か", base: "か", reading: "ka" }
+      - { word: "ねます", base: "ねる", reading: "neru" }
+    confusables:
+      - { id: "w1", ref: "ja-9104", kind: "word" }
+      - { id: "w2", ref: "ja-9109", kind: "word" }
+  - id: "ja-9125"
+    target: "それなら、ともだちとたべましょう。"
+    words: ["それなら", "ともだち", "と", "たべましょう"]
+    reading: "sorenara, tomodachi to tabemashou."
+    ipa: "soɾenaɾa tomodatɕi to tabemaɕoː"
+    pos: "phrase"
+    bases:
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "と", base: "と", reading: "to" }
+      - { word: "たべましょう", base: "たべる", reading: "taberu" }
+    confusables:
+      - { id: "w1", ref: "ja-9108", kind: "word" }
+      - { id: "w2", ref: "ja-9107", kind: "word" }

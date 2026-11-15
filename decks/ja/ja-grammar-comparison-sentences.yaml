@@ -1,0 +1,215 @@
+schema: 1
+id: "ja-grammar-comparison-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-9280"
+    target: "とうきょうはおおさかよりおおきいです。"
+    words: ["とうきょう", "は", "おおさか", "より", "おおきい", "です"]
+    reading: "toukyou wa oosaka yori ookii desu."
+    ipa: "toːkjoː wa oːsaka joɾi oːkiː desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "とうきょう", ref: "ja-0328" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "おおさか", ref: "ja-1030" }
+      - { word: "より", base: "より", reading: "yori" }
+      - { word: "おおきい", ref: "ja-0077" }
+      - { word: "です", base: "です", reading: "desu" }
+    notes:
+      - { id: "n1", kind: "usage" }
+    confusables:
+      - { id: "w1", ref: "ja-0078", kind: "word" }
+      - { id: "w2", ref: "ja-1733", kind: "word" }
+  - id: "ja-9281"
+    target: "このくるまはあのくるまよりたかいです。"
+    words: ["この", "くるま", "は", "あの", "くるま", "より", "たかい", "です"]
+    reading: "kono kuruma wa ano kuruma yori takai desu."
+    ipa: "kono kɯɾɯma wa ano kɯɾɯma joɾi takai desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "この", ref: "ja-0665" }
+      - { word: "くるま", ref: "ja-1017" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "あの", ref: "ja-0667" }
+      - { word: "より", base: "より", reading: "yori" }
+      - { word: "たかい", ref: "ja-0439" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", ref: "ja-0438", kind: "word" }
+      - { id: "w2", ref: "ja-0661", kind: "word" }
+  - id: "ja-9282"
+    target: "でんしゃはバスよりはやいです。"
+    words: ["でんしゃ", "は", "バス", "より", "はやい", "です"]
+    reading: "densha wa basu yori hayai desu."
+    ipa: "deɴɕa wa basɯ joɾi hajai desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "でんしゃ", ref: "ja-0075" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "バス", ref: "ja-0856" }
+      - { word: "より", base: "より", reading: "yori" }
+      - { word: "はやい", ref: "ja-0517" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", ref: "ja-0486", kind: "word" }
+      - { id: "w2", ref: "ja-1017", kind: "word" }
+  - id: "ja-9283"
+    target: "ふゆはなつよりさむいです。"
+    words: ["ふゆ", "は", "なつ", "より", "さむい", "です"]
+    reading: "fuyu wa natsu yori samui desu."
+    ipa: "ɸɯjɯ wa natsɯ joɾi samɯi desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ふゆ", ref: "ja-1451" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "なつ", ref: "ja-1449" }
+      - { word: "より", base: "より", reading: "yori" }
+      - { word: "さむい", ref: "ja-0467" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", ref: "ja-0466", kind: "word" }
+      - { id: "w2", ref: "ja-0469", kind: "word" }
+  - id: "ja-9284"
+    target: "とうきょうとおおさかとどちらがおおきいですか。"
+    words: ["とうきょう", "と", "おおさか", "と", "どちら", "が", "おおきい", "です", "か"]
+    reading: "toukyou to oosaka to dochira ga ookii desu ka."
+    ipa: "toːkjoː to oːsaka to dotɕiɾa ɡa oːkiː desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "とうきょう", ref: "ja-0328" }
+      - { word: "と", base: "と", reading: "to" }
+      - { word: "おおさか", ref: "ja-1030" }
+      - { word: "どちら", ref: "ja-0121" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "おおきい", ref: "ja-0077" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    notes:
+      - { id: "n1", kind: "usage" }
+    confusables:
+      - { id: "w1", ref: "ja-0116", kind: "word" }
+      - { id: "w2", ref: "ja-0078", kind: "word" }
+  - id: "ja-9285"
+    target: "くるまとでんしゃとどちらがはやいですか。"
+    words: ["くるま", "と", "でんしゃ", "と", "どちら", "が", "はやい", "です", "か"]
+    reading: "kuruma to densha to dochira ga hayai desu ka."
+    ipa: "kɯɾɯma to deɴɕa to dotɕiɾa ɡa hajai desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "くるま", ref: "ja-1017" }
+      - { word: "と", base: "と", reading: "to" }
+      - { word: "でんしゃ", ref: "ja-0075" }
+      - { word: "どちら", ref: "ja-0121" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "はやい", ref: "ja-0517" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - { id: "w1", ref: "ja-0116", kind: "word" }
+      - { id: "w2", ref: "ja-0486", kind: "word" }
+  - id: "ja-9286"
+    target: "このみせがいちばんやすいです。"
+    words: ["この", "みせ", "が", "いちばん", "やすい", "です"]
+    reading: "kono mise ga ichiban yasui desu."
+    ipa: "kono mise ɡa itɕibaɴ jasɯi desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "この", ref: "ja-0665" }
+      - { word: "みせ", ref: "ja-0915" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "いちばん", ref: "ja-0400" }
+      - { word: "やすい", ref: "ja-0438" }
+      - { word: "です", base: "です", reading: "desu" }
+    notes:
+      - { id: "n1", kind: "usage" }
+    confusables:
+      - { id: "w1", ref: "ja-0439", kind: "word" }
+      - { id: "w2", ref: "ja-0399", kind: "word" }
+  - id: "ja-9287"
+    target: "サッカーがいちばんおもしろいです。"
+    words: ["サッカー", "が", "いちばん", "おもしろい", "です"]
+    reading: "sakkaa ga ichiban omoshiroi desu."
+    ipa: "sakkaː ɡa itɕibaɴ omoɕiɾoi desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "サッカー", ref: "ja-0872" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "いちばん", ref: "ja-0400" }
+      - { word: "おもしろい", ref: "ja-0472" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", ref: "ja-0473", kind: "word" }
+      - { id: "w2", ref: "ja-0399", kind: "word" }
+  - id: "ja-9288"
+    target: "ふゆがいちばんすきです。"
+    words: ["ふゆ", "が", "いちばん", "すき", "です"]
+    reading: "fuyu ga ichiban suki desu."
+    ipa: "ɸɯjɯ ɡa itɕibaɴ sɯki desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ふゆ", ref: "ja-1451" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "いちばん", ref: "ja-0400" }
+      - { word: "すき", ref: "ja-0318" }
+      - { word: "です", base: "です", reading: "desu" }
+    notes:
+      - { id: "n1", kind: "usage" }
+    confusables:
+      - { id: "w1", ref: "ja-1449", kind: "word" }
+      - { id: "w2", ref: "ja-0319", kind: "word" }
+  - id: "ja-9289"
+    target: "どれがいちばんたかいですか。"
+    words: ["どれ", "が", "いちばん", "たかい", "です", "か"]
+    reading: "dore ga ichiban takai desu ka."
+    ipa: "doɾe ɡa itɕibaɴ takai desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "どれ", ref: "ja-0116" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "いちばん", ref: "ja-0400" }
+      - { word: "たかい", ref: "ja-0439" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    notes:
+      - { id: "n1", kind: "usage" }
+    confusables:
+      - { id: "w1", ref: "ja-0121", kind: "word" }
+      - { id: "w2", ref: "ja-0438", kind: "word" }
+  - id: "ja-9290"
+    target: "にほんでどこがいちばんきれいですか。"
+    words: ["にほん", "で", "どこ", "が", "いちばん", "きれい", "です", "か"]
+    reading: "nihon de doko ga ichiban kirei desu ka."
+    ipa: "nihoɴ de doko ɡa itɕibaɴ kiɾeː desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "にほん", ref: "ja-0072" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "どこ", ref: "ja-0110" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "いちばん", ref: "ja-0400" }
+      - { word: "きれい", ref: "ja-0479" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - { id: "w1", ref: "ja-0107", kind: "word" }
+      - { id: "w2", ref: "ja-0480", kind: "word" }
+  - id: "ja-9291"
+    target: "だれがいちばんじょうずですか。"
+    words: ["だれ", "が", "いちばん", "じょうず", "です", "か"]
+    reading: "dare ga ichiban jouzu desu ka."
+    ipa: "daɾe ɡa itɕibaɴ dʑoːdzɯ desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "だれ", ref: "ja-0107" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "いちばん", ref: "ja-0400" }
+      - { word: "じょうず", ref: "ja-0320" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - { id: "w1", ref: "ja-0110", kind: "word" }
+      - { id: "w2", ref: "ja-1894", kind: "word" }

@@ -1,0 +1,180 @@
+schema: 1
+id: "ja-en-grammar-conjunctions"
+kind: "layer"
+core: "ja-grammar-conjunctions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Joining words: and then, but, so, or"
+description: "And then, after that, but, so, or, by the way: the words that join one sentence to the next, with examples. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  "ja-9100":
+    native: "and then; and so"
+    notes:
+      "n1": "Joins one thing to the next, in order: first this, and then that. It shows no contrast; for a contrast use でも (demo), but."
+    examples:
+      "まいにちがっこうにいきます。そして、ともだちにあいます。":
+        native: "Every day I go to school. And then I meet a friend."
+        bases:
+          "に": "(marks a place, a time or the person reached)"
+          "いきます": "go (polite)"
+          "あいます": "meet (polite)"
+      "あしたはやすみです。そして、いえにいます。":
+        native: "Tomorrow is a day off. And so I am at home."
+        bases:
+          "は": "(marks the topic)"
+          "です": "is (polite)"
+          "に": "(marks a place, a time or the person reached)"
+          "います": "am, is, are (of living things); have (polite)"
+  "ja-9101":
+    native: "after that; and then"
+    notes:
+      "n1": "Puts a later step after an earlier one, as in a list of what you did. It is about order in time, not a choice."
+    examples:
+      "ごはんをたべます。それから、ねます。":
+        native: "I eat a meal. After that, I sleep."
+        bases:
+          "を": "(marks the thing acted on)"
+          "たべます": "eat (polite)"
+          "ねます": "sleep (polite)"
+      "がっこうにいきました。それから、ともだちとあいました。":
+        native: "I went to school. After that, I met a friend."
+        bases:
+          "に": "(marks a place, a time or the person reached)"
+          "いきました": "went (polite)"
+          "と": "(with, or 'and' between two nouns)"
+          "あいました": "met (polite)"
+  "ja-9102":
+    native: "but; still"
+    notes:
+      "n1": "Shows a contrast: what comes after is not what the words before would lead you to expect. Spoken more than written."
+    examples:
+      "きのうはあめでした。でも、たのしかったです。":
+        native: "It rained yesterday. But it was fun."
+        bases:
+          "は": "(marks the topic)"
+          "でした": "was (polite)"
+          "たのしかった": "was fun"
+          "です": "is (polite)"
+      "あめです。でも、いきます。":
+        native: "It is raining. But I am going anyway."
+        bases:
+          "です": "is (polite)"
+          "いきます": "go (polite)"
+  "ja-9103":
+    native: "so; for that reason"
+    notes:
+      "n1": "Gives the result of what came before: because of that, so. It is a result, not a choice; for in that case, use それなら (sorenara)."
+    examples:
+      "きのうはやすみでした。それで、いえにいました。":
+        native: "Yesterday was a day off. So I was at home."
+        bases:
+          "は": "(marks the topic)"
+          "でした": "was (polite)"
+          "に": "(marks a place, a time or the person reached)"
+          "いました": "was, were (of living things); had (polite)"
+      "ともだちがいます。それで、たのしいです。":
+        native: "I have a friend. So it is fun."
+        bases:
+          "が": "(marks the subject)"
+          "います": "am, is, are (of living things); have (polite)"
+          "です": "is (polite)"
+  "ja-9104":
+    native: "or"
+    notes:
+      "n1": "Joins two choices in a statement: this or that. In a question, use それとも (soretomo) instead."
+    examples:
+      "あしたまたはきのうにいきます。":
+        native: "I will go tomorrow or yesterday."
+        bases:
+          "に": "(marks a place, a time or the person reached)"
+          "いきます": "go (polite)"
+      "がっこうまたはいえにいます。":
+        native: "I am at school or at home."
+        bases:
+          "に": "(marks a place, a time or the person reached)"
+          "います": "am, is, are (of living things); have (polite)"
+  "ja-9105":
+    native: "or (in a question)"
+    notes:
+      "n1": "Offers a second choice in a question: is it this, or that? Only used in questions."
+    examples:
+      "おちゃですか。それとも、みずですか。":
+        native: "Is it tea? Or is it water?"
+        bases:
+          "です": "is (polite)"
+          "か": "(makes a question)"
+      "いきますか。それとも、いえにいますか。":
+        native: "Are you going? Or are you at home?"
+        bases:
+          "いきます": "go (polite)"
+          "か": "(makes a question)"
+          "に": "(marks a place, a time or the person reached)"
+          "います": "am, is, are (of living things); have (polite)"
+  "ja-9106":
+    native: "by the way"
+    notes:
+      "n1": "Turns to a new topic. It is said at the start of a new idea, not in the middle of an explanation."
+    examples:
+      "ところで、にほんごはたのしいですか。":
+        native: "By the way, is Japanese fun?"
+        bases:
+          "は": "(marks the topic)"
+          "です": "is (polite)"
+          "か": "(makes a question)"
+      "ところで、あしたはやすみですか。":
+        native: "By the way, is tomorrow a day off?"
+        bases:
+          "は": "(marks the topic)"
+          "です": "is (polite)"
+          "か": "(makes a question)"
+  "ja-9107":
+    native: "besides; what is more"
+    notes:
+      "n1": "Adds one more point in the same direction, to pile up reasons. It does not contrast with what came before."
+    examples:
+      "いえはあたらしいです。それに、ちいさいです。":
+        native: "The house is new. Besides, it is small."
+        bases:
+          "は": "(marks the topic)"
+          "です": "is (polite)"
+      "にほんごはおもしろいです。それに、たのしいです。":
+        native: "Japanese is interesting. Besides, it is fun."
+        bases:
+          "は": "(marks the topic)"
+          "です": "is (polite)"
+  "ja-9108":
+    native: "well then; so"
+    notes:
+      "n1": "The casual form of では (de wa), then. Said in speech to suggest what to do next, often at the start of a sentence."
+    examples:
+      "じゃあ、いきましょう。":
+        native: "Well then, let's go."
+        bases:
+          "いきましょう": "let's go (polite)"
+      "じゃあ、ごはんをたべましょう。":
+        native: "Well then, let's eat a meal."
+        bases:
+          "を": "(marks the thing acted on)"
+          "たべましょう": "let's eat (polite)"
+  "ja-9109":
+    native: "in that case; if so"
+    notes:
+      "n1": "Draws a conclusion from what was just said: if that is so, then this. Like じゃあ (jaa), it suggests what to do next."
+    examples:
+      "あめですか。それなら、いえにいます。":
+        native: "Is it raining? In that case, I am at home."
+        bases:
+          "です": "is (polite)"
+          "か": "(makes a question)"
+          "に": "(marks a place, a time or the person reached)"
+          "います": "am, is, are (of living things); have (polite)"
+      "たのしいですか。それなら、いきましょう。":
+        native: "Is it fun? In that case, let's go."
+        bases:
+          "です": "is (polite)"
+          "か": "(makes a question)"
+          "いきましょう": "let's go (polite)"
+  "ja-9110":
+    native: "Joining words: and then, but, so, or"
+    explanation: "Words that join one sentence to the next. そして (soshite) and それから (sorekara) and ところで (tokorode) move on; でも (demo) turns, and それとも (soretomo) gives a choice in a question; それで (sorede) and それなら (sorenara) draw a conclusion. Not yet checked by a Japanese speaker: please report any mistake."
