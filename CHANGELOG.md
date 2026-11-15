@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.10.3] - 2026-11-15
+
 ### Added
 
 - **A language can have up to 14 situation sheets, not six.** New icons: hotel, post, bank, greetings, emergency, school, work and travel. Apps older than 0.10.3 keep the sheets they already have.
