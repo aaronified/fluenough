@@ -43,3 +43,54 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | hi-4259 | hi-proverbs-2 | The note on this card is the builder's own paraphrase, not read on the cited page: please check the wording. | Haiku builder | 2026-11-15 |
 | | creators-hi | Era labels: the bhakti and mughal eras overlap (1350 to 1700 and 1526 to 1857), and Ghalib, who died in 1869, falls after the mughal era ends in 1857 (it is 1857 there, not his death). Which era should each creator carry? | Haiku builder | 2026-11-15 |
 | | situations sheets | The traffic sheet has no real traffic-stop phrases; the emergencies sheet includes headache and fever, which are health, not emergencies; and hi-0242 बस is a word, not a phrase. Please review the sheets. | Haiku builder | 2026-11-15 |
+| hi-1621, hi-1622, hi-1623, hi-1624, hi-1625, hi-1626, hi-1627, hi-1628, hi-1629, hi-1630 | hi-school-sentences | What is the Urdu spelling of these words? Wiktionary had no page, no ur=, or several values. | Haiku builder | 2026-11-15 |
+| hi-1480, hi-1482, hi-1484, hi-1485, hi-1486, hi-1487, hi-1488, hi-1489 | hi-illness-sentences | What is the Urdu spelling of these words? Wiktionary had no page, no ur=, or several values. | Haiku builder | 2026-11-15 |
+| hi-1687, hi-1689, hi-1690, hi-1691, hi-1692, hi-1693, hi-1694, hi-1695, hi-1696 | hi-hobbies-sentences | What is the Urdu spelling of these words? Wiktionary had no page, no ur=, or several values. | Haiku builder | 2026-11-15 |
+| hi-1546, hi-1547, hi-1548, hi-1549, hi-1550, hi-1551, hi-1552, hi-1553, hi-1554, hi-1555 | hi-cooking-sentences | What is the Urdu spelling of these words? Wiktionary had no page, no ur=, or several values. | Haiku builder | 2026-11-15 |
+| hi-1563, hi-1564, hi-1566, hi-1568, hi-1570 | hi-grammar-comparison-sentences | What is the Urdu spelling of these words? Wiktionary had no page, no ur=, or several values. | Haiku builder | 2026-11-15 |
+| hi-1881, hi-1882, hi-1883 | hi-phone-sentences | What is the Urdu spelling of these words? Wiktionary had no page, no ur=, or several values. | Haiku builder | 2026-11-15 |
+| hi-1741, hi-1742, hi-1743 | hi-chores-sentences | What is the Urdu spelling of these words? Wiktionary had no page, no ur=, or several values. | Haiku builder | 2026-11-15 |
+| hi-1786, hi-1787, hi-1788 | hi-appearance-sentences | What is the Urdu spelling of these words? Wiktionary had no page, no ur=, or several values. | Haiku builder | 2026-11-15 |
+| hi-1571, hi-1572, hi-1574, hi-1577, hi-1591, hi-1592, hi-1593, hi-1598, hi-1600, hi-1603, hi-1604, hi-1605, hi-1609, hi-1610, hi-1611, hi-1612, hi-1615, hi-1616, hi-1617, hi-1618 | hi-school | What is the Urdu spelling of these words? Wiktionary had no page, no ur=, or several values. | Haiku builder | 2026-11-15 |
+| hi-1431, hi-1434, hi-1440, hi-1447, hi-1452, hi-1461, hi-1464, hi-1469, hi-1470 | hi-illness | What is the Urdu spelling of these words? Wiktionary had no page, no ur=, or several values. | Haiku builder | 2026-11-15 |
+| hi-1637, hi-1648, hi-1649, hi-1650, hi-1657, hi-1658, hi-1662, hi-1664, hi-1670, hi-1672, hi-1673, hi-1674, hi-1675, hi-1682, hi-1684, hi-1685 | hi-hobbies | What is the Urdu spelling of these words? Wiktionary had no page, no ur=, or several values. | Haiku builder | 2026-11-15 |
+| hi-1505, hi-1512, hi-1522, hi-1523, hi-1525, hi-1531, hi-1544, hi-1545 | hi-cooking | What is the Urdu spelling of these words? Wiktionary had no page, no ur=, or several values. | Haiku builder | 2026-11-15 |
+| hi-0980, hi-0987, hi-0989, hi-0992, hi-0995, hi-0999, hi-1001, hi-1002, hi-1003, hi-1011, hi-1012, hi-1018, hi-1022 | hi-food | What is the Urdu spelling of these words? Wiktionary had no page, no ur=, or several values. | Haiku builder | 2026-11-15 |
+| hi-1031, hi-1038, hi-1046, hi-1048, hi-1052 | hi-body | What is the Urdu spelling of these words? Wiktionary had no page, no ur=, or several values. | Haiku builder | 2026-11-15 |
+| hi-1071, hi-1073, hi-1075, hi-1076, hi-1080 | hi-places | What is the Urdu spelling of these words? Wiktionary had no page, no ur=, or several values. | Haiku builder | 2026-11-15 |
+| hi-1138, hi-1140, hi-1145, hi-1147, hi-1148 | hi-animals | What is the Urdu spelling of these words? Wiktionary had no page, no ur=, or several values. | Haiku builder | 2026-11-15 |
+| hi-1091, hi-1092, hi-1099, hi-1100, hi-1101 | hi-things | What is the Urdu spelling of these words? Wiktionary had no page, no ur=, or several values. | Haiku builder | 2026-11-15 |
+| hi-1107, hi-1108, hi-1109, hi-1111, hi-1114, hi-1117, hi-1118, hi-1119, hi-1120, hi-1123 | hi-clothes | What is the Urdu spelling of these words? Wiktionary had no page, no ur=, or several values. | Haiku builder | 2026-11-15 |
+| unit-level | hi-culture-1 | Which verified works should fill the remaining slots? Candidates are in wiki/Plan-Culture-Hindustani.md; none could be read in full on a page. | Haiku builder | 2026-11-15 |
+| unit-level | hi-culture-2 | Which verified works should fill the remaining slots? Candidates are in wiki/Plan-Culture-Hindustani.md; none could be read in full on a page. | Haiku builder | 2026-11-15 |
+| unit-level | hi-culture-3 | Which verified works should fill the remaining slots? Candidates are in wiki/Plan-Culture-Hindustani.md; none could be read in full on a page. | Haiku builder | 2026-11-15 |
+| unit-level | hi-multiword-compound-verbs | Which further expressions should the deck teach, and what source confirms their meaning? | Haiku builder | 2026-11-15 |
+| unit-level | hi-multiword-conjunct-verbs | Which further expressions should the deck teach, and what source confirms their meaning? | Haiku builder | 2026-11-15 |
+| unit-level | hi-multiword-muhavare | Which further expressions should the deck teach, and what source confirms their meaning? | Haiku builder | 2026-11-15 |
+| unit-level | hi-multiword-ko-experiencer | Which further expressions should the deck teach, and what source confirms their meaning? | Haiku builder | 2026-11-15 |
+| unit-level | hi-proverbs-1 | Which further expressions should the deck teach, and what source confirms their meaning? | Haiku builder | 2026-11-15 |
+| unit-level | hi-proverbs-2 | Which further expressions should the deck teach, and what source confirms their meaning? | Haiku builder | 2026-11-15 |
+| course-wide | decks/recommendations/hi.yaml (Sholay, Panchayat, Tamas, Hum Log, Ranjish Hi Sahi, a podcast) | Which works and sources should fill these? | Haiku builder | 2026-11-15 |
+| unit-level | hi-situations | The greetings sheet has no apology phrase, and no apology card exists. Should one be added, and which phrase should it teach? | Haiku builder | 2026-11-15 |
+| unit-level | hi-animals-sentences | Please check the Hindi and translations of these sentences. | Haiku builder | 2026-11-15 |
+| unit-level | hi-agriculture-sentences | Please check the Hindi and translations of these sentences. | Haiku builder | 2026-11-15 |
+| unit-level | hi-arts-sentences | Please check the Hindi and translations of these sentences. | Haiku builder | 2026-11-15 |
+| unit-level | hi-careers-sentences | Please check the Hindi and translations of these sentences. | Haiku builder | 2026-11-15 |
+| unit-level | hi-cinema-sentences | Please check the Hindi and translations of these sentences. | Haiku builder | 2026-11-15 |
+| unit-level | hi-clothes-sentences | Please check the Hindi and translations of these sentences. | Haiku builder | 2026-11-15 |
+| unit-level | hi-eating-out-sentences | Please check the Hindi and translations of these sentences. | Haiku builder | 2026-11-15 |
+| unit-level | hi-environment-sentences | Please check the Hindi and translations of these sentences. | Haiku builder | 2026-11-15 |
+| unit-level | hi-festivals-sentences | Please check the Hindi and translations of these sentences. | Haiku builder | 2026-11-15 |
+| unit-level | hi-geography-sentences | Please check the Hindi and translations of these sentences. | Haiku builder | 2026-11-15 |
+| unit-level | hi-groceries-sentences | Please check the Hindi and translations of these sentences. | Haiku builder | 2026-11-15 |
+| unit-level | hi-housing-sentences | Please check the Hindi and translations of these sentences. | Haiku builder | 2026-11-15 |
+| unit-level | hi-journey-sentences | Please check the Hindi and translations of these sentences. | Haiku builder | 2026-11-15 |
+| unit-level | hi-literature-sentences | Please check the Hindi and translations of these sentences. | Haiku builder | 2026-11-15 |
+| unit-level | hi-market-sentences | Please check the Hindi and translations of these sentences. | Haiku builder | 2026-11-15 |
+| unit-level | hi-nature-sentences | Please check the Hindi and translations of these sentences. | Haiku builder | 2026-11-15 |
+| unit-level | hi-numbers-1-20-sentences | Please check the Hindi and translations of these sentences. | Haiku builder | 2026-11-15 |
+| unit-level | hi-services-sentences | Please check the Hindi and translations of these sentences. | Haiku builder | 2026-11-15 |
+| unit-level | hi-things-sentences | Please check the Hindi and translations of these sentences. | Haiku builder | 2026-11-15 |
+| unit-level | hi-transport-sentences | Please check the Hindi and translations of these sentences. | Haiku builder | 2026-11-15 |
+| unit-level | hi-workplace-sentences | Please check the Hindi and translations of these sentences. | Haiku builder | 2026-11-15 |
+| course-wide | `decks/hi/en/*` | Which Hindustani speaker can confirm the notes in decks/hi/en/*? Two are formulaic (conjunct-verbs, calendar months). | Haiku builder | 2026-11-15 |

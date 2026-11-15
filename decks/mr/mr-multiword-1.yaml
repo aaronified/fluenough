@@ -1,0 +1,143 @@
+# Marathi conjunct verbs: a noun and a light verb (karṇe, do, or hoṇe, become) that make one verb phrase.
+schema: 1
+id: "mr-multiword-1"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course: three phrases from en.wiktionary, the rest from the course's conjunct-verb deck"
+genre: "multiword"
+pattern_family: "conjunct-verb"
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - id: "mr-4350"
+    target: "मदत करणे"
+    words: ["मदत", "करणे"]
+    reading: "madat karṇe"
+    ipa: "məd̪ət̪ kərɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "मदत", ref: "mr-1159" }
+      - { word: "करणे", ref: "mr-0712" }
+  - id: "mr-4351"
+    target: "विचार करणे"
+    words: ["विचार", "करणे"]
+    reading: "vicār karṇe"
+    ipa: "ʋitsar kərɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "विचार", ref: "mr-1365" }
+      - { word: "करणे", ref: "mr-0712" }
+  - id: "mr-4352"
+    target: "नमस्कार करणे"
+    words: ["नमस्कार", "करणे"]
+    reading: "namaskār karṇe"
+    ipa: "nəməskar kərɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "नमस्कार", ref: "mr-0144" }
+      - { word: "करणे", ref: "mr-0712" }
+  - id: "mr-4353"
+    target: "काम करणे"
+    words: ["काम", "करणे"]
+    reading: "kām karṇe"
+    ipa: "kam kərɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "काम", ref: "mr-0234" }
+      - { word: "करणे", ref: "mr-0712" }
+  - id: "mr-4354"
+    target: "फोन करणे"
+    words: ["फोन", "करणे"]
+    reading: "fon karṇe"
+    ipa: "fon kərɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "फोन", ref: "mr-0858" }
+      - { word: "करणे", ref: "mr-0712" }
+  - id: "mr-4355"
+    target: "सुरू करणे"
+    words: ["सुरू", "करणे"]
+    reading: "suru karṇe"
+    ipa: "suru kərɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "सुरू", base: "सुरू", reading: "suru" }
+      - { word: "करणे", ref: "mr-0712" }
+  - id: "mr-4356"
+    target: "सुरू होणे"
+    words: ["सुरू", "होणे"]
+    reading: "suru hoṇe"
+    ipa: "suru ɦoɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "सुरू", base: "सुरू", reading: "suru" }
+      - { word: "होणे", base: "होणे", reading: "hoṇe" }
+  - id: "mr-4357"
+    target: "बंद करणे"
+    words: ["बंद", "करणे"]
+    reading: "band karṇe"
+    ipa: "bənd̪ kərɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "बंद", base: "बंद", reading: "band" }
+      - { word: "करणे", ref: "mr-0712" }
+  - id: "mr-4358"
+    target: "लग्न करणे"
+    words: ["लग्न", "करणे"]
+    reading: "lagna karṇe"
+    ipa: "ləɡnə kərɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "लग्न", ref: "mr-0212" }
+      - { word: "करणे", ref: "mr-0712" }
+  - id: "mr-4359"
+    target: "तयार होणे"
+    words: ["तयार", "होणे"]
+    reading: "tayār hoṇe"
+    ipa: "t̪əjar ɦoɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "तयार", base: "तयार", reading: "tayār" }
+      - { word: "होणे", base: "होणे", reading: "hoṇe" }

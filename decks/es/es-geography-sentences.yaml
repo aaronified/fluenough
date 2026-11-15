@@ -18,6 +18,8 @@ cards:
     bases: [{ word: "La", base: "la" }, { word: "capital", ref: "es-1895" }, { word: "de", base: "de" }, { word: "España", ref: "es-1910" }, { word: "es", ref: "es-0022" }, { word: "Madrid", ref: "es-1919" }]
     confusables: [{ id: "pais", ref: "es-0018", kind: "word" }, { id: "ciudad", ref: "es-0016", kind: "word" }]
   - id: "es-1927"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     target: "Hay una frontera entre Francia y España."
     ipa: "aj ˈuna fɾonˈteɾa ˈentɾe ˈfɾanθja i esˈpaɲa"
     phonetic: "[aj ˈuna fɾon̪ˈt̪eɾa ˈen̪t̪ɾe ˈfɾan̪θja i esˈpaɲa]"
@@ -47,6 +49,8 @@ cards:
     bases: [{ word: "Vivo", ref: "es-0030" }, { word: "en", base: "en" }, { word: "una", base: "una" }, { word: "zona", ref: "es-1905" }, { word: "rural", ref: "es-1906" }, { word: "cerca", ref: "es-0717" }, { word: "de", base: "de" }, { word: "un", base: "un" }, { word: "pueblo", ref: "es-0783" }]
     confusables: [{ id: "urbano", ref: "es-1907", kind: "word" }, { id: "poblacion", ref: "es-1902", kind: "word" }]
   - id: "es-1930"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     target: "Lima es la capital de Perú."
     ipa: "ˈlima es la kapiˈtal de peˈɾu"
     phonetic: "[ˈlima ez la kapiˈt̪al d̪e peˈɾu]"
