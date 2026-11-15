@@ -1,7 +1,5 @@
 # Hindustani's situation sheets (#724): lists of card ids, never card text. Every id
 # is a card of a Hindustani deck, so progress, audio and notes are the card's own.
-# Draft: six sheets only. The hotel, post and bank, greetings and emergencies sheets
-# need icon keys the validator does not accept yet, so they are not written here.
 # Not yet checked by a Hindustani speaker: please report any mistake.
 schema: 1
 id: hi-situations
@@ -42,3 +40,23 @@ situations:
     title: { en: "Rail station", hi: "रेलवे स्टेशन" }
     phrases: ["hi-0267", "hi-0268", "hi-0269", "hi-0286", "hi-0231", "hi-0355", "hi-0362", "hi-0363"]
     words: ["hi-0270", "hi-0271", "hi-0272", "hi-1896", "hi-1897", "hi-1898", "hi-1909", "hi-1895", "hi-1905", "hi-1916", "hi-1917", "hi-1910"]
+  - id: "hotel"
+    icon: "hotel"
+    title: { en: "Hotel", hi: "होटल" }
+    phrases: ["hi-0336", "hi-0463", "hi-0516", "hi-0363", "hi-0286", "hi-0231", "hi-0138", "hi-0362"]
+    words: ["hi-0421", "hi-0423", "hi-0431", "hi-0432", "hi-1061", "hi-1093", "hi-0444", "hi-0446", "hi-0304", "hi-0901", "hi-2604", "hi-1894"]
+  - id: "post-bank"
+    icon: "post"
+    title: { en: "Post and bank", hi: "डाक और बैंक" }
+    phrases: ["hi-0336", "hi-0286", "hi-0231", "hi-0516", "hi-0465", "hi-0142", "hi-0143", "hi-0362"]
+    words: ["hi-2246", "hi-1073", "hi-2247", "hi-1057", "hi-2244", "hi-2245", "hi-2265", "hi-2267", "hi-2268", "hi-0234", "hi-0235", "hi-1362"]
+  - id: "greetings"
+    icon: "greeting"
+    title: { en: "Greetings and apologies", hi: "अभिवादन और माफ़ी" }
+    phrases: ["hi-0132", "hi-0133", "hi-0136", "hi-0137", "hi-0138", "hi-0139", "hi-0144", "hi-0188", "hi-0189"]
+    words: ["hi-2567", "hi-0616", "hi-1317", "hi-1321", "hi-0134", "hi-0135"]
+  - id: "emergencies"
+    icon: "emergency"
+    title: { en: "Emergencies", hi: "आपातकाल" }
+    phrases: ["hi-0353", "hi-0354", "hi-0355", "hi-0516", "hi-0465", "hi-0286", "hi-0362", "hi-1480"]
+    words: ["hi-2650", "hi-0356", "hi-0358", "hi-2653", "hi-2654", "hi-2655", "hi-2656", "hi-2657", "hi-2658", "hi-2659", "hi-2661", "hi-2664"]
