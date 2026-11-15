@@ -85,24 +85,27 @@ void main() {
         // live on decks-live) are matched by their key, and the entry of the
         // other source is not this test's business.
         final real = ItemBank.auditRuntime(data);
-        final stored = <AdmissionProfile>[
-          for (final p in kAdmissionProfiles[language] ?? const [])
-            if (p.deckKey == real.deckKey) p,
-        ];
-        if (stored.isEmpty) {
+        final entries =
+            kAdmissionProfiles[language] ?? const <AdmissionProfile>[];
+        if (entries.isEmpty) {
           // Two-step change of the key (#1270): until the entries printed by
-          // the "Placement audit" workflow are pasted in, a language without
-          // an entry for this checkout's decks has no verdict, which the app
-          // handles (it audits when it builds the bank). An entry that exists
-          // for these decks is still checked below.
+          // the "Placement audit" workflow are pasted in, a language with no
+          // entry has no verdict, which the app handles (it audits when it
+          // builds the bank). Once a language has entries, one must match.
           expect(AdmissionProfile.of(data), isNull);
           markTestSkipped(
-            'no stored verdict for the $language decks of this checkout '
-            '(key ${real.deckKey}): regenerate with the Placement audit '
-            'workflow and add the entry',
+            'no stored verdict for $language yet: run the Placement audit '
+            'workflow and add the entries (key ${real.deckKey})',
           );
         } else {
-          final profile = stored.single;
+          final profile = entries.firstWhere(
+            (p) => p.deckKey == real.deckKey,
+            orElse: () => fail(
+              'no stored verdict for the $language decks of this checkout '
+              '(key ${real.deckKey}): run the Placement audit workflow and '
+              'add the entry',
+            ),
+          );
           expect(
             profile.excluded,
             real.excluded,
@@ -195,8 +198,13 @@ void main() {
         ))!;
         final profile = AdmissionProfile.of(data);
         if (profile == null) {
-          // No stored verdict for this checkout's decks yet (#1270, step 1):
-          // no first formats are offered and the whole bank is still made.
+          // No stored verdict for the language yet (#1270, step 1): no first
+          // formats are offered and the whole bank is still made. A language
+          // with entries must have one for these decks (checked above).
+          expect(
+            kAdmissionProfiles[language] ?? const <AdmissionProfile>[],
+            isEmpty,
+          );
           expect(starters, isEmpty);
           expect(made, isNotEmpty);
           markTestSkipped('no stored verdict for the $language decks');

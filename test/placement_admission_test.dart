@@ -76,86 +76,131 @@ void main() {
     expect(AdmissionProfile.of(frozen, const {}), isNull);
   });
 
-  test('the shipped entries are keyed by distinct decks per language', () {
+  test('the shipped entries of one key (frozen and live decks the audit '
+      'reads alike) hold the same verdict', () {
     for (final e in kAdmissionProfiles.entries) {
-      final keys = e.value.map((p) => p.deckKey).toList();
-      expect(keys.toSet().length, keys.length, reason: e.key);
+      final byKey = <String, AdmissionProfile>{};
+      for (final p in e.value) {
+        final seen = byKey.putIfAbsent(p.deckKey, () => p);
+        expect(p.excluded, seen.excluded, reason: '${e.key} ${p.deckKey}');
+        expect(p.decoys, seen.decoys, reason: '${e.key} ${p.deckKey}');
+      }
     }
   });
 
+  test('two entries of one key are found, the first answering', () {
+    final data = _data('xx', 'casa');
+    final map = <String, List<AdmissionProfile>>{
+      'xx': <AdmissionProfile>[
+        AdmissionProfile(
+          deckKey: admissionKey(data),
+          excluded: const <String>['F5:clean'],
+          decoys: 2,
+        ),
+        AdmissionProfile(
+          source: kLiveDecks,
+          deckKey: admissionKey(data),
+          excluded: const <String>['F5:clean'],
+          decoys: 2,
+        ),
+      ],
+    };
+    expect(AdmissionProfile.of(data, map)?.source, kFrozenDecks);
+  });
+
   group('the key holds only what the audit reads', () {
-    PlacementLanguageData base({
-      List<PlacementDeck> extraDecks = const <PlacementDeck>[],
-      List<Card> extraCards = const <Card>[],
+    Card word({
+      String id = 'xx-1',
+      String target = 'casa',
       String native = 'house',
       String? reading,
+      String? pos = 'noun',
+      String? gender,
+      bool practiceOnly = false,
+      List<String> altTarget = const <String>[],
+      List<String>? words,
+      List<CardBase> bases = const <CardBase>[],
+    }) => Card(
+      id: id,
+      deckId: 'xx-001',
+      target: target,
+      native: native,
+      reading: reading,
+      pos: pos,
+      gender: gender,
+      practiceOnly: practiceOnly,
+      altTarget: altTarget,
+      words: words,
+      bases: bases,
+    );
+
+    PlacementLanguageData course(
+      List<List<Card>> decks, {
+      String language = 'xx',
     }) => PlacementLanguageData(
-      language: 'xx',
+      language: language,
       decks: <PlacementDeck>[
-        PlacementDeck(
-          id: 'xx-001',
-          cards: <Card>[
-            Card(
-              id: 'xx-1',
-              deckId: 'xx-001',
-              target: 'casa',
-              native: native,
-              reading: reading,
-              pos: 'noun',
-            ),
-            ...extraCards,
-          ],
-        ),
-        ...extraDecks,
+        for (final (i, cards) in decks.indexed)
+          PlacementDeck(id: 'xx-00$i', cards: cards),
       ],
     );
 
-    test(
-      'a card the audit skips, or a deck of such cards, changes nothing',
-      () {
-      final plain = admissionKey(base());
-      // A letter, a digit and a grammar cell are never read; a deck made only
-      // of them is not either (it is appended, so no read card moves).
-      final skipped = <Card>[
-        Card(
-          id: 'xx-l',
-          deckId: 'xx-001',
-          target: 'a',
-          native: 'a',
-          pos: 'letter',
-        ),
-        Card(
-          id: 'xx-d',
-          deckId: 'xx-001',
-          target: '1',
-          native: 'one',
-          pos: 'digit',
-        ),
-        Card(
-          id: 'xx-g',
-          deckId: 'xx-001',
-          target: 'casas',
-          native: 'houses',
-          modes: DrillMode.vocabulary,
-        ),
-      ];
-      expect(admissionKey(base(extraCards: skipped)), plain);
+    PlacementLanguageData one(Card card, [List<Card> more = const <Card>[]]) =>
+        course(<List<Card>>[
+          <Card>[card, ...more],
+        ]);
+
+    final skipped = <Card>[
+      Card(
+        id: 'xx-l',
+        deckId: 'xx-001',
+        target: 'a',
+        native: 'a',
+        pos: 'letter',
+      ),
+      Card(
+        id: 'xx-d',
+        deckId: 'xx-001',
+        target: '1',
+        native: 'one',
+        pos: 'digit',
+      ),
+      Card(
+        id: 'xx-g',
+        deckId: 'xx-001',
+        target: 'casas',
+        native: 'houses',
+        modes: DrillMode.vocabulary,
+      ),
+    ];
+
+    test('cards and decks the audit skips change nothing', () {
+      final plain = admissionKey(one(word()));
+      expect(admissionKey(one(word(), skipped)), plain);
       expect(
         admissionKey(
-          base(
-            extraDecks: <PlacementDeck>[
-              PlacementDeck(id: 'xx-002', cards: skipped),
-            ],
-          ),
+          course(<List<Card>>[
+            <Card>[word()],
+            skipped,
+          ]),
         ),
         plain,
       );
+      expect(
+        admissionKey(
+          course(<List<Card>>[
+            skipped,
+            <Card>[word()],
+          ]),
+        ),
+        plain,
+        reason: 'a deck before every read card only offsets the others',
+      );
       expect(plain, startsWith('1-'));
-      },
-    );
+    });
 
     test('fields the audit never reads change nothing', () {
-      final plain = admissionKey(base());
+      final plain = admissionKey(one(word()));
       final decorated = PlacementLanguageData(
         language: 'xx',
         decks: <PlacementDeck>[
@@ -182,66 +227,113 @@ void main() {
       expect(admissionKey(decorated), plain);
     });
 
-    test('a card, field or order the audit reads changes the key', () {
-      final plain = admissionKey(base());
-      final read = Card(
-        id: 'xx-2',
-        deckId: 'xx-001',
-        target: 'perro',
-        native: 'dog',
-      );
-      expect(admissionKey(base(extraCards: <Card>[read])), isNot(plain));
-      expect(admissionKey(base(native: 'home')), isNot(plain));
-      expect(admissionKey(base(reading: 'kasa')), isNot(plain));
-      // The same card in a later deck: its distance to its neighbours changed.
-      final moved = PlacementLanguageData(
-        language: 'xx',
-        decks: <PlacementDeck>[
-          const PlacementDeck(id: 'xx-000', cards: <Card>[]),
-          base().decks.first,
-        ],
-      );
-      expect(admissionKey(moved), isNot(plain));
-      // Another language is another audit.
-      expect(
-        admissionKey(
-          PlacementLanguageData(language: 'yy', decks: base().decks),
+    test('a change to any field the audit reads changes the key', () {
+      final plain = admissionKey(one(word()));
+      final changed = <String, Card>{
+        'id': word(id: 'xx-9'),
+        'target': word(target: 'casita'),
+        'native': word(native: 'home'),
+        'reading': word(reading: 'kasa'),
+        'empty reading': word(reading: ''),
+        'pos': word(pos: 'verb'),
+        'no pos': word(pos: null),
+        'gender': word(gender: 'f'),
+        'practiceOnly': word(practiceOnly: true),
+        'altTarget': word(altTarget: const <String>['casa grande']),
+        'words': word(words: const <String>['casa']),
+        'empty words': word(words: const <String>[]),
+        'base word': word(bases: const <CardBase>[CardBase(word: 'casa')]),
+        'base': word(
+          bases: const <CardBase>[CardBase(word: 'casa', base: 'cas')],
         ),
-        isNot(plain),
+      };
+      for (final e in changed.entries) {
+        expect(admissionKey(one(e.value)), isNot(plain), reason: e.key);
+      }
+      final other = word(id: 'xx-2', target: 'perro', native: 'dog');
+      expect(admissionKey(one(word(), <Card>[other])), isNot(plain));
+      expect(
+        admissionKey(one(word(), <Card>[other])),
+        isNot(admissionKey(one(other, <Card>[word()]))),
+        reason: 'order within a deck',
       );
+      expect(
+        admissionKey(one(word(), const <Card>[])),
+        isNot(admissionKey(one(word(), <Card>[other]))),
+      );
+      expect(
+        admissionKey(course(<List<Card>>[<Card>[word()]], language: 'yy')),
+        isNot(plain),
+        reason: 'another language is another audit',
+      );
+    });
+
+    test('a deck between read cards, or a swap of decks, changes it', () {
+      final a = word();
+      final b = word(id: 'xx-2', target: 'perro', native: 'dog');
+      final together = admissionKey(
+        course(<List<Card>>[
+          <Card>[a],
+          <Card>[b],
+        ]),
+      );
+      final apart = admissionKey(
+        course(<List<Card>>[
+          <Card>[a],
+          skipped,
+          <Card>[b],
+        ]),
+      );
+      final swapped = admissionKey(
+        course(<List<Card>>[
+          <Card>[b],
+          <Card>[a],
+        ]),
+      );
+      expect(apart, isNot(together));
+      expect(swapped, isNot(together));
+    });
+
+    test('the course turning non-Latin, or the near-span growing, changes the '
+        'key', () {
+      final latin = admissionKey(one(word()));
+      // More letters of other scripts than Latin ones among all the cards,
+      // the cards the audit skips included.
+      final nonLatin = Card(
+        id: 'xx-n',
+        deckId: 'xx-001',
+        target: 'कककककककक',
+        native: 'many',
+        pos: 'letter',
+      );
+      expect(admissionKey(one(word(), <Card>[nonLatin])), isNot(latin));
+      // 72 decks have the span 6, 84 decks the span 7.
+      PlacementLanguageData decks(int n) => course(<List<Card>>[
+        <Card>[word()],
+        for (var i = 1; i < n; i++) <Card>[],
+      ]);
+      expect(admissionKey(decks(72)), admissionKey(decks(73)));
+      expect(admissionKey(decks(72)), isNot(admissionKey(decks(84))));
     });
 
     test('a verdict stored for the key is found for decks that differ only '
         'in what the audit does not read', () {
-      final stored = base();
       final map = <String, List<AdmissionProfile>>{
         'xx': <AdmissionProfile>[
           AdmissionProfile(
             source: kLiveDecks,
-            deckKey: admissionKey(stored),
+            deckKey: admissionKey(one(word())),
             excluded: const <String>['F5:clean'],
             decoys: 2,
           ),
         ],
       };
-      final merged = base(
-        extraDecks: <PlacementDeck>[
-          PlacementDeck(
-            id: 'xx-culture',
-            cards: <Card>[
-              Card(
-                id: 'xx-c',
-                deckId: 'xx-culture',
-                target: 'x',
-                native: 'y',
-                modes: DrillMode.vocabulary,
-              ),
-            ],
-          ),
-        ],
-      );
+      final merged = course(<List<Card>>[
+        <Card>[word()],
+        skipped,
+      ]);
       expect(AdmissionProfile.of(merged, map)?.excluded, <String>['F5:clean']);
-      expect(AdmissionProfile.of(base(native: 'home'), map), isNull);
+      expect(AdmissionProfile.of(one(word(native: 'home')), map), isNull);
     });
   });
 }

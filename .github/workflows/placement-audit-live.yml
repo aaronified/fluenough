@@ -1,4 +1,4 @@
-name: Placement audit (live decks)
+name: Placement audit
 
 # Prints the admission verdict entries (#1270), to paste into
 # lib/core/placement/admission.dart: for the LIVE decks (decks-live, source:
@@ -83,12 +83,13 @@ jobs:
           if [ "$SOURCE" = live ]; then
             WHERE="decks-live $(git -C live rev-parse --short HEAD)"
           else
-            WHERE="main $(git rev-parse --short HEAD)"
+            WHERE="$GITHUB_REF_NAME $(git rev-parse --short HEAD)"
           fi
           {
             echo "### Admission entries, $SOURCE decks ($WHERE)"
             echo
             echo "Add each line to its language's list in lib/core/placement/admission.dart."
+            echo "If the frozen and the live run print the same deckKey and verdict for a language, paste one entry."
             echo
             echo '```dart'
             cat entries.txt

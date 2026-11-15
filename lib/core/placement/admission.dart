@@ -38,14 +38,17 @@ bool admissionReads(Card card) =>
 /// language, whether the course is written in a non-Latin script
 /// ([isNonLatinCourse], the one thing the audit takes from the cards it
 /// otherwise skips), the near-span of the decks, and, in path order and with
-/// the index of its deck, every card the audit reads ([admissionReads]) with
-/// the fields it reads (id, target, native, reading, pos, gender,
-/// practice-only mark, alternative targets, the word split and the bases'
-/// word and base), hashed with FNV-1a. A change to any of these changes the key;
-/// a card or deck the audit never reads (culture, situations, proverbs, notes,
-/// facts, topics, phonetic fields, rules and letters cards) does not. It does
-/// not include what a learner has already learned (`stableCardIds`), which a
-/// verdict does not depend on. Format: `<cards read>-<hex>`.
+/// the distance of its deck from the first deck holding a read card, every
+/// card the audit reads ([admissionReads]) with the fields it reads (id,
+/// target, native, reading, pos, gender, practice-only mark, alternative
+/// targets, the word split and the bases' word and base), hashed with
+/// FNV-1a. A change to any of these changes the key; a card or deck the
+/// audit never reads (culture, situations, proverbs, notes, facts, topics,
+/// phonetic fields, rules and letters cards) does not, and neither does a
+/// deck added before every read card or after the last one; a deck inserted
+/// between read cards does, as it moves their distances. It does not include
+/// what a learner has already learned (`stableCardIds`), which a verdict does
+/// not depend on. Format: `<cards read>-<hex>`.
 String admissionKey(PlacementLanguageData data) {
   var hash = 0x811c9dc5;
   void mix(String text) {
@@ -55,8 +58,12 @@ String admissionKey(PlacementLanguageData data) {
     hash = ((hash ^ 0x1f) * 0x01000193) & 0xffffffff;
   }
 
-  void mixAll(Iterable<String> texts) {
-    for (final t in texts) {
+  // A null and an empty text differ.
+  void mixOpt(String? text) => mix(text == null ? '~' : 'v$text');
+
+  void mixAll(Iterable<String>? texts) {
+    mix(texts == null ? '~' : '[');
+    for (final t in texts ?? const <String>[]) {
       mix(t);
     }
     mix('|');
@@ -67,23 +74,26 @@ String admissionKey(PlacementLanguageData data) {
   // `ItemGenerators.near`: the span of decks a word's neighbours lie within.
   mix('${math.max(6, data.deckCount ~/ 12)}');
   var read = 0;
+  int? first;
   for (final (index, deck) in data.decks.indexed) {
     for (final card in deck.cards) {
       if (!admissionReads(card)) continue;
       read++;
-      mix('$index');
+      first ??= index;
+      mix('${index - first}');
       mix(card.id);
       mix(card.target);
       mix(card.native);
-      mix(card.reading ?? '');
-      mix(card.pos ?? '');
-      mix(card.gender ?? '');
+      mixOpt(card.reading);
+      mixOpt(card.pos);
+      // The gender article vote reads it (`genderArticle`).
+      mixOpt(card.gender);
       mix(card.practiceOnly ? '1' : '0');
       mixAll(card.altTarget);
-      mixAll(card.words ?? const <String>[]);
+      mixAll(card.words);
       for (final base in card.bases) {
         mix(base.word);
-        mix(base.base ?? '');
+        mixOpt(base.base);
       }
       mix('|');
     }
@@ -123,7 +133,9 @@ class AdmissionProfile {
   bool admits(String auditClass) => !excluded.contains(auditClass);
 
   /// The verdict stored for [data]'s language, if one was made on these decks
-  /// (whichever source). [profiles] is for tests; the app uses
+  /// (whichever source). Two entries may share a key (the frozen and the live
+  /// decks the audit reads alike) only with the same verdict; the first is
+  /// returned. [profiles] is for tests; the app uses
   /// [kAdmissionProfiles].
   static AdmissionProfile? of(
     PlacementLanguageData data, [
