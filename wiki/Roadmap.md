@@ -369,6 +369,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1476](https://github.com/aaronified/fluenough/issues/1476) Marathi: add "mr" to tools/phonetic_languages.yaml (narrow IPA, MR-110)
 - [#1480](https://github.com/aaronified/fluenough/issues/1480) Chinese: Mandarin broad IPA tooling (shared tools change, branch tools/zh-phonetics)
 - [#1483](https://github.com/aaronified/fluenough/issues/1483) Tamil transcription engine in tools/transcribe.py (TA-110)
+- [#1491](https://github.com/aaronified/fluenough/issues/1491) validator: allow BCE years in source.date (blocks Chinese culture-2 and culture-3)
 
 ## Plans
 
@@ -381,6 +382,7 @@ A plan with no tracking issue is flagged.
 - [books, films and songs you bring, with questions on them](https://github.com/aaronified/fluenough/wiki/Plan-Books-Films-Songs) (Written 2026-10-06), tracks #215
 - [Assamese genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Assamese), **no tracking issue**
 - [Bengali genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Bengali), **no tracking issue**
+- [Mandarin Chinese genre decks, verified sourcing list (culture, proverbs and chengyu, multi-word families, recommendations, creators)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Chinese), **no tracking issue**
 - [French genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations, situations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-French), **no tracking issue**
 - [Gujarati genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Gujarati), **no tracking issue**
 - [Hindustani genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Hindustani), **no tracking issue**
@@ -388,6 +390,7 @@ A plan with no tracking issue is flagged.
 - [Kannada genre decks, verified sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Kannada), **no tracking issue**
 - [Marathi genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Marathi), **no tracking issue**
 - [Spanish genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Spanish), **no tracking issue**
+- [Tamil genre decks, verified sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Tamil), **no tracking issue**
 - [Telugu genre decks, sourcing list (culture, proverbs, multi-word verbs, recommendations)](https://github.com/aaronified/fluenough/wiki/Plan-Culture-Telugu), **no tracking issue**
 - [reviewing decks in the app, sent by mail](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Browser) (Written 2026-10-06), tracks #403
 - [deck kinds, levels, hidden decks, sources, creators, recommendations, topics and search kinds as data](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Kinds-And-Topics), **no tracking issue**
