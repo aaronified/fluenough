@@ -1,0 +1,276 @@
+# Bengali multi-word verbs: idiomatic verb phrases, a body or mind noun with a verb, whose meaning is not the sum of the parts.
+# Every phrase is attested on a cited bn.wiktionary page, named in the card's English note.
+schema: 1
+id: "bn-multiword-idiomatic"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+genre: "multiword"
+pattern_family: "idiomatic-verb-phrase"
+level: "B1"
+tags: ["unreviewed"]
+cards:
+  - id: "bn-6200"
+    target: "মন দেওয়া"
+    words: ["মন", "দেওয়া"]
+    reading: "môn deoyā"
+    ipa: "mɔn d̪eoja"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "মন", ref: "bn-2846" }
+      - { word: "দেওয়া", ref: "bn-0888" }
+  - id: "bn-6201"
+    target: "ধরা পড়া"
+    words: ["ধরা", "পড়া"]
+    reading: "dhôrā pôṛā"
+    ipa: "d̪ʱɔra pɔɽa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ধরা", ref: "bn-1107" }
+      - { word: "পড়া", ref: "bn-0119" }
+  - id: "bn-6202"
+    target: "মাথা ঘামানো"
+    words: ["মাথা", "ঘামানো"]
+    reading: "māthā ghāmāno"
+    ipa: "mat̪ʰa ɡʱamano"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "মাথা", ref: "bn-0728" }
+      - { word: "ঘামানো", base: "ঘামানো", reading: "ghāmāno" }
+  - id: "bn-6203"
+    target: "কান পাতা"
+    words: ["কান", "পাতা"]
+    reading: "kān pātā"
+    ipa: "kan pat̪a"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "কান", ref: "bn-1004" }
+      - { word: "পাতা", base: "পাতা", reading: "pātā" }
+  - id: "bn-6204"
+    target: "পা বাড়ানো"
+    words: ["পা", "বাড়ানো"]
+    reading: "pā bāṛāno"
+    ipa: "pa baɽano"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "পা", ref: "bn-0731" }
+      - { word: "বাড়ানো", base: "বাড়ানো", reading: "bāṛāno" }
+  - id: "bn-6205"
+    target: "হাত লাগানো"
+    words: ["হাত", "লাগানো"]
+    reading: "hāt lāgāno"
+    ipa: "ɦat̪ laɡano"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "হাত", ref: "bn-0730" }
+      - { word: "লাগানো", base: "লাগানো", reading: "lāgāno" }
+  - id: "bn-6206"
+    target: "মুখ খোলা"
+    words: ["মুখ", "খোলা"]
+    reading: "mukh kholā"
+    ipa: "mukʰ kʰola"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "মুখ", ref: "bn-1002" }
+      - { word: "খোলা", ref: "bn-0897" }
+  - id: "bn-6207"
+    target: "নাক গলানো"
+    words: ["নাক", "গলানো"]
+    reading: "nāk gôlāno"
+    ipa: "nak ɡɔlano"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "নাক", ref: "bn-1003" }
+      - { word: "গলানো", base: "গলানো", reading: "gôlāno" }
+  - id: "bn-6208"
+    target: "চোখ রাখা"
+    words: ["চোখ", "রাখা"]
+    reading: "cokh rākhā"
+    ipa: "tʃokʰ rakʰa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "চোখ", ref: "bn-0732" }
+      - { word: "রাখা", ref: "bn-0894" }
+  - id: "bn-6209"
+    target: "মাথা খাওয়া"
+    words: ["মাথা", "খাওয়া"]
+    reading: "māthā khāoyā"
+    ipa: "mat̪ʰa kʰaoja"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "মাথা", ref: "bn-0728" }
+      - { word: "খাওয়া", ref: "bn-0876" }
+  - id: "bn-6210"
+    target: "কান দেওয়া"
+    words: ["কান", "দেওয়া"]
+    reading: "kān deoyā"
+    ipa: "kan d̪eoja"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "কান", ref: "bn-1004" }
+      - { word: "দেওয়া", ref: "bn-0888" }
+  - id: "bn-6211"
+    target: "চোখ রাঙানো"
+    words: ["চোখ", "রাঙানো"]
+    reading: "cokh rāṅāno"
+    ipa: "tʃokʰ raŋano"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "চোখ", ref: "bn-0732" }
+      - { word: "রাঙানো", base: "রাঙানো", reading: "rāṅāno" }
+  - id: "bn-6212"
+    target: "মাথা নোয়ানো"
+    words: ["মাথা", "নোয়ানো"]
+    reading: "māthā noyāno"
+    ipa: "mat̪ʰa nojano"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "মাথা", ref: "bn-0728" }
+      - { word: "নোয়ানো", base: "নোয়ানো", reading: "noyāno" }
+  - id: "bn-6213"
+    target: "মুখ ভার করা"
+    words: ["মুখ", "ভার", "করা"]
+    reading: "mukh bhār kôrā"
+    ipa: "mukʰ bʱar kɔra"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "মুখ", ref: "bn-1002" }
+      - { word: "ভার", base: "ভার", reading: "bhār" }
+      - { word: "করা", ref: "bn-0102" }
+  - id: "bn-6214"
+    target: "হাত গুটানো"
+    words: ["হাত", "গুটানো"]
+    reading: "hāt guṭāno"
+    ipa: "ɦat̪ ɡuʈano"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "হাত", ref: "bn-0730" }
+      - { word: "গুটানো", base: "গুটানো", reading: "guṭāno" }
+  - id: "bn-6215"
+    target: "মন খারাপ করা"
+    words: ["মন", "খারাপ", "করা"]
+    reading: "môn khārāp kôrā"
+    ipa: "mɔn kʰarap kɔra"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "মন", ref: "bn-2846" }
+      - { word: "খারাপ", ref: "bn-0618" }
+      - { word: "করা", ref: "bn-0102" }
+  - id: "bn-6216"
+    target: "কান খাড়া করা"
+    words: ["কান", "খাড়া", "করা"]
+    reading: "kān khāṛā kôrā"
+    ipa: "kan kʰaɽa kɔra"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "কান", ref: "bn-1004" }
+      - { word: "খাড়া", base: "খাড়া", reading: "khāṛā" }
+      - { word: "করা", ref: "bn-0102" }
+  - id: "bn-6217"
+    target: "হাত পাতা"
+    words: ["হাত", "পাতা"]
+    reading: "hāt pātā"
+    ipa: "ɦat̪ pat̪a"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "হাত", ref: "bn-0730" }
+      - { word: "পাতা", base: "পাতা", reading: "pātā" }
+  - id: "bn-6218"
+    target: "বুক বাঁধা"
+    words: ["বুক", "বাঁধা"]
+    reading: "buk bām̐dhā"
+    ipa: "buk bãd̪ʱa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "বুক", ref: "bn-1014" }
+      - { word: "বাঁধা", base: "বাঁধা", reading: "bām̐dhā" }
+  - id: "bn-6219"
+    target: "পিঠ চাপড়ানো"
+    words: ["পিঠ", "চাপড়ানো"]
+    reading: "piṭh cāpṛāno"
+    ipa: "piʈʰ tʃapɽano"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "পিঠ", ref: "bn-1013" }
+      - { word: "চাপড়ানো", base: "চাপড়ানো", reading: "cāpṛāno" }
