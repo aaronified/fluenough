@@ -1,0 +1,126 @@
+# The people behind the Bengali culture decks (wiki/Plan-Deck-Kinds-And-Topics.md, D5).
+# Dates are the years of birth and death read on English Wikipedia, circa where the page gives a circa year or the poet is uncertain. The eras follow Bengali literary history: the periods come from the English Wikipedia article on Bengali literature (ancient 650-1200, medieval 1200-1800), the Bengal Renaissance article (from the Battle of Plassey in 1757, ending with Tagore) and Tagore's years (1861-1941).
+# No pictures: none has a licence checked yet.
+schema: 1
+kind: "creators"
+id: "creators-bn"
+language: "bn"
+license: "CC-BY-SA-4.0"
+eras:
+  - id: "charyapada-period"
+    name: { bn: "চর্যাপদের যুগ", en: "Charyapada period" }
+    reading: { bn: "côrjāpoder jug" }
+    from: 650
+    to: 1200
+  - id: "medieval"
+    name: { bn: "মধ্যযুগ", en: "Medieval period" }
+    reading: { bn: "moddhojug" }
+    from: 1200
+    to: 1800
+  - id: "bengal-renaissance"
+    name: { bn: "বাংলার নবজাগরণ", en: "Bengal Renaissance" }
+    reading: { bn: "bāṅlār nôbojāgoron" }
+    from: 1757
+    to: 1941
+  - id: "tagore-age"
+    name: { bn: "রবীন্দ্রযুগ", en: "Age of Tagore" }
+    reading: { bn: "robindrojug" }
+    from: 1861
+    to: 1941
+  - id: "twentieth-century"
+    name: { bn: "বিংশ শতাব্দী", en: "Twentieth century" }
+    reading: { bn: "biṅśo śôtābdi" }
+    from: 1900
+    to: 2000
+creators:
+  - id: "bn-chandidas"
+    name:
+      bn: { text: "চণ্ডীদাস", reading: "conḍidāś", ipa: "tʃonɖid̪aʃ" }
+      en: { text: "Chandidas" }
+    born: { year: 1339, circa: true }
+    died: { year: 1399, circa: true }
+    era: "medieval"
+    bio:
+      en: "Chandidas was a medieval Bengali poet. He is known for poems about the love of Radha and Krishna. Some scholars think the poems under his name were written by more than one poet, so his dates are not certain."
+    legacy:
+      text: { en: "Poems of the love of Radha and Krishna are credited to him, over 1250 of them." }
+      items:
+        - { kind: "other", text: { en: "Poems of the love of Radha and Krishna are credited to him, over 1250 of them." }, source: { url: "https://en.wikipedia.org/wiki/Chandidas", accessed: "2026-11-15" } }
+  - id: "bn-krittibas-ojha"
+    name:
+      bn: { text: "কৃত্তিবাস ওঝা", reading: "krittibāś ojhā", ipa: "krit̪t̪ibaʃ odʒʱa" }
+      en: { text: "Krittibas Ojha" }
+    born: { year: 1381, circa: true }
+    died: { year: 1461, circa: true }
+    era: "medieval"
+    bio:
+      en: "Krittibas Ojha was a medieval Bengali poet. He retold the Ramayana in Bengali, and his version is called the Krittivasi Ramayan after him. He lived in the 1300s and 1400s."
+    legacy:
+      text: { en: "His Bengali Ramayana is known as the Krittivasi Ramayan, and it was printed at the Serampore Mission Press." }
+      items:
+        - { kind: "other", text: { en: "His Bengali Ramayana is known as the Krittivasi Ramayan, and it was printed at the Serampore Mission Press." }, source: { url: "https://en.wikipedia.org/wiki/Krittibas_Ojha", accessed: "2026-11-15" } }
+  - id: "bn-ramprasad-sen"
+    name:
+      bn: { text: "রামপ্রসাদ সেন", reading: "rāmprosād śen", ipa: "ramprosad̪ ʃen" }
+      en: { text: "Ramprasad Sen" }
+    born: { year: 1718, circa: true }
+    died: { year: 1775, circa: true }
+    era: "medieval"
+    bio:
+      en: "Ramprasad Sen was a poet and saint of eighteenth-century Bengal. He wrote devotional songs to the goddess Kali, called Ramprasadi. The exact years of his birth and death are not certain."
+    legacy:
+      text: { en: "His devotional songs, called Ramprasadi, are still popular in Bengal." }
+      items:
+        - { kind: "music", text: { en: "His devotional songs, called Ramprasadi, are still popular in Bengal." }, source: { url: "https://en.wikipedia.org/wiki/Ramprasad_Sen", accessed: "2026-11-15" } }
+  - id: "bn-bharatchandra-ray"
+    name:
+      bn: { text: "ভারতচন্দ্র রায়", reading: "bhārotcondro rāy", ipa: "bʱarot̪tʃond̪ro raj" }
+      en: { text: "Bharatchandra Ray" }
+    born: 1712
+    died: 1760
+    era: "medieval"
+    bio:
+      en: "Bharatchandra Ray was a Bengali poet at the court of Maharaja Krishnachandra of Nadia. He is best known for the long poem Annadamangal, which he wrote in 1752 and 1753. He died in 1760."
+    legacy:
+      text: { en: "The Maharaja gave him the title Gunakar, and he became known as Ray Gunakar Bharatchandra." }
+      items:
+        - { kind: "other", text: { en: "The Maharaja gave him the title Gunakar, and he became known as Ray Gunakar Bharatchandra." }, source: { url: "https://en.wikipedia.org/wiki/Bharatchandra_Ray", accessed: "2026-11-15" } }
+  - id: "bn-lalon"
+    name:
+      bn: { text: "লালন", reading: "lālon", ipa: "lalon" }
+      en: { text: "Lalon" }
+    born: 1774
+    died: 1890
+    era: "bengal-renaissance"
+    bio:
+      en: "Lalon was a Bengali mystic, poet and singer of Baul songs. He was born in what is now Bangladesh. He is remembered for songs that reject the divisions of caste and religion."
+    legacy:
+      text: { en: "The English Wikipedia article says he inspired writers such as Tagore and Nazrul." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article says he inspired writers such as Tagore and Nazrul." }, source: { url: "https://en.wikipedia.org/wiki/Lalon", accessed: "2026-11-15" } }
+  - id: "bn-hason-raja"
+    name:
+      bn: { text: "হাসন রাজা", reading: "hāśon rājā", ipa: "ɦaʃon radʒa" }
+      en: { text: "Hason Raja" }
+    born: 1854
+    died: 1922
+    era: "tagore-age"
+    bio:
+      en: "Hason Raja was a mystic poet and songwriter from Sylhet. He wrote many songs, and his style made him a well-known figure of Bengali folk culture. He lived from 1854 to 1922."
+    legacy:
+      text: { en: "The English Wikipedia article calls him one of the most prominent figures in Bengali folk culture." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article calls him one of the most prominent figures in Bengali folk culture." }, source: { url: "https://en.wikipedia.org/wiki/Hason_Raja", accessed: "2026-11-15" } }
+  - id: "bn-nidhu-babu"
+    name:
+      bn: { text: "নিধুবাবু", reading: "nidhubābu", ipa: "nid̪ʱubabu" }
+      en: { text: "Nidhu Babu" }
+    born: 1741
+    died: 1839
+    era: "bengal-renaissance"
+    bio:
+      en: "Nidhu Babu, whose full name was Ramnidhi Gupta, was a Bengali musician and songwriter from Kolkata. He helped to shape Bengali tappa, a kind of love song. He lived to the age of about ninety-eight."
+    legacy:
+      text: { en: "He is counted as one of the reformers of Bengali tappa music." }
+      items:
+        - { kind: "music", text: { en: "He is counted as one of the reformers of Bengali tappa music." }, source: { url: "https://en.wikipedia.org/wiki/Nidhu_Babu", accessed: "2026-11-15" } }
