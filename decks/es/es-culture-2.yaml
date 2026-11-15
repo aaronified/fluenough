@@ -1,0 +1,76 @@
+# A culture deck of Spanish-language works from the nineteenth century that are in the public domain: a poem's opening lines,
+# each with its source, its rights basis and its creator (wiki/Plan-Deck-Kinds-And-Topics.md). Built from Spanish Wikipedia pages
+# only. Partial: only the items whose text and dates could be read on a cited page are here; the rest of the pass's candidates
+# (Sonatina, Tradiciones peruanas, Silva a la agricultura, El matadero) were dropped because their text could not be read.
+schema: 1
+id: "es-culture-2"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+genre: "culture"
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - id: "es-4050"
+    target: "Yo soy un hombre sincero, de donde crece la palma"
+    words: ["Yo", "soy", "un", "hombre", "sincero", "de", "donde", "crece", "la", "palma"]
+    ipa: "ʝo soj un ˈombɾe sinˈθeɾo de ˈdonde ˈkɾeθe la ˈpalma"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "es-jose-marti"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Yo", base: "yo" }
+      - { word: "soy", base: "ser" }
+      - { word: "un", base: "un" }
+      - { word: "hombre", base: "hombre" }
+      - { word: "sincero", base: "sincero" }
+      - { word: "de", base: "de" }
+      - { word: "donde", base: "donde" }
+      - { word: "crece", base: "crecer" }
+      - { word: "la", base: "la" }
+      - { word: "palma", base: "palma" }
+    source:
+      author: "José Martí"
+      work: "Versos sencillos, poem I, first two lines"
+      date: 1891
+      edition: "Versos sencillos, New York, 1891, dated so on the Spanish Wikipedia page; the two lines are as printed there (the page cuts the second line short, so only its first words are shown)"
+      url: "https://es.wikipedia.org/wiki/Versos_sencillos"
+      basis: "public-domain"
+      author_died: 1895
+      jurisdiction: "CU"
+      rights_checked: "2026-11-15"
+  - id: "es-4051"
+    target: "Aquí me pongo a cantar, al compás de la vihuela"
+    words: ["Aquí", "me", "pongo", "a", "cantar", "al", "compás", "de", "la", "vihuela"]
+    ipa: "aˈki me ˈponɡo a kanˈtaɾ al komˈpas de la ˈbjwela"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "listening"]
+    creator: "es-jose-hernandez"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Aquí", base: "aquí" }
+      - { word: "me", base: "me" }
+      - { word: "pongo", base: "poner" }
+      - { word: "a", base: "a" }
+      - { word: "cantar", base: "cantar" }
+      - { word: "al", base: "el" }
+      - { word: "compás", base: "compás" }
+      - { word: "de", base: "de" }
+      - { word: "la", base: "la" }
+      - { word: "vihuela", base: "vihuela" }
+    source:
+      author: "José Hernández"
+      work: "El gaucho Martín Fierro, first part, opening lines"
+      date: 1872
+      edition: "El gaucho Martín Fierro, first part, 1872, dated so on the Spanish Wikipedia page; the two lines are as printed there, except that the printed vigüela is shown in modern spelling as vihuela"
+      url: "https://es.wikipedia.org/wiki/Mart%C3%ADn_Fierro"
+      basis: "public-domain"
+      author_died: 1886
+      jurisdiction: "AR"
+      rights_checked: "2026-11-15"
