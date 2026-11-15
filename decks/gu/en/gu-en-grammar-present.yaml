@@ -1,0 +1,23 @@
+"schema": 1
+"id": "gu-en-grammar-present"
+"kind": "layer"
+"core": "gu-grammar-present"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "Present: I read, we speak"
+"license": "CC-BY-SA-4.0"
+"description": "Gujarati's simple present for habits and facts: the verb's stem, an ending for the person, then છું (chum̐), છે (che), છીએ (chie) or છો (cho). Not yet checked by a Gujarati speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "Present"
+  "slot_name": "person and gender"
+  "prompt": "{lemma} ({gloss}) — {slot}"
+  "entries":
+    "vanchvun": "to read"
+    "lakhvun": "to write"
+    "sambhalvun": "to listen; to hear"
+    "bolvun": "to speak"
+  "notes": "The stem takes an ending for the person, then the present of છું (chum) for I, છે (che) for he, she, it and one you, છીએ (chie) for we, and છો (cho) for you plural or polite. Examples: વાંચું છું (vāñcum̐ chum) I read; વાંચે છે (vāñce che) he reads; વાંચીએ છીએ (vāñcie chie) we read; વાંચો છો (vāñco cho) you read (polite). The form does not change with gender: a man and a woman say the same words. The same ending with રહ્યો for 'right now' is in gu-grammar-continuous, which is not repeated here."
