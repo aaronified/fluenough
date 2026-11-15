@@ -749,5 +749,62 @@ class PropagateTest(unittest.TestCase):
         self.assertEqual([d for d in report.differences if d.anusvara], [])
 
 
+class PropagateSafetyTest(unittest.TestCase):
+    tree = PropagateTest.tree
+    read = PropagateTest.read
+
+    def test_short_words_in_prose_and_comments_and_ipa_stay(self) -> None:
+        root = self.tree()
+        text = (
+            '"n1": "The 15th-century won\'t c. 1620 say iṁkā."\n'
+            '"n2": "iṁkā"  # iṁkā here, t and c too\n'
+            '"consonants": ["ŋ", "ɲ", "ɳ"]\n'
+            '"row": "iṁkā ŋa th"\n'
+            '"ipas": ["iṁkā"]\n')
+        path = root / "te-romanisation.yaml"
+        path.write_bytes(text.encode("utf-8"))
+        mapping = {"t": "t̪", "th": "t̪ʰ", "c": "tʃ", "won": "wän",
+                   "iṁkā": "iṅkā"}
+        transcribe_decks.propagate(root, mapping, {}, True)
+        self.assertEqual(
+            path.read_bytes().decode("utf-8"),
+            text.replace("say iṁkā", "say iṅkā").replace(
+                '"n2": "iṁkā"', '"n2": "iṅkā"'))
+
+    def test_all_with_propagate_is_refused(self) -> None:
+        root = self.tree()
+        before = {p: self.read(p) for p in root.rglob("*.yaml")}
+        self.assertEqual(transcribe_decks.main(
+            ["x", "--fix", "--all", "--propagate", str(root), "te"]), 2)
+        self.assertEqual({p: self.read(p) for p in root.rglob("*.yaml")},
+                         before)
+
+    def test_a_second_fix_propagate_changes_nothing(self) -> None:
+        root = self.tree()
+        transcribe_decks.main(["x", "--fix", "--propagate", str(root), "te"])
+        once = {p: self.read(p) for p in root.rglob("*.yaml")}
+        transcribe_decks.main(["x", "--fix", "--propagate", str(root), "te"])
+        self.assertEqual({p: self.read(p) for p in root.rglob("*.yaml")},
+                         once)
+
+    def test_short_old_words_are_never_in_the_map(self) -> None:
+        self.assertFalse(transcribe_decks._eligible("c", "tʃ"))
+        self.assertFalse(transcribe_decks._eligible("th", "t̪ʰ"))
+        self.assertFalse(transcribe_decks._eligible("amma", "amm"))
+        self.assertTrue(transcribe_decks._eligible("iṁkā", "iṅkā"))
+
+    def test_only_an_anusvara_nasal_is_rewritten(self) -> None:
+        # న్ద computes nd, but its nasal is a consonant: not changed.
+        self.assertIsNone(transcribe_decks._nasal_only(
+            "reading", "iṁkā aṇḍā", "iṅkā andā", "ఇంకా అన్దా"))
+        # A wrong ṇ for న next to a real anusvara is not rewritten.
+        self.assertIsNone(transcribe_decks._nasal_only(
+            "reading", "iṅkā paṁkā aṇnā", "iṅkā paṅkā annā",
+            "ఇంకా పంకా అన్నా"))
+        # The anusvara of ఇంకా is.
+        self.assertEqual(transcribe_decks._nasal_only(
+            "reading", "iṁka", "iṅkā", "ఇంకా"), "iṅka")
+
+
 if __name__ == "__main__":
     unittest.main()

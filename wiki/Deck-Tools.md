@@ -357,15 +357,27 @@ more than its nasals (the rest of the stored value is kept character for
 character; listed as "nasals only"), and a stored ṇḍ for a target with ంద
 (ఉందా) becomes the dental `nd`.
 
-`--propagate` (with `--check` to list, with `--fix` to write) carries the
-corrections to what `--fix` does not read: paradigm `readings: { ... }` maps,
-prose in the `en/` layer, and files with no `part` key. Old readings are taken
-word by word from the readings the run changes and replaced whole, inside
-quoted values only; keys, `ipa`/`phonetic`/`id`/`ref` values and Telugu-script
-runs are never touched. An old word that is also a correct reading of some
-card, that becomes two words, or that is an ASCII word of three letters or
-fewer in English prose is reported as ambiguous and left unchanged. Words that
-occur only in prose, and in no core reading, are not found. Run it on a
+`--propagate` (with `--check` to list, with `--fix` to write; refused with
+`--all`, exit 2: it is for plain `--fix`, which writes anusvara corrections
+only) carries the corrections to what `--fix` does not read: paradigm
+`readings: { ... }` maps, prose in the `en/` layer, and files with no `part`
+key. Old readings are taken word by word from the readings the run changes and
+replaced whole, inside quoted values only. Never touched: keys, `ipa`,
+`phonetic`, `id` and `ref` values, strings that hold IPA letters, anything
+after an unquoted `#`, and Telugu-script runs. A word of three letters or
+fewer is never rewritten (`c`, `th`, ... are English and IPA too), nor is a
+word whose new form is plain ASCII under four letters. An old word that is
+also a correct reading of some card, or that becomes two different words, is
+reported as ambiguous and left unchanged. Limits: `--check --propagate` counts
+include the core values `--fix` itself writes; the homograph test knows only
+the readings of core files with a `part` key (not those kept in paradigm maps
+or in files without one); words that occur only in prose, and in no core
+reading, are not found; and a paradigm map is not re-derived, so it can end
+half-fixed (`cempalu` next to `ceṁpalō`). Issue #1295 stays open for a pass
+over the paradigm maps. Nasals are rewritten only where the target has an
+anusvara (never for a nasal consonant), and a stored `ṇḍ` becomes the dental
+`nd` only where the target has ంద. Run it on a `decks-live` checkout, not on
+main's frozen `decks/`.
 
 ## `import_phonetic.py` and `derive_phonetic.py`
 

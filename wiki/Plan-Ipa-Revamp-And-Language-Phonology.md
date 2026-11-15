@@ -396,7 +396,10 @@ before s, v or l, it is `ṁ` (annaṁ, māṁsaṁ, annaṁlō); before every o
 letter (ś, ṣ, h, y, r, ḷ, ṟ) it is `m` (samyōgaṁ, samśayaṁ, samhāraṁ,
 samrakṣaṇa). Before a vowel it is `m` too (added 2026-11-15, #1295): in a
 letter-name word such as ఎస్‌ఎంఎస్ (es-em-es) the ం is the consonant m, so the
-reading is `esemes`, not `eseṁes`. A hint that types an m or n does not change it. A hint with no
+reading is `esemes`, not `eseṁes`. A hint that types an m or n does not change it. The deck pass leaves the
+paradigm `readings:` maps half-fixed (`tools/transcribe_decks.py` rewrites a
+cell only when it equals a corrected core reading), so #1295 stays open for a
+paradigm-map pass. A hint with no
 nasal at all still gives `m̐` (unchanged by this change).
 
 **`m` before ś, ṣ, h, y, r, ḷ, ṟ is a deliberate departure from ISO 15919**,

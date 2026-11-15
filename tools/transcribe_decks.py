@@ -57,12 +57,24 @@ inside quoted values of every `.yaml` in the directory and in `en/`. Never
 rewritten: keys, values under `ipa`, `ipas`, `phonetic`, `id`, `ref` and the
 like, and anything inside a Telugu-script run. An old word that is also a
 correct reading of some card, that becomes two different words, or that is an
-ASCII word of three letters or fewer in English prose is ambiguous: reported,
-and left unchanged. `--check --propagate` lists the ambiguous words and the
+ASCII word of three letters or fewer is ambiguous: reported, and left
+unchanged. Words of three letters or fewer are never rewritten (c, th, ... are
+English and IPA), nor strings holding IPA letters, nor anything after an
+unquoted `#`. `--propagate` is refused with `--all` (exit 2): it is for plain
+`--fix`, which writes anusvara corrections only. Its occurrence count includes
+the core values `--fix` itself writes. The homograph test knows only the
+readings of core files with a `part` key; a reading kept only in a paradigm map
+or a file with no `part` key is not weighed. The paradigm maps are not
+re-derived: a cell of a map is rewritten only when it equals an old word, so a
+map can end half-fixed (`cempalu` next to `ceṁpalō`); #1295 stays open for a
+pass over them. `--check --propagate` lists the ambiguous words and the
 occurrences per file; words found only in prose, not in a core reading, are
-not propagated. Exit codes: `--check` 0 when every entry matches, 1 when any value differs or
-any entry could not be checked; `--fix` 0, or 1 when it refused to change a
-value; 2 for a bad directory or arguments. Card ids are never touched.
+not propagated.
+
+Exit codes: `--check` 0 when every entry matches, 1 when any value differs,
+any entry could not be checked, or (with `--propagate`) any occurrence or
+ambiguous word is left; `--fix` 0, or 1 when it refused to change a value; 2
+for a bad directory or arguments. Card ids are never touched.
 
 Standard library only, like the other deck tools.
 """
@@ -123,40 +135,59 @@ class Report:
     readings: list[tuple] = field(default_factory=list)
 
 
-def _anusvara_count(text: str) -> int:
-    return sum("ANUSVARA" in unicodedata.name(c, "") for c in text)
+_NASAL_LETTERS = {"NA", "MA", "NNA", "NYA", "NGA"}
+
+
+def _nasal_sources(target: str) -> list[bool]:
+    """For each nasal of [target] in order, whether it is an anusvara (or
+    candrabindu) and not a nasal consonant."""
+    out = []
+    for c in target:
+        name = unicodedata.name(c, "")
+        if "ANUSVARA" in name or "CANDRABINDU" in name:
+            out.append(True)
+        elif name.split(" ")[-1:] and name.split(" ")[-1] in _NASAL_LETTERS \
+                and "LETTER" in name:
+            out.append(False)
+    return out
 
 
 def _nasal_only(field_name: str, stored: str, computed: str,
-                anusvaras: int) -> str | None:
+                target: str) -> str | None:
     """[stored] with only its nasals replaced by [computed]'s, in order, or
-    None when the two do not hold the same number of nasals, or when more
-    nasals change than the target has anusvaras. A stored retroflex pair
-    (ṇḍ) is one nasal: it stays when the right reading has ṇḍ, and becomes
-    nd when the right reading has the dental n and d (ంద)."""
+    None unless the target's nasals line up one to one with the right
+    reading's and every nasal that changes is an anusvara of the target. A
+    stored retroflex pair (ṇḍ) is one nasal: it stays when the right reading
+    has ṇḍ, and becomes nd when the right reading has the dental n and d and
+    the target has ంద."""
     ipa = field_name == "ipa"
     rx = _NASAL_IPA if ipa else _NASAL_ISO
     pair, nas, stop, dental = _RETROFLEX["IPA" if ipa else "ISO"]
+    sources = _nasal_sources(target)
     old = list(re.finditer(re.escape(pair) + "|" + rx.pattern, stored))
     new = list(rx.finditer(computed))
-    if len(old) != len(new):
+    if len(old) != len(new) or len(sources) != len(new):
         return None
     changed, out, last = 0, [], 0
-    for m, n in zip(old, new):
+    for m, n, is_anusvara in zip(old, new, sources):
         rest = computed[n.end():]
         if m.group() == pair:
             if n.group() == nas and rest.startswith(stop):
                 repl = pair
-            elif n.group() == "n" and rest.startswith(dental):
+            elif (n.group() == "n" and rest.startswith(dental)
+                  and is_anusvara and "\u0c02\u0c26" in target):
                 repl = "n" + dental
             else:
                 return None
         else:
             repl = n.group()
-        changed += repl != m.group()
+        if repl != m.group():
+            if not is_anusvara:
+                return None
+            changed += 1
         out += [stored[last:m.start()], repl]
         last = m.end()
-    if changed == 0 or changed > anusvaras:
+    if changed == 0:
         return None
     out.append(stored[last:])
     return "".join(out)
@@ -261,8 +292,7 @@ class _Scan:
             if stored == computed[key]:
                 continue
             unsafe = _unsafe(text, self.script)
-            cand = _nasal_only(key, stored, computed[key],
-                               _anusvara_count(text))
+            cand = _nasal_only(key, stored, computed[key], text)
             full = cand == computed[key]
             report.differences.append(Difference(
                 self.path, name, key, stored, computed[key], line, start,
@@ -443,12 +473,22 @@ def _is_latin(token: str) -> bool:
                for c in token)
 
 
+def _eligible(old: str, new: str) -> bool:
+    """Whether the word [old] may be rewritten anywhere: not three letters or
+    fewer (c, d, th, ...: English prose and IPA hold them), and neither word
+    plain ASCII of fewer than four letters."""
+    def plain(w: str) -> bool:
+        return w.isascii() and w.isalpha()
+    return (len(old) > 3 and not (plain(old) and len(old) < 4)
+            and not (plain(new) and len(new) < 4))
+
+
 def token_map(report: Report, include_other: bool):
     """(old -> new, ambiguous) from the readings a fix would change: every
     word of the stored reading that differs from the word at the same place
     in the new one. A word is ambiguous, and never replaced, when it is also
-    a correct reading of some card, or becomes two different words, or is a
-    short ASCII word that English prose may hold."""
+    a correct reading of some card, or becomes two different words, or is too
+    short to replace safely (see _eligible)."""
     chosen = {(d.file, d.line, d.start): d.computed
               for d in selected(report, include_other)
               if d.field == "reading"}
@@ -469,7 +509,9 @@ def token_map(report: Report, include_other: bool):
     mapping: dict[str, str] = {}
     ambiguous: dict[str, str] = {}
     for old, news in sorted(pairs.items()):
-        if old in correct:
+        if not all(_eligible(old, n) for n in news):
+            ambiguous[old] = "too short to replace safely"
+        elif old in correct:
             ambiguous[old] = "also a correct reading of another card"
         elif len(news) > 1:
             ambiguous[old] = "becomes " + " or ".join(sorted(news))
@@ -487,13 +529,30 @@ def layer_files(directory: Path) -> list[Path]:
     return out
 
 
+def _has_ipa(text: str) -> bool:
+    return any(0x250 <= ord(c) <= 0x2FF or c == "ŋ" for c in text)
+
+
+def _comment_start(line: str, spans: list[re.Match]) -> int:
+    """Where an unquoted `#` starts a comment, or the line's length."""
+    for i, c in enumerate(line):
+        if c == "#" and not any(m.start() < i < m.end() for m in spans):
+            return i
+    return len(line)
+
+
 def _rewrite_line(line: str, mapping: dict[str, str], ambiguous: dict,
-                  prose: bool, found: list[tuple[str, str]],
-                  skipped: set[str]) -> str:
+                  found: list[tuple[str, str]], skipped: set[str]) -> str:
+    spans = list(_STRING.finditer(line))
+    cutoff = _comment_start(line, spans)
     out, last = [], 0
-    for m in _STRING.finditer(line):
+    for m in spans:
+        if m.end() > cutoff:
+            break
         if line[m.end():].lstrip().startswith(":"):
             continue  # a key
+        if _has_ipa(m.group()):
+            continue  # IPA data, or prose holding IPA: left alone
         keys = list(_KEY_BEFORE.finditer(line[:m.start()]))
         if keys and keys[-1].group(1) in _NOT_READING:
             continue
@@ -504,11 +563,7 @@ def _rewrite_line(line: str, mapping: dict[str, str], ambiguous: dict,
                 skipped.add(tok)
                 return t.group()
             new = mapping.get(tok)
-            if new is None:
-                return t.group()
-            if prose and tok.isascii() and len(tok) <= 3:
-                ambiguous[tok] = "short ASCII word in English prose"
-                skipped.add(tok)
+            if new is None or not _eligible(tok, new):
                 return t.group()
             found.append((tok, new))
             return new
@@ -529,8 +584,7 @@ def propagate(directory: Path, mapping: dict[str, str], ambiguous: dict,
     for path in layer_files(directory):
         lines = path.read_bytes().decode("utf-8").split("\n")
         found: list[tuple[str, str]] = []
-        new_lines = [_rewrite_line(ln, mapping, ambiguous,
-                                   path.parent.name == "en", found, skipped)
+        new_lines = [_rewrite_line(ln, mapping, ambiguous, found, skipped)
                      for ln in lines]
         if found:
             per_file[path] = len(found)
@@ -593,6 +647,11 @@ def main(argv: list[str]) -> int:
     args = ap.parse_args(argv[1:])
     if not args.directory.is_dir():
         print(f"not a directory: {args.directory}", file=sys.stderr)
+        return 2
+    if args.propagate and args.all:
+        print("--propagate is for plain --fix only: with --all the map "
+              "holds short words that English prose and IPA data share",
+              file=sys.stderr)
         return 2
     report = run(args.directory, args.lang)
     _print(report)
