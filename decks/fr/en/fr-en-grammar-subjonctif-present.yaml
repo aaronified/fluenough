@@ -1,0 +1,26 @@
+schema: 1
+id: "fr-en-grammar-subjonctif-present"
+kind: "layer"
+core: "fr-grammar-subjonctif-present"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The present subjunctive: the forms"
+license: "CC-BY-SA-4.0"
+description: "The present subjunctive is learnt with que: que je parle, que nous parlions. Its stem comes from the ils form of the present. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Present subjunctive"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "je": "I", "tu": "you (informal)", "il-elle": "he or she", "nous": "we", "vous": "you (formal or plural)", "ils-elles": "they" }
+  entries:
+    "parler": "to speak"
+    "finir": "to finish"
+    "attendre": "to wait for"
+    "etre": "to be"
+    "avoir": "to have"
+    "aller": "to go"
+    "faire": "to do or make"
+    "pouvoir": "to be able to"
+    "vouloir": "to want"
+    "savoir": "to know"
+    "venir": "to come"
+  notes: "The present subjunctive is nearly always met after que, so it is learnt with it: que je parle, que tu finisses, qu'il soit. Que becomes qu' before il and ils, and je becomes j' before a vowel sound: que j'attende, que j'aie, qu'il parle. For most verbs, take the ils form of the present, drop -ent, and add -e, -es, -e, -ions, -iez, -ent: ils parlent gives que je parle, ils finissent gives que je finisse, ils attendent gives que j'attende. For parler, the je, tu, il and ils forms sound like the present, and nous and vous look like the imperfect (que nous parlions). Some common verbs have an irregular stem and must be learnt: être sois, soyons; avoir aie, ayons; aller aille but allions; faire fasse; pouvoir puisse; vouloir veuille but voulions; savoir sache. Venir changes its stem like the present: que je vienne but que nous venions. This unit teaches the forms; when to use the subjunctive is the next unit."

@@ -1,0 +1,61 @@
+schema: 1
+id: "fr-grammar-passe-compose-imparfait"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["event", "background"]
+  entries:
+    - lemma: "pleuvoir"
+      ipa: "pløvwaʁ"
+      forms:
+        "event": "hier, il a plu"
+        "background": "il pleuvait souvent"
+    - lemma: "arriver"
+      ipa: "aʁive"
+      forms:
+        "event": "hier, le bus est arrivé tard"
+        "background": "le bus arrivait toujours tard"
+    - lemma: "regarder"
+      ipa: "ʁəɡaʁde"
+      forms:
+        "event": "hier, elle a regardé par la fenêtre"
+        "background": "elle regardait souvent par la fenêtre"
+    - lemma: "travailler"
+      ipa: "tʁavaje"
+      forms:
+        "event": "hier, j'ai travaillé tôt"
+        "background": "je travaillais toujours tôt"
+    - lemma: "attendre"
+      ipa: "atɑ̃dʁ"
+      forms:
+        "event": "hier, nous avons attendu le train"
+        "background": "nous attendions souvent le train"
+    - lemma: "manger"
+      ipa: "mɑ̃ʒe"
+      forms:
+        "event": "hier, nous avons mangé au restaurant"
+        "background": "nous mangions souvent au restaurant"
+    - lemma: "être"
+      key: "etre"
+      ipa: "ɛtʁ"
+      forms:
+        "event": "hier, il a été malade"
+        "background": "il était souvent malade"
+    - lemma: "avoir"
+      ipa: "avwaʁ"
+      forms:
+        "event": "hier, j'ai eu froid"
+        "background": "j'avais souvent froid"
+    - lemma: "faire"
+      ipa: "fɛʁ"
+      forms:
+        "event": "hier, il a fait chaud"
+        "background": "il faisait toujours chaud"
+    - lemma: "jouer"
+      ipa: "ʒwe"
+      forms:
+        "event": "hier, mon frère a joué dehors"
+        "background": "mon frère jouait souvent dehors"

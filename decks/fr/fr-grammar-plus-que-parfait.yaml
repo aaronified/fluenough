@@ -1,0 +1,100 @@
+schema: 1
+id: "fr-grammar-plus-que-parfait"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["je", "tu", "il-elle", "nous", "vous", "ils-elles"]
+  entries:
+    - lemma: "manger"
+      ipa: "mɑ̃ʒe"
+      forms:
+        "je": "j'avais mangé"
+        "tu": "tu avais mangé"
+        "il-elle": "il avait mangé"
+        "nous": "nous avions mangé"
+        "vous": "vous aviez mangé"
+        "ils-elles": "ils avaient mangé"
+    - lemma: "finir"
+      ipa: "finiʁ"
+      forms:
+        "je": "j'avais fini"
+        "tu": "tu avais fini"
+        "il-elle": "il avait fini"
+        "nous": "nous avions fini"
+        "vous": "vous aviez fini"
+        "ils-elles": "ils avaient fini"
+    - lemma: "attendre"
+      ipa: "atɑ̃dʁ"
+      forms:
+        "je": "j'avais attendu"
+        "tu": "tu avais attendu"
+        "il-elle": "il avait attendu"
+        "nous": "nous avions attendu"
+        "vous": "vous aviez attendu"
+        "ils-elles": "ils avaient attendu"
+    - lemma: "faire"
+      ipa: "fɛʁ"
+      forms:
+        "je": "j'avais fait"
+        "tu": "tu avais fait"
+        "il-elle": "il avait fait"
+        "nous": "nous avions fait"
+        "vous": "vous aviez fait"
+        "ils-elles": "ils avaient fait"
+    - lemma: "voir"
+      ipa: "vwaʁ"
+      forms:
+        "je": "j'avais vu"
+        "tu": "tu avais vu"
+        "il-elle": "il avait vu"
+        "nous": "nous avions vu"
+        "vous": "vous aviez vu"
+        "ils-elles": "ils avaient vu"
+    - lemma: "prendre"
+      ipa: "pʁɑ̃dʁ"
+      forms:
+        "je": "j'avais pris"
+        "tu": "tu avais pris"
+        "il-elle": "il avait pris"
+        "nous": "nous avions pris"
+        "vous": "vous aviez pris"
+        "ils-elles": "ils avaient pris"
+    - lemma: "aller"
+      ipa: "ale"
+      forms:
+        "je": ["j'étais allé", "j'étais allée"]
+        "tu": ["tu étais allé", "tu étais allée"]
+        "il-elle": ["il était allé", "elle était allée"]
+        "nous": ["nous étions allés", "nous étions allées"]
+        "vous": ["vous étiez allé", "vous étiez allée", "vous étiez allés", "vous étiez allées"]
+        "ils-elles": ["ils étaient allés", "elles étaient allées"]
+    - lemma: "arriver"
+      ipa: "aʁive"
+      forms:
+        "je": ["j'étais arrivé", "j'étais arrivée"]
+        "tu": ["tu étais arrivé", "tu étais arrivée"]
+        "il-elle": ["il était arrivé", "elle était arrivée"]
+        "nous": ["nous étions arrivés", "nous étions arrivées"]
+        "vous": ["vous étiez arrivé", "vous étiez arrivée", "vous étiez arrivés", "vous étiez arrivées"]
+        "ils-elles": ["ils étaient arrivés", "elles étaient arrivées"]
+    - lemma: "partir"
+      ipa: "paʁtiʁ"
+      forms:
+        "je": ["j'étais parti", "j'étais partie"]
+        "tu": ["tu étais parti", "tu étais partie"]
+        "il-elle": ["il était parti", "elle était partie"]
+        "nous": ["nous étions partis", "nous étions parties"]
+        "vous": ["vous étiez parti", "vous étiez partie", "vous étiez partis", "vous étiez parties"]
+        "ils-elles": ["ils étaient partis", "elles étaient parties"]
+    - lemma: "venir"
+      ipa: "vəniʁ"
+      forms:
+        "je": ["j'étais venu", "j'étais venue"]
+        "tu": ["tu étais venu", "tu étais venue"]
+        "il-elle": ["il était venu", "elle était venue"]
+        "nous": ["nous étions venus", "nous étions venues"]
+        "vous": ["vous étiez venu", "vous étiez venue", "vous étiez venus", "vous étiez venues"]
+        "ils-elles": ["ils étaient venus", "elles étaient venues"]

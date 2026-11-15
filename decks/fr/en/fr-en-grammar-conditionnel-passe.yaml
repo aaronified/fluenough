@@ -1,0 +1,24 @@
+schema: 1
+id: "fr-en-grammar-conditionnel-passe"
+kind: "layer"
+core: "fr-grammar-conditionnel-passe"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The past conditional: what would have happened"
+license: "CC-BY-SA-4.0"
+description: "The past conditional says what would have happened, or expresses regret: j'aurais mangé, je serais parti. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Past conditional"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "je": "I", "tu": "you (informal)", "il-elle": "he or she", "nous": "we", "vous": "you (formal or plural)", "ils-elles": "they" }
+  entries:
+    "manger": "to eat"
+    "finir": "to finish"
+    "faire": "to do or make"
+    "voir": "to see"
+    "prendre": "to take"
+    "devoir": "to have to"
+    "aller": "to go"
+    "venir": "to come"
+    "partir": "to leave"
+  notes: "The past conditional (conditionnel passé) is made from the conditional of the auxiliary plus the past participle: j'aurais mangé, il aurait fini, nous aurions vu; with être verbs, je serais parti(e), nous serions allés. It says what would have happened but did not, and expresses regret or reproach: j'aurais dû venir means I should have come. The participle of devoir is dû, and it does not change with the subject here. Verbs that take être agree with the subject as in the passé composé: elle serait partie, ils seraient venus, and the first form shown is only the commonest. This is the form used in the result of the third type of si sentence: si j'avais su, je serais venu, where the si clause is in the pluperfect and the result in the past conditional. It always refers back to the past."
