@@ -1,0 +1,40 @@
+schema: 1
+id: "as-en-reading-things"
+name: "Assamese reading: things"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-lost-property-list"
+    title: "A lost-property list"
+    theme: "things"
+    sentences:
+      - text: "ইয়াত এটা ছাতা আছে।"
+        reading: "iyāt etā sātā āse."
+      - text: "ইয়াত এটা ঘড়ী আছে।"
+        reading: "iyāt etā ghori āse."
+      - text: "ইয়াত এটা বেগ আছে।"
+        reading: "iyāt etā beg āse."
+      - text: "ইয়াত এটা চশমা আছে।"
+        reading: "iyāt etā sôxômā āse."
+    questions:
+      - id: "as-7303"
+        prompt: { en: "There is a watch here." }
+        answer: true
+      - id: "as-7304"
+        prompt: { en: "Which item keeps off the sun or the rain?" }
+        options:
+          - { en: "Umbrella" }
+          - { en: "Book" }
+          - { en: "Cup" }
+        answer: 1
+      - id: "as-7305"
+        prompt: { en: "Which item helps you see better?" }
+        options:
+          - { en: "Bag" }
+          - { en: "Glasses" }
+          - { en: "Cup" }
+        answer: 2

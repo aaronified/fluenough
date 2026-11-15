@@ -1,0 +1,38 @@
+schema: 1
+id: "as-en-reading-verbs"
+name: "Assamese reading: verbs"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-verbs-fridge-note"
+    title: "Fridge note"
+    theme: "everyday-verbs"
+    sentences:
+      - text: "মই ভাত ৰান্ধোঁ।"
+        reading: "moi bhāt rāndhum̐."
+      - text: "তুমি ভাত খোৱা নে?"
+        reading: "tumi bhāt khuwā ne?"
+      - text: "সি ঘৰত থাকে।"
+        reading: "si ghôrôt thāke."
+    questions:
+      - id: "as-7003"
+        prompt: { en: "The note says the writer cooks rice." }
+        answer: true
+      - id: "as-7004"
+        prompt: { en: "Where does he stay?" }
+        options:
+          - { en: "At home" }
+          - { en: "At school" }
+          - { en: "In the field" }
+        answer: 1
+      - id: "as-7005"
+        prompt: { en: "What does the note ask?" }
+        options:
+          - { en: "Whether you are eating rice" }
+          - { en: "Where the book is" }
+          - { en: "What time it is" }
+        answer: 1

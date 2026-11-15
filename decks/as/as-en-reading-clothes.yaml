@@ -1,0 +1,39 @@
+schema: 1
+id: "as-en-reading-clothes"
+name: "Assamese reading: clothes"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-shop-offer-sign"
+    title: "A clothes shop sign"
+    theme: "clothes"
+    sentences:
+      - text: "জামা সস্তা।"
+        reading: "zāmā xôstā."
+      - text: "কুৰ্তা নতুন।"
+        reading: "kurtā notun."
+      - text: "নীলা শাৰ্ট আছে।"
+        reading: "nilā xārt āse."
+      - text: "বগা ধুতি আছে।"
+        reading: "bôgā dhuti āse."
+    questions:
+      - id: "as-7306"
+        prompt: { en: "The shirts are cheap." }
+        answer: true
+      - id: "as-7307"
+        prompt: { en: "What colour is the shirt?" }
+        options:
+          - { en: "Red" }
+          - { en: "Blue" }
+          - { en: "White" }
+        answer: 2
+      - id: "as-7308"
+        prompt: { en: "Are the kurtas old?" }
+        options:
+          - { en: "Yes" }
+          - { en: "No" }
+        answer: 2
