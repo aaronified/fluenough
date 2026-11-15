@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.10.4] - 2026-11-15
+
 ### Fixed
 
 - **Decks no longer fail to download right after new decks are published.** The app now tries a deck that arrived incomplete again before telling you something went wrong.
