@@ -20,8 +20,8 @@ PlacementLanguageData _data(String language, String word) =>
     PlacementLanguageData(
       language: language,
       decks: <PlacementDeck>[
-        _deck('${language}001', <(String, String, String)>[
-          ('${language}-1', word, 'house'),
+        _deck('$language-001', <(String, String, String)>[
+          ('$language-1', word, 'house'),
         ]),
       ],
     );
