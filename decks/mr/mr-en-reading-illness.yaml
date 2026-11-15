@@ -1,0 +1,54 @@
+schema: 1
+id: "mr-en-reading-illness"
+name: "Reading: illness"
+kind: "reading"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "The label on a packet of medicine. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "mr-medicine-label"
+    title: "Medicine label"
+    sentences:
+      - text: "हे औषध सर्दीसाठी आहे."
+        reading: "he auṣadh sardisāṭhi āhe."
+        ipa: "ɦe əuʂəd̪ʱ sərd̪isaʈʰi aɦe"
+      - text: "दिवसातून तीन वेळा घ्या."
+        reading: "divsātun tin veḷā ghyā."
+        ipa: "d̪iʋsat̪un t̪in ʋeɭa ɡʱja"
+      - text: "जेवणानंतर एक गोळी घ्या."
+        reading: "jevṇānantar ek goḷi ghyā."
+        ipa: "dʒeʋɳanənt̪ər ek ɡoɭi ɡʱja"
+      - text: "गोळ्या मुलांपासून दूर ठेवा."
+        reading: "goḷyā mulāmpāsun dur ṭhevā."
+        ipa: "ɡoɭja mulampasun d̪ur ʈʰeʋa"
+      - text: "जास्त गोळ्या घेऊ नका."
+        reading: "jāst goḷyā gheu nakā."
+        ipa: "dzast̪ ɡoɭja ɡʱeu nəka"
+    questions:
+      - id: "mr-7009"
+        prompt:
+          en: "What is the medicine for?"
+        options:
+        - en: "A cold"
+        - en: "A headache"
+        - en: "A cut"
+        answer: 0
+      - id: "mr-7010"
+        prompt:
+          en: "How many times a day should you take it?"
+        options:
+        - en: "Once"
+        - en: "Three times"
+        - en: "Ten times"
+        answer: 1
+      - id: "mr-7011"
+        prompt:
+          en: "What should you do with the tablets?"
+        options:
+        - en: "Keep them away from children"
+        - en: "Give them to children"
+        - en: "Put them in water"
+        answer: 0
