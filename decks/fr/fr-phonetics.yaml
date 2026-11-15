@@ -9,27 +9,27 @@ rules:
   - id: "fr-length-before-voiced-fricative"
     pattern: '([aeiouyøœɛɔɑ]̃?)(?=(?:[vzʒʁ]|vʁ)$)'
     replace: '\1ː'
-    source: 'Wikipedia, French phonology, "Length" (CC BY-SA 4.0), after Tranel, The Sounds of French (1987, CUP); Fougeron and Smith, "French", Handbook of the International Phonetic Association (1999, CUP)'
+    source: 'Walker, The Pronunciation of Canadian French (1984), pp. 25-27; Tranel, The Sounds of French (1987, CUP), pp. 49-51; Wikipedia, French phonology, "Length" (CC BY-SA 4.0)'
   # Phrase-final stressed closed syllable: /o ø ɑ/ and the nasal vowels are long before any single consonant (saute [soːt], pâte [pɑːt], chante [ʃɑ̃ːt]). Runs after the rule above, so a vowel it already lengthened is not touched.
   - id: "fr-length-o-ø-ɑ-nasal"
-    pattern: '(o|ø|ɑ̃|ɛ̃|ɔ̃|œ̃|ɑ)(?=[pbtdkɡfsʃmnɲlʒvzʁ]$)'
+    pattern: '(o|ø|ɑ̃|ɛ̃|ɔ̃|œ̃|ɑ)(?=[pbtdkɡgfsʃmnɲlʒvzʁ]$)'
     replace: '\1ː'
-    source: 'Wikipedia, French phonology, "Length" (CC BY-SA 4.0), after Tranel, The Sounds of French (1987, CUP); Fougeron and Smith, "French", Handbook of the International Phonetic Association (1999, CUP)'
+    source: 'Walker, The Pronunciation of Canadian French (1984), pp. 25-27; Tranel, The Sounds of French (1987, CUP), pp. 49-51; Wikipedia, French phonology, "Length" (CC BY-SA 4.0)'
   # /ʁ/ is devoiced to [χ] before or after a voiceless obstruent, inside a word (trois [t̪χwa]). The sentence-final devoicing the same source mentions is left out: its own examples (mer [mɛːʁ]) keep [ʁ]. Runs before the dental rules so the context is the plain letter.
   - id: "fr-r-devoiced"
     pattern: '(?<=[ptkfsʃ])ʁ|ʁ(?=[ptkfsʃ])'
     replace: 'χ'
-    source: 'Wikipedia, French phonology, "Consonants", on the rhotic (CC BY-SA 4.0), after Fougeron and Smith, "French", Handbook of the International Phonetic Association (1999, CUP), p. 75'
+    source: 'Fougeron and Smith, "Illustrations of the IPA: French", Journal of the International Phonetic Association 23(2) (1993), pp. 73-87 (rhotic, p. 75); Wikipedia, French phonology, "Consonants" (CC BY-SA 4.0)'
   # /t d n/ are laminal denti-alveolar: t̪ d̪ n̪; /s z/ are dentalised laminal alveolar, written s̪ z̪.
   - id: "fr-t-d-dental"
     pattern: '([td])'
     replace: '\1̪'
-    source: 'Fougeron and Smith, "French", Handbook of the International Phonetic Association (1999, CUP), p. 79 (the consonant chart); Ladefoged and Maddieson, The Sounds of the World''s Languages (1996, Blackwell), p. 192; Wikipedia, French phonology, "Consonants" (CC BY-SA 4.0)'
+    source: 'Fougeron and Smith, "Illustrations of the IPA: French", Journal of the International Phonetic Association 23(2) (1993), pp. 73-87 (consonant chart, p. 79); Wikipedia, French phonology, "Consonants" (CC BY-SA 4.0)'
   - id: "fr-n-dental"
     pattern: 'n'
     replace: 'n̪'
-    source: 'Fougeron and Smith, "French", Handbook of the International Phonetic Association (1999, CUP), p. 79 (the consonant chart); Ladefoged and Maddieson, The Sounds of the World''s Languages (1996, Blackwell), p. 192; Wikipedia, French phonology, "Consonants" (CC BY-SA 4.0)'
+    source: 'Fougeron and Smith, "Illustrations of the IPA: French", Journal of the International Phonetic Association 23(2) (1993), pp. 73-87 (consonant chart, p. 79); Wikipedia, French phonology, "Consonants" (CC BY-SA 4.0)'
   - id: "fr-s-z-dental"
     pattern: '([sz])'
     replace: '\1̪'
-    source: 'Fougeron and Smith, "French", Handbook of the International Phonetic Association (1999, CUP), p. 79 (the consonant chart); Ladefoged and Maddieson, The Sounds of the World''s Languages (1996, Blackwell), p. 192; Wikipedia, French phonology, "Consonants" (CC BY-SA 4.0)'
+    source: 'Adams (1975), p. 288, as cited by Wikipedia, French phonology, "Consonants"; Fougeron and Smith, "Illustrations of the IPA: French", Journal of the International Phonetic Association 23(2) (1993), pp. 73-87 (consonant chart, p. 79); Wikipedia, French phonology, "Consonants" (CC BY-SA 4.0)'
