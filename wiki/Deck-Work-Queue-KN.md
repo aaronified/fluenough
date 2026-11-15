@@ -92,3 +92,18 @@ Run last, serially, after every Kannada content PR (sentences, readings, culture
 3. After any change to the rules file: `python3 tools/derive_phonetic.py kn --rederive --bracket-unchanged --write` re-derives every `rules` card; a card whose form does not change is not rewritten.
 4. Counts on the branch (2026-11-15): 1,715 cards with a broad `ipa`: 1,513 filled, 202 unchanged and bracketed, 0 invalid. 288 cards have no broad `ipa` and get no `phonetic`: the broad `ipa` is the tools' job first (`tools/transcribe.py kn`).
 5. Open for a phonetician (rules ship `unreviewed`): whether the lowering of short i u e o should be written for the standard (it is a tendency in one source, plus Wiktionary's one entry), and whether ʂ and the k/ɡ palatalisation should join. Drop a rule by deleting its entry and running step 3.
+
+## 5. Progress, 2026-11-15
+
+| Task | State |
+|---|---|
+| KN-001 | Done: [Plan-Culture-Kannada](Plan-Culture-Kannada.md) |
+| KN-100 | Merged (#1464): 70 sentences decks; `kn-numbers-1-20`, `kn-quantities` still owed (too few earlier words; re-specify or widen the vocabulary rule) |
+| KN-110 | Merged (#1462, #1463): registry entry, 7 rules, `phonetic` on 1,715 cards; the vowel-lowering rules need a phonetician; rerun derive last |
+| KN-020..022 | Merged (#1467): 60 proverbs |
+| KN-040 | Merged (#1465): 53 topics |
+| KN-010..013 | **Held**: PR #1468 closed (English of the 3 Pampa lines wrong); no readable source for decks 2 to 4; branch `decks/kn-culture-wave1` left for the owner to delete |
+| KN-120 | 42 rows added; more with each wave |
+| KN-200.. | In progress: reading decks for word units (`decks/kn-readings-wave1`) |
+| KN-050 | In progress (`decks/kn-situations-wave1`) |
+| KN-030..032, KN-060 | Next: multi-word verbs (only verified families), recommendations with creators |
