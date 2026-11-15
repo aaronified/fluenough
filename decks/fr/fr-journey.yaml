@@ -17,8 +17,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Je voudrais un aller-retour pour demain.", ipa: "ʒə vudʁɛ œ̃n aleʁətuʁ puʁ dəmɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "voudrais", base: "vouloir" }, { word: "un", ref: "fr-0208" }, { word: "aller-retour", base: "aller-retour" }, { word: "pour", ref: "fr-0591" }, { word: "demain", ref: "fr-0078" }] }
-      - { target: "L'aller-retour coûte moins cher que deux billets.", ipa: "laleʁətuʁ kut mwɛ̃ ʃɛʁ kə dø bijɛ", bases: [{ word: "L'aller-retour", base: "aller-retour" }, { word: "coûte", base: "coûter" }, { word: "moins", ref: "fr-0346" }, { word: "cher", ref: "fr-0104" }, { word: "que", base: "que" }, { word: "deux", ref: "fr-0209" }, { word: "billets", base: "billet" }] }
+      - { target: "Je voudrais un aller-retour pour demain.", ipa: "ʒə vudʁɛ œ̃n aleʁətuʁ puʁ dəmɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "voudrais", base: "vouloir" }, { word: "un", ref: "fr-0208" }, { word: "aller", ref: "fr-0286" }, { word: "retour", ref: "fr-3422" }, { word: "pour", ref: "fr-0591" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "L'aller-retour coûte moins cher que deux billets.", ipa: "laleʁətuʁ kut mwɛ̃ ʃɛʁ kə dø bijɛ", bases: [{ word: "L'aller", ref: "fr-0286" }, { word: "retour", ref: "fr-3422" }, { word: "coûte", base: "coûter" }, { word: "moins", ref: "fr-0346" }, { word: "cher", ref: "fr-0104" }, { word: "que", base: "que" }, { word: "deux", ref: "fr-0209" }, { word: "billets", base: "billet" }] }
   - id: "fr-3401"
     target: "voie"
     ipa: "vwa"
@@ -210,7 +210,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "La billetterie est ouverte jusqu'à dix-huit heures.", ipa: "la bijɛtʁi ɛt uvɛʁt ʒyska dizɥit œʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "billetterie", base: "billetterie" }, { word: "est", base: "être" }, { word: "ouverte", base: "ouvert" }, { word: "jusqu'à", base: "jusqu'à" }, { word: "dix-huit", ref: "fr-0225" }, { word: "heures", base: "heure" }] }
+      - { target: "La billetterie est ouverte jusqu'à dix-huit heures.", ipa: "la bijɛtʁi ɛt uvɛʁt ʒyska dizɥit œʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "billetterie", base: "billetterie" }, { word: "est", base: "être" }, { word: "ouverte", base: "ouvert" }, { word: "jusqu'à", base: "jusqu'à" }, { word: "dix", ref: "fr-0217" }, { word: "huit", ref: "fr-0215" }, { word: "heures", base: "heure" }] }
       - { target: "Je vais à la billetterie.", ipa: "ʒə vɛ a la bijɛtʁi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vais", base: "aller" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "billetterie", base: "billetterie" }] }
   - id: "fr-3419"
     target: "débarquer"
@@ -253,7 +253,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Le retour est à dix-huit heures.", ipa: "lə ʁətuʁ ɛt a dizɥit œʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "retour", base: "retour" }, { word: "est", base: "être" }, { word: "à", base: "à" }, { word: "dix-huit", ref: "fr-0225" }, { word: "heures", base: "heure" }] }
+      - { target: "Le retour est à dix-huit heures.", ipa: "lə ʁətuʁ ɛt a dizɥit œʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "retour", base: "retour" }, { word: "est", base: "être" }, { word: "à", base: "à" }, { word: "dix", ref: "fr-0217" }, { word: "huit", ref: "fr-0215" }, { word: "heures", base: "heure" }] }
       - { target: "Je prends le train du retour.", ipa: "ʒə pʁɑ̃ lə tʁɛ̃ dy ʁətuʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", base: "prendre" }, { word: "le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "du", base: "de" }, { word: "retour", base: "retour" }] }
   - id: "fr-3423"
     target: "annonce"
@@ -447,7 +447,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "La fermeture du guichet est à dix-huit heures.", ipa: "la fɛʁmətyʁ dy ɡiʃɛ ɛt a dizɥit œʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "fermeture", base: "fermeture" }, { word: "du", base: "de" }, { word: "guichet", ref: "fr-1973" }, { word: "est", base: "être" }, { word: "à", base: "à" }, { word: "dix-huit", ref: "fr-0225" }, { word: "heures", base: "heure" }] }
+      - { target: "La fermeture du guichet est à dix-huit heures.", ipa: "la fɛʁmətyʁ dy ɡiʃɛ ɛt a dizɥit œʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "fermeture", base: "fermeture" }, { word: "du", base: "de" }, { word: "guichet", ref: "fr-1973" }, { word: "est", base: "être" }, { word: "à", base: "à" }, { word: "dix", ref: "fr-0217" }, { word: "huit", ref: "fr-0215" }, { word: "heures", base: "heure" }] }
       - { target: "La fermeture des portes est automatique.", ipa: "la fɛʁmətyʁ de pɔʁt ɛt otɔmatik", bases: [{ word: "La", ref: "fr-0544" }, { word: "fermeture", base: "fermeture" }, { word: "des", ref: "fr-0546" }, { word: "portes", base: "porte" }, { word: "est", base: "être" }, { word: "automatique", base: "automatique" }] }
   - id: "fr-3441"
     target: "bagagiste"

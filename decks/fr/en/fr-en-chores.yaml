@@ -339,19 +339,21 @@ cards:
     native: "tumble dryer"
     notes:
       "n1": "Un sèche-linge is a tumble dryer; it is masculine."
+    bases:
+      "linge": "laundry"
     examples:
       "Le sèche-linge tourne toute la nuit.":
         native: "The dryer runs all night."
         bases:
-          "sèche-linge": "tumble dryer"
+          "linge": "laundry"
           "tourne": "runs"
           "toute": "all"
       "Mets les draps dans le sèche-linge.":
         native: "Put the sheets in the tumble dryer."
         bases:
+          "linge": "laundry"
           "Mets": "put"
           "draps": "sheets"
-          "sèche-linge": "tumble dryer"
   "fr-3102":
     native: "to scrub"
     notes:
@@ -403,14 +405,12 @@ cards:
       "Le lave-vaisselle est plein.":
         native: "The dishwasher is full."
         bases:
-          "lave-vaisselle": "dishwasher"
           "est": "is"
       "Mets les verres dans le lave-vaisselle.":
         native: "Put the glasses in the dishwasher."
         bases:
           "Mets": "put"
           "verres": "glasses"
-          "lave-vaisselle": "dishwasher"
   "fr-3106":
     native: "to air"
     notes:

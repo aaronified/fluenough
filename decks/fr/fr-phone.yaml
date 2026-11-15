@@ -93,7 +93,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Il n'y a pas de signal ici.", ipa: "il ni a pa də siɲal isi", bases: [{ word: "Il", ref: "fr-0127" }, { word: "n'y", base: "y" }, { word: "a", base: "avoir" }, { word: "pas", base: "pas" }, { word: "de", base: "de" }, { word: "signal", base: "signal" }, { word: "ici", ref: "fr-0029" }] }
-      - { target: "Le signal est faible dans le train.", ipa: "lə siɲal ɛ fɛbl dɑ̃ lə tʁɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "signal", base: "signal" }, { word: "est", base: "être" }, { word: "faible", ref: "fr-0426" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }] }
+      - { target: "Le signal est faible dans le train.", ipa: "lə siɲal ɛ fɛbl dɑ̃ lə tʁɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "signal", base: "signal" }, { word: "est", base: "être" }, { word: "faible", ref: "fr-0426" }, { word: "dans", ref: "fr-0049" }, { word: "train", ref: "fr-0076" }] }
   - id: "fr-3328"
     target: "contact"
     ipa: "kɔ̃takt"
@@ -196,10 +196,10 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "haut", ref: "fr-0423" }, { word: "parleur", base: "parleur" }]
     examples:
-      - { target: "Mets le haut-parleur, s'il te plaît.", ipa: "mɛ lə opaʁlœʁ sil tə plɛ", bases: [{ word: "Mets", base: "mettre" }, { word: "le", ref: "fr-0543" }, { word: "haut-parleur", base: "haut-parleur" }, { word: "s'il", base: "il" }, { word: "te", base: "te" }, { word: "plaît", base: "plaire" }] }
-      - { target: "Le son sort du haut-parleur.", ipa: "lə sɔ̃ sɔʁ dy opaʁlœʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "son", ref: "fr-0138" }, { word: "sort", base: "sortir" }, { word: "du", base: "de" }, { word: "haut-parleur", base: "haut-parleur" }] }
+      - { target: "Mets le haut-parleur, s'il te plaît.", ipa: "mɛ lə opaʁlœʁ sil tə plɛ", bases: [{ word: "Mets", base: "mettre" }, { word: "le", ref: "fr-0543" }, { word: "haut", ref: "fr-0423" }, { word: "parleur", base: "parleur" }, { word: "s'il", base: "il" }, { word: "te", base: "te" }, { word: "plaît", base: "plaire" }] }
+      - { target: "Le son sort du haut-parleur.", ipa: "lə sɔ̃ sɔʁ dy opaʁlœʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "son", ref: "fr-0138" }, { word: "sort", base: "sortir" }, { word: "du", base: "de" }, { word: "haut", ref: "fr-0423" }, { word: "parleur", base: "parleur" }] }
   - id: "fr-3338"
     target: "micro"
     ipa: "mikʁo"
@@ -225,7 +225,7 @@ cards:
   - id: "fr-3340"
     target: "silencieux"
     ipa: "silɑ̃sjø"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
@@ -257,7 +257,7 @@ cards:
   - id: "fr-3343"
     target: "numérique"
     ipa: "nymeʁik"
-    pos: "adjective"
+    pos: "adj"
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
@@ -271,7 +271,7 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "boîte", ref: "fr-0785" }, { word: "vocale", base: "vocal" }]
     examples:
       - { target: "Laisse un message dans la boîte vocale.", ipa: "lɛs œ̃ mɛsaʒ dɑ̃ la bwat vɔkal", bases: [{ word: "Laisse", base: "laisser" }, { word: "un", ref: "fr-0208" }, { word: "message", ref: "fr-1082" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "boîte", ref: "fr-0785" }, { word: "vocale", base: "vocal" }] }
       - { target: "Ma boîte vocale est pleine.", ipa: "ma bwat vɔkal ɛ plɛn", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "boîte", ref: "fr-0785" }, { word: "vocale", base: "vocal" }, { word: "est", base: "être" }, { word: "pleine", base: "plein" }] }
@@ -282,7 +282,7 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "message", ref: "fr-1082" }, { word: "vocal", base: "vocal" }]
     examples:
       - { target: "Je reçois un message vocal.", ipa: "ʒə ʁəswa œ̃ mɛsaʒ vɔkal", bases: [{ word: "Je", ref: "fr-0126" }, { word: "reçois", base: "recevoir" }, { word: "un", ref: "fr-0208" }, { word: "message", ref: "fr-1082" }, { word: "vocal", base: "vocal" }] }
       - { target: "Écoute ce message vocal, il est long.", ipa: "ekut sə mɛsaʒ vɔkal il ɛ lɔ̃", bases: [{ word: "Écoute", base: "écouter" }, { word: "ce", ref: "fr-0143" }, { word: "message", ref: "fr-1082" }, { word: "vocal", base: "vocal" }, { word: "il", ref: "fr-0127" }, { word: "est", base: "être" }, { word: "long", ref: "fr-0421" }] }
@@ -293,7 +293,7 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "numéro", ref: "fr-1070" }, { word: "de", base: "de" }, { word: "téléphone", ref: "fr-0257" }]
     examples:
       - { target: "Donne ton numéro de téléphone.", ipa: "dɔn tɔ̃ nymeʁo də telefɔn", bases: [{ word: "Donne", base: "donner" }, { word: "ton", ref: "fr-0141" }, { word: "numéro", ref: "fr-1070" }, { word: "de", base: "de" }, { word: "téléphone", ref: "fr-0257" }] }
       - { target: "Ce numéro de téléphone est faux.", ipa: "sə nymeʁo də telefɔn ɛ fo", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "numéro", ref: "fr-1070" }, { word: "de", base: "de" }, { word: "téléphone", ref: "fr-0257" }, { word: "est", base: "être" }, { word: "faux", base: "faux" }] }
@@ -304,7 +304,7 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "appel", ref: "fr-2519" }, { word: "manqué", ref: "fr-0797" }]
     examples:
       - { target: "J'ai un appel manqué de ma sœur.", ipa: "ʒɛ œ̃n apɛl mɑ̃ke də ma sœʁ", bases: [{ word: "J'ai", base: "avoir" }, { word: "un", ref: "fr-0208" }, { word: "appel", base: "appel" }, { word: "manqué", base: "manquer" }, { word: "de", base: "de" }, { word: "ma", ref: "fr-0137" }, { word: "sœur", ref: "fr-0170" }] }
       - { target: "Il y a trois appels manqués.", ipa: "il i a tʁwa apɛl mɑ̃ke", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", base: "avoir" }, { word: "trois", ref: "fr-0210" }, { word: "appels", base: "appel" }, { word: "manqués", base: "manquer" }] }
@@ -315,7 +315,7 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "carte", ref: "fr-0824" }, { word: "SIM", base: "SIM" }]
     examples:
       - { target: "Ma carte SIM est dans le téléphone.", ipa: "ma kaʁt sim ɛ dɑ̃ lə telefɔn", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "carte", ref: "fr-0824" }, { word: "SIM", base: "SIM" }, { word: "est", base: "être" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "téléphone", ref: "fr-0257" }] }
       - { target: "Je change la carte SIM à l'étranger.", ipa: "ʒə ʃɑ̃ʒ la kaʁt sim a letʁɑ̃ʒe", bases: [{ word: "Je", ref: "fr-0126" }, { word: "change", base: "changer" }, { word: "la", ref: "fr-0544" }, { word: "carte", ref: "fr-0824" }, { word: "SIM", base: "SIM" }, { word: "à", base: "à" }, { word: "l'étranger", base: "étranger" }] }
@@ -326,7 +326,7 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "téléphone", ref: "fr-0257" }, { word: "fixe", base: "fixe" }]
     examples:
       - { target: "J'appelle sur le téléphone fixe.", ipa: "ʒapɛl syʁ lə telefɔn fiks", bases: [{ word: "J'appelle", base: "appeler" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "téléphone", ref: "fr-0257" }, { word: "fixe", base: "fixe" }] }
       - { target: "Ce téléphone fixe est vieux.", ipa: "sə telefɔn fiks ɛ vjø", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "téléphone", ref: "fr-0257" }, { word: "fixe", base: "fixe" }, { word: "est", base: "être" }, { word: "vieux", ref: "fr-0109" }] }
@@ -348,7 +348,7 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "pièce", ref: "fr-2784" }, { word: "jointe", base: "joint" }]
     examples:
       - { target: "Il y a une pièce jointe dans le message.", ipa: "il i a yn pjɛs ʒwɛ̃t dɑ̃ lə mɛsaʒ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", base: "avoir" }, { word: "une", ref: "fr-0545" }, { word: "pièce", base: "pièce" }, { word: "jointe", base: "joindre" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "message", ref: "fr-1082" }] }
       - { target: "J'ouvre la pièce jointe.", ipa: "ʒuvʁ la pjɛs ʒwɛ̃t", bases: [{ word: "J'ouvre", base: "ouvrir" }, { word: "la", ref: "fr-0544" }, { word: "pièce", base: "pièce" }, { word: "jointe", base: "joindre" }] }
@@ -358,7 +358,7 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "laisser", base: "laisser" }, { word: "un", ref: "fr-0208" }, { word: "message", ref: "fr-1082" }]
     examples:
       - { target: "Je laisse un message.", ipa: "ʒə lɛs œ̃ mɛsaʒ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "laisse", base: "laisser" }, { word: "un", ref: "fr-0208" }, { word: "message", ref: "fr-1082" }] }
       - { target: "Vous pouvez laisser un message après le bip.", ipa: "vu puve lɛse œ̃ mɛsaʒ apʁɛ lə bi", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "pouvez", base: "pouvoir" }, { word: "laisser", base: "laisser" }, { word: "un", ref: "fr-0208" }, { word: "message", ref: "fr-1082" }, { word: "après", ref: "fr-0595" }, { word: "le", ref: "fr-0543" }, { word: "bip", ref: "fr-3325" }] }
@@ -369,7 +369,7 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "écran", ref: "fr-1393" }, { word: "tactile", base: "tactile" }]
     examples:
       - { target: "L'écran tactile est cassé.", ipa: "lekʁɑ̃ taktil ɛ kase", bases: [{ word: "L'écran", base: "écran" }, { word: "tactile", base: "tactile" }, { word: "est", base: "être" }, { word: "cassé", base: "casser" }] }
       - { target: "Mon écran tactile est grand.", ipa: "mɔ̃n ekʁɑ̃ taktil ɛ ɡʁɑ̃", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "écran", ref: "fr-1393" }, { word: "tactile", base: "tactile" }, { word: "est", base: "être" }, { word: "grand", ref: "fr-0410" }] }
