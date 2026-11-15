@@ -1,0 +1,217 @@
+# Popular works of India and Pakistan in Hindi and Urdu that are not in the public domain: the learner finds them (a library, a shop, a service) and the app asks
+# the questions after the learner has marked the work as seen, read or heard. Nothing of a work is quoted (wiki/Plan-Language-Completeness.md,
+# "Source-it-yourself works"). No links are given: no link has been checked.
+schema: 1
+kind: "recommendations"
+id: "recommendations-hi"
+language: "hi"
+license: "CC-BY-SA-4.0"
+recommendations:
+  - id: "hi-rec-mughal-e-azam"
+    medium: "film"
+    title: { text: "Mughal-e-Azam" }
+    creator: ["hi-k-asif"]
+    year: 1960
+    level: "B2"
+    briefing: { en: "A large historical romance set in the Mughal court. A prince falls in love with a court dancer, and the emperor, his father, opposes their love and threatens her." }
+    questions:
+      - { id: "q1", prompt: { en: "What was the courtesan's name before she became Anarkali?" }, options: { en: ["Nadira", "Sahibjaan", "Umrao"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "What punishment does the emperor order for Anarkali?" }, options: { en: ["A fine", "Being walled up alive", "Exile"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Who is the prince who falls in love with Anarkali?" }, options: { en: ["Salim", "Akbar", "Dilawar"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "hi-rec-pyaasa"
+    medium: "film"
+    title: { text: "Pyaasa" }
+    creator: ["hi-guru-dutt"]
+    year: 1957
+    level: "B2"
+    briefing: { en: "A film about a poet who struggles to find success and love in a big city. When the world finally praises his poems, he has to face what fame has done to the people around him." }
+    questions:
+      - { id: "q1", prompt: { en: "What is the poet's name?" }, options: { en: ["Vijay", "Ghosh", "Raju"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "In which city is the poet an unsuccessful writer?" }, options: { en: ["Calcutta", "Delhi", "Lahore"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Which woman admires his poetry and falls in love with him?" }, options: { en: ["Gulabo", "Meena", "Lata"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "hi-rec-pakeezah"
+    medium: "film"
+    title: { text: "Pakeezah" }
+    creator: ["hi-kamal-amrohi"]
+    year: 1972
+    level: "C1"
+    briefing: { en: "A romance about a courtesan in Lucknow who longs for a respectable life. A chance meeting with a stranger on a train begins to change her future." }
+    questions:
+      - { id: "q1", prompt: { en: "In which city does Sahibjaan live and work?" }, options: { en: ["Delhi", "Lucknow", "Agra"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "What does the man on the train leave for her?" }, options: { en: ["A ring", "A note", "A letter from his father"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Who asks Salim to marry Sahibjaan before he dies?" }, options: { en: ["Shahbuddin", "Her mother", "The doctor"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "hi-rec-umrao-jaan"
+    medium: "film"
+    title: { text: "Umrao Jaan" }
+    creator: ["hi-muzaffar-ali"]
+    year: 1981
+    level: "C1"
+    briefing: { en: "A film about a girl taken from her village family in the 1840s and sold to a brothel in Lucknow. There she becomes a poet and singer, and she falls in love with a young nobleman." }
+    questions:
+      - { id: "q1", prompt: { en: "What name is the girl born with?" }, options: { en: ["Amiran", "Sahibjaan", "Nadira"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who kidnaps the girl in Faizabad?" }, options: { en: ["Dilawar", "Sultan", "Khanum Jaan"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Who is the young nobleman who falls in love with Umrao?" }, options: { en: ["Nawab Sultan", "Dilawar", "Salim"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "hi-rec-dilwale-dulhania-le-jayenge"
+    medium: "film"
+    title: { text: "Dilwale Dulhania Le Jayenge" }
+    creator: ["hi-aditya-chopra"]
+    year: 1995
+    level: "A2"
+    briefing: { en: "A romance about two young people. One of them has been promised since childhood to a man in Punjab, and her father has the final word on the marriage." }
+    questions:
+      - { id: "q1", prompt: { en: "What is the male lead's name?" }, options: { en: ["Raj", "Kuljeet", "Baldev"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who is Simran promised to since childhood?" }, options: { en: ["Kuljeet", "Raj", "Ghosh"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Where does Simran's father finally let her go with Raj?" }, options: { en: ["At the railway platform", "At a wedding hall", "At the airport"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "hi-rec-3-idiots"
+    medium: "film"
+    title: { text: "3 Idiots" }
+    creator: ["hi-rajkumar-hirani"]
+    year: 2009
+    level: "B1"
+    briefing: { en: "A film about three engineering students at a strict college, their friendship and the pressure to succeed. Years after they graduate, they go looking for one friend who has disappeared." }
+    questions:
+      - { id: "q1", prompt: { en: "What is the name of the college?" }, options: { en: ["Imperial College of Engineering", "Royal Institute of Technology", "Indian Science Academy"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who is the director of the college?" }, options: { en: ["Viru Sahastrabuddhe", "Rancho", "Farhan Qureshi"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Which of the three friends do the others search for at the end?" }, options: { en: ["Rancho", "Farhan", "Raju"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "hi-rec-lagaan"
+    medium: "film"
+    title: { text: "Lagaan" }
+    creator: ["hi-ashutosh-gowariker"]
+    year: 2001
+    level: "B1"
+    briefing: { en: "A film about farmers in a dry village in British India who cannot pay an unfair tax. Their answer is a challenge to the British officers: a cricket match." }
+    questions:
+      - { id: "q1", prompt: { en: "What is the name of the village?" }, options: { en: ["Champaner", "Ramgarh", "Phulera"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Which game do the villagers play against the British?" }, options: { en: ["Cricket", "Hockey", "Polo"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What is the reward if the villagers win the match?" }, options: { en: ["Their tax is cancelled for three years", "They get the land", "They get a gold cup"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "hi-rec-jaane-bhi-do-yaaro"
+    medium: "film"
+    title: { text: "Jaane Bhi Do Yaaro" }
+    creator: ["hi-kundan-shah"]
+    year: 1983
+    level: "B2"
+    briefing: { en: "A comedy about two struggling photographers in Bombay. A photo they take by chance reveals a crime, and their attempts to tell the story lead to one misadventure after another." }
+    questions:
+      - { id: "q1", prompt: { en: "Where is the photo studio of the two photographers?" }, options: { en: ["Haji Ali", "Juhu", "Colaba"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who is the builder revealed as the killer?" }, options: { en: ["Tarneja", "D'Mello", "Vinod"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What is the job of the murder victim?" }, options: { en: ["A municipal commissioner", "A photographer", "A film star"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "hi-rec-mother-india"
+    medium: "film"
+    title: { text: "Mother India" }
+    creator: ["hi-mehboob-khan"]
+    year: 1957
+    level: "B2"
+    briefing: { en: "A village drama about a mother who struggles through poverty and hardship to raise her two sons. The younger son grows into a rebel, and she must choose between her love for him and what is right for the village." }
+    questions:
+      - { id: "q1", prompt: { en: "Who plays Radha?" }, options: { en: ["Nargis", "Nutan", "Meena Kumari"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "What does Radha do to her younger son Birju at the end?" }, options: { en: ["She shoots him", "She forgives him", "She sends him away"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Whom does Birju kidnap?" }, options: { en: ["Rupa", "Radha", "Ramu"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "hi-rec-dhoop-kinare"
+    medium: "series"
+    title: { text: "Dhoop Kinare" }
+    creator: ["hi-haseena-moin"]
+    year: 1987
+    level: "B1"
+    briefing: { en: "A Pakistani television drama set in a hospital in Karachi. Two doctors who work together become rivals over a family house, and their relationship changes over the course of the story." }
+    questions:
+      - { id: "q1", prompt: { en: "In which city is the hospital?" }, options: { en: ["Lahore", "Karachi", "Islamabad"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "What are the names of the two doctors?" }, options: { en: ["Ahmer Ansari and Zoya Ali Khan", "Ahmer Ansari and Saima", "Zoya Ali Khan and Sultan"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What does Ahmer learn after his adoptive father dies?" }, options: { en: ["The family house passes to a granddaughter he never knew", "He must leave the hospital", "He inherits a clinic"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "hi-rec-malgudi-days"
+    medium: "series"
+    title: { text: "Malgudi Days" }
+    creator: ["hi-shankar-nag", "hi-kavitha-lankesh"]
+    year: 1986
+    level: "B1"
+    briefing: { en: "A television series based on short stories by R. K. Narayan. It shows everyday life in a small fictional town in South India and follows a schoolboy and his friends." }
+    questions:
+      - { id: "q1", prompt: { en: "What is the name of the boy at the centre of the stories?" }, options: { en: ["Swami", "Raju", "Nataraj"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "What is the name of the fictional town?" }, options: { en: ["Malgudi", "Shivpalganj", "Phulera"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Which story does the second season adapt in its episode about the boy and his friends?" }, options: { en: ["Swami and Friends", "The English Teacher", "The Guide"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "hi-rec-raag-darbari"
+    medium: "book"
+    title: { text: "Raag Darbari" }
+    creator: ["hi-shrilal-shukla"]
+    year: 1968
+    level: "C1"
+    script: "devanagari"
+    briefing: { en: "A satirical novel about a village in India where a powerful man controls the school, the local council and the local government for his own ends. A young man visits from the city and watches." }
+    questions:
+      - { id: "q1", prompt: { en: "Which village is the novel set in?" }, options: { en: ["Shivpalganj", "Champaner", "Phulera"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who is the village patriarch who controls its politics?" }, options: { en: ["Vaidyaji", "Ranganath", "Manju Devi"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What is the subject of Ranganath's master's degree?" }, options: { en: ["History", "Law", "Engineering"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "hi-rec-gunahon-ka-devta"
+    medium: "book"
+    title: { text: "Gunahon Ka Devta" }
+    creator: ["hi-dharamvir-bharati"]
+    year: 1949
+    level: "B2"
+    script: "devanagari"
+    briefing: { en: "A novel about a student in Allahabad who loves the daughter of his teacher. He cannot ask for her hand because of his social class, and the story shows how caste and family pressure shape love." }
+    questions:
+      - { id: "q1", prompt: { en: "In which city is the story set?" }, options: { en: ["Allahabad", "Lucknow", "Varanasi"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who is Sudha's father?" }, options: { en: ["Dr. Shukla", "Dr. Mishra", "Dr. Verma"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What stops Chandar from asking for Sudha's hand?" }, options: { en: ["His lower caste", "His debts", "His illness"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "hi-rec-aag-ka-darya"
+    medium: "book"
+    title: { text: "Aag Ka Darya" }
+    creator: ["hi-qurratulain-hyder"]
+    year: 1959
+    level: "C1"
+    script: "arabic"
+    briefing: { en: "A long Urdu novel that covers more than two thousand years of Indian history, from ancient times to the Partition of 1947." }
+    questions:
+      - { id: "q1", prompt: { en: "Which ruler founded the empire that the novel reaches back to?" }, options: { en: ["Chandragupta Maurya", "Ashoka", "Akbar"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Which major event of 1947 does the novel cover?" }, options: { en: ["The Partition of India", "The Mutiny of 1857", "The Battle of Plassey"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Which of these is one of the main characters?" }, options: { en: ["Gautam", "Ranganath", "Chander"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "hi-rec-madhushala"
+    medium: "book"
+    title: { text: "Madhushala" }
+    creator: ["hi-harivansh-rai-bachchan"]
+    year: 1935
+    level: "C1"
+    script: "devanagari"
+    briefing: { en: "A long poem made of four-line verses. Each verse uses a tavern as a metaphor for life, and the poet speaks of the world through wine, cups and the person who serves them." }
+    questions:
+      - { id: "q1", prompt: { en: "How many quatrains does the poem have?" }, options: { en: ["65", "135", "240"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Which word ends every quatrain?" }, options: { en: ["Madhushala", "Madira", "Saki"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Which two figures appear in almost every verse?" }, options: { en: ["The cup and the server", "The king and the poet", "The lover and the moon"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "hi-rec-lag-jaa-gale"
+    medium: "song"
+    title: { text: "Lag Jaa Gale" }
+    creator: ["hi-madan-mohan", "hi-raja-mehdi-ali-khan", "hi-lata-mangeshkar"]
+    year: 1964
+    level: "B1"
+    briefing: { en: "A romantic song from the 1964 Hindi film Woh Kaun Thi?, sung by Lata Mangeshkar. The music and the lyrics come from two of the best-known songwriters of Hindi cinema." }
+    questions:
+      - { id: "q1", prompt: { en: "Who sings the song?" }, options: { en: ["Lata Mangeshkar", "Asha Bhosle", "Mohammed Rafi"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Which actress appears in the film with Manoj Kumar?" }, options: { en: ["Sadhana", "Nutan", "Waheeda Rehman"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Who directed the film Woh Kaun Thi?" }, options: { en: ["Raj Khosla", "Guru Dutt", "Mehboob Khan"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "hi-rec-hum-dekhenge"
+    medium: "song"
+    title: { text: "Hum Dekhenge" }
+    creator: ["hi-faiz-ahmad-faiz", "hi-iqbal-bano"]
+    year: 1979
+    level: "C1"
+    briefing: { en: "A protest poem written in 1979 by Faiz Ahmad Faiz. It became a song of resistance against a military government in Pakistan, and its best-known performance is by Iqbal Bano." }
+    questions:
+      - { id: "q1", prompt: { en: "Which military ruler's regime does the poem oppose?" }, options: { en: ["Zia-ul-Haq", "Ayub Khan", "Yahya Khan"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Which Islamic idea does the poem turn into the Day of Revolution?" }, options: { en: ["Qayamat", "Eid", "Hajj"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Who performed the popular version at the Alhamra Arts Council in 1986?" }, options: { en: ["Iqbal Bano", "Noor Jehan", "Farida Khanum"] }, answer: 1 }
+    tags: ["unreviewed"]
