@@ -1,0 +1,143 @@
+schema: 1
+id: "hi-journey-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-5096"
+    target: "मेरा पासपोर्ट कहाँ है?"
+    reading: "mērā pāspōrṭ kahām̐ hai?"
+    ipa: "meːraː paːspoːrʈ kəɦãː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "वीज़ा", reading: "vīzā", kind: "word" }
+      - { id: "w2", word: "टिकट", reading: "ṭikaṭ", kind: "word" }
+  - id: "hi-5097"
+    target: "ट्रेन जल्दी चलेगी।"
+    reading: "ṭrēn jaldī calēgī."
+    ipa: "ʈreːn dʒəld̪iː tʃəleːɡiː"
+    pos: "phrase"
+    bases:
+      - { word: "चलेगी", ref: "hi-0801" }
+    confusables:
+      - { id: "w1", word: "जहाज़", reading: "jahāz", kind: "word" }
+      - { id: "w2", word: "नाव", reading: "nāv", kind: "word" }
+  - id: "hi-5098"
+    target: "मेरी बुकिंग की पुष्टि हुई।"
+    reading: "mērī bukiṅg kī puśṭi huī."
+    ipa: "meːriː bʊkɪŋɡ kiː pʊʃʈɪ ɦʊiː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", ref: "hi-0752" }
+      - { word: "हुई", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "पासपोर्ट", reading: "pāspōrṭ", kind: "word" }
+      - { id: "w2", word: "वीज़ा", reading: "vīzā", kind: "word" }
+  - id: "hi-5099"
+    target: "मुझे खिड़की वाली सीट चाहिए।"
+    reading: "mujhē khiṛkī vālī sīṭ cāhiē."
+    ipa: "mʊdʒʱeː kʰɪɽkiː ʋaːliː siːʈ tʃaːɦɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "मुझे", ref: "hi-0745" }
+      - { word: "वाली", base: "वाला", reading: "vālī" }
+    confusables:
+      - { id: "w1", word: "बर्थ", reading: "barth", kind: "word" }
+      - { id: "w2", word: "कमरा", reading: "kamrā", kind: "word" }
+  - id: "hi-5100"
+    target: "गाड़ी देर से पहुँचेगी।"
+    reading: "gāṛī dēr sē pahum̐cēgī."
+    ipa: "ɡaːɽiː d̪eːr seː pəɦʊ̃tʃeːɡiː"
+    pos: "phrase"
+    bases:
+      - { word: "पहुँचेगी", ref: "hi-1913" }
+    confusables:
+      - { id: "w1", word: "रुकना", reading: "ruknā", kind: "word" }
+      - { id: "w2", word: "उतरना", reading: "utrnā", kind: "word" }
+  - id: "hi-5101"
+    target: "हम प्लेटफ़ॉर्म पर देर तक रुके।"
+    reading: "ham plēṭfôrm par dēr tak rukē."
+    ipa: "ɦəm pleːʈfɔrm pər d̪eːr t̪ək rʊkeː"
+    pos: "phrase"
+    bases:
+      - { word: "रुके", ref: "hi-1914" }
+    confusables:
+      - { id: "w1", word: "चढ़ना", reading: "caṛhnā", kind: "word" }
+      - { id: "w2", word: "छूटना", reading: "chūṭnā", kind: "word" }
+  - id: "hi-5102"
+    target: "यात्री गाड़ी में चढ़े।"
+    reading: "yātrī gāṛī mēm̐ caṛhē."
+    ipa: "jaːt̪riː ɡaːɽiː mẽː tʃəɽʱeː"
+    pos: "phrase"
+    bases:
+      - { word: "चढ़े", ref: "hi-1916" }
+    confusables:
+      - { id: "w1", word: "उतरना", reading: "utrnā", kind: "word" }
+      - { id: "w2", word: "खोना", reading: "khōnā", kind: "word" }
+  - id: "hi-5103"
+    target: "आपका सामान ट्रेन में छूट गया।"
+    reading: "āpkā sāmān ṭrēn mēm̐ chūṭ gayā."
+    ipa: "aːpkaː saːmaːn ʈreːn mẽː tʃʰuːʈ ɡəjaː"
+    pos: "phrase"
+    bases:
+      - { word: "आपका", ref: "hi-0134" }
+      - { word: "छूट", ref: "hi-1918" }
+      - { word: "गया", ref: "hi-0777" }
+    confusables:
+      - { id: "w1", word: "खोना", reading: "khōnā", kind: "word" }
+      - { id: "w2", word: "उतरना", reading: "utrnā", kind: "word" }
+  - id: "hi-5104"
+    target: "कुली को पैसे दीजिए।"
+    reading: "kulī kō paisē dījiē."
+    ipa: "kʊliː koː pɛːseː d̪iːdʒɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "दीजिए", ref: "hi-0785" }
+    confusables:
+      - { id: "w1", word: "गाइड", reading: "gāiḍ", kind: "word" }
+      - { id: "w2", word: "यात्री", reading: "yātrī", kind: "word" }
+  - id: "hi-5105"
+    target: "पर्यटक घाटी में नाव से गए।"
+    reading: "paryaṭak ghāṭī mēm̐ nāv sē gaē."
+    ipa: "pərjəʈək ɡʱaːʈiː mẽː naːʋ seː ɡəeː"
+    pos: "phrase"
+    bases:
+      - { word: "गए", ref: "hi-0777" }
+    confusables:
+      - { id: "w1", word: "जहाज़", reading: "jahāz", kind: "word" }
+      - { id: "w2", word: "किनारा", reading: "kinārā", kind: "word" }
+  - id: "hi-5106"
+    target: "यह सफ़र सुरक्षित और आरामदेह है।"
+    reading: "yah safar surakśit aur ārāmdēh hai."
+    ipa: "jəɦ səfər sʊrəkʃɪt̪ ɔːr aːraːmd̪eːɦ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "आसान", reading: "āsān", kind: "word" }
+      - { id: "w2", word: "मुश्किल", reading: "muśkil", kind: "word" }
+  - id: "hi-5107"
+    target: "हमें वीज़ा चाहिए।"
+    reading: "hamēm̐ vīzā cāhiē."
+    ipa: "ɦəmẽː ʋiːzaː tʃaːɦɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "हमें", ref: "hi-0053" }
+    confusables:
+      - { id: "w1", word: "पासपोर्ट", reading: "pāspōrṭ", kind: "word" }
+      - { id: "w2", word: "टिकट", reading: "ṭikaṭ", kind: "word" }
+  - id: "hi-5108"
+    target: "गाइड हमें शहर दिखाएगा।"
+    reading: "gāiḍ hamēm̐ śahar dikhāēgā."
+    ipa: "ɡaːɪɖ ɦəmẽː ʃəɦər d̪ɪkʰaːeːɡaː"
+    pos: "phrase"
+    bases:
+      - { word: "हमें", ref: "hi-0053" }
+      - { word: "दिखाएगा", ref: "hi-1815" }
+    confusables:
+      - { id: "w1", word: "गाँव", reading: "gām̐v", kind: "word" }
+      - { id: "w2", word: "देश", reading: "dēś", kind: "word" }

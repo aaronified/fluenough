@@ -1,0 +1,194 @@
+schema: 1
+id: "hi-news-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-5324"
+    target: "आज के अख़बार में एक खबर छपी है।"
+    reading: "āj kē ak͟hbār mēm̐ ēk khabar chapī hai."
+    ipa: "aːdʒ keː əxbaːr mẽː eːk kʰəbər tʃʰəpiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "आज", ref: "hi-0299" }
+      - { word: "के", ref: "hi-0065" }
+      - { word: "अख़बार", ref: "hi-2149" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "एक", ref: "hi-0198" }
+      - { word: "खबर", ref: "hi-2147" }
+      - { word: "छपी", base: "छपना", reading: "chapī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "सुर्खी", reading: "surkhī", kind: "word" }
+      - { id: "w2", word: "लेख", reading: "lēkh", kind: "word" }
+  - id: "hi-5325"
+    target: "रेडियो पर ताज़ा समाचार सुनिए।"
+    reading: "rēḍiō par tāzā samācār suniē."
+    ipa: "reːɖɪoː pər t̪aːzaː səmaːtʃaːr sʊnɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "रेडियो", ref: "hi-2150" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "ताज़ा", ref: "hi-0903" }
+      - { word: "समाचार", ref: "hi-2148" }
+      - { word: "सुनिए", base: "सुनना", reading: "suniē" }
+    confusables:
+      - { id: "w1", word: "प्रसारण", reading: "prasāraṇ", kind: "word" }
+      - { id: "w2", word: "घोषणा", reading: "ghōśṇā", kind: "word" }
+  - id: "hi-5326"
+    target: "चुनाव में नेता ने वादा किया।"
+    reading: "cunāv mēm̐ nētā nē vādā kiyā."
+    ipa: "tʃʊnaːʋ mẽː neːt̪aː neː ʋaːd̪aː kɪjaː"
+    pos: "phrase"
+    bases:
+      - { word: "चुनाव", ref: "hi-2152" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "नेता", ref: "hi-2153" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "वादा", ref: "hi-2170" }
+      - { word: "किया", base: "करना", reading: "kiyā" }
+    confusables:
+      - { id: "w1", word: "मंत्री", reading: "mantrī", kind: "word" }
+      - { id: "w2", word: "घोषणा", reading: "ghōśṇā", kind: "word" }
+  - id: "hi-5327"
+    target: "पुलिस ने अपराध पर जाँच शुरू की।"
+    reading: "pulis nē aprādh par jām̐c śurū kī."
+    ipa: "pʊlɪs neː əpraːd̪ʱ pər dʒãːtʃ ʃʊruː kiː"
+    pos: "phrase"
+    bases:
+      - { word: "पुलिस", base: "पुलिस", reading: "pulis" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "अपराध", ref: "hi-2156" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "जाँच", base: "जाँच", reading: "jām̐c" }
+      - { word: "शुरू", base: "शुरू", reading: "śurū" }
+      - { word: "की", ref: "hi-0061" }
+    confusables:
+      - { id: "w1", word: "अदालत", reading: "adālat", kind: "word" }
+      - { id: "w2", word: "घटना", reading: "ghaṭnā", kind: "word" }
+  - id: "hi-5328"
+    target: "अदालत ने फ़ैसला सुनाया।"
+    reading: "adālat nē faislā sunāyā."
+    ipa: "əd̪aːlət̪ neː fɛːslaː sʊnaːjaː"
+    pos: "phrase"
+    bases:
+      - { word: "अदालत", ref: "hi-2157" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "फ़ैसला", ref: "hi-2168" }
+      - { word: "सुनाया", base: "सुनाना", reading: "sunāyā" }
+    confusables:
+      - { id: "w1", word: "विरोध", reading: "virōdh", kind: "word" }
+      - { id: "w2", word: "बयान", reading: "bayān", kind: "word" }
+  - id: "hi-5329"
+    target: "सड़क पर विरोध प्रदर्शन हुआ।"
+    reading: "saṛak par virōdh pradarśan huā."
+    ipa: "səɽək pər ʋɪroːd̪ʱ prəd̪ərʃən ɦʊaː"
+    pos: "phrase"
+    bases:
+      - { word: "सड़क", base: "सड़क", reading: "saṛak" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "विरोध", ref: "hi-2165" }
+      - { word: "प्रदर्शन", ref: "hi-2166" }
+      - { word: "हुआ", base: "होना", reading: "huā" }
+    confusables:
+      - { id: "w1", word: "आंदोलन", reading: "āndōlan", kind: "word" }
+      - { id: "w2", word: "हादसा", reading: "hādsā", kind: "word" }
+  - id: "hi-5330"
+    target: "भयानक हादसे में कोई घायल नहीं।"
+    reading: "bhayānak hādsē mēm̐ kōī ghāyal nahīm̐."
+    ipa: "bʱəjaːnək ɦaːd̪seː mẽː koːiː ɡʱaːjəl nəɦĩː"
+    pos: "phrase"
+    bases:
+      - { word: "भयानक", base: "भयानक", reading: "bhayānak" }
+      - { word: "हादसे", base: "हादसा", reading: "hādsē" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "कोई", ref: "hi-0758" }
+      - { word: "घायल", base: "घायल", reading: "ghāyal" }
+      - { word: "नहीं", ref: "hi-0156" }
+    confusables:
+      - { id: "w1", word: "घटना", reading: "ghaṭnā", kind: "word" }
+      - { id: "w2", word: "अपराध", reading: "aprādh", kind: "word" }
+  - id: "hi-5331"
+    target: "सरकार की घोषणा पर लोग बात कर रहे हैं।"
+    reading: "sarkār kī ghōśṇā par lōg bāt kar rahē haim̐."
+    ipa: "sərkaːr kiː ɡʱoːʃɳaː pər loːɡ baːt̪ kər rəɦeː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "सरकार", ref: "hi-2276" }
+      - { word: "की", ref: "hi-0061" }
+      - { word: "घोषणा", ref: "hi-2169" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "लोग", ref: "hi-0761" }
+      - { word: "बात", ref: "hi-1864" }
+      - { word: "कर", base: "करना", reading: "kar" }
+      - { word: "रहे", base: "रहना", reading: "rahē" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "w1", word: "नीति", reading: "nīti", kind: "word" }
+      - { id: "w2", word: "बयान", reading: "bayān", kind: "word" }
+  - id: "hi-5332"
+    target: "संपादक ने लेख छापने की मंज़ूरी दी।"
+    reading: "sampādak nē lēkh chāpnē kī maṁzūrī dī."
+    ipa: "səmpaːd̪ək neː leːkʰ tʃʰaːpneː kiː mə̃zuːriː d̪iː"
+    pos: "phrase"
+    bases:
+      - { word: "संपादक", ref: "hi-2162" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "लेख", ref: "hi-2161" }
+      - { word: "छापने", base: "छापना", reading: "chāpnē" }
+      - { word: "की", ref: "hi-0061" }
+      - { word: "मंज़ूरी", base: "मंज़ूरी", reading: "maṁzūrī" }
+      - { word: "दी", base: "देना", reading: "dī" }
+    confusables:
+      - { id: "w1", word: "विज्ञापन", reading: "vigyāpan", kind: "word" }
+      - { id: "w2", word: "सुर्खी", reading: "surkhī", kind: "word" }
+  - id: "hi-5333"
+    target: "आज की सुर्खी बहुत बड़ी है।"
+    reading: "āj kī surkhī bahut baṛī hai."
+    ipa: "aːdʒ kiː sʊrkʰiː bəɦʊt̪ bəɽiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "आज", ref: "hi-0299" }
+      - { word: "की", ref: "hi-0061" }
+      - { word: "सुर्खी", ref: "hi-2160" }
+      - { word: "बहुत", ref: "hi-0866" }
+      - { word: "बड़ी", base: "बड़ा", reading: "baṛī" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "लेख", reading: "lēkh", kind: "word" }
+      - { id: "w2", word: "सूचना", reading: "sūcnā", kind: "word" }
+  - id: "hi-5334"
+    target: "संवाददाता ने मौके से सूचना भेजी।"
+    reading: "saṁvāddātā nē maukē sē sūcnā bhējī."
+    ipa: "sə̃ʋaːd̪d̪aːt̪aː neː mɔːkeː seː suːtʃnaː bʱeːdʒiː"
+    pos: "phrase"
+    bases:
+      - { word: "संवाददाता", ref: "hi-2151" }
+      - { word: "ने", base: "ने", reading: "nē" }
+      - { word: "मौके", base: "मौका", reading: "maukē" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "सूचना", ref: "hi-2158" }
+      - { word: "भेजी", base: "भेजना", reading: "bhējī" }
+    confusables:
+      - { id: "w1", word: "संपादक", reading: "sampādak", kind: "word" }
+      - { id: "w2", word: "सुर्खी", reading: "surkhī", kind: "word" }
+  - id: "hi-5335"
+    target: "टीवी पर प्रसारण रात नौ बजे होता है।"
+    reading: "ṭīvī par prasāraṇ rāt nau bajē hōtā hai."
+    ipa: "ʈiːʋiː pər prəsaːrəɳ raːt̪ nɔː bədʒeː ɦoːt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "टीवी", base: "टीवी", reading: "ṭīvī" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "प्रसारण", ref: "hi-2163" }
+      - { word: "रात", base: "रात", reading: "rāt" }
+      - { word: "नौ", base: "नौ", reading: "nau" }
+      - { word: "बजे", base: "बजना", reading: "bajē" }
+      - { word: "होता", base: "होना", reading: "hōtā" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "w1", word: "समाचार", reading: "samācār", kind: "word" }
+      - { id: "w2", word: "रेडियो", reading: "rēḍiyō", kind: "word" }

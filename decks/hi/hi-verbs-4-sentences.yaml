@@ -1,0 +1,163 @@
+schema: 1
+id: "hi-verbs-4-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-5786"
+    target: "बर्फ़ धूप में पिघल गई।"
+    reading: "barf dhūp mēm̐ pighal gaī."
+    ipa: "bərf d̪ʱuːp mẽː pɪɡʱəl ɡəiː"
+    pos: "phrase"
+    bases:
+      - { word: "बर्फ़", ref: "hi-1266" }
+      - { word: "धूप", ref: "hi-1255" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "पिघल", base: "पिघलना", reading: "pighal" }
+      - { word: "गई", base: "जाना", reading: "gaī" }
+    confusables:
+      - { id: "w1", word: "हवा", reading: "havā", kind: "word" }
+      - { id: "w2", word: "दूध", reading: "dūdh", kind: "word" }
+  - id: "hi-5787"
+    target: "दूध उबल गया।"
+    reading: "dūdh ubal gayā."
+    ipa: "d̪uːd̪ʱ ʊbəl ɡəjaː"
+    pos: "phrase"
+    bases:
+      - { word: "दूध", ref: "hi-0259" }
+      - { word: "उबल", base: "उबलना", reading: "ubal" }
+      - { word: "गया", base: "जाना", reading: "gayā" }
+    confusables:
+      - { id: "w1", word: "पानी", reading: "pānī", kind: "word" }
+      - { id: "w2", word: "खाना", reading: "khānā", kind: "word" }
+  - id: "hi-5788"
+    target: "बत्ती बुझ गई।"
+    reading: "battī bujh gaī."
+    ipa: "bət̪t̪iː bʊdʒʱ ɡəiː"
+    pos: "phrase"
+    bases:
+      - { word: "बत्ती", ref: "hi-0436" }
+      - { word: "बुझ", base: "बुझना", reading: "bujh" }
+      - { word: "गई", base: "जाना", reading: "gaī" }
+    confusables:
+      - { id: "w1", word: "हवा", reading: "havā", kind: "word" }
+      - { id: "w2", word: "बर्फ़", reading: "barf", kind: "word" }
+  - id: "hi-5789"
+    target: "बच्चा अभी कूदा।"
+    reading: "baccā abhī kūdā."
+    ipa: "bətʃtʃaː əbʱiː kuːd̪aː"
+    pos: "phrase"
+    bases:
+      - { word: "बच्चा", ref: "hi-0111" }
+      - { word: "अभी", ref: "hi-0301" }
+      - { word: "कूदा", base: "कूदना", reading: "kūdā" }
+    confusables:
+      - { id: "w1", word: "पढ़ना", reading: "paṛhnā", kind: "word" }
+      - { id: "w2", word: "पड़ना", reading: "paṛnā", kind: "word" }
+  - id: "hi-5790"
+    target: "मैं रास्ते में भटक गया।"
+    reading: "maim̐ rāstē mēm̐ bhaṭak gayā."
+    ipa: "mɛ̃ː raːst̪eː mẽː bʱəʈək ɡəjaː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "रास्ते", base: "रास्ता", reading: "rāstē" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "भटक", base: "भटकना", reading: "bhaṭak" }
+      - { word: "गया", base: "जाना", reading: "gayā" }
+    confusables:
+      - { id: "w1", word: "दरवाज़ा", reading: "darvāzā", kind: "word" }
+      - { id: "w2", word: "पेड़", reading: "pēṛ", kind: "word" }
+  - id: "hi-5791"
+    target: "उसने रस्सी थामी।"
+    reading: "usnē rassī thāmī."
+    ipa: "ʊsneː rəssiː t̪ʰaːmiː"
+    pos: "phrase"
+    bases:
+      - { word: "उसने", base: "वह", reading: "usnē" }
+      - { word: "रस्सी", ref: "hi-1719" }
+      - { word: "थामी", base: "थामना", reading: "thāmī" }
+    confusables:
+      - { id: "w1", word: "बत्ती", reading: "battī", kind: "word" }
+      - { id: "w2", word: "बैग", reading: "baig", kind: "word" }
+  - id: "hi-5792"
+    target: "उसने बिस्कुट चबाया।"
+    reading: "usnē biskuṭ cabāyā."
+    ipa: "ʊsneː bɪskʊʈ tʃəbaːjaː"
+    pos: "phrase"
+    bases:
+      - { word: "उसने", base: "वह", reading: "usnē" }
+      - { word: "बिस्कुट", base: "बिस्कुट", reading: "biskuṭ" }
+      - { word: "चबाया", base: "चबाना", reading: "cabāyā" }
+    confusables:
+      - { id: "w1", word: "रोटी", reading: "rōṭī", kind: "word" }
+      - { id: "w2", word: "सेब", reading: "sēb", kind: "word" }
+  - id: "hi-5793"
+    target: "माँ नींबू निचोड़ रही है।"
+    reading: "mām̐ nīmbū nicōṛ rahī hai."
+    ipa: "mãː niːmbuː nɪtʃoːɽ rəɦiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "माँ", ref: "hi-0377" }
+      - { word: "नींबू", ref: "hi-0986" }
+      - { word: "निचोड़", base: "निचोड़ना", reading: "nicōṛ" }
+      - { word: "रही", base: "रहना", reading: "rahī" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "सेब", reading: "sēb", kind: "word" }
+      - { id: "w2", word: "केला", reading: "kēlā", kind: "word" }
+  - id: "hi-5794"
+    target: "मैंने फूल सूँघा।"
+    reading: "maim̐nē phūl sūm̐ghā."
+    ipa: "mɛ̃ːneː pʰuːl sũːɡʱaː"
+    pos: "phrase"
+    bases:
+      - { word: "मैंने", base: "मैं", reading: "maim̐nē" }
+      - { word: "फूल", ref: "hi-1928" }
+      - { word: "सूँघा", base: "सूँघना", reading: "sūm̐ghā" }
+    confusables:
+      - { id: "w1", word: "पेड़", reading: "pēṛ", kind: "word" }
+      - { id: "w2", word: "बीज", reading: "bīj", kind: "word" }
+  - id: "hi-5795"
+    target: "पहले खाना चखिए।"
+    reading: "pahlē khānā cakhiē."
+    ipa: "pəɦleː kʰaːnaː tʃəkʰɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "पहले", ref: "hi-0823" }
+      - { word: "खाना", ref: "hi-0332" }
+      - { word: "चखिए", base: "चखना", reading: "cakhiē" }
+    confusables:
+      - { id: "w1", word: "पानी", reading: "pānī", kind: "word" }
+      - { id: "w2", word: "रोटी", reading: "rōṭī", kind: "word" }
+  - id: "hi-5796"
+    target: "किसान खेत में बीज बो रहा है।"
+    reading: "kisān khēt mēm̐ bīj bō rahā hai."
+    ipa: "kɪsaːn kʰeːt̪ mẽː biːdʒ boː rəɦaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "किसान", ref: "hi-0407" }
+      - { word: "खेत", ref: "hi-1070" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "बीज", ref: "hi-1936" }
+      - { word: "बो", base: "बोना", reading: "bō" }
+      - { word: "रहा", base: "रहना", reading: "rahā" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", word: "फूल", reading: "phūl", kind: "word" }
+      - { id: "w2", word: "पेड़", reading: "pēṛ", kind: "word" }
+  - id: "hi-5797"
+    target: "मैंने दरवाज़ा तोड़ा।"
+    reading: "maim̐nē darvāzā tōṛā."
+    ipa: "mɛ̃ːneː d̪ərʋaːzaː t̪oːɽaː"
+    pos: "phrase"
+    bases:
+      - { word: "मैंने", base: "मैं", reading: "maim̐nē" }
+      - { word: "दरवाज़ा", ref: "hi-0426" }
+      - { word: "तोड़ा", base: "तोड़ना", reading: "tōṛā" }
+    confusables:
+      - { id: "w1", word: "घर", reading: "ghar", kind: "word" }
+      - { id: "w2", word: "कमरा", reading: "kamrā", kind: "word" }
