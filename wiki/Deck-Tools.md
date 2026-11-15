@@ -466,6 +466,15 @@ form, another variety only, ambiguous, invalid; or, for the rules, unchanged
 or invalid). `test_phonetic.py` tests them on a fake dump and a tiny
 language, with no network.
 
+The patcher reads the quoting and indent from the card's own `ipa` line, not
+from its id line: a plain `- id:` over quoted `"ipa":` keys (some Telugu core
+files on `decks-live`), all-plain, all-quoted and JSON-style cards each get
+`phonetic` and `phonetic_source` in the style of that `ipa` line, directly
+after it. A card the patcher still cannot write is never silent: it is
+counted in the report's `could not write (layout)` row (in a dry run too, so
+the counts match a `--write` run), each is named on stderr, and a `--write`
+run then exits 1.
+
 ## `wikipedia_frequency.py`
 
 Counts how often each word is used in a language's Wikipedia, and gives

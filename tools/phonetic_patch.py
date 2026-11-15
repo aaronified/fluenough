@@ -136,8 +136,9 @@ def patch(text: str, fills: dict[str, tuple[str, str]],
     layout"`. A card that was patched is not in the second result. Every
     other line of the file is exactly as it was.
 
-    The two lines copy the card's own style: plain or quoted keys, and a
-    trailing comma in a JSON-style file. A JSON-style card whose `ipa` is its
+    The two lines copy the style of the card's own `ipa` line: plain or
+    quoted keys (whatever its id line uses), its indent, and a trailing comma
+    in a JSON-style file. A JSON-style card whose `ipa` is its
     last key is `"unsupported layout"`: a line cannot go in after it without
     adding a comma to the `ipa` line, and the file is only ever inserted into.
 
@@ -155,23 +156,28 @@ def patch(text: str, fills: dict[str, tuple[str, str]],
             continue
         start, end = block.start, block.end
         pad = " " * block.indent
-        q = '"' if block.quoted else ""
         comma = "," if block.json else ""
-        key = lambda name: re.compile(rf'^{pad}{q}{name}{q}:')  # noqa: E731
-        if any(re.match(rf'^{pad}{q}phonetic(?:_source)?{q}:', ln) for ln in lines[start:end]):
+        # The card's own keys may be quoted or plain whatever its id line is
+        # (a plain `- id:` over `"ipa":` lines exists on decks-live), so the
+        # style is read from the `ipa` line itself, not from the id line.
+        ipa_rx = re.compile(rf'^{pad}("?)ipa\1:')
+        at = next((k for k in range(start, end) if ipa_rx.match(lines[k])), None)
+        m_ipa = ipa_rx.match(lines[at]) if at is not None else None
+        q = m_ipa.group(1) if m_ipa else ('"' if block.quoted else "")
+        if any(re.match(rf'^{pad}"?phonetic(?:_source)?"?:', ln) for ln in lines[start:end]):
             at_p = next((k for k in range(start, end)
-                         if key("phonetic").match(lines[k])), None)
+                         if re.match(rf'^{pad}"?phonetic"?:', lines[k])), None)
             by_rules = any(re.match(
-                rf'^{pad}{q}phonetic_source{q}:\s*(?:"rules"|\'rules\'|rules)'
+                rf'^{pad}"?phonetic_source"?:\s*(?:"rules"|\'rules\'|rules)'
                 rf'{comma}\s*(?:#.*)?$', lines[k].rstrip("\r"))
                 for k in range(start, end))
             if replace_rules and at_p is not None and by_rules:
                 cr = "\r" if lines[at_p].endswith("\r") else ""
-                lines[at_p] = f"{pad}{q}phonetic{q}: {quote(form)}{comma}{cr}"
+                qp = '"' if lines[at_p].lstrip().startswith('"') else ""
+                lines[at_p] = f"{pad}{qp}phonetic{qp}: {quote(form)}{comma}{cr}"
             else:
                 left[cid] = "has phonetic"
             continue
-        at = next((k for k in range(start, end) if key("ipa").match(lines[k])), None)
         if at is None:
             left[cid] = "no ipa line"
             continue
@@ -185,6 +191,39 @@ def patch(text: str, fills: dict[str, tuple[str, str]],
         lines[j:j] = [f"{pad}{q}phonetic{q}: {quote(form)}{comma}{cr}",
                       f'{pad}{q}phonetic_source{q}: "{source}"{comma}{cr}']
     return "\n".join(lines), left
+
+
+UNWRITABLE = "could not write (layout)"
+
+
+def apply_fills(fills: dict[Path, dict[str, tuple[str, str]]],
+                outcomes: dict[tuple[Path, str], tuple[str, str]],
+                coverage: "Coverage", write: bool, replace_rules: bool = False) -> None:
+    """Patch every file in [fills] (written only when [write]) and move each
+    card the patcher could not write from its outcome in [coverage] to
+    `UNWRITABLE`, so a miss is counted whether or not the run writes.
+    [outcomes] maps (file, card id) to the card's deck and counted outcome.
+    """
+    for path, fill in fills.items():
+        text = path.read_text(encoding="utf-8")
+        new, left = patch(text, fill, replace_rules=replace_rules)
+        for cid, why in left.items():
+            deck, outcome = outcomes[(path, cid)]
+            print(f"warning: {path}: {cid} not written ({why})", file=sys.stderr)
+            coverage.move(deck, outcome, UNWRITABLE)
+        if write and new != text:
+            path.write_text(new, encoding="utf-8", newline="")
+
+
+def unwritable_exit(coverage: "Coverage", write: bool) -> int:
+    """The exit code of a run: 1 under [write] when any card could not be
+    written (stderr says how many), else 0."""
+    n = coverage.total().get(UNWRITABLE, 0)
+    if n and write:
+        print(f"error: {n} card(s) could not be written ({UNWRITABLE}); "
+              "see the warnings above", file=sys.stderr)
+        return 1
+    return 0
 
 
 # --- Reading the cards ------------------------------------------------------
@@ -245,6 +284,15 @@ class Coverage:
     def add(self, deck: str, outcome: str) -> None:
         row = self.decks.setdefault(deck, {})
         row[outcome] = row.get(outcome, 0) + 1
+
+    def move(self, deck: str, old: str, new: str) -> None:
+        """Count one card of [deck] as [new] instead of [old]."""
+        row = self.decks.setdefault(deck, {})
+        if row.get(old, 0) > 0:
+            row[old] -= 1
+            if not row[old]:
+                del row[old]
+        row[new] = row.get(new, 0) + 1
 
     def total(self) -> dict[str, int]:
         out: dict[str, int] = {}
