@@ -1,0 +1,47 @@
+schema: 1
+id: "kn-en-reading-chores"
+name: "Reading: the chore list"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A Kannada passage written for this course with the words taught up to its unit (a weekly chore list on the wall). Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-chore-list"
+    title: "Chore list"
+    sentences:
+      - text: "ಸೋಮವಾರ ನಾನು ಕಸ ಗುಡಿಸುತ್ತೇನೆ."
+        reading: "sōmavāra nānu kasa guḍisuttēne."
+        ipa: "soːmaʋaːra naːnu kasa ɡuɖisut̪t̪eːne"
+      - text: "ಮಂಗಳವಾರ ಬಟ್ಟೆ ಒಗೆಯುತ್ತೇನೆ."
+        reading: "maṅgaḷavāra baṭṭe ogeyuttēne."
+        ipa: "maŋɡaɭaʋaːra baʈʈe oɡejut̪t̪eːne"
+      - text: "ಬುಧವಾರ ನೆಲ ತೊಳೆಯುತ್ತೇನೆ."
+        reading: "budhavāra nela toḷeyuttēne."
+        ipa: "bud̪ʱaʋaːra nela t̪oɭejut̪t̪eːne"
+      - text: "ಗುರುವಾರ ಬಟ್ಟೆಗಳನ್ನು ಒಣಗಿಸುತ್ತೇನೆ."
+        reading: "guruvāra baṭṭegaḷannu oṇagisuttēne."
+        ipa: "ɡuruʋaːra baʈʈeɡaɭannu oɳaɡisut̪t̪eːne"
+      - text: "ಶನಿವಾರ ಮನೆ ಸ್ವಚ್ಛಗೊಳಿಸುತ್ತೇನೆ."
+        reading: "śanivāra mane svacchagoḷisuttēne."
+        ipa: "ʃaniʋaːra mane sʋatʃtʃʰaɡoɭisut̪t̪eːne"
+    questions:
+      - id: "kn-9352"
+        prompt: { en: "Which day do you wash clothes?" }
+        options:
+          - { en: "Monday" }
+          - { en: "Tuesday" }
+          - { en: "Thursday" }
+        answer: 2
+      - id: "kn-9353"
+        prompt: { en: "On Wednesday I wash the floor." }
+        answer: true
+      - id: "kn-9354"
+        prompt: { en: "What do you do on Saturday?" }
+        options:
+          - { en: "Clean the house" }
+          - { en: "Dry the clothes" }
+          - { en: "Sweep the floor" }
+        answer: 1
