@@ -1,11 +1,37 @@
 # The people behind the Telugu recommended works (wiki/Deck-Format.md, Recommendations; D5).
 # Dates are the years of birth and death, from each person's Wikipedia article. No pictures: none has a licence checked yet.
+# Vemana's death year is from Wikidata; English Wikipedia gives only c. 1652 and Telugu Wikipedia c. 1367-1478.
 schema: 1
 kind: "creators"
 id: "creators-te"
 language: "te"
 license: "CC-BY-SA-4.0"
-eras: []
+eras:
+  - id: "kakatiya"
+    name: { te: "కాకతీయ కాలం", en: "Kakatiya period" }
+    reading: { te: "kākatīya kālaṁ" }
+    from: 1083
+    to: 1323
+  - id: "vijayanagara"
+    name: { te: "విజయనగర కాలం", en: "Vijayanagara period" }
+    reading: { te: "vijayanagara kālaṁ" }
+    from: 1336
+    to: 1646
+  - id: "nayaka"
+    name: { te: "నాయక కాలం", en: "Nayaka period" }
+    reading: { te: "nāyaka kālaṁ" }
+    from: 1500
+    to: 1800
+  - id: "colonial"
+    name: { te: "వలస కాలం", en: "Colonial period" }
+    reading: { te: "valasa kālaṁ" }
+    from: 1800
+    to: 1947
+  - id: "twentieth-century"
+    name: { te: "ఇరవయ్యవ శతాబ్దం", en: "Twentieth century" }
+    reading: { te: "iravayyava śatābdaṁ" }
+    from: 1900
+    to: 2000
 creators:
   - id: "te-k-viswanath"
     name:
@@ -75,8 +101,16 @@ creators:
       en: { text: "Gurajada Apparao" }
     born: 1862
     died: 1915
+    era: "colonial"
     bio:
       en: "Gurajada Apparao, full name Gurajada Venkata Apparao, was an Indian playwright, poet and writer known for his works in Telugu. He wrote the play Kanyasulkam in 1892."
+
+    legacy:
+      text: { en: "His play Kanyasulkam and his patriotic song Desamunu Preminchumanna are still widely known in Telugu." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article says Kanyasulkam is considered the greatest play in the Telugu language." }, source: { url: "https://en.wikipedia.org/wiki/Gurajada_Apparao", accessed: "2026-11-15" } }
+        - { kind: "music", year: 1910, text: { en: "In 1910 he wrote the patriotic song Desamunu Preminchumanna, which the same article calls widely known." }, source: { url: "https://en.wikipedia.org/wiki/Gurajada_Apparao", accessed: "2026-11-15" } }
+
   - id: "te-shankarambadi-sundarachari"
     name:
       en: { text: "Shankarambadi Sundarachari" }
@@ -84,3 +118,90 @@ creators:
     died: 1977
     bio:
       en: "Shankarambadi Sundarachari was a Telugu writer. He wrote the words of Maa Telugu Talliki, the state song of Andhra Pradesh."
+  - id: "te-tallapaka-annamacharya"
+    name:
+      en: { text: "Tallapaka Annamacharya" }
+    born: 1408
+    died: 1503
+    era: "vijayanagara"
+    bio:
+      en: "Tallapaka Annamacharya, also called Annamayya, was a Telugu composer and Hindu saint. He wrote devotional songs in praise of Venkateswara, a form of Vishnu."
+    legacy:
+      text: { en: "He is called the grandfather of Telugu songwriting in Telugu literature." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article says that Telugu literature calls him the grandfather of Telugu songwriting, and that he is the earliest known Indian musician to use this song form." }, source: { url: "https://en.wikipedia.org/wiki/Annamacharya", accessed: "2026-11-15" } }
+  - id: "te-tyagaraja"
+    name:
+      en: { text: "Tyagaraja" }
+    born: 1767
+    died: 1847
+    era: "colonial"
+    bio:
+      en: "Tyagaraja was a Carnatic composer and singer. He wrote hundreds of devotional songs, mostly in Telugu, in praise of the god Rama."
+    legacy:
+      text: { en: "He is one of the three great composers of Carnatic music." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article says that Tyagaraja, with Syama Sastri and Muthuswami Dikshitar, is regarded as the Trinity of Carnatic music." }, source: { url: "https://en.wikipedia.org/wiki/Tyagaraja", accessed: "2026-11-15" } }
+  - id: "te-bhadrachala-ramadasu"
+    name:
+      en: { text: "Bhadrachala Ramadasu" }
+    born: { year: 1620, circa: true }
+    died: 1688
+    era: "nayaka"
+    bio:
+      en: "Bhadrachala Ramadasu, also called Kancharla Gopanna, was a devotee of Rama and a poet and composer. He lived in the seventeenth century."
+    legacy:
+      text: { en: "He is remembered as a famous classical composer of the Telugu classical era." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article calls him a famous classical composer of the Telugu classical era and a devotee of Rama." }, source: { url: "https://en.wikipedia.org/wiki/Bhadrachala_Ramadasu", accessed: "2026-11-15" } }
+  - id: "te-kshetrayya"
+    name:
+      en: { text: "Kshetrayya" }
+    born: { year: 1600, circa: true }
+    died: { year: 1680, circa: true }
+    era: "nayaka"
+    bio:
+      en: "Kshetrayya was a Telugu poet who wrote short devotional love songs about the god Krishna in the seventeenth century."
+    legacy:
+      text: { en: "He is credited with more than four thousand compositions, though only a handful survive." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article says he is credited with more than 4000 compositions, although only a handful have survived." }, source: { url: "https://en.wikipedia.org/wiki/Kshetrayya", accessed: "2026-11-15" } }
+
+  - id: "te-basavaraju-apparao"
+    name:
+      en: { text: "Basavaraju Apparao" }
+    born: 1894
+    died: 1933
+    era: "twentieth-century"
+    bio:
+      en: "Basavaraju Apparao was a Telugu poet of the romantic movement in early twentieth-century Telugu poetry. He was born in 1894 near Vijayawada and died in 1933."
+    legacy:
+      text: { en: "His songs were printed after his death, and Telugu critics count him among the poets of the romantic age." }
+      items:
+        - { kind: "other", text: { en: "Telugu Wikipedia counts him among the poets of the Bhavakavitha, the romantic age of Telugu poetry." }, source: { url: "https://te.wikipedia.org/wiki/%E0%B0%AC%E0%B0%B8%E0%B0%B5%E0%B0%B0%E0%B0%BE%E0%B0%9C%E0%B1%81_%E0%B0%85%E0%B0%AA%E0%B1%8D%E0%B0%AA%E0%B0%BE%E0%B0%B0%E0%B0%BE%E0%B0%B5%E0%B1%81", accessed: "2026-11-15" } }
+        - { kind: "other", text: { en: "Telugu Wikisource lists his songs in one collection, printed in 1934 as a memorial edition." }, source: { url: "https://te.wikisource.org/wiki/%E0%B0%AC%E0%B0%B8%E0%B0%B5%E0%B0%B0%E0%B0%BE%E0%B0%9C%E0%B1%81_%E0%B0%85%E0%B0%AA%E0%B1%8D%E0%B0%AA%E0%B0%BE%E0%B0%B0%E0%B0%BE%E0%B0%B5%E0%B1%81_%E0%B0%97%E0%B1%80%E0%B0%A4%E0%B0%AE%E0%B1%81%E0%B0%B2%E0%B1%81", accessed: "2026-11-15" } }
+  - id: "te-chilakamarti"
+    name:
+      en: { text: "Chilakamarti Lakshmi Narasimham" }
+    born: 1867
+    died: 1946
+    era: "colonial"
+    bio:
+      en: "Chilakamarti Lakshmi Narasimham was a Telugu playwright, novelist and short-story writer. He was also a social reformer, and he wrote the novel Hemalatha in 1896."
+    legacy:
+      text: { en: "He is known as the Andhra Scott, after the Scottish novelist Walter Scott." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article says he is called the Andhra Scott, after Walter Scott." }, source: { url: "https://en.wikipedia.org/wiki/Chilakamarti_Lakshmi_Narasimham", accessed: "2026-11-15" } }
+        - { kind: "other", text: { en: "The same article dates his novel Hemalatha to 1896." }, source: { url: "https://en.wikipedia.org/wiki/Chilakamarti_Lakshmi_Narasimham", accessed: "2026-11-15" } }
+  - id: "te-vemana"
+    name:
+      en: { text: "Yogi Vemana" }
+    born: { year: 1652, circa: true }
+    died: { year: 1730, circa: true }
+    era: "nayaka"
+    bio:
+      en: "Yogi Vemana was a Telugu poet who wrote short verses about morals in a simple, everyday style. Scholars do not agree on his dates, so the years here are estimates."
+    legacy:
+      text: { en: "Many lines of his poems are now everyday Telugu sayings." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article says many lines of his poems are now colloquial phrases of the Telugu language." }, source: { url: "https://en.wikipedia.org/wiki/Vemana", accessed: "2026-11-15" } }
