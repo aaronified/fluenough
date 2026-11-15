@@ -1,0 +1,17 @@
+schema: 1
+id: "ja-en-grammar-keigo-sonkeigo"
+kind: "layer"
+core: "ja-grammar-keigo-sonkeigo"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Honorific verbs: sonkeigo"
+description: "Verbs that raise the person who acts, so the speaker shows respect to them: most take お (o) and になります (ni narimasu), and a few have a word of their own. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "sonkeigo": "honorific form of {meaning}"
+rules:
+  "ja-rule-sonkeigo":
+    name: "Honorific verbs: sonkeigo"
+    explanation: "Sonkeigo raises the person who acts. Most verbs take お (o) before the stem and になります (ni narimasu) after it: かく (kaku), to write, becomes {1}. Some verbs have a word of their own: いく (iku) and くる (kuru) become {2}, たべる (taberu) and のむ (nomu) become {3}, みる (miru) becomes {5}, and ねる (neru) becomes {6}. する (suru) becomes {4}."
