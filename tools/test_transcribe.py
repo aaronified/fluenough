@@ -512,7 +512,7 @@ class DeckModeTest(unittest.TestCase):
         self.assertTrue(after.startswith("# a comment that must survive\n"))
 
     def test_check_exit_codes(self) -> None:
-        path = self.deck(DECK)
+        path = self.deck(DECK.replace("'cēnu'", '"cēnu"'))
         self.assertEqual(transcribe_decks.main(
             ["x", "--check", str(path.parent), "te"]), 1)
         self.assertEqual(transcribe_decks.main(
@@ -589,7 +589,7 @@ class DeckModeTest(unittest.TestCase):
         self.assertEqual(report.differences, [])
 
     def test_all_skips_suffixes_and_text_outside_the_script(self) -> None:
-        text = ('part: "core"\nlanguage: { script: "telugu" }\ncards:\n'
+        text = ('part: "core"\nlanguage:\n  script: "telugu"\ncards:\n'
                 '  - id: "te-9401"\n    target: "p"\n'
                 '    reading: "x"\n    ipa: "y"\n'
                 '  - id: "te-9402"\n    target: "-ిన"\n'
