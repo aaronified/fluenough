@@ -1,0 +1,101 @@
+# A culture deck of French-language texts from the eighteenth to the early twentieth century that are in the public domain:
+# one opening line each, with its source, its rights basis and its creator (wiki/Plan-Deck-Kinds-And-Topics.md). Built from
+# French Wikipedia and French Wikisource pages only, and read there. Partial: three of the plan's eighteen (ids fr-4250 to
+# fr-4252; fr-4253 to fr-4299 unused). Dropped, with the reason read on the page: the traditional songs (Frère Jacques, Au
+# clair de la lune, Sur le pont d'Avignon, A la claire fontaine, Il était un petit navire, Alouette): the Wikisource pages
+# read gave no first-publication date before 1900 for a text of the song itself; La Marseillaise (no text on the page read);
+# Le Temps des cerises (no text read on the page); Perrault's Cendrillon and La Belle au bois dormant (the guessed Wikisource
+# page titles did not exist); Anatole France, Proust beyond the first sentence, Colette (died 1954, not searched), and
+# Apollinaire and Péguy (died in the First World War: reserve items under the plan's rule).
+schema: 1
+id: "fr-culture-4"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+genre: "culture"
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - id: "fr-4250"
+    target: "Il pleut, il pleut, bergère."
+    words: ["Il", "pleut", "il", "pleut", "bergère"]
+    ipa: "il plø il plø bɛʁʒɛʁ"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "fr-fabre-d-eglantine"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Il", base: "il" }
+      - { word: "pleut", base: "pleuvoir" }
+      - { word: "bergère", base: "bergère" }
+    source:
+      author: "Fabre d'Églantine"
+      work: "Il pleut, il pleut, bergère, first line"
+      date: 1802
+      edition: "Œuvres mêlées et posthumes, 1802, pp. 182-184, as shown on French Wikisource (Il pleut, il pleut, bergère); the song was first printed in this posthumous collection"
+      url: "https://fr.wikisource.org/wiki/Il_pleut,_il_pleut,_berg%C3%A8re"
+      basis: "public-domain"
+      author_died: 1794
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4251"
+    target: "Il était une fois une petite fille de village."
+    words: ["Il", "était", "une", "fois", "une", "petite", "fille", "de", "village"]
+    ipa: "il etɛ yn fwa yn pətit fij də vilaʒ"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "fr-charles-perrault"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Il", base: "il" }
+      - { word: "était", base: "être" }
+      - { word: "une", base: "un" }
+      - { word: "fois", base: "fois" }
+      - { word: "petite", base: "petit" }
+      - { word: "fille", base: "fille" }
+      - { word: "de", base: "de" }
+      - { word: "village", base: "village" }
+    source:
+      author: "Charles Perrault"
+      work: "Contes de ma mère l'Oye, Le Petit Chaperon rouge, opening"
+      date: 1697
+      edition: "Œuvres choisies de Charles Perrault, 1826 edition, Le Petit Chaperon Rouge, as shown on French Wikisource; the Contes de ma mère l'Oye were published in 1697 (French Wikipedia); spelling as printed"
+      url: "https://fr.wikisource.org/wiki/%C5%92uvres_choisies_de_Charles_Perrault,_%C3%A9dition_1826/Contes_de_ma_m%C3%A8re_l%E2%80%99Oye/Le_Petit_Chaperon_Rouge"
+      basis: "public-domain"
+      author_died: 1703
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
+  - id: "fr-4252"
+    target: "Longtemps, je me suis couché de bonne heure."
+    words: ["Longtemps", "je", "me", "suis", "couché", "de", "bonne", "heure"]
+    ipa: "lɔ̃tɑ̃ ʒə mə sɥi kuʃe də bɔn œʁ"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "listening"]
+    creator: "fr-marcel-proust"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Longtemps", base: "longtemps" }
+      - { word: "je", base: "je" }
+      - { word: "me", base: "me" }
+      - { word: "suis", base: "être" }
+      - { word: "couché", base: "coucher" }
+      - { word: "de", base: "de" }
+      - { word: "bonne", base: "bon" }
+      - { word: "heure", base: "heure" }
+    source:
+      author: "Marcel Proust"
+      work: "Du côté de chez Swann, first sentence"
+      date: 1913
+      edition: "Du côté de chez Swann, Grasset 1913, first part of À la recherche du temps perdu, as shown on French Wikisource (Du côté de chez Swann/Partie 1); the sentence is quoted there from the Gallimard 1946 edition of the same text"
+      url: "https://fr.wikisource.org/wiki/Du_c%C3%B4t%C3%A9_de_chez_Swann/Partie_1"
+      basis: "public-domain"
+      author_died: 1922
+      jurisdiction: "FR"
+      rights_checked: "2026-11-15"
