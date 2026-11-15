@@ -1,0 +1,50 @@
+schema: 1
+id: "bn-en-reading-imperatives"
+name: "Reading: imperatives"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Instructions in class and signs about what to do, one to be heard and one to be read, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-class-instructions"
+    title: "Instructions in class"
+    theme: "school"
+    sentences:
+      - { text: "শুনুন।", reading: "śunun.", ipa: "ʃunun" }
+      - { text: "বসুন।", reading: "bośun.", ipa: "boʃun" }
+      - { text: "বইটা খোলো।", reading: "boiṭā kholo.", ipa: "boiʈa kʰolo" }
+      - { text: "দেখো আর লেখো।", reading: "dekho ār lekho.", ipa: "d̪ekʰo ar lekʰo" }
+      - { text: "বইটা পড়ো।", reading: "boiṭā pôṛo.", ipa: "boiʈa pɔɽo" }
+    questions:
+      - id: "bn-5418"
+        prompt: { en: "The teacher asks the class to sit down." }
+        answer: true
+      - id: "bn-5419"
+        prompt: { en: "What should the class do with the book?" }
+        options: [{ en: "Open it" }, { en: "Close it" }]
+        answer: 1
+      - id: "bn-5420"
+        prompt: { en: "The teacher tells the class to look and write." }
+        answer: true
+  - id: "bn-signs-and-rules"
+    title: "Signs and rules"
+    theme: "daily-life"
+    sentences:
+      - { text: "ধীরে চলুন।", reading: "dhire colun.", ipa: "d̪ʱire tʃolun" }
+      - { text: "এখানে থামুন।", reading: "ekhāne thāmun.", ipa: "ekʰane t̪ʰamun" }
+      - { text: "দেখুন।", reading: "dekhun.", ipa: "d̪ekʰun" }
+      - { text: "এখানে ফেলো না।", reading: "ekhāne phelo nā.", ipa: "ekʰane pʰelo na" }
+      - { text: "ধরো না।", reading: "dhôro nā.", ipa: "d̪ʱɔro na" }
+    questions:
+      - id: "bn-5421"
+        prompt: { en: "The first sign says to walk slowly." }
+        answer: true
+      - id: "bn-5422"
+        prompt: { en: "The sign says to stop here." }
+        answer: true
+      - id: "bn-5423"
+        prompt: { en: "The notice says not to drop things here." }
+        answer: true
