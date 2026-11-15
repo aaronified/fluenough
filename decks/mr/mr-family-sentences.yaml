@@ -1,0 +1,85 @@
+schema: 1
+id: "mr-family-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-5540"
+    target: "माझे कुटुंब मोठे आहे."
+    reading: "mājhe kuṭumb moṭhe āhe."
+    ipa: "madʒʱe kuʈumb moʈʰe aɦe"
+    pos: "phrase"
+    bases: [{ word: "माझे", reading: "mājhe", base: "मी" }, { word: "मोठे", reading: "moṭhe", base: "मोठा" }, { word: "आहे", reading: "āhe", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-0218", kind: "word" }, { id: "w2", ref: "mr-0225", kind: "word" }]
+  - id: "mr-5541"
+    target: "माझी आई शिक्षिका आहे."
+    reading: "mājhi āi śikṣikā āhe."
+    ipa: "madʒʱi ai ʃikʂika aɦe"
+    pos: "phrase"
+    bases: [{ word: "माझी", reading: "mājhi", base: "मी" }, { word: "आहे", reading: "āhe", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-0221", kind: "word" }, { id: "w2", ref: "mr-0218", kind: "word" }]
+  - id: "mr-5542"
+    target: "माझा भाऊ मोठा आहे."
+    reading: "mājhā bhāu moṭhā āhe."
+    ipa: "madzʱa bʱau moʈʰa aɦe"
+    pos: "phrase"
+    bases: [{ word: "माझा", reading: "mājhā", base: "मी" }, { word: "मोठा", reading: "moṭhā", base: "मोठा" }, { word: "आहे", reading: "āhe", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-0221", kind: "word" }, { id: "w2", ref: "mr-0222", kind: "word" }]
+  - id: "mr-5543"
+    target: "माझी मुलगी शाळेत जाते."
+    reading: "mājhi mulgi śāḷet jāte."
+    ipa: "madʒʱi mulɡi ʃaɭet̪ dzat̪e"
+    pos: "phrase"
+    bases: [{ word: "माझी", reading: "mājhi", base: "मी" }, { word: "शाळेत", reading: "śāḷet", base: "शाळा" }, { word: "जाते", reading: "jāte", base: "जाणे" }]
+    confusables: [{ id: "w1", ref: "mr-0222", kind: "word" }, { id: "f1", word: "जातो", reading: "jāto", kind: "form" }]
+  - id: "mr-5544"
+    target: "आई आणि बाबा घरी आहेत."
+    reading: "āi āṇi bābā ghari āhet."
+    ipa: "ai aɳi baba ɡʱəri aɦet̪"
+    pos: "phrase"
+    bases: [{ word: "घरी", reading: "ghari", base: "घर" }, { word: "आहेत", reading: "āhet", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-0218", kind: "word" }, { id: "f1", word: "आहे", reading: "āhe", kind: "form" }]
+  - id: "mr-5545"
+    target: "आत्या घरी येत आहे."
+    reading: "ātyā ghari yet āhe."
+    ipa: "at̪ja ɡʱəri jet̪ aɦe"
+    pos: "phrase"
+    bases: [{ word: "घरी", reading: "ghari", base: "घर" }, { word: "येत", reading: "yet", base: "येणे" }, { word: "आहे", reading: "āhe", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-0229", kind: "word" }, { id: "w2", ref: "mr-0230", kind: "word" }]
+  - id: "mr-5546"
+    target: "मामा माझ्या घरी आहे का?"
+    reading: "māmā mājhyā ghari āhe kā?"
+    ipa: "mama madʒʱja ɡʱəri aɦe ka"
+    pos: "phrase"
+    bases: [{ word: "माझ्या", reading: "mājhyā", base: "मी" }, { word: "घरी", reading: "ghari", base: "घर" }, { word: "आहे", reading: "āhe", base: "असणे" }, { word: "का", reading: "kā", base: "का" }]
+    confusables: [{ id: "w1", ref: "mr-0230", kind: "word" }, { id: "w2", ref: "mr-0228", kind: "word" }]
+  - id: "mr-5547"
+    target: "माझी बायको आणि नवरा कामावर आहेत."
+    reading: "mājhi bāyko āṇi navrā kāmāvar āhet."
+    ipa: "madʒʱi bajko aɳi nəʋra kamaʋər aɦet̪"
+    pos: "phrase"
+    bases: [{ word: "माझी", reading: "mājhi", base: "मी" }, { word: "कामावर", reading: "kāmāvar", base: "काम" }, { word: "आहेत", reading: "āhet", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-0232", kind: "word" }, { id: "w2", ref: "mr-0221", kind: "word" }]
+  - id: "mr-5548"
+    target: "सासरे आणि सासू घरी आहेत."
+    reading: "sāsre āṇi sāsu ghari āhet."
+    ipa: "sasre aɳi sasu ɡʱəri aɦet̪"
+    pos: "phrase"
+    bases: [{ word: "घरी", reading: "ghari", base: "घर" }, { word: "आहेत", reading: "āhet", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-0231", kind: "word" }, { id: "f1", word: "आहे", reading: "āhe", kind: "form" }]
+  - id: "mr-5549"
+    target: "मूल खेळत आहे."
+    reading: "mul kheḷat āhe."
+    ipa: "mul kʰeɭət̪ aɦe"
+    pos: "phrase"
+    bases: [{ word: "खेळत", reading: "kheḷat", base: "खेळणे" }, { word: "आहे", reading: "āhe", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-0223", kind: "word" }, { id: "w2", ref: "mr-0222", kind: "word" }]
+  - id: "mr-5550"
+    target: "बहीण बाजारात गेली."
+    reading: "bahiṇ bājārāt geli."
+    ipa: "bəɦiɳ badzarat̪ ɡeli"
+    pos: "phrase"
+    bases: [{ word: "बाजारात", reading: "bājārāt", base: "बाजार" }, { word: "गेली", reading: "geli", base: "जाणे" }]
+    confusables: [{ id: "w1", ref: "mr-0220", kind: "word" }, { id: "f1", word: "गेला", reading: "gelā", kind: "form" }]
