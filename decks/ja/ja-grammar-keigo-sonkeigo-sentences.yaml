@@ -1,0 +1,217 @@
+schema: 1
+id: "ja-grammar-keigo-sonkeigo-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-9400"
+    target: "せんせいはもうおかえりになりました。"
+    words: ["せんせい", "は", "もう", "おかえりになりました"]
+    reading: "sensei wa mou okaerininarimashita."
+    ipa: "seɴseː wa moː okaeɾininaɾimaɕita"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "せんせい", ref: "ja-0070" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "もう", ref: "ja-0397" }
+      - { word: "おかえりになりました", base: "かえる", reading: "kaeru" }
+    confusables:
+      - { id: "w1", ref: "ja-0343", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-sonkeigo"]
+  - id: "ja-9401"
+    target: "ぶちょうはいつおもどりになりますか。"
+    words: ["ぶちょう", "は", "いつ", "おもどりになります", "か"]
+    reading: "buchou wa itsu omodorininarimasu ka."
+    ipa: "bɯtɕoː wa itsɯ omodoɾininaɾimasɯ ka"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "ぶちょう", ref: "ja-0712" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "いつ", ref: "ja-0111" }
+      - { word: "おもどりになります", ref: "ja-0588" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - { id: "w1", ref: "ja-0348", kind: "word" }
+      - { id: "w2", ref: "ja-0353", kind: "word" }
+    rules: ["ja-rule-sonkeigo"]
+  - id: "ja-9402"
+    target: "おきゃくさまはここでおまちになります。"
+    words: ["おきゃくさま", "は", "ここ", "で", "おまちになります"]
+    reading: "okyakusama wa koko de omachininarimasu."
+    ipa: "okjakɯsama wa koko de omatɕininaɾimasɯ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "おきゃくさま", base: "おきゃくさま", reading: "okyakusama" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ここ", ref: "ja-0554" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "おまちになります", base: "まつ", reading: "matsu" }
+    confusables:
+      - { id: "w1", ref: "ja-0361", kind: "word" }
+      - { id: "w2", ref: "ja-0357", kind: "word" }
+    rules: ["ja-rule-sonkeigo"]
+  - id: "ja-9403"
+    target: "せんせいがそのほんをおよみになりました。"
+    words: ["せんせい", "が", "その", "ほん", "を", "およみになりました"]
+    reading: "sensei ga sono hon o oyomininarimashita."
+    ipa: "seɴseː ɡa sono hoɴ o ojomininaɾimaɕita"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "せんせい", ref: "ja-0070" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "その", base: "その", reading: "sono" }
+      - { word: "ほん", ref: "ja-1180" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "およみになりました", base: "よむ", reading: "yomu" }
+    confusables:
+      - { id: "w1", ref: "ja-0346", kind: "word" }
+      - { id: "w2", ref: "ja-0343", kind: "word" }
+    rules: ["ja-rule-sonkeigo"]
+  - id: "ja-9404"
+    target: "しゃちょうがえいがをごらんになりました。"
+    words: ["しゃちょう", "が", "えいが", "を", "ごらんになりました"]
+    reading: "shachou ga eiga o goranninarimashita."
+    ipa: "ɕatɕoː ɡa eːɡa o ɡoɾaɴninaɾimaɕita"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "しゃちょう", ref: "ja-0141" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "えいが", ref: "ja-1358" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "ごらんになりました", base: "みる", reading: "miru" }
+    confusables:
+      - { id: "w1", ref: "ja-0345", kind: "word" }
+      - { id: "w2", ref: "ja-0344", kind: "word" }
+    rules: ["ja-rule-sonkeigo"]
+  - id: "ja-9405"
+    target: "せんせいはおべんきょうなさいました。"
+    words: ["せんせい", "は", "おべんきょうなさいました"]
+    reading: "sensei wa obenkyounasaimashita."
+    ipa: "seɴseː wa obeɴkjoːnasaimaɕita"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "せんせい", ref: "ja-0070" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "おべんきょうなさいました", base: "べんきょうする", reading: "benkyousuru" }
+    confusables:
+      - { id: "w1", ref: "ja-0341", kind: "word" }
+      - { id: "w2", ref: "ja-0342", kind: "word" }
+    rules: ["ja-rule-sonkeigo"]
+  - id: "ja-9406"
+    target: "おきゃくさまがおかえりになりました。"
+    words: ["おきゃくさま", "が", "おかえりになりました"]
+    reading: "okyakusama ga okaerininarimashita."
+    ipa: "okjakɯsama ɡa okaeɾininaɾimaɕita"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "おきゃくさま", base: "おきゃくさま", reading: "okyakusama" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "おかえりになりました", base: "かえる", reading: "kaeru" }
+    confusables:
+      - { id: "w1", ref: "ja-0348", kind: "word" }
+      - { id: "w2", ref: "ja-0349", kind: "word" }
+    rules: ["ja-rule-sonkeigo"]
+  - id: "ja-9407"
+    target: "ぶちょうはもうおやすみになりました。"
+    words: ["ぶちょう", "は", "もう", "おやすみになりました"]
+    reading: "buchou wa mou oyasumininarimashita."
+    ipa: "bɯtɕoː wa moː ojasɯmininaɾimaɕita"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "ぶちょう", ref: "ja-0712" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "もう", ref: "ja-0397" }
+      - { word: "おやすみになりました", base: "ねる", reading: "neru" }
+    confusables:
+      - { id: "w1", ref: "ja-0346", kind: "word" }
+      - { id: "w2", ref: "ja-0347", kind: "word" }
+    rules: ["ja-rule-sonkeigo"]
+  - id: "ja-9408"
+    target: "ぶちょうがおはなしになりました。"
+    words: ["ぶちょう", "が", "おはなしになりました"]
+    reading: "buchou ga ohanashininarimashita."
+    ipa: "bɯtɕoː ɡa ohanaɕininaɾimaɕita"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "ぶちょう", ref: "ja-0712" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "おはなしになりました", base: "はなす", reading: "hanasu" }
+    confusables:
+      - { id: "w1", ref: "ja-0342", kind: "word" }
+      - { id: "w2", ref: "ja-0345", kind: "word" }
+    rules: ["ja-rule-sonkeigo"]
+  - id: "ja-9409"
+    target: "せんせいはここにいらっしゃいました。"
+    words: ["せんせい", "は", "ここ", "に", "いらっしゃいました"]
+    reading: "sensei wa koko ni irasshaimashita."
+    ipa: "seɴseː wa koko ni iɾaɕɕaimaɕita"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "せんせい", ref: "ja-0070" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ここ", ref: "ja-0554" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "いらっしゃいました", base: "いらっしゃる", reading: "irassharu" }
+    confusables:
+      - { id: "w1", ref: "ja-0355", kind: "word" }
+      - { id: "w2", ref: "ja-0361", kind: "word" }
+    rules: ["ja-rule-sonkeigo"]
+  - id: "ja-9410"
+    target: "おきゃくさまはなにをめしあがりますか。"
+    words: ["おきゃくさま", "は", "なに", "を", "めしあがります", "か"]
+    reading: "okyakusama wa nani o meshiagarimasu ka."
+    ipa: "okjakɯsama wa nani o meɕiaɡaɾimasɯ ka"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "おきゃくさま", base: "おきゃくさま", reading: "okyakusama" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "なに", ref: "ja-0109" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "めしあがります", base: "めしあがる", reading: "meshiagaru" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - { id: "w1", ref: "ja-0348", kind: "word" }
+      - { id: "w2", ref: "ja-0364", kind: "word" }
+    rules: ["ja-rule-sonkeigo"]
+  - id: "ja-9411"
+    target: "しゃちょうはまだいらっしゃいません。"
+    words: ["しゃちょう", "は", "まだ", "いらっしゃいません"]
+    reading: "shachou wa mada irasshaimasen."
+    ipa: "ɕatɕoː wa mada iɾaɕɕaimaseɴ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "しゃちょう", ref: "ja-0141" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "まだ", ref: "ja-0398" }
+      - { word: "いらっしゃいません", base: "いらっしゃる", reading: "irassharu" }
+    confusables:
+      - { id: "w1", ref: "ja-0357", kind: "word" }
+      - { id: "w2", ref: "ja-0394", kind: "word" }
+    rules: ["ja-rule-sonkeigo"]

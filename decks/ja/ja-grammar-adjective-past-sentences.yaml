@@ -1,0 +1,172 @@
+schema: 1
+id: "ja-grammar-adjective-past-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-9160"
+    target: "りょこうはたのしかったです。"
+    words: ["りょこう", "は", "たのしかった", "です"]
+    reading: "ryokou wa tanoshikatta desu."
+    ipa: "ɾjokoː wa tanoɕikatta desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "りょこう", ref: "ja-1028" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "たのしかった", ref: "ja-0475" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", ref: "ja-0472", kind: "word" }
+      - { id: "w2", ref: "ja-0473", kind: "word" }
+    rules: ["ja-rule-i-polite-past"]
+  - id: "ja-9161"
+    target: "きょうとはさむかったです。"
+    words: ["きょうと", "は", "さむかった", "です"]
+    reading: "kyouto wa samukatta desu."
+    ipa: "kjoːto wa samɯkatta desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "きょうと", ref: "ja-1031" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "さむかった", ref: "ja-0467" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", ref: "ja-0466", kind: "word" }
+      - { id: "w2", ref: "ja-0469", kind: "word" }
+    rules: ["ja-rule-i-polite-past"]
+  - id: "ja-9162"
+    target: "ホテルはたかくなかったです。"
+    words: ["ホテル", "は", "たかくなかった", "です"]
+    reading: "hoteru wa takakunakatta desu."
+    ipa: "hoteɾɯ wa takakɯnakatta desɯ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "ホテル", ref: "ja-0857" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "たかくなかった", ref: "ja-0439" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", ref: "ja-0438", kind: "word" }
+      - { id: "w2", ref: "ja-0470", kind: "word" }
+    rules: ["ja-rule-i-polite-past"]
+  - id: "ja-9163"
+    target: "ごはんはおいしくなかった。"
+    words: ["ごはん", "は", "おいしくなかった"]
+    reading: "gohan wa oishikunakatta."
+    ipa: "ɡohaɴ wa oiɕikɯnakatta"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "ごはん", ref: "ja-0074" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "おいしくなかった", ref: "ja-0471" }
+    confusables:
+      - { id: "w1", ref: "ja-0980", kind: "word" }
+      - { id: "w2", ref: "ja-0494", kind: "word" }
+    rules: ["ja-rule-i-nakatta"]
+  - id: "ja-9164"
+    target: "えいがはおもしろくなかった。"
+    words: ["えいが", "は", "おもしろくなかった"]
+    reading: "eiga wa omoshirokunakatta."
+    ipa: "eːɡa wa omoɕiɾokɯnakatta"
+    pos: "phrase"
+    bases:
+      - { word: "えいが", ref: "ja-1358" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "おもしろくなかった", ref: "ja-0472" }
+    confusables:
+      - { id: "w1", ref: "ja-1360", kind: "word" }
+      - { id: "w2", ref: "ja-0475", kind: "word" }
+    rules: ["ja-rule-i-nakatta"]
+  - id: "ja-9165"
+    target: "うみはきれいだった。"
+    words: ["うみ", "は", "きれい", "だった"]
+    reading: "umi wa kirei datta."
+    ipa: "ɯmi wa kiɾeː datta"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "うみ", ref: "ja-1126" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "きれい", ref: "ja-0479" }
+      - { word: "だった", base: "だ", reading: "da" }
+    confusables:
+      - { id: "w1", ref: "ja-0480", kind: "word" }
+      - { id: "w2", ref: "ja-0477", kind: "word" }
+    rules: ["ja-rule-na-datta"]
+  - id: "ja-9166"
+    target: "まちはしずかじゃなかった。"
+    words: ["まち", "は", "しずか", "じゃなかった"]
+    reading: "machi wa shizuka janakatta."
+    ipa: "matɕi wa ɕidzɯka dʑanakatta"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "まち", ref: "ja-1066" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "しずか", ref: "ja-0477" }
+      - { word: "じゃなかった", base: "じゃない", reading: "janai" }
+    confusables:
+      - { id: "w1", ref: "ja-0478", kind: "word" }
+      - { id: "w2", ref: "ja-0481", kind: "word" }
+    rules: ["ja-rule-na-janakatta"]
+  - id: "ja-9167"
+    target: "きのうはひまでした。"
+    words: ["きのう", "は", "ひま", "でした"]
+    reading: "kinou wa hima deshita."
+    ipa: "kinoː wa çima deɕita"
+    pos: "phrase"
+    bases:
+      - { word: "きのう", ref: "ja-0514" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ひま", ref: "ja-0528" }
+      - { word: "でした", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", ref: "ja-0476", kind: "word" }
+      - { id: "w2", ref: "ja-0719", kind: "word" }
+    rules: ["ja-rule-na-polite-past"]
+  - id: "ja-9168"
+    target: "てんきはよくありませんでした。"
+    words: ["てんき", "は", "よく", "ありません", "でした"]
+    reading: "tenki wa yoku arimasen deshita."
+    ipa: "teɴki wa jokɯ aɾimaseɴ deɕita"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "てんき", ref: "ja-0091" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "よく", ref: "ja-0464" }
+      - { word: "ありません", base: "ある", reading: "aru" }
+      - { word: "でした", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", ref: "ja-0465", kind: "word" }
+      - { id: "w2", ref: "ja-0467", kind: "word" }
+    rules: ["ja-rule-i-polite-past"]
+  - id: "ja-9169"
+    target: "ともだちはきのうげんきじゃありませんでした。"
+    words: ["ともだち", "は", "きのう", "げんき", "じゃ", "ありません", "でした"]
+    reading: "tomodachi wa kinou genki ja arimasen deshita."
+    ipa: "tomodatɕi wa kinoː ɡeɴki dʑa aɾimaseɴ deɕita"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "きのう", ref: "ja-0514" }
+      - { word: "げんき", ref: "ja-1342" }
+      - { word: "じゃ", base: "じゃ", reading: "ja" }
+      - { word: "ありません", base: "ある", reading: "aru" }
+      - { word: "でした", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", ref: "ja-1340", kind: "word" }
+      - { id: "w2", ref: "ja-1225", kind: "word" }
+    rules: ["ja-rule-na-polite-past"]

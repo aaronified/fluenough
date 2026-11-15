@@ -1,0 +1,128 @@
+schema: 1
+id: "ja-en-grammar-comparison-sentences"
+kind: "layer"
+core: "ja-grammar-comparison-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Comparing in sentences"
+description: "Sentences that compare two things with より (yori) or pick the most with いちばん (ichiban), to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-9280":
+    native: "Tokyo is bigger than Osaka."
+    notes:
+      "n1": "The thing you compare with comes before より (yori): おおさかより (oosaka yori) means than Osaka. The adjective keeps its plain form."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "より": { meaning: "(than; compared with)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "ちいさい (chiisai) means small." }
+      w2: { why: "ひろい (hiroi) means wide." }
+  "ja-9281":
+    native: "This car is more expensive than that car."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "より": { meaning: "(than; compared with)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "やすい (yasui) means cheap; inexpensive." }
+      w2: { why: "これ (kore) means this (one, near me)." }
+  "ja-9282":
+    native: "The train is faster than the bus."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "より": { meaning: "(than; compared with)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "おそい (osoi) means slow; late." }
+      w2: { why: "くるま (kuruma) means car." }
+  "ja-9283":
+    native: "Winter is colder than summer."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "より": { meaning: "(than; compared with)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "あつい (atsui) means hot (of weather, things)." }
+      w2: { why: "つめたい (tsumetai) means cold (to touch or taste)." }
+  "ja-9284":
+    native: "Which is bigger, Tokyo or Osaka?"
+    notes:
+      "n1": "To ask which of two, name both with と (to) after each, then どちらが (dochira ga). The answer can be as short as とうきょうです (toukyou desu)."
+    bases:
+      "と": { meaning: "(and)" }
+      "が": { meaning: "(marks the subject)" }
+      "です": { meaning: "is (polite)" }
+      "か": { meaning: "(marks a question)" }
+    confusables:
+      w1: { why: "どれ (dore) means which one (of three or more)." }
+      w2: { why: "ちいさい (chiisai) means small." }
+  "ja-9285":
+    native: "Which is faster, the car or the train?"
+    bases:
+      "と": { meaning: "(and)" }
+      "が": { meaning: "(marks the subject)" }
+      "です": { meaning: "is (polite)" }
+      "か": { meaning: "(marks a question)" }
+    confusables:
+      w1: { why: "どれ (dore) means which one (of three or more)." }
+      w2: { why: "おそい (osoi) means slow; late." }
+  "ja-9286":
+    native: "This shop is the cheapest."
+    notes:
+      "n1": "いちばん (ichiban) stands before the adjective, and the thing that is the cheapest takes が (ga)."
+    bases:
+      "が": { meaning: "(marks the subject)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "たかい (takai) means expensive; high; tall." }
+      w2: { why: "もっと (motto) means more." }
+  "ja-9287":
+    native: "Football is the most interesting."
+    bases:
+      "が": { meaning: "(marks the subject)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "むずかしい (muzukashii) means difficult; hard." }
+      w2: { why: "もっと (motto) means more." }
+  "ja-9288":
+    native: "I like winter the most."
+    notes:
+      "n1": "すき (suki) is an adjective, so いちばんすきです (ichiban suki desu) means it is the one I like most, with no な (na) before です (desu)."
+    bases:
+      "が": { meaning: "(marks the subject)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "なつ (natsu) means summer." }
+      w2: { why: "きらい (kirai) means disliked; do not like." }
+  "ja-9289":
+    native: "Which one is the most expensive?"
+    notes:
+      "n1": "どれ (dore) asks which one of three or more, and どちら (dochira) which of two: that is why いちばん (ichiban) goes with どれ (dore)."
+    bases:
+      "が": { meaning: "(marks the subject)" }
+      "です": { meaning: "is (polite)" }
+      "か": { meaning: "(marks a question)" }
+    confusables:
+      w1: { why: "どちら (dochira) means which of two; where (polite)." }
+      w2: { why: "やすい (yasui) means cheap; inexpensive." }
+  "ja-9290":
+    native: "Which place in Japan is the prettiest?"
+    bases:
+      "で": { meaning: "(in; at)" }
+      "が": { meaning: "(marks the subject)" }
+      "です": { meaning: "is (polite)" }
+      "か": { meaning: "(marks a question)" }
+    confusables:
+      w1: { why: "だれ (dare) means who." }
+      w2: { why: "きたない (kitanai) means dirty; untidy." }
+  "ja-9291":
+    native: "Who is the best at it?"
+    bases:
+      "が": { meaning: "(marks the subject)" }
+      "です": { meaning: "is (polite)" }
+      "か": { meaning: "(marks a question)" }
+    confusables:
+      w1: { why: "どこ (doko) means where." }
+      w2: { why: "へた (heta) means poor at." }

@@ -267,6 +267,14 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-4553 | ja-grammar-hearsay-appearance-sentences | Are the そうです (hearsay), そうです (appearance), ようです and らしいです examples natural and kept apart? | Sonnet builder | 2026-11-13 |
 | ja-4565 | ja-grammar-causative-sentences | Are the causative and causative-passive examples natural, in particular the use of を and に for the person made to do it? | Sonnet builder | 2026-11-13 |
 | ja-0308 | ja-hiragana-marks | Judgement call: the broad IPA of っ, ッ and ー is written ː (length) since they have no sound of their own; is that right? | Sonnet builder | 2026-11-13 |
+| unit-level | ja-grammar-relative-clauses (ja-9340 to ja-9351) | Are the relative-clause sentences natural (きのうかったほん, ははがつくったりょうり, ともだちがすきなえいが), and is it right that a clause may hold a place with で and still describe the head noun? | Sonnet builder | 2026-11-15 |
+| ja-9348 | ja-grammar-relative-clauses-sentences | Is ひと (a person) in おさけをのまないひとはおちゃがすきです natural as a general "a person who", or should it be ひとびと or a named person? | Sonnet builder | 2026-11-15 |
+| ja-9100 | ja-grammar-conjunctions | Is そして (soshite) with the meaning 'and then; and so' the natural word for a sequence of events, and is the note's contrast with でも (demo) right? | Haiku builder | 2026-11-15 |
+| ja-9106 | ja-grammar-conjunctions | Is ところで (tokorode) natural as 'by the way' at the start of a new topic in these examples? | Haiku builder | 2026-11-15 |
+| ja-9108 | ja-grammar-conjunctions | Are じゃあ (jaa) and それなら (sorenara) both natural as 'well then' and 'in that case', and do the two notes keep them apart? | Haiku builder | 2026-11-15 |
+| ja-9105 | ja-grammar-conjunctions | Is それとも (soretomo) used only in questions, as its note says, and is the question example natural? | Haiku builder | 2026-11-15 |
+| ja-9124 | ja-grammar-conjunctions-sentences | Is いきますか。それとも、ねますか。 natural as a question offering two plans? | Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-conjunctions | This conjunctions unit is a vocabulary core with a set card (as bn-grammar-conjunctions), not a rules core: conjunctions do not inflect, so no rules table has rows for them. Is that right? | Haiku builder | 2026-11-15 |
 | ja-8156 | ja-society | Is ろうじん (roujin) a natural plain word for an elderly person in these two examples, or is こうれいしゃ (koureisha) the word a learner should meet first? | Haiku builder | 2026-11-15 |
 | ja-8193 | ja-society | Is ろうご (rougo) distinct enough from こうれい (kourei) to be taught as its own card in this unit (old age as a time, against an advanced age)? | Haiku builder | 2026-11-15 |
 | ja-8194 | ja-society | Is the sense 'advanced age' right for こうれい (kourei), and are its two examples natural? | Haiku builder | 2026-11-15 |
@@ -277,3 +285,8 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-8489 | ja-food-culture | Is 'savoury; aromatic' the right gloss for こうばしい (koubashii), and are its two examples natural? | Haiku builder | 2026-11-15 |
 | ja-8483 | ja-food-culture | Is 'season (of food)' the right gloss for しゅん (shun), and is 'fish in season' a natural example? | Haiku builder | 2026-11-15 |
 | ja-8465 | ja-food-culture | The note on しょうじんりょうり (shoujin ryouri) says it is the vegetarian food of Buddhist temples; is the first example natural for a learner? | Haiku builder | 2026-11-15 |
+| ja-2945 | ja-grammar-keigo-kenjougo | Is うかがいます (ukagaimasu) the right humble form for おとずれる (otozureru), to visit, or is a regular おとずれします odd but still said? | Haiku builder | 2026-11-15 |
+| ja-1719 | ja-grammar-keigo-kenjougo | Is おしはらいします (oshiharaishimasu) a natural humble form of はらう (harau), to pay, in a shop or office? | Haiku builder | 2026-11-15 |
+| ja-9405 | ja-grammar-keigo-sonkeigo-sentences | For べんきょうする (benkyou suru), is ごべんきょう (gobenkyou) or おべんきょう (obenkyou) the right honorific prefix before なさいます (nasaimasu)? | Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-keigo-sonkeigo | Sonkeigo policy: a verb gets a row only if お plus its stem plus になります (o ... ni narimasu) is natural, with お doubled for お-initial verbs (おおぎないになります); every other verb is in `except`. Are the 23 added rows natural, and is the doubled お form said? | Haiku builder | 2026-11-15 |
+| unit-level | ja-grammar-keigo-sonkeigo, ja-grammar-keigo-kenjougo | The 54 new verbs of the units wave (ja-8028, ja-8038, ja-8039, ja-8487, ja-8750 to ja-8799) are in the keigo kenjougo table's `except` (and 31 in sonkeigo's): should any of them get a humble or honorific row? | Haiku builder | 2026-11-15 |
