@@ -1,0 +1,92 @@
+schema: 1
+id: "bn-en-reading-chores"
+name: "Reading: chores"
+kind: "reading"
+language:
+  code: "bn"
+  iso639_3: "ben"
+  name: "Bengali"
+  script: "bengali"
+  tts: "bn-IN"
+  icon: "বা"
+native:
+  code: "en"
+  iso639_3: "eng"
+  name: "English"
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Short passages, one to be heard and one to be read, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags:
+- "reading"
+- "unreviewed"
+passages:
+- id: "bn-cleaning-day"
+  title: "Cleaning day"
+  theme: "chores"
+  sentences:
+  - text: "আজ আমরা সবাই ঘর পরিষ্কার করব।"
+    reading: "āj āmrā śôbāi ghôr poriskār kôrbo."
+    ipa: "adʒ amra ʃɔbai ɡʱɔr poriskar kɔrbo"
+  - text: "আমি ঝাড়ু দিই।"
+    reading: "āmi jhāṛu dii."
+    ipa: "ami dʒʱaɽu d̪ii"
+  - text: "তুমি বিছানাটা করো।"
+    reading: "tumi bichānāṭā kôro."
+    ipa: "t̪umi bitʃʰanaʈa kɔro"
+  - text: "মা বাসন ধোয়।"
+    reading: "mā bāśon dhoy."
+    ipa: "ma baʃon d̪ʱoj"
+  - text: "দাদু গাছে জল দেন।"
+    reading: "dādu gāche jôl den."
+    ipa: "d̪ad̪u ɡatʃʰe dʒɔl d̪en"
+  questions:
+  - id: "bn-5456"
+    prompt:
+      en: "Everyone will clean the house today."
+    answer: true
+  - id: "bn-5457"
+    prompt:
+      en: "Who waters the plants?"
+    options:
+    - en: "দাদু (dādu)"
+    - en: "আমি (āmi)"
+    answer: 1
+  - id: "bn-5458"
+    prompt:
+      en: "The speaker is told to make the bed."
+    answer: true
+- id: "bn-chore-list"
+  title: "The chore list"
+  theme: "chores"
+  sentences:
+  - text: "সোমবার: ঝাড়ু দেওয়া।"
+    reading: "śombār: jhāṛu deoā."
+    ipa: "ʃombar dʒʱaɽu d̪eoa"
+  - text: "মঙ্গলবার: থালা ধোয়া।"
+    reading: "môṅgolbār: thālā dhoyā."
+    ipa: "mɔŋɡolbar t̪ʰala d̪ʱoja"
+  - text: "বুধবার: ময়লার ঝুড়ি খালি করা।"
+    reading: "budhbār: môylār jhuṛi khāli kôrā."
+    ipa: "bud̪ʱbar mɔjlar dʒʱuɽi kʰali kɔra"
+  - text: "শুক্রবার: জানালা মোছা।"
+    reading: "śukrobār: jānālā mochā."
+    ipa: "ʃukrobar dʒanala motʃʰa"
+  - text: "রবিবার: বিছানা করা।"
+    reading: "robibār: bichānā kôrā."
+    ipa: "robibar bitʃʰana kɔra"
+  questions:
+  - id: "bn-5459"
+    prompt:
+      en: "Friday's job is to wipe the windows."
+    answer: true
+  - id: "bn-5460"
+    prompt:
+      en: "Which day is the rubbish bin emptied?"
+    options:
+    - en: "বুধবার (budhbār)"
+    - en: "শুক্রবার (śukrobār)"
+    answer: 1
+  - id: "bn-5461"
+    prompt:
+      en: "The list has a job for every day of the week."
+    answer: false

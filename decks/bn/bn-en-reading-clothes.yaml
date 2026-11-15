@@ -1,0 +1,51 @@
+schema: 1
+id: "bn-en-reading-clothes"
+name: "Reading: clothes and colours"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Short passages, one to be heard and one to be read, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-choosing-a-shirt"
+    title: "Choosing a shirt"
+    theme: "clothes"
+    sentences:
+      - { text: "শার্ট দেখাও।", reading: "śārṭ dekhāo.", ipa: "ʃarʈ d̪ekʰao" }
+      - { text: "নীল রঙ।", reading: "nil rôṅ.", ipa: "nil rɔŋ" }
+      - { text: "বড় না ছোট?", reading: "bôṛo nā choṭo?", ipa: "bɔɽo na tʃʰoʈo" }
+      - { text: "বড় দিন।", reading: "bôṛo din.", ipa: "bɔɽo d̪in" }
+      - { text: "দাম কত?", reading: "dām kôto?", ipa: "d̪am kɔt̪o" }
+    questions:
+      - id: "bn-5374"
+        prompt: { en: "The customer wants a blue colour." }
+        answer: true
+      - id: "bn-5375"
+        prompt: { en: "Which size does the customer choose?" }
+        options: [{ en: "বড় (bôṛo)" }, { en: "ছোট (choṭo)" }]
+        answer: 1
+      - id: "bn-5376"
+        prompt: { en: "The customer asks for a red shirt." }
+        answer: false
+  - id: "bn-shop-offer-sign"
+    title: "A shop's offers"
+    theme: "clothes"
+    sentences:
+      - { text: "সব শার্ট: এক হাজার টাকা।", reading: "sôb śārṭ: ek hājār ṭākā.", ipa: "sɔb ʃarʈ ek ɦadʒar ʈaka" }
+      - { text: "সব প্যান্ট: পাঁচশো টাকা।", reading: "sôb pênṭ: pām̐cśo ṭākā.", ipa: "sɔb pænʈ pãtʃʃo ʈaka" }
+      - { text: "সব শাড়ি: দাম কম।", reading: "sôb sāṛi: dām kôm.", ipa: "sɔb saɽi d̪am kɔm" }
+      - { text: "নতুন জুতো: দেখুন।", reading: "notun juto: dekhun.", ipa: "not̪un dʒut̪o d̪ekʰun" }
+      - { text: "সব জামা: নীল আর লাল।", reading: "sôb jāmā: nil ār lāl.", ipa: "sɔb dʒama nil ar lal" }
+    questions:
+      - id: "bn-5377"
+        prompt: { en: "All shirts cost one thousand taka." }
+        answer: true
+      - id: "bn-5378"
+        prompt: { en: "Which item costs five hundred taka?" }
+        options: [{ en: "শার্ট (śārṭ)" }, { en: "প্যান্ট (pênṭ)" }]
+        answer: 2
+      - id: "bn-5379"
+        prompt: { en: "The sign says the shirts are blue and white." }
+        answer: false
