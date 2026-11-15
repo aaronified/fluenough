@@ -521,7 +521,8 @@ units:
       - { id: "never-again", text: { "en": "Saying you never, no longer, nothing and nobody" } }
     reading_passages:
       - { id: "complaint-note", text: { "en": "A short note complaining that nothing works and nobody answers" } }
-  - planned: { id: "fr-workplace", theme: "workplace", words: 40 }
+  - decks: ["fr-workplace", "fr-workplace-sentences", "fr-reading-workplace", "*"]
+    words: 40
     listening_passages:
       - { id: "first-day-at-work", text: { "en": "A new colleague's first day" } }
     reading_passages:
