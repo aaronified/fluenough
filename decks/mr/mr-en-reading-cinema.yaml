@@ -1,0 +1,57 @@
+"schema": 1
+"id": "mr-en-reading-cinema"
+"name": "Reading: film review"
+"kind": "reading"
+"language": { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+"native": { code: "en", iso639_3: "eng", name: "English" }
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"description": "A short review of a film: the story, the songs, the acting and who should see it. Not yet checked by a Marathi speaker: please report any mistake."
+"tags":
+- "reading"
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "mr-film-review"
+  "title": "Film review"
+  "sentences":
+  - "text": "हा सिनेमा खूप छान आहे."
+    "reading": "hā sinemā khup chān āhe."
+    "ipa": "ɦa sinema kʰup tʃʰan aɦe"
+  - "text": "कथा साधी आहे, पण मला ती आवडली."
+    "reading": "kathā sādhi āhe, paṇ malā ti āvḍli."
+    "ipa": "kət̪ʰa sad̪ʱi aɦe pəɳ məla t̪i aʋɖli"
+  - "text": "गाणी खूप गोड आहेत."
+    "reading": "gāṇi khup goḍ āhet."
+    "ipa": "ɡaɳi kʰup ɡoɖ aɦet̪"
+  - "text": "नायकाचा अभिनय उत्तम आहे."
+    "reading": "nāykācā abhinay uttam āhe."
+    "ipa": "najkatsa əbʱinəj ut̪t̪əm aɦe"
+  - "text": "हा चित्रपट कुटुंबासोबत पाहा."
+    "reading": "hā citrapaṭ kuṭumbāsobat pāhā."
+    "ipa": "ɦa tʃit̪rəpəʈ kuʈumbasobət̪ paɦa"
+  "questions":
+  - "id": "mr-7324"
+    "prompt":
+      "en": "What does the reviewer say about the story?"
+    "options":
+    - "en": "It is simple, but they liked it"
+    - "en": "It is very long"
+    - "en": "It is very sad"
+    "answer": 1
+  - "id": "mr-7325"
+    "prompt":
+      "en": "What does the reviewer say about the songs?"
+    "options":
+    - "en": "They are sweet"
+    - "en": "They are too loud"
+    - "en": "There are none"
+    "answer": 1
+  - "id": "mr-7326"
+    "prompt":
+      "en": "How should people watch the film?"
+    "options":
+    - "en": "With family"
+    - "en": "Alone at night"
+    - "en": "They should not watch it"
+    "answer": 1

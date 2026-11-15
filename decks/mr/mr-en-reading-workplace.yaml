@@ -1,0 +1,62 @@
+"schema": 1
+"id": "mr-en-reading-workplace"
+"name": "Reading: workplace"
+"kind": "reading"
+"language":
+  "code": "mr"
+  "iso639_3": "mar"
+  "name": "Marathi"
+  "script": "devanagari"
+  "tts": "mr-IN"
+  "icon": "म"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"description": "An office notice about a meeting: when it is, where it is and what to bring. Not yet checked by a Marathi speaker: please report any mistake."
+"tags":
+- "reading"
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "mr-office-notice"
+  "title": "Office notice"
+  "sentences":
+  - "text": "सूचना: उद्या सकाळी दहा वाजता बैठक आहे."
+    "reading": "sucnā: udyā sakāḷi dahā vājtā baiṭhak āhe."
+    "ipa": "sutsna ud̪ja səkaɭi d̪əɦa ʋadzt̪a bəiʈʰək aɦe"
+  - "text": "बैठक खोली क्रमांक तीनमध्ये होईल."
+    "reading": "baiṭhak kholi kramāṅk tinmadhye hoil."
+    "ipa": "bəiʈʰək kʰoli krəmaŋk t̪inməd̪ʱje ɦoil"
+  - "text": "सर्वांनी वेळेवर या."
+    "reading": "sarvānni veḷevar yā."
+    "ipa": "sərʋanni ʋeɭeʋər ja"
+  - "text": "कृपया आपला अहवाल सोबत आणा."
+    "reading": "krupyā āplā ahvāl sobat āṇā."
+    "ipa": "krupja apla əɦʋal sobət̪ aɳa"
+  - "text": "काही प्रश्न असल्यास सुरेश यांना विचारा."
+    "reading": "kāhi praśna asalyās sureś yānnā vicārā."
+    "ipa": "kaɦi prəʃnə əsəljas sureʃ janna ʋitsara"
+  "questions":
+  - "id": "mr-7215"
+    "prompt":
+      "en": "When is the meeting?"
+    "options":
+    - "en": "Tomorrow at ten in the morning"
+    - "en": "Today at six in the evening"
+    - "en": "Next week"
+    "answer": 1
+  - "id": "mr-7216"
+    "prompt":
+      "en": "Where is the meeting?"
+    "options":
+    - "en": "Room 1"
+    - "en": "Room 3"
+    - "en": "Room 5"
+    "answer": 2
+  - "id": "mr-7217"
+    "prompt":
+      "en": "People should bring their report."
+    "answer": true
