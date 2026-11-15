@@ -1,0 +1,218 @@
+schema: 1
+id: "as-food-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-5510"
+    target: "মই ৰুটি খাওঁ।"
+    reading: "moi ruti khāum̐."
+    ipa: "moi ɹuti kʰaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "ৰুটি", ref: "as-2314" }
+      - { word: "খাওঁ", base: "খোৱা", reading: "khuwā" }
+    confusables:
+      - { id: "c1", word: "ভাত", reading: "bhāt", kind: "word" }
+      - { id: "c2", word: "মিঠাই", reading: "mithāi", kind: "word" }
+  - id: "as-5511"
+    target: "সি ৰাতিপুৱা ৰুটি খায়।"
+    reading: "si rātipuwā ruti khāy."
+    ipa: "si ɹatipuwa ɹuti kʰaj"
+    pos: "phrase"
+    bases:
+      - { word: "সি", ref: "as-2180" }
+      - { word: "ৰাতিপুৱা", ref: "as-0354" }
+      - { word: "ৰুটি", ref: "as-2314" }
+      - { word: "খায়", base: "খোৱা", reading: "khuwā" }
+    confusables:
+      - { id: "c1", word: "ৰাতি", reading: "rāti", kind: "word" }
+      - { id: "c2", word: "দৈ", reading: "dôi", kind: "word" }
+  - id: "as-5512"
+    target: "মই দৈ খাওঁ।"
+    reading: "moi dôi khāum̐."
+    ipa: "moi dɔi kʰaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "দৈ", ref: "as-2315" }
+      - { word: "খাওঁ", base: "খোৱা", reading: "khuwā" }
+    confusables:
+      - { id: "c1", word: "মধু", reading: "modhu", kind: "word" }
+      - { id: "c2", word: "মাখন", reading: "mākhôn", kind: "word" }
+  - id: "as-5513"
+    target: "আমি আম খাওঁ।"
+    reading: "āmi ām khāum̐."
+    ipa: "ami am kʰaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "আমি", ref: "as-2182" }
+      - { word: "আম", ref: "as-2321" }
+      - { word: "খাওঁ", base: "খোৱা", reading: "khuwā" }
+    confusables:
+      - { id: "c1", word: "আপেল", reading: "āpel", kind: "word" }
+      - { id: "c2", word: "কমলা", reading: "kômôlā", kind: "word" }
+  - id: "as-5514"
+    target: "তেওঁ কমলা খায়।"
+    reading: "teum̐ kômôlā khāy."
+    ipa: "teʊ̃ kɔmɔla kʰaj"
+    pos: "phrase"
+    bases:
+      - { word: "তেওঁ", ref: "as-2181" }
+      - { word: "কমলা", ref: "as-2323" }
+      - { word: "খায়", base: "খোৱা", reading: "khuwā" }
+    confusables:
+      - { id: "c1", word: "আপেল", reading: "āpel", kind: "word" }
+      - { id: "c2", word: "আনাৰস", reading: "ānārôs", kind: "word" }
+  - id: "as-5515"
+    target: "মোক এটা আপেল দিয়ক।"
+    reading: "muk etā āpel diyôk."
+    ipa: "mʊk eta apel dijɔk"
+    pos: "phrase"
+    bases:
+      - { word: "মোক", ref: "as-2198" }
+      - { word: "এটা", ref: "as-2258" }
+      - { word: "আপেল", ref: "as-2322" }
+      - { word: "দিয়ক", base: "দিয়া", reading: "diyā" }
+    confusables:
+      - { id: "c1", word: "আম", reading: "ām", kind: "word" }
+      - { id: "c2", word: "কমলা", reading: "kômôlā", kind: "word" }
+  - id: "as-5516"
+    target: "আপুনি কি খাব?"
+    reading: "āpuni ki khāb?"
+    ipa: "apuni ki kʰab"
+    pos: "phrase"
+    bases:
+      - { word: "আপুনি", ref: "as-0127" }
+      - { word: "কি", ref: "as-0143" }
+      - { word: "খাব", base: "খোৱা", reading: "khuwā" }
+    confusables:
+      - { id: "c1", word: "খাদ্য", reading: "khādy", kind: "word" }
+      - { id: "c2", word: "পানীয়", reading: "pāniy", kind: "word" }
+  - id: "as-5517"
+    target: "এইটো আম পকা।"
+    reading: "eitu ām pôkā."
+    ipa: "eitʊ am pɔka"
+    pos: "phrase"
+    bases:
+      - { word: "এইটো", ref: "as-2193" }
+      - { word: "আম", ref: "as-2321" }
+      - { word: "পকা", ref: "as-2365" }
+    confusables:
+      - { id: "c1", word: "কাঁচা", reading: "kām̐sā", kind: "word" }
+      - { id: "c2", word: "আঙুৰ", reading: "āṅur", kind: "word" }
+  - id: "as-5518"
+    target: "ৰসুন আৰু মৰিচ ভাল।"
+    reading: "rosun āru moris bhāl."
+    ipa: "ɹosun aɹu moɹis bʱal"
+    pos: "phrase"
+    bases:
+      - { word: "ৰসুন", ref: "as-2333" }
+      - { word: "আৰু", ref: "as-2126" }
+      - { word: "মৰিচ", ref: "as-2335" }
+      - { word: "ভাল", ref: "as-2084" }
+    confusables:
+      - { id: "c1", word: "হালধি", reading: "hālodhi", kind: "word" }
+      - { id: "c2", word: "গাজৰ", reading: "gāzôr", kind: "word" }
+  - id: "as-5519"
+    target: "মই মিঠাই বেছি নাখাওঁ।"
+    reading: "moi mithāi besi nākhāum̐."
+    ipa: "moi mitʰai besi nakʰaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "মিঠাই", ref: "as-2339" }
+      - { word: "বেছি", ref: "as-2248" }
+      - { word: "নাখাওঁ", base: "খোৱা", reading: "khuwā" }
+    confusables:
+      - { id: "c1", word: "ভাত", reading: "bhāt", kind: "word" }
+      - { id: "c2", word: "ৰুটি", reading: "ruti", kind: "word" }
+  - id: "as-5520"
+    target: "তেওঁ চকলেট খায়।"
+    reading: "teum̐ sôkôlet khāy."
+    ipa: "teʊ̃ sɔkɔlet kʰaj"
+    pos: "phrase"
+    bases:
+      - { word: "তেওঁ", ref: "as-2181" }
+      - { word: "চকলেট", ref: "as-2338" }
+      - { word: "খায়", base: "খোৱা", reading: "khuwā" }
+    confusables:
+      - { id: "c1", word: "বিস্কুট", reading: "biskut", kind: "word" }
+      - { id: "c2", word: "কেক", reading: "kek", kind: "word" }
+  - id: "as-5521"
+    target: "খাদ্যটো ভাল।"
+    reading: "khādytu bhāl."
+    ipa: "kʰadjtʊ bʱal"
+    pos: "phrase"
+    bases:
+      - { word: "খাদ্যটো", base: "খাদ্য", reading: "khādy" }
+      - { word: "ভাল", ref: "as-2084" }
+    confusables:
+      - { id: "c1", word: "পানীয়", reading: "pāniy", kind: "word" }
+      - { id: "c2", word: "বেয়া", reading: "beyā", kind: "word" }
+  - id: "as-5522"
+    target: "মই শাক খাওঁ।"
+    reading: "moi xāk khāum̐."
+    ipa: "moi xak kʰaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "শাক", ref: "as-2358" }
+      - { word: "খাওঁ", base: "খোৱা", reading: "khuwā" }
+    confusables:
+      - { id: "c1", word: "মটৰ", reading: "môtôr", kind: "word" }
+      - { id: "c2", word: "কাঁঠাল", reading: "kām̐thāl", kind: "word" }
+  - id: "as-5523"
+    target: "আমি ৰাতি ভাত খাওঁ।"
+    reading: "āmi rāti bhāt khāum̐."
+    ipa: "ami ɹati bʱat kʰaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "আমি", ref: "as-2182" }
+      - { word: "ৰাতি", ref: "as-0357" }
+      - { word: "ভাত", ref: "as-0111" }
+      - { word: "খাওঁ", base: "খোৱা", reading: "khuwā" }
+    confusables:
+      - { id: "c1", word: "ৰাতিপুৱা", reading: "rātipuwā", kind: "word" }
+      - { id: "c2", word: "দুপৰীয়া", reading: "duporiyā", kind: "word" }
+  - id: "as-5524"
+    target: "সি দুটা আম খায়।"
+    reading: "si dutā ām khāy."
+    ipa: "si duta am kʰaj"
+    pos: "phrase"
+    bases:
+      - { word: "সি", ref: "as-2180" }
+      - { word: "দুটা", ref: "as-2259" }
+      - { word: "আম", ref: "as-2321" }
+      - { word: "খায়", base: "খোৱা", reading: "khuwā" }
+    confusables:
+      - { id: "c1", word: "এটা", reading: "etā", kind: "word" }
+      - { id: "c2", word: "তিনিটা", reading: "tinitā", kind: "word" }
+  - id: "as-5525"
+    target: "মোক অলপ চিনি দিয়ক।"
+    reading: "muk ôlôp sini diyôk."
+    ipa: "mʊk ɔlɔp sini dijɔk"
+    pos: "phrase"
+    bases:
+      - { word: "মোক", ref: "as-2198" }
+      - { word: "অলপ", ref: "as-2228" }
+      - { word: "চিনি", ref: "as-2318" }
+      - { word: "দিয়ক", base: "দিয়া", reading: "diyā" }
+    confusables:
+      - { id: "c1", word: "গুৰ", reading: "gur", kind: "word" }
+      - { id: "c2", word: "মধু", reading: "modhu", kind: "word" }
+  - id: "as-5526"
+    target: "তেওঁ সকলো খায়।"
+    reading: "teum̐ sôkôlu khāy."
+    ipa: "teʊ̃ sɔkɔlʊ kʰaj"
+    pos: "phrase"
+    bases:
+      - { word: "তেওঁ", ref: "as-2181" }
+      - { word: "সকলো", ref: "as-2249" }
+      - { word: "খায়", base: "খোৱা", reading: "khuwā" }
+    confusables:
+      - { id: "c1", word: "কিছু", reading: "kisu", kind: "word" }
+      - { id: "c2", word: "অনেক", reading: "ônek", kind: "word" }

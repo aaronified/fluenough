@@ -1,0 +1,135 @@
+schema: 1
+id: "as-quantities-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-5283"
+    target: "মোৰ দুটা কিতাপ আছে।"
+    reading: "mur dutā kitāp āse."
+    ipa: "mʊɹ duta kitap ase"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "দুটা", ref: "as-2259" }
+      - { word: "কিতাপ", base: "কিতাপ", reading: "kitāp" }
+      - { word: "আছে", base: "আছে", reading: "āse" }
+    confusables:
+      - { id: "c1", word: "তিনিটা", reading: "tinitā", kind: "word" }
+      - { id: "c2", word: "এটা", reading: "etā", kind: "word" }
+  - id: "as-5284"
+    target: "মোৰ এটা কলম আছে।"
+    reading: "mur etā kôlôm āse."
+    ipa: "mʊɹ eta kɔlɔm ase"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "এটা", ref: "as-2258" }
+      - { word: "কলম", base: "কলম", reading: "kôlôm" }
+      - { word: "আছে", base: "আছে", reading: "āse" }
+    confusables:
+      - { id: "c1", word: "দুটা", reading: "dutā", kind: "word" }
+      - { id: "c2", word: "তিনিটা", reading: "tinitā", kind: "word" }
+  - id: "as-5285"
+    target: "তেওঁ চাৰিটা কিতাপ পঢ়ে।"
+    reading: "teum̐ sāritā kitāp pôrhe."
+    ipa: "teʊ̃ saɹita kitap pɔɹe"
+    pos: "phrase"
+    bases:
+      - { word: "তেওঁ", ref: "as-2181" }
+      - { word: "চাৰিটা", ref: "as-2261" }
+      - { word: "কিতাপ", base: "কিতাপ", reading: "kitāp" }
+      - { word: "পঢ়ে", base: "পঢ়া", reading: "pôrhā" }
+    confusables:
+      - { id: "c1", word: "পাঁচটা", reading: "pām̐sôtā", kind: "word" }
+      - { id: "c2", word: "দুটা", reading: "dutā", kind: "word" }
+  - id: "as-5286"
+    target: "মই অনেক পানী খাওঁ।"
+    reading: "moi ônek pāni khāum̐."
+    ipa: "moi ɔnek pani kʰaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "অনেক", ref: "as-2257" }
+      - { word: "পানী", base: "পানী", reading: "pāni" }
+      - { word: "খাওঁ", base: "খোৱা", reading: "khuwā" }
+    confusables:
+      - { id: "c1", word: "অলপ", reading: "ôlôp", kind: "word" }
+      - { id: "c2", word: "সামান্য", reading: "sāmāny", kind: "word" }
+  - id: "as-5287"
+    target: "মই দুবাৰ পঢ়োঁ।"
+    reading: "moi dubār pôrhum̐."
+    ipa: "moi dubaɹ pɔɹʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "দুবাৰ", ref: "as-2266" }
+      - { word: "পঢ়োঁ", base: "পঢ়া", reading: "pôrhā" }
+    confusables:
+      - { id: "c1", word: "এবাৰ", reading: "ebār", kind: "word" }
+      - { id: "c2", word: "প্ৰত্যেক", reading: "prôtyek", kind: "word" }
+  - id: "as-5288"
+    target: "প্ৰত্যেক দিনে কাম কৰোঁ।"
+    reading: "prôtyek dine kām kôrum̐."
+    ipa: "pɹɔtjek dine kam kɔɹʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "প্ৰত্যেক", ref: "as-2264" }
+      - { word: "দিনে", base: "দিন", reading: "din" }
+      - { word: "কাম", ref: "as-0120" }
+      - { word: "কৰোঁ", base: "কৰা", reading: "kôrā" }
+    confusables:
+      - { id: "c1", word: "গোটেই", reading: "gutei", kind: "word" }
+      - { id: "c2", word: "কেইটামান", reading: "keitāmān", kind: "word" }
+  - id: "as-5289"
+    target: "কেইটামান কিতাপ আছে।"
+    reading: "keitāmān kitāp āse."
+    ipa: "keitaman kitap ase"
+    pos: "phrase"
+    bases:
+      - { word: "কেইটামান", ref: "as-2267" }
+      - { word: "কিতাপ", base: "কিতাপ", reading: "kitāp" }
+      - { word: "আছে", base: "আছে", reading: "āse" }
+    confusables:
+      - { id: "c1", word: "অনেক", reading: "ônek", kind: "word" }
+      - { id: "c2", word: "এটা", reading: "etā", kind: "word" }
+  - id: "as-5290"
+    target: "তেওঁ সামান্য পানী খায়।"
+    reading: "teum̐ sāmāny pāni khāy."
+    ipa: "teʊ̃ samanj pani kʰaj"
+    pos: "phrase"
+    bases:
+      - { word: "তেওঁ", ref: "as-2181" }
+      - { word: "সামান্য", ref: "as-2269" }
+      - { word: "পানী", base: "পানী", reading: "pāni" }
+      - { word: "খায়", base: "খোৱা", reading: "khuwā" }
+    confusables:
+      - { id: "c1", word: "অনেক", reading: "ônek", kind: "word" }
+      - { id: "c2", word: "অলপ", reading: "ôlôp", kind: "word" }
+  - id: "as-5291"
+    target: "মোৰ পাঁচটা কিতাপ আছে।"
+    reading: "mur pām̐sôtā kitāp āse."
+    ipa: "mʊɹ pãsɔta kitap ase"
+    pos: "phrase"
+    bases:
+      - { word: "মোৰ", ref: "as-2187" }
+      - { word: "পাঁচটা", ref: "as-2262" }
+      - { word: "কিতাপ", base: "কিতাপ", reading: "kitāp" }
+      - { word: "আছে", base: "আছে", reading: "āse" }
+    confusables:
+      - { id: "c1", word: "চাৰিটা", reading: "sāritā", kind: "word" }
+      - { id: "c2", word: "ছয়", reading: "sôy", kind: "word" }
+  - id: "as-5292"
+    target: "মই এবাৰ লিখোঁ।"
+    reading: "moi ebār likhum̐."
+    ipa: "moi ebaɹ likʰʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মই", ref: "as-2178" }
+      - { word: "এবাৰ", ref: "as-2265" }
+      - { word: "লিখোঁ", base: "লিখা", reading: "likhā" }
+    confusables:
+      - { id: "c1", word: "দুবাৰ", reading: "dubār", kind: "word" }
+      - { id: "c2", word: "কেতিয়াও", reading: "ketiyāu", kind: "word" }
