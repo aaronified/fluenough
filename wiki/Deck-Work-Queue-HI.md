@@ -1,6 +1,6 @@
 # Deck work queue: Hindustani completion plan
 
-Status: audit and plan of 2026-11-15. Nothing here is built yet; the audit is the only work done. Owner instruction (2026-11-15): one session per language; this session owns Hindustani (`hi`) and takes it to full completeness "as fast as possible, by delegating to agents". It **overrides rule 16 of the [Deck-Work-Queue](Deck-Work-Queue.md)** for Hindustani. The shape is that of [Deck-Work-Queue-ES-TE](Deck-Work-Queue-ES-TE.md) and [Deck-Work-Queue-FR](Deck-Work-Queue-FR.md). Rules 1 to 15 and rule 17 of the Deck-Work-Queue apply to every task (read Hindustani for "Japanese": Devanagari readings are ISO 15919 as `tools/transcribe.py hi` writes them, never by hand).
+Status: audit and plan of 2026-11-15, re-read on 2026-11-15 from `origin/decks-live` after the waves merged (PRs [#1394](https://github.com/aaronified/fluenough/pull/1394) Urdu spelling, [#1411](https://github.com/aaronified/fluenough/pull/1411) sentences, [#1409](https://github.com/aaronified/fluenough/pull/1409) kinds, [#1423](https://github.com/aaronified/fluenough/pull/1423) notes, [#1449](https://github.com/aaronified/fluenough/pull/1449) recommendations, [#1470](https://github.com/aaronified/fluenough/pull/1470) review-queue rows; all merged 2026-11-15). Rows marked *re-counted* were measured in that re-read; *not re-counted* rows were not measured in it. Still open: **IPA is BLOCKED** on issue [#1466](https://github.com/aaronified/fluenough/issues/1466) (`IPA_RE` rejects precomposed `ä`; the issue reports 475 of 3,443 forms invalid, quoted from the issue and not re-counted here), so the HI-110 rerun is pending; **culture 4 was not built** (no pre-1900 source readable on a page); culture 1 to 3 hold 6, 7 and 8 cards against a planned 18 each; compound-verbs multi-word has 5 of 20; **professional decks are held**. Owner instruction (2026-11-15): one session per language; this session owns Hindustani (`hi`) and takes it to full completeness "as fast as possible, by delegating to agents". It **overrides rule 16 of the [Deck-Work-Queue](Deck-Work-Queue.md)** for Hindustani. The shape is that of [Deck-Work-Queue-ES-TE](Deck-Work-Queue-ES-TE.md) and [Deck-Work-Queue-FR](Deck-Work-Queue-FR.md). Rules 1 to 15 and rule 17 of the Deck-Work-Queue apply to every task (read Hindustani for "Japanese": Devanagari readings are ISO 15919 as `tools/transcribe.py hi` writes them, never by hand).
 
 Hindustani is ONE course with two scripts (owner, 2026-10-18): `script: "devanagari"`, `scripts: ["devanagari", "perso_arabic"]`; a card's Urdu spelling is `target_scripts: { perso_arabic: "..." }`. Every deliverable that depends on script covers both. Grammar tables are full tables covering every word (owner, 2026-10-23).
 
@@ -10,26 +10,26 @@ State was read from `origin/decks-live` (2026-11-15) with PyYAML over every `dec
 
 | # | Deliverable | State | Evidence | Tasks |
 |---|---|---|---|---|
-| 1 | Path to B1 | **DONE** | `hi-path.yaml`: 120 units, every one lists decks, none planned, A1/A2/B1 milestones present | none |
-| 2 | Cores and English layers | **DONE** | 128 vocab and 34 grammar core files, each with a layer; 2,635 own cards, highest id `hi-3084` | none |
-| 3 | Sentences decks | **GAP** | 20 sentences decks (3 to 25 cards) for 74 word decks; 56 word decks have none (list in 3.3) | HI-080..091 (wave B) |
-| 4 | Reading decks | PARTLY | 52 `hi-en-reading-*` decks; 29 word decks have none. The path defines no `reading_passages`, so no list of owed passages exists | HI-092 (audit first) |
-| 5 | Script decks | **DONE** | Devanagari: vowels, consonants, vowel signs, conjuncts, digits, reading; Perso-Arabic: letters, shapes, vowels, digits, reading; `hi-script`, `hi-perso-arabic-script`, `hi-spelling` | none |
-| 6 | Phrasebook | **DONE** | `hi-phrasebook`: 20 cards (limit 25) | none |
-| 7 | Situations | **MISSING** | no `hi-situations.yaml` | HI-050, HI-051 |
-| 8 | Topics incl. script topics | **MISSING** | no `hi-topics.yaml` | HI-040, HI-041 |
-| 9 | Culture decks | **MISSING** | no `hi-culture-*` | HI-001, HI-010..013 |
-| 10 | Creators, eras, legacy | **MISSING** | no `decks/creators/hi.yaml` | rides on HI-010..013, 060, 061 |
-| 11 | Proverbs | **MISSING** | none | HI-020..022 |
-| 12 | Multi-word verbs | **MISSING** | rules decks `hi-grammar-compound-verbs` and `hi-grammar-conjunct-verbs` exist (not genre decks) | HI-030..033 |
-| 13 | Professional | HELD | `professions: []` | none (needs the owner) |
-| 14 | Recommendations | **MISSING** | no `decks/recommendations/hi.yaml` | HI-060, HI-061 |
-| 15 | Narrow IPA and broad `ipa` | PARTLY | registry entry `hi` in `tools/phonetic_languages.yaml` and rules file `decks/hi/hi-phonetics.yaml` exist; 1,403 of 2,635 own cards have `phonetic` (94 files carry it), 1,232 have none; 16 cards have no broad `ipa` (hi-1123, hi-0922, hi-0764..0766 and 11 in the phonology decks, which are set-like; check each before filling) | HI-110..112 |
-| 16 | Review-queue rows | PARTLY | `docs/review-queue/hi.md`: 10 rows, all from 2026-11-07 | HI-120..122 |
-| 17 | Sourcing list | **MISSING** | no `Plan-Culture-Hindustani` | HI-001 |
-| 18 | Facts file | **DONE** | `hi-facts.yaml`: 42 entries | none |
-| + | Urdu spelling (`target_scripts.perso_arabic`) | PARTLY | 1,975 of 2,635 own cards have it. The 660 without are mostly script and phonology decks (set-like, no Urdu form wanted) and 350-odd word cards (3.2) | HI-100..105 |
-| + | Notes gap | PARTLY | 487 own cards have no `notes` (3.4) | HI-130..137 |
+| 1 | Path to B1 | not re-counted | last audit: `hi-path.yaml`, 120 units | none recorded |
+| 2 | Cores and English layers | not re-counted | last audit: 128 vocab and 34 grammar cores. Own cards now 3,448 (re-counted; top-level `vocab` or `grammar` decks, cards with `id` and no `ref`; 70 `ref` cards excluded) | none recorded |
+| 3 | Sentences decks | PRESENT (re-counted) | 74 of 74 word decks have a `-sentences` deck. 76 sentences decks in all, 919 sentence cards; 2 of them (`hi-grammar-sentences`, `hi-grammar-comparison-sentences`) belong to no word deck. Per-deck size against the 10 to 25 spec not re-counted | none for the gap; size check not re-counted |
+| 4 | Reading decks | PARTLY (re-counted) | 52 `hi-en-reading-*` decks at the top of `decks/hi/`. 45 of 74 word decks have one; 29 do not | HI-092 (audit first) |
+| 5 | Script decks | not re-counted | last audit: Devanagari and Perso-Arabic script decks present | none recorded |
+| 6 | Phrasebook | not re-counted | last audit: 20 cards (limit 25) | none recorded |
+| 7 | Situations | PRESENT (re-counted) | `hi-situations.yaml`: 10 sheets, 8 to 9 phrases each (sheet content not re-checked) | sheet count matches HI-050; content not re-checked |
+| 8 | Topics incl. script topics | PARTLY (re-counted) | `hi-topics.yaml`: 12 topics (kinds: 6 grammar, 3 verbs, 2 script, 1 words). No topic has kind `other`, so the HI-041 additions are absent | HI-041 |
+| 9 | Culture decks | PARTLY (re-counted) | `hi-culture-1` 6 cards, `hi-culture-2` 7, `hi-culture-3` 8 (planned 18 each). `hi-culture-4` is not built: no pre-1900 source readable on a page | HI-010..012 short; HI-013 not built |
+| 10 | Creators, eras, legacy | PRESENT (re-counted) | `decks/creators/hi.yaml`: 38 creators, 5 eras. Legacy rule not re-counted | creators against culture cards not re-counted |
+| 11 | Proverbs | PARTLY (re-counted) | `hi-proverbs-1` 17 cards, `hi-proverbs-2` 18, `hi-proverbs-3` 20 (planned 20 each) | HI-020..022 short by 3 and 2 on 1 and 2 |
+| 12 | Multi-word verbs | PARTLY (re-counted) | `hi-multiword-compound-verbs` 5 of 20; `hi-multiword-conjunct-verbs` 18, `hi-multiword-ko-experiencer` 9, `hi-multiword-muhavare` 17 (planned 20 each) | HI-030..033: compound-verbs to 20 and the other three families short |
+| 13 | Professional | HELD (not re-counted) | `professions: []` not re-counted | none (needs the owner) |
+| 14 | Recommendations | PARTLY (re-counted) | `decks/recommendations/hi.yaml`: 16 entries (planned 20) | 4 more to reach the plan |
+| 15 | Narrow IPA and broad `ipa` | **BLOCKED** on #1466 | `phonetic` on 1,403 of 3,448 own cards; broad `ipa` on 3,432 (16 cards without). Invalid-form count from #1466 (475 of 3,443), not re-counted here | HI-110 rerun after #1466 is fixed; HI-112 for the 16 cards without broad `ipa` |
+| 16 | Review-queue rows | PARTLY (re-counted) | `docs/review-queue/hi.md`: 90 table rows (10 dated 2026-11-07, 80 dated 2026-11-15) | HI-120..122 as waves land |
+| 17 | Sourcing list | **MISSING** (checked) | `wiki/Plan-Culture-Hindustani.md` is not on `origin/main` | HI-001 |
+| 18 | Facts file | not re-counted | last audit: `hi-facts.yaml`, 42 entries | none recorded |
+| + | Urdu spelling (`target_scripts.perso_arabic`) | PARTLY (re-counted) | 2,271 of 3,448 own cards have it (1,177 without). Set-like script and phonology decks are not split out in this count | HI-100..105 for the remaining word cards |
+| + | Notes gap | PARTLY (re-counted) | 2,611 of 3,448 own cards have `notes` (837 without) | HI-130..137 for the remaining gap |
 | + | Grammar tables | NOT AUDITED | 34 grammar decks; the full-table rule (owner, 2026-10-23) needs a read by a Sonnet | HI-093 |
 
 ## 2. Conventions every HI task carries
