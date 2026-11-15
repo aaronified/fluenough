@@ -410,6 +410,25 @@ class FactsNameCards(Case):
         self.assertTrue(any("icon must be one of" in e
                             for e in self.errors(self.SITUATIONS)))
 
+    def _the_new_icon_keys_are_valid_once_per_file_and_gate_the_file(self) -> None:
+        new = ["hotel", "post", "bank", "greeting", "emergency", "school", "work",
+               "travel"]
+        sheets = [{"id": k, "icon": k, "title": {"en": k.title()}, "phrases": [HOUSE]}
+                  for k in new]
+        self.situations(*sheets)
+        self.assertEqual(self.errors(self.SITUATIONS), [])
+        self.assertEqual(validate_decks.validate(self.p(self.SITUATIONS)).new_fields,
+                         {"situation_icons"})
+        self.assertEqual(validate_decks.CARD_FIELD_MIN_APP["situation_icons"], "0.10.3")
+        self.situations(sheets[0], dict(sheets[0], id="inn"))
+        self.assertTrue(any("icon 'hotel' is on another situation" in e
+                            for e in self.errors(self.SITUATIONS)))
+        # The first six keys need no newer app.
+        old = {"id": "taxi", "icon": "taxi", "title": {"en": "Taxi"}, "phrases": [HOUSE]}
+        self.situations(old)
+        self.assertEqual(validate_decks.validate(self.p(self.SITUATIONS)).new_fields,
+                         set())
+
     def _a_situations_file_is_one_per_language_and_named_so(self) -> None:
         taxi = {"id": "taxi", "icon": "taxi", "title": {"en": "Taxi"}, "phrases": [HOUSE]}
         self.situations(taxi)
@@ -479,6 +498,7 @@ class FactsNameCards(Case):
             self._a_situation_lists_real_cards,
             self._a_situation_has_its_shape,
             self._an_icon_is_one_of_the_six,
+            self._the_new_icon_keys_are_valid_once_per_file_and_gate_the_file,
             self._a_situations_file_is_one_per_language_and_named_so,
             self._a_situations_key_belongs_to_a_situations_file,
             self._a_rank_and_its_source,

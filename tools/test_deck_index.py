@@ -1041,6 +1041,25 @@ cards:
         files = {f["path"]: f for f in self.zz()["files"]}
         self.assertEqual(files["decks/zz/en/zz-en-words.yaml"]["min_app"], "0.12.0")
 
+    SITUATIONS = (
+        'schema: 1\nid: "zz-situations"\nname: "Testlang situations"\n'
+        'kind: "situations"\nlanguage: { code: "zz", iso639_3: "zzz", '
+        'name: "Testlang", script: "latin", tts: "es-ES" }\n'
+        'license: "CC-BY-SA-4.0"\nsituations:\n'
+        '  - { id: "s", icon: "%s", title: { en: "S" }, phrases: ["zz-0001"] }\n')
+
+    def situations_entry(self, icon: str) -> dict:
+        (self.tmp / "decks" / "zz" / "zz-situations.yaml").write_text(
+            self.SITUATIONS % icon, encoding="utf-8")
+        return next(f for f in self.zz()["situations"]
+                    if f["path"] == "decks/zz/zz-situations.yaml")
+
+    def test_a_situations_file_with_a_new_icon_key_is_gated(self) -> None:
+        self.assertEqual(self.situations_entry("hotel")["min_app"], "0.10.3")
+
+    def test_a_situations_file_with_only_the_old_keys_is_not_gated(self) -> None:
+        self.assertNotIn("min_app", self.situations_entry("taxi"))
+
     def test_a_file_without_the_field_is_not_gated(self) -> None:
         self.assertNotIn("min_app", self.glyphs("", ""))
 

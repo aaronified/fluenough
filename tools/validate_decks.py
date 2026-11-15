@@ -202,7 +202,12 @@ PATTERN_KEYS = {"name", "slot_name", "slots", "prompt", "entries", "notes"}
 FACT_KEYS = {"id", "text", "contrast", "tags", "source", "cards"}
 # A language's situation sheets (#724): the icons the app draws, in the order
 # of Today's buttons (lib/core/models/situation.dart), and a situation's keys.
-SITUATION_ICONS = ("taxi", "shops", "eat", "doctor", "traffic", "rail")
+SITUATION_ICONS = ("taxi", "shops", "eat", "doctor", "traffic", "rail",
+                   "hotel", "post", "bank", "greeting", "emergency", "school",
+                   "work", "travel")
+# The icons the released app does not draw (#1269): a situations file that uses
+# one waits for the app that does (CARD_FIELD_MIN_APP["situation_icons"]).
+NEW_SITUATION_ICONS = frozenset(SITUATION_ICONS[6:])
 SITUATION_KEYS = {"id", "icon", "title", "phrases", "words"}
 PASSAGE_KEYS = {"id", "title", "sentences", "source", "theme", "questions", "glossary",
                 "level", "creator", "legacy"}
@@ -2704,6 +2709,8 @@ def check_situations(r: Report, situations: object, lang: str | None = None) -> 
                            f"its own")
         else:
             icons.add(icon)
+            if icon in NEW_SITUATION_ICONS:
+                r.new_fields.add("situation_icons")
 
         title = sit.get("title")
         if not isinstance(title, dict) or not title:
@@ -7678,7 +7685,10 @@ MAX_STROKES = 64
 # is put behind it in the index (ADR-0052), because a released app refuses a
 # card field it does not know. Raise it to the real number if the release that
 # holds the parser is not this one.
-CARD_FIELD_MIN_APP = {"character": "0.10.2"}
+# "situation_icons" (#1269) is not a card field but a situations file's icon
+# keys: the released app draws a button of an unknown key with a plain icon (and
+# the sheet's own title), so a file with a new key waits for the next patch release.
+CARD_FIELD_MIN_APP = {"character": "0.10.2", "situation_icons": "0.10.3"}
 
 
 def _scheme_entries(r: Report, raw: object, key: str, keys: set[str],

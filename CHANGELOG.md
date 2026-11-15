@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **A language can have up to 14 situation sheets, not six.** New icons: hotel, post, bank, greetings, emergency, school, work and travel. Apps older than 0.10.3 keep the sheets they already have.
+
 - `tools/transcribe.py`, `tools/test_transcribe.py`: the Telugu transcription writes a word-final anusvara as `ṁ` (annaṁ, IPA `m`), keeps it before s and v (māṁsaṁ); other languages are unchanged (#1292).
 
 ## [0.10.2] - 2026-11-14
