@@ -200,7 +200,7 @@ units:
   - decks: ["bn-directions", "bn-grammar-continuous", "*"]
     words: 12
     grammar: ["continuous"]
-  - decks: ["bn-transport", "*"]
+  - decks: ["bn-transport", "bn-transport-sentences", "*"]
     words: 9
   - decks: ["bn-body", "bn-body-sentences", "*"]
     words: 35
@@ -216,7 +216,7 @@ units:
       - { id: "street-signs", text: { "en": "Signs along a street: pharmacy, school, bank, temple" } }
   - decks: ["bn-things", "*"]
     words: 32
-  - decks: ["bn-home", "*"]
+  - decks: ["bn-home", "bn-home-sentences", "*"]
     words: 21
   - decks: ["bn-things-sentences", "bn-more-verbs-sentences"]
     words: 0
@@ -263,7 +263,7 @@ units:
     milestone: "A1"
   # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
   # then its sentences.
-  - decks: ["bn-daily-life", "bn-grammar-conjunct-verbs", "*"]
+  - decks: ["bn-daily-life", "bn-daily-life-sentences", "bn-grammar-conjunct-verbs", "*"]
     words: 26
     grammar: ["conjunct-verbs"]
   - decks: ["bn-weather", "bn-weather-sentences", "*"]
