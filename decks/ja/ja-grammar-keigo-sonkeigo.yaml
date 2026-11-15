@@ -1,0 +1,707 @@
+schema: 1
+id: "ja-grammar-keigo-sonkeigo"
+part: "core"
+kind: "rules"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ja-0085", "ja-0351", "ja-0366", "ja-0516", "ja-0571", "ja-0573", "ja-0582", "ja-0583", "ja-0594", "ja-0598", "ja-0599", "ja-0600", "ja-1050", "ja-1062", "ja-1070", "ja-1071", "ja-1228", "ja-1237", "ja-1349", "ja-1354", "ja-1364", "ja-1539", "ja-1542", "ja-1793", "ja-1799", "ja-1804", "ja-1910", "ja-1934", "ja-1935", "ja-1996", "ja-1997", "ja-1998", "ja-2000", "ja-2002", "ja-2049", "ja-2050", "ja-2052", "ja-2053", "ja-2054", "ja-2116", "ja-2126", "ja-2127", "ja-2128", "ja-2129", "ja-2164", "ja-2165", "ja-2217", "ja-2218", "ja-2220", "ja-2221", "ja-2225", "ja-2226", "ja-2227", "ja-2232", "ja-2233", "ja-2239", "ja-2242", "ja-2245", "ja-2246", "ja-2252", "ja-2255", "ja-2257", "ja-2259", "ja-2263", "ja-2265", "ja-2267", "ja-2268", "ja-2270", "ja-2274", "ja-2275", "ja-2320", "ja-2322", "ja-2364", "ja-2470", "ja-2471", "ja-2472", "ja-2473", "ja-2602", "ja-2604", "ja-2605", "ja-2606", "ja-2716", "ja-2772", "ja-2773", "ja-2794", "ja-2795", "ja-2796", "ja-2797", "ja-2798", "ja-2799", "ja-2800", "ja-2801", "ja-2803", "ja-2812", "ja-2877", "ja-2944", "ja-2982", "ja-3062", "ja-3195", "ja-3294", "ja-3310", "ja-3311", "ja-3321", "ja-3322", "ja-3383", "ja-3385", "ja-3386", "ja-3434", "ja-3452", "ja-3568", "ja-3569", "ja-3571", "ja-3612", "ja-3691", "ja-3779", "ja-3780", "ja-3786", "ja-3790", "ja-3887", "ja-3898", "ja-3914", "ja-3915", "ja-3963", "ja-3965", "ja-4046", "ja-4048", "ja-4050", "ja-4052", "ja-4054", "ja-4056", "ja-4057", "ja-4058", "ja-4060", "ja-4061", "ja-4062", "ja-4063", "ja-4064", "ja-4065", "ja-4066", "ja-4067", "ja-4068", "ja-4069", "ja-4070", "ja-4071", "ja-4072", "ja-4073", "ja-4075", "ja-4077", "ja-4078", "ja-4079", "ja-4081", "ja-4083", "ja-4085", "ja-4086", "ja-4087", "ja-4088", "ja-4090", "ja-4091", "ja-4092", "ja-4093", "ja-4094", "ja-4095", "ja-4096", "ja-4097", "ja-4099", "ja-4100", "ja-4101", "ja-4104", "ja-4105", "ja-4192", "ja-8028", "ja-8038", "ja-8752", "ja-8754", "ja-8755", "ja-8756", "ja-8757", "ja-8760", "ja-8762", "ja-8763", "ja-8764", "ja-8765", "ja-8767", "ja-8768", "ja-8769", "ja-8772", "ja-8773", "ja-8775", "ja-8777", "ja-8778", "ja-8780", "ja-8783", "ja-8785", "ja-8786", "ja-8787", "ja-8790", "ja-8792", "ja-8794", "ja-8795", "ja-8798", "ja-8799"]
+  slots: ["sonkeigo"]
+  rows:
+    - word: "ja-0341"
+      forms: { "sonkeigo": "めしあがります" }
+      readings: { "sonkeigo": "meshiagarimasu" }
+    - word: "ja-0342"
+      forms: { "sonkeigo": "めしあがります" }
+      readings: { "sonkeigo": "meshiagarimasu" }
+    - word: "ja-0343"
+      forms: { "sonkeigo": "ごらんになります" }
+      readings: { "sonkeigo": "goranninarimasu" }
+    - word: "ja-0344"
+      forms: { "sonkeigo": "おききになります" }
+      readings: { "sonkeigo": "okikininarimasu" }
+    - word: "ja-0345"
+      forms: { "sonkeigo": "およみになります" }
+      readings: { "sonkeigo": "oyomininarimasu" }
+    - word: "ja-0346"
+      forms: { "sonkeigo": "おかきになります" }
+      readings: { "sonkeigo": "okakininarimasu" }
+    - word: "ja-0347"
+      forms: { "sonkeigo": "おはなしになります" }
+      readings: { "sonkeigo": "ohanashininarimasu" }
+    - word: "ja-0348"
+      forms: { "sonkeigo": "いらっしゃいます" }
+      readings: { "sonkeigo": "irasshaimasu" }
+    - word: "ja-0349"
+      forms: { "sonkeigo": "いらっしゃいます" }
+      readings: { "sonkeigo": "irasshaimasu" }
+    - word: "ja-0350"
+      forms: { "sonkeigo": "おかえりになります" }
+      readings: { "sonkeigo": "okaerininarimasu" }
+    - word: "ja-0352"
+      forms: { "sonkeigo": "おやすみになります" }
+      readings: { "sonkeigo": "oyasumininarimasu" }
+    - word: "ja-0353"
+      forms: { "sonkeigo": "おはたらきになります" }
+      readings: { "sonkeigo": "ohatarakininarimasu" }
+    - word: "ja-0354"
+      forms: { "sonkeigo": "おやすみになります" }
+      readings: { "sonkeigo": "oyasumininarimasu" }
+    - word: "ja-0355"
+      forms: { "sonkeigo": "おはいりになります" }
+      readings: { "sonkeigo": "ohairininarimasu" }
+    - word: "ja-0356"
+      forms: { "sonkeigo": "おかいになります" }
+      readings: { "sonkeigo": "okaininarimasu" }
+    - word: "ja-0357"
+      forms: { "sonkeigo": "おあいになります" }
+      readings: { "sonkeigo": "oaininarimasu" }
+    - word: "ja-0358"
+      forms: { "sonkeigo": "おまちになります" }
+      readings: { "sonkeigo": "omachininarimasu" }
+    - word: "ja-0359"
+      forms: { "sonkeigo": "おもちになります" }
+      readings: { "sonkeigo": "omochininarimasu" }
+    - word: "ja-0360"
+      forms: { "sonkeigo": "おあるきになります" }
+      readings: { "sonkeigo": "oarukininarimasu" }
+    - word: "ja-0361"
+      forms: { "sonkeigo": "おのりになります" }
+      readings: { "sonkeigo": "onorininarimasu" }
+    - word: "ja-0362"
+      forms: { "sonkeigo": "おおりになります" }
+      readings: { "sonkeigo": "oorininarimasu" }
+    - word: "ja-0363"
+      forms: { "sonkeigo": "おあらいになります" }
+      readings: { "sonkeigo": "oaraininarimasu" }
+    - word: "ja-0364"
+      forms: { "sonkeigo": "おつくりになります" }
+      readings: { "sonkeigo": "otsukurininarimasu" }
+    - word: "ja-0365"
+      forms: { "sonkeigo": "おわかりになります" }
+      readings: { "sonkeigo": "owakarininarimasu" }
+    - word: "ja-0367"
+      forms: { "sonkeigo": "おならいになります" }
+      readings: { "sonkeigo": "onaraininarimasu" }
+    - word: "ja-0368"
+      forms: { "sonkeigo": "おおしえになります" }
+      readings: { "sonkeigo": "ooshieninarimasu" }
+    - word: "ja-0369"
+      forms: { "sonkeigo": "おつかいになります" }
+      readings: { "sonkeigo": "otsukaininarimasu" }
+    - word: "ja-0370"
+      forms: { "sonkeigo": "おすわりになります" }
+      readings: { "sonkeigo": "osuwarininarimasu" }
+    - word: "ja-0371"
+      forms: { "sonkeigo": "おたちになります" }
+      readings: { "sonkeigo": "otachininarimasu" }
+    - word: "ja-0372"
+      forms: { "sonkeigo": "おあけになります" }
+      readings: { "sonkeigo": "oakeninarimasu" }
+    - word: "ja-0373"
+      forms: { "sonkeigo": "おしめになります" }
+      readings: { "sonkeigo": "oshimeninarimasu" }
+    - word: "ja-0374"
+      forms: { "sonkeigo": "おあそびになります" }
+      readings: { "sonkeigo": "oasobininarimasu" }
+    - word: "ja-0375"
+      forms: { "sonkeigo": "なさいます" }
+      readings: { "sonkeigo": "nasaimasu" }
+    - word: "ja-0572"
+      forms: { "sonkeigo": "おはしりになります" }
+      readings: { "sonkeigo": "ohashirininarimasu" }
+    - word: "ja-0574"
+      forms: { "sonkeigo": "おおどりになります" }
+      readings: { "sonkeigo": "oodorininarimasu" }
+    - word: "ja-0575"
+      forms: { "sonkeigo": "おうたいになります" }
+      readings: { "sonkeigo": "outaininarimasu" }
+    - word: "ja-0576"
+      forms: { "sonkeigo": "おかりになります" }
+      readings: { "sonkeigo": "okarininarimasu" }
+    - word: "ja-0577"
+      forms: { "sonkeigo": "おかえしになります" }
+      readings: { "sonkeigo": "okaeshininarimasu" }
+    - word: "ja-0578"
+      forms: { "sonkeigo": "おわすれになります" }
+      readings: { "sonkeigo": "owasureninarimasu" }
+    - word: "ja-0579"
+      forms: { "sonkeigo": "おおぼえになります" }
+      readings: { "sonkeigo": "ooboeninarimasu" }
+    - word: "ja-0580"
+      forms: { "sonkeigo": "おてつだいになります" }
+      readings: { "sonkeigo": "otetsudaininarimasu" }
+    - word: "ja-0581"
+      forms: { "sonkeigo": "おひろいになります" }
+      readings: { "sonkeigo": "ohiroininarimasu" }
+    - word: "ja-0584"
+      forms: { "sonkeigo": "おのぼりになります" }
+      readings: { "sonkeigo": "onoborininarimasu" }
+    - word: "ja-0585"
+      forms: { "sonkeigo": "おそうじなさいます" }
+      readings: { "sonkeigo": "osoujinasaimasu" }
+    - word: "ja-0586"
+      forms: { "sonkeigo": "おりょうりなさいます" }
+      readings: { "sonkeigo": "oryourinasaimasu" }
+    - word: "ja-0587"
+      forms: { "sonkeigo": "おでかけになります" }
+      readings: { "sonkeigo": "odekakeninarimasu" }
+    - word: "ja-0588"
+      forms: { "sonkeigo": "おもどりになります" }
+      readings: { "sonkeigo": "omodorininarimasu" }
+    - word: "ja-0589"
+      forms: { "sonkeigo": "おとまりになります" }
+      readings: { "sonkeigo": "otomarininarimasu" }
+    - word: "ja-0590"
+      forms: { "sonkeigo": "おさがしになります" }
+      readings: { "sonkeigo": "osagashininarimasu" }
+    - word: "ja-0591"
+      forms: { "sonkeigo": "おみせになります" }
+      readings: { "sonkeigo": "omiseninarimasu" }
+    - word: "ja-0592"
+      forms: { "sonkeigo": "おいれになります" }
+      readings: { "sonkeigo": "oireninarimasu" }
+    - word: "ja-0593"
+      forms: { "sonkeigo": "おわらいになります" }
+      readings: { "sonkeigo": "owaraininarimasu" }
+    - word: "ja-0595"
+      forms: { "sonkeigo": "おやめになります" }
+      readings: { "sonkeigo": "oyameninarimasu" }
+    - word: "ja-0596"
+      forms: { "sonkeigo": "おはじめになります" }
+      readings: { "sonkeigo": "ohajimeninarimasu" }
+    - word: "ja-0597"
+      forms: { "sonkeigo": "おひっこしになります" }
+      readings: { "sonkeigo": "ohikkoshininarimasu" }
+    - word: "ja-0711"
+      forms: { "sonkeigo": "おつとめになります" }
+      readings: { "sonkeigo": "otsutomeninarimasu" }
+    - word: "ja-0949"
+      forms: { "sonkeigo": "おかぞえになります" }
+      readings: { "sonkeigo": "okazoeninarimasu" }
+    - word: "ja-1060"
+      forms: { "sonkeigo": "おわたりになります" }
+      readings: { "sonkeigo": "owatarininarimasu" }
+    - word: "ja-1061"
+      forms: { "sonkeigo": "おすすみになります" }
+      readings: { "sonkeigo": "osusumininarimasu" }
+    - word: "ja-1078"
+      forms: { "sonkeigo": "おむかいになります" }
+      readings: { "sonkeigo": "omukaininarimasu" }
+    - word: "ja-1226"
+      forms: { "sonkeigo": "おこまりになります" }
+      readings: { "sonkeigo": "okomarininarimasu" }
+    - word: "ja-1227"
+      forms: { "sonkeigo": "およびになります" }
+      readings: { "sonkeigo": "oyobininarimasu" }
+    - word: "ja-1236"
+      forms: { "sonkeigo": "おたすけになります" }
+      readings: { "sonkeigo": "otasukeninarimasu" }
+    - word: "ja-1240"
+      forms: { "sonkeigo": "おまもりになります" }
+      readings: { "sonkeigo": "omamorininarimasu" }
+    - word: "ja-1334"
+      forms: { "sonkeigo": "おきがえになります" }
+      readings: { "sonkeigo": "okigaeninarimasu" }
+    - word: "ja-1335"
+      forms: { "sonkeigo": "おはきになります" }
+      readings: { "sonkeigo": "ohakininarimasu" }
+    - word: "ja-1336"
+      forms: { "sonkeigo": "おかぶりになります" }
+      readings: { "sonkeigo": "okaburininarimasu" }
+    - word: "ja-1341"
+      forms: { "sonkeigo": "おつかれになります" }
+      readings: { "sonkeigo": "otsukareninarimasu" }
+    - word: "ja-1348"
+      forms: { "sonkeigo": "おだしになります" }
+      readings: { "sonkeigo": "odashininarimasu" }
+    - word: "ja-1350"
+      forms: { "sonkeigo": "おほしになります" }
+      readings: { "sonkeigo": "ohoshininarimasu" }
+    - word: "ja-1351"
+      forms: { "sonkeigo": "おかたづけになります" }
+      readings: { "sonkeigo": "okatazukeninarimasu" }
+    - word: "ja-1352"
+      forms: { "sonkeigo": "おたたみになります" }
+      readings: { "sonkeigo": "otatamininarimasu" }
+    - word: "ja-1353"
+      forms: { "sonkeigo": "おぬぎになります" }
+      readings: { "sonkeigo": "onugininarimasu" }
+    - word: "ja-1368"
+      forms: { "sonkeigo": "おいそぎになります" }
+      readings: { "sonkeigo": "oisogininarimasu" }
+    - word: "ja-1718"
+      forms: { "sonkeigo": "おうりになります" }
+      readings: { "sonkeigo": "ourininarimasu" }
+    - word: "ja-1719"
+      forms: { "sonkeigo": "おはらいになります" }
+      readings: { "sonkeigo": "oharaininarimasu" }
+    - word: "ja-1720"
+      forms: { "sonkeigo": "おまけになります" }
+      readings: { "sonkeigo": "omakeninarimasu" }
+    - word: "ja-1721"
+      forms: { "sonkeigo": "おえらびになります" }
+      readings: { "sonkeigo": "oerabininarimasu" }
+    - word: "ja-1758"
+      forms: { "sonkeigo": "おたのみになります" }
+      readings: { "sonkeigo": "otanomininarimasu" }
+    - word: "ja-1759"
+      forms: { "sonkeigo": "おおごりになります" }
+      readings: { "sonkeigo": "oogorininarimasu" }
+    - word: "ja-1790"
+      forms: { "sonkeigo": "おいためになります" }
+      readings: { "sonkeigo": "oitameninarimasu" }
+    - word: "ja-1791"
+      forms: { "sonkeigo": "おまぜになります" }
+      readings: { "sonkeigo": "omazeninarimasu" }
+    - word: "ja-1792"
+      forms: { "sonkeigo": "おゆでになります" }
+      readings: { "sonkeigo": "oyudeninarimasu" }
+    - word: "ja-1794"
+      forms: { "sonkeigo": "おやきになります" }
+      readings: { "sonkeigo": "oyakininarimasu" }
+    - word: "ja-1800"
+      forms: { "sonkeigo": "おあたためになります" }
+      readings: { "sonkeigo": "oatatameninarimasu" }
+    - word: "ja-1801"
+      forms: { "sonkeigo": "おきざみになります" }
+      readings: { "sonkeigo": "okizamininarimasu" }
+    - word: "ja-1802"
+      forms: { "sonkeigo": "おむきになります" }
+      readings: { "sonkeigo": "omukininarimasu" }
+    - word: "ja-1803"
+      forms: { "sonkeigo": "おつつみになります" }
+      readings: { "sonkeigo": "otsutsumininarimasu" }
+    - word: "ja-1805"
+      forms: { "sonkeigo": "おさましになります" }
+      readings: { "sonkeigo": "osamashininarimasu" }
+    - word: "ja-1850"
+      forms: { "sonkeigo": "おべんきょうなさいます" }
+      readings: { "sonkeigo": "obenkyounasaimasu" }
+    - word: "ja-1861"
+      forms: { "sonkeigo": "おおくれになります" }
+      readings: { "sonkeigo": "ookureninarimasu" }
+    - word: "ja-1862"
+      forms: { "sonkeigo": "おまなびになります" }
+      readings: { "sonkeigo": "omanabininarimasu" }
+    - word: "ja-1863"
+      forms: { "sonkeigo": "おつづけになります" }
+      readings: { "sonkeigo": "otsuzukeninarimasu" }
+    - word: "ja-1864"
+      forms: { "sonkeigo": "おかんがえになります" }
+      readings: { "sonkeigo": "okangaeninarimasu" }
+    - word: "ja-1865"
+      forms: { "sonkeigo": "おこたえになります" }
+      readings: { "sonkeigo": "okotaeninarimasu" }
+    - word: "ja-1892"
+      forms: { "sonkeigo": "おおよぎになります" }
+      readings: { "sonkeigo": "ooyogininarimasu" }
+    - word: "ja-1893"
+      forms: { "sonkeigo": "おとりになります" }
+      readings: { "sonkeigo": "otorininarimasu" }
+    - word: "ja-1896"
+      forms: { "sonkeigo": "おえがきになります" }
+      readings: { "sonkeigo": "oegakininarimasu" }
+    - word: "ja-1900"
+      forms: { "sonkeigo": "おぬいになります" }
+      readings: { "sonkeigo": "onuininarimasu" }
+    - word: "ja-1901"
+      forms: { "sonkeigo": "おあみになります" }
+      readings: { "sonkeigo": "oamininarimasu" }
+    - word: "ja-1907"
+      forms: { "sonkeigo": "おほめになります" }
+      readings: { "sonkeigo": "ohomeninarimasu" }
+    - word: "ja-1933"
+      forms: { "sonkeigo": "おかなでになります" }
+      readings: { "sonkeigo": "okanadeninarimasu" }
+    - word: "ja-1939"
+      forms: { "sonkeigo": "おたたきになります" }
+      readings: { "sonkeigo": "otatakininarimasu" }
+    - word: "ja-1940"
+      forms: { "sonkeigo": "おきこえになります" }
+      readings: { "sonkeigo": "okikoeninarimasu" }
+    - word: "ja-1941"
+      forms: { "sonkeigo": "おひきになります" }
+      readings: { "sonkeigo": "ohikininarimasu" }
+    - word: "ja-1999"
+      forms: { "sonkeigo": "おおいかけになります" }
+      readings: { "sonkeigo": "ooikakeninarimasu" }
+    - word: "ja-2001"
+      forms: { "sonkeigo": "おきたえになります" }
+      readings: { "sonkeigo": "okitaeninarimasu" }
+    - word: "ja-2051"
+      forms: { "sonkeigo": "おなおしになります" }
+      readings: { "sonkeigo": "onaoshininarimasu" }
+    - word: "ja-2115"
+      forms: { "sonkeigo": "おみがきになります" }
+      readings: { "sonkeigo": "omigakininarimasu" }
+    - word: "ja-2117"
+      forms: { "sonkeigo": "おすすぎになります" }
+      readings: { "sonkeigo": "osusugininarimasu" }
+    - word: "ja-2118"
+      forms: { "sonkeigo": "おしぼりになります" }
+      readings: { "sonkeigo": "oshiborininarimasu" }
+    - word: "ja-2119"
+      forms: { "sonkeigo": "おかわかしになります" }
+      readings: { "sonkeigo": "okawakashininarimasu" }
+    - word: "ja-2120"
+      forms: { "sonkeigo": "おしまいになります" }
+      readings: { "sonkeigo": "oshimaininarimasu" }
+    - word: "ja-2121"
+      forms: { "sonkeigo": "おそろえになります" }
+      readings: { "sonkeigo": "osoroeninarimasu" }
+    - word: "ja-2122"
+      forms: { "sonkeigo": "おかざりになります" }
+      readings: { "sonkeigo": "okazarininarimasu" }
+    - word: "ja-2123"
+      forms: { "sonkeigo": "おとりかえになります" }
+      readings: { "sonkeigo": "otorikaeninarimasu" }
+    - word: "ja-2124"
+      forms: { "sonkeigo": "おつめになります" }
+      readings: { "sonkeigo": "otsumeninarimasu" }
+    - word: "ja-2125"
+      forms: { "sonkeigo": "おくばりになります" }
+      readings: { "sonkeigo": "okubarininarimasu" }
+    - word: "ja-2219"
+      forms: { "sonkeigo": "おきめになります" }
+      readings: { "sonkeigo": "okimeninarimasu" }
+    - word: "ja-2222"
+      forms: { "sonkeigo": "おつきになります" }
+      readings: { "sonkeigo": "otsukininarimasu" }
+    - word: "ja-2223"
+      forms: { "sonkeigo": "おつけになります" }
+      readings: { "sonkeigo": "otsukeninarimasu" }
+    - word: "ja-2224"
+      forms: { "sonkeigo": "おけしになります" }
+      readings: { "sonkeigo": "okeshininarimasu" }
+    - word: "ja-2228"
+      forms: { "sonkeigo": "おつかまえになります" }
+      readings: { "sonkeigo": "otsukamaeninarimasu" }
+    - word: "ja-2229"
+      forms: { "sonkeigo": "おつかみになります" }
+      readings: { "sonkeigo": "otsukamininarimasu" }
+    - word: "ja-2230"
+      forms: { "sonkeigo": "おおしになります" }
+      readings: { "sonkeigo": "ooshininarimasu" }
+    - word: "ja-2231"
+      forms: { "sonkeigo": "おひっぱりになります" }
+      readings: { "sonkeigo": "ohipparininarimasu" }
+    - word: "ja-2234"
+      forms: { "sonkeigo": "おひらきになります" }
+      readings: { "sonkeigo": "ohirakininarimasu" }
+    - word: "ja-2235"
+      forms: { "sonkeigo": "おとじになります" }
+      readings: { "sonkeigo": "otojininarimasu" }
+    - word: "ja-2236"
+      forms: { "sonkeigo": "おわたしになります" }
+      readings: { "sonkeigo": "owatashininarimasu" }
+    - word: "ja-2237"
+      forms: { "sonkeigo": "おうけになります" }
+      readings: { "sonkeigo": "oukeninarimasu" }
+    - word: "ja-2238"
+      forms: { "sonkeigo": "おつたえになります" }
+      readings: { "sonkeigo": "otsutaeninarimasu" }
+    - word: "ja-2240"
+      forms: { "sonkeigo": "おむかえになります" }
+      readings: { "sonkeigo": "omukaeninarimasu" }
+    - word: "ja-2241"
+      forms: { "sonkeigo": "おおくりになります" }
+      readings: { "sonkeigo": "ookurininarimasu" }
+    - word: "ja-2243"
+      forms: { "sonkeigo": "おとどけになります" }
+      readings: { "sonkeigo": "otodokeninarimasu" }
+    - word: "ja-2244"
+      forms: { "sonkeigo": "おたずねになります" }
+      readings: { "sonkeigo": "otazuneninarimasu" }
+    - word: "ja-2247"
+      forms: { "sonkeigo": "おゆるしになります" }
+      readings: { "sonkeigo": "oyurushininarimasu" }
+    - word: "ja-2248"
+      forms: { "sonkeigo": "おことわりになります" }
+      readings: { "sonkeigo": "okotowarininarimasu" }
+    - word: "ja-2249"
+      forms: { "sonkeigo": "おさそいになります" }
+      readings: { "sonkeigo": "osasoininarimasu" }
+    - word: "ja-2250"
+      forms: { "sonkeigo": "おかよいになります" }
+      readings: { "sonkeigo": "okayoininarimasu" }
+    - word: "ja-2251"
+      forms: { "sonkeigo": "おとおりになります" }
+      readings: { "sonkeigo": "otoorininarimasu" }
+    - word: "ja-2253"
+      forms: { "sonkeigo": "おまわりになります" }
+      readings: { "sonkeigo": "omawarininarimasu" }
+    - word: "ja-2254"
+      forms: { "sonkeigo": "おまわしになります" }
+      readings: { "sonkeigo": "omawashininarimasu" }
+    - word: "ja-2256"
+      forms: { "sonkeigo": "おうごかしになります" }
+      readings: { "sonkeigo": "ougokashininarimasu" }
+    - word: "ja-2258"
+      forms: { "sonkeigo": "おのこしになります" }
+      readings: { "sonkeigo": "onokoshininarimasu" }
+    - word: "ja-2260"
+      forms: { "sonkeigo": "おあつめになります" }
+      readings: { "sonkeigo": "oatsumeninarimasu" }
+    - word: "ja-2261"
+      forms: { "sonkeigo": "おわけになります" }
+      readings: { "sonkeigo": "owakeninarimasu" }
+    - word: "ja-2262"
+      forms: { "sonkeigo": "おくらべになります" }
+      readings: { "sonkeigo": "okurabeninarimasu" }
+    - word: "ja-2264"
+      forms: { "sonkeigo": "おかくしになります" }
+      readings: { "sonkeigo": "okakushininarimasu" }
+    - word: "ja-2266"
+      forms: { "sonkeigo": "おみつけになります" }
+      readings: { "sonkeigo": "omitsukeninarimasu" }
+    - word: "ja-2269"
+      forms: { "sonkeigo": "おそだてになります" }
+      readings: { "sonkeigo": "osodateninarimasu" }
+    - word: "ja-2271"
+      forms: { "sonkeigo": "おうまれになります" }
+      readings: { "sonkeigo": "oumareninarimasu" }
+    - word: "ja-2272"
+      forms: { "sonkeigo": "おいきになります" }
+      readings: { "sonkeigo": "oikininarimasu" }
+    - word: "ja-2273"
+      forms: { "sonkeigo": "おたのしみになります" }
+      readings: { "sonkeigo": "otanoshimininarimasu" }
+    - word: "ja-2276"
+      forms: { "sonkeigo": "おさわりになります" }
+      readings: { "sonkeigo": "osawarininarimasu" }
+    - word: "ja-2321"
+      forms: { "sonkeigo": "おつなぎになります" }
+      readings: { "sonkeigo": "otsunagininarimasu" }
+    - word: "ja-2323"
+      forms: { "sonkeigo": "おうけとりになります" }
+      readings: { "sonkeigo": "ouketorininarimasu" }
+    - word: "ja-2365"
+      forms: { "sonkeigo": "おのりかえになります" }
+      readings: { "sonkeigo": "onorikaeninarimasu" }
+    - word: "ja-2407"
+      forms: { "sonkeigo": "おたちよりになります" }
+      readings: { "sonkeigo": "otachiyorininarimasu" }
+    - word: "ja-2600"
+      forms: { "sonkeigo": "おまかせになります" }
+      readings: { "sonkeigo": "omakaseninarimasu" }
+    - word: "ja-2601"
+      forms: { "sonkeigo": "おひきうけになります" }
+      readings: { "sonkeigo": "ohikiukeninarimasu" }
+    - word: "ja-2603"
+      forms: { "sonkeigo": "おはげみになります" }
+      readings: { "sonkeigo": "ohagemininarimasu" }
+    - word: "ja-2768"
+      forms: { "sonkeigo": "おおどろきになります" }
+      readings: { "sonkeigo": "oodorokininarimasu" }
+    - word: "ja-2769"
+      forms: { "sonkeigo": "およろこびになります" }
+      readings: { "sonkeigo": "oyorokobininarimasu" }
+    - word: "ja-2770"
+      forms: { "sonkeigo": "おかなしみになります" }
+      readings: { "sonkeigo": "okanashimininarimasu" }
+    - word: "ja-2771"
+      forms: { "sonkeigo": "おなやみになります" }
+      readings: { "sonkeigo": "onayamininarimasu" }
+    - word: "ja-2774"
+      forms: { "sonkeigo": "おおちつきになります" }
+      readings: { "sonkeigo": "oochitsukininarimasu" }
+    - word: "ja-2806"
+      forms: { "sonkeigo": "おかんじになります" }
+      readings: { "sonkeigo": "okanjininarimasu" }
+    - word: "ja-2876"
+      forms: { "sonkeigo": "おかたりになります" }
+      readings: { "sonkeigo": "okatarininarimasu" }
+    - word: "ja-4185"
+      forms: { "sonkeigo": "おみとめになります" }
+      readings: { "sonkeigo": "omitomeninarimasu" }
+    - word: "ja-4186"
+      forms: { "sonkeigo": "おうたがいになります" }
+      readings: { "sonkeigo": "outagaininarimasu" }
+    - word: "ja-4187"
+      forms: { "sonkeigo": "おしんじになります" }
+      readings: { "sonkeigo": "oshinjininarimasu" }
+    - word: "ja-2925"
+      forms: { "sonkeigo": "おあずけになります" }
+      readings: { "sonkeigo": "oazukeninarimasu" }
+    - word: "ja-2926"
+      forms: { "sonkeigo": "おあずかりになります" }
+      readings: { "sonkeigo": "oazukarininarimasu" }
+    - word: "ja-2945"
+      forms: { "sonkeigo": "おおとずれになります" }
+      readings: { "sonkeigo": "ootozureninarimasu" }
+    - word: "ja-3140"
+      forms: { "sonkeigo": "おつくりだしになります" }
+      readings: { "sonkeigo": "otsukuridashininarimasu" }
+    - word: "ja-3309"
+      forms: { "sonkeigo": "おゆずりになります" }
+      readings: { "sonkeigo": "oyuzurininarimasu" }
+    - word: "ja-3319"
+      forms: { "sonkeigo": "おもてなしになります" }
+      readings: { "sonkeigo": "omotenashininarimasu" }
+    - word: "ja-3320"
+      forms: { "sonkeigo": "おまねきになります" }
+      readings: { "sonkeigo": "omanekininarimasu" }
+    - word: "ja-3384"
+      forms: { "sonkeigo": "おふやしになります" }
+      readings: { "sonkeigo": "ofuyashininarimasu" }
+    - word: "ja-3389"
+      forms: { "sonkeigo": "おたもちになります" }
+      readings: { "sonkeigo": "otamochininarimasu" }
+    - word: "ja-3390"
+      forms: { "sonkeigo": "おさけになります" }
+      readings: { "sonkeigo": "osakeninarimasu" }
+    - word: "ja-3564"
+      forms: { "sonkeigo": "おたたかいになります" }
+      readings: { "sonkeigo": "otatakaininarimasu" }
+    - word: "ja-3611"
+      forms: { "sonkeigo": "おいのりになります" }
+      readings: { "sonkeigo": "oinorininarimasu" }
+    - word: "ja-3690"
+      forms: { "sonkeigo": "おいわいになります" }
+      readings: { "sonkeigo": "oiwaininarimasu" }
+    - word: "ja-3781"
+      forms: { "sonkeigo": "おたよりになります" }
+      readings: { "sonkeigo": "otayorininarimasu" }
+    - word: "ja-3782"
+      forms: { "sonkeigo": "おはげましになります" }
+      readings: { "sonkeigo": "ohagemashininarimasu" }
+    - word: "ja-3783"
+      forms: { "sonkeigo": "おなぐさめになります" }
+      readings: { "sonkeigo": "onagusameninarimasu" }
+    - word: "ja-3784"
+      forms: { "sonkeigo": "おかばいになります" }
+      readings: { "sonkeigo": "okabaininarimasu" }
+    - word: "ja-3785"
+      forms: { "sonkeigo": "おささえになります" }
+      readings: { "sonkeigo": "osasaeninarimasu" }
+    - word: "ja-3791"
+      forms: { "sonkeigo": "おであいになります" }
+      readings: { "sonkeigo": "odeaininarimasu" }
+    - word: "ja-3833"
+      forms: { "sonkeigo": "おくらしになります" }
+      readings: { "sonkeigo": "okurashininarimasu" }
+    - word: "ja-3857"
+      forms: { "sonkeigo": "おかしになります" }
+      readings: { "sonkeigo": "okashininarimasu" }
+    - word: "ja-4047"
+      forms: { "sonkeigo": "おおさえになります" }
+      readings: { "sonkeigo": "oosaeninarimasu" }
+    - word: "ja-4049"
+      forms: { "sonkeigo": "おおさめになります" }
+      readings: { "sonkeigo": "oosameninarimasu" }
+    - word: "ja-4051"
+      forms: { "sonkeigo": "おおもいだしになります" }
+      readings: { "sonkeigo": "oomoidashininarimasu" }
+    - word: "ja-4053"
+      forms: { "sonkeigo": "おかかえになります" }
+      readings: { "sonkeigo": "okakaeninarimasu" }
+    - word: "ja-4055"
+      forms: { "sonkeigo": "おかさねになります" }
+      readings: { "sonkeigo": "okasaneninarimasu" }
+    - word: "ja-4059"
+      forms: { "sonkeigo": "おきづきになります" }
+      readings: { "sonkeigo": "okizukininarimasu" }
+    - word: "ja-4074"
+      forms: { "sonkeigo": "おしめしになります" }
+      readings: { "sonkeigo": "oshimeshininarimasu" }
+    - word: "ja-4076"
+      forms: { "sonkeigo": "おすませになります" }
+      readings: { "sonkeigo": "osumaseninarimasu" }
+    - word: "ja-4080"
+      forms: { "sonkeigo": "おそなえになります" }
+      readings: { "sonkeigo": "osonaeninarimasu" }
+    - word: "ja-4082"
+      forms: { "sonkeigo": "おそめになります" }
+      readings: { "sonkeigo": "osomeninarimasu" }
+    - word: "ja-4084"
+      forms: { "sonkeigo": "おたしかめになります" }
+      readings: { "sonkeigo": "otashikameninarimasu" }
+    - word: "ja-4089"
+      forms: { "sonkeigo": "おつぎになります" }
+      readings: { "sonkeigo": "otsugininarimasu" }
+    - word: "ja-4098"
+      forms: { "sonkeigo": "おととのえになります" }
+      readings: { "sonkeigo": "ototonoeninarimasu" }
+    - word: "ja-4102"
+      forms: { "sonkeigo": "おとりあげになります" }
+      readings: { "sonkeigo": "otoriageninarimasu" }
+    - word: "ja-4103"
+      forms: { "sonkeigo": "おとりだしになります" }
+      readings: { "sonkeigo": "otoridashininarimasu" }
+    - word: "ja-8039"
+      forms: { "sonkeigo": "おためになります" }
+      readings: { "sonkeigo": "otameninarimasu" }
+    - word: "ja-8487"
+      forms: { "sonkeigo": "おあじわいになります" }
+      readings: { "sonkeigo": "oajiwaininarimasu" }
+    - word: "ja-8750"
+      forms: { "sonkeigo": "おのりこえになります" }
+      readings: { "sonkeigo": "onorikoeninarimasu" }
+    - word: "ja-8751"
+      forms: { "sonkeigo": "おはずしになります" }
+      readings: { "sonkeigo": "ohazushininarimasu" }
+    - word: "ja-8753"
+      forms: { "sonkeigo": "おはなれになります" }
+      readings: { "sonkeigo": "ohanareninarimasu" }
+    - word: "ja-8758"
+      forms: { "sonkeigo": "おひろげになります" }
+      readings: { "sonkeigo": "ohirogeninarimasu" }
+    - word: "ja-8759"
+      forms: { "sonkeigo": "おふくみになります" }
+      readings: { "sonkeigo": "ofukumininarimasu" }
+    - word: "ja-8761"
+      forms: { "sonkeigo": "おふせぎになります" }
+      readings: { "sonkeigo": "ofusegininarimasu" }
+    - word: "ja-8766"
+      forms: { "sonkeigo": "おまとめになります" }
+      readings: { "sonkeigo": "omatomeninarimasu" }
+    - word: "ja-8770"
+      forms: { "sonkeigo": "おみたしになります" }
+      readings: { "sonkeigo": "omitashininarimasu" }
+    - word: "ja-8771"
+      forms: { "sonkeigo": "おむすびになります" }
+      readings: { "sonkeigo": "omusubininarimasu" }
+    - word: "ja-8774"
+      forms: { "sonkeigo": "おもどしになります" }
+      readings: { "sonkeigo": "omodoshininarimasu" }
+    - word: "ja-8776"
+      forms: { "sonkeigo": "おやぶりになります" }
+      readings: { "sonkeigo": "oyaburininarimasu" }
+    - word: "ja-8779"
+      forms: { "sonkeigo": "おうかべになります" }
+      readings: { "sonkeigo": "oukabeninarimasu" }
+    - word: "ja-8781"
+      forms: { "sonkeigo": "おうつしになります" }
+      readings: { "sonkeigo": "outsushininarimasu" }
+    - word: "ja-8782"
+      forms: { "sonkeigo": "おうめになります" }
+      readings: { "sonkeigo": "oumeninarimasu" }
+    - word: "ja-8784"
+      forms: { "sonkeigo": "おおぎないになります" }
+      readings: { "sonkeigo": "ooginaininarimasu" }
+    - word: "ja-8788"
+      forms: { "sonkeigo": "おきずきになります" }
+      readings: { "sonkeigo": "okizukininarimasu" }
+    - word: "ja-8789"
+      forms: { "sonkeigo": "おきわめになります" }
+      readings: { "sonkeigo": "okiwameninarimasu" }
+    - word: "ja-8791"
+      forms: { "sonkeigo": "おくみになります" }
+      readings: { "sonkeigo": "okumininarimasu" }
+    - word: "ja-8793"
+      forms: { "sonkeigo": "おけずりになります" }
+      readings: { "sonkeigo": "okezurininarimasu" }
+    - word: "ja-8796"
+      forms: { "sonkeigo": "おさぐりになります" }
+      readings: { "sonkeigo": "osagurininarimasu" }
+    - word: "ja-8797"
+      forms: { "sonkeigo": "おさずけになります" }
+      readings: { "sonkeigo": "osazukeninarimasu" }
+rules:
+  - id: "ja-rule-sonkeigo"
+    slots: ["sonkeigo"]
+    words: [{ word: "おかきになります", reading: "okakininarimasu" }, { word: "いらっしゃいます", reading: "irasshaimasu" }, { word: "めしあがります", reading: "meshiagarimasu" }, { word: "なさいます", reading: "nasaimasu" }, { word: "ごらんになります", reading: "goranninarimasu" }, { word: "おやすみになります", reading: "oyasumininarimasu" }]

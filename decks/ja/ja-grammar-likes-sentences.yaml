@@ -1,0 +1,210 @@
+schema: 1
+id: "ja-grammar-likes-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-9220"
+    target: "わたしはおんがくがすきです。"
+    words: ["わたし", "は", "おんがく", "が", "すき", "です"]
+    reading: "watashi wa ongaku ga suki desu."
+    ipa: "wataɕi wa oɴɡakɯ ɡa sɯki desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "おんがく", ref: "ja-1357" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "すき", ref: "ja-0318" }
+      - { word: "です", base: "です", reading: "desu" }
+    notes:
+      - { id: "n1", kind: "usage" }
+    confusables:
+      - { id: "w1", ref: "ja-0319", kind: "word" }
+      - { id: "w2", ref: "ja-0320", kind: "word" }
+  - id: "ja-9221"
+    target: "あなたはりょうりがすきですか。"
+    words: ["あなた", "は", "りょうり", "が", "すき", "です", "か"]
+    reading: "anata wa ryouri ga suki desu ka."
+    ipa: "anata wa ɾjoːɾi ɡa sɯki desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "あなた", ref: "ja-0068" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "りょうり", ref: "ja-0994" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "すき", ref: "ja-0318" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    notes:
+      - { id: "n1", kind: "usage" }
+    confusables:
+      - { id: "w1", ref: "ja-0319", kind: "word" }
+      - { id: "w2", ref: "ja-1894", kind: "word" }
+  - id: "ja-9222"
+    target: "わたしはやきゅうがきらいです。"
+    words: ["わたし", "は", "やきゅう", "が", "きらい", "です"]
+    reading: "watashi wa yakyuu ga kirai desu."
+    ipa: "wataɕi wa jakjɯː ɡa kiɾai desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "やきゅう", ref: "ja-1886" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "きらい", ref: "ja-0319" }
+      - { word: "です", base: "です", reading: "desu" }
+    notes:
+      - { id: "n1", kind: "usage" }
+    confusables:
+      - { id: "w1", ref: "ja-0318", kind: "word" }
+      - { id: "w2", ref: "ja-1894", kind: "word" }
+  - id: "ja-9223"
+    target: "あねはうたがじょうずです。"
+    words: ["あね", "は", "うた", "が", "じょうず", "です"]
+    reading: "ane wa uta ga jouzu desu."
+    ipa: "ane wa ɯta ɡa dʑoːdzɯ desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "あね", ref: "ja-0203" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "うた", ref: "ja-1883" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "じょうず", ref: "ja-0320" }
+      - { word: "です", base: "です", reading: "desu" }
+    notes:
+      - { id: "n1", kind: "usage" }
+    confusables:
+      - { id: "w1", ref: "ja-1894", kind: "word" }
+      - { id: "w2", ref: "ja-0722", kind: "word" }
+  - id: "ja-9224"
+    target: "ちちはりょうりがへたです。"
+    words: ["ちち", "は", "りょうり", "が", "へた", "です"]
+    reading: "chichi wa ryouri ga heta desu."
+    ipa: "tɕitɕi wa ɾjoːɾi ɡa heta desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ちち", ref: "ja-0200" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "りょうり", ref: "ja-0994" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "へた", ref: "ja-1894" }
+      - { word: "です", base: "です", reading: "desu" }
+    notes:
+      - { id: "n1", kind: "usage" }
+    confusables:
+      - { id: "w1", ref: "ja-0320", kind: "word" }
+      - { id: "w2", ref: "ja-1908", kind: "word" }
+  - id: "ja-9225"
+    target: "あにはすいえいがとくいです。"
+    words: ["あに", "は", "すいえい", "が", "とくい", "です"]
+    reading: "ani wa suiei ga tokui desu."
+    ipa: "ani wa sɯieː ɡa tokɯi desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "あに", ref: "ja-0202" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "すいえい", ref: "ja-1887" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "とくい", ref: "ja-0722" }
+      - { word: "です", base: "です", reading: "desu" }
+    notes:
+      - { id: "n1", kind: "usage" }
+    confusables:
+      - { id: "w1", ref: "ja-0320", kind: "word" }
+      - { id: "w2", ref: "ja-1908", kind: "word" }
+  - id: "ja-9226"
+    target: "わたしはえいごがにがてです。"
+    words: ["わたし", "は", "えいご", "が", "にがて", "です"]
+    reading: "watashi wa eigo ga nigate desu."
+    ipa: "wataɕi wa eːɡo ɡa niɡate desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "えいご", ref: "ja-0316" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "にがて", ref: "ja-1908" }
+      - { word: "です", base: "です", reading: "desu" }
+    notes:
+      - { id: "n1", kind: "usage" }
+    confusables:
+      - { id: "w1", ref: "ja-0319", kind: "word" }
+      - { id: "w2", ref: "ja-1894", kind: "word" }
+  - id: "ja-9227"
+    target: "ともだちはさかながすきではありません。"
+    words: ["ともだち", "は", "さかな", "が", "すき", "で", "は", "ありません"]
+    reading: "tomodachi wa sakana ga suki de wa arimasen."
+    ipa: "tomodatɕi wa sakana ɡa sɯki de wa aɾimaseɴ"
+    pos: "phrase"
+    bases:
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "さかな", ref: "ja-0896" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "すき", ref: "ja-0318" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "ありません", base: "ある", reading: "aru" }
+    notes:
+      - { id: "n1", kind: "usage" }
+    confusables:
+      - { id: "w1", ref: "ja-0319", kind: "word" }
+      - { id: "w2", ref: "ja-1908", kind: "word" }
+  - id: "ja-9228"
+    target: "わたしはうたがあまりじょうずではありません。"
+    words: ["わたし", "は", "うた", "が", "あまり", "じょうず", "で", "は", "ありません"]
+    reading: "watashi wa uta ga amari jouzu de wa arimasen."
+    ipa: "wataɕi wa ɯta ɡa amaɾi dʑoːdzɯ de wa aɾimaseɴ"
+    pos: "phrase"
+    bases:
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "うた", ref: "ja-1883" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "あまり", ref: "ja-0393" }
+      - { word: "じょうず", ref: "ja-0320" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "ありません", base: "ある", reading: "aru" }
+    notes:
+      - { id: "n1", kind: "usage" }
+    confusables:
+      - { id: "w1", ref: "ja-1894", kind: "word" }
+      - { id: "w2", ref: "ja-0722", kind: "word" }
+  - id: "ja-9229"
+    target: "かのじょはおどりがとてもじょうずです。"
+    words: ["かのじょ", "は", "おどり", "が", "とても", "じょうず", "です"]
+    reading: "kanojo wa odori ga totemo jouzu desu."
+    ipa: "kanodʑo wa odoɾi ɡa totemo dʑoːdzɯ desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "かのじょ", ref: "ja-0171" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "おどり", ref: "ja-1888" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "とても", ref: "ja-0394" }
+      - { word: "じょうず", ref: "ja-0320" }
+      - { word: "です", base: "です", reading: "desu" }
+    notes:
+      - { id: "n1", kind: "usage" }
+    confusables:
+      - { id: "w1", ref: "ja-1894", kind: "word" }
+      - { id: "w2", ref: "ja-1908", kind: "word" }
+  - id: "ja-9230"
+    target: "なにがすきですか。"
+    words: ["なに", "が", "すき", "です", "か"]
+    reading: "nani ga suki desu ka."
+    ipa: "nani ɡa sɯki desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "なに", ref: "ja-0109" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "すき", ref: "ja-0318" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    notes:
+      - { id: "n1", kind: "usage" }
+    confusables:
+      - { id: "w1", ref: "ja-0319", kind: "word" }
+      - { id: "w2", ref: "ja-0320", kind: "word" }
