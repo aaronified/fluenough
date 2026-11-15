@@ -4,6 +4,7 @@
 
     python3 tools/transcribe.py hi "कितना" kitna      # reading and IPA
     python3 tools/transcribe.py es "la casa"          # IPA
+    python3 tools/transcribe.py fr "les enfants"      # IPA
     python3 tools/transcribe.py ml "ഞാൻ വരുന്നു"       # reading and IPA
 
 ISO 15919 writes letters, not sounds: कितना is `kitanā` letter for letter.
@@ -708,6 +709,8 @@ def transcribe(text: str, lang: str, hint: str | None = None
     """[text]'s reading in ISO 15919 letters as said, and its broad IPA."""
     if lang == "es":
         return Transcription(text, spanish_ipa(text), True)
+    if lang == "fr":
+        return Transcription(text, french_ipa(text), True)
     if lang == "ja":
         return japanese(text)
     if lang == "ko":
@@ -1135,6 +1138,622 @@ def _es_word(word: str) -> str:
 
 def _es_letter(p: str) -> str:
     return {"ɡ": "g", "ɾ": "r", "θ": "z"}.get(p, p)
+
+
+# --- French ------------------------------------------------------------------
+
+# Standard Parisian French, broad, in the notation of the French decks: no
+# stress mark and no length mark, `ʁ` for r, the nasal vowels ɛ̃ ɑ̃ ɔ̃ œ̃, the
+# semivowels j w ɥ, the schwa written inside a word (`pəti`), a silent final
+# letter and a final mute e not written. Letter-to-sound rules for common
+# spelling plus a short list of whole words that rules cannot reach.
+#
+# What is NOT guessed (a contributor or a source decides):
+#   * liaison, except the obligatory kind listed in _FR_LIAISON_Z and
+#     _FR_LIAISON_N below (determiners and pronouns before a vowel);
+#   * the dropped e inside a word. The decks drop the medial schwa after a
+#     vowel and a single consonant (`samdi`, `tɛlmɑ̃`, `mɛ̃tnɑ̃`, `aple`) and
+#     keep it in the first syllable (`pətit`, `səmɛn`, `dəmɛ̃`). This tool
+#     does NOT drop it (`samədi`): a known limit, left to a follow-up;
+#   * the plural/verb ending -ent: a word ending in -ent (not -ment) with a
+#     vowel before it is read as a verb ending and left silent (`parlent`
+#     `paʁl`); nouns and adjectives in _FR_ENT_WORDS are read as -ent said
+#     ɑ̃; `-ment` is always said ɑ̃ (`aiment` is a listed exception);
+#   * the open and closed o in unusual words, and foreign words.
+
+_FR_LETTERS = set("abcdefghijklmnopqrstuvwxyzàâäçéèêëîïôöùûüÿœæ")
+_FR_VOWELS = set("aeiouyàâäéèêëîïôöùûüÿœæ")
+_FR_OBSTRUENT = set("bcdfgkpv")
+
+# Words that begin with an aspirated h (no elision, no liaison).
+_FR_H_ASPIRE = {
+    "haricot", "haricots", "hasard", "héros", "honte", "hibou", "haut",
+    "haute", "hauts", "hautes", "hauteur", "hockey", "hollandais", "hongrois",
+    "hanche", "hangar", "hamster", "hache", "handicap", "hérisson", "houx",
+    "housse", "hurler", "huit", "huitième", "onze", "onzième", "oui",
+    "harceler", "hâte", "hanter",
+}
+
+# An elided clitic, said joined to the next word (l'arrivée laʁive).
+_FR_ELISION = {
+    "l": "l", "d": "d", "j": "ʒ", "m": "m", "t": "t", "s": "s", "n": "n",
+    "c": "s", "ç": "s", "qu": "k", "jusqu": "ʒysk", "lorsqu": "lɔʁsk",
+    "puisqu": "pɥisk", "quoiqu": "kwak", "presqu": "pʁɛsk", "quelqu": "kɛlk",
+}
+
+# Whole words the rules do not reach: irregular, or short and frequent.
+_FR_WORDS = {
+    "femme": "fam", "monsieur": "məsjø", "fils": "fis", "et": "e",
+    "est": "ɛ", "es": "ɛ", "tous": "tu", "plus": "ply", "ville": "vil",
+    "mille": "mil", "tranquille": "tʁɑ̃kil", "village": "vilaʒ",
+    "villa": "vila", "million": "miljɔ̃", "milliard": "miljaʁ",
+    "les": "le", "des": "de", "mes": "me", "tes": "te", "ses": "se",
+    "ces": "se", "ai": "e", "as": "a", "a": "a", "à": "a", "eu": "y",
+    "où": "u", "oignon": "ɔɲɔ̃", "aujourd'hui": "oʒuʁdɥi", "huit": "ɥit",
+    "sept": "sɛt", "dix": "dis", "six": "sis", "cent": "sɑ̃",
+    "souvent": "suvɑ̃", "ennemi": "ɛnmi", "ennui": "ɑ̃nɥi", "donc": "dɔ̃k",
+    "porc": "pɔʁ", "tabac": "taba", "estomac": "ɛstɔma", "corps": "kɔʁ",
+    "doigt": "dwa", "sud": "syd", "ouest": "wɛst", "pays": "pei",
+    "gentil": "ʒɑ̃ti", "outil": "uti", "faisons": "fəzɔ̃",
+    "faisais": "fəzɛ", "faisait": "fəzɛ", "faisant": "fəzɑ̃", "vrai": "vʁɛ",
+    "aiment": "ɛm", "soixante": "swasɑ̃t", "wagon": "vaɡɔ̃", "clef": "kle",
+    "est-ce": "ɛs", "peut-être": "pøtɛtʁ", "dix-huit": "dizɥit",
+    "dix-sept": "disɛt", "dix-neuf": "diznœf", "c'est-à-dire": "sɛtadiʁ",
+    "deuxième": "døzjɛm", "sixième": "sizjɛm", "dixième": "dizjɛm",
+    "tout": "tu", "toute": "tut", "cet": "sɛt", "dessert": "desɛʁ",
+    "dessous": "dəsu", "dessus": "dəsy", "dessin": "desɛ̃",
+    "dossier": "dosje", "football": "futbol", "longtemps": "lɔ̃tɑ̃",
+    "restaurant": "ʁɛstɔʁɑ̃", "août": "u", "déjeuner": "deʒøne",
+    "examen": "ɛɡzamɛ̃", "eue": "y", "eues": "y", "eus": "y", "eut": "y",
+}
+# Singulars whose plural (+ s) is said the same way.
+# Verbs in -ment (3rd person plural) whose ending is silent.
+_FR_MENT_VERBS = {"dorment", "ferment", "forment", "nomment", "estiment",
+                  "animent", "arment"}
+_FR_PLURAL_OK = {"femme", "ville", "villa", "village", "oignon", "doigt",
+                 "gentil", "outil", "dossier"}
+
+# Nouns and adjectives in -ent said ɑ̃ (a verb's -ent is silent).
+_FR_ENT_WORDS = {
+    "argent", "parent", "content", "présent", "différent", "évident",
+    "patient", "client", "accident", "président", "ingrédient", "orient",
+    "agent", "talent", "excellent", "intelligent", "récent", "absent",
+    "urgent", "innocent", "violent", "prudent", "fréquent", "apparent",
+    "accent", "incident", "résident", "serpent", "vent", "dent", "lent",
+    "sent", "souvent", "moment",
+}
+# 3rd person singular verbs in -ient: the e is said, ɛ̃.
+_FR_IENT_VERBS = {
+    "vient": "vjɛ̃", "tient": "tjɛ̃", "devient": "dəvjɛ̃",
+    "revient": "ʁəvjɛ̃", "convient": "kɔ̃vjɛ̃", "retient": "ʁətjɛ̃",
+    "obtient": "ɔptjɛ̃", "contient": "kɔ̃tjɛ̃", "appartient": "apaʁtjɛ̃",
+}
+# Polysyllables in -er said ɛʁ, not e.
+_FR_ER_WORDS = {"hiver": "ivɛʁ", "enfer": "ɑ̃fɛʁ", "amer": "amɛʁ",
+                "hier": "jɛʁ", "fier": "fjɛʁ", "super": "sypɛʁ",
+                "cancer": "kɑ̃sɛʁ", "laser": "lazɛʁ"}
+# Final -s, -t, -x, -z, -p said, unlike the usual silent ending.
+_FR_PRONOUNCED_END = {
+    "bus": "bys", "virus": "viʁys", "cactus": "kaktys", "campus": "kɑ̃pys",
+    "autobus": "otobys", "ours": "uʁs", "sens": "sɑ̃s", "os": "ɔs",
+    "tennis": "tenis", "maïs": "mais", "jadis": "ʒadis", "hélas": "elas",
+    "mars": "maʁs", "lys": "lis", "net": "nɛt", "but": "byt",
+    "contact": "kɔ̃takt", "direct": "diʁɛkt", "correct": "kɔʁɛkt",
+    "exact": "ɛɡzakt", "test": "tɛst", "gaz": "ɡɑz", "index": "ɛ̃dɛks",
+    "lynx": "lɛ̃ks", "stop": "stɔp", "cap": "kap", "top": "tɔp",
+    "club": "klœb", "album": "albɔm",
+}
+_FR_SILENT_P = {"trop", "sirop", "galop", "drap", "coup", "beaucoup", "loup"}
+
+# Obligatory liaison, in the way the decks write it: a z before a vowel is
+# joined to the next word (`le zɑ̃fɑ̃`, `vu zɛme`), an n or t is joined to the
+# first word (`mɔ̃n ami`, `diz œʁ`).
+_FR_LIAISON_Z = {"les", "des", "ces", "mes", "tes", "ses", "nos", "vos",
+                 "leurs", "nous", "vous", "ils", "elles", "aux", "chez",
+                 "très", "quels", "quelles"}
+_FR_LIAISON_N = {"un": "n", "mon": "n", "ton": "n", "son": "n", "en": "n",
+                 "on": "n", "aucun": "n"}
+_FR_LIAISON_END = {"deux": "z", "trois": "z", "six": "z", "dix": "z",
+                   "grand": "t", "petit": "t", "c'est": "t", "vingt": "t",
+                   "cent": "t"}
+
+
+def french_ipa(text: str) -> str:
+    """Standard French of France, broad (see the notes above). The liaison
+    of the obligatory kind is written; every other liaison is left out."""
+    text = unicodedata.normalize("NFC", text.lower()).replace("’", "'")
+    toks: list[list] = []     # [ipa, written word, a pause follows]
+    for raw in text.split():
+        pause = bool(re.search(r"[.,;:!?…»)\"]$", raw))
+        word = re.sub(r"^[^\w']+|[^\w']+$", "", raw).strip("'")
+        if not word:
+            if toks and pause:
+                toks[-1][2] = True
+            continue
+        toks.append([_fr_token(word), word, pause])
+    out: list[str] = []
+    for k, (ipa, word, pause) in enumerate(toks):
+        nxt = toks[k + 1] if k + 1 < len(toks) and not pause else None
+        vowel_next = (nxt is not None and nxt[1] not in ("et", "ou")
+                      and _fr_vowel_initial(nxt[1]))
+        if word in ("six", "dix"):
+            # Said alone sis, dis; before a vowel siz, diz; before a
+            # consonant si, di.
+            if nxt is not None:
+                ipa = ipa[:-1] + ("z" if vowel_next else "")
+        elif vowel_next and word in _FR_LIAISON_END:
+            ipa += _FR_LIAISON_END[word]
+        elif vowel_next and word in _FR_LIAISON_N:
+            ipa += _FR_LIAISON_N[word]
+        elif vowel_next and word in _FR_LIAISON_Z:
+            nxt[0] = "z" + nxt[0]
+        out.append(ipa)
+    return " ".join(p for p in out if p)
+
+
+def _fr_vowel_initial(word: str) -> bool:
+    """Whether a following liaison consonant is said: the word starts with a
+    vowel or a mute h."""
+    if not word or word in _FR_H_ASPIRE:
+        return False
+    return word[0] in _FR_VOWELS or word[0] == "h"
+
+
+def _fr_token(word: str) -> str:
+    """One written word, hyphens and elisions included."""
+    if word in _FR_WORDS:
+        return _FR_WORDS[word]
+    pieces = word.split("-")
+    out: list[str] = []
+    for n, piece in enumerate(pieces):
+        ipa = _fr_piece(piece)
+        if piece == "t" and 0 < n < len(pieces) - 1:
+            ipa = "t"                       # a-t-il
+        nxt = pieces[n + 1] if n + 1 < len(pieces) else ""
+        if piece == "vingt" and n == 0 and nxt:
+            ipa = "vɛ̃t"                    # vingt-deux, vingt-et-un
+        elif piece == "quatre" and nxt in ("vingt", "vingts"):
+            ipa = "katʁə"                   # quatre-vingts
+        elif piece == "dix" and nxt == "neuf":
+            ipa = "diz"
+        if nxt and _fr_vowel_initial(nxt) and n + 1 == len(pieces) - 1 \
+                and piece not in ("t", "et"):
+            # inverted subject: the said consonant of est-il, dit-il, vas-y
+            if piece.endswith(("t", "d")) and not ipa.endswith("t"):
+                ipa += "t"
+            elif piece.endswith("s") and nxt in ("y", "en"):
+                ipa += "z"
+            elif piece.endswith("ez") and nxt in ("y", "en"):
+                ipa += "z"
+        out.append(ipa)
+    return "".join(out)
+
+
+def _fr_piece(piece: str) -> str:
+    """A hyphen-free piece: elided clitics joined to the word after them."""
+    if piece in _FR_WORDS:
+        return _FR_WORDS[piece]
+    if piece in ("t", ""):
+        return "t" if piece else ""
+    parts = piece.split("'")
+    out = ""
+    for k, part in enumerate(parts):
+        if k < len(parts) - 1 and part in _FR_ELISION:
+            out += _FR_ELISION[part]
+        else:
+            out += _fr_word(part)
+    return out
+
+
+def _fr_has_vowel(stem: str) -> bool:
+    return any(c in _FR_VOWELS for c in stem.replace("qu", "q"))
+
+
+def _fr_word(w: str) -> str:
+    if w in _FR_WORDS:
+        return _FR_WORDS[w]
+    if w in _FR_PRONOUNCED_END:
+        return _FR_PRONOUNCED_END[w]
+    if w in _FR_IENT_VERBS:
+        return _FR_IENT_VERBS[w]
+    if w in _FR_ER_WORDS:
+        return _FR_ER_WORDS[w]
+    if w.endswith("s") and w[:-1] in _FR_PLURAL_OK:
+        return _FR_WORDS[w[:-1]]
+    if any(c not in _FR_LETTERS for c in w):
+        raise CannotRead(f"cannot read {w!r} as French")
+    core, mute = _fr_split_end(w)
+    return _fr_scan(w, core, mute)
+
+
+def _fr_split_end(w: str) -> tuple[str, bool]:
+    """The letters that are said, and whether a mute e (or es, ent) was cut
+    off the end. A silent consonant is cut by the same call."""
+    # -er, -ez said é: the é is written back into the core.
+    if len(w) > 2 and w.endswith(("er", "ez", "ed")) and w[-3] not in "eé" \
+            and (w.endswith("ez") or _fr_has_vowel(w[:-2])):
+        return w[:-2] + "é", False
+    if len(w) > 3 and w.endswith("ers") and w[-4] not in "eé" \
+            and _fr_has_vowel(w[:-3]) and w[:-1] not in _FR_ER_WORDS \
+            and w not in _FR_ER_WORDS:
+        return w[:-3] + "é", False
+    # -ent of a verb is silent; a noun's or adjective's is said.
+    if w in _FR_MENT_VERBS:
+        return w[:-3], True
+    if w.endswith("ent") and not w.endswith("ment") \
+            and w not in _FR_ENT_WORDS and _fr_has_vowel(w[:-3]):
+        return w[:-3], True
+    if w.endswith("es") and _fr_has_vowel(w[:-2]):
+        return w[:-2], True
+    if w.endswith("e") and _fr_has_vowel(w[:-1]) and w != "e":
+        return w[:-1], True
+    core = w
+    while len(core) > 1:
+        last, before = core[-1], core[-2]
+        if last == "s":
+            core = core[:-1]
+        elif last == "x":
+            core = core[:-1]
+        elif last == "t" and before not in "cps":
+            core = core[:-1]
+        elif last == "d":
+            core = core[:-1]
+        elif last == "p" and (before == "m" or core in _FR_SILENT_P
+                              or core.endswith("oup")):
+            core = core[:-1]
+        elif last == "g" and before in "nr":
+            core = core[:-1]
+        elif last == "c" and before == "n":
+            core = core[:-1]
+        elif last == "z" and before in "ei":
+            core = core[:-1]
+        else:
+            break
+    return core, False
+
+
+def _fr_scan(full: str, core: str, mute: bool) -> str:
+    """Letters to sounds. [full] is the whole word, [core] its said part (a
+    prefix of [full], except that a final er/ez is written back as é)."""
+    if core != full[:len(core)]:
+        full = core          # a final er/ez/ed was rewritten as é
+    L = len(core)
+    V = _FR_VOWELS
+
+    def at(j: int) -> str:
+        return full[j] if 0 <= j < len(full) else "\0"
+
+    def pron_vowel(j: int) -> bool:
+        return j < L and at(j) in V
+
+    def units(j: int) -> tuple[list[str], int]:
+        """The consonant units (a digraph or a doubled letter is one) from
+        [j] up to a vowel or the end of the core."""
+        found: list[str] = []
+        while j < L and at(j) not in V:
+            two = full[j:j + 2]
+            if at(j) == "h":
+                j += 1
+            elif two in ("ch", "ph", "th", "gn", "sh", "qu", "ck") \
+                    or (len(two) == 2 and two[0] == two[1]):
+                found.append(two)
+                j += 2
+            else:
+                found.append(at(j))
+                j += 1
+        return found, j
+
+    def nasal(j: int) -> bool:
+        """The n or m at [j] makes the vowel before it nasal."""
+        if at(j) not in ("n", "m") or j >= L:
+            return False
+        k = j + 1
+        if k >= L:
+            return not mute
+        return at(k) not in V and at(k) != at(j) and at(k) != "h"
+
+    def eu(j: int) -> str:
+        """eu or œu ending just before [j]: ø in an open syllable, else œ."""
+        if j >= L:
+            return "ø"
+        found, k = units(j)
+        if not found:
+            return "œ"
+        u = found[0]
+        if u == "z":
+            return "ø"
+        if u == "s":
+            return "ø" if at(j + 1) in V else "œ"
+        if u == "r":
+            return "ø" if k < L and len(found) == 1 else "œ"
+        if u == "t":
+            if len(found) == 2 and found[1] == "r":
+                return "ø"
+            return "ø" if len(found) == 1 and (k < L or mute) else "œ"
+        if u == "d":
+            return "ø" if len(found) == 1 and k < L else "œ"
+        return "œ"
+
+    def plain_e(i: int) -> str:
+        """An e that is not nasal and part of no digraph."""
+        if not any(c in V for c in
+                   core[:i].replace("qu", "q") + core[i + 1:]):
+            tail = full[L:]
+            if i + 1 >= L:
+                if tail == "":
+                    return "ə"
+                return "e" if tail == "s" else "ɛ"
+        if i + 1 >= L:
+            return "ɛ"
+        if full[i + 1:i + 3] == "sc" and at(i + 3) in "eiéè":
+            return "e"                  # descendre
+        found, k = units(i + 1)
+        n = len(found) + (1 if "x" in found else 0)
+        if not found:
+            return "ə"
+        if len(found[0]) == 2 and found[0][0] == found[0][1]:
+            return "ɛ"
+        if n == 1:
+            if k >= L:
+                return "ɛ"
+            return "ə"
+        if n == 2 and found[0][0] in _FR_OBSTRUENT and found[1] in ("r", "l") \
+                and len(found[0]) == 1:
+            return "ə"
+        return "ɛ"
+
+    out: list[str] = []
+    i = 0
+    while i < L:
+        c = at(i)
+        nx, n2 = at(i + 1), at(i + 2)
+        prev = at(i - 1)
+        rest = full[i:L]
+
+        # Vowel + il / ill: a j.
+        m = None
+        for pat, ipa, tail_only in (
+                ("euill", "œj", False), ("ouill", "uj", False),
+                ("aill", "aj", False), ("eill", "ɛj", False),
+                ("uill", "ɥij", False), ("ueill", "œj", False), ("euil", "œj", True),
+                ("ouil", "uj", True), ("œil", "œj", True),
+                ("ueil", "œj", True), ("ail", "aj", True),
+                ("eil", "ɛj", True)):
+            if rest.startswith(pat) and (not tail_only or len(rest) == len(pat)):
+                m = (ipa, len(pat))
+                break
+        if m:
+            out.append(m[0])
+            i += m[1]
+            continue
+        if rest.startswith("ill") and c == "i":
+            if i == 0:
+                out.append("il")
+            elif prev in V:
+                out.append("j")
+            else:
+                out.append("ij")
+            i += 3
+            continue
+
+        # Vowels.
+        if c in V:
+            if full[i:i + 3] == "eau":
+                out.append("o")
+                i += 3
+            elif full[i:i + 2] in ("ay", "oy", "uy", "ey") and pron_vowel(i + 2):
+                out.append({"a": "ɛj", "o": "waj", "u": "ɥij", "e": "ɛj"}[c])
+                i += 2
+            elif c == "a" and nx == "u":
+                out.append("ɔ" if n2 == "r" else "o")     # aurai, aurore
+                i += 2
+            elif c == "o" and nx == "û":
+                out.append("u")           # coûter, goûter
+                i += 2
+            elif c == "o" and nx == "u":
+                out.append("w" if pron_vowel(i + 2) else "u")
+                i += 2
+            elif c == "o" and nx in ("i", "î"):
+                if nasal(i + 2):
+                    out.append("wɛ̃")
+                    i += 3
+                else:
+                    out.append("wa")
+                    i += 2
+            elif c == "œ" and nx == "u":
+                out.append(eu(i + 2))
+                i += 2
+            elif c == "e" and nx == "u":
+                out.append(eu(i + 2))
+                i += 2
+            elif c == "œ":
+                out.append("œ")
+                i += 1
+            elif c in ("a", "e") and nx in ("i", "î"):
+                if nasal(i + 2):
+                    out.append("ɛ̃")
+                    i += 3
+                elif c == "a" and i + 2 == L and prev == "r" \
+                        and full[L:] == "":
+                    out.append("e")      # parlerai
+                    i += 2
+                else:
+                    out.append("ɛ")
+                    i += 2
+            elif c in ("a", "â") and nasal(i + 1):
+                out.append("ɑ̃")
+                i += 2
+            elif c == "e" and nasal(i + 1):
+                k = i + 2
+                if prev in ("i", "y", "é"):
+                    if at(k) == "c" or (at(k) == "t" and full[k + 1:] in
+                                        ("", "e", "es", "s")):
+                        out.append("ɑ̃")
+                    else:
+                        out.append("ɛ̃")
+                else:
+                    out.append("ɑ̃")
+                i += 2
+            elif c in ("i", "î", "y") and nasal(i + 1) and not pron_vowel(i + 1):
+                out.append("ɛ̃")
+                i += 2
+            elif c == "o" and nasal(i + 1):
+                out.append("ɔ̃")
+                i += 2
+            elif c == "u" and nasal(i + 1):
+                out.append("œ̃")
+                i += 2
+            elif c == "u":
+                out.append(_fr_u(full, i, pron_vowel))
+                i += 1
+            elif c in ("i", "ï", "î"):
+                if c != "ï" and pron_vowel(i + 1):
+                    ij = i >= 2 and at(i - 2) in _FR_OBSTRUENT \
+                        and prev in ("r", "l")
+                    out.append("ij" if ij else "j")
+                else:
+                    out.append("i")
+                i += 1
+            elif c == "y":
+                out.append("j" if i == 0 and pron_vowel(1) else "i")
+                i += 1
+            elif c == "e":
+                out.append(plain_e(i))
+                i += 1
+            elif c == "o":
+                if nx == "s" and at(i + 2) in V:
+                    out.append("o")
+                elif i + 1 >= L:
+                    out.append("o")
+                else:
+                    out.append("ɔ")
+                i += 1
+            else:
+                out.append({"a": "a", "à": "a", "ä": "a", "â": "ɑ", "é": "e",
+                            "è": "ɛ", "ê": "ɛ", "ë": "ɛ", "ô": "o", "ö": "o",
+                            "ù": "y", "û": "y", "ü": "y", "ÿ": "i",
+                            "æ": "e", "ï": "i"}.get(c, c))
+                i += 1
+            continue
+
+        # Consonants.
+        if c == "c":
+            if nx == "c":
+                out.append("ks" if n2 in "eiyéèêëîï" else "k")
+                i += 2
+            elif nx == "h":
+                out.append("k" if n2 in ("r", "l") else "ʃ")
+                i += 2
+            elif nx == "q":
+                i += 1
+            elif nx == "k":
+                out.append("k")
+                i += 2
+            elif nx in "eiyéèêëîï":
+                out.append("s")
+                i += 1
+            else:
+                out.append("k")
+                i += 1
+        elif c == "ç":
+            out.append("s")
+            i += 1
+        elif c == "g":
+            if nx == "n":
+                out.append("ɲ")
+                i += 2
+            elif nx == "u" and n2 in "eiyéèêëï":
+                out.append("ɡ")
+                i += 2
+            elif nx == "e" and n2 in "aouâôù":
+                out.append("ʒ")
+                i += 2
+            elif nx in "eiyéèêëî":
+                out.append("ʒ")
+                i += 1
+            elif nx == "g":
+                out.append("ɡ")
+                i += 2
+            else:
+                out.append("ɡ")
+                i += 1
+        elif c == "h":
+            i += 1
+        elif c == "p":
+            if nx == "h":
+                out.append("f")
+                i += 2
+            elif nx == "p":
+                out.append("p")
+                i += 2
+            elif prev == "m" and nx == "t":
+                i += 1
+            else:
+                out.append("p")
+                i += 1
+        elif c == "q":
+            out.append("k")
+            i += 2 if nx == "u" else 1
+        elif c == "s":
+            if nx == "s":
+                out.append("s")
+                i += 2
+            elif nx == "c" and n2 in "eiyéèêë":
+                out.append("s")
+                i += 2
+            elif nx == "c" and n2 == "h":
+                out.append("ʃ")
+                i += 3
+            elif nx == "h":
+                out.append("ʃ")
+                i += 2
+            elif prev in V and nx in V:
+                out.append("z")
+                i += 1
+            else:
+                out.append("s")
+                i += 1
+        elif c == "t":
+            if nx == "i" and n2 == "o" and at(i + 3) == "n" and prev not in "sx":
+                out.append("s")
+            elif nx == "t":
+                out.append("t")
+                i += 1
+            else:
+                out.append("t")
+            i += 1
+        elif c == "x":
+            if i == 1 and full[0] == "e" and (nx in V or nx == "h"):
+                out.append("ɡz")
+            elif nx == "c" and n2 in "eiyéèêë":
+                out.append("ks")
+                i += 1
+            else:
+                out.append("ks")
+            i += 1
+        elif c == "w":
+            out.append("w")
+            i += 1
+        elif c in ("r", "l", "m", "n", "b", "d", "f", "j", "k", "v", "z"):
+            out.append({"r": "ʁ", "j": "ʒ"}.get(c, c))
+            i += 2 if nx == c else 1
+        else:
+            out.append(c)
+            i += 1
+    return "".join(out)
+
+
+def _fr_u(full: str, i: int, pron_vowel) -> str:
+    """A plain u: y, or the semivowel ɥ before a said vowel."""
+    nx = full[i + 1] if i + 1 < len(full) else ""
+    if nx in ("i", "î"):
+        return "ɥ"
+    if pron_vowel(i + 1):
+        cluster = i >= 2 and full[i - 2] in _FR_OBSTRUENT \
+            and full[i - 1] in ("r", "l")
+        return "y" if cluster else "ɥ"
+    return "y"
+
 
 
 # --- Japanese, Korean, Mandarin and Toki Pona (#612) -------------------------

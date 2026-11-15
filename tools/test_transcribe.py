@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 
 import transcribe_decks
-from transcribe import CannotRead, spanish_ipa, transcribe
+from transcribe import CannotRead, french_ipa, spanish_ipa, transcribe
 
 
 class ReadingTest(unittest.TestCase):
@@ -247,6 +247,127 @@ class NewLanguagesTest(unittest.TestCase):
                          "ˈtoki ˈpona ˈsina ˈpilin ˈseme")
         self.assertEqual(transcribe("\"mi moku\": o kama.", "tok").ipa,
                          "mi ˈmoku o ˈkama")
+
+
+class FrenchTest(unittest.TestCase):
+    """French (FR-120): standard Parisian pronunciation, broad, in the
+    notation of the decks. One word per rule, each checked against Wiktionary
+    (en.wiktionary through kaikki.org; fr.wiktionary for femme, monsieur,
+    travail, oiseau, famille). The phrases follow the rules in the tool's
+    notes. The tool does not drop the schwa inside a word (a documented
+    limit), so no test asserts such a word."""
+
+    def test_words_whose_pronunciation_is_attested(self) -> None:
+        for word, ipa in (
+            ("pain", "pɛ̃"),  # nasal vowel
+            ("lundi", "lœ̃di"),  # nasal œ̃
+            ("oiseau", "wazo"),  # oi, eau, s between vowels
+            ("heureux", "øʁø"),  # eu open
+            ("cœur", "kœʁ"),  # œu closed
+            ("famille", "famij"),  # ill after a consonant
+            ("travail", "tʁavaj"),  # ail
+            ("bouteille", "butɛj"),  # eill
+            ("nuit", "nɥi"),  # ui
+            ("chien", "ʃjɛ̃"),  # ien
+            ("nation", "nasjɔ̃"),  # tion
+            ("question", "kɛstjɔ̃"),  # stion keeps t
+            ("mangeons", "mɑ̃ʒɔ̃"),  # ge before o
+            ("garçon", "ɡaʁsɔ̃"),  # ç
+            ("musique", "myzik"),  # qu and mute e
+            ("petit", "pəti"),  # schwa in the first syllable
+            ("février", "fevʁije"),  # i after obstruent plus liquid
+            ("voyage", "vwajaʒ"),  # oy before a vowel
+            ("exemple", "ɛɡzɑ̃pl"),  # initial ex before a vowel
+            ("coûter", "kute"),  # oû
+            ("femme", "fam"),  # irregular
+            ("monsieur", "məsjø"),  # irregular
+            ("beaucoup", "boku"),  # silent final p
+        ):
+            with self.subTest(word):
+                self.assertEqual(french_ipa(word), ipa)
+
+    def test_the_language_code_reaches_the_french_rules(self) -> None:
+        t = transcribe("Bonjour, Madame !", "fr")
+        self.assertEqual(t.ipa, "bɔ̃ʒuʁ madam")
+        self.assertEqual(t.reading, "Bonjour, Madame !")
+
+    def test_an_elided_word_is_joined_to_the_next(self) -> None:
+        for text, ipa in (
+            ("l'arrivée", "laʁive"),
+            ("je m'appelle", "ʒə mapɛl"),
+            ("qu'il", "kil"),
+            ("j'ai", "ʒe"),
+            ("d'accord", "dakɔʁ"),
+            ("s'il vous plaît", "sil vu plɛ"),
+            ("aujourd'hui", "oʒuʁdɥi"),
+        ):
+            with self.subTest(text):
+                self.assertEqual(french_ipa(text), ipa)
+
+    def test_obligatory_liaison_is_written_and_nothing_else_is_guessed(self) -> None:
+        for text, ipa in (
+            ("les enfants", "le zɑ̃fɑ̃"),
+            ("les hôtels", "le zotɛl"),
+            ("vous êtes ici", "vu zɛt isi"),
+            ("mon ami", "mɔ̃n ami"),
+            ("vingt ans", "vɛ̃t ɑ̃"),
+            ("deux ans", "døz ɑ̃"),
+            ("dix heures", "diz œʁ"),
+            ("six livres", "si livʁ"),
+            ("un petit ami", "œ̃ pətit ami"),
+            ("un grand homme", "œ̃ ɡʁɑ̃t ɔm"),
+            ("c'est un accident", "sɛt œ̃n aksidɑ̃"),
+            # an h aspiré blocks the liaison; est + vowel is optional, so
+            # it is not guessed
+            ("les haricots", "le aʁiko"),
+            ("il est ici", "il ɛ isi"),
+        ):
+            with self.subTest(text):
+                self.assertEqual(french_ipa(text), ipa)
+
+    def test_no_liaison_consonant_before_et_or_ou(self) -> None:
+        for text, ipa in (
+            ("grand et fort", "ɡʁɑ̃ e fɔʁ"),
+            ("deux et deux", "dø e dø"),
+            ("un et deux", "œ̃ e dø"),
+            ("il est petit et gentil", "il ɛ pəti e ʒɑ̃ti"),
+            ("petit ou grand", "pəti u ɡʁɑ̃"),
+        ):
+            with self.subTest(text):
+                self.assertEqual(french_ipa(text), ipa)
+
+    def test_compound_numbers(self) -> None:
+        for text, ipa in (
+            ("vingt-deux", "vɛ̃tdø"),
+            ("vingt-et-un", "vɛ̃teœ̃"),
+            ("quatre-vingts", "katʁəvɛ̃"),
+            ("quatre-vingt-dix-neuf", "katʁəvɛ̃diznœf"),
+        ):
+            with self.subTest(text):
+                self.assertEqual(french_ipa(text), ipa)
+
+    def test_listed_verbs_in_ment_are_silent(self) -> None:
+        self.assertEqual(french_ipa("ils dorment"), "il dɔʁm")
+        self.assertEqual(french_ipa("ils ferment"), "il fɛʁm")
+        self.assertEqual(french_ipa("vraiment"), "vʁɛmɑ̃")
+
+    def test_a_pause_blocks_the_liaison(self) -> None:
+        self.assertEqual(french_ipa("Nous, étudiants."), "nu etydjɑ̃")
+
+    def test_hyphenated_words_are_read_whole(self) -> None:
+        self.assertEqual(french_ipa("est-ce"), "ɛs")
+        self.assertEqual(french_ipa("peut-être"), "pøtɛtʁ")
+
+    def test_a_verb_ending_in_ent_is_silent_and_a_listed_noun_is_not(self) -> None:
+        self.assertEqual(french_ipa("ils parlent anglais"), "il paʁl ɑ̃ɡlɛ")
+        self.assertEqual(french_ipa("souvent"), "suvɑ̃")
+
+    def test_text_that_is_not_french_letters_cannot_be_read(self) -> None:
+        with self.assertRaises(CannotRead):
+            transcribe("3 pommes", "fr")
+
+    def test_spanish_is_untouched(self) -> None:
+        self.assertEqual(transcribe("la casa", "es").ipa, spanish_ipa("la casa"))
 
 
 class MalayalamTest(unittest.TestCase):
