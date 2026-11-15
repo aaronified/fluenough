@@ -980,7 +980,9 @@ units:
       - { id: "newspaper-feature", text: { "en": "A newspaper feature with a short interview" } }
   - decks: ["ja-kanji-38"]
     words: 0
-  - planned: { id: "ja-grammar-teineigo", grammar: "teineigo" }
+  - decks: ["ja-grammar-teineigo", "ja-grammar-teineigo-sentences"]
+    words: 0
+    grammar: ["teineigo"]
     listening_passages:
       - { id: "speaking-to-a-stranger", text: { "en": "Speaking to an elder, a stranger and a friend: three levels of politeness" } }
     reading_passages:
