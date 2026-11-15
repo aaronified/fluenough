@@ -1,0 +1,1279 @@
+schema: 1
+id: "bn-grammar-verb-past-perfect"
+part: "core"
+kind: "rules"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["bn-0251", "bn-0291", "bn-0306", "bn-0322", "bn-0696", "bn-0697", "bn-2330"]
+  slots: ["ami", "tui", "tumi", "apni", "se", "tini"]
+  rows:
+    - word: "bn-0872"
+      forms: { "ami": "এসেছিলাম", "tui": "এসেছিলি", "tumi": "এসেছিলে", "apni": "এসেছিলেন", "se": "এসেছিল", "tini": "এসেছিলেন" }
+      readings: { "ami": "esechilām", "tui": "esechili", "tumi": "esechile", "apni": "esechilen", "se": "esechilo", "tini": "esechilen" }
+    - word: "bn-0873"
+      forms: { "ami": ["গিয়েছিলাম", "গেছিলাম"], "tui": ["গিয়েছিলি", "গেছিলি"], "tumi": ["গিয়েছিলে", "গেছিলে"], "apni": ["গিয়েছিলেন", "গেছিলেন"], "se": ["গিয়েছিল", "গেছিল"], "tini": ["গিয়েছিলেন", "গেছিলেন"] }
+      readings: { "ami": ["giyechilām", "gechilām"], "tui": ["giyechili", "gechili"], "tumi": ["giyechile", "gechile"], "apni": ["giyechilen", "gechilen"], "se": ["giyechilo", "gechilo"], "tini": ["giyechilen", "gechilen"] }
+    - word: "bn-0874"
+      forms: { "ami": "হয়েছিলাম", "tui": "হয়েছিলি", "tumi": "হয়েছিলে", "apni": "হয়েছিলেন", "se": "হয়েছিল", "tini": "হয়েছিলেন" }
+      readings: { "ami": "hôyechilām", "tui": "hôyechili", "tumi": "hôyechile", "apni": "hôyechilen", "se": "hôyechilo", "tini": "hôyechilen" }
+    - word: "bn-0875"
+      forms: { "ami": "থেকেছিলাম", "tui": "থেকেছিলি", "tumi": "থেকেছিলে", "apni": "থেকেছিলেন", "se": "থেকেছিল", "tini": "থেকেছিলেন" }
+      readings: { "ami": "thekechilām", "tui": "thekechili", "tumi": "thekechile", "apni": "thekechilen", "se": "thekechilo", "tini": "thekechilen" }
+    - word: "bn-0876"
+      forms: { "ami": "খেয়েছিলাম", "tui": "খেয়েছিলি", "tumi": "খেয়েছিলে", "apni": "খেয়েছিলেন", "se": "খেয়েছিল", "tini": "খেয়েছিলেন" }
+      readings: { "ami": "kheyechilām", "tui": "kheyechili", "tumi": "kheyechile", "apni": "kheyechilen", "se": "kheyechilo", "tini": "kheyechilen" }
+    - word: "bn-0877"
+      forms: { "ami": "দেখেছিলাম", "tui": "দেখেছিলি", "tumi": "দেখেছিলে", "apni": "দেখেছিলেন", "se": "দেখেছিল", "tini": "দেখেছিলেন" }
+      readings: { "ami": "dekhechilām", "tui": "dekhechili", "tumi": "dekhechile", "apni": "dekhechilen", "se": "dekhechilo", "tini": "dekhechilen" }
+    - word: "bn-0878"
+      forms: { "ami": "শুনেছিলাম", "tui": "শুনেছিলি", "tumi": "শুনেছিলে", "apni": "শুনেছিলেন", "se": "শুনেছিল", "tini": "শুনেছিলেন" }
+      readings: { "ami": "śunechilām", "tui": "śunechili", "tumi": "śunechile", "apni": "śunechilen", "se": "śunechilo", "tini": "śunechilen" }
+    - word: "bn-0879"
+      forms: { "ami": "বলেছিলাম", "tui": "বলেছিলি", "tumi": "বলেছিলে", "apni": "বলেছিলেন", "se": "বলেছিল", "tini": "বলেছিলেন" }
+      readings: { "ami": "bôlechilām", "tui": "bôlechili", "tumi": "bôlechile", "apni": "bôlechilen", "se": "bôlechilo", "tini": "bôlechilen" }
+    - word: "bn-0880"
+      forms: { "ami": "লিখেছিলাম", "tui": "লিখেছিলি", "tumi": "লিখেছিলে", "apni": "লিখেছিলেন", "se": "লিখেছিল", "tini": "লিখেছিলেন" }
+      readings: { "ami": "likhechilām", "tui": "likhechili", "tumi": "likhechile", "apni": "likhechilen", "se": "likhechilo", "tini": "likhechilen" }
+    - word: "bn-0881"
+      forms: { "ami": "জেনেছিলাম", "tui": "জেনেছিলি", "tumi": "জেনেছিলে", "apni": "জেনেছিলেন", "se": "জেনেছিল", "tini": "জেনেছিলেন" }
+      readings: { "ami": "jenechilām", "tui": "jenechili", "tumi": "jenechile", "apni": "jenechilen", "se": "jenechilo", "tini": "jenechilen" }
+    - word: "bn-0882"
+      forms: { "ami": "বুঝেছিলাম", "tui": "বুঝেছিলি", "tumi": "বুঝেছিলে", "apni": "বুঝেছিলেন", "se": "বুঝেছিল", "tini": "বুঝেছিলেন" }
+      readings: { "ami": "bujhechilām", "tui": "bujhechili", "tumi": "bujhechile", "apni": "bujhechilen", "se": "bujhechilo", "tini": "bujhechilen" }
+    - word: "bn-0883"
+      forms: { "ami": "শিখেছিলাম", "tui": "শিখেছিলি", "tumi": "শিখেছিলে", "apni": "শিখেছিলেন", "se": "শিখেছিল", "tini": "শিখেছিলেন" }
+      readings: { "ami": "śikhechilām", "tui": "śikhechili", "tumi": "śikhechile", "apni": "śikhechilen", "se": "śikhechilo", "tini": "śikhechilen" }
+    - word: "bn-0884"
+      forms: { "ami": "বসেছিলাম", "tui": "বসেছিলি", "tumi": "বসেছিলে", "apni": "বসেছিলেন", "se": "বসেছিল", "tini": "বসেছিলেন" }
+      readings: { "ami": "bôsechilām", "tui": "bôsechili", "tumi": "bôsechile", "apni": "bôsechilen", "se": "bôsechilo", "tini": "bôsechilen" }
+    - word: "bn-0885"
+      forms: { "ami": "উঠেছিলাম", "tui": "উঠেছিলি", "tumi": "উঠেছিলে", "apni": "উঠেছিলেন", "se": "উঠেছিল", "tini": "উঠেছিলেন" }
+      readings: { "ami": "uṭhechilām", "tui": "uṭhechili", "tumi": "uṭhechile", "apni": "uṭhechilen", "se": "uṭhechilo", "tini": "uṭhechilen" }
+    - word: "bn-0886"
+      forms: { "ami": "দাঁড়িয়েছিলাম", "tui": "দাঁড়িয়েছিলি", "tumi": "দাঁড়িয়েছিলে", "apni": "দাঁড়িয়েছিলেন", "se": "দাঁড়িয়েছিল", "tini": "দাঁড়িয়েছিলেন" }
+      readings: { "ami": "dām̐ṛiyechilām", "tui": "dām̐ṛiyechili", "tumi": "dām̐ṛiyechile", "apni": "dām̐ṛiyechilen", "se": "dām̐ṛiyechilo", "tini": "dām̐ṛiyechilen" }
+    - word: "bn-0887"
+      forms: { "ami": "ঘুমিয়েছিলাম", "tui": "ঘুমিয়েছিলি", "tumi": "ঘুমিয়েছিলে", "apni": "ঘুমিয়েছিলেন", "se": "ঘুমিয়েছিল", "tini": "ঘুমিয়েছিলেন" }
+      readings: { "ami": "ghumiyechilām", "tui": "ghumiyechili", "tumi": "ghumiyechile", "apni": "ghumiyechilen", "se": "ghumiyechilo", "tini": "ghumiyechilen" }
+    - word: "bn-0888"
+      forms: { "ami": "দিয়েছিলাম", "tui": "দিয়েছিলি", "tumi": "দিয়েছিলে", "apni": "দিয়েছিলেন", "se": "দিয়েছিল", "tini": "দিয়েছিলেন" }
+      readings: { "ami": "diyechilām", "tui": "diyechili", "tumi": "diyechile", "apni": "diyechilen", "se": "diyechilo", "tini": "diyechilen" }
+    - word: "bn-0889"
+      forms: { "ami": "নিয়েছিলাম", "tui": "নিয়েছিলি", "tumi": "নিয়েছিলে", "apni": "নিয়েছিলেন", "se": "নিয়েছিল", "tini": "নিয়েছিলেন" }
+      readings: { "ami": "niyechilām", "tui": "niyechili", "tumi": "niyechile", "apni": "niyechilen", "se": "niyechilo", "tini": "niyechilen" }
+    - word: "bn-0890"
+      forms: { "ami": "কিনেছিলাম", "tui": "কিনেছিলি", "tumi": "কিনেছিলে", "apni": "কিনেছিলেন", "se": "কিনেছিল", "tini": "কিনেছিলেন" }
+      readings: { "ami": "kinechilām", "tui": "kinechili", "tumi": "kinechile", "apni": "kinechilen", "se": "kinechilo", "tini": "kinechilen" }
+    - word: "bn-0891"
+      forms: { "ami": "পেয়েছিলাম", "tui": "পেয়েছিলি", "tumi": "পেয়েছিলে", "apni": "পেয়েছিলেন", "se": "পেয়েছিল", "tini": "পেয়েছিলেন" }
+      readings: { "ami": "peyechilām", "tui": "peyechili", "tumi": "peyechile", "apni": "peyechilen", "se": "peyechilo", "tini": "peyechilen" }
+    - word: "bn-0892"
+      forms: { "ami": "চলেছিলাম", "tui": "চলেছিলি", "tumi": "চলেছিলে", "apni": "চলেছিলেন", "se": "চলেছিল", "tini": "চলেছিলেন" }
+      readings: { "ami": "côlechilām", "tui": "côlechili", "tumi": "côlechile", "apni": "côlechilen", "se": "côlechilo", "tini": "côlechilen" }
+    - word: "bn-0893"
+      forms: { "ami": "এনেছিলাম", "tui": "এনেছিলি", "tumi": "এনেছিলে", "apni": "এনেছিলেন", "se": "এনেছিল", "tini": "এনেছিলেন" }
+      readings: { "ami": "enechilām", "tui": "enechili", "tumi": "enechile", "apni": "enechilen", "se": "enechilo", "tini": "enechilen" }
+    - word: "bn-0894"
+      forms: { "ami": "রেখেছিলাম", "tui": "রেখেছিলি", "tumi": "রেখেছিলে", "apni": "রেখেছিলেন", "se": "রেখেছিল", "tini": "রেখেছিলেন" }
+      readings: { "ami": "rekhechilām", "tui": "rekhechili", "tumi": "rekhechile", "apni": "rekhechilen", "se": "rekhechilo", "tini": "rekhechilen" }
+    - word: "bn-0895"
+      forms: { "ami": "খেলেছিলাম", "tui": "খেলেছিলি", "tumi": "খেলেছিলে", "apni": "খেলেছিলেন", "se": "খেলেছিল", "tini": "খেলেছিলেন" }
+      readings: { "ami": "khelechilām", "tui": "khelechili", "tumi": "khelechile", "apni": "khelechilen", "se": "khelechilo", "tini": "khelechilen" }
+    - word: "bn-0896"
+      forms: { "ami": "হেঁটেছিলাম", "tui": "হেঁটেছিলি", "tumi": "হেঁটেছিলে", "apni": "হেঁটেছিলেন", "se": "হেঁটেছিল", "tini": "হেঁটেছিলেন" }
+      readings: { "ami": "hem̐ṭechilām", "tui": "hem̐ṭechili", "tumi": "hem̐ṭechile", "apni": "hem̐ṭechilen", "se": "hem̐ṭechilo", "tini": "hem̐ṭechilen" }
+    - word: "bn-0897"
+      forms: { "ami": "খুলেছিলাম", "tui": "খুলেছিলি", "tumi": "খুলেছিলে", "apni": "খুলেছিলেন", "se": "খুলেছিল", "tini": "খুলেছিলেন" }
+      readings: { "ami": "khulechilām", "tui": "khulechili", "tumi": "khulechile", "apni": "khulechilen", "se": "khulechilo", "tini": "khulechilen" }
+    - word: "bn-0898"
+      forms: { "ami": "ডেকেছিলাম", "tui": "ডেকেছিলি", "tumi": "ডেকেছিলে", "apni": "ডেকেছিলেন", "se": "ডেকেছিল", "tini": "ডেকেছিলেন" }
+      readings: { "ami": "ḍekechilām", "tui": "ḍekechili", "tumi": "ḍekechile", "apni": "ḍekechilen", "se": "ḍekechilo", "tini": "ḍekechilen" }
+    - word: "bn-0899"
+      forms: { "ami": "হেসেছিলাম", "tui": "হেসেছিলি", "tumi": "হেসেছিলে", "apni": "হেসেছিলেন", "se": "হেসেছিল", "tini": "হেসেছিলেন" }
+      readings: { "ami": "hesechilām", "tui": "hesechili", "tumi": "hesechile", "apni": "hesechilen", "se": "hesechilo", "tini": "hesechilen" }
+    - word: "bn-0677"
+      forms: { "ami": "কাজ করেছিলাম", "tui": "কাজ করেছিলি", "tumi": "কাজ করেছিলে", "apni": "কাজ করেছিলেন", "se": "কাজ করেছিল", "tini": "কাজ করেছিলেন" }
+      readings: { "ami": "kāj kôrechilām", "tui": "kāj kôrechili", "tumi": "kāj kôrechile", "apni": "kāj kôrechilen", "se": "kāj kôrechilo", "tini": "kāj kôrechilen" }
+    - word: "bn-0678"
+      forms: { "ami": "বাজার করেছিলাম", "tui": "বাজার করেছিলি", "tumi": "বাজার করেছিলে", "apni": "বাজার করেছিলেন", "se": "বাজার করেছিল", "tini": "বাজার করেছিলেন" }
+      readings: { "ami": "bājār kôrechilām", "tui": "bājār kôrechili", "tumi": "bājār kôrechile", "apni": "bājār kôrechilen", "se": "bājār kôrechilo", "tini": "bājār kôrechilen" }
+    - word: "bn-0679"
+      forms: { "ami": "ফোন করেছিলাম", "tui": "ফোন করেছিলি", "tumi": "ফোন করেছিলে", "apni": "ফোন করেছিলেন", "se": "ফোন করেছিল", "tini": "ফোন করেছিলেন" }
+      readings: { "ami": "phon kôrechilām", "tui": "phon kôrechili", "tumi": "phon kôrechile", "apni": "phon kôrechilen", "se": "phon kôrechilo", "tini": "phon kôrechilen" }
+    - word: "bn-0680"
+      forms: { "ami": "গল্প করেছিলাম", "tui": "গল্প করেছিলি", "tumi": "গল্প করেছিলে", "apni": "গল্প করেছিলেন", "se": "গল্প করেছিল", "tini": "গল্প করেছিলেন" }
+      readings: { "ami": "gôlpo kôrechilām", "tui": "gôlpo kôrechili", "tumi": "gôlpo kôrechile", "apni": "gôlpo kôrechilen", "se": "gôlpo kôrechilo", "tini": "gôlpo kôrechilen" }
+    - word: "bn-0681"
+      forms: { "ami": "বিশ্রাম করেছিলাম", "tui": "বিশ্রাম করেছিলি", "tumi": "বিশ্রাম করেছিলে", "apni": "বিশ্রাম করেছিলেন", "se": "বিশ্রাম করেছিল", "tini": "বিশ্রাম করেছিলেন" }
+      readings: { "ami": "biśrām kôrechilām", "tui": "biśrām kôrechili", "tumi": "biśrām kôrechile", "apni": "biśrām kôrechilen", "se": "biśrām kôrechilo", "tini": "biśrām kôrechilen" }
+    - word: "bn-0682"
+      forms: { "ami": "ব্যায়াম করেছিলাম", "tui": "ব্যায়াম করেছিলি", "tumi": "ব্যায়াম করেছিলে", "apni": "ব্যায়াম করেছিলেন", "se": "ব্যায়াম করেছিল", "tini": "ব্যায়াম করেছিলেন" }
+      readings: { "ami": "bêyām kôrechilām", "tui": "bêyām kôrechili", "tumi": "bêyām kôrechile", "apni": "bêyām kôrechilen", "se": "bêyām kôrechilo", "tini": "bêyām kôrechilen" }
+    - word: "bn-0683"
+      forms: { "ami": "পরিষ্কার করেছিলাম", "tui": "পরিষ্কার করেছিলি", "tumi": "পরিষ্কার করেছিলে", "apni": "পরিষ্কার করেছিলেন", "se": "পরিষ্কার করেছিল", "tini": "পরিষ্কার করেছিলেন" }
+      readings: { "ami": "poriśkār kôrechilām", "tui": "poriśkār kôrechili", "tumi": "poriśkār kôrechile", "apni": "poriśkār kôrechilen", "se": "poriśkār kôrechilo", "tini": "poriśkār kôrechilen" }
+    - word: "bn-0684"
+      forms: { "ami": "বিয়ে করেছিলাম", "tui": "বিয়ে করেছিলি", "tumi": "বিয়ে করেছিলে", "apni": "বিয়ে করেছিলেন", "se": "বিয়ে করেছিল", "tini": "বিয়ে করেছিলেন" }
+      readings: { "ami": "biye kôrechilām", "tui": "biye kôrechili", "tumi": "biye kôrechile", "apni": "biye kôrechilen", "se": "biye kôrechilo", "tini": "biye kôrechilen" }
+    - word: "bn-0685"
+      forms: { "ami": "জিজ্ঞেস করেছিলাম", "tui": "জিজ্ঞেস করেছিলি", "tumi": "জিজ্ঞেস করেছিলে", "apni": "জিজ্ঞেস করেছিলেন", "se": "জিজ্ঞেস করেছিল", "tini": "জিজ্ঞেস করেছিলেন" }
+      readings: { "ami": "jiggeś kôrechilām", "tui": "jiggeś kôrechili", "tumi": "jiggeś kôrechile", "apni": "jiggeś kôrechilen", "se": "jiggeś kôrechilo", "tini": "jiggeś kôrechilen" }
+    - word: "bn-0686"
+      forms: { "ami": "শুরু করেছিলাম", "tui": "শুরু করেছিলি", "tumi": "শুরু করেছিলে", "apni": "শুরু করেছিলেন", "se": "শুরু করেছিল", "tini": "শুরু করেছিলেন" }
+      readings: { "ami": "śuru kôrechilām", "tui": "śuru kôrechili", "tumi": "śuru kôrechile", "apni": "śuru kôrechilen", "se": "śuru kôrechilo", "tini": "śuru kôrechilen" }
+    - word: "bn-0687"
+      forms: { "ami": "শেষ করেছিলাম", "tui": "শেষ করেছিলি", "tumi": "শেষ করেছিলে", "apni": "শেষ করেছিলেন", "se": "শেষ করেছিল", "tini": "শেষ করেছিলেন" }
+      readings: { "ami": "śeś kôrechilām", "tui": "śeś kôrechili", "tumi": "śeś kôrechile", "apni": "śeś kôrechilen", "se": "śeś kôrechilo", "tini": "śeś kôrechilen" }
+    - word: "bn-0688"
+      forms: { "ami": "ভুল করেছিলাম", "tui": "ভুল করেছিলি", "tumi": "ভুল করেছিলে", "apni": "ভুল করেছিলেন", "se": "ভুল করেছিল", "tini": "ভুল করেছিলেন" }
+      readings: { "ami": "bhul kôrechilām", "tui": "bhul kôrechili", "tumi": "bhul kôrechile", "apni": "bhul kôrechilen", "se": "bhul kôrechilo", "tini": "bhul kôrechilen" }
+    - word: "bn-0689"
+      forms: { "ami": "ঠিক করেছিলাম", "tui": "ঠিক করেছিলি", "tumi": "ঠিক করেছিলে", "apni": "ঠিক করেছিলেন", "se": "ঠিক করেছিল", "tini": "ঠিক করেছিলেন" }
+      readings: { "ami": "ṭhik kôrechilām", "tui": "ṭhik kôrechili", "tumi": "ṭhik kôrechile", "apni": "ṭhik kôrechilen", "se": "ṭhik kôrechilo", "tini": "ṭhik kôrechilen" }
+    - word: "bn-0690"
+      forms: { "ami": "সাহায্য করেছিলাম", "tui": "সাহায্য করেছিলি", "tumi": "সাহায্য করেছিলে", "apni": "সাহায্য করেছিলেন", "se": "সাহায্য করেছিল", "tini": "সাহায্য করেছিলেন" }
+      readings: { "ami": "śāhājjo kôrechilām", "tui": "śāhājjo kôrechili", "tumi": "śāhājjo kôrechile", "apni": "śāhājjo kôrechilen", "se": "śāhājjo kôrechilo", "tini": "śāhājjo kôrechilen" }
+    - word: "bn-0691"
+      forms: { "ami": "চেষ্টা করেছিলাম", "tui": "চেষ্টা করেছিলি", "tumi": "চেষ্টা করেছিলে", "apni": "চেষ্টা করেছিলেন", "se": "চেষ্টা করেছিল", "tini": "চেষ্টা করেছিলেন" }
+      readings: { "ami": "ceśṭā kôrechilām", "tui": "ceśṭā kôrechili", "tumi": "ceśṭā kôrechile", "apni": "ceśṭā kôrechilen", "se": "ceśṭā kôrechilo", "tini": "ceśṭā kôrechilen" }
+    - word: "bn-0692"
+      forms: { "ami": "অপেক্ষা করেছিলাম", "tui": "অপেক্ষা করেছিলি", "tumi": "অপেক্ষা করেছিলে", "apni": "অপেক্ষা করেছিলেন", "se": "অপেক্ষা করেছিল", "tini": "অপেক্ষা করেছিলেন" }
+      readings: { "ami": "ôpekkhā kôrechilām", "tui": "ôpekkhā kôrechili", "tumi": "ôpekkhā kôrechile", "apni": "ôpekkhā kôrechilen", "se": "ôpekkhā kôrechilo", "tini": "ôpekkhā kôrechilen" }
+    - word: "bn-0693"
+      forms: { "ami": "পছন্দ করেছিলাম", "tui": "পছন্দ করেছিলি", "tumi": "পছন্দ করেছিলে", "apni": "পছন্দ করেছিলেন", "se": "পছন্দ করেছিল", "tini": "পছন্দ করেছিলেন" }
+      readings: { "ami": "pôchondo kôrechilām", "tui": "pôchondo kôrechili", "tumi": "pôchondo kôrechile", "apni": "pôchondo kôrechilen", "se": "pôchondo kôrechilo", "tini": "pôchondo kôrechilen" }
+    - word: "bn-0694"
+      forms: { "ami": "গান করেছিলাম", "tui": "গান করেছিলি", "tumi": "গান করেছিলে", "apni": "গান করেছিলেন", "se": "গান করেছিল", "tini": "গান করেছিলেন" }
+      readings: { "ami": "gān kôrechilām", "tui": "gān kôrechili", "tumi": "gān kôrechile", "apni": "gān kôrechilen", "se": "gān kôrechilo", "tini": "gān kôrechilen" }
+    - word: "bn-0695"
+      forms: { "ami": "রাগ করেছিলাম", "tui": "রাগ করেছিলি", "tumi": "রাগ করেছিলে", "apni": "রাগ করেছিলেন", "se": "রাগ করেছিল", "tini": "রাগ করেছিলেন" }
+      readings: { "ami": "rāg kôrechilām", "tui": "rāg kôrechili", "tumi": "rāg kôrechile", "apni": "rāg kôrechilen", "se": "rāg kôrechilo", "tini": "rāg kôrechilen" }
+    - word: "bn-0736"
+      forms: { "ami": "পেরেছিলাম", "tui": "পেরেছিলি", "tumi": "পেরেছিলে", "apni": "পেরেছিলেন", "se": "পেরেছিল", "tini": "পেরেছিলেন" }
+      readings: { "ami": "perechilām", "tui": "perechili", "tumi": "perechile", "apni": "perechilen", "se": "perechilo", "tini": "perechilen" }
+    - word: "bn-0741"
+      forms: { "ami": "চেয়েছিলাম", "tui": "চেয়েছিলি", "tumi": "চেয়েছিলে", "apni": "চেয়েছিলেন", "se": "চেয়েছিল", "tini": "চেয়েছিলেন" }
+      readings: { "ami": "ceyechilām", "tui": "ceyechili", "tumi": "ceyechile", "apni": "ceyechilen", "se": "ceyechilo", "tini": "ceyechilen" }
+    - word: "bn-1099"
+      forms: { "ami": "রেঁধেছিলাম", "tui": "রেঁধেছিলি", "tumi": "রেঁধেছিলে", "apni": "রেঁধেছিলেন", "se": "রেঁধেছিল", "tini": "রেঁধেছিলেন" }
+      readings: { "ami": "rem̐dhechilām", "tui": "rem̐dhechili", "tumi": "rem̐dhechile", "apni": "rem̐dhechilen", "se": "rem̐dhechilo", "tini": "rem̐dhechilen" }
+    - word: "bn-1100"
+      forms: { "ami": "ধুয়েছিলাম", "tui": "ধুয়েছিলি", "tumi": "ধুয়েছিলে", "apni": "ধুয়েছিলেন", "se": "ধুয়েছিল", "tini": "ধুয়েছিলেন" }
+      readings: { "ami": "dhuyechilām", "tui": "dhuyechili", "tumi": "dhuyechile", "apni": "dhuyechilen", "se": "dhuyechilo", "tini": "dhuyechilen" }
+    - word: "bn-1101"
+      forms: { "ami": "কেটেছিলাম", "tui": "কেটেছিলি", "tumi": "কেটেছিলে", "apni": "কেটেছিলেন", "se": "কেটেছিল", "tini": "কেটেছিলেন" }
+      readings: { "ami": "keṭechilām", "tui": "keṭechili", "tumi": "keṭechile", "apni": "keṭechilen", "se": "keṭechilo", "tini": "keṭechilen" }
+    - word: "bn-1102"
+      forms: { "ami": "ভেঙেছিলাম", "tui": "ভেঙেছিলি", "tumi": "ভেঙেছিলে", "apni": "ভেঙেছিলেন", "se": "ভেঙেছিল", "tini": "ভেঙেছিলেন" }
+      readings: { "ami": "bheṅechilām", "tui": "bheṅechili", "tumi": "bheṅechile", "apni": "bheṅechilen", "se": "bheṅechilo", "tini": "bheṅechilen" }
+    - word: "bn-1103"
+      forms: { "ami": "ফেলেছিলাম", "tui": "ফেলেছিলি", "tumi": "ফেলেছিলে", "apni": "ফেলেছিলেন", "se": "ফেলেছিল", "tini": "ফেলেছিলেন" }
+      readings: { "ami": "phelechilām", "tui": "phelechili", "tumi": "phelechile", "apni": "phelechilen", "se": "phelechilo", "tini": "phelechilen" }
+    - word: "bn-1104"
+      forms: { "ami": "তুলেছিলাম", "tui": "তুলেছিলি", "tumi": "তুলেছিলে", "apni": "তুলেছিলেন", "se": "তুলেছিল", "tini": "তুলেছিলেন" }
+      readings: { "ami": "tulechilām", "tui": "tulechili", "tumi": "tulechile", "apni": "tulechilen", "se": "tulechilo", "tini": "tulechilen" }
+    - word: "bn-1105"
+      forms: { "ami": "খুঁজেছিলাম", "tui": "খুঁজেছিলি", "tumi": "খুঁজেছিলে", "apni": "খুঁজেছিলেন", "se": "খুঁজেছিল", "tini": "খুঁজেছিলেন" }
+      readings: { "ami": "khum̐jechilām", "tui": "khum̐jechili", "tumi": "khum̐jechile", "apni": "khum̐jechilen", "se": "khum̐jechilo", "tini": "khum̐jechilen" }
+    - word: "bn-1106"
+      forms: { "ami": "হারিয়েছিলাম", "tui": "হারিয়েছিলি", "tumi": "হারিয়েছিলে", "apni": "হারিয়েছিলেন", "se": "হারিয়েছিল", "tini": "হারিয়েছিলেন" }
+      readings: { "ami": "hāriyechilām", "tui": "hāriyechili", "tumi": "hāriyechile", "apni": "hāriyechilen", "se": "hāriyechilo", "tini": "hāriyechilen" }
+    - word: "bn-1107"
+      forms: { "ami": "ধরেছিলাম", "tui": "ধরেছিলি", "tumi": "ধরেছিলে", "apni": "ধরেছিলেন", "se": "ধরেছিল", "tini": "ধরেছিলেন" }
+      readings: { "ami": "dhôrechilām", "tui": "dhôrechili", "tumi": "dhôrechile", "apni": "dhôrechilen", "se": "dhôrechilo", "tini": "dhôrechilen" }
+    - word: "bn-1108"
+      forms: { "ami": "পাঠিয়েছিলাম", "tui": "পাঠিয়েছিলি", "tumi": "পাঠিয়েছিলে", "apni": "পাঠিয়েছিলেন", "se": "পাঠিয়েছিল", "tini": "পাঠিয়েছিলেন" }
+      readings: { "ami": "pāṭhiyechilām", "tui": "pāṭhiyechili", "tumi": "pāṭhiyechile", "apni": "pāṭhiyechilen", "se": "pāṭhiyechilo", "tini": "pāṭhiyechilen" }
+    - word: "bn-1109"
+      forms: { "ami": "পৌঁছেছিলাম", "tui": "পৌঁছেছিলি", "tumi": "পৌঁছেছিলে", "apni": "পৌঁছেছিলেন", "se": "পৌঁছেছিল", "tini": "পৌঁছেছিলেন" }
+      readings: { "ami": "poum̐chechilām", "tui": "poum̐chechili", "tumi": "poum̐chechile", "apni": "poum̐chechilen", "se": "poum̐chechilo", "tini": "poum̐chechilen" }
+    - word: "bn-1110"
+      forms: { "ami": "ফিরেছিলাম", "tui": "ফিরেছিলি", "tumi": "ফিরেছিলে", "apni": "ফিরেছিলেন", "se": "ফিরেছিল", "tini": "ফিরেছিলেন" }
+      readings: { "ami": "phirechilām", "tui": "phirechili", "tumi": "phirechile", "apni": "phirechilen", "se": "phirechilo", "tini": "phirechilen" }
+    - word: "bn-1111"
+      forms: { "ami": "থেমেছিলাম", "tui": "থেমেছিলি", "tumi": "থেমেছিলে", "apni": "থেমেছিলেন", "se": "থেমেছিল", "tini": "থেমেছিলেন" }
+      readings: { "ami": "themechilām", "tui": "themechili", "tumi": "themechile", "apni": "themechilen", "se": "themechilo", "tini": "themechilen" }
+    - word: "bn-1112"
+      forms: { "ami": "ঢেলেছিলাম", "tui": "ঢেলেছিলি", "tumi": "ঢেলেছিলে", "apni": "ঢেলেছিলেন", "se": "ঢেলেছিল", "tini": "ঢেলেছিলেন" }
+      readings: { "ami": "ḍhelechilām", "tui": "ḍhelechili", "tumi": "ḍhelechile", "apni": "ḍhelechilen", "se": "ḍhelechilo", "tini": "ḍhelechilen" }
+    - word: "bn-1113"
+      forms: { "ami": "গুনেছিলাম", "tui": "গুনেছিলি", "tumi": "গুনেছিলে", "apni": "গুনেছিলেন", "se": "গুনেছিল", "tini": "গুনেছিলেন" }
+      readings: { "ami": "gunechilām", "tui": "gunechili", "tumi": "gunechile", "apni": "gunechilen", "se": "gunechilo", "tini": "gunechilen" }
+    - word: "bn-1114"
+      forms: { "ami": "শিখিয়েছিলাম", "tui": "শিখিয়েছিলি", "tumi": "শিখিয়েছিলে", "apni": "শিখিয়েছিলেন", "se": "শিখিয়েছিল", "tini": "শিখিয়েছিলেন" }
+      readings: { "ami": "śikhiyechilām", "tui": "śikhiyechili", "tumi": "śikhiyechile", "apni": "śikhiyechilen", "se": "śikhiyechilo", "tini": "śikhiyechilen" }
+    - word: "bn-1115"
+      forms: { "ami": "দৌড়িয়েছিলাম", "tui": "দৌড়িয়েছিলি", "tumi": "দৌড়িয়েছিলে", "apni": "দৌড়িয়েছিলেন", "se": "দৌড়িয়েছিল", "tini": "দৌড়িয়েছিলেন" }
+      readings: { "ami": "douṛiyechilām", "tui": "douṛiyechili", "tumi": "douṛiyechile", "apni": "douṛiyechilen", "se": "douṛiyechilo", "tini": "douṛiyechilen" }
+    - word: "bn-1116"
+      forms: { "ami": "উড়েছিলাম", "tui": "উড়েছিলি", "tumi": "উড়েছিলে", "apni": "উড়েছিলেন", "se": "উড়েছিল", "tini": "উড়েছিলেন" }
+      readings: { "ami": "uṛechilām", "tui": "uṛechili", "tumi": "uṛechile", "apni": "uṛechilen", "se": "uṛechilo", "tini": "uṛechilen" }
+    - word: "bn-1117"
+      forms: { "ami": "লাফিয়েছিলাম", "tui": "লাফিয়েছিলি", "tumi": "লাফিয়েছিলে", "apni": "লাফিয়েছিলেন", "se": "লাফিয়েছিল", "tini": "লাফিয়েছিলেন" }
+      readings: { "ami": "lāphiyechilām", "tui": "lāphiyechili", "tumi": "lāphiyechile", "apni": "lāphiyechilen", "se": "lāphiyechilo", "tini": "lāphiyechilen" }
+    - word: "bn-1118"
+      forms: { "ami": "ভেবেছিলাম", "tui": "ভেবেছিলি", "tumi": "ভেবেছিলে", "apni": "ভেবেছিলেন", "se": "ভেবেছিল", "tini": "ভেবেছিলেন" }
+      readings: { "ami": "bhebechilām", "tui": "bhebechili", "tumi": "bhebechile", "apni": "bhebechilen", "se": "bhebechilo", "tini": "bhebechilen" }
+    - word: "bn-1119"
+      forms: { "ami": "কেঁদেছিলাম", "tui": "কেঁদেছিলি", "tumi": "কেঁদেছিলে", "apni": "কেঁদেছিলেন", "se": "কেঁদেছিল", "tini": "কেঁদেছিলেন" }
+      readings: { "ami": "kem̐dechilām", "tui": "kem̐dechili", "tumi": "kem̐dechile", "apni": "kem̐dechilen", "se": "kem̐dechilo", "tini": "kem̐dechilen" }
+    - word: "bn-1120"
+      forms: { "ami": "শুয়েছিলাম", "tui": "শুয়েছিলি", "tumi": "শুয়েছিলে", "apni": "শুয়েছিলেন", "se": "শুয়েছিল", "tini": "শুয়েছিলেন" }
+      readings: { "ami": "śuyechilām", "tui": "śuyechili", "tumi": "śuyechile", "apni": "śuyechilen", "se": "śuyechilo", "tini": "śuyechilen" }
+    - word: "bn-1121"
+      forms: { "ami": "মুছেছিলাম", "tui": "মুছেছিলি", "tumi": "মুছেছিলে", "apni": "মুছেছিলেন", "se": "মুছেছিল", "tini": "মুছেছিলেন" }
+      readings: { "ami": "muchechilām", "tui": "muchechili", "tumi": "muchechile", "apni": "muchechilen", "se": "muchechilo", "tini": "muchechilen" }
+    - word: "bn-1122"
+      forms: { "ami": "ঘুরেছিলাম", "tui": "ঘুরেছিলি", "tumi": "ঘুরেছিলে", "apni": "ঘুরেছিলেন", "se": "ঘুরেছিল", "tini": "ঘুরেছিলেন" }
+      readings: { "ami": "ghurechilām", "tui": "ghurechili", "tumi": "ghurechile", "apni": "ghurechilen", "se": "ghurechilo", "tini": "ghurechilen" }
+    - word: "bn-0119"
+      forms: { "ami": "পড়েছিলাম", "tui": "পড়েছিলি", "tumi": "পড়েছিলে", "apni": "পড়েছিলেন", "se": "পড়েছিল", "tini": "পড়েছিলেন" }
+      readings: { "ami": "pôṛechilām", "tui": "pôṛechili", "tumi": "pôṛechile", "apni": "pôṛechilen", "se": "pôṛechilo", "tini": "pôṛechilen" }
+    - word: "bn-1689"
+      forms: { "ami": "বেচেছিলাম", "tui": "বেচেছিলি", "tumi": "বেচেছিলে", "apni": "বেচেছিলেন", "se": "বেচেছিল", "tini": "বেচেছিলেন" }
+      readings: { "ami": "becechilām", "tui": "becechili", "tumi": "becechile", "apni": "becechilen", "se": "becechilo", "tini": "becechilen" }
+    - word: "bn-1701"
+      forms: { "ami": "বদলিয়েছিলাম", "tui": "বদলিয়েছিলি", "tumi": "বদলিয়েছিলে", "apni": "বদলিয়েছিলেন", "se": "বদলিয়েছিল", "tini": "বদলিয়েছিলেন" }
+      readings: { "ami": "bôdoliyechilām", "tui": "bôdoliyechili", "tumi": "bôdoliyechile", "apni": "bôdoliyechilen", "se": "bôdoliyechilo", "tini": "bôdoliyechilen" }
+    - word: "bn-1715"
+      forms: { "ami": "কমিয়েছিলাম", "tui": "কমিয়েছিলি", "tumi": "কমিয়েছিলে", "apni": "কমিয়েছিলেন", "se": "কমিয়েছিল", "tini": "কমিয়েছিলেন" }
+      readings: { "ami": "komiyechilām", "tui": "komiyechili", "tumi": "komiyechile", "apni": "komiyechilen", "se": "komiyechilo", "tini": "komiyechilen" }
+    - word: "bn-2097"
+      forms: { "ami": "ফুটেছিলাম", "tui": "ফুটেছিলি", "tumi": "ফুটেছিলে", "apni": "ফুটেছিলেন", "se": "ফুটেছিল", "tini": "ফুটেছিলেন" }
+      readings: { "ami": "phuṭechilām", "tui": "phuṭechili", "tumi": "phuṭechile", "apni": "phuṭechilen", "se": "phuṭechilo", "tini": "phuṭechilen" }
+    - word: "bn-2098"
+      forms: { "ami": "বেটেছিলাম", "tui": "বেটেছিলি", "tumi": "বেটেছিলে", "apni": "বেটেছিলেন", "se": "বেটেছিল", "tini": "বেটেছিলেন" }
+      readings: { "ami": "beṭechilām", "tui": "beṭechili", "tumi": "beṭechile", "apni": "beṭechilen", "se": "beṭechilo", "tini": "beṭechilen" }
+    - word: "bn-2099"
+      forms: { "ami": "কুটেছিলাম", "tui": "কুটেছিলি", "tumi": "কুটেছিলে", "apni": "কুটেছিলেন", "se": "কুটেছিল", "tini": "কুটেছিলেন" }
+      readings: { "ami": "kuṭechilām", "tui": "kuṭechili", "tumi": "kuṭechile", "apni": "kuṭechilen", "se": "kuṭechilo", "tini": "kuṭechilen" }
+    - word: "bn-2111"
+      forms: { "ami": "মেখেছিলাম", "tui": "মেখেছিলি", "tumi": "মেখেছিলে", "apni": "মেখেছিলেন", "se": "মেখেছিল", "tini": "মেখেছিলেন" }
+      readings: { "ami": "mekhechilām", "tui": "mekhechili", "tumi": "mekhechile", "apni": "mekhechilen", "se": "mekhechilo", "tini": "mekhechilen" }
+    - word: "bn-2112"
+      forms: { "ami": "নেড়েছিলাম", "tui": "নেড়েছিলি", "tumi": "নেড়েছিলে", "apni": "নেড়েছিলেন", "se": "নেড়েছিল", "tini": "নেড়েছিলেন" }
+      readings: { "ami": "neṛechilām", "tui": "neṛechili", "tumi": "neṛechile", "apni": "neṛechilen", "se": "neṛechilo", "tini": "neṛechilen" }
+    - word: "bn-2113"
+      forms: { "ami": "কষেছিলাম", "tui": "কষেছিলি", "tumi": "কষেছিলে", "apni": "কষেছিলেন", "se": "কষেছিল", "tini": "কষেছিলেন" }
+      readings: { "ami": "kôśechilām", "tui": "kôśechili", "tumi": "kôśechile", "apni": "kôśechilen", "se": "kôśechilo", "tini": "kôśechilen" }
+    - word: "bn-2114"
+      forms: { "ami": "মিশিয়েছিলাম", "tui": "মিশিয়েছিলি", "tumi": "মিশিয়েছিলে", "apni": "মিশিয়েছিলেন", "se": "মিশিয়েছিল", "tini": "মিশিয়েছিলেন" }
+      readings: { "ami": "miśiyechilām", "tui": "miśiyechili", "tumi": "miśiyechile", "apni": "miśiyechilen", "se": "miśiyechilo", "tini": "miśiyechilen" }
+    - word: "bn-2115"
+      forms: { "ami": "ছেঁকেছিলাম", "tui": "ছেঁকেছিলি", "tumi": "ছেঁকেছিলে", "apni": "ছেঁকেছিলেন", "se": "ছেঁকেছিল", "tini": "ছেঁকেছিলেন" }
+      readings: { "ami": "chem̐kechilām", "tui": "chem̐kechili", "tumi": "chem̐kechile", "apni": "chem̐kechilen", "se": "chem̐kechilo", "tini": "chem̐kechilen" }
+    - word: "bn-2123"
+      forms: { "ami": "কুচিয়েছিলাম", "tui": "কুচিয়েছিলি", "tumi": "কুচিয়েছিলে", "apni": "কুচিয়েছিলেন", "se": "কুচিয়েছিল", "tini": "কুচিয়েছিলেন" }
+      readings: { "ami": "kuciyechilām", "tui": "kuciyechili", "tumi": "kuciyechile", "apni": "kuciyechilen", "se": "kuciyechilo", "tini": "kuciyechilen" }
+    - word: "bn-2128"
+      forms: { "ami": "সেঁকেছিলাম", "tui": "সেঁকেছিলি", "tumi": "সেঁকেছিলে", "apni": "সেঁকেছিলেন", "se": "সেঁকেছিল", "tini": "সেঁকেছিলেন" }
+      readings: { "ami": "sem̐kechilām", "tui": "sem̐kechili", "tumi": "sem̐kechile", "apni": "sem̐kechilen", "se": "sem̐kechilo", "tini": "sem̐kechilen" }
+    - word: "bn-2130"
+      forms: { "ami": "ভাপিয়েছিলাম", "tui": "ভাপিয়েছিলি", "tumi": "ভাপিয়েছিলে", "apni": "ভাপিয়েছিলেন", "se": "ভাপিয়েছিল", "tini": "ভাপিয়েছিলেন" }
+      readings: { "ami": "bhāpiyechilām", "tui": "bhāpiyechili", "tumi": "bhāpiyechile", "apni": "bhāpiyechilen", "se": "bhāpiyechilo", "tini": "bhāpiyechilen" }
+    - word: "bn-2131"
+      forms: { "ami": "ভিজিয়েছিলাম", "tui": "ভিজিয়েছিলি", "tumi": "ভিজিয়েছিলে", "apni": "ভিজিয়েছিলেন", "se": "ভিজিয়েছিল", "tini": "ভিজিয়েছিলেন" }
+      readings: { "ami": "bhijiyechilām", "tui": "bhijiyechili", "tumi": "bhijiyechile", "apni": "bhijiyechilen", "se": "bhijiyechilo", "tini": "bhijiyechilen" }
+    - word: "bn-2159"
+      forms: { "ami": "পড়িয়েছিলাম", "tui": "পড়িয়েছিলি", "tumi": "পড়িয়েছিলে", "apni": "পড়িয়েছিলেন", "se": "পড়িয়েছিল", "tini": "পড়িয়েছিলেন" }
+      readings: { "ami": "poṛiyechilām", "tui": "poṛiyechili", "tumi": "poṛiyechile", "apni": "poṛiyechilen", "se": "poṛiyechilo", "tini": "poṛiyechilen" }
+    - word: "bn-2217"
+      forms: { "ami": "এঁকেছিলাম", "tui": "এঁকেছিলি", "tumi": "এঁকেছিলে", "apni": "এঁকেছিলেন", "se": "এঁকেছিল", "tini": "এঁকেছিলেন" }
+      readings: { "ami": "em̐kechilām", "tui": "em̐kechili", "tumi": "em̐kechile", "apni": "em̐kechilen", "se": "em̐kechilo", "tini": "em̐kechilen" }
+    - word: "bn-2221"
+      forms: { "ami": "বাজিয়েছিলাম", "tui": "বাজিয়েছিলি", "tumi": "বাজিয়েছিলে", "apni": "বাজিয়েছিলেন", "se": "বাজিয়েছিল", "tini": "বাজিয়েছিলেন" }
+      readings: { "ami": "bājiyechilām", "tui": "bājiyechili", "tumi": "bājiyechile", "apni": "bājiyechilen", "se": "bājiyechilo", "tini": "bājiyechilen" }
+    - word: "bn-2222"
+      forms: { "ami": "গেয়েছিলাম", "tui": "গেয়েছিলি", "tumi": "গেয়েছিলে", "apni": "গেয়েছিলেন", "se": "গেয়েছিল", "tini": "গেয়েছিলেন" }
+      readings: { "ami": "geyechilām", "tui": "geyechili", "tumi": "geyechile", "apni": "geyechilen", "se": "geyechilo", "tini": "geyechilen" }
+    - word: "bn-2229"
+      forms: { "ami": "জিতেছিলাম", "tui": "জিতেছিলি", "tumi": "জিতেছিলে", "apni": "জিতেছিলেন", "se": "জিতেছিল", "tini": "জিতেছিলেন" }
+      readings: { "ami": "jitechilām", "tui": "jitechili", "tumi": "jitechile", "apni": "jitechilen", "se": "jitechilo", "tini": "jitechilen" }
+    - word: "bn-2230"
+      forms: { "ami": "হেরেছিলাম", "tui": "হেরেছিলি", "tumi": "হেরেছিলে", "apni": "হেরেছিলেন", "se": "হেরেছিল", "tini": "হেরেছিলেন" }
+      readings: { "ami": "herechilām", "tui": "herechili", "tumi": "herechile", "apni": "herechilen", "se": "herechilo", "tini": "herechilen" }
+    - word: "bn-2245"
+      forms: { "ami": "নেচেছিলাম", "tui": "নেচেছিলি", "tumi": "নেচেছিলে", "apni": "নেচেছিলেন", "se": "নেচেছিল", "tini": "নেচেছিলেন" }
+      readings: { "ami": "necechilām", "tui": "necechili", "tumi": "necechile", "apni": "necechilen", "se": "necechilo", "tini": "necechilen" }
+    - word: "bn-2248"
+      forms: { "ami": "ভালোবেসেছিলাম", "tui": "ভালোবেসেছিলি", "tumi": "ভালোবেসেছিলে", "apni": "ভালোবেসেছিলেন", "se": "ভালোবেসেছিল", "tini": "ভালোবেসেছিলেন" }
+      readings: { "ami": "bhālobesechilām", "tui": "bhālobesechili", "tumi": "bhālobesechile", "apni": "bhālobesechilen", "se": "bhālobesechilo", "tini": "bhālobesechilen" }
+    - word: "bn-2264"
+      forms: { "ami": "ঝাড়ু দিয়েছিলাম", "tui": "ঝাড়ু দিয়েছিলি", "tumi": "ঝাড়ু দিয়েছিলে", "apni": "ঝাড়ু দিয়েছিলেন", "se": "ঝাড়ু দিয়েছিল", "tini": "ঝাড়ু দিয়েছিলেন" }
+      readings: { "ami": "jhāṛu diyechilām", "tui": "jhāṛu diyechili", "tumi": "jhāṛu diyechile", "apni": "jhāṛu diyechilen", "se": "jhāṛu diyechilo", "tini": "jhāṛu diyechilen" }
+    - word: "bn-2266"
+      forms: { "ami": "ধুলো ঝেড়েছিলাম", "tui": "ধুলো ঝেড়েছিলি", "tumi": "ধুলো ঝেড়েছিলে", "apni": "ধুলো ঝেড়েছিলেন", "se": "ধুলো ঝেড়েছিল", "tini": "ধুলো ঝেড়েছিলেন" }
+      readings: { "ami": "dhulo jheṛechilām", "tui": "dhulo jheṛechili", "tumi": "dhulo jheṛechile", "apni": "dhulo jheṛechilen", "se": "dhulo jheṛechilo", "tini": "dhulo jheṛechilen" }
+    - word: "bn-2271"
+      forms: { "ami": "বাসন মেজেছিলাম", "tui": "বাসন মেজেছিলি", "tumi": "বাসন মেজেছিলে", "apni": "বাসন মেজেছিলেন", "se": "বাসন মেজেছিল", "tini": "বাসন মেজেছিলেন" }
+      readings: { "ami": "bāśôn mejechilām", "tui": "bāśôn mejechili", "tumi": "bāśôn mejechile", "apni": "bāśôn mejechilen", "se": "bāśôn mejechilo", "tini": "bāśôn mejechilen" }
+    - word: "bn-2272"
+      forms: { "ami": "কাপড় কেচেছিলাম", "tui": "কাপড় কেচেছিলি", "tumi": "কাপড় কেচেছিলে", "apni": "কাপড় কেচেছিলেন", "se": "কাপড় কেচেছিল", "tini": "কাপড় কেচেছিলেন" }
+      readings: { "ami": "kāpoṛ kecechilām", "tui": "kāpoṛ kecechili", "tumi": "kāpoṛ kecechile", "apni": "kāpoṛ kecechilen", "se": "kāpoṛ kecechilo", "tini": "kāpoṛ kecechilen" }
+    - word: "bn-2273"
+      forms: { "ami": "ইস্ত্রি করেছিলাম", "tui": "ইস্ত্রি করেছিলি", "tumi": "ইস্ত্রি করেছিলে", "apni": "ইস্ত্রি করেছিলেন", "se": "ইস্ত্রি করেছিল", "tini": "ইস্ত্রি করেছিলেন" }
+      readings: { "ami": "istri kôrechilām", "tui": "istri kôrechili", "tumi": "istri kôrechile", "apni": "istri kôrechilen", "se": "istri kôrechilo", "tini": "istri kôrechilen" }
+    - word: "bn-2274"
+      forms: { "ami": "ভাঁজ করেছিলাম", "tui": "ভাঁজ করেছিলি", "tumi": "ভাঁজ করেছিলে", "apni": "ভাঁজ করেছিলেন", "se": "ভাঁজ করেছিল", "tini": "ভাঁজ করেছিলেন" }
+      readings: { "ami": "bhāñj kôrechilām", "tui": "bhāñj kôrechili", "tumi": "bhāñj kôrechile", "apni": "bhāñj kôrechilen", "se": "bhāñj kôrechilo", "tini": "bhāñj kôrechilen" }
+    - word: "bn-2275"
+      forms: { "ami": "শুকিয়েছিলাম", "tui": "শুকিয়েছিলি", "tumi": "শুকিয়েছিলে", "apni": "শুকিয়েছিলেন", "se": "শুকিয়েছিল", "tini": "শুকিয়েছিলেন" }
+      readings: { "ami": "śukiyechilām", "tui": "śukiyechili", "tumi": "śukiyechile", "apni": "śukiyechilen", "se": "śukiyechilo", "tini": "śukiyechilen" }
+    - word: "bn-2276"
+      forms: { "ami": "ঝুলিয়েছিলাম", "tui": "ঝুলিয়েছিলি", "tumi": "ঝুলিয়েছিলে", "apni": "ঝুলিয়েছিলেন", "se": "ঝুলিয়েছিল", "tini": "ঝুলিয়েছিলেন" }
+      readings: { "ami": "jhuliyechilām", "tui": "jhuliyechili", "tumi": "jhuliyechile", "apni": "jhuliyechilen", "se": "jhuliyechilo", "tini": "jhuliyechilen" }
+    - word: "bn-2277"
+      forms: { "ami": "গুছিয়েছিলাম", "tui": "গুছিয়েছিলি", "tumi": "গুছিয়েছিলে", "apni": "গুছিয়েছিলেন", "se": "গুছিয়েছিল", "tini": "গুছিয়েছিলেন" }
+      readings: { "ami": "guchiyechilām", "tui": "guchiyechili", "tumi": "guchiyechile", "apni": "guchiyechilen", "se": "guchiyechilo", "tini": "guchiyechilen" }
+    - word: "bn-2278"
+      forms: { "ami": "সাজিয়েছিলাম", "tui": "সাজিয়েছিলি", "tumi": "সাজিয়েছিলে", "apni": "সাজিয়েছিলেন", "se": "সাজিয়েছিল", "tini": "সাজিয়েছিলেন" }
+      readings: { "ami": "sājiyechilām", "tui": "sājiyechili", "tumi": "sājiyechile", "apni": "sājiyechilen", "se": "sājiyechilo", "tini": "sājiyechilen" }
+    - word: "bn-2279"
+      forms: { "ami": "বিছানা করেছিলাম", "tui": "বিছানা করেছিলি", "tumi": "বিছানা করেছিলে", "apni": "বিছানা করেছিলেন", "se": "বিছানা করেছিল", "tini": "বিছানা করেছিলেন" }
+      readings: { "ami": "bichānā kôrechilām", "tui": "bichānā kôrechili", "tumi": "bichānā kôrechile", "apni": "bichānā kôrechilen", "se": "bichānā kôrechilo", "tini": "bichānā kôrechilen" }
+    - word: "bn-2282"
+      forms: { "ami": "ভাগ করেছিলাম", "tui": "ভাগ করেছিলি", "tumi": "ভাগ করেছিলে", "apni": "ভাগ করেছিলেন", "se": "ভাগ করেছিল", "tini": "ভাগ করেছিলেন" }
+      readings: { "ami": "bhāg kôrechilām", "tui": "bhāg kôrechili", "tumi": "bhāg kôrechile", "apni": "bhāg kôrechilen", "se": "bhāg kôrechilo", "tini": "bhāg kôrechilen" }
+    - word: "bn-2286"
+      forms: { "ami": "গাছে জল দিয়েছিলাম", "tui": "গাছে জল দিয়েছিলি", "tumi": "গাছে জল দিয়েছিলে", "apni": "গাছে জল দিয়েছিলেন", "se": "গাছে জল দিয়েছিল", "tini": "গাছে জল দিয়েছিলেন" }
+      readings: { "ami": "gāche jôl diyechilām", "tui": "gāche jôl diyechili", "tumi": "gāche jôl diyechile", "apni": "gāche jôl diyechilen", "se": "gāche jôl diyechilo", "tini": "gāche jôl diyechilen" }
+    - word: "bn-2343"
+      forms: { "ami": "চুল আঁচড়িয়েছিলাম", "tui": "চুল আঁচড়িয়েছিলি", "tumi": "চুল আঁচড়িয়েছিলে", "apni": "চুল আঁচড়িয়েছিলেন", "se": "চুল আঁচড়িয়েছিল", "tini": "চুল আঁচড়িয়েছিলেন" }
+      readings: { "ami": "cul ām̐coṛiyechilām", "tui": "cul ām̐coṛiyechili", "tumi": "cul ām̐coṛiyechile", "apni": "cul ām̐coṛiyechilen", "se": "cul ām̐coṛiyechilo", "tini": "cul ām̐coṛiyechilen" }
+    - word: "bn-2344"
+      forms: { "ami": "কেচেছিলাম", "tui": "কেচেছিলি", "tumi": "কেচেছিলে", "apni": "কেচেছিলেন", "se": "কেচেছিল", "tini": "কেচেছিলেন" }
+      readings: { "ami": "kecechilām", "tui": "kecechili", "tumi": "kecechile", "apni": "kecechilen", "se": "kecechilo", "tini": "kecechilen" }
+    - word: "bn-2345"
+      forms: { "ami": "জেগেছিলাম", "tui": "জেগেছিলি", "tumi": "জেগেছিলে", "apni": "জেগেছিলেন", "se": "জেগেছিল", "tini": "জেগেছিলেন" }
+      readings: { "ami": "jegechilām", "tui": "jegechili", "tumi": "jegechile", "apni": "jegechilen", "se": "jegechilo", "tini": "jegechilen" }
+    - word: "bn-2346"
+      forms: { "ami": "জ্বালিয়েছিলাম", "tui": "জ্বালিয়েছিলি", "tumi": "জ্বালিয়েছিলে", "apni": "জ্বালিয়েছিলেন", "se": "জ্বালিয়েছিল", "tini": "জ্বালিয়েছিলেন" }
+      readings: { "ami": "jāliyechilām", "tui": "jāliyechili", "tumi": "jāliyechile", "apni": "jāliyechilen", "se": "jāliyechilo", "tini": "jāliyechilen" }
+    - word: "bn-2347"
+      forms: { "ami": "নিভিয়েছিলাম", "tui": "নিভিয়েছিলি", "tumi": "নিভিয়েছিলে", "apni": "নিভিয়েছিলেন", "se": "নিভিয়েছিল", "tini": "নিভিয়েছিলেন" }
+      readings: { "ami": "nibhiyechilām", "tui": "nibhiyechili", "tumi": "nibhiyechile", "apni": "nibhiyechilen", "se": "nibhiyechilo", "tini": "nibhiyechilen" }
+    - word: "bn-2348"
+      forms: { "ami": "বন্ধ করেছিলাম", "tui": "বন্ধ করেছিলি", "tumi": "বন্ধ করেছিলে", "apni": "বন্ধ করেছিলেন", "se": "বন্ধ করেছিল", "tini": "বন্ধ করেছিলেন" }
+      readings: { "ami": "bôndho kôrechilām", "tui": "bôndho kôrechili", "tumi": "bôndho kôrechile", "apni": "bôndho kôrechilen", "se": "bôndho kôrechilo", "tini": "bôndho kôrechilen" }
+    - word: "bn-2349"
+      forms: { "ami": "গরম করেছিলাম", "tui": "গরম করেছিলি", "tumi": "গরম করেছিলে", "apni": "গরম করেছিলেন", "se": "গরম করেছিল", "tini": "গরম করেছিলেন" }
+      readings: { "ami": "gôrom kôrechilām", "tui": "gôrom kôrechili", "tumi": "gôrom kôrechile", "apni": "gôrom kôrechilen", "se": "gôrom kôrechilo", "tini": "gôrom kôrechilen" }
+    - word: "bn-2352"
+      forms: { "ami": "ভুলেছিলাম", "tui": "ভুলেছিলি", "tumi": "ভুলেছিলে", "apni": "ভুলেছিলেন", "se": "ভুলেছিল", "tini": "ভুলেছিলেন" }
+      readings: { "ami": "bhulechilām", "tui": "bhulechili", "tumi": "bhulechile", "apni": "bhulechilen", "se": "bhulechilo", "tini": "bhulechilen" }
+    - word: "bn-2353"
+      forms: { "ami": "বেরিয়েছিলাম", "tui": "বেরিয়েছিলি", "tumi": "বেরিয়েছিলে", "apni": "বেরিয়েছিলেন", "se": "বেরিয়েছিল", "tini": "বেরিয়েছিলেন" }
+      readings: { "ami": "beriyechilām", "tui": "beriyechili", "tumi": "beriyechile", "apni": "beriyechilen", "se": "beriyechilo", "tini": "beriyechilen" }
+    - word: "bn-2354"
+      forms: { "ami": "ঢুকেছিলাম", "tui": "ঢুকেছিলি", "tumi": "ঢুকেছিলে", "apni": "ঢুকেছিলেন", "se": "ঢুকেছিল", "tini": "ঢুকেছিলেন" }
+      readings: { "ami": "ḍhukechilām", "tui": "ḍhukechili", "tumi": "ḍhukechile", "apni": "ḍhukechilen", "se": "ḍhukechilo", "tini": "ḍhukechilen" }
+    - word: "bn-2355"
+      forms: { "ami": "দেখিয়েছিলাম", "tui": "দেখিয়েছিলি", "tumi": "দেখিয়েছিলে", "apni": "দেখিয়েছিলেন", "se": "দেখিয়েছিল", "tini": "দেখিয়েছিলেন" }
+      readings: { "ami": "dekhiyechilām", "tui": "dekhiyechili", "tumi": "dekhiyechile", "apni": "dekhiyechilen", "se": "dekhiyechilo", "tini": "dekhiyechilen" }
+    - word: "bn-2356"
+      forms: { "ami": "বুঝিয়েছিলাম", "tui": "বুঝিয়েছিলি", "tumi": "বুঝিয়েছিলে", "apni": "বুঝিয়েছিলেন", "se": "বুঝিয়েছিল", "tini": "বুঝিয়েছিলেন" }
+      readings: { "ami": "bujhiyechilām", "tui": "bujhiyechili", "tumi": "bujhiyechile", "apni": "bujhiyechilen", "se": "bujhiyechilo", "tini": "bujhiyechilen" }
+    - word: "bn-2357"
+      forms: { "ami": "চিনেছিলাম", "tui": "চিনেছিলি", "tumi": "চিনেছিলে", "apni": "চিনেছিলেন", "se": "চিনেছিল", "tini": "চিনেছিলেন" }
+      readings: { "ami": "cinechilām", "tui": "cinechili", "tumi": "cinechile", "apni": "cinechilen", "se": "cinechilo", "tini": "cinechilen" }
+    - word: "bn-2358"
+      forms: { "ami": "ছুঁয়েছিলাম", "tui": "ছুঁয়েছিলি", "tumi": "ছুঁয়েছিলে", "apni": "ছুঁয়েছিলেন", "se": "ছুঁয়েছিল", "tini": "ছুঁয়েছিলেন" }
+      readings: { "ami": "chum̐yechilām", "tui": "chum̐yechili", "tumi": "chum̐yechile", "apni": "chum̐yechilen", "se": "chum̐yechilo", "tini": "chum̐yechilen" }
+    - word: "bn-2359"
+      forms: { "ami": "ঠেলেছিলাম", "tui": "ঠেলেছিলি", "tumi": "ঠেলেছিলে", "apni": "ঠেলেছিলেন", "se": "ঠেলেছিল", "tini": "ঠেলেছিলেন" }
+      readings: { "ami": "ṭhelechilām", "tui": "ṭhelechili", "tumi": "ṭhelechile", "apni": "ṭhelechilen", "se": "ṭhelechilo", "tini": "ṭhelechilen" }
+    - word: "bn-2360"
+      forms: { "ami": "টেনেছিলাম", "tui": "টেনেছিলি", "tumi": "টেনেছিলে", "apni": "টেনেছিলেন", "se": "টেনেছিল", "tini": "টেনেছিলেন" }
+      readings: { "ami": "ṭenechilām", "tui": "ṭenechili", "tumi": "ṭenechile", "apni": "ṭenechilen", "se": "ṭenechilo", "tini": "ṭenechilen" }
+    - word: "bn-2361"
+      forms: { "ami": "চালিয়েছিলাম", "tui": "চালিয়েছিলি", "tumi": "চালিয়েছিলে", "apni": "চালিয়েছিলেন", "se": "চালিয়েছিল", "tini": "চালিয়েছিলেন" }
+      readings: { "ami": "cāliyechilām", "tui": "cāliyechili", "tumi": "cāliyechile", "apni": "cāliyechilen", "se": "cāliyechilo", "tini": "cāliyechilen" }
+    - word: "bn-2363"
+      forms: { "ami": "লেগেছিলাম", "tui": "লেগেছিলি", "tumi": "লেগেছিলে", "apni": "লেগেছিলেন", "se": "লেগেছিল", "tini": "লেগেছিলেন" }
+      readings: { "ami": "legechilām", "tui": "legechili", "tumi": "legechile", "apni": "legechilen", "se": "legechilo", "tini": "legechilen" }
+    - word: "bn-2364"
+      forms: { "ami": "কেঁপেছিলাম", "tui": "কেঁপেছিলি", "tumi": "কেঁপেছিলে", "apni": "কেঁপেছিলেন", "se": "কেঁপেছিল", "tini": "কেঁপেছিলেন" }
+      readings: { "ami": "kem̐pechilām", "tui": "kem̐pechili", "tumi": "kem̐pechile", "apni": "kem̐pechilen", "se": "kem̐pechilo", "tini": "kem̐pechilen" }
+    - word: "bn-2365"
+      forms: { "ami": "নেমেছিলাম", "tui": "নেমেছিলি", "tumi": "নেমেছিলে", "apni": "নেমেছিলেন", "se": "নেমেছিল", "tini": "নেমেছিলেন" }
+      readings: { "ami": "nemechilām", "tui": "nemechili", "tumi": "nemechile", "apni": "nemechilen", "se": "nemechilo", "tini": "nemechilen" }
+    - word: "bn-2366"
+      forms: { "ami": "ঘুরিয়েছিলাম", "tui": "ঘুরিয়েছিলি", "tumi": "ঘুরিয়েছিলে", "apni": "ঘুরিয়েছিলেন", "se": "ঘুরিয়েছিল", "tini": "ঘুরিয়েছিলেন" }
+      readings: { "ami": "ghuriyechilām", "tui": "ghuriyechili", "tumi": "ghuriyechile", "apni": "ghuriyechilen", "se": "ghuriyechilo", "tini": "ghuriyechilen" }
+    - word: "bn-2367"
+      forms: { "ami": "চালু করেছিলাম", "tui": "চালু করেছিলি", "tumi": "চালু করেছিলে", "apni": "চালু করেছিলেন", "se": "চালু করেছিল", "tini": "চালু করেছিলেন" }
+      readings: { "ami": "cālu kôrechilām", "tui": "cālu kôrechili", "tumi": "cālu kôrechile", "apni": "cālu kôrechilen", "se": "cālu kôrechilo", "tini": "cālu kôrechilen" }
+    - word: "bn-2372"
+      forms: { "ami": "কামিয়েছিলাম", "tui": "কামিয়েছিলি", "tumi": "কামিয়েছিলে", "apni": "কামিয়েছিলেন", "se": "কামিয়েছিল", "tini": "কামিয়েছিলেন" }
+      readings: { "ami": "kāmiyechilām", "tui": "kāmiyechili", "tumi": "kāmiyechile", "apni": "kāmiyechilen", "se": "kāmiyechilo", "tini": "kāmiyechilen" }
+    - word: "bn-2373"
+      forms: { "ami": "ছেঁটেছিলাম", "tui": "ছেঁটেছিলি", "tumi": "ছেঁটেছিলে", "apni": "ছেঁটেছিলেন", "se": "ছেঁটেছিল", "tini": "ছেঁটেছিলেন" }
+      readings: { "ami": "chem̐ṭechilām", "tui": "chem̐ṭechili", "tumi": "chem̐ṭechile", "apni": "chem̐ṭechilen", "se": "chem̐ṭechilo", "tini": "chem̐ṭechilen" }
+    - word: "bn-2374"
+      forms: { "ami": "তৈরি করেছিলাম", "tui": "তৈরি করেছিলি", "tumi": "তৈরি করেছিলে", "apni": "তৈরি করেছিলেন", "se": "তৈরি করেছিল", "tini": "তৈরি করেছিলেন" }
+      readings: { "ami": "toiri kôrechilām", "tui": "toiri kôrechili", "tumi": "toiri kôrechile", "apni": "toiri kôrechilen", "se": "toiri kôrechilo", "tini": "toiri kôrechilen" }
+    - word: "bn-2375"
+      forms: { "ami": "ব্যবহার করেছিলাম", "tui": "ব্যবহার করেছিলি", "tumi": "ব্যবহার করেছিলে", "apni": "ব্যবহার করেছিলেন", "se": "ব্যবহার করেছিল", "tini": "ব্যবহার করেছিলেন" }
+      readings: { "ami": "bêbôhār kôrechilām", "tui": "bêbôhār kôrechili", "tumi": "bêbôhār kôrechile", "apni": "bêbôhār kôrechilen", "se": "bêbôhār kôrechilo", "tini": "bêbôhār kôrechilen" }
+    - word: "bn-2376"
+      forms: { "ami": "সাঁতার কেটেছিলাম", "tui": "সাঁতার কেটেছিলি", "tumi": "সাঁতার কেটেছিলে", "apni": "সাঁতার কেটেছিলেন", "se": "সাঁতার কেটেছিল", "tini": "সাঁতার কেটেছিলেন" }
+      readings: { "ami": "śām̐tār keṭechilām", "tui": "śām̐tār keṭechili", "tumi": "śām̐tār keṭechile", "apni": "śām̐tār keṭechilen", "se": "śām̐tār keṭechilo", "tini": "śām̐tār keṭechilen" }
+    - word: "bn-2418"
+      forms: { "ami": "ফোন ধরেছিলাম", "tui": "ফোন ধরেছিলি", "tumi": "ফোন ধরেছিলে", "apni": "ফোন ধরেছিলেন", "se": "ফোন ধরেছিল", "tini": "ফোন ধরেছিলেন" }
+      readings: { "ami": "phon dhôrechilām", "tui": "phon dhôrechili", "tumi": "phon dhôrechile", "apni": "phon dhôrechilen", "se": "phon dhôrechilo", "tini": "phon dhôrechilen" }
+    - word: "bn-2419"
+      forms: { "ami": "ফোন রেখেছিলাম", "tui": "ফোন রেখেছিলি", "tumi": "ফোন রেখেছিলে", "apni": "ফোন রেখেছিলেন", "se": "ফোন রেখেছিল", "tini": "ফোন রেখেছিলেন" }
+      readings: { "ami": "phon rekhechilām", "tui": "phon rekhechili", "tumi": "phon rekhechile", "apni": "phon rekhechilen", "se": "phon rekhechilo", "tini": "phon rekhechilen" }
+    - word: "bn-2420"
+      forms: { "ami": "চার্জ দিয়েছিলাম", "tui": "চার্জ দিয়েছিলি", "tumi": "চার্জ দিয়েছিলে", "apni": "চার্জ দিয়েছিলেন", "se": "চার্জ দিয়েছিল", "tini": "চার্জ দিয়েছিলেন" }
+      readings: { "ami": "cārj diyechilām", "tui": "cārj diyechili", "tumi": "cārj diyechile", "apni": "cārj diyechilen", "se": "cārj diyechilo", "tini": "cārj diyechilen" }
+    - word: "bn-2421"
+      forms: { "ami": "ডাউনলোড করেছিলাম", "tui": "ডাউনলোড করেছিলি", "tumi": "ডাউনলোড করেছিলে", "apni": "ডাউনলোড করেছিলেন", "se": "ডাউনলোড করেছিল", "tini": "ডাউনলোড করেছিলেন" }
+      readings: { "ami": "ḍāunoloḍ kôrechilām", "tui": "ḍāunoloḍ kôrechili", "tumi": "ḍāunoloḍ kôrechile", "apni": "ḍāunoloḍ kôrechilen", "se": "ḍāunoloḍ kôrechilo", "tini": "ḍāunoloḍ kôrechilen" }
+    - word: "bn-2422"
+      forms: { "ami": "আপডেট করেছিলাম", "tui": "আপডেট করেছিলি", "tumi": "আপডেট করেছিলে", "apni": "আপডেট করেছিলেন", "se": "আপডেট করেছিল", "tini": "আপডেট করেছিলেন" }
+      readings: { "ami": "āpoḍeṭ kôrechilām", "tui": "āpoḍeṭ kôrechili", "tumi": "āpoḍeṭ kôrechile", "apni": "āpoḍeṭ kôrechilen", "se": "āpoḍeṭ kôrechilo", "tini": "āpoḍeṭ kôrechilen" }
+    - word: "bn-2423"
+      forms: { "ami": "বেজেছিলাম", "tui": "বেজেছিলি", "tumi": "বেজেছিলে", "apni": "বেজেছিলেন", "se": "বেজেছিল", "tini": "বেজেছিলেন" }
+      readings: { "ami": "bejechilām", "tui": "bejechili", "tumi": "bejechile", "apni": "bejechilen", "se": "bejechilo", "tini": "bejechilen" }
+    - word: "bn-2424"
+      forms: { "ami": "চালু করেছিলাম", "tui": "চালু করেছিলি", "tumi": "চালু করেছিলে", "apni": "চালু করেছিলেন", "se": "চালু করেছিল", "tini": "চালু করেছিলেন" }
+      readings: { "ami": "cālu kôrechilām", "tui": "cālu kôrechili", "tumi": "cālu kôrechile", "apni": "cālu kôrechilen", "se": "cālu kôrechilo", "tini": "cālu kôrechilen" }
+    - word: "bn-2425"
+      forms: { "ami": "বন্ধ করেছিলাম", "tui": "বন্ধ করেছিলি", "tumi": "বন্ধ করেছিলে", "apni": "বন্ধ করেছিলেন", "se": "বন্ধ করেছিল", "tini": "বন্ধ করেছিলেন" }
+      readings: { "ami": "bôndh kôrechilām", "tui": "bôndh kôrechili", "tumi": "bôndh kôrechile", "apni": "bôndh kôrechilen", "se": "bôndh kôrechilo", "tini": "bôndh kôrechilen" }
+    - word: "bn-2426"
+      forms: { "ami": "জবাব দিয়েছিলাম", "tui": "জবাব দিয়েছিলি", "tumi": "জবাব দিয়েছিলে", "apni": "জবাব দিয়েছিলেন", "se": "জবাব দিয়েছিল", "tini": "জবাব দিয়েছিলেন" }
+      readings: { "ami": "jôbāb diyechilām", "tui": "jôbāb diyechili", "tumi": "jôbāb diyechile", "apni": "jôbāb diyechilen", "se": "jôbāb diyechilo", "tini": "jôbāb diyechilen" }
+    - word: "bn-2427"
+      forms: { "ami": "অপেক্ষা করেছিলাম", "tui": "অপেক্ষা করেছিলি", "tumi": "অপেক্ষা করেছিলে", "apni": "অপেক্ষা করেছিলেন", "se": "অপেক্ষা করেছিল", "tini": "অপেক্ষা করেছিলেন" }
+      readings: { "ami": "ôpekkhā kôrechilām", "tui": "ôpekkhā kôrechili", "tumi": "ôpekkhā kôrechile", "apni": "ôpekkhā kôrechilen", "se": "ôpekkhā kôrechilo", "tini": "ôpekkhā kôrechilen" }
+    - word: "bn-2428"
+      forms: { "ami": "মেসেজ পাঠিয়েছিলাম", "tui": "মেসেজ পাঠিয়েছিলি", "tumi": "মেসেজ পাঠিয়েছিলে", "apni": "মেসেজ পাঠিয়েছিলেন", "se": "মেসেজ পাঠিয়েছিল", "tini": "মেসেজ পাঠিয়েছিলেন" }
+      readings: { "ami": "mesej pāṭhiyechilām", "tui": "mesej pāṭhiyechili", "tumi": "mesej pāṭhiyechile", "apni": "mesej pāṭhiyechilen", "se": "mesej pāṭhiyechilo", "tini": "mesej pāṭhiyechilen" }
+    - word: "bn-2429"
+      forms: { "ami": "কল করেছিলাম", "tui": "কল করেছিলি", "tumi": "কল করেছিলে", "apni": "কল করেছিলেন", "se": "কল করেছিল", "tini": "কল করেছিলেন" }
+      readings: { "ami": "kôl kôrechilām", "tui": "kôl kôrechili", "tumi": "kôl kôrechile", "apni": "kôl kôrechilen", "se": "kôl kôrechilo", "tini": "kôl kôrechilen" }
+    - word: "bn-2430"
+      forms: { "ami": "ছবি পাঠিয়েছিলাম", "tui": "ছবি পাঠিয়েছিলি", "tumi": "ছবি পাঠিয়েছিলে", "apni": "ছবি পাঠিয়েছিলেন", "se": "ছবি পাঠিয়েছিল", "tini": "ছবি পাঠিয়েছিলেন" }
+      readings: { "ami": "chobi pāṭhiyechilām", "tui": "chobi pāṭhiyechili", "tumi": "chobi pāṭhiyechile", "apni": "chobi pāṭhiyechilen", "se": "chobi pāṭhiyechilo", "tini": "chobi pāṭhiyechilen" }
+    - word: "bn-2458"
+      forms: { "ami": "থামিয়েছিলাম", "tui": "থামিয়েছিলি", "tumi": "থামিয়েছিলে", "apni": "থামিয়েছিলেন", "se": "থামিয়েছিল", "tini": "থামিয়েছিলেন" }
+      readings: { "ami": "thāmiyechilām", "tui": "thāmiyechili", "tumi": "thāmiyechile", "apni": "thāmiyechilen", "se": "thāmiyechilo", "tini": "thāmiyechilen" }
+    - word: "bn-2459"
+      forms: { "ami": "ফিরে এসেছিলাম", "tui": "ফিরে এসেছিলি", "tumi": "ফিরে এসেছিলে", "apni": "ফিরে এসেছিলেন", "se": "ফিরে এসেছিল", "tini": "ফিরে এসেছিলেন" }
+      readings: { "ami": "phire esechilām", "tui": "phire esechili", "tumi": "phire esechile", "apni": "phire esechilen", "se": "phire esechilo", "tini": "phire esechilen" }
+    - word: "bn-2460"
+      forms: { "ami": "টিকিট কেটেছিলাম", "tui": "টিকিট কেটেছিলি", "tumi": "টিকিট কেটেছিলে", "apni": "টিকিট কেটেছিলেন", "se": "টিকিট কেটেছিল", "tini": "টিকিট কেটেছিলেন" }
+      readings: { "ami": "ṭikiṭ keṭechilām", "tui": "ṭikiṭ keṭechili", "tumi": "ṭikiṭ keṭechile", "apni": "ṭikiṭ keṭechilen", "se": "ṭikiṭ keṭechilo", "tini": "ṭikiṭ keṭechilen" }
+    - word: "bn-2466"
+      forms: { "ami": "দেরি করেছিলাম", "tui": "দেরি করেছিলি", "tumi": "দেরি করেছিলে", "apni": "দেরি করেছিলেন", "se": "দেরি করেছিল", "tini": "দেরি করেছিলেন" }
+      readings: { "ami": "deri kôrechilām", "tui": "deri kôrechili", "tumi": "deri kôrechile", "apni": "deri kôrechilen", "se": "deri kôrechilo", "tini": "deri kôrechilen" }
+    - word: "bn-2467"
+      forms: { "ami": "গাড়িতে উঠেছিলাম", "tui": "গাড়িতে উঠেছিলি", "tumi": "গাড়িতে উঠেছিলে", "apni": "গাড়িতে উঠেছিলেন", "se": "গাড়িতে উঠেছিল", "tini": "গাড়িতে উঠেছিলেন" }
+      readings: { "ami": "gāṛite uṭhechilām", "tui": "gāṛite uṭhechili", "tumi": "gāṛite uṭhechile", "apni": "gāṛite uṭhechilen", "se": "gāṛite uṭhechilo", "tini": "gāṛite uṭhechilen" }
+    - word: "bn-2468"
+      forms: { "ami": "গাড়ি থেকে নেমেছিলাম", "tui": "গাড়ি থেকে নেমেছিলি", "tumi": "গাড়ি থেকে নেমেছিলে", "apni": "গাড়ি থেকে নেমেছিলেন", "se": "গাড়ি থেকে নেমেছিল", "tini": "গাড়ি থেকে নেমেছিলেন" }
+      readings: { "ami": "gāṛi theke nemechilām", "tui": "gāṛi theke nemechili", "tumi": "gāṛi theke nemechile", "apni": "gāṛi theke nemechilen", "se": "gāṛi theke nemechilo", "tini": "gāṛi theke nemechilen" }
+    - word: "bn-2469"
+      forms: { "ami": "ট্রেন ধরেছিলাম", "tui": "ট্রেন ধরেছিলি", "tumi": "ট্রেন ধরেছিলে", "apni": "ট্রেন ধরেছিলেন", "se": "ট্রেন ধরেছিল", "tini": "ট্রেন ধরেছিলেন" }
+      readings: { "ami": "ṭren dhôrechilām", "tui": "ṭren dhôrechili", "tumi": "ṭren dhôrechile", "apni": "ṭren dhôrechilen", "se": "ṭren dhôrechilo", "tini": "ṭren dhôrechilen" }
+    - word: "bn-2470"
+      forms: { "ami": "গন্তব্যে পৌঁছেছিলাম", "tui": "গন্তব্যে পৌঁছেছিলি", "tumi": "গন্তব্যে পৌঁছেছিলে", "apni": "গন্তব্যে পৌঁছেছিলেন", "se": "গন্তব্যে পৌঁছেছিল", "tini": "গন্তব্যে পৌঁছেছিলেন" }
+      readings: { "ami": "gôntobbe poum̐chechilām", "tui": "gôntobbe poum̐chechili", "tumi": "gôntobbe poum̐chechile", "apni": "gôntobbe poum̐chechilen", "se": "gôntobbe poum̐chechilo", "tini": "gôntobbe poum̐chechilen" }
+    - word: "bn-2471"
+      forms: { "ami": ["হেঁটে গিয়েছিলাম", "হেঁটে গেছিলাম"], "tui": ["হেঁটে গিয়েছিলি", "হেঁটে গেছিলি"], "tumi": ["হেঁটে গিয়েছিলে", "হেঁটে গেছিলে"], "apni": ["হেঁটে গিয়েছিলেন", "হেঁটে গেছিলেন"], "se": ["হেঁটে গিয়েছিল", "হেঁটে গেছিল"], "tini": ["হেঁটে গিয়েছিলেন", "হেঁটে গেছিলেন"] }
+      readings: { "ami": ["hem̐ṭe giyechilām", "hem̐ṭe gechilām"], "tui": ["hem̐ṭe giyechili", "hem̐ṭe gechili"], "tumi": ["hem̐ṭe giyechile", "hem̐ṭe gechile"], "apni": ["hem̐ṭe giyechilen", "hem̐ṭe gechilen"], "se": ["hem̐ṭe giyechilo", "hem̐ṭe gechilo"], "tini": ["hem̐ṭe giyechilen", "hem̐ṭe gechilen"] }
+    - word: "bn-2472"
+      forms: { "ami": "রিকশা নিয়েছিলাম", "tui": "রিকশা নিয়েছিলি", "tumi": "রিকশা নিয়েছিলে", "apni": "রিকশা নিয়েছিলেন", "se": "রিকশা নিয়েছিল", "tini": "রিকশা নিয়েছিলেন" }
+      readings: { "ami": "rikośā niyechilām", "tui": "rikośā niyechili", "tumi": "rikośā niyechile", "apni": "rikośā niyechilen", "se": "rikośā niyechilo", "tini": "rikośā niyechilen" }
+    - word: "bn-2473"
+      forms: { "ami": "ট্যাক্সি নিয়েছিলাম", "tui": "ট্যাক্সি নিয়েছিলি", "tumi": "ট্যাক্সি নিয়েছিলে", "apni": "ট্যাক্সি নিয়েছিলেন", "se": "ট্যাক্সি নিয়েছিল", "tini": "ট্যাক্সি নিয়েছিলেন" }
+      readings: { "ami": "ṭêksi niyechilām", "tui": "ṭêksi niyechili", "tumi": "ṭêksi niyechile", "apni": "ṭêksi niyechilen", "se": "ṭêksi niyechilo", "tini": "ṭêksi niyechilen" }
+    - word: "bn-2474"
+      forms: { "ami": "গাড়ি চালিয়েছিলাম", "tui": "গাড়ি চালিয়েছিলি", "tumi": "গাড়ি চালিয়েছিলে", "apni": "গাড়ি চালিয়েছিলেন", "se": "গাড়ি চালিয়েছিল", "tini": "গাড়ি চালিয়েছিলেন" }
+      readings: { "ami": "gāṛi cāliyechilām", "tui": "gāṛi cāliyechili", "tumi": "gāṛi cāliyechile", "apni": "gāṛi cāliyechilen", "se": "gāṛi cāliyechilo", "tini": "gāṛi cāliyechilen" }
+    - word: "bn-2478"
+      forms: { "ami": "ভ্রমণ করেছিলাম", "tui": "ভ্রমণ করেছিলি", "tumi": "ভ্রমণ করেছিলে", "apni": "ভ্রমণ করেছিলেন", "se": "ভ্রমণ করেছিল", "tini": "ভ্রমণ করেছিলেন" }
+      readings: { "ami": "bhrômon kôrechilām", "tui": "bhrômon kôrechili", "tumi": "bhrômon kôrechile", "apni": "bhrômon kôrechilen", "se": "bhrômon kôrechilo", "tini": "bhrômon kôrechilen" }
+    - word: "bn-2514"
+      forms: { "ami": "চাষ করেছিলাম", "tui": "চাষ করেছিলি", "tumi": "চাষ করেছিলে", "apni": "চাষ করেছিলেন", "se": "চাষ করেছিল", "tini": "চাষ করেছিলেন" }
+      readings: { "ami": "cāś kôrechilām", "tui": "cāś kôrechili", "tumi": "cāś kôrechile", "apni": "cāś kôrechilen", "se": "cāś kôrechilo", "tini": "cāś kôrechilen" }
+    - word: "bn-2515"
+      forms: { "ami": "ফুল ফুটেছিলাম", "tui": "ফুল ফুটেছিলি", "tumi": "ফুল ফুটেছিলে", "apni": "ফুল ফুটেছিলেন", "se": "ফুল ফুটেছিল", "tini": "ফুল ফুটেছিলেন" }
+      readings: { "ami": "phul phuṭechilām", "tui": "phul phuṭechili", "tumi": "phul phuṭechile", "apni": "phul phuṭechilen", "se": "phul phuṭechilo", "tini": "phul phuṭechilen" }
+    - word: "bn-2524"
+      forms: { "ami": "ঝরেছিলাম", "tui": "ঝরেছিলি", "tumi": "ঝরেছিলে", "apni": "ঝরেছিলেন", "se": "ঝরেছিল", "tini": "ঝরেছিলেন" }
+      readings: { "ami": "jhôrechilām", "tui": "jhôrechili", "tumi": "jhôrechile", "apni": "jhôrechilen", "se": "jhôrechilo", "tini": "jhôrechilen" }
+    - word: "bn-2525"
+      forms: { "ami": "গজিয়েছিলাম", "tui": "গজিয়েছিলি", "tumi": "গজিয়েছিলে", "apni": "গজিয়েছিলেন", "se": "গজিয়েছিল", "tini": "গজিয়েছিলেন" }
+      readings: { "ami": "gojiyechilām", "tui": "gojiyechili", "tumi": "gojiyechile", "apni": "gojiyechilen", "se": "gojiyechilo", "tini": "gojiyechilen" }
+    - word: "bn-2526"
+      forms: { "ami": "বড় হয়েছিলাম", "tui": "বড় হয়েছিলি", "tumi": "বড় হয়েছিলে", "apni": "বড় হয়েছিলেন", "se": "বড় হয়েছিল", "tini": "বড় হয়েছিলেন" }
+      readings: { "ami": "bôṛ hôyechilām", "tui": "bôṛ hôyechili", "tumi": "bôṛ hôyechile", "apni": "bôṛ hôyechilen", "se": "bôṛ hôyechilo", "tini": "bôṛ hôyechilen" }
+    - word: "bn-2600"
+      forms: { "ami": "মেরামত করেছিলাম", "tui": "মেরামত করেছিলি", "tumi": "মেরামত করেছিলে", "apni": "মেরামত করেছিলেন", "se": "মেরামত করেছিল", "tini": "মেরামত করেছিলেন" }
+      readings: { "ami": "merāmot kôrechilām", "tui": "merāmot kôrechili", "tumi": "merāmot kôrechile", "apni": "merāmot kôrechilen", "se": "merāmot kôrechilo", "tini": "merāmot kôrechilen" }
+    - word: "bn-2601"
+      forms: { "ami": "রং করেছিলাম", "tui": "রং করেছিলি", "tumi": "রং করেছিলে", "apni": "রং করেছিলেন", "se": "রং করেছিল", "tini": "রং করেছিলেন" }
+      readings: { "ami": "rôṅ kôrechilām", "tui": "rôṅ kôrechili", "tumi": "rôṅ kôrechile", "apni": "rôṅ kôrechilen", "se": "rôṅ kôrechilo", "tini": "rôṅ kôrechilen" }
+    - word: "bn-2602"
+      forms: { "ami": "ভাড়া দিয়েছিলাম", "tui": "ভাড়া দিয়েছিলি", "tumi": "ভাড়া দিয়েছিলে", "apni": "ভাড়া দিয়েছিলেন", "se": "ভাড়া দিয়েছিল", "tini": "ভাড়া দিয়েছিলেন" }
+      readings: { "ami": "bhāṛā diyechilām", "tui": "bhāṛā diyechili", "tumi": "bhāṛā diyechile", "apni": "bhāṛā diyechilen", "se": "bhāṛā diyechilo", "tini": "bhāṛā diyechilen" }
+    - word: "bn-2603"
+      forms: { "ami": "ভাড়া নিয়েছিলাম", "tui": "ভাড়া নিয়েছিলি", "tumi": "ভাড়া নিয়েছিলে", "apni": "ভাড়া নিয়েছিলেন", "se": "ভাড়া নিয়েছিল", "tini": "ভাড়া নিয়েছিলেন" }
+      readings: { "ami": "bhāṛā niyechilām", "tui": "bhāṛā niyechili", "tumi": "bhāṛā niyechile", "apni": "bhāṛā niyechilen", "se": "bhāṛā niyechilo", "tini": "bhāṛā niyechilen" }
+    - word: "bn-2656"
+      forms: { "ami": "যোগ দিয়েছিলাম", "tui": "যোগ দিয়েছিলি", "tumi": "যোগ দিয়েছিলে", "apni": "যোগ দিয়েছিলেন", "se": "যোগ দিয়েছিল", "tini": "যোগ দিয়েছিলেন" }
+      readings: { "ami": "jôg diyechilām", "tui": "jôg diyechili", "tumi": "jôg diyechile", "apni": "jôg diyechilen", "se": "jôg diyechilo", "tini": "jôg diyechilen" }
+    - word: "bn-2657"
+      forms: { "ami": "ইস্তফা দিয়েছিলাম", "tui": "ইস্তফা দিয়েছিলি", "tumi": "ইস্তফা দিয়েছিলে", "apni": "ইস্তফা দিয়েছিলেন", "se": "ইস্তফা দিয়েছিল", "tini": "ইস্তফা দিয়েছিলেন" }
+      readings: { "ami": "istafā diyechilām", "tui": "istafā diyechili", "tumi": "istafā diyechile", "apni": "istafā diyechilen", "se": "istafā diyechilo", "tini": "istafā diyechilen" }
+    - word: "bn-2658"
+      forms: { "ami": "শেষ করেছিলাম", "tui": "শেষ করেছিলি", "tumi": "শেষ করেছিলে", "apni": "শেষ করেছিলেন", "se": "শেষ করেছিল", "tini": "শেষ করেছিলেন" }
+      readings: { "ami": "śeṣ kôrechilām", "tui": "śeṣ kôrechili", "tumi": "śeṣ kôrechile", "apni": "śeṣ kôrechilen", "se": "śeṣ kôrechilo", "tini": "śeṣ kôrechilen" }
+    - word: "bn-2659"
+      forms: { "ami": "টাইপ করেছিলাম", "tui": "টাইপ করেছিলি", "tumi": "টাইপ করেছিলে", "apni": "টাইপ করেছিলেন", "se": "টাইপ করেছিল", "tini": "টাইপ করেছিলেন" }
+      readings: { "ami": "ṭāip kôrechilām", "tui": "ṭāip kôrechili", "tumi": "ṭāip kôrechile", "apni": "ṭāip kôrechilen", "se": "ṭāip kôrechilo", "tini": "ṭāip kôrechilen" }
+    - word: "bn-2660"
+      forms: { "ami": "সই করেছিলাম", "tui": "সই করেছিলি", "tumi": "সই করেছিলে", "apni": "সই করেছিলেন", "se": "সই করেছিল", "tini": "সই করেছিলেন" }
+      readings: { "ami": "sôi kôrechilām", "tui": "sôi kôrechili", "tumi": "sôi kôrechile", "apni": "sôi kôrechilen", "se": "sôi kôrechilo", "tini": "sôi kôrechilen" }
+    - word: "bn-2661"
+      forms: { "ami": "জমা দিয়েছিলাম", "tui": "জমা দিয়েছিলি", "tumi": "জমা দিয়েছিলে", "apni": "জমা দিয়েছিলেন", "se": "জমা দিয়েছিল", "tini": "জমা দিয়েছিলেন" }
+      readings: { "ami": "jômā diyechilām", "tui": "jômā diyechili", "tumi": "jômā diyechile", "apni": "jômā diyechilen", "se": "jômā diyechilo", "tini": "jômā diyechilen" }
+    - word: "bn-2662"
+      forms: { "ami": "দেরি করেছিলাম", "tui": "দেরি করেছিলি", "tumi": "দেরি করেছিলে", "apni": "দেরি করেছিলেন", "se": "দেরি করেছিল", "tini": "দেরি করেছিলেন" }
+      readings: { "ami": "deri kôrechilām", "tui": "deri kôrechili", "tumi": "deri kôrechile", "apni": "deri kôrechilen", "se": "deri kôrechilo", "tini": "deri kôrechilen" }
+    - word: "bn-2723"
+      forms: { "ami": "অবস্থিত হয়েছিলাম", "tui": "অবস্থিত হয়েছিলি", "tumi": "অবস্থিত হয়েছিলে", "apni": "অবস্থিত হয়েছিলেন", "se": "অবস্থিত হয়েছিল", "tini": "অবস্থিত হয়েছিলেন" }
+      readings: { "ami": "ôbôsthit hôyechilām", "tui": "ôbôsthit hôyechili", "tumi": "ôbôsthit hôyechile", "apni": "ôbôsthit hôyechilen", "se": "ôbôsthit hôyechilo", "tini": "ôbôsthit hôyechilen" }
+    - word: "bn-2724"
+      forms: { "ami": "প্রবাহিত হয়েছিলাম", "tui": "প্রবাহিত হয়েছিলি", "tumi": "প্রবাহিত হয়েছিলে", "apni": "প্রবাহিত হয়েছিলেন", "se": "প্রবাহিত হয়েছিল", "tini": "প্রবাহিত হয়েছিলেন" }
+      readings: { "ami": "prôbāhit hôyechilām", "tui": "prôbāhit hôyechili", "tumi": "prôbāhit hôyechile", "apni": "prôbāhit hôyechilen", "se": "prôbāhit hôyechilo", "tini": "prôbāhit hôyechilen" }
+    - word: "bn-2725"
+      forms: { "ami": "পার হয়েছিলাম", "tui": "পার হয়েছিলি", "tumi": "পার হয়েছিলে", "apni": "পার হয়েছিলেন", "se": "পার হয়েছিল", "tini": "পার হয়েছিলেন" }
+      readings: { "ami": "pār hôyechilām", "tui": "pār hôyechili", "tumi": "pār hôyechile", "apni": "pār hôyechilen", "se": "pār hôyechilo", "tini": "pār hôyechilen" }
+    - word: "bn-2787"
+      forms: { "ami": "ব্যায়াম করেছিলাম", "tui": "ব্যায়াম করেছিলি", "tumi": "ব্যায়াম করেছিলে", "apni": "ব্যায়াম করেছিলেন", "se": "ব্যায়াম করেছিল", "tini": "ব্যায়াম করেছিলেন" }
+      readings: { "ami": "byāyām kôrechilām", "tui": "byāyām kôrechili", "tumi": "byāyām kôrechile", "apni": "byāyām kôrechilen", "se": "byāyām kôrechilo", "tini": "byāyām kôrechilen" }
+    - word: "bn-2788"
+      forms: { "ami": ["হাঁটতে গিয়েছিলাম", "হাঁটতে গেছিলাম"], "tui": ["হাঁটতে গিয়েছিলি", "হাঁটতে গেছিলি"], "tumi": ["হাঁটতে গিয়েছিলে", "হাঁটতে গেছিলে"], "apni": ["হাঁটতে গিয়েছিলেন", "হাঁটতে গেছিলেন"], "se": ["হাঁটতে গিয়েছিল", "হাঁটতে গেছিল"], "tini": ["হাঁটতে গিয়েছিলেন", "হাঁটতে গেছিলেন"] }
+      readings: { "ami": ["hāṭte giyechilām", "hāṭte gechilām"], "tui": ["hāṭte giyechili", "hāṭte gechili"], "tumi": ["hāṭte giyechile", "hāṭte gechile"], "apni": ["hāṭte giyechilen", "hāṭte gechilen"], "se": ["hāṭte giyechilo", "hāṭte gechilo"], "tini": ["hāṭte giyechilen", "hāṭte gechilen"] }
+    - word: "bn-2789"
+      forms: { "ami": "ওজন কমিয়েছিলাম", "tui": "ওজন কমিয়েছিলি", "tumi": "ওজন কমিয়েছিলে", "apni": "ওজন কমিয়েছিলেন", "se": "ওজন কমিয়েছিল", "tini": "ওজন কমিয়েছিলেন" }
+      readings: { "ami": "ojôn komiyechilām", "tui": "ojôn komiyechili", "tumi": "ojôn komiyechile", "apni": "ojôn komiyechilen", "se": "ojôn komiyechilo", "tini": "ojôn komiyechilen" }
+    - word: "bn-2790"
+      forms: { "ami": "ডাক্তার দেখিয়েছিলাম", "tui": "ডাক্তার দেখিয়েছিলি", "tumi": "ডাক্তার দেখিয়েছিলে", "apni": "ডাক্তার দেখিয়েছিলেন", "se": "ডাক্তার দেখিয়েছিল", "tini": "ডাক্তার দেখিয়েছিলেন" }
+      readings: { "ami": "ḍākṭār dekhiyechilām", "tui": "ḍākṭār dekhiyechili", "tumi": "ḍākṭār dekhiyechile", "apni": "ḍākṭār dekhiyechilen", "se": "ḍākṭār dekhiyechilo", "tini": "ḍākṭār dekhiyechilen" }
+    - word: "bn-2791"
+      forms: { "ami": "অ্যাপয়েন্টমেন্ট নিয়েছিলাম", "tui": "অ্যাপয়েন্টমেন্ট নিয়েছিলি", "tumi": "অ্যাপয়েন্টমেন্ট নিয়েছিলে", "apni": "অ্যাপয়েন্টমেন্ট নিয়েছিলেন", "se": "অ্যাপয়েন্টমেন্ট নিয়েছিল", "tini": "অ্যাপয়েন্টমেন্ট নিয়েছিলেন" }
+      readings: { "ami": "êpoyenṭomenṭ niyechilām", "tui": "êpoyenṭomenṭ niyechili", "tumi": "êpoyenṭomenṭ niyechile", "apni": "êpoyenṭomenṭ niyechilen", "se": "êpoyenṭomenṭ niyechilo", "tini": "êpoyenṭomenṭ niyechilen" }
+    - word: "bn-2792"
+      forms: { "ami": "টিকা নিয়েছিলাম", "tui": "টিকা নিয়েছিলি", "tumi": "টিকা নিয়েছিলে", "apni": "টিকা নিয়েছিলেন", "se": "টিকা নিয়েছিল", "tini": "টিকা নিয়েছিলেন" }
+      readings: { "ami": "ṭikā niyechilām", "tui": "ṭikā niyechili", "tumi": "ṭikā niyechile", "apni": "ṭikā niyechilen", "se": "ṭikā niyechilo", "tini": "ṭikā niyechilen" }
+    - word: "bn-2793"
+      forms: { "ami": "পরীক্ষা করিয়েছিলাম", "tui": "পরীক্ষা করিয়েছিলি", "tumi": "পরীক্ষা করিয়েছিলে", "apni": "পরীক্ষা করিয়েছিলেন", "se": "পরীক্ষা করিয়েছিল", "tini": "পরীক্ষা করিয়েছিলেন" }
+      readings: { "ami": "parīkṣā koriyechilām", "tui": "parīkṣā koriyechili", "tumi": "parīkṣā koriyechile", "apni": "parīkṣā koriyechilen", "se": "parīkṣā koriyechilo", "tini": "parīkṣā koriyechilen" }
+    - word: "bn-2794"
+      forms: { "ami": "সুস্থ হয়েছিলাম", "tui": "সুস্থ হয়েছিলি", "tumi": "সুস্থ হয়েছিলে", "apni": "সুস্থ হয়েছিলেন", "se": "সুস্থ হয়েছিল", "tini": "সুস্থ হয়েছিলেন" }
+      readings: { "ami": "susthô hôyechilām", "tui": "susthô hôyechili", "tumi": "susthô hôyechile", "apni": "susthô hôyechilen", "se": "susthô hôyechilo", "tini": "susthô hôyechilen" }
+    - word: "bn-2856"
+      forms: { "ami": "অনুভব করেছিলাম", "tui": "অনুভব করেছিলি", "tumi": "অনুভব করেছিলে", "apni": "অনুভব করেছিলেন", "se": "অনুভব করেছিল", "tini": "অনুভব করেছিলেন" }
+      readings: { "ami": "anubhab kôrechilām", "tui": "anubhab kôrechili", "tumi": "anubhab kôrechile", "apni": "anubhab kôrechilen", "se": "anubhab kôrechilo", "tini": "anubhab kôrechilen" }
+    - word: "bn-2857"
+      forms: { "ami": "মিস করেছিলাম", "tui": "মিস করেছিলি", "tumi": "মিস করেছিলে", "apni": "মিস করেছিলেন", "se": "মিস করেছিল", "tini": "মিস করেছিলেন" }
+      readings: { "ami": "mis kôrechilām", "tui": "mis kôrechili", "tumi": "mis kôrechile", "apni": "mis kôrechilen", "se": "mis kôrechilo", "tini": "mis kôrechilen" }
+    - word: "bn-2858"
+      forms: { "ami": ["রেগে গিয়েছিলাম", "রেগে গেছিলাম"], "tui": ["রেগে গিয়েছিলি", "রেগে গেছিলি"], "tumi": ["রেগে গিয়েছিলে", "রেগে গেছিলে"], "apni": ["রেগে গিয়েছিলেন", "রেগে গেছিলেন"], "se": ["রেগে গিয়েছিল", "রেগে গেছিল"], "tini": ["রেগে গিয়েছিলেন", "রেগে গেছিলেন"] }
+      readings: { "ami": ["rege giyechilām", "rege gechilām"], "tui": ["rege giyechili", "rege gechili"], "tumi": ["rege giyechile", "rege gechile"], "apni": ["rege giyechilen", "rege gechilen"], "se": ["rege giyechilo", "rege gechilo"], "tini": ["rege giyechilen", "rege gechilen"] }
+    - word: "bn-2859"
+      forms: { "ami": "অবাক হয়েছিলাম", "tui": "অবাক হয়েছিলি", "tumi": "অবাক হয়েছিলে", "apni": "অবাক হয়েছিলেন", "se": "অবাক হয়েছিল", "tini": "অবাক হয়েছিলেন" }
+      readings: { "ami": "abāk hôyechilām", "tui": "abāk hôyechili", "tumi": "abāk hôyechile", "apni": "abāk hôyechilen", "se": "abāk hôyechilo", "tini": "abāk hôyechilen" }
+    - word: "bn-2860"
+      forms: { "ami": "ভয় পেয়েছিলাম", "tui": "ভয় পেয়েছিলি", "tumi": "ভয় পেয়েছিলে", "apni": "ভয় পেয়েছিলেন", "se": "ভয় পেয়েছিল", "tini": "ভয় পেয়েছিলেন" }
+      readings: { "ami": "bhôy peyechilām", "tui": "bhôy peyechili", "tumi": "bhôy peyechile", "apni": "bhôy peyechilen", "se": "bhôy peyechilo", "tini": "bhôy peyechilen" }
+    - word: "bn-2861"
+      forms: { "ami": "ক্ষমা করেছিলাম", "tui": "ক্ষমা করেছিলি", "tumi": "ক্ষমা করেছিলে", "apni": "ক্ষমা করেছিলেন", "se": "ক্ষমা করেছিল", "tini": "ক্ষমা করেছিলেন" }
+      readings: { "ami": "kṣamā kôrechilām", "tui": "kṣamā kôrechili", "tumi": "kṣamā kôrechile", "apni": "kṣamā kôrechilen", "se": "kṣamā kôrechilo", "tini": "kṣamā kôrechilen" }
+    - word: "bn-2862"
+      forms: { "ami": "আশা করেছিলাম", "tui": "আশা করেছিলি", "tumi": "আশা করেছিলে", "apni": "আশা করেছিলেন", "se": "আশা করেছিল", "tini": "আশা করেছিলেন" }
+      readings: { "ami": "āśā kôrechilām", "tui": "āśā kôrechili", "tumi": "āśā kôrechile", "apni": "āśā kôrechilen", "se": "āśā kôrechilo", "tini": "āśā kôrechilen" }
+    - word: "bn-2863"
+      forms: { "ami": "চিন্তা করেছিলাম", "tui": "চিন্তা করেছিলি", "tumi": "চিন্তা করেছিলে", "apni": "চিন্তা করেছিলেন", "se": "চিন্তা করেছিল", "tini": "চিন্তা করেছিলেন" }
+      readings: { "ami": "cintā kôrechilām", "tui": "cintā kôrechili", "tumi": "cintā kôrechile", "apni": "cintā kôrechilen", "se": "cintā kôrechilo", "tini": "cintā kôrechilen" }
+    - word: "bn-2926"
+      forms: { "ami": "খবর দিয়েছিলাম", "tui": "খবর দিয়েছিলি", "tumi": "খবর দিয়েছিলে", "apni": "খবর দিয়েছিলেন", "se": "খবর দিয়েছিল", "tini": "খবর দিয়েছিলেন" }
+      readings: { "ami": "khabar diyechilām", "tui": "khabar diyechili", "tumi": "khabar diyechile", "apni": "khabar diyechilen", "se": "khabar diyechilo", "tini": "khabar diyechilen" }
+    - word: "bn-2927"
+      forms: { "ami": "ঘোষণা করেছিলাম", "tui": "ঘোষণা করেছিলি", "tumi": "ঘোষণা করেছিলে", "apni": "ঘোষণা করেছিলেন", "se": "ঘোষণা করেছিল", "tini": "ঘোষণা করেছিলেন" }
+      readings: { "ami": "ghoṣaṇā kôrechilām", "tui": "ghoṣaṇā kôrechili", "tumi": "ghoṣaṇā kôrechile", "apni": "ghoṣaṇā kôrechilen", "se": "ghoṣaṇā kôrechilo", "tini": "ghoṣaṇā kôrechilen" }
+    - word: "bn-2928"
+      forms: { "ami": "প্রকাশ করেছিলাম", "tui": "প্রকাশ করেছিলি", "tumi": "প্রকাশ করেছিলে", "apni": "প্রকাশ করেছিলেন", "se": "প্রকাশ করেছিল", "tini": "প্রকাশ করেছিলেন" }
+      readings: { "ami": "prakāś kôrechilām", "tui": "prakāś kôrechili", "tumi": "prakāś kôrechile", "apni": "prakāś kôrechilen", "se": "prakāś kôrechilo", "tini": "prakāś kôrechilen" }
+    - word: "bn-2929"
+      forms: { "ami": "সম্প্রচার করেছিলাম", "tui": "সম্প্রচার করেছিলি", "tumi": "সম্প্রচার করেছিলে", "apni": "সম্প্রচার করেছিলেন", "se": "সম্প্রচার করেছিল", "tini": "সম্প্রচার করেছিলেন" }
+      readings: { "ami": "sampracār kôrechilām", "tui": "sampracār kôrechili", "tumi": "sampracār kôrechile", "apni": "sampracār kôrechilen", "se": "sampracār kôrechilo", "tini": "sampracār kôrechilen" }
+    - word: "bn-2930"
+      forms: { "ami": "প্রতিবাদ করেছিলাম", "tui": "প্রতিবাদ করেছিলি", "tumi": "প্রতিবাদ করেছিলে", "apni": "প্রতিবাদ করেছিলেন", "se": "প্রতিবাদ করেছিল", "tini": "প্রতিবাদ করেছিলেন" }
+      readings: { "ami": "protibād kôrechilām", "tui": "protibād kôrechili", "tumi": "protibād kôrechile", "apni": "protibād kôrechilen", "se": "protibād kôrechilo", "tini": "protibād kôrechilen" }
+    - word: "bn-2931"
+      forms: { "ami": "বিশ্বাস করেছিলাম", "tui": "বিশ্বাস করেছিলি", "tumi": "বিশ্বাস করেছিলে", "apni": "বিশ্বাস করেছিলেন", "se": "বিশ্বাস করেছিল", "tini": "বিশ্বাস করেছিলেন" }
+      readings: { "ami": "biśvās kôrechilām", "tui": "biśvās kôrechili", "tumi": "biśvās kôrechile", "apni": "biśvās kôrechilen", "se": "biśvās kôrechilo", "tini": "biśvās kôrechilen" }
+    - word: "bn-2932"
+      forms: { "ami": "শেয়ার করেছিলাম", "tui": "শেয়ার করেছিলি", "tumi": "শেয়ার করেছিলে", "apni": "শেয়ার করেছিলেন", "se": "শেয়ার করেছিল", "tini": "শেয়ার করেছিলেন" }
+      readings: { "ami": "śeyār kôrechilām", "tui": "śeyār kôrechili", "tumi": "śeyār kôrechile", "apni": "śeyār kôrechilen", "se": "śeyār kôrechilo", "tini": "śeyār kôrechilen" }
+    - word: "bn-2933"
+      forms: { "ami": "খোঁজ নিয়েছিলাম", "tui": "খোঁজ নিয়েছিলি", "tumi": "খোঁজ নিয়েছিলে", "apni": "খোঁজ নিয়েছিলেন", "se": "খোঁজ নিয়েছিল", "tini": "খোঁজ নিয়েছিলেন" }
+      readings: { "ami": "khoṅj niyechilām", "tui": "khoṅj niyechili", "tumi": "khoṅj niyechile", "apni": "khoṅj niyechilen", "se": "khoṅj niyechilo", "tini": "khoṅj niyechilen" }
+    - word: "bn-2998"
+      forms: { "ami": "মত দিয়েছিলাম", "tui": "মত দিয়েছিলি", "tumi": "মত দিয়েছিলে", "apni": "মত দিয়েছিলেন", "se": "মত দিয়েছিল", "tini": "মত দিয়েছিলেন" }
+      readings: { "ami": "mat diyechilām", "tui": "mat diyechili", "tumi": "mat diyechile", "apni": "mat diyechilen", "se": "mat diyechilo", "tini": "mat diyechilen" }
+    - word: "bn-2999"
+      forms: { "ami": "একমত হয়েছিলাম", "tui": "একমত হয়েছিলি", "tumi": "একমত হয়েছিলে", "apni": "একমত হয়েছিলেন", "se": "একমত হয়েছিল", "tini": "একমত হয়েছিলেন" }
+      readings: { "ami": "ekmat hôyechilām", "tui": "ekmat hôyechili", "tumi": "ekmat hôyechile", "apni": "ekmat hôyechilen", "se": "ekmat hôyechilo", "tini": "ekmat hôyechilen" }
+    - word: "bn-3000"
+      forms: { "ami": "মনে করেছিলাম", "tui": "মনে করেছিলি", "tumi": "মনে করেছিলে", "apni": "মনে করেছিলেন", "se": "মনে করেছিল", "tini": "মনে করেছিলেন" }
+      readings: { "ami": "mône kôrechilām", "tui": "mône kôrechili", "tumi": "mône kôrechile", "apni": "mône kôrechilen", "se": "mône kôrechilo", "tini": "mône kôrechilen" }
+    - word: "bn-3001"
+      forms: { "ami": "তর্ক করেছিলাম", "tui": "তর্ক করেছিলি", "tumi": "তর্ক করেছিলে", "apni": "তর্ক করেছিলেন", "se": "তর্ক করেছিল", "tini": "তর্ক করেছিলেন" }
+      readings: { "ami": "tarka kôrechilām", "tui": "tarka kôrechili", "tumi": "tarka kôrechile", "apni": "tarka kôrechilen", "se": "tarka kôrechilo", "tini": "tarka kôrechilen" }
+    - word: "bn-3002"
+      forms: { "ami": "প্রস্তাব করেছিলাম", "tui": "প্রস্তাব করেছিলি", "tumi": "প্রস্তাব করেছিলে", "apni": "প্রস্তাব করেছিলেন", "se": "প্রস্তাব করেছিল", "tini": "প্রস্তাব করেছিলেন" }
+      readings: { "ami": "prôstāb kôrechilām", "tui": "prôstāb kôrechili", "tumi": "prôstāb kôrechile", "apni": "prôstāb kôrechilen", "se": "prôstāb kôrechilo", "tini": "prôstāb kôrechilen" }
+    - word: "bn-3003"
+      forms: { "ami": "পরামর্শ দিয়েছিলাম", "tui": "পরামর্শ দিয়েছিলি", "tumi": "পরামর্শ দিয়েছিলে", "apni": "পরামর্শ দিয়েছিলেন", "se": "পরামর্শ দিয়েছিল", "tini": "পরামর্শ দিয়েছিলেন" }
+      readings: { "ami": "parāmarś diyechilām", "tui": "parāmarś diyechili", "tumi": "parāmarś diyechile", "apni": "parāmarś diyechilen", "se": "parāmarś diyechilo", "tini": "parāmarś diyechilen" }
+    - word: "bn-3004"
+      forms: { "ami": "সমর্থন করেছিলাম", "tui": "সমর্থন করেছিলি", "tumi": "সমর্থন করেছিলে", "apni": "সমর্থন করেছিলেন", "se": "সমর্থন করেছিল", "tini": "সমর্থন করেছিলেন" }
+      readings: { "ami": "samarthan kôrechilām", "tui": "samarthan kôrechili", "tumi": "samarthan kôrechile", "apni": "samarthan kôrechilen", "se": "samarthan kôrechilo", "tini": "samarthan kôrechilen" }
+    - word: "bn-3005"
+      forms: { "ami": "সমালোচনা করেছিলাম", "tui": "সমালোচনা করেছিলি", "tumi": "সমালোচনা করেছিলে", "apni": "সমালোচনা করেছিলেন", "se": "সমালোচনা করেছিল", "tini": "সমালোচনা করেছিলেন" }
+      readings: { "ami": "samālocanā kôrechilām", "tui": "samālocanā kôrechili", "tumi": "samālocanā kôrechile", "apni": "samālocanā kôrechilen", "se": "samālocanā kôrechilo", "tini": "samālocanā kôrechilen" }
+    - word: "bn-3085"
+      forms: { "ami": "ভ্রমণ করেছিলাম", "tui": "ভ্রমণ করেছিলি", "tumi": "ভ্রমণ করেছিলে", "apni": "ভ্রমণ করেছিলেন", "se": "ভ্রমণ করেছিল", "tini": "ভ্রমণ করেছিলেন" }
+      readings: { "ami": "bhrômôṇ kôrechilām", "tui": "bhrômôṇ kôrechili", "tumi": "bhrômôṇ kôrechile", "apni": "bhrômôṇ kôrechilen", "se": "bhrômôṇ kôrechilo", "tini": "bhrômôṇ kôrechilen" }
+    - word: "bn-3086"
+      forms: { "ami": "ঘুরে দেখেছিলাম", "tui": "ঘুরে দেখেছিলি", "tumi": "ঘুরে দেখেছিলে", "apni": "ঘুরে দেখেছিলেন", "se": "ঘুরে দেখেছিল", "tini": "ঘুরে দেখেছিলেন" }
+      readings: { "ami": "ghure dekhechilām", "tui": "ghure dekhechili", "tumi": "ghure dekhechile", "apni": "ghure dekhechilen", "se": "ghure dekhechilo", "tini": "ghure dekhechilen" }
+    - word: "bn-3087"
+      forms: { "ami": "বুক করেছিলাম", "tui": "বুক করেছিলি", "tumi": "বুক করেছিলে", "apni": "বুক করেছিলেন", "se": "বুক করেছিল", "tini": "বুক করেছিলেন" }
+      readings: { "ami": "buk kôrechilām", "tui": "buk kôrechili", "tumi": "buk kôrechile", "apni": "buk kôrechilen", "se": "buk kôrechilo", "tini": "buk kôrechilen" }
+    - word: "bn-3088"
+      forms: { "ami": "বাতিল করেছিলাম", "tui": "বাতিল করেছিলি", "tumi": "বাতিল করেছিলে", "apni": "বাতিল করেছিলেন", "se": "বাতিল করেছিল", "tini": "বাতিল করেছিলেন" }
+      readings: { "ami": "bātil kôrechilām", "tui": "bātil kôrechili", "tumi": "bātil kôrechile", "apni": "bātil kôrechilen", "se": "bātil kôrechilo", "tini": "bātil kôrechilen" }
+    - word: "bn-3089"
+      forms: { "ami": "চেক ইন করেছিলাম", "tui": "চেক ইন করেছিলি", "tumi": "চেক ইন করেছিলে", "apni": "চেক ইন করেছিলেন", "se": "চেক ইন করেছিল", "tini": "চেক ইন করেছিলেন" }
+      readings: { "ami": "ceka in kôrechilām", "tui": "ceka in kôrechili", "tumi": "ceka in kôrechile", "apni": "ceka in kôrechilen", "se": "ceka in kôrechilo", "tini": "ceka in kôrechilen" }
+    - word: "bn-3090"
+      forms: { "ami": "প্রস্থান করেছিলাম", "tui": "প্রস্থান করেছিলি", "tumi": "প্রস্থান করেছিলে", "apni": "প্রস্থান করেছিলেন", "se": "প্রস্থান করেছিল", "tini": "প্রস্থান করেছিলেন" }
+      readings: { "ami": "prasthān kôrechilām", "tui": "prasthān kôrechili", "tumi": "prasthān kôrechile", "apni": "prasthān kôrechilen", "se": "prasthān kôrechilo", "tini": "prasthān kôrechilen" }
+    - word: "bn-3091"
+      forms: { "ami": "মুদ্রা বিনিময় করেছিলাম", "tui": "মুদ্রা বিনিময় করেছিলি", "tumi": "মুদ্রা বিনিময় করেছিলে", "apni": "মুদ্রা বিনিময় করেছিলেন", "se": "মুদ্রা বিনিময় করেছিল", "tini": "মুদ্রা বিনিময় করেছিলেন" }
+      readings: { "ami": "mudrā biniymay kôrechilām", "tui": "mudrā biniymay kôrechili", "tumi": "mudrā biniymay kôrechile", "apni": "mudrā biniymay kôrechilen", "se": "mudrā biniymay kôrechilo", "tini": "mudrā biniymay kôrechilen" }
+    - word: "bn-3092"
+      forms: { "ami": "টিকিট কেটেছিলাম", "tui": "টিকিট কেটেছিলি", "tumi": "টিকিট কেটেছিলে", "apni": "টিকিট কেটেছিলেন", "se": "টিকিট কেটেছিল", "tini": "টিকিট কেটেছিলেন" }
+      readings: { "ami": "ṭikiṭ keṭechilām", "tui": "ṭikiṭ keṭechili", "tumi": "ṭikiṭ keṭechile", "apni": "ṭikiṭ keṭechilen", "se": "ṭikiṭ keṭechilo", "tini": "ṭikiṭ keṭechilen" }
+    - word: "bn-3150"
+      forms: { "ami": "আবেদন করেছিলাম", "tui": "আবেদন করেছিলি", "tumi": "আবেদন করেছিলে", "apni": "আবেদন করেছিলেন", "se": "আবেদন করেছিল", "tini": "আবেদন করেছিলেন" }
+      readings: { "ami": "ābedan kôrechilām", "tui": "ābedan kôrechili", "tumi": "ābedan kôrechile", "apni": "ābedan kôrechilen", "se": "ābedan kôrechilo", "tini": "ābedan kôrechilen" }
+    - word: "bn-3151"
+      forms: { "ami": "নিবন্ধন করেছিলাম", "tui": "নিবন্ধন করেছিলি", "tumi": "নিবন্ধন করেছিলে", "apni": "নিবন্ধন করেছিলেন", "se": "নিবন্ধন করেছিল", "tini": "নিবন্ধন করেছিলেন" }
+      readings: { "ami": "nibandhan kôrechilām", "tui": "nibandhan kôrechili", "tumi": "nibandhan kôrechile", "apni": "nibandhan kôrechilen", "se": "nibandhan kôrechilo", "tini": "nibandhan kôrechilen" }
+    - word: "bn-3152"
+      forms: { "ami": "অনুমতি নিয়েছিলাম", "tui": "অনুমতি নিয়েছিলি", "tumi": "অনুমতি নিয়েছিলে", "apni": "অনুমতি নিয়েছিলেন", "se": "অনুমতি নিয়েছিল", "tini": "অনুমতি নিয়েছিলেন" }
+      readings: { "ami": "anumati niyechilām", "tui": "anumati niyechili", "tumi": "anumati niyechile", "apni": "anumati niyechilen", "se": "anumati niyechilo", "tini": "anumati niyechilen" }
+    - word: "bn-3153"
+      forms: { "ami": "টাকা তুলেছিলাম", "tui": "টাকা তুলেছিলি", "tumi": "টাকা তুলেছিলে", "apni": "টাকা তুলেছিলেন", "se": "টাকা তুলেছিল", "tini": "টাকা তুলেছিলেন" }
+      readings: { "ami": "ṭākā tulechilām", "tui": "ṭākā tulechili", "tumi": "ṭākā tulechile", "apni": "ṭākā tulechilen", "se": "ṭākā tulechilo", "tini": "ṭākā tulechilen" }
+    - word: "bn-3154"
+      forms: { "ami": "টাকা পাঠিয়েছিলাম", "tui": "টাকা পাঠিয়েছিলি", "tumi": "টাকা পাঠিয়েছিলে", "apni": "টাকা পাঠিয়েছিলেন", "se": "টাকা পাঠিয়েছিল", "tini": "টাকা পাঠিয়েছিলেন" }
+      readings: { "ami": "ṭākā pāṭhiyechilām", "tui": "ṭākā pāṭhiyechili", "tumi": "ṭākā pāṭhiyechile", "apni": "ṭākā pāṭhiyechilen", "se": "ṭākā pāṭhiyechilo", "tini": "ṭākā pāṭhiyechilen" }
+    - word: "bn-3155"
+      forms: { "ami": "পার্সেল পাঠিয়েছিলাম", "tui": "পার্সেল পাঠিয়েছিলি", "tumi": "পার্সেল পাঠিয়েছিলে", "apni": "পার্সেল পাঠিয়েছিলেন", "se": "পার্সেল পাঠিয়েছিল", "tini": "পার্সেল পাঠিয়েছিলেন" }
+      readings: { "ami": "pārsel pāṭhiyechilām", "tui": "pārsel pāṭhiyechili", "tumi": "pārsel pāṭhiyechile", "apni": "pārsel pāṭhiyechilen", "se": "pārsel pāṭhiyechilo", "tini": "pārsel pāṭhiyechilen" }
+    - word: "bn-3156"
+      forms: { "ami": "অপেক্ষা করেছিলাম", "tui": "অপেক্ষা করেছিলি", "tumi": "অপেক্ষা করেছিলে", "apni": "অপেক্ষা করেছিলেন", "se": "অপেক্ষা করেছিল", "tini": "অপেক্ষা করেছিলেন" }
+      readings: { "ami": "apekṣā kôrechilām", "tui": "apekṣā kôrechili", "tumi": "apekṣā kôrechile", "apni": "apekṣā kôrechilen", "se": "apekṣā kôrechilo", "tini": "apekṣā kôrechilen" }
+    - word: "bn-3157"
+      forms: { "ami": "ফর্ম পূরণ করেছিলাম", "tui": "ফর্ম পূরণ করেছিলি", "tumi": "ফর্ম পূরণ করেছিলে", "apni": "ফর্ম পূরণ করেছিলেন", "se": "ফর্ম পূরণ করেছিল", "tini": "ফর্ম পূরণ করেছিলেন" }
+      readings: { "ami": "pharm purṇa kôrechilām", "tui": "pharm purṇa kôrechili", "tumi": "pharm purṇa kôrechile", "apni": "pharm purṇa kôrechilen", "se": "pharm purṇa kôrechilo", "tini": "pharm purṇa kôrechilen" }
+    - word: "bn-3158"
+      forms: { "ami": "রসিদ নিয়েছিলাম", "tui": "রসিদ নিয়েছিলি", "tumi": "রসিদ নিয়েছিলে", "apni": "রসিদ নিয়েছিলেন", "se": "রসিদ নিয়েছিল", "tini": "রসিদ নিয়েছিলেন" }
+      readings: { "ami": "rasid niyechilām", "tui": "rasid niyechili", "tumi": "rasid niyechile", "apni": "rasid niyechilen", "se": "rasid niyechilo", "tini": "rasid niyechilen" }
+    - word: "bn-3209"
+      forms: { "ami": "ভোট দিয়েছিলাম", "tui": "ভোট দিয়েছিলি", "tumi": "ভোট দিয়েছিলে", "apni": "ভোট দিয়েছিলেন", "se": "ভোট দিয়েছিল", "tini": "ভোট দিয়েছিলেন" }
+      readings: { "ami": "bhot diyechilām", "tui": "bhot diyechili", "tumi": "bhot diyechile", "apni": "bhot diyechilen", "se": "bhot diyechilo", "tini": "bhot diyechilen" }
+    - word: "bn-3210"
+      forms: { "ami": "নির্বাচিত হয়েছিলাম", "tui": "নির্বাচিত হয়েছিলি", "tumi": "নির্বাচিত হয়েছিলে", "apni": "নির্বাচিত হয়েছিলেন", "se": "নির্বাচিত হয়েছিল", "tini": "নির্বাচিত হয়েছিলেন" }
+      readings: { "ami": "nirbācit hôyechilām", "tui": "nirbācit hôyechili", "tumi": "nirbācit hôyechile", "apni": "nirbācit hôyechilen", "se": "nirbācit hôyechilo", "tini": "nirbācit hôyechilen" }
+    - word: "bn-3211"
+      forms: { "ami": "শপথ নিয়েছিলাম", "tui": "শপথ নিয়েছিলি", "tumi": "শপথ নিয়েছিলে", "apni": "শপথ নিয়েছিলেন", "se": "শপথ নিয়েছিল", "tini": "শপথ নিয়েছিলেন" }
+      readings: { "ami": "śôpôth niyechilām", "tui": "śôpôth niyechili", "tumi": "śôpôth niyechile", "apni": "śôpôth niyechilen", "se": "śôpôth niyechilo", "tini": "śôpôth niyechilen" }
+    - word: "bn-3212"
+      forms: { "ami": "আইন পাস করেছিলাম", "tui": "আইন পাস করেছিলি", "tumi": "আইন পাস করেছিলে", "apni": "আইন পাস করেছিলেন", "se": "আইন পাস করেছিল", "tini": "আইন পাস করেছিলেন" }
+      readings: { "ami": "āin pās kôrechilām", "tui": "āin pās kôrechili", "tumi": "āin pās kôrechile", "apni": "āin pās kôrechilen", "se": "āin pās kôrechilo", "tini": "āin pās kôrechilen" }
+    - word: "bn-3213"
+      forms: { "ami": "কর দিয়েছিলাম", "tui": "কর দিয়েছিলি", "tumi": "কর দিয়েছিলে", "apni": "কর দিয়েছিলেন", "se": "কর দিয়েছিল", "tini": "কর দিয়েছিলেন" }
+      readings: { "ami": "kar diyechilām", "tui": "kar diyechili", "tumi": "kar diyechile", "apni": "kar diyechilen", "se": "kar diyechilo", "tini": "kar diyechilen" }
+    - word: "bn-3214"
+      forms: { "ami": "মামলা করেছিলাম", "tui": "মামলা করেছিলি", "tumi": "মামলা করেছিলে", "apni": "মামলা করেছিলেন", "se": "মামলা করেছিল", "tini": "মামলা করেছিলেন" }
+      readings: { "ami": "māmlā kôrechilām", "tui": "māmlā kôrechili", "tumi": "māmlā kôrechile", "apni": "māmlā kôrechilen", "se": "māmlā kôrechilo", "tini": "māmlā kôrechilen" }
+    - word: "bn-3283"
+      forms: { "ami": "ডাউনলোড করেছিলাম", "tui": "ডাউনলোড করেছিলি", "tumi": "ডাউনলোড করেছিলে", "apni": "ডাউনলোড করেছিলেন", "se": "ডাউনলোড করেছিল", "tini": "ডাউনলোড করেছিলেন" }
+      readings: { "ami": "ḍāunlod kôrechilām", "tui": "ḍāunlod kôrechili", "tumi": "ḍāunlod kôrechile", "apni": "ḍāunlod kôrechilen", "se": "ḍāunlod kôrechilo", "tini": "ḍāunlod kôrechilen" }
+    - word: "bn-3284"
+      forms: { "ami": "আপলোড করেছিলাম", "tui": "আপলোড করেছিলি", "tumi": "আপলোড করেছিলে", "apni": "আপলোড করেছিলেন", "se": "আপলোড করেছিল", "tini": "আপলোড করেছিলেন" }
+      readings: { "ami": "āplod kôrechilām", "tui": "āplod kôrechili", "tumi": "āplod kôrechile", "apni": "āplod kôrechilen", "se": "āplod kôrechilo", "tini": "āplod kôrechilen" }
+    - word: "bn-3285"
+      forms: { "ami": "ইনস্টল করেছিলাম", "tui": "ইনস্টল করেছিলি", "tumi": "ইনস্টল করেছিলে", "apni": "ইনস্টল করেছিলেন", "se": "ইনস্টল করেছিল", "tini": "ইনস্টল করেছিলেন" }
+      readings: { "ami": "insṭal kôrechilām", "tui": "insṭal kôrechili", "tumi": "insṭal kôrechile", "apni": "insṭal kôrechilen", "se": "insṭal kôrechilo", "tini": "insṭal kôrechilen" }
+    - word: "bn-3286"
+      forms: { "ami": "আপডেট করেছিলাম", "tui": "আপডেট করেছিলি", "tumi": "আপডেট করেছিলে", "apni": "আপডেট করেছিলেন", "se": "আপডেট করেছিল", "tini": "আপডেট করেছিলেন" }
+      readings: { "ami": "āpḍeṭ kôrechilām", "tui": "āpḍeṭ kôrechili", "tumi": "āpḍeṭ kôrechile", "apni": "āpḍeṭ kôrechilen", "se": "āpḍeṭ kôrechilo", "tini": "āpḍeṭ kôrechilen" }
+    - word: "bn-3287"
+      forms: { "ami": "ক্লিক করেছিলাম", "tui": "ক্লিক করেছিলি", "tumi": "ক্লিক করেছিলে", "apni": "ক্লিক করেছিলেন", "se": "ক্লিক করেছিল", "tini": "ক্লিক করেছিলেন" }
+      readings: { "ami": "klik kôrechilām", "tui": "klik kôrechili", "tumi": "klik kôrechile", "apni": "klik kôrechilen", "se": "klik kôrechilo", "tini": "klik kôrechilen" }
+    - word: "bn-3288"
+      forms: { "ami": "অনুসন্ধান করেছিলাম", "tui": "অনুসন্ধান করেছিলি", "tumi": "অনুসন্ধান করেছিলে", "apni": "অনুসন্ধান করেছিলেন", "se": "অনুসন্ধান করেছিল", "tini": "অনুসন্ধান করেছিলেন" }
+      readings: { "ami": "anusandhān kôrechilām", "tui": "anusandhān kôrechili", "tumi": "anusandhān kôrechile", "apni": "anusandhān kôrechilen", "se": "anusandhān kôrechilo", "tini": "anusandhān kôrechilen" }
+    - word: "bn-3289"
+      forms: { "ami": "চালু করেছিলাম", "tui": "চালু করেছিলি", "tumi": "চালু করেছিলে", "apni": "চালু করেছিলেন", "se": "চালু করেছিল", "tini": "চালু করেছিলেন" }
+      readings: { "ami": "cālu kôrechilām", "tui": "cālu kôrechili", "tumi": "cālu kôrechile", "apni": "cālu kôrechilen", "se": "cālu kôrechilo", "tini": "cālu kôrechilen" }
+    - word: "bn-3290"
+      forms: { "ami": "লগইন করেছিলাম", "tui": "লগইন করেছিলি", "tumi": "লগইন করেছিলে", "apni": "লগইন করেছিলেন", "se": "লগইন করেছিল", "tini": "লগইন করেছিলেন" }
+      readings: { "ami": "lagin kôrechilām", "tui": "lagin kôrechili", "tumi": "lagin kôrechile", "apni": "lagin kôrechilen", "se": "lagin kôrechilo", "tini": "lagin kôrechilen" }
+    - word: "bn-3351"
+      forms: { "ami": "চাকরি খুঁজেছিলাম", "tui": "চাকরি খুঁজেছিলি", "tumi": "চাকরি খুঁজেছিলে", "apni": "চাকরি খুঁজেছিলেন", "se": "চাকরি খুঁজেছিল", "tini": "চাকরি খুঁজেছিলেন" }
+      readings: { "ami": "cākri khum̐jechilām", "tui": "cākri khum̐jechili", "tumi": "cākri khum̐jechile", "apni": "cākri khum̐jechilen", "se": "cākri khum̐jechilo", "tini": "cākri khum̐jechilen" }
+    - word: "bn-3352"
+      forms: { "ami": "নিয়োগ দিয়েছিলাম", "tui": "নিয়োগ দিয়েছিলি", "tumi": "নিয়োগ দিয়েছিলে", "apni": "নিয়োগ দিয়েছিলেন", "se": "নিয়োগ দিয়েছিল", "tini": "নিয়োগ দিয়েছিলেন" }
+      readings: { "ami": "niyog diyechilām", "tui": "niyog diyechili", "tumi": "niyog diyechile", "apni": "niyog diyechilen", "se": "niyog diyechilo", "tini": "niyog diyechilen" }
+    - word: "bn-3353"
+      forms: { "ami": "প্রশিক্ষণ নিয়েছিলাম", "tui": "প্রশিক্ষণ নিয়েছিলি", "tumi": "প্রশিক্ষণ নিয়েছিলে", "apni": "প্রশিক্ষণ নিয়েছিলেন", "se": "প্রশিক্ষণ নিয়েছিল", "tini": "প্রশিক্ষণ নিয়েছিলেন" }
+      readings: { "ami": "praśikṣaṇ niyechilām", "tui": "praśikṣaṇ niyechili", "tumi": "praśikṣaṇ niyechile", "apni": "praśikṣaṇ niyechilen", "se": "praśikṣaṇ niyechilo", "tini": "praśikṣaṇ niyechilen" }
+    - word: "bn-3354"
+      forms: { "ami": "অবসর নিয়েছিলাম", "tui": "অবসর নিয়েছিলি", "tumi": "অবসর নিয়েছিলে", "apni": "অবসর নিয়েছিলেন", "se": "অবসর নিয়েছিল", "tini": "অবসর নিয়েছিলেন" }
+      readings: { "ami": "abasar niyechilām", "tui": "abasar niyechili", "tumi": "abasar niyechile", "apni": "abasar niyechilen", "se": "abasar niyechilo", "tini": "abasar niyechilen" }
+    - word: "bn-3355"
+      forms: { "ami": "ব্যবসা শুরু করেছিলাম", "tui": "ব্যবসা শুরু করেছিলি", "tumi": "ব্যবসা শুরু করেছিলে", "apni": "ব্যবসা শুরু করেছিলেন", "se": "ব্যবসা শুরু করেছিল", "tini": "ব্যবসা শুরু করেছিলেন" }
+      readings: { "ami": "byabsā śuru kôrechilām", "tui": "byabsā śuru kôrechili", "tumi": "byabsā śuru kôrechile", "apni": "byabsā śuru kôrechilen", "se": "byabsā śuru kôrechilo", "tini": "byabsā śuru kôrechilen" }
+    - word: "bn-3356"
+      forms: { "ami": "পরীক্ষা দিয়েছিলাম", "tui": "পরীক্ষা দিয়েছিলি", "tumi": "পরীক্ষা দিয়েছিলে", "apni": "পরীক্ষা দিয়েছিলেন", "se": "পরীক্ষা দিয়েছিল", "tini": "পরীক্ষা দিয়েছিলেন" }
+      readings: { "ami": "parīkṣā diyechilām", "tui": "parīkṣā diyechili", "tumi": "parīkṣā diyechile", "apni": "parīkṣā diyechilen", "se": "parīkṣā diyechilo", "tini": "parīkṣā diyechilen" }
+    - word: "bn-3357"
+      forms: { "ami": "সফল হয়েছিলাম", "tui": "সফল হয়েছিলি", "tumi": "সফল হয়েছিলে", "apni": "সফল হয়েছিলেন", "se": "সফল হয়েছিল", "tini": "সফল হয়েছিলেন" }
+      readings: { "ami": "sophôl hôyechilām", "tui": "sophôl hôyechili", "tumi": "sophôl hôyechile", "apni": "sophôl hôyechilen", "se": "sophôl hôyechilo", "tini": "sophôl hôyechilen" }
+    - word: "bn-3358"
+      forms: { "ami": "দক্ষতা অর্জন করেছিলাম", "tui": "দক্ষতা অর্জন করেছিলি", "tumi": "দক্ষতা অর্জন করেছিলে", "apni": "দক্ষতা অর্জন করেছিলেন", "se": "দক্ষতা অর্জন করেছিল", "tini": "দক্ষতা অর্জন করেছিলেন" }
+      readings: { "ami": "dôkkhotā arjan kôrechilām", "tui": "dôkkhotā arjan kôrechili", "tumi": "dôkkhotā arjan kôrechile", "apni": "dôkkhotā arjan kôrechilen", "se": "dôkkhotā arjan kôrechilo", "tini": "dôkkhotā arjan kôrechilen" }
+    - word: "bn-3431"
+      forms: { "ami": "বৃক্ষরোপণ করেছিলাম", "tui": "বৃক্ষরোপণ করেছিলি", "tumi": "বৃক্ষরোপণ করেছিলে", "apni": "বৃক্ষরোপণ করেছিলেন", "se": "বৃক্ষরোপণ করেছিল", "tini": "বৃক্ষরোপণ করেছিলেন" }
+      readings: { "ami": "bṛkṣaropaṇ kôrechilām", "tui": "bṛkṣaropaṇ kôrechili", "tumi": "bṛkṣaropaṇ kôrechile", "apni": "bṛkṣaropaṇ kôrechilen", "se": "bṛkṣaropaṇ kôrechilo", "tini": "bṛkṣaropaṇ kôrechilen" }
+    - word: "bn-3432"
+      forms: { "ami": "পরিষ্কার করেছিলাম", "tui": "পরিষ্কার করেছিলি", "tumi": "পরিষ্কার করেছিলে", "apni": "পরিষ্কার করেছিলেন", "se": "পরিষ্কার করেছিল", "tini": "পরিষ্কার করেছিলেন" }
+      readings: { "ami": "pariṣkār kôrechilām", "tui": "pariṣkār kôrechili", "tumi": "pariṣkār kôrechile", "apni": "pariṣkār kôrechilen", "se": "pariṣkār kôrechilo", "tini": "pariṣkār kôrechilen" }
+    - word: "bn-3433"
+      forms: { "ami": "সংরক্ষণ করেছিলাম", "tui": "সংরক্ষণ করেছিলি", "tumi": "সংরক্ষণ করেছিলে", "apni": "সংরক্ষণ করেছিলেন", "se": "সংরক্ষণ করেছিল", "tini": "সংরক্ষণ করেছিলেন" }
+      readings: { "ami": "saṅrakṣaṇ kôrechilām", "tui": "saṅrakṣaṇ kôrechili", "tumi": "saṅrakṣaṇ kôrechile", "apni": "saṅrakṣaṇ kôrechilen", "se": "saṅrakṣaṇ kôrechilo", "tini": "saṅrakṣaṇ kôrechilen" }
+    - word: "bn-3434"
+      forms: { "ami": "পুনর্ব্যবহার করেছিলাম", "tui": "পুনর্ব্যবহার করেছিলি", "tumi": "পুনর্ব্যবহার করেছিলে", "apni": "পুনর্ব্যবহার করেছিলেন", "se": "পুনর্ব্যবহার করেছিল", "tini": "পুনর্ব্যবহার করেছিলেন" }
+      readings: { "ami": "punarbyabahār kôrechilām", "tui": "punarbyabahār kôrechili", "tumi": "punarbyabahār kôrechile", "apni": "punarbyabahār kôrechilen", "se": "punarbyabahār kôrechilo", "tini": "punarbyabahār kôrechilen" }
+    - word: "bn-3435"
+      forms: { "ami": "দূষণ করেছিলাম", "tui": "দূষণ করেছিলি", "tumi": "দূষণ করেছিলে", "apni": "দূষণ করেছিলেন", "se": "দূষণ করেছিল", "tini": "দূষণ করেছিলেন" }
+      readings: { "ami": "dūṣaṇ kôrechilām", "tui": "dūṣaṇ kôrechili", "tumi": "dūṣaṇ kôrechile", "apni": "dūṣaṇ kôrechilen", "se": "dūṣaṇ kôrechilo", "tini": "dūṣaṇ kôrechilen" }
+    - word: "bn-3436"
+      forms: { "ami": "সচেতন হয়েছিলাম", "tui": "সচেতন হয়েছিলি", "tumi": "সচেতন হয়েছিলে", "apni": "সচেতন হয়েছিলেন", "se": "সচেতন হয়েছিল", "tini": "সচেতন হয়েছিলেন" }
+      readings: { "ami": "sacetan hôyechilām", "tui": "sacetan hôyechili", "tumi": "sacetan hôyechile", "apni": "sacetan hôyechilen", "se": "sacetan hôyechilo", "tini": "sacetan hôyechilen" }
+    - word: "bn-3437"
+      forms: { "ami": "গাছ লাগিয়েছিলাম", "tui": "গাছ লাগিয়েছিলি", "tumi": "গাছ লাগিয়েছিলে", "apni": "গাছ লাগিয়েছিলেন", "se": "গাছ লাগিয়েছিল", "tini": "গাছ লাগিয়েছিলেন" }
+      readings: { "ami": "gāch lāgiyechilām", "tui": "gāch lāgiyechili", "tumi": "gāch lāgiyechile", "apni": "gāch lāgiyechilen", "se": "gāch lāgiyechilo", "tini": "gāch lāgiyechilen" }
+    - word: "bn-3496"
+      forms: { "ami": "চাষ করেছিলাম", "tui": "চাষ করেছিলি", "tumi": "চাষ করেছিলে", "apni": "চাষ করেছিলেন", "se": "চাষ করেছিল", "tini": "চাষ করেছিলেন" }
+      readings: { "ami": "cāṣ kôrechilām", "tui": "cāṣ kôrechili", "tumi": "cāṣ kôrechile", "apni": "cāṣ kôrechilen", "se": "cāṣ kôrechilo", "tini": "cāṣ kôrechilen" }
+    - word: "bn-3497"
+      forms: { "ami": "বীজ বপন করেছিলাম", "tui": "বীজ বপন করেছিলি", "tumi": "বীজ বপন করেছিলে", "apni": "বীজ বপন করেছিলেন", "se": "বীজ বপন করেছিল", "tini": "বীজ বপন করেছিলেন" }
+      readings: { "ami": "bīj bapan kôrechilām", "tui": "bīj bapan kôrechili", "tumi": "bīj bapan kôrechile", "apni": "bīj bapan kôrechilen", "se": "bīj bapan kôrechilo", "tini": "bīj bapan kôrechilen" }
+    - word: "bn-3498"
+      forms: { "ami": "ফসল কেটেছিলাম", "tui": "ফসল কেটেছিলি", "tumi": "ফসল কেটেছিলে", "apni": "ফসল কেটেছিলেন", "se": "ফসল কেটেছিল", "tini": "ফসল কেটেছিলেন" }
+      readings: { "ami": "phasal keṭechilām", "tui": "phasal keṭechili", "tumi": "phasal keṭechile", "apni": "phasal keṭechilen", "se": "phasal keṭechilo", "tini": "phasal keṭechilen" }
+    - word: "bn-3499"
+      forms: { "ami": "সার দিয়েছিলাম", "tui": "সার দিয়েছিলি", "tumi": "সার দিয়েছিলে", "apni": "সার দিয়েছিলেন", "se": "সার দিয়েছিল", "tini": "সার দিয়েছিলেন" }
+      readings: { "ami": "sār diyechilām", "tui": "sār diyechili", "tumi": "sār diyechile", "apni": "sār diyechilen", "se": "sār diyechilo", "tini": "sār diyechilen" }
+    - word: "bn-3500"
+      forms: { "ami": "সেচ দিয়েছিলাম", "tui": "সেচ দিয়েছিলি", "tumi": "সেচ দিয়েছিলে", "apni": "সেচ দিয়েছিলেন", "se": "সেচ দিয়েছিল", "tini": "সেচ দিয়েছিলেন" }
+      readings: { "ami": "seca diyechilām", "tui": "seca diyechili", "tumi": "seca diyechile", "apni": "seca diyechilen", "se": "seca diyechilo", "tini": "seca diyechilen" }
+    - word: "bn-3501"
+      forms: { "ami": "ফসল তুলেছিলাম", "tui": "ফসল তুলেছিলি", "tumi": "ফসল তুলেছিলে", "apni": "ফসল তুলেছিলেন", "se": "ফসল তুলেছিল", "tini": "ফসল তুলেছিলেন" }
+      readings: { "ami": "phasal tulechilām", "tui": "phasal tulechili", "tumi": "phasal tulechile", "apni": "phasal tulechilen", "se": "phasal tulechilo", "tini": "phasal tulechilen" }
+    - word: "bn-3502"
+      forms: { "ami": "ফলন হয়েছিলাম", "tui": "ফলন হয়েছিলি", "tumi": "ফলন হয়েছিলে", "apni": "ফলন হয়েছিলেন", "se": "ফলন হয়েছিল", "tini": "ফলন হয়েছিলেন" }
+      readings: { "ami": "phalan hôyechilām", "tui": "phalan hôyechili", "tumi": "phalan hôyechile", "apni": "phalan hôyechilen", "se": "phalan hôyechilo", "tini": "phalan hôyechilen" }
+    - word: "bn-3503"
+      forms: { "ami": "বিক্রি করেছিলাম", "tui": "বিক্রি করেছিলি", "tumi": "বিক্রি করেছিলে", "apni": "বিক্রি করেছিলেন", "se": "বিক্রি করেছিল", "tini": "বিক্রি করেছিলেন" }
+      readings: { "ami": "bikri kôrechilām", "tui": "bikri kôrechili", "tumi": "bikri kôrechile", "apni": "bikri kôrechilen", "se": "bikri kôrechilo", "tini": "bikri kôrechilen" }
+    - word: "bn-3581"
+      forms: { "ami": "অভিনয় করেছিলাম", "tui": "অভিনয় করেছিলি", "tumi": "অভিনয় করেছিলে", "apni": "অভিনয় করেছিলেন", "se": "অভিনয় করেছিল", "tini": "অভিনয় করেছিলেন" }
+      readings: { "ami": "ābhinay kôrechilām", "tui": "ābhinay kôrechili", "tumi": "ābhinay kôrechile", "apni": "ābhinay kôrechilen", "se": "ābhinay kôrechilo", "tini": "ābhinay kôrechilen" }
+    - word: "bn-3582"
+      forms: { "ami": "গান গেয়েছিলাম", "tui": "গান গেয়েছিলি", "tumi": "গান গেয়েছিলে", "apni": "গান গেয়েছিলেন", "se": "গান গেয়েছিল", "tini": "গান গেয়েছিলেন" }
+      readings: { "ami": "gān geyechilām", "tui": "gān geyechili", "tumi": "gān geyechile", "apni": "gān geyechilen", "se": "gān geyechilo", "tini": "gān geyechilen" }
+    - word: "bn-3583"
+      forms: { "ami": "ছবি দেখেছিলাম", "tui": "ছবি দেখেছিলি", "tumi": "ছবি দেখেছিলে", "apni": "ছবি দেখেছিলেন", "se": "ছবি দেখেছিল", "tini": "ছবি দেখেছিলেন" }
+      readings: { "ami": "chabi dekhechilām", "tui": "chabi dekhechili", "tumi": "chabi dekhechile", "apni": "chabi dekhechilen", "se": "chabi dekhechilo", "tini": "chabi dekhechilen" }
+    - word: "bn-3584"
+      forms: { "ami": "শুটিং করেছিলাম", "tui": "শুটিং করেছিলি", "tumi": "শুটিং করেছিলে", "apni": "শুটিং করেছিলেন", "se": "শুটিং করেছিল", "tini": "শুটিং করেছিলেন" }
+      readings: { "ami": "śuṭiṅ kôrechilām", "tui": "śuṭiṅ kôrechili", "tumi": "śuṭiṅ kôrechile", "apni": "śuṭiṅ kôrechilen", "se": "śuṭiṅ kôrechilo", "tini": "śuṭiṅ kôrechilen" }
+    - word: "bn-3585"
+      forms: { "ami": "নির্মাণ করেছিলাম", "tui": "নির্মাণ করেছিলি", "tumi": "নির্মাণ করেছিলে", "apni": "নির্মাণ করেছিলেন", "se": "নির্মাণ করেছিল", "tini": "নির্মাণ করেছিলেন" }
+      readings: { "ami": "nirmāṇ kôrechilām", "tui": "nirmāṇ kôrechili", "tumi": "nirmāṇ kôrechile", "apni": "nirmāṇ kôrechilen", "se": "nirmāṇ kôrechilo", "tini": "nirmāṇ kôrechilen" }
+    - word: "bn-3586"
+      forms: { "ami": "মুক্তি পেয়েছিলাম", "tui": "মুক্তি পেয়েছিলি", "tumi": "মুক্তি পেয়েছিলে", "apni": "মুক্তি পেয়েছিলেন", "se": "মুক্তি পেয়েছিল", "tini": "মুক্তি পেয়েছিলেন" }
+      readings: { "ami": "mukti peyechilām", "tui": "mukti peyechili", "tumi": "mukti peyechile", "apni": "mukti peyechilen", "se": "mukti peyechilo", "tini": "mukti peyechilen" }
+    - word: "bn-3587"
+      forms: { "ami": "হাততালি দিয়েছিলাম", "tui": "হাততালি দিয়েছিলি", "tumi": "হাততালি দিয়েছিলে", "apni": "হাততালি দিয়েছিলেন", "se": "হাততালি দিয়েছিল", "tini": "হাততালি দিয়েছিলেন" }
+      readings: { "ami": "hāttāli diyechilām", "tui": "hāttāli diyechili", "tumi": "hāttāli diyechile", "apni": "hāttāli diyechilen", "se": "hāttāli diyechilo", "tini": "hāttāli diyechilen" }
+    - word: "bn-3588"
+      forms: { "ami": "চরিত্র হয়েছিলাম", "tui": "চরিত্র হয়েছিলি", "tumi": "চরিত্র হয়েছিলে", "apni": "চরিত্র হয়েছিলেন", "se": "চরিত্র হয়েছিল", "tini": "চরিত্র হয়েছিলেন" }
+      readings: { "ami": "caritra hôyechilām", "tui": "caritra hôyechili", "tumi": "caritra hôyechile", "apni": "caritra hôyechilen", "se": "caritra hôyechilo", "tini": "caritra hôyechilen" }
+    - word: "bn-3651"
+      forms: { "ami": "অঙ্কন করেছিলাম", "tui": "অঙ্কন করেছিলি", "tumi": "অঙ্কন করেছিলে", "apni": "অঙ্কন করেছিলেন", "se": "অঙ্কন করেছিল", "tini": "অঙ্কন করেছিলেন" }
+      readings: { "ami": "ôṅkon kôrechilām", "tui": "ôṅkon kôrechili", "tumi": "ôṅkon kôrechile", "apni": "ôṅkon kôrechilen", "se": "ôṅkon kôrechilo", "tini": "ôṅkon kôrechilen" }
+    - word: "bn-3652"
+      forms: { "ami": "প্রদর্শন করেছিলাম", "tui": "প্রদর্শন করেছিলি", "tumi": "প্রদর্শন করেছিলে", "apni": "প্রদর্শন করেছিলেন", "se": "প্রদর্শন করেছিল", "tini": "প্রদর্শন করেছিলেন" }
+      readings: { "ami": "pradarśôn kôrechilām", "tui": "pradarśôn kôrechili", "tumi": "pradarśôn kôrechile", "apni": "pradarśôn kôrechilen", "se": "pradarśôn kôrechilo", "tini": "pradarśôn kôrechilen" }
+    - word: "bn-3733"
+      forms: { "ami": "যুদ্ধ করেছিলাম", "tui": "যুদ্ধ করেছিলি", "tumi": "যুদ্ধ করেছিলে", "apni": "যুদ্ধ করেছিলেন", "se": "যুদ্ধ করেছিল", "tini": "যুদ্ধ করেছিলেন" }
+      readings: { "ami": "juddho kôrechilām", "tui": "juddho kôrechili", "tumi": "juddho kôrechile", "apni": "juddho kôrechilen", "se": "juddho kôrechilo", "tini": "juddho kôrechilen" }
+    - word: "bn-3734"
+      forms: { "ami": "শাসন করেছিলাম", "tui": "শাসন করেছিলি", "tumi": "শাসন করেছিলে", "apni": "শাসন করেছিলেন", "se": "শাসন করেছিল", "tini": "শাসন করেছিলেন" }
+      readings: { "ami": "śāsôn kôrechilām", "tui": "śāsôn kôrechili", "tumi": "śāsôn kôrechile", "apni": "śāsôn kôrechilen", "se": "śāsôn kôrechilo", "tini": "śāsôn kôrechilen" }
+    - word: "bn-3794"
+      forms: { "ami": "মালা বদল করেছিলাম", "tui": "মালা বদল করেছিলি", "tumi": "মালা বদল করেছিলে", "apni": "মালা বদল করেছিলেন", "se": "মালা বদল করেছিল", "tini": "মালা বদল করেছিলেন" }
+      readings: { "ami": "mālā badal kôrechilām", "tui": "mālā badal kôrechili", "tumi": "mālā badal kôrechile", "apni": "mālā badal kôrechilen", "se": "mālā badal kôrechilo", "tini": "mālā badal kôrechilen" }
+    - word: "bn-3795"
+      forms: { "ami": "নিমন্ত্রণ করেছিলাম", "tui": "নিমন্ত্রণ করেছিলি", "tumi": "নিমন্ত্রণ করেছিলে", "apni": "নিমন্ত্রণ করেছিলেন", "se": "নিমন্ত্রণ করেছিল", "tini": "নিমন্ত্রণ করেছিলেন" }
+      readings: { "ami": "nimantraṇ kôrechilām", "tui": "nimantraṇ kôrechili", "tumi": "nimantraṇ kôrechile", "apni": "nimantraṇ kôrechilen", "se": "nimantraṇ kôrechilo", "tini": "nimantraṇ kôrechilen" }
+    - word: "bn-3796"
+      forms: { "ami": "আশীর্বাদ করেছিলাম", "tui": "আশীর্বাদ করেছিলি", "tumi": "আশীর্বাদ করেছিলে", "apni": "আশীর্বাদ করেছিলেন", "se": "আশীর্বাদ করেছিল", "tini": "আশীর্বাদ করেছিলেন" }
+      readings: { "ami": "āśīrbād kôrechilām", "tui": "āśīrbād kôrechili", "tumi": "āśīrbād kôrechile", "apni": "āśīrbād kôrechilen", "se": "āśīrbād kôrechilo", "tini": "āśīrbād kôrechilen" }
+    - word: "bn-3868"
+      forms: { "ami": "ব্যাট করেছিলাম", "tui": "ব্যাট করেছিলি", "tumi": "ব্যাট করেছিলে", "apni": "ব্যাট করেছিলেন", "se": "ব্যাট করেছিল", "tini": "ব্যাট করেছিলেন" }
+      readings: { "ami": "byāṭ kôrechilām", "tui": "byāṭ kôrechili", "tumi": "byāṭ kôrechile", "apni": "byāṭ kôrechilen", "se": "byāṭ kôrechilo", "tini": "byāṭ kôrechilen" }
+    - word: "bn-3869"
+      forms: { "ami": "গোল করেছিলাম", "tui": "গোল করেছিলি", "tumi": "গোল করেছিলে", "apni": "গোল করেছিলেন", "se": "গোল করেছিল", "tini": "গোল করেছিলেন" }
+      readings: { "ami": "gol kôrechilām", "tui": "gol kôrechili", "tumi": "gol kôrechile", "apni": "gol kôrechilen", "se": "gol kôrechilo", "tini": "gol kôrechilen" }
+    - word: "bn-3926"
+      forms: { "ami": "পাশে থেকেছিলাম", "tui": "পাশে থেকেছিলি", "tumi": "পাশে থেকেছিলে", "apni": "পাশে থেকেছিলেন", "se": "পাশে থেকেছিল", "tini": "পাশে থেকেছিলেন" }
+      readings: { "ami": "pāśe thekechilām", "tui": "pāśe thekechili", "tumi": "pāśe thekechile", "apni": "pāśe thekechilen", "se": "pāśe thekechilo", "tini": "pāśe thekechilen" }
+    - word: "bn-3927"
+      forms: { "ami": "যত্ন নিয়েছিলাম", "tui": "যত্ন নিয়েছিলি", "tumi": "যত্ন নিয়েছিলে", "apni": "যত্ন নিয়েছিলেন", "se": "যত্ন নিয়েছিল", "tini": "যত্ন নিয়েছিলেন" }
+      readings: { "ami": "yatna niyechilām", "tui": "yatna niyechili", "tumi": "yatna niyechile", "apni": "yatna niyechilen", "se": "yatna niyechilo", "tini": "yatna niyechilen" }
+    - word: "bn-3928"
+      forms: { "ami": "মনে রেখেছিলাম", "tui": "মনে রেখেছিলি", "tumi": "মনে রেখেছিলে", "apni": "মনে রেখেছিলেন", "se": "মনে রেখেছিল", "tini": "মনে রেখেছিলেন" }
+      readings: { "ami": "mane rekhechilām", "tui": "mane rekhechili", "tumi": "mane rekhechile", "apni": "mane rekhechilen", "se": "mane rekhechilo", "tini": "mane rekhechilen" }
+    - word: "bn-3929"
+      forms: { "ami": "দেখা করেছিলাম", "tui": "দেখা করেছিলি", "tumi": "দেখা করেছিলে", "apni": "দেখা করেছিলেন", "se": "দেখা করেছিল", "tini": "দেখা করেছিলেন" }
+      readings: { "ami": "dekhā kôrechilām", "tui": "dekhā kôrechili", "tumi": "dekhā kôrechile", "apni": "dekhā kôrechilen", "se": "dekhā kôrechilo", "tini": "dekhā kôrechilen" }
+    - word: "bn-3930"
+      forms: { "ami": "ঝগড়া করেছিলাম", "tui": "ঝগড়া করেছিলি", "tumi": "ঝগড়া করেছিলে", "apni": "ঝগড়া করেছিলেন", "se": "ঝগড়া করেছিল", "tini": "ঝগড়া করেছিলেন" }
+      readings: { "ami": "jhagṛā kôrechilām", "tui": "jhagṛā kôrechili", "tumi": "jhagṛā kôrechile", "apni": "jhagṛā kôrechilen", "se": "jhagṛā kôrechilo", "tini": "jhagṛā kôrechilen" }
+    - word: "bn-3931"
+      forms: { "ami": "আলাপ করেছিলাম", "tui": "আলাপ করেছিলি", "tumi": "আলাপ করেছিলে", "apni": "আলাপ করেছিলেন", "se": "আলাপ করেছিল", "tini": "আলাপ করেছিলেন" }
+      readings: { "ami": "ālāp kôrechilām", "tui": "ālāp kôrechili", "tumi": "ālāp kôrechile", "apni": "ālāp kôrechilen", "se": "ālāp kôrechilo", "tini": "ālāp kôrechilen" }
+    - word: "bn-4002"
+      forms: { "ami": "সংস্কার করেছিলাম", "tui": "সংস্কার করেছিলি", "tumi": "সংস্কার করেছিলে", "apni": "সংস্কার করেছিলেন", "se": "সংস্কার করেছিল", "tini": "সংস্কার করেছিলেন" }
+      readings: { "ami": "sôṅskār kôrechilām", "tui": "sôṅskār kôrechili", "tumi": "sôṅskār kôrechile", "apni": "sôṅskār kôrechilen", "se": "sôṅskār kôrechilo", "tini": "sôṅskār kôrechilen" }
+    - word: "bn-4004"
+      forms: { "ami": "বসবাস করেছিলাম", "tui": "বসবাস করেছিলি", "tumi": "বসবাস করেছিলে", "apni": "বসবাস করেছিলেন", "se": "বসবাস করেছিল", "tini": "বসবাস করেছিলেন" }
+      readings: { "ami": "basbās kôrechilām", "tui": "basbās kôrechili", "tumi": "basbās kôrechile", "apni": "basbās kôrechilen", "se": "basbās kôrechilo", "tini": "basbās kôrechilen" }
+    - word: "bn-4054"
+      forms: { "ami": "উদ্ধার করেছিলাম", "tui": "উদ্ধার করেছিলি", "tumi": "উদ্ধার করেছিলে", "apni": "উদ্ধার করেছিলেন", "se": "উদ্ধার করেছিল", "tini": "উদ্ধার করেছিলেন" }
+      readings: { "ami": "uddhār kôrechilām", "tui": "uddhār kôrechili", "tumi": "uddhār kôrechile", "apni": "uddhār kôrechilen", "se": "uddhār kôrechilo", "tini": "uddhār kôrechilen" }
+    - word: "bn-4055"
+      forms: { "ami": "সরিয়ে নিয়েছিলাম", "tui": "সরিয়ে নিয়েছিলি", "tumi": "সরিয়ে নিয়েছিলে", "apni": "সরিয়ে নিয়েছিলেন", "se": "সরিয়ে নিয়েছিল", "tini": "সরিয়ে নিয়েছিলেন" }
+      readings: { "ami": "soriẏe niyechilām", "tui": "soriẏe niyechili", "tumi": "soriẏe niyechile", "apni": "soriẏe niyechilen", "se": "soriẏe niyechilo", "tini": "soriẏe niyechilen" }
+    - word: "bn-4056"
+      forms: { "ami": "আগুন নেভিয়েছিলাম", "tui": "আগুন নেভিয়েছিলি", "tumi": "আগুন নেভিয়েছিলে", "apni": "আগুন নেভিয়েছিলেন", "se": "আগুন নেভিয়েছিল", "tini": "আগুন নেভিয়েছিলেন" }
+      readings: { "ami": "āgun nebhiyechilām", "tui": "āgun nebhiyechili", "tumi": "āgun nebhiyechile", "apni": "āgun nebhiyechilen", "se": "āgun nebhiyechilo", "tini": "āgun nebhiyechilen" }
+    - word: "bn-4057"
+      forms: { "ami": "পালিয়েছিলাম", "tui": "পালিয়েছিলি", "tumi": "পালিয়েছিলে", "apni": "পালিয়েছিলেন", "se": "পালিয়েছিল", "tini": "পালিয়েছিলেন" }
+      readings: { "ami": "pāliyechilām", "tui": "pāliyechili", "tumi": "pāliyechile", "apni": "pāliyechilen", "se": "pāliyechilo", "tini": "pāliyechilen" }
+    - word: "bn-4122"
+      forms: { "ami": "অভিযোগ করেছিলাম", "tui": "অভিযোগ করেছিলি", "tumi": "অভিযোগ করেছিলে", "apni": "অভিযোগ করেছিলেন", "se": "অভিযোগ করেছিল", "tini": "অভিযোগ করেছিলেন" }
+      readings: { "ami": "abhiyog kôrechilām", "tui": "abhiyog kôrechili", "tumi": "abhiyog kôrechile", "apni": "abhiyog kôrechilen", "se": "abhiyog kôrechilo", "tini": "abhiyog kôrechilen" }
+    - word: "bn-4123"
+      forms: { "ami": "বিচার করেছিলাম", "tui": "বিচার করেছিলি", "tumi": "বিচার করেছিলে", "apni": "বিচার করেছিলেন", "se": "বিচার করেছিল", "tini": "বিচার করেছিলেন" }
+      readings: { "ami": "bicār kôrechilām", "tui": "bicār kôrechili", "tumi": "bicār kôrechile", "apni": "bicār kôrechilen", "se": "bicār kôrechilo", "tini": "bicār kôrechilen" }
+    - word: "bn-4124"
+      forms: { "ami": "শাস্তি দিয়েছিলাম", "tui": "শাস্তি দিয়েছিলি", "tumi": "শাস্তি দিয়েছিলে", "apni": "শাস্তি দিয়েছিলেন", "se": "শাস্তি দিয়েছিল", "tini": "শাস্তি দিয়েছিলেন" }
+      readings: { "ami": "śāsti diyechilām", "tui": "śāsti diyechili", "tumi": "śāsti diyechile", "apni": "śāsti diyechilen", "se": "śāsti diyechilo", "tini": "śāsti diyechilen" }
+    - word: "bn-4125"
+      forms: { "ami": "গ্রেফতার করেছিলাম", "tui": "গ্রেফতার করেছিলি", "tumi": "গ্রেফতার করেছিলে", "apni": "গ্রেফতার করেছিলেন", "se": "গ্রেফতার করেছিল", "tini": "গ্রেফতার করেছিলেন" }
+      readings: { "ami": "grephtār kôrechilām", "tui": "grephtār kôrechili", "tumi": "grephtār kôrechile", "apni": "grephtār kôrechilen", "se": "grephtār kôrechilo", "tini": "grephtār kôrechilen" }
+    - word: "bn-4144"
+      forms: { "ami": "গড়েছিলাম", "tui": "গড়েছিলি", "tumi": "গড়েছিলে", "apni": "গড়েছিলেন", "se": "গড়েছিল", "tini": "গড়েছিলেন" }
+      readings: { "ami": "gôṛechilām", "tui": "gôṛechili", "tumi": "gôṛechile", "apni": "gôṛechilen", "se": "gôṛechilo", "tini": "gôṛechilen" }
+    - word: "bn-4145"
+      forms: { "ami": "মেরেছিলাম", "tui": "মেরেছিলি", "tumi": "মেরেছিলে", "apni": "মেরেছিলেন", "se": "মেরেছিল", "tini": "মেরেছিলেন" }
+      readings: { "ami": "merechilām", "tui": "merechili", "tumi": "merechile", "apni": "merechilen", "se": "merechilo", "tini": "merechilen" }
+    - word: "bn-4146"
+      forms: { "ami": "ছুটেছিলাম", "tui": "ছুটেছিলি", "tumi": "ছুটেছিলে", "apni": "ছুটেছিলেন", "se": "ছুটেছিল", "tini": "ছুটেছিলেন" }
+      readings: { "ami": "chuṭechilām", "tui": "chuṭechili", "tumi": "chuṭechile", "apni": "chuṭechilen", "se": "chuṭechilo", "tini": "chuṭechilen" }
+    - word: "bn-4147"
+      forms: { "ami": "উড়েছিলাম", "tui": "উড়েছিলি", "tumi": "উড়েছিলে", "apni": "উড়েছিলেন", "se": "উড়েছিল", "tini": "উড়েছিলেন" }
+      readings: { "ami": "uṛechilām", "tui": "uṛechili", "tumi": "uṛechile", "apni": "uṛechilen", "se": "uṛechilo", "tini": "uṛechilen" }
+    - word: "bn-4148"
+      forms: { "ami": "ঝেড়েছিলাম", "tui": "ঝেড়েছিলি", "tumi": "ঝেড়েছিলে", "apni": "ঝেড়েছিলেন", "se": "ঝেড়েছিল", "tini": "ঝেড়েছিলেন" }
+      readings: { "ami": "jheṛechilām", "tui": "jheṛechili", "tumi": "jheṛechile", "apni": "jheṛechilen", "se": "jheṛechilo", "tini": "jheṛechilen" }
+    - word: "bn-4149"
+      forms: { "ami": "মেপেছিলাম", "tui": "মেপেছিলি", "tumi": "মেপেছিলে", "apni": "মেপেছিলেন", "se": "মেপেছিল", "tini": "মেপেছিলেন" }
+      readings: { "ami": "mepechilām", "tui": "mepechili", "tumi": "mepechile", "apni": "mepechilen", "se": "mepechilo", "tini": "mepechilen" }
+    - word: "bn-4150"
+      forms: { "ami": "ছিঁড়েছিলাম", "tui": "ছিঁড়েছিলি", "tumi": "ছিঁড়েছিলে", "apni": "ছিঁড়েছিলেন", "se": "ছিঁড়েছিল", "tini": "ছিঁড়েছিলেন" }
+      readings: { "ami": "chim̐ṛechilām", "tui": "chim̐ṛechili", "tumi": "chim̐ṛechile", "apni": "chim̐ṛechilen", "se": "chim̐ṛechilo", "tini": "chim̐ṛechilen" }
+    - word: "bn-4151"
+      forms: { "ami": "বেছেছিলাম", "tui": "বেছেছিলি", "tumi": "বেছেছিলে", "apni": "বেছেছিলেন", "se": "বেছেছিল", "tini": "বেছেছিলেন" }
+      readings: { "ami": "bechechilām", "tui": "bechechili", "tumi": "bechechile", "apni": "bechechilen", "se": "bechechilo", "tini": "bechechilen" }
+    - word: "bn-4152"
+      forms: { "ami": "চেখেছিলাম", "tui": "চেখেছিলি", "tumi": "চেখেছিলে", "apni": "চেখেছিলেন", "se": "চেখেছিল", "tini": "চেখেছিলেন" }
+      readings: { "ami": "cekhechilām", "tui": "cekhechili", "tumi": "cekhechile", "apni": "cekhechilen", "se": "cekhechilo", "tini": "cekhechilen" }
+    - word: "bn-4153"
+      forms: { "ami": "শুঁকেছিলাম", "tui": "শুঁকেছিলি", "tumi": "শুঁকেছিলে", "apni": "শুঁকেছিলেন", "se": "শুঁকেছিল", "tini": "শুঁকেছিলেন" }
+      readings: { "ami": "śum̐kechilām", "tui": "śum̐kechili", "tumi": "śum̐kechile", "apni": "śum̐kechilen", "se": "śum̐kechilo", "tini": "śum̐kechilen" }
+    - word: "bn-4154"
+      forms: { "ami": "ভেসেছিলাম", "tui": "ভেসেছিলি", "tumi": "ভেসেছিলে", "apni": "ভেসেছিলেন", "se": "ভেসেছিল", "tini": "ভেসেছিলেন" }
+      readings: { "ami": "bhesechilām", "tui": "bhesechili", "tumi": "bhesechile", "apni": "bhesechilen", "se": "bhesechilo", "tini": "bhesechilen" }
+    - word: "bn-4155"
+      forms: { "ami": "চেটেছিলাম", "tui": "চেটেছিলি", "tumi": "চেটেছিলে", "apni": "চেটেছিলেন", "se": "চেটেছিল", "tini": "চেটেছিলেন" }
+      readings: { "ami": "ceṭechilām", "tui": "ceṭechili", "tumi": "ceṭechile", "apni": "ceṭechilen", "se": "ceṭechilo", "tini": "ceṭechilen" }
+    - word: "bn-4156"
+      forms: { "ami": "ঘষেছিলাম", "tui": "ঘষেছিলি", "tumi": "ঘষেছিলে", "apni": "ঘষেছিলেন", "se": "ঘষেছিল", "tini": "ঘষেছিলেন" }
+      readings: { "ami": "ghôśechilām", "tui": "ghôśechili", "tumi": "ghôśechile", "apni": "ghôśechilen", "se": "ghôśechilo", "tini": "ghôśechilen" }
+    - word: "bn-4157"
+      forms: { "ami": "সেজেছিলাম", "tui": "সেজেছিলি", "tumi": "সেজেছিলে", "apni": "সেজেছিলেন", "se": "সেজেছিল", "tini": "সেজেছিলেন" }
+      readings: { "ami": "sejechilām", "tui": "sejechili", "tumi": "sejechile", "apni": "sejechilen", "se": "sejechilo", "tini": "sejechilen" }
+    - word: "bn-4158"
+      forms: { "ami": "খুলেছিলাম", "tui": "খুলেছিলি", "tumi": "খুলেছিলে", "apni": "খুলেছিলেন", "se": "খুলেছিল", "tini": "খুলেছিলেন" }
+      readings: { "ami": "khulechilām", "tui": "khulechili", "tumi": "khulechile", "apni": "khulechilen", "se": "khulechilo", "tini": "khulechilen" }
+    - word: "bn-4159"
+      forms: { "ami": "চড়েছিলাম", "tui": "চড়েছিলি", "tumi": "চড়েছিলে", "apni": "চড়েছিলেন", "se": "চড়েছিল", "tini": "চড়েছিলেন" }
+      readings: { "ami": "côṛechilām", "tui": "côṛechili", "tumi": "côṛechile", "apni": "côṛechilen", "se": "côṛechilo", "tini": "côṛechilen" }
+    - word: "bn-4160"
+      forms: { "ami": "বেঁচেছিলাম", "tui": "বেঁচেছিলি", "tumi": "বেঁচেছিলে", "apni": "বেঁচেছিলেন", "se": "বেঁচেছিল", "tini": "বেঁচেছিলেন" }
+      readings: { "ami": "bem̐cechilām", "tui": "bem̐cechili", "tumi": "bem̐cechile", "apni": "bem̐cechilen", "se": "bem̐cechilo", "tini": "bem̐cechilen" }
+    - word: "bn-4161"
+      forms: { "ami": "মরেছিলাম", "tui": "মরেছিলি", "tumi": "মরেছিলে", "apni": "মরেছিলেন", "se": "মরেছিল", "tini": "মরেছিলেন" }
+      readings: { "ami": "môrechilām", "tui": "môrechili", "tumi": "môrechile", "apni": "môrechilen", "se": "môrechilo", "tini": "môrechilen" }
+    - word: "bn-4162"
+      forms: { "ami": "ডুবেছিলাম", "tui": "ডুবেছিলি", "tumi": "ডুবেছিলে", "apni": "ডুবেছিলেন", "se": "ডুবেছিল", "tini": "ডুবেছিলেন" }
+      readings: { "ami": "ḍubechilām", "tui": "ḍubechili", "tumi": "ḍubechile", "apni": "ḍubechilen", "se": "ḍubechilo", "tini": "ḍubechilen" }
+    - word: "bn-4163"
+      forms: { "ami": "ঝুলেছিলাম", "tui": "ঝুলেছিলি", "tumi": "ঝুলেছিলে", "apni": "ঝুলেছিলেন", "se": "ঝুলেছিল", "tini": "ঝুলেছিলেন" }
+      readings: { "ami": "jhulechilām", "tui": "jhulechili", "tumi": "jhulechile", "apni": "jhulechilen", "se": "jhulechilo", "tini": "jhulechilen" }
+    - word: "bn-4164"
+      forms: { "ami": "হেঁকেছিলাম", "tui": "হেঁকেছিলি", "tumi": "হেঁকেছিলে", "apni": "হেঁকেছিলেন", "se": "হেঁকেছিল", "tini": "হেঁকেছিলেন" }
+      readings: { "ami": "hem̐kechilām", "tui": "hem̐kechili", "tumi": "hem̐kechile", "apni": "hem̐kechilen", "se": "hem̐kechilo", "tini": "hem̐kechilen" }
+    - word: "bn-4165"
+      forms: { "ami": "ফুলেছিলাম", "tui": "ফুলেছিলি", "tumi": "ফুলেছিলে", "apni": "ফুলেছিলেন", "se": "ফুলেছিল", "tini": "ফুলেছিলেন" }
+      readings: { "ami": "phulechilām", "tui": "phulechili", "tumi": "phulechile", "apni": "phulechilen", "se": "phulechilo", "tini": "phulechilen" }
+    - word: "bn-4166"
+      forms: { "ami": "ঘুরেছিলাম", "tui": "ঘুরেছিলি", "tumi": "ঘুরেছিলে", "apni": "ঘুরেছিলেন", "se": "ঘুরেছিল", "tini": "ঘুরেছিলেন" }
+      readings: { "ami": "ghurechilām", "tui": "ghurechili", "tumi": "ghurechile", "apni": "ghurechilen", "se": "ghurechilo", "tini": "ghurechilen" }
+    - word: "bn-4167"
+      forms: { "ami": "চেপেছিলাম", "tui": "চেপেছিলি", "tumi": "চেপেছিলে", "apni": "চেপেছিলেন", "se": "চেপেছিল", "tini": "চেপেছিলেন" }
+      readings: { "ami": "cepechilām", "tui": "cepechili", "tumi": "cepechile", "apni": "cepechilen", "se": "cepechilo", "tini": "cepechilen" }
+    - word: "bn-4168"
+      forms: { "ami": "ছোঁড়েছিলাম", "tui": "ছোঁড়েছিলি", "tumi": "ছোঁড়েছিলে", "apni": "ছোঁড়েছিলেন", "se": "ছোঁড়েছিল", "tini": "ছোঁড়েছিলেন" }
+      readings: { "ami": "chom̐ṛechilām", "tui": "chom̐ṛechili", "tumi": "chom̐ṛechile", "apni": "chom̐ṛechilen", "se": "chom̐ṛechilo", "tini": "chom̐ṛechilen" }
+    - word: "bn-4169"
+      forms: { "ami": "পোঁছেছিলাম", "tui": "পোঁছেছিলি", "tumi": "পোঁছেছিলে", "apni": "পোঁছেছিলেন", "se": "পোঁছেছিল", "tini": "পোঁছেছিলেন" }
+      readings: { "ami": "pom̐chechilām", "tui": "pom̐chechili", "tumi": "pom̐chechile", "apni": "pom̐chechilen", "se": "pom̐chechilo", "tini": "pom̐chechilen" }
+    - word: "bn-4170"
+      forms: { "ami": "মোড়েছিলাম", "tui": "মোড়েছিলি", "tumi": "মোড়েছিলে", "apni": "মোড়েছিলেন", "se": "মোড়েছিল", "tini": "মোড়েছিলেন" }
+      readings: { "ami": "moṛechilām", "tui": "moṛechili", "tumi": "moṛechile", "apni": "moṛechilen", "se": "moṛechilo", "tini": "moṛechilen" }
+    - word: "bn-4171"
+      forms: { "ami": "ঘুমিয়েছিলাম", "tui": "ঘুমিয়েছিলি", "tumi": "ঘুমিয়েছিলে", "apni": "ঘুমিয়েছিলেন", "se": "ঘুমিয়েছিল", "tini": "ঘুমিয়েছিলেন" }
+      readings: { "ami": "ghumiyechilām", "tui": "ghumiyechili", "tumi": "ghumiyechile", "apni": "ghumiyechilen", "se": "ghumiyechilo", "tini": "ghumiyechilen" }
+    - word: "bn-4172"
+      forms: { "ami": "বসিয়েছিলাম", "tui": "বসিয়েছিলি", "tumi": "বসিয়েছিলে", "apni": "বসিয়েছিলেন", "se": "বসিয়েছিল", "tini": "বসিয়েছিলেন" }
+      readings: { "ami": "bosiyechilām", "tui": "bosiyechili", "tumi": "bosiyechile", "apni": "bosiyechilen", "se": "bosiyechilo", "tini": "bosiyechilen" }
+    - word: "bn-4173"
+      forms: { "ami": "লিখিয়েছিলাম", "tui": "লিখিয়েছিলি", "tumi": "লিখিয়েছিলে", "apni": "লিখিয়েছিলেন", "se": "লিখিয়েছিল", "tini": "লিখিয়েছিলেন" }
+      readings: { "ami": "likhiyechilām", "tui": "likhiyechili", "tumi": "likhiyechile", "apni": "likhiyechilen", "se": "likhiyechilo", "tini": "likhiyechilen" }
+    - word: "bn-4174"
+      forms: { "ami": "সরিয়েছিলাম", "tui": "সরিয়েছিলি", "tumi": "সরিয়েছিলে", "apni": "সরিয়েছিলেন", "se": "সরিয়েছিল", "tini": "সরিয়েছিলেন" }
+      readings: { "ami": "soriyechilām", "tui": "soriyechili", "tumi": "soriyechile", "apni": "soriyechilen", "se": "soriyechilo", "tini": "soriyechilen" }
+    - word: "bn-4175"
+      forms: { "ami": "জড়িয়েছিলাম", "tui": "জড়িয়েছিলি", "tumi": "জড়িয়েছিলে", "apni": "জড়িয়েছিলেন", "se": "জড়িয়েছিল", "tini": "জড়িয়েছিলেন" }
+      readings: { "ami": "joṛiyechilām", "tui": "joṛiyechili", "tumi": "joṛiyechile", "apni": "joṛiyechilen", "se": "joṛiyechilo", "tini": "joṛiyechilen" }
+    - word: "bn-4176"
+      forms: { "ami": "কুড়িয়েছিলাম", "tui": "কুড়িয়েছিলি", "tumi": "কুড়িয়েছিলে", "apni": "কুড়িয়েছিলেন", "se": "কুড়িয়েছিল", "tini": "কুড়িয়েছিলেন" }
+      readings: { "ami": "kuṛiyechilām", "tui": "kuṛiyechili", "tumi": "kuṛiyechile", "apni": "kuṛiyechilen", "se": "kuṛiyechilo", "tini": "kuṛiyechilen" }
+    - word: "bn-4177"
+      forms: { "ami": "তাড়িয়েছিলাম", "tui": "তাড়িয়েছিলি", "tumi": "তাড়িয়েছিলে", "apni": "তাড়িয়েছিলেন", "se": "তাড়িয়েছিল", "tini": "তাড়িয়েছিলেন" }
+      readings: { "ami": "tāṛiyechilām", "tui": "tāṛiyechili", "tumi": "tāṛiyechile", "apni": "tāṛiyechilen", "se": "tāṛiyechilo", "tini": "tāṛiyechilen" }
+    - word: "bn-4178"
+      forms: { "ami": "কামড়িয়েছিলাম", "tui": "কামড়িয়েছিলি", "tumi": "কামড়িয়েছিলে", "apni": "কামড়িয়েছিলেন", "se": "কামড়িয়েছিল", "tini": "কামড়িয়েছিলেন" }
+      readings: { "ami": "kāmoṛiyechilām", "tui": "kāmoṛiyechili", "tumi": "kāmoṛiyechile", "apni": "kāmoṛiyechilen", "se": "kāmoṛiyechilo", "tini": "kāmoṛiyechilen" }
+    - word: "bn-4179"
+      forms: { "ami": "কাঁপিয়েছিলাম", "tui": "কাঁপিয়েছিলি", "tumi": "কাঁপিয়েছিলে", "apni": "কাঁপিয়েছিলেন", "se": "কাঁপিয়েছিল", "tini": "কাঁপিয়েছিলেন" }
+      readings: { "ami": "kām̐piyechilām", "tui": "kām̐piyechili", "tumi": "kām̐piyechile", "apni": "kām̐piyechilen", "se": "kām̐piyechilo", "tini": "kām̐piyechilen" }
+    - word: "bn-4180"
+      forms: { "ami": "চমকিয়েছিলাম", "tui": "চমকিয়েছিলি", "tumi": "চমকিয়েছিলে", "apni": "চমকিয়েছিলেন", "se": "চমকিয়েছিল", "tini": "চমকিয়েছিলেন" }
+      readings: { "ami": "cômokiyechilām", "tui": "cômokiyechili", "tumi": "cômokiyechile", "apni": "cômokiyechilen", "se": "cômokiyechilo", "tini": "cômokiyechilen" }
+    - word: "bn-4181"
+      forms: { "ami": "হাসিয়েছিলাম", "tui": "হাসিয়েছিলি", "tumi": "হাসিয়েছিলে", "apni": "হাসিয়েছিলেন", "se": "হাসিয়েছিল", "tini": "হাসিয়েছিলেন" }
+      readings: { "ami": "hāsiyechilām", "tui": "hāsiyechili", "tumi": "hāsiyechile", "apni": "hāsiyechilen", "se": "hāsiyechilo", "tini": "hāsiyechilen" }
+    - word: "bn-4182"
+      forms: { "ami": "কাঁদিয়েছিলাম", "tui": "কাঁদিয়েছিলি", "tumi": "কাঁদিয়েছিলে", "apni": "কাঁদিয়েছিলেন", "se": "কাঁদিয়েছিল", "tini": "কাঁদিয়েছিলেন" }
+      readings: { "ami": "kām̐diyechilām", "tui": "kām̐diyechili", "tumi": "kām̐diyechile", "apni": "kām̐diyechilen", "se": "kām̐diyechilo", "tini": "kām̐diyechilen" }
+    - word: "bn-4183"
+      forms: { "ami": "রাগিয়েছিলাম", "tui": "রাগিয়েছিলি", "tumi": "রাগিয়েছিলে", "apni": "রাগিয়েছিলেন", "se": "রাগিয়েছিল", "tini": "রাগিয়েছিলেন" }
+      readings: { "ami": "rāgiyechilām", "tui": "rāgiyechili", "tumi": "rāgiyechile", "apni": "rāgiyechilen", "se": "rāgiyechilo", "tini": "rāgiyechilen" }
+    - word: "bn-4184"
+      forms: { "ami": "নামিয়েছিলাম", "tui": "নামিয়েছিলি", "tumi": "নামিয়েছিলে", "apni": "নামিয়েছিলেন", "se": "নামিয়েছিল", "tini": "নামিয়েছিলেন" }
+      readings: { "ami": "nāmiyechilām", "tui": "nāmiyechili", "tumi": "nāmiyechile", "apni": "nāmiyechilen", "se": "nāmiyechilo", "tini": "nāmiyechilen" }
+    - word: "bn-4185"
+      forms: { "ami": "উঠিয়েছিলাম", "tui": "উঠিয়েছিলি", "tumi": "উঠিয়েছিলে", "apni": "উঠিয়েছিলেন", "se": "উঠিয়েছিল", "tini": "উঠিয়েছিলেন" }
+      readings: { "ami": "uṭhiyechilām", "tui": "uṭhiyechili", "tumi": "uṭhiyechile", "apni": "uṭhiyechilen", "se": "uṭhiyechilo", "tini": "uṭhiyechilen" }
+    - word: "bn-4186"
+      forms: { "ami": "লুকিয়েছিলাম", "tui": "লুকিয়েছিলি", "tumi": "লুকিয়েছিলে", "apni": "লুকিয়েছিলেন", "se": "লুকিয়েছিল", "tini": "লুকিয়েছিলেন" }
+      readings: { "ami": "lukiyechilām", "tui": "lukiyechili", "tumi": "lukiyechile", "apni": "lukiyechilen", "se": "lukiyechilo", "tini": "lukiyechilen" }
+    - word: "bn-4187"
+      forms: { "ami": "বাঁচিয়েছিলাম", "tui": "বাঁচিয়েছিলি", "tumi": "বাঁচিয়েছিলে", "apni": "বাঁচিয়েছিলেন", "se": "বাঁচিয়েছিল", "tini": "বাঁচিয়েছিলেন" }
+      readings: { "ami": "bām̐ciyechilām", "tui": "bām̐ciyechili", "tumi": "bām̐ciyechile", "apni": "bām̐ciyechilen", "se": "bām̐ciyechilo", "tini": "bām̐ciyechilen" }
+    - word: "bn-4188"
+      forms: { "ami": "ধমকিয়েছিলাম", "tui": "ধমকিয়েছিলি", "tumi": "ধমকিয়েছিলে", "apni": "ধমকিয়েছিলেন", "se": "ধমকিয়েছিল", "tini": "ধমকিয়েছিলেন" }
+      readings: { "ami": "dhômokiyechilām", "tui": "dhômokiyechili", "tumi": "dhômokiyechile", "apni": "dhômokiyechilen", "se": "dhômokiyechilo", "tini": "dhômokiyechilen" }
+    - word: "bn-4189"
+      forms: { "ami": "জাগিয়েছিলাম", "tui": "জাগিয়েছিলি", "tumi": "জাগিয়েছিলে", "apni": "জাগিয়েছিলেন", "se": "জাগিয়েছিল", "tini": "জাগিয়েছিলেন" }
+      readings: { "ami": "jāgiyechilām", "tui": "jāgiyechili", "tumi": "jāgiyechile", "apni": "jāgiyechilen", "se": "jāgiyechilo", "tini": "jāgiyechilen" }
+    - word: "bn-4190"
+      forms: { "ami": "নাচিয়েছিলাম", "tui": "নাচিয়েছিলি", "tumi": "নাচিয়েছিলে", "apni": "নাচিয়েছিলেন", "se": "নাচিয়েছিল", "tini": "নাচিয়েছিলেন" }
+      readings: { "ami": "nāciyechilām", "tui": "nāciyechili", "tumi": "nāciyechile", "apni": "nāciyechilen", "se": "nāciyechilo", "tini": "nāciyechilen" }
+    - word: "bn-4191"
+      forms: { "ami": "ভাবিয়েছিলাম", "tui": "ভাবিয়েছিলি", "tumi": "ভাবিয়েছিলে", "apni": "ভাবিয়েছিলেন", "se": "ভাবিয়েছিল", "tini": "ভাবিয়েছিলেন" }
+      readings: { "ami": "bhābiyechilām", "tui": "bhābiyechili", "tumi": "bhābiyechile", "apni": "bhābiyechilen", "se": "bhābiyechilo", "tini": "bhābiyechilen" }
+    - word: "bn-4192"
+      forms: { "ami": "ঠেকিয়েছিলাম", "tui": "ঠেকিয়েছিলি", "tumi": "ঠেকিয়েছিলে", "apni": "ঠেকিয়েছিলেন", "se": "ঠেকিয়েছিল", "tini": "ঠেকিয়েছিলেন" }
+      readings: { "ami": "ṭhekiyechilām", "tui": "ṭhekiyechili", "tumi": "ṭhekiyechile", "apni": "ṭhekiyechilen", "se": "ṭhekiyechilo", "tini": "ṭhekiyechilen" }
+    - word: "bn-4193"
+      forms: { "ami": "কাটিয়েছিলাম", "tui": "কাটিয়েছিলি", "tumi": "কাটিয়েছিলে", "apni": "কাটিয়েছিলেন", "se": "কাটিয়েছিল", "tini": "কাটিয়েছিলেন" }
+      readings: { "ami": "kāṭiyechilām", "tui": "kāṭiyechili", "tumi": "kāṭiyechile", "apni": "kāṭiyechilen", "se": "kāṭiyechilo", "tini": "kāṭiyechilen" }
+    - word: "bn-4194"
+      forms: { "ami": "শুইয়েছিলাম", "tui": "শুইয়েছিলি", "tumi": "শুইয়েছিলে", "apni": "শুইয়েছিলেন", "se": "শুইয়েছিল", "tini": "শুইয়েছিলেন" }
+      readings: { "ami": "śuiyechilām", "tui": "śuiyechili", "tumi": "śuiyechile", "apni": "śuiyechilen", "se": "śuiyechilo", "tini": "śuiyechilen" }
+    - word: "bn-4195"
+      forms: { "ami": "ঝরিয়েছিলাম", "tui": "ঝরিয়েছিলি", "tumi": "ঝরিয়েছিলে", "apni": "ঝরিয়েছিলেন", "se": "ঝরিয়েছিল", "tini": "ঝরিয়েছিলেন" }
+      readings: { "ami": "jhoriyechilām", "tui": "jhoriyechili", "tumi": "jhoriyechile", "apni": "jhoriyechilen", "se": "jhoriyechilo", "tini": "jhoriyechilen" }
+    - word: "bn-4196"
+      forms: { "ami": "পিছলিয়েছিলাম", "tui": "পিছলিয়েছিলি", "tumi": "পিছলিয়েছিলে", "apni": "পিছলিয়েছিলেন", "se": "পিছলিয়েছিল", "tini": "পিছলিয়েছিলেন" }
+      readings: { "ami": "picholiyechilām", "tui": "picholiyechili", "tumi": "picholiyechile", "apni": "picholiyechilen", "se": "picholiyechilo", "tini": "picholiyechilen" }
+    - word: "bn-4197"
+      forms: { "ami": "খালি করেছিলাম", "tui": "খালি করেছিলি", "tumi": "খালি করেছিলে", "apni": "খালি করেছিলেন", "se": "খালি করেছিল", "tini": "খালি করেছিলেন" }
+      readings: { "ami": "khāli kôrechilām", "tui": "khāli kôrechili", "tumi": "khāli kôrechile", "apni": "khāli kôrechilen", "se": "khāli kôrechilo", "tini": "khāli kôrechilen" }
+    - word: "bn-4198"
+      forms: { "ami": "ওজন করেছিলাম", "tui": "ওজন করেছিলি", "tumi": "ওজন করেছিলে", "apni": "ওজন করেছিলেন", "se": "ওজন করেছিল", "tini": "ওজন করেছিলেন" }
+      readings: { "ami": "ojon kôrechilām", "tui": "ojon kôrechili", "tumi": "ojon kôrechile", "apni": "ojon kôrechilen", "se": "ojon kôrechilo", "tini": "ojon kôrechilen" }
+    - word: "bn-4199"
+      forms: { "ami": "হিসাব করেছিলাম", "tui": "হিসাব করেছিলি", "tumi": "হিসাব করেছিলে", "apni": "হিসাব করেছিলেন", "se": "হিসাব করেছিল", "tini": "হিসাব করেছিলেন" }
+      readings: { "ami": "hisāb kôrechilām", "tui": "hisāb kôrechili", "tumi": "hisāb kôrechile", "apni": "hisāb kôrechilen", "se": "hisāb kôrechilo", "tini": "hisāb kôrechilen" }
+    - word: "bn-4200"
+      forms: { "ami": "সেলাই করেছিলাম", "tui": "সেলাই করেছিলি", "tumi": "সেলাই করেছিলে", "apni": "সেলাই করেছিলেন", "se": "সেলাই করেছিল", "tini": "সেলাই করেছিলেন" }
+      readings: { "ami": "selāi kôrechilām", "tui": "selāi kôrechili", "tumi": "selāi kôrechile", "apni": "selāi kôrechilen", "se": "selāi kôrechilo", "tini": "selāi kôrechilen" }
+    - word: "bn-4201"
+      forms: { "ami": "সেদ্ধ করেছিলাম", "tui": "সেদ্ধ করেছিলি", "tumi": "সেদ্ধ করেছিলে", "apni": "সেদ্ধ করেছিলেন", "se": "সেদ্ধ করেছিল", "tini": "সেদ্ধ করেছিলেন" }
+      readings: { "ami": "seddh kôrechilām", "tui": "seddh kôrechili", "tumi": "seddh kôrechile", "apni": "seddh kôrechilen", "se": "seddh kôrechilo", "tini": "seddh kôrechilen" }
+    - word: "bn-4202"
+      forms: { "ami": "ঠান্ডা করেছিলাম", "tui": "ঠান্ডা করেছিলি", "tumi": "ঠান্ডা করেছিলে", "apni": "ঠান্ডা করেছিলেন", "se": "ঠান্ডা করেছিল", "tini": "ঠান্ডা করেছিলেন" }
+      readings: { "ami": "ṭhānḍā kôrechilām", "tui": "ṭhānḍā kôrechili", "tumi": "ṭhānḍā kôrechile", "apni": "ṭhānḍā kôrechilen", "se": "ṭhānḍā kôrechilo", "tini": "ṭhānḍā kôrechilen" }
+    - word: "bn-4203"
+      forms: { "ami": "ভরসা করেছিলাম", "tui": "ভরসা করেছিলি", "tumi": "ভরসা করেছিলে", "apni": "ভরসা করেছিলেন", "se": "ভরসা করেছিল", "tini": "ভরসা করেছিলেন" }
+      readings: { "ami": "bhôrosā kôrechilām", "tui": "bhôrosā kôrechili", "tumi": "bhôrosā kôrechile", "apni": "bhôrosā kôrechilen", "se": "bhôrosā kôrechilo", "tini": "bhôrosā kôrechilen" }
+    - word: "bn-4204"
+      forms: { "ami": "দাবি করেছিলাম", "tui": "দাবি করেছিলি", "tumi": "দাবি করেছিলে", "apni": "দাবি করেছিলেন", "se": "দাবি করেছিল", "tini": "দাবি করেছিলেন" }
+      readings: { "ami": "dābi kôrechilām", "tui": "dābi kôrechili", "tumi": "dābi kôrechile", "apni": "dābi kôrechilen", "se": "dābi kôrechilo", "tini": "dābi kôrechilen" }
+    - word: "bn-4205"
+      forms: { "ami": "প্রশ্ন করেছিলাম", "tui": "প্রশ্ন করেছিলি", "tumi": "প্রশ্ন করেছিলে", "apni": "প্রশ্ন করেছিলেন", "se": "প্রশ্ন করেছিল", "tini": "প্রশ্ন করেছিলেন" }
+      readings: { "ami": "prôśn kôrechilām", "tui": "prôśn kôrechili", "tumi": "prôśn kôrechile", "apni": "prôśn kôrechilen", "se": "prôśn kôrechilo", "tini": "prôśn kôrechilen" }
+    - word: "bn-4206"
+      forms: { "ami": "চিৎকার করেছিলাম", "tui": "চিৎকার করেছিলি", "tumi": "চিৎকার করেছিলে", "apni": "চিৎকার করেছিলেন", "se": "চিৎকার করেছিল", "tini": "চিৎকার করেছিলেন" }
+      readings: { "ami": "citkār kôrechilām", "tui": "citkār kôrechili", "tumi": "citkār kôrechile", "apni": "citkār kôrechilen", "se": "citkār kôrechilo", "tini": "citkār kôrechilen" }
+    - word: "bn-4207"
+      forms: { "ami": "ব্যাখ্যা করেছিলাম", "tui": "ব্যাখ্যা করেছিলি", "tumi": "ব্যাখ্যা করেছিলে", "apni": "ব্যাখ্যা করেছিলেন", "se": "ব্যাখ্যা করেছিল", "tini": "ব্যাখ্যা করেছিলেন" }
+      readings: { "ami": "bêkkhā kôrechilām", "tui": "bêkkhā kôrechili", "tumi": "bêkkhā kôrechile", "apni": "bêkkhā kôrechilen", "se": "bêkkhā kôrechilo", "tini": "bêkkhā kôrechilen" }
+    - word: "bn-4208"
+      forms: { "ami": "স্বপ্ন দেখেছিলাম", "tui": "স্বপ্ন দেখেছিলি", "tumi": "স্বপ্ন দেখেছিলে", "apni": "স্বপ্ন দেখেছিলেন", "se": "স্বপ্ন দেখেছিল", "tini": "স্বপ্ন দেখেছিলেন" }
+      readings: { "ami": "sôpno dekhechilām", "tui": "sôpno dekhechili", "tumi": "sôpno dekhechile", "apni": "sôpno dekhechilen", "se": "sôpno dekhechilo", "tini": "sôpno dekhechilen" }
+    - word: "bn-4359"
+      forms: { "ami": "খরচ করেছিলাম", "tui": "খরচ করেছিলি", "tumi": "খরচ করেছিলে", "apni": "খরচ করেছিলেন", "se": "খরচ করেছিল", "tini": "খরচ করেছিলেন" }
+      readings: { "ami": "khôroc kôrechilām", "tui": "khôroc kôrechili", "tumi": "khôroc kôrechile", "apni": "khôroc kôrechilen", "se": "khôroc kôrechilo", "tini": "khôroc kôrechilen" }
+    - word: "bn-4360"
+      forms: { "ami": "সঞ্চয় করেছিলাম", "tui": "সঞ্চয় করেছিলি", "tumi": "সঞ্চয় করেছিলে", "apni": "সঞ্চয় করেছিলেন", "se": "সঞ্চয় করেছিল", "tini": "সঞ্চয় করেছিলেন" }
+      readings: { "ami": "sôncoy kôrechilām", "tui": "sôncoy kôrechili", "tumi": "sôncoy kôrechile", "apni": "sôncoy kôrechilen", "se": "sôncoy kôrechilo", "tini": "sôncoy kôrechilen" }
+    - word: "bn-4361"
+      forms: { "ami": "পরিশোধ করেছিলাম", "tui": "পরিশোধ করেছিলি", "tumi": "পরিশোধ করেছিলে", "apni": "পরিশোধ করেছিলেন", "se": "পরিশোধ করেছিল", "tini": "পরিশোধ করেছিলেন" }
+      readings: { "ami": "poriśodh kôrechilām", "tui": "poriśodh kôrechili", "tumi": "poriśodh kôrechile", "apni": "poriśodh kôrechilen", "se": "poriśodh kôrechilo", "tini": "poriśodh kôrechilen" }
+    - word: "bn-4442"
+      forms: { "ami": "আবৃত্তি করেছিলাম", "tui": "আবৃত্তি করেছিলি", "tumi": "আবৃত্তি করেছিলে", "apni": "আবৃত্তি করেছিলেন", "se": "আবৃত্তি করেছিল", "tini": "আবৃত্তি করেছিলেন" }
+      readings: { "ami": "ābritti kôrechilām", "tui": "ābritti kôrechili", "tumi": "ābritti kôrechile", "apni": "ābritti kôrechilen", "se": "ābritti kôrechilo", "tini": "ābritti kôrechilen" }
+    - word: "bn-4443"
+      forms: { "ami": "মুখস্থ করেছিলাম", "tui": "মুখস্থ করেছিলি", "tumi": "মুখস্থ করেছিলে", "apni": "মুখস্থ করেছিলেন", "se": "মুখস্থ করেছিল", "tini": "মুখস্থ করেছিলেন" }
+      readings: { "ami": "mukhosth kôrechilām", "tui": "mukhosth kôrechili", "tumi": "mukhosth kôrechile", "apni": "mukhosth kôrechilen", "se": "mukhosth kôrechilo", "tini": "mukhosth kôrechilen" }
+    - word: "bn-4444"
+      forms: { "ami": "অনুবাদ করেছিলাম", "tui": "অনুবাদ করেছিলি", "tumi": "অনুবাদ করেছিলে", "apni": "অনুবাদ করেছিলেন", "se": "অনুবাদ করেছিল", "tini": "অনুবাদ করেছিলেন" }
+      readings: { "ami": "ônubād kôrechilām", "tui": "ônubād kôrechili", "tumi": "ônubād kôrechile", "apni": "ônubād kôrechilen", "se": "ônubād kôrechilo", "tini": "ônubād kôrechilen" }
+    - word: "bn-4445"
+      forms: { "ami": "রচনা করেছিলাম", "tui": "রচনা করেছিলি", "tumi": "রচনা করেছিলে", "apni": "রচনা করেছিলেন", "se": "রচনা করেছিল", "tini": "রচনা করেছিলেন" }
+      readings: { "ami": "rôconā kôrechilām", "tui": "rôconā kôrechili", "tumi": "rôconā kôrechile", "apni": "rôconā kôrechilen", "se": "rôconā kôrechilo", "tini": "rôconā kôrechilen" }
+    - word: "bn-4480"
+      forms: { "ami": "জুড়িয়েছিলাম", "tui": "জুড়িয়েছিলি", "tumi": "জুড়িয়েছিলে", "apni": "জুড়িয়েছিলেন", "se": "জুড়িয়েছিল", "tini": "জুড়িয়েছিলেন" }
+      readings: { "ami": "juṛiyechilām", "tui": "juṛiyechili", "tumi": "juṛiyechile", "apni": "juṛiyechilen", "se": "juṛiyechilo", "tini": "juṛiyechilen" }
+    - word: "bn-4481"
+      forms: { "ami": "ভাঙিয়েছিলাম", "tui": "ভাঙিয়েছিলি", "tumi": "ভাঙিয়েছিলে", "apni": "ভাঙিয়েছিলেন", "se": "ভাঙিয়েছিল", "tini": "ভাঙিয়েছিলেন" }
+      readings: { "ami": "bhāṅiyechilām", "tui": "bhāṅiyechili", "tumi": "bhāṅiyechile", "apni": "bhāṅiyechilen", "se": "bhāṅiyechilo", "tini": "bhāṅiyechilen" }
+    - word: "bn-4482"
+      forms: { "ami": "মিলিয়েছিলাম", "tui": "মিলিয়েছিলি", "tumi": "মিলিয়েছিলে", "apni": "মিলিয়েছিলেন", "se": "মিলিয়েছিল", "tini": "মিলিয়েছিলেন" }
+      readings: { "ami": "miliyechilām", "tui": "miliyechili", "tumi": "miliyechile", "apni": "miliyechilen", "se": "miliyechilo", "tini": "miliyechilen" }
+    - word: "bn-4483"
+      forms: { "ami": "ডাকিয়েছিলাম", "tui": "ডাকিয়েছিলি", "tumi": "ডাকিয়েছিলে", "apni": "ডাকিয়েছিলেন", "se": "ডাকিয়েছিল", "tini": "ডাকিয়েছিলেন" }
+      readings: { "ami": "ḍākiyechilām", "tui": "ḍākiyechili", "tumi": "ḍākiyechile", "apni": "ḍākiyechilen", "se": "ḍākiyechilo", "tini": "ḍākiyechilen" }
+    - word: "bn-4484"
+      forms: { "ami": "ফিরিয়েছিলাম", "tui": "ফিরিয়েছিলি", "tumi": "ফিরিয়েছিলে", "apni": "ফিরিয়েছিলেন", "se": "ফিরিয়েছিল", "tini": "ফিরিয়েছিলেন" }
+      readings: { "ami": "phiriyechilām", "tui": "phiriyechili", "tumi": "phiriyechile", "apni": "phiriyechilen", "se": "phiriyechilo", "tini": "phiriyechilen" }
+    - word: "bn-4485"
+      forms: { "ami": "খুলিয়েছিলাম", "tui": "খুলিয়েছিলি", "tumi": "খুলিয়েছিলে", "apni": "খুলিয়েছিলেন", "se": "খুলিয়েছিল", "tini": "খুলিয়েছিলেন" }
+      readings: { "ami": "khuliyechilām", "tui": "khuliyechili", "tumi": "khuliyechile", "apni": "khuliyechilen", "se": "khuliyechilo", "tini": "khuliyechilen" }
+    - word: "bn-4486"
+      forms: { "ami": "বাঁধিয়েছিলাম", "tui": "বাঁধিয়েছিলি", "tumi": "বাঁধিয়েছিলে", "apni": "বাঁধিয়েছিলেন", "se": "বাঁধিয়েছিল", "tini": "বাঁধিয়েছিলেন" }
+      readings: { "ami": "bām̐dhiyechilām", "tui": "bām̐dhiyechili", "tumi": "bām̐dhiyechile", "apni": "bām̐dhiyechilen", "se": "bām̐dhiyechilo", "tini": "bām̐dhiyechilen" }
+    - word: "bn-4487"
+      forms: { "ami": "জমিয়েছিলাম", "tui": "জমিয়েছিলি", "tumi": "জমিয়েছিলে", "apni": "জমিয়েছিলেন", "se": "জমিয়েছিল", "tini": "জমিয়েছিলেন" }
+      readings: { "ami": "jomiyechilām", "tui": "jomiyechili", "tumi": "jomiyechile", "apni": "jomiyechilen", "se": "jomiyechilo", "tini": "jomiyechilen" }
+    - word: "bn-4488"
+      forms: { "ami": "ঢুকিয়েছিলাম", "tui": "ঢুকিয়েছিলি", "tumi": "ঢুকিয়েছিলে", "apni": "ঢুকিয়েছিলেন", "se": "ঢুকিয়েছিল", "tini": "ঢুকিয়েছিলেন" }
+      readings: { "ami": "ḍhukiyechilām", "tui": "ḍhukiyechili", "tumi": "ḍhukiyechile", "apni": "ḍhukiyechilen", "se": "ḍhukiyechilo", "tini": "ḍhukiyechilen" }
+    - word: "bn-4489"
+      forms: { "ami": "ঝাড়িয়েছিলাম", "tui": "ঝাড়িয়েছিলি", "tumi": "ঝাড়িয়েছিলে", "apni": "ঝাড়িয়েছিলেন", "se": "ঝাড়িয়েছিল", "tini": "ঝাড়িয়েছিলেন" }
+      readings: { "ami": "jhāṛiyechilām", "tui": "jhāṛiyechili", "tumi": "jhāṛiyechile", "apni": "jhāṛiyechilen", "se": "jhāṛiyechilo", "tini": "jhāṛiyechilen" }
+    - word: "bn-4490"
+      forms: { "ami": "মাখিয়েছিলাম", "tui": "মাখিয়েছিলি", "tumi": "মাখিয়েছিলে", "apni": "মাখিয়েছিলেন", "se": "মাখিয়েছিল", "tini": "মাখিয়েছিলেন" }
+      readings: { "ami": "mākhiyechilām", "tui": "mākhiyechili", "tumi": "mākhiyechile", "apni": "mākhiyechilen", "se": "mākhiyechilo", "tini": "mākhiyechilen" }
+    - word: "bn-4491"
+      forms: { "ami": "রাঁধিয়েছিলাম", "tui": "রাঁধিয়েছিলি", "tumi": "রাঁধিয়েছিলে", "apni": "রাঁধিয়েছিলেন", "se": "রাঁধিয়েছিল", "tini": "রাঁধিয়েছিলেন" }
+      readings: { "ami": "rām̐dhiyechilām", "tui": "rām̐dhiyechili", "tumi": "rām̐dhiyechile", "apni": "rām̐dhiyechilen", "se": "rām̐dhiyechilo", "tini": "rām̐dhiyechilen" }
+    - word: "bn-4492"
+      forms: { "ami": "ধরিয়েছিলাম", "tui": "ধরিয়েছিলি", "tumi": "ধরিয়েছিলে", "apni": "ধরিয়েছিলেন", "se": "ধরিয়েছিল", "tini": "ধরিয়েছিলেন" }
+      readings: { "ami": "dhoriyechilām", "tui": "dhoriyechili", "tumi": "dhoriyechile", "apni": "dhoriyechilen", "se": "dhoriyechilo", "tini": "dhoriyechilen" }
+    - word: "bn-4493"
+      forms: { "ami": "ছাড়িয়েছিলাম", "tui": "ছাড়িয়েছিলি", "tumi": "ছাড়িয়েছিলে", "apni": "ছাড়িয়েছিলেন", "se": "ছাড়িয়েছিল", "tini": "ছাড়িয়েছিলেন" }
+      readings: { "ami": "chāṛiyechilām", "tui": "chāṛiyechili", "tumi": "chāṛiyechile", "apni": "chāṛiyechilen", "se": "chāṛiyechilo", "tini": "chāṛiyechilen" }
+    - word: "bn-4494"
+      forms: { "ami": "সরেছিলাম", "tui": "সরেছিলি", "tumi": "সরেছিলে", "apni": "সরেছিলেন", "se": "সরেছিল", "tini": "সরেছিলেন" }
+      readings: { "ami": "sôrechilām", "tui": "sôrechili", "tumi": "sôrechile", "apni": "sôrechilen", "se": "sôrechilo", "tini": "sôrechilen" }
+    - word: "bn-4495"
+      forms: { "ami": "আলোচনা করেছিলাম", "tui": "আলোচনা করেছিলি", "tumi": "আলোচনা করেছিলে", "apni": "আলোচনা করেছিলেন", "se": "আলোচনা করেছিল", "tini": "আলোচনা করেছিলেন" }
+      readings: { "ami": "āloconā kôrechilām", "tui": "āloconā kôrechili", "tumi": "āloconā kôrechile", "apni": "āloconā kôrechilen", "se": "āloconā kôrechilo", "tini": "āloconā kôrechilen" }
+    - word: "bn-4496"
+      forms: { "ami": "পরীক্ষা করেছিলাম", "tui": "পরীক্ষা করেছিলি", "tumi": "পরীক্ষা করেছিলে", "apni": "পরীক্ষা করেছিলেন", "se": "পরীক্ষা করেছিল", "tini": "পরীক্ষা করেছিলেন" }
+      readings: { "ami": "porikkhā kôrechilām", "tui": "porikkhā kôrechili", "tumi": "porikkhā kôrechile", "apni": "porikkhā kôrechilen", "se": "porikkhā kôrechilo", "tini": "porikkhā kôrechilen" }
+    - word: "bn-4497"
+      forms: { "ami": "যাচাই করেছিলাম", "tui": "যাচাই করেছিলি", "tumi": "যাচাই করেছিলে", "apni": "যাচাই করেছিলেন", "se": "যাচাই করেছিল", "tini": "যাচাই করেছিলেন" }
+      readings: { "ami": "jācāi kôrechilām", "tui": "jācāi kôrechili", "tumi": "jācāi kôrechile", "apni": "jācāi kôrechilen", "se": "jācāi kôrechilo", "tini": "jācāi kôrechilen" }
+    - word: "bn-4498"
+      forms: { "ami": "প্রস্তুত করেছিলাম", "tui": "প্রস্তুত করেছিলি", "tumi": "প্রস্তুত করেছিলে", "apni": "প্রস্তুত করেছিলেন", "se": "প্রস্তুত করেছিল", "tini": "প্রস্তুত করেছিলেন" }
+      readings: { "ami": "prostut kôrechilām", "tui": "prostut kôrechili", "tumi": "prostut kôrechile", "apni": "prostut kôrechilen", "se": "prostut kôrechilo", "tini": "prostut kôrechilen" }
+    - word: "bn-4499"
+      forms: { "ami": "পরিকল্পনা করেছিলাম", "tui": "পরিকল্পনা করেছিলি", "tumi": "পরিকল্পনা করেছিলে", "apni": "পরিকল্পনা করেছিলেন", "se": "পরিকল্পনা করেছিল", "tini": "পরিকল্পনা করেছিলেন" }
+      readings: { "ami": "porikolponā kôrechilām", "tui": "porikolponā kôrechili", "tumi": "porikolponā kôrechile", "apni": "porikolponā kôrechilen", "se": "porikolponā kôrechilo", "tini": "porikolponā kôrechilen" }
+    - word: "bn-4500"
+      forms: { "ami": "অনুশীলন করেছিলাম", "tui": "অনুশীলন করেছিলি", "tumi": "অনুশীলন করেছিলে", "apni": "অনুশীলন করেছিলেন", "se": "অনুশীলন করেছিল", "tini": "অনুশীলন করেছিলেন" }
+      readings: { "ami": "ônuśilon kôrechilām", "tui": "ônuśilon kôrechili", "tumi": "ônuśilon kôrechile", "apni": "ônuśilon kôrechilen", "se": "ônuśilon kôrechilo", "tini": "ônuśilon kôrechilen" }
+    - word: "bn-4501"
+      forms: { "ami": "সম্পন্ন করেছিলাম", "tui": "সম্পন্ন করেছিলি", "tumi": "সম্পন্ন করেছিলে", "apni": "সম্পন্ন করেছিলেন", "se": "সম্পন্ন করেছিল", "tini": "সম্পন্ন করেছিলেন" }
+      readings: { "ami": "sômponn kôrechilām", "tui": "sômponn kôrechili", "tumi": "sômponn kôrechile", "apni": "sômponn kôrechilen", "se": "sômponn kôrechilo", "tini": "sômponn kôrechilen" }
+    - word: "bn-4502"
+      forms: { "ami": "নির্বাচন করেছিলাম", "tui": "নির্বাচন করেছিলি", "tumi": "নির্বাচন করেছিলে", "apni": "নির্বাচন করেছিলেন", "se": "নির্বাচন করেছিল", "tini": "নির্বাচন করেছিলেন" }
+      readings: { "ami": "nirrācon kôrechilām", "tui": "nirrācon kôrechili", "tumi": "nirrācon kôrechile", "apni": "nirrācon kôrechilen", "se": "nirrācon kôrechilo", "tini": "nirrācon kôrechilen" }
+    - word: "bn-4503"
+      forms: { "ami": "মূল্যায়ন করেছিলাম", "tui": "মূল্যায়ন করেছিলি", "tumi": "মূল্যায়ন করেছিলে", "apni": "মূল্যায়ন করেছিলেন", "se": "মূল্যায়ন করেছিল", "tini": "মূল্যায়ন করেছিলেন" }
+      readings: { "ami": "mullāyon kôrechilām", "tui": "mullāyon kôrechili", "tumi": "mullāyon kôrechile", "apni": "mullāyon kôrechilen", "se": "mullāyon kôrechilo", "tini": "mullāyon kôrechilen" }
+    - word: "bn-4504"
+      forms: { "ami": "সমাধান করেছিলাম", "tui": "সমাধান করেছিলি", "tumi": "সমাধান করেছিলে", "apni": "সমাধান করেছিলেন", "se": "সমাধান করেছিল", "tini": "সমাধান করেছিলেন" }
+      readings: { "ami": "sômādhān kôrechilām", "tui": "sômādhān kôrechili", "tumi": "sômādhān kôrechile", "apni": "sômādhān kôrechilen", "se": "sômādhān kôrechilo", "tini": "sômādhān kôrechilen" }
+    - word: "bn-4505"
+      forms: { "ami": "গ্রহণ করেছিলাম", "tui": "গ্রহণ করেছিলি", "tumi": "গ্রহণ করেছিলে", "apni": "গ্রহণ করেছিলেন", "se": "গ্রহণ করেছিল", "tini": "গ্রহণ করেছিলেন" }
+      readings: { "ami": "grôhon kôrechilām", "tui": "grôhon kôrechili", "tumi": "grôhon kôrechile", "apni": "grôhon kôrechilen", "se": "grôhon kôrechilo", "tini": "grôhon kôrechilen" }
+    - word: "bn-4506"
+      forms: { "ami": "বর্জন করেছিলাম", "tui": "বর্জন করেছিলি", "tumi": "বর্জন করেছিলে", "apni": "বর্জন করেছিলেন", "se": "বর্জন করেছিল", "tini": "বর্জন করেছিলেন" }
+      readings: { "ami": "bôrjon kôrechilām", "tui": "bôrjon kôrechili", "tumi": "bôrjon kôrechile", "apni": "bôrjon kôrechilen", "se": "bôrjon kôrechilo", "tini": "bôrjon kôrechilen" }
+    - word: "bn-4507"
+      forms: { "ami": "অর্জন করেছিলাম", "tui": "অর্জন করেছিলি", "tumi": "অর্জন করেছিলে", "apni": "অর্জন করেছিলেন", "se": "অর্জন করেছিল", "tini": "অর্জন করেছিলেন" }
+      readings: { "ami": "ôrjon kôrechilām", "tui": "ôrjon kôrechili", "tumi": "ôrjon kôrechile", "apni": "ôrjon kôrechilen", "se": "ôrjon kôrechilo", "tini": "ôrjon kôrechilen" }
+    - word: "bn-4508"
+      forms: { "ami": "উপভোগ করেছিলাম", "tui": "উপভোগ করেছিলি", "tumi": "উপভোগ করেছিলে", "apni": "উপভোগ করেছিলেন", "se": "উপভোগ করেছিল", "tini": "উপভোগ করেছিলেন" }
+      readings: { "ami": "upobhog kôrechilām", "tui": "upobhog kôrechili", "tumi": "upobhog kôrechile", "apni": "upobhog kôrechilen", "se": "upobhog kôrechilo", "tini": "upobhog kôrechilen" }
+    - word: "bn-4509"
+      forms: { "ami": "সংগ্রহ করেছিলাম", "tui": "সংগ্রহ করেছিলি", "tumi": "সংগ্রহ করেছিলে", "apni": "সংগ্রহ করেছিলেন", "se": "সংগ্রহ করেছিল", "tini": "সংগ্রহ করেছিলেন" }
+      readings: { "ami": "sôṅgroh kôrechilām", "tui": "sôṅgroh kôrechili", "tumi": "sôṅgroh kôrechile", "apni": "sôṅgroh kôrechilen", "se": "sôṅgroh kôrechilo", "tini": "sôṅgroh kôrechilen" }
+    - word: "bn-4510"
+      forms: { "ami": "বিবেচনা করেছিলাম", "tui": "বিবেচনা করেছিলি", "tumi": "বিবেচনা করেছিলে", "apni": "বিবেচনা করেছিলেন", "se": "বিবেচনা করেছিল", "tini": "বিবেচনা করেছিলেন" }
+      readings: { "ami": "bibeconā kôrechilām", "tui": "bibeconā kôrechili", "tumi": "bibeconā kôrechile", "apni": "bibeconā kôrechilen", "se": "bibeconā kôrechilo", "tini": "bibeconā kôrechilen" }
+    - word: "bn-4511"
+      forms: { "ami": "সংশোধন করেছিলাম", "tui": "সংশোধন করেছিলি", "tumi": "সংশোধন করেছিলে", "apni": "সংশোধন করেছিলেন", "se": "সংশোধন করেছিল", "tini": "সংশোধন করেছিলেন" }
+      readings: { "ami": "sôṅśodhon kôrechilām", "tui": "sôṅśodhon kôrechili", "tumi": "sôṅśodhon kôrechile", "apni": "sôṅśodhon kôrechilen", "se": "sôṅśodhon kôrechilo", "tini": "sôṅśodhon kôrechilen" }
+    - word: "bn-4512"
+      forms: { "ami": "অনুমান করেছিলাম", "tui": "অনুমান করেছিলি", "tumi": "অনুমান করেছিলে", "apni": "অনুমান করেছিলেন", "se": "অনুমান করেছিল", "tini": "অনুমান করেছিলেন" }
+      readings: { "ami": "ônumān kôrechilām", "tui": "ônumān kôrechili", "tumi": "ônumān kôrechile", "apni": "ônumān kôrechilen", "se": "ônumān kôrechilo", "tini": "ônumān kôrechilen" }
+    - word: "bn-4513"
+      forms: { "ami": "স্বীকার করেছিলাম", "tui": "স্বীকার করেছিলি", "tumi": "স্বীকার করেছিলে", "apni": "স্বীকার করেছিলেন", "se": "স্বীকার করেছিল", "tini": "স্বীকার করেছিলেন" }
+      readings: { "ami": "sikār kôrechilām", "tui": "sikār kôrechili", "tumi": "sikār kôrechile", "apni": "sikār kôrechilen", "se": "sikār kôrechilo", "tini": "sikār kôrechilen" }
+    - word: "bn-4514"
+      forms: { "ami": "পর্যবেক্ষণ করেছিলাম", "tui": "পর্যবেক্ষণ করেছিলি", "tumi": "পর্যবেক্ষণ করেছিলে", "apni": "পর্যবেক্ষণ করেছিলেন", "se": "পর্যবেক্ষণ করেছিল", "tini": "পর্যবেক্ষণ করেছিলেন" }
+      readings: { "ami": "pôrjobekkhon kôrechilām", "tui": "pôrjobekkhon kôrechili", "tumi": "pôrjobekkhon kôrechile", "apni": "pôrjobekkhon kôrechilen", "se": "pôrjobekkhon kôrechilo", "tini": "pôrjobekkhon kôrechilen" }
+    - word: "bn-4515"
+      forms: { "ami": "পরিদর্শন করেছিলাম", "tui": "পরিদর্শন করেছিলি", "tumi": "পরিদর্শন করেছিলে", "apni": "পরিদর্শন করেছিলেন", "se": "পরিদর্শন করেছিল", "tini": "পরিদর্শন করেছিলেন" }
+      readings: { "ami": "poridorśon kôrechilām", "tui": "poridorśon kôrechili", "tumi": "poridorśon kôrechile", "apni": "poridorśon kôrechilen", "se": "poridorśon kôrechilo", "tini": "poridorśon kôrechilen" }
+    - word: "bn-4516"
+      forms: { "ami": "স্থাপন করেছিলাম", "tui": "স্থাপন করেছিলি", "tumi": "স্থাপন করেছিলে", "apni": "স্থাপন করেছিলেন", "se": "স্থাপন করেছিল", "tini": "স্থাপন করেছিলেন" }
+      readings: { "ami": "sthāpon kôrechilām", "tui": "sthāpon kôrechili", "tumi": "sthāpon kôrechile", "apni": "sthāpon kôrechilen", "se": "sthāpon kôrechilo", "tini": "sthāpon kôrechilen" }
+    - word: "bn-4517"
+      forms: { "ami": "আয়োজন করেছিলাম", "tui": "আয়োজন করেছিলি", "tumi": "আয়োজন করেছিলে", "apni": "আয়োজন করেছিলেন", "se": "আয়োজন করেছিল", "tini": "আয়োজন করেছিলেন" }
+      readings: { "ami": "āyojon kôrechilām", "tui": "āyojon kôrechili", "tumi": "āyojon kôrechile", "apni": "āyojon kôrechilen", "se": "āyojon kôrechilo", "tini": "āyojon kôrechilen" }
+    - word: "bn-4518"
+      forms: { "ami": "প্রয়োগ করেছিলাম", "tui": "প্রয়োগ করেছিলি", "tumi": "প্রয়োগ করেছিলে", "apni": "প্রয়োগ করেছিলেন", "se": "প্রয়োগ করেছিল", "tini": "প্রয়োগ করেছিলেন" }
+      readings: { "ami": "prôyog kôrechilām", "tui": "prôyog kôrechili", "tumi": "prôyog kôrechile", "apni": "prôyog kôrechilen", "se": "prôyog kôrechilo", "tini": "prôyog kôrechilen" }
+    - word: "bn-4519"
+      forms: { "ami": "বিশ্লেষণ করেছিলাম", "tui": "বিশ্লেষণ করেছিলি", "tumi": "বিশ্লেষণ করেছিলে", "apni": "বিশ্লেষণ করেছিলেন", "se": "বিশ্লেষণ করেছিল", "tini": "বিশ্লেষণ করেছিলেন" }
+      readings: { "ami": "biśleśon kôrechilām", "tui": "biśleśon kôrechili", "tumi": "biśleśon kôrechile", "apni": "biśleśon kôrechilen", "se": "biśleśon kôrechilo", "tini": "biśleśon kôrechilen" }
+    - word: "bn-4520"
+      forms: { "ami": "উল্লেখ করেছিলাম", "tui": "উল্লেখ করেছিলি", "tumi": "উল্লেখ করেছিলে", "apni": "উল্লেখ করেছিলেন", "se": "উল্লেখ করেছিল", "tini": "উল্লেখ করেছিলেন" }
+      readings: { "ami": "ullekh kôrechilām", "tui": "ullekh kôrechili", "tumi": "ullekh kôrechile", "apni": "ullekh kôrechilen", "se": "ullekh kôrechilo", "tini": "ullekh kôrechilen" }
+    - word: "bn-4521"
+      forms: { "ami": "পর্যালোচনা করেছিলাম", "tui": "পর্যালোচনা করেছিলি", "tumi": "পর্যালোচনা করেছিলে", "apni": "পর্যালোচনা করেছিলেন", "se": "পর্যালোচনা করেছিল", "tini": "পর্যালোচনা করেছিলেন" }
+      readings: { "ami": "pôrjāloconā kôrechilām", "tui": "pôrjāloconā kôrechili", "tumi": "pôrjāloconā kôrechile", "apni": "pôrjāloconā kôrechilen", "se": "pôrjāloconā kôrechilo", "tini": "pôrjāloconā kôrechilen" }
+    - word: "bn-4522"
+      forms: { "ami": "বিতরণ করেছিলাম", "tui": "বিতরণ করেছিলি", "tumi": "বিতরণ করেছিলে", "apni": "বিতরণ করেছিলেন", "se": "বিতরণ করেছিল", "tini": "বিতরণ করেছিলেন" }
+      readings: { "ami": "bitoron kôrechilām", "tui": "bitoron kôrechili", "tumi": "bitoron kôrechile", "apni": "bitoron kôrechilen", "se": "bitoron kôrechilo", "tini": "bitoron kôrechilen" }
+    - word: "bn-4523"
+      forms: { "ami": "সংযোজন করেছিলাম", "tui": "সংযোজন করেছিলি", "tumi": "সংযোজন করেছিলে", "apni": "সংযোজন করেছিলেন", "se": "সংযোজন করেছিল", "tini": "সংযোজন করেছিলেন" }
+      readings: { "ami": "sôṅjojon kôrechilām", "tui": "sôṅjojon kôrechili", "tumi": "sôṅjojon kôrechile", "apni": "sôṅjojon kôrechilen", "se": "sôṅjojon kôrechilo", "tini": "sôṅjojon kôrechilen" }
+    - word: "bn-4524"
+      forms: { "ami": "প্রতিষ্ঠা করেছিলাম", "tui": "প্রতিষ্ঠা করেছিলি", "tumi": "প্রতিষ্ঠা করেছিলে", "apni": "প্রতিষ্ঠা করেছিলেন", "se": "প্রতিষ্ঠা করেছিল", "tini": "প্রতিষ্ঠা করেছিলেন" }
+      readings: { "ami": "protiśṭhā kôrechilām", "tui": "protiśṭhā kôrechili", "tumi": "protiśṭhā kôrechile", "apni": "protiśṭhā kôrechilen", "se": "protiśṭhā kôrechilo", "tini": "protiśṭhā kôrechilen" }
+rules:
+  - id: "bn-rule-past-perfect-first"
+    slots: ["ami"]
+    words: [{ word: "-ছিলাম", reading: "-chilām" }, { word: "আমি দেখেছিলাম", reading: "āmi dekhechilām" }, { word: "আমরা দেখেছিলাম", reading: "āmrā dekhechilām" }, { word: "খাওয়া", reading: "khāoā" }, { word: "খেয়েছিলাম", reading: "kheyechilām" }, { word: "যাওয়া", reading: "jāoā" }, { word: "গিয়েছিলাম", reading: "giyechilām" }, { word: "আসা", reading: "āśā" }, { word: "এসেছিলাম", reading: "esechilām" }]
+  - id: "bn-rule-past-perfect-second"
+    slots: ["tui", "tumi", "apni"]
+    words: [{ word: "তুই", reading: "tui" }, { word: "-ছিলি", reading: "-chili" }, { word: "তুই দেখেছিলি", reading: "tui dekhechili" }, { word: "তুমি", reading: "tumi" }, { word: "-ছিলে", reading: "-chile" }, { word: "তুমি দেখেছিলে", reading: "tumi dekhechile" }, { word: "আপনি", reading: "āpni" }, { word: "-ছিলেন", reading: "-chilen" }, { word: "আপনি দেখেছিলেন", reading: "āpni dekhechilen" }, { word: "তুই গিয়েছিলি", reading: "tui giyechili" }, { word: "তুমি গিয়েছিলে", reading: "tumi giyechile" }, { word: "আপনি গিয়েছিলেন", reading: "āpni giyechilen" }]
+  - id: "bn-rule-past-perfect-third"
+    slots: ["se", "tini"]
+    words: [{ word: "-ছিল", reading: "-chilo" }, { word: "সে দেখেছিল", reading: "se dekhechilo" }, { word: "তারা দেখেছিল", reading: "tārā dekhechilo" }, { word: "-ছিলেন", reading: "-chilen" }, { word: "তিনি দেখেছিলেন", reading: "tini dekhechilen" }, { word: "সে গিয়েছিল", reading: "se giyechilo" }, { word: "তিনি গিয়েছিলেন", reading: "tini giyechilen" }]
