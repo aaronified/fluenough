@@ -1,0 +1,92 @@
+schema: 1
+id: "mr-verbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-6812"
+    target: "मी रोज दूध पितो."
+    reading: "mi roj dudh pito."
+    ipa: "mi rodz d̪ud̪ʱ pit̪o"
+    pos: "phrase"
+    bases: [{ word: "पितो", ref: "mr-0709" }]
+    confusables: [{ id: "w1", ref: "mr-0708", kind: "word" }, { id: "f1", word: "पिते", reading: "pite", kind: "form" }]
+  - id: "mr-6813"
+    target: "ती मुलांना मराठी शिकवते."
+    reading: "ti mulānnā marāṭhi śikvte."
+    ipa: "t̪i mulanna məraʈʰi ʃikʋt̪e"
+    pos: "phrase"
+    bases: [{ word: "मुलांना", reading: "mul", base: "मूल" }, { word: "मराठी", base: "मराठी", reading: "marāṭhi" }, { word: "शिकवते", ref: "mr-0718" }]
+    confusables: [{ id: "w1", ref: "mr-0717", kind: "word" }, { id: "f1", word: "शिकवतो", reading: "śikvto", kind: "form" }]
+  - id: "mr-6814"
+    target: "तो रोज सकाळी उठतो."
+    reading: "to roj sakāḷi uṭhto."
+    ipa: "t̪o rodz səkaɭi uʈʰt̪o"
+    pos: "phrase"
+    bases: [{ word: "उठतो", ref: "mr-0494" }]
+    confusables: [{ id: "w1", ref: "mr-0500", kind: "word" }, { id: "f1", word: "उठते", reading: "uṭhte", kind: "form" }, { id: "w2", ref: "mr-0499", kind: "word" }]
+  - id: "mr-6815"
+    target: "मी आता जेवतो."
+    reading: "mi ātā jevto."
+    ipa: "mi at̪a dʒeʋt̪o"
+    pos: "phrase"
+    bases: [{ word: "जेवतो", ref: "mr-0499" }]
+    confusables: [{ id: "w1", ref: "mr-0708", kind: "word" }, { id: "f1", word: "जेवते", reading: "jevte", kind: "form" }]
+  - id: "mr-6816"
+    target: "आई मुलाला गोष्ट सांगते."
+    reading: "āi mulālā goṣṭa sāṅgte."
+    ipa: "ai mulala ɡoʂʈə saŋɡt̪e"
+    pos: "phrase"
+    bases: [{ word: "मुलाला", reading: "mulgā", base: "मुलगा" }, { word: "सांगते", ref: "mr-0720" }]
+    confusables: [{ id: "w1", ref: "mr-0713", kind: "word" }, { id: "f1", word: "सांगतो", reading: "sāṅgto", kind: "form" }]
+  - id: "mr-6817"
+    target: "मी आता खेळतो."
+    reading: "mi ātā kheḷto."
+    ipa: "mi at̪a kʰeɭt̪o"
+    pos: "phrase"
+    bases: [{ word: "खेळतो", ref: "mr-0725" }]
+    confusables: [{ id: "w1", ref: "mr-0714", kind: "word" }, { id: "f1", word: "खेळते", reading: "kheḷte", kind: "form" }]
+  - id: "mr-6818"
+    target: "तो माझे पुस्तक वाचतो."
+    reading: "to mājhe pustak vācto."
+    ipa: "t̪o madʒʱe pust̪ək ʋatst̪o"
+    pos: "phrase"
+    bases: [{ word: "माझे", reading: "mi", base: "मी" }, { word: "वाचतो", ref: "mr-0513" }]
+    confusables: [{ id: "w1", ref: "mr-0714", kind: "word" }, { id: "f1", word: "वाचते", reading: "vācte", kind: "form" }, { id: "w2", ref: "mr-0716", kind: "word" }]
+  - id: "mr-6819"
+    target: "तो रोज चालतो."
+    reading: "to roj cālto."
+    ipa: "t̪o rodz tsalt̪o"
+    pos: "phrase"
+    bases: [{ word: "चालतो", ref: "mr-0512" }]
+    confusables: [{ id: "w1", ref: "mr-0710", kind: "word" }, { id: "f1", word: "चालते", reading: "cālte", kind: "form" }]
+  - id: "mr-6820"
+    target: "ती मला पत्र लिहिते."
+    reading: "ti malā patra lihite."
+    ipa: "t̪i məla pət̪rə liɦit̪e"
+    pos: "phrase"
+    bases: [{ word: "मला", reading: "mi", base: "मी" }, { word: "लिहिते", ref: "mr-0716" }]
+    confusables: [{ id: "w1", ref: "mr-0721", kind: "word" }, { id: "f1", word: "लिहितो", reading: "lihito", kind: "form" }]
+  - id: "mr-6821"
+    target: "तुम्ही मला सांगा."
+    reading: "tumhi malā sāṅgā."
+    ipa: "t̪umɦi məla saŋɡa"
+    pos: "phrase"
+    bases: [{ word: "मला", reading: "mi", base: "मी" }, { word: "सांगा", ref: "mr-0720" }]
+    confusables: [{ id: "w1", ref: "mr-0722", kind: "word" }, { id: "f1", word: "सांगतो", reading: "sāṅgto", kind: "form" }]
+  - id: "mr-6822"
+    target: "दार उघडा."
+    reading: "dār ughḍā."
+    ipa: "d̪ar uɡʱɖa"
+    pos: "phrase"
+    bases: [{ word: "उघडा", ref: "mr-0724" }]
+    confusables: [{ id: "w1", ref: "mr-0723", kind: "word" }, { id: "f1", word: "उघडले", reading: "ughḍle", kind: "form" }]
+  - id: "mr-6823"
+    target: "ती रोज कामावर जाते."
+    reading: "ti roj kāmāvar jāte."
+    ipa: "t̪i rodz kamaʋər dzat̪e"
+    pos: "phrase"
+    bases: [{ word: "कामावर", ref: "mr-0234" }, { word: "जाते", ref: "mr-0710" }]
+    confusables: [{ id: "w1", ref: "mr-0711", kind: "word" }, { id: "f1", word: "जातो", reading: "jāto", kind: "form" }]

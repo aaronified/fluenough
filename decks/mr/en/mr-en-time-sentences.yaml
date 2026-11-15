@@ -1,0 +1,66 @@
+schema: 1
+id: "mr-en-time-sentences"
+kind: "layer"
+core: "mr-time-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with time and days"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the words for time, hours and days. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-6660":
+    native: "Today it is very hot."
+    bases: { "खूप": "very", "गरम": "hot", "आहे": "is" }
+    confusables: { "w1": { why: "Tomorrow, not today: उद्या (udyā) means tomorrow." }, "f1": { why: "A noun, not an adjective: गरमी (garmi) means heat." } }
+  "mr-6661":
+    native: "Tomorrow is a holiday."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "Today, not tomorrow: आज (āj) means today." }, "f1": { why: "Plural: आहेत (āhet) is for two or more things; here there is one holiday." } }
+  "mr-6662":
+    native: "It is ten o'clock now."
+    bases: { "वाजले": "have struck" }
+    confusables: { "w1": { why: "At, not struck: वाजता (vājtā) means at a time, as in at seven o'clock." }, "w2": { why: "Morning, not now: सकाळ (sakāḷ) is the morning." } }
+  "mr-6663":
+    native: "Get up at seven in the morning."
+    bases: { "सकाळी": "in the morning", "वाजता": "at", "उठा": "get up" }
+    confusables: { "w1": { why: "Afternoon, not morning: दुपार (dupār) is the afternoon." }, "w2": { why: "Sleep, the opposite of getting up: झोपा (jhopā) means sleep." } }
+  "mr-6664":
+    native: "Take a rest in the afternoon."
+    bases: { "दुपारी": "in the afternoon", "घ्या": "take" }
+    confusables: { "w1": { why: "Evening, not afternoon: संध्याकाळ (sandhyākāḷ) is the evening." }, "w2": { why: "Morning, not afternoon: सकाळ (sakāḷ) is the morning." } }
+  "mr-6665":
+    native: "Let's go to the market in the evening."
+    bases: { "संध्याकाळी": "in the evening", "बाजारात": "to the market", "जाऊ": "let's go" }
+    confusables: { "w1": { why: "Night, not evening: रात्र (rātra) is the night." }, "w2": { why: "Tomorrow, not this evening: उद्या (udyā) means tomorrow." } }
+  "mr-6666":
+    native: "Sleep at night."
+    bases: { "रात्री": "at night", "झोपा": "sleep" }
+    confusables: { "w1": { why: "Evening, not night: संध्याकाळ (sandhyākāḷ) is the evening." }, "w2": { why: "Get up, the opposite of sleep: उठा (uṭhā) means get up." } }
+  "mr-6667":
+    native: "Today is Sunday."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "Saturday, another day: शनिवार (śanivār) is Saturday." }, "w2": { why: "Monday, another day: सोमवार (somvār) is Monday." } }
+  "mr-6668":
+    native: "There is school on Monday."
+    bases: { "सोमवारी": "on Monday", "आहे": "is" }
+    confusables: { "w1": { why: "Wednesday, another day: बुधवार (budhvār) is Wednesday." }, "w2": { why: "Sunday, another day: रविवार (ravivār) is Sunday." } }
+  "mr-6669":
+    native: "Wait for an hour."
+    bases: { "थांबा": "wait" }
+    confusables: { "w1": { why: "A minute, a shorter time: मिनिट (miniṭ) is a minute." }, "w2": { why: "A day, a longer time: दिवस (divas) is a day." } }
+  "mr-6670":
+    native: "Wait five minutes."
+    bases: { "मिनिटे": "minutes", "थांबा": "wait" }
+    confusables: { "w1": { why: "An hour, a longer time: तास (tās) is an hour." }, "w2": { why: "A day, much longer: दिवस (divas) is a day." } }
+  "mr-6671":
+    native: "See you next week."
+    bases: { "पुढच्या": "next", "आठवड्यात": "in the week", "भेटू": "let's meet" }
+    confusables: { "w1": { why: "A day, not a week: दिवस (divas) is a day." }, "w2": { why: "A night, not a week: रात्र (rātra) is the night." } }
+  "mr-6672":
+    native: "Exercise every day."
+    bases: { "दर": "every", "दिवशी": "day", "करा": "do" }
+    confusables: { "w1": { why: "Time, not day: वेळ (veḷ) means time, as in a time for something." }, "w2": { why: "Work, not exercise: काम (kām) means work." } }
+  "mr-6673":
+    native: "What day is it today?"
+    bases: { "कोणता": "which", "वार": "weekday", "आहे": "is" }
+    confusables: { "w1": { why: "Now, not today: आता (ātā) means now." }, "w2": { why: "Tuesday, another day: मंगळवार (maṅgaḷvār) is Tuesday." } }
