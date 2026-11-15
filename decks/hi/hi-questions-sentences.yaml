@@ -1,0 +1,172 @@
+schema: 1
+id: "hi-questions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-4600"
+    target: "यह क्या है?"
+    reading: "yah kyā hai?"
+    ipa: "jəɦ kjaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "क्या", ref: "hi-0157" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0158", kind: "word" }
+      - { id: "w2", ref: "hi-0162", kind: "word" }
+  - id: "hi-4601"
+    target: "वह कौन है?"
+    reading: "vah kaun hai?"
+    ipa: "ʋəɦ kɔːn ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "वह", ref: "hi-0749" }
+      - { word: "कौन", ref: "hi-0158" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0157", kind: "word" }
+      - { id: "w2", ref: "hi-0159", kind: "word" }
+  - id: "hi-4602"
+    target: "आप कहाँ हैं?"
+    reading: "āp kahām̐ haim̐?"
+    ipa: "aːp kəɦãː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "आप", ref: "hi-0134" }
+      - { word: "कहाँ", ref: "hi-0159" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0160", kind: "word" }
+      - { id: "w2", ref: "hi-0158", kind: "word" }
+  - id: "hi-4603"
+    target: "यह कब है?"
+    reading: "yah kab hai?"
+    ipa: "jəɦ kəb ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "कब", ref: "hi-0160" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0159", kind: "word" }
+      - { id: "w2", ref: "hi-0161", kind: "word" }
+  - id: "hi-4604"
+    target: "तुम कैसे हो?"
+    reading: "tum kaisē hō?"
+    ipa: "t̪ʊm kɛːseː ɦoː"
+    pos: "phrase"
+    bases:
+      - { word: "तुम", ref: "hi-0747" }
+      - { word: "कैसे", ref: "hi-0162" }
+      - { word: "हो", base: "होना", reading: "hō" }
+    confusables:
+      - { id: "w1", ref: "hi-0157", kind: "word" }
+      - { id: "w2", ref: "hi-0158", kind: "word" }
+  - id: "hi-4605"
+    target: "क्या आप ठीक हैं?"
+    reading: "kyā āp ṭhīk haim̐?"
+    ipa: "kjaː aːp ʈʰiːk ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "क्या", ref: "hi-0157" }
+      - { word: "आप", ref: "hi-0134" }
+      - { word: "ठीक", ref: "hi-1703" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0162", kind: "word" }
+      - { id: "w2", ref: "hi-0158", kind: "word" }
+  - id: "hi-4606"
+    target: "हाँ, यह ठीक है।"
+    reading: "hām̐, yah ṭhīk hai."
+    ipa: "ɦãː jəɦ ʈʰiːk ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "हाँ", ref: "hi-0155" }
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "ठीक", ref: "hi-1703" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0156", kind: "word" }
+      - { id: "w2", ref: "hi-0157", kind: "word" }
+  - id: "hi-4607"
+    target: "नहीं, यह मेरा है।"
+    reading: "nahīm̐, yah mērā hai."
+    ipa: "nəɦĩː jəɦ meːraː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "नहीं", ref: "hi-0156" }
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0155", kind: "word" }
+      - { id: "w2", ref: "hi-0163", kind: "word" }
+  - id: "hi-4608"
+    target: "वे कौन हैं?"
+    reading: "vē kaun haim̐?"
+    ipa: "ʋeː kɔːn ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "वे", ref: "hi-0751" }
+      - { word: "कौन", ref: "hi-0158" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0157", kind: "word" }
+      - { id: "w2", ref: "hi-0159", kind: "word" }
+  - id: "hi-4609"
+    target: "यह आदमी कौन है?"
+    reading: "yah ādmī kaun hai?"
+    ipa: "jəɦ aːd̪miː kɔːn ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "आदमी", ref: "hi-0762" }
+      - { word: "कौन", ref: "hi-0158" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0160", kind: "word" }
+      - { id: "w2", ref: "hi-0157", kind: "word" }
+  - id: "hi-4610"
+    target: "यह कितना बड़ा है?"
+    reading: "yah kitnā baṛā hai?"
+    ipa: "jəɦ kɪt̪naː bəɽaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "कितना", ref: "hi-0163" }
+      - { word: "बड़ा", ref: "hi-0894" }
+      - { word: "है", base: "होना", reading: "hai" }
+    confusables:
+      - { id: "w1", ref: "hi-0162", kind: "word" }
+      - { id: "w2", ref: "hi-0164", kind: "word" }
+  - id: "hi-4611"
+    target: "कितने लोग हैं?"
+    reading: "kitnē lōg haim̐?"
+    ipa: "kɪt̪neː loːɡ ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "कितने", base: "कितना", reading: "kitnē" }
+      - { word: "लोग", ref: "hi-0761" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0159", kind: "word" }
+      - { id: "w2", ref: "hi-0160", kind: "word" }
+  - id: "hi-4612"
+    target: "आप कौन-सी किताब पढ़ते हैं?"
+    reading: "āp kaun-sī kitāb paṛhtē haim̐?"
+    ipa: "aːp kɔːnsiː kɪt̪aːb pəɽʱt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "आप", ref: "hi-0134" }
+      - { word: "कौन-सी", base: "कौन-सा", reading: "kaun-sī" }
+      - { word: "किताब", ref: "hi-1095" }
+      - { word: "पढ़ते", base: "पढ़ना", reading: "paṛhtē" }
+      - { word: "हैं", base: "होना", reading: "haim̐" }
+    confusables:
+      - { id: "w1", ref: "hi-0157", kind: "word" }
+      - { id: "w2", ref: "hi-0158", kind: "word" }
