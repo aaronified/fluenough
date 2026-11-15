@@ -1,0 +1,51 @@
+schema: 1
+id: "bn-en-reading-quantities"
+name: "Reading: how much and how many"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Short passages, one to be heard and one to be read, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-at-the-grocers"
+    title: "At the grocer's"
+    theme: "quantities"
+    sentences:
+      - { text: "আলু কত?", reading: "ālu kôto?", ipa: "alu kɔt̪o" }
+      - { text: "দশ টাকা কেজি।", reading: "dôś ṭākā keji.", ipa: "d̪ɔʃ ʈaka kedʒi" }
+      - { text: "দুই কেজি দিন।", reading: "dui keji din.", ipa: "d̪ui kedʒi d̪in" }
+      - { text: "ডিম কয়টা?", reading: "ḍim kôyṭā?", ipa: "ɖim kɔjʈa" }
+      - { text: "পাঁচ টাকা দিন।", reading: "pām̐c ṭākā din.", ipa: "pãtʃ ʈaka d̪in" }
+    questions:
+      - id: "bn-5368"
+        prompt: { en: "The customer asks the price of potatoes." }
+        answer: true
+      - id: "bn-5369"
+        prompt: { en: "How much does the customer ask for?" }
+        options: [{ en: "দুই কেজি (dui keji)" }, { en: "দশ টাকা (dôś ṭākā)" }]
+        answer: 1
+      - id: "bn-5370"
+        prompt: { en: "The customer asks for three kilos of potatoes." }
+        answer: false
+  - id: "bn-recipe-amounts"
+    title: "Amounts on a recipe card"
+    theme: "quantities"
+    sentences:
+      - { text: "ডাল: এক বাটি।", reading: "ḍāl: ek bāṭi.", ipa: "ɖal ek baʈi" }
+      - { text: "জল: দুই গ্লাস।", reading: "jôl: dui glās.", ipa: "dʒɔl d̪ui ɡlas" }
+      - { text: "নুন: এক চামচ।", reading: "nun: ek cāmoc.", ipa: "nun ek tʃamotʃ" }
+      - { text: "পেঁয়াজ: এক কেজি।", reading: "pem̐yāj: ek keji.", ipa: "pẽjadʒ ek kedʒi" }
+      - { text: "তেল: দুই চামচ।", reading: "tel: dui cāmoc.", ipa: "t̪el d̪ui tʃamotʃ" }
+    questions:
+      - id: "bn-5371"
+        prompt: { en: "The recipe needs two glasses of water." }
+        answer: true
+      - id: "bn-5372"
+        prompt: { en: "How many spoons of oil does it need?" }
+        options: [{ en: "এক চামচ (ek cāmoc)" }, { en: "দুই চামচ (dui cāmoc)" }]
+        answer: 2
+      - id: "bn-5373"
+        prompt: { en: "The recipe needs two kilos of onions." }
+        answer: false
