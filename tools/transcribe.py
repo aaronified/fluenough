@@ -612,10 +612,19 @@ def default_choices(units: list[Unit], lang: str) -> list[Choice]:
             # Bengali says a word's last vowel after a ব-ফলা: বিশ্ব biśśo.
             # After a য-ফলা too: সত্য śotto. And after র্ব, which is r and b,
             # not a ফলা: পূর্ব purbo.
+            # Assamese keeps the vowel of a conjunct shown on a card of its
+            # own, ক্ত ktô (all 23 such cards of the course), and drops it
+            # after a ব-ফলা or র্ব, which Bengali says: ভ্ৰাতৃত্ব bhrātritt,
+            # গৰ্ব gôrb (every such word of the course). After a য-ফলা the
+            # course is mixed (নৃত্য nritj, but ৰাজ্য rāzjô), so Assamese
+            # keeps Bengali's rule there.
+            if end and lang == "as" and _bare_conjunct_word(units, k):
+                continue
             if end and lang in ("bn", "as") and k > 0 and \
                     units[k - 1].kind == "C" and \
-                    (units[k - 1].vaphala or units[k - 1].yaphala or
-                     _rba_cluster(units, k - 1)):
+                    (units[k - 1].yaphala or
+                     (lang == "bn" and (units[k - 1].vaphala or
+                                        _rba_cluster(units, k - 1)))):
                 continue
             # A word's last inherent vowel is not said, unless the word is a
             # single letter.
@@ -709,6 +718,17 @@ WORDS = {
     # ঞ on its own, as a letter card names it, so that it differs from ন.
     ("bn", "ঞ"): ("ñô", "ɲɔ"),
     ("as", "ঞ"): ("ñô", "ɲɔ"),
+    # Assamese digits, read as the course reads them on its number cards.
+    ("as", "০"): ("xūnyô", "xunjɔ"),
+    ("as", "১"): ("ek", "ek"),
+    ("as", "২"): ("dui", "dui"),
+    ("as", "৩"): ("tini", "tini"),
+    ("as", "৪"): ("sāri", "saɹi"),
+    ("as", "৫"): ("pām̐s", "pãs"),
+    ("as", "৬"): ("sôy", "sɔj"),
+    ("as", "৭"): ("xāt", "xat"),
+    ("as", "৮"): ("āth", "atʰ"),
+    ("as", "৯"): ("nô", "nɔ"),
     ("gu", "કંઈ"): ("kaim̐", "kə̃i"),
 }
 
@@ -962,6 +982,15 @@ def _bare_conjunct(units: list[Unit], k: int) -> bool:
     return (k == 0 or units[k - 1].kind in ("SP", "P")) and \
         k + 1 < len(units) and units[k + 1].kind == "I" and \
         (k + 2 >= len(units) or units[k + 2].kind in ("SP", "P"))
+
+
+def _bare_conjunct_word(units: list[Unit], k: int) -> bool:
+    """Whether the inherent vowel at [k] ends a word made only of two or
+    more consonants joined by viramas: a conjunct on a card of its own."""
+    j = k - 1
+    while j >= 0 and units[j].kind == "C":
+        j -= 1
+    return k - 1 - j >= 2 and (j < 0 or units[j].kind in ("SP", "P"))
 
 
 def _word_initial(units: list[Unit], k: int) -> bool:
