@@ -1,0 +1,92 @@
+schema: 1
+id: "mr-housing-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-5860"
+    target: "मला एक फ्लॅट भाड्याने घ्यायचा आहे."
+    reading: "malā ek phlêṭ bhāḍyāne ghyāycā āhe."
+    ipa: "məla ek pʰlæʈ bʱaɖjane ɡʱjajtsa aɦe"
+    pos: "phrase"
+    bases: [{ word: "मला", reading: "malā", base: "मी" }, { word: "भाड्याने", reading: "bhāḍyāne", base: "भाडे" }, { word: "घ्यायचा", reading: "ghyāycā", base: "घेणे" }, { word: "आहे", reading: "āhe", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-0169", kind: "word" }, { id: "w2", ref: "mr-1660", kind: "word" }]
+  - id: "mr-5861"
+    target: "घरमालक अनामत किती मागतात?"
+    reading: "gharmālak anāmat kiti māgtāt?"
+    ipa: "ɡʱərmalək ənamət̪ kit̪i maɡt̪at̪"
+    pos: "phrase"
+    bases: [{ word: "मागतात", reading: "māgtāt", base: "मागणे" }]
+    confusables: [{ id: "w1", ref: "mr-1646", kind: "word" }, { id: "w2", word: "कुठे", reading: "kuṭhe", kind: "word" }]
+  - id: "mr-5862"
+    target: "भाडेकरू वेळेवर भाडे देतो."
+    reading: "bhāḍekru veḷevar bhāḍe deto."
+    ipa: "bʱaɖekru ʋeɭeʋər bʱaɖe d̪et̪o"
+    pos: "phrase"
+    bases: [{ word: "देतो", reading: "deto", base: "देणे" }]
+    confusables: [{ id: "w1", ref: "mr-1647", kind: "word" }, { id: "w2", ref: "mr-0676", kind: "word" }]
+  - id: "mr-5863"
+    target: "आम्ही नवा करार केला."
+    reading: "āmhi navā karār kelā."
+    ipa: "amɦi nəʋa kərar kela"
+    pos: "phrase"
+    bases: [{ word: "केला", reading: "kelā", base: "करणे" }]
+    confusables: [{ id: "w1", ref: "mr-0675", kind: "word" }, { id: "f1", word: "केली", reading: "keli", kind: "form" }]
+  - id: "mr-5864"
+    target: "बाल्कनीत झाडे आहेत."
+    reading: "bālkanit jhāḍe āhet."
+    ipa: "balkənit̪ dzʱaɖe aɦet̪"
+    pos: "phrase"
+    bases: [{ word: "बाल्कनीत", reading: "bālkanit", base: "बाल्कनी" }, { word: "आहेत", reading: "āhet", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-0738", kind: "word" }, { id: "f1", word: "आहे", reading: "āhe", kind: "form" }]
+  - id: "mr-5865"
+    target: "दरवाजा उघडा आहे."
+    reading: "darvājā ughḍā āhe."
+    ipa: "d̪ərʋadza uɡʱɖa aɦe"
+    pos: "phrase"
+    bases: [{ word: "उघडा", reading: "ughḍā", base: "उघडणे" }, { word: "आहे", reading: "āhe", base: "असणे" }]
+    confusables: [{ id: "w1", word: "बंद", reading: "band", kind: "word" }, { id: "f1", word: "उघडे", reading: "ughḍe", kind: "form" }]
+  - id: "mr-5866"
+    target: "भिंत स्वच्छ करा."
+    reading: "bhint svacch karā."
+    ipa: "bʱint̪ sʋətstʃʰ kəra"
+    pos: "phrase"
+    bases: [{ word: "करा", reading: "karā", base: "करणे" }]
+    confusables: [{ id: "w1", ref: "mr-0675", kind: "word" }, { id: "w2", word: "घाण", reading: "ghāṇ", kind: "word" }]
+  - id: "mr-5867"
+    target: "लिफ्ट बंद आहे."
+    reading: "lifṭ band āhe."
+    ipa: "lifʈ bənd̪ aɦe"
+    pos: "phrase"
+    bases: [{ word: "आहे", reading: "āhe", base: "असणे" }]
+    confusables: [{ id: "w1", word: "सुरू", reading: "suru", kind: "word" }, { id: "f1", word: "आहेत", reading: "āhet", kind: "form" }]
+  - id: "mr-5868"
+    target: "पार्किंग कुठे आहे?"
+    reading: "pārkiṅg kuṭhe āhe?"
+    ipa: "parkiŋɡ kuʈʰe aɦe"
+    pos: "phrase"
+    bases: [{ word: "आहे", reading: "āhe", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-0738", kind: "word" }, { id: "w2", ref: "mr-1654", kind: "word" }]
+  - id: "mr-5869"
+    target: "घरात फर्निचर आहे."
+    reading: "gharāt pharnicar āhe."
+    ipa: "ɡʱərat̪ pʰərnitsər aɦe"
+    pos: "phrase"
+    bases: [{ word: "घरात", reading: "gharāt", base: "घर" }, { word: "आहे", reading: "āhe", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-0465", kind: "word" }, { id: "w2", ref: "mr-0738", kind: "word" }]
+  - id: "mr-5870"
+    target: "मी हे घर भाड्याने देणार आहे."
+    reading: "mi he ghar bhāḍyāne deṇār āhe."
+    ipa: "mi ɦe ɡʱər bʱaɖjane d̪eɳar aɦe"
+    pos: "phrase"
+    bases: [{ word: "भाड्याने", reading: "bhāḍyāne", base: "भाडे" }, { word: "देणार", reading: "deṇār", base: "देणे" }, { word: "आहे", reading: "āhe", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-1659", kind: "word" }, { id: "w2", ref: "mr-0676", kind: "word" }]
+  - id: "mr-5871"
+    target: "छत गळते."
+    reading: "chat gaḷte."
+    ipa: "tʃʰət̪ ɡəɭt̪e"
+    pos: "phrase"
+    bases: [{ word: "गळते", reading: "gaḷte", base: "गळणे" }]
+    confusables: [{ id: "w1", ref: "mr-1655", kind: "word" }, { id: "f1", word: "गळतो", reading: "gaḷto", kind: "form" }]
