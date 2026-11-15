@@ -1,0 +1,50 @@
+schema: 1
+id: "mr-en-registers-sentences"
+kind: "layer"
+core: "mr-registers-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Registers: sentences"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the registers words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-6400":
+    native: "Entry is closed."
+    bases: { "बंद": "closed", "आहे": "is" }
+    confusables: { "w1": { why: "खुला (khulā) means open, the opposite of बंद (band)." }, "f1": { why: "आहेत (āhet) is plural." }, "w2": { why: "बाहेर (bāher) means outside." } }
+  "mr-6401":
+    native: "Where is the toilet?"
+    bases: { "कुठे": "where", "आहे": "is" }
+    confusables: { "w1": { why: "प्रवेश (praveś) means entry." }, "f1": { why: "आहेत (āhet) is plural." }, "w2": { why: "कोण (koṇ) asks who." } }
+  "mr-6402":
+    native: "Please keep the mobile phone switched off."
+    bases: { "कृपया": "please", "बंद": "off", "ठेवा": "keep (polite)" }
+    confusables: { "w1": { why: "मोबाईल (mobāil) is the everyday word for a mobile phone." }, "f1": { why: "ठेवतो (ṭhevto) is a plain statement, I keep." }, "w2": { why: "सुरू (suru) means on or working." } }
+  "mr-6403":
+    native: "The work is done."
+    bases: { "काम": "work", "झालं": "done (colloquial)" }
+    confusables: { "w1": { why: "झाले (jhāle) is the standard form of झालं (jhālam̐)." }, "f1": { why: "होणार (hoṇār) means will be: the future." }, "w2": { why: "जाहले (jāhle) is the formal word for happened." } }
+  "mr-6404":
+    native: "He has not come yet."
+    bases: { "तो": "he", "अजून": "yet", "आला": "come" }
+    confusables: { "w1": { why: "आहे (āhe) means is." }, "f1": { why: "आली (āli) is for a woman." }, "w2": { why: "नाही (nāhi) is the standard form of नाहीये (nāhiye)." } }
+  "mr-6405":
+    native: "Is the computer on?"
+    bases: { "चालू": "on", "आहे": "is", "का": "question marker" }
+    confusables: { "w1": { why: "बंद (band) means off." }, "f1": { why: "आहेत (āhet) is plural." }, "w2": { why: "सुरू (suru) also means on or working." } }
+  "mr-6406":
+    native: "The government's decision was made."
+    bases: { "शासनाचा": "government's", "निर्णय": "decision", "झाला": "was made" }
+    confusables: { "w1": { why: "सरकार (sarkār) means government, the everyday word." }, "f1": { why: "झाली (jhāli) is for a feminine subject; निर्णय (nirṇay) is masculine." }, "w2": { why: "झालं (jhālam̐) is the colloquial form." } }
+  "mr-6407":
+    native: "The toilet is on the right from here."
+    bases: { "इथून": "from here", "उजवीकडे": "on the right", "आहे": "is" }
+    confusables: { "w1": { why: "डावीकडे (ḍāvikḍe) means on the left." }, "f1": { why: "आहेत (āhet) is plural." }, "w2": { why: "समोर (samor) means in front." } }
+  "mr-6408":
+    native: "This place is for passengers."
+    bases: { "प्रवाशांकरिता": "for passengers", "ही": "this", "जागा": "place", "आहे": "is" }
+    confusables: { "w1": { why: "साठी (sāṭhi) means for, the everyday word." }, "f1": { why: "आहेत (āhet) is plural." }, "w2": { why: "हा (hā) is this for a masculine noun." } }
+  "mr-6409":
+    native: "I use the computer."
+    bases: { "मी": "I", "वापरतो": "use" }
+    confusables: { "w1": { why: "मोबाईल (mobāil) is a mobile phone, not a computer." }, "f1": { why: "वापरते (vāprte) is for a woman." }, "w2": { why: "लॅपटॉप (lêpṭôp) is a laptop." } }

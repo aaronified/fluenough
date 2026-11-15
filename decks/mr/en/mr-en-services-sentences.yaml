@@ -1,0 +1,55 @@
+schema: 1
+id: "mr-en-services-sentences"
+kind: "layer"
+core: "mr-services-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with services words"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the post office, forms and counter words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-6492":
+    native: "He sends a letter through the post office."
+    bases: { "पाठवतो": "sends" }
+    confusables: { "w1": { why: "She, not he: ती (ti) means she." }, "f1": { why: "Feminine: पाठवते (pāṭhvte) is for a woman; तो (to) is he, so पाठवतो (pāṭhvto)." } }
+  "mr-6493":
+    native: "Send this parcel by courier."
+    bases: { "हे": "this", "पाठवा": "send" }
+    confusables: { "w1": { why: "You, not this parcel: तू (tu) means you." }, "f1": { why: "Present, a statement: पाठवतो (pāṭhvto) means sends; पाठवा (pāṭhvā) is a polite request." } }
+  "mr-6494":
+    native: "Give me the address."
+    bases: { "मला": "to me" }
+    confusables: { "w1": { why: "You, not me: तू (tu) means you." }, "f1": { why: "Present: देतो (deto) means gives; द्या (dyā) is a polite request." } }
+  "mr-6495":
+    native: "Fill in the form and sign."
+    bases: { "भरा": "fill in" }
+    confusables: { "w1": { why: "Give, not fill in: देणे (deṇe) means give." }, "f1": { why: "Present, a statement: करतो (karto) means does; करा (karā) is a polite request." } }
+  "mr-6496":
+    native: "Pay the fee at the counter."
+    bases: { "भरा": "pay" }
+    confusables: { "w1": { why: "Token, not counter: टोकन (ṭokan) is a token." }, "f1": { why: "Present, a statement: भरतो (bharto) means pays; भरा (bharā) is a polite request." } }
+  "mr-6497":
+    native: "The queue is long."
+    bases: { "मोठी": "long", "आहे": "is" }
+    confusables: { "w1": { why: "Short, not long: लहान (lahān) means small." }, "f1": { why: "Masculine: मोठा (moṭhā) goes with a masculine noun; रांग (rāṅg) is feminine, so मोठी (moṭhi)." } }
+  "mr-6498":
+    native: "Take a token."
+    confusables: { "w1": { why: "Counter, not token: काउंटर (kāuṇṭar) is a counter." }, "f1": { why: "Present, a statement: घेतो (gheto) means takes; घ्या (ghyā) is a polite request." } }
+  "mr-6499":
+    native: "You will need an ID card to renew."
+    bases: { "लागेल": "will be needed" }
+    confusables: { "w1": { why: "Certificate, not ID card: प्रमाणपत्र (pramāṇpatra) means certificate." }, "f1": { why: "Present, not future: लागते (lāgte) means is needed; लागेल (lāgel) means will be needed." } }
+  "mr-6500":
+    native: "What amount is needed to open an account?"
+    bases: { "उघडण्यासाठी": "to open", "किती": "how much", "लागते": "is needed" }
+    confusables: { "w1": { why: "Fee, not amount: शुल्क (śulk) means a fee." }, "f1": { why: "Plural: लागतात (lāgtāt) is for more than one thing; रक्कम (rakkam) is one amount, so लागते (lāgte)." } }
+  "mr-6501":
+    native: "The courier will come tomorrow."
+    confusables: { "w1": { why: "Today, not tomorrow: आज (āj) means today." }, "f1": { why: "Present, not future: येतो (yeto) means comes; येईल (yeil) means will come." } }
+  "mr-6502":
+    native: "Registration is closed today."
+    bases: { "बंद": "closed", "आहे": "is" }
+    confusables: { "w1": { why: "Here, not today: इथे (ithe) means here." }, "f1": { why: "Plural: आहेत (āhet) is for more than one; registration is one thing, so आहे (āhe)." } }
+  "mr-6503":
+    native: "He gets the service."
+    confusables: { "w1": { why: "She, not he: ती (ti) means she." }, "f1": { why: "Feminine: मिळवते (miḷvte) is for a woman; तो (to) is he, so मिळवतो (miḷvto)." } }

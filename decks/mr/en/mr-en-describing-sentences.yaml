@@ -1,0 +1,62 @@
+schema: 1
+id: "mr-en-describing-sentences"
+kind: "layer"
+core: "mr-describing-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences that describe things and people"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the words of the describing unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-5375":
+    native: "This book is easy."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "कठीण (kaṭhiṇ) means difficult, the opposite of easy." }, "f1": { why: "सोपी (sopi) is feminine; पुस्तक (pustak) is neuter." } }
+  "mr-5376":
+    native: "This house is clean."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "घाण (ghāṇ) means dirty, the opposite." }, "w2": { why: "स्वच्छता (svacchatā) is the noun cleanliness; the sentence needs the adjective." } }
+  "mr-5377":
+    native: "This hill is high."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "जड (jaḍ) means heavy, not high." }, "w2": { why: "लहान (lahān) means small, not tall." } }
+  "mr-5378":
+    native: "This is an old book."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "नवीन (navin) means new, the opposite." }, "f1": { why: "जुनी (juni) is feminine; पुस्तक (pustak) is neuter." } }
+  "mr-5379":
+    native: "The water is very hot."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "थंड (thaṇḍ) means cold, the opposite of hot." }, "w2": { why: "घाण (ghāṇ) means dirty, not hot." } }
+  "mr-5380":
+    native: "He is tired, so he sleeps."
+    bases: { "आहे": "is", "म्हणून": "so; therefore" }
+    confusables: { "w1": { why: "भुकेला (bhukelā) means hungry, a different state." }, "f1": { why: "थकलेली (thakleli) is for a woman; तो (to) is a man." } }
+  "mr-5381":
+    native: "The girl is happy."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "दुःखी (duḥkhi) means sad, the opposite." }, "w2": { why: "उत्साही (utsāhi) means excited, a different mood." } }
+  "mr-5382":
+    native: "Grandmother is ill."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "बरा (barā) means well, the opposite of ill." }, "w2": { why: "थकलेला (thaklelā) means tired, not ill." } }
+  "mr-5383":
+    native: "This bag is heavy."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "हलका (halkā) means light, not heavy." }, "w2": { why: "उंच (uñc) means tall or high, not heavy." } }
+  "mr-5384":
+    native: "He is a rich man."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "आनंदी (ānandi) means happy, not rich." }, "w2": { why: "कंटाळवाणा (kaṇṭāḷvāṇā) means boring, not rich." } }
+  "mr-5385":
+    native: "This exam is difficult."
+    bases: { "आहे": "is" }
+    confusables: { "w1": { why: "सोपा (sopā) means easy, the opposite." }, "w2": { why: "छान (chān) means nice, not difficult." } }
+  "mr-5386":
+    native: "She is very excited."
+    bases: { "आहे": "is" }
+    confusables: { "f1": { why: "आहेत (āhet) is for more than one person; this sentence has one woman." }, "w1": { why: "रागावलेला (rāgāvlelā) means angry, a different mood." } }
+  "mr-5387":
+    native: "Are you excited?"
+    bases: { "आहात": "are", "का": "a question marker" }
+    confusables: { "f1": { why: "आहे (āhe) is for one person addressed as तू (tu); तुम्ही (tumhi) takes आहात (āhāt)." }, "w1": { why: "बरा (barā) means well, not excited." } }
