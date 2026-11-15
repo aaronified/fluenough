@@ -1,0 +1,53 @@
+schema: 1
+id: "kn-multiword-compound-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+genre: "multiword"
+pattern_family: "aspectual-compound"
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - id: "kn-6400"
+    target: "ಮಾಡಿಕೊಂಡನು"
+    words: ["ಮಾಡಿ", "ಕೊಂಡನು"]
+    reading: "māḍikoṇḍanu"
+    ipa: "maːɖikoɳɖanu"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಮಾಡಿ", ref: "kn-0630" }
+      - { word: "ಕೊಂಡನು", ref: "kn-1024" }
+  - id: "kn-6401"
+    target: "ಮಾಡಿಕೊಟ್ಟನು"
+    words: ["ಮಾಡಿ", "ಕೊಟ್ಟನು"]
+    reading: "māḍikoṭṭanu"
+    ipa: "maːɖikoʈʈanu"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಮಾಡಿ", ref: "kn-0630" }
+      - { word: "ಕೊಟ್ಟನು", ref: "kn-0114" }
+  - id: "kn-6402"
+    target: "ಮನೆಗೆ ಸುತ್ತಿ ಕೊಂಡು ಬಂದನು"
+    words: ["ಮನೆಗೆ", "ಸುತ್ತಿ", "ಕೊಂಡು", "ಬಂದನು"]
+    reading: "manege sutti koṇḍu bandanu"
+    ipa: "maneɡe sut̪t̪i koɳɖu band̪anu"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಮನೆಗೆ", base: "ಮನೆ", reading: "mane" }
+      - { word: "ಸುತ್ತಿ", ref: "kn-1642" }
+      - { word: "ಕೊಂಡು", ref: "kn-1024" }
+      - { word: "ಬಂದನು", base: "ಬರು", reading: "baru" }

@@ -1,0 +1,26 @@
+schema: 1
+id: "kn-en-multiword-compound-verbs"
+kind: "layer"
+core: "kn-multiword-compound-verbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Multi-word verbs: compound verbs"
+description: "Three verb forms where a second verb adds a shade: done for oneself, made for someone, and a sequence of actions that ends at home. Only forms whose source was read are included. Not yet checked by a Kannada speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+
+cards:
+  "kn-6400":
+    native: "to do for oneself"
+    notes:
+      "u1": "ಮಾಡಿಕೊಂಡನು (māḍikoṇḍanu) is ಮಾಡು (māḍu), to do, with ಕೊಂಡನು (koṇḍanu), from ಕೊಳ್ಳು (koḷḷu), after it: the action is done for oneself. The source sentence is ಅವನು (avanu) ತಾನೇ (tānē) ಅಡುಗೆ (aḍuge) ಮಾಡಿಕೊಂಡನು (māḍikoṇḍanu), He cooked for himself. The course's kn-grammar-compound-verbs deck has ಮಾಡಿಕೊಂಡೆ (māḍikoṇḍe), I did it for myself."
+  "kn-6401":
+    native: "to make for someone"
+    notes:
+      "u1": "ಮಾಡಿಕೊಟ್ಟನು (māḍikoṭṭanu) is ಮಾಡು (māḍu), to make, with ಕೊಟ್ಟನು (koṭṭanu), from ಕೊಡು (koḍu), to give, after it: the action is done for someone else. The source sentence is ನನಗೆ (nanage) ಗೊಂಬೆಯನ್ನು (gombeyannu) ಮಾಡಿಕೊಟ್ಟನು (māḍikoṭṭanu), He made a doll for me. The course's kn-grammar-compound-verbs deck has ತಂದುಕೊಡಿ (tandukoḍi), please fetch it for me."
+  "kn-6402":
+    native: "He circled around and came home."
+    notes:
+      "u1": "ಮನೆಗೆ ಸುತ್ತಿ ಕೊಂಡು ಬಂದನು (manege sutti koṇḍu bandanu) is a sentence of actions in order, not one compound verb: ಸುತ್ತಿ (sutti) comes first, then ಕೊಂಡು (koṇḍu), from ಕೊಳ್ಳು (koḷḷu), and then ಬಂದನು (bandanu), the verb that ends it. Read it as a sequence, not as a single word."
+    bases:
+      "ಬಂದನು": { meaning: "came" }
+      "ಮನೆಗೆ": { meaning: "home" }
