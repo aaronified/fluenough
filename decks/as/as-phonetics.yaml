@@ -1,0 +1,22 @@
+schema: 1
+kind: "phonetics"
+id: "as-phonetics"
+language: "as"
+variety: "Standard Assamese (the Central or Upper Assam standard), as the course's broad ipa writes it"
+description: "Rules that turn a card's broad ipa into its narrow [ ] form, in order. Written for tools/derive_phonetic.py, never read by the app. Each rule applies the regular expression to the whole ipa string and replaces every match; the next rule works on the result. Only rules that are well attested are here, so few cards change: the course's broad ipa for Assamese already writes the Assamese-specific sounds as the standard analysis has them (x for শ ষ স, s for চ ছ, kʰ for খ, ɹ for ৰ, w for ৱ, ŋ for ঙ and ং, ʊ for ও, aspirates and breathy voice as ʰ ʱ, nasal vowels, no dental-retroflex contrast, the inherent vowel dropped at the end of a word), and most of its vowel harmony. What is left to write narrowly is the vowel harmony the broad ipa misses (about 30 words, mostly those that begin with অ before an i or u syllable). Left out, not claimed absent: [x] or [χ] for x (varies by speaker and register), [ɹ] or [ɻ] for ɹ, [ɦ] or [h] for হ, [ɸ] for ফ, [β] for ভ and ৱ (all free variation, with no context given), the lowered ɔ̞ and o̞ and the advanced x̟ of one sample text, and a nasal taking the place of a following stop (not attested for Assamese in the sources read). Eastern Assam is the model: in lower Assam ও is said as o, not ʊ, and x is less used."
+rules:
+  # Vowel harmony: i and u change the vowel of a preceding syllable, ɔ to o and
+  # ʊ to u (and ɛ to e, which the course's ipa never writes, so no rule). The
+  # trigger is the next syllable's i or u, with only consonants between; a
+  # vowel straight after (a diphthong such as ɔi) is not harmony, and a space
+  # ends the word, so nothing crosses a word boundary. Nasal vowels are left
+  # alone. The broad ipa already harmonises most words; this catches the rest.
+  # source: Wikipedia, Assamese language, "Vowel harmony" (CC BY-SA 4.0), citing Mahanta, "Assamese", Journal of the International Phonetic Association 42(2) (2012): 217-224, p. 221; Wikipedia, Assamese language, "Vowels" (the minimal set kɔla, kola, kʊla, kula).
+  - id: "as-harmony-o"
+    pattern: 'ɔ(?=[^aeiouɔʊɛãẽĩõũ ˈ.̃]+[iu])'
+    replace: 'o'
+    source: 'Wikipedia, Assamese language, "Vowel harmony" (CC BY-SA 4.0), citing Mahanta, "Assamese", Journal of the International Phonetic Association 42(2) (2012): 217-224, p. 221; Wikipedia, Assamese language, "Vowels" (the minimal set kɔla, kola, kʊla, kula).'
+  - id: "as-harmony-u"
+    pattern: 'ʊ(?=[^aeiouɔʊɛãẽĩõũ ˈ.̃]+[iu])'
+    replace: 'u'
+    source: 'Wikipedia, Assamese language, "Vowel harmony" (CC BY-SA 4.0), citing Mahanta, "Assamese", Journal of the International Phonetic Association 42(2) (2012): 217-224, p. 221; Wikipedia, Assamese language, "Vowels" (the minimal set kɔla, kola, kʊla, kula).'

@@ -31,6 +31,8 @@ cards:
     ipa: "baːẽː"
     alt_target: ["बाएं", "बायें"]
     pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
   - id: "hi-0289"
     target: "सीधे"
     target_scripts: { perso_arabic: "سیدھے" }
@@ -48,12 +50,16 @@ cards:
     ipa: "mʊɽɪeː"
     pos: "verb"
     tags: ["polite"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
   - id: "hi-0291"
     target: "आगे"
     target_scripts: { perso_arabic: "آگے" }
     reading: "āgē"
     ipa: "aːɡeː"
     pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
     "examples": [
       {"target": "आगे बढ़ाओ।", "reading": "āgē baṛhāō.", "ipa": "aːɡeː bəɽʱaːoː", "bases": [{"word": "आगे", "base": "आगे", "reading": "āgē"}, {"word": "बढ़ाओ", "base": "बढ़ाना", "reading": "baṛhānā"}]}
     ]
@@ -63,6 +69,8 @@ cards:
     reading: "pīchē"
     ipa: "piːtʃʰeː"
     pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
     "examples": [
       {"target": "हर कहावत के पीछे एक अनुभव होता है।", "reading": "har kahāvat kē pīchē ēk anubhav hōtā hai.", "ipa": "ɦər kəɦaːʋət̪ keː piːtʃʰeː eːk ənʊbʱəʋ ɦoːt̪aː ɦɛː", "bases": [{"word": "हर", "base": "हर", "reading": "har"}, {"word": "कहावत", "base": "कहावत", "reading": "kahāvat"}, {"word": "के", "ref": "hi-0279"}, {"word": "पीछे", "base": "पीछे", "reading": "pīchē"}, {"word": "एक", "ref": "hi-0198"}, {"word": "अनुभव", "ref": "hi-2023"}, {"word": "होता", "ref": "hi-0780"}, {"word": "है", "ref": "hi-0780"}]}
     ]
