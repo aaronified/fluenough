@@ -415,6 +415,7 @@ A plan with no tracking issue is flagged.
 - [language paths, pacing by difficulty, and every language in the scheme](https://github.com/aaronified/fluenough/wiki/Plan-Language-Paths) (Written 2026-10-05), tracks #216
 - [Language Learning Paths (English Base, 30 min/day)](https://github.com/aaronified/fluenough/wiki/Plan-Language-Paths-Scheme), **no tracking issue**
 - [a look for each language (colour, icon, background image)](https://github.com/aaronified/fluenough/wiki/Plan-Language-Themes) (Written 2026-10-10; owner's answers recorded 2026-10-11), **no tracking issue**
+- [Learn flow: what "learned" means, and the new rule](https://github.com/aaronified/fluenough/wiki/Plan-Learned-Rule), **no tracking issue**
 - [a listening tier in context](https://github.com/aaronified/fluenough/wiki/Plan-Listening-In-Context) (Written 2026-10-05), tracks #230
 - [offensive words, their level, and warnings on words like them](https://github.com/aaronified/fluenough/wiki/Plan-Offensive-Words) (Written 2026-10-09), tracks #96, #97
 - [placement, script first, then a three-skill check](https://github.com/aaronified/fluenough/wiki/Plan-Placement-V2), **no tracking issue**
