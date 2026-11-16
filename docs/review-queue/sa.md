@@ -47,3 +47,5 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | sa-3001 | sa-questions-sentences (questions unit) | Is अस्ति कुत्र जलम्, where is water, natural with the verb placed first, or should another word order be taught? | Haiku deck worker | 2026-11-16 |
 | sa-3007 | sa-questions-sentences (questions unit) | Is अहं कः, who am I, natural with no verb, or should the sentence be written with the verb asti? | Haiku deck worker | 2026-11-16 |
 | unit-level | sa-questions-sentences (questions unit) | These sentences are written without sandhi because the vowel-sandhi unit is only planned; is a sandhi-free form acceptable where the text would normally join words? | Haiku deck worker | 2026-11-16 |
+| sa-3021 | sa-pronouns-sentences (pronouns unit) | Is इयं गौः, this is a cow, natural as a bare noun phrase with no verb? | Haiku deck worker | 2026-11-16 |
+| sa-3026 | sa-pronouns-sentences (pronouns unit) | Is त्वं किं जानासि, what do you know, the usual wording for this question, or is जानासि used differently here? | Haiku deck worker | 2026-11-16 |

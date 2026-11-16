@@ -1,0 +1,36 @@
+schema: 1
+id: "sa-en-pronouns-sentences"
+kind: "layer"
+core: "sa-pronouns-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with pronouns"
+description: "Short sentences with the pronouns of Pronouns, built only from words already taught. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-3020":
+    native: "Where is that cow?"
+    confusables: { "w1": { why: "What, not where: किम् (kim) asks what." }, "w2": { why: "When, not where: कदा (kadā) asks when." } }
+  "sa-3021":
+    native: "This is a cow."
+    bases: { "इयं": "this (feminine)" }
+    confusables: { "w1": { why: "Horse, not cow: अश्वः (aśvaḥ) means horse." }, "w2": { why: "Masculine, not this: सः (saḥ) means he or that (masculine)." } }
+    notes: { "n1": "गौः (gauḥ), cow, is feminine, so इयं (iyaṃ), this, is used." }
+  "sa-3022":
+    native: "This is water."
+    bases: { "इदं": "this (neuter)" }
+    confusables: { "w1": { why: "That, not this: तत् (tat) means that." }, "w2": { why: "Fire, not water: अग्निः (agniḥ) means fire." } }
+  "sa-3023":
+    native: "Who is this?"
+    bases: { "अयं": "this (masculine)" }
+    confusables: { "w1": { why: "What, not who: किम् (kim) asks what." }, "w2": { why: "Where, not who: कुत्र (kutra) asks where." } }
+  "sa-3024":
+    native: "How is she?"
+    confusables: { "w1": { why: "Who, not how: कः (kaḥ) asks who." }, "w2": { why: "When, not how: कदा (kadā) asks when." } }
+  "sa-3025":
+    native: "When is that?"
+    confusables: { "w1": { why: "Where, not when: कुत्र (kutra) asks where." }, "w2": { why: "How, not when: कथम् (katham) asks how." } }
+  "sa-3026":
+    native: "What do you know?"
+    bases: { "त्वं": "you (to one person)", "किं": "what", "जानासि": "to know (you know)" }
+    confusables: { "w1": { why: "I, not you: अहम् (aham) means I." }, "w2": { why: "Who, not what: कः (kaḥ) asks who." } }

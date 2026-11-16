@@ -1,0 +1,58 @@
+schema: 1
+id: "sa-pronouns-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3020"
+    target: "सा गौः कुत्र?"
+    reading: "sā gauḥ kutra?"
+    ipa: "saː ɡəuh kut̪rə"
+    pos: "phrase"
+    bases: [{ word: "सा", ref: "sa-1011" }, { word: "गौः", ref: "sa-0028" }, { word: "कुत्र", ref: "sa-1002" }]
+    confusables: [{ id: "w1", ref: "sa-1000", kind: "word" }, { id: "w2", ref: "sa-1003", kind: "word" }]
+  - id: "sa-3021"
+    target: "इयं गौः."
+    reading: "iyaṃ gauḥ."
+    ipa: "ijəm ɡəuh"
+    pos: "phrase"
+    bases: [{ word: "इयं", base: "इयम्", reading: "iyam" }, { word: "गौः", ref: "sa-0028" }]
+    confusables: [{ id: "w1", ref: "sa-0029", kind: "word" }, { id: "w2", ref: "sa-1010", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "sa-3022"
+    target: "इदं जलम्."
+    reading: "idaṃ jalam."
+    ipa: "id̪əm dʒələm"
+    pos: "phrase"
+    bases: [{ word: "इदं", base: "इदम्", reading: "idam" }, { word: "जलम्", ref: "sa-0023" }]
+    confusables: [{ id: "w1", ref: "sa-1012", kind: "word" }, { id: "w2", ref: "sa-0024", kind: "word" }]
+  - id: "sa-3023"
+    target: "अयं कः?"
+    reading: "ayaṃ kaḥ?"
+    ipa: "əjəm kəh"
+    pos: "phrase"
+    bases: [{ word: "अयं", base: "अयम्", reading: "ayam" }, { word: "कः", ref: "sa-1001" }]
+    confusables: [{ id: "w1", ref: "sa-1000", kind: "word" }, { id: "w2", ref: "sa-1002", kind: "word" }]
+  - id: "sa-3024"
+    target: "सा कथम्?"
+    reading: "sā katham?"
+    ipa: "saː kət̪ʰəm"
+    pos: "phrase"
+    bases: [{ word: "सा", ref: "sa-1011" }, { word: "कथम्", ref: "sa-1004" }]
+    confusables: [{ id: "w1", ref: "sa-1001", kind: "word" }, { id: "w2", ref: "sa-1003", kind: "word" }]
+  - id: "sa-3025"
+    target: "तत् कदा?"
+    reading: "tat kadā?"
+    ipa: "t̪ət̪ kəd̪aː"
+    pos: "phrase"
+    bases: [{ word: "तत्", ref: "sa-1012" }, { word: "कदा", ref: "sa-1003" }]
+    confusables: [{ id: "w1", ref: "sa-1002", kind: "word" }, { id: "w2", ref: "sa-1004", kind: "word" }]
+  - id: "sa-3026"
+    target: "त्वं किं जानासि?"
+    reading: "tvaṃ kiṃ jānāsi?"
+    ipa: "t̪ʋəm kim dʒaːnaːsi"
+    pos: "phrase"
+    bases: [{ word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "किं", base: "किम्", reading: "kim" }, { word: "जानासि", base: "ज्ञा", reading: "jñā" }]
+    confusables: [{ id: "w1", ref: "sa-0021", kind: "word" }, { id: "w2", ref: "sa-1001", kind: "word" }]
