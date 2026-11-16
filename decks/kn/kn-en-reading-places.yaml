@@ -1,0 +1,47 @@
+schema: 1
+id: "kn-en-reading-places"
+name: "Reading: street signs"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A Kannada passage written for this course with the words taught up to its unit (signs along a street: pharmacy, school, bank, temple). Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-street-signs"
+    title: "Street signs"
+    sentences:
+      - text: "ಇಲ್ಲಿ ಶಾಲೆ ಇದೆ."
+        reading: "illi śāle ide."
+        ipa: "illi ʃaːle id̪e"
+      - text: "ಬ್ಯಾಂಕು ಮುಂದೆ ಇದೆ."
+        reading: "byāṅku munde ide."
+        ipa: "bjaːŋku mund̪e id̪e"
+      - text: "ದೇವಸ್ಥಾನ ಬಲಕ್ಕೆ ಇದೆ."
+        reading: "dēvasthāna balakke ide."
+        ipa: "d̪eːʋast̪ʰaːna balakke id̪e"
+      - text: "ಔಷಧಾಲಯ ಎಡಕ್ಕೆ ಇದೆ."
+        reading: "auṣadhālaya eḍakke ide."
+        ipa: "auʂad̪ʱaːlaja eɖakke id̪e"
+      - text: "ಶಾಲೆ ಉದ್ಯಾನದ ಹತ್ತಿರ ಇದೆ."
+        reading: "śāle udyānada hattira ide."
+        ipa: "ʃaːle ud̪jaːnad̪a hat̪t̪ira id̪e"
+    questions:
+      - id: "kn-9340"
+        prompt: { en: "What is on the right?" }
+        options:
+          - { en: "Temple" }
+          - { en: "Pharmacy" }
+          - { en: "School" }
+        answer: 1
+      - id: "kn-9341"
+        prompt: { en: "The pharmacy is on the left." }
+        answer: true
+      - id: "kn-9342"
+        prompt: { en: "What is near the park?" }
+        options:
+          - { en: "The school" }
+          - { en: "The bank" }
+          - { en: "The temple" }
+        answer: 1

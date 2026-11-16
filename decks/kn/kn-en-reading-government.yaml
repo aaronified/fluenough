@@ -1,0 +1,40 @@
+schema: 1
+id: "kn-en-reading-government"
+name: "Reading: form instructions"
+kind: reading
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short passage written for this course, using only the words of its unit and the units before it. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-form-instructions"
+    title: "Form instructions"
+    sentences:
+      - text: "ಅರ್ಜಿ ಫಾರ್ಮ್ ತುಂಬಿ."
+        reading: "arji phārm tumbi."
+        ipa: "ardʒi pʰaːrm t̪umbi"
+      - text: "ಖಾತೆ ಸಂಖ್ಯೆ ಬರೆಯಿರಿ."
+        reading: "khāte saṅkhye bareyiri."
+        ipa: "kʰaːt̪e saŋkʰje barejiri"
+      - text: "ಕೊನೆಯಲ್ಲಿ ಸಹಿ ಮಾಡಿ."
+        reading: "koneyalli sahi māḍi."
+        ipa: "konejalli sahi maːɖi"
+      - text: "ಶುಲ್ಕ ಈ ಕಚೇರಿಯಲ್ಲಿ ಕಟ್ಟಿ."
+        reading: "śulka ī kacēriyalli kaṭṭi."
+        ipa: "ʃulka iː katʃeːrijalli kaʈʈi"
+    questions:
+      - id: "kn-9706"
+        prompt: { en: "What should you write on the form?" }
+        options:
+          - { en: "Your account number" }
+          - { en: "Your favourite song" }
+          - { en: "The weather" }
+        answer: 1
+      - id: "kn-9707"
+        prompt: { en: "Sign at the end." }
+        answer: true
+      - id: "kn-9708"
+        prompt: { en: "The fee is paid at home." }
+        answer: false

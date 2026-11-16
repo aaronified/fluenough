@@ -1,0 +1,47 @@
+schema: 1
+id: "kn-en-reading-phone"
+name: "Reading: text messages"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A Kannada passage written for this course with the words taught up to its unit (a few text messages between friends). Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-text-messages"
+    title: "Text messages"
+    sentences:
+      - text: "ನಮಸ್ಕಾರ, ನೀನು ಎಲ್ಲಿದ್ದೀಯ?"
+        reading: "namaskāra, nīnu elliddīya?"
+        ipa: "namaskaːra niːnu ellid̪d̪iːja"
+      - text: "ನಾನು ಮನೆಯಲ್ಲಿ ಇದ್ದೇನೆ."
+        reading: "nānu maneyalli iddēne."
+        ipa: "naːnu manejalli id̪d̪eːne"
+      - text: "ನನ್ನ ಫೋನಿನಲ್ಲಿ ಚಾರ್ಜ್ ಇಲ್ಲ."
+        reading: "nanna phōninalli cārj illa."
+        ipa: "nanna pʰoːninalli tʃaːrdʒ illa"
+      - text: "ಸ್ವಲ್ಪ ಕಾಯಿ."
+        reading: "svalpa kāyi."
+        ipa: "sʋalpa kaːji"
+      - text: "ನಿನ್ನ ಸಂಖ್ಯೆ ಕಳುಹಿಸು."
+        reading: "ninna saṅkhye kaḷuhisu."
+        ipa: "ninna saŋkʰje kaɭuhisu"
+    questions:
+      - id: "kn-9355"
+        prompt: { en: "Where is the sender?" }
+        options:
+          - { en: "At home" }
+          - { en: "At school" }
+          - { en: "At the bank" }
+        answer: 1
+      - id: "kn-9356"
+        prompt: { en: "The phone has no charge." }
+        answer: true
+      - id: "kn-9357"
+        prompt: { en: "What does the friend ask for?" }
+        options:
+          - { en: "The number" }
+          - { en: "The book" }
+          - { en: "The money" }
+        answer: 1
