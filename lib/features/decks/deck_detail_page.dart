@@ -9,7 +9,6 @@ import '../../app/session.dart';
 import '../../app/skill.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
-import '../../core/scheduling/session_queue.dart' show SessionItem;
 import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
@@ -170,9 +169,6 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
           deckId: entry.id,
           tags: _tags,
         );
-        final learnLesson = reading
-            ? const <SessionItem>[]
-            : state.lessonFor(learnRequest);
         final skills = deckSkills(entry, state.settings);
         final practiceCount = state
             .buildSession(DrillRequest.practice(entry.id, tags: _tags))
@@ -260,11 +256,11 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
             // Learn runs the learn rule on the words in view not learned
             // yet; with none left to learn it is the walkthrough, a way to
             // look that records nothing.
-            onLearn: () => learnLesson.isEmpty
-                ? AppNavigator.openWalkthrough(context, <String>[
+            onLearn: () => !reading && state.lessonFor(learnRequest).isNotEmpty
+                ? AppNavigator.startDrill(context, learnRequest)
+                : AppNavigator.openWalkthrough(context, <String>[
                     entry.id,
-                  ], tags: _tags)
-                : AppNavigator.startDrill(context, learnRequest),
+                  ], tags: _tags),
           ),
         );
       },

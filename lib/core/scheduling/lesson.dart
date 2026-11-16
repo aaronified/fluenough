@@ -175,70 +175,104 @@ List<SessionItem> lessonPlan(
   bool Function(Card card)? tracked,
   List<SessionItem> fillers = const <SessionItem>[],
 }) {
-  final attempts = <LearnAttempt>[];
-  for (final card in cards) {
-    final modes = modesOf(card);
-    SessionItem asked(DrillMode mode, Ask ask) => SessionItem(
-      card: card,
-      mode: mode,
-      state: null,
-      ask: ask.chooses && !canChoose(card, ask) ? Ask.own : ask,
-    );
-    final questions = <SessionItem>[
-      for (final q in lessonQuestions(
+  final attempts = <LearnAttempt>[
+    for (final card in cards)
+      ?lessonAttempt(
         card,
-        typed: typed?.call(card) ?? true,
-        siblings: siblingsOf?.call(card) ?? const <Card>[],
-      ))
-        // A match is a group of items: a learn question is of one.
-        if (modes.contains(q.mode))
-          asked(q.mode, q.ask == Ask.matchPairs ? Ask.chooseMeaning : q.ask),
-    ];
-    // A word with only one skill of its own, as a phrase of one word has no
-    // Write, is also asked by choosing its word.
-    final second =
-        card.rule == null &&
-            !card.isGrammarCell &&
-            modes.contains(DrillMode.recognition) &&
-            canChoose(card, Ask.chooseWord)
+        modesOf: modesOf,
+        canChoose: canChoose,
+        straightToQuestion: straightToQuestion,
+        typed: typed,
+        siblingsOf: siblingsOf,
+        tracked: tracked,
+      ),
+  ];
+  return learnSequence(attempts, fillers: fillers).items;
+}
+
+/// The learn attempt of [card] as [lessonPlan] lays it out, or null when it
+/// cannot be learned yet: it has not two different questions ([learnPair]).
+/// A card [tracked] says is not tracked is one already learned, practised
+/// again: it is never left out, and with one question only it is asked once.
+LearnAttempt? lessonAttempt(
+  Card card, {
+  required Set<DrillMode> Function(Card card) modesOf,
+  required bool Function(Card card, Ask ask) canChoose,
+  bool Function(Card card)? straightToQuestion,
+  bool Function(Card card)? typed,
+  List<Card> Function(Card card)? siblingsOf,
+  bool Function(Card card)? tracked,
+}) {
+  final modes = modesOf(card);
+  SessionItem asked(DrillMode mode, Ask ask) => SessionItem(
+    card: card,
+    mode: mode,
+    state: null,
+    ask: ask.chooses && !canChoose(card, ask) ? Ask.own : ask,
+  );
+  final questions = <SessionItem>[
+    for (final q in lessonQuestions(
+      card,
+      typed: typed?.call(card) ?? true,
+      siblings: siblingsOf?.call(card) ?? const <Card>[],
+    ))
+      // A match is a group of items: a learn question is of one.
+      if (modes.contains(q.mode))
+        asked(q.mode, q.ask == Ask.matchPairs ? Ask.chooseMeaning : q.ask),
+  ];
+  // A word with only one skill of its own, as a phrase of one word has no
+  // Write, is also asked by choosing its word.
+  final fallback =
+      card.rule == null &&
+          !card.isGrammarCell &&
+          modes.contains(DrillMode.recognition) &&
+          canChoose(card, Ask.chooseWord)
+      ? SessionItem(
+          card: card,
+          mode: DrillMode.recognition,
+          state: null,
+          ask: Ask.chooseWord,
+        )
+      : null;
+  final isTracked = tracked?.call(card) ?? true;
+  final pair = learnPair(questions, fallback: fallback);
+  final SessionItem first;
+  final SessionItem? second;
+  if (pair != null) {
+    first = pair.first;
+    second = pair.second;
+  } else if (!isTracked && questions.isNotEmpty) {
+    first = questions.first;
+    second = null;
+  } else {
+    return null;
+  }
+  final straight = straightToQuestion?.call(card) ?? false;
+  final SessionItem? show;
+  if (straight) {
+    show = card.rule != null
         ? SessionItem(
             card: card,
-            mode: DrillMode.recognition,
+            mode: DrillMode.grammar,
             state: null,
-            ask: Ask.chooseWord,
+            ask: Ask.teachRule,
           )
         : null;
-    final pair = learnPair(questions, fallback: second);
-    if (pair == null) continue;
-    final SessionItem? show;
-    if (card.rule != null && (straightToQuestion?.call(card) ?? false)) {
-      show = SessionItem(
-        card: card,
-        mode: DrillMode.grammar,
-        state: null,
-        ask: Ask.teachRule,
-      );
-    } else if (straightToQuestion?.call(card) ?? false) {
-      show = null;
-    } else {
-      show = SessionItem(
-        card: card,
-        mode: pair.first.mode,
-        state: null,
-        ask: Ask.teach,
-      );
-    }
-    attempts.add(
-      LearnAttempt(
-        card: card,
-        shows: <SessionItem>[?show],
-        first: pair.first,
-        second: pair.second,
-        tracked: tracked?.call(card) ?? true,
-      ),
+  } else {
+    show = SessionItem(
+      card: card,
+      mode: first.mode,
+      state: null,
+      ask: Ask.teach,
     );
   }
-  return learnSequence(attempts, fillers: fillers).items;
+  return LearnAttempt(
+    card: card,
+    shows: <SessionItem>[?show],
+    first: first,
+    second: second,
+    tracked: isTracked,
+  );
 }
 
 final RegExp _letter = RegExp(r'\p{L}', unicode: true);

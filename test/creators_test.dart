@@ -70,7 +70,7 @@ void main() {
       );
     });
 
-    test('shows the target-language text at its simplest level', () {
+    test('shows the full target-language text', () {
       final read = parseCreators('''
 schema: 1
 kind: "creators"
@@ -92,7 +92,7 @@ creators:
         - { kind: "film", year: 2001, text: { en: "A film." }, source: { work: "Film" } }
 ''', source: 'zz.yaml');
       final lee = read.byId('zz-lee')!;
-      expect(lee.bioTargetSimplest!.text, 'uno');
+      expect(lee.bioTargetFull!.text, 'tres');
       expect(lee.legacyFor(<String>['en'])!.target!.text, 'dos');
       expect(lee.names['zz']!.ipa, 'li');
     });

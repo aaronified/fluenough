@@ -236,48 +236,4 @@ abstract final class DailyPlanner {
       rounds: rounds,
     );
   }
-
-  /// A round's cards in the order asked: some [older] reviews, the new
-  /// words [taught], then the first pass of asking them with more [older]
-  /// reviews mixed in, then the second pass with the rest, so that a word
-  /// is never asked straight after it is taught, nor twice in a row (owner,
-  /// 2026-10-30: "not instantly, but with older reviews mixed").
-  ///
-  /// With no new words, just [older].
-  static List<T> arrange<T>({
-    required List<T> older,
-    required List<T> taught,
-    required List<T> firstPass,
-    required List<T> secondPass,
-  }) {
-    if (taught.isEmpty && firstPass.isEmpty && secondPass.isEmpty) {
-      return List<T>.of(older);
-    }
-    final third = (older.length / 3).round();
-    final before = older.take(third).toList();
-    final middle = older.skip(third).take(third).toList();
-    final after = older.skip(2 * third).toList();
-    return <T>[
-      ...before,
-      ...taught,
-      ...mix(middle, firstPass),
-      ...mix(after, secondPass),
-    ];
-  }
-
-  /// [base] with [extra] spread evenly through it, so that no two of
-  /// [extra] are side by side while [base] has cards to part them.
-  static List<T> mix<T>(List<T> base, List<T> extra) {
-    if (base.isEmpty) return List<T>.of(extra);
-    final out = <T>[];
-    final parts = extra.length + 1;
-    var from = 0;
-    for (var i = 0; i < parts; i++) {
-      final to = ((i + 1) * base.length / parts).round();
-      out.addAll(base.sublist(from, to));
-      from = to;
-      if (i < extra.length) out.add(extra[i]);
-    }
-    return out;
-  }
 }

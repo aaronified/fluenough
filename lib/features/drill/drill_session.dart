@@ -287,6 +287,7 @@ class DrillSession extends ChangeNotifier {
     _learnNotice = null;
     return notice;
   }
+
   int _index = 0;
   DrillPhase _phase = DrillPhase.prompt;
   TypedAnswer? _answer;
@@ -1343,7 +1344,9 @@ class DrillSession extends ChangeNotifier {
       );
     }
     final tag = item.learn;
-    if (tag != null && tag.step == LearnStep.show) _learn.shown(tag.id);
+    if (tag != null && tag.step == LearnStep.show) {
+      _learn.shown(tag.id, gap: tag.gap);
+    }
     _advance();
   }
 
@@ -1728,9 +1731,17 @@ class DrillSession extends ChangeNotifier {
     );
     switch (result.outcome) {
       case LearnOutcome.learned:
-        for (final answer in result.held) {
-          _write(answer);
-        }
+        _state.recordAll(<AnswerRecord>[
+          for (final a in result.held)
+            (
+              item: a.entry,
+              grade: a.grade,
+              elapsed: a.elapsed,
+              answerGiven: a.answerGiven,
+              script: a.script,
+              asked: a.asked,
+            ),
+        ]);
         _learnNotice = LearnNotice.learned;
       case LearnOutcome.failed:
         _learnNotice = LearnNotice.notYet;
@@ -1836,6 +1847,13 @@ class DrillSession extends ChangeNotifier {
     };
   }
 
+  /// A question passed over unasked ends its learn attempt: the gap it was
+  /// laid out with is broken.
+  void _skipped(SessionItem item) {
+    final tag = item.learn;
+    if (tag != null && tag.step != LearnStep.show) _learn.dropAttempt(tag.id);
+  }
+
   void _advance() {
     // A question left behind, answered or not, is one more between the
     // questions of the learn attempts open; a learn question left
@@ -1856,6 +1874,7 @@ class DrillSession extends ChangeNotifier {
     _replaying = false;
     var next = _index + 1;
     while (next < items.length && !_drillable(items[next])) {
+      _skipped(items[next]);
       next++;
     }
     final run = daily;
@@ -1878,6 +1897,7 @@ class DrillSession extends ChangeNotifier {
           _items.addAll(more);
           next = from;
           while (next < items.length && !_drillable(items[next])) {
+            _skipped(items[next]);
             next++;
           }
         }

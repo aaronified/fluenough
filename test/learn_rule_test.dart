@@ -5,11 +5,12 @@
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
+import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
-import 'package:fluenough/core/scheduling/ask.dart';
 import 'package:fluenough/core/scheduling/learn_sequence.dart';
 import 'package:fluenough/core/scheduling/lesson.dart';
+import 'package:fluenough/core/scheduling/replay.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
 import 'package:fluenough/features/drill/drill_session.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -85,20 +86,51 @@ void main() {
       expect(result.held, isEmpty);
     });
 
-    test('a second question after more than two others is dropped', () {
-      final result = run(tracker(), between: learnGap + 1);
+    test('a second question after more than two others learns nothing', () {
+      final t = tracker();
+      final result = run(t, between: learnGap + 1);
+      expect(result.outcome, isNot(LearnOutcome.learned));
+      expect(result.held, isEmpty);
+      // The attempt ended as soon as its gap was broken.
+      expect(t.open, isEmpty);
+    });
+
+    test('a second question after fewer than two others learns nothing', () {
+      final result = run(tracker(), between: learnGap - 1);
       expect(result.outcome, LearnOutcome.dropped);
       expect(result.held, isEmpty);
     });
 
-    test('a first question not right after the show is dropped', () {
+    test('a short lesson keeps exactly the gap it was laid out with', () {
+      final t = tracker();
+      t.shown('a', gap: 1);
+      t.answer('a', LearnStep.first, true, 'q1');
+      t.left(id: 'a', step: LearnStep.first);
+      t.left();
+      expect(
+        t.answer('a', LearnStep.second, true, 'q2').outcome,
+        LearnOutcome.learned,
+      );
+    });
+
+    test('a first question not right after the show learns nothing', () {
       final t = tracker();
       t.shown('a');
       t.left();
+      expect(t.open, isEmpty);
       expect(
-        t.answer('a', LearnStep.first, true, 'q1').outcome,
-        LearnOutcome.dropped,
+        t.answer('a', LearnStep.first, true, 'q1').held,
+        isEmpty,
       );
+    });
+
+    test('a question skipped unasked ends its attempt', () {
+      final t = tracker();
+      t.shown('a');
+      t.answer('a', LearnStep.first, true, 'q1');
+      t.dropAttempt('a');
+      expect(t.open, isEmpty);
+      expect(t.answer('a', LearnStep.second, true, 'q2').held, isEmpty);
     });
 
     test('an idle sitting drops the attempt', () {
@@ -228,7 +260,8 @@ void main() {
       ]);
     });
 
-    test('with no review to space it a last group is still learnable', () {
+    test('a lesson of fewer than three, with no review to space it, is kept '
+        'with the shorter gap it can have', () {
       final items = learnSequence(<LearnAttempt>[
         _attempt('a'),
         _attempt('b'),
@@ -241,6 +274,18 @@ void main() {
         'a:second',
         'b:second',
       ]);
+      expect(items.first.learn!.gap, 1);
+    });
+
+    test('a last group that cannot be spaced waits for another lesson', () {
+      final items = learnSequence(<LearnAttempt>[
+        for (var i = 0; i < 4; i++) _attempt('x$i'),
+      ]).items;
+      expect(
+        items.map((i) => i.card.id).toSet(),
+        <String>{'x0', 'x1', 'x2'},
+      );
+      expect(items.every((i) => i.learn!.gap == learnGap), isTrue);
     });
 
     test('an item already learned is asked plainly, never tracked', () {
@@ -300,8 +345,27 @@ void main() {
       expect(pair.second.ask, Ask.chooseWord);
     });
 
+    test('a card that cannot be asked two ways is left out, but never a card '
+        'already learned, which is practised with one question', () {
+      final one = _card('solo');
+      LearnAttempt? attempt({required bool tracked}) => lessonAttempt(
+        one,
+        modesOf: (_) => <DrillMode>{DrillMode.recognition},
+        // Nothing to choose from: recognition would only be rated.
+        canChoose: (_, _) => false,
+        tracked: (_) => tracked,
+      );
+      expect(attempt(tracked: true), isNull);
+      final practised = attempt(tracked: false)!;
+      expect(practised.second, isNull);
+      expect(
+        learnSequence(<LearnAttempt>[practised]).items.map((i) => i.ask),
+        isNotEmpty,
+      );
+    });
+
     test('are found for a phrase of one word, which has no Write', () {
-      final phrase = Card(
+      const phrase = Card(
         id: 'p',
         deckId: 'test',
         target: 'gracias',
@@ -408,6 +472,11 @@ cards:
         isNotNull,
       );
       expect(run.state.progress.log, hasLength(2));
+      // Both answers are written as one moment.
+      expect(
+        run.state.progress.log.first.at,
+        run.state.progress.log.last.at,
+      );
       expect(run.state.isTaught(run.cards[1]), isFalse);
       play(run.session);
       play(run.session);
@@ -460,6 +529,50 @@ cards:
         play(run.session);
       }
       expect(run.state.progress.log, isEmpty);
+    });
+  });
+
+  group('what is kept from before', () {
+    LoggedReview review(String card, int grade, int day, {Ask? asked}) => (
+      key: (cardId: card, mode: DrillMode.recognition),
+      deckId: 'd',
+      at: DateTime(2026, 11, day),
+      grade: grade,
+      elapsed: const Duration(seconds: 2),
+      answerGiven: asked == Ask.teach ? null : 'x',
+      script: null,
+      asked: asked,
+    );
+
+    test('a card only ever looked at has no state, one answered keeps it', () {
+      final log = <LoggedReview>[
+        review('looked', 0, 1, asked: Ask.teach),
+        review('known', 0, 1, asked: Ask.teach),
+        review('known', 4, 2, asked: Ask.chooseMeaning),
+      ];
+      final once = replayReviews(log);
+      expect(once.states.keys.map((k) => k.cardId), <String>['known']);
+      // Idempotent: replaying again gives the same states.
+      final again = replayReviews(log);
+      expect(again.states.keys, once.states.keys);
+      expect(
+        again.states.values.single.dueAt,
+        once.states.values.single.dueAt,
+      );
+      // The rows stay in the log, as events.
+      expect(once.events, hasLength(3));
+    });
+
+    test('a backup with the removed settings keys restores without them', () {
+      final settings = SettingsNotifier()
+        ..restore(<String, String>{
+          'hide_above_level': 'true',
+          'culture_above_support': 'true',
+          'culture_items': 'false',
+        });
+      expect(settings.cultureItems, isFalse);
+      expect(settings.toStored().containsKey('hide_above_level'), isFalse);
+      expect(settings.toStored().containsKey('culture_above_support'), isFalse);
     });
   });
 }

@@ -127,7 +127,7 @@ class LegacyItem {
 }
 
 /// What a creator's legacy shows a learner: the summary in their spoken
-/// language, the summary in the language learned at its simplest level (when
+/// language, the summary in the language learned at its fullest level (when
 /// the file has one), and the items.
 class LegacyView {
   const LegacyView({required this.text, required this.items, this.target});
@@ -210,9 +210,9 @@ class Creator {
   /// when there is none.
   String bioFor(Iterable<String> spoken) => _pick(bio, spoken);
 
-  /// The bio in the language learned at its simplest level, or null for a file
-  /// with none. A level picks the text; it never hides the creator.
-  CreatorText? get bioTargetSimplest => _simplest(bioTarget);
+  /// The bio in the language learned at its fullest level, or null for a file
+  /// with none. A level never hides or shortens it.
+  CreatorText? get bioTargetFull => _fullest(bioTarget);
 
   /// The legacy a learner sees, with the summary in [spoken]; null when the
   /// creator has none.
@@ -221,7 +221,7 @@ class Creator {
     if (legacy == null) return null;
     return LegacyView(
       text: _pick(legacy.text, spoken),
-      target: _simplest(legacy.textTarget),
+      target: _fullest(legacy.textTarget),
       items: legacy.items,
     );
   }
@@ -230,11 +230,11 @@ class Creator {
   String toString() => 'Creator($id)';
 }
 
-CreatorText? _simplest(Map<Level, CreatorText> byLevel) {
+CreatorText? _fullest(Map<Level, CreatorText> byLevel) {
   CreatorText? best;
   Level? bestLevel;
   for (final MapEntry(:key, :value) in byLevel.entries) {
-    if (bestLevel == null || key.index < bestLevel.index) {
+    if (bestLevel == null || key.index > bestLevel.index) {
       best = value;
       bestLevel = key;
     }

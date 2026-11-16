@@ -7,8 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- **A word is learned only when you answer it twice.** A new word is shown, asked at once, and asked again in a different way a few questions later; only when both answers are right does it join your reviews, so nothing you only glanced at is scheduled for you.
+- **A word is learned only when you answer it twice.** A new word is shown, asked at once, and asked again in a different way two questions later; only when both answers are right does it join your reviews, so nothing you only glanced at is scheduled for you.
 - **Everything is open, whatever your level.** Decks, topics, culture items and recommended works are no longer hidden or locked because they are above your level, and the "Hide what is above my level" and culture "Items above my level" settings are gone.
+- **Words you only swiped past are no longer counted as learned.** They go through the two questions like any new word.
 - **Looking at a card in the walkthrough no longer schedules it.** Swiping through a deck only shows it; Learn on a deck page now starts a real lesson on the words in view.
 - **Choosing situations is clearer.** The picker now has "On Today" (up to six, in your order, with a counter) and "More situations", so you can see what is shown and what is not, and long names such as Emergency and Doctor and pharmacy fit their tiles on the picker and on Today.
 - **The info button on Today now sits before its sentence.** In the skills card, the small info button is now on the left of "Tap a skill to practise only that" instead of the far right.

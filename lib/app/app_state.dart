@@ -3658,6 +3658,34 @@ class AppState extends ChangeNotifier {
   bool isTaught(Card card) =>
       DrillMode.drills.any((mode) => progress.stateOf(card.id, mode) != null);
 
+  /// The learn attempt of [card] as a lesson would lay it out, or null where
+  /// it cannot be learned yet.
+  LearnAttempt? _learnAttemptOf(Card card, {bool tracked = true}) =>
+      lessonAttempt(
+        card,
+        modesOf: drillableModesNow(),
+        canChoose: (card, ask) => canChoose(
+          card,
+          ask == Ask.hearMeaning && hearsForm(card) ? Ask.hearAndChoose : ask,
+        ),
+        straightToQuestion: (card) => card.rule != null,
+        typed: isTyped,
+        siblingsOf: siblingsOf,
+        tracked: (_) => tracked,
+      );
+
+  /// Whether [card] can be learned: two different questions can be asked of
+  /// it now (the learn rule). A card that cannot stays viewable, is never
+  /// taught, and never holds a unit back or fills a lesson (owner, 2026-11-16).
+  /// A reading question is an exam item and is not learned.
+  bool canLearn(Card card) {
+    if (card is QuestionCard) return true;
+    return derived<bool>(
+      ('canLearn', card.id),
+      () => _learnAttemptOf(card) != null,
+    );
+  }
+
   /// The cards a walkthrough of [decks] covers (#694): every card of every
   /// deck, in the order the decks come and each deck's own, a card once,
   /// whatever is taught (owner, 2026-10-31: taught status is information
@@ -3756,7 +3784,8 @@ class AppState extends ChangeNotifier {
             seen.add(card.id) &&
             !isTaught(card) &&
             gate.isOpen(card) &&
-            drillableModes(card).isNotEmpty)
+            drillableModes(card).isNotEmpty &&
+            canLearn(card))
           card,
     ];
   }
@@ -3822,25 +3851,42 @@ class AppState extends ChangeNotifier {
     // As many new items as the mastery bar allows (ADR-0046): fewer while
     // words and rules taught are not known yet.
     final room = lessonRoom(inProgressIn(request.language!));
-    final picked = lessonItems(
-      taught,
-      room: words == null ? room : (beyondRoom ? words : min(room, words)),
-    );
+    final size = words == null ? room : (beyondRoom ? words : min(room, words));
     final modesOf = drillableModesNow();
-    // Fewer than three new words in the last group need reviews between
-    // their questions to keep the gap (learn rule): take two learned cards.
-    final spare = fillers.isNotEmpty || picked.length % learnOpenMax == 0
-        ? fillers
-        : _reviewFillers(request.language!, picked);
-    final lesson = lessonSets(
-      picked,
-      sets: _lessonSets(picked),
-      // A set's members are taught whole, but none the gate holds back
-      // (ADR-0046).
-      isNew: (card) =>
-          !isTaught(card) && unlocks.isOpen(card) && modesOf(card).isNotEmpty,
-      isKnown: isTaught,
-    );
+    LessonSets build(int size) {
+      final picked = lessonItems(taught, room: size);
+      final lesson = lessonSets(
+        picked,
+        sets: _lessonSets(picked),
+        // A set's members are taught whole, but none the gate holds back
+        // (ADR-0046).
+        isNew: (card) =>
+            !isTaught(card) &&
+            unlocks.isOpen(card) &&
+            modesOf(card).isNotEmpty &&
+            canLearn(card),
+        isKnown: isTaught,
+      );
+      return lesson;
+    }
+
+    var lesson = build(size);
+    // The learn rule needs two other questions between a word's two; a last
+    // group of fewer than three new words is spaced by reviews of learned
+    // cards, or else completed with the next words of the unit.
+    var spare = _distinct(fillers);
+    final short = lesson.cards.length % learnOpenMax;
+    if (short != 0 && spare.length < learnOpenMax - short) {
+      spare = _distinct(<SessionItem>[
+        ...spare,
+        ..._reviewFillers(request.language!, lesson.cards),
+      ]);
+      if (spare.length < learnOpenMax - short) {
+        final more = build(size + learnOpenMax - short);
+        if (more.cards.length > lesson.cards.length) lesson = more;
+      }
+    }
+    final spareSet = Set<SessionItem>.identity()..addAll(spare);
     return <SessionItem>[
       for (final part in lesson.parts)
         SessionItem.set(part, DrillMode.recognition),
@@ -3858,9 +3904,21 @@ class AppState extends ChangeNotifier {
         siblingsOf: siblingsOf,
         fillers: spare,
       ))
-        item.ask == Ask.hearMeaning && hearsForm(item.card)
-            ? item.askedAs(Ask.hearAndChoose)
-            : item,
+        if (!spareSet.contains(item) &&
+            item.ask == Ask.hearMeaning &&
+            hearsForm(item.card))
+          item.askedAs(Ask.hearAndChoose)
+        else
+          item,
+    ];
+  }
+
+  /// [items] with a review asked once only: one per card and mode.
+  static List<SessionItem> _distinct(List<SessionItem> items) {
+    final seen = <(String, DrillMode)>{};
+    return <SessionItem>[
+      for (final item in items)
+        if (seen.add((item.card.id, item.mode))) item,
     ];
   }
 
@@ -4031,7 +4089,7 @@ class AppState extends ChangeNotifier {
         DrillRequest.untaught(deck.id),
         ignorePauses: true,
       ).fresh)
-        if (!isTaught(item.card)) item.card.id,
+        if (!isTaught(item.card) && canLearn(item.card)) item.card.id,
     }.length,
   );
 
@@ -4046,7 +4104,10 @@ class AppState extends ChangeNotifier {
         DrillRequest.untaught(deck.id),
         ignorePauses: true,
       ).fresh)
-        if (!isTaught(item.card) && gate.isOpen(item.card)) item.card.id,
+        if (!isTaught(item.card) &&
+            gate.isOpen(item.card) &&
+            canLearn(item.card))
+          item.card.id,
     }.length;
   }
 
@@ -4179,13 +4240,37 @@ class AppState extends ChangeNotifier {
       cardId: item.card.id,
       mode: item.mode,
       grade: grade,
-      now: now(),
+      now: _batchAt ?? now(),
       elapsed: elapsed,
       answerGiven: answerGiven,
       script: script,
       asked: asked,
     );
     return event;
+  }
+
+  DateTime? _batchAt;
+
+  /// Records [answers] together, as one moment: every review is written with
+  /// the same time, in order, so that the two answers that made an item
+  /// learned give it one first schedule (the learn rule).
+  List<ReviewEvent> recordAll(List<AnswerRecord> answers) {
+    _batchAt = now();
+    try {
+      return <ReviewEvent>[
+        for (final a in answers)
+          record(
+            a.item,
+            a.grade,
+            elapsed: a.elapsed,
+            answerGiven: a.answerGiven,
+            script: a.script,
+            asked: a.asked,
+          ),
+      ];
+    } finally {
+      _batchAt = null;
+    }
   }
 
   bool _disposed = false;
@@ -4227,6 +4312,16 @@ class AppState extends ChangeNotifier {
     super.dispose();
   }
 }
+
+/// One answer to record: [AppState.recordAll].
+typedef AnswerRecord = ({
+  SessionItem item,
+  int grade,
+  Duration elapsed,
+  String? answerGiven,
+  String? script,
+  Ask? asked,
+});
 
 /// A fact that names a card, and its text in the learner's languages (#546).
 typedef CardFact = ({Fact fact, List<({String code, String text})> texts});

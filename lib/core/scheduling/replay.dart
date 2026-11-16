@@ -56,12 +56,22 @@ Replayed replayReviews(
   SkillParameters? parameters,
 }) {
   final chosen = parameters ?? SkillParameters.none;
+  final all = reviews.toList();
+  // A card whose only reviews are walkthrough views (a graded-0 `Ask.teach`
+  // row, no answer ever) was never learned: it gets no state (owner,
+  // 2026-11-16, "reset the old fake taught marks"). A card with any real
+  // answer replays as it always did, its views included. The rows stay in the
+  // log; replaying it again gives the same states.
+  final answered = <String>{
+    for (final review in all)
+      if (review.asked != Ask.teach) review.key.cardId,
+  };
   final states = <ProgressKey, FsrsState>{};
   final restarted = <ProgressKey>{};
   final events = <ReviewEvent>[];
   final scriptStates = <ScriptKey, FsrsState>{};
   final scriptEvents = <ReviewEvent>[];
-  for (final review in reviews) {
+  for (final review in all) {
     final key = review.key;
     final resetAt = effects.resetAt(key);
     if (resetAt != null && review.at.isAfter(resetAt) && restarted.add(key)) {
@@ -75,8 +85,10 @@ Replayed replayReviews(
       rated: review.answerGiven == null,
       parameters: chosen.forPair(key),
     );
-    states[key] = after;
-    if (skills != null) {
+    final viewOnly =
+        review.asked == Ask.teach && !answered.contains(key.cardId);
+    if (!viewOnly) states[key] = after;
+    if (skills != null && !viewOnly) {
       implyReview(states, skills, review, parameters: chosen);
       scriptReview(
         scriptStates,

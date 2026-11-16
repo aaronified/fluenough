@@ -80,7 +80,8 @@ extension CultureState on AppState {
 
   /// Whether the learner has met [item]: every card of it is taught.
   bool isCultureItemDone(CultureItem item) =>
-      item.cards.isNotEmpty && item.cards.every(isTaught);
+      item.cards.isNotEmpty &&
+      item.cards.every((card) => isTaught(card) || !canLearn(card));
 
   /// The culture item Today offers for [language]: the first woven item not
   /// met yet, or null when culture is off or all are met.
@@ -95,10 +96,10 @@ extension CultureState on AppState {
 
   /// Every creator any work of [language] cites: each card and passage of
   /// every deck of the language, hidden or not, woven or not, and every
-  /// recommended work, whatever its level. This is the "who is cited" set of
-  /// the name-leak rule: a creator cited anywhere but shown by no work shown
-  /// learner's level is kept out of People, the timeline and the legacy marks,
-  /// so that their name never gives an unreached work away.
+  /// recommended work. This is the "who is cited" set of the name-leak rule: a
+  /// creator cited anywhere but by no shown culture item is kept out of
+  /// People, the timeline and the legacy marks, so that their name never gives
+  /// away a work that is not shown.
   ///
   /// Limit: a hidden deck that is not downloaded cannot be read here, so its
   /// creators are missing from this set (a follow-up could put creator ids in

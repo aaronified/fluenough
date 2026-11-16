@@ -448,7 +448,7 @@ class _TopicPageState extends State<TopicPage> {
   }) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    if ((total == 0 && aboveCards == 0) || info == null) {
+    if (total == 0 || info == null) {
       return const <Widget>[];
     }
     return <Widget>[

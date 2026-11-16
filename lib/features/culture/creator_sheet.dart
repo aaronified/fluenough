@@ -57,7 +57,7 @@ class CreatorCard extends StatelessWidget {
     final spoken = cultureSpoken(context, state);
     final name = creator.nameFor(spoken, target: language).text;
     final bio = creator.bioFor(spoken);
-    final bioTarget = creator.bioTargetSimplest;
+    final bioTarget = creator.bioTargetFull;
     final legacy = creator.legacyFor(spoken);
     final image = creator.image;
     final licenceUrl = image?.licenceUrl ?? image?.sourceUrl;

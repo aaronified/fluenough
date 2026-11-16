@@ -16,6 +16,7 @@ import 'package:fluenough/core/models/rule.dart';
 import 'package:fluenough/core/progress/recent_answers.dart';
 import 'package:fluenough/core/progress/unlocks.dart';
 import 'package:fluenough/core/scheduling/ask.dart';
+import 'package:fluenough/core/scheduling/learn_sequence.dart';
 import 'package:fluenough/features/decks/unit_page.dart';
 import 'package:fluenough/features/drill/choice_drill.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
@@ -303,15 +304,12 @@ void main() {
         everyElement(word),
         reason: 'only the known word is asked',
       );
-      final rules = <String>{};
-      for (final item in items) {
-        final rule = item.card.rule!.ruleId;
-        if (item.ask == Ask.teachRule) {
-          expect(rules.add(rule), isTrue, reason: 'one rule card a rule');
-        } else if (!item.ask.onlyShows) {
-          // A set card shows its forms before, and records nothing.
-          expect(rules, contains(rule), reason: 'the rule card comes first');
-        }
+      for (final (i, item) in items.indexed) {
+        if (item.learn?.step != LearnStep.first) continue;
+        // Each cell is shown by its rule card, right before its first
+        // question.
+        expect(items[i - 1].ask, Ask.teachRule);
+        expect(items[i - 1].card.rule!.ruleId, item.card.rule!.ruleId);
       }
     });
 

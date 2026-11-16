@@ -2,7 +2,6 @@ import 'dart:math' as math;
 
 import '../models/card.dart';
 import '../models/drill_mode.dart';
-import 'ask.dart';
 import 'session_queue.dart';
 
 /// How many questions of other items come between an item's first and its
@@ -34,10 +33,15 @@ enum LearnStep {
 /// The mark a session item carries when it is a step of a learn attempt: the
 /// attempt is named by the card it teaches.
 class LearnTag {
-  const LearnTag(this.id, this.step);
+  const LearnTag(this.id, this.step, {this.gap = learnGap});
 
   final String id;
   final LearnStep step;
+
+  /// How many other questions the lesson put between this attempt's first and
+  /// second question: [learnGap], or fewer only for a lesson too short to be
+  /// spaced by two others.
+  final int gap;
 
   @override
   String toString() => 'LearnTag($id, ${step.name})';
@@ -80,6 +84,10 @@ class LearnResult<T> {
 }
 
 class _Open<T> {
+  _Open(this.gap);
+
+  /// The gap the second question must come after, exactly.
+  final int gap;
   LearnPhase phase = LearnPhase.shown;
 
   /// Questions completed since the content was shown (phase shown), or since
@@ -99,12 +107,13 @@ class _Open<T> {
 /// the item ever reaches FSRS.
 class LearnTracker<T> {
   LearnTracker({
-    required DateTime Function() now,
+    required this.now,
     this.idle = learnIdleLimit,
     this.openMax = learnOpenMax,
-  }) : _now = now;
+  });
 
-  final DateTime Function() _now;
+  /// The clock the idle limit is read from.
+  final DateTime Function() now;
 
   /// The idle time after which every open attempt is dropped.
   final Duration idle;
@@ -124,7 +133,7 @@ class LearnTracker<T> {
   /// Drops every open attempt after an idle stretch; the clock restarts.
   /// Returns whether any was dropped.
   bool _activity() {
-    final at = _now();
+    final at = now();
     final last = _last;
     _last = at;
     if (last != null && at.difference(last) > idle && _open.isNotEmpty) {
@@ -137,13 +146,17 @@ class LearnTracker<T> {
   /// The content of [id] is shown. Opens its attempt, unless [openMax] are
   /// open already (then it returns false and the item is simply not learned
   /// in this sitting).
-  bool shown(String id) {
+  bool shown(String id, {int gap = learnGap}) {
     _activity();
     _open.remove(id);
     if (_open.length >= openMax) return false;
-    _open[id] = _Open<T>();
+    _open[id] = _Open<T>(gap);
     return true;
   }
+
+  /// A question of [id]'s attempt was skipped, never shown: the attempt
+  /// cannot keep its gap, so it ends.
+  void dropAttempt(String id) => _open.remove(id);
 
   /// [id]'s question of [step] was answered, [correct] or not on its first
   /// attempt, with [payload] describing the answer.
@@ -165,7 +178,7 @@ class LearnTracker<T> {
         attempt.phase == LearnPhase.shown && attempt.between == 0,
       LearnStep.second =>
         attempt.phase == LearnPhase.awaitingSecond &&
-            attempt.between <= learnGap,
+            attempt.between == attempt.gap,
       LearnStep.show => false,
     };
     if (!inOrder) {
@@ -212,6 +225,10 @@ class LearnTracker<T> {
     for (final entry in _open.entries) {
       if (entry.key != id) entry.value.between++;
     }
+    // An attempt whose gap is already broken ends now, so it never lingers.
+    _open.removeWhere(
+      (_, a) => a.phase == LearnPhase.shown ? a.between > 0 : a.between > a.gap,
+    );
   }
 
   /// The sitting is over: the learner left the drill, or it ended. Every
@@ -226,7 +243,7 @@ class LearnAttempt {
     required this.card,
     required this.shows,
     required this.first,
-    required this.second,
+    this.second,
     this.tracked = true,
   });
 
@@ -235,18 +252,16 @@ class LearnAttempt {
   /// The teach card, or the rule card, shown right before the first question.
   final List<SessionItem> shows;
   final SessionItem first;
-  final SessionItem second;
+  /// The second question, of a different type; null only for an untracked
+  /// card with a single question.
+  final SessionItem? second;
 
   /// Whether the answers are held until both are right. False for a card
   /// already learned that a session asks again (sounds practised).
   final bool tracked;
 
-  SessionItem _tag(SessionItem item, LearnStep step) =>
-      tracked ? item.taggedAs(LearnTag(card.id, step)) : item;
-
-  List<SessionItem> get _showsTagged => <SessionItem>[
-    for (final show in shows) _tag(show, LearnStep.show),
-  ];
+  SessionItem _tag(SessionItem item, LearnStep step, int gap) =>
+      tracked ? item.taggedAs(LearnTag(card.id, step, gap: gap)) : item;
 }
 
 /// The items of [attempts] in the order a lesson asks them, and what it took.
@@ -255,17 +270,19 @@ class LearnAttempt {
 /// then its second after exactly [learnGap] other questions: three open at
 /// once, Q1 Q1 Q1 Q2 Q2 Q2. A last group of fewer than three needs
 /// [learnOpenMax] less its size of [fillers], questions of other items (a
-/// review), to keep the gap at two; with fewer fillers than that the group's
-/// gap is shorter, never longer, so that a lesson of one or two new items can
-/// still be learned. Untracked attempts come after, laid out plainly: each
-/// shown and asked, then each asked again.
+/// review), to keep the gap at two; without them it is left out and its items
+/// wait for another lesson. Only where the lesson has no other group is a
+/// short group kept, with the shorter gap it can have, so that a lesson is
+/// never empty for good; each attempt carries the gap it must keep. Untracked
+/// attempts come after, laid out plainly: each shown and asked, then each
+/// asked again.
 ({List<SessionItem> items, int fillersUsed}) learnSequence(
   List<LearnAttempt> attempts, {
   List<SessionItem> fillers = const <SessionItem>[],
 }) {
   final tracked = <LearnAttempt>[
     for (final a in attempts)
-      if (a.tracked) a,
+      if (a.tracked && a.second != null) a,
   ];
   final plain = <LearnAttempt>[
     for (final a in attempts)
@@ -275,20 +292,29 @@ class LearnAttempt {
   var fillersUsed = 0;
   for (var start = 0; start < tracked.length; start += learnOpenMax) {
     final group = tracked.skip(start).take(learnOpenMax).toList();
-    final needed = math.min(
-      learnOpenMax - group.length,
-      fillers.length - fillersUsed,
-    );
+    final needed = learnOpenMax - group.length;
+    final available = fillers.length - fillersUsed;
+    final int use;
+    if (needed <= available) {
+      use = needed;
+    } else if (tracked.length == group.length) {
+      use = available;
+    } else {
+      continue;
+    }
+    final gap = group.length - 1 + use;
     for (final a in group) {
       items
-        ..addAll(a._showsTagged)
-        ..add(a._tag(a.first, LearnStep.first));
+        ..addAll(<SessionItem>[
+          for (final show in a.shows) a._tag(show, LearnStep.show, gap),
+        ])
+        ..add(a._tag(a.first, LearnStep.first, gap));
     }
-    for (var i = 0; i < needed; i++) {
+    for (var i = 0; i < use; i++) {
       items.add(fillers[fillersUsed++]);
     }
     for (final a in group) {
-      items.add(a._tag(a.second, LearnStep.second));
+      items.add(a._tag(a.second!, LearnStep.second, gap));
     }
   }
   for (final a in plain) {
@@ -297,7 +323,8 @@ class LearnAttempt {
       ..add(a.first);
   }
   for (final a in plain) {
-    items.add(a.second);
+    final second = a.second;
+    if (second != null) items.add(second);
   }
   return (items: items, fillersUsed: fillersUsed);
 }

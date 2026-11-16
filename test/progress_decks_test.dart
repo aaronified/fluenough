@@ -11,7 +11,6 @@ import 'package:fluenough/app/repository_decks.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/skill.dart';
-import 'package:fluenough/app/unlocks.dart';
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/deck.dart' show DeckKind, LanguageInfo;
 import 'package:fluenough/core/models/drill_mode.dart';
