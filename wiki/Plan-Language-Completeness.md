@@ -154,7 +154,7 @@ Owner (2026-11-13): "Deck work issues to be updated with the full deck format as
 | Nepali | ne | #353 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
 | Odia | or | #352 | third list and others (first words only) | no ranked priority | path of 120 units, 1 built; 3 core files |
 | Punjabi | pa | #351 | third list and others (first words only) | no ranked priority | path of 121 units, 1 built; 3 core files |
-| Classical Sanskrit | sa | #356 | second list (Classical Sanskrit: to B1) | second-list position 9 | no path or decks yet (language entry only) |
+| Classical Sanskrit | sa | #356 | second list (Classical Sanskrit: to B1) | second-list position 9 | audited 2026-11-16: no path or decks yet (language entry only), all 18 checklist rows missing; audit, task plan (SA-001..SA-620, B1 first, Pāṇinian grammar units) and reachable sources in [Deck-Work-Queue-SA](Deck-Work-Queue-SA.md) |
 | Santali | sat | #1178 | second list (to A1; Classical Sanskrit to B1) | second-list position 3 | no path or decks yet (language entry only) |
 | Sindhi | sd | #1179 | third list and others (first words only) | no ranked priority | no path or decks yet (language entry only) |
 | Tamil | ta | #354 | second list (to A1; Classical Sanskrit to B1) | second-list position 1 | path of 115 units, 27 built (A1 mark at unit 45); 43 vocab cores, 332 cards, no grammar core; audit and task plan in [Deck-Work-Queue-TA](Deck-Work-Queue-TA.md) (2026-11-15) |
