@@ -1,0 +1,60 @@
+schema: 1
+id: "sa-en-work-sentences"
+kind: "layer"
+core: "sa-work-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about work"
+description: "Short sentences about work and trade, built only from words already taught. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-3280":
+    native: "The farmer digs in the field and gets grain."
+    bases: { "क्षेत्रे": "in the field", "खनति": "to dig (digs)", "धान्यं": "grain", "लभते": "to get (gets)" }
+    confusables: { "w1": { why: "Agriculture, not farmer: कृषिः (kṛṣiḥ) means agriculture." }, "w2": { why: "To seize, not to take: ग्रह् (grah) means to seize." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. धान्यम् (dhānyam) is written धान्यं (dhānyaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of च (ca) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign).", "n2": "क्षेत्रे (kṣetre) is the locative case: it says where the farmer digs.", "n3": "च (ca) means and: it never starts the part it joins, but follows its first word or a later one." }
+  "sa-3281":
+    native: "Father farms and mother serves."
+    bases: { "कृषिं": "agriculture", "करोति": "to do (does)", "सेवां": "service" }
+    confusables: { "w1": { why: "Business, not agriculture: व्यापारः (vyāpāraḥ) means business." }, "w2": { why: "Craft, not service: शिल्पम् (śilpam) means craft." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. कृषिम् (kṛṣim) is written कृषिं (kṛṣiṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of करोति (karoti) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). सेवाम् (sevām) is written सेवां (sevāṃ), for the same reason, before करोति (karoti).", "n2": "कृषिं करोति (kṛṣiṃ karoti) means to farm: the noun for farming and करोति (karoti) make a verb phrase." }
+  "sa-3282":
+    native: "I buy goods and you buy grain."
+    bases: { "अहं": "I", "क्रीणामि": "to buy (I buy)", "त्वं": "you", "धान्यं": "grain", "क्रीणासि": "to buy (you buy)" }
+    confusables: { "w1": { why: "Wages, not thing: वेतनम् (vetanam) means wages." }, "w2": { why: "Barley, not grain: यवः (yavaḥ) means barley." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. अहम् (aham) is written अहं (ahaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of वस्तु (vastu) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). त्वम् (tvam) is written त्वं (tvaṃ), for the same reason, before च (ca). धान्यम् (dhānyam) is written धान्यं (dhānyaṃ), for the same reason, before क्रीणासि (krīṇāsi).", "n2": "वस्तु (vastu) is a neuter word in उ (u): it looks the same as subject and as object.", "n3": "च (ca) means and: it never starts the part it joins, but follows its first word or a later one." }
+  "sa-3283":
+    native: "He gets wages through labour."
+    bases: { "स": "he", "श्रमेण": "through labour", "वेतनं": "wages", "लभते": "to get (gets)" }
+    confusables: { "w1": { why: "Undertaking, not labour: उद्योगः (udyogaḥ) means undertaking." }, "w2": { why: "Thing, not wages: वस्तु (vastu) means thing." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. सः (saḥ) is written स (sa) because सः (saḥ) and एषः (eṣaḥ) lose their visarga before any consonant, here the start of श्रमेण (śrameṇa) (Whitney 176 a; Aṣṭādhyāyī 6.1.132). वेतनम् (vetanam) is written वेतनं (vetanaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of लभते (labhate) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign).", "n2": "श्रमेण (śrameṇa) is the instrumental case: it says by what means, here labour." }
+  "sa-3284":
+    native: "The friend lives by a craft and the brother lives by commerce."
+    bases: { "शिल्पेन": "by a craft", "जीवति": "to live (lives)", "वाणिज्येन": "by commerce" }
+    confusables: { "w1": { why: "Business, not commerce: व्यापारः (vyāpāraḥ) means business." }, "w2": { why: "To dwell, not to live: वस् (vas) means to dwell." } }
+    notes: { "n1": "जीवति (jīvati) can mean to live by something: the means is in the instrumental case.", "n2": "च (ca) means and: it never starts the part it joins, but follows its first word or a later one." }
+  "sa-3285":
+    native: "By effort the friend always wins."
+    bases: { "उद्योगेन": "by effort", "जयति": "to win (wins)" }
+    confusables: { "w1": { why: "Labour, not undertaking: श्रमः (śramaḥ) means labour." }, "w2": { why: "Sometimes, not always: कदाचित् (kadācit) means sometimes." } }
+    notes: { "n1": "जयति (jayati) means to win or conquer: its root जि (ji) takes the stem जय (jaya)." }
+  "sa-3286":
+    native: "The labour is hard and the wages are not enough."
+    bases: { "कठिनो": "hard", "भवति": "to be (is)", "वेतनं": "wages", "पर्याप्तं": "enough" }
+    confusables: { "w1": { why: "Undertaking, not labour: उद्योगः (udyogaḥ) means undertaking." }, "w2": { why: "Full, not enough: पूर्णः (pūrṇaḥ) means full." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. कठिनः (kaṭhinaḥ) is written कठिनो (kaṭhino) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of भवति (bhavati) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)). वेतनम् (vetanam) is written वेतनं (vetanaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of च (ca) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). पर्याप्तम् (paryāptam) is written पर्याप्तं (paryāptaṃ), for the same reason, before न (na).", "n2": "पर्याप्तम् (paryāptam) is the neuter form of पर्याप्तः (paryāptaḥ), to agree with the neuter word वेतनम् (vetanam).", "n3": "च (ca) means and: it never starts the part it joins, but follows its first word or a later one." }
+  "sa-3287":
+    native: "The farmer carries grain and goes to the village."
+    bases: { "कृषको": "farmer", "धान्यं": "grain", "वहति": "to carry (carries)", "ग्रामं": "village", "गच्छति": "to go (goes)" }
+    confusables: { "w1": { why: "City, not village: नगरम् (nagaram) means city." }, "w2": { why: "To take, not to carry: हृ (hṛ) means to take." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. कृषकः (kṛṣakaḥ) is written कृषको (kṛṣako) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of धान्यम् (dhānyam) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)). धान्यम् (dhānyam) is written धान्यं (dhānyaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of वहति (vahati) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). ग्रामम् (grāmam) is written ग्रामं (grāmaṃ), for the same reason, before गच्छति (gacchati).", "n2": "ग्रामम् (grāmam) is the goal of the verb गच्छति (gacchati): the place one goes to is in the accusative case." }
+  "sa-3288":
+    native: "Trade is in the city and the farmer lives in the village."
+    bases: { "व्यापारो": "business", "नगरे": "in the city", "भवति": "to be (is)", "कृषको": "farmer", "ग्रामे": "in the village", "वसति": "to dwell (lives)" }
+    confusables: { "w1": { why: "Commerce, not business: वाणिज्यम् (vāṇijyam) means commerce." }, "w2": { why: "Market, not city: आपणः (āpaṇaḥ) means market." }, "w3": { why: "Agriculture, not farmer: कृषिः (kṛṣiḥ) means agriculture." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. व्यापारः (vyāpāraḥ) is written व्यापारो (vyāpāro) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of नगरे (nagare) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)). कृषकः (kṛṣakaḥ) is written कृषको (kṛṣako), for the same reason, before ग्रामे (grāme).", "n2": "नगरे (nagare) and ग्रामे (grāme) are the locative case: it says where." }
+  "sa-3289":
+    native: "Father makes a plough of iron and the farmer carries the plough."
+    bases: { "लोहेन": "of iron", "हलं": "plough", "करोति": "to do (does)", "कृषको": "farmer", "वहति": "to carry (carries)" }
+    confusables: { "w1": { why: "Wood, not iron: काष्ठम् (kāṣṭham) means wood." }, "w2": { why: "To take, not to carry: हृ (hṛ) means to take." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. हलम् (halam) is written हलं (halaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of करोति (karoti) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). कृषकः (kṛṣakaḥ) is written कृषको (kṛṣako) because a final अः (aḥ) becomes ओ (o) before a voiced consonant, here the start of हलम् (halam) (Whitney 175; Aṣṭādhyāyī 6.1.113, अतः रोः अप्लुतात् अप्लुते (ataḥ roḥ aplutāt aplute), and 6.1.114, हशि च (haśi ca)). हलम् (halam) is written हलं (halaṃ), for the same reason, before वहति (vahati).", "n2": "लोहेन (lohena) is the instrumental case: here it says what the plough is made of." }

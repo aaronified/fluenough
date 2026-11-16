@@ -1,0 +1,98 @@
+schema: 1
+id: "sa-work-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3280"
+    target: "कृषकः क्षेत्रे खनति धान्यं च लभते."
+    reading: "kṛṣakaḥ kṣetre khanati dhānyaṃ ca labhate."
+    ipa: "kr̩ʂəkəh kʂeːt̪reː kʰənət̪i d̪ʱaːnjəm tʃə ləbʱət̪eː"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "कृषकः", ref: "sa-1863" }, { word: "क्षेत्रे", base: "क्षेत्रम्", reading: "kṣetram" }, { word: "खनति", base: "खन्", reading: "khan" }, { word: "धान्यं", base: "धान्यम्", reading: "dhānyam" }, { word: "च", ref: "sa-1104" }, { word: "लभते", base: "लभ्", reading: "labh" }]
+    confusables: [{ id: "w1", ref: "sa-1858", kind: "word" }, { id: "w2", ref: "sa-2121", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3281"
+    target: "पिता कृषिं करोति माता सेवां करोति."
+    reading: "pitā kṛṣiṃ karoti mātā sevāṃ karoti."
+    ipa: "pit̪aː kr̩ʂim kəroːt̪i maːt̪aː seːʋaːm kəroːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "पिता", ref: "sa-1031" }, { word: "कृषिं", base: "कृषिः", reading: "kṛṣiḥ" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "माता", ref: "sa-1030" }, { word: "सेवां", base: "सेवा", reading: "sevā" }]
+    confusables: [{ id: "w1", ref: "sa-1857", kind: "word" }, { id: "w2", ref: "sa-1860", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3282"
+    target: "अहं वस्तु क्रीणामि त्वं च धान्यं क्रीणासि."
+    reading: "ahaṃ vastu krīṇāmi tvaṃ ca dhānyaṃ krīṇāsi."
+    ipa: "əɦəm ʋəst̪u kriːɳaːmi t̪ʋəm tʃə d̪ʱaːnjəm kriːɳaːsi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "वस्तु", ref: "sa-1868" }, { word: "क्रीणामि", base: "क्री", reading: "krī" }, { word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "च", ref: "sa-1104" }, { word: "धान्यं", base: "धान्यम्", reading: "dhānyam" }, { word: "क्रीणासि", base: "क्री", reading: "krī" }]
+    confusables: [{ id: "w1", ref: "sa-1866", kind: "word" }, { id: "w2", ref: "sa-1707", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3283"
+    target: "स श्रमेण वेतनं लभते."
+    reading: "sa śrameṇa vetanaṃ labhate."
+    ipa: "sə ʃrəmeːɳə ʋeːt̪ənəm ləbʱət̪eː"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "स", base: "सः", reading: "saḥ" }, { word: "श्रमेण", base: "श्रमः", reading: "śramaḥ" }, { word: "वेतनं", base: "वेतनम्", reading: "vetanam" }, { word: "लभते", base: "लभ्", reading: "labh" }]
+    confusables: [{ id: "w1", ref: "sa-1867", kind: "word" }, { id: "w2", ref: "sa-1868", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3284"
+    target: "सखा शिल्पेन जीवति भ्राता च वाणिज्येन जीवति."
+    reading: "sakhā śilpena jīvati bhrātā ca vāṇijyena jīvati."
+    ipa: "səkʰaː ʃilpeːnə dʒiːʋət̪i bʱraːt̪aː tʃə ʋaːɳidʒjeːnə dʒiːʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सखा", ref: "sa-1038" }, { word: "शिल्पेन", base: "शिल्पम्", reading: "śilpam" }, { word: "जीवति", base: "जीव्", reading: "jīv" }, { word: "भ्राता", ref: "sa-1032" }, { word: "च", ref: "sa-1104" }, { word: "वाणिज्येन", base: "वाणिज्यम्", reading: "vāṇijyam" }]
+    confusables: [{ id: "w1", ref: "sa-1857", kind: "word" }, { id: "w2", ref: "sa-2005", kind: "word" }]
+    notes: [{ id: "n1", kind: "usage" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3285"
+    target: "उद्योगेन सदा जयति सखा."
+    reading: "udyogena sadā jayati sakhā."
+    ipa: "ud̪joːɡeːnə səd̪aː dʒəjət̪i səkʰaː"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "उद्योगेन", base: "उद्योगः", reading: "udyogaḥ" }, { word: "सदा", ref: "sa-1086" }, { word: "जयति", base: "जि", reading: "ji" }, { word: "सखा", ref: "sa-1038" }]
+    confusables: [{ id: "w1", ref: "sa-1865", kind: "word" }, { id: "w2", ref: "sa-1087", kind: "word" }]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "sa-3286"
+    target: "श्रमः कठिनो भवति वेतनं च पर्याप्तं न भवति."
+    reading: "śramaḥ kaṭhino bhavati vetanaṃ ca paryāptaṃ na bhavati."
+    ipa: "ʃrəməh kəʈʰinoː bʱəʋət̪i ʋeːt̪ənəm tʃə pərjaːpt̪əm nə bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "श्रमः", ref: "sa-1865" }, { word: "कठिनो", base: "कठिनः", reading: "kaṭhinaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "वेतनं", base: "वेतनम्", reading: "vetanam" }, { word: "च", ref: "sa-1104" }, { word: "पर्याप्तं", base: "पर्याप्तः", reading: "paryāptaḥ" }, { word: "न", ref: "sa-0026" }]
+    confusables: [{ id: "w1", ref: "sa-1867", kind: "word" }, { id: "w2", ref: "sa-1506", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3287"
+    target: "कृषको धान्यं वहति ग्रामं गच्छति."
+    reading: "kṛṣako dhānyaṃ vahati grāmaṃ gacchati."
+    ipa: "kr̩ʂəkoː d̪ʱaːnjəm ʋəɦət̪i ɡraːməm ɡətʃtʃʰət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "कृषको", base: "कृषकः", reading: "kṛṣakaḥ" }, { word: "धान्यं", base: "धान्यम्", reading: "dhānyam" }, { word: "वहति", base: "वह्", reading: "vah" }, { word: "ग्रामं", base: "ग्रामः", reading: "grāmaḥ" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+    confusables: [{ id: "w1", ref: "sa-1760", kind: "word" }, { id: "w2", ref: "sa-2016", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3288"
+    target: "व्यापारो नगरे भवति कृषको ग्रामे वसति."
+    reading: "vyāpāro nagare bhavati kṛṣako grāme vasati."
+    ipa: "ʋjaːpaːroː nəɡəreː bʱəʋət̪i kr̩ʂəkoː ɡraːmeː ʋəsət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "व्यापारो", base: "व्यापारः", reading: "vyāpāraḥ" }, { word: "नगरे", base: "नगरम्", reading: "nagaram" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "कृषको", base: "कृषकः", reading: "kṛṣakaḥ" }, { word: "ग्रामे", base: "ग्रामः", reading: "grāmaḥ" }, { word: "वसति", base: "वस्", reading: "vas" }]
+    confusables: [{ id: "w1", ref: "sa-1864", kind: "word" }, { id: "w2", ref: "sa-1768", kind: "word" }, { id: "w3", ref: "sa-1858", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3289"
+    target: "पिता लोहेन हलं करोति कृषको हलं वहति."
+    reading: "pitā lohena halaṃ karoti kṛṣako halaṃ vahati."
+    ipa: "pit̪aː loːɦeːnə ɦələm kəroːt̪i kr̩ʂəkoː ɦələm ʋəɦət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "पिता", ref: "sa-1031" }, { word: "लोहेन", base: "लोहम्", reading: "loham" }, { word: "हलं", base: "हलम्", reading: "halam" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "कृषको", base: "कृषकः", reading: "kṛṣakaḥ" }, { word: "वहति", base: "वह्", reading: "vah" }]
+    confusables: [{ id: "w1", ref: "sa-1813", kind: "word" }, { id: "w2", ref: "sa-2016", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
