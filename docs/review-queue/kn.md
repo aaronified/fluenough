@@ -95,3 +95,7 @@
 | kn-6463 | see card | ನನಗೆ ಕನ್ನಡ ಬರುತ್ತದೆ: ಬರು as "to be known (of a skill)" comes from the course's grammar decks, not from a dictionary page read: right? | Sonnet builder | 2026-11-16 |
 | kn-6482 | see card | ಹಿಡಿ as "agree with" (water that does not suit a person): the Kannada Wiktionary example has no English; is the translation right? | Sonnet builder | 2026-11-16 |
 | kn-6485 | see card | ಕಣ್ಣಿಗೆ ಬೀಳು: listed as an idiom on Kannada Wikipedia and Wiktionary with no English; "to catch the eye; to come into view" is built from the parts: right? | Sonnet builder | 2026-11-16 |
+| kn-8331 | see card | ಪ್ರತಿ ಕಿಲೋ ಎಷ್ಟು? and ಪ್ರತಿ ಲೀಟರ್ ಎಷ್ಟು? (kn-8332): is the pattern natural for 'how much per kilo / litre'? | Haiku builder | 2026-11-16 |
+| kn-8334 | see card | ಸ್ವಲ್ಪ ತಿನ್ನು (eat a little): natural? | Haiku builder | 2026-11-16 |
+| kn-8339 | see card | ಕೆಲವು ಮಕ್ಕಳು ತಿನ್ನುತ್ತಾರೆ is glossed 'Some children eat.', which reads incomplete: better gloss? | Haiku builder | 2026-11-16 |
+| kn-8328 | see card | ಇದರ ಬೆಲೆ ಹದಿನೈದು ರೂಪಾಯಿ: genitive ಇದರ of ಇದು and the price phrasing: natural? | Haiku builder | 2026-11-16 |
