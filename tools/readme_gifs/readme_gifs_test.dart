@@ -40,6 +40,7 @@ import 'package:fluenough/features/drill/match_drill.dart';
 import 'package:fluenough/features/drill/picture_choice_drill.dart';
 import 'package:fluenough/features/drill/rearrange_drill.dart';
 import 'package:fluenough/features/drill/recognition_drill.dart';
+import 'package:fluenough/features/drill/set_drill.dart';
 import 'package:fluenough/features/drill/teach_drill.dart';
 import 'package:fluenough/features/drill/typed_drill.dart';
 import 'package:fluenough/features/script/script_guide_page.dart';
@@ -310,6 +311,7 @@ Future<void> _settle(WidgetTester tester) async {
 DrillSession? _session(WidgetTester tester) {
   for (final widget in tester.allWidgets) {
     if (widget is TeachDrill) return widget.session;
+    if (widget is SetDrill) return widget.session;
     if (widget is ChoiceDrill) return widget.session;
     if (widget is PictureChoiceDrill) return widget.session;
     if (widget is RearrangeDrill) return widget.session;
@@ -384,7 +386,7 @@ Future<void> _learningSession(
   final dir = Directory('$_out/learning-session');
   if (dir.existsSync()) dir.deleteSync(recursive: true);
   final reel = _Reel(tester, boundary);
-  const maxFrames = 96;
+  const maxFrames = 84;
   state.settings.markScriptGuideSeen('bn');
   state.shellTab.value = ShellTab.today;
   await _settle(tester);
@@ -407,7 +409,7 @@ Future<void> _learningSession(
     final session = _session(tester);
     if (session == null) break;
     final ask = session.ask;
-    final shows = ask == Ask.teach || ask == Ask.teachRule;
+    final shows = ask.onlyShows;
     // ignore: avoid_print
     print('learning step $step: ${ask.name} ${session.item.card.target}');
     if (shows) {
@@ -561,6 +563,10 @@ void main() {
     await _settle(tester);
     await _still(tester, boundary, 'home');
     state.shellTab.value = ShellTab.decks;
+    await _settle(tester);
+    // The path opens on the unit up next; the still shows the top, the
+    // course card with its Culture button.
+    _mainScroll(tester).jumpTo(0);
     await _settle(tester);
     await _still(tester, boundary, 'decks');
     state.shellTab.value = ShellTab.progress;
