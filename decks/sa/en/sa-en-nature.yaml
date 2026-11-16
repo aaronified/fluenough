@@ -1,1549 +1,1511 @@
-schema: 1
-id: "sa-en-nature"
-kind: "layer"
-core: "sa-nature"
-native: { code: "en", iso639_3: "eng", name: "English" }
-name: "Nature: trees, land and water"
-description: "Words for trees, flowers, water, land and sky, taught in Classical Sanskrit. Not yet checked by a Sanskrit speaker: please report any mistake."
-license: "CC-BY-SA-4.0"
-tags: ["unreviewed"]
-cards:
+"schema": 1
+"id": "sa-en-nature"
+"kind": "layer"
+"core": "sa-nature"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "Nature: trees, land and water"
+"description": "Words for trees, flowers, water, land and sky, taught in Classical Sanskrit. Not yet checked by a Sanskrit speaker: please report any mistake."
+"license": "CC-BY-SA-4.0"
+"tags":
+- "unreviewed"
+"cards":
   "sa-5000":
-    native: "Tree."
-    notes:
+    "native": "Tree."
+    "notes":
       "n1": "Masculine a-stem noun. Stem वृक्ष (vṛkṣa); isolated nominative singular वृक्षः (vṛkṣaḥ)."
-      "n2": "Before a voiced consonant the final ḥ of वृक्षः (vṛkṣaḥ) is written o, as in वृक्षो (vṛkṣo) before दीर्घः (dīrghaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of वृक्षः (vṛkṣaḥ) is written ो (o), as in वृक्षो (vṛkṣo) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+      "n3": "Tree has more than one word in the course: also द्रुमः (drumaḥ). They are near synonyms."
+    "bases":
       "वृक्षः": "tree"
-    examples:
-      "वृक्षो दीर्घः":
-        native: "The tree is long."
-        bases:
+    "examples":
+      "वृक्षो विशालः":
+        "native": "The tree is vast."
+        "bases":
           "वृक्षो": "tree"
-          "दीर्घः": "long"
+          "विशालः": "vast"
       "अत्र वृक्षो भवति":
-        native: "Here there is a tree."
-        bases:
+        "native": "Here there is a tree."
+        "bases":
           "अत्र": "here"
           "वृक्षो": "tree"
           "भवति": "is"
   "sa-5002":
-    native: "Root."
-    notes:
+    "native": "Root."
+    "notes":
       "n1": "Neuter a-stem noun. Stem मूल (mūla); isolated nominative and accusative singular मूलम् (mūlam)."
-      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in मूलं (mūlaṃ) before दीर्घम् (dīrgham) (Aṣṭādhyāyī 8.3.23)."
-    bases:
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in मूलं (mūlaṃ) from मूलम् (mūlam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+    "bases":
       "मूलम्": "root"
-    examples:
+    "examples":
       "मूलं दीर्घम्":
-        native: "The root is long."
-        bases:
+        "native": "The root is long."
+        "bases":
           "मूलं": "root"
           "दीर्घम्": "long"
       "अत्र मूलं भवति":
-        native: "Here there is a root."
-        bases:
+        "native": "Here there is a root."
+        "bases":
           "अत्र": "here"
           "मूलं": "root"
           "भवति": "is"
   "sa-5003":
-    native: "Branch."
-    notes:
+    "native": "Branch."
+    "notes":
       "n1": "Feminine ā-stem noun. Stem and isolated nominative singular शाखा (śākhā)."
-      "n2": "Feminine ā-stem noun: an adjective used with it takes the feminine ending, as in हरिता (haritā)."
-    bases:
+    "bases":
       "शाखा": "branch"
-    examples:
+    "examples":
       "शाखा हरिता":
-        native: "The branch is green."
-        bases:
+        "native": "The branch is green."
+        "bases":
           "शाखा": "branch"
           "हरिता": "green"
       "तत्र शाखा भवति":
-        native: "There is a branch there."
-        bases:
+        "native": "There is a branch there."
+        "bases":
           "तत्र": "there"
           "शाखा": "branch"
           "भवति": "is"
   "sa-5008":
-    native: "Wilderness."
-    notes:
+    "native": "Wilderness."
+    "notes":
       "n1": "Neuter a-stem noun. Stem अरण्य (araṇya); isolated nominative and accusative singular अरण्यम् (araṇyam)."
-      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in अरण्यं (araṇyaṃ) before विशालम् (viśālam) (Aṣṭādhyāyī 8.3.23)."
-    bases:
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in अरण्यं (araṇyaṃ) from अरण्यम् (araṇyam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+    "bases":
       "अरण्यम्": "wilderness"
-    examples:
+    "examples":
       "अरण्यं विशालम्":
-        native: "The wilderness is vast."
-        bases:
+        "native": "The wilderness is vast."
+        "bases":
           "अरण्यं": "wilderness"
           "विशालम्": "vast"
-      "अत्र अरण्यं भवति":
-        native: "Here there is a wilderness."
-        bases:
-          "अत्र": "here"
+      "अरण्यं भवति तत्र":
+        "native": "A wilderness is there."
+        "bases":
           "अरण्यं": "wilderness"
           "भवति": "is"
+          "तत्र": "there"
   "sa-5009":
-    native: "Cloud."
-    notes:
+    "native": "Cloud."
+    "notes":
       "n1": "Masculine a-stem noun. Stem मेघ (megha); isolated nominative singular मेघः (meghaḥ)."
-      "n2": "Before a voiced consonant the final ḥ of मेघः (meghaḥ) is written o, as in मेघो (megho) before नीलः (nīlaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of मेघः (meghaḥ) is written ो (o), as in मेघो (megho) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+      "n3": "Cloud has more than one word in the course: also जलदः (jaladaḥ). They are near synonyms. जलदः (jaladaḥ) means the giver of water, from जल (jala) and the root दा (dā)."
+    "bases":
       "मेघः": "cloud"
-    examples:
+    "examples":
       "मेघो नीलः":
-        native: "The cloud is dark blue."
-        bases:
+        "native": "The cloud is dark blue."
+        "bases":
           "मेघो": "cloud"
           "नीलः": "dark blue"
       "तत्र मेघो भवति":
-        native: "There is a cloud there."
-        bases:
+        "native": "There is a cloud there."
+        "bases":
           "तत्र": "there"
           "मेघो": "cloud"
           "भवति": "is"
   "sa-5010":
-    native: "Wind."
-    notes:
+    "native": "Wind."
+    "notes":
       "n1": "Masculine a-stem noun. Stem पवन (pavana); isolated nominative singular पवनः (pavanaḥ)."
-      "n2": "Before a voiced consonant the final ḥ of पवनः (pavanaḥ) is written o, as in पवनो (pavano) before निर्मलः (nirmalaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of पवनः (pavanaḥ) is written ो (o), as in पवनो (pavano) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+      "n3": "Wind has more than one word in the course: also वायुः (vāyuḥ). They are near synonyms."
+    "bases":
       "पवनः": "wind"
-    examples:
+    "examples":
       "पवनो निर्मलः":
-        native: "The wind is clean."
-        bases:
+        "native": "The wind is clear."
+        "bases":
           "पवनो": "wind"
-          "निर्मलः": "clean"
+          "निर्मलः": "clear"
       "अत्र पवनो भवति":
-        native: "Here there is a wind."
-        bases:
+        "native": "Here there is wind."
+        "bases":
           "अत्र": "here"
           "पवनो": "wind"
           "भवति": "is"
   "sa-5011":
-    native: "Sky."
-    notes:
+    "native": "Sky."
+    "notes":
       "n1": "Masculine a-stem noun. Stem आकाश (ākāśa); isolated nominative singular आकाशः (ākāśaḥ)."
-      "n2": "Before a voiced consonant the final ḥ of आकाशः (ākāśaḥ) is written o, as in आकाशो (ākāśo) before निर्मलः (nirmalaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of आकाशः (ākāśaḥ) is written ो (o), as in आकाशो (ākāśo) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+      "n3": "Sky has more than one word in the course: also गगनम् (gaganam), अन्तरिक्षम् (antarikṣam). They are near synonyms. आकाश (ākāśa) is the open space or ether, गगन (gagana) the sky and अन्तरिक्ष (antarikṣa) the air between earth and heaven, as the dictionaries give them."
+    "bases":
       "आकाशः": "sky"
-    examples:
-      "आकाशो निर्मलः":
-        native: "The sky is clean."
-        bases:
+    "examples":
+      "आकाशो विशालः":
+        "native": "The sky is vast."
+        "bases":
           "आकाशो": "sky"
-          "निर्मलः": "clean"
-      "तत्र आकाशो भवति":
-        native: "There is a sky there."
-        bases:
-          "तत्र": "there"
+          "विशालः": "vast"
+      "आकाशो भवति तत्र":
+        "native": "The sky is there."
+        "bases":
           "आकाशो": "sky"
           "भवति": "is"
+          "तत्र": "there"
   "sa-5012":
-    native: "Sun."
-    notes:
+    "native": "Sun."
+    "notes":
       "n1": "Masculine a-stem noun. Stem सूर्य (sūrya); isolated nominative singular सूर्यः (sūryaḥ)."
-      "n2": "Before a voiced consonant the final ḥ of सूर्यः (sūryaḥ) is written o, as in सूर्यो (sūryo) before रक्तः (raktaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of सूर्यः (sūryaḥ) is written ो (o), as in सूर्यो (sūryo) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+    "bases":
       "सूर्यः": "sun"
-    examples:
-      "सूर्यो रक्तः":
-        native: "The sun is red."
-        bases:
+    "examples":
+      "सूर्यो विशालः":
+        "native": "The sun is vast."
+        "bases":
           "सूर्यो": "sun"
-          "रक्तः": "red"
+          "विशालः": "vast"
       "अत्र सूर्यो भवति":
-        native: "Here there is a sun."
-        bases:
+        "native": "The sun is here."
+        "bases":
           "अत्र": "here"
           "सूर्यो": "sun"
           "भवति": "is"
   "sa-5013":
-    native: "Moon."
-    notes:
+    "native": "Moon."
+    "notes":
       "n1": "Masculine a-stem noun. Stem चन्द्र (candra); isolated nominative singular चन्द्रः (candraḥ)."
-      "n2": "Before a voiced consonant the final ḥ of चन्द्रः (candraḥ) is written o, as in चन्द्रो (candro) before धवलः (dhavalaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of चन्द्रः (candraḥ) is written ो (o), as in चन्द्रो (candro) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+    "bases":
       "चन्द्रः": "moon"
-    examples:
+    "examples":
       "चन्द्रो धवलः":
-        native: "The moon is white."
-        bases:
+        "native": "The moon is white."
+        "bases":
           "चन्द्रो": "moon"
           "धवलः": "white"
       "तत्र चन्द्रो भवति":
-        native: "There is a moon there."
-        bases:
+        "native": "The moon is there."
+        "bases":
           "तत्र": "there"
           "चन्द्रो": "moon"
           "भवति": "is"
   "sa-5014":
-    native: "Star."
-    notes:
+    "native": "Star."
+    "notes":
       "n1": "Feminine ā-stem noun. Stem and isolated nominative singular तारा (tārā)."
-      "n2": "Feminine ā-stem noun: an adjective used with it takes the feminine ending, as in धवला (dhavalā)."
-    bases:
+    "bases":
       "तारा": "star"
-    examples:
+    "examples":
       "तारा धवला":
-        native: "The star is white."
-        bases:
+        "native": "The star is white."
+        "bases":
           "तारा": "star"
           "धवला": "white"
       "अत्र तारा भवति":
-        native: "Here there is a star."
-        bases:
+        "native": "Here there is a star."
+        "bases":
           "अत्र": "here"
           "तारा": "star"
           "भवति": "is"
   "sa-5016":
-    native: "Earth."
-    notes:
+    "native": "Earth."
+    "notes":
       "n1": "Feminine ī-stem noun. Stem and isolated nominative singular पृथिवी (pṛthivī)."
-      "n2": "Feminine ī-stem noun: an adjective used with it takes the feminine ending, as in विशाला (viśālā)."
-    bases:
+      "n2": "Earth has more than one word in the course: also धरणी (dharaṇī). They are near synonyms. धरणी (dharaṇī) means the one that bears, from the root धृ (dhṛ)."
+    "bases":
       "पृथिवी": "earth"
-    examples:
+    "examples":
       "पृथिवी विशाला":
-        native: "The earth is vast."
-        bases:
+        "native": "The earth is vast."
+        "bases":
           "पृथिवी": "earth"
           "विशाला": "vast"
       "अत्र पृथिवी भवति":
-        native: "Here there is a earth."
-        bases:
+        "native": "The earth is here."
+        "bases":
           "अत्र": "here"
           "पृथिवी": "earth"
           "भवति": "is"
   "sa-5017":
-    native: "Rock."
-    notes:
+    "native": "Rock."
+    "notes":
       "n1": "Masculine a-stem noun. Stem शैल (śaila); isolated nominative singular शैलः (śailaḥ)."
-      "n2": "Before a voiced consonant the final ḥ of शैलः (śailaḥ) is written o, as in शैलो (śailo) before धवलः (dhavalaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of शैलः (śailaḥ) is written ो (o), as in शैलो (śailo) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+      "n3": "Rock has more than one word in the course: also उपलः (upalaḥ). They are near synonyms."
+    "bases":
       "शैलः": "rock"
-    examples:
-      "शैलो धवलः":
-        native: "The rock is white."
-        bases:
+    "examples":
+      "शैलो विशालः":
+        "native": "The rock is vast."
+        "bases":
           "शैलो": "rock"
-          "धवलः": "white"
+          "विशालः": "vast"
       "तत्र शैलो भवति":
-        native: "There is a rock there."
-        bases:
+        "native": "There is a rock there."
+        "bases":
           "तत्र": "there"
           "शैलो": "rock"
           "भवति": "is"
   "sa-5019":
-    native: "Lotus."
-    notes:
+    "native": "Lotus."
+    "notes":
       "n1": "Neuter a-stem noun. Stem कमल (kamala); isolated nominative and accusative singular कमलम् (kamalam)."
-      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in कमलं (kamalaṃ) before रक्तम् (raktam) (Aṣṭādhyāyī 8.3.23)."
-    bases:
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in कमलं (kamalaṃ) from कमलम् (kamalam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+    "bases":
       "कमलम्": "lotus"
-    examples:
+    "examples":
       "कमलं रक्तम्":
-        native: "The lotus is red."
-        bases:
+        "native": "The lotus is red."
+        "bases":
           "कमलं": "lotus"
           "रक्तम्": "red"
       "तत्र कमलं भवति":
-        native: "There is a lotus there."
-        bases:
+        "native": "There is a lotus there."
+        "bases":
           "तत्र": "there"
           "कमलं": "lotus"
           "भवति": "is"
   "sa-5020":
-    native: "Blue lotus."
-    notes:
+    "native": "Blue lotus."
+    "notes":
       "n1": "Neuter a-stem noun. Stem उत्पल (utpala); isolated nominative and accusative singular उत्पलम् (utpalam)."
-      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in उत्पलं (utpalaṃ) before नीलम् (nīlam) (Aṣṭādhyāyī 8.3.23)."
-    bases:
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in उत्पलं (utpalaṃ) from उत्पलम् (utpalam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+    "bases":
       "उत्पलम्": "blue lotus"
-    examples:
-      "उत्पलं नीलम्":
-        native: "The blue lotus is dark blue."
-        bases:
+    "examples":
+      "उत्पलं कोमलम्":
+        "native": "The blue lotus is soft."
+        "bases":
           "उत्पलं": "blue lotus"
-          "नीलम्": "dark blue"
-      "अत्र उत्पलं भवति":
-        native: "Here there is a blue lotus."
-        bases:
-          "अत्र": "here"
+          "कोमलम्": "soft"
+      "उत्पलं भवति तत्र":
+        "native": "A blue lotus is there."
+        "bases":
           "उत्पलं": "blue lotus"
           "भवति": "is"
+          "तत्र": "there"
   "sa-5021":
-    native: "Creeper."
-    notes:
+    "native": "Creeper."
+    "notes":
       "n1": "Feminine ā-stem noun. Stem and isolated nominative singular लता (latā)."
-      "n2": "Feminine ā-stem noun: an adjective used with it takes the feminine ending, as in हरिता (haritā)."
-    bases:
+      "n2": "Creeper has more than one word in the course: also वल्ली (vallī). They are near synonyms."
+    "bases":
       "लता": "creeper"
-    examples:
+    "examples":
       "लता हरिता":
-        native: "The creeper is green."
-        bases:
+        "native": "The creeper is green."
+        "bases":
           "लता": "creeper"
           "हरिता": "green"
       "तत्र लता भवति":
-        native: "There is a creeper there."
-        bases:
+        "native": "There is a creeper there."
+        "bases":
           "तत्र": "there"
           "लता": "creeper"
           "भवति": "is"
   "sa-5022":
-    native: "Creeper."
-    notes:
+    "native": "Creeper."
+    "notes":
       "n1": "Feminine ī-stem noun. Stem and isolated nominative singular वल्ली (vallī)."
-      "n2": "Feminine ī-stem noun: an adjective used with it takes the feminine ending, as in हरिता (haritā)."
-    bases:
+      "n2": "Creeper has more than one word in the course: also लता (latā). They are near synonyms."
+    "bases":
       "वल्ली": "creeper"
-    examples:
+    "examples":
       "वल्ली हरिता":
-        native: "The creeper is green."
-        bases:
+        "native": "The creeper is green."
+        "bases":
           "वल्ली": "creeper"
           "हरिता": "green"
       "अत्र वल्ली भवति":
-        native: "Here there is a creeper."
-        bases:
+        "native": "Here there is a creeper."
+        "bases":
           "अत्र": "here"
           "वल्ली": "creeper"
           "भवति": "is"
   "sa-5023":
-    native: "Thicket."
-    notes:
+    "native": "Thicket."
+    "notes":
       "n1": "Masculine a-stem noun. Stem गुल्म (gulma); isolated nominative singular गुल्मः (gulmaḥ)."
-      "n2": "Before a voiced consonant the final ḥ of गुल्मः (gulmaḥ) is written o, as in गुल्मो (gulmo) before हरितः (haritaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of गुल्मः (gulmaḥ) is written ो (o), as in गुल्मो (gulmo) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+    "bases":
       "गुल्मः": "thicket"
-    examples:
+    "examples":
       "गुल्मो हरितः":
-        native: "The thicket is green."
-        bases:
+        "native": "The thicket is green."
+        "bases":
           "गुल्मो": "thicket"
           "हरितः": "green"
       "तत्र गुल्मो भवति":
-        native: "There is a thicket there."
-        bases:
+        "native": "There is a thicket there."
+        "bases":
           "तत्र": "there"
           "गुल्मो": "thicket"
           "भवति": "is"
   "sa-5024":
-    native: "Grass."
-    notes:
+    "native": "Grass."
+    "notes":
       "n1": "Neuter a-stem noun. Stem तृण (tṛṇa); isolated nominative and accusative singular तृणम् (tṛṇam)."
-      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in तृणं (tṛṇaṃ) before हरितम् (haritam) (Aṣṭādhyāyī 8.3.23)."
-    bases:
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in तृणं (tṛṇaṃ) from तृणम् (tṛṇam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+      "n3": "Grass has more than one word in the course: also दूर्वा (dūrvā). They are near synonyms."
+    "bases":
       "तृणम्": "grass"
-    examples:
+    "examples":
       "तृणं हरितम्":
-        native: "The grass is green."
-        bases:
+        "native": "The grass is green."
+        "bases":
           "तृणं": "grass"
           "हरितम्": "green"
       "अत्र तृणं भवति":
-        native: "Here there is a grass."
-        bases:
+        "native": "Here there is grass."
+        "bases":
           "अत्र": "here"
           "तृणं": "grass"
           "भवति": "is"
   "sa-5025":
-    native: "Grass."
-    notes:
+    "native": "Grass."
+    "notes":
       "n1": "Feminine ā-stem noun. Stem and isolated nominative singular दूर्वा (dūrvā)."
-      "n2": "Feminine ā-stem noun: an adjective used with it takes the feminine ending, as in हरिता (haritā)."
-    bases:
+      "n2": "Grass has more than one word in the course: also तृणम् (tṛṇam). They are near synonyms."
+    "bases":
       "दूर्वा": "grass"
-    examples:
+    "examples":
       "दूर्वा हरिता":
-        native: "The grass is green."
-        bases:
+        "native": "The grass is green."
+        "bases":
           "दूर्वा": "grass"
           "हरिता": "green"
       "तत्र दूर्वा भवति":
-        native: "There is a grass there."
-        bases:
+        "native": "There is grass there."
+        "bases":
           "तत्र": "there"
           "दूर्वा": "grass"
           "भवति": "is"
   "sa-5026":
-    native: "Shore."
-    notes:
+    "native": "Shore."
+    "notes":
       "n1": "Masculine a-stem noun. Stem तट (taṭa); isolated nominative singular तटः (taṭaḥ)."
-      "n2": "Before a voiced consonant the final ḥ of तटः (taṭaḥ) is written o, as in तटो (taṭo) before विशालः (viśālaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of तटः (taṭaḥ) is written ो (o), as in तटो (taṭo) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+    "bases":
       "तटः": "shore"
-    examples:
-      "तटो विशालः":
-        native: "The shore is vast."
-        bases:
+    "examples":
+      "तटो दीर्घः":
+        "native": "The shore is long."
+        "bases":
           "तटो": "shore"
-          "विशालः": "vast"
+          "दीर्घः": "long"
       "अत्र तटो भवति":
-        native: "Here there is a shore."
-        bases:
+        "native": "Here there is a shore."
+        "bases":
           "अत्र": "here"
           "तटो": "shore"
           "भवति": "is"
   "sa-5027":
-    native: "Path."
-    notes:
+    "native": "Path."
+    "notes":
       "n1": "Masculine a-stem noun. Stem पथ (patha); isolated nominative singular पथः (pathaḥ)."
-      "n2": "Before a voiced consonant the final ḥ of पथः (pathaḥ) is written o, as in पथो (patho) before दीर्घः (dīrghaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of पथः (pathaḥ) is written ो (o), as in पथो (patho) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+    "bases":
       "पथः": "path"
-    examples:
+    "examples":
       "पथो दीर्घः":
-        native: "The path is long."
-        bases:
+        "native": "The path is long."
+        "bases":
           "पथो": "path"
           "दीर्घः": "long"
       "तत्र पथो भवति":
-        native: "There is a path there."
-        bases:
+        "native": "There is a path there."
+        "bases":
           "तत्र": "there"
           "पथो": "path"
           "भवति": "is"
   "sa-5029":
-    native: "Seed."
-    notes:
+    "native": "Seed."
+    "notes":
       "n1": "Neuter a-stem noun. Stem बीज (bīja); isolated nominative and accusative singular बीजम् (bījam)."
-      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in बीजं (bījaṃ) before धवलम् (dhavalam) (Aṣṭādhyāyī 8.3.23)."
-    bases:
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in बीजं (bījaṃ) from बीजम् (bījam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+    "bases":
       "बीजम्": "seed"
-    examples:
-      "बीजं धवलम्":
-        native: "The seed is white."
-        bases:
+    "examples":
+      "बीजं शुष्कम्":
+        "native": "The seed is dry."
+        "bases":
           "बीजं": "seed"
-          "धवलम्": "white"
+          "शुष्कम्": "dry"
       "तत्र बीजं भवति":
-        native: "There is a seed there."
-        bases:
+        "native": "There is a seed there."
+        "bases":
           "तत्र": "there"
           "बीजं": "seed"
           "भवति": "is"
   "sa-5030":
-    native: "Leaf."
-    notes:
+    "native": "Leaf."
+    "notes":
       "n1": "Neuter a-stem noun. Stem पर्ण (parṇa); isolated nominative and accusative singular पर्णम् (parṇam)."
-      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in पर्णं (parṇaṃ) before हरितम् (haritam) (Aṣṭādhyāyī 8.3.23)."
-    bases:
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in पर्णं (parṇaṃ) from पर्णम् (parṇam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+    "bases":
       "पर्णम्": "leaf"
-    examples:
+    "examples":
       "पर्णं हरितम्":
-        native: "The leaf is green."
-        bases:
+        "native": "The leaf is green."
+        "bases":
           "पर्णं": "leaf"
           "हरितम्": "green"
       "अत्र पर्णं भवति":
-        native: "Here there is a leaf."
-        bases:
+        "native": "Here there is a leaf."
+        "bases":
           "अत्र": "here"
           "पर्णं": "leaf"
           "भवति": "is"
   "sa-5032":
-    native: "Cave."
-    notes:
+    "native": "Cave."
+    "notes":
       "n1": "Feminine ā-stem noun. Stem and isolated nominative singular कन्दरा (kandarā)."
-      "n2": "Feminine ā-stem noun: an adjective used with it takes the feminine ending, as in गभीरा (gabhīrā)."
-    bases:
+      "n2": "Cave has more than one word in the course: also बिलम् (bilam). They are near synonyms."
+    "bases":
       "कन्दरा": "cave"
-    examples:
+    "examples":
       "कन्दरा गभीरा":
-        native: "The cave is deep."
-        bases:
+        "native": "The cave is deep."
+        "bases":
           "कन्दरा": "cave"
           "गभीरा": "deep"
       "अत्र कन्दरा भवति":
-        native: "Here there is a cave."
-        bases:
+        "native": "Here there is a cave."
+        "bases":
           "अत्र": "here"
           "कन्दरा": "cave"
           "भवति": "is"
   "sa-5033":
-    native: "Cluster of blossoms."
-    notes:
+    "native": "Cluster of blossoms."
+    "notes":
       "n1": "Feminine ī-stem noun. Stem and isolated nominative singular मञ्जरी (mañjarī)."
-      "n2": "Feminine ī-stem noun: an adjective used with it takes the feminine ending, as in मधुरा (madhurā)."
-    bases:
+    "bases":
       "मञ्जरी": "cluster of blossoms"
-    examples:
-      "मञ्जरी मधुरा":
-        native: "The cluster of blossoms is sweet."
-        bases:
+    "examples":
+      "मञ्जरी कोमला":
+        "native": "The cluster of blossoms is soft."
+        "bases":
           "मञ्जरी": "cluster of blossoms"
-          "मधुरा": "sweet"
+          "कोमला": "soft"
       "तत्र मञ्जरी भवति":
-        native: "There is a cluster of blossoms there."
-        bases:
+        "native": "There is a cluster of blossoms there."
+        "bases":
           "तत्र": "there"
           "मञ्जरी": "cluster of blossoms"
           "भवति": "is"
   "sa-5034":
-    native: "Sky."
-    notes:
+    "native": "Sky."
+    "notes":
       "n1": "Neuter a-stem noun. Stem गगन (gagana); isolated nominative and accusative singular गगनम् (gaganam)."
-      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in गगनं (gaganaṃ) before निर्मलम् (nirmalam) (Aṣṭādhyāyī 8.3.23)."
-    bases:
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in गगनं (gaganaṃ) from गगनम् (gaganam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+      "n3": "Sky has more than one word in the course: also आकाशः (ākāśaḥ), अन्तरिक्षम् (antarikṣam). They are near synonyms. आकाश (ākāśa) is the open space or ether, गगन (gagana) the sky and अन्तरिक्ष (antarikṣa) the air between earth and heaven, as the dictionaries give them."
+    "bases":
       "गगनम्": "sky"
-    examples:
+    "examples":
       "गगनं निर्मलम्":
-        native: "The sky is clean."
-        bases:
+        "native": "The sky is clear."
+        "bases":
           "गगनं": "sky"
-          "निर्मलम्": "clean"
+          "निर्मलम्": "clear"
       "अत्र गगनं भवति":
-        native: "Here there is a sky."
-        bases:
+        "native": "The sky is here."
+        "bases":
           "अत्र": "here"
           "गगनं": "sky"
           "भवति": "is"
   "sa-5035":
-    native: "Mud."
-    notes:
+    "native": "Mud."
+    "notes":
       "n1": "Masculine a-stem noun. Stem पङ्क (paṅka); isolated nominative singular पङ्कः (paṅkaḥ)."
-      "n2": "Before a voiced consonant the final ḥ of पङ्कः (paṅkaḥ) is written o, as in पङ्को (paṅko) before गभीरः (gabhīraḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of पङ्कः (paṅkaḥ) is written ो (o), as in पङ्को (paṅko) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+    "bases":
       "पङ्कः": "mud"
-    examples:
+    "examples":
       "पङ्को गभीरः":
-        native: "The mud is deep."
-        bases:
+        "native": "The mud is deep."
+        "bases":
           "पङ्को": "mud"
           "गभीरः": "deep"
       "तत्र पङ्को भवति":
-        native: "There is a mud there."
-        bases:
+        "native": "There is mud there."
+        "bases":
           "तत्र": "there"
           "पङ्को": "mud"
           "भवति": "is"
   "sa-5036":
-    native: "Grove."
-    notes:
+    "native": "Grove."
+    "notes":
       "n1": "Neuter a-stem noun. Stem उपवन (upavana); isolated nominative and accusative singular उपवनम् (upavanam)."
-      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in उपवनं (upavanaṃ) before हरितम् (haritam) (Aṣṭādhyāyī 8.3.23)."
-    bases:
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in उपवनं (upavanaṃ) from उपवनम् (upavanam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+    "bases":
       "उपवनम्": "grove"
-    examples:
+    "examples":
       "उपवनं हरितम्":
-        native: "The grove is green."
-        bases:
+        "native": "The grove is green."
+        "bases":
           "उपवनं": "grove"
           "हरितम्": "green"
-      "अत्र उपवनं भवति":
-        native: "Here there is a grove."
-        bases:
-          "अत्र": "here"
+      "उपवनं भवति तत्र":
+        "native": "A grove is there."
+        "bases":
           "उपवनं": "grove"
           "भवति": "is"
+          "तत्र": "there"
   "sa-5037":
-    native: "Garden."
-    notes:
+    "native": "Garden."
+    "notes":
       "n1": "Feminine ā-stem noun. Stem and isolated nominative singular वाटिका (vāṭikā)."
-      "n2": "Feminine ā-stem noun: an adjective used with it takes the feminine ending, as in हरिता (haritā)."
-    bases:
+    "bases":
       "वाटिका": "garden"
-    examples:
+    "examples":
       "वाटिका हरिता":
-        native: "The garden is green."
-        bases:
+        "native": "The garden is green."
+        "bases":
           "वाटिका": "garden"
           "हरिता": "green"
       "तत्र वाटिका भवति":
-        native: "There is a garden there."
-        bases:
+        "native": "There is a garden there."
+        "bases":
           "तत्र": "there"
           "वाटिका": "garden"
           "भवति": "is"
   "sa-5038":
-    native: "Sand."
-    notes:
+    "native": "Sand."
+    "notes":
       "n1": "Feminine ā-stem noun. Stem and isolated nominative singular वालुका (vālukā)."
-      "n2": "Feminine ā-stem noun: an adjective used with it takes the feminine ending, as in धवला (dhavalā)."
-    bases:
+      "n2": "Sand has more than one word in the course: also सिकता (sikatā). They are near synonyms."
+    "bases":
       "वालुका": "sand"
-    examples:
+    "examples":
       "वालुका धवला":
-        native: "The sand is white."
-        bases:
+        "native": "The sand is white."
+        "bases":
           "वालुका": "sand"
           "धवला": "white"
       "अत्र वालुका भवति":
-        native: "Here there is a sand."
-        bases:
+        "native": "Here there is sand."
+        "bases":
           "अत्र": "here"
           "वालुका": "sand"
           "भवति": "is"
   "sa-5039":
-    native: "Stone."
-    notes:
+    "native": "Stone."
+    "notes":
       "n1": "Masculine a-stem noun. Stem पाषाण (pāṣāṇa); isolated nominative singular पाषाणः (pāṣāṇaḥ)."
-      "n2": "Before a voiced consonant the final ḥ of पाषाणः (pāṣāṇaḥ) is written o, as in पाषाणो (pāṣāṇo) before विशालः (viśālaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of पाषाणः (pāṣāṇaḥ) is written ो (o), as in पाषाणो (pāṣāṇo) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+    "bases":
       "पाषाणः": "stone"
-    examples:
+    "examples":
       "पाषाणो विशालः":
-        native: "The stone is vast."
-        bases:
+        "native": "The stone is vast."
+        "bases":
           "पाषाणो": "stone"
           "विशालः": "vast"
       "तत्र पाषाणो भवति":
-        native: "There is a stone there."
-        bases:
+        "native": "There is a stone there."
+        "bases":
           "तत्र": "there"
           "पाषाणो": "stone"
           "भवति": "is"
   "sa-5040":
-    native: "Peak."
-    notes:
+    "native": "Peak."
+    "notes":
       "n1": "Neuter a-stem noun. Stem शिखर (śikhara); isolated nominative and accusative singular शिखरम् (śikharam)."
-      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in शिखरं (śikharaṃ) before धवलम् (dhavalam) (Aṣṭādhyāyī 8.3.23)."
-    bases:
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in शिखरं (śikharaṃ) from शिखरम् (śikharam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+    "bases":
       "शिखरम्": "peak"
-    examples:
+    "examples":
       "शिखरं धवलम्":
-        native: "The peak is white."
-        bases:
+        "native": "The peak is white."
+        "bases":
           "शिखरं": "peak"
           "धवलम्": "white"
       "अत्र शिखरं भवति":
-        native: "Here there is a peak."
-        bases:
+        "native": "Here there is a peak."
+        "bases":
           "अत्र": "here"
           "शिखरं": "peak"
           "भवति": "is"
   "sa-5041":
-    native: "Sand."
-    notes:
+    "native": "Sand."
+    "notes":
       "n1": "Feminine ā-stem noun. Stem and isolated nominative singular सिकता (sikatā)."
-      "n2": "Feminine ā-stem noun: an adjective used with it takes the feminine ending, as in धवला (dhavalā)."
-    bases:
+      "n2": "Sand has more than one word in the course: also वालुका (vālukā). They are near synonyms."
+    "bases":
       "सिकता": "sand"
-    examples:
-      "सिकता धवला":
-        native: "The sand is white."
-        bases:
+    "examples":
+      "सिकता शुष्का":
+        "native": "The sand is dry."
+        "bases":
           "सिकता": "sand"
-          "धवला": "white"
+          "शुष्का": "dry"
       "तत्र सिकता भवति":
-        native: "There is a sand there."
-        bases:
+        "native": "There is sand there."
+        "bases":
           "तत्र": "there"
           "सिकता": "sand"
           "भवति": "is"
   "sa-5042":
-    native: "Thorn."
-    notes:
+    "native": "Thorn."
+    "notes":
       "n1": "Masculine a-stem noun. Stem कण्टक (kaṇṭaka); isolated nominative singular कण्टकः (kaṇṭakaḥ)."
-      "n2": "Before a voiced consonant the final ḥ of कण्टकः (kaṇṭakaḥ) is written o, as in कण्टको (kaṇṭako) before दीर्घः (dīrghaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of कण्टकः (kaṇṭakaḥ) is written ो (o), as in कण्टको (kaṇṭako) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+    "bases":
       "कण्टकः": "thorn"
-    examples:
+    "examples":
       "कण्टको दीर्घः":
-        native: "The thorn is long."
-        bases:
+        "native": "The thorn is long."
+        "bases":
           "कण्टको": "thorn"
           "दीर्घः": "long"
       "अत्र कण्टको भवति":
-        native: "Here there is a thorn."
-        bases:
+        "native": "Here there is a thorn."
+        "bases":
           "अत्र": "here"
           "कण्टको": "thorn"
           "भवति": "is"
   "sa-5043":
-    native: "Sacred fig tree."
-    notes:
+    "native": "Sacred fig tree."
+    "notes":
       "n1": "Masculine a-stem noun. Stem अश्वत्थ (aśvattha); isolated nominative singular अश्वत्थः (aśvatthaḥ)."
-      "n2": "Before a voiced consonant the final ḥ of अश्वत्थः (aśvatthaḥ) is written o, as in अश्वत्थो (aśvattho) before हरितः (haritaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of अश्वत्थः (aśvatthaḥ) is written ो (o), as in अश्वत्थो (aśvattho) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+    "bases":
       "अश्वत्थः": "sacred fig tree"
-    examples:
+    "examples":
       "अश्वत्थो हरितः":
-        native: "The sacred fig tree is green."
-        bases:
+        "native": "The sacred fig tree is green."
+        "bases":
           "अश्वत्थो": "sacred fig tree"
           "हरितः": "green"
-      "तत्र अश्वत्थो भवति":
-        native: "There is a sacred fig tree there."
-        bases:
-          "तत्र": "there"
+      "अश्वत्थो भवति तत्र":
+        "native": "A sacred fig tree is there."
+        "bases":
           "अश्वत्थो": "sacred fig tree"
           "भवति": "is"
+          "तत्र": "there"
   "sa-5044":
-    native: "Water lily."
-    notes:
+    "native": "Water lily."
+    "notes":
       "n1": "Neuter a-stem noun. Stem कुमुद (kumuda); isolated nominative and accusative singular कुमुदम् (kumudam)."
-      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in कुमुदं (kumudaṃ) before धवलम् (dhavalam) (Aṣṭādhyāyī 8.3.23)."
-    bases:
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in कुमुदं (kumudaṃ) from कुमुदम् (kumudam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+    "bases":
       "कुमुदम्": "water lily"
-    examples:
+    "examples":
       "कुमुदं धवलम्":
-        native: "The water lily is white."
-        bases:
+        "native": "The water lily is white."
+        "bases":
           "कुमुदं": "water lily"
           "धवलम्": "white"
       "अत्र कुमुदं भवति":
-        native: "Here there is a water lily."
-        bases:
+        "native": "Here there is a water lily."
+        "bases":
           "अत्र": "here"
           "कुमुदं": "water lily"
           "भवति": "is"
   "sa-5045":
-    native: "Nest."
-    notes:
+    "native": "Nest."
+    "notes":
       "n1": "Masculine a-stem noun. Stem नीड (nīḍa); isolated nominative singular नीडः (nīḍaḥ)."
-      "n2": "Before a voiced consonant the final ḥ of नीडः (nīḍaḥ) is written o, as in नीडो (nīḍo) before हरितः (haritaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of नीडः (nīḍaḥ) is written ो (o), as in नीडो (nīḍo) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+    "bases":
       "नीडः": "nest"
-    examples:
-      "नीडो हरितः":
-        native: "The nest is green."
-        bases:
+    "examples":
+      "नीडो विपुलः":
+        "native": "The nest is large."
+        "bases":
           "नीडो": "nest"
-          "हरितः": "green"
+          "विपुलः": "large, extensive"
       "तत्र नीडो भवति":
-        native: "There is a nest there."
-        bases:
+        "native": "There is a nest there."
+        "bases":
           "तत्र": "there"
           "नीडो": "nest"
           "भवति": "is"
   "sa-5046":
-    native: "Tree."
-    notes:
+    "native": "Tree."
+    "notes":
       "n1": "Masculine a-stem noun. Stem द्रुम (druma); isolated nominative singular द्रुमः (drumaḥ)."
-      "n2": "Before a voiced consonant the final ḥ of द्रुमः (drumaḥ) is written o, as in द्रुमो (drumo) before हरितः (haritaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of द्रुमः (drumaḥ) is written ो (o), as in द्रुमो (drumo) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+      "n3": "Tree has more than one word in the course: also वृक्षः (vṛkṣaḥ). They are near synonyms."
+    "bases":
       "द्रुमः": "tree"
-    examples:
+    "examples":
       "द्रुमो हरितः":
-        native: "The tree is green."
-        bases:
+        "native": "The tree is green."
+        "bases":
           "द्रुमो": "tree"
           "हरितः": "green"
       "अत्र द्रुमो भवति":
-        native: "Here there is a tree."
-        bases:
+        "native": "Here there is a tree."
+        "bases":
           "अत्र": "here"
           "द्रुमो": "tree"
           "भवति": "is"
   "sa-5047":
-    native: "Plant."
-    notes:
+    "native": "Plant."
+    "notes":
       "n1": "Masculine a-stem noun. Stem पादप (pādapa); isolated nominative singular पादपः (pādapaḥ)."
-      "n2": "Before a voiced consonant the final ḥ of पादपः (pādapaḥ) is written o, as in पादपो (pādapo) before हरितः (haritaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of पादपः (pādapaḥ) is written ो (o), as in पादपो (pādapo) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+    "bases":
       "पादपः": "plant"
-    examples:
+    "examples":
       "पादपो हरितः":
-        native: "The plant is green."
-        bases:
+        "native": "The plant is green."
+        "bases":
           "पादपो": "plant"
           "हरितः": "green"
       "तत्र पादपो भवति":
-        native: "There is a plant there."
-        bases:
+        "native": "There is a plant there."
+        "bases":
           "तत्र": "there"
           "पादपो": "plant"
           "भवति": "is"
   "sa-5048":
-    native: "Plateau."
-    notes:
+    "native": "Plateau."
+    "notes":
       "n1": "Masculine a-stem noun. Stem प्रस्थ (prastha); isolated nominative singular प्रस्थः (prasthaḥ)."
-      "n2": "Before a voiced consonant the final ḥ of प्रस्थः (prasthaḥ) is written o, as in प्रस्थो (prastho) before विशालः (viśālaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of प्रस्थः (prasthaḥ) is written ो (o), as in प्रस्थो (prastho) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+    "bases":
       "प्रस्थः": "plateau"
-    examples:
+    "examples":
       "प्रस्थो विशालः":
-        native: "The plateau is vast."
-        bases:
+        "native": "The plateau is vast."
+        "bases":
           "प्रस्थो": "plateau"
           "विशालः": "vast"
       "अत्र प्रस्थो भवति":
-        native: "Here there is a plateau."
-        bases:
+        "native": "Here there is a plateau."
+        "bases":
           "अत्र": "here"
           "प्रस्थो": "plateau"
           "भवति": "is"
   "sa-5049":
-    native: "Snow."
-    notes:
+    "native": "Snow."
+    "notes":
       "n1": "Neuter a-stem noun. Stem हिम (hima); isolated nominative and accusative singular हिमम् (himam)."
-      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in हिमं (himaṃ) before धवलम् (dhavalam) (Aṣṭādhyāyī 8.3.23)."
-    bases:
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in हिमं (himaṃ) from हिमम् (himam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+      "n3": "Monier-Williams, A Sanskrit-English Dictionary (1899), gives hima as masculine for cold and the cold season and as neuter (am) for frost, hoar-frost and snow; en.wiktionary heads the entry masculine but its table is neuter. The card means snow, so it is neuter."
+    "bases":
       "हिमम्": "snow"
-    examples:
-      "हिमं धवलम्":
-        native: "The snow is white."
-        bases:
+    "examples":
+      "हिमं शीतलम्":
+        "native": "The snow is cold."
+        "bases":
           "हिमं": "snow"
-          "धवलम्": "white"
+          "शीतलम्": "cold"
       "तत्र हिमं भवति":
-        native: "There is a snow there."
-        bases:
+        "native": "There is snow there."
+        "bases":
           "तत्र": "there"
           "हिमं": "snow"
           "भवति": "is"
   "sa-5051":
-    native: "Deep."
-    notes:
+    "native": "Deep."
+    "notes":
       "n1": "Adjective with a-stem endings: masculine गभीरः (gabhīraḥ), feminine गभीरा (gabhīrā), neuter गभीरम् (gabhīram). The card shows the masculine form."
-      "n2": "Before a voiced consonant the final ḥ of गभीरः (gabhīraḥ) is written o, as in गभीरो (gabhīro) before वृक्षः (vṛkṣaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Deep has more than one word in the course: also अगाधः (agādhaḥ). They are near synonyms."
+    "bases":
       "गभीरः": "deep"
-    examples:
-      "गभीरो वृक्षः":
-        native: "A deep tree."
-        bases:
-          "गभीरो": "deep"
-          "वृक्षः": "tree"
-      "तत्र गभीरो भवति":
-        native: "There it is deep."
-        bases:
-          "तत्र": "there"
-          "गभीरो": "deep"
-          "भवति": "is"
+    "examples":
+      "गभीरः पङ्कः":
+        "native": "Deep mud."
+        "bases":
+          "गभीरः": "deep"
+          "पङ्कः": "mud"
+      "गभीरा कन्दरा":
+        "native": "A deep cave."
+        "bases":
+          "गभीरा": "deep"
+          "कन्दरा": "cave"
   "sa-5056":
-    native: "Dry."
-    notes:
+    "native": "Dry."
+    "notes":
       "n1": "Adjective with a-stem endings: masculine शुष्कः (śuṣkaḥ), feminine शुष्का (śuṣkā), neuter शुष्कम् (śuṣkam). The card shows the masculine form."
-      "n2": "Before a voiced consonant the final ḥ of शुष्कः (śuṣkaḥ) is written o, as in शुष्को (śuṣko) before वृक्षः (vṛkṣaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in शुष्कं (śuṣkaṃ) from शुष्कम् (śuṣkam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+    "bases":
       "शुष्कः": "dry"
-    examples:
-      "शुष्को वृक्षः":
-        native: "A dry tree."
-        bases:
-          "शुष्को": "dry"
-          "वृक्षः": "tree"
-      "अत्र शुष्को भवति":
-        native: "Here it is dry."
-        bases:
-          "अत्र": "here"
-          "शुष्को": "dry"
-          "भवति": "is"
+    "examples":
+      "शुष्कः पादपः":
+        "native": "A dry plant."
+        "bases":
+          "शुष्कः": "dry"
+          "पादपः": "plant"
+      "शुष्कं तृणम्":
+        "native": "Dry grass."
+        "bases":
+          "शुष्कं": "dry"
+          "तृणम्": "grass"
   "sa-5057":
-    native: "Wet."
-    notes:
+    "native": "Wet."
+    "notes":
       "n1": "Adjective with a-stem endings: masculine आर्द्रः (ārdraḥ), feminine आर्द्रा (ārdrā), neuter आर्द्रम् (ārdram). The card shows the masculine form."
-      "n2": "Before a voiced consonant the final ḥ of आर्द्रः (ārdraḥ) is written o, as in आर्द्रो (ārdro) before वृक्षः (vṛkṣaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+    "bases":
       "आर्द्रः": "wet"
-    examples:
-      "आर्द्रो वृक्षः":
-        native: "A wet tree."
-        bases:
-          "आर्द्रो": "wet"
-          "वृक्षः": "tree"
-      "तत्र आर्द्रो भवति":
-        native: "There it is wet."
-        bases:
-          "तत्र": "there"
-          "आर्द्रो": "wet"
-          "भवति": "is"
+    "examples":
+      "आर्द्रः पङ्कः":
+        "native": "Wet mud."
+        "bases":
+          "आर्द्रः": "wet"
+          "पङ्कः": "mud"
+      "आर्द्रा मृत्तिका":
+        "native": "Wet clay."
+        "bases":
+          "आर्द्रा": "wet"
+          "मृत्तिका": "clay"
   "sa-5058":
-    native: "Cold."
-    notes:
+    "native": "Cold."
+    "notes":
       "n1": "Adjective with a-stem endings: masculine शीतलः (śītalaḥ), feminine शीतला (śītalā), neuter शीतलम् (śītalam). The card shows the masculine form."
-      "n2": "Before a voiced consonant the final ḥ of शीतलः (śītalaḥ) is written o, as in शीतलो (śītalo) before वृक्षः (vṛkṣaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in शीतलं (śītalaṃ) from शीतलम् (śītalam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+    "bases":
       "शीतलः": "cold"
-    examples:
-      "शीतलो वृक्षः":
-        native: "A cold tree."
-        bases:
-          "शीतलो": "cold"
-          "वृक्षः": "tree"
-      "अत्र शीतलो भवति":
-        native: "Here it is cold."
-        bases:
-          "अत्र": "here"
-          "शीतलो": "cold"
-          "भवति": "is"
+    "examples":
+      "शीतलः पवनः":
+        "native": "Cold wind."
+        "bases":
+          "शीतलः": "cold"
+          "पवनः": "wind"
+      "शीतलं हिमम्":
+        "native": "Cold snow."
+        "bases":
+          "शीतलं": "cold"
+          "हिमम्": "snow"
   "sa-5060":
-    native: "Stream."
-    notes:
+    "native": "Stream."
+    "notes":
       "n1": "Masculine a-stem noun. Stem प्रवाह (pravāha); isolated nominative singular प्रवाहः (pravāhaḥ)."
-      "n2": "Before a voiced consonant the final ḥ of प्रवाहः (pravāhaḥ) is written o, as in प्रवाहो (pravāho) before निर्मलः (nirmalaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of प्रवाहः (pravāhaḥ) is written ो (o), as in प्रवाहो (pravāho) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+    "bases":
       "प्रवाहः": "stream"
-    examples:
+    "examples":
       "प्रवाहो निर्मलः":
-        native: "The stream is clean."
-        bases:
+        "native": "The stream is clear."
+        "bases":
           "प्रवाहो": "stream"
-          "निर्मलः": "clean"
+          "निर्मलः": "clear"
       "अत्र प्रवाहो भवति":
-        native: "Here there is a stream."
-        bases:
+        "native": "Here there is a stream."
+        "bases":
           "अत्र": "here"
           "प्रवाहो": "stream"
           "भवति": "is"
   "sa-5061":
-    native: "Banana."
-    notes:
+    "native": "Banana."
+    "notes":
       "n1": "Feminine ī-stem noun. Stem and isolated nominative singular कदली (kadalī)."
-      "n2": "Feminine ī-stem noun: an adjective used with it takes the feminine ending, as in मधुरा (madhurā)."
-    bases:
+    "bases":
       "कदली": "banana"
-    examples:
+    "examples":
       "कदली मधुरा":
-        native: "The banana is sweet."
-        bases:
+        "native": "The banana is sweet."
+        "bases":
           "कदली": "banana"
           "मधुरा": "sweet"
       "तत्र कदली भवति":
-        native: "There is a banana there."
-        bases:
+        "native": "There is a banana there."
+        "bases":
           "तत्र": "there"
           "कदली": "banana"
           "भवति": "is"
   "sa-5062":
-    native: "Sal tree."
-    notes:
+    "native": "Sal tree."
+    "notes":
       "n1": "Masculine a-stem noun. Stem शाल (śāla); isolated nominative singular शालः (śālaḥ)."
-      "n2": "Before a voiced consonant the final ḥ of शालः (śālaḥ) is written o, as in शालो (śālo) before दीर्घः (dīrghaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of शालः (śālaḥ) is written ो (o), as in शालो (śālo) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+    "bases":
       "शालः": "sal tree"
-    examples:
-      "शालो दीर्घः":
-        native: "The sal tree is long."
-        bases:
+    "examples":
+      "शालो विशालः":
+        "native": "The sal tree is vast."
+        "bases":
           "शालो": "sal tree"
-          "दीर्घः": "long"
+          "विशालः": "vast"
       "अत्र शालो भवति":
-        native: "Here there is a sal tree."
-        bases:
+        "native": "Here there is a sal tree."
+        "bases":
           "अत्र": "here"
           "शालो": "sal tree"
           "भवति": "is"
   "sa-5063":
-    native: "Breeze."
-    notes:
+    "native": "Breeze."
+    "notes":
       "n1": "Masculine a-stem noun. Stem समीर (samīra); isolated nominative singular समीरः (samīraḥ)."
-      "n2": "Before a voiced consonant the final ḥ of समीरः (samīraḥ) is written o, as in समीरो (samīro) before मधुरः (madhuraḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of समीरः (samīraḥ) is written ो (o), as in समीरो (samīro) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+    "bases":
       "समीरः": "breeze"
-    examples:
+    "examples":
       "समीरो मधुरः":
-        native: "The breeze is sweet."
-        bases:
+        "native": "The breeze is sweet."
+        "bases":
           "समीरो": "breeze"
           "मधुरः": "sweet"
       "तत्र समीरो भवति":
-        native: "There is a breeze there."
-        bases:
+        "native": "There is a breeze there."
+        "bases":
           "तत्र": "there"
           "समीरो": "breeze"
           "भवति": "is"
   "sa-5064":
-    native: "Storm."
-    notes:
+    "native": "Storm."
+    "notes":
       "n1": "Feminine ā-stem noun. Stem and isolated nominative singular झञ्झा (jhañjhā)."
-      "n2": "Feminine ā-stem noun: an adjective used with it takes the feminine ending, as in विशाला (viśālā)."
-    bases:
+    "bases":
       "झञ्झा": "storm"
-    examples:
+    "examples":
       "झञ्झा विशाला":
-        native: "The storm is vast."
-        bases:
+        "native": "The storm is vast."
+        "bases":
           "झञ्झा": "storm"
           "विशाला": "vast"
       "अत्र झञ्झा भवति":
-        native: "Here there is a storm."
-        bases:
+        "native": "Here there is a storm."
+        "bases":
           "अत्र": "here"
           "झञ्झा": "storm"
           "भवति": "is"
   "sa-5065":
-    native: "Jackfruit."
-    notes:
+    "native": "Jackfruit."
+    "notes":
       "n1": "Neuter a-stem noun. Stem पनस (panasa); isolated nominative and accusative singular पनसम् (panasam)."
-      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in पनसं (panasaṃ) before मधुरम् (madhuram) (Aṣṭādhyāyī 8.3.23)."
-    bases:
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in पनसं (panasaṃ) from पनसम् (panasam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+    "bases":
       "पनसम्": "jackfruit"
-    examples:
+    "examples":
       "पनसं मधुरम्":
-        native: "The jackfruit is sweet."
-        bases:
+        "native": "The jackfruit is sweet."
+        "bases":
           "पनसं": "jackfruit"
           "मधुरम्": "sweet"
       "तत्र पनसं भवति":
-        native: "There is a jackfruit there."
-        bases:
+        "native": "There is a jackfruit there."
+        "bases":
           "तत्र": "there"
           "पनसं": "jackfruit"
           "भवति": "is"
   "sa-5066":
-    native: "Rock."
-    notes:
+    "native": "Rock."
+    "notes":
       "n1": "Masculine a-stem noun. Stem उपल (upala); isolated nominative singular उपलः (upalaḥ)."
-      "n2": "Before a voiced consonant the final ḥ of उपलः (upalaḥ) is written o, as in उपलो (upalo) before धवलः (dhavalaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of उपलः (upalaḥ) is written ो (o), as in उपलो (upalo) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+      "n3": "Rock has more than one word in the course: also शैलः (śailaḥ). They are near synonyms."
+    "bases":
       "उपलः": "rock"
-    examples:
-      "उपलो धवलः":
-        native: "The rock is white."
-        bases:
+    "examples":
+      "उपलो विशालः":
+        "native": "The rock is vast."
+        "bases":
           "उपलो": "rock"
-          "धवलः": "white"
-      "अत्र उपलो भवति":
-        native: "Here there is a rock."
-        bases:
-          "अत्र": "here"
+          "विशालः": "vast"
+      "उपलो भवति तत्र":
+        "native": "A rock is there."
+        "bases":
           "उपलो": "rock"
           "भवति": "is"
+          "तत्र": "there"
   "sa-5067":
-    native: "Clay."
-    notes:
+    "native": "Clay."
+    "notes":
       "n1": "Feminine ā-stem noun. Stem and isolated nominative singular मृत्तिका (mṛttikā)."
-      "n2": "Feminine ā-stem noun: an adjective used with it takes the feminine ending, as in रक्ता (raktā)."
-    bases:
+    "bases":
       "मृत्तिका": "clay"
-    examples:
+    "examples":
       "मृत्तिका रक्ता":
-        native: "The clay is red."
-        bases:
+        "native": "The clay is red."
+        "bases":
           "मृत्तिका": "clay"
           "रक्ता": "red"
       "तत्र मृत्तिका भवति":
-        native: "There is a clay there."
-        bases:
+        "native": "There is clay there."
+        "bases":
           "तत्र": "there"
           "मृत्तिका": "clay"
           "भवति": "is"
   "sa-5068":
-    native: "Earth."
-    notes:
+    "native": "Earth."
+    "notes":
       "n1": "Feminine ī-stem noun. Stem and isolated nominative singular धरणी (dharaṇī)."
-      "n2": "Feminine ī-stem noun: an adjective used with it takes the feminine ending, as in विशाला (viśālā)."
-    bases:
+      "n2": "Earth has more than one word in the course: also पृथिवी (pṛthivī). They are near synonyms. धरणी (dharaṇī) means the one that bears, from the root धृ (dhṛ)."
+    "bases":
       "धरणी": "earth"
-    examples:
+    "examples":
       "धरणी विशाला":
-        native: "The earth is vast."
-        bases:
+        "native": "The earth is vast."
+        "bases":
           "धरणी": "earth"
           "विशाला": "vast"
       "अत्र धरणी भवति":
-        native: "Here there is a earth."
-        bases:
+        "native": "The earth is here."
+        "bases":
           "अत्र": "here"
           "धरणी": "earth"
           "भवति": "is"
   "sa-5069":
-    native: "Water."
-    notes:
+    "native": "Water."
+    "notes":
       "n1": "Neuter a-stem noun. Stem तोय (toya); isolated nominative and accusative singular तोयम् (toyam)."
-      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in तोयं (toyaṃ) before निर्मलम् (nirmalam) (Aṣṭādhyāyī 8.3.23)."
-    bases:
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in तोयं (toyaṃ) from तोयम् (toyam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+      "n3": "Water has more than one word in the course: also नीरम् (nīram). They are near synonyms."
+    "bases":
       "तोयम्": "water"
-    examples:
+    "examples":
       "तोयं निर्मलम्":
-        native: "The water is clean."
-        bases:
+        "native": "The water is clear."
+        "bases":
           "तोयं": "water"
-          "निर्मलम्": "clean"
+          "निर्मलम्": "clear"
       "तत्र तोयं भवति":
-        native: "There is a water there."
-        bases:
+        "native": "There is water there."
+        "bases":
           "तत्र": "there"
           "तोयं": "water"
           "भवति": "is"
   "sa-5070":
-    native: "Water."
-    notes:
+    "native": "Water."
+    "notes":
       "n1": "Neuter a-stem noun. Stem नीर (nīra); isolated nominative and accusative singular नीरम् (nīram)."
-      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in नीरं (nīraṃ) before निर्मलम् (nirmalam) (Aṣṭādhyāyī 8.3.23)."
-    bases:
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in नीरं (nīraṃ) from नीरम् (nīram) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+      "n3": "Water has more than one word in the course: also तोयम् (toyam). They are near synonyms."
+    "bases":
       "नीरम्": "water"
-    examples:
-      "नीरं निर्मलम्":
-        native: "The water is clean."
-        bases:
+    "examples":
+      "नीरं शीतलम्":
+        "native": "The water is cold."
+        "bases":
           "नीरं": "water"
-          "निर्मलम्": "clean"
+          "शीतलम्": "cold"
       "अत्र नीरं भवति":
-        native: "Here there is a water."
-        bases:
+        "native": "Here there is water."
+        "bases":
           "अत्र": "here"
           "नीरं": "water"
           "भवति": "is"
   "sa-5071":
-    native: "Large, extensive."
-    notes:
+    "native": "Large, extensive."
+    "notes":
       "n1": "Adjective with a-stem endings: masculine विपुलः (vipulaḥ), feminine विपुला (vipulā), neuter विपुलम् (vipulam). The card shows the masculine form."
-      "n2": "Before a voiced consonant the final ḥ of विपुलः (vipulaḥ) is written o, as in विपुलो (vipulo) before वृक्षः (vṛkṣaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in विपुलं (vipulaṃ) from विपुलम् (vipulam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+    "bases":
       "विपुलः": "large, extensive"
-    examples:
-      "विपुलो वृक्षः":
-        native: "A large, extensive tree."
-        bases:
-          "विपुलो": "large, extensive"
-          "वृक्षः": "tree"
-      "तत्र विपुलो भवति":
-        native: "There it is large, extensive."
-        bases:
-          "तत्र": "there"
-          "विपुलो": "large, extensive"
-          "भवति": "is"
+    "examples":
+      "विपुलं काननम्":
+        "native": "A large forest."
+        "bases":
+          "विपुलं": "large, extensive"
+          "काननम्": "forest"
+      "विपुलः पाषाणः":
+        "native": "A large stone."
+        "bases":
+          "विपुलः": "large, extensive"
+          "पाषाणः": "stone"
   "sa-5072":
-    native: "Reddish brown."
-    notes:
+    "native": "Reddish brown."
+    "notes":
       "n1": "Adjective with a-stem endings: masculine अरुणः (aruṇaḥ), feminine अरुणा (aruṇā), neuter अरुणम् (aruṇam). The card shows the masculine form."
-      "n2": "Before a voiced consonant the final ḥ of अरुणः (aruṇaḥ) is written o, as in अरुणो (aruṇo) before वृक्षः (vṛkṣaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+    "bases":
       "अरुणः": "reddish brown"
-    examples:
-      "अरुणो वृक्षः":
-        native: "A reddish brown tree."
-        bases:
-          "अरुणो": "reddish brown"
-          "वृक्षः": "tree"
-      "अत्र अरुणो भवति":
-        native: "Here it is reddish brown."
-        bases:
-          "अत्र": "here"
-          "अरुणो": "reddish brown"
-          "भवति": "is"
+    "examples":
+      "अरुणा मृत्तिका":
+        "native": "Reddish brown clay."
+        "bases":
+          "अरुणा": "reddish brown"
+          "मृत्तिका": "clay"
+      "अरुणः पाषाणः":
+        "native": "A reddish brown stone."
+        "bases":
+          "अरुणः": "reddish brown"
+          "पाषाणः": "stone"
   "sa-5073":
-    native: "Deep."
-    notes:
+    "native": "Deep."
+    "notes":
       "n1": "Adjective with a-stem endings: masculine अगाधः (agādhaḥ), feminine अगाधा (agādhā), neuter अगाधम् (agādham). The card shows the masculine form."
-      "n2": "Before a voiced consonant the final ḥ of अगाधः (agādhaḥ) is written o, as in अगाधो (agādho) before वृक्षः (vṛkṣaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in अगाधं (agādhaṃ) from अगाधम् (agādham) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+      "n3": "Deep has more than one word in the course: also गभीरः (gabhīraḥ). They are near synonyms."
+    "bases":
       "अगाधः": "deep"
-    examples:
-      "अगाधो वृक्षः":
-        native: "A deep tree."
-        bases:
-          "अगाधो": "deep"
-          "वृक्षः": "tree"
-      "तत्र अगाधो भवति":
-        native: "There it is deep."
-        bases:
-          "तत्र": "there"
-          "अगाधो": "deep"
-          "भवति": "is"
+    "examples":
+      "अगाधं तोयम्":
+        "native": "Deep water."
+        "bases":
+          "अगाधं": "deep"
+          "तोयम्": "water"
+      "अगाधा वापी":
+        "native": "A deep pond."
+        "bases":
+          "अगाधा": "deep"
+          "वापी": "pond"
   "sa-5074":
-    native: "Soft."
-    notes:
+    "native": "Soft."
+    "notes":
       "n1": "Adjective with a-stem endings: masculine कोमलः (komalaḥ), feminine कोमला (komalā), neuter कोमलम् (komalam). The card shows the masculine form."
-      "n2": "Before a voiced consonant the final ḥ of कोमलः (komalaḥ) is written o, as in कोमलो (komalo) before वृक्षः (vṛkṣaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in कोमलं (komalaṃ) from कोमलम् (komalam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+    "bases":
       "कोमलः": "soft"
-    examples:
-      "कोमलो वृक्षः":
-        native: "A soft tree."
-        bases:
-          "कोमलो": "soft"
-          "वृक्षः": "tree"
-      "अत्र कोमलो भवति":
-        native: "Here it is soft."
-        bases:
-          "अत्र": "here"
-          "कोमलो": "soft"
-          "भवति": "is"
+    "examples":
+      "कोमलं पर्णम्":
+        "native": "A soft leaf."
+        "bases":
+          "कोमलं": "soft"
+          "पर्णम्": "leaf"
+      "कोमला लता":
+        "native": "A soft creeper."
+        "bases":
+          "कोमला": "soft"
+          "लता": "creeper"
   "sa-5075":
-    native: "Lake."
-    notes:
+    "native": "Lake."
+    "notes":
       "n1": "Feminine ī-stem noun. Stem and isolated nominative singular सरसी (sarasī)."
-      "n2": "Feminine ī-stem noun: an adjective used with it takes the feminine ending, as in नीला (nīlā)."
-    bases:
+    "bases":
       "सरसी": "lake"
-    examples:
+    "examples":
       "सरसी नीला":
-        native: "The lake is dark blue."
-        bases:
+        "native": "The lake is dark blue."
+        "bases":
           "सरसी": "lake"
           "नीला": "dark blue"
       "तत्र सरसी भवति":
-        native: "There is a lake there."
-        bases:
+        "native": "There is a lake there."
+        "bases":
           "तत्र": "there"
           "सरसी": "lake"
           "भवति": "is"
   "sa-5076":
-    native: "Pond."
-    notes:
+    "native": "Pond."
+    "notes":
       "n1": "Feminine ī-stem noun. Stem and isolated nominative singular वापी (vāpī)."
-      "n2": "Feminine ī-stem noun: an adjective used with it takes the feminine ending, as in निर्मला (nirmalā)."
-    bases:
+    "bases":
       "वापी": "pond"
-    examples:
+    "examples":
       "वापी निर्मला":
-        native: "The pond is clean."
-        bases:
+        "native": "The pond is clear."
+        "bases":
           "वापी": "pond"
-          "निर्मला": "clean"
+          "निर्मला": "clear"
       "अत्र वापी भवति":
-        native: "Here there is a pond."
-        bases:
+        "native": "Here there is a pond."
+        "bases":
           "अत्र": "here"
           "वापी": "pond"
           "भवति": "is"
   "sa-5077":
-    native: "Cave."
-    notes:
+    "native": "Cave."
+    "notes":
       "n1": "Neuter a-stem noun. Stem बिल (bila); isolated nominative and accusative singular बिलम् (bilam)."
-      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in बिलं (bilaṃ) before गभीरम् (gabhīram) (Aṣṭādhyāyī 8.3.23)."
-    bases:
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in बिलं (bilaṃ) from बिलम् (bilam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+      "n3": "Cave has more than one word in the course: also कन्दरा (kandarā). They are near synonyms."
+    "bases":
       "बिलम्": "cave"
-    examples:
+    "examples":
       "बिलं गभीरम्":
-        native: "The cave is deep."
-        bases:
+        "native": "The cave is deep."
+        "bases":
           "बिलं": "cave"
           "गभीरम्": "deep"
       "तत्र बिलं भवति":
-        native: "There is a cave there."
-        bases:
+        "native": "There is a cave there."
+        "bases":
           "तत्र": "there"
           "बिलं": "cave"
           "भवति": "is"
   "sa-5078":
-    native: "Flower bud."
-    notes:
+    "native": "Flower bud."
+    "notes":
       "n1": "Feminine ā-stem noun. Stem and isolated nominative singular कलिका (kalikā)."
-      "n2": "Feminine ā-stem noun: an adjective used with it takes the feminine ending, as in मधुरा (madhurā)."
-    bases:
+    "bases":
       "कलिका": "flower bud"
-    examples:
-      "कलिका मधुरा":
-        native: "The flower bud is sweet."
-        bases:
+    "examples":
+      "कलिका कोमला":
+        "native": "The flower bud is soft."
+        "bases":
           "कलिका": "flower bud"
-          "मधुरा": "sweet"
+          "कोमला": "soft"
       "अत्र कलिका भवति":
-        native: "Here there is a flower bud."
-        bases:
+        "native": "Here there is a flower bud."
+        "bases":
           "अत्र": "here"
           "कलिका": "flower bud"
           "भवति": "is"
   "sa-5079":
-    native: "Horizon."
-    notes:
+    "native": "Horizon."
+    "notes":
       "n1": "Masculine a-stem noun. Stem चक्रवाल (cakravāla); isolated nominative singular चक्रवालः (cakravālaḥ)."
-      "n2": "Before a voiced consonant the final ḥ of चक्रवालः (cakravālaḥ) is written o, as in चक्रवालो (cakravālo) before विशालः (viśālaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of चक्रवालः (cakravālaḥ) is written ो (o), as in चक्रवालो (cakravālo) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+    "bases":
       "चक्रवालः": "horizon"
-    examples:
+    "examples":
       "चक्रवालो विशालः":
-        native: "The horizon is vast."
-        bases:
+        "native": "The horizon is vast."
+        "bases":
           "चक्रवालो": "horizon"
           "विशालः": "vast"
       "तत्र चक्रवालो भवति":
-        native: "There is a horizon there."
-        bases:
+        "native": "The horizon is there."
+        "bases":
           "तत्र": "there"
           "चक्रवालो": "horizon"
           "भवति": "is"
   "sa-5080":
-    native: "Sky."
-    notes:
+    "native": "Sky."
+    "notes":
       "n1": "Neuter a-stem noun. Stem अन्तरिक्ष (antarikṣa); isolated nominative and accusative singular अन्तरिक्षम् (antarikṣam)."
-      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in अन्तरिक्षं (antarikṣaṃ) before विशालम् (viśālam) (Aṣṭādhyāyī 8.3.23)."
-    bases:
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in अन्तरिक्षं (antarikṣaṃ) from अन्तरिक्षम् (antarikṣam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+      "n3": "Sky has more than one word in the course: also आकाशः (ākāśaḥ), गगनम् (gaganam). They are near synonyms. आकाश (ākāśa) is the open space or ether, गगन (gagana) the sky and अन्तरिक्ष (antarikṣa) the air between earth and heaven, as the dictionaries give them."
+    "bases":
       "अन्तरिक्षम्": "sky"
-    examples:
+    "examples":
       "अन्तरिक्षं विशालम्":
-        native: "The sky is vast."
-        bases:
+        "native": "The sky is vast."
+        "bases":
           "अन्तरिक्षं": "sky"
           "विशालम्": "vast"
-      "अत्र अन्तरिक्षं भवति":
-        native: "Here there is a sky."
-        bases:
-          "अत्र": "here"
+      "अन्तरिक्षं भवति तत्र":
+        "native": "The sky is there."
+        "bases":
           "अन्तरिक्षं": "sky"
           "भवति": "is"
+          "तत्र": "there"
   "sa-5081":
-    native: "Cloud."
-    notes:
+    "native": "Cloud."
+    "notes":
       "n1": "Masculine a-stem noun. Stem जलद (jalada); isolated nominative singular जलदः (jaladaḥ)."
-      "n2": "Before a voiced consonant the final ḥ of जलदः (jaladaḥ) is written o, as in जलदो (jalado) before नीलः (nīlaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of जलदः (jaladaḥ) is written ो (o), as in जलदो (jalado) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+      "n3": "Cloud has more than one word in the course: also मेघः (meghaḥ). They are near synonyms. जलदः (jaladaḥ) means the giver of water, from जल (jala) and the root दा (dā)."
+    "bases":
       "जलदः": "cloud"
-    examples:
+    "examples":
       "जलदो नीलः":
-        native: "The cloud is dark blue."
-        bases:
+        "native": "The cloud is dark blue."
+        "bases":
           "जलदो": "cloud"
           "नीलः": "dark blue"
       "तत्र जलदो भवति":
-        native: "There is a cloud there."
-        bases:
+        "native": "There is a cloud there."
+        "bases":
           "तत्र": "there"
           "जलदो": "cloud"
           "भवति": "is"
   "sa-5082":
-    native: "Moonlight."
-    notes:
+    "native": "Moonlight."
+    "notes":
       "n1": "Feminine ā-stem noun. Stem and isolated nominative singular ज्योत्स्ना (jyotsnā)."
-      "n2": "Feminine ā-stem noun: an adjective used with it takes the feminine ending, as in धवला (dhavalā)."
-    bases:
+    "bases":
       "ज्योत्स्ना": "moonlight"
-    examples:
+    "examples":
       "ज्योत्स्ना धवला":
-        native: "The moonlight is white."
-        bases:
+        "native": "The moonlight is white."
+        "bases":
           "ज्योत्स्ना": "moonlight"
           "धवला": "white"
       "अत्र ज्योत्स्ना भवति":
-        native: "Here there is a moonlight."
-        bases:
+        "native": "Here there is moonlight."
+        "bases":
           "अत्र": "here"
           "ज्योत्स्ना": "moonlight"
           "भवति": "is"
   "sa-5083":
-    native: "Direction."
-    notes:
+    "native": "Direction."
+    "notes":
       "n1": "Feminine ā-stem noun. Stem and isolated nominative singular दिशा (diśā)."
-      "n2": "Feminine ā-stem noun: an adjective used with it takes the feminine ending, as in दीर्घा (dīrghā)."
-    bases:
+    "bases":
       "दिशा": "direction"
-    examples:
-      "दिशा दीर्घा":
-        native: "The direction is long."
-        bases:
+    "examples":
+      "दिशा निर्मला":
+        "native": "The direction is clear."
+        "bases":
           "दिशा": "direction"
-          "दीर्घा": "long"
+          "निर्मला": "clear"
       "तत्र दिशा भवति":
-        native: "There is a direction there."
-        bases:
+        "native": "There is a direction there."
+        "bases":
           "तत्र": "there"
           "दिशा": "direction"
           "भवति": "is"
   "sa-5084":
-    native: "Wind."
-    notes:
+    "native": "Wind."
+    "notes":
       "n1": "Masculine u-stem noun. Stem वायु (vāyu); isolated nominative singular वायुः (vāyuḥ)."
-      "n2": "Before a voiced consonant the visarga after the vowel of वायुः (vāyuḥ) becomes r, as in वायुर् (vāyur) before निर्मलः (nirmalaḥ) (Aṣṭādhyāyī 8.2.66)."
-    bases:
+      "n2": "After इ (i), ई (ī), उ (u) or ऊ (ū) the final ः (ḥ) before a voiced sound becomes र् (r), as in वायुर् (vāyur) from वायुः (vāyuḥ) (Aṣṭādhyāyī 8.2.66; Whitney 174)."
+      "n3": "Wind has more than one word in the course: also पवनः (pavanaḥ). They are near synonyms."
+    "bases":
       "वायुः": "wind"
-    examples:
+    "examples":
       "वायुर् निर्मलः":
-        native: "The wind is clean."
-        bases:
+        "native": "The wind is clear."
+        "bases":
           "वायुर्": "wind"
-          "निर्मलः": "clean"
+          "निर्मलः": "clear"
       "अत्र वायुर् भवति":
-        native: "Here there is a wind."
-        bases:
+        "native": "Here there is wind."
+        "bases":
           "अत्र": "here"
           "वायुर्": "wind"
           "भवति": "is"
   "sa-5085":
-    native: "Rain."
-    notes:
+    "native": "Rain."
+    "notes":
       "n1": "Feminine i-stem noun. Stem वृष्टि (vṛṣṭi); isolated nominative singular वृष्टिः (vṛṣṭiḥ)."
-      "n2": "Before a voiced consonant the visarga after the vowel of वृष्टिः (vṛṣṭiḥ) becomes r, as in वृष्टिर् (vṛṣṭir) before धवला (dhavalā) (Aṣṭādhyāyī 8.2.66)."
-    bases:
+      "n2": "After इ (i), ई (ī), उ (u) or ऊ (ū) the final ः (ḥ) before a voiced sound becomes र् (r), as in वृष्टिर् (vṛṣṭir) from वृष्टिः (vṛṣṭiḥ) (Aṣṭādhyāyī 8.2.66; Whitney 174)."
+    "bases":
       "वृष्टिः": "rain"
-    examples:
-      "वृष्टिर् धवला":
-        native: "The rain is white."
-        bases:
+    "examples":
+      "वृष्टिर् विपुला":
+        "native": "The rain is heavy."
+        "bases":
           "वृष्टिर्": "rain"
-          "धवला": "white"
+          "विपुला": "large, extensive"
       "तत्र वृष्टिर् भवति":
-        native: "There is a rain there."
-        bases:
+        "native": "There is rain there."
+        "bases":
           "तत्र": "there"
           "वृष्टिर्": "rain"
           "भवति": "is"
   "sa-5086":
-    native: "Mountain."
-    notes:
+    "native": "Mountain."
+    "notes":
       "n1": "Masculine i-stem noun. Stem गिरि (giri); isolated nominative singular गिरिः (giriḥ)."
-      "n2": "Before a voiced consonant the visarga after the vowel of गिरिः (giriḥ) becomes r, as in गिरिर् (girir) before विशालः (viśālaḥ) (Aṣṭādhyāyī 8.2.66)."
-    bases:
+      "n2": "After इ (i), ई (ī), उ (u) or ऊ (ū) the final ः (ḥ) before a voiced sound becomes र् (r), as in गिरिर् (girir) from गिरिः (giriḥ) (Aṣṭādhyāyī 8.2.66; Whitney 174)."
+    "bases":
       "गिरिः": "mountain"
-    examples:
+    "examples":
       "गिरिर् विशालः":
-        native: "The mountain is vast."
-        bases:
+        "native": "The mountain is vast."
+        "bases":
           "गिरिर्": "mountain"
           "विशालः": "vast"
       "अत्र गिरिर् भवति":
-        native: "Here there is a mountain."
-        bases:
+        "native": "Here there is a mountain."
+        "bases":
           "अत्र": "here"
           "गिरिर्": "mountain"
           "भवति": "is"
   "sa-5087":
-    native: "Dust."
-    notes:
+    "native": "Dust."
+    "notes":
       "n1": "Feminine i-stem noun. Stem धूलि (dhūli); isolated nominative singular धूलिः (dhūliḥ)."
-      "n2": "Before a voiced consonant the visarga after the vowel of धूलिः (dhūliḥ) becomes r, as in धूलिर् (dhūlir) before धवला (dhavalā) (Aṣṭādhyāyī 8.2.66)."
-    bases:
+      "n2": "After इ (i), ई (ī), उ (u) or ऊ (ū) the final ः (ḥ) before a voiced sound becomes र् (r), as in धूलिर् (dhūlir) from धूलिः (dhūliḥ) (Aṣṭādhyāyī 8.2.66; Whitney 174)."
+    "bases":
       "धूलिः": "dust"
-    examples:
+    "examples":
       "धूलिर् धवला":
-        native: "The dust is white."
-        bases:
+        "native": "The dust is white."
+        "bases":
           "धूलिर्": "dust"
           "धवला": "white"
       "तत्र धूलिर् भवति":
-        native: "There is a dust there."
-        bases:
+        "native": "There is dust there."
+        "bases":
           "तत्र": "there"
           "धूलिर्": "dust"
           "भवति": "is"
   "sa-5088":
-    native: "Herb."
-    notes:
+    "native": "Herb."
+    "notes":
       "n1": "Feminine i-stem noun. Stem ओषधि (oṣadhi); isolated nominative singular ओषधिः (oṣadhiḥ)."
-      "n2": "Before a voiced consonant the visarga after the vowel of ओषधिः (oṣadhiḥ) becomes r, as in ओषधिर् (oṣadhir) before हरिता (haritā) (Aṣṭādhyāyī 8.2.66)."
-    bases:
+      "n2": "After इ (i), ई (ī), उ (u) or ऊ (ū) the final ः (ḥ) before a voiced sound becomes र् (r), as in ओषधिर् (oṣadhir) from ओषधिः (oṣadhiḥ) (Aṣṭādhyāyī 8.2.66; Whitney 174)."
+    "bases":
       "ओषधिः": "herb"
-    examples:
+    "examples":
       "ओषधिर् हरिता":
-        native: "The herb is green."
-        bases:
+        "native": "The herb is green."
+        "bases":
           "ओषधिर्": "herb"
           "हरिता": "green"
-      "अत्र ओषधिर् भवति":
-        native: "Here there is a herb."
-        bases:
-          "अत्र": "here"
+      "ओषधिर् भवति तत्र":
+        "native": "A herb is there."
+        "bases":
           "ओषधिर्": "herb"
           "भवति": "is"
+          "तत्र": "there"
   "sa-5089":
-    native: "Forest tree."
-    notes:
+    "native": "Forest tree."
+    "notes":
       "n1": "Masculine i-stem noun. Stem वनस्पति (vanaspati); isolated nominative singular वनस्पतिः (vanaspatiḥ)."
-      "n2": "Before a voiced consonant the visarga after the vowel of वनस्पतिः (vanaspatiḥ) becomes r, as in वनस्पतिर् (vanaspatir) before हरितः (haritaḥ) (Aṣṭādhyāyī 8.2.66)."
-    bases:
+      "n2": "After इ (i), ई (ī), उ (u) or ऊ (ū) the final ः (ḥ) before a voiced sound becomes र् (r), as in वनस्पतिर् (vanaspatir) from वनस्पतिः (vanaspatiḥ) (Aṣṭādhyāyī 8.2.66; Whitney 174)."
+    "bases":
       "वनस्पतिः": "forest tree"
-    examples:
+    "examples":
       "वनस्पतिर् हरितः":
-        native: "The forest tree is green."
-        bases:
+        "native": "The forest tree is green."
+        "bases":
           "वनस्पतिर्": "forest tree"
           "हरितः": "green"
       "तत्र वनस्पतिर् भवति":
-        native: "There is a forest tree there."
-        bases:
+        "native": "There is a forest tree there."
+        "bases":
           "तत्र": "there"
           "वनस्पतिर्": "forest tree"
           "भवति": "is"
   "sa-5090":
-    native: "Dark-coloured."
-    notes:
+    "native": "Dark-coloured."
+    "notes":
       "n1": "Adjective with a-stem endings: masculine श्यामलः (śyāmalaḥ), feminine श्यामला (śyāmalā), neuter श्यामलम् (śyāmalam). The card shows the masculine form."
-      "n2": "Before a voiced consonant the final ḥ of श्यामलः (śyāmalaḥ) is written o, as in श्यामलो (śyāmalo) before वृक्षः (vṛkṣaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of श्यामलः (śyāmalaḥ) is written ो (o), as in श्यामलो (śyāmalo) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+    "bases":
       "श्यामलः": "dark-coloured"
-    examples:
-      "श्यामलो वृक्षः":
-        native: "A dark-coloured tree."
-        bases:
+    "examples":
+      "श्यामलो मेघः":
+        "native": "A dark cloud."
+        "bases":
           "श्यामलो": "dark-coloured"
-          "वृक्षः": "tree"
-      "अत्र श्यामलो भवति":
-        native: "Here it is dark-coloured."
-        bases:
-          "अत्र": "here"
-          "श्यामलो": "dark-coloured"
-          "भवति": "is"
-  "sa-5091":
-    native: "Lake."
-    notes:
-      "n1": "Masculine a-stem noun. Stem सरोवर (sarovara); isolated nominative singular सरोवरः (sarovaraḥ)."
-      "n2": "Before a voiced consonant the final ḥ of सरोवरः (sarovaraḥ) is written o, as in सरोवरो (sarovaro) before निर्मलः (nirmalaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
-      "सरोवरः": "lake"
-    examples:
-      "सरोवरो निर्मलः":
-        native: "The lake is clean."
-        bases:
-          "सरोवरो": "lake"
-          "निर्मलः": "clean"
-      "तत्र सरोवरो भवति":
-        native: "There is a lake there."
-        bases:
-          "तत्र": "there"
-          "सरोवरो": "lake"
-          "भवति": "is"
+          "मेघः": "cloud"
+      "श्यामला मृत्तिका":
+        "native": "Dark clay."
+        "bases":
+          "श्यामला": "dark-coloured"
+          "मृत्तिका": "clay"
   "sa-5092":
-    native: "Flower."
-    notes:
+    "native": "Flower."
+    "notes":
       "n1": "Neuter a-stem noun. Stem कुसुम (kusuma); isolated nominative and accusative singular कुसुमम् (kusumam)."
-      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in कुसुमं (kusumaṃ) before मधुरम् (madhuram) (Aṣṭādhyāyī 8.3.23)."
-    bases:
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in कुसुमं (kusumaṃ) from कुसुमम् (kusumam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+      "n3": "Monier-Williams, A Sanskrit-English Dictionary (1899), has kusuma, n., a flower or blossom (read in the archive.org text, 2026-11-16)."
+    "bases":
       "कुसुमम्": "flower"
-    examples:
-      "कुसुमं मधुरम्":
-        native: "The flower is sweet."
-        bases:
+    "examples":
+      "कुसुमं कोमलम्":
+        "native": "The flower is soft."
+        "bases":
           "कुसुमं": "flower"
-          "मधुरम्": "sweet"
+          "कोमलम्": "soft"
       "अत्र कुसुमं भवति":
-        native: "Here there is a flower."
-        bases:
+        "native": "Here there is a flower."
+        "bases":
           "अत्र": "here"
           "कुसुमं": "flower"
           "भवति": "is"
   "sa-5093":
-    native: "Forest."
-    notes:
+    "native": "Forest."
+    "notes":
       "n1": "Neuter a-stem noun. Stem कानन (kānana); isolated nominative and accusative singular काननम् (kānanam)."
-      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in काननं (kānanaṃ) before हरितम् (haritam) (Aṣṭādhyāyī 8.3.23)."
-    bases:
+      "n2": "Before a consonant the final म् (m) is written ं (ṃ), as in काननं (kānanaṃ) from काननम् (kānanam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
+    "bases":
       "काननम्": "forest"
-    examples:
+    "examples":
       "काननं हरितम्":
-        native: "The forest is green."
-        bases:
+        "native": "The forest is green."
+        "bases":
           "काननं": "forest"
           "हरितम्": "green"
       "तत्र काननं भवति":
-        native: "There is a forest there."
-        bases:
+        "native": "There is a forest there."
+        "bases":
           "तत्र": "there"
           "काननं": "forest"
           "भवति": "is"
   "sa-5094":
-    native: "Kadamba tree."
-    notes:
+    "native": "Kadamba tree."
+    "notes":
       "n1": "Masculine a-stem noun. Stem कदम्ब (kadamba); isolated nominative singular कदम्बः (kadambaḥ)."
-      "n2": "Before a voiced consonant the final ḥ of कदम्बः (kadambaḥ) is written o, as in कदम्बो (kadambo) before हरितः (haritaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
+      "n2": "Before a voiced consonant the final ः (ḥ) of कदम्बः (kadambaḥ) is written ो (o), as in कदम्बो (kadambo) (Aṣṭādhyāyī 6.1.113 and 6.1.114; Whitney 175 a)."
+      "n3": "Monier-Williams, A Sanskrit-English Dictionary (1899), has kadamba, m., the tree Nauclea Cadamba (read in the archive.org text, 2026-11-16)."
+    "bases":
       "कदम्बः": "kadamba tree"
-    examples:
-      "कदम्बो हरितः":
-        native: "The kadamba tree is green."
-        bases:
+    "examples":
+      "कदम्बो विशालः":
+        "native": "The kadamba tree is vast."
+        "bases":
           "कदम्बो": "kadamba tree"
-          "हरितः": "green"
+          "विशालः": "vast"
       "अत्र कदम्बो भवति":
-        native: "Here there is a kadamba tree."
-        bases:
+        "native": "Here there is a kadamba tree."
+        "bases":
           "अत्र": "here"
           "कदम्बो": "kadamba tree"
-          "भवति": "is"
-  "sa-5095":
-    native: "Pollen."
-    notes:
-      "n1": "Masculine a-stem noun. Stem पराग (parāga); isolated nominative singular परागः (parāgaḥ)."
-      "n2": "Before a voiced consonant the final ḥ of परागः (parāgaḥ) is written o, as in परागो (parāgo) before धवलः (dhavalaḥ) (Aṣṭādhyāyī 6.1.113, 6.1.114)."
-    bases:
-      "परागः": "pollen"
-    examples:
-      "परागो धवलः":
-        native: "The pollen is white."
-        bases:
-          "परागो": "pollen"
-          "धवलः": "white"
-      "तत्र परागो भवति":
-        native: "There is a pollen there."
-        bases:
-          "तत्र": "there"
-          "परागो": "pollen"
           "भवति": "is"

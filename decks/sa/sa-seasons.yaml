@@ -1,736 +1,1056 @@
-schema: 1
-id: "sa-seasons"
-part: "core"
-kind: "vocab"
-language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
-license: "CC-BY-SA-4.0"
-theme: "seasons"
-tags: ["unreviewed"]
-cards:
-  - id: "sa-5100"
-    target: "वसन्तः"
-    reading: "vasantaḥ"
-    ipa: "ʋəsənt̪əh"
-    pos: "noun"
-    gender: "m"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "वसन्तः", base: "वसन्त", reading: "vasanta" }
-    examples:
-      - target: "वसन्तो मधुरः"
-        reading: "vasanto madhuraḥ"
-        ipa: "ʋəsənt̪oː məd̪ʱurəh"
-        bases:
-          - { word: "वसन्तो", base: "वसन्त", reading: "vasanta" }
-          - { word: "मधुरः", base: "मधुर", reading: "madhura" }
-      - target: "अत्र वसन्तो भवति"
-        reading: "atra vasanto bhavati"
-        ipa: "ət̪rə ʋəsənt̪oː bʱəʋət̪i"
-        bases:
-          - { word: "अत्र", base: "अत्र", reading: "atra" }
-          - { word: "वसन्तो", base: "वसन्त", reading: "vasanta" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5101"
-    target: "ग्रीष्मः"
-    reading: "grīṣmaḥ"
-    ipa: "ɡriːʂməh"
-    pos: "noun"
-    gender: "m"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "ग्रीष्मः", base: "ग्रीष्म", reading: "grīṣma" }
-    examples:
-      - target: "ग्रीष्मो दीर्घः"
-        reading: "grīṣmo dīrghaḥ"
-        ipa: "ɡriːʂmoː d̪iːrɡʱəh"
-        bases:
-          - { word: "ग्रीष्मो", base: "ग्रीष्म", reading: "grīṣma" }
-          - { word: "दीर्घः", base: "दीर्घ", reading: "dīrgha" }
-      - target: "तत्र ग्रीष्मो भवति"
-        reading: "tatra grīṣmo bhavati"
-        ipa: "t̪ət̪rə ɡriːʂmoː bʱəʋət̪i"
-        bases:
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "ग्रीष्मो", base: "ग्रीष्म", reading: "grīṣma" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5102"
-    target: "हेमन्तः"
-    reading: "hemantaḥ"
-    ipa: "ɦeːmənt̪əh"
-    pos: "noun"
-    gender: "m"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "हेमन्तः", base: "हेमन्त", reading: "hemanta" }
-    examples:
-      - target: "हेमन्तो धवलः"
-        reading: "hemanto dhavalaḥ"
-        ipa: "ɦeːmənt̪oː d̪ʱəʋələh"
-        bases:
-          - { word: "हेमन्तो", base: "हेमन्त", reading: "hemanta" }
-          - { word: "धवलः", base: "धवल", reading: "dhavala" }
-      - target: "अत्र हेमन्तो भवति"
-        reading: "atra hemanto bhavati"
-        ipa: "ət̪rə ɦeːmənt̪oː bʱəʋət̪i"
-        bases:
-          - { word: "अत्र", base: "अत्र", reading: "atra" }
-          - { word: "हेमन्तो", base: "हेमन्त", reading: "hemanta" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5103"
-    target: "तापः"
-    reading: "tāpaḥ"
-    ipa: "t̪aːpəh"
-    pos: "noun"
-    gender: "m"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "तापः", base: "ताप", reading: "tāpa" }
-    examples:
-      - target: "तापो रक्तः"
-        reading: "tāpo raktaḥ"
-        ipa: "t̪aːpoː rəkt̪əh"
-        bases:
-          - { word: "तापो", base: "ताप", reading: "tāpa" }
-          - { word: "रक्तः", base: "रक्त", reading: "rakta" }
-      - target: "तत्र तापो भवति"
-        reading: "tatra tāpo bhavati"
-        ipa: "t̪ət̪rə t̪aːpoː bʱəʋət̪i"
-        bases:
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "तापो", base: "ताप", reading: "tāpa" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5104"
-    target: "आतपः"
-    reading: "ātapaḥ"
-    ipa: "aːt̪əpəh"
-    pos: "noun"
-    gender: "m"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "आतपः", base: "आतप", reading: "ātapa" }
-    examples:
-      - target: "आतपो निर्मलः"
-        reading: "ātapo nirmalaḥ"
-        ipa: "aːt̪əpoː nirmələh"
-        bases:
-          - { word: "आतपो", base: "आतप", reading: "ātapa" }
-          - { word: "निर्मलः", base: "निर्मल", reading: "nirmala" }
-      - target: "अत्र आतपो भवति"
-        reading: "atra ātapo bhavati"
-        ipa: "ət̪rə aːt̪əpoː bʱəʋət̪i"
-        bases:
-          - { word: "अत्र", base: "अत्र", reading: "atra" }
-          - { word: "आतपो", base: "आतप", reading: "ātapa" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5105"
-    target: "छाया"
-    reading: "chāyā"
-    ipa: "tʃʰaːjaː"
-    pos: "noun"
-    gender: "f"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "छाया", base: "छाया", reading: "chāyā" }
-    examples:
-      - target: "छाया गभीरा"
-        reading: "chāyā gabhīrā"
-        ipa: "tʃʰaːjaː ɡəbʱiːraː"
-        bases:
-          - { word: "छाया", base: "छाया", reading: "chāyā" }
-          - { word: "गभीरा", base: "गभीर", reading: "gabhīra" }
-      - target: "तत्र छाया भवति"
-        reading: "tatra chāyā bhavati"
-        ipa: "t̪ət̪rə tʃʰaːjaː bʱəʋət̪i"
-        bases:
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "छाया", base: "छाया", reading: "chāyā" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5106"
-    target: "नीहारः"
-    reading: "nīhāraḥ"
-    ipa: "niːɦaːrəh"
-    pos: "noun"
-    gender: "m"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "नीहारः", base: "नीहार", reading: "nīhāra" }
-    examples:
-      - target: "नीहारो धवलः"
-        reading: "nīhāro dhavalaḥ"
-        ipa: "niːɦaːroː d̪ʱəʋələh"
-        bases:
-          - { word: "नीहारो", base: "नीहार", reading: "nīhāra" }
-          - { word: "धवलः", base: "धवल", reading: "dhavala" }
-      - target: "अत्र नीहारो भवति"
-        reading: "atra nīhāro bhavati"
-        ipa: "ət̪rə niːɦaːroː bʱəʋət̪i"
-        bases:
-          - { word: "अत्र", base: "अत्र", reading: "atra" }
-          - { word: "नीहारो", base: "नीहार", reading: "nīhāra" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5107"
-    target: "तुषारः"
-    reading: "tuṣāraḥ"
-    ipa: "t̪uʂaːrəh"
-    pos: "noun"
-    gender: "m"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "तुषारः", base: "तुषार", reading: "tuṣāra" }
-    examples:
-      - target: "तुषारो धवलः"
-        reading: "tuṣāro dhavalaḥ"
-        ipa: "t̪uʂaːroː d̪ʱəʋələh"
-        bases:
-          - { word: "तुषारो", base: "तुषार", reading: "tuṣāra" }
-          - { word: "धवलः", base: "धवल", reading: "dhavala" }
-      - target: "तत्र तुषारो भवति"
-        reading: "tatra tuṣāro bhavati"
-        ipa: "t̪ət̪rə t̪uʂaːroː bʱəʋət̪i"
-        bases:
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "तुषारो", base: "तुषार", reading: "tuṣāra" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5108"
-    target: "सुगन्धः"
-    reading: "sugandhaḥ"
-    ipa: "suɡənd̪ʱəh"
-    pos: "noun"
-    gender: "m"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "सुगन्धः", base: "सुगन्ध", reading: "sugandha" }
-    examples:
-      - target: "सुगन्धो मधुरः"
-        reading: "sugandho madhuraḥ"
-        ipa: "suɡənd̪ʱoː məd̪ʱurəh"
-        bases:
-          - { word: "सुगन्धो", base: "सुगन्ध", reading: "sugandha" }
-          - { word: "मधुरः", base: "मधुर", reading: "madhura" }
-      - target: "अत्र सुगन्धो भवति"
-        reading: "atra sugandho bhavati"
-        ipa: "ət̪rə suɡənd̪ʱoː bʱəʋət̪i"
-        bases:
-          - { word: "अत्र", base: "अत्र", reading: "atra" }
-          - { word: "सुगन्धो", base: "सुगन्ध", reading: "sugandha" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5109"
-    target: "कोकिलः"
-    reading: "kokilaḥ"
-    ipa: "koːkiləh"
-    pos: "noun"
-    gender: "m"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "कोकिलः", base: "कोकिल", reading: "kokila" }
-    examples:
-      - target: "कोकिलो मधुरः"
-        reading: "kokilo madhuraḥ"
-        ipa: "koːkiloː məd̪ʱurəh"
-        bases:
-          - { word: "कोकिलो", base: "कोकिल", reading: "kokila" }
-          - { word: "मधुरः", base: "मधुर", reading: "madhura" }
-      - target: "तत्र कोकिलो भवति"
-        reading: "tatra kokilo bhavati"
-        ipa: "t̪ət̪rə koːkiloː bʱəʋət̪i"
-        bases:
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "कोकिलो", base: "कोकिल", reading: "kokila" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5110"
-    target: "मल्लिका"
-    reading: "mallikā"
-    ipa: "məllikaː"
-    pos: "noun"
-    gender: "f"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "मल्लिका", base: "मल्लिका", reading: "mallikā" }
-    examples:
-      - target: "मल्लिका धवला"
-        reading: "mallikā dhavalā"
-        ipa: "məllikaː d̪ʱəʋəlaː"
-        bases:
-          - { word: "मल्लिका", base: "मल्लिका", reading: "mallikā" }
-          - { word: "धवला", base: "धवल", reading: "dhavala" }
-      - target: "अत्र मल्लिका भवति"
-        reading: "atra mallikā bhavati"
-        ipa: "ət̪rə məllikaː bʱəʋət̪i"
-        bases:
-          - { word: "अत्र", base: "अत्र", reading: "atra" }
-          - { word: "मल्लिका", base: "मल्लिका", reading: "mallikā" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5111"
-    target: "चम्पकः"
-    reading: "campakaḥ"
-    ipa: "tʃəmpəkəh"
-    pos: "noun"
-    gender: "m"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "चम्पकः", base: "चम्पक", reading: "campaka" }
-    examples:
-      - target: "चम्पको धवलः"
-        reading: "campako dhavalaḥ"
-        ipa: "tʃəmpəkoː d̪ʱəʋələh"
-        bases:
-          - { word: "चम्पको", base: "चम्पक", reading: "campaka" }
-          - { word: "धवलः", base: "धवल", reading: "dhavala" }
-      - target: "तत्र चम्पको भवति"
-        reading: "tatra campako bhavati"
-        ipa: "t̪ət̪rə tʃəmpəkoː bʱəʋət̪i"
-        bases:
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "चम्पको", base: "चम्पक", reading: "campaka" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5112"
-    target: "कर्णिकारः"
-    reading: "karṇikāraḥ"
-    ipa: "kərɳikaːrəh"
-    pos: "noun"
-    gender: "m"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "कर्णिकारः", base: "कर्णिकार", reading: "karṇikāra" }
-    examples:
-      - target: "कर्णिकारो रक्तः"
-        reading: "karṇikāro raktaḥ"
-        ipa: "kərɳikaːroː rəkt̪əh"
-        bases:
-          - { word: "कर्णिकारो", base: "कर्णिकार", reading: "karṇikāra" }
-          - { word: "रक्तः", base: "रक्त", reading: "rakta" }
-      - target: "अत्र कर्णिकारो भवति"
-        reading: "atra karṇikāro bhavati"
-        ipa: "ət̪rə kərɳikaːroː bʱəʋət̪i"
-        bases:
-          - { word: "अत्र", base: "अत्र", reading: "atra" }
-          - { word: "कर्णिकारो", base: "कर्णिकार", reading: "karṇikāra" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5113"
-    target: "गर्जनम्"
-    reading: "garjanam"
-    ipa: "ɡərdʒənəm"
-    pos: "noun"
-    gender: "n"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "गर्जनम्", base: "गर्जन", reading: "garjana" }
-    examples:
-      - target: "गर्जनं दीर्घम्"
-        reading: "garjanaṃ dīrgham"
-        ipa: "ɡərdʒənəm d̪iːrɡʱəm"
-        bases:
-          - { word: "गर्जनं", base: "गर्जन", reading: "garjana" }
-          - { word: "दीर्घम्", base: "दीर्घ", reading: "dīrgha" }
-      - target: "तत्र गर्जनं भवति"
-        reading: "tatra garjanaṃ bhavati"
-        ipa: "t̪ət̪rə ɡərdʒənəm bʱəʋət̪i"
-        bases:
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "गर्जनं", base: "गर्जन", reading: "garjana" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5114"
-    target: "हिमपातः"
-    reading: "himapātaḥ"
-    ipa: "ɦiməpaːt̪əh"
-    pos: "noun"
-    gender: "m"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "हिमपातः", base: "हिमपात", reading: "himapāta" }
-    examples:
-      - target: "हिमपातो धवलः"
-        reading: "himapāto dhavalaḥ"
-        ipa: "ɦiməpaːt̪oː d̪ʱəʋələh"
-        bases:
-          - { word: "हिमपातो", base: "हिमपात", reading: "himapāta" }
-          - { word: "धवलः", base: "धवल", reading: "dhavala" }
-      - target: "अत्र हिमपातो भवति"
-        reading: "atra himapāto bhavati"
-        ipa: "ət̪rə ɦiməpaːt̪oː bʱəʋət̪i"
-        bases:
-          - { word: "अत्र", base: "अत्र", reading: "atra" }
-          - { word: "हिमपातो", base: "हिमपात", reading: "himapāta" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5115"
-    target: "मालती"
-    reading: "mālatī"
-    ipa: "maːlət̪iː"
-    pos: "noun"
-    gender: "f"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "मालती", base: "मालती", reading: "mālatī" }
-    examples:
-      - target: "मालती धवला"
-        reading: "mālatī dhavalā"
-        ipa: "maːlət̪iː d̪ʱəʋəlaː"
-        bases:
-          - { word: "मालती", base: "मालती", reading: "mālatī" }
-          - { word: "धवला", base: "धवल", reading: "dhavala" }
-      - target: "तत्र मालती भवति"
-        reading: "tatra mālatī bhavati"
-        ipa: "t̪ət̪rə maːlət̪iː bʱəʋət̪i"
-        bases:
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "मालती", base: "मालती", reading: "mālatī" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5116"
-    target: "उष्णता"
-    reading: "uṣṇatā"
-    ipa: "uʂɳət̪aː"
-    pos: "noun"
-    gender: "f"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "उष्णता", base: "उष्णता", reading: "uṣṇatā" }
-    examples:
-      - target: "उष्णता रक्ता"
-        reading: "uṣṇatā raktā"
-        ipa: "uʂɳət̪aː rəkt̪aː"
-        bases:
-          - { word: "उष्णता", base: "उष्णता", reading: "uṣṇatā" }
-          - { word: "रक्ता", base: "रक्त", reading: "rakta" }
-      - target: "अत्र उष्णता भवति"
-        reading: "atra uṣṇatā bhavati"
-        ipa: "ət̪rə uʂɳət̪aː bʱəʋət̪i"
-        bases:
-          - { word: "अत्र", base: "अत्र", reading: "atra" }
-          - { word: "उष्णता", base: "उष्णता", reading: "uṣṇatā" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5119"
-    target: "फलितः"
-    reading: "phalitaḥ"
-    ipa: "pʰəlit̪əh"
-    pos: "adj"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "फलितः", base: "फलित", reading: "phalita" }
-    examples:
-      - target: "फलितो वृक्षः"
-        reading: "phalito vṛkṣaḥ"
-        ipa: "pʰəlit̪oː ʋr̩kʂəh"
-        bases:
-          - { word: "फलितो", base: "फलित", reading: "phalita" }
-          - { word: "वृक्षः", base: "वृक्ष", reading: "vṛkṣa" }
-      - target: "तत्र फलितो भवति"
-        reading: "tatra phalito bhavati"
-        ipa: "t̪ət̪rə pʰəlit̪oː bʱəʋət̪i"
-        bases:
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "फलितो", base: "फलित", reading: "phalita" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5120"
-    target: "घर्मः"
-    reading: "gharmaḥ"
-    ipa: "ɡʱərməh"
-    pos: "noun"
-    gender: "m"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "घर्मः", base: "घर्म", reading: "gharma" }
-    examples:
-      - target: "घर्मो रक्तः"
-        reading: "gharmo raktaḥ"
-        ipa: "ɡʱərmoː rəkt̪əh"
-        bases:
-          - { word: "घर्मो", base: "घर्म", reading: "gharma" }
-          - { word: "रक्तः", base: "रक्त", reading: "rakta" }
-      - target: "अत्र घर्मो भवति"
-        reading: "atra gharmo bhavati"
-        ipa: "ət̪rə ɡʱərmoː bʱəʋət̪i"
-        bases:
-          - { word: "अत्र", base: "अत्र", reading: "atra" }
-          - { word: "घर्मो", base: "घर्म", reading: "gharma" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5121"
-    target: "अशनिः"
-    reading: "aśaniḥ"
-    ipa: "əʃənih"
-    pos: "noun"
-    gender: "f"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "अशनिः", base: "अशनि", reading: "aśani" }
-    examples:
-      - target: "अशनिर् रक्ता"
-        reading: "aśanir raktā"
-        ipa: "əʃənir rəkt̪aː"
-        bases:
-          - { word: "अशनिर्", base: "अशनि", reading: "aśani" }
-          - { word: "रक्ता", base: "रक्त", reading: "rakta" }
-      - target: "तत्र अशनिर् भवति"
-        reading: "tatra aśanir bhavati"
-        ipa: "t̪ət̪rə əʃənir bʱəʋət̪i"
-        bases:
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "अशनिर्", base: "अशनि", reading: "aśani" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5122"
-    target: "तडित्"
-    reading: "taḍit"
-    ipa: "t̪əɖit̪"
-    pos: "noun"
-    gender: "f"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "तडित्", base: "तडित्", reading: "taḍit" }
-    examples:
-      - target: "तडिद् धवला"
-        reading: "taḍid dhavalā"
-        ipa: "t̪əɖid̪ d̪ʱəʋəlaː"
-        bases:
-          - { word: "तडिद्", base: "तडित्", reading: "taḍit" }
-          - { word: "धवला", base: "धवल", reading: "dhavala" }
-      - target: "अत्र तडिद् भवति"
-        reading: "atra taḍid bhavati"
-        ipa: "ət̪rə t̪əɖid̪ bʱəʋət̪i"
-        bases:
-          - { word: "अत्र", base: "अत्र", reading: "atra" }
-          - { word: "तडिद्", base: "तडित्", reading: "taḍit" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5123"
-    target: "शरत्"
-    reading: "śarat"
-    ipa: "ʃərət̪"
-    pos: "noun"
-    gender: "f"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "शरत्", base: "शरद्", reading: "śarad" }
-    examples:
-      - target: "शरद् निर्मला"
-        reading: "śarad nirmalā"
-        ipa: "ʃərəd̪ nirməlaː"
-        bases:
-          - { word: "शरद्", base: "शरद्", reading: "śarad" }
-          - { word: "निर्मला", base: "निर्मल", reading: "nirmala" }
-      - target: "तत्र शरद् भवति"
-        reading: "tatra śarad bhavati"
-        ipa: "t̪ət̪rə ʃərəd̪ bʱəʋət̪i"
-        bases:
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "शरद्", base: "शरद्", reading: "śarad" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5124"
-    target: "प्रावृट्"
-    reading: "prāvṛṭ"
-    ipa: "praːʋr̩ʈ"
-    pos: "noun"
-    gender: "f"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "प्रावृट्", base: "प्रावृष्", reading: "prāvṛṣ" }
-    examples:
-      - target: "प्रावृड् नीला"
-        reading: "prāvṛḍ nīlā"
-        ipa: "praːʋr̩ɖ niːlaː"
-        bases:
-          - { word: "प्रावृड्", base: "प्रावृष्", reading: "prāvṛṣ" }
-          - { word: "नीला", base: "नील", reading: "nīla" }
-      - target: "अत्र प्रावृड् भवति"
-        reading: "atra prāvṛḍ bhavati"
-        ipa: "ət̪rə praːʋr̩ɖ bʱəʋət̪i"
-        bases:
-          - { word: "अत्र", base: "अत्र", reading: "atra" }
-          - { word: "प्रावृड्", base: "प्रावृष्", reading: "prāvṛṣ" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5125"
-    target: "शीतकालः"
-    reading: "śītakālaḥ"
-    ipa: "ʃiːt̪əkaːləh"
-    pos: "noun"
-    gender: "m"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "शीतकालः", base: "शीतकाल", reading: "śītakāla" }
-    examples:
-      - target: "शीतकालो धवलः"
-        reading: "śītakālo dhavalaḥ"
-        ipa: "ʃiːt̪əkaːloː d̪ʱəʋələh"
-        bases:
-          - { word: "शीतकालो", base: "शीतकाल", reading: "śītakāla" }
-          - { word: "धवलः", base: "धवल", reading: "dhavala" }
-      - target: "तत्र शीतकालो भवति"
-        reading: "tatra śītakālo bhavati"
-        ipa: "t̪ət̪rə ʃiːt̪əkaːloː bʱəʋət̪i"
-        bases:
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "शीतकालो", base: "शीतकाल", reading: "śītakāla" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5126"
-    target: "शिशिरः"
-    reading: "śiśiraḥ"
-    ipa: "ʃiʃirəh"
-    pos: "noun"
-    gender: "m"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "शिशिरः", base: "शिशिर", reading: "śiśira" }
-    examples:
-      - target: "शिशिरो निर्मलः"
-        reading: "śiśiro nirmalaḥ"
-        ipa: "ʃiʃiroː nirmələh"
-        bases:
-          - { word: "शिशिरो", base: "शिशिर", reading: "śiśira" }
-          - { word: "निर्मलः", base: "निर्मल", reading: "nirmala" }
-      - target: "अत्र शिशिरो भवति"
-        reading: "atra śiśiro bhavati"
-        ipa: "ət̪rə ʃiʃiroː bʱəʋət̪i"
-        bases:
-          - { word: "अत्र", base: "अत्र", reading: "atra" }
-          - { word: "शिशिरो", base: "शिशिर", reading: "śiśira" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5127"
-    target: "माधवी"
-    reading: "mādhavī"
-    ipa: "maːd̪ʱəʋiː"
-    pos: "noun"
-    gender: "f"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "माधवी", base: "माधवी", reading: "mādhavī" }
-    examples:
-      - target: "माधवी मधुरा"
-        reading: "mādhavī madhurā"
-        ipa: "maːd̪ʱəʋiː məd̪ʱuraː"
-        bases:
-          - { word: "माधवी", base: "माधवी", reading: "mādhavī" }
-          - { word: "मधुरा", base: "मधुर", reading: "madhura" }
-      - target: "तत्र माधवी भवति"
-        reading: "tatra mādhavī bhavati"
-        ipa: "t̪ət̪rə maːd̪ʱəʋiː bʱəʋət̪i"
-        bases:
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "माधवी", base: "माधवी", reading: "mādhavī" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5128"
-    target: "ऋतुराजः"
-    reading: "ṛturājaḥ"
-    ipa: "r̩t̪uraːdʒəh"
-    pos: "noun"
-    gender: "m"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "ऋतुराजः", base: "ऋतुराज", reading: "ṛturāja" }
-    examples:
-      - target: "ऋतुराजो दीर्घः"
-        reading: "ṛturājo dīrghaḥ"
-        ipa: "r̩t̪uraːdʒoː d̪iːrɡʱəh"
-        bases:
-          - { word: "ऋतुराजो", base: "ऋतुराज", reading: "ṛturāja" }
-          - { word: "दीर्घः", base: "दीर्घ", reading: "dīrgha" }
-      - target: "अत्र ऋतुराजो भवति"
-        reading: "atra ṛturājo bhavati"
-        ipa: "ət̪rə r̩t̪uraːdʒoː bʱəʋət̪i"
-        bases:
-          - { word: "अत्र", base: "अत्र", reading: "atra" }
-          - { word: "ऋतुराजो", base: "ऋतुराज", reading: "ṛturāja" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
-  - id: "sa-5129"
-    target: "मदनोत्सवः"
-    reading: "madanotsavaḥ"
-    ipa: "məd̪ənoːt̪səʋəh"
-    pos: "noun"
-    gender: "m"
-    tags: ["seasons", "unreviewed"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-      - { id: "n2", kind: "note" }
-    bases:
-      - { word: "मदनोत्सवः", base: "मदनोत्सव", reading: "madanotsava" }
-    examples:
-      - target: "मदनोत्सवो रक्तः"
-        reading: "madanotsavo raktaḥ"
-        ipa: "məd̪ənoːt̪səʋoː rəkt̪əh"
-        bases:
-          - { word: "मदनोत्सवो", base: "मदनोत्सव", reading: "madanotsava" }
-          - { word: "रक्तः", base: "रक्त", reading: "rakta" }
-      - target: "तत्र मदनोत्सवो भवति"
-        reading: "tatra madanotsavo bhavati"
-        ipa: "t̪ət̪rə məd̪ənoːt̪səʋoː bʱəʋət̪i"
-        bases:
-          - { word: "तत्र", base: "तत्र", reading: "tatra" }
-          - { word: "मदनोत्सवो", base: "मदनोत्सव", reading: "madanotsava" }
-          - { word: "भवति", base: "भू", reading: "bhū" }
+"schema": 1
+"id": "sa-seasons"
+"part": "core"
+"kind": "vocab"
+"language":
+  "code": "sa"
+  "iso639_3": "san"
+  "name": "Classical Sanskrit"
+  "script": "devanagari"
+  "icon": "सं"
+"license": "CC-BY-SA-4.0"
+"theme": "seasons"
+"tags":
+- "unreviewed"
+"cards":
+- "id": "sa-5100"
+  "target": "वसन्तः"
+  "reading": "vasantaḥ"
+  "ipa": "ʋəsənt̪əh"
+  "pos": "noun"
+  "gender": "m"
+  "tags":
+  - "seasons"
+  - "unreviewed"
+  "notes":
+  - "id": "n1"
+    "kind": "behaviour"
+  - "id": "n2"
+    "kind": "note"
+  "bases":
+  - "word": "वसन्तः"
+    "base": "वसन्त"
+    "reading": "vasanta"
+  "examples":
+  - "target": "वसन्तो मधुरः"
+    "reading": "vasanto madhuraḥ"
+    "ipa": "ʋəsənt̪oː məd̪ʱurəh"
+    "bases":
+    - "word": "वसन्तो"
+      "base": "वसन्त"
+      "reading": "vasanta"
+    - "word": "मधुरः"
+      "base": "मधुर"
+      "reading": "madhura"
+  - "target": "अत्र वसन्तो भवति"
+    "reading": "atra vasanto bhavati"
+    "ipa": "ət̪rə ʋəsənt̪oː bʱəʋət̪i"
+    "bases":
+    - "word": "अत्र"
+      "base": "अत्र"
+      "reading": "atra"
+    - "word": "वसन्तो"
+      "base": "वसन्त"
+      "reading": "vasanta"
+    - "word": "भवति"
+      "base": "भू"
+      "reading": "bhū"
+- "id": "sa-5101"
+  "target": "ग्रीष्मः"
+  "reading": "grīṣmaḥ"
+  "ipa": "ɡriːʂməh"
+  "pos": "noun"
+  "gender": "m"
+  "tags":
+  - "seasons"
+  - "unreviewed"
+  "notes":
+  - "id": "n1"
+    "kind": "behaviour"
+  - "id": "n2"
+    "kind": "note"
+  "bases":
+  - "word": "ग्रीष्मः"
+    "base": "ग्रीष्म"
+    "reading": "grīṣma"
+  "examples":
+  - "target": "ग्रीष्मो दीर्घः"
+    "reading": "grīṣmo dīrghaḥ"
+    "ipa": "ɡriːʂmoː d̪iːrɡʱəh"
+    "bases":
+    - "word": "ग्रीष्मो"
+      "base": "ग्रीष्म"
+      "reading": "grīṣma"
+    - "word": "दीर्घः"
+      "base": "दीर्घ"
+      "reading": "dīrgha"
+  - "target": "तत्र ग्रीष्मो भवति"
+    "reading": "tatra grīṣmo bhavati"
+    "ipa": "t̪ət̪rə ɡriːʂmoː bʱəʋət̪i"
+    "bases":
+    - "word": "तत्र"
+      "base": "तत्र"
+      "reading": "tatra"
+    - "word": "ग्रीष्मो"
+      "base": "ग्रीष्म"
+      "reading": "grīṣma"
+    - "word": "भवति"
+      "base": "भू"
+      "reading": "bhū"
+- "id": "sa-5102"
+  "target": "हेमन्तः"
+  "reading": "hemantaḥ"
+  "ipa": "ɦeːmənt̪əh"
+  "pos": "noun"
+  "gender": "m"
+  "tags":
+  - "seasons"
+  - "unreviewed"
+  "notes":
+  - "id": "n1"
+    "kind": "behaviour"
+  - "id": "n2"
+    "kind": "note"
+  "bases":
+  - "word": "हेमन्तः"
+    "base": "हेमन्त"
+    "reading": "hemanta"
+  "examples":
+  - "target": "हेमन्तः शीतलः"
+    "reading": "hemantaḥ śītalaḥ"
+    "ipa": "ɦeːmənt̪əh ʃiːt̪ələh"
+    "bases":
+    - "word": "हेमन्तः"
+      "base": "हेमन्त"
+      "reading": "hemanta"
+    - "word": "शीतलः"
+      "base": "शीतल"
+      "reading": "śītala"
+  - "target": "अत्र हेमन्तो भवति"
+    "reading": "atra hemanto bhavati"
+    "ipa": "ət̪rə ɦeːmənt̪oː bʱəʋət̪i"
+    "bases":
+    - "word": "अत्र"
+      "base": "अत्र"
+      "reading": "atra"
+    - "word": "हेमन्तो"
+      "base": "हेमन्त"
+      "reading": "hemanta"
+    - "word": "भवति"
+      "base": "भू"
+      "reading": "bhū"
+- "id": "sa-5103"
+  "target": "तापः"
+  "reading": "tāpaḥ"
+  "ipa": "t̪aːpəh"
+  "pos": "noun"
+  "gender": "m"
+  "tags":
+  - "seasons"
+  - "unreviewed"
+  "notes":
+  - "id": "n1"
+    "kind": "behaviour"
+  - "id": "n2"
+    "kind": "note"
+  - "id": "n3"
+    "kind": "note"
+  "bases":
+  - "word": "तापः"
+    "base": "ताप"
+    "reading": "tāpa"
+  "examples":
+  - "target": "तापो विपुलः"
+    "reading": "tāpo vipulaḥ"
+    "ipa": "t̪aːpoː ʋipuləh"
+    "bases":
+    - "word": "तापो"
+      "base": "ताप"
+      "reading": "tāpa"
+    - "word": "विपुलः"
+      "base": "विपुल"
+      "reading": "vipula"
+  - "target": "तत्र तापो भवति"
+    "reading": "tatra tāpo bhavati"
+    "ipa": "t̪ət̪rə t̪aːpoː bʱəʋət̪i"
+    "bases":
+    - "word": "तत्र"
+      "base": "तत्र"
+      "reading": "tatra"
+    - "word": "तापो"
+      "base": "ताप"
+      "reading": "tāpa"
+    - "word": "भवति"
+      "base": "भू"
+      "reading": "bhū"
+- "id": "sa-5104"
+  "target": "आतपः"
+  "reading": "ātapaḥ"
+  "ipa": "aːt̪əpəh"
+  "pos": "noun"
+  "gender": "m"
+  "tags":
+  - "seasons"
+  - "unreviewed"
+  "notes":
+  - "id": "n1"
+    "kind": "behaviour"
+  - "id": "n2"
+    "kind": "note"
+  "bases":
+  - "word": "आतपः"
+    "base": "आतप"
+    "reading": "ātapa"
+  "examples":
+  - "target": "आतपो निर्मलः"
+    "reading": "ātapo nirmalaḥ"
+    "ipa": "aːt̪əpoː nirmələh"
+    "bases":
+    - "word": "आतपो"
+      "base": "आतप"
+      "reading": "ātapa"
+    - "word": "निर्मलः"
+      "base": "निर्मल"
+      "reading": "nirmala"
+  - "target": "आतपो भवति तत्र"
+    "reading": "ātapo bhavati tatra"
+    "ipa": "aːt̪əpoː bʱəʋət̪i t̪ət̪rə"
+    "bases":
+    - "word": "आतपो"
+      "base": "आतप"
+      "reading": "ātapa"
+    - "word": "भवति"
+      "base": "भू"
+      "reading": "bhū"
+    - "word": "तत्र"
+      "base": "तत्र"
+      "reading": "tatra"
+- "id": "sa-5105"
+  "target": "छाया"
+  "reading": "chāyā"
+  "ipa": "tʃʰaːjaː"
+  "pos": "noun"
+  "gender": "f"
+  "tags":
+  - "seasons"
+  - "unreviewed"
+  "notes":
+  - "id": "n1"
+    "kind": "behaviour"
+  - "id": "n2"
+    "kind": "note"
+  "bases":
+  - "word": "छाया"
+    "base": "छाया"
+    "reading": "chāyā"
+  "examples":
+  - "target": "छाया शीतला"
+    "reading": "chāyā śītalā"
+    "ipa": "tʃʰaːjaː ʃiːt̪əlaː"
+    "bases":
+    - "word": "छाया"
+      "base": "छाया"
+      "reading": "chāyā"
+    - "word": "शीतला"
+      "base": "शीतल"
+      "reading": "śītala"
+  - "target": "तत्र च्छाया भवति"
+    "reading": "tatra cchāyā bhavati"
+    "ipa": "t̪ət̪rə tʃtʃʰaːjaː bʱəʋət̪i"
+    "bases":
+    - "word": "तत्र"
+      "base": "तत्र"
+      "reading": "tatra"
+    - "word": "च्छाया"
+      "base": "छाया"
+      "reading": "chāyā"
+    - "word": "भवति"
+      "base": "भू"
+      "reading": "bhū"
+- "id": "sa-5106"
+  "target": "नीहारः"
+  "reading": "nīhāraḥ"
+  "ipa": "niːɦaːrəh"
+  "pos": "noun"
+  "gender": "m"
+  "tags":
+  - "seasons"
+  - "unreviewed"
+  "notes":
+  - "id": "n1"
+    "kind": "behaviour"
+  - "id": "n2"
+    "kind": "note"
+  "bases":
+  - "word": "नीहारः"
+    "base": "नीहार"
+    "reading": "nīhāra"
+  "examples":
+  - "target": "नीहारो धवलः"
+    "reading": "nīhāro dhavalaḥ"
+    "ipa": "niːɦaːroː d̪ʱəʋələh"
+    "bases":
+    - "word": "नीहारो"
+      "base": "नीहार"
+      "reading": "nīhāra"
+    - "word": "धवलः"
+      "base": "धवल"
+      "reading": "dhavala"
+  - "target": "अत्र नीहारो भवति"
+    "reading": "atra nīhāro bhavati"
+    "ipa": "ət̪rə niːɦaːroː bʱəʋət̪i"
+    "bases":
+    - "word": "अत्र"
+      "base": "अत्र"
+      "reading": "atra"
+    - "word": "नीहारो"
+      "base": "नीहार"
+      "reading": "nīhāra"
+    - "word": "भवति"
+      "base": "भू"
+      "reading": "bhū"
+- "id": "sa-5107"
+  "target": "तुषारः"
+  "reading": "tuṣāraḥ"
+  "ipa": "t̪uʂaːrəh"
+  "pos": "noun"
+  "gender": "m"
+  "tags":
+  - "seasons"
+  - "unreviewed"
+  "notes":
+  - "id": "n1"
+    "kind": "behaviour"
+  - "id": "n2"
+    "kind": "note"
+  "bases":
+  - "word": "तुषारः"
+    "base": "तुषार"
+    "reading": "tuṣāra"
+  "examples":
+  - "target": "तुषारो धवलः"
+    "reading": "tuṣāro dhavalaḥ"
+    "ipa": "t̪uʂaːroː d̪ʱəʋələh"
+    "bases":
+    - "word": "तुषारो"
+      "base": "तुषार"
+      "reading": "tuṣāra"
+    - "word": "धवलः"
+      "base": "धवल"
+      "reading": "dhavala"
+  - "target": "तत्र तुषारो भवति"
+    "reading": "tatra tuṣāro bhavati"
+    "ipa": "t̪ət̪rə t̪uʂaːroː bʱəʋət̪i"
+    "bases":
+    - "word": "तत्र"
+      "base": "तत्र"
+      "reading": "tatra"
+    - "word": "तुषारो"
+      "base": "तुषार"
+      "reading": "tuṣāra"
+    - "word": "भवति"
+      "base": "भू"
+      "reading": "bhū"
+- "id": "sa-5108"
+  "target": "सुगन्धः"
+  "reading": "sugandhaḥ"
+  "ipa": "suɡənd̪ʱəh"
+  "pos": "noun"
+  "gender": "m"
+  "tags":
+  - "seasons"
+  - "unreviewed"
+  "notes":
+  - "id": "n1"
+    "kind": "behaviour"
+  - "id": "n2"
+    "kind": "note"
+  "bases":
+  - "word": "सुगन्धः"
+    "base": "सुगन्ध"
+    "reading": "sugandha"
+  "examples":
+  - "target": "सुगन्धो मधुरः"
+    "reading": "sugandho madhuraḥ"
+    "ipa": "suɡənd̪ʱoː məd̪ʱurəh"
+    "bases":
+    - "word": "सुगन्धो"
+      "base": "सुगन्ध"
+      "reading": "sugandha"
+    - "word": "मधुरः"
+      "base": "मधुर"
+      "reading": "madhura"
+  - "target": "अत्र सुगन्धो भवति"
+    "reading": "atra sugandho bhavati"
+    "ipa": "ət̪rə suɡənd̪ʱoː bʱəʋət̪i"
+    "bases":
+    - "word": "अत्र"
+      "base": "अत्र"
+      "reading": "atra"
+    - "word": "सुगन्धो"
+      "base": "सुगन्ध"
+      "reading": "sugandha"
+    - "word": "भवति"
+      "base": "भू"
+      "reading": "bhū"
+- "id": "sa-5109"
+  "target": "कोकिलः"
+  "reading": "kokilaḥ"
+  "ipa": "koːkiləh"
+  "pos": "noun"
+  "gender": "m"
+  "tags":
+  - "seasons"
+  - "unreviewed"
+  "notes":
+  - "id": "n1"
+    "kind": "behaviour"
+  - "id": "n2"
+    "kind": "note"
+  "bases":
+  - "word": "कोकिलः"
+    "base": "कोकिल"
+    "reading": "kokila"
+  "examples":
+  - "target": "कोकिलः श्यामलः"
+    "reading": "kokilaḥ śyāmalaḥ"
+    "ipa": "koːkiləh ʃjaːmələh"
+    "bases":
+    - "word": "कोकिलः"
+      "base": "कोकिल"
+      "reading": "kokila"
+    - "word": "श्यामलः"
+      "base": "श्यामल"
+      "reading": "śyāmala"
+  - "target": "तत्र कोकिलो भवति"
+    "reading": "tatra kokilo bhavati"
+    "ipa": "t̪ət̪rə koːkiloː bʱəʋət̪i"
+    "bases":
+    - "word": "तत्र"
+      "base": "तत्र"
+      "reading": "tatra"
+    - "word": "कोकिलो"
+      "base": "कोकिल"
+      "reading": "kokila"
+    - "word": "भवति"
+      "base": "भू"
+      "reading": "bhū"
+- "id": "sa-5110"
+  "target": "मल्लिका"
+  "reading": "mallikā"
+  "ipa": "məllikaː"
+  "pos": "noun"
+  "gender": "f"
+  "tags":
+  - "seasons"
+  - "unreviewed"
+  "notes":
+  - "id": "n1"
+    "kind": "behaviour"
+  - "id": "n2"
+    "kind": "note"
+  "bases":
+  - "word": "मल्लिका"
+    "base": "मल्लिका"
+    "reading": "mallikā"
+  "examples":
+  - "target": "मल्लिका धवला"
+    "reading": "mallikā dhavalā"
+    "ipa": "məllikaː d̪ʱəʋəlaː"
+    "bases":
+    - "word": "मल्लिका"
+      "base": "मल्लिका"
+      "reading": "mallikā"
+    - "word": "धवला"
+      "base": "धवल"
+      "reading": "dhavala"
+  - "target": "अत्र मल्लिका भवति"
+    "reading": "atra mallikā bhavati"
+    "ipa": "ət̪rə məllikaː bʱəʋət̪i"
+    "bases":
+    - "word": "अत्र"
+      "base": "अत्र"
+      "reading": "atra"
+    - "word": "मल्लिका"
+      "base": "मल्लिका"
+      "reading": "mallikā"
+    - "word": "भवति"
+      "base": "भू"
+      "reading": "bhū"
+- "id": "sa-5111"
+  "target": "चम्पकः"
+  "reading": "campakaḥ"
+  "ipa": "tʃəmpəkəh"
+  "pos": "noun"
+  "gender": "m"
+  "tags":
+  - "seasons"
+  - "unreviewed"
+  "notes":
+  - "id": "n1"
+    "kind": "behaviour"
+  - "id": "n2"
+    "kind": "note"
+  "bases":
+  - "word": "चम्पकः"
+    "base": "चम्पक"
+    "reading": "campaka"
+  "examples":
+  - "target": "चम्पको विशालः"
+    "reading": "campako viśālaḥ"
+    "ipa": "tʃəmpəkoː ʋiʃaːləh"
+    "bases":
+    - "word": "चम्पको"
+      "base": "चम्पक"
+      "reading": "campaka"
+    - "word": "विशालः"
+      "base": "विशाल"
+      "reading": "viśāla"
+  - "target": "तत्र चम्पको भवति"
+    "reading": "tatra campako bhavati"
+    "ipa": "t̪ət̪rə tʃəmpəkoː bʱəʋət̪i"
+    "bases":
+    - "word": "तत्र"
+      "base": "तत्र"
+      "reading": "tatra"
+    - "word": "चम्पको"
+      "base": "चम्पक"
+      "reading": "campaka"
+    - "word": "भवति"
+      "base": "भू"
+      "reading": "bhū"
+- "id": "sa-5112"
+  "target": "कर्णिकारः"
+  "reading": "karṇikāraḥ"
+  "ipa": "kərɳikaːrəh"
+  "pos": "noun"
+  "gender": "m"
+  "tags":
+  - "seasons"
+  - "unreviewed"
+  "notes":
+  - "id": "n1"
+    "kind": "behaviour"
+  - "id": "n2"
+    "kind": "note"
+  "bases":
+  - "word": "कर्णिकारः"
+    "base": "कर्णिकार"
+    "reading": "karṇikāra"
+  "examples":
+  - "target": "कर्णिकारो विशालः"
+    "reading": "karṇikāro viśālaḥ"
+    "ipa": "kərɳikaːroː ʋiʃaːləh"
+    "bases":
+    - "word": "कर्णिकारो"
+      "base": "कर्णिकार"
+      "reading": "karṇikāra"
+    - "word": "विशालः"
+      "base": "विशाल"
+      "reading": "viśāla"
+  - "target": "अत्र कर्णिकारो भवति"
+    "reading": "atra karṇikāro bhavati"
+    "ipa": "ət̪rə kərɳikaːroː bʱəʋət̪i"
+    "bases":
+    - "word": "अत्र"
+      "base": "अत्र"
+      "reading": "atra"
+    - "word": "कर्णिकारो"
+      "base": "कर्णिकार"
+      "reading": "karṇikāra"
+    - "word": "भवति"
+      "base": "भू"
+      "reading": "bhū"
+- "id": "sa-5113"
+  "target": "गर्जनम्"
+  "reading": "garjanam"
+  "ipa": "ɡərdʒənəm"
+  "pos": "noun"
+  "gender": "n"
+  "tags":
+  - "seasons"
+  - "unreviewed"
+  "notes":
+  - "id": "n1"
+    "kind": "behaviour"
+  - "id": "n2"
+    "kind": "note"
+  "bases":
+  - "word": "गर्जनम्"
+    "base": "गर्जन"
+    "reading": "garjana"
+  "examples":
+  - "target": "गर्जनं गभीरम्"
+    "reading": "garjanaṃ gabhīram"
+    "ipa": "ɡərdʒənəm ɡəbʱiːrəm"
+    "bases":
+    - "word": "गर्जनं"
+      "base": "गर्जन"
+      "reading": "garjana"
+    - "word": "गभीरम्"
+      "base": "गभीर"
+      "reading": "gabhīra"
+  - "target": "तत्र गर्जनं भवति"
+    "reading": "tatra garjanaṃ bhavati"
+    "ipa": "t̪ət̪rə ɡərdʒənəm bʱəʋət̪i"
+    "bases":
+    - "word": "तत्र"
+      "base": "तत्र"
+      "reading": "tatra"
+    - "word": "गर्जनं"
+      "base": "गर्जन"
+      "reading": "garjana"
+    - "word": "भवति"
+      "base": "भू"
+      "reading": "bhū"
+- "id": "sa-5114"
+  "target": "हिमपातः"
+  "reading": "himapātaḥ"
+  "ipa": "ɦiməpaːt̪əh"
+  "pos": "noun"
+  "gender": "m"
+  "tags":
+  - "seasons"
+  - "unreviewed"
+  "notes":
+  - "id": "n1"
+    "kind": "behaviour"
+  - "id": "n2"
+    "kind": "note"
+  "bases":
+  - "word": "हिमपातः"
+    "base": "हिमपात"
+    "reading": "himapāta"
+  "examples":
+  - "target": "हिमपातः शीतलः"
+    "reading": "himapātaḥ śītalaḥ"
+    "ipa": "ɦiməpaːt̪əh ʃiːt̪ələh"
+    "bases":
+    - "word": "हिमपातः"
+      "base": "हिमपात"
+      "reading": "himapāta"
+    - "word": "शीतलः"
+      "base": "शीतल"
+      "reading": "śītala"
+  - "target": "अत्र हिमपातो भवति"
+    "reading": "atra himapāto bhavati"
+    "ipa": "ət̪rə ɦiməpaːt̪oː bʱəʋət̪i"
+    "bases":
+    - "word": "अत्र"
+      "base": "अत्र"
+      "reading": "atra"
+    - "word": "हिमपातो"
+      "base": "हिमपात"
+      "reading": "himapāta"
+    - "word": "भवति"
+      "base": "भू"
+      "reading": "bhū"
+- "id": "sa-5115"
+  "target": "मालती"
+  "reading": "mālatī"
+  "ipa": "maːlət̪iː"
+  "pos": "noun"
+  "gender": "f"
+  "tags":
+  - "seasons"
+  - "unreviewed"
+  "notes":
+  - "id": "n1"
+    "kind": "behaviour"
+  - "id": "n2"
+    "kind": "note"
+  "bases":
+  - "word": "मालती"
+    "base": "मालती"
+    "reading": "mālatī"
+  "examples":
+  - "target": "मालती धवला"
+    "reading": "mālatī dhavalā"
+    "ipa": "maːlət̪iː d̪ʱəʋəlaː"
+    "bases":
+    - "word": "मालती"
+      "base": "मालती"
+      "reading": "mālatī"
+    - "word": "धवला"
+      "base": "धवल"
+      "reading": "dhavala"
+  - "target": "तत्र मालती भवति"
+    "reading": "tatra mālatī bhavati"
+    "ipa": "t̪ət̪rə maːlət̪iː bʱəʋət̪i"
+    "bases":
+    - "word": "तत्र"
+      "base": "तत्र"
+      "reading": "tatra"
+    - "word": "मालती"
+      "base": "मालती"
+      "reading": "mālatī"
+    - "word": "भवति"
+      "base": "भू"
+      "reading": "bhū"
+- "id": "sa-5116"
+  "target": "उष्णता"
+  "reading": "uṣṇatā"
+  "ipa": "uʂɳət̪aː"
+  "pos": "noun"
+  "gender": "f"
+  "tags":
+  - "seasons"
+  - "unreviewed"
+  "notes":
+  - "id": "n1"
+    "kind": "behaviour"
+  - "id": "n2"
+    "kind": "note"
+  "bases":
+  - "word": "उष्णता"
+    "base": "उष्णता"
+    "reading": "uṣṇatā"
+  "examples":
+  - "target": "उष्णता विपुला"
+    "reading": "uṣṇatā vipulā"
+    "ipa": "uʂɳət̪aː ʋipulaː"
+    "bases":
+    - "word": "उष्णता"
+      "base": "उष्णता"
+      "reading": "uṣṇatā"
+    - "word": "विपुला"
+      "base": "विपुल"
+      "reading": "vipula"
+  - "target": "उष्णता भवति तत्र"
+    "reading": "uṣṇatā bhavati tatra"
+    "ipa": "uʂɳət̪aː bʱəʋət̪i t̪ət̪rə"
+    "bases":
+    - "word": "उष्णता"
+      "base": "उष्णता"
+      "reading": "uṣṇatā"
+    - "word": "भवति"
+      "base": "भू"
+      "reading": "bhū"
+    - "word": "तत्र"
+      "base": "तत्र"
+      "reading": "tatra"
+- "id": "sa-5119"
+  "target": "फलितः"
+  "reading": "phalitaḥ"
+  "ipa": "pʰəlit̪əh"
+  "pos": "adj"
+  "tags":
+  - "seasons"
+  - "unreviewed"
+  "notes":
+  - "id": "n1"
+    "kind": "behaviour"
+  - "id": "n2"
+    "kind": "note"
+  "bases":
+  - "word": "फलितः"
+    "base": "फलित"
+    "reading": "phalita"
+  "examples":
+  - "target": "फलितो वृक्षः"
+    "reading": "phalito vṛkṣaḥ"
+    "ipa": "pʰəlit̪oː ʋr̩kʂəh"
+    "bases":
+    - "word": "फलितो"
+      "base": "फलित"
+      "reading": "phalita"
+    - "word": "वृक्षः"
+      "base": "वृक्ष"
+      "reading": "vṛkṣa"
+  - "target": "फलिता लता"
+    "reading": "phalitā latā"
+    "ipa": "pʰəlit̪aː lət̪aː"
+    "bases":
+    - "word": "फलिता"
+      "base": "फलित"
+      "reading": "phalita"
+    - "word": "लता"
+      "base": "लता"
+      "reading": "latā"
+- "id": "sa-5120"
+  "target": "घर्मः"
+  "reading": "gharmaḥ"
+  "ipa": "ɡʱərməh"
+  "pos": "noun"
+  "gender": "m"
+  "tags":
+  - "seasons"
+  - "unreviewed"
+  "notes":
+  - "id": "n1"
+    "kind": "behaviour"
+  - "id": "n2"
+    "kind": "note"
+  - "id": "n3"
+    "kind": "note"
+  "bases":
+  - "word": "घर्मः"
+    "base": "घर्म"
+    "reading": "gharma"
+  "examples":
+  - "target": "घर्मो विपुलः"
+    "reading": "gharmo vipulaḥ"
+    "ipa": "ɡʱərmoː ʋipuləh"
+    "bases":
+    - "word": "घर्मो"
+      "base": "घर्म"
+      "reading": "gharma"
+    - "word": "विपुलः"
+      "base": "विपुल"
+      "reading": "vipula"
+  - "target": "अत्र घर्मो भवति"
+    "reading": "atra gharmo bhavati"
+    "ipa": "ət̪rə ɡʱərmoː bʱəʋət̪i"
+    "bases":
+    - "word": "अत्र"
+      "base": "अत्र"
+      "reading": "atra"
+    - "word": "घर्मो"
+      "base": "घर्म"
+      "reading": "gharma"
+    - "word": "भवति"
+      "base": "भू"
+      "reading": "bhū"
+- "id": "sa-5121"
+  "target": "अशनिः"
+  "reading": "aśaniḥ"
+  "ipa": "əʃənih"
+  "pos": "noun"
+  "gender": "f"
+  "tags":
+  - "seasons"
+  - "unreviewed"
+  "notes":
+  - "id": "n1"
+    "kind": "behaviour"
+  - "id": "n2"
+    "kind": "note"
+  "bases":
+  - "word": "अशनिः"
+    "base": "अशनि"
+    "reading": "aśani"
+  "examples":
+  - "target": "अशनिर् विपुला"
+    "reading": "aśanir vipulā"
+    "ipa": "əʃənir ʋipulaː"
+    "bases":
+    - "word": "अशनिर्"
+      "base": "अशनि"
+      "reading": "aśani"
+    - "word": "विपुला"
+      "base": "विपुल"
+      "reading": "vipula"
+  - "target": "अशनिर् भवति तत्र"
+    "reading": "aśanir bhavati tatra"
+    "ipa": "əʃənir bʱəʋət̪i t̪ət̪rə"
+    "bases":
+    - "word": "अशनिर्"
+      "base": "अशनि"
+      "reading": "aśani"
+    - "word": "भवति"
+      "base": "भू"
+      "reading": "bhū"
+    - "word": "तत्र"
+      "base": "तत्र"
+      "reading": "tatra"
+- "id": "sa-5122"
+  "target": "तडित्"
+  "reading": "taḍit"
+  "ipa": "t̪əɖit̪"
+  "pos": "noun"
+  "gender": "f"
+  "tags":
+  - "seasons"
+  - "unreviewed"
+  "notes":
+  - "id": "n1"
+    "kind": "behaviour"
+  - "id": "n2"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "तडिद् धवला"
+    "reading": "taḍid dhavalā"
+    "ipa": "t̪əɖid̪ d̪ʱəʋəlaː"
+    "bases":
+    - "word": "तडिद्"
+      "base": "तडित्"
+      "reading": "taḍit"
+    - "word": "धवला"
+      "base": "धवल"
+      "reading": "dhavala"
+  - "target": "अत्र तडिद् भवति"
+    "reading": "atra taḍid bhavati"
+    "ipa": "ət̪rə t̪əɖid̪ bʱəʋət̪i"
+    "bases":
+    - "word": "अत्र"
+      "base": "अत्र"
+      "reading": "atra"
+    - "word": "तडिद्"
+      "base": "तडित्"
+      "reading": "taḍit"
+    - "word": "भवति"
+      "base": "भू"
+      "reading": "bhū"
+- "id": "sa-5123"
+  "target": "शरद्"
+  "reading": "śarad"
+  "ipa": "ʃərəd̪"
+  "pos": "noun"
+  "gender": "f"
+  "tags":
+  - "seasons"
+  - "unreviewed"
+  "notes":
+  - "id": "n1"
+    "kind": "behaviour"
+  - "id": "n2"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "शरद् निर्मला"
+    "reading": "śarad nirmalā"
+    "ipa": "ʃərəd̪ nirməlaː"
+    "bases":
+    - "word": "शरद्"
+      "base": "शरद्"
+      "reading": "śarad"
+    - "word": "निर्मला"
+      "base": "निर्मल"
+      "reading": "nirmala"
+  - "target": "तत्र शरद् भवति"
+    "reading": "tatra śarad bhavati"
+    "ipa": "t̪ət̪rə ʃərəd̪ bʱəʋət̪i"
+    "bases":
+    - "word": "तत्र"
+      "base": "तत्र"
+      "reading": "tatra"
+    - "word": "शरद्"
+      "base": "शरद्"
+      "reading": "śarad"
+    - "word": "भवति"
+      "base": "भू"
+      "reading": "bhū"
+- "id": "sa-5124"
+  "target": "प्रावृष्"
+  "reading": "prāvṛṣ"
+  "ipa": "praːʋr̩ʂ"
+  "pos": "noun"
+  "gender": "f"
+  "tags":
+  - "seasons"
+  - "unreviewed"
+  "notes":
+  - "id": "n1"
+    "kind": "behaviour"
+  - "id": "n2"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "प्रावृड् दीर्घा"
+    "reading": "prāvṛḍ dīrghā"
+    "ipa": "praːʋr̩ɖ d̪iːrɡʱaː"
+    "bases":
+    - "word": "प्रावृड्"
+      "base": "प्रावृष्"
+      "reading": "prāvṛṣ"
+    - "word": "दीर्घा"
+      "base": "दीर्घ"
+      "reading": "dīrgha"
+  - "target": "अत्र प्रावृड् भवति"
+    "reading": "atra prāvṛḍ bhavati"
+    "ipa": "ət̪rə praːʋr̩ɖ bʱəʋət̪i"
+    "bases":
+    - "word": "अत्र"
+      "base": "अत्र"
+      "reading": "atra"
+    - "word": "प्रावृड्"
+      "base": "प्रावृष्"
+      "reading": "prāvṛṣ"
+    - "word": "भवति"
+      "base": "भू"
+      "reading": "bhū"
+- "id": "sa-5126"
+  "target": "शिशिरः"
+  "reading": "śiśiraḥ"
+  "ipa": "ʃiʃirəh"
+  "pos": "noun"
+  "gender": "m"
+  "tags":
+  - "seasons"
+  - "unreviewed"
+  "notes":
+  - "id": "n1"
+    "kind": "behaviour"
+  - "id": "n2"
+    "kind": "note"
+  "bases":
+  - "word": "शिशिरः"
+    "base": "शिशिर"
+    "reading": "śiśira"
+  "examples":
+  - "target": "शिशिरः शीतलः"
+    "reading": "śiśiraḥ śītalaḥ"
+    "ipa": "ʃiʃirəh ʃiːt̪ələh"
+    "bases":
+    - "word": "शिशिरः"
+      "base": "शिशिर"
+      "reading": "śiśira"
+    - "word": "शीतलः"
+      "base": "शीतल"
+      "reading": "śītala"
+  - "target": "अत्र शिशिरो भवति"
+    "reading": "atra śiśiro bhavati"
+    "ipa": "ət̪rə ʃiʃiroː bʱəʋət̪i"
+    "bases":
+    - "word": "अत्र"
+      "base": "अत्र"
+      "reading": "atra"
+    - "word": "शिशिरो"
+      "base": "शिशिर"
+      "reading": "śiśira"
+    - "word": "भवति"
+      "base": "भू"
+      "reading": "bhū"
+- "id": "sa-5127"
+  "target": "माधवी"
+  "reading": "mādhavī"
+  "ipa": "maːd̪ʱəʋiː"
+  "pos": "noun"
+  "gender": "f"
+  "tags":
+  - "seasons"
+  - "unreviewed"
+  "notes":
+  - "id": "n1"
+    "kind": "behaviour"
+  - "id": "n2"
+    "kind": "note"
+  "bases":
+  - "word": "माधवी"
+    "base": "माधवी"
+    "reading": "mādhavī"
+  "examples":
+  - "target": "माधवी मधुरा"
+    "reading": "mādhavī madhurā"
+    "ipa": "maːd̪ʱəʋiː məd̪ʱuraː"
+    "bases":
+    - "word": "माधवी"
+      "base": "माधवी"
+      "reading": "mādhavī"
+    - "word": "मधुरा"
+      "base": "मधुर"
+      "reading": "madhura"
+  - "target": "तत्र माधवी भवति"
+    "reading": "tatra mādhavī bhavati"
+    "ipa": "t̪ət̪rə maːd̪ʱəʋiː bʱəʋət̪i"
+    "bases":
+    - "word": "तत्र"
+      "base": "तत्र"
+      "reading": "tatra"
+    - "word": "माधवी"
+      "base": "माधवी"
+      "reading": "mādhavī"
+    - "word": "भवति"
+      "base": "भू"
+      "reading": "bhū"
