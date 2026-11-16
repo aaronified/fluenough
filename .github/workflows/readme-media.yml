@@ -26,6 +26,8 @@ env:
   FLUTTER_VERSION: "3.47.6"
   # Noto Sans Bengali, static files, from the official Noto repository (OFL-1.1).
   NOTO_URL: https://raw.githubusercontent.com/notofonts/notofonts.github.io/main/fonts/NotoSansBengali/hinted/ttf
+  # Noto Sans, for the combining marks Bengali readings use (U+0310).
+  NOTO_SANS_URL: https://raw.githubusercontent.com/notofonts/notofonts.github.io/main/fonts/NotoSans/hinted/ttf
 
 jobs:
   media:
@@ -60,7 +62,13 @@ jobs:
             curl -fsSL -o "build/noto-bengali/NotoSansBengali-$w.ttf" \
               "$NOTO_URL/NotoSansBengali-$w.ttf"
           done
-          python3 tools/readme_fonts.py build/noto-bengali build/readme_fonts
+          mkdir -p build/noto-sans
+          for w in Light Regular Medium Bold Black; do
+            curl -fsSL -o "build/noto-sans/NotoSans-$w.ttf" \
+              "$NOTO_SANS_URL/NotoSans-$w.ttf"
+          done
+          python3 tools/readme_fonts.py build/noto-bengali build/readme_fonts \
+            --marks build/noto-sans
 
       - name: Capture the frames and stills
         run: |

@@ -78,7 +78,12 @@ def _is_dark(colour) -> bool:
     return 0.299 * r + 0.587 * g + 0.114 * b < 128
 
 
-def _status_bar(width: int, background, frame_dir: Path | None):
+# The status bar's date: the day the capture's fixed clock is on, so that it
+# agrees with the app's own "Monday, September 28" (tools/readme_gifs).
+STATUS_DATE = "Mon 28"
+
+
+def _status_bar(width: int, background, frame_dir: Path | None, date: str):
     """The status band, [width] wide: the owner's crop for the screen's
     theme if there is one in [frame_dir], else one drawn here (time, small
     notification icons, and signal, wifi and battery)."""
@@ -108,7 +113,7 @@ def _status_bar(width: int, background, frame_dir: Path | None):
     except TypeError:
         small = font
     x = width * ss * 0.06 + height * ss * 1.35
-    d.text((x, mid), "Mon 16", fill=ink, font=small, anchor="lm")
+    d.text((x, mid), date, fill=ink, font=small, anchor="lm")
     x += height * ss * 1.5
     r = unit * 0.28
     d.ellipse([x, mid - r, x + 2 * r, mid + r], fill=ink)
@@ -164,7 +169,7 @@ def _gesture_band(width: int, background):
     return band.resize((width, height), Image.Resampling.LANCZOS)
 
 
-def frame_phone(screen, frame_dir: Path | None = None):
+def frame_phone(screen, frame_dir: Path | None = None, date: str = STATUS_DATE):
     """[screen] (a Pillow image) inside a phone silhouette, as an RGBA image
     with a transparent background."""
     from PIL import Image, ImageDraw
@@ -176,7 +181,7 @@ def frame_phone(screen, frame_dir: Path | None = None):
     band = status_band(w)
     nav = nav_band(w)
     banded = Image.new("RGB", (w, h + band + nav))
-    banded.paste(_status_bar(w, screen.getpixel((w // 2, 0)), frame_dir), (0, 0))
+    banded.paste(_status_bar(w, screen.getpixel((w // 2, 0)), frame_dir, date), (0, 0))
     banded.paste(screen, (0, band))
     banded.paste(_gesture_band(w, screen.getpixel((w // 2, h - 1))), (0, band + h))
     screen = banded

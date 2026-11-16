@@ -386,11 +386,11 @@ Future<void> _learningSession(
   final dir = Directory('$_out/learning-session');
   if (dir.existsSync()) dir.deleteSync(recursive: true);
   final reel = _Reel(tester, boundary);
-  const maxFrames = 84;
+  const maxFrames = 90;
   state.settings.markScriptGuideSeen('bn');
   state.shellTab.value = ShellTab.today;
   await _settle(tester);
-  await reel.hold(5);
+  await reel.hold(3);
   tester
       .state<NavigatorState>(find.byType(Navigator).first)
       .pushNamed(
@@ -417,7 +417,7 @@ Future<void> _learningSession(
   }
   final types = <Ask>{};
   var learned = false;
-  for (var step = 0; step < 24 && reel.count < maxFrames; step++) {
+  for (var step = 0; step < 30 && reel.count < maxFrames; step++) {
     final session = _session(tester);
     if (session == null) break;
     final ask = session.ask;
@@ -425,13 +425,13 @@ Future<void> _learningSession(
     // ignore: avoid_print
     print('learning step $step: ${ask.name} ${session.item.card.target}');
     if (shows) {
-      await reel.hold(7);
+      await reel.hold(ask == Ask.showSet ? 2 : 4);
       session.learnt();
       await tester.pump(const Duration(milliseconds: 400));
       continue;
     }
     types.add(ask);
-    await reel.hold(3);
+    await reel.hold(2);
     if (ask.chooses && find.byType(ChoiceTile).evaluate().isNotEmpty) {
       final options = session.options;
       final right = options.indexWhere(session.isRight);
@@ -480,9 +480,9 @@ Future<void> _learningSession(
       }
       session.check(answer);
     }
-    await reel.hold(2);
+    await reel.hold(1);
     if (find.text('Learned').evaluate().isNotEmpty) learned = true;
-    await reel.hold(4);
+    await reel.hold(3);
     if (learned && types.length >= 3) break;
     session.next();
     await tester.pump(const Duration(milliseconds: 400));

@@ -609,7 +609,9 @@ A widget test draws text in boxes and turns font fallback off, so
 `readme_fonts.py` first merges the SDK's Roboto with static Noto Sans Bengali
 files (`NotoSansBengali-Regular.ttf`, `-SemiBold.ttf` and so on, from
 [notofonts](https://github.com/notofonts/notofonts.github.io/tree/main/fonts/NotoSansBengali/hinted/ttf),
-OFL-1.1). Then `tools/readme_gifs/readme_gifs_test.dart`, skipped unless `README_GIFS=1`, writes
+OFL-1.1), and with the combining marks (U+0300-036F) of static Noto Sans
+(`--marks`: Roboto lacks some a reading uses, such as the candrabindu
+U+0310, which a test would draw as a box). Then `tools/readme_gifs/readme_gifs_test.dart`, skipped unless `README_GIFS=1`, writes
 each screen's frames, the three stills and the learning session's frames as
 PNGs under `build/readme_gifs/`, `make_gif.py` turns each directory of frames
 into a looping GIF at 7 frames a second, one palette, under 1.5 MB (it
@@ -617,7 +619,8 @@ narrows the GIF, then cuts colours, until it fits), and `phone_frame.py`
 frames a still.
 
 ```sh
-python3 tools/readme_fonts.py path/to/noto-bengali build/readme_fonts
+python3 tools/readme_fonts.py path/to/noto-bengali build/readme_fonts \
+  --marks path/to/noto-sans
 README_GIFS=1 README_GIFS_FONTS=build/readme_fonts \
   flutter test tools/readme_gifs/readme_gifs_test.dart
 for g in deck-path today progress review; do
