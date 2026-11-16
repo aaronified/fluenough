@@ -110,4 +110,4 @@
 | kn-6585 | see card | ಉತ್ತರಿಸಲು ತಡವಾಗಿದ್ದಕ್ಕೆ ಕ್ಷಮೆ ಇರಲಿ: natural apology in an email, or is a different form usual? | Sonnet builder | 2026-11-16 |
 | kn-6586 | see card | ದಯವಿಟ್ಟು ಬಿಲ್ ಕಳುಹಿಸಿ: ಬಿಲ್ is glossed bill; should a business email say ಇನ್ವಾಯ್ಸ್ (invoice)? | Sonnet builder | 2026-11-16 |
 | kn-6600 | see card | ಸಭೆಯನ್ನು ಶುರು ಮಾಡೋಣ: ಮಾಡೋಣ is colloquial; is it right for a meeting, or ಮಾಡೋಣ vs ಆರಂಭಿಸೋಣ? | Sonnet builder | 2026-11-16 |
-| kn-6500, kn-6540, kn-6544, kn-6580 | see card | Readings of ಏನಾದರೂ, ಇದೆಯೇ, ವೈಫೈ and ಲಗೇಜ್ come from the tool's rules and are unreviewed: are ēnādarū, ideyē, vaiphai and lagēj right? | Sonnet builder | 2026-11-16 |
+| kn-6520, kn-6544, kn-6547 | see card | Readings of ಏನಾದರೂ, ಇದೆಯೇ, ವೈಫೈ and ಲಗೇಜ್ come from the tool's rules and are unreviewed: are ēnādarū, ideyē, vaiphai and lagēj right? | Sonnet builder | 2026-11-16 |
