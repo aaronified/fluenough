@@ -163,7 +163,8 @@ units:
       - { id: "grammar-karakas-heard", text: { "en": "A short passage in Classical Sanskrit showing karaka, read aloud" } }
     reading_passages:
       - { id: "grammar-karakas-text", text: { "en": "A short written text in Classical Sanskrit showing karaka" } }
-  - planned: { id: "sa-grammar-sandhi-consonant", grammar: ["consonant-sandhi"] }
+  - decks: ["sa-grammar-sandhi-consonant"]
+    grammar: ["sandhi-consonant"]
     listening_passages:
       - { id: "grammar-sandhi-consonant-heard", text: { "en": "A short passage in Classical Sanskrit showing consonant sandhi, read aloud" } }
     reading_passages:

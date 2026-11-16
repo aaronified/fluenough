@@ -1,0 +1,191 @@
+# Consonant (hal) sandhi: the junctions of a final consonant or an anusvara with the sound that follows.
+# Every pair and joined form was read on sa.wikipedia.org/wiki/सन्धिप्रकरणम् (the junctions and their
+# names, 2026-11-16), except the last two rows, which are the instrumental of राम and देव as the
+# en.wiktionary.org table of राम and the a-stems unit give them; the two compounds षण्मुख (षड् + मुख)
+# and वाङ्मय (वाङ् + मय) were also read on their en.wiktionary.org entries. The sutra numbers were read on
+# sa.wikisource.org/wiki/अष्टाध्यायी (the sixth and eighth chapter pages, 2026-11-16). Readings and IPA from
+# tools/transcribe.py (sa).
+schema: 1
+id: "sa-grammar-sandhi-consonant"
+part: "core"
+kind: "grammar"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["joined"]
+  entries:
+    - lemma: "तत् + च"
+      key: "tat-ca"
+      reading: "tat ca"
+      forms: { "joined": "तच्च" }
+      readings: { "joined": "tacca" }
+      ipas: { "joined": "t̪ətʃtʃə" }
+    - lemma: "गुणिन् + जयः"
+      key: "gunin-jayah"
+      reading: "guṇin jayaḥ"
+      forms: { "joined": "गुणिञ्जयः" }
+      readings: { "joined": "guṇiñjayaḥ" }
+      ipas: { "joined": "ɡuɳiɲdʒəjəh" }
+    - lemma: "तत् + टीका"
+      key: "tat-tika"
+      reading: "tat ṭīkā"
+      forms: { "joined": "तट्टीका" }
+      readings: { "joined": "taṭṭīkā" }
+      ipas: { "joined": "t̪əʈʈiːkaː" }
+    - lemma: "पतत् + डयते"
+      key: "patat-dayate"
+      reading: "patat ḍayate"
+      forms: { "joined": "पतड्डयते" }
+      readings: { "joined": "pataḍḍayate" }
+      ipas: { "joined": "pət̪əɖɖəjət̪eː" }
+    - lemma: "सत् + गुणः"
+      key: "sat-gunah"
+      reading: "sat guṇaḥ"
+      forms: { "joined": "सद्गुणः" }
+      readings: { "joined": "sadguṇaḥ" }
+      ipas: { "joined": "səd̪ɡuɳəh" }
+    - lemma: "प्राक् + एव"
+      key: "prak-eva"
+      reading: "prāk eva"
+      forms: { "joined": "प्रागेव" }
+      readings: { "joined": "prāgeva" }
+      ipas: { "joined": "praːɡeːʋə" }
+    - lemma: "षट् + एते"
+      key: "sat-ete"
+      reading: "ṣaṭ ete"
+      forms: { "joined": "षडेते" }
+      readings: { "joined": "ṣaḍete" }
+      ipas: { "joined": "ʂəɖeːt̪eː" }
+    - lemma: "अप् + धिः"
+      key: "ap-dhih"
+      reading: "ap dhiḥ"
+      forms: { "joined": "अब्धिः" }
+      readings: { "joined": "abdhiḥ" }
+      ipas: { "joined": "əbd̪ʱih" }
+    - lemma: "वाक् + मयः"
+      key: "vak-mayah"
+      reading: "vāk mayaḥ"
+      forms: { "joined": "वाङ्मयः" }
+      readings: { "joined": "vāṅmayaḥ" }
+      ipas: { "joined": "ʋaːŋməjəh" }
+    - lemma: "षट् + मुखः"
+      key: "sat-mukhah"
+      reading: "ṣaṭ mukhaḥ"
+      forms: { "joined": "षण्मुखः" }
+      readings: { "joined": "ṣaṇmukhaḥ" }
+      ipas: { "joined": "ʂəɳmukʰəh" }
+    - lemma: "चित् + मयः"
+      key: "cit-mayah"
+      reading: "cit mayaḥ"
+      forms: { "joined": "चिन्मयः" }
+      readings: { "joined": "cinmayaḥ" }
+      ipas: { "joined": "tʃinməjəh" }
+    - lemma: "उत् + नसः"
+      key: "ut-nasah"
+      reading: "ut nasaḥ"
+      forms: { "joined": "उन्नसः" }
+      readings: { "joined": "unnasaḥ" }
+      ipas: { "joined": "unnəsəh" }
+    - lemma: "देवम् + वन्दे"
+      key: "devam-vande"
+      reading: "devam vande"
+      forms: { "joined": "देवं वन्दे" }
+      readings: { "joined": "devaṃ vande" }
+      ipas: { "joined": "d̪eːʋəm ʋənd̪eː" }
+    - lemma: "एवम् + रूपेण"
+      key: "evam-rupena"
+      reading: "evam rūpeṇa"
+      forms: { "joined": "एवं रूपेण" }
+      readings: { "joined": "evaṃ rūpeṇa" }
+      ipas: { "joined": "eːʋəm ruːpeːɳə" }
+    - lemma: "इदं + च"
+      key: "idam-ca"
+      reading: "idaṃ ca"
+      forms: { "joined": "इदञ्च" }
+      readings: { "joined": "idañca" }
+      ipas: { "joined": "id̪əɲtʃə" }
+    - lemma: "अं + कितः"
+      key: "am-kitah"
+      reading: "aṃ kitaḥ"
+      forms: { "joined": "अङ्कितः" }
+      readings: { "joined": "aṅkitaḥ" }
+      ipas: { "joined": "əŋkit̪əh" }
+    - lemma: "दं + डः"
+      key: "dam-dah"
+      reading: "daṃ ḍaḥ"
+      forms: { "joined": "दण्डः" }
+      readings: { "joined": "daṇḍaḥ" }
+      ipas: { "joined": "d̪əɳɖəh" }
+    - lemma: "आनं + दः"
+      key: "anam-dah"
+      reading: "ānaṃ daḥ"
+      forms: { "joined": "आनन्दः" }
+      readings: { "joined": "ānandaḥ" }
+      ipas: { "joined": "aːnənd̪əh" }
+    - lemma: "वसन् + अस्ति"
+      key: "vasan-asti"
+      reading: "vasan asti"
+      forms: { "joined": "वसन्नस्ति" }
+      readings: { "joined": "vasannasti" }
+      ipas: { "joined": "ʋəsənnəst̪i" }
+    - lemma: "कुर्वन् + एव"
+      key: "kurvan-eva"
+      reading: "kurvan eva"
+      forms: { "joined": "कुर्वन्नेव" }
+      readings: { "joined": "kurvanneva" }
+      ipas: { "joined": "kurʋənneːʋə" }
+    - lemma: "प्रत्यङ् + आत्मा"
+      key: "pratyan-atma"
+      reading: "pratyaṅ ātmā"
+      forms: { "joined": "प्रत्यङ्ङात्मा" }
+      readings: { "joined": "pratyaṅṅātmā" }
+      ipas: { "joined": "prət̪jəŋŋaːt̪maː" }
+    - lemma: "तत् + शिवः"
+      key: "tat-sivah"
+      reading: "tat śivaḥ"
+      forms: { "joined": "तच्छिवः" }
+      readings: { "joined": "tacchivaḥ" }
+      ipas: { "joined": "t̪ətʃtʃʰiʋəh" }
+    - lemma: "एतत् + शास्त्रम्"
+      key: "etat-sastram"
+      reading: "etat śāstram"
+      forms: { "joined": "एतच्छास्त्रम्" }
+      readings: { "joined": "etacchāstram" }
+      ipas: { "joined": "eːt̪ətʃtʃʰaːst̪rəm" }
+    - lemma: "उत् + श्वासः"
+      key: "ut-svasah"
+      reading: "ut śvāsaḥ"
+      forms: { "joined": "उच्छ्वासः" }
+      readings: { "joined": "ucchvāsaḥ" }
+      ipas: { "joined": "utʃtʃʰʋaːsəh" }
+    - lemma: "अनु + छेदः"
+      key: "anu-chedah"
+      reading: "anu chedaḥ"
+      forms: { "joined": "अनुच्छेदः" }
+      readings: { "joined": "anucchedaḥ" }
+      ipas: { "joined": "ənutʃtʃʰeːd̪əh" }
+    - lemma: "वृक्ष + छाया"
+      key: "vrksa-chaya"
+      reading: "vṛkṣa chāyā"
+      forms: { "joined": "वृक्षच्छाया" }
+      readings: { "joined": "vṛkṣacchāyā" }
+      ipas: { "joined": "ʋr̩kʂətʃtʃʰaːjaː" }
+    - lemma: "मात्रा + छन्दः"
+      key: "matra-chandah"
+      reading: "mātrā chandaḥ"
+      forms: { "joined": ["मात्राच्छन्दः", "मात्राछन्दः"] }
+      readings: { "joined": ["mātrācchandaḥ", "mātrāchandaḥ"] }
+      ipas: { "joined": ["maːt̪raːtʃtʃʰənd̪əh", "maːt̪raːtʃʰənd̪əh"] }
+    - lemma: "राम + इन"
+      key: "rama-ina"
+      reading: "rāma ina"
+      forms: { "joined": "रामेण" }
+      readings: { "joined": "rāmeṇa" }
+      ipas: { "joined": "raːmeːɳə" }
+    - lemma: "देव + इन"
+      key: "deva-ina"
+      reading: "deva ina"
+      forms: { "joined": "देवेन" }
+      readings: { "joined": "devena" }
+      ipas: { "joined": "d̪eːʋeːnə" }
