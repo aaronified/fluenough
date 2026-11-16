@@ -34,6 +34,12 @@ table:
     "voc-sg": "vocative, singular"
     "voc-du": "vocative, dual"
     "voc-pl": "vocative, plural"
+    "enc-acc-sg": "enclitic accusative, singular"
+    "enc-acc-du": "enclitic accusative, dual"
+    "enc-acc-pl": "enclitic accusative, plural"
+    "enc-dg-sg": "enclitic dative or genitive, singular"
+    "enc-dg-du": "enclitic dative or genitive, dual"
+    "enc-dg-pl": "enclitic dative or genitive, plural"
 rules:
   "sa-rule-pron-nominative":
     name: "Pronouns, nominative: he, she, it, I, you"
@@ -59,3 +65,6 @@ rules:
   "sa-rule-pron-vocative":
     name: "Pronouns, vocative: only sarva"
     explanation: "The pronouns that point, relate or ask have no vocative, so every cell of their rows is empty. Only {4} (all) has one in this table: {1}, {2} and {3}, which are the forms of a noun in a."
+  "sa-rule-pron-enclitic":
+    name: "Pronouns, short forms: me, you"
+    explanation: "The pronouns of the first and second person also have short forms that Wiktionary marks as enclitic: they are said without stress and lean on the word before them. For I the accusative is {1}, the dative or genitive {2}, for the two of us {3} and for us {4}; for you the accusative is {5}, the dative or genitive {6}, for the two of you {7} and for you all {8}. One short form serves for both the dative and the genitive, and the dual and plural short forms are the same for the two cases. They are not the full forms of the other rules. The tables of Wiktionary also list Vedic and rare variants, such as {9}, which are left out here."
