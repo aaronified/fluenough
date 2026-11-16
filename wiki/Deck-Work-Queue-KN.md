@@ -135,3 +135,17 @@ Owner directive via the parent session: at most four language sessions at once, 
 4. Multi-word verbs and the missing sentences decks.
 5. Final derive run, review-queue tidy, completeness grid update.
 6. A dropped item always carries a one-line reason in the review queue.
+
+## 7. Second pause and state (2026-11-16, until the parent resumes at 2 PM IST)
+
+Owner instruction via the parent: no new deck workers or phases until 2 PM IST; running workers finish and push; merge only what CI already passed.
+
+| Item | State | On resume |
+|---|---|---|
+| PR #1508 notes (about 530 notes, `decks/kn-notes-wave1`) | Review done; blockers fixed (nine `pair`/`homograph`/`lookalike` kinds without `ref`, a false -ಗೆ/-ಕ್ಕೆ rule, ಯಾವಾಗಲೂ), three suffix readings added after CI | Merge when "Decks: validate" is green |
+| PR #1487 recommendations | Two reviews done, no blocker; two unverified lines dropped | Merge when CI is green (its checks had not started at the pause) |
+| Culture retry (`decks/kn-culture-wave2`) | **Built, pushed, no PR yet** (34 cards: culture-1 7 Pampa whole verses `kn-6000..6006`; culture-2 10 vachanas `kn-6050..6059`; culture-3 12 dasa and Sharifa songs `kn-6100..6111`; culture-4 5 cards `kn-6150..6154`; creators file adds eras and 8 creators to the 13 of #1487) | After the resume: merge #1487 first, then merge `decks-live` into the branch (the two `decks/creators/kn.yaml` files add/add conflict: keep both creator lists), open one PR, one Sonnet review (check the English of the whole-verse cards, the three cards marked for a Kannada speaker `kn-6006`, `kn-6108`, `kn-6052`, the Muddana maxim `kn-6150`, `circa` on Akka, Purandara, Kanaka), merge on green CI |
+| Culture items dropped, with reasons | Pampa verses 8, 10, 13: garbled text or hedged gloss; Pampa Banavasi verse: not on the pages read; Pampabharata ashvasas 2 to 14: only ashvasa 1 parses cleanly with its gloss; Kumara Vyasa: only the Kuvempu and Masti edition exists on kn.wikisource, rights unresolved; Allama Prabhu, Sarvajna, Devara Dasimayya, Channabasavanna, Siddarama, Muktayakka: the validator needs `born` and `died` and no read source gives years (Britannica is the next source to try); Vijaya Dasa, Gopala Dasa, Vyasaraya, Sripadaraja, Jagannatha Dasa: no song text fetched yet; Kavirajamarga, Ranna, Ponna, Durgasimha, Nayasena, Janna, Harihara, Raghavanka, Kesiraja, Chamarasa, Ratnakaravarni, Honnamma, Nagavarma II: no kn.wikisource page; Kittel, Basavappa Shastri, Gulvadi, Kerur, Srikantaiah, Hardekar Manjappa, Kempu Narayana, Kittur ballads: no readable Kannada text found; Kailasam: authorship of the pages unverified | Next sources to try: Britannica (lifespans), Project Gutenberg, Digital Library of India scans (colonial authors), Google Books public-domain pages. Hosts reached: en and kn Wikipedia, kn.wikisource, en and kn Wikiquote, Wikidata (Wikimedia API 429s: pace 6 s). Blocked: archive.org, hasp.ub.uni-heidelberg.de |
+| Multi-word verbs | Not retried yet | Re-source from Wiktionary and the Kannada grammar pages, then build the families with verified rows |
+| `kn-numbers-1-20`, `kn-quantities` sentences | Not built | Widen the vocabulary rule, build |
+| Derive run | Not done | Last step: `derive_phonetic.py kn` after every content PR; ask a phonetician about the four vowel-lowering rules |

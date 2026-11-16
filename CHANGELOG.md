@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - **Adding a language starts with eight big tiles.** Add a language now asks what you want to learn, shows Spanish, French, Telugu, Hindustani, Bengali, Marathi, Kannada and Japanese with how far each course is written, and keeps the full list one tap away, with languages that have no course yet folded under Coming soon, where they cannot be added until they have a course.
+- **Choosing situations is clearer.** The picker now has "On Today" (up to six, in your order, with a counter) and "More situations", so you can see what is shown and what is not, and long names such as Emergency and Doctor and pharmacy fit their tiles on the picker and on Today.
 - **The info button on Today now sits before its sentence.** In the skills card, the small info button is now on the left of "Tap a skill to practise only that" instead of the far right.
 
 ## [0.10.6] - 2026-11-15
