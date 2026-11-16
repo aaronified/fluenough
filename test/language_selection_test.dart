@@ -687,9 +687,17 @@ languages:
       }
       expect(tester.takeException(), isNull);
       // The link is below the fold of a 800 dp phone.
-      await tester.scrollUntilVisible(key('languages-see-all'), 300);
+      await tester.scrollUntilVisible(
+        key('languages-see-all'),
+        300,
+        scrollable: find.byType(Scrollable).first,
+      );
       await seeAll(tester);
-      await tester.scrollUntilVisible(key('languages-coming-soon'), 500);
+      await tester.scrollUntilVisible(
+        key('languages-coming-soon'),
+        500,
+        scrollable: find.byType(Scrollable).first,
+      );
       await tester.tap(key('languages-coming-soon'));
       await tester.pumpAndSettle();
       // The whole list, scrolled through, Coming soon open.
