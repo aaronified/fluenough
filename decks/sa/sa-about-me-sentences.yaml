@@ -7,45 +7,74 @@ license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed"]
 cards:
   - id: "sa-3050"
-    target: "किं नाम?"
-    reading: "kiṃ nāma?"
-    ipa: "kim naːmə"
+    target: "अहं संस्कृतं पठामि संस्कृतं भाषा भवति."
+    reading: "ahaṃ saṃskṛtaṃ paṭhāmi saṃskṛtaṃ bhāṣā bhavati."
+    ipa: "əɦəm sə̃skr̩t̪əm pəʈʰaːmi sə̃skr̩t̪əm bʱaːʂaː bʱəʋət̪i"
     pos: "phrase"
-    bases: [{ word: "किं", base: "किम्", reading: "kim" }, { word: "नाम", ref: "sa-1070" }]
-    confusables: [{ id: "w1", ref: "sa-1001", kind: "word" }, { id: "w2", ref: "sa-1072", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "पठामि", base: "पठ्", reading: "paṭh" }, { word: "भाषा", ref: "sa-1072" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-0022", kind: "word" }, { id: "w2", ref: "sa-0433", kind: "word" }]
     notes: [{ id: "n1", kind: "note" }]
   - id: "sa-3051"
-    target: "वयः कति?"
-    reading: "vayaḥ kati?"
-    ipa: "ʋəjəh kət̪i"
+    target: "माता नाम वदति पिता वयो वदति."
+    reading: "mātā nāma vadati pitā vayo vadati."
+    ipa: "maːt̪aː naːmə ʋəd̪ət̪i pit̪aː ʋəjoː ʋəd̪ət̪i"
     pos: "phrase"
-    bases: [{ word: "वयः", ref: "sa-1071" }, { word: "कति", ref: "sa-1005" }]
-    confusables: [{ id: "w1", ref: "sa-1070", kind: "word" }, { id: "w2", ref: "sa-1074", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "माता", ref: "sa-1030" }, { word: "नाम", ref: "sa-1070" }, { word: "वदति", base: "वद्", reading: "vad" }, { word: "पिता", ref: "sa-1031" }, { word: "वयो", base: "वयः", reading: "vayaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1032", kind: "word" }, { id: "w2", ref: "sa-1072", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
   - id: "sa-3052"
-    target: "भाषा संस्कृतम्."
-    reading: "bhāṣā saṃskṛtam."
-    ipa: "bʱaːʂaː sə̃skr̩t̪əm"
+    target: "त्वं किं नाम वदसि स किं वदति?"
+    reading: "tvaṃ kiṃ nāma vadasi sa kiṃ vadati?"
+    ipa: "t̪ʋəm kim naːmə ʋəd̪əsi sə kim ʋəd̪ət̪i"
     pos: "phrase"
-    bases: [{ word: "भाषा", ref: "sa-1072" }, { word: "संस्कृतम्", ref: "sa-0030" }]
-    confusables: [{ id: "w1", ref: "sa-1070", kind: "word" }, { id: "w2", ref: "sa-1074", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "किं", base: "किम्", reading: "kim" }, { word: "नाम", ref: "sa-1070" }, { word: "वदसि", base: "वद्", reading: "vad" }, { word: "स", base: "सः", reading: "saḥ" }, { word: "वदति", base: "वद्", reading: "vad" }]
+    confusables: [{ id: "w1", ref: "sa-1011", kind: "word" }, { id: "w2", ref: "sa-1001", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
   - id: "sa-3053"
-    target: "कति भाषाः?"
-    reading: "kati bhāṣāḥ?"
-    ipa: "kət̪i bʱaːʂaːh"
+    target: "सा नाम न वदति त्वं वदसि."
+    reading: "sā nāma na vadati tvaṃ vadasi."
+    ipa: "saː naːmə nə ʋəd̪ət̪i t̪ʋəm ʋəd̪əsi"
     pos: "phrase"
-    bases: [{ word: "कति", ref: "sa-1005" }, { word: "भाषाः", base: "भाषा", reading: "bhāṣā" }]
-    confusables: [{ id: "w1", ref: "sa-1001", kind: "word" }, { id: "w2", ref: "sa-1003", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "सा", ref: "sa-1011" }, { word: "नाम", ref: "sa-1070" }, { word: "न", ref: "sa-0026" }, { word: "वदति", base: "वद्", reading: "vad" }, { word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "वदसि", base: "वद्", reading: "vad" }]
+    confusables: [{ id: "w1", ref: "sa-1012", kind: "word" }, { id: "w2", ref: "sa-1071", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
   - id: "sa-3054"
-    target: "अहं नाम जानामि."
-    reading: "ahaṃ nāma jānāmi."
-    ipa: "əɦəm naːmə dʒaːnaːmi"
+    target: "सखा वयो वदति भ्राता नाम वदति."
+    reading: "sakhā vayo vadati bhrātā nāma vadati."
+    ipa: "səkʰaː ʋəjoː ʋəd̪ət̪i bʱraːt̪aː naːmə ʋəd̪ət̪i"
     pos: "phrase"
-    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "नाम", ref: "sa-1070" }, { word: "जानामि", base: "ज्ञा", reading: "jñā" }]
-    confusables: [{ id: "w1", ref: "sa-1072", kind: "word" }, { id: "w2", ref: "sa-1071", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "सखा", ref: "sa-1038" }, { word: "वयो", base: "वयः", reading: "vayaḥ" }, { word: "वदति", base: "वद्", reading: "vad" }, { word: "भ्राता", ref: "sa-1032" }, { word: "नाम", ref: "sa-1070" }]
+    confusables: [{ id: "w1", ref: "sa-1041", kind: "word" }, { id: "w2", ref: "sa-1072", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
   - id: "sa-3055"
-    target: "त्वं नाम जानासि?"
-    reading: "tvaṃ nāma jānāsi?"
-    ipa: "t̪ʋəm naːmə dʒaːnaːsi"
+    target: "इदं नाम पिता वदति."
+    reading: "idaṃ nāma pitā vadati."
+    ipa: "id̪əm naːmə pit̪aː ʋəd̪ət̪i"
     pos: "phrase"
-    bases: [{ word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "नाम", ref: "sa-1070" }, { word: "जानासि", base: "ज्ञा", reading: "jñā" }]
-    confusables: [{ id: "w1", ref: "sa-0021", kind: "word" }, { id: "w2", ref: "sa-1071", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "इदं", base: "इदम्", reading: "idam" }, { word: "नाम", ref: "sa-1070" }, { word: "पिता", ref: "sa-1031" }, { word: "वदति", base: "वद्", reading: "vad" }]
+    confusables: [{ id: "w1", ref: "sa-1016", kind: "word" }, { id: "w2", ref: "sa-1071", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3056"
+    target: "अहं संस्कृतं न वदामि त्वं वदसि."
+    reading: "ahaṃ saṃskṛtaṃ na vadāmi tvaṃ vadasi."
+    ipa: "əɦəm sə̃skr̩t̪əm nə ʋəd̪aːmi t̪ʋəm ʋəd̪əsi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "न", ref: "sa-0026" }, { word: "वदामि", base: "वद्", reading: "vad" }, { word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "वदसि", base: "वद्", reading: "vad" }]
+    confusables: [{ id: "w1", ref: "sa-1010", kind: "word" }, { id: "w2", ref: "sa-0434", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "sa-3057"
+    target: "एषा भाषा संस्कृतं भवति."
+    reading: "eṣā bhāṣā saṃskṛtaṃ bhavati."
+    ipa: "eːʂaː bʱaːʂaː sə̃skr̩t̪əm bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "एषा", ref: "sa-1017" }, { word: "भाषा", ref: "sa-1072" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "भवति", base: "भू", reading: "bhū" }]
+    confusables: [{ id: "w1", ref: "sa-1019", kind: "word" }, { id: "w2", ref: "sa-1073", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
