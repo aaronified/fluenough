@@ -1,0 +1,43 @@
+schema: 1
+id: "kn-en-reading-history"
+name: "Reading: a museum card"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A Kannada passage written for this course with the words taught up to its unit (a museum card about a ruler). Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-museum-card"
+    title: "Museum card"
+    sentences:
+      - text: "ಈ ರಾಜ ವೀರನಾಗಿದ್ದ."
+        reading: "ī rāja vīranāgidda."
+        ipa: "iː raːdʒa ʋiːranaːɡid̪d̪a"
+      - text: "ಅವನ ಅರಮನೆ ದೊಡ್ಡದಾಗಿತ್ತು."
+        reading: "avana aramane doḍḍadāgittu."
+        ipa: "aʋana aramane d̪oɖɖad̪aːɡit̪t̪u"
+      - text: "ಅವನ ಸೈನಿಕರು ಯುದ್ಧ ಮಾಡಿದರು."
+        reading: "avana sainikaru yuddha māḍidaru."
+        ipa: "aʋana sainikaru jud̪d̪ʱa maːɖid̪aru"
+      - text: "ಈ ಗೋಪುರ ಮೂರು ಶತಮಾನ ಹಳೆಯದು."
+        reading: "ī gōpura mūru śatamāna haḷeyadu."
+        ipa: "iː ɡoːpura muːru ʃat̪amaːna haɭejad̪u"
+      - text: "ಈಗ ಇದು ವಸ್ತುಸಂಗ್ರಹಾಲಯ."
+        reading: "īga idu vastusaṅgrahālaya."
+        ipa: "iːɡa id̪u ʋast̪usaŋɡrahaːlaja"
+    questions:
+      - id: "kn-9373"
+        prompt: { en: "What did the soldiers do?" }
+        options:
+          - { en: "Fought a battle" }
+          - { en: "Built a palace" }
+          - { en: "Sang songs" }
+        answer: 1
+      - id: "kn-9374"
+        prompt: { en: "The tower is three centuries old." }
+        answer: true
+      - id: "kn-9375"
+        prompt: { en: "The palace was small." }
+        answer: false
