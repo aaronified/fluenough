@@ -208,18 +208,17 @@ void main() {
       expect(find.text(_l10n.cultureLegacyTitle), findsNothing);
     });
 
-    testWidgets(
-      'above the level opens to read and cannot be practised',
-      (tester) async {
-        usePhone(tester);
-        final state = await cultureApp();
-        await pumpScreen(tester, _item('zz-7201'), state: state);
-        expect(find.text(_stanza), findsOneWidget);
-        expect(find.text(_l10n.cultureAboveTitle), findsOneWidget);
-        // Not counted, not scheduled: nothing to practise.
-        expect(find.text(_l10n.culturePractise), findsNothing);
-      },
-    );
+    testWidgets('above the level opens to read and cannot be practised', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final state = await cultureApp();
+      await pumpScreen(tester, _item('zz-7201'), state: state);
+      expect(find.text(_stanza), findsOneWidget);
+      expect(find.text(_l10n.cultureAboveTitle), findsOneWidget);
+      // Not counted, not scheduled: nothing to practise.
+      expect(find.text(_l10n.culturePractise), findsNothing);
+    });
   });
 
   group('the creator card', () {
@@ -406,11 +405,7 @@ void main() {
       final settings = SettingsNotifier()
         ..setCultureFor(
           'te',
-          const CultureOptions(
-            items: false,
-            counts: true,
-            creators: false,
-          ),
+          const CultureOptions(items: false, counts: true, creators: false),
         );
       final stored = settings.toStored();
       expect(stored.containsKey('culture_items'), isFalse);
@@ -419,11 +414,7 @@ void main() {
       final back = SettingsNotifier()..restore(stored);
       expect(
         back.cultureFor('te'),
-        const CultureOptions(
-          items: false,
-          counts: true,
-          creators: false,
-        ),
+        const CultureOptions(items: false, counts: true, creators: false),
       );
       expect(back.cultureFor('hi'), CultureOptions.defaults);
     });

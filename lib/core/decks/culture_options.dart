@@ -44,15 +44,12 @@ class CultureOptions {
   /// Whether an item shows its creator and what still lives today.
   final bool creators;
 
-  CultureOptions copyWith({
-    bool? items,
-    bool? counts,
-    bool? creators,
-  }) => CultureOptions(
-    items: items ?? this.items,
-    counts: counts ?? this.counts,
-    creators: creators ?? this.creators,
-  );
+  CultureOptions copyWith({bool? items, bool? counts, bool? creators}) =>
+      CultureOptions(
+        items: items ?? this.items,
+        counts: counts ?? this.counts,
+        creators: creators ?? this.creators,
+      );
 
   Map<String, Object> toJson() => <String, Object>{
     'items': items,

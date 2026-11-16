@@ -667,8 +667,9 @@ void main() {
         LanguagesPage(spokenList: pickerSpokenList),
       );
       final l10n = l10nOf(tester);
+      // The menu button's key is also given to the item inside it.
       Finder row() =>
-          find.byKey(const ValueKey<String>('languages-menu-adult'));
+          find.byKey(const ValueKey<String>('languages-menu-adult')).first;
       Future<void> openMenu() async {
         await tester.tap(find.byIcon(Icons.more_vert));
         await tester.pumpAndSettle();

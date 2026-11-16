@@ -489,10 +489,7 @@ void main() {
     testWidgets('shows what the language chose before, and fits at 1.4x text '
         'in dark', (tester) async {
       final state = learner();
-      state.settings.setCultureFor(
-        'es',
-        const CultureOptions(counts: true),
-      );
+      state.settings.setCultureFor('es', const CultureOptions(counts: true));
       await pumpLanguages(tester, state: state, mode: ThemeMode.dark);
       await tapKey(tester, 'language-es');
       final text = l10n(tester);

@@ -185,10 +185,7 @@ class ItemSearchIndex {
 
 /// One search over the typed items, with what the screen says about it.
 class ItemSearchResult {
-  const ItemSearchResult({
-    required this.outcome,
-    this.close = false,
-  });
+  const ItemSearchResult({required this.outcome, this.close = false});
 
   static const ItemSearchResult empty = ItemSearchResult(
     outcome: ItemSearchOutcome.empty,
