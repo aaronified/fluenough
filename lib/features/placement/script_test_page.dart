@@ -8,7 +8,6 @@ import '../../app/script_test.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/target_text.dart';
 
 /// "How well do you know Eastern Nagari?" (#554): the [ScriptTest] of a
@@ -49,10 +48,7 @@ class _ScriptTestPageState extends State<ScriptTestPage> {
     final test = _test;
     final question = test.question;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.scriptTestTitle(widget.script)),
-        actions: const <Widget>[ReportButton()],
-      ),
+      appBar: AppBar(title: Text(l10n.scriptTestTitle(widget.script))),
       body: SafeArea(
         top: false,
         child: question == null

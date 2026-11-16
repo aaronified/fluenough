@@ -9,7 +9,6 @@ import '../../app/deck_downloads.dart';
 import '../../app/routes.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/system_bar.dart';
 import 'download_text.dart';
 import 'update_escape.dart';
@@ -117,7 +116,6 @@ class _DownloadPageState extends State<DownloadPage> {
         automaticallyImplyLeading: widget.onReady != null,
         // The theme's 4 px assumes a 56 px back button before the title.
         titleSpacing: widget.onReady != null ? null : AppSizes.gutter,
-        actions: const <Widget>[ReportButton()],
       ),
       body: downloads == null
           ? const SizedBox.shrink()

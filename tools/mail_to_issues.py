@@ -130,6 +130,7 @@ FROM_APP = "from-app"
 KINDS = {
     "Bug": "bug",
     "Feedback": "feedback",
+    "Content": "content",
     "Feature": "feedback",
     "Suggestion": "feedback",
 }

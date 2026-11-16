@@ -8,7 +8,6 @@ import '../../core/decks/timeline_entries.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/page_parts.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../decks/result_marks.dart';
 import 'culture_parts.dart';
@@ -313,10 +312,7 @@ class CultureTimelinePage extends StatelessWidget {
       );
     }
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.cultureTimelineTitle),
-        actions: const <Widget>[ReportButton()],
-      ),
+      appBar: AppBar(title: Text(l10n.cultureTimelineTitle)),
       body: entries.isEmpty
           ? EmptyState(icon: Icons.timeline, title: l10n.cultureTimelineEmpty)
           : ListView(

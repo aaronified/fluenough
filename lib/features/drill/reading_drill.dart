@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/settings.dart';
+import '../../core/feedback/content_report.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
 import '../../core/models/reading.dart';
@@ -76,7 +77,10 @@ class ReadingDrill extends StatelessWidget {
         deckName: session.deck.deck.name,
         position: session.position,
         total: session.total,
-        reportDetail: '${session.item.card.id} in ${session.deck.id}',
+        report: ContentTarget.card(
+          session.item.card.id,
+          deck: session.deck.deck,
+        ),
         progress: session.progress,
         onClose: onClose,
         // A heard passage is only heard: its text stays hidden.
@@ -118,7 +122,11 @@ class ReadingDrill extends StatelessWidget {
       deckName: session.deck.deck.name,
       position: session.position,
       total: session.total,
-      reportDetail: '${session.item.card.id} in ${session.deck.id}',
+      report: ContentTarget.card(
+        session.item.card.id,
+        deck: session.deck.deck,
+        listsOptions: true,
+      ),
       progress: session.progress,
       onClose: onClose,
       going: goingOn(session, answered: answered),

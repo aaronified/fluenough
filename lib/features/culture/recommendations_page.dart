@@ -13,7 +13,6 @@ import '../../core/models/recommendation.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/page_parts.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
@@ -94,7 +93,7 @@ class _RecommendationsPageState extends State<RecommendationsPage> {
     final l10n = AppLocalizations.of(context)!;
     if (state.status == CatalogStatus.loading) {
       return Scaffold(
-        appBar: AppBar(actions: const <Widget>[ReportButton()]),
+        appBar: AppBar(),
         body: Center(
           child: CircularProgressIndicator(
             semanticsLabel: l10n.commonLoadingDecks,
@@ -137,7 +136,6 @@ class _RecommendationsPageState extends State<RecommendationsPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(l10n.recTitle, style: theme.textTheme.titleMedium),
-        actions: const <Widget>[ReportButton()],
       ),
       body: file == null || (list.offered.isEmpty && list.hiddenAbove == 0)
           ? EmptyState(

@@ -6,12 +6,13 @@ import '../../app/culture.dart';
 import '../../app/routes.dart';
 import '../../app/session.dart';
 import '../../core/decks/weave.dart';
+import '../../core/feedback/content_report.dart';
 import '../../core/models/level.dart';
 import '../../core/models/reading.dart' show bestLanguage;
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/page_parts.dart';
-import '../../ui/widgets/report_button.dart';
+import '../../ui/widgets/content_report.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
 import '../decks/result_marks.dart';
@@ -47,7 +48,7 @@ class CultureItemPage extends StatelessWidget {
     final item = state.cultureItemById(request.language, request.itemId);
     if (item == null) {
       return Scaffold(
-        appBar: AppBar(actions: const <Widget>[ReportButton()]),
+        appBar: AppBar(),
         body: state.status == CatalogStatus.loading
             ? Center(
                 child: CircularProgressIndicator(
@@ -102,7 +103,13 @@ class CultureItemPage extends StatelessWidget {
               onPressed: () =>
                   state.speak(item.target.replaceAll('\n', ' '), info),
             ),
-          ReportButton(detail: item.id),
+          ContentReportButton(
+            target: ContentTarget(
+              subject: ContentSubject.item,
+              id: item.id,
+              pair: languagePair(language, state.courseNative(language)),
+            ),
+          ),
         ],
       ),
       body: ListView(

@@ -10,6 +10,7 @@ import '../../app/situations.dart';
 import '../../app/topics.dart';
 import '../../app/unlocks.dart';
 import '../../core/decks/topic_resolver.dart';
+import '../../core/feedback/content_report.dart';
 import '../../core/models/deck.dart' show LanguageInfo;
 import '../../core/models/level.dart';
 import '../../core/models/topic.dart';
@@ -20,7 +21,7 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/bottom_actions.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/page_parts.dart';
-import '../../ui/widgets/report_button.dart';
+import '../../ui/widgets/content_report.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
 import '../decks/result_marks.dart';
@@ -71,7 +72,7 @@ class _TopicPageState extends State<TopicPage> {
     final resolved = topics.byId(request.topicId);
     if (resolved == null) {
       return Scaffold(
-        appBar: AppBar(actions: const <Widget>[ReportButton()]),
+        appBar: AppBar(),
         body: state.status == CatalogStatus.loading
             ? Center(
                 child: CircularProgressIndicator(
@@ -151,7 +152,15 @@ class _TopicPageState extends State<TopicPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(name, style: theme.textTheme.titleMedium),
-        actions: const <Widget>[ReportButton()],
+        actions: <Widget>[
+          ContentReportButton(
+            target: ContentTarget(
+              subject: ContentSubject.topic,
+              id: widget.request.topicId,
+              pair: languagePair(language, state.courseNative(language)),
+            ),
+          ),
+        ],
       ),
       body: ListView(
         padding: const EdgeInsetsDirectional.fromSTEB(

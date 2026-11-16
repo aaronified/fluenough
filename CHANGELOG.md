@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **Report a mistake in what you are learning.** The bug icon now appears only on cards, decks, units, topics and culture items, and opens a short list of what is wrong with that one thing; a general problem report is in the Settings menu.
+
 ## [0.10.6] - 2026-11-15
 
 - **The Culture bar now fills.** In Add a language, the Culture bar under a language shows how much of its culture decks is written, instead of always being empty.

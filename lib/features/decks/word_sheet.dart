@@ -5,13 +5,14 @@ import '../../app/app_state.dart';
 import '../../app/unlocks.dart';
 import '../../app/deck_catalog.dart';
 import '../../core/decks/adult_gate.dart';
+import '../../core/feedback/content_report.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/scheduling/skill_difficulty.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/card_picture.dart';
 import '../../ui/widgets/ipa_line.dart';
-import '../../ui/widgets/report_button.dart';
+import '../../ui/widgets/content_report.dart';
 import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import '../drill/ipa_examples.dart';
@@ -283,8 +284,11 @@ class WordSheet extends StatelessWidget {
                   ),
                 ),
                 TextButton.icon(
-                  onPressed: () => ReportButton.open(context, detail: card.id),
-                  icon: const Icon(Icons.flag_outlined, size: 20),
+                  onPressed: () => showContentReport(
+                    context,
+                    ContentTarget.card(card.id, deck: state.deckOf(card)?.deck),
+                  ),
+                  icon: const Icon(Icons.bug_report_outlined, size: 20),
                   label: Text(l10n.cardReport),
                 ),
               ],

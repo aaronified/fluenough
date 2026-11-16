@@ -4,11 +4,12 @@ import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/skill.dart';
+import '../../core/feedback/content_report.dart';
 import '../../core/scheduling/daily_timer.dart';
 import '../../l10n/app_localizations.dart';
 import '../theme.dart';
 import 'mode_pill.dart';
-import 'report_button.dart';
+import 'content_report.dart';
 import 'teach_swipe.dart';
 import 'wave_progress.dart';
 
@@ -140,8 +141,8 @@ class _CountdownState extends State<_Countdown> {
 
 /// A drill's 64 px header, from the design: the close button, the progress
 /// wave, "3/8", whatever the page puts in the header (the sounds of the
-/// card's word, [DrillHeaderScope]) and the bug icon (ADR-0021). Every drill
-/// has it, through [DrillFrame]; the teach card, which fills the screen with
+/// card's word, [DrillHeaderScope]) and the content report's bug icon. Every
+/// drill has it, through [DrillFrame]; the teach card, which fills the screen with
 /// no body to scroll, uses it on its own.
 class DrillHeader extends StatelessWidget {
   const DrillHeader({
@@ -150,7 +151,7 @@ class DrillHeader extends StatelessWidget {
     required this.position,
     required this.total,
     required this.onClose,
-    required this.reportDetail,
+    this.report,
     this.positionLabel,
   });
 
@@ -169,8 +170,9 @@ class DrillHeader extends StatelessWidget {
   /// close button.
   final VoidCallback? onClose;
 
-  /// What a report from this screen says it showed.
-  final String reportDetail;
+  /// What the bug icon reports: the card and its deck. Null for a screen
+  /// that shows no card, which has no bug icon.
+  final ContentTarget? report;
 
   @override
   Widget build(BuildContext context) {
@@ -219,7 +221,7 @@ class DrillHeader extends StatelessWidget {
             // What the page puts in the header, such as the sounds of the
             // card's word (ADR-0041).
             ?DrillHeaderScope.of(context),
-            ReportButton(detail: reportDetail),
+            if (report != null) ContentReportButton(target: report!),
           ],
         ),
       ),
@@ -295,7 +297,7 @@ class DrillFrame extends StatelessWidget {
     this.belowCard,
     this.feedback,
     this.actions = const <Widget>[],
-    this.reportDetail,
+    this.report,
     this.needsSound = false,
     this.going,
     this.pillLabel,
@@ -325,8 +327,9 @@ class DrillFrame extends StatelessWidget {
   /// What the header says in place of "3/8" ([DrillHeader.positionLabel]).
   final String? positionLabel;
 
-  /// What a report from this drill says it showed: the card's id and deck.
-  final String? reportDetail;
+  /// What a report from this drill is about: the card's id and deck, and
+  /// whether the drill lists options to choose from.
+  final ContentTarget? report;
 
   /// Whether the question cannot be answered without hearing it: a
   /// listening card or a minimal pair. While the phone's volume is at zero
@@ -456,7 +459,7 @@ class DrillFrame extends StatelessWidget {
               position: position,
               total: total,
               onClose: onClose,
-              reportDetail: reportDetail ?? deckName,
+              report: report,
               positionLabel: positionLabel,
             ),
             if (going == null)

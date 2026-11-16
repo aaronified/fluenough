@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart' hide Card;
 
+import '../../core/feedback/content_report.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/placement/placement_questions.dart' show PlacementSkill;
@@ -184,7 +185,7 @@ class _V3RunPageState extends State<V3RunPage> {
               // The wave is the share of the five minutes and 40 questions
               // used.
               progress: _run.progress,
-              reportDetail: '${question.id} in find my level',
+              report: ContentTarget.card(question.id),
               child: V3QuestionView(
                 key: ValueKey<String>('${question.id}#${_run.answered}'),
                 question: question,

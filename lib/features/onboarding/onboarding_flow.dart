@@ -6,7 +6,6 @@ import '../../app/app_scope.dart';
 import '../../core/data/spoken_languages.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/wave_progress.dart';
 import 'languages_intro_step.dart';
 import 'languages_step.dart';
@@ -225,7 +224,6 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
                 onPressed: () => _skip(from),
                 child: Text(l10n.onboardingSkip),
               ),
-            ReportButton(detail: 'onboarding ${step.id}'),
           ],
         ),
       ),

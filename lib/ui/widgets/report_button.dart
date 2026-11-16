@@ -33,8 +33,10 @@ Map<String, String> deviceInfo(BuildContext context, {required String system}) {
   };
 }
 
-/// The bug icon on every screen (ADR-0021). `test/gallery_test.dart` checks
-/// that every screen in the gallery has one.
+/// The general report (ADR-0021): Settings > Support, the Settings tab's
+/// three-dot menu and the error links open it through [ReportButton.open].
+/// Since 2026-11-16 the bug icon on a screen is the content report
+/// (`ContentReportButton`), kept only where something is taught.
 ///
 /// While mail reports are incoming (#160), it asks first whether to add the
 /// device's details, then opens a new GitHub issue with the screen and what

@@ -9,7 +9,6 @@ import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/page_parts.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/target_text.dart';
 import 'leeches.dart';
 import 'stats_numbers.dart';
@@ -42,7 +41,6 @@ class LeechesPage extends StatelessWidget {
         title: Text(
           name == null ? l10n.leechesTitle : l10n.leechesTitleIn(name),
         ),
-        actions: const <Widget>[ReportButton()],
       ),
       body: SafeArea(
         top: false,

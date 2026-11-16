@@ -10,7 +10,6 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/page_parts.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
@@ -69,7 +68,7 @@ class _OffensiveReviewPageState extends State<OffensiveReviewPage> {
         .firstOrNull;
     if (language == null) {
       return Scaffold(
-        appBar: AppBar(actions: const <Widget>[ReportButton()]),
+        appBar: AppBar(),
         body: EmptyState(
           icon: Icons.translate_outlined,
           title: l10n.deckNotFound,
@@ -80,22 +79,13 @@ class _OffensiveReviewPageState extends State<OffensiveReviewPage> {
       l10n.reviewOffensivePageTitle(language.name),
       overflow: TextOverflow.ellipsis,
     );
-    final report = ReportButton(detail: 'offensive ${language.code}');
     return switch (_step) {
       _Step.why => Scaffold(
-        appBar: AppBar(
-          leading: const CloseButton(),
-          title: title,
-          actions: <Widget>[report],
-        ),
+        appBar: AppBar(leading: const CloseButton(), title: title),
         body: _Why(onContinue: () => setState(() => _step = _Step.age)),
       ),
       _Step.age => Scaffold(
-        appBar: AppBar(
-          leading: const CloseButton(),
-          title: title,
-          actions: <Widget>[report],
-        ),
+        appBar: AppBar(leading: const CloseButton(), title: title),
         body: _Age(
           language: language,
           onConfirmed: () => setState(() => _step = _Step.words),
@@ -103,8 +93,7 @@ class _OffensiveReviewPageState extends State<OffensiveReviewPage> {
       ),
       _Step.words => ListenableBuilder(
         listenable: state.settings,
-        builder: (context, _) =>
-            _words(context, state, language, title, report),
+        builder: (context, _) => _words(context, state, language, title),
       ),
     };
   }
@@ -116,7 +105,6 @@ class _OffensiveReviewPageState extends State<OffensiveReviewPage> {
     AppState state,
     LanguageInfo language,
     Widget title,
-    Widget report,
   ) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
@@ -149,7 +137,6 @@ class _OffensiveReviewPageState extends State<OffensiveReviewPage> {
       appBar: AppBar(
         leading: const CloseButton(),
         title: title,
-        actions: <Widget>[report],
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(4),
           child: Padding(

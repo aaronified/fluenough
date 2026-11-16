@@ -8,7 +8,6 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/incoming.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
 import 'import_error_card.dart';
@@ -178,10 +177,7 @@ class _ImportPageState extends State<ImportPage> {
         ? l10n.importFetch
         : l10n.importChoose;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.importTitle),
-        actions: const <Widget>[ReportButton()],
-      ),
+      appBar: AppBar(title: Text(l10n.importTitle)),
       body: ListView(
         padding: const EdgeInsetsDirectional.fromSTEB(
           16,

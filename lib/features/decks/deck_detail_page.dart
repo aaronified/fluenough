@@ -7,6 +7,7 @@ import '../../app/deck_catalog.dart';
 import '../../app/routes.dart';
 import '../../app/session.dart';
 import '../../app/skill.dart';
+import '../../core/feedback/content_report.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
@@ -17,7 +18,7 @@ import '../../ui/widgets/deck_tile.dart';
 import '../../ui/widgets/ipa_line.dart';
 import '../../ui/widgets/learn_button.dart';
 import '../../ui/widgets/page_parts.dart';
-import '../../ui/widgets/report_button.dart';
+import '../../ui/widgets/content_report.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
@@ -128,7 +129,7 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
     final entry = state.deckById(widget.deckId);
     if (entry == null) {
       return Scaffold(
-        appBar: AppBar(actions: const <Widget>[ReportButton()]),
+        appBar: AppBar(),
         body: state.status == CatalogStatus.loading
             ? Center(
                 child: CircularProgressIndicator(
@@ -178,7 +179,7 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
                   icon: const Icon(Icons.delete_outline),
                   onPressed: () => _confirmRemove(entry),
                 ),
-              ReportButton(detail: entry.id),
+              ContentReportButton(target: ContentTarget.deck(entry.deck)),
             ],
           ),
           body: ListView(

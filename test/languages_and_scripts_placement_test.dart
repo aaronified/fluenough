@@ -640,7 +640,6 @@ void main() {
       onClose: () {},
       deckName: 'Sentences',
       progress: 0.3,
-      reportDetail: 'test',
       child: child,
     );
 

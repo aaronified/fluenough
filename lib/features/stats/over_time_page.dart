@@ -6,7 +6,6 @@ import '../../core/progress/mastery.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/pace_parts.dart';
-import '../../ui/widgets/report_button.dart';
 import 'skill_lines.dart';
 
 /// Where the star leads (#678): two charts over the last twelve weeks, each
@@ -25,10 +24,7 @@ class OverTimePage extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.progressOverTimeTitle),
-        actions: const <Widget>[ReportButton()],
-      ),
+      appBar: AppBar(title: Text(l10n.progressOverTimeTitle)),
       body: SafeArea(
         top: false,
         child: ListenableBuilder(

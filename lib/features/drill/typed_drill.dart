@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart' hide Card;
 
 import '../../app/settings.dart';
+import '../../core/feedback/content_report.dart';
 import '../../core/grading/self_grade.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
@@ -105,7 +106,7 @@ class _TypedDrillState extends State<TypedDrill> {
           : l10n.numbersPracticeTitle,
       position: session.position,
       total: session.total,
-      reportDetail: '${session.item.card.id} in ${session.deck.id}',
+      report: ContentTarget.card(session.item.card.id, deck: session.deck.deck),
       progress: session.progress,
       onClose: widget.onClose,
       needsSound: listening && session.answer == null,
