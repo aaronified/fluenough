@@ -244,6 +244,7 @@ class SkillBadge extends StatelessWidget {
     this.big = false,
     this.richIcons = false,
     this.glyph,
+    this.glyphFamily,
   });
 
   final SkillKind kind;
@@ -272,6 +273,10 @@ class SkillBadge extends StatelessWidget {
   /// of one language are told apart (Devanagari 'अ', Perso-Arabic 'ا'). Null
   /// draws none. Only the Languages page's rows pass it.
   final String? glyph;
+
+  /// The font family [glyph] is drawn in: the script's downloaded font where
+  /// it is loaded; null draws it in the phone's (`scriptGlyphFace`).
+  final String? glyphFamily;
 
   @override
   Widget build(BuildContext context) {
@@ -303,7 +308,10 @@ class SkillBadge extends StatelessWidget {
               style: TextStyle(
                 fontSize: big ? 18 : 15,
                 height: 1,
-                fontWeight: FontWeight.w600,
+                fontFamily: glyphFamily,
+                fontWeight: glyphFamily == null
+                    ? FontWeight.w600
+                    : FontWeight.normal,
                 color: fg,
               ),
             ),

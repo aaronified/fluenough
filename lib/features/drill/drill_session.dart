@@ -553,9 +553,16 @@ class DrillSession extends ChangeNotifier {
   /// The scripts the current card's language is learned in, one Write
   /// option each beside Latin letters (#623): the script it is written in
   /// where none is learned.
+  ///
+  /// A script with no keyboard ([LanguageInfo.noKeyboardScripts]) is left
+  /// out: a learner who reads only sitelen pona is shown it and answers in
+  /// the card's own script, its Latin letters.
   List<String> get writeScripts {
-    final learned = _state.learnedScripts(deck.language);
-    return learned.isEmpty ? <String>[deck.language.script] : learned;
+    final typable = <String>[
+      for (final script in _state.learnedScripts(deck.language))
+        if (!LanguageInfo.noKeyboardScripts.contains(script)) script,
+    ];
+    return typable.isEmpty ? <String>[deck.language.script] : typable;
   }
 
   /// The script an answer is written in: as chosen, else the first learned

@@ -772,13 +772,25 @@ class LanguageRow extends StatelessWidget {
       found,
     );
     final name = scriptPillName(l10n, script, view.name);
-    return SkillBadge(
-      kind: SkillKind.read,
-      mark: scriptMarkOf(level, covered: covered),
-      name: name,
-      combined: true,
-      richIcons: true,
-      glyph: scriptGlyph(script, l10n.scriptNameOr(script, view.name)),
+    // The glyph is drawn again once the script's font is loaded.
+    return ListenableBuilder(
+      listenable: Listenable.merge(<Listenable?>[scriptFontsOf(context)]),
+      builder: (context, _) {
+        final face = scriptGlyphFace(
+          context,
+          script,
+          l10n.scriptNameOr(script, view.name),
+        );
+        return SkillBadge(
+          kind: SkillKind.read,
+          mark: scriptMarkOf(level, covered: covered),
+          name: name,
+          combined: true,
+          richIcons: true,
+          glyph: face.text,
+          glyphFamily: face.family,
+        );
+      },
     );
   }
 }

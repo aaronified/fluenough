@@ -1,10 +1,12 @@
 import 'package:flutter/widgets.dart';
 
+import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/language_offer.dart';
 import '../../core/data/spoken_languages.dart';
 import '../../core/decks/font_check.dart';
 import '../../core/decks/language_catalog.dart';
+import '../../core/decks/script_fonts.dart';
 import '../../l10n/app_localizations.dart';
 
 /// One language as the Languages page shows it: its entry in
@@ -112,3 +114,42 @@ String scriptGlyph(String script, String name) {
   final text = sample == null || sample.isEmpty ? name : sample;
   return text.isEmpty ? '' : text.characters.first;
 }
+
+/// The scripts whose tile glyph is a character that most phones have no
+/// font for (sitelen pona's are private-use code points; Brahmi and Meitei
+/// Mayek are rare): drawn only in their downloaded font, else as the first
+/// letter of the script's name.
+const Set<String> fontOnlyGlyphScripts = <String>{
+  'sitelen_pona',
+  'brahmi',
+  'meitei_mayek',
+  'cuneiform',
+  'egyptian_hieroglyphs',
+  'linear_b',
+  'ol_chiki',
+};
+
+/// What a script's tile or pill draws, and in which font: the glyph of
+/// [scriptGlyph] in the script's downloaded font where one is loaded (a
+/// script that shares another's font, Shahmukhi's, takes that one's); else,
+/// for a script in [fontOnlyGlyphScripts], the first letter of its [name],
+/// so that the phone never draws a box; else the glyph in the phone's font.
+({String text, String? family}) scriptGlyphFace(
+  BuildContext context,
+  String script,
+  String name,
+) {
+  final glyph = scriptGlyph(script, name);
+  final fonts = AppScope.maybeRead(context)?.deckDownloads?.fonts;
+  final family = fonts?.familyFor(fontScriptFor('', script));
+  if (family != null) return (text: glyph, family: family);
+  if (fontOnlyGlyphScripts.contains(script) && name.isNotEmpty) {
+    return (text: name.characters.first.toUpperCase(), family: null);
+  }
+  return (text: glyph, family: null);
+}
+
+/// The notifier that says a script font was loaded, so that a tile or pill
+/// drawn by [scriptGlyphFace] is drawn again, or null without one.
+Listenable? scriptFontsOf(BuildContext context) =>
+    AppScope.maybeRead(context)?.deckDownloads?.fonts;
