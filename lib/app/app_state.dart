@@ -3681,7 +3681,7 @@ class AppState extends ChangeNotifier {
   bool canLearn(Card card) {
     if (card is QuestionCard) return true;
     return derived<bool>(
-      ('canLearn', card.id),
+      ('canLearn', card.id, _catalog),
       () => _learnAttemptOf(card) != null,
     );
   }

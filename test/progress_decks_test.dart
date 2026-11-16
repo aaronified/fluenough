@@ -866,14 +866,19 @@ void main() {
         state.courseUnits('te').map((u) => u.map((e) => e.id).toList()),
       );
       expect(units.first.status, UnitStatus.upNext);
+      // A unit none of whose cards can be learned yet (the learn rule needs
+      // two ways of asking) never holds the path back, so it reads done.
       expect(
         units.skip(1).map((u) => u.status),
-        everyElement(UnitStatus.ahead),
+        everyElement(isIn(<UnitStatus>[UnitStatus.ahead, UnitStatus.done])),
       );
       expect(units.map((u) => u.number), [
         for (var i = 1; i <= units.length; i++) i,
       ]);
-      expect(view.doneCount, 0);
+      expect(
+        view.doneCount,
+        units.where((u) => u.status == UnitStatus.done).length,
+      );
       expect(view.upNext, same(units.first));
       // Every unit is on the path, so each opens its screen.
       expect(units.map((u) => u.onPath), everyElement(isTrue));
