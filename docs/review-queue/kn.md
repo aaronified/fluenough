@@ -100,3 +100,14 @@
 | kn-8339 | see card | ಕೆಲವು ಮಕ್ಕಳು ತಿನ್ನುತ್ತಾರೆ is glossed 'Some children eat.', which reads incomplete: better gloss? | Haiku builder | 2026-11-16 |
 | kn-8327 | see card | ಇದರ ಬೆಲೆ ಹದಿನೈದು ರೂಪಾಯಿ: genitive ಇದರ of ಇದು and the price phrasing: natural? | Haiku builder | 2026-11-16 |
 | kn-8337 | see card | ಭರಪೂರ before a bare noun (ಭರಪೂರ ಮಾವು ತಿನ್ನುತ್ತೇನೆ) is a little bookish: natural? | Sonnet review | 2026-11-16 |
+| kn-6500 | see card | ನಿಮಗೆ ಏನು ತೊಂದರೆ?: is this the usual doctor's opening, or is ಏನಾಗಿದೆ? more natural? | Sonnet builder | 2026-11-16 |
+| kn-6522 | see card | ವೈದ್ಯರ ಚೀಟಿ: is ಚೀಟಿ the common word for a prescription at a pharmacy? | Sonnet builder | 2026-11-16 |
+| kn-6543 | see card | ಉಪಾಹಾರ: formal; does a hotel desk say ತಿಂಡಿ for breakfast instead? | Sonnet builder | 2026-11-16 |
+| kn-6546 | see card | ಚೆಕ್ ಔಟ್ ಸಮಯ: loan phrase; is ಕೊಠಡಿ ಖಾಲಿ ಮಾಡುವ ಸಮಯ more natural? | Sonnet builder | 2026-11-16 |
+| kn-6548 | see card | ದಯವಿಟ್ಟು ಒಂದು ಟ್ಯಾಕ್ಸಿ ಕರೆಯಿರಿ: would a front desk say ಟ್ಯಾಕ್ಸಿ ಬುಕ್ ಮಾಡಿ instead? | Sonnet builder | 2026-11-16 |
+| kn-6567 | see card | ಕಾರ್ಡಿನಲ್ಲಿ ಹಣ ಕೊಡಬಹುದೇ?: is the stem ಕಾರ್ಡಿನ- right, and is this how a diner asks to pay by card? | Sonnet builder | 2026-11-16 |
+| kn-6580 | see card | ಮಾನ್ಯರೇ,: traditional formal salutation; does it read as dated in an email? | Sonnet builder | 2026-11-16 |
+| kn-6585 | see card | ಉತ್ತರಿಸಲು ತಡವಾಗಿದ್ದಕ್ಕೆ ಕ್ಷಮೆ ಇರಲಿ: natural apology in an email, or is a different form usual? | Sonnet builder | 2026-11-16 |
+| kn-6586 | see card | ದಯವಿಟ್ಟು ಬಿಲ್ ಕಳುಹಿಸಿ: ಬಿಲ್ is glossed bill; should a business email say ಇನ್ವಾಯ್ಸ್ (invoice)? | Sonnet builder | 2026-11-16 |
+| kn-6600 | see card | ಸಭೆಯನ್ನು ಶುರು ಮಾಡೋಣ: ಮಾಡೋಣ is colloquial; is it right for a meeting, or ಮಾಡೋಣ vs ಆರಂಭಿಸೋಣ? | Sonnet builder | 2026-11-16 |
+| kn-6520, kn-6544, kn-6547 | see card | Readings of ಏನಾದರೂ, ಇದೆಯೇ, ವೈಫೈ and ಲಗೇಜ್ come from the tool's rules and are unreviewed: are ēnādarū, ideyē, vaiphai and lagēj right? | Sonnet builder | 2026-11-16 |
