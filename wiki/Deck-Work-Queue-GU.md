@@ -90,3 +90,39 @@ Each worker takes one unit by path entry number, builds it from its path words c
 
 - Professional decks need the owner's profession list.
 - The `gu` registry entry is shared tooling; GU-110 goes through the parent.
+
+## 6. Status and resume plan (2026-11-16)
+
+Owner directive (2026-11-16, token budget): at most four language sessions run at once. Gujarati is **paused**: running workers finish, open PRs are merged when green after one review, nothing new starts. Resume when the parent session says so.
+
+### 6.1 Done
+
+| Item | State |
+|---|---|
+| Audit, this queue page, grid row | Done (main) |
+| GU-001 sourcing list | Done: `Plan-Culture-Gujarati` (main). Poem lines were not readable by the page reader; see 6.4 |
+| A1 path (14 units) | **Merged**: PR #1453 into decks-live |
+| A2 path (22 units) | PR #1485 (`decks/gu-a2-wave1`), CI fixes pushed; merge when green after the one Sonnet review |
+| Proverbs 1 to 3 | On `decks/gu-kinds-wave1`: 60 cards, three uncertain literals (gu-6317, 6326, 6355) |
+| Situations | On `decks/gu-kinds-wave1`: `gu-situations.yaml`, 10 sheets, 6 new cards (gu-6600..6606) |
+| Multiword | On `decks/gu-kinds-wave1`: 11 verified cards of 80 planned (conjunct 4, compound 1, idiomatic 3, dative 3) |
+| Culture | On `decks/gu-kinds-wave1`: culture-1 4 cards, culture-2 2 cards, creators 2. A background fetch of about 530 gu.wikisource pages was running (`scratchpad/gk`, session-local) |
+
+### 6.2 To do, in order
+
+1. Merge PR #1485 (read CI with `gh api repos/aaronified/fluenough/commits/<sha>/check-runs`; one Sonnet review, report only; fixes by the workers). Then open ONE PR for `decks/gu-kinds-wave1` (base decks-live), one review, merge.
+2. **B1 wave (38 planned entries, positions 74 to 113)**, branch `decks/gu-b1-wave1` (never merge another work branch into it; start only after A2 is merged, so workers see the A2 cards). Ids: `gu-3500..5499` (A2 used 3200..3349 and 5500..5692; do not reuse), grammar units: relative, subjunctive, conditional, purpose, before-after, while, causative, concessive, indefinites, emphasis, passive, reported-speech, honorifics (13); the rest are word units (25) with a sentences deck and one reading deck each. Match path entries by `planned.id`, not position.
+3. **Notes** (GU-130..132, owner directive 2026-11-15): a note on every card with any real teachable point; only plainly self-explanatory cards stay without. About 190 old cards plus the new ones.
+4. **Culture, multiword, proverb gaps**: retry every reachable source before dropping an item (en/gu Wikipedia, Wikidata, Wikiquote, Wikisource, Britannica, national library pages), 3 s pacing, raw wikitext via curl (`index.php?title=...&action=raw` with a User-Agent header; the page reader refuses verse and `api.php` answers 429); a one-line reason for every dropped item.
+5. **Narrow IPA**: after tools PR #1493 (gu registry entry and hint handling) merges and all content PRs are merged: `python3 tools/import_phonetic.py gu --write`, then `python3 tools/derive_phonetic.py gu --bracket-unchanged --write`; GU-110 designs `decks/gu/gu-phonetics.yaml`. Convention (parent, 2026-11-15): Gujarati readings write short i and u; the engine stays short.
+6. **Review queue**: write `docs/review-queue/gu.md` on decks-live from the workers' uncertain items (genders: પનીર, ચટણી, છાશ, શાક, શર્ટ, સ્વેટર, ચંપલ, ધોતી, મોજાં, ગાદલું, પ્રોજેક્ટ, ઇનામ, ઓળખપત્ર, ચર્ચા, સપ્તાહાંત, ગૃહકાર્ય, નોંધ, the six situations nouns; પછી and કંઈ readings; ધોવું third-person present, missing from the tables; ઝાડા, કમળો, ચોપડો, બટવો, મેથી, ભાખરી, રાયતું glosses; Premanand and Narsinh dates; scan-only sources).
+7. **Known table gaps**: perfect table lacks જમવું, બોલવું, રમવું, સૂવું; gu-phone has 34 of 40 words, chores 39 of 40, appearance 49 of 50; every adjective taught later needs a row in `gu-grammar-comparison` (the validator checks it); sentences decks carry no confusables (precedent `gu-grammar-sentences`).
+8. Update the Gujarati row of Plan-Language-Completeness and issue #1171 from a re-read (GU-140).
+
+### 6.3 Lessons for every worker (CI failures seen)
+
+Sentences decks (core and layer) have no `theme`; layer `bases` gloss only inline bases; every example word is a card, a ref base or an inline base `{ word, base, reading }`; no example base refs its own card; reading deck question ids are `gu-` plus four digits; `reading` lines are lowercase ISO 15919 without quotes; no duplicate cards across decks (the earliest deck on the path keeps the card, later ones use `ref`); never leave a ref to a removed id; a rules table needs a row for every word of its kind taught anywhere (adjectives for comparison). `/tmp/.../gu-dupcheck.py` style PyYAML sanity check before every push (not the validator).
+
+### 6.4 Sourcing blockers
+
+The WebFetch page reader refuses verse; curl on raw wikitext works (see 6.2 item 4). Most Wikisource poem pages are scans without transcribed text. Mirabai's poems are Rajasthani on en.wikipedia, so Gujarati attribution is unsupported.
