@@ -1,0 +1,47 @@
+schema: 1
+id: "kn-en-reading-describing"
+name: "Reading: a postcard from the hills"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A Kannada passage written for this course with the words taught up to its unit (a short postcard: the weather and the food). Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-postcard-from-the-hills"
+    title: "Postcard from the hills"
+    sentences:
+      - text: "ನಾನು ಚೆನ್ನಾಗಿದ್ದೇನೆ."
+        reading: "nānu cennāgiddēne."
+        ipa: "naːnu tʃennaːɡid̪d̪eːne"
+      - text: "ಊರು ತುಂಬಾ ತಣ್ಣಗಿದೆ."
+        reading: "ūru tumbā taṇṇagide."
+        ipa: "uːru t̪umbaː t̪aɳɳaɡid̪e"
+      - text: "ನಾವು ಬಹಳ ಸಂತೋಷವಾಗಿದ್ದೇವೆ."
+        reading: "nāvu bahaḷa santōṣavāgiddēve."
+        ipa: "naːʋu bahaɭa sant̪oːʂaʋaːɡid̪d̪eːʋe"
+      - text: "ಊಟ ತುಂಬಾ ಚೆನ್ನಾಗಿದೆ."
+        reading: "ūṭa tumbā cennāgide."
+        ipa: "uːʈa t̪umbaː tʃennaːɡid̪e"
+      - text: "ನಾಳೆ ನಾವು ಊರಿಗೆ ಹೋಗುತ್ತೇವೆ."
+        reading: "nāḷe nāvu ūrige hōguttēve."
+        ipa: "naːɭe naːʋu uːriɡe hoːɡut̪t̪eːʋe"
+    questions:
+      - id: "kn-9337"
+        prompt: { en: "How is the town?" }
+        options:
+          - { en: "Cold" }
+          - { en: "Hot" }
+          - { en: "Dirty" }
+        answer: 1
+      - id: "kn-9338"
+        prompt: { en: "The writer is very happy." }
+        answer: true
+      - id: "kn-9339"
+        prompt: { en: "Where will they go tomorrow?" }
+        options:
+          - { en: "To the town" }
+          - { en: "To school" }
+          - { en: "To the park" }
+        answer: 1

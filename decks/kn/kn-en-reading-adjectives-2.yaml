@@ -1,0 +1,43 @@
+schema: 1
+id: "kn-en-reading-adjectives-2"
+name: "Reading: room to let"
+kind: reading
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short passage written for this course, using only the words of its unit and the units before it. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-room-to-let"
+    title: "Room to let"
+    sentences:
+      - text: "ಒಂದು ಕೋಣೆ ಬಾಡಿಗೆಗೆ ಇದೆ."
+        reading: "ondu kōṇe bāḍigege ide."
+        ipa: "ond̪u koːɳe baːɖiɡeɡe id̪e"
+      - text: "ಕೋಣೆ ತುಂಬಾ ವಿಶಾಲ ಮತ್ತು ಶಾಂತ."
+        reading: "kōṇe tumbā viśāla mattu śānta."
+        ipa: "koːɳe t̪umbaː ʋiʃaːla mat̪t̪u ʃaːnt̪a"
+      - text: "ಚಿಕ್ಕ ಬಾಲ್ಕನಿ ಇದೆ."
+        reading: "cikka bālkani ide."
+        ipa: "tʃikka baːlkani id̪e"
+      - text: "ಬಚ್ಚಲುಮನೆ ಒಳಗೆ ಇದೆ."
+        reading: "baccalumane oḷage ide."
+        ipa: "batʃtʃalumane oɭaɡe id̪e"
+      - text: "ಫ್ಯಾನು ಇದೆ ಮತ್ತು ಆರಾಮ ಇದೆ."
+        reading: "phyānu ide mattu ārāma ide."
+        ipa: "pʰjaːnu id̪e mat̪t̪u aːraːma id̪e"
+    questions:
+      - id: "kn-9697"
+        prompt: { en: "How is the room?" }
+        options:
+          - { en: "Spacious and quiet" }
+          - { en: "Cramped and noisy" }
+          - { en: "Dark and dirty" }
+        answer: 1
+      - id: "kn-9698"
+        prompt: { en: "The balcony is large." }
+        answer: false
+      - id: "kn-9699"
+        prompt: { en: "The bathroom is inside." }
+        answer: true

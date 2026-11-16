@@ -1,0 +1,47 @@
+schema: 1
+id: "kn-en-reading-travel"
+name: "Reading: a trip itinerary"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A two-day trip itinerary, using the travel words taught up to this unit. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-travel-passage"
+    title: "A two-day trip"
+    sentences:
+      - text: "ಇವತ್ತು ನಾವು ಸ್ಮಾರಕ ನೋಡೋಣ."
+        reading: "ivattu nāvu smāraka nōḍōṇa."
+        ipa: "iʋat̪t̪u naːʋu smaːraka noːɖoːɳa"
+      - text: "ನಾಳೆ ಬೀಚ್ ನೋಡೋಣ."
+        reading: "nāḷe bīc nōḍōṇa."
+        ipa: "naːɭe biːtʃ noːɖoːɳa"
+      - text: "ವಸತಿಗೃಹದಲ್ಲಿ ಕೊಠಡಿ ಕಾಯ್ದಿರಿಸಿದ್ದೇವೆ."
+        reading: "vasatigruhadalli koṭhaḍi kāydirisiddēve."
+        ipa: "ʋasat̪iɡruhad̪alli koʈʰaɖi kaːjd̪irisid̪d̪eːʋe"
+      - text: "ಪಾಸ್ಪೋರ್ಟ್ ಮರೆಯಬೇಡಿ."
+        reading: "pāspōrṭ mareyabēḍi."
+        ipa: "paːspoːrʈ marejabeːɖi"
+      - text: "ಸೂಟ್ಕೇಸ್ ತೆಗೆದುಕೊಳ್ಳಿ."
+        reading: "sūṭkēs tegedukoḷḷi."
+        ipa: "suːʈkeːs t̪eɡed̪ukoɭɭi"
+    questions:
+      - id: "kn-9030"
+        prompt: { en: "What do they see on the first day?" }
+        options:
+          - { en: "The monument" }
+          - { en: "The beach" }
+          - { en: "The airport" }
+        answer: 1
+      - id: "kn-9031"
+        prompt: { en: "The room is reserved." }
+        answer: true
+      - id: "kn-9032"
+        prompt: { en: "What should you not forget?" }
+        options:
+          - { en: "Passport" }
+          - { en: "Umbrella" }
+          - { en: "Newspaper" }
+        answer: 1
