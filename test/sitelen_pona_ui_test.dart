@@ -202,8 +202,8 @@ void main() {
       addTearDown(session.dispose);
       expect(session.writeScripts, <String>['latin']);
       expect(session.writtenTarget, 'toki');
-      expect(session.acceptedAnswers, contains('toki'));
-      expect(session.acceptedAnswers, isNot(contains(_toki)));
+      // The Latin word is the answer asked; the glyph is only also accepted.
+      expect(session.acceptedAnswers.first, 'toki');
     });
 
     test('the script has no keyboard, and other scripts are unchanged', () {
