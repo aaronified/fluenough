@@ -8,6 +8,7 @@
 // options each language keeps (`culture-in-decks`); and an item above the
 // level, which opens to read and cannot be practised.
 
+import 'package:fluenough/app/culture.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/decks/culture_options.dart';
 import 'package:fluenough/features/culture/creator_sheet.dart';

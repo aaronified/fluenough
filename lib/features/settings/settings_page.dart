@@ -26,7 +26,7 @@ import 'support_page.dart';
 /// The first group is Your languages, Activities and memory, Look and
 /// language, Reviewing and Your decks; the second Reminders, Your data, App
 /// log, Updates and Support with a cup of tea. Each row opens a page that
-/// holds what the section held on this tab: [LanguagesSettingsPage],
+/// holds what the section held on this tab: `LanguagesPage`,
 /// [ActivitiesPage], [AppearancePage] (with the app language),
 /// `ReviewSection`, [RemindersPage], [YourDataPage],
 /// [AppLogPage], [UpdatesPage] and [SupportPage]. The profile card is one target that opens [ProfilesPrivacyPage].

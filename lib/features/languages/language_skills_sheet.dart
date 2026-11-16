@@ -30,6 +30,7 @@ import '../downloads/download_text.dart';
 import '../fonts/font_check_sheet.dart';
 import '../placement/course_line.dart';
 import '../placement/language_row.dart';
+import '../placement/native_choice.dart';
 import '../placement/placed_review_choice.dart';
 import '../placement/find_level_flow.dart';
 import '../placement/skill_labels_line.dart';
@@ -741,6 +742,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                   // Below A1 no placement is offered (owner, 2026-11-05).
                   if (_builtLevel >= builtA1) _levelRow(context),
                   _placedRow(context),
+                  ?_nativeRow(context),
                 ],
                 if (_view.language.isSign) ...<Widget>[
                   _Heading(
@@ -904,6 +906,38 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
           ? l10n.languagesLevelFoundSub
           : l10n.languagesLevelNotFoundSub,
       onTap: _findLevel,
+    );
+  }
+
+  /// "Learn Telugu from", for a course more than one of the languages the
+  /// learner speaks teaches (ADR-0036): the choice is the course's own, so
+  /// it sits in the language's sheet. It opens a page, hence the link icon
+  /// (docs/mockups/menu-and-report.html, owner, 2026-11-16). Null where
+  /// there is no choice to make.
+  Widget? _nativeRow(BuildContext context) {
+    if (!_state.currentProfile.learns(_code) ||
+        !_state.offersNativeChoice(_code)) {
+      return null;
+    }
+    final language = _state.languages
+        .where((language) => language.code == _code)
+        .firstOrNull;
+    if (language == null) return null;
+    final l10n = AppLocalizations.of(context)!;
+    final native = _state.courseNative(_code);
+    final name = _state
+        .nativeOptions(_code)
+        .where((option) => option.native.code == native)
+        .firstOrNull
+        ?.native
+        .name;
+    return _LinkRow(
+      key: const ValueKey<String>('languages-native'),
+      icon: Icons.translate,
+      title: l10n.nativeChoiceTitle(language.name),
+      subtitle: name ?? '',
+      opensScreen: true,
+      onTap: () => NativeChoicePage.open(context, language),
     );
   }
 
@@ -1114,6 +1148,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             GroupedTile.toggle(
+              key: const ValueKey<String>('culture-switch'),
               leading: const Icon(Icons.format_quote),
               title: l10n.languagesCulture,
               subtitleOn: l10n.languagesCultureOn,
@@ -1343,12 +1378,16 @@ class _LinkRow extends StatelessWidget {
     required this.title,
     required this.subtitle,
     required this.onTap,
+    this.opensScreen = false,
   });
 
   final IconData icon;
   final String title;
   final String subtitle;
   final VoidCallback onTap;
+
+  /// Whether the row opens another screen: the link icon, not a chevron.
+  final bool opensScreen;
 
   @override
   Widget build(BuildContext context) {
@@ -1384,7 +1423,7 @@ class _LinkRow extends StatelessWidget {
               ),
             ),
             Icon(
-              Icons.chevron_right,
+              opensScreen ? Icons.open_in_new : Icons.chevron_right,
               color: theme.colorScheme.onSurfaceVariant,
             ),
           ],

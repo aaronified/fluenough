@@ -166,9 +166,9 @@ void main() {
       'press (#913)', (tester) async {
     await pumpLanguages(tester);
     final text = l10n(tester);
-    await tester.longPress(find.byIcon(Icons.bug_report_outlined));
+    await tester.longPress(find.byIcon(Icons.more_vert));
     await tester.pumpAndSettle();
-    expect(find.text(text.hintReport), findsOneWidget);
+    expect(find.text(text.languagesMenuMoreHint), findsOneWidget);
     await tapKey(tester, 'language-es');
     await tester.longPress(find.text('i'));
     await tester.pumpAndSettle();
@@ -435,6 +435,9 @@ void main() {
   });
 
   group('the Culture group of a language\'s details', () {
+    // "Culture" is also a bar label on the sheet: the switch has a key.
+    final cultureSwitch = find.byKey(const ValueKey<String>('culture-switch'));
+
     Future<void> tapShown(WidgetTester tester, Finder finder) async {
       await tester.ensureVisible(finder);
       await tester.pumpAndSettle();
@@ -448,7 +451,7 @@ void main() {
       final state = await pumpLanguages(tester);
       await tapKey(tester, 'language-es');
       final text = l10n(tester);
-      await tester.ensureVisible(find.text(text.languagesCulture));
+      await tester.ensureVisible(cultureSwitch);
       await tester.pumpAndSettle();
       // On by default, so it is open, with the mockup's wording and no
       // "applies to all languages" line.
@@ -457,7 +460,7 @@ void main() {
       expect(find.text(text.cultureSettingCreators), findsOneWidget);
       expect(state.settings.cultureFor('es'), CultureOptions.defaults);
 
-      await tapShown(tester, find.text(text.languagesCulture));
+      await tapShown(tester, cultureSwitch);
       expect(state.settings.cultureFor('es').items, isFalse);
       expect(find.text(text.languagesCultureOff), findsOneWidget);
       expect(find.text(text.cultureSettingCounts), findsNothing);
@@ -493,7 +496,7 @@ void main() {
       await pumpLanguages(tester, state: state, mode: ThemeMode.dark);
       await tapKey(tester, 'language-es');
       final text = l10n(tester);
-      await tester.ensureVisible(find.text(text.languagesCulture));
+      await tester.ensureVisible(cultureSwitch);
       await tester.pumpAndSettle();
       expect(find.text(text.cultureSettingCountsOn), findsOneWidget);
       expect(tester.takeException(), isNull);

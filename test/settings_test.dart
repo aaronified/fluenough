@@ -30,7 +30,7 @@ import 'package:fluenough/features/settings/activities_page.dart';
 import 'package:fluenough/features/settings/app_log_page.dart';
 import 'package:fluenough/features/settings/daily_minutes.dart';
 import 'package:fluenough/features/settings/appearance_page.dart';
-import 'package:fluenough/features/settings/languages_page.dart';
+import 'package:fluenough/features/languages/languages_page.dart';
 import 'package:fluenough/features/settings/reviewing_page.dart';
 import 'package:fluenough/features/settings/settings_controls.dart';
 import 'package:fluenough/features/settings/settings_page.dart';
@@ -50,6 +50,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'support/profiles.dart';
 import 'support/settings_pages.dart';
 import 'support/harness.dart';
+import 'support/picker.dart';
 
 // From settings_page_test.dart.
 Finder _row(String title) =>
@@ -96,9 +97,6 @@ class _FakeLogFiles implements LogFiles {
 // Settings' "Adult content (18+)" (#96): off by default, asks the learner to
 // confirm their age as it is switched on, and while on shows rude words
 // where a warning would hide them, and offensive cards to rate.
-
-Finder _adultRow(String title) =>
-    find.ancestor(of: find.text(title), matching: find.byType(GroupedTile));
 
 // From log_entry_test.dart.
 // From app_log_test.dart.
@@ -341,7 +339,6 @@ void main() {
           await pumpScreen(tester, const SettingsPage());
           final l10n = l10nOf(tester);
           final pages = <String, Type>{
-            l10n.settingsRowLanguages: LanguagesSettingsPage,
             l10n.settingsRowActivities: ActivitiesPage,
             l10n.settingsRowLook: AppearancePage,
             l10n.settingsRowReviewing: ReviewingPage,
@@ -665,20 +662,29 @@ void main() {
       );
 
       usePhone(tester);
-      final state = await pumpScreen(tester, const LanguagesSettingsPage());
+      final state = await pumpScreen(
+        tester,
+        LanguagesPage(spokenList: pickerSpokenList),
+      );
       final l10n = l10nOf(tester);
-      final row = _adultRow(l10n.settingsAdult);
-      await scrollTo(tester, row);
-      await tester.ensureVisible(row);
-      await tester.pumpAndSettle();
+      Finder row() =>
+          find.byKey(const ValueKey<String>('languages-menu-adult'));
+      Future<void> openMenu() async {
+        await tester.tap(find.byIcon(Icons.more_vert));
+        await tester.pumpAndSettle();
+        await tester.ensureVisible(row());
+        await tester.pumpAndSettle();
+      }
+
+      await openMenu();
       expect(state.settings.adultContent, isFalse);
       expect(adultContentOn(state), isFalse);
       expect(
-        find.descendant(of: row, matching: find.text(l10n.settingsAdultOff)),
+        find.descendant(of: row(), matching: find.text(l10n.settingsAdultOff)),
         findsOneWidget,
       );
 
-      await tester.tap(row);
+      await tester.tap(row());
       await tester.pumpAndSettle();
       expect(find.text(l10n.settingsAdultConfirmTitle), findsOneWidget);
       expect(find.text(l10n.settingsAdultConfirmBody), findsOneWidget);
@@ -687,7 +693,7 @@ void main() {
       expect(state.settings.adultContent, isFalse);
       expect(find.text(l10n.settingsAdultOff), findsOneWidget);
 
-      await tester.tap(row);
+      await tester.tap(row());
       await tester.pumpAndSettle();
       await tester.tap(find.text(l10n.settingsAdultConfirm));
       await tester.pumpAndSettle();
@@ -695,11 +701,11 @@ void main() {
       expect(adultContentOn(state), isTrue);
       expect(find.text(l10n.settingsAdultConfirmTitle), findsNothing);
       expect(
-        find.descendant(of: row, matching: find.text(l10n.settingsAdultOn)),
+        find.descendant(of: row(), matching: find.text(l10n.settingsAdultOn)),
         findsOneWidget,
       );
 
-      await tester.tap(row);
+      await tester.tap(row());
       await tester.pumpAndSettle();
       expect(find.text(l10n.settingsAdultConfirmTitle), findsNothing);
       expect(state.settings.adultContent, isFalse);

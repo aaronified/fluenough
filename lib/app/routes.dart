@@ -30,7 +30,6 @@ import '../features/fonts/script_fonts_page.dart';
 import '../features/settings/app_log_page.dart';
 import '../features/settings/activities_page.dart';
 import '../features/settings/appearance_page.dart';
-import '../features/settings/languages_page.dart';
 import '../features/settings/profiles_privacy_page.dart';
 import '../features/settings/reminders_page.dart';
 import '../features/settings/reviewing_page.dart';
@@ -205,7 +204,7 @@ abstract final class AppRoutes {
       progressOverTime => const OverTimePage(),
       howYouLearn => HowYouLearnPage(language: args is String ? args : null),
       appearance => const AppearancePage(),
-      settingsLanguages => const LanguagesSettingsPage(),
+      settingsLanguages => const LanguagesPage(),
       settingsActivities => const ActivitiesPage(),
       settingsReviewing => const ReviewingPage(),
       settingsDecks => const YourDecksPage(),
