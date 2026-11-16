@@ -32,6 +32,7 @@ import 'package:fluenough/app/session.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/review/deck_review.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
+import 'package:fluenough/core/scheduling/lesson.dart' show Difficulty;
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart' show Ask;
 import 'package:fluenough/features/drill/choice_drill.dart';
@@ -51,9 +52,6 @@ final Map<String, String> _env = Platform.environment;
 
 /// Where the frames go: one directory per screen.
 final String _out = _env['README_GIFS_OUT'] ?? 'build/readme_gifs';
-
-/// The sentences the learning session's lesson teaches.
-const String _lessonDeck = 'bn-en-cinema-sentences';
 
 /// The Bengali unit whose review the fourth GIF shows.
 const String _reviewDeck = 'bn-en-family';
@@ -415,9 +413,21 @@ Future<void> _learningSession(
     await _settle(tester);
   }
 
-  await open(
-    DrillRequest.lesson(language: 'bn', deckId: _lessonDeck),
-  );
+  // The first Bengali deck with several open sentences or phrases left to
+  // teach: its lesson asks them in more ways than single words are.
+  String? lessonDeck;
+  for (final entry in state.decks) {
+    if (entry.language.code != 'bn') continue;
+    final cards = state.untaughtCards('bn', deckId: entry.id);
+    final hard = cards.where((c) => Difficulty.of(c) == Difficulty.hard);
+    if (hard.length >= 4) {
+      lessonDeck = entry.id;
+      break;
+    }
+  }
+  // ignore: avoid_print
+  print('learning-session lesson deck: $lessonDeck');
+  await open(DrillRequest.lesson(language: 'bn', deckId: lessonDeck));
   if (_session(tester) == null &&
       find.byType(ScriptGuideView).evaluate().isEmpty) {
     tester.state<NavigatorState>(find.byType(Navigator).first).pop();
