@@ -1315,8 +1315,17 @@ class AppState extends ChangeNotifier {
       language,
       primary: readingScriptOf(scripts.first),
     );
+    // The font each learned script is drawn in: Arabic's is Naskh, and
+    // Shahmukhi's the Urdu one.
+    final wanted = <String>{
+      for (final script in learned) fontScriptFor(language, script),
+    };
     fontCheck.request(
-      scripts.where((script) => learned.contains(readingScriptOf(script))),
+      scripts.where(
+        (script) =>
+            wanted.contains(script) ||
+            learned.contains(readingScriptOf(script)),
+      ),
     );
   }
 

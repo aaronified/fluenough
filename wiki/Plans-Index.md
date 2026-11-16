@@ -27,6 +27,7 @@ Every live plan in the wiki, one line each. Each plan has its own wiki page. Fin
 - [Learned Rule](Plan-Learned-Rule): an item is learned only after two different questions, both right, in one sitting (built in PR #1515)
 - [Listening In Context](Plan-Listening-In-Context): a listening tier in context
 - [Offensive Words](Plan-Offensive-Words): offensive words, their level, and warnings on words like them
+- [Script Fonts Inventory](Script-Fonts-Inventory): the font of every script, its licence, size and coverage (2026-11-16)
 - [Placement V3](Plan-Placement-V3): find my level, mixed skills first, then drill into the skill that fails (approved 2026-11-07)
 - [Private Languages](Plan-Private-Languages): build entire languages as private decks, through Your decks (Priority 1 after the placement release (owner 2026-11-07); not built in the placement-release session)
 - [Profiles](Plan-Profiles): profiles, a PIN lock, and parental supervision
