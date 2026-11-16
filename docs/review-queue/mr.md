@@ -63,3 +63,23 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | mr-7000 | mr-en-reading-* | All 72 reading decks are written for the course, not checked by a Marathi speaker; sentences and questions are the builder's; tool readings of doubled vowels (वाढवण्याआधी gives vāḍhvaṇyāādhi) and kāhitri for काहीतरी are glitches of the tool (issue #1476) (range mr-7000..mr-7535) | Haiku builder | 2026-11-15 |
 | mr-7015 | reading decks | grammar-subjunctive passage does not use the subjunctive; the passive, causative, imperative and negative-imperative forms of the later grammar passages need a speaker's check (range mr-7015..7017; also mr-7318..7320, mr-friendly-advice) | Haiku builder | 2026-11-15 |
 | unit-level | mr-situations.yaml | Titles are English only; about 30 phrases have no card (taxi, shops, doctor, rail, hotel, post and bank, emergencies): they need Marathi from a reviewer; traffic, doctor and post-bank sheets share generic phrases; अटक and धूम्रपान करू नये fit their sheets weakly | Haiku builder | 2026-11-15 |
+| mr-0457 | mr-directions | Is बांधणे the natural verb for building a bridge (पूल बांधतो)? | Haiku builder | 2026-11-16 |
+| mr-0210 | mr-about-me | Is "तुमचे वय किती आहे?" the natural everyday way to ask someone's age? | Haiku builder | 2026-11-16 |
+| mr-0380 | mr-market | Does स्वस्त stay unchanged for every plural subject, not only the one in the example? | Haiku builder | 2026-11-16 |
+| mr-0492 | mr-time | The layer glosses शनिवारी as "Saturday" but the example says "On Saturday" (mr-0493 is glossed "on Sunday"): make the glosses consistent | Haiku builder | 2026-11-16 |
+| mr-0198 | mr-addressing | The oblique आजोबांना comes from one example; the course rule "masculine -आ changes to -्या" (mr-grammar-nouns) does not fit आजोबा | Haiku builder | 2026-11-16 |
+| mr-0197 | mr-addressing | "Polite word for any older woman" is general usage with no cited source | Haiku builder | 2026-11-16 |
+| mr-0523 | mr-calendar | Empty examples block in core and layer; also mr-0173 (mr-questions); the mr-0516 note writes caitr where the tool gives caitra | Haiku builder | 2026-11-16 |
+| mr-0403 | mr-groceries | दूध has gender n, but its example reads दूध उकळते (feminine verb) while the layer example is दूध गाळलं (neuter): which is right? | Haiku builder | 2026-11-16 |
+| mr-0563 | mr-eating-out | Neuter बिल and the -लं rule for a past verb with it as object: no course example; confirm | Haiku builder | 2026-11-16 |
+| mr-0567 | mr-eating-out | The note says the thing asked for comes before the verb in मला एक चहा द्या: confirm | Haiku builder | 2026-11-16 |
+| mr-0649 | mr-spelling | Older print forms येथें, कां, घरीं (also mr-0650, mr-0651) and the dot rule: confirm | Haiku builder | 2026-11-16 |
+| mr-0603 | mr-phrasebook | Is बरे (neuter of बरा) used with वाटणे in मला बरे वाटते as stated? | Haiku builder | 2026-11-16 |
+| mr-0591 | mr-grammar-likes | Does the agreement example (मला चहा आवडतो for काय आवडते?) fit the question; also the 'it' reading of ते in mr-0590 | Haiku builder | 2026-11-16 |
+| mr-0219 | mr-family | Is the holy-man use of बाबा worth a usage note here? | Haiku builder | 2026-11-16 |
+| mr-0196 | mr-family | The note says the mother's sister's husband is काका "too" or मावसा; mr-facts gives काका on the father's side and मावशी/मामा on the mother's: doubtful | Haiku builder | 2026-11-16 |
+| mr-0585 | mr-grammar-likes | The layer writes the reading āvḍte, the cards write āvaḍte (also mr-0587) | Haiku builder | 2026-11-16 |
+| mr-0348 | mr-numbers-big | Spelling सत्याहत्तर 77 vs सत्त्याऐंशी 87 (conjunct length), also mr-0357: confirm the standard spellings | Haiku builder | 2026-11-16 |
+| mr-0368 | mr-numbers-big | The note says 99 is the 90s ending with nine blended in: confirm wording | Haiku builder | 2026-11-16 |
+| mr-0262 | mr-numbers-1-20 | Pronunciation note: the middle a of अकरा is silent (matches the card IPA əkra); also mr-0264: the Hindi comparison for तेरा | Haiku builder | 2026-11-16 |
+| unit-level | notes | Set cards (mr-0694, mr-0695, mr-1001) cannot carry notes (set shape has no notes field) | Haiku builder | 2026-11-16 |
