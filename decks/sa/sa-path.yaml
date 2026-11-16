@@ -250,7 +250,8 @@ units:
       - { id: "dharma-heard", text: { "en": "A short passage in Classical Sanskrit on the theme dharma, conduct and duty, read aloud" } }
     reading_passages:
       - { id: "dharma-text", text: { "en": "A short written text in Classical Sanskrit on the theme dharma, conduct and duty" } }
-  - planned: { id: "sa-grammar-participles", grammar: ["participles", "past-participle"] }
+  - decks: ["sa-grammar-participles", "sa-grammar-participles-declension"]
+    grammar: ["participle-kta", "participle-ktavatu", "participle-satr", "participle-sanac", "participles-declension"]
     listening_passages:
       - { id: "grammar-participles-heard", text: { "en": "A short passage in Classical Sanskrit showing participles, past participle, read aloud" } }
     reading_passages:

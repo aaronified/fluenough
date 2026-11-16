@@ -1,0 +1,192 @@
+# The participles of every verb of the course: the past passive (kta) and past active (ktavatu) participles, and the present active (satr) and middle (sanac) participles, each as its stem.
+# The first form that Wiktionary lists is the one taught. A cell is empty where Wiktionary lists none, and the satr cell is empty for the verbs that take only the middle voice (and the sanac cell for the verbs that take only the active voice).
+schema: 1
+id: "sa-grammar-participles"
+part: "core"
+kind: "rules"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+source: "en.wiktionary.org: the Non-finite forms list on the root entry of each verb (the past passive and past active participles) and the participles row of the Present table on the entry of each verb's present form, read 2026-11-16; Whitney, Sanskrit Grammar 584, 952, 953, 956 and 959 on en.wikisource, read 2026-11-16; Panini, Astadhyayi 1.1.26, 3.2.84, 3.2.102, 3.4.70 and 3.4.71 as typed on sa.wikisource.org/wiki/अष्टाध्यायी, read 2026-11-16; readings from tools/transcribe.py (sa)."
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+  slots: ["kta", "ktavatu", "satr", "sanac"]
+  rows:
+    - word: "sa-0430"
+      forms: { "kta": "भूत", "ktavatu": "भूतवत्", "satr": "भवत्", "sanac": null }
+      readings: { "kta": "bhūta", "ktavatu": "bhūtavat", "satr": "bhavat" }
+    - word: "sa-0431"
+      forms: { "kta": "गत", "ktavatu": "गतवत्", "satr": "गच्छत्", "sanac": null }
+      readings: { "kta": "gata", "ktavatu": "gatavat", "satr": "gacchat" }
+    - word: "sa-0432"
+      forms: { "kta": "पठित", "ktavatu": "पठितवत्", "satr": "पठत्", "sanac": null }
+      readings: { "kta": "paṭhita", "ktavatu": "paṭhitavat", "satr": "paṭhat" }
+    - word: "sa-0433"
+      forms: { "kta": "उदित", "ktavatu": "उदितवत्", "satr": "वदत्", "sanac": null }
+      readings: { "kta": "udita", "ktavatu": "uditavat", "satr": "vadat" }
+    - word: "sa-0434"
+      forms: { "kta": "पक्व", "ktavatu": null, "satr": "पचत्", "sanac": null }
+      readings: { "kta": "pakva", "satr": "pacat" }
+    - word: "sa-0435"
+      forms: { "kta": "नीत", "ktavatu": "नीतवत्", "satr": "नयत्", "sanac": null }
+      readings: { "kta": "nīta", "ktavatu": "nītavat", "satr": "nayat" }
+    - word: "sa-2000"
+      forms: { "kta": "खदित", "ktavatu": "खदितवत्", "satr": "खादत्", "sanac": null }
+      readings: { "kta": "khadita", "ktavatu": "khaditavat", "satr": "khādat" }
+    - word: "sa-2001"
+      forms: { "kta": "पीत", "ktavatu": "पीतवत्", "satr": "पिबत्", "sanac": null }
+      readings: { "kta": "pīta", "ktavatu": "pītavat", "satr": "pibat" }
+    - word: "sa-2002"
+      forms: { "kta": "स्थित", "ktavatu": "स्थितवत्", "satr": "तिष्ठत्", "sanac": null }
+      readings: { "kta": "sthita", "ktavatu": "sthitavat", "satr": "tiṣṭhat" }
+    - word: "sa-2003"
+      forms: { "kta": "हसित", "ktavatu": "हसितवत्", "satr": "हसत्", "sanac": null }
+      readings: { "kta": "hasita", "ktavatu": "hasitavat", "satr": "hasat" }
+    - word: "sa-2004"
+      forms: { "kta": "रक्षित", "ktavatu": "रक्षितवत्", "satr": "रक्षत्", "sanac": null }
+      readings: { "kta": "rakṣita", "ktavatu": "rakṣitavat", "satr": "rakṣat" }
+    - word: "sa-2005"
+      forms: { "kta": "उषित", "ktavatu": "उषितवत्", "satr": "वसत्", "sanac": null }
+      readings: { "kta": "uṣita", "ktavatu": "uṣitavat", "satr": "vasat" }
+    - word: "sa-2006"
+      forms: { "kta": "नत", "ktavatu": "नतवत्", "satr": "नमत्", "sanac": null }
+      readings: { "kta": "nata", "ktavatu": "natavat", "satr": "namat" }
+    - word: "sa-2007"
+      forms: { "kta": "जित", "ktavatu": "जितवत्", "satr": "जयत्", "sanac": null }
+      readings: { "kta": "jita", "ktavatu": "jitavat", "satr": "jayat" }
+    - word: "sa-2008"
+      forms: { "kta": null, "ktavatu": null, "satr": "स्मरत्", "sanac": null }
+      readings: { "satr": "smarat" }
+    - word: "sa-2009"
+      forms: { "kta": "धौत", "ktavatu": "धौतवत्", "satr": "धावत्", "sanac": null }
+      readings: { "kta": "dhauta", "ktavatu": "dhautavat", "satr": "dhāvat" }
+    - word: "sa-2010"
+      forms: { "kta": "पतित", "ktavatu": "पतितवत्", "satr": "पतत्", "sanac": null }
+      readings: { "kta": "patita", "ktavatu": "patitavat", "satr": "patat" }
+    - word: "sa-2011"
+      forms: { "kta": null, "ktavatu": null, "satr": "चलत्", "sanac": null }
+      readings: { "satr": "calat" }
+    - word: "sa-2012"
+      forms: { "kta": null, "ktavatu": null, "satr": "क्रीडत्", "sanac": null }
+      readings: { "satr": "krīḍat" }
+    - word: "sa-2013"
+      forms: { "kta": "जीवित", "ktavatu": "जीवितवत्", "satr": "जीवत्", "sanac": null }
+      readings: { "kta": "jīvita", "ktavatu": "jīvitavat", "satr": "jīvat" }
+    - word: "sa-2014"
+      forms: { "kta": "चरित", "ktavatu": "चरितवत्", "satr": "चरत्", "sanac": null }
+      readings: { "kta": "carita", "ktavatu": "caritavat", "satr": "carat" }
+    - word: "sa-2015"
+      forms: { "kta": "ऊढ", "ktavatu": "ऊढवत्", "satr": "वहत्", "sanac": null }
+      readings: { "kta": "ūḍha", "ktavatu": "ūḍhavat", "satr": "vahat" }
+    - word: "sa-2016"
+      forms: { "kta": "हृत", "ktavatu": "हृतवत्", "satr": "हरत्", "sanac": null }
+      readings: { "kta": "hṛta", "ktavatu": "hṛtavat", "satr": "harat" }
+    - word: "sa-2017"
+      forms: { "kta": "सृत", "ktavatu": "सृतवत्", "satr": "सरत्", "sanac": null }
+      readings: { "kta": "sṛta", "ktavatu": "sṛtavat", "satr": "sarat" }
+    - word: "sa-2018"
+      forms: { "kta": "गीत", "ktavatu": "गीतवत्", "satr": "गायत्", "sanac": null }
+      readings: { "kta": "gīta", "ktavatu": "gītavat", "satr": "gāyat" }
+    - word: "sa-2019"
+      forms: { "kta": "तप्त", "ktavatu": "तप्तवत्", "satr": "तपत्", "sanac": null }
+      readings: { "kta": "tapta", "ktavatu": "taptavat", "satr": "tapat" }
+    - word: "sa-2020"
+      forms: { "kta": "धृत", "ktavatu": "धृतवत्", "satr": "धरत्", "sanac": null }
+      readings: { "kta": "dhṛta", "ktavatu": "dhṛtavat", "satr": "dharat" }
+    - word: "sa-2021"
+      forms: { "kta": "जपित", "ktavatu": "जपितवत्", "satr": "जपत्", "sanac": null }
+      readings: { "kta": "japita", "ktavatu": "japitavat", "satr": "japat" }
+    - word: "sa-2022"
+      forms: { "kta": "खात", "ktavatu": "खातवत्", "satr": "खनत्", "sanac": null }
+      readings: { "kta": "khāta", "ktavatu": "khātavat", "satr": "khanat" }
+    - word: "sa-2023"
+      forms: { "kta": "हूत", "ktavatu": "हूतवत्", "satr": "ह्वयत्", "sanac": null }
+      readings: { "kta": "hūta", "ktavatu": "hūtavat", "satr": "hvayat" }
+    - word: "sa-2100"
+      forms: { "kta": null, "ktavatu": null, "satr": "क्षरत्", "sanac": null }
+      readings: { "satr": "kṣarat" }
+    - word: "sa-2101"
+      forms: { "kta": "रुद्ध", "ktavatu": "रुद्धवत्", "satr": "रुन्धत्", "sanac": null }
+      readings: { "kta": "ruddha", "ktavatu": "ruddhavat", "satr": "rundhat" }
+    - word: "sa-2102"
+      forms: { "kta": null, "ktavatu": null, "satr": null, "sanac": "लभमान" }
+      readings: { "sanac": "labhamāna" }
+    - word: "sa-2103"
+      forms: { "kta": "वृत्त", "ktavatu": "वृत्तवत्", "satr": null, "sanac": "वर्तमान" }
+      readings: { "kta": "vṛtta", "ktavatu": "vṛttavat", "sanac": "vartamāna" }
+    - word: "sa-2104"
+      forms: { "kta": "ईक्षित", "ktavatu": "ईक्षितवत्", "satr": null, "sanac": "ईक्षमाण" }
+      readings: { "kta": "īkṣita", "ktavatu": "īkṣitavat", "sanac": "īkṣamāṇa" }
+    - word: "sa-2105"
+      forms: { "kta": null, "ktavatu": null, "satr": "सत्", "sanac": null }
+      readings: { "satr": "sat" }
+    - word: "sa-2106"
+      forms: { "kta": "रुदित", "ktavatu": "रुदितवत्", "satr": "रुदत्", "sanac": null }
+      readings: { "kta": "rudita", "ktavatu": "ruditavat", "satr": "rudat" }
+    - word: "sa-2107"
+      forms: { "kta": "यात", "ktavatu": "यातवत्", "satr": "यात्", "sanac": null }
+      readings: { "kta": "yāta", "ktavatu": "yātavat", "satr": "yāt" }
+    - word: "sa-2108"
+      forms: { "kta": null, "ktavatu": null, "satr": "ब्रुवत्", "sanac": "ब्रुवाण" }
+      readings: { "satr": "bruvat", "sanac": "bruvāṇa" }
+    - word: "sa-2109"
+      forms: { "kta": "दात", "ktavatu": "दातवत्", "satr": "ददत्", "sanac": null }
+      readings: { "kta": "dāta", "ktavatu": "dātavat", "satr": "dadat" }
+    - word: "sa-2110"
+      forms: { "kta": "हित", "ktavatu": "हितवत्", "satr": "दधत्", "sanac": "दधान" }
+      readings: { "kta": "hita", "ktavatu": "hitavat", "satr": "dadhat", "sanac": "dadhāna" }
+    - word: "sa-2111"
+      forms: { "kta": "स्पष्ट", "ktavatu": "स्पष्टवत्", "satr": "पश्यत्", "sanac": null }
+      readings: { "kta": "spaṣṭa", "ktavatu": "spaṣṭavat", "satr": "paśyat" }
+    - word: "sa-2112"
+      forms: { "kta": "नृत्त", "ktavatu": "नृत्तवत्", "satr": "नृत्यत्", "sanac": null }
+      readings: { "kta": "nṛtta", "ktavatu": "nṛttavat", "satr": "nṛtyat" }
+    - word: "sa-2113"
+      forms: { "kta": "श्रुत", "ktavatu": "श्रुतवत्", "satr": "शृण्वत्", "sanac": "शृण्वान" }
+      readings: { "kta": "śruta", "ktavatu": "śrutavat", "satr": "śṛṇvat", "sanac": "śṛṇvāna" }
+    - word: "sa-2114"
+      forms: { "kta": "लिखित", "ktavatu": "लिखितवत्", "satr": "लिखत्", "sanac": null }
+      readings: { "kta": "likhita", "ktavatu": "likhitavat", "satr": "likhat" }
+    - word: "sa-2115"
+      forms: { "kta": "विष्ट", "ktavatu": "विष्टवत्", "satr": "विशत्", "sanac": null }
+      readings: { "kta": "viṣṭa", "ktavatu": "viṣṭavat", "satr": "viśat" }
+    - word: "sa-2116"
+      forms: { "kta": "इष्ट", "ktavatu": "इष्टवत्", "satr": "इच्छत्", "sanac": null }
+      readings: { "kta": "iṣṭa", "ktavatu": "iṣṭavat", "satr": "icchat" }
+    - word: "sa-2117"
+      forms: { "kta": null, "ktavatu": null, "satr": "तुदत्", "sanac": null }
+      readings: { "satr": "tudat" }
+    - word: "sa-2118"
+      forms: { "kta": "कृत", "ktavatu": "कृतवत्", "satr": "कुर्वत्", "sanac": null }
+      readings: { "kta": "kṛta", "ktavatu": "kṛtavat", "satr": "kurvat" }
+    - word: "sa-2119"
+      forms: { "kta": "ज्ञात", "ktavatu": "ज्ञातवत्", "satr": "जानत्", "sanac": "जानान" }
+      readings: { "kta": "jñāta", "ktavatu": "jñātavat", "satr": "jānat", "sanac": "jānāna" }
+    - word: "sa-2120"
+      forms: { "kta": "क्रीत", "ktavatu": "क्रीतवत्", "satr": "क्रीणत्", "sanac": "क्रीणान" }
+      readings: { "kta": "krīta", "ktavatu": "krītavat", "satr": "krīṇat", "sanac": "krīṇāna" }
+    - word: "sa-2121"
+      forms: { "kta": "गृहीत", "ktavatu": "गृहीतवत्", "satr": "गृह्णत्", "sanac": null }
+      readings: { "kta": "gṛhīta", "ktavatu": "gṛhītavat", "satr": "gṛhṇat" }
+    - word: "sa-2122"
+      forms: { "kta": null, "ktavatu": null, "satr": "कथयत्", "sanac": null }
+      readings: { "satr": "kathayat" }
+    - word: "sa-2123"
+      forms: { "kta": null, "ktavatu": null, "satr": "पूजयत्", "sanac": null }
+      readings: { "satr": "pūjayat" }
+rules:
+  - id: "sa-rule-participle-kta"
+    slots: ["kta"]
+    words: [{ word: "क्तक्तवतू निष्ठा", reading: "ktaktavatū niṣṭhā" }, { word: "निष्ठा", reading: "niṣṭhā" }, { word: "भूते", reading: "bhūte" }, { word: "कृ", reading: "kṛ" }, { word: "कृत", reading: "kṛta" }, { word: "गम्", reading: "gam" }, { word: "गत", reading: "gata" }, { word: "नी", reading: "nī" }, { word: "नीत", reading: "nīta" }, { word: "पठित", reading: "paṭhita" }, { word: "पठ्", reading: "paṭh" }, { word: "पीत", reading: "pīta" }, { word: "हित", reading: "hita" }, { word: "ऊढ", reading: "ūḍha" }, { word: "तयोरेव कृत्यक्तखलर्थाः", reading: "tayoreva kṛtyaktakhalarthāḥ" }]
+  - id: "sa-rule-participle-ktavatu"
+    slots: ["ktavatu"]
+    words: [{ word: "कृतवान्", reading: "kṛtavān" }, { word: "कृत", reading: "kṛta" }, { word: "कृतवत्", reading: "kṛtavat" }, { word: "कृ", reading: "kṛ" }, { word: "गतवत्", reading: "gatavat" }, { word: "गम्", reading: "gam" }, { word: "पठितवत्", reading: "paṭhitavat" }, { word: "पठ्", reading: "paṭh" }, { word: "कृतवती", reading: "kṛtavatī" }]
+  - id: "sa-rule-participle-satr"
+    slots: ["satr"]
+    words: [{ word: "भवत्", reading: "bhavat" }, { word: "भू", reading: "bhū" }, { word: "गच्छत्", reading: "gacchat" }, { word: "गम्", reading: "gam" }, { word: "कुर्वत्", reading: "kurvat" }, { word: "कृ", reading: "kṛ" }]
+  - id: "sa-rule-participle-sanac"
+    slots: ["sanac"]
+    words: [{ word: "लभमान", reading: "labhamāna" }, { word: "लभ्", reading: "labh" }, { word: "वर्तमान", reading: "vartamāna" }, { word: "वृत्", reading: "vṛt" }, { word: "दधान", reading: "dadhāna" }, { word: "धा", reading: "dhā" }, { word: "जानान", reading: "jānāna" }, { word: "ज्ञा", reading: "jñā" }, { word: "ब्रुवाण", reading: "bruvāṇa" }, { word: "ब्रू", reading: "brū" }]
