@@ -68,7 +68,7 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .chip.off{background:none;box-shadow:inset 0 0 0 1px var(--olv);color:var(--onSv)}
 /* popup menu (PopupMenuButton: surfaceContainer, radius 4, elevation 3, width 112..280) */
 .scrim{position:absolute;inset:0;background:transparent}
-.menu{position:absolute;top:52px;right:8px;width:280px;background:var(--sCont);border-radius:4px;padding:8px 0;box-shadow:0 6px 18px rgba(0,0,0,.35),0 0 0 1px var(--olv);z-index:5}
+.menu{position:absolute;top:52px;right:8px;width:300px;max-height:calc(100% - 60px);overflow-y:auto;scrollbar-width:none;background:var(--sCont);border-radius:4px;padding:8px 0;box-shadow:0 6px 18px rgba(0,0,0,.35),0 0 0 1px var(--olv);z-index:5}
 .mi{display:flex;align-items:center;gap:12px;min-height:calc(48px*var(--t)*.8);padding:6px 12px 6px 12px;font-size:calc(16px*var(--t));line-height:1.2;width:100%;text-align:start;border:0;background:none}
 .mi .ck{width:24px;height:24px;flex:none;color:var(--p);display:flex}
 .mi .tx{flex:1;min-width:0}
@@ -165,6 +165,7 @@ const L={
  hi:{name:'हिन्दुस्तानी',en:'Hindustani',w:'पानी',r:'pānī',ipa:'[pɑːniː]',gloss:'water',opts:['water','fire','house'],card:'hi-0333',deck:'hi-first-words',pair:'Hindustani from English',learn:['Hindustani','Telugu','Bengali']},
  bn:{name:'বাংলা',en:'Bengali',w:'জল',r:'jôl',ipa:'[dʒɔl]',gloss:'water',opts:['water','fire','house'],card:'bn-0350',deck:'bn-first-words',pair:'Bengali from English',learn:['Bengali','Telugu','Hindustani']}};
 const REASONS=['The translation is wrong','The reading or IPA is wrong','The audio is wrong or missing','The picture or example is wrong','Offensive or inappropriate','Something else'];
+const IPANEED='Turn on IPA pronunciations to use this';
 const S={theme:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light',lang:'te',hl:'1',ipa:'1',tr:'mail',lf:'sheet'};
 const VER='0.10.6';
 function langBar(withBug){
@@ -191,15 +192,15 @@ function langScreen(open){
  const ks=['te','hi','bn'];
  const rows=ks.map(k=>`<div class="lrow"><span class="n">${L[k].name} · ${L[k].en}</span><div class="chips"><span class="chip">Speak</span><span class="chip">Hear</span><span class="chip">Read</span><span class="chip off">Write</span></div></div>`).join('');
  const ipaOn=S.ipa==='1';
-  const tg=(t,o={})=>`<button class="mi ${o.dis?'dis':''}" role="menuitemcheckbox" aria-checked="${!!o.on}" ${o.dis?'disabled':''}><span class="bx ${o.on?'on':''}">${ic(o.on?'cbOn':'cbOff')}</span><span class="tx">${t}</span></button>`;
+  const tg=(t,o={})=>`<button class="mi ${o.dis?'dis':''}" role="menuitemcheckbox" aria-checked="${!!o.on}" ${o.dis?'disabled':''}><span class="bx ${o.on?'on':''}">${ic(o.on?'cbOn':'cbOff')}</span><span class="tx">${t}<span class="v">${o.on?o.sOn:o.sOff}</span></span></button>`;
  const bt=(t,o={})=>`<button class="mi" role="menuitem"><span class="tx">${t}${o.sub?`<span class="v">${o.sub}</span>`:''}</span><span class="ch">${ic('chev',20)}</span></button>`;
  const menu=`<div class="menu chg" role="menu" aria-label="More">
   <div class="mlab">Show</div>
-  ${tg('Latin-letter readings',{on:true})}
-  ${tg('IPA pronunciations',{on:ipaOn})}
-  ${tg('IPA replaces transliteration',{dis:!ipaOn,on:false})}
-  ${tg('Adult content (18+)',{on:false})}
-  ${tg('Hide what is above my level',{on:true})}
+  ${tg('Latin-letter readings',{on:true,sOn:'A Latin-letter reading under words in other scripts',sOff:'Only the script, no reading'})}
+  ${tg('IPA pronunciations',{on:ipaOn,sOn:'How each word is pronounced will be shown under words, in IPA standards',sOff:'No IPA on cards or passages'})}
+  ${tg('IPA replaces transliteration',{dis:!ipaOn,on:false,sOn:'Words show their IPA where the transliteration was (based on ISO 15919)',sOff:ipaOn?'Words show their transliteration, with the IPA under it':IPANEED})}
+  ${tg('Adult content (18+)',{on:false,sOn:'Rude words and offensive cards are shown',sOff:'Rude words stay hidden behind their warnings'})}
+  ${tg('Hide what is above my level',{on:true,sOn:'Search leaves out decks, topics and units above your level',sOff:'Search lists them, marked with their level and locked'})}
   <div class="mdiv"></div>
   <div class="mlab">Open</div>
   ${bt('Fact languages',{sub:'All known languages'})}
