@@ -2,6 +2,7 @@
 # the questions after the learner has marked the work as seen, read or heard. Nothing of a work is quoted (wiki/Plan-Language-Completeness.md,
 # "Source-it-yourself works"). No links are given: no link has been checked. Briefings and questions use only what the page named in the creators file or the work's own
 # Wikipedia article says (read 2026-11-15). Levels are defaults (B1) until a reviewer sets them. Not reviewed by a Kannada speaker (docs/review-queue/kn.md).
+# Wave 2 (2026-11-16): works added from en and kn Wikipedia and, for Marali Mannige, the 1959 Bengali translation scanned in the Digital Library of India (archive.org in.ernet.dli.2015.457745) and the Kuvempu University M.Phil. thesis archive.org kuh.mphil.585.pay.130221, which dates the writing to 1941 and names the village Kodi. Bedara Kannappa, Kittur Chennamma and Sandhya Raga (films) were dropped: no readable plot source (wiki/Deck-Work-Queue-KN.md section 7).
 schema: 1
 kind: "recommendations"
 id: "recommendations-kn"
@@ -141,4 +142,88 @@ recommendations:
       - { id: "q1", prompt: { en: "Who first completed the remaining eight chapters that Kumara Vyasa left incomplete?" }, options: { en: ["Thimmanna Kavi", "Lakshmisha", "Chamarasa"] }, answer: 1 }
       - { id: "q2", prompt: { en: "According to local belief, who narrated the story to the poet from behind the statue?" }, options: { en: ["Sri Veera Narayana, the Lord Vishnu", "The sage Vyasa", "The poet's teacher"] }, answer: 1 }
       - { id: "q3", prompt: { en: "What condition did the narrator lay down for the poet?" }, options: { en: ["To write only at night", "He must not try to see the source of the voice", "To tell no one the story"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-kasturi-nivasa"
+    medium: "film"
+    title: { text: "ಕಸ್ತೂರಿ ನಿವಾಸ", reading: "kastūri nivāsa" }
+    creator: ["kn-s-k-bhagavan"]
+    year: 1971
+    level: "B1"
+    briefing: { en: "A 1971 Kannada family drama written and directed by the duo Dorai-Bhagavan, about a man who is generous to a fault." }
+    questions:
+      - { id: "q1", prompt: { en: "What does Ravi Varma own?" }, options: { en: ["A coffee estate", "A matchbox factory", "A cinema hall"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Why does Chandru resign and start his own company?" }, options: { en: ["Ravi, a traditionalist, is angered by his idea of changing the company's structure", "He is offered a job in a bank", "He quarrels with Ravi over Neela"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Neela asks Ravi for something for her sick daughter. What had he just sold?" }, options: { en: ["His house", "A gold ring", "The dove"] }, answer: 3 }
+      - { id: "q4", prompt: { en: "What does Ravi do when his secretary Neela asks his permission to marry Chandru?" }, options: { en: ["He forbids it", "He blesses her", "He leaves the city"] }, answer: 2 }
+      - { id: "q5", prompt: { en: "Ravi puts his house up for sale. What does he do when Chandru calls for the highest bid so as to give it back to him?" }, options: { en: ["He refuses to accept it", "He takes it gladly", "He asks for a higher price"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-marali-mannige"
+    medium: "book"
+    title: { text: "ಮರಳಿ ಮಣ್ಣಿಗೆ", reading: "maraḷi maṇṇige" }
+    creator: ["kn-k-shivaram-karanth"]
+    year: 1941
+    level: "B1"
+    script: "kannada"
+    briefing: { en: "A Kannada novel by K. Shivaram Karanth. Its English title is Back to the Soil." }
+    questions:
+      - { id: "q1", prompt: { en: "Whose wedding, held in a monsoon downpour, is told in the opening chapter?" }, options: { en: ["Parvati's", "Saraswati's", "Nagaveni's"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "How many generations of a family does the story follow, from about 1850 to 1940?" }, options: { en: ["Two", "Five", "Three"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "What strikes the villages after the chariot fair at Salagrama?" }, options: { en: ["A flood", "An epidemic of fever", "A famine"] }, answer: 2 }
+      - { id: "q4", prompt: { en: "Whose marriage is being fixed at the end, with Saraswati, the daughter of Nagappa of Brahmavara?" }, options: { en: ["Ram's", "Janardan's", "Nagappa's"] }, answer: 1 }
+      - { id: "q5", prompt: { en: "Which village on the coast of Dakshina Kannada is the family's home?" }, options: { en: ["Kote", "Kodi", "Kundapura"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-mookajjiya-kanasugalu"
+    medium: "book"
+    title: { text: "ಮೂಕಜ್ಜಿಯ ಕನಸುಗಳು", reading: "mūkajjiya kanasugaḷu" }
+    creator: ["kn-k-shivaram-karanth"]
+    year: 1968
+    level: "B1"
+    script: "kannada"
+    briefing: { en: "A 1968 Kannada novel by K. Shivaram Karanth about an old woman and her grandson. The title means Dreams of Mookajji." }
+    questions:
+      - { id: "q1", prompt: { en: "In which village is the novel set?" }, options: { en: ["Mooduru", "Kote", "Hindgana"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "At what age did Mookajji lose her husband?" }, options: { en: ["Twenty", "Ten", "Forty"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What special power does Mookajji have?" }, options: { en: ["She can cure the sick", "She can speak to animals", "She sees what will happen and what has happened, like waking dreams"] }, answer: 3 }
+      - { id: "q4", prompt: { en: "What does her grandson Subbaraya keep asking her about?" }, options: { en: ["God, tradition, belief and other social questions", "Prices at the market", "The history of the royal family"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-mookajjiya-kanasugalu-film"
+    medium: "film"
+    title: { text: "ಮೂಕಜ್ಜಿಯ ಕನಸುಗಳು", reading: "mūkajjiya kanasugaḷu" }
+    creator: ["kn-p-sheshadri", "kn-k-shivaram-karanth"]
+    year: 2019
+    level: "B1"
+    briefing: { en: "A 2019 Kannada film directed by P. Sheshadri, based on K. Shivaram Karanth's novel of the same name, set in coastal Karnataka." }
+    questions:
+      - { id: "q1", prompt: { en: "What object does Subbaraya bring home that starts Mookajji's first story?" }, options: { en: ["A wicker basket", "A gold chain", "A clay pot"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who is the rich merchant who pursues Naagi?" }, options: { en: ["Ramanna", "Sheenappa", "Anant Rao"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What leads Mookajji to stop speaking?" }, options: { en: ["An illness in childhood", "A quarrel with her brother", "Being rudely told to leave the temple by the priest"] }, answer: 3 }
+      - { id: "q4", prompt: { en: "Who is Thippi?" }, options: { en: ["Mookajji's childhood friend in a neighbouring village", "Subbaraya's wife", "Naagi's daughter"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-malegalalli-madumagalu"
+    medium: "book"
+    title: { text: "ಮಲೆಗಳಲ್ಲಿ ಮದುಮಗಳು", reading: "malegaḷalli madumagaḷu" }
+    creator: ["kn-kuvempu"]
+    year: 1967
+    level: "B1"
+    script: "kannada"
+    briefing: { en: "A Kannada novel by Kuvempu, first published in 1967, set among the hills and villages of the Malnad in the nineteenth century." }
+    questions:
+      - { id: "q1", prompt: { en: "What is the name of Guthi's dog?" }, options: { en: ["Moti", "Tiger", "Huliya"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "Why does Guthi set out on his long journey from Simbavi?" }, options: { en: ["To bring away his cousin Timmi, whose father plans to marry her to another man", "To look for work in a town", "To attend a temple festival"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What is Jeevaratnayya's role in the story?" }, options: { en: ["A landowner", "A priest who spreads Christianity", "A village astrologer"] }, answer: 2 }
+      - { id: "q4", prompt: { en: "To whom does Venkanna of Huvalli plan to give his daughter Chinnamma?" }, options: { en: ["Mukundayya", "Shankara Heggade", "Timmappa Heggade"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-sri-ramayana-darshanam"
+    medium: "book"
+    title: { text: "ಶ್ರೀ ರಾಮಾಯಣ ದರ್ಶನಂ", reading: "śrī rāmāyaṇa darśanaṁ" }
+    creator: ["kn-kuvempu"]
+    year: 1949
+    level: "B1"
+    script: "kannada"
+    briefing: { en: "A modern Kannada epic poem by Kuvempu that retells the Ramayana. Its first volume came out in 1949." }
+    questions:
+      - { id: "q1", prompt: { en: "What does Rama do when Sita enters the fire in Kuvempu's telling?" }, options: { en: ["He enters the flames too and comes out holding her hand", "He turns away and leaves", "He stops her with a word"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who is the poem dedicated to?" }, options: { en: ["His elder brother", "His teacher Sri Venkannayya", "His publisher"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Into how many parts (sampuṭa) is the poem divided?" }, options: { en: ["Two", "Seven", "Four"] }, answer: 3 }
+      - { id: "q4", prompt: { en: "Which of these is the name of one of its parts?" }, options: { en: ["Kishkindha sampuṭa", "Sundara sampuṭa", "Bala sampuṭa"] }, answer: 1 }
     tags: ["unreviewed"]
