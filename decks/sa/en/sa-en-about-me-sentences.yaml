@@ -1,0 +1,33 @@
+schema: 1
+id: "sa-en-about-me-sentences"
+kind: "layer"
+core: "sa-about-me-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about me"
+description: "Short sentences about your name, age and language, built only from words already taught. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-3050":
+    native: "What is the name?"
+    bases: { "किं": "what" }
+    confusables: { "w1": { why: "Who, not what: कः (kaḥ) asks who." }, "w2": { why: "Language, not name: भाषा (bhāṣā) means language." } }
+    notes: { "n1": "किम् (kim), what, becomes किं (kiṃ) before the consonant of नाम (nāma), name." }
+  "sa-3051":
+    native: "How old?"
+    confusables: { "w1": { why: "Name, not age: नाम (nāma) means name." }, "w2": { why: "Birth, not age: जातिः (jātiḥ) means birth or kind." } }
+  "sa-3052":
+    native: "The language is Sanskrit."
+    confusables: { "w1": { why: "Name, not language: नाम (nāma) means name." }, "w2": { why: "Birth, not language: जातिः (jātiḥ) means birth or kind." } }
+  "sa-3053":
+    native: "How many languages?"
+    bases: { "भाषाः": "language (plural: languages)" }
+    confusables: { "w1": { why: "Who, not how many: कः (kaḥ) asks who." }, "w2": { why: "When, not how many: कदा (kadā) asks when." } }
+  "sa-3054":
+    native: "I know the name."
+    bases: { "अहं": "I", "जानामि": "to know (I know)" }
+    confusables: { "w1": { why: "Language, not name: भाषा (bhāṣā) means language." }, "w2": { why: "Age, not name: वयः (vayaḥ) means age." } }
+  "sa-3055":
+    native: "Do you know the name?"
+    bases: { "त्वं": "you (to one person)", "जानासि": "to know (you know)" }
+    confusables: { "w1": { why: "I, not you: अहम् (aham) means I." }, "w2": { why: "Age, not name: वयः (vayaḥ) means age." } }
