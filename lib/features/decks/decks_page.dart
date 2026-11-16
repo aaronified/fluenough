@@ -630,11 +630,13 @@ class _DecksPageState extends State<DecksPage> {
         }
         _wasOpen = open;
         final language = languages.firstOrNull;
-        // The culture list is the one search's other list: the path's tabs and
-        // chips do not apply to it.
         if (_culture && _cultureFor != code) _culture = false;
         final cultureMode = _cultureShown(code);
-        final outcome = searching && !cultureMode
+        // Text in the bar, and no chip narrowing the deck part: the culture
+        // list is searched too.
+        final cultureHits =
+            code != null && _chips.isEmpty && applied.text.isNotEmpty;
+        final outcome = searching
             ? runSearch(
                 state,
                 l10n,
@@ -644,10 +646,10 @@ class _DecksPageState extends State<DecksPage> {
                 planOf: widget.planOf,
               )
             : null;
-        final menu = cultureMode ? null : _menu(l10n, state, parsed, code);
+        final menu = _menu(l10n, state, parsed, code);
         // The path stays under the search while nothing is typed, darkened.
         final dim = open && !searching ? 0.5 : 1.0;
-        final view = (searching && !cultureMode) || code == null
+        final view = searching || code == null
             ? null
             : courseView(
                 state,
@@ -697,7 +699,6 @@ class _DecksPageState extends State<DecksPage> {
                           _searchBar(l10n, state, language?.name),
                           ?menu,
                           if (outcome == null &&
-                              !cultureMode &&
                               _focus.hasFocus &&
                               _chips.isEmpty &&
                               _search.text.trim().isEmpty)
@@ -764,6 +765,7 @@ class _DecksPageState extends State<DecksPage> {
                           query: _search.text,
                           language: code,
                           onSearch: _setText,
+                          otherResults: cultureHits,
                         )
                       else
                         SearchResultsSliver(
@@ -773,7 +775,22 @@ class _DecksPageState extends State<DecksPage> {
                           onRemoveKind: () =>
                               setState(() => _chips.remove(SearchToken.kind)),
                         ),
-                    if (cultureMode && code != null)
+                    // Search looks in everything: the culture decks and works
+                    // that match the text follow the deck results, whichever
+                    // list the screen was showing.
+                    if (cultureHits && code != null)
+                      SliverToBoxAdapter(
+                        child: CultureList(
+                          language: code,
+                          query: applied.text,
+                          openWork: _openWork,
+                          showEmpty: false,
+                          onToggleWork: (id) => setState(
+                            () => _openWork = _openWork == id ? '' : id,
+                          ),
+                        ),
+                      ),
+                    if (cultureMode && !searching && code != null)
                       SliverIgnorePointer(
                         ignoring: scrim,
                         sliver: SliverOpacity(

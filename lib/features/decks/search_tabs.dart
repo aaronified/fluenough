@@ -182,7 +182,13 @@ class TypedSearchResults extends StatefulWidget {
     required this.query,
     required this.language,
     required this.onSearch,
+    this.otherResults = false,
   });
+
+  /// Whether results of another kind (the culture list) follow these: with
+  /// none here, nothing is said, so that the page does not claim there is
+  /// nothing.
+  final bool otherResults;
 
   /// The Decks tab's word search of the same text: the words found, and the
   /// deck files that could not be read.
@@ -267,7 +273,11 @@ class _TypedSearchResultsState extends State<TypedSearchResults> {
     final corrected = close ? correctedQuery(text, items) : null;
     return SliverMainAxisGroup(
       slivers: <Widget>[
-        if (tabs.isEmpty && widget.outcome.broken.isEmpty)
+        if (tabs.isEmpty &&
+            widget.outcome.broken.isEmpty &&
+            widget.otherResults)
+          const SliverToBoxAdapter(child: SizedBox.shrink())
+        else if (tabs.isEmpty && widget.outcome.broken.isEmpty)
           SliverToBoxAdapter(
             child: _NoResults(
               query: text,

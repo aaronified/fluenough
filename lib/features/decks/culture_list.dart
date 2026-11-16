@@ -41,6 +41,7 @@ class CultureList extends StatelessWidget {
     required this.query,
     required this.openWork,
     required this.onToggleWork,
+    this.showEmpty = true,
   });
 
   final String language;
@@ -50,6 +51,10 @@ class CultureList extends StatelessWidget {
   final String? openWork;
 
   final ValueChanged<String> onToggleWork;
+
+  /// Whether to say so when nothing is listed; a search that also looks
+  /// elsewhere leaves the saying to the other results.
+  final bool showEmpty;
 
   @override
   Widget build(BuildContext context) {
@@ -72,6 +77,7 @@ class CultureList extends StatelessWidget {
           decksName: l10n.decksCultureDecksHeader,
         );
         if (sections.isEmpty) {
+          if (!showEmpty) return const SizedBox.shrink();
           return Padding(
             padding: const EdgeInsetsDirectional.symmetric(vertical: 32),
             child: Text(

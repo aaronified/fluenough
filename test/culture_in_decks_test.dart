@@ -15,6 +15,7 @@ import 'package:fluenough/features/decks/culture_list.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/decks/decks_page.dart';
 import 'package:fluenough/features/decks/path_view.dart';
+import 'package:fluenough/features/decks/search_tabs.dart';
 import 'package:fluenough/l10n/app_localizations_en.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -198,18 +199,58 @@ void main() {
   });
 
   group('the one search', () {
-    testWidgets('filters the culture list, ignoring accents', (tester) async {
-      usePhone(tester);
-      await _decks(tester);
-      await _toCulture(tester);
-      await _search(tester, 'pelicula');
-      expect(find.text(_film), findsOneWidget);
-      expect(find.text(_book), findsNothing);
-      expect(_header(_l10n.recKindFilms, 1), findsOneWidget);
-      // A section with no match is gone.
-      expect(find.textContaining(_l10n.recKindBooks), findsNothing);
-      expect(find.byType(CultureList), findsOneWidget);
-    });
+    for (final inCulture in <bool>[false, true]) {
+      final where = inCulture ? 'in the culture list' : 'on the deck path';
+
+      Future<void> open(WidgetTester tester) async {
+        usePhone(tester);
+        await _decks(tester);
+        if (inCulture) await _toCulture(tester);
+      }
+
+      testWidgets('finds a film $where, ignoring accents', (tester) async {
+        await open(tester);
+        await _search(tester, 'pelicula');
+        expect(find.text(_film), findsOneWidget);
+        expect(find.text(_book), findsNothing);
+        expect(_header(_l10n.recKindFilms, 1), findsOneWidget);
+        // A section with no match is gone.
+        expect(find.textContaining(_l10n.recKindBooks), findsNothing);
+        expect(find.byType(CoursePathSliver), findsNothing);
+      });
+
+      testWidgets('finds a culture deck $where by its name', (tester) async {
+        await open(tester);
+        await _search(tester, 'verse');
+        expect(find.text('Culture: verse'), findsWidgets);
+        expect(find.text(_film), findsNothing);
+      });
+
+      testWidgets('finds decks and cards $where as well', (tester) async {
+        await open(tester);
+        await _search(tester, 'tarde');
+        expect(find.byType(TypedSearchResults), findsOneWidget);
+        expect(find.text(_l10n.searchNothing('tarde')), findsNothing);
+      });
+
+      testWidgets('says so once $where when nothing matches', (tester) async {
+        await open(tester);
+        await _search(tester, 'zzq');
+        expect(find.text(_l10n.searchNothing('zzq')), findsOneWidget);
+        expect(find.text(_l10n.decksEmptySearch), findsNothing);
+        expect(find.textContaining(_l10n.recKindFilms), findsNothing);
+      });
+
+      testWidgets('clearing the search returns to the mode $where', (
+        tester,
+      ) async {
+        await open(tester);
+        await _search(tester, 'pelicula');
+        await _search(tester, '');
+        expect(find.byType(CultureList), findsNWidgets(inCulture ? 1 : 0));
+        expect(find.byType(CoursePathSliver), findsNWidgets(inCulture ? 0 : 1));
+      });
+    }
 
     testWidgets('matches the year', (tester) async {
       usePhone(tester);
@@ -229,29 +270,13 @@ void main() {
       expect(find.text(_book), findsNothing);
     });
 
-    testWidgets('finds a culture deck by its name', (tester) async {
+    testWidgets('a chip narrows the deck part and leaves out culture', (
+      tester,
+    ) async {
       usePhone(tester);
       await _decks(tester);
-      await _toCulture(tester);
-      await _search(tester, 'verse');
-      expect(find.text('Culture: verse'), findsOneWidget);
+      await _search(tester, 'kind:grammar pelicula');
       expect(find.text(_film), findsNothing);
-    });
-
-    testWidgets('shows the empty state when nothing matches', (tester) async {
-      usePhone(tester);
-      await _decks(tester);
-      await _toCulture(tester);
-      await _search(tester, 'zzq');
-      expect(find.text(_l10n.decksEmptySearch), findsOneWidget);
-      expect(find.byType(CultureList), findsOneWidget);
-    });
-
-    testWidgets('still searches the path when the path shows', (tester) async {
-      usePhone(tester);
-      await _decks(tester);
-      await _search(tester, 'zzq');
-      expect(find.byType(CultureList), findsNothing);
     });
 
     testWidgets('sections are computed from the catalog', (tester) async {
@@ -462,6 +487,7 @@ void main() {
     screen('the culture list at B1', on(reach: 'b1'));
     screen('the culture list with a completed work', on(done: true));
     screen('the culture list, nothing found', on(search: 'zzq'));
+    screen('a search with culture results', on(search: 'pelicula'));
     screen('the completed works on Today', (tester, mode) async {
       final state = await cultureApp();
       await _complete(state, 'zz-rec-camino');
