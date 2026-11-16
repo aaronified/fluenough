@@ -1,0 +1,172 @@
+schema: 1
+id: "sa-en-first-words"
+kind: "layer"
+core: "sa-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+description: "Ten words to start with, from the first pronouns and nouns of Classical Sanskrit: I and you, water, fire, god, not, one, cow, horse and the Sanskrit language. Readings are based on IAST, the scheme the Sanskrit texts use, and the pronunciation is broad. Not yet checked by a Sanskritist: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-0021":
+    native: "I."
+    notes:
+      "n1": "The final m becomes ṃ before a consonant, as in ahaṃ gacchāmi, I go, while the word stands alone as aham."
+    examples:
+      "अहं गच्छामि":
+        native: "I go."
+        bases:
+          "अहं": "I"
+          "गच्छामि": "to go (I go)"
+      "अहं पश्यामि":
+        native: "I see."
+        bases:
+          "अहं": "I"
+          "पश्यामि": "to see (I see)"
+  "sa-0022":
+    native: "You (to one person)."
+    notes:
+      "n1": "Tvam is you to one person; the plural you is yūyam, which is not in this deck."
+    examples:
+      "त्वं जानासि":
+        native: "You know."
+        bases:
+          "त्वं": "you"
+          "जानासि": "to know (you know)"
+      "त्वं देवः असि":
+        native: "You are a god."
+        bases:
+          "त्वं": "you"
+          "असि": "to be (you are)"
+  "sa-0023":
+    native: "Water."
+    notes:
+      "n1": "A neuter noun from the stem jala; the object form jalaṃ is used in jalaṃ pibāmi, I drink water."
+    bases:
+      "जलम्": "water"
+    examples:
+      "जलं पिबामि":
+        native: "I drink water."
+        bases:
+          "जलं": "water"
+          "पिबामि": "to drink (I drink)"
+      "जलम् अस्ति":
+        native: "There is water."
+        bases:
+          "जलम्": "water"
+          "अस्ति": "to be (is)"
+  "sa-0024":
+    native: "Fire."
+    notes:
+      "n1": "The nominative ends in visarga (ḥ), and the accusative is agniṃ, as in agniṃ paśya, look at the fire."
+    bases:
+      "अग्निः": "fire"
+    examples:
+      "अग्निः ज्वलति":
+        native: "Fire burns."
+        bases:
+          "अग्निः": "fire"
+          "ज्वलति": "to burn (it burns)"
+      "अग्निं पश्य":
+        native: "Look at the fire."
+        bases:
+          "अग्निं": "fire"
+          "पश्य": "to see (look!)"
+  "sa-0025":
+    native: "God."
+    notes:
+      "n1": "The nominative is devaḥ, and the plural devāḥ means gods, as in devāḥ santi, there are gods."
+    bases:
+      "देवः": "god"
+    examples:
+      "देवः अस्ति":
+        native: "There is a god."
+        bases:
+          "देवः": "god"
+          "अस्ति": "to be (is)"
+      "देवाः सन्ति":
+        native: "There are gods."
+        bases:
+          "देवाः": "gods"
+          "सन्ति": "to be (they are)"
+  "sa-0026":
+    native: "Not."
+    notes:
+      "n1": "It negates the verb it stands before, as in ahaṃ na jānāmi, I do not know."
+    examples:
+      "अहं न जानामि":
+        native: "I do not know."
+        bases:
+          "न": "not"
+          "जानामि": "to know (I know)"
+      "त्वं न गच्छसि":
+        native: "You do not go."
+        bases:
+          "न": "not"
+          "गच्छसि": "to go (you go)"
+  "sa-0027":
+    native: "One."
+    notes:
+      "n1": "It agrees with its noun in gender and case, as in ekaḥ aśvaḥ, one horse."
+    bases:
+      "एकः": "one"
+    examples:
+      "एकः अश्वः":
+        native: "One horse."
+        bases:
+          "एकः": "one"
+      "एकः देवः":
+        native: "One god."
+        bases:
+          "एकः": "one"
+  "sa-0028":
+    native: "Cow."
+    notes:
+      "n1": "Its stem is go, and the accusative gām is used in ahaṃ gām paśyāmi, I see the cow."
+    bases:
+      "गौः": "cow"
+    examples:
+      "गौः जलं पिबति":
+        native: "The cow drinks water."
+        bases:
+          "गौः": "cow"
+          "पिबति": "to drink (it drinks)"
+      "अहं गाम् पश्यामि":
+        native: "I see the cow."
+        bases:
+          "गाम्": "cow"
+          "पश्यामि": "to see (I see)"
+  "sa-0029":
+    native: "Horse."
+    notes:
+      "n1": "Its accusative is aśvam, as in aham aśvam paśyāmi, I see the horse."
+    bases:
+      "अश्वः": "horse"
+    examples:
+      "अश्वः धावति":
+        native: "The horse runs."
+        bases:
+          "अश्वः": "horse"
+          "धावति": "to run (it runs)"
+      "अहम् अश्वम् पश्यामि":
+        native: "I see the horse."
+        bases:
+          "अश्वम्": "horse"
+          "पश्यामि": "to see (I see)"
+  "sa-0030":
+    native: "The Sanskrit language."
+    notes:
+      "n1": "The name of the language is saṃskṛta, refined or perfected, and the neuter saṃskṛtam is used in saṃskṛtaṃ jānāmi, I know Sanskrit."
+    bases:
+      "संस्कृतम्": "Sanskrit"
+    examples:
+      "अहं संस्कृतं जानामि":
+        native: "I know Sanskrit."
+        bases:
+          "संस्कृतं": "Sanskrit"
+          "जानामि": "to know (I know)"
+      "संस्कृतम् अस्ति":
+        native: "Sanskrit exists."
+        bases:
+          "संस्कृतम्": "Sanskrit"
+          "अस्ति": "to be (is)"
