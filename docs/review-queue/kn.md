@@ -98,4 +98,5 @@
 | kn-8331 | see card | ಪ್ರತಿ ಕಿಲೋ ಎಷ್ಟು? and ಪ್ರತಿ ಲೀಟರ್ ಎಷ್ಟು? (kn-8332): is the pattern natural for 'how much per kilo / litre'? | Haiku builder | 2026-11-16 |
 | kn-8334 | see card | ಸ್ವಲ್ಪ ತಿನ್ನು (eat a little): natural? | Haiku builder | 2026-11-16 |
 | kn-8339 | see card | ಕೆಲವು ಮಕ್ಕಳು ತಿನ್ನುತ್ತಾರೆ is glossed 'Some children eat.', which reads incomplete: better gloss? | Haiku builder | 2026-11-16 |
-| kn-8328 | see card | ಇದರ ಬೆಲೆ ಹದಿನೈದು ರೂಪಾಯಿ: genitive ಇದರ of ಇದು and the price phrasing: natural? | Haiku builder | 2026-11-16 |
+| kn-8327 | see card | ಇದರ ಬೆಲೆ ಹದಿನೈದು ರೂಪಾಯಿ: genitive ಇದರ of ಇದು and the price phrasing: natural? | Haiku builder | 2026-11-16 |
+| kn-8337 | see card | ಭರಪೂರ before a bare noun (ಭರಪೂರ ಮಾವು ತಿನ್ನುತ್ತೇನೆ) is a little bookish: natural? | Sonnet review | 2026-11-16 |
