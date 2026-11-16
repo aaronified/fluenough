@@ -828,6 +828,25 @@ class _DecksPageState extends State<DecksPage> {
                           onToggleWork: toggleWork,
                         ),
                       ),
+                    // A deck chip and a culture chip together match nothing.
+                    if (searching && hasDeckChip && hasCultureChip)
+                      SliverToBoxAdapter(
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.symmetric(
+                            vertical: 32,
+                          ),
+                          child: Text(
+                            l10n.decksEmptySearch,
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.bodyLarge!
+                                .copyWith(
+                                  color: Theme.of(
+                                    context,
+                                  ).colorScheme.onSurfaceVariant,
+                                ),
+                          ),
+                        ),
+                      ),
                     if (cultureMode && !searching && code != null)
                       SliverIgnorePointer(
                         ignoring: scrim,

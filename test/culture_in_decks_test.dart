@@ -265,8 +265,13 @@ void main() {
         await open(tester);
         await _search(tester, 'pelicula');
         await _toTop(tester);
+        // Clear, then close: the first tap empties the bar, which stays open
+        // with its menu; the second closes it and brings the mode back.
         await tester.tap(find.byTooltip(_l10n.decksSearchClear));
         await tester.pumpAndSettle();
+        await tester.tap(find.byTooltip(_l10n.decksSearchClose));
+        await tester.pumpAndSettle();
+        await _toTop(tester);
         expect(find.byType(CultureList), findsNWidgets(inCulture ? 1 : 0));
         expect(find.byType(CoursePathSliver), findsNWidgets(inCulture ? 0 : 1));
       });
@@ -311,6 +316,14 @@ void main() {
         expect(find.text(_film), findsOneWidget);
         expect(find.text(_book), findsNothing);
         expect(_header(_l10n.recKindFilms, 1), findsOneWidget);
+      });
+
+      testWidgets('a deck chip with a culture chip says nothing matches', (
+        tester,
+      ) async {
+        await chip(tester, 'kind:film status:learnt ');
+        expect(find.text(_l10n.decksEmptySearch), findsOneWidget);
+        expect(find.text(_film), findsNothing);
       });
 
       testWidgets('kind:proverb lists the proverbs decks only', (tester) async {
