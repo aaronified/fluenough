@@ -411,7 +411,7 @@ cards:
       url: "https://es.wikisource.org/wiki/Tu_me_quieres_blanca"
       basis: "public-domain"
       author_died: 1938
-      jurisdiction: "ES"
+      jurisdiction: "AR"
       rights_checked: "2026-11-16"
   - id: "es-4113"
     target: "Desde el tercer día este hundimiento no la abandonó más."
@@ -437,12 +437,12 @@ cards:
     source:
       author: "Horacio Quiroga"
       work: "El almohadón de pluma, from Cuentos de amor de locura y de muerte, one sentence"
-      date: 1918
-      edition: "Cuentos de amor de locura y de muerte (1918), as shown on Spanish Wikisource, which gives 1918 (the author page gives 1917 for the book)"
+      date: 1917
+      edition: "Cuentos de amor de locura y de muerte (1917), the book date used for es-4105; text as shown on Spanish Wikisource, whose copy is labelled 1918"
       url: "https://es.wikisource.org/wiki/El_almohad%C3%B3n_de_pluma"
       basis: "public-domain"
       author_died: 1937
-      jurisdiction: "ES"
+      jurisdiction: "UY"
       rights_checked: "2026-11-16"
   - id: "es-4114"
     target: "Preciosa tocando viene, por un anfibio sendero de cristales y laureles."
@@ -477,9 +477,9 @@ cards:
       jurisdiction: "ES"
       rights_checked: "2026-11-16"
   - id: "es-4115"
-    target: "bellas de sangre contraria, relucen como los peces."
-    words: ["bellas", "de", "sangre", "contraria", "relucen", "como", "los", "peces"]
-    ipa: "ˈbeʝas de ˈsanɡɾe konˈtɾaɾja reˈluθen ˈkomo los ˈpeθes"
+    target: "Las navajas de Albacete, bellas de sangre contraria, relucen como los peces."
+    words: ["Las", "navajas", "de", "Albacete", "bellas", "de", "sangre", "contraria", "relucen", "como", "los", "peces"]
+    ipa: "las naˈbaxas de albaˈθete ˈbeʝas de ˈsanɡɾe konˈtɾaɾja reˈluθen ˈkomo los ˈpeθes"
     pos: "phrase"
     level: "B1"
     modes: ["recognition", "listening"]
@@ -487,8 +487,11 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "bellas", base: "bello" }
+      - { word: "Las", base: "el" }
+      - { word: "navajas", base: "navaja" }
       - { word: "de", base: "de" }
+      - { word: "Albacete", base: "Albacete" }
+      - { word: "bellas", base: "bello" }
       - { word: "sangre", base: "sangre" }
       - { word: "contraria", base: "contrario" }
       - { word: "relucen", base: "relucir" }
