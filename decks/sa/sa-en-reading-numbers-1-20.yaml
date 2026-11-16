@@ -1,0 +1,55 @@
+schema: 1
+id: "sa-en-reading-numbers-1-20"
+name: "Reading: numbers 1 to 20"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "sa-numbers-1-20-text-1"
+    title: "Students and gods"
+    sentences:
+      - { text: "द्वौ शिष्यौ संस्कृतं पठतः.", reading: "dvau śiṣyau saṃskṛtaṃ paṭhataḥ.", ipa: "d̪ʋəu ʃiʂjəu sə̃skr̩t̪əm pəʈʰət̪əh" }
+      - { text: "त्रयो देवा जलं पिबन्ति.", reading: "trayo devā jalaṃ pibanti.", ipa: "t̪rəjoː d̪eːʋaː dʒələm pibənt̪i" }
+      - { text: "अष्ट शिष्याः पठन्ति नव च देवा गच्छन्ति.", reading: "aṣṭa śiṣyāḥ paṭhanti nava ca devā gacchanti.", ipa: "əʂʈə ʃiʂjaːh pəʈʰənt̪i nəʋə tʃə d̪eːʋaː ɡətʃtʃʰənt̪i" }
+      - { text: "एको देवः पुस्तकं पठति द्वौ च देवौ गच्छतः.", reading: "eko devaḥ pustakaṃ paṭhati dvau ca devau gacchataḥ.", ipa: "eːkoː d̪eːʋəh pust̪əkəm pəʈʰət̪i d̪ʋəu tʃə d̪eːʋəu ɡətʃtʃʰət̪əh" }
+    questions:
+      - id: "sa-3420"
+        prompt: { en: "How many gods drink water?" }
+        options: [{ en: "Three" }, { en: "Two" }, { en: "Nine" }]
+        answer: 1
+      - id: "sa-3421"
+        prompt: { en: "Nine gods go in the third sentence." }
+        answer: true
+      - id: "sa-3422"
+        prompt: { en: "How many students read in the third sentence?" }
+        options: [{ en: "Nine" }, { en: "Eight" }, { en: "Two" }]
+        answer: 2
+      - id: "sa-3423"
+        prompt: { en: "Three students read Sanskrit." }
+        answer: false
+  - id: "sa-numbers-1-20-text-2"
+    title: "Books and counts"
+    sentences:
+      - { text: "अहं दश पुस्तकानि पठामि.", reading: "ahaṃ daśa pustakāni paṭhāmi.", ipa: "əɦəm d̪əʃə pust̪əkaːni pəʈʰaːmi" }
+      - { text: "अहं जलं नयामि त्वं च सप्त पुस्तकानि नयसि.", reading: "ahaṃ jalaṃ nayāmi tvaṃ ca sapta pustakāni nayasi.", ipa: "əɦəm dʒələm nəjaːmi t̪ʋəm tʃə səpt̪ə pust̪əkaːni nəjəsi" }
+      - { text: "कति शिष्या जलं पिबन्ति?", reading: "kati śiṣyā jalaṃ pibanti?", ipa: "kət̪i ʃiʂjaː dʒələm pibənt̪i" }
+      - { text: "द्वादश देवाः कुत्र गच्छन्ति?", reading: "dvādaśa devāḥ kutra gacchanti?", ipa: "d̪ʋaːd̪əʃə d̪eːʋaːh kut̪rə ɡətʃtʃʰənt̪i" }
+    questions:
+      - id: "sa-3424"
+        prompt: { en: "How many books does the speaker read?" }
+        options: [{ en: "Seven" }, { en: "Twelve" }, { en: "Ten" }]
+        answer: 3
+      - id: "sa-3425"
+        prompt: { en: "How many books does 'you' bring?" }
+        options: [{ en: "Seven" }, { en: "Ten" }, { en: "Twelve" }]
+        answer: 1
+      - id: "sa-3426"
+        prompt: { en: "The last sentence asks where twelve gods go." }
+        answer: true
+      - id: "sa-3427"
+        prompt: { en: "The speaker brings seven books." }
+        answer: false

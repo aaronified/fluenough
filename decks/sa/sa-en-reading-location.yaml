@@ -1,0 +1,55 @@
+schema: 1
+id: "sa-en-reading-location"
+name: "Reading: location"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "sa-location-text-1"
+    title: "Here, there, inside, outside"
+    sentences:
+      - { text: "सर्वत्र जलं भवति पिता च बहिः पठति.", reading: "sarvatra jalaṃ bhavati pitā ca bahiḥ paṭhati.", ipa: "sərʋət̪rə dʒələm bʱəʋət̪i pit̪aː tʃə bəɦih pəʈʰət̪i" }
+      - { text: "अन्तः पिता पठति सखा च बहिः पठति.", reading: "antaḥ pitā paṭhati sakhā ca bahiḥ paṭhati.", ipa: "ənt̪əh pit̪aː pəʈʰət̪i səkʰaː tʃə bəɦih pəʈʰət̪i" }
+      - { text: "इह पिता पठति तत्र च माता गायति.", reading: "iha pitā paṭhati tatra ca mātā gāyati.", ipa: "iɦə pit̪aː pəʈʰət̪i t̪ət̪rə tʃə maːt̪aː ɡaːjət̪i" }
+      - { text: "अधो जलं भवति पिता च तत्र पठति.", reading: "adho jalaṃ bhavati pitā ca tatra paṭhati.", ipa: "əd̪ʱoː dʒələm bʱəʋət̪i pit̪aː tʃə t̪ət̪rə pəʈʰət̪i" }
+    questions:
+      - id: "sa-3467"
+        prompt: { en: "Where does father read in the first sentence?" }
+        options: [{ en: "Outside" }, { en: "Inside" }, { en: "Below" }]
+        answer: 1
+      - id: "sa-3468"
+        prompt: { en: "Who reads outside in the second sentence?" }
+        options: [{ en: "Father" }, { en: "The friend" }, { en: "Mother" }]
+        answer: 2
+      - id: "sa-3469"
+        prompt: { en: "There is water below." }
+        answer: true
+      - id: "sa-3470"
+        prompt: { en: "Mother reads here in the third sentence." }
+        answer: false
+  - id: "sa-location-text-2"
+    title: "Far, elsewhere, everywhere"
+    sentences:
+      - { text: "अन्यत्र माता गच्छति पिता च तत्र तिष्ठति.", reading: "anyatra mātā gacchati pitā ca tatra tiṣṭhati.", ipa: "ənjət̪rə maːt̪aː ɡətʃtʃʰət̪i pit̪aː tʃə t̪ət̪rə t̪iʂʈʰət̪i" }
+      - { text: "जलं दूरे सरति पिता च तत्र गच्छति.", reading: "jalaṃ dūre sarati pitā ca tatra gacchati.", ipa: "dʒələm d̪uːreː sərət̪i pit̪aː tʃə t̪ət̪rə ɡətʃtʃʰət̪i" }
+      - { text: "तत्र यूयं पठथ सर्वत्र च वयं पठामः.", reading: "tatra yūyaṃ paṭhatha sarvatra ca vayaṃ paṭhāmaḥ.", ipa: "t̪ət̪rə juːjəm pəʈʰət̪ʰə sərʋət̪rə tʃə ʋəjəm pəʈʰaːməh" }
+      - { text: "एकत्र देवाः पठन्ति पिता च तत्र गच्छति.", reading: "ekatra devāḥ paṭhanti pitā ca tatra gacchati.", ipa: "eːkət̪rə d̪eːʋaːh pəʈʰənt̪i pit̪aː tʃə t̪ət̪rə ɡətʃtʃʰət̪i" }
+    questions:
+      - id: "sa-3471"
+        prompt: { en: "Who goes elsewhere?" }
+        options: [{ en: "Father" }, { en: "The gods" }, { en: "Mother" }]
+        answer: 3
+      - id: "sa-3472"
+        prompt: { en: "The water flows far away." }
+        answer: true
+      - id: "sa-3473"
+        prompt: { en: "Where do 'we' read in the third sentence?" }
+        options: [{ en: "Everywhere" }, { en: "In one place" }, { en: "Elsewhere" }]
+        answer: 1
+      - id: "sa-3474"
+        prompt: { en: "The gods read everywhere in the last sentence." }
+        answer: false

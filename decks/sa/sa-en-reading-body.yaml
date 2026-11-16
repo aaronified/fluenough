@@ -1,0 +1,55 @@
+schema: 1
+id: "sa-en-reading-body"
+name: "Reading: the body"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "sa-body-text-1"
+    title: "Hands, ears, mouth"
+    sentences:
+      - { text: "त्वं हस्तेन जलं पिबसि.", reading: "tvaṃ hastena jalaṃ pibasi.", ipa: "t̪ʋəm ɦəst̪eːnə dʒələm pibəsi" }
+      - { text: "द्वौ पादौ गच्छतो द्वौ च हस्तौ जलं नयतः.", reading: "dvau pādau gacchato dvau ca hastau jalaṃ nayataḥ.", ipa: "d̪ʋəu paːd̪əu ɡətʃtʃʰət̪oː d̪ʋəu tʃə ɦəst̪əu dʒələm nəjət̪əh" }
+      - { text: "स नेत्रेण पश्यति पिता च कर्णेन शृणोति.", reading: "sa netreṇa paśyati pitā ca karṇena śṛṇoti.", ipa: "sə neːt̪reːɳə pəʃjət̪i pit̪aː tʃə kərɳeːnə ʃr̩ɳoːt̪i" }
+      - { text: "अहं मुखेन संस्कृतं वदामि.", reading: "ahaṃ mukhena saṃskṛtaṃ vadāmi.", ipa: "əɦəm mukʰeːnə sə̃skr̩t̪əm ʋəd̪aːmi" }
+    questions:
+      - id: "sa-3491"
+        prompt: { en: "What does 'you' drink water with?" }
+        options: [{ en: "The hand" }, { en: "The mouth" }, { en: "The foot" }]
+        answer: 1
+      - id: "sa-3492"
+        prompt: { en: "What does father hear with?" }
+        options: [{ en: "The eye" }, { en: "The ear" }, { en: "The mouth" }]
+        answer: 2
+      - id: "sa-3493"
+        prompt: { en: "The two feet bring water." }
+        answer: false
+      - id: "sa-3494"
+        prompt: { en: "The speaker speaks Sanskrit with the mouth." }
+        answer: true
+  - id: "sa-body-text-2"
+    title: "Hair, nail, head"
+    sentences:
+      - { text: "केशः कृष्णो भवति नखं च कठिनं भवति.", reading: "keśaḥ kṛṣṇo bhavati nakhaṃ ca kaṭhinaṃ bhavati.", ipa: "keːʃəh kr̩ʂɳoː bʱəʋət̪i nəkʰəm tʃə kəʈʰinəm bʱəʋət̪i" }
+      - { text: "पादो न चलति हस्तौ जलं च न नयतः.", reading: "pādo na calati hastau jalaṃ ca na nayataḥ.", ipa: "paːd̪oː nə tʃələt̪i ɦəst̪əu dʒələm tʃə nə nəjət̪əh" }
+      - { text: "तत्र रुधिरं सरति तत्र च जलं क्षरति.", reading: "tatra rudhiraṃ sarati tatra ca jalaṃ kṣarati.", ipa: "t̪ət̪rə rud̪ʱirəm sərət̪i t̪ət̪rə tʃə dʒələm kʂərət̪i" }
+      - { text: "शिरः कुत्र भवति मुखं च कुत्र भवति?", reading: "śiraḥ kutra bhavati mukhaṃ ca kutra bhavati?", ipa: "ʃirəh kut̪rə bʱəʋət̪i mukʰəm tʃə kut̪rə bʱəʋət̪i" }
+    questions:
+      - id: "sa-3495"
+        prompt: { en: "What is hard?" }
+        options: [{ en: "The hair" }, { en: "The foot" }, { en: "The nail" }]
+        answer: 3
+      - id: "sa-3496"
+        prompt: { en: "What flows there in the third sentence?" }
+        options: [{ en: "Water" }, { en: "Blood" }]
+        answer: 2
+      - id: "sa-3497"
+        prompt: { en: "The foot moves in the second sentence." }
+        answer: false
+      - id: "sa-3498"
+        prompt: { en: "The last sentence asks where the head is." }
+        answer: true

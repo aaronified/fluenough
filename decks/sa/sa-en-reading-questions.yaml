@@ -1,0 +1,51 @@
+schema: 1
+id: "sa-en-reading-questions"
+name: "Reading: questions"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "sa-questions-text-1"
+    title: "Who, where, what?"
+    sentences:
+      - { text: "अश्वः कुत्र गच्छति देवः कुत्र च पठति?", reading: "aśvaḥ kutra gacchati devaḥ kutra ca paṭhati?", ipa: "əʃʋəh kut̪rə ɡətʃtʃʰət̪i d̪eːʋəh kut̪rə tʃə pəʈʰət̪i" }
+      - { text: "का संस्कृतं पठति का च जलं नयति?", reading: "kā saṃskṛtaṃ paṭhati kā ca jalaṃ nayati?", ipa: "kaː sə̃skr̩t̪əm pəʈʰət̪i kaː tʃə dʒələm nəjət̪i" }
+      - { text: "त्वं कुत्र जलं नयसि?", reading: "tvaṃ kutra jalaṃ nayasi?", ipa: "t̪ʋəm kut̪rə dʒələm nəjəsi" }
+    questions:
+      - id: "sa-3400"
+        prompt: { en: "What is being brought in the last sentence?" }
+        options: [{ en: "Water" }, { en: "A book" }, { en: "Food" }]
+        answer: 1
+      - id: "sa-3401"
+        prompt: { en: "Which animal is asked about?" }
+        options: [{ en: "A cow" }, { en: "A horse" }, { en: "A dog" }]
+        answer: 2
+      - id: "sa-3402"
+        prompt: { en: "One sentence asks who reads Sanskrit." }
+        answer: true
+  - id: "sa-questions-text-2"
+    title: "Why and how"
+    sentences:
+      - { text: "स संस्कृतं कदा वदति?", reading: "sa saṃskṛtaṃ kadā vadati?", ipa: "sə sə̃skr̩t̪əm kəd̪aː ʋəd̪ət̪i" }
+      - { text: "यूयं कथं संस्कृतं पठथ?", reading: "yūyaṃ kathaṃ saṃskṛtaṃ paṭhatha?", ipa: "juːjəm kət̪ʰəm sə̃skr̩t̪əm pəʈʰət̪ʰə" }
+      - { text: "किमर्थं सा संस्कृतं न वदति?", reading: "kimarthaṃ sā saṃskṛtaṃ na vadati?", ipa: "kimərt̪ʰəm saː sə̃skr̩t̪əm nə ʋəd̪ət̪i" }
+      - { text: "वयं किमर्थं जलं न नयामः?", reading: "vayaṃ kimarthaṃ jalaṃ na nayāmaḥ?", ipa: "ʋəjəm kimərt̪ʰəm dʒələm nə nəjaːməh" }
+    questions:
+      - id: "sa-3403"
+        prompt: { en: "Who is asked about in the first sentence?" }
+        options: [{ en: "She" }, { en: "You all" }, { en: "He" }]
+        answer: 3
+      - id: "sa-3404"
+        prompt: { en: "The second sentence asks how 'we' read Sanskrit." }
+        answer: false
+      - id: "sa-3405"
+        prompt: { en: "What do 'we' not do in the last sentence?" }
+        options: [{ en: "Bring the water" }, { en: "Read Sanskrit" }, { en: "Speak Sanskrit" }]
+        answer: 1
+      - id: "sa-3406"
+        prompt: { en: "The third sentence is about someone who does not speak Sanskrit." }
+        answer: true

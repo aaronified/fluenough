@@ -1,0 +1,55 @@
+schema: 1
+id: "sa-en-reading-everyday-verbs"
+name: "Reading: everyday verbs"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "sa-everyday-verbs-text-1"
+    title: "Singing, laughing, playing"
+    sentences:
+      - { text: "त्वं किं खादसि किं च पिबसि?", reading: "tvaṃ kiṃ khādasi kiṃ ca pibasi?", ipa: "t̪ʋəm kim kʰaːd̪əsi kim tʃə pibəsi" }
+      - { text: "सा नारी गायति स च सखा हसति.", reading: "sā nārī gāyati sa ca sakhā hasati.", ipa: "saː naːriː ɡaːjət̪i sə tʃə səkʰaː ɦəsət̪i" }
+      - { text: "वयं क्रीडामो यूयं च पठथ.", reading: "vayaṃ krīḍāmo yūyaṃ ca paṭhatha.", ipa: "ʋəjəm kriːɖaːmoː juːjəm tʃə pəʈʰət̪ʰə" }
+      - { text: "वयं जलं पिबामो यूयं च खादथ.", reading: "vayaṃ jalaṃ pibāmo yūyaṃ ca khādatha.", ipa: "ʋəjəm dʒələm pibaːmoː juːjəm tʃə kʰaːd̪ət̪ʰə" }
+    questions:
+      - id: "sa-3507"
+        prompt: { en: "Who sings in the second sentence?" }
+        options: [{ en: "That friend" }, { en: "You all" }, { en: "That woman" }]
+        answer: 3
+      - id: "sa-3508"
+        prompt: { en: "Who plays in the third sentence?" }
+        options: [{ en: "We" }, { en: "You all" }, { en: "That friend" }]
+        answer: 1
+      - id: "sa-3509"
+        prompt: { en: "'You all' drink water in the last sentence." }
+        answer: false
+      - id: "sa-3510"
+        prompt: { en: "The first sentence asks what you eat." }
+        answer: true
+  - id: "sa-everyday-verbs-text-2"
+    title: "Where, when, who"
+    sentences:
+      - { text: "स भ्राता कदा धावति कदा च हसति?", reading: "sa bhrātā kadā dhāvati kadā ca hasati?", ipa: "sə bʱraːt̪aː kəd̪aː d̪ʱaːʋət̪i kəd̪aː tʃə ɦəsət̪i" }
+      - { text: "अश्वः कुत्र धावति गौः कुत्र च तिष्ठति?", reading: "aśvaḥ kutra dhāvati gauḥ kutra ca tiṣṭhati?", ipa: "əʃʋəh kut̪rə d̪ʱaːʋət̪i ɡəuh kut̪rə tʃə t̪iʂʈʰət̪i" }
+      - { text: "माता कुत्र वसति भ्राता च कदा खादति?", reading: "mātā kutra vasati bhrātā ca kadā khādati?", ipa: "maːt̪aː kut̪rə ʋəsət̪i bʱraːt̪aː tʃə kəd̪aː kʰaːd̪ət̪i" }
+      - { text: "सखा जलं हरति माता च खादति.", reading: "sakhā jalaṃ harati mātā ca khādati.", ipa: "səkʰaː dʒələm ɦərət̪i maːt̪aː tʃə kʰaːd̪ət̪i" }
+    questions:
+      - id: "sa-3511"
+        prompt: { en: "Which animal is asked about standing?" }
+        options: [{ en: "The horse" }, { en: "The cow" }, { en: "The dog" }]
+        answer: 2
+      - id: "sa-3512"
+        prompt: { en: "Someone asks when the brother eats." }
+        answer: true
+      - id: "sa-3513"
+        prompt: { en: "Who takes the water away?" }
+        options: [{ en: "Mother" }, { en: "The brother" }, { en: "The friend" }]
+        answer: 3
+      - id: "sa-3514"
+        prompt: { en: "Mother takes the water away." }
+        answer: false

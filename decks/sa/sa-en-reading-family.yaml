@@ -1,0 +1,49 @@
+schema: 1
+id: "sa-en-reading-family"
+name: "Reading: family"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "sa-family-text-1"
+    title: "Father, mother, friend"
+    sentences:
+      - { text: "पिता संस्कृतं पठति माता च वदति.", reading: "pitā saṃskṛtaṃ paṭhati mātā ca vadati.", ipa: "pit̪aː sə̃skr̩t̪əm pəʈʰət̪i maːt̪aː tʃə ʋəd̪ət̪i" }
+      - { text: "स्वसा पठति भ्राता च गच्छति.", reading: "svasā paṭhati bhrātā ca gacchati.", ipa: "sʋəsaː pəʈʰət̪i bʱraːt̪aː tʃə ɡətʃtʃʰət̪i" }
+      - { text: "स सखा संस्कृतं न वदति.", reading: "sa sakhā saṃskṛtaṃ na vadati.", ipa: "sə səkʰaː sə̃skr̩t̪əm nə ʋəd̪ət̪i" }
+      - { text: "अहं भ्राता भवामि त्वं च सखा भवसि.", reading: "ahaṃ bhrātā bhavāmi tvaṃ ca sakhā bhavasi.", ipa: "əɦəm bʱraːt̪aː bʱəʋaːmi t̪ʋəm tʃə səkʰaː bʱəʋəsi" }
+    questions:
+      - id: "sa-3414"
+        prompt: { en: "Who speaks, according to the first sentence?" }
+        options: [{ en: "Father" }, { en: "The brother" }, { en: "Mother" }]
+        answer: 3
+      - id: "sa-3415"
+        prompt: { en: "The friend speaks Sanskrit." }
+        answer: false
+      - id: "sa-3416"
+        prompt: { en: "What does the speaker say about themself in the last sentence?" }
+        options: [{ en: "I am a brother" }, { en: "I am a friend" }, { en: "I am a sister" }]
+        answer: 1
+  - id: "sa-family-text-2"
+    title: "Questions about the family"
+    sentences:
+      - { text: "माता कुत्र गच्छति पिता च कुत्र पठति?", reading: "mātā kutra gacchati pitā ca kutra paṭhati?", ipa: "maːt̪aː kut̪rə ɡətʃtʃʰət̪i pit̪aː tʃə kut̪rə pəʈʰət̪i" }
+      - { text: "का माता भवति का च स्वसा भवति?", reading: "kā mātā bhavati kā ca svasā bhavati?", ipa: "kaː maːt̪aː bʱəʋət̪i kaː tʃə sʋəsaː bʱəʋət̪i" }
+      - { text: "स भ्राता जलं कदा नयति?", reading: "sa bhrātā jalaṃ kadā nayati?", ipa: "sə bʱraːt̪aː dʒələm kəd̪aː nəjət̪i" }
+      - { text: "अयं पिता कथं संस्कृतं वदति?", reading: "ayaṃ pitā kathaṃ saṃskṛtaṃ vadati?", ipa: "əjəm pit̪aː kət̪ʰəm sə̃skr̩t̪əm ʋəd̪ət̪i" }
+    questions:
+      - id: "sa-3417"
+        prompt: { en: "Who is asked about going somewhere?" }
+        options: [{ en: "Father" }, { en: "Mother" }, { en: "The brother" }]
+        answer: 2
+      - id: "sa-3418"
+        prompt: { en: "One sentence asks when the brother brings water." }
+        answer: true
+      - id: "sa-3419"
+        prompt: { en: "Whose way of speaking is asked about in the last sentence?" }
+        options: [{ en: "Mother's" }, { en: "The sister's" }, { en: "This father's" }]
+        answer: 3

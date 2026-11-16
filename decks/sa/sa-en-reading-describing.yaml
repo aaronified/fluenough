@@ -1,0 +1,55 @@
+schema: 1
+id: "sa-en-reading-describing"
+name: "Reading: describing words"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "sa-describing-text-1"
+    title: "Happy and sad"
+    sentences:
+      - { text: "पिता सुखी भवति भ्राता च दुःखी भवति.", reading: "pitā sukhī bhavati bhrātā ca duḥkhī bhavati.", ipa: "pit̪aː sukʰiː bʱəʋət̪i bʱraːt̪aː tʃə d̪uhkʰiː bʱəʋət̪i" }
+      - { text: "अहं सुखी भवामि त्वं च दुःखी भवसि.", reading: "ahaṃ sukhī bhavāmi tvaṃ ca duḥkhī bhavasi.", ipa: "əɦəm sukʰiː bʱəʋaːmi t̪ʋəm tʃə d̪uhkʰiː bʱəʋəsi" }
+      - { text: "सुखी भ्राता हसति दुःखी च पिता न हसति.", reading: "sukhī bhrātā hasati duḥkhī ca pitā na hasati.", ipa: "sukʰiː bʱraːt̪aː ɦəsət̪i d̪uhkʰiː tʃə pit̪aː nə ɦəsət̪i" }
+      - { text: "सा सुखिनी गायति स च सुखी हसति.", reading: "sā sukhinī gāyati sa ca sukhī hasati.", ipa: "saː sukʰiniː ɡaːjət̪i sə tʃə sukʰiː ɦəsət̪i" }
+    questions:
+      - id: "sa-3451"
+        prompt: { en: "Who is sad in the first sentence?" }
+        options: [{ en: "Father" }, { en: "The brother" }, { en: "Mother" }]
+        answer: 2
+      - id: "sa-3452"
+        prompt: { en: "In the third sentence the sad father laughs." }
+        answer: false
+      - id: "sa-3453"
+        prompt: { en: "Who sings in the last sentence?" }
+        options: [{ en: "A sad woman" }, { en: "A happy man" }, { en: "A happy woman" }]
+        answer: 3
+      - id: "sa-3454"
+        prompt: { en: "The speaker is happy in the second sentence." }
+        answer: true
+  - id: "sa-describing-text-2"
+    title: "Black, cold, new"
+    sentences:
+      - { text: "अश्वः कृष्णो भवति जलं च पवित्रं भवति.", reading: "aśvaḥ kṛṣṇo bhavati jalaṃ ca pavitraṃ bhavati.", ipa: "əʃʋəh kr̩ʂɳoː bʱəʋət̪i dʒələm tʃə pəʋit̪rəm bʱəʋət̪i" }
+      - { text: "जलं शीतं भवति पुस्तकं च नवं भवति.", reading: "jalaṃ śītaṃ bhavati pustakaṃ ca navaṃ bhavati.", ipa: "dʒələm ʃiːt̪əm bʱəʋət̪i pust̪əkəm tʃə nəʋəm bʱəʋət̪i" }
+      - { text: "नवं पुस्तकं पठामि पुराणं च पुस्तकं न पठामि.", reading: "navaṃ pustakaṃ paṭhāmi purāṇaṃ ca pustakaṃ na paṭhāmi.", ipa: "nəʋəm pust̪əkəm pəʈʰaːmi puraːɳəm tʃə pust̪əkəm nə pəʈʰaːmi" }
+      - { text: "किं पुस्तकं कठिनं भवति?", reading: "kiṃ pustakaṃ kaṭhinaṃ bhavati?", ipa: "kim pust̪əkəm kəʈʰinəm bʱəʋət̪i" }
+    questions:
+      - id: "sa-3455"
+        prompt: { en: "What is black?" }
+        options: [{ en: "The horse" }, { en: "The water" }, { en: "The book" }]
+        answer: 1
+      - id: "sa-3456"
+        prompt: { en: "What is cold?" }
+        options: [{ en: "The horse" }, { en: "The water" }, { en: "The book" }]
+        answer: 2
+      - id: "sa-3457"
+        prompt: { en: "The speaker reads an old book." }
+        answer: false
+      - id: "sa-3458"
+        prompt: { en: "The last sentence asks whether the book is difficult." }
+        answer: true

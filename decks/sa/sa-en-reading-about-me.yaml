@@ -1,0 +1,52 @@
+schema: 1
+id: "sa-en-reading-about-me"
+name: "Reading: about me"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "sa-about-me-text-1"
+    title: "Language and name"
+    sentences:
+      - { text: "अहं संस्कृतं पठामि संस्कृतं च भाषा भवति.", reading: "ahaṃ saṃskṛtaṃ paṭhāmi saṃskṛtaṃ ca bhāṣā bhavati.", ipa: "əɦəm sə̃skr̩t̪əm pəʈʰaːmi sə̃skr̩t̪əm tʃə bʱaːʂaː bʱəʋət̪i" }
+      - { text: "एषा भाषा संस्कृतं भवति.", reading: "eṣā bhāṣā saṃskṛtaṃ bhavati.", ipa: "eːʂaː bʱaːʂaː sə̃skr̩t̪əm bʱəʋət̪i" }
+      - { text: "अहं संस्कृतं न वदामि त्वं च वदसि.", reading: "ahaṃ saṃskṛtaṃ na vadāmi tvaṃ ca vadasi.", ipa: "əɦəm sə̃skr̩t̪əm nə ʋəd̪aːmi t̪ʋəm tʃə ʋəd̪əsi" }
+      - { text: "सा नाम न वदति त्वं च वदसि.", reading: "sā nāma na vadati tvaṃ ca vadasi.", ipa: "saː naːmə nə ʋəd̪ət̪i t̪ʋəm tʃə ʋəd̪əsi" }
+    questions:
+      - id: "sa-3428"
+        prompt: { en: "What is Sanskrit called in the first sentence?" }
+        options: [{ en: "A book" }, { en: "A language" }, { en: "A name" }]
+        answer: 2
+      - id: "sa-3429"
+        prompt: { en: "The speaker speaks Sanskrit in the third sentence." }
+        answer: false
+      - id: "sa-3430"
+        prompt: { en: "Who does not say the name in the last sentence?" }
+        options: [{ en: "You" }, { en: "I" }, { en: "She" }]
+        answer: 3
+  - id: "sa-about-me-text-2"
+    title: "Names and ages"
+    sentences:
+      - { text: "माता नाम वदति पिता च वयो वदति.", reading: "mātā nāma vadati pitā ca vayo vadati.", ipa: "maːt̪aː naːmə ʋəd̪ət̪i pit̪aː tʃə ʋəjoː ʋəd̪ət̪i" }
+      - { text: "सखा वयो वदति भ्राता च नाम वदति.", reading: "sakhā vayo vadati bhrātā ca nāma vadati.", ipa: "səkʰaː ʋəjoː ʋəd̪ət̪i bʱraːt̪aː tʃə naːmə ʋəd̪ət̪i" }
+      - { text: "त्वं किं नाम वदसि स च किं वदति?", reading: "tvaṃ kiṃ nāma vadasi sa ca kiṃ vadati?", ipa: "t̪ʋəm kim naːmə ʋəd̪əsi sə tʃə kim ʋəd̪ət̪i" }
+      - { text: "इदं नाम पिता वदति.", reading: "idaṃ nāma pitā vadati.", ipa: "id̪əm naːmə pit̪aː ʋəd̪ət̪i" }
+    questions:
+      - id: "sa-3431"
+        prompt: { en: "What does father say in the first sentence?" }
+        options: [{ en: "The age" }, { en: "The name" }, { en: "Nothing" }]
+        answer: 1
+      - id: "sa-3432"
+        prompt: { en: "Who says the name in the second sentence?" }
+        options: [{ en: "The friend" }, { en: "The brother" }, { en: "Mother" }]
+        answer: 2
+      - id: "sa-3433"
+        prompt: { en: "The third sentence asks about the age." }
+        answer: false
+      - id: "sa-3434"
+        prompt: { en: "Father says a name in the last sentence." }
+        answer: true
