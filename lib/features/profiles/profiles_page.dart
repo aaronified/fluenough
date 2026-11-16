@@ -11,7 +11,6 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/profile_avatar.dart';
-import '../../ui/widgets/report_button.dart';
 import 'profile_text.dart';
 
 /// Who's practising: the profiles on this phone, and Add profile. Behind
@@ -44,77 +43,75 @@ class ProfilesPage extends StatelessWidget {
 
     return Scaffold(
       body: SafeArea(
-        child: WithReportButton(
-          child: CustomScrollView(
-            slivers: <Widget>[
-              SliverPadding(
-                padding: const EdgeInsetsDirectional.fromSTEB(24, 88, 24, 0),
-                sliver: SliverToBoxAdapter(
-                  child: Column(
-                    children: <Widget>[
-                      Text(
-                        l10n.appTitle,
+        child: CustomScrollView(
+          slivers: <Widget>[
+            SliverPadding(
+              padding: const EdgeInsetsDirectional.fromSTEB(24, 88, 24, 0),
+              sliver: SliverToBoxAdapter(
+                child: Column(
+                  children: <Widget>[
+                    Text(
+                      l10n.appTitle,
+                      textAlign: TextAlign.center,
+                      style: theme.textTheme.labelLarge!.copyWith(
+                        color: scheme.primary,
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: 0.4,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Semantics(
+                      header: true,
+                      child: Text(
+                        l10n.profilesTitle,
                         textAlign: TextAlign.center,
-                        style: theme.textTheme.labelLarge!.copyWith(
-                          color: scheme.primary,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: 0.4,
+                        style: theme.textTheme.displaySmall!.copyWith(
+                          fontWeight: FontWeight.w600,
+                          letterSpacing: -0.5,
                         ),
                       ),
-                      const SizedBox(height: 8),
-                      Semantics(
-                        header: true,
+                    ),
+                    const SizedBox(height: 48),
+                    _TwoColumns(
+                      children: <Widget>[
+                        for (final profile in state.profiles)
+                          _ProfileTile(profile: profile),
+                        const _AddProfileTile(),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(24, 48, 24, 32),
+                child: Align(
+                  alignment: AlignmentDirectional.bottomCenter,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Icon(
+                        Icons.cloud_off_outlined,
+                        size: 18,
+                        color: scheme.onSurfaceVariant,
+                      ),
+                      const SizedBox(width: 8),
+                      Flexible(
                         child: Text(
-                          l10n.profilesTitle,
-                          textAlign: TextAlign.center,
-                          style: theme.textTheme.displaySmall!.copyWith(
-                            fontWeight: FontWeight.w600,
-                            letterSpacing: -0.5,
+                          l10n.profilesPrivacy,
+                          style: theme.textTheme.bodyMedium!.copyWith(
+                            color: scheme.onSurfaceVariant,
                           ),
                         ),
-                      ),
-                      const SizedBox(height: 48),
-                      _TwoColumns(
-                        children: <Widget>[
-                          for (final profile in state.profiles)
-                            _ProfileTile(profile: profile),
-                          const _AddProfileTile(),
-                        ],
                       ),
                     ],
                   ),
                 ),
               ),
-              SliverFillRemaining(
-                hasScrollBody: false,
-                child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(24, 48, 24, 32),
-                  child: Align(
-                    alignment: AlignmentDirectional.bottomCenter,
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        Icon(
-                          Icons.cloud_off_outlined,
-                          size: 18,
-                          color: scheme.onSurfaceVariant,
-                        ),
-                        const SizedBox(width: 8),
-                        Flexible(
-                          child: Text(
-                            l10n.profilesPrivacy,
-                            style: theme.textTheme.bodyMedium!.copyWith(
-                              color: scheme.onSurfaceVariant,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

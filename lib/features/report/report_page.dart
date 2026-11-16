@@ -18,6 +18,7 @@ extension ReportKindText on ReportKind {
     ReportKind.support => Icons.support_agent,
     ReportKind.bug => Icons.bug_report_outlined,
     ReportKind.feedback => Icons.lightbulb_outline,
+    ReportKind.content => Icons.bug_report_outlined,
   };
 
   /// "Get support", "Report a bug", "Give feedback".
@@ -25,6 +26,7 @@ extension ReportKindText on ReportKind {
     ReportKind.support => l10n.reportKindSupport,
     ReportKind.bug => l10n.reportKindBug,
     ReportKind.feedback => l10n.reportKindFeedback,
+    ReportKind.content => l10n.reportKindBug,
   };
 
   /// Under [title]: what the kind is for, and whether it becomes public.
@@ -32,6 +34,7 @@ extension ReportKindText on ReportKind {
     ReportKind.support => l10n.reportKindSupportDesc,
     ReportKind.bug => l10n.reportKindBugDesc,
     ReportKind.feedback => l10n.reportKindFeedbackDesc,
+    ReportKind.content => l10n.reportKindBugDesc,
   };
 
   /// The hint in the details field.
@@ -39,6 +42,7 @@ extension ReportKindText on ReportKind {
     ReportKind.support => l10n.reportDetailsHintSupport,
     ReportKind.bug => l10n.reportDetailsHintBug,
     ReportKind.feedback => l10n.reportDetailsHintFeedback,
+    ReportKind.content => l10n.reportDetailsHintBug,
   };
 
   /// The questions its mail is preset with, under the details
@@ -50,8 +54,16 @@ extension ReportKindText on ReportKind {
       l10n.reportPromptBugExpected,
     ],
     ReportKind.feedback => <String>[l10n.reportPromptFeedbackWhy],
+    ReportKind.content => const <String>[],
   };
 }
+
+/// The kinds the general report lists. A content report has its own sheet
+/// (`ContentReportSheet`), so [ReportKind.content] is not one of them.
+final List<ReportKind> _listedKinds = <ReportKind>[
+  for (final kind in ReportKind.values)
+    if (kind != ReportKind.content) kind,
+];
 
 /// Get support, report a bug or give feedback, by mail from the reporter's
 /// own mail app (#160, ADR-0021): the kind, a title, details, the screen it
@@ -181,7 +193,7 @@ class _ReportPageState extends State<ReportPage> {
               },
               child: GroupedList(
                 children: <Widget>[
-                  for (final kind in ReportKind.values)
+                  for (final kind in _listedKinds)
                     GroupedTile(
                       selected: kind == _kind,
                       padding: const EdgeInsetsDirectional.symmetric(

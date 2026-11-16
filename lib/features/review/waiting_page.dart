@@ -8,7 +8,6 @@ import '../../ui/theme.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/page_parts.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../decks/path_parts.dart' show joinParts;
 import 'review_languages_page.dart';
@@ -35,10 +34,7 @@ class WaitingForReviewPage extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.reviewSettingsWaiting),
-        actions: const <Widget>[ReportButton()],
-      ),
+      appBar: AppBar(title: Text(l10n.reviewSettingsWaiting)),
       // The reviews and the languages chosen are in the settings.
       body: ListenableBuilder(
         listenable: state.settings,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
+import '../../core/feedback/content_report.dart';
 import '../../core/grading/self_grade.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
@@ -67,7 +68,7 @@ class RecognitionDrill extends StatelessWidget {
           : l10n.numbersPracticeTitle,
       position: session.position,
       total: session.total,
-      reportDetail: '${session.item.card.id} in ${session.deck.id}',
+      report: ContentTarget.card(session.item.card.id, deck: session.deck.deck),
       progress: session.progress,
       onClose: onClose,
       // A swipe on the answer page, or the end-edge chevron, is Okay, as

@@ -4,13 +4,12 @@ import '../../app/app_scope.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/speaker.dart';
 import '../drill/sounds_of_word.dart';
 
 /// The top line of a card's sheet, as the designs draw it: [text], such as
-/// "te-0384 · noun · Learning 58%", then a speaker that says the word, and
-/// the bug icon that reports the card as [report].
+/// "te-0384 · noun · Learning 58%", then a speaker that says the word and the
+/// sounds of the word.
 ///
 /// The speaker shows only where the phone has a voice for [language], as on
 /// the drill cards; with sound off in Settings it is greyed out and a tap
@@ -21,15 +20,11 @@ class CardTopLine extends StatelessWidget {
     required this.text,
     required this.card,
     required this.language,
-    required this.report,
   });
 
   final String text;
   final Card card;
   final LanguageInfo language;
-
-  /// What the bug icon's report names: the card's id, or more.
-  final String report;
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +47,6 @@ class CardTopLine extends StatelessWidget {
             label: l10n.drillPlay,
           ),
         SoundsOfWordButton(card: card),
-        ReportButton(detail: report),
       ],
     );
   }

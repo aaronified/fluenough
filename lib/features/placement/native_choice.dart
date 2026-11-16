@@ -6,7 +6,6 @@ import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
-import '../../ui/widgets/report_button.dart';
 
 /// Which of the languages the learner speaks to learn [language] from
 /// (ADR-0036): each that teaches it, with how much of the course it
@@ -123,10 +122,7 @@ class NativeChoicePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final state = AppScope.of(context);
     return Scaffold(
-      appBar: AppBar(
-        title: Text(language.name),
-        actions: const <Widget>[ReportButton()],
-      ),
+      appBar: AppBar(title: Text(language.name)),
       body: SafeArea(
         top: false,
         child: NativeChoice(

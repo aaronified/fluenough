@@ -21,7 +21,6 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/page_parts.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import '../downloads/app_update_needed.dart';
 import '../downloads/deck_update_controls.dart';
@@ -874,7 +873,6 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
           ? null
           : AppBar(
               title: Text(AppLocalizations.of(context)!.pickerSettingsTitle),
-              actions: const <Widget>[ReportButton()],
             ),
       body: SafeArea(
         bottom: false,

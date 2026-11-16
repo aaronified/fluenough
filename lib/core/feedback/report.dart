@@ -1,10 +1,14 @@
-/// What a report is (ADR-0021): a question for support, a bug, or feedback,
-/// which takes in feature requests. [label] starts its mail's subject,
-/// which the mail-to-issue Action reads.
+/// What a report is (ADR-0021): a question for support, a bug, feedback,
+/// which takes in feature requests, or a mistake in content. [label] starts
+/// its mail's subject, which the mail-to-issue Action reads.
 enum ReportKind {
   support('Support', public: false),
   bug('Bug', public: true),
-  feedback('Feedback', public: true);
+  feedback('Feedback', public: true),
+
+  /// A mistake in what a card, deck, unit, topic or culture item teaches,
+  /// from the content report behind the bug icon on those screens.
+  content('Content', public: true);
 
   const ReportKind(this.label, {required this.public});
 

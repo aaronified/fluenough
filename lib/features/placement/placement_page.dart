@@ -7,6 +7,7 @@ import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/placement.dart';
 import '../../app/placement_plan.dart';
+import '../../core/feedback/content_report.dart';
 import '../../core/grading/romanised.dart';
 import '../../core/models/deck.dart';
 import '../../core/scheduling/placed_review.dart';
@@ -14,7 +15,6 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/target_text.dart';
 import '../../ui/widgets/ipa_line.dart';
 import '../../ui/widgets/reading_first.dart';
@@ -375,7 +375,7 @@ class _PlacementPageState extends State<PlacementPage> {
         });
       }
       return Scaffold(
-        appBar: AppBar(actions: const <Widget>[ReportButton()]),
+        appBar: AppBar(),
         body: Center(
           child: CircularProgressIndicator(semanticsLabel: l10n.learnLoading),
         ),
@@ -413,7 +413,7 @@ class _PlacementPageState extends State<PlacementPage> {
           ? (deck?.deck.name ?? language.name)
           : l10n.scriptNameOr(_script.script, _script.script),
       progress: _number / (_number + 8),
-      reportDetail: '${ask.card.id} in placement',
+      report: ContentTarget.card(ask.card.id, deck: deck?.deck),
       child: inWalk
           ? _question(state, language, ask, _walkAnswer)
           : _question(
@@ -763,7 +763,6 @@ class _Result extends StatelessWidget {
       total: 0,
       positionLabel: language,
       progress: 1,
-      reportDetail: 'placement result',
       card: <Widget>[
         for (final (i, line) in lines.indexed)
           Text(

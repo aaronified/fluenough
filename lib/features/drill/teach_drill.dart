@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/skill.dart';
+import '../../core/feedback/content_report.dart';
 import '../../core/scheduling/ask.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/drill_frame.dart';
@@ -50,7 +51,7 @@ class TeachDrill extends StatelessWidget {
       total: session.total,
       progress: session.progress,
       onClose: onClose,
-      reportDetail: '${card.id} in ${session.deck.id}',
+      report: ContentTarget.card(card.id, deck: session.deck.deck),
       fade: true,
       // No foot and no button: the chevrons show as the card is swiped,
       // as they always have on a teach card.

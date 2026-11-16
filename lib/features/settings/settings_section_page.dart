@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/system_bar.dart';
 
 /// A page of Settings, pushed from the tab: its title, the report button,
@@ -48,10 +47,7 @@ class SettingsSectionPage extends StatelessWidget {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-        actions: const <Widget>[ReportButton()],
-      ),
+      appBar: AppBar(title: Text(title)),
       body: listenable == null
           ? Builder(builder: list)
           : ListenableBuilder(

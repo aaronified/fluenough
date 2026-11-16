@@ -11,7 +11,6 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/bottom_actions.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/page_parts.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
@@ -53,7 +52,7 @@ class ReviewPage extends StatelessWidget {
     final unit = unitOfDeck(state, deckId, plan: plan);
     if (unit == null) {
       return Scaffold(
-        appBar: AppBar(actions: const <Widget>[ReportButton()]),
+        appBar: AppBar(),
         body: EmptyState(icon: Icons.style_outlined, title: l10n.deckNotFound),
       );
     }
@@ -133,7 +132,6 @@ class ReviewPage extends StatelessWidget {
               ),
             ),
           ),
-          ReportButton(detail: decks.map((e) => e.id).join(', ')),
         ],
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(4),

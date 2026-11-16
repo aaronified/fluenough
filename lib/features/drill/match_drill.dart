@@ -2,6 +2,7 @@ import 'package:flutter/material.dart' hide Card;
 import 'package:flutter/semantics.dart';
 
 import '../../app/app_scope.dart';
+import '../../core/feedback/content_report.dart';
 import '../../core/models/deck.dart';
 import '../../core/scheduling/session_queue.dart';
 import '../../l10n/app_localizations.dart';
@@ -98,9 +99,12 @@ class _MatchDrillState extends State<MatchDrill> {
       deckName: session.deck.deck.name,
       position: session.position,
       total: session.total,
-      reportDetail: <String>[
-        for (final entry in session.item.group) entry.card.id,
-      ].join(', '),
+      report: ContentTarget.card(
+        <String>[for (final entry in session.item.group) entry.card.id]
+            .join(', '),
+        deck: session.deck.deck,
+        listsOptions: true,
+      ),
       progress: session.progress,
       onClose: widget.onClose,
       going: goingOn(session, answered: done),

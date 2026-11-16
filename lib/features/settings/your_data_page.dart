@@ -14,7 +14,6 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/skill_visuals.dart';
 import '../../ui/widgets/grouped_list.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
 import 'backup_section.dart';
@@ -35,10 +34,7 @@ class YourDataPage extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.settingsRowData),
-        actions: const <Widget>[ReportButton()],
-      ),
+      appBar: AppBar(title: Text(l10n.settingsRowData)),
       body: ListenableBuilder(
         listenable: state.progress,
         builder: (context, _) => _Body(state: state),

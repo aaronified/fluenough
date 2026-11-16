@@ -7,7 +7,6 @@ import '../../core/models/recommendation.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/page_parts.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/system_bar.dart';
 import 'culture_parts.dart';
 import 'recommendations_page.dart' show briefingLine;
@@ -53,7 +52,7 @@ class _WorkQuestionsPageState extends State<WorkQuestionsPage> {
         ?.byId(request.recommendationId);
     if (work == null) {
       return Scaffold(
-        appBar: AppBar(actions: const <Widget>[ReportButton()]),
+        appBar: AppBar(),
         body: state.status == CatalogStatus.loading
             ? Center(
                 child: CircularProgressIndicator(
@@ -81,7 +80,6 @@ class _WorkQuestionsPageState extends State<WorkQuestionsPage> {
     final questions = state.recommendationProgress.questionsOf(work);
     final appBar = AppBar(
       title: Text(work.title, style: theme.textTheme.titleMedium),
-      actions: const <Widget>[ReportButton()],
     );
     if (questions.isEmpty) {
       return Scaffold(

@@ -11,7 +11,6 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/app_language_picker.dart';
 import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/profile_avatar.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import 'pin_page.dart';
 
@@ -115,10 +114,7 @@ class _NewProfilePageState extends State<NewProfilePage> {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.newProfileTitle),
-        actions: const <Widget>[ReportButton()],
-      ),
+      appBar: AppBar(title: Text(l10n.newProfileTitle)),
       body: Column(
         children: <Widget>[
           Expanded(

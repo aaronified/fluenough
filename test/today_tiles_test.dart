@@ -683,7 +683,6 @@ void main() {
               position: 1,
               total: 8,
               onClose: null,
-              reportDetail: 'test',
             ),
           ),
         ),

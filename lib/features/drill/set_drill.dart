@@ -2,6 +2,7 @@ import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
 import '../../app/card_sets.dart';
+import '../../core/feedback/content_report.dart';
 import '../../core/models/card.dart';
 import '../../core/models/card_set.dart';
 import '../../core/models/deck.dart';
@@ -58,7 +59,11 @@ class SetDrill extends StatelessWidget {
       deckName: session.deck.deck.name,
       position: session.position,
       total: session.total,
-      reportDetail: '${part.set.set.id} in ${part.set.set.deckId}',
+      report: ContentTarget.card(
+        part.set.set.id,
+        deck: session.deck.deck,
+        listsOptions: true,
+      ),
       progress: session.progress,
       onClose: onClose,
       // No foot and no Continue: the card takes the foot's space, and going

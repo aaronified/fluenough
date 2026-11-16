@@ -16,7 +16,6 @@ import '../../app/browser_words.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../downloads/download_text.dart' show formatSize;
@@ -412,10 +411,7 @@ class _VoicesPageState extends State<VoicesPage> with WidgetsBindingObserver {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.voicesTitle),
-        actions: const <Widget>[ReportButton()],
-      ),
+      appBar: AppBar(title: Text(l10n.voicesTitle)),
       // The voice chosen, speaking and online leave are settings.
       body: ListenableBuilder(
         listenable: state.settings,

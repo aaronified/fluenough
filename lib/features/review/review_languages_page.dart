@@ -10,7 +10,6 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/page_parts.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../downloads/download_text.dart';
 import '../downloads/language_download_row.dart';
@@ -80,10 +79,7 @@ class _ReviewLanguagesPageState extends State<ReviewLanguagesPage> {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.reviewSettingsLanguages),
-        actions: const <Widget>[ReportButton()],
-      ),
+      appBar: AppBar(title: Text(l10n.reviewSettingsLanguages)),
       body: ListenableBuilder(
         listenable: Listenable.merge(<Listenable>[
           state.settings,

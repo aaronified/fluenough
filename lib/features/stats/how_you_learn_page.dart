@@ -15,7 +15,6 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/mode_pill.dart';
 import '../../ui/widgets/pace_parts.dart';
-import '../../ui/widgets/report_button.dart';
 
 /// The order skills are listed in: Today's tiles', grammar understood
 /// before produced as on the Grammar tile, then passages, then the script
@@ -58,10 +57,7 @@ class HowYouLearnPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.howYouLearnTitle),
-        actions: const <Widget>[ReportButton()],
-      ),
+      appBar: AppBar(title: Text(l10n.howYouLearnTitle)),
       body: SafeArea(top: false, child: HowYouLearnView(language: language)),
     );
   }

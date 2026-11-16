@@ -9,7 +9,6 @@ import '../../core/review/review_question.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/page_parts.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
@@ -152,10 +151,7 @@ class _DailyQuestionsPageState extends State<DailyQuestionsPage> {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.reviewQuestionsTitle),
-        actions: const <Widget>[ReportButton(detail: 'daily questions')],
-      ),
+      appBar: AppBar(title: Text(l10n.reviewQuestionsTitle)),
       body: ListenableBuilder(
         listenable: state.settings,
         builder: (context, _) => _body(context, state),
