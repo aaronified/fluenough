@@ -273,3 +273,112 @@ recommendations:
       - { id: "q2", prompt: { en: "In which year was the play banned in India?" }, options: { en: ["1972", "1974", "1967"] }, answer: 2 }
       - { id: "q3", prompt: { en: "Who wrote the play?" }, options: { en: ["Purushottam Darvhekar", "V. S. Khandekar", "Vijay Tendulkar"] }, answer: 3 }
     tags: ["unreviewed"]
+  # Recommendations wave 5 (addendum 4, section A, 2026-11-16). Songs and films with creators from decks/creators/mr.yaml.
+  - id: "mr-rec-ventilator"
+    medium: "film"
+    title: { text: "व्हेंटिलेटर", reading: "veṇṭileṭar", ipa: "ʋeɳʈileʈər" }
+    creator: ["mr-rajesh-mapuskar"]
+    year: 2016
+    level: "B1"
+    briefing: { en: "A 2016 Marathi comedy drama written and directed by Rajesh Mapuskar. The oldest and most beloved member of a family enters a coma and is put on a medical ventilator a few days before the Ganesh Chaturthi festival." }
+    questions:
+      - { id: "q1", prompt: { en: "Which family does the film follow?" }, options: { en: ["The Shindes", "The Kamerkars", "The Jadhavs"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Which festival is near when the family member is put on a ventilator?" }, options: { en: ["Diwali", "Ganesh Chaturthi", "Holi"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "In which year was the film released?" }, options: { en: ["2014", "2016", "2019"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "mr-rec-sant-dnyaneshwar-1940"
+    medium: "film"
+    title: { text: "संत ज्ञानेश्वर", reading: "sant dnyāneśvar", ipa: "sənt̪ d̪ɲaneʃʋər" }
+    creator: ["mr-v-g-damle"]
+    year: 1940
+    level: "B1"
+    briefing: { en: "A 1940 Marathi-Hindi biographical devotional film, produced by Prabhat Film Company, about the 13th-century Marathi saint and poet Dnyaneshwar. Co-directed by Vishnupant Govind Damle and Sheikh Fattelal." }
+    questions:
+      - { id: "q1", prompt: { en: "Which 13th-century saint and poet does the film tell the life of?" }, options: { en: ["Tukaram", "Dnyaneshwar", "Eknath"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Which company produced the film?" }, options: { en: ["Zee Studios", "Prabhat Film Company", "Sony Pictures"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "In which year was the film released?" }, options: { en: ["1936", "1940", "1945"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "mr-rec-sant-tukaram-1936"
+    medium: "film"
+    title: { text: "संत तुकाराम", reading: "sant tukārām", ipa: "sənt̪ t̪ukaram" }
+    creator: ["mr-v-g-damle"]
+    year: 1936
+    level: "B1"
+    briefing: { en: "A 1936 Marathi film based on the life of the saint Tukaram, made under the Prabhat Film Company banner. Co-directed by Vishnupant Govind Damle and Sheikh Fattelal." }
+    questions:
+      - { id: "q1", prompt: { en: "Whose life does the 1936 film tell?" }, options: { en: ["Dnyaneshwar", "Tukaram", "Samarth Ramdas"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Under whose banner was the film made?" }, options: { en: ["Zee Studios", "Prabhat Film Company", "Filmistan"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "In which year was the film released?" }, options: { en: ["1936", "1940", "1945"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "mr-rec-chandra-song"
+    medium: "song"
+    title: { text: "चंद्रा", reading: "candrā", ipa: "tsənd̪ra" }
+    creator: ["mr-ajay-atul"]
+    year: 2022
+    level: "B1"
+    briefing: { en: "The title song of the 2022 Marathi period romantic drama Chandramukhi." }
+    questions:
+      - { id: "q1", prompt: { en: "Which film is the song the title song of?" }, options: { en: ["Sairat", "Chandramukhi", "Ved"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Who composed the song?" }, options: { en: ["Suresh Bhat", "Ajay-Atul", "Kaushal Inamdar"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Who wrote the lyrics?" }, options: { en: ["Guru Thakur", "Shreya Ghoshal", "Prasad Oak"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "mr-rec-sairat-zaala-ji"
+    medium: "song"
+    title: { text: "सैराट झालं जी", reading: "sairāṭ jhālam̐ ji", ipa: "səiraʈ dzʱalə̃ dʒi" }
+    creator: ["mr-ajay-atul"]
+    year: 2016
+    level: "B1"
+    briefing: { en: "The title song of the 2016 Marathi film Sairat." }
+    questions:
+      - { id: "q1", prompt: { en: "Who directed the film Sairat?" }, options: { en: ["Ravi Jadhav", "Nagraj Manjule", "Jabbar Patel"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Who composed the song?" }, options: { en: ["Ajay-Atul", "Kaushal Inamdar", "Hridaynath Mangeshkar"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Which singer performed the song alongside Chinmayi Sripaada?" }, options: { en: ["Shreya Ghoshal", "Ajay Gogavale", "Anand Shinde"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "mr-rec-kombadi-palali"
+    medium: "song"
+    title: { text: "कोंबडी पळाली", reading: "kombaḍi paḷāli", ipa: "kombəɖi pəɭali" }
+    creator: ["mr-ajay-atul", "mr-kedar-shinde"]
+    year: 2005
+    level: "B1"
+    briefing: { en: "A comedy song from the soundtrack of the film Jatra: Hyalagaad Re Tyalagaad. Its title means The Hen Ran Away." }
+    questions:
+      - { id: "q1", prompt: { en: "Which film's soundtrack includes the song?" }, options: { en: ["Jatra: Hyalagaad Re Tyalagaad", "Sairat", "Chandramukhi"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who wrote the lyrics?" }, options: { en: ["Jitendra Joshi", "Suresh Bhat", "Guru Thakur"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Which two singers voice the song?" }, options: { en: ["Anand Shinde and Vaishali Samant", "Shreya Ghoshal and Ajay Gogavale", "Asha Bhosle and Lata Mangeshkar"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "mr-rec-sukh-kalale"
+    medium: "song"
+    title: { text: "सुख कळले", reading: "sukh kaḷale", ipa: "sukʰ kəɭəle" }
+    creator: ["mr-ajay-atul"]
+    year: 2022
+    level: "B1"
+    briefing: { en: "A Marathi song from the soundtrack of the film Ved." }
+    questions:
+      - { id: "q1", prompt: { en: "Which film's soundtrack includes the song?" }, options: { en: ["Ved", "Chandramukhi", "Duniyadari"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who directed the film Ved?" }, options: { en: ["Nagraj Manjule", "Riteish Deshmukh", "Prasad Oak"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "In which year was the song digitally released?" }, options: { en: ["2016", "2022", "2010"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "mr-rec-marathi-abhimaangeet"
+    medium: "song"
+    title: { text: "मराठी अभिमानगीत", reading: "marāṭhi abhimāngit", ipa: "məraʈʰi əbʱimanɡit̪" }
+    creator: ["mr-suresh-bhat", "mr-kaushal-inamdar"]
+    year: 2010
+    level: "B1"
+    briefing: { en: "A Marathi song in praise of the Marathi language, written by a noted poet and set to music by a well-known composer." }
+    questions:
+      - { id: "q1", prompt: { en: "In which city was the song released?" }, options: { en: ["Pune", "Thane", "Nagpur"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "How many established singers sang the song?" }, options: { en: ["56", "112", "356"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Who composed the music?" }, options: { en: ["Ajay-Atul", "Kaushal Inamdar", "Hridaynath Mangeshkar"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "mr-rec-jait-re-jait-songs"
+    medium: "song"
+    title: { text: "जैत रे जैत", reading: "jait re jait", ipa: "dʒəit̪ re dʒəit̪" }
+    creator: ["mr-hridaynath-mangeshkar"]
+    year: 1977
+    level: "B1"
+    briefing: { en: "The popular songs of the 1977 Marathi musical film Jait Re Jait." }
+    questions:
+      - { id: "q1", prompt: { en: "Who composed the popular songs?" }, options: { en: ["Ajay-Atul", "Hridaynath Mangeshkar", "Kaushal Inamdar"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Who wrote most of the lyrics?" }, options: { en: ["N. D. Mahanor", "Guru Thakur", "Suresh Bhat"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Who directed the film?" }, options: { en: ["Jabbar Patel", "Kedar Shinde", "Ravi Jadhav"] }, answer: 1 }
+    tags: ["unreviewed"]
