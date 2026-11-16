@@ -180,3 +180,29 @@ All of these are merged to `decks-live` (PRs #1462, #1463, #1464, #1465, #1467, 
 Sources: en and kn Wikipedia; Marali Mannige from the 1959 Bengali translation scan (archive.org in.ernet.dli.2015.457745) and the Kuvempu University M.Phil. thesis kuh.mphil.585.pay.130221 (1941, village Kodi). Doubts for a Kannada speaker: Marali Mannige's plot questions come from a translation; Sri Ramayana Darshanam's year is the first volume (1949; the volume years conflict between en and kn).
 
 **Professional decks: still held.** The profession list is open owner question 6 of Plan-Deck-Kinds-And-Topics (`professions` is one shared list in `decks/sections.yaml`), so no Kannada professional deck was built.
+
+## 10. Closing the gaps, 2026-11-16 (owner: "Do not accept gaps!")
+
+All merged to `decks-live`: culture 1 to 4 now at 18 cards each (#1531, 38 more cards), recommendations at 20 entries (#1528, #1541: the three films without a readable plot, Bedara Kannappa, Kittur Chennamma and Sandhya Raga, were replaced by Bhootayyana Maga Ayyu, Sharapanjara and Gejje Pooje), and six professional decks (#1540: medicine clinic and pharmacy, hospitality reception and restaurant, business email and meeting; 56 new phrase cards, hidden, unreviewed).
+
+**Professions.** The parent approved doctor, teacher, engineer, shopkeeper, farmer, driver, nurse and police on 2026-11-16 (PR #1534), but the Spanish session had already put medicine, hospitality and business into `decks/sections.yaml` (#1527). #1534 was closed; Kannada reuses those three ids. More professions are added later, additively, by whoever needs them.
+
+**Network hosts, retried 2026-11-16 after the owner's allowlist change.**
+
+| Host | Result |
+|---|---|
+| en, kn, te, ur Wikipedia, kn.wikisource, en and kn Wikiquote, Wikidata | Reached (the Wikimedia API gives 429 under load: use `action=raw` pages at 5 to 6 s pacing) |
+| archive.org | Reached for search, metadata and `/stream/<id>/..._djvu.txt` (this gave the Marali Mannige thesis and a translation); file downloads redirect to `dn*.eu.archive.org` and `ia*.us.archive.org` and return 403 |
+| web.archive.org | Connection reset |
+| gretil.sub.uni-goettingen.de | Reached (home page 200), not needed |
+| digi.ub.uni-heidelberg.de | 301 on the home page; 403 at the proxy in one run |
+| uni-heidelberg.de, hasp.ub.uni-heidelberg.de | No answer |
+| britannica.com | 403 to a plain request; a browser User-Agent was refused by the harness classifier and not used |
+| gutenberg.org | 503 on every try |
+| dli.gov.in | No answer or 403 at the proxy |
+| sanskritdocuments.org | 403 |
+
+**Still short, with reasons.**
+- Culture: the poets Allama Prabhu, Devara Dasimayya, Channabasavanna, Siddharama, Muktayakka and Sarvajna as a named creator have no lifespan years in any source read (the validator needs `born` and `died`); Sarvajna's tripadis ship as anonymous, 1500 to 1700. Vijaya Dasa, Gopala Dasa, Vyasaraya, Sripadaraja, Jagannatha Dasa, Pampa ashvasas 2 to 14, Ranna, Ponna, Janna, Harihara and Raghavanka were not needed to reach 18 and are the next candidates. Kittel and Muddana's 1901 Ramasvamedham exist on archive.org but cannot be downloaded.
+- Recommendations: all 20 are `unreviewed`; Marali Mannige's plot questions come from a Bengali translation and a Kannada M.Phil. thesis, not the Kannada text; Kittur Chennamma, Bedara Kannappa and Sandhya Raga have no plot source.
+- Nothing in any Kannada deck is reviewed by a Kannada speaker; the doubts are in `docs/review-queue/kn.md`.

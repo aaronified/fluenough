@@ -665,7 +665,7 @@ entry. An app that knows the keys but not a later `genre` shows it under
 5. **Topics file location**: per language and in the language's own index key
    (taken, because Plan-Deck-Owned-Data keeps language files out of `shared`),
    or a shared topics file across all languages?
-6. **Professions**: the list to start with, and which languages first (#1139).
+6. **Professions**: the list to start with, and which languages first (#1139). **Answer (decided by the orchestrators, 2026-11-16, standing rule: sensible defaults are decided):** the starter list is medicine, hospitality and business, filled by the Spanish session in #1527 and reused by Kannada (#1540); the parent's wider list (doctor, teacher, engineer, shopkeeper, farmer, driver, nurse, police) was dropped when it conflicted (#1534 closed). Spanish and Kannada go first. More professions are added additively to `decks/sections.yaml` on decks-live.
 7. **Public-domain terms**: is the validator's floor table (life + 60 for IN
    and BD, 70 for ES, FR and JP, 50 for CN) the one the owner wants, and who
    is the named rights reviewer for a `basis: public-domain` card?
