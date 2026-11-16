@@ -1,0 +1,49 @@
+schema: 1
+id: "sa-en-grammar-imperatives"
+kind: "layer"
+core: "sa-grammar-imperatives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Commands: the imperative (loṭ)"
+description: "The imperative of the verbs of the course in all three persons and numbers, in the active and the middle voice, with its endings and the dropping of -hi. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "voice, person and number"
+  slots:
+    "p3-sg": "imperative, active (parasmaipada), third person singular (let him, her, it)"
+    "p3-du": "imperative, active (parasmaipada), third person dual (let the two of them)"
+    "p3-pl": "imperative, active (parasmaipada), third person plural (let them)"
+    "p2-sg": "imperative, active (parasmaipada), second person singular (you!)"
+    "p2-du": "imperative, active (parasmaipada), second person dual (you two!)"
+    "p2-pl": "imperative, active (parasmaipada), second person plural (you all!)"
+    "p1-sg": "imperative, active (parasmaipada), first person singular (let me)"
+    "p1-du": "imperative, active (parasmaipada), first person dual (let us two)"
+    "p1-pl": "imperative, active (parasmaipada), first person plural (let us)"
+    "m3-sg": "imperative, middle (ātmanepada), third person singular (let him, her, it)"
+    "m3-du": "imperative, middle (ātmanepada), third person dual (let the two of them)"
+    "m3-pl": "imperative, middle (ātmanepada), third person plural (let them)"
+    "m2-sg": "imperative, middle (ātmanepada), second person singular (you!)"
+    "m2-du": "imperative, middle (ātmanepada), second person dual (you two!)"
+    "m2-pl": "imperative, middle (ātmanepada), second person plural (you all!)"
+    "m1-sg": "imperative, middle (ātmanepada), first person singular (let me)"
+    "m1-du": "imperative, middle (ātmanepada), first person dual (let us two)"
+    "m1-pl": "imperative, middle (ātmanepada), first person plural (let us)"
+rules:
+  "sa-rule-imperative-active-third":
+    name: "Active, third person: -tu, -tām, -antu"
+    explanation: "The imperative is the command form, and Pāṇini names it loṭ: sūtra 3.3.162 says {1}, and loṭ, after the uses listed in 3.3.161 (command, invitation, request and the like). Whitney says it has no mode-sign: its own endings are added directly to the present stem (569), and it signifies a command or injunction (572). Sūtra 3.4.85 says {2}: loṭ is like laṅ, so -tām, -tam, -ta, -va and -ma are the endings of the imperfect, and the final i of the present endings -ti and -anti is replaced by u (3.4.86 {3}): {4}, {5}, {6} for the verb to be, from the present {7}. The third person means 'let him, her, it' or 'may he be': a polite command or a wish."
+  "sa-rule-imperative-active-second":
+    name: "Active, second person: -hi (or none), -tam, -ta"
+    explanation: "The second person is the direct command. The ending of the singular is -hi (sūtra 3.4.87 {1}: hi in place of the second singular ending) and it is dropped after a stem in a (6.4.105 {2}), so the verb to be gives the bare stem {3}, as {4} (look!) from the verb to see. After other stems -hi is kept, as {5} (say) and {6} (know), or changes: {7} (put) and {8} (give), and a stem in u drops it as {9} (do). Pāṇini 6.4.101 says {10}: after the verb hu and after a stem ending in a consonant of the jhal group, hi becomes dhi, as {11} (stop). The dual and the plural are -tam and -ta: {12}, {13}. Whitney 570 adds an imperative with -tāt (usually a second singular, such as {14}); where Wiktionary lists several forms for a person, the first is the one taught here."
+  "sa-rule-imperative-active-first":
+    name: "Active, first person: -āni, -āva, -āma"
+    explanation: "The first person of the imperative is made with a long ā before the ending: -āni, -āva, -āma, as {1}, {2}, {3} (let me be, let us two be, let us be). Sūtra 3.4.89 says {4}, mi in place of ni, and 3.4.92 says {5}, āṭ for the first person, which gives the ā. The first person is a wish, an offer or an intention rather than a command: {6} (let me see) from the verb to see. Verbs of the second class and others with a different stem change it as the stem does: {7} from the verb to be, {8} from the verb to stop."
+  "sa-rule-imperative-middle-third":
+    name: "Middle, third person: -tām, -ātām, -antām"
+    explanation: "The imperative of the middle (ātmanepada) voice has the endings -tām, -ātām, -antām, with the vowels of the middle imperfect: {1}, {2}, {3} for the verb to get, and {4} for the verb to turn. A verb that takes both voices puts the middle forms beside the active ones, as {5} beside {6} for the verb to say."
+  "sa-rule-imperative-middle-second":
+    name: "Middle, second person: -sva, -ethām, -dhvam"
+    explanation: "The endings of the second person of the middle imperative are -sva, -ethām, -dhvam: {1}, {2}, {3}. The singular has -sva, not -hi: the verb to see (middle) is {4}, and the verb to know has the middle {5} beside the active {6}."
+  "sa-rule-imperative-middle-first":
+    name: "Middle, first person: -ai, -āvahai, -āmahai"
+    explanation: "The first person of the middle imperative ends in -ai: -ai, -āvahai, -āmahai, as {1}, {2}, {3} for the verb to get. Pāṇini 3.4.90 and 3.4.91 are the sūtras about these endings; the sa.wikisource page types them with word-splitting marks, so only their numbers are given. The verb to say has {4}."

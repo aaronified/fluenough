@@ -234,7 +234,8 @@ units:
       - { id: "grammar-lakaras-heard", text: { "en": "A short passage in Classical Sanskrit showing lakaras, read aloud" } }
     reading_passages:
       - { id: "grammar-lakaras-text", text: { "en": "A short written text in Classical Sanskrit showing lakaras" } }
-  - planned: { id: "sa-grammar-imperatives", grammar: ["imperative"] }
+  - decks: ["sa-grammar-imperatives"]
+    grammar: ["imperative-active-third", "imperative-active-second", "imperative-active-first", "imperative-middle-third", "imperative-middle-second", "imperative-middle-first"]
     listening_passages:
       - { id: "grammar-imperatives-heard", text: { "en": "A short passage in Classical Sanskrit showing imperative, read aloud" } }
     reading_passages:
