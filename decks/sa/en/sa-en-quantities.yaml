@@ -4,7 +4,7 @@ kind: "layer"
 core: "sa-quantities"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "How much and how many"
-description: "How much and how many in Classical Sanskrit: little and much, all and some, full and empty, only, again, and how many."
+description: "How much and how many in Classical Sanskrit: little and much, all and some, more and less, full and empty, enough and plentiful."
 license: "CC-BY-SA-4.0"
 tags: ["unreviewed"]
 cards:
@@ -12,7 +12,7 @@ cards:
     native: "Little; few."
     notes:
       "n1": "Its neuter is अल्पम् (alpam); the ending follows the noun it describes, as in अल्पं (alpaṃ) जलम् (jalam)."
-      "n2": "In these examples the words are written apart; in running text a final ḥ or m before a vowel takes sandhi,."
+      "n2": "In these examples the words are written apart; in running text a final ḥ or m before a vowel takes sandhi."
     bases:
       "अल्पः": "little"
     examples:
@@ -30,6 +30,7 @@ cards:
     native: "Much; many."
     notes:
       "n1": "A u-stem: बहुः (bahuḥ) for the masculine, बहु (bahu) for the neuter, and बहवः (bahavaḥ) in the masculine plural."
+      "n2": "In these examples the words are written apart; in running text sandhi joins them where a word ends in ḥ, m, t or a vowel and the next begins with a vowel or a voiced sound."
     bases:
       "बहुः": "much"
     examples:
@@ -47,6 +48,7 @@ cards:
     native: "Many; several."
     notes:
       "n1": "Use अनेक (aneka) for a count of things (many books) and बहु (bahu) for a quantity (much water)."
+      "n2": "In these examples the words are written apart; in running text sandhi joins them where a word ends in ḥ, m, t or a vowel and the next begins with a vowel or a voiced sound."
     bases:
       "अनेकः": "many"
     examples:
@@ -81,7 +83,7 @@ cards:
     native: "More; extra; in excess."
     notes:
       "n1": "An adjective: it agrees with its noun in gender, number and case, so the form here is the masculine nominative singular."
-      "n2": "In these examples the words are written apart; in running text a final ḥ or m before a vowel takes sandhi,."
+      "n2": "In these examples the words are written apart; in running text a final ḥ or m before a vowel takes sandhi."
     bases:
       "अधिकः": "more"
     examples:
@@ -99,6 +101,7 @@ cards:
     native: "Less; short of; lacking."
     notes:
       "n1": "An adjective: it agrees with its noun in gender, number and case, so the form here is the masculine nominative singular."
+      "n2": "In these examples the words are written apart; in running text sandhi joins them where a word ends in ḥ, m, t or a vowel and the next begins with a vowel or a voiced sound."
     bases:
       "न्यूनः": "less"
     examples:
@@ -167,6 +170,7 @@ cards:
     native: "Some; a few; several."
     notes:
       "n1": "An adjective: it agrees with its noun in gender, number and case, so the form here is the masculine nominative singular."
+      "n2": "In these examples the words are written apart; in running text sandhi joins them where a word ends in ḥ, m, t or a vowel and the next begins with a vowel or a voiced sound."
     bases:
       "कतिपयः": "some"
     examples:
@@ -180,25 +184,11 @@ cards:
         bases:
           "कतिपयानि": "some"
           "पुस्तकानि": "books"
-  "sa-1510":
-    native: "Only; merely."
-    notes:
-      "n1": "It follows the word it limits: जलं (jalaṃ) मात्र (mātra) is only water."
-    examples:
-      "जलं मात्र":
-        native: "Only water."
-        bases:
-          "जलं": "water"
-          "मात्र": "only"
-      "देवाः मात्र":
-        native: "Only gods."
-        bases:
-          "देवाः": "gods"
-          "मात्र": "only"
   "sa-1511":
     native: "Again; more; further."
     notes:
       "n1": "Its final ḥ changes before a vowel (भूयोऽस्ति (bhūyo'sti), bhūyo'sti), so the examples put a consonant-initial word after it."
+      "n2": "In these examples the words are written apart; in running text sandhi joins them where a word ends in ḥ, m, t or a vowel and the next begins with a vowel or a voiced sound."
     bases:
       "भूयः": "again"
     examples:
@@ -212,25 +202,11 @@ cards:
         bases:
           "भूयः": "again"
           "देवाः": "gods"
-  "sa-1512":
-    native: "How many?"
-    notes:
-      "n1": "A question word: the counted noun follows it, as in कति (kati) देवाः (devāḥ), how many gods."
-    examples:
-      "कति देवाः":
-        native: "How many gods?"
-        bases:
-          "कति": "how many"
-          "देवाः": "gods"
-      "कति पुस्तकानि":
-        native: "How many books?"
-        bases:
-          "कति": "how many"
-          "पुस्तकानि": "books"
   "sa-1513":
     native: "Whole; entire."
     notes:
       "n1": "An adjective: it agrees with its noun in gender, number and case, so the form here is the masculine nominative singular."
+      "n2": "In these examples the words are written apart; in running text sandhi joins them where a word ends in ḥ, m, t or a vowel and the next begins with a vowel or a voiced sound."
     bases:
       "सकलः": "whole"
     examples:
@@ -244,3 +220,35 @@ cards:
         bases:
           "सकलः": "whole"
           "देशः": "country"
+  "sa-1620":
+    native: "Enough; sufficient."
+    notes:
+      "n1": "Enough; sufficient. Wiktionary lists the adjective पर्याप्त (paryāpta), which also means full or abundant; the ending follows the noun it describes."
+    bases:
+      "पर्याप्तः": "enough (stem paryāpta)"
+    examples:
+      "पर्याप्तं जलम्":
+        native: "Enough water."
+        bases:
+          "पर्याप्तं": "enough"
+          "जलम्": "water"
+      "पर्याप्तः कुम्भः":
+        native: "One jar is enough."
+        bases:
+          "पर्याप्तः": "enough"
+          "कुम्भः": "jar"
+  "sa-1621":
+    native: "Much; many; plentiful."
+    notes:
+      "n1": "Much, many or plentiful. Wiktionary lists the adjective भूरि (bhūri); in the neuter nominative it keeps this form, as in भूरि (bhūri) जलम् (jalam), much water."
+    examples:
+      "भूरि जलम्":
+        native: "Much water."
+        bases:
+          "भूरि": "much"
+          "जलम्": "water"
+      "भूरि पुस्तकम्":
+        native: "Many books."
+        bases:
+          "भूरि": "many"
+          "पुस्तकम्": "book"

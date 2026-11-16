@@ -39,6 +39,7 @@ cards:
     tags: ["quantity"]
     notes:
       - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
     bases:
       - { word: "बहुः", base: "बहु", reading: "bahu" }
     examples:
@@ -62,6 +63,7 @@ cards:
     tags: ["quantity"]
     notes:
       - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "note" }
     bases:
       - { word: "अनेकः", base: "अनेक", reading: "aneka" }
     examples:
@@ -132,6 +134,7 @@ cards:
     tags: ["quantity"]
     notes:
       - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
     bases:
       - { word: "न्यूनः", base: "न्यून", reading: "nyūna" }
     examples:
@@ -224,6 +227,7 @@ cards:
     tags: ["quantity"]
     notes:
       - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
     bases:
       - { word: "कतिपयः", base: "कतिपय", reading: "katipaya" }
     examples:
@@ -239,28 +243,6 @@ cards:
         bases:
           - { word: "कतिपयानि", base: "कतिपय", reading: "katipaya" }
           - { word: "पुस्तकानि", base: "पुस्तक", reading: "pustaka" }
-  - id: "sa-1510"
-    target: "मात्र"
-    reading: "mātra"
-    ipa: "maːt̪rə"
-    pos: "particle"
-    tags: ["quantity"]
-    notes:
-      - { id: "n1", kind: "behaviour" }
-    bases: "self"
-    examples:
-      - target: "जलं मात्र"
-        reading: "jalaṃ mātra"
-        ipa: "dʒələm maːt̪rə"
-        bases:
-          - { word: "जलं", base: "जल", reading: "jala" }
-          - { word: "मात्र", base: "मात्र", reading: "mātra" }
-      - target: "देवाः मात्र"
-        reading: "devāḥ mātra"
-        ipa: "d̪eːʋaːh maːt̪rə"
-        bases:
-          - { word: "देवाः", base: "देव", reading: "deva" }
-          - { word: "मात्र", base: "मात्र", reading: "mātra" }
   - id: "sa-1511"
     target: "भूयः"
     reading: "bhūyaḥ"
@@ -269,6 +251,7 @@ cards:
     tags: ["quantity"]
     notes:
       - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
     bases:
       - { word: "भूयः", base: "भूयस्", reading: "bhūyas" }
     examples:
@@ -284,28 +267,6 @@ cards:
         bases:
           - { word: "भूयः", base: "भूयस्", reading: "bhūyas" }
           - { word: "देवाः", base: "देव", reading: "deva" }
-  - id: "sa-1512"
-    target: "कति"
-    reading: "kati"
-    ipa: "kət̪i"
-    pos: "pronoun"
-    tags: ["quantity", "question"]
-    notes:
-      - { id: "n1", kind: "usage" }
-    bases: "self"
-    examples:
-      - target: "कति देवाः"
-        reading: "kati devāḥ"
-        ipa: "kət̪i d̪eːʋaːh"
-        bases:
-          - { word: "कति", base: "कति", reading: "kati" }
-          - { word: "देवाः", base: "देव", reading: "deva" }
-      - target: "कति पुस्तकानि"
-        reading: "kati pustakāni"
-        ipa: "kət̪i pust̪əkaːni"
-        bases:
-          - { word: "कति", base: "कति", reading: "kati" }
-          - { word: "पुस्तकानि", base: "पुस्तक", reading: "pustaka" }
   - id: "sa-1513"
     target: "सकलः"
     reading: "sakalaḥ"
@@ -314,6 +275,7 @@ cards:
     tags: ["quantity"]
     notes:
       - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
     bases:
       - { word: "सकलः", base: "सकल", reading: "sakala" }
     examples:
@@ -329,3 +291,48 @@ cards:
         bases:
           - { word: "सकलः", base: "सकल", reading: "sakala" }
           - { word: "देशः", base: "देश", reading: "deśa" }
+  - id: "sa-1620"
+    target: "पर्याप्तः"
+    reading: "paryāptaḥ"
+    ipa: "pərjaːpt̪əh"
+    pos: "adj"
+    tags: ["quantity"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "पर्याप्तः", base: "पर्याप्त", reading: "paryāpta" }
+    examples:
+      - target: "पर्याप्तं जलम्"
+        reading: "paryāptaṃ jalam"
+        ipa: "pərjaːpt̪əm dʒələm"
+        bases:
+          - { word: "पर्याप्तं", base: "पर्याप्त", reading: "paryāpta" }
+          - { word: "जलम्", base: "जल", reading: "jala" }
+      - target: "पर्याप्तः कुम्भः"
+        reading: "paryāptaḥ kumbhaḥ"
+        ipa: "pərjaːpt̪əh kumbʱəh"
+        bases:
+          - { word: "पर्याप्तः", base: "पर्याप्त", reading: "paryāpta" }
+          - { word: "कुम्भः", base: "कुम्भ", reading: "kumbha" }
+  - id: "sa-1621"
+    target: "भूरि"
+    reading: "bhūri"
+    ipa: "bʱuːri"
+    pos: "adj"
+    tags: ["quantity"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "भूरि जलम्"
+        reading: "bhūri jalam"
+        ipa: "bʱuːri dʒələm"
+        bases:
+          - { word: "भूरि", base: "भूरि", reading: "bhūri" }
+          - { word: "जलम्", base: "जल", reading: "jala" }
+      - target: "भूरि पुस्तकम्"
+        reading: "bhūri pustakam"
+        ipa: "bʱuːri pust̪əkəm"
+        bases:
+          - { word: "भूरि", base: "भूरि", reading: "bhūri" }
+          - { word: "पुस्तकम्", base: "पुस्तक", reading: "pustaka" }

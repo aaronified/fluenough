@@ -103,54 +103,6 @@ cards:
         bases:
           - { word: "लक्षं", base: "लक्ष", reading: "lakṣa" }
           - { word: "वर्षाणि", base: "वर्ष", reading: "varṣa" }
-  - id: "sa-1563"
-    target: "नियुतम्"
-    reading: "niyutam"
-    ipa: "nijut̪əm"
-    pos: "noun"
-    gender: "n"
-    tags: ["number"]
-    notes:
-      - { id: "n1", kind: "note" }
-    bases:
-      - { word: "नियुतम्", base: "नियुत", reading: "niyuta" }
-    examples:
-      - target: "नियुतं पुरुषाः"
-        reading: "niyutaṃ puruṣāḥ"
-        ipa: "nijut̪əm puruʂaːh"
-        bases:
-          - { word: "नियुतं", base: "नियुत", reading: "niyuta" }
-          - { word: "पुरुषाः", base: "पुरुष", reading: "puruṣa" }
-      - target: "नियुतं फलानि"
-        reading: "niyutaṃ phalāni"
-        ipa: "nijut̪əm pʰəlaːni"
-        bases:
-          - { word: "नियुतं", base: "नियुत", reading: "niyuta" }
-          - { word: "फलानि", base: "फल", reading: "phala" }
-  - id: "sa-1564"
-    target: "अर्बुदम्"
-    reading: "arbudam"
-    ipa: "ərbud̪əm"
-    pos: "noun"
-    gender: "n"
-    tags: ["number"]
-    notes:
-      - { id: "n1", kind: "note" }
-    bases:
-      - { word: "अर्बुदम्", base: "अर्बुद", reading: "arbuda" }
-    examples:
-      - target: "अर्बुदं वर्षाणि"
-        reading: "arbudaṃ varṣāṇi"
-        ipa: "ərbud̪əm ʋərʂaːɳi"
-        bases:
-          - { word: "अर्बुदं", base: "अर्बुद", reading: "arbuda" }
-          - { word: "वर्षाणि", base: "वर्ष", reading: "varṣa" }
-      - target: "अर्बुदं जनाः"
-        reading: "arbudaṃ janāḥ"
-        ipa: "ərbud̪əm dʒənaːh"
-        bases:
-          - { word: "अर्बुदं", base: "अर्बुद", reading: "arbuda" }
-          - { word: "जनाः", base: "जन", reading: "jana" }
   - id: "sa-1565"
     target: "प्रयुतम्"
     reading: "prayutam"
@@ -184,6 +136,7 @@ cards:
     tags: ["number"]
     notes:
       - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
     bases:
       - { word: "कोटिः", base: "कोटि", reading: "koṭi" }
     examples:
@@ -199,3 +152,66 @@ cards:
         bases:
           - { word: "कोटिः", base: "कोटि", reading: "koṭi" }
           - { word: "वर्षाणि", base: "वर्ष", reading: "varṣa" }
+  - id: "sa-1610"
+    target: "त्रिंशत्"
+    reading: "triṃśat"
+    ipa: "t̪rĩʃət̪"
+    pos: "noun"
+    gender: "f"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "त्रिंशत् पुस्तकानि"
+        reading: "triṃśat pustakāni"
+        ipa: "t̪rĩʃət̪ pust̪əkaːni"
+        bases:
+          - { word: "पुस्तकानि", base: "पुस्तक", reading: "pustaka" }
+      - target: "त्रिंशत् कुम्भाः"
+        reading: "triṃśat kumbhāḥ"
+        ipa: "t̪rĩʃət̪ kumbʱaːh"
+        bases:
+          - { word: "कुम्भाः", base: "कुम्भ", reading: "kumbha" }
+  - id: "sa-1611"
+    target: "चत्वारिंशत्"
+    reading: "catvāriṃśat"
+    ipa: "tʃət̪ʋaːrĩʃət̪"
+    pos: "noun"
+    gender: "f"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "चत्वारिंशत् पुस्तकानि"
+        reading: "catvāriṃśat pustakāni"
+        ipa: "tʃət̪ʋaːrĩʃət̪ pust̪əkaːni"
+        bases:
+          - { word: "पुस्तकानि", base: "पुस्तक", reading: "pustaka" }
+      - target: "चत्वारिंशत् कुम्भाः"
+        reading: "catvāriṃśat kumbhāḥ"
+        ipa: "tʃət̪ʋaːrĩʃət̪ kumbʱaːh"
+        bases:
+          - { word: "कुम्भाः", base: "कुम्भ", reading: "kumbha" }
+  - id: "sa-1612"
+    target: "पञ्चाशत्"
+    reading: "pañcāśat"
+    ipa: "pəɲtʃaːʃət̪"
+    pos: "noun"
+    gender: "f"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "पञ्चाशत् पुस्तकानि"
+        reading: "pañcāśat pustakāni"
+        ipa: "pəɲtʃaːʃət̪ pust̪əkaːni"
+        bases:
+          - { word: "पुस्तकानि", base: "पुस्तक", reading: "pustaka" }
+      - target: "पञ्चाशत् पुष्पाणि"
+        reading: "pañcāśat puṣpāṇi"
+        ipa: "pəɲtʃaːʃət̪ puʂpaːɳi"
+        bases:
+          - { word: "पुष्पाणि", base: "पुष्प", reading: "puṣpa" }

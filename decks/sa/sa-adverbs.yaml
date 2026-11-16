@@ -105,10 +105,11 @@ cards:
       - { id: "n1", kind: "usage" }
     bases: "self"
     examples:
-      - target: "तदा सः जानाति"
-        reading: "tadā saḥ jānāti"
-        ipa: "t̪əd̪aː səh dʒaːnaːt̪i"
+      - target: "तदा स जानाति"
+        reading: "tadā sa jānāti"
+        ipa: "t̪əd̪aː sə dʒaːnaːt̪i"
         bases:
+          - { word: "स", base: "सः", reading: "saḥ" }
           - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
       - target: "तदा सा करोति"
         reading: "tadā sā karoti"
@@ -125,10 +126,11 @@ cards:
       - { id: "n1", kind: "behaviour" }
     bases: "self"
     examples:
-      - target: "यदा सः जानाति"
-        reading: "yadā saḥ jānāti"
-        ipa: "jəd̪aː səh dʒaːnaːt̪i"
+      - target: "यदा स जानाति"
+        reading: "yadā sa jānāti"
+        ipa: "jəd̪aː sə dʒaːnaːt̪i"
         bases:
+          - { word: "स", base: "सः", reading: "saḥ" }
           - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
       - target: "यदा सा करोति"
         reading: "yadā sā karoti"
@@ -145,10 +147,11 @@ cards:
       - { id: "n1", kind: "usage" }
     bases: "self"
     examples:
-      - target: "सः सदा जानाति"
-        reading: "saḥ sadā jānāti"
-        ipa: "səh səd̪aː dʒaːnaːt̪i"
+      - target: "स सदा जानाति"
+        reading: "sa sadā jānāti"
+        ipa: "sə səd̪aː dʒaːnaːt̪i"
         bases:
+          - { word: "स", base: "सः", reading: "saḥ" }
           - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
       - target: "सा सदा करोति"
         reading: "sā sadā karoti"
@@ -163,12 +166,14 @@ cards:
     tags: ["time"]
     notes:
       - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "note" }
     bases: "self"
     examples:
-      - target: "सः कदाचित् करोति"
-        reading: "saḥ kadācit karoti"
-        ipa: "səh kəd̪aːtʃit̪ kəroːt̪i"
+      - target: "स कदाचित् करोति"
+        reading: "sa kadācit karoti"
+        ipa: "sə kəd̪aːtʃit̪ kəroːt̪i"
         bases:
+          - { word: "स", base: "सः", reading: "saḥ" }
           - { word: "करोति", base: "कृ", reading: "kṛ" }
       - target: "सा कदाचित् जानाति"
         reading: "sā kadācit jānāti"
@@ -183,12 +188,14 @@ cards:
     tags: ["time"]
     notes:
       - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "note" }
     bases: "self"
     examples:
-      - target: "अद्य सः करोति"
-        reading: "adya saḥ karoti"
-        ipa: "əd̪jə səh kəroːt̪i"
+      - target: "अद्य स करोति"
+        reading: "adya sa karoti"
+        ipa: "əd̪jə sə kəroːt̪i"
         bases:
+          - { word: "स", base: "सः", reading: "saḥ" }
           - { word: "करोति", base: "कृ", reading: "kṛ" }
       - target: "अद्य अहं जानामि"
         reading: "adya ahaṃ jānāmi"
@@ -207,10 +214,11 @@ cards:
     bases:
       - { word: "श्वः", base: "श्वस्", reading: "śvas" }
     examples:
-      - target: "श्वः सः करोति"
-        reading: "śvaḥ saḥ karoti"
-        ipa: "ʃʋəh səh kəroːt̪i"
+      - target: "श्वः स करोति"
+        reading: "śvaḥ sa karoti"
+        ipa: "ʃʋəh sə kəroːt̪i"
         bases:
+          - { word: "स", base: "सः", reading: "saḥ" }
           - { word: "करोति", base: "कृ", reading: "kṛ" }
       - target: "श्वः सा जानाति"
         reading: "śvaḥ sā jānāti"
@@ -242,13 +250,15 @@ cards:
     tags: ["time"]
     notes:
       - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
     bases:
       - { word: "पुनः", base: "पुनर्", reading: "punar" }
     examples:
-      - target: "सः पुनः करोति"
-        reading: "saḥ punaḥ karoti"
-        ipa: "səh punəh kəroːt̪i"
+      - target: "स पुनः करोति"
+        reading: "sa punaḥ karoti"
+        ipa: "sə punəh kəroːt̪i"
         bases:
+          - { word: "स", base: "सः", reading: "saḥ" }
           - { word: "करोति", base: "कृ", reading: "kṛ" }
       - target: "सा पुनः जानाति"
         reading: "sā punaḥ jānāti"
@@ -265,10 +275,11 @@ cards:
       - { id: "n1", kind: "behaviour" }
     bases: "self"
     examples:
-      - target: "अपि सः जानाति"
-        reading: "api saḥ jānāti"
-        ipa: "əpi səh dʒaːnaːt̪i"
+      - target: "अपि स जानाति"
+        reading: "api sa jānāti"
+        ipa: "əpi sə dʒaːnaːt̪i"
         bases:
+          - { word: "स", base: "सः", reading: "saḥ" }
           - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
       - target: "अपि सा करोति"
         reading: "api sā karoti"
@@ -285,10 +296,11 @@ cards:
       - { id: "n1", kind: "behaviour" }
     bases: "self"
     examples:
-      - target: "एव सः जानाति"
-        reading: "eva saḥ jānāti"
-        ipa: "eːʋə səh dʒaːnaːt̪i"
+      - target: "एव स जानाति"
+        reading: "eva sa jānāti"
+        ipa: "eːʋə sə dʒaːnaːt̪i"
         bases:
+          - { word: "स", base: "सः", reading: "saḥ" }
           - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
       - target: "एव सा करोति"
         reading: "eva sā karoti"
@@ -305,9 +317,11 @@ cards:
       - { id: "n1", kind: "usage" }
     bases: "self"
     examples:
-      - target: "सः वा सा"
-        reading: "saḥ vā sā"
-        ipa: "səh ʋaː saː"
+      - target: "स वा सा"
+        reading: "sa vā sā"
+        ipa: "sə ʋaː saː"
+        bases:
+          - { word: "स", base: "सः", reading: "saḥ" }
       - target: "पिता वा माता"
         reading: "pitā vā mātā"
         ipa: "pit̪aː ʋaː maːt̪aː"
@@ -324,15 +338,17 @@ cards:
       - { id: "n1", kind: "usage" }
     bases: "self"
     examples:
-      - target: "इति सः जानाति"
-        reading: "iti saḥ jānāti"
-        ipa: "it̪i səh dʒaːnaːt̪i"
+      - target: "इति स जानाति"
+        reading: "iti sa jānāti"
+        ipa: "it̪i sə dʒaːnaːt̪i"
         bases:
+          - { word: "स", base: "सः", reading: "saḥ" }
           - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
-      - target: "इति सः करोति"
-        reading: "iti saḥ karoti"
-        ipa: "it̪i səh kəroːt̪i"
+      - target: "इति स करोति"
+        reading: "iti sa karoti"
+        ipa: "it̪i sə kəroːt̪i"
         bases:
+          - { word: "स", base: "सः", reading: "saḥ" }
           - { word: "करोति", base: "कृ", reading: "kṛ" }
   - id: "sa-1096"
     target: "बहु"
@@ -408,10 +424,11 @@ cards:
       - { id: "n1", kind: "usage" }
     bases: "self"
     examples:
-      - target: "तथा सः करोति"
-        reading: "tathā saḥ karoti"
-        ipa: "t̪ət̪ʰaː səh kəroːt̪i"
+      - target: "तथा स करोति"
+        reading: "tathā sa karoti"
+        ipa: "t̪ət̪ʰaː sə kəroːt̪i"
         bases:
+          - { word: "स", base: "सः", reading: "saḥ" }
           - { word: "करोति", base: "कृ", reading: "kṛ" }
       - target: "तथा सा जानाति"
         reading: "tathā sā jānāti"
@@ -428,10 +445,11 @@ cards:
       - { id: "n1", kind: "usage" }
     bases: "self"
     examples:
-      - target: "अथ सः जानाति"
-        reading: "atha saḥ jānāti"
-        ipa: "ət̪ʰə səh dʒaːnaːt̪i"
+      - target: "अथ स जानाति"
+        reading: "atha sa jānāti"
+        ipa: "ət̪ʰə sə dʒaːnaːt̪i"
         bases:
+          - { word: "स", base: "सः", reading: "saḥ" }
           - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
       - target: "अथ सा करोति"
         reading: "atha sā karoti"
@@ -490,10 +508,11 @@ cards:
       - { id: "n1", kind: "usage" }
     bases: "self"
     examples:
-      - target: "एकदा सः जानाति"
-        reading: "ekadā saḥ jānāti"
-        ipa: "eːkəd̪aː səh dʒaːnaːt̪i"
+      - target: "एकदा स जानाति"
+        reading: "ekadā sa jānāti"
+        ipa: "eːkəd̪aː sə dʒaːnaːt̪i"
         bases:
+          - { word: "स", base: "सः", reading: "saḥ" }
           - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
       - target: "एकदा सा करोति"
         reading: "ekadā sā karoti"
