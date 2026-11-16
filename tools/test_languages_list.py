@@ -60,17 +60,17 @@ class LanguagesList(unittest.TestCase):
             with self.subTest(code=entry["code"]):
                 self.assertIn(entry.get("verification", "none"), {"none", "some", "full"})
 
-    def test_popular_is_a_boolean_and_is_the_owners_nine(self) -> None:
+    def test_popular_is_a_boolean_and_is_the_tiles_in_the_owners_order(self) -> None:
         for entry in self.langs:
             with self.subTest(code=entry["code"]):
                 self.assertIsInstance(entry.get("popular", False), bool)
-        # The owner's eight (2026-11-06) and Telugu, added at the owner's
-        # request on 2026-11-15.
-        popular = sorted(e["name"] for e in self.langs if e.get("popular"))
+        # The eight big tiles of Add a language, in file order (owner,
+        # 2026-11-16); Mandarin Chinese is in the full list only.
+        popular = [e["name"] for e in self.langs if e.get("popular")]
         self.assertEqual(
             popular,
-            ["Bengali", "French", "Hindustani", "Japanese", "Kannada",
-             "Mandarin Chinese", "Marathi", "Spanish", "Telugu"],
+            ["Spanish", "French", "Telugu", "Hindustani", "Bengali",
+             "Marathi", "Kannada", "Japanese"],
         )
 
     def test_codes_are_unique(self) -> None:

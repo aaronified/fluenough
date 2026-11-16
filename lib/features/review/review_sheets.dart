@@ -238,7 +238,6 @@ class ReviewCardSheet extends StatelessWidget {
                   : l10n.reviewCardLinePos(card.id, pos, status),
               card: card,
               language: language,
-              report: '${card.id} in ${deck.id}',
             ),
             CardFace(card: card, language: language),
             if (checked > 0) ...<Widget>[

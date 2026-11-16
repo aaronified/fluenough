@@ -6,7 +6,6 @@ import '../../app/shell_tab.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/profile_avatar.dart';
-import '../../ui/widgets/report_button.dart';
 import 'profile_text.dart';
 
 /// A profile's PIN pad, with the wrong-PIN state and Forgot PIN?. Checks
@@ -104,7 +103,6 @@ class _PinPageState extends State<PinPage> {
                 onPressed: () => Navigator.of(context).maybePop(),
               )
             : null,
-        actions: const <Widget>[ReportButton()],
       ),
       body: SafeArea(
         top: false,

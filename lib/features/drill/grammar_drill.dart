@@ -4,6 +4,7 @@ import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/features.dart';
 import '../../app/skill.dart';
+import '../../core/feedback/content_report.dart';
 import '../../core/grading/answer_grader.dart';
 import '../../core/grading/self_grade.dart';
 import '../../core/models/deck.dart';
@@ -266,7 +267,10 @@ class _GrammarDrillState extends State<GrammarDrill> {
       deckName: deck.name,
       position: position,
       total: total,
-      reportDetail: '${cell.entry.lemma}, ${cell.slot} in ${deck.id}',
+      report: ContentTarget.card(
+        '${cell.entry.lemma}, ${cell.slot}',
+        deck: deck,
+      ),
       progress: (position - 1 + (answer == null ? 0 : 0.5)) / total,
       onClose: onClose,
       going: going,

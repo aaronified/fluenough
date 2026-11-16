@@ -10,7 +10,6 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/page_parts.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
 import '../decks/result_marks.dart';
@@ -35,7 +34,7 @@ class CultureDeckPage extends StatelessWidget {
     final state = AppScope.of(context);
     if (state.status == CatalogStatus.loading) {
       return Scaffold(
-        appBar: AppBar(actions: const <Widget>[ReportButton()]),
+        appBar: AppBar(),
         body: Center(
           child: CircularProgressIndicator(
             semanticsLabel: l10n.commonLoadingDecks,
@@ -82,7 +81,6 @@ class CultureDeckPage extends StatelessWidget {
           l10n.cultureDeckTitle(info.name),
           style: theme.textTheme.titleMedium,
         ),
-        actions: const <Widget>[ReportButton()],
       ),
       body: items.isEmpty
           ? EmptyState(

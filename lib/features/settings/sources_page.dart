@@ -7,7 +7,6 @@ import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
 
@@ -170,10 +169,7 @@ class SourcesPage extends StatelessWidget {
     // The script fonts are credited once one is on the phone (ADR-0042).
     final fonts = AppScope.of(context).deckDownloads?.fonts.hasFonts ?? false;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.settingsSources),
-        actions: const <Widget>[ReportButton()],
-      ),
+      appBar: AppBar(title: Text(l10n.settingsSources)),
       body: ListView(
         padding: const EdgeInsetsDirectional.fromSTEB(
           16,

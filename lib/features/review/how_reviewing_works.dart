@@ -4,7 +4,6 @@ import '../../app/links.dart';
 import '../../app/reviewing.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/segmented.dart';
 import 'questions_per_day.dart';
 
@@ -243,7 +242,6 @@ class _HowReviewingWorksState extends State<HowReviewingWorks> {
           actions: <Widget>[
             if (!_last)
               TextButton(onPressed: _close, child: Text(l10n.onboardingSkip)),
-            const ReportButton(detail: 'how reviewing works'),
           ],
         ),
         body: SafeArea(

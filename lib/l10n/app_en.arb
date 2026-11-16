@@ -2499,8 +2499,50 @@
   },
   "reportOpen": "Get support or report a problem",
   "@reportOpen": {
-    "description": "Screen reader label of the bug icon on every screen, which opens a report from that screen: support, a bug or feedback. The long-press hint is hintReport."
+    "description": "Screen reader label of a button that opens the general report: support, a bug or feedback. The long-press hint is hintReport."
   },
+  "contentReportTitle": "{subject, select, deck{Report a problem with this deck} unit{Report a problem with this unit} topic{Report a problem with this topic} item{Report a problem with this item} other{Report a problem with this card}}",
+  "@contentReportTitle": {"description": "Title of the content report sheet and screen reader label of the bug icon on content screens. {subject} is card, deck, unit, topic or item.", "placeholders": {"subject": {"type": "String"}}},
+  "contentReportGroup": "What is wrong",
+  "@contentReportGroup": {"description": "Screen reader label of the group of reasons in the content report sheet."},
+  "contentReportWrongOptions": "Wrong options",
+  "@contentReportWrongOptions": {"description": "Row of the content report: the options of a question are wrong. Opens a popup of what exactly."},
+  "contentReportReadingOrSound": "Reading or sound",
+  "@contentReportReadingOrSound": {"description": "Row of the content report: the reading, the IPA or the audio is wrong. Opens a popup of what exactly."},
+  "contentReportPictureOrExample": "Picture or example",
+  "@contentReportPictureOrExample": {"description": "Row of the content report: the picture or the example sentence is wrong. Opens a popup of what exactly."},
+  "contentReportOffensive": "Offensive or inappropriate",
+  "@contentReportOffensive": {"description": "Row of the content report: the content is offensive or inappropriate."},
+  "contentReportSomethingElse": "Something else",
+  "@contentReportSomethingElse": {"description": "Row of the content report for anything else; the note says what."},
+  "contentReasonTranslation": "The translation is wrong",
+  "@contentReasonTranslation": {"description": "A reason in the content report."},
+  "contentReasonNoCorrect": "No correct option is listed",
+  "@contentReasonNoCorrect": {"description": "A reason in the content report, for a question that lists options."},
+  "contentReasonMoreThanOne": "More than one option is correct",
+  "@contentReasonMoreThanOne": {"description": "A reason in the content report, for a question that lists options."},
+  "contentReasonReading": "The reading or IPA is wrong",
+  "@contentReasonReading": {"description": "A reason in the content report."},
+  "contentReasonAudio": "The audio is wrong or missing",
+  "@contentReasonAudio": {"description": "A reason in the content report."},
+  "contentReasonPicture": "The picture is wrong",
+  "@contentReasonPicture": {"description": "A reason in the content report."},
+  "contentReasonExample": "The example sentence is wrong",
+  "@contentReasonExample": {"description": "A reason in the content report."},
+  "contentReportNote": "Add a note (optional)",
+  "@contentReportNote": {"description": "Label of the one-line note field of the content report, at most 140 characters."},
+  "contentReportNoteRequired": "Say what is wrong",
+  "@contentReportNoteRequired": {"description": "Label of the note field of the content report once Something else is chosen: the note is required, and is where the reporter says what is wrong."},
+  "contentReportSend": "Send",
+  "@contentReportSend": {"description": "Button that sends the content report to the reporter's mail app."},
+  "contentReportDoneTitle": "Your report is ready",
+  "@contentReportDoneTitle": {"description": "Title of the content report sheet once the report is in the reporter's mail app."},
+  "contentReportDoneBody": "Your mail app has the report. Send it from there.",
+  "@contentReportDoneBody": {"description": "Body of the content report sheet once the report is in the reporter's mail app."},
+  "settingsTabMoreOptions": "More options",
+  "@settingsTabMoreOptions": {"description": "Screen reader label of the three-dot button of the Settings tab."},
+  "settingsReportProblem": "Report a problem",
+  "@settingsReportProblem": {"description": "Item of the Settings tab's three-dot menu: opens the general report, which goes to the mail app."},
   "reportTitle": "Support and feedback",
   "@reportTitle": {
     "description": "Title of the report screen, where the reporter gets support, reports a bug or gives feedback."
@@ -14847,17 +14889,69 @@
   "@settingsRestoreNewerNote": {
     "description": "Restore sheet, when the backup was made by a newer app than this one: what an older app does not know about is lost, such as levels the learner corrected."
   },
-  "languagesPopular": "Popular",
-  "@languagesPopular": {
-    "description": "The heading of the languages Add a language lists first: a hand-kept list, `popular` in assets/languages.yaml."
+  "languagesAddQuestion": "What do you want to learn?",
+  "@languagesAddQuestion": {
+    "description": "The heading of Add a language's first screen, above the search and the big tiles of the popular languages."
   },
-  "languagesPopularNote": "Our most complete courses",
-  "@languagesPopularNote": {
-    "description": "The line under the Popular heading on Add a language."
+  "languagesSeeAll": "See all languages",
+  "@languagesSeeAll": {
+    "description": "The link under the big tiles on Add a language that opens the full list of languages."
   },
-  "languagesAllLanguages": "All languages",
+  "languagesAllLanguages": "Languages",
   "@languagesAllLanguages": {
-    "description": "The heading of the full alphabetical list under Popular on Add a language."
+    "description": "The heading of the alphabetical list of the languages that have a course, on Add a language's full list."
+  },
+  "languagesTileStatusA1B1": "A1 to B1 ready",
+  "@languagesTileStatusA1B1": {
+    "description": "The line under a language's name on a tile of Add a language: the course has A1, A2 and B1 fully written."
+  },
+  "languagesTileStatusA1A2": "A1 and A2 ready",
+  "@languagesTileStatusA1A2": {
+    "description": "The line under a language's name on a tile of Add a language: the course has A1 and A2 fully written."
+  },
+  "languagesTileStatusA1": "A1 ready",
+  "@languagesTileStatusA1": {
+    "description": "The line under a language's name on a tile of Add a language: the course has A1 fully written."
+  },
+  "languagesTileStatusBeginner": "Beginner course",
+  "@languagesTileStatusBeginner": {
+    "description": "The line under a language's name on a tile of Add a language: the course has A1 partly written."
+  },
+  "languagesScriptsAndSounds": "Scripts and sounds",
+  "@languagesScriptsAndSounds": {
+    "description": "The heading of the group on Add a language's full list that holds the notations taught like languages, the IPA and English Braille."
+  },
+  "languagesScriptsAndSoundsNote": "Learn to read and say, not a language to speak.",
+  "@languagesScriptsAndSoundsNote": {
+    "description": "The line under the Scripts and sounds heading on Add a language."
+  },
+  "languagesComingSoon": "Coming soon",
+  "@languagesComingSoon": {
+    "description": "The header of the folded group on Add a language's full list that holds the languages that have no course yet."
+  },
+  "languagesNoCourseLabel": "{name}, no course yet",
+  "@languagesNoCourseLabel": {
+    "description": "What a screen reader reads for a language in Coming soon on Add a language, which cannot be picked.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Afrikaans"
+      }
+    }
+  },
+  "languagesCourseMadeKey": "How much of the course is made",
+  "@languagesCourseMadeKey": {
+    "description": "The title of the key at the top of Add a language's full list: each language's bar shows how much of its A1, A2, B1 and Culture parts is written. It describes the course, not the learner's own progress."
+  },
+  "languagesCourseMadeLabel": "How much of the course is made: {levels}",
+  "@languagesCourseMadeLabel": {
+    "description": "What a screen reader reads for a language's four-part bar on Add a language; {levels} is the parts with their shares, such as A1 100%, joined with commonListSeparator. It describes the course, not the learner's own progress.",
+    "placeholders": {
+      "levels": {
+        "type": "String",
+        "example": "A1 100%, A2 40%, B1 0%, Culture 10%"
+      }
+    }
   },
   "languagesVerifiedHeading": "Verified by native speakers",
   "@languagesVerifiedHeading": {
@@ -14869,7 +14963,7 @@
   },
   "languagesVerifiedShort": "Verified:",
   "@languagesVerifiedShort": {
-    "description": "Starts the mark under a language's names on Add a language; the state's word follows it."
+    "description": "The start of the tooltip a verification flag shows on Add a language when tapped; the state's word follows it, such as Verified: Somewhat."
   },
   "languagesVerifiedNone": "Not at all",
   "@languagesVerifiedNone": {

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart' hide Card;
 import '../../app/app_scope.dart';
 import '../../app/deck_catalog.dart' show DeckEntry;
 import '../../app/skill.dart';
+import '../../core/feedback/content_report.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
@@ -99,7 +100,7 @@ class _WalkthroughPageState extends State<WalkthroughPage> {
       total: cards.length,
       progress: (index + 1) / cards.length,
       onClose: () => Navigator.of(context).maybePop(),
-      reportDetail: '${card.id} in ${entry.id}',
+      report: ContentTarget.card(card.id, deck: entry.deck),
       fade: true,
       going: DrillGoing(
         onNext: () {

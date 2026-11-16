@@ -5,7 +5,6 @@ import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../core/logs/log_entry.dart';
 import '../../l10n/app_localizations.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/card_text_scale.dart';
@@ -43,10 +42,7 @@ class _AppLogPageState extends State<AppLogPage> {
       color: theme.colorScheme.onSurface,
     );
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.appLogTitle),
-        actions: const <Widget>[ReportButton()],
-      ),
+      appBar: AppBar(title: Text(l10n.appLogTitle)),
       bottomNavigationBar: ListenableBuilder(
         listenable: log,
         builder: (context, _) => _ActionBar(

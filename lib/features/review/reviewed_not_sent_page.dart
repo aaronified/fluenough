@@ -8,7 +8,6 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/bottom_actions.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/page_parts.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/system_bar.dart';
 import 'review_sheets.dart' show partName, suggestionPartName;
 import 'send_reviews_sheet.dart';
@@ -31,10 +30,7 @@ class ReviewedNotSentPage extends StatelessWidget {
       builder: (context, _) {
         final decks = state.reviewing.unsent;
         return Scaffold(
-          appBar: AppBar(
-            title: Text(l10n.reviewUnsentTitle),
-            actions: const <Widget>[ReportButton()],
-          ),
+          appBar: AppBar(title: Text(l10n.reviewUnsentTitle)),
           body: decks.isEmpty
               ? EmptyState(
                   icon: Icons.outbox_outlined,

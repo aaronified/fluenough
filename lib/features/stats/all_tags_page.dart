@@ -7,7 +7,6 @@ import '../../app/session.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/hint.dart';
 import '../../ui/widgets/page_parts.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/theme.dart';
 import 'stats_numbers.dart';
 
@@ -98,7 +97,6 @@ class _AllTagsPageState extends State<AllTagsPage> {
                 ),
             ],
           ),
-          const ReportButton(),
         ],
       ),
       body: SafeArea(

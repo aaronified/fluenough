@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../theme.dart';
-import 'report_button.dart';
 import 'system_bar.dart';
 
 /// The large title at the top of a tab: "Decks", "Progress", "Settings".
@@ -18,7 +17,7 @@ class TabHeader extends StatelessWidget {
 
   final String title;
 
-  /// Buttons before the report button, such as the language menu.
+  /// Buttons at the end of the header, such as a menu.
   final List<Widget> actions;
 
   @override
@@ -36,7 +35,6 @@ class TabHeader extends StatelessWidget {
           ),
         ),
         ...actions,
-        ReportButton(detail: title),
       ],
     ),
   );
@@ -131,10 +129,7 @@ class PlaceholderPage extends StatelessWidget {
       );
     }
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-        actions: const <Widget>[ReportButton()],
-      ),
+      appBar: AppBar(title: Text(title)),
       body: const SizedBox.expand(),
     );
   }

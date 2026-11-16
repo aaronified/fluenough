@@ -10,7 +10,6 @@ import '../../core/updates/release_notes.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
 import 'markdown_view.dart';
@@ -94,10 +93,7 @@ class _ReleaseNotesPageState extends State<ReleaseNotesPage> {
     };
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.releaseNotesTitle),
-        actions: const <Widget>[ReportButton()],
-      ),
+      appBar: AppBar(title: Text(l10n.releaseNotesTitle)),
       body: ListView(
         padding: const EdgeInsetsDirectional.fromSTEB(
           16,

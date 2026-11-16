@@ -149,3 +149,20 @@ Owner instruction via the parent: no new deck workers or phases until 2 PM IST; 
 | Multi-word verbs | Not retried yet | Re-source from Wiktionary and the Kannada grammar pages, then build the families with verified rows |
 | `kn-numbers-1-20`, `kn-quantities` sentences | Not built | Widen the vocabulary rule, build |
 | Derive run | Not done | Last step: `derive_phonetic.py kn` after every content PR; ask a phonetician about the four vowel-lowering rules |
+
+## 8. State at the end of the 2026-11-16 session
+
+All of these are merged to `decks-live` (PRs #1462, #1463, #1464, #1465, #1467, #1486, #1487, #1489, #1508, #1517, #1522, #1523, #1524) except the held items below.
+
+| Deliverable | State |
+|---|---|
+| Sentences | All 72 word units |
+| Readings | 53 decks, listed in `kn-path.yaml` |
+| Topics, situations, proverbs | 53 topics, 10 sheets, 60 proverbs |
+| Culture | 34 cards (7, 10, 12, 5) and 8 creators; the items dropped and why are in section 7 |
+| Multi-word verbs | 46 new cards plus 11 refs; dropped candidates with reasons are in the run report (no auxiliary sense in any source read, or no gloss) |
+| Recommendations | 11 works after the review fix; Kittur Chennamma and Marali Mannige dropped (no plot source) |
+| Notes | About 530 cards; doubtful ones left without a note and queued |
+| Narrow IPA | `phonetic` on every card with a broad `ipa` |
+| Held | Professional situations (owner), culture beyond the 34 cards (needs sources), the review-queue rows for a Kannada speaker, the four vowel-lowering rules (phonetician) |
+| Branches left for the owner to delete | `decks/kn-culture-wave1`, `decks/kn-multiword-wave1` |

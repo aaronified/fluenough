@@ -14,6 +14,7 @@ import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/profile_avatar.dart';
+import '../../ui/widgets/report_button.dart';
 import '../gallery/gallery_link.dart';
 import 'appearance_page.dart';
 import 'settings_controls.dart';
@@ -53,7 +54,10 @@ class SettingsPage extends StatelessWidget {
           builder: (context, _) => ListView(
             padding: const EdgeInsetsDirectional.only(bottom: 24),
             children: <Widget>[
-              TabHeader(title: l10n.settingsTitle),
+              TabHeader(
+                title: l10n.settingsTitle,
+                actions: const <Widget>[_SettingsMenu()],
+              ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 0),
                 child: Column(
@@ -342,6 +346,35 @@ class _ProfileCard extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+/// The three dots of the Settings tab: one row, "Report a problem", which
+/// opens the general report (Support, Bug or Feedback) and hands it to the
+/// mail app, hence the open-in-new mark and no chevron (owner, 2026-11-16).
+/// Settings > Support keeps its own way in.
+class _SettingsMenu extends StatelessWidget {
+  const _SettingsMenu();
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    return PopupMenuButton<void>(
+      tooltip: l10n.settingsTabMoreOptions,
+      icon: const Icon(Icons.more_vert),
+      itemBuilder: (_) => <PopupMenuEntry<void>>[
+        PopupMenuItem<void>(
+          onTap: () => ReportButton.open(context),
+          child: Row(
+            children: <Widget>[
+              Expanded(child: Text(l10n.settingsReportProblem)),
+              const SizedBox(width: 12),
+              const Icon(Icons.open_in_new, size: 20),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

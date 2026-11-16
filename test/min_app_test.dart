@@ -373,17 +373,16 @@ void main() {
     testWidgets('Add a language greys a language that needs a newer app, '
         'says which, and opens the release page', (tester) async {
       usePhone(tester, textScale: 1.4);
+      // Tall, so that the whole lazy list is built.
+      tester.view.physicalSize = const Size(390 * 3, 3000 * 3);
       await pumpScreen(
         tester,
         AddLanguagePage(spokenList: pickerSpokenList),
         state: await app(tester),
       );
       final text = l10n(tester);
-      // Both are Popular, so near the top; the full list holds them again,
-      // further down, under their own keys.
-      final hi = find.byKey(const ValueKey<String>('add-popular-hi'));
-      await tester.ensureVisible(hi);
-      await tester.pumpAndSettle();
+      // On the first screen the tile says which app the course needs.
+      final hi = find.byKey(const ValueKey<String>('tile-hi'));
       expect(
         find.descendant(
           of: hi,
@@ -391,29 +390,38 @@ void main() {
         ),
         findsOneWidget,
       );
-      expect(
-        find.descendant(of: hi, matching: find.text(text.appUpdateAction)),
-        findsOneWidget,
-      );
       // A language with no requirement shows none.
-      // The list builds rows lazily, so scroll down to Spanish first.
-      final es = find.byKey(const ValueKey<String>('add-popular-es'));
-      await tester.scrollUntilVisible(es, 200);
-      await tester.pumpAndSettle();
+      final es = find.byKey(const ValueKey<String>('tile-es'));
       expect(
         find.descendant(of: es, matching: find.textContaining('Needs app')),
         findsNothing,
       );
-      // Tapping the greyed row opens the page, not the skills sheet.
-      // Back up: the greyed row is no longer built down here, so drag the
-      // list to its top, where it is.
-      await tester.drag(find.byType(Scrollable).first, const Offset(0, 100000));
-      await tester.pumpAndSettle();
-      await tester.ensureVisible(hi);
-      await tester.pumpAndSettle();
+      // Tapping the greyed tile opens the page, not the skills sheet.
       await tester.tap(hi);
       await tester.pumpAndSettle();
       expect(links.asked, <String>[AppLinks.latestRelease]);
+      expect(find.byType(LanguageSkillsSheet), findsNothing);
+      // The full list's row says it too, with the action.
+      await tester.tap(find.byKey(const ValueKey<String>('languages-see-all')));
+      await tester.pumpAndSettle();
+      final row = find.byKey(const ValueKey<String>('add-hi'));
+      expect(
+        find.descendant(
+          of: row,
+          matching: find.text(text.appUpdateNeeded('0.7.1')),
+        ),
+        findsOneWidget,
+      );
+      expect(
+        find.descendant(of: row, matching: find.text(text.appUpdateAction)),
+        findsOneWidget,
+      );
+      await tester.tap(row);
+      await tester.pumpAndSettle();
+      expect(links.asked, <String>[
+        AppLinks.latestRelease,
+        AppLinks.latestRelease,
+      ]);
       expect(find.byType(LanguageSkillsSheet), findsNothing);
       expect(tester.takeException(), isNull);
     });

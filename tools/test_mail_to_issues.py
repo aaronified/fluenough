@@ -65,6 +65,17 @@ def delivered(subject: str, text: str,
 
 
 class IssueFrom(unittest.TestCase):
+    def test_a_content_report_is_labelled_content(self) -> None:
+        issue = mail_to_issues.issue_from(mail(
+            "[Fluenough] Content: Reading or sound: The audio is wrong",
+            "No sound\n\n---\nKind: Content\nCard: te-0384\n"
+            "Languages: te from en"))
+        self.assertEqual(
+            issue["title"],
+            "Content: Reading or sound: The audio is wrong")
+        self.assertEqual(issue["labels"], ["content", "from-app"])
+        self.assertIn("Card: te-0384", issue["body"])
+
     def _a_report_mail_becomes_a_labelled_issue(self) -> None:
         issue = mail_to_issues.issue_from(mail(
             "[Fluenough] Bug: The card shows twice",

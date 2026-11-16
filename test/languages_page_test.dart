@@ -1,11 +1,14 @@
 // The merged Languages page (#907): four skills a language, three states,
 // one list. Behaviour a learner sees, at 1.4x text in light and dark.
+import 'dart:async';
+
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/language_skills.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/core/decks/culture_options.dart';
 import 'package:fluenough/core/languages/language_skills.dart';
+import 'package:fluenough/features/languages/language_skills_sheet.dart';
 import 'package:fluenough/features/languages/language_views.dart';
 import 'package:fluenough/features/languages/skill_widgets.dart';
 import 'package:fluenough/features/languages/languages_page.dart';
@@ -575,16 +578,21 @@ void main() {
       )..scriptsRead = <String, bool>{'en': true},
     );
     await pumpLanguages(tester, state: state);
-    var text = l10n(tester);
-    await tester.tap(find.byTooltip(text.hintAdd));
-    await tester.pumpAndSettle();
-    await tester.enterText(
-      find.byKey(const ValueKey<String>('languages-add-search')),
-      'American Sign',
+    // No course, so Add a language lists it under Coming soon, where it
+    // cannot be picked: open its draft sheet as a pick would.
+    final ase = pickerSpokenList.firstWhere((l) => l.code == 'ase');
+    unawaited(
+      showModalBottomSheet<bool>(
+        context: tester.element(find.byType(LanguagesPage)),
+        isScrollControlled: true,
+        useSafeArea: true,
+        showDragHandle: true,
+        builder: (_) =>
+            LanguageSkillsSheet(view: LanguageView(ase, null), draft: true),
+      ),
     );
     await tester.pumpAndSettle();
-    await tapKey(tester, 'add-ase');
-    text = l10n(tester);
+    final text = l10n(tester);
     Finder pill(String id) => find.byKey(ValueKey<String>('skill-$id'));
     expect(pill('gesture'), findsOneWidget);
     expect(find.text(text.languagesGestures), findsWidgets);

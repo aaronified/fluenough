@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
+import '../../core/feedback/content_report.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/speech/speech_engine.dart';
@@ -57,7 +58,7 @@ class SpeakingDrill extends StatelessWidget {
       deckName: session.deck.deck.name,
       position: session.position,
       total: session.total,
-      reportDetail: '${session.item.card.id} in ${session.deck.id}',
+      report: ContentTarget.card(session.item.card.id, deck: session.deck.deck),
       progress: session.progress,
       onClose: onClose,
       going: goingOn(session, answered: answer != null),
