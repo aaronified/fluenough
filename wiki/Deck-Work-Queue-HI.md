@@ -129,7 +129,7 @@ HI-130..137: typed notes only where a card has one teachable point; ids in the c
 
 ## 6. Pause and resume plan (2026-11-16)
 
-Owner directive via the parent session (2026-11-16): at most four language sessions run at once, so Hindustani is paused after the narrow-IPA run and the open pull requests. **Merged to `decks-live` on 2026-11-15:** #1394 (Urdu spelling), #1411 (56 sentences decks), #1409 (topics, situations, culture 1 to 3, proverbs, multi-word decks, creators), #1423 (notes), #1449 (recommendations and creators), #1470 (review-queue rows), #1482 (six more topics). **In flight when paused:** HI-110, the narrow-IPA run (tool bug #1466 fixed by #1469 on main, release 0.10.6), on branch `decks/hi-ipa-2`; its pull request, one review and merge follow.
+Owner directive via the parent session (2026-11-16): at most four language sessions run at once, so Hindustani is paused after the narrow-IPA run and the open pull requests. **Merged to `decks-live` on 2026-11-15:** #1394 (Urdu spelling), #1411 (56 sentences decks), #1409 (topics, situations, culture 1 to 3, proverbs, multi-word decks, creators), #1423 (notes), #1449 (recommendations and creators), #1470 (review-queue rows), #1482 (six more topics). **Also merged on 2026-11-16:** #1498, the narrow-IPA run (HI-110; tool bug #1466 fixed by #1469): 1,908 own cards now have a `phonetic` (705 from Wiktionary, 1,203 from rules, of which 1,476 are the broad `ipa` bracketed unchanged); 19 cards whose Wiktionary form changed a phoneme had it removed and are in the review queue. Nothing is in flight.
 
 Resume in this order, each as its own pull request to `decks-live` with one Sonnet review:
 
