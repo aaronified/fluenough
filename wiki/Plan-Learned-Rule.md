@@ -1,3 +1,5 @@
+Status: built. The rule is in PR #1515 (code in `lib/core/scheduling/learn_sequence.dart`).
+
 # Learn flow: what "learned" means, and the new rule
 
 Owner design, 2026-11-16 (verbatim, in order):
