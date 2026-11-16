@@ -17,6 +17,7 @@ cards:
     phonetic_source: "rules"
     pos: "phrase"
     modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
   - id: "es-4672"
     target: "¿Tiene algo para la tos?"
     ipa: "ˈtjene ˈalɡo ˈpaɾa la tos"
@@ -32,6 +33,7 @@ cards:
     phonetic_source: "rules"
     pos: "phrase"
     modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "note" }]
   - id: "es-4674"
     target: "¿Cada cuánto tengo que tomarlo?"
     ipa: "ˈkada ˈkwanto ˈtenɡo ke toˈmaɾlo"
@@ -55,6 +57,7 @@ cards:
     phonetic_source: "rules"
     pos: "phrase"
     modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "behaviour" }]
   - id: "es-4677"
     target: "No puedo tomar ibuprofeno."
     ipa: "no ˈpwedo toˈmaɾ ibupɾoˈfeno"
@@ -62,6 +65,7 @@ cards:
     phonetic_source: "rules"
     pos: "phrase"
     modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "note" }]
   - id: "es-4678"
     target: "Es para la alergia."
     ipa: "es ˈpaɾa la aˈleɾxja"
@@ -69,6 +73,7 @@ cards:
     phonetic_source: "rules"
     pos: "phrase"
     modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "behaviour" }]
   - id: "es-4679"
     target: "la dosis"
     ipa: "la ˈdosis"
@@ -77,6 +82,7 @@ cards:
     pos: "noun"
     gender: "f"
     modes: ["recognition", "production"]
+    notes: [{ id: "n1", kind: "behaviour" }]
     bases: [{ word: "la", base: "la" }, { word: "dosis", base: "dosis" }]
     examples:
       - target: "La dosis es de dos pastillas diarias."
@@ -93,6 +99,7 @@ cards:
     pos: "noun"
     gender: "m"
     modes: ["recognition", "production"]
+    notes: [{ id: "n1", kind: "behaviour" }]
     bases: [{ word: "el", base: "el" }, { word: "antibiótico", base: "antibiótico" }]
     examples:
       - target: "El médico me recetó un antibiótico."
