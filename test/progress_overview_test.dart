@@ -191,6 +191,20 @@ cards:
   - { id: $tiny-0001, target: "hola", native: "hello" }
   - { id: $tiny-0002, target: "adiós", native: "goodbye" }
 ''',
+    // Words of another deck of the language, which a question about these two
+    // can offer as wrong options (a card is asked two ways only with enough
+    // to choose from).
+    'decks/es/es-en-options.yaml': '''
+schema: 1
+id: es-en-options
+name: "Options"
+language: { code: es, iso639_3: spa, name: Spanish, script: latin }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+cards:
+  - { id: es-en-options-0001, target: "gracias", native: "thanks" }
+  - { id: es-en-options-0002, target: "perro", native: "dog" }
+''',
   }),
   settings: settings,
   progress: progress,
