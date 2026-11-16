@@ -51,93 +51,94 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "मैं डाक्टर छूं।"
-        reading: "maiṁ ḍākṭar chhūṁ."
-        ipa: "mɛ̃ ɖaːkʈər t͡ʃʰuː̃"
+      - target: "मैं घर में छूं।"
+        reading: "maiṁ ghar me chhūṁ."
+        ipa: "mɛ̃ ɡʱər meː t͡ʃʰuː̃"
         bases:
           - { word: "मैं", base: "मैं", reading: "maiṁ" }
-          - { word: "डाक्टर", base: "डाक्टर", reading: "ḍākṭar" }
-          - { word: "छूं", base: "छ", reading: "chhūṁ" }
-      - target: "मैं ठीक छूं।"
-        reading: "maiṁ ṭhīk chhūṁ."
-        ipa: "mɛ̃ ʈʰiːk t͡ʃʰuː̃"
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "में", base: "में", reading: "me" }
+          - { word: "छूं", base: "छूं", reading: "chhūṁ" }
+      - target: "यो मेरो घर छ।"
+        reading: "yo mero ghar cha."
+        ipa: "jo meroː ɡʱər t͡ʃə"
         bases:
-          - { word: "मैं", base: "मैं", reading: "maiṁ" }
-          - { word: "ठीक", base: "ठीक", reading: "ṭhīk" }
-          - { word: "छूं", base: "छ", reading: "chhūṁ" }
+          - { word: "यो", base: "यो", reading: "yo" }
+          - { word: "मेरो", base: "मेरो", reading: "mero" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "छ", base: "छ", reading: "cha" }
   - id: "kfy-0104"
     target: "तुम"
     reading: "tum"
     ipa: "tum"
     pos: "pronoun"
-    tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "तुम कां छा?"
-        reading: "tum kāṁ chhā?"
-        ipa: "tum kaː̃ t͡ʃʰaː"
+      - target: "तुम को छा?"
+        reading: "tum ko chhā?"
+        ipa: "tum ko t͡ʃʰaː"
         bases:
           - { word: "तुम", base: "तुम", reading: "tum" }
-          - { word: "कां", base: "कां", reading: "kāṁ" }
-          - { word: "छा", base: "छ", reading: "chhā" }
-      - target: "तुम भलो छा।"
-        reading: "tum bhalo chhā."
-        ipa: "tum bʰəlo t͡ʃʰaː"
+          - { word: "को", base: "को", reading: "ko" }
+          - { word: "छा", base: "छा", reading: "chhā" }
+      - target: "तुम घर में छा।"
+        reading: "tum ghar me chhā."
+        ipa: "tum ɡʱər meː t͡ʃʰaː"
         bases:
           - { word: "तुम", base: "तुम", reading: "tum" }
-          - { word: "भलो", base: "भल", reading: "bhalo" }
-          - { word: "छा", base: "छ", reading: "chhā" }
-  - id: "kfy-0105"
-    target: "व"
-    reading: "wa"
-    ipa: "ʋə"
-    pos: "pronoun"
-    tags: ["doubtful"]
-    notes:
-      - { id: "n1", kind: "note" }
-    bases: "self"
-    examples:
-      - target: "व घर में छ।"
-        reading: "wa ghar mein cha."
-        ipa: "ʋə ɡʱər meːn t͡ʃə"
-        bases:
-          - { word: "व", base: "व", reading: "wa" }
           - { word: "घर", base: "घर", reading: "ghar" }
-          - { word: "में", base: "में", reading: "mein" }
-          - { word: "छ", base: "छ", reading: "cha" }
-      - target: "व डाक्टर छ।"
-        reading: "wa ḍākṭar cha."
-        ipa: "ʋə ɖaːkʈər t͡ʃə"
+          - { word: "में", base: "में", reading: "me" }
+          - { word: "छा", base: "छा", reading: "chhā" }
+  - id: "kfy-0105"
+    target: "उ"
+    reading: "u"
+    ipa: "u"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "उ घर में छ।"
+        reading: "u ghar me cha."
+        ipa: "u ɡʱər meː t͡ʃə"
         bases:
-          - { word: "व", base: "व", reading: "wa" }
-          - { word: "डाक्टर", base: "डाक्टर", reading: "ḍākṭar" }
+          - { word: "उ", base: "उ", reading: "u" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "में", base: "में", reading: "me" }
+          - { word: "छ", base: "छ", reading: "cha" }
+      - target: "उ को छ?"
+        reading: "u ko cha?"
+        ipa: "u ko t͡ʃə"
+        bases:
+          - { word: "उ", base: "उ", reading: "u" }
+          - { word: "को", base: "को", reading: "ko" }
           - { word: "छ", base: "छ", reading: "cha" }
   - id: "kfy-0106"
     target: "हम"
     reading: "ham"
     ipa: "ɦəm"
     pos: "pronoun"
-    tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "हम घर जांल।"
-        reading: "ham ghar jānl."
-        ipa: "ɦəm ɡʱər d͡ʒaːnl"
+      - target: "हम घर में छूं।"
+        reading: "ham ghar me chhūṁ."
+        ipa: "ɦəm ɡʱər meː t͡ʃʰuː̃"
         bases:
           - { word: "हम", base: "हम", reading: "ham" }
           - { word: "घर", base: "घर", reading: "ghar" }
-          - { word: "जांल", base: "जाण", reading: "jānl" }
-      - target: "हम कुमाऊँनी छां।"
-        reading: "ham kumāūnī chhān."
-        ipa: "ɦəm kumaːũniː t͡ʃʰaːn"
+          - { word: "में", base: "में", reading: "me" }
+          - { word: "छूं", base: "छूं", reading: "chhūṁ" }
+      - target: "हम को छूं?"
+        reading: "ham ko chhūṁ?"
+        ipa: "ɦəm ko t͡ʃʰuː̃"
         bases:
           - { word: "हम", base: "हम", reading: "ham" }
-          - { word: "कुमाऊँनी", base: "कुमाऊँनी", reading: "kumāūnī" }
-          - { word: "छां", base: "छ", reading: "chhān" }
+          - { word: "को", base: "को", reading: "ko" }
+          - { word: "छूं", base: "छूं", reading: "chhūṁ" }
   - id: "kfy-0107"
     target: "उं"
     reading: "un"
@@ -167,25 +168,25 @@ cards:
     reading: "ek"
     ipa: "ek"
     pos: "other"
-    tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "एक गिलास पाणी।"
-        reading: "ek gilās pāṇī."
-        ipa: "ek ɡilaːs paːɳiː"
+      - target: "एक घर छ।"
+        reading: "ek ghar cha."
+        ipa: "ek ɡʱər t͡ʃə"
         bases:
           - { word: "एक", base: "एक", reading: "ek" }
-          - { word: "गिलास", base: "गिलास", reading: "gilās" }
-          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
-      - target: "एक कप चा।"
-        reading: "ek kap chā."
-        ipa: "ek kəp t͡ʃaː"
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "छ", base: "छ", reading: "cha" }
+      - target: "यो एक घर छ।"
+        reading: "yo ek ghar cha."
+        ipa: "jo ek ɡʱər t͡ʃə"
         bases:
+          - { word: "यो", base: "यो", reading: "yo" }
           - { word: "एक", base: "एक", reading: "ek" }
-          - { word: "कप", base: "कप", reading: "kap" }
-          - { word: "चा", base: "चा", reading: "chā" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "छ", base: "छ", reading: "cha" }
   - id: "kfy-0109"
     target: "दुइ"
     reading: "dui"
@@ -407,51 +408,53 @@ cards:
     reading: "ijā"
     ipa: "iːdʒaː"
     pos: "noun"
-    tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
       - target: "मेरी इजा घर में छ।"
-        reading: "merī ijā ghar mein cha."
-        ipa: "meriː iːdʒaː ɡʱər meːn t͡ʃə"
+        reading: "merī ijā ghar me cha."
+        ipa: "meriː iːdʒaː ɡʱər meː t͡ʃə"
         bases:
-          - { word: "मेरी", base: "मेरो", reading: "merī" }
+          - { word: "मेरी", base: "मेरी", reading: "merī" }
           - { word: "इजा", base: "इजा", reading: "ijā" }
           - { word: "घर", base: "घर", reading: "ghar" }
-          - { word: "में", base: "में", reading: "mein" }
+          - { word: "में", base: "में", reading: "me" }
           - { word: "छ", base: "छ", reading: "cha" }
-      - target: "इजा, पाणी दि।"
-        reading: "ijā, pāṇī di."
-        ipa: "iːdʒaː paːɳiː di"
+      - target: "यो मेरी इजा छ।"
+        reading: "yo merī ijā cha."
+        ipa: "jo meriː iːdʒaː t͡ʃə"
         bases:
+          - { word: "यो", base: "यो", reading: "yo" }
+          - { word: "मेरी", base: "मेरी", reading: "merī" }
           - { word: "इजा", base: "इजा", reading: "ijā" }
-          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
-          - { word: "दि", base: "दिण", reading: "di" }
+          - { word: "छ", base: "छ", reading: "cha" }
   - id: "kfy-0119"
-    target: "बाज्यू"
-    reading: "bājyū"
-    ipa: "baːdʒjuː"
+    target: "बाब"
+    reading: "bāb"
+    ipa: "baːb"
     pos: "noun"
-    tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "मेरो बाज्यू मास्टर छन।"
-        reading: "mero bājyū māsṭar chhan."
-        ipa: "meroː baːdʒjuː maːsʈər t͡ʃʰən"
+      - target: "मेरो बाब घर में छ।"
+        reading: "mero bāb ghar me cha."
+        ipa: "meroː baːb ɡʱər meː t͡ʃə"
         bases:
           - { word: "मेरो", base: "मेरो", reading: "mero" }
-          - { word: "बाज्यू", base: "बाज्यू", reading: "bājyū" }
-          - { word: "मास्टर", base: "मास्टर", reading: "māsṭar" }
-          - { word: "छन", base: "छ", reading: "chhan" }
-      - target: "बाज्यू, पाणी?"
-        reading: "bājyū, pāṇī?"
-        ipa: "baːdʒjuː paːɳiː"
+          - { word: "बाब", base: "बाब", reading: "bāb" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "में", base: "में", reading: "me" }
+          - { word: "छ", base: "छ", reading: "cha" }
+      - target: "यो मेरो बाब छ।"
+        reading: "yo mero bāb cha."
+        ipa: "jo meroː baːb t͡ʃə"
         bases:
-          - { word: "बाज्यू", base: "बाज्यू", reading: "bājyū" }
-          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+          - { word: "यो", base: "यो", reading: "yo" }
+          - { word: "मेरो", base: "मेरो", reading: "mero" }
+          - { word: "बाब", base: "बाब", reading: "bāb" }
+          - { word: "छ", base: "छ", reading: "cha" }
   - id: "kfy-0120"
     target: "दाज्यू"
     reading: "dājyū"
@@ -537,13 +540,13 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "व मान्छ भल छ।"
-        reading: "wa mānchh bhal cha."
-        ipa: "ʋə maːnt͡ʃʰ bʰəl t͡ʃə"
+      - target: "उ मान्छ अच्छो छ।"
+        reading: "u mānchh acchho cha."
+        ipa: "u maːnt͡ʃʰ ət͡ʃːʰo t͡ʃə"
         bases:
-          - { word: "व", base: "व", reading: "wa" }
+          - { word: "उ", base: "उ", reading: "u" }
           - { word: "मान्छ", base: "मान्छ", reading: "mānchh" }
-          - { word: "भल", base: "भल", reading: "bhal" }
+          - { word: "अच्छो", base: "अच्छो", reading: "acchho" }
           - { word: "छ", base: "छ", reading: "cha" }
       - target: "मान्छ घर में छ।"
         reading: "mānchh ghar mein cha."
@@ -563,11 +566,11 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "व स्वामणी डाक्टर छ।"
-        reading: "wa swāmaṇī ḍākṭar cha."
-        ipa: "ʋə sʷaːmənīː ɖaːkʈər t͡ʃə"
+      - target: "उ स्वामणी डाक्टर छ।"
+        reading: "u swāmaṇī ḍākṭar cha."
+        ipa: "u sʷaːmənīː ɖaːkʈər t͡ʃə"
         bases:
-          - { word: "व", base: "व", reading: "wa" }
+          - { word: "उ", base: "उ", reading: "u" }
           - { word: "स्वामणी", base: "स्वामणी", reading: "swāmaṇī" }
           - { word: "डाक्टर", base: "डाक्टर", reading: "ḍākṭar" }
           - { word: "छ", base: "छ", reading: "cha" }
@@ -583,24 +586,24 @@ cards:
     reading: "pāṇī"
     ipa: "paːɳiː"
     pos: "noun"
-    tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "मकें पाणी चैं।"
-        reading: "makai pāṇī chain."
-        ipa: "məkɛi paːɳiː t͡ʃəin"
+      - target: "यो पाणी छ।"
+        reading: "yo pāṇī cha."
+        ipa: "jo paːɳiː t͡ʃə"
         bases:
-          - { word: "मकें", base: "मैं", reading: "makai" }
+          - { word: "यो", base: "यो", reading: "yo" }
           - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
-          - { word: "चैं", base: "चैण", reading: "chain" }
-      - target: "पाणी ठंड छ।"
-        reading: "pāṇī ṭhaṇḍ cha."
-        ipa: "paːɳiː ʈʰənɖ t͡ʃə"
+          - { word: "छ", base: "छ", reading: "cha" }
+      - target: "घर में पाणी छ।"
+        reading: "ghar me pāṇī cha."
+        ipa: "ɡʱər meː paːɳiː t͡ʃə"
         bases:
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "में", base: "में", reading: "me" }
           - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
-          - { word: "ठंड", base: "ठंड", reading: "ṭhaṇḍ" }
           - { word: "छ", base: "छ", reading: "cha" }
   - id: "kfy-0126"
     target: "खाण"
@@ -643,39 +646,39 @@ cards:
           - { word: "चा", base: "चा", reading: "chā" }
           - { word: "गरम", base: "गरम", reading: "garam" }
           - { word: "छ", base: "छ", reading: "cha" }
-      - target: "मकें चा भल लागें।"
-        reading: "makai chā bhal lāgen."
-        ipa: "məkɛi t͡ʃaː bʰəl laːɡen"
+      - target: "मकें चा अच्छो लागें।"
+        reading: "makai chā acchho lāgen."
+        ipa: "məkɛi t͡ʃaː ət͡ʃːʰo laːɡen"
         bases:
           - { word: "मकें", base: "मैं", reading: "makai" }
           - { word: "चा", base: "चा", reading: "chā" }
-          - { word: "भल", base: "भल", reading: "bhal" }
+          - { word: "अच्छो", base: "अच्छो", reading: "acchho" }
           - { word: "लागें", base: "लाग", reading: "lāgen" }
   - id: "kfy-0128"
     target: "घर"
     reading: "ghar"
     ipa: "ɡʱər"
     pos: "noun"
-    tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "मेरो घर ठुल छ।"
-        reading: "mero ghar ṭhul cha."
-        ipa: "meroː ɡʱər ʈʰul t͡ʃə"
+      - target: "यो मेरो घर छ।"
+        reading: "yo mero ghar cha."
+        ipa: "jo meroː ɡʱər t͡ʃə"
         bases:
+          - { word: "यो", base: "यो", reading: "yo" }
           - { word: "मेरो", base: "मेरो", reading: "mero" }
           - { word: "घर", base: "घर", reading: "ghar" }
-          - { word: "ठुल", base: "ठुल", reading: "ṭhul" }
           - { word: "छ", base: "छ", reading: "cha" }
-      - target: "घर कां छ?"
-        reading: "ghar kāṁ cha?"
-        ipa: "ɡʱər kaː̃ t͡ʃə"
+      - target: "मैं घर में छूं।"
+        reading: "maiṁ ghar me chhūṁ."
+        ipa: "mɛ̃ ɡʱər meː t͡ʃʰuː̃"
         bases:
+          - { word: "मैं", base: "मैं", reading: "maiṁ" }
           - { word: "घर", base: "घर", reading: "ghar" }
-          - { word: "कां", base: "कां", reading: "kāṁ" }
-          - { word: "छ", base: "छ", reading: "cha" }
+          - { word: "में", base: "में", reading: "me" }
+          - { word: "छूं", base: "छूं", reading: "chhūṁ" }
   - id: "kfy-0129"
     target: "नाम"
     reading: "nām"
@@ -694,61 +697,60 @@ cards:
           - { word: "नाम", base: "नाम", reading: "nām" }
           - { word: "के", base: "के", reading: "ke" }
           - { word: "छ", base: "छ", reading: "chha" }
-      - target: "नाम भल छ।"
-        reading: "nām bhal cha."
-        ipa: "naːm bʰəl t͡ʃə"
+      - target: "नाम अच्छो छ।"
+        reading: "nām acchho cha."
+        ipa: "naːm ət͡ʃːʰo t͡ʃə"
         bases:
           - { word: "नाम", base: "नाम", reading: "nām" }
-          - { word: "भल", base: "भल", reading: "bhal" }
+          - { word: "अच्छो", base: "अच्छो", reading: "acchho" }
           - { word: "छ", base: "छ", reading: "cha" }
   - id: "kfy-0130"
-    target: "भल"
-    reading: "bhal"
-    ipa: "bʰəl"
+    target: "अच्छो"
+    reading: "acchho"
+    ipa: "ət͡ʃːʰo"
     pos: "adj"
-    tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "यो भल छ।"
-        reading: "yo bhal cha."
-        ipa: "jo bʰəl t͡ʃə"
+      - target: "यो अच्छो छ।"
+        reading: "yo acchho cha."
+        ipa: "jo ət͡ʃːʰo t͡ʃə"
         bases:
           - { word: "यो", base: "यो", reading: "yo" }
-          - { word: "भल", base: "भल", reading: "bhal" }
+          - { word: "अच्छो", base: "अच्छो", reading: "acchho" }
           - { word: "छ", base: "छ", reading: "cha" }
-      - target: "आज मौसम भल छ।"
-        reading: "āj mausam bhal cha."
-        ipa: "aːdʒ məusəm bʰəl t͡ʃə"
+      - target: "तुम अच्छो छा।"
+        reading: "tum acchho chhā."
+        ipa: "tum ət͡ʃːʰo t͡ʃʰaː"
         bases:
-          - { word: "आज", base: "आज", reading: "āj" }
-          - { word: "मौसम", base: "मौसम", reading: "mausam" }
-          - { word: "भल", base: "भल", reading: "bhal" }
-          - { word: "छ", base: "छ", reading: "cha" }
+          - { word: "तुम", base: "तुम", reading: "tum" }
+          - { word: "अच्छो", base: "अच्छो", reading: "acchho" }
+          - { word: "छा", base: "छा", reading: "chhā" }
   - id: "kfy-0131"
-    target: "ठुल"
-    reading: "ṭhul"
-    ipa: "ʈʰul"
+    target: "बड़ो"
+    reading: "baṛo"
+    ipa: "bəɽo"
     pos: "adj"
-    tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "घर ठुल छ।"
-        reading: "ghar ṭhul cha."
-        ipa: "ɡʱər ʈʰul t͡ʃə"
+      - target: "उ बड़ो छ।"
+        reading: "u baṛo cha."
+        ipa: "u bəɽo t͡ʃə"
         bases:
-          - { word: "घर", base: "घर", reading: "ghar" }
-          - { word: "ठुल", base: "ठुल", reading: "ṭhul" }
+          - { word: "उ", base: "उ", reading: "u" }
+          - { word: "बड़ो", base: "बड़ो", reading: "baṛo" }
           - { word: "छ", base: "छ", reading: "cha" }
-      - target: "ठुल कुकुर।"
-        reading: "ṭhul kukur."
-        ipa: "ʈʰul kukur"
+      - target: "यो घर बड़ो छ।"
+        reading: "yo ghar baṛo cha."
+        ipa: "jo ɡʱər bəɽo t͡ʃə"
         bases:
-          - { word: "ठुल", base: "ठुल", reading: "ṭhul" }
-          - { word: "कुकुर", base: "कुकुर", reading: "kukur" }
+          - { word: "यो", base: "यो", reading: "yo" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "बड़ो", base: "बड़ो", reading: "baṛo" }
+          - { word: "छ", base: "छ", reading: "cha" }
   - id: "kfy-0132"
     target: "सानु"
     reading: "sānu"
@@ -773,169 +775,167 @@ cards:
           - { word: "सानु", base: "सानु", reading: "sānu" }
           - { word: "घर", base: "घर", reading: "ghar" }
   - id: "kfy-0133"
-    target: "यख"
-    reading: "yakh"
-    ipa: "jəkʰ"
+    target: "या"
+    reading: "yā"
+    ipa: "jaː"
     pos: "adv"
-    tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "मैं यख छूं।"
-        reading: "maiṁ yakh chhūṁ."
-        ipa: "mɛ̃ jəkʰ t͡ʃʰuː̃"
+      - target: "मैं या छूं।"
+        reading: "maiṁ yā chhūṁ."
+        ipa: "mɛ̃ jaː t͡ʃʰuː̃"
         bases:
           - { word: "मैं", base: "मैं", reading: "maiṁ" }
-          - { word: "यख", base: "यख", reading: "yakh" }
-          - { word: "छूं", base: "छ", reading: "chhūṁ" }
-      - target: "यख आ।"
-        reading: "yakh ā."
-        ipa: "jəkʰ aː"
+          - { word: "या", base: "या", reading: "yā" }
+          - { word: "छूं", base: "छूं", reading: "chhūṁ" }
+      - target: "तुम या छा।"
+        reading: "tum yā chhā."
+        ipa: "tum jaː t͡ʃʰaː"
         bases:
-          - { word: "यख", base: "यख", reading: "yakh" }
-          - { word: "आ", base: "आ", reading: "ā" }
+          - { word: "तुम", base: "तुम", reading: "tum" }
+          - { word: "या", base: "या", reading: "yā" }
+          - { word: "छा", base: "छा", reading: "chhā" }
   - id: "kfy-0134"
-    target: "वख"
-    reading: "wakh"
-    ipa: "ʋəkʰ"
+    target: "वा"
+    reading: "wā"
+    ipa: "ʋaː"
     pos: "adv"
-    tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "वख पाणी छ।"
-        reading: "wakh pāṇī cha."
-        ipa: "ʋəkʰ paːɳiː t͡ʃə"
+      - target: "उ वा छ।"
+        reading: "u wā cha."
+        ipa: "u ʋaː t͡ʃə"
         bases:
-          - { word: "वख", base: "वख", reading: "wakh" }
-          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+          - { word: "उ", base: "उ", reading: "u" }
+          - { word: "वा", base: "वा", reading: "wā" }
           - { word: "छ", base: "छ", reading: "cha" }
-      - target: "वख जा।"
-        reading: "wakh jā."
-        ipa: "ʋəkʰ dʒaː"
+      - target: "पाणी वा छ।"
+        reading: "pāṇī wā cha."
+        ipa: "paːɳiː ʋaː t͡ʃə"
         bases:
-          - { word: "वख", base: "वख", reading: "wakh" }
-          - { word: "जा", base: "जा", reading: "jā" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+          - { word: "वा", base: "वा", reading: "wā" }
+          - { word: "छ", base: "छ", reading: "cha" }
   - id: "kfy-0135"
     target: "के"
     reading: "ke"
     ipa: "ke"
     pos: "pronoun"
-    tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "ये के छ?"
-        reading: "ye ke cha?"
-        ipa: "je ke t͡ʃə"
+      - target: "यो के छ?"
+        reading: "yo ke cha?"
+        ipa: "jo ke t͡ʃə"
         bases:
-          - { word: "ये", base: "ये", reading: "ye" }
+          - { word: "यो", base: "यो", reading: "yo" }
           - { word: "के", base: "के", reading: "ke" }
           - { word: "छ", base: "छ", reading: "cha" }
-      - target: "तुम के खाला?"
-        reading: "tum ke khālā?"
-        ipa: "tum ke kʰaːlaː"
+      - target: "उ के छ?"
+        reading: "u ke cha?"
+        ipa: "u ke t͡ʃə"
         bases:
-          - { word: "तुम", base: "तुम", reading: "tum" }
+          - { word: "उ", base: "उ", reading: "u" }
           - { word: "के", base: "के", reading: "ke" }
-          - { word: "खाला", base: "खाण", reading: "khālā" }
+          - { word: "छ", base: "छ", reading: "cha" }
   - id: "kfy-0136"
-    target: "क्वे"
-    reading: "kve"
-    ipa: "kʋe"
+    target: "को"
+    reading: "ko"
+    ipa: "ko"
     pos: "pronoun"
-    tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "ये क्वे छ?"
-        reading: "ye kve cha?"
-        ipa: "je kʋe t͡ʃə"
+      - target: "तू को छै?"
+        reading: "tū ko chhai?"
+        ipa: "tuː ko t͡ʃʰəi"
         bases:
-          - { word: "ये", base: "ये", reading: "ye" }
-          - { word: "क्वे", base: "क्वे", reading: "kve" }
+          - { word: "तू", base: "तू", reading: "tū" }
+          - { word: "को", base: "को", reading: "ko" }
+          - { word: "छै", base: "छै", reading: "chhai" }
+      - target: "यो को छ?"
+        reading: "yo ko cha?"
+        ipa: "jo ko t͡ʃə"
+        bases:
+          - { word: "यो", base: "यो", reading: "yo" }
+          - { word: "को", base: "को", reading: "ko" }
           - { word: "छ", base: "छ", reading: "cha" }
-      - target: "क्वे आ रौ?"
-        reading: "kve ā rau?"
-        ipa: "kʋe aː rəu"
-        bases:
-          - { word: "क्वे", base: "क्वे", reading: "kve" }
-          - { word: "आ", base: "आ", reading: "ā" }
-          - { word: "रौ", base: "रौ", reading: "rau" }
   - id: "kfy-0137"
-    target: "कां"
-    reading: "kāṁ"
-    ipa: "kaː̃"
+    target: "का"
+    reading: "kā"
+    ipa: "kaː"
     pos: "adv"
     tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "तुम कां छा?"
-        reading: "tum kāṁ chhā?"
-        ipa: "tum kaː̃ t͡ʃʰaː"
+      - target: "तुम का छा?"
+        reading: "tum kā chhā?"
+        ipa: "tum kaː t͡ʃʰaː"
         bases:
           - { word: "तुम", base: "तुम", reading: "tum" }
-          - { word: "कां", base: "कां", reading: "kāṁ" }
+          - { word: "का", base: "का", reading: "kā" }
           - { word: "छा", base: "छ", reading: "chhā" }
-      - target: "घर कां छ?"
-        reading: "ghar kāṁ cha?"
-        ipa: "ɡʱər kaː̃ t͡ʃə"
+      - target: "घर का छ?"
+        reading: "ghar kā cha?"
+        ipa: "ɡʱər kaː t͡ʃə"
         bases:
           - { word: "घर", base: "घर", reading: "ghar" }
-          - { word: "कां", base: "कां", reading: "kāṁ" }
+          - { word: "का", base: "का", reading: "kā" }
           - { word: "छ", base: "छ", reading: "cha" }
   - id: "kfy-0138"
-    target: "र"
-    reading: "ra"
-    ipa: "rə"
+    target: "और"
+    reading: "aur"
+    ipa: "əur"
     pos: "other"
-    tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "चा र पाणी।"
-        reading: "chā ra pāṇī."
-        ipa: "t͡ʃaː rə paːɳiː"
-        bases:
-          - { word: "चा", base: "चा", reading: "chā" }
-          - { word: "र", base: "र", reading: "ra" }
-          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
-      - target: "मैं र तुम।"
-        reading: "maiṁ ra tum."
-        ipa: "mɛ̃ rə tum"
+      - target: "मैं और तुम।"
+        reading: "maiṁ aur tum."
+        ipa: "mɛ̃ əur tum"
         bases:
           - { word: "मैं", base: "मैं", reading: "maiṁ" }
-          - { word: "र", base: "र", reading: "ra" }
+          - { word: "और", base: "और", reading: "aur" }
           - { word: "तुम", base: "तुम", reading: "tum" }
+      - target: "घर और पाणी।"
+        reading: "ghar aur pāṇī."
+        ipa: "ɡʱər əur paːɳiː"
+        bases:
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "और", base: "और", reading: "aur" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
   - id: "kfy-0139"
     target: "आज"
     reading: "āj"
     ipa: "aːdʒ"
     pos: "adv"
-    tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "आज घाम लाग।"
-        reading: "āj ghām lāg."
-        ipa: "aːdʒ ɡʱaːm laːɡ"
+      - target: "आज मैं घर में छूं।"
+        reading: "āj maiṁ ghar me chhūṁ."
+        ipa: "aːdʒ mɛ̃ ɡʱər meː t͡ʃʰuː̃"
         bases:
           - { word: "आज", base: "आज", reading: "āj" }
-          - { word: "घाम", base: "घाम", reading: "ghām" }
-          - { word: "लाग", base: "लाग", reading: "lāg" }
-      - target: "आज पाणी पड़ल।"
-        reading: "āj pāṇī paṛal."
-        ipa: "aːdʒ paːɳiː pəɽəl"
-
+          - { word: "मैं", base: "मैं", reading: "maiṁ" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "में", base: "में", reading: "me" }
+          - { word: "छूं", base: "छूं", reading: "chhūṁ" }
+      - target: "आज यो अच्छो छ।"
+        reading: "āj yo acchho cha."
+        ipa: "aːdʒ jo ət͡ʃːʰo t͡ʃə"
         bases:
           - { word: "आज", base: "आज", reading: "āj" }
-          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
-          - { word: "पड़ल", base: "पड़", reading: "paṛal" }
+          - { word: "यो", base: "यो", reading: "yo" }
+          - { word: "अच्छो", base: "अच्छो", reading: "acchho" }
+          - { word: "छ", base: "छ", reading: "cha" }

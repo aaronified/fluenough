@@ -16,14 +16,18 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "हां, ए पानी ऐ।"
-        reading: "hāṁ, e pānī ai."
-        ipa: "ɦaː̃ e paːniː əi"
+      - target: "हां, पानी।"
+        reading: "hāṁ, pānī."
+        ipa: "ɦaː̃ paːniː"
         bases:
           - { word: "हां", base: "हां", reading: "hāṁ" }
-          - { word: "ए", base: "ए", reading: "e" }
           - { word: "पानी", base: "पानी", reading: "pānī" }
-          - { word: "ऐ", base: "ऐ", reading: "ai" }
+      - target: "हां, घर।"
+        reading: "hāṁ, ghar."
+        ipa: "ɦaː̃ ɡʱər"
+        bases:
+          - { word: "हां", base: "हां", reading: "hāṁ" }
+          - { word: "घर", base: "घर", reading: "ghar" }
   - id: "doi-0102"
     target: "नेईं"
     reading: "neīn"
@@ -50,68 +54,65 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "मैं डाक्टर आं।"
-        reading: "maiṁ ḍākṭar āṁ."
-        ipa: "mɛ̃ ɖaːkʈər aː̃"
+      - target: "मैं अते तुस।"
+        reading: "maiṁ ate tus."
+        ipa: "mɛ̃ əteː tus"
         bases:
           - { word: "मैं", base: "मैं", reading: "maiṁ" }
-          - { word: "डाक्टर", base: "डाक्टर", reading: "ḍākṭar" }
-          - { word: "आं", base: "आं", reading: "āṁ" }
-      - target: "मैं ठीक आं।"
-        reading: "maiṁ ṭhīk āṁ."
-        ipa: "mɛ̃ ʈʰiːk aː̃"
+          - { word: "अते", base: "अते", reading: "ate" }
+          - { word: "तुस", base: "तुस", reading: "tus" }
+      - target: "मैं अते ओह्।"
+        reading: "maiṁ ate oh."
+        ipa: "mɛ̃ əteː oː"
         bases:
           - { word: "मैं", base: "मैं", reading: "maiṁ" }
-          - { word: "ठीक", base: "ठीक", reading: "ṭhīk" }
-          - { word: "आं", base: "आं", reading: "āṁ" }
+          - { word: "अते", base: "अते", reading: "ate" }
+          - { word: "ओह्", base: "ओह्", reading: "oh" }
   - id: "doi-0104"
     target: "तुस"
     reading: "tus"
     ipa: "tus"
     pos: "pronoun"
-    tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "तुस कित्थें ओ?"
-        reading: "tus kitthen o?"
-        ipa: "tus kitːʰen o"
+      - target: "तुस अते मैं।"
+        reading: "tus ate maiṁ."
+        ipa: "tus əteː mɛ̃"
         bases:
           - { word: "तुस", base: "तुस", reading: "tus" }
-          - { word: "कित्थें", base: "कित्थें", reading: "kitthen" }
-          - { word: "ओ", base: "ओ", reading: "o" }
-      - target: "तुस चंगे ओ।"
-        reading: "tus changē o."
-        ipa: "tus t͡ʃəŋɡe o"
+          - { word: "अते", base: "अते", reading: "ate" }
+          - { word: "मैं", base: "मैं", reading: "maiṁ" }
+      - target: "तुस अते ओह्।"
+        reading: "tus ate oh."
+        ipa: "tus əteː oː"
         bases:
           - { word: "तुस", base: "तुस", reading: "tus" }
-          - { word: "चंगे", base: "चंगा", reading: "changē" }
-          - { word: "ओ", base: "ओ", reading: "o" }
+          - { word: "अते", base: "अते", reading: "ate" }
+          - { word: "ओह्", base: "ओह्", reading: "oh" }
   - id: "doi-0105"
-    target: "ओह"
+    target: "ओह्"
     reading: "oh"
-    ipa: "oɦ"
+    ipa: "oː"
     pos: "pronoun"
-    tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "ओह घरे च।"
-        reading: "oh ghare ch."
-        ipa: "oɦ ɡʱəre t͡ʃ"
+      - target: "ओह् अते मैं।"
+        reading: "oh ate maiṁ."
+        ipa: "oː əteː mɛ̃"
         bases:
-          - { word: "ओह", base: "ओह", reading: "oh" }
-          - { word: "घरे", base: "घर", reading: "ghare" }
-          - { word: "च", base: "च", reading: "ch" }
-      - target: "ओह डाक्टर ऐ।"
-        reading: "oh ḍākṭar ai."
-        ipa: "oɦ ɖaːkʈər əi"
+          - { word: "ओह्", base: "ओह्", reading: "oh" }
+          - { word: "अते", base: "अते", reading: "ate" }
+          - { word: "मैं", base: "मैं", reading: "maiṁ" }
+      - target: "ओह् केह्?"
+        reading: "oh keh?"
+        ipa: "oː keː"
         bases:
-          - { word: "ओह", base: "ओह", reading: "oh" }
-          - { word: "डाक्टर", base: "डाक्टर", reading: "ḍākṭar" }
-          - { word: "ऐ", base: "ऐ", reading: "ai" }
+          - { word: "ओह्", base: "ओह्", reading: "oh" }
+          - { word: "केह्", base: "केह्", reading: "keh" }
   - id: "doi-0106"
     target: "असीं"
     reading: "asīṁ"
@@ -161,77 +162,68 @@ cards:
           - { word: "नेपाली", base: "नेपाली", reading: "nepālī" }
           - { word: "न", base: "न", reading: "n" }
   - id: "doi-0108"
-    target: "इक्क"
-    reading: "ikk"
+    target: "इक"
+    reading: "ik"
     ipa: "ik"
     pos: "other"
-    tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "इक्क गिलास पानी।"
-        reading: "ikk gilās pānī."
-        ipa: "ik ɡilaːs paːniː"
+      - target: "इक घर।"
+        reading: "ik ghar."
+        ipa: "ik ɡʱər"
         bases:
-          - { word: "इक्क", base: "इक्क", reading: "ikk" }
-          - { word: "गिलास", base: "गिलास", reading: "gilās" }
-          - { word: "पानी", base: "पानी", reading: "pānī" }
-      - target: "इक्क कप चाह।"
-        reading: "ikk kap cāh."
-        ipa: "ik kəp t͡ʃaːɦ"
+          - { word: "इक", base: "इक", reading: "ik" }
+          - { word: "घर", base: "घर", reading: "ghar" }
+      - target: "इक पुत्तर।"
+        reading: "ik puttar."
+        ipa: "ik puttəɾ"
         bases:
-          - { word: "इक्क", base: "इक्क", reading: "ikk" }
-          - { word: "कप", base: "कप", reading: "kap" }
-          - { word: "चाह", base: "चाह", reading: "cāh" }
+          - { word: "इक", base: "इक", reading: "ik" }
+          - { word: "पुत्तर", base: "पुत्तर", reading: "puttar" }
   - id: "doi-0109"
     target: "दो"
     reading: "do"
     ipa: "do"
     pos: "other"
-    tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "दो गिलास पानी।"
-        reading: "do gilās pānī."
-        ipa: "do ɡilaːs paːniː"
+      - target: "दो घर।"
+        reading: "do ghar."
+        ipa: "do ɡʱər"
         bases:
           - { word: "दो", base: "दो", reading: "do" }
-          - { word: "गिलास", base: "गिलास", reading: "gilās" }
-          - { word: "पानी", base: "पानी", reading: "pānī" }
-      - target: "दो कप चाह।"
-        reading: "do kap cāh."
-        ipa: "do kəp t͡ʃaːɦ"
+          - { word: "घर", base: "घर", reading: "ghar" }
+      - target: "दो पुत्तर।"
+        reading: "do puttar."
+        ipa: "do puttəɾ"
         bases:
           - { word: "दो", base: "दो", reading: "do" }
-          - { word: "कप", base: "कप", reading: "kap" }
-          - { word: "चाह", base: "चाह", reading: "cāh" }
+          - { word: "पुत्तर", base: "पुत्तर", reading: "puttar" }
   - id: "doi-0110"
     target: "त्रै"
     reading: "trai"
     ipa: "trəi"
     pos: "other"
-    tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "त्रै गिलास पानी।"
-        reading: "trai gilās pānī."
-        ipa: "trəi ɡilaːs paːniː"
+      - target: "त्रै घर।"
+        reading: "trai ghar."
+        ipa: "trəi ɡʱər"
         bases:
           - { word: "त्रै", base: "त्रै", reading: "trai" }
-          - { word: "गिलास", base: "गिलास", reading: "gilās" }
-          - { word: "पानी", base: "पानी", reading: "pānī" }
-      - target: "त्रै कप चाह।"
-        reading: "trai kap cāh."
-        ipa: "trəi kəp t͡ʃaːɦ"
+          - { word: "घर", base: "घर", reading: "ghar" }
+      - target: "त्रै पुत्तर।"
+        reading: "trai puttar."
+        ipa: "trəi puttəɾ"
         bases:
           - { word: "त्रै", base: "त्रै", reading: "trai" }
-          - { word: "कप", base: "कप", reading: "kap" }
-          - { word: "चाह", base: "चाह", reading: "cāh" }
+          - { word: "पुत्तर", base: "पुत्तर", reading: "puttar" }
   - id: "doi-0111"
     target: "चार"
     reading: "cār"
@@ -285,25 +277,22 @@ cards:
     reading: "chhe"
     ipa: "t͡ʃʰe"
     pos: "other"
-    tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "छे गिलास पानी।"
-        reading: "chhe gilās pānī."
-        ipa: "t͡ʃʰe ɡilaːs paːniː"
+      - target: "छे घर।"
+        reading: "chhe ghar."
+        ipa: "t͡ʃʰe ɡʱər"
         bases:
           - { word: "छे", base: "छे", reading: "chhe" }
-          - { word: "गिलास", base: "गिलास", reading: "gilās" }
-          - { word: "पानी", base: "पानी", reading: "pānī" }
-      - target: "छे कप चाह।"
-        reading: "chhe kap cāh."
-        ipa: "t͡ʃʰe kəp t͡ʃaːɦ"
+          - { word: "घर", base: "घर", reading: "ghar" }
+      - target: "छे पुत्तर।"
+        reading: "chhe puttar."
+        ipa: "t͡ʃʰe puttəɾ"
         bases:
           - { word: "छे", base: "छे", reading: "chhe" }
-          - { word: "कप", base: "कप", reading: "kap" }
-          - { word: "चाह", base: "चाह", reading: "cāh" }
+          - { word: "पुत्तर", base: "पुत्तर", reading: "puttar" }
   - id: "doi-0114"
     target: "सत्त"
     reading: "satt"
@@ -357,49 +346,43 @@ cards:
     reading: "nau"
     ipa: "nəu"
     pos: "other"
-    tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "नौ गिलास पानी।"
-        reading: "nau gilās pānī."
-        ipa: "nəu ɡilaːs paːniː"
+      - target: "नौ घर।"
+        reading: "nau ghar."
+        ipa: "nəu ɡʱər"
         bases:
           - { word: "नौ", base: "नौ", reading: "nau" }
-          - { word: "गिलास", base: "गिलास", reading: "gilās" }
-          - { word: "पानी", base: "पानी", reading: "pānī" }
-      - target: "नौ कप चाह।"
-        reading: "nau kap cāh."
-        ipa: "nəu kəp t͡ʃaːɦ"
+          - { word: "घर", base: "घर", reading: "ghar" }
+      - target: "नौ पुत्तर।"
+        reading: "nau puttar."
+        ipa: "nəu puttəɾ"
         bases:
           - { word: "नौ", base: "नौ", reading: "nau" }
-          - { word: "कप", base: "कप", reading: "kap" }
-          - { word: "चाह", base: "चाह", reading: "cāh" }
+          - { word: "पुत्तर", base: "पुत्तर", reading: "puttar" }
   - id: "doi-0117"
     target: "दस"
     reading: "das"
     ipa: "dəs"
     pos: "other"
-    tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "दस गिलास पानी।"
-        reading: "das gilās pānī."
-        ipa: "dəs ɡilaːs paːniː"
+      - target: "दस घर।"
+        reading: "das ghar."
+        ipa: "dəs ɡʱər"
         bases:
           - { word: "दस", base: "दस", reading: "das" }
-          - { word: "गिलास", base: "गिलास", reading: "gilās" }
-          - { word: "पानी", base: "पानी", reading: "pānī" }
-      - target: "दस कप चाह।"
-        reading: "das kap cāh."
-        ipa: "dəs kəp t͡ʃaːɦ"
+          - { word: "घर", base: "घर", reading: "ghar" }
+      - target: "दस पुत्तर।"
+        reading: "das puttar."
+        ipa: "dəs puttəɾ"
         bases:
           - { word: "दस", base: "दस", reading: "das" }
-          - { word: "कप", base: "कप", reading: "kap" }
-          - { word: "चाह", base: "चाह", reading: "cāh" }
+          - { word: "पुत्तर", base: "पुत्तर", reading: "puttar" }
   - id: "doi-0118"
     target: "माँ"
     reading: "mām̐"
@@ -433,9 +416,7 @@ cards:
     tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
-    bases:
-      - { word: "पिता", base: "पिता", reading: "pitā" }
-      - { word: "जी", base: "जी", reading: "jī" }
+    bases: "self"
     examples:
       - target: "मेरे पिता जी मास्टर न।"
         reading: "mere pitā jī māsṭar n."
@@ -537,11 +518,11 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "ओह मनुख चंगा ऐ।"
+      - target: "ओह् मनुख चंगा ऐ।"
         reading: "oh manukh changā ai."
-        ipa: "oɦ mənʊkʰ t͡ʃəŋɡaː əi"
+        ipa: "oː mənʊkʰ t͡ʃəŋɡaː əi"
         bases:
-          - { word: "ओह", base: "ओह", reading: "oh" }
+          - { word: "ओह्", base: "ओह्", reading: "oh" }
           - { word: "मनुख", base: "मनुख", reading: "manukh" }
           - { word: "चंगा", base: "चंगा", reading: "changā" }
           - { word: "ऐ", base: "ऐ", reading: "ai" }
@@ -562,11 +543,11 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "ओह जनानी डाक्टर ऐ।"
+      - target: "ओह् जनानी डाक्टर ऐ।"
         reading: "oh jənānī ḍākṭar ai."
-        ipa: "oɦ dʒənaːniː ɖaːkʈər əi"
+        ipa: "oː dʒənaːniː ɖaːkʈər əi"
         bases:
-          - { word: "ओह", base: "ओह", reading: "oh" }
+          - { word: "ओह्", base: "ओह्", reading: "oh" }
           - { word: "जनानी", base: "जनानी", reading: "jənānī" }
           - { word: "डाक्टर", base: "डाक्टर", reading: "ḍākṭar" }
           - { word: "ऐ", base: "ऐ", reading: "ai" }
@@ -586,21 +567,19 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "मिगी पानी चाही दा।"
-        reading: "migī pānī cāhī dā."
-        ipa: "miɡiː paːniː t͡ʃaːɦiː daː"
+      - target: "ऐह् पानी।"
+        reading: "eh pānī."
+        ipa: "eː paːniː"
         bases:
-          - { word: "मिगी", base: "मिगी", reading: "migī" }
+          - { word: "ऐह्", base: "ऐह्", reading: "eh" }
           - { word: "पानी", base: "पानी", reading: "pānī" }
-          - { word: "चाही", base: "चाहना", reading: "cāhī" }
-          - { word: "दा", base: "दा", reading: "dā" }
-      - target: "पानी ठंडा ऐ।"
-        reading: "pānī ṭhaṇḍā ai."
-        ipa: "paːniː ʈʰənɖaː əi"
+      - target: "पानी अते घर।"
+        reading: "pānī ate ghar."
+        ipa: "paːniː əteː ɡʱər"
         bases:
           - { word: "पानी", base: "पानी", reading: "pānī" }
-          - { word: "ठंडा", base: "ठंडा", reading: "ṭhaṇḍā" }
-          - { word: "ऐ", base: "ऐ", reading: "ai" }
+          - { word: "अते", base: "अते", reading: "ate" }
+          - { word: "घर", base: "घर", reading: "ghar" }
   - id: "doi-0126"
     target: "खाना"
     reading: "khānā"
@@ -659,21 +638,19 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "मेरा घर वड्डा ऐ।"
-        reading: "merā ghar vaḍḍā ai."
-        ipa: "meraː ɡʱər ʋəɖːaː əi"
+      - target: "ऐह् घर।"
+        reading: "eh ghar."
+        ipa: "eː ɡʱər"
         bases:
-          - { word: "मेरा", base: "मेरा", reading: "merā" }
+          - { word: "ऐह्", base: "ऐह्", reading: "eh" }
           - { word: "घर", base: "घर", reading: "ghar" }
-          - { word: "वड्डा", base: "वड्डा", reading: "vaḍḍā" }
-          - { word: "ऐ", base: "ऐ", reading: "ai" }
-      - target: "घर कित्थें ऐ?"
-        reading: "ghar kitthen ai?"
-        ipa: "ɡʱər kitːʰen əi"
+      - target: "घर अते पानी।"
+        reading: "ghar ate pānī."
+        ipa: "ɡʱər əteː paːniː"
         bases:
           - { word: "घर", base: "घर", reading: "ghar" }
-          - { word: "कित्थें", base: "कित्थें", reading: "kitthen" }
-          - { word: "ऐ", base: "ऐ", reading: "ai" }
+          - { word: "अते", base: "अते", reading: "ate" }
+          - { word: "पानी", base: "पानी", reading: "pānī" }
   - id: "doi-0129"
     target: "नां"
     reading: "nāṁ"
@@ -709,11 +686,11 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "ए चंगा ऐ।"
-        reading: "e changā ai."
-        ipa: "e t͡ʃəŋɡaː əi"
+      - target: "ऐह् चंगा ऐ।"
+        reading: "eh changā ai."
+        ipa: "eː t͡ʃəŋɡaː əi"
         bases:
-          - { word: "ए", base: "ए", reading: "e" }
+          - { word: "ऐह्", base: "ऐह्", reading: "eh" }
           - { word: "चंगा", base: "चंगा", reading: "changā" }
           - { word: "ऐ", base: "ऐ", reading: "ai" }
       - target: "अज्ज मौसम चंगा ऐ।"
@@ -817,29 +794,26 @@ cards:
           - { word: "उत्थें", base: "उत्थें", reading: "utthen" }
           - { word: "जा", base: "जा", reading: "jā" }
   - id: "doi-0135"
-    target: "कीह"
-    reading: "kīh"
-    ipa: "kiːɦ"
+    target: "केह्"
+    reading: "keh"
+    ipa: "keː"
     pos: "pronoun"
-    tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "ए कीह ऐ?"
-        reading: "e kīh ai?"
-        ipa: "e kiːɦ əi"
+      - target: "ऐह् केह्?"
+        reading: "eh keh?"
+        ipa: "eː keː"
         bases:
-          - { word: "ए", base: "ए", reading: "e" }
-          - { word: "कीह", base: "कीह", reading: "kīh" }
-          - { word: "ऐ", base: "ऐ", reading: "ai" }
-      - target: "तुस कीह खाओगे?"
-        reading: "tus kīh khāogē?"
-        ipa: "tus kiːɦ kʰaːogeː"
+          - { word: "ऐह्", base: "ऐह्", reading: "eh" }
+          - { word: "केह्", base: "केह्", reading: "keh" }
+      - target: "ओह् केह्?"
+        reading: "oh keh?"
+        ipa: "oː keː"
         bases:
-          - { word: "तुस", base: "तुस", reading: "tus" }
-          - { word: "कीह", base: "कीह", reading: "kīh" }
-          - { word: "खाओगे", base: "खाना", reading: "khāogē" }
+          - { word: "ओह्", base: "ओह्", reading: "oh" }
+          - { word: "केह्", base: "केह्", reading: "keh" }
   - id: "doi-0136"
     target: "कुन"
     reading: "kun"
@@ -850,11 +824,11 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "ए कुन ऐ?"
-        reading: "e kun ai?"
-        ipa: "e kʊn əi"
+      - target: "ऐह् कुन ऐ?"
+        reading: "eh kun ai?"
+        ipa: "eː kʊn əi"
         bases:
-          - { word: "ए", base: "ए", reading: "e" }
+          - { word: "ऐह्", base: "ऐह्", reading: "eh" }
           - { word: "कुन", base: "कुन", reading: "kun" }
           - { word: "ऐ", base: "ऐ", reading: "ai" }
       - target: "कुन औंदा ऐ?"
@@ -889,29 +863,28 @@ cards:
           - { word: "कित्थें", base: "कित्थें", reading: "kitthen" }
           - { word: "ऐ", base: "ऐ", reading: "ai" }
   - id: "doi-0138"
-    target: "ते"
-    reading: "te"
-    ipa: "te"
+    target: "अते"
+    reading: "ate"
+    ipa: "əteː"
     pos: "other"
-    tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "चाह ते पानी।"
-        reading: "cāh te pānī."
-        ipa: "t͡ʃaːɦ te paːniː"
-        bases:
-          - { word: "चाह", base: "चाह", reading: "cāh" }
-          - { word: "ते", base: "ते", reading: "te" }
-          - { word: "पानी", base: "पानी", reading: "pānī" }
-      - target: "मैं ते तुस।"
-        reading: "maiṁ te tus."
-        ipa: "mɛ̃ te tus"
+      - target: "मैं अते तुस।"
+        reading: "maiṁ ate tus."
+        ipa: "mɛ̃ əteː tus"
         bases:
           - { word: "मैं", base: "मैं", reading: "maiṁ" }
-          - { word: "ते", base: "ते", reading: "te" }
+          - { word: "अते", base: "अते", reading: "ate" }
           - { word: "तुस", base: "तुस", reading: "tus" }
+      - target: "घर अते पानी।"
+        reading: "ghar ate pānī."
+        ipa: "ɡʱər əteː paːniː"
+        bases:
+          - { word: "घर", base: "घर", reading: "ghar" }
+          - { word: "अते", base: "अते", reading: "ate" }
+          - { word: "पानी", base: "पानी", reading: "pānī" }
   - id: "doi-0139"
     target: "अज्ज"
     reading: "ajj"
@@ -932,7 +905,6 @@ cards:
       - target: "अज्ज पानी पौंगा।"
         reading: "ajj pānī paungā."
         ipa: "əd͡ʒːə paːniː pəungaː"
-
         bases:
           - { word: "अज्ज", base: "अज्ज", reading: "ajj" }
           - { word: "पानी", base: "पानी", reading: "pānī" }

@@ -10,7 +10,7 @@ cards:
   "raj-0101":
     native: "yes"
     notes:
-      "n1": "The usual 'yes'."
+      "n1": "The usual 'yes'. The Survey's list of words gives hā. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
       "हाँ, यो पाणी है।":
         native: "Yes, this is water."
@@ -22,18 +22,24 @@ cards:
   "raj-0102":
     native: "no; not"
     notes:
-      "n1": "The negative. Before a verb it means 'not'."
+      "n1": "The Survey says the Rajasthani negative ko-ni (or koy-ni) is common. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "कोनी, म्हैं आऊं कोनी।":
-        native: "No, I am not coming."
+      "यो घर कोनी।":
+        native: "This is not a house."
         bases:
+          "यो": "this"
+          "घर": "home"
           "कोनी": "not"
-          "म्हैं": "I"
-          "आऊं": "come"
+      "वो अठै कोनी।":
+        native: "He is not here."
+        bases:
+          "वो": "he"
+          "अठै": "here"
+          "कोनी": "not"
   "raj-0103":
     native: "I"
     notes:
-      "n1": "The first person."
+      "n1": "The first person. The Survey gives hu or mhu for 'I', and mhai for the agent case. म्हैं (mhaiṁ) as the ordinary 'I' is not attested there. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
       "म्हैं डॉक्टर हूँ।":
         native: "I am a doctor."
@@ -50,162 +56,149 @@ cards:
   "raj-0104":
     native: "you (respectful)"
     notes:
-      "n1": "The respectful 'you'. तूं (tūṁ) is 'you' for a friend or child."
+      "n1": "The Survey's table gives the (thē) and tamē for 'you', with tharo for 'your'. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "थे कठै हो?":
-        native: "Where are you?"
+      "थारो घर।":
+        native: "Your house."
+        bases:
+          "थारो": "your"
+          "घर": "home"
+      "थे अर म्हे।":
+        native: "You and we."
         bases:
           "थे": "you"
-          "कठै": "where"
-          "हो": "are"
-      "थे घणा नीका हो।":
-        native: "You are well."
-        bases:
-          "थे": "you"
-          "घणा": "very"
-          "नीका": "good"
-          "हो": "are"
+          "अर": "and"
+          "म्हे": "we"
   "raj-0105":
     native: "he; she"
     notes:
-      "n1": "One word for both. Doubtful for Rajasthani."
+      "n1": "One word for he and she. The Survey gives wo for 'that, he', with a separate feminine form in the nominative singular. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "वो घर में है।":
-        native: "He is at home."
+      "वो अठै है।":
+        native: "He is here."
         bases:
           "वो": "he"
-          "घर": "home"
-          "में": "at"
+          "अठै": "here"
           "है": "is"
-      "वो डॉक्टर है।":
-        native: "She is a doctor."
+      "वो कुण है?":
+        native: "Who is he?"
         bases:
-          "वो": "she"
-          "डॉक्टर": "doctor"
+          "वो": "he"
+          "कुण": "who"
           "है": "is"
   "raj-0106":
     native: "we"
     notes:
-      "n1": "Means 'we' for a group."
+      "n1": "The Survey gives mhe (or me) for 'we', and āpā for 'we, including you'. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "म्हां घरां जावां हां।":
-        native: "We are going home."
+      "म्हे अठै हां।":
+        native: "We are here."
         bases:
-          "म्हां": "we"
-          "घरां": "home"
-          "जावां": "go"
+          "म्हे": "we"
+          "अठै": "here"
           "हां": "are"
-      "म्हां राजस्थानी हां।":
-        native: "We are Rajasthani."
+      "म्हे अर थे।":
+        native: "We and you."
         bases:
-          "म्हां": "we"
-          "राजस्थानी": "Rajasthani"
-          "हां": "are"
+          "म्हे": "we"
+          "अर": "and"
+          "थे": "you"
   "raj-0107":
     native: "they"
     notes:
-      "n1": "The plural of वो (vo) for a group."
+      "n1": "The Survey gives wai or we for 'they'. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "वै पढै।":
-        native: "They study."
+      "वै अठै हां।":
+        native: "They are here."
         bases:
           "वै": "they"
-          "पढै": "study"
-      "वै नेपाली है।":
-        native: "They are Nepali."
+          "अठै": "here"
+          "हां": "are"
+      "वै कुण हां?":
+        native: "Who are they?"
         bases:
           "वै": "they"
-          "नेपाली": "Nepali"
-          "है": "are"
+          "कुण": "who"
+          "हां": "are"
   "raj-0108":
     native: "one"
     notes:
-      "n1": "The number 1."
+      "n1": "The number one. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "एक गिलास पाणी।":
-        native: "One glass of water."
+      "एक घर।":
+        native: "One house."
         bases:
           "एक": "one"
-          "गिलास": "glass"
-          "पाणी": "water"
-      "एक कप चाय।":
-        native: "One cup of tea."
+          "घर": "home"
+      "एक भाई।":
+        native: "One brother."
         bases:
           "एक": "one"
-          "कप": "cup"
-          "चाय": "tea"
+          "भाई": "brother"
   "raj-0109":
     native: "two"
     notes:
-      "n1": "The number 2."
+      "n1": "The list of standard words gives do for 'two'. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "दो गिलास पाणी।":
-        native: "Two glases of water."
+      "दो घर।":
+        native: "Two houses."
         bases:
           "दो": "two"
-          "गिलास": "glass"
-          "पाणी": "water"
-      "दो कप चाय।":
-        native: "Two cups of tea."
+          "घर": "home"
+      "दो भाई।":
+        native: "Two brothers."
         bases:
           "दो": "two"
-          "कप": "cup"
-          "चाय": "tea"
+          "भाई": "brother"
   "raj-0110":
     native: "three"
     notes:
-      "n1": "The number 3."
+      "n1": "The list gives tin for 'three'. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "तीन गिलास पाणी।":
-        native: "Three glases of water."
+      "तीन घर।":
+        native: "Three houses."
         bases:
           "तीन": "three"
-          "गिलास": "glass"
-          "पाणी": "water"
-      "तीन कप चाय।":
-        native: "Three cups of tea."
+          "घर": "home"
+      "तीन भाई।":
+        native: "Three brothers."
         bases:
           "तीन": "three"
-          "कप": "cup"
-          "चाय": "tea"
+          "भाई": "brother"
   "raj-0111":
     native: "four"
     notes:
-      "n1": "The number 4."
+      "n1": "The list gives chyar for 'four'. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "च्यार गिलास पाणी।":
-        native: "Four glases of water."
+      "च्यार घर।":
+        native: "Four houses."
         bases:
           "च्यार": "four"
-          "गिलास": "glass"
-          "पाणी": "water"
-      "च्यार कप चाय।":
-        native: "Four cups of tea."
+          "घर": "home"
+      "च्यार भाई।":
+        native: "Four brothers."
         bases:
           "च्यार": "four"
-          "कप": "cup"
-          "चाय": "tea"
+          "भाई": "brother"
   "raj-0112":
     native: "five"
     notes:
-      "n1": "The number 5."
+      "n1": "The number five. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "पाँच गिलास पाणी।":
-        native: "Five glases of water."
+      "पाँच घर।":
+        native: "Five houses."
         bases:
           "पाँच": "five"
-          "गिलास": "glass"
-          "पाणी": "water"
-      "पाँच कप चाय।":
-        native: "Five cups of tea."
+          "घर": "home"
+      "पाँच भाई।":
+        native: "Five brothers."
         bases:
           "पाँच": "five"
-          "कप": "cup"
-          "चाय": "tea"
+          "भाई": "brother"
   "raj-0113":
     native: "six"
     notes:
-      "n1": "The number 6."
+      "n1": "The Survey gives chhaw (or chha) for 'six'. The spelling छै (chhai) is not checked. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
       "छै गिलास पाणी।":
         native: "Six glases of water."
@@ -222,211 +215,211 @@ cards:
   "raj-0114":
     native: "seven"
     notes:
-      "n1": "The number 7."
+      "n1": "The number seven. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "सात गिलास पाणी।":
-        native: "Seven glases of water."
+      "सात घर।":
+        native: "Seven houses."
         bases:
           "सात": "seven"
-          "गिलास": "glass"
-          "पाणी": "water"
-      "सात कप चाय।":
-        native: "Seven cups of tea."
+          "घर": "home"
+      "सात भाई।":
+        native: "Seven brothers."
         bases:
           "सात": "seven"
-          "कप": "cup"
-          "चाय": "tea"
+          "भाई": "brother"
   "raj-0115":
     native: "eight"
     notes:
-      "n1": "The number 8."
+      "n1": "The number eight. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "आठ गिलास पाणी।":
-        native: "Eight glases of water."
+      "आठ घर।":
+        native: "Eight houses."
         bases:
           "आठ": "eight"
-          "गिलास": "glass"
-          "पाणी": "water"
-      "आठ कप चाय।":
-        native: "Eight cups of tea."
+          "घर": "home"
+      "आठ भाई।":
+        native: "Eight brothers."
         bases:
           "आठ": "eight"
-          "कप": "cup"
-          "चाय": "tea"
+          "भाई": "brother"
   "raj-0116":
     native: "nine"
     notes:
-      "n1": "The number 9."
+      "n1": "The list gives naw for 'nine'. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "नौ गिलास पाणी।":
-        native: "Nine glases of water."
+      "नौ घर।":
+        native: "Nine houses."
         bases:
           "नौ": "nine"
-          "गिलास": "glass"
-          "पाणी": "water"
-      "नौ कप चाय।":
-        native: "Nine cups of tea."
+          "घर": "home"
+      "नौ भाई।":
+        native: "Nine brothers."
         bases:
           "नौ": "nine"
-          "कप": "cup"
-          "चाय": "tea"
+          "भाई": "brother"
   "raj-0117":
     native: "ten"
     notes:
-      "n1": "The number 10."
+      "n1": "The number ten. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "दस गिलास पाणी।":
-        native: "Ten glases of water."
+      "दस घर।":
+        native: "Ten houses."
         bases:
           "दस": "ten"
-          "गिलास": "glass"
-          "पाणी": "water"
-      "दस कप चाय।":
-        native: "Ten cups of tea."
+          "घर": "home"
+      "दस भाई।":
+        native: "Ten brothers."
         bases:
           "दस": "ten"
-          "कप": "cup"
-          "चाय": "tea"
+          "भाई": "brother"
   "raj-0118":
     native: "mother"
     notes:
-      "n1": "The everyday word for 'mother'."
+      "n1": "The Survey's list of words gives ma. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "म्हारी माँ घरां है।":
-        native: "My mother is at home."
+      "म्हारी माँ अठै है।":
+        native: "My mother is here."
         bases:
           "म्हारी": "my"
           "माँ": "mother"
-          "घरां": "at home"
+          "अठै": "here"
           "है": "is"
-      "माँ, पाणी दे।":
-        native: "Mum, give water."
+      "यो म्हारी माँ है।":
+        native: "This is my mother."
         bases:
+          "यो": "this"
+          "म्हारी": "my"
           "माँ": "mother"
-          "पाणी": "water"
-          "दे": "give"
+          "है": "is"
   "raj-0119":
     native: "father"
     notes:
-      "n1": "The everyday word for 'father'."
+      "n1": "The Survey's list of words gives bap. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "म्हारो बाप मास्टर है।":
-        native: "My father is a teacher."
+      "म्हारो बाप अठै है।":
+        native: "My father is here."
         bases:
           "म्हारो": "my"
           "बाप": "father"
-          "मास्टर": "teacher"
+          "अठै": "here"
           "है": "is"
-      "बाप, पाणी?":
-        native: "Dad, water?"
+      "यो म्हारो बाप है।":
+        native: "This is my father."
         bases:
+          "यो": "this"
+          "म्हारो": "my"
           "बाप": "father"
-          "पाणी": "water"
+          "है": "is"
   "raj-0120":
     native: "brother"
     notes:
-      "n1": "Any brother, older or younger."
+      "n1": "The Survey's list of words gives bhai. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "म्हारो भाई घरां है।":
-        native: "My brother is at home."
+      "म्हारो भाई अठै है।":
+        native: "My brother is here."
         bases:
           "म्हारो": "my"
           "भाई": "brother"
-          "घरां": "at home"
+          "अठै": "here"
           "है": "is"
-      "भाई, आव!":
-        native: "Brother, come!"
+      "यो म्हारो भाई है।":
+        native: "This is my brother."
         bases:
+          "यो": "this"
+          "म्हारो": "my"
           "भाई": "brother"
-          "आव": "come"
+          "है": "is"
   "raj-0121":
     native: "sister"
     notes:
-      "n1": "Any sister, older or younger."
+      "n1": "The Survey's list of words gives bhain, not bain. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "म्हारी बैन विद्यार्थी है।":
-        native: "My sister is a student."
+      "म्हारी भैन अठै है।":
+        native: "My sister is here."
         bases:
           "म्हारी": "my"
-          "बैन": "sister"
-          "विद्यार्थी": "student"
+          "भैन": "sister"
+          "अठै": "here"
           "है": "is"
-      "बैन, खाणो तैयार है।":
-        native: "Sister, the food is ready."
+      "यो म्हारी भैन है।":
+        native: "This is my sister."
         bases:
-          "बैन": "sister"
-          "खाणो": "food"
-          "तैयार": "ready"
+          "यो": "this"
+          "म्हारी": "my"
+          "भैन": "sister"
           "है": "is"
   "raj-0122":
     native: "child"
     notes:
-      "n1": "A child."
+      "n1": "The Survey's list of words gives balak and tibar for 'child'. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "बालक खेलै है।":
-        native: "The child is playing."
+      "म्हारो बालक अठै है।":
+        native: "My child is here."
         bases:
+          "म्हारो": "my"
           "बालक": "child"
-          "खेलै": "play"
+          "अठै": "here"
           "है": "is"
-      "बालक नान्यो है।":
-        native: "The child is small."
+      "यो बालक कुण है?":
+        native: "Who is this child?"
         bases:
+          "यो": "this"
           "बालक": "child"
-          "नान्यो": "small"
+          "कुण": "who"
           "है": "is"
   "raj-0123":
     native: "man; person"
     notes:
-      "n1": "A man, or a person of either sex."
+      "n1": "The Survey's list of words gives minakh and ad'mi. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "वो मिनख नीको है।":
-        native: "That man is good."
+      "वो मिनख अठै है।":
+        native: "That man is here."
         bases:
-          "वो": "that"
+          "वो": "he"
           "मिनख": "man"
-          "नीको": "good"
+          "अठै": "here"
           "है": "is"
-      "मिनख घरां है।":
-        native: "The man is at home."
+      "यो मिनख कुण है?":
+        native: "Who is this man?"
         bases:
+          "यो": "this"
           "मिनख": "man"
-          "घरां": "at home"
+          "कुण": "who"
           "है": "is"
   "raj-0124":
     native: "woman; wife"
     notes:
-      "n1": "An adult woman. Also a wife."
+      "n1": "The Survey's list of words gives lugai for 'woman'. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "वो लुगाई डॉक्टर है।":
-        native: "That woman is a doctor."
+      "म्हारी लुगाई अठै है।":
+        native: "My wife is here."
         bases:
-          "वो": "that"
+          "म्हारी": "my"
           "लुगाई": "woman"
-          "डॉक्टर": "doctor"
+          "अठै": "here"
           "है": "is"
-      "लुगाई, पाणी दे।":
-        native: "Woman, give water."
+      "लुगाई अर बालक।":
+        native: "A woman and a child."
         bases:
           "लुगाई": "woman"
-          "पाणी": "water"
-          "दे": "give"
+          "अर": "and"
+          "बालक": "child"
   "raj-0125":
     native: "water"
     notes:
-      "n1": "The everyday word for water."
+      "n1": "Water. The Survey's list of words gives pani. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "म्हानै पाणी चाहीजै।":
-        native: "I need water."
+      "यो पाणी है।":
+        native: "This is water."
         bases:
-          "म्हानै": "to me"
+          "यो": "this"
           "पाणी": "water"
-          "चाहीजै": "need"
-      "पाणी ठंडो है।":
-        native: "The water is cold."
+          "है": "is"
+      "पाणी अठै है।":
+        native: "The water is here."
         bases:
           "पाणी": "water"
-          "ठंडो": "cold"
+          "अठै": "here"
           "है": "is"
   "raj-0126":
     native: "food; meal"
@@ -466,20 +459,21 @@ cards:
   "raj-0128":
     native: "house; home"
     notes:
-      "n1": "A house, or home."
+      "n1": "The Survey's list of words gives ghar. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "म्हारो घर मोटो है।":
-        native: "My house is big."
+      "यो म्हारो घर है।":
+        native: "This is my house."
+        bases:
+          "यो": "this"
+          "म्हारो": "my"
+          "घर": "home"
+          "है": "is"
+      "म्हारो घर अठै है।":
+        native: "My house is here."
         bases:
           "म्हारो": "my"
-          "घर": "house"
-          "मोटो": "big"
-          "है": "is"
-      "घर कठै है?":
-        native: "Where is the house?"
-        bases:
-          "घर": "house"
-          "कठै": "where"
+          "घर": "home"
+          "अठै": "here"
           "है": "is"
   "raj-0129":
     native: "name"
@@ -502,69 +496,72 @@ cards:
   "raj-0130":
     native: "good; nice"
     notes:
-      "n1": "Good or nice."
+      "n1": "The Survey's list of words gives bhalo (and chokho) for 'good'. नीको (nīko) is not attested there. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "यो नीको है।":
+      "यो भलो है।":
         native: "This is good."
         bases:
           "यो": "this"
-          "नीको": "good"
+          "भलो": "good"
           "है": "is"
-      "आज मौसम नीको है।":
-        native: "The weather is good today."
+      "वो मिनख भलो है।":
+        native: "That man is good."
         bases:
-          "आज": "today"
-          "मौसम": "weather"
-          "नीको": "good"
+          "वो": "he"
+          "मिनख": "man"
+          "भलो": "good"
           "है": "is"
   "raj-0131":
     native: "big; large"
     notes:
-      "n1": "Of a thing or a person. नान्यो (nānyo) is 'small'."
+      "n1": "The Survey's text has 'moto kal', a great famine. Whether moto is the everyday word for 'big' is not checked. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
+      "यो मोटो है।":
+        native: "This is big."
+        bases:
+          "यो": "this"
+          "मोटो": "big"
+          "है": "is"
       "घर मोटो है।":
         native: "The house is big."
         bases:
-          "घर": "house"
+          "घर": "home"
           "मोटो": "big"
           "है": "is"
-      "मोटो कुत्तो।":
-        native: "A big dog."
-        bases:
-          "मोटो": "big"
-          "कुत्तो": "dog"
   "raj-0132":
     native: "small; little"
     notes:
-      "n1": "Of a thing or a person."
+      "n1": "The Survey's text has 'chhoto ghar-mai', in a small house. नान्यो (nānyo) is not attested there. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "बालक नान्यो है।":
-        native: "The child is small."
+      "यो छोटो है।":
+        native: "This is small."
         bases:
-          "बालक": "child"
-          "नान्यो": "small"
+          "यो": "this"
+          "छोटो": "small"
           "है": "is"
-      "नान्यो घर।":
-        native: "A small house."
+      "घर छोटो है।":
+        native: "The house is small."
         bases:
-          "नान्यो": "small"
-          "घर": "house"
+          "घर": "home"
+          "छोटो": "small"
+          "है": "is"
   "raj-0133":
     native: "here"
     notes:
-      "n1": "The place where the speaker is."
+      "n1": "The Survey gives athe, here, and athai in its text. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "म्हैं अठै हूँ।":
-        native: "I am here."
+      "म्हे अठै हां।":
+        native: "We are here."
         bases:
-          "म्हैं": "I"
+          "म्हे": "we"
           "अठै": "here"
-          "हूँ": "am"
-      "अठै आव।":
-        native: "Come here."
+          "हां": "are"
+      "पाणी अठै है।":
+        native: "The water is here."
         bases:
+          "पाणी": "water"
           "अठै": "here"
-          "आव": "come"
+          "है": "is"
   "raj-0134":
     native: "there"
     notes:
@@ -584,7 +581,7 @@ cards:
   "raj-0135":
     native: "what"
     notes:
-      "n1": "Asks 'what?'."
+      "n1": "The Survey gives kai (and kau) for 'what'. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
       "यो कांई है?":
         native: "What is this?"
@@ -592,16 +589,16 @@ cards:
           "यो": "this"
           "कांई": "what"
           "है": "is"
-      "थे कांई खास्यो?":
-        native: "What will you eat?"
+      "वो कांई है?":
+        native: "What is that?"
         bases:
-          "थे": "you"
+          "वो": "he"
           "कांई": "what"
-          "खास्यो": "eat"
+          "है": "is"
   "raj-0136":
     native: "who"
     notes:
-      "n1": "Asks 'who?'."
+      "n1": "The Survey gives kun for 'who'. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
       "यो कुण है?":
         native: "Who is this?"
@@ -609,11 +606,11 @@ cards:
           "यो": "this"
           "कुण": "who"
           "है": "is"
-      "कुण आवै है?":
-        native: "Who is coming?"
+      "वो कुण है?":
+        native: "Who is that?"
         bases:
+          "वो": "he"
           "कुण": "who"
-          "आवै": "come"
           "है": "is"
   "raj-0137":
     native: "where"
@@ -635,20 +632,20 @@ cards:
   "raj-0138":
     native: "and"
     notes:
-      "n1": "Joins two nouns: चाय (chāy) अर (ar) पाणी (pāṇī), tea and water."
+      "n1": "The Survey gives ar (and aur) for 'and'. Source: Grierson, Linguistic Survey of India, vol. IX part 2 (1908), the Marwari section and the list of standard words."
     examples:
-      "चाय अर पाणी।":
-        native: "Tea and water."
+      "म्हे अर थे।":
+        native: "We and you."
         bases:
-          "चाय": "tea"
-          "अर": "and"
-          "पाणी": "water"
-      "म्हैं अर थे।":
-        native: "You and I."
-        bases:
-          "म्हैं": "I"
+          "म्हे": "we"
           "अर": "and"
           "थे": "you"
+      "घर अर पाणी।":
+        native: "A house and water."
+        bases:
+          "घर": "home"
+          "अर": "and"
+          "पाणी": "water"
   "raj-0139":
     native: "today"
     notes:
@@ -662,7 +659,6 @@ cards:
           "निकळ्यो": "come out"
       "आज पाणी बरसैलो।":
         native: "It will rain today."
-
         bases:
           "आज": "today"
           "पाणी": "water"
