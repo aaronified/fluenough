@@ -1,0 +1,135 @@
+schema: 1
+id: "sa-en-directions"
+kind: "layer"
+core: "sa-directions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Directions"
+description: "Directions in Classical Sanskrit: behind, above, below, the south, north, east and west, and in front."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-1585":
+    native: "Behind."
+    examples:
+      "पश्चात् गृहम्":
+        native: "The house behind."
+        bases:
+          "पश्चात्": "behind"
+          "गृहम्": "house"
+      "गृहं पश्चात्":
+        native: "The house is behind."
+        bases:
+          "गृहं": "house"
+          "पश्चात्": "behind"
+  "sa-1586":
+    native: "Above."
+    notes:
+      "n1": "In these examples the words are written apart; in running text a final ḥ or m before a vowel takes sandhi,."
+    examples:
+      "उपरि पक्षी":
+        native: "A bird above."
+        bases:
+          "उपरि": "above"
+          "पक्षी": "bird"
+      "गगनम् उपरि":
+        native: "The sky is above."
+        bases:
+          "गगनम्": "sky"
+          "उपरि": "above"
+  "sa-1587":
+    native: "Below."
+    notes:
+      "n1": "In these examples the words are written apart; in running text a final ḥ or m before a vowel takes sandhi,."
+    examples:
+      "अधस्तात् भूमिः":
+        native: "Earth below."
+        bases:
+          "अधस्तात्": "below"
+          "भूमिः": "earth"
+      "गृहम् अधस्तात्":
+        native: "The house is below."
+        bases:
+          "गृहम्": "house"
+          "अधस्तात्": "below"
+  "sa-1588":
+    native: "Southern; right-hand."
+    notes:
+      "n1": "Used with a noun for the southern or right-hand one, as in दक्षिणः (dakṣiṇaḥ) मार्गः (mārgaḥ)."
+    bases:
+      "दक्षिणः": "southern"
+    examples:
+      "दक्षिणः मार्गः":
+        native: "The southern road."
+        bases:
+          "दक्षिणः": "southern"
+          "मार्गः": "road"
+      "मार्गः दक्षिणः":
+        native: "The road is to the south."
+        bases:
+          "मार्गः": "road"
+          "दक्षिणः": "southern"
+  "sa-1589":
+    native: "Northern; upper."
+    bases:
+      "उत्तरः": "northern"
+    examples:
+      "उत्तरं वनम्":
+        native: "The northern forest."
+        bases:
+          "उत्तरं": "northern"
+          "वनम्": "forest"
+      "नदी उत्तरा":
+        native: "The river is to the north."
+        bases:
+          "नदी": "river"
+          "उत्तरा": "northern"
+  "sa-1590":
+    native: "Eastern; former."
+    bases:
+      "पूर्वः": "eastern"
+    examples:
+      "पूर्वं गृहम्":
+        native: "The eastern house."
+        bases:
+          "पूर्वं": "eastern"
+          "गृहम्": "house"
+      "नदी पूर्वा":
+        native: "The river is to the east."
+        bases:
+          "नदी": "river"
+          "पूर्वा": "eastern"
+  "sa-1591":
+    native: "Western; later."
+    notes:
+      "n1": "In these examples the words are written apart; in running text a final ḥ or m before a vowel takes sandhi,."
+    bases:
+      "अपरः": "western"
+    examples:
+      "अपरः पर्वतः":
+        native: "The western mountain."
+        bases:
+          "अपरः": "western"
+          "पर्वतः": "mountain"
+      "वनम् अपरम्":
+        native: "The forest is to the west."
+        bases:
+          "वनम्": "forest"
+          "अपरम्": "western"
+  "sa-1592":
+    native: "In front."
+    notes:
+      "n1": "The locative of अग्र (agra), front, used as an adverb."
+      "n2": "In these examples the words are written apart; in running text a final ḥ or m before a vowel takes sandhi,."
+    bases:
+      "अग्रे": "in front"
+    examples:
+      "अग्रे वृक्षः":
+        native: "A tree in front."
+        bases:
+          "अग्रे": "in front"
+          "वृक्षः": "tree"
+      "गृहम् अग्रे":
+        native: "The house is in front."
+        bases:
+          "गृहम्": "house"
+          "अग्रे": "in front"
