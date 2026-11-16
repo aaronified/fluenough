@@ -217,8 +217,9 @@ class DeckIndex(unittest.TestCase):
                          ["latin", "devanagari", "perso_arabic"])
         self.spanish_in_scripts('"shahmukhi"')
         es = self.language(self.index(), "es")
+        # (the deck's own language block, Latin, comes first)
         self.assertEqual([f["script"] for f in es["fonts"]],
-                         ["perso_arabic", "latin"])
+                         ["latin", "perso_arabic"])
 
 
     def _the_resources_file_is_listed_apart_from_files(self) -> None:
