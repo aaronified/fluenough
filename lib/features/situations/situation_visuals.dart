@@ -31,8 +31,18 @@ extension SituationVisuals on String {
   };
 
   /// The colours for the situation key `this`.
-  ModeColor situationColor(BuildContext context) {
-    final modes = ModeColors.of(context);
+  ModeColor situationColor(BuildContext context) =>
+      _colorIn(ModeColors.of(context));
+
+  /// The colour of a muted tile's icon (#1145): the tile's colour from the
+  /// opposite brightness, deep in the light theme and pale in the dark, so
+  /// that it reads against the plain surface.
+  Color situationAccent(BuildContext context) {
+    final dark = Theme.of(context).brightness == Brightness.dark;
+    return _colorIn(dark ? ModeColors.light : ModeColors.dark).container;
+  }
+
+  ModeColor _colorIn(ModeColors modes) {
     return switch (this) {
       'taxi' => modes.reading,
       'shops' => modes.production,
