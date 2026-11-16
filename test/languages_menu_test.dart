@@ -98,7 +98,6 @@ void main() {
       'ipa',
       'ipa-replaces',
       'adult',
-      'hide-above',
     ];
     var last = -1.0;
     for (final key in order) {
