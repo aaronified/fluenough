@@ -134,8 +134,17 @@ ISO_PIECE_RE = re.compile(rf"[a-z{ISO15919_LETTERS}{ISO15919_MARKS}]+")
 # A broad IPA transcription, without its slashes (ADR-0025): IPA letters,
 # modifier letters, combining diacritics, length and stress marks, and
 # spaces between words.
+# NFC (which the validator requires of every IPA field) composes a base letter
+# and a combining mark into one letter where Unicode has one: a + U+0308 is ä.
+# So the composed letters are derived from the bases and marks the pattern
+# allows, and accepted beside the decomposed spelling (#1466).
+_IPA_BASES = "a-zæçðøħŋœθβχɐ-ʯ"
+_IPA_COMPOSED = "".join(sorted({
+    c for b in "abcdefghijklmnopqrstuvwxyzæçðøħŋœθβχ"
+    for m in map(chr, range(0x300, 0x370))
+    for c in [unicodedata.normalize("NFC", b + m)] if len(c) == 1}))
 IPA_RE = re.compile(
-    "[a-zæçðøħŋœθβχãẽĩõũɐ-ʯʰ-˿\u0300-\u036f ."
+    f"[{_IPA_BASES}{_IPA_COMPOSED}ʰ-˿\u0300-\u036f ."
     "\u02e5-\u02e9\u203f|\u2016\u2191\u2193"
     "\u01c0-\u01c3\u207f\u2c71\ua71c]+")
 CONTRAST_KEYS = {"id", "name", "pairs", "within_word"}

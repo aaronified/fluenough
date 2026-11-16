@@ -10,7 +10,7 @@ State was read from `origin/decks-live` (2026-11-15) with PyYAML over every `dec
 
 | # | Deliverable | State | Evidence | Tasks |
 |---|---|---|---|---|
-| 1 | Path to B1 | **DONE** | `as-path.yaml`: 173 entries (5 are grouped lists: units 7, 8, 171, 172, 173), none planned; milestones A1 at unit 44, A2 at 90, B1 at 169; every deck the path names exists (reading decks sit in `en/` as `as-en-reading-*`) | none |
+| 1 | Path to B1 | **DONE** | `as-path.yaml`: 173 entries (5 are grouped lists: units 7, 8, 171, 172, 173), none planned; milestones A1 at unit 44, A2 at 90, B1 at 169; every deck the path names exists (reading decks are flat files `decks/as/as-en-reading-*.yaml`) | none |
 | 2 | Cores and English layers | **DONE** | 155 vocab core files (70 word units, 42 grammar decks, script, phonology and the rest), each with a layer in `decks/as/en/`; 2,172 cards with an id, highest id `as-4080` | none |
 | 3 | Sentences decks | **GAP** | 60 `-sentences` decks; 28 word units have none (list in 3.3; the phrasebook is by design whole) | AS-080..087 (wave B) |
 | 4 | Reading decks | PARTLY | 60 `as-en-reading-*` decks; 73 units name reading passages; 12 vocabulary units have none (pronouns, verbs, adverbs, quantities, describing, more-verbs, food, body, places, things, clothes, animals); `as-grammar-future` and `-imperatives` name passages but a grammar unit writes no reading deck | AS-092 |
@@ -88,3 +88,58 @@ AS-080..087: sentences decks for the 28 word units without one, 8 workers of 3 t
 ## 4. Open questions
 
 - None blocking. Defaults taken: ids `as-4100..as-9999`; `script: "bengali"` as in the existing decks; Professional stays held.
+
+## 5. Progress and resume plan (paused 2026-11-16)
+
+Owner directive (token budget, relayed by the parent session 2026-11-16): at most four language sessions at once; Assamese is paused after the workers already running finish and the open PRs merge. No new phase starts until the parent says resume. Assamese is **not complete**.
+
+### 5.1 Done (merged to `decks-live` unless noted)
+
+| What | PR | Result |
+|---|---|---|
+| Sentences decks for 26 word units | #1455 | 374 cards, ids `as-5000..5836`, path entries added; not built (no natural sentences from taught words): `as-sound-differences`, `as-numbers-1-20` |
+| Topics (11), situations (10 sheets), proverbs 1 to 3 (60), multiword 1 to 4 (18, 15, 16, 11), culture 1 to 4 (9, 8, 10, 5), `decks/creators/as.yaml` | #1459 | topics, situations and multiword shortfalls below |
+| Reading decks for 11 vocabulary units | #1460 | `as-en-reading-*`, ids `as-7000..7011`, `7150..7158`, `7300..7311`; `describing` not built |
+| Registry entry `as` (rules-only narrow IPA) | #1451 | main |
+| `as-phonetics.yaml` rules (two vowel-harmony rules) | #1452 | decks-live |
+| Sourcing list | straight to main | `Plan-Culture-Assamese` |
+| Recommendations (11 of 20), 5 creators, 8 topics of kind other, 23 review-queue rows | #1495 | open or merged: see the PR |
+| Script decks: conjuncts and reading words | #1492 | open; the 15 reading-word cards duplicated existing cards and were dropped from the PR; example readings aligned to the cards they ref |
+
+### 5.2 Notes wave: partly done, branch `decks/as-notes-wave1` (no PR yet)
+
+944 cards in 114 decks have no note (list: every `-sentences` deck plus a few vocabulary decks; the counts come from `decks-live` on 2026-11-15). Owner directive (2026-11-15, via the parent): write a note on every card with a real teachable point (word order, politeness, collocation, stem change, usage); only plainly self-explanatory cards stay without; one Sonnet review checks accuracy. Six Sonnet workers each took about 150 cards; group 4 (20 sentences decks, 118 notes on 160 cards) finished; groups 1, 2, 3, 5 and 6 were cut off by the usage limit with some commits already pushed. The branch holds a partial result (about 40 files, 476 lines added on 2026-11-16). To resume: list each deck's notes gap again from `decks-live`/the branch with PyYAML, give the remaining decks to Sonnet workers (briefing: `scratchpad` file `notesbrief.md` content is in section 5.4), then open ONE PR for the branch, one Sonnet review. Note rule: say in a card's notes which stem the form takes when the validator warns 'bases: X does not start as its base Y does'.
+
+### 5.3 Remaining work, in order
+
+1. **Notes wave** (5.2).
+2. **Data fixes before the narrow IPA run** (parent's list, 2026-11-15, the data decides conventions; the engine stays unchanged where data is mixed):
+   - স: about 405 texts have reading `x` but broad `ipa` `s` (for example সমতা xômôtā / sɔmɔta), while about 196 have reading `s`. Assamese স is /x/ except in the clusters স্ক স্ত স্থ স্ন স্প (s in all 37 course words, the engine agrees). Fix the broad `ipa` to `x` where the reading is `x` (tool-assisted, derived from the reading; one Sonnet reviews a sample of 30); do not touch readings.
+   - উজ্জ্বল: `uzzzɔl` is a typo, fix by hand to `uzzɔl`.
+   - ফোন cards: reading `o` against ipa `ʊ`: make them agree (pick the course majority).
+   - র্ব: `ɹɹ` in 6 words against `ɹb` in পৰ্বত: make them `ɹb` by hand.
+   - Kept as course values and recorded here as engine exceptions: গাঁও `ɡão` (engine `ɡãʊ`, 20 texts), ঠিক `ʈʰik` (engine `tʰik`, 6), ড় and ঢ় broad ipa `ɹ` (the narrow-IPA limitation: no change), এ stays `e` (the data has no ɛ).
+   - Reading conventions to settle with a speaker: পগলা (`pôglā` or `pôgôlā`), একদম (`ekdôm` or `ekôdôm`), বাথৰুম (`bāthrum` or `bāthorum`: the latter in `as-home`, `as-home-sentences`, `as-spelling`), সঁচা (`xôm̐sā` or `sôm̐sā` in `as-adverbs`).
+3. **Narrow IPA** (AS-111 to AS-113): `derive_phonetic.py as --bracket-unchanged --write` after notes and data fixes merge (it touches every deck), then the broad-ipa fill for the 99 cards without; run `phonetic_patch.py` as the plan's tools say; one Sonnet review of a sample. The parent's tools PR #1496 (engine for `as`) lands first.
+4. **Culture and recommendations retry** (owner directive 2026-11-15): before any item stays dropped, try every reachable source (English and Assamese Wikipedia, Wikidata, Wikiquote, Wikisource, Britannica, national library or university pages) with pace requests; report which hosts were blocked. The drop list with reasons is in 5.5.
+5. **Rules tables** (the parent's decision, default): a Sonnet designs a rule-based generator for verbs, pronouns and the regular noun and adjective inflection from cited grammar sources (Wiktionary inflection tables, a published Assamese grammar page); the tables record their source; cells that cannot be sourced stay out and are listed here. The audit (AS-093): Assamese has no `kind: "rules"` core; 916 nouns, 116 adjectives, 21 pronouns, 101 verbs taught; old pattern decks `as-grammar-*` hold 3 to 14 hand-picked entries each; the validator's every-word check never runs for Assamese today. Orphan lemmas (no card): চহৰ, গাড়ী, তই, তাই, তহঁত, অহা, হোৱা, আছে, আছিল, নাছিল, হ'ব. Ids reserved `as-8000..as-8499`.
+6. **Other gaps**: new situation phrase cards (which platform; I have a booking; a room please; where does it hurt; show your licence) in a deck with a path entry, then the sheets; the `describing` reading passage (the path says weather and food, taught later: move the passage or change its description); reading-pronouns question as-7001 (answer repeats the prompt); multiword layers: about 25 rare inline bases without a gloss; conjuncts ত্ব, শ্ব, স্ব, শ্চ (tool reads them as Bengali tt, xx, ss: decide the Assamese reading first); `kind: other` and further culture items; professional stays held.
+7. Collect every worker's review rows into `docs/review-queue/as.md` (23 rows added; the script-deck rows as-7516, 7532, 7533, 7503, 7505, 7506, 7509, 7538 are still to add).
+
+### 5.4 Notes briefing (for the resume)
+
+Core `notes: [{ id: "n1", kind }]` plus the matching text in the English layer `decks/as/en/as-en-<deck>.yaml`; kinds: note, usage, behaviour, pair, lookalike, homograph, culture; at most two notes per card, one or two plain sentences; say only what the deck, neighbour cards or a source the worker read supports; a non-Latin word in note text is followed by its reading in half-width parentheses; add no new card ids and change no target, reading, ipa, bases, examples or confusables; unsure points go to review rows.
+
+### 5.5 Dropped items and why (one line each)
+
+- **Culture 1**: Kirtan Ghosha, Parijata-harana, Rukmini-harana, Kali-damana (no readable text on as.wikisource); Arjun Bhanjan (broken redirect); Madhavdev borgeet 'Alu moi' (not found); Gunamala (two-column template, text not extractable); Mahiravana Vadha (the Wikisource text is anonymous 1908, not Ananta Kandali's); Parijata Harana 1907 (page empty); Hema Saraswati and Madhava Kandali (era known, no dates); as-4106 and as-4107 (user sandbox pages, not an edition).
+- **Culture 2**: O Mur Apunar Dex (not found); Padumkunwari (text garbled); Ramnabami Natak, Kaniyar Kirtan, Pathmala, Hemkosh, Ôxômiya Byakôrôn (no page); Hemchandra Barua and the Joymati film (no readable text).
+- **Culture 4**: Charaideo, Kamakhya Temple, Ambubachi Mela, Majuli, the Bihu festivals, Ojapali, Orunodoi, Jonaki, the Buranjis (title-only: no authored text; an owner decision on title-only culture cards is open). Culture 4 has 5 of 18.
+- **Multiword**: 2 idioms not on the wikiquote page as written (উগাৰ মাৰা, চকুত ধূলি মাৰা); অচলা ভক্তি and আপুতৰ পুত (noun phrases, not idioms); conjunct verbs already taught elsewhere or with unclear glosses (অনুবাদ কৰা, ভাঙনি কৰা, ধাৰ কৰা, পচন্দ কৰা variant).
+- **Proverbs**: বামুণৰো এদিন, শূদিৰৰো এদিন (caste wording).
+- **Recommendations** (11 of 20): Village Rockstars (the director's birth year not on her page; the schema needs it); Anamika (medium album not in the schema enum); Bistirno Parore (song page unreachable); Mrityunjay (publication year conflict 1970 or 1979 or 1983); Halodhia Choraye Baodhan Khai (film page has no plot); four Indira Goswami books (pages rate-limited, plot not read).
+- **Hosts blocked or unreachable**: archive.org (Gurdon's proverb book), as.wiktionary (404 for every word), Cambridge (Mahanta 2012), the kaikki dump gives few Assamese forms.
+
+### 5.6 Branches left for the owner or the next session
+
+`decks/as-notes-wave1` (partial notes, no PR), plus any branch whose PR merged and was not auto-deleted.
