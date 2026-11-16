@@ -33,8 +33,8 @@
 # absolutives and infinitives, the passive, causatives, the optative, and
 # four units reading Astadhyayi rules (sutras) from the page.
 #
-# `alphabet` is empty: the validator takes only written decks there. When
-# the script decks (SA-010 to SA-016) are written, they are listed in it.
+# `alphabet` lists the script decks now written (SA-010 to SA-015): the
+# validator takes only written decks there, and each is on its unit below.
 # The script is taught in the units named `script`, after the first six
 # themes, as the scheme has it. Vedic Sanskrit is the separate course vsn.
 schema: 1
@@ -44,7 +44,13 @@ language: "sa"
 description: "Classical Sanskrit: the planned path to B1, a reading course with a heavy focus on Panini's grammar. Only the phrasebook and the first words are written."
 genders: ["m", "f", "n"]
 levels: { A1: 400, A2: 600, B1: 900 }
-alphabet: []
+alphabet:
+  - "sa-script-vowels"
+  - "sa-script-consonants"
+  - "sa-script-vowel-signs"
+  - "sa-script-digits"
+  - "sa-script-conjuncts"
+  - "sa-script-reading"
 units:
   - decks: ["sa-phrasebook", "sa-first-words", "*"]
     words: 10
@@ -73,16 +79,8 @@ units:
       - { id: "numbers-1-20-heard", text: { "en": "A short passage in Classical Sanskrit on the theme numbers 1 to 20, read aloud" } }
     reading_passages:
       - { id: "numbers-1-20-text", text: { "en": "A short written text in Classical Sanskrit on the theme numbers 1 to 20" } }
-  - planned: { id: "sa-script-letters", grammar: ["devanagari-letters"] }
-    listening_passages:
-      - { id: "script-letters-heard", text: { "en": "A short passage in Classical Sanskrit showing devanagari letters, read aloud" } }
-    reading_passages:
-      - { id: "script-letters-text", text: { "en": "A short written text in Classical Sanskrit showing devanagari letters" } }
-  - planned: { id: "sa-script-conjuncts", grammar: ["conjunct-letters"] }
-    listening_passages:
-      - { id: "script-conjuncts-heard", text: { "en": "A short passage in Classical Sanskrit showing conjunct letters, read aloud" } }
-    reading_passages:
-      - { id: "script-conjuncts-text", text: { "en": "A short written text in Classical Sanskrit showing conjunct letters" } }
+  - ["sa-script-vowels", "sa-script-consonants", "sa-script-vowel-signs", "sa-script-digits"]
+  - ["sa-script-conjuncts", "sa-script-reading"]
   - planned: { id: "sa-about-me", theme: "about-me", words: 5 }
     listening_passages:
       - { id: "about-me-heard", text: { "en": "A short passage in Classical Sanskrit on the theme naming and introducing oneself, read aloud" } }
