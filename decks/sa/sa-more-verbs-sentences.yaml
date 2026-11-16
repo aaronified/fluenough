@@ -1,0 +1,64 @@
+schema: 1
+id: "sa-more-verbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3150"
+    target: "जलं क्षरति."
+    reading: "jalaṃ kṣarati."
+    ipa: "dʒələm kʂərət̪i"
+    pos: "phrase"
+    bases: [{ word: "जलं", base: "जलम्", reading: "jalam" }, { word: "क्षरति", base: "क्षर्", reading: "kṣar" }]
+    confusables: [{ id: "w1", ref: "sa-2001", kind: "word" }, { id: "w2", ref: "sa-2011", kind: "word" }]
+  - id: "sa-3151"
+    target: "माता रुणद्धि जलम्."
+    reading: "mātā ruṇaddhi jalam."
+    ipa: "maːt̪aː ruɳəd̪d̪ʱi dʒələm"
+    pos: "phrase"
+    bases: [{ word: "माता", ref: "sa-1030" }, { word: "रुणद्धि", base: "रुध्", reading: "rudh" }, { word: "जलम्", ref: "sa-0023" }]
+    confusables: [{ id: "w1", ref: "sa-2100", kind: "word" }, { id: "w2", ref: "sa-2020", kind: "word" }]
+  - id: "sa-3152"
+    target: "सा लभते जलम्."
+    reading: "sā labhate jalam."
+    ipa: "saː ləbʱət̪eː dʒələm"
+    pos: "phrase"
+    bases: [{ word: "सा", ref: "sa-1011" }, { word: "लभते", base: "लभ्", reading: "labh" }, { word: "जलम्", ref: "sa-0023" }]
+    confusables: [{ id: "w1", ref: "sa-2001", kind: "word" }, { id: "w2", ref: "sa-2011", kind: "word" }]
+  - id: "sa-3153"
+    target: "पिता वर्तते."
+    reading: "pitā vartate."
+    ipa: "pit̪aː ʋərt̪ət̪eː"
+    pos: "phrase"
+    bases: [{ word: "पिता", ref: "sa-1031" }, { word: "वर्तते", base: "वृत्", reading: "vṛt" }]
+    confusables: [{ id: "w1", ref: "sa-2100", kind: "word" }, { id: "w2", ref: "sa-2001", kind: "word" }]
+  - id: "sa-3154"
+    target: "अस्ति जलम्."
+    reading: "asti jalam."
+    ipa: "əst̪i dʒələm"
+    pos: "phrase"
+    bases: [{ word: "अस्ति", base: "अस्", reading: "as" }, { word: "जलम्", ref: "sa-0023" }]
+    confusables: [{ id: "w1", ref: "sa-0024", kind: "word" }, { id: "w2", ref: "sa-2001", kind: "word" }]
+  - id: "sa-3155"
+    target: "सखा ददाति जलम्."
+    reading: "sakhā dadāti jalam."
+    ipa: "səkʰaː d̪əd̪aːt̪i dʒələm"
+    pos: "phrase"
+    bases: [{ word: "सखा", ref: "sa-1038" }, { word: "ददाति", base: "दा", reading: "dā" }, { word: "जलम्", ref: "sa-0023" }]
+    confusables: [{ id: "w1", ref: "sa-2110", kind: "word" }, { id: "w2", ref: "sa-2116", kind: "word" }]
+  - id: "sa-3156"
+    target: "सा पश्यति जलम्."
+    reading: "sā paśyati jalam."
+    ipa: "saː pəʃjət̪i dʒələm"
+    pos: "phrase"
+    bases: [{ word: "सा", ref: "sa-1011" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "जलम्", ref: "sa-0023" }]
+    confusables: [{ id: "w1", ref: "sa-2118", kind: "word" }, { id: "w2", ref: "sa-2121", kind: "word" }]
+  - id: "sa-3157"
+    target: "सखा जानाति."
+    reading: "sakhā jānāti."
+    ipa: "səkʰaː dʒaːnaːt̪i"
+    pos: "phrase"
+    bases: [{ word: "सखा", ref: "sa-1038" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }]
+    confusables: [{ id: "w1", ref: "sa-2116", kind: "word" }, { id: "w2", ref: "sa-2121", kind: "word" }]
