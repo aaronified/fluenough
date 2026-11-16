@@ -1,0 +1,6 @@
+| vsn-fact-044 | facts | The Indra and Varuna sentence comes from Macdonell's *Vedic Mythology* read as OCR (unproofread, Wikisource Page:Vedic Mythology.djvu/30): is "about equal in power" the book's wording? | Haiku builder | 2026-11-16 |
+| vsn-fact-034 | facts | Whitney's section 81 calls two primary tones (udatta, anudatta) and treats svarita as their combination; en.wikipedia "Vedic accent" says three qualities. The fact follows the wiki: which should the card give? | Haiku builder | 2026-11-16 |
+| vsn-fact-036 | facts | The accent-sign fact counts marks in the commentary of the Sanskrit Wikisource page for 10.129, not in the verse. Keep it, given that learners see the commentary only there? | Haiku builder | 2026-11-16 |
+| vsn-fact-035 | facts | Whitney 87 a names the circumflex, not the svarita, as the sign with the upright stroke above: is "circumflex" the right learner word? | Haiku builder | 2026-11-16 |
+| vsn-fact-025 | facts | Witzel's dating of the Yajurveda (1200 to 800 BCE) is one scholar's estimate on en.wikipedia; the reviewer confirms it reads as an estimate. | Haiku builder | 2026-11-16 |
+| vsn-facts (all bn and hi texts) | facts | The Bengali and Hindi texts of all 45 facts are the builder's own and were not checked by a native speaker; Vedic words in them are kept in Latin letters. | Haiku builder | 2026-11-16 |
