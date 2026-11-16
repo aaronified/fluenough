@@ -1,0 +1,153 @@
+schema: 1
+id: "sa-en-location"
+kind: "layer"
+core: "sa-location"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Where things are"
+description: "Where things are in Classical Sanskrit: here, there, where, everywhere, outside, inside and far away."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-1550":
+    native: "Here."
+    notes:
+      "n1": "In these examples the words are written apart; in running text a final ḥ or m before a vowel takes sandhi,."
+    examples:
+      "अत्र जलम् अस्ति":
+        native: "There is water here."
+        bases:
+          "अत्र": "here"
+          "जलम्": "water"
+          "अस्ति": "is"
+      "अत्र पिता":
+        native: "Father is here."
+        bases:
+          "अत्र": "here"
+          "पिता": "father"
+  "sa-1551":
+    native: "There."
+    examples:
+      "तत्र मार्गः दीर्घः":
+        native: "The road is long there."
+        bases:
+          "तत्र": "there"
+          "मार्गः": "road"
+          "दीर्घः": "long"
+      "तत्र माता":
+        native: "Mother is there."
+        bases:
+          "तत्र": "there"
+          "माता": "mother"
+  "sa-1552":
+    native: "Where?"
+    notes:
+      "n1": "A question word; its answers are अत्र (atra), here, and तत्र (tatra), there."
+    examples:
+      "कुत्र पिता":
+        native: "Where is the father?"
+        bases:
+          "कुत्र": "where"
+          "पिता": "father"
+      "कुत्र जलम्":
+        native: "Where is the water?"
+        bases:
+          "कुत्र": "where"
+          "जलम्": "water"
+  "sa-1553":
+    native: "Where; in which place."
+    notes:
+      "n1": "Used in a pair with तत्र (tatra), there: यत्र (yatra) … तत्र (tatra), where … there."
+    examples:
+      "यत्र पिता तत्र माता":
+        native: "Where the father is, there the mother is."
+        bases:
+          "यत्र": "where"
+          "पिता": "father"
+          "तत्र": "there"
+          "माता": "mother"
+      "यत्र गृहं तत्र बालः":
+        native: "Where the house is, there the boy is."
+        bases:
+          "यत्र": "where"
+          "गृहं": "house"
+          "तत्र": "there"
+          "बालः": "boy"
+  "sa-1554":
+    native: "Everywhere."
+    examples:
+      "सर्वत्र जलम्":
+        native: "Water everywhere."
+        bases:
+          "सर्वत्र": "everywhere"
+          "जलम्": "water"
+      "सर्वत्र पुस्तकानि":
+        native: "Books everywhere."
+        bases:
+          "सर्वत्र": "everywhere"
+          "पुस्तकानि": "books"
+  "sa-1555":
+    native: "Here; in this place."
+    notes:
+      "n1": "Often also means in this world, as well as here."
+    examples:
+      "इह बालः":
+        native: "The boy is here."
+        bases:
+          "इह": "here"
+          "बालः": "boy"
+      "इह देवाः":
+        native: "The gods are here."
+        bases:
+          "इह": "here"
+          "देवाः": "gods"
+  "sa-1556":
+    native: "Outside."
+    notes:
+      "n1": "It takes the ablative: गृहात् (gṛhāt) बहिः (bahiḥ), outside the house."
+    bases:
+      "बहिः": "outside"
+    examples:
+      "गृहात् बहिः":
+        native: "Outside the house."
+        bases:
+          "गृहात्": "house (ablative)"
+          "बहिः": "outside"
+      "बहिः बालः":
+        native: "The boy is outside."
+        bases:
+          "बहिः": "outside"
+          "बालः": "boy"
+  "sa-1557":
+    native: "Inside; within."
+    notes:
+      "n1": "It takes the genitive: गृहस्य (gṛhasya) अन्तः (antaḥ), inside the house."
+    bases:
+      "अन्तः": "inside"
+    examples:
+      "गृहस्य अन्तः":
+        native: "Inside the house."
+        bases:
+          "गृहस्य": "house (genitive)"
+          "अन्तः": "inside"
+      "अन्तः जलम्":
+        native: "Water inside."
+        bases:
+          "अन्तः": "inside"
+          "जलम्": "water"
+  "sa-1558":
+    native: "Far away."
+    notes:
+      "n1": "The locative of दूर (dūra), far, used as an adverb."
+    bases:
+      "दूरे": "far away"
+    examples:
+      "दूरे पर्वतः":
+        native: "The mountain is far away."
+        bases:
+          "दूरे": "far away"
+          "पर्वतः": "mountain"
+      "नदी दूरे":
+        native: "The river is far away."
+        bases:
+          "नदी": "river"
+          "दूरे": "far away"
