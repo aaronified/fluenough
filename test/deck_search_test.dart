@@ -294,20 +294,18 @@ void main() {
     });
 
     testWidgets('the end button is tappable with the path scrolled, at 1.4x '
-        'on 360 dp', (
-      tester,
-    ) async {
+        'on 360 dp', (tester) async {
       usePhone(tester, textScale: 1.4);
       tester.view.physicalSize = const Size(360 * 3, 800 * 3);
       await pumpTelugu(tester);
-      // The path opened at the unit up next: scrolled, the bar partly away.
-      expect(
-        tester
-            .widget<CustomScrollView>(find.byType(CustomScrollView))
-            .controller!
-            .offset,
-        greaterThan(0),
-      );
+      // The path opened at the unit up next, the bar scrolled away: put it
+      // half under the language bar, as a learner can leave it.
+      final scroll = tester
+          .widget<CustomScrollView>(find.byType(CustomScrollView))
+          .controller!;
+      scroll.jumpTo(40);
+      await tester.pumpAndSettle();
+      expect(scroll.offset, greaterThan(0));
       await type(tester, 'kind:grammar ');
       final l10n = l10nOf(tester);
       final bar = tester.getBottomLeft(find.byType(LanguageBar)).dy;
