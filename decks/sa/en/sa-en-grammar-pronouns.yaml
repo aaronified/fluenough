@@ -1,0 +1,61 @@
+schema: 1
+id: "sa-en-grammar-pronouns"
+kind: "layer"
+core: "sa-grammar-pronouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pronouns: the full table"
+description: "Every pronoun the course teaches, in the cases and numbers it has: the demonstratives, the relative, the question word, I and you, and all. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "case and number"
+  slots:
+    "nom-sg": "nominative, singular"
+    "nom-du": "nominative, dual"
+    "nom-pl": "nominative, plural"
+    "acc-sg": "accusative, singular"
+    "acc-du": "accusative, dual"
+    "acc-pl": "accusative, plural"
+    "ins-sg": "instrumental, singular"
+    "ins-du": "instrumental, dual"
+    "ins-pl": "instrumental, plural"
+    "dat-sg": "dative, singular"
+    "dat-du": "dative, dual"
+    "dat-pl": "dative, plural"
+    "abl-sg": "ablative, singular"
+    "abl-du": "ablative, dual"
+    "abl-pl": "ablative, plural"
+    "gen-sg": "genitive, singular"
+    "gen-du": "genitive, dual"
+    "gen-pl": "genitive, plural"
+    "loc-sg": "locative, singular"
+    "loc-du": "locative, dual"
+    "loc-pl": "locative, plural"
+    "voc-sg": "vocative, singular"
+    "voc-du": "vocative, dual"
+    "voc-pl": "vocative, plural"
+rules:
+  "sa-rule-pron-nominative":
+    name: "Pronouns, nominative: he, she, it, I, you"
+    explanation: "The pronouns that point or relate, such as {14} (that), {13} (all) and the demonstratives, decline on a stem in a, but not like a noun. The nominative singular is {1} (he, masculine), {2} (she) and {3} (it); the plural is {4}, {5} and {6}. Before a word that begins with a consonant the visarga of {1} is dropped, as the Wiktionary entry of {14} says. The pronouns of the first and second person have no gender: I is {7}, the two of us {8}, we {9}; you is {10}, the two of you {11}, you all {12}. The table has the neuter {3} as {14} too, with d, as Wiktionary lists it."
+  "sa-rule-pron-accusative":
+    name: "Pronouns, accusative: him, her, it, me, you"
+    explanation: "The accusative singular of the pronoun that is {1} (masculine), {2} (feminine) and {3} (neuter, the same as its nominative); the plural is {4} and {5}, and the neuter plural is again its nominative. The pronoun of the first person has {6} (me), {8} (the two of us) and {10} (us); of the second person {7} (you), {9} (the two of you) and {11} (you all). {12} (all) has the same ending as {1}."
+  "sa-rule-pron-instrumental":
+    name: "Pronouns, instrumental: by him, by her, by me, by you"
+    explanation: "The instrumental singular of the pronoun that is {1} (masculine and neuter) and {2} (feminine); the dual is {3} for every gender; the plural is {4} (masculine and neuter) and {5} (feminine). Of the first person: {6} (by me), {8} (by the two of us), {9} (by us); of the second person: {7} (by you) and {10} (by you all). {11} (by all) is formed like a noun in a, with the ending -eṇa."
+  "sa-rule-pron-dative":
+    name: "Pronouns, dative: to him, to her, to me, to you"
+    explanation: "The dative singular of the pronoun that is {1} (masculine and neuter) and {2} (feminine): the endings -smai and -syai belong to the pronouns, and a noun has -āya instead. The dual is {3}; the plural is {4} (masculine and neuter) and {5} (feminine). Of the first person: {6} (to me), {8} (to the two of us), {9} (to us); of the second person: {7} (to you) and {10} (to you all). {11} (to all) takes the same ending as {1}."
+  "sa-rule-pron-ablative":
+    name: "Pronouns, ablative: from him, from her, from me, from you"
+    explanation: "The ablative singular of the pronoun that is {1} (masculine and neuter) and {2} (feminine); the dual is {3}; the plural is {4} (masculine and neuter) and {5} (feminine). Of the first person: {6} (from me), {8} (from the two of us), {9} (from us); of the second person: {7} (from you) and {10} (from you all). {11} (from all) takes the same ending as {1}."
+  "sa-rule-pron-genitive":
+    name: "Pronouns, genitive: his, her, my, your"
+    explanation: "The genitive singular of the pronoun that is {1} (masculine and neuter) and {2} (feminine); the dual is {3}; the plural is {4} (masculine and neuter) and {5} (feminine). Of the first person: {6} (my), {8} (of the two of us), {9} (our); of the second person: {7} (your), {10} (of you all). {11} (of all) takes the same ending as {1}."
+  "sa-rule-pron-locative":
+    name: "Pronouns, locative: in him, in her, in me, in you"
+    explanation: "The locative singular of the pronoun that is {1} (masculine and neuter) and {2} (feminine); the dual is {3}; the plural is {4} (masculine and neuter) and {5} (feminine). Of the first person: {6} (in me), {8} (in the two of us), {9} (in us); of the second person: {7} (in you) and {10} (in you all). {11} (in all) takes the same ending as {1}."
+  "sa-rule-pron-vocative":
+    name: "Pronouns, vocative: only sarva"
+    explanation: "The pronouns that point, relate or ask have no vocative, so every cell of their rows is empty. Only {4} (all) has one in this table: {1}, {2} and {3}, which are the forms of a noun in a."

@@ -117,7 +117,8 @@ units:
       - { id: "more-verbs-heard", text: { "en": "A short passage in Classical Sanskrit on the theme more verbs, read aloud" } }
     reading_passages:
       - { id: "more-verbs-text", text: { "en": "A short written text in Classical Sanskrit on the theme more verbs" } }
-  - planned: { id: "sa-grammar-pronouns", grammar: ["pronoun-declension"] }
+  - decks: ["sa-grammar-pronouns"]
+    grammar: ["pron-nominative", "pron-accusative", "pron-instrumental", "pron-dative", "pron-ablative", "pron-genitive", "pron-locative", "pron-vocative"]
     listening_passages:
       - { id: "grammar-pronouns-heard", text: { "en": "A short passage in Classical Sanskrit showing pronoun declension, read aloud" } }
     reading_passages:
