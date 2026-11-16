@@ -48,8 +48,6 @@ once its feature is built.
 - `culture-in-course.html` (`culture-in-course.md`): culture woven through
   the course, the creator card, the timeline and the "Added from search"
   group (#1133, #1134; task T20).
-- `culture-recommendations.html` (`culture-recommendations.md`): the
-  recommendations homepage, the work page and the Completed mark (task T26).
 
 ## Built without waiting (owner, 2026-11-07)
 

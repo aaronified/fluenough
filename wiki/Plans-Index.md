@@ -23,6 +23,7 @@ Every live plan in the wiki, one line each. Each plan has its own wiki page. Fin
 - [Language Paths](Plan-Language-Paths): language paths, pacing by difficulty, and every language in the scheme
 - [Language Paths Scheme](Plan-Language-Paths-Scheme): Language Learning Paths (English Base, 30 min/day)
 - [Language Themes](Plan-Language-Themes): a look for each language (colour, icon, background image)
+- [Learned Rule](Plan-Learned-Rule): an item is learned only after two different questions, both right, in one sitting (built in PR #1515)
 - [Listening In Context](Plan-Listening-In-Context): a listening tier in context
 - [Offensive Words](Plan-Offensive-Words): offensive words, their level, and warnings on words like them
 - [Placement V3](Plan-Placement-V3): find my level, mixed skills first, then drill into the skill that fails (approved 2026-11-07)
