@@ -1,0 +1,357 @@
+schema: 1
+id: "sa-en-adverbs"
+kind: "layer"
+core: "sa-adverbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Adverbs and particles"
+description: "Adverbs and particles of Classical Sanskrit: here and there, now and then, today and tomorrow, always, again, also, or and thus."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-1080":
+    native: "Here."
+    notes:
+      "n1": "Here. Its partner is tatra, there."
+    examples:
+      "अत्र देवाः सन्ति":
+        native: "Here are the gods."
+        bases:
+          "देवाः": "god (plural)"
+          "सन्ति": "to be (they are)"
+      "अत्र पुत्राः सन्ति":
+        native: "Here are the sons."
+        bases:
+          "पुत्राः": "son (plural)"
+          "सन्ति": "to be (they are)"
+  "sa-1081":
+    native: "There."
+    notes:
+      "n1": "There. It is the partner of atra, here, and of yatra, where."
+    examples:
+      "तत्र देवाः सन्ति":
+        native: "There are the gods."
+        bases:
+          "देवाः": "god (plural)"
+          "सन्ति": "to be (they are)"
+      "तत्र जनाः सन्ति":
+        native: "There are people there."
+        bases:
+          "जनाः": "person (plural)"
+          "सन्ति": "to be (they are)"
+  "sa-1082":
+    native: "Where."
+    notes:
+      "n1": "Where, a relative: it asks for its partner tatra, there, in the next clause."
+    examples:
+      "यत्र देवाः सन्ति":
+        native: "Where the gods are."
+        bases:
+          "देवाः": "god (plural)"
+          "सन्ति": "to be (they are)"
+      "यत्र जनाः सन्ति":
+        native: "Where the people are."
+        bases:
+          "जनाः": "person (plural)"
+          "सन्ति": "to be (they are)"
+  "sa-1083":
+    native: "Now."
+    notes:
+      "n1": "Now. Its final m becomes ṃ before a consonant, as in idānīṃ jānāmi."
+    examples:
+      "इदानीं जानामि":
+        native: "I know now."
+        bases:
+          "जानामि": "to know (I know)"
+          "इदानीं": "Now"
+      "इदानीं करोमि":
+        native: "I do it now."
+        bases:
+          "करोमि": "to do (I do)"
+          "इदानीं": "Now"
+  "sa-1084":
+    native: "Then."
+    notes:
+      "n1": "Then. It is the partner of yadā, when."
+    examples:
+      "तदा स जानाति":
+        native: "Then he knows."
+        bases:
+          "स": "he"
+          "जानाति": "to know (he knows)"
+      "तदा सा करोति":
+        native: "Then she does it."
+        bases:
+          "करोति": "to do (she does)"
+  "sa-1085":
+    native: "When."
+    notes:
+      "n1": "When, a relative: it asks for its partner tadā, then, in the next clause."
+    examples:
+      "यदा स जानाति":
+        native: "When he knows."
+        bases:
+          "स": "he"
+          "जानाति": "to know (he knows)"
+      "यदा सा करोति":
+        native: "When she does it."
+        bases:
+          "करोति": "to do (she does)"
+  "sa-1086":
+    native: "Always."
+    notes:
+      "n1": "Always."
+    examples:
+      "स सदा जानाति":
+        native: "He always knows."
+        bases:
+          "स": "he"
+          "जानाति": "to know (he knows)"
+      "सा सदा करोति":
+        native: "She always does it."
+        bases:
+          "करोति": "to do (she does)"
+  "sa-1087":
+    native: "Sometimes."
+    notes:
+      "n1": "Sometimes, or at some time."
+      "n2": "In these examples the words are written apart; in running text sandhi joins them where a word ends in ḥ, m, t or a vowel and the next begins with a vowel or a voiced sound."
+    examples:
+      "स कदाचित् करोति":
+        native: "He sometimes does it."
+        bases:
+          "स": "he"
+          "करोति": "to do (he does)"
+      "सा कदाचित् जानाति":
+        native: "She sometimes knows."
+        bases:
+          "जानाति": "to know (she knows)"
+  "sa-1088":
+    native: "Today."
+    notes:
+      "n1": "Today."
+      "n2": "In these examples the words are written apart; in running text sandhi joins them where a word ends in ḥ, m, t or a vowel and the next begins with a vowel or a voiced sound."
+    examples:
+      "अद्य स करोति":
+        native: "Today he does it."
+        bases:
+          "स": "he"
+          "करोति": "to do (he does)"
+      "अद्य अहं जानामि":
+        native: "Today I know."
+        bases:
+          "अहं": "I"
+          "जानामि": "to know (I know)"
+  "sa-1089":
+    native: "Tomorrow."
+    notes:
+      "n1": "Tomorrow. Wiktionary lists the adverb श्वस् (śvas), tomorrow; श्वः (śvaḥ) is the form it takes at the end of a phrase."
+    bases:
+      "श्वः": "tomorrow (stem śvas)"
+    examples:
+      "श्वः स करोति":
+        native: "Tomorrow he does it."
+        bases:
+          "स": "he"
+          "करोति": "to do (he does)"
+      "श्वः सा जानाति":
+        native: "Tomorrow she knows."
+        bases:
+          "जानाति": "to know (she knows)"
+  "sa-1090":
+    native: "Yesterday."
+    notes:
+      "n1": "Yesterday. Wiktionary lists the adverb ह्यस् (hyas), yesterday; ह्यः (hyaḥ) is the form it takes at the end of a phrase."
+    bases:
+      "ह्यः": "yesterday (stem hyas)"
+    examples:
+      "ह्यः सः":
+        native: "Yesterday, he."
+      "ह्यः सा":
+        native: "Yesterday, she."
+  "sa-1091":
+    native: "Again."
+    notes:
+      "n1": "Again. Wiktionary lists the adverb पुनर् (punar): again, back, moreover; पुनः (punaḥ) is the form it takes at the end of a phrase."
+      "n2": "In these examples the words are written apart; in running text sandhi joins them where a word ends in ḥ, m, t or a vowel and the next begins with a vowel or a voiced sound."
+    bases:
+      "पुनः": "again (stem punar)"
+    examples:
+      "स पुनः करोति":
+        native: "He does it again."
+        bases:
+          "स": "he"
+          "करोति": "to do (he does)"
+      "सा पुनः जानाति":
+        native: "She knows again."
+        bases:
+          "जानाति": "to know (she knows)"
+  "sa-1092":
+    native: "Also; even."
+    notes:
+      "n1": "Also, or even. The examples put it first in the sentence, where no sandhi arises."
+    examples:
+      "अपि स जानाति":
+        native: "He also knows."
+        bases:
+          "स": "he"
+          "जानाति": "to know (he knows)"
+      "अपि सा करोति":
+        native: "She also does it."
+        bases:
+          "करोति": "to do (she does)"
+  "sa-1093":
+    native: "Only; just."
+    notes:
+      "n1": "Only, just. The examples put it first in the sentence, where no sandhi arises."
+    examples:
+      "एव स जानाति":
+        native: "Only he knows."
+        bases:
+          "स": "he"
+          "जानाति": "to know (he knows)"
+      "एव सा करोति":
+        native: "Only she does it."
+        bases:
+          "करोति": "to do (she does)"
+  "sa-1094":
+    native: "Or."
+    notes:
+      "n1": "Or. It joins two words or two clauses."
+    examples:
+      "स वा सा":
+        native: "He or she."
+        bases:
+          "स": "he"
+      "पिता वा माता":
+        native: "Father or mother."
+        bases:
+          "पिता": "father (stem pitṛ)"
+          "माता": "mother (stem mātṛ)"
+  "sa-1095":
+    native: "Thus."
+    notes:
+      "n1": "Thus, so. In texts it also ends a quotation."
+    examples:
+      "इति स जानाति":
+        native: "Thus he knows."
+        bases:
+          "स": "he"
+          "जानाति": "to know (he knows)"
+      "इति स करोति":
+        native: "Thus he does it."
+        bases:
+          "स": "he"
+          "करोति": "to do (he does)"
+  "sa-1096":
+    native: "Much; many."
+    notes:
+      "n1": "Much or many. It is also an adjective, which agrees with its noun."
+    examples:
+      "बहु जलम्":
+        native: "Much water."
+        bases:
+          "जलम्": "water"
+      "बहु जानाति":
+        native: "He knows much."
+        bases:
+          "जानाति": "to know (he knows)"
+  "sa-1097":
+    native: "Quickly."
+    notes:
+      "n1": "Quickly. It is a neuter used as an adverb."
+    examples:
+      "शीघ्रं करोमि":
+        native: "I do it quickly."
+        bases:
+          "करोमि": "to do (I do)"
+          "शीघ्रं": "Quickly"
+      "शीघ्रं कुर्मः":
+        native: "We do it quickly."
+        bases:
+          "कुर्मः": "to do (we do)"
+          "शीघ्रं": "Quickly"
+  "sa-1098":
+    native: "Thus; in this way."
+    notes:
+      "n1": "Thus, in this way."
+    examples:
+      "एवं करोति":
+        native: "He does it thus."
+        bases:
+          "करोति": "to do (he does)"
+          "एवं": "Thus; in this way"
+      "एवं जानामि":
+        native: "I know it thus."
+        bases:
+          "जानामि": "to know (I know)"
+          "एवं": "Thus; in this way"
+  "sa-1099":
+    native: "So; likewise."
+    notes:
+      "n1": "So, likewise."
+    examples:
+      "तथा स करोति":
+        native: "He does likewise."
+        bases:
+          "स": "he"
+          "करोति": "to do (he does)"
+      "तथा सा जानाति":
+        native: "She knows likewise."
+        bases:
+          "जानाति": "to know (she knows)"
+  "sa-1100":
+    native: "Then; now."
+    notes:
+      "n1": "Then, now. It is a particle that opens a new part of a text."
+    examples:
+      "अथ स जानाति":
+        native: "Then he knows."
+        bases:
+          "स": "he"
+          "जानाति": "to know (he knows)"
+      "अथ सा करोति":
+        native: "Then she does it."
+        bases:
+          "करोति": "to do (she does)"
+  "sa-1101":
+    native: "Far."
+    notes:
+      "n1": "Far. It is a neuter used as an adverb."
+    examples:
+      "अयं दूरम्":
+        native: "This one is far."
+        bases:
+          "अयं": "This (masculine)"
+      "इदं दूरम्":
+        native: "This is far."
+        bases:
+          "इदं": "This (neuter)"
+  "sa-1102":
+    native: "Always; constantly."
+    notes:
+      "n1": "Always, constantly. It is a neuter used as an adverb."
+    examples:
+      "नित्यं जानाति":
+        native: "He knows always."
+        bases:
+          "जानाति": "to know (he knows)"
+          "नित्यं": "Always; constantly"
+      "नित्यं करोमि":
+        native: "I always do it."
+        bases:
+          "करोमि": "to do (I do)"
+          "नित्यं": "Always; constantly"
+  "sa-1103":
+    native: "Once."
+    notes:
+      "n1": "Once, one time. It is formed from eka, one."
+    examples:
+      "एकदा स जानाति":
+        native: "Once he knows."
+        bases:
+          "स": "he"
+          "जानाति": "to know (he knows)"
+      "एकदा सा करोति":
+        native: "Once she does it."
+        bases:
+          "करोति": "to do (she does)"

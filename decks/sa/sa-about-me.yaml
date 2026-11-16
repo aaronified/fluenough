@@ -1,0 +1,120 @@
+schema: 1
+id: "sa-about-me"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "about-me"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-1070"
+    target: "नाम"
+    reading: "nāma"
+    ipa: "naːmə"
+    pos: "noun"
+    gender: "n"
+    tags: ["about-me"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "नाम", base: "नामन्", reading: "nāman" }
+    examples:
+      - target: "मम नाम रामः"
+        reading: "mama nāma rāmaḥ"
+        ipa: "məmə naːmə raːməh"
+        bases:
+          - { word: "मम", base: "अहम्", reading: "aham" }
+          - { word: "रामः", base: "राम", reading: "rāma" }
+      - target: "तव नाम किम्"
+        reading: "tava nāma kim"
+        ipa: "t̪əʋə naːmə kim"
+        bases:
+          - { word: "तव", base: "त्वम्", reading: "tvam" }
+  - id: "sa-1071"
+    target: "वयः"
+    reading: "vayaḥ"
+    ipa: "ʋəjəh"
+    pos: "noun"
+    gender: "n"
+    tags: ["about-me"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "वयः", base: "वयस्", reading: "vayas" }
+    examples:
+      - target: "मम वयः विंशतिः"
+        reading: "mama vayaḥ viṃśatiḥ"
+        ipa: "məmə ʋəjəh ʋĩʃət̪ih"
+        bases:
+          - { word: "मम", base: "अहम्", reading: "aham" }
+      - target: "तव वयः किम्"
+        reading: "tava vayaḥ kim"
+        ipa: "t̪əʋə ʋəjəh kim"
+        bases:
+          - { word: "तव", base: "त्वम्", reading: "tvam" }
+  - id: "sa-1072"
+    target: "भाषा"
+    reading: "bhāṣā"
+    ipa: "bʱaːʂaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["about-me", "language"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "भाषा संस्कृतम्"
+        reading: "bhāṣā saṃskṛtam"
+        ipa: "bʱaːʂaː sə̃skr̩t̪əm"
+        bases:
+          - { word: "संस्कृतम्", base: "संस्कृत", reading: "saṃskṛta" }
+      - target: "का भाषा"
+        reading: "kā bhāṣā"
+        ipa: "kaː bʱaːʂaː"
+        bases:
+          - { word: "का", base: "कः", reading: "kaḥ" }
+  - id: "sa-1073"
+    target: "आयुः"
+    reading: "āyuḥ"
+    ipa: "aːjuh"
+    pos: "noun"
+    gender: "n"
+    tags: ["about-me"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "आयुः", base: "आयुस्", reading: "āyus" }
+    examples:
+      - target: "आयुः दीर्घम्"
+        reading: "āyuḥ dīrgham"
+        ipa: "aːjuh d̪iːrɡʱəm"
+        bases:
+          - { word: "दीर्घम्", base: "दीर्घ", reading: "dīrgha" }
+      - target: "मम आयुः दीर्घम्"
+        reading: "mama āyuḥ dīrgham"
+        ipa: "məmə aːjuh d̪iːrɡʱəm"
+        bases:
+          - { word: "मम", base: "अहम्", reading: "aham" }
+          - { word: "दीर्घम्", base: "दीर्घ", reading: "dīrgha" }
+  - id: "sa-1074"
+    target: "जातिः"
+    reading: "jātiḥ"
+    ipa: "dʒaːt̪ih"
+    pos: "noun"
+    gender: "f"
+    tags: ["about-me"]
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases:
+      - { word: "जातिः", base: "जाति", reading: "jāti" }
+    examples:
+      - target: "का जातिः"
+        reading: "kā jātiḥ"
+        ipa: "kaː dʒaːt̪ih"
+        bases:
+          - { word: "का", base: "कः", reading: "kaḥ" }
+      - target: "सा जातिः"
+        reading: "sā jātiḥ"
+        ipa: "saː dʒaːt̪ih"

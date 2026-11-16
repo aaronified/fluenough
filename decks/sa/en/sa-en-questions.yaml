@@ -1,0 +1,117 @@
+schema: 1
+id: "sa-en-questions"
+kind: "layer"
+core: "sa-questions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Questions"
+description: "Question words of Classical Sanskrit: what, who, where, when, how, how many and why, with short questions to ask them in."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-1000":
+    native: "What."
+    notes:
+      "n1": "Asks what. Before a consonant its final m becomes ṃ, as in kiṃ jānāsi."
+    examples:
+      "किं जानासि":
+        native: "What do you know?"
+        bases:
+          "किं": "what"
+          "जानासि": "to know (you know)"
+      "किं करोषि":
+        native: "What are you doing?"
+        bases:
+          "किं": "what"
+          "करोषि": "to do (you do)"
+  "sa-1001":
+    native: "Who."
+    notes:
+      "n1": "Asks who. Its feminine is kā."
+      "n2": "In these examples the words are written apart; in running text sandhi joins them where a word ends in ḥ, m, t or a vowel and the next begins with a vowel or a voiced sound."
+    examples:
+      "कः जानाति":
+        native: "Who knows?"
+        bases:
+          "जानाति": "to know (he knows)"
+      "कः करोति":
+        native: "Who does it?"
+        bases:
+          "करोति": "to do (he does)"
+  "sa-1002":
+    native: "Where."
+    notes:
+      "n1": "Asks where, the place. Atra means here and tatra means there."
+    examples:
+      "देवाः कुत्र सन्ति":
+        native: "Where are the gods?"
+        bases:
+          "देवाः": "god (plural)"
+          "सन्ति": "to be (they are)"
+      "पितरः कुत्र सन्ति":
+        native: "Where are the fathers?"
+        bases:
+          "पितरः": "father (plural)"
+          "सन्ति": "to be (they are)"
+  "sa-1003":
+    native: "When."
+    notes:
+      "n1": "Asks when, the time. In a relative clause its partner is yadā, when."
+    examples:
+      "त्वं कदा करोषि":
+        native: "When do you do it?"
+        bases:
+          "त्वं": "you"
+          "करोषि": "to do (you do)"
+      "सा कदा जानाति":
+        native: "When does she know?"
+        bases:
+          "जानाति": "to know (she knows)"
+  "sa-1004":
+    native: "How."
+    notes:
+      "n1": "Asks how, in what way. Before a consonant its final m becomes ṃ, as in kathaṃ karomi."
+    examples:
+      "त्वं कथं जानासि":
+        native: "How do you know?"
+        bases:
+          "त्वं": "you"
+          "जानासि": "to know (you know)"
+          "कथं": "How"
+      "अहं कथं करोमि":
+        native: "How do I do it?"
+        bases:
+          "अहं": "I"
+          "करोमि": "to do (I do)"
+          "कथं": "How"
+  "sa-1005":
+    native: "How many."
+    notes:
+      "n1": "Asks how many, a count. The noun after it is plural in these examples."
+    examples:
+      "कति देवाः सन्ति":
+        native: "How many gods are there?"
+        bases:
+          "देवाः": "god (plural)"
+          "सन्ति": "to be (they are)"
+      "कति पुत्राः सन्ति":
+        native: "How many sons are there?"
+        bases:
+          "पुत्राः": "son (plural)"
+          "सन्ति": "to be (they are)"
+  "sa-1006":
+    native: "Why."
+    notes:
+      "n1": "Asks why. It is a compound of kim, what, and artha, purpose, so the sense is for what purpose."
+    examples:
+      "त्वं किमर्थं करोषि":
+        native: "Why do you do it?"
+        bases:
+          "त्वं": "you"
+          "करोषि": "to do (you do)"
+          "किमर्थं": "Why"
+      "स किमर्थं करोति":
+        native: "Why does he do it?"
+        bases:
+          "स": "he"
+          "किमर्थं": "Why"
+          "करोति": "to do (he does)"

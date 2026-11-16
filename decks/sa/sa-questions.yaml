@@ -1,0 +1,165 @@
+schema: 1
+id: "sa-questions"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "questions"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-1000"
+    target: "किम्"
+    reading: "kim"
+    ipa: "kim"
+    pos: "pronoun"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "किं जानासि"
+        reading: "kiṃ jānāsi"
+        ipa: "kim dʒaːnaːsi"
+        bases:
+          - { word: "किं", base: "किम्", reading: "kim" }
+          - { word: "जानासि", base: "ज्ञा", reading: "jñā" }
+      - target: "किं करोषि"
+        reading: "kiṃ karoṣi"
+        ipa: "kim kəroːʂi"
+        bases:
+          - { word: "किं", base: "किम्", reading: "kim" }
+          - { word: "करोषि", base: "कृ", reading: "kṛ" }
+  - id: "sa-1001"
+    target: "कः"
+    reading: "kaḥ"
+    ipa: "kəh"
+    pos: "pronoun"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "कः जानाति"
+        reading: "kaḥ jānāti"
+        ipa: "kəh dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "कः करोति"
+        reading: "kaḥ karoti"
+        ipa: "kəh kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1002"
+    target: "कुत्र"
+    reading: "kutra"
+    ipa: "kut̪rə"
+    pos: "adv"
+    tags: ["question", "place"]
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "देवाः कुत्र सन्ति"
+        reading: "devāḥ kutra santi"
+        ipa: "d̪eːʋaːh kut̪rə sənt̪i"
+        bases:
+          - { word: "देवाः", base: "देव", reading: "deva" }
+          - { word: "सन्ति", base: "अस्", reading: "as" }
+      - target: "पितरः कुत्र सन्ति"
+        reading: "pitaraḥ kutra santi"
+        ipa: "pit̪ərəh kut̪rə sənt̪i"
+        bases:
+          - { word: "पितरः", base: "पितृ", reading: "pitṛ" }
+          - { word: "सन्ति", base: "अस्", reading: "as" }
+  - id: "sa-1003"
+    target: "कदा"
+    reading: "kadā"
+    ipa: "kəd̪aː"
+    pos: "adv"
+    tags: ["question", "time"]
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "त्वं कदा करोषि"
+        reading: "tvaṃ kadā karoṣi"
+        ipa: "t̪ʋəm kəd̪aː kəroːʂi"
+        bases:
+          - { word: "त्वं", base: "त्वम्", reading: "tvam" }
+          - { word: "करोषि", base: "कृ", reading: "kṛ" }
+      - target: "सा कदा जानाति"
+        reading: "sā kadā jānāti"
+        ipa: "saː kəd̪aː dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+  - id: "sa-1004"
+    target: "कथम्"
+    reading: "katham"
+    ipa: "kət̪ʰəm"
+    pos: "adv"
+    tags: ["question", "manner"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "त्वं कथं जानासि"
+        reading: "tvaṃ kathaṃ jānāsi"
+        ipa: "t̪ʋəm kət̪ʰəm dʒaːnaːsi"
+        bases:
+          - { word: "त्वं", base: "त्वम्", reading: "tvam" }
+          - { word: "जानासि", base: "ज्ञा", reading: "jñā" }
+          - { word: "कथं", base: "कथम्", reading: "katham" }
+      - target: "अहं कथं करोमि"
+        reading: "ahaṃ kathaṃ karomi"
+        ipa: "əɦəm kət̪ʰəm kəroːmi"
+        bases:
+          - { word: "अहं", base: "अहम्", reading: "aham" }
+          - { word: "करोमि", base: "कृ", reading: "kṛ" }
+          - { word: "कथं", base: "कथम्", reading: "katham" }
+  - id: "sa-1005"
+    target: "कति"
+    reading: "kati"
+    ipa: "kət̪i"
+    pos: "adj"
+    tags: ["question", "number"]
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "कति देवाः सन्ति"
+        reading: "kati devāḥ santi"
+        ipa: "kət̪i d̪eːʋaːh sənt̪i"
+        bases:
+          - { word: "देवाः", base: "देव", reading: "deva" }
+          - { word: "सन्ति", base: "अस्", reading: "as" }
+      - target: "कति पुत्राः सन्ति"
+        reading: "kati putrāḥ santi"
+        ipa: "kət̪i put̪raːh sənt̪i"
+        bases:
+          - { word: "पुत्राः", base: "पुत्र", reading: "putra" }
+          - { word: "सन्ति", base: "अस्", reading: "as" }
+  - id: "sa-1006"
+    target: "किमर्थम्"
+    reading: "kimartham"
+    ipa: "kimərt̪ʰəm"
+    pos: "adv"
+    tags: ["question", "reason"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "त्वं किमर्थं करोषि"
+        reading: "tvaṃ kimarthaṃ karoṣi"
+        ipa: "t̪ʋəm kimərt̪ʰəm kəroːʂi"
+        bases:
+          - { word: "त्वं", base: "त्वम्", reading: "tvam" }
+          - { word: "करोषि", base: "कृ", reading: "kṛ" }
+          - { word: "किमर्थं", base: "किमर्थम्", reading: "kimartham" }
+      - target: "स किमर्थं करोति"
+        reading: "sa kimarthaṃ karoti"
+        ipa: "sə kimərt̪ʰəm kəroːt̪i"
+        bases:
+          - { word: "स", base: "सः", reading: "saḥ" }
+          - { word: "किमर्थं", base: "किमर्थम्", reading: "kimartham" }
+          - { word: "करोति", base: "कृ", reading: "kṛ" }

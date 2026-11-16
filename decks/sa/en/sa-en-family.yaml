@@ -1,0 +1,254 @@
+schema: 1
+id: "sa-en-family"
+kind: "layer"
+core: "sa-family"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Family"
+description: "Family words of Classical Sanskrit: mother, father, brother, sister, son, daughter, husband, wife, friend and relatives, with the stems the other cases use."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-1030":
+    native: "Mother."
+    notes:
+      "n1": "Nominative of the stem mātṛ, a consonant stem; the other cases use the stem mātṛ."
+    bases:
+      "माता": "mother (stem mātṛ)"
+    examples:
+      "माता करोति":
+        native: "The mother does it."
+        bases:
+          "करोति": "to do (she does)"
+      "माता जानाति":
+        native: "The mother knows."
+        bases:
+          "जानाति": "to know (she knows)"
+  "sa-1031":
+    native: "Father."
+    notes:
+      "n1": "Nominative of the stem pitṛ, a consonant stem; the other cases use the stem pitṛ."
+    bases:
+      "पिता": "father (stem pitṛ)"
+    examples:
+      "पिता जानाति":
+        native: "The father knows."
+        bases:
+          "पिता": "father (stem pitṛ)"
+          "जानाति": "to know (he knows)"
+      "पिता करोति":
+        native: "The father does it."
+        bases:
+          "पिता": "father (stem pitṛ)"
+          "करोति": "to do (he does)"
+  "sa-1032":
+    native: "Brother."
+    notes:
+      "n1": "Nominative of the stem bhrātṛ, a consonant stem; the other cases use the stem bhrātṛ."
+    bases:
+      "भ्राता": "brother (stem bhrātṛ)"
+    examples:
+      "भ्राता जानाति":
+        native: "The brother knows."
+        bases:
+          "भ्राता": "brother (stem bhrātṛ)"
+          "जानाति": "to know (he knows)"
+      "भ्राता करोति":
+        native: "The brother does it."
+        bases:
+          "भ्राता": "brother (stem bhrātṛ)"
+          "करोति": "to do (he does)"
+  "sa-1033":
+    native: "Sister."
+    notes:
+      "n1": "Nominative of the stem svasṛ, a consonant stem; the other cases use the stem svasṛ."
+    bases:
+      "स्वसा": "sister (stem svasṛ)"
+    examples:
+      "स्वसा जानाति":
+        native: "The sister knows."
+        bases:
+          "स्वसा": "sister (stem svasṛ)"
+          "जानाति": "to know (she knows)"
+      "स्वसा करोति":
+        native: "The sister does it."
+        bases:
+          "स्वसा": "sister (stem svasṛ)"
+          "करोति": "to do (she does)"
+  "sa-1034":
+    native: "Daughter."
+    notes:
+      "n1": "The feminine of putra, son, so it means daughter."
+    examples:
+      "पुत्री जानाति":
+        native: "The daughter knows."
+        bases:
+          "जानाति": "to know (she knows)"
+      "पुत्री करोति":
+        native: "The daughter does it."
+        bases:
+          "करोति": "to do (she does)"
+  "sa-1035":
+    native: "Daughter."
+    notes:
+      "n1": "Nominative of the stem duhitṛ, a consonant stem; it is a second word for daughter, beside putrī."
+    bases:
+      "दुहिता": "daughter (stem duhitṛ)"
+    examples:
+      "दुहिता जानाति":
+        native: "The daughter knows."
+        bases:
+          "दुहिता": "daughter (stem duhitṛ)"
+          "जानाति": "to know (she knows)"
+      "दुहिता करोति":
+        native: "The daughter does it."
+        bases:
+          "दुहिता": "daughter (stem duhitṛ)"
+          "करोति": "to do (she does)"
+  "sa-1036":
+    native: "Husband; lord."
+    notes:
+      "n1": "Nominative of the stem pati, with the visarga of the nominative singular; it also means lord or master."
+      "n2": "In these examples the words are written apart; in running text sandhi joins them where a word ends in ḥ, m, t or a vowel and the next begins with a vowel or a voiced sound."
+    bases:
+      "पतिः": "husband, lord (stem pati)"
+    examples:
+      "पतिः जानाति":
+        native: "The husband knows."
+        bases:
+          "जानाति": "to know (he knows)"
+      "पतिः करोति":
+        native: "The husband does it."
+        bases:
+          "करोति": "to do (he does)"
+  "sa-1037":
+    native: "Wife."
+    notes:
+      "n1": "A feminine stem in ī: the wife, the feminine of the word for husband."
+    examples:
+      "पत्नी जानाति":
+        native: "The wife knows."
+        bases:
+          "जानाति": "to know (she knows)"
+      "पत्नी करोति":
+        native: "The wife does it."
+        bases:
+          "करोति": "to do (she does)"
+  "sa-1038":
+    native: "Friend."
+    notes:
+      "n1": "A masculine word for friend; its nominative ends in ā, not in -aḥ."
+    examples:
+      "सखा जानाति":
+        native: "The friend knows."
+        bases:
+          "जानाति": "to know (he knows)"
+      "सखा करोति":
+        native: "The friend does it."
+        bases:
+          "करोति": "to do (he does)"
+  "sa-1039":
+    native: "Relative; kinsman."
+    notes:
+      "n1": "Nominative of the stem bandhu, a u stem, with the visarga of the nominative singular."
+      "n2": "In these examples the words are written apart; in running text sandhi joins them where a word ends in ḥ, m, t or a vowel and the next begins with a vowel or a voiced sound."
+    bases:
+      "बन्धुः": "relative (stem bandhu)"
+    examples:
+      "बन्धुः जानाति":
+        native: "The relative knows."
+        bases:
+          "बन्धुः": "relative (stem bandhu)"
+          "जानाति": "to know (he knows)"
+      "बन्धुः करोति":
+        native: "The relative does it."
+        bases:
+          "बन्धुः": "relative (stem bandhu)"
+          "करोति": "to do (he does)"
+  "sa-1040":
+    native: "Bride; young wife."
+    notes:
+      "n1": "Nominative of the stem vadhū, a feminine ū stem; it means a bride or a young wife."
+      "n2": "In these examples the words are written apart; in running text sandhi joins them where a word ends in ḥ, m, t or a vowel and the next begins with a vowel or a voiced sound."
+    bases:
+      "वधूः": "bride (stem vadhū)"
+    examples:
+      "वधूः जानाति":
+        native: "The bride knows."
+        bases:
+          "वधूः": "bride (stem vadhū)"
+          "जानाति": "to know (she knows)"
+      "वधूः करोति":
+        native: "The bride does it."
+        bases:
+          "वधूः": "bride (stem vadhū)"
+          "करोति": "to do (she does)"
+  "sa-1041":
+    native: "Son."
+    notes:
+      "n1": "Nominative of the stem sūnu, a u stem; putra is the more common word for son."
+      "n2": "In these examples the words are written apart; in running text sandhi joins them where a word ends in ḥ, m, t or a vowel and the next begins with a vowel or a voiced sound."
+    bases:
+      "सूनुः": "son (stem sūnu)"
+    examples:
+      "सूनुः जानाति":
+        native: "The son knows."
+        bases:
+          "सूनुः": "son (stem sūnu)"
+          "जानाति": "to know (he knows)"
+      "सूनुः करोति":
+        native: "The son does it."
+        bases:
+          "सूनुः": "son (stem sūnu)"
+          "करोति": "to do (he does)"
+  "sa-1042":
+    native: "Woman."
+    notes:
+      "n1": "A feminine stem in ī: a woman."
+    examples:
+      "नारी जानाति":
+        native: "The woman knows."
+        bases:
+          "जानाति": "to know (she knows)"
+      "नारी करोति":
+        native: "The woman does it."
+        bases:
+          "करोति": "to do (she does)"
+  "sa-1043":
+    native: "Woman; wife."
+    notes:
+      "n1": "A feminine word: woman, or wife; the context decides which."
+    examples:
+      "स्त्री जानाति":
+        native: "The woman knows."
+        bases:
+          "जानाति": "to know (she knows)"
+      "स्त्री करोति":
+        native: "The woman does it."
+        bases:
+          "करोति": "to do (she does)"
+  "sa-1044":
+    native: "Daughter."
+    notes:
+      "n1": "A feminine word for daughter, beside putrī and duhitā."
+    examples:
+      "सुता जानाति":
+        native: "The daughter knows."
+        bases:
+          "जानाति": "to know (she knows)"
+      "सुता करोति":
+        native: "The daughter does it."
+        bases:
+          "करोति": "to do (she does)"
+  "sa-1045":
+    native: "Mother who gives birth."
+    notes:
+      "n1": "A feminine ī stem for a mother; mātā is the common word for mother."
+    examples:
+      "जननी जानाति":
+        native: "The mother knows."
+        bases:
+          "जानाति": "to know (she knows)"
+      "जननी करोति":
+        native: "The mother does it."
+        bases:
+          "करोति": "to do (she does)"

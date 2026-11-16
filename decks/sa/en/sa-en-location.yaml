@@ -1,0 +1,153 @@
+schema: 1
+id: "sa-en-location"
+kind: "layer"
+core: "sa-location"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Where things are"
+description: "Where things are in Classical Sanskrit: everywhere, here, outside, inside, far away, elsewhere, in one place, in the middle and below."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-1554":
+    native: "Everywhere."
+    examples:
+      "सर्वत्र जलम्":
+        native: "Water everywhere."
+        bases:
+          "सर्वत्र": "everywhere"
+          "जलम्": "water"
+      "सर्वत्र पुस्तकानि":
+        native: "Books everywhere."
+        bases:
+          "सर्वत्र": "everywhere"
+          "पुस्तकानि": "books"
+  "sa-1555":
+    native: "Here; in this place."
+    notes:
+      "n1": "Often also means in this world, as well as here."
+    examples:
+      "इह बालः":
+        native: "The boy is here."
+        bases:
+          "इह": "here"
+          "बालः": "boy"
+      "इह देवाः":
+        native: "The gods are here."
+        bases:
+          "इह": "here"
+          "देवाः": "gods"
+  "sa-1556":
+    native: "Outside."
+    notes:
+      "n1": "Wiktionary lists the adverb बहिस् (bahis), outside, with the alternative forms बहिः (bahiḥ) and बहिर् (bahir). It takes the ablative: गृहात् (gṛhāt) बहिः (bahiḥ), outside the house."
+      "n2": "In these examples the words are written apart; in running text sandhi joins them where a word ends in ḥ, m, t or a vowel and the next begins with a vowel or a voiced sound."
+    bases:
+      "बहिः": "outside"
+    examples:
+      "गृहात् बहिः":
+        native: "Outside the house."
+        bases:
+          "गृहात्": "house (ablative)"
+          "बहिः": "outside"
+      "बहिः बालः":
+        native: "The boy is outside."
+        bases:
+          "बहिः": "outside"
+          "बालः": "boy"
+  "sa-1557":
+    native: "Inside; within."
+    notes:
+      "n1": "Wiktionary lists अन्तर् (antar), within or between; अन्तः (antaḥ) is the form it takes at the end of a phrase. It takes the genitive: गृहस्य (gṛhasya) अन्तः (antaḥ), inside the house."
+      "n2": "In these examples the words are written apart; in running text sandhi joins them where a word ends in ḥ, m, t or a vowel and the next begins with a vowel or a voiced sound."
+    bases:
+      "अन्तः": "inside"
+    examples:
+      "गृहस्य अन्तः":
+        native: "Inside the house."
+        bases:
+          "गृहस्य": "house (genitive)"
+          "अन्तः": "inside"
+      "अन्तः जलम्":
+        native: "Water inside."
+        bases:
+          "अन्तः": "inside"
+          "जलम्": "water"
+  "sa-1558":
+    native: "Far away."
+    notes:
+      "n1": "Wiktionary lists the adjective and noun दूर (dūra), far; दूरे (dūre) is its locative, used as an adverb."
+    bases:
+      "दूरे": "far away"
+    examples:
+      "दूरे पर्वतः":
+        native: "The mountain is far away."
+        bases:
+          "दूरे": "far away"
+          "पर्वतः": "mountain"
+      "नदी दूरे":
+        native: "The river is far away."
+        bases:
+          "नदी": "river"
+          "दूरे": "far away"
+  "sa-1640":
+    native: "Elsewhere."
+    notes:
+      "n1": "Wiktionary lists अन्यत्र (anyatra) as an adverb: elsewhere, or in another place; it never changes its form."
+    examples:
+      "अन्यत्र नदी दीर्घा":
+        native: "Elsewhere the river is long."
+        bases:
+          "नदी": "river"
+          "दीर्घा": "long"
+      "अन्यत्र गङ्गा पवित्रा":
+        native: "Elsewhere the Ganges is sacred."
+        bases:
+          "गङ्गा": "the Ganges"
+          "पवित्रा": "sacred"
+  "sa-1641":
+    native: "In one place."
+    notes:
+      "n1": "Wiktionary lists एकत्र (ekatra) as an adverb: in one place, or in one and the same; it never changes its form."
+    examples:
+      "एकत्र पुस्तकानि सन्ति":
+        native: "The books are in one place."
+        bases:
+          "पुस्तकानि": "book (plural)"
+          "सन्ति": "to be (they are)"
+      "एकत्र पुष्पाणि सन्ति":
+        native: "The flowers are in one place."
+        bases:
+          "पुष्पाणि": "flower (plural)"
+          "सन्ति": "to be (they are)"
+  "sa-1642":
+    native: "In the middle; between."
+    notes:
+      "n1": "Wiktionary lists अन्तरा (antarā) as an adverb meaning in the middle, within or between; it never changes its form."
+    examples:
+      "अन्तरा जलं शीतम्":
+        native: "In the middle the water is cold."
+        bases:
+          "जलं": "water"
+          "शीतम्": "cold"
+      "अन्तरा गृहं नवम्":
+        native: "In between the house is new."
+        bases:
+          "गृहं": "house"
+          "नवम्": "new"
+  "sa-1643":
+    native: "Below; down."
+    notes:
+      "n1": "Wiktionary lists the adverb अधस् (adhas): below, down or under; अधः (adhaḥ) is the form it takes at the end of a phrase or before a consonant such as प (pa)."
+    bases:
+      "अधः": "below (stem adhas)"
+    examples:
+      "अधः पुस्तकम्":
+        native: "A book is below."
+        bases:
+          "अधः": "below"
+          "पुस्तकम्": "book"
+      "अधः पात्रम्":
+        native: "A vessel is below."
+        bases:
+          "अधः": "below"
+          "पात्रम्": "vessel"

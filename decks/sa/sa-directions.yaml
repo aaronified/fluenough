@@ -1,0 +1,194 @@
+schema: 1
+id: "sa-directions"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "directions"
+tags: ["unreviewed"]
+cards:
+  - id: "sa-1585"
+    target: "पश्चात्"
+    reading: "paścāt"
+    ipa: "pəʃtʃaːt̪"
+    pos: "adv"
+    tags: ["direction"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "पश्चात् गृहम्"
+        reading: "paścāt gṛham"
+        ipa: "pəʃtʃaːt̪ ɡr̩ɦəm"
+        bases:
+          - { word: "पश्चात्", base: "पश्चात्", reading: "paścāt" }
+          - { word: "गृहम्", base: "गृह", reading: "gṛha" }
+      - target: "गृहं पश्चात्"
+        reading: "gṛhaṃ paścāt"
+        ipa: "ɡr̩ɦəm pəʃtʃaːt̪"
+        bases:
+          - { word: "गृहं", base: "गृह", reading: "gṛha" }
+          - { word: "पश्चात्", base: "पश्चात्", reading: "paścāt" }
+  - id: "sa-1586"
+    target: "उपरि"
+    reading: "upari"
+    ipa: "upəri"
+    pos: "adv"
+    tags: ["direction"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "उपरि पक्षी"
+        reading: "upari pakṣī"
+        ipa: "upəri pəkʂiː"
+        bases:
+          - { word: "उपरि", base: "उपरि", reading: "upari" }
+          - { word: "पक्षी", base: "पक्षिन्", reading: "pakṣin" }
+      - target: "गगनम् उपरि"
+        reading: "gaganam upari"
+        ipa: "ɡəɡənəm upəri"
+        bases:
+          - { word: "गगनम्", base: "गगन", reading: "gagana" }
+          - { word: "उपरि", base: "उपरि", reading: "upari" }
+  - id: "sa-1587"
+    target: "अधस्तात्"
+    reading: "adhastāt"
+    ipa: "əd̪ʱəst̪aːt̪"
+    pos: "adv"
+    tags: ["direction"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "अधस्तात् भूमिः"
+        reading: "adhastāt bhūmiḥ"
+        ipa: "əd̪ʱəst̪aːt̪ bʱuːmih"
+        bases:
+          - { word: "अधस्तात्", base: "अधस्तात्", reading: "adhastāt" }
+          - { word: "भूमिः", base: "भूमि", reading: "bhūmi" }
+      - target: "गृहम् अधस्तात्"
+        reading: "gṛham adhastāt"
+        ipa: "ɡr̩ɦəm əd̪ʱəst̪aːt̪"
+        bases:
+          - { word: "गृहम्", base: "गृह", reading: "gṛha" }
+          - { word: "अधस्तात्", base: "अधस्तात्", reading: "adhastāt" }
+  - id: "sa-1588"
+    target: "दक्षिणः"
+    reading: "dakṣiṇaḥ"
+    ipa: "d̪əkʂiɳəh"
+    pos: "adj"
+    tags: ["direction"]
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "दक्षिणः", base: "दक्षिण", reading: "dakṣiṇa" }
+    examples:
+      - target: "दक्षिणः मार्गः"
+        reading: "dakṣiṇaḥ mārgaḥ"
+        ipa: "d̪əkʂiɳəh maːrɡəh"
+        bases:
+          - { word: "दक्षिणः", base: "दक्षिण", reading: "dakṣiṇa" }
+          - { word: "मार्गः", base: "मार्ग", reading: "mārga" }
+      - target: "मार्गः दक्षिणः"
+        reading: "mārgaḥ dakṣiṇaḥ"
+        ipa: "maːrɡəh d̪əkʂiɳəh"
+        bases:
+          - { word: "मार्गः", base: "मार्ग", reading: "mārga" }
+          - { word: "दक्षिणः", base: "दक्षिण", reading: "dakṣiṇa" }
+  - id: "sa-1589"
+    target: "उत्तरः"
+    reading: "uttaraḥ"
+    ipa: "ut̪t̪ərəh"
+    pos: "adj"
+    tags: ["direction"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "उत्तरः", base: "उत्तर", reading: "uttara" }
+    examples:
+      - target: "उत्तरं वनम्"
+        reading: "uttaraṃ vanam"
+        ipa: "ut̪t̪ərəm ʋənəm"
+        bases:
+          - { word: "उत्तरं", base: "उत्तर", reading: "uttara" }
+          - { word: "वनम्", base: "वन", reading: "vana" }
+      - target: "नदी उत्तरा"
+        reading: "nadī uttarā"
+        ipa: "nəd̪iː ut̪t̪əraː"
+        bases:
+          - { word: "नदी", base: "नदी", reading: "nadī" }
+          - { word: "उत्तरा", base: "उत्तर", reading: "uttara" }
+  - id: "sa-1590"
+    target: "पूर्वः"
+    reading: "pūrvaḥ"
+    ipa: "puːrʋəh"
+    pos: "adj"
+    tags: ["direction"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "पूर्वः", base: "पूर्व", reading: "pūrva" }
+    examples:
+      - target: "पूर्वं गृहम्"
+        reading: "pūrvaṃ gṛham"
+        ipa: "puːrʋəm ɡr̩ɦəm"
+        bases:
+          - { word: "पूर्वं", base: "पूर्व", reading: "pūrva" }
+          - { word: "गृहम्", base: "गृह", reading: "gṛha" }
+      - target: "नदी पूर्वा"
+        reading: "nadī pūrvā"
+        ipa: "nəd̪iː puːrʋaː"
+        bases:
+          - { word: "नदी", base: "नदी", reading: "nadī" }
+          - { word: "पूर्वा", base: "पूर्व", reading: "pūrva" }
+  - id: "sa-1591"
+    target: "अपरः"
+    reading: "aparaḥ"
+    ipa: "əpərəh"
+    pos: "adj"
+    tags: ["direction"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "अपरः", base: "अपर", reading: "apara" }
+    examples:
+      - target: "अपरः पर्वतः"
+        reading: "aparaḥ parvataḥ"
+        ipa: "əpərəh pərʋət̪əh"
+        bases:
+          - { word: "अपरः", base: "अपर", reading: "apara" }
+          - { word: "पर्वतः", base: "पर्वत", reading: "parvata" }
+      - target: "वनम् अपरम्"
+        reading: "vanam aparam"
+        ipa: "ʋənəm əpərəm"
+        bases:
+          - { word: "वनम्", base: "वन", reading: "vana" }
+          - { word: "अपरम्", base: "अपर", reading: "apara" }
+  - id: "sa-1592"
+    target: "अग्रे"
+    reading: "agre"
+    ipa: "əɡreː"
+    pos: "adv"
+    tags: ["direction"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "अग्रे", base: "अग्र", reading: "agra" }
+    examples:
+      - target: "अग्रे वृक्षः"
+        reading: "agre vṛkṣaḥ"
+        ipa: "əɡreː ʋr̩kʂəh"
+        bases:
+          - { word: "अग्रे", base: "अग्र", reading: "agra" }
+          - { word: "वृक्षः", base: "वृक्ष", reading: "vṛkṣa" }
+      - target: "गृहम् अग्रे"
+        reading: "gṛham agre"
+        ipa: "ɡr̩ɦəm əɡreː"
+        bases:
+          - { word: "गृहम्", base: "गृह", reading: "gṛha" }
+          - { word: "अग्रे", base: "अग्र", reading: "agra" }
