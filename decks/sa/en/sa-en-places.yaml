@@ -1,0 +1,410 @@
+schema: 1
+id: "sa-en-places"
+kind: "layer"
+core: "sa-places"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Places"
+description: "Places: villages, cities, nature and the buildings of a town."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-1759":
+    native: "Village."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is ग्राम (grāma); the card shows the isolated nominative singular ग्रामः (grāmaḥ)."
+      "n3": "Written apart: sandhi not applied; in running text a final m or ḥ joins the next word."
+    bases:
+      "ग्रामः": "village"
+    examples:
+      "ग्रामः विशालः":
+        native: "The village is large."
+        bases:
+          "ग्रामः": "village"
+          "विशालः": "large"
+      "नद्याम् ग्रामः अस्ति":
+        native: "There is a village on the river."
+        bases:
+          "नद्याम्": "river (locative)"
+          "ग्रामः": "village"
+          "अस्ति": "is"
+  "sa-1760":
+    native: "City."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is नगर (nagara); the card shows the isolated nominative singular नगरम् (nagaram)."
+      "n3": "Written apart: sandhi not applied; in running text a final m or ḥ joins the next word."
+    bases:
+      "नगरम्": "city"
+    examples:
+      "नगरं विशालम्":
+        native: "The city is large."
+        bases:
+          "नगरं": "city"
+          "विशालम्": "large"
+      "नद्याम् नगरम् अस्ति":
+        native: "There is a city on the river."
+        bases:
+          "नद्याम्": "river (locative)"
+          "नगरम्": "city"
+          "अस्ति": "is"
+  "sa-1761":
+    native: "Forest."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is वन (vana); the card shows the isolated nominative singular वनम् (vanam)."
+      "n3": "Written apart: sandhi not applied; in running text a final m or ḥ joins the next word."
+    bases:
+      "वनम्": "forest"
+    examples:
+      "वनं सुन्दरम्":
+        native: "The forest is beautiful."
+        bases:
+          "वनं": "forest"
+          "सुन्दरम्": "beautiful"
+      "ग्रामे वनम् अस्ति":
+        native: "There is a forest by the village."
+        bases:
+          "ग्रामे": "village (locative)"
+          "वनम्": "forest"
+          "अस्ति": "is"
+  "sa-1762":
+    native: "River."
+    notes:
+      "n1": "A feminine ī-stem noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table."
+      "n2": "The dictionary stem is नदी (nadī); the card shows the isolated nominative singular नदी (nadī)."
+      "n3": "Written apart: sandhi not applied; in running text a final m or ḥ joins the next word."
+    bases:
+      "नदी": "river"
+    examples:
+      "नदी दीर्घा":
+        native: "The river is long."
+        bases:
+          "नदी": "river"
+          "दीर्घा": "long"
+      "वने नदी अस्ति":
+        native: "There is a river in the forest."
+        bases:
+          "वने": "forest (locative)"
+          "नदी": "river"
+          "अस्ति": "is"
+  "sa-1763":
+    native: "Mountain."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is पर्वत (parvata); the card shows the isolated nominative singular पर्वतः (parvataḥ)."
+      "n3": "Written apart: sandhi not applied; in running text a final m or ḥ joins the next word."
+    bases:
+      "पर्वतः": "mountain"
+    examples:
+      "पर्वतः उच्चः":
+        native: "The mountain is high."
+        bases:
+          "पर्वतः": "mountain"
+          "उच्चः": "high"
+      "मरौ पर्वतः अस्ति":
+        native: "There is a mountain in the desert."
+        bases:
+          "मरौ": "desert (locative)"
+          "पर्वतः": "mountain"
+          "अस्ति": "is"
+  "sa-1764":
+    native: "Sea."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is सागर (sāgara); the card shows the isolated nominative singular सागरः (sāgaraḥ)."
+      "n3": "Written apart: sandhi not applied; in running text a final m or ḥ joins the next word."
+    bases:
+      "सागरः": "sea"
+    examples:
+      "सागरः गभीरः":
+        native: "The sea is deep."
+        bases:
+          "सागरः": "sea"
+          "गभीरः": "deep"
+      "सागरे मत्स्यः अस्ति":
+        native: "There is a fish in the sea."
+        bases:
+          "सागरे": "sea (locative)"
+          "मत्स्यः": "fish"
+          "अस्ति": "is"
+  "sa-1765":
+    native: "Ocean."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is समुद्र (samudra); the card shows the isolated nominative singular समुद्रः (samudraḥ)."
+      "n3": "Written apart: sandhi not applied; in running text a final m or ḥ joins the next word."
+    bases:
+      "समुद्रः": "ocean"
+    examples:
+      "समुद्रः विशालः":
+        native: "The ocean is vast."
+        bases:
+          "समुद्रः": "ocean"
+          "विशालः": "large"
+      "समुद्रे द्वीपः अस्ति":
+        native: "There is an island in the ocean."
+        bases:
+          "समुद्रे": "ocean (locative)"
+          "द्वीपः": "island"
+          "अस्ति": "is"
+  "sa-1766":
+    native: "Pond."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is तडाग (taḍāga); the card shows the isolated nominative singular तडागम् (taḍāgam)."
+      "n3": "Written apart: sandhi not applied; in running text a final m or ḥ joins the next word."
+    bases:
+      "तडागम्": "pond"
+    examples:
+      "तडागं शीतलम्":
+        native: "The pond is cool."
+        bases:
+          "तडागं": "pond"
+          "शीतलम्": "cold"
+      "उद्याने तडागम् अस्ति":
+        native: "There is a pond in the garden."
+        bases:
+          "उद्याने": "garden (locative)"
+          "तडागम्": "pond"
+          "अस्ति": "is"
+  "sa-1767":
+    native: "Park, garden."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is उद्यान (udyāna); the card shows the isolated nominative singular उद्यानम् (udyānam)."
+      "n3": "Written apart: sandhi not applied; in running text a final m or ḥ joins the next word."
+    bases:
+      "उद्यानम्": "park, garden"
+    examples:
+      "उद्यानं सुन्दरम्":
+        native: "The garden is beautiful."
+        bases:
+          "उद्यानं": "park, garden"
+          "सुन्दरम्": "beautiful"
+      "ग्रामे उद्यानम् अस्ति":
+        native: "There is a garden in the village."
+        bases:
+          "ग्रामे": "village (locative)"
+          "उद्यानम्": "park, garden"
+          "अस्ति": "is"
+  "sa-1768":
+    native: "Market."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is आपण (āpaṇa); the card shows the isolated nominative singular आपणः (āpaṇaḥ)."
+      "n3": "Written apart: sandhi not applied; in running text a final m or ḥ joins the next word."
+    bases:
+      "आपणः": "market"
+    examples:
+      "आपणः विशालः":
+        native: "The market is large."
+        bases:
+          "आपणः": "market"
+          "विशालः": "large"
+      "नगरे आपणः अस्ति":
+        native: "There is a market in the city."
+        bases:
+          "नगरे": "city (locative)"
+          "आपणः": "market"
+          "अस्ति": "is"
+  "sa-1769":
+    native: "Temple."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is मन्दिर (mandira); the card shows the isolated nominative singular मन्दिरम् (mandiram)."
+      "n3": "Written apart: sandhi not applied; in running text a final m or ḥ joins the next word."
+    bases:
+      "मन्दिरम्": "temple"
+    examples:
+      "मन्दिरं सुन्दरम्":
+        native: "The temple is beautiful."
+        bases:
+          "मन्दिरं": "temple"
+          "सुन्दरम्": "beautiful"
+      "नगरे मन्दिरम् अस्ति":
+        native: "There is a temple in the city."
+        bases:
+          "नगरे": "city (locative)"
+          "मन्दिरम्": "temple"
+          "अस्ति": "is"
+  "sa-1770":
+    native: "School."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is विद्यालय (vidyālaya); the card shows the isolated nominative singular विद्यालयः (vidyālayaḥ)."
+      "n3": "Written apart: sandhi not applied; in running text a final m or ḥ joins the next word."
+    bases:
+      "विद्यालयः": "school"
+    examples:
+      "विद्यालयः नवः":
+        native: "The school is new."
+        bases:
+          "विद्यालयः": "school"
+          "नवः": "new"
+      "नगरे विद्यालयः अस्ति":
+        native: "There is a school in the city."
+        bases:
+          "नगरे": "city (locative)"
+          "विद्यालयः": "school"
+          "अस्ति": "is"
+  "sa-1771":
+    native: "Capital."
+    notes:
+      "n1": "A feminine ī-stem noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table."
+      "n2": "The dictionary stem is राजधानी (rājadhānī); the card shows the isolated nominative singular राजधानी (rājadhānī)."
+      "n3": "Written apart: sandhi not applied; in running text a final m or ḥ joins the next word."
+    bases:
+      "राजधानी": "capital"
+    examples:
+      "राजधानी विशाला":
+        native: "The capital is vast."
+        bases:
+          "राजधानी": "capital"
+          "विशाला": "large"
+      "नद्याम् राजधानी अस्ति":
+        native: "There is a capital on the river."
+        bases:
+          "नद्याम्": "river (locative)"
+          "राजधानी": "capital"
+          "अस्ति": "is"
+  "sa-1772":
+    native: "Cave."
+    notes:
+      "n1": "A feminine ā-stem noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table."
+      "n2": "The dictionary stem is गुहा (guhā); the card shows the isolated nominative singular गुहा (guhā)."
+      "n3": "Written apart: sandhi not applied; in running text a final m or ḥ joins the next word."
+    bases:
+      "गुहा": "cave"
+    examples:
+      "गुहा गभीरा":
+        native: "The cave is deep."
+        bases:
+          "गुहा": "cave"
+          "गभीरा": "deep"
+      "पर्वते गुहा अस्ति":
+        native: "There is a cave in the mountain."
+        bases:
+          "पर्वते": "mountain (locative)"
+          "गुहा": "cave"
+          "अस्ति": "is"
+  "sa-1773":
+    native: "Desert."
+    notes:
+      "n1": "A u-stem noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table."
+      "n2": "The dictionary stem is मरु (maru); the card shows the isolated nominative singular मरुः (maruḥ)."
+      "n3": "Written apart: sandhi not applied; in running text a final m or ḥ joins the next word."
+    bases:
+      "मरुः": "desert"
+    examples:
+      "मरुः विशालः":
+        native: "The desert is vast."
+        bases:
+          "मरुः": "desert"
+          "विशालः": "large"
+      "मरौ कूपः अस्ति":
+        native: "There is a well in the desert."
+        bases:
+          "मरौ": "desert (locative)"
+          "कूपः": "well"
+          "अस्ति": "is"
+  "sa-1774":
+    native: "Island."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is द्वीप (dvīpa); the card shows the isolated nominative singular द्वीपः (dvīpaḥ)."
+      "n3": "Written apart: sandhi not applied; in running text a final m or ḥ joins the next word."
+    bases:
+      "द्वीपः": "island"
+    examples:
+      "द्वीपः सुन्दरः":
+        native: "The island is beautiful."
+        bases:
+          "द्वीपः": "island"
+          "सुन्दरः": "beautiful"
+      "सागरे द्वीपः अस्ति":
+        native: "There is an island in the sea."
+        bases:
+          "सागरे": "sea (locative)"
+          "द्वीपः": "island"
+          "अस्ति": "is"
+  "sa-1775":
+    native: "Holy place, ford."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is तीर्थ (tīrtha); the card shows the isolated nominative singular तीर्थम् (tīrtham)."
+      "n3": "Written apart: sandhi not applied; in running text a final m or ḥ joins the next word."
+    bases:
+      "तीर्थम्": "holy place, ford"
+    examples:
+      "तीर्थं पवित्रम्":
+        native: "The holy place is sacred."
+        bases:
+          "तीर्थं": "holy place, ford"
+          "पवित्रम्": "sacred"
+      "नद्याम् तीर्थम् अस्ति":
+        native: "There is a holy ford in the river."
+        bases:
+          "नद्याम्": "river (locative)"
+          "तीर्थम्": "holy place, ford"
+          "अस्ति": "is"
+  "sa-1776":
+    native: "Lake."
+    notes:
+      "n1": "An s-stem noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table."
+      "n2": "The dictionary stem is सरस् (saras); the card shows the isolated nominative singular सरः (saraḥ)."
+      "n3": "Written apart: sandhi not applied; in running text a final m or ḥ joins the next word."
+    bases:
+      "सरः": "lake"
+    examples:
+      "सरः शीतलम्":
+        native: "The lake is cool."
+        bases:
+          "सरः": "lake"
+          "शीतलम्": "cold"
+      "ग्रामे सरः अस्ति":
+        native: "There is a lake in the village."
+        bases:
+          "ग्रामे": "village (locative)"
+          "सरः": "lake"
+          "अस्ति": "is"
+  "sa-1777":
+    native: "Field."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is क्षेत्र (kṣetra); the card shows the isolated nominative singular क्षेत्रम् (kṣetram)."
+      "n3": "Written apart: sandhi not applied; in running text a final m or ḥ joins the next word."
+    bases:
+      "क्षेत्रम्": "field"
+    examples:
+      "क्षेत्रं विशालम्":
+        native: "The field is vast."
+        bases:
+          "क्षेत्रं": "field"
+          "विशालम्": "large"
+      "ग्रामे क्षेत्रम् अस्ति":
+        native: "There is a field in the village."
+        bases:
+          "ग्रामे": "village (locative)"
+          "क्षेत्रम्": "field"
+          "अस्ति": "is"
+  "sa-1778":
+    native: "Hermitage."
+    notes:
+      "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
+      "n2": "The dictionary stem is आश्रम (āśrama); the card shows the isolated nominative singular आश्रमः (āśramaḥ)."
+      "n3": "Written apart: sandhi not applied; in running text a final m or ḥ joins the next word."
+    bases:
+      "आश्रमः": "hermitage"
+    examples:
+      "आश्रमः शान्तः":
+        native: "The hermitage is calm."
+        bases:
+          "आश्रमः": "hermitage"
+          "शान्तः": "calm"
+      "वने आश्रमः अस्ति":
+        native: "There is a hermitage in the forest."
+        bases:
+          "वने": "forest (locative)"
+          "आश्रमः": "hermitage"
+          "अस्ति": "is"
