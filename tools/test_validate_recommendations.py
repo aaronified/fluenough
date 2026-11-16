@@ -71,6 +71,29 @@ class Recommendations(KindsCase):
     def test_a_book_names_its_script(self) -> None:
         self.check(lambda d: rec(d).pop("script"), "a book names the script it is printed in")
 
+    def test_a_book_script_must_be_one_of_the_languages(self) -> None:
+        entry = {"code": "zz", "scripts": ["devanagari"]}
+        with mock.patch.object(validate_decks, "_language_entry", return_value=entry):
+            self.check(lambda d: rec(d).__setitem__("script", "latin"),
+                       "script 'latin' is not one of zz's (devanagari)")
+
+    def test_a_book_script_the_language_allows_passes(self) -> None:
+        entry = {"code": "zz", "scripts": ["devanagari"], "book_scripts": ["latin"]}
+        with mock.patch.object(validate_decks, "_language_entry", return_value=entry):
+            self.edit(RECS, lambda d: rec(d).__setitem__("script", "latin"))
+            self.assertEqual(self.errors(RECS), [])
+            self.edit(RECS, lambda d: rec(d).__setitem__("script", "devanagari"))
+            self.assertEqual(self.errors(RECS), [])
+            self.check(lambda d: rec(d).__setitem__("script", "bengali"),
+                       "is not one of zz's (devanagari, latin)")
+
+    def test_the_sanskrit_courses_allow_latin_books_and_hindustani_does_not(self) -> None:
+        for code in ("sa", "vsn"):
+            self.assertEqual(validate_decks._language_book_scripts(code),
+                             ["devanagari", "latin"])
+            self.assertEqual(validate_decks._language_scripts(code), ["devanagari"])
+        self.assertNotIn("latin", validate_decks._language_book_scripts("hi") or [])
+
     def test_only_a_book_has_a_script(self) -> None:
         self.check(lambda d: rec(d, FILM).__setitem__("script", "latin"),
                    "only a book has a script")
