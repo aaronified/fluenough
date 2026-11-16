@@ -51,6 +51,7 @@ alphabet:
   - "sa-script-digits"
   - "sa-script-conjuncts"
   - "sa-script-reading"
+  - "sa-spelling"
 units:
   - decks: ["sa-phrasebook", "sa-first-words", "*"]
     words: 10
@@ -80,7 +81,7 @@ units:
     reading_passages:
       - { id: "numbers-1-20-text", text: { "en": "A short written text in Classical Sanskrit on the theme numbers 1 to 20" } }
   - ["sa-script-vowels", "sa-script-consonants", "sa-script-vowel-signs", "sa-script-digits"]
-  - ["sa-script-conjuncts", "sa-script-reading"]
+  - ["sa-script-conjuncts", "sa-script-reading", "sa-spelling"]
   - planned: { id: "sa-about-me", theme: "about-me", words: 5 }
     listening_passages:
       - { id: "about-me-heard", text: { "en": "A short passage in Classical Sanskrit on the theme naming and introducing oneself, read aloud" } }

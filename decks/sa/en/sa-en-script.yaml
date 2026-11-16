@@ -1,0 +1,53 @@
+schema: 1
+id: "sa-en-script"
+kind: "layer"
+core: "sa-script"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "How Devanagari works for Classical Sanskrit"
+intro: "Classical Sanskrit is written here in Devanagari, the script of Hindi and Marathi. It is built from a few ideas that come back in letter after letter. They look strange at first because English has none of them. Once you have seen them, the letters start to make sense."
+features:
+  "headline":
+    name: "The headline"
+    text: "Most letters hang from a line along the top, and in a word the lines join into one. Read along the top, not along a baseline as in English."
+  "rows":
+    name: "Rows of five"
+    text: "The stops come in five rows of five, and each row is made in one place in the mouth, from the back to the lips: क (ka) at the back, च (ca) against the palate, ट (ṭa) with the tongue curled back, त (ta) on the teeth, प (pa) at the lips. The columns work the same in every row: plain क (ka), with a breath ख (kha), voiced ग (ga), voiced with a breath घ (gha), and nasal ङ (ṅa). The order of the alphabet follows the order of the mouth."
+  "inherent-vowel":
+    name: "The vowel you don't see"
+    text: "Every consonant carries a short a unless a sign changes it: क (ka) alone is said ka. Unlike Hindi, Classical Sanskrit says this a at the end of a word too, so राम (rāma) is said with a last a, and nothing is dropped."
+  "vowel-signs":
+    name: "Vowels as signs on a letter"
+    text: "After a consonant a vowel is a sign on it, not a letter of its own: का (kā), कु (ku), के (ke). The sign for short i is written before the consonant but said after it: कि (ki) is the sign first, then क (ka), and said ki. Signs sit above, below and after the letter. Sanskrit has only long e and o, so के (ke) is always long."
+  "vocalic":
+    name: "Vowels that look like consonants"
+    text: "Sanskrit has vowels made with r and l. ऋ (ṛ) is a syllabic r, as in ऋषि (ṛṣi), and with a consonant it is a sign: कृ (kṛ) is क (ka) with that sign. English has no such letter, though some accents of English let r carry a syllable, as in the end of 'butter'. Read it as a vowel, never as ri. ऌ (ḷ) is a syllabic l found in a single root, and ॠ (ṝ) is a long r that is rare."
+  "sibilants":
+    name: "Three sibilants"
+    text: "Sanskrit keeps three s-sounds apart: श (śa) is said against the palate, ष (ṣa) with the tongue curled back, and स (sa) on the teeth. Modern Hindi tends to say ष (ṣa) like श (śa), but Sanskrit keeps them apart, and so does the reading: ś, ṣ and s."
+  "conjuncts":
+    name: "Joined consonants"
+    text: "Two consonants with no vowel between them join into one shape, as in स्त (sta) and न्त (nta). Usually the first is a half letter, without its standing line; letters with no standing line stack, one above the other, as in द्ध (ddha). A word such as संस्कृतम् (saṃskṛtam) has several."
+  "own-shapes":
+    name: "Joins with shapes of their own"
+    text: "A few joins look nothing like their parts: क्ष (kṣa) is क (ka) and ष (ṣa), त्र (tra) is त (ta) and र (ra), श्र (śra) is श (śa) and र (ra), and ज्ञ (jña) is ज (ja) and ञ (ña). Sanskrit says ज्ञ (jña) as j and ñ together, as in ज्ञानम् (jñānam), not as the gy of modern Hindi."
+  "virama":
+    name: "The mark that takes the vowel away"
+    text: "The small slanting stroke below a letter, called विराम (virāma), means no vowel after it: क् (k) is only k. It is how a word can end in a consonant, as संस्कृतम् (saṃskṛtam) and अहम् (aham) do."
+  "anusvara":
+    name: "The dot above"
+    text: "A dot above a letter, the अनुस्वार (anusvāra), is a nasal sound whose exact value depends on what follows. Before a stop it is the nasal of that stop's row, so संगमः (saṃgamaḥ) is said sangamaḥ, and the reading always writes ṃ. Print often writes that nasal as its own letter instead, as in सङ्गमः (saṅgamaḥ): both are right."
+  "visarga":
+    name: "The two dots after a letter"
+    text: "Two dots after a vowel, the विसर्ग (visarga), are a breathed h that follows the vowel: रामः (rāmaḥ) ends in a breath, like a whispered h. It is common as the last sound of a word, and the reading writes ḥ."
+  "avagraha":
+    name: "The mark for a dropped a"
+    text: "The sign ऽ (') marks a short a that has dropped out where two words join, as in एकोऽयम् (eko'yam), which joins एकः (ekaḥ) and अयम् (ayam). It has no sound of its own, and the reading writes it as an apostrophe."
+  "danda":
+    name: "The vertical stroke"
+    text: "Sanskrit ends a sentence or a line of verse with a single vertical stroke, the daṇḍa, and the end of a verse with a double one. It does the work of a full stop."
+  "no-nukta":
+    name: "No dotted letters"
+    text: "Hindi puts a dot under some letters, the nukta, to write sounds of borrowed words. Sanskrit has no such letters, so every consonant you meet in this course is a plain one."
+  "digits":
+    name: "Devanagari digits"
+    text: "Devanagari has its own digits. ४ (4) is only 4, though it looks like a rounded 8, and १ (1) and ९ (9) look alike."
