@@ -16,22 +16,27 @@ Skipped, by design:
 | en | English | The native language |
 | ins, ase | Indian and American Sign Language | No script, and Deck-Format has no signed-deck format: reported to the orchestrator, no format invented |
 
-## Status (2026-11-16)
+## Status (2026-11-16, end of session)
 
-| Group (branch) | Languages | PR | State |
-|---|---|---|---|
-| European Latin and Cyrillic | af, nl, id, uk | #1532 | merged |
-| Iranian and Santali | fa, ps, sat | #1533 | merged. Santali: 36 attested words, 1 example; its 15 "phrasebook" cards are first-words cards marked as a stopgap (clear once `sat` leaves `PHRASEBOOK_PENDING`) |
-| Devanagari north Indo-Aryan | ne, kok, bho, awa, mag, hne, raj, doi, bgc, kfy, gbm | #1537 | source check and CI fixes in progress; most cards of all but ne `doubtful` |
-| Other South Asian | lus, kha, gom, brx, sd, ks, tcy | #1538 | source check done; CI waits on #1545 (no phrasebooks) |
-| Ancient and reconstructed | arc, gmy, sux, egy, ine | #1539 | source check in progress; egy and gmy under 25 words |
-| Manipuri | mni | none | not built: needs a Bengali-letter spelling source (first script is Bengali); Meitei Mayek font (`NotoSansMeeteiMayek`, OFL) to be added with it |
+Every language in scope has a merged first deck on `decks-live`, except the sign languages.
+
+| Languages | PR | Notes |
+|---|---|---|
+| af, nl, id, uk | #1532 | phrasebook 20 + first words 29 to 30; reviewed against Wiktionary |
+| fa, ps, sat | #1533 | fa, ps: phrasebook 20 + 30 words; 6 Pashto phrasebook cards still `doubtful`. sat: 36 attested words, 1 example; its 15 "phrasebook" cards are first-words cards marked as a stopgap |
+| ne, kok, bho, awa, gbm | #1537 | phrasebook 20 + 39 words; Wiktionary and Swadesh-checked headwords; examples and most phrasebook phrases unsourced and `doubtful` |
+| raj, hne, bgc, mag, kfy, doi | #1548 | 39 words each, no phrasebook; rebuilt from Grierson's Linguistic Survey; 9 to 25 of 39 still `doubtful` per language |
+| lus, kha, gom, brx, sd, ks, tcy | #1538 | first words only. Bodo has 13 cards (12 `doubtful`) |
+| arc, gmy, sux, egy, ine | #1539 | 30, 33, 34, 34, 30 words; arc 5 and ine 1 `doubtful` |
+| mni | #1563 | 30 words; Bengali targets derived from the attested Meitei Mayek forms (kept in `target_scripts`); all `doubtful` |
+
+Tool PRs on main: #1530 (path generator plans and SHIPPED list), #1545 (`PHRASEBOOK_PENDING`).
 
 ## Open points
 
-- Tool PRs to main: #1530 path generator and SHIPPED test list (merged); #1545 `PHRASEBOOK_PENDING` in the validator (the 15 to 25 phrasebook rule otherwise blocks first-words-only courses).
-- Brx (Bodo): 13 cards, 12 `doubtful`; brx.wikipedia, omniglot and dsal are blocked in the build sessions.
-- Fonts: all scripts used have fonts on decks-live except Meitei Mayek. The Perso-Arabic Nastaliq font lacks the Sindhi kaf (U+06AA): sd and ks need Naskh through `LANGUAGE_FONTS` and `fontScriptFor` (a 0.11.0 code PR by the parent session).
-- Signed languages ins and ase: no format in Deck-Format; the parent asks the owner.
-- Phrasebooks for every course in `PHRASEBOOK_PENDING` need native speakers or sourced phrase books.
-- Every deck here is unreviewed: a speaker check is the real gate.
+- Phrasebooks: none for lus kha gom brx sd ks tcy mni sat arc gmy sux egy ine raj hne bgc mag kfy doi (`PHRASEBOOK_PENDING` in `tools/validate_decks.py`). Remove a code when its phrasebook exists. They need a native speaker or a sourced phrase book.
+- Santali: missing no, tea, today, brother, sister, and, all phrases; examples for 35 of 36 words.
+- Bodo: need a source for Devanagari spellings (brx.wikipedia, omniglot and dsal are not reachable from the build sessions).
+- Manipuri: I, we, where, yes, no; Bengali spellings are derived, not attested.
+- Signed languages ins and ase: no signed-deck format in Deck-Format; the parent asks the owner.
+- Every deck is `unreviewed`: a speaker check is the real gate.
