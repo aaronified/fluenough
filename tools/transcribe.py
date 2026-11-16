@@ -6,6 +6,7 @@
     python3 tools/transcribe.py es "la casa"          # IPA
     python3 tools/transcribe.py fr "les enfants"      # IPA
     python3 tools/transcribe.py ml "ഞാൻ വരുന്നു"       # reading and IPA
+    python3 tools/transcribe.py sa "संस्कृतम्"          # IAST reading and IPA
 
 ISO 15919 writes letters, not sounds: कितना is `kitanā` letter for letter.
 The decks write the word as it is said, in ISO 15919's letters: `kitnā`.
@@ -33,7 +34,7 @@ from dataclasses import dataclass, field
 
 # The Indic blocks share one layout: a letter's offset from its block's
 # start is the same in each script (ISCII order).
-BLOCKS = {"hi": 0x0900, "mr": 0x0900, "bn": 0x0980, "as": 0x0980,
+BLOCKS = {"hi": 0x0900, "mr": 0x0900, "sa": 0x0900, "vsn": 0x0900, "bn": 0x0980, "as": 0x0980,
           "gu": 0x0A80, "ta": 0x0B80, "te": 0x0C00, "kn": 0x0C80,
           "ml": 0x0D00}
 
@@ -765,6 +766,8 @@ def transcribe(text: str, lang: str, hint: str | None = None
         return malayalam(text, hint)
     if lang == "ta":
         return tamil(text)
+    if lang in ("sa", "vsn"):
+        return sanskrit(text, lang)
     if (lang, text) in WORDS:
         reading, ipa = WORDS[(lang, text)]
         return Transcription(reading, ipa, True)
@@ -2459,6 +2462,213 @@ def tamil(text: str) -> Transcription:
         unicodedata.normalize("NFC", " ".join("".join(ipa).split())), True)
 
 
+# --- Classical Sanskrit ------------------------------------------------------
+
+# Classical (sa) and Vedic (vsn) Sanskrit are read from their letters alone, in
+# IAST, as the Vedic course does: ṃ ḥ ṛ ṝ ḷ ś ṣ and long vowels with macrons. This departs from ISO 15919
+# in four letters (ṃ for ṁ, ṛ ṝ ḷ for r̥ r̥̄ l̥, e o for ē ō); see
+# wiki/Readings-ISO-15919.md. Every inherent a is said, word-final included
+# (no Hindi schwa deletion), so the engine takes no hint: the letters are the
+# whole reading. The IPA is broad and follows the house Indic choices: short a
+# [ə], c j as [tʃ dʒ], ś [ʃ] and ṣ [ʂ] and s kept apart, aspirated stops,
+# retroflexes, dentals t̪ d̪, v as ʋ, no tie bars. Vedic accent marks are never
+# in the reading or the IPA; each is reported in `Transcription.notes`.
+SA_VOWELS = {
+    0x05: "a", 0x06: "ā", 0x07: "i", 0x08: "ī", 0x09: "u", 0x0A: "ū",
+    0x0B: "ṛ", 0x60: "ṝ", 0x0C: "ḷ", 0x61: "ḹ", 0x0F: "e", 0x10: "ai",
+    0x13: "o", 0x14: "au"}
+SA_SIGNS = {
+    0x3E: "ā", 0x3F: "i", 0x40: "ī", 0x41: "u", 0x42: "ū", 0x43: "ṛ",
+    0x44: "ṝ", 0x62: "ḷ", 0x63: "ḹ", 0x47: "e", 0x48: "ai", 0x4B: "o",
+    0x4C: "au"}
+# A vowel's IAST letter to its broad IPA. Short a is the central [ɐ], long
+# ā [aː]; e and o are always long; ai and au are diphthongs.
+SA_VOWEL_IPA = {
+    "a": "ə", "ā": "aː", "i": "i", "ī": "iː", "u": "u", "ū": "uː",
+    "ṛ": "r̩", "ṝ": "r̩ː", "ḷ": "l̩", "ḹ": "l̩ː",
+    "e": "eː", "ai": "əi", "o": "oː", "au": "əu"}
+# Vedic ai and au are long diphthongs, āi and āu (Macdonell 1916, pp. 4-5; to
+# be pinned by the Vedic sourcing task).
+SA_VEDIC_DIPHTHONGS = {"ai": "aːi", "au": "aːu"}
+SA_CONSONANTS = {
+    0x15: "k", 0x16: "kh", 0x17: "g", 0x18: "gh", 0x19: "ṅ",
+    0x1A: "c", 0x1B: "ch", 0x1C: "j", 0x1D: "jh", 0x1E: "ñ",
+    0x1F: "ṭ", 0x20: "ṭh", 0x21: "ḍ", 0x22: "ḍh", 0x23: "ṇ",
+    0x24: "t", 0x25: "th", 0x26: "d", 0x27: "dh", 0x28: "n",
+    0x2A: "p", 0x2B: "ph", 0x2C: "b", 0x2D: "bh", 0x2E: "m",
+    0x2F: "y", 0x30: "r", 0x32: "l", 0x35: "v",
+    0x36: "ś", 0x37: "ṣ", 0x38: "s", 0x39: "h"}
+SA_CONSONANT_IPA = {
+    "k": "k", "kh": "kʰ", "g": "ɡ", "gh": "ɡʱ", "ṅ": "ŋ",
+    "c": "tʃ", "ch": "tʃʰ", "j": "dʒ", "jh": "dʒʱ", "ñ": "ɲ",
+    "ṭ": "ʈ", "ṭh": "ʈʰ", "ḍ": "ɖ", "ḍh": "ɖʱ", "ṇ": "ɳ",
+    "t": "t̪", "th": "t̪ʰ", "d": "d̪", "dh": "d̪ʱ", "n": "n",
+    "p": "p", "ph": "pʰ", "b": "b", "bh": "bʱ", "m": "m",
+    "y": "j", "r": "r", "l": "l", "v": "ʋ",
+    "ś": "ʃ", "ṣ": "ʂ", "s": "s", "h": "ɦ"}
+# The nasal an anusvara is said as before a stop, by the stop's row.
+SA_ROW_NASAL = {
+    **dict.fromkeys(("k", "kh", "g", "gh", "ṅ"), "ŋ"),
+    **dict.fromkeys(("c", "ch", "j", "jh", "ñ"), "ɲ"),
+    **dict.fromkeys(("ṭ", "ṭh", "ḍ", "ḍh", "ṇ"), "ɳ"),
+    **dict.fromkeys(("t", "th", "d", "dh", "n"), "n"),
+    **dict.fromkeys(("p", "ph", "b", "bh", "m"), "m")}
+# Before these the anusvara nasalises the vowel before it.
+SA_NASALISING = {"y", "r", "l", "v", "ś", "ṣ", "s", "h"}
+SA_ORIGIN = 0x0900
+# The Vedic accent marks, all combining marks: removed before reading and
+# reported in the notes. U+0951 is the svarita of the Rigveda and Atharvaveda
+# editions (Unicode names it udātta), U+0952 the anudātta. U+0953 and U+0954
+# are not Vedic accents and cannot be read.
+SA_ACCENT_MARKS = (
+    {0x0951, 0x0952} | set(range(0x1CD0, 0x1CD3)) | set(range(0x1CD4, 0x1CE9))
+    | {0x1CED, 0x1CF4, 0x1CF8, 0x1CF9} | set(range(0xA8E0, 0xA8F2)))
+SA_ACCENT_NAMES = {0x0951: "svarita", 0x0952: "anudātta"}
+SA_JIHVAMULIYA, SA_UPADHMANIYA = 0x1CF5, 0x1CF6   # ᳵ ᳶ, Vedic letters
+SA_LA = 0x33                                       # ळ, Vedic
+
+
+def _sa_nasalise(ipa: list[str], k: int | None) -> None:
+    """Put a tilde on the vowel at [ipa][k] (before its length mark)."""
+    if k is None:
+        return
+    s = ipa[k]
+    ipa[k] = s[:-1] + "̃ː" if s.endswith("ː") else s + "̃"
+
+
+def sanskrit(text: str, variety: str = "sa") -> Transcription:
+    """[text]'s IAST reading and broad IPA, by Devanagari's letters.
+    [variety] is "sa" (Classical) or "vsn" (Vedic): Vedic adds ळ ळ्ह and the
+    letters ᳵ ᳶ, says ऐ औ as long diphthongs, and cannot read ॐ.
+
+    Raises CannotRead on a Devanagari letter Sanskrit does not use (the
+    nukta letters) and on any other letter."""
+    vedic = variety == "vsn"
+    chars = [c for c in unicodedata.normalize("NFC", text) if c not in ZW]
+    # An accent mark written between a consonant and its vowel sign is read
+    # as if written after the sign, where editions print it.
+    for j in range(1, len(chars) - 1):
+        if ord(chars[j]) in SA_ACCENT_MARKS and \
+                ord(chars[j + 1]) - SA_ORIGIN in SA_SIGNS and \
+                ord(chars[j - 1]) - SA_ORIGIN in SA_CONSONANTS:
+            chars[j], chars[j + 1] = chars[j + 1], chars[j]
+    iso: list[str] = []
+    ipa: list[str] = []
+    notes: list[str] = []
+    syllables = 0
+    vowel: int | None = None     # index in [ipa] of the vowel just said
+
+    def off(j: int) -> int | None:
+        if j >= len(chars):
+            return None
+        o = ord(chars[j]) - SA_ORIGIN
+        return o if 0 <= o < 0x80 else None
+
+    def put_vowel(name: str) -> None:
+        nonlocal vowel, syllables
+        iso.append(name)
+        ipa.append(SA_VEDIC_DIPHTHONGS.get(name) if vedic and
+                   name in SA_VEDIC_DIPHTHONGS else SA_VOWEL_IPA[name])
+        vowel = len(ipa) - 1
+        syllables += 1
+
+    i = 0
+    while i < len(chars):
+        c = chars[i]
+        o = off(i)
+        if ord(c) in SA_ACCENT_MARKS:
+            name = SA_ACCENT_NAMES.get(ord(c), f"accent U+{ord(c):04X}")
+            notes.append(f"{name} on syllable {syllables}")
+            i += 1
+        elif c.isspace():
+            iso.append(" ")
+            ipa.append(" ")
+            vowel = None
+            i += 1
+        elif o in SA_CONSONANTS or (vedic and o == SA_LA):
+            if o == SA_LA:
+                letter, sound = "ḷ", "ɭ"
+                # ळ्ह is one sound, ḷh [ɭʱ].
+                if off(i + 1) == VIRAMA and off(i + 2) == 0x39:
+                    letter, sound = "ḷh", "ɭʱ"
+                    i += 2
+            else:
+                letter = SA_CONSONANTS[o]
+                sound = SA_CONSONANT_IPA[letter]
+            iso.append(letter)
+            ipa.append(sound)
+            vowel = None
+            i += 1
+            if off(i) == VIRAMA:
+                i += 1
+            elif off(i) in SA_SIGNS:
+                put_vowel(SA_SIGNS[off(i)])
+                i += 1
+            else:
+                put_vowel("a")
+        elif o in SA_VOWELS:
+            put_vowel(SA_VOWELS[o])
+            i += 1
+        elif o == ANUSVARA:
+            # Always written ṃ; said as the nasal of the next stop, as a
+            # nasal vowel before y r l v, a sibilant or h, and m at a word's
+            # end or before anything else.
+            iso.append("ṃ")
+            nxt = SA_CONSONANTS.get(off(i + 1))
+            if nxt in SA_ROW_NASAL:
+                ipa.append(SA_ROW_NASAL[nxt])
+                vowel = None
+            elif nxt in SA_NASALISING:
+                _sa_nasalise(ipa, vowel)
+            else:
+                ipa.append("m")
+                vowel = None
+            i += 1
+        elif o == CANDRABINDU:
+            iso.append("m\u0310")
+            _sa_nasalise(ipa, vowel)
+            i += 1
+        elif o == VISARGA:
+            iso.append("ḥ")
+            ipa.append("h")
+            vowel = None
+            i += 1
+        elif vedic and ord(c) in (SA_JIHVAMULIYA, SA_UPADHMANIYA):
+            iso.append("ḥ")
+            ipa.append("x" if ord(c) == SA_JIHVAMULIYA else "ɸ")
+            vowel = None
+            i += 1
+        elif o == AVAGRAHA:
+            iso.append("'")
+            vowel = None
+            i += 1
+        elif o == 0x50 and not vedic:    # ॐ; its Vedic value is not pinned
+            iso.append("oṃ")
+            ipa.append("oːm")
+            vowel = None
+            i += 1
+        elif o is not None and o in DIGITS:
+            iso.append(str(o - 0x66))
+            i += 1
+        elif c in DANDA:
+            iso.append(DANDA[c])
+            i += 1
+        elif c in QUOTES:
+            iso.append(QUOTES[c])
+            i += 1
+        elif c.isalpha() or unicodedata.category(c).startswith("M") or \
+                (o is not None and o not in SA_CONSONANTS) or \
+                0x1CD0 <= ord(c) <= 0x1CFF or 0xA8E0 <= ord(c) <= 0xA8FF:
+            raise CannotRead(f"cannot read {c!r} as Sanskrit")
+        else:
+            iso.append(c)
+            i += 1
+    return Transcription(
+        _tidy("".join(iso)),
+        unicodedata.normalize("NFC", " ".join("".join(ipa).split())), True,
+        notes)
+
+
 def main(argv: list[str]) -> int:
     if len(argv) < 3:
         print(__doc__)
@@ -2468,6 +2678,8 @@ def main(argv: list[str]) -> int:
     t = transcribe(text, lang, hint)
     print(f"reading: {t.reading}")
     print(f"ipa:     /{t.ipa}/")
+    for note in t.notes:
+        print(f"note:    {note}")
     if hint and not t.fitted:
         print("the hint did not fit the letters; the rules were used")
     return 0

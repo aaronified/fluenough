@@ -74,6 +74,7 @@ last column is the file that shows it: a card id, or the language's
 | Other Bengali letters said alike | কারণ *kāraṇa*; য y, ঢ় ṛh, য় ẏ | *kāron*; j for য, ṛ for ড় and ঢ়, y for য় | Bengali says them alike | bn-0365, bn-0739; `bn-romanisation.yaml` |
 | ष in Hindi and Gujarati | भाषा *bhāṣā*, શિક્ષક *śikṣaka* | *bhāśā*, *śikśak* | Said as श | hi-0197, gu-0322 |
 | ऋ | *r̥*: कृपया *kr̥payā* | Hindi *kri*, Marathi, Gujarati, Kannada and Telugu *ru*, Bengali and Assamese *ri* | How it is said, in letters every keyboard and font has | hi-0616, mr-0157, te-0007, as-0007 |
+| Classical and Vedic Sanskrit (`sa`, `vsn`) | *ṁ* for ं, *r̥ r̥̄ l̥* for ऋ ॠ ऌ, *ē ō* for ए ओ: संस्कृतम् *saṁskr̥tam* | IAST, as the Vedic course does: *ṃ*, *ṛ ṝ ḷ*, *e o*: *saṃskṛtam*. Every inherent a is said (*rāmaḥ*, *gacchati*), ṣ and ś stay apart, ḥ is the visarga and ' the avagraha | The texts a learner meets are in IAST, and Sanskrit has no short e or o to tell them from. The engine in `tools/transcribe.py` serves both and keeps every inherent a; Vedic accent marks are left out of the reading and reported by the tool; the validator accepts `standard: "IAST"` in a romanisation file | `sa-romanisation.yaml` (when built) |
 | Kannada ೞ; Kannada ಱ and Telugu ఱ | ಮೞೆ *maḻe*; ṟ | *maḷe*; *r* | No longer said differently from ಳ and ర | kn-0580; `kn-romanisation.yaml`, `te-romanisation.yaml` |
 | ಫ in words from English | ಕಾಫಿ *kāphi* | *kāfi* | Said f | kn-0494 |
 

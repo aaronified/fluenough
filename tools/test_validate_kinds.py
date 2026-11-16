@@ -29,6 +29,19 @@ class PureFunctions(unittest.TestCase):
         self.assertIsNone(vd.parse_years("last year"))
         self.assertIsNone(vd.parse_years(True))
 
+    def test_a_bce_date_is_negative(self) -> None:
+        self.assertEqual(vd.parse_years(-479), (-479, -479))
+        self.assertEqual(vd.parse_years("-479"), (-479, -479))
+        self.assertEqual(vd.parse_years("c. -400"), (-400, -400))
+        self.assertEqual(vd.parse_years("-475 to -221"), (-475, -221))
+        self.assertEqual(vd.parse_years("-475--221"), (-475, -221))
+        self.assertEqual(vd.parse_years("-50 to 50"), (-50, 50))
+        self.assertIsNone(vd.parse_years(0))
+        self.assertIsNone(vd.parse_years("0"))
+        self.assertIsNone(vd.parse_years(-10000))
+        self.assertIsNone(vd.parse_years("-221 to -475"))
+        self.assertIsNone(vd.parse_years("-479 BCE"))
+
     def test_the_term_table(self) -> None:
         self.assertEqual(vd.pd_term("IN"), 60)
         self.assertEqual(vd.pd_term("BD"), 60)

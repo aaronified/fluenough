@@ -14,18 +14,18 @@ Controls: theme, language (Telugu, Hindustani, Bengali: the language list, the d
 - **b. Settings.** The row is still "Your languages", its line still names the languages learned. It now opens Languages directly. `LanguagesSettingsPage` and its "Languages" row are deleted.
 - **c. Languages.** The bar has "+ Add a language" (unchanged) and a three-dot icon at the top end in the bug's place.
 - **d. The three-dot menu**, a native popup (`PopupMenuButton`), in two groups told apart by their marks, not only by a divider:
-  | Group | Item | Mark | Was |
+  | Group | Item and second line (existing strings) | Mark | Was |
   |---|---|---|---|
-  | Show (toggles) | Latin-letter readings | leading box, empty when off, ticked when on | switch |
-  | | IPA pronunciations | same | switch |
-  | | IPA replaces transliteration | same, disabled while IPA is off | switch |
-  | | Adult content (18+) | same; switching on still asks for age (`settingsAdultConfirmTitle`) | switch |
-  | | Hide what is above my level | same | switch |
+  | Show (toggles) | Latin-letter readings: `settingsRomanisationOn` / `Off` | leading box, empty when off, ticked when on | switch |
+  | | IPA pronunciations: `settingsIpaOn` / `Off` | same | switch |
+  | | IPA replaces transliteration: `settingsIpaReplacesOn` / `Off`, or `settingsIpaReplacesNeedsIpa` while IPA is off | same, disabled while IPA is off | switch |
+  | | Adult content (18+): `settingsAdultOn` / `Off`; switching on still asks for age (`settingsAdultConfirmTitle`) | same | switch |
+  | | Hide what is above my level: `settingsHideAboveOn` / `Off` | same | switch |
   | Open (buttons) | Fact languages (line: All known languages) | trailing chevron, no box; opens `FactLanguagesSheet` | row |
-  | | Sources | trailing chevron; opens Sources | row |
-  | | Your decks | trailing chevron; opens Your decks | row |
-  | (variant) | Learn {language} from | trailing chevron; only in the "The menu" variant, see below | row |
-  A divider and two small labels (Show, Open) separate the groups. A toggle has the box in both states and no chevron; a button has a chevron and no box, so a row's kind is readable without trying it. Both groups keep the app's 1.4x text; long labels wrap in the 280 dp menu.
+  | | Sources | trailing chevron, single line; opens Sources | row |
+  | | Your decks | trailing chevron, single line; opens Your decks | row |
+  | (variant) | Learn {language} from | only in the "The menu" variant, see below | row |
+  Each toggle keeps the one-line explanation it had as a second, muted line under its label, showing the line for its current state, exactly as the row did on the old page. A toggle row is therefore two or three lines at 1.4x; a button stays one line (Fact languages keeps its value line). The menu is about 300 dp wide and taller than the screen at 1.4x, so it scrolls, as a Flutter popup does when it does not fit (the page shows it clipped and scrollable). A divider and two small labels (Show, Open) separate the groups. A toggle has the box in both states and no chevron; a button has a chevron and no box.
 - **e. A card in a drill.** The flag (outlined, "Report a problem with this card") takes the bug's place in the drill header (`DrillFrame`, one place for every drill and the walkthrough).
 - **f. Report sheet** (modal bottom sheet, drag handle): title "Report a problem with this card"; a monospace box showing exactly what goes with it (card id, deck id, language pair, app version); six single-choice reasons: The translation is wrong, The reading or IPA is wrong, The audio is wrong or missing, The picture or example is wrong, Offensive or inappropriate, Something else; an optional one-line note (140 characters); Cancel and Send. No screenshot, no device log, no device details.
 - **g. Confirmation.** "Thanks for the report" in the same sheet with Done. If reports go by the mail app (today's mechanism) the honest state is "Your report is ready. Your mail app has the report. Send it from there." (the tweak shows both).
@@ -53,14 +53,14 @@ Where it could live:
 | Screen (file) | Proposal |
 |---|---|
 | Language bar on Today, Decks, Progress (`language_bar.dart`) | remove |
-| Tab header and placeholder pages (`page_parts.dart`) | remove |
+| Tab header and placeholder pages (`page_parts.dart`) | remove; the Settings tab header gets the three dots with "Report a problem" (resolved) |
 | Languages (`languages_page.dart`) | remove; the three dots take its place |
 | Drill header: recognition, reading, speaking, picture choice, rearrange, sets, grammar (`drill_frame.dart`) and walkthrough | keep as content report, flag, card id plus deck id |
 | Drill page (`drill_page.dart`, the shell around a drill) | remove (the card has the flag) |
 | Word sheet (`word_sheet.dart`, already a "Report" flag) | keep as content report, same sheet |
-| Deck page (`deck_detail_page.dart`) and its "Report a mistake" notice (`unreviewed_notice.dart`) | keep as content report, deck-level (no card id) |
-| Unit page (`unit_page.dart`) | keep as content report, deck-level |
-| Topic page (`topic_page.dart`) | keep as content report, deck-level |
+| Deck page (`deck_detail_page.dart`) and its "Report a mistake" notice (`unreviewed_notice.dart`) | keep as content report, same reasons, deck id instead of a card id (resolved) |
+| Unit page (`unit_page.dart`) | keep as content report, same reasons, unit (deck) id (resolved) |
+| Topic page (`topic_page.dart`) | keep as content report, same reasons, topic id (resolved) |
 | Culture item page (`culture_item_page.dart`) | keep as content report, item id |
 | Culture deck, timeline, recommendations, work questions (`culture_deck_page.dart`, `culture_timeline.dart`, `recommendations_page.dart`, `work_questions_page.dart`) | remove; reached through the item page, which has the flag |
 | Summary after a session (`summary_page.dart`) | remove |
@@ -69,7 +69,7 @@ Where it could live:
 | Profiles, new profile, PIN (`features/profiles/`) | remove |
 | Downloads page (`download_page.dart`) | remove |
 | Update failure and spoken-languages picker error links (`update_escape.dart`, `spoken_languages_picker.dart`) | keep the link, it opens the general report |
-| Settings > Support, "Send a bug report" | keep, the one general entry |
+| Settings > Support, "Send a bug report" | keep; the Settings three-dot menu also has "Report a problem" (resolved) |
 
 ## Contrast self-check (WCAG 2.1)
 Computed from the app palette (`ColorScheme.fromSeed`, forest seed; same tokens as the other mockups).
@@ -99,11 +99,12 @@ Cues are never colour alone: checkmark against blank, the dividers, and the fill
 1. **Learn {language} from** lives inside each language's own sheet. The menu has no Learn row (the page default is that variant).
 2. **Reports** keep the mail hand-off for now, with no in-app endpoint. The confirmation shown by default is the mail-app wording ("Your report is ready. Your mail app has the report. Send it from there."). The "In the app" wording stays as a tweak for later.
 3. **The content flag** sits in the drill header, where the bug icon was.
+4. **Deck, unit and topic pages** ALSO get the content flag (not only a card and the word sheet). On those pages the reasons list is the same and the report carries the deck, unit or topic id instead of a card id (frame j: the sheet's context box has no `Card:` line).
+5. **A general bug report** ALSO has a "Report a problem" item in the Settings three-dot menu, in addition to Settings > Support. It is a button-type row in the Open group, with the open-external glyph while reports go by the mail app (frame i). The Settings tab header gets the dots in the bug's place.
+
+6. **Menu lines** (owner: "Why? Just add a checkbox, no?"): the toggles' explanations stay as a second muted line under each label in the popup, with the box at the leading edge, visible in both states. Buttons stay single-line with a trailing chevron.
+7. **"Your languages menu"** means the Settings row, which now opens the Languages list directly. The language bar's tap menu stays a language picker (default taken). For reference, today: the Settings row "Your languages" opens a page of rows (`LanguagesSettingsPage`) whose first row leads to the Languages list; the language bar's tap menu is the popup that appears when you tap the wheel at the top of Today, Decks or Progress, and only lists your languages to switch between.
 
 ## Open questions for the owner (still open)
-1. **Deck-level pages** (deck, unit, topic): keep the flag there, or only on a card and the word sheet? Without a card the reasons such as "The audio is wrong" are vaguer.
-2. **Reviewer screens**: remove as proposed, or keep the content report there too?
-3. **A general bug** now lives only in Settings > Support. Is that enough, or should the three-dot menu of Settings carry "Report a problem"?
-4. **Menu lines**: the switches' one-line explanations are lost in the menu (tooltips only). Acceptable, or should IPA and Adult content keep a page?
-5. **Other screens' rule.** Which screens get the same three-dot treatment next (Decks, Progress, Settings pages)?
-6. Does "Your languages menu" mean the Settings row (assumed here), and not the language bar's tap menu, which stays a language picker?
+1. **Reviewer screens**: remove as proposed, or keep the content report there too?
+2. **Other screens' rule.** Which screens get the same three-dot treatment next (Decks, Progress, Settings pages)?

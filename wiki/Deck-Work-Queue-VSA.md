@@ -10,7 +10,7 @@ State was read from `origin/decks-live` on 2026-11-16 (`git ls-tree` over `decks
 
 | # | Deliverable | State | Evidence | Tasks |
 |---|---|---|---|---|
-| 1 | Path to B1 | **PARTIAL** | `vsn-path.yaml`: 60 entries; 1 built (phrasebook + first words, 10 words), 58 planned, closing `*`; A1 mark at unit 33 (`vsn-animals`), A2 at 46 (`vsn-nature`), B1 at 61; `alphabet: []`; levels A1 300, A2 400, B1 600 words. The planned themes are the generic template (clothes, weather, government, travel...), not a Vedic reading syllabus | VSA-010 re-plans the path, then VSA-1xx |
+| 1 | Path to B1 | **PARTIAL** | `vsn-path.yaml`: 60 entries; 1 built (phrasebook + first words, 10 words), 58 planned, closing `*`; A1 mark at unit 30 (corrected 2026-11-16 by Plan-Vedic-Path), A2 and B1 marks per Plan-Vedic-Path; `alphabet: []`; levels A1 300, A2 400, B1 600 words. The planned themes are the generic template (clothes, weather, government, travel...), not a Vedic reading syllabus | VSA-010 re-plans the path, then VSA-1xx |
 | 2 | Cores and English layers | **PARTIAL** | 2 vocab cores (`vsn-first-words` 10 cards `vsn-0001..0010`, `vsn-phrasebook` 20 cards `vsn-0011..0030`) and 2 layers; no grammar core | VSA-1xx |
 | 3 | Sentences decks | **MISSING** | none | VSA-3xx |
 | 4 | Reading decks | **MISSING** | no `vsn-en-reading-*` | VSA-4xx |

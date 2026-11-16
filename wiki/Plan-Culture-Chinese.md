@@ -39,7 +39,7 @@ What the validator enforces (read from `tools/validate_decks.py` on main, 2026-1
 | Table | `PD_TERMS = {"IN": 60, "BD": 60, "ES": 70, "FR": 70, "JP": 70, "CN": 50}`; any other jurisdiction takes 70 |
 | Named author | `public_domain_problem` fails a source when `author_died + term >= this year`; the owner's floor (CLAUDE.md, rights floor for culture) is stricter than the `CN` table and is the rule used here: **died 1955 or earlier**. A negative (BCE) `author_died` passes the sum |
 | Anonymous work | `author: "anonymous"` needs a `date` that `parse_years` accepts, whose first year is before 1900 |
-| `source.date` | `parse_years` takes an integer 1 to 9999, `"c. 1750"` or `"1892-1909"`. **It does not accept a BCE year** (first = 1 at the earliest) |
+| `source.date` | `parse_years` takes an integer 1 to 9999, `"c. 1750"` or `"1892-1909"`, and a BCE year as a negative (`-479`, `"c. -400"`, `"-475 to -221"`), as a creator's `born` does (#1491) |
 | Creator `born` and `died` | `_year_of` accepts a year, **negative for BCE**, or `{ year, circa: true }` |
 | Quotation | `basis: "quotation"` is limited to 25 words and 5 cards a deck. This plan uses no `quotation` items |
 

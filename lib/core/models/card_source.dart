@@ -88,7 +88,7 @@ class CardSource {
   /// The first year in [date], or null when it names none: the year a work
   /// is a point at on a timeline.
   int? get year {
-    final match = RegExp(r'-?\d{3,4}').firstMatch(date ?? '');
+    final match = RegExp(r'-?\d{1,4}').firstMatch(date ?? '');
     return match == null ? null : int.tryParse(match.group(0)!);
   }
 

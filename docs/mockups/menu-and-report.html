@@ -68,7 +68,7 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .chip.off{background:none;box-shadow:inset 0 0 0 1px var(--olv);color:var(--onSv)}
 /* popup menu (PopupMenuButton: surfaceContainer, radius 4, elevation 3, width 112..280) */
 .scrim{position:absolute;inset:0;background:transparent}
-.menu{position:absolute;top:52px;right:8px;width:280px;background:var(--sCont);border-radius:4px;padding:8px 0;box-shadow:0 6px 18px rgba(0,0,0,.35),0 0 0 1px var(--olv);z-index:5}
+.menu{position:absolute;top:52px;right:8px;width:300px;max-height:calc(100% - 60px);overflow-y:auto;scrollbar-width:none;background:var(--sCont);border-radius:4px;padding:8px 0;box-shadow:0 6px 18px rgba(0,0,0,.35),0 0 0 1px var(--olv);z-index:5}
 .mi{display:flex;align-items:center;gap:12px;min-height:calc(48px*var(--t)*.8);padding:6px 12px 6px 12px;font-size:calc(16px*var(--t));line-height:1.2;width:100%;text-align:start;border:0;background:none}
 .mi .ck{width:24px;height:24px;flex:none;color:var(--p);display:flex}
 .mi .tx{flex:1;min-width:0}
@@ -157,6 +157,7 @@ const IC={
  tick:"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z",
  cbOn:"M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z",
  cbOff:"M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z",
+ ext:"M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z",
  list:"M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"};
 const ic=(n,s)=>`<svg class="i" viewBox="0 0 24 24" aria-hidden="true"${s?` style="width:${s}px;height:${s}px"`:''}><path d="${IC[n]}"/></svg>`;
 const L={
@@ -164,6 +165,7 @@ const L={
  hi:{name:'हिन्दुस्तानी',en:'Hindustani',w:'पानी',r:'pānī',ipa:'[pɑːniː]',gloss:'water',opts:['water','fire','house'],card:'hi-0333',deck:'hi-first-words',pair:'Hindustani from English',learn:['Hindustani','Telugu','Bengali']},
  bn:{name:'বাংলা',en:'Bengali',w:'জল',r:'jôl',ipa:'[dʒɔl]',gloss:'water',opts:['water','fire','house'],card:'bn-0350',deck:'bn-first-words',pair:'Bengali from English',learn:['Bengali','Telugu','Hindustani']}};
 const REASONS=['The translation is wrong','The reading or IPA is wrong','The audio is wrong or missing','The picture or example is wrong','Offensive or inappropriate','Something else'];
+const IPANEED='Turn on IPA pronunciations to use this';
 const S={theme:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light',lang:'te',hl:'1',ipa:'1',tr:'mail',lf:'sheet'};
 const VER='0.10.6';
 function langBar(withBug){
@@ -176,7 +178,7 @@ function fA(){
 function fSet(){
  const learn=['te','hi','bn'].map(k=>L[k].en).join(', ');
  return `<div class="fcol"><div class="fcap">b. Settings tab: Your languages now opens the Languages list directly</div>
- <div class="ph"><div class="tabh">Settings</div>
+ <div class="ph"><div class="ab" style="height:64px;padding:8px 4px 0 0"><div class="tabh" style="flex:1;padding:0 0 0 24px">Settings</div><span class="ib chg upd">${ic('more')}</span></div>
  <div class="pc"><div class="av">A</div><div><div style="font-size:calc(16px*var(--t))">Profile</div><div class="sm">Profiles and privacy</div></div></div>
  <div class="gl">
   <div class="row chg upd"><span>${ic('school')}</span><div class="tx"><div class="t1">Your languages</div><div class="t2">${learn}</div></div><span>${ic('chev')}</span></div>
@@ -190,15 +192,15 @@ function langScreen(open){
  const ks=['te','hi','bn'];
  const rows=ks.map(k=>`<div class="lrow"><span class="n">${L[k].name} · ${L[k].en}</span><div class="chips"><span class="chip">Speak</span><span class="chip">Hear</span><span class="chip">Read</span><span class="chip off">Write</span></div></div>`).join('');
  const ipaOn=S.ipa==='1';
-  const tg=(t,o={})=>`<button class="mi ${o.dis?'dis':''}" role="menuitemcheckbox" aria-checked="${!!o.on}" ${o.dis?'disabled':''}><span class="bx ${o.on?'on':''}">${ic(o.on?'cbOn':'cbOff')}</span><span class="tx">${t}</span></button>`;
+  const tg=(t,o={})=>`<button class="mi ${o.dis?'dis':''}" role="menuitemcheckbox" aria-checked="${!!o.on}" ${o.dis?'disabled':''}><span class="bx ${o.on?'on':''}">${ic(o.on?'cbOn':'cbOff')}</span><span class="tx">${t}<span class="v">${o.on?o.sOn:o.sOff}</span></span></button>`;
  const bt=(t,o={})=>`<button class="mi" role="menuitem"><span class="tx">${t}${o.sub?`<span class="v">${o.sub}</span>`:''}</span><span class="ch">${ic('chev',20)}</span></button>`;
  const menu=`<div class="menu chg" role="menu" aria-label="More">
   <div class="mlab">Show</div>
-  ${tg('Latin-letter readings',{on:true})}
-  ${tg('IPA pronunciations',{on:ipaOn})}
-  ${tg('IPA replaces transliteration',{dis:!ipaOn,on:false})}
-  ${tg('Adult content (18+)',{on:false})}
-  ${tg('Hide what is above my level',{on:true})}
+  ${tg('Latin-letter readings',{on:true,sOn:'A Latin-letter reading under words in other scripts',sOff:'Only the script, no reading'})}
+  ${tg('IPA pronunciations',{on:ipaOn,sOn:'How each word is pronounced will be shown under words, in IPA standards',sOff:'No IPA on cards or passages'})}
+  ${tg('IPA replaces transliteration',{dis:!ipaOn,on:false,sOn:'Words show their IPA where the transliteration was (based on ISO 15919)',sOff:ipaOn?'Words show their transliteration, with the IPA under it':IPANEED})}
+  ${tg('Adult content (18+)',{on:false,sOn:'Rude words and offensive cards are shown',sOff:'Rude words stay hidden behind their warnings'})}
+  ${tg('Hide what is above my level',{on:true,sOn:'Search leaves out decks, topics and units above your level',sOff:'Search lists them, marked with their level and locked'})}
   <div class="mdiv"></div>
   <div class="mlab">Open</div>
   ${bt('Fact languages',{sub:'All known languages'})}
@@ -212,6 +214,21 @@ function langScreen(open){
  <div class="sech">Learning · 3</div>${rows}
  <div class="sech">Know · 1</div><div class="lrow"><span class="n">English</span><div class="chips"><span class="chip">Speak</span><span class="chip">Hear</span><span class="chip">Read</span><span class="chip">Write</span></div></div>
  ${open?menu:''}</div>`}
+function fSetMenu(){
+ return `<div class="fcol"><div class="fcap">i. Settings three-dot menu: Report a problem (the general report, besides Settings > Support)</div>
+ <div class="ph"><div class="ab" style="height:64px;padding:8px 4px 0 0"><div class="tabh" style="flex:1;padding:0 0 0 24px">Settings</div><span class="ib on">${ic('more')}</span></div>
+ <div class="pc"><div class="av">A</div><div><div style="font-size:calc(16px*var(--t))">Profile</div><div class="sm">Profiles and privacy</div></div></div>
+ <div class="gl"><div class="row"><span>${ic('school')}</span><div class="tx"><div class="t1">Your languages</div></div><span>${ic('chev')}</span></div><div class="row"><span>${ic('list')}</span><div class="tx"><div class="t1">Activities and memory</div></div><span>${ic('chev')}</span></div></div>
+ <div class="menu chg" style="top:60px"><div class="mlab">Open</div><button class="mi" role="menuitem"><span class="tx">Report a problem</span><span class="ch">${ic('ext',20)}</span></button></div>
+ <p class="sm" style="padding:14px 20px;margin-top:auto">Opens the general report (Support, Bug or Feedback; ${S.tr==='mail'?'its mail goes to the mail app, hence the open-external glyph':'sent from the app'}). The glyph is the open-external mark, not a chevron, because it leaves the app.</p></div></div>`}
+function fDeck(){
+ const l=L[S.lang];
+ return `<div class="fcol"><div class="fcap">j. Deck, unit and topic pages: the same flag and the same sheet, with the deck (or unit, or topic) id in place of a card id</div>
+ <div class="ph"><div class="ab"><span class="ib">${ic('back')}</span><h2></h2><span class="ib chg upd" aria-label="Report a problem with this deck">${ic('flag')}</span></div>
+ <div class="dq" style="font-size:calc(22px*var(--t));color:var(--onS)">${l.en} animals</div>
+ <div class="lrow"><span class="n">${l.w}</span><span class="on">${l.r} · ${l.gloss}</span></div>
+ <div class="lrow"><span class="n">${l.w}</span><span class="on">${l.r} · ${l.gloss}</span></div>
+ <div class="dim"></div>${sheetForm(true)}</div></div>`}
 function fL1(){return `<div class="fcol"><div class="fcap">c. Languages screen: three dots replace the bug, + stays</div>${langScreen(false)}</div>`}
 function fL2(){return `<div class="fcol"><div class="fcap">d. The three-dot menu: two kinds of row: toggles (box always visible) and buttons (chevron)</div>${langScreen(true)}</div>`}
 function drill(extra,sheet){
@@ -221,10 +238,10 @@ function drill(extra,sheet){
  <div class="dc"><span class="w">${l.w}</span><span class="r">${l.r}</span><span class="ipa">${l.ipa}</span></div>
  ${l.opts.map(o=>`<div class="opt">${o}</div>`).join('')}
  ${sheet?`<div class="dim"></div>${sheet}`:''}</div>`}
-function ctxLines(){const l=L[S.lang];return `Card: ${l.card}<br>Deck: ${l.deck}<br>Languages: ${l.pair}<br>App: fluenough ${VER}`}
-function sheetForm(){
- return `<div class="sheet" role="dialog" aria-labelledby="rt"><div class="hd"></div><h3 id="rt">Report a problem with this card</h3>
- <div class="ctx">${ctxLines()}</div>
+function ctxLines(deck){const l=L[S.lang];return `${deck?'':`Card: ${l.card}<br>`}Deck: ${l.deck}<br>Languages: ${l.pair}<br>App: fluenough ${VER}`}
+function sheetForm(deck){
+ return `<div class="sheet" role="dialog" aria-labelledby="rt"><div class="hd"></div><h3 id="rt">Report a problem with this ${deck?'deck':'card'}</h3>
+ <div class="ctx">${ctxLines(deck)}</div>
  <ul class="rs" role="radiogroup">${REASONS.map((r,i)=>`<li role="radio" aria-checked="${i===0}"><span class="rd ${i===0?'sel':''}"></span>${r}</li>`).join('')}</ul>
  <div class="fld"><b style="color:var(--onSv)">Add a note (optional)</b><small>0 / 140</small></div>
  <div class="acts"><button class="btn">Cancel</button><button class="btn fill">Send</button></div></div>`}
@@ -252,7 +269,7 @@ function build(){
  document.documentElement.dataset.theme=S.theme;
  root.style.cssText=Object.entries(p).map(([k,v])=>`--${k}:${v}`).join(';');
  root.className='frames'+(S.hl==='1'?' hl-on':'');
- root.innerHTML=fA()+fSet()+fL1()+fL2()+fD1()+fD2()+fD3()+(S.lf==='sheet'?fSheet():'');
+ root.innerHTML=fA()+fSet()+fL1()+fL2()+fD1()+fD2()+fD3()+fDeck()+fSetMenu()+(S.lf==='sheet'?fSheet():'');
  document.querySelectorAll('.seg').forEach(s=>s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',S[s.dataset.k]==b.dataset.v)));
 }
 document.addEventListener('click',e=>{const b=e.target.closest('.seg button');if(b){S[b.parentNode.dataset.k]=b.dataset.v;build()}});

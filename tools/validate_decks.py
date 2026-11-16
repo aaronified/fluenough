@@ -100,7 +100,7 @@ SCRIPT_BLOCKS = {
     "han": _HAN_BLOCKS, "han_traditional": _HAN_BLOCKS,
     "han_simplified": _HAN_BLOCKS, "traditional": _HAN_BLOCKS,
     "simplified": _HAN_BLOCKS,
-    "devanagari": ((0x0900, 0x097F), (0xA8E0, 0xA8FF)),
+    "devanagari": ((0x0900, 0x097F), (0x1CD0, 0x1CFF), (0xA8E0, 0xA8FF)),
     "gurmukhi": ((0x0A00, 0x0A7F),),
     "bengali": ((0x0980, 0x09FF),),
     "latin": ((0x0041, 0x024F), (0x1E00, 0x1EFF)),
@@ -115,6 +115,7 @@ PATH_KEYS = {"schema", "kind", "id", "language", "description", "units", "alphab
 # Ends a path's unit to take decks the path does not list (#22).
 WILDCARD = "*"
 SOUNDS_KEYS = {"schema", "kind", "id", "language", "description", "contrasts"}
+ROMANISATION_STANDARDS = ("ISO 15919", "IAST")
 ROMANISATION_KEYS = {"schema", "kind", "id", "language", "scheme", "standard",
                      "typed", "equivalents"}
 # The letters ISO 15919 adds to a-z, as the decks use them (ADR-0025): the
@@ -131,6 +132,12 @@ ISO_ROMAN_RE = re.compile(
     rf"[a-z0-9 '.,?!;:()/\-{ISO15919_LETTERS}{ISO15919_MARKS}]+")
 ROMAN_PIECE_RE = re.compile(r"[a-z]+(?:[ '-][a-z]+)*")
 ISO_PIECE_RE = re.compile(rf"[a-z{ISO15919_LETTERS}{ISO15919_MARKS}]+")
+# IAST, which Sanskrit's readings use (wiki/Readings-ISO-15919.md): ISO 15919's
+# letters, plus ṃ for the anusvara and the composed ṝ and ḹ.
+IAST_LETTERS = ISO15919_LETTERS + "ṃṝḹ"
+IAST_ROMAN_RE = re.compile(
+    rf"[a-z0-9 '.,?!;:()/\-{IAST_LETTERS}{ISO15919_MARKS}]+")
+IAST_PIECE_RE = re.compile(rf"[a-z{IAST_LETTERS}{ISO15919_MARKS}]+")
 # A broad IPA transcription, without its slashes (ADR-0025): IPA letters,
 # modifier letters, combining diacritics, length and stress marks, and
 # spaces between words.
@@ -2389,12 +2396,12 @@ def _readings_in(node: object):
             yield from _readings_in(item)
 
 
-def _uses_iso15919(file: Path) -> bool:
+def _romanisation_standard(file: Path) -> str | None:
     try:
         raw = _load_deck(file.read_text(encoding="utf-8"))
     except (OSError, yaml.YAMLError):
-        return False
-    return isinstance(raw, dict) and raw.get("standard") == "ISO 15919"
+        return None
+    return raw.get("standard") if isinstance(raw, dict) else None
 
 
 def check_romanised(r: Report, raw: dict, path: Path, *, lang: str | None = None,
@@ -2412,13 +2419,15 @@ def check_romanised(r: Report, raw: dict, path: Path, *, lang: str | None = None
     file = folder / f"{code}-romanisation.yaml" if _is_str(code) else None
     if file is None or not file.exists():
         return
-    iso = _uses_iso15919(file)
-    pattern = ISO_ROMAN_RE if iso else ROMAN_RE
+    standard = _romanisation_standard(file)
+    iso = standard in ROMANISATION_STANDARDS
+    pattern = (IAST_ROMAN_RE if standard == "IAST"
+               else ISO_ROMAN_RE if iso else ROMAN_RE)
     for reading in sorted(set(_readings_in(raw))):
         if reading != unicodedata.normalize("NFC", reading):
             r.error("reading", f"{reading!r} is not NFC-normalised")
         elif not pattern.fullmatch(reading):
-            what = ("lowercase ISO 15919 letters, no capitals" if iso
+            what = (f"lowercase {standard} letters, no capitals" if iso
                     else "lowercase ASCII, no diacritics or capitals")
             r.error("reading", f"{reading!r} is not in the {code} romanisation: "
                                f"{what}")
@@ -2441,9 +2450,9 @@ def check_romanisation_file(r: Report, raw: dict, path: Path) -> None:
     if not _is_str(raw.get("scheme")):
         r.error("scheme", "is required: how the language is romanised, in a line")
     standard = raw.get("standard")
-    if standard is not None and standard != "ISO 15919":
-        r.error("standard", f"the one standard known is 'ISO 15919', got "
-                            f"{standard!r}")
+    if standard is not None and standard not in ROMANISATION_STANDARDS:
+        r.error("standard", f"the standards known are 'ISO 15919' and 'IAST' "
+                            f"(Sanskrit), got {standard!r}")
     typed = raw.get("typed")
     if typed is not None:
         if standard is None:
@@ -2457,8 +2466,9 @@ def check_romanisation_file(r: Report, raw: dict, path: Path) -> None:
                         or not _is_str(pair[0]) or not isinstance(pair[1], str)):
                     r.error(f"typed[{i}]", "must be a pair: the letters in a "
                                            "reading, and how they are typed")
-                elif not ISO_PIECE_RE.fullmatch(pair[0]):
-                    r.error(f"typed[{i}]", f"{pair[0]!r} must be ISO 15919 "
+                elif not (IAST_PIECE_RE if standard == "IAST"
+                          else ISO_PIECE_RE).fullmatch(pair[0]):
+                    r.error(f"typed[{i}]", f"{pair[0]!r} must be {standard} "
                                            f"letters")
                 elif pair[1] and not ROMAN_PIECE_RE.fullmatch(pair[1]):
                     r.error(f"typed[{i}]", f"{pair[1]!r} must be lowercase "
@@ -2783,7 +2793,7 @@ def _check_fact_cards(r: Report, where: str, cards: object, lang: str) -> None:
 # parentheses, లేదు (lēdu), or follows it, lēdu (లేదు). A learner who cannot
 # read the script yet can read the note. See docs/DECK-FORMAT.md.
 
-_SCRIPT = ("ऀ-෿Ͱ-ϿЀ-ӿ֐-׿؀-ۿ"
+_SCRIPT = ("ऀ-෿Ͱ-ϿЀ-ӿ֐-׿؀-ۿ᳐-᳿꣠-ꣿ"
            "฀-๿぀-ヿ一-鿿가-힯")
 _SCRIPT_CHAR = re.compile(f"[{_SCRIPT}]")
 # An apostrophe inside a word is part of it in Eastern Nagari (Assamese ক'লা,
@@ -2846,6 +2856,10 @@ def _block(ch: str) -> int:
     (U+0600-U+06FF, U+0750-U+077F) count as one, as do Han with kana, and
     Hangul ([_HAN_KANA], [_HANGUL])."""
     o = ord(ch)
+    # Devanagari's Vedic Extensions and Devanagari Extended blocks count as
+    # Devanagari, so a Vedic tone sign or letter does not end a word's run.
+    if 0x1CD0 <= o <= 0x1CFF or 0xA8E0 <= o <= 0xA8FF:
+        return 0x0900 >> 7
     if 0x0600 <= o <= 0x06FF or 0x0750 <= o <= 0x077F:
         return 0x0600 >> 7
     if any(lo <= o <= hi for lo, hi in _HAN_KANA):
@@ -7344,16 +7358,23 @@ def pd_term(jurisdiction: object) -> int:
 
 def parse_years(value: object) -> tuple[int, int] | None:
     """A source's `date`: a year (1892), a span ("1892-1909"), or "c. 1750",
-    as its first and last year; None for anything else."""
+    as its first and last year; None for anything else. A BCE year is
+    negative, as a creator's `born` is: -479, "c. -400", "-475 to -221",
+    "-475--221". There is no year 0."""
     if isinstance(value, bool):
         return None
     if isinstance(value, int):
-        return (value, value) if 1 <= value <= 9999 else None
+        return (value, value) if (1 <= value <= 9999 or -9999 <= value <= -1) else None
     if isinstance(value, str):
-        m = re.fullmatch(r"(?:c\.\s?)?([0-9]{3,4})(?:-([0-9]{3,4}))?", value.strip())
+        first_re = r"(?:[0-9]{3,4}|-[0-9]{1,4})"
+        last_re = r"-?[0-9]{1,4}"
+        m = re.fullmatch(
+            rf"(?:c\.\s?)?({first_re})(?:(?:\s+to\s+|-)({last_re}))?", value.strip())
         if m:
             first = int(m.group(1))
             last = int(m.group(2)) if m.group(2) else first
+            if first == 0 or last == 0:
+                return None
             return (first, last) if first <= last else None
     return None
 
@@ -7513,8 +7534,8 @@ def check_source_block(r: Report, where: str, source: object, *, genre: str | No
         r.error(p, f"url must be an https link, got {source['url']!r}")
     years = parse_years(source.get("date")) if "date" in source else None
     if "date" in source and years is None:
-        r.error(p, f"date must be a year, a span like \"1892-1909\", or \"c. 1750\", "
-                   f"got {source['date']!r}")
+        r.error(p, f"date must be a year, a span like \"1892-1909\" or \"-475 to -221\", "
+                   f"or \"c. 1750\" (a BCE year is negative), got {source['date']!r}")
     if "jurisdiction" in source and not (
             isinstance(source["jurisdiction"], str)
             and re.fullmatch(r"[A-Z]{2}", source["jurisdiction"])):
