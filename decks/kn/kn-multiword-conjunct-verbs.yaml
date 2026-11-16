@@ -1,0 +1,112 @@
+# Kannada conjunct verbs: a noun and a light verb (do, become, undergo, put) or the verbalising ಇಸು that make one verb phrase.
+schema: 1
+id: "kn-multiword-conjunct-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+genre: "multiword"
+pattern_family: "conjunct-verb"
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - ref: "kn-0440"
+  - ref: "kn-0467"
+  - ref: "kn-0469"
+  - ref: "kn-0474"
+  - ref: "kn-0433"
+  - ref: "kn-0475"
+  - ref: "kn-0471"
+  - ref: "kn-0472"
+  - ref: "kn-0476"
+  - id: "kn-6359"
+    target: "ತಡ ಆಗು"
+    words: ["ತಡ", "ಆಗು"]
+    reading: "taḍa āgu"
+    ipa: "t̪aɖa aːɡu"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ತಡ", ref: "kn-1226" }
+      - { word: "ಆಗು", base: "ಆಗು", reading: "āgu" }
+  - ref: "kn-0470"
+  - id: "kn-6361"
+    target: "ಸಂತೋಷ ಆಗು"
+    words: ["ಸಂತೋಷ", "ಆಗು"]
+    reading: "santōṣa āgu"
+    ipa: "sant̪oːʂa aːɡu"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಸಂತೋಷ", ref: "kn-0722" }
+      - { word: "ಆಗು", base: "ಆಗು", reading: "āgu" }
+  - ref: "kn-0478"
+  - id: "kn-6363"
+    target: "ಬೇಸರಪಡು"
+    words: ["ಬೇಸರ", "ಪಡು"]
+    reading: "bēsarapaḍu"
+    ipa: "beːsarapaɖu"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಬೇಸರ", ref: "kn-1323" }
+      - { word: "ಪಡು", base: "ಪಡು", reading: "paḍu" }
+  - id: "kn-6364"
+    target: "ಮರೆ ಮಾಡು"
+    words: ["ಮರೆ", "ಮಾಡು"]
+    reading: "mare māḍu"
+    ipa: "mare maːɖu"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಮರೆ", base: "ಮರೆ", reading: "mare" }
+      - { word: "ಮಾಡು", ref: "kn-0630" }
+  - id: "kn-6365"
+    target: "ನೆನಪಿಡು"
+    words: ["ನೆನಪಿಡು"]
+    reading: "nenapiḍu"
+    ipa: "nenapiɖu"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ನೆನಪಿಡು", base: "ನೆನಪು", reading: "nenapu" }
+  - id: "kn-6366"
+    target: "ಪಾಠಿಸು"
+    words: ["ಪಾಠಿಸು"]
+    reading: "pāṭhisu"
+    ipa: "paːʈʰisu"
+    pos: "verb"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಪಾಠಿಸು", ref: "kn-1109" }
+  - id: "kn-6367"
+    target: "ಕನ್ನಡಿಸು"
+    words: ["ಕನ್ನಡಿಸು"]
+    reading: "kannaḍisu"
+    ipa: "kannaɖisu"
+    pos: "verb"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಕನ್ನಡಿಸು", ref: "kn-1127" }

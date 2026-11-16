@@ -87,3 +87,11 @@
 | kn-7764 | see card | The note has a stray hyphen in its reading, (hōda-)-: fix | Sonnet review | 2026-11-16 |
 | kn-8147 | see card | Some notes quote a suffix with no reading (-ಆಗಿ in kn-8147, -ು in kn-7789, ಹನ್ನ- and ಇನ- in kn-0243): add readings | Sonnet review | 2026-11-16 |
 | kn-7789 | see card | kn-7789 and kn-8236 chain several points in one note: split into one idea per sentence | Sonnet review | 2026-11-16 |
+| kn-6365 | see card | ನೆನಪಿಡು: the only source is a listing with the example ನೆನಪಿಡತಕ್ಕ ಮಾತುಗಳು on Kannada Wiktionary, with no English for the verb: is "to keep in mind" right? | Sonnet builder | 2026-11-16 |
+| kn-6367 | see card | ಕನ್ನಡಿಸು: the source (Kannada Wikipedia) names the -ಇಸು pattern and gives the sentence but no English: is "to render into Kannada" the usual sense? | Sonnet builder | 2026-11-16 |
+| kn-6411 | see card | ಸೇರಿಬಿಡು: the dictionary example is a plain "joined"; is ಬಿಡು a completive here, as the grammar deck says for ಹೇಳಿಬಿಟ್ಟೆ and ತಿಂದುಬಿಟ್ಟೆ? | Sonnet builder | 2026-11-16 |
+| kn-6412 | see card | ತಿಂದುಬಿಡು: no dictionary page read labels ಬಿಡು an auxiliary; the shade of "eat up" comes from the course's grammar deck: right? | Sonnet builder | 2026-11-16 |
+| kn-6451 | see card | ತಿಂಡಿ is "snack" or "breakfast" (kn-0435 says both); the source gives no English for ನನಗೆ ಆ ತಿಂಡಿ ಬೇಡ: which gloss? | Sonnet builder | 2026-11-16 |
+| kn-6463 | see card | ನನಗೆ ಕನ್ನಡ ಬರುತ್ತದೆ: ಬರು as "to be known (of a skill)" comes from the course's grammar decks, not from a dictionary page read: right? | Sonnet builder | 2026-11-16 |
+| kn-6482 | see card | ಹಿಡಿ as "agree with" (water that does not suit a person): the Kannada Wiktionary example has no English; is the translation right? | Sonnet builder | 2026-11-16 |
+| kn-6485 | see card | ಕಣ್ಣಿಗೆ ಬೀಳು: listed as an idiom on Kannada Wikipedia and Wiktionary with no English; "to catch the eye; to come into view" is built from the parts: right? | Sonnet builder | 2026-11-16 |

@@ -1,0 +1,113 @@
+# Kannada verbs with a fixed sense: ಸೇರು and ಹಿಡಿ that mean suit, a dative that does not like the weather, and idioms the dictionaries list.
+schema: 1
+id: "kn-multiword-idiomatic"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+genre: "multiword"
+pattern_family: "idiomatic-verb"
+level: "B1"
+tags: ["unreviewed"]
+cards:
+  - id: "kn-6480"
+    target: "ನನಗೆ ಈ ಹವಾಮಾನ ಸೇರುವುದಿಲ್ಲ"
+    words: ["ನನಗೆ", "ಈ", "ಹವಾಮಾನ", "ಸೇರುವುದಿಲ್ಲ"]
+    reading: "nanage ī havāmāna sēruvudilla"
+    ipa: "nanaɡe iː haʋaːmaːna seːruʋud̪illa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ನನಗೆ", ref: "kn-0610" }
+      - { word: "ಈ", base: "ಈ", reading: "ī" }
+      - { word: "ಹವಾಮಾನ", ref: "kn-0975" }
+      - { word: "ಸೇರುವುದಿಲ್ಲ", ref: "kn-1185" }
+  - id: "kn-6481"
+    target: "ಈ ಮನೆ ನಮಗೆ ಆಗಿಬರುತ್ತಿಲ್ಲ"
+    words: ["ಈ", "ಮನೆ", "ನಮಗೆ", "ಆಗಿಬರುತ್ತಿಲ್ಲ"]
+    reading: "ī mane namage āgibaruttilla"
+    ipa: "iː mane namaɡe aːɡibarut̪t̪illa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಈ", base: "ಈ", reading: "ī" }
+      - { word: "ಮನೆ", ref: "kn-0201" }
+      - { word: "ನಮಗೆ", ref: "kn-0616" }
+      - { word: "ಆಗಿಬರುತ್ತಿಲ್ಲ", base: "ಆಗು", reading: "āgu" }
+  - id: "kn-6482"
+    target: "ಆ ಊರಿನ ನೀರು ನನಗೆ ಹಿಡಿಯುವುದಿಲ್ಲ"
+    words: ["ಆ", "ಊರಿನ", "ನೀರು", "ನನಗೆ", "ಹಿಡಿಯುವುದಿಲ್ಲ"]
+    reading: "ā ūrina nīru nanage hiḍiyuvudilla"
+    ipa: "aː uːrina niːru nanaɡe hiɖijuʋud̪illa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಆ", base: "ಆ", reading: "ā" }
+      - { word: "ಊರಿನ", ref: "kn-0204" }
+      - { word: "ನೀರು", ref: "kn-0492" }
+      - { word: "ನನಗೆ", ref: "kn-0610" }
+      - { word: "ಹಿಡಿಯುವುದಿಲ್ಲ", ref: "kn-1183" }
+  - id: "kn-6483"
+    target: "ಕೆಲಸಕ್ಕೆ ಸೇರು"
+    words: ["ಕೆಲಸಕ್ಕೆ", "ಸೇರು"]
+    reading: "kelasakke sēru"
+    ipa: "kelasakke seːru"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಕೆಲಸಕ್ಕೆ", ref: "kn-0203" }
+      - { word: "ಸೇರು", ref: "kn-1185" }
+  - id: "kn-6484"
+    target: "ಅವನಿಗೆ ಇಲ್ಲಿ ಏನು ಕೆಲಸ?"
+    words: ["ಅವನಿಗೆ", "ಇಲ್ಲಿ", "ಏನು", "ಕೆಲಸ"]
+    reading: "avanige illi ēnu kelasa?"
+    ipa: "aʋaniɡe illi eːnu kelasa"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಅವನಿಗೆ", ref: "kn-0612" }
+      - { word: "ಇಲ್ಲಿ", ref: "kn-0375" }
+      - { word: "ಏನು", ref: "kn-0167" }
+      - { word: "ಕೆಲಸ", ref: "kn-0203" }
+  - id: "kn-6485"
+    target: "ಕಣ್ಣಿಗೆ ಬೀಳು"
+    words: ["ಕಣ್ಣಿಗೆ", "ಬೀಳು"]
+    reading: "kaṇṇige bīḷu"
+    ipa: "kaɳɳiɡe biːɭu"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಕಣ್ಣಿಗೆ", ref: "kn-0796" }
+      - { word: "ಬೀಳು", ref: "kn-0982" }
+  - id: "kn-6486"
+    target: "ಬೆಂಕಿ ಹಿಡಿ"
+    words: ["ಬೆಂಕಿ", "ಹಿಡಿ"]
+    reading: "beṅki hiḍi"
+    ipa: "beŋki hiɖi"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಬೆಂಕಿ", ref: "kn-1350" }
+      - { word: "ಹಿಡಿ", ref: "kn-1183" }

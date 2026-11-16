@@ -1,0 +1,234 @@
+# Kannada compound verbs: the participle of a main verb and an auxiliary (ಕೊಳ್ಳು for oneself, ಕೊಡು for someone, ಹೋಗು and ಬಿಡು for completion, ಹಾಕು, ಬರು and ಹೋಗು for direction).
+schema: 1
+id: "kn-multiword-compound-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+genre: "multiword"
+pattern_family: "aspectual-compound"
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - id: "kn-6400"
+    target: "ಮಾಡಿಕೊಳ್ಳು"
+    words: ["ಮಾಡಿ", "ಕೊಳ್ಳು"]
+    reading: "māḍikoḷḷu"
+    ipa: "maːɖikoɭɭu"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಮಾಡಿ", ref: "kn-0630" }
+      - { word: "ಕೊಳ್ಳು", ref: "kn-1024" }
+  - id: "kn-6401"
+    target: "ಮಾಡಿಕೊಡು"
+    words: ["ಮಾಡಿ", "ಕೊಡು"]
+    reading: "māḍikoḍu"
+    ipa: "maːɖikoɖu"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಮಾಡಿ", ref: "kn-0630" }
+      - { word: "ಕೊಡು", ref: "kn-0114" }
+  - id: "kn-6403"
+    target: "ನೋಡಿಕೊಳ್ಳು"
+    words: ["ನೋಡಿ", "ಕೊಳ್ಳು"]
+    reading: "nōḍikoḷḷu"
+    ipa: "noːɖikoɭɭu"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ನೋಡಿ", ref: "kn-0636" }
+      - { word: "ಕೊಳ್ಳು", ref: "kn-1024" }
+  - id: "kn-6404"
+    target: "ಕೊಂಡುಕೊಳ್ಳು"
+    words: ["ಕೊಂಡು", "ಕೊಳ್ಳು"]
+    reading: "koṇḍukoḷḷu"
+    ipa: "koɳɖukoɭɭu"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಕೊಂಡು", ref: "kn-1024" }
+      - { word: "ಕೊಳ್ಳು", ref: "kn-1024" }
+  - id: "kn-6405"
+    target: "ಕಳೆದುಕೊಳ್ಳು"
+    words: ["ಕಳೆದು", "ಕೊಳ್ಳು"]
+    reading: "kaḷedukoḷḷu"
+    ipa: "kaɭed̪ukoɭɭu"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಕಳೆದು", ref: "kn-1187" }
+      - { word: "ಕೊಳ್ಳು", ref: "kn-1024" }
+  - id: "kn-6406"
+    target: "ತಂದುಕೊಡು"
+    words: ["ತಂದು", "ಕೊಡು"]
+    reading: "tandukoḍu"
+    ipa: "t̪and̪ukoɖu"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ತಂದು", ref: "kn-0744" }
+      - { word: "ಕೊಡು", ref: "kn-0114" }
+  - id: "kn-6407"
+    target: "ಬರೆದುಕೊಡು"
+    words: ["ಬರೆದು", "ಕೊಡು"]
+    reading: "baredukoḍu"
+    ipa: "bared̪ukoɖu"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಬರೆದು", ref: "kn-0639" }
+      - { word: "ಕೊಡು", ref: "kn-0114" }
+  - id: "kn-6408"
+    target: "ಬಿದ್ದುಹೋಗು"
+    words: ["ಬಿದ್ದು", "ಹೋಗು"]
+    reading: "bidduhōgu"
+    ipa: "bid̪d̪uhoːɡu"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಬಿದ್ದು", ref: "kn-0982" }
+      - { word: "ಹೋಗು", ref: "kn-0631" }
+  - id: "kn-6409"
+    target: "ಮರೆತುಹೋಗು"
+    words: ["ಮರೆತು", "ಹೋಗು"]
+    reading: "maretuhōgu"
+    ipa: "maret̪uhoːɡu"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಮರೆತು", ref: "kn-1179" }
+      - { word: "ಹೋಗು", ref: "kn-0631" }
+  - id: "kn-6410"
+    target: "ಆಗಿಹೋಗು"
+    words: ["ಆಗಿ", "ಹೋಗು"]
+    reading: "āgihōgu"
+    ipa: "aːɡihoːɡu"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಆಗಿ", base: "ಆಗು", reading: "āgu" }
+      - { word: "ಹೋಗು", ref: "kn-0631" }
+  - id: "kn-6411"
+    target: "ಸೇರಿಬಿಡು"
+    words: ["ಸೇರಿ", "ಬಿಡು"]
+    reading: "sēribiḍu"
+    ipa: "seːribiɖu"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಸೇರಿ", ref: "kn-1185" }
+      - { word: "ಬಿಡು", ref: "kn-1186" }
+  - id: "kn-6412"
+    target: "ತಿಂದುಬಿಡು"
+    words: ["ತಿಂದು", "ಬಿಡು"]
+    reading: "tindubiḍu"
+    ipa: "t̪ind̪ubiɖu"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ತಿಂದು", ref: "kn-0635" }
+      - { word: "ಬಿಡು", ref: "kn-1186" }
+  - id: "kn-6413"
+    target: "ಬಿಟ್ಟುಹೋಗು"
+    words: ["ಬಿಟ್ಟು", "ಹೋಗು"]
+    reading: "biṭṭuhōgu"
+    ipa: "biʈʈuhoːɡu"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಬಿಟ್ಟು", ref: "kn-1186" }
+      - { word: "ಹೋಗು", ref: "kn-0631" }
+  - id: "kn-6414"
+    target: "ತೆಗೆದುಹಾಕು"
+    words: ["ತೆಗೆದು", "ಹಾಕು"]
+    reading: "tegeduhāku"
+    ipa: "t̪eɡed̪uhaːku"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ತೆಗೆದು", ref: "kn-0633" }
+      - { word: "ಹಾಕು", base: "ಹಾಕು", reading: "hāku" }
+  - id: "kn-6415"
+    target: "ಕರೆದುಕೊಂಡು ಹೋಗು"
+    words: ["ಕರೆದುಕೊಂಡು", "ಹೋಗು"]
+    reading: "karedukoṇḍu hōgu"
+    ipa: "kared̪ukoɳɖu hoːɡu"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಕರೆದುಕೊಂಡು", ref: "kn-0654" }
+      - { word: "ಹೋಗು", ref: "kn-0631" }
+  - id: "kn-6416"
+    target: "ತೆಗೆದುಕೊಂಡು ಬರು"
+    words: ["ತೆಗೆದುಕೊಂಡು", "ಬರು"]
+    reading: "tegedukoṇḍu baru"
+    ipa: "t̪eɡed̪ukoɳɖu baru"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ತೆಗೆದುಕೊಂಡು", ref: "kn-0633" }
+      - { word: "ಬರು", base: "ಬರು", reading: "baru" }
+  - id: "kn-6417"
+    target: "ಹೋಗಲು ಬಿಡು"
+    words: ["ಹೋಗಲು", "ಬಿಡು"]
+    reading: "hōgalu biḍu"
+    ipa: "hoːɡalu biɖu"
+    pos: "phrase"
+    level: "B1"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ಹೋಗಲು", ref: "kn-0631" }
+      - { word: "ಬಿಡು", ref: "kn-1186" }
