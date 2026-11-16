@@ -390,8 +390,8 @@ void main() {
     );
 
     testWidgets(
-      'the badge counts the words in view not taught, and Learn walks every '
-      'word in view, taught or not',
+      'the badge counts the words in view not taught, and Learn starts a '
+      'lesson of those in view',
       (tester) async {
         usePhone(tester);
         final state = await pumpDeck(tester, spanish);
@@ -412,106 +412,22 @@ void main() {
         expect(food, inExclusiveRange(0, all));
         expect(badge(food), findsOneWidget);
 
+        final lesson = state.lessonFor(
+          DrillRequest.lesson(
+            language: 'es',
+            deckId: spanish,
+            tags: const <String>{'food'},
+          ),
+        );
         await tester.tap(find.text(l10n.deckLearn));
         await tester.pumpAndSettle();
-        expect(find.byType(DrillPage), findsNothing);
-        expect(find.byType(TeachCard), findsOneWidget);
+        // With something to learn in view, Learn runs the learn rule; with
+        // none, it only looks. Either way nothing is written on sight.
         expect(
-          find.text(l10n.drillPositionShort(1, inView.length)),
+          find.byType(lesson.isEmpty ? WalkthroughPage : DrillPage),
           findsOneWidget,
         );
-      },
-    );
-
-    testWidgets(
-      'Learn on a part-taught deck walks all of it and writes only for the '
-      'cards not taught',
-      (tester) async {
-        usePhone(tester);
-        final state = taggedState();
-        await state.load();
-        learnTagged(state, 'es-en-tagged', const <String>{'pets'});
-        await pumpScreen(
-          tester,
-          const DeckDetailPage(deckId: 'es-en-tagged'),
-          state: state,
-        );
-        final l10n = l10nOf(tester);
-        final logged = state.progress.log.length;
-        await tester.tap(find.text(l10n.deckLearn));
-        await tester.pumpAndSettle();
-        expect(find.text(l10n.drillPositionShort(1, 3)), findsOneWidget);
-        expect(find.text('gato'), findsOneWidget);
-        expect(state.progress.log, hasLength(logged));
-        for (var i = 0; i < 2; i++) {
-          await tester.fling(
-            find.byType(TeachCard),
-            const Offset(-300, 0),
-            1000,
-          );
-          await tester.pumpAndSettle();
-        }
-        expect(find.text('casa'), findsOneWidget);
-        expect(state.progress.log, hasLength(logged + 1));
-        expect(state.progress.log.last.cardId, 'es-en-tagged-0003');
-      },
-    );
-
-    testWidgets(
-      '+ Learn walks the new words: each first view is one log row graded 0, '
-      'a repeat view writes nothing, and the deck is then Relearn',
-      (tester) async {
-        usePhone(tester);
-        final state = taggedState();
-        await state.load();
-        await pumpScreen(
-          tester,
-          const DeckDetailPage(deckId: 'es-en-tagged'),
-          state: state,
-        );
-        final l10n = l10nOf(tester);
-        const gato = 'es-en-tagged-0001';
-        const recognition = DrillMode.recognition;
-
-        await tester.tap(find.text(l10n.deckLearn));
-        await tester.pumpAndSettle();
-        expect(find.text('gato'), findsOneWidget);
-        // The first card is taught on sight, in recognition only.
-        expect(state.progress.log, hasLength(1));
-        final row = state.progress.log.single;
-        expect(row.cardId, gato);
-        expect(row.mode, recognition);
-        expect(row.asked, Ask.teach);
-        expect(row.grade, 0);
-        expect(row.answerGiven, isNull);
-        expect(state.progress.stateOf(gato, recognition), isNotNull);
-        expect(state.progress.stateOf(gato, DrillMode.production), isNull);
-        expect(state.progress.stateOf(gato, recognition)!.repetitions, 0);
-        expect(state.progress.stateOf(gato, recognition)!.lapses, 0);
-
-        await tester.fling(find.byType(TeachCard), const Offset(-300, 0), 1000);
-        await tester.pumpAndSettle();
-        expect(find.text('perro'), findsOneWidget);
-        expect(state.progress.log, hasLength(2));
-
-        // Back to a card seen: nothing more is written.
-        await tester.fling(find.byType(TeachCard), const Offset(300, 0), 1000);
-        await tester.pumpAndSettle();
-        expect(find.text('gato'), findsOneWidget);
-        expect(state.progress.log, hasLength(2));
-
-        for (var i = 0; i < 3; i++) {
-          await tester.fling(
-            find.byType(TeachCard),
-            const Offset(-300, 0),
-            1000,
-          );
-          await tester.pumpAndSettle();
-        }
-        expect(state.progress.log, hasLength(3));
-        expect(find.byType(DeckDetailPage), findsOneWidget);
-        expect(find.text(l10n.deckRelearn), findsOneWidget);
-        expect(find.text(l10n.deckLearn), findsNothing);
+        expect(state.progress.log, isEmpty);
       },
     );
 
@@ -567,59 +483,6 @@ void main() {
   });
 
   group('a walkthrough view', () {
-    test('of a sentence still waiting logs the usual row, and it counts as '
-        'taught; seen again it writes nothing', () async {
-      // A fresh Bengali learner: the clothes sentences wait for their words.
-      final state = AppState.test(
-        settings: SettingsNotifier(
-          spokenLanguages: const <String>['en'],
-          learningLanguages: const <String>['bn'],
-        ),
-      );
-      addTearDown(state.dispose);
-      await state.load();
-      final decks = unitOfDeck(state, 'bn-en-clothes-sentences')!.decks;
-      final walk = state.walkCards(decks);
-      final waiting = <Card>[
-        for (final w in walk)
-          if (state.unlocks.isClosed(w.card) &&
-              !state.isTaught(w.card) &&
-              state.drillableModes(w.card).isNotEmpty)
-            w.card,
-      ];
-      expect(waiting, isNotEmpty, reason: 'the fixture has a waiting sentence');
-      final sentence = waiting.first;
-      final fresh = state.newToWalk(<Card>[for (final w in walk) w.card]);
-      final logged = state.progress.log.length;
-
-      final view = state.viewCard(sentence)!;
-      expect(view.isView, isTrue);
-      expect(view.cardId, sentence.id);
-      expect(view.grade, 0);
-      expect(view.asked, Ask.teach);
-      expect(state.progress.log, hasLength(logged + 1));
-      expect(state.isTaught(sentence), isTrue);
-      expect(state.newToWalk(<Card>[for (final w in walk) w.card]), fresh - 1);
-      // A view is no answer (the stats skip it), so it does not open the
-      // sentence: Unlocks.isOffered still waits for the words and rules.
-      expect(state.unlocks.isOffered(sentence), isFalse);
-      expect(state.viewCard(sentence), isNull);
-      expect(state.progress.log, hasLength(logged + 1));
-    });
-
-    test('a card with no mode to drill writes nothing', () async {
-      final state = taggedState();
-      addTearDown(state.dispose);
-      await state.load();
-      final card = state.deckById('es-en-tagged')!.cards.first;
-      for (final skill in Skill.values) {
-        state.settings.setSkillEnabled(skill, false);
-      }
-      expect(state.drillableModes(card), isEmpty);
-      expect(state.viewCard(card), isNull);
-      expect(state.progress.log, isEmpty);
-    });
-
     test('a walk covers every deck of the unit in deck order, each card once '
         'with its deck, taught or not', () async {
       final state = await teluguLearner();
@@ -689,10 +552,18 @@ void main() {
         addTearDown(state.dispose);
         await state.load();
         final card = state.deckById('es-en-tagged')!.cards.first;
-        final view = state.viewCard(card)!;
+        // A row an older version wrote when a card was only looked at.
+        final view = state.record(
+          SessionItem(
+            card: card,
+            mode: DrillMode.recognition,
+            state: null,
+            ask: Ask.teach,
+          ),
+          0,
+          asked: Ask.teach,
+        );
         expect(view.isView, isTrue);
-        // A card seen already, or taught, is not recorded again.
-        expect(state.viewCard(card), isNull);
 
         StatsNumbers numbers() => StatsNumbers.of(
           state.progress,

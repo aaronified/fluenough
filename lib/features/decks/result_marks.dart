@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../core/models/level.dart';
-import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 
-/// The amber of the "Professional" and "above your level" marks, and the
-/// colour on it (the approved mockups' `--pl` and `--onPl`; the same amber as
+/// The amber of the "Professional" mark, and the colour on it (the approved mockups' `--pl` and `--onPl`; the same amber as
 /// the Progress star's placed layer). At least 4.5:1 on the screen and on the
 /// card, light and dark.
 Color amberOf(BuildContext context) =>
@@ -36,9 +34,6 @@ enum ResultTagStyle {
   /// "Professional": filled amber.
   professional,
 
-  /// "Above your level": amber outline and text, with a lock.
-  above,
-
   /// "Public domain": blue outline and text, with a tick (the approved
   /// recommendations mockup's `--pr`).
   publicDomain,
@@ -64,7 +59,6 @@ class ResultTag extends StatelessWidget {
         null,
       ),
       ResultTagStyle.professional => (amber, onAmberOf(context), null),
-      ResultTagStyle.above => (null, amber, amber),
       ResultTagStyle.publicDomain => (
         null,
         publicDomainOf(context),
@@ -85,10 +79,7 @@ class ResultTag extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            if (style == ResultTagStyle.above) ...<Widget>[
-              Icon(Icons.lock_outline, size: 12, color: foreground),
-              const SizedBox(width: 4),
-            ] else if (style == ResultTagStyle.publicDomain) ...<Widget>[
+            if (style == ResultTagStyle.publicDomain) ...<Widget>[
               Icon(Icons.check, size: 12, color: foreground),
               const SizedBox(width: 4),
             ],
@@ -106,85 +97,24 @@ class ResultTag extends StatelessWidget {
   }
 }
 
-/// A level as a tag: "A2", or for an item above the learner's level "B1 ·
-/// above your level" with a lock. Nothing for an item with no level.
+/// A level as a tag: "A2". Nothing for an item with no level.
 class LevelTag extends StatelessWidget {
-  const LevelTag({super.key, required this.level, this.above = false});
+  const LevelTag({super.key, required this.level});
 
   final Level? level;
-  final bool above;
 
   @override
   Widget build(BuildContext context) {
     final level = this.level;
     if (level == null) return const SizedBox.shrink();
-    final l10n = AppLocalizations.of(context)!;
-    return ResultTag(
-      text: above ? l10n.searchAboveYourLevel(level.label) : level.label,
-      style: above ? ResultTagStyle.above : ResultTagStyle.level,
-    );
+    return ResultTag(text: level.label, style: ResultTagStyle.level);
   }
-}
-
-/// The sheet an item above the learner's level opens instead of starting: its
-/// name, its level, and that it opens once the learner reaches it. A preview,
-/// never a lesson.
-Future<void> showAboveLevelSheet(
-  BuildContext context, {
-  required String name,
-  required Level? level,
-}) {
-  final l10n = AppLocalizations.of(context)!;
-  final label = level?.label ?? '';
-  return showModalBottomSheet<void>(
-    context: context,
-    showDragHandle: true,
-    builder: (context) => SafeArea(
-      child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 16),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Row(
-              children: <Widget>[
-                Icon(Icons.lock_outline, color: amberOf(context)),
-                const SizedBox(width: 8),
-                Expanded(
-                  child: Semantics(
-                    header: true,
-                    child: Text(
-                      l10n.searchAboveSheetTitle,
-                      style: Theme.of(context).textTheme.titleLarge,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 12),
-            Text(
-              l10n.searchAboveSheetBody(name, label),
-              style: Theme.of(context).textTheme.bodyLarge,
-            ),
-            const SizedBox(height: 16),
-            Align(
-              alignment: AlignmentDirectional.centerEnd,
-              child: FilledButton(
-                onPressed: () => Navigator.of(context).pop(),
-                child: Text(l10n.commonClose),
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
-  );
 }
 
 /// One result row's frame: an optional 40 dp icon, a title, lines, tags, and
 /// an optional trailing widget; the whole row taps through [onTap]. [actions]
 /// sit under the row and are not part of its tap, so that a button in a row
-/// stays a button of its own. A [dim] row (above the learner's level) has a
+/// stays a button of its own. A [dim] row has a
 /// regular-weight, muted title.
 class ResultRow extends StatelessWidget {
   const ResultRow({

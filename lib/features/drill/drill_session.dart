@@ -25,6 +25,7 @@ import '../../core/scheduling/daily_timer.dart';
 import '../../core/scheduling/look_alike_options.dart';
 import '../../core/scheduling/picture_choice.dart';
 import '../../core/scheduling/fsrs.dart';
+import '../../core/scheduling/learn_sequence.dart';
 import '../../core/scheduling/question_type.dart';
 import '../../core/scheduling/session_queue.dart';
 import '../../core/sound/sound_check.dart';
@@ -52,6 +53,35 @@ enum SelfTake {
 
   /// Playing the recording back, then the voice.
   playing,
+}
+
+/// What an answer to a learn question changed: a small notice for the
+/// screen, shown once ([DrillSession.takeLearnNotice]).
+enum LearnNotice {
+  /// Both questions were right: the item is learned.
+  learned,
+
+  /// A question was missed: the item is not learned yet.
+  notYet,
+}
+
+/// An answer to a question of a learn attempt, held until both are right.
+class _Held {
+  const _Held({
+    required this.entry,
+    required this.grade,
+    required this.elapsed,
+    required this.answerGiven,
+    required this.script,
+    required this.asked,
+  });
+
+  final SessionItem entry;
+  final int grade;
+  final Duration elapsed;
+  final String? answerGiven;
+  final String? script;
+  final Ask asked;
 }
 
 /// One card as the learner left it: kept so that a swipe back shows it
@@ -241,6 +271,22 @@ class DrillSession extends ChangeNotifier {
 
   final List<SessionAnswer> _answers = <SessionAnswer>[];
   final Stopwatch _watch = Stopwatch();
+
+  /// The learn attempts of this sitting (owner, 2026-11-16): an item's two
+  /// answers are held here and reach the review log, and so FSRS, only when
+  /// both are right, in this one sitting.
+  late final LearnTracker<_Held> _learn = LearnTracker<_Held>(
+    now: () => _state.now(),
+  );
+
+  LearnNotice? _learnNotice;
+
+  /// What the last answer did to a learn attempt, once: null when nothing.
+  LearnNotice? takeLearnNotice() {
+    final notice = _learnNotice;
+    _learnNotice = null;
+    return notice;
+  }
   int _index = 0;
   DrillPhase _phase = DrillPhase.prompt;
   TypedAnswer? _answer;
@@ -1296,6 +1342,8 @@ class DrillSession extends ChangeNotifier {
         _watch.elapsed,
       );
     }
+    final tag = item.learn;
+    if (tag != null && tag.step == LearnStep.show) _learn.shown(tag.id);
     _advance();
   }
 
@@ -1634,14 +1682,20 @@ class DrillSession extends ChangeNotifier {
 
   void _recordItem(SessionItem entry, int grade, {String? answerGiven}) {
     if ((recorded || recordsRevision) && !_state.keepsOutOfLog(entry)) {
-      _state.record(
-        entry,
-        grade,
+      final held = _Held(
+        entry: entry,
+        grade: grade,
         elapsed: _watch.elapsed,
         answerGiven: answerGiven,
         script: answerScript(entry, typed: answerGiven),
         asked: ask,
       );
+      final tag = entry.learn;
+      if (tag == null || tag.step == LearnStep.show) {
+        _write(held);
+      } else {
+        _learnAnswer(tag, held);
+      }
     }
     _answers.add(
       SessionAnswer(
@@ -1650,6 +1704,40 @@ class DrillSession extends ChangeNotifier {
         time: _watch.elapsed,
       ),
     );
+  }
+
+  void _write(_Held held) => _state.record(
+    held.entry,
+    held.grade,
+    elapsed: held.elapsed,
+    answerGiven: held.answerGiven,
+    script: held.script,
+    asked: held.asked,
+  );
+
+  /// A learn question's answer: held until both of the item's are right, then
+  /// both are written together, so that its first FSRS review is from that
+  /// moment. A miss, or a gap or a sitting that broke the rule, writes
+  /// nothing: the item stays unlearnt.
+  void _learnAnswer(LearnTag tag, _Held held) {
+    final result = _learn.answer(
+      tag.id,
+      tag.step,
+      held.grade >= Fsrs.passingGrade,
+      held,
+    );
+    switch (result.outcome) {
+      case LearnOutcome.learned:
+        for (final answer in result.held) {
+          _write(answer);
+        }
+        _learnNotice = LearnNotice.learned;
+      case LearnOutcome.failed:
+        _learnNotice = LearnNotice.notYet;
+      case LearnOutcome.pending:
+      case LearnOutcome.dropped:
+        break;
+    }
   }
 
   /// Whether the current typed answer was graded as its reading, in Latin
@@ -1749,6 +1837,13 @@ class DrillSession extends ChangeNotifier {
   }
 
   void _advance() {
+    // A question left behind, answered or not, is one more between the
+    // questions of the learn attempts open; a learn question left
+    // unanswered ends its attempt.
+    if (!ask.onlyShows) {
+      final tag = item.learn;
+      _learn.left(id: tag?.id, step: tag?.step);
+    }
     if (_playing) _state.stopSpeaking();
     // Going on while a "Try again" listens: what it hears is dropped.
     if (_hearing) _state.stopListening();
@@ -1792,6 +1887,7 @@ class DrillSession extends ChangeNotifier {
       // The day's session has ended: its time reads full on Today, which
       // then offers nothing pending (#1007).
       if (run != null) _settleClock(run);
+      _learn.end();
       _endedAt = _state.now();
       _watch.stop();
       notifyListeners();
@@ -1842,6 +1938,8 @@ class DrillSession extends ChangeNotifier {
     if (_hearing) _state.stopListening();
     if (_hearingSelf != SelfTake.idle || _replaying) _state.soundCheck.stop();
     _take = null;
+    // Leaving the drill drops every open attempt: nothing of it was written.
+    _learn.end();
     super.dispose();
   }
 }

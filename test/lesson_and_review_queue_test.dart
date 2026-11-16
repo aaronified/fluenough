@@ -945,8 +945,8 @@ void main() {
       ).map(shape).toList();
 
       test(
-        'teaches and checks each card, then asks it once more; a grammar cell '
-        'is taught and typed',
+        'shows and asks each card at once, three together, then asks it '
+        'again in another type after two other questions',
         () {
           expect(plan(nine), <String>[
             'e0:recognition:teach',
@@ -955,51 +955,50 @@ void main() {
             'e1:recognition:chooseMeaning',
             'e2:recognition:teach',
             'e2:recognition:chooseMeaning',
+            'e0:speaking:own',
+            'e1:speaking:own',
+            'e2:speaking:own',
             'm0:listening:teach',
             'm0:listening:hearMeaning',
             'm1:listening:teach',
             'm1:listening:hearMeaning',
             'm2:listening:teach',
             'm2:listening:hearMeaning',
+            'm0:recognition:chooseMeaning',
+            'm1:recognition:chooseMeaning',
+            'm2:recognition:chooseMeaning',
             'h0:production:teach',
             'h0:production:rearrange',
             'h1:production:teach',
             'h1:production:rearrange',
             'h2:production:teach',
             'h2:production:rearrange',
-            // The exercise.
-            'e0:speaking:own',
-            'match(m0,m1,m2)',
             'h0:speaking:own',
-            'e1:speaking:own',
             'h1:speaking:own',
-            'e2:speaking:own',
             'h2:speaking:own',
           ]);
-
-          final cell = cardLesson('g', 'voy', modes: DrillMode.vocabulary);
-          expect(plan(<Card>[cell]), <String>[
-            'g:grammar:teach',
-            'g:grammar:own',
-          ]);
         },
       );
 
-      test(
-        'without a voice, a medium card is checked by choosing the word',
-        () {
-          final items = plan(medium, voice: false, speech: false);
-          expect(items, <String>[
-            'm0:production:teach',
-            'm0:production:chooseWord',
-            'm1:production:teach',
-            'm1:production:chooseWord',
-            'm2:production:teach',
-            'm2:production:chooseWord',
-            'match(m0,m1,m2)',
-          ]);
-        },
-      );
+      test('a grammar cell with one type of question cannot be learned', () {
+        final cell = cardLesson('g', 'voy', modes: DrillMode.vocabulary);
+        expect(plan(<Card>[cell]), isEmpty);
+      });
+
+      test('without a voice, a medium card is asked by choosing', () {
+        final items = plan(medium, voice: false, speech: false);
+        expect(items, <String>[
+          'm0:recognition:teach',
+          'm0:recognition:chooseMeaning',
+          'm1:recognition:teach',
+          'm1:recognition:chooseMeaning',
+          'm2:recognition:teach',
+          'm2:recognition:chooseMeaning',
+          'm0:production:chooseWord',
+          'm1:production:chooseWord',
+          'm2:production:chooseWord',
+        ]);
+      });
     });
   });
 

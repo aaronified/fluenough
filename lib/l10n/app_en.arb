@@ -4037,6 +4037,14 @@
   "@drillEndKeepGoing": {
     "description": "Button that stays in the session."
   },
+  "learnLearned": "Learned",
+  "@learnLearned": {
+    "description": "Small notice after the second question of a new word is answered right, when both of its questions were right: the word is learned."
+  },
+  "learnNotYet": "Not yet",
+  "@learnNotYet": {
+    "description": "Small notice after a new word's question is missed: the word is not learned yet and will come back."
+  },
   "feedbackCorrect": "Correct",
   "@feedbackCorrect": {
     "description": "Feedback: the typed answer was right."
@@ -15299,16 +15307,6 @@
   "@searchTagProfessionalPlain": {
     "description": "Small tag on a professional situation whose profession is not named."
   },
-  "searchAboveYourLevel": "{level} · above your level",
-  "@searchAboveYourLevel": {
-    "description": "Small tag on a search result above the learner's level: its level, with a lock before it. Nothing above the level can be started.",
-    "placeholders": {
-      "level": {
-        "type": "String",
-        "example": "B1"
-      }
-    }
-  },
   "searchPhraseCount": "{count, plural, one{1 phrase} other{{count} phrases}}",
   "@searchPhraseCount": {
     "description": "How many phrases a situation sheet or a professional deck has.",
@@ -15491,24 +15489,6 @@
   "@searchTry": {
     "description": "Heading above suggested searches under the empty search state."
   },
-  "searchAboveHidden": "{count, plural, one{1 result above your level is hidden} other{{count} results above your level are hidden}}",
-  "@searchAboveHidden": {
-    "description": "Under the results while Hide what is above my level is on: how many results it left out.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "2"
-      }
-    }
-  },
-  "searchShowAbove": "Show them",
-  "@searchShowAbove": {
-    "description": "Button after the hidden-above-level line: turns Hide what is above my level off."
-  },
-  "searchHideAboveHint": "Setting: Hide what is above my level.",
-  "@searchHideAboveHint": {
-    "description": "Hint under the hidden-above-level line, naming the setting."
-  },
   "searchRecent": "Recent",
   "@searchRecent": {
     "description": "Heading above the searches the learner made recently, shown before typing."
@@ -15520,36 +15500,6 @@
   "searchTabsHint": "Tabs appear after you type, and only for types that have results.",
   "@searchTabsHint": {
     "description": "Hint under the types of result, shown before typing."
-  },
-  "searchAboveSheetTitle": "Above your level",
-  "@searchAboveSheetTitle": {
-    "description": "Title of the sheet a result above the learner's level opens."
-  },
-  "searchAboveSheetBody": "{name} starts at {level}. It opens once you reach {level} or are placed past it. Nothing in it can be started yet.",
-  "@searchAboveSheetBody": {
-    "description": "Body of the sheet a result above the learner's level opens.",
-    "placeholders": {
-      "name": {
-        "type": "String",
-        "example": "Unit 38"
-      },
-      "level": {
-        "type": "String",
-        "example": "B1"
-      }
-    }
-  },
-  "settingsHideAbove": "Hide what is above my level",
-  "@settingsHideAbove": {
-    "description": "Switch in Settings: search and topics list what is above the learner's level marked, unless this is on."
-  },
-  "settingsHideAboveOn": "Search leaves out decks, topics and units above your level",
-  "@settingsHideAboveOn": {
-    "description": "Under Hide what is above my level, while it is on."
-  },
-  "settingsHideAboveOff": "Search lists them, marked with their level and locked",
-  "@settingsHideAboveOff": {
-    "description": "Under Hide what is above my level, while it is off."
   },
   "topicNotFound": "This topic is not available.",
   "@topicNotFound": {
@@ -15625,42 +15575,6 @@
       }
     }
   },
-  "topicAboveTitle": "Above your level",
-  "@topicAboveTitle": {
-    "description": "Heading of the notice on a topic that starts above the learner's level."
-  },
-  "topicAboveBody": "This topic starts at {topicLevel}. You can read it, but drills use only cards at {level} or below ({count} here).",
-  "@topicAboveBody": {
-    "description": "Notice on a topic above the learner's level: what can and cannot be done.",
-    "placeholders": {
-      "topicLevel": {
-        "type": "String",
-        "example": "B1"
-      },
-      "level": {
-        "type": "String",
-        "example": "A2"
-      },
-      "count": {
-        "type": "int",
-        "example": "3"
-      }
-    }
-  },
-  "topicAboveBodyNoLevel": "This topic starts at {topicLevel}. You can read it, but nothing in it can be drilled yet.",
-  "@topicAboveBodyNoLevel": {
-    "description": "Notice on a topic above the level of a learner whose course has no level.",
-    "placeholders": {
-      "topicLevel": {
-        "type": "String",
-        "example": "B1"
-      }
-    }
-  },
-  "topicAboveYourLevelCue": "Above your level",
-  "@topicAboveYourLevelCue": {
-    "description": "Screen-reader label of the lock icon on a topic chip whose level is above the learner's."
-  },
   "topicUnits": "Units",
   "@topicUnits": {
     "description": "Heading above the path units a topic names."
@@ -15713,16 +15627,6 @@
   "@topicShowFewer": {
     "description": "Button that folds a topic's long list of cards."
   },
-  "topicCardsAbove": "{count, plural, one{1 more card is above your level} other{{count} more cards are above your level}}",
-  "@topicCardsAbove": {
-    "description": "Row after a topic's cards: how many are above the learner's level and so not listed.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "3"
-      }
-    }
-  },
   "topicDeckCards": "Topic cards: {topic} of {total} cards",
   "@topicDeckCards": {
     "description": "Line under a deck on a topic page: how many of its cards belong to the topic.",
@@ -15752,16 +15656,6 @@
       "count": {
         "type": "int",
         "example": "14"
-      }
-    }
-  },
-  "topicDrillCountLimited": "Drill this topic ({count} at your level)",
-  "@topicDrillCountLimited": {
-    "description": "Button at the foot of a topic page above the learner's level: how many of its cards the learner may drill.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "3"
       }
     }
   },
@@ -15877,26 +15771,6 @@
   "@cultureSettingShowOff": {
     "description": "Line under the culture switch while it is off."
   },
-  "cultureSettingAboveHeading": "Items above my level",
-  "@cultureSettingAboveHeading": {
-    "description": "Heading of the choice of what to do with a culture item above the learner’s level."
-  },
-  "cultureSettingAboveHide": "Do not show them",
-  "@cultureSettingAboveHide": {
-    "description": "Choice: culture items above the learner’s level are not shown."
-  },
-  "cultureSettingAboveHideBody": "Unlocks when you reach the level",
-  "@cultureSettingAboveHideBody": {
-    "description": "Line under the choice that hides items above the level."
-  },
-  "cultureSettingAboveSupport": "Show with support",
-  "@cultureSettingAboveSupport": {
-    "description": "Choice: culture items above the learner’s level are shown with support."
-  },
-  "cultureSettingAboveSupportBody": "Words glossed, a lock mark, not counted",
-  "@cultureSettingAboveSupportBody": {
-    "description": "Line under the choice that shows items above the level with support."
-  },
   "cultureSettingHowMany": "How many",
   "@cultureSettingHowMany": {
     "description": "Heading of the culture settings that say how many items a unit gets and how they count."
@@ -16006,28 +15880,6 @@
   "cultureNoKnownAuthor": "No known author",
   "@cultureNoKnownAuthor": {
     "description": "The author of a source line when the source names none."
-  },
-  "cultureNotShownTitle": "Not shown yet",
-  "@cultureNotShownTitle": {
-    "description": "Title of the notice on an item above the learner’s level that is not shown."
-  },
-  "cultureNotShownBody": "This item is at {level}. It opens when you reach that level.",
-  "@cultureNotShownBody": {
-    "description": "Body of the notice on an item above the learner’s level that is not shown.",
-    "placeholders": {
-      "level": {
-        "type": "String",
-        "example": "B1"
-      }
-    }
-  },
-  "cultureAboveTitle": "Above your level",
-  "@cultureAboveTitle": {
-    "description": "Title of the notice on an item above the learner’s level that is shown with support."
-  },
-  "cultureAboveBody": "Its words are glossed. It will not count toward your progress or be scheduled for review.",
-  "@cultureAboveBody": {
-    "description": "Body of the notice on an item above the learner’s level that is shown with support."
   },
   "culturePractise": "Practise this item",
   "@culturePractise": {
@@ -16337,17 +16189,13 @@
       }
     }
   },
-  "cultureDeckCount": "{count, plural, =1{1 item} other{{count} items}} · {atLevel} at your level",
+  "cultureDeckCount": "{count, plural, =1{1 item} other{{count} items}}",
   "@cultureDeckCount": {
     "description": "Under the title of the culture deck.",
     "placeholders": {
       "count": {
         "type": "int",
         "example": "3"
-      },
-      "atLevel": {
-        "type": "int",
-        "example": "1"
       }
     }
   },
@@ -16362,16 +16210,6 @@
   "culturePeople": "People",
   "@culturePeople": {
     "description": "Heading of the list of creators in the culture deck."
-  },
-  "cultureUnlocksAt": "Unlocks at {level}",
-  "@cultureUnlocksAt": {
-    "description": "Title of a locked culture item.",
-    "placeholders": {
-      "level": {
-        "type": "String",
-        "example": "B1"
-      }
-    }
   },
   "cultureRowKindSource": "{kind} · {source}",
   "@cultureRowKindSource": {
@@ -16482,20 +16320,6 @@
       "count": {
         "type": "int",
         "example": "3"
-      }
-    }
-  },
-  "recHiddenAbove": "{count, plural, =1{1 more work is} other{{count} more works are}} above your level. They unlock at {level}.",
-  "@recHiddenAbove": {
-    "description": "Under the filter chips: works hidden because they are above the level.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "2"
-      },
-      "level": {
-        "type": "String",
-        "example": "B1"
       }
     }
   },

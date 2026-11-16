@@ -2,7 +2,7 @@
 // approved mockup docs/mockups/culture-recommendations.html, default variants):
 // the browse list with kind chips and a briefing per row, the open row with
 // "I've completed this", the badge on a public-domain work a culture deck
-// quotes, works above the level counted and not listed, the completed works on
+// quotes, every work listed whatever its level, the completed works on
 // Today as a cover strip, and the questions of a completed work.
 
 import 'package:fluenough/app/app_state.dart';
@@ -35,25 +35,22 @@ const WorkQuestionsPage _questions = WorkQuestionsPage(
 );
 
 Future<void> _complete(AppState state, String id) async {
-  final work = state.catalogWithAboveLevel.recommendations['zz']!.byId(id)!;
+  final work = state.catalogView.recommendations['zz']!.byId(id)!;
   state.recommendationProgress.complete(work, 'zz', state.now());
 }
 
 void main() {
   group('the list', () {
-    testWidgets('offers the works at the level, with the rest counted', (
-      tester,
-    ) async {
+    testWidgets('offers every work, whatever its level', (tester) async {
       usePhone(tester);
       await pumpScreen(tester, _page, state: await cultureApp());
       expect(find.text(_book), findsOneWidget);
-      expect(find.text(_film), findsNothing);
-      expect(find.text(_l10n.recChipAll(1)), findsOneWidget);
+      expect(find.text(_film), findsOneWidget);
+      expect(find.text(_l10n.recChipAll(3)), findsOneWidget);
       expect(
-        find.text(_l10n.recChipKind(_l10n.recMediumBook, 1)),
+        find.text(_l10n.recChipKind(_l10n.recMediumBook, 2)),
         findsOneWidget,
       );
-      expect(find.text(_l10n.recHiddenAbove(2, 'A2')), findsOneWidget);
       expect(find.text(_l10n.recIntro), findsOneWidget);
     });
 

@@ -2,7 +2,7 @@
 /// asked (wiki/Plan-Deck-Kinds-And-Topics.md, D13, T24). Pure functions over
 /// data, free of Flutter, so that the rules are tested in milliseconds.
 ///
-/// * A recommendation above the learner's level is not offered (D2).
+/// * No level keeps a recommendation out (owner, 2026-11-16).
 /// * Books and scripts (owner's rule, open question 11): a `book` is
 ///   recommended only when the learner's course includes script learning in
 ///   that language (the path has an `alphabet`, or the learner is on a
@@ -13,7 +13,6 @@
 /// * Questions are asked only on a work the learner marked completed.
 library;
 
-import '../models/level.dart';
 import '../models/reading.dart' show ReadingQuestion;
 import '../models/recommendation.dart';
 
@@ -42,15 +41,13 @@ class RecommendationCourse {
   bool get learnsScripts => pathHasAlphabet || scriptOnly || latinOnly;
 }
 
-/// Whether [recommendation] is offered to a learner on [course] at [level]
-/// (null for a language with no levels, which is offered no levelled work).
-/// A recommendation with no level of its own is open to everyone.
+/// Whether [recommendation] is offered to a learner on [course]: a book only
+/// where the course teaches the script, and a script-only learner's only in a
+/// script they learn.
 bool recommendationOffered(
   Recommendation recommendation,
   RecommendationCourse course,
-  Level? level,
 ) {
-  if (!LevelGate.allows(recommendation.level, level)) return false;
   if (!recommendation.isBook) return true;
   if (!course.learnsScripts) return false;
   if (course.scriptOnly) {
@@ -64,10 +61,9 @@ bool recommendationOffered(
 List<Recommendation> offeredRecommendations(
   Iterable<Recommendation> all,
   RecommendationCourse course,
-  Level? level,
 ) => <Recommendation>[
   for (final r in all)
-    if (recommendationOffered(r, course, level)) r,
+    if (recommendationOffered(r, course)) r,
 ];
 
 /// The questions of [recommendation] that may be asked: all of them when the

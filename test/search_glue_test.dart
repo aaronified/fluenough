@@ -81,7 +81,6 @@ void main() {
         isTrue,
       );
       expect(found.close, isFalse);
-      expect(found.hiddenAbove, 0);
     });
 
     test('puts a typo right only when nothing is found exactly', () async {
@@ -96,14 +95,9 @@ void main() {
       expect(state.searchItems('zz', 'house').close, isFalse);
     });
 
-    test('lists what is above the level marked, or counts it hidden', () async {
+    test('lists what is above the level, which is never hidden', () async {
       final state = await kindsWorldApp();
-      final listed = state.searchItems('zz', 'library');
-      expect(listed.outcome.results.single.aboveLevel, isTrue);
-      state.settings.hideAboveLevel = true;
-      final hidden = state.searchItems('zz', 'library');
-      expect(hidden.outcome.results, isEmpty);
-      expect(hidden.hiddenAbove, 1);
+      expect(state.searchItems('zz', 'library').outcome.results, hasLength(1));
     });
 
     test('is built once for a catalog, and topics with it', () async {
@@ -119,7 +113,7 @@ void main() {
     test('reads the sections file of the downloaded decks', () async {
       final state = await kindsWorldApp();
       expect(
-        state.catalogWithAboveLevel.sections.searchKinds.map((k) => k.id),
+        state.catalogView.sections.searchKinds.map((k) => k.id),
         contains('topics'),
       );
     });
@@ -143,7 +137,7 @@ void main() {
         expect(course.pathHasAlphabet, isFalse);
         expect(course.learnsScripts, isTrue);
         expect(
-          state.catalogWithAboveLevel.recommendations['zz']!.recommendations,
+          state.catalogView.recommendations['zz']!.recommendations,
           hasLength(2),
         );
         // A learner at A1 is offered neither the A2 book nor the B1 film.

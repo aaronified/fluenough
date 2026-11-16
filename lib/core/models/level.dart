@@ -1,7 +1,8 @@
-/// The levels a deck, a card or a passage may carry and the one gate every
-/// levelled item passes (wiki/Plan-Deck-Kinds-And-Topics.md, D2). Pure Dart and
-/// imports nothing, so that the models can use it; the learner's level and the
-/// units that give it are in `lib/core/decks/levels.dart`.
+/// The levels a deck, a card or a passage may carry (wiki/Plan-Deck-Kinds-And-
+/// Topics.md, D2). A level orders and labels content; it never blocks it
+/// (owner, 2026-11-16: everything is viewable and learnable). Pure Dart and
+/// imports nothing, so that the models can use it; the units that carry a level
+/// are in `lib/core/decks/levels.dart`.
 library;
 
 /// A CEFR-style level, in order: `A1 < A2 < B1 < B2 < C1 < C2`. The paths
@@ -32,33 +33,4 @@ enum Level {
     }
     return null;
   }
-}
-
-/// The one gate a levelled item passes (D2): an item above the learner's level
-/// is never drilled, never shown as content and never put in a result with its
-/// text. Every place a levelled item reaches the learner calls it.
-abstract final class LevelGate {
-  /// Whether an item of level [item] may reach a learner at [learner]. An item
-  /// with no level is open to everyone, and so are those of a learner at or
-  /// above it. A language with no levels ([learner] null) offers no levelled
-  /// item at all.
-  static bool allows(Level? item, Level? learner) {
-    if (item == null) return true;
-    if (learner == null) return false;
-    return learner.isAtLeast(item);
-  }
-
-  /// Whether [item] is above [learner]: the opposite of [allows], for the
-  /// places that list such an item marked with its level (search).
-  static bool isAbove(Level? item, Level? learner) => !allows(item, learner);
-
-  /// The items of [items] a learner at [learner] may be given, in order.
-  static List<T> filter<T>(
-    Iterable<T> items,
-    Level? learner,
-    Level? Function(T item) levelOf,
-  ) => <T>[
-    for (final item in items)
-      if (allows(levelOf(item), learner)) item,
-  ];
 }

@@ -678,9 +678,9 @@ class Card {
   /// sheet and the teach card's dictionary show.
   final CardDictionary? dictionary;
 
-  /// The lowest level the card suits (`level`, D2 of the deck-kinds plan): a
-  /// learner below it is never given the card. Null: the deck's level, if it
-  /// has one, applies; see [LevelGate].
+  /// The lowest level the card suits (`level`, D2 of the deck-kinds plan): it
+  /// orders and labels the card, never blocks it. Null: the deck's level, if it
+  /// has one, applies.
   final Level? level;
 
   /// The ids of the creators of the work the card quotes (`creator`: one id,

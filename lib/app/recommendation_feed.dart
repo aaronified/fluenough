@@ -4,7 +4,7 @@ import '../core/models/recommendation.dart';
 import 'app_state.dart';
 
 /// Recommended works fed from the catalog (deck-kinds plan, D13, T24 glue):
-/// the language's file, the learner's course and level, and the gate between
+/// the language's file, the learner's course, and the books rule between
 /// them. The homepage that lists them is the culture track's (T26).
 extension RecommendationFeed on AppState {
   /// What the books rule needs to know of the learner's course in [language]:
@@ -16,7 +16,7 @@ extension RecommendationFeed on AppState {
     for (final candidate in languages) {
       if (candidate.code == language) info = candidate;
     }
-    final path = catalogWithAboveLevel.languagePaths[language];
+    final path = catalogView.languagePaths[language];
     return RecommendationCourse(
       pathHasAlphabet: path != null && path.alphabet.isNotEmpty,
       latinOnly: info != null && info.allScripts.every((s) => s == 'latin'),
@@ -24,15 +24,14 @@ extension RecommendationFeed on AppState {
     );
   }
 
-  /// The works of [language]'s file the learner is offered at their level and
-  /// in their course, in the file's order; none without a file.
+  /// The works of [language]'s file the learner is offered in their course, in
+  /// the file's order; none without a file.
   List<Recommendation> recommendationsFor(String language) {
-    final file = catalogWithAboveLevel.recommendations[language];
+    final file = catalogView.recommendations[language];
     if (file == null) return const <Recommendation>[];
     return offeredRecommendations(
       file.recommendations,
       recommendationCourseOf(language),
-      levelIn(language),
     );
   }
 }

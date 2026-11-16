@@ -126,9 +126,9 @@ class LegacyItem {
   String textFor(Iterable<String> spoken) => _pick(texts, spoken);
 }
 
-/// What a creator's legacy shows a learner at a level: the summary in their
-/// spoken language, the summary in the language learned at the highest level
-/// at or below theirs (when the file has one), and the items.
+/// What a creator's legacy shows a learner: the summary in their spoken
+/// language, the summary in the language learned at its simplest level (when
+/// the file has one), and the items.
 class LegacyView {
   const LegacyView({required this.text, required this.items, this.target});
 
@@ -210,19 +210,18 @@ class Creator {
   /// when there is none.
   String bioFor(Iterable<String> spoken) => _pick(bio, spoken);
 
-  /// The bio in the language learned at the highest level at or below
-  /// [level], or null: for a learner with no level ([level] null), or a file
-  /// with none at or below it.
-  CreatorText? bioTargetFor(Level? level) => _atOrBelow(bioTarget, level);
+  /// The bio in the language learned at its simplest level, or null for a file
+  /// with none. A level picks the text; it never hides the creator.
+  CreatorText? get bioTargetSimplest => _simplest(bioTarget);
 
-  /// The legacy a learner at [level] sees, with the summary in [spoken]; null
-  /// when the creator has none.
-  LegacyView? legacyFor(Level? level, Iterable<String> spoken) {
+  /// The legacy a learner sees, with the summary in [spoken]; null when the
+  /// creator has none.
+  LegacyView? legacyFor(Iterable<String> spoken) {
     final legacy = this.legacy;
     if (legacy == null) return null;
     return LegacyView(
       text: _pick(legacy.text, spoken),
-      target: _atOrBelow(legacy.textTarget, level),
+      target: _simplest(legacy.textTarget),
       items: legacy.items,
     );
   }
@@ -231,13 +230,11 @@ class Creator {
   String toString() => 'Creator($id)';
 }
 
-CreatorText? _atOrBelow(Map<Level, CreatorText> byLevel, Level? level) {
-  if (level == null) return null;
+CreatorText? _simplest(Map<Level, CreatorText> byLevel) {
   CreatorText? best;
   Level? bestLevel;
   for (final MapEntry(:key, :value) in byLevel.entries) {
-    if (!level.isAtLeast(key)) continue;
-    if (bestLevel == null || key.index > bestLevel.index) {
+    if (bestLevel == null || key.index < bestLevel.index) {
       best = value;
       bestLevel = key;
     }

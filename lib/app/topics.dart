@@ -1,11 +1,10 @@
 import '../core/data/course_path.dart' show PlanUnit;
 import '../core/decks/deck_index.dart';
 import '../core/decks/topic_resolver.dart';
-import '../core/models/level.dart';
 import '../core/models/situation.dart';
 import 'app_state.dart';
+import 'core_ids.dart';
 import 'deck_catalog.dart';
-import 'learner_levels.dart';
 
 /// A language's topics (deck-kinds plan, D6) resolved against the catalog and
 /// the index: what each names, and the cards a drill on it uses. No screens
@@ -66,18 +65,12 @@ class Topics {
     return null;
   }
 
-  /// The ids of the cards a drill on topic [id] uses for a learner at
-  /// [learner]; empty for an unknown topic or one above the level.
-  List<String> drillCards(String id, Level? learner) {
+  /// The ids of the cards a drill on topic [id] uses; empty for an unknown
+  /// topic.
+  List<String> drillCards(String id) {
     final r = byId(id);
-    return r == null ? const <String>[] : topicDrillCards(r, world, learner);
+    return r == null ? const <String>[] : topicDrillCards(r, world);
   }
-
-  /// The topics a learner at [learner] may start: none above their level.
-  List<ResolvedTopic> startable(Level? learner) => <ResolvedTopic>[
-    for (final r in resolved)
-      if (LevelGate.allows(r.topic.level, learner)) r,
-  ];
 
   static TopicWorld _worldOf(
     Catalog catalog,
@@ -87,7 +80,7 @@ class Topics {
     final byCore = <String, TopicDeckFact>{};
     void add(DeckEntry entry, {required bool hidden}) {
       if (entry.language.code != language) return;
-      final core = LearnerLevels.coreIdOf(
+      final core = coreIdOf(
         entry.id,
         language,
         entry.deck.native.code,
@@ -157,13 +150,12 @@ _topicsKept = Expando<Map<String, ({List<IndexShelf> shelves, Topics topics})>>(
 
 /// A language's topics for the screens (T19).
 extension TopicsState on AppState {
-  /// [language]'s topics, resolved against the catalog with what is above the
-  /// learner's level still in it (a topic page marks and limits it, never
-  /// hides what it names) and against the index's hidden decks. Kept until the
+  /// [language]'s topics, resolved against the catalog and against the
+  /// index's hidden decks. Kept until the
   /// catalog or the index's shelves change; what the app log should hear of
   /// is reported once.
   Topics topicsOf(String language) {
-    final catalog = catalogWithAboveLevel;
+    final catalog = catalogView;
     final shelves =
         deckDownloads?.index?.language(language)?.shelves ??
         const <IndexShelf>[];

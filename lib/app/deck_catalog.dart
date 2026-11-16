@@ -351,44 +351,6 @@ class Catalog {
     return _with(decks: shown, hidden: shownHidden);
   }
 
-  /// This catalog as a learner at the levels [levelOf] gives has it (D2 of the
-  /// deck-kinds plan, [LevelGate]): a deck above the learner's level in its
-  /// language is gone, and so is every card and passage above it in the decks
-  /// that stay. [levelOf] gives a language's level by its code, null for a
-  /// language with no levels, in which no levelled item is offered. The same
-  /// catalog when nothing is above the level, so that every screen reads one
-  /// list.
-  Catalog forLevels(Level? Function(String language) levelOf) {
-    var changed = false;
-    List<DeckEntry> scoped(List<DeckEntry> entries) {
-      final shown = <DeckEntry>[];
-      for (final entry in entries) {
-        final deck = entry.deck.forLevel(levelOf(entry.language.code));
-        if (identical(deck, entry.deck)) {
-          shown.add(entry);
-          continue;
-        }
-        changed = true;
-        if (deck != null) {
-          shown.add(
-            DeckEntry(
-              path: entry.path,
-              deck: deck,
-              bundled: entry.bundled,
-              private: entry.private,
-            ),
-          );
-        }
-      }
-      return shown;
-    }
-
-    final shown = scoped(decks);
-    final shownHidden = scoped(hidden);
-    if (!changed) return this;
-    return _with(decks: shown, hidden: shownHidden);
-  }
-
   /// This catalog with other [decks] and [hidden], all else the same.
   Catalog _with({
     required List<DeckEntry> decks,

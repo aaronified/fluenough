@@ -12,8 +12,7 @@ import '../settings/settings_controls.dart';
 import '../settings/settings_section_page.dart';
 
 /// Settings' Culture page (approved mockup `culture-in-course`, screen 6): the
-/// switch for culture items, what to do with an item above the learner's level
-/// (not shown, or shown with support), how many to weave into each unit, whether
+/// switch for culture items, how many to weave into each unit, whether
 /// they count toward path progress or are a bonus, and whether to show the
 /// creator and what still lives today.
 class CultureSettingsPage extends StatelessWidget {
@@ -38,30 +37,6 @@ class CultureSettingsPage extends StatelessWidget {
                 subtitleOff: l10n.cultureSettingShowOff,
                 value: settings.cultureItems,
                 onChanged: (on) => settings.cultureItems = on,
-              ),
-            ],
-          ),
-          GroupedList.settings(
-            header: l10n.cultureSettingAboveHeading,
-            children: <Widget>[
-              RadioGroup<bool>(
-                groupValue: settings.cultureAboveSupport,
-                onChanged: (value) =>
-                    settings.cultureAboveSupport = value ?? false,
-                child: Column(
-                  children: <Widget>[
-                    RadioListTile<bool>(
-                      value: false,
-                      title: Text(l10n.cultureSettingAboveHide),
-                      subtitle: Text(l10n.cultureSettingAboveHideBody),
-                    ),
-                    RadioListTile<bool>(
-                      value: true,
-                      title: Text(l10n.cultureSettingAboveSupport),
-                      subtitle: Text(l10n.cultureSettingAboveSupportBody),
-                    ),
-                  ],
-                ),
               ),
             ],
           ),

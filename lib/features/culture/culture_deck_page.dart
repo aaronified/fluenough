@@ -6,7 +6,6 @@ import '../../app/culture.dart';
 import '../../app/routes.dart';
 import '../../core/decks/weave.dart';
 import '../../core/models/creator.dart';
-import '../../core/models/level.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
@@ -20,9 +19,8 @@ import 'culture_parts.dart';
 
 /// The full culture deck of a course (approved mockup `culture-in-course`,
 /// screen 8): every culture and proverbs item the course holds with its kind,
-/// source and level, the ones above the learner's level locked ("Unlocks at
-/// B1", or shown with support when Settings says so), and a People list of the
-/// creators behind them, each opening their card.
+/// source and level, none locked, and a People list of the creators behind
+/// them, each opening their card.
 ///
 /// Reached from an item, from the culture settings and from the recommendations
 /// list; "Show culture items" off leaves it here, as it leaves search.
@@ -55,13 +53,13 @@ class CultureDeckPage extends StatelessWidget {
   }
 
   /// The creators to list: those a shown item cites, and those no work cites
-  /// anywhere; never one only a work out of sight cites (above the level, in a
-  /// hidden deck, in a deck that does not weave, or a recommended work), whose
-  /// name would give it away (the timeline's rule, from the same two sets).
-  List<Creator> _people(AppState state, CreatorsFile? file, bool support) {
+  /// anywhere; never one only a work out of sight cites (in a hidden deck, in a
+  /// deck that does not weave, or a recommended work), whose name would give it
+  /// away (the timeline's rule, from the same two sets).
+  List<Creator> _people(AppState state, CreatorsFile? file) {
     if (file == null) return const <Creator>[];
     final cited = state.creatorsCitedIn(language);
-    final shown = state.creatorsShownIn(language, support: support);
+    final shown = state.creatorsShownIn(language);
     return <Creator>[
       for (final c in file.creators)
         if (!cited.contains(c.id) || shown.contains(c.id)) c,
@@ -73,14 +71,9 @@ class CultureDeckPage extends StatelessWidget {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final info = cultureLanguage(state, language);
-    final learner = state.levelIn(language);
-    final support = state.settings.cultureAboveSupport;
     final items = state.cultureItemsIn(language);
     final file = state.creatorsOf(language);
-    final atLevel = items
-        .where((i) => LevelGate.allows(i.level, learner))
-        .length;
-    final people = _people(state, file, support);
+    final people = _people(state, file);
     final showPeople = state.settings.cultureCreators;
     return Scaffold(
       appBar: AppBar(
@@ -109,7 +102,7 @@ class CultureDeckPage extends StatelessWidget {
                     horizontal: AppSizes.textInset,
                   ),
                   child: Text(
-                    l10n.cultureDeckCount(items.length, atLevel),
+                    l10n.cultureDeckCount(items.length),
                     style: theme.textTheme.bodyMedium!.copyWith(
                       color: scheme.onSurfaceVariant,
                     ),
@@ -124,8 +117,6 @@ class CultureDeckPage extends StatelessWidget {
                       _ItemRow(
                         item: item,
                         language: language,
-                        above: LevelGate.isAbove(item.level, learner),
-                        support: support,
                       ),
                   ],
                 ),
@@ -181,26 +172,18 @@ class CultureDeckPage extends StatelessWidget {
 }
 
 /// One item of the culture deck: its first line, its kind, who and when, and
-/// its level; locked while above the learner, with the level it unlocks at.
+/// its level.
 class _ItemRow extends StatelessWidget {
-  const _ItemRow({
-    required this.item,
-    required this.language,
-    required this.above,
-    required this.support,
-  });
+  const _ItemRow({required this.item, required this.language});
 
   final CultureItem item;
   final String language;
-  final bool above;
-  final bool support;
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
     final info = cultureLanguage(state, language);
-    final locked = above && !support;
     final source = item.source;
     final who = <String>[
       if (source?.author != null)
@@ -211,43 +194,28 @@ class _ItemRow extends StatelessWidget {
       ?source?.date,
     ].join(' · ');
     return ResultRow(
-      icon: locked ? Icons.lock_outline : Icons.format_quote,
-      iconColor: locked ? amberOf(context) : null,
-      title: locked
-          ? l10n.cultureUnlocksAt(item.level.label)
-          : item.target.split('\n').first,
-      titleWidget: locked
-          ? null
-          : TargetText(
-              item.target.split('\n').first,
-              language: info,
-              fontSize: 18,
-              fontWeight: FontWeight.w500,
-              textAlign: TextAlign.start,
-              card: item.card,
-            ),
-      dim: locked,
+      icon: Icons.format_quote,
+      title: item.target.split('\n').first,
+      titleWidget: TargetText(
+        item.target.split('\n').first,
+        language: info,
+        fontSize: 18,
+        fontWeight: FontWeight.w500,
+        textAlign: TextAlign.start,
+        card: item.card,
+      ),
       lines: <Widget>[
-        if (!locked)
-          RowLine(
-            who.isEmpty
-                ? cultureKindName(l10n, item.kind)
-                : l10n.cultureRowKindSource(
-                    cultureKindName(l10n, item.kind),
-                    who,
-                  ),
-          )
-        else
-          RowLine(cultureKindName(l10n, item.kind)),
+        RowLine(
+          who.isEmpty
+              ? cultureKindName(l10n, item.kind)
+              : l10n.cultureRowKindSource(
+                  cultureKindName(l10n, item.kind),
+                  who,
+                ),
+        ),
       ],
-      tags: <Widget>[LevelTag(level: item.level, above: above)],
-      onTap: locked
-          ? () => showAboveLevelSheet(
-              context,
-              name: cultureKindName(l10n, item.kind),
-              level: item.level,
-            )
-          : () => AppNavigator.openCultureItem(context, language, item.id),
+      tags: <Widget>[LevelTag(level: item.level)],
+      onTap: () => AppNavigator.openCultureItem(context, language, item.id),
     );
   }
 }

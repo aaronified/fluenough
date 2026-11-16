@@ -5,7 +5,7 @@
 // creator card with the picture's credit or its placeholder, the bio at the
 // learner's level, "Still alive today" and the timeline strip; the full
 // timeline to today; the full culture deck with its people; the culture
-// settings; and an item above the level, not shown or shown with support.
+// settings.
 
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/features/culture/creator_sheet.dart';
@@ -100,8 +100,7 @@ void main() {
       tester,
     ) async {
       usePhone(tester);
-      // At A1 the A2 unit has no item the learner may have; the left-over A1
-      // item is woven there, the stanza above the level is not.
+      // A unit with no item at its own level is given a left-over lower one.
       final state = await cultureApp();
       await pumpScreen(
         tester,
@@ -109,8 +108,6 @@ void main() {
         state: state,
       );
       expect(find.byType(UnitCultureCard), findsOneWidget);
-      expect(find.text(_l10n.cultureCardLineBonus('B1')), findsNothing);
-      expect(find.text(_l10n.cultureCardLineBonus('A2')), findsNothing);
     });
   });
 
@@ -204,24 +201,13 @@ void main() {
       expect(find.text(_l10n.cultureLegacyTitle), findsNothing);
     });
 
-    testWidgets(
-      'is not shown above the level, and shown with support if asked',
-      (tester) async {
-        usePhone(tester);
-        final state = await cultureApp();
-        await pumpScreen(tester, _item('zz-7201'), state: state);
-        expect(find.text(_stanza), findsNothing);
-        expect(find.text(_l10n.cultureNotShownTitle), findsOneWidget);
-        expect(find.text(_l10n.cultureNotShownBody('A2')), findsOneWidget);
-
-        state.settings.cultureAboveSupport = true;
-        await tester.pumpAndSettle();
-        expect(find.text(_stanza), findsOneWidget);
-        expect(find.text(_l10n.cultureAboveTitle), findsOneWidget);
-        // Not counted, not scheduled: nothing to practise.
-        expect(find.text(_l10n.culturePractise), findsNothing);
-      },
-    );
+    testWidgets('is shown whatever its level', (tester) async {
+      usePhone(tester);
+      final state = await cultureApp();
+      await pumpScreen(tester, _item('zz-7201'), state: state);
+      expect(find.text(_stanza), findsOneWidget);
+      expect(find.text(_l10n.culturePractise), findsOneWidget);
+    });
   });
 
   group('the creator card', () {
@@ -308,7 +294,7 @@ void main() {
   });
 
   group('the full culture deck', () {
-    testWidgets('lists the items, locks what is above, and no unknown person', (
+    testWidgets('lists every item, and no unknown person', (
       tester,
     ) async {
       usePhone(tester);
@@ -319,17 +305,12 @@ void main() {
         state: state,
       );
       expect(find.text(_l10n.cultureDeckTitle('Testlang')), findsOneWidget);
-      expect(find.text(_l10n.cultureDeckCount(3, 1)), findsOneWidget);
+      expect(find.text(_l10n.cultureDeckCount(3)), findsOneWidget);
       expect(find.text(_proverb), findsOneWidget);
-      expect(find.text(_l10n.cultureUnlocksAt('A2')), findsOneWidget);
-      expect(find.text(_l10n.cultureUnlocksAt('B1')), findsOneWidget);
-      expect(find.text(_stanza), findsNothing);
-      // The people only an item above the level cites are not given away.
-      expect(find.text(_l10n.culturePeople), findsNothing);
-      expect(find.text('Antonio Machado'), findsNothing);
+      expect(find.text(_stanza), findsOneWidget);
     });
 
-    testWidgets('lists the people once the learner reaches their works', (
+    testWidgets('lists the people the items cite', (
       tester,
     ) async {
       usePhone(tester);
@@ -344,21 +325,6 @@ void main() {
       expect(find.text('Miguel de Cervantes'), findsOneWidget);
       await _tapShown(tester, find.byType(CreatorRow).first);
       expect(find.byType(CreatorCard), findsOneWidget);
-    });
-
-    testWidgets('shows what is above the level with support, when asked', (
-      tester,
-    ) async {
-      usePhone(tester);
-      final state = await cultureApp();
-      state.settings.cultureAboveSupport = true;
-      await pumpScreen(
-        tester,
-        const CultureDeckPage(language: 'zz'),
-        state: state,
-      );
-      expect(find.text(_stanza), findsOneWidget);
-      expect(find.text(_l10n.cultureUnlocksAt('A2')), findsNothing);
     });
 
     testWidgets('opens an item, and says so when the course has none', (
@@ -403,9 +369,6 @@ void main() {
       expect(state.settings.cultureItems, isFalse);
       expect(find.text(_l10n.cultureSettingShowOff), findsOneWidget);
 
-      await tester.tap(find.text(_l10n.cultureSettingAboveSupport));
-      await tester.pumpAndSettle();
-      expect(state.settings.cultureAboveSupport, isTrue);
       expect(state.settings.cultureCounts, isFalse);
       expect(state.settings.cultureCreators, isTrue);
     });
@@ -425,7 +388,6 @@ void main() {
     test('are kept in the stored settings and come back after a restore', () {
       final settings = SettingsNotifier()
         ..cultureItems = false
-        ..cultureAboveSupport = true
         ..cultureCounts = true
         ..culturePerUnit = 2
         ..cultureCreators = false;
@@ -434,7 +396,6 @@ void main() {
       expect(stored['culture_per_unit'], '2');
       final back = SettingsNotifier()..restore(stored);
       expect(back.cultureItems, isFalse);
-      expect(back.cultureAboveSupport, isTrue);
       expect(back.cultureCounts, isTrue);
       expect(back.culturePerUnit, 2);
       expect(back.cultureCreators, isFalse);
@@ -466,18 +427,6 @@ void main() {
     screen('a proverb', item('zz-7101'));
     screen('a stanza with its creator', item('zz-7201', reach: 'b1'));
     screen('a passage with its gloss', item('zz-pasaje-1', reach: 'b1'));
-    screen('an item above the level, not shown', item('zz-7201'));
-    screen(
-      'an item above the level, with support',
-      page(
-        _item('zz-7201'),
-        state: () async {
-          final state = await cultureApp();
-          state.settings.cultureAboveSupport = true;
-          return state;
-        },
-      ),
-    );
     screen(
       'the culture deck at A1',
       page(const CultureDeckPage(language: 'zz'), state: () => cultureApp()),

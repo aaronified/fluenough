@@ -5,6 +5,7 @@ import 'ask.dart';
 import 'deck_sampling.dart';
 import 'placed_review.dart';
 import 'fsrs.dart';
+import 'learn_sequence.dart';
 import 'lesson_sets.dart';
 
 export 'ask.dart';
@@ -18,6 +19,7 @@ class SessionItem {
     this.ask = Ask.own,
     this.group = const <SessionItem>[],
     this.setPart,
+    this.learn,
   });
 
   final Card card;
@@ -38,12 +40,33 @@ class SessionItem {
   /// first member. Null otherwise.
   final SetPart? setPart;
 
+  /// The step of a learn attempt this item is, or null for any other item:
+  /// the answers of an attempt are held until both its questions are right.
+  final LearnTag? learn;
+
   /// This item asked as [ask], with [group] for match pairs.
   SessionItem askedAs(
     Ask ask, {
     List<SessionItem> group = const <SessionItem>[],
-  }) =>
-      SessionItem(card: card, mode: mode, state: state, ask: ask, group: group);
+  }) => SessionItem(
+    card: card,
+    mode: mode,
+    state: state,
+    ask: ask,
+    group: group,
+    learn: learn,
+  );
+
+  /// This item as the step [tag] of a learn attempt.
+  SessionItem taggedAs(LearnTag tag) => SessionItem(
+    card: card,
+    mode: mode,
+    state: state,
+    ask: ask,
+    group: group,
+    setPart: setPart,
+    learn: tag,
+  );
 
   /// A lesson's item showing [part] of a set (DECK-FORMAT.md, Set cards).
   /// It records nothing, so its mode only names the pill it shows.

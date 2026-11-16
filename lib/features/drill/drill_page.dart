@@ -17,6 +17,7 @@ import '../../ui/widgets/drill_frame.dart'
     show DrillClockScope, DrillHeaderScope;
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
+import '../../ui/widgets/snack.dart';
 import '../script/script_guide_page.dart';
 import '../summary/summary_page.dart';
 import 'choice_drill.dart';
@@ -218,6 +219,14 @@ class _DrillPageState extends State<DrillPage> {
 
   void _onSession() {
     final session = _session!;
+    final notice = session.takeLearnNotice();
+    if (notice != null && mounted) {
+      final l10n = AppLocalizations.of(context)!;
+      showAppSnackBar(
+        context,
+        notice == LearnNotice.learned ? l10n.learnLearned : l10n.learnNotYet,
+      );
+    }
     if (session.finished && !_summaryShown) {
       _summaryShown = true;
       final request = widget.request;

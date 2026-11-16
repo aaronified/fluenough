@@ -24,7 +24,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'support/culture_world.dart';
 
 Recommendation _work(AppState state, String id) =>
-    state.catalogWithAboveLevel.recommendations['zz']!.byId(id)!;
+    state.catalogView.recommendations['zz']!.byId(id)!;
 
 /// A learner who has taught every card of the path, so that a lesson has
 /// nothing left but what completed works add, with culture off so that the

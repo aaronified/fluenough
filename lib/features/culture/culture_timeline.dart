@@ -257,7 +257,7 @@ class CultureTimelinePage extends StatelessWidget {
     final spoken = cultureSpoken(context, state);
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final legacy = creator?.legacyFor(state.levelIn(language), spoken);
+    final legacy = creator?.legacyFor(spoken);
     final children = <Widget>[];
     String? band;
     for (final entry in entries) {

@@ -7,7 +7,6 @@ import '../../app/item_search.dart' show coreIdOfDeck;
 import '../../app/routes.dart';
 import '../../app/topics.dart';
 import '../../core/decks/topic_resolver.dart';
-import '../../core/models/level.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 
@@ -16,9 +15,7 @@ import '../../ui/theme.dart';
 const int maxUnitTopics = 4;
 
 /// The topics a unit teaches or revisits, at most [maxUnitTopics]: those that
-/// name one of its decks, its place on the path, or a card of its decks. A
-/// topic above the learner's level is left out when "Hide what is above my
-/// level" is on, and is listed marked otherwise.
+/// name one of its decks, its place on the path, or a card of its decks.
 List<ResolvedTopic> topicsOfUnit(
   AppState state,
   String language,
@@ -38,8 +35,6 @@ List<ResolvedTopic> topicsOfUnit(
     place = topics.world.unitIndex(core);
     if (place >= 0) break;
   }
-  final learner = state.levelIn(language);
-  final hide = state.settings.hideAboveLevel;
   final found = <ResolvedTopic>[];
   for (final r in topics.resolved) {
     final named =
@@ -47,7 +42,6 @@ List<ResolvedTopic> topicsOfUnit(
         (place >= 0 && r.units.contains(place)) ||
         r.cards.any(cards.contains);
     if (!named) continue;
-    if (hide && LevelGate.isAbove(r.topic.level, learner)) continue;
     found.add(r);
     if (found.length == maxUnitTopics) break;
   }
@@ -79,7 +73,6 @@ class UnitTopicChips extends StatelessWidget {
     if (found.isEmpty) return const SizedBox.shrink();
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    final learner = state.levelIn(language);
     final spoken = <String>[
       Localizations.localeOf(context).languageCode,
       ...state.settings.spokenLanguages,
@@ -114,13 +107,7 @@ class UnitTopicChips extends StatelessWidget {
               children: <Widget>[
                 for (final r in found)
                   ActionChip(
-                    avatar: LevelGate.isAbove(r.topic.level, learner)
-                        ? Icon(
-                            Icons.lock_outline,
-                            size: 18,
-                            semanticLabel: l10n.topicAboveYourLevelCue,
-                          )
-                        : const Icon(Icons.sell_outlined, size: 18),
+                    avatar: const Icon(Icons.sell_outlined, size: 18),
                     label: Text(r.topic.nameFor(spoken)),
                     onPressed: () =>
                         AppNavigator.openTopic(context, language, r.topic.id),

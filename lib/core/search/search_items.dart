@@ -10,11 +10,7 @@
 /// decides, exactly as it does for cards, so the results are the same with or
 /// without the index.
 ///
-/// The level rule (D2): a deck, topic, situation, unit or concept above the
-/// learner's level is listed marked ([ItemResult.aboveLevel]) and is not
-/// startable, and the setting "Hide what is above my level" ([hideAbove])
-/// removes it; a card above the level, culture and proverb cards included, is
-/// never in a result at all.
+/// A level labels a result and never hides or blocks it (owner, 2026-11-16).
 library;
 
 import '../data/course_path.dart' show LanguagePath;
@@ -119,7 +115,6 @@ class ItemResult {
   const ItemResult({
     required this.row,
     required this.rank,
-    this.aboveLevel = false,
     this.snippetCard,
   });
 
@@ -130,17 +125,11 @@ class ItemResult {
   /// ([MatchQuality]) twice, as `unit_search.dart` ranks.
   final int rank;
 
-  /// Whether it is above the learner's level: listed, marked, not startable.
-  final bool aboveLevel;
-
   /// The card of a hidden deck that matched best, when the result is the
   /// deck's row found by a card.
   final String? snippetCard;
 
   bool get isClose => rank ~/ 2 >= MatchQuality.close.index;
-
-  /// Whether a learner may start it from the result.
-  bool get startable => !aboveLevel;
 }
 
 /// One tab.
@@ -245,15 +234,11 @@ class ItemCorpus {
   ///
   /// * [kinds] limits it to those search kinds; [languages] to rows of those
   ///   languages (a row with no language is in every one).
-  /// * [levelOf] gives a language's learner level (null: no levels).
-  /// * [hideAbove] is the setting "Hide what is above my level".
   /// * [sections] orders the tabs.
   ItemSearchOutcome search(
     String query, {
     Set<String>? kinds,
     Set<String>? languages,
-    Level? Function(String language)? levelOf,
-    bool hideAbove = false,
     bool typos = true,
     DeckSections sections = DeckSections.empty,
   }) {
@@ -284,41 +269,26 @@ class ItemCorpus {
       final worst = _rank(words, row.fields, typos);
       if (worst == null) continue;
       final rank = worst * 2;
-      final learner = levelOf == null ? null : levelOf(row.language);
-      final above = LevelGate.isAbove(row.level, learner);
       final isCard = row.type == SearchItemType.card;
-      // A card above the level never reaches a result with its text.
-      if (above && isCard) continue;
       // A card of a hidden deck is the deck's row, found by that card.
       final collapsed = row.collapseTo;
       final shown = isCard && collapsed != null ? deckRows[collapsed] : null;
       if (isCard && collapsed != null && shown == null) continue;
       final result = shown == null
-          ? ItemResult(row: row, rank: rank, aboveLevel: above)
-          : ItemResult(
-              row: shown,
-              rank: rank,
-              aboveLevel: LevelGate.isAbove(
-                shown.level,
-                levelOf == null ? null : levelOf(shown.language),
-              ),
-              snippetCard: row.id,
-            );
-      if (result.aboveLevel && hideAbove) continue;
+          ? ItemResult(row: row, rank: rank)
+          : ItemResult(row: shown, rank: rank, snippetCard: row.id);
       final key = '${result.row.kind}|${result.row.key}';
       final earlier = best[key];
       if (earlier == null || result.rank < earlier.rank) {
         best[key] = ItemResult(
           row: result.row,
           rank: result.rank,
-          aboveLevel: result.aboveLevel,
           snippetCard: result.snippetCard ?? earlier?.snippetCard,
         );
       } else if (earlier.snippetCard == null && result.snippetCard != null) {
         best[key] = ItemResult(
           row: earlier.row,
           rank: earlier.rank,
-          aboveLevel: earlier.aboveLevel,
           snippetCard: result.snippetCard,
         );
       }

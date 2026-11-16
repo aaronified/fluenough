@@ -11,7 +11,6 @@ import '../../core/models/deck.dart' show LanguageInfo;
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/target_text.dart';
-import '../decks/result_marks.dart';
 
 /// The languages the learner reads the interface and deck prose in, best known
 /// first: the app's own language, then those they speak.
@@ -412,10 +411,9 @@ class LegacyBlock extends StatelessWidget {
   }
 }
 
-/// The amber "above your level" notice: a lock, the words, and what it means
-/// for an item shown with support.
-class AboveLevelNotice extends StatelessWidget {
-  const AboveLevelNotice({super.key, required this.title, required this.body});
+/// A quiet notice: an icon, a title and what it means.
+class CultureNotice extends StatelessWidget {
+  const CultureNotice({super.key, required this.title, required this.body});
 
   final String title;
   final String body;
@@ -423,7 +421,6 @@ class AboveLevelNotice extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final amber = amberOf(context);
     return DecoratedBox(
       decoration: BoxDecoration(
         color: theme.colorScheme.surfaceContainerHigh,
@@ -434,7 +431,10 @@ class AboveLevelNotice extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Icon(Icons.lock_outline, color: amber),
+            Icon(
+              Icons.info_outline,
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
             const SizedBox(width: 12),
             Expanded(
               child: Column(

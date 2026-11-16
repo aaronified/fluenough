@@ -166,9 +166,7 @@ class SettingsNotifier extends ChangeNotifier {
   Map<String, DateTime> _lessonsDone = const <String, DateTime>{};
   bool _reviewDecks = false;
   bool _adultContent = false;
-  bool _hideAboveLevel = false;
   bool _cultureItems = true;
-  bool _cultureAboveSupport = false;
   bool _cultureCounts = false;
   int _culturePerUnit = defaultCulturePerUnit;
   bool _cultureCreators = true;
@@ -249,14 +247,6 @@ class SettingsNotifier extends ChangeNotifier {
   set adultContent(bool value) =>
       _set(_adultContent, value, (v) => _adultContent = v);
 
-  /// Settings' "Hide what is above my level" (deck-kinds plan, D2, #1137,
-  /// #1140): search lists a deck, topic, situation or unit above the
-  /// learner's level marked with its level and not startable; with this on
-  /// they are left out of a result. Off by default. Per profile.
-  bool get hideAboveLevel => _hideAboveLevel;
-  set hideAboveLevel(bool value) =>
-      _set(_hideAboveLevel, value, (v) => _hideAboveLevel = v);
-
   /// Settings' "Show culture items" (deck-kinds plan, D11, T20): whether
   /// culture items (a proverb, a line of verse, a passage) are woven into the
   /// path's units and Today, and the culture and proverbs decks are drilled
@@ -265,14 +255,6 @@ class SettingsNotifier extends ChangeNotifier {
   bool get cultureItems => _cultureItems;
   set cultureItems(bool value) =>
       _set(_cultureItems, value, (v) => _cultureItems = v);
-
-  /// Settings' "Items above my level" (T20): false (the default) does not show
-  /// a culture item above the learner's level, which unlocks when they reach
-  /// it; true shows it with support: its words glossed, a lock mark, not
-  /// counted and not scheduled for review.
-  bool get cultureAboveSupport => _cultureAboveSupport;
-  set cultureAboveSupport(bool value) =>
-      _set(_cultureAboveSupport, value, (v) => _cultureAboveSupport = v);
 
   /// Settings' "Count toward path progress" (T20): false (the default) makes a
   /// woven culture item a bonus; true counts it as a step of its unit.
@@ -1592,9 +1574,7 @@ class SettingsNotifier extends ChangeNotifier {
     'clock_time': jsonEncode(_clockTime),
     'review_decks': '$_reviewDecks',
     'adult_content': '$_adultContent',
-    'hide_above_level': '$_hideAboveLevel',
     'culture_items': '$_cultureItems',
-    'culture_above_support': '$_cultureAboveSupport',
     'culture_counts': '$_cultureCounts',
     'culture_per_unit': '$_culturePerUnit',
     'culture_creators': '$_cultureCreators',
@@ -2033,11 +2013,7 @@ class SettingsNotifier extends ChangeNotifier {
     }
     if (pick('review_decks', flag) case final v?) reviewDecks = v;
     if (pick('adult_content', flag) case final v?) adultContent = v;
-    if (pick('hide_above_level', flag) case final v?) hideAboveLevel = v;
     if (pick('culture_items', flag) case final v?) cultureItems = v;
-    if (pick('culture_above_support', flag) case final v?) {
-      cultureAboveSupport = v;
-    }
     if (pick('culture_counts', flag) case final v?) cultureCounts = v;
     if (pick('culture_per_unit', int.tryParse) case final v?) {
       culturePerUnit = v;

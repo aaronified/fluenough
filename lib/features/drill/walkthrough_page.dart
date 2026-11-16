@@ -34,13 +34,11 @@ class WalkthroughRequest {
 /// Relearn both open: the same walk from the first card, the label only
 /// saying whether every card is taught.
 ///
-/// Nothing is asked. The first view of a card not taught yet appends one
-/// review-log row, graded 0 so that FSRS schedules it at the lowest window
-/// ([AppState.viewCard]), a sentence still waiting included; a card seen
-/// again, or already taught, writes nothing. The deck's name shows on each
-/// card, so it changes where the walk crosses into the next deck. It ends
-/// when the learner goes on from the last card, or closes it, the cards seen
-/// so far kept as taught.
+/// Nothing is asked and nothing is written: viewing never touches FSRS (owner,
+/// 2026-11-16: a view is no learning, an item is learned only by the learn
+/// rule). The deck's name shows on each card, so it changes where the walk
+/// crosses into the next deck. It ends when the learner goes on from the last
+/// card, or closes it.
 class WalkthroughPage extends StatefulWidget {
   const WalkthroughPage({super.key, required this.request});
 
@@ -57,10 +55,6 @@ class _WalkthroughPageState extends State<WalkthroughPage> {
   /// The cards walked with the deck each is of, fixed when the walk starts.
   List<({Card card, DeckEntry entry})>? _cards;
 
-  /// Records the first view of [card] (once the frame is built, since it
-  /// notifies the screens that read progress).
-  void _view(Card card) => AppScope.read(context).viewCard(card);
-
   Future<void> _play(Card card, LanguageInfo language) async {
     final state = AppScope.read(context);
     setState(() => _playing = true);
@@ -75,7 +69,6 @@ class _WalkthroughPageState extends State<WalkthroughPage> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
-    final first = _cards == null;
     final cards = _cards ??= state.walkCards(<DeckEntry>[
       for (final id in widget.request.deckIds) ?state.deckById(id),
     ], tags: widget.request.tags);
@@ -88,11 +81,6 @@ class _WalkthroughPageState extends State<WalkthroughPage> {
     final index = _index.clamp(0, cards.length - 1);
     final card = cards[index].card;
     final entry = cards[index].entry;
-    if (first) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (mounted) _view(card);
-      });
-    }
     final language = entry.language;
     final expectsScript =
         state.settings.learnsAlphabet(language.code) &&
@@ -118,7 +106,6 @@ class _WalkthroughPageState extends State<WalkthroughPage> {
           if (index + 1 >= cards.length) {
             Navigator.of(context).maybePop();
           } else {
-            _view(cards[index + 1].card);
             setState(() => _index = index + 1);
           }
         },

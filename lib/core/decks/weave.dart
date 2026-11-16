@@ -7,9 +7,8 @@
 /// The rule, as the owner approved it with the default variants: one item per
 /// unit by default; an item at the unit's own level first (a proverb at A1, a
 /// stanza at A2, a passage with its gloss at B1 are what the decks hold at
-/// those levels), then a lower one left over; an item above the learner's level
-/// is never woven (D2); the items are a bonus and do not count toward the
-/// path's progress.
+/// those levels), then a lower one left over; the items are a bonus and do not
+/// count toward the path's progress. A level orders; it never keeps an item out.
 library;
 
 import '../data/course_path.dart' show PlanUnit;
@@ -164,20 +163,13 @@ String? _joined(List<String?> lines) {
 
 /// Which item is woven into which unit of a path.
 class WovenCulture {
-  const WovenCulture({
-    this.byUnit = const <int, List<CultureItem>>{},
-    this.above = const <CultureItem>[],
-  });
+  const WovenCulture({this.byUnit = const <int, List<CultureItem>>{}});
 
   /// Nothing woven.
   static const WovenCulture none = WovenCulture();
 
-  /// The items woven into each unit, by the unit's index in the path's plan,
-  /// each at or below the learner's level.
+  /// The items woven into each unit, by the unit's index in the path's plan.
   final Map<int, List<CultureItem>> byUnit;
-
-  /// The items above the learner's level, in order: they are never woven.
-  final List<CultureItem> above;
 
   /// Every woven item in path order.
   List<CultureItem> get all => <CultureItem>[
@@ -195,18 +187,6 @@ class WovenCulture {
     }
     return null;
   }
-
-  /// The lowest level among [above]: where "N items unlock at B1" points, or
-  /// null when nothing is above.
-  Level? get nextUnlock {
-    Level? lowest;
-    for (final item in above) {
-      if (lowest == null || item.level.index < lowest.index) {
-        lowest = item.level;
-      }
-    }
-    return lowest;
-  }
 }
 
 /// How many items a unit is given, by default (the mockup's proposal).
@@ -215,33 +195,22 @@ const int defaultCulturePerUnit = 1;
 /// The most a learner may ask for per unit.
 const int maxCulturePerUnit = 3;
 
-/// Weaves [items] into the written units of [plan] for a learner at
-/// [learner] (null: a language with no levels, which is offered no levelled
-/// item). A unit gets [perUnit] items: those at its own level first, in deck
-/// order, then lower ones not used yet. An item is woven once. An item above
-/// the learner is listed in [WovenCulture.above] and never woven.
+/// Weaves [items] into the written units of [plan]. A unit gets [perUnit]
+/// items: those at its own level first, in deck order, then lower ones not
+/// used yet. An item is woven once. The level only orders: it never keeps an
+/// item out (owner, 2026-11-16).
 WovenCulture weaveCulture(
   List<PlanUnit> plan,
-  List<CultureItem> items,
-  Level? learner, {
+  List<CultureItem> items, {
   int perUnit = defaultCulturePerUnit,
 }) {
   if (items.isEmpty) return WovenCulture.none;
-  final shown = <CultureItem>[];
-  final above = <CultureItem>[];
-  for (final item in items) {
-    if (LevelGate.allows(item.level, learner)) {
-      shown.add(item);
-    } else {
-      above.add(item);
-    }
-  }
   final per = perUnit < 1
       ? 1
       : perUnit > maxCulturePerUnit
       ? maxCulturePerUnit
       : perUnit;
-  final unused = List<CultureItem>.of(shown);
+  final unused = List<CultureItem>.of(items);
   final byUnit = <int, List<CultureItem>>{};
   for (final (index, unit) in plan.indexed) {
     if (unused.isEmpty) break;
@@ -269,6 +238,5 @@ WovenCulture weaveCulture(
   }
   return WovenCulture(
     byUnit: Map<int, List<CultureItem>>.unmodifiable(byUnit),
-    above: List<CultureItem>.unmodifiable(above),
   );
 }

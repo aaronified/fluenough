@@ -14,7 +14,7 @@ import 'culture_timeline.dart';
 /// screen 3): the picture with its credit and licence line, or the placeholder
 /// and that there is no licensed image yet; the name in the language learned
 /// and the spoken one, dates and the era in the language's own tradition; the
-/// bio at the learner's level; "Still alive today"; and the timeline.
+/// bio; "Still alive today"; and the timeline.
 ///
 /// Opened from the creator chip of an item and the People list of the culture
 /// deck. A creator the file does not have opens nothing.
@@ -55,11 +55,10 @@ class CreatorCard extends StatelessWidget {
     final info = cultureLanguage(state, language);
     final file = state.creatorsOf(language);
     final spoken = cultureSpoken(context, state);
-    final level = state.levelIn(language);
     final name = creator.nameFor(spoken, target: language).text;
     final bio = creator.bioFor(spoken);
-    final bioTarget = creator.bioTargetFor(level);
-    final legacy = creator.legacyFor(level, spoken);
+    final bioTarget = creator.bioTargetSimplest;
+    final legacy = creator.legacyFor(spoken);
     final image = creator.image;
     final licenceUrl = image?.licenceUrl ?? image?.sourceUrl;
     return SafeArea(
@@ -177,7 +176,7 @@ class CreatorChip extends StatelessWidget {
     final info = cultureLanguage(state, language);
     final spoken = cultureSpoken(context, state);
     final legacy = showLegacyLine
-        ? creator.legacyFor(state.levelIn(language), spoken)
+        ? creator.legacyFor(spoken)
         : null;
     final line = _legacyLine(legacy, spoken);
     return Column(

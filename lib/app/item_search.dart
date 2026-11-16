@@ -6,8 +6,8 @@ import '../core/models/situation.dart';
 import '../core/search/search_items.dart';
 import '../core/logs/log_entry.dart' show describeError;
 import 'app_state.dart';
+import 'core_ids.dart';
 import 'deck_catalog.dart';
-import 'learner_levels.dart';
 
 /// The typed search's items of one language (deck-kinds plan, D10, T16, T18),
 /// built from the catalog: its decks, hidden decks the index lists, path,
@@ -15,9 +15,8 @@ import 'learner_levels.dart';
 /// own word search finds the plain words, so the corpus holds only what that
 /// search does not ([SearchSource.plainCards] is off).
 ///
-/// Built from the catalog with what is above the learner's level still in it
-/// ([AppState.catalogWithAboveLevel]): the search lists such an item marked
-/// with its level, and the corpus itself never gives a card above the level.
+/// Built from the catalog ([AppState.catalogView]): a level labels a result and
+/// never hides it (owner, 2026-11-16).
 class ItemSearchIndex {
   ItemSearchIndex._({
     required this.language,
@@ -185,11 +184,7 @@ class ItemSearchIndex {
 
 /// One search over the typed items, with what the screen says about it.
 class ItemSearchResult {
-  const ItemSearchResult({
-    required this.outcome,
-    this.hiddenAbove = 0,
-    this.close = false,
-  });
+  const ItemSearchResult({required this.outcome, this.close = false});
 
   static const ItemSearchResult empty = ItemSearchResult(
     outcome: ItemSearchOutcome.empty,
@@ -197,9 +192,6 @@ class ItemSearchResult {
 
   /// The results, best first, of every kind but plain words.
   final ItemSearchOutcome outcome;
-
-  /// With "Hide what is above my level" on, how many results it left out.
-  final int hiddenAbove;
 
   /// Everything was found despite a typo.
   final bool close;
@@ -221,7 +213,7 @@ extension ItemSearchState on AppState {
   /// The index of [language]'s items for the course it is learned from. Kept
   /// until the catalog or the index's shelves change.
   ItemSearchIndex itemSearchFor(String language) {
-    final catalog = catalogWithAboveLevel;
+    final catalog = catalogView;
     final shelves =
         deckDownloads?.index?.language(language)?.shelves ??
         const <IndexShelf>[];
@@ -254,32 +246,24 @@ extension ItemSearchState on AppState {
   }) {
     try {
       final index = itemSearchFor(language);
-      final level = levelIn(language);
-      final hide = settings.hideAboveLevel;
-      ItemSearchOutcome run({required bool typos, required bool hideAbove}) {
-        final found = index.corpus.search(
+      ItemSearchOutcome run({required bool typos}) => withoutWords(
+        index.corpus.search(
           query,
           languages: <String>{language},
-          levelOf: (_) => level,
-          hideAbove: hideAbove,
           typos: typos,
-          sections: catalogWithAboveLevel.sections,
-        );
-        return withoutWords(found);
-      }
+          sections: catalogView.sections,
+        ),
+      );
 
       var typos = false;
-      var shown = run(typos: false, hideAbove: hide);
-      var all = hide ? run(typos: false, hideAbove: false) : shown;
-      if (all.results.isEmpty && !exact) {
+      var found = run(typos: false);
+      if (found.results.isEmpty && !exact) {
         typos = true;
-        shown = run(typos: true, hideAbove: hide);
-        all = hide ? run(typos: true, hideAbove: false) : shown;
+        found = run(typos: true);
       }
       return ItemSearchResult(
-        outcome: shown,
-        hiddenAbove: all.results.length - shown.results.length,
-        close: typos && all.results.isNotEmpty,
+        outcome: found,
+        close: typos && found.results.isNotEmpty,
       );
     } on Object catch (error, stack) {
       log.error(describeError('Typed search failed', error, stack));
@@ -319,7 +303,7 @@ ItemSearchOutcome withoutWords(ItemSearchOutcome found) {
 }
 
 /// The core id of a deck of the course (`te-health` for `te-en-health`).
-String? coreIdOfDeck(DeckEntry entry) => LearnerLevels.coreIdOf(
+String? coreIdOfDeck(DeckEntry entry) => coreIdOf(
   entry.id,
   entry.language.code,
   entry.deck.native.code,

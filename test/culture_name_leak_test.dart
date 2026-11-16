@@ -1,6 +1,6 @@
 // A creator's name must not give away a work the learner has not reached:
-// one cited only by a card of a hidden deck, or only by an above-level work of
-// a deck that is not woven into the course, is kept out of the People list and
+// one cited only by a card of a hidden deck, or only by a work of a deck that
+// is not woven into the course, is kept out of the People list and
 // the timeline, though no woven item cites them.
 
 import 'package:fluenough/app/culture.dart';
@@ -34,7 +34,7 @@ const String _extraCreators = '''
     died: 1960
     era: "plata"
     bio:
-      en: "Only an above-level work of an unwoven deck quotes this poet."
+      en: "Only a work of an unwoven deck quotes this poet."
 ''';
 
 Map<String, String> _world() {
@@ -68,7 +68,7 @@ Map<String, String> _world() {
 }
 
 void main() {
-  testWidgets('People names neither a hidden-deck nor an above-level creator', (
+  testWidgets('People names neither a hidden-deck nor an unwoven-deck creator', (
     tester,
   ) async {
     usePhone(tester);
@@ -96,9 +96,9 @@ void main() {
     expect(ids, isNot(contains('zz-lejano')));
   });
 
-  test('support never shows a creator a hidden deck cites', () async {
+  test('no creator only a hidden deck cites is ever shown', () async {
     final state = await cultureApp(reach: 'b1', files: _world());
-    final shown = state.creatorsShownIn('zz', support: true);
+    final shown = state.creatorsShownIn('zz');
     expect(shown, isNot(contains('zz-oculto')));
     expect(shown, isNot(contains('zz-lejano')));
   });

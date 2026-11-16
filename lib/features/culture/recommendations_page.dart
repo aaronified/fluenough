@@ -117,12 +117,11 @@ class _RecommendationsPageState extends State<RecommendationsPage> {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final language = widget.request.language;
-    final file = state.catalogWithAboveLevel.recommendations[language];
+    final file = state.catalogView.recommendations[language];
     final course = state.recommendationCourseOf(language);
     final list = recommendationList(
       file?.recommendations ?? const <Recommendation>[],
       course,
-      state.levelIn(language),
     );
     final kinds = list.media;
     final kind = _kind != null && kinds.contains(_kind) ? _kind : null;
@@ -139,7 +138,7 @@ class _RecommendationsPageState extends State<RecommendationsPage> {
         title: Text(l10n.recTitle, style: theme.textTheme.titleMedium),
         actions: const <Widget>[ReportButton()],
       ),
-      body: file == null || (list.offered.isEmpty && list.hiddenAbove == 0)
+      body: file == null || list.offered.isEmpty
           ? EmptyState(
               icon: Icons.auto_stories_outlined,
               title: l10n.recEmpty,
@@ -188,29 +187,11 @@ class _RecommendationsPageState extends State<RecommendationsPage> {
                       16,
                       0,
                     ),
-                    child: AboveLevelNotice(
+                    child: CultureNotice(
                       title: l10n.recScriptOnlyTitle,
                       body: l10n.recScriptOnlyBody(
                         cultureLanguage(state, language).name,
                         list.otherScript,
-                      ),
-                    ),
-                  )
-                else if (list.hiddenAbove > 0)
-                  Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(
-                      AppSizes.textInset + 16,
-                      12,
-                      AppSizes.textInset + 16,
-                      0,
-                    ),
-                    child: Text(
-                      l10n.recHiddenAbove(
-                        list.hiddenAbove,
-                        list.unlocksAt?.label ?? '',
-                      ),
-                      style: theme.textTheme.bodySmall!.copyWith(
-                        color: scheme.onSurfaceVariant,
                       ),
                     ),
                   ),
@@ -355,7 +336,7 @@ class _WorkRow extends StatelessWidget {
   String? _quotingDeck(AppState state) {
     final id = work.quotedIn;
     if (id == null) return null;
-    for (final entry in state.catalogWithAboveLevel.decks) {
+    for (final entry in state.catalogView.decks) {
       if (entry.language.code == language &&
           (entry.id == id || coreIdOfDeck(entry) == id)) {
         return entry.deck.name;

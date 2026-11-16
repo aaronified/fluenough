@@ -11,7 +11,6 @@ import '../../app/topics.dart';
 import '../../app/unlocks.dart';
 import '../../core/decks/topic_resolver.dart';
 import '../../core/models/deck.dart' show LanguageInfo;
-import '../../core/models/level.dart';
 import '../../core/models/topic.dart';
 import '../../core/progress/recent_answers.dart'
     show MasteryLevel, RecentAnswers;
@@ -42,14 +41,14 @@ class TopicRequest {
 const int topicFirstCards = 8;
 
 /// A topic's page (the approved mockup `topic-page.html`, default variant: one
-/// scroll, a sticky drill button with "Choose…", an above-level topic shown
-/// and its drill limited): its name, language and level, how much of it the
+/// scroll, a sticky drill button with "Choose…"): its name, language and
+/// level, how much of it the
 /// learner knows, its units, decks and cards each with their level and
 /// mastery, and "Drill this topic", a session over the topic's cards alone.
 /// A script topic lists its characters.
 ///
-/// Level rule (deck-kinds plan, D2): a card above the learner's level is
-/// never listed with its text nor drilled; the page counts them and says so.
+/// A level labels a topic, a deck and a card and never hides or blocks one
+/// (owner, 2026-11-16).
 class TopicPage extends StatefulWidget {
   const TopicPage({super.key, required this.request});
 
@@ -119,18 +118,13 @@ class _TopicPageState extends State<TopicPage> {
     final topic = resolved.topic;
     final spoken = _spoken(context, state);
     final name = topic.nameFor(spoken);
-    final learner = state.levelIn(language);
-    final above = LevelGate.isAbove(topic.level, learner);
     final answers = state.recentAnswers;
-    // Every card the topic names that the language has, whatever its level
-    // (every level is open to a c2 learner), and those the learner may have.
-    final every = topicDrillCards(resolved, topics.world, Level.c2);
-    final allowed = topics.drillCards(topic.id, learner);
-    final cards = state.sheetCards(language, allowed);
+    // Every card the topic names that the language has.
+    final every = topicDrillCards(resolved, topics.world);
+    final cards = state.sheetCards(language, every);
     final known = every
         .where((id) => answers.of(id).level == MasteryLevel.known)
         .length;
-    final aboveCards = every.length - allowed.length;
     final fresh = cards.any((c) => c.isNew);
     final ids = <String>{for (final c in cards) c.card.id};
     final drillable = ids.isEmpty
@@ -203,7 +197,7 @@ class _TopicPageState extends State<TopicPage> {
                   spacing: 6,
                   runSpacing: 6,
                   children: <Widget>[
-                    LevelTag(level: topic.level, above: above),
+                    LevelTag(level: topic.level),
                     ResultTag(
                       text: l10n.commonCardCount(every.length),
                       style: ResultTagStyle.kind,
@@ -242,28 +236,14 @@ class _TopicPageState extends State<TopicPage> {
               ],
             ),
           ),
-          if (above) ...<Widget>[
-            const SizedBox(height: 12),
-            _Notice(
-              title: l10n.topicAboveTitle,
-              body: learner == null || allowed.isEmpty
-                  ? l10n.topicAboveBodyNoLevel(topic.level!.label)
-                  : l10n.topicAboveBody(
-                      topic.level!.label,
-                      learner.label,
-                      allowed.length,
-                    ),
-            ),
-          ],
-          ..._units(context, state, resolved, learner),
-          ..._decks(context, state, resolved, learner, every),
+          ..._units(context, state, resolved),
+          ..._decks(context, state, resolved, every),
           ..._cards(
             context,
             state,
             info,
             shown: shown,
             total: cards.length,
-            aboveCards: aboveCards,
             answers: answers,
           ),
           if (topic.chars.isNotEmpty) ..._characters(context, topic, info),
@@ -293,9 +273,7 @@ class _TopicPageState extends State<TopicPage> {
                     ),
               icon: const Icon(Icons.play_arrow),
               label: Text(
-                above && allowed.isNotEmpty
-                    ? l10n.topicDrillCountLimited(allowed.length)
-                    : l10n.topicDrillCount(drillable),
+                l10n.topicDrillCount(drillable),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -376,7 +354,6 @@ class _TopicPageState extends State<TopicPage> {
     BuildContext context,
     AppState state,
     ResolvedTopic resolved,
-    Level? learner,
   ) {
     final l10n = AppLocalizations.of(context)!;
     final language = widget.request.language;
@@ -390,24 +367,20 @@ class _TopicPageState extends State<TopicPage> {
         outerRadius: AppRadii.card,
         gap: 4,
         children: <Widget>[
-          for (final view in views)
-            _unitRow(context, view, LevelGate.isAbove(view.level, learner)),
+          for (final view in views) _unitRow(context, view),
         ],
       ),
     ];
   }
 
-  Widget _unitRow(BuildContext context, PathUnitView view, bool above) {
+  Widget _unitRow(BuildContext context, PathUnitView view) {
     final l10n = AppLocalizations.of(context)!;
     final title = l10n.searchUnitTitle(view.number, view.title);
     return ResultRow(
       icon: Icons.flag_outlined,
       title: title,
-      dim: above,
-      tags: <Widget>[LevelTag(level: view.level, above: above)],
-      onTap: above
-          ? () => showAboveLevelSheet(context, name: title, level: view.level)
-          : view.openDeckId == null
+      tags: <Widget>[LevelTag(level: view.level)],
+      onTap: view.openDeckId == null
           ? null
           : () => AppNavigator.openUnit(context, view.openDeckId!),
     );
@@ -417,13 +390,12 @@ class _TopicPageState extends State<TopicPage> {
     BuildContext context,
     AppState state,
     ResolvedTopic resolved,
-    Level? learner,
     List<String> every,
   ) {
     final l10n = AppLocalizations.of(context)!;
     final language = widget.request.language;
     final native = state.courseNative(language);
-    final catalog = state.catalogWithAboveLevel;
+    final catalog = state.catalogView;
     final rows = <Widget>[];
     for (final core in resolved.decks) {
       DeckEntry? entry;
@@ -443,25 +415,17 @@ class _TopicPageState extends State<TopicPage> {
       if (entry == null) continue;
       final inDeck = <String>{for (final c in entry.cards) c.id};
       final topicCards = every.where(inDeck.contains).length;
-      final deckAbove = LevelGate.isAbove(entry.deck.level, learner);
-      final startable = !deckAbove && state.deckById(entry.id) != null;
+      final startable = state.deckById(entry.id) != null;
       final deck = entry;
       rows.add(
         ResultRow(
           icon: Icons.style_outlined,
           title: entry.deck.name,
-          dim: deckAbove,
           lines: <Widget>[
             RowLine(l10n.topicDeckCards(topicCards, entry.itemCount)),
           ],
-          tags: <Widget>[LevelTag(level: entry.deck.level, above: deckAbove)],
-          onTap: deckAbove
-              ? () => showAboveLevelSheet(
-                  context,
-                  name: deck.deck.name,
-                  level: deck.deck.level,
-                )
-              : startable
+          tags: <Widget>[LevelTag(level: entry.deck.level)],
+          onTap: startable
               ? () => AppNavigator.openDeck(context, deck.id)
               : null,
         ),
@@ -480,7 +444,6 @@ class _TopicPageState extends State<TopicPage> {
     LanguageInfo? info, {
     required List<SheetCard> shown,
     required int total,
-    required int aboveCards,
     required RecentAnswers answers,
   }) {
     final l10n = AppLocalizations.of(context)!;
@@ -536,28 +499,6 @@ class _TopicPageState extends State<TopicPage> {
             child: Text(
               _allCards ? l10n.topicShowFewer : l10n.topicShowAll(total),
             ),
-          ),
-        ),
-      if (aboveCards > 0)
-        Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(8, 8, 8, 0),
-          child: Row(
-            children: <Widget>[
-              Icon(
-                Icons.lock_outline,
-                size: 18,
-                color: theme.colorScheme.onSurfaceVariant,
-              ),
-              const SizedBox(width: 8),
-              Expanded(
-                child: Text(
-                  l10n.topicCardsAbove(aboveCards),
-                  style: theme.textTheme.bodyMedium!.copyWith(
-                    color: theme.colorScheme.onSurfaceVariant,
-                  ),
-                ),
-              ),
-            ],
           ),
         ),
     ];
@@ -694,19 +635,15 @@ class _TopicPageState extends State<TopicPage> {
   ) {
     final l10n = AppLocalizations.of(context)!;
     final language = widget.request.language;
-    final learner = state.levelIn(language);
     final rows = <Widget>[];
     for (final id in resolved.related) {
       final other = topics.byId(id);
       if (other == null) continue;
-      final above = LevelGate.isAbove(other.topic.level, learner);
-      if (above && state.settings.hideAboveLevel) continue;
       rows.add(
         ResultRow(
           icon: Icons.sell_outlined,
           title: other.topic.nameFor(spoken),
-          dim: above,
-          tags: <Widget>[LevelTag(level: other.topic.level, above: above)],
+          tags: <Widget>[LevelTag(level: other.topic.level)],
           onTap: () => AppNavigator.openTopic(context, language, id),
         ),
       );
@@ -716,49 +653,5 @@ class _TopicPageState extends State<TopicPage> {
       _heading(context, l10n.topicRelated),
       GroupedList(outerRadius: AppRadii.card, gap: 4, children: rows),
     ];
-  }
-}
-
-/// The notice on an above-level topic: a lock, what it means for the learner.
-class _Notice extends StatelessWidget {
-  const _Notice({required this.title, required this.body});
-
-  final String title;
-  final String body;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    return Container(
-      padding: const EdgeInsetsDirectional.all(14),
-      decoration: BoxDecoration(
-        color: theme.colorScheme.surfaceContainerHigh,
-        borderRadius: BorderRadius.circular(AppRadii.field),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Icon(Icons.lock_outline, color: amberOf(context)),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  title.toUpperCase(),
-                  style: theme.textTheme.labelSmall!.copyWith(
-                    color: theme.colorScheme.onSurfaceVariant,
-                    fontWeight: FontWeight.w700,
-                    letterSpacing: 0.3,
-                  ),
-                ),
-                const SizedBox(height: 2),
-                Text(body, style: theme.textTheme.bodyMedium),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
   }
 }

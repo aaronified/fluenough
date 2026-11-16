@@ -28,14 +28,13 @@ class PathUnitView {
   final int decks;
 
   /// A deck of it the learner is given, which opens its screen; null while
-  /// the unit is above the learner's level or none of its decks is on the
-  /// phone: it is then not startable.
+  /// none of its decks is on the phone: it is then not startable.
   final String? openDeckId;
 }
 
 /// Unit [index] of [language]'s path, or null where the path has no such unit.
 PathUnitView? pathUnitView(AppState state, String language, int index) {
-  final catalog = state.catalogWithAboveLevel;
+  final catalog = state.catalogView;
   final plan = catalog.languagePaths[language]?.plan;
   if (plan == null || index < 0 || index >= plan.length) return null;
   final unit = plan[index];

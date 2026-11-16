@@ -6,7 +6,6 @@ import '../../app/culture.dart';
 import '../../app/routes.dart';
 import '../../app/session.dart';
 import '../../core/decks/weave.dart';
-import '../../core/models/level.dart';
 import '../../core/models/reading.dart' show bestLanguage;
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
@@ -76,9 +75,6 @@ class CultureItemPage extends StatelessWidget {
     final language = request.language;
     final info = cultureLanguage(state, language);
     final settings = state.settings;
-    final learner = state.levelIn(language);
-    final above = LevelGate.isAbove(item.level, learner);
-    final hidden = above && !settings.cultureAboveSupport;
     final spoken = cultureSpoken(context, state);
     final source = cultureSourceLine(l10n, item.source);
     final creatorId = item.creators.isEmpty ? null : item.creators.first;
@@ -87,7 +83,7 @@ class CultureItemPage extends StatelessWidget {
         : state.creatorsOf(language)?.byId(creatorId);
     final showPerson = settings.cultureCreators;
     final done = state.isCultureItemDone(item);
-    final canPlay = !hidden && state.hasVoice(info);
+    final canPlay = state.hasVoice(info);
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -121,16 +117,11 @@ class CultureItemPage extends StatelessWidget {
                 text: cultureKindName(l10n, item.kind),
                 style: ResultTagStyle.kind,
               ),
-              LevelTag(level: item.level, above: above),
+              LevelTag(level: item.level),
             ],
           ),
           const SizedBox(height: 12),
-          if (hidden)
-            AboveLevelNotice(
-              title: l10n.cultureNotShownTitle,
-              body: l10n.cultureNotShownBody(item.level.label),
-            )
-          else ...<Widget>[
+          ...<Widget>[
             Padding(
               padding: const EdgeInsetsDirectional.symmetric(
                 horizontal: AppSizes.textInset,
@@ -226,13 +217,7 @@ class CultureItemPage extends StatelessWidget {
                 const _NoSingleAuthor(),
             ],
             const SizedBox(height: 16),
-            if (above)
-              AboveLevelNotice(
-                title: l10n.cultureAboveTitle,
-                body: l10n.cultureAboveBody,
-              )
-            else
-              _Practise(item: item, language: language, done: done),
+            _Practise(item: item, language: language, done: done),
           ],
           const SizedBox(height: 8),
           Align(
@@ -362,7 +347,3 @@ class _Practise extends StatelessWidget {
     );
   }
 }
-
-/// Whether [item] is above the learner: for a row that locks it.
-bool cultureItemAbove(AppState state, String language, CultureItem item) =>
-    LevelGate.isAbove(item.level, state.levelIn(language));
