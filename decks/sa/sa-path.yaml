@@ -99,11 +99,8 @@ units:
       - { id: "grammar-sandhi-vowel-heard", text: { "en": "A short passage in Classical Sanskrit showing vowel sandhi, read aloud" } }
     reading_passages:
       - { id: "grammar-sandhi-vowel-text", text: { "en": "A short written text in Classical Sanskrit showing vowel sandhi" } }
-  - planned: { id: "sa-adverbs", theme: "adverbs", words: 24 }
-    listening_passages:
-      - { id: "adverbs-heard", text: { "en": "A short passage in Classical Sanskrit on the theme adverbs and particles, read aloud" } }
-    reading_passages:
-      - { id: "adverbs-text", text: { "en": "A short written text in Classical Sanskrit on the theme adverbs and particles" } }
+  - decks: ["sa-adverbs"]
+    words: 24
   - planned: { id: "sa-quantities", theme: "quantities", words: 14 }
     listening_passages:
       - { id: "quantities-heard", text: { "en": "A short passage in Classical Sanskrit on the theme quantities, read aloud" } }

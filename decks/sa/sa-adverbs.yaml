@@ -1,0 +1,490 @@
+schema: 1
+id: "sa-adverbs"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "adverbs"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-1080"
+    target: "अत्र"
+    reading: "atra"
+    ipa: "ət̪rə"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "अत्र देवाः सन्ति"
+        reading: "atra devāḥ santi"
+        ipa: "ət̪rə d̪eːʋaːh sənt̪i"
+        bases:
+          - { word: "देवाः", base: "देव", reading: "deva" }
+          - { word: "सन्ति", base: "अस्", reading: "as" }
+      - target: "अत्र पुत्राः सन्ति"
+        reading: "atra putrāḥ santi"
+        ipa: "ət̪rə put̪raːh sənt̪i"
+        bases:
+          - { word: "पुत्राः", base: "पुत्र", reading: "putra" }
+          - { word: "सन्ति", base: "अस्", reading: "as" }
+  - id: "sa-1081"
+    target: "तत्र"
+    reading: "tatra"
+    ipa: "t̪ət̪rə"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "तत्र देवाः सन्ति"
+        reading: "tatra devāḥ santi"
+        ipa: "t̪ət̪rə d̪eːʋaːh sənt̪i"
+        bases:
+          - { word: "देवाः", base: "देव", reading: "deva" }
+          - { word: "सन्ति", base: "अस्", reading: "as" }
+      - target: "तत्र जनाः सन्ति"
+        reading: "tatra janāḥ santi"
+        ipa: "t̪ət̪rə dʒənaːh sənt̪i"
+        bases:
+          - { word: "जनाः", base: "जन", reading: "jana" }
+          - { word: "सन्ति", base: "अस्", reading: "as" }
+  - id: "sa-1082"
+    target: "यत्र"
+    reading: "yatra"
+    ipa: "jət̪rə"
+    pos: "adv"
+    tags: ["place", "relative"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "यत्र देवाः सन्ति"
+        reading: "yatra devāḥ santi"
+        ipa: "jət̪rə d̪eːʋaːh sənt̪i"
+        bases:
+          - { word: "देवाः", base: "देव", reading: "deva" }
+          - { word: "सन्ति", base: "अस्", reading: "as" }
+      - target: "यत्र जनाः सन्ति"
+        reading: "yatra janāḥ santi"
+        ipa: "jət̪rə dʒənaːh sənt̪i"
+        bases:
+          - { word: "जनाः", base: "जन", reading: "jana" }
+          - { word: "सन्ति", base: "अस्", reading: "as" }
+  - id: "sa-1083"
+    target: "इदानीम्"
+    reading: "idānīm"
+    ipa: "id̪aːniːm"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "इदानीं जानामि"
+        reading: "idānīṃ jānāmi"
+        ipa: "id̪aːniːm dʒaːnaːmi"
+        bases:
+          - { word: "जानामि", base: "ज्ञा", reading: "jñā" }
+      - target: "इदानीं करोमि"
+        reading: "idānīṃ karomi"
+        ipa: "id̪aːniːm kəroːmi"
+        bases:
+          - { word: "करोमि", base: "कृ", reading: "kṛ" }
+  - id: "sa-1084"
+    target: "तदा"
+    reading: "tadā"
+    ipa: "t̪əd̪aː"
+    pos: "adv"
+    tags: ["time", "relative"]
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "तदा सः जानाति"
+        reading: "tadā saḥ jānāti"
+        ipa: "t̪əd̪aː səh dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "तदा सा करोति"
+        reading: "tadā sā karoti"
+        ipa: "t̪əd̪aː saː kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1085"
+    target: "यदा"
+    reading: "yadā"
+    ipa: "jəd̪aː"
+    pos: "adv"
+    tags: ["time", "relative"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "यदा सः जानाति"
+        reading: "yadā saḥ jānāti"
+        ipa: "jəd̪aː səh dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "यदा सा करोति"
+        reading: "yadā sā karoti"
+        ipa: "jəd̪aː saː kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1086"
+    target: "सदा"
+    reading: "sadā"
+    ipa: "səd̪aː"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "सः सदा जानाति"
+        reading: "saḥ sadā jānāti"
+        ipa: "səh səd̪aː dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "सा सदा करोति"
+        reading: "sā sadā karoti"
+        ipa: "saː səd̪aː kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1087"
+    target: "कदाचित्"
+    reading: "kadācit"
+    ipa: "kəd̪aːtʃit̪"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "सः कदाचित् करोति"
+        reading: "saḥ kadācit karoti"
+        ipa: "səh kəd̪aːtʃit̪ kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+      - target: "सा कदाचित् जानाति"
+        reading: "sā kadācit jānāti"
+        ipa: "saː kəd̪aːtʃit̪ dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+  - id: "sa-1088"
+    target: "अद्य"
+    reading: "adya"
+    ipa: "əd̪jə"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "अद्य सः करोति"
+        reading: "adya saḥ karoti"
+        ipa: "əd̪jə səh kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+      - target: "अद्य अहं जानामि"
+        reading: "adya ahaṃ jānāmi"
+        ipa: "əd̪jə əɦəm dʒaːnaːmi"
+        bases:
+          - { word: "अहं", base: "अहम्", reading: "aham" }
+          - { word: "जानामि", base: "ज्ञा", reading: "jñā" }
+  - id: "sa-1089"
+    target: "श्वः"
+    reading: "śvaḥ"
+    ipa: "ʃʋəh"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "श्वः", base: "श्वस्", reading: "śvas" }
+    examples:
+      - target: "श्वः सः करोति"
+        reading: "śvaḥ saḥ karoti"
+        ipa: "ʃʋəh səh kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+      - target: "श्वः सा जानाति"
+        reading: "śvaḥ sā jānāti"
+        ipa: "ʃʋəh saː dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+  - id: "sa-1090"
+    target: "ह्यः"
+    reading: "hyaḥ"
+    ipa: "ɦjəh"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "ह्यः", base: "ह्यस्", reading: "hyas" }
+    examples:
+      - target: "ह्यः सः"
+        reading: "hyaḥ saḥ"
+        ipa: "ɦjəh səh"
+      - target: "ह्यः सा"
+        reading: "hyaḥ sā"
+        ipa: "ɦjəh saː"
+  - id: "sa-1091"
+    target: "पुनः"
+    reading: "punaḥ"
+    ipa: "punəh"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "पुनः", base: "पुनर्", reading: "punar" }
+    examples:
+      - target: "सः पुनः करोति"
+        reading: "saḥ punaḥ karoti"
+        ipa: "səh punəh kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+      - target: "सा पुनः जानाति"
+        reading: "sā punaḥ jānāti"
+        ipa: "saː punəh dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+  - id: "sa-1092"
+    target: "अपि"
+    reading: "api"
+    ipa: "əpi"
+    pos: "particle"
+    tags: ["particle"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "अपि सः जानाति"
+        reading: "api saḥ jānāti"
+        ipa: "əpi səh dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "अपि सा करोति"
+        reading: "api sā karoti"
+        ipa: "əpi saː kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1093"
+    target: "एव"
+    reading: "eva"
+    ipa: "eːʋə"
+    pos: "particle"
+    tags: ["particle"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "एव सः जानाति"
+        reading: "eva saḥ jānāti"
+        ipa: "eːʋə səh dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "एव सा करोति"
+        reading: "eva sā karoti"
+        ipa: "eːʋə saː kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1094"
+    target: "वा"
+    reading: "vā"
+    ipa: "ʋaː"
+    pos: "particle"
+    tags: ["particle"]
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "सः वा सा"
+        reading: "saḥ vā sā"
+        ipa: "səh ʋaː saː"
+      - target: "पिता वा माता"
+        reading: "pitā vā mātā"
+        ipa: "pit̪aː ʋaː maːt̪aː"
+        bases:
+          - { word: "पिता", base: "पितृ", reading: "pitṛ" }
+          - { word: "माता", base: "मातृ", reading: "mātṛ" }
+  - id: "sa-1095"
+    target: "इति"
+    reading: "iti"
+    ipa: "it̪i"
+    pos: "particle"
+    tags: ["particle"]
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "इति सः जानाति"
+        reading: "iti saḥ jānāti"
+        ipa: "it̪i səh dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "इति सः करोति"
+        reading: "iti saḥ karoti"
+        ipa: "it̪i səh kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1096"
+    target: "बहु"
+    reading: "bahu"
+    ipa: "bəɦu"
+    pos: "adv"
+    tags: ["quantity"]
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "बहु जलम्"
+        reading: "bahu jalam"
+        ipa: "bəɦu dʒələm"
+        bases:
+          - { word: "जलम्", base: "जल", reading: "jala" }
+      - target: "बहु जानाति"
+        reading: "bahu jānāti"
+        ipa: "bəɦu dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+  - id: "sa-1097"
+    target: "शीघ्रम्"
+    reading: "śīghram"
+    ipa: "ʃiːɡʱrəm"
+    pos: "adv"
+    tags: ["manner"]
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "शीघ्रं करोमि"
+        reading: "śīghraṃ karomi"
+        ipa: "ʃiːɡʱrəm kəroːmi"
+        bases:
+          - { word: "करोमि", base: "कृ", reading: "kṛ" }
+      - target: "शीघ्रं कुर्मः"
+        reading: "śīghraṃ kurmaḥ"
+        ipa: "ʃiːɡʱrəm kurməh"
+        bases:
+          - { word: "कुर्मः", base: "कृ", reading: "kṛ" }
+  - id: "sa-1098"
+    target: "एवम्"
+    reading: "evam"
+    ipa: "eːʋəm"
+    pos: "adv"
+    tags: ["manner"]
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "एवं करोति"
+        reading: "evaṃ karoti"
+        ipa: "eːʋəm kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+      - target: "एवं जानामि"
+        reading: "evaṃ jānāmi"
+        ipa: "eːʋəm dʒaːnaːmi"
+        bases:
+          - { word: "जानामि", base: "ज्ञा", reading: "jñā" }
+  - id: "sa-1099"
+    target: "तथा"
+    reading: "tathā"
+    ipa: "t̪ət̪ʰaː"
+    pos: "adv"
+    tags: ["manner"]
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "तथा सः करोति"
+        reading: "tathā saḥ karoti"
+        ipa: "t̪ət̪ʰaː səh kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+      - target: "तथा सा जानाति"
+        reading: "tathā sā jānāti"
+        ipa: "t̪ət̪ʰaː saː dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+  - id: "sa-1100"
+    target: "अथ"
+    reading: "atha"
+    ipa: "ət̪ʰə"
+    pos: "particle"
+    tags: ["particle", "time"]
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "अथ सः जानाति"
+        reading: "atha saḥ jānāti"
+        ipa: "ət̪ʰə səh dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "अथ सा करोति"
+        reading: "atha sā karoti"
+        ipa: "ət̪ʰə saː kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1101"
+    target: "दूरम्"
+    reading: "dūram"
+    ipa: "d̪uːrəm"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "अयं दूरम्"
+        reading: "ayaṃ dūram"
+        ipa: "əjəm d̪uːrəm"
+      - target: "इदं दूरम्"
+        reading: "idaṃ dūram"
+        ipa: "id̪əm d̪uːrəm"
+  - id: "sa-1102"
+    target: "नित्यम्"
+    reading: "nityam"
+    ipa: "nit̪jəm"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "नित्यं जानाति"
+        reading: "nityaṃ jānāti"
+        ipa: "nit̪jəm dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "नित्यं करोमि"
+        reading: "nityaṃ karomi"
+        ipa: "nit̪jəm kəroːmi"
+        bases:
+          - { word: "करोमि", base: "कृ", reading: "kṛ" }
+  - id: "sa-1103"
+    target: "एकदा"
+    reading: "ekadā"
+    ipa: "eːkəd̪aː"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "एकदा सः जानाति"
+        reading: "ekadā saḥ jānāti"
+        ipa: "eːkəd̪aː səh dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "एकदा सा करोति"
+        reading: "ekadā sā karoti"
+        ipa: "eːkəd̪aː saː kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
