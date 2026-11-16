@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **Words quoted in a sentence use the script's font too.** A Telugu, Hindi, Japanese or other deck word quoted in feedback, a warning or a review sheet is now drawn in the downloaded font of its script, not your phone's.
 - **Deck text no longer falls back to your phone's font.** Text in Latin, Cyrillic and Greek, with its readings and IPA, is drawn in one downloaded font per script that comes with every course, and Thai, Meitei Mayek and Brahmi have fonts to download too.
 - **A word is learned only when you answer it twice.** A new word is shown, asked at once, and asked again in a different way two questions later; only when both answers are right does it join your reviews, so nothing you only glanced at is scheduled for you.
 - **Everything is open, whatever your level.** Decks, topics, culture items and recommended works are no longer hidden or locked because they are above your level, and the "Hide what is above my level" and culture "Items above my level" settings are gone.

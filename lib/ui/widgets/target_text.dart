@@ -311,6 +311,24 @@ Locale targetLocale(LanguageInfo language) => switch (language.script) {
   _ => Locale(language.code),
 };
 
+/// The style of a quoted piece of [language]'s deck text inside an interface
+/// string (owner, 2026-11-16: "I don't want to depend on system fonts for
+/// content"): the script's downloaded font first, by its family name, which
+/// needs no lookup of what is loaded, as a family that is not loaded is
+/// skipped; then Roboto, the braille font and the content fonts, so that
+/// the quote falls back as before and never to the phone's font. The text
+/// around the quote has no such style and stays in the interface's Roboto.
+TextStyle targetQuoteStyle(LanguageInfo language) => TextStyle(
+  fontFamily: language.isBraille
+      ? brailleFontFamily
+      : scriptFontFamily(fontScriptFor(language.code, language.script)),
+  fontFamilyFallback: <String>[
+    interfaceFontFamily,
+    brailleFontFamily,
+    for (final script in contentFontScripts) scriptFontFamily(script),
+  ],
+);
+
 /// Right-to-left isolate and pop directional isolate (Unicode bidi).
 const String _rli = '\u2067';
 const String _pdi = '\u2069';
@@ -319,6 +337,7 @@ const String _pdi = '\u2069';
 /// [quotes] in it marked as [language]'s: drawn in its font and read by a
 /// screen reader in its voice, while the rest stays the interface's (#26).
 /// "Answer: el niño" is read in English up to the colon and in Spanish after.
+/// A quote is drawn in its script's downloaded font ([targetQuoteStyle]).
 ///
 /// A quote in a right-to-left language is wrapped in a bidi isolate (#619),
 /// so that the interface's words around it never reorder it, nor it them:
@@ -336,6 +355,7 @@ TextSpan quotingTarget(
       if (quote.isNotEmpty) quote,
   }.toList()..sort((a, b) => b.length.compareTo(a.length));
   final locale = targetLocale(language);
+  final style = targetQuoteStyle(language);
   final spans = <TextSpan>[];
   var start = 0;
   while (start < text.length) {
@@ -351,7 +371,11 @@ TextSpan quotingTarget(
     if (found == null) break;
     if (at > start) spans.add(TextSpan(text: text.substring(start, at)));
     spans.add(
-      TextSpan(text: language.rtl ? '$_rli$found$_pdi' : found, locale: locale),
+      TextSpan(
+        text: language.rtl ? '$_rli$found$_pdi' : found,
+        locale: locale,
+        style: style,
+      ),
     );
     start = at + found.length;
   }
