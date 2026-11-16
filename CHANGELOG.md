@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **The info button on Today now sits before its sentence.** In the skills card, the small info button is now on the left of "Tap a skill to practise only that" instead of the far right.
+
 ## [0.10.6] - 2026-11-15
 
 - **The Culture bar now fills.** In Add a language, the Culture bar under a language shows how much of its culture decks is written, instead of always being empty.
