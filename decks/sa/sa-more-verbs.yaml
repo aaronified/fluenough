@@ -1,0 +1,494 @@
+# More verbs. Each root and its present stem were read on the en.wiktionary page of the
+# verb's third person singular present (class, voice and glosses), 2026-11-16;
+# the readings and IPA are from tools/transcribe.py (sa).
+schema: 1
+id: "sa-more-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "more-verbs"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-2100"
+    target: "क्षर्"
+    reading: "kṣar"
+    ipa: "kʂər"
+    pos: "verb"
+    tags: ["gana-1"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "क्षरति जलम्"
+        reading: "kṣarati jalam"
+        ipa: "kʂərət̪i dʒələm"
+        bases:
+          - { word: "क्षरति", base: "क्षर्", reading: "kṣar" }
+      - target: "तत्र क्षरति जलम्"
+        reading: "tatra kṣarati jalam"
+        ipa: "t̪ət̪rə kʂərət̪i dʒələm"
+        bases:
+          - { word: "क्षरति", base: "क्षर्", reading: "kṣar" }
+  - id: "sa-2101"
+    target: "रुध्"
+    reading: "rudh"
+    ipa: "rud̪ʱ"
+    pos: "verb"
+    tags: ["gana-7"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "रुणद्धि सखा जलम्"
+        reading: "ruṇaddhi sakhā jalam"
+        ipa: "ruɳəd̪d̪ʱi səkʰaː dʒələm"
+        bases:
+          - { word: "रुणद्धि", base: "रुध्", reading: "rudh" }
+      - target: "रुणद्धि पिता तत्"
+        reading: "ruṇaddhi pitā tat"
+        ipa: "ruɳəd̪d̪ʱi pit̪aː t̪ət̪"
+        bases:
+          - { word: "रुणद्धि", base: "रुध्", reading: "rudh" }
+  - id: "sa-2102"
+    target: "लभ्"
+    reading: "labh"
+    ipa: "ləbʱ"
+    pos: "verb"
+    tags: ["gana-1-atmanepada", "atmanepada"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "लभते माता जलम्"
+        reading: "labhate mātā jalam"
+        ipa: "ləbʱət̪eː maːt̪aː dʒələm"
+        bases:
+          - { word: "लभते", base: "लभ्", reading: "labh" }
+      - target: "लभते पिता पुस्तकम्"
+        reading: "labhate pitā pustakam"
+        ipa: "ləbʱət̪eː pit̪aː pust̪əkəm"
+        bases:
+          - { word: "लभते", base: "लभ्", reading: "labh" }
+  - id: "sa-2103"
+    target: "वृत्"
+    reading: "vṛt"
+    ipa: "ʋr̩t̪"
+    pos: "verb"
+    tags: ["gana-1-atmanepada", "atmanepada"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "माता तत्र वर्तते"
+        reading: "mātā tatra vartate"
+        ipa: "maːt̪aː t̪ət̪rə ʋərt̪ət̪eː"
+        bases:
+          - { word: "वर्तते", base: "वृत्", reading: "vṛt" }
+      - target: "सखा तत्र वर्तते"
+        reading: "sakhā tatra vartate"
+        ipa: "səkʰaː t̪ət̪rə ʋərt̪ət̪eː"
+        bases:
+          - { word: "वर्तते", base: "वृत्", reading: "vṛt" }
+  - id: "sa-2104"
+    target: "ईक्ष्"
+    reading: "īkṣ"
+    ipa: "iːkʂ"
+    pos: "verb"
+    tags: ["gana-1-atmanepada", "atmanepada"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "ईक्षते माता"
+        reading: "īkṣate mātā"
+        ipa: "iːkʂət̪eː maːt̪aː"
+        bases:
+          - { word: "ईक्षते", base: "ईक्ष्", reading: "īkṣ" }
+      - target: "ईक्षते पिता तत्र"
+        reading: "īkṣate pitā tatra"
+        ipa: "iːkʂət̪eː pit̪aː t̪ət̪rə"
+        bases:
+          - { word: "ईक्षते", base: "ईक्ष्", reading: "īkṣ" }
+  - id: "sa-2105"
+    target: "अस्"
+    reading: "as"
+    ipa: "əs"
+    pos: "verb"
+    tags: ["gana-2"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "अस्ति माता"
+        reading: "asti mātā"
+        ipa: "əst̪i maːt̪aː"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+      - target: "अस्ति सखा तत्र"
+        reading: "asti sakhā tatra"
+        ipa: "əst̪i səkʰaː t̪ət̪rə"
+        bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-2106"
+    target: "रुद्"
+    reading: "rud"
+    ipa: "rud̪"
+    pos: "verb"
+    tags: ["gana-2"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "माता रोदिति"
+        reading: "mātā roditi"
+        ipa: "maːt̪aː roːd̪it̪i"
+        bases:
+          - { word: "रोदिति", base: "रुद्", reading: "rud" }
+      - target: "पिता तत्र रोदिति"
+        reading: "pitā tatra roditi"
+        ipa: "pit̪aː t̪ət̪rə roːd̪it̪i"
+        bases:
+          - { word: "रोदिति", base: "रुद्", reading: "rud" }
+  - id: "sa-2107"
+    target: "या"
+    reading: "yā"
+    ipa: "jaː"
+    pos: "verb"
+    tags: ["gana-2"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "माता याति"
+        reading: "mātā yāti"
+        ipa: "maːt̪aː jaːt̪i"
+        bases:
+          - { word: "याति", base: "या", reading: "yā" }
+      - target: "सखा तत्र याति"
+        reading: "sakhā tatra yāti"
+        ipa: "səkʰaː t̪ət̪rə jaːt̪i"
+        bases:
+          - { word: "याति", base: "या", reading: "yā" }
+  - id: "sa-2108"
+    target: "ब्रू"
+    reading: "brū"
+    ipa: "bruː"
+    pos: "verb"
+    tags: ["gana-2"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "माता ब्रवीति"
+        reading: "mātā bravīti"
+        ipa: "maːt̪aː brəʋiːt̪i"
+        bases:
+          - { word: "ब्रवीति", base: "ब्रू", reading: "brū" }
+      - target: "पिता सदा ब्रवीति"
+        reading: "pitā sadā bravīti"
+        ipa: "pit̪aː səd̪aː brəʋiːt̪i"
+        bases:
+          - { word: "ब्रवीति", base: "ब्रू", reading: "brū" }
+  - id: "sa-2109"
+    target: "दा"
+    reading: "dā"
+    ipa: "d̪aː"
+    pos: "verb"
+    tags: ["gana-3"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "ददाति माता जलम्"
+        reading: "dadāti mātā jalam"
+        ipa: "d̪əd̪aːt̪i maːt̪aː dʒələm"
+        bases:
+          - { word: "ददाति", base: "दा", reading: "dā" }
+      - target: "ददाति पिता पुस्तकम्"
+        reading: "dadāti pitā pustakam"
+        ipa: "d̪əd̪aːt̪i pit̪aː pust̪əkəm"
+        bases:
+          - { word: "ददाति", base: "दा", reading: "dā" }
+  - id: "sa-2110"
+    target: "धा"
+    reading: "dhā"
+    ipa: "d̪ʱaː"
+    pos: "verb"
+    tags: ["gana-3"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "दधाति माता जलम्"
+        reading: "dadhāti mātā jalam"
+        ipa: "d̪əd̪ʱaːt̪i maːt̪aː dʒələm"
+        bases:
+          - { word: "दधाति", base: "धा", reading: "dhā" }
+      - target: "दधाति पिता पुस्तकम्"
+        reading: "dadhāti pitā pustakam"
+        ipa: "d̪əd̪ʱaːt̪i pit̪aː pust̪əkəm"
+        bases:
+          - { word: "दधाति", base: "धा", reading: "dhā" }
+  - id: "sa-2111"
+    target: "पश्"
+    reading: "paś"
+    ipa: "pəʃ"
+    pos: "verb"
+    tags: ["gana-4"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "माता पश्यति"
+        reading: "mātā paśyati"
+        ipa: "maːt̪aː pəʃjət̪i"
+        bases:
+          - { word: "पश्यति", base: "पश्", reading: "paś" }
+      - target: "पिता तत्र पश्यति"
+        reading: "pitā tatra paśyati"
+        ipa: "pit̪aː t̪ət̪rə pəʃjət̪i"
+        bases:
+          - { word: "पश्यति", base: "पश्", reading: "paś" }
+  - id: "sa-2112"
+    target: "नृत्"
+    reading: "nṛt"
+    ipa: "nr̩t̪"
+    pos: "verb"
+    tags: ["gana-4"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "माता नृत्यति"
+        reading: "mātā nṛtyati"
+        ipa: "maːt̪aː nr̩t̪jət̪i"
+        bases:
+          - { word: "नृत्यति", base: "नृत्", reading: "nṛt" }
+      - target: "स्वसा सदा नृत्यति"
+        reading: "svasā sadā nṛtyati"
+        ipa: "sʋəsaː səd̪aː nr̩t̪jət̪i"
+        bases:
+          - { word: "नृत्यति", base: "नृत्", reading: "nṛt" }
+  - id: "sa-2113"
+    target: "श्रु"
+    reading: "śru"
+    ipa: "ʃru"
+    pos: "verb"
+    tags: ["gana-5"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "माता शृणोति"
+        reading: "mātā śṛṇoti"
+        ipa: "maːt̪aː ʃr̩ɳoːt̪i"
+        bases:
+          - { word: "शृणोति", base: "श्रु", reading: "śru" }
+      - target: "पिता तत्र शृणोति"
+        reading: "pitā tatra śṛṇoti"
+        ipa: "pit̪aː t̪ət̪rə ʃr̩ɳoːt̪i"
+        bases:
+          - { word: "शृणोति", base: "श्रु", reading: "śru" }
+  - id: "sa-2114"
+    target: "लिख्"
+    reading: "likh"
+    ipa: "likʰ"
+    pos: "verb"
+    tags: ["gana-6"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "लिखति माता पुस्तकम्"
+        reading: "likhati mātā pustakam"
+        ipa: "likʰət̪i maːt̪aː pust̪əkəm"
+        bases:
+          - { word: "लिखति", base: "लिख्", reading: "likh" }
+      - target: "लिखति पिता तत्"
+        reading: "likhati pitā tat"
+        ipa: "likʰət̪i pit̪aː t̪ət̪"
+        bases:
+          - { word: "लिखति", base: "लिख्", reading: "likh" }
+  - id: "sa-2115"
+    target: "विश्"
+    reading: "viś"
+    ipa: "ʋiʃ"
+    pos: "verb"
+    tags: ["gana-6"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "माता तत्र विशति"
+        reading: "mātā tatra viśati"
+        ipa: "maːt̪aː t̪ət̪rə ʋiʃət̪i"
+        bases:
+          - { word: "विशति", base: "विश्", reading: "viś" }
+      - target: "पिता विशति"
+        reading: "pitā viśati"
+        ipa: "pit̪aː ʋiʃət̪i"
+        bases:
+          - { word: "विशति", base: "विश्", reading: "viś" }
+  - id: "sa-2116"
+    target: "इष्"
+    reading: "iṣ"
+    ipa: "iʂ"
+    pos: "verb"
+    tags: ["gana-6"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "इच्छति माता जलम्"
+        reading: "icchati mātā jalam"
+        ipa: "itʃtʃʰət̪i maːt̪aː dʒələm"
+        bases:
+          - { word: "इच्छति", base: "इष्", reading: "iṣ" }
+      - target: "इच्छति पिता पुस्तकम्"
+        reading: "icchati pitā pustakam"
+        ipa: "itʃtʃʰət̪i pit̪aː pust̪əkəm"
+        bases:
+          - { word: "इच्छति", base: "इष्", reading: "iṣ" }
+  - id: "sa-2117"
+    target: "तुद्"
+    reading: "tud"
+    ipa: "t̪ud̪"
+    pos: "verb"
+    tags: ["gana-6"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "भ्राता तुदति"
+        reading: "bhrātā tudati"
+        ipa: "bʱraːt̪aː t̪ud̪ət̪i"
+        bases:
+          - { word: "तुदति", base: "तुद्", reading: "tud" }
+      - target: "सखा तत्र तुदति"
+        reading: "sakhā tatra tudati"
+        ipa: "səkʰaː t̪ət̪rə t̪ud̪ət̪i"
+        bases:
+          - { word: "तुदति", base: "तुद्", reading: "tud" }
+  - id: "sa-2118"
+    target: "कृ"
+    reading: "kṛ"
+    ipa: "kr̩"
+    pos: "verb"
+    tags: ["gana-8"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "करोति पिता पुस्तकम्"
+        reading: "karoti pitā pustakam"
+        ipa: "kəroːt̪i pit̪aː pust̪əkəm"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+      - target: "करोति माता तत्"
+        reading: "karoti mātā tat"
+        ipa: "kəroːt̪i maːt̪aː t̪ət̪"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-2119"
+    target: "ज्ञा"
+    reading: "jñā"
+    ipa: "dʒɲaː"
+    pos: "verb"
+    tags: ["gana-9"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "जानाति माता"
+        reading: "jānāti mātā"
+        ipa: "dʒaːnaːt̪i maːt̪aː"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "जानाति पिता तत्"
+        reading: "jānāti pitā tat"
+        ipa: "dʒaːnaːt̪i pit̪aː t̪ət̪"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+  - id: "sa-2120"
+    target: "क्री"
+    reading: "krī"
+    ipa: "kriː"
+    pos: "verb"
+    tags: ["gana-9"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "क्रीणाति माता पुस्तकम्"
+        reading: "krīṇāti mātā pustakam"
+        ipa: "kriːɳaːt̪i maːt̪aː pust̪əkəm"
+        bases:
+          - { word: "क्रीणाति", base: "क्री", reading: "krī" }
+      - target: "क्रीणाति पिता तत्"
+        reading: "krīṇāti pitā tat"
+        ipa: "kriːɳaːt̪i pit̪aː t̪ət̪"
+        bases:
+          - { word: "क्रीणाति", base: "क्री", reading: "krī" }
+  - id: "sa-2121"
+    target: "ग्रह्"
+    reading: "grah"
+    ipa: "ɡrəɦ"
+    pos: "verb"
+    tags: ["gana-9"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "गृह्णाति माता पुस्तकम्"
+        reading: "gṛhṇāti mātā pustakam"
+        ipa: "ɡr̩ɦɳaːt̪i maːt̪aː pust̪əkəm"
+        bases:
+          - { word: "गृह्णाति", base: "ग्रह्", reading: "grah" }
+      - target: "गृह्णाति पिता जलम्"
+        reading: "gṛhṇāti pitā jalam"
+        ipa: "ɡr̩ɦɳaːt̪i pit̪aː dʒələm"
+        bases:
+          - { word: "गृह्णाति", base: "ग्रह्", reading: "grah" }
+  - id: "sa-2122"
+    target: "कथ्"
+    reading: "kath"
+    ipa: "kət̪ʰ"
+    pos: "verb"
+    tags: ["gana-10"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "कथयति माता"
+        reading: "kathayati mātā"
+        ipa: "kət̪ʰəjət̪i maːt̪aː"
+        bases:
+          - { word: "कथयति", base: "कथ्", reading: "kath" }
+      - target: "कथयति पिता तत्"
+        reading: "kathayati pitā tat"
+        ipa: "kət̪ʰəjət̪i pit̪aː t̪ət̪"
+        bases:
+          - { word: "कथयति", base: "कथ्", reading: "kath" }
+  - id: "sa-2123"
+    target: "पूज्"
+    reading: "pūj"
+    ipa: "puːdʒ"
+    pos: "verb"
+    tags: ["gana-10"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "पूजयति माता देवम्"
+        reading: "pūjayati mātā devam"
+        ipa: "puːdʒəjət̪i maːt̪aː d̪eːʋəm"
+        bases:
+          - { word: "पूजयति", base: "पूज्", reading: "pūj" }
+          - { word: "देवम्", ref: "sa-0025" }
+      - target: "पूजयति पिता देवम्"
+        reading: "pūjayati pitā devam"
+        ipa: "puːdʒəjət̪i pit̪aː d̪eːʋəm"
+        bases:
+          - { word: "पूजयति", base: "पूज्", reading: "pūj" }
+          - { word: "देवम्", ref: "sa-0025" }

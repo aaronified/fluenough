@@ -9,9 +9,13 @@ authors:
 source: "Whitney, Sanskrit Grammar 551 to 553 (endings), 599 to 608 (the classes) and 734 to 735 (the bhū class) on en.wikisource, and the Wikipedia pages Sanskrit nouns and Sanskrit grammar, read 2026-11-16; Panini, Astadhyayi 1.3.1, 3.1.68, 3.2.123 as typed on sa.wikisource.org/wiki/अष्टाध्यायी, read 2026-11-16; each verb's forms read in the present table of its en.wiktionary.org entry (2026-11-16)."
 tags: ["grammar", "unreviewed"]
 table:
+  # The verbs of other classes (2 to 10) and the first-class verbs that take the middle
+  # endings (atmanepada) are not rows of this table: their present stems or endings
+  # differ, and the notes of their cards say how. They are listed here as `except`.
   applies_to:
     pos: ["verb"]
     tags: ["gana-1"]
+    except: ["sa-2101", "sa-2102", "sa-2103", "sa-2104", "sa-2105", "sa-2106", "sa-2107", "sa-2108", "sa-2109", "sa-2110", "sa-2111", "sa-2112", "sa-2113", "sa-2114", "sa-2115", "sa-2116", "sa-2117", "sa-2118", "sa-2119", "sa-2120", "sa-2121", "sa-2122", "sa-2123"]
   slots: ["stem", "p3-sg", "p3-du", "p3-pl", "p2-sg", "p2-du", "p2-pl", "p1-sg", "p1-du", "p1-pl"]
   rows:
     - word: "sa-0430"
@@ -104,6 +108,9 @@ table:
     - word: "sa-2023"
       forms: {"stem": "ह्वय", "p3-sg": "ह्वयति", "p3-du": "ह्वयतः", "p3-pl": "ह्वयन्ति", "p2-sg": "ह्वयसि", "p2-du": "ह्वयथः", "p2-pl": "ह्वयथ", "p1-sg": "ह्वयामि", "p1-du": "ह्वयावः", "p1-pl": "ह्वयामः"}
       readings: {"stem": "hvaya", "p3-sg": "hvayati", "p3-du": "hvayataḥ", "p3-pl": "hvayanti", "p2-sg": "hvayasi", "p2-du": "hvayathaḥ", "p2-pl": "hvayatha", "p1-sg": "hvayāmi", "p1-du": "hvayāvaḥ", "p1-pl": "hvayāmaḥ"}
+    - word: "sa-2100"
+      forms: {"stem": "क्षर", "p3-sg": "क्षरति", "p3-du": "क्षरतः", "p3-pl": "क्षरन्ति", "p2-sg": "क्षरसि", "p2-du": "क्षरथः", "p2-pl": "क्षरथ", "p1-sg": "क्षरामि", "p1-du": "क्षरावः", "p1-pl": "क्षरामः"}
+      readings: {"stem": "kṣara", "p3-sg": "kṣarati", "p3-du": "kṣarataḥ", "p3-pl": "kṣaranti", "p2-sg": "kṣarasi", "p2-du": "kṣarathaḥ", "p2-pl": "kṣaratha", "p1-sg": "kṣarāmi", "p1-du": "kṣarāvaḥ", "p1-pl": "kṣarāmaḥ"}
 rules:
   - id: "sa-rule-present-stem"
     slots: ["stem"]
