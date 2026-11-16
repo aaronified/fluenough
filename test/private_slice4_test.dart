@@ -20,6 +20,7 @@ import 'package:fluenough/app/private_store.dart';
 import 'package:fluenough/core/backup/zip_files.dart';
 import 'package:fluenough/core/data/log_jsonl.dart';
 import 'package:fluenough/core/data/spoken_languages.dart';
+import 'package:fluenough/core/decks/language_catalog.dart';
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/private/private_check.dart';
 import 'package:fluenough/core/private/private_export.dart';
@@ -709,9 +710,13 @@ void main() {
         tester,
         Scaffold(
           body: LanguagePickList(
+            // With a course each: the list names those that have one.
             views: const <LanguageView>[
-              LanguageView(own, null),
-              LanguageView(builtIn, null),
+              LanguageView(own, CatalogLanguage(code: 'qaa', name: 'Alpha')),
+              LanguageView(
+                builtIn,
+                CatalogLanguage(code: 'en', name: 'English'),
+              ),
             ],
             onPick: (_) {},
             isAdded: (_) => false,
