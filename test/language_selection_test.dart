@@ -686,6 +686,8 @@ languages:
         expect(key('tile-$c'), findsOneWidget);
       }
       expect(tester.takeException(), isNull);
+      // The link is below the fold of a 800 dp phone.
+      await tester.scrollUntilVisible(key('languages-see-all'), 300);
       await seeAll(tester);
       await tester.scrollUntilVisible(key('languages-coming-soon'), 500);
       await tester.tap(key('languages-coming-soon'));
