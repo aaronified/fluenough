@@ -2,12 +2,14 @@ schema: 1
 id: "tok-describing-sentences"
 part: "core"
 kind: "vocab"
-language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", scripts: ["latin", "sitelen_pona"], icon: "Tp" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed"]
 cards:
   - id: "tok-0127"
     target: "ijo ni li suli."
+    target_scripts:
+      sitelen_pona: "󱤌 󱥁 󱤧 󱥣."
     ipa: "ˈijo ni li ˈsuli"
     pos: "phrase"
     bases:
@@ -20,6 +22,8 @@ cards:
       - { id: "w2", ref: "tok-0121", kind: "word" }
   - id: "tok-0128"
     target: "ona li lili."
+    target_scripts:
+      sitelen_pona: "󱥆 󱤧 󱤨."
     ipa: "ˈona li ˈlili"
     pos: "phrase"
     bases:
@@ -31,6 +35,8 @@ cards:
       - { id: "w2", ref: "tok-0122", kind: "word" }
   - id: "tok-0129"
     target: "sina lukin e ijo sin."
+    target_scripts:
+      sitelen_pona: "󱥞 󱤮 󱤉 󱤌 󱥝."
     ipa: "ˈsina ˈlukin e ˈijo sin"
     pos: "phrase"
     bases:
@@ -44,6 +50,8 @@ cards:
       - { id: "w2", ref: "tok-0007", kind: "word" }
   - id: "tok-0130"
     target: "jan wawa li lape."
+    target_scripts:
+      sitelen_pona: "󱤑 󱥵 󱤧 󱤢."
     ipa: "jan ˈwawa li ˈlape"
     pos: "phrase"
     bases:
@@ -56,6 +64,8 @@ cards:
       - { id: "w2", ref: "tok-0002", kind: "word" }
   - id: "tok-0131"
     target: "jan mute li moku."
+    target_scripts:
+      sitelen_pona: "󱤑 󱤼 󱤧 󱤶."
     ipa: "jan ˈmute li ˈmoku"
     pos: "phrase"
     bases:
@@ -68,6 +78,8 @@ cards:
       - { id: "w2", ref: "tok-0087", kind: "word" }
   - id: "tok-0132"
     target: "ijo ante li pona ala."
+    target_scripts:
+      sitelen_pona: "󱤌 󱤆 󱤧 󱥔 󱤂."
     ipa: "ˈijo ˈante li ˈpona ˈala"
     pos: "phrase"
     bases:
@@ -81,6 +93,8 @@ cards:
       - { id: "w2", ref: "tok-0121", kind: "word" }
   - id: "tok-0133"
     target: "ijo sama li ike ala."
+    target_scripts:
+      sitelen_pona: "󱤌 󱥖 󱤧 󱤍 󱤂."
     ipa: "ˈijo ˈsama li ˈike ˈala"
     pos: "phrase"
     bases:
@@ -94,6 +108,8 @@ cards:
       - { id: "w2", ref: "tok-0125", kind: "word" }
   - id: "tok-0134"
     target: "mi wile e ijo suli."
+    target_scripts:
+      sitelen_pona: "󱤴 󱥷 󱤉 󱤌 󱥣."
     ipa: "mi ˈwile e ˈijo ˈsuli"
     pos: "phrase"
     bases:

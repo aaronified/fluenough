@@ -7,6 +7,7 @@
   "iso639_3": "tok"
   "name": "Toki Pona"
   "script": "latin"
+  "scripts": ["latin", "sitelen_pona"]
   "icon": "Tp"
 "license": "CC-BY-SA-4.0"
 "tags":
@@ -15,6 +16,8 @@
 "cards":
 - "id": "tok-0335"
   "target": "pi"
+  "target_scripts":
+    "sitelen_pona": "󱥍"
   "ipa": "pi"
   "pos": "particle"
   "bases": "self"
@@ -25,6 +28,8 @@
     "kind": "usage"
   "examples":
   - "target": "tomo pi telo suli."
+    "target_scripts":
+      "sitelen_pona": "󱥭 󱥍 󱥪 󱥣."
     "ipa": "ˈtomo pi ˈtelo ˈsuli"
     "bases":
     - "word": "tomo"
@@ -36,6 +41,8 @@
     - "word": "suli"
       "ref": "tok-0119"
   - "target": "jan pi moku pona."
+    "target_scripts":
+      "sitelen_pona": "󱤑 󱥍 󱤶 󱥔."
     "ipa": "jan pi ˈmoku ˈpona"
     "bases":
     - "word": "jan"
