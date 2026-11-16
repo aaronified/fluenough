@@ -14,13 +14,36 @@ String tokenValueLabel(
   String value, {
   Map<String, String> themeNames = const <String, String>{},
 }) => switch (token) {
-  SearchToken.kind => searchKindLabel(l10n, SearchKind.values.byName(value)),
-  SearchToken.status => statusLabel(
-    l10n,
-    CardStatus.values.firstWhere((s) => s.slug == value),
-  ),
+  SearchToken.kind =>
+    cultureKindSlugs.contains(value)
+        ? cultureKindLabel(l10n, value)
+        : searchKindLabel(l10n, SearchKind.values.byName(value)),
+  SearchToken.status =>
+    cultureStatusSlugs.contains(value)
+        ? cultureStatusLabel(l10n, value)
+        : statusLabel(
+            l10n,
+            CardStatus.values.firstWhere((s) => s.slug == value),
+          ),
   SearchToken.theme => themeNames[value] ?? value,
+  SearchToken.creator || SearchToken.year => value,
 };
+
+/// A culture kind (`film`, `proverb`) as its chip and the menu show it.
+String cultureKindLabel(AppLocalizations l10n, String slug) => switch (slug) {
+  'book' => l10n.recMediumBook,
+  'film' => l10n.recMediumFilm,
+  'series' => l10n.recMediumSeries,
+  'song' => l10n.recMediumSong,
+  'play' => l10n.recMediumPlay,
+  'podcast' => l10n.recMediumPodcast,
+  'comic' => l10n.recMediumComic,
+  _ => l10n.cultureKindProverb,
+};
+
+/// A culture status (`done`, `todo`) as its chip and the menu show it.
+String cultureStatusLabel(AppLocalizations l10n, String slug) =>
+    slug == 'done' ? l10n.searchStatusDone : l10n.searchStatusTodo;
 
 /// A status as its chip and the menu show it.
 String statusLabel(AppLocalizations l10n, CardStatus status) =>

@@ -7,12 +7,14 @@ import '../../app/culture_list.dart';
 import '../../app/deck_catalog.dart' show DeckEntry;
 import '../../app/routes.dart';
 import '../../core/models/recommendation.dart';
+import '../../core/search/query.dart' show CultureFilter;
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../culture/culture_parts.dart' show cultureLanguage;
 import '../culture/culture_works.dart';
 import 'result_marks.dart';
+import 'search_tabs.dart' show ResultTab, ResultTabStrip, cultureTabPrefix;
 
 /// What a section of the culture list is called.
 String cultureSectionName(
@@ -29,49 +31,140 @@ String cultureSectionName(
   RecommendationMedium.comic => l10n.recKindComics,
 };
 
-/// The sections of [language]'s culture list that match [query], named as the
-/// learner reads them (the kind as a row says it and as a header does).
+/// The sections of [language]'s culture list that match [query] and [filter],
+/// named as the learner reads them (the kind as a row says it and as a header
+/// does).
 List<CultureListSection> cultureSections(
   AppState state,
   AppLocalizations l10n,
   String language,
-  String query,
-) => state.cultureListOf(
+  String query, {
+  CultureFilter filter = const CultureFilter(),
+}) => state.cultureListOf(
   language,
   query: query,
+  filter: filter,
   mediumName: (medium) =>
       '${recommendationMediumName(l10n, medium)} '
       '${cultureSectionName(l10n, medium)}',
   decksName: l10n.decksCultureDecksHeader,
 );
 
+/// The tab key of [section]: `culture:decks`, `culture:film`.
+String cultureTabKey(CultureListSection section) =>
+    '$cultureTabPrefix${section.medium?.name ?? 'decks'}';
+
+/// The tabs of [sections], one for each with its count, for the same strip
+/// the deck results use; [all] puts a first tab for every section together.
+List<ResultTab> cultureTabs(
+  AppLocalizations l10n,
+  List<CultureListSection> sections, {
+  bool all = false,
+}) => <ResultTab>[
+  if (all)
+    ResultTab(
+      kind: '${cultureTabPrefix}all',
+      label: l10n.decksCultureAll,
+      count: sections.fold(0, (sum, s) => sum + s.count),
+    ),
+  for (final section in sections)
+    ResultTab(
+      kind: cultureTabKey(section),
+      label: cultureSectionName(l10n, section.medium),
+      count: section.count,
+    ),
+];
+
+/// The rows of the tab [kind] of [sections]: one section's rows, or with
+/// `culture:all` every section under its header with its count.
+class CultureRows extends StatelessWidget {
+  const CultureRows({
+    super.key,
+    required this.language,
+    required this.sections,
+    required this.kind,
+    required this.openWork,
+    required this.onToggleWork,
+  });
+
+  final String language;
+  final List<CultureListSection> sections;
+  final String kind;
+  final String? openWork;
+  final ValueChanged<String> onToggleWork;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final state = AppScope.of(context);
+    final all = kind == '${cultureTabPrefix}all';
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        for (final section in sections)
+          if (all || cultureTabKey(section) == kind) ...<Widget>[
+            GroupedList(
+              header: all
+                  ? l10n.decksCultureHeader(
+                      cultureSectionName(l10n, section.medium),
+                      section.count,
+                    )
+                  : null,
+              outerRadius: AppRadii.card,
+              gap: 4,
+              children: <Widget>[
+                for (final entry in section.decks) _DeckRow(entry: entry),
+                for (final work in section.works)
+                  CultureWorkRow(
+                    key: ValueKey<String>('culture-work-${work.id}'),
+                    work: work,
+                    language: language,
+                    file: state.creatorsOf(language),
+                    open: work.id == openWork,
+                    onTap: () => onToggleWork(work.id),
+                  ),
+              ],
+            ),
+            const SizedBox(height: 20),
+          ],
+      ],
+    );
+  }
+}
+
 /// The culture list the Decks screen shows in place of the deck path (approved
-/// mockup `culture-in-decks`): the culture and proverbs decks, then the
-/// recommended works by kind, each section with its count. Nothing is hidden or
-/// locked by level: every row opens. [query] is the Decks screen's one search,
-/// applied here; a section with no match is left out. [openWork] is the work
-/// whose row shows its whole briefing.
-class CultureList extends StatelessWidget {
+/// mockup `culture-in-decks`): a strip of tabs of the same widget the deck
+/// results use, All first and then one for each kind present (the culture and
+/// proverbs decks, books, films ...) with its count, and under it the rows.
+/// Nothing is hidden or locked by level: every row opens. [query] and
+/// [filter] are the Decks screen's one search, applied here; a kind with no
+/// match has no tab. [openWork] is the work whose row shows its whole
+/// briefing.
+class CultureList extends StatefulWidget {
   const CultureList({
     super.key,
     required this.language,
     required this.query,
     required this.openWork,
     required this.onToggleWork,
-    this.showEmpty = true,
+    this.filter = const CultureFilter(),
   });
 
   final String language;
   final String query;
+  final CultureFilter filter;
 
   /// The work shown open, `''` for none.
   final String? openWork;
 
   final ValueChanged<String> onToggleWork;
 
-  /// Whether to say so when nothing is listed; a search that also looks
-  /// elsewhere leaves the saying to the other results.
-  final bool showEmpty;
+  @override
+  State<CultureList> createState() => _CultureListState();
+}
+
+class _CultureListState extends State<CultureList> {
+  String _kind = '${cultureTabPrefix}all';
 
   @override
   Widget build(BuildContext context) {
@@ -84,14 +177,21 @@ class CultureList extends StatelessWidget {
         state.recommendationProgress,
       ]),
       builder: (context, _) {
-        final sections = cultureSections(state, l10n, language, query);
+        final sections = cultureSections(
+          state,
+          l10n,
+          widget.language,
+          widget.query,
+          filter: widget.filter,
+        );
         if (sections.isEmpty) {
-          if (!showEmpty) return const SizedBox.shrink();
           return Padding(
             padding: const EdgeInsetsDirectional.symmetric(vertical: 32),
             child: Text(
-              query.trim().isEmpty
-                  ? l10n.decksCultureNone(cultureLanguage(state, language).name)
+              widget.query.trim().isEmpty && widget.filter.isEmpty
+                  ? l10n.decksCultureNone(
+                      cultureLanguage(state, widget.language).name,
+                    )
                   : l10n.decksEmptySearch,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodyLarge!.copyWith(
@@ -100,33 +200,28 @@ class CultureList extends StatelessWidget {
             ),
           );
         }
+        final tabs = cultureTabs(l10n, sections, all: true);
+        final kind = tabs.any((t) => t.kind == _kind)
+            ? _kind
+            : '${cultureTabPrefix}all';
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            for (final section in sections) ...<Widget>[
-              GroupedList(
-                header: l10n.decksCultureHeader(
-                  cultureSectionName(l10n, section.medium),
-                  section.count,
-                ),
-                outerRadius: AppRadii.card,
-                gap: 4,
-                children: <Widget>[
-                  for (final entry in section.decks)
-                    _DeckRow(entry: entry),
-                  for (final work in section.works)
-                    CultureWorkRow(
-                      key: ValueKey<String>('culture-work-${work.id}'),
-                      work: work,
-                      language: language,
-                      file: state.creatorsOf(language),
-                      open: work.id == openWork,
-                      onTap: () => onToggleWork(work.id),
-                    ),
-                ],
-              ),
-              const SizedBox(height: 20),
-            ],
+            ResultTabStrip(
+              key: ValueKey<String>(tabs.map((t) => t.kind).join(',')),
+              tabs: tabs,
+              selected: kind,
+              bestMatchDot: false,
+              onSelect: (k) => setState(() => _kind = k),
+            ),
+            const SizedBox(height: 8),
+            CultureRows(
+              language: widget.language,
+              sections: sections,
+              kind: kind,
+              openWork: widget.openWork,
+              onToggleWork: widget.onToggleWork,
+            ),
           ],
         );
       },

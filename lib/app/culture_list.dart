@@ -1,5 +1,6 @@
 import '../core/decks/weave.dart' show cultureGenres;
 import '../core/models/recommendation.dart';
+import '../core/search/query.dart' show CultureFilter;
 import '../core/search/search_items.dart' show foldForSearch, searchWords;
 import 'app_state.dart';
 import 'deck_catalog.dart';
@@ -65,6 +66,7 @@ extension CultureListState on AppState {
   List<CultureListSection> cultureListOf(
     String language, {
     String query = '',
+    CultureFilter filter = const CultureFilter(),
     required String Function(RecommendationMedium medium) mediumName,
     required String decksName,
   }) {
@@ -78,13 +80,63 @@ extension CultureListState on AppState {
         return words.every(haystack.contains);
       }
 
+      final file = catalogView.creators[language];
+      final spoken = <String>['en', ...settings.spokenLanguages];
+      final creatorWords = searchWords(filter.creator ?? '');
+      bool byCreator(Iterable<String> ids) {
+        if (creatorWords.isEmpty) return true;
+        for (final id in ids) {
+          final creator = file?.byId(id);
+          final name = foldForSearch(
+            '$id ${creator?.nameFor(spoken, target: language).text ?? ''}',
+          );
+          if (creatorWords.every(name.contains)) return true;
+        }
+        return false;
+      }
+
+      // A deck has no year and no completion: those chips leave decks out.
+      final decksAllowed =
+          filter.yearFrom == null &&
+          filter.done == null &&
+          (filter.kind == null || filter.kind == 'proverb');
+      bool deckAllowed(DeckEntry entry) {
+        if (!decksAllowed) return false;
+        if (filter.kind == 'proverb' && entry.deck.genre != 'proverbs') {
+          return false;
+        }
+        return byCreator(<String>{
+          for (final card in entry.deck.cards) ...card.creators,
+          for (final passage in entry.deck.passages) ...passage.creators,
+        });
+      }
+
+      bool workAllowed(Recommendation work) {
+        if (filter.kind != null && filter.kind != work.medium.name) {
+          return false;
+        }
+        final year = work.year;
+        if (filter.yearFrom != null &&
+            (year == null ||
+                year < filter.yearFrom! ||
+                year > filter.yearTo!)) {
+          return false;
+        }
+        if (filter.done != null &&
+            recommendationProgress.isCompleted(work.id) != filter.done) {
+          return false;
+        }
+        return byCreator(work.creators);
+      }
+
       final decks = <DeckEntry>[
         for (final entry in cultureDecksIn(language))
-          if (matches(<String?>[
-            entry.deck.name,
-            decksName,
-            entry.deck.level?.label,
-          ]))
+          if (deckAllowed(entry) &&
+              matches(<String?>[
+                entry.deck.name,
+                decksName,
+                entry.deck.level?.label,
+              ]))
             entry,
       ];
       final works = catalogView.recommendations[language]?.recommendations;
@@ -94,6 +146,7 @@ extension CultureListState on AppState {
           if (<Recommendation>[
             for (final work in works ?? const <Recommendation>[])
               if (work.medium == medium &&
+                  workAllowed(work) &&
                   matches(<String?>[
                     work.title,
                     work.titleReading,

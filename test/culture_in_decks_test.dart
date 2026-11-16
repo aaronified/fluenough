@@ -83,6 +83,17 @@ Future<void> _search(WidgetTester tester, String text) async {
 Finder _header(String name, int count) =>
     find.text(_l10n.decksCultureHeader(name, count));
 
+/// The tab called [label] of the strip of tabs.
+Finder _tab(String label) => find.descendant(
+  of: find.byType(TabBar),
+  matching: find.text(label),
+);
+
+Future<void> _openTab(WidgetTester tester, String label) async {
+  await tester.tap(_tab(label).first);
+  await tester.pumpAndSettle();
+}
+
 void main() {
   group('the Culture button', () {
     testWidgets('swaps the deck path for the culture list and back', (
@@ -211,11 +222,13 @@ void main() {
       testWidgets('finds a film $where, ignoring accents', (tester) async {
         await open(tester);
         await _search(tester, 'pelicula');
+        // One strip of tabs holds the deck results and the culture kinds.
+        expect(find.byType(TabBar), findsOneWidget);
+        await _openTab(tester, _l10n.recKindFilms);
         expect(find.text(_film), findsOneWidget);
         expect(find.text(_book), findsNothing);
-        expect(_header(_l10n.recKindFilms, 1), findsOneWidget);
-        // A section with no match is gone.
-        expect(find.textContaining(_l10n.recKindBooks), findsNothing);
+        // A kind with no match has no tab.
+        expect(_tab(_l10n.recKindBooks), findsNothing);
         expect(find.byType(CoursePathSliver), findsNothing);
       });
 
@@ -253,22 +266,19 @@ void main() {
       });
     }
 
-    testWidgets('matches the year', (tester) async {
+    testWidgets('puts the culture kinds in the one strip, with counts', (
+      tester,
+    ) async {
       usePhone(tester);
       await _decks(tester);
-      await _toCulture(tester);
-      await _search(tester, '1912');
+      await _search(tester, 'prueba');
+      expect(find.byType(TabBar), findsOneWidget);
+      expect(_tab(_l10n.recKindBooks), findsOneWidget);
+      expect(_tab(_l10n.recKindFilms), findsOneWidget);
+      await _openTab(tester, _l10n.recKindBooks);
       expect(find.text(_book), findsOneWidget);
+      expect(find.text(_novel), findsOneWidget);
       expect(find.text(_film), findsNothing);
-    });
-
-    testWidgets('matches the kind', (tester) async {
-      usePhone(tester);
-      await _decks(tester);
-      await _toCulture(tester);
-      await _search(tester, 'films');
-      expect(find.text(_film), findsOneWidget);
-      expect(find.text(_book), findsNothing);
     });
 
     testWidgets('a chip narrows the deck part and leaves out culture', (
@@ -278,6 +288,96 @@ void main() {
       await _decks(tester);
       await _search(tester, 'kind:grammar pelicula');
       expect(find.text(_film), findsNothing);
+    });
+
+    group('the culture tokens', () {
+      Future<void> chip(WidgetTester tester, String text) async {
+        usePhone(tester);
+        await _decks(tester);
+        await _search(tester, text);
+      }
+
+      testWidgets('kind:film lists films only, without deck results', (
+        tester,
+      ) async {
+        await chip(tester, 'kind:film ');
+        expect(find.byType(TypedSearchResults), findsNothing);
+        expect(find.text(_film), findsOneWidget);
+        expect(find.text(_book), findsNothing);
+        expect(_header(_l10n.recKindFilms, 1), findsOneWidget);
+      });
+
+      testWidgets('kind:proverb lists the proverbs decks only', (
+        tester,
+      ) async {
+        await chip(tester, 'kind:proverb ');
+        expect(find.text('Proverbs: place'), findsOneWidget);
+        expect(find.text('Culture: verse'), findsNothing);
+        expect(find.text(_film), findsNothing);
+      });
+
+      testWidgets('creator: matches a name, ignoring accents and case', (
+        tester,
+      ) async {
+        await chip(tester, 'creator:MACHADO ');
+        expect(find.text(_book), findsOneWidget);
+        expect(find.text(_film), findsOneWidget);
+        expect(find.text(_novel), findsNothing);
+      });
+
+      testWidgets('year: takes a year or a range', (tester) async {
+        await chip(tester, 'year:1900-1990 ');
+        expect(find.text(_book), findsOneWidget);
+        expect(find.text(_film), findsOneWidget);
+        expect(find.text(_novel), findsNothing);
+      });
+
+      for (final done in <bool>[true, false]) {
+        testWidgets('status:${done ? 'done' : 'todo'} splits the works', (
+          tester,
+        ) async {
+          usePhone(tester);
+          final state = await cultureApp();
+          await _complete(state, 'zz-rec-camino');
+          await _decks(tester, state: state);
+          await _search(tester, done ? 'status:done ' : 'status:todo ');
+          expect(find.text(_book), done ? findsOneWidget : findsNothing);
+          expect(find.text(_film), done ? findsNothing : findsOneWidget);
+        });
+      }
+
+      testWidgets('the token menu offers creator: and year:', (tester) async {
+        usePhone(tester);
+        await _decks(tester);
+        await tester.tap(find.byType(TextField));
+        await tester.pumpAndSettle();
+        expect(find.text('creator:'), findsOneWidget);
+        expect(find.text('year:'), findsOneWidget);
+      });
+
+      testWidgets('kind: offers the culture kinds', (tester) async {
+        usePhone(tester);
+        await _decks(tester);
+        await tester.enterText(find.byType(TextField), 'kind:');
+        await tester.pumpAndSettle();
+        expect(find.text(_l10n.recMediumFilm), findsOneWidget);
+        expect(find.text(_l10n.cultureKindProverb), findsOneWidget);
+      });
+    });
+
+    testWidgets('the culture list has a strip of tabs, All first', (
+      tester,
+    ) async {
+      usePhone(tester);
+      await _decks(tester);
+      await _toCulture(tester);
+      expect(find.byType(TabBar), findsOneWidget);
+      expect(_tab(_l10n.decksCultureAll), findsOneWidget);
+      expect(_tab(_l10n.recKindBooks), findsOneWidget);
+      expect(_tab(_l10n.recKindFilms), findsOneWidget);
+      await _openTab(tester, _l10n.recKindFilms);
+      expect(find.text(_film), findsOneWidget);
+      expect(find.text(_book), findsNothing);
     });
 
     testWidgets('sections are computed from the catalog', (tester) async {

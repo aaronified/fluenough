@@ -47,6 +47,10 @@ class SearchSession {
   }
 }
 
+/// The kind of an extra tab that belongs to the culture list, as opposed to a
+/// deck result kind: `culture:film`, `culture:decks`, `culture:all`.
+const String cultureTabPrefix = 'culture:';
+
 /// A search kind's name for a tab or a hint: the sections file's, in the first
 /// language the learner reads that it is written in, else the app's own name
 /// for the kinds the code knows, else the id.
@@ -182,13 +186,15 @@ class TypedSearchResults extends StatefulWidget {
     required this.query,
     required this.language,
     required this.onSearch,
-    this.otherResults = false,
+    this.extraTabs = const <ResultTab>[],
+    this.extraContent,
   });
 
-  /// Whether results of another kind (the culture list) follow these: with
-  /// none here, nothing is said, so that the page does not claim there is
-  /// nothing.
-  final bool otherResults;
+  /// Tabs of results of another part of the search (the culture list), added
+  /// after the deck tabs in the same strip, and what a chosen one shows. With
+  /// none of the deck kinds found, they alone make the strip.
+  final List<ResultTab> extraTabs;
+  final Widget Function(BuildContext context, String kind)? extraContent;
 
   /// The Decks tab's word search of the same text: the words found, and the
   /// deck files that could not be read.
@@ -261,23 +267,20 @@ class _TypedSearchResultsState extends State<TypedSearchResults> {
       wordsRank: wordHits.isEmpty ? 0 : wordHits.first.rank,
     );
     final session = SearchSession.of(state);
-    final selected = tabs.any((t) => t.kind == _kind)
+    final shown = <ResultTab>[...tabs, ...widget.extraTabs];
+    final selected = shown.any((t) => t.kind == _kind)
         ? _kind!
-        : tabs.any((t) => t.kind == session.lastKind)
+        : shown.any((t) => t.kind == session.lastKind)
         ? session.lastKind!
-        : tabs.isEmpty
+        : shown.isEmpty
         ? null
-        : tabs.first.kind;
+        : shown.first.kind;
     final close =
         (found.close && items.isNotEmpty) || (wordsClose && items.isEmpty);
     final corrected = close ? correctedQuery(text, items) : null;
     return SliverMainAxisGroup(
       slivers: <Widget>[
-        if (tabs.isEmpty &&
-            widget.outcome.broken.isEmpty &&
-            widget.otherResults)
-          const SliverToBoxAdapter(child: SizedBox.shrink())
-        else if (tabs.isEmpty && widget.outcome.broken.isEmpty)
+        if (shown.isEmpty && widget.outcome.broken.isEmpty)
           SliverToBoxAdapter(
             child: _NoResults(
               query: text,
@@ -285,8 +288,8 @@ class _TypedSearchResultsState extends State<TypedSearchResults> {
               onSearch: widget.onSearch,
             ),
           )
-        else if (tabs.isNotEmpty) ...<Widget>[
-          if (close && !_exact)
+        else if (shown.isNotEmpty) ...<Widget>[
+          if (close && !_exact && tabs.isNotEmpty)
             SliverToBoxAdapter(
               child: Padding(
                 padding: const EdgeInsetsDirectional.only(start: 8, bottom: 8),
@@ -310,9 +313,9 @@ class _TypedSearchResultsState extends State<TypedSearchResults> {
               ),
             ),
           SliverToBoxAdapter(
-            child: _TabStrip(
-              key: ValueKey<String>(tabs.map((t) => t.kind).join(',')),
-              tabs: tabs,
+            child: ResultTabStrip(
+              key: ValueKey<String>(shown.map((t) => t.kind).join(',')),
+              tabs: shown,
               selected: selected!,
               onSelect: (kind) {
                 session.lastKind = kind;
@@ -323,13 +326,17 @@ class _TypedSearchResultsState extends State<TypedSearchResults> {
               },
             ),
           ),
-          ..._content(context, state, index, selected, items, wordHits),
+          if (selected!.startsWith(cultureTabPrefix) &&
+              widget.extraContent != null)
+            SliverToBoxAdapter(child: widget.extraContent!(context, selected))
+          else
+            ..._content(context, state, index, selected, items, wordHits),
         ],
         if (widget.outcome.broken.isNotEmpty)
           SliverToBoxAdapter(
             child: Padding(
               padding: EdgeInsetsDirectional.only(
-                top: tabs.isNotEmpty ? 16 : 0,
+                top: shown.isNotEmpty ? 16 : 0,
               ),
               child: GroupedList(
                 outerRadius: AppRadii.card,
@@ -451,23 +458,28 @@ class _TypedSearchResultsState extends State<TypedSearchResults> {
 
 /// The tab bar: a scrollable native [TabBar], each tab its kind's name and a
 /// count, the first with a dot for the best match.
-class _TabStrip extends StatefulWidget {
-  const _TabStrip({
+class ResultTabStrip extends StatefulWidget {
+  const ResultTabStrip({
     super.key,
     required this.tabs,
     required this.selected,
     required this.onSelect,
+    this.bestMatchDot = true,
   });
+
+  /// Whether the first tab carries the dot for the best match: a strip that
+  /// is a list, not a search, has none.
+  final bool bestMatchDot;
 
   final List<ResultTab> tabs;
   final String selected;
   final ValueChanged<String> onSelect;
 
   @override
-  State<_TabStrip> createState() => _TabStripState();
+  State<ResultTabStrip> createState() => _TabStripState();
 }
 
-class _TabStripState extends State<_TabStrip>
+class _TabStripState extends State<ResultTabStrip>
     with SingleTickerProviderStateMixin {
   late final TabController _controller = TabController(
     length: widget.tabs.length,
@@ -484,7 +496,7 @@ class _TabStripState extends State<_TabStrip>
   }
 
   @override
-  void didUpdateWidget(_TabStrip old) {
+  void didUpdateWidget(ResultTabStrip old) {
     super.didUpdateWidget(old);
     final at = widget.tabs.indexWhere((t) => t.kind == widget.selected);
     if (at >= 0 && at != _controller.index) _controller.index = at;
@@ -523,12 +535,12 @@ class _TabStripState extends State<_TabStrip>
               child: Semantics(
                 label:
                     '${l10n.searchTabSemantics(tab.label, tab.count)}'
-                    '${i == 0 ? ', ${l10n.searchTabBestMatch}' : ''}',
+                    '${i == 0 && widget.bestMatchDot ? ', ${l10n.searchTabBestMatch}' : ''}',
                 excludeSemantics: true,
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-                    if (i == 0) ...<Widget>[
+                    if (i == 0 && widget.bestMatchDot) ...<Widget>[
                       DecoratedBox(
                         decoration: BoxDecoration(
                           color: scheme.primary,
