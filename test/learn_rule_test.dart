@@ -5,6 +5,7 @@
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
+import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
@@ -525,6 +526,44 @@ cards:
       }
       expect(run.state.progress.log, isEmpty);
     });
+  });
+
+  group('what can be learned is what a lesson offers', () {
+    String deck(int count) =>
+        '''
+schema: 1
+id: es-en-pool
+name: "Pool"
+language: { code: es, iso639_3: spa, name: Spanish, script: latin }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+cards:
+${[for (var i = 1; i <= count; i++) '  - { id: es-en-pool-000$i, target: "palabra$i", native: "word$i" }'].join('\n')}
+''';
+
+    for (final count in <int>[1, 2, 6]) {
+      test('in a deck of $count, canLearn agrees with lessonFor', () async {
+        final state = AppState.test(
+          decks: MemoryDeckSource(<String, String>{
+            'decks/es/es-en-pool.yaml': deck(count),
+          }),
+        );
+        addTearDown(state.dispose);
+        await state.load();
+        final lesson = state.lessonFor(DrillRequest.lesson(language: 'es'));
+        final offered = <String>{for (final i in lesson) i.card.id};
+        for (final card in state.deckById('es-en-pool')!.cards) {
+          // A card the lesson offers can be learned; one it cannot ask two
+          // ways (too few options to choose from) is not counted as new.
+          if (offered.contains(card.id)) expect(state.canLearn(card), isTrue);
+          if (!state.canLearn(card)) expect(offered, isNot(contains(card.id)));
+        }
+        expect(
+          state.notStudiedIn(state.deckById('es-en-pool')!),
+          state.untaughtCards('es').length,
+        );
+      });
+    }
   });
 
   group('what is kept from before', () {

@@ -3666,12 +3666,17 @@ class AppState extends ChangeNotifier {
   LearnAttempt? _learnAttemptOf(Card card) => lessonAttempt(
     card,
     modesOf: drillableModesNow(),
-    // Whether the deck has enough to choose from is a matter of its size, not
-    // of the card: a card is learnable if two ways of asking it exist.
-    canChoose: (_, _) => true,
+    canChoose: _canChooseInLesson,
     straightToQuestion: (card) => card.rule != null,
     typed: isTyped,
     siblingsOf: siblingsOf,
+  );
+
+  /// Whether a choice question [ask] about [card] has enough options, as a
+  /// lesson asks it: what hears the form is chosen by ear ([Ask.hearAndChoose]).
+  bool _canChooseInLesson(Card card, Ask ask) => canChoose(
+    card,
+    ask == Ask.hearMeaning && hearsForm(card) ? Ask.hearAndChoose : ask,
   );
 
   /// Whether [card] can be learned: two different questions can be asked of
@@ -3894,10 +3899,7 @@ class AppState extends ChangeNotifier {
       for (final item in lessonPlan(
         lesson.cards,
         modesOf: modesOf,
-        canChoose: (card, ask) => canChoose(
-          card,
-          ask == Ask.hearMeaning && hearsForm(card) ? Ask.hearAndChoose : ask,
-        ),
+        canChoose: _canChooseInLesson,
         // A rule is shown by its rule card before each cell (owner,
         // 2026-11-16: every item is shown, then asked at once).
         straightToQuestion: (card) => card.rule != null,
@@ -4258,8 +4260,13 @@ class AppState extends ChangeNotifier {
   List<ReviewEvent> recordAll(List<AnswerRecord> answers) {
     _batchAt = now();
     try {
+      // One review for each (card, mode) pair: where two answers of an attempt
+      // fall in one pair, the later is the one written.
+      final last = <(String, DrillMode), AnswerRecord>{
+        for (final a in answers) (a.item.card.id, a.item.mode): a,
+      };
       return <ReviewEvent>[
-        for (final a in answers)
+        for (final a in last.values)
           record(
             a.item,
             a.grade,
