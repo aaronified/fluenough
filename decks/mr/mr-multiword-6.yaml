@@ -1,0 +1,130 @@
+# Marathi compound verbs, part 2: a verb and a helper verb (ṭākṇe, lāgṇe, deṇe, pāhṇe, jāṇe, yā) that make one verb phrase.
+schema: 1
+id: "mr-multiword-6"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+source: "wiki/Plan-Culture-Marathi-Addendum-4.md, section B1: meanings from Dhongde and Wali (2009), section 3.4.2 on compound verbs and the passive, as the addendum states them"
+genre: "multiword"
+pattern_family: "compound-verb"
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - id: "mr-4460"
+    target: "खाऊन टाकणे"
+    words: ["खाऊन", "टाकणे"]
+    reading: "khāun ṭākṇe"
+    ipa: "kʰaun ʈakɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "खाऊन", ref: "mr-0708" }
+      - { word: "टाकणे", base: "टाकणे", reading: "ṭākṇe" }
+  - id: "mr-4461"
+    target: "खेळू लागणे"
+    words: ["खेळू", "लागणे"]
+    reading: "kheḷu lāgṇe"
+    ipa: "kʰeɭu laɡɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "खेळू", ref: "mr-0725" }
+      - { word: "लागणे", base: "लागणे", reading: "lāgṇe" }
+  - id: "mr-4462"
+    target: "जाऊ देणे"
+    words: ["जाऊ", "देणे"]
+    reading: "jāu deṇe"
+    ipa: "dzau d̪eɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "जाऊ", ref: "mr-0710" }
+      - { word: "देणे", ref: "mr-0721" }
+  - id: "mr-4463"
+    target: "करू पाहणे"
+    words: ["करू", "पाहणे"]
+    reading: "karu pāhṇe"
+    ipa: "kəru paɦɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "करू", ref: "mr-0712" }
+      - { word: "पाहणे", ref: "mr-0714" }
+  - id: "mr-4464"
+    target: "जिंकू या"
+    words: ["जिंकू", "या"]
+    reading: "jiṅku yā"
+    ipa: "dʒiŋku ja"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "जिंकू", ref: "mr-1142" }
+      - { word: "या", base: "या", reading: "yā" }
+  - id: "mr-4465"
+    target: "करून टाकणे"
+    words: ["करून", "टाकणे"]
+    reading: "karun ṭākṇe"
+    ipa: "kərun ʈakɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "करून", ref: "mr-0712" }
+      - { word: "टाकणे", base: "टाकणे", reading: "ṭākṇe" }
+  - id: "mr-4466"
+    target: "लिहून काढणे"
+    words: ["लिहून", "काढणे"]
+    reading: "lihun kāḍhṇe"
+    ipa: "liɦun kaɖʱɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "लिहून", ref: "mr-0716" }
+      - { word: "काढणे", ref: "mr-0796" }
+  - id: "mr-4467"
+    target: "लिहून टाकणे"
+    words: ["लिहून", "टाकणे"]
+    reading: "lihun ṭākṇe"
+    ipa: "liɦun ʈakɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "लिहून", ref: "mr-0716" }
+      - { word: "टाकणे", base: "टाकणे", reading: "ṭākṇe" }
+  - id: "mr-4468"
+    target: "खाल्ला जाणे"
+    words: ["खाल्ला", "जाणे"]
+    reading: "khāllā jāṇe"
+    ipa: "kʰalla dzaɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "खाल्ला", ref: "mr-0708" }
+      - { word: "जाणे", ref: "mr-0710" }
