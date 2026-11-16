@@ -12,8 +12,9 @@
 # are placed in their levels. Each unit moves from `planned` to `decks` in
 # the commit that builds it; unit ids are permanent once a deck is written.
 #
-# Unit 1 is named but not yet written: the phrasebook and the first words
-# (10 words) are built by SA-004, so the path ships only with them. Every
+# Written so far: unit 1 (the phrasebook and the first words), the sound
+# differences, the script decks, spelling, and the grammar units for the case
+# system, a-stems and the present system (with the first-class verbs). Every
 # other unit is planned, so the course teaches each as "Coming" until its
 # deck is written. The passages are placeholders: each describes its unit's
 # theme or grammar and is reworded when the passage is written.
@@ -41,7 +42,7 @@ schema: 1
 kind: "path"
 id: "sa-path"
 language: "sa"
-description: "Classical Sanskrit: the planned path to B1, a reading course with a heavy focus on Panini's grammar. Only the phrasebook and the first words are written."
+description: "Classical Sanskrit: the path to B1, a reading course with a heavy focus on Panini's grammar. Written so far: the phrasebook and first words, the script and sound decks, the case system, a-stems and present-system grammar units; the other units are planned."
 genders: ["m", "f", "n"]
 levels: { A1: 400, A2: 600, B1: 900 }
 alphabet:
