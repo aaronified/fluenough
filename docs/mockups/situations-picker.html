@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Situations Picker</title>
+<meta name="description" content="The Choose situations dialog redesigned: On Today (at most 6, in order, no numbers) and More situations (muted, tap to add) (#1145).">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Sans+Telugu:wght@400;600&display=swap">
+<style>
+/* ===== The page around the phones (not the app) ===== */
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali","Noto Sans Telugu",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 16px 72px}
+h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
+.cap1{margin:0 0 16px;color:var(--page-muted);font-size:14px;max-width:760px}
+.tw{display:flex;flex-wrap:wrap;gap:10px 24px;margin:0 0 18px}
+.tg{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--page-muted);flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--page-line);border-radius:10px;overflow:hidden;flex-wrap:wrap}
+.seg button{font:inherit;font-size:14px;min-height:40px;padding:0 14px;border:0;background:var(--page-card);color:var(--page-fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--page-acc);color:var(--page-bg);font-weight:600}
+.frames{display:flex;flex-wrap:wrap;gap:20px 24px;align-items:flex-start}
+.fcol{display:flex;flex-direction:column;gap:6px;width:360px;max-width:100%}
+.fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+/* ===== The app: lib/ui/theme.dart (M3, Roboto; ColorScheme.fromSeed of the forest seed) =====
+   Sizes are calc(N px * var(--t)), t = 1.4, the app's text cap (#505). Icons do not scale. */
+.ph{--t:1.4;width:360px;max-width:100%;min-height:740px;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali","Noto Sans Telugu",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
+.ph.fixed{height:740px}
+.ph button{font-family:inherit;color:inherit;cursor:pointer}
+svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
+/* Today, dimmed behind the dialog */
+.behind{position:absolute;inset:0;padding:16px;display:flex;flex-direction:column;gap:12px}
+.behind .ttl{font-size:calc(20px*var(--t));font-weight:500;padding:8px}
+.behind .cardb{background:var(--sLow);border-radius:16px;height:120px}
+.scrim{position:absolute;inset:0;background:rgba(0,0,0,.42)}
+.stage{position:relative;flex:1;display:flex;align-items:center;justify-content:center;padding:24px 8px}
+/* the dialog (AlertDialog: surfaceContainerHigh, radius 28, padding 24) */
+.dlg{position:relative;width:100%;background:var(--sHigh);border-radius:28px;padding:24px 16px 12px;display:flex;flex-direction:column;gap:0;max-height:none}
+.fixed .dlg{max-height:100%}
+.fixed .dlg .body{overflow-y:auto;scrollbar-width:none}
+.dlg h2{margin:0 0 8px;font-size:calc(22px*var(--t));line-height:1.2;font-weight:400}
+.langchip{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;min-height:32px;border-radius:8px;border:1px solid var(--ol);padding:0 10px;font-size:calc(12px*var(--t));font-weight:500;color:var(--onSv);margin:0 0 8px}
+.help{margin:0 0 10px;font-size:calc(14px*var(--t));line-height:1.35;color:var(--onSv)}
+.sec{margin:0 0 12px;border-radius:16px}
+.sh{display:flex;align-items:center;gap:8px;margin:6px 0 4px}
+.sh h3{margin:0;font-size:calc(16px*var(--t));line-height:1.25;font-weight:600;flex:1;min-width:0}
+.count{flex:none;font-size:calc(12px*var(--t));font-weight:700;min-height:calc(22px*var(--t));padding:0 10px;border-radius:12px;background:var(--sc);color:var(--onSc);display:inline-flex;align-items:center}
+.count.full{background:var(--p);color:var(--onP)}
+.hint{display:flex;align-items:center;gap:4px;margin:0 0 8px;font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv)}
+.hint svg.i{width:18px;height:18px}
+.grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.grid li{display:block;min-width:0;position:relative}
+/* selected tile: filled, in its own colours */
+.tile{width:100%;height:100%;min-height:calc(86px*var(--t));border:0;border-radius:12px;padding:10px 2px 8px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:5px;text-align:center;
+ background:var(--c);color:var(--oc);position:relative}
+.tile .ico{width:40px;height:40px;border-radius:50%;background:color-mix(in srgb,var(--oc) 12%,transparent);display:flex;align-items:center;justify-content:center}
+.tile .lb{font-size:calc(14px*var(--t));line-height:1.2;font-weight:700;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;max-width:100%}
+.tile .x{position:absolute;top:3px;right:3px;width:24px;height:24px;border-radius:50%;background:color-mix(in srgb,var(--oc) 16%,transparent);display:flex;align-items:center;justify-content:center}
+.tile .x svg.i{width:16px;height:16px}
+.tile:focus-visible,.slot:focus-visible{outline:3px solid var(--p);outline-offset:2px}
+/* the dragged tile and its drop place */
+.lift .tile{transform:scale(1.06) rotate(-2deg);box-shadow:0 8px 18px rgba(0,0,0,.35);z-index:2}
+.drop .tile{outline:2px solid var(--p);outline-offset:2px}
+.drop-gap{border-radius:12px}
+/* empty slot: dashed, not interactive */
+.slot{min-height:calc(86px*var(--t));border-radius:12px;border:2px dashed var(--ol);display:flex;align-items:center;justify-content:center;color:var(--onSv);opacity:.9}
+.slot svg.i{opacity:.7}
+/* unselected tile: neutral surface, outline, coloured icon only */
+.tile.muted{background:var(--s);color:var(--onS);box-shadow:inset 0 0 0 1px var(--olv)}
+.tile.muted .ico{background:none;color:var(--ic)}
+.tile.muted .add{position:absolute;top:3px;right:3px;width:24px;height:24px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv);display:flex;align-items:center;justify-content:center}
+.tile.muted .add svg.i{width:16px;height:16px}
+.tile.muted .lb{font-weight:500}
+.tile .lb{overflow-wrap:normal;word-break:normal;hyphens:none}
+.tile.muted:disabled{cursor:not-allowed;background:transparent;color:var(--onSv);box-shadow:inset 0 0 0 1px var(--olv)}
+.tile.muted:disabled .ico{color:var(--onSv);opacity:.7}
+.tile.muted:disabled .add{display:none}
+.tile.muted:disabled .lb{opacity:.8}
+/* actions */
+.acts{display:flex;flex-wrap:wrap;gap:4px 8px;justify-content:flex-end;align-items:center;margin-top:8px;padding-top:6px}
+.btn{min-height:calc(40px*var(--t));border-radius:calc(20px*var(--t));border:0;background:none;font-size:calc(14px*var(--t));font-weight:600;padding:6px 14px;color:var(--p)}
+.btn.fill{background:var(--p);color:var(--onP);padding:6px 20px}
+.btn:disabled{opacity:.38;cursor:not-allowed}
+.btn.reset{margin-right:auto;padding-left:6px}
+/* highlight of what changed */
+.hl-on .chg{outline:2px dashed var(--E);outline-offset:3px;position:relative}
+.hl-on .chg::after{content:"new";position:absolute;top:-10px;right:6px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:6px;z-index:5;letter-spacing:.3px}
+.hl-on .chg.upd::after{content:"changed"}
+.today{padding:16px}
+.th{display:flex;align-items:center;margin:0 0 12px}
+.th h2{flex:1;margin:0;font-size:calc(16px*var(--t));font-weight:600}
+.th .pen{width:48px;height:48px;display:flex;align-items:center;justify-content:center;color:var(--onSv);margin:-12px -8px -12px 0}
+.tile .nw{font-size:calc(12px*var(--t));line-height:1.2}
+.hide{display:none!important}
+.fitlog{list-style:none;margin:10px 0 0;padding:0;font-size:12px;line-height:1.4;color:var(--onSv)}
+.fitlog li{margin:0 0 2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Situations picker</h1>
+<p class="cap1">The "Choose situations" dialog behind the pencil on Today's Situations card (#1145), 360 dp, 1.4x text. Tap a tile to move it between the two sections; tiles are live. The only instruction text is "Drag to order". Notes and the contrast self-check are in <code>situations-picker.md</code>.</p>
+<div class="tw" role="group" aria-label="Tweaks">
+ <div class="tg">Theme <div class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></div></div>
+ <div class="tg">Language <div class="seg" data-k="lang"><button data-v="te">Telugu</button><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button></div></div>
+ <div class="tg">Highlight changes <div class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></div></div>
+ <div class="tg">Remove cue <div class="seg" data-k="x"><button data-v="x">x on tile</button><button data-v="none">tap only</button></div></div>
+ <div class="tg">Dialog <div class="seg" data-k="fit"><button data-v="grow">Expanded</button><button data-v="scroll">Scrolls in 740 dp</button></div></div>
+</div>
+<div class="frames" id="frames"></div>
+</div>
+<script>
+const PAL={
+dark:{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sHigh":"#262b27","ol":"#8a938b","olv":"#404942","E":"#ffb4ab","onE":"#690005"},
+light:{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sHigh":"#e4eae2","ol":"#717972","olv":"#c0c9c0","E":"#ba1a1a","onE":"#ffffff"}};
+/* ModeColors of lib/ui/theme.dart: [container, onContainer] */
+const MC={
+light:{reading:['#F6E388','#211B00'],production:['#FFDCC2','#2E1500'],speaking:['#BDF0B3','#002203'],pair:['#FFD8EC','#3A0028'],recognition:['#D6E3FF','#001B3E'],listening:['#EADDFF','#21005D'],gesture:['#FFDAD6','#410002']},
+dark:{reading:['#524700','#F6E388'],production:['#6E3900','#FFDCC2'],speaking:['#255023','#BDF0B3'],pair:['#7A2963','#FFD8EC'],recognition:['#284777','#D6E3FF'],listening:['#4F378B','#EADDFF'],gesture:['#93000A','#FFDAD6']}};
+/* Muted tiles: the coloured icon is the tile's colour from the opposite scheme (deep in light, pale in dark) */
+const ICO=(th,m)=>MC[th==='light'?'dark':'light'][m][th==='light'?0:0];
+const IC={
+ taxi:"M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z",
+ shops:"M17.21 9l-4.38-6.56a.99.99 0 0 0-1.66 0L6.79 9H2c-.55 0-1 .45-1 1 0 .09.01.18.04.27l2.54 9.27c.23.84 1 1.46 1.92 1.46h13c.92 0 1.69-.62 1.93-1.46l2.54-9.27L23 10c0-.55-.45-1-1-1h-4.79zM9 9l3-4.4L15 9H9zm3 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z",
+ eat:"M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z",
+ doctor:"M6 3h12v2H6zM5 7h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2zm6 4v2H9v2h2v2h2v-2h2v-2h-2v-2z",
+ greet:"M13 5.5a1.5 1.5 0 0 1 3 0V11h1V4.5a1.5 1.5 0 0 1 3 0V15c0 4.4-3.6 8-8 8h-1.5c-2.3 0-4.1-1-5.4-2.9L3 15.8l1.2-1.2c.5-.5 1.2-.7 1.8-.4L8 15V6.5a1.5 1.5 0 0 1 3 0V11h2V5.5z",
+ emerg:"M20 8h-.5l.6-.9-1.7-1-.9 1.4-.9-1.4-1.7 1 .6.9H14V4h-4v4h-.5l.6-.9-1.7-1-.9 1.4-.9-1.4-1.7 1 .6.9H4v12h16V8zm-5 8h-2v2h-2v-2H9v-2h2v-2h2v2h2v2z",
+ traffic:"M20 10h-3V8.86c1.72-.45 3-2 3-3.86h-3V4c0-.55-.45-1-1-1H8c-.55 0-1 .45-1 1v1H4c0 1.86 1.28 3.41 3 3.86V10H4c0 1.86 1.28 3.41 3 3.86V15H4c0 1.86 1.28 3.41 3 3.86V20c0 .55.45 1 1 1h8c.55 0 1-.45 1-1v-1.14c1.72-.45 3-2 3-3.86h-3v-1.14c1.72-.45 3-2 3-3.86zm-8 9a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0-5a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0-5a2 2 0 1 1 0-4 2 2 0 0 1 0 4z",
+ rail:"M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2l2-2h4l2 2h2v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-4-4-8-4zM7.5 17a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM11 11H6V6h5v5zm2 0V6h5v5h-5zm3.5 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z",
+ post:"M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z",
+ hotel:"M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z",
+ edit:"M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z",
+ close:"M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z",
+ add:"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z",
+ drag:"M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z",
+ info:"M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z",
+ lang:"M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"};
+const ic=(n,s)=>`<svg class="i" viewBox="0 0 24 24" aria-hidden="true"${s?` style="width:${s}px;height:${s}px"`:''}><path d="${IC[n]}"/></svg>`;
+/* Telugu situations, in deck order (labels of the sheets); key = icon key, m = ModeColors slot */
+const SIT=[
+ {id:'taxi',t:'Taxi',i:'taxi',m:'reading'},
+ {id:'shops',t:'Shopping',i:'shops',m:'production'},
+ {id:'eat',t:'Eating out',i:'eat',m:'speaking'},
+ {id:'doctor',t:'Doctor and pharmacy',i:'doctor',m:'pair'},
+ {id:'greet',t:'Greetings and apologies',i:'greet',m:'speaking'},
+ {id:'emerg',t:'Emergencies',i:'emerg',m:'gesture'},
+ {id:'traffic',t:'Traffic stop',i:'traffic',m:'recognition'},
+ {id:'rail',t:'Rail station',i:'rail',m:'listening'},
+ {id:'post',t:'Post and bank',i:'post',m:'reading'},
+ {id:'hotel',t:'Hotel',i:'hotel',m:'pair'}];
+const LANG={te:'తెలుగు · Telugu',hi:'हिन्दुस्तानी · Hindustani',bn:'বাংলা · Bengali'};
+const MAX=6;
+const S={theme:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light',lang:'te',hl:'1',x:'x',fit:'grow'};
+const F=[
+ {cap:'a. 4 of 6: room to add',on:['taxi','shops','eat','doctor']},
+ {cap:'b. 6 of 6: full, the rest disabled',on:['taxi','shops','eat','doctor','greet','emerg']},
+ {cap:'c. 5 of 6, mid-drag (Emergencies lifted over Eating out)',on:['taxi','shops','eat','doctor','emerg'],drag:'emerg',over:'eat'}];
+const STRESS=[['Emergencies','gesture','emerg'],['Doctor and pharmacy','pair','doctor'],['Greetings and apologies','speaking','greet'],['క్షమాపణలు మరియు శుభాకాంక్షలు','speaking','greet'],['अभिवादन और क्षमायाचना','speaking','greet'],['অভিবাদন ও ক্ষমাপ্রার্থনা','speaking','greet']];
+function stress(){
+ return `<div class="fcol"><div class="fcap">d. Stress row: longest labels at 1.4x (Telugu, Hindi, Bengali last)</div>
+ <div class="ph" style="min-height:0"><div class="stage"><div class="dlg"><h2>Stress row</h2><ol class="grid">${STRESS.map(([t,m,i])=>tileOn({id:i,t,i,m},{},1)).join('')}</ol><ul class="fitlog" id="fitlog"></ul></div></div></div></div>`}
+function today(){
+ const tiles=STRESS.map(([t,m,i],n)=>{const [c,oc]=MC[S.theme][m];return `<li><div class="tile" style="--c:${c};--oc:${oc}" role="button" tabindex="0" aria-label="${t}, ${n+2} new"><span class="ico">${ic(i)}</span><span class="lb">${t}</span><span class="nw">${n+2} new</span></div></li>`}).join('');
+ return `<div class="fcol"><div class="fcap">e. Today homepage strip: the same six stress labels (same fit helper)</div>
+ <div class="ph" style="min-height:0"><div class="today"><div class="th"><h2>Situations</h2><span class="pen">${ic('edit')}</span></div><ol class="grid">${tiles}</ol></div></div></div>`}
+const DEF=SIT.slice(0,MAX).map(s=>s.id);
+const by=id=>SIT.find(s=>s.id===id);
+function tileOn(s,f,pos){
+ const [c,oc]=MC[S.theme][s.m];
+ const cls=(f.drag===s.id?' lift':'')+(f.over===s.id?' drop':'');
+ return `<li class="${cls.trim()}"><button class="tile" style="--c:${c};--oc:${oc}" data-id="${s.id}" aria-label="${s.t}, on Today, place ${pos}. Tap to remove."><span class="ico">${ic(s.i)}</span><span class="lb">${s.t}</span>${S.x==='x'?`<span class="x">${ic('close')}</span>`:''}</button></li>`}
+function tileOff(s,full){
+ return `<li><button class="tile muted" style="--ic:${ICO(S.theme,s.m)}" data-id="${s.id}" ${full?'disabled aria-label="'+s.t+', not on Today. Remove one to add another."':'aria-label="'+s.t+', not on Today. Tap to add."'}><span class="ico">${ic(s.i)}</span><span class="lb">${s.t}</span><span class="add">${ic('add')}</span></button></li>`}
+function frame(f,k){
+ const on=f.on,full=on.length>=MAX;
+ const off=SIT.filter(s=>!on.includes(s.id));
+ const slots=Array.from({length:MAX-on.length},()=>`<li aria-hidden="true"><div class="slot">${ic('add',20)}</div></li>`).join('');
+ return `<div class="fcol"><div class="fcap">${f.cap}</div>
+ <div class="ph ${S.fit==='scroll'?'fixed':''}"><div class="behind" aria-hidden="true"><div class="ttl">Today</div><div class="cardb"></div><div class="cardb"></div></div><div class="scrim"></div>
+ <div class="stage"><div class="dlg" role="dialog" aria-labelledby="t${k}"><h2 id="t${k}">Choose situations</h2>
+ <div class="body">
+ <span class="langchip chg upd">${ic('lang',18)}<span>${LANG[S.lang]}</span></span>
+ <section class="sec chg" aria-labelledby="o${k}">
+  <div class="sh"><h3 id="o${k}">On Today</h3><span class="count ${full?'full':''}" aria-live="polite">${on.length} of ${MAX}</span></div>
+  <p class="hint">${ic('drag')}Drag to order</p>
+  <ol class="grid">${on.map((id,i)=>tileOn(by(id),f,i+1)).join('')}${slots}</ol>
+ </section>
+ <section class="sec chg" aria-labelledby="m${k}">
+  <div class="sh"><h3 id="m${k}">More situations</h3></div>
+  <ul class="grid">${off.map(s=>tileOff(s,full)).join('')}</ul>
+ </section></div>
+ <div class="acts"><button class="btn reset" data-act="reset">Reset to defaults</button><button class="btn" data-act="cancel">Cancel</button><button class="btn fill" ${on.length?'':'disabled'}>Done</button></div>
+ </div></div></div></div>`}
+function build(){
+ const root=document.getElementById('frames');
+ const p=PAL[S.theme];
+ document.documentElement.dataset.theme=S.theme;
+ root.style.cssText=Object.entries(p).map(([k,v])=>`--${k}:${v}`).join(';');
+ root.className='frames'+(S.hl==='1'?' hl-on':'');
+ root.innerHTML=F.map(frame).join('')+stress()+today();fitAll();
+ document.querySelectorAll('.seg').forEach(s=>s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',S[s.dataset.k]==b.dataset.v)));
+}
+/* Fit order (see the .md): 1 wrap at spaces (up to 3 lines), 2 letter-spacing down to -0.02em, 3 font size down by at most 2 sp (x1.4), never break a word. */
+const BASE=14*1.4,MIN=12*1.4;
+function fits(el){return el.scrollWidth<=el.clientWidth+0.5&&el.scrollHeight<=el.clientHeight+0.5}
+function fitAll(){
+ const log=[];
+ document.querySelectorAll('.tile .lb').forEach(el=>{
+  el.style.fontSize=BASE+'px';el.style.letterSpacing='0';let step='wrap only';
+  if(!fits(el)){el.style.letterSpacing='-0.02em';step='tightened -0.02em';
+   let fs=BASE;while(!fits(el)&&fs>MIN){fs=Math.max(MIN,fs-0.5);el.style.fontSize=fs+'px';step='tightened, shrunk to '+(fs/1.4).toFixed(1)+' sp'}
+   if(!fits(el))step+=' (STILL CLIPS)'}
+  el.dataset.fit=step;
+ });
+ const ul=document.getElementById('fitlog');
+ if(ul)ul.innerHTML=[...ul.closest('.dlg').querySelectorAll('.tile .lb')].map(e=>`<li><b>${e.textContent}</b>: ${e.dataset.fit}</li>`).join('');
+}
+document.fonts&&document.fonts.ready.then(fitAll);
+document.addEventListener('click',e=>{
+ const seg=e.target.closest('.seg button');
+ if(seg){S[seg.parentNode.dataset.k]=seg.dataset.v;build();return}
+ const fr=e.target.closest('.fcol');if(!fr)return;
+ const f=F[[...document.querySelectorAll('.fcol')].indexOf(fr)];
+ const t=e.target.closest('.tile');
+ if(t&&!t.disabled){const id=t.dataset.id;
+  if(f.on.includes(id))f.on=f.on.filter(x=>x!==id);else if(f.on.length<MAX)f.on=[...f.on,id];
+  f.drag=f.over=null;build();return}
+ const a=e.target.closest('[data-act="reset"]');
+ if(a){f.on=[...DEF];f.drag=f.over=null;build()}
+});
+build();
+</script>
+</body>
+</html>

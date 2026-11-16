@@ -103,8 +103,8 @@ Owner directive (token budget, relayed by the parent session 2026-11-16): at mos
 | Registry entry `as` (rules-only narrow IPA) | #1451 | main |
 | `as-phonetics.yaml` rules (two vowel-harmony rules) | #1452 | decks-live |
 | Sourcing list | straight to main | `Plan-Culture-Assamese` |
-| Recommendations (11 of 20), 5 creators, 8 topics of kind other, 23 review-queue rows | #1495 | open or merged: see the PR |
-| Script decks: conjuncts and reading words | #1492 | open; the 15 reading-word cards duplicated existing cards and were dropped from the PR; example readings aligned to the cards they ref |
+| Recommendations (11 of 20), 5 creators, 8 topics of kind other, 23 review-queue rows | #1495 | merged 2026-11-16: 11 recommendations (briefings shortened so they do not answer the questions), 5 creators, 8 topics, 28 review rows |
+| Script decks: conjuncts and reading words | #1492 | merged 2026-11-16: 25 conjunct cards `as-7500..7524` (now 48); the 15 reading-word cards `as-7525..7539` were dropped because they duplicated existing cards; example readings aligned to the cards they ref |
 
 ### 5.2 Notes wave: partly done, branch `decks/as-notes-wave1` (no PR yet)
 
