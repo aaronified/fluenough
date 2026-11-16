@@ -42,8 +42,8 @@ LabelFit fitLabel({
   required TextStyle style,
   required TextScaler textScaler,
   required TextDirection textDirection,
-  Locale? locale,
   required double maxWidth,
+  Locale? locale,
 }) {
   final words = <String>[
     for (final w in text.split(RegExp(r'\s+')))
@@ -68,7 +68,6 @@ LabelFit fitLabel({
         text: TextSpan(text: word, style: s),
         textDirection: textDirection,
         locale: locale,
-      locale: locale,
         textScaler: textScaler,
       )..layout();
       final wide = one.width > maxWidth + 0.01;
