@@ -1,4 +1,5 @@
 import '../core/models/card.dart';
+import '../core/models/drill_mode.dart';
 import '../core/models/situation.dart';
 import '../core/progress/recent_answers.dart' show MasteryLevel;
 import '../core/scheduling/lesson.dart';
@@ -16,6 +17,9 @@ typedef SheetCard = ({Card card, DeckEntry deck, bool isNew});
 /// How many cards a sheet's session teaches at most, as one lesson teaches up
 /// to nine words: the rest of a long sheet is for the next session.
 const int sheetNewCardsCap = 9;
+
+/// How many situations Today's card shows (#1145).
+const int situationsOnCard = 6;
 
 /// Situation sheets (#724): lists of card ids, resolved against the decks.
 extension SituationState on AppState {
@@ -37,6 +41,28 @@ extension SituationState on AppState {
     return learned.isEmpty ? null : learned.first;
   }
 
+  /// The situations the learner has picked for [language], in their order;
+  /// until they pick, the file's first [situationsOnCard] (#1145). A picked id
+  /// the file no longer writes is left out, and a situation a deck update
+  /// adds is not in the pick, so it never overrides the learner's choice.
+  List<Situation> pickedSituations(String language) {
+    final file = situationsOf(language);
+    if (file == null) return const <Situation>[];
+    final ids = settings.situationsShownOf(language);
+    if (ids == null) return file.situations.take(situationsOnCard).toList();
+    final picked = <Situation>[for (final id in ids) ?file.byId(id)];
+    // A pick with nothing left in the file (stale ids) is no pick: the card
+    // must not be empty.
+    return picked.isEmpty
+        ? file.situations.take(situationsOnCard).toList()
+        : picked;
+  }
+
+  /// What Today's card shows for [language]: the first [situationsOnCard]
+  /// of [pickedSituations].
+  List<Situation> cardSituations(String language) =>
+      pickedSituations(language).take(situationsOnCard).toList();
+
   /// The cards of [language]'s decks by id, as the learner's course teaches
   /// them: where two native languages write a card, the course's.
   Map<String, Card> _courseCards(String language) =>
@@ -44,7 +70,8 @@ extension SituationState on AppState {
         final native = courseNative(language);
         final entries =
             <DeckEntry>[
-              for (final entry in decks)
+              // A hidden deck the learner added is drilled like any (D3).
+              for (final entry in drillDecks)
                 if (entry.language.code == language) entry,
             ]..sort((a, b) {
               int rank(DeckEntry e) => e.deck.native.code == native ? 0 : 1;
@@ -89,12 +116,29 @@ extension SituationState on AppState {
     final language = request.language;
     final ids = request.cardIds;
     if (language == null || ids == null) return const <SessionItem>[];
-    final cards = <Card>[for (final c in sheetCards(language, ids)) c.card];
+    var cards = <Card>[for (final c in sheetCards(language, ids)) c.card];
+    final limit = request.limit;
+    if (limit != null && limit < cards.length) {
+      // Those not known yet first, each group in the sheet's own order.
+      final recent = recentAnswers;
+      bool known(Card card) => recent.of(card.id).level == MasteryLevel.known;
+      cards = <Card>[
+        ...cards.where((c) => !known(c)),
+        ...cards.where(known),
+      ].take(limit).toList();
+    }
     final taught = <String>{
       for (final card in cards)
         if (isTaught(card)) card.id,
     };
-    final modesOf = drillableModesNow();
+    final drillable = drillableModesNow();
+    final skills = request.skills;
+    final asked = skills == null
+        ? null
+        : <DrillMode>{for (final skill in skills) ...skill.modes};
+    final Set<DrillMode> Function(Card card) modesOf = asked == null
+        ? drillable
+        : (card) => drillable(card).intersection(asked);
     final gate = unlocks;
     final lesson = request.revise
         ? const <SessionItem>[]
@@ -120,7 +164,7 @@ extension SituationState on AppState {
         ? const <SessionItem>[]
         : <SessionItem>[
             for (final item in sessionItems(
-              DrillRequest(revise: true, language: language),
+              DrillRequest(revise: true, language: language, skills: skills),
             ))
               if (taught.contains(item.card.id)) item,
           ];

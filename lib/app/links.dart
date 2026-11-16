@@ -45,6 +45,11 @@ abstract final class AppLinks {
   static const String latestRelease =
       'https://github.com/aaronified/fluenough/releases/latest';
 
+  /// The on-device listener's manifest, an asset of the `models` release
+  /// (#1004). The owner creates the release and uploads the files.
+  static const String asrManifest =
+      'https://github.com/aaronified/fluenough/releases/download/models/asr-manifest.json';
+
   /// How to contribute a change to a deck on GitHub (the wiki's
   /// Contributing page): where a new theme or unit goes, by pull request
   /// (#477).

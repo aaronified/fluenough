@@ -6,7 +6,6 @@ import '../../app/app_scope.dart';
 import '../../core/data/spoken_languages.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/wave_progress.dart';
 import 'languages_intro_step.dart';
 import 'languages_step.dart';
@@ -14,6 +13,7 @@ import 'onboarding_step.dart';
 import 'sound_check_step.dart';
 import 'tour_step.dart';
 import 'welcome_step.dart';
+import '../../app/language_directory_loader.dart';
 
 /// The first launch, in order (#118). What to learn and placement (#117)
 /// follow it as their own pages (`lib/app.dart`).
@@ -89,12 +89,12 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     if (_choices != null) return;
-    DefaultAssetBundle.of(context)
-        .loadString(spokenLanguagesAsset)
-        .then(parseSpokenLanguages)
-        .then((choices) {
-          if (mounted) setState(() => _choices = choices);
-        });
+    loadLanguageDirectory(
+      DefaultAssetBundle.of(context),
+      AppScope.maybeRead(context),
+    ).then((choices) {
+      if (mounted) setState(() => _choices = choices);
+    });
   }
 
   @override
@@ -224,7 +224,6 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
                 onPressed: () => _skip(from),
                 child: Text(l10n.onboardingSkip),
               ),
-            ReportButton(detail: 'onboarding ${step.id}'),
           ],
         ),
       ),

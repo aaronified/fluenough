@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 
+import '../core/data/daos.dart' show RecommendationMarksDao;
 import '../core/data/database.dart';
 import '../core/data/replay_isolate.dart';
 import '../core/data/review_log.dart';
@@ -108,6 +109,11 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
     return progress;
   }
 
+  /// The table of the recommended works the learner marked completed (deck-kinds
+  /// plan, D13, T25), which lives in this profile's database beside the log.
+  RecommendationMarksDao get recommendationMarksDao =>
+      _db.recommendationMarksDao;
+
   /// Completes once the review log has been read into memory, and the state
   /// cache rebuilt from it, or once reading it has failed ([persists]). Never
   /// throws: a failed read must not leave the catalog failed for good.
@@ -160,7 +166,16 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
       // after it; a failure costs only that launch's replay.
       _snapshotTask(() => log.putSnapshot(stamp, bytes, app: _app));
     }
-    final memory = MemoryProgress.opened(opened, fitted: fitted);
+    // The reviews the withdrawals leave out of the replay are read apart, a
+    // second at a time, for an export; nothing at all without a withdrawal.
+    final withdrawn = opened.withdrawals.isEmpty
+        ? const <LoggedReview>[]
+        : await log.withdrawnReviews(opened.withdrawals);
+    final memory = MemoryProgress.opened(
+      opened,
+      fitted: fitted,
+      withdrawn: withdrawn,
+    );
     final discarded = _memory;
     discarded.removeListener(notifyListeners);
     _memory = memory..addListener(notifyListeners);
@@ -245,6 +260,27 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
     );
     _scheduleSnapshot();
     await _writes;
+  }
+
+  @override
+  List<PlacementWithdrawal> get withdrawals => _memory.withdrawals;
+
+  @override
+  List<LoggedReview> get withdrawnReviews => _memory.withdrawnReviews;
+
+  /// Memory changes at once, and the withdrawal is written to the database
+  /// in the order of every write before it, with `card_states` rebuilt from
+  /// the log without the credit it takes back. No review is touched.
+  @override
+  void withdrawCredit(PlacementWithdrawal w) {
+    assert(_isReady, 'withdrawCredit before ready');
+    _memory.withdrawCredit(w);
+    final parameters = _memory.parameters;
+    _write(
+      () => _log.withdraw(w, parameters: parameters),
+      'while saving a placement withdrawal',
+    );
+    _scheduleSnapshot();
   }
 
   @override
@@ -347,20 +383,30 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
     List<LeechAction> leechActions, {
     Map<SkillKey, FittedParameters> fitted =
         const <SkillKey, FittedParameters>{},
+    List<PlacementWithdrawal> withdrawals = const <PlacementWithdrawal>[],
   }) async {
     if (_readFailed) {
-      return _memory.importLog(reviews, leechActions, fitted: fitted);
+      return _memory.importLog(
+        reviews,
+        leechActions,
+        fitted: fitted,
+        withdrawals: withdrawals,
+      );
     }
     await _writes;
     final imported = await _log.importAll(
       reviews,
       leechActions,
       fitted: fitted,
+      withdrawals: withdrawals,
     );
+    final taken = await _log.withdrawals();
     _memory.replaceWith(
       await _log.events(),
       await _log.leechActions(),
       fitted: imported.fitted,
+      withdrawals: taken,
+      withdrawn: await _log.withdrawnReviews(taken),
     );
     _scheduleSnapshot();
     return imported.added;
@@ -377,6 +423,7 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
     List<LeechAction> leechActions, {
     Map<SkillKey, FittedParameters> fitted =
         const <SkillKey, FittedParameters>{},
+    List<PlacementWithdrawal> withdrawals = const <PlacementWithdrawal>[],
     required RestoreRecord restore,
   }) async {
     if (_readFailed) {
@@ -384,6 +431,7 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
         reviews,
         leechActions,
         fitted: fitted,
+        withdrawals: withdrawals,
         restore: restore,
       );
     }
@@ -392,14 +440,41 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
       reviews,
       leechActions,
       fitted: fitted,
+      withdrawals: withdrawals,
       restore: restore,
     );
+    final taken = await _log.withdrawals();
     _memory.replaceWith(
       await _log.events(),
       await _log.leechActions(),
       fitted: await _log.fitted(),
+      withdrawals: taken,
+      withdrawn: await _log.withdrawnReviews(taken),
     );
     _scheduleSnapshot();
+  }
+
+  /// Deletes the reviews [erasure] selects (#861): after every write queued
+  /// so far, in the database ([ReviewLog.eraseReviews], which rebuilds the
+  /// state cache and drops the language's fits), then memory is read again
+  /// from the database, so log, cache and memory agree. A failure leaves
+  /// both as they were.
+  @override
+  Future<int> eraseReviews(ReviewErasure erasure) async {
+    if (_readFailed) return _memory.eraseReviews(erasure);
+    await _writes;
+    final removed = await _log.eraseReviews(erasure);
+    if (removed == 0 && !erasure.placement) return 0;
+    final taken = await _log.withdrawals();
+    _memory.replaceWith(
+      await _log.events(),
+      await _log.leechActions(),
+      fitted: await _log.fitted(),
+      withdrawals: taken,
+      withdrawn: await _log.withdrawnReviews(taken),
+    );
+    _scheduleSnapshot();
+    return removed;
   }
 
   /// Runs [task] after every write queued so far. Keeping the snapshot is a

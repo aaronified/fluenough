@@ -73,6 +73,10 @@ Milestone? milestoneNamed(String? name) => switch (name) {
   _ => null,
 };
 
+/// The culture cards a language's culture part plans (72 items, the
+/// Plan-Language-Completeness target): the culture bar is full at this many.
+const int cultureCardTarget = 72;
+
 /// How much of a course is written toward B1, from its path's B1 plan and
 /// the words its decks have (`language-picker.md`, "What the data needs").
 class B1Progress {
@@ -85,6 +89,7 @@ class B1Progress {
     required this.grammarWritten,
     required this.stage,
     required this.levels,
+    required this.culture,
     required this.builtLevel,
     required this.unitsWritten,
     required this.unitCount,
@@ -98,7 +103,15 @@ class B1Progress {
   /// [isNotation] marks a notation's course, the IPA's or braille's, which
   /// has no milestones: its stage is [CourseStage.complete] once every unit
   /// of its path is written (ADR-0041, ADR-0043).
-  factory B1Progress.of(List<B1Unit> units, {bool isNotation = false}) {
+  ///
+  /// [cultureCards] is how many cards the language's culture decks have
+  /// (genre `culture`); they fill the culture part, up to
+  /// [cultureCardTarget].
+  factory B1Progress.of(
+    List<B1Unit> units, {
+    bool isNotation = false,
+    int cultureCards = 0,
+  }) {
     int? at(Milestone m) {
       for (final (i, unit) in units.indexed) {
         if (unit.milestone == m) return i;
@@ -150,6 +163,7 @@ class B1Progress {
         : CourseStage.complete;
     return B1Progress._(
       levels: _levels(units, <int?>[a1, a2, b1]),
+      culture: (cultureCards / cultureCardTarget).clamp(0.0, 1.0),
       builtLevel: built,
       unitsWritten: units.where((u) => u.written).length,
       unitCount: units.length,
@@ -217,8 +231,12 @@ class B1Progress {
 
   /// How much of A1, A2 and B1 is written, each 0–1, in that order: the
   /// course line on a language's sheet draws one part for each, and a fourth
-  /// for the culture part, which nothing fills yet.
+  /// for the culture part ([culture]).
   final List<double> levels;
+
+  /// How much of the culture part is written, 0–1: the cards of the
+  /// language's culture decks over [cultureCardTarget].
+  final double culture;
 
   /// The highest level written to its end: 0 below A1, 1 for A1, 2 for A2,
   /// 3 for B1 (complete). A level counts when the path marks it and no unit
@@ -377,6 +395,9 @@ class CatalogLanguage {
             ],
             // Before its decks are on the phone too (ADR-0043).
             isNotation: notationScripts.contains(index.script),
+            cultureCards: index.shelves
+                .where((s) => s.isCore && s.genre == 'culture')
+                .fold(0, (sum, s) => sum + s.cards),
           ),
         ),
     ],

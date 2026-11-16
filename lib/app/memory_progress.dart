@@ -4,20 +4,27 @@ import 'package:flutter/foundation.dart';
 
 import '../core/data/log_jsonl.dart';
 import '../core/data/replay_isolate.dart';
+import '../core/data/review_erasure.dart';
 import '../core/data/restore_record.dart';
+import '../core/models/completed_work.dart';
 import '../core/models/drill_mode.dart';
 import '../core/models/leech_action.dart';
 import '../core/models/review_event.dart';
 import '../core/progress/progress_index.dart';
 import '../core/scheduling/ask.dart';
+import '../core/scheduling/placement_withdrawal.dart';
 import '../core/scheduling/replay.dart';
 import '../core/scheduling/fsrs.dart';
 import '../core/scheduling/skill_map.dart';
 import '../core/scheduling/skill_parameters.dart';
+import '../core/private/private_ids.dart';
 
 export '../core/data/restore_record.dart' show RestoreRecord;
+export '../core/data/review_erasure.dart' show ReviewErasure;
 export '../core/models/leech_action.dart';
 export '../core/models/review_event.dart';
+export '../core/scheduling/placement_withdrawal.dart'
+    show PlacementWithdrawal, hasCreditShape, isWithdrawnCredit;
 export '../core/progress/progress_index.dart';
 export '../core/scheduling/skill_parameters.dart'
     show FittedParameters, SkillKey, SkillParameters, skillOf;
@@ -81,6 +88,12 @@ abstract interface class ProgressStore implements Listenable {
   /// and returns it. Call it the moment the answer is given. [script] is
   /// the learned script the card was shown or the answer typed in, null for
   /// transliteration, and [asked] how it was asked (#653).
+  ///
+  /// Careful with the defaults: a grade 5 with no [elapsed] time and no
+  /// [answerGiven] has the shape of placement credit
+  /// (`ReviewEvent.hasCreditShape`), which Progress counts as placed and the
+  /// log can withdraw. Only `creditPlacement` writes that; a real answer
+  /// passes the time it took (`AppState.record` makes sure of it).
   ReviewEvent record({
     required String deckId,
     required String cardId,
@@ -95,6 +108,20 @@ abstract interface class ProgressStore implements Listenable {
 
   /// What the learner has done about leeches, oldest first. Append-only.
   List<LeechAction> get leechActions;
+
+  /// The placement credit the learner took back, oldest first. Append-only.
+  /// The reviews they name are left out of [log] and of every state; they
+  /// stay in the review log and in an export ([withdrawnReviews]).
+  List<PlacementWithdrawal> get withdrawals;
+
+  /// The reviews [withdrawals] leave out of [log], so that an export is
+  /// still the whole review log (AGENTS.md rule 9).
+  List<LoggedReview> get withdrawnReviews;
+
+  /// Takes back the credit [w] names (wiki, Plan-Placement-V2, point 17):
+  /// appends it, and every state is replayed without those reviews. No
+  /// review is touched.
+  void withdrawCredit(PlacementWithdrawal w);
 
   /// Which skills a right answer implies (ADR-0034). Setting it rebuilds
   /// every state from the log with it.
@@ -129,6 +156,7 @@ abstract interface class ProgressStore implements Listenable {
     List<LoggedReview> reviews,
     List<LeechAction> leechActions, {
     Map<SkillKey, FittedParameters> fitted,
+    List<PlacementWithdrawal> withdrawals,
   });
 
   /// Replaces everything: the log, the leech actions and the fitted
@@ -143,8 +171,19 @@ abstract interface class ProgressStore implements Listenable {
     List<LoggedReview> reviews,
     List<LeechAction> leechActions, {
     Map<SkillKey, FittedParameters> fitted,
+    List<PlacementWithdrawal> withdrawals,
     required RestoreRecord restore,
   });
+
+  /// Deletes the reviews [erasure] selects from one language (#861), the
+  /// second exception to the log being append-only (AGENTS.md rule 9), and
+  /// rebuilds every state from the log that remains. The language's fitted
+  /// parameters are dropped, since they were learned from reviews that are
+  /// gone; another language's reviews and fits are never touched. Returns
+  /// how many reviews went. For a deletion the learner confirmed, after a
+  /// backup was kept. A store that cannot delete from its log throws and
+  /// keeps what it had.
+  Future<int> eraseReviews(ReviewErasure erasure);
 }
 
 /// Progress held in memory: an FSRS state per `(card, mode)` and the
@@ -171,9 +210,12 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     SkillMap skills = const SkillMap(),
     Map<SkillKey, FittedParameters> fitted =
         const <SkillKey, FittedParameters>{},
+    Iterable<PlacementWithdrawal> withdrawals = const <PlacementWithdrawal>[],
   }) {
     final actions = leechActions.toList();
-    final reviews = events.map(logged).toList();
+    final taken = withdrawals.toList();
+    final split = withoutWithdrawnCredit(events.map(logged), taken);
+    final reviews = split.kept;
     final parameters = SkillParameters(
       fitted: fitted,
       lastStudied: _lastStudied(reviews),
@@ -186,6 +228,8 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
       parameters: parameters,
     );
     return MemoryProgress()
+      .._withdrawals.addAll(taken)
+      .._withdrawn.addAll(split.withdrawn)
       .._skills = skills
       .._parameters = parameters
       .._log.addAll(replayed.events)
@@ -204,10 +248,13 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
   factory MemoryProgress.opened(
     OpenedLog opened, {
     required Map<SkillKey, FittedParameters> fitted,
+    List<LoggedReview> withdrawn = const <LoggedReview>[],
   }) {
     replays++;
     final replayed = opened.memory;
     return MemoryProgress._opened(opened.index)
+      .._withdrawals.addAll(opened.withdrawals)
+      .._withdrawn.addAll(withdrawn)
       .._skills = const SkillMap()
       .._parameters = SkillParameters(
         fitted: fitted,
@@ -227,6 +274,8 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
   final Map<ScriptKey, FsrsState> _scriptStates = <ScriptKey, FsrsState>{};
   final List<ReviewEvent> _scriptLog = <ReviewEvent>[];
   final List<LeechAction> _leechActions = <LeechAction>[];
+  final List<PlacementWithdrawal> _withdrawals = <PlacementWithdrawal>[];
+  final List<LoggedReview> _withdrawn = <LoggedReview>[];
   SkillMap _skills = const SkillMap();
   SkillParameters _parameters = SkillParameters.none;
   final ProgressIndex _index;
@@ -349,7 +398,7 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     // Under the card's language and the deck's, which name the same one
     // (`te-0053`, `te-en-core-100`) but are read by different callers.
     _languageTick[skillOf(key).language] = ++_tick;
-    _languageTick[deckId.split('-').first] = _tick;
+    _languageTick[languageOfId(deckId)] = _tick;
     // A language studied now may become another's baseline: when that
     // changes which set schedules a pair, every state is replayed with the
     // new choice, so that the states are always what the replay gives.
@@ -366,6 +415,19 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
 
   @override
   List<LeechAction> get leechActions => UnmodifiableListView(_leechActions);
+
+  @override
+  List<PlacementWithdrawal> get withdrawals =>
+      UnmodifiableListView(_withdrawals);
+
+  @override
+  List<LoggedReview> get withdrawnReviews => UnmodifiableListView(_withdrawn);
+
+  @override
+  void withdrawCredit(PlacementWithdrawal w) {
+    _withdrawals.add(w);
+    _replace(_log.map(logged).toList(), _leechActions.toList());
+  }
 
   @override
   LeechAction actOnLeech(
@@ -402,8 +464,18 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     List<LeechAction> leechActions, {
     Map<SkillKey, FittedParameters> fitted =
         const <SkillKey, FittedParameters>{},
+    List<PlacementWithdrawal> withdrawals = const <PlacementWithdrawal>[],
   }) async {
-    final known = <String>{for (final e in _log) reviewIdentity(logged(e))};
+    final known = <String>{
+      for (final e in _log) reviewIdentity(logged(e)),
+      for (final r in _withdrawn) reviewIdentity(r),
+    };
+    final takenKnown = <String>{
+      for (final w in _withdrawals) withdrawalIdentity(w),
+    };
+    for (final w in withdrawalsInTimeOrder(withdrawals)) {
+      if (takenKnown.add(withdrawalIdentity(w))) _withdrawals.add(w);
+    }
     final fresh = <LoggedReview>[
       for (final r in reviews)
         if (known.add(reviewIdentity(r))) r,
@@ -430,10 +502,54 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     List<LeechAction> leechActions, {
     Map<SkillKey, FittedParameters> fitted =
         const <SkillKey, FittedParameters>{},
+    List<PlacementWithdrawal> withdrawals = const <PlacementWithdrawal>[],
     required RestoreRecord restore,
   }) async {
     _parameters = SkillParameters(fitted: fitted);
+    _withdrawals
+      ..clear()
+      ..addAll(withdrawalsInTimeOrder(withdrawals));
+    _withdrawn.clear();
     _replace(inTimeOrder(reviews), actionsInTimeOrder(leechActions));
+  }
+
+  @override
+  Future<int> eraseReviews(ReviewErasure erasure) async {
+    // The credit a withdrawal took back is still in the log: it can be
+    // erased with the placement, so it is read with the rest.
+    final all = <LoggedReview>[..._log.map(logged), ..._withdrawn];
+    final keep = <LoggedReview>[
+      for (final r in all)
+        if (!erasure.matches(
+          r.key.cardId,
+          r.at,
+          creditShape: hasCreditShape(r),
+        ))
+          r,
+    ];
+    final removed = all.length - keep.length;
+    final taken = erasure.placement
+        ? _withdrawals.where((w) => w.language == erasure.language).length
+        : 0;
+    if (removed == 0 && taken == 0) return 0;
+    final pairs = <ProgressKey>{for (final r in keep) r.key};
+    if (erasure.idPrefix == null) {
+      _parameters = SkillParameters(
+        fitted: <SkillKey, FittedParameters>{
+          for (final MapEntry(:key, :value) in _parameters.fitted.entries)
+            if (key.language != erasure.language) key: value,
+        },
+      );
+    }
+    if (taken > 0) {
+      _withdrawals.removeWhere((w) => w.language == erasure.language);
+    }
+    _withdrawn.clear();
+    _replace(inTimeOrder(keep), <LeechAction>[
+      for (final a in _leechActions)
+        if (!erasure.isOfLanguage(a.key.cardId) || pairs.contains(a.key)) a,
+    ]);
+    return removed;
   }
 
   /// Everything replaced by [events], [leechActions] and the [fitted]
@@ -442,14 +558,32 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     List<ReviewEvent> events,
     List<LeechAction> leechActions, {
     required Map<SkillKey, FittedParameters> fitted,
+    List<PlacementWithdrawal> withdrawals = const <PlacementWithdrawal>[],
+    List<LoggedReview> withdrawn = const <LoggedReview>[],
   }) {
     _parameters = SkillParameters(fitted: fitted);
+    _withdrawals
+      ..clear()
+      ..addAll(withdrawals);
+    _withdrawn
+      ..clear()
+      ..addAll(withdrawn);
     _replace(inTimeOrder(events.map(logged)), actionsInTimeOrder(leechActions));
   }
 
   /// [reviews] and [actions] are oldest first. The languages' last studies
   /// are taken from [reviews].
-  void _replace(List<LoggedReview> reviews, List<LeechAction> actions) {
+  void _replace(List<LoggedReview> input, List<LeechAction> actions) {
+    // The credit the learner took back is left out, and kept aside for an
+    // export: the log memory shows is the log the replay reads.
+    final split = withoutWithdrawnCredit(input, _withdrawals);
+    final reviews = split.kept;
+    if (split.withdrawn.isNotEmpty) {
+      final have = <String>{for (final r in _withdrawn) reviewIdentity(r)};
+      for (final r in split.withdrawn) {
+        if (have.add(reviewIdentity(r))) _withdrawn.add(r);
+      }
+    }
     _parameters = SkillParameters(
       fitted: _parameters.fitted,
       lastStudied: _lastStudied(reviews),
@@ -486,10 +620,19 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
 extension ProgressQueries on ProgressStore {
   /// The review log, leech actions and fitted parameters as a JSONL
   /// backup (#20).
-  String exportJsonl() => LogJsonl.encode(
-    inTimeOrder(log.map(logged)),
+  ///
+  /// With [completedWorks], the recommended works marked completed ride along
+  /// as lines of a type an older app skips (deck-kinds plan, D13, T25).
+  String exportJsonl({
+    Iterable<CompletedWork> completedWorks = const <CompletedWork>[],
+  }) => LogJsonl.encode(
+    // The credit the learner took back is still in the log: it is left out
+    // of the replay, never out of a backup.
+    inTimeOrder(<LoggedReview>[...log.map(logged), ...withdrawnReviews]),
     actionsInTimeOrder(leechActions),
     fitted: parameters.fitted,
+    withdrawals: withdrawalsInTimeOrder(withdrawals),
+    completedWorks: completedWorks,
   );
 
   /// Every review of every skill, the script skills' (#556) after the

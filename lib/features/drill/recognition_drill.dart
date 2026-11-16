@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
+import '../../core/feedback/content_report.dart';
 import '../../core/grading/self_grade.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
@@ -18,7 +19,7 @@ import '../decks/ipa_info_dot.dart';
 
 /// Recognition: the target, big, with its reading and, where the phone has
 /// a voice, its speaker; "Show answer"; then the meaning, the note and an
-/// example, and the four self-ratings in one row, or a swipe, which is Good.
+/// example, and the four self-ratings in one row, or a swipe, which is Okay.
 ///
 /// What it shows once revealed is [TaughtDetails], as the other questions
 /// show it once answered.
@@ -67,11 +68,11 @@ class RecognitionDrill extends StatelessWidget {
           : l10n.numbersPracticeTitle,
       position: session.position,
       total: session.total,
-      reportDetail: '${session.item.card.id} in ${session.deck.id}',
+      report: ContentTarget.card(session.item.card.id, deck: session.deck.deck),
       progress: session.progress,
       onClose: onClose,
-      // A swipe on the answer page, or the end-edge chevron, is Good, as
-      // tapping Good is (owner, 2026-10-29). Gone back to, it only shows the
+      // A swipe on the answer page, or the end-edge chevron, is Okay, as
+      // tapping Okay is (owner, 2026-10-29). Gone back to, it only shows the
       // card again.
       going: goingOn(
         session,

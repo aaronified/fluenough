@@ -1,3 +1,6 @@
+import 'level.dart';
+import 'card_source.dart';
+import 'character.dart';
 import 'drill_mode.dart';
 import 'rule.dart';
 
@@ -382,6 +385,12 @@ class CardRef {
       forms: sameNative ? written.forms : const <CardItem>[],
       senses: sameNative ? written.senses : const <CardSense>[],
       dictionary: sameNative ? written.dictionary : null,
+      // What the card is in the language learned, the same in every deck.
+      level: written.level,
+      creators: written.creators,
+      sourceBlock: written.sourceBlock,
+      legacy: written.legacy,
+      character: written.character,
     );
   }
 }
@@ -442,6 +451,11 @@ class Card {
     this.forms = const <CardItem>[],
     this.senses = const <CardSense>[],
     this.dictionary,
+    this.level,
+    this.creators = const <String>[],
+    this.sourceBlock,
+    this.legacy,
+    this.character,
   });
 
   /// Stable for the life of the card. This is the key the user's entire review
@@ -663,6 +677,31 @@ class Card {
   /// Its Wiktionary entry, when the deck's layer gives one: what the word
   /// sheet and the teach card's dictionary show.
   final CardDictionary? dictionary;
+
+  /// The lowest level the card suits (`level`, D2 of the deck-kinds plan): it
+  /// orders and labels the card, never blocks it. Null: the deck's level, if it
+  /// has one, applies.
+  final Level? level;
+
+  /// The ids of the creators of the work the card quotes (`creator`: one id,
+  /// or a list for a work by several), in the language's creators file. Empty
+  /// for a card with none.
+  final List<String> creators;
+
+  /// Where the text comes from (`source`, a mapping), for a culture or proverb
+  /// card; null for any other. Named so apart from a note's or an example's
+  /// `source` text, and from [QuestionCard.source].
+  final CardSource? sourceBlock;
+
+  /// How the work still shapes the culture (`legacy`, D5b): the plain mapping
+  /// the deck gives, read tolerantly and not shown yet. Null for a card with
+  /// none.
+  final Map<String, Object?>? legacy;
+
+  /// Structured data about the character a script deck's card teaches
+  /// (`character`, #1226): readings by kind, levels, strokes, radical. Null
+  /// for a card with none. Read against the deck's [CharacterScheme].
+  final CardCharacter? character;
 
   /// The drills this card can actually be used for, given whether the device
   /// has a voice for the language, and whether it can recognise speech in it.

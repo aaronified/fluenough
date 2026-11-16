@@ -1,5 +1,6 @@
 import 'package:yaml/yaml.dart';
 
+import '../private/private_ids.dart';
 import 'deck_parser.dart';
 import 'yaml_tree.dart';
 
@@ -21,7 +22,26 @@ class LanguagePath with _B1Plan {
     this.regions = const <Region>[],
     this.genders,
     this.levels,
+    this.privatelyModified = false,
   });
+
+  /// Whether this path comes from a private package that modifies a language
+  /// the app teaches, and so replaces the built-in path while that package is
+  /// active (#1017, Plan-Private-Languages 2.5). The app shows a small tag
+  /// wherever the course or path is shown.
+  final bool privatelyModified;
+
+  /// This path, marked as privately modified.
+  LanguagePath asPrivatelyModified() => LanguagePath(
+    id: id,
+    language: language,
+    plan: plan,
+    alphabet: alphabet,
+    regions: regions,
+    genders: genders,
+    levels: levels,
+    privatelyModified: true,
+  );
 
   /// `<language>-path`, the file's name.
   final String id;
@@ -55,8 +75,11 @@ class LanguagePath with _B1Plan {
 
   /// The deck a learner from [native] is taught for [coreId]: `te-home`
   /// from `en` is `te-en-home`.
-  String deckFor(String native, String coreId) =>
-      '$language-$native-${coreId.substring(language.length + 1)}';
+  String deckFor(String native, String coreId) {
+    // A private core id starts `fnpd-<language>-` (#1017).
+    final prefix = idLanguagePrefix(coreId, language);
+    return '$prefix-$native-${coreId.substring(prefix.length + 1)}';
+  }
 
   /// The path as a learner from [native] is taught it: each core id
   /// becomes the course's deck for it, kept where [exists] says the
@@ -102,6 +125,7 @@ class LanguagePath with _B1Plan {
       }),
       plan: List<PlanUnit>.unmodifiable(plan),
       levels: levels,
+      privatelyModified: privatelyModified,
     );
   }
 
@@ -132,7 +156,12 @@ class CoursePath with _B1Plan {
     this.alphabet = const <String>{},
     this.plan = const <PlanUnit>[],
     this.levels,
+    this.privatelyModified = false,
   });
+
+  /// Whether the path is a private package's, replacing the built-in one
+  /// ([LanguagePath.privatelyModified]).
+  final bool privatelyModified;
 
   /// The language's path's id, `<language>-path`.
   final String id;
@@ -231,6 +260,7 @@ class CoursePath with _B1Plan {
       alphabet: alphabet,
       plan: plan,
       levels: levels,
+      privatelyModified: privatelyModified,
     );
   }
 
@@ -479,10 +509,13 @@ LanguagePath parseLanguagePath(String text, {String source = 'path.yaml'}) {
       root.nodes['id'] ?? root,
     );
   }
-  bool isCoreId(Object? value) =>
-      value is String &&
-      value.startsWith('$language-') &&
-      _name.hasMatch(value.substring(language.length + 1));
+  bool isCoreId(Object? value) {
+    if (value is! String) return false;
+    final prefix = idLanguagePrefix(value, language);
+    return value.startsWith('$prefix-') &&
+        _name.hasMatch(value.substring(prefix.length + 1));
+  }
+
   String notCoreId(Object? value) =>
       '"$value" is not a core id of $language: $language- and a name, such '
       'as $language-home';

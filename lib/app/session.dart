@@ -143,11 +143,24 @@ class DrillRequest {
   /// [language]'s, the ones not learnt yet taught first, then those learnt
   /// revised. With [revise], only the revising: the sheet has nothing new.
   /// Every answer is recorded, as any lesson's or revision's is.
+  ///
+  /// A topic's drill (D6) is the same session over the topic's cards: with
+  /// [skills] only those skills are asked, and with [limit] at most that many
+  /// of the cards are used, the ones not learnt yet and the ones due first.
   const DrillRequest.sheet(
     Set<String> cardIds, {
     required String language,
     bool revise = false,
-  }) : this(cardIds: cardIds, sheet: true, language: language, revise: revise);
+    Set<Skill>? skills,
+    int? limit,
+  }) : this(
+         cardIds: cardIds,
+         sheet: true,
+         language: language,
+         revise: revise,
+         skills: skills,
+         limit: limit,
+       );
 
   /// The decks to draw from, or null for every deck the current profile
   /// learns.

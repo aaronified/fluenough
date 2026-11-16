@@ -7,7 +7,6 @@ import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
 
@@ -170,10 +169,7 @@ class SourcesPage extends StatelessWidget {
     // The script fonts are credited once one is on the phone (ADR-0042).
     final fonts = AppScope.of(context).deckDownloads?.fonts.hasFonts ?? false;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.settingsSources),
-        actions: const <Widget>[ReportButton()],
-      ),
+      appBar: AppBar(title: Text(l10n.settingsSources)),
       body: ListView(
         padding: const EdgeInsetsDirectional.fromSTEB(
           16,
@@ -227,6 +223,28 @@ class SourcesPage extends StatelessWidget {
                   title: l10n.sourcesCreditName(credit.name),
                   subtitle: l10n.sourcesCreditLine(credit.name),
                 ),
+            ],
+          ),
+          // The on-device AI listener's software and data (#1004).
+          const SizedBox(height: 16),
+          GroupedList.settings(
+            header: l10n.sourcesListener,
+            children: <Widget>[
+              GroupedTile(
+                leading: const Icon(Icons.memory_outlined),
+                title: l10n.sourcesListenerOnnx,
+                subtitle: l10n.sourcesListenerOnnxLine,
+              ),
+              GroupedTile(
+                leading: const Icon(Icons.auto_awesome_outlined),
+                title: l10n.sourcesListenerModel,
+                subtitle: l10n.sourcesListenerModelLine,
+              ),
+              GroupedTile(
+                leading: const Icon(Icons.record_voice_over_outlined),
+                title: l10n.sourcesListenerData,
+                subtitle: l10n.sourcesListenerDataLine,
+              ),
             ],
           ),
           if (media.isNotEmpty) ...<Widget>[

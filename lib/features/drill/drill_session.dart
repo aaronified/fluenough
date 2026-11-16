@@ -14,6 +14,7 @@ import '../../core/grading/answer_grader.dart';
 import '../../core/grading/meaning_rules.dart' show meaningKey;
 import '../../core/grading/romanised.dart';
 import '../../core/grading/self_grade.dart';
+import '../../core/logs/log_entry.dart' show describeError;
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
@@ -21,9 +22,10 @@ import '../../core/models/reading.dart';
 import '../../core/models/sound_contrasts.dart';
 import '../../core/network/network_probe.dart';
 import '../../core/scheduling/daily_timer.dart';
-import '../../core/scheduling/distractors.dart';
+import '../../core/scheduling/look_alike_options.dart';
 import '../../core/scheduling/picture_choice.dart';
 import '../../core/scheduling/fsrs.dart';
+import '../../core/scheduling/learn_sequence.dart';
 import '../../core/scheduling/question_type.dart';
 import '../../core/scheduling/session_queue.dart';
 import '../../core/sound/sound_check.dart';
@@ -51,6 +53,35 @@ enum SelfTake {
 
   /// Playing the recording back, then the voice.
   playing,
+}
+
+/// What an answer to a learn question changed: a small notice for the
+/// screen, shown once ([DrillSession.takeLearnNotice]).
+enum LearnNotice {
+  /// Both questions were right: the item is learned.
+  learned,
+
+  /// A question was missed: the item is not learned yet.
+  notYet,
+}
+
+/// An answer to a question of a learn attempt, held until both are right.
+class _Held {
+  const _Held({
+    required this.entry,
+    required this.grade,
+    required this.elapsed,
+    required this.answerGiven,
+    required this.script,
+    required this.asked,
+  });
+
+  final SessionItem entry;
+  final int grade;
+  final Duration elapsed;
+  final String? answerGiven;
+  final String? script;
+  final Ask asked;
 }
 
 /// One card as the learner left it: kept so that a swipe back shows it
@@ -240,6 +271,23 @@ class DrillSession extends ChangeNotifier {
 
   final List<SessionAnswer> _answers = <SessionAnswer>[];
   final Stopwatch _watch = Stopwatch();
+
+  /// The learn attempts of this sitting (owner, 2026-11-16): an item's two
+  /// answers are held here and reach the review log, and so FSRS, only when
+  /// both are right, in this one sitting.
+  late final LearnTracker<_Held> _learn = LearnTracker<_Held>(
+    now: () => _state.now(),
+  );
+
+  LearnNotice? _learnNotice;
+
+  /// What the last answer did to a learn attempt, once: null when nothing.
+  LearnNotice? takeLearnNotice() {
+    final notice = _learnNotice;
+    _learnNotice = null;
+    return notice;
+  }
+
   int _index = 0;
   DrillPhase _phase = DrillPhase.prompt;
   TypedAnswer? _answer;
@@ -1295,6 +1343,10 @@ class DrillSession extends ChangeNotifier {
         _watch.elapsed,
       );
     }
+    final tag = item.learn;
+    if (tag != null && tag.step == LearnStep.show) {
+      _learn.shown(tag.id, gap: tag.gap);
+    }
     _advance();
   }
 
@@ -1354,12 +1406,16 @@ class DrillSession extends ChangeNotifier {
       return pictureOptions(card, deckCards, seed: _random.nextInt(1 << 30)) ??
           <Card>[card];
     }
-    // The pool by what its cards share with this one (rankDistractors),
-    // shuffled within each rank, so that the likelier mistakes come first.
-    final pool = <Card>[
-      for (final group in rankDistractors(card, _state.choicePool(card, ask)))
-        ...group..shuffle(_random),
-    ];
+    // The pool by what its cards share with this one, made by code from the
+    // cards that exist: those that look most like it (one length band, its
+    // word class, shared tags, the nearest by edit distance) come first
+    // (rankLookAlikes), the likelier mistakes before the rest.
+    final pool = rankLookAlikes(
+      card,
+      _state.choicePool(card, ask),
+      textOf: ask.optionOf,
+      random: _random,
+    );
     final shown = <String>{ask.optionOf(card)};
     final picked = <Card>[card];
     final partner = ask == Ask.hearMeaning ? _state.pairOf(card) : null;
@@ -1470,16 +1526,87 @@ class DrillSession extends ChangeNotifier {
   List<String>? _tiles;
 
   /// The current card's words to put in order, shuffled out of order where
-  /// they can be.
+  /// they can be, with its [extraTilesOf] mixed in (#348).
   List<String> get tiles => _tiles ??= _shuffledWords();
 
   List<String> _shuffledWords() {
     final words = _words;
-    final tiles = <String>[...words];
-    for (var i = 0; i < 8 && listEquals(tiles, words); i++) {
+    final tiles = <String>[...words, ...extraTilesOf(words)];
+    // Shuffled until the needed tiles, the extras left out, are out of the
+    // answer's order where they can be.
+    for (var i = 0; i < 8; i++) {
       tiles.shuffle(_random);
+      if (!listEquals(<String>[
+        for (final tile in tiles)
+          if (words.contains(tile)) tile,
+      ], words)) {
+        break;
+      }
     }
     return tiles;
+  }
+
+  /// The wrong tiles the card adds to its [answerWords] (#348): its
+  /// [Card.confusables], each written as a tile the way the answer's are
+  /// (lowercase; in Latin letters its reading while the words are put in
+  /// order in them; a confusable that names a card, that card's word). Never
+  /// one the answer needs, one that is not a single word or mark, one given
+  /// twice, nor one the card cannot show in the script it is put in order in
+  /// (a word written out has one spelling only). Empty where the card has
+  /// none, so the drill is as it was.
+  List<String> extraTilesOf(List<String> answer) {
+    final extras = <String>[];
+    try {
+      final card = item.card;
+      final script = deck.language.script;
+      final firstScript = writtenTarget == card.target;
+      // A tile another accepted order needs is needed, too.
+      final needed = <String>{
+        ...answer,
+        for (final other
+            in rearrangesReading
+                ? card.readings
+                : card.acceptedAnswers(DrillMode.production))
+          ...(rearrangesReading ? tilesOf(other) : card.tilesOfSpelling(other)),
+      };
+      for (final confusable in card.confusables) {
+        String? text;
+        final ref = confusable.ref;
+        if (ref != null) {
+          final other = _state.cardInCourseOf(card, ref);
+          if (other != null) {
+            final written = rearrangesReading
+                ? other.reading
+                : other.targetIn(inputScript, firstScript: script);
+            // As a tile of the answer is written: a mark at its edge is
+            // not part of it.
+            final found = written == null ? null : tilesOf(written);
+            text = found != null && found.length == 1 ? found.single : null;
+          }
+        } else if (rearrangesReading) {
+          text = confusable.kind == 'mark'
+              ? confusable.word
+              : confusable.reading;
+        } else if (firstScript) {
+          text = confusable.word;
+        }
+        final tile = text?.trim().toLowerCase();
+        if (tile == null ||
+            tile.isEmpty ||
+            tile.contains(RegExp(r'\s')) ||
+            needed.contains(tile) ||
+            extras.contains(tile)) {
+          continue;
+        }
+        extras.add(tile);
+      }
+    } on Object catch (error, stack) {
+      _state.log.error(
+        describeError('Extra tiles of ${item.card.id} left out', error, stack),
+      );
+      return const <String>[];
+    }
+    return extras;
   }
 
   final List<int> _placed = <int>[];
@@ -1508,16 +1635,19 @@ class DrillSession extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Checks the words placed, once every tile is: right, recorded 5, if
-  /// they read as the card's target or another it accepts, in Latin
-  /// letters its readings; else 1.
+  /// Whether the order can be checked: as many tiles are placed as the
+  /// answer has (#348). With extra tiles that is fewer than all of them, and
+  /// more can be placed, which can only be wrong.
+  bool get canCheck =>
+      ask == Ask.rearrange &&
+      _phase == DrillPhase.prompt &&
+      _placed.length >= answerWords.length;
+
+  /// Checks the words placed, once as many are as the answer has: right,
+  /// recorded 5, if they read as the card's target or another it accepts, in
+  /// Latin letters its readings, so with none of the extra tiles; else 1.
   void checkOrder() {
-    if (readOnly) return;
-    if (ask != Ask.rearrange ||
-        _phase != DrillPhase.prompt ||
-        _placed.length != tiles.length) {
-      return;
-    }
+    if (readOnly || !canCheck) return;
     final given = <String>[for (final i in _placed) tiles[i]].join(' ');
     final card = item.card;
     final accepted = rearrangesReading
@@ -1555,14 +1685,20 @@ class DrillSession extends ChangeNotifier {
 
   void _recordItem(SessionItem entry, int grade, {String? answerGiven}) {
     if ((recorded || recordsRevision) && !_state.keepsOutOfLog(entry)) {
-      _state.record(
-        entry,
-        grade,
+      final held = _Held(
+        entry: entry,
+        grade: grade,
         elapsed: _watch.elapsed,
         answerGiven: answerGiven,
         script: answerScript(entry, typed: answerGiven),
         asked: ask,
       );
+      final tag = entry.learn;
+      if (tag == null || tag.step == LearnStep.show) {
+        _write(held);
+      } else {
+        _learnAnswer(tag, held);
+      }
     }
     _answers.add(
       SessionAnswer(
@@ -1571,6 +1707,48 @@ class DrillSession extends ChangeNotifier {
         time: _watch.elapsed,
       ),
     );
+  }
+
+  void _write(_Held held) => _state.record(
+    held.entry,
+    held.grade,
+    elapsed: held.elapsed,
+    answerGiven: held.answerGiven,
+    script: held.script,
+    asked: held.asked,
+  );
+
+  /// A learn question's answer: held until both of the item's are right, then
+  /// both are written together, so that its first FSRS review is from that
+  /// moment. A miss, or a gap or a sitting that broke the rule, writes
+  /// nothing: the item stays unlearnt.
+  void _learnAnswer(LearnTag tag, _Held held) {
+    final result = _learn.answer(
+      tag.id,
+      tag.step,
+      held.grade >= Fsrs.passingGrade,
+      held,
+    );
+    switch (result.outcome) {
+      case LearnOutcome.learned:
+        _state.recordAll(<AnswerRecord>[
+          for (final a in result.held)
+            (
+              item: a.entry,
+              grade: a.grade,
+              elapsed: a.elapsed,
+              answerGiven: a.answerGiven,
+              script: a.script,
+              asked: a.asked,
+            ),
+        ]);
+        _learnNotice = LearnNotice.learned;
+      case LearnOutcome.failed:
+        _learnNotice = LearnNotice.notYet;
+      case LearnOutcome.pending:
+      case LearnOutcome.dropped:
+        break;
+    }
   }
 
   /// Whether the current typed answer was graded as its reading, in Latin
@@ -1669,7 +1847,21 @@ class DrillSession extends ChangeNotifier {
     };
   }
 
+  /// A question passed over unasked ends its learn attempt: the gap it was
+  /// laid out with is broken.
+  void _skipped(SessionItem item) {
+    final tag = item.learn;
+    if (tag != null && tag.step != LearnStep.show) _learn.dropAttempt(tag.id);
+  }
+
   void _advance() {
+    // A question left behind, answered or not, is one more between the
+    // questions of the learn attempts open; a learn question left
+    // unanswered ends its attempt.
+    if (!ask.onlyShows) {
+      final tag = item.learn;
+      _learn.left(id: tag?.id, step: tag?.step);
+    }
     if (_playing) _state.stopSpeaking();
     // Going on while a "Try again" listens: what it hears is dropped.
     if (_hearing) _state.stopListening();
@@ -1682,6 +1874,7 @@ class DrillSession extends ChangeNotifier {
     _replaying = false;
     var next = _index + 1;
     while (next < items.length && !_drillable(items[next])) {
+      _skipped(items[next]);
       next++;
     }
     final run = daily;
@@ -1704,6 +1897,7 @@ class DrillSession extends ChangeNotifier {
           _items.addAll(more);
           next = from;
           while (next < items.length && !_drillable(items[next])) {
+            _skipped(items[next]);
             next++;
           }
         }
@@ -1713,6 +1907,7 @@ class DrillSession extends ChangeNotifier {
       // The day's session has ended: its time reads full on Today, which
       // then offers nothing pending (#1007).
       if (run != null) _settleClock(run);
+      _learn.end();
       _endedAt = _state.now();
       _watch.stop();
       notifyListeners();
@@ -1763,6 +1958,8 @@ class DrillSession extends ChangeNotifier {
     if (_hearing) _state.stopListening();
     if (_hearingSelf != SelfTake.idle || _replaying) _state.soundCheck.stop();
     _take = null;
+    // Leaving the drill drops every open attempt: nothing of it was written.
+    _learn.end();
     super.dispose();
   }
 }

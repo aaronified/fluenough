@@ -7,6 +7,7 @@ import '../../app/deck_catalog.dart';
 import '../../app/routes.dart';
 import '../../app/session.dart';
 import '../../app/skill.dart';
+import '../../core/feedback/content_report.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
@@ -17,7 +18,7 @@ import '../../ui/widgets/deck_tile.dart';
 import '../../ui/widgets/ipa_line.dart';
 import '../../ui/widgets/learn_button.dart';
 import '../../ui/widgets/page_parts.dart';
-import '../../ui/widgets/report_button.dart';
+import '../../ui/widgets/content_report.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
@@ -128,7 +129,7 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
     final entry = state.deckById(widget.deckId);
     if (entry == null) {
       return Scaffold(
-        appBar: AppBar(actions: const <Widget>[ReportButton()]),
+        appBar: AppBar(),
         body: state.status == CatalogStatus.loading
             ? Center(
                 child: CircularProgressIndicator(
@@ -164,6 +165,11 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
             : state.newToWalk(<Card>[
                 for (final w in state.walkCards(<DeckEntry>[entry])) w.card,
               ]);
+        final learnRequest = DrillRequest.lesson(
+          language: entry.language.code,
+          deckId: entry.id,
+          tags: _tags,
+        );
         final skills = deckSkills(entry, state.settings);
         final practiceCount = state
             .buildSession(DrillRequest.practice(entry.id, tags: _tags))
@@ -172,13 +178,13 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
         return Scaffold(
           appBar: AppBar(
             actions: <Widget>[
-              if (!entry.bundled)
+              if (!entry.bundled && !entry.private)
                 IconButton(
                   tooltip: l10n.deckRemove,
                   icon: const Icon(Icons.delete_outline),
                   onPressed: () => _confirmRemove(entry),
                 ),
-              ReportButton(detail: entry.id),
+              ContentReportButton(target: ContentTarget.deck(entry.deck)),
             ],
           ),
           body: ListView(
@@ -248,9 +254,14 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
             untaught: untaught,
             relearn: deckUntaught == 0 && words.isNotEmpty,
             learnEnabled: words.isNotEmpty,
-            onLearn: () => AppNavigator.openWalkthrough(context, <String>[
-              entry.id,
-            ], tags: _tags),
+            // Learn runs the learn rule on the words in view not learned
+            // yet; with none left to learn it is the walkthrough, a way to
+            // look that records nothing.
+            onLearn: () => !reading && state.lessonFor(learnRequest).isNotEmpty
+                ? AppNavigator.startDrill(context, learnRequest)
+                : AppNavigator.openWalkthrough(context, <String>[
+                    entry.id,
+                  ], tags: _tags),
           ),
         );
       },

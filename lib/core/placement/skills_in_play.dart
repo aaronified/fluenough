@@ -52,17 +52,46 @@ class FindLevelSkills {
 /// The skills to check for a language whose skills are [states] (the state
 /// of each key of [shape]), given the skills already [verified] (by name).
 /// A run never changes a state: Know and Learn are only read here.
+///
+/// [autoKnown] are the keys a script known from another language started as
+/// Know ([autoKnownFrom], worked out at run time and never stored). Knowing
+/// the letters is not knowing the language (owner, 2026-11-07): such a key
+/// that is still Know counts as Learn for the word skills (Read, Write), and
+/// as Know only for the script skill it maps to (Script or Second script).
+/// Latin is not a script skill, so Spanish's Read and Write known from
+/// English are simply Learn.
 FindLevelSkills selectFindLevelSkills(
   SkillState Function(SkillKey key) states,
   List<SkillKey> shape, {
   required Set<String> verified,
   List<String> scripts = const <String>[],
+  Set<SkillKey> autoKnown = const <SkillKey>{},
 }) {
-  Set<PlacementSkill> skillsIn(SkillState state) =>
-      placementSkillsOf(<SkillKey>[
-        for (final key in shape)
-          if (states(key) == state) key,
-      ], scripts: scripts);
+  const scriptSkills = <PlacementSkill>{
+    PlacementSkill.script,
+    PlacementSkill.secondScript,
+  };
+  Set<PlacementSkill> skillsIn(SkillState state) {
+    final out = <PlacementSkill>{};
+    for (final key in shape) {
+      final own = states(key);
+      final letters = own == SkillState.know && autoKnown.contains(key);
+      final skills = placementSkillsOf(<SkillKey>[key], scripts: scripts);
+      if (letters) {
+        // Known from another language: the letters, not the words.
+        for (final skill in skills) {
+          final isScript = scriptSkills.contains(skill);
+          if (isScript ? state == SkillState.know : state == SkillState.learn) {
+            out.add(skill);
+          }
+        }
+      } else if (own == state) {
+        out.addAll(skills);
+      }
+    }
+    return out;
+  }
+
   final known = skillsIn(SkillState.know);
   final unverified = <PlacementSkill>{
     for (final skill in known)

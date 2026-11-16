@@ -6,6 +6,7 @@ import '../models/review_event.dart';
 import '../scheduling/ask.dart';
 import '../scheduling/replay.dart';
 import '../scheduling/fsrs.dart';
+import '../scheduling/placement_withdrawal.dart';
 import '../scheduling/skill_parameters.dart';
 import 'card_state_repository.dart';
 import 'log_jsonl.dart';
@@ -13,6 +14,7 @@ import 'database.dart';
 import 'replay_isolate.dart';
 import 'replay_snapshot.dart';
 import 'restore_record.dart';
+import 'review_erasure.dart';
 
 /// The review log, and the scheduling state it drives, in the database
 /// (docs/DESIGN.md, "The review cycle"; ADR-0005).
@@ -115,6 +117,7 @@ class ReviewLog {
       reviews: await loggedRows(),
       leechActions: await leechActions(),
       fitted: fitted,
+      withdrawals: await withdrawals(),
     );
     replays++;
     return run(job);
@@ -142,12 +145,14 @@ class ReviewLog {
     SnapshotRunner fromSnapshot = snapshotInIsolate,
   }) async {
     final actions = await leechActions();
+    final taken = await withdrawals();
     LogStamp? stamp;
     try {
       stamp = await currentStamp(
         app: app,
         fitted: fitted,
         leechActions: actions,
+        withdrawals: taken,
       );
       if (await _db.replaySnapshotsDao.stamp() == stamp.text) {
         final bytes = await _db.replaySnapshotsDao.payload();
@@ -157,6 +162,7 @@ class ReviewLog {
               bytes: bytes,
               leechActions: actions,
               reviewCount: stamp.reviews,
+              withdrawals: taken,
             ),
           );
           if (opened != null) {
@@ -178,6 +184,7 @@ class ReviewLog {
       leechActions: actions,
       fitted: fitted,
       encode: stamp != null,
+      withdrawals: taken,
     );
     replays++;
     final opened = await run(job);
@@ -197,6 +204,7 @@ class ReviewLog {
     required String app,
     Map<SkillKey, FittedParameters>? fitted,
     List<LeechAction>? leechActions,
+    List<PlacementWithdrawal>? withdrawals,
   }) async {
     final row = await _db
         .customSelect(
@@ -220,6 +228,7 @@ class ReviewLog {
       sumElapsed: row.read<int>('elapsed'),
       leechActions: leechActions ?? await this.leechActions(),
       fitted: fitted ?? await this.fitted(),
+      withdrawals: withdrawals ?? await this.withdrawals(),
     );
   }
 
@@ -253,10 +262,12 @@ class ReviewLog {
   }) async {
     final fitted = await this.fitted();
     final actions = await leechActions();
+    final taken = await withdrawals();
     final stamp = await currentStamp(
       app: app,
       fitted: fitted,
       leechActions: actions,
+      withdrawals: taken,
     );
     final rows = <LoggedReview>[];
     for (var after = 0; ;) {
@@ -274,6 +285,7 @@ class ReviewLog {
         leechActions: actions,
         fitted: fitted,
         encode: true,
+        withdrawals: taken,
       ),
     );
     final bytes = opened.snapshot;
@@ -394,6 +406,7 @@ class ReviewLog {
     List<LeechAction> leechActions, {
     Map<SkillKey, FittedParameters> fitted =
         const <SkillKey, FittedParameters>{},
+    List<PlacementWithdrawal> withdrawals = const <PlacementWithdrawal>[],
   }) => _db.transaction(() async {
     final existing = inTimeOrder(<LoggedReview>[
       for (final row in await _db.reviewsDao.all()) _logged(row),
@@ -411,10 +424,25 @@ class ReviewLog {
         await _db.leechActionsDao.append(a);
       }
     }
+    final knownTaken = <String>{
+      for (final w in await _db.placementWithdrawalsDao.all())
+        withdrawalIdentity(w),
+    };
+    for (final w in withdrawalsInTimeOrder(withdrawals)) {
+      if (knownTaken.add(withdrawalIdentity(w))) {
+        await _db.placementWithdrawalsDao.append(w);
+      }
+    }
     final all = inTimeOrder(<LoggedReview>[...existing, ...fresh]);
+    // The credit the learner took back is no study: the languages' last
+    // studies are those of the log the replay reads.
+    final studied = withoutWithdrawnCredit(
+      all,
+      await _db.placementWithdrawalsDao.all(),
+    ).kept;
     final parameters = SkillParameters(
       fitted: await this.fitted(),
-      lastStudied: SkillParameters.lastStudiedIn(all.map(_studied)),
+      lastStudied: SkillParameters.lastStudiedIn(studied.map(_studied)),
     ).merged(fitted);
     for (final MapEntry(:key, :value) in parameters.fitted.entries) {
       await _putFitted(key, value);
@@ -450,16 +478,27 @@ class ReviewLog {
     List<LeechAction> leechActions, {
     Map<SkillKey, FittedParameters> fitted =
         const <SkillKey, FittedParameters>{},
+    List<PlacementWithdrawal> withdrawals = const <PlacementWithdrawal>[],
     required RestoreRecord restore,
   }) => _db.replaceLog(restore, () async {
     for (final a in actionsInTimeOrder(leechActions)) {
       await _db.leechActionsDao.append(a);
     }
+    final knownTaken = <String>{};
+    for (final w in withdrawalsInTimeOrder(withdrawals)) {
+      if (knownTaken.add(withdrawalIdentity(w))) {
+        await _db.placementWithdrawalsDao.append(w);
+      }
+    }
     await _db.delete(_db.fsrsParameters).go();
     final all = inTimeOrder(reviews);
+    final studied = withoutWithdrawnCredit(
+      all,
+      await _db.placementWithdrawalsDao.all(),
+    ).kept;
     final parameters = SkillParameters(
       fitted: fitted,
-      lastStudied: SkillParameters.lastStudiedIn(all.map(_studied)),
+      lastStudied: SkillParameters.lastStudiedIn(studied.map(_studied)),
     );
     for (final MapEntry(:key, :value) in fitted.entries) {
       await _putFitted(key, value);
@@ -473,6 +512,46 @@ class ReviewLog {
       await _append(event);
     }
     await _rebuild(parameters);
+  });
+
+  /// Deletes the reviews [erasure] selects (#861), through
+  /// [AppDatabase.eraseReviews], the second exception to the log being
+  /// append-only (AGENTS.md rule 9), and brings what is derived from the log
+  /// in line, in one transaction:
+  ///
+  /// - the language's fitted FSRS parameters are dropped when any review went:
+  ///   a fit was learned from the reviews as they were and cannot be worked
+  ///   out again from fewer, so the skill is scheduled by the defaults (or
+  ///   another language's baseline) until the tuner fits it again;
+  /// - `card_states` is rebuilt from the log that remains, so each pair is
+  ///   what replaying the remaining reviews gives, for every language (the
+  ///   baseline fit of another language may have moved);
+  /// - the kept snapshot of the replay is forgotten, since its stamp is no
+  ///   longer the log's.
+  ///
+  /// Returns how many reviews went; nothing changes when none matched.
+  /// Withdrawals of placement credit are removed only with the credit they
+  /// name, when the placement is erased; real answers are never touched by
+  /// that.
+  /// Only for a deletion the learner confirmed, after a backup was kept.
+  Future<int> eraseReviews(ReviewErasure erasure) => _db.transaction(() async {
+    final erased = await _db.eraseReviews(erasure);
+    if (erased.reviews == 0 && erased.withdrawals == 0) return 0;
+    // A private package's erasure leaves the language's fits: they were
+    // learned from the built-in course's answers too (#1017).
+    if (erasure.idPrefix == null) {
+      await (_db.delete(
+        _db.fsrsParameters,
+      )..where((p) => p.language.equals(erasure.language))).go();
+    }
+    final remaining = await reviews();
+    final parameters = SkillParameters(
+      fitted: await fitted(),
+      lastStudied: SkillParameters.lastStudiedIn(remaining.map(_studied)),
+    );
+    await _rebuild(parameters);
+    await _db.replaySnapshotsDao.clear();
+    return erased.reviews;
   });
 
   Future<void> _append(ReviewEvent event) => _db.reviewsDao.append(
@@ -514,6 +593,37 @@ class ReviewLog {
   Future<Replayed> _replay(SkillParameters? parameters) async =>
       replay(await reviews(), parameters: parameters);
 
+  /// Every placement withdrawal, in the order it was appended.
+  Future<List<PlacementWithdrawal>> withdrawals() =>
+      _db.placementWithdrawalsDao.all();
+
+  /// The reviews the [taken] withdrawals leave out of the replay: still in
+  /// `reviews` and in an export, so memory keeps them for it. Read by the
+  /// second each withdrawal names, never the whole log.
+  Future<List<LoggedReview>> withdrawnReviews(
+    List<PlacementWithdrawal> taken,
+  ) async {
+    final out = <LoggedReview>[];
+    for (final second in <int>{for (final w in taken) w.creditAt}) {
+      for (final row in await _db.reviewsDao.gradedFiveBetween(
+        second * 1000,
+        second * 1000 + 999,
+      )) {
+        final review = _logged(row);
+        if (isWithdrawnCredit(review, taken)) out.add(review);
+      }
+    }
+    return out;
+  }
+
+  /// Appends [w], and brings `card_states` in line with the log without the
+  /// credit it takes back, in one transaction. No review is touched.
+  Future<void> withdraw(PlacementWithdrawal w, {SkillParameters? parameters}) =>
+      _db.transaction(() async {
+        await _db.placementWithdrawalsDao.append(w);
+        await _rebuild(parameters);
+      });
+
   /// How many times the whole log has been replayed, for tests to assert
   /// that opening the app does it once.
   static int replays = 0;
@@ -526,7 +636,7 @@ class ReviewLog {
   }) async {
     replays++;
     return replayReviews(
-      reviews,
+      withoutWithdrawnCredit(reviews, await withdrawals()).kept,
       effects: LeechEffects(await _actions()),
       parameters: parameters,
     );

@@ -58,6 +58,7 @@ Future<void> main() async {
           DeckSources(<DeckSource>[AssetDeckSource(), downloaded]),
           added: MemoryDeckStore(),
         ),
+        bankStore: await openBrowserBlobStore(name: 'fluenough_placement'),
         deckDownloads: DeckDownloads(
           fetcher: WebDeckFetcher(),
           files: downloaded,

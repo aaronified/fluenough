@@ -239,6 +239,7 @@ class _HeardScript extends StatelessWidget {
     Widget build(String? family) {
       final base = theme.textTheme.titleLarge!.copyWith(
         fontFamily: family,
+        fontFamilyFallback: fonts?.fallbackFor(family),
         fontWeight: FontWeight.w500,
         color: scheme.onSurface,
       );

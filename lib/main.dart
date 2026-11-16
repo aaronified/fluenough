@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -20,10 +21,13 @@ import 'app/links.dart';
 import 'app/mail_share.dart';
 import 'app/ota_installer.dart';
 import 'app/plugin_reminder_scheduler.dart';
+import 'app/private_import.dart';
+import 'app/private_store.dart';
 import 'app/profile.dart';
 import 'app/profile_storage.dart';
 import 'app/reminder_scheduler.dart';
 import 'app/report_mail.dart';
+import 'app/shared_deck_source.dart';
 import 'app/startup_marks.dart';
 import 'app/system_settings.dart';
 import 'app/wallpaper_colours.dart';
@@ -31,11 +35,20 @@ import 'core/haptics/system_haptic_engine.dart';
 import 'core/decks/deck_fetch.dart';
 import 'core/network/network_probe.dart';
 import 'core/sound/system_sound_check.dart';
+import 'core/speech/asr/on_device_speech_engine.dart';
+import 'core/speech/asr/preferred_speech_engine.dart';
 import 'core/speech/mic_capture.dart';
+import 'core/speech/record_pcm_recorder.dart';
+import 'core/speech/native_listen.dart';
 import 'core/speech/system_speech_engine.dart';
 import 'core/tts/system_clip_player.dart';
 import 'core/tts/system_tts_engine.dart';
 import 'core/tts/volume_monitor.dart';
+import 'app/file_blob_store.dart';
+import 'app/asr_pack_downloader.dart';
+import 'app/channel_asr_runtime.dart';
+import 'app/file_asr_pack_store.dart';
+import 'app/file_asr_pack_locator.dart';
 import 'core/updates/apk_install.dart';
 import 'core/updates/github_release_check.dart';
 import 'core/updates/github_release_notes.dart';
@@ -69,6 +82,12 @@ Future<void> main() async {
   // The decks, downloaded from GitHub into the app's own storage (#210,
   // ADR-0037); only the theme list is bundled.
   final downloaded = FileDownloadedDecks(Directory('${files.path}/downloaded'));
+  final deckDownloads = DeckDownloads(
+    fetcher: GitHubDeckFetcher(userAgent: 'fluenough/${AppInfo.version}'),
+    files: downloaded,
+    clock: DateTime.now,
+    log: log,
+  );
   // The daily reminder's notifications (#90). Without them the reminder's
   // switch stays off.
   ReminderScheduler reminderScheduler = const NullReminderScheduler();
@@ -77,10 +96,45 @@ Future<void> main() async {
   } catch (e) {
     log.warning('Reminder error: start failed: $e');
   }
+  // Private language packages (#1017), kept apart from every other deck.
+  final privateStore = FilePrivateStore(
+    Directory('${files.path}/private'),
+    log: log,
+  );
+  if (kDebugMode) {
+    // The dev import path: every folder of private-dev/ is a package.
+    await importDevPackages(
+      Directory('${files.path}/private-dev'),
+      store: privateStore,
+      appVersion: AppInfo.version,
+      log: log,
+    );
+  }
+  final asrPacks = FileAsrPackLocator(
+    Directory('${files.path}/asr'),
+    log: log.warning,
+  );
+  // Downloads the on-device listener (#1004); Telugu only for now. Add a
+  // language here once its pack is published in the manifest.
+  final asrInstaller = AsrPackDownloader(
+    manifestUrl: Uri.parse(AppLinks.asrManifest),
+    store: FileAsrPackStore(Directory('${files.path}/asr'), log: log.warning),
+    log: log.warning,
+    supported: const <String>{'te'},
+  );
   final state = AppState(
     catalog: DeckCatalog(
-      DeckSources(<DeckSource>[AssetDeckSource(), downloaded]),
+      // Deck-owned data (the theme list) downloaded from decks-live comes
+      // first; the copy bundled in the app is the fallback (owner,
+      // 2026-11-11).
+      DeckSources(<DeckSource>[
+        SharedDeckSource(() => deckDownloads.sharedTexts),
+        AssetDeckSource(),
+        downloaded,
+      ]),
       added: FileDeckStore(Directory('${files.path}/decks')),
+      privateStore: privateStore,
+      log: log,
       parser: parseInIsolate,
       // The decks' YAML, kept as JSON between launches and read again
       // only for a file whose SHA-256 changed (#875, ADR-0048).
@@ -94,18 +148,36 @@ Future<void> main() async {
         runner: runJobInIsolate,
       ),
     ),
-    deckDownloads: DeckDownloads(
-      fetcher: GitHubDeckFetcher(userAgent: 'fluenough/${AppInfo.version}'),
-      files: downloaded,
-      clock: DateTime.now,
-      log: log,
-    ),
+    // The Find my level question banks, made once per language and deck set.
+    bankStore: FileBlobStore(Directory('${files.path}/placement-banks')),
+    deckDownloads: deckDownloads,
     progress: storage.progress,
     synonymLoader: loadSynonymSets,
     settings: storage.settings,
     tts: SystemTtsEngine(),
     clips: SystemClipPlayer(),
-    speech: SystemSpeechEngine(null, RecordMicCapture()),
+    speech: PreferOnDeviceSpeechEngine(
+      // The AI listener, used only for a language whose pack is installed
+      // in files/asr/<code>/ (#1004). The online path stays the system
+      // recogniser's, as before.
+      aiListener: OnDeviceSpeechEngine(
+        packs: asrPacks,
+        recorder: RecordPcmRecorder(log: log.warning),
+        runtime: ChannelAsrRuntime(log: log.warning),
+        log: log.event,
+      ),
+      system: SystemSpeechEngine(
+        null,
+        RecordMicCapture(),
+        const ChannelNativeListener(),
+        // recordWhileRecognising: off, no recording while the online recogniser
+        // listens (#1107).
+        false,
+      ),
+      packs: asrPacks,
+      log: log.warning,
+    ),
+    asrPacks: asrInstaller,
     volume: SystemVolumeMonitor(),
     soundCheck: SystemSoundCheck(),
     networkProbe: SystemNetworkProbe(),

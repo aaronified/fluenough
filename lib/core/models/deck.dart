@@ -1,6 +1,8 @@
+import 'level.dart';
 import 'author.dart';
 import 'card.dart';
 import 'card_set.dart';
+import 'character.dart';
 import 'grammar_pattern.dart';
 import 'proposal.dart';
 import 'reading.dart';
@@ -54,8 +56,9 @@ class LanguageInfo {
   final String? icon;
 
   /// Whether an answer in this language can be typed. False for the IPA
-  /// (`script: ipa`), which has no keyboard: production is asked by
-  /// choosing (ADR-0041). Braille is typed, on the app's own keyboard
+  /// (`script: ipa`), whose production is asked by choosing (ADR-0041);
+  /// were it typed, it would be on the app's own keyboard ([keyboard],
+  /// #836). Braille is typed, on the app's own keyboard
   /// ([keyboard], ADR-0043).
   final bool typed;
 
@@ -103,8 +106,13 @@ class LanguageInfo {
 
   /// The app's own keyboard that answers in this language are typed on,
   /// in place of the phone's, or null for the phone's: braille's six dots
-  /// (ADR-0043). Named by the script, so that a deck needs no new field.
-  ScriptKeyboard? get keyboard => isBraille ? ScriptKeyboard.braille : null;
+  /// (ADR-0043), or the IPA's symbols (#836). Named by the script, so that
+  /// a deck needs no new field.
+  ScriptKeyboard? get keyboard => isBraille
+      ? ScriptKeyboard.braille
+      : isIpa
+      ? ScriptKeyboard.ipa
+      : null;
 
   /// The tag handed to the TTS engine. Falls back to the bare language code,
   /// which leaves the regional accent to the device — acceptable, but decks
@@ -142,6 +150,9 @@ class LanguageInfo {
 enum ScriptKeyboard {
   /// Six dots in the Perkins layout, entered a cell at a time.
   braille,
+
+  /// The IPA's symbols, in tabs by kind, entered one at a time (#836).
+  ipa,
 }
 
 /// What a deck holds: cards, a pattern table that expands into cards,
@@ -172,6 +183,15 @@ class Deck {
     this.checkedBy = const <String, List<String>>{},
     this.verified = const <String, List<String>>{},
     this.sets = const <CardSet>[],
+    this.genre,
+    this.level,
+    this.hidden = false,
+    this.professional,
+    this.section,
+    this.weave,
+    this.patternFamily,
+    this.characterScheme,
+    this.kindProblems = const <String>[],
   });
 
   final String id;
@@ -235,11 +255,54 @@ class Deck {
   /// never in [cards], so never scheduled, asked or logged.
   final List<CardSet> sets;
 
+  /// What kind of deck it is beyond its structure (`genre`, D1 of the
+  /// deck-kinds plan): `culture`, `proverbs`, `multiword`, `professional`, or
+  /// a later one the app only shows under "Beyond the basics". Null for an
+  /// ordinary path deck. The app reads the string and looks it up in the
+  /// sections file; it never branches on it.
+  final String? genre;
+
+  /// The lowest level the deck suits (`level`): it orders and labels the deck,
+  /// never blocks it. Null for a deck with none. A level that is written but is
+  /// not one reads as [Level.c2].
+  final Level? level;
+
+  /// Whether the deck is kept out of the Decks tab, Today, the path,
+  /// placement and the counts, until a learner adds it (`hidden`, D3). A
+  /// `hidden` that is written but is not true or false reads as true.
+  final bool hidden;
+
+  /// The profession a professional deck is for (`professional`), an id in the
+  /// sections file.
+  final String? professional;
+
+  /// The Decks tab list the deck is under (`section`), or null for its
+  /// genre's, then `path`.
+  final String? section;
+
+  /// Whether the deck may be woven into the course (`weave`), or null for its
+  /// genre's default.
+  final bool? weave;
+
+  /// A multi-word deck's pattern family (`pattern_family`): shown on the deck
+  /// page and never read by code.
+  final String? patternFamily;
+
+  /// What its characters' readings and levels are (`character_scheme`,
+  /// #1226), for a script deck whose cards have a `character` block. Null for
+  /// a deck with none.
+  final CharacterScheme? characterScheme;
+
+  /// What in the deck's kind fields (`genre`, `level`, `hidden`, a card's
+  /// `source` and the rest) could not be read, one line each: the field was
+  /// left out and the deck still loads. The app logs them.
+  final List<String> kindProblems;
+
   int get cardCount => cards.length;
 
   /// This deck with [cards] in place of its own, and no refs left: a grammar
   /// deck once its pattern is expanded, or a deck once its refs are resolved.
-  Deck withCards(List<Card> cards) => Deck(
+  Deck withCards(List<Card> cards, {List<Passage>? passages}) => Deck(
     id: id,
     name: name,
     kind: kind,
@@ -248,7 +311,7 @@ class Deck {
     license: license,
     cards: cards,
     pattern: pattern,
-    passages: passages,
+    passages: passages ?? this.passages,
     description: description,
     tags: tags,
     authors: authors,
@@ -260,6 +323,15 @@ class Deck {
     checkedBy: checkedBy,
     verified: verified,
     sets: sets,
+    genre: genre,
+    level: level,
+    hidden: hidden,
+    professional: professional,
+    section: section,
+    weave: weave,
+    patternFamily: patternFamily,
+    characterScheme: characterScheme,
+    kindProblems: kindProblems,
   );
 
   @override

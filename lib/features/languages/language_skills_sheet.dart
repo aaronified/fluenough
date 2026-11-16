@@ -6,10 +6,13 @@ import 'package:intl/intl.dart';
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/deck_downloads.dart';
+import '../../app/language_data_deletion.dart';
 import '../../app/language_offer.dart';
 import '../../app/language_skills.dart';
 import '../../app/placement_plan.dart';
+import '../../app/placement_recheck.dart';
 import '../../core/data/spoken_languages.dart' show SpokenLanguage;
+import '../../core/decks/culture_options.dart';
 import '../../core/decks/font_check.dart';
 import '../../core/decks/language_catalog.dart';
 import '../../core/decks/script_fonts.dart';
@@ -20,15 +23,18 @@ import '../../core/languages/language_skills.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/hint.dart';
 import '../../ui/widgets/snack.dart';
 import '../downloads/download_text.dart';
 import '../fonts/font_check_sheet.dart';
 import '../placement/course_line.dart';
 import '../placement/language_row.dart';
+import '../placement/native_choice.dart';
 import '../placement/placed_review_choice.dart';
 import '../placement/find_level_flow.dart';
 import '../placement/skill_labels_line.dart';
+import 'delete_language_data_dialog.dart';
 import 'language_views.dart';
 import 'skill_widgets.dart';
 import 'verification_mark.dart';
@@ -533,68 +539,39 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
 
   Future<void> _delete() async {
     final l10n = AppLocalizations.of(context)!;
-    final typed = TextEditingController();
-    final ok = await showDialog<bool>(
-      context: context,
-      builder: (context) => StatefulBuilder(
-        builder: (context, setLocal) => AlertDialog(
-          title: Text(l10n.languagesDeleteTitle(_view.name)),
-          content: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(l10n.languagesDeleteBody(_view.name)),
-                const SizedBox(height: 12),
-                TextField(
-                  controller: typed,
-                  autocorrect: false,
-                  decoration: InputDecoration(
-                    labelText: l10n.languagesDeleteType(_view.name),
-                    border: const OutlineInputBorder(),
-                  ),
-                  onChanged: (_) => setLocal(() {}),
-                ),
-              ],
-            ),
-          ),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(false),
-              child: Text(l10n.commonCancel),
-            ),
-            TextButton(
-              onPressed: typed.text == _view.name
-                  ? () => Navigator.of(context).pop(true)
-                  : null,
-              style: TextButton.styleFrom(
-                foregroundColor: Theme.of(context).colorScheme.error,
-              ),
-              child: Text(l10n.commonDelete),
-            ),
-          ],
-        ),
-      ),
+    final choice = await showDeleteLanguageDataDialog(
+      context,
+      name: _view.name,
+      today: _state.now(),
     );
-    typed.dispose();
-    if (ok != true || !mounted) return;
-    var next = _skills;
-    for (final key in _skills.held) {
-      if (_skills.stateOf(key) == SkillState.learn) {
-        next = next.withState(key, SkillState.leave);
-      }
-    }
-    _state.applySkills(_view.language, next);
+    if (choice == null || !mounted) return;
     try {
-      await _state.deckDownloads?.remove(_code);
+      // The backup is kept first, inside: if it fails nothing has changed.
+      await _state.deleteLanguageData(_code, choice.data);
     } on Object {
       _state.haptics.error();
-      rethrow;
+      if (mounted) _toast(l10n.languagesDeleteFailed);
+      return;
+    }
+    var next = _skills;
+    if (choice.decks) {
+      for (final key in _skills.held) {
+        if (_skills.stateOf(key) == SkillState.learn) {
+          next = next.withState(key, SkillState.leave);
+        }
+      }
+      _state.applySkills(_view.language, next);
+      try {
+        await _state.deckDownloads?.remove(_code);
+      } on Object {
+        _state.haptics.error();
+        rethrow;
+      }
     }
     _state.haptics.danger();
     if (!mounted) return;
     _toast(l10n.languagesToastDeleted(_view.name));
-    if (next.isAllLeave) {
+    if (choice.decks && next.isAllLeave) {
       widget.onPooled?.call(_skills);
       Navigator.of(context).pop();
     } else {
@@ -734,7 +711,10 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                 ),
                 if (progress != null) ...<Widget>[
                   const SizedBox(height: 12),
-                  CourseLine(levels: progress.levels),
+                  CourseLine(
+                    levels: progress.levels,
+                    culture: progress.culture,
+                  ),
                 ],
                 if (download != null && !_isDraft) ...<Widget>[
                   const SizedBox(height: 8),
@@ -762,6 +742,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                   // Below A1 no placement is offered (owner, 2026-11-05).
                   if (_builtLevel >= builtA1) _levelRow(context),
                   _placedRow(context),
+                  ?_nativeRow(context),
                 ],
                 if (_view.language.isSign) ...<Widget>[
                   _Heading(
@@ -842,7 +823,10 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                       ?_scriptSkillOf(script),
                     ],
                   ),
-                if (!_isDraft && _skills.anyLearn) _learningBlock(context),
+                if (!_isDraft && _skills.anyLearn) ...<Widget>[
+                  _learningBlock(context),
+                  _cultureBlock(context),
+                ],
               ],
             ),
           ),
@@ -855,7 +839,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
             padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 12),
             child: Row(
               children: <Widget>[
-                if (!_isDraft && hasDecks)
+                if (!_isDraft && (hasDecks || _skills.anyLearn))
                   LabelledIconButton(
                     label: l10n.languagesDeleteData,
                     hint: l10n.hintDelete,
@@ -901,20 +885,59 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       shape: _shape,
       scripts: _scriptsForLevel,
     ).verifying;
+    // A level an earlier version found, which the learner has not confirmed
+    // (wiki, Plan-Placement-V2, point 17.5).
+    final again = _state.unconfirmedMomentsOf(_code).isNotEmpty;
     return _LinkRow(
       key: const ValueKey<String>('languages-level'),
       icon: Icons.flag_outlined,
-      title: verifying
+      title: again
+          ? l10n.languagesCheckAgain
+          : verifying
           ? l10n.languagesVerifyKnown
           : found
           ? l10n.languagesFitMyLevel
           : l10n.languagesFindLevel,
-      subtitle: verifying
+      subtitle: again
+          ? l10n.languagesCheckAgainSub
+          : verifying
           ? l10n.languagesVerifyKnownSub
           : found
           ? l10n.languagesLevelFoundSub
           : l10n.languagesLevelNotFoundSub,
       onTap: _findLevel,
+    );
+  }
+
+  /// "Learn Telugu from", for a course more than one of the languages the
+  /// learner speaks teaches (ADR-0036): the choice is the course's own, so
+  /// it sits in the language's sheet. It opens a page, hence the link icon
+  /// (docs/mockups/menu-and-report.html, owner, 2026-11-16). Null where
+  /// there is no choice to make.
+  Widget? _nativeRow(BuildContext context) {
+    if (!_state.currentProfile.learns(_code) ||
+        !_state.offersNativeChoice(_code)) {
+      return null;
+    }
+    final language = _state.languages
+        .where((language) => language.code == _code)
+        .firstOrNull;
+    if (language == null) return null;
+    final l10n = AppLocalizations.of(context)!;
+    final native = _state.courseNative(_code);
+    final name = _state
+        .nativeOptions(_code)
+        .where((option) => option.native.code == native)
+        .firstOrNull
+        ?.native
+        .name;
+    return _LinkRow(
+      key: const ValueKey<String>('languages-native'),
+      icon: Icons.translate,
+      title: l10n.nativeChoiceTitle(language.name),
+      subtitle: name ?? '',
+      opensScreen: true,
+      onTap: () => NativeChoicePage.open(context, language),
     );
   }
 
@@ -1029,7 +1052,10 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
           if (placedLabels.isNotEmpty)
             Padding(
               padding: const EdgeInsetsDirectional.only(start: 48, top: 2),
-              child: SkillLabelsLine(labels: placedLabels),
+              child: SkillLabelsLine(
+                labels: placedLabels,
+                ranges: _state.settings.placementRangesOf(_code),
+              ),
             ),
         ],
       ),
@@ -1097,6 +1123,63 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       hint: _locked ? null : l10n.languagesTapToChange(next.label(l10n)),
       onTap: _locked ? null : () => _cycleScript(script),
       combined: true,
+    );
+  }
+
+  /// The Culture group (approved mockup `culture-in-decks`, screen B): one
+  /// switch for culture items in this language's path, Today and reviews,
+  /// which opens in place, while it is on, to the language's other culture
+  /// options (counting toward progress, the creator). Each language keeps
+  /// its own.
+  Widget _cultureBlock(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final scheme = Theme.of(context).colorScheme;
+    final settings = _state.settings;
+    final options = settings.cultureFor(_code);
+    void choose(CultureOptions next) => settings.setCultureFor(_code, next);
+    const inset = EdgeInsetsDirectional.symmetric(horizontal: 12, vertical: 10);
+    return Padding(
+      padding: const EdgeInsetsDirectional.only(top: 4, bottom: 8),
+      child: Material(
+        color: scheme.surfaceContainerLow,
+        borderRadius: BorderRadius.circular(AppRadii.field),
+        clipBehavior: Clip.antiAlias,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            GroupedTile.toggle(
+              key: const ValueKey<String>('culture-switch'),
+              leading: const Icon(Icons.format_quote),
+              title: l10n.languagesCulture,
+              subtitleOn: l10n.languagesCultureOn,
+              subtitleOff: l10n.languagesCultureOff,
+              value: options.items,
+              padding: inset,
+              leadingGap: 12,
+              onChanged: (on) => choose(options.copyWith(items: on)),
+            ),
+            if (options.items) ...<Widget>[
+              Divider(height: 1, color: scheme.outlineVariant),
+              GroupedTile.toggle(
+                title: l10n.cultureSettingCounts,
+                subtitleOn: l10n.cultureSettingCountsOn,
+                subtitleOff: l10n.cultureSettingCountsOff,
+                value: options.counts,
+                padding: inset,
+                onChanged: (on) => choose(options.copyWith(counts: on)),
+              ),
+              GroupedTile.toggle(
+                title: l10n.cultureSettingCreators,
+                subtitleOn: l10n.cultureSettingCreatorsOn,
+                subtitleOff: l10n.cultureSettingCreatorsOff,
+                value: options.creators,
+                padding: inset,
+                onChanged: (on) => choose(options.copyWith(creators: on)),
+              ),
+            ],
+          ],
+        ),
+      ),
     );
   }
 
@@ -1295,12 +1378,16 @@ class _LinkRow extends StatelessWidget {
     required this.title,
     required this.subtitle,
     required this.onTap,
+    this.opensScreen = false,
   });
 
   final IconData icon;
   final String title;
   final String subtitle;
   final VoidCallback onTap;
+
+  /// Whether the row opens another screen: the link icon, not a chevron.
+  final bool opensScreen;
 
   @override
   Widget build(BuildContext context) {
@@ -1336,7 +1423,7 @@ class _LinkRow extends StatelessWidget {
               ),
             ),
             Icon(
-              Icons.chevron_right,
+              opensScreen ? Icons.open_in_new : Icons.chevron_right,
               color: theme.colorScheme.onSurfaceVariant,
             ),
           ],
@@ -1646,7 +1733,7 @@ class _InfoDialog extends StatelessWidget {
             ),
             if (progress != null) ...<Widget>[
               const SizedBox(height: 12),
-              CourseLine(levels: progress.levels),
+              CourseLine(levels: progress.levels, culture: progress.culture),
             ],
             const SizedBox(height: 8),
             if (!view.language.isNotation)

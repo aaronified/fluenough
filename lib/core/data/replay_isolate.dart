@@ -6,6 +6,7 @@ import '../models/review_event.dart';
 import '../progress/progress_index.dart';
 import 'replay_snapshot.dart';
 import '../scheduling/fsrs.dart';
+import '../scheduling/placement_withdrawal.dart';
 import '../scheduling/replay.dart';
 import '../scheduling/skill_map.dart';
 import '../scheduling/skill_parameters.dart';
@@ -20,10 +21,15 @@ class OpenJob {
     required this.leechActions,
     required this.fitted,
     this.encode = false,
+    this.withdrawals = const <PlacementWithdrawal>[],
   });
 
   final List<LoggedReview> reviews;
   final List<LeechAction> leechActions;
+
+  /// The placement credit the learner took back: the reviews they name are
+  /// left out of the replay, and stay in [reviews] and the database.
+  final List<PlacementWithdrawal> withdrawals;
   final Map<SkillKey, FittedParameters> fitted;
 
   /// Whether the result also carries [OpenedLog.snapshot], made in the same
@@ -41,6 +47,7 @@ class OpenedLog {
     required this.lastStudied,
     required this.leechActions,
     this.snapshot,
+    this.withdrawals = const <PlacementWithdrawal>[],
   });
 
   /// Each pair's state from its own reviews alone: what `card_states`
@@ -61,6 +68,9 @@ class OpenedLog {
   /// The job's leech actions, as given.
   final List<LeechAction> leechActions;
 
+  /// The job's withdrawals, as given.
+  final List<PlacementWithdrawal> withdrawals;
+
   /// This result as [encodeSnapshot] writes it, when the job asked
   /// ([OpenJob.encode]) and it could be written: the bytes to keep for the
   /// next launch. Null never means a wrong replay, only no snapshot.
@@ -73,7 +83,11 @@ class OpenedLog {
 /// database, no Flutter, so [replayInIsolate] can run it on an isolate and
 /// [replayInPlace] gives the same result.
 OpenedLog openLog(OpenJob job) {
-  final reviews = inTimeOrder(job.reviews);
+  // The credit the learner took back is left out first: everything below,
+  // the fits' dates included, reads the log as if it had never been written.
+  final reviews = inTimeOrder(
+    withoutWithdrawnCredit(job.reviews, job.withdrawals).kept,
+  );
   final parameters = SkillParameters(
     fitted: job.fitted,
     lastStudied: SkillParameters.lastStudiedIn(<({String cardId, DateTime at})>[
@@ -114,6 +128,7 @@ OpenedLog openLog(OpenJob job) {
     lastStudied: lastStudied,
     leechActions: job.leechActions,
     snapshot: snapshot,
+    withdrawals: job.withdrawals,
   );
 }
 
@@ -125,10 +140,17 @@ class SnapshotJob {
     required this.bytes,
     required this.leechActions,
     required this.reviewCount,
+    this.withdrawals = const <PlacementWithdrawal>[],
   });
 
   final Uint8List bytes;
   final List<LeechAction> leechActions;
+
+  /// The withdrawals the snapshot was made under (its stamp holds them).
+  final List<PlacementWithdrawal> withdrawals;
+
+  /// How many reviews the log holds. Its replay holds that many events, or
+  /// fewer when [withdrawals] left some out.
   final int reviewCount;
 }
 
@@ -140,7 +162,11 @@ OpenedLog? openFromSnapshot(SnapshotJob job) {
   try {
     final kept = decodeSnapshot(job.bytes);
     final events = kept.memory.events;
-    if (events.length != job.reviewCount) return null;
+    if (job.withdrawals.isEmpty
+        ? events.length != job.reviewCount
+        : events.length > job.reviewCount) {
+      return null;
+    }
     return OpenedLog(
       cacheStates: kept.cacheStates,
       memory: kept.memory,
@@ -151,6 +177,7 @@ OpenedLog? openFromSnapshot(SnapshotJob job) {
         ],
       ),
       leechActions: job.leechActions,
+      withdrawals: job.withdrawals,
     );
   } on Object {
     return null;

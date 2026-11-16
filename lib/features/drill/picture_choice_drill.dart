@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart' hide Card;
 
 import '../../app/settings.dart';
+import '../../core/feedback/content_report.dart';
 import '../../core/scheduling/ask.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/drill_frame.dart';
@@ -73,7 +74,11 @@ class PictureChoiceDrill extends StatelessWidget {
       deckName: session.deck.deck.name,
       position: session.position,
       total: session.total,
-      reportDetail: '${card.id} in ${session.deck.id}',
+      report: ContentTarget.card(
+        card.id,
+        deck: session.deck.deck,
+        listsOptions: true,
+      ),
       progress: session.progress,
       onClose: onClose,
       needsSound: _hears && !answered,

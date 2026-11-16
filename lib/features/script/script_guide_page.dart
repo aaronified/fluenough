@@ -7,7 +7,6 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/card_text_scale.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/bottom_actions.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
 
@@ -35,7 +34,6 @@ class ScriptGuidePage extends StatelessWidget {
             tooltip: l10n.commonClose,
             icon: const Icon(Icons.close),
           ),
-          actions: const <Widget>[ReportButton()],
         ),
       );
     }
@@ -89,7 +87,6 @@ class ScriptGuideView extends StatelessWidget {
           icon: const Icon(Icons.close),
         ),
         title: Text(guide.name),
-        actions: const <Widget>[ReportButton()],
       ),
       body: ListView(
         padding: const EdgeInsetsDirectional.fromSTEB(

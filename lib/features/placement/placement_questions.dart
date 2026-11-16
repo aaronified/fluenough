@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../../app/app_scope.dart';
 import '../../app/placement.dart';
 import '../../app/skill.dart';
+import '../../core/feedback/content_report.dart';
 import '../../core/grading/romanised.dart';
 import '../../core/models/card.dart' show tilesOf;
 import '../../core/models/deck.dart';
@@ -38,7 +39,7 @@ class PlacementShell extends InheritedWidget {
     required this.onClose,
     required this.deckName,
     required this.progress,
-    required this.reportDetail,
+    this.report,
     this.onSkip,
     required super.child,
   });
@@ -53,7 +54,10 @@ class PlacementShell extends InheritedWidget {
   /// How far along the wave shows, 0–1. Placement has no total, so this only
   /// grows with the questions asked.
   final double progress;
-  final String reportDetail;
+
+  /// What the bug icon reports: the card asked, and its deck. Null where no
+  /// card is shown.
+  final ContentTarget? report;
 
   /// "Start at the beginning" under the first question of onboarding's
   /// offer: places nothing and goes on. Null where it is not offered.
@@ -67,7 +71,7 @@ class PlacementShell extends InheritedWidget {
       onClose != old.onClose ||
       deckName != old.deckName ||
       progress != old.progress ||
-      reportDetail != old.reportDetail ||
+      report != old.report ||
       onSkip != old.onSkip;
 }
 
@@ -120,7 +124,7 @@ class PlacementFrame extends StatelessWidget {
       positionLabel: l10n.placementQuestionNumber(number),
       progress: shell?.progress ?? 0,
       going: going,
-      reportDetail: shell?.reportDetail,
+      report: shell?.report?.withOptions(mode == DrillMode.recognition),
       onClose: shell?.onClose ?? () => Navigator.of(context).maybePop(),
       card: <Widget>[
         DefaultTextStyle.merge(

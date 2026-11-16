@@ -65,9 +65,11 @@ extension PlacementPlan on AppState {
   }
 
   /// [code]'s word decks, in path order: every deck of its course but those
-  /// that need the alphabet, which the script checks place.
+  /// that need the alphabet, which the script checks place, and those with a
+  /// genre, which are beyond the basics the path's words are (deck-kinds plan,
+  /// D7). A hidden deck is never in the course ([Catalog.decks]).
   List<DeckEntry> walkDecks(String code, {String? native}) => <DeckEntry>[
     for (final entry in _wholeCourse(code, native: native))
-      if (!needsAlphabet(entry)) entry,
+      if (!needsAlphabet(entry) && entry.deck.genre == null) entry,
   ];
 }

@@ -27,6 +27,15 @@ class DeckCore {
     this.proposals = const <String, List<Proposal>>{},
     this.checkedBy = const <String, List<String>>{},
     this.verified = const <String, List<String>>{},
+    this.genre,
+    this.level,
+    this.hidden = false,
+    this.professional,
+    this.section,
+    this.weave,
+    this.patternFamily,
+    this.characterScheme,
+    this.kindProblems = const <String>[],
   });
 
   /// `<lang>-<name>`, such as `te-home`.
@@ -61,6 +70,20 @@ class DeckCore {
 
   /// Which data points of each card are settled, by card id (#519).
   final Map<String, List<String>> verified;
+
+  /// The deck's kind fields (deck_kinds.dart): what the merged [Deck] has of
+  /// them. A layer has none of its own.
+  final String? genre;
+  final Level? level;
+  final bool hidden;
+  final String? professional;
+  final String? section;
+  final bool? weave;
+  final String? patternFamily;
+
+  /// The deck's `character_scheme` (#1226), null when it has none.
+  final CharacterScheme? characterScheme;
+  final List<String> kindProblems;
 
   @override
   String toString() => 'DeckCore($id)';
@@ -109,6 +132,11 @@ class CoreWritten extends CoreCard {
     this.frequency,
     this.items = const <String, List<CardItem>>{},
     this.senses = const <CoreSense>[],
+    this.level,
+    this.creators = const <String>[],
+    this.sourceBlock,
+    this.legacy,
+    this.character,
   }) : super(id);
 
   final String target;
@@ -164,6 +192,16 @@ class CoreWritten extends CoreCard {
   /// text, which each layer gives by id.
   final Map<String, List<CardItem>> items;
   final List<CoreSense> senses;
+
+  // The deck kinds (deck_kinds.dart): the language's side of the card, the
+  // same in every layer.
+  final Level? level;
+  final List<String> creators;
+  final CardSource? sourceBlock;
+  final Map<String, Object?>? legacy;
+
+  /// The character data of a script deck's card (`character`, #1226).
+  final CardCharacter? character;
 }
 
 /// A core card's sense (#517), its meaning being in each layer.
@@ -578,8 +616,10 @@ Deck mergeLayer(DeckCore core, DeckLayer layer, {required String source}) {
       'core: this layer is of ${layer.core}, not of ${core.id}',
     );
   }
+  // A private package's ids start `fnpd-<lang>-` (#1017).
+  final prefix = idLanguagePrefix(core.id, lang);
   final expected =
-      '$lang-${layer.native.code}-${core.id.substring(lang.length + 1)}';
+      '$prefix-${layer.native.code}-${core.id.substring(prefix.length + 1)}';
   if (layer.id != expected) {
     reader.fail(
       layer.idNode,
@@ -675,6 +715,15 @@ Deck mergeLayer(DeckCore core, DeckLayer layer, {required String source}) {
     checkedBy: mergedCheckedBy(core, layer),
     verified: mergedVerified(core, layer),
     sets: sets,
+    genre: core.genre,
+    level: core.level,
+    hidden: core.hidden,
+    professional: core.professional,
+    section: core.section,
+    weave: core.weave,
+    patternFamily: core.patternFamily,
+    characterScheme: core.characterScheme,
+    kindProblems: core.kindProblems,
   );
 }
 
@@ -882,6 +931,11 @@ class _Merge {
         ),
         null => null,
       },
+      level: card.level,
+      creators: card.creators,
+      sourceBlock: card.sourceBlock,
+      legacy: card.legacy,
+      character: card.character,
     );
   }
 

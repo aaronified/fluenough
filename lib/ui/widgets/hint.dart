@@ -45,7 +45,7 @@ class Hint extends StatelessWidget {
 
 /// An [IconButton] whose long press shows [hint], one word (#913), and whose
 /// screen-reader label is [label], the full words that the hint would
-/// shorten: "Delete data now", not "Delete". The button's own semantics are
+/// shorten: "Delete data", not "Delete". The button's own semantics are
 /// replaced by one node that carries the label and the tap.
 class LabelledIconButton extends StatelessWidget {
   const LabelledIconButton({

@@ -10,6 +10,7 @@ import '../../ui/widgets/grouped_list.dart';
 import '../languages/language_skills_sheet.dart';
 import '../languages/language_views.dart';
 import 'path_model.dart';
+import '../../app/language_directory_loader.dart';
 
 /// The decks of a script the learner does not learn, under the course's
 /// path (owner's choice C of `skill-pills-onboarding` screen 4,
@@ -45,9 +46,10 @@ class _SkippedScriptSectionState extends State<SkippedScriptSection> {
   Future<List<SpokenLanguage>> _load(BuildContext context) =>
       _catalog ??= widget.spokenList != null
       ? Future<List<SpokenLanguage>>.value(widget.spokenList)
-      : DefaultAssetBundle.of(context)
-            .loadString(spokenLanguagesAsset)
-            .then(parseSpokenLanguages);
+      : loadLanguageDirectory(
+          DefaultAssetBundle.of(context),
+          AppScope.maybeRead(context),
+        );
 
   Future<void> _add() async {
     final state = AppScope.read(context);

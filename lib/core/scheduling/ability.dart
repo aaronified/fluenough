@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import '../models/drill_mode.dart';
 import 'fsrs.dart';
 import 'skill_map.dart';
+import '../private/private_ids.dart';
 
 /// One ability: a language learned, in one schedule.
 typedef AbilityKey = ({String language, DrillMode mode});
@@ -49,10 +50,9 @@ class Abilities {
   final Map<String, int> _seen;
 
   /// The language a card id names: `te` for `te-0053` (ADR-0018).
-  static String languageOf(String cardId) {
-    final dash = cardId.indexOf('-');
-    return dash < 0 ? cardId : cardId.substring(0, dash);
-  }
+  ///
+  /// A private package's card (`fnpd-qaa-0001`, #1017) names `qaa`.
+  static String languageOf(String cardId) => languageOfId(cardId);
 
   /// How far one answer moves an estimate made from [n] answers before it:
   /// large at first, smaller as answers add up (Pelánek 2016, α 1, β 0.05).

@@ -26,6 +26,7 @@ class ProgressJob {
     required this.codes,
     required this.inputs,
     required this.level,
+    required this.levelPlaced,
     required this.parameters,
     required this.tags,
   });
@@ -55,6 +56,9 @@ class ProgressJob {
 
   /// The course's level reached, for one language.
   final Milestone? level;
+
+  /// Whether [level] is only placed (no earned review in its milestone).
+  final bool levelPlaced;
 
   /// The parameters that schedule each mode, for each of [codes] and for ''
   /// (a review whose language cannot be told).
@@ -136,6 +140,7 @@ ProgressNumbers computeProgress(ProgressJob job, {bool withSeries = false}) {
     log: job.log,
     at: job.now,
     level: job.level,
+    levelPlaced: job.levelPlaced,
     withSeries: withSeries,
   );
   Iterable<String> tagsOf(ReviewEvent e) {
@@ -317,13 +322,17 @@ class ProgressNumbersHolder extends ChangeNotifier {
     final codes = language != null ? <String>[language] : found.toList();
     final inputs = <String, CourseInputs>{};
     Milestone? level;
+    var levelPlaced = false;
     for (final code in codes) {
       final course = courseInputsOf(state, code);
       inputs[code] = CourseInputs(
         totals: course.totals,
         scriptCards: course.scriptCards,
       );
-      if (language != null) level = course.level;
+      if (language != null) {
+        level = course.level;
+        levelPlaced = course.levelPlaced;
+      }
     }
     return ProgressJob(
       language: language,
@@ -340,6 +349,7 @@ class ProgressNumbersHolder extends ChangeNotifier {
       codes: codes,
       inputs: inputs,
       level: level,
+      levelPlaced: levelPlaced,
       parameters: <String, Map<DrillMode, List<double>>>{
         for (final code in <String>{...codes, ''})
           code: <DrillMode, List<double>>{

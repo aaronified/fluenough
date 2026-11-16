@@ -13,14 +13,18 @@ import '../../ui/widgets/language_bar.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/profile_avatar.dart';
 import '../../ui/widgets/visible_listenable_builder.dart';
+import '../culture/completed_works_card.dart';
+import '../culture/culture_cards.dart';
 import '../placement/native_choice.dart';
 import 'daily_card.dart';
 import 'fact_languages_sheet.dart';
 import 'due_card.dart';
 import 'install_hint_card.dart';
 import 'situations_card.dart';
+import 'speech_online_card.dart';
 import 'streak_card.dart';
 import 'today_numbers.dart';
+import '../private/private_notes.dart';
 
 /// Today: each language's one button for the day (#521), cards due by
 /// skill, the streak and week, the Situations card, and the fact of the day.
@@ -78,11 +82,7 @@ class TodayPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         bottom: false,
-        child: LanguageBarFrame(
-          screen: LanguageBarScreen.today,
-          reportDetail: 'Today',
-          child: body,
-        ),
+        child: LanguageBarFrame(screen: LanguageBarScreen.today, child: body),
       ),
     );
   }
@@ -162,9 +162,12 @@ class _TodayContent extends StatelessWidget {
           const SizedBox(height: 24),
           DueCard(numbers: numbers),
         ] else ...<Widget>[const _NoDecks(), const SizedBox(height: 16)],
+        const SpeechOnlineCard(),
         StreakCard(numbers: numbers),
         const SizedBox(height: 24),
         const SituationsCard(),
+        const TodayCultureCard(),
+        const CompletedWorksCard(),
         if (state.features.isIncoming(Feature.dailyFacts)) ...<Widget>[
           const SizedBox(height: 16),
           const _FactCard(),
@@ -217,6 +220,8 @@ class _Header extends StatelessWidget {
                     style: theme.textTheme.headlineSmall,
                   ),
                 ),
+                // A private package changed the shown course (#1017).
+                PrivateModifiedTag(language: state.shownLanguage),
               ],
             ),
           ),

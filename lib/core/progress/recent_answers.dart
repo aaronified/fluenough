@@ -110,6 +110,18 @@ class RecentAnswers {
     return (known: known, total: total);
   }
 
+  /// Whether [cardId] has only been credited by placement: every skill it
+  /// has a review in is still placement credit that is the pair's first
+  /// review ([ReviewEvent.isPlaced]), so the learner has not answered it
+  /// (owner, 2026-11-07). False for a card never answered. Such a card is
+  /// placed, not in progress, and does not hold back new lessons.
+  bool isPlacedOnly(String cardId) {
+    final bySkill = _last[cardId];
+    return bySkill != null &&
+        bySkill.isNotEmpty &&
+        bySkill.values.every((e) => e.isPlaced);
+  }
+
   /// When [cardId] was first answered, right or wrong, or null if never.
   DateTime? firstAnswered(String cardId) => _answers[cardId]?.first.at;
 

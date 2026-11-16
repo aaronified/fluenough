@@ -159,21 +159,27 @@ class TargetText extends StatelessWidget {
     final fonts = scope?.notifier?.deckDownloads?.fonts;
     // Braille is always drawn in its own shadow-dot font, which ships with
     // the app (#835): never the phone's.
-    if (language.isBraille) return _sized(context, brailleFontFamily);
-    if (fonts == null) return _sized(context, null);
+    if (language.isBraille) return _sized(context, brailleFontFamily, null);
+    if (fonts == null) return _sized(context, null, null);
     return ListenableBuilder(
       listenable: fonts,
-      builder: (context, _) => _sized(
-        context,
-        fonts.familyFor(fontScriptFor(language.code, language.script)),
-      ),
+      builder: (context, _) {
+        final family = fonts.familyFor(
+          fontScriptFor(language.code, language.script),
+        );
+        return _sized(context, family, fonts.fallbackFor(family));
+      },
     );
   }
 
   /// The text at its size, in [family], the script's downloaded font, or
-  /// the phone's own when it is null.
-  Widget _sized(BuildContext context, String? family) {
-    if (_sizing == _Sizing.fixed) return _text(context, fontSize!, family);
+  /// the phone's own when it is null, with the other content fonts behind it
+  /// in [fallback] (Latin letters in a Cyrillic or Devanagari card, say), so
+  /// that no character of a card falls to the phone's font.
+  Widget _sized(BuildContext context, String? family, List<String>? fallback) {
+    if (_sizing == _Sizing.fixed) {
+      return _text(context, fontSize!, family, fallback);
+    }
     final settings = AppScope.of(context).settings;
     return ListenableBuilder(
       listenable: settings,
@@ -185,17 +191,23 @@ class TargetText extends StatelessWidget {
               ? TargetSizes.forText(text, scale: scale)
               : fontSize! * scale,
           family,
+          fallback,
         );
       },
     );
   }
 
-  Widget _text(BuildContext context, double base, String? family) {
+  Widget _text(
+    BuildContext context,
+    double base,
+    String? family,
+    List<String>? fallback,
+  ) {
     var size = base;
     var shown = text;
     if (_sizing != _Sizing.fixed && _isOneWord) {
       final room = MediaQuery.sizeOf(context).width - _cardMargins;
-      final width = _width(context, size, family);
+      final width = _width(context, size, family, fallback);
       if (width > room) {
         if (hasAksharas(text)) {
           shown = breakableWord(text);
@@ -217,6 +229,7 @@ class TargetText extends StatelessWidget {
         fontSize: size,
         fontWeight: _styleWeight(family, fontWeight),
         fontFamily: family,
+        fontFamilyFallback: fallback,
         fontVariations: _variations(family, fontWeight),
         color: color,
         height: language.rightToLeft
@@ -248,7 +261,12 @@ class TargetText extends StatelessWidget {
 
   /// How wide [text] is on one line at [size], scaled as the screen scales
   /// text.
-  double _width(BuildContext context, double size, String? family) {
+  double _width(
+    BuildContext context,
+    double size,
+    String? family,
+    List<String>? fallback,
+  ) {
     final painter = TextPainter(
       text: TextSpan(
         text: text,
@@ -256,6 +274,7 @@ class TargetText extends StatelessWidget {
           fontSize: size,
           fontWeight: _styleWeight(family, fontWeight),
           fontFamily: family,
+          fontFamilyFallback: fallback,
           fontVariations: _variations(family, fontWeight),
         ),
         locale: targetLocale(language),
@@ -283,13 +302,32 @@ enum _Sizing { fixed, hero, card }
 /// and Punjabi's Shahmukhi) is marked Urdu, so that the phone draws it in its
 /// Nastaliq font rather than the plain Naskh it uses for Arabic.
 ///
-/// Persian and Pashto are set in Naskh, and keep their own locale.
+/// Persian, Pashto, Sindhi and Kashmiri are set in Naskh, and keep their own
+/// locale.
 Locale targetLocale(LanguageInfo language) => switch (language.script) {
   'perso_arabic' || 'shahmukhi'
-      when fontScriptFor(language.code, language.script) == language.script =>
+      when fontScriptFor(language.code, language.script) == 'perso_arabic' =>
     const Locale('ur'),
   _ => Locale(language.code),
 };
+
+/// The style of a quoted piece of [language]'s deck text inside an interface
+/// string (owner, 2026-11-16: "I don't want to depend on system fonts for
+/// content"): the script's downloaded font first, by its family name, which
+/// needs no lookup of what is loaded, as a family that is not loaded is
+/// skipped; then Roboto, the braille font and the content fonts, so that
+/// the quote falls back as before and never to the phone's font. The text
+/// around the quote has no such style and stays in the interface's Roboto.
+TextStyle targetQuoteStyle(LanguageInfo language) => TextStyle(
+  fontFamily: language.isBraille
+      ? brailleFontFamily
+      : scriptFontFamily(fontScriptFor(language.code, language.script)),
+  fontFamilyFallback: <String>[
+    interfaceFontFamily,
+    brailleFontFamily,
+    for (final script in contentFontScripts) scriptFontFamily(script),
+  ],
+);
 
 /// Right-to-left isolate and pop directional isolate (Unicode bidi).
 const String _rli = '\u2067';
@@ -299,6 +337,7 @@ const String _pdi = '\u2069';
 /// [quotes] in it marked as [language]'s: drawn in its font and read by a
 /// screen reader in its voice, while the rest stays the interface's (#26).
 /// "Answer: el niño" is read in English up to the colon and in Spanish after.
+/// A quote is drawn in its script's downloaded font ([targetQuoteStyle]).
 ///
 /// A quote in a right-to-left language is wrapped in a bidi isolate (#619),
 /// so that the interface's words around it never reorder it, nor it them:
@@ -316,6 +355,7 @@ TextSpan quotingTarget(
       if (quote.isNotEmpty) quote,
   }.toList()..sort((a, b) => b.length.compareTo(a.length));
   final locale = targetLocale(language);
+  final style = targetQuoteStyle(language);
   final spans = <TextSpan>[];
   var start = 0;
   while (start < text.length) {
@@ -331,7 +371,11 @@ TextSpan quotingTarget(
     if (found == null) break;
     if (at > start) spans.add(TextSpan(text: text.substring(start, at)));
     spans.add(
-      TextSpan(text: language.rtl ? '$_rli$found$_pdi' : found, locale: locale),
+      TextSpan(
+        text: language.rtl ? '$_rli$found$_pdi' : found,
+        locale: locale,
+        style: style,
+      ),
     );
     start = at + found.length;
   }

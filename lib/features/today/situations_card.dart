@@ -7,9 +7,12 @@ import '../../app/situations.dart';
 import '../../core/models/situation.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/hint.dart';
 import '../../ui/widgets/incoming.dart';
+import '../situations/fitted_label.dart';
 import '../situations/situation_page.dart';
 import '../situations/situation_visuals.dart';
+import '../situations/situations_editor.dart';
 
 /// The situation buttons on Today, under the streak (#724): one button
 /// for each of the six everyday moments, hailing a cab to the rail station,
@@ -27,16 +30,28 @@ class SituationsCard extends StatelessWidget {
   static const int perRow = 3;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) => ListenableBuilder(
+    // The learner's pick is a setting: the card follows it.
+    listenable: AppScope.read(context).settings,
+    builder: (context, _) => _card(context),
+  );
+
+  Widget _card(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final state = AppScope.of(context);
     final language = state.situationsLanguage;
     final file = language == null ? null : state.situationsOf(language);
+    // Written sheets: those the learner picked, the first six. Unwritten:
+    // the six dimmed placeholders.
     final buttons = <_ButtonSpec>[
-      for (final key in situationIcons)
-        _spec(context, state, language, file?.withIcon(key), key),
+      if (file != null && language != null)
+        for (final sheet in state.cardSituations(language))
+          _spec(context, state, language, sheet, sheet.icon)
+      else
+        for (final key in firstSituationIcons)
+          _spec(context, state, language, null, key),
     ];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -70,31 +85,52 @@ class SituationsCard extends StatelessWidget {
                   ),
                 ),
               ],
+              if (file != null && language != null)
+                LabelledIconButton(
+                  label: l10n.situationsEditLabel,
+                  hint: l10n.hintEdit,
+                  icon: const Icon(Icons.edit_outlined),
+                  onPressed: () => showSituationsEditor(context, language),
+                ),
             ],
           ),
         ),
         const SizedBox(height: 12),
-        for (
-          var start = 0;
-          start < buttons.length;
-          start += perRow
-        ) ...<Widget>[
-          if (start > 0) const SizedBox(height: 8),
-          IntrinsicHeight(
-            child: Row(
+        LayoutBuilder(
+          builder: (context, box) {
+            // The width of one button, so that every label is fitted to it.
+            final width = (box.maxWidth - 8 * (perRow - 1)) / perRow;
+            return Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
-              spacing: 8,
               children: <Widget>[
-                for (var i = start; i < start + perRow; i++)
-                  Expanded(
-                    child: i < buttons.length
-                        ? _SituationButton(spec: buttons[i])
-                        : const SizedBox.shrink(),
+                for (
+                  var start = 0;
+                  start < buttons.length;
+                  start += perRow
+                ) ...<Widget>[
+                  if (start > 0) const SizedBox(height: 8),
+                  IntrinsicHeight(
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      spacing: 8,
+                      children: <Widget>[
+                        for (var i = start; i < start + perRow; i++)
+                          Expanded(
+                            child: i < buttons.length
+                                ? _SituationButton(
+                                    spec: buttons[i],
+                                    width: width,
+                                  )
+                                : const SizedBox.shrink(),
+                          ),
+                      ],
+                    ),
                   ),
+                ],
               ],
-            ),
-          ),
-        ],
+            );
+          },
+        ),
       ],
     );
   }
@@ -146,9 +182,12 @@ class _ButtonSpec {
 }
 
 class _SituationButton extends StatelessWidget {
-  const _SituationButton({required this.spec});
+  const _SituationButton({required this.spec, required this.width});
 
   final _ButtonSpec spec;
+
+  /// The button's width, which its label is fitted to.
+  final double width;
 
   @override
   Widget build(BuildContext context) {
@@ -159,26 +198,7 @@ class _SituationButton extends StatelessWidget {
     final content = Column(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-        Container(
-          width: 40,
-          height: 40,
-          decoration: BoxDecoration(
-            color: colors.onContainer.withValues(alpha: 0.12),
-            shape: BoxShape.circle,
-          ),
-          child: Icon(spec.icon.situationIcon, color: colors.onContainer),
-        ),
-        const SizedBox(height: 6),
-        Text(
-          spec.title,
-          textAlign: TextAlign.center,
-          maxLines: 2,
-          overflow: TextOverflow.ellipsis,
-          style: theme.textTheme.labelLarge!.copyWith(
-            fontWeight: FontWeight.w700,
-            color: colors.onContainer,
-          ),
-        ),
+        FittedLabel(text: spec.title, width: width, color: colors.onContainer),
         if (count != null && count > 0)
           Text(
             l10n.situationNewCount(count),
@@ -189,22 +209,42 @@ class _SituationButton extends StatelessWidget {
           ),
       ],
     );
-    final face = Padding(
-      padding: const EdgeInsetsDirectional.symmetric(
-        horizontal: 6,
-        vertical: 12,
+    // The label block (and the pill) sits in the middle of the space under
+    // the icon, whatever the number of lines.
+    final below = spec.live
+        ? content
+        : Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Opacity(opacity: kIncomingOpacity, child: content),
+              const SizedBox(height: 6),
+              // Full contrast, so the state is not shown by dimming alone.
+              const _UpcomingPill(),
+            ],
+          );
+    final face = ConstrainedBox(
+      constraints: BoxConstraints(
+        minHeight: MediaQuery.textScalerOf(context)
+            .scale(situationTileMinHeight),
       ),
-      child: spec.live
-          ? content
-          : Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                Opacity(opacity: kIncomingOpacity, child: content),
-                const SizedBox(height: 6),
-                // Full contrast, so the state is not shown by dimming alone.
-                const _UpcomingPill(),
-              ],
+      child: Padding(
+        padding: const EdgeInsetsDirectional.symmetric(vertical: 12),
+        child: Column(
+          children: <Widget>[
+            Container(
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                color: colors.onContainer.withValues(alpha: 0.12),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(spec.icon.situationIcon, color: colors.onContainer),
             ),
+            const SizedBox(height: 6),
+            Expanded(child: Center(child: below)),
+          ],
+        ),
+      ),
     );
     final button = Material(
       color: colors.container,

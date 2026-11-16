@@ -6,6 +6,7 @@ import 'package:file_picker/file_picker.dart';
 import '../core/data/deck_parser.dart';
 import '../core/data/pattern_expander.dart';
 import '../core/models/deck.dart';
+import '../core/private/private_ids.dart';
 import 'deck_catalog.dart';
 
 /// What adding a deck file would do (#22): add it, replace a deck added
@@ -73,6 +74,14 @@ DeckCheck checkAddedDeck(
   } on DeckParseException catch (e) {
     return DeckUnreadable(e);
   }
+  if (isPrivateId(deck.id) || deck.cards.any((c) => isPrivateId(c.id))) {
+    return DeckUnreadable(
+      DeckParseException(
+        'ids starting fnpd- belong to private packages only',
+        source: fileName,
+      ),
+    );
+  }
   DeckEntry? same;
   final owner = <String, DeckEntry>{};
   for (final entry in decks) {
@@ -84,7 +93,9 @@ DeckCheck checkAddedDeck(
       owner.putIfAbsent(card.id, () => entry);
     }
   }
-  if (same != null && same.bundled) return DeckIdBundled(deck.id);
+  if (same != null && (same.bundled || same.private)) {
+    return DeckIdBundled(deck.id);
+  }
   final cards = deck.kind == DeckKind.grammar
       ? expandPattern(deck)
       : deck.cards;
@@ -108,6 +119,11 @@ abstract interface class DeckFiles {
   /// Asks for a deck file, under [title]: its name and text, or null if
   /// none was picked.
   Future<({String name, String text})?> open({required String title});
+
+  /// Asks for a file, under [title], and reads its bytes: a private language
+  /// package, a `.fnzip` (#1017). Its name and bytes, or null if none was
+  /// picked.
+  Future<({String name, List<int> bytes})?> openBytes({required String title});
 }
 
 /// [DeckFiles] through `file_picker`.
@@ -128,5 +144,14 @@ class PickerDeckFiles implements DeckFiles {
     final file = await FilePicker.pickFile(dialogTitle: title);
     if (file == null) return null;
     return (name: file.name, text: await file.xFile.readAsString());
+  }
+
+  @override
+  Future<({String name, List<int> bytes})?> openBytes({
+    required String title,
+  }) async {
+    final file = await FilePicker.pickFile(dialogTitle: title);
+    if (file == null) return null;
+    return (name: file.name, bytes: await file.xFile.readAsBytes());
   }
 }

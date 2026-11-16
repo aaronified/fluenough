@@ -4,12 +4,15 @@ import '../models/drill_mode.dart';
 import '../models/leech_action.dart';
 import 'daos.dart';
 import 'restore_record.dart';
+import 'review_erasure.dart';
 import 'tables/card_states.dart';
 import 'tables/cards.dart';
 import 'tables/converters.dart';
 import 'tables/decks.dart';
 import 'tables/fsrs_parameters.dart';
 import 'tables/leech_actions.dart';
+import 'tables/placement_withdrawals.dart';
+import 'tables/recommendation_marks.dart';
 import 'tables/replay_snapshots.dart';
 import 'tables/restores.dart';
 import 'tables/reviews.dart';
@@ -51,6 +54,8 @@ part 'database.g.dart';
     FsrsParameters,
     Restores,
     ReplaySnapshots,
+    PlacementWithdrawals,
+    RecommendationMarks,
   ],
   daos: [
     DecksDao,
@@ -62,6 +67,8 @@ part 'database.g.dart';
     FsrsParametersDao,
     RestoresDao,
     ReplaySnapshotsDao,
+    PlacementWithdrawalsDao,
+    RecommendationMarksDao,
   ],
 )
 class AppDatabase extends _$AppDatabase {
@@ -85,12 +92,19 @@ class AppDatabase extends _$AppDatabase {
   /// 10: `replay_snapshots`, a cache of what replaying the review log gives,
   ///    checked against the log before each use (#857, ADR-0051). `reviews`
   ///    is not touched.
+  /// 11: `placement_withdrawals`, append-only like `reviews`: placement
+  ///    credit the learner took back, which the replay leaves out (wiki,
+  ///    Plan-Placement-V2, point 17; issue #1063). `reviews` is not touched.
+  /// 12: `recommendation_marks`, the recommended works a learner marked
+  ///    completed (wiki Plan-Deck-Kinds-And-Topics.md, D13, T25). A plain
+  ///    table, not append-only: un-marking deletes a row. `reviews` is not
+  ///    touched.
   @override
   int get schemaVersion => currentSchemaVersion;
 
   /// [schemaVersion], for what needs it without a database: a backup says
   /// which schema it was made under (#470).
-  static const int currentSchemaVersion = 10;
+  static const int currentSchemaVersion = 12;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -99,6 +113,7 @@ class AppDatabase extends _$AppDatabase {
       await _appendOnly('reviews');
       await _appendOnly('leech_actions');
       await _appendOnly('restores');
+      await _appendOnly('placement_withdrawals');
     },
     onUpgrade: (m, from, to) async {
       if (from < 2) await m.createTable(settings);
@@ -186,6 +201,38 @@ class AppDatabase extends _$AppDatabase {
         ).get();
         if (exists.isEmpty) await m.createTable(replaySnapshots);
       }
+      if (from < 11) {
+        // Once, as in step 8: the table and its triggers in one step, so a
+        // step cut off part-way runs again. `reviews` is not touched.
+        final exists = await customSelect(
+          "SELECT name FROM sqlite_master WHERE type = 'table' "
+          "AND name = 'placement_withdrawals'",
+        ).get();
+        if (exists.isEmpty) {
+          await m.createTable(placementWithdrawals);
+          await _appendOnly('placement_withdrawals');
+        } else {
+          // Cut off after the table: the triggers it lacks, each once.
+          for (final action in const <String>['update', 'delete']) {
+            final has = await customSelect(
+              "SELECT name FROM sqlite_master WHERE type = 'trigger' "
+              "AND name = 'placement_withdrawals_no_$action'",
+            ).get();
+            if (has.isEmpty) {
+              await _guard('placement_withdrawals', action.toUpperCase());
+            }
+          }
+        }
+      }
+      if (from < 12) {
+        // Once, as in step 10: a new table only, so a step cut off part-way
+        // runs again. Nothing else is touched.
+        final exists = await customSelect(
+          "SELECT name FROM sqlite_master WHERE type = 'table' "
+          "AND name = 'recommendation_marks'",
+        ).get();
+        if (exists.isEmpty) await m.createTable(recommendationMarks);
+      }
     },
   );
 
@@ -204,7 +251,8 @@ class AppDatabase extends _$AppDatabase {
     "BEGIN SELECT RAISE(ABORT, '$table is append-only'); END",
   );
 
-  /// The one exception to `reviews` and `leech_actions` being append-only
+  /// The one exception to `reviews`, `leech_actions` and
+  /// `placement_withdrawals` being append-only
   /// (AGENTS.md rule 9; owner, 2026-10-17: "Logged exception"): a restore
   /// the learner has confirmed, after a copy of what it replaces has been
   /// kept, empties both, and [refill] writes the backup's in their place.
@@ -221,6 +269,7 @@ class AppDatabase extends _$AppDatabase {
         for (final table in <TableInfo<Table, Object?>>[
           reviews,
           leechActions,
+          placementWithdrawals,
         ]) {
           final name = table.actualTableName;
           await customStatement('DROP TRIGGER ${name}_no_delete');
@@ -246,6 +295,116 @@ class AppDatabase extends _$AppDatabase {
         );
         return result;
       });
+
+  /// The second exception to `reviews` being append-only (AGENTS.md rule 9;
+  /// owner, 2026-11-07, #861): the learner deleted some of one language's
+  /// reviews from its sheet in Languages I'm learning, after the app kept a
+  /// backup of everything. Removes the reviews [erasure] selects and the
+  /// language's leech actions whose pair has no review left (an action on a
+  /// pair with no history means nothing), in one transaction, and returns
+  /// how many reviews went. With the placement chosen, the language's
+  /// `placement_withdrawals` go too: they only name credit that is gone.
+  /// With only the answers chosen, the withdrawals stay with the credit. A review of another language is never touched.
+  ///
+  /// Each table's delete trigger is dropped only for this `DELETE` and
+  /// created again at once, as [replaceLog] does, so the guard is back
+  /// whatever happens next, and a failure rolls everything back, the
+  /// triggers included. Nothing but a confirmed deletion calls this.
+  Future<({int reviews, int withdrawals})> eraseReviews(
+    ReviewErasure erasure,
+  ) => transaction(() async {
+    final code = erasure.language;
+    final prefix = erasure.idPrefix;
+    // A private package's cards (`fnpd-te-`) are found by their prefix alone:
+    // the built-in `te-` cards beside them are another course's.
+    final List<Variable<Object>> of = prefix == null
+        ? [
+            Variable<String>(code),
+            Variable<int>(code.length + 1),
+            Variable<String>('$code-'),
+          ]
+        : [Variable<int>(prefix.length), Variable<String>(prefix)];
+    final ofLanguage = prefix == null
+        ? 'card_id = ? OR substr(card_id, 1, ?) = ?'
+        : 'substr(card_id, 1, ?) = ?';
+    final rows = await customSelect(
+      'SELECT id, card_id, ts, grade, elapsed_ms, answer_given, asked '
+      'FROM reviews WHERE $ofLanguage',
+      variables: of,
+      readsFrom: {reviews},
+    ).get();
+    final ids = <int>[
+      for (final row in rows)
+        if (erasure.matches(
+          row.read<String>('card_id'),
+          DateTime.fromMillisecondsSinceEpoch(row.read<int>('ts')),
+          creditShape:
+              row.read<int>('grade') == 5 &&
+              row.read<int>('elapsed_ms') == 0 &&
+              row.readNullable<String>('answer_given') == null &&
+              (row.readNullable<String>('asked') ?? 'own') == 'own',
+        ))
+          row.read<int>('id'),
+    ];
+    // Placement's credit goes with its withdrawals, which only name it.
+    final taken = erasure.placement
+        ? <int>[
+            for (final row in await customSelect(
+              'SELECT id FROM placement_withdrawals WHERE language = ?',
+              variables: [Variable<String>(code)],
+              readsFrom: {placementWithdrawals},
+            ).get())
+              row.read<int>('id'),
+          ]
+        : <int>[];
+    if (ids.isEmpty && taken.isEmpty) return (reviews: 0, withdrawals: 0);
+    if (taken.isNotEmpty) await _deleteRows(placementWithdrawals, taken);
+    if (ids.isNotEmpty) await _deleteRows(reviews, ids);
+    final kept = <String>{
+      for (final row in await customSelect(
+        'SELECT DISTINCT card_id, mode FROM reviews WHERE $ofLanguage',
+        variables: of,
+        readsFrom: {reviews},
+      ).get())
+        '${row.read<String>('card_id')}|${row.read<String>('mode')}',
+    };
+    final orphaned = <int>[
+      for (final row in await customSelect(
+        'SELECT id, card_id, mode FROM leech_actions WHERE $ofLanguage',
+        variables: of,
+        readsFrom: {leechActions},
+      ).get())
+        if (!kept.contains(
+          '${row.read<String>('card_id')}|${row.read<String>('mode')}',
+        ))
+          row.read<int>('id'),
+    ];
+    if (orphaned.isNotEmpty) await _deleteRows(leechActions, orphaned);
+    return (reviews: ids.length, withdrawals: taken.length);
+  });
+
+  /// Deletes the rows of the append-only [table] with these [ids], 400 at a
+  /// time, with the table's delete guard lifted for the statements and put
+  /// back at once.
+  Future<void> _deleteRows(
+    TableInfo<Table, Object?> table,
+    List<int> ids,
+  ) async {
+    final name = table.actualTableName;
+    await customStatement('DROP TRIGGER ${name}_no_delete');
+    for (var i = 0; i < ids.length; i += 400) {
+      final end = i + 400 > ids.length ? ids.length : i + 400;
+      final chunk = ids.sublist(i, end);
+      await customUpdate(
+        'DELETE FROM $name WHERE id IN '
+        '(${List.filled(chunk.length, '?').join(',')})',
+        variables: [for (final id in chunk) Variable<int>(id)],
+        updates: {table},
+        updateKind: UpdateKind.delete,
+      );
+    }
+    await _guard(name, 'DELETE');
+  }
 
   Future<int> _reviewCount() async => (await customSelect(
     'SELECT COUNT(*) AS n FROM reviews',

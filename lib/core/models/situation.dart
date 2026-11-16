@@ -45,16 +45,31 @@ class Situation {
   }
 }
 
-/// The icon keys the app draws, which the validator accepts: the six
-/// situations the owner chose first (#724, 2026-10-30), in the order of
-/// Today's buttons.
-const List<String> situationIcons = <String>[
+/// The six situations the owner chose first (#724, 2026-10-30), in the order
+/// of Today's buttons: what a course with no sheets shows, dimmed.
+const List<String> firstSituationIcons = <String>[
   'taxi',
   'shops',
   'eat',
   'doctor',
   'traffic',
   'rail',
+];
+
+/// The icon keys the app draws, which the validator accepts (#1269): the
+/// first six, then the keys that need app 0.10.3 or later (a file that uses
+/// one is gated by `min_app`, written by `tools/deck_index.py`). Keep in step
+/// with `SITUATION_ICONS` in `tools/validate_decks.py`.
+const List<String> situationIcons = <String>[
+  ...firstSituationIcons,
+  'hotel',
+  'post',
+  'bank',
+  'greeting',
+  'emergency',
+  'school',
+  'work',
+  'travel',
 ];
 
 /// A language's situations file: its situations, in the file's order.

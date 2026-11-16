@@ -1,36 +1,63 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/deck_catalog.dart';
-import '../../app/features.dart';
 import '../../app/routes.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
-import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/snack.dart';
+import '../decks/import_page.dart' show saveDeckTemplate;
+import '../private/private_decks_section.dart';
 import '../../ui/theme.dart';
 import 'settings_controls.dart';
 import 'settings_section_page.dart';
 
-/// Settings' Your decks page (#475, #495): Upload a deck, which opens the
-/// page that checks a file and adds it; Get a template, incoming; and the
-/// decks the learner added, grouped by the language learned and then the
-/// language it is taught from, each with Open, Send it to us (incoming) and
-/// Remove, which asks first and is in the error colour.
-class YourDecksPage extends StatelessWidget {
+/// Settings' Your decks page (#475, #495, #1017): the private language
+/// packages first (Add a private language, a group for each package); then
+/// Upload a deck, which opens the
+/// page that checks a file and adds it; Get a template, which saves the
+/// single-deck template; and the decks the learner added, grouped by the
+/// language learned and then the language it is taught from, each with Open
+/// and Remove, which asks first and is in the error colour. Sending a deck to
+/// the project is retired (#1017): nothing leaves the phone.
+class YourDecksPage extends StatefulWidget {
   const YourDecksPage({super.key});
+
+  @override
+  State<YourDecksPage> createState() => _YourDecksPageState();
 
   /// The decks the learner added, in the order they were found.
   static List<DeckEntry> ownDecks(Iterable<DeckEntry> decks) => <DeckEntry>[
     for (final entry in decks)
-      if (!entry.bundled) entry,
+      if (!entry.bundled && !entry.private) entry,
   ];
+}
+
+class _YourDecksPageState extends State<YourDecksPage> {
+  PrivatePackagesController? _private;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (_private == null) {
+      _private = PrivatePackagesController(AppScope.read(context));
+      unawaited(_private!.load());
+    }
+  }
+
+  @override
+  void dispose() {
+    _private?.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
-    final own = ownDecks(state.decks);
+    final own = YourDecksPage.ownDecks(state.decks);
     // Grouped by "language › from native", in the order first met.
     final groups = <(String, String), List<DeckEntry>>{};
     for (final entry in own) {
@@ -43,7 +70,10 @@ class YourDecksPage extends StatelessWidget {
     }
     return SettingsSectionPage(
       title: l10n.settingsRowDecks,
+      listenable: _private,
       builder: (context) => <Widget>[
+        // Private language packages (#1017): their own part of the page.
+        ..._private!.rows(context),
         GroupedList.settings(
           children: <Widget>[
             GroupedTile(
@@ -58,7 +88,7 @@ class YourDecksPage extends StatelessWidget {
               title: l10n.settingsDecksTemplate,
               subtitle: l10n.settingsDecksTemplateDesc,
               trailing: const Icon(Icons.chevron_right),
-              feature: Feature.deckTemplates,
+              onTap: () => unawaited(saveDeckTemplate(context)),
             ),
           ],
         ),
@@ -95,8 +125,7 @@ class YourDecksPage extends StatelessWidget {
   }
 }
 
-/// A deck the learner added: its name and size, then Open, Send it to us and
-/// Remove.
+/// A deck the learner added: its name and size, then Open and Remove.
 class _OwnDeck extends StatelessWidget {
   const _OwnDeck({required this.entry});
 
@@ -162,15 +191,6 @@ class _OwnDeck extends StatelessWidget {
               TextButton(
                 onPressed: () => AppNavigator.openDeck(context, entry.id),
                 child: Text(l10n.settingsDecksOpen),
-              ),
-              IncomingFeature(
-                feature: Feature.deckSend,
-                label: l10n.settingsDecksSend,
-                // Drawn, with no action behind it until #495.
-                child: TextButton(
-                  onPressed: null,
-                  child: Text(l10n.settingsDecksSend),
-                ),
               ),
               TextButton(
                 style: TextButton.styleFrom(foregroundColor: scheme.error),

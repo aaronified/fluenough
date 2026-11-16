@@ -14,6 +14,7 @@ class ProgressMastery {
   ProgressMastery._({
     required this.words,
     required this.level,
+    required this.levelPlaced,
     required this.started,
     required this.week,
     required this.now,
@@ -32,11 +33,13 @@ class ProgressMastery {
     required List<ReviewEvent> log,
     required DateTime at,
     Milestone? level,
+    bool levelPlaced = false,
     bool withSeries = false,
   }) {
     final result = ProgressMastery._(
       words: _words(parts),
       level: level,
+      levelPlaced: levelPlaced,
       started: startedOn(log),
       week: practiceWeek(log, now: at),
       now: _combine(parts, null),
@@ -66,6 +69,10 @@ class ProgressMastery {
   /// where levels differ by course.
   final Milestone? level;
 
+  /// Whether that level is only placed: no unit of its milestone has an
+  /// earned review yet, so the Level tile says "Placed".
+  final bool levelPlaced;
+
   /// The day of the first answer, the earliest across languages on All.
   final DateTime? started;
 
@@ -89,12 +96,14 @@ class ProgressMastery {
   static WordCounts _words(List<MasteryPart> parts) {
     var mastered = 0;
     var taught = 0;
+    var placed = 0;
     for (final p in parts) {
       final counts = wordCounts(p.log, parametersOf: p.parametersOf);
       mastered += counts.mastered;
       taught += counts.taught;
+      placed += counts.placed;
     }
-    return (mastered: mastered, taught: taught);
+    return (mastered: mastered, taught: taught, placed: placed);
   }
 
   static Mastery _combine(List<MasteryPart> parts, DateTime? asOf) =>
@@ -131,7 +140,12 @@ class MasteryPart {
 
 /// What the course of [code] holds, from [state]'s decks and path: the B1
 /// totals per skill, the cards that teach a script, and the level reached.
-({MasteryTotals totals, Set<String> scriptCards, Milestone? level})
+({
+  MasteryTotals totals,
+  Set<String> scriptCards,
+  Milestone? level,
+  bool levelPlaced,
+})
 courseInputsOf(AppState state, String code) {
   final native = state.courseNative(code);
   final entries = <DeckEntry>[
@@ -161,6 +175,12 @@ courseInputsOf(AppState state, String code) {
   final b1Words = path == null || path.plannedWords < words.length
       ? words.length
       : path.plannedWords;
+  final level = path == null
+      ? null
+      : levelReached(path, (id) {
+          final entry = state.deckById(id);
+          return entry != null && state.isFinished(entry);
+        });
   return (
     totals: <MasterySkill, int>{
       MasterySkill.grammar: grammar.length,
@@ -171,11 +191,7 @@ courseInputsOf(AppState state, String code) {
       MasterySkill.say: b1Words,
     },
     scriptCards: scriptCards,
-    level: path == null
-        ? null
-        : levelReached(path, (id) {
-            final entry = state.deckById(id);
-            return entry != null && state.isFinished(entry);
-          }),
+    level: level,
+    levelPlaced: path != null && levelPlaced(path, level, state.progress.log),
   );
 }

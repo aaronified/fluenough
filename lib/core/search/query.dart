@@ -1,6 +1,8 @@
-/// What the Decks search bar's text means (#527): free text, and three
-/// tokens, `kind:`, `status:` and `theme:`, that narrow it. Free of
-/// Flutter.
+/// What the Decks search bar's text means (#527): free text, and tokens,
+/// `kind:`, `status:`, `theme:`, `creator:` and `year:`, that narrow it. The
+/// last two, and the culture values of `kind:` (book, film ... proverb) and
+/// `status:` (done, todo), narrow the culture part of the search; the rest
+/// narrow the deck part (owner, 2026-11-16). Free of Flutter.
 library;
 
 /// The tokens the search bar takes, in the order their chips sit
@@ -9,7 +11,9 @@ library;
 enum SearchToken {
   kind,
   status,
-  theme;
+  theme,
+  creator,
+  year;
 
   /// What is typed: `kind`.
   String get key => name;
@@ -26,6 +30,112 @@ enum SearchKind {
 
   /// What is typed after `kind:`.
   String get slug => name;
+}
+
+/// The values of `kind:` that name a culture work or deck: the recommended
+/// works' kinds, and proverbs.
+const List<String> cultureKindSlugs = <String>[
+  'book',
+  'film',
+  'series',
+  'song',
+  'play',
+  'podcast',
+  'comic',
+  'proverb',
+];
+
+/// The values of `status:` for a recommended work: marked completed, or not.
+const List<String> cultureStatusSlugs = <String>['done', 'todo'];
+
+final RegExp _yearValue = RegExp(r'^(-?\d{1,4})(?:-(-?\d{1,4}))?$');
+
+/// Whether [value] is a whole value of [token].
+bool isWholeTokenValue(SearchToken token, String value, Set<String> themes) =>
+    switch (token) {
+      SearchToken.kind =>
+        SearchKind.values.any((k) => k.slug == value) ||
+            cultureKindSlugs.contains(value),
+      SearchToken.status =>
+        CardStatus.values.any((s) => s.slug == value) ||
+            cultureStatusSlugs.contains(value),
+      SearchToken.theme => themes.contains(value),
+      SearchToken.creator => value.isNotEmpty,
+      SearchToken.year => _yearValue.hasMatch(value),
+    };
+
+/// Whether the chip [token]:[value] narrows the culture part of the search.
+bool isCultureChip(SearchToken token, String value) => switch (token) {
+  SearchToken.creator || SearchToken.year => true,
+  SearchToken.kind => cultureKindSlugs.contains(value),
+  SearchToken.status => cultureStatusSlugs.contains(value),
+  SearchToken.theme => false,
+};
+
+/// The chips of [chips] that narrow the culture part.
+Map<SearchToken, String> cultureChipsOf(Map<SearchToken, String> chips) =>
+    <SearchToken, String>{
+      for (final e in chips.entries)
+        if (isCultureChip(e.key, e.value)) e.key: e.value,
+    };
+
+/// The chips of [chips] that narrow the deck part.
+Map<SearchToken, String> deckChipsOf(Map<SearchToken, String> chips) =>
+    <SearchToken, String>{
+      for (final e in chips.entries)
+        if (!isCultureChip(e.key, e.value)) e.key: e.value,
+    };
+
+/// What the culture chips ask of a work or a deck.
+class CultureFilter {
+  const CultureFilter({
+    this.kind,
+    this.creator,
+    this.yearFrom,
+    this.yearTo,
+    this.done,
+  });
+
+  /// Reads the culture chips of [chips].
+  factory CultureFilter.fromChips(Map<SearchToken, String> chips) {
+    int? from;
+    int? to;
+    final match = _yearValue.firstMatch(chips[SearchToken.year] ?? '');
+    if (match != null) {
+      from = int.parse(match.group(1)!);
+      to = match.group(2) == null ? from : int.parse(match.group(2)!);
+      if (to < from) (from, to) = (to, from);
+    }
+    final kind = chips[SearchToken.kind];
+    final status = chips[SearchToken.status];
+    return CultureFilter(
+      kind: kind != null && cultureKindSlugs.contains(kind) ? kind : null,
+      creator: chips[SearchToken.creator],
+      yearFrom: from,
+      yearTo: to,
+      done: switch (status) {
+        'done' => true,
+        'todo' => false,
+        _ => null,
+      },
+    );
+  }
+
+  /// A culture kind (`film`, `proverb`), or null for any.
+  final String? kind;
+
+  /// A part of a creator's name, or null.
+  final String? creator;
+
+  /// The years asked for, inclusive; BCE is negative.
+  final int? yearFrom;
+  final int? yearTo;
+
+  /// Completed (true), not completed (false), or either (null): works only.
+  final bool? done;
+
+  bool get isEmpty =>
+      kind == null && creator == null && yearFrom == null && done == null;
 }
 
 /// A card's one status, in the order the first that holds wins (owner,
@@ -142,7 +252,7 @@ T? _byName<T extends Enum>(List<T> values, String? name) {
   return null;
 }
 
-final RegExp _tokenWord = RegExp(r'^(kind|status|theme):(.*)$');
+final RegExp _tokenWord = RegExp(r'^(kind|status|theme|creator|year):(.*)$');
 
 /// Reads [input], as typed in the bar. A word `kind:grammar` whose value is
 /// whole becomes a chip once a space follows it (or when it is not the last
@@ -167,11 +277,7 @@ ParsedSearch parseSearch(String input, {Iterable<String> themes = const []}) {
     }
     final token = SearchToken.values.byName(m.group(1)!);
     final value = m.group(2)!;
-    final whole = switch (token) {
-      SearchToken.kind => SearchKind.values.any((k) => k.slug == value),
-      SearchToken.status => CardStatus.values.any((s) => s.slug == value),
-      SearchToken.theme => themeSet.contains(value),
-    };
+    final whole = isWholeTokenValue(token, value, themeSet);
     if (whole && !last) {
       chips[token] = value;
     } else if (last) {

@@ -2,6 +2,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../core/feedback/report.dart';
+import '../features/culture/culture_deck_page.dart';
+import '../features/culture/culture_item_page.dart';
+import '../features/culture/culture_timeline.dart';
+import '../features/culture/work_questions_page.dart';
 import '../features/decks/deck_detail_page.dart';
 import '../features/decks/import_page.dart';
 import '../features/decks/unit_page.dart';
@@ -25,7 +29,6 @@ import '../features/fonts/script_fonts_page.dart';
 import '../features/settings/app_log_page.dart';
 import '../features/settings/activities_page.dart';
 import '../features/settings/appearance_page.dart';
-import '../features/settings/languages_page.dart';
 import '../features/settings/profiles_privacy_page.dart';
 import '../features/settings/reminders_page.dart';
 import '../features/settings/reviewing_page.dart';
@@ -42,6 +45,7 @@ import '../features/stats/how_you_learn_page.dart';
 import '../features/stats/leeches_page.dart';
 import '../features/stats/stats_numbers.dart';
 import '../features/summary/summary_page.dart';
+import '../features/topics/topic_page.dart';
 import 'app_scope.dart';
 import 'session.dart';
 import 'shell_tab.dart';
@@ -127,6 +131,22 @@ abstract final class AppRoutes {
   /// A sheet's cards in full, one at a time. Argument: a [SituationRequest].
   static const String situationInspect = '/situation-inspect';
 
+  /// A topic's page (#1137). Argument: a [TopicRequest].
+  static const String topic = '/topic';
+
+  /// A language's full culture deck, with its people. Argument: the language
+  /// code, a [String]. Deck-kinds plan, T20.
+  static const String culture = '/culture';
+
+  /// A culture item's page. Argument: a [CultureItemRequest].
+  static const String cultureItem = '/culture-item';
+
+  /// The culture timeline, to today. Argument: a [CultureTimelineRequest].
+  static const String cultureTimeline = '/culture-timeline';
+
+  /// The questions of a completed work. Argument: a [WorkQuestionsRequest].
+  static const String workQuestions = '/work-questions';
+
   /// A script's guide. Argument: the language code, a [String].
   static const String scriptGuide = '/script-guide';
   static const String profiles = '/profiles';
@@ -179,7 +199,7 @@ abstract final class AppRoutes {
       progressOverTime => const OverTimePage(),
       howYouLearn => HowYouLearnPage(language: args is String ? args : null),
       appearance => const AppearancePage(),
-      settingsLanguages => const LanguagesSettingsPage(),
+      settingsLanguages => const LanguagesPage(),
       settingsActivities => const ActivitiesPage(),
       settingsReviewing => const ReviewingPage(),
       settingsDecks => const YourDecksPage(),
@@ -193,12 +213,22 @@ abstract final class AppRoutes {
       learnLanguages => LanguagesPage(
         initialQuery: args is String ? args : null,
       ),
-      voices => const VoicesPage(),
+      voices => VoicesPage(language: args is String ? args : null),
       releaseNotes => const ReleaseNotesPage(),
       sources => const SourcesPage(),
       appLog => const AppLogPage(),
       situation when args is SituationRequest => SituationPage(request: args),
       situationInspect when args is SituationRequest => SituationInspectPage(
+        request: args,
+      ),
+      topic when args is TopicRequest => TopicPage(request: args),
+      culture when args is String => CultureDeckPage(language: args),
+      cultureItem when args is CultureItemRequest => CultureItemPage(
+        request: args,
+      ),
+      cultureTimeline when args is CultureTimelineRequest =>
+        CultureTimelinePage(request: args),
+      workQuestions when args is WorkQuestionsRequest => WorkQuestionsPage(
         request: args,
       ),
       scriptGuide when args is String => ScriptGuidePage(guideKey: args),
@@ -230,6 +260,72 @@ abstract final class AppNavigator {
   /// The unit of its course's path that [deckId] is in.
   static Future<void> openUnit(BuildContext context, String deckId) =>
       Navigator.of(context).pushNamed(AppRoutes.unit, arguments: deckId);
+
+  /// The page of topic [topicId] of [language] (#1137).
+  static Future<void> openTopic(
+    BuildContext context,
+    String language,
+    String topicId,
+  ) => Navigator.of(context).pushNamed(
+    AppRoutes.topic,
+    arguments: TopicRequest(language: language, topicId: topicId),
+  );
+
+  /// [language]'s full culture deck, with its people (T20).
+  static Future<void> openCulture(BuildContext context, String language) =>
+      Navigator.of(context).pushNamed(AppRoutes.culture, arguments: language);
+
+  /// The page of culture item [itemId] of [language] (T20).
+  static Future<void> openCultureItem(
+    BuildContext context,
+    String language,
+    String itemId,
+  ) => Navigator.of(context).pushNamed(
+    AppRoutes.cultureItem,
+    arguments: CultureItemRequest(language: language, itemId: itemId),
+  );
+
+  /// The full culture timeline of [language], with [creatorId] marked (T20).
+  static Future<void> openCultureTimeline(
+    BuildContext context,
+    String language, [
+    String? creatorId,
+  ]) => Navigator.of(context).pushNamed(
+    AppRoutes.cultureTimeline,
+    arguments: CultureTimelineRequest(language: language, creatorId: creatorId),
+  );
+
+  /// Shows [language]'s culture list on the Decks screen, with the work
+  /// [openId] open: the cover on Today. Not a page: the Decks tab switches from
+  /// its path to the culture list (`culture-in-decks`).
+  static void openCultureList(
+    BuildContext context,
+    String language, {
+    String? openId,
+  }) {
+    final state = AppScope.read(context);
+    final navigator = Navigator.of(context);
+    navigator.popUntil((route) => route.isFirst);
+    if (state.shownLanguage != language) state.showLanguage(language);
+    state.decksCultureRequest.value = CultureListRequest(
+      language: language,
+      openId: openId,
+    );
+    state.shellTab.value = ShellTab.decks;
+  }
+
+  /// The questions of the completed work [recommendationId] (T26).
+  static Future<void> openWorkQuestions(
+    BuildContext context,
+    String language,
+    String recommendationId,
+  ) => Navigator.of(context).pushNamed(
+    AppRoutes.workQuestions,
+    arguments: WorkQuestionsRequest(
+      language: language,
+      recommendationId: recommendationId,
+    ),
+  );
 
   /// A report from the screen [request] was raised on.
   static Future<void> openReport(BuildContext context, ReportRequest request) =>
@@ -340,8 +436,10 @@ abstract final class AppNavigator {
       Navigator.of(context)
           .pushNamed(AppRoutes.learnLanguages, arguments: query);
 
-  static Future<void> openVoices(BuildContext context) =>
-      Navigator.of(context).pushNamed(AppRoutes.voices);
+  /// The Voices page; with [language], scrolled to that language's card
+  /// (#233).
+  static Future<void> openVoices(BuildContext context, {String? language}) =>
+      Navigator.of(context).pushNamed(AppRoutes.voices, arguments: language);
 
   /// What changed in each release, which the page fetches from GitHub.
   static Future<void> openReleaseNotes(BuildContext context) =>

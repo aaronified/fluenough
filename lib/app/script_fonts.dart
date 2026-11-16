@@ -34,6 +34,26 @@ class ScriptFonts extends ChangeNotifier {
       ? scriptFontFamily(script)
       : null;
 
+  /// The families of the content fonts that are loaded (Latin, Cyrillic
+  /// and Greek), in that order: what text falls back to for the characters
+  /// of its own script's font that lack a glyph, before the phone's font.
+  List<String> get contentFamilies => <String>[
+    for (final script in contentFontScripts)
+      if (_loaded.containsKey(script)) scriptFontFamily(script),
+  ];
+
+  /// The families to try behind [family] where it has no glyph: the loaded
+  /// content fonts but [family] itself; null with no family, which is the
+  /// phone's own font, or when none is loaded.
+  List<String>? fallbackFor(String? family) {
+    if (family == null) return null;
+    final others = <String>[
+      for (final f in contentFamilies)
+        if (f != family) f,
+    ];
+    return others.isEmpty ? null : others;
+  }
+
   /// Whether any font is loaded.
   bool get hasFonts => _loaded.isNotEmpty;
 

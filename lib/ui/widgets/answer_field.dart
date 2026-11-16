@@ -6,6 +6,7 @@ import '../../core/models/deck.dart';
 import '../card_text_scale.dart';
 import '../theme.dart';
 import 'braille_keyboard.dart';
+import 'ipa_keyboard.dart';
 
 /// The typed-answer field: a label above, then a 64 px field with a 2 px
 /// `primary` border and 20 px corners, text at 22 px. Text in [language]'s
@@ -20,7 +21,8 @@ import 'braille_keyboard.dart';
 /// The label and the field are one screen-reader node.
 ///
 /// A language the phone has no keyboard for names the app's own
-/// ([LanguageInfo.keyboard]): braille's six dots (ADR-0043). It is drawn
+/// ([LanguageInfo.keyboard]): braille's six dots (ADR-0043), or the IPA's
+/// symbols in tabs (#836). It is drawn
 /// under the field in place of the phone's, which the field then never
 /// opens. Transliteration and digits keep the phone's.
 class AnswerField extends StatelessWidget {
@@ -153,6 +155,18 @@ class AnswerField extends StatelessWidget {
           field,
           const SizedBox(height: 16),
           BrailleKeyboard(
+            controller: controller,
+            onChanged: onChanged,
+            enabled: enabled,
+          ),
+        ],
+      ),
+      ScriptKeyboard.ipa => Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          field,
+          const SizedBox(height: 16),
+          IpaKeyboard(
             controller: controller,
             onChanged: onChanged,
             enabled: enabled,

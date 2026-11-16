@@ -17,16 +17,49 @@ enum BrowserMicrophone {
   unknown,
 }
 
+/// Whether a browser, by its [userAgent], may run a recorder beside the
+/// recogniser (ADR-0054). Safari and every browser on iOS (all WebKit) give
+/// the recogniser `webkitSpeechRecognition` alone and abort it when a second
+/// reader takes the microphone, so there the recorder is skipped: a failed
+/// listen costs the learner more than a missing take, which "Hear yourself"
+/// records instead. Chrome and Edge (also `webkitSpeechRecognition`, but
+/// Chromium) and Firefox's `MediaRecorder` share the microphone.
+bool recorderBesideRecognition(String userAgent) {
+  final ua = userAgent.toLowerCase();
+  final ios =
+      ua.contains('iphone') || ua.contains('ipad') || ua.contains('ipod');
+  if (ios) return false;
+  final chromium =
+      ua.contains('chrome') ||
+      ua.contains('chromium') ||
+      ua.contains('crios') ||
+      ua.contains('edg/') ||
+      ua.contains('opr/') ||
+      ua.contains('android');
+  return !(ua.contains('safari') && !chromium);
+}
+
 /// One finished browser listen: its readings, best first, or the Web Speech
 /// API's error code (`no-speech`, `not-allowed`, `network` and so on).
 class BrowserHeard {
-  const BrowserHeard(this.alternatives) : error = null;
+  const BrowserHeard(this.alternatives, {this.ownAudio}) : error = null;
 
   const BrowserHeard.error(String this.error)
-    : alternatives = const <SpeechAlternative>[];
+    : alternatives = const <SpeechAlternative>[],
+      ownAudio = null;
 
   final List<SpeechAlternative> alternatives;
   final String? error;
+
+  /// The learner's voice as the browser's recorder kept it while the
+  /// recogniser listened (a `MediaRecorder` on the microphone), decoded to
+  /// PCM; null when the browser could not record beside the recogniser, or
+  /// the listen was cancelled or failed. In memory only (ADR-0054).
+  final OwnAudio? ownAudio;
+
+  /// This reading with [audio] kept.
+  BrowserHeard withAudio(OwnAudio? audio) =>
+      error != null ? this : BrowserHeard(alternatives, ownAudio: audio);
 }
 
 /// One listen under way: its [result], and [cancel] to end it early.
@@ -53,8 +86,9 @@ abstract interface class SpeechBrowser {
   Future<bool> askMicrophone();
 
   /// Listens once for one utterance in [lang] and reports its readings.
-  /// Never throws: a failure is in the [BrowserHeard].
-  BrowserSession recognise(String lang);
+  /// Never throws: a failure is in the [BrowserHeard]. A recorder runs
+  /// beside the recogniser only when [record] is true (default off, #1107).
+  BrowserSession recognise(String lang, {bool record = false});
 
   /// Ends the listen under way and keeps what was heard.
   void stop();
@@ -72,6 +106,7 @@ class FixedSpeechBrowser implements SpeechBrowser {
     this.heard = const BrowserHeard(<SpeechAlternative>[]),
     this.never = false,
     this.noDevice = false,
+    this.audio,
   });
 
   @override
@@ -91,9 +126,17 @@ class FixedSpeechBrowser implements SpeechBrowser {
   /// A device with no microphone: [askMicrophone] throws.
   final bool noDevice;
 
+  /// The audio the browser's recorder kept for each listen that hears
+  /// something, or null for a browser that cannot record beside the
+  /// recogniser.
+  final OwnAudio? audio;
+
   /// How often the microphone was asked for, listens begun, and cancels.
   int asked = 0;
   final List<String> listens = <String>[];
+
+  /// Whether each listen was asked to record beside the recogniser.
+  final List<bool> recordings = <bool>[];
   int cancels = 0;
   int stops = 0;
 
@@ -109,10 +152,13 @@ class FixedSpeechBrowser implements SpeechBrowser {
   }
 
   @override
-  BrowserSession recognise(String lang) {
+  BrowserSession recognise(String lang, {bool record = false}) {
     listens.add(lang);
+    recordings.add(record);
     return BrowserSession(
-      never ? Completer<BrowserHeard>().future : Future.value(heard),
+      never
+          ? Completer<BrowserHeard>().future
+          : Future.value(heard.withAudio(record ? audio : null)),
       () => cancels++,
     );
   }

@@ -7,6 +7,7 @@ import '../../app/routes.dart';
 import '../../app/shell_tab.dart';
 import '../../app/session.dart';
 import '../../app/unlocks.dart';
+import '../../core/feedback/content_report.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/progress/mastery.dart' show kKnownRecall;
@@ -18,11 +19,13 @@ import '../../ui/widgets/deck_tile.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/learn_button.dart';
 import '../../ui/widgets/page_parts.dart';
-import '../../ui/widgets/report_button.dart';
+import '../../ui/widgets/content_report.dart';
 import '../../ui/widgets/stat_tile.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
+import '../culture/culture_cards.dart';
 import '../review/review_waiting.dart' show pairOf, reviewPairsOf;
+import '../topics/unit_topics.dart';
 import 'deck_content.dart';
 import 'number_practice_tile.dart';
 import 'path_model.dart';
@@ -144,7 +147,7 @@ class _UnitPageState extends State<UnitPage> {
     final unit = unitOfDeck(state, widget.deckId, plan: widget.plan);
     if (unit == null) {
       return Scaffold(
-        appBar: AppBar(actions: const <Widget>[ReportButton()]),
+        appBar: AppBar(),
         body: state.status == CatalogStatus.loading
             ? Center(
                 child: CircularProgressIndicator(
@@ -227,7 +230,12 @@ class _UnitPageState extends State<UnitPage> {
                     label: Text(l10n.unitReview),
                   ),
                 ),
-              ReportButton(detail: decks.map((e) => e.id).join(', ')),
+              ContentReportButton(
+                target: ContentTarget.unit(
+                  decks.map((e) => e.id).join(', '),
+                  first.deck,
+                ),
+              ),
             ],
           ),
           body: ListView(
@@ -244,6 +252,8 @@ class _UnitPageState extends State<UnitPage> {
                 title: unitTitle(state, decks),
                 decks: decks,
               ),
+              UnitTopicChips(language: language.code, decks: decks),
+              UnitCultureCard(language: language.code, decks: decks),
               const SizedBox(height: 20),
               _Tiles(
                 content: content,

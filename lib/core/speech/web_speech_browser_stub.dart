@@ -14,10 +14,11 @@ class _NoBrowser implements SpeechBrowser {
   Future<bool> askMicrophone() async => false;
 
   @override
-  BrowserSession recognise(String lang) => BrowserSession(
-    Future<BrowserHeard>.value(const BrowserHeard.error('unsupported')),
-    () {},
-  );
+  BrowserSession recognise(String lang, {bool record = false}) =>
+      BrowserSession(
+        Future<BrowserHeard>.value(const BrowserHeard.error('unsupported')),
+        () {},
+      );
 
   @override
   void stop() {}

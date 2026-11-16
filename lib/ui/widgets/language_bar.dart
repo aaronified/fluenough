@@ -9,11 +9,11 @@ import 'package:flutter/services.dart';
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
+import '../../app/language_work.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../theme.dart';
 import 'language_glyph.dart';
-import 'report_button.dart';
 import '../card_text_scale.dart';
 
 /// The three screens the language bar is on (#528).
@@ -26,15 +26,12 @@ class LanguageBarFrame extends StatefulWidget {
   const LanguageBarFrame({
     super.key,
     required this.screen,
-    required this.reportDetail,
     required this.child,
     this.below,
   });
 
   final LanguageBarScreen screen;
 
-  /// As [ReportButton.detail]: the tab's name.
-  final String reportDetail;
   final Widget child;
   final Widget? below;
 
@@ -59,11 +56,7 @@ class _LanguageBarFrameState extends State<LanguageBarFrame> {
   Widget build(BuildContext context) => Column(
     crossAxisAlignment: CrossAxisAlignment.stretch,
     children: <Widget>[
-      LanguageBar(
-        screen: widget.screen,
-        reportDetail: widget.reportDetail,
-        scrolledUnder: _scrolledUnder,
-      ),
+      LanguageBar(screen: widget.screen, scrolledUnder: _scrolledUnder),
       ?widget.below,
       Expanded(
         child: NotificationListener<ScrollNotification>(
@@ -80,16 +73,16 @@ class _LanguageBarFrameState extends State<LanguageBarFrame> {
 /// centre (#703, #682; `docs/mockups/language-wheel.html`, approved by the
 /// owner, 2026-10-21: "Works. Approved.", removed once built).
 ///
-/// * The wheel is centred between two 48 wide slots: on Progress the left
-///   one holds the All button, elsewhere it stays empty so that nothing
-///   moves between the tabs; the bug report button is the right one.
+/// * The wheel takes the bar's whole width, the pill at its centre, the
+///   same on every tab (`docs/mockups/menu-and-report.html`, approved by
+///   the owner, 2026-11-16: no bug button, no All button).
 /// * The selection is a pill fixed at the centre and the languages' glyphs
 ///   pass it, one every [detent] dp, each smaller and fainter the further
 ///   it is from the centre, whether the wheel moves or rests. Both ends
-///   fade out, and nothing is drawn past the wheel's own width, so that
-///   nothing reaches the bug button. There are no ends to the wheel: past
-///   the last language comes the first, and a few languages repeat round
-///   it. At launch the pill is already grown to the name.
+///   fade out, and nothing is drawn past the wheel's own width. There are
+///   no ends to the wheel: past the last language comes the first, and a
+///   few languages repeat round it. At launch the pill is already grown to
+///   the name.
 /// * A finger moves the wheel 1:1, a long drag passes many languages. Each
 ///   language is a detent, with a tick (`Haptics.select`),
 ///   in a drag and in a fling.
@@ -113,14 +106,10 @@ class LanguageBar extends StatefulWidget {
   const LanguageBar({
     super.key,
     required this.screen,
-    required this.reportDetail,
     this.scrolledUnder = false,
   });
 
   final LanguageBarScreen screen;
-
-  /// As [ReportButton.detail].
-  final String reportDetail;
 
   /// Whether the screen has scrolled under the bar: a thin line parts them.
   final bool scrolledUnder;
@@ -372,12 +361,18 @@ class _LanguageBarState extends State<LanguageBar>
     );
     final wanted =
         16 +
-        width(glyph, label.copyWith(fontWeight: FontWeight.w400)) +
+        width(
+          glyph,
+          label.copyWith(
+            fontWeight: FontWeight.w400,
+            fontSize: 14 * glyphScaleOf(language),
+          ),
+        ) +
         10 +
         width(language.name, label) +
         16;
-    // The wheel is between the two slots and the bar's own padding.
-    final room = (context.size?.width ?? 390) - 104;
+    // The wheel has the bar's whole width, less its own padding.
+    final room = (context.size?.width ?? 390) - 8;
     _fullWidth = math.min(
       math.max(wanted, LanguageBar.pillWidth),
       math.max(room, LanguageBar.pillWidth),
@@ -562,6 +557,7 @@ class _LanguageBarState extends State<LanguageBar>
     ColorScheme scheme,
     TextTheme text,
     double half,
+    bool Function(String code) hasWork,
   ) {
     final pos = _pos!;
     final centre = pos.round();
@@ -596,17 +592,20 @@ class _LanguageBarState extends State<LanguageBar>
                   width: LanguageBar.detent,
                   height: 32,
                   child: Center(
-                    child: Text(
-                      languageGlyph(language, decks),
-                      locale: Locale(language.code),
-                      textScaler: TextScaler.noScaling,
-                      maxLines: 1,
-                      softWrap: false,
-                      style: text.titleMedium!.copyWith(
-                        fontSize: 18,
-                        height: 24 / 18,
-                        fontWeight: FontWeight.w600,
-                        color: scheme.onSurface,
+                    child: LanguageDotted(
+                      show: hasWork(language.code),
+                      child: Text(
+                        languageGlyph(language, decks),
+                        locale: Locale(language.code),
+                        textScaler: TextScaler.noScaling,
+                        maxLines: 1,
+                        softWrap: false,
+                        style: text.titleMedium!.copyWith(
+                          fontSize: 18 * glyphScaleOf(language),
+                          height: 24 / 18 / glyphScaleOf(language),
+                          fontWeight: FontWeight.w600,
+                          color: scheme.onSurface,
+                        ),
                       ),
                     ),
                   ),
@@ -619,6 +618,11 @@ class _LanguageBarState extends State<LanguageBar>
     }
     return out;
   }
+
+  /// [label] with ", has cards to do" when the language has something to do
+  /// (#681), which the dot shows to the eye only.
+  String _withWork(AppLocalizations l10n, String label, bool hasWork) =>
+      hasWork ? l10n.languageHasCardsToDo(label) : label;
 
   /// How far the pill has grown, 0 to 1, as the neighbours follow it.
   double get _growAmount => _expansionCurve.transform(_grow.value);
@@ -634,6 +638,7 @@ class _LanguageBarState extends State<LanguageBar>
     LanguageInfo language,
     String glyph,
     bool allOn,
+    bool hasWork,
   ) {
     final scheme = theme.colorScheme;
     final scale = phoneTextScaleOf(context);
@@ -671,11 +676,17 @@ class _LanguageBarState extends State<LanguageBar>
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
-                          Text(
-                            glyph,
-                            locale: Locale(language.code),
-                            maxLines: 1,
-                            style: label.copyWith(fontWeight: FontWeight.w400),
+                          LanguageDotted(
+                            show: hasWork,
+                            child: Text(
+                              glyph,
+                              locale: Locale(language.code),
+                              maxLines: 1,
+                              style: label.copyWith(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 14 * glyphScaleOf(language),
+                              ),
+                            ),
                           ),
                           const SizedBox(width: 10),
                           Flexible(
@@ -745,13 +756,20 @@ class _LanguageBarState extends State<LanguageBar>
             child: Stack(
               alignment: Alignment.center,
               children: <Widget>[
-                _pill(theme, here, glyph, allOn),
+                _pill(
+                  theme,
+                  here,
+                  glyph,
+                  allOn,
+                  state.languageHasWork(here.code),
+                ),
                 ..._glyphs(
                   choices,
                   state.decks,
                   scheme,
                   theme.textTheme,
                   box.maxWidth / 2,
+                  state.languageHasWork,
                 ),
               ],
             ),
@@ -790,6 +808,7 @@ class _LanguageBarState extends State<LanguageBar>
                   language: language,
                   glyph: languageGlyph(language, state.decks),
                   selected: language.code == shown,
+                  hasWork: state.languageHasWork(language.code),
                 ),
               ),
             ),
@@ -797,10 +816,10 @@ class _LanguageBarState extends State<LanguageBar>
         builder: (context, _, _) => Semantics(
           container: true,
           button: true,
-          label: l10n.languageBarLabel(
-            choices[at].name,
-            at + 1,
-            choices.length,
+          label: _withWork(
+            l10n,
+            l10n.languageBarLabel(choices[at].name, at + 1, choices.length),
+            state.languageHasWork(choices[at].code),
           ),
           onTap: _toggleMenu,
           onTapHint: l10n.languageBarHint,
@@ -854,23 +873,7 @@ class _LanguageBarState extends State<LanguageBar>
           ),
         ),
       ),
-      child: Row(
-        children: <Widget>[
-          SizedBox(
-            key: const ValueKey<String>('language-bar-all-slot'),
-            width: 48,
-            height: 48,
-            child: _onProgress && choices.length > 1
-                ? _AllButton(
-                    on: allOn,
-                    onPressed: () => state.settings.progressAll = !allOn,
-                  )
-                : null,
-          ),
-          Expanded(child: zone),
-          ReportButton(detail: widget.reportDetail),
-        ],
-      ),
+      child: zone,
     );
 
     // The turn works the same wherever it starts on the bar: on the wheel,
@@ -932,6 +935,7 @@ class _LanguageBarState extends State<LanguageBar>
                         language: language,
                         background: scheme.onInverseSurface,
                         foreground: scheme.inverseSurface,
+                        hasWork: state.languageHasWork(language.code),
                       ),
                       const SizedBox(width: 8),
                       Text(
@@ -961,6 +965,7 @@ class LanguageBarChip extends StatelessWidget {
     required this.glyph,
     required this.selected,
     this.filled = true,
+    this.hasWork = false,
   });
 
   final LanguageInfo language;
@@ -971,6 +976,10 @@ class LanguageBarChip extends StatelessWidget {
   /// transparent, as where the fill is drawn behind it.
   final bool filled;
 
+  /// Whether the language has a review due or a new card waiting: the chip
+  /// draws a dot on its glyph and says so to a screen reader (#681).
+  final bool hasWork;
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -979,7 +988,7 @@ class LanguageBarChip extends StatelessWidget {
     final foreground = selected
         ? scheme.onSecondaryContainer
         : scheme.onSurfaceVariant;
-    return Container(
+    final chip = Container(
       constraints: BoxConstraints(minHeight: 32 + 12 * (scale - 1)),
       padding: const EdgeInsetsDirectional.fromSTEB(7, 4, 11, 4),
       decoration: BoxDecoration(
@@ -1003,6 +1012,7 @@ class LanguageBarChip extends StatelessWidget {
             foreground: selected
                 ? scheme.onSurface
                 : scheme.onSecondaryContainer,
+            hasWork: hasWork,
           ),
           const SizedBox(width: 6),
           Text(
@@ -1014,60 +1024,13 @@ class LanguageBarChip extends StatelessWidget {
         ],
       ),
     );
-  }
-}
-
-/// Progress's All: the word, faded while off, filled while on. A toggle.
-class _AllButton extends StatelessWidget {
-  const _AllButton({required this.on, required this.onPressed});
-
-  final bool on;
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    final scheme = theme.colorScheme;
-    return Semantics(
-      container: true,
-      button: true,
-      toggled: on,
-      label: l10n.languageBarAllLabel,
-      onTap: onPressed,
-      onTapHint: l10n.languageBarAllHint,
-      excludeSemantics: true,
-      child: InkWell(
-        customBorder: const CircleBorder(),
-        onTap: onPressed,
-        child: Center(
-          child: Container(
-            constraints: const BoxConstraints(minWidth: 40, minHeight: 32),
-            padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: on ? scheme.secondaryContainer : null,
-              borderRadius: BorderRadius.circular(AppRadii.chip),
-            ),
-            child: Text(
-              l10n.languageBarAll,
-              maxLines: 1,
-              textScaler: TextScaler.noScaling,
-              style: theme.textTheme.labelLarge!.copyWith(
-                fontSize: 14,
-                height: 20 / 14,
-                fontWeight: FontWeight.w700,
-                letterSpacing: 0.2,
-                color: on
-                    ? scheme.onSecondaryContainer
-                    : scheme.onSurface.withValues(
-                        alpha: LanguageBar.fadedAlpha,
-                      ),
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
+    return hasWork
+        ? Semantics(
+            label: AppLocalizations.of(context)!
+                .languageHasCardsToDo(language.name),
+            excludeSemantics: true,
+            child: chip,
+          )
+        : chip;
   }
 }

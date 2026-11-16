@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../core/feedback/content_report.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
@@ -58,7 +59,7 @@ class RearrangeDrill extends StatelessWidget {
       deckName: session.deck.deck.name,
       position: session.position,
       total: session.total,
-      reportDetail: '${card.id} in ${session.deck.id}',
+      report: ContentTarget.card(card.id, deck: session.deck.deck),
       progress: session.progress,
       onClose: onClose,
       going: goingOn(session, answered: answer != null),
@@ -136,9 +137,7 @@ class RearrangeDrill extends StatelessWidget {
       actions: <Widget>[
         if (answer == null)
           FilledButton(
-            onPressed: placed.length == tiles.length
-                ? session.checkOrder
-                : null,
+            onPressed: session.canCheck ? session.checkOrder : null,
             style: AppButtonStyles.tall(context),
             child: Text(l10n.drillCheck),
           ),

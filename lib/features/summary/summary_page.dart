@@ -14,7 +14,6 @@ import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/expressive_shape.dart';
 import '../../ui/widgets/mode_pill.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/stat_tile.dart';
 
 /// The end of a session: a pill per skill with its right answers, the streak, what is due tomorrow.
@@ -78,161 +77,153 @@ class SummaryPage extends StatelessWidget {
       earned: !empty,
       child: Scaffold(
         body: SafeArea(
-          child: WithReportButton(
-            detail: finished?.code,
-            child: CustomScrollView(
-              slivers: <Widget>[
-                SliverPadding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16, 56, 16, 0),
-                  sliver: SliverList.list(
-                    children: <Widget>[
-                      const _Tick(),
-                      const SizedBox(height: 20),
-                      Semantics(
-                        header: true,
-                        child: Text(
-                          finished == null
-                              ? l10n.summaryTitle
-                              : l10n.summaryLanguageDone(finished.name),
-                          textAlign: TextAlign.center,
-                          style: theme.textTheme.headlineLarge!.copyWith(
-                            fontWeight: FontWeight.w700,
-                          ),
+          child: CustomScrollView(
+            slivers: <Widget>[
+              SliverPadding(
+                padding: const EdgeInsetsDirectional.fromSTEB(16, 56, 16, 0),
+                sliver: SliverList.list(
+                  children: <Widget>[
+                    const _Tick(),
+                    const SizedBox(height: 20),
+                    Semantics(
+                      header: true,
+                      child: Text(
+                        finished == null
+                            ? l10n.summaryTitle
+                            : l10n.summaryLanguageDone(finished.name),
+                        textAlign: TextAlign.center,
+                        style: theme.textTheme.headlineLarge!.copyWith(
+                          fontWeight: FontWeight.w700,
                         ),
                       ),
-                      if (empty && finished == null) ...<Widget>[
-                        const SizedBox(height: 12),
-                        Text(
-                          l10n.summaryEmpty,
-                          textAlign: TextAlign.center,
-                          style: theme.textTheme.bodyLarge!.copyWith(
-                            color: scheme.onSurfaceVariant,
-                          ),
-                        ),
-                      ],
-                      if (!empty) ...<Widget>[
-                        const SizedBox(height: 24),
-                        _BySkill(result: shown),
-                      ],
-                      if (total > 0) ...<Widget>[
-                        const SizedBox(height: 24),
-                        Text(
-                          l10n.todayDailyTotal(total),
-                          textAlign: TextAlign.center,
-                          style: theme.textTheme.titleMedium,
-                        ),
-                      ],
-                      if (!empty || finished != null) ...<Widget>[
-                        const SizedBox(height: 24),
-                        _Streak(streak: state.progress.streakAt(now)),
-                      ],
-                      if (unlocked != null) ...<Widget>[
-                        const SizedBox(height: 24),
-                        _Unlocked(unlocked: unlocked),
-                      ],
-                      const SizedBox(height: 24),
+                    ),
+                    if (empty && finished == null) ...<Widget>[
+                      const SizedBox(height: 12),
                       Text(
-                        l10n.summaryNextDue(state.dueTomorrow()),
+                        l10n.summaryEmpty,
                         textAlign: TextAlign.center,
-                        style: theme.textTheme.bodyMedium!.copyWith(
+                        style: theme.textTheme.bodyLarge!.copyWith(
                           color: scheme.onSurfaceVariant,
                         ),
                       ),
                     ],
-                  ),
-                ),
-                SliverFillRemaining(
-                  hasScrollBody: false,
-                  child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(
-                      16,
-                      24,
-                      16,
-                      20,
+                    if (!empty) ...<Widget>[
+                      const SizedBox(height: 24),
+                      _BySkill(result: shown),
+                    ],
+                    if (total > 0) ...<Widget>[
+                      const SizedBox(height: 24),
+                      Text(
+                        l10n.todayDailyTotal(total),
+                        textAlign: TextAlign.center,
+                        style: theme.textTheme.titleMedium,
+                      ),
+                    ],
+                    if (!empty || finished != null) ...<Widget>[
+                      const SizedBox(height: 24),
+                      _Streak(streak: state.progress.streakAt(now)),
+                    ],
+                    if (unlocked != null) ...<Widget>[
+                      const SizedBox(height: 24),
+                      _Unlocked(unlocked: unlocked),
+                    ],
+                    const SizedBox(height: 24),
+                    Text(
+                      l10n.summaryNextDue(state.dueTomorrow()),
+                      textAlign: TextAlign.center,
+                      style: theme.textTheme.bodyMedium!.copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
                     ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      spacing: 8,
-                      children: <Widget>[
-                        if (next.isNotEmpty) ...<Widget>[
-                          Text(
-                            l10n.summaryNextLanguage,
-                            textAlign: TextAlign.center,
-                            style: theme.textTheme.titleMedium,
-                          ),
-                          for (final language in next)
-                            FilledButton.tonal(
-                              style: AppButtonStyles.secondary(context),
-                              onPressed: () {
-                                // The bar follows: Today, Decks and Progress
-                                // show the language started (#528).
-                                state.showLanguage(language.code);
-                                AppNavigator.nextDrill(
-                                  context,
-                                  DrillRequest.today(language: language.code),
-                                );
-                              },
-                              child: Text(
-                                l10n.summaryStartLanguage(
-                                  language.name,
-                                  state
-                                      .buildSession(
-                                        DrillRequest.today(
-                                          language: language.code,
-                                        ),
-                                      )
-                                      .length,
-                                ),
-                              ),
-                            ),
-                          const SizedBox(height: 8),
-                        ],
-                        FilledButton(
-                          style: AppButtonStyles.closing(context),
-                          onPressed: () => AppNavigator.backToShell(
-                            context,
-                            tab: ShellTab.today,
-                          ),
-                          child: Text(l10n.commonDone),
+                  ],
+                ),
+              ),
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(16, 24, 16, 20),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    spacing: 8,
+                    children: <Widget>[
+                      if (next.isNotEmpty) ...<Widget>[
+                        Text(
+                          l10n.summaryNextLanguage,
+                          textAlign: TextAlign.center,
+                          style: theme.textTheme.titleMedium,
                         ),
-                        if (finished != null && !keepGoingWork)
-                          Text(
-                            l10n.summaryAllCaughtUp,
-                            textAlign: TextAlign.center,
-                            style: theme.textTheme.bodyMedium!.copyWith(
-                              color: scheme.onSurfaceVariant,
-                            ),
-                          ),
-                        if (finished != null && keepGoingWork)
+                        for (final language in next)
                           FilledButton.tonal(
                             style: AppButtonStyles.secondary(context),
-                            onPressed: () => AppNavigator.startDrill(
-                              context,
-                              DrillRequest.daily(
-                                language: finished.code,
-                                keepGoing: true,
+                            onPressed: () {
+                              // The bar follows: Today, Decks and Progress
+                              // show the language started (#528).
+                              state.showLanguage(language.code);
+                              AppNavigator.nextDrill(
+                                context,
+                                DrillRequest.today(language: language.code),
+                              );
+                            },
+                            child: Text(
+                              l10n.summaryStartLanguage(
+                                language.name,
+                                state
+                                    .buildSession(
+                                      DrillRequest.today(
+                                        language: language.code,
+                                      ),
+                                    )
+                                    .length,
                               ),
                             ),
-                            child: Text(l10n.summaryKeepGoing),
                           ),
-                        if (offersLesson)
-                          FilledButton.tonal(
-                            style: AppButtonStyles.secondary(context),
-                            onPressed: () =>
-                                AppNavigator.startDrill(context, lesson),
-                            child: Text(
-                              state.lessonDoneToday(lesson.language!)
-                                  ? l10n.summaryAnotherLesson
-                                  : l10n.summaryLesson,
+                        const SizedBox(height: 8),
+                      ],
+                      FilledButton(
+                        style: AppButtonStyles.closing(context),
+                        onPressed: () => AppNavigator.backToShell(
+                          context,
+                          tab: ShellTab.today,
+                        ),
+                        child: Text(l10n.commonDone),
+                      ),
+                      if (finished != null && !keepGoingWork)
+                        Text(
+                          l10n.summaryAllCaughtUp,
+                          textAlign: TextAlign.center,
+                          style: theme.textTheme.bodyMedium!.copyWith(
+                            color: scheme.onSurfaceVariant,
+                          ),
+                        ),
+                      if (finished != null && keepGoingWork)
+                        FilledButton.tonal(
+                          style: AppButtonStyles.secondary(context),
+                          onPressed: () => AppNavigator.startDrill(
+                            context,
+                            DrillRequest.daily(
+                              language: finished.code,
+                              keepGoing: true,
                             ),
                           ),
-                      ],
-                    ),
+                          child: Text(l10n.summaryKeepGoing),
+                        ),
+                      if (offersLesson)
+                        FilledButton.tonal(
+                          style: AppButtonStyles.secondary(context),
+                          onPressed: () =>
+                              AppNavigator.startDrill(context, lesson),
+                          child: Text(
+                            state.lessonDoneToday(lesson.language!)
+                                ? l10n.summaryAnotherLesson
+                                : l10n.summaryLesson,
+                          ),
+                        ),
+                    ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

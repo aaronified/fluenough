@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 
 import '../core/backup/app_backup.dart';
 import '../core/data/database.dart';
+import '../core/models/completed_work.dart';
 import 'app_info.dart';
 import 'app_log.dart';
 import 'backup_files.dart';
@@ -10,8 +11,20 @@ import 'memory_progress.dart';
 import 'settings.dart';
 
 export '../core/backup/app_backup.dart'
-    show AppBackup, BackupInfo, BackupKind, NewerBackupException;
+    show
+        AppBackup,
+        BackupInfo,
+        BackupKind,
+        BackupPrivatePackage,
+        NewerBackupException;
 export 'backup_store.dart' show StoredBackup;
+
+/// What a backup carries of the private language packages (#1017): the
+/// packages on the phone, and the retired ids of the ones removed.
+typedef PrivateSnapshot = ({
+  List<BackupPrivatePackage> packages,
+  Map<String, List<String>> tombstones,
+});
 
 /// Backing up and restoring the whole app (#470; docs/BACKUP-FORMAT.md):
 /// Back up now, Restore from a file, and the recent backups kept in the
@@ -32,6 +45,10 @@ class Backups extends ChangeNotifier {
     required this._log,
     this._languagesOnPhone = _noLanguages,
     this._restored = _nothing,
+    this._completedWorks = _noWorks,
+    this._restoreMarks = _keepMarks,
+    this._privateSnapshot = _noPrivate,
+    this._restorePrivate = _keepPrivate,
     this.appVersion = AppInfo.version,
   });
 
@@ -52,6 +69,27 @@ class Backups extends ChangeNotifier {
   final Set<String> Function() _languagesOnPhone;
   final void Function(List<String> languages) _restored;
 
+  /// The recommended works marked completed, for a backup to carry as lines of
+  /// its log (deck-kinds plan, D13, T25), and what a restore does with the
+  /// marks of the backup it restores.
+  final List<CompletedWork> Function() _completedWorks;
+  final Future<void> Function(List<CompletedWork> works) _restoreMarks;
+
+  /// The private language packages on the phone, for a backup to carry
+  /// (#1017), and what a restore does with the ones of the backup it
+  /// restores.
+  final Future<PrivateSnapshot> Function() _privateSnapshot;
+  final Future<List<String>> Function(
+    List<BackupPrivatePackage> packages,
+    Map<String, List<String>> tombstones,
+  )
+  _restorePrivate;
+
+  /// The names of the private packages the last restore left out, because
+  /// they no longer pass the import's checks: the screen tells the learner.
+  List<String> get privateSkipped => _privateSkipped;
+  List<String> _privateSkipped = const <String>[];
+
   /// This build's version, which a backup records.
   final String appVersion;
 
@@ -59,6 +97,16 @@ class Backups extends ChangeNotifier {
 
   static Set<String> _noLanguages() => const <String>{};
   static void _nothing(List<String> _) {}
+  static List<CompletedWork> _noWorks() => const <CompletedWork>[];
+  static Future<void> _keepMarks(List<CompletedWork> _) async {}
+  static Future<PrivateSnapshot> _noPrivate() async => (
+    packages: const <BackupPrivatePackage>[],
+    tombstones: const <String, List<String>>{},
+  );
+  static Future<List<String>> _keepPrivate(
+    List<BackupPrivatePackage> _,
+    Map<String, List<String>> _,
+  ) async => const <String>[];
 
   /// The backups kept on the phone, newest first. Empty until [load].
   List<StoredBackup> get recent => _recent;
@@ -74,12 +122,35 @@ class Backups extends ChangeNotifier {
     appVersion: appVersion,
     schemaVersion: AppDatabase.currentSchemaVersion,
     createdAt: _clock(),
-    log: progress.exportJsonl(),
+    log: progress.exportJsonl(completedWorks: _completedWorks()),
     settings: settings.toStored(),
     downloads: (_languagesOnPhone().toList()..sort()),
     kind: kind,
     forVersion: forVersion,
   );
+
+  /// [snapshot] with the private language packages (#1017): they exist
+  /// nowhere else, so every backup carries them. One that cannot be read is
+  /// logged and left out, never a failed backup.
+  Future<AppBackup> _snapshotWithPrivate(
+    BackupKind kind, {
+    String? forVersion,
+  }) async {
+    final base = snapshot(kind, forVersion: forVersion);
+    try {
+      final own = await _privateSnapshot();
+      if (own.packages.isEmpty && own.tombstones.isEmpty) return base;
+      return base.withPrivate(own.packages, own.tombstones);
+    } on Object catch (e) {
+      _log.warning('Private languages not in the backup: ${e.runtimeType}');
+      return base;
+    }
+  }
+
+  /// Offers [bytes] to the learner to save as [fileName] (a private language
+  /// package, #1017). Whether it was saved.
+  Future<bool> saveFile(String fileName, Uint8List bytes) =>
+      _files.save(fileName, bytes);
 
   /// Keeps a backup of the app as it is in the app's own storage, made as
   /// [kind], and forgets those past the last [keepRecent], and the last
@@ -87,7 +158,9 @@ class Backups extends ChangeNotifier {
   /// written; an update's caller catches that, since a failed backup never
   /// stops an update.
   Future<StoredBackup> keep(BackupKind kind, {String? forVersion}) async {
-    final stored = await _store.add(snapshot(kind, forVersion: forVersion));
+    final stored = await _store.add(
+      await _snapshotWithPrivate(kind, forVersion: forVersion),
+    );
     await _prune();
     _log.event('Backup kept: ${kind.name}');
     return stored;
@@ -109,7 +182,7 @@ class Backups extends ChangeNotifier {
   /// Back up now: offers the file to the learner to save where they
   /// choose, and keeps a copy here. False if they did not save it.
   Future<bool> backUpNow() async {
-    final backup = snapshot(BackupKind.you);
+    final backup = await _snapshotWithPrivate(BackupKind.you);
     final saved = await _files.save(
       AppBackup.fileName(backup.createdAt),
       backup.encode(),
@@ -163,6 +236,7 @@ class Backups extends ChangeNotifier {
       backup.reviews,
       backup.leechActions,
       fitted: backup.fitted,
+      withdrawals: backup.withdrawals,
       restore: RestoreRecord(
         at: _clock(),
         backupCreatedAt: backup.createdAt,
@@ -172,8 +246,38 @@ class Backups extends ChangeNotifier {
         keptCopy: copy.id,
       ),
     );
+    // The learner's own private language packages come back too, before the
+    // settings, which may name one of their languages (#1017). A backup
+    // without any leaves the packages on the phone as they are.
+    _privateSkipped = const <String>[];
+    if (backup.privatePackages.isNotEmpty ||
+        backup.privateTombstones.isNotEmpty) {
+      try {
+        _privateSkipped = await _restorePrivate(
+          backup.privatePackages,
+          backup.privateTombstones,
+        );
+      } on Object catch (e) {
+        _log.warning('Private languages not restored: ${e.runtimeType}');
+        _privateSkipped = <String>[
+          for (final p in backup.privatePackages) p.name,
+        ];
+      }
+    }
+    // The marks of completed works are not part of the append-only log: the
+    // restore makes them those of the backup, which an older one lacks.
+    try {
+      await _restoreMarks(backup.completedWorks);
+    } on Object catch (e) {
+      _log.warning('Completed works not restored: ${e.runtimeType}');
+    }
     final defaults = SettingsNotifier();
-    final stored = <String, String>{...defaults.toStored(), ...backup.settings};
+    // Without the culture map the defaults hold: an old backup that has only
+    // the global culture keys must migrate, not read an empty map.
+    final stored = <String, String>{
+      ...defaults.toStored()..remove('culture_by_language'),
+      ...backup.settings,
+    };
     defaults.dispose();
     settings.restore(stored);
     _log.event('Restored from a backup: ${backup.reviews.length} reviews');

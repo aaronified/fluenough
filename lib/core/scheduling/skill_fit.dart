@@ -2,6 +2,7 @@ import '../models/leech_action.dart';
 import 'ask.dart';
 import 'fsrs.dart';
 import 'fsrs_fit.dart';
+import 'placement_withdrawal.dart' show hasCreditShape;
 import 'replay.dart';
 import 'skill_parameters.dart';
 
@@ -93,15 +94,24 @@ abstract final class SkillFit {
 
   /// [reviews], oldest first, by skill: each pair's history as the
   /// scheduler replays it, a reset pair's from its reset on.
+  ///
+  /// Placement credit (`hasCreditShape`: Easy, no time taken, no answer,
+  /// asked its own way) is not an answer the learner gave, so it is left out
+  /// of the histories and the counts a fit reads, withdrawn or not (wiki,
+  /// Plan-Placement-V2, 17.10); the replay still schedules the card from it.
+  /// A caller that shows how words are scheduled, not one that fits, passes
+  /// [withPlacementCredit] to keep it.
   static Map<SkillKey, SkillHistory> histories(
     Iterable<LoggedReview> reviews, {
     LeechEffects effects = LeechEffects.none,
+    bool withPlacementCredit = false,
   }) {
     final bySkill = <SkillKey, Map<Object, List<FitReview>>>{};
     final counts = <SkillKey, int>{};
     for (final review in reviews) {
       // A walkthrough's view of a card is no answer to fit (#694).
       if (review.asked == Ask.teach) continue;
+      if (!withPlacementCredit && hasCreditShape(review)) continue;
       final skill = skillOf(review.key);
       counts[skill] = (counts[skill] ?? 0) + 1;
       final resetAt = effects.resetAt(review.key);
@@ -255,6 +265,7 @@ abstract final class SkillFit {
     for (final MapEntry(:key, :value) in histories(
       reviews,
       effects: effects,
+      withPlacementCredit: true,
     ).entries)
       pace(value, parameters.of(key.language, key.mode), now),
   ];

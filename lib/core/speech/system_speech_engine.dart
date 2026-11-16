@@ -5,7 +5,9 @@ import 'package:speech_to_text/speech_recognition_error.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 
+import '../sound/sound_check.dart' show peakOfPcm16;
 import 'mic_capture.dart';
+import 'native_listen.dart';
 import 'speech_engine.dart';
 
 /// The operating system's speech recogniser, through the `speech_to_text`
@@ -17,12 +19,29 @@ import 'speech_engine.dart';
 /// callbacks into one result, with a deadline: a recogniser that never
 /// answers yields no match rather than a session that waits for ever.
 class SystemSpeechEngine implements SpeechEngine {
-  SystemSpeechEngine([SpeechToText? plugin, MicCapture? capture])
-    : _plugin = plugin ?? SpeechToText(),
-      // In a browser two readers of the microphone are not safe, and the
-      // web build uses `WebSpeechEngine`; a capture given here is ignored
-      // rather than started (the same constant as Flutter's `kIsWeb`).
-      _capture = _inBrowser ? null : capture;
+  SystemSpeechEngine([
+    SpeechToText? plugin,
+    MicCapture? capture,
+    NativeListener? native,
+    this.recordWhileRecognising = false,
+  ]) : _plugin = plugin ?? SpeechToText(),
+       // In a browser two readers of the microphone are not safe, and the
+       // web build uses `WebSpeechEngine`; a capture given here is ignored
+       // rather than started (the same constant as Flutter's `kIsWeb`).
+       // Nor is one used unless [recordWhileRecognising] is on (#1107).
+       _capture = _inBrowser || !recordWhileRecognising ? null : capture,
+       _native = _inBrowser || !recordWhileRecognising ? null : native;
+
+  /// THE switch for recording at the same time as the online recogniser
+  /// listens (#1107). Off (the default, and what 0.9.3 did for a listen with
+  /// no capture of our own): the plugin's plain listen is the only reader of
+  /// the microphone, no capture runs and the recogniser is not fed through
+  /// `RecognizerIntent.EXTRA_AUDIO_SOURCE`, so [SpeechHeard.ownAudio] is
+  /// null and "Hear yourself" records a second take after the attempt. On:
+  /// the [MicCapture] and the [NativeListener] given to the constructor are
+  /// used, kept for the on-device listener that will record and recognise
+  /// from one capture of its own.
+  final bool recordWhileRecognising;
 
   static const bool _inBrowser = bool.fromEnvironment('dart.library.js_util');
 
@@ -36,6 +55,18 @@ class SystemSpeechEngine implements SpeechEngine {
   /// so that a phone that cannot share the microphone listens as before.
   final MicCapture? _capture;
   int _unmatchedWithCapture = 0;
+
+  /// The listen that owns the microphone and feeds the recogniser from it
+  /// (Android 13 and later, ADR-0054 option 2), so that the audio kept is
+  /// exactly what was recognised and no second reader of the microphone is
+  /// needed. Null where there is none. It is tried first; a phone, or a
+  /// recogniser, that cannot do it listens the plain way, as before, and is
+  /// not asked again after two listens in a row that failed on this side or
+  /// heard nothing.
+  final NativeListener? _native;
+  int _nativeTrouble = 0;
+  bool _nativeOpen() =>
+      _native != null && _nativeTrouble < _captureGivesUpAfter;
 
   /// After this many listens in a row that heard nothing while the capture
   /// ran, the capture is given up for good.
@@ -127,6 +158,10 @@ class SystemSpeechEngine implements SpeechEngine {
     } on SpeechError catch (e) {
       return SpeechHeard.failed(SpeechFailure.noRecogniser, code: e.code);
     }
+    if (_nativeOpen()) {
+      final heard = await _listenNative(bcp47, onDevice, listenFor);
+      if (heard != null) return heard;
+    }
     final capture = _capturing ? _capture : null;
     if (capture != null) await capture.finish();
     _listening?.complete(const SpeechHeard.failed(SpeechFailure.other));
@@ -180,8 +215,70 @@ class SystemSpeechEngine implements SpeechEngine {
     return SpeechHeard(heard.alternatives, ownAudio: audio);
   }
 
+  /// A listen through the native side, or null when the plain way should
+  /// listen instead.
+  Future<SpeechHeard?> _listenNative(
+    String bcp47,
+    bool onDevice,
+    Duration listenFor,
+  ) async {
+    final native = _native!;
+    try {
+      if (!await native.available) {
+        _nativeTrouble = _captureGivesUpAfter;
+        return null;
+      }
+      final result = await native
+          .listen(bcp47: bcp47, onDevice: onDevice, listenFor: listenFor)
+          .timeout(
+            listenFor + _grace + const Duration(seconds: 2),
+            onTimeout: () {
+              unawaited(native.cancel());
+              return const NativeListenResult(error: 'exception');
+            },
+          );
+      if (result.fallsBack) {
+        _nativeTrouble++;
+        return null;
+      }
+      final error = result.error;
+      // An aborted listen (the app was paused) is final: listening again
+      // would reopen the microphone in the background.
+      if (error == 'aborted') {
+        return SpeechHeard.failed(
+          failureOf('aborted', onDevice: onDevice),
+          code: 'aborted',
+        );
+      }
+      // Any other failure, and above all a no-match, of the piped listen is
+      // not final (#1107). Since 0.9.4 the recogniser is fed through
+      // RecognizerIntent.EXTRA_AUDIO_SOURCE, and some recognisers (Google's,
+      // for te-IN) take that stream and answer no match to every attempt
+      // even though the stream holds a voice. The piped listen is the
+      // best-effort one: the same attempt listens again the plain way (the
+      // recogniser's own microphone, as in 0.9.3), whose verdict is the one
+      // the learner sees. Two such listens in a row and the piped route is
+      // not tried again this session.
+      if (error != null || result.alternatives.isEmpty) {
+        _nativeTrouble++;
+        return null;
+      }
+      final audio = result.audio;
+      final voiced =
+          audio != null && peakOfPcm16(audio.pcm16) >= RecordMicCapture.silence;
+      _nativeTrouble = 0;
+      // A stream that is only silence was not the learner's voice (the phone
+      // shut the microphone to us): the drill records a second take instead.
+      return SpeechHeard(result.alternatives, ownAudio: voiced ? audio : null);
+    } on Object {
+      _nativeTrouble++;
+      return null;
+    }
+  }
+
   @override
   Future<void> stop() async {
+    unawaited(_native?.cancel());
     try {
       await _plugin.stop();
     } catch (e) {

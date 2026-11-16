@@ -41,7 +41,7 @@ final List<GalleryEntry> drillGalleryEntries = <GalleryEntry>[
     id: 'drill-recognition-revealed',
     section: GallerySection.drills,
     label: 'Recognition, self-grade', // ui-literal-ok: debug-only gallery
-    note: 'Again, Hard, Good, Easy', // ui-literal-ok: debug-only gallery
+    note: 'Again, Hard, Okay, Easy', // ui-literal-ok: debug-only gallery
     builder: (_) => DrillPage(
       request: DrillRequest.deck('es-en-core-100', skill: Skill.recognition),
       preset: const DrillPreset(target: 'la casa', reveal: true),

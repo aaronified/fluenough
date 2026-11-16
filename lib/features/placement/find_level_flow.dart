@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart' hide Card;
@@ -5,19 +6,28 @@ import 'package:flutter/material.dart' hide Card;
 import '../../app/app_info.dart';
 import '../../app/app_state.dart';
 import '../../app/placement_plan.dart';
+import '../../app/placement_outcomes.dart';
+import '../../app/placement_profiles.dart';
+import '../../app/placement_recheck.dart';
 import '../../app/placement_run_setup.dart';
 import '../../core/languages/language_skills.dart';
 import '../../core/placement/assurance_model.dart';
 import '../../core/placement/declaration_options.dart';
 import '../../core/placement/placement_questions.dart';
-import '../../core/placement/placement_run.dart';
-import '../../core/placement/placement_session.dart';
-import '../../core/placement/saved_run.dart';
+import '../../core/placement/item_bank.dart' show ItemBank;
+import '../../core/placement/item_generators.dart' show GenContext;
+import '../../core/placement/item_registry.dart' show RegItem;
+import '../../core/placement/saved_run.dart' show placementDeckSetKey;
+import '../../core/placement/saved_v3_run.dart';
+import '../../core/placement/sentence_gate.dart' show SentenceFault;
+import '../../core/placement/v3_session.dart';
 import '../../core/placement/skills_in_play.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/snack.dart';
+import 'find_level_labels.dart';
 import 'find_level_declaration.dart';
-import 'find_level_run_page.dart';
+import 'find_level_preparing.dart';
+import 'v3_run_page.dart';
 
 /// What a tap of Find my level checks and what it is called, for a language
 /// whose skills are [skills] (see [selectFindLevelSkills]).
@@ -36,6 +46,9 @@ FindLevelSkills findLevelSkillsOf(
   shape,
   verified: state.settings.verifiedSkillsOf(code),
   scripts: scripts ?? findLevelScriptNames(state, code),
+  // Letters known from another language are not words known (owner,
+  // 2026-11-07): worked out now, never stored.
+  autoKnown: state.autoKnownKeysOf(code, shape),
 );
 
 /// The names of [code]'s own scripts, in path order, as
@@ -70,6 +83,41 @@ Future<void> startFindLevel(
     showAppSnackBar(context, l10n.findLevelNoCourse(name));
     return;
   }
+  // The cards kept out of the sentence questions (a phrase, a template, a
+  // reading deck's question) are logged with their cause, for the deck
+  // builders: docs/placement-bad-sentences.md.
+  try {
+    final kept = GenContext.rejectionsOf(plan.data);
+    if (kept.isNotEmpty) {
+      final byCause = <SentenceFault, int>{};
+      for (final r in kept) {
+        byCause[r.fault] = (byCause[r.fault] ?? 0) + 1;
+      }
+      state.log.warning(
+        'Find my level ($code): ${kept.length} cards left out of the '
+        'sentence questions: '
+        '${byCause.entries.map((e) => '${e.key.name} ${e.value}').join(', ')}',
+      );
+      for (final r in kept) {
+        if (r.fault == SentenceFault.questionCard) continue;
+        state.log.warning(
+          'Find my level ($code): card ${r.cardId} is not a sentence '
+          '(${r.fault.name}): ${r.detail}',
+        );
+      }
+    }
+  } on Object catch (error) {
+    state.log.warning('Find my level ($code): sentence check failed: $error');
+  }
+  // The question bank is made in the background from here on.
+  final bank = state.placementBanks.jobFor(plan.data);
+  // The calibration profile of this language and level, as the file has it
+  // (the built-in default when it does not, or the kill switch is on).
+  final fileProfile = (await loadPlacementProfiles()).resolve(
+    code,
+    bandOfBuilt(built),
+  );
+  if (!context.mounted) return;
   final settings = state.settings;
   final pick = findLevelSkillsOf(
     state,
@@ -85,15 +133,21 @@ Future<void> startFindLevel(
   final canSpeak =
       state.canHearAfterAsking(plan.language) &&
       state.canHearAfterAsking(plan.native);
+  // A Check again: the credit an earlier version wrote and the learner has not
+  // confirmed (point 17). The run is the same, and its end shows both levels.
+  final unconfirmed = state.unconfirmedMomentsOf(code).isNotEmpty;
+  final before = unconfirmed
+      ? state.creditedLevelsOf(code, plan)
+      : const <PlacementSkill, int>{};
   final deckSet = placementDeckSetKey(plan.data);
   int nowSeconds() => state.now().millisecondsSinceEpoch ~/ 1000;
 
   // A run paused within the last 7 days, on the same decks and app version.
-  SavedPlacementRun? saved;
+  SavedV3Run? saved;
   var droppedForDevice = false;
   if (settings.placementRunOf(code) case final json?) {
     try {
-      saved = SavedPlacementRun.fromJson(jsonDecode(json));
+      saved = SavedV3Run.fromJson(jsonDecode(json));
     } on FormatException {
       saved = null;
     }
@@ -102,10 +156,11 @@ Future<void> startFindLevel(
           nowSeconds: nowSeconds(),
           deckSet: deckSet,
           appVersion: AppInfo.version,
+          profile: fileProfile.version,
         )) {
       settings.setPlacementRun(code, null);
       saved = null;
-    } else if (!saved.fitsDevice(voice: canPlay, microphone: canSpeak)) {
+    } else if (!saved.fitsDevice(audio: canPlay, recogniser: canSpeak)) {
       // A voice or recogniser the run was begun with is gone: its answers
       // would replay onto other questions, so the next one is asked as a new
       // run. The learner is told, and the saved run is deleted only when the
@@ -123,7 +178,7 @@ Future<void> startFindLevel(
         content: Text(
           l10n.findLevelResumeBody(
             name,
-            saved!.events.where((e) => e.startsWith('a')).length,
+            saved!.events.where((e) => e != 'k' && e != 'm').length,
           ),
         ),
         actions: <Widget>[
@@ -147,21 +202,32 @@ Future<void> startFindLevel(
     saved = null;
   }
 
-  final PlacementDeclaration declaration;
+  // The learner's own reviews since earlier placements are joined with them
+  // (a new run only: a resumed run keeps the constants it began with), and the
+  // profile is moved one bounded step further toward the language's edge when
+  // the evidence is enough.
+  if (saved == null) state.refreshPlacementSignals(code, plan);
+  final profile = state.correctedPlacementProfile(code, fileProfile);
+  final PlacementDeclaration? declaration;
   final Set<PlacementSkill> inPlay;
   final int seed;
-  final bool microphone;
+  final bool audio;
+  final bool recogniser;
+  final V3ScriptStart scriptStart;
   if (saved != null) {
     declaration = saved.declaration;
     inPlay = saved.skills;
     seed = saved.seed;
-    microphone = saved.microphone;
+    audio = saved.audio;
+    recogniser = saved.recogniser;
+    scriptStart = saved.scriptStart;
   } else {
-    if (pick.skills.isEmpty) {
+    final wanted = <PlacementSkill>{...pick.skills, ...before.keys};
+    if (wanted.isEmpty) {
       showAppSnackBar(context, l10n.findLevelNothingToCheck);
       return;
     }
-    inPlay = placementSkillsForDevice(pick.skills, voice: canPlay);
+    inPlay = placementSkillsForDevice(wanted, voice: canPlay);
     // Hear was the only skill and there is no voice: nothing can be checked,
     // so nothing is asked and nothing is written.
     if (inPlay.isEmpty) {
@@ -187,44 +253,100 @@ Future<void> startFindLevel(
     }
     declaration = answer;
     seed = nowSeconds() & 0x7fffffff;
-    microphone = canSpeak;
+    audio = canPlay;
+    recogniser = canSpeak;
+    scriptStart = V3ScriptStart.ask;
   }
 
-  final downloads = state.deckDownloads;
-  final config = PlacementRunConfig(
-    deckCount: plan.data.deckCount,
-    skills: inPlay,
-    declaration: declaration,
-    seed: seed,
-    // Verified needs the path complete to B1 and every deck on the phone.
-    pathCompleteToB1: built >= builtB1,
-    allDecksDownloaded:
-        downloads == null ||
-        (!downloads.isDownloading(code) &&
-            downloads.missing(code, settings.spokenLanguages).isEmpty),
-    microphone: microphone,
-    grammarUnitDecks: <int>[
-      for (final (i, deck) in plan.data.decks.indexed)
-        if (deck.isGrammar) i,
-    ],
-    // Taken by the owner, 2026-11-05 (section 6.2).
-    extraScriptQuestion: true,
-  );
-  final session = PlacementSession.replay(
-    config,
-    plan.data,
-    saved?.events ?? const <String>[],
-  );
+  // The questions are made from the decks, once per language and deck set,
+  // in the background (it was started when Find my level opened, while the
+  // learner answered the declaration): normally they are ready and kept.
+  // A paused run is replayed on exactly the pool it began on: the whole
+  // bank, or the first formats' items cut from it (the same list, whichever
+  // way it is cut). It therefore waits for the whole bank. A new run begins on
+  // the first formats when the whole bank is not ready (the audit's verdict
+  // for the course is stored, so those items are audited), and takes the rest
+  // when it arrives.
+  var job = bank;
+  var items = saved != null ? job.items : job.startable;
+  if (items == null) {
+    items = await navigator.push<List<RegItem>>(
+      MaterialPageRoute<List<RegItem>>(
+        settings: const RouteSettings(name: '/find-level-preparing'),
+        builder: (_) => FindLevelPreparingPage(
+          job: job,
+          waitForAll: saved != null,
+          retry: () => job = state.placementBanks.jobFor(plan.data),
+        ),
+      ),
+    );
+    // Back or Cancel: nothing is asked or written; the build goes on.
+    if (items == null || !context.mounted) return;
+  }
 
-  void save(PlacementSession now) => settings.setPlacementRun(
+  var ready = items;
+  final resumed = saved != null;
+  final resumedStarter = saved?.starter == true;
+  // The calibration profile of this language and level, as the file has it
+  // (the built-in default when it does not, or the kill switch is on): a
+  // resumed run reads the version it began with.
+  var restarts = 0;
+  V3Run newRun({
+    Iterable<String> events = const <String>[],
+    V3ScriptStart start = V3ScriptStart.ask,
+    int? runSeed,
+  }) {
+    final whole = job.items;
+    // A resumed run is what it was saved as; a new one begins on the whole
+    // bank if it is there, else on what is ready.
+    final onStarter = resumed && events.isNotEmpty
+        ? resumedStarter
+        : whole == null;
+    return V3Run.replay(
+      data: plan.data,
+      skills: inPlay,
+      audio: audio,
+      recogniser: recogniser,
+      seed: runSeed ?? seed,
+      declaration: declaration,
+      scriptStart: start,
+      items: onStarter
+          ? (whole != null ? ItemBank.starterOf(whole) : ready)
+          : (whole ?? ready),
+      startedWithStarter: onStarter,
+      fullItems: whole,
+      profile: profile,
+      events: events,
+    );
+  }
+
+  var current = newRun(
+    events: saved?.events ?? const <String>[],
+    start: scriptStart,
+  );
+  // The rest of the bank arrives while the run goes on: the run takes it.
+  unawaited(
+    job.result.then<void>((all) {
+      ready = all;
+      current.extendItems(all);
+    }, onError: (Object _) {}),
+  );
+  var currentStart = scriptStart;
+  var currentSeed = seed;
+
+  void save(V3Run now) => settings.setPlacementRun(
     code,
     jsonEncode(
-      SavedPlacementRun(
+      SavedV3Run(
         language: code,
         declaration: declaration,
         skills: inPlay,
-        seed: seed,
-        microphone: microphone,
+        seed: currentSeed,
+        audio: audio,
+        recogniser: recogniser,
+        scriptStart: currentStart,
+        starter: now.startedWithStarter,
+        profile: profile.version,
         deckSet: deckSet,
         appVersion: AppInfo.version,
         savedAt: nowSeconds(),
@@ -236,24 +358,71 @@ Future<void> startFindLevel(
   // The run that no longer fits this phone is replaced now that the new one
   // begins.
   if (droppedForDevice) settings.setPlacementRun(code, null);
+  String? toast;
   final done = await navigator.push<bool>(
     MaterialPageRoute<bool>(
       settings: const RouteSettings(name: '/find-level'),
-      builder: (_) => FindLevelRunPage(
-        session: session,
+      builder: (_) => V3RunPage(
+        run: current,
         languageName: name,
         language: plan.language,
         native: plan.native,
         cardOf: plan.data.cardById,
+        // A new run: "I do read it" skips the script check, "Check the
+        // letters again" asks it again.
+        restart: (start) {
+          restarts++;
+          currentStart = start;
+          currentSeed = (seed + restarts * 7919) & 0x7fffffff;
+          current = newRun(start: start, runSeed: currentSeed);
+          return current;
+        },
         onProgress: save,
-        // The outcome is written, and the paused run dropped once it is: a
-        // write that throws keeps the run to be carried on.
-        onFinish: (finished) =>
-            state.writePlacementRun(code, plan, finished.run, native: native),
+        // The outcome is written when Done is pressed, and the paused run
+        // dropped once it is: a write that throws keeps the run to be
+        // carried on.
+        onFinish: (result, overrides) {
+          // A re-check that placed nothing has nothing to put in place of
+          // the old level: it is kept, and the toast says so.
+          final placedAny =
+              result.skills.any((s) => s.placed) || overrides.isNotEmpty;
+          if (unconfirmed && !placedAny) {
+            state.keepOldLevel(code);
+            toast = l10n.findLevelToastOldKept(name);
+            return;
+          }
+          state.logPlacementOutcome(
+            code,
+            current,
+            result,
+            profile,
+            bandOfBuilt(built),
+          );
+          state.settings.setPlacementProfile(code, profile.version);
+          state.writePlacementV3(
+            code,
+            plan,
+            result,
+            overrides: overrides,
+            native: native,
+            recheck: unconfirmed,
+          );
+          if (unconfirmed) toast = l10n.findLevelToastNewSet(name);
+        },
+        recheck: unconfirmed
+            ? FindLevelRecheck(
+                before: before,
+                onUse: () {},
+                onKeep: () {
+                  state.keepOldLevel(code);
+                  toast = l10n.findLevelToastOldKept(name);
+                },
+              )
+            : null,
       ),
     ),
   );
   if (done == true && context.mounted) {
-    showAppSnackBar(context, l10n.languagesToastLevel(name));
+    showAppSnackBar(context, toast ?? l10n.languagesToastLevel(name));
   }
 }

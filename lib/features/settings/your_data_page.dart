@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../app/app_info.dart';
 import '../../app/app_scope.dart';
+import '../../app/placement_outcomes.dart';
 import '../../app/app_state.dart';
 import '../../app/features.dart';
 import '../../app/memory_progress.dart';
@@ -12,7 +14,6 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/skill_visuals.dart';
 import '../../ui/widgets/grouped_list.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
 import 'backup_section.dart';
@@ -33,10 +34,7 @@ class YourDataPage extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.settingsRowData),
-        actions: const <Widget>[ReportButton()],
-      ),
+      appBar: AppBar(title: Text(l10n.settingsRowData)),
       body: ListenableBuilder(
         listenable: state.progress,
         builder: (context, _) => _Body(state: state),
@@ -114,6 +112,16 @@ class _BodyState extends State<_Body> {
             padding: _tallRow,
             onTap: () => _export(context, state),
           ),
+          if (state.settings.allPlacementOutcomes.isNotEmpty)
+            GroupedTile(
+              leading: const Icon(Icons.share_outlined),
+              title: l10n.settingsSharePlacement,
+              subtitle: l10n.settingsSharePlacementDesc(
+                state.settings.allPlacementOutcomes.length,
+              ),
+              padding: _tallRow,
+              onTap: () => _sharePlacement(context, state),
+            ),
           GroupedTile(
             leading: const Icon(Icons.file_upload_outlined),
             title: l10n.settingsImport,
@@ -217,7 +225,12 @@ class _BodyState extends State<_Body> {
     final name = 'fluenough-${state.currentProfile.id}-reviews.jsonl';
     final bool saved;
     try {
-      saved = await state.logFiles.save(name, state.progress.exportJsonl());
+      saved = await state.logFiles.save(
+        name,
+        state.progress.exportJsonl(
+          completedWorks: state.recommendationProgress.completed,
+        ),
+      );
     } on Exception catch (e) {
       state.log.warning('Review log not exported: ${e.runtimeType}');
       if (context.mounted) showAppSnackBar(context, l10n.settingsExportFailed);
@@ -225,6 +238,34 @@ class _BodyState extends State<_Body> {
     }
     if (!saved) return;
     state.log.event('Review log exported');
+    if (context.mounted) showAppSnackBar(context, l10n.settingsExported(name));
+  }
+
+  /// Saves the placement outcome records (no words, answers or audio) as
+  /// `fluenough-placement-data.json`, where the learner picks: nothing leaves
+  /// the phone unless they send the file.
+  static Future<void> _sharePlacement(
+    BuildContext context,
+    AppState state,
+  ) async {
+    final l10n = AppLocalizations.of(context)!;
+    final text = state.placementExport(AppInfo.version);
+    if (text == null) return;
+    const name = 'fluenough-placement-data.json';
+    final bool saved;
+    try {
+      saved = await state.logFiles.save(
+        name,
+        text,
+        mimeType: 'application/json',
+      );
+    } on Exception catch (e) {
+      state.log.warning('Placement data not exported: ${e.runtimeType}');
+      if (context.mounted) showAppSnackBar(context, l10n.settingsExportFailed);
+      return;
+    }
+    if (!saved) return;
+    state.log.event('Placement data exported');
     if (context.mounted) showAppSnackBar(context, l10n.settingsExported(name));
   }
 
@@ -250,6 +291,12 @@ class _BodyState extends State<_Body> {
         backup.reviews,
         backup.leechActions,
         fitted: backup.fitted,
+        withdrawals: backup.withdrawals,
+      );
+      // The recommended works marked completed ride in the same file; the
+      // ones not marked here are added, none is changed (T25).
+      await state.recommendationProgress.importMarks(
+        LogJsonl.decodeCompletedWorks(text),
       );
     } on FormatException catch (e) {
       state.log.warning('Review log not imported: not a backup');

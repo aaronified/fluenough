@@ -3,14 +3,22 @@ import '../core/models/card.dart';
 import '../core/models/deck.dart' show LanguageInfo;
 import '../core/models/drill_mode.dart';
 import '../core/placement/assurance_readout.dart';
+import '../core/placement/placed_outcome.dart';
+import '../core/placement/joint_model.dart' show JointReadout;
+import '../core/placement/assurance_model.dart' show PlacementLevels;
+import '../core/placement/v3_result.dart';
 import '../core/placement/placement_data.dart';
 import '../core/placement/placement_questions.dart';
-import '../core/placement/placement_run.dart';
+import '../core/scheduling/placement_withdrawal.dart';
+import '../core/scheduling/replay.dart' show LoggedReview, logged;
+import '../core/placement/joint_model.dart' show PlacementConfidence;
 import 'app_state.dart';
+import 'settings.dart' show PlacementRange;
 import 'deck_catalog.dart';
 import 'placement.dart';
 import 'placement_credit.dart';
 import 'placement_plan.dart';
+import 'placement_recheck.dart';
 
 /// A card whose review has a stability of this many days or more is one the
 /// learner has learned in the app, so a run never asks it (plan, section
@@ -143,40 +151,144 @@ extension PlacementRunSetup on AppState {
   /// read; and each skill's Verified mark is set to what the run found for
   /// the skills it tested, and left alone for the others.
   ///
-  /// It only ever adds credit (a run that places a skill lower than an
-  /// earlier one leaves the earlier credit, which the plan's section 4.4
-  /// would ask about first; not built). It never changes a skill's Leave,
-  /// Know or Learn.
+  /// A run only ever adds credit: one that places a skill lower than an
+  /// earlier one leaves the earlier credit, unless the learner confirmed
+  /// taking it back ([recheck], below; section 4.4). It never changes a
+  /// skill's Leave, Know or Learn.
   ///
   /// The code's paused run is dropped last, once all of this is written: a
   /// write that throws leaves the run to be carried on.
-  void writePlacementRun(
+  ///
+  /// With [recheck] (Check again, wiki Plan-Placement-V2, point 17.3) the
+  /// credit above each tested skill's new level is withdrawn first, from
+  /// every moment of the language, and the language's placed decks are
+  /// replaced rather than added to; the moments that were unconfirmed are
+  /// then confirmed. Every real review stays.
+  /// The write of a V3 run's result (build step 7): each placed skill up to
+  /// its start, never above what its items proved, with the learner's changes
+  /// ([overrides], a class per skill); a skill left out writes nothing.
+  void writePlacementV3(
     String code,
     PlacementRunPlan plan,
-    PlacementRun run, {
+    V3Result result, {
+    Map<PlacementSkill, int> overrides = const <PlacementSkill, int>{},
     String? native,
+    bool recheck = false,
   }) {
-    _writeOutcome(code, plan, run, native: native);
+    final assurances = result.assurances(
+      overrides: overrides,
+      scripts: plan.scripts.length,
+    );
+    writePlacementReadout(
+      code,
+      plan,
+      assurances,
+      topClass: result.levels.topClass,
+      covered: assurances.keys,
+      native: native,
+      recheck: recheck,
+    );
+    // Where each placed skill starts, with its range and confidence word.
+    // A skill this run did not place loses its old range (as it loses its
+    // old label); one the run did not cover keeps it.
+    final ranges = <String, PlacementRange>{
+      for (final MapEntry(:key, :value)
+          in settings.placementRangesOf(code).entries)
+        if (!assurances.keys.any((skill) => skill.name == key)) key: value,
+    };
+    for (final s in result.skills) {
+      if (!s.placed) continue;
+      final changed = overrides[s.skill];
+      final unit = changed == null
+          ? s.startUnit
+          : (changed == 0 ? 0 : result.levels.levelOf(changed) + 1);
+      ranges[s.skill.name] = PlacementRange(
+        start: unit,
+        low: changed == null ? s.lowUnit : unit,
+        high: changed == null ? s.highUnit : unit,
+        label: changed != null
+            ? AssuranceLabel.sure.name
+            : switch (s.confidence) {
+                PlacementConfidence.high => AssuranceLabel.sure.name,
+                PlacementConfidence.medium => AssuranceLabel.fairlySure.name,
+                _ => AssuranceLabel.notSureYet.name,
+              },
+      );
+    }
+    settings.setPlacementRanges(code, ranges);
+  }
+
+  /// The same write for a V3 readout (wiki/Plan-Placement-V3.md): each
+  /// scored skill is credited up to its lower edge, never above the level
+  /// its items proved; a skill that was not tested or only self-rated (Say
+  /// without a recogniser) writes nothing and is left out of the lowest
+  /// level, so that it never pulls the course's placed decks down.
+  void writePlacementJoint(
+    String code,
+    PlacementRunPlan plan,
+    JointReadout readout,
+    PlacementLevels levels, {
+    String? native,
+    bool recheck = false,
+  }) => writePlacementReadout(
+    code,
+    plan,
+    assurancesFromJoint(readout, levels),
+    topClass: levels.topClass,
+    covered: readout.skills.keys,
+    native: native,
+    recheck: recheck,
+  );
+
+  /// What a run found, written to the learner's data: [writePlacementV3]'s and
+  /// [writePlacementJoint]'s common part. [covered] are the skills the run
+  /// covered, whose stored labels it replaces.
+  void writePlacementReadout(
+    String code,
+    PlacementRunPlan plan,
+    Map<PlacementSkill, SkillAssurance> readout, {
+    required int topClass,
+    required Iterable<PlacementSkill> covered,
+    String? native,
+    bool recheck = false,
+  }) {
+    final flagged = recheck ? unconfirmedMomentsOf(code) : const <int>{};
+    _writeOutcome(
+      code,
+      plan,
+      readout,
+      topClass: topClass,
+      covered: covered,
+      native: native,
+      recheck: recheck,
+    );
+    if (flagged.isNotEmpty) settings.keepPlacementMoments(code, flagged);
     settings.setPlacementRun(code, null);
   }
 
   void _writeOutcome(
     String code,
     PlacementRunPlan plan,
-    PlacementRun run, {
+    Map<PlacementSkill, SkillAssurance> readout, {
+    required int topClass,
+    required Iterable<PlacementSkill> covered,
     String? native,
+    bool recheck = false,
   }) {
-    final readout = run.readout;
     final tested = <PlacementSkill, SkillAssurance>{
       for (final MapEntry(:key, :value) in readout.entries)
         if (value.label != AssuranceLabel.notTested) key: value,
     };
-    _writeSkillLabels(code, run, tested);
+    _writeSkillLabels(code, covered, tested);
     if (tested.isEmpty) return;
     Set<String> idsUpTo(int level) => <String>{
       for (final entry in plan.decks.take(level + 1)) entry.id,
     };
+    if (recheck) withdrawAboveNewLevel(code, plan, tested, topClass);
 
+    // The lowest level over the word skills that were TESTED: a skill that
+    // was not tested, or only self-rated (Say without a recogniser), is not
+    // in [tested] and never pulls the course's placed decks down.
     int? lowest;
     for (final skill in _wordSkills) {
       final found = tested[skill];
@@ -203,7 +315,7 @@ extension PlacementRunSetup on AppState {
       final found = tested[skill];
       if (found == null || i >= plan.scripts.length) continue;
       final script = plan.scripts[i];
-      final standing = found.leadingClass == run.levels.topClass
+      final standing = found.placedClass == topClass
           ? ScriptStanding.reads
           : ScriptStanding.newTo;
       standings[script.script] = standing;
@@ -219,8 +331,24 @@ extension PlacementRunSetup on AppState {
       );
     }
 
+    final wordDecks = <String>{for (final entry in plan.decks) entry.id};
+    final testedScriptDecks = <String>{
+      for (final (i, skill) in <PlacementSkill>[
+        PlacementSkill.script,
+        PlacementSkill.secondScript,
+      ].indexed)
+        if (tested.containsKey(skill) && i < plan.scripts.length)
+          for (final entry in plan.scripts[i].decks) entry.id,
+    };
     settings.placedDecks = <String>{
-      ...settings.placedDecks,
+      for (final id in settings.placedDecks)
+        // A check again replaces the language's placed decks: the words
+        // when a word skill was tested, and the decks of a script tested.
+        if (!recheck ||
+            deckLanguage(id) != code ||
+            (!(lowest != null && wordDecks.contains(id)) &&
+                !testedScriptDecks.contains(id)))
+          id,
       if (lowest != null && lowest >= 0) ...idsUpTo(lowest),
       ...scriptPlaced,
     };
@@ -240,10 +368,9 @@ extension PlacementRunSetup on AppState {
   /// with: they stay until the next run covers the skill.
   void _writeSkillLabels(
     String code,
-    PlacementRun run,
+    Iterable<PlacementSkill> covered,
     Map<PlacementSkill, SkillAssurance> tested,
   ) {
-    final covered = run.config.skills;
     settings.setSkillLabels(code, <String, String>{
       for (final MapEntry(:key, :value) in settings.skillLabelsOf(code).entries)
         if (!covered.any((skill) => skill.name == key)) key: value,
@@ -276,4 +403,83 @@ extension PlacementRunSetup on AppState {
     PlacementSkill.say => const <DrillMode>{DrillMode.speaking},
     _ => const <DrillMode>{},
   };
+}
+
+/// The drills a skill's credit is written in: Read recognises words and
+/// grammar and reads passages, Write produces them, Hear listens, Say speaks.
+Set<DrillMode> placementModesOf(PlacementSkill skill) =>
+    PlacementRunSetup._modesOf(skill);
+
+/// The skills a run tested, by what each found; the names are the readout's.
+typedef TestedSkills = Map<PlacementSkill, SkillAssurance>;
+
+/// Takes back, for each tested skill, the credit above the level the run
+/// found, from every moment of the language (point 17.3, step 1): word
+/// skills by the decks above their placed level, in their modes; a script
+/// skill by the decks its new standing does not place, in its script.
+extension PlacementCreditWithdrawal on AppState {
+  void withdrawAboveNewLevel(
+    String code,
+    PlacementRunPlan plan,
+    TestedSkills tested,
+    int topClass,
+  ) {
+    final moments = settings.placedAtOf(code);
+    if (moments.isEmpty) return;
+    final at = now();
+    final index = <String, int>{
+      for (final (i, entry) in plan.decks.indexed) entry.id: i,
+    };
+    final credited = <LoggedReview>[
+      for (final e in progress.log)
+        if (e.grade == 5 && deckLanguage(e.deckId) == code) logged(e),
+    ];
+    final found = <PlacementWithdrawal>[];
+    for (final MapEntry(key: skill, value: result) in tested.entries) {
+      final modes = placementModesOf(skill);
+      if (modes.isEmpty) continue;
+      final level = result.placedLevel;
+      found.addAll(
+        withdrawalsAbove(
+          language: code,
+          reviews: credited,
+          moments: moments,
+          modes: modes,
+          script: null,
+          above: (id) => (index[id] ?? -1) > level,
+          at: at,
+        ),
+      );
+    }
+    for (final (i, skill) in <PlacementSkill>[
+      PlacementSkill.script,
+      PlacementSkill.secondScript,
+    ].indexed) {
+      final result = tested[skill];
+      if (result == null || i >= plan.scripts.length) continue;
+      final script = plan.scripts[i];
+      final standing = result.placedClass == topClass
+          ? ScriptStanding.reads
+          : ScriptStanding.newTo;
+      final placed = ScriptCheck.placedFor(script.decks, standing);
+      final scriptDecks = <String>{
+        for (final entry in script.decks)
+          if (entry.isScript) entry.id,
+      };
+      found.addAll(
+        withdrawalsAbove(
+          language: code,
+          reviews: credited,
+          moments: moments,
+          modes: const <DrillMode>{DrillMode.recognition, DrillMode.production},
+          script: script.script,
+          above: (id) => scriptDecks.contains(id) && !placed.contains(id),
+          at: at,
+        ),
+      );
+    }
+    for (final w in found) {
+      progress.withdrawCredit(w);
+    }
+  }
 }

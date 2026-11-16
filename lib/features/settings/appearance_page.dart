@@ -15,7 +15,6 @@ import '../../ui/card_text_scale.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/app_language_picker.dart';
 import '../../ui/widgets/grouped_list.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/segmented.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
@@ -83,10 +82,7 @@ class AppearancePage extends StatelessWidget {
       ),
     );
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.appearanceTitle),
-        actions: const <Widget>[ReportButton()],
-      ),
+      appBar: AppBar(title: Text(l10n.appearanceTitle)),
       body: ListenableBuilder(
         listenable: Listenable.merge(<Listenable>[settings, state.wallpaper]),
         builder: (context, _) {

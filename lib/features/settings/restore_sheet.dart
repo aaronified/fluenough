@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/backups.dart';
+import '../../core/updates/release_check.dart' show isNewerVersion;
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 
@@ -159,12 +160,46 @@ class _RestoreSheet extends StatelessWidget {
               l10n.settingsRestoreAlso,
               l10n.settingsRestoreAlsoText,
             ),
+            if (backup.privatePackages.isNotEmpty)
+              fact(
+                Icons.menu_book_outlined,
+                l10n.privateRestoreHolds,
+                l10n.privateRestoreHoldsValue(
+                  <String>[for (final p in backup.privatePackages) p.name]
+                      .join(l10n.commonListSeparator),
+                ),
+              ),
             if (backup.downloads.isNotEmpty)
               fact(
                 Icons.download,
                 l10n.settingsRestoreNotRestored,
                 l10n.settingsRestoreDecks(
                   languageNames(context, l10n, backup.downloads),
+                ),
+              ),
+            if (isNewerVersion(
+              backup.appVersion,
+              AppScope.read(context).updates.current,
+            ))
+              Padding(
+                padding: const EdgeInsetsDirectional.only(top: 16),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    ExcludeSemantics(
+                      child: Icon(
+                        Icons.info_outline,
+                        color: scheme.onSurfaceVariant,
+                      ),
+                    ),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: Text(
+                        l10n.settingsRestoreNewerNote,
+                        style: theme.textTheme.bodyMedium,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             const SizedBox(height: 16),

@@ -33,6 +33,8 @@ typedef UnlockCounts = ({
   int rulesTaught,
   int sentencesOpen,
   int sentencesTotal,
+  int wordsPlaced,
+  int rulesPlaced,
 });
 
 const UnlockCounts noUnlockCounts = (
@@ -42,6 +44,8 @@ const UnlockCounts noUnlockCounts = (
   rulesTaught: 0,
   sentencesOpen: 0,
   sentencesTotal: 0,
+  wordsPlaced: 0,
+  rulesPlaced: 0,
 );
 
 /// The unlock gate (docs/plans/words-rules-sentences.md, "Sentences"): a
@@ -171,12 +175,16 @@ class Unlocks {
     final rules = <String>{};
     for (final (:card, :kind) in cards) {
       if (card.rule case final cell?) {
+        // A rule's cell that placement credited and the learner has not
+        // answered is placed, not in progress: it holds nothing back.
         if (answers.of(card.id).level != MasteryLevel.fresh &&
+            !answers.isPlacedOnly(card.id) &&
             !isRuleKnown(cell.ruleId)) {
           rules.add(cell.ruleId);
         }
       } else if (countsAsWord(card, kind) &&
-          answers.of(card.id).level == MasteryLevel.learning) {
+          answers.of(card.id).level == MasteryLevel.learning &&
+          !answers.isPlacedOnly(card.id)) {
         words.add(baseOf(card));
       }
     }
@@ -190,6 +198,8 @@ class Unlocks {
   UnlockCounts counts(Iterable<KindedCard> cards) {
     final seen = <String>{};
     final wordBases = <String, bool>{};
+    final wordsPlaced = <String>{};
+    final rulesPlaced = <String>{};
     final rulesTaught = <String>{};
     final sentences = <Card>[];
     final started = <String>{};
@@ -200,10 +210,19 @@ class Unlocks {
     for (final (:card, :kind) in list) {
       final taught = answers.of(card.id).level != MasteryLevel.fresh;
       if (taught) started.add(card.deckId);
+      // A card credited by placement and not answered since is placed: it
+      // is not taught, and not known, but it counts as placed.
+      final placedOnly = taught && answers.isPlacedOnly(card.id);
       if (card.rule case final cell?) {
-        if (taught) rulesTaught.add(cell.ruleId);
+        if (placedOnly) {
+          rulesPlaced.add(cell.ruleId);
+        } else if (taught) {
+          rulesTaught.add(cell.ruleId);
+        }
       } else if (countsAsWord(card, kind)) {
-        if (taught) {
+        if (placedOnly) {
+          wordsPlaced.add(baseOf(card));
+        } else if (taught) {
           final base = baseOf(card);
           final known =
               answers.of(card.id).level == MasteryLevel.known ||
@@ -228,6 +247,8 @@ class Unlocks {
       rulesTaught: rulesTaught.length,
       sentencesOpen: inStarted.where(isOffered).length,
       sentencesTotal: inStarted.length,
+      wordsPlaced: wordsPlaced.where((b) => !wordBases.containsKey(b)).length,
+      rulesPlaced: rulesPlaced.where((r) => !rulesTaught.contains(r)).length,
     );
   }
 }
@@ -242,5 +263,7 @@ UnlockCounts sumUnlockCounts(Iterable<UnlockCounts> all) => all.fold(
     rulesTaught: a.rulesTaught + b.rulesTaught,
     sentencesOpen: a.sentencesOpen + b.sentencesOpen,
     sentencesTotal: a.sentencesTotal + b.sentencesTotal,
+    wordsPlaced: a.wordsPlaced + b.wordsPlaced,
+    rulesPlaced: a.rulesPlaced + b.rulesPlaced,
   ),
 );

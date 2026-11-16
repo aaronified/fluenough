@@ -3,13 +3,16 @@ import 'dart:convert';
 import 'package:flutter/material.dart' show ThemeMode, TimeOfDay;
 import 'package:flutter/foundation.dart';
 
+import '../core/placement/outcome_log.dart';
 import '../core/data/spoken_languages.dart';
 import '../core/decks/font_check.dart';
+import '../core/decks/culture_options.dart';
 import '../core/languages/language_skills.dart';
 import '../core/review/deck_review.dart';
 import '../core/review/question_log.dart';
 import '../core/review/rater_code.dart';
 import '../core/review/review_pairs.dart';
+import '../core/scheduling/ability.dart' show Abilities;
 import '../core/scheduling/placed_review.dart';
 import '../core/scheduling/daily_budget.dart';
 import '../core/scheduling/study_hours.dart';
@@ -137,14 +140,24 @@ class SettingsNotifier extends ChangeNotifier {
   Map<String, FontChoice> _fontChoices = const <String, FontChoice>{};
   Set<String> _speechNotOnDevice = const <String>{};
   Set<String> _speechUnsupported = const <String>{};
+  Set<String> _speechAlerted = const <String>{};
   Set<String> _scriptGuidesSeen = const <String>{};
   Set<String> _resourcesHidden = const <String>{};
   Map<String, Set<String>> _collapsedLevels = const <String, Set<String>>{};
+  Map<String, List<String>> _situationsShown = const <String, List<String>>{};
   Map<String, PlacedReview> _placedReview = const <String, PlacedReview>{};
   Map<String, Set<int>> _placedAt = const <String, Set<int>>{};
+  Map<String, Map<int, int>> _placedBy = const <String, Map<int, int>>{};
+  Map<String, Set<int>> _placementKept = const <String, Set<int>>{};
   Map<String, Set<String>> _verifiedSkills = const <String, Set<String>>{};
   Map<String, Map<String, String>> _skillLabels =
       const <String, Map<String, String>>{};
+  Map<String, Map<String, PlacementRange>> _placementRanges =
+      const <String, Map<String, PlacementRange>>{};
+  Map<String, int> _placementProfiles = const <String, int>{};
+  Map<String, List<PlacementOutcome>> _placementOutcomes =
+      const <String, List<PlacementOutcome>>{};
+  Map<String, double> _placementCorrection = const <String, double>{};
   Map<String, String> _placementRuns = const <String, String>{};
   Set<String> _waitingOpen = const <String>{};
   Map<Skill, DateTime> _pausedUntil = const <Skill, DateTime>{};
@@ -153,6 +166,7 @@ class SettingsNotifier extends ChangeNotifier {
   Map<String, DateTime> _lessonsDone = const <String, DateTime>{};
   bool _reviewDecks = false;
   bool _adultContent = false;
+  Map<String, CultureOptions> _culture = const <String, CultureOptions>{};
   Map<String, String> _voices = const <String, String>{};
   String? _raterCode;
   bool _reviewIntroShown = false;
@@ -229,6 +243,23 @@ class SettingsNotifier extends ChangeNotifier {
   bool get adultContent => _adultContent;
   set adultContent(bool value) =>
       _set(_adultContent, value, (v) => _adultContent = v);
+
+  /// [language]'s culture options (the approved mockup `culture-in-decks`):
+  /// whether culture items are in its path, Today and reviews, what to do with
+  /// those above the learner's level, whether they count toward path progress
+  /// and whether the creator shows. Each language keeps its own, chosen in its
+  /// details; a language that has not chosen has [CultureOptions.defaults].
+  CultureOptions cultureFor(String language) =>
+      _culture[language] ?? CultureOptions.defaults;
+
+  /// Sets [language]'s culture options; the other languages keep theirs.
+  void setCultureFor(String language, CultureOptions options) {
+    if (cultureFor(language) == options) return;
+    _culture = Map<String, CultureOptions>.unmodifiable(
+      <String, CultureOptions>{..._culture, language: options},
+    );
+    notifyListeners();
+  }
 
   /// The rater code the phone made when reviewing was first turned on,
   /// written `FL-XXXX-XXXX-C`, or null before. Kept when reviewing is
@@ -764,6 +795,26 @@ class SettingsNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// The situations the learner chose for Today's card on [language] (#1145),
+  /// by id, in the order they chose; the card shows the first six. Null until
+  /// they choose: the card then shows the file's first six.
+  List<String>? situationsShownOf(String language) =>
+      _situationsShown[language];
+
+  /// Keeps [ids] as [language]'s chosen situations, or with null forgets
+  /// the choice (back to the default).
+  void setSituationsShown(String language, List<String>? ids) {
+    if (listEquals(_situationsShown[language], ids)) return;
+    _situationsShown = Map<String, List<String>>.unmodifiable(
+      <String, List<String>>{
+        for (final MapEntry(:key, :value) in _situationsShown.entries)
+          if (key != language) key: value,
+        if (ids != null) language: List<String>.unmodifiable(ids),
+      },
+    );
+    notifyListeners();
+  }
+
   /// How [language]'s course reviews the words placement credited (#761),
   /// [PlacedReview.fallback] until the learner chooses.
   PlacedReview placedReviewOf(String language) =>
@@ -794,6 +845,48 @@ class SettingsNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// The moments of [language]'s credit that carry a model stamp
+  /// (`placed_by`): every credit Find my level writes from 0.9.2 on is
+  /// stamped with the model that made it. Whether a stamp confirms the credit
+  /// is `isConfirmedModel` (V3's and the older test's do; the model before V3
+  /// does not), not the mere presence of a stamp.
+  Set<int> placedByOf(String language) =>
+      (_placedBy[language] ?? const <int, int>{}).keys.toSet();
+
+  /// The model of each stamped moment of [language]'s credit
+  /// (`kPlacementModel`, `kOlderPlacementModel`).
+  Map<int, int> placedModelsOf(String language) =>
+      _placedBy[language] ?? const <int, int>{};
+
+  /// Stamps the credit of [language] made at [seconds] as made by [model]
+  /// (`kPlacementModel`). `placed_at` keeps its own format, and an older app
+  /// ignores this key.
+  void stampPlacedBy(String language, int seconds, int model) {
+    final was = _placedBy[language] ?? const <int, int>{};
+    if (was[seconds] == model) return;
+    _placedBy = Map<String, Map<int, int>>.unmodifiable(<String, Map<int, int>>{
+      ..._placedBy,
+      language: Map<int, int>.unmodifiable(<int, int>{...was, seconds: model}),
+    });
+    notifyListeners();
+  }
+
+  /// The moments of [language]'s credit the learner chose to keep at a Check
+  /// again (`placement_kept`).
+  Set<int> placementKeptOf(String language) =>
+      _placementKept[language] ?? const <int>{};
+
+  void keepPlacementMoments(String language, Iterable<int> seconds) {
+    final was = _placementKept[language] ?? const <int>{};
+    final next = <int>{...was, ...seconds};
+    if (next.length == was.length) return;
+    _placementKept = Map<String, Set<int>>.unmodifiable(<String, Set<int>>{
+      ..._placementKept,
+      language: Set<int>.unmodifiable(next),
+    });
+    notifyListeners();
+  }
+
   /// The skills of [language] that Find my level has verified, by their names
   /// in a run (`read`, `hear`, `say`, `write`, `script`, `secondScript`):
   /// the learner showed the whole course up to B1 in each (wiki,
@@ -809,6 +902,91 @@ class SettingsNotifier extends ChangeNotifier {
   /// Plan-Placement-V2, section 5.5).
   Map<String, String> skillLabelsOf(String language) =>
       _skillLabels[language] ?? const <String, String>{};
+
+  /// Where the last Find my level run put each skill it placed in [language],
+  /// by the skill's name in a run: the start unit, the 80% range and the
+  /// confidence word. Empty until a V3 run has been done (an older run left
+  /// only [skillLabelsOf]).
+  Map<String, PlacementRange> placementRangesOf(String language) =>
+      _placementRanges[language] ?? const <String, PlacementRange>{};
+
+  /// Sets [language]'s placement ranges to [ranges].
+  void setPlacementRanges(String language, Map<String, PlacementRange> ranges) {
+    final was = _placementRanges[language] ?? const <String, PlacementRange>{};
+    if (mapEquals(was, ranges)) return;
+    final next = <String, Map<String, PlacementRange>>{..._placementRanges};
+    if (ranges.isEmpty) {
+      next.remove(language);
+    } else {
+      next[language] = Map<String, PlacementRange>.unmodifiable(ranges);
+    }
+    _placementRanges = Map<String, Map<String, PlacementRange>>.unmodifiable(
+      next,
+    );
+    notifyListeners();
+  }
+
+  /// The version of the calibration profile ([PlacementProfile.version]) the
+  /// last Find my level of [language] was made with, or null before one (and
+  /// for a placement of an earlier version of the app): kept so that a
+  /// placement can be told from the constants that made it.
+  int? placementProfileOf(String language) => _placementProfiles[language];
+
+  /// Records that [language]'s placement was made with profile [version].
+  void setPlacementProfile(String language, int version) {
+    if (_placementProfiles[language] == version) return;
+    _placementProfiles = Map<String, int>.unmodifiable(<String, int>{
+      ..._placementProfiles,
+      language: version,
+    });
+    notifyListeners();
+  }
+
+  /// The outcome records of [language]'s placements (the last
+  /// [kMaxOutcomes]), oldest first: what the corrections and the opt-in export
+  /// read. Local only.
+  List<PlacementOutcome> placementOutcomesOf(String language) =>
+      _placementOutcomes[language] ?? const <PlacementOutcome>[];
+
+  /// Every language's outcome records.
+  Iterable<PlacementOutcome> get allPlacementOutcomes =>
+      _placementOutcomes.values.expand((o) => o);
+
+  /// Replaces [language]'s outcome records with [outcomes] (the last
+  /// [kMaxOutcomes] are kept).
+  void setPlacementOutcomes(String language, List<PlacementOutcome> outcomes) {
+    final kept = outcomes.length > kMaxOutcomes
+        ? outcomes.sublist(outcomes.length - kMaxOutcomes)
+        : outcomes;
+    final next = <String, List<PlacementOutcome>>{..._placementOutcomes};
+    if (kept.isEmpty) {
+      next.remove(language);
+    } else {
+      next[language] = List<PlacementOutcome>.unmodifiable(kept);
+    }
+    _placementOutcomes = Map<String, List<PlacementOutcome>>.unmodifiable(next);
+    notifyListeners();
+  }
+
+  /// How far [language]'s profile has been moved by the learner's own
+  /// reviews, from the default (0) toward the language's gated edge (1).
+  /// Applied only after enough evidence, reversible by lowering it, never
+  /// shown. 0 when there is none.
+  double placementCorrectionOf(String language) =>
+      _placementCorrection[language] ?? 0;
+
+  void setPlacementCorrection(String language, double carefulness) {
+    final c = carefulness.clamp(0.0, 1.0);
+    if (placementCorrectionOf(language) == c) return;
+    final next = <String, double>{..._placementCorrection};
+    if (c == 0) {
+      next.remove(language);
+    } else {
+      next[language] = c;
+    }
+    _placementCorrection = Map<String, double>.unmodifiable(next);
+    notifyListeners();
+  }
 
   /// Sets [language]'s skill labels to [labels].
   void setSkillLabels(String language, Map<String, String> labels) {
@@ -855,6 +1033,92 @@ class SettingsNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Forgets what placement found for [language] (#861): the moments it
+  /// credited words and their model stamps and kept moments, the skills it verified and their labels, a paused run,
+  /// and the decks it marked placed. The course then asks for placement
+  /// again ([placedAtOf] is empty). Other languages are not touched.
+  void clearPlacement(String language) {
+    _placedAt = _without(_placedAt, language);
+    _placedBy = _without(_placedBy, language);
+    _placementKept = _without(_placementKept, language);
+    _verifiedSkills = _without(_verifiedSkills, language);
+    _skillLabels = _without(_skillLabels, language);
+    _placementRanges = _without(_placementRanges, language);
+    _placementProfiles = _without(_placementProfiles, language);
+    _placementOutcomes = _without(_placementOutcomes, language);
+    _placementCorrection = _without(_placementCorrection, language);
+    _placementRuns = _without(_placementRuns, language);
+    _placedDecks = Set<String>.unmodifiable(<String>{
+      for (final id in _placedDecks)
+        if (Abilities.languageOf(id) != language) id,
+    });
+    notifyListeners();
+  }
+
+  /// Puts [language]'s own settings back to what a language not yet set up
+  /// has (#861): minutes a day, the scripts chosen, how credited words are
+  /// reviewed, folded levels, facts shown, its voice. Which skills are
+  /// learned, known or left is not a setting here and stays.
+  void clearLanguageSettings(String language) {
+    _dailyMinutes = _without(_dailyMinutes, language);
+    _culture = _without(_culture, language);
+    _dailyExtra = _without(_dailyExtra, language);
+    _scriptsLearned = _without(_scriptsLearned, language);
+    _collapsedLevels = _without(_collapsedLevels, language);
+    _situationsShown = _without(_situationsShown, language);
+    _placedReview = _without(_placedReview, language);
+    _voices = _without(_voices, language);
+    _speechAlerted = Set<String>.unmodifiable(<String>{
+      for (final code in _speechAlerted)
+        if (code != language) code,
+    });
+    _noAlphabet = Set<String>.unmodifiable(<String>{
+      for (final code in _noAlphabet)
+        if (code != language) code,
+    });
+    _factsShown = Map<String, DateTime>.unmodifiable(<String, DateTime>{
+      for (final MapEntry(:key, :value) in _factsShown.entries)
+        if (!key.startsWith('$language/')) key: value,
+    });
+    notifyListeners();
+  }
+
+  /// Forgets the study time kept beside the review log for [language] on
+  /// the days from [from] to [to], both included (all days when null), and
+  /// the day of its last lesson when that falls in them (#861). The log's
+  /// own hours go with its reviews.
+  void clearStudyTime(String language, {DateTime? from, DateTime? to}) {
+    final first = from == null ? null : _dayKey(from);
+    final last = to == null ? null : _dayKey(to);
+    bool inside(String day) =>
+        (first == null || day.compareTo(first) >= 0) &&
+        (last == null || day.compareTo(last) <= 0);
+    Map<String, Map<String, V>> trimmed<V>(Map<String, Map<String, V>> all) {
+      final days = all[language];
+      if (days == null) return all;
+      final kept = <String, V>{
+        for (final MapEntry(:key, :value) in days.entries)
+          if (!inside(key)) key: value,
+      };
+      final next = <String, Map<String, V>>{...all};
+      kept.isEmpty ? next.remove(language) : next[language] = kept;
+      return Map<String, Map<String, V>>.unmodifiable(next);
+    }
+
+    _teachTime = trimmed(_teachTime);
+    _clockTime = trimmed(_clockTime);
+    final lesson = _lessonsDone[language];
+    if (lesson != null && inside(_dayKey(lesson))) {
+      _lessonsDone = _without(_lessonsDone, language);
+    }
+    notifyListeners();
+  }
+
+  static Map<String, V> _without<V>(Map<String, V> map, String key) =>
+      map.containsKey(key)
+      ? Map<String, V>.unmodifiable(<String, V>{...map}..remove(key))
+      : map;
+
   /// Whether the reviewer unfolded [language] on Waiting for review (#471).
   /// Folded by default; what is unfolded is remembered.
   bool isWaitingLanguageOpen(String language) =>
@@ -865,6 +1129,22 @@ class SettingsNotifier extends ChangeNotifier {
     final next = Set<String>.of(_waitingOpen);
     open ? next.add(language) : next.remove(language);
     _waitingOpen = Set<String>.unmodifiable(next);
+    notifyListeners();
+  }
+
+  /// The languages, by code, whose "speech works only online" alert Today
+  /// has shown (#233): it shows once per language.
+  Set<String> get speechAlerted => _speechAlerted;
+
+  bool hasSpeechAlert(String code) => _speechAlerted.contains(code);
+
+  /// Records that the alert for [code] was shown.
+  void markSpeechAlerted(String code) {
+    if (_speechAlerted.contains(code)) return;
+    _speechAlerted = Set<String>.unmodifiable(<String>{
+      ..._speechAlerted,
+      code,
+    });
     notifyListeners();
   }
 
@@ -1207,6 +1487,7 @@ class SettingsNotifier extends ChangeNotifier {
     }),
     'speech_not_on_device': (_speechNotOnDevice.toList()..sort()).join(','),
     'speech_unsupported': (_speechUnsupported.toList()..sort()).join(','),
+    'speech_alerted': (_speechAlerted.toList()..sort()).join(','),
     'script_guides_seen': (_scriptGuidesSeen.toList()..sort()).join(','),
     'resources_hidden': (_resourcesHidden.toList()..sort()).join(','),
     'placed_review': jsonEncode(<String, String>{
@@ -1217,16 +1498,41 @@ class SettingsNotifier extends ChangeNotifier {
       for (final MapEntry(:key, :value) in _placedAt.entries)
         key: value.toList()..sort(),
     }),
+    'placed_by': jsonEncode(<String, Map<String, int>>{
+      for (final MapEntry(:key, :value) in _placedBy.entries)
+        key: <String, int>{
+          for (final MapEntry(key: second, value: model) in value.entries)
+            '$second': model,
+        },
+    }),
+    'placement_kept': jsonEncode(<String, List<int>>{
+      for (final MapEntry(:key, :value) in _placementKept.entries)
+        key: value.toList()..sort(),
+    }),
     'verified_skills': jsonEncode(<String, List<String>>{
       for (final MapEntry(:key, :value) in _verifiedSkills.entries)
         key: value.toList()..sort(),
     }),
     'skill_labels': jsonEncode(_skillLabels),
+    'placement_profile': jsonEncode(_placementProfiles),
+    'placement_outcomes': jsonEncode(<String, Object?>{
+      for (final e in _placementOutcomes.entries)
+        e.key: <Object?>[for (final o in e.value) o.toJson()],
+    }),
+    'placement_correction': jsonEncode(_placementCorrection),
+    'skill_ranges': jsonEncode(<String, Map<String, Object?>>{
+      for (final MapEntry(:key, :value) in _placementRanges.entries)
+        key: <String, Object?>{
+          for (final MapEntry(key: skill, value: range) in value.entries)
+            skill: range.toJson(),
+        },
+    }),
     'placement_runs': jsonEncode(_placementRuns),
     'collapsed_levels': jsonEncode(<String, List<String>>{
       for (final MapEntry(:key, :value) in _collapsedLevels.entries)
         key: value.toList()..sort(),
     }),
+    'situations_shown': jsonEncode(_situationsShown),
     'waiting_open': (_waitingOpen.toList()..sort()).join(','),
     'paused_until': jsonEncode(<String, int>{
       for (final MapEntry(:key, :value) in _pausedUntil.entries)
@@ -1253,6 +1559,10 @@ class SettingsNotifier extends ChangeNotifier {
     'clock_time': jsonEncode(_clockTime),
     'review_decks': '$_reviewDecks',
     'adult_content': '$_adultContent',
+    'culture_by_language': jsonEncode(<String, Object>{
+      for (final MapEntry(:key, :value) in _culture.entries)
+        key: value.toJson(),
+    }),
     'tts_voices': jsonEncode(_voices),
     'rater_code': _raterCode ?? '',
     'review_intro_shown': '$_reviewIntroShown',
@@ -1490,6 +1800,11 @@ class SettingsNotifier extends ChangeNotifier {
         }
       }
     }
+    if (pick('speech_alerted', (t) => t) case final v?) {
+      for (final code in v.split(',')) {
+        if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) markSpeechAlerted(code);
+      }
+    }
     if (pick('no_alphabet', (t) => t) case final v?) {
       for (final code in v.split(',')) {
         if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) {
@@ -1557,6 +1872,26 @@ class SettingsNotifier extends ChangeNotifier {
         }
       }
     }
+    if (pick('placed_by', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! Map) continue;
+        for (final MapEntry(key: second, value: model) in value.entries) {
+          final seconds = second is String ? int.tryParse(second) : null;
+          if (seconds != null && model is int) {
+            stampPlacedBy(key, seconds, model);
+          }
+        }
+      }
+    }
+    if (pick('placement_kept', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! List) continue;
+        keepPlacementMoments(key, <int>[
+          for (final seconds in value)
+            if (seconds is int) seconds,
+        ]);
+      }
+    }
     if (pick('verified_skills', _parseJsonMap) case final v?) {
       for (final MapEntry(:key, :value) in v.entries) {
         if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! List) continue;
@@ -1579,6 +1914,48 @@ class SettingsNotifier extends ChangeNotifier {
         });
       }
     }
+    // Read tolerantly: anything that is not a range is skipped, and a
+    // settings map without the key (an older backup) has no ranges.
+    if (pick('skill_ranges', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! Map) continue;
+        final ranges = <String, PlacementRange>{};
+        for (final MapEntry(key: name, value: raw) in value.entries) {
+          final range = PlacementRange.fromJson(raw);
+          if (name is String &&
+              RegExp(r'^[a-zA-Z]+$').hasMatch(name) &&
+              range != null) {
+            ranges[name] = range;
+          }
+        }
+        setPlacementRanges(key, ranges);
+      }
+    }
+    if (pick('placement_profile', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (RegExp(r'^[a-z]{2,3}$').hasMatch(key) &&
+            value is int &&
+            value > 0) {
+          setPlacementProfile(key, value);
+        }
+      }
+    }
+    // Read tolerantly: a record that is not one is skipped.
+    if (pick('placement_outcomes', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! List) continue;
+        setPlacementOutcomes(key, <PlacementOutcome>[
+          for (final o in value) ?PlacementOutcome.fromJson(o),
+        ]);
+      }
+    }
+    if (pick('placement_correction', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (RegExp(r'^[a-z]{2,3}$').hasMatch(key) && value is num) {
+          setPlacementCorrection(key, value.toDouble());
+        }
+      }
+    }
     if (pick('placement_runs', _parseJsonMap) case final v?) {
       for (final MapEntry(:key, :value) in v.entries) {
         if (RegExp(r'^[a-z]{2,3}$').hasMatch(key) && value is String) {
@@ -1594,6 +1971,17 @@ class SettingsNotifier extends ChangeNotifier {
             setLevelCollapsed(key, level, true);
           }
         }
+      }
+    }
+    if (pick('situations_shown', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! List) continue;
+        final ids = <String>[
+          for (final id in value)
+            if (id is String && id.isNotEmpty) id,
+        ];
+        // An empty list is no choice: the card would have no buttons.
+        if (ids.isNotEmpty) setSituationsShown(key, ids);
       }
     }
     for (final (name, unsupported) in <(String, bool)>[
@@ -1707,6 +2095,45 @@ class SettingsNotifier extends ChangeNotifier {
           if (RegExp(r'^[a-z0-9-]+$').hasMatch(id)) id,
       };
     }
+    _restoreCulture(stored);
+  }
+
+  /// Restores the per-language culture options. A store that has the map reads
+  /// it, each entry tolerant of a missing key. One from before they were per
+  /// language holds the global values: they are copied to every language
+  /// the profile has (one with skills, or one it learns), and a language added
+  /// later starts from the defaults. The old keys are never written again, and
+  /// the old `hide_above_level`, `culture_above_support` and
+  /// `culture_per_unit` are ignored.
+  void _restoreCulture(Map<String, String> stored) {
+    final code = RegExp(r'^[a-z]{2,3}$');
+    final text = stored['culture_by_language'];
+    final map = text == null ? null : _parseJsonMap(text);
+    if (map != null) {
+      for (final MapEntry(:key, :value) in map.entries) {
+        if (code.hasMatch(key) && value is Map) {
+          setCultureFor(key, CultureOptions.fromJson(value));
+        }
+      }
+      return;
+    }
+    bool? old(String name) => bool.tryParse(stored[name] ?? '');
+    final items = old('culture_items');
+    final counts = old('culture_counts');
+    final creators = old('culture_creators');
+    if (items == null && counts == null && creators == null) return;
+    const base = CultureOptions.defaults;
+    final carried = CultureOptions(
+      items: items ?? base.items,
+      counts: counts ?? base.counts,
+      creators: creators ?? base.creators,
+    );
+    for (final language in <String>{
+      ...languagesWithSkills,
+      ..._learningLanguages,
+    }) {
+      setCultureFor(language, carried);
+    }
   }
 
   static TimeOfDay? _parseTime(String text) {
@@ -1753,4 +2180,62 @@ class SettingsNotifier extends ChangeNotifier {
     assign(next);
     notifyListeners();
   }
+}
+
+/// How many placements' outcome records a language keeps.
+const int kMaxOutcomes = 20;
+
+/// Where a Find my level run put one skill: the start unit, the unit range
+/// it is 80% sure of, and its confidence word (the name of an
+/// `AssuranceLabel`).
+class PlacementRange {
+  const PlacementRange({
+    required this.start,
+    required this.low,
+    required this.high,
+    required this.label,
+  });
+
+  final int start;
+  final int low;
+  final int high;
+  final String label;
+
+  /// The range [json] holds, or null for anything that is not one.
+  static PlacementRange? fromJson(Object? json) {
+    if (json is! Map) return null;
+    final start = json['start'];
+    final low = json['low'];
+    final high = json['high'];
+    final label = json['label'];
+    if (start is! int ||
+        low is! int ||
+        high is! int ||
+        label is! String ||
+        !RegExp(r'^[a-zA-Z]+$').hasMatch(label) ||
+        start < 0 ||
+        low < 0 ||
+        high < low) {
+      return null;
+    }
+    return PlacementRange(start: start, low: low, high: high, label: label);
+  }
+
+  Map<String, Object?> toJson() => <String, Object?>{
+    'start': start,
+    'low': low,
+    'high': high,
+    'label': label,
+  };
+
+  @override
+  bool operator ==(Object other) =>
+      other is PlacementRange &&
+      other.start == start &&
+      other.low == low &&
+      other.high == high &&
+      other.label == label;
+
+  @override
+  int get hashCode => Object.hash(start, low, high, label);
 }

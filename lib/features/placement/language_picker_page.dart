@@ -15,12 +15,12 @@ import '../../core/data/spoken_languages.dart';
 import '../../core/decks/deck_index.dart' show decksBeforeReady;
 import '../../core/decks/language_catalog.dart';
 import '../../core/decks/notation.dart';
+import '../../core/placement/placement_check.dart' show kOlderPlacementModel;
 import '../../core/scheduling/placed_review.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/page_parts.dart';
-import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import '../downloads/app_update_needed.dart';
 import '../downloads/deck_update_controls.dart';
@@ -34,6 +34,7 @@ import 'language_sheet.dart';
 import 'language_download.dart';
 import 'placement_page.dart';
 import 'script_test_page.dart';
+import '../../app/language_directory_loader.dart';
 
 /// The languages the learner learns (#211, #626, `docs/plans/language-picker.md`
 /// and the approved mockup `docs/mockups/languages-learning.html`): asked on
@@ -204,20 +205,20 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
       return;
     }
     _listAsked = true;
-    DefaultAssetBundle.of(context)
-        .loadString(spokenLanguagesAsset)
-        .then(parseSpokenLanguages)
-        .then((languages) {
-          if (!mounted) return;
-          setState(() {
-            _spokenList = languages;
-            if (widget.ownNames == null) {
-              _ownNames = <String, String>{
-                for (final l in languages) l.code: l.ownName,
-              };
-            }
-          });
-        }, onError: (Object _) {});
+    loadLanguageDirectory(
+      DefaultAssetBundle.of(context),
+      AppScope.maybeRead(context),
+    ).then((languages) {
+      if (!mounted) return;
+      setState(() {
+        _spokenList = languages;
+        if (widget.ownNames == null) {
+          _ownNames = <String, String>{
+            for (final l in languages) l.code: l.ownName,
+          };
+        }
+      });
+    }, onError: (Object _) {});
   }
 
   @override
@@ -601,6 +602,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
               standings:
                   found.scripts[code] ?? const <String, ScriptStanding>{},
               native: native,
+              model: kOlderPlacementModel,
             );
             settings.setPlacedReview(
               code,
@@ -844,6 +846,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
         placed: value,
         standings: standings[key] ?? const <String, ScriptStanding>{},
         native: state.courseNative(key),
+        model: kOlderPlacementModel,
       );
       settings.setPlacedReview(key, review[key] ?? PlacedReview.fallback);
     }
@@ -870,7 +873,6 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
           ? null
           : AppBar(
               title: Text(AppLocalizations.of(context)!.pickerSettingsTitle),
-              actions: const <Widget>[ReportButton()],
             ),
       body: SafeArea(
         bottom: false,

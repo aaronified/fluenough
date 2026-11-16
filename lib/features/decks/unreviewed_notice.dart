@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../../app/deck_catalog.dart';
+import '../../core/feedback/content_report.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
-import '../../ui/widgets/report_button.dart';
+import '../../ui/widgets/content_report.dart';
 
 /// On a deck no native speaker has checked, tagged `unreviewed`: says so and
 /// asks speakers to report mistakes (#39). The Telugu decks carry it.
@@ -48,7 +49,10 @@ class UnreviewedNotice extends StatelessWidget {
                   ),
                 ),
                 TextButton(
-                  onPressed: () => ReportButton.open(context, detail: entry.id),
+                  onPressed: () => showContentReport(
+                    context,
+                    ContentTarget.deck(entry.deck),
+                  ),
                   style: TextButton.styleFrom(
                     minimumSize: const Size(48, 40),
                     padding: EdgeInsets.zero,

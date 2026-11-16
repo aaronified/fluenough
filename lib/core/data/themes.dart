@@ -25,6 +25,10 @@ class DeckTheme {
   String toString() => 'DeckTheme($id)';
 }
 
+/// The newest schema of a themes file this app reads. A later one is not used
+/// (the bundled copy stays), as the file may mean something new.
+const int supportedThemesSchema = 1;
+
 final _themeId = RegExp(r'^[a-z0-9]+(?:-[a-z0-9]+)*$');
 
 /// The themes in [text], the shared `decks/themes.yaml`, in the order the
@@ -46,6 +50,14 @@ List<DeckTheme> parseThemes(String text, {String source = 'themes.yaml'}) {
   }
   if (root is! YamlMap || root['kind'] != 'themes') {
     throw bad('a themes file is a mapping with "kind: themes"', root);
+  }
+  final schema = root['schema'];
+  if (schema is int && schema > supportedThemesSchema) {
+    throw bad(
+      'themes schema $schema is newer than this app reads '
+      '($supportedThemesSchema)',
+      root,
+    );
   }
   final list = root.nodes['themes'];
   if (list is! YamlList || list.nodes.isEmpty) {

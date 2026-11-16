@@ -13,9 +13,12 @@ import 'deck_catalog.dart';
 /// these by default. Read synchronously and kept once read, so that it
 /// works inside a widget test, where real file reads never complete.
 class RepositoryDeckSource implements DeckSource {
-  RepositoryDeckSource([this.root = '.']);
+  RepositoryDeckSource([String? root])
+    : root = root ?? Platform.environment['FLUENOUGH_DECKS_ROOT'] ?? '.';
 
-  /// The checkout's root: the working directory, where `flutter test` runs.
+  /// The root that holds `decks/`: the working directory, where `flutter test`
+  /// runs, unless FLUENOUGH_DECKS_ROOT names another (the sample deck,
+  /// `test/fixtures/sample-decks`, or a checkout of the decks-live branch).
   final String root;
 
   static final Map<String, Map<String, String>> _read =
