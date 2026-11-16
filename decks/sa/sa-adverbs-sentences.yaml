@@ -7,60 +7,80 @@ license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed"]
 cards:
   - id: "sa-3060"
-    target: "अहं तत्र गच्छामि."
-    reading: "ahaṃ tatra gacchāmi."
-    ipa: "əɦəm t̪ət̪rə ɡətʃtʃʰaːmi"
+    target: "अहं तत्र गच्छामि त्वं संस्कृतं पठसि."
+    reading: "ahaṃ tatra gacchāmi tvaṃ saṃskṛtaṃ paṭhasi."
+    ipa: "əɦəm t̪ət̪rə ɡətʃtʃʰaːmi t̪ʋəm sə̃skr̩t̪əm pəʈʰəsi"
     pos: "phrase"
-    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "तत्र", ref: "sa-1081" }, { word: "गच्छामि", base: "गम्", reading: "gam" }]
-    confusables: [{ id: "w1", ref: "sa-1080", kind: "word" }, { id: "w2", ref: "sa-1082", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "तत्र", ref: "sa-1081" }, { word: "गच्छामि", base: "गम्", reading: "gam" }, { word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "पठसि", base: "पठ्", reading: "paṭh" }]
+    confusables: [{ id: "w1", ref: "sa-1010", kind: "word" }, { id: "w2", ref: "sa-1083", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
   - id: "sa-3061"
-    target: "अद्य जलं पिबामि."
-    reading: "adya jalaṃ pibāmi."
-    ipa: "əd̪jə dʒələm pibaːmi"
+    target: "अद्य वयं जलं पिबामः पुनः पठामः."
+    reading: "adya vayaṃ jalaṃ pibāmaḥ punaḥ paṭhāmaḥ."
+    ipa: "əd̪jə ʋəjəm dʒələm pibaːməh punəh pəʈʰaːməh"
     pos: "phrase"
-    bases: [{ word: "अद्य", ref: "sa-1088" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "पिबामि", base: "पा", reading: "pā" }]
-    confusables: [{ id: "w1", ref: "sa-1089", kind: "word" }, { id: "w2", ref: "sa-1090", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "अद्य", ref: "sa-1088" }, { word: "वयं", base: "वयम्", reading: "vayam" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "पिबामः", base: "पा", reading: "pā" }, { word: "पुनः", ref: "sa-1091" }, { word: "पठामः", base: "पठ्", reading: "paṭh" }]
+    confusables: [{ id: "w1", ref: "sa-1089", kind: "word" }, { id: "w2", ref: "sa-1023", kind: "word" }]
     notes: [{ id: "n1", kind: "note" }]
   - id: "sa-3062"
-    target: "श्वः पिबामि."
-    reading: "śvaḥ pibāmi."
-    ipa: "ʃʋəh pibaːmi"
+    target: "श्वः पिता कुत्र गच्छति माता कुत्र तिष्ठति?"
+    reading: "śvaḥ pitā kutra gacchati mātā kutra tiṣṭhati?"
+    ipa: "ʃʋəh pit̪aː kut̪rə ɡətʃtʃʰət̪i maːt̪aː kut̪rə t̪iʂʈʰət̪i"
     pos: "phrase"
-    bases: [{ word: "श्वः", ref: "sa-1089" }, { word: "पिबामि", base: "पा", reading: "pā" }]
-    confusables: [{ id: "w1", ref: "sa-1088", kind: "word" }, { id: "w2", ref: "sa-1090", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "श्वः", ref: "sa-1089" }, { word: "पिता", ref: "sa-1031" }, { word: "कुत्र", ref: "sa-1002" }, { word: "गच्छति", base: "गम्", reading: "gam" }, { word: "माता", ref: "sa-1030" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+    confusables: [{ id: "w1", ref: "sa-1091", kind: "word" }, { id: "w2", ref: "sa-1032", kind: "word" }]
   - id: "sa-3063"
-    target: "अहं सदा पिबामि."
-    reading: "ahaṃ sadā pibāmi."
-    ipa: "əɦəm səd̪aː pibaːmi"
+    target: "सदा सखा जलं पिबति भ्राता खादति."
+    reading: "sadā sakhā jalaṃ pibati bhrātā khādati."
+    ipa: "səd̪aː səkʰaː dʒələm pibət̪i bʱraːt̪aː kʰaːd̪ət̪i"
     pos: "phrase"
-    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "सदा", ref: "sa-1086" }, { word: "पिबामि", base: "पा", reading: "pā" }]
-    confusables: [{ id: "w1", ref: "sa-1087", kind: "word" }, { id: "w2", ref: "sa-1103", kind: "word" }]
-  - id: "sa-3064"
-    target: "अत्र जलम्."
-    reading: "atra jalam."
-    ipa: "ət̪rə dʒələm"
-    pos: "phrase"
-    bases: [{ word: "अत्र", ref: "sa-1080" }, { word: "जलम्", ref: "sa-0023" }]
-    confusables: [{ id: "w1", ref: "sa-1081", kind: "word" }, { id: "w2", ref: "sa-0024", kind: "word" }]
-  - id: "sa-3065"
-    target: "पुनः पठति."
-    reading: "punaḥ paṭhati."
-    ipa: "punəh pəʈʰət̪i"
-    pos: "phrase"
-    bases: [{ word: "पुनः", ref: "sa-1091" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
-    confusables: [{ id: "w1", ref: "sa-1092", kind: "word" }, { id: "w2", ref: "sa-1093", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "सदा", ref: "sa-1086" }, { word: "सखा", ref: "sa-1038" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "पिबति", base: "पा", reading: "pā" }, { word: "भ्राता", ref: "sa-1032" }, { word: "खादति", base: "खाद्", reading: "khād" }]
+    confusables: [{ id: "w1", ref: "sa-1088", kind: "word" }, { id: "w2", ref: "sa-1041", kind: "word" }]
     notes: [{ id: "n1", kind: "note" }]
+  - id: "sa-3064"
+    target: "त्वं शीघ्रं न धावसि वयं शीघ्रं धावामः."
+    reading: "tvaṃ śīghraṃ na dhāvasi vayaṃ śīghraṃ dhāvāmaḥ."
+    ipa: "t̪ʋəm ʃiːɡʱrəm nə d̪ʱaːʋəsi ʋəjəm ʃiːɡʱrəm d̪ʱaːʋaːməh"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "शीघ्रं", base: "शीघ्रम्", reading: "śīghram" }, { word: "न", ref: "sa-0026" }, { word: "धावसि", base: "धाव्", reading: "dhāv" }, { word: "वयं", base: "वयम्", reading: "vayam" }, { word: "धावामः", base: "धाव्", reading: "dhāv" }]
+    confusables: [{ id: "w1", ref: "sa-1010", kind: "word" }, { id: "w2", ref: "sa-1101", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "sa-3065"
+    target: "सखा पुनः पिबति माता पुनः पठति."
+    reading: "sakhā punaḥ pibati mātā punaḥ paṭhati."
+    ipa: "səkʰaː punəh pibət̪i maːt̪aː punəh pəʈʰət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सखा", ref: "sa-1038" }, { word: "पुनः", ref: "sa-1091" }, { word: "पिबति", base: "पा", reading: "pā" }, { word: "माता", ref: "sa-1030" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+    confusables: [{ id: "w1", ref: "sa-1041", kind: "word" }, { id: "w2", ref: "sa-1097", kind: "word" }]
   - id: "sa-3066"
-    target: "एवं गच्छति."
-    reading: "evaṃ gacchati."
-    ipa: "eːʋəm ɡətʃtʃʰət̪i"
+    target: "इदानीं का वदति का गायति?"
+    reading: "idānīṃ kā vadati kā gāyati?"
+    ipa: "id̪aːniːm kaː ʋəd̪ət̪i kaː ɡaːjət̪i"
     pos: "phrase"
-    bases: [{ word: "एवं", base: "एवम्", reading: "evam" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
-    confusables: [{ id: "w1", ref: "sa-1099", kind: "word" }, { id: "w2", ref: "sa-1100", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "इदानीं", base: "इदानीम्", reading: "idānīm" }, { word: "का", ref: "sa-1026" }, { word: "वदति", base: "वद्", reading: "vad" }, { word: "गायति", base: "गै", reading: "gai" }]
+    confusables: [{ id: "w1", ref: "sa-1084", kind: "word" }, { id: "w2", ref: "sa-0434", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
   - id: "sa-3067"
-    target: "तदा गच्छामि."
-    reading: "tadā gacchāmi."
-    ipa: "t̪əd̪aː ɡətʃtʃʰaːmi"
+    target: "भ्राता बहु खादति पिता बहु जलं पिबति."
+    reading: "bhrātā bahu khādati pitā bahu jalaṃ pibati."
+    ipa: "bʱraːt̪aː bəɦu kʰaːd̪ət̪i pit̪aː bəɦu dʒələm pibət̪i"
     pos: "phrase"
-    bases: [{ word: "तदा", ref: "sa-1084" }, { word: "गच्छामि", base: "गम्", reading: "gam" }]
-    confusables: [{ id: "w1", ref: "sa-1085", kind: "word" }, { id: "w2", ref: "sa-1103", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "भ्राता", ref: "sa-1032" }, { word: "बहु", ref: "sa-1096" }, { word: "खादति", base: "खाद्", reading: "khād" }, { word: "पिता", ref: "sa-1031" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "पिबति", base: "पा", reading: "pā" }]
+    confusables: [{ id: "w1", ref: "sa-1033", kind: "word" }, { id: "w2", ref: "sa-2002", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "sa-3068"
+    target: "कदाचित् पिता हसति कदाचित् पुत्री गायति."
+    reading: "kadācit pitā hasati kadācit putrī gāyati."
+    ipa: "kəd̪aːtʃit̪ pit̪aː ɦəsət̪i kəd̪aːtʃit̪ put̪riː ɡaːjət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "कदाचित्", ref: "sa-1087" }, { word: "पिता", ref: "sa-1031" }, { word: "हसति", base: "हस्", reading: "has" }, { word: "पुत्री", ref: "sa-1034" }, { word: "गायति", base: "गै", reading: "gai" }]
+    confusables: [{ id: "w1", ref: "sa-1032", kind: "word" }, { id: "w2", ref: "sa-2005", kind: "word" }]

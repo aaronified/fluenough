@@ -7,44 +7,72 @@ license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed"]
 cards:
   - id: "sa-3130"
-    target: "उपरि जलम्."
-    reading: "upari jalam."
-    ipa: "upəri dʒələm"
+    target: "उपरि जलं भवति पिता तत्र गच्छति."
+    reading: "upari jalaṃ bhavati pitā tatra gacchati."
+    ipa: "upəri dʒələm bʱəʋət̪i pit̪aː t̪ət̪rə ɡətʃtʃʰət̪i"
     pos: "phrase"
-    bases: [{ word: "उपरि", ref: "sa-1586" }, { word: "जलम्", ref: "sa-0023" }]
-    confusables: [{ id: "w1", ref: "sa-1587", kind: "word" }, { id: "w2", ref: "sa-1585", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "उपरि", ref: "sa-1586" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "पिता", ref: "sa-1031" }, { word: "तत्र", ref: "sa-1081" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+    confusables: [{ id: "w1", ref: "sa-1587", kind: "word" }, { id: "w2", ref: "sa-0024", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
   - id: "sa-3131"
-    target: "अग्रे गच्छामि."
-    reading: "agre gacchāmi."
-    ipa: "əɡreː ɡətʃtʃʰaːmi"
+    target: "अग्रे सखा गच्छति पश्चात् पिता गच्छति."
+    reading: "agre sakhā gacchati paścāt pitā gacchati."
+    ipa: "əɡreː səkʰaː ɡətʃtʃʰət̪i pəʃtʃaːt̪ pit̪aː ɡətʃtʃʰət̪i"
     pos: "phrase"
-    bases: [{ word: "अग्रे", ref: "sa-1592" }, { word: "गच्छामि", base: "गम्", reading: "gam" }]
-    confusables: [{ id: "w1", ref: "sa-1585", kind: "word" }, { id: "w2", ref: "sa-1586", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "अग्रे", ref: "sa-1592" }, { word: "सखा", ref: "sa-1038" }, { word: "गच्छति", base: "गम्", reading: "gam" }, { word: "पश्चात्", ref: "sa-1585" }, { word: "पिता", ref: "sa-1031" }]
+    confusables: [{ id: "w1", ref: "sa-1586", kind: "word" }, { id: "w2", ref: "sa-1041", kind: "word" }]
   - id: "sa-3132"
-    target: "पश्चात् पठति."
-    reading: "paścāt paṭhati."
-    ipa: "pəʃtʃaːt̪ pəʈʰət̪i"
+    target: "दक्षिणो हस्तो जलं नयति."
+    reading: "dakṣiṇo hasto jalaṃ nayati."
+    ipa: "d̪əkʂiɳoː ɦəst̪oː dʒələm nəjət̪i"
     pos: "phrase"
-    bases: [{ word: "पश्चात्", ref: "sa-1585" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
-    confusables: [{ id: "w1", ref: "sa-1592", kind: "word" }, { id: "w2", ref: "sa-1587", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "दक्षिणो", base: "दक्षिणः", reading: "dakṣiṇaḥ" }, { word: "हस्तो", base: "हस्तः", reading: "hastaḥ" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "नयति", base: "नी", reading: "nī" }]
+    confusables: [{ id: "w1", ref: "sa-1592", kind: "word" }, { id: "w2", ref: "sa-1568", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
   - id: "sa-3133"
-    target: "पूर्वः पतिः."
-    reading: "pūrvaḥ patiḥ."
-    ipa: "puːrʋəh pət̪ih"
+    target: "अधस्तात् पुस्तकं तिष्ठति माता तत्र पठति."
+    reading: "adhastāt pustakaṃ tiṣṭhati mātā tatra paṭhati."
+    ipa: "əd̪ʱəst̪aːt̪ pust̪əkəm t̪iʂʈʰət̪i maːt̪aː t̪ət̪rə pəʈʰət̪i"
     pos: "phrase"
-    bases: [{ word: "पूर्वः", ref: "sa-1590" }, { word: "पतिः", ref: "sa-1036" }]
-    confusables: [{ id: "w1", ref: "sa-1591", kind: "word" }, { id: "w2", ref: "sa-1589", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "अधस्तात्", ref: "sa-1587" }, { word: "पुस्तकं", base: "पुस्तकम्", reading: "pustakam" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }, { word: "माता", ref: "sa-1030" }, { word: "तत्र", ref: "sa-1081" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+    confusables: [{ id: "w1", ref: "sa-1588", kind: "word" }, { id: "w2", ref: "sa-4101", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
   - id: "sa-3134"
-    target: "दक्षिणः पादः."
-    reading: "dakṣiṇaḥ pādaḥ."
-    ipa: "d̪əkʂiɳəh paːd̪əh"
+    target: "अग्रे का तिष्ठति पश्चात् को गच्छति?"
+    reading: "agre kā tiṣṭhati paścāt ko gacchati?"
+    ipa: "əɡreː kaː t̪iʂʈʰət̪i pəʃtʃaːt̪ koː ɡətʃtʃʰət̪i"
     pos: "phrase"
-    bases: [{ word: "दक्षिणः", ref: "sa-1588" }, { word: "पादः", ref: "sa-1568" }]
-    confusables: [{ id: "w1", ref: "sa-1589", kind: "word" }, { id: "w2", ref: "sa-1590", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "अग्रे", ref: "sa-1592" }, { word: "का", ref: "sa-1026" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }, { word: "पश्चात्", ref: "sa-1585" }, { word: "को", base: "कः", reading: "kaḥ" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+    confusables: [{ id: "w1", ref: "sa-1586", kind: "word" }, { id: "w2", ref: "sa-2003", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
   - id: "sa-3135"
-    target: "अधस्तात् तिष्ठति."
-    reading: "adhastāt tiṣṭhati."
-    ipa: "əd̪ʱəst̪aːt̪ t̪iʂʈʰət̪i"
+    target: "उपरि को वसति माता कुत्र वसति?"
+    reading: "upari ko vasati mātā kutra vasati?"
+    ipa: "upəri koː ʋəsət̪i maːt̪aː kut̪rə ʋəsət̪i"
     pos: "phrase"
-    bases: [{ word: "अधस्तात्", ref: "sa-1587" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
-    confusables: [{ id: "w1", ref: "sa-1586", kind: "word" }, { id: "w2", ref: "sa-1592", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "उपरि", ref: "sa-1586" }, { word: "को", base: "कः", reading: "kaḥ" }, { word: "वसति", base: "वस्", reading: "vas" }, { word: "माता", ref: "sa-1030" }, { word: "कुत्र", ref: "sa-1002" }]
+    confusables: [{ id: "w1", ref: "sa-1587", kind: "word" }, { id: "w2", ref: "sa-1003", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "sa-3136"
+    target: "दक्षिणः पादो न चलति दक्षिणो हस्तो न चलति."
+    reading: "dakṣiṇaḥ pādo na calati dakṣiṇo hasto na calati."
+    ipa: "d̪əkʂiɳəh paːd̪oː nə tʃələt̪i d̪əkʂiɳoː ɦəst̪oː nə tʃələt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "दक्षिणः", ref: "sa-1588" }, { word: "पादो", base: "पादः", reading: "pādaḥ" }, { word: "न", ref: "sa-0026" }, { word: "चलति", base: "चल्", reading: "cal" }, { word: "दक्षिणो", base: "दक्षिणः", reading: "dakṣiṇaḥ" }, { word: "हस्तो", base: "हस्तः", reading: "hastaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1592", kind: "word" }, { id: "w2", ref: "sa-1569", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "sa-3137"
+    target: "अग्रे माता तिष्ठति पश्चात् पिता पठति."
+    reading: "agre mātā tiṣṭhati paścāt pitā paṭhati."
+    ipa: "əɡreː maːt̪aː t̪iʂʈʰət̪i pəʃtʃaːt̪ pit̪aː pəʈʰət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अग्रे", ref: "sa-1592" }, { word: "माता", ref: "sa-1030" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }, { word: "पश्चात्", ref: "sa-1585" }, { word: "पिता", ref: "sa-1031" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+    confusables: [{ id: "w1", ref: "sa-1586", kind: "word" }, { id: "w2", ref: "sa-1032", kind: "word" }]

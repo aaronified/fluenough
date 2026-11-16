@@ -7,44 +7,83 @@ license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed"]
 cards:
   - id: "sa-3120"
-    target: "केशः कृष्णः."
-    reading: "keśaḥ kṛṣṇaḥ."
-    ipa: "keːʃəh kr̩ʂɳəh"
+    target: "केशः कृष्णो भवति नखं कठिनं भवति."
+    reading: "keśaḥ kṛṣṇo bhavati nakhaṃ kaṭhinaṃ bhavati."
+    ipa: "keːʃəh kr̩ʂɳoː bʱəʋət̪i nəkʰəm kəʈʰinəm bʱəʋət̪i"
     pos: "phrase"
-    bases: [{ word: "केशः", ref: "sa-1572" }, { word: "कृष्णः", ref: "sa-1515" }]
-    confusables: [{ id: "w1", ref: "sa-1516", kind: "word" }, { id: "w2", ref: "sa-1519", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "केशः", ref: "sa-1572" }, { word: "कृष्णो", base: "कृष्णः", reading: "kṛṣṇaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "नखं", base: "नखम्", reading: "nakham" }, { word: "कठिनं", base: "कठिनः", reading: "kaṭhinaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1573", kind: "word" }, { id: "w2", ref: "sa-1516", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
   - id: "sa-3121"
-    target: "हस्तः कठिनः."
-    reading: "hastaḥ kaṭhinaḥ."
-    ipa: "ɦəst̪əh kəʈʰinəh"
+    target: "त्वं हस्तेन जलं पिबसि."
+    reading: "tvaṃ hastena jalaṃ pibasi."
+    ipa: "t̪ʋəm ɦəst̪eːnə dʒələm pibəsi"
     pos: "phrase"
-    bases: [{ word: "हस्तः", ref: "sa-1567" }, { word: "कठिनः", ref: "sa-1535" }]
-    confusables: [{ id: "w1", ref: "sa-1536", kind: "word" }, { id: "w2", ref: "sa-1530", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "हस्तेन", base: "हस्तः", reading: "hastaḥ" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "पिबसि", base: "पा", reading: "pā" }]
+    confusables: [{ id: "w1", ref: "sa-1010", kind: "word" }, { id: "w2", ref: "sa-1568", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
   - id: "sa-3122"
-    target: "कति हस्ताः?"
-    reading: "kati hastāḥ?"
-    ipa: "kət̪i ɦəst̪aːh"
+    target: "कति हस्ता भवन्ति कति पादा भवन्ति?"
+    reading: "kati hastā bhavanti kati pādā bhavanti?"
+    ipa: "kət̪i ɦəst̪aː bʱəʋənt̪i kət̪i paːd̪aː bʱəʋənt̪i"
     pos: "phrase"
-    bases: [{ word: "कति", ref: "sa-1005" }, { word: "हस्ताः", base: "हस्तः", reading: "hastaḥ" }]
-    confusables: [{ id: "w1", ref: "sa-1001", kind: "word" }, { id: "w2", ref: "sa-1002", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "कति", ref: "sa-1005" }, { word: "हस्ता", base: "हस्तः", reading: "hastaḥ" }, { word: "भवन्ति", base: "भू", reading: "bhū" }, { word: "पादा", base: "पादः", reading: "pādaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1006", kind: "word" }, { id: "w2", ref: "sa-1569", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
   - id: "sa-3123"
-    target: "दश पादाः."
-    reading: "daśa pādāḥ."
-    ipa: "d̪əʃə paːd̪aːh"
+    target: "द्वौ पादौ गच्छतो द्वौ हस्तौ जलं नयतः."
+    reading: "dvau pādau gacchato dvau hastau jalaṃ nayataḥ."
+    ipa: "d̪ʋəu paːd̪əu ɡətʃtʃʰət̪oː d̪ʋəu ɦəst̪əu dʒələm nəjət̪əh"
     pos: "phrase"
-    bases: [{ word: "दश", ref: "sa-1058" }, { word: "पादाः", base: "पादः", reading: "pādaḥ" }]
-    confusables: [{ id: "w1", ref: "sa-1057", kind: "word" }, { id: "w2", ref: "sa-1059", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "द्वौ", ref: "sa-1050" }, { word: "पादौ", base: "पादः", reading: "pādaḥ" }, { word: "गच्छतो", base: "गम्", reading: "gam" }, { word: "हस्तौ", base: "हस्तः", reading: "hastaḥ" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "नयतः", base: "नी", reading: "nī" }]
+    confusables: [{ id: "w1", ref: "sa-1051", kind: "word" }, { id: "w2", ref: "sa-1569", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
   - id: "sa-3124"
-    target: "पादः चलति."
-    reading: "pādaḥ calati."
-    ipa: "paːd̪əh tʃələt̪i"
+    target: "पादो न चलति हस्तो न चलति."
+    reading: "pādo na calati hasto na calati."
+    ipa: "paːd̪oː nə tʃələt̪i ɦəst̪oː nə tʃələt̪i"
     pos: "phrase"
-    bases: [{ word: "पादः", ref: "sa-1568" }, { word: "चलति", base: "चल्", reading: "cal" }]
-    confusables: [{ id: "w1", ref: "sa-1567", kind: "word" }, { id: "w2", ref: "sa-1573", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "पादो", base: "पादः", reading: "pādaḥ" }, { word: "न", ref: "sa-0026" }, { word: "चलति", base: "चल्", reading: "cal" }, { word: "हस्तो", base: "हस्तः", reading: "hastaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1569", kind: "word" }, { id: "w2", ref: "sa-2012", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
   - id: "sa-3125"
-    target: "रुधिरं पतति."
-    reading: "rudhiraṃ patati."
-    ipa: "rud̪ʱirəm pət̪ət̪i"
+    target: "तत्र रुधिरं सरति तत्र जलं क्षरति."
+    reading: "tatra rudhiraṃ sarati tatra jalaṃ kṣarati."
+    ipa: "t̪ət̪rə rud̪ʱirəm sərət̪i t̪ət̪rə dʒələm kʂərət̪i"
     pos: "phrase"
-    bases: [{ word: "रुधिरं", base: "रुधिरम्", reading: "rudhiram" }, { word: "पतति", base: "पत्", reading: "pat" }]
-    confusables: [{ id: "w1", ref: "sa-1574", kind: "word" }, { id: "w2", ref: "sa-1580", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "तत्र", ref: "sa-1081" }, { word: "रुधिरं", base: "रुधिरम्", reading: "rudhiram" }, { word: "सरति", base: "सृ", reading: "sṛ" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "क्षरति", base: "क्षर्", reading: "kṣar" }]
+    confusables: [{ id: "w1", ref: "sa-1083", kind: "word" }, { id: "w2", ref: "sa-2018", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "sa-3126"
+    target: "शिरः कुत्र भवति मुखं कुत्र भवति?"
+    reading: "śiraḥ kutra bhavati mukhaṃ kutra bhavati?"
+    ipa: "ʃirəh kut̪rə bʱəʋət̪i mukʰəm kut̪rə bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "शिरः", ref: "sa-1580" }, { word: "कुत्र", ref: "sa-1002" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "मुखं", base: "मुखम्", reading: "mukham" }]
+    confusables: [{ id: "w1", ref: "sa-1003", kind: "word" }, { id: "w2", ref: "sa-0431", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "sa-3127"
+    target: "स नेत्रेण पश्यति पिता कर्णेन शृणोति."
+    reading: "sa netreṇa paśyati pitā karṇena śṛṇoti."
+    ipa: "sə neːt̪reːɳə pəʃjət̪i pit̪aː kərɳeːnə ʃr̩ɳoːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "स", base: "सः", reading: "saḥ" }, { word: "नेत्रेण", base: "नेत्रम्", reading: "netram" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "पिता", ref: "sa-1031" }, { word: "कर्णेन", base: "कर्णः", reading: "karṇaḥ" }, { word: "शृणोति", base: "श्रु", reading: "śru" }]
+    confusables: [{ id: "w1", ref: "sa-1011", kind: "word" }, { id: "w2", ref: "sa-1572", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "sa-3128"
+    target: "अहं मुखेन संस्कृतं वदामि."
+    reading: "ahaṃ mukhena saṃskṛtaṃ vadāmi."
+    ipa: "əɦəm mukʰeːnə sə̃skr̩t̪əm ʋəd̪aːmi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "मुखेन", base: "मुखम्", reading: "mukham" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "वदामि", base: "वद्", reading: "vad" }]
+    confusables: [{ id: "w1", ref: "sa-0022", kind: "word" }, { id: "w2", ref: "sa-1570", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]

@@ -7,58 +7,82 @@ license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed"]
 cards:
   - id: "sa-3150"
-    target: "जलं क्षरति."
-    reading: "jalaṃ kṣarati."
-    ipa: "dʒələm kʂərət̪i"
+    target: "जलं तत्र क्षरति सखा जलं रुणद्धि."
+    reading: "jalaṃ tatra kṣarati sakhā jalaṃ ruṇaddhi."
+    ipa: "dʒələm t̪ət̪rə kʂərət̪i səkʰaː dʒələm ruɳəd̪d̪ʱi"
     pos: "phrase"
-    bases: [{ word: "जलं", base: "जलम्", reading: "jalam" }, { word: "क्षरति", base: "क्षर्", reading: "kṣar" }]
-    confusables: [{ id: "w1", ref: "sa-2001", kind: "word" }, { id: "w2", ref: "sa-2011", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "जलं", base: "जलम्", reading: "jalam" }, { word: "तत्र", ref: "sa-1081" }, { word: "क्षरति", base: "क्षर्", reading: "kṣar" }, { word: "सखा", ref: "sa-1038" }, { word: "रुणद्धि", base: "रुध्", reading: "rudh" }]
+    confusables: [{ id: "w1", ref: "sa-0024", kind: "word" }, { id: "w2", ref: "sa-1083", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
   - id: "sa-3151"
-    target: "माता रुणद्धि जलम्."
-    reading: "mātā ruṇaddhi jalam."
-    ipa: "maːt̪aː ruɳəd̪d̪ʱi dʒələm"
+    target: "सा पुस्तकं लभते भ्राता पुस्तकं पठति."
+    reading: "sā pustakaṃ labhate bhrātā pustakaṃ paṭhati."
+    ipa: "saː pust̪əkəm ləbʱət̪eː bʱraːt̪aː pust̪əkəm pəʈʰət̪i"
     pos: "phrase"
-    bases: [{ word: "माता", ref: "sa-1030" }, { word: "रुणद्धि", base: "रुध्", reading: "rudh" }, { word: "जलम्", ref: "sa-0023" }]
-    confusables: [{ id: "w1", ref: "sa-2100", kind: "word" }, { id: "w2", ref: "sa-2020", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "सा", ref: "sa-1011" }, { word: "पुस्तकं", base: "पुस्तकम्", reading: "pustakam" }, { word: "लभते", base: "लभ्", reading: "labh" }, { word: "भ्राता", ref: "sa-1032" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+    confusables: [{ id: "w1", ref: "sa-1012", kind: "word" }, { id: "w2", ref: "sa-4101", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
   - id: "sa-3152"
-    target: "सा लभते जलम्."
-    reading: "sā labhate jalam."
-    ipa: "saː ləbʱət̪eː dʒələm"
+    target: "पिता तत्र वर्तते माता तत्र न वर्तते."
+    reading: "pitā tatra vartate mātā tatra na vartate."
+    ipa: "pit̪aː t̪ət̪rə ʋərt̪ət̪eː maːt̪aː t̪ət̪rə nə ʋərt̪ət̪eː"
     pos: "phrase"
-    bases: [{ word: "सा", ref: "sa-1011" }, { word: "लभते", base: "लभ्", reading: "labh" }, { word: "जलम्", ref: "sa-0023" }]
-    confusables: [{ id: "w1", ref: "sa-2001", kind: "word" }, { id: "w2", ref: "sa-2011", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "पिता", ref: "sa-1031" }, { word: "तत्र", ref: "sa-1081" }, { word: "वर्तते", base: "वृत्", reading: "vṛt" }, { word: "माता", ref: "sa-1030" }, { word: "न", ref: "sa-0026" }]
+    confusables: [{ id: "w1", ref: "sa-1032", kind: "word" }, { id: "w2", ref: "sa-1083", kind: "word" }]
   - id: "sa-3153"
-    target: "पिता वर्तते."
-    reading: "pitā vartate."
-    ipa: "pit̪aː ʋərt̪ət̪eː"
+    target: "अस्ति जलं तत्र पिता जलं नयति."
+    reading: "asti jalaṃ tatra pitā jalaṃ nayati."
+    ipa: "əst̪i dʒələm t̪ət̪rə pit̪aː dʒələm nəjət̪i"
     pos: "phrase"
-    bases: [{ word: "पिता", ref: "sa-1031" }, { word: "वर्तते", base: "वृत्", reading: "vṛt" }]
-    confusables: [{ id: "w1", ref: "sa-2100", kind: "word" }, { id: "w2", ref: "sa-2001", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "अस्ति", base: "अस्", reading: "as" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "तत्र", ref: "sa-1081" }, { word: "पिता", ref: "sa-1031" }, { word: "नयति", base: "नी", reading: "nī" }]
+    confusables: [{ id: "w1", ref: "sa-2109", kind: "word" }, { id: "w2", ref: "sa-0024", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
   - id: "sa-3154"
-    target: "अस्ति जलम्."
-    reading: "asti jalam."
-    ipa: "əst̪i dʒələm"
+    target: "को जलं ददाति कः पुस्तकं लभते?"
+    reading: "ko jalaṃ dadāti kaḥ pustakaṃ labhate?"
+    ipa: "koː dʒələm d̪əd̪aːt̪i kəh pust̪əkəm ləbʱət̪eː"
     pos: "phrase"
-    bases: [{ word: "अस्ति", base: "अस्", reading: "as" }, { word: "जलम्", ref: "sa-0023" }]
-    confusables: [{ id: "w1", ref: "sa-0024", kind: "word" }, { id: "w2", ref: "sa-2001", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "को", base: "कः", reading: "kaḥ" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "ददाति", base: "दा", reading: "dā" }, { word: "कः", ref: "sa-1001" }, { word: "पुस्तकं", base: "पुस्तकम्", reading: "pustakam" }, { word: "लभते", base: "लभ्", reading: "labh" }]
+    confusables: [{ id: "w1", ref: "sa-1002", kind: "word" }, { id: "w2", ref: "sa-0024", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
   - id: "sa-3155"
-    target: "सखा ददाति जलम्."
-    reading: "sakhā dadāti jalam."
-    ipa: "səkʰaː d̪əd̪aːt̪i dʒələm"
+    target: "पिता सर्वं पश्यति माता सर्वं शृणोति."
+    reading: "pitā sarvaṃ paśyati mātā sarvaṃ śṛṇoti."
+    ipa: "pit̪aː sərʋəm pəʃjət̪i maːt̪aː sərʋəm ʃr̩ɳoːt̪i"
     pos: "phrase"
-    bases: [{ word: "सखा", ref: "sa-1038" }, { word: "ददाति", base: "दा", reading: "dā" }, { word: "जलम्", ref: "sa-0023" }]
-    confusables: [{ id: "w1", ref: "sa-2110", kind: "word" }, { id: "w2", ref: "sa-2116", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "पिता", ref: "sa-1031" }, { word: "सर्वं", base: "सर्वम्", reading: "sarvam" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "माता", ref: "sa-1030" }, { word: "शृणोति", base: "श्रु", reading: "śru" }]
+    confusables: [{ id: "w1", ref: "sa-1032", kind: "word" }, { id: "w2", ref: "sa-2118", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
   - id: "sa-3156"
-    target: "सा पश्यति जलम्."
-    reading: "sā paśyati jalam."
-    ipa: "saː pəʃjət̪i dʒələm"
+    target: "अहं संस्कृतं पठामि सखा संस्कृतं जानाति."
+    reading: "ahaṃ saṃskṛtaṃ paṭhāmi sakhā saṃskṛtaṃ jānāti."
+    ipa: "əɦəm sə̃skr̩t̪əm pəʈʰaːmi səkʰaː sə̃skr̩t̪əm dʒaːnaːt̪i"
     pos: "phrase"
-    bases: [{ word: "सा", ref: "sa-1011" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "जलम्", ref: "sa-0023" }]
-    confusables: [{ id: "w1", ref: "sa-2118", kind: "word" }, { id: "w2", ref: "sa-2121", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "पठामि", base: "पठ्", reading: "paṭh" }, { word: "सखा", ref: "sa-1038" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }]
+    confusables: [{ id: "w1", ref: "sa-0022", kind: "word" }, { id: "w2", ref: "sa-0433", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
   - id: "sa-3157"
-    target: "सखा जानाति."
-    reading: "sakhā jānāti."
-    ipa: "səkʰaː dʒaːnaːt̪i"
+    target: "माता किं करोति पिता किं करोति?"
+    reading: "mātā kiṃ karoti pitā kiṃ karoti?"
+    ipa: "maːt̪aː kim kəroːt̪i pit̪aː kim kəroːt̪i"
     pos: "phrase"
-    bases: [{ word: "सखा", ref: "sa-1038" }, { word: "जानाति", base: "ज्ञा", reading: "jñā" }]
-    confusables: [{ id: "w1", ref: "sa-2116", kind: "word" }, { id: "w2", ref: "sa-2121", kind: "word" }]
+    tags: ["sentence"]
+    bases: [{ word: "माता", ref: "sa-1030" }, { word: "किं", base: "किम्", reading: "kim" }, { word: "करोति", base: "कृ", reading: "kṛ" }, { word: "पिता", ref: "sa-1031" }]
+    confusables: [{ id: "w1", ref: "sa-1032", kind: "word" }, { id: "w2", ref: "sa-1001", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "sa-3158"
+    target: "पिता संस्कृतं शृणोति पुत्री पुस्तकं पश्यति."
+    reading: "pitā saṃskṛtaṃ śṛṇoti putrī pustakaṃ paśyati."
+    ipa: "pit̪aː sə̃skr̩t̪əm ʃr̩ɳoːt̪i put̪riː pust̪əkəm pəʃjət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "पिता", ref: "sa-1031" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "शृणोति", base: "श्रु", reading: "śru" }, { word: "पुत्री", ref: "sa-1034" }, { word: "पुस्तकं", base: "पुस्तकम्", reading: "pustakam" }, { word: "पश्यति", base: "पश्", reading: "paś" }]
+    confusables: [{ id: "w1", ref: "sa-1032", kind: "word" }, { id: "w2", ref: "sa-2118", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
