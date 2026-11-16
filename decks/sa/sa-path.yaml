@@ -12,6 +12,8 @@
 # are placed in their levels. Each unit moves from `planned` to `decks` in
 # the commit that builds it; unit ids are permanent once a deck is written.
 #
+# Order (reviewed 2026-11-16): the present system comes right after the pronouns, so the sentences of the question words and the pronouns, and every later sentences deck, use only verbs already taught; a sentences deck is listed in the first unit after every word it uses is taught.
+#
 # Written so far: unit 1 (the phrasebook and the first words), the sound
 # differences, the script decks, spelling, the verb units, and the grammar units
 # for the case system, a-stems, the present system (with the first-class verbs),
@@ -59,13 +61,20 @@ units:
     words: 10
   - decks: ["sa-sound-differences"]
     words: 22
-  - decks: ["sa-questions", "sa-questions-sentences"]
+  - decks: ["sa-questions"]
     words: 7
-  - decks: ["sa-pronouns", "sa-pronouns-sentences"]
+  - decks: ["sa-pronouns"]
     words: 17
+  - decks: ["sa-verbs-first-class", "sa-grammar-present-system", "sa-questions-sentences", "sa-pronouns-sentences"]
+    words: 6
+    grammar: ["present-stem", "present-third", "present-second", "present-first"]
+    listening_passages:
+      - { id: "grammar-present-system-heard", text: { "en": "A short passage in Classical Sanskrit showing present system, verb classes, read aloud" } }
+    reading_passages:
+      - { id: "grammar-present-system-text", text: { "en": "A short written text in Classical Sanskrit showing present system, verb classes" } }
   - decks: ["sa-family", "sa-family-sentences"]
     words: 16
-  - decks: ["sa-numbers-1-20", "sa-numbers-1-20-sentences"]
+  - decks: ["sa-numbers-1-20"]
     words: 19
   - ["sa-script-vowels", "sa-script-consonants", "sa-script-vowel-signs", "sa-script-digits"]
   - ["sa-script-conjuncts", "sa-script-reading", "sa-spelling"]
@@ -83,19 +92,12 @@ units:
       - { id: "grammar-case-system-heard", text: { "en": "A short passage in Classical Sanskrit showing case system, read aloud" } }
     reading_passages:
       - { id: "grammar-case-system-text", text: { "en": "A short written text in Classical Sanskrit showing case system" } }
-  - decks: ["sa-grammar-a-stems"]
+  - decks: ["sa-grammar-a-stems", "sa-numbers-1-20-sentences"]
     grammar: ["a-nominative", "a-accusative", "a-instrumental", "a-dative", "a-ablative", "a-genitive", "a-locative", "a-vocative"]
     listening_passages:
       - { id: "grammar-a-stems-heard", text: { "en": "A short passage in Classical Sanskrit showing a stem nouns, read aloud" } }
     reading_passages:
       - { id: "grammar-a-stems-text", text: { "en": "A short written text in Classical Sanskrit showing a stem nouns" } }
-  - decks: ["sa-verbs-first-class", "sa-grammar-present-system"]
-    words: 6
-    grammar: ["present-stem", "present-third", "present-second", "present-first"]
-    listening_passages:
-      - { id: "grammar-present-system-heard", text: { "en": "A short passage in Classical Sanskrit showing present system, verb classes, read aloud" } }
-    reading_passages:
-      - { id: "grammar-present-system-text", text: { "en": "A short written text in Classical Sanskrit showing present system, verb classes" } }
   - decks: ["sa-grammar-sandhi-vowel"]
     grammar: ["sandhi-vowel"]
     listening_passages:
