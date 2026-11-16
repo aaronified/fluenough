@@ -166,11 +166,13 @@ class LanguagesList(unittest.TestCase):
         in_app = dict(re.findall(r"'(\w+:\w+)': '(\w+)'", dart))
         in_tool = {f"{c}:{s}": f for (c, s), f in deck_index.LANGUAGE_FONTS.items()}
         self.assertEqual(in_app, in_tool)
-        # Hindustani keeps the Nastaliq font.
+        # Hindustani keeps the Nastaliq font. The shared Latin companion is
+        # appended where decks/fonts/latin exists (decks-live), so it is left out.
         fonts = deck_index._font_entries(["devanagari", "perso_arabic"], "hi")
-        self.assertEqual([f["script"] for f in fonts], ["devanagari", "perso_arabic"])
+        self.assertEqual([f["script"] for f in fonts if f["script"] != "latin"],
+                         ["devanagari", "perso_arabic"])
         fonts = deck_index._font_entries(["perso_arabic"], "fa")
-        self.assertEqual([(f["script"], f["family"]) for f in fonts],
+        self.assertEqual([(f["script"], f["family"]) for f in fonts if f["script"] != "latin"],
                          [("perso_arabic_naskh", "Noto Naskh Arabic")])
         for entry in self.langs:
             if entry["code"] in ("fa", "ps"):
