@@ -25,6 +25,7 @@ import 'package:fluenough/features/decks/path_model.dart';
 import 'package:fluenough/features/decks/path_parts.dart';
 import 'package:fluenough/features/decks/unit_page.dart';
 import 'package:fluenough/features/decks/word_mastery.dart';
+import 'package:fluenough/features/drill/choice_tile.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/walkthrough_page.dart';
 import 'package:fluenough/ui/widgets/learn_button.dart';
@@ -811,11 +812,9 @@ void main() {
 
         final logged = state.progress.log.length;
         final states = Map.of(state.progress.states);
-        // Recognition comes first (ADR-0034), rated with only two cards to
-        // choose among.
-        await tester.tap(find.text(l10n.drillShowAnswer));
-        await tester.pumpAndSettle();
-        await tester.tap(find.text(l10n.rateGood));
+        // Recognition comes first (ADR-0034), chosen now that the language
+        // has words enough to choose among: a pick records at once.
+        await tester.tap(find.byType(ChoiceTile).first);
         await tester.pumpAndSettle();
         expect(state.progress.log, hasLength(logged + 1));
         expect(state.progress.states, isNot(states));
