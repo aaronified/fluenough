@@ -43,8 +43,28 @@ offline on your phone once a language's decks are downloaded.
 
 ## Screenshots
 
-A Bengali learner from English, three and a half weeks in, and the same phone
-in reviewer mode.
+A Bengali learner from English, three and a half weeks in.
+
+<table align="center">
+  <tr>
+    <td align="center"><strong>Home</strong></td>
+    <td align="center"><strong>Decks</strong></td>
+    <td align="center"><strong>Progress</strong></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/home.png" width="210" alt="The Home screen on a phone: the day's lesson, the words due by skill, the streak and the day's fact"></td>
+    <td align="center"><img src="docs/screenshots/decks.png" width="210" alt="The Decks screen on a phone: the Bengali course path, with the Culture button on the top card"></td>
+    <td align="center"><img src="docs/screenshots/progress.png" width="210" alt="The Progress screen on a phone: reviews, what is remembered, the streak and how well each skill is going"></td>
+  </tr>
+</table>
+
+A learning session: a new word is shown, then asked in different ways, and
+it counts as learned only when both answers are right.
+
+<p align="center"><img src="docs/screenshots/learning-session.gif" width="240" alt="A learning session on a phone: a Bengali word is shown, then asked in several types of question (choose the meaning, choose the word, put the words in order), and Learned appears when both answers were right"></p>
+
+<details>
+<summary>More: scrolling through the screens, and reviewing</summary>
 
 <table align="center">
   <tr>
@@ -64,6 +84,8 @@ in reviewer mode.
     <td align="center"><img src="docs/screenshots/review.gif" width="220" alt="Reviewing the Bengali Family unit: the rater code, cards marked right, and cards still to check"></td>
   </tr>
 </table>
+
+</details>
 
 ## Features
 

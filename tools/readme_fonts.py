@@ -59,11 +59,42 @@ def nearest(weights: dict[Path, int], weight: int) -> Path:
     return min(weights, key=lambda p: (abs(weights[p] - weight), -weights[p]))
 
 
+def combining_marks(noto_sans: Path, roboto: Path) -> io.BytesIO:
+    """The IPA letters (U+0250-02FF), combining diacritics (U+0300-036F) and
+    Latin Extended Additional (U+1E00-1EFF) of [noto_sans], scaled to
+    Roboto's units, as a font to merge in: Roboto lacks some, such as the
+    candrabindu U+0310 a Bengali reading can carry, or an IPA letter of a
+    card's pronunciation, which would draw as a box."""
+    from fontTools import subset
+    from fontTools.ttLib import TTFont
+    from fontTools.ttLib.scaleUpem import scale_upem
+
+    font = TTFont(noto_sans)
+    options = subset.Options()
+    options.layout_features = ["mark", "mkmk"]
+    options.notdef_outline = False
+    subsetter = subset.Subsetter(options)
+    subsetter.populate(unicodes=[*range(0x250, 0x300), *range(0x300, 0x370), *range(0x1E00, 0x1F00)])
+    subsetter.subset(font)
+    scale_upem(font, TTFont(roboto)["head"].unitsPerEm)
+    out = io.BytesIO()
+    font.save(out)
+    out.seek(0)
+    return out
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("noto", type=Path, help="directory of NotoSansBengali-*.ttf")
     parser.add_argument("out", type=Path, help="directory to write Roboto-*.ttf to")
     parser.add_argument("--flutter-root", type=Path, default=None)
+    parser.add_argument(
+        "--marks",
+        type=Path,
+        default=None,
+        help="directory of NotoSans-*.ttf, whose combining marks "
+        "(IPA letters and combining marks) are added, as readings and IPA use them",
+    )
     args = parser.parse_args(argv)
 
     from fontTools.merge import Merger, Options
@@ -76,6 +107,13 @@ def main(argv: list[str] | None = None) -> int:
         print(f"no NotoSansBengali-*.ttf in {args.noto}", file=sys.stderr)
         return 2
     weights = {p: TTFont(p)["OS/2"].usWeightClass for p in notos}
+    mark_weights = {}
+    if args.marks is not None:
+        sans = sorted(args.marks.glob("NotoSans-*.ttf"))
+        if not sans:
+            print(f"no NotoSans-*.ttf in {args.marks}", file=sys.stderr)
+            return 2
+        mark_weights = {p: TTFont(p)["OS/2"].usWeightClass for p in sans}
     args.out.mkdir(parents=True, exist_ok=True)
     for name, weight in ROBOTO.items():
         roboto = sdk / f"Roboto-{name}.ttf"
@@ -85,9 +123,10 @@ def main(argv: list[str] | None = None) -> int:
         scaled = io.BytesIO()
         noto.save(scaled)
         scaled.seek(0)
-        merged = Merger(Options(drop_tables=["vmtx", "vhea", "MATH"])).merge(
-            [str(roboto), scaled]
-        )
+        parts = [str(roboto), scaled]
+        if mark_weights:
+            parts.append(combining_marks(nearest(mark_weights, weight), roboto))
+        merged = Merger(Options(drop_tables=["vmtx", "vhea", "MATH"])).merge(parts)
         target = args.out / f"Roboto-{name}.ttf"
         merged.save(target)
         print(f"{target.name}: Roboto {name} + {noto_path.name}")
