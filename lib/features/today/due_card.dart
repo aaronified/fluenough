@@ -93,16 +93,18 @@ class _Hint extends StatelessWidget {
     final language =
         AppScope.read(context).shownLanguage ??
         numbers.daily.firstOrNull?.language.code;
+    final style = theme.textTheme.bodyMedium!.copyWith(
+      color: theme.colorScheme.onPrimaryContainer,
+    );
+    // The icon's 48 dp box and the sentence's first line share a centre: the
+    // sentence is pushed down by half the difference, so a wrapped sentence
+    // keeps the icon level with its first line.
+    final lineHeight = MediaQuery.textScalerOf(context)
+        .scale(style.fontSize! * (style.height ?? 1.3));
+    final textTop = ((48 - lineHeight) / 2).clamp(0.0, 48.0);
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Expanded(
-          child: Text(
-            l10n.todayDueHint,
-            style: theme.textTheme.bodyMedium!.copyWith(
-              color: theme.colorScheme.onPrimaryContainer,
-            ),
-          ),
-        ),
         Semantics(
           button: true,
           label: l10n.todayDueHintInfo,
@@ -117,6 +119,12 @@ class _Hint extends StatelessWidget {
             constraints: const BoxConstraints(minWidth: 48, minHeight: 48),
             padding: EdgeInsets.zero,
             visualDensity: VisualDensity.standard,
+          ),
+        ),
+        Expanded(
+          child: Padding(
+            padding: EdgeInsetsDirectional.only(start: 4, top: textTop),
+            child: Text(l10n.todayDueHint, style: style),
           ),
         ),
       ],

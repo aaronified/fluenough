@@ -78,7 +78,7 @@ ul.rows{list-style:none;margin:0;padding:0}
 .chev{color:var(--onSv)}
 .prog{display:flex;align-items:center;gap:4px;padding:0 0 6px 48px}
 .seg4{flex:1;display:flex;gap:4px;min-width:0}
-.sg{flex:1;height:6px;border-radius:3px;background:var(--sHighest);overflow:hidden}
+.sg{flex:1;height:8px;border-radius:4px;border:1.5px solid var(--ol);background:transparent;overflow:hidden}
 .sg i{display:block;height:100%;background:var(--p)}
 .flag{flex:none;position:relative;width:40px;height:40px;margin:-8px 0;border:0;background:none;border-radius:50%;display:flex;align-items:center;justify-content:center}
 .flag svg.i{width:22px;height:22px}
@@ -236,7 +236,7 @@ document.addEventListener('click',e=>{
  const had=fl&&fl.parentNode.querySelector('.tip');
  closeTips();
  if(fl&&!had){const st=fl.className.split(' ')[1];
-  fl.insertAdjacentHTML('afterend',`<span class="tip" role="status"><b>Verified by native speakers: ${VW[st].toLowerCase()}</b>${VD[st]}</span>`)}
+  fl.insertAdjacentHTML('afterend',`<span class="tip" role="status">Verified: ${VW[st]}</span>`)}
 });
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeTips()});
 build();

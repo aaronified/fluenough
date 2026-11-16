@@ -198,11 +198,7 @@ class _SituationButton extends StatelessWidget {
     final content = Column(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-        FittedLabel(
-          text: spec.title,
-          width: width,
-          color: colors.onContainer,
-        ),
+        FittedLabel(text: spec.title, width: width, color: colors.onContainer),
         if (count != null && count > 0)
           Text(
             l10n.situationNewCount(count),
@@ -228,9 +224,8 @@ class _SituationButton extends StatelessWidget {
           );
     final face = ConstrainedBox(
       constraints: BoxConstraints(
-        minHeight: MediaQuery.textScalerOf(
-          context,
-        ).scale(situationTileMinHeight),
+        minHeight: MediaQuery.textScalerOf(context)
+            .scale(situationTileMinHeight),
       ),
       child: Padding(
         padding: const EdgeInsetsDirectional.symmetric(vertical: 12),

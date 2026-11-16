@@ -211,9 +211,7 @@ void main() {
 
     VoidCallback? onTapOf(WidgetTester tester, String title) => tester
         .widget<InkWell>(
-          find
-              .ancestor(of: tile(title), matching: find.byType(InkWell))
-              .first,
+          find.ancestor(of: tile(title), matching: find.byType(InkWell)).first,
         )
         .onTap;
 

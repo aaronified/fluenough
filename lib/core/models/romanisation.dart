@@ -16,7 +16,8 @@ class Romanisation {
   final String scheme;
 
   /// The standard whose letters the readings use, `ISO 15919` for the
-  /// Indic languages (ADR-0025), or null for plain ASCII.
+  /// Indic languages (ADR-0025), `IAST` for Sanskrit, or null for plain
+  /// ASCII.
   final String? standard;
 
   /// How a reading's letters are typed, such as `ś` as `sh`: each reading is

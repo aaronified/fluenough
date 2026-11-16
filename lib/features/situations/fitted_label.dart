@@ -115,11 +115,8 @@ class FittedLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final base = Theme.of(context).textTheme.labelLarge!.copyWith(
-      fontWeight: fontWeight,
-      color: color,
-      height: 1.2,
-    );
+    final base = Theme.of(context).textTheme.labelLarge!
+        .copyWith(fontWeight: fontWeight, color: color, height: 1.2);
     final fit = fitLabel(
       text: text,
       style: base,

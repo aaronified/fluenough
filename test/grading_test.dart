@@ -10,6 +10,7 @@ import 'package:fluenough/app/repository_decks.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/skill.dart';
+import 'package:fluenough/core/data/deck_parser.dart';
 import 'package:fluenough/core/data/romanisation_parser.dart';
 import 'package:fluenough/core/data/sounds_parser.dart';
 import 'package:fluenough/core/grading/answer_grader.dart';
@@ -456,6 +457,50 @@ void main() {
         hindi.grade('shadi', <String>['śādī']).outcome,
         AnswerOutcome.exact,
       );
+    });
+  });
+
+  group('IAST romanisation files (Sanskrit)', () {
+    const iast = '''
+schema: 1
+kind: romanisation
+id: sa-romanisation
+language: sa
+scheme: "IAST letters, spelled as said."
+standard: "IAST"
+typed:
+  - ["ṃ", "m"]
+  - ["ṛ", "ri"]
+equivalents:
+  - ["i", "ee", "ii"]
+''';
+
+    test('the standard IAST is accepted, and its typed pairs apply', () {
+      final sanskrit = parseRomanisation(iast, source: 'sa-romanisation.yaml');
+      expect(sanskrit.standard, 'IAST');
+      final spelling = RomanisedSpelling(sanskrit);
+      expect(spelling.typedForm('saṃskṛtam'), 'samskritam');
+      expect(
+        spelling.grade('samskritam', <String>['saṃskṛtam']).outcome,
+        AnswerOutcome.exact,
+      );
+    });
+
+    test('a standard that is neither ISO 15919 nor IAST is refused', () {
+      expect(
+        () => parseRomanisation(
+          iast.replaceFirst('"IAST"', '"Hunterian"'),
+          source: 'sa-romanisation.yaml',
+        ),
+        throwsA(isA<DeckParseException>()),
+      );
+    });
+
+    test('a missing Vedic accent mark is right but flagged, not exact', () {
+      const grader = AnswerGrader();
+      final graded = grader.grade('अग्निम्', 'अ\u0952ग्निम्');
+      expect(graded.outcome, AnswerOutcome.closeDiacritics);
+      expect(graded.foldedDiacritics, isTrue);
     });
   });
 

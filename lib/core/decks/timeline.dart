@@ -44,7 +44,7 @@ class TimelineWork {
   final List<String> creatorIds;
   final int year;
 
-  /// The last year of a range (`1892-1909`), else null.
+  /// The last year of a range (`1892-1909`, `-475 to -221`), else null.
   final int? yearEnd;
 
   /// The level the work suits: the card's, else its deck's.
@@ -53,12 +53,11 @@ class TimelineWork {
 
 int? _rangeEnd(String? date, int first) {
   if (date == null) return null;
-  final years = RegExp(r'\d{3,4}')
-      .allMatches(date)
-      .map((m) => int.parse(m.group(0)!))
-      .toList();
-  if (years.length < 2) return null;
-  return years[1] > first ? years[1] : null;
+  final m = RegExp(r'^(?:c\.\s?)?-?\d{1,4}(?:\s+to\s+|-)(-?\d{1,4})$')
+      .firstMatch(date.trim());
+  if (m == null) return null;
+  final end = int.parse(m.group(1)!);
+  return end > first ? end : null;
 }
 
 /// A creator's span.

@@ -416,9 +416,8 @@ class _EmptySlot extends StatelessWidget {
     return ExcludeSemantics(
       child: ConstrainedBox(
         constraints: BoxConstraints(
-          minHeight: MediaQuery.textScalerOf(
-            context,
-          ).scale(situationTileMinHeight),
+          minHeight: MediaQuery.textScalerOf(context)
+              .scale(situationTileMinHeight),
         ),
         child: CustomPaint(
           painter: _DashedBorder(color: scheme.outline),
@@ -524,9 +523,8 @@ class _TileFace extends StatelessWidget {
           onTap: onTap,
           child: ConstrainedBox(
             constraints: BoxConstraints(
-              minHeight: MediaQuery.textScalerOf(
-                context,
-              ).scale(situationTileMinHeight),
+              minHeight: MediaQuery.textScalerOf(context)
+                  .scale(situationTileMinHeight),
             ),
             child: Stack(
               children: <Widget>[

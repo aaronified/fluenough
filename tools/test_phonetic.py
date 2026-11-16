@@ -402,6 +402,14 @@ class Registry(Tree):
         self.assertEqual((es.notes, es.tags, es.untagged),
                          (frozenset(), frozenset(), True))
 
+    def test_gujarati_takes_wiktionarys_standard_form_only(self) -> None:
+        self.assertEqual(ip.DUMP_NAMES["gu"], "Gujarati")
+        gu = ip.VARIETIES["gu"]
+        self.assertEqual((gu.notes, gu.tags, gu.untagged),
+                         (frozenset(), frozenset({"Gujarati", "Standard"}),
+                          False))
+        self.assertEqual(gu.normalise, ())
+
     def test_telugu_and_japanese_are_registered_with_their_dumps(self) -> None:
         self.assertEqual(ip.DUMP_NAMES["te"], "Telugu")
         self.assertEqual(ip.DUMP_NAMES["ja"], "Japanese")
