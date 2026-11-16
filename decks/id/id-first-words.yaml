@@ -1,0 +1,328 @@
+schema: 1
+id: "id-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "id", iso639_3: "ind", name: "Indonesian", script: "latin", tts: "id-ID", icon: "Id" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "id-0101"
+    target: "ya"
+    ipa: "ja"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ya, terima kasih.", ipa: "ja təˈrima ˈkasih", bases: [{ word: "Ya", base: "ya" }, { word: "terima", base: "terima" }, { word: "kasih", base: "kasih" }] }
+      - { target: "Ya, saya tahu.", ipa: "ja ˈsaja ˈtahu", bases: [{ word: "Ya", base: "ya" }, { word: "saya", base: "saya" }, { word: "tahu", base: "tahu" }] }
+  - id: "id-0102"
+    target: "tidak"
+    ipa: "ˈtidak"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tidak, terima kasih.", ipa: "ˈtidak təˈrima ˈkasih", bases: [{ word: "Tidak", base: "tidak" }, { word: "terima", base: "terima" }, { word: "kasih", base: "kasih" }] }
+      - { target: "Saya tidak tahu.", ipa: "ˈsaja ˈtidak ˈtahu", bases: [{ word: "Saya", base: "saya" }, { word: "tidak", base: "tidak" }, { word: "tahu", base: "tahu" }] }
+  - id: "id-0103"
+    target: "saya"
+    ipa: "ˈsaja"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Saya mahasiswa.", ipa: "ˈsaja mahaˈsiswa", bases: [{ word: "Saya", base: "saya" }, { word: "mahasiswa", base: "mahasiswa" }] }
+      - { target: "Saya tidak mengerti.", ipa: "ˈsaja ˈtidak məˈŋərti", bases: [{ word: "Saya", base: "saya" }, { word: "tidak", base: "tidak" }, { word: "mengerti", base: "mengerti" }] }
+  - id: "id-0104"
+    target: "kamu"
+    ipa: "ˈkamu"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Kamu bicara bahasa Inggris?", ipa: "ˈkamu biˈtʃara baˈhasa ˈiŋgris", bases: [{ word: "Kamu", base: "kamu" }, { word: "bicara", base: "bicara" }, { word: "bahasa", base: "bahasa" }, { word: "Inggris", base: "Inggris" }] }
+      - { target: "Kamu di sini.", ipa: "ˈkamu di ˈsini", bases: [{ word: "Kamu", base: "kamu" }, { word: "di", base: "di" }, { word: "sini", base: "sini" }] }
+  - id: "id-0105"
+    target: "dia"
+    ipa: "ˈdia"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Dia ibu saya.", ipa: "ˈdia ˈibu ˈsaja", bases: [{ word: "Dia", base: "dia" }, { word: "ibu", base: "ibu" }, { word: "saya", base: "saya" }] }
+      - { target: "Dia besar.", ipa: "ˈdia bəˈsar", bases: [{ word: "Dia", base: "dia" }, { word: "besar", base: "besar" }] }
+  - id: "id-0106"
+    target: "kami"
+    ipa: "ˈkami"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Kami di sini.", ipa: "ˈkami di ˈsini", bases: [{ word: "Kami", base: "kami" }, { word: "di", base: "di" }, { word: "sini", base: "sini" }] }
+      - { target: "Kami makan.", ipa: "ˈkami ˈmakan", bases: [{ word: "Kami", base: "kami" }, { word: "makan", base: "makan" }] }
+  - id: "id-0107"
+    target: "mereka"
+    ipa: "məˈreka"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mereka di sini.", ipa: "məˈreka di ˈsini", bases: [{ word: "Mereka", base: "mereka" }, { word: "di", base: "di" }, { word: "sini", base: "sini" }] }
+      - { target: "Mereka besar.", ipa: "məˈreka bəˈsar", bases: [{ word: "Mereka", base: "mereka" }, { word: "besar", base: "besar" }] }
+  - id: "id-0108"
+    target: "satu"
+    ipa: "ˈsatu"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Satu, dua, tiga.", ipa: "ˈsatu ˈdua ˈtiga", bases: [{ word: "Satu", base: "satu" }, { word: "dua", base: "dua" }, { word: "tiga", base: "tiga" }] }
+      - { target: "Satu gelas air, tolong.", ipa: "ˈsatu gəˈlas ˈa.ir ˈtolɔŋ", bases: [{ word: "Satu", base: "satu" }, { word: "gelas", base: "gelas" }, { word: "air", base: "air" }, { word: "tolong", base: "tolong" }] }
+  - id: "id-0109"
+    target: "dua"
+    ipa: "ˈdua"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Saya punya dua anak.", ipa: "ˈsaja ˈpuɲa ˈdua ˈanak", bases: [{ word: "Saya", base: "saya" }, { word: "punya", base: "punya" }, { word: "dua", base: "dua" }, { word: "anak", base: "anak" }] }
+      - { target: "Harganya dua ribu.", ipa: "harˈganɲa ˈdua ˈribu", bases: [{ word: "Harganya", base: "harga" }, { word: "dua", base: "dua" }, { word: "ribu", base: "ribu" }] }
+  - id: "id-0110"
+    target: "tiga"
+    ipa: "ˈtiga"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Dua, tiga, empat.", ipa: "ˈdua ˈtiga ˈəmpat", bases: [{ word: "Dua", base: "dua" }, { word: "tiga", base: "tiga" }, { word: "empat", base: "empat" }] }
+      - { target: "Harganya tiga ribu.", ipa: "harˈganɲa ˈtiga ˈribu", bases: [{ word: "Harganya", base: "harga" }, { word: "tiga", base: "tiga" }, { word: "ribu", base: "ribu" }] }
+  - id: "id-0111"
+    target: "empat"
+    ipa: "ˈəmpat"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tiga, empat, lima.", ipa: "ˈtiga ˈəmpat ˈlima", bases: [{ word: "Tiga", base: "tiga" }, { word: "empat", base: "empat" }, { word: "lima", base: "lima" }] }
+      - { target: "Harganya empat ribu.", ipa: "harˈganɲa ˈəmpat ˈribu", bases: [{ word: "Harganya", base: "harga" }, { word: "empat", base: "empat" }, { word: "ribu", base: "ribu" }] }
+  - id: "id-0112"
+    target: "lima"
+    ipa: "ˈlima"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Empat, lima, enam.", ipa: "ˈəmpat ˈlima ˈənam", bases: [{ word: "Empat", base: "empat" }, { word: "lima", base: "lima" }, { word: "enam", base: "enam" }] }
+      - { target: "Harganya lima ribu.", ipa: "harˈganɲa ˈlima ˈribu", bases: [{ word: "Harganya", base: "harga" }, { word: "lima", base: "lima" }, { word: "ribu", base: "ribu" }] }
+  - id: "id-0113"
+    target: "enam"
+    ipa: "ˈənam"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Lima, enam, tujuh.", ipa: "ˈlima ˈənam ˈtudʒuh", bases: [{ word: "Lima", base: "lima" }, { word: "enam", base: "enam" }, { word: "tujuh", base: "tujuh" }] }
+      - { target: "Harganya enam ribu.", ipa: "harˈganɲa ˈənam ˈribu", bases: [{ word: "Harganya", base: "harga" }, { word: "enam", base: "enam" }, { word: "ribu", base: "ribu" }] }
+  - id: "id-0114"
+    target: "tujuh"
+    ipa: "ˈtudʒuh"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Enam, tujuh, delapan.", ipa: "ˈənam ˈtudʒuh dəˈlapan", bases: [{ word: "Enam", base: "enam" }, { word: "tujuh", base: "tujuh" }, { word: "delapan", base: "delapan" }] }
+      - { target: "Harganya tujuh ribu.", ipa: "harˈganɲa ˈtudʒuh ˈribu", bases: [{ word: "Harganya", base: "harga" }, { word: "tujuh", base: "tujuh" }, { word: "ribu", base: "ribu" }] }
+  - id: "id-0115"
+    target: "delapan"
+    ipa: "dəˈlapan"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tujuh, delapan, sembilan.", ipa: "ˈtudʒuh dəˈlapan səmˈbilan", bases: [{ word: "Tujuh", base: "tujuh" }, { word: "delapan", base: "delapan" }, { word: "sembilan", base: "sembilan" }] }
+      - { target: "Harganya delapan ribu.", ipa: "harˈganɲa dəˈlapan ˈribu", bases: [{ word: "Harganya", base: "harga" }, { word: "delapan", base: "delapan" }, { word: "ribu", base: "ribu" }] }
+  - id: "id-0116"
+    target: "sembilan"
+    ipa: "səmˈbilan"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Delapan, sembilan, sepuluh.", ipa: "dəˈlapan səmˈbilan səˈpuluh", bases: [{ word: "Delapan", base: "delapan" }, { word: "sembilan", base: "sembilan" }, { word: "sepuluh", base: "sepuluh" }] }
+      - { target: "Harganya sembilan ribu.", ipa: "harˈganɲa səmˈbilan ˈribu", bases: [{ word: "Harganya", base: "harga" }, { word: "sembilan", base: "sembilan" }, { word: "ribu", base: "ribu" }] }
+  - id: "id-0117"
+    target: "sepuluh"
+    ipa: "səˈpuluh"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Satu sampai sepuluh.", ipa: "ˈsatu ˈsampai səˈpuluh", bases: [{ word: "Satu", base: "satu" }, { word: "sampai", base: "sampai" }, { word: "sepuluh", base: "sepuluh" }] }
+      - { target: "Harganya sepuluh ribu.", ipa: "harˈganɲa səˈpuluh ˈribu", bases: [{ word: "Harganya", base: "harga" }, { word: "sepuluh", base: "sepuluh" }, { word: "ribu", base: "ribu" }] }
+  - id: "id-0118"
+    target: "ibu"
+    ipa: "ˈibu"
+    pos: "noun"
+    tags: ["family"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Dia ibu saya.", ipa: "ˈdia ˈibu ˈsaja", bases: [{ word: "Dia", base: "dia" }, { word: "ibu", base: "ibu" }, { word: "saya", base: "saya" }] }
+      - { target: "Selamat pagi, Ibu.", ipa: "səˈlamat ˈpagi ˈibu", bases: [{ word: "Selamat", base: "selamat" }, { word: "pagi", base: "pagi" }, { word: "Ibu", base: "ibu" }] }
+  - id: "id-0119"
+    target: "ayah"
+    ipa: "ˈajah"
+    pos: "noun"
+    tags: ["family"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Dia ayah saya.", ipa: "ˈdia ˈajah ˈsaja", bases: [{ word: "Dia", base: "dia" }, { word: "ayah", base: "ayah" }, { word: "saya", base: "saya" }] }
+      - { target: "Saya bicara dengan ayah.", ipa: "ˈsaja biˈtʃara dəˈŋan ˈajah", bases: [{ word: "Saya", base: "saya" }, { word: "bicara", base: "bicara" }, { word: "dengan", base: "dengan" }, { word: "ayah", base: "ayah" }] }
+  - id: "id-0120"
+    target: "air"
+    ipa: "ˈa.ir"
+    pos: "noun"
+    tags: ["drink"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Air, tolong.", ipa: "ˈa.ir ˈtolɔŋ", bases: [{ word: "Air", base: "air" }, { word: "tolong", base: "tolong" }] }
+      - { target: "Ini air.", ipa: "ˈini ˈa.ir", bases: [{ word: "Ini", base: "ini" }, { word: "air", base: "air" }] }
+  - id: "id-0121"
+    target: "makanan"
+    ipa: "maˈkanan"
+    pos: "noun"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Makanannya enak.", ipa: "maˈkanɲa ˈenak", bases: [{ word: "Makanannya", base: "makanan" }, { word: "enak", base: "enak" }] }
+      - { target: "Saya makan di rumah.", ipa: "ˈsaja ˈmakan di ˈrumah", bases: [{ word: "Saya", base: "saya" }, { word: "makan", base: "makan" }, { word: "di", base: "di" }, { word: "rumah", base: "rumah" }] }
+  - id: "id-0122"
+    target: "rumah"
+    ipa: "ˈrumah"
+    pos: "noun"
+    tags: ["home"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ini rumah saya.", ipa: "ˈini ˈrumah ˈsaja", bases: [{ word: "Ini", base: "ini" }, { word: "rumah", base: "rumah" }, { word: "saya", base: "saya" }] }
+      - { target: "Rumah kami besar.", ipa: "ˈrumah ˈkami bəˈsar", bases: [{ word: "Rumah", base: "rumah" }, { word: "kami", base: "kami" }, { word: "besar", base: "besar" }] }
+  - id: "id-0123"
+    target: "nama"
+    ipa: "ˈnama"
+    pos: "noun"
+    tags: ["introduction"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nama saya Budi.", ipa: "ˈnama ˈsaja ˈbudi", bases: [{ word: "Nama", base: "nama" }, { word: "saya", base: "saya" }, { word: "Budi", base: "Budi" }] }
+      - { target: "Nama kamu apa?", ipa: "ˈnama ˈkamu ˈapa", bases: [{ word: "Nama", base: "nama" }, { word: "kamu", base: "kamu" }, { word: "apa", base: "apa" }] }
+  - id: "id-0124"
+    target: "baik"
+    ipa: "ˈbaik"
+    pos: "adj"
+    tags: ["adjective"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ini baik.", ipa: "ˈini ˈbaik", bases: [{ word: "Ini", base: "ini" }, { word: "baik", base: "baik" }] }
+      - { target: "Dia orang baik.", ipa: "ˈdia ˈoraŋ ˈbaik", bases: [{ word: "Dia", base: "dia" }, { word: "orang", base: "orang" }, { word: "baik", base: "baik" }] }
+  - id: "id-0125"
+    target: "besar"
+    ipa: "bəˈsar"
+    pos: "adj"
+    tags: ["adjective"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Rumah itu besar.", ipa: "ˈrumah ˈitu bəˈsar", bases: [{ word: "Rumah", base: "rumah" }, { word: "itu", base: "itu" }, { word: "besar", base: "besar" }] }
+      - { target: "Anjing itu besar.", ipa: "ˈandʒiŋ ˈitu bəˈsar", bases: [{ word: "Anjing", base: "anjing" }, { word: "itu", base: "itu" }, { word: "besar", base: "besar" }] }
+  - id: "id-0126"
+    target: "kecil"
+    ipa: "kəˈtʃil"
+    pos: "adj"
+    tags: ["adjective"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Anak itu kecil.", ipa: "ˈanak ˈitu kəˈtʃil", bases: [{ word: "Anak", base: "anak" }, { word: "itu", base: "itu" }, { word: "kecil", base: "kecil" }] }
+      - { target: "Rumah ini kecil.", ipa: "ˈrumah ˈini kəˈtʃil", bases: [{ word: "Rumah", base: "rumah" }, { word: "ini", base: "ini" }, { word: "kecil", base: "kecil" }] }
+  - id: "id-0127"
+    target: "di sini"
+    ipa: "di ˈsini"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "di", base: "di" }, { word: "sini", base: "sini" }]
+    examples:
+      - { target: "Kami di sini.", ipa: "ˈkami di ˈsini", bases: [{ word: "Kami", base: "kami" }, { word: "di", base: "di" }, { word: "sini", base: "sini" }] }
+      - { target: "Duduk di sini.", ipa: "ˈduduk di ˈsini", bases: [{ word: "Duduk", base: "duduk" }, { word: "di", base: "di" }, { word: "sini", base: "sini" }] }
+  - id: "id-0128"
+    target: "di sana"
+    ipa: "di ˈsana"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "di", base: "di" }, { word: "sana", base: "sana" }]
+    examples:
+      - { target: "Toiletnya di sana.", ipa: "toˈiletɲa di ˈsana", bases: [{ word: "Toiletnya", base: "toilet" }, { word: "di", base: "di" }, { word: "sana", base: "sana" }] }
+      - { target: "Rumah saya di sana.", ipa: "ˈrumah ˈsaja di ˈsana", bases: [{ word: "Rumah", base: "rumah" }, { word: "saya", base: "saya" }, { word: "di", base: "di" }, { word: "sana", base: "sana" }] }
+  - id: "id-0129"
+    target: "apa"
+    ipa: "ˈapa"
+    pos: "pronoun"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ini apa?", ipa: "ˈini ˈapa", bases: [{ word: "Ini", base: "ini" }, { word: "apa", base: "apa" }] }
+      - { target: "Apa kabar?", ipa: "ˈapa ˈkabar", bases: [{ word: "Apa", base: "apa" }, { word: "kabar", base: "kabar" }] }
