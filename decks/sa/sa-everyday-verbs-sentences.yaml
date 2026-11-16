@@ -12,7 +12,7 @@ cards:
     ipa: "əɦəm dʒələm pibaːmi t̪ʋəm tʃə sə̃skr̩t̪əm pəʈʰəsi"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "पिबामि", base: "पा", reading: "pā" }, { word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "च", base: "च", reading: "ca" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "पठसि", base: "पठ्", reading: "paṭh" }]
+    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "पिबामि", base: "पा", reading: "pā" }, { word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "च", ref: "sa-1104" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "पठसि", base: "पठ्", reading: "paṭh" }]
     confusables: [{ id: "w1", ref: "sa-1010", kind: "word" }, { id: "w2", ref: "sa-0024", kind: "word" }]
     notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
   - id: "sa-3141"
@@ -21,7 +21,7 @@ cards:
     ipa: "t̪ʋəm kim kʰaːd̪əsi kim tʃə pibəsi"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "किं", base: "किम्", reading: "kim" }, { word: "खादसि", base: "खाद्", reading: "khād" }, { word: "च", base: "च", reading: "ca" }, { word: "पिबसि", base: "पा", reading: "pā" }]
+    bases: [{ word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "किं", base: "किम्", reading: "kim" }, { word: "खादसि", base: "खाद्", reading: "khād" }, { word: "च", ref: "sa-1104" }, { word: "पिबसि", base: "पा", reading: "pā" }]
     confusables: [{ id: "w1", ref: "sa-1010", kind: "word" }, { id: "w2", ref: "sa-1001", kind: "word" }]
     notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
   - id: "sa-3142"
@@ -30,7 +30,7 @@ cards:
     ipa: "sə bʱraːt̪aː kəd̪aː d̪ʱaːʋət̪i kəd̪aː tʃə ɦəsət̪i"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "स", base: "सः", reading: "saḥ" }, { word: "भ्राता", ref: "sa-1032" }, { word: "कदा", ref: "sa-1003" }, { word: "धावति", base: "धाव्", reading: "dhāv" }, { word: "च", base: "च", reading: "ca" }, { word: "हसति", base: "हस्", reading: "has" }]
+    bases: [{ word: "स", base: "सः", reading: "saḥ" }, { word: "भ्राता", ref: "sa-1032" }, { word: "कदा", ref: "sa-1003" }, { word: "धावति", base: "धाव्", reading: "dhāv" }, { word: "च", ref: "sa-1104" }, { word: "हसति", base: "हस्", reading: "has" }]
     confusables: [{ id: "w1", ref: "sa-1011", kind: "word" }, { id: "w2", ref: "sa-1033", kind: "word" }]
     notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
   - id: "sa-3143"
@@ -39,7 +39,7 @@ cards:
     ipa: "əʃʋəh kut̪rə d̪ʱaːʋət̪i ɡəuh kut̪rə tʃə t̪iʂʈʰət̪i"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "अश्वः", ref: "sa-0029" }, { word: "कुत्र", ref: "sa-1002" }, { word: "धावति", base: "धाव्", reading: "dhāv" }, { word: "गौः", ref: "sa-0028" }, { word: "च", base: "च", reading: "ca" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
+    bases: [{ word: "अश्वः", ref: "sa-0029" }, { word: "कुत्र", ref: "sa-1002" }, { word: "धावति", base: "धाव्", reading: "dhāv" }, { word: "गौः", ref: "sa-0028" }, { word: "च", ref: "sa-1104" }, { word: "तिष्ठति", base: "स्था", reading: "sthā" }]
     confusables: [{ id: "w1", ref: "sa-4094", kind: "word" }, { id: "w2", ref: "sa-1003", kind: "word" }]
     notes: [{ id: "n1", kind: "usage" }]
   - id: "sa-3144"
@@ -48,7 +48,7 @@ cards:
     ipa: "saː naːriː ɡaːjət̪i sə tʃə səkʰaː ɦəsət̪i"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "सा", ref: "sa-1011" }, { word: "नारी", ref: "sa-1042" }, { word: "गायति", base: "गै", reading: "gai" }, { word: "स", base: "सः", reading: "saḥ" }, { word: "च", base: "च", reading: "ca" }, { word: "सखा", ref: "sa-1038" }, { word: "हसति", base: "हस्", reading: "has" }]
+    bases: [{ word: "सा", ref: "sa-1011" }, { word: "नारी", ref: "sa-1042" }, { word: "गायति", base: "गै", reading: "gai" }, { word: "स", base: "सः", reading: "saḥ" }, { word: "च", ref: "sa-1104" }, { word: "सखा", ref: "sa-1038" }, { word: "हसति", base: "हस्", reading: "has" }]
     confusables: [{ id: "w1", ref: "sa-1012", kind: "word" }, { id: "w2", ref: "sa-1030", kind: "word" }]
     notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
   - id: "sa-3145"
@@ -57,7 +57,7 @@ cards:
     ipa: "ʋəjəm kriːɖaːmoː juːjəm tʃə pəʈʰət̪ʰə"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "वयं", base: "वयम्", reading: "vayam" }, { word: "क्रीडामो", base: "क्रीड्", reading: "krīḍ" }, { word: "यूयं", base: "यूयम्", reading: "yūyam" }, { word: "च", base: "च", reading: "ca" }, { word: "पठथ", base: "पठ्", reading: "paṭh" }]
+    bases: [{ word: "वयं", base: "वयम्", reading: "vayam" }, { word: "क्रीडामो", base: "क्रीड्", reading: "krīḍ" }, { word: "यूयं", base: "यूयम्", reading: "yūyam" }, { word: "च", ref: "sa-1104" }, { word: "पठथ", base: "पठ्", reading: "paṭh" }]
     confusables: [{ id: "w1", ref: "sa-0021", kind: "word" }, { id: "w2", ref: "sa-2015", kind: "word" }]
     notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
   - id: "sa-3146"
@@ -66,7 +66,7 @@ cards:
     ipa: "maːt̪aː kut̪rə ʋəsət̪i bʱraːt̪aː tʃə kəd̪aː kʰaːd̪ət̪i"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "माता", ref: "sa-1030" }, { word: "कुत्र", ref: "sa-1002" }, { word: "वसति", base: "वस्", reading: "vas" }, { word: "भ्राता", ref: "sa-1032" }, { word: "च", base: "च", reading: "ca" }, { word: "कदा", ref: "sa-1003" }, { word: "खादति", base: "खाद्", reading: "khād" }]
+    bases: [{ word: "माता", ref: "sa-1030" }, { word: "कुत्र", ref: "sa-1002" }, { word: "वसति", base: "वस्", reading: "vas" }, { word: "भ्राता", ref: "sa-1032" }, { word: "च", ref: "sa-1104" }, { word: "कदा", ref: "sa-1003" }, { word: "खादति", base: "खाद्", reading: "khād" }]
     confusables: [{ id: "w1", ref: "sa-1031", kind: "word" }, { id: "w2", ref: "sa-1004", kind: "word" }]
     notes: [{ id: "n1", kind: "usage" }]
   - id: "sa-3147"
@@ -75,7 +75,7 @@ cards:
     ipa: "səkʰaː dʒələm ɦərət̪i maːt̪aː tʃə kʰaːd̪ət̪i"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "सखा", ref: "sa-1038" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "हरति", base: "हृ", reading: "hṛ" }, { word: "माता", ref: "sa-1030" }, { word: "च", base: "च", reading: "ca" }, { word: "खादति", base: "खाद्", reading: "khād" }]
+    bases: [{ word: "सखा", ref: "sa-1038" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "हरति", base: "हृ", reading: "hṛ" }, { word: "माता", ref: "sa-1030" }, { word: "च", ref: "sa-1104" }, { word: "खादति", base: "खाद्", reading: "khād" }]
     confusables: [{ id: "w1", ref: "sa-1041", kind: "word" }, { id: "w2", ref: "sa-0024", kind: "word" }]
     notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
   - id: "sa-3148"
@@ -84,7 +84,7 @@ cards:
     ipa: "kaː ɦəsət̪i kaː ɡaːjət̪i kaː tʃə kʰaːd̪ət̪i"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "का", ref: "sa-1026" }, { word: "हसति", base: "हस्", reading: "has" }, { word: "गायति", base: "गै", reading: "gai" }, { word: "च", base: "च", reading: "ca" }, { word: "खादति", base: "खाद्", reading: "khād" }]
+    bases: [{ word: "का", ref: "sa-1026" }, { word: "हसति", base: "हस्", reading: "has" }, { word: "गायति", base: "गै", reading: "gai" }, { word: "च", ref: "sa-1104" }, { word: "खादति", base: "खाद्", reading: "khād" }]
     confusables: [{ id: "w1", ref: "sa-2005", kind: "word" }, { id: "w2", ref: "sa-2022", kind: "word" }]
     notes: [{ id: "n1", kind: "usage" }]
   - id: "sa-3149"
@@ -93,6 +93,6 @@ cards:
     ipa: "ʋəjəm dʒələm pibaːmoː juːjəm tʃə kʰaːd̪ət̪ʰə"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "वयं", base: "वयम्", reading: "vayam" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "पिबामो", base: "पा", reading: "pā" }, { word: "यूयं", base: "यूयम्", reading: "yūyam" }, { word: "च", base: "च", reading: "ca" }, { word: "खादथ", base: "खाद्", reading: "khād" }]
+    bases: [{ word: "वयं", base: "वयम्", reading: "vayam" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "पिबामो", base: "पा", reading: "pā" }, { word: "यूयं", base: "यूयम्", reading: "yūyam" }, { word: "च", ref: "sa-1104" }, { word: "खादथ", base: "खाद्", reading: "khād" }]
     confusables: [{ id: "w1", ref: "sa-0021", kind: "word" }, { id: "w2", ref: "sa-0024", kind: "word" }]
     notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
