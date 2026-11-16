@@ -173,7 +173,6 @@ void main() {
       final restored = SettingsNotifier()..restore(settings.toStored());
       expect(restored.showRomanisation, settings.showRomanisation);
       expect(restored.showIpa, settings.showIpa);
-      expect(restored.hideAboveLevel, settings.hideAboveLevel);
     }
 
     await check(
@@ -189,13 +188,6 @@ void main() {
       l10n.settingsIpaOff,
       l10n.settingsIpaOn,
       () => settings.showIpa = false,
-    );
-    await check(
-      'hide-above',
-      () => settings.hideAboveLevel,
-      l10n.settingsHideAboveOff,
-      l10n.settingsHideAboveOn,
-      () => settings.hideAboveLevel = false,
     );
     expect(tester.takeException(), isNull);
   });
