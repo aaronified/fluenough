@@ -1,0 +1,526 @@
+schema: 1
+id: "nl-en-first-words"
+kind: "layer"
+core: "nl-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "Yes and no, the pronouns, the numbers one to ten, the family and a few everyday words (water, food, house, good, big, small, here, there, what). Greetings and thank you are in the phrasebook. Not yet checked by a Dutch speaker: please report any mistake."
+cards:
+  "nl-0101":
+    native: "yes"
+    notes:
+      "n1": "Ja is 'yes'. Nee, the next card, is 'no'."
+    examples:
+      "Ja, dank je.":
+        native: "Yes, thank you."
+        bases:
+          "Ja": "yes"
+          "dank": "thanks"
+          "je": "you"
+      "Ja, ik begrijp het.":
+        native: "Yes, I understand."
+        bases:
+          "Ja": "yes"
+          "ik": "I"
+          "begrijp": "understand"
+          "het": "it"
+  "nl-0102":
+    native: "no"
+    notes:
+      "n1": "Nee is 'no'. Niet, 'not', comes after the verb: ik weet het niet (I don't know it)."
+    examples:
+      "Nee, dank je.":
+        native: "No, thanks."
+        bases:
+          "Nee": "no"
+          "dank": "thanks"
+          "je": "you"
+      "Nee, ik weet het niet.":
+        native: "No, I don't know."
+        bases:
+          "Nee": "no"
+          "ik": "I"
+          "weet": "know"
+          "het": "it"
+          "niet": "not"
+  "nl-0103":
+    native: "I"
+    notes:
+      "n1": "Ik is 'I'. It is written with a capital only at the start of a sentence."
+    examples:
+      "Ik ben student.":
+        native: "I am a student."
+        bases:
+          "Ik": "I"
+          "ben": "am"
+          "student": "student"
+      "Ik begrijp het niet.":
+        native: "I don't understand it."
+        bases:
+          "Ik": "I"
+          "begrijp": "understand"
+          "het": "it"
+          "niet": "not"
+  "nl-0104":
+    native: "you"
+    notes:
+      "n1": "Jij is 'you' for one person, informally. U is the polite 'you' for a stranger or an older person."
+    examples:
+      "Jij spreekt Engels.":
+        native: "You speak English."
+        bases:
+          "Jij": "you"
+          "spreekt": "speak"
+          "Engels": "English"
+      "Jij bent hier.":
+        native: "You are here."
+        bases:
+          "Jij": "you"
+          "bent": "are"
+          "hier": "here"
+  "nl-0105":
+    native: "he"
+    notes:
+      "n1": "Hij is 'he'. A noun's de or het is grammar, not the sex of a person, so hij is for a man or a boy."
+    examples:
+      "Hij is mijn vader.":
+        native: "He is my father."
+        bases:
+          "Hij": "he"
+          "is": "is"
+          "mijn": "my"
+          "vader": "father"
+      "Hij is groot.":
+        native: "He is big."
+        bases:
+          "Hij": "he"
+          "is": "is"
+          "groot": "big"
+  "nl-0106":
+    native: "she"
+    notes:
+      "n1": "Zij is 'she'. It is also 'they', so the sentence shows which is meant."
+    examples:
+      "Zij is mijn moeder.":
+        native: "She is my mother."
+        bases:
+          "Zij": "she"
+          "is": "is"
+          "mijn": "my"
+          "moeder": "mother"
+      "Zij is klein.":
+        native: "She is small."
+        bases:
+          "Zij": "she"
+          "is": "is"
+          "klein": "small"
+  "nl-0107":
+    native: "we"
+    notes:
+      "n1": "Wij is 'we'. It is also used after a verb, as in Wij zijn hier."
+    examples:
+      "Wij zijn hier.":
+        native: "We are here."
+        bases:
+          "Wij": "we"
+          "zijn": "are"
+          "hier": "here"
+      "Wij spreken Nederlands.":
+        native: "We speak Dutch."
+        bases:
+          "Wij": "we"
+          "spreken": "speak"
+          "Nederlands": "Dutch"
+  "nl-0108":
+    native: "they"
+    notes:
+      "n1": "Ze is the unstressed form of zij, and is used in writing too. It means 'they' (ze zijn) and also 'she' (ze is), so the verb shows which is meant. Zij is used to stress the pronoun."
+    examples:
+      "Ze zijn hier.":
+        native: "They are here."
+        bases:
+          "Ze": "they"
+          "zijn": "are"
+          "hier": "here"
+      "Ze zijn groot.":
+        native: "They are big."
+        bases:
+          "Ze": "they"
+          "zijn": "are"
+          "groot": "big"
+  "nl-0109":
+    native: "one"
+    notes:
+      "n1": "Een is 'one', and also 'a' or 'an' before a noun."
+    examples:
+      "Een, twee, drie.":
+        native: "One, two, three."
+        bases:
+          "Een": "one"
+          "twee": "two"
+          "drie": "three"
+      "Een glas water, alstublieft.":
+        native: "One glass of water, please."
+        bases:
+          "Een": "one"
+          "glas": "glass"
+          "water": "water"
+          "alstublieft": "please"
+  "nl-0110":
+    native: "two"
+    notes:
+      "n1": "Twee is 'two'. The euro is the currency, so Dat kost twee euro is 'That costs two euros'."
+    examples:
+      "Dat kost twee euro.":
+        native: "That costs two euros."
+        bases:
+          "Dat": "that"
+          "kost": "costs"
+          "twee": "two"
+          "euro": "euro"
+      "Ik heb twee honden.":
+        native: "I have two dogs."
+        bases:
+          "Ik": "I"
+          "heb": "have"
+          "twee": "two"
+          "honden": "dogs"
+  "nl-0111":
+    native: "three"
+    notes:
+      "n1": "Drie is 'three'."
+    examples:
+      "Een, twee, drie.":
+        native: "One, two, three."
+        bases:
+          "Een": "one"
+          "twee": "two"
+          "drie": "three"
+      "Dat kost drie euro.":
+        native: "That costs three euros."
+        bases:
+          "Dat": "that"
+          "kost": "costs"
+          "drie": "three"
+          "euro": "euro"
+  "nl-0112":
+    native: "four"
+    notes:
+      "n1": "Vier is 'four'."
+    examples:
+      "Vier, vijf, zes.":
+        native: "Four, five, six."
+        bases:
+          "Vier": "four"
+          "vijf": "five"
+          "zes": "six"
+      "Dat kost vier euro.":
+        native: "That costs four euros."
+        bases:
+          "Dat": "that"
+          "kost": "costs"
+          "vier": "four"
+          "euro": "euro"
+  "nl-0113":
+    native: "five"
+    notes:
+      "n1": "Vijf is 'five'."
+    examples:
+      "Vijf, zes, zeven.":
+        native: "Five, six, seven."
+        bases:
+          "Vijf": "five"
+          "zes": "six"
+          "zeven": "seven"
+      "Dat kost vijf euro.":
+        native: "That costs five euros."
+        bases:
+          "Dat": "that"
+          "kost": "costs"
+          "vijf": "five"
+          "euro": "euro"
+  "nl-0114":
+    native: "six"
+    notes:
+      "n1": "Zes is 'six'."
+    examples:
+      "Zes, zeven, acht.":
+        native: "Six, seven, eight."
+        bases:
+          "Zes": "six"
+          "zeven": "seven"
+          "acht": "eight"
+      "Dat kost zes euro.":
+        native: "That costs six euros."
+        bases:
+          "Dat": "that"
+          "kost": "costs"
+          "zes": "six"
+          "euro": "euro"
+  "nl-0115":
+    native: "seven"
+    notes:
+      "n1": "Zeven is 'seven'."
+    examples:
+      "Zeven, acht, negen.":
+        native: "Seven, eight, nine."
+        bases:
+          "Zeven": "seven"
+          "acht": "eight"
+          "negen": "nine"
+      "Dat kost zeven euro.":
+        native: "That costs seven euros."
+        bases:
+          "Dat": "that"
+          "kost": "costs"
+          "zeven": "seven"
+          "euro": "euro"
+  "nl-0116":
+    native: "eight"
+    notes:
+      "n1": "Acht is 'eight'."
+    examples:
+      "Acht, negen, tien.":
+        native: "Eight, nine, ten."
+        bases:
+          "Acht": "eight"
+          "negen": "nine"
+          "tien": "ten"
+      "Dat kost acht euro.":
+        native: "That costs eight euros."
+        bases:
+          "Dat": "that"
+          "kost": "costs"
+          "acht": "eight"
+          "euro": "euro"
+  "nl-0117":
+    native: "nine"
+    notes:
+      "n1": "Negen is 'nine'."
+    examples:
+      "Negen, tien, elf.":
+        native: "Nine, ten, eleven."
+        bases:
+          "Negen": "nine"
+          "tien": "ten"
+          "elf": "eleven"
+      "Dat kost negen euro.":
+        native: "That costs nine euros."
+        bases:
+          "Dat": "that"
+          "kost": "costs"
+          "negen": "nine"
+          "euro": "euro"
+  "nl-0118":
+    native: "ten"
+    notes:
+      "n1": "Tien is 'ten'."
+    examples:
+      "Een tot tien.":
+        native: "One to ten."
+        bases:
+          "Een": "one"
+          "tot": "to"
+          "tien": "ten"
+      "Dat kost tien euro.":
+        native: "That costs ten euros."
+        bases:
+          "Dat": "that"
+          "kost": "costs"
+          "tien": "ten"
+          "euro": "euro"
+  "nl-0119":
+    native: "mother"
+    notes:
+      "n1": "Moeder is 'mother'. It takes de: de moeder."
+    examples:
+      "Zij is mijn moeder.":
+        native: "She is my mother."
+        bases:
+          "Zij": "she"
+          "is": "is"
+          "mijn": "my"
+          "moeder": "mother"
+      "Hallo, moeder.":
+        native: "Hello, Mum."
+        bases:
+          "Hallo": "hello"
+          "moeder": "mother"
+  "nl-0120":
+    native: "father"
+    notes:
+      "n1": "Vader is 'father'. It takes de: de vader."
+    examples:
+      "Hij is mijn vader.":
+        native: "He is my father."
+        bases:
+          "Hij": "he"
+          "is": "is"
+          "mijn": "my"
+          "vader": "father"
+      "Ik praat met mijn vader.":
+        native: "I speak with my father."
+        bases:
+          "Ik": "I"
+          "praat": "speak"
+          "met": "with"
+          "mijn": "my"
+          "vader": "father"
+  "nl-0121":
+    native: "water"
+    notes:
+      "n1": "Water is 'water'. It takes het: het water."
+    examples:
+      "Water, alstublieft.":
+        native: "Water, please."
+        bases:
+          "Water": "water"
+          "alstublieft": "please"
+      "Dit is water.":
+        native: "This is water."
+        bases:
+          "Dit": "this"
+          "is": "is"
+          "water": "water"
+  "nl-0122":
+    native: "food"
+    notes:
+      "n1": "Eten is 'food', and also 'a meal': het eten."
+    examples:
+      "Het eten is lekker.":
+        native: "The food is tasty."
+        bases:
+          "Het": "the"
+          "eten": "food"
+          "is": "is"
+          "lekker": "tasty"
+      "Ik eet thuis.":
+        native: "I eat at home."
+        bases:
+          "Ik": "I"
+          "eet": "eat"
+          "thuis": "at home"
+  "nl-0123":
+    native: "house"
+    notes:
+      "n1": "Huis is 'house'. It takes het: het huis."
+    examples:
+      "Dit is mijn huis.":
+        native: "This is my house."
+        bases:
+          "Dit": "this"
+          "is": "is"
+          "mijn": "my"
+          "huis": "house"
+      "Ons huis is groot.":
+        native: "Our house is big."
+        bases:
+          "Ons": "our"
+          "huis": "house"
+          "is": "is"
+          "groot": "big"
+  "nl-0124":
+    native: "good"
+    notes:
+      "n1": "Goed is 'good'. Goedemorgen, with the -e, is the greeting."
+    examples:
+      "Dit is goed.":
+        native: "This is good."
+        bases:
+          "Dit": "this"
+          "is": "is"
+          "goed": "good"
+      "Goedemorgen!":
+        native: "Good morning!"
+        bases:
+          "Goedemorgen": "good morning"
+  "nl-0125":
+    native: "big"
+    notes:
+      "n1": "Groot is 'big'. It gains an e before a noun (de grote man, het grote huis), except after een before a het-word: een groot huis."
+    examples:
+      "Het huis is groot.":
+        native: "The house is big."
+        bases:
+          "Het": "the"
+          "huis": "house"
+          "is": "is"
+          "groot": "big"
+      "Een groot huis.":
+        native: "A big house."
+        bases:
+          "Een": "a"
+          "groot": "big"
+          "huis": "house"
+  "nl-0126":
+    native: "small"
+    notes:
+      "n1": "Klein is 'small' and 'little'. It gains an e before a noun (de kleine jongen, het kleine huis), except after een before a het-word: een klein huis."
+    examples:
+      "Het kind is klein.":
+        native: "The child is small."
+        bases:
+          "Het": "the"
+          "kind": "child"
+          "is": "is"
+          "klein": "small"
+      "Ik ben klein.":
+        native: "I am small."
+        bases:
+          "Ik": "I"
+          "ben": "am"
+          "klein": "small"
+  "nl-0127":
+    native: "here"
+    notes:
+      "n1": "Hier is 'here'. Daar is 'there'."
+    examples:
+      "Wij zijn hier.":
+        native: "We are here."
+        bases:
+          "Wij": "we"
+          "zijn": "are"
+          "hier": "here"
+      "Kom hier.":
+        native: "Come here."
+        bases:
+          "Kom": "come"
+          "hier": "here"
+  "nl-0128":
+    native: "there"
+    notes:
+      "n1": "Daar is 'there', the opposite of hier, 'here'."
+    examples:
+      "Het toilet is daar.":
+        native: "The toilet is there."
+        bases:
+          "Het": "the"
+          "toilet": "toilet"
+          "is": "is"
+          "daar": "there"
+      "Het huis is daar.":
+        native: "The house is there."
+        bases:
+          "Het": "the"
+          "huis": "house"
+          "is": "is"
+          "daar": "there"
+  "nl-0129":
+    native: "what"
+    notes:
+      "n1": "Wat is 'what'. It starts questions about a thing, as Wat is dit? (What is this?)."
+    examples:
+      "Wat is dit?":
+        native: "What is this?"
+        bases:
+          "Wat": "what"
+          "is": "is"
+          "dit": "this"
+      "Wat is je naam?":
+        native: "What is your name?"
+        bases:
+          "Wat": "what"
+          "is": "is"
+          "je": "your"
+          "naam": "name"
