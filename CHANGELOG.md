@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **Adding a language starts with eight big tiles.** Add a language now asks what you want to learn, shows Spanish, French, Telugu, Hindustani, Bengali, Marathi, Kannada and Japanese with how far each course is written, and keeps the full list one tap away, with languages that have no course yet folded under Coming soon.
+
 ## [0.10.6] - 2026-11-15
 
 - **The Culture bar now fills.** In Add a language, the Culture bar under a language shows how much of its culture decks is written, instead of always being empty.

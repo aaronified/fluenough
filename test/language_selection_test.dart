@@ -1,7 +1,9 @@
-// Add a language with Popular, one flat list, search and the two markers
-// (the approved mockup `docs/mockups/language-level-verification.html`),
-// the verification row of the details dialog, and the Languages page's one
-// pill arrangement. What a learner sees, at 1.4x text in light and dark.
+// Add a language (the approved mockup `docs/mockups/language-picker.html`):
+// the eight tiles of its first screen, the full list with its one key, a bar
+// of four parts and a verification flag a row, Scripts and sounds and the
+// folded Coming soon, the verification row of the details dialog, and the
+// Languages page's one pill arrangement. What a learner sees, at 1.4x text
+// in light and dark.
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -9,13 +11,13 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/core/data/course_path.dart' show Milestone;
 import 'package:fluenough/core/data/spoken_languages.dart';
-import 'package:fluenough/features/languages/add_language_page.dart';
+import 'package:fluenough/core/decks/language_catalog.dart';
 import 'package:fluenough/features/languages/language_pick_list.dart';
 import 'package:fluenough/features/languages/language_views.dart';
 import 'package:fluenough/features/languages/languages_page.dart';
 import 'package:fluenough/features/languages/verification_mark.dart';
-import 'package:fluenough/features/placement/course_line.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/widgets/faded_row.dart';
 
@@ -40,31 +42,95 @@ SpokenLanguage lang(
   aliases: aliases,
 );
 
-/// Alphabetical: Alpha, Bravo, Charlie, Delta, IPA, Zulu. Popular: Bravo,
-/// Delta, Zulu, so that the order of the two sections differs.
+B1Unit written(Milestone m) => B1Unit(words: 10, milestone: m, has: 10);
+
+B1Unit planned(Milestone m) =>
+    B1Unit(planned: true, words: 10, milestone: m);
+
+/// A course whose path is [units], taught from English.
+CatalogLanguage course(String code, String name, List<B1Unit> units) =>
+    CatalogLanguage(
+      code: code,
+      name: name,
+      natives: <CatalogNative>[
+        (code: 'en', name: 'English', progress: B1Progress.of(units)),
+      ],
+    );
+
+/// File order, as `assets/languages.yaml` has it: the tiles are the first
+/// eight popular ones in this order, five here. Zulu has A1 to B1 written,
+/// Alpha A1 and A2, Delta A1, Bravo a part of A1, Foxtrot nothing but first
+/// words; Charlie has a course too. Echo and Golf have none (Coming soon),
+/// IPA is a notation.
 final List<SpokenLanguage> sample = <SpokenLanguage>[
   lang('zz', 'Zulu', popular: true, verification: NativeVerification.full),
-  lang('aa', 'Alpha'),
+  lang('aa', 'Alpha', popular: true),
   lang('dd', 'Delta', popular: true, aliases: <String>['Dalmatian']),
   lang('bb', 'Bravo', popular: true, verification: NativeVerification.some),
+  lang('ff', 'Foxtrot', popular: true),
   lang('cc', 'Charlie', verification: NativeVerification.full),
+  lang('ee', 'Echo'),
+  lang('gg', 'Golf', own: 'Gölf'),
   lang('ipa', 'IPA'),
 ];
+
+final Map<String, CatalogLanguage> sampleCourses = <String, CatalogLanguage>{
+  'zz': course('zz', 'Zulu', <B1Unit>[
+    written(Milestone.a1),
+    written(Milestone.a2),
+    written(Milestone.b1),
+  ]),
+  'aa': course('aa', 'Alpha', <B1Unit>[
+    written(Milestone.a1),
+    written(Milestone.a2),
+    planned(Milestone.b1),
+  ]),
+  'dd': course('dd', 'Delta', <B1Unit>[
+    written(Milestone.a1),
+    planned(Milestone.a2),
+    planned(Milestone.b1),
+  ]),
+  'bb': course('bb', 'Bravo', <B1Unit>[
+    const B1Unit(words: 10, milestone: Milestone.a1, has: 4),
+    planned(Milestone.a2),
+    planned(Milestone.b1),
+  ]),
+  'ff': course('ff', 'Foxtrot', const <B1Unit>[]),
+  'cc': course('cc', 'Charlie', const <B1Unit>[]),
+};
+
+List<LanguageView> sampleViews([List<SpokenLanguage>? list]) =>
+    <LanguageView>[
+      for (final l in list ?? sample) LanguageView(l, sampleCourses[l.code]),
+    ];
 
 AppLocalizations l10n(WidgetTester tester) =>
     AppLocalizations.of(tester.element(find.byType(Scaffold).first))!;
 
-Future<void> pumpAdd(
+/// The picker list on a 360 dp phone at 1.4x text, tall enough to build the
+/// whole lazy list, with [added] on the learner's list; [picked] gets the
+/// codes of what a tap picked.
+Future<void> pumpList(
   WidgetTester tester, {
   ThemeMode mode = ThemeMode.light,
-  List<SpokenLanguage>? list,
+  List<LanguageView>? views,
+  Set<String> added = const <String>{},
+  List<String>? picked,
+  double height = 3000,
+  String? initialQuery,
 }) async {
   usePhone(tester, textScale: 1.4);
-  // Tall, so that the whole lazy list is built.
-  tester.view.physicalSize = const Size(390 * 3, 3000 * 3);
+  tester.view.physicalSize = Size(360 * 3, height * 3);
   await pumpScreen(
     tester,
-    AddLanguagePage(spokenList: list ?? sample),
+    Scaffold(
+      body: LanguagePickList(
+        views: views ?? sampleViews(),
+        initialQuery: initialQuery,
+        isAdded: (v) => added.contains(v.code),
+        onPick: (v) => picked?.add(v.code),
+      ),
+    ),
     themeMode: mode,
   );
 }
@@ -76,6 +142,52 @@ double top(WidgetTester tester, Finder f) => tester.getTopLeft(f).dy;
 Future<void> search(WidgetTester tester, String text) async {
   await tester.enterText(key('languages-add-search'), text);
   await tester.pumpAndSettle();
+}
+
+Future<void> seeAll(WidgetTester tester) async {
+  await tester.tap(key('languages-see-all'));
+  await tester.pumpAndSettle();
+}
+
+/// The tiles in the owner's order: the first eight popular languages of
+/// `assets/languages.yaml`, in file order.
+const List<String> tileOrder = <String>[
+  'es',
+  'fr',
+  'te',
+  'hi',
+  'bn',
+  'mr',
+  'kn',
+  'ja',
+];
+
+/// Every language of the real list, the tiles' ones with a course written to
+/// B1 and the rest with none.
+List<LanguageView> realViews() => <LanguageView>[
+  for (final l in pickerSpokenList)
+    LanguageView(
+      l,
+      tileOrder.contains(l.code)
+          ? course(l.code, l.name, <B1Unit>[
+              written(Milestone.a1),
+              written(Milestone.a2),
+              written(Milestone.b1),
+            ])
+          : null,
+    ),
+];
+
+/// [codes] in the order their tiles are drawn: by row, then by column.
+List<String> byPosition(WidgetTester tester, List<String> codes) {
+  final sorted = <String>[...codes];
+  sorted.sort((a, b) {
+    final pa = tester.getTopLeft(key('tile-$a'));
+    final pb = tester.getTopLeft(key('tile-$b'));
+    final byRow = pa.dy.compareTo(pb.dy);
+    return byRow != 0 ? byRow : pa.dx.compareTo(pb.dx);
+  });
+  return sorted;
 }
 
 void main() {
@@ -125,22 +237,21 @@ languages:
       );
     });
 
-    test('Popular is the owner\'s nine, and no language is verified yet', () {
+    test('the tiles are the first eight popular languages in file order, '
+        'the owner\'s eight, and no language is verified yet', () {
       final all = parseSpokenLanguages(
         File('assets/languages.yaml').readAsStringSync(),
       );
-      final popular = all.where((l) => l.popular).map((l) => l.name).toList()
-        ..sort();
+      final popular = all.where((l) => l.popular).map((l) => l.name).toList();
       expect(popular, <String>[
-        'Bengali',
-        'French',
-        'Hindustani',
-        'Japanese',
-        'Kannada',
-        'Mandarin Chinese',
-        'Marathi',
         'Spanish',
+        'French',
         'Telugu',
+        'Hindustani',
+        'Bengali',
+        'Marathi',
+        'Kannada',
+        'Japanese',
       ]);
       expect(
         all.every((l) => l.verification == NativeVerification.none),
@@ -151,252 +262,408 @@ languages:
 
   for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
     group('Add a language in ${mode.name}', () {
-      testWidgets('Popular comes first, then All languages as one flat '
-          'alphabetical list that holds the popular ones again', (
+      testWidgets('opens on the question, the search, the tiles from the '
+          'data in file order, and See all languages; no key yet', (
         tester,
       ) async {
-        await pumpAdd(tester, mode: mode);
+        await pumpList(tester, mode: mode, views: realViews());
         final text = l10n(tester);
-        final popular = top(tester, find.text(text.languagesPopular));
-        final all = top(tester, find.text(text.languagesAllLanguages));
-        expect(top(tester, key('languages-add-search')), lessThan(popular));
-        // Popular, alphabetical, under its heading and above All languages.
-        final popularRows = <double>[
-          for (final c in <String>['bb', 'dd', 'zz'])
-            top(tester, key('add-popular-$c')),
-        ];
-        expect(popularRows, orderedEquals(<double>[...popularRows]..sort()));
-        expect(popularRows.first, greaterThan(popular));
-        expect(popularRows.last, lessThan(all));
-        expect(key('add-popular-aa'), findsNothing);
-        // The full list: every language once, by name, no family headings.
-        final order = <double>[
-          for (final c in <String>['aa', 'bb', 'cc', 'dd', 'ipa', 'zz'])
-            top(tester, key('add-$c')),
-        ];
-        expect(order.first, greaterThan(all));
-        expect(order, orderedEquals(<double>[...order]..sort()));
-        expect(find.text(text.knownFamily('germanic')), findsNothing);
+        expect(find.text(text.languagesAddQuestion), findsOneWidget);
+        expect(key('languages-add-search'), findsOneWidget);
+        // Eight tiles, in two even columns, in the order of the file: the
+        // order the owner chose, not A to Z; Mandarin Chinese is no tile.
+        final tiles = find.byWidgetPredicate(
+          (w) =>
+              w.key is ValueKey<String> &&
+              (w.key! as ValueKey<String>).value.startsWith('tile-'),
+        );
+        expect(tiles, findsNWidgets(8));
+        expect(byPosition(tester, <String>[...tileOrder.reversed]), tileOrder);
+        // Two even columns: the same two left edges all the way down.
+        final lefts = <double>{
+          for (final c in tileOrder) tester.getTopLeft(key('tile-$c')).dx,
+        };
+        expect(lefts.length, 2);
+        expect(
+          tester.getSize(key('tile-es')).width,
+          tester.getSize(key('tile-fr')).width,
+        );
+        expect(key('tile-zh'), findsNothing);
+        expect(find.text(text.languagesSeeAll), findsOneWidget);
+        // The key and the groups wait for the full list.
+        expect(find.text(text.languagesCourseMadeKey), findsNothing);
+        expect(find.text(text.languagesComingSoon), findsNothing);
         expect(tester.takeException(), isNull);
       });
 
-      testWidgets('each row carries the A1 A2 B1 line and the verification '
-          'flag as icon and word; a notation has neither', (tester) async {
-        await pumpAdd(tester, mode: mode);
+      testWidgets('a tile has the name in its own script, the English name '
+          'and one line from the levels the course has written', (
+        tester,
+      ) async {
+        await pumpList(tester, mode: mode);
         final text = l10n(tester);
-        for (final (code, word) in <(String, String)>[
-          ('add-popular-bb', text.languagesVerifiedSome),
-          ('add-popular-zz', text.languagesVerifiedFull),
-          ('add-aa', text.languagesVerifiedNone),
+        for (final (code, status) in <(String, String)>[
+          ('zz', text.languagesTileStatusA1B1),
+          ('aa', text.languagesTileStatusA1A2),
+          ('dd', text.languagesTileStatusA1),
+          ('bb', text.languagesTileStatusBeginner),
+          ('ff', text.languagesFirstWordsLabel),
         ]) {
-          final row = key(code);
           expect(
-            find.descendant(of: row, matching: find.byType(CourseLine)),
+            find.descendant(of: key('tile-$code'), matching: find.text(status)),
             findsOneWidget,
-          );
-          expect(
-            find.descendant(of: row, matching: find.textContaining(word)),
-            findsOneWidget,
-          );
-          expect(
-            find.descendant(of: row, matching: find.byType(VerificationFlag)),
-            findsOneWidget,
+            reason: code,
           );
         }
-        // A screen reader reads the state in one sentence, which the icon and
-        // the text leave out.
+        // Zulu has its own name as its name; Gölf is no tile.
         expect(
-          find.byWidgetPredicate(
-            (w) =>
-                w is Semantics &&
-                w.properties.label ==
-                    text.languagesVerifiedLabel(
-                      text.languagesVerifiedSome.toLowerCase(),
-                    ),
-          ),
-          findsWidgets,
+          find.descendant(of: key('tile-zz'), matching: find.text('Zulu')),
+          findsOneWidget,
         );
-        // No decks: the line is empty and says so.
-        expect(
-          find.byWidgetPredicate(
-            (w) => w is CourseLine && w.label == text.languagesNoDecksLabel,
-          ),
-          findsWidgets,
-        );
-        expect(
-          find.descendant(
-            of: key('add-ipa'),
-            matching: find.byType(VerificationMark),
-          ),
-          findsNothing,
-        );
-        expect(
-          find.descendant(
-            of: key('add-ipa'),
-            matching: find.byType(CourseLine),
-          ),
-          findsNothing,
-        );
+        expect(key('tile-gg'), findsNothing);
         expect(tester.takeException(), isNull);
       });
 
-      testWidgets('the key is one scrolling row, edge masked, starting at '
-          '16', (tester) async {
-        await pumpAdd(tester, mode: mode);
+      testWidgets('a tile of a language added already says so; a tap picks '
+          'the language', (tester) async {
+        final picked = <String>[];
+        await pumpList(
+          tester,
+          mode: mode,
+          added: <String>{'bb'},
+          picked: picked,
+        );
         final text = l10n(tester);
-        final keyRow = find.byType(VerificationKey);
-        expect(
-          find.descendant(of: keyRow, matching: find.byType(ShaderMask)),
-          findsOneWidget,
-        );
-        expect(
-          find.descendant(
-            of: keyRow,
-            matching: find.byWidgetPredicate(
-              (w) =>
-                  w is SingleChildScrollView &&
-                  w.scrollDirection == Axis.horizontal,
-            ),
+        Finder addedText(String code) => find.descendant(
+          of: key('tile-$code'),
+          matching: find.textContaining(
+            text.languagesAdded,
+            findRichText: true,
           ),
-          findsOneWidget,
         );
-        expect(tester.getTopLeft(find.text(text.languagesVerifiedKey)).dx, 16);
-        // The three states, each with its word.
+        expect(addedText('bb'), findsOneWidget);
+        expect(addedText('dd'), findsNothing);
+        await tester.tap(key('tile-dd'));
+        await tester.pumpAndSettle();
+        expect(picked, <String>['dd']);
+      });
+
+      testWidgets('See all languages shows one key, then Languages A to Z '
+          'with only the courses, Scripts and sounds, and Coming soon '
+          'folded', (tester) async {
+        await pumpList(tester, mode: mode);
+        final text = l10n(tester);
+        await seeAll(tester);
+        // The key, once: how much of the course is made, its four parts and
+        // the three flags.
+        expect(find.text(text.languagesCourseMadeKey), findsOneWidget);
+        for (final part in <String>[
+          'A1',
+          'A2',
+          'B1',
+          text.pickerLevelCulture,
+        ]) {
+          expect(find.text(part), findsOneWidget, reason: part);
+        }
         for (final w in <String>[
           text.languagesVerifiedNone,
           text.languagesVerifiedSome,
           text.languagesVerifiedFull,
         ]) {
           expect(
-            find.descendant(of: keyRow, matching: find.text(w)),
+            find.descendant(of: key('languages-key'), matching: find.text(w)),
             findsOneWidget,
           );
         }
-      });
-
-      testWidgets('the Popular heading shows in the first frame on a '
-          '360 x 800 phone at 1.4x, without scrolling', (tester) async {
-        usePhone(tester, textScale: 1.4);
-        tester.view.physicalSize = const Size(360 * 3, 800 * 3);
-        await pumpScreen(
-          tester,
-          AddLanguagePage(spokenList: sample),
-          themeMode: mode,
+        expect(find.text(text.languagesVerifiedKey), findsOneWidget);
+        // Languages with a course, A to Z, under their heading.
+        final heading = top(tester, find.text(text.languagesAllLanguages));
+        final rows = <double>[
+          for (final c in <String>['aa', 'bb', 'cc', 'dd', 'ff', 'zz'])
+            top(tester, key('add-$c')),
+        ];
+        expect(rows, orderedEquals(<double>[...rows]..sort()));
+        expect(rows.first, greaterThan(heading));
+        expect(key('add-ee'), findsNothing);
+        // Scripts and sounds after them, Coming soon last and folded.
+        final scripts = top(tester, find.text(text.languagesScriptsAndSounds));
+        final soon = top(tester, find.text(text.languagesComingSoon));
+        expect(scripts, greaterThan(rows.last));
+        expect(top(tester, key('add-ipa')), greaterThan(scripts));
+        expect(soon, greaterThan(top(tester, key('add-ipa'))));
+        expect(key('soon-ee'), findsNothing);
+        expect(key('soon-gg'), findsNothing);
+        // No count, no "No course yet" chip, no Popular group.
+        expect(find.text(text.languagesNoCourse), findsNothing);
+        expect(
+          find.descendant(
+            of: key('languages-coming-soon'),
+            matching: find.byType(Text),
+          ),
+          findsOneWidget,
         );
-        final text = l10n(tester);
-        final heading = find.text(text.languagesPopular);
-        expect(heading, findsOneWidget);
-        final rect = tester.getRect(heading);
-        expect(rect.top, greaterThanOrEqualTo(0));
-        expect(rect.bottom, lessThanOrEqualTo(800));
         expect(tester.takeException(), isNull);
       });
 
-      testWidgets('an added language shows the Added badge in Popular and '
-          'in the full list; others show none', (tester) async {
-        final state = AppState.test();
-        await state.load();
-        usePhone(tester, textScale: 1.4);
-        tester.view.physicalSize = const Size(390 * 3, 3000 * 3);
-        await pumpScreen(
+      testWidgets('a row has a name, own name and chevron, one slim bar of '
+          'four outlined parts, and a flag; no labels and no text row', (
+        tester,
+      ) async {
+        await pumpList(
           tester,
-          Scaffold(
-            body: LanguagePickList(
-              views: languageViews(state, sample),
-              isAdded: (v) => v.code == 'bb',
-              onPick: (_) {},
-            ),
-          ),
-          state: state,
-          themeMode: mode,
+          mode: mode,
+          views: sampleViews(),
+          added: <String>{'aa'},
         );
-        final added = l10n(tester).languagesAdded;
-        for (final k in <String>['add-popular-bb', 'add-bb']) {
-          expect(
-            find.descendant(of: key(k), matching: find.text(added)),
-            findsOneWidget,
+        final text = l10n(tester);
+        await seeAll(tester);
+        final scheme = Theme.of(tester.element(key('add-aa'))).colorScheme;
+        // Alpha has A1 and A2 written and B1 planned: two parts filled, two
+        // empty, and every part an outlined capsule in the outline colour.
+        final fills = tester
+            .widgetList<FractionallySizedBox>(
+              find.descendant(
+                of: key('course-line-aa'),
+                matching: find.byType(FractionallySizedBox),
+              ),
+            )
+            .map((w) => w.widthFactor)
+            .toList();
+        expect(fills, <double?>[1, 1, 0, 0]);
+        for (var i = 0; i < 4; i++) {
+          final capsule = tester.widget<Container>(
+            find
+                .descendant(
+                  of: find.descendant(
+                    of: key('course-line-aa'),
+                    matching: key('course-segment-$i'),
+                  ),
+                  matching: find.byType(Container),
+                )
+                .first,
           );
+          final border = (capsule.decoration! as BoxDecoration).border!;
+          expect(border.top.color, scheme.outline);
         }
-        for (final k in <String>['add-popular-dd', 'add-dd', 'add-aa']) {
-          expect(
-            find.descendant(of: key(k), matching: find.text(added)),
-            findsNothing,
-          );
-        }
+        // No label under the bar, and no "Verified:" text row.
+        expect(
+          find.descendant(
+            of: key('course-line-aa'),
+            matching: find.byType(Text),
+          ),
+          findsNothing,
+        );
+        expect(find.textContaining(text.languagesVerifiedShort), findsNothing);
+        // Added chip on the added row only.
+        expect(
+          find.descendant(
+            of: key('add-aa'),
+            matching: find.text(text.languagesAdded),
+          ),
+          findsOneWidget,
+        );
+        expect(
+          find.descendant(
+            of: key('add-bb'),
+            matching: find.text(text.languagesAdded),
+          ),
+          findsNothing,
+        );
+        expect(tester.takeException(), isNull);
       });
 
-      testWidgets('tapping a Popular copy picks that language; a row reads '
-          'as one button with its level line and its verification', (
+      testWidgets('the flag says none, some and full by its shape; a tap '
+          'shows the tooltip', (tester) async {
+        await pumpList(tester, mode: mode);
+        final text = l10n(tester);
+        await seeAll(tester);
+        Finder glyph(String code, IconData icon) => find.descendant(
+          of: key('flag-$code'),
+          matching: find.byIcon(icon),
+        );
+        // None: outlined only. Full: solid only. Some: both, the solid one
+        // clipped to its start half.
+        expect(glyph('aa', Icons.flag_outlined), findsOneWidget);
+        expect(glyph('aa', Icons.flag), findsNothing);
+        expect(glyph('zz', Icons.flag), findsOneWidget);
+        expect(glyph('zz', Icons.flag_outlined), findsNothing);
+        expect(glyph('bb', Icons.flag_outlined), findsOneWidget);
+        expect(glyph('bb', Icons.flag), findsOneWidget);
+        expect(tester.getSize(key('flag-bb')), const Size.square(40));
+        // A tap shows a bubble, nothing else.
+        final bubble = '${text.languagesVerifiedShort} '
+            '${text.languagesVerifiedSome}';
+        expect(find.text(bubble), findsNothing);
+        await tester.tap(key('flag-bb'));
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 100));
+        expect(find.text(bubble), findsOneWidget);
+        expect(find.byType(BottomSheet), findsNothing);
+        // The bubble goes by itself.
+        await tester.pump(const Duration(seconds: 3));
+        await tester.pumpAndSettle();
+        expect(find.text(bubble), findsNothing);
+        expect(tester.takeException(), isNull);
+      });
+
+      testWidgets('a screen reader reads each bar as how much of the course '
+          'is made, never as progress, and the flag with the longer text', (
         tester,
       ) async {
         final handle = tester.ensureSemantics();
-        final state = AppState.test();
-        await state.load();
-        final picked = <String>[];
-        usePhone(tester, textScale: 1.4);
-        tester.view.physicalSize = const Size(390 * 3, 3000 * 3);
-        await pumpScreen(
-          tester,
-          Scaffold(
-            body: LanguagePickList(
-              views: languageViews(state, sample),
-              isAdded: (v) => false,
-              onPick: (v) => picked.add(v.code),
-            ),
-          ),
-          state: state,
-          themeMode: mode,
-        );
+        await pumpList(tester, mode: mode);
         final text = l10n(tester);
-        final label = tester
-            .getSemantics(
-              find
-                  .ancestor(
-                    of: key('add-popular-bb'),
-                    matching: find.byType(MergeSemantics),
-                  )
-                  .first,
-            )
-            .label;
-        expect(label, contains(text.languagesNoDecksLabel));
+        await seeAll(tester);
+        final shares = <double>[1, 1, 0, 0];
+        final label = text.languagesCourseMadeLabel(
+          <String>[
+            for (final (i, name) in <String>[
+              'A1',
+              'A2',
+              'B1',
+              text.pickerLevelCulture,
+            ].indexed)
+              '$name ${text.commonPercent(shares[i])}',
+          ].join(text.commonListSeparator),
+        );
+        expect(find.bySemanticsLabel(label), findsOneWidget);
+        expect(label.toLowerCase(), isNot(contains('progress')));
         expect(
-          label,
-          contains(
+          find.bySemanticsLabel(
             text.languagesVerifiedLabel(
               text.languagesVerifiedSome.toLowerCase(),
             ),
           ),
+          findsOneWidget,
         );
-        await tester.tap(key('add-popular-dd'));
-        await tester.pumpAndSettle();
-        expect(picked, <String>['dd']);
+        // A course with first words only says so.
+        expect(
+          find.bySemanticsLabel(text.languagesFirstWordsLabel),
+          findsWidgets,
+        );
         handle.dispose();
       });
 
-      testWidgets('a search collapses the sections: Popular matches first, '
-          'no headings; names, own names and aliases match', (tester) async {
-        await pumpAdd(tester, mode: mode);
+      testWidgets('Scripts and sounds rows have neither bar nor flag, and a '
+          'tap picks them', (tester) async {
+        final picked = <String>[];
+        await pumpList(tester, mode: mode, picked: picked);
+        await seeAll(tester);
+        expect(key('add-ipa'), findsOneWidget);
+        expect(key('course-line-ipa'), findsNothing);
+        expect(key('flag-ipa'), findsNothing);
+        await tester.tap(key('add-ipa'));
+        await tester.pumpAndSettle();
+        expect(picked, <String>['ipa']);
+      });
+
+      testWidgets('Coming soon opens on a tap, shows names only, and its rows '
+          'are not tappable', (tester) async {
+        final handle = tester.ensureSemantics();
+        final picked = <String>[];
+        await pumpList(tester, mode: mode, picked: picked);
+        final text = l10n(tester);
+        await seeAll(tester);
+        await tester.tap(key('languages-coming-soon'));
+        await tester.pumpAndSettle();
+        expect(key('soon-ee'), findsOneWidget);
+        expect(key('soon-gg'), findsOneWidget);
+        expect(
+          find.descendant(of: key('soon-gg'), matching: find.text('Gölf')),
+          findsOneWidget,
+        );
+        // Not a button: no chevron, no ink, no bar, no flag, no pick.
+        expect(
+          find.descendant(
+            of: key('soon-ee'),
+            matching: find.byIcon(Icons.chevron_right),
+          ),
+          findsNothing,
+        );
+        expect(
+          find.descendant(of: key('soon-ee'), matching: find.byType(InkWell)),
+          findsNothing,
+        );
+        expect(key('flag-ee'), findsNothing);
+        expect(key('course-line-ee'), findsNothing);
+        await tester.tap(key('soon-ee'), warnIfMissed: false);
+        await tester.pumpAndSettle();
+        expect(picked, isEmpty);
+        expect(
+          find.bySemanticsLabel(text.languagesNoCourseLabel('Echo')),
+          findsOneWidget,
+        );
+        // Folds again.
+        await tester.tap(key('languages-coming-soon'));
+        await tester.pumpAndSettle();
+        expect(key('soon-ee'), findsNothing);
+        handle.dispose();
+      });
+
+      testWidgets('a search shows the list, Popular matches first; names, '
+          'own names and aliases match; a match in Coming soon opens it', (
+        tester,
+      ) async {
+        await pumpList(tester, mode: mode);
         final text = l10n(tester);
         await search(tester, 'l');
-        expect(find.text(text.languagesPopular), findsNothing);
-        expect(find.text(text.languagesAllLanguages), findsNothing);
-        // Delta and Zulu are popular, Alpha and Charlie are not.
+        // Off the tiles, onto the list, without tapping See all.
+        expect(find.text(text.languagesAddQuestion), findsNothing);
+        // Alpha, Delta and Zulu are popular, Charlie is not.
         final order = <double>[
-          for (final c in <String>['dd', 'zz', 'aa', 'cc'])
+          for (final c in <String>['aa', 'dd', 'zz', 'cc'])
             top(tester, key('add-$c')),
         ];
         expect(order, orderedEquals(<double>[...order]..sort()));
         expect(key('add-bb'), findsNothing);
-        expect(key('add-popular-dd'), findsNothing);
         await search(tester, 'dalm');
         expect(key('add-dd'), findsOneWidget);
         expect(key('add-zz'), findsNothing);
+        // Golf is in Coming soon, open without a tap, found by its own name
+        // without the accent.
+        await search(tester, 'golf');
+        expect(key('soon-gg'), findsOneWidget);
+        expect(key('add-aa'), findsNothing);
         await search(tester, 'qqq');
         expect(find.text(text.languagesAddNoMatch('qqq')), findsOneWidget);
         expect(tester.takeException(), isNull);
       });
+
+      testWidgets('tapping a row picks that language; Back from the list goes '
+          'back to the tiles', (tester) async {
+        final picked = <String>[];
+        await pumpList(tester, mode: mode, picked: picked);
+        await seeAll(tester);
+        await tester.tap(key('add-cc'));
+        await tester.pumpAndSettle();
+        expect(picked, <String>['cc']);
+        await tester.binding.handlePopRoute();
+        await tester.pumpAndSettle();
+        expect(find.text(l10n(tester).languagesAddQuestion), findsOneWidget);
+      });
     });
   }
+
+  group('at 1.4x text on a 360 dp phone', () {
+    testWidgets('the tiles and the list hold Telugu, Hindustani and Bengali '
+        'names without overflow', (tester) async {
+      await pumpList(tester, views: realViews(), height: 800);
+      for (final c in <String>['te', 'hi', 'bn']) {
+        expect(key('tile-$c'), findsOneWidget);
+      }
+      expect(tester.takeException(), isNull);
+      await seeAll(tester);
+      await tester.scrollUntilVisible(key('languages-coming-soon'), 500);
+      await tester.tap(key('languages-coming-soon'));
+      await tester.pumpAndSettle();
+      // The whole list, scrolled through, Coming soon open.
+      for (var i = 0; i < 30; i++) {
+        await tester.drag(find.byType(ListView), const Offset(0, -1500));
+        await tester.pump();
+      }
+      expect(tester.takeException(), isNull);
+    });
+  });
 
   group('the details dialog and the Languages page', () {
     AppState learner() => AppState.test(
@@ -478,7 +745,7 @@ languages:
     testWidgets('the Languages rows carry no flag, both pill rows scroll '
         'edge masked and start at 16, where the rows do', (tester) async {
       await pumpLanguages(tester, listWith(NativeVerification.full));
-      expect(find.byType(VerificationMark), findsNothing);
+      expect(find.byType(VerificationFlagButton), findsNothing);
       expect(find.byType(VerificationFlag), findsNothing);
       // The skill key and the Learning, Know, Speak chips.
       expect(find.byType(FadedScrollRow), findsNWidgets(2));

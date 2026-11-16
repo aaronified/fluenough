@@ -14829,17 +14829,69 @@
   "@settingsRestoreNewerNote": {
     "description": "Restore sheet, when the backup was made by a newer app than this one: what an older app does not know about is lost, such as levels the learner corrected."
   },
-  "languagesPopular": "Popular",
-  "@languagesPopular": {
-    "description": "The heading of the languages Add a language lists first: a hand-kept list, `popular` in assets/languages.yaml."
+  "languagesAddQuestion": "What do you want to learn?",
+  "@languagesAddQuestion": {
+    "description": "The heading of Add a language's first screen, above the search and the big tiles of the popular languages."
   },
-  "languagesPopularNote": "Our most complete courses",
-  "@languagesPopularNote": {
-    "description": "The line under the Popular heading on Add a language."
+  "languagesSeeAll": "See all languages",
+  "@languagesSeeAll": {
+    "description": "The link under the big tiles on Add a language that opens the full list of languages."
   },
-  "languagesAllLanguages": "All languages",
+  "languagesAllLanguages": "Languages",
   "@languagesAllLanguages": {
-    "description": "The heading of the full alphabetical list under Popular on Add a language."
+    "description": "The heading of the alphabetical list of the languages that have a course, on Add a language's full list."
+  },
+  "languagesTileStatusA1B1": "A1 to B1 ready",
+  "@languagesTileStatusA1B1": {
+    "description": "The line under a language's name on a tile of Add a language: the course has A1, A2 and B1 fully written."
+  },
+  "languagesTileStatusA1A2": "A1 and A2 ready",
+  "@languagesTileStatusA1A2": {
+    "description": "The line under a language's name on a tile of Add a language: the course has A1 and A2 fully written."
+  },
+  "languagesTileStatusA1": "A1 ready",
+  "@languagesTileStatusA1": {
+    "description": "The line under a language's name on a tile of Add a language: the course has A1 fully written."
+  },
+  "languagesTileStatusBeginner": "Beginner course",
+  "@languagesTileStatusBeginner": {
+    "description": "The line under a language's name on a tile of Add a language: the course has A1 partly written."
+  },
+  "languagesScriptsAndSounds": "Scripts and sounds",
+  "@languagesScriptsAndSounds": {
+    "description": "The heading of the group on Add a language's full list that holds the notations taught like languages, the IPA and English Braille."
+  },
+  "languagesScriptsAndSoundsNote": "Learn to read and say, not a language to speak.",
+  "@languagesScriptsAndSoundsNote": {
+    "description": "The line under the Scripts and sounds heading on Add a language."
+  },
+  "languagesComingSoon": "Coming soon",
+  "@languagesComingSoon": {
+    "description": "The header of the folded group on Add a language's full list that holds the languages that have no course yet."
+  },
+  "languagesNoCourseLabel": "{name}, no course yet",
+  "@languagesNoCourseLabel": {
+    "description": "What a screen reader reads for a language in Coming soon on Add a language, which cannot be picked.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Afrikaans"
+      }
+    }
+  },
+  "languagesCourseMadeKey": "How much of the course is made",
+  "@languagesCourseMadeKey": {
+    "description": "The title of the key at the top of Add a language's full list: each language's bar shows how much of its A1, A2, B1 and Culture parts is written. It describes the course, not the learner's own progress."
+  },
+  "languagesCourseMadeLabel": "How much of the course is made: {levels}",
+  "@languagesCourseMadeLabel": {
+    "description": "What a screen reader reads for a language's four-part bar on Add a language; {levels} is the parts with their shares, such as A1 100%, joined with commonListSeparator. It describes the course, not the learner's own progress.",
+    "placeholders": {
+      "levels": {
+        "type": "String",
+        "example": "A1 100%, A2 40%, B1 0%, Culture 10%"
+      }
+    }
   },
   "languagesVerifiedHeading": "Verified by native speakers",
   "@languagesVerifiedHeading": {

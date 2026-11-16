@@ -17,6 +17,7 @@ class CourseLine extends StatelessWidget {
     required this.levels,
     this.culture = 0,
     this.label,
+    this.compact = false,
   });
 
   /// How much of A1, A2 and B1 is written, each 0–1.
@@ -29,8 +30,21 @@ class CourseLine extends StatelessWidget {
   /// (no decks yet, or first words only); null reads the figures.
   final String? label;
 
+  /// Draws the line as Add a language's list does (the approved mockup
+  /// `docs/mockups/language-picker.md`): four outlined capsules 8 dp tall,
+  /// each filled by its share, with no labels under them (the list's key
+  /// names the parts once). A part still to come is a visible hollow
+  /// capsule, outlined in the `outline` colour, which passes 3:1 against the
+  /// surface where today's track does not. A screen reader reads
+  /// "How much of the course is made: ...".
+  final bool compact;
+
   /// The thin bar's height; the course card's is 8.
   static const double thickness = 4;
+
+  /// The compact capsule's height, and the width of its outline.
+  static const double compactHeight = 8;
+  static const double compactOutline = 1.5;
 
   @override
   Widget build(BuildContext context) {
@@ -45,15 +59,30 @@ class CourseLine extends StatelessWidget {
     ];
     final fills = <double>[...levels, culture];
     String percent(double share) => l10n.commonPercent(share.clamp(0.0, 1.0));
+    final figures = <String>[
+      for (final (i, name) in names.indexed) '$name ${percent(fills[i])}',
+    ].join(l10n.commonListSeparator);
+    if (compact) {
+      return Semantics(
+        label: label ?? l10n.languagesCourseMadeLabel(figures),
+        excludeSemantics: true,
+        child: Row(
+          children: <Widget>[
+            for (final (i, _) in names.indexed) ...<Widget>[
+              if (i > 0) const SizedBox(width: 4),
+              Expanded(
+                child: _Capsule(
+                  key: ValueKey<String>('course-segment-$i'),
+                  share: fills[i].clamp(0.0, 1.0),
+                ),
+              ),
+            ],
+          ],
+        ),
+      );
+    }
     return Semantics(
-      label:
-          label ??
-          l10n.pickerCourseLineLabel(
-            <String>[
-              for (final (i, name) in names.indexed)
-                '$name ${percent(fills[i])}',
-            ].join(l10n.commonListSeparator),
-          ),
+      label: label ?? l10n.pickerCourseLineLabel(figures),
       excludeSemantics: true,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -89,6 +118,42 @@ class CourseLine extends StatelessWidget {
             ),
           ],
         ],
+      ),
+    );
+  }
+}
+
+/// One part of the compact line: an outlined capsule that [share] of it, from
+/// the start, is filled in the primary colour.
+class _Capsule extends StatelessWidget {
+  const _Capsule({super.key, required this.share});
+
+  final double share;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Container(
+      height: CourseLine.compactHeight,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(CourseLine.compactHeight / 2),
+        border: Border.all(
+          color: scheme.outline,
+          width: CourseLine.compactOutline,
+        ),
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(
+          (CourseLine.compactHeight - 2 * CourseLine.compactOutline) / 2,
+        ),
+        child: Align(
+          alignment: AlignmentDirectional.centerStart,
+          child: FractionallySizedBox(
+            widthFactor: share,
+            heightFactor: 1,
+            child: ColoredBox(color: scheme.primary),
+          ),
+        ),
       ),
     );
   }
