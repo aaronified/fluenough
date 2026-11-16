@@ -1,0 +1,59 @@
+"schema": 1
+"id": "gu-en-reading-train-timetable"
+"name": "Reading: A train timetable and a platform notice"
+"kind": "reading"
+"language":
+  "code": "gu"
+  "iso639_3": "guj"
+  "name": "Gujarati"
+  "script": "gujarati"
+  "tts": "gu-IN"
+  "icon": "ગુ"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this deck, and released under CC BY-SA 4.0"
+"description": "A train timetable and a platform notice. Written for this deck and released under CC BY-SA 4.0. Not yet checked by a Gujarati speaker: please report any mistake."
+"tags":
+- "reading"
+- "unreviewed"
+"passages":
+- "id": "gu-train-timetable"
+  "title": "A train timetable and a platform notice"
+  "theme": "journey"
+  "sentences":
+  - "text": "ટ્રેન સવારે સાત વાગ્યે ઉપડશે."
+    "reading": "ṭren savāre sāt vāgye upaḍśe."
+    "ipa": "ʈren səʋare sat̪ ʋaɡje upəɖʃe"
+  - "text": "પ્લેટફોર્મ નંબર બે પરથી ઉપડશે."
+    "reading": "pleṭphorm nambar be parthi upaḍśe."
+    "ipa": "pleʈpʰorm nəmbər be pərt̪ʰi upəɖʃe"
+  - "text": "મુસાફરોએ ટિકિટ બતાવવી પડશે."
+    "reading": "musāfaroe ṭikiṭ batāvavi paḍśe."
+    "ipa": "musafəroe ʈikiʈ bət̪aʋəʋi pəɖʃe"
+  - "text": "ટ્રેન મોડી હોય તો સ્ટેશન પર પૂછો."
+    "reading": "ṭren moḍi hoy to sṭeśan par pucho."
+    "ipa": "ʈren moɖi ɦoj t̪o sʈeʃən pər putʃʰo"
+  "questions":
+  - "id": "gu-3323"
+    "prompt":
+      "en": "When does the train leave?"
+    "options":
+    - "en": "At six"
+    - "en": "At seven"
+    - "en": "At eight"
+    "answer": 2
+  - "id": "gu-3324"
+    "prompt":
+      "en": "Passengers must show a ticket."
+    "answer": true
+  - "id": "gu-3325"
+    "prompt":
+      "en": "What should you do if the train is late?"
+    "options":
+    - "en": "Ask at the station"
+    - "en": "Go home"
+    - "en": "Sleep"
+    "answer": 1

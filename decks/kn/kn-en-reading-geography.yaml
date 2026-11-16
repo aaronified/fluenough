@@ -1,0 +1,40 @@
+schema: 1
+id: "kn-en-reading-geography"
+name: "Reading: the state map"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A Kannada passage written for this course with the words taught up to its unit (a map caption: Karnataka and its districts). Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-karnataka-map"
+    title: "State map"
+    sentences:
+      - text: "ಇದು ನಮ್ಮ ರಾಜ್ಯದ ನಕ್ಷೆ."
+        reading: "idu namma rājyada nakṣe."
+        ipa: "id̪u namma raːdʒjad̪a nakʂe"
+      - text: "ನಕ್ಷೆಯಲ್ಲಿ ಅನೇಕ ಜಿಲ್ಲೆಗಳು ಇವೆ."
+        reading: "nakṣeyalli anēka jillegaḷu ive."
+        ipa: "nakʂejalli aneːka dʒilleɡaɭu iʋe"
+      - text: "ನಕ್ಷೆ ಪೂರ್ವ ಮತ್ತು ಪಶ್ಚಿಮವನ್ನು ತೋರಿಸುತ್ತದೆ."
+        reading: "nakṣe pūrva mattu paścimavannu tōrisuttade."
+        ipa: "nakʂe puːrʋa mat̪t̪u paʃtʃimaʋannu t̪oːrisut̪t̪ad̪e"
+      - text: "ದಕ್ಷಿಣ ಕೆಳಗೆ ಇದೆ."
+        reading: "dakṣiṇa keḷage ide."
+        ipa: "d̪akʂiɳa keɭaɡe id̪e"
+    questions:
+      - id: "kn-9358"
+        prompt: { en: "What does the map show?" }
+        options:
+          - { en: "The districts" }
+          - { en: "The trains" }
+          - { en: "The shops" }
+        answer: 1
+      - id: "kn-9359"
+        prompt: { en: "The map shows the east and the west." }
+        answer: true
+      - id: "kn-9360"
+        prompt: { en: "The south is at the bottom of the map." }
+        answer: true

@@ -33,6 +33,8 @@ cards:
     ipa: "baba"
     pos: "noun"
     gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
     "examples": [
       {"target": "बाबा आजारी आहेत.", "reading": "bābā ājāri āhet.", "ipa": "baba adzari aɦet̪", "bases": [{"word": "बाबा", "base": "बाबा", "reading": "bābā"}, {"word": "आहेत", "base": "असणे", "reading": "asṇe"}]},
       {"target": "बाबा गाडीतून उतरले.", "reading": "bābā gāḍitun utrle.", "ipa": "baba ɡaɖit̪un ut̪rle", "bases": [{"word": "गाडीतून", "ref": "mr-0430"}, {"word": "उतरले", "base": "उतरणे", "reading": "utrṇe"}]}
@@ -134,18 +136,24 @@ cards:
     ipa: "at̪ja"
     pos: "noun"
     gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
   - id: "mr-0229"
     target: "मामा"
     reading: "māmā"
     ipa: "mama"
     pos: "noun"
     gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
   - id: "mr-0230"
     target: "मामी"
     reading: "māmi"
     ipa: "mami"
     pos: "noun"
     gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
   - ref: "mr-0196"
     notes:
       - { id: "n1", kind: "note" }
@@ -167,6 +175,8 @@ cards:
     ipa: "sasu"
     pos: "noun"
     gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
   - id: "mr-0233"
     target: "सासरे"
     reading: "sāsre"

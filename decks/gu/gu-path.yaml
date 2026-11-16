@@ -189,127 +189,67 @@ units:
   - decks: ["gu-daily-life", "gu-grammar-negative", "*"]
     words: 18
     grammar: ["negative"]
-  - planned: { id: "gu-weather", theme: "weather", words: 45 }
-    listening_passages:
-      - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain and wind" } }
-    reading_passages:
-      - { id: "weather-message", text: { "en": "A message to a friend about the monsoon" } }
+  - decks: ["gu-weather", "gu-weather-sentences", "gu-reading-weather-message"]
+    words: 45
   - decks: ["gu-calendar", "gu-grammar-past", "*"]
     words: 15
     grammar: ["past"]
   - decks: ["gu-grammar-past-more", "gu-grammar-conjunct-verbs", "gu-grammar-compound-verbs"]
     words: 0
     grammar: ["past-more", "conjunct-verbs", "compound-verbs"]
-  - planned: { id: "gu-grammar-habitual-past", grammar: "habitual-past" }
-    listening_passages:
-      - { id: "when-i-was-small", text: { "en": "Telling what you used to do when you were small" } }
-    reading_passages:
-      - { id: "memoir-extract", text: { "en": "An extract from a memoir about childhood" } }
-  - planned: { id: "gu-grammar-perfect", grammar: "perfect" }
-    listening_passages:
-      - { id: "what-has-happened", text: { "en": "A neighbour says what has already been done and what is still left" } }
-    reading_passages:
-      - { id: "checklist-done", text: { "en": "A ticked checklist: what has been done and what has not" } }
-  - planned: { id: "gu-grammar-ordinals", grammar: "ordinals" }
-    listening_passages:
-      - { id: "which-floor", text: { "en": "Finding a flat: the first floor, the second, the third" } }
-    reading_passages:
-      - { id: "month-calendar", text: { "en": "A calendar of events: the first, second and third week of the month" } }
-  - planned: { id: "gu-festivals", theme: "festivals", words: 40 }
-    listening_passages:
-      - { id: "festival-days", text: { "en": "Neighbours plan the days of a festival together" } }
-    reading_passages:
-      - { id: "festival-invitation", text: { "en": "An invitation to a festival meal" } }
-  - planned: { id: "gu-shopping", theme: "shopping", words: 50 }
-    listening_passages:
-      - { id: "bargaining", text: { "en": "Bargaining politely at a market stall" } }
-    reading_passages:
-      - { id: "price-list", text: { "en": "A shop's price list and its offers" } }
-  - planned: { id: "gu-illness", theme: "illness", words: 50 }
-    listening_passages:
-      - { id: "a-cold-and-a-fever", text: { "en": "Telling a friend you have a cold and a fever" } }
-    reading_passages:
-      - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
+  - decks: ["gu-grammar-habitual-past"]
+    words: 0
+    grammar: ["habitual-past"]
+  - decks: ["gu-grammar-perfect"]
+    words: 0
+    grammar: ["perfect"]
+  - decks: ["gu-grammar-ordinals"]
+    words: 0
+    grammar: ["ordinals"]
+  - decks: ["gu-festivals", "gu-festivals-sentences", "gu-reading-festival-invitation"]
+    words: 40
+  - decks: ["gu-shopping", "gu-shopping-sentences", "gu-reading-price-list"]
+    words: 50
+  - decks: ["gu-illness", "gu-illness-sentences", "gu-reading-medicine-label"]
+    words: 50
   - decks: ["gu-eating-out", "*"]
     words: 10
-  - planned: { id: "gu-cooking", theme: "cooking", words: 50 }
-    listening_passages:
-      - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes a dish" } }
-    reading_passages:
-      - { id: "recipe-card", text: { "en": "A recipe card with its steps" } }
-  - planned: { id: "gu-grammar-comparison", grammar: "comparison" }
-    listening_passages:
-      - { id: "which-is-better", text: { "en": "Two friends compare two phones" } }
-    reading_passages:
-      - { id: "two-cities", text: { "en": "A short text comparing two cities" } }
+  - decks: ["gu-cooking", "gu-cooking-sentences", "gu-reading-recipe-card"]
+    words: 50
+  - decks: ["gu-comparison-words", "gu-grammar-comparison"]
+    words: 0
+    grammar: ["comparison"]
   - decks: ["gu-help", "gu-grammar-irregular", "gu-grammar-pitfalls", "*"]
     words: 7
     grammar: ["irregular", "pitfalls"]
-  - planned: { id: "gu-school", theme: "school", words: 50 }
-    listening_passages:
-      - { id: "school-day", text: { "en": "A child describes the school day" } }
-    reading_passages:
-      - { id: "class-timetable", text: { "en": "A school timetable" } }
-  - planned: { id: "gu-hobbies", theme: "hobbies", words: 50 }
-    listening_passages:
-      - { id: "weekend-hobbies", text: { "en": "Friends talk about what they do at weekends" } }
-    reading_passages:
-      - { id: "club-poster", text: { "en": "A poster for a sports and music club" } }
-  - planned: { id: "gu-grammar-past-continuous", grammar: "past-continuous" }
-    listening_passages:
-      - { id: "what-was-happening", text: { "en": "Saying what you were doing when the lights went out" } }
-    reading_passages:
-      - { id: "power-cut-story", text: { "en": "A short story of an evening during a power cut" } }
-  - planned: { id: "gu-chores", theme: "chores", words: 40 }
-    listening_passages:
-      - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
-    reading_passages:
-      - { id: "chore-list", text: { "en": "A weekly chore list on the wall" } }
-  - planned: { id: "gu-appearance", theme: "appearance", words: 50 }
-    listening_passages:
-      - { id: "describing-a-friend", text: { "en": "Describing a friend to someone who will meet them at the station" } }
-    reading_passages:
-      - { id: "lost-and-found-notice", text: { "en": "A lost-and-found notice describing a bag" } }
-  - planned: { id: "gu-verbs-3", theme: "verbs-3", words: 60 }
-    listening_passages:
-      - { id: "a-busy-day", text: { "en": "Someone lists everything they did in a day" } }
-    reading_passages:
-      - { id: "diary-entry", text: { "en": "A short diary entry" } }
-  - planned: { id: "gu-phone", theme: "phone", words: 40 }
-    listening_passages:
-      - { id: "phone-call", text: { "en": "A phone call to arrange a meeting" } }
-    reading_passages:
-      - { id: "text-messages", text: { "en": "A few text messages between friends" } }
-  - planned: { id: "gu-journey", theme: "journey", words: 55 }
-    listening_passages:
-      - { id: "ticket-counter", text: { "en": "Buying a train ticket at the counter" } }
-    reading_passages:
-      - { id: "train-timetable", text: { "en": "A train timetable and a platform notice" } }
-  - planned: { id: "gu-nature", theme: "nature", words: 50 }
-    listening_passages:
-      - { id: "walk-by-the-river", text: { "en": "Two people describe a walk by the river at dusk" } }
-    reading_passages:
-      - { id: "park-signs", text: { "en": "Signs in a park" } }
-  - planned: { id: "gu-grammar-conjunctive", grammar: "conjunctive" }
-    listening_passages:
-      - { id: "what-i-did-today", text: { "en": "Telling a day as one chain of actions" } }
-    reading_passages:
-      - { id: "travel-diary", text: { "en": "A travel diary that chains what happened" } }
-  - planned: { id: "gu-adjectives-2", theme: "adjectives-2", words: 55 }
-    listening_passages:
-      - { id: "describing-a-room", text: { "en": "Describing a rented room" } }
-    reading_passages:
-      - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
-  - planned: { id: "gu-workplace", theme: "workplace", words: 45 }
-    listening_passages:
-      - { id: "first-day-at-work", text: { "en": "A new colleague's first day" } }
-    reading_passages:
-      - { id: "office-notice", text: { "en": "An office notice about a meeting" } }
-  - planned: { id: "gu-geography", theme: "geography", words: 45 }
-    listening_passages:
-      - { id: "where-in-india", text: { "en": "Naming states and cities of India" } }
-    reading_passages:
-      - { id: "gujarati-states-map", text: { "en": "A map caption: the Gujarati-speaking states" } }
+  - decks: ["gu-school", "gu-school-sentences", "gu-reading-class-timetable"]
+    words: 50
+  - decks: ["gu-hobbies", "gu-hobbies-sentences", "gu-reading-club-poster"]
+    words: 50
+  - decks: ["gu-grammar-past-continuous"]
+    words: 0
+    grammar: ["past-continuous"]
+  - decks: ["gu-chores", "gu-chores-sentences", "gu-reading-chore-list"]
+    words: 40
+  - decks: ["gu-appearance", "gu-appearance-sentences", "gu-reading-lost-and-found-notice"]
+    words: 50
+  - decks: ["gu-verbs-3", "gu-verbs-3-sentences", "gu-reading-diary-entry"]
+    words: 60
+  - decks: ["gu-phone", "gu-phone-sentences", "gu-reading-text-messages"]
+    words: 40
+  - decks: ["gu-journey", "gu-journey-sentences", "gu-reading-train-timetable"]
+    words: 55
+  - decks: ["gu-nature", "gu-nature-sentences", "gu-reading-park-signs"]
+    words: 50
+  - decks: ["gu-grammar-conjunctive"]
+    words: 0
+    grammar: ["conjunctive"]
+  - decks: ["gu-adjectives-2", "gu-adjectives-2-sentences", "gu-reading-room-to-let"]
+    words: 55
+  - decks: ["gu-workplace", "gu-workplace-sentences", "gu-reading-office-notice"]
+    words: 45
+  - decks: ["gu-geography", "gu-geography-sentences", "gu-reading-gujarati-states-map"]
+    words: 45
     milestone: "A2"
   # B1: the themes and grammar of the CEFR's B1.
   - decks: ["gu-registers"]

@@ -1,0 +1,47 @@
+schema: 1
+id: "kn-en-reading-verbs"
+name: "Reading: the fridge note"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A Kannada passage written for this course with the words taught up to its unit (a note on the fridge: what to eat, what to drink and where things are). Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-fridge-note"
+    title: "Fridge note"
+    sentences:
+      - text: "ನೀವು ಊಟ ಮಾಡಿ."
+        reading: "nīvu ūṭa māḍi."
+        ipa: "niːʋu uːʈa maːɖi"
+      - text: "ನಾನು ಹಾಲು ಕುಡಿಯುತ್ತೇನೆ."
+        reading: "nānu hālu kuḍiyuttēne."
+        ipa: "naːnu haːlu kuɖijut̪t̪eːne"
+      - text: "ಅವಳು ಹಾಡುತ್ತಾಳೆ."
+        reading: "avaḷu hāḍuttāḷe."
+        ipa: "aʋaɭu haːɖut̪t̪aːɭe"
+      - text: "ಅವರು ಮನೆಗೆ ಹೋಗುತ್ತಾರೆ."
+        reading: "avaru manege hōguttāre."
+        ipa: "aʋaru maneɡe hoːɡut̪t̪aːre"
+      - text: "ನಾನು ಕನ್ನಡ ಕಲಿಯುತ್ತೇನೆ."
+        reading: "nānu kannaḍa kaliyuttēne."
+        ipa: "naːnu kannaɖa kalijut̪t̪eːne"
+    questions:
+      - id: "kn-9334"
+        prompt: { en: "Who goes home?" }
+        options:
+          - { en: "She" }
+          - { en: "They" }
+          - { en: "I" }
+        answer: 2
+      - id: "kn-9335"
+        prompt: { en: "The note says to have a meal." }
+        answer: true
+      - id: "kn-9336"
+        prompt: { en: "What does the writer drink?" }
+        options:
+          - { en: "Milk" }
+          - { en: "Juice" }
+          - { en: "Tea" }
+        answer: 1

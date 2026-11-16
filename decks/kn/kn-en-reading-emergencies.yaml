@@ -1,0 +1,40 @@
+schema: 1
+id: "kn-en-reading-emergencies"
+name: "Reading: safety notice"
+kind: reading
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short passage written for this course, using only the words of its unit and the units before it. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-safety-notice"
+    title: "Safety notice"
+    sentences:
+      - text: "ತುರ್ತು ಸಮಯದಲ್ಲಿ ಸಹಾಯಕ್ಕೆ ಕೂಗಿ."
+        reading: "turtu samayadalli sahāyakke kūgi."
+        ipa: "t̪urt̪u samajad̪alli sahaːjakke kuːɡi"
+      - text: "ಬೆಂಕಿ ಇದ್ದರೆ ಅಗ್ನಿಶಾಮಕಕ್ಕೆ ಕರೆ ಮಾಡಿ."
+        reading: "beṅki iddare agniśāmakakke kare māḍi."
+        ipa: "beŋki id̪d̪are aɡniʃaːmakakke kare maːɖi"
+      - text: "ಆತುರ ಬೇಡ, ಎಚ್ಚರ ಇರಲಿ."
+        reading: "ātura bēḍa, eccara irali."
+        ipa: "aːt̪ura beːɖa etʃtʃara irali"
+      - text: "ಅಪಾಯ ಇದ್ದರೆ ಆಂಬುಲೆನ್ಸ್‌ಗೆ ಕರೆ ಮಾಡಿ."
+        reading: "apāya iddare āmbulensge kare māḍi."
+        ipa: "apaːja id̪d̪are aːmbulensɡe kare maːɖi"
+    questions:
+      - id: "kn-9724"
+        prompt: { en: "Whom should you call in case of fire?" }
+        options:
+          - { en: "Fire service" }
+          - { en: "Post office" }
+          - { en: "Library" }
+        answer: 1
+      - id: "kn-9725"
+        prompt: { en: "Do not hurry." }
+        answer: true
+      - id: "kn-9726"
+        prompt: { en: "The notice is about shopping." }
+        answer: false
