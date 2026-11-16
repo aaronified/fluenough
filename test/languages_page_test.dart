@@ -520,10 +520,8 @@ void main() {
         isScrollControlled: true,
         useSafeArea: true,
         showDragHandle: true,
-        builder: (_) => LanguageSkillsSheet(
-          view: LanguageView(ase, null),
-          draft: true,
-        ),
+        builder: (_) =>
+            LanguageSkillsSheet(view: LanguageView(ase, null), draft: true),
       ),
     );
     await tester.pumpAndSettle();

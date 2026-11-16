@@ -44,8 +44,7 @@ SpokenLanguage lang(
 
 B1Unit written(Milestone m) => B1Unit(words: 10, milestone: m, has: 10);
 
-B1Unit planned(Milestone m) =>
-    B1Unit(planned: true, words: 10, milestone: m);
+B1Unit planned(Milestone m) => B1Unit(planned: true, words: 10, milestone: m);
 
 /// A course whose path is [units], taught from English.
 CatalogLanguage course(String code, String name, List<B1Unit> units) =>
@@ -91,18 +90,18 @@ final Map<String, CatalogLanguage> sampleCourses = <String, CatalogLanguage>{
     planned(Milestone.b1),
   ]),
   'bb': course('bb', 'Bravo', <B1Unit>[
-    const B1Unit(words: 10, milestone: Milestone.a1, has: 4),
+    // Some words written, A1 itself not yet: a beginner course.
+    const B1Unit(words: 10, has: 10),
+    planned(Milestone.a1),
     planned(Milestone.a2),
-    planned(Milestone.b1),
   ]),
   'ff': course('ff', 'Foxtrot', const <B1Unit>[]),
   'cc': course('cc', 'Charlie', const <B1Unit>[]),
 };
 
-List<LanguageView> sampleViews([List<SpokenLanguage>? list]) =>
-    <LanguageView>[
-      for (final l in list ?? sample) LanguageView(l, sampleCourses[l.code]),
-    ];
+List<LanguageView> sampleViews([List<SpokenLanguage>? list]) => <LanguageView>[
+  for (final l in list ?? sample) LanguageView(l, sampleCourses[l.code]),
+];
 
 AppLocalizations l10n(WidgetTester tester) =>
     AppLocalizations.of(tester.element(find.byType(Scaffold).first))!;
@@ -477,10 +476,8 @@ languages:
         await pumpList(tester, mode: mode);
         final text = l10n(tester);
         await seeAll(tester);
-        Finder glyph(String code, IconData icon) => find.descendant(
-          of: key('flag-$code'),
-          matching: find.byIcon(icon),
-        );
+        Finder glyph(String code, IconData icon) =>
+            find.descendant(of: key('flag-$code'), matching: find.byIcon(icon));
         // None: outlined only. Full: solid only. Some: both, the solid one
         // clipped to its start half.
         expect(glyph('aa', Icons.flag_outlined), findsOneWidget);
@@ -491,7 +488,8 @@ languages:
         expect(glyph('bb', Icons.flag), findsOneWidget);
         expect(tester.getSize(key('flag-bb')), const Size.square(40));
         // A tap shows a bubble, nothing else.
-        final bubble = '${text.languagesVerifiedShort} '
+        final bubble =
+            '${text.languagesVerifiedShort} '
             '${text.languagesVerifiedSome}';
         expect(find.text(bubble), findsNothing);
         await tester.tap(key('flag-bb'));

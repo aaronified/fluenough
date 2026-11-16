@@ -272,7 +272,8 @@ class _LanguagePickListState extends State<LanguagePickList> {
         ],
         if (soon.isNotEmpty) ...<Widget>[
           pad(_soonHeader(context, soonOpen)),
-          if (soonOpen) for (final v in soon) pad(_soonRow(context, v)),
+          if (soonOpen)
+            for (final v in soon) pad(_soonRow(context, v)),
         ],
       ],
     ];
@@ -352,7 +353,7 @@ class _LanguagePickListState extends State<LanguagePickList> {
       child: Material(
         color: added ? scheme.primaryContainer : scheme.surfaceContainerLow,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(AppRadii.field),
           side: added
               ? BorderSide.none
               : BorderSide(color: scheme.outlineVariant),
@@ -416,7 +417,7 @@ class _LanguagePickListState extends State<LanguagePickList> {
       padding: const EdgeInsetsDirectional.only(top: 16),
       child: Material(
         color: scheme.surfaceContainerHigh,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(AppRadii.chip),
         clipBehavior: Clip.antiAlias,
         child: MergeSemantics(
           child: Semantics(
@@ -462,6 +463,7 @@ class _LanguagePickListState extends State<LanguagePickList> {
     final scheme = theme.colorScheme;
     final own = view.language.ownName;
     return Semantics(
+      container: true,
       label: l10n.languagesNoCourseLabel(view.name),
       excludeSemantics: true,
       child: ConstrainedBox(

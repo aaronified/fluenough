@@ -402,9 +402,7 @@ void main() {
       expect(links.asked, <String>[AppLinks.latestRelease]);
       expect(find.byType(LanguageSkillsSheet), findsNothing);
       // The full list's row says it too, with the action.
-      await tester.tap(
-        find.byKey(const ValueKey<String>('languages-see-all')),
-      );
+      await tester.tap(find.byKey(const ValueKey<String>('languages-see-all')));
       await tester.pumpAndSettle();
       final row = find.byKey(const ValueKey<String>('add-hi'));
       expect(

@@ -64,6 +64,7 @@ class CourseLine extends StatelessWidget {
     ].join(l10n.commonListSeparator);
     if (compact) {
       return Semantics(
+        container: true,
         label: label ?? l10n.languagesCourseMadeLabel(figures),
         excludeSemantics: true,
         child: Row(

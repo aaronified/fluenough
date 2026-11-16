@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../core/data/course_path.dart' show Milestone;
 import '../../core/data/spoken_languages.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/theme.dart';
 import '../placement/course_line.dart';
 
 /// The word of a verification state: "Not at all", "Somewhat", "Completely".
@@ -87,6 +88,7 @@ class VerificationFlagButton extends StatelessWidget {
       triggerMode: TooltipTriggerMode.tap,
       excludeFromSemantics: true,
       child: Semantics(
+        container: true,
         label: l10n.languagesVerifiedLabel(word.toLowerCase()),
         excludeSemantics: true,
         child: SizedBox.square(
@@ -134,7 +136,7 @@ class VerificationKey extends StatelessWidget {
         padding: const EdgeInsetsDirectional.fromSTEB(12, 10, 12, 8),
         decoration: BoxDecoration(
           color: scheme.surfaceContainerLow,
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(AppRadii.chip),
           border: Border.all(color: scheme.outlineVariant),
         ),
         child: Column(
