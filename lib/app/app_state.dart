@@ -1155,10 +1155,11 @@ class AppState extends ChangeNotifier {
     if (allOff) settings.progressAll = false;
   }
 
-  /// Whether Progress counts every language together (#528): its All
-  /// button is on, and there is more than one language to count.
-  bool get progressShowsAll =>
-      settings.progressAll && languageChoices.length > 1;
+  /// Whether Progress counts every language together (#528). Never: the
+  /// All button was removed (owner, 2026-11-16), so a stored `progress_all`
+  /// is ignored. The setting stays only so old stores restore without a
+  /// migration.
+  bool get progressShowsAll => false;
 
   /// The language whose numbers Progress shows, or null for every
   /// language's together ([progressShowsAll]).
