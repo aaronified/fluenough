@@ -675,6 +675,11 @@ each other script under `target_scripts`, a map from script id to text:
   reading: "kitāb"
 ```
 
+Toki Pona does the same with `sitelen_pona` (U+F1900 to U+F19FF, the UCSUR
+block), written by `tools/tok_sitelen.py`: its cards keep the Latin `target`
+and give `target_scripts: { sitelen_pona: ... }`
+([ADR-0055](ADR-0055-Sitelen-Pona-As-A-Second-Script)).
+
 There is **one** `reading` and **one** `ipa` per card: they say how the word
 sounds, which every spelling shares, so a second reading is never written.
 A word that differs by more than its spelling (a Sanskrit-leaning synonym in
