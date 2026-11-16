@@ -1,7 +1,8 @@
 # Consonant (hal) sandhi: the junctions of a final consonant or an anusvara with the sound that follows.
 # Every pair and joined form was read on sa.wikipedia.org/wiki/सन्धिप्रकरणम् (the junctions and their
-# names, 2026-11-16), except the last two rows, which are the instrumental of राम and देव as the
-# en.wiktionary.org table of राम and the a-stems unit give them; the two compounds षण्मुख (षड् + मुख)
+# names, 2026-11-16) and checked against Whitney, Sanskrit Grammar (1889), read in the archive.org full text,
+# 2026-11-16: sections 159, 161, 189, 190, 199, 202, 203, 208, 210, 213 and 227, each named in the entry's text; the last two rows (the instrumental of राम and देव)
+# are the forms of the en.wiktionary.org table of राम and the a-stems unit; the two compounds षण्मुख (षड् + मुख)
 # and वाङ्मय (वाङ् + मय) were also read on their en.wiktionary.org entries. The sutra numbers were read on
 # sa.wikisource.org/wiki/अष्टाध्यायी (the sixth and eighth chapter pages, 2026-11-16). Readings and IPA from
 # tools/transcribe.py (sa).
@@ -105,24 +106,6 @@ pattern:
       forms: { "joined": "इदञ्च" }
       readings: { "joined": "idañca" }
       ipas: { "joined": "id̪əɲtʃə" }
-    - lemma: "अं + कितः"
-      key: "am-kitah"
-      reading: "aṃ kitaḥ"
-      forms: { "joined": "अङ्कितः" }
-      readings: { "joined": "aṅkitaḥ" }
-      ipas: { "joined": "əŋkit̪əh" }
-    - lemma: "दं + डः"
-      key: "dam-dah"
-      reading: "daṃ ḍaḥ"
-      forms: { "joined": "दण्डः" }
-      readings: { "joined": "daṇḍaḥ" }
-      ipas: { "joined": "d̪əɳɖəh" }
-    - lemma: "आनं + दः"
-      key: "anam-dah"
-      reading: "ānaṃ daḥ"
-      forms: { "joined": "आनन्दः" }
-      readings: { "joined": "ānandaḥ" }
-      ipas: { "joined": "aːnənd̪əh" }
     - lemma: "वसन् + अस्ति"
       key: "vasan-asti"
       reading: "vasan asti"
@@ -189,3 +172,33 @@ pattern:
       forms: { "joined": "देवेन" }
       readings: { "joined": "devena" }
       ipas: { "joined": "d̪eːʋeːnə" }
+    - lemma: "देवान् + च"
+      key: "devan-ca"
+      reading: "devān ca"
+      forms: { "joined": "देवांश्च" }
+      readings: { "joined": "devāṃśca" }
+      ipas: { "joined": "d̪eːʋãːʃtʃə" }
+    - lemma: "कुमारान् + त्रीन्"
+      key: "kumaran-trin"
+      reading: "kumārān trīn"
+      forms: { "joined": "कुमारांस्त्रीन्" }
+      readings: { "joined": "kumārāṃstrīn" }
+      ipas: { "joined": "kumaːrãːst̪riːn" }
+    - lemma: "अभरान् + ततः"
+      key: "abharan-tatah"
+      reading: "abharān tataḥ"
+      forms: { "joined": "अभरांस्ततः" }
+      readings: { "joined": "abharāṃstataḥ" }
+      ipas: { "joined": "əbʱərãːst̪ət̪əh" }
+    - lemma: "उद्यन् + आदित्यः"
+      key: "udyan-adityah"
+      reading: "udyan ādityaḥ"
+      forms: { "joined": "उद्यन्नादित्यः" }
+      readings: { "joined": "udyannādityaḥ" }
+      ipas: { "joined": "ud̪jənnaːd̪it̪jəh" }
+    - lemma: "तत् + श्रुत्वा"
+      key: "tat-srutva"
+      reading: "tat śrutvā"
+      forms: { "joined": "तच्छ्रुत्वा" }
+      readings: { "joined": "tacchrutvā" }
+      ipas: { "joined": "t̪ətʃtʃʰrut̪ʋaː" }

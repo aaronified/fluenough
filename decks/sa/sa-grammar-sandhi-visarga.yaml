@@ -1,10 +1,9 @@
 # Visarga sandhi: the junctions of a final visarga (ḥ) with the sound that follows. Every pair and joined
-# form was read on sa.wikipedia.org/wiki/सन्धिप्रकरणम् (2026-11-16) except these: सः + गच्छति = स गच्छति
-# and एषः + बाणः = एष बाणः (the rule for सः is the footnote of the en.wiktionary.org entry of तद्; एष बाणः is
-# the example of the entry of एतद्), and रामः + पठति = रामः पठति, which follows the rule the Sanskrit Wikipedia
-# page gives for the visarga before k, kh, p and ph (it becomes s before the other hard consonants only). The
-# sutra numbers were read on sa.wikisource.org/wiki/अष्टाध्यायी (the sixth and eighth chapter pages, 2026-11-16).
-# Readings and IPA from tools/transcribe.py (sa).
+# form was read on sa.wikipedia.org/wiki/सन्धिप्रकरणम् (2026-11-16) and checked against Whitney, Sanskrit Grammar
+# (1889), read in the archive.org full text on 2026-11-16: sections 170, 172, 174, 175, 176 and 177, named in each entry's text.
+# Whitney 176 a gives सः and एषः losing the visarga before a consonant (sa dadarśa, eṣa puruṣaḥ), and 170 d the visarga staying
+# before k, kh, p, ph (nalaḥ kāmam, puruṣaḥ khanati). The sutra numbers were read on
+# sa.wikisource.org/wiki/अष्टाध्यायी (the sixth and eighth chapter pages, 2026-11-16). Readings and IPA from tools/transcribe.py (sa).
 schema: 1
 id: "sa-grammar-sandhi-visarga"
 part: "core"
@@ -102,9 +101,9 @@ pattern:
     - lemma: "रामः + षष्ठः"
       key: "ramah-sasthah"
       reading: "rāmaḥ ṣaṣṭhaḥ"
-      forms: { "joined": "रामष्षष्ठः" }
-      readings: { "joined": "rāmaṣṣaṣṭhaḥ" }
-      ipas: { "joined": "raːməʂʂəʂʈʰəh" }
+      forms: { "joined": ["रामष्षष्ठः", "रामः षष्ठः"] }
+      readings: { "joined": ["rāmaṣṣaṣṭhaḥ", "rāmaḥ ṣaṣṭhaḥ"] }
+      ipas: { "joined": ["raːməʂʂəʂʈʰəh", "raːməh ʂəʂʈʰəh"] }
     - lemma: "धनुः + ठङ्कारः"
       key: "dhanuh-thankarah"
       reading: "dhanuḥ ṭhaṅkāraḥ"
