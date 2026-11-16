@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Language Picker</title>
-<meta name="description" content="Add a language redesigned for new users: nine big tiles first, then a short list of languages with a course, a compact bar of how much of each course is made, a verification flag, and Coming soon folded away.">
+<meta name="description" content="Add a language redesigned for new users: eight big tiles first, then a short list of languages with a course, a compact bar of how much of each course is made, a verification flag, and Coming soon folded away.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Sans+Telugu:wght@400;600&family=Noto+Sans+Arabic:wght@400;600&family=Noto+Sans+JP:wght@400;600&family=Noto+Sans+SC:wght@400;600&family=Noto+Sans+Kannada:wght@400;600&display=swap">
 <style>
 /* ===== The page around the phones (not the app) ===== */
@@ -45,7 +45,6 @@ h2.h{margin:4px 0 12px;font-size:calc(24px*var(--t));line-height:1.15;font-weigh
 /* tiles */
 .tiles{list-style:none;margin:16px 0 8px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
 .tiles li{min-width:0}
-.tiles li.wide{grid-column:1 / -1}
 .tl{width:100%;height:100%;text-align:start;display:flex;flex-direction:column;gap:2px;padding:12px 12px 12px;border-radius:16px;border:0;background:var(--sLow);box-shadow:inset 0 0 0 1px var(--olv);min-height:calc(78px*var(--t))}
 .tl.added{background:var(--pc);color:var(--onPc);box-shadow:none}
 .tl .nat{font-size:calc(20px*var(--t));line-height:1.25;font-weight:600;overflow-wrap:anywhere}
@@ -117,7 +116,7 @@ ul.rows{list-style:none;margin:0;padding:0}
 <body>
 <div class="wrap">
 <h1>Language picker</h1>
-<p class="cap1">The Add a language screen, 360 dp, 1.4x text. A first screen of nine big tiles, then the short list of languages that have a course, with how much of the course is made shown as one slim bar and the verification as a flag you tap. Picking goes straight to the existing Find my level (last phone, unchanged). Tiles, rows, flags and the Coming soon header are live. Notes and the contrast self-check are in <code>language-picker.md</code>.</p>
+<p class="cap1">The Add a language screen, 360 dp, 1.4x text. A first screen of eight big tiles, then the short list of languages that have a course, with how much of the course is made shown as one slim bar and the verification as a flag you tap. Picking goes straight to the existing Find my level (last phone, unchanged). Tiles, rows, flags and the Coming soon header are live. Notes and the contrast self-check are in <code>language-picker.md</code>.</p>
 <div class="tw" role="group" aria-label="Tweaks">
  <div class="tg">Theme <div class="segc" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></div></div>
  <div class="tg">Already added <div class="segc" data-k="lang"><button data-v="te">Telugu</button><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button><button data-v="none">None (first launch)</button></div></div>
@@ -174,10 +173,10 @@ function status(k){const [a,b,c,cu]=L[k].lv;
 const SOON=[['af','Afrikaans','Afrikaans','A'],['nl','Dutch','Nederlands','N'],['fa','Persian','فارسی','ف'],['id','Indonesian','Bahasa Indonesia','B'],['ps','Pashto','پښتو','پ'],['sa','Classical Sanskrit','संस्कृतम्','स'],['uk','Ukrainian','Українська','У']];
 const S={theme:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light',lang:'te',soon:'c',hl:'1'};
 const added=k=>S.lang===k;
-const POP=['es','fr','te','hi','bn','mr','kn','ja','zh'];
+const POP=['es','fr','te','hi','bn','mr','kn','ja'];
 const natOf=l=>l.nat2?`${l.nat}`:l.nat;
 function tile(k,i){const l=L[k],a=added(k);
- return `<li class="${i===8?'wide':''}"><button class="tl ${a?'added':''}" type="button" aria-label="${l.en}, ${l.nat}, ${status(k)}${a?', already added':''}"><span class="nat" lang="${k}">${natOf(l)}</span><span class="en">${l.en}</span><span class="st">${a?'<b>Added</b> · ':''}${status(k)}</span></button></li>`}
+ return `<li><button class="tl ${a?'added':''}" type="button" aria-label="${l.en}, ${l.nat}, ${status(k)}${a?', already added':''}"><span class="nat" lang="${k}">${natOf(l)}</span><span class="en">${l.en}</span><span class="st">${a?'<b>Added</b> · ':''}${status(k)}</span></button></li>`}
 const seg=lv=>lv.map(x=>`<span class="sg"><i style="width:${Math.round(x*100)}%"></i></span>`).join('');
 const pct=lv=>['A1','A2','B1','Culture'].map((n,i)=>`${n} ${Math.round(lv[i]*100)}%`).join(', ');
 function row(k){const l=L[k],a=added(k);
@@ -193,7 +192,7 @@ const legend=()=>`<div class="legend chg" role="group" aria-label="Key">
  <p class="vh">A1, A2, B1 and Culture: how much of each part is written. A full bar is complete, an empty one is still to come.</p>
  <p class="fk" aria-label="Verified by native speakers: not at all, somewhat, completely"><span>Verified by native speakers:</span><span>${flagSvg('none').replace('class="i"','class="i" style="color:var(--onSv)"')}<b>Not at all</b></span><span><span style="color:var(--p);display:inline-flex">${flagSvg('some')}</span><b>Somewhat</b></span><span><span style="color:var(--p);display:inline-flex">${flagSvg('full')}</span><b>Completely</b></span></p></div>`;
 /* three frames of the same screen sequence */
-function fA(){return `<div class="fcol"><div class="fcap">a. First screen: the nine Popular tiles${S.lang==='none'?' (first launch)':''}</div><div class="ph">${bar('Add a language')}<div class="body">
+function fA(){return `<div class="fcol"><div class="fcap">a. First screen: the eight tiles${S.lang==='none'?' (first launch)':''}</div><div class="ph">${bar('Add a language')}<div class="body">
  <h2 class="h chg upd">What do you want to learn?</h2>
  <label class="srch" for="q1">${ic('search')}<input id="q1" type="search" placeholder="Search languages" autocomplete="off"></label>
  <ul class="tiles chg">${POP.map(tile).join('')}</ul>
