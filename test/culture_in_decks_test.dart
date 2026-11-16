@@ -65,6 +65,15 @@ Future<void> _toCulture(WidgetTester tester) async {
   await tester.pumpAndSettle();
 }
 
+/// Taps [target] once it is scrolled into view: the culture list sits under
+/// the course card, so its rows start below the phone's fold.
+Future<void> _tap(WidgetTester tester, Finder target) async {
+  await tester.ensureVisible(target);
+  await tester.pumpAndSettle();
+  await tester.tap(target);
+  await tester.pumpAndSettle();
+}
+
 Future<void> _search(WidgetTester tester, String text) async {
   await tester.enterText(find.byType(TextField), text);
   await tester.pumpAndSettle();
@@ -202,13 +211,19 @@ void main() {
       expect(find.byType(CultureList), findsOneWidget);
     });
 
-    testWidgets('matches the year and the kind', (tester) async {
+    testWidgets('matches the year', (tester) async {
       usePhone(tester);
       await _decks(tester);
       await _toCulture(tester);
       await _search(tester, '1912');
       expect(find.text(_book), findsOneWidget);
       expect(find.text(_film), findsNothing);
+    });
+
+    testWidgets('matches the kind', (tester) async {
+      usePhone(tester);
+      await _decks(tester);
+      await _toCulture(tester);
       await _search(tester, 'films');
       expect(find.text(_film), findsOneWidget);
       expect(find.text(_book), findsNothing);
@@ -261,8 +276,7 @@ void main() {
       await _decks(tester);
       await _toCulture(tester);
       expect(find.text(_briefing), findsNothing);
-      await tester.tap(find.text(_book));
-      await tester.pumpAndSettle();
+      await _tap(tester, find.text(_book));
       expect(find.text(_briefing), findsOneWidget);
       expect(find.text(_l10n.recNotIncluded), findsOneWidget);
       expect(
@@ -285,11 +299,8 @@ void main() {
         200,
         scrollable: find.byType(Scrollable).first,
       );
-      await tester.tap(find.text(_novel));
-      await tester.pumpAndSettle();
-      await tester.ensureVisible(find.text(_l10n.recIComplete));
-      await tester.tap(find.text(_l10n.recIComplete));
-      await tester.pumpAndSettle();
+      await _tap(tester, find.text(_novel));
+      await _tap(tester, find.text(_l10n.recIComplete));
       expect(
         state.recommendationProgress.isCompleted('zz-rec-novela'),
         isTrue,
@@ -305,10 +316,8 @@ void main() {
       final first = state.recommendationProgress.completed.single.completedAt;
       await _decks(tester, state: state);
       await _toCulture(tester);
-      await tester.tap(find.text(_book));
-      await tester.pumpAndSettle();
-      await tester.tap(find.text(_l10n.recCompleted));
-      await tester.pumpAndSettle();
+      await _tap(tester, find.text(_book));
+      await _tap(tester, find.text(_l10n.recCompleted));
       expect(
         state.recommendationProgress.isCompleted('zz-rec-camino'),
         isFalse,
@@ -509,8 +518,7 @@ void main() {
         await _toCulture(tester);
         expect(find.byType(CultureList), findsOneWidget, reason: mode.name);
         expect(tester.takeException(), isNull, reason: mode.name);
-        await tester.tap(find.text(_book));
-        await tester.pumpAndSettle();
+        await _tap(tester, find.text(_book));
         expect(tester.takeException(), isNull, reason: mode.name);
         await meetsEveryGuideline(tester);
       }
