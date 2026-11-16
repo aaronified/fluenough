@@ -91,6 +91,11 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .hl-on .chg{outline:2px dashed var(--E);outline-offset:3px;position:relative}
 .hl-on .chg::after{content:"new";position:absolute;top:-10px;right:6px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:6px;z-index:5;letter-spacing:.3px}
 .hl-on .chg.upd::after{content:"changed"}
+.today{padding:16px}
+.th{display:flex;align-items:center;margin:0 0 12px}
+.th h2{flex:1;margin:0;font-size:calc(16px*var(--t));font-weight:600}
+.th .pen{width:48px;height:48px;display:flex;align-items:center;justify-content:center;color:var(--onSv);margin:-12px -8px -12px 0}
+.tile .nw{font-size:calc(12px*var(--t));line-height:1.2}
 .hide{display:none!important}
 .fitlog{list-style:none;margin:10px 0 0;padding:0;font-size:12px;line-height:1.4;color:var(--onSv)}
 .fitlog li{margin:0 0 2px}
@@ -130,6 +135,7 @@ const IC={
  rail:"M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2l2-2h4l2 2h2v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-4-4-8-4zM7.5 17a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM11 11H6V6h5v5zm2 0V6h5v5h-5zm3.5 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z",
  post:"M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z",
  hotel:"M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z",
+ edit:"M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z",
  close:"M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z",
  add:"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z",
  drag:"M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z",
@@ -159,6 +165,10 @@ const STRESS=[['Emergencies','gesture','emerg'],['Doctor and pharmacy','pair','d
 function stress(){
  return `<div class="fcol"><div class="fcap">d. Stress row: longest labels at 1.4x (Telugu, Hindi, Bengali last)</div>
  <div class="ph" style="min-height:0"><div class="stage"><div class="dlg"><h2>Stress row</h2><ol class="grid">${STRESS.map(([t,m,i])=>tileOn({id:i,t,i,m},{},1)).join('')}</ol><ul class="fitlog" id="fitlog"></ul></div></div></div></div>`}
+function today(){
+ const tiles=STRESS.map(([t,m,i],n)=>{const [c,oc]=MC[S.theme][m];return `<li><div class="tile" style="--c:${c};--oc:${oc}" role="button" tabindex="0" aria-label="${t}, ${n+2} new"><span class="ico">${ic(i)}</span><span class="lb">${t}</span><span class="nw">${n+2} new</span></div></li>`}).join('');
+ return `<div class="fcol"><div class="fcap">e. Today homepage strip: the same six stress labels (same fit helper)</div>
+ <div class="ph" style="min-height:0"><div class="today"><div class="th"><h2>Situations</h2><span class="pen">${ic('edit')}</span></div><ol class="grid">${tiles}</ol></div></div></div>`}
 const DEF=SIT.slice(0,MAX).map(s=>s.id);
 const by=id=>SIT.find(s=>s.id===id);
 function tileOn(s,f,pos){
@@ -193,7 +203,7 @@ function build(){
  document.documentElement.dataset.theme=S.theme;
  root.style.cssText=Object.entries(p).map(([k,v])=>`--${k}:${v}`).join(';');
  root.className='frames'+(S.hl==='1'?' hl-on':'');
- root.innerHTML=F.map(frame).join('')+stress();fitAll();
+ root.innerHTML=F.map(frame).join('')+stress()+today();fitAll();
  document.querySelectorAll('.seg').forEach(s=>s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',S[s.dataset.k]==b.dataset.v)));
 }
 /* Fit order (see the .md): 1 wrap at spaces (up to 3 lines), 2 letter-spacing down to -0.02em, 3 font size down by at most 2 sp (x1.4), never break a word. */
