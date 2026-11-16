@@ -24,7 +24,6 @@ import '../core/models/script_guide.dart';
 import '../core/models/sound_contrasts.dart';
 import '../core/notes/note_rotation.dart';
 import '../core/numbers/number_practice.dart';
-import '../core/progress/recent_answers.dart' show MasteryLevel;
 import '../core/scheduling/picture_choice.dart';
 import '../core/scheduling/placed_review.dart';
 import '../core/scheduling/daily_budget.dart';
@@ -50,6 +49,7 @@ import '../core/models/fact.dart';
 import '../core/models/situation.dart';
 import '../core/scheduling/ability.dart';
 import '../core/scheduling/daily_fact.dart';
+import '../core/scheduling/learn_sequence.dart';
 import '../core/scheduling/lesson.dart';
 import '../core/scheduling/lesson_sets.dart';
 import 'added_decks.dart';
@@ -63,12 +63,10 @@ import 'card_sets.dart';
 import 'unlocks.dart';
 import 'daily_plan.dart';
 import '../core/decks/ipa_course.dart';
-import '../core/decks/levels.dart';
 import '../core/decks/script_fonts.dart';
 import 'deck_catalog.dart';
 import 'private_languages.dart';
 import 'private_store.dart';
-import 'learner_levels.dart';
 import 'deck_downloads.dart';
 import 'font_check.dart';
 import 'deck_import.dart';
@@ -839,90 +837,25 @@ class AppState extends ChangeNotifier {
 
   /// The catalog as the learner has it: without the adult decks and the rude
   /// cards while Adult content is off, so that the counts, lessons, finished
-  /// decks and the word sheet read one list (#628).
+  /// decks and the word sheet read one list (#628). No level keeps a deck or a
+  /// card out of it (owner, 2026-11-16: everything is viewable and learnable).
   Catalog get _view {
     final adult = settings.adultContent;
-    var moved = false;
     if (!identical(_adultOf, _catalog) || _adultOn != adult) {
       _adultOf = _catalog;
       _adultOn = adult;
       _adultScoped = _catalog.forAdult(adult: adult);
-      moved = true;
     }
-    // A learner's level moves only when they start a card or placement passes
-    // a unit: the number of cards with a schedule and the set of placed decks
-    // say so without reading either again.
-    final started = progress.states.length;
-    final placed = settings.placedDecks;
-    if (moved || started != _startedSeen || !identical(placed, _placedSeen)) {
-      _startedSeen = started;
-      _placedSeen = placed;
-      _levelScoped = _gatedByLevel(_adultScoped);
-    }
-    return _levelScoped;
+    return _adultScoped;
   }
 
   Catalog? _adultOf;
   bool _adultOn = false;
   Catalog _adultScoped = Catalog.empty;
 
-  /// [_adultScoped] with what is above the learner's level in each language
-  /// left out (D2 of the deck-kinds plan): worked out again after progress,
-  /// placement or the decks change, and the same catalog while no language's
-  /// level moved. It fails closed: if the levels cannot be worked out, no
-  /// levelled item is offered, and the failure goes to the log.
-  Catalog _gatedByLevel(Catalog scoped) {
-    try {
-      if (!identical(_levelsOf, _catalog)) {
-        final made = LearnerLevels(_catalog);
-        _levelsOf = _catalog;
-        _learnerLevels = made;
-        _levels = const <String, Level?>{};
-        _levelBase = null;
-      }
-      final levels = _learnerLevels!.levels(
-        studied: <String>[for (final key in progress.states.keys) key.cardId],
-        placedDecks: settings.placedDecks,
-      );
-      if (identical(_levelBase, scoped) && sameLevels(levels, _levels)) {
-        return _levelScoped;
-      }
-      _levels = levels;
-      _levelBase = scoped;
-      return scoped.forLevels((language) => levels[language]);
-    } on Object catch (error, stack) {
-      log.error(describeError('Learner levels failed', error, stack));
-      _levelBase = null;
-      _levelsOf = null;
-      _levels = const <String, Level?>{};
-      return scoped.forLevels((_) => null);
-    }
-  }
-
-  Catalog _levelScoped = Catalog.empty;
-  int _startedSeen = -1;
-  Set<String>? _placedSeen;
-  Catalog? _levelsOf;
-  Catalog? _levelBase;
-  LearnerLevels? _learnerLevels;
-  Map<String, Level?> _levels = const <String, Level?>{};
-
-  /// The level the learner has reached in [language] (D2): the level of the
-  /// furthest unit of its path they have studied or been placed past, or null
-  /// where its path has no levels. What a level-marked result is compared with.
-  Level? levelIn(String language) {
-    _view;
-    return _levels[language];
-  }
-
-  /// The catalog with adult content applied but not the level gate: what is
-  /// above the learner's level is still in it. Only what lists such an item
-  /// marked with its level and not startable reads it (search, topics, deck-
-  /// kinds plan D2); every screen that offers an item reads [decks].
-  Catalog get catalogWithAboveLevel {
-    _view;
-    return _adultScoped;
-  }
+  /// The catalog as the learner has it ([decks] and the hidden decks), for what
+  /// reads more of it than the decks: search, topics, culture.
+  Catalog get catalogView => _view;
 
   /// The hidden decks a learner added from a search result, which are on the
   /// phone (D3): the only decks outside [decks] that Today's reviews and a
@@ -2733,7 +2666,10 @@ class AppState extends ChangeNotifier {
         isPlaced(entry) ||
         _cultureOff(entry) ||
         !canDrill(entry) ||
-        notStudiedIn(entry) == 0,
+        // A unit none of whose cards can be learned yet is never done: only
+        // one the learner has begun is (it just never holds the path back,
+        // see [_isTaughtOut]).
+        (notStudiedIn(entry) == 0 && entry.cards.any(isTaught)),
   );
 
   /// The units Today teaches new cards from: for each language the profile
@@ -3577,39 +3513,39 @@ class AppState extends ChangeNotifier {
           ? due.take(round.reviews)
           : closest.take(round.fillers);
       final older = _asked(pick.toList());
-      final teaches = <SessionItem>[];
-      final firstPass = <SessionItem>[];
-      final secondPass = <SessionItem>[];
+      var learning = const <SessionItem>[];
       if (round.newWords > 0) {
-        final seen = <String>{};
-        for (final item in lessonFor(
+        learning = lessonFor(
           DrillRequest.lesson(language: language),
           words: round.newWords,
           beyondRoom: true,
-        )) {
-          if (item.ask.onlyShows) {
-            teaches.add(item);
-          } else if (seen.add(item.card.id)) {
-            firstPass.add(item);
-          } else {
-            secondPass.add(item);
-          }
-        }
-        if (teaches.isEmpty && firstPass.isEmpty) {
+          fillers: older,
+          exclude: run.asked,
+        );
+        if (learning.isEmpty) {
           // Nothing to teach after all: plan again without new words.
           fresh = 0;
           continue;
         }
       }
-      final items = DailyPlanner.arrange<SessionItem>(
-        older: older,
-        taught: teaches,
-        firstPass: firstPass,
-        secondPass: secondPass,
-      );
+      // The new words are laid out by the learn rule, a question of an older
+      // review between theirs where it needs one; the other reviews come
+      // before and after them, never inside.
+      final spare = older.where((o) => !learning.any((l) => identical(l, o)));
+      final rest = spare.toList();
+      final before = (rest.length / 2).round();
+      final items = <SessionItem>[
+        ...rest.take(before),
+        ...learning,
+        ...rest.skip(before),
+      ];
       if (items.isEmpty) return items;
+      final shown = <SessionItem>[
+        for (final item in learning)
+          if (item.ask.onlyShows) item,
+      ];
       final taughtIds = <String>{};
-      for (final item in teaches.isEmpty ? firstPass : teaches) {
+      for (final item in shown.isEmpty ? learning : shown) {
         final members = item.group.isEmpty ? <SessionItem>[item] : item.group;
         taughtIds.addAll(members.map((member) => member.card.id));
       }
@@ -3728,26 +3664,35 @@ class AppState extends ChangeNotifier {
   bool isTaught(Card card) =>
       DrillMode.drills.any((mode) => progress.stateOf(card.id, mode) != null);
 
-  /// A walkthrough's first view of [card] (#694, ADR-0024): teaches it. Appends
-  /// one review-log row like any answer, `asked: Ask.teach`, graded 0 (the
-  /// lowest window: FSRS reads it as Again), nothing given, in the card's
-  /// first drillable mode, recognition where it has it. Returns the row, or
-  /// null and writes nothing when the card is taught already, so a repeat
-  /// view costs nothing, or has no mode to drill. A sentence still waiting
-  /// for its words and rules is walked and logged like any other (owner,
-  /// 2026-10-31: "Walk it, and mark as usual on fsrs"); the view is no answer,
-  /// so it does not open the sentence for [Unlocks.isOffered]. Readers that
-  /// count answers skip the row ([ReviewEvent.isView]).
-  ReviewEvent? viewCard(Card card) {
-    if (isTaught(card)) return null;
-    final modes = drillableModes(card);
-    final mode = DrillMode.drills.where(modes.contains).firstOrNull;
-    if (mode == null) return null;
-    return record(
-      SessionItem(card: card, mode: mode, state: null, ask: Ask.teach),
-      0,
-      asked: Ask.teach,
-    );
+  /// The learn attempt of [card] as a lesson would lay it out, or null where
+  /// it cannot be learned yet.
+  LearnAttempt? _learnAttemptOf(Card card) => lessonAttempt(
+    card,
+    modesOf: drillableModesNow(),
+    canChoose: _canChooseInLesson,
+    straightToQuestion: (card) => card.rule != null,
+    typed: isTyped,
+    siblingsOf: siblingsOf,
+  );
+
+  /// Whether a choice question [ask] about [card] has enough options, as a
+  /// lesson asks it: what hears the form is chosen by ear ([Ask.hearAndChoose]).
+  bool _canChooseInLesson(Card card, Ask ask) => canChoose(
+    card,
+    ask == Ask.hearMeaning && hearsForm(card) ? Ask.hearAndChoose : ask,
+  );
+
+  /// Whether [card] can be learned: two different questions can be asked of
+  /// it now (the learn rule). A card that cannot stays viewable, is never
+  /// taught, and never holds a unit back or fills a lesson (owner, 2026-11-16).
+  /// A reading question is an exam item and is not learned.
+  bool canLearn(Card card) {
+    if (card is QuestionCard) return true;
+    return derived<bool>((
+      'canLearn',
+      card.id,
+      _catalog,
+    ), () => _learnAttemptOf(card) != null);
   }
 
   /// The cards a walkthrough of [decks] covers (#694): every card of every
@@ -3848,7 +3793,8 @@ class AppState extends ChangeNotifier {
             seen.add(card.id) &&
             !isTaught(card) &&
             gate.isOpen(card) &&
-            drillableModes(card).isNotEmpty)
+            drillableModes(card).isNotEmpty &&
+            canLearn(card))
           card,
     ];
   }
@@ -3872,16 +3818,27 @@ class AppState extends ChangeNotifier {
   /// With [beyondRoom], [words] is not held to what the mastery bar leaves
   /// room for: the daily session's own cap says how many (#886, owner,
   /// 2026-10-30: "Placement allows. But capped at 15").
+  ///
+  /// With [fillers], reviews that can be asked between a lesson's questions
+  /// to keep the gap of the learn rule where fewer than three new words are
+  /// left to make a group ([learnSequence]); those used are in the lesson.
+  /// Words in [exclude] are not taught: a day's session leaves out those it
+  /// already tried, whose attempt failed.
   List<SessionItem> lessonFor(
     DrillRequest request, {
     int? words,
     bool beyondRoom = false,
+    List<SessionItem> fillers = const <SessionItem>[],
+    Set<String> exclude = const <String>{},
   }) {
-    final cards = untaughtCards(
-      request.language!,
-      deckId: request.deckIds?.single,
-      tags: request.tags,
-    );
+    final cards = <Card>[
+      for (final card in untaughtCards(
+        request.language!,
+        deckId: request.deckIds?.single,
+        tags: request.tags,
+      ))
+        if (!exclude.contains(card.id)) card,
+    ];
     if (cards.isEmpty) return const <SessionItem>[];
     final first = cards.first;
     if (first is QuestionCard) {
@@ -3903,54 +3860,84 @@ class AppState extends ChangeNotifier {
     // As many new items as the mastery bar allows (ADR-0046): fewer while
     // words and rules taught are not known yet.
     final room = lessonRoom(inProgressIn(request.language!));
-    final picked = lessonItems(
-      taught,
-      room: words == null ? room : (beyondRoom ? words : min(room, words)),
-    );
+    final size = words == null ? room : (beyondRoom ? words : min(room, words));
     final modesOf = drillableModesNow();
-    final lesson = lessonSets(
-      picked,
-      sets: _lessonSets(picked),
-      // A set's members are taught whole, but none the gate holds back
-      // (ADR-0046).
-      isNew: (card) =>
-          !isTaught(card) && unlocks.isOpen(card) && modesOf(card).isNotEmpty,
-      isKnown: isTaught,
-    );
-    final gate = unlocks;
-    final introduced = <String>{};
+    LessonSets build(int size) {
+      final picked = lessonItems(taught, room: size);
+      final lesson = lessonSets(
+        picked,
+        sets: _lessonSets(picked),
+        // A set's members are taught whole, but none the gate holds back
+        // (ADR-0046).
+        isNew: (card) =>
+            !isTaught(card) &&
+            unlocks.isOpen(card) &&
+            modesOf(card).isNotEmpty &&
+            canLearn(card),
+        isKnown: isTaught,
+      );
+      return lesson;
+    }
+
+    var lesson = build(size);
+    // The learn rule needs two other questions between a word's two; a last
+    // group of fewer than three new words is spaced by reviews of learned
+    // cards, or else completed with the next words of the unit.
+    var spare = _distinct(fillers);
+    final short = lesson.cards.length % learnOpenMax;
+    if (short != 0 && spare.length < learnOpenMax - short) {
+      spare = _distinct(<SessionItem>[
+        ...spare,
+        ..._reviewFillers(request.language!, lesson.cards),
+      ]);
+      if (spare.length < learnOpenMax - short) {
+        final more = build(size + learnOpenMax - short);
+        if (more.cards.length > lesson.cards.length) lesson = more;
+      }
+    }
+    final spareSet = Set<SessionItem>.identity()..addAll(spare);
     return <SessionItem>[
       for (final part in lesson.parts)
         SessionItem.set(part, DrillMode.recognition),
       for (final item in lessonPlan(
         lesson.cards,
         modesOf: modesOf,
-        canChoose: (card, ask) => canChoose(
-          card,
-          ask == Ask.hearMeaning && hearsForm(card) ? Ask.hearAndChoose : ask,
-        ),
-        // A rule is taught by its rule card, then its cells are asked
-        // (#417).
+        canChoose: _canChooseInLesson,
+        // A rule is shown by its rule card before each cell (owner,
+        // 2026-11-16: every item is shown, then asked at once).
         straightToQuestion: (card) => card.rule != null,
         typed: isTyped,
         siblingsOf: siblingsOf,
-      )) ...<SessionItem>[
-        // The rule card, before the first question of a rule none of whose
-        // cells was answered yet.
-        if (item.card.rule case final cell?
-            when gate.ruleStanding(cell.ruleId).level == MasteryLevel.fresh &&
-                introduced.add(cell.ruleId))
-          SessionItem(
-            card: item.card,
-            mode: DrillMode.grammar,
-            state: null,
-            ask: Ask.teachRule,
-          ),
-        item.ask == Ask.hearMeaning && hearsForm(item.card)
-            ? item.askedAs(Ask.hearAndChoose)
-            : item,
-      ],
+        fillers: spare,
+      ))
+        if (!spareSet.contains(item) &&
+            item.ask == Ask.hearMeaning &&
+            hearsForm(item.card))
+          item.askedAs(Ask.hearAndChoose)
+        else
+          item,
     ];
+  }
+
+  /// [items] with a review asked once only: one per card and mode.
+  static List<SessionItem> _distinct(List<SessionItem> items) {
+    final seen = <(String, DrillMode)>{};
+    return <SessionItem>[
+      for (final item in items)
+        if (seen.add((item.card.id, item.mode))) item,
+    ];
+  }
+
+  /// Two reviews of cards of [language] already learned, other than
+  /// [picked], to ask between the questions of a lesson's last new words.
+  List<SessionItem> _reviewFillers(String language, List<Card> picked) {
+    final ids = <String>{for (final card in picked) card.id};
+    return <SessionItem>[
+      for (final item in sessionItems(
+        DrillRequest(revise: true, language: language),
+      ))
+        if (item.group.isEmpty && !ids.contains(item.card.id)) item,
+    ].take(learnGap).toList();
   }
 
   // ---------------------------------------------------------------------------
@@ -4047,6 +4034,9 @@ class AppState extends ChangeNotifier {
       modesOf: modesOf,
       canChoose: canChoose,
       typed: isTyped,
+      // A sound already learned is practised, its answers recorded as they
+      // come; one not learned yet follows the learn rule.
+      tracked: (card) => !isTaught(card),
     );
   }
 
@@ -4105,7 +4095,7 @@ class AppState extends ChangeNotifier {
         DrillRequest.untaught(deck.id),
         ignorePauses: true,
       ).fresh)
-        if (!isTaught(item.card)) item.card.id,
+        if (!isTaught(item.card) && canLearn(item.card)) item.card.id,
     }.length,
   );
 
@@ -4120,7 +4110,10 @@ class AppState extends ChangeNotifier {
         DrillRequest.untaught(deck.id),
         ignorePauses: true,
       ).fresh)
-        if (!isTaught(item.card) && gate.isOpen(item.card)) item.card.id,
+        if (!isTaught(item.card) &&
+            gate.isOpen(item.card) &&
+            canLearn(item.card))
+          item.card.id,
     }.length;
   }
 
@@ -4253,13 +4246,42 @@ class AppState extends ChangeNotifier {
       cardId: item.card.id,
       mode: item.mode,
       grade: grade,
-      now: now(),
+      now: _batchAt ?? now(),
       elapsed: elapsed,
       answerGiven: answerGiven,
       script: script,
       asked: asked,
     );
     return event;
+  }
+
+  DateTime? _batchAt;
+
+  /// Records [answers] together, as one moment: every review is written with
+  /// the same time, in order, so that the two answers that made an item
+  /// learned give it one first schedule (the learn rule).
+  List<ReviewEvent> recordAll(List<AnswerRecord> answers) {
+    _batchAt = now();
+    try {
+      // One review for each (card, mode) pair: where two answers of an attempt
+      // fall in one pair, the later is the one written.
+      final last = <(String, DrillMode), AnswerRecord>{
+        for (final a in answers) (a.item.card.id, a.item.mode): a,
+      };
+      return <ReviewEvent>[
+        for (final a in last.values)
+          record(
+            a.item,
+            a.grade,
+            elapsed: a.elapsed,
+            answerGiven: a.answerGiven,
+            script: a.script,
+            asked: a.asked,
+          ),
+      ];
+    } finally {
+      _batchAt = null;
+    }
   }
 
   bool _disposed = false;
@@ -4301,6 +4323,16 @@ class AppState extends ChangeNotifier {
     super.dispose();
   }
 }
+
+/// One answer to record: [AppState.recordAll].
+typedef AnswerRecord = ({
+  SessionItem item,
+  int grade,
+  Duration elapsed,
+  String? answerGiven,
+  String? script,
+  Ask? asked,
+});
 
 /// A fact that names a card, and its text in the learner's languages (#546).
 typedef CardFact = ({Fact fact, List<({String code, String text})> texts});

@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **A word is learned only when you answer it twice.** A new word is shown, asked at once, and asked again in a different way two questions later; only when both answers are right does it join your reviews, so nothing you only glanced at is scheduled for you.
+- **Everything is open, whatever your level.** Decks, topics, culture items and recommended works are no longer hidden or locked because they are above your level, and the "Hide what is above my level" and culture "Items above my level" settings are gone.
+- **Words you only swiped past are no longer counted as learned.** They go through the two questions like any new word.
+- **Looking at a card in the walkthrough no longer schedules it.** Swiping through a deck only shows it; Learn on a deck page now starts a real lesson on the words in view.
 - **Report a mistake in what you are learning.** The bug icon now appears only on cards, decks, units, topics and culture items, and opens a short list of what is wrong with that one thing; a general problem report is in the Settings menu.
 - **Adding a language starts with eight big tiles.** Add a language now asks what you want to learn, shows Spanish, French, Telugu, Hindustani, Bengali, Marathi, Kannada and Japanese with how far each course is written, and keeps the full list one tap away, with languages that have no course yet folded under Coming soon, where they cannot be added until they have a course.
 - **Each language has its own culture options.** In a language's details, one Culture switch opens to whether culture counts toward your path and whether the creator shows, and the old Settings page for culture is gone.

@@ -3,10 +3,8 @@
 /// is a span from their birth to their death, open for a living creator, a
 /// work is a point (or a span for a range of years), a legacy item is a mark
 /// after the span, the eras are the axis bands, and the line runs to the
-/// present year, so "today" is its right end. A learner's level limits it as
-/// every levelled item is limited (D2): only works at or below the level are
-/// points. Pure functions, free of Flutter, so that it is tested without a
-/// device; its screen is a later task.
+/// present year, so "today" is its right end. Pure functions, free of Flutter,
+/// so that it is tested without a device; its screen is a later task.
 library;
 
 import '../models/card.dart';
@@ -148,21 +146,19 @@ class Timeline {
   bool get isEmpty => spans.isEmpty && works.isEmpty;
 }
 
-/// The timeline of [file]'s creators and [works] for a learner at [level]
-/// (null: a language with no levels, which is offered no levelled work).
-/// [today] is the present year, the line's right end.
+/// The timeline of [file]'s creators and [works]. [today] is the present year,
+/// the line's right end.
 ///
-/// A work above the level is no point, and a creator only those works cite is
-/// not shown (so that their name does not give the item away); a creator no
-/// work cites is shown. A legacy item is a mark only for a shown creator and
-/// only when it has a year no later than [today]. A work with an unknown
-/// creator is left out. [alsoCited] are creators cited by works not in
-/// [works] (a hidden deck, a deck that does not weave, a recommended work):
-/// they count as cited, so one no work at the level cites stays out.
+/// A creator only a hidden or non-weaving work cites is not shown (so that
+/// their name does not give that work away); a creator no work cites is shown.
+/// A legacy item is a mark only for a shown creator and only when it has a year
+/// no later than [today]. A work with an unknown creator is left out.
+/// [alsoCited] are creators cited by works not in [works] (a hidden deck, a
+/// deck that does not weave, a recommended work): they count as cited, so one
+/// no shown work cites stays out.
 Timeline buildTimeline(
   CreatorsFile file,
-  Iterable<TimelineWork> works,
-  Level? level, {
+  Iterable<TimelineWork> works, {
   required int today,
   Iterable<String> alsoCited = const <String>[],
 }) {
@@ -178,7 +174,6 @@ Timeline buildTimeline(
   }
   final shownIds = <String>{};
   for (final work in works) {
-    if (!LevelGate.allows(work.level, level)) continue;
     final known = <String>[
       for (final id in work.creatorIds)
         if (file.byId(id) != null) id,

@@ -160,28 +160,16 @@ topics:
       expect(Topics.of(catalog, 'yy').resolved, isEmpty);
     });
 
-    test('drills only cards at or below the learner\'s level', () {
-      // A2: the verbs topic, its deck (level A2), its card and the unit's deck.
+    test('drills every card it names, whatever the level', () {
       expect(
-        topics.drillCards('zz-reflexive-verbs', Level.a2),
+        topics.drillCards('zz-reflexive-verbs'),
         containsAll(<String>['zz-9501', 'zz-9001', 'zz-9002']),
       );
-      // A1: the topic is A2, so nothing is given.
-      expect(topics.drillCards('zz-reflexive-verbs', Level.a1), isEmpty);
-      // A language with no levels is given no levelled topic at all.
-      expect(topics.drillCards('zz-reflexive-verbs', null), isEmpty);
-    });
-
-    test('lists as startable only the topics at or below the level', () {
-      expect(topics.startable(Level.a1).map((r) => r.topic.id), <String>[
-        'zz-juktakkhor',
-      ]);
-      expect(topics.startable(Level.b1), hasLength(3));
     });
 
     test('uses a hidden deck\'s cards only once it is added', () {
       expect(
-        topics.drillCards('zz-conference', Level.b1),
+        topics.drillCards('zz-conference'),
         containsAll(<String>['zz-9601', 'zz-9602']),
       );
       // The deck is only listed by the index, not on the phone: it exists for
@@ -197,7 +185,7 @@ topics:
       expect(listed.byId('zz-conference')!.decks, <String>[
         'zz-medicine-registro',
       ]);
-      expect(listed.drillCards('zz-conference', Level.b1), isEmpty);
+      expect(listed.drillCards('zz-conference'), isEmpty);
     });
   });
 }

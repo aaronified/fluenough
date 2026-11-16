@@ -39,7 +39,7 @@ $_hindi
 native: ${_natives[native]}
 license: CC0-1.0
 cards:
-  - { id: hi-$native-000$n, target: "ख", native: "kh", reading: "kha" }
+  - { id: hi-$native-000$n, target: "ख$name", native: "kh$name", reading: "kha" }
 ''';
   final files = <String, String>{
     'decks/hi/hi-path.yaml': '''

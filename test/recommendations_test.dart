@@ -120,11 +120,11 @@ recommendations:
     const noScript = RecommendationCourse();
 
     test('a book only where the course includes script learning', () {
-      expect(recommendationOffered(book, learnsScript, Level.a2), isTrue);
-      expect(recommendationOffered(book, latin, Level.a2), isTrue);
-      expect(recommendationOffered(book, noScript, Level.a2), isFalse);
+      expect(recommendationOffered(book, learnsScript), isTrue);
+      expect(recommendationOffered(book, latin), isTrue);
+      expect(recommendationOffered(book, noScript), isFalse);
       // Other media are not gated by script.
-      expect(recommendationOffered(film, noScript, Level.b1), isTrue);
+      expect(recommendationOffered(film, noScript), isTrue);
     });
 
     test('a script-only learner sees only books in a script they learn', () {
@@ -136,20 +136,15 @@ recommendations:
         scriptOnly: true,
         scriptsLearned: <String>{'telugu'},
       );
-      expect(recommendationOffered(book, latinLearner, Level.a2), isTrue);
-      expect(recommendationOffered(book, teluguLearner, Level.a2), isFalse);
-      expect(recommendationOffered(film, teluguLearner, Level.b1), isTrue);
+      expect(recommendationOffered(book, latinLearner), isTrue);
+      expect(recommendationOffered(book, teluguLearner), isFalse);
+      expect(recommendationOffered(film, teluguLearner), isTrue);
     });
 
-    test('never above the learner\'s level', () {
-      expect(recommendationOffered(film, learnsScript, Level.a2), isFalse);
-      expect(recommendationOffered(film, learnsScript, null), isFalse);
+    test('every level is offered', () {
+      expect(recommendationOffered(film, learnsScript), isTrue);
       expect(
-        offeredRecommendations(file.recommendations, learnsScript, Level.a2),
-        <Recommendation>[book],
-      );
-      expect(
-        offeredRecommendations(file.recommendations, learnsScript, Level.b1),
+        offeredRecommendations(file.recommendations, learnsScript),
         hasLength(2),
       );
     });

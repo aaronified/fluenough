@@ -6,8 +6,8 @@ import '../core/models/situation.dart';
 import '../core/search/search_items.dart';
 import '../core/logs/log_entry.dart' show describeError;
 import 'app_state.dart';
+import 'core_ids.dart';
 import 'deck_catalog.dart';
-import 'learner_levels.dart';
 
 /// The typed search's items of one language (deck-kinds plan, D10, T16, T18),
 /// built from the catalog: its decks, hidden decks the index lists, path,
@@ -15,9 +15,8 @@ import 'learner_levels.dart';
 /// own word search finds the plain words, so the corpus holds only what that
 /// search does not ([SearchSource.plainCards] is off).
 ///
-/// Built from the catalog with what is above the learner's level still in it
-/// ([AppState.catalogWithAboveLevel]): the search lists such an item marked
-/// with its level, and the corpus itself never gives a card above the level.
+/// Built from the catalog ([AppState.catalogView]): a level labels a result and
+/// never hides it (owner, 2026-11-16).
 class ItemSearchIndex {
   ItemSearchIndex._({
     required this.language,
@@ -214,7 +213,7 @@ extension ItemSearchState on AppState {
   /// The index of [language]'s items for the course it is learned from. Kept
   /// until the catalog or the index's shelves change.
   ItemSearchIndex itemSearchFor(String language) {
-    final catalog = catalogWithAboveLevel;
+    final catalog = catalogView;
     final shelves =
         deckDownloads?.index?.language(language)?.shelves ??
         const <IndexShelf>[];
@@ -247,27 +246,24 @@ extension ItemSearchState on AppState {
   }) {
     try {
       final index = itemSearchFor(language);
-      final level = levelIn(language);
-      ItemSearchOutcome run({required bool typos}) {
-        final found = index.corpus.search(
+      ItemSearchOutcome run({required bool typos}) => withoutWords(
+        index.corpus.search(
           query,
           languages: <String>{language},
-          levelOf: (_) => level,
           typos: typos,
-          sections: catalogWithAboveLevel.sections,
-        );
-        return withoutWords(found);
-      }
+          sections: catalogView.sections,
+        ),
+      );
 
       var typos = false;
-      var shown = run(typos: false);
-      if (shown.results.isEmpty && !exact) {
+      var found = run(typos: false);
+      if (found.results.isEmpty && !exact) {
         typos = true;
-        shown = run(typos: true);
+        found = run(typos: true);
       }
       return ItemSearchResult(
-        outcome: shown,
-        close: typos && shown.results.isNotEmpty,
+        outcome: found,
+        close: typos && found.results.isNotEmpty,
       );
     } on Object catch (error, stack) {
       log.error(describeError('Typed search failed', error, stack));
@@ -307,8 +303,5 @@ ItemSearchOutcome withoutWords(ItemSearchOutcome found) {
 }
 
 /// The core id of a deck of the course (`te-health` for `te-en-health`).
-String? coreIdOfDeck(DeckEntry entry) => LearnerLevels.coreIdOf(
-  entry.id,
-  entry.language.code,
-  entry.deck.native.code,
-);
+String? coreIdOfDeck(DeckEntry entry) =>
+    coreIdOf(entry.id, entry.language.code, entry.deck.native.code);

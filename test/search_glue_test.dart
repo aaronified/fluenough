@@ -95,10 +95,9 @@ void main() {
       expect(state.searchItems('zz', 'house').close, isFalse);
     });
 
-    test('lists what is above the level, marked with its level', () async {
+    test('lists what is above the level, which is never hidden', () async {
       final state = await kindsWorldApp();
-      final listed = state.searchItems('zz', 'library');
-      expect(listed.outcome.results.single.aboveLevel, isTrue);
+      expect(state.searchItems('zz', 'library').outcome.results, hasLength(1));
     });
 
     test('is built once for a catalog, and topics with it', () async {
@@ -114,38 +113,35 @@ void main() {
     test('reads the sections file of the downloaded decks', () async {
       final state = await kindsWorldApp();
       expect(
-        state.catalogWithAboveLevel.sections.searchKinds.map((k) => k.id),
+        state.catalogView.sections.searchKinds.map((k) => k.id),
         contains('topics'),
       );
     });
   });
 
   group('the recommendations, fed from the course', () {
-    test(
-      'know a Latin-script course and gate by the learner\'s level',
-      () async {
-        final fixture = kindsFixtureFiles();
-        final state = await kindsWorldApp(
-          files: <String, String>{
-            ...kindsWorld(),
-            'decks/recommendations/zz.yaml':
-                fixture['decks/recommendations/zz.yaml']!,
-            'decks/creators/zz.yaml': fixture['decks/creators/zz.yaml']!,
-          },
-        );
-        final course = state.recommendationCourseOf('zz');
-        expect(course.latinOnly, isTrue);
-        expect(course.pathHasAlphabet, isFalse);
-        expect(course.learnsScripts, isTrue);
-        expect(
-          state.catalogWithAboveLevel.recommendations['zz']!.recommendations,
-          hasLength(2),
-        );
-        // A learner at A1 is offered neither the A2 book nor the B1 film.
-        expect(state.recommendationsFor('zz'), isEmpty);
-        expect(state.recommendationsFor('yy'), isEmpty);
-      },
-    );
+    test('know a Latin-script course', () async {
+      final fixture = kindsFixtureFiles();
+      final state = await kindsWorldApp(
+        files: <String, String>{
+          ...kindsWorld(),
+          'decks/recommendations/zz.yaml':
+              fixture['decks/recommendations/zz.yaml']!,
+          'decks/creators/zz.yaml': fixture['decks/creators/zz.yaml']!,
+        },
+      );
+      final course = state.recommendationCourseOf('zz');
+      expect(course.latinOnly, isTrue);
+      expect(course.pathHasAlphabet, isFalse);
+      expect(course.learnsScripts, isTrue);
+      expect(
+        state.catalogView.recommendations['zz']!.recommendations,
+        hasLength(2),
+      );
+      // Every work is offered, whatever its level.
+      expect(state.recommendationsFor('zz'), hasLength(2));
+      expect(state.recommendationsFor('yy'), isEmpty);
+    });
   });
 
   group('a creator image on demand', () {

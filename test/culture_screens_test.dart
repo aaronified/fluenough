@@ -2,11 +2,9 @@
 // mockup docs/mockups/culture-in-course.html, default variants): a culture item
 // woven into a path unit and offered on Today at the learner's level; its page
 // with the text, meaning, gloss, source line, creator chip and legacy line; the
-// creator card with the picture's credit or its placeholder, the bio at the
-// learner's level, "Still alive today" and the timeline strip; the full
+// creator card with the picture's credit or its placeholder, the bio, "Still alive today" and the timeline strip; the full
 // timeline to today; the full culture deck with its people; the culture
-// options each language keeps (`culture-in-decks`); and an item above the
-// level, which opens to read and cannot be practised.
+// options each language keeps (`culture-in-decks`).
 
 import 'package:fluenough/app/culture.dart';
 import 'package:fluenough/app/settings.dart';
@@ -104,8 +102,7 @@ void main() {
       tester,
     ) async {
       usePhone(tester);
-      // At A1 the A2 unit has no item the learner may have; the left-over A1
-      // item is woven there, the stanza above the level is not.
+      // A unit with no item at its own level is given a left-over lower one.
       final state = await cultureApp();
       await pumpScreen(
         tester,
@@ -113,8 +110,6 @@ void main() {
         state: state,
       );
       expect(find.byType(UnitCultureCard), findsOneWidget);
-      expect(find.text(_l10n.cultureCardLineBonus('B1')), findsNothing);
-      expect(find.text(_l10n.cultureCardLineBonus('A2')), findsNothing);
     });
   });
 
@@ -208,16 +203,12 @@ void main() {
       expect(find.text(_l10n.cultureLegacyTitle), findsNothing);
     });
 
-    testWidgets('above the level opens to read and cannot be practised', (
-      tester,
-    ) async {
+    testWidgets('is shown whatever its level', (tester) async {
       usePhone(tester);
       final state = await cultureApp();
       await pumpScreen(tester, _item('zz-7201'), state: state);
       expect(find.text(_stanza), findsOneWidget);
-      expect(find.text(_l10n.cultureAboveTitle), findsOneWidget);
-      // Not counted, not scheduled: nothing to practise.
-      expect(find.text(_l10n.culturePractise), findsNothing);
+      expect(find.text(_l10n.culturePractise), findsOneWidget);
     });
   });
 
@@ -305,9 +296,7 @@ void main() {
   });
 
   group('the full culture deck', () {
-    testWidgets('lists the items, locks what is above, and no unknown person', (
-      tester,
-    ) async {
+    testWidgets('lists every item, and no unknown person', (tester) async {
       usePhone(tester);
       final state = await cultureApp();
       await pumpScreen(
@@ -316,19 +305,12 @@ void main() {
         state: state,
       );
       expect(find.text(_l10n.cultureDeckTitle('Testlang')), findsOneWidget);
-      expect(find.text(_l10n.cultureDeckCount(3, 1)), findsOneWidget);
+      expect(find.text(_l10n.cultureDeckCount(3)), findsOneWidget);
       expect(find.text(_proverb), findsOneWidget);
-      expect(find.text(_l10n.cultureUnlocksAt('A2')), findsOneWidget);
-      expect(find.text(_l10n.cultureUnlocksAt('B1')), findsOneWidget);
-      expect(find.text(_stanza), findsNothing);
-      // The people only an item above the level cites are not given away.
-      expect(find.text(_l10n.culturePeople), findsNothing);
-      expect(find.text('Antonio Machado'), findsNothing);
+      expect(find.text(_stanza), findsOneWidget);
     });
 
-    testWidgets('lists the people once the learner reaches their works', (
-      tester,
-    ) async {
+    testWidgets('lists the people the items cite', (tester) async {
       usePhone(tester);
       final state = await cultureApp(reach: 'b1');
       await pumpScreen(
@@ -524,7 +506,6 @@ void main() {
     screen('a proverb', item('zz-7101'));
     screen('a stanza with its creator', item('zz-7201', reach: 'b1'));
     screen('a passage with its gloss', item('zz-pasaje-1', reach: 'b1'));
-    screen('an item above the level, to read', item('zz-7201'));
     screen(
       'the culture deck at A1',
       page(const CultureDeckPage(language: 'zz'), state: () => cultureApp()),

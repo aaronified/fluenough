@@ -7,7 +7,6 @@ import '../../app/routes.dart';
 import '../../app/session.dart';
 import '../../core/decks/weave.dart';
 import '../../core/feedback/content_report.dart';
-import '../../core/models/level.dart';
 import '../../core/models/reading.dart' show bestLanguage;
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
@@ -33,9 +32,7 @@ class CultureItemRequest {
 /// chip and one legacy line, and a button to practise it. A proverb, a stanza
 /// and a passage with its gloss are what the decks hold at A1, A2 and B1.
 ///
-/// The page opens to read at any level. An item above the learner's level
-/// carries a notice and has nothing to practise: it is not counted and not
-/// scheduled for review.
+/// The page opens to read and practise at any level.
 class CultureItemPage extends StatelessWidget {
   const CultureItemPage({super.key, required this.request});
 
@@ -77,8 +74,6 @@ class CultureItemPage extends StatelessWidget {
     final language = request.language;
     final info = cultureLanguage(state, language);
     final options = state.settings.cultureFor(language);
-    final learner = state.levelIn(language);
-    final above = LevelGate.isAbove(item.level, learner);
     final spoken = cultureSpoken(context, state);
     final source = cultureSourceLine(l10n, item.source);
     final creatorId = item.creators.isEmpty ? null : item.creators.first;
@@ -127,7 +122,7 @@ class CultureItemPage extends StatelessWidget {
                 text: cultureKindName(l10n, item.kind),
                 style: ResultTagStyle.kind,
               ),
-              LevelTag(level: item.level, above: above),
+              LevelTag(level: item.level),
             ],
           ),
           const SizedBox(height: 12),
@@ -226,13 +221,7 @@ class CultureItemPage extends StatelessWidget {
               const _NoSingleAuthor(),
           ],
           const SizedBox(height: 16),
-          if (above)
-            AboveLevelNotice(
-              title: l10n.cultureAboveTitle,
-              body: l10n.cultureAboveBody,
-            )
-          else
-            _Practise(item: item, language: language, done: done),
+          _Practise(item: item, language: language, done: done),
           const SizedBox(height: 8),
           Align(
             alignment: AlignmentDirectional.centerStart,
@@ -359,7 +348,3 @@ class _Practise extends StatelessWidget {
     );
   }
 }
-
-/// Whether [item] is above the learner: for a row that locks it.
-bool cultureItemAbove(AppState state, String language, CultureItem item) =>
-    LevelGate.isAbove(item.level, state.levelIn(language));

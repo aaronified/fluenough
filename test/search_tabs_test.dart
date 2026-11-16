@@ -3,7 +3,7 @@
 // search shows a native tab bar of only the kinds that have results, with
 // counts and the best match first; a distinct row per type; a professional
 // situation found only here, with "Add to my courses"; what is above the
-// learner's level marked and not startable (or hidden by the setting); a
+// learner's level listed like the rest; a
 // typo put right with a way to search exactly what was typed; and the empty
 // and no-result states.
 
@@ -207,55 +207,16 @@ void main() {
       expect(tester.widget<TabBar>(find.byType(TabBar)).controller!.index, 2);
     });
 
-    testWidgets('marks what is above your level and previews it', (
-      tester,
-    ) async {
-      usePhone(tester);
-      await _show(tester, state, 'last');
-      await tester.tap(_tab('Units'));
-      await tester.pumpAndSettle();
-      expect(find.text('Unit 3: last'), findsOneWidget);
-      expect(find.text(_l10n.searchAboveYourLevel('B1')), findsOneWidget);
-      await tester.tap(find.text('Unit 3: last'));
-      await tester.pumpAndSettle();
-      expect(find.text(_l10n.searchAboveSheetTitle), findsOneWidget);
-      expect(
-        find.text(_l10n.searchAboveSheetBody('Unit 3: last', 'B1')),
-        findsOneWidget,
-      );
-    });
-
-    testWidgets('shows no card text under an item above your level', (
-      tester,
-    ) async {
-      usePhone(tester);
-      await _show(tester, state, 'libro');
-      // The match is a card of a unit above the level: look at every tab.
-      var marked = false;
-      final tabs = find.descendant(
-        of: find.byType(TabBar),
-        matching: find.byType(Tab),
-      );
-      for (var i = 0; i < tabs.evaluate().length; i++) {
-        await tester.ensureVisible(tabs.at(i));
-        await tester.pumpAndSettle();
-        await tester.tap(tabs.at(i));
-        await tester.pumpAndSettle();
-        marked =
-            marked ||
-            find.text(_l10n.searchAboveYourLevel('B1')).evaluate().isNotEmpty;
-        expect(find.text('libro · book'), findsNothing);
-      }
-      expect(marked, isTrue);
-    });
-
-    testWidgets('marks a topic above your level, which still opens', (
+    testWidgets('lists a unit and a topic of a higher level, which open', (
       tester,
     ) async {
       usePhone(tester);
       await _show(tester, state, 'library');
       expect(find.text('Library words'), findsOneWidget);
-      expect(find.text(_l10n.searchAboveYourLevel('B1')), findsOneWidget);
+      await _show(tester, state, 'last');
+      await tester.tap(_tab('Units'));
+      await tester.pumpAndSettle();
+      expect(find.text('Unit 3: last'), findsOneWidget);
     });
 
     testWidgets('puts a typo right and can search exactly what was typed', (
@@ -393,7 +354,7 @@ void main() {
     screen('topics tab', results('house', tab: 'Topics'));
     screen('words tab', results('house', tab: 'Words'));
     screen('a professional situation', results('medicine'));
-    screen('a unit above your level', results('last', tab: 'Units'));
+    screen('a unit of a higher level', results('last', tab: 'Units'));
     screen('a typo', results('hose'));
     screen('no results', results('qzxvbnm'));
   });

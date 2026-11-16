@@ -144,7 +144,7 @@ language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari }
 native: { code: $native, iso639_3: ${native == 'en' ? 'eng' : 'ben'}, name: ${native == 'en' ? 'English' : 'Bengali'} }
 license: CC0-1.0
 cards:
-  - { id: hi-$native-$name-0001, target: "क", native: "k", reading: "k", modes: [recognition, listening, speaking] }
+  - { id: hi-$native-$name-0001, target: "क$name", native: "k$name", reading: "k$name", modes: [recognition, listening, speaking] }
 ''';
   final order = <String>[
     first,
@@ -688,7 +688,7 @@ void main() {
           expect(
             state
                 .lessonFor(lesson)
-                .where((i) => i.ask != Ask.showSet)
+                .where((i) => i.learn != null)
                 .map((i) => i.card.id),
             isNot(contains(check.card.id)),
           );
@@ -944,62 +944,58 @@ void main() {
         canChoose: (_, _) => choose,
       ).map(shape).toList();
 
-      test(
-        'teaches and checks each card, then asks it once more; a grammar cell '
-        'is taught and typed',
-        () {
-          expect(plan(nine), <String>[
-            'e0:recognition:teach',
-            'e0:recognition:chooseMeaning',
-            'e1:recognition:teach',
-            'e1:recognition:chooseMeaning',
-            'e2:recognition:teach',
-            'e2:recognition:chooseMeaning',
-            'm0:listening:teach',
-            'm0:listening:hearMeaning',
-            'm1:listening:teach',
-            'm1:listening:hearMeaning',
-            'm2:listening:teach',
-            'm2:listening:hearMeaning',
-            'h0:production:teach',
-            'h0:production:rearrange',
-            'h1:production:teach',
-            'h1:production:rearrange',
-            'h2:production:teach',
-            'h2:production:rearrange',
-            // The exercise.
-            'e0:speaking:own',
-            'match(m0,m1,m2)',
-            'h0:speaking:own',
-            'e1:speaking:own',
-            'h1:speaking:own',
-            'e2:speaking:own',
-            'h2:speaking:own',
-          ]);
+      test('shows and asks each card at once, three together, then asks it '
+          'again in another type after two other questions', () {
+        expect(plan(nine), <String>[
+          'e0:recognition:teach',
+          'e0:recognition:chooseMeaning',
+          'e1:recognition:teach',
+          'e1:recognition:chooseMeaning',
+          'e2:recognition:teach',
+          'e2:recognition:chooseMeaning',
+          'e0:speaking:own',
+          'e1:speaking:own',
+          'e2:speaking:own',
+          'm0:listening:teach',
+          'm0:listening:hearMeaning',
+          'm1:listening:teach',
+          'm1:listening:hearMeaning',
+          'm2:listening:teach',
+          'm2:listening:hearMeaning',
+          'm0:recognition:chooseMeaning',
+          'm1:recognition:chooseMeaning',
+          'm2:recognition:chooseMeaning',
+          'h0:production:teach',
+          'h0:production:rearrange',
+          'h1:production:teach',
+          'h1:production:rearrange',
+          'h2:production:teach',
+          'h2:production:rearrange',
+          'h0:speaking:own',
+          'h1:speaking:own',
+          'h2:speaking:own',
+        ]);
+      });
 
-          final cell = cardLesson('g', 'voy', modes: DrillMode.vocabulary);
-          expect(plan(<Card>[cell]), <String>[
-            'g:grammar:teach',
-            'g:grammar:own',
-          ]);
-        },
-      );
+      test('a grammar cell with one type of question cannot be learned', () {
+        final cell = cardLesson('g', 'voy', modes: DrillMode.vocabulary);
+        expect(plan(<Card>[cell]), isEmpty);
+      });
 
-      test(
-        'without a voice, a medium card is checked by choosing the word',
-        () {
-          final items = plan(medium, voice: false, speech: false);
-          expect(items, <String>[
-            'm0:production:teach',
-            'm0:production:chooseWord',
-            'm1:production:teach',
-            'm1:production:chooseWord',
-            'm2:production:teach',
-            'm2:production:chooseWord',
-            'match(m0,m1,m2)',
-          ]);
-        },
-      );
+      test('without a voice, a medium card is asked by choosing', () {
+        final items = plan(medium, voice: false, speech: false);
+        expect(items, <String>[
+          'm0:recognition:teach',
+          'm0:recognition:chooseMeaning',
+          'm1:recognition:teach',
+          'm1:recognition:chooseMeaning',
+          'm2:recognition:teach',
+          'm2:recognition:chooseMeaning',
+          'm0:production:chooseWord',
+          'm1:production:chooseWord',
+          'm2:production:chooseWord',
+        ]);
+      });
     });
   });
 
@@ -1030,6 +1026,12 @@ cards:
   - id: es-en-teach-0002
     target: "adiós"
     native: "goodbye"
+  - id: es-en-teach-0003
+    target: "gracias"
+    native: "thanks"
+  - id: es-en-teach-0004
+    target: "sí"
+    native: "yes"
 ''',
           }),
         );
@@ -1158,7 +1160,9 @@ cards:
       // one, all right.
       final log = state.progress.log;
       expect(log.map((e) => e.cardId).toSet(), hasLength(taught));
-      expect(log, hasLength(planned));
+      // One review for each skill of a learned word; none for a question
+      // asked again after a miss or in a skill already written.
+      expect(log.length, lessThanOrEqualTo(planned));
       // A right choice in Hear or Write records 3, a right choice or match
       // of a meaning seen 4 (ADR-0034): every answer is right.
       expect(log.every((e) => e.grade >= 3), isTrue);

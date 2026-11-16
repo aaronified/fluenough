@@ -170,44 +170,4 @@ void main() {
       expect(learnerLevel(plan, 5), Level.b1);
     });
   });
-
-  group('LevelGate', () {
-    test('refuses an item above the learner', () {
-      expect(LevelGate.allows(Level.a2, Level.a1), isFalse);
-      expect(LevelGate.allows(Level.b2, Level.b1), isFalse);
-      expect(LevelGate.isAbove(Level.a2, Level.a1), isTrue);
-    });
-
-    test('allows an item at or below the learner', () {
-      expect(LevelGate.allows(Level.a1, Level.a1), isTrue);
-      expect(LevelGate.allows(Level.a1, Level.b1), isTrue);
-      expect(LevelGate.isAbove(Level.a1, Level.b1), isFalse);
-    });
-
-    test('allows an item with no level to everyone', () {
-      expect(LevelGate.allows(null, Level.a1), isTrue);
-      expect(LevelGate.allows(null, null), isTrue);
-    });
-
-    test('offers no levelled item in a language with no levels', () {
-      expect(LevelGate.allows(Level.a1, null), isFalse);
-    });
-
-    test('never shows a B2 item to a learner whose path ends at B1', () {
-      expect(LevelGate.allows(Level.b2, Level.b1), isFalse);
-    });
-
-    test('filters a list in its order', () {
-      final items = <(String, Level?)>[
-        ('a', Level.a1),
-        ('b', Level.b1),
-        ('c', null),
-        ('d', Level.a2),
-      ];
-      expect(
-        LevelGate.filter(items, Level.a2, (i) => i.$2).map((i) => i.$1),
-        <String>['a', 'c', 'd'],
-      );
-    });
-  });
 }

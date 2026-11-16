@@ -26,6 +26,9 @@ native: { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 cards:
   - { id: hi-en-words-0001, target: "कख", native: "word 1", reading: "kakha" }
+  - { id: hi-en-words-0002, target: "गघ", native: "word 2", reading: "gagha" }
+  - { id: hi-en-words-0003, target: "चछ", native: "word 3", reading: "cachha" }
+  - { id: hi-en-words-0004, target: "जझ", native: "word 4", reading: "jajha" }
 ''';
 
 /// A learner of Hindustani whose one word was last reviewed [daysAgo] days
@@ -33,14 +36,16 @@ cards:
 AppState _learner({int? daysAgo}) {
   final progress = MemoryProgress();
   if (daysAgo != null) {
-    for (final mode in DrillMode.values) {
-      progress.record(
-        deckId: 'hi-en-words',
-        cardId: 'hi-en-words-0001',
-        mode: mode,
-        grade: 4,
-        now: _now.subtract(Duration(days: daysAgo)),
-      );
+    for (var i = 1; i <= 4; i++) {
+      for (final mode in DrillMode.values) {
+        progress.record(
+          deckId: 'hi-en-words',
+          cardId: 'hi-en-words-000$i',
+          mode: mode,
+          grade: 4,
+          now: _now.subtract(Duration(days: daysAgo)),
+        );
+      }
     }
   }
   final state = AppState.test(

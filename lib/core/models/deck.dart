@@ -262,9 +262,9 @@ class Deck {
   /// sections file; it never branches on it.
   final String? genre;
 
-  /// The lowest level the deck suits (`level`): a learner below it is never
-  /// given the deck. Null for a deck with none, which every learner has. A
-  /// level that is written but is not one reads as [Level.c2] (fails closed).
+  /// The lowest level the deck suits (`level`): it orders and labels the deck,
+  /// never blocks it. Null for a deck with none. A level that is written but is
+  /// not one reads as [Level.c2].
   final Level? level;
 
   /// Whether the deck is kept out of the Decks tab, Today, the path,
@@ -333,31 +333,6 @@ class Deck {
     characterScheme: characterScheme,
     kindProblems: kindProblems,
   );
-
-  /// This deck as a learner at [learner] may have it (D2 of the deck-kinds
-  /// plan, [LevelGate]): null when the deck is itself above the level, else
-  /// the deck without the cards and the passages above it (null again when
-  /// none is left), which is this very deck when nothing is above it. A deck and a card with no level are
-  /// always kept.
-  Deck? forLevel(Level? learner) {
-    if (!LevelGate.allows(level, learner)) return null;
-    final keptCards = LevelGate.filter(cards, learner, (c) => c.level);
-    final keptPassages = LevelGate.filter(passages, learner, (p) => p.level);
-    if (keptCards.length == cards.length &&
-        keptPassages.length == passages.length) {
-      return this;
-    }
-    // A deck with nothing left that this learner may have is not offered.
-    if (keptCards.isEmpty &&
-        keptPassages.isEmpty &&
-        (cards.isNotEmpty || passages.isNotEmpty)) {
-      return null;
-    }
-    return withCards(
-      List<Card>.unmodifiable(keptCards),
-      passages: List<Passage>.unmodifiable(keptPassages),
-    );
-  }
 
   @override
   String toString() => 'Deck($id, ${cards.length} cards)';

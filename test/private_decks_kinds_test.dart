@@ -63,13 +63,5 @@ void main() {
     expect(catalog.decks.map((e) => e.id), isNot(contains('fnpd-qaa-secret')));
     expect(catalog.hidden.map((e) => e.id), contains('fnpd-qaa-secret'));
     expect(catalog.hidden.single.private, isTrue);
-
-    // The level gate keeps the private mark and drops what is above.
-    final atA1 = catalog.forLevels((_) => Level.a1);
-    expect(atA1.byId('fnpd-qaa-en-food'), isNull);
-    expect(atA1.byId('fnpd-qaa-en-home'), isNotNull);
-    expect(atA1.byId('fnpd-qaa-en-home')!.private, isTrue);
-    final atB1 = catalog.forLevels((_) => Level.b1);
-    expect(atB1.byId('fnpd-qaa-en-food')!.private, isTrue);
   });
 }

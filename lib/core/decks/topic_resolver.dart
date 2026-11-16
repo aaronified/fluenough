@@ -13,7 +13,6 @@ library;
 import '../data/course_path.dart' show PlanUnit;
 import '../models/level.dart';
 import '../models/topic.dart';
-import 'levels.dart' show levelOfUnit;
 
 /// One card of a deck, as a topic's drill needs it.
 class TopicCardFact {
@@ -202,25 +201,16 @@ List<ResolvedTopic> resolveTopics(Iterable<Topic> topics, TopicWorld world) {
 
 /// The ids of the cards a drill on [resolved] uses, in order and each once:
 /// the cards of its `decks`, its `cards`, and the cards of the decks of its
-/// `units`, kept when the topic, the deck and the card are at or below
-/// [learner] (the one gate, [LevelGate]). A hidden deck's cards are used only
-/// when it was added. A topic above the learner's level gives none.
-List<String> topicDrillCards(
-  ResolvedTopic resolved,
-  TopicWorld world,
-  Level? learner,
-) {
-  if (!LevelGate.allows(resolved.topic.level, learner)) return const <String>[];
+/// `units`. A hidden deck's cards are used only when it was added. No level
+/// keeps a card out (owner, 2026-11-16).
+List<String> topicDrillCards(ResolvedTopic resolved, TopicWorld world) {
   final out = <String>[];
   final seen = <String>{};
 
   void takeDeck(TopicDeckFact deck) {
     if (deck.hidden && !deck.added) return;
-    if (!LevelGate.allows(deck.level, learner)) return;
     for (final card in deck.cards) {
-      if (LevelGate.allows(card.level, learner) && seen.add(card.id)) {
-        out.add(card.id);
-      }
+      if (seen.add(card.id)) out.add(card.id);
     }
   }
 
@@ -229,8 +219,6 @@ List<String> topicDrillCards(
     if (deck != null) takeDeck(deck);
   }
   for (final i in resolved.units) {
-    // A unit above the learner's level is not drilled either.
-    if (!LevelGate.allows(levelOfUnit(world.plan, i), learner)) continue;
     for (final core in world.plan[i].decks) {
       final deck = world.deck(core);
       if (deck != null) takeDeck(deck);
@@ -242,11 +230,8 @@ List<String> topicDrillCards(
       if (deck.hidden && !deck.added) continue;
       for (final card in deck.cards) {
         if (card.id != id) continue;
-        if (LevelGate.allows(deck.level, learner) &&
-            LevelGate.allows(card.level, learner)) {
-          seen.add(id);
-          out.add(id);
-        }
+        seen.add(id);
+        out.add(id);
       }
     }
   }

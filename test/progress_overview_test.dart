@@ -25,6 +25,7 @@ import 'package:fluenough/features/decks/path_model.dart';
 import 'package:fluenough/features/decks/path_parts.dart';
 import 'package:fluenough/features/decks/unit_page.dart';
 import 'package:fluenough/features/decks/word_mastery.dart';
+import 'package:fluenough/features/drill/choice_tile.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/walkthrough_page.dart';
 import 'package:fluenough/ui/widgets/learn_button.dart';
@@ -190,6 +191,20 @@ license: CC0-1.0
 cards:
   - { id: $tiny-0001, target: "hola", native: "hello" }
   - { id: $tiny-0002, target: "adiós", native: "goodbye" }
+''',
+    // Words of another deck of the language, which a question about these two
+    // can offer as wrong options (a card is asked two ways only with enough
+    // to choose from).
+    'decks/es/es-en-options.yaml': '''
+schema: 1
+id: es-en-options
+name: "Options"
+language: { code: es, iso639_3: spa, name: Spanish, script: latin }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+cards:
+  - { id: es-en-options-0001, target: "gracias", native: "thanks" }
+  - { id: es-en-options-0002, target: "perro", native: "dog" }
 ''',
   }),
   settings: settings,
@@ -797,11 +812,9 @@ void main() {
 
         final logged = state.progress.log.length;
         final states = Map.of(state.progress.states);
-        // Recognition comes first (ADR-0034), rated with only two cards to
-        // choose among.
-        await tester.tap(find.text(l10n.drillShowAnswer));
-        await tester.pumpAndSettle();
-        await tester.tap(find.text(l10n.rateGood));
+        // Recognition comes first (ADR-0034), chosen now that the language
+        // has words enough to choose among: a pick records at once.
+        await tester.tap(find.byType(ChoiceTile).first);
         await tester.pumpAndSettle();
         expect(state.progress.log, hasLength(logged + 1));
         expect(state.progress.states, isNot(states));

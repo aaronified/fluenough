@@ -59,18 +59,15 @@ void main() {
       expect(ana.nameFor(<String>['bn']).text, 'Ana Ejemplo');
       expect(ana.nameFor(<String>['en'], target: 'zz').text, 'Ana Ejemplo');
       expect(ana.bioFor(<String>['bn', 'en']), startsWith('A made-up writer'));
-      final legacy = ana.legacyFor(Level.a1, <String>['en'])!;
+      final legacy = ana.legacyFor(<String>['en'])!;
       expect(legacy.text, 'Her letters are read in made-up schools.');
       expect(legacy.items.single.kind, LegacyKind.curriculum);
       expect(legacy.items.single.year, 1990);
       expect(legacy.items.single.sourceUrl, 'https://example.org/curriculum');
-      expect(
-        file.byId('zz-ejemplo-poeta')!.legacyFor(Level.b1, <String>[]),
-        isNull,
-      );
+      expect(file.byId('zz-ejemplo-poeta')!.legacyFor(<String>[]), isNull);
     });
 
-    test('shows the target-language text at the highest level at or below', () {
+    test('shows the full target-language text', () {
       final read = parseCreators('''
 schema: 1
 kind: "creators"
@@ -92,12 +89,8 @@ creators:
         - { kind: "film", year: 2001, text: { en: "A film." }, source: { work: "Film" } }
 ''', source: 'zz.yaml');
       final lee = read.byId('zz-lee')!;
-      expect(lee.bioTargetFor(Level.a1)!.text, 'uno');
-      expect(lee.bioTargetFor(Level.a2)!.text, 'uno');
-      expect(lee.bioTargetFor(Level.b1)!.text, 'tres');
-      expect(lee.bioTargetFor(null), isNull);
-      expect(lee.legacyFor(Level.a1, <String>['en'])!.target, isNull);
-      expect(lee.legacyFor(Level.a2, <String>['en'])!.target!.text, 'dos');
+      expect(lee.bioTargetFull!.text, 'tres');
+      expect(lee.legacyFor(<String>['en'])!.target!.text, 'dos');
       expect(lee.names['zz']!.ipa, 'li');
     });
 
@@ -173,7 +166,7 @@ creators:
     ];
 
     test('puts spans, work points, legacy marks and eras on a line that ends today', () {
-      final line = buildTimeline(file, works, Level.b1, today: _today);
+      final line = buildTimeline(file, works, today: _today);
       expect(line.end, _today);
       expect(line.start, 1850);
       expect(line.spans.map((s) => s.creator.id), <String>[
@@ -200,41 +193,21 @@ creators:
     born: 1980
     living: true
 ''', source: 'zz.yaml');
-      final line = buildTimeline(
-        living,
-        const <TimelineWork>[],
-        null,
-        today: _today,
-      );
+      final line = buildTimeline(living, const <TimelineWork>[], today: _today);
       expect(line.spans.single.open, isTrue);
       expect(line.spans.single.to, _today);
-    });
-
-    test('leaves out a work above the level, and a creator only it cites', () {
-      final a2 = buildTimeline(file, works, Level.a2, today: _today);
-      expect(a2.works.map((w) => w.work.cardId), <String>['zz-9201']);
-      expect(a2.spans.map((s) => s.creator.id), <String>['zz-ejemplo-autora']);
-      // A learner of a language with no levels is given no levelled work.
-      final none = buildTimeline(file, works, null, today: _today);
-      expect(none.isEmpty, isTrue);
-      expect(none.legacy, isEmpty);
     });
 
     test(
       'shows a creator that no work cites, and ignores a work of a stranger',
       () {
-        final line = buildTimeline(
-          file,
-          const <TimelineWork>[
-            TimelineWork(
-              cardId: 'zz-0001',
-              creatorIds: <String>['zz-unknown'],
-              year: 1700,
-            ),
-          ],
-          Level.a1,
-          today: _today,
-        );
+        final line = buildTimeline(file, const <TimelineWork>[
+          TimelineWork(
+            cardId: 'zz-0001',
+            creatorIds: <String>['zz-unknown'],
+            year: 1700,
+          ),
+        ], today: _today);
         expect(line.spans, hasLength(2));
         expect(line.works, isEmpty);
       },

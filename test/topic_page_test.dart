@@ -2,7 +2,7 @@
 // mockup docs/mockups/topic-page.html): a topic's name, language and level,
 // how much of it the learner knows, its units, decks and cards each with
 // their level and mastery, a "Drill this topic" button with a chooser, a
-// script topic's characters, and an above-level topic read but never drilled.
+// script topic's characters. A higher-level topic is read and drilled like any.
 // It is reached from the search's Topics tab and from the "Topics in this
 // unit" chips of a unit.
 
@@ -54,7 +54,7 @@ void main() {
       expect(find.text(_l10n.topicDeckCards(2, 2)), findsOneWidget);
       expect(find.text(_l10n.topicCardsHeading(2, 2)), findsOneWidget);
       expect(find.text('casa'), findsOneWidget);
-      // A related topic above the level is listed, marked (the page builds
+      // A related topic is listed (the page builds
       // its rows lazily, so scroll to the end first).
       await tester.scrollUntilVisible(
         find.text('Library words'),
@@ -67,7 +67,6 @@ void main() {
             .first,
       );
       expect(find.text('Library words'), findsOneWidget);
-      expect(find.text(_l10n.topicAboveTitle.toUpperCase()), findsNothing);
     });
 
     testWidgets('has a drill button, and a chooser with the skills', (
@@ -161,26 +160,13 @@ void main() {
     });
   });
 
-  group('a topic above your level', () {
-    testWidgets('is read, with a notice, and nothing of it is drilled', (
-      tester,
-    ) async {
+  group('a topic at a higher level', () {
+    testWidgets('is read and drilled like any other', (tester) async {
       usePhone(tester);
       await pumpScreen(tester, _page('zz-library'), state: state);
-      expect(find.text(_l10n.topicAboveTitle.toUpperCase()), findsOneWidget);
-      // Nothing of it can be drilled, so the notice names no limited drill.
-      expect(find.text(_l10n.topicAboveBodyNoLevel('B1')), findsOneWidget);
-      expect(find.textContaining('(0 here)'), findsNothing);
-      expect(find.text(_l10n.searchAboveYourLevel('B1')), findsOneWidget);
-      // No card of it is listed by its text; they are counted instead.
-      expect(find.text('libro'), findsNothing);
-      expect(find.text(_l10n.topicCardsAbove(3)), findsOneWidget);
-      expect(find.text(_l10n.topicNothingToDrill), findsOneWidget);
-      final drill = find.ancestor(
-        of: find.text(_l10n.topicDrillCount(0)),
-        matching: find.bySubtype<FilledButton>(),
-      );
-      expect(tester.widget<FilledButton>(drill).onPressed, isNull);
+      // Its cards are listed by their text and nothing is locked.
+      expect(find.text('libro'), findsOneWidget);
+      expect(find.text(_l10n.topicNothingToDrill), findsNothing);
     });
   });
 
@@ -224,24 +210,6 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.byType(TopicPage), findsOneWidget);
     });
-
-    testWidgets('mark a topic above your level for a screen reader', (
-      tester,
-    ) async {
-      usePhone(tester);
-      final handle = tester.ensureSemantics();
-      await pumpScreen(
-        tester,
-        const UnitPage(deckId: 'zz-en-last'),
-        state: state,
-      );
-      // The chip merges its lock's label with the topic's name.
-      expect(
-        find.bySemanticsLabel(RegExp(_l10n.topicAboveYourLevelCue)),
-        findsWidgets,
-      );
-      handle.dispose();
-    });
   });
 
   group('the topic page, at 1.4x text, light and dark', () {
@@ -255,7 +223,7 @@ void main() {
     };
 
     screen('a topic at your level', topic('zz-house'));
-    screen('a topic above your level', topic('zz-library'));
+    screen('a topic at a higher level', topic('zz-library'));
     screen('a script topic', topic('zz-letters'));
     screen('a unit with its topics', (tester, mode) async {
       await pumpScreen(

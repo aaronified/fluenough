@@ -1,5 +1,6 @@
 import '../models/card.dart';
 import '../models/drill_mode.dart';
+import 'learn_sequence.dart';
 import 'question_type.dart';
 import 'session_queue.dart';
 
@@ -144,23 +145,26 @@ List<LessonQuestion> lessonQuestions(
   ];
 }
 
-/// A lesson of [cards], as [lessonItems] picks them (ADR-0024, ADR-0046): each card
-/// taught, then checked at once; then the exercise, each card asked once
-/// more in another mode, in a mixed order, the ones to be matched together
-/// in pairs.
+/// A lesson of [cards], as [lessonItems] picks them (ADR-0024, ADR-0046; owner,
+/// 2026-11-16): each card is a learn attempt, laid out by [learnSequence]:
+/// shown, asked at once, then asked again in another type after exactly two
+/// other questions. Only when both answers are right is the card learned.
 ///
 /// [modesOf] says which modes a card can be drilled in now, and [canChoose]
 /// whether a choice question about it has enough options; one that has not
-/// is asked its mode's own way. A card no question can be asked of is left
-/// out, and one with a single mode is not in the exercise.
+/// is asked its mode's own way, which for Recognition is rated by the
+/// learner and proves nothing. A card with no two different questions
+/// ([learnPair]) cannot be learned yet and is left out. [fillers] are reviews
+/// that space a last group of fewer than three new cards.
 ///
 /// A card [straightToQuestion] says so of has no teaching card: a rules
-/// table's cell a set card taught (owner, 2026-10-16, #515: "Straight to
-/// question"). It is checked at once all the same.
+/// table's cell is shown by its rule card.
 ///
 /// A card [typed] says is not typed is never asked for a typed answer: its
 /// production is chosen. [siblingsOf] gives a card's other forms by its base
-/// ([formSiblings]), which a lesson asks as the review does.
+/// ([formSiblings]), which a lesson asks as the review does. A card [tracked]
+/// says is not tracked is one already learned, asked again as practice, and
+/// its answers are recorded as they come.
 List<SessionItem> lessonPlan(
   List<Card> cards, {
   required Set<DrillMode> Function(Card card) modesOf,
@@ -168,108 +172,131 @@ List<SessionItem> lessonPlan(
   bool Function(Card card)? straightToQuestion,
   bool Function(Card card)? typed,
   List<Card> Function(Card card)? siblingsOf,
+  bool Function(Card card)? tracked,
+  List<SessionItem> fillers = const <SessionItem>[],
 }) {
-  final taught = <SessionItem>[];
-  final exercise = <Difficulty, List<SessionItem>>{
-    for (final d in Difficulty.values) d: <SessionItem>[],
-  };
-  for (final card in cards) {
-    final modes = modesOf(card);
-    final questions = <LessonQuestion>[
-      for (final q in lessonQuestions(
+  final attempts = <LearnAttempt>[
+    for (final card in cards)
+      ?lessonAttempt(
         card,
-        typed: typed?.call(card) ?? true,
-        siblings: siblingsOf?.call(card) ?? const <Card>[],
-      ))
-        if (modes.contains(q.mode)) q,
-    ];
-    if (questions.isEmpty) continue;
-    SessionItem asked(DrillMode mode, Ask ask) => SessionItem(
-      card: card,
-      mode: mode,
-      state: null,
-      ask: ask.chooses && !canChoose(card, ask) ? Ask.own : ask,
-    );
-    // A check is asked of one card, so not by matching, unless that is
-    // all there is, and then a match is chosen instead.
-    final check = questions.firstWhere(
-      (q) => q.ask != Ask.matchPairs,
-      orElse: () => questions.first,
-    );
-    final checkAsk = check.ask == Ask.matchPairs
-        ? Ask.chooseMeaning
-        : check.ask;
-    if (!(straightToQuestion?.call(card) ?? false)) {
-      taught.add(
-        SessionItem(card: card, mode: check.mode, state: null, ask: Ask.teach),
-      );
-    }
-    taught.add(asked(check.mode, checkAsk));
-    for (final q in questions) {
-      if (q.mode == check.mode) continue;
-      exercise[Difficulty.of(card)]!.add(
-        q.ask == Ask.matchPairs
-            ? SessionItem(card: card, mode: q.mode, state: null, ask: q.ask)
-            : asked(q.mode, q.ask),
-      );
-      break;
-    }
-  }
-  final lists = <List<SessionItem>>[
-    for (final d in <Difficulty>[
-      Difficulty.easy,
-      Difficulty.medium,
-      Difficulty.hard,
-    ])
-      _matched(exercise[d]!, canChoose),
+        modesOf: modesOf,
+        canChoose: canChoose,
+        straightToQuestion: straightToQuestion,
+        typed: typed,
+        siblingsOf: siblingsOf,
+        tracked: tracked,
+      ),
   ];
-  // Mixed: one of each difficulty in turn.
-  final mixed = <SessionItem>[];
-  for (var i = 0; lists.any((list) => i < list.length); i++) {
-    for (final list in lists) {
-      if (i < list.length) mixed.add(list[i]);
-    }
-  }
-  return <SessionItem>[...taught, ...mixed];
+  return learnSequence(attempts, fillers: fillers).items;
 }
 
-/// [items] with those to be matched in pairs put together, in groups of up
-/// to [matchSize] at the place of the first. Fewer than two, or a group in
-/// which two share a meaning or a target, are asked by multiple choice
-/// instead.
-List<SessionItem> _matched(
-  List<SessionItem> items,
-  bool Function(Card card, Ask ask) canChoose,
-) {
-  final matching = <SessionItem>[
-    for (final item in items)
-      if (item.ask == Ask.matchPairs) item,
-  ];
-  if (matching.isEmpty) return items;
-  final groups = (matching.length / matchSize).ceil();
-  final size = (matching.length / groups).ceil();
-  final first = <SessionItem, SessionItem>{};
-  final taken = <SessionItem>{};
-  for (var start = 0; start < matching.length; start += size) {
-    final group = matching.skip(start).take(size).toList();
-    final natives = <String>{for (final g in group) g.card.native};
-    final targets = <String>{for (final g in group) g.card.target};
-    if (group.length < 2 ||
-        natives.length < group.length ||
-        targets.length < group.length) {
-      continue;
-    }
-    first[group.first] = group.first.askedAs(Ask.matchPairs, group: group);
-    taken.addAll(group.skip(1));
-  }
-  SessionItem chosen(SessionItem item) => item.askedAs(
-    canChoose(item.card, Ask.chooseMeaning) ? Ask.chooseMeaning : Ask.own,
+/// The learn attempt of [card] as [lessonPlan] lays it out, or null when it
+/// cannot be learned yet: it has not two different questions ([learnPair]).
+/// A card [tracked] says is not tracked is one already learned, practised
+/// again: it is never left out, and with one question only it is asked once.
+LearnAttempt? lessonAttempt(
+  Card card, {
+  required Set<DrillMode> Function(Card card) modesOf,
+  required bool Function(Card card, Ask ask) canChoose,
+  bool Function(Card card)? straightToQuestion,
+  bool Function(Card card)? typed,
+  List<Card> Function(Card card)? siblingsOf,
+  bool Function(Card card)? tracked,
+}) {
+  final modes = modesOf(card);
+  SessionItem asked(DrillMode mode, Ask ask) => SessionItem(
+    card: card,
+    mode: mode,
+    state: null,
+    ask: ask.chooses && !canChoose(card, ask) ? Ask.own : ask,
   );
-  return <SessionItem>[
-    for (final item in items)
-      if (!taken.contains(item))
-        first[item] ?? (item.ask == Ask.matchPairs ? chosen(item) : item),
+  final questions = <SessionItem>[
+    for (final q in lessonQuestions(
+      card,
+      typed: typed?.call(card) ?? true,
+      siblings: siblingsOf?.call(card) ?? const <Card>[],
+    ))
+      // A match is a group of items: a learn question is of one.
+      if (modes.contains(q.mode))
+        asked(q.mode, q.ask == Ask.matchPairs ? Ask.chooseMeaning : q.ask),
   ];
+  // A word with only one skill of its own, as a phrase of one word has no
+  // Write or a card whose other skills are left out, is also asked another
+  // way within it: by choosing its word, or typing it, or putting it in order.
+  final extras = <SessionItem>[
+    if (card.rule == null && !card.isGrammarCell) ...<SessionItem>[
+      if (modes.contains(DrillMode.recognition) &&
+          canChoose(card, Ask.chooseWord))
+        SessionItem(
+          card: card,
+          mode: DrillMode.recognition,
+          state: null,
+          ask: Ask.chooseWord,
+        ),
+      if (modes.contains(DrillMode.production)) ...<SessionItem>[
+        if (card.rearranges)
+          SessionItem(
+            card: card,
+            mode: DrillMode.production,
+            state: null,
+            ask: Ask.rearrange,
+          ),
+        if (canChoose(card, Ask.chooseWord))
+          SessionItem(
+            card: card,
+            mode: DrillMode.production,
+            state: null,
+            ask: Ask.chooseWord,
+          ),
+        if (typed?.call(card) ?? true)
+          SessionItem(
+            card: card,
+            mode: DrillMode.production,
+            state: null,
+            ask: Ask.own,
+          ),
+      ],
+    ],
+  ];
+  final isTracked = tracked?.call(card) ?? true;
+  final pair = learnPair(questions, extras: extras);
+  final SessionItem first;
+  final SessionItem? second;
+  if (pair != null) {
+    first = pair.first;
+    second = pair.second;
+  } else if (!isTracked && questions.isNotEmpty) {
+    first = questions.first;
+    second = null;
+  } else {
+    return null;
+  }
+  final straight = straightToQuestion?.call(card) ?? false;
+  final SessionItem? show;
+  if (straight) {
+    show = card.rule != null
+        ? SessionItem(
+            card: card,
+            mode: DrillMode.grammar,
+            state: null,
+            ask: Ask.teachRule,
+          )
+        : null;
+  } else {
+    show = SessionItem(
+      card: card,
+      mode: first.mode,
+      state: null,
+      ask: Ask.teach,
+    );
+  }
+  return LearnAttempt(
+    card: card,
+    shows: <SessionItem>[?show],
+    first: first,
+    second: second,
+    tracked: isTracked,
+  );
 }
 
 final RegExp _letter = RegExp(r'\p{L}', unicode: true);

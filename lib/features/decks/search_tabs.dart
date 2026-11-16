@@ -235,7 +235,7 @@ class _TypedSearchResultsState extends State<TypedSearchResults> {
     final scheme = theme.colorScheme;
     final language = widget.language;
     final spoken = spokenFor(context, state);
-    final sections = state.catalogWithAboveLevel.sections;
+    final sections = state.catalogView.sections;
     final text = _typed;
     final found = state.searchItems(language, text, exact: _exact);
     final index = state.itemSearchFor(language);
@@ -359,7 +359,7 @@ class _TypedSearchResultsState extends State<TypedSearchResults> {
       ];
     }
     final l10n = AppLocalizations.of(context)!;
-    final sections = state.catalogWithAboveLevel.sections;
+    final sections = state.catalogView.sections;
     final spoken = spokenFor(context, state);
     var rows = <ItemResult>[
       for (final r in items)
@@ -580,8 +580,7 @@ class _NoResults extends StatelessWidget {
     final scheme = theme.colorScheme;
     final spoken = spokenFor(context, state);
     final suggestions = <String>[
-      for (final r
-          in state.topicsOf(language).startable(state.levelIn(language)))
+      for (final r in state.topicsOf(language).resolved)
         r.topic.nameFor(spoken),
     ].take(3).toList();
     return Padding(
@@ -642,7 +641,7 @@ class SearchStartHints extends StatelessWidget {
     final state = AppScope.of(context);
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final sections = state.catalogWithAboveLevel.sections;
+    final sections = state.catalogView.sections;
     final spoken = spokenFor(context, state);
     final recent = SearchSession.of(state).recent;
     final kinds = sections.searchKinds.isEmpty

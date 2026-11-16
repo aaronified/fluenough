@@ -10,7 +10,6 @@ import '../../app/unlocks.dart';
 import '../../core/data/sections.dart' show nameIn;
 import '../../core/decks/topic_resolver.dart';
 import '../../core/logs/log_entry.dart' show describeError;
-import '../../core/models/level.dart';
 import '../../core/progress/recent_answers.dart' show MasteryLevel;
 import '../../core/search/search_items.dart';
 import '../../l10n/app_localizations.dart';
@@ -32,8 +31,7 @@ List<String> spokenFor(BuildContext context, AppState state) => <String>[
 
 /// The row of [result], drawn by its type (the approved mockup
 /// `search-results-tabs.html`: a distinct row per type), or null for a result
-/// whose item is no longer there. A result above the learner's level is
-/// marked, dimmed and opens a preview instead of starting.
+/// whose item is no longer there. A level labels a result and never blocks it.
 Widget? itemResultRow(
   BuildContext context,
   ItemSearchIndex index,
@@ -83,22 +81,12 @@ Widget _situationRow(
     lines: <Widget>[RowLine(l10n.searchPhraseCount(sheet.cardIds.length))],
     tags: <Widget>[
       ResultTag(text: l10n.searchTagSituation, style: ResultTagStyle.kind),
-      LevelTag(level: result.row.level, above: result.aboveLevel),
+      LevelTag(level: result.row.level),
     ],
-    dim: result.aboveLevel,
-    onTap: result.aboveLevel
-        ? () => showAboveLevelSheet(
-            context,
-            name: sheet.titleFor(spokenFor(context, state)),
-            level: result.row.level,
-          )
-        : () => Navigator.of(context).pushNamed(
-            AppRoutes.situation,
-            arguments: SituationRequest(
-              language: language,
-              situationId: sheet.id,
-            ),
-          ),
+    onTap: () => Navigator.of(context).pushNamed(
+      AppRoutes.situation,
+      arguments: SituationRequest(language: language, situationId: sheet.id),
+    ),
   );
 }
 
@@ -118,7 +106,7 @@ Widget _topicRow(
   var cards = 0;
   var known = 0;
   if (resolved != null) {
-    final every = topicDrillCards(resolved, topics.world, Level.c2);
+    final every = topicDrillCards(resolved, topics.world);
     final answers = state.recentAnswers;
     cards = every.length;
     known = every
@@ -132,7 +120,6 @@ Widget _topicRow(
   return ResultRow(
     icon: Icons.sell_outlined,
     title: title,
-    dim: result.aboveLevel,
     lines: <Widget>[
       RowLine(
         l10n.searchTopicSummary(
@@ -160,7 +147,7 @@ Widget _topicRow(
         RowLine(l10n.searchTopicKnown(percent)),
       ],
     ],
-    tags: <Widget>[LevelTag(level: topic.level, above: result.aboveLevel)],
+    tags: <Widget>[LevelTag(level: topic.level)],
     trailing: const Icon(Icons.chevron_right),
     onTap: () => AppNavigator.openTopic(context, language, topic.id),
   );
@@ -204,16 +191,11 @@ Widget _unitRow(
   return ResultRow(
     icon: Icons.flag_outlined,
     title: title,
-    dim: result.aboveLevel,
     lines: <Widget>[
       RowLine(l10n.searchUnitPath(l10n.searchDecksCount(view.decks))),
     ],
-    tags: <Widget>[LevelTag(level: view.level, above: result.aboveLevel)],
-    onTap: result.aboveLevel
-        ? () => showAboveLevelSheet(context, name: title, level: view.level)
-        : open == null
-        ? null
-        : () => AppNavigator.openUnit(context, open),
+    tags: <Widget>[LevelTag(level: view.level)],
+    onTap: open == null ? null : () => AppNavigator.openUnit(context, open),
   );
 }
 
@@ -227,7 +209,7 @@ Widget _cultureRow(
   final entry = index.deckOfCard(result.row.id);
   if (card == null || entry == null) return const SizedBox.shrink();
   final language = state.languageByCode(index.language) ?? entry.language;
-  final sections = state.catalogWithAboveLevel.sections;
+  final sections = state.catalogView.sections;
   final kind = sections.searchKind(result.row.kind);
   final kindName = kind == null
       ? result.row.kind
@@ -308,21 +290,19 @@ class _DeckResultRowState extends State<_DeckResultRow> {
     final row = result.row;
     final entry = index.deckEntry(row.id);
     final shelf = index.shelfOf(row.id);
-    final sections = state.catalogWithAboveLevel.sections;
+    final sections = state.catalogView.sections;
     final spoken = spokenFor(context, state);
     final professional = entry?.deck.professional ?? shelf?.professional;
     final genre = sections.genre(entry?.deck.genre ?? shelf?.genre);
     final title = entry?.deck.name ?? shelf?.title ?? row.id;
     final cards = entry?.itemCount ?? shelf?.cards ?? 0;
     final added = entry != null && entry.deck.hidden;
-    final above = result.aboveLevel;
     final level = row.level;
     final languageName = _languageName(state, index.language);
     final snippet = result.snippetCard == null
         ? null
         : index.cardOf(result.snippetCard!);
-    // Nothing of an item above the learner's level shows its card text.
-    final snippetLine = (above || snippet == null)
+    final snippetLine = snippet == null
         ? null
         : '${snippet.target} · ${snippet.native}';
     final isScene = professional != null || row.kind == ResultKind.situations;
@@ -338,7 +318,6 @@ class _DeckResultRowState extends State<_DeckResultRow> {
         iconBackground: amberOf(context),
         iconColor: onAmberOf(context),
         title: title,
-        dim: above,
         lines: <Widget>[
           if (professionName != null || cards > 0)
             RowLine(
@@ -358,16 +337,10 @@ class _DeckResultRowState extends State<_DeckResultRow> {
                 : l10n.searchTagProfessional(professionName),
             style: ResultTagStyle.professional,
           ),
-          LevelTag(level: level, above: above),
+          LevelTag(level: level),
         ],
-        onTap: added && !above
-            ? () => AppNavigator.openDeck(context, row.id)
-            : above
-            ? () => showAboveLevelSheet(context, name: title, level: level)
-            : null,
-        actions: above
-            ? null
-            : added
+        onTap: added ? () => AppNavigator.openDeck(context, row.id) : null,
+        actions: added
             ? Row(
                 children: <Widget>[
                   Icon(
@@ -406,11 +379,10 @@ class _DeckResultRowState extends State<_DeckResultRow> {
               ),
       );
     }
-    final startable = !above && entry != null && state.deckById(row.id) != null;
+    final startable = entry != null && state.deckById(row.id) != null;
     return ResultRow(
       icon: Icons.style_outlined,
       title: title,
-      dim: above,
       lines: <Widget>[
         RowLine(
           l10n.searchDeckSummary(languageName, l10n.commonCardCount(cards)),
@@ -428,11 +400,9 @@ class _DeckResultRowState extends State<_DeckResultRow> {
             text: deckKindLabel(l10n, entry),
             style: ResultTagStyle.kind,
           ),
-        LevelTag(level: level, above: above),
+        LevelTag(level: level),
       ],
-      onTap: above
-          ? () => showAboveLevelSheet(context, name: title, level: level)
-          : startable || added
+      onTap: startable || added
           ? () => AppNavigator.openDeck(context, row.id)
           : null,
     );

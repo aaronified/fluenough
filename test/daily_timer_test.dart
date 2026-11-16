@@ -175,39 +175,6 @@ void main() {
     });
   });
 
-  group('the order of a round', () {
-    test('words are asked twice, not at once, with older reviews between', () {
-      final order = DailyPlanner.arrange<String>(
-        older: <String>['o1', 'o2', 'o3', 'o4', 'o5', 'o6'],
-        taught: <String>['teach-a', 'teach-b'],
-        firstPass: <String>['a1', 'b1'],
-        secondPass: <String>['a2', 'b2'],
-      );
-      expect(order.toSet().length, order.length);
-      expect(order.length, 12);
-      for (final word in <String>['a', 'b']) {
-        final teach = order.indexOf('teach-$word');
-        final one = order.indexOf('${word}1');
-        final two = order.indexOf('${word}2');
-        expect(teach < one && one < two, isTrue);
-        expect(one - teach, greaterThan(1));
-        expect(two - one, greaterThan(1));
-      }
-    });
-
-    test('with no new words it is the older reviews', () {
-      expect(
-        DailyPlanner.arrange<int>(
-          older: <int>[1, 2, 3],
-          taught: <int>[],
-          firstPass: <int>[],
-          secondPass: <int>[],
-        ),
-        <int>[1, 2, 3],
-      );
-    });
-  });
-
   test('a teach card takes the default until the learner has timed ten', () {
     expect(
       DailyBudget.secondsPerTeach(const Duration(seconds: 90), 9),

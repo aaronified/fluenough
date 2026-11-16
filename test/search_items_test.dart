@@ -9,7 +9,6 @@ import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/core/data/sections.dart';
 import 'package:fluenough/core/decks/deck_index.dart';
 import 'package:fluenough/core/models/deck.dart';
-import 'package:fluenough/core/models/level.dart';
 import 'package:fluenough/core/models/situation.dart';
 import 'package:fluenough/core/search/card_index.dart';
 import 'package:fluenough/core/search/search_items.dart';
@@ -61,9 +60,6 @@ ItemCorpus _corpus(SearchSource source, {required bool fts}) {
   return corpus;
 }
 
-Level? Function(String) _level(Level? level) =>
-    (_) => level;
-
 void main() {
   final probe = CardSearchIndex.tryOpen();
   final hasFts = probe != null;
@@ -72,11 +68,7 @@ void main() {
   group('the kind of an item', () {
     late final ItemCorpus corpus = _corpus(_source(), fts: false);
     String kindOf(String query, SearchItemType type, String id) {
-      final found = corpus.search(
-        query,
-        levelOf: _level(Level.b1),
-        sections: _sections,
-      );
+      final found = corpus.search(query, sections: _sections);
       return found.results
           .firstWhere((r) => r.row.type == type && r.row.id == id)
           .row
@@ -112,15 +104,13 @@ void main() {
     test('finds a culture card by the name of its creator and its work', () {
       expect(
         corpus
-            .search('Ejemplo', levelOf: _level(Level.b1), sections: _sections)
+            .search('Ejemplo', sections: _sections)
             .ofKind('culture')
             .map((r) => r.row.id),
         contains('zz-9201'),
       );
       expect(
-        corpus
-            .search('Poema', levelOf: _level(Level.b1), sections: _sections)
-            .ofKind('culture'),
+        corpus.search('Poema', sections: _sections).ofKind('culture'),
         isNotEmpty,
       );
     });
@@ -136,16 +126,8 @@ void main() {
       tearDown(() => corpus.index?.close());
 
       test('finds a word despite a typo, and an exact one ranks above it', () {
-        final exact = corpus.search(
-          'water',
-          levelOf: _level(Level.b1),
-          sections: _sections,
-        );
-        final typo = corpus.search(
-          'watr',
-          levelOf: _level(Level.b1),
-          sections: _sections,
-        );
+        final exact = corpus.search('water', sections: _sections);
+        final typo = corpus.search('watr', sections: _sections);
         expect(exact.ofKind('cards').map((r) => r.row.id), contains('zz-9002'));
         expect(typo.ofKind('cards').map((r) => r.row.id), contains('zz-9002'));
         expect(typo.ofKind('cards').first.isClose, isTrue);
@@ -155,22 +137,14 @@ void main() {
       test(
         'gives a tab for each kind with results, the best match\'s first',
         () {
-          final found = corpus.search(
-            'conjunct',
-            levelOf: _level(Level.b1),
-            sections: _sections,
-          );
+          final found = corpus.search('conjunct', sections: _sections);
           expect(found.openKind, 'topics');
           expect(found.tabs.map((t) => t.kind), <String>['topics']);
           expect(found.tabs.single.row, 'topic');
           expect(found.countOf('topics'), 1);
           expect(found.countOf('cards'), 0);
 
-          final several = corpus.search(
-            'words',
-            levelOf: _level(Level.b1),
-            sections: _sections,
-          );
+          final several = corpus.search('words', sections: _sections);
           expect(
             several.tabs.map((t) => t.kind),
             containsAll(<String>['decks', 'units']),
@@ -190,61 +164,18 @@ void main() {
         skip: skip,
       );
 
-      test(
-        'marks what is above the level, and never shows a card above it',
-        () {
-          final a1 = corpus.search(
-            'culture',
-            levelOf: _level(Level.a1),
-            sections: _sections,
-          );
-          final deck = a1.results.firstWhere(
-            (r) =>
-                r.row.type == SearchItemType.deck &&
-                r.row.id == 'zz-en-culture-ejemplo',
-          );
-          expect(deck.aboveLevel, isTrue);
-          expect(deck.startable, isFalse);
-          // A card of a culture deck is never in a result for an A1 learner.
-          final cards = corpus.search(
-            'ilumina',
-            levelOf: _level(Level.a1),
-            sections: _sections,
-          );
-          expect(cards.ofKind('culture'), isEmpty);
-          final a2 = corpus.search(
-            'culture',
-            levelOf: _level(Level.a2),
-            sections: _sections,
-          );
-          expect(
-            a2.results
-                .firstWhere((r) => r.row.id == 'zz-en-culture-ejemplo')
-                .startable,
-            isTrue,
-          );
-          expect(
-            corpus
-                .search(
-                  'ilumina',
-                  levelOf: _level(Level.a2),
-                  sections: _sections,
-                )
-                .ofKind('culture'),
-            isNotEmpty,
-          );
-        },
-        skip: skip,
-      );
-
-      test('always lists what is above the level', () {
-        final shown = corpus.search(
-          'culture',
-          levelOf: _level(Level.a1),
-          sections: _sections,
-        );
+      test('lists a culture deck and its card whatever the level', () {
+        final deck = corpus
+            .search('culture', sections: _sections)
+            .results
+            .firstWhere(
+              (r) =>
+                  r.row.type == SearchItemType.deck &&
+                  r.row.id == 'zz-en-culture-ejemplo',
+            );
+        expect(deck.row.level, isNotNull);
         expect(
-          shown.results.where((r) => r.row.id == 'zz-en-culture-ejemplo'),
+          corpus.search('ilumina', sections: _sections).ofKind('culture'),
           isNotEmpty,
         );
       }, skip: skip);
@@ -258,7 +189,6 @@ void main() {
                 .search(
                   'conjunct',
                   kinds: <String>{'decks'},
-                  levelOf: _level(Level.b1),
                   sections: _sections,
                 )
                 .results,
@@ -269,7 +199,6 @@ void main() {
                 .search(
                   'conjunct',
                   kinds: <String>{'topics'},
-                  levelOf: _level(Level.b1),
                   sections: _sections,
                 )
                 .results,
@@ -306,11 +235,7 @@ void main() {
     }
 
     test('is found from the index alone, as a scene of its profession', () {
-      final found = corpusWithoutDeck().search(
-        'medicine',
-        levelOf: _level(Level.b1),
-        sections: _sections,
-      );
+      final found = corpusWithoutDeck().search('medicine', sections: _sections);
       final row = found.ofKind('situations').single;
       expect(row.row.type, SearchItemType.deck);
       expect(row.row.hidden, isTrue);
@@ -318,13 +243,9 @@ void main() {
       expect(found.ofKind('cards'), isEmpty);
     });
 
-    test('is marked above an A2 learner\'s level, and not startable', () {
-      final found = corpusWithoutDeck().search(
-        'medicine',
-        levelOf: _level(Level.a2),
-        sections: _sections,
-      );
-      expect(found.ofKind('situations').single.aboveLevel, isTrue);
+    test('is listed whatever the learner\'s level', () {
+      final found = corpusWithoutDeck().search('medicine', sections: _sections);
+      expect(found.ofKind('situations'), hasLength(1));
     });
 
     test(
@@ -334,11 +255,7 @@ void main() {
           _source(added: true, shelves: shelves),
           fts: false,
         );
-        final found = corpus.search(
-          'registrarme',
-          levelOf: _level(Level.b1),
-          sections: _sections,
-        );
+        final found = corpus.search('registrarme', sections: _sections);
         final row = found.results.single;
         expect(row.row.kind, 'situations');
         expect(row.row.type, SearchItemType.deck);
@@ -347,11 +264,7 @@ void main() {
         // The shelf and the added deck are one row, not two.
         expect(
           corpus
-              .search(
-                'medicine',
-                levelOf: _level(Level.b1),
-                sections: _sections,
-              )
+              .search('medicine', sections: _sections)
               .results
               .where((r) => r.row.id == 'zz-en-medicine-registro'),
           hasLength(1),

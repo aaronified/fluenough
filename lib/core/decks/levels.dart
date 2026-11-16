@@ -1,7 +1,8 @@
 /// The level model (wiki/Plan-Deck-Kinds-And-Topics.md, D2): the level of a
 /// path unit and the level a learner has reached in a language, from the
-/// units of the language's path. The levels themselves and the gate every
-/// levelled item passes are in `lib/core/models/level.dart`, exported here.
+/// units of the language's path. The levels themselves are in
+/// `lib/core/models/level.dart`, exported here. A level orders and labels; it
+/// never blocks.
 /// Pure functions over data; free of Flutter, so that it is tested in
 /// milliseconds.
 library;
