@@ -1,0 +1,29 @@
+schema: 1
+id: "sa-en-grammar-lakaras"
+kind: "layer"
+core: "sa-grammar-lakaras"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The ten lakāras: tenses and moods of the verb"
+description: "The ten verb forms Pāṇini calls lakāras (laṭ, laṅ, loṭ, vidhiliṅ, liṭ, luṅ, lṛṭ, lṛṅ, luṭ and āśīrliṅ), each with its use, its sūtra and the third person forms of the verbs bhū and gam. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  name: "The ten lakāras"
+  slot_name: "model verb, person and number"
+  slots:
+    "bhū-3sg": "the verb bhū (to be), third person singular"
+    "bhū-3pl": "the verb bhū (to be), third person plural"
+    "gam-3sg": "the verb gam (to go), third person singular"
+    "gam-3pl": "the verb gam (to go), third person plural"
+  entries:
+    "lat": "laṭ: the present tense (vartamāna, what is going on now). Pāṇini 3.2.123 says वर्तमाने लट् (vartamāne laṭ): laṭ in the present."
+    "lan": "laṅ: the imperfect, a past that is not today's (anadyatana). Pāṇini 3.2.111 says अनद्यतने लङ् (anadyatane laṅ): laṅ for a past that is not of today. The forms take the augment a."
+    "lot": "loṭ: the imperative, for commands and requests. Pāṇini 3.3.162 says लोट् च (loṭ ca): and loṭ, after the list of uses in 3.3.161. The first persons are not commands: they are wishes or proposals."
+    "vidhilin": "vidhiliṅ: the optative or potential, which Pāṇini calls vidhiliṅ because the first use listed in 3.3.161 is vidhi (a command or rule); the sūtra gives liṅ for vidhi, nimantraṇa (invitation), āmantraṇa (summons) and the other uses it lists; the sa.wikisource page types that sūtra with word-splitting marks, so its words are not quoted. In practice it says what may, can or should be."
+    "lit": "liṭ: the perfect, a past not seen by the speaker (parokṣa). Pāṇini 3.2.115 says परोक्षे लिट् (parokṣe liṭ): liṭ for the unseen past. The stem is the doubled root."
+    "lun": "luṅ: the aorist, a plain past (bhūta). Pāṇini 3.2.110 says लुङ् (luṅ) and the heading 3.2.84 says भूते (bhūte), in the past. It has the augment a and no present stem."
+    "lrt": "lṛṭ: the simple future (will go, will be). Pāṇini 3.3.13 says लृट् शेषे च (lṛṭ śeṣe ca): lṛṭ in the remaining cases of the future (śeṣa)."
+    "lrn": "lṛṅ: the conditional, for an action that did not happen because its condition failed (kriyātipatti). Pāṇini 3.3.139 gives lṛṅ for that; the page types the sūtra with word-splitting, so only its number is given. It is the future stem with the augment a."
+    "lut": "luṭ: the periphrastic future, a future that is not today's. Pāṇini 3.3.15 says अनद्यतने लुट् (anadyatane luṭ): luṭ for a future that is not of today. Only the third singular is listed on the root page: it ends in -tā, the third plural is not listed."
+    "ashirlin": "āśīrliṅ: the precative or benedictive, the mood of blessings and wishes (āśīḥ). Pāṇini 3.4.116 says लिङ् आशिषि (liṅ āśiṣi) as the sa.wikisource page types it: liṅ for a blessing, with the standard sandhi लिङाशिषि not quoted. Only the third singular is listed on the root page."
+  notes: "Pāṇini names the tenses and moods of the verb with ten affixes called la, and each gets a name made of l and the letters that mark it. Sūtra 3.4.77 says लस्य (lasya), in place of la: the personal endings (tiṅ) are put in place of the la that is chosen for the meaning. Seven are tenses and three are moods: laṭ, laṅ, liṭ, luṅ, lṛṭ, lṛṅ and luṭ are tenses, and loṭ, vidhiliṅ and āśīrliṅ are moods. Each cell shows the third person singular and plural of two model verbs, bhū (to be, the first verb of the first class) and gam (to go). The laṅ, luṅ and lṛṅ forms carry the augment a (Whitney 586: the imperfect is made from the present stem, the conditional from the future stem, and the aorist stands without a present). The later units of the path teach the past tenses, the imperative and the participles in full; the optative and the passive come later, at the B1 level."
