@@ -56,3 +56,5 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | sa-3065 | sa-adverbs-sentences (adverbs unit) | Is पुनः पठति, he reads again, natural, or should the subject be stated? | Haiku deck worker | 2026-11-16 |
 | sa-3066 | sa-adverbs-sentences (adverbs unit) | Is एवं गच्छति, he goes this way, the natural wording for in this way? | Haiku deck worker | 2026-11-16 |
 | sa-3072 | sa-quantities-sentences (quantities unit) | Is न सर्वं जानामि, I do not know everything, the natural order with न before the object? | Haiku deck worker | 2026-11-16 |
+| sa-3045 | sa-numbers-1-20-sentences (numbers unit) | Is अहं दश जानामि, I know ten, a natural sentence for a learner? | Haiku deck worker | 2026-11-16 |
+| unit-level | sa-pronouns-sentences, sa-questions-sentences | No sentence uses सः or एषः as a target word; सः appears only as a confusable (sa-3021), so the apart-before-vowel rule is not tested in these decks. | Haiku deck worker | 2026-11-16 |
