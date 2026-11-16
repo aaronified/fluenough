@@ -63,6 +63,8 @@ cards:
     bases: [{ word: "El", base: "el" }, { word: "aniversario", ref: "es-0989" }, { word: "de", base: "de" }, { word: "boda", base: "boda" }, { word: "es", ref: "es-0022" }, { word: "sábado", ref: "es-0963" }]
     confusables: [{ id: "party", ref: "es-0979", kind: "word" }, { id: "sunday", ref: "es-0964", kind: "word" }]
   - id: "es-1002"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     target: "La agenda dice que hoy es lunes."
     ipa: "la aˈxenda ˈdiθe ke oj es ˈlunes"
     phonetic: "[la aˈxen̪d̪a ˈðiθe ke oj ez ˈlunes]"
@@ -72,6 +74,8 @@ cards:
     bases: [{ word: "La", base: "la" }, { word: "agenda", ref: "es-0985" }, { word: "dice", base: "decir" }, { word: "que", base: "que" }, { word: "hoy", ref: "es-0331" }, { word: "es", ref: "es-0022" }, { word: "lunes", ref: "es-0958" }]
     confusables: [{ id: "calendar", ref: "es-0984", kind: "word" }, { id: "date", ref: "es-0846", kind: "word" }]
   - id: "es-1003"
+    notes:
+      - { id: "n1", kind: "note" }
     target: "El próximo mes es agosto."
     ipa: "el ˈpɾoksimo mes es aˈɡosto"
     phonetic: "[el ˈpɾoksimo mes es aˈɣost̪o]"
@@ -92,6 +96,8 @@ cards:
     bases: [{ word: "En", base: "en" }, { word: "verano", ref: "es-0982" }, { word: "hace", ref: "es-0025" }, { word: "calor", base: "calor" }]
     confusables: [{ id: "winter", ref: "es-0990", kind: "word" }, { id: "spring", ref: "es-0981", kind: "word" }]
   - id: "es-1005"
+    notes:
+      - { id: "n1", kind: "behaviour" }
     target: "Hoy no es fiesta."
     ipa: "oj no es ˈfjesta"
     phonetic: "[oj no es ˈfjest̪a]"
