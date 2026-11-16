@@ -15,7 +15,7 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "ᱦᱮᱸ", base: "ᱦᱮᱸ", reading: "hẽ" }]
   - id: "sat-0102"
     target: "ᱤᱧ"
     reading: "iñ"
@@ -24,7 +24,7 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "ᱤᱧ", base: "ᱤᱧ", reading: "iñ" }]
   - id: "sat-0103"
     target: "ᱟᱢ"
     reading: "am"
@@ -33,7 +33,7 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "ᱟᱢ", base: "ᱟᱢ", reading: "am" }]
   - id: "sat-0104"
     target: "ᱟᱡ"
     reading: "ac'"
@@ -42,7 +42,7 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "ᱟᱡ", base: "ᱟᱡ", reading: "ac'" }]
   - id: "sat-0105"
     target: "ᱟᱞᱮ"
     reading: "ale"
@@ -52,7 +52,7 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "ᱟᱞᱮ", base: "ᱟᱞᱮ", reading: "ale" }]
   - id: "sat-0106"
     target: "ᱟᱠᱳ"
     reading: "ako"
@@ -196,7 +196,7 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "ᱫᱟᱜ", base: "ᱫᱟᱜ", reading: "dak'" }]
   - id: "sat-0123"
     target: "ᱫᱟᱠᱟ"
     reading: "dakā"
@@ -223,7 +223,7 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "ᱡᱚᱢᱟᱜ", base: "ᱡᱚᱢᱟᱜ", reading: "jo̠mak'" }]
   - id: "sat-0125"
     target: "ᱨᱩᱴᱤ"
     reading: "ruṭi"
@@ -248,7 +248,7 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "ᱧᱩᱛᱩᱢ", base: "ᱧᱩᱛᱩᱢ", reading: "ñutum" }]
   - id: "sat-0128"
     target: "ᱵᱩᱜᱤ"
     reading: "bugi"
@@ -257,7 +257,7 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "ᱵᱩᱜᱤ", base: "ᱵᱩᱜᱤ", reading: "bugi" }]
   - id: "sat-0129"
     target: "ᱢᱟᱨᱟᱝ"
     reading: "maraṅ"
@@ -282,7 +282,7 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "ᱱᱚᱛᱮ", base: "ᱱᱚᱛᱮ", reading: "no̠te" }]
   - id: "sat-0132"
     target: "ᱚᱱᱛᱮ"
     reading: "o̠nte"
@@ -291,7 +291,7 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "ᱚᱱᱛᱮ", base: "ᱚᱱᱛᱮ", reading: "o̠nte" }]
   - id: "sat-0133"
     target: "ᱚᱠᱚᱭ"
     reading: "o̠ko̠y"
@@ -300,7 +300,7 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "ᱚᱠᱚᱭ", base: "ᱚᱠᱚᱭ", reading: "o̠ko̠y" }]
   - id: "sat-0134"
     target: "ᱚᱠᱟᱨᱮ"
     reading: "o̠kare"
@@ -309,7 +309,7 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "ᱚᱠᱟᱨᱮ", base: "ᱚᱠᱟᱨᱮ", reading: "o̠kare" }]
   - id: "sat-0135"
     target: "ᱪᱮᱫ"
     reading: "cet'"
@@ -318,7 +318,7 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "ᱪᱮᱫ", base: "ᱪᱮᱫ", reading: "cet'" }]
   - id: "sat-0136"
     target: "ᱡᱚᱦᱟᱨ"
     reading: "jo̠har"
@@ -327,4 +327,4 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "ᱡᱚᱦᱟᱨ", base: "ᱡᱚᱦᱟᱨ", reading: "jo̠har" }]
