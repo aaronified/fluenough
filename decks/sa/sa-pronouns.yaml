@@ -12,7 +12,7 @@ cards:
     reading: "saḥ"
     ipa: "səh"
     pos: "pronoun"
-    tags: ["pronoun"]
+    tags: ["pronoun", "pronoun-declension"]
     notes:
       - { id: "n1", kind: "behaviour" }
     bases: "self"
@@ -34,7 +34,7 @@ cards:
     reading: "sā"
     ipa: "saː"
     pos: "pronoun"
-    tags: ["pronoun"]
+    tags: ["pronoun", "pronoun-declension"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
@@ -54,7 +54,7 @@ cards:
     reading: "tat"
     ipa: "t̪ət̪"
     pos: "pronoun"
-    tags: ["pronoun"]
+    tags: ["pronoun", "pronoun-declension"]
     notes:
       - { id: "n1", kind: "behaviour" }
     bases: "self"
@@ -74,7 +74,7 @@ cards:
     reading: "ayam"
     ipa: "əjəm"
     pos: "pronoun"
-    tags: ["pronoun"]
+    tags: ["pronoun", "pronoun-declension"]
     notes:
       - { id: "n1", kind: "behaviour" }
     bases: "self"
@@ -96,7 +96,7 @@ cards:
     reading: "iyam"
     ipa: "ijəm"
     pos: "pronoun"
-    tags: ["pronoun"]
+    tags: ["pronoun", "pronoun-declension"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
@@ -118,7 +118,7 @@ cards:
     reading: "idam"
     ipa: "id̪əm"
     pos: "pronoun"
-    tags: ["pronoun"]
+    tags: ["pronoun", "pronoun-declension"]
     notes:
       - { id: "n1", kind: "behaviour" }
     bases: "self"
@@ -140,7 +140,7 @@ cards:
     reading: "eṣaḥ"
     ipa: "eːʂəh"
     pos: "pronoun"
-    tags: ["pronoun"]
+    tags: ["pronoun", "pronoun-declension"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
@@ -162,7 +162,7 @@ cards:
     reading: "eṣā"
     ipa: "eːʂaː"
     pos: "pronoun"
-    tags: ["pronoun"]
+    tags: ["pronoun", "pronoun-declension"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
@@ -182,7 +182,7 @@ cards:
     reading: "etat"
     ipa: "eːt̪ət̪"
     pos: "pronoun"
-    tags: ["pronoun"]
+    tags: ["pronoun", "pronoun-declension"]
     notes:
       - { id: "n1", kind: "behaviour" }
     bases: "self"
@@ -202,7 +202,7 @@ cards:
     reading: "yaḥ"
     ipa: "jəh"
     pos: "pronoun"
-    tags: ["pronoun", "relative"]
+    tags: ["pronoun", "relative", "pronoun-declension"]
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "note" }
@@ -223,7 +223,7 @@ cards:
     reading: "yā"
     ipa: "jaː"
     pos: "pronoun"
-    tags: ["pronoun", "relative"]
+    tags: ["pronoun", "relative", "pronoun-declension"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
@@ -243,7 +243,7 @@ cards:
     reading: "yat"
     ipa: "jət̪"
     pos: "pronoun"
-    tags: ["pronoun", "relative"]
+    tags: ["pronoun", "relative", "pronoun-declension"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
@@ -263,7 +263,7 @@ cards:
     reading: "vayam"
     ipa: "ʋəjəm"
     pos: "pronoun"
-    tags: ["pronoun"]
+    tags: ["pronoun", "pronoun-declension"]
     notes:
       - { id: "n1", kind: "behaviour" }
     bases: "self"
@@ -285,7 +285,7 @@ cards:
     reading: "yūyam"
     ipa: "juːjəm"
     pos: "pronoun"
-    tags: ["pronoun"]
+    tags: ["pronoun", "pronoun-declension"]
     notes:
       - { id: "n1", kind: "behaviour" }
     bases: "self"
@@ -302,3 +302,54 @@ cards:
         bases:
           - { word: "कुरुथ", base: "कृ", reading: "kṛ" }
           - { word: "यूयं", base: "यूयम्", reading: "yūyam" }
+  - id: "sa-1024"
+    target: "सर्वा"
+    reading: "sarvā"
+    ipa: "sərʋaː"
+    pos: "adj"
+    tags: ["quantity", "pronoun-declension"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "सर्वा", ref: "sa-1503" }
+    examples:
+      - target: "सर्वा नारी"
+        reading: "sarvā nārī"
+        ipa: "sərʋaː naːriː"
+      - target: "सर्वा भाषा"
+        reading: "sarvā bhāṣā"
+        ipa: "sərʋaː bʱaːʂaː"
+  - id: "sa-1025"
+    target: "सर्वम्"
+    reading: "sarvam"
+    ipa: "sərʋəm"
+    pos: "adj"
+    tags: ["quantity", "pronoun-declension"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "सर्वम्", ref: "sa-1503" }
+    examples:
+      - target: "तत् सर्वम्"
+        reading: "tat sarvam"
+        ipa: "t̪ət̪ sərʋəm"
+      - target: "एतत् सर्वम्"
+        reading: "etat sarvam"
+        ipa: "eːt̪ət̪ sərʋəm"
+  - id: "sa-1026"
+    target: "का"
+    reading: "kā"
+    ipa: "kaː"
+    pos: "pronoun"
+    tags: ["pronoun", "question", "pronoun-declension"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "का", ref: "sa-1001" }
+    examples:
+      - target: "का नारी"
+        reading: "kā nārī"
+        ipa: "kaː naːriː"
+      - target: "का भाषा"
+        reading: "kā bhāṣā"
+        ipa: "kaː bʱaːʂaː"

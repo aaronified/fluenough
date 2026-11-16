@@ -13,8 +13,9 @@
 # the commit that builds it; unit ids are permanent once a deck is written.
 #
 # Written so far: unit 1 (the phrasebook and the first words), the sound
-# differences, the script decks, spelling, and the grammar units for the case
-# system, a-stems and the present system (with the first-class verbs). Every
+# differences, the script decks, spelling, the verb units, and the grammar units
+# for the case system, a-stems, the present system (with the first-class verbs),
+# vowel sandhi, pronouns and the middle voice (atmanepada). Every
 # other unit is planned, so the course teaches each as "Coming" until its
 # deck is written. The passages are placeholders: each describes its unit's
 # theme or grammar and is reworded when the passage is written.
@@ -42,7 +43,7 @@ schema: 1
 kind: "path"
 id: "sa-path"
 language: "sa"
-description: "Classical Sanskrit: the path to B1, a reading course with a heavy focus on Panini's grammar. Written so far: the phrasebook and first words, the script and sound decks, the case system, a-stems and present-system grammar units; the other units are planned."
+description: "Classical Sanskrit: the path to B1, a reading course with a heavy focus on Panini's grammar. Written so far: the phrasebook and first words, the script and sound decks, the verb units, and the grammar units for the case system, a-stems, the present system, vowel sandhi, pronouns and the middle voice; the other units are planned."
 genders: ["m", "f", "n"]
 levels: { A1: 400, A2: 600, B1: 900 }
 alphabet:
@@ -61,7 +62,7 @@ units:
   - decks: ["sa-questions"]
     words: 7
   - decks: ["sa-pronouns"]
-    words: 14
+    words: 17
   - decks: ["sa-family"]
     words: 16
   - decks: ["sa-numbers-1-20"]
@@ -70,7 +71,8 @@ units:
   - ["sa-script-conjuncts", "sa-script-reading", "sa-spelling"]
   - decks: ["sa-about-me"]
     words: 5
-  - planned: { id: "sa-everyday-verbs", theme: "everyday-verbs", words: 24 }
+  - decks: ["sa-everyday-verbs"]
+    words: 24
     listening_passages:
       - { id: "everyday-verbs-heard", text: { "en": "A short passage in Classical Sanskrit on the theme everyday verbs of the first class, read aloud" } }
     reading_passages:
@@ -94,7 +96,8 @@ units:
       - { id: "grammar-present-system-heard", text: { "en": "A short passage in Classical Sanskrit showing present system, verb classes, read aloud" } }
     reading_passages:
       - { id: "grammar-present-system-text", text: { "en": "A short written text in Classical Sanskrit showing present system, verb classes" } }
-  - planned: { id: "sa-grammar-sandhi-vowel", grammar: ["vowel-sandhi"] }
+  - decks: ["sa-grammar-sandhi-vowel"]
+    grammar: ["sandhi-vowel"]
     listening_passages:
       - { id: "grammar-sandhi-vowel-heard", text: { "en": "A short passage in Classical Sanskrit showing vowel sandhi, read aloud" } }
     reading_passages:
@@ -109,17 +112,20 @@ units:
     words: 12
   - decks: ["sa-location"]
     words: 9
-  - planned: { id: "sa-more-verbs", theme: "more-verbs", words: 24 }
+  - decks: ["sa-more-verbs"]
+    words: 24
     listening_passages:
       - { id: "more-verbs-heard", text: { "en": "A short passage in Classical Sanskrit on the theme more verbs, read aloud" } }
     reading_passages:
       - { id: "more-verbs-text", text: { "en": "A short written text in Classical Sanskrit on the theme more verbs" } }
-  - planned: { id: "sa-grammar-pronouns", grammar: ["pronoun-declension"] }
+  - decks: ["sa-grammar-pronouns"]
+    grammar: ["pron-nominative", "pron-accusative", "pron-instrumental", "pron-dative", "pron-ablative", "pron-genitive", "pron-locative", "pron-vocative", "pron-enclitic"]
     listening_passages:
       - { id: "grammar-pronouns-heard", text: { "en": "A short passage in Classical Sanskrit showing pronoun declension, read aloud" } }
     reading_passages:
       - { id: "grammar-pronouns-text", text: { "en": "A short written text in Classical Sanskrit showing pronoun declension" } }
-  - planned: { id: "sa-grammar-atmanepada", grammar: ["atmanepada"] }
+  - decks: ["sa-grammar-atmanepada"]
+    grammar: ["atm-third", "atm-second", "atm-first", "par-third", "par-second", "par-first"]
     listening_passages:
       - { id: "grammar-atmanepada-heard", text: { "en": "A short passage in Classical Sanskrit showing atmanepada, read aloud" } }
     reading_passages:
