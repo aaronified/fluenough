@@ -202,7 +202,8 @@ units:
       - { id: "grammar-gana-2-heard", text: { "en": "A short passage in Classical Sanskrit showing gana 2, read aloud" } }
     reading_passages:
       - { id: "grammar-gana-2-text", text: { "en": "A short written text in Classical Sanskrit showing gana 2" } }
-  - planned: { id: "sa-grammar-other-stems", grammar: ["other-noun-stems"] }
+  - decks: ["sa-grammar-other-stems"]
+    grammar: ["other-nominative", "other-accusative", "other-instrumental", "other-dative", "other-ablative", "other-genitive", "other-locative", "other-vocative"]
     listening_passages:
       - { id: "grammar-other-stems-heard", text: { "en": "A short passage in Classical Sanskrit showing other noun stems, read aloud" } }
     reading_passages:
