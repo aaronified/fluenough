@@ -1,0 +1,43 @@
+schema: 1
+id: "kn-en-reading-weather"
+name: "Reading: monsoon message"
+kind: reading
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short passage written for this course, using only the words of its unit and the units before it. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-weather-message"
+    title: "Monsoon message"
+    sentences:
+      - text: "ಗೆಳೆಯ, ಮಳೆಗಾಲ ಬಂದಿದೆ."
+        reading: "geḷeya, maḷegāla bandide."
+        ipa: "ɡeɭeja maɭeɡaːla band̪id̪e"
+      - text: "ಇವತ್ತು ಮೋಡ ಇದೆ ಮತ್ತು ಗಾಳಿ ಬೀಸುತ್ತಿದೆ."
+        reading: "ivattu mōḍa ide mattu gāḷi bīsuttide."
+        ipa: "iʋat̪t̪u moːɖa id̪e mat̪t̪u ɡaːɭi biːsut̪t̪id̪e"
+      - text: "ಬೆಳಿಗ್ಗೆ ಚಳಿ ಇತ್ತು."
+        reading: "beḷigge caḷi ittu."
+        ipa: "beɭiɡɡe tʃaɭi it̪t̪u"
+      - text: "ಸಂಜೆ ಮಳೆ ಬರುತ್ತದೆ."
+        reading: "sañje maḷe baruttade."
+        ipa: "saɲdʒe maɭe barut̪t̪ad̪e"
+      - text: "ಬೀದಿಯಲ್ಲಿ ಕೆಸರು ಇದೆ."
+        reading: "bīdiyalli kesaru ide."
+        ipa: "biːd̪ijalli kesaru id̪e"
+    questions:
+      - id: "kn-9679"
+        prompt: { en: "What will happen in the evening?" }
+        options:
+          - { en: "Rain" }
+          - { en: "Snow" }
+          - { en: "Sunshine" }
+        answer: 1
+      - id: "kn-9680"
+        prompt: { en: "It was cold in the morning." }
+        answer: true
+      - id: "kn-9681"
+        prompt: { en: "There is mud in the street." }
+        answer: true

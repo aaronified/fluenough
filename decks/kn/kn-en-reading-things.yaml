@@ -1,0 +1,43 @@
+schema: 1
+id: "kn-en-reading-things"
+name: "Reading: lost property list"
+kind: reading
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short passage written for this course, using only the words of its unit and the units before it. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-lost-property-list"
+    title: "Lost property list"
+    sentences:
+      - text: "ಒಂದು ಬ್ಯಾಗ್ ಇಲ್ಲಿ ಇದೆ."
+        reading: "ondu byāg illi ide."
+        ipa: "ond̪u bjaːɡ illi id̪e"
+      - text: "ಬ್ಯಾಗ್ ಒಳಗೆ ಒಂದು ಪುಸ್ತಕ ಮತ್ತು ಒಂದು ಪೆನ್ನು ಇದೆ."
+        reading: "byāg oḷage ondu pustaka mattu ondu pennu ide."
+        ipa: "bjaːɡ oɭaɡe ond̪u pust̪aka mat̪t̪u ond̪u pennu id̪e"
+      - text: "ಒಂದು ಛತ್ರಿ ಕೂಡ ಇದೆ."
+        reading: "ondu chatri kūḍa ide."
+        ipa: "ond̪u tʃʰat̪ri kuːɖa id̪e"
+      - text: "ಗಡಿಯಾರ ಇಲ್ಲ."
+        reading: "gaḍiyāra illa."
+        ipa: "ɡaɖijaːra illa"
+      - text: "ಯಾರದು? ಹೇಳಿ."
+        reading: "yāradu? hēḷi."
+        ipa: "jaːrad̪u heːɭi"
+    questions:
+      - id: "kn-9676"
+        prompt: { en: "What is listed with the book?" }
+        options:
+          - { en: "A pen" }
+          - { en: "A bed" }
+          - { en: "A cup" }
+        answer: 1
+      - id: "kn-9677"
+        prompt: { en: "The list has an umbrella." }
+        answer: true
+      - id: "kn-9678"
+        prompt: { en: "A watch is on the list." }
+        answer: false
