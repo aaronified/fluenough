@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.11.0] - 2026-11-16
+
 - **No more boxes on script buttons, and no typing in sitelen pona.** The script buttons on Languages draw their glyph in the script's downloaded font, or the first letter of its name until it arrives, and a Toki Pona learner who reads sitelen pona answers in Latin letters, since no keyboard types it.
 - **Toki Pona in sitelen pona.** Toki Pona now asks whether you read it in Latin letters, in sitelen pona or both, and shows every word and example of its vocabulary decks in the glyphs you choose, drawn in a font that downloads with the course.
 - **Words quoted in a sentence use the script's font too.** A Telugu, Hindi, Japanese or other deck word quoted in feedback, a warning or a review sheet is now drawn in the downloaded font of its script, not your phone's.
