@@ -300,7 +300,7 @@ cards:
     tags: ["place"]
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "di", base: "di" }, { word: "sini", base: "sini" }]
     examples:
       - { target: "Kami di sini.", ipa: "ˈkami di ˈsini", bases: [{ word: "Kami", base: "kami" }, { word: "di", base: "di" }, { word: "sini", base: "sini" }] }
       - { target: "Duduk di sini.", ipa: "ˈduduk di ˈsini", bases: [{ word: "Duduk", base: "duduk" }, { word: "di", base: "di" }, { word: "sini", base: "sini" }] }
@@ -311,7 +311,7 @@ cards:
     tags: ["place"]
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "di", base: "di" }, { word: "sana", base: "sana" }]
     examples:
       - { target: "Toiletnya di sana.", ipa: "toˈiletɲa di ˈsana", bases: [{ word: "Toiletnya", base: "toilet" }, { word: "di", base: "di" }, { word: "sana", base: "sana" }] }
       - { target: "Rumah saya di sana.", ipa: "ˈrumah ˈsaja di ˈsana", bases: [{ word: "Rumah", base: "rumah" }, { word: "saya", base: "saya" }, { word: "di", base: "di" }, { word: "sana", base: "sana" }] }

@@ -26,6 +26,8 @@ cards:
     pos: "phrase"
     tags: ["courtesy"]
     phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
     bases: [{ word: "selamat", base: "selamat" }, { word: "malam", base: "malam" }]
   - id: "id-0004"
     target: "selamat tidur"
@@ -47,6 +49,8 @@ cards:
     pos: "phrase"
     tags: ["courtesy"]
     phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
     bases: [{ word: "tolong", base: "tolong" }]
   - id: "id-0007"
     target: "terima kasih"
@@ -61,7 +65,7 @@ cards:
     pos: "phrase"
     tags: ["courtesy"]
     phrasebook: true
-    bases: [{ word: "sama-sama", base: "sama" }]
+    bases: [{ word: "sama", base: "sama" }]
   - id: "id-0009"
     target: "maaf"
     ipa: "ˈmaʔaf"
@@ -117,6 +121,8 @@ cards:
     pos: "phrase"
     tags: ["help"]
     phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
     bases: [{ word: "apa", base: "apa" }, { word: "kamu", base: "kamu" }, { word: "bisa", base: "bisa" }, { word: "bahasa", base: "bahasa" }, { word: "Inggris", base: "Inggris" }]
   - id: "id-0017"
     target: "siapa nama kamu?"
