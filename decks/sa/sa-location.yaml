@@ -59,14 +59,15 @@ cards:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "note" }
       - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
     bases:
       - { word: "बहिः", base: "बहिस्", reading: "bahis" }
     examples:
-      - target: "गृहात् बहिः"
-        reading: "gṛhāt bahiḥ"
-        ipa: "ɡr̩ɦaːt̪ bəɦih"
+      - target: "गृहाद् बहिः"
+        reading: "gṛhād bahiḥ"
+        ipa: "ɡr̩ɦaːd̪ bəɦih"
         bases:
-          - { word: "गृहात्", base: "गृह", reading: "gṛha" }
+          - { word: "गृहाद्", base: "गृह", reading: "gṛha" }
           - { word: "बहिः", base: "बहिस्", reading: "bahis" }
       - target: "बहिर् बालः"
         reading: "bahir bālaḥ"
@@ -83,16 +84,15 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "note" }
-      - { id: "n3", kind: "note" }
     bases:
       - { word: "अन्तः", base: "अन्तर्", reading: "antar" }
     examples:
-      - target: "गृहस्य अन्तः"
-        reading: "gṛhasya antaḥ"
-        ipa: "ɡr̩ɦəsjə ənt̪əh"
+      - target: "अन्तर् गृहस्य"
+        reading: "antar gṛhasya"
+        ipa: "ənt̪ər ɡr̩ɦəsjə"
         bases:
+          - { word: "अन्तर्", base: "अन्तर्", reading: "antar" }
           - { word: "गृहस्य", base: "गृह", reading: "gṛha" }
-          - { word: "अन्तः", base: "अन्तर्", reading: "antar" }
       - target: "अन्तर् जलम्"
         reading: "antar jalam"
         ipa: "ənt̪ər dʒələm"

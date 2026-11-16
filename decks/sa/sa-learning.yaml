@@ -17,23 +17,22 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "note" }
-      - { id: "n3", kind: "note" }
     bases:
       - { word: "शिक्षा", base: "शिक्षा", reading: "śikṣā" }
     examples:
-      - target: "शिक्षा उत्तमा"
-        reading: "śikṣā uttamā"
-        ipa: "ʃikʂaː ut̪t̪əmaː"
+      - target: "उत्तमा शिक्षा"
+        reading: "uttamā śikṣā"
+        ipa: "ut̪t̪əmaː ʃikʂaː"
         bases:
-          - { word: "शिक्षा", base: "शिक्षा", reading: "śikṣā" }
           - { word: "उत्तमा", base: "उत्तम", reading: "uttama" }
-      - target: "विद्यालये शिक्षा अस्ति"
-        reading: "vidyālaye śikṣā asti"
-        ipa: "ʋid̪jaːləjeː ʃikʂaː əst̪i"
+          - { word: "शिक्षा", base: "शिक्षा", reading: "śikṣā" }
+      - target: "अस्ति विद्यालये शिक्षा"
+        reading: "asti vidyālaye śikṣā"
+        ipa: "əst̪i ʋid̪jaːləjeː ʃikʂaː"
         bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
           - { word: "विद्यालये", base: "विद्यालय", reading: "vidyālaya" }
           - { word: "शिक्षा", base: "शिक्षा", reading: "śikṣā" }
-          - { word: "अस्ति", base: "अस्", reading: "as" }
   - id: "sa-1840"
     target: "अध्यापकः"
     reading: "adhyāpakaḥ"
@@ -54,13 +53,13 @@ cards:
         bases:
           - { word: "अध्यापक", base: "अध्यापक", reading: "adhyāpaka" }
           - { word: "उत्तमः", base: "उत्तम", reading: "uttama" }
-      - target: "नगरे अध्यापको ऽस्ति"
-        reading: "nagare adhyāpako 'sti"
-        ipa: "nəɡəreː əd̪ʱjaːpəkoː st̪i"
+      - target: "अध्यापको भवति नगरे"
+        reading: "adhyāpako bhavati nagare"
+        ipa: "əd̪ʱjaːpəkoː bʱəʋət̪i nəɡəreː"
         bases:
-          - { word: "नगरे", base: "नगर", reading: "nagara" }
           - { word: "अध्यापको", base: "अध्यापक", reading: "adhyāpaka" }
-          - { word: "ऽस्ति", base: "अस्", reading: "as" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+          - { word: "नगरे", base: "नगर", reading: "nagara" }
   - id: "sa-1841"
     target: "लिपिः"
     reading: "lipiḥ"
@@ -216,13 +215,13 @@ cards:
         bases:
           - { word: "अर्थो", base: "अर्थ", reading: "artha" }
           - { word: "गभीरः", base: "गभीर", reading: "gabhīra" }
-      - target: "वाक्ये अर्थो ऽस्ति"
-        reading: "vākye artho 'sti"
-        ipa: "ʋaːkjeː ərt̪ʰoː st̪i"
+      - target: "अर्थो भवति वाक्ये"
+        reading: "artho bhavati vākye"
+        ipa: "ərt̪ʰoː bʱəʋət̪i ʋaːkjeː"
         bases:
-          - { word: "वाक्ये", base: "वाक्य", reading: "vākya" }
           - { word: "अर्थो", base: "अर्थ", reading: "artha" }
-          - { word: "ऽस्ति", base: "अस्", reading: "as" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+          - { word: "वाक्ये", base: "वाक्य", reading: "vākya" }
   - id: "sa-1847"
     target: "शब्दः"
     reading: "śabdaḥ"
@@ -351,13 +350,13 @@ cards:
         bases:
           - { word: "उदाहरणं", base: "उदाहरण", reading: "udāharaṇa" }
           - { word: "सरलम्", base: "सरल", reading: "sarala" }
-      - target: "वाक्ये उदाहरणम् अस्ति"
-        reading: "vākye udāharaṇam asti"
-        ipa: "ʋaːkjeː ud̪aːɦərəɳəm əst̪i"
+      - target: "उदाहरणं भवति वाक्ये"
+        reading: "udāharaṇaṃ bhavati vākye"
+        ipa: "ud̪aːɦərəɳəm bʱəʋət̪i ʋaːkjeː"
         bases:
+          - { word: "उदाहरणं", base: "उदाहरण", reading: "udāharaṇa" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
           - { word: "वाक्ये", base: "वाक्य", reading: "vākya" }
-          - { word: "उदाहरणम्", base: "उदाहरण", reading: "udāharaṇa" }
-          - { word: "अस्ति", base: "अस्", reading: "as" }
   - id: "sa-1852"
     target: "परीक्षा"
     reading: "parīkṣā"
@@ -368,7 +367,6 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "note" }
-      - { id: "n3", kind: "note" }
     bases:
       - { word: "परीक्षा", base: "परीक्षा", reading: "parīkṣā" }
     examples:
@@ -378,13 +376,13 @@ cards:
         bases:
           - { word: "परीक्षा", base: "परीक्षा", reading: "parīkṣā" }
           - { word: "कठिना", base: "कठिन", reading: "kaṭhina" }
-      - target: "विद्यालये परीक्षा अस्ति"
-        reading: "vidyālaye parīkṣā asti"
-        ipa: "ʋid̪jaːləjeː pəriːkʂaː əst̪i"
+      - target: "अस्ति विद्यालये परीक्षा"
+        reading: "asti vidyālaye parīkṣā"
+        ipa: "əst̪i ʋid̪jaːləjeː pəriːkʂaː"
         bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
           - { word: "विद्यालये", base: "विद्यालय", reading: "vidyālaya" }
           - { word: "परीक्षा", base: "परीक्षा", reading: "parīkṣā" }
-          - { word: "अस्ति", base: "अस्", reading: "as" }
   - id: "sa-1853"
     target: "कथा"
     reading: "kathā"
@@ -395,7 +393,6 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "note" }
-      - { id: "n3", kind: "note" }
     bases:
       - { word: "कथा", base: "कथा", reading: "kathā" }
     examples:
@@ -405,13 +402,13 @@ cards:
         bases:
           - { word: "कथा", base: "कथा", reading: "kathā" }
           - { word: "सुन्दरा", base: "सुन्दर", reading: "sundara" }
-      - target: "ग्रामे कथा अस्ति"
-        reading: "grāme kathā asti"
-        ipa: "ɡraːmeː kət̪ʰaː əst̪i"
+      - target: "अस्ति ग्रामे कथा"
+        reading: "asti grāme kathā"
+        ipa: "əst̪i ɡraːmeː kət̪ʰaː"
         bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
           - { word: "ग्रामे", base: "ग्राम", reading: "grāma" }
           - { word: "कथा", base: "कथा", reading: "kathā" }
-          - { word: "अस्ति", base: "अस्", reading: "as" }
   - id: "sa-1854"
     target: "विषयः"
     reading: "viṣayaḥ"
@@ -449,7 +446,6 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "note" }
-      - { id: "n3", kind: "note" }
     bases:
       - { word: "मात्रा", base: "मात्रा", reading: "mātrā" }
     examples:
@@ -459,13 +455,13 @@ cards:
         bases:
           - { word: "मात्रा", base: "मात्रा", reading: "mātrā" }
           - { word: "दीर्घा", base: "दीर्घ", reading: "dīrgha" }
-      - target: "वाक्ये मात्रा अस्ति"
-        reading: "vākye mātrā asti"
-        ipa: "ʋaːkjeː maːt̪raː əst̪i"
+      - target: "अस्ति वाक्ये मात्रा"
+        reading: "asti vākye mātrā"
+        ipa: "əst̪i ʋaːkjeː maːt̪raː"
         bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
           - { word: "वाक्ये", base: "वाक्य", reading: "vākya" }
           - { word: "मात्रा", base: "मात्रा", reading: "mātrā" }
-          - { word: "अस्ति", base: "अस्", reading: "as" }
   - id: "sa-1856"
     target: "वाचनम्"
     reading: "vācanam"

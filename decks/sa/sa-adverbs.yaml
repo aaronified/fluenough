@@ -168,6 +168,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
       - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
     bases: "self"
     examples:
       - target: "स कदाचित् करोति"
@@ -176,9 +177,9 @@ cards:
         bases:
           - { word: "स", base: "सः", reading: "saḥ" }
           - { word: "करोति", base: "कृ", reading: "kṛ" }
-      - target: "सा कदाचित् जानाति"
-        reading: "sā kadācit jānāti"
-        ipa: "saː kəd̪aːtʃit̪ dʒaːnaːt̪i"
+      - target: "सा कदाचिज् जानाति"
+        reading: "sā kadācij jānāti"
+        ipa: "saː kəd̪aːtʃidʒ dʒaːnaːt̪i"
         bases:
           - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
   - id: "sa-1088"
@@ -189,8 +190,6 @@ cards:
     tags: ["time"]
     notes:
       - { id: "n1", kind: "usage" }
-      - { id: "n2", kind: "note" }
-      - { id: "n3", kind: "note" }
     bases: "self"
     examples:
       - target: "अद्य स करोति"
@@ -199,11 +198,11 @@ cards:
         bases:
           - { word: "स", base: "सः", reading: "saḥ" }
           - { word: "करोति", base: "कृ", reading: "kṛ" }
-      - target: "अद्य अहं जानामि"
-        reading: "adya ahaṃ jānāmi"
-        ipa: "əd̪jə əɦəm dʒaːnaːmi"
+      - target: "अहम् अद्य जानामि"
+        reading: "aham adya jānāmi"
+        ipa: "əɦəm əd̪jə dʒaːnaːmi"
         bases:
-          - { word: "अहं", base: "अहम्", reading: "aham" }
+          - { word: "अहम्", base: "अहम्", reading: "aham" }
           - { word: "जानामि", base: "ज्ञा", reading: "jñā" }
   - id: "sa-1089"
     target: "श्वः"
