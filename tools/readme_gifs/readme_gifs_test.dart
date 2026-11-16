@@ -13,6 +13,7 @@
 // rather than the test font's boxes: Roboto merged with Noto Sans Bengali,
 // from README_GIFS_FONTS, and the icons from the Flutter SDK. The commands
 // are in tools/README.md.
+import 'dart:async';
 import 'dart:io';
 import 'dart:math' as math;
 import 'dart:ui' as ui;
@@ -402,9 +403,13 @@ Future<void> _learningSession(
     final navigator = tester.state<NavigatorState>(
       find.byType(Navigator).first,
     );
-    replace
-        ? navigator.pushReplacementNamed(AppRoutes.drill, arguments: request)
-        : navigator.pushNamed(AppRoutes.drill, arguments: request);
+    if (replace) {
+      unawaited(
+        navigator.pushReplacementNamed(AppRoutes.drill, arguments: request),
+      );
+    } else {
+      unawaited(navigator.pushNamed(AppRoutes.drill, arguments: request));
+    }
     // The page builds its queue after real asynchronous work, which only
     // runs outside the test's fake clock: wait for it there. A lesson put in
     // the place of another first lets the old page go.
