@@ -296,29 +296,24 @@ const nav=on=>`<div class="nav">${['Today','Decks','Progress','Settings'].map(x=
 const lvtag=l=>`<span class="tag lv">${LN[l]}</span>`+(gate(l)=='far'?`<span class="tag far">${ic('lock',12)} Unlocks at ${LN[l]}</span>`:'');
 function deckRow(d){return `<button class="rrow"><span class="ico">${ic(d.k=='Proverbs'?'quote':'deck',22)}</span><span class="tx"><span class="nm">${d.n}</span><span class="sub">${d.k} · ${d.c} items</span><span class="rt"><span class="tag kind">${d.k}</span>${lvtag(d.l)}</span></span></button>`}
 function workRow(w){const far=gate(w.l)=='far';return `<button class="rrow"><span class="ico">${ic(KI[w.k],22)}</span><span class="tx"><span class="nm script">${w.t}</span>${w.r?`<span class="sub">${w.r}</span>`:''}<span class="sub">${KS[w.k]} · ${w.y}</span><span class="rt"><span class="tag kind">${KS[w.k]}</span><span class="tag lv">${LN[w.l]}</span></span>${far?`<span class="sub">Its questions join your lessons at ${LN[w.l]}</span>`:''}</span></button>`}
-/* the culture view: its own tab bar by kind, only kinds with matches */
-function tabsOf(c,q){const d=DATA[c];const ds=d.decks.filter(x=>matches(q,x.n,x.k));const ws=d.works.filter(x=>matches(q,x.t,x.r,KS[x.k],''+x.y));
- const t=[];if(ds.length)t.push({id:'decks',n:'Culture decks',c:ds.length});
- for(const k of Object.keys(KP)){const n=ws.filter(w=>w.k==k).length;if(n)t.push({id:k,n:KP[k],c:n})}
- return {t,ds,ws}}
+/* the culture list: plain section headers inside the one list; the one Decks search filters it */
 function culBody(c,q,id){
- const {t,ds,ws}=tabsOf(c,q);
- if(!t.length)return `<div class="empty">${ic('search')}<p class="big">Nothing found for “${q.replace(/</g,'&lt;')}”</p><p class="t-sm">The search looks in deck names, titles, readings and years. Nothing is left out because of your level.</p><button class="btn tonal" data-clear="${id}" style="margin:12px auto 0">Clear search</button></div>`;
- let sel=S.tab[id];if(!t.some(x=>x.id==sel))sel=t[0].id;
- const by=(a,b)=>a.l-b.l;
- const rows=sel=='decks'?[...ds].sort(by).map(deckRow).join(''):ws.filter(w=>w.k==sel).sort(by).map(workRow).join('');
- return `<div class="tabs chg" role="tablist" data-id="${id}">${t.map(x=>`<button class="tab" role="tab" data-tab="${x.id}" aria-selected="${x.id==sel}">${x.n} <span class="n">${x.c}</span></button>`).join('')}</div><p class="hint" style="margin-top:8px">${sel=='decks'?'Everything opens to read. Learn opens at the deck’s own level.':'Not reproduced in the app. Open one for the briefing and where to find it.'}</p>${rows}`;
+ const d=DATA[c];const ds=d.decks.filter(x=>matches(q,x.n,x.k));const ws=d.works.filter(x=>matches(q,x.t,x.r,KS[x.k],''+x.y));
+ if(!ds.length&&!ws.length)return `<div class="empty">${ic('search')}<p class="big">No decks match that search.</p><p class="t-sm">The search looks in deck names, titles, readings and years. Nothing is left out because of your level.</p><button class="btn tonal" data-clear="${id}" style="margin:12px auto 0">Clear</button></div>`;
+ const by=(a,b)=>a.l-b.l;const sec=(t,n,rows)=>n?`<p class="t-lab chg">${t} <span style="font-weight:400">· ${n}</span></p>${rows}`:'';
+ let out=sec('Culture decks',ds.length,[...ds].sort(by).map(deckRow).join(''));
+ for(const k of Object.keys(KP)){const w=ws.filter(x=>x.k==k);out+=sec(KP[k],w.length,w.sort(by).map(workRow).join(''))}
+ return out;
 }
-function cultureView(id,cap,q){
- const d=DATA[S.c];
- const top=`<div class="sbox chg"><span style="color:var(--onSv)">${ic('search')}</span><input class="q" data-q="${id}" aria-label="Search culture in ${d.name}" placeholder="Search culture in ${d.name}" value="${(q||'').replace(/"/g,'&quot;')}"><button class="ib" style="width:40px;height:40px" data-clear="${id}" aria-label="Clear">${ic('close',20)}</button></div>`;
- return ph(cap,abar(d.name+' culture',true),'',nav('Decks'),'',id).replace('<div class="scroll"></div>',`<div class="scroll" style="padding:0"><div style="margin:0 -0px">${top}</div><div class="culbody" data-id="${id}" style="padding:0 16px">${culBody(S.c,q||'',id)}</div></div>`);
-}
-function decksScreen(){
- const d=DATA[S.c];
- const card=`<div class="card" style="flex-direction:column;align-items:stretch;gap:6px"><div style="display:flex;align-items:center;gap:8px"><p class="t-h" style="flex:1">${d.name} course</p><button class="ib" aria-label="Look for deck updates">${ic('hist')}</button></div><div class="bar"><i style="width:${S.lv=='A1'?'22':S.lv=='A2'?'48':'74'}%"></i></div><p class="t-sm">About ${S.lv=='A1'?'41':S.lv=='A2'?'28':'12'} hours left in the decks so far · 9 hours spent</p><div style="display:flex;gap:8px;margin-top:4px"><button class="btn out chg" style="flex:none;min-height:48px;border-radius:24px;font-size:calc(14px*var(--t));padding:6px 16px">${ic('quote',20)} Culture</button></div></div>`;
+function decksScreen(id,cap,mode,q){
+ const d=DATA[S.c];const cul=mode=='culture';
+ const pct=S.lv=='A1'?'22':S.lv=='A2'?'48':'74';
+ const btn=cul?`<button class="btn out chg upd" style="flex:none;min-height:48px;border-radius:24px;font-size:calc(14px*var(--t));padding:6px 16px">${ic('back',20)} Deck path</button>`:`<button class="btn out chg" style="flex:none;min-height:48px;border-radius:24px;font-size:calc(14px*var(--t));padding:6px 16px">${ic('quote',20)} Culture</button>`;
+ const card=`<div class="card" style="flex-direction:column;align-items:stretch;gap:6px"><div style="display:flex;align-items:center;gap:8px"><p class="t-h" style="flex:1">${d.name} course</p><button class="ib" aria-label="Look for deck updates">${ic('hist')}</button></div><div class="bar"><i style="width:${pct}%"></i></div><p class="t-sm">About ${S.lv=='A1'?'41':S.lv=='A2'?'28':'12'} hours left in the decks so far · 9 hours spent</p><div style="display:flex;gap:8px;margin-top:4px">${btn}</div></div>`;
  const row=(a,b)=>`<div class="card" style="padding:10px 16px;margin-bottom:6px"><div class="tx"><p class="t-h">${a}</p><p class="t-sm">${b}</p></div>${ic('chev')}</div>`;
- return ph('1 · Decks: the top card has a Culture button',abar('Decks'),`<div class="lbar"><span class="pill on">${d.name}</span><span class="pill">Hindustani</span></div><div class="sbox"><span style="color:var(--onSv)">${ic('search')}</span><span class="q" style="color:var(--onSv)">Search ${d.name}</span></div>${card}${row('A1 · Start','Units 1 to 12')}${row('A2 · Up next','Units 13 to 30')}${row('B1','Units 31 to 52')}`,nav('Decks'));
+ const search=`<div class="sbox"><span style="color:var(--onSv)">${ic('search')}</span><input class="q" ${cul?`data-q="${id}"`:'readonly'} aria-label="Search ${d.name}" placeholder="Search ${d.name}" value="${(q||'').replace(/"/g,'&quot;')}">${cul&&q?`<button class="ib" style="width:40px;height:40px" data-clear="${id}" aria-label="Clear search">${ic('close',20)}</button>`:''}</div>`;
+ const list=cul?`<div class="culbody" data-id="${id}">${culBody(S.c,q||'',id)}</div>`:`${row('A1 · Start','Units 1 to 12')}${row('A2 · Up next','Units 13 to 30')}${row('B1','Units 31 to 52')}`;
+ return ph(cap,abar('Decks'),`<div class="lbar"><span class="pill on">${d.name}</span><span class="pill">Hindustani</span></div>${search}${card}${list}`,nav('Decks'),'',id);
 }
 function sw(on){return `<span class="sw2 ${on?'on':''}"></span>`}
 function sheetPhone(cap,expanded){
@@ -379,7 +374,7 @@ function build(){
  if(S.q2Lang!=S.c){S.q2=DATA[S.c].q2;S.q2Lang=S.c;S.tab={}}
  const ds=S.dp=='all'?['ok','far']:[S.dp];
  root.innerHTML=`
- <section class="opt"><h2>A · Decks has a Culture button; the culture view has its own search and tabs</h2><p class="note">The button sits on the top card of the Decks screen. The view lists the culture decks and the works of the language, in tabs by kind (only the kinds the data has), searchable, nothing hidden or locked. Learner level is ${S.lv}: marks on each row come from it.</p><div class="frames">${decksScreen()}${cultureView('p1','2 · Culture view, browse','')}${cultureView('p2','3 · Culture view, search “'+S.q2+'”',S.q2)}${cultureView('e','4 · Empty: a search with no match','zzq')}</div></section>
+ <section class="opt"><h2>A · A Culture button on the Decks top card switches the list</h2><p class="note">The button on the top card swaps what the screen lists: the deck path, or the culture list, with the button then reading Deck path to go back. The one existing search stays and filters whichever list shows. The culture list has plain section headers (Culture decks, then only the kinds the data has); nothing is hidden or locked. Learner level is ${S.lv}: marks on each row come from it.</p><div class="frames">${decksScreen('d1','1 · Path view: the button reads Culture','path','')}${decksScreen('p1','2 · Culture view: the button reads Deck path','culture','')}${decksScreen('p2','3 · Culture view, the one search filters it: “'+S.q2+'”','culture',S.q2)}${decksScreen('e','4 · Empty: a search with no match','culture','zzq')}</div></section>
  <section class="opt"><h2>B · Each language's details take its own culture options</h2><p class="note">One switch row, opening in place. The Settings page is gone. The switch drives every phone on this page.</p><div class="frames">${sheetPhone('5 · Culture group, collapsed',false)}${sheetPhone('6 · Culture group, expanded',true)}${pathPreview()}${settingsPhone()}</div></section>
  <section class="opt"><h2>C · The deck page: Learn opens only at the deck’s own level</h2><p class="note">One rule for every deck kind: a deck can be learnt only when the learner’s level reaches the deck’s level (the same check for a culture deck and an ordinary vocabulary deck, last phone). Otherwise it is read-only and Learn is disabled with the reason.</p><div class="frames">${(S.cul=='0'?['off']:ds).map(deckPage).join('')}${S.dp=='all'?workPage():''}${S.cul=='1'&&S.dp!='ok'?ordinaryPage():''}</div></section>
  <section class="qs"><b>Resolved (owner, 2026-11-16)</b>: see culture-in-decks.md. No open questions are left on this page.</section>`;
@@ -390,7 +385,6 @@ function build(){
 function refresh(root,id){const inp=root.querySelector(`input.q[data-q="${id}"]`);const b=root.querySelector(`.culbody[data-id="${id}"]`);b.innerHTML=culBody(S.c,inp.value,id);wireInner(b)}
 function wireInner(root){
  root.querySelectorAll('input.q').forEach(inp=>{inp.addEventListener('input',()=>{refresh(document,inp.dataset.q)})});
- root.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>{const id=b.closest('.tabs').dataset.id;S.tab[id]=b.dataset.tab;refresh(document,id)}));
  root.querySelectorAll('[data-clear]').forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.clear;document.querySelector(`input.q[data-q="${id}"]`).value='';refresh(document,id)}));
  root.querySelectorAll('[data-tog]').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.tog;S[k]=S[k]=='1'?'0':'1';build()}));
  root.querySelectorAll('[data-abv]').forEach(b=>b.addEventListener('click',()=>{S.abv=b.dataset.abv;build()}));
