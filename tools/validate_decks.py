@@ -100,7 +100,7 @@ SCRIPT_BLOCKS = {
     "han": _HAN_BLOCKS, "han_traditional": _HAN_BLOCKS,
     "han_simplified": _HAN_BLOCKS, "traditional": _HAN_BLOCKS,
     "simplified": _HAN_BLOCKS,
-    "devanagari": ((0x0900, 0x097F), (0xA8E0, 0xA8FF)),
+    "devanagari": ((0x0900, 0x097F), (0x1CD0, 0x1CFF), (0xA8E0, 0xA8FF)),
     "gurmukhi": ((0x0A00, 0x0A7F),),
     "bengali": ((0x0980, 0x09FF),),
     "latin": ((0x0041, 0x024F), (0x1E00, 0x1EFF)),
@@ -2404,10 +2404,6 @@ def _romanisation_standard(file: Path) -> str | None:
     return raw.get("standard") if isinstance(raw, dict) else None
 
 
-def _uses_iso15919(file: Path) -> bool:
-    return _romanisation_standard(file) == "ISO 15919"
-
-
 def check_romanised(r: Report, raw: dict, path: Path, *, lang: str | None = None,
                     directory: Path | None = None) -> None:
     """Once a language has its romanisation file (#47), every reading in its
@@ -2797,7 +2793,7 @@ def _check_fact_cards(r: Report, where: str, cards: object, lang: str) -> None:
 # parentheses, లేదు (lēdu), or follows it, lēdu (లేదు). A learner who cannot
 # read the script yet can read the note. See docs/DECK-FORMAT.md.
 
-_SCRIPT = ("ऀ-෿Ͱ-ϿЀ-ӿ֐-׿؀-ۿ"
+_SCRIPT = ("ऀ-෿Ͱ-ϿЀ-ӿ֐-׿؀-ۿ᳐-᳿꣠-ꣿ"
            "฀-๿぀-ヿ一-鿿가-힯")
 _SCRIPT_CHAR = re.compile(f"[{_SCRIPT}]")
 # An apostrophe inside a word is part of it in Eastern Nagari (Assamese ক'লা,
@@ -2860,6 +2856,10 @@ def _block(ch: str) -> int:
     (U+0600-U+06FF, U+0750-U+077F) count as one, as do Han with kana, and
     Hangul ([_HAN_KANA], [_HANGUL])."""
     o = ord(ch)
+    # Devanagari's Vedic Extensions and Devanagari Extended blocks count as
+    # Devanagari, so a Vedic tone sign or letter does not end a word's run.
+    if 0x1CD0 <= o <= 0x1CFF or 0xA8E0 <= o <= 0xA8FF:
+        return 0x0900 >> 7
     if 0x0600 <= o <= 0x06FF or 0x0750 <= o <= 0x077F:
         return 0x0600 >> 7
     if any(lo <= o <= hi for lo, hi in _HAN_KANA):

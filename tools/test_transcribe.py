@@ -6,6 +6,7 @@ import unittest
 from pathlib import Path
 
 import transcribe_decks
+import validate_decks
 from transcribe import BLOCKS, CannotRead, french_ipa, spanish_ipa, transcribe
 
 
@@ -741,15 +742,15 @@ class SanskritTest(unittest.TestCase):
     Devanagari alone; every inherent a is said (no Hindi schwa deletion)."""
 
     WORDS = (
-        ("संस्कृतम्", "saṃskṛtam", "sɐ̃skr\u0329t̪ɐm"),
-        ("रामः", "rāmaḥ", "raːmɐh"),
-        ("धर्मक्षेत्रे", "dharmakṣetre", "d̪ʱɐrmɐkʂeːt̪reː"),
-        ("गच्छति", "gacchati", "ɡɐtɕtɕʰɐt̪i"),
+        ("संस्कृतम्", "saṃskṛtam", "sə̃skr\u0329t̪əm"),
+        ("रामः", "rāmaḥ", "raːməh"),
+        ("धर्मक्षेत्रे", "dharmakṣetre", "d̪ʱərməkʂeːt̪reː"),
+        ("गच्छति", "gacchati", "ɡətʃtʃʰət̪i"),
         ("ऋषि", "ṛṣi", "r\u0329ʂi"),
         ("विद्या", "vidyā", "ʋid̪jaː"),
-        ("नमः", "namaḥ", "nɐmɐh"),
-        ("कृष्ण", "kṛṣṇa", "kr\u0329ʂɳɐ"),
-        ("ज्ञानम्", "jñānam", "dʑɲaːnɐm"),
+        ("नमः", "namaḥ", "nəməh"),
+        ("कृष्ण", "kṛṣṇa", "kr\u0329ʂɳə"),
+        ("ज्ञानम्", "jñānam", "dʒɲaːnəm"),
         ("पितॄणाम्", "pitṝṇām", "pit̪r\u0329ːɳaːm"),
         ("तेऽपि", "te'pi", "t̪eːpi"),
         ("ॐ", "oṃ", "oːm"),
@@ -770,24 +771,24 @@ class SanskritTest(unittest.TestCase):
         self.assertEqual(transcribe("कमल", "sa").reading, "kamala")
         self.assertEqual(transcribe("कमलम्", "sa").reading, "kamalam")
         self.assertEqual(transcribe("भवति", "sa").reading, "bhavati")
-        self.assertEqual(transcribe("राम", "sa").ipa, "raːmɐ")
+        self.assertEqual(transcribe("राम", "sa").ipa, "raːmə")
 
     def test_virama_ends_a_word_and_makes_conjuncts(self) -> None:
         self.assertEqual(transcribe("वाक्", "sa").reading, "vāk")
         self.assertEqual(transcribe("क्ष", "sa").reading, "kṣa")
-        self.assertEqual(transcribe("त्र", "sa").ipa, "t̪rɐ")
-        self.assertEqual(transcribe("स्थित", "sa").ipa, "st̪ʰit̪ɐ")
+        self.assertEqual(transcribe("त्र", "sa").ipa, "t̪rə")
+        self.assertEqual(transcribe("स्थित", "sa").ipa, "st̪ʰit̪ə")
 
     def test_jna_is_j_plus_n_palatal_not_hindi_gya(self) -> None:
         self.assertEqual(transcribe("ज्ञ", "sa").reading, "jña")
-        self.assertEqual(transcribe("ज्ञ", "sa").ipa, "dʑɲɐ")
+        self.assertEqual(transcribe("ज्ञ", "sa").ipa, "dʒɲə")
 
     def test_sibilants_and_retroflexes_are_kept_apart(self) -> None:
         self.assertEqual(transcribe("शषस", "sa").reading, "śaṣasa")
-        self.assertEqual(transcribe("शषस", "sa").ipa, "ɕɐʂɐsɐ")
-        self.assertEqual(transcribe("टठडढण", "sa").ipa, "ʈɐʈʰɐɖɐɖʱɐɳɐ")
-        self.assertEqual(transcribe("तथदधन", "sa").ipa, "t̪ɐt̪ʰɐd̪ɐd̪ʱɐnɐ")
-        self.assertEqual(transcribe("वह", "sa").ipa, "ʋɐɦɐ")
+        self.assertEqual(transcribe("शषस", "sa").ipa, "ʃəʂəsə")
+        self.assertEqual(transcribe("टठडढण", "sa").ipa, "ʈəʈʰəɖəɖʱəɳə")
+        self.assertEqual(transcribe("तथदधन", "sa").ipa, "t̪ət̪ʰəd̪əd̪ʱənə")
+        self.assertEqual(transcribe("वह", "sa").ipa, "ʋəɦə")
 
     def test_vocalic_letters_and_long_vowels_keep_their_marks(self) -> None:
         self.assertEqual(transcribe("ऋ ॠ ऌ ॡ", "sa").reading, "ṛ ṝ ḷ ḹ")
@@ -798,17 +799,17 @@ class SanskritTest(unittest.TestCase):
     def test_e_o_ai_au(self) -> None:
         t = transcribe("के को कै कौ", "sa")
         self.assertEqual(t.reading, "ke ko kai kau")
-        self.assertEqual(t.ipa, "keː koː kɐi kɐu")
+        self.assertEqual(t.ipa, "keː koː kəi kəu")
 
     def test_anusvara_is_always_written_m_dot_and_said_as_the_next_nasal(
             self) -> None:
         for word, reading, ipa in (
-            ("अंक", "aṃka", "ɐŋkɐ"),
-            ("पंच", "paṃca", "pɐɲtɕɐ"),
-            ("कंठ", "kaṃṭha", "kɐɳʈʰɐ"),
-            ("अंत", "aṃta", "ɐnt̪ɐ"),
-            ("कंप", "kaṃpa", "kɐmpɐ"),
-            ("पुस्तकं", "pustakaṃ", "pust̪ɐkɐm"),
+            ("अंक", "aṃka", "əŋkə"),
+            ("पंच", "paṃca", "pəɲtʃə"),
+            ("कंठ", "kaṃṭha", "kəɳʈʰə"),
+            ("अंत", "aṃta", "ənt̪ə"),
+            ("कंप", "kaṃpa", "kəmpə"),
+            ("पुस्तकं", "pustakaṃ", "pust̪əkəm"),
         ):
             with self.subTest(word):
                 t = transcribe(word, "sa")
@@ -816,16 +817,16 @@ class SanskritTest(unittest.TestCase):
 
     def test_anusvara_nasalises_the_vowel_before_semivowels_sibilants_h(
             self) -> None:
-        self.assertEqual(transcribe("सिंह", "sa").ipa, "sĩɦɐ")
-        self.assertEqual(transcribe("अंश", "sa").ipa, "ɐ\u0303ɕɐ")
-        self.assertEqual(transcribe("संयोग", "sa").ipa, "sɐ\u0303joːɡɐ")
-        self.assertEqual(transcribe("सांस", "sa").ipa, "sãːsɐ")
+        self.assertEqual(transcribe("सिंह", "sa").ipa, "sĩɦə")
+        self.assertEqual(transcribe("अंश", "sa").ipa, "ə\u0303ʃə")
+        self.assertEqual(transcribe("संयोग", "sa").ipa, "sə\u0303joːɡə")
+        self.assertEqual(transcribe("सांस", "sa").ipa, "sãːsə")
 
     def test_candrabindu_visarga_and_avagraha(self) -> None:
         t = transcribe("अँ", "sa")
-        self.assertEqual((t.reading, t.ipa), ("am\u0310", "ɐ\u0303"))
+        self.assertEqual((t.reading, t.ipa), ("am\u0310", "ə\u0303"))
         self.assertEqual(transcribe("कः", "sa").reading, "kaḥ")
-        self.assertEqual(transcribe("कः", "sa").ipa, "kɐh")
+        self.assertEqual(transcribe("कः", "sa").ipa, "kəh")
         self.assertEqual(transcribe("सोऽहम्", "sa").reading, "so'ham")
 
     def test_vedic_accent_marks_are_not_read(self) -> None:
@@ -834,7 +835,7 @@ class SanskritTest(unittest.TestCase):
     def test_words_punctuation_and_digits(self) -> None:
         t = transcribe("रामः गच्छति ।", "sa")
         self.assertEqual(t.reading, "rāmaḥ gacchati.")
-        self.assertEqual(t.ipa, "raːmɐh ɡɐtɕtɕʰɐt̪i")
+        self.assertEqual(t.ipa, "raːməh ɡətʃtʃʰət̪i")
         self.assertEqual(transcribe("१२", "sa").reading, "12")
 
     def test_the_hint_is_ignored(self) -> None:
@@ -845,6 +846,77 @@ class SanskritTest(unittest.TestCase):
             with self.subTest(bad):
                 with self.assertRaises(CannotRead):
                     transcribe(bad, "sa")
+
+
+class VedicTest(unittest.TestCase):
+    """Vedic Sanskrit (vsn): the same engine as sa, plus the accent marks,
+    ळ and the Vedic diphthongs (wiki/Plan-Vedic-Engine.md)."""
+
+    def test_accents_are_not_in_the_reading_or_ipa_but_are_reported(
+            self) -> None:
+        plain = transcribe("अग्निः", "vsn")
+        for marked, name in (("अ॒ग्निः", "anudātta"), ("अ॑ग्निः", "svarita")):
+            with self.subTest(marked):
+                t = transcribe(marked, "vsn")
+                self.assertEqual((t.reading, t.ipa), (plain.reading, plain.ipa))
+                self.assertEqual(t.notes, [f"{name} on syllable 1"])
+        # Written between the consonant and its sign, it is the same word.
+        t = transcribe("अग्नि॑ः", "vsn")
+        self.assertEqual(t.reading, "agniḥ")
+        self.assertEqual(t.notes, ["svarita on syllable 2"])
+        # A Vedic Extensions tone sign is an accent too.
+        t = transcribe("अ\u1cda", "vsn")
+        self.assertEqual(t.reading, "a")
+        self.assertEqual(len(t.notes), 1)
+
+    def test_the_acute_and_grave_accent_signs_are_not_vedic(self) -> None:
+        for bad in ("अ\u0953", "अ\u0954"):
+            with self.subTest(bad):
+                with self.assertRaises(CannotRead):
+                    transcribe(bad, "vsn")
+
+    def test_no_inherent_a_is_dropped(self) -> None:
+        t = transcribe("वदामि न", "vsn")
+        self.assertEqual((t.reading, t.ipa), ("vadāmi na", "ʋəd̪aːmi nə"))
+
+    def test_la_and_lha(self) -> None:
+        t = transcribe("ईळे", "vsn")
+        self.assertEqual((t.reading, t.ipa), ("īḷe", "iːɭeː"))
+        t = transcribe("गाळ्ह", "vsn")
+        self.assertEqual((t.reading, t.ipa), ("gāḷha", "ɡaːɭʱə"))
+        with self.assertRaises(CannotRead):
+            transcribe("ळ", "sa")
+
+    def test_jihvamuliya_and_upadhmaniya(self) -> None:
+        self.assertEqual(transcribe("\u1cf5क", "vsn").ipa, "xkə")
+        self.assertEqual(transcribe("\u1cf6प", "vsn").ipa, "ɸpə")
+
+    def test_vedic_ai_and_au_are_long_diphthongs_classical_ones_are_not(
+            self) -> None:
+        self.assertEqual(transcribe("दैव", "vsn").ipa, "d̪aːiʋə")
+        self.assertEqual(transcribe("दैव", "sa").ipa, "d̪əiʋə")
+        self.assertEqual(transcribe("गौः", "vsn").ipa, "ɡaːuh")
+
+    def test_om_has_no_vedic_value_yet(self) -> None:
+        with self.assertRaises(CannotRead):
+            transcribe("ॐ", "vsn")
+
+    def test_readings_and_ipa_pass_the_validators_letters(self) -> None:
+        for word in ("ऋतम्", "पितॄणाम्", "ईळे", "गाळ्ह", "अहं जानामि",
+                     "ज्ञानम्", "अग्निः", "सँस्कृतम्"):
+            with self.subTest(word):
+                t = transcribe(word, "vsn")
+                self.assertTrue(validate_decks.IAST_ROMAN_RE.fullmatch(t.reading))
+                self.assertTrue(validate_decks.IPA_RE.fullmatch(t.ipa))
+
+    def test_a_vedic_tone_sign_does_not_cut_a_devanagari_run(self) -> None:
+        # In an English layer, a word with a Vedic Extensions mark in it is
+        # one script run, so one reading after it covers it.
+        word = "अ\u1cdaग्नि"
+        runs = [run for _, run in validate_decks._script_runs(f"{word} (agni)")]
+        self.assertEqual(runs, [word])
+        self.assertTrue(validate_decks._letters_in(
+            word, validate_decks.SCRIPT_BLOCKS["devanagari"]))
 
 
 class DeckModeTest(unittest.TestCase):

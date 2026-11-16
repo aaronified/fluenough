@@ -140,7 +140,21 @@
     # read when this entry was added, so NOTHING is taken from Wiktionary
     # (untagged: false, no notes, no tags) until that is done and the forms
     # agree with the course's IAST-based broad `ipa` (tools/transcribe.py, the
-    # `sa` engine: [ɐ] for a, [tɕ dʑ] for c j, [r̩] for ṛ). Flip `untagged` or
+    # `sa` engine: [ə] for a, [tʃ dʒ] for c j, [r̩] for ṛ). Flip `untagged` or
     # list the tags of the forms taken only after reading the dump.
     name: "Classical Sanskrit; no Wiktionary form is taken until measured"
+    untagged: false
+
+"vsn":
+  dump: "Sanskrit"
+  variety:
+    # Measured on the kaikki.org Sanskrit dump (first 60 MB, 2026-11-16, in
+    # wiki/Plan-Vedic-Engine.md): of 524 narrow forms, 239 are tagged "Vedic"
+    # (168 words) and 282 "Classical-Sanskrit". The Vedic forms write syllable
+    # dots, unreleased stops (d̚), t͡ɕ, ɕ and an acute (ɐ́) where the course's
+    # `ipa` writes none of them, so the form is NOT taken (untagged: false, no
+    # tags): nothing is imported, and every Vedic card gets its narrow form
+    # from decks/vsn/vsn-phonetics.yaml. Flip to tags: ["Vedic"] only after a
+    # `normalise` list for dots, d̚, ties, ɕ and the acute exists.
+    name: "Vedic Sanskrit; no Wiktionary form is taken (rules only)"
     untagged: false
