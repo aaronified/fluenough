@@ -1,0 +1,47 @@
+schema: 1
+id: "kn-en-reading-school"
+name: "Reading: the class timetable"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A Kannada passage written for this course with the words taught up to its unit (a school timetable). Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-class-timetable"
+    title: "Class timetable"
+    sentences:
+      - text: "ಸೋಮವಾರ ಬೆಳಿಗ್ಗೆ ಗಣಿತ ಪಾಠ ಇದೆ."
+        reading: "sōmavāra beḷigge gaṇita pāṭha ide."
+        ipa: "soːmaʋaːra beɭiɡɡe ɡaɳit̪a paːʈʰa id̪e"
+      - text: "ಮಂಗಳವಾರ ಎರಡು ಗಂಟೆಗೆ ವಿಜ್ಞಾನ."
+        reading: "maṅgaḷavāra eraḍu gaṇṭege vijñāna."
+        ipa: "maŋɡaɭaʋaːra eraɖu ɡaɳʈeɡe ʋidʒɲaːna"
+      - text: "ಬುಧವಾರ ಇಂಗ್ಲಿಷ್ ಮತ್ತು ಕನ್ನಡ."
+        reading: "budhavāra iṅgliṣ mattu kannaḍa."
+        ipa: "bud̪ʱaʋaːra iŋɡliʂ mat̪t̪u kannaɖa"
+      - text: "ಶುಕ್ರವಾರ ಆಟ ಇದೆ."
+        reading: "śukravāra āṭa ide."
+        ipa: "ʃukraʋaːra aːʈa id̪e"
+      - text: "ಪ್ರತಿ ದಿನ ಗೃಹಪಾಠ ಇದೆ."
+        reading: "prati dina gruhapāṭha ide."
+        ipa: "prat̪i d̪ina ɡruhapaːʈʰa id̪e"
+    questions:
+      - id: "kn-9349"
+        prompt: { en: "Which subject is on Monday morning?" }
+        options:
+          - { en: "Maths" }
+          - { en: "Science" }
+          - { en: "Games" }
+        answer: 1
+      - id: "kn-9350"
+        prompt: { en: "Science is at two o'clock on Tuesday." }
+        answer: true
+      - id: "kn-9351"
+        prompt: { en: "What is on Friday?" }
+        options:
+          - { en: "Games" }
+          - { en: "English" }
+          - { en: "Kannada" }
+        answer: 1
