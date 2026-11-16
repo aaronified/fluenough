@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Language Picker</title>
-<meta name="description" content="Add a language redesigned for new users: nine big tiles first, then a short list of languages with a course, compact progress, a verification flag, and Coming soon folded away.">
+<meta name="description" content="Add a language redesigned for new users: nine big tiles first, then a short list of languages with a course, a compact bar of how much of each course is made, a verification flag, and Coming soon folded away.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Sans+Telugu:wght@400;600&family=Noto+Sans+Arabic:wght@400;600&family=Noto+Sans+JP:wght@400;600&family=Noto+Sans+SC:wght@400;600&family=Noto+Sans+Kannada:wght@400;600&display=swap">
 <style>
 /* ===== The page around the phones (not the app) ===== */
@@ -116,7 +116,7 @@ ul.rows{list-style:none;margin:0;padding:0}
 <body>
 <div class="wrap">
 <h1>Language picker</h1>
-<p class="cap1">The Add a language screen, 360 dp, 1.4x text. A first screen of nine big tiles, then the short list of languages that have a course, with progress as one slim bar and the verification as a flag you tap. Picking goes straight to the existing Find my level (last phone, unchanged). Tiles, rows, flags and the Coming soon header are live. Notes and the contrast self-check are in <code>language-picker.md</code>.</p>
+<p class="cap1">The Add a language screen, 360 dp, 1.4x text. A first screen of nine big tiles, then the short list of languages that have a course, with how much of the course is made shown as one slim bar and the verification as a flag you tap. Picking goes straight to the existing Find my level (last phone, unchanged). Tiles, rows, flags and the Coming soon header are live. Notes and the contrast self-check are in <code>language-picker.md</code>.</p>
 <div class="tw" role="group" aria-label="Tweaks">
  <div class="tg">Theme <div class="segc" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></div></div>
  <div class="tg">Already added <div class="segc" data-k="lang"><button data-v="te">Telugu</button><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button><button data-v="none">None (first launch)</button></div></div>
@@ -147,7 +147,7 @@ const flagSvg=s=>{const id='c'+(fid++);
 /* strings of lib/l10n/app_en.arb: languagesVerifiedNone/Some/Full, ...Detail, languagesVerifiedLabel */
 const VW={none:'Not at all',some:'Somewhat',full:'Completely'};
 const VD={none:'No native speaker has checked this course.',some:'Native speakers have checked some of this course.',full:'Native speakers have checked all of this course.'};
-/* Illustrative figures (CourseLine levels: A1, A2, B1 written share; culture); the app reads them from progressFor */
+/* Illustrative figures (CourseLine levels: A1, A2, B1 written share; culture); the app reads them from progressFor (the course's written shares, not the learner's progress) */
 const L={
  es:{en:'Spanish',nat:'Español',g:'E',lv:[1,1,.5,.3],v:'full'},
  fr:{en:'French',nat:'Français',g:'F',lv:[1,.4,0,0],v:'none'},
@@ -182,11 +182,11 @@ const pct=lv=>['A1','A2','B1','Culture'].map((n,i)=>`${n} ${Math.round(lv[i]*100
 function row(k){const l=L[k],a=added(k);
  const lab=`${l.en}, ${l.nat}`;
  return `<li class="row ${a?'added':''}"><button class="main" type="button" aria-label="${lab}${a?', added':''}"><span class="av" aria-hidden="true" lang="${k}">${l.g}</span><span class="nm"><span class="en">${l.en}</span><span class="nat" lang="${k}">${l.nat}${l.nat2?' · '+l.nat2:''}</span></span>${a?`<span class="chip">${ic('check')}Added</span>`:''}<span class="chev">${ic('chev')}</span></button>
- <div class="prog"><span class="seg4" role="img" aria-label="Course progress: ${pct(l.lv)}">${seg(l.lv)}</span><span class="flagwrap"><button class="flag ${l.v}" type="button" data-tip="${k}" title="Verified by native speakers: ${VW[l.v].toLowerCase()}" aria-label="Verified by native speakers: ${VW[l.v].toLowerCase()}. ${VD[l.v]}">${flagSvg(l.v)}</button></span></div></li>`}
+ <div class="prog"><span class="seg4" role="img" aria-label="How much of the course is made: ${pct(l.lv)}">${seg(l.lv)}</span><span class="flagwrap"><button class="flag ${l.v}" type="button" data-tip="${k}" title="Verified by native speakers: ${VW[l.v].toLowerCase()}" aria-label="Verified by native speakers: ${VW[l.v].toLowerCase()}. ${VD[l.v]}">${flagSvg(l.v)}</button></span></div></li>`}
 function soonRow(r){return `<li class="row soon"><button class="main" type="button" aria-label="${r[1]}, ${r[2]}, no course yet"><span class="av" aria-hidden="true">${r[3]}</span><span class="nm"><span class="en">${r[1]}</span><span class="nat">${r[2]}</span></span><span class="chev">${ic('chev')}</span></button></li>`}
 const bar=(t)=>`<div class="bar"><button class="ib" type="button" aria-label="Back">${ic('back')}</button>${t?`<span class="ttl">${t}</span>`:''}</div>`;
 const legend=()=>`<div class="legend chg" role="group" aria-label="Key">
- <p class="lt">Course progress</p>
+ <p class="lt">How much of the course is made</p>
  <div class="seg4" aria-hidden="true"><span class="sg"><i style="width:100%"></i></span><span class="sg"><i style="width:100%"></i></span><span class="sg"><i style="width:50%"></i></span><span class="sg"></span></div>
  <div class="lbs" aria-hidden="true"><span>A1</span><span>A2</span><span>B1</span><span>Culture</span></div>
  <p class="vh">A1, A2, B1 and Culture: how much of each part is written. A full bar is complete, an empty one is still to come.</p>
