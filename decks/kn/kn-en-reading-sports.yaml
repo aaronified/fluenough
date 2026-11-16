@@ -1,0 +1,43 @@
+schema: 1
+id: "kn-en-reading-sports"
+name: "Reading: a match report"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A Kannada passage written for this course with the words taught up to its unit (a short match report). Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-match-report"
+    title: "Match report"
+    sentences:
+      - text: "ನಿನ್ನೆ ಫುಟ್ಬಾಲ್ ಪಂದ್ಯ ಇತ್ತು."
+        reading: "ninne phuṭbāl pandya ittu."
+        ipa: "ninne pʰuʈbaːl pand̪ja it̪t̪u"
+      - text: "ಕ್ರೀಡಾಂಗಣದಲ್ಲಿ ಪ್ರೇಕ್ಷಕರು ಬಹಳ ಇದ್ದರು."
+        reading: "krīḍāṅgaṇadalli prēkṣakaru bahaḷa iddaru."
+        ipa: "kriːɖaːŋɡaɳad̪alli preːkʂakaru bahaɭa id̪d̪aru"
+      - text: "ರವಿ ಎರಡು ಗೋಲು ಮಾಡಿದ."
+        reading: "ravi eraḍu gōlu māḍida."
+        ipa: "raʋi eraɖu ɡoːlu maːɖid̪a"
+      - text: "ಅವನಿಗೆ ಪದಕ ಇದೆ."
+        reading: "avanige padaka ide."
+        ipa: "aʋaniɡe pad̪aka id̪e"
+      - text: "ಆಟಗಾರರು ಸಂತೋಷವಾಗಿದ್ದಾರೆ."
+        reading: "āṭagāraru santōṣavāgiddāre."
+        ipa: "aːʈaɡaːraru sant̪oːʂaʋaːɡid̪d̪aːre"
+    questions:
+      - id: "kn-9376"
+        prompt: { en: "When was the football match?" }
+        options:
+          - { en: "Yesterday" }
+          - { en: "Tomorrow" }
+          - { en: "Next month" }
+        answer: 1
+      - id: "kn-9377"
+        prompt: { en: "Ravi scored two goals." }
+        answer: true
+      - id: "kn-9378"
+        prompt: { en: "Ravi has a medal." }
+        answer: true

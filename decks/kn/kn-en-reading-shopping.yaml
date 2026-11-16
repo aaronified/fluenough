@@ -1,0 +1,47 @@
+schema: 1
+id: "kn-en-reading-shopping"
+name: "Reading: the price list"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A shop's price list and its offers, using the shopping words taught up to this unit. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-shopping-passage"
+    title: "The price list"
+    sentences:
+      - text: "ಚಿನ್ನ ದುಬಾರಿ, ಬೆಳ್ಳಿ ಅಗ್ಗ."
+        reading: "cinna dubāri, beḷḷi agga."
+        ipa: "tʃinna d̪ubaːri beɭɭi aɡɡa"
+      - text: "ಈ ಅಂಗಿಗೆ ರಿಯಾಯಿತಿ ಇದೆ."
+        reading: "ī aṅgige riyāyiti ide."
+        ipa: "iː aŋɡiɡe rijaːjit̪i id̪e"
+      - text: "ಗ್ರಾಹಕರಿಗೆ ರಸೀದಿ ಉಚಿತ."
+        reading: "grāhakarige rasīdi ucita."
+        ipa: "ɡraːhakariɡe rasiːd̪i utʃit̪a"
+      - text: "ನಗದು ಅಥವಾ ಕಾರ್ಡ್ ಸರಿ."
+        reading: "nagadu athavā kārḍ sari."
+        ipa: "naɡad̪u at̪ʰaʋaː kaːrɖ sari"
+      - text: "ಹಣ ಪಾವತಿಸಿ, ನಂತರ ಸಾಮಾನು ತೆಗೆದುಕೊಳ್ಳಿ."
+        reading: "haṇa pāvatisi, nantara sāmānu tegedukoḷḷi."
+        ipa: "haɳa paːʋat̪isi nant̪ara saːmaːnu t̪eɡed̪ukoɭɭi"
+    questions:
+      - id: "kn-9012"
+        prompt: { en: "Which metal is expensive?" }
+        options:
+          - { en: "Gold" }
+          - { en: "Silver" }
+          - { en: "Copper" }
+        answer: 1
+      - id: "kn-9013"
+        prompt: { en: "How can you pay?" }
+        options:
+          - { en: "In cash or by card" }
+          - { en: "Only in cash" }
+          - { en: "Nowhere" }
+        answer: 1
+      - id: "kn-9014"
+        prompt: { en: "The receipt is free for customers." }
+        answer: true
