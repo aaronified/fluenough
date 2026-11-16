@@ -1,0 +1,192 @@
+schema: 1
+id: "sa-en-pronouns"
+kind: "layer"
+core: "sa-pronouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pronouns and people words"
+description: "Pronouns of Classical Sanskrit: he, she, it, this, that, who and which, we and you all, in the forms the first texts use."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-1010":
+    native: "He; that (masculine)."
+    notes:
+      "n1": "He, or that. Before a vowel its visarga becomes o, as in so 'sti for saḥ asti; the examples keep it before consonants."
+    examples:
+      "सः जानाति":
+        native: "He knows."
+        bases:
+          "जानाति": "to know (he knows)"
+      "सः करोति":
+        native: "He does it."
+        bases:
+          "करोति": "to do (he does)"
+  "sa-1011":
+    native: "She; that (feminine)."
+    notes:
+      "n1": "She, or that. It is the feminine of saḥ, and the neuter is tat."
+    examples:
+      "सा जानाति":
+        native: "She knows."
+        bases:
+          "जानाति": "to know (she knows)"
+      "सा करोति":
+        native: "She does it."
+        bases:
+          "करोति": "to do (she does)"
+  "sa-1012":
+    native: "That; it (neuter)."
+    notes:
+      "n1": "That, or it. Before a voiced sound its final t changes, as in tad dūram; the examples keep it before voiceless sounds."
+    examples:
+      "तत् पुस्तकम्":
+        native: "That book."
+        bases:
+          "पुस्तकम्": "book"
+      "तत् करोमि":
+        native: "I do that."
+        bases:
+          "करोमि": "to do (I do)"
+  "sa-1013":
+    native: "This (masculine)."
+    notes:
+      "n1": "This, near the speaker, masculine. Its final m becomes ṃ before a consonant, as in ayaṃ jānāti."
+    examples:
+      "अयं जानाति":
+        native: "This one knows."
+        bases:
+          "जानाति": "to know (he knows)"
+      "अयं करोति":
+        native: "This one does it."
+        bases:
+          "करोति": "to do (he does)"
+  "sa-1014":
+    native: "This (feminine)."
+    notes:
+      "n1": "This, near the speaker, feminine. It is the feminine of ayam, and its final m becomes ṃ before a consonant."
+    examples:
+      "इयं जानाति":
+        native: "This one knows."
+        bases:
+          "जानाति": "to know (she knows)"
+      "इयं करोति":
+        native: "This one does it."
+        bases:
+          "करोति": "to do (she does)"
+  "sa-1015":
+    native: "This (neuter)."
+    notes:
+      "n1": "This, near the speaker, neuter. Its final m becomes ṃ before a consonant, as in idaṃ pustakam."
+    examples:
+      "इदं पुस्तकम्":
+        native: "This book."
+        bases:
+          "पुस्तकम्": "book"
+      "इदं करोमि":
+        native: "I do this."
+        bases:
+          "करोमि": "to do (I do)"
+  "sa-1016":
+    native: "This one (masculine)."
+    notes:
+      "n1": "This one, masculine, with the same sense as ayam in these examples."
+    examples:
+      "एषः जानाति":
+        native: "This one knows."
+        bases:
+          "जानाति": "to know (he knows)"
+      "एषः करोति":
+        native: "This one does it."
+        bases:
+          "करोति": "to do (he does)"
+  "sa-1017":
+    native: "This one (feminine)."
+    notes:
+      "n1": "This one, feminine. It is the feminine of eṣaḥ."
+    examples:
+      "एषा जानाति":
+        native: "This one knows."
+        bases:
+          "जानाति": "to know (she knows)"
+      "एषा करोति":
+        native: "This one does it."
+        bases:
+          "करोति": "to do (she does)"
+  "sa-1018":
+    native: "This (neuter)."
+    notes:
+      "n1": "This, neuter. Before a voiced sound its final t changes, as in etad dūram; the examples keep it before voiceless sounds."
+    examples:
+      "एतत् पुस्तकम्":
+        native: "This book."
+        bases:
+          "पुस्तकम्": "book"
+      "एतत् करोमि":
+        native: "I do this."
+        bases:
+          "करोमि": "to do (I do)"
+  "sa-1019":
+    native: "Who; which (masculine)."
+    notes:
+      "n1": "Who or which, a relative: it asks for its partner saḥ, he, in the clause that follows, as in English he who."
+    examples:
+      "यः जानाति":
+        native: "Who knows."
+        bases:
+          "जानाति": "to know (he knows)"
+      "यः करोति":
+        native: "Who does it."
+        bases:
+          "करोति": "to do (he does)"
+  "sa-1020":
+    native: "Who; which (feminine)."
+    notes:
+      "n1": "Who or which, feminine relative. It is the feminine of yaḥ."
+    examples:
+      "या जानाति":
+        native: "Who knows."
+        bases:
+          "जानाति": "to know (she knows)"
+      "या करोति":
+        native: "Who does it."
+        bases:
+          "करोति": "to do (she does)"
+  "sa-1021":
+    native: "Which; what (neuter)."
+    notes:
+      "n1": "Which or what, neuter relative, as in yat pustakam, which book."
+    examples:
+      "यत् पुस्तकम्":
+        native: "Which book."
+        bases:
+          "पुस्तकम्": "book"
+      "यत् करोमि":
+        native: "What I do."
+        bases:
+          "करोमि": "to do (I do)"
+  "sa-1022":
+    native: "We."
+    notes:
+      "n1": "We. The verb of we ends in -maḥ, as in jānīmaḥ and kurmaḥ in these examples."
+    examples:
+      "वयं जानीमः":
+        native: "We know."
+        bases:
+          "जानीमः": "to know (we know)"
+      "वयं कुर्मः":
+        native: "We do it."
+        bases:
+          "कुर्मः": "to do (we do)"
+  "sa-1023":
+    native: "You all."
+    notes:
+      "n1": "You, all of you. The verb of you all ends in -tha, as in jānītha and kurutha in these examples."
+    examples:
+      "यूयं जानीथ":
+        native: "You all know."
+        bases:
+          "जानीथ": "to know (you all know)"
+      "यूयं कुरुथ":
+        native: "You all do it."
+        bases:
+          "कुरुथ": "to do (you all do)"
