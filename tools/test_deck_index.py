@@ -795,6 +795,7 @@ class HiddenLanguages(unittest.TestCase):
     sd ta tcy te tok zh
     ipa qbe
     ang ar arc ca egy el enm eu fi fil ga gmy grc ha hbs he hu ine it la ms nb
+    af fa id nl ps uk
     pl pli pt qap qgh qgk qu ru so sux sv sw th tr vi vsn yi yue
     """.split())
 
