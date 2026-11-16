@@ -934,7 +934,7 @@ class AppState extends ChangeNotifier {
   ///
   /// The questions of the completed recommended works join them as reading
   /// decks (D13, T25), and the culture and proverbs decks leave them while
-  /// "Show culture items" is off for their language (D11, T20).
+  /// the Culture switch of their language's details is off (D11, T20).
   List<DeckEntry> get drillDecks => <DeckEntry>[
     for (final entry in <DeckEntry>[...decks, ...addedHiddenDecks])
       if (!_cultureOff(entry)) entry,

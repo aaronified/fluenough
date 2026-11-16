@@ -143,7 +143,6 @@ class UnitCultureCard extends StatelessWidget {
       final index = state.pathIndexOfUnit(language, decks);
       if (index < 0) return const SizedBox.shrink();
       final options = state.settings.cultureFor(language);
-      final woven = state.wovenCultureOf(language);
       if (state.cultureItemsIn(language).isEmpty) {
         return const SizedBox.shrink();
       }
@@ -163,14 +162,15 @@ class UnitCultureCard extends StatelessWidget {
           ),
         );
       }
-      if (woven.of(index).isEmpty) return const SizedBox.shrink();
+      final woven = state.wovenCultureOf(language).of(index);
+      if (woven.isEmpty) return const SizedBox.shrink();
       return Padding(
         padding: const EdgeInsetsDirectional.only(top: 16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           spacing: 8,
           children: <Widget>[
-            for (final item in woven.of(index))
+            for (final item in woven)
               _CultureCard(
                 item: item,
                 language: language,

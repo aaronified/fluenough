@@ -32,9 +32,9 @@ class CultureItemRequest {
 /// chip and one legacy line, and a button to practise it. A proverb, a stanza
 /// and a passage with its gloss are what the decks hold at A1, A2 and B1.
 ///
-/// An item above the learner's level is never shown (D2): with "Items above my
-/// level" at its default the page says it is not shown yet; with support on it
-/// shows the item with a lock, not counted and not scheduled for review.
+/// The page opens to read at any level. An item above the learner's level
+/// carries a notice and has nothing to practise: it is not counted and not
+/// scheduled for review.
 class CultureItemPage extends StatelessWidget {
   const CultureItemPage({super.key, required this.request});
 
