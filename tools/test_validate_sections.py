@@ -33,7 +33,13 @@ class Sections(KindsCase):
         self.assertEqual([g["id"] for g in raw["genres"]],
                          ["culture", "proverbs", "multiword", "professional"])
         self.assertEqual(len(raw["search_kinds"]), 9)
-        self.assertEqual(raw["professions"], [])
+        self.assertIsInstance(raw["professions"], list)
+        for profession in raw["professions"]:
+            self.assertIsInstance(profession, dict)
+            self.assertIsInstance(profession["id"], str)
+            self.assertTrue(profession["id"])
+            self.assertIsInstance(profession["name"]["en"], str)
+            self.assertTrue(profession["name"]["en"])
 
     def test_unknown_keys_are_refused(self) -> None:
         self.check(lambda d: d.__setitem__("colours", []), "unknown field 'colours'")
