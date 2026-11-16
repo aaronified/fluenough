@@ -1,0 +1,214 @@
+schema: 1
+id: "sa-en-time"
+kind: "layer"
+core: "sa-time"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Time and days"
+description: "Time and days in Classical Sanskrit: today, yesterday, tomorrow, now, always, when, then, again, before, evening and morning, and night."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-1538":
+    native: "Today."
+    notes:
+      "n1": "An adverb: it never changes its form."
+    examples:
+      "अद्य शीतम्":
+        native: "It is cold today."
+        bases:
+          "अद्य": "today"
+          "शीतम्": "cold"
+      "अद्य माता दुःखिनी":
+        native: "Today the mother is sad."
+        bases:
+          "अद्य": "today"
+          "माता": "mother"
+          "दुःखिनी": "sad"
+  "sa-1539":
+    native: "Yesterday."
+    notes:
+      "n1": "Built on the old stem ह्यस् (hyas); the form ends in ḥ and does not change."
+    bases:
+      "ह्यः": "yesterday"
+    examples:
+      "ह्यः पिता सुखी":
+        native: "Yesterday the father was happy."
+        bases:
+          "ह्यः": "yesterday"
+          "पिता": "father"
+          "सुखी": "happy"
+      "ह्यः जलं शीतम्":
+        native: "Yesterday the water was cold."
+        bases:
+          "ह्यः": "yesterday"
+          "जलं": "water"
+          "शीतम्": "cold"
+  "sa-1540":
+    native: "Tomorrow."
+    notes:
+      "n1": "Built on the stem श्वस् (śvas), like ह्यः (hyaḥ), and it is the day after today."
+    bases:
+      "श्वः": "tomorrow"
+    examples:
+      "श्वः पाठः कठिनः":
+        native: "Tomorrow the lesson is difficult."
+        bases:
+          "श्वः": "tomorrow"
+          "पाठः": "lesson"
+          "कठिनः": "difficult"
+      "श्वः मधुरं फलम्":
+        native: "Tomorrow, a sweet fruit."
+        bases:
+          "श्वः": "tomorrow"
+          "मधुरं": "sweet"
+          "फलम्": "fruit"
+  "sa-1541":
+    native: "Now; at this time."
+    examples:
+      "इदानीं जलं शीतम्":
+        native: "Now the water is cold."
+        bases:
+          "इदानीं": "now"
+          "जलं": "water"
+          "शीतम्": "cold"
+      "इदानीं माता दुःखिनी":
+        native: "Now the mother is sad."
+        bases:
+          "इदानीं": "now"
+          "माता": "mother"
+          "दुःखिनी": "sad"
+  "sa-1542":
+    native: "Always."
+    examples:
+      "सदा सुखी पिता":
+        native: "A father who is always happy."
+        bases:
+          "सदा": "always"
+          "सुखी": "happy"
+          "पिता": "father"
+      "गङ्गा सदा पवित्रा":
+        native: "The Ganges is always pure."
+        bases:
+          "गङ्गा": "Ganges"
+          "सदा": "always"
+          "पवित्रा": "pure"
+  "sa-1543":
+    native: "When?"
+    notes:
+      "n1": "A question word; its answer is a time word such as सायम् (sāyam), in the evening, or तदा (tadā), then."
+    examples:
+      "कदा पाठः":
+        native: "When is the lesson?"
+        bases:
+          "कदा": "when"
+          "पाठः": "lesson"
+      "कदा जलं शीतम्":
+        native: "When is the water cold?"
+        bases:
+          "कदा": "when"
+          "जलं": "water"
+          "शीतम्": "cold"
+  "sa-1544":
+    native: "Then; at that time."
+    notes:
+      "n1": "The answer to कदा (kadā), when; it points back to a time already named."
+    examples:
+      "तदा पाठः कठिनः":
+        native: "Then the lesson was difficult."
+        bases:
+          "तदा": "then"
+          "पाठः": "lesson"
+          "कठिनः": "difficult"
+      "तदा माता दुःखिनी":
+        native: "Then the mother was sad."
+        bases:
+          "तदा": "then"
+          "माता": "mother"
+          "दुःखिनी": "sad"
+  "sa-1545":
+    native: "Again; once more."
+    notes:
+      "n1": "Built on the stem पुनर् (punar); the ending ḥ is the form the word takes as an adverb."
+    bases:
+      "पुनः": "again"
+    examples:
+      "पुनः पाठः":
+        native: "The lesson again."
+        bases:
+          "पुनः": "again"
+          "पाठः": "lesson"
+      "पुनः शीतम्":
+        native: "Cold again."
+        bases:
+          "पुनः": "again"
+          "शीतम्": "cold"
+  "sa-1546":
+    native: "Before; earlier."
+    notes:
+      "n1": "As an adjective पूर्व (pūrva) means eastern or earlier; as a neuter adverb पूर्वम् (pūrvam) means earlier in time."
+    bases:
+      "पूर्वम्": "before"
+    examples:
+      "पूर्वं गृहं नवम्":
+        native: "The house was new before."
+        bases:
+          "पूर्वं": "earlier"
+          "गृहं": "house"
+          "नवम्": "new"
+      "पूर्वं पुराणं पुस्तकम्":
+        native: "An old book from before."
+        bases:
+          "पूर्वं": "earlier"
+          "पुराणं": "old"
+          "पुस्तकम्": "book"
+  "sa-1547":
+    native: "In the evening."
+    examples:
+      "सायं शीतम्":
+        native: "Cold in the evening."
+        bases:
+          "सायं": "in the evening"
+          "शीतम्": "cold"
+      "सायं पिता सुखी":
+        native: "In the evening the father is happy."
+        bases:
+          "सायं": "in the evening"
+          "पिता": "father"
+          "सुखी": "happy"
+  "sa-1548":
+    native: "In the morning; early."
+    notes:
+      "n1": "The morning and the evening, प्रातः (prātaḥ) and सायम् (sāyam), are the two ends of the day in these examples."
+    bases:
+      "प्रातः": "in the morning"
+    examples:
+      "प्रातः शीतम्":
+        native: "Cold in the morning."
+        bases:
+          "प्रातः": "in the morning"
+          "शीतम्": "cold"
+      "प्रातः पवित्रा गङ्गा":
+        native: "The Ganges in the morning is pure."
+        bases:
+          "प्रातः": "in the morning"
+          "पवित्रा": "pure"
+          "गङ्गा": "Ganges"
+  "sa-1549":
+    native: "At night."
+    notes:
+      "n1": "The locative of रात्रि (rātri), night, used as an adverb."
+    bases:
+      "रात्रौ": "at night"
+    examples:
+      "रात्रौ शून्यः मार्गः":
+        native: "The road is empty at night."
+        bases:
+          "रात्रौ": "at night"
+          "शून्यः": "empty"
+          "मार्गः": "road"
+      "रात्रौ जलं शीतम्":
+        native: "The water is cold at night."
+        bases:
+          "रात्रौ": "at night"
+          "जलं": "water"
+          "शीतम्": "cold"

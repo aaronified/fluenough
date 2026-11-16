@@ -1,0 +1,291 @@
+schema: 1
+id: "sa-time"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "time"
+tags: ["unreviewed"]
+cards:
+  - id: "sa-1538"
+    target: "अद्य"
+    reading: "adya"
+    ipa: "əd̪jə"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "अद्य शीतम्"
+        reading: "adya śītam"
+        ipa: "əd̪jə ʃiːt̪əm"
+        bases:
+          - { word: "अद्य", base: "अद्य", reading: "adya" }
+          - { word: "शीतम्", base: "शीत", reading: "śīta" }
+      - target: "अद्य माता दुःखिनी"
+        reading: "adya mātā duḥkhinī"
+        ipa: "əd̪jə maːt̪aː d̪uhkʰiniː"
+        bases:
+          - { word: "अद्य", base: "अद्य", reading: "adya" }
+          - { word: "माता", base: "मातृ", reading: "mātṛ" }
+          - { word: "दुःखिनी", base: "दुःखिन्", reading: "duḥkhin" }
+  - id: "sa-1539"
+    target: "ह्यः"
+    reading: "hyaḥ"
+    ipa: "ɦjəh"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "ह्यः", base: "ह्यस्", reading: "hyas" }
+    examples:
+      - target: "ह्यः पिता सुखी"
+        reading: "hyaḥ pitā sukhī"
+        ipa: "ɦjəh pit̪aː sukʰiː"
+        bases:
+          - { word: "ह्यः", base: "ह्यस्", reading: "hyas" }
+          - { word: "पिता", base: "पितृ", reading: "pitṛ" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhin" }
+      - target: "ह्यः जलं शीतम्"
+        reading: "hyaḥ jalaṃ śītam"
+        ipa: "ɦjəh dʒələm ʃiːt̪əm"
+        bases:
+          - { word: "ह्यः", base: "ह्यस्", reading: "hyas" }
+          - { word: "जलं", base: "जल", reading: "jala" }
+          - { word: "शीतम्", base: "शीत", reading: "śīta" }
+  - id: "sa-1540"
+    target: "श्वः"
+    reading: "śvaḥ"
+    ipa: "ʃʋəh"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "श्वः", base: "श्वस्", reading: "śvas" }
+    examples:
+      - target: "श्वः पाठः कठिनः"
+        reading: "śvaḥ pāṭhaḥ kaṭhinaḥ"
+        ipa: "ʃʋəh paːʈʰəh kəʈʰinəh"
+        bases:
+          - { word: "श्वः", base: "श्वस्", reading: "śvas" }
+          - { word: "पाठः", base: "पाठ", reading: "pāṭha" }
+          - { word: "कठिनः", base: "कठिन", reading: "kaṭhina" }
+      - target: "श्वः मधुरं फलम्"
+        reading: "śvaḥ madhuraṃ phalam"
+        ipa: "ʃʋəh məd̪ʱurəm pʰələm"
+        bases:
+          - { word: "श्वः", base: "श्वस्", reading: "śvas" }
+          - { word: "मधुरं", base: "मधुर", reading: "madhura" }
+          - { word: "फलम्", base: "फल", reading: "phala" }
+  - id: "sa-1541"
+    target: "इदानीम्"
+    reading: "idānīm"
+    ipa: "id̪aːniːm"
+    pos: "adv"
+    tags: ["time"]
+    bases: "self"
+    examples:
+      - target: "इदानीं जलं शीतम्"
+        reading: "idānīṃ jalaṃ śītam"
+        ipa: "id̪aːniːm dʒələm ʃiːt̪əm"
+        bases:
+          - { word: "इदानीं", base: "इदानीम्", reading: "idānīm" }
+          - { word: "जलं", base: "जल", reading: "jala" }
+          - { word: "शीतम्", base: "शीत", reading: "śīta" }
+      - target: "इदानीं माता दुःखिनी"
+        reading: "idānīṃ mātā duḥkhinī"
+        ipa: "id̪aːniːm maːt̪aː d̪uhkʰiniː"
+        bases:
+          - { word: "इदानीं", base: "इदानीम्", reading: "idānīm" }
+          - { word: "माता", base: "मातृ", reading: "mātṛ" }
+          - { word: "दुःखिनी", base: "दुःखिन्", reading: "duḥkhin" }
+  - id: "sa-1542"
+    target: "सदा"
+    reading: "sadā"
+    ipa: "səd̪aː"
+    pos: "adv"
+    tags: ["time"]
+    bases: "self"
+    examples:
+      - target: "सदा सुखी पिता"
+        reading: "sadā sukhī pitā"
+        ipa: "səd̪aː sukʰiː pit̪aː"
+        bases:
+          - { word: "सदा", base: "सदा", reading: "sadā" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhin" }
+          - { word: "पिता", base: "पितृ", reading: "pitṛ" }
+      - target: "गङ्गा सदा पवित्रा"
+        reading: "gaṅgā sadā pavitrā"
+        ipa: "ɡəŋɡaː səd̪aː pəʋit̪raː"
+        bases:
+          - { word: "गङ्गा", base: "गङ्गा", reading: "gaṅgā" }
+          - { word: "सदा", base: "सदा", reading: "sadā" }
+          - { word: "पवित्रा", base: "पवित्र", reading: "pavitra" }
+  - id: "sa-1543"
+    target: "कदा"
+    reading: "kadā"
+    ipa: "kəd̪aː"
+    pos: "adv"
+    tags: ["time", "question"]
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "कदा पाठः"
+        reading: "kadā pāṭhaḥ"
+        ipa: "kəd̪aː paːʈʰəh"
+        bases:
+          - { word: "कदा", base: "कदा", reading: "kadā" }
+          - { word: "पाठः", base: "पाठ", reading: "pāṭha" }
+      - target: "कदा जलं शीतम्"
+        reading: "kadā jalaṃ śītam"
+        ipa: "kəd̪aː dʒələm ʃiːt̪əm"
+        bases:
+          - { word: "कदा", base: "कदा", reading: "kadā" }
+          - { word: "जलं", base: "जल", reading: "jala" }
+          - { word: "शीतम्", base: "शीत", reading: "śīta" }
+  - id: "sa-1544"
+    target: "तदा"
+    reading: "tadā"
+    ipa: "t̪əd̪aː"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "तदा पाठः कठिनः"
+        reading: "tadā pāṭhaḥ kaṭhinaḥ"
+        ipa: "t̪əd̪aː paːʈʰəh kəʈʰinəh"
+        bases:
+          - { word: "तदा", base: "तदा", reading: "tadā" }
+          - { word: "पाठः", base: "पाठ", reading: "pāṭha" }
+          - { word: "कठिनः", base: "कठिन", reading: "kaṭhina" }
+      - target: "तदा माता दुःखिनी"
+        reading: "tadā mātā duḥkhinī"
+        ipa: "t̪əd̪aː maːt̪aː d̪uhkʰiniː"
+        bases:
+          - { word: "तदा", base: "तदा", reading: "tadā" }
+          - { word: "माता", base: "मातृ", reading: "mātṛ" }
+          - { word: "दुःखिनी", base: "दुःखिन्", reading: "duḥkhin" }
+  - id: "sa-1545"
+    target: "पुनः"
+    reading: "punaḥ"
+    ipa: "punəh"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "पुनः", base: "पुनर्", reading: "punar" }
+    examples:
+      - target: "पुनः पाठः"
+        reading: "punaḥ pāṭhaḥ"
+        ipa: "punəh paːʈʰəh"
+        bases:
+          - { word: "पुनः", base: "पुनर्", reading: "punar" }
+          - { word: "पाठः", base: "पाठ", reading: "pāṭha" }
+      - target: "पुनः शीतम्"
+        reading: "punaḥ śītam"
+        ipa: "punəh ʃiːt̪əm"
+        bases:
+          - { word: "पुनः", base: "पुनर्", reading: "punar" }
+          - { word: "शीतम्", base: "शीत", reading: "śīta" }
+  - id: "sa-1546"
+    target: "पूर्वम्"
+    reading: "pūrvam"
+    ipa: "puːrʋəm"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "पूर्वम्", base: "पूर्व", reading: "pūrva" }
+    examples:
+      - target: "पूर्वं गृहं नवम्"
+        reading: "pūrvaṃ gṛhaṃ navam"
+        ipa: "puːrʋəm ɡr̩ɦəm nəʋəm"
+        bases:
+          - { word: "पूर्वं", base: "पूर्व", reading: "pūrva" }
+          - { word: "गृहं", base: "गृह", reading: "gṛha" }
+          - { word: "नवम्", base: "नव", reading: "nava" }
+      - target: "पूर्वं पुराणं पुस्तकम्"
+        reading: "pūrvaṃ purāṇaṃ pustakam"
+        ipa: "puːrʋəm puraːɳəm pust̪əkəm"
+        bases:
+          - { word: "पूर्वं", base: "पूर्व", reading: "pūrva" }
+          - { word: "पुराणं", base: "पुराण", reading: "purāṇa" }
+          - { word: "पुस्तकम्", base: "पुस्तक", reading: "pustaka" }
+  - id: "sa-1547"
+    target: "सायम्"
+    reading: "sāyam"
+    ipa: "saːjəm"
+    pos: "adv"
+    tags: ["time"]
+    bases: "self"
+    examples:
+      - target: "सायं शीतम्"
+        reading: "sāyaṃ śītam"
+        ipa: "saːjəm ʃiːt̪əm"
+        bases:
+          - { word: "सायं", base: "सायम्", reading: "sāyam" }
+          - { word: "शीतम्", base: "शीत", reading: "śīta" }
+      - target: "सायं पिता सुखी"
+        reading: "sāyaṃ pitā sukhī"
+        ipa: "saːjəm pit̪aː sukʰiː"
+        bases:
+          - { word: "सायं", base: "सायम्", reading: "sāyam" }
+          - { word: "पिता", base: "पितृ", reading: "pitṛ" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhin" }
+  - id: "sa-1548"
+    target: "प्रातः"
+    reading: "prātaḥ"
+    ipa: "praːt̪əh"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "प्रातः", base: "प्रातर्", reading: "prātar" }
+    examples:
+      - target: "प्रातः शीतम्"
+        reading: "prātaḥ śītam"
+        ipa: "praːt̪əh ʃiːt̪əm"
+        bases:
+          - { word: "प्रातः", base: "प्रातर्", reading: "prātar" }
+          - { word: "शीतम्", base: "शीत", reading: "śīta" }
+      - target: "प्रातः पवित्रा गङ्गा"
+        reading: "prātaḥ pavitrā gaṅgā"
+        ipa: "praːt̪əh pəʋit̪raː ɡəŋɡaː"
+        bases:
+          - { word: "प्रातः", base: "प्रातर्", reading: "prātar" }
+          - { word: "पवित्रा", base: "पवित्र", reading: "pavitra" }
+          - { word: "गङ्गा", base: "गङ्गा", reading: "gaṅgā" }
+  - id: "sa-1549"
+    target: "रात्रौ"
+    reading: "rātrau"
+    ipa: "raːt̪rəu"
+    pos: "adv"
+    tags: ["time"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "रात्रौ", base: "रात्रि", reading: "rātri" }
+    examples:
+      - target: "रात्रौ शून्यः मार्गः"
+        reading: "rātrau śūnyaḥ mārgaḥ"
+        ipa: "raːt̪rəu ʃuːnjəh maːrɡəh"
+        bases:
+          - { word: "रात्रौ", base: "रात्रि", reading: "rātri" }
+          - { word: "शून्यः", base: "शून्य", reading: "śūnya" }
+          - { word: "मार्गः", base: "मार्ग", reading: "mārga" }
+      - target: "रात्रौ जलं शीतम्"
+        reading: "rātrau jalaṃ śītam"
+        ipa: "raːt̪rəu dʒələm ʃiːt̪əm"
+        bases:
+          - { word: "रात्रौ", base: "रात्रि", reading: "rātri" }
+          - { word: "जलं", base: "जल", reading: "jala" }
+          - { word: "शीतम्", base: "शीत", reading: "śīta" }

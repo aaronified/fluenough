@@ -105,16 +105,10 @@ units:
     words: 14
   - decks: ["sa-describing"]
     words: 24
-  - planned: { id: "sa-time", theme: "time", words: 12 }
-    listening_passages:
-      - { id: "time-heard", text: { "en": "A short passage in Classical Sanskrit on the theme time, read aloud" } }
-    reading_passages:
-      - { id: "time-text", text: { "en": "A short written text in Classical Sanskrit on the theme time" } }
-  - planned: { id: "sa-location", theme: "location", words: 9 }
-    listening_passages:
-      - { id: "location-heard", text: { "en": "A short passage in Classical Sanskrit on the theme location, read aloud" } }
-    reading_passages:
-      - { id: "location-text", text: { "en": "A short written text in Classical Sanskrit on the theme location" } }
+  - decks: ["sa-time"]
+    words: 12
+  - decks: ["sa-location"]
+    words: 9
   - planned: { id: "sa-more-verbs", theme: "more-verbs", words: 24 }
     listening_passages:
       - { id: "more-verbs-heard", text: { "en": "A short passage in Classical Sanskrit on the theme more verbs, read aloud" } }
