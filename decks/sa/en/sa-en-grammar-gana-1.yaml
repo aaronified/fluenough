@@ -1,0 +1,28 @@
+schema: 1
+id: "sa-en-grammar-gana-1"
+kind: "layer"
+core: "sa-grammar-gana-1"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The present tense, classes 2 to 5"
+description: "The present tense of the verbs of the second, third, fourth and fifth class: the class sign that stands between the root and the ending, and the strong and weak stems. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "person and number"
+  slots:
+    "p3-sg": "third person singular (he, she, it)"
+    "p3-du": "third person dual (the two of them)"
+    "p3-pl": "third person plural (they)"
+    "p2-sg": "second person singular (you)"
+    "p2-du": "second person dual (the two of you)"
+    "p2-pl": "second person plural (you all)"
+    "p1-sg": "first person singular (I)"
+    "p1-du": "first person dual (the two of us)"
+    "p1-pl": "first person plural (we)"
+rules:
+  "sa-rule-gana-1-singular":
+    name: "Singular: the strong stem and the class sign"
+    explanation: "Pāṇini 3.4.78 lists the nine endings of the present with their marker letters: tip, tas, jhi (third person), sip, thas, tha (second) and mip, vas, mas (first). The three singular endings, -ti, -si and -mi, are the ones that carry the marker p, so they are called pit. 1.2.4, {12}, makes every other present ending ṅit, and a ṅit ending stops the root from being strengthened to its guṇa vowel (Pāṇini 7.3.84 is the rule that strengthens it). That is why the singular has the strong stem and the dual and plural the weak one. What stands between the root and the ending depends on the class, and each class is named for its first root. First class: 3.1.68, {1}, adds śap, an a, as in {2}. Second class: 2.4.72, {3}, removes the śap, so the endings join the root itself: {4} is as and ti; {5} is rud strengthened to rod with a linking i; {6} is brū strengthened to brav with a linking ī; {13} keeps its long ā. Third class: 2.4.75, {7}, replaces the śap with a ślu, and the root is doubled: {8}. Fourth class: 3.1.69, {9}, adds śyan, which leaves ya, and the stem is the same in every person: {10}. Fifth class: 3.1.73 adds śnu (the sūtra page types its text wrongly, so only its number is given): the stem takes nu, which is strengthened to no in the singular: {11}. The table has a row for each verb of the second to fifth class that the course teaches; the first-class verbs are in the present system unit and the classes 6 to 10 in the next unit. Read each row across: the strong stem is the one before the singular endings."
+  "sa-rule-gana-1-weak":
+    name: "Dual and plural: the weak stem"
+    explanation: "The dual and plural endings are not pit, so by 1.2.4, {1}, they are ṅit and the root keeps its weak form: there is no strengthening. Second class: {2} and {3} are as with its vowel lost before the endings, {10} keeps the linking i of rud and {11} has brū without its linking ī. Third class: the third person plural ending is -ati, not -anti. The doubled root is shortened before the endings: {4} has lost its long ā and the d has met the t; before -ati the long ā of the doubled root drops, 6.4.112, {6}: {5}. Fourth class: the stem is the same as in the singular: {7}. Fifth class: the nu is not strengthened: {8}, and the u becomes v before an ending that begins with a vowel: {9}. Where the table gives two forms for one cell, as for the first person singular of brū and dā, en.wiktionary lists both and the first is shown."

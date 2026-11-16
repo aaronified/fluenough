@@ -190,12 +190,14 @@ units:
       - { id: "calendar-heard", text: { "en": "A short passage in Classical Sanskrit on the theme the calendar, read aloud" } }
     reading_passages:
       - { id: "calendar-text", text: { "en": "A short written text in Classical Sanskrit on the theme the calendar" } }
-  - planned: { id: "sa-grammar-gana-1", grammar: ["gana-1"] }
+  - decks: ["sa-grammar-gana-1"]
+    grammar: ["gana-1-singular", "gana-1-weak"]
     listening_passages:
       - { id: "grammar-gana-1-heard", text: { "en": "A short passage in Classical Sanskrit showing gana 1, read aloud" } }
     reading_passages:
       - { id: "grammar-gana-1-text", text: { "en": "A short written text in Classical Sanskrit showing gana 1" } }
-  - planned: { id: "sa-grammar-gana-2", grammar: ["gana-2"] }
+  - decks: ["sa-grammar-gana-2"]
+    grammar: ["gana-2-singular", "gana-2-weak"]
     listening_passages:
       - { id: "grammar-gana-2-heard", text: { "en": "A short passage in Classical Sanskrit showing gana 2, read aloud" } }
     reading_passages:

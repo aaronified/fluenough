@@ -1,0 +1,55 @@
+# Classes 2 to 5 of the verbs (adadi, juhotyadi, divadi, svadi), with the first class from sa-grammar-present-system as the base.
+# The class of each verb is the tag it already carries (gana-2 to gana-5); the model verb of each class is the first row of that class.
+# Forms and readings come from the en.wiktionary.org table of the third person singular of each verb; the readings were also compared
+# with tools/transcribe.py (sa) and agree.
+schema: 1
+id: "sa-grammar-gana-1"
+part: "core"
+kind: "rules"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+source: "Pāṇini, Aṣṭādhyāyī 1.2.4, 2.4.72, 2.4.75, 3.1.68, 3.1.69, 3.1.73, 3.4.78, 6.4.112 and 7.3.84 as typed on sa.wikisource.org/wiki/अष्टाध्यायी (the first, second, third, sixth and seventh chapter pages), read 2026-11-16; each verb's nine active forms and its class read in the present table and the verb line of its third person singular entry on en.wiktionary.org (अस्ति, रोदिति, याति, ब्रवीति, ददाति, दधाति, पश्यति, नृत्यति, शृणोति), read 2026-11-16; forms marked as Vedic there are left out."
+tags: ["grammar", "unreviewed"]
+table:
+  # The verbs of classes 2 to 5 that the course teaches, one row each; the first-class verbs are in sa-grammar-present-system.
+  applies_to:
+    pos: ["verb"]
+    tags: ["gana-2", "gana-3", "gana-4", "gana-5"]
+  slots: ["p3-sg", "p3-du", "p3-pl", "p2-sg", "p2-du", "p2-pl", "p1-sg", "p1-du", "p1-pl"]
+  rows:
+    - word: "sa-2105"
+      forms: { "p3-sg": "अस्ति", "p3-du": "स्तः", "p3-pl": "सन्ति", "p2-sg": "असि", "p2-du": "स्थः", "p2-pl": "स्थ", "p1-sg": "अस्मि", "p1-du": "स्वः", "p1-pl": "स्मः" }
+      readings: { "p3-sg": "asti", "p3-du": "staḥ", "p3-pl": "santi", "p2-sg": "asi", "p2-du": "sthaḥ", "p2-pl": "stha", "p1-sg": "asmi", "p1-du": "svaḥ", "p1-pl": "smaḥ" }
+    - word: "sa-2106"
+      forms: { "p3-sg": "रोदिति", "p3-du": "रुदितः", "p3-pl": "रुदन्ति", "p2-sg": "रोदिषि", "p2-du": "रुदिथः", "p2-pl": "रुदिथ", "p1-sg": "रोदिमि", "p1-du": "रुदिवः", "p1-pl": "रुदिमः" }
+      readings: { "p3-sg": "roditi", "p3-du": "ruditaḥ", "p3-pl": "rudanti", "p2-sg": "rodiṣi", "p2-du": "rudithaḥ", "p2-pl": "ruditha", "p1-sg": "rodimi", "p1-du": "rudivaḥ", "p1-pl": "rudimaḥ" }
+    - word: "sa-2107"
+      forms: { "p3-sg": "याति", "p3-du": "यातः", "p3-pl": "यान्ति", "p2-sg": "यासि", "p2-du": "याथः", "p2-pl": "याथ", "p1-sg": "यामि", "p1-du": "यावः", "p1-pl": "यामः" }
+      readings: { "p3-sg": "yāti", "p3-du": "yātaḥ", "p3-pl": "yānti", "p2-sg": "yāsi", "p2-du": "yāthaḥ", "p2-pl": "yātha", "p1-sg": "yāmi", "p1-du": "yāvaḥ", "p1-pl": "yāmaḥ" }
+    - word: "sa-2108"
+      forms: { "p3-sg": "ब्रवीति", "p3-du": "ब्रूतः", "p3-pl": "ब्रुवन्ति", "p2-sg": "ब्रवीषि", "p2-du": "ब्रूथः", "p2-pl": "ब्रूथ", "p1-sg": ["ब्रवीमि", "ब्रूमि"], "p1-du": "ब्रूवः", "p1-pl": "ब्रूमः" }
+      readings: { "p3-sg": "bravīti", "p3-du": "brūtaḥ", "p3-pl": "bruvanti", "p2-sg": "bravīṣi", "p2-du": "brūthaḥ", "p2-pl": "brūtha", "p1-sg": ["bravīmi", "brūmi"], "p1-du": "brūvaḥ", "p1-pl": "brūmaḥ" }
+    - word: "sa-2109"
+      forms: { "p3-sg": "ददाति", "p3-du": "दत्तः", "p3-pl": "ददति", "p2-sg": "ददासि", "p2-du": "दत्थः", "p2-pl": "दत्थ", "p1-sg": ["ददामि", "दद्मि"], "p1-du": "दद्वः", "p1-pl": "दद्मः" }
+      readings: { "p3-sg": "dadāti", "p3-du": "dattaḥ", "p3-pl": "dadati", "p2-sg": "dadāsi", "p2-du": "datthaḥ", "p2-pl": "dattha", "p1-sg": ["dadāmi", "dadmi"], "p1-du": "dadvaḥ", "p1-pl": "dadmaḥ" }
+    - word: "sa-2110"
+      forms: { "p3-sg": "दधाति", "p3-du": "धत्तः", "p3-pl": "दधति", "p2-sg": "दधासि", "p2-du": "धत्थः", "p2-pl": "धत्थ", "p1-sg": "दधामि", "p1-du": "दध्वः", "p1-pl": "दध्मः" }
+      readings: { "p3-sg": "dadhāti", "p3-du": "dhattaḥ", "p3-pl": "dadhati", "p2-sg": "dadhāsi", "p2-du": "dhatthaḥ", "p2-pl": "dhattha", "p1-sg": "dadhāmi", "p1-du": "dadhvaḥ", "p1-pl": "dadhmaḥ" }
+    - word: "sa-2111"
+      forms: { "p3-sg": "पश्यति", "p3-du": "पश्यतः", "p3-pl": "पश्यन्ति", "p2-sg": "पश्यसि", "p2-du": "पश्यथः", "p2-pl": "पश्यथ", "p1-sg": "पश्यामि", "p1-du": "पश्यावः", "p1-pl": "पश्यामः" }
+      readings: { "p3-sg": "paśyati", "p3-du": "paśyataḥ", "p3-pl": "paśyanti", "p2-sg": "paśyasi", "p2-du": "paśyathaḥ", "p2-pl": "paśyatha", "p1-sg": "paśyāmi", "p1-du": "paśyāvaḥ", "p1-pl": "paśyāmaḥ" }
+    - word: "sa-2112"
+      forms: { "p3-sg": "नृत्यति", "p3-du": "नृत्यतः", "p3-pl": "नृत्यन्ति", "p2-sg": "नृत्यसि", "p2-du": "नृत्यथः", "p2-pl": "नृत्यथ", "p1-sg": "नृत्यामि", "p1-du": "नृत्यावः", "p1-pl": "नृत्यामः" }
+      readings: { "p3-sg": "nṛtyati", "p3-du": "nṛtyataḥ", "p3-pl": "nṛtyanti", "p2-sg": "nṛtyasi", "p2-du": "nṛtyathaḥ", "p2-pl": "nṛtyatha", "p1-sg": "nṛtyāmi", "p1-du": "nṛtyāvaḥ", "p1-pl": "nṛtyāmaḥ" }
+    - word: "sa-2113"
+      forms: { "p3-sg": "शृणोति", "p3-du": "शृणुतः", "p3-pl": "शृण्वन्ति", "p2-sg": "शृणोषि", "p2-du": "शृणुथः", "p2-pl": "शृणुथ", "p1-sg": "शृणोमि", "p1-du": ["शृण्वः", "शृणुवः"], "p1-pl": ["शृण्मः", "शृणुमः"] }
+      readings: { "p3-sg": "śṛṇoti", "p3-du": "śṛṇutaḥ", "p3-pl": "śṛṇvanti", "p2-sg": "śṛṇoṣi", "p2-du": "śṛṇuthaḥ", "p2-pl": "śṛṇutha", "p1-sg": "śṛṇomi", "p1-du": ["śṛṇvaḥ", "śṛṇuvaḥ"], "p1-pl": ["śṛṇmaḥ", "śṛṇumaḥ"] }
+rules:
+  - id: "sa-rule-gana-1-singular"
+    slots: ["p3-sg", "p2-sg", "p1-sg"]
+    words: [{ word: "कर्तरि शप्", reading: "kartari śap" }, { word: "भवति", reading: "bhavati" }, { word: "अदिप्रभृतिभ्यः शपः", reading: "adiprabhṛtibhyaḥ śapaḥ" }, { word: "अस्ति", reading: "asti" }, { word: "रोदिति", reading: "roditi" }, { word: "ब्रवीति", reading: "bravīti" }, { word: "जुहोति आदिभ्यः श्लुः", reading: "juhoti ādibhyaḥ śluḥ" }, { word: "ददाति", reading: "dadāti" }, { word: "दिवादिभ्यः श्यन्", reading: "divādibhyaḥ śyan" }, { word: "पश्यति", reading: "paśyati" }, { word: "शृणोति", reading: "śṛṇoti" }, { word: "सार्वधातुकम् अपित्", reading: "sārvadhātukam apit" }, { word: "याति", reading: "yāti" }]
+  - id: "sa-rule-gana-1-weak"
+    slots: ["p3-du", "p3-pl", "p2-du", "p2-pl", "p1-du", "p1-pl"]
+    words: [{ word: "सार्वधातुकम् अपित्", reading: "sārvadhātukam apit" }, { word: "स्तः", reading: "staḥ" }, { word: "सन्ति", reading: "santi" }, { word: "दत्तः", reading: "dattaḥ" }, { word: "ददति", reading: "dadati" }, { word: "श्ना अभ्यस्तयोरातः", reading: "śnā abhyastayorātaḥ" }, { word: "पश्यतः", reading: "paśyataḥ" }, { word: "शृणुतः", reading: "śṛṇutaḥ" }, { word: "शृण्वन्ति", reading: "śṛṇvanti" }, { word: "रुदितः", reading: "ruditaḥ" }, { word: "ब्रूतः", reading: "brūtaḥ" }]

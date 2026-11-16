@@ -1,0 +1,60 @@
+# Classes 6 to 10 of the verbs (tudadi, rudhadi, tanadi, kryadi, curadi). The class of each verb is the tag it already carries
+# (gana-6 to gana-10). Forms and readings come from the en.wiktionary.org table of the third person singular of each verb; the
+# readings were also compared with tools/transcribe.py (sa) and agree.
+schema: 1
+id: "sa-grammar-gana-2"
+part: "core"
+kind: "rules"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+source: "Pāṇini, Aṣṭādhyāyī 1.2.4, 3.1.25, 3.1.77, 3.1.78, 3.1.79, 3.1.81, 6.4.112, 6.4.113 and 7.3.77 as typed on sa.wikisource.org/wiki/अष्टाध्यायी (the first, third, sixth and seventh chapter pages), read 2026-11-16; each verb's nine active forms and its class read in the present table and the verb line of its third person singular entry on en.wiktionary.org (लिखति, विशति, इच्छति, तुदति, रुणद्धि, करोति, जानाति, क्रीणाति, गृह्णाति, कथयति, पूजयति), read 2026-11-16; forms marked as Vedic there are left out."
+tags: ["grammar", "unreviewed"]
+table:
+  # The verbs of classes 6 to 10 that the course teaches, one row each; the first-class verbs are in sa-grammar-present-system.
+  applies_to:
+    pos: ["verb"]
+    tags: ["gana-6", "gana-7", "gana-8", "gana-9", "gana-10"]
+  slots: ["p3-sg", "p3-du", "p3-pl", "p2-sg", "p2-du", "p2-pl", "p1-sg", "p1-du", "p1-pl"]
+  rows:
+    - word: "sa-2114"
+      forms: { "p3-sg": "लिखति", "p3-du": "लिखतः", "p3-pl": "लिखन्ति", "p2-sg": "लिखसि", "p2-du": "लिखथः", "p2-pl": "लिखथ", "p1-sg": "लिखामि", "p1-du": "लिखावः", "p1-pl": "लिखामः" }
+      readings: { "p3-sg": "likhati", "p3-du": "likhataḥ", "p3-pl": "likhanti", "p2-sg": "likhasi", "p2-du": "likhathaḥ", "p2-pl": "likhatha", "p1-sg": "likhāmi", "p1-du": "likhāvaḥ", "p1-pl": "likhāmaḥ" }
+    - word: "sa-2115"
+      forms: { "p3-sg": "विशति", "p3-du": "विशतः", "p3-pl": "विशन्ति", "p2-sg": "विशसि", "p2-du": "विशथः", "p2-pl": "विशथ", "p1-sg": "विशामि", "p1-du": "विशावः", "p1-pl": "विशामः" }
+      readings: { "p3-sg": "viśati", "p3-du": "viśataḥ", "p3-pl": "viśanti", "p2-sg": "viśasi", "p2-du": "viśathaḥ", "p2-pl": "viśatha", "p1-sg": "viśāmi", "p1-du": "viśāvaḥ", "p1-pl": "viśāmaḥ" }
+    - word: "sa-2116"
+      forms: { "p3-sg": "इच्छति", "p3-du": "इच्छतः", "p3-pl": "इच्छन्ति", "p2-sg": "इच्छसि", "p2-du": "इच्छथः", "p2-pl": "इच्छथ", "p1-sg": "इच्छामि", "p1-du": "इच्छावः", "p1-pl": "इच्छामः" }
+      readings: { "p3-sg": "icchati", "p3-du": "icchataḥ", "p3-pl": "icchanti", "p2-sg": "icchasi", "p2-du": "icchathaḥ", "p2-pl": "icchatha", "p1-sg": "icchāmi", "p1-du": "icchāvaḥ", "p1-pl": "icchāmaḥ" }
+    - word: "sa-2117"
+      forms: { "p3-sg": "तुदति", "p3-du": "तुदतः", "p3-pl": "तुदन्ति", "p2-sg": "तुदसि", "p2-du": "तुदथः", "p2-pl": "तुदथ", "p1-sg": "तुदामि", "p1-du": "तुदावः", "p1-pl": "तुदामः" }
+      readings: { "p3-sg": "tudati", "p3-du": "tudataḥ", "p3-pl": "tudanti", "p2-sg": "tudasi", "p2-du": "tudathaḥ", "p2-pl": "tudatha", "p1-sg": "tudāmi", "p1-du": "tudāvaḥ", "p1-pl": "tudāmaḥ" }
+    - word: "sa-2101"
+      forms: { "p3-sg": "रुणद्धि", "p3-du": "रुन्द्धः", "p3-pl": "रुन्धन्ति", "p2-sg": "रुणत्सि", "p2-du": "रुन्द्धः", "p2-pl": "रुन्द्ध", "p1-sg": "रुणध्मि", "p1-du": "रुन्ध्वः", "p1-pl": "रुन्ध्मः" }
+      readings: { "p3-sg": "ruṇaddhi", "p3-du": "runddhaḥ", "p3-pl": "rundhanti", "p2-sg": "ruṇatsi", "p2-du": "runddhaḥ", "p2-pl": "runddha", "p1-sg": "ruṇadhmi", "p1-du": "rundhvaḥ", "p1-pl": "rundhmaḥ" }
+    - word: "sa-2118"
+      forms: { "p3-sg": "करोति", "p3-du": "कुरुतः", "p3-pl": "कुर्वन्ति", "p2-sg": "करोषि", "p2-du": "कुरुथः", "p2-pl": "कुरुथ", "p1-sg": "करोमि", "p1-du": "कुर्वः", "p1-pl": "कुर्मः" }
+      readings: { "p3-sg": "karoti", "p3-du": "kurutaḥ", "p3-pl": "kurvanti", "p2-sg": "karoṣi", "p2-du": "kuruthaḥ", "p2-pl": "kurutha", "p1-sg": "karomi", "p1-du": "kurvaḥ", "p1-pl": "kurmaḥ" }
+    - word: "sa-2119"
+      forms: { "p3-sg": "जानाति", "p3-du": "जानीतः", "p3-pl": "जानन्ति", "p2-sg": "जानासि", "p2-du": "जानीथः", "p2-pl": "जानीथ", "p1-sg": "जानामि", "p1-du": "जानीवः", "p1-pl": "जानीमः" }
+      readings: { "p3-sg": "jānāti", "p3-du": "jānītaḥ", "p3-pl": "jānanti", "p2-sg": "jānāsi", "p2-du": "jānīthaḥ", "p2-pl": "jānītha", "p1-sg": "jānāmi", "p1-du": "jānīvaḥ", "p1-pl": "jānīmaḥ" }
+    - word: "sa-2120"
+      forms: { "p3-sg": "क्रीणाति", "p3-du": "क्रीणीतः", "p3-pl": "क्रीणन्ति", "p2-sg": "क्रीणासि", "p2-du": "क्रीणीथः", "p2-pl": "क्रीणीथ", "p1-sg": "क्रीणामि", "p1-du": "क्रीणीवः", "p1-pl": "क्रीणीमः" }
+      readings: { "p3-sg": "krīṇāti", "p3-du": "krīṇītaḥ", "p3-pl": "krīṇanti", "p2-sg": "krīṇāsi", "p2-du": "krīṇīthaḥ", "p2-pl": "krīṇītha", "p1-sg": "krīṇāmi", "p1-du": "krīṇīvaḥ", "p1-pl": "krīṇīmaḥ" }
+    - word: "sa-2121"
+      forms: { "p3-sg": "गृह्णाति", "p3-du": "गृह्णीतः", "p3-pl": "गृह्णन्ति", "p2-sg": "गृह्णासि", "p2-du": "गृह्णीथः", "p2-pl": "गृह्णीथ", "p1-sg": "गृह्णामि", "p1-du": "गृह्णीवः", "p1-pl": "गृह्णीमः" }
+      readings: { "p3-sg": "gṛhṇāti", "p3-du": "gṛhṇītaḥ", "p3-pl": "gṛhṇanti", "p2-sg": "gṛhṇāsi", "p2-du": "gṛhṇīthaḥ", "p2-pl": "gṛhṇītha", "p1-sg": "gṛhṇāmi", "p1-du": "gṛhṇīvaḥ", "p1-pl": "gṛhṇīmaḥ" }
+    - word: "sa-2122"
+      forms: { "p3-sg": "कथयति", "p3-du": "कथयतः", "p3-pl": "कथयन्ति", "p2-sg": "कथयसि", "p2-du": "कथयथः", "p2-pl": "कथयथ", "p1-sg": "कथयामि", "p1-du": "कथयावः", "p1-pl": "कथयामः" }
+      readings: { "p3-sg": "kathayati", "p3-du": "kathayataḥ", "p3-pl": "kathayanti", "p2-sg": "kathayasi", "p2-du": "kathayathaḥ", "p2-pl": "kathayatha", "p1-sg": "kathayāmi", "p1-du": "kathayāvaḥ", "p1-pl": "kathayāmaḥ" }
+    - word: "sa-2123"
+      forms: { "p3-sg": "पूजयति", "p3-du": "पूजयतः", "p3-pl": "पूजयन्ति", "p2-sg": "पूजयसि", "p2-du": "पूजयथः", "p2-pl": "पूजयथ", "p1-sg": "पूजयामि", "p1-du": "पूजयावः", "p1-pl": "पूजयामः" }
+      readings: { "p3-sg": "pūjayati", "p3-du": "pūjayataḥ", "p3-pl": "pūjayanti", "p2-sg": "pūjayasi", "p2-du": "pūjayathaḥ", "p2-pl": "pūjayatha", "p1-sg": "pūjayāmi", "p1-du": "pūjayāvaḥ", "p1-pl": "pūjayāmaḥ" }
+rules:
+  - id: "sa-rule-gana-2-singular"
+    slots: ["p3-sg", "p2-sg", "p1-sg"]
+    words: [{ word: "तुदादिभ्यः शः", reading: "tudādibhyaḥ śaḥ" }, { word: "तुदति", reading: "tudati" }, { word: "लिखति", reading: "likhati" }, { word: "इच्छति", reading: "icchati" }, { word: "रुधादिभ्यः श्नं", reading: "rudhādibhyaḥ śnaṃ" }, { word: "रुणद्धि", reading: "ruṇaddhi" }, { word: "करोति", reading: "karoti" }, { word: "क्रीआदिभ्यः श्ना", reading: "krīādibhyaḥ śnā" }, { word: "क्रीणाति", reading: "krīṇāti" }, { word: "जानाति", reading: "jānāti" }, { word: "कथयति", reading: "kathayati" }, { word: "पूजयति", reading: "pūjayati" }]
+  - id: "sa-rule-gana-2-weak"
+    slots: ["p3-du", "p3-pl", "p2-du", "p2-pl", "p1-du", "p1-pl"]
+    words: [{ word: "सार्वधातुकम् अपित्", reading: "sārvadhātukam apit" }, { word: "तुदतः", reading: "tudataḥ" }, { word: "रुन्द्धः", reading: "runddhaḥ" }, { word: "रुन्धन्ति", reading: "rundhanti" }, { word: "कुरुतः", reading: "kurutaḥ" }, { word: "कुर्वन्ति", reading: "kurvanti" }, { word: "कुर्मः", reading: "kurmaḥ" }, { word: "क्रीणीतः", reading: "krīṇītaḥ" }, { word: "क्रीणन्ति", reading: "krīṇanti" }, { word: "ई हलि अ घोः", reading: "ī hali a ghoḥ" }, { word: "श्ना अभ्यस्तयोरातः", reading: "śnā abhyastayorātaḥ" }, { word: "कथयतः", reading: "kathayataḥ" }]
