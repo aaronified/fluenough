@@ -1,0 +1,235 @@
+schema: 1
+id: "sa-en-quantities"
+kind: "layer"
+core: "sa-quantities"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "How much and how many"
+description: "How much and how many in Classical Sanskrit: little and much, all and some, full and empty, only, again, and how many."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-1500":
+    native: "Little; few."
+    notes:
+      "n1": "Its neuter is अल्पम् (alpam); the ending follows the noun it describes, as in अल्पं (alpaṃ) जलम् (jalam)."
+      "n2": "In these examples the words are written apart; in running text a final ḥ or m before a vowel takes sandhi,."
+    bases:
+      "अल्पः": "little"
+    examples:
+      "अल्पं जलम्":
+        native: "Little water."
+        bases:
+          "अल्पं": "little"
+          "जलम्": "water"
+      "अग्निः अल्पः":
+        native: "The fire is small."
+        bases:
+          "अग्निः": "fire"
+          "अल्पः": "small"
+  "sa-1501":
+    native: "Much; many."
+    notes:
+      "n1": "A u-stem: बहुः (bahuḥ) for the masculine, बहु (bahu) for the neuter, and बहवः (bahavaḥ) in the masculine plural."
+    bases:
+      "बहुः": "much"
+    examples:
+      "बहवः देवाः":
+        native: "Many gods."
+        bases:
+          "बहवः": "many"
+          "देवाः": "gods"
+      "बहु जलम्":
+        native: "Much water."
+        bases:
+          "बहु": "much"
+          "जलम्": "water"
+  "sa-1502":
+    native: "Many; several."
+    notes:
+      "n1": "Use अनेक (aneka) for a count of things (many books) and बहु (bahu) for a quantity (much water)."
+    bases:
+      "अनेकः": "many"
+    examples:
+      "अनेकाः देवाः":
+        native: "Many gods."
+        bases:
+          "अनेकाः": "many"
+          "देवाः": "gods"
+      "अनेकानि पुस्तकानि":
+        native: "Many books."
+        bases:
+          "अनेकानि": "many"
+          "पुस्तकानि": "books"
+  "sa-1503":
+    native: "All; every; whole."
+    notes:
+      "n1": "Pronominal: its genitive and locative take the pronoun endings (सर्वस्य (sarvasya), sarvasya), not the plain a-stem ones."
+    bases:
+      "सर्वः": "all"
+    examples:
+      "सर्वे देवाः":
+        native: "All the gods."
+        bases:
+          "सर्वे": "all"
+          "देवाः": "gods"
+      "सर्वं जलम्":
+        native: "All the water."
+        bases:
+          "सर्वं": "all"
+          "जलम्": "water"
+  "sa-1504":
+    native: "More; extra; in excess."
+    notes:
+      "n1": "In these examples the words are written apart; in running text a final ḥ or m before a vowel takes sandhi,."
+    bases:
+      "अधिकः": "more"
+    examples:
+      "अधिकाः देवाः":
+        native: "More gods."
+        bases:
+          "अधिकाः": "more"
+          "देवाः": "gods"
+      "अधिकम् अन्नम्":
+        native: "More food."
+        bases:
+          "अधिकम्": "more"
+          "अन्नम्": "food"
+  "sa-1505":
+    native: "Less; short of; lacking."
+    bases:
+      "न्यूनः": "less"
+    examples:
+      "न्यूनं जलम्":
+        native: "Less water."
+        bases:
+          "न्यूनं": "less"
+          "जलम्": "water"
+      "कुम्भः न्यूनः":
+        native: "The pot is short."
+        bases:
+          "कुम्भः": "pot"
+          "न्यूनः": "short of"
+  "sa-1506":
+    native: "Full; complete."
+    bases:
+      "पूर्णः": "full"
+    examples:
+      "पूर्णः कुम्भः":
+        native: "A full pot."
+        bases:
+          "पूर्णः": "full"
+          "कुम्भः": "pot"
+      "जलं पूर्णम्":
+        native: "The water is full."
+        bases:
+          "जलं": "water"
+          "पूर्णम्": "full"
+  "sa-1507":
+    native: "Empty, of a container."
+    bases:
+      "रिक्तः": "empty, of a container"
+    examples:
+      "रिक्तः कुम्भः":
+        native: "An empty pot."
+        bases:
+          "रिक्तः": "empty"
+          "कुम्भः": "pot"
+      "पात्रं रिक्तम्":
+        native: "The vessel is empty."
+        bases:
+          "पात्रं": "vessel"
+          "रिक्तम्": "empty"
+  "sa-1508":
+    native: "Empty; void; zero."
+    notes:
+      "n1": "As a neuter noun, शून्यम् (śūnyam) is the number zero."
+    bases:
+      "शून्यः": "empty"
+    examples:
+      "शून्यं गृहम्":
+        native: "An empty house."
+        bases:
+          "शून्यं": "empty"
+          "गृहम्": "house"
+      "पात्रं शून्यम्":
+        native: "The vessel is empty."
+        bases:
+          "पात्रं": "vessel"
+          "शून्यम्": "empty"
+  "sa-1509":
+    native: "Some; a few; several."
+    bases:
+      "कतिपयः": "some"
+    examples:
+      "कतिपयाः देवाः":
+        native: "Some gods."
+        bases:
+          "कतिपयाः": "some"
+          "देवाः": "gods"
+      "कतिपयानि पुस्तकानि":
+        native: "Some books."
+        bases:
+          "कतिपयानि": "some"
+          "पुस्तकानि": "books"
+  "sa-1510":
+    native: "Only; merely."
+    notes:
+      "n1": "It follows the word it limits: जलं (jalaṃ) मात्र (mātra) is only water."
+    examples:
+      "जलं मात्र":
+        native: "Only water."
+        bases:
+          "जलं": "water"
+          "मात्र": "only"
+      "देवाः मात्र":
+        native: "Only gods."
+        bases:
+          "देवाः": "gods"
+          "मात्र": "only"
+  "sa-1511":
+    native: "Again; more; further."
+    notes:
+      "n1": "Its final ḥ changes before a vowel (भूयोऽस्ति (bhūyo'sti), bhūyo'sti), so the examples put a consonant-initial word after it."
+    bases:
+      "भूयः": "again"
+    examples:
+      "भूयः जलम्":
+        native: "More water."
+        bases:
+          "भूयः": "more"
+          "जलम्": "water"
+      "भूयः देवाः":
+        native: "The gods again."
+        bases:
+          "भूयः": "again"
+          "देवाः": "gods"
+  "sa-1512":
+    native: "How many?"
+    notes:
+      "n1": "A question word: the counted noun follows it, as in कति (kati) देवाः (devāḥ), how many gods."
+    examples:
+      "कति देवाः":
+        native: "How many gods?"
+        bases:
+          "कति": "how many"
+          "देवाः": "gods"
+      "कति पुस्तकानि":
+        native: "How many books?"
+        bases:
+          "कति": "how many"
+          "पुस्तकानि": "books"
+  "sa-1513":
+    native: "Whole; entire."
+    bases:
+      "सकलः": "whole"
+    examples:
+      "सकलं जलम्":
+        native: "All the water."
+        bases:
+          "सकलं": "whole"
+          "जलम्": "water"
+      "सकलः देशः":
+        native: "The whole country."
+        bases:
+          "सकलः": "whole"
+          "देशः": "country"

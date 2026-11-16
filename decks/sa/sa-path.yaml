@@ -119,11 +119,8 @@ units:
       - { id: "adverbs-heard", text: { "en": "A short passage in Classical Sanskrit on the theme adverbs and particles, read aloud" } }
     reading_passages:
       - { id: "adverbs-text", text: { "en": "A short written text in Classical Sanskrit on the theme adverbs and particles" } }
-  - planned: { id: "sa-quantities", theme: "quantities", words: 14 }
-    listening_passages:
-      - { id: "quantities-heard", text: { "en": "A short passage in Classical Sanskrit on the theme quantities, read aloud" } }
-    reading_passages:
-      - { id: "quantities-text", text: { "en": "A short written text in Classical Sanskrit on the theme quantities" } }
+  - decks: ["sa-quantities"]
+    words: 14
   - planned: { id: "sa-describing", theme: "describing", words: 24 }
     listening_passages:
       - { id: "describing-heard", text: { "en": "A short passage in Classical Sanskrit on the theme describing things and people, read aloud" } }
