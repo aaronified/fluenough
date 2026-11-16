@@ -9,8 +9,8 @@ import 'package:fluenough/core/models/reading.dart' show QuestionCard;
 import 'package:fluenough/core/search/query.dart';
 import 'package:fluenough/features/decks/decks_page.dart';
 import 'package:fluenough/features/decks/unit_search.dart';
-import 'package:fluenough/ui/widgets/language_bar.dart';
 import 'package:fluenough/l10n/app_localizations_en.dart';
+import 'package:fluenough/ui/widgets/language_bar.dart';
 
 import 'support/harness.dart';
 
@@ -293,13 +293,21 @@ void main() {
       expect(find.byTooltip(l10n.decksSearchClose), findsNothing);
     });
 
-    testWidgets('the end button is tappable under the full-width wheel, at '
-        '1.4x on a 360 dp phone, with the path scrolled to the unit up next', (
+    testWidgets('the end button is tappable with the path scrolled, at 1.4x '
+        'on 360 dp', (
       tester,
     ) async {
       usePhone(tester, textScale: 1.4);
       tester.view.physicalSize = const Size(360 * 3, 800 * 3);
       await pumpTelugu(tester);
+      // The path opened at the unit up next: scrolled, the bar partly away.
+      expect(
+        tester
+            .widget<CustomScrollView>(find.byType(CustomScrollView))
+            .controller!
+            .offset,
+        greaterThan(0),
+      );
       await type(tester, 'kind:grammar ');
       final l10n = l10nOf(tester);
       final bar = tester.getBottomLeft(find.byType(LanguageBar)).dy;
