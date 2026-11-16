@@ -1,0 +1,168 @@
+schema: 1
+id: "fa-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "fa", iso639_3: "fas", name: "Persian", script: "perso_arabic", tts: "fa-IR", icon: "ف" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "fa-0001"
+    target: "سلام"
+    reading: "salâm"
+    ipa: "sæˈlɒːm"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    bases: [{ word: "سلام", base: "سلام", reading: "salâm" }]
+  - id: "fa-0002"
+    target: "صبح بخیر"
+    reading: "sobh bexeyr"
+    ipa: "sobʰ bæˈxejr"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "صبح", base: "صبح", reading: "sobh" }, { word: "بخیر", base: "بخیر", reading: "bexeyr" }]
+  - id: "fa-0003"
+    target: "عصر بخیر"
+    reading: "asr bexeyr"
+    ipa: "ˈæsɾ bæˈxejr"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "عصر", base: "عصر", reading: "asr" }, { word: "بخیر", base: "بخیر", reading: "bexeyr" }]
+  - id: "fa-0004"
+    target: "شب بخیر"
+    reading: "shab bexeyr"
+    ipa: "ʃæb bæˈxejr"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "شب", base: "شب", reading: "shab" }, { word: "بخیر", base: "بخیر", reading: "bexeyr" }]
+  - id: "fa-0005"
+    target: "خداحافظ"
+    reading: "xodâhâfez"
+    ipa: "xodɒːhɒːˈfez"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    bases: [{ word: "خداحافظ", base: "خداحافظ", reading: "xodâhâfez" }]
+  - id: "fa-0006"
+    target: "لطفا"
+    reading: "lotfan"
+    ipa: "ˈlotfæn"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "لطفا", base: "لطفا", reading: "lotfan" }]
+  - id: "fa-0007"
+    target: "ممنون"
+    reading: "mamnun"
+    ipa: "mæmˈnuːn"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "ممنون", base: "ممنون", reading: "mamnun" }]
+  - id: "fa-0008"
+    target: "خواهش می‌کنم"
+    reading: "xâheš mikonam"
+    ipa: "xɒːheʃ mikonæm"
+    pos: "phrase"
+    tags: ["courtesy", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "خواهش", base: "خواهش", reading: "xâheš" }, { word: "می‌کنم", base: "کردن", reading: "mikonam" }]
+  - id: "fa-0009"
+    target: "متأسفم"
+    reading: "motaassefam"
+    ipa: "motæʔæsˈsefæm"
+    pos: "phrase"
+    tags: ["courtesy", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "متأسفم", base: "متأسف", reading: "motaassefam" }]
+  - id: "fa-0010"
+    target: "ببخشید"
+    reading: "bebaxšid"
+    ipa: "bebæxˈʃiːd"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "ببخشید", base: "بخشیدن", reading: "bebaxšid" }]
+  - id: "fa-0011"
+    target: "نمی‌فهمم"
+    reading: "nemifahmam"
+    ipa: "nemiˈfæhmæm"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "نمی‌فهمم", base: "فهمیدن", reading: "nemifahmam" }]
+  - id: "fa-0012"
+    target: "فارسی بلد نیستم"
+    reading: "fârsi balad nistam"
+    ipa: "fɒːɾsi ˈbælæd ˈnistæm"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "فارسی", base: "فارسی", reading: "fârsi" }, { word: "بلد", base: "بلد", reading: "balad" }, { word: "نیستم", base: "بودن", reading: "nistam" }]
+  - id: "fa-0013"
+    target: "لطفا آهسته‌تر صحبت کنید"
+    reading: "lotfan âheste-tar sohbat konid"
+    ipa: "ˈlotfæn ɒːhesteˈtær sohbæt konid"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "لطفا", base: "لطفا", reading: "lotfan" }, { word: "آهسته‌تر", base: "آهسته", reading: "âheste-tar" }, { word: "صحبت", base: "صحبت", reading: "sohbat" }, { word: "کنید", base: "کردن", reading: "konid" }]
+  - id: "fa-0014"
+    target: "انگلیسی صحبت می‌کنید؟"
+    reading: "engelisi sohbat mikonid?"
+    ipa: "engeˈlisi sohbæt mikonid"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "انگلیسی", base: "انگلیسی", reading: "engelisi" }, { word: "صحبت", base: "صحبت", reading: "sohbat" }, { word: "می‌کنید", base: "کردن", reading: "mikonid" }]
+  - id: "fa-0015"
+    target: "حال شما چطور است؟"
+    reading: "hâl-e shomâ chetor ast?"
+    ipa: "hɒːl e ʃomɒː tʃeˈtor æst"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "حال", base: "حال", reading: "hâl" }, { word: "شما", base: "شما", reading: "shomâ" }, { word: "چطور", base: "چطور", reading: "chetor" }, { word: "است", base: "بودن", reading: "ast" }]
+  - id: "fa-0016"
+    target: "خوبم"
+    reading: "xubam"
+    ipa: "xubæm"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "خوبم", base: "خوب", reading: "xubam" }]
+  - id: "fa-0017"
+    target: "اسم شما چیست؟"
+    reading: "esm-e shomâ chist?"
+    ipa: "esm e ʃomɒː tʃist"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "اسم", base: "اسم", reading: "esm" }, { word: "شما", base: "شما", reading: "shomâ" }, { word: "چیست", base: "چه", reading: "chist" }]
+  - id: "fa-0018"
+    target: "اسم من"
+    reading: "esm-e man"
+    ipa: "esm e mæn"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "اسم", base: "اسم", reading: "esm" }, { word: "من", base: "من", reading: "man" }]
+  - id: "fa-0019"
+    target: "دستشویی کجاست؟"
+    reading: "dastshuyi kojâst?"
+    ipa: "dæstʃuˈjiː kodʒɒːst"
+    pos: "phrase"
+    tags: ["help"]
+    phrasebook: true
+    bases: [{ word: "دستشویی", base: "دستشویی", reading: "dastshuyi" }, { word: "کجاست", base: "کجا", reading: "kojâst" }]
+  - id: "fa-0020"
+    target: "کمک!"
+    reading: "komak!"
+    ipa: "keˈmæk"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    bases: [{ word: "کمک", base: "کمک", reading: "komak" }]
