@@ -1,0 +1,133 @@
+# Marathi compound verbs: a verb and a helper verb (देणे, घेणे, सोडणे, दाखवणे) that make one verb phrase.
+schema: 1
+id: "mr-multiword-3"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course from en.wiktionary and mr.wikiquote, as listed in wiki/Plan-Culture-Marathi-Addendum-3.md, section B2"
+genre: "multiword"
+pattern_family: "compound-verb"
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - id: "mr-4385"
+    target: "करून देणे"
+    words: ["करून", "देणे"]
+    reading: "karun deṇe"
+    ipa: "kərun d̪eɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "करून", ref: "mr-0712" }
+      - { word: "देणे", ref: "mr-0721" }
+  - id: "mr-4386"
+    target: "सोडून देणे"
+    words: ["सोडून", "देणे"]
+    reading: "soḍun deṇe"
+    ipa: "soɖun d̪eɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "सोडून", ref: "mr-1180" }
+      - { word: "देणे", ref: "mr-0721" }
+  - id: "mr-4387"
+    target: "सोडून जाणे"
+    words: ["सोडून", "जाणे"]
+    reading: "soḍun jāṇe"
+    ipa: "soɖun dzaɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "सोडून", ref: "mr-1180" }
+      - { word: "जाणे", ref: "mr-0710" }
+  - id: "mr-4388"
+    target: "ओळख करून घेणे"
+    words: ["ओळख", "करून", "घेणे"]
+    reading: "oḷakh karun gheṇe"
+    ipa: "oɭəkʰ kərun ɡʱeɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ओळख", ref: "mr-1400" }
+      - { word: "करून", ref: "mr-0712" }
+      - { word: "घेणे", ref: "mr-0722" }
+  - id: "mr-4389"
+    target: "ओळख करून देणे"
+    words: ["ओळख", "करून", "देणे"]
+    reading: "oḷakh karun deṇe"
+    ipa: "oɭəkʰ kərun d̪eɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ओळख", ref: "mr-1400" }
+      - { word: "करून", ref: "mr-0712" }
+      - { word: "देणे", ref: "mr-0721" }
+  - id: "mr-4390"
+    target: "गैरसमज करून घेणे"
+    words: ["गैरसमज", "करून", "घेणे"]
+    reading: "gairsmaj karun gheṇe"
+    ipa: "ɡəirsmədz kərun ɡʱeɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "गैरसमज", ref: "mr-1637" }
+      - { word: "करून", ref: "mr-0712" }
+      - { word: "घेणे", ref: "mr-0722" }
+  - id: "mr-4391"
+    target: "करून दाखवणे"
+    words: ["करून", "दाखवणे"]
+    reading: "karun dākhvṇe"
+    ipa: "kərun d̪akʰʋɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "करून", ref: "mr-0712" }
+      - { word: "दाखवणे", ref: "mr-1178" }
+  - id: "mr-4392"
+    target: "बोलून दाखवणे"
+    words: ["बोलून", "दाखवणे"]
+    reading: "bolun dākhvṇe"
+    ipa: "bolun d̪akʰʋɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "बोलून", ref: "mr-0713" }
+      - { word: "दाखवणे", ref: "mr-1178" }
+  - id: "mr-4393"
+    target: "ऐकून घेणे"
+    words: ["ऐकून", "घेणे"]
+    reading: "aikun gheṇe"
+    ipa: "əikun ɡʱeɳe"
+    pos: "phrase"
+    level: "A2"
+    modes: ["recognition", "production", "listening"]
+    notes:
+      - { id: "u1", kind: "usage" }
+    bases:
+      - { word: "ऐकून", ref: "mr-0715" }
+      - { word: "घेणे", ref: "mr-0722" }
