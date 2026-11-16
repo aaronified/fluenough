@@ -940,7 +940,8 @@ bool pairWraps(
   final theme = Theme.of(context);
   final scaler = MediaQuery.textScalerOf(context);
   final scale = cardTextScaleOf(context, state.settings);
-  final family = state.deckDownloads?.fonts.familyFor(
+  final fonts = state.deckDownloads?.fonts;
+  final family = fonts?.familyFor(
     fontScriptFor(language.code, language.script),
   );
   // A tile's two sides and its border, and the gap between the tiles.
@@ -963,6 +964,7 @@ bool pairWraps(
     final script = TextStyle(
       fontSize: pairWordSize * scale,
       fontFamily: family,
+      fontFamilyFallback: fonts?.fallbackFor(family),
       fontWeight: family == null ? FontWeight.w600 : FontWeight.normal,
       fontVariations: family == null
           ? null

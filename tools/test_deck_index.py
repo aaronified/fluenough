@@ -209,6 +209,17 @@ class DeckIndex(unittest.TestCase):
         text = (self.tmp / "decks" / "index.json").read_text(encoding="utf-8")
         self.assertIn('\n      "fonts": [\n        {"family": "Noto Sans Devanagari"',
                       text)
+        # The Latin font is every language's companion, listed once (owner,
+        # 2026-11-16), and a script that shares a font lists that font.
+        self.add_font("latin", "NotoSansLatin.ttf", b"lat")
+        es = self.language(self.index(), "es")
+        self.assertEqual([f["script"] for f in es["fonts"]],
+                         ["latin", "devanagari", "perso_arabic"])
+        self.spanish_in_scripts('"shahmukhi"')
+        es = self.language(self.index(), "es")
+        # (the deck's own language block, Latin, comes first)
+        self.assertEqual([f["script"] for f in es["fonts"]],
+                         ["latin", "perso_arabic"])
 
 
     def _the_resources_file_is_listed_apart_from_files(self) -> None:
@@ -745,15 +756,27 @@ class ScriptFonts(unittest.TestCase):
         for script in ("han_simplified", "han_traditional", "han", "kana"):
             self.assertIn(script, self.fonts)
 
+    # The fonts added after decks/ froze on main (2026-11-06): they live on
+    # decks-live only (decks/fonts/<script>/, checked by its own CI), so
+    # main's frozen folder does not hold them.
+    ON_DECKS_LIVE_ONLY = {"thai", "meitei_mayek", "brahmi", "latin", "cyrillic",
+                          "greek"}
+
     def test_each_font_is_in_its_scripts_folder_with_its_licence(self) -> None:
         for script, (_family, name) in self.fonts.items():
+            if script in self.ON_DECKS_LIVE_ONLY:
+                continue
             folder = REPO / "decks" / "fonts" / script
             with self.subTest(script):
                 self.assertTrue((folder / name).is_file())
                 self.assertTrue((folder / "OFL.txt").is_file())
 
     def test_each_font_has_a_sample_for_the_font_check(self) -> None:
+        # The content fonts are never asked about: no sample.
         for script in self.fonts:
+            if script in ("latin", "cyrillic", "greek"):
+                self.assertNotIn(f"  '{script}': ScriptSample(", self.dart)
+                continue
             with self.subTest(script):
                 self.assertIn(f"  '{script}': ScriptSample(", self.dart)
 

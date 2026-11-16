@@ -9,6 +9,7 @@ import 'app/app_state.dart';
 import 'app/routes.dart';
 import 'app/shell_tab.dart';
 import 'app/storage_persist.dart';
+import 'core/decks/script_fonts.dart';
 import 'features/decks/decks_page.dart';
 import 'features/downloads/deck_update_prompt.dart';
 import 'features/fonts/font_check_prompt.dart';
@@ -168,17 +169,34 @@ class _FluenoughAppState extends State<FluenoughApp>
     // tooltip is off (the service plays its own); otherwise the platform
     // default stays. Read again whenever a setting changes.
     final own = widget.state.haptics.takesOverFeedback;
-    ThemeData hapticTheme(ThemeData theme) => own
-        ? theme.copyWith(
-            tooltipTheme: theme.tooltipTheme.copyWith(enableFeedback: false),
-          )
-        : theme;
+    // Behind the interface's Roboto and the braille font come the content
+    // fonts that are loaded (Latin, Cyrillic, Greek), so that a deck word
+    // quoted in an interface string, a reading or an IPA never falls to the
+    // phone's own font; the interface itself stays in Roboto.
+    ThemeData hapticTheme(ThemeData theme) {
+      final contentFonts =
+          widget.state.deckDownloads?.fonts.contentFamilies ?? const <String>[];
+      var themed = theme;
+      if (contentFonts.isNotEmpty) {
+        final fallback = <String>[brailleFontFamily, ...contentFonts];
+        themed = themed.copyWith(
+          textTheme: themed.textTheme.apply(fontFamilyFallback: fallback),
+        );
+      }
+      return own
+          ? themed.copyWith(
+              tooltipTheme: themed.tooltipTheme.copyWith(enableFeedback: false),
+            )
+          : themed;
+    }
+
     return AppScope(
       state: widget.state,
       child: ListenableBuilder(
         listenable: Listenable.merge(<Listenable>[
           settings,
           widget.state.wallpaper,
+          ?widget.state.deckDownloads?.fonts,
         ]),
         builder: (context, _) => MaterialApp(
           onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,

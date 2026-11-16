@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 
 import '../core/decks/font_check.dart';
+import '../core/decks/script_fonts.dart';
 import 'deck_downloads.dart';
 import 'settings.dart';
 
@@ -20,13 +21,17 @@ class FontCheck extends ChangeNotifier {
   final List<String> _queue = <String>[];
 
   /// Whether a course's download brings the font of [script]: only after
-  /// the learner said the phone's own font shows boxes.
+  /// the learner said the phone's own font shows boxes, except for the
+  /// content fonts (Latin, Cyrillic, Greek), which always come.
   bool wants(String script) =>
+      contentFontScripts.contains(script) ||
       settings.fontChoice(script) == FontChoice.download;
 
   /// Whether text in [script] is drawn in its downloaded font, if one is on
   /// the phone: not after the learner said the phone's own font is fine.
-  bool uses(String script) => settings.fontChoice(script) != FontChoice.phone;
+  bool uses(String script) =>
+      contentFontScripts.contains(script) ||
+      settings.fontChoice(script) != FontChoice.phone;
 
   /// Settings are restored after the fonts on the phone are loaded: a
   /// script the learner reads in the phone's own font stops using the
