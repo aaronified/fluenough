@@ -94,3 +94,22 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | hi-transport-sentences | Please check the Hindi and translations of these sentences. | Haiku builder | 2026-11-15 |
 | unit-level | hi-workplace-sentences | Please check the Hindi and translations of these sentences. | Haiku builder | 2026-11-15 |
 | course-wide | `decks/hi/en/*` | Which Hindustani speaker can confirm the notes in decks/hi/en/*? Two are formulaic (conjunct-verbs, calendar months). | Haiku builder | 2026-11-15 |
+| hi-1237 | hi-phonology-spelling | The narrow IPA from Wiktionary differs from the broad ipa (adds a final vowel ɐ): which is right? Narrow form removed until settled. | Haiku builder | 2026-11-16 |
+| hi-1238 | hi-phonology-spelling | The narrow IPA from Wiktionary differs from the broad ipa (adds a final vowel ɐ): which is right? Narrow form removed until settled. | Haiku builder | 2026-11-16 |
+| hi-1239 | hi-phonology-spelling | The narrow IPA from Wiktionary differs from the broad ipa (ʂ to ʃ, and adds a final vowel ɐ): which is right? Narrow form removed until settled. | Haiku builder | 2026-11-16 |
+| hi-1240 | hi-phonology-spelling | The narrow IPA from Wiktionary differs from the broad ipa (adds a final vowel ɐ): which is right? Narrow form removed until settled. | Haiku builder | 2026-11-16 |
+| hi-1241 | hi-phonology-spelling | The narrow IPA from Wiktionary differs from the broad ipa (adds a final vowel ɐ): which is right? Narrow form removed until settled. | Haiku builder | 2026-11-16 |
+| hi-0866 | hi-quantities | The narrow IPA from Wiktionary differs from the broad ipa (ə to ɔ, and ʊ to ɔ): which is right? Narrow form removed until settled. | Haiku builder | 2026-11-16 |
+| hi-1082 | hi-places | The narrow IPA from Wiktionary differs from the broad ipa (ɔ to äː): which is right? Narrow form removed until settled. | Haiku builder | 2026-11-16 |
+| hi-4204 | hi-proverbs-1 | The narrow IPA from Wiktionary differs from the broad ipa (f to pʰ, ʋ to w, and nasal vowels): which is right? Narrow form removed until settled. | Haiku builder | 2026-11-16 |
+| hi-0381 | hi-family | The narrow IPA from Wiktionary differs from the broad ipa (ɪ to iː): which is right? Narrow form removed until settled. | Haiku builder | 2026-11-16 |
+| hi-1028 | hi-body | The narrow IPA from Wiktionary differs from the broad ipa (ʊ̃ to ũː, and ɦ to ʱ): which is right? Narrow form removed until settled. | Haiku builder | 2026-11-16 |
+| hi-1057 | hi-places | The narrow IPA from Wiktionary differs from the broad ipa (ɛː to æ̃, and the length is dropped): which is right? Narrow form removed until settled. | Haiku builder | 2026-11-16 |
+| hi-1146 | hi-animals | The narrow IPA from Wiktionary differs from the broad ipa (ɔː to ɐ̯u, and adds ʋ): which is right? Narrow form removed until settled. | Haiku builder | 2026-11-16 |
+| hi-1137 | hi-animals | The narrow IPA from Wiktionary differs from the broad ipa (kʰ to x): which is right? Narrow form removed until settled. | Haiku builder | 2026-11-16 |
+| hi-1141 | hi-animals | The narrow IPA from Wiktionary differs from the broad ipa (kʰ to x, and ə to ɐ): which is right? Narrow form removed until settled. | Haiku builder | 2026-11-16 |
+| hi-1043 | hi-body | The narrow IPA from Wiktionary differs from the broad ipa (kʰ to x, and nasal vowels): which is right? Narrow form removed until settled. | Haiku builder | 2026-11-16 |
+| hi-1052 | hi-body | The narrow IPA from Wiktionary differs from the broad ipa (adds a stress mark, and r to ɾ): which is right? Narrow form removed until settled. | Haiku builder | 2026-11-16 |
+| hi-4253 | hi-proverbs-2 | The narrow IPA from Wiktionary differs from the broad ipa (ə to eː, ɦ to ʱ, r to ɾ, ə to ɐ, and a to ä): which is right? Narrow form removed until settled. | Haiku builder | 2026-11-16 |
+| hi-1114 | hi-clothes | The narrow IPA from Wiktionary differs from the broad ipa (dʒ to z): which is right? Narrow form removed until settled. The broad ipa may be the error (Wiktionary gives z for these Perso-Arabic words). | Haiku builder | 2026-11-16 |
+| hi-0628 | hi-spelling | The narrow IPA from Wiktionary differs from the broad ipa (dʒ to z): which is right? Narrow form removed until settled. The broad ipa may be the error (Wiktionary gives z for these Perso-Arabic words). | Haiku builder | 2026-11-16 |

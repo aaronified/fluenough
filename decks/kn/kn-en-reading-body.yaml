@@ -1,0 +1,47 @@
+schema: 1
+id: "kn-en-reading-body"
+name: "Reading: morning stretches"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "Simple morning stretches, with the body words taught up to this unit. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-body-passage"
+    title: "Morning stretches"
+    sentences:
+      - text: "ಮೊದಲು ತಲೆಯನ್ನು ನಿಧಾನವಾಗಿ ಮೇಲೆ ಎತ್ತಿ."
+        reading: "modalu taleyannu nidhānavāgi mēle etti."
+        ipa: "mod̪alu t̪alejannu nid̪ʱaːnaʋaːɡi meːle et̪t̪i"
+      - text: "ನಂತರ ಭುಜ ಕೆಳಗೆ ಇಡಿ."
+        reading: "nantara bhuja keḷage iḍi."
+        ipa: "nant̪ara bʱudʒa keɭaɡe iɖi"
+      - text: "ಬೆನ್ನು ನೇರವಾಗಿ ಇಡಿ."
+        reading: "bennu nēravāgi iḍi."
+        ipa: "bennu neːraʋaːɡi iɖi"
+      - text: "ಕಾಲು ನೆಲದ ಮೇಲೆ ಇಡಿ."
+        reading: "kālu nelada mēle iḍi."
+        ipa: "kaːlu nelad̪a meːle iɖi"
+      - text: "ಕಣ್ಣು ಮುಚ್ಚಿ ಕುಳಿತುಕೊಳ್ಳಿ."
+        reading: "kaṇṇu mucci kuḷitukoḷḷi."
+        ipa: "kaɳɳu mutʃtʃi kuɭit̪ukoɭɭi"
+    questions:
+      - id: "kn-9006"
+        prompt: { en: "What do you lift first?" }
+        options:
+          - { en: "Your head" }
+          - { en: "Your knee" }
+          - { en: "Your ears" }
+        answer: 1
+      - id: "kn-9007"
+        prompt: { en: "What should you keep straight?" }
+        options:
+          - { en: "Your back" }
+          - { en: "Your hair" }
+          - { en: "Your tongue" }
+        answer: 1
+      - id: "kn-9008"
+        prompt: { en: "You put your shoulders down after your head is lifted." }
+        answer: true
