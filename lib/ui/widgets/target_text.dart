@@ -283,7 +283,8 @@ enum _Sizing { fixed, hero, card }
 /// and Punjabi's Shahmukhi) is marked Urdu, so that the phone draws it in its
 /// Nastaliq font rather than the plain Naskh it uses for Arabic.
 ///
-/// Persian and Pashto are set in Naskh, and keep their own locale.
+/// Persian, Pashto, Sindhi and Kashmiri are set in Naskh, and keep their own
+/// locale.
 Locale targetLocale(LanguageInfo language) => switch (language.script) {
   'perso_arabic' || 'shahmukhi'
       when fontScriptFor(language.code, language.script) == language.script =>

@@ -1,5 +1,5 @@
-// Persian and Pashto are drawn in Naskh, while the other Perso-Arabic courses
-// keep the Nastaliq of the Urdu font (owner, 2026-11-02).
+// Persian, Pashto, Sindhi and Kashmiri are drawn in Naskh, while the other
+// Perso-Arabic courses keep the Nastaliq of the Urdu font (owner, 2026-11-02).
 
 import 'package:fluenough/core/decks/font_check.dart';
 import 'package:fluenough/core/decks/script_fonts.dart';
@@ -17,9 +17,11 @@ LanguageInfo _language(String code, String script) => LanguageInfo(
 );
 
 void main() {
-  test('Persian and Pashto take the Naskh font, Hindustani the Urdu one', () {
+  test('Naskh languages take the Naskh font, Hindustani the Urdu one', () {
     expect(fontScriptFor('fa', 'perso_arabic'), 'perso_arabic_naskh');
     expect(fontScriptFor('ps', 'perso_arabic'), 'perso_arabic_naskh');
+    expect(fontScriptFor('sd', 'perso_arabic'), 'perso_arabic_naskh');
+    expect(fontScriptFor('ks', 'perso_arabic'), 'perso_arabic_naskh');
     expect(fontScriptFor('hi', 'perso_arabic'), 'perso_arabic');
     expect(fontScriptFor('pa', 'shahmukhi'), 'shahmukhi');
     expect(fontScriptFor('te', 'telugu'), 'telugu');

@@ -298,7 +298,8 @@ FONTS = {
 FONTS_DIR = DECKS / "fonts"
 
 # A language that draws a script in another font than the script's own
-# (owner, 2026-11-02): Persian and Pashto are set in Naskh, while the Urdu
+# (owner, 2026-11-02): Persian, Pashto, Sindhi and Kashmiri are set in Naskh,
+# which has the Sindhi kaf (U+06AA) that Nastaliq lacks, while the Urdu
 # `perso_arabic` font stays Nastaliq for Hindustani and the others. The key
 # is (language code, script), the value a FONTS key; the app's
 # `fontScriptFor` (lib/core/decks/script_fonts.dart) holds the same table,
@@ -306,6 +307,8 @@ FONTS_DIR = DECKS / "fonts"
 LANGUAGE_FONTS = {
     ("fa", "perso_arabic"): "perso_arabic_naskh",
     ("ps", "perso_arabic"): "perso_arabic_naskh",
+    ("sd", "perso_arabic"): "perso_arabic_naskh",
+    ("ks", "perso_arabic"): "perso_arabic_naskh",
 }
 
 # Kinds of file that hold no deck: one of each per language at most. A
