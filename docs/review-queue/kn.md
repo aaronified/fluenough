@@ -76,3 +76,11 @@
 | kn-7872 | see card | no note written: ಲ್ಯಾಪ್ಟಾಪ್ ಮೇಲೆ, bare noun or genitive before ಮೇಲೆ | Haiku builder | 2026-11-16 |
 | kn-7877 | see card | no note written: polite command ಹಿಡಿಯಿರಿ (-ಇರಿ) | Haiku builder | 2026-11-16 |
 | kn-7177 | see card | no note written: ಯಾವುದು versus ಏನು | Haiku builder | 2026-11-16 |
+| kn-7141 | see card | The note says a plain command ends in -ು and a polite one in -ಿ: this holds for many verbs only (ತೆರೆ, ತೆಗೆ, ತೊಳೆ, ಬಾ differ). Same in kn-7777, kn-8230, kn-8305 and the plain-command notes of the food, verbs and clothes sentence decks: add 'often' | Sonnet review | 2026-11-16 |
+| kn-7789 | see card | -ಇನಲ್ಲಿ is called the 'by' ending: it is the locative (in or on), 'by' is only the English gloss. Same in kn-7793: reword as in kn-0243 | Sonnet review | 2026-11-16 |
+| kn-7521 | see card | ನನಗೆ ... ಬರುವುದಿಲ್ಲ is glossed 'cannot': literally 'does not come to me', meaning 'I do not know how to' | Sonnet review | 2026-11-16 |
+| kn-7387 | see card | ಇದೆ is said to be for things and ಇದ್ದಾರೆ for people, yet 'my family' takes ಇದೆ: add that a family counts as a group | Sonnet review | 2026-11-16 |
+| kn-8213 | see card | 'No object ending means in general, ending means particular' is a tendency, not a rule: soften with 'usually'. Same in kn-8149, kn-8151, kn-8160 | Sonnet review | 2026-11-16 |
+| kn-7764 | see card | The note has a stray hyphen in its reading, (hōda-)-: fix | Sonnet review | 2026-11-16 |
+| kn-8147 | see card | Some notes quote a suffix with no reading (-ಆಗಿ in kn-8147, -ು in kn-7789, ಹನ್ನ- and ಇನ- in kn-0243): add readings | Sonnet review | 2026-11-16 |
+| kn-7789 | see card | kn-7789 and kn-8236 chain several points in one note: split into one idea per sentence | Sonnet review | 2026-11-16 |
