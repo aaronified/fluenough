@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - **Report a mistake in what you are learning.** The bug icon now appears only on cards, decks, units, topics and culture items, and opens a short list of what is wrong with that one thing; a general problem report is in the Settings menu.
+- **The info button on Today now sits before its sentence.** In the skills card, the small info button is now on the left of "Tap a skill to practise only that" instead of the far right.
 
 ## [0.10.6] - 2026-11-15
 
