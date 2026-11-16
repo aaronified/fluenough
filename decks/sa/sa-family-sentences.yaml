@@ -7,22 +7,23 @@ license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed"]
 cards:
   - id: "sa-3030"
-    target: "माता कुत्र गच्छति पिता कुत्र पठति?"
-    reading: "mātā kutra gacchati pitā kutra paṭhati?"
-    ipa: "maːt̪aː kut̪rə ɡətʃtʃʰət̪i pit̪aː kut̪rə pəʈʰət̪i"
+    target: "माता कुत्र गच्छति पिता च कुत्र पठति?"
+    reading: "mātā kutra gacchati pitā ca kutra paṭhati?"
+    ipa: "maːt̪aː kut̪rə ɡətʃtʃʰət̪i pit̪aː tʃə kut̪rə pəʈʰət̪i"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "माता", ref: "sa-1030" }, { word: "कुत्र", ref: "sa-1002" }, { word: "गच्छति", base: "गम्", reading: "gam" }, { word: "पिता", ref: "sa-1031" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+    bases: [{ word: "माता", ref: "sa-1030" }, { word: "कुत्र", ref: "sa-1002" }, { word: "गच्छति", base: "गम्", reading: "gam" }, { word: "पिता", ref: "sa-1031" }, { word: "च", base: "च", reading: "ca" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
     confusables: [{ id: "w1", ref: "sa-1032", kind: "word" }, { id: "w2", ref: "sa-1003", kind: "word" }]
+    notes: [{ id: "n1", kind: "usage" }]
   - id: "sa-3031"
-    target: "पिता संस्कृतं पठति माता वदति."
-    reading: "pitā saṃskṛtaṃ paṭhati mātā vadati."
-    ipa: "pit̪aː sə̃skr̩t̪əm pəʈʰət̪i maːt̪aː ʋəd̪ət̪i"
+    target: "पिता संस्कृतं पठति माता च वदति."
+    reading: "pitā saṃskṛtaṃ paṭhati mātā ca vadati."
+    ipa: "pit̪aː sə̃skr̩t̪əm pəʈʰət̪i maːt̪aː tʃə ʋəd̪ət̪i"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "पिता", ref: "sa-1031" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "पठति", base: "पठ्", reading: "paṭh" }, { word: "माता", ref: "sa-1030" }, { word: "वदति", base: "वद्", reading: "vad" }]
+    bases: [{ word: "पिता", ref: "sa-1031" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "पठति", base: "पठ्", reading: "paṭh" }, { word: "माता", ref: "sa-1030" }, { word: "च", base: "च", reading: "ca" }, { word: "वदति", base: "वद्", reading: "vad" }]
     confusables: [{ id: "w1", ref: "sa-1032", kind: "word" }, { id: "w2", ref: "sa-0434", kind: "word" }]
-    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
   - id: "sa-3032"
     target: "स भ्राता जलं कदा नयति?"
     reading: "sa bhrātā jalaṃ kadā nayati?"
@@ -31,16 +32,16 @@ cards:
     tags: ["sentence"]
     bases: [{ word: "स", base: "सः", reading: "saḥ" }, { word: "भ्राता", ref: "sa-1032" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "कदा", ref: "sa-1003" }, { word: "नयति", base: "नी", reading: "nī" }]
     confusables: [{ id: "w1", ref: "sa-1011", kind: "word" }, { id: "w2", ref: "sa-1033", kind: "word" }]
-    notes: [{ id: "n1", kind: "note" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
   - id: "sa-3033"
-    target: "का माता भवति का स्वसा भवति?"
-    reading: "kā mātā bhavati kā svasā bhavati?"
-    ipa: "kaː maːt̪aː bʱəʋət̪i kaː sʋəsaː bʱəʋət̪i"
+    target: "का माता भवति का च स्वसा भवति?"
+    reading: "kā mātā bhavati kā ca svasā bhavati?"
+    ipa: "kaː maːt̪aː bʱəʋət̪i kaː tʃə sʋəsaː bʱəʋət̪i"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "का", ref: "sa-1026" }, { word: "माता", ref: "sa-1030" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "स्वसा", ref: "sa-1033" }]
+    bases: [{ word: "का", ref: "sa-1026" }, { word: "माता", ref: "sa-1030" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "च", base: "च", reading: "ca" }, { word: "स्वसा", ref: "sa-1033" }]
     confusables: [{ id: "w1", ref: "sa-1031", kind: "word" }, { id: "w2", ref: "sa-0431", kind: "word" }]
-    notes: [{ id: "n1", kind: "usage" }]
+    notes: [{ id: "n1", kind: "usage" }, { id: "n2", kind: "usage" }]
   - id: "sa-3034"
     target: "स सखा संस्कृतं न वदति."
     reading: "sa sakhā saṃskṛtaṃ na vadati."
@@ -49,14 +50,14 @@ cards:
     tags: ["sentence"]
     bases: [{ word: "स", base: "सः", reading: "saḥ" }, { word: "सखा", ref: "sa-1038" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "न", ref: "sa-0026" }, { word: "वदति", base: "वद्", reading: "vad" }]
     confusables: [{ id: "w1", ref: "sa-1011", kind: "word" }, { id: "w2", ref: "sa-1041", kind: "word" }]
-    notes: [{ id: "n1", kind: "note" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
   - id: "sa-3035"
-    target: "स्वसा पठति भ्राता गच्छति."
-    reading: "svasā paṭhati bhrātā gacchati."
-    ipa: "sʋəsaː pəʈʰət̪i bʱraːt̪aː ɡətʃtʃʰət̪i"
+    target: "स्वसा पठति भ्राता च गच्छति."
+    reading: "svasā paṭhati bhrātā ca gacchati."
+    ipa: "sʋəsaː pəʈʰət̪i bʱraːt̪aː tʃə ɡətʃtʃʰət̪i"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "स्वसा", ref: "sa-1033" }, { word: "पठति", base: "पठ्", reading: "paṭh" }, { word: "भ्राता", ref: "sa-1032" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+    bases: [{ word: "स्वसा", ref: "sa-1033" }, { word: "पठति", base: "पठ्", reading: "paṭh" }, { word: "भ्राता", ref: "sa-1032" }, { word: "च", base: "च", reading: "ca" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
     confusables: [{ id: "w1", ref: "sa-1036", kind: "word" }, { id: "w2", ref: "sa-0433", kind: "word" }]
     notes: [{ id: "n1", kind: "usage" }]
   - id: "sa-3036"
@@ -67,13 +68,13 @@ cards:
     tags: ["sentence"]
     bases: [{ word: "अयं", base: "अयम्", reading: "ayam" }, { word: "पिता", ref: "sa-1031" }, { word: "कथं", base: "कथम्", reading: "katham" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "वदति", base: "वद्", reading: "vad" }]
     confusables: [{ id: "w1", ref: "sa-1014", kind: "word" }, { id: "w2", ref: "sa-1032", kind: "word" }]
-    notes: [{ id: "n1", kind: "note" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
   - id: "sa-3037"
-    target: "अहं भ्राता भवामि त्वं सखा भवसि."
-    reading: "ahaṃ bhrātā bhavāmi tvaṃ sakhā bhavasi."
-    ipa: "əɦəm bʱraːt̪aː bʱəʋaːmi t̪ʋəm səkʰaː bʱəʋəsi"
+    target: "अहं भ्राता भवामि त्वं च सखा भवसि."
+    reading: "ahaṃ bhrātā bhavāmi tvaṃ ca sakhā bhavasi."
+    ipa: "əɦəm bʱraːt̪aː bʱəʋaːmi t̪ʋəm tʃə səkʰaː bʱəʋəsi"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "भ्राता", ref: "sa-1032" }, { word: "भवामि", base: "भू", reading: "bhū" }, { word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "सखा", ref: "sa-1038" }, { word: "भवसि", base: "भू", reading: "bhū" }]
+    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "भ्राता", ref: "sa-1032" }, { word: "भवामि", base: "भू", reading: "bhū" }, { word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "च", base: "च", reading: "ca" }, { word: "सखा", ref: "sa-1038" }, { word: "भवसि", base: "भू", reading: "bhū" }]
     confusables: [{ id: "w1", ref: "sa-1010", kind: "word" }, { id: "w2", ref: "sa-1033", kind: "word" }]
-    notes: [{ id: "n1", kind: "note" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]

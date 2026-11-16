@@ -7,14 +7,14 @@ license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed"]
 cards:
   - id: "sa-3120"
-    target: "केशः कृष्णो भवति नखं कठिनं भवति."
-    reading: "keśaḥ kṛṣṇo bhavati nakhaṃ kaṭhinaṃ bhavati."
-    ipa: "keːʃəh kr̩ʂɳoː bʱəʋət̪i nəkʰəm kəʈʰinəm bʱəʋət̪i"
+    target: "केशः कृष्णो भवति नखं च कठिनं भवति."
+    reading: "keśaḥ kṛṣṇo bhavati nakhaṃ ca kaṭhinaṃ bhavati."
+    ipa: "keːʃəh kr̩ʂɳoː bʱəʋət̪i nəkʰəm tʃə kəʈʰinəm bʱəʋət̪i"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "केशः", ref: "sa-1572" }, { word: "कृष्णो", base: "कृष्णः", reading: "kṛṣṇaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "नखं", base: "नखम्", reading: "nakham" }, { word: "कठिनं", base: "कठिनः", reading: "kaṭhinaḥ" }]
+    bases: [{ word: "केशः", ref: "sa-1572" }, { word: "कृष्णो", base: "कृष्णः", reading: "kṛṣṇaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "नखं", base: "नखम्", reading: "nakham" }, { word: "च", base: "च", reading: "ca" }, { word: "कठिनं", base: "कठिनः", reading: "kaṭhinaḥ" }]
     confusables: [{ id: "w1", ref: "sa-1573", kind: "word" }, { id: "w2", ref: "sa-1516", kind: "word" }]
-    notes: [{ id: "n1", kind: "note" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
   - id: "sa-3121"
     target: "त्वं हस्तेन जलं पिबसि."
     reading: "tvaṃ hastena jalaṃ pibasi."
@@ -25,59 +25,59 @@ cards:
     confusables: [{ id: "w1", ref: "sa-1010", kind: "word" }, { id: "w2", ref: "sa-1568", kind: "word" }]
     notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
   - id: "sa-3122"
-    target: "कति हस्ता भवन्ति कति पादा भवन्ति?"
-    reading: "kati hastā bhavanti kati pādā bhavanti?"
-    ipa: "kət̪i ɦəst̪aː bʱəʋənt̪i kət̪i paːd̪aː bʱəʋənt̪i"
+    target: "कति हस्ताः पुस्तकं नयन्ति कति च पादा गच्छन्ति?"
+    reading: "kati hastāḥ pustakaṃ nayanti kati ca pādā gacchanti?"
+    ipa: "kət̪i ɦəst̪aːh pust̪əkəm nəjənt̪i kət̪i tʃə paːd̪aː ɡətʃtʃʰənt̪i"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "कति", ref: "sa-1005" }, { word: "हस्ता", base: "हस्तः", reading: "hastaḥ" }, { word: "भवन्ति", base: "भू", reading: "bhū" }, { word: "पादा", base: "पादः", reading: "pādaḥ" }]
+    bases: [{ word: "कति", ref: "sa-1005" }, { word: "हस्ताः", base: "हस्तः", reading: "hastaḥ" }, { word: "पुस्तकं", base: "पुस्तकम्", reading: "pustakam" }, { word: "नयन्ति", base: "नी", reading: "nī" }, { word: "च", base: "च", reading: "ca" }, { word: "पादा", base: "पादः", reading: "pādaḥ" }, { word: "गच्छन्ति", base: "गम्", reading: "gam" }]
     confusables: [{ id: "w1", ref: "sa-1006", kind: "word" }, { id: "w2", ref: "sa-1569", kind: "word" }]
-    notes: [{ id: "n1", kind: "note" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
   - id: "sa-3123"
-    target: "द्वौ पादौ गच्छतो द्वौ हस्तौ जलं नयतः."
-    reading: "dvau pādau gacchato dvau hastau jalaṃ nayataḥ."
-    ipa: "d̪ʋəu paːd̪əu ɡətʃtʃʰət̪oː d̪ʋəu ɦəst̪əu dʒələm nəjət̪əh"
+    target: "द्वौ पादौ गच्छतो द्वौ च हस्तौ जलं नयतः."
+    reading: "dvau pādau gacchato dvau ca hastau jalaṃ nayataḥ."
+    ipa: "d̪ʋəu paːd̪əu ɡətʃtʃʰət̪oː d̪ʋəu tʃə ɦəst̪əu dʒələm nəjət̪əh"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "द्वौ", ref: "sa-1050" }, { word: "पादौ", base: "पादः", reading: "pādaḥ" }, { word: "गच्छतो", base: "गम्", reading: "gam" }, { word: "हस्तौ", base: "हस्तः", reading: "hastaḥ" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "नयतः", base: "नी", reading: "nī" }]
+    bases: [{ word: "द्वौ", ref: "sa-1050" }, { word: "पादौ", base: "पादः", reading: "pādaḥ" }, { word: "गच्छतो", base: "गम्", reading: "gam" }, { word: "च", base: "च", reading: "ca" }, { word: "हस्तौ", base: "हस्तः", reading: "hastaḥ" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "नयतः", base: "नी", reading: "nī" }]
     confusables: [{ id: "w1", ref: "sa-1051", kind: "word" }, { id: "w2", ref: "sa-1569", kind: "word" }]
-    notes: [{ id: "n1", kind: "note" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
   - id: "sa-3124"
-    target: "पादो न चलति हस्तो न चलति."
-    reading: "pādo na calati hasto na calati."
-    ipa: "paːd̪oː nə tʃələt̪i ɦəst̪oː nə tʃələt̪i"
+    target: "पादो न चलति हस्तौ जलं च न नयतः."
+    reading: "pādo na calati hastau jalaṃ ca na nayataḥ."
+    ipa: "paːd̪oː nə tʃələt̪i ɦəst̪əu dʒələm tʃə nə nəjət̪əh"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "पादो", base: "पादः", reading: "pādaḥ" }, { word: "न", ref: "sa-0026" }, { word: "चलति", base: "चल्", reading: "cal" }, { word: "हस्तो", base: "हस्तः", reading: "hastaḥ" }]
+    bases: [{ word: "पादो", base: "पादः", reading: "pādaḥ" }, { word: "न", ref: "sa-0026" }, { word: "चलति", base: "चल्", reading: "cal" }, { word: "हस्तौ", base: "हस्तः", reading: "hastaḥ" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "च", base: "च", reading: "ca" }, { word: "नयतः", base: "नी", reading: "nī" }]
     confusables: [{ id: "w1", ref: "sa-1569", kind: "word" }, { id: "w2", ref: "sa-2012", kind: "word" }]
-    notes: [{ id: "n1", kind: "note" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
   - id: "sa-3125"
-    target: "तत्र रुधिरं सरति तत्र जलं क्षरति."
-    reading: "tatra rudhiraṃ sarati tatra jalaṃ kṣarati."
-    ipa: "t̪ət̪rə rud̪ʱirəm sərət̪i t̪ət̪rə dʒələm kʂərət̪i"
+    target: "तत्र रुधिरं सरति तत्र च जलं क्षरति."
+    reading: "tatra rudhiraṃ sarati tatra ca jalaṃ kṣarati."
+    ipa: "t̪ət̪rə rud̪ʱirəm sərət̪i t̪ət̪rə tʃə dʒələm kʂərət̪i"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "तत्र", ref: "sa-1081" }, { word: "रुधिरं", base: "रुधिरम्", reading: "rudhiram" }, { word: "सरति", base: "सृ", reading: "sṛ" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "क्षरति", base: "क्षर्", reading: "kṣar" }]
+    bases: [{ word: "तत्र", ref: "sa-1081" }, { word: "रुधिरं", base: "रुधिरम्", reading: "rudhiram" }, { word: "सरति", base: "सृ", reading: "sṛ" }, { word: "च", base: "च", reading: "ca" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "क्षरति", base: "क्षर्", reading: "kṣar" }]
     confusables: [{ id: "w1", ref: "sa-1083", kind: "word" }, { id: "w2", ref: "sa-2018", kind: "word" }]
-    notes: [{ id: "n1", kind: "note" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
   - id: "sa-3126"
-    target: "शिरः कुत्र भवति मुखं कुत्र भवति?"
-    reading: "śiraḥ kutra bhavati mukhaṃ kutra bhavati?"
-    ipa: "ʃirəh kut̪rə bʱəʋət̪i mukʰəm kut̪rə bʱəʋət̪i"
+    target: "शिरः कुत्र भवति मुखं च कुत्र भवति?"
+    reading: "śiraḥ kutra bhavati mukhaṃ ca kutra bhavati?"
+    ipa: "ʃirəh kut̪rə bʱəʋət̪i mukʰəm tʃə kut̪rə bʱəʋət̪i"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "शिरः", ref: "sa-1580" }, { word: "कुत्र", ref: "sa-1002" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "मुखं", base: "मुखम्", reading: "mukham" }]
+    bases: [{ word: "शिरः", ref: "sa-1580" }, { word: "कुत्र", ref: "sa-1002" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "मुखं", base: "मुखम्", reading: "mukham" }, { word: "च", base: "च", reading: "ca" }]
     confusables: [{ id: "w1", ref: "sa-1003", kind: "word" }, { id: "w2", ref: "sa-0431", kind: "word" }]
-    notes: [{ id: "n1", kind: "note" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
   - id: "sa-3127"
-    target: "स नेत्रेण पश्यति पिता कर्णेन शृणोति."
-    reading: "sa netreṇa paśyati pitā karṇena śṛṇoti."
-    ipa: "sə neːt̪reːɳə pəʃjət̪i pit̪aː kərɳeːnə ʃr̩ɳoːt̪i"
+    target: "स नेत्रेण पश्यति पिता च कर्णेन शृणोति."
+    reading: "sa netreṇa paśyati pitā ca karṇena śṛṇoti."
+    ipa: "sə neːt̪reːɳə pəʃjət̪i pit̪aː tʃə kərɳeːnə ʃr̩ɳoːt̪i"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "स", base: "सः", reading: "saḥ" }, { word: "नेत्रेण", base: "नेत्रम्", reading: "netram" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "पिता", ref: "sa-1031" }, { word: "कर्णेन", base: "कर्णः", reading: "karṇaḥ" }, { word: "शृणोति", base: "श्रु", reading: "śru" }]
+    bases: [{ word: "स", base: "सः", reading: "saḥ" }, { word: "नेत्रेण", base: "नेत्रम्", reading: "netram" }, { word: "पश्यति", base: "पश्", reading: "paś" }, { word: "पिता", ref: "sa-1031" }, { word: "च", base: "च", reading: "ca" }, { word: "कर्णेन", base: "कर्णः", reading: "karṇaḥ" }, { word: "शृणोति", base: "श्रु", reading: "śru" }]
     confusables: [{ id: "w1", ref: "sa-1011", kind: "word" }, { id: "w2", ref: "sa-1572", kind: "word" }]
-    notes: [{ id: "n1", kind: "note" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
   - id: "sa-3128"
     target: "अहं मुखेन संस्कृतं वदामि."
     reading: "ahaṃ mukhena saṃskṛtaṃ vadāmi."

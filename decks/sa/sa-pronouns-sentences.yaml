@@ -7,14 +7,14 @@ license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed"]
 cards:
   - id: "sa-3020"
-    target: "सा संस्कृतं वदति यूयं पठथ."
-    reading: "sā saṃskṛtaṃ vadati yūyaṃ paṭhatha."
-    ipa: "saː sə̃skr̩t̪əm ʋəd̪ət̪i juːjəm pəʈʰət̪ʰə"
+    target: "सा संस्कृतं वदति यूयं च पठथ."
+    reading: "sā saṃskṛtaṃ vadati yūyaṃ ca paṭhatha."
+    ipa: "saː sə̃skr̩t̪əm ʋəd̪ət̪i juːjəm tʃə pəʈʰət̪ʰə"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "सा", ref: "sa-1011" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "वदति", base: "वद्", reading: "vad" }, { word: "यूयं", base: "यूयम्", reading: "yūyam" }, { word: "पठथ", base: "पठ्", reading: "paṭh" }]
+    bases: [{ word: "सा", ref: "sa-1011" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "वदति", base: "वद्", reading: "vad" }, { word: "यूयं", base: "यूयम्", reading: "yūyam" }, { word: "च", base: "च", reading: "ca" }, { word: "पठथ", base: "पठ्", reading: "paṭh" }]
     confusables: [{ id: "w1", ref: "sa-1012", kind: "word" }, { id: "w2", ref: "sa-0434", kind: "word" }]
-    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
   - id: "sa-3021"
     target: "अयं देवो जलं नयति."
     reading: "ayaṃ devo jalaṃ nayati."
@@ -23,7 +23,7 @@ cards:
     tags: ["sentence"]
     bases: [{ word: "अयं", base: "अयम्", reading: "ayam" }, { word: "देवो", base: "देवः", reading: "devaḥ" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "नयति", base: "नी", reading: "nī" }]
     confusables: [{ id: "w1", ref: "sa-1014", kind: "word" }, { id: "w2", ref: "sa-0028", kind: "word" }]
-    notes: [{ id: "n1", kind: "note" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
   - id: "sa-3022"
     target: "इयं गौः कुत्र गच्छति?"
     reading: "iyaṃ gauḥ kutra gacchati?"
@@ -34,14 +34,14 @@ cards:
     confusables: [{ id: "w1", ref: "sa-1015", kind: "word" }, { id: "w2", ref: "sa-0029", kind: "word" }]
     notes: [{ id: "n1", kind: "note" }]
   - id: "sa-3023"
-    target: "यूयं न पठथ वयं न वदामः."
-    reading: "yūyaṃ na paṭhatha vayaṃ na vadāmaḥ."
-    ipa: "juːjəm nə pəʈʰət̪ʰə ʋəjəm nə ʋəd̪aːməh"
+    target: "यूयं न पठथ वयं च न वदामः."
+    reading: "yūyaṃ na paṭhatha vayaṃ ca na vadāmaḥ."
+    ipa: "juːjəm nə pəʈʰət̪ʰə ʋəjəm tʃə nə ʋəd̪aːməh"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "यूयं", base: "यूयम्", reading: "yūyam" }, { word: "न", ref: "sa-0026" }, { word: "पठथ", base: "पठ्", reading: "paṭh" }, { word: "वयं", base: "वयम्", reading: "vayam" }, { word: "वदामः", base: "वद्", reading: "vad" }]
+    bases: [{ word: "यूयं", base: "यूयम्", reading: "yūyam" }, { word: "न", ref: "sa-0026" }, { word: "पठथ", base: "पठ्", reading: "paṭh" }, { word: "वयं", base: "वयम्", reading: "vayam" }, { word: "च", base: "च", reading: "ca" }, { word: "वदामः", base: "वद्", reading: "vad" }]
     confusables: [{ id: "w1", ref: "sa-0021", kind: "word" }, { id: "w2", ref: "sa-0434", kind: "word" }]
-    notes: [{ id: "n1", kind: "note" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
   - id: "sa-3024"
     target: "वयं सर्वं जलं नयामः."
     reading: "vayaṃ sarvaṃ jalaṃ nayāmaḥ."
@@ -50,7 +50,7 @@ cards:
     tags: ["sentence"]
     bases: [{ word: "वयं", base: "वयम्", reading: "vayam" }, { word: "सर्वं", base: "सर्वम्", reading: "sarvam" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "नयामः", base: "नी", reading: "nī" }]
     confusables: [{ id: "w1", ref: "sa-1023", kind: "word" }, { id: "w2", ref: "sa-0024", kind: "word" }]
-    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
   - id: "sa-3025"
     target: "यत् पठसि तत् पठामि."
     reading: "yat paṭhasi tat paṭhāmi."
@@ -61,23 +61,23 @@ cards:
     confusables: [{ id: "w1", ref: "sa-0433", kind: "word" }, { id: "w2", ref: "sa-1013", kind: "word" }]
     notes: [{ id: "n1", kind: "usage" }]
   - id: "sa-3026"
-    target: "एष जलं नयति स संस्कृतं पठति."
-    reading: "eṣa jalaṃ nayati sa saṃskṛtaṃ paṭhati."
-    ipa: "eːʂə dʒələm nəjət̪i sə sə̃skr̩t̪əm pəʈʰət̪i"
+    target: "एष जलं नयति स च संस्कृतं पठति."
+    reading: "eṣa jalaṃ nayati sa ca saṃskṛtaṃ paṭhati."
+    ipa: "eːʂə dʒələm nəjət̪i sə tʃə sə̃skr̩t̪əm pəʈʰət̪i"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "एष", base: "एषः", reading: "eṣaḥ" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "नयति", base: "नी", reading: "nī" }, { word: "स", base: "सः", reading: "saḥ" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+    bases: [{ word: "एष", base: "एषः", reading: "eṣaḥ" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "नयति", base: "नी", reading: "nī" }, { word: "स", base: "सः", reading: "saḥ" }, { word: "च", base: "च", reading: "ca" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
     confusables: [{ id: "w1", ref: "sa-1017", kind: "word" }, { id: "w2", ref: "sa-0024", kind: "word" }]
-    notes: [{ id: "n1", kind: "note" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
   - id: "sa-3027"
-    target: "स देवो न वदति सा संस्कृतं पठति."
-    reading: "sa devo na vadati sā saṃskṛtaṃ paṭhati."
-    ipa: "sə d̪eːʋoː nə ʋəd̪ət̪i saː sə̃skr̩t̪əm pəʈʰət̪i"
+    target: "स देवो न वदति सा च संस्कृतं पठति."
+    reading: "sa devo na vadati sā ca saṃskṛtaṃ paṭhati."
+    ipa: "sə d̪eːʋoː nə ʋəd̪ət̪i saː tʃə sə̃skr̩t̪əm pəʈʰət̪i"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "स", base: "सः", reading: "saḥ" }, { word: "देवो", base: "देवः", reading: "devaḥ" }, { word: "न", ref: "sa-0026" }, { word: "वदति", base: "वद्", reading: "vad" }, { word: "सा", ref: "sa-1011" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+    bases: [{ word: "स", base: "सः", reading: "saḥ" }, { word: "देवो", base: "देवः", reading: "devaḥ" }, { word: "न", ref: "sa-0026" }, { word: "वदति", base: "वद्", reading: "vad" }, { word: "सा", ref: "sa-1011" }, { word: "च", base: "च", reading: "ca" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
     confusables: [{ id: "w1", ref: "sa-1012", kind: "word" }, { id: "w2", ref: "sa-0028", kind: "word" }]
-    notes: [{ id: "n1", kind: "note" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
   - id: "sa-3028"
     target: "यः पठति स संस्कृतं वदति."
     reading: "yaḥ paṭhati sa saṃskṛtaṃ vadati."
@@ -86,4 +86,4 @@ cards:
     tags: ["sentence"]
     bases: [{ word: "यः", ref: "sa-1019" }, { word: "पठति", base: "पठ्", reading: "paṭh" }, { word: "स", base: "सः", reading: "saḥ" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "वदति", base: "वद्", reading: "vad" }]
     confusables: [{ id: "w1", ref: "sa-1022", kind: "word" }, { id: "w2", ref: "sa-0434", kind: "word" }]
-    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
