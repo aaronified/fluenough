@@ -224,9 +224,39 @@ class NoHintTest(unittest.TestCase):
             self) -> None:
         self.assertEqual(self.read("bn", "উজ্জ্য"), "ujjo")
 
-    def test_an_assamese_ba_phala_holds_the_consonant(self) -> None:
-        self.assertEqual(self.read("as", "বিশ্ব"), "bixxô")
-        self.assertEqual(self.read("as", "ৰাজত্ব"), "rāzôttô")
+    def test_an_assamese_ba_phala_holds_the_consonant_and_ends_the_word(
+            self) -> None:
+        # The course writes bixx and razôtt: no vowel after the held
+        # consonant, where Bengali says one (বিশ্ব biśśo).
+        self.assertEqual(self.read("as", "বিশ্ব"), "bixx")
+        self.assertEqual(self.read("as", "ৰাজত্ব"), "rāzôtt")
+        self.assertEqual(transcribe("ভ্ৰাতৃত্ব", "as").ipa, "bʱɹatritt")
+        self.assertEqual(self.read("bn", "বিশ্ব"), "biśśo")
+
+    def test_an_assamese_word_ending_in_r_ba_has_no_last_vowel(self) -> None:
+        self.assertEqual(self.read("as", "গৰ্ব"), "gôrb")
+        self.assertEqual(self.read("bn", "গর্ব"), "gôrbo")
+
+    def test_an_assamese_ya_phala_still_ends_in_its_vowel(self) -> None:
+        # The course is mixed here (ৰাজ্য rāzjô, নৃত্য nritj), so the shared
+        # rule stays.
+        self.assertEqual(transcribe("ৰাজ্য", "as").ipa, "ɹazjɔ")
+
+    def test_an_assamese_conjunct_on_a_card_of_its_own_keeps_its_vowel(
+            self) -> None:
+        # All 23 such cards of the course: ক্ত ktô, স্থ sthô, ল্ল llô.
+        self.assertEqual(transcribe("ক্ত", "as").ipa, "ktɔ")
+        self.assertEqual(transcribe("স্থ", "as").ipa, "stʰɔ")
+        self.assertEqual(transcribe("ল্ল", "as").ipa, "llɔ")
+        self.assertEqual(self.read("as", "ব্ব"), "bbô")
+        # A word that ends in a conjunct but has a vowel before it does not.
+        self.assertEqual(transcribe("শক্ত", "as").ipa, "xɔkt")
+
+    def test_assamese_digits_are_read_as_the_number_cards_read_them(
+            self) -> None:
+        self.assertEqual(transcribe("০", "as").ipa, "xunjɔ")
+        self.assertEqual(transcribe("৫", "as").ipa, "pãs")
+        self.assertEqual(self.read("as", "৭"), "xāt")
 
     def test_sibilants_follow_the_table_unless_before_a_stop(self) -> None:
         self.assertEqual(self.read("bn", "সকাল"), "śôkāl")
@@ -283,6 +313,38 @@ class NewLanguagesTest(unittest.TestCase):
             transcribe("你好", "zh", "nǐ hǎo").reading, "nǐ hǎo")
         with self.assertRaises(CannotRead):
             transcribe("你好", "zh")
+
+    def test_mandarin_ipa_is_derived_from_the_pinyin(self) -> None:
+        for pinyin, ipa in (
+            ("nǐ hǎo", "ni˨˩˦ xau˨˩˦"),          # citation tones, no sandhi
+            ("shì", "ʂɨ˥˩"),                    # apical vowels are ɨ
+            ("zì", "tsɨ˥˩"),
+            ("rì", "ɻɨ˥˩"),
+            ("xué", "ɕɥɛ˧˥"),                   # ü is written u after j q x
+            ("jiǔ", "tɕjou˨˩˦"),                # iu is iou
+            ("huì", "xwei˥˩"),                  # ui is uei
+            ("dūn", "twən˥˥"),                  # un is uen
+            ("bó", "pwo˧˥"),                    # o after b p m f is uo
+            ("yuè", "ɥɛ˥˩"),                    # y and w are spellings
+            ("wǒ", "wo˨˩˦"),
+            ("lǜ", "ly˥˩"),
+            ("wǒmen", "wo˨˩˦mən˙"),            # neutral tone ends in ˙
+            ("de", "tə˙"),                      # e is ə when neutral
+            ("xiān", "ɕjɛn˥˥"),                 # not xi + an
+            ("Xī'ān", "ɕi˥˥an˥˥"),             # the apostrophe divides
+            ("èr", "ɚ˥˩"),
+            ("shìr", "ʂɚ˥˩"),                  # erhua
+            ("yìdiǎnr", "i˥˩tjɐɻ˨˩˦"),
+            ("gēr", "kɤɻ˥˥"),                  # ger is not g + er
+            ("hǎo ma?", "xau˨˩˦ ma˙"),          # punctuation is dropped
+        ):
+            with self.subTest(pinyin):
+                self.assertEqual(transcribe("x", "zh", pinyin).ipa, ipa)
+
+    def test_mandarin_pinyin_that_cannot_be_read_gives_no_ipa_and_a_note(self) -> None:
+        t = transcribe("导航", "zh", "dǎováng")
+        self.assertEqual((t.reading, t.ipa, t.fitted), ("dǎováng", "", False))
+        self.assertIn("dǎováng", t.notes[0])
 
     def test_toki_pona_stress_is_on_the_first_syllable(self) -> None:
         self.assertEqual(transcribe("jan suli li toki.", "tok").ipa,

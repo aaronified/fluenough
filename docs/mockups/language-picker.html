@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Language Picker</title>
+<meta name="description" content="Add a language redesigned for new users: nine big tiles first, then a short list of languages with a course, a compact bar of how much of each course is made, a verification flag, and Coming soon folded away.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Sans+Telugu:wght@400;600&family=Noto+Sans+Arabic:wght@400;600&family=Noto+Sans+JP:wght@400;600&family=Noto+Sans+SC:wght@400;600&family=Noto+Sans+Kannada:wght@400;600&display=swap">
+<style>
+/* ===== The page around the phones (not the app) ===== */
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali","Noto Sans Telugu",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1560px;margin:0 auto;padding:28px 16px 72px}
+h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
+.cap1{margin:0 0 16px;color:var(--page-muted);font-size:14px;max-width:820px}
+.tw{display:flex;flex-wrap:wrap;gap:10px 24px;margin:0 0 18px}
+.tg{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--page-muted);flex-wrap:wrap}
+.segc{display:inline-flex;border:1px solid var(--page-line);border-radius:10px;overflow:hidden;flex-wrap:wrap}
+.segc button{font:inherit;font-size:14px;min-height:40px;padding:0 14px;border:0;background:var(--page-card);color:var(--page-fg);cursor:pointer}
+.segc button[aria-pressed="true"]{background:var(--page-acc);color:var(--page-bg);font-weight:600}
+.frames{display:flex;flex-wrap:wrap;gap:20px 24px;align-items:flex-start}
+.fcol{display:flex;flex-direction:column;gap:6px;width:360px;max-width:100%}
+.fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+/* ===== The app: lib/ui/theme.dart (M3, Roboto; ColorScheme.fromSeed of the forest seed) =====
+   Sizes are calc(N px * var(--t)), t = 1.4, the app's text cap (#505). Icons do not scale. */
+.ph{--t:1.4;width:360px;max-width:100%;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali","Noto Sans Telugu","Noto Sans Arabic","Noto Sans JP","Noto Sans SC","Noto Sans Kannada",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
+.ph button,.ph input{font-family:inherit;color:inherit}
+.ph button{cursor:pointer}
+svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
+.bar{height:56px;display:flex;align-items:center;padding:0 4px}
+.bar .ib{width:48px;height:48px;border:0;background:none;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.bar .ttl{font-size:calc(20px*var(--t));font-weight:500;padding-left:4px}
+.body{padding:4px 16px 24px;display:flex;flex-direction:column}
+h2.h{margin:4px 0 12px;font-size:calc(24px*var(--t));line-height:1.15;font-weight:400}
+.srch{display:flex;align-items:center;gap:12px;min-height:56px;border-radius:16px;background:var(--sHigh);padding:0 16px;color:var(--onSv)}
+.srch input{flex:1;min-width:0;border:0;background:none;font-size:calc(16px*var(--t));color:var(--onS);outline:0;padding:0;height:56px}
+.srch input::placeholder{color:var(--onSv);opacity:1}
+.srch:focus-within{box-shadow:0 0 0 2px var(--p)}
+/* tiles */
+.tiles{list-style:none;margin:16px 0 8px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.tiles li{min-width:0}
+.tiles li.wide{grid-column:1 / -1}
+.tl{width:100%;height:100%;text-align:start;display:flex;flex-direction:column;gap:2px;padding:12px 12px 12px;border-radius:16px;border:0;background:var(--sLow);box-shadow:inset 0 0 0 1px var(--olv);min-height:calc(78px*var(--t))}
+.tl.added{background:var(--pc);color:var(--onPc);box-shadow:none}
+.tl .nat{font-size:calc(20px*var(--t));line-height:1.25;font-weight:600;overflow-wrap:anywhere}
+.tl .en{font-size:calc(14px*var(--t));line-height:1.25;font-weight:500}
+.tl .st{margin-top:auto;padding-top:4px;font-size:calc(12px*var(--t));line-height:1.25;color:var(--onSv)}
+.tl.added .st{color:var(--onPc)}
+.tl .st b{font-weight:700}
+.tl:focus-visible,.row .main:focus-visible,.link:focus-visible,.flag:focus-visible,.soonh:focus-visible{outline:3px solid var(--p);outline-offset:2px}
+.link{align-self:center;min-height:calc(40px*var(--t));border:0;background:none;color:var(--p);font-size:calc(14px*var(--t));font-weight:600;padding:6px 16px;border-radius:calc(20px*var(--t));display:inline-flex;align-items:center;gap:4px}
+/* the list */
+.legend{margin:10px 0 0;padding:10px 12px 8px;border-radius:12px;background:var(--sLow);box-shadow:inset 0 0 0 1px var(--olv)}
+.legend .lt{font-size:calc(12px*var(--t));line-height:1.25;font-weight:700;color:var(--onSv);margin:0 0 4px}
+.legend .lbs{display:flex;gap:4px;margin:2px 0 0}
+.legend .lbs span{flex:1;min-width:0;font-size:calc(11px*var(--t));line-height:1.2;font-weight:700;color:var(--onSv);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.legend .fk{display:flex;flex-wrap:wrap;gap:2px 12px;margin:8px 0 0;font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv)}
+.legend .fk span{display:inline-flex;align-items:center;gap:4px}
+.legend .fk svg.i{width:20px;height:20px}
+.legend .fk b{color:var(--onS);font-weight:600}
+.gh{margin:16px 0 0;font-size:calc(14px*var(--t));line-height:1.25;font-weight:700;color:var(--p)}
+.gn{margin:0 0 2px;font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv)}
+ul.rows{list-style:none;margin:0;padding:0}
+.row{position:relative}
+.row .main{width:100%;display:flex;align-items:center;gap:12px;min-height:56px;border:0;background:none;text-align:start;padding:6px 0 2px}
+.av{width:36px;height:36px;flex:none;border-radius:50%;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;font-size:16px;line-height:1}
+.row.added .av{background:var(--p);color:var(--onP)}
+.nm{flex:1;min-width:0;display:flex;flex-direction:column}
+.nm .en{font-size:calc(16px*var(--t));line-height:1.2;font-weight:600}
+.nm .nat{font-size:calc(14px*var(--t));line-height:1.25;color:var(--onSv)}
+.chip{flex:none;display:inline-flex;align-items:center;gap:4px;min-height:calc(24px*var(--t));padding:0 10px;border-radius:8px;background:var(--pc);color:var(--onPc);font-size:calc(12px*var(--t));font-weight:700}
+.chip svg.i{width:16px;height:16px}
+.chev{color:var(--onSv)}
+.prog{display:flex;align-items:center;gap:4px;padding:0 0 6px 48px}
+.seg4{flex:1;display:flex;gap:4px;min-width:0}
+.sg{flex:1;height:6px;border-radius:3px;background:var(--sHighest);overflow:hidden}
+.sg i{display:block;height:100%;background:var(--p)}
+.flag{flex:none;position:relative;width:40px;height:40px;margin:-8px 0;border:0;background:none;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.flag svg.i{width:22px;height:22px}
+.flag.none{color:var(--onSv)}
+.flag.some,.flag.full{color:var(--p)}
+.tip{position:absolute;z-index:6;right:0;bottom:calc(100% + 2px);width:max-content;max-width:calc(280px);padding:8px 12px;border-radius:8px;background:var(--onS);color:var(--s);font-size:calc(12px*var(--t));line-height:1.3;text-align:start;box-shadow:0 2px 8px rgba(0,0,0,.35)}
+.tip b{display:block;font-weight:700}
+.row .prog .flagwrap{position:relative}
+.row.soon .main{min-height:48px;padding:4px 0}
+.row.soon .av{background:var(--sHighest);color:var(--onSv)}
+.row.soon .nm .en{font-weight:500}
+.soonh{width:100%;margin:16px 0 0;min-height:56px;display:flex;align-items:center;gap:8px;padding:0 12px;border:0;border-radius:12px;background:var(--sHigh);font-size:calc(14px*var(--t));font-weight:700;text-align:start}
+.soonh span.l{flex:1}
+.soonh .n{font-weight:500;color:var(--onSv);font-size:calc(12px*var(--t))}
+.soonh svg.i{transition:transform .15s}
+.soonh[aria-expanded="true"] svg.i{transform:rotate(180deg)}
+.more{margin:6px 0 0;font-size:calc(12px*var(--t));color:var(--onSv);text-align:center}
+/* Find my level (unchanged screen, shown for the hand-over) */
+.opt{width:100%;text-align:start;display:flex;flex-direction:column;padding:14px 16px;border-radius:16px;border:0;background:var(--sLow);box-shadow:inset 0 0 0 1px var(--olv);margin:0 0 8px}
+.opt .a{font-size:calc(16px*var(--t));line-height:1.25;font-weight:500}
+.opt .b{font-size:calc(14px*var(--t));line-height:1.3;color:var(--onSv)}
+.ph.ref{opacity:1}
+/* highlight of what changed */
+.hl-on .chg{outline:2px dashed var(--E);outline-offset:3px;position:relative}
+.hl-on .chg::after{content:"new";position:absolute;top:-10px;right:6px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:6px;z-index:5;letter-spacing:.3px}
+.hl-on .chg.upd::after{content:"changed"}
+.hl-on .chg.same::after{content:"unchanged";background:var(--sc);color:var(--onSc)}
+.hl-on .chg.same{outline-color:var(--ol);overflow:visible;margin-top:12px}
+.hl-on .chg.same::after{top:-10px}
+.hide{display:none!important}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Language picker</h1>
+<p class="cap1">The Add a language screen, 360 dp, 1.4x text. A first screen of nine big tiles, then the short list of languages that have a course, with how much of the course is made shown as one slim bar and the verification as a flag you tap. Picking goes straight to the existing Find my level (last phone, unchanged). Tiles, rows, flags and the Coming soon header are live. Notes and the contrast self-check are in <code>language-picker.md</code>.</p>
+<div class="tw" role="group" aria-label="Tweaks">
+ <div class="tg">Theme <div class="segc" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></div></div>
+ <div class="tg">Already added <div class="segc" data-k="lang"><button data-v="te">Telugu</button><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button><button data-v="none">None (first launch)</button></div></div>
+ <div class="tg">Coming soon <div class="segc" data-k="soon"><button data-v="c">Collapsed</button><button data-v="e">Expanded</button></div></div>
+ <div class="tg">Highlight changes <div class="segc" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></div></div>
+</div>
+<div class="frames" id="frames"></div>
+</div>
+<script>
+const PAL={
+dark:{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sHigh":"#262b27","sHighest":"#313632","ol":"#8a938b","olv":"#404942","pc":"#085231","onPc":"#aef2c6","E":"#ffb4ab","onE":"#690005"},
+light:{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sHigh":"#e4eae3","sHighest":"#dfe4dd","ol":"#717972","olv":"#c0c9c0","pc":"#aef2c6","onPc":"#085231","E":"#ba1a1a","onE":"#ffffff"}};
+const IC={
+ back:"M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z",
+ search:"M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z",
+ chev:"M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z",
+ down:"M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z",
+ check:"M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z",
+ arrow:"M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"};
+const ic=(n,s)=>`<svg class="i" viewBox="0 0 24 24" aria-hidden="true"${s?` style="width:${s}px;height:${s}px"`:''}><path d="${IC[n]}"/></svg>`;
+/* The app's own flag glyphs (Icons.flag_outlined / Icons.flag); Somewhat = outline with the start half solid */
+const FL="M14.4 6 14 4H5v17h2v-7h5.6l.4 2h7V6z", FO="M14.4 6 14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6zM18 14h-4.4l-.4-2H7V6h5.4l.4 2H18v6z";
+let fid=0;
+const flagSvg=s=>{const id='c'+(fid++);
+ if(s==='none')return `<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="${FO}"/></svg>`;
+ if(s==='full')return `<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="${FL}"/></svg>`;
+ return `<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><defs><clipPath id="${id}"><rect x="0" y="0" width="12.5" height="24"/></clipPath></defs><path d="${FO}"/><path d="${FL}" clip-path="url(#${id})"/></svg>`};
+/* strings of lib/l10n/app_en.arb: languagesVerifiedNone/Some/Full, ...Detail, languagesVerifiedLabel */
+const VW={none:'Not at all',some:'Somewhat',full:'Completely'};
+const VD={none:'No native speaker has checked this course.',some:'Native speakers have checked some of this course.',full:'Native speakers have checked all of this course.'};
+/* Illustrative figures (CourseLine levels: A1, A2, B1 written share; culture); the app reads them from progressFor (the course's written shares, not the learner's progress) */
+const L={
+ es:{en:'Spanish',nat:'Español',g:'E',lv:[1,1,.5,.3],v:'full'},
+ fr:{en:'French',nat:'Français',g:'F',lv:[1,.4,0,0],v:'none'},
+ te:{en:'Telugu',nat:'తెలుగు',g:'త',lv:[1,1,1,.6],v:'some'},
+ hi:{en:'Hindustani',nat:'हिन्दुस्तानी',nat2:'ہندوستانی',g:'ह',lv:[1,1,1,.2],v:'none'},
+ bn:{en:'Bengali',nat:'বাংলা',g:'ব',lv:[1,1,1,.3],v:'some'},
+ mr:{en:'Marathi',nat:'मराठी',g:'म',lv:[1,1,1,.1],v:'none'},
+ kn:{en:'Kannada',nat:'ಕನ್ನಡ',g:'ಕ',lv:[1,1,1,.1],v:'none'},
+ ja:{en:'Japanese',nat:'日本語',g:'日',lv:[.7,0,0,0],v:'none'},
+ zh:{en:'Mandarin Chinese',nat:'中文',g:'中',lv:[.6,0,0,0],v:'none'},
+ ar:{en:'Arabic',nat:'العربية',g:'ع',lv:[.4,0,0,0],v:'none'},
+ as:{en:'Assamese',nat:'অসমীয়া',g:'অ',lv:[1,.7,0,0],v:'none'},
+ ca:{en:'Catalan',nat:'Català',g:'C',lv:[0,0,0,0],v:'none'},
+ de:{en:'German',nat:'Deutsch',g:'D',lv:[.8,0,0,0],v:'none'},
+ tr:{en:'Turkish',nat:'Türkçe',g:'T',lv:[.3,0,0,0],v:'none'}};
+/* a tile's one line, derived from what the course has: the highest level fully written */
+function status(k){const [a,b,c,cu]=L[k].lv;
+ if(c>=1)return 'A1 to B1 ready';
+ if(b>=1)return 'A1 and A2 ready';
+ if(a>=1)return 'A1 ready';
+ if(a>0)return 'Beginner course';
+ return 'First words only'}
+const SOON=[['af','Afrikaans','Afrikaans','A'],['nl','Dutch','Nederlands','N'],['fa','Persian','فارسی','ف'],['id','Indonesian','Bahasa Indonesia','B'],['ps','Pashto','پښتو','پ'],['sa','Classical Sanskrit','संस्कृतम्','स'],['uk','Ukrainian','Українська','У']];
+const S={theme:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light',lang:'te',soon:'c',hl:'1'};
+const added=k=>S.lang===k;
+const POP=['es','fr','te','hi','bn','mr','kn','ja','zh'];
+const natOf=l=>l.nat2?`${l.nat}`:l.nat;
+function tile(k,i){const l=L[k],a=added(k);
+ return `<li class="${i===8?'wide':''}"><button class="tl ${a?'added':''}" type="button" aria-label="${l.en}, ${l.nat}, ${status(k)}${a?', already added':''}"><span class="nat" lang="${k}">${natOf(l)}</span><span class="en">${l.en}</span><span class="st">${a?'<b>Added</b> · ':''}${status(k)}</span></button></li>`}
+const seg=lv=>lv.map(x=>`<span class="sg"><i style="width:${Math.round(x*100)}%"></i></span>`).join('');
+const pct=lv=>['A1','A2','B1','Culture'].map((n,i)=>`${n} ${Math.round(lv[i]*100)}%`).join(', ');
+function row(k){const l=L[k],a=added(k);
+ const lab=`${l.en}, ${l.nat}`;
+ return `<li class="row ${a?'added':''}"><button class="main" type="button" aria-label="${lab}${a?', added':''}"><span class="av" aria-hidden="true" lang="${k}">${l.g}</span><span class="nm"><span class="en">${l.en}</span><span class="nat" lang="${k}">${l.nat}${l.nat2?' · '+l.nat2:''}</span></span>${a?`<span class="chip">${ic('check')}Added</span>`:''}<span class="chev">${ic('chev')}</span></button>
+ <div class="prog"><span class="seg4" role="img" aria-label="How much of the course is made: ${pct(l.lv)}">${seg(l.lv)}</span><span class="flagwrap"><button class="flag ${l.v}" type="button" data-tip="${k}" title="Verified by native speakers: ${VW[l.v].toLowerCase()}" aria-label="Verified by native speakers: ${VW[l.v].toLowerCase()}. ${VD[l.v]}">${flagSvg(l.v)}</button></span></div></li>`}
+function soonRow(r){return `<li class="row soon"><button class="main" type="button" aria-label="${r[1]}, ${r[2]}, no course yet"><span class="av" aria-hidden="true">${r[3]}</span><span class="nm"><span class="en">${r[1]}</span><span class="nat">${r[2]}</span></span><span class="chev">${ic('chev')}</span></button></li>`}
+const bar=(t)=>`<div class="bar"><button class="ib" type="button" aria-label="Back">${ic('back')}</button>${t?`<span class="ttl">${t}</span>`:''}</div>`;
+const legend=()=>`<div class="legend chg" role="group" aria-label="Key">
+ <p class="lt">How much of the course is made</p>
+ <div class="seg4" aria-hidden="true"><span class="sg"><i style="width:100%"></i></span><span class="sg"><i style="width:100%"></i></span><span class="sg"><i style="width:50%"></i></span><span class="sg"></span></div>
+ <div class="lbs" aria-hidden="true"><span>A1</span><span>A2</span><span>B1</span><span>Culture</span></div>
+ <p class="vh">A1, A2, B1 and Culture: how much of each part is written. A full bar is complete, an empty one is still to come.</p>
+ <p class="fk" aria-label="Verified by native speakers: not at all, somewhat, completely"><span>Verified by native speakers:</span><span>${flagSvg('none').replace('class="i"','class="i" style="color:var(--onSv)"')}<b>Not at all</b></span><span><span style="color:var(--p);display:inline-flex">${flagSvg('some')}</span><b>Somewhat</b></span><span><span style="color:var(--p);display:inline-flex">${flagSvg('full')}</span><b>Completely</b></span></p></div>`;
+/* three frames of the same screen sequence */
+function fA(){return `<div class="fcol"><div class="fcap">a. First screen: the nine Popular tiles${S.lang==='none'?' (first launch)':''}</div><div class="ph">${bar('Add a language')}<div class="body">
+ <h2 class="h chg upd">What do you want to learn?</h2>
+ <label class="srch" for="q1">${ic('search')}<input id="q1" type="search" placeholder="Search languages" autocomplete="off"></label>
+ <ul class="tiles chg">${POP.map(tile).join('')}</ul>
+ <button class="link chg" type="button">See all languages ${ic('chev',20)}</button></div></div></div>`}
+function fB(){return `<div class="fcol"><div class="fcap">b. See all languages: only languages with a course, top of the list</div><div class="ph">${bar('All languages')}<div class="body">
+ <label class="srch" for="q2">${ic('search')}<input id="q2" type="search" placeholder="Search languages" autocomplete="off"></label>
+ ${legend()}
+ <h3 class="gh chg">Languages</h3>
+ <ul class="rows">${['ar','as','bn','ca','fr','de','hi'].map(row).join('')}</ul>
+ <p class="more">A to Z, languages with a course only</p></div></div></div>`}
+function fC(){const exp=S.soon==='e';return `<div class="fcol"><div class="fcap">c. Same list, the bottom: Scripts and sounds, then Coming soon (${exp?'expanded':'collapsed'})</div><div class="ph">${bar('All languages')}<div class="body">
+ <ul class="rows">${['kn','mr','te','tr'].map(row).join('')}</ul>
+ <h3 class="gh chg">Scripts and sounds</h3>
+ <p class="gn">Learn to read and say, not a language to speak.</p>
+ <ul class="rows chg"><li class="row"><button class="main" type="button" aria-label="International Phonetic Alphabet"><span class="av" aria-hidden="true">ə</span><span class="nm"><span class="en">IPA</span><span class="nat">International Phonetic Alphabet</span></span><span class="chev">${ic('chev')}</span></button></li>
+ <li class="row"><button class="main" type="button" aria-label="English Braille"><span class="av" aria-hidden="true">⠃</span><span class="nm"><span class="en">English Braille</span><span class="nat">⠃⠗⠁⠊⠇⠇⠑</span></span><span class="chev">${ic('chev')}</span></button></li></ul>
+ <button class="soonh chg" type="button" aria-expanded="${exp}" aria-controls="soonlist"><span class="l">Coming soon</span><span class="n">${SOON.length} of 37 shown</span>${ic('down')}</button>
+ <ul class="rows ${exp?'':'hide'}" id="soonlist">${SOON.map(soonRow).join('')}</ul></div></div></div>`}
+function fD(){return `<div class="fcol"><div class="fcap">d. Any tap or row goes straight here: Find my level, unchanged</div><div class="ph chg same ref">${bar('')}<div class="body">
+ <h2 class="h" style="font-size:calc(24px*var(--t))">How well do you know ${L[S.lang==='none'?'te':S.lang].en}?</h2>
+ <button class="opt" type="button"><span class="a">Expert</span><span class="b">I use it easily</span></button>
+ <button class="opt" type="button"><span class="a">Advanced</span><span class="b">I follow most of it and can say what I need</span></button>
+ <button class="opt" type="button"><span class="a">Amateur</span><span class="b">I know some words and phrases</span></button>
+ <button class="opt" type="button"><span class="a">Beginner</span><span class="b">I am starting from nothing</span></button></div></div></div>`}
+function build(){
+ const root=document.getElementById('frames');
+ const p=PAL[S.theme];
+ document.documentElement.dataset.theme=S.theme;
+ root.style.cssText=Object.entries(p).map(([k,v])=>`--${k}:${v}`).join(';');
+ root.className='frames'+(S.hl==='1'?' hl-on':'');
+ root.innerHTML=fA()+fB()+fC()+fD();
+ document.querySelectorAll('.segc').forEach(s=>s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',S[s.dataset.k]==b.dataset.v)));
+}
+function closeTips(){document.querySelectorAll('.tip').forEach(t=>t.remove())}
+document.addEventListener('click',e=>{
+ const sg=e.target.closest('.segc button');
+ if(sg){S[sg.parentNode.dataset.k]=sg.dataset.v;build();return}
+ const sh=e.target.closest('.soonh');
+ if(sh){S.soon=S.soon==='e'?'c':'e';build();return}
+ const fl=e.target.closest('.flag');
+ const had=fl&&fl.parentNode.querySelector('.tip');
+ closeTips();
+ if(fl&&!had){const st=fl.className.split(' ')[1];
+  fl.insertAdjacentHTML('afterend',`<span class="tip" role="status"><b>Verified by native speakers: ${VW[st].toLowerCase()}</b>${VD[st]}</span>`)}
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeTips()});
+build();
+</script>
+</body>
+</html>

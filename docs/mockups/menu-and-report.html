@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menu And Report</title>
+<meta name="description" content="Bug icon removed from the app bar; Your languages opens the Languages list, whose three-dot menu holds the old settings rows; a content-only report on card screens.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Sans+Telugu:wght@400;600&display=swap">
+<style>
+/* ===== The page around the phones (not the app) ===== */
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali","Noto Sans Telugu",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 16px 72px}
+h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
+.cap1{margin:0 0 16px;color:var(--page-muted);font-size:14px;max-width:760px}
+.tw{display:flex;flex-wrap:wrap;gap:10px 24px;margin:0 0 18px}
+.tg{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--page-muted);flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--page-line);border-radius:10px;overflow:hidden;flex-wrap:wrap}
+.seg button{font:inherit;font-size:14px;min-height:40px;padding:0 14px;border:0;background:var(--page-card);color:var(--page-fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--page-acc);color:var(--page-bg);font-weight:600}
+.frames{display:flex;flex-wrap:wrap;gap:20px 24px;align-items:flex-start}
+.fcol{display:flex;flex-direction:column;gap:6px;width:360px;max-width:100%}
+.fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+/* ===== The app: lib/ui/theme.dart (M3, Roboto; forest seed). Sizes calc(N px * var(--t)), t = 1.4. Icons do not scale. ===== */
+.ph{--t:1.4;width:360px;max-width:100%;height:740px;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali","Noto Sans Telugu",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
+.ph.short{height:auto;min-height:0}
+.ph button{font-family:inherit;color:inherit;cursor:pointer}
+svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
+.sm{font-size:calc(12px*var(--t));color:var(--onSv)}
+/* app bar */
+.ab{display:flex;align-items:center;height:56px;padding:0 4px;flex:none;background:var(--s)}
+.ab h2{flex:1;margin:0 0 0 12px;font-size:calc(22px*var(--t));line-height:1.1;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ib{width:48px;height:48px;border:0;background:none;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;color:var(--onSv)}
+.ib.on{background:color-mix(in srgb,var(--onS) 12%,transparent)}
+/* the language bar of Today (wheel, simplified): pill with name */
+.lb{display:flex;align-items:center;height:56px;padding:0 4px;background:var(--s)}
+.lb .slot{width:48px;height:48px;flex:none}
+.lb .wheel{flex:1;display:flex;align-items:center;justify-content:center;gap:10px;height:48px;overflow:hidden}
+.lb .g{font-size:calc(13px*var(--t));opacity:.35;font-weight:500}
+.lb .pill{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:18px;background:var(--sc);color:var(--onSc);font-size:calc(14px*var(--t));font-weight:600;white-space:nowrap}
+.lbl{font-size:12px;font-weight:700;color:var(--onSv);padding:8px 16px 2px;letter-spacing:.3px}
+/* Settings tab */
+.tabh{font-size:calc(28px*var(--t));line-height:1.15;font-weight:400;padding:16px 24px 8px}
+.pc{margin:8px 16px 0;background:var(--sLow);border-radius:16px;padding:14px 16px;display:flex;gap:12px;align-items:center}
+.av{width:40px;height:40px;border-radius:50%;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;font-weight:700}
+.gl{margin:16px 16px 0;background:var(--sLow);border-radius:16px;overflow:hidden}
+.row{display:flex;align-items:center;gap:16px;min-height:72px;padding:10px 16px}
+.row .tx{flex:1;min-width:0}
+.row .t1{font-size:calc(16px*var(--t));line-height:1.2}
+.row .t2{font-size:calc(14px*var(--t));line-height:1.25;color:var(--onSv)}
+.row+.row{border-top:1px solid var(--olv)}
+.row svg.i{color:var(--onSv)}
+/* Languages screen */
+.pills{display:flex;gap:8px;padding:8px 16px 4px;overflow:hidden}
+.pill2{height:calc(32px*var(--t));display:inline-flex;align-items:center;padding:0 12px;border-radius:8px;border:1px solid var(--ol);font-size:calc(14px*var(--t));font-weight:500;color:var(--onSv);white-space:nowrap}
+.sech{padding:14px 16px 4px;font-size:calc(14px*var(--t));font-weight:600;color:var(--onSv)}
+.lrow{margin:4px 16px;background:var(--sLow);border-radius:16px;padding:10px 14px;display:flex;flex-direction:column;gap:6px}
+.lrow .n{font-size:calc(16px*var(--t));font-weight:500;line-height:1.2}
+.lrow .on{font-size:calc(12px*var(--t));color:var(--onSv)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-size:calc(12px*var(--t));min-height:calc(24px*var(--t));display:inline-flex;align-items:center;padding:0 8px;border-radius:8px;background:var(--sc);color:var(--onSc)}
+.chip.off{background:none;box-shadow:inset 0 0 0 1px var(--olv);color:var(--onSv)}
+/* popup menu (PopupMenuButton: surfaceContainer, radius 4, elevation 3, width 112..280) */
+.scrim{position:absolute;inset:0;background:transparent}
+.menu{position:absolute;top:52px;right:8px;width:280px;background:var(--sCont);border-radius:4px;padding:8px 0;box-shadow:0 6px 18px rgba(0,0,0,.35),0 0 0 1px var(--olv);z-index:5}
+.mi{display:flex;align-items:center;gap:12px;min-height:calc(48px*var(--t)*.8);padding:6px 12px 6px 12px;font-size:calc(16px*var(--t));line-height:1.2;width:100%;text-align:start;border:0;background:none}
+.mi .ck{width:24px;height:24px;flex:none;color:var(--p);display:flex}
+.mi .tx{flex:1;min-width:0}
+.mi .v{display:block;font-size:calc(12px*var(--t));color:var(--onSv);margin-top:2px}
+.mi.dis{color:color-mix(in srgb,var(--onS) 38%,transparent)}
+.mi.dis .ck{color:inherit}
+.mi .ch{color:var(--onSv)}
+.mdiv{height:1px;background:var(--olv);margin:6px 0}
+/* a card drill */
+.dh{display:flex;align-items:center;gap:8px;height:56px;padding:0 4px 0 4px;flex:none}
+.bar{flex:1;height:8px;border-radius:4px;background:var(--sc);overflow:hidden}
+.bar i{display:block;height:100%;width:30%;background:var(--p);border-radius:4px}
+.pos{font-size:calc(14px*var(--t));font-weight:700}
+.dc{margin:8px 16px;background:var(--sLow);border-radius:20px;padding:20px 16px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+.dc .w{font-size:calc(36px*var(--t));line-height:1.2;font-weight:500}
+.dc .r{font-size:calc(16px*var(--t));color:var(--onSv)}
+.dc .ipa{font-size:calc(14px*var(--t));color:var(--onSv)}
+.dq{padding:8px 16px 0;font-size:calc(14px*var(--t));color:var(--onSv)}
+.opt{margin:8px 16px 0;min-height:calc(48px*var(--t));border-radius:14px;border:1px solid var(--ol);display:flex;align-items:center;padding:0 16px;font-size:calc(16px*var(--t))}
+/* bottom sheet (surfaceContainerLow, radius 28 top, drag handle) */
+.dim{position:absolute;inset:0;background:rgba(0,0,0,.42)}
+.sheet{position:absolute;left:0;right:0;bottom:0;background:var(--sLow);border-radius:28px 28px 0 0;padding:0 20px 18px;max-height:96%;display:flex;flex-direction:column;z-index:6}
+.sheet .hd{width:32px;height:4px;border-radius:2px;background:var(--ol);opacity:.6;margin:12px auto 8px}
+.sheet h3{margin:4px 0 2px;font-size:calc(20px*var(--t));line-height:1.2;font-weight:500}
+.ctx{margin:6px 0 4px;padding:8px 10px;border-radius:10px;background:var(--sHigh);font-family:ui-monospace,Menlo,monospace;font-size:calc(11px*var(--t));line-height:1.35;color:var(--onSv);word-break:break-word}
+.rs{list-style:none;margin:2px -8px 0;padding:0}
+.rs li{display:flex;align-items:center;gap:6px;min-height:calc(40px*var(--t));padding:0 8px;font-size:calc(14px*var(--t));line-height:1.2}
+.rd{width:20px;height:20px;border-radius:50%;border:2px solid var(--onSv);flex:none;margin:0 10px 0 6px;position:relative}
+.rd.sel{border-color:var(--p)}
+.rd.sel::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--p)}
+.fld{margin-top:6px;border:1px solid var(--ol);border-radius:8px;min-height:calc(40px*var(--t));padding:0 12px;display:flex;align-items:center;font-size:calc(14px*var(--t));color:var(--onSv);justify-content:space-between}
+.fld b{font-weight:400;color:var(--onS)}
+.fld small{font-size:calc(11px*var(--t))}
+.acts{display:flex;gap:8px;justify-content:flex-end;margin-top:10px}
+.btn{min-height:calc(40px*var(--t));border-radius:calc(20px*var(--t));border:0;background:none;font-size:calc(14px*var(--t));font-weight:600;padding:6px 16px;color:var(--p)}
+.btn.fill{background:var(--p);color:var(--onP);padding:6px 22px}
+.btn:disabled{opacity:.38}
+.done{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;padding:18px 4px 4px}
+.done svg.i{width:48px;height:48px;color:var(--p)}
+.done p{margin:0;font-size:calc(14px*var(--t));color:var(--onSv)}
+/* highlights */
+.hl-on .chg{outline:2px dashed var(--E);outline-offset:2px;position:relative}
+.hl-on .chg::after{content:"new";position:absolute;top:-11px;right:4px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:6px;z-index:9;letter-spacing:.3px;white-space:nowrap}
+.hl-on .chg.upd::after{content:"changed"}
+.hl-on .chg.rem::after{content:"removed"}
+.hl-on .menu.chg{position:absolute;outline-offset:3px}
+.hl-on .ib.chg::after{top:auto;bottom:-6px;right:-2px}
+.hl-on .row.chg::after,.hl-on .lb .chg::after{top:3px}
+.hl-on .ab .chg::after,.hl-on .dh .chg::after{z-index:9}
+.rem .gone{opacity:.55}
+.hide{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Menu and report</h1>
+<p class="cap1">Owner brief, 2026-11-16: the bug icon leaves every screen, Your languages opens the Languages list, its three-dot menu holds the rest, and only content screens keep a report, tailored to content. 360 dp, 1.4x text, real labels from <code>lib/l10n/app_en.arb</code>. Notes, the screen table, the contrast self-check and open questions are in <code>menu-and-report.md</code>.</p>
+<div class="tw" role="group" aria-label="Tweaks">
+ <div class="tg">Theme <div class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></div></div>
+ <div class="tg">Language <div class="seg" data-k="lang"><button data-v="te">Telugu</button><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button></div></div>
+ <div class="tg">Highlight changes <div class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></div></div>
+ <div class="tg">IPA switch <div class="seg" data-k="ipa"><button data-v="1">On</button><button data-v="0">Off</button></div></div>
+ <div class="tg">Report goes by <div class="seg" data-k="tr"><button data-v="app">In the app</button><button data-v="mail">Mail app (today)</button></div></div>
+</div>
+<div class="frames" id="frames"></div>
+</div>
+<script>
+const PAL={
+dark:{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sCont":"#1b211c","sHigh":"#262b27","ol":"#8a938b","olv":"#404942","E":"#ffb4ab","onE":"#690005"},
+light:{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sCont":"#eaefe8","sHigh":"#e4eae2","ol":"#717972","olv":"#c0c9c0","E":"#ba1a1a","onE":"#ffffff"}};
+const IC={
+ more:"M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z",
+ flag:"M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6zm3.6 8h-4.6l-.4-2H7V6h5.6l.4 2H18v6z",
+ bug:"M20 8h-2.81a5.985 5.985 0 0 0-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a5.9 5.9 0 0 0-2.84 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z",
+ check:"M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z",
+ chev:"M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z",
+ close:"M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z",
+ back:"M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z",
+ add:"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z",
+ school:"M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z",
+ tick:"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z",
+ list:"M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"};
+const ic=(n,s)=>`<svg class="i" viewBox="0 0 24 24" aria-hidden="true"${s?` style="width:${s}px;height:${s}px"`:''}><path d="${IC[n]}"/></svg>`;
+const L={
+ te:{name:'తెలుగు',en:'Telugu',w:'కుక్క',r:'kukka',ipa:'[kukːa]',gloss:'dog',opts:['dog','cat','cow'],card:'te-0986',deck:'te-animals',pair:'Telugu from English',learn:['Telugu','Hindustani','Bengali']},
+ hi:{name:'हिन्दुस्तानी',en:'Hindustani',w:'पानी',r:'pānī',ipa:'[pɑːniː]',gloss:'water',opts:['water','fire','house'],card:'hi-0333',deck:'hi-first-words',pair:'Hindustani from English',learn:['Hindustani','Telugu','Bengali']},
+ bn:{name:'বাংলা',en:'Bengali',w:'জল',r:'jôl',ipa:'[dʒɔl]',gloss:'water',opts:['water','fire','house'],card:'bn-0350',deck:'bn-first-words',pair:'Bengali from English',learn:['Bengali','Telugu','Hindustani']}};
+const REASONS=['The translation is wrong','The reading or IPA is wrong','The audio is wrong or missing','The picture or example is wrong','Offensive or inappropriate','Something else'];
+const S={theme:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light',lang:'te',hl:'1',ipa:'1',tr:'app'};
+const VER='0.10.6';
+function langBar(withBug){
+ const l=L[S.lang];
+ return `<div class="lb"><span class="slot"></span><div class="wheel"><span class="g">${L.bn.name}</span><span class="pill">${l.name} · ${l.en}</span><span class="g">${L.hi.name}</span></div>${withBug?`<span class="ib gone">${ic('bug')}</span>`:'<span class="slot"></span>'}</div>`}
+function fA(){
+ return `<div class="fcol"><div class="fcap">a. Top bar of Today, Decks and Progress: the bug icon is removed</div>
+ <div class="ph short"><div class="lbl">BEFORE</div><div class="chg rem">${langBar(true)}</div><div class="lbl">AFTER</div><div class="chg upd">${langBar(false)}</div>
+ <p class="sm" style="padding:10px 16px 16px;margin:0">The right slot stays empty, as the left one already is outside Progress, so the wheel stays centred and nothing moves between tabs. The wheel's tap menu (pick a language) is unchanged. Tab headers (<code>TabHeader</code>, e.g. Settings) lose it too.</p></div></div>`}
+function fSet(){
+ const learn=['te','hi','bn'].map(k=>L[k].en).join(', ');
+ return `<div class="fcol"><div class="fcap">b. Settings tab: Your languages now opens the Languages list directly</div>
+ <div class="ph"><div class="tabh">Settings</div>
+ <div class="pc"><div class="av">A</div><div><div style="font-size:calc(16px*var(--t))">Profile</div><div class="sm">Profiles and privacy</div></div></div>
+ <div class="gl">
+  <div class="row chg upd"><span>${ic('school')}</span><div class="tx"><div class="t1">Your languages</div><div class="t2">${learn}</div></div><span>${ic('chev')}</span></div>
+  <div class="row"><span>${ic('list')}</span><div class="tx"><div class="t1">Activities and memory</div><div class="t2">All on</div></div><span>${ic('chev')}</span></div>
+  <div class="row"><span>${ic('list')}</span><div class="tx"><div class="t1">Culture</div></div><span>${ic('chev')}</span></div>
+  <div class="row"><span>${ic('list')}</span><div class="tx"><div class="t1">Look and language</div></div><span>${ic('chev')}</span></div>
+  <div class="row"><span>${ic('list')}</span><div class="tx"><div class="t1">Reviewing</div></div><span>${ic('chev')}</span></div>
+ </div>
+ <p class="sm" style="padding:14px 20px">Tapping Your languages skips the page of rows (<code>LanguagesSettingsPage</code>) and goes straight to Languages (frame c). The page and its "Languages" row are deleted.</p></div></div>`}
+function langScreen(open){
+ const ks=['te','hi','bn'];
+ const rows=ks.map(k=>`<div class="lrow"><span class="n">${L[k].name} · ${L[k].en}</span><div class="chips"><span class="chip">Speak</span><span class="chip">Hear</span><span class="chip">Read</span><span class="chip off">Write</span></div></div>`).join('');
+ const ipaOn=S.ipa==='1';
+ const learnItems=L[S.lang].learn.slice(0,2);
+ const mi=(t,o={})=>`<button class="mi ${o.dis?'dis':''}" ${o.dis?'disabled':''}><span class="ck">${o.on?ic('check'):''}</span><span class="tx">${t}${o.sub?`<span class="v">${o.sub}</span>`:''}</span>${o.chev?`<span class="ch">${ic('chev',20)}</span>`:''}</button>`;
+ const menu=`<div class="menu chg" role="menu" aria-label="More">
+  ${mi('Fact languages',{sub:'All known languages'})}
+  ${mi('Latin-letter readings',{on:true})}
+  ${mi('IPA pronunciations',{on:ipaOn})}
+  ${mi('IPA replaces transliteration',{dis:!ipaOn,on:false})}
+  ${mi('Adult content (18+)',{on:false})}
+  ${mi('Hide what is above my level',{on:true})}
+  <div class="mdiv"></div>
+  ${mi('Learn '+L[S.lang].en+' from',{sub:'English'})}
+  ${mi('Sources')}
+  ${mi('Your decks')}
+ </div>`;
+ return `<div class="ph"><div class="ab"><span class="ib">${ic('back')}</span><h2>Languages</h2><span class="ib">${ic('add')}</span><span class="ib chg upd ${open?'on':''}" aria-label="More options">${ic('more')}</span></div>
+ ${open?'<div class="scrim"></div>':''}
+ <div class="pills"><span class="pill2">Learning</span><span class="pill2">Know</span><span class="pill2">Speak</span><span class="pill2">Hear</span></div>
+ <div class="sech">Learning · 3</div>${rows}
+ <div class="sech">Know · 1</div><div class="lrow"><span class="n">English</span><div class="chips"><span class="chip">Speak</span><span class="chip">Hear</span><span class="chip">Read</span><span class="chip">Write</span></div></div>
+ ${open?menu:''}</div>`}
+function fL1(){return `<div class="fcol"><div class="fcap">c. Languages screen: three dots replace the bug, + stays</div>${langScreen(false)}</div>`}
+function fL2(){return `<div class="fcol"><div class="fcap">d. The three-dot menu: every row the old Your languages page had (the Languages row is the screen itself)</div>${langScreen(true)}</div>`}
+function drill(extra,sheet){
+ const l=L[S.lang];
+ return `<div class="ph"><div class="dh"><span class="ib">${ic('close')}</span><div class="bar"><i></i></div><span class="pos">3 / 20</span><span class="ib chg upd" aria-label="Report a problem with this card">${ic('flag')}</span></div>
+ <div class="dq">What does this mean?</div>
+ <div class="dc"><span class="w">${l.w}</span><span class="r">${l.r}</span><span class="ipa">${l.ipa}</span></div>
+ ${l.opts.map(o=>`<div class="opt">${o}</div>`).join('')}
+ ${sheet?`<div class="dim"></div>${sheet}`:''}</div>`}
+function ctxLines(){const l=L[S.lang];return `Card: ${l.card}<br>Deck: ${l.deck}<br>Languages: ${l.pair}<br>App: fluenough ${VER}`}
+function sheetForm(){
+ return `<div class="sheet" role="dialog" aria-labelledby="rt"><div class="hd"></div><h3 id="rt">Report a problem with this card</h3>
+ <div class="ctx">${ctxLines()}</div>
+ <ul class="rs" role="radiogroup">${REASONS.map((r,i)=>`<li role="radio" aria-checked="${i===0}"><span class="rd ${i===0?'sel':''}"></span>${r}</li>`).join('')}</ul>
+ <div class="fld"><b style="color:var(--onSv)">Add a note (optional)</b><small>0 / 140</small></div>
+ <div class="acts"><button class="btn">Cancel</button><button class="btn fill">Send</button></div></div>`}
+function sheetDone(){
+ const app=S.tr==='app';
+ return `<div class="sheet" role="dialog" aria-live="polite"><div class="hd"></div><div class="done">${ic('tick')}<h3>${app?'Thanks for the report':'Your report is ready'}</h3>
+ <p>${app?'It went with the card, deck, languages and app version. Nothing else was sent.':'Your mail app has the report. Send it from there.'}</p></div>
+ <div class="acts"><button class="btn fill">Done</button></div></div>`}
+function fD1(){return `<div class="fcol"><div class="fcap">e. A card in a drill: the flag takes the bug's place in the header</div>${drill()}</div>`}
+function fD2(){return `<div class="fcol"><div class="fcap">f. Report sheet: reasons about content, one optional line</div>${drill(0,sheetForm())}</div>`}
+function fD3(){return `<div class="fcol"><div class="fcap">g. After Send (${S.tr==='app'?'sent from the app':'handed to the mail app, as today'})</div>${drill(0,sheetDone())}</div>`}
+function build(){
+ const root=document.getElementById('frames');
+ const p=PAL[S.theme];
+ document.documentElement.dataset.theme=S.theme;
+ root.style.cssText=Object.entries(p).map(([k,v])=>`--${k}:${v}`).join(';');
+ root.className='frames'+(S.hl==='1'?' hl-on':'');
+ root.innerHTML=fA()+fSet()+fL1()+fL2()+fD1()+fD2()+fD3();
+ document.querySelectorAll('.seg').forEach(s=>s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',S[s.dataset.k]==b.dataset.v)));
+}
+document.addEventListener('click',e=>{const b=e.target.closest('.seg button');if(b){S[b.parentNode.dataset.k]=b.dataset.v;build()}});
+document.fonts&&document.fonts.ready.then(()=>{});
+build();
+</script>
+</body>
+</html>

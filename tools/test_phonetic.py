@@ -408,6 +408,14 @@ class Registry(Tree):
         self.assertEqual(ip.DUMP_NAMES["fr"], "French")
         self.assertEqual(set(ip.DUMP_NAMES), set(ip.VARIETIES))
 
+    def test_chinese_is_registered_but_takes_no_wiktionary_form(self) -> None:
+        # The dump is one 1.2 GB file for every variety and holds no `[ ]` form
+        # for Mandarin in its first 6 MB; the narrow form comes from the rules.
+        self.assertEqual(ip.DUMP_NAMES["zh"], "Chinese")
+        zh = ip.VARIETIES["zh"]
+        self.assertEqual((zh.notes, zh.tags, zh.untagged, zh.normalise),
+                         (frozenset(), frozenset(), False, ()))
+
     def test_a_new_language_in_a_registry_file_is_imported_with_no_code_change(self) -> None:
         reg = self.tmp / "registry.yaml"
         reg.write_text(
