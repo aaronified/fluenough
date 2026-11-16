@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart' show RenderAbstractViewport;
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
@@ -108,6 +109,10 @@ class _DecksPageState extends State<DecksPage> {
   /// The course the path last opened at its unit up next, so that it opens
   /// there once, not on every rebuild.
   String? _openedAt;
+
+  /// Whether the search was open at the last build, to scroll to the bar
+  /// once as it opens.
+  bool _wasOpen = false;
 
   @override
   void dispose() {
@@ -543,6 +548,29 @@ class _DecksPageState extends State<DecksPage> {
         );
         final searching = parsed.text.isNotEmpty || _chips.isNotEmpty;
         final open = _focus.hasFocus || searching;
+        // The path may sit scrolled to the unit up next, the bar partly under
+        // the language bar: opening the search brings the bar, its end
+        // button and its menu back into view, and a bar already in view
+        // keeps the learner's place.
+        if (open && !_wasOpen) {
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (!mounted || !_scroll.hasClients) return;
+            final target = _header.currentContext;
+            final box = target?.findRenderObject();
+            if (target == null || box is! RenderBox || !box.attached) return;
+            final viewport = RenderAbstractViewport.maybeOf(box);
+            if (viewport == null) return;
+            final top = viewport.getOffsetToReveal(box, 0).offset;
+            if (top < _scroll.offset) {
+              Scrollable.ensureVisible(
+                target,
+                alignment: 0,
+                duration: Duration.zero,
+              );
+            }
+          });
+        }
+        _wasOpen = open;
         final language = languages.firstOrNull;
         final outcome = searching
             ? runSearch(

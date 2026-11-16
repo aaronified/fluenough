@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Your languages opens the list of languages at once.** The reading and content switches, Fact languages and Sources moved into a three-dot menu at the top right of Languages, and Your decks is a row under the list.
 - **"Learn from" is in each language's own sheet.** Choosing which language a course is taught from now sits with that language, in the Languages list.
 - **A wider language wheel, and no All button on Progress.** The bug icon left the top bar, so the wheel takes the whole bar; Progress no longer has an All button for counting every language together.
+- **Opening the search on Decks brings its bar into view.** If the course path was scrolled, the search bar's Clear and Close buttons are no longer half out of sight.
 - **Choosing situations is clearer.** The picker now has "On Today" (up to six, in your order, with a counter) and "More situations", so you can see what is shown and what is not, and long names such as Emergency and Doctor and pharmacy fit their tiles on the picker and on Today.
 - **The info button on Today now sits before its sentence.** In the skills card, the small info button is now on the left of "Tap a skill to practise only that" instead of the far right.
 
