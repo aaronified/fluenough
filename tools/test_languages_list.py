@@ -139,7 +139,9 @@ class LanguagesList(unittest.TestCase):
     def test_persian_and_pashto_are_drawn_in_naskh_and_match_the_app(self) -> None:
         self.assertEqual(deck_index.LANGUAGE_FONTS, {
             ("fa", "perso_arabic"): "perso_arabic_naskh",
-            ("ps", "perso_arabic"): "perso_arabic_naskh"})
+            ("ps", "perso_arabic"): "perso_arabic_naskh",
+            ("sd", "perso_arabic"): "perso_arabic_naskh",
+            ("ks", "perso_arabic"): "perso_arabic_naskh"})
         self.assertEqual(deck_index.FONTS["perso_arabic_naskh"][0], "Noto Naskh Arabic")
         dart = (REPO / "lib" / "core" / "decks" / "script_fonts.dart").read_text("utf-8")
         in_app = dict(re.findall(r"'(\w+:\w+)': '(\w+)'", dart))

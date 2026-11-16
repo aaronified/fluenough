@@ -5,13 +5,16 @@
 String scriptFontFamily(String script) => 'FluenoughScript-$script';
 
 /// The scripts a language draws in another font than the script's own
-/// (owner, 2026-11-02): Persian and Pashto are set in Naskh, while the
+/// (owner, 2026-11-02): Persian, Pashto, Sindhi and Kashmiri are set in Naskh,
+/// which has the Sindhi kaf (U+06AA) that Nastaliq lacks, while the
 /// `perso_arabic` font stays Nastaliq for Hindustani's Urdu and the others.
 /// The key is `<language>:<script>`, the value the font's script key, as the
 /// deck index lists it (`LANGUAGE_FONTS` in tools/deck_index.py).
 const Map<String, String> languageFontScripts = <String, String>{
   'fa:perso_arabic': 'perso_arabic_naskh',
   'ps:perso_arabic': 'perso_arabic_naskh',
+  'sd:perso_arabic': 'perso_arabic_naskh',
+  'ks:perso_arabic': 'perso_arabic_naskh',
 };
 
 /// The font key to draw [language]'s text in [script] with: [script] itself
