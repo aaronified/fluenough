@@ -101,7 +101,9 @@ units:
       - { id: "grammar-a-stems-heard", text: { "en": "A short passage in Classical Sanskrit showing a stem nouns, read aloud" } }
     reading_passages:
       - { id: "grammar-a-stems-text", text: { "en": "A short written text in Classical Sanskrit showing a stem nouns" } }
-  - planned: { id: "sa-grammar-present-system", grammar: ["present-system", "verb-classes"] }
+  - decks: ["sa-verbs-first-class", "sa-grammar-present-system"]
+    words: 6
+    grammar: ["present-stem", "present-third", "present-second", "present-first"]
     listening_passages:
       - { id: "grammar-present-system-heard", text: { "en": "A short passage in Classical Sanskrit showing present system, verb classes, read aloud" } }
     reading_passages:
