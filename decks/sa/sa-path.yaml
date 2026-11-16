@@ -89,12 +89,14 @@ units:
       - { id: "everyday-verbs-heard", text: { "en": "A short passage in Classical Sanskrit on the theme everyday verbs of the first class, read aloud" } }
     reading_passages:
       - { id: "everyday-verbs-text", text: { "en": "A short written text in Classical Sanskrit on the theme everyday verbs of the first class" } }
-  - planned: { id: "sa-grammar-case-system", grammar: ["case-system"] }
+  - decks: ["sa-grammar-case-system"]
+    grammar: ["nominative", "accusative", "instrumental", "dative", "ablative", "genitive", "locative", "vocative"]
     listening_passages:
       - { id: "grammar-case-system-heard", text: { "en": "A short passage in Classical Sanskrit showing case system, read aloud" } }
     reading_passages:
       - { id: "grammar-case-system-text", text: { "en": "A short written text in Classical Sanskrit showing case system" } }
-  - planned: { id: "sa-grammar-a-stems", grammar: ["a-stem-nouns"] }
+  - decks: ["sa-grammar-a-stems"]
+    grammar: ["a-nominative", "a-accusative", "a-instrumental", "a-dative", "a-ablative", "a-genitive", "a-locative", "a-vocative"]
     listening_passages:
       - { id: "grammar-a-stems-heard", text: { "en": "A short passage in Classical Sanskrit showing a stem nouns, read aloud" } }
     reading_passages:
