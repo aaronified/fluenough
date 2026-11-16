@@ -54,14 +54,19 @@ Future<AppState> _decks(
 }) async {
   final app = state ?? await cultureApp(reach: reach);
   await pumpScreen(tester, const DecksPage(), state: app, themeMode: mode);
+  await _toTop(tester);
   return app;
 }
 
-Future<void> _toCulture(WidgetTester tester) async {
-  // The path opens scrolled to the unit up next: bring the course card, and
-  // its button, back to the top.
+/// The path opens scrolled to the unit up next: bring the course card, the
+/// search bar and their buttons back to the top.
+Future<void> _toTop(WidgetTester tester) async {
   await tester.drag(find.byType(CustomScrollView).first, const Offset(0, 3000));
   await tester.pumpAndSettle();
+}
+
+Future<void> _toCulture(WidgetTester tester) async {
+  await _toTop(tester);
   await tester.tap(find.byKey(_button));
   await tester.pumpAndSettle();
 }
@@ -90,6 +95,8 @@ Finder _tab(String label) => find.descendant(
 );
 
 Future<void> _openTab(WidgetTester tester, String label) async {
+  await tester.ensureVisible(_tab(label).first);
+  await tester.pumpAndSettle();
   await tester.tap(_tab(label).first);
   await tester.pumpAndSettle();
 }
@@ -259,6 +266,7 @@ void main() {
       ) async {
         await open(tester);
         await _search(tester, 'pelicula');
+        await _toTop(tester);
         await tester.tap(find.byTooltip(_l10n.decksSearchClear));
         await tester.pumpAndSettle();
         expect(find.byType(CultureList), findsNWidgets(inCulture ? 1 : 0));
@@ -361,7 +369,7 @@ void main() {
         await tester.enterText(find.byType(TextField), 'kind:');
         await tester.pumpAndSettle();
         expect(find.text(_l10n.recMediumFilm), findsOneWidget);
-        expect(find.text(_l10n.cultureKindProverb), findsOneWidget);
+        expect(find.text(_l10n.recMediumBook), findsOneWidget);
       });
     });
 

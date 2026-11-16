@@ -405,7 +405,7 @@ void main() {
         await tester.tap(find.byType(TextField));
         await tester.pumpAndSettle();
         expect(find.byTooltip(l10n.decksSearchClose), findsOneWidget);
-        await tester.tapAt(const Offset(195, 780));
+        await tester.tapAt(const Offset(195, 838));
         await tester.pumpAndSettle();
         expect(find.byTooltip(l10n.decksSearchClose), findsNothing);
       },

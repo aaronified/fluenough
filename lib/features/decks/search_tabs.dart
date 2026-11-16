@@ -326,7 +326,7 @@ class _TypedSearchResultsState extends State<TypedSearchResults> {
               },
             ),
           ),
-          if (selected!.startsWith(cultureTabPrefix) &&
+          if (selected.startsWith(cultureTabPrefix) &&
               widget.extraContent != null)
             SliverToBoxAdapter(child: widget.extraContent!(context, selected))
           else
