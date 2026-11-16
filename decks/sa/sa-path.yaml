@@ -95,7 +95,8 @@ units:
       - { id: "grammar-present-system-heard", text: { "en": "A short passage in Classical Sanskrit showing present system, verb classes, read aloud" } }
     reading_passages:
       - { id: "grammar-present-system-text", text: { "en": "A short written text in Classical Sanskrit showing present system, verb classes" } }
-  - planned: { id: "sa-grammar-sandhi-vowel", grammar: ["vowel-sandhi"] }
+  - decks: ["sa-grammar-sandhi-vowel"]
+    grammar: ["sandhi-vowel"]
     listening_passages:
       - { id: "grammar-sandhi-vowel-heard", text: { "en": "A short passage in Classical Sanskrit showing vowel sandhi, read aloud" } }
     reading_passages:
