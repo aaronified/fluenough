@@ -3663,19 +3663,16 @@ class AppState extends ChangeNotifier {
 
   /// The learn attempt of [card] as a lesson would lay it out, or null where
   /// it cannot be learned yet.
-  LearnAttempt? _learnAttemptOf(Card card, {bool tracked = true}) =>
-      lessonAttempt(
-        card,
-        modesOf: drillableModesNow(),
-        canChoose: (card, ask) => canChoose(
-          card,
-          ask == Ask.hearMeaning && hearsForm(card) ? Ask.hearAndChoose : ask,
-        ),
-        straightToQuestion: (card) => card.rule != null,
-        typed: isTyped,
-        siblingsOf: siblingsOf,
-        tracked: (_) => tracked,
-      );
+  LearnAttempt? _learnAttemptOf(Card card) => lessonAttempt(
+    card,
+    modesOf: drillableModesNow(),
+    // Whether the deck has enough to choose from is a matter of its size, not
+    // of the card: a card is learnable if two ways of asking it exist.
+    canChoose: (_, _) => true,
+    straightToQuestion: (card) => card.rule != null,
+    typed: isTyped,
+    siblingsOf: siblingsOf,
+  );
 
   /// Whether [card] can be learned: two different questions can be asked of
   /// it now (the learn rule). A card that cannot stays viewable, is never

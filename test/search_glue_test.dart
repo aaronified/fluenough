@@ -121,7 +121,7 @@ void main() {
 
   group('the recommendations, fed from the course', () {
     test(
-      'know a Latin-script course and gate by the learner\'s level',
+      'know a Latin-script course',
       () async {
         final fixture = kindsFixtureFiles();
         final state = await kindsWorldApp(
@@ -140,8 +140,8 @@ void main() {
           state.catalogView.recommendations['zz']!.recommendations,
           hasLength(2),
         );
-        // A learner at A1 is offered neither the A2 book nor the B1 film.
-        expect(state.recommendationsFor('zz'), isEmpty);
+        // Every work is offered, whatever its level.
+        expect(state.recommendationsFor('zz'), hasLength(2));
         expect(state.recommendationsFor('yy'), isEmpty);
       },
     );

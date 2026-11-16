@@ -688,7 +688,7 @@ void main() {
           expect(
             state
                 .lessonFor(lesson)
-                .where((i) => i.ask != Ask.showSet)
+                .where((i) => i.learn != null)
                 .map((i) => i.card.id),
             isNot(contains(check.card.id)),
           );
@@ -1029,6 +1029,12 @@ cards:
   - id: es-en-teach-0002
     target: "adiós"
     native: "goodbye"
+  - id: es-en-teach-0003
+    target: "gracias"
+    native: "thanks"
+  - id: es-en-teach-0004
+    target: "sí"
+    native: "yes"
 ''',
           }),
         );

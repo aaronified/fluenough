@@ -114,13 +114,12 @@ void main() {
         'zz-rec-pelicula',
         'zz-rec-novela',
       ]);
-      // A learner at A1 (a fresh one, with the same marks) is offered neither.
+      // A fresh learner is offered them too: no level keeps a work out.
       final fresh = await cultureApp();
       fresh.recommendationProgress
         ..complete(film, 'zz', fresh.now())
         ..complete(novel, 'zz', fresh.now());
-      expect(fresh.completedWorksOf('zz'), isEmpty);
-      expect(fresh.workQuestionCards('zz'), isEmpty);
+      expect(fresh.completedWorksOf('zz'), hasLength(2));
     });
 
     test('are none while nothing is completed', () async {
