@@ -132,3 +132,15 @@
     # has word forms that agree with the rules file.
     name: "Standard Kannada; no Wiktionary form is taken (rules only)"
     untagged: false
+
+"sa":
+  dump: "Sanskrit"
+  variety:
+    # Not measured on the kaikki.org dump yet: no narrow Sanskrit forms were
+    # read when this entry was added, so NOTHING is taken from Wiktionary
+    # (untagged: false, no notes, no tags) until that is done and the forms
+    # agree with the course's IAST-based broad `ipa` (tools/transcribe.py, the
+    # `sa` engine: [ɐ] for a, [tɕ dʑ] for c j, [r̩] for ṛ). Flip `untagged` or
+    # list the tags of the forms taken only after reading the dump.
+    name: "Classical Sanskrit; no Wiktionary form is taken until measured"
+    untagged: false
