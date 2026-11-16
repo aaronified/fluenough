@@ -474,7 +474,6 @@ class _DecksPageState extends State<DecksPage> {
           bottom: false,
           child: LanguageBarFrame(
             screen: LanguageBarScreen.decks,
-            reportDetail: 'Decks',
             child: _body(context, state, languages, code),
           ),
         ),

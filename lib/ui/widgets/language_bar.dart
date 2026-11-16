@@ -14,7 +14,6 @@ import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../theme.dart';
 import 'language_glyph.dart';
-import 'report_button.dart';
 import '../card_text_scale.dart';
 
 /// The three screens the language bar is on (#528).
@@ -27,15 +26,12 @@ class LanguageBarFrame extends StatefulWidget {
   const LanguageBarFrame({
     super.key,
     required this.screen,
-    required this.reportDetail,
     required this.child,
     this.below,
   });
 
   final LanguageBarScreen screen;
 
-  /// As [ReportButton.detail]: the tab's name.
-  final String reportDetail;
   final Widget child;
   final Widget? below;
 
@@ -60,11 +56,7 @@ class _LanguageBarFrameState extends State<LanguageBarFrame> {
   Widget build(BuildContext context) => Column(
     crossAxisAlignment: CrossAxisAlignment.stretch,
     children: <Widget>[
-      LanguageBar(
-        screen: widget.screen,
-        reportDetail: widget.reportDetail,
-        scrolledUnder: _scrolledUnder,
-      ),
+      LanguageBar(screen: widget.screen, scrolledUnder: _scrolledUnder),
       ?widget.below,
       Expanded(
         child: NotificationListener<ScrollNotification>(
@@ -81,16 +73,16 @@ class _LanguageBarFrameState extends State<LanguageBarFrame> {
 /// centre (#703, #682; `docs/mockups/language-wheel.html`, approved by the
 /// owner, 2026-10-21: "Works. Approved.", removed once built).
 ///
-/// * The wheel is centred between two 48 wide slots: on Progress the left
-///   one holds the All button, elsewhere it stays empty so that nothing
-///   moves between the tabs; the bug report button is the right one.
+/// * The wheel takes the bar's whole width, the pill at its centre, the
+///   same on every tab (`docs/mockups/menu-and-report.html`, approved by
+///   the owner, 2026-11-16: no bug button, no All button).
 /// * The selection is a pill fixed at the centre and the languages' glyphs
 ///   pass it, one every [detent] dp, each smaller and fainter the further
 ///   it is from the centre, whether the wheel moves or rests. Both ends
-///   fade out, and nothing is drawn past the wheel's own width, so that
-///   nothing reaches the bug button. There are no ends to the wheel: past
-///   the last language comes the first, and a few languages repeat round
-///   it. At launch the pill is already grown to the name.
+///   fade out, and nothing is drawn past the wheel's own width. There are
+///   no ends to the wheel: past the last language comes the first, and a
+///   few languages repeat round it. At launch the pill is already grown to
+///   the name.
 /// * A finger moves the wheel 1:1, a long drag passes many languages. Each
 ///   language is a detent, with a tick (`Haptics.select`),
 ///   in a drag and in a fling.
@@ -114,14 +106,10 @@ class LanguageBar extends StatefulWidget {
   const LanguageBar({
     super.key,
     required this.screen,
-    required this.reportDetail,
     this.scrolledUnder = false,
   });
 
   final LanguageBarScreen screen;
-
-  /// As [ReportButton.detail].
-  final String reportDetail;
 
   /// Whether the screen has scrolled under the bar: a thin line parts them.
   final bool scrolledUnder;
@@ -383,8 +371,8 @@ class _LanguageBarState extends State<LanguageBar>
         10 +
         width(language.name, label) +
         16;
-    // The wheel is between the two slots and the bar's own padding.
-    final room = (context.size?.width ?? 390) - 104;
+    // The wheel has the bar's whole width, less its own padding.
+    final room = (context.size?.width ?? 390) - 8;
     _fullWidth = math.min(
       math.max(wanted, LanguageBar.pillWidth),
       math.max(room, LanguageBar.pillWidth),
@@ -885,23 +873,7 @@ class _LanguageBarState extends State<LanguageBar>
           ),
         ),
       ),
-      child: Row(
-        children: <Widget>[
-          SizedBox(
-            key: const ValueKey<String>('language-bar-all-slot'),
-            width: 48,
-            height: 48,
-            child: _onProgress && choices.length > 1
-                ? _AllButton(
-                    on: allOn,
-                    onPressed: () => state.settings.progressAll = !allOn,
-                  )
-                : null,
-          ),
-          Expanded(child: zone),
-          ReportButton(detail: widget.reportDetail),
-        ],
-      ),
+      child: zone,
     );
 
     // The turn works the same wherever it starts on the bar: on the wheel,
@@ -1060,60 +1032,5 @@ class LanguageBarChip extends StatelessWidget {
             child: chip,
           )
         : chip;
-  }
-}
-
-/// Progress's All: the word, faded while off, filled while on. A toggle.
-class _AllButton extends StatelessWidget {
-  const _AllButton({required this.on, required this.onPressed});
-
-  final bool on;
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    final scheme = theme.colorScheme;
-    return Semantics(
-      container: true,
-      button: true,
-      toggled: on,
-      label: l10n.languageBarAllLabel,
-      onTap: onPressed,
-      onTapHint: l10n.languageBarAllHint,
-      excludeSemantics: true,
-      child: InkWell(
-        customBorder: const CircleBorder(),
-        onTap: onPressed,
-        child: Center(
-          child: Container(
-            constraints: const BoxConstraints(minWidth: 40, minHeight: 32),
-            padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: on ? scheme.secondaryContainer : null,
-              borderRadius: BorderRadius.circular(AppRadii.chip),
-            ),
-            child: Text(
-              l10n.languageBarAll,
-              maxLines: 1,
-              textScaler: TextScaler.noScaling,
-              style: theme.textTheme.labelLarge!.copyWith(
-                fontSize: 14,
-                height: 20 / 14,
-                fontWeight: FontWeight.w700,
-                letterSpacing: 0.2,
-                color: on
-                    ? scheme.onSecondaryContainer
-                    : scheme.onSurface.withValues(
-                        alpha: LanguageBar.fadedAlpha,
-                      ),
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
   }
 }
