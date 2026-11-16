@@ -2,7 +2,7 @@
 
 Companion to `menu-and-report.html`. Owner brief, 2026-11-16: "Your languages menu should open the language list which is in languages. All the rest of the menu should go into a three dot menu in the languages screen (top right). Remove the bug report to accomodate the dots. The menu will open a dropdown with the options. We will use this same rule to simplify the app's other screens too. The necessity for having bug reports on every page is gone now. We need only a easy reporting mechanism for content. So content screens will keep the bug report, but it will be tailored towards content only. Kinda like how duolingo does it."
 
-Controls: theme, language (Telugu, Hindustani, Bengali: the language list, the drill card and the report context follow it), highlight changes, IPA switch (greys "IPA replaces transliteration" in the menu, as today), and how the report goes (in the app, or by the mail app as today).
+Controls: theme, language (Telugu, Hindustani, Bengali: the language list, the drill card and the report context follow it), where Learn from sits (language sheet or menu), highlight changes, IPA switch (greys "IPA replaces transliteration" in the menu, as today), and how the report goes (in the app, or by the mail app as today).
 
 ## What exists today (read from the code)
 - **The bug icon** is `ReportButton` (`lib/ui/widgets/report_button.dart`, label "Get support or report a problem", `hintReport` "Report"), put on about 45 screens: the language bar (`language_bar.dart`), `TabHeader` and `PlaceholderPage` (`page_parts.dart`), the drill header (`drill_frame.dart`), and the app bars of most pages. Its doc comment says every screen has one (ADR-0021).
@@ -13,22 +13,34 @@ Controls: theme, language (Telugu, Hindustani, Bengali: the language list, the d
 - **a. Top bar.** The bug icon is gone from the language bar (Today, Decks, Progress) and from `TabHeader`. The right slot stays an empty 48 dp, as the left one already is off Progress, so the wheel stays centred.
 - **b. Settings.** The row is still "Your languages", its line still names the languages learned. It now opens Languages directly. `LanguagesSettingsPage` and its "Languages" row are deleted.
 - **c. Languages.** The bar has "+ Add a language" (unchanged) and a three-dot icon at the top end in the bug's place.
-- **d. The three-dot menu**, a native `PopupMenuButton`, with every other row of the old page, real labels:
-  | Item | Kind | Was |
-  |---|---|---|
-  | Fact languages (line: All known languages) | opens the fact sheet (`FactLanguagesSheet`) | row |
-  | Latin-letter readings | checkmark toggle | switch |
-  | IPA pronunciations | checkmark toggle | switch |
-  | IPA replaces transliteration | checkmark toggle, disabled while IPA is off | switch |
-  | Adult content (18+) | checkmark toggle; switching on still asks for age (`settingsAdultConfirmTitle`) | switch |
-  | Hide what is above my level | checkmark toggle | switch |
-  | Learn {language} from (one per course with several natives; the line names the current one) | opens `NativeChoicePage` | row |
-  | Sources | opens Sources | row |
-  | Your decks | opens Your decks | row |
-  A divider sets the three pages off from the toggles. The menu is `CheckedPopupMenuItem` for toggles and `PopupMenuItem` for the rest, no icons.
+- **d. The three-dot menu**, a native popup (`PopupMenuButton`), in two groups told apart by their marks, not only by a divider:
+  | Group | Item | Mark | Was |
+  |---|---|---|---|
+  | Show (toggles) | Latin-letter readings | leading box, empty when off, ticked when on | switch |
+  | | IPA pronunciations | same | switch |
+  | | IPA replaces transliteration | same, disabled while IPA is off | switch |
+  | | Adult content (18+) | same; switching on still asks for age (`settingsAdultConfirmTitle`) | switch |
+  | | Hide what is above my level | same | switch |
+  | Open (buttons) | Fact languages (line: All known languages) | trailing chevron, no box; opens `FactLanguagesSheet` | row |
+  | | Sources | trailing chevron; opens Sources | row |
+  | | Your decks | trailing chevron; opens Your decks | row |
+  | (variant) | Learn {language} from | trailing chevron; only in the "The menu" variant, see below | row |
+  A divider and two small labels (Show, Open) separate the groups. A toggle has the box in both states and no chevron; a button has a chevron and no box, so a row's kind is readable without trying it. Both groups keep the app's 1.4x text; long labels wrap in the 280 dp menu.
 - **e. A card in a drill.** The flag (outlined, "Report a problem with this card") takes the bug's place in the drill header (`DrillFrame`, one place for every drill and the walkthrough).
 - **f. Report sheet** (modal bottom sheet, drag handle): title "Report a problem with this card"; a monospace box showing exactly what goes with it (card id, deck id, language pair, app version); six single-choice reasons: The translation is wrong, The reading or IPA is wrong, The audio is wrong or missing, The picture or example is wrong, Offensive or inappropriate, Something else; an optional one-line note (140 characters); Cancel and Send. No screenshot, no device log, no device details.
 - **g. Confirmation.** "Thanks for the report" in the same sheet with Done. If reports go by the mail app (today's mechanism) the honest state is "Your report is ready. Your mail app has the report. Send it from there." (the tweak shows both).
+
+## What "Learn {language} from" is, and where it should live
+It is the **instruction language of a target language**: which of the languages the learner speaks the course of {language} is explained and taught from (ADR-0036, `NativeChoice`, `AppState.courseNative`). A Telugu course may exist from English and from Hindustani; a learner who speaks both picks one, and each teaches its own share of the course so far (`nativeChoiceCoverage`: "{covered} of {total} units so far"). Placement asks it the first time a course is opened, Today asks again when a language the learner speaks starts teaching a course they learn; the row only lets them change it later (`nativeChoiceBody`: "You can change this in Settings, and keep what you have learned"). It appears only for a language that more than one known language teaches (`offersNativeChoice`), which is why most learners never see it. It is a property of one language, not a setting of the app, so a menu of display switches is the wrong home.
+
+Where it could live:
+| Place | For | Against |
+|---|---|---|
+| **Inside each language's own sheet** (tap a language in the Languages list; `LanguageSkillsSheet`, where the skills of that language are set) | It is per language, next to the other per-language choices (skills, scripts); appears only where it applies; the menu loses its one per-course row and so stays a fixed length | One tap deeper than a menu row |
+| At the top of the language's page | Always in view | There is no page per language today, only the sheet; a new page for one row |
+| Stay in the three-dot menu | No work | A per-course row among global switches; the menu grows by one row per such language |
+
+**Recommendation: the language's own sheet** (variant "Language sheet" in the mockup, frame h; the menu then has no Learn row). The row is the same tile as today (title "Learn Telugu from", line naming the current native language, chevron) and opens the same `NativeChoicePage`. The variant "The menu" shows the alternative.
 
 ## How it maps onto the existing mechanism
 **Reused**: `Report` / `ReportRequest` / `ReportSender` / `ReportOutcome`, the mail subject prefix and `mail_to_issues.py`, `contextLines`, the GitHub fallback, `AppInfo.version`, the `Feature.feedbackMail` switch, the word sheet's flag and "Report a mistake" (both become this sheet). A new `ReportKind.content` (label `Content`, public, so it becomes a public issue) with the reason as the title (`[Fluenough] Content: The translation is wrong`), the note as details, and context `Card`, `Deck`, `Languages`, `App`. The mail-to-issue Action reads the kind, so it needs one more label (`content`) and nothing else. `ReportRequest` gains `cardId`, `deckId`, `pair`; `always` prints them (replacing `Screen` and `Showing` for a content report).
@@ -78,17 +90,20 @@ Computed from the app palette (`ColorScheme.fromSeed`, forest seed; same tokens 
 Cues are never colour alone: checkmark against blank, the dividers, and the filled Send. Both icons are 48 dp targets with labels for screen readers ("More options", "Report a problem with this card"); the sheet's reasons are a `radiogroup`, the confirmation is a live region. Checked in Chromium (Playwright) at deviceScaleFactor 2, light and dark, Telugu, Hindustani and Bengali, 1.4x text, 360 dp, no horizontal page scroll.
 
 ## Implementation notes
-- Settings: `AppNavigator.openSettingsPage(settingsLanguages)` points at `LanguagesPage`; delete `LanguagesSettingsPage` and its route. Its rows move into a `_LanguagesMenu` (`PopupMenuButton<_Item>`) in `LanguagesPage`'s bar. Toggle state is the same `SettingsNotifier` fields; the menu rebuilds from `state.settings`. The explanatory lines of the switches (`settingsIpaOn`, `settingsRomanisationOn` and the like) have no room in a menu; they move to the item's tooltip and screen-reader hint, not dropped.
+- The menu is a `PopupMenuButton`, but `CheckedPopupMenuItem` shows its check only when on, so it cannot draw the empty box. Build the toggles as plain `PopupMenuItem`s (with `onTap` flipping the setting) whose child is a `Row` of `Icon(on ? Icons.check_box : Icons.check_box_outline_blank)` (primary colour when on, `onSurfaceVariant` when off), then the label, and `Semantics(checked: on, inMutuallyExclusiveGroup: false)` around it (`menuitemcheckbox` for screen readers). Because a `PopupMenuItem` closes the menu on tap, either accept that (every toggle closes the menu, as Android's own overflow menus do) or use `MenuAnchor` with `CheckboxMenuButton` for the toggles (it stays open and draws its own box in both states), and `MenuItemButton` with `trailingIcon: Icon(Icons.chevron_right)` for the buttons. The mockup shows the `MenuAnchor` look; the choice is free, the marks are the spec. The two groups are separated by a `PopupMenuDivider` (or `Divider` in a `MenuAnchor`) and two small `labelSmall` headers.\n- Settings: `AppNavigator.openSettingsPage(settingsLanguages)` points at `LanguagesPage`; delete `LanguagesSettingsPage` and its route. Its rows move into a `_LanguagesMenu` (`PopupMenuButton<_Item>`) in `LanguagesPage`'s bar. Toggle state is the same `SettingsNotifier` fields; the menu rebuilds from `state.settings`. The explanatory lines of the switches (`settingsIpaOn`, `settingsRomanisationOn` and the like) have no room in a menu; they move to the item's tooltip and screen-reader hint, not dropped.
 - Everything else follows the rule "Remove `ReportButton`": the removal is mechanical (about 45 call sites) and is best done in one pull request with the new sheet.
 - The same rule for other screens (owner: "We will use this same rule to simplify the app's other screens too"): not designed here, see the questions.
 - Card ids stay permanent; the report carries them as they are.
 
-## Open questions for the owner
-1. **Sending.** Today a report is only handed to the mail app (or GitHub), so the app cannot know it was sent, and a mail app round trip is heavy for a one-tap flag. Duolingo's report is sent in the app. Do you want in-app sending (needs an endpoint or a GitHub token on a small relay, and a privacy line), or keep the mail hand-off with the "Your report is ready" confirmation?
-2. **Where the flag sits.** In the drill header where the bug was (shown), or beside the card itself, or on the answer panel after the answer, as Duolingo does?
-3. **Deck-level pages** (deck, unit, topic): keep the flag there, or only on a card and the word sheet? Without a card the reasons such as "The audio is wrong" are vaguer.
-4. **Reviewer screens**: remove as proposed, or keep the content report there too?
-5. **A general bug** now lives only in Settings > Support. Is that enough, or should the three-dot menu of Settings carry "Report a problem"?
-6. **Menu lines**: the switches' one-line explanations are lost in the menu (tooltips only). Acceptable, or should IPA and Adult content keep a page?
-7. **Other screens' rule.** Which screens get the same three-dot treatment next (Decks, Progress, Settings pages)?
-8. Does "Your languages menu" mean the Settings row (assumed here), and not the language bar's tap menu, which stays a language picker?
+## Resolved (owner, 2026-11-16)
+1. **Learn {language} from** lives inside each language's own sheet. The menu has no Learn row (the page default is that variant).
+2. **Reports** keep the mail hand-off for now, with no in-app endpoint. The confirmation shown by default is the mail-app wording ("Your report is ready. Your mail app has the report. Send it from there."). The "In the app" wording stays as a tweak for later.
+3. **The content flag** sits in the drill header, where the bug icon was.
+
+## Open questions for the owner (still open)
+1. **Deck-level pages** (deck, unit, topic): keep the flag there, or only on a card and the word sheet? Without a card the reasons such as "The audio is wrong" are vaguer.
+2. **Reviewer screens**: remove as proposed, or keep the content report there too?
+3. **A general bug** now lives only in Settings > Support. Is that enough, or should the three-dot menu of Settings carry "Report a problem"?
+4. **Menu lines**: the switches' one-line explanations are lost in the menu (tooltips only). Acceptable, or should IPA and Adult content keep a page?
+5. **Other screens' rule.** Which screens get the same three-dot treatment next (Decks, Progress, Settings pages)?
+6. Does "Your languages menu" mean the Settings row (assumed here), and not the language bar's tap menu, which stays a language picker?

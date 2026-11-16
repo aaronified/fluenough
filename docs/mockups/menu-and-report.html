@@ -73,6 +73,10 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .mi .ck{width:24px;height:24px;flex:none;color:var(--p);display:flex}
 .mi .tx{flex:1;min-width:0}
 .mi .v{display:block;font-size:calc(12px*var(--t));color:var(--onSv);margin-top:2px}
+.mi .bx{width:24px;height:24px;flex:none;display:flex;color:var(--onSv)}
+.mi .bx.on{color:var(--p)}
+.mi .sp{width:0;flex:none}
+.mlab{padding:4px 12px 0;font-size:calc(11px*var(--t));font-weight:700;letter-spacing:.4px;color:var(--onSv);text-transform:uppercase}
 .mi.dis{color:color-mix(in srgb,var(--onS) 38%,transparent)}
 .mi.dis .ck{color:inherit}
 .mi .ch{color:var(--onSv)}
@@ -131,6 +135,7 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
  <div class="tg">Language <div class="seg" data-k="lang"><button data-v="te">Telugu</button><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button></div></div>
  <div class="tg">Highlight changes <div class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></div></div>
  <div class="tg">IPA switch <div class="seg" data-k="ipa"><button data-v="1">On</button><button data-v="0">Off</button></div></div>
+ <div class="tg">Learn from sits in <div class="seg" data-k="lf"><button data-v="sheet">Language sheet (recommended)</button><button data-v="menu">The menu</button></div></div>
  <div class="tg">Report goes by <div class="seg" data-k="tr"><button data-v="app">In the app</button><button data-v="mail">Mail app (today)</button></div></div>
 </div>
 <div class="frames" id="frames"></div>
@@ -150,6 +155,8 @@ const IC={
  add:"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z",
  school:"M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z",
  tick:"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z",
+ cbOn:"M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z",
+ cbOff:"M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z",
  list:"M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"};
 const ic=(n,s)=>`<svg class="i" viewBox="0 0 24 24" aria-hidden="true"${s?` style="width:${s}px;height:${s}px"`:''}><path d="${IC[n]}"/></svg>`;
 const L={
@@ -157,7 +164,7 @@ const L={
  hi:{name:'हिन्दुस्तानी',en:'Hindustani',w:'पानी',r:'pānī',ipa:'[pɑːniː]',gloss:'water',opts:['water','fire','house'],card:'hi-0333',deck:'hi-first-words',pair:'Hindustani from English',learn:['Hindustani','Telugu','Bengali']},
  bn:{name:'বাংলা',en:'Bengali',w:'জল',r:'jôl',ipa:'[dʒɔl]',gloss:'water',opts:['water','fire','house'],card:'bn-0350',deck:'bn-first-words',pair:'Bengali from English',learn:['Bengali','Telugu','Hindustani']}};
 const REASONS=['The translation is wrong','The reading or IPA is wrong','The audio is wrong or missing','The picture or example is wrong','Offensive or inappropriate','Something else'];
-const S={theme:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light',lang:'te',hl:'1',ipa:'1',tr:'app'};
+const S={theme:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light',lang:'te',hl:'1',ipa:'1',tr:'mail',lf:'sheet'};
 const VER='0.10.6';
 function langBar(withBug){
  const l=L[S.lang];
@@ -183,19 +190,21 @@ function langScreen(open){
  const ks=['te','hi','bn'];
  const rows=ks.map(k=>`<div class="lrow"><span class="n">${L[k].name} · ${L[k].en}</span><div class="chips"><span class="chip">Speak</span><span class="chip">Hear</span><span class="chip">Read</span><span class="chip off">Write</span></div></div>`).join('');
  const ipaOn=S.ipa==='1';
- const learnItems=L[S.lang].learn.slice(0,2);
- const mi=(t,o={})=>`<button class="mi ${o.dis?'dis':''}" ${o.dis?'disabled':''}><span class="ck">${o.on?ic('check'):''}</span><span class="tx">${t}${o.sub?`<span class="v">${o.sub}</span>`:''}</span>${o.chev?`<span class="ch">${ic('chev',20)}</span>`:''}</button>`;
+  const tg=(t,o={})=>`<button class="mi ${o.dis?'dis':''}" role="menuitemcheckbox" aria-checked="${!!o.on}" ${o.dis?'disabled':''}><span class="bx ${o.on?'on':''}">${ic(o.on?'cbOn':'cbOff')}</span><span class="tx">${t}</span></button>`;
+ const bt=(t,o={})=>`<button class="mi" role="menuitem"><span class="tx">${t}${o.sub?`<span class="v">${o.sub}</span>`:''}</span><span class="ch">${ic('chev',20)}</span></button>`;
  const menu=`<div class="menu chg" role="menu" aria-label="More">
-  ${mi('Fact languages',{sub:'All known languages'})}
-  ${mi('Latin-letter readings',{on:true})}
-  ${mi('IPA pronunciations',{on:ipaOn})}
-  ${mi('IPA replaces transliteration',{dis:!ipaOn,on:false})}
-  ${mi('Adult content (18+)',{on:false})}
-  ${mi('Hide what is above my level',{on:true})}
+  <div class="mlab">Show</div>
+  ${tg('Latin-letter readings',{on:true})}
+  ${tg('IPA pronunciations',{on:ipaOn})}
+  ${tg('IPA replaces transliteration',{dis:!ipaOn,on:false})}
+  ${tg('Adult content (18+)',{on:false})}
+  ${tg('Hide what is above my level',{on:true})}
   <div class="mdiv"></div>
-  ${mi('Learn '+L[S.lang].en+' from',{sub:'English'})}
-  ${mi('Sources')}
-  ${mi('Your decks')}
+  <div class="mlab">Open</div>
+  ${bt('Fact languages',{sub:'All known languages'})}
+  ${S.lf==='menu'?bt('Learn '+L[S.lang].en+' from',{sub:'English'}):''}
+  ${bt('Sources')}
+  ${bt('Your decks')}
  </div>`;
  return `<div class="ph"><div class="ab"><span class="ib">${ic('back')}</span><h2>Languages</h2><span class="ib">${ic('add')}</span><span class="ib chg upd ${open?'on':''}" aria-label="More options">${ic('more')}</span></div>
  ${open?'<div class="scrim"></div>':''}
@@ -204,7 +213,7 @@ function langScreen(open){
  <div class="sech">Know · 1</div><div class="lrow"><span class="n">English</span><div class="chips"><span class="chip">Speak</span><span class="chip">Hear</span><span class="chip">Read</span><span class="chip">Write</span></div></div>
  ${open?menu:''}</div>`}
 function fL1(){return `<div class="fcol"><div class="fcap">c. Languages screen: three dots replace the bug, + stays</div>${langScreen(false)}</div>`}
-function fL2(){return `<div class="fcol"><div class="fcap">d. The three-dot menu: every row the old Your languages page had (the Languages row is the screen itself)</div>${langScreen(true)}</div>`}
+function fL2(){return `<div class="fcol"><div class="fcap">d. The three-dot menu: two kinds of row: toggles (box always visible) and buttons (chevron)</div>${langScreen(true)}</div>`}
 function drill(extra,sheet){
  const l=L[S.lang];
  return `<div class="ph"><div class="dh"><span class="ib">${ic('close')}</span><div class="bar"><i></i></div><span class="pos">3 / 20</span><span class="ib chg upd" aria-label="Report a problem with this card">${ic('flag')}</span></div>
@@ -227,13 +236,23 @@ function sheetDone(){
 function fD1(){return `<div class="fcol"><div class="fcap">e. A card in a drill: the flag takes the bug's place in the header</div>${drill()}</div>`}
 function fD2(){return `<div class="fcol"><div class="fcap">f. Report sheet: reasons about content, one optional line</div>${drill(0,sheetForm())}</div>`}
 function fD3(){return `<div class="fcol"><div class="fcap">g. After Send (${S.tr==='app'?'sent from the app':'handed to the mail app, as today'})</div>${drill(0,sheetDone())}</div>`}
+function fSheet(){
+ const l=L[S.lang];
+ return `<div class="fcol"><div class="fcap">h. A language's own sheet (tap a language in the list): "Learn ${l.en} from" lives here</div>
+ <div class="ph"><div class="ab"><span class="ib">${ic('back')}</span><h2>${l.name} · ${l.en}</h2></div>
+ <div class="sech">Skills</div>
+ <div class="lrow"><span class="n">Speak</span><div class="chips"><span class="chip">Learn</span></div></div>
+ <div class="lrow"><span class="n">Read</span><div class="chips"><span class="chip">Learn</span></div></div>
+ <div class="lrow"><span class="n">Write</span><div class="chips"><span class="chip off">Leave</span></div></div>
+ <div class="gl chg"><div class="row"><span>${ic('school')}</span><div class="tx"><div class="t1">Learn ${l.en} from</div><div class="t2">English</div></div><span>${ic('chev')}</span></div></div>
+ <p class="sm" style="padding:12px 20px">Shown only for a language that is taught from more than one language you know. Opens the same choice as placement asks the first time, with how much of the course each teaches.</p></div></div>`}
 function build(){
  const root=document.getElementById('frames');
  const p=PAL[S.theme];
  document.documentElement.dataset.theme=S.theme;
  root.style.cssText=Object.entries(p).map(([k,v])=>`--${k}:${v}`).join(';');
  root.className='frames'+(S.hl==='1'?' hl-on':'');
- root.innerHTML=fA()+fSet()+fL1()+fL2()+fD1()+fD2()+fD3();
+ root.innerHTML=fA()+fSet()+fL1()+fL2()+fD1()+fD2()+fD3()+(S.lf==='sheet'?fSheet():'');
  document.querySelectorAll('.seg').forEach(s=>s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',S[s.dataset.k]==b.dataset.v)));
 }
 document.addEventListener('click',e=>{const b=e.target.closest('.seg button');if(b){S[b.parentNode.dataset.k]=b.dataset.v;build()}});
