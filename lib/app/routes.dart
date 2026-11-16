@@ -5,7 +5,6 @@ import '../core/feedback/report.dart';
 import '../features/culture/culture_deck_page.dart';
 import '../features/culture/culture_item_page.dart';
 import '../features/culture/culture_timeline.dart';
-import '../features/culture/recommendations_page.dart';
 import '../features/culture/work_questions_page.dart';
 import '../features/decks/deck_detail_page.dart';
 import '../features/decks/import_page.dart';
@@ -145,10 +144,6 @@ abstract final class AppRoutes {
   /// The culture timeline, to today. Argument: a [CultureTimelineRequest].
   static const String cultureTimeline = '/culture-timeline';
 
-  /// A language's recommended works. Argument: a [RecommendationsRequest].
-  /// Deck-kinds plan, T26.
-  static const String recommendations = '/recommendations';
-
   /// The questions of a completed work. Argument: a [WorkQuestionsRequest].
   static const String workQuestions = '/work-questions';
 
@@ -233,8 +228,6 @@ abstract final class AppRoutes {
       ),
       cultureTimeline when args is CultureTimelineRequest =>
         CultureTimelinePage(request: args),
-      recommendations when args is RecommendationsRequest =>
-        RecommendationsPage(request: args),
       workQuestions when args is WorkQuestionsRequest => WorkQuestionsPage(
         request: args,
       ),
@@ -302,15 +295,24 @@ abstract final class AppNavigator {
     arguments: CultureTimelineRequest(language: language, creatorId: creatorId),
   );
 
-  /// [language]'s recommended works, with [openId] open (T26).
-  static Future<void> openRecommendations(
+  /// Shows [language]'s culture list on the Decks screen, with the work
+  /// [openId] open: the cover on Today. Not a page: the Decks tab switches from
+  /// its path to the culture list (`culture-in-decks`).
+  static void openCultureList(
     BuildContext context,
     String language, {
     String? openId,
-  }) => Navigator.of(context).pushNamed(
-    AppRoutes.recommendations,
-    arguments: RecommendationsRequest(language: language, openId: openId),
-  );
+  }) {
+    final state = AppScope.read(context);
+    final navigator = Navigator.of(context);
+    navigator.popUntil((route) => route.isFirst);
+    if (state.shownLanguage != language) state.showLanguage(language);
+    state.decksCultureRequest.value = CultureListRequest(
+      language: language,
+      openId: openId,
+    );
+    state.shellTab.value = ShellTab.decks;
+  }
 
   /// The questions of the completed work [recommendationId] (T26).
   static Future<void> openWorkQuestions(

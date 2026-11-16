@@ -60,6 +60,40 @@ void main() {
       expect(p.pending, isNull);
     });
 
+    test('the culture tokens are chips that narrow the culture part', () {
+      final p = parseSearch('kind:film creator:tagore year:1900-1950 ');
+      expect(p.chips[SearchToken.kind], 'film');
+      expect(p.chips[SearchToken.creator], 'tagore');
+      expect(p.chips[SearchToken.year], '1900-1950');
+      // kind:film is not a deck kind: the deck part is never narrowed by it.
+      expect(p.kind, isNull);
+      expect(cultureChipsOf(p.chips), hasLength(3));
+      expect(deckChipsOf(p.chips), isEmpty);
+      final f = CultureFilter.fromChips(p.chips);
+      expect(
+        (f.kind, f.creator, f.yearFrom, f.yearTo),
+        ('film', 'tagore', 1900, 1950),
+      );
+    });
+
+    test('status:done and kind:proverb are culture, status:learnt is not', () {
+      final p = parseSearch('status:done kind:proverb ');
+      expect(CultureFilter.fromChips(p.chips).done, isTrue);
+      expect(CultureFilter.fromChips(p.chips).kind, 'proverb');
+      final q = parseSearch('status:learnt kind:words ');
+      expect(cultureChipsOf(q.chips), isEmpty);
+      expect(deckChipsOf(q.chips), hasLength(2));
+    });
+
+    test('a year takes BCE years and a bad year stays text', () {
+      final f = CultureFilter.fromChips(<SearchToken, String>{
+        SearchToken.year: '-500--400',
+      });
+      expect((f.yearFrom, f.yearTo), (-500, -400));
+      expect(parseSearch('year:abc ').text, 'year:abc');
+      expect(parseSearch('year:-500 ').chips[SearchToken.year], '-500');
+    });
+
     test('a token being typed opens its values and makes no chip yet', () {
       final p = parseSearch('kind:gr');
       expect(p.chips, isEmpty);

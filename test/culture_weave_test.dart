@@ -8,7 +8,6 @@ import 'package:fluenough/app/culture.dart';
 import 'package:fluenough/core/data/course_path.dart';
 import 'package:fluenough/core/decks/culture_options.dart';
 import 'package:fluenough/core/decks/recommendation_list.dart';
-import 'package:fluenough/core/decks/recommendations.dart';
 import 'package:fluenough/core/decks/timeline.dart';
 import 'package:fluenough/core/decks/timeline_entries.dart';
 import 'package:fluenough/core/decks/weave.dart';
@@ -222,51 +221,11 @@ void main() {
     });
   });
 
-  group('the recommendations list', () {
+  group('the recommended works', () {
     final file = parseRecommendations(
       cultureRecommendations,
       source: 'zz.yaml',
     );
-    const latin = RecommendationCourse(latinOnly: true);
-
-    test('offers every work, whatever its level', () {
-      final all = recommendationList(file.recommendations, latin);
-      expect(all.offered, hasLength(3));
-      expect(all.count(file.recommendations.first.medium), 2);
-      expect(all.of(null), hasLength(3));
-    });
-
-    test('offers no book to a learner who learns no script', () {
-      final none = recommendationList(
-        file.recommendations,
-        const RecommendationCourse(),
-      );
-      expect(none.offered.map((r) => r.id), <String>['zz-rec-pelicula']);
-    });
-
-    test('shows a script-only learner books in their script only', () {
-      final list = recommendationList(
-        file.recommendations,
-        const RecommendationCourse(
-          scriptOnly: true,
-          scriptsLearned: <String>{'devanagari'},
-        ),
-      );
-      expect(list.offered, isEmpty);
-      expect(list.otherScript, 2);
-      final latinOnly = recommendationList(
-        file.recommendations,
-        const RecommendationCourse(
-          scriptOnly: true,
-          scriptsLearned: <String>{'latin'},
-        ),
-      );
-      expect(latinOnly.offered.map((r) => r.id), <String>[
-        'zz-rec-camino',
-        'zz-rec-novela',
-      ]);
-    });
-
     test('gives the public-domain badge to a work a deck quotes', () {
       expect(isPublicDomainWork(file.byId('zz-rec-camino')!), isTrue);
       expect(isPublicDomainWork(file.byId('zz-rec-pelicula')!), isFalse);

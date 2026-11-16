@@ -5,6 +5,7 @@ import 'package:flutter/rendering.dart' show RenderAbstractViewport;
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
+import '../../app/culture_list.dart' show CultureListSection;
 import '../../app/unlocks.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/routes.dart';
@@ -22,6 +23,7 @@ import '../../ui/widgets/visible_listenable_builder.dart';
 import 'broken_deck_tile.dart';
 import 'course_card.dart';
 import 'course_hours.dart';
+import 'culture_list.dart';
 import 'deck_search_bar.dart';
 import 'number_practice_tile.dart';
 import 'path_model.dart';
@@ -91,6 +93,62 @@ class _DecksPageState extends State<DecksPage> {
   late String _applied = _search.text;
   Timer? _debounce;
 
+  /// Whether the culture list shows in place of the deck path (the course
+  /// card's Culture button), and the language it was switched on for: the
+  /// path is back when the bar shows another language. Not saved.
+  bool _culture = false;
+  String? _cultureFor;
+
+  /// The recommended work whose row is open in the culture list, `''` for
+  /// none.
+  String? _openWork = '';
+
+  /// The state whose culture-list requests this screen listens to.
+  AppState? _scopeState;
+
+  bool _cultureShown(String? code) =>
+      _culture && code != null && _cultureFor == code;
+
+  /// A cover on Today asked for the culture list with one work open.
+  void _applyCultureRequest() {
+    final state = _scopeState;
+    final request = state?.decksCultureRequest.value;
+    if (state == null || request == null) return;
+    state.decksCultureRequest.value = null;
+    _culture = true;
+    _cultureFor = request.language;
+    _openWork = request.openId ?? '';
+    _search.clear();
+    _chips.clear();
+    _sync();
+  }
+
+  void _onCultureRequest() {
+    if (!mounted) return;
+    setState(_applyCultureRequest);
+  }
+
+  /// The course card's button: the culture list in place of the path, or the
+  /// path back.
+  void _toggleCulture(String? code) => setState(() {
+    final shown = _cultureShown(code);
+    _culture = !shown;
+    _cultureFor = code;
+    _openWork = '';
+  });
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final state = AppScope.read(context);
+    if (!identical(state, _scopeState)) {
+      _scopeState?.decksCultureRequest.removeListener(_onCultureRequest);
+      _scopeState = state;
+      state.decksCultureRequest.addListener(_onCultureRequest);
+      _applyCultureRequest();
+    }
+  }
+
   void _sync() {
     _debounce?.cancel();
     _applied = _search.text;
@@ -116,6 +174,7 @@ class _DecksPageState extends State<DecksPage> {
 
   @override
   void dispose() {
+    _scopeState?.decksCultureRequest.removeListener(_onCultureRequest);
     _debounce?.cancel();
     _focus.removeListener(_onFocus);
     _focus.dispose();
@@ -378,7 +437,10 @@ class _DecksPageState extends State<DecksPage> {
     String? code,
   ) {
     final token = parsed.pending ?? _editing;
-    if (token != null) {
+    // creator: and year: take what is typed; there is no list to pick from.
+    if (token != null &&
+        token != SearchToken.creator &&
+        token != SearchToken.year) {
       final prefix = parsed.pending == null
           ? ''
           : parsed.pendingPrefix.toLowerCase();
@@ -388,6 +450,8 @@ class _DecksPageState extends State<DecksPage> {
           SearchToken.kind => <(String, String, String?)>[
             for (final k in SearchKind.values)
               (k.slug, searchKindLabel(l10n, k), kindLine(l10n, k)),
+            for (final slug in cultureKindSlugs)
+              (slug, cultureKindLabel(l10n, slug), null),
           ],
           SearchToken.status => <(String, String, String?)>[
             for (final s in const <CardStatus>[
@@ -399,12 +463,16 @@ class _DecksPageState extends State<DecksPage> {
               CardStatus.setAside,
             ])
               (s.slug, statusLabel(l10n, s), statusLine(l10n, s)),
+            for (final slug in cultureStatusSlugs)
+              (slug, cultureStatusLabel(l10n, slug), null),
           ],
           SearchToken.theme => <(String, String, String?)>[
             if (code != null)
               for (final theme in courseThemes(state, code))
                 (theme.id, theme.name, null),
           ],
+          SearchToken.creator ||
+          SearchToken.year => <(String, String, String?)>[],
         },
       ];
       return SearchMenu(
@@ -429,6 +497,8 @@ class _DecksPageState extends State<DecksPage> {
             (SearchToken.kind, l10n.searchTokenKindLine),
             (SearchToken.status, l10n.searchTokenStatusLine),
             (SearchToken.theme, l10n.searchTokenThemeLine),
+            (SearchToken.creator, l10n.searchTokenCreatorLine),
+            (SearchToken.year, l10n.searchTokenYearLine),
           ])
             SearchMenuItem(
               title: '${token.key}:',
@@ -472,7 +542,7 @@ class _DecksPageState extends State<DecksPage> {
       },
       child: Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-        floatingActionButton: open || !ready
+        floatingActionButton: open || !ready || _cultureShown(code)
             ? null
             : _WhereIAmButton(label: l10n.decksWhereIAm, onPressed: _toUpNext),
         body: SafeArea(
@@ -572,7 +642,25 @@ class _DecksPageState extends State<DecksPage> {
         }
         _wasOpen = open;
         final language = languages.firstOrNull;
-        final outcome = searching
+        if (_culture && _cultureFor != code) _culture = false;
+        final cultureMode = _cultureShown(code);
+        // Search looks in everything (owner, 2026-11-16): the deck, unit and
+        // card results, and the culture decks and works. A deck chip (a kind,
+        // status or theme of cards) narrows the deck part and leaves culture
+        // out; a culture chip (a film, creator:, year:, done) does the reverse.
+        final allChips = <SearchToken, String>{..._chips, ...parsed.chips};
+        final cultureChips = cultureChipsOf(allChips);
+        final hasCultureChip = cultureChips.isNotEmpty;
+        final hasDeckChip = deckChipsOf(allChips).isNotEmpty;
+        final filter = CultureFilter.fromChips(cultureChips);
+        final cultureSecs =
+            code != null &&
+                searching &&
+                !hasDeckChip &&
+                (applied.text.isNotEmpty || hasCultureChip)
+            ? cultureSections(state, l10n, code, applied.text, filter: filter)
+            : const <CultureListSection>[];
+        final outcome = searching && !hasCultureChip
             ? runSearch(
                 state,
                 l10n,
@@ -582,6 +670,16 @@ class _DecksPageState extends State<DecksPage> {
                 planOf: widget.planOf,
               )
             : null;
+        // Plain text with no chip is searched by type, in tabs (#1140), the
+        // culture kinds among them.
+        final typed =
+            outcome != null &&
+            code != null &&
+            outcome.chips.isEmpty &&
+            outcome.foreign == null &&
+            outcome.parsed.text.isNotEmpty;
+        void toggleWork(String id) =>
+            setState(() => _openWork = _openWork == id ? '' : id);
         final menu = _menu(l10n, state, parsed, code);
         // The path stays under the search while nothing is typed, darkened.
         final dim = open && !searching ? 0.5 : 1.0;
@@ -601,7 +699,7 @@ class _DecksPageState extends State<DecksPage> {
           null => null,
         };
         // The level up next starts unfolded: _toUpNext unfolds it.
-        if (view != null && _openedAt != code) {
+        if (view != null && !cultureMode && _openedAt != code) {
           _openedAt = code;
           WidgetsBinding.instance.addPostFrameCallback((_) {
             if (mounted) _toUpNext(animate: false);
@@ -679,6 +777,8 @@ class _DecksPageState extends State<DecksPage> {
                                     state.decks,
                                   ),
                                   hours: courseHours(state, code!),
+                                  onCulture: () => _toggleCulture(code),
+                                  cultureShown: cultureMode,
                                 ),
                               ),
                             ),
@@ -688,17 +788,20 @@ class _DecksPageState extends State<DecksPage> {
                       ),
                     ),
                     if (outcome != null)
-                      // Plain text is searched by type, in tabs (#1140); a
-                      // kind:, status: or theme: chip narrows the one list.
-                      if (code != null &&
-                          outcome.chips.isEmpty &&
-                          outcome.foreign == null &&
-                          outcome.parsed.text.isNotEmpty)
+                      if (typed)
                         TypedSearchResults(
                           outcome: outcome,
                           query: _search.text,
                           language: code,
                           onSearch: _setText,
+                          extraTabs: cultureTabs(l10n, cultureSecs),
+                          extraContent: (context, kind) => CultureRows(
+                            language: code,
+                            sections: cultureSecs,
+                            kind: kind,
+                            openWork: _openWork,
+                            onToggleWork: toggleWork,
+                          ),
                         )
                       else
                         SearchResultsSliver(
@@ -708,7 +811,58 @@ class _DecksPageState extends State<DecksPage> {
                           onRemoveKind: () =>
                               setState(() => _chips.remove(SearchToken.kind)),
                         ),
-                    if (!searching && view != null) ...<Widget>[
+                    // The culture part on its own: a culture chip hides the
+                    // deck part, and a search the tabs do not carry (another
+                    // script) still lists the matches after it.
+                    if (searching &&
+                        !typed &&
+                        code != null &&
+                        (outcome == null || cultureSecs.isNotEmpty) &&
+                        !hasDeckChip)
+                      SliverToBoxAdapter(
+                        child: CultureList(
+                          language: code,
+                          query: applied.text,
+                          filter: filter,
+                          openWork: _openWork,
+                          onToggleWork: toggleWork,
+                        ),
+                      ),
+                    // A deck chip and a culture chip together match nothing.
+                    if (searching && hasDeckChip && hasCultureChip)
+                      SliverToBoxAdapter(
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.symmetric(
+                            vertical: 32,
+                          ),
+                          child: Text(
+                            l10n.decksEmptySearch,
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.bodyLarge!
+                                .copyWith(
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onSurfaceVariant,
+                                ),
+                          ),
+                        ),
+                      ),
+                    if (cultureMode && !searching && code != null)
+                      SliverIgnorePointer(
+                        ignoring: scrim,
+                        sliver: SliverOpacity(
+                          opacity: dim,
+                          sliver: SliverToBoxAdapter(
+                            child: CultureList(
+                              language: code,
+                              query: '',
+                              openWork: _openWork,
+                              onToggleWork: toggleWork,
+                            ),
+                          ),
+                        ),
+                      ),
+                    if (!searching && !cultureMode && view != null) ...<Widget>[
                       SliverIgnorePointer(
                         ignoring: scrim,
                         sliver: SliverOpacity(

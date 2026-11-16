@@ -21,7 +21,7 @@ import 'culture_parts.dart';
 /// source and level, none locked, and a People list of the creators behind
 /// them, each opening their card.
 ///
-/// Reached from an item and from the recommendations list; "Show culture
+/// Reached from an item; "Show culture
 /// items" off leaves it here, as it leaves search.
 class CultureDeckPage extends StatelessWidget {
   const CultureDeckPage({super.key, required this.language});
@@ -139,13 +139,6 @@ class CultureDeckPage extends StatelessWidget {
                       trailing: const Icon(Icons.chevron_right),
                       onTap: () =>
                           AppNavigator.openCultureTimeline(context, language),
-                    ),
-                    GroupedTile(
-                      leading: const Icon(Icons.auto_stories_outlined),
-                      title: l10n.recTitle,
-                      trailing: const Icon(Icons.chevron_right),
-                      onTap: () =>
-                          AppNavigator.openRecommendations(context, language),
                     ),
                   ],
                 ),

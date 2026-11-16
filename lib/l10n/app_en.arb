@@ -1364,6 +1364,90 @@
   "@decksFilterAll": {
     "description": "Language chip that shows every deck."
   },
+  "decksCultureButton": "Culture",
+  "@decksCultureButton": {
+    "description": "Button on the Decks screen's course card that switches the screen from the deck path to the culture list."
+  },
+  "decksPathButton": "Deck path",
+  "@decksPathButton": {
+    "description": "Button on the Decks screen's course card, while the culture list shows, that switches back to the deck path."
+  },
+  "decksCultureDecksHeader": "Culture decks",
+  "@decksCultureDecksHeader": {
+    "description": "Heading of the culture list's section of culture and proverbs decks."
+  },
+  "decksCultureHeader": "{name} · {count}",
+  "@decksCultureHeader": {
+    "description": "Heading of a section of the culture list: its name and how many rows it has.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Films"
+      },
+      "count": {
+        "type": "int",
+        "example": "9"
+      }
+    }
+  },
+  "decksCultureNone": "{language} has no culture yet.",
+  "@decksCultureNone": {
+    "description": "Shown in the culture list when the language has no culture decks and no recommended works.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "recKindBooks": "Books",
+  "@recKindBooks": {
+    "description": "Heading of the culture list's recommended books."
+  },
+  "recKindFilms": "Films",
+  "@recKindFilms": {
+    "description": "Heading of the culture list's recommended films."
+  },
+  "recKindSeries": "Series",
+  "@recKindSeries": {
+    "description": "Heading of the culture list's recommended series."
+  },
+  "recKindSongs": "Songs",
+  "@recKindSongs": {
+    "description": "Heading of the culture list's recommended songs."
+  },
+  "recKindPlays": "Plays",
+  "@recKindPlays": {
+    "description": "Heading of the culture list's recommended plays."
+  },
+  "recKindPodcasts": "Podcasts",
+  "@recKindPodcasts": {
+    "description": "Heading of the culture list's recommended podcasts."
+  },
+  "recKindComics": "Comics",
+  "@recKindComics": {
+    "description": "Heading of the culture list's recommended comics."
+  },
+  "decksCultureAll": "All",
+  "@decksCultureAll": {
+    "description": "First tab of the culture list: every section together."
+  },
+  "searchStatusDone": "Done",
+  "@searchStatusDone": {
+    "description": "Value of the status: token for a recommended work: marked completed."
+  },
+  "searchStatusTodo": "To do",
+  "@searchStatusTodo": {
+    "description": "Value of the status: token for a recommended work: not marked completed."
+  },
+  "searchTokenCreatorLine": "A creator's name, such as creator:tagore",
+  "@searchTokenCreatorLine": {
+    "description": "The line under the creator: token in the search's menu."
+  },
+  "searchTokenYearLine": "A year or years, such as year:1950 or year:1900-1950",
+  "@searchTokenYearLine": {
+    "description": "The line under the year: token in the search's menu."
+  },
   "decksEmptySearch": "No decks match that search.",
   "@decksEmptySearch": {
     "description": "Shown when the search or filter hides every deck."
@@ -16322,68 +16406,6 @@
         "example": "Proverb"
       }
     }
-  },
-  "recTitle": "Culture recommendations",
-  "@recTitle": {
-    "description": "Title of the recommended works screen."
-  },
-  "recEmpty": "No recommendations yet",
-  "@recEmpty": {
-    "description": "Empty state of the recommended works."
-  },
-  "recEmptyBody": "Popular works to find elsewhere will appear here once this course has them.",
-  "@recEmptyBody": {
-    "description": "Body of the empty recommended works."
-  },
-  "recIntro": "Popular works, not reproduced here. Public-domain works are also quoted in your culture deck.",
-  "@recIntro": {
-    "description": "Intro line of the recommended works list."
-  },
-  "recChipAll": "All {count}",
-  "@recChipAll": {
-    "description": "Filter chip: every recommended work.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "8"
-      }
-    }
-  },
-  "recChipKind": "{kind} {count}",
-  "@recChipKind": {
-    "description": "Filter chip: one kind of work with its count.",
-    "placeholders": {
-      "kind": {
-        "type": "String",
-        "example": "Book"
-      },
-      "count": {
-        "type": "int",
-        "example": "3"
-      }
-    }
-  },
-  "recScriptOnlyTitle": "You are learning the script",
-  "@recScriptOnlyTitle": {
-    "description": "Title of the notice for a learner who learns only the script."
-  },
-  "recScriptOnlyBody": "Only books in the script you are learning are shown, because you can read them. Films, series, songs, plays and podcasts appear when you start {language}. {count, plural, =0{} =1{1 book in another script is not shown.} other{{count} books in another script are not shown.}}",
-  "@recScriptOnlyBody": {
-    "description": "Body of the notice for a learner who learns only the script.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Hindustani"
-      },
-      "count": {
-        "type": "int",
-        "example": "1"
-      }
-    }
-  },
-  "recNothingAtLevel": "Nothing of this kind yet.",
-  "@recNothingAtLevel": {
-    "description": "Shown when no recommended work is offered at the level."
   },
   "recMediumBook": "Book",
   "@recMediumBook": {

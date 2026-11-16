@@ -418,7 +418,8 @@ SearchOutcome runSearch(
     text,
     themes: <String>[for (final t in state.themes) t.id],
   );
-  final all = <SearchToken, String>{...chips, ...parsed.chips};
+  // The culture chips narrow the culture part, which the screen searches.
+  final all = deckChipsOf(<SearchToken, String>{...chips, ...parsed.chips});
   final words = queryWords(parsed.text);
   final q = parsed.text.trim();
   final broken = <BrokenDeck>[

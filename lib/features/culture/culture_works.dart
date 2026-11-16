@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
-import '../../app/culture.dart';
 import '../../app/item_search.dart' show coreIdOfDeck;
-import '../../app/recommendation_feed.dart';
 import '../../app/routes.dart';
 import '../../core/decks/recommendation_list.dart';
 import '../../core/models/completed_work.dart';
@@ -12,20 +10,10 @@ import '../../core/models/creator.dart';
 import '../../core/models/recommendation.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
-import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/snack.dart';
-import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
 import '../decks/result_marks.dart';
 import 'culture_parts.dart';
-
-/// What opens the recommendations: the language, and a work to open at once.
-class RecommendationsRequest {
-  const RecommendationsRequest({required this.language, this.openId});
-
-  final String language;
-  final String? openId;
-}
 
 /// The icon of a kind of work.
 IconData recommendationIcon(RecommendationMedium medium) => switch (medium) {
@@ -59,178 +47,15 @@ String briefingLine(String briefing) {
   return end < 0 ? text : text.substring(0, end + 1);
 }
 
-/// The recommendations of a language (approved mockup
-/// `culture-recommendations`, screen 1, variant A): popular works the app
-/// points to and never reproduces. Kind chips with counts; a row for each work
-/// with its kind, level and, for a public-domain work, a badge, and a short
-/// briefing; the open row shows the whole briefing, that it is not included in
-/// the app, where to get it legally, and "I've completed this". A work above
-/// the learner's level is not listed, only counted; books are listed only for a
-/// learner who learns scripts, and a script-only learner sees only books in
-/// that script (`recommendationOffered`).
-class RecommendationsPage extends StatefulWidget {
-  const RecommendationsPage({super.key, required this.request});
-
-  final RecommendationsRequest request;
-
-  @override
-  State<RecommendationsPage> createState() => _RecommendationsPageState();
-}
-
-class _RecommendationsPageState extends State<RecommendationsPage> {
-  RecommendationMedium? _kind;
-  String? _open;
-
-  @override
-  void initState() {
-    super.initState();
-    _open = widget.request.openId;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final state = AppScope.of(context);
-    final l10n = AppLocalizations.of(context)!;
-    if (state.status == CatalogStatus.loading) {
-      return Scaffold(
-        appBar: AppBar(),
-        body: Center(
-          child: CircularProgressIndicator(
-            semanticsLabel: l10n.commonLoadingDecks,
-          ),
-        ),
-      );
-    }
-    return ListenableBuilder(
-      listenable: Listenable.merge(<Listenable>[
-        state.progress,
-        state.settings,
-        state.recommendationProgress,
-      ]),
-      builder: (context, _) => _build(context, state),
-    );
-  }
-
-  Widget _build(BuildContext context, AppState state) {
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    final scheme = theme.colorScheme;
-    final language = widget.request.language;
-    final file = state.catalogView.recommendations[language];
-    final course = state.recommendationCourseOf(language);
-    final list = recommendationList(
-      file?.recommendations ?? const <Recommendation>[],
-      course,
-    );
-    final kinds = list.media;
-    final kind = _kind != null && kinds.contains(_kind) ? _kind : null;
-    final shown = list.of(kind);
-    // A row the learner closed stays closed ('' is none); otherwise the one
-    // they opened, or the first.
-    final open = _open == ''
-        ? null
-        : shown.any((w) => w.id == _open)
-        ? _open
-        : (shown.isEmpty ? null : shown.first.id);
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.recTitle, style: theme.textTheme.titleMedium),
-      ),
-      body: file == null || list.offered.isEmpty
-          ? EmptyState(
-              icon: Icons.auto_stories_outlined,
-              title: l10n.recEmpty,
-              body: l10n.recEmptyBody,
-            )
-          : ListView(
-              padding: const EdgeInsetsDirectional.fromSTEB(
-                0,
-                0,
-                0,
-                24,
-              ).clearingSystemBar(context),
-              children: <Widget>[
-                if (kinds.isNotEmpty)
-                  Padding(
-                    padding: const EdgeInsetsDirectional.symmetric(
-                      horizontal: 16,
-                    ),
-                    child: Wrap(
-                      spacing: 8,
-                      children: <Widget>[
-                        ChoiceChip(
-                          label: Text(l10n.recChipAll(list.offered.length)),
-                          selected: kind == null,
-                          onSelected: (_) => setState(() => _kind = null),
-                        ),
-                        for (final medium in kinds)
-                          ChoiceChip(
-                            label: Text(
-                              l10n.recChipKind(
-                                recommendationMediumName(l10n, medium),
-                                list.count(medium),
-                              ),
-                            ),
-                            selected: kind == medium,
-                            onSelected: (_) => setState(() => _kind = medium),
-                          ),
-                      ],
-                    ),
-                  ),
-                if (course.scriptOnly)
-                  Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(
-                      16,
-                      12,
-                      16,
-                      0,
-                    ),
-                    child: CultureNotice(
-                      title: l10n.recScriptOnlyTitle,
-                      body: l10n.recScriptOnlyBody(
-                        cultureLanguage(state, language).name,
-                        list.otherScript,
-                      ),
-                    ),
-                  ),
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(
-                    AppSizes.textInset + 16,
-                    8,
-                    AppSizes.textInset + 16,
-                    8,
-                  ),
-                  child: Text(
-                    l10n.recIntro,
-                    style: theme.textTheme.bodySmall!.copyWith(
-                      color: scheme.onSurfaceVariant,
-                    ),
-                  ),
-                ),
-                if (shown.isEmpty)
-                  Padding(
-                    padding: const EdgeInsetsDirectional.symmetric(
-                      horizontal: AppSizes.textInset + 16,
-                    ),
-                    child: Text(l10n.recNothingAtLevel),
-                  ),
-                for (final work in shown)
-                  _WorkRow(
-                    work: work,
-                    language: language,
-                    file: state.creatorsOf(language),
-                    open: work.id == open,
-                    onTap: () =>
-                        setState(() => _open = work.id == _open ? '' : work.id),
-                  ),
-              ],
-            ),
-    );
-  }
-}
-
-class _WorkRow extends StatelessWidget {
-  const _WorkRow({
+/// One recommended work as a row of the culture list on the Decks screen
+/// (approved mockup `culture-in-decks`): its kind, level and, for a
+/// public-domain work, a badge, and a short briefing. [open] shows the whole
+/// briefing, that the work is not included in the app, where to get it legally
+/// and "I've completed this". Every work opens and can be marked completed
+/// whatever the learner's level; nothing is locked.
+class CultureWorkRow extends StatelessWidget {
+  const CultureWorkRow({
+    super.key,
     required this.work,
     required this.language,
     required this.file,

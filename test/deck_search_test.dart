@@ -7,6 +7,7 @@ import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/core/models/deck.dart' show DeckKind, LanguageInfo;
 import 'package:fluenough/core/models/reading.dart' show QuestionCard;
 import 'package:fluenough/core/search/query.dart';
+import 'package:fluenough/features/decks/course_card.dart' show CourseCard;
 import 'package:fluenough/features/decks/decks_page.dart';
 import 'package:fluenough/features/decks/unit_search.dart';
 import 'package:fluenough/l10n/app_localizations_en.dart';
@@ -405,7 +406,19 @@ void main() {
         await tester.tap(find.byType(TextField));
         await tester.pumpAndSettle();
         expect(find.byTooltip(l10n.decksSearchClose), findsOneWidget);
-        await tester.tapAt(const Offset(195, 780));
+        // The menu and the offers make the bar's header tall: scroll so the
+        // gap under the course card (the scrim starts there) is on screen,
+        // then tap it.
+        final controller = tester
+            .widget<CustomScrollView>(find.byType(CustomScrollView))
+            .controller!;
+        final cardBottom = tester.getRect(find.byType(CourseCard)).bottom;
+        if (cardBottom > 600) {
+          controller.jumpTo(controller.offset + cardBottom - 400);
+          await tester.pumpAndSettle();
+        }
+        final card = tester.getRect(find.byType(CourseCard));
+        await tester.tapAt(Offset(195, card.bottom + 10));
         await tester.pumpAndSettle();
         expect(find.byTooltip(l10n.decksSearchClose), findsNothing);
       },
