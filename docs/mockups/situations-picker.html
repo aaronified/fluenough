@@ -59,7 +59,7 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .tile{width:100%;height:100%;min-height:calc(86px*var(--t));border:0;border-radius:12px;padding:10px 2px 8px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:5px;text-align:center;
  background:var(--c);color:var(--oc);position:relative}
 .tile .ico{width:40px;height:40px;border-radius:50%;background:color-mix(in srgb,var(--oc) 12%,transparent);display:flex;align-items:center;justify-content:center}
-.tile .lb{font-size:calc(12px*var(--t));line-height:1.2;font-weight:600;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-width:100%}
+.tile .lb{font-size:calc(14px*var(--t));line-height:1.2;font-weight:700;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;max-width:100%}
 .tile .x{position:absolute;top:3px;right:3px;width:24px;height:24px;border-radius:50%;background:color-mix(in srgb,var(--oc) 16%,transparent);display:flex;align-items:center;justify-content:center}
 .tile .x svg.i{width:16px;height:16px}
 .tile:focus-visible,.slot:focus-visible{outline:3px solid var(--p);outline-offset:2px}
@@ -76,6 +76,7 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .tile.muted .add{position:absolute;top:3px;right:3px;width:24px;height:24px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv);display:flex;align-items:center;justify-content:center}
 .tile.muted .add svg.i{width:16px;height:16px}
 .tile.muted .lb{font-weight:500}
+.tile .lb{overflow-wrap:normal;word-break:normal;hyphens:none}
 .tile.muted:disabled{cursor:not-allowed;background:transparent;color:var(--onSv);box-shadow:inset 0 0 0 1px var(--olv)}
 .tile.muted:disabled .ico{color:var(--onSv);opacity:.7}
 .tile.muted:disabled .add{display:none}
@@ -91,12 +92,14 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .hl-on .chg::after{content:"new";position:absolute;top:-10px;right:6px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:6px;z-index:5;letter-spacing:.3px}
 .hl-on .chg.upd::after{content:"changed"}
 .hide{display:none!important}
+.fitlog{list-style:none;margin:10px 0 0;padding:0;font-size:12px;line-height:1.4;color:var(--onSv)}
+.fitlog li{margin:0 0 2px}
 </style>
 </head>
 <body>
 <div class="wrap">
 <h1>Situations picker</h1>
-<p class="cap1">The "Choose situations" dialog behind the pencil on Today's Situations card (#1145), 360 dp, 1.4x text. Two sections: what is on Today, and everything else. Tap a tile to move it between them. Tiles are live: try them. Notes and the contrast self-check are in <code>situations-picker.md</code>.</p>
+<p class="cap1">The "Choose situations" dialog behind the pencil on Today's Situations card (#1145), 360 dp, 1.4x text. Tap a tile to move it between the two sections; tiles are live. The only instruction text is "Drag to order". Notes and the contrast self-check are in <code>situations-picker.md</code>.</p>
 <div class="tw" role="group" aria-label="Tweaks">
  <div class="tg">Theme <div class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></div></div>
  <div class="tg">Language <div class="seg" data-k="lang"><button data-v="te">Telugu</button><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button></div></div>
@@ -152,6 +155,10 @@ const F=[
  {cap:'a. 4 of 6: room to add',on:['taxi','shops','eat','doctor']},
  {cap:'b. 6 of 6: full, the rest disabled',on:['taxi','shops','eat','doctor','greet','emerg']},
  {cap:'c. 5 of 6, mid-drag (Emergencies lifted over Eating out)',on:['taxi','shops','eat','doctor','emerg'],drag:'emerg',over:'eat'}];
+const STRESS=[['Emergencies','gesture','emerg'],['Doctor and pharmacy','pair','doctor'],['Greetings and apologies','speaking','greet'],['క్షమాపణలు మరియు శుభాకాంక్షలు','speaking','greet'],['अभिवादन और क्षमायाचना','speaking','greet'],['অভিবাদন ও ক্ষমাপ্রার্থনা','speaking','greet']];
+function stress(){
+ return `<div class="fcol"><div class="fcap">d. Stress row: longest labels at 1.4x (Telugu, Hindi, Bengali last)</div>
+ <div class="ph" style="min-height:0"><div class="stage"><div class="dlg"><h2>Stress row</h2><ol class="grid">${STRESS.map(([t,m,i])=>tileOn({id:i,t,i,m},{},1)).join('')}</ol><ul class="fitlog" id="fitlog"></ul></div></div></div></div>`}
 const DEF=SIT.slice(0,MAX).map(s=>s.id);
 const by=id=>SIT.find(s=>s.id===id);
 function tileOn(s,f,pos){
@@ -169,15 +176,13 @@ function frame(f,k){
  <div class="stage"><div class="dlg" role="dialog" aria-labelledby="t${k}"><h2 id="t${k}">Choose situations</h2>
  <div class="body">
  <span class="langchip chg upd">${ic('lang',18)}<span>${LANG[S.lang]}</span></span>
- <p class="help chg upd">Tap a situation to move it between the two lists. Up to ${MAX} are shown on Today.</p>
  <section class="sec chg" aria-labelledby="o${k}">
   <div class="sh"><h3 id="o${k}">On Today</h3><span class="count ${full?'full':''}" aria-live="polite">${on.length} of ${MAX}</span></div>
-  <p class="hint">${ic('drag')}Hold and drag to reorder</p>
+  <p class="hint">${ic('drag')}Drag to order</p>
   <ol class="grid">${on.map((id,i)=>tileOn(by(id),f,i+1)).join('')}${slots}</ol>
  </section>
  <section class="sec chg" aria-labelledby="m${k}">
   <div class="sh"><h3 id="m${k}">More situations</h3></div>
-  ${full?`<p class="hint">${ic('info')}Remove one to add another</p>`:'<p class="hint">Tap to add to Today</p>'}
   <ul class="grid">${off.map(s=>tileOff(s,full)).join('')}</ul>
  </section></div>
  <div class="acts"><button class="btn reset" data-act="reset">Reset to defaults</button><button class="btn" data-act="cancel">Cancel</button><button class="btn fill" ${on.length?'':'disabled'}>Done</button></div>
@@ -188,9 +193,25 @@ function build(){
  document.documentElement.dataset.theme=S.theme;
  root.style.cssText=Object.entries(p).map(([k,v])=>`--${k}:${v}`).join(';');
  root.className='frames'+(S.hl==='1'?' hl-on':'');
- root.innerHTML=F.map(frame).join('');
+ root.innerHTML=F.map(frame).join('')+stress();fitAll();
  document.querySelectorAll('.seg').forEach(s=>s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',S[s.dataset.k]==b.dataset.v)));
 }
+/* Fit order (see the .md): 1 wrap at spaces (up to 3 lines), 2 letter-spacing down to -0.02em, 3 font size down by at most 2 sp (x1.4), never break a word. */
+const BASE=14*1.4,MIN=12*1.4;
+function fits(el){return el.scrollWidth<=el.clientWidth+0.5&&el.scrollHeight<=el.clientHeight+0.5}
+function fitAll(){
+ const log=[];
+ document.querySelectorAll('.tile .lb').forEach(el=>{
+  el.style.fontSize=BASE+'px';el.style.letterSpacing='0';let step='wrap only';
+  if(!fits(el)){el.style.letterSpacing='-0.02em';step='tightened -0.02em';
+   let fs=BASE;while(!fits(el)&&fs>MIN){fs=Math.max(MIN,fs-0.5);el.style.fontSize=fs+'px';step='tightened, shrunk to '+(fs/1.4).toFixed(1)+' sp'}
+   if(!fits(el))step+=' (STILL CLIPS)'}
+  el.dataset.fit=step;
+ });
+ const ul=document.getElementById('fitlog');
+ if(ul)ul.innerHTML=[...ul.closest('.dlg').querySelectorAll('.tile .lb')].map(e=>`<li><b>${e.textContent}</b>: ${e.dataset.fit}</li>`).join('');
+}
+document.fonts&&document.fonts.ready.then(fitAll);
 document.addEventListener('click',e=>{
  const seg=e.target.closest('.seg button');
  if(seg){S[seg.parentNode.dataset.k]=seg.dataset.v;build();return}

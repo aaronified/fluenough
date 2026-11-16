@@ -5,6 +5,7 @@ Companion to `situations-picker.html` (#1145). It redesigns the "Choose situatio
 ## Screens
 Three states side by side, real Telugu labels (Taxi, Shopping, Eating out, Doctor and pharmacy, Greetings and apologies, Emergencies, Traffic stop, Rail station, Post and bank, Hotel):
 - a. 4 of 6: two dashed empty slots, every other tile can be added.
+- d. A stress row (not a dialog state): the longest labels at 1.4x, proving the fit rule below.
 - b. 6 of 6: the counter turns solid, the rest are disabled with "Remove one to add another".
 - c. 5 of 6 with a tile lifted mid-drag over a drop place.
 
@@ -13,11 +14,17 @@ Three states side by side, real Telugu labels (Taxi, Shopping, Eating out, Docto
 |---|---|
 | No visual separation of selected and unselected | Two sections in the one dialog. "On Today" tiles are filled in their own colours with an x. "More situations" tiles are muted: neutral surface, thin outline, coloured icon only, a small + corner. |
 | Only 6 show on Today, yet everyone can be numbered | At most 6 can be selected. The counter ("4 of 6") sits in the section header, empty slots are dashed outlines, and at 6 the unselected tiles are disabled with one line of help. No tile is ever "selected but not shown". |
-| Why numbers exist is unclear | The per-tile numbers are dropped. Position is the order, and the grid reads left to right, top to bottom. "Hold and drag to reorder" appears only under "On Today", with a drag icon. |
+| Why numbers exist is unclear | The per-tile numbers are dropped. Position is the order, and the grid reads left to right, top to bottom. The one instruction text is "Drag to order", with a drag icon, only under "On Today". |
 
-Buttons are unchanged: Reset to defaults, Cancel, Done. The help line becomes "Tap a situation to move it between the two lists. Up to 6 are shown on Today." (the hold-and-drag sentence moved into the section). The language chip names which language's situations are being edited (they are per language).
+Buttons are unchanged: Reset to defaults, Cancel, Done. The help paragraph is removed (owner): the sections, the counter, the x and + marks and the disabled tiles are self-evident, so there is no "Remove one to add another" or "Tap to add" line either. The language chip names which language's situations are being edited (they are per language).
 
-Tiles are text at 12 sp x 1.4 (down from labelLarge 14), because "Emergencies" does not fit a 3-column tile at 14 sp x 1.4 without breaking mid-word. Longer labels clamp to two lines with an ellipsis, as today.
+## Tile label fit rule (owner)
+Labels stay at the app's real size, 14 sp x 1.4. Fit order, each step only if the label does not yet fit its tile, and a word is never broken mid-word:
+1. Wrap at word boundaries (up to 3 lines, then an ellipsis).
+2. If a single word is still wider than the tile (Emergencies, or a Telugu, Hindi or Bengali word), tighten letter-spacing, down to -0.02em and no further.
+3. Then shrink the font, by at most 2 sp: 14 sp down to 12 sp at minimum (19.6 px down to 16.8 px at 1.4x), in 0.5 px steps.
+
+The stress row (d) shows it: Doctor and pharmacy, Greetings and apologies and the Hindi and Bengali labels only wrap; Emergencies needs steps 2 and 3 and lands on 12.0 sp; the Telugu label lands on 13.3 sp. The page prints the step taken under the row.
 
 ## Contrast self-check (WCAG 2.1)
 
@@ -42,14 +49,15 @@ No cue is colour alone: filled against outlined, the x against the +, the words 
 ## Implementation notes
 - Change only `situations_editor.dart` (`_SituationsEditorState.build`, `_tile`, `_TileFace`). No new data model: the stored value is still the ordered list of ids per language (`setSituationsShown`), and "chosen" is now capped at `situationsOnCard` (6). Anything stored with more than 6 is cut to the first 6 when the dialog opens.
 - Two grids instead of one `Wrap`: an `ol`-like grid of chosen tiles (drag and drop as now, `LongPressDraggable` and `DragTarget`) with `situationsOnCard - chosen.length` dashed placeholders, then a grid of the rest. `_toggle` refuses to add at 6. Disabled tiles use `onTap: null` and keep the semantics label.
+- Fit helper: a small `FittedLabel` widget used by `_TileFace` (no dependency). Layout: a `LayoutBuilder` gives the tile's text width; a `TextPainter` fit loop (maxLines 3) tries 14 sp at letter-spacing 0, then -0.02em (`letterSpacing: -0.02 * size`), then sizes down in 0.5 sp steps to 12 sp, and uses the first that does not overflow (`didExceedMaxLines` is false and the longest unbreakable word, measured with `TextPainter(text: word)`, is at most the width). Measure with the already text-scaled style (`MediaQuery.textScalerOf`), and set `softWrap: true` only so the break is at spaces; Flutter does not break inside a word unless it overflows the line, so the word-width test is what prevents it. A `FittedBox(fit: BoxFit.scaleDown)` per word is the fallback if the loop is judged too heavy, but it shrinks below 12 sp, so the loop is preferred.
 - `_TileFace` loses `position` (and the number); it gains an `x` badge (on) or a `+` badge (off) and a muted variant: `scheme.surface` fill, `outlineVariant` border, icon in the situation colour.
 - The muted icon colour is the tile's colour from the opposite brightness (deep in light, pale in dark). A small helper next to `situationColor` would do it, or use `onContainer` if the owner prefers a plain icon.
-- Strings: new `situationsEditOnToday` ("On Today"), `situationsEditCount` ("{count} of {max}"), `situationsEditMore` ("More situations"), `situationsEditFull` ("Remove one to add another"), `situationsEditReorder` ("Hold and drag to reorder"), `situationsEditAddHint` ("Tap to add to Today"); the help string is reworded; `situationsEditShown` loses "number {position}" (keeps the place in the section for screen readers) and the earlier/later custom actions stay.
+- Strings: new `situationsEditOnToday` ("On Today"), `situationsEditCount` ("{count} of {max}"), `situationsEditMore` ("More situations"), `situationsEditReorder` ("Drag to order"); `situationsEditHelp` is deleted; the disabled tiles keep a screen-reader label that says to remove one first; `situationsEditShown` loses "number {position}" (keeps the place in the section for screen readers) and the earlier/later custom actions stay.
 - The counter is a polite live region; the Done button stays disabled with 0 chosen.
 
 ## Open questions for the owner
 1. Keep drag to reorder, or drop it and keep only the earlier/later actions (simpler, fewer gestures)?
 2. Tap only to remove, or a separate x target (the tweak shows both; the tile is the tap target either way)?
-3. At 6 of 6, should a tap on a disabled tile shake and flash the hint instead of doing nothing?
+3. At 6 of 6 a disabled tile now has no visible explanation, only the dimmed look (screen readers are told). Is that enough, or should a tap shake the counter?
 4. Muted icon colour: opposite-scheme colour (shown) or the plain `onContainer`?
 5. Stored lists longer than 6 are cut on open: acceptable?
