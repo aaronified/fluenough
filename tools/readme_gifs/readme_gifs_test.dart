@@ -1,6 +1,12 @@
-// Captures the frames of the README's screenshots: a slow scroll through
-// four screens of the real app, on a Bengali learner a few weeks in.
-// tools/make_gif.py turns the frames into docs/screenshots/*.gif.
+// Captures the README's screenshots, on a Bengali learner a few weeks in:
+//
+// - a slow scroll through four screens of the real app, as frames that
+//   tools/make_gif.py turns into docs/screenshots/*.gif;
+// - Home, Decks and Progress as one still each, at a 360 x 780 phone and
+//   three pixels to the dip, which tools/phone_frame.py puts in a phone;
+// - a learning session, a real lesson driven through the drill screens
+//   (the word shown, then questions of different types, until the learn rule
+//   says "Learned"), as frames for `make_gif.py --phone`.
 //
 // A tool run by hand, not a test: it lives outside test/, so CI's
 // `flutter test` never reaches it, and is skipped unless README_GIFS=1. It needs real fonts
@@ -22,10 +28,23 @@ import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/routes.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/shell_tab.dart';
+import 'package:fluenough/app/session.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/review/deck_review.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
+import 'package:fluenough/core/scheduling/session_queue.dart' show Ask;
+import 'package:fluenough/features/drill/choice_drill.dart';
+import 'package:fluenough/features/drill/drill_session.dart';
+import 'package:fluenough/features/drill/match_drill.dart';
+import 'package:fluenough/features/drill/picture_choice_drill.dart';
+import 'package:fluenough/features/drill/rearrange_drill.dart';
+import 'package:fluenough/features/drill/recognition_drill.dart';
+import 'package:fluenough/features/drill/teach_drill.dart';
+import 'package:fluenough/features/drill/typed_drill.dart';
+import 'package:fluenough/features/script/script_guide_page.dart';
+import 'package:fluenough/features/drill/choice_tile.dart';
+import 'package:fluenough/core/grading/self_grade.dart';
 
 final Map<String, String> _env = Platform.environment;
 
@@ -205,15 +224,28 @@ Future<void> _frame(
   WidgetTester tester,
   GlobalKey boundary,
   String name,
-  int index,
+  int index, {
+  double pixelRatio = 2,
+}) => _write(
+  tester,
+  boundary,
+  '$_out/$name/frame_${'$index'.padLeft(3, '0')}.png',
+  pixelRatio,
+);
+
+Future<void> _write(
+  WidgetTester tester,
+  GlobalKey boundary,
+  String path,
+  double pixelRatio,
 ) async {
   await tester.runAsync(() async {
     final render =
         boundary.currentContext!.findRenderObject()! as RenderRepaintBoundary;
-    final image = await render.toImage(pixelRatio: 2);
+    final image = await render.toImage(pixelRatio: pixelRatio);
     final bytes = await image.toByteData(format: ui.ImageByteFormat.png);
     image.dispose();
-    final file = File('$_out/$name/frame_${'$index'.padLeft(3, '0')}.png');
+    final file = File(path);
     file.parent.createSync(recursive: true);
     file.writeAsBytesSync(bytes!.buffer.asUint8List());
   });
@@ -272,6 +304,181 @@ Future<void> _settle(WidgetTester tester) async {
   for (var i = 0; i < 30; i++) {
     await tester.pump(const Duration(milliseconds: 100));
   }
+}
+
+/// The drill screen's session, whichever kind of question is up.
+DrillSession? _session(WidgetTester tester) {
+  for (final widget in tester.allWidgets) {
+    if (widget is TeachDrill) return widget.session;
+    if (widget is ChoiceDrill) return widget.session;
+    if (widget is PictureChoiceDrill) return widget.session;
+    if (widget is RearrangeDrill) return widget.session;
+    if (widget is MatchDrill) return widget.session;
+    if (widget is TypedDrill) return widget.session;
+    if (widget is RecognitionDrill) return widget.session;
+  }
+  return null;
+}
+
+/// Brings a phone of [size] dips at [dpr] pixels to the dip up on [state]'s
+/// app, and returns the boundary to capture.
+Future<GlobalKey> _boot(
+  WidgetTester tester,
+  AppState state, {
+  required Size size,
+  required double dpr,
+}) async {
+  WidgetsApp.debugAllowBannerOverride = false;
+  addTearDown(() => WidgetsApp.debugAllowBannerOverride = true);
+  debugDisableShadows = false;
+  addTearDown(() => debugDisableShadows = true);
+  tester.view
+    ..physicalSize = size * dpr
+    ..devicePixelRatio = dpr;
+  addTearDown(tester.view.reset);
+  final boundary = GlobalKey();
+  await tester.pumpWidget(
+    RepaintBoundary(
+      key: boundary,
+      child: FluenoughApp(state: state),
+    ),
+  );
+  await _settle(tester);
+  return boundary;
+}
+
+/// Captures one still, `<out>/static/<name>.png`, at 360 x 780 dips and 3
+/// pixels to the dip.
+Future<void> _still(
+  WidgetTester tester,
+  GlobalKey boundary,
+  String name,
+) => _write(tester, boundary, '$_out/static/$name.png', 3);
+
+/// The frames of the learning session, in order, held as long as a reader
+/// needs: a frame every 100 ms of the app's own time.
+class _Reel {
+  _Reel(this.tester, this.boundary);
+
+  final WidgetTester tester;
+  final GlobalKey boundary;
+  int count = 0;
+
+  Future<void> hold(int frames) async {
+    for (var i = 0; i < frames; i++) {
+      await tester.pump(const Duration(milliseconds: 100));
+      await _frame(tester, boundary, 'learning-session', count++);
+    }
+  }
+}
+
+/// A lesson of new words, played as a learner who knows them: each card
+/// shown, then asked twice in two types, and "Learned" when the second is
+/// right. Stops once "Learned" has shown and at least three kinds of
+/// question have been asked, or after [maxFrames].
+Future<void> _learningSession(
+  WidgetTester tester,
+  AppState state,
+  GlobalKey boundary,
+) async {
+  final dir = Directory('$_out/learning-session');
+  if (dir.existsSync()) dir.deleteSync(recursive: true);
+  final reel = _Reel(tester, boundary);
+  const maxFrames = 96;
+  state.settings.markScriptGuideSeen('bn');
+  state.shellTab.value = ShellTab.today;
+  await _settle(tester);
+  await reel.hold(5);
+  tester
+      .state<NavigatorState>(find.byType(Navigator).first)
+      .pushNamed(
+        AppRoutes.drill,
+        arguments: DrillRequest.lesson(language: 'bn'),
+      );
+  await _settle(tester);
+  // A script guide first, if the lesson meets one.
+  if (find.byType(ScriptGuideView).evaluate().isNotEmpty) {
+    await tester.tap(find.byType(FilledButton).first);
+    await _settle(tester);
+  }
+  final types = <Ask>{};
+  var learned = false;
+  for (var step = 0; step < 24 && reel.count < maxFrames; step++) {
+    final session = _session(tester);
+    if (session == null) break;
+    final ask = session.ask;
+    final shows = ask == Ask.teach || ask == Ask.teachRule;
+    // ignore: avoid_print
+    print('learning step $step: ${ask.name} ${session.item.card.target}');
+    if (shows) {
+      await reel.hold(7);
+      session.learnt();
+      await tester.pump(const Duration(milliseconds: 400));
+      continue;
+    }
+    types.add(ask);
+    await reel.hold(3);
+    if (ask.chooses && find.byType(ChoiceTile).evaluate().isNotEmpty) {
+      final options = session.options;
+      final right = options.indexWhere(session.isRight);
+      await tester.tap(
+        find.byType(ChoiceTile).at(right),
+        warnIfMissed: false,
+      );
+      await tester.pump();
+    } else if (ask.chooses) {
+      session.pick(session.options.firstWhere(session.isRight));
+    } else if (ask == Ask.rearrange) {
+      final tiles = session.tiles;
+      final used = <int>{};
+      for (final word in session.answerWords) {
+        final i = <int>[
+          for (var k = 0; k < tiles.length; k++)
+            if (!used.contains(k) && tiles[k] == word) k,
+        ].first;
+        used.add(i);
+        session.place(i);
+        await reel.hold(2);
+      }
+      session.checkOrder();
+    } else if (ask == Ask.matchPairs) {
+      for (final target in session.matchTargets) {
+        final meaning = session.matchMeanings.firstWhere(
+          (m) => m.card.id == target.card.id,
+        );
+        session.match(target, meaning);
+        await reel.hold(2);
+      }
+    } else if (session.item.mode == DrillMode.recognition) {
+      session.reveal();
+      await reel.hold(3);
+      session.rate(SelfGrade.good);
+    } else {
+      // Typed: the answer typed in, then checked.
+      final field = find.byKey(const ValueKey<String>('answer'));
+      final answer = session.acceptedAnswers.first;
+      if (field.evaluate().isNotEmpty) {
+        await tester.enterText(
+          find.descendant(of: field, matching: find.byType(EditableText)),
+          answer,
+        );
+        await reel.hold(4);
+      }
+      session.check(answer);
+    }
+    await reel.hold(2);
+    if (find.text('Learned').evaluate().isNotEmpty) learned = true;
+    await reel.hold(4);
+    if (learned && types.length >= 3) break;
+    session.next();
+    await tester.pump(const Duration(milliseconds: 400));
+  }
+  await reel.hold(6);
+  // ignore: avoid_print
+  print(
+    'learning-session: ${reel.count} frames, types ${types.map((a) => a.name)}, '
+    'learned: $learned',
+  );
 }
 
 void main() {
@@ -338,6 +545,40 @@ void main() {
     await _settle(tester);
     // The checked cards, the suggestion and more besides, not all 30.
     await _scrollCapture(tester, boundary, 'review', distance: 2600, steps: 48);
+    debugDisableShadows = true;
+  }, skip: skip);
+
+  testWidgets('README stills: Home, Decks, Progress', (tester) async {
+    await tester.runAsync(_loadFonts);
+    final state = (await tester.runAsync(_bengaliLearner))!;
+    final boundary = await _boot(
+      tester,
+      state,
+      size: const Size(360, 780),
+      dpr: 3,
+    );
+    state.shellTab.value = ShellTab.today;
+    await _settle(tester);
+    await _still(tester, boundary, 'home');
+    state.shellTab.value = ShellTab.decks;
+    await _settle(tester);
+    await _still(tester, boundary, 'decks');
+    state.shellTab.value = ShellTab.progress;
+    await _settle(tester);
+    await _still(tester, boundary, 'progress');
+    debugDisableShadows = true;
+  }, skip: skip);
+
+  testWidgets('README learning session', (tester) async {
+    await tester.runAsync(_loadFonts);
+    final state = (await tester.runAsync(_bengaliLearner))!;
+    final boundary = await _boot(
+      tester,
+      state,
+      size: const Size(360, 780),
+      dpr: 2,
+    );
+    await _learningSession(tester, state, boundary);
     debugDisableShadows = true;
   }, skip: skip);
 }

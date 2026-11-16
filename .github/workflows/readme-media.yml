@@ -1,0 +1,101 @@
+name: README media
+
+# Remakes the README's screenshots in docs/screenshots/ by running the real
+# app in a widget test on a Bengali learner (tools/readme_gifs/), then commits
+# them back to the ref it ran on. By hand only: nothing in the app changes
+# when it runs, and the tool needs real fonts a normal test run does not have
+# (owner, 2026-11-16: "Update the screenshots"). The steps are the ones in
+# tools/README.md and wiki/Deck-Tools.md, "readme_fonts.py and make_gif.py".
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: "Branch to remake the media on and commit to (default: the branch this is run on)"
+        required: false
+        default: ""
+
+concurrency:
+  group: readme-media-${{ inputs.ref || github.ref_name }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+env:
+  FLUTTER_VERSION: "3.47.6"
+  # Noto Sans Bengali, static files, from the official Noto repository (OFL-1.1).
+  NOTO_URL: https://raw.githubusercontent.com/notofonts/notofonts.github.io/main/fonts/NotoSansBengali/hinted/ttf
+
+jobs:
+  media:
+    name: Regenerate README media
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.ref || github.ref_name }}
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install pillow fonttools
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      # As CI's app jobs do: android/ is generated, drift's code is gitignored.
+      - run: flutter create . --org app --project-name fluenough --platforms=android
+      - run: rm -f test/widget_test.dart
+      - run: flutter pub get
+      - run: dart run build_runner build
+
+      - name: Make the fonts (Roboto merged with Noto Sans Bengali)
+        run: |
+          set -e
+          mkdir -p build/noto-bengali
+          for w in Light Regular Medium SemiBold Bold Black; do
+            curl -fsSL -o "build/noto-bengali/NotoSansBengali-$w.ttf" \
+              "$NOTO_URL/NotoSansBengali-$w.ttf"
+          done
+          python3 tools/readme_fonts.py build/noto-bengali build/readme_fonts
+
+      - name: Capture the frames and stills
+        run: |
+          README_GIFS=1 README_GIFS_FONTS="$PWD/build/readme_fonts" \
+            flutter test tools/readme_gifs/readme_gifs_test.dart
+
+      - name: Make the GIFs and the phone-framed stills
+        run: |
+          set -e
+          for g in deck-path today progress review; do
+            python3 tools/make_gif.py build/readme_gifs/$g docs/screenshots/$g.gif
+          done
+          python3 tools/make_gif.py --phone build/readme_gifs/learning-session \
+            docs/screenshots/learning-session.gif
+          for s in home decks progress; do
+            python3 tools/phone_frame.py build/readme_gifs/static/$s.png \
+              docs/screenshots/$s.png
+          done
+
+      - name: Keep the raw frames
+        uses: actions/upload-artifact@v7
+        with:
+          name: readme-media-frames
+          path: build/readme_gifs
+          retention-days: 7
+
+      - name: Commit the media
+        run: |
+          set -e
+          git add docs/screenshots
+          if git diff --cached --quiet; then
+            echo "No change to the README media."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Regenerate README media"
+          git push origin "HEAD:${{ inputs.ref || github.ref_name }}"

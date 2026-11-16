@@ -8,7 +8,9 @@ them, played in name order. Every frame is scaled to --width and mapped to
 one palette taken from a sample of them all, without dithering: an app's
 flat colours compress far better undithered, and one palette keeps colours
 from flickering between frames. Runs of identical frames become one longer
-frame. If the GIF comes out over --max-bytes, it is made again narrower
+frame. With --phone each frame is first put inside a phone silhouette
+(tools/phone_frame.py) and the space around it is transparent. If the GIF
+comes out over --max-bytes, it is made again narrower
 (to 300 px), then with fewer colours (to 64), then narrower again (to
 240 px), until it fits or cannot shrink further.
 
@@ -22,24 +24,58 @@ import io
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).parent))
+
+
+def phone_rim() -> tuple[int, int, int, int]:
+    import phone_frame
+
+    return phone_frame.RIM
+
+
+# Slower than it first was (owner, 2026-11-16: "the gifs should be a bit
+# slower"): 11 frames a second, then 7.
+DEFAULT_FPS = 7
+
 
 def frame_paths(directory: Path) -> list[Path]:
     """The frames in [directory], in play order."""
     return sorted(directory.glob("frame_*.png"))
 
 
-def encode(frames, width: int, colors: int, fps: float) -> bytes:
+# The palette index kept for transparency, with --phone.
+TRANSPARENT = 255
+
+
+def encode(
+    frames, width: int, colors: int, fps: float, *, phone: bool = False
+) -> bytes:
     """[frames], scaled to [width] and mapped to one palette of [colors],
-    as a GIF that loops forever at [fps]."""
+    as a GIF that loops forever at [fps]. With [phone], each frame is first
+    framed as a phone, the space around it transparent."""
     from PIL import Image
 
     scaled = []
+    masks = []
     for frame in frames:
-        rgb = frame.convert("RGB")
-        if rgb.width != width:
-            height = round(rgb.height * width / rgb.width)
-            rgb = rgb.resize((width, height), Image.Resampling.LANCZOS)
-        scaled.append(rgb)
+        if phone:
+            import phone_frame
+
+            rgba = phone_frame.frame_phone(frame)
+        else:
+            rgba = frame.convert("RGBA")
+        if rgba.width != width:
+            height = round(rgba.height * width / rgba.width)
+            rgba = rgba.resize((width, height), Image.Resampling.LANCZOS)
+        if phone:
+            # A GIF's transparency is all or nothing: the half-covered
+            # edge pixels are drawn on the phone's own rim colour instead.
+            alpha = rgba.getchannel("A")
+            masks.append(alpha.point(lambda a: 255 if a < 128 else 0))
+            solid = Image.new("RGBA", rgba.size, phone_rim())
+            solid.paste(rgba, mask=alpha.point(lambda a: 255 if a >= 128 else 0))
+            rgba = solid
+        scaled.append(rgba.convert("RGB"))
     # One palette from a sample of the frames, stacked.
     sample = scaled[:: max(1, len(scaled) // 12)]
     sheet = Image.new("RGB", (width, sum(f.height for f in sample)))
@@ -47,10 +83,17 @@ def encode(frames, width: int, colors: int, fps: float) -> bytes:
     for f in sample:
         sheet.paste(f, (0, y))
         y += f.height
-    palette = sheet.quantize(colors=colors, method=Image.Quantize.MEDIANCUT)
+    palette = sheet.quantize(
+        colors=colors - 1 if phone else colors, method=Image.Quantize.MEDIANCUT
+    )
     mapped = [
         f.quantize(palette=palette, dither=Image.Dither.NONE) for f in scaled
     ]
+    extra = {}
+    if phone:
+        for image, mask in zip(mapped, masks):
+            image.paste(TRANSPARENT, mask=mask)
+        extra = {"transparency": TRANSPARENT}
     out = io.BytesIO()
     mapped[0].save(
         out,
@@ -59,8 +102,9 @@ def encode(frames, width: int, colors: int, fps: float) -> bytes:
         append_images=mapped[1:],
         duration=round(1000 / fps),
         loop=0,
-        optimize=True,
-        disposal=1,
+        optimize=False if phone else True,
+        disposal=2 if phone else 1,
+        **extra,
     )
     return out.getvalue()
 
@@ -69,7 +113,8 @@ def make_gif(
     frames_dir: Path,
     out: Path,
     *,
-    fps: float = 11,
+    fps: float = DEFAULT_FPS,
+    phone: bool = False,
     width: int = 360,
     colors: int = 128,
     max_bytes: int = 1_500_000,
@@ -83,7 +128,7 @@ def make_gif(
         raise SystemExit(f"no frame_*.png in {frames_dir}")
     frames = [Image.open(p) for p in paths]
     while True:
-        data = encode(frames, width, colors, fps)
+        data = encode(frames, width, colors, fps, phone=phone)
         if len(data) <= max_bytes:
             break
         # Narrower first, as far as a README shows it crisply, then fewer
@@ -105,7 +150,10 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("frames", type=Path, help="directory of frame_NNN.png")
     parser.add_argument("out", type=Path, help="the GIF to write")
-    parser.add_argument("--fps", type=float, default=11)
+    parser.add_argument("--fps", type=float, default=DEFAULT_FPS)
+    parser.add_argument(
+        "--phone", action="store_true", help="frame each frame as a phone"
+    )
     parser.add_argument("--width", type=int, default=360)
     parser.add_argument("--colors", type=int, default=128)
     parser.add_argument("--max-bytes", type=int, default=1_500_000)
@@ -114,6 +162,7 @@ def main(argv: list[str] | None = None) -> int:
         args.frames,
         args.out,
         fps=args.fps,
+        phone=args.phone,
         width=args.width,
         colors=args.colors,
         max_bytes=args.max_bytes,

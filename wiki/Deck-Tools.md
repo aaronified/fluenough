@@ -577,23 +577,40 @@ python3 tools/check_release_version.py v0.3.4 pubspec.yaml
 Exit status is 0 when they match, 1 when they differ or `pubspec.yaml` has no
 `version:` line, and 2 if the arguments are wrong or the file cannot be read.
 
-## `readme_fonts.py` and `make_gif.py`
+## `readme_fonts.py`, `make_gif.py` and `phone_frame.py`
 
-Remake the README's screenshots, `docs/screenshots/*.gif`: a slow scroll
-through four screens of a Bengali learner's phone. A tool run by hand when
-the screens change (owner, 2026-10-20), not deck tools, and not run by CI:
-it lives in `tools/readme_gifs/`, outside `test/`, so `flutter test` never
-reaches it. `readme_fonts.py` needs fontTools and `make_gif.py` Pillow
-(`pip install fonttools pillow`), with the Flutter SDK on `PATH`.
+Remake the README's screenshots in `docs/screenshots/` (owner, 2026-11-16):
+
+- `home.png`, `decks.png` and `progress.png`: Home (the Today tab), Decks and
+  Progress as stills, drawn at 360 x 780 dips and three pixels to the dip,
+  each put inside a phone silhouette by `phone_frame.py` (a light silver
+  bezel with a darker rim, a camera dot and side buttons, transparent outside,
+  so it suits the light and the dark README), under 400 KB;
+- `learning-session.gif`: a real lesson driven through the drill screens,
+  about ten seconds: the word shown, then questions of different types
+  (choose the meaning, choose the word, put in order, type it), and
+  "Learned" once the learn rule is met, phone-framed (`make_gif.py --phone`),
+  under 1.5 MB;
+- `deck-path.gif`, `today.gif`, `progress.gif` and `review.gif`: the slow
+  scrolls through four screens, now at 7 frames a second (they were 11:
+  owner, 2026-11-16, "a bit slower").
+
+A tool run when the screens change (owner, 2026-10-20), not deck tools, and
+not run by the tests: the capture lives in `tools/readme_gifs/`, outside
+`test/`, so `flutter test` never reaches it. `readme_fonts.py` needs fontTools,
+`make_gif.py` and `phone_frame.py` Pillow (`pip install fonttools pillow`),
+with the Flutter SDK on `PATH`.
 
 A widget test draws text in boxes and turns font fallback off, so
 `readme_fonts.py` first merges the SDK's Roboto with static Noto Sans Bengali
 files (`NotoSansBengali-Regular.ttf`, `-SemiBold.ttf` and so on, from
-[notofonts/bengali](https://github.com/notofonts/bengali), OFL-1.1). Then
-`tools/readme_gifs/readme_gifs_test.dart`, skipped unless `README_GIFS=1`, writes
-each screen's frames as PNGs, and `make_gif.py` turns each directory of
-frames into a looping GIF at 11 frames a second, one palette, under 1.5 MB
-(it narrows the GIF, then cuts colours, until it fits).
+[notofonts](https://github.com/notofonts/notofonts.github.io/tree/main/fonts/NotoSansBengali/hinted/ttf),
+OFL-1.1). Then `tools/readme_gifs/readme_gifs_test.dart`, skipped unless `README_GIFS=1`, writes
+each screen's frames, the three stills and the learning session's frames as
+PNGs under `build/readme_gifs/`, `make_gif.py` turns each directory of frames
+into a looping GIF at 7 frames a second, one palette, under 1.5 MB (it
+narrows the GIF, then cuts colours, until it fits), and `phone_frame.py`
+frames a still.
 
 ```sh
 python3 tools/readme_fonts.py path/to/noto-bengali build/readme_fonts
@@ -602,10 +619,31 @@ README_GIFS=1 README_GIFS_FONTS=build/readme_fonts \
 for g in deck-path today progress review; do
   python3 tools/make_gif.py build/readme_gifs/$g docs/screenshots/$g.gif
 done
+python3 tools/make_gif.py --phone build/readme_gifs/learning-session \
+  docs/screenshots/learning-session.gif
+for s in home decks progress; do
+  python3 tools/phone_frame.py build/readme_gifs/static/$s.png docs/screenshots/$s.png
+done
 ```
 
 The frames go to `build/readme_gifs/` (`README_GIFS_OUT` changes that). The
 learner, their three and a half weeks of reviews, and the clock are fixed, so
-a rerun changes a GIF only when the app's screens change.
+a rerun changes an image only when the app's screens change.
+
+### The README media workflow
+
+Without a Flutter SDK at hand, run the **README media** workflow
+(`.github/workflows/readme-media.yml`) from the Actions tab: it is by hand
+only (`workflow_dispatch`), with one input, `ref`, the branch to remake the
+media on (default: the branch it is run on). It checks out, sets up Flutter at
+the version CI uses, downloads Noto Sans Bengali from the official Noto
+repository and merges it with the SDK's Roboto (`readme_fonts.py`), runs the
+capture test with `README_GIFS=1`, runs `make_gif.py` and `phone_frame.py`
+as above, keeps the raw frames as a run artifact for seven days, and commits
+the changed files of `docs/screenshots/` to the same ref with the message
+`Regenerate README media` (nothing is committed when no image changed). It
+needs `contents: write`; a push made with the workflow's own token does not
+start CI, so run the checks by pushing another commit when the branch needs
+them.
 
 See also: [Deck-Building-Guide](Deck-Building-Guide) · [Home](Home)
