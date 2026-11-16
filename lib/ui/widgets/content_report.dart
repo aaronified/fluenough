@@ -90,12 +90,6 @@ class _ContentReportSheetState extends State<ContentReportSheet> {
   ReportFailure? _failure;
 
   @override
-  void initState() {
-    super.initState();
-    _note.addListener(() => setState(() {}));
-  }
-
-  @override
   void dispose() {
     _note.dispose();
     super.dispose();
@@ -125,11 +119,12 @@ class _ContentReportSheetState extends State<ContentReportSheet> {
     });
   }
 
-  bool get _canSend {
+  /// Whether Send is live for a note reading [text]: a row is chosen, and
+  /// Something else has its note, which is where it says what is wrong.
+  bool _canSend(String text) {
     final category = _category;
     if (category == null || _sending) return false;
-    return category != ContentCategory.somethingElse ||
-        _note.text.trim().isNotEmpty;
+    return category != ContentCategory.somethingElse || text.trim().isNotEmpty;
   }
 
   Future<void> _send() async {
@@ -299,7 +294,9 @@ class _ContentReportSheetState extends State<ContentReportSheet> {
           maxLines: 1,
           textInputAction: TextInputAction.done,
           decoration: InputDecoration(
-            labelText: l10n.contentReportNote,
+            labelText: _category == ContentCategory.somethingElse
+                ? l10n.contentReportNoteRequired
+                : l10n.contentReportNote,
             isDense: true,
           ),
         ),
@@ -322,9 +319,12 @@ class _ContentReportSheetState extends State<ContentReportSheet> {
               child: Text(l10n.commonCancel),
             ),
             const SizedBox(width: 8),
-            FilledButton(
-              onPressed: _canSend ? _send : null,
-              child: Text(l10n.contentReportSend),
+            ValueListenableBuilder<TextEditingValue>(
+              valueListenable: _note,
+              builder: (context, value, _) => FilledButton(
+                onPressed: _canSend(value.text) ? _send : null,
+                child: Text(l10n.contentReportSend),
+              ),
             ),
           ],
         ),
@@ -383,9 +383,10 @@ class _ReasonDialog extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             for (final reason in reasons)
-              RadioListTile<ContentReason>(
-                value: reason,
+              ListTile(
+                leading: Radio<ContentReason>(value: reason),
                 title: Text(reason.text(l10n)),
+                onTap: () => Navigator.of(context).pop(reason),
               ),
           ],
         ),

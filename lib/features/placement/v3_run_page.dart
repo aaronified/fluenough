@@ -185,7 +185,11 @@ class _V3RunPageState extends State<V3RunPage> {
               // The wave is the share of the five minutes and 40 questions
               // used.
               progress: _run.progress,
-              report: ContentTarget.card(question.id),
+              report: ContentTarget(
+                subject: ContentSubject.card,
+                id: question.id,
+                pair: languagePair(widget.language.code, widget.native.code),
+              ),
               child: V3QuestionView(
                 key: ValueKey<String>('${question.id}#${_run.answered}'),
                 question: question,

@@ -142,8 +142,8 @@ class _CountdownState extends State<_Countdown> {
 /// A drill's 64 px header, from the design: the close button, the progress
 /// wave, "3/8", whatever the page puts in the header (the sounds of the
 /// card's word, [DrillHeaderScope]) and the content report's bug icon. Every
-/// drill has it, through [DrillFrame]; the teach card, which fills the screen with
-/// no body to scroll, uses it on its own.
+/// drill has it, through [DrillFrame]; the teach card, which fills the screen
+/// with no body to scroll, uses it on its own.
 class DrillHeader extends StatelessWidget {
   const DrillHeader({
     super.key,

@@ -91,6 +91,18 @@ class ContentTarget {
     listsOptions: value,
   );
 
+  @override
+  bool operator ==(Object other) =>
+      other is ContentTarget &&
+      other.subject == subject &&
+      other.id == id &&
+      other.deckId == deckId &&
+      other.pair == pair &&
+      other.listsOptions == listsOptions;
+
+  @override
+  int get hashCode => Object.hash(subject, id, deckId, pair, listsOptions);
+
   /// What the report carries by itself, in order: the id, the deck, the
   /// language pair and the app's [version]. Never a screen, a screenshot
   /// or the device.

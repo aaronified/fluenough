@@ -1,6 +1,6 @@
 /// What a report is (ADR-0021): a question for support, a bug, feedback,
-/// which takes in feature requests, or a mistake in content. [label] starts its mail's subject,
-/// which the mail-to-issue Action reads.
+/// which takes in feature requests, or a mistake in content. [label] starts
+/// its mail's subject, which the mail-to-issue Action reads.
 enum ReportKind {
   support('Support', public: false),
   bug('Bug', public: true),

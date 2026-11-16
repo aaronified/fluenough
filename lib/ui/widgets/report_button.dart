@@ -48,9 +48,9 @@ class ReportButton extends StatelessWidget {
   /// a tab's name. The screen's route name is sent anyway.
   final String? detail;
 
-  /// A report from the screen [context] is on, saying it showed [detail].
-  /// For a button of a screen's own too, such as an unchecked deck's
-  /// "Report a mistake" or a card's Report on its sheet.
+  /// A general report from the screen [context] is on, saying it showed
+  /// [detail]: Settings > Support, the Settings menu and the error links.
+  /// Content mistakes go through `showContentReport` instead.
   static Future<void> open(BuildContext context, {String? detail}) async {
     final screen = ModalRoute.of(context)?.settings.name ?? '';
     final system = await AppInfo.system();
@@ -194,27 +194,4 @@ class _GitHubSheetState extends State<_GitHubSheet> {
       ),
     );
   }
-}
-
-/// A screen with no bar of its own, such as the summary: [child] with the
-/// bug icon at its top end, where the screen leaves room for it.
-class WithReportButton extends StatelessWidget {
-  const WithReportButton({super.key, required this.child, this.detail});
-
-  final Widget child;
-
-  /// As [ReportButton.detail].
-  final String? detail;
-
-  @override
-  Widget build(BuildContext context) => Stack(
-    children: <Widget>[
-      child,
-      PositionedDirectional(
-        top: 4,
-        end: 4,
-        child: ReportButton(detail: detail),
-      ),
-    ],
-  );
 }
