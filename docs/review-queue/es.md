@@ -29,3 +29,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | es-4055 | es-culture-2 | "La princesa está triste...": the text is the 1917 Madrid printing on Wikisource, dated to the 1896 Prosas profanas; does the text match the 1896 first edition? | Haiku builder | 2026-11-16 |
 | es-4058 | es-culture-2 | "¡Salve, fecunda zona...": the 1826 date is from the Spanish Wikipedia page, and the creator Andrés Bello is born before the siglo-xix era; is the era right? | Haiku builder | 2026-11-16 |
 | es-4057 | es-culture-2 | The creator Esteban Echeverría (born 1805) is in the siglo-xix era, which starts in 1808; is the era right? | Haiku builder | 2026-11-16 |
+| es-4014 | es-culture-1 | Is 1631 the right date for Vida retirada? The Spanish Wikipedia article says the poems stayed unprinted until 1631, when Quevedo printed them; the Wikisource page names no edition. | Haiku builder | 2026-11-16 |
