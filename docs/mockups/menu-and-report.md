@@ -95,13 +95,15 @@ Cues are never colour alone: checkmark against blank, the dividers, and the fill
 - The same rule for other screens (owner: "We will use this same rule to simplify the app's other screens too"): not designed here, see the questions.
 - Card ids stay permanent; the report carries them as they are.
 
-## Open questions for the owner
-1. **Sending.** Today a report is only handed to the mail app (or GitHub), so the app cannot know it was sent, and a mail app round trip is heavy for a one-tap flag. Duolingo's report is sent in the app. Do you want in-app sending (needs an endpoint or a GitHub token on a small relay, and a privacy line), or keep the mail hand-off with the "Your report is ready" confirmation?
-2. **Where the flag sits.** In the drill header where the bug was (shown), or beside the card itself, or on the answer panel after the answer, as Duolingo does?
-3. **Deck-level pages** (deck, unit, topic): keep the flag there, or only on a card and the word sheet? Without a card the reasons such as "The audio is wrong" are vaguer.
-4. **Reviewer screens**: remove as proposed, or keep the content report there too?
-5. **A general bug** now lives only in Settings > Support. Is that enough, or should the three-dot menu of Settings carry "Report a problem"?
-6. **Menu lines**: the switches' one-line explanations are lost in the menu (tooltips only). Acceptable, or should IPA and Adult content keep a page?
-7. **Other screens' rule.** Which screens get the same three-dot treatment next (Decks, Progress, Settings pages)?
-8. "Learn {language} from": language sheet (recommended), the menu, or the top of a language page?
-9. Does "Your languages menu" mean the Settings row (assumed here), and not the language bar's tap menu, which stays a language picker?
+## Resolved (owner, 2026-11-16)
+1. **Learn {language} from** lives inside each language's own sheet. The menu has no Learn row (the page default is that variant).
+2. **Reports** keep the mail hand-off for now, with no in-app endpoint. The confirmation shown by default is the mail-app wording ("Your report is ready. Your mail app has the report. Send it from there."). The "In the app" wording stays as a tweak for later.
+3. **The content flag** sits in the drill header, where the bug icon was.
+
+## Open questions for the owner (still open)
+1. **Deck-level pages** (deck, unit, topic): keep the flag there, or only on a card and the word sheet? Without a card the reasons such as "The audio is wrong" are vaguer.
+2. **Reviewer screens**: remove as proposed, or keep the content report there too?
+3. **A general bug** now lives only in Settings > Support. Is that enough, or should the three-dot menu of Settings carry "Report a problem"?
+4. **Menu lines**: the switches' one-line explanations are lost in the menu (tooltips only). Acceptable, or should IPA and Adult content keep a page?
+5. **Other screens' rule.** Which screens get the same three-dot treatment next (Decks, Progress, Settings pages)?
+6. Does "Your languages menu" mean the Settings row (assumed here), and not the language bar's tap menu, which stays a language picker?
