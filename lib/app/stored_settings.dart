@@ -6,17 +6,26 @@ import 'settings.dart';
 /// Keeps a profile's [settings] in its database (#15): restored when the app
 /// opens, and each change saved as it happens, in order.
 class StoredSettings {
-  StoredSettings._(this.settings, this._db) : _saved = _snapshot(settings) {
+  StoredSettings._(this.settings, this._db, Map<String, String> inDatabase)
+    : _saved = inDatabase {
     settings
       ..addListener(_save)
       ..todaySummaryChanges.addListener(_save);
   }
 
   /// The settings stored in [db], with the defaults for any not stored yet.
-  static Future<StoredSettings> open(AppDatabase db) async => StoredSettings._(
-    SettingsNotifier()..restore(await db.settingsDao.all()),
-    db,
-  );
+  /// What restoring changed (a store from an older version, migrated) is
+  /// saved at once, so that it is not migrated again on every launch.
+  static Future<StoredSettings> open(AppDatabase db) async {
+    final inDatabase = await db.settingsDao.all();
+    final stored = StoredSettings._(
+      SettingsNotifier()..restore(inDatabase),
+      db,
+      inDatabase,
+    );
+    stored._save();
+    return stored;
+  }
 
   final SettingsNotifier settings;
   final AppDatabase _db;

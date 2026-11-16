@@ -709,7 +709,6 @@ class _TopicPageState extends State<TopicPage> {
       final other = topics.byId(id);
       if (other == null) continue;
       final above = LevelGate.isAbove(other.topic.level, learner);
-      if (above && state.settings.hideAboveLevel) continue;
       rows.add(
         ResultRow(
           icon: Icons.sell_outlined,

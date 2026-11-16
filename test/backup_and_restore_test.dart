@@ -27,6 +27,7 @@ import 'package:fluenough/core/backup/zip_files.dart';
 import 'package:fluenough/core/data/database.dart';
 import 'package:fluenough/core/data/log_jsonl.dart';
 import 'package:fluenough/core/data/review_log.dart';
+import 'package:fluenough/core/decks/culture_options.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
 import 'package:fluenough/core/scheduling/replay.dart';
@@ -493,6 +494,28 @@ void main() {
             ..showIpa = !other.state.settings.showIpa;
           return (backup, other);
         }
+
+        test('an old backup with the global culture keys restores them for '
+            'the languages it has', () async {
+          final a = app();
+          final old = AppBackup(
+            appVersion: '0.5.0',
+            schemaVersion: 7,
+            createdAt: _now,
+            log: a.state.progress.exportJsonl(),
+            settings: const <String, String>{
+              'language_skills': '{"hi":{"speak":"learn"}}',
+              'culture_items': 'false',
+              'culture_counts': 'true',
+            },
+          );
+          await a.state.backups.restore(old, fromFile: true);
+          expect(
+            a.state.settings.cultureFor('hi'),
+            const CultureOptions(items: false, counts: true),
+          );
+          expect(a.state.settings.cultureFor('mr'), CultureOptions.defaults);
+        });
 
         test('a copy of what it replaced is kept first, and a file restored '
             'from is kept as it was read', () async {

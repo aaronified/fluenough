@@ -15,6 +15,7 @@ import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/backup/app_backup.dart';
 import 'package:fluenough/core/data/database.dart';
 import 'package:fluenough/core/data/log_jsonl.dart';
+import 'package:fluenough/core/decks/culture_options.dart';
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/models/reading.dart';
@@ -35,7 +36,7 @@ Future<AppState> _finished() async {
     reach: 'b1',
     progress: progress,
     settings: SettingsNotifier(spokenLanguages: const <String>['en'])
-      ..cultureItems = false,
+      ..setCultureFor('zz', const CultureOptions(items: false)),
   );
   for (final (deck, card) in const <(String, String)>[
     ('zz-en-words', 'zz-0001'),

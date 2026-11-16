@@ -91,15 +91,6 @@ class LanguagesMenu extends StatelessWidget {
         value: settings.adultContent,
         onChanged: (on) => _setAdult(context, settings, on),
       ),
-      _toggle(
-        key: 'languages-menu-hide-above',
-        title: l10n.settingsHideAbove,
-        line: settings.hideAboveLevel
-            ? l10n.settingsHideAboveOn
-            : l10n.settingsHideAboveOff,
-        value: settings.hideAboveLevel,
-        onChanged: (on) => settings.hideAboveLevel = on,
-      ),
       const Divider(height: 16),
       _Heading(l10n.languagesMenuOpen),
       _factLanguages(l10n, state),

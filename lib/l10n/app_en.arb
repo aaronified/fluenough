@@ -15517,24 +15517,6 @@
   "@searchTry": {
     "description": "Heading above suggested searches under the empty search state."
   },
-  "searchAboveHidden": "{count, plural, one{1 result above your level is hidden} other{{count} results above your level are hidden}}",
-  "@searchAboveHidden": {
-    "description": "Under the results while Hide what is above my level is on: how many results it left out.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "2"
-      }
-    }
-  },
-  "searchShowAbove": "Show them",
-  "@searchShowAbove": {
-    "description": "Button after the hidden-above-level line: turns Hide what is above my level off."
-  },
-  "searchHideAboveHint": "Setting: Hide what is above my level.",
-  "@searchHideAboveHint": {
-    "description": "Hint under the hidden-above-level line, naming the setting."
-  },
   "searchRecent": "Recent",
   "@searchRecent": {
     "description": "Heading above the searches the learner made recently, shown before typing."
@@ -15564,18 +15546,6 @@
         "example": "B1"
       }
     }
-  },
-  "settingsHideAbove": "Hide what is above my level",
-  "@settingsHideAbove": {
-    "description": "Switch in Settings: search and topics list what is above the learner's level marked, unless this is on."
-  },
-  "settingsHideAboveOn": "Search leaves out decks, topics and units above your level",
-  "@settingsHideAboveOn": {
-    "description": "Under Hide what is above my level, while it is on."
-  },
-  "settingsHideAboveOff": "Search lists them, marked with their level and locked",
-  "@settingsHideAboveOff": {
-    "description": "Under Hide what is above my level, while it is off."
   },
   "topicNotFound": "This topic is not available.",
   "@topicNotFound": {
@@ -15879,67 +15849,17 @@
       }
     }
   },
-  "settingsRowCulture": "Culture",
-  "@settingsRowCulture": {
-    "description": "Settings row: culture items woven through the course, their people and the recommended works."
+  "languagesCulture": "Culture",
+  "@languagesCulture": {
+    "description": "Switch in a language’s details: culture items (proverbs, songs, verse) in that language’s path, on Today and in reviews. Opens its options in place."
   },
-  "settingsSumCultureOn": "Items shown in the path and on Today",
-  "@settingsSumCultureOn": {
-    "description": "Line under the Culture row of Settings while culture items are on."
+  "languagesCultureOn": "Proverbs, songs and verse in the path, on Today and in reviews",
+  "@languagesCultureOn": {
+    "description": "Line under the Culture switch of a language’s details while it is on."
   },
-  "settingsSumCultureOff": "Culture items are off",
-  "@settingsSumCultureOff": {
-    "description": "Line under the Culture row of Settings while culture items are off."
-  },
-  "cultureSettingShow": "Show culture items",
-  "@cultureSettingShow": {
-    "description": "Switch on the Culture settings page: proverbs, lines of verse and passages woven into the path and Today."
-  },
-  "cultureSettingShowOn": "In the path, on Today and in reviews",
-  "@cultureSettingShowOn": {
-    "description": "Line under the culture switch while it is on."
-  },
-  "cultureSettingShowOff": "Not in the path, on Today or in reviews. Search still finds them.",
-  "@cultureSettingShowOff": {
-    "description": "Line under the culture switch while it is off."
-  },
-  "cultureSettingAboveHeading": "Items above my level",
-  "@cultureSettingAboveHeading": {
-    "description": "Heading of the choice of what to do with a culture item above the learner’s level."
-  },
-  "cultureSettingAboveHide": "Do not show them",
-  "@cultureSettingAboveHide": {
-    "description": "Choice: culture items above the learner’s level are not shown."
-  },
-  "cultureSettingAboveHideBody": "Unlocks when you reach the level",
-  "@cultureSettingAboveHideBody": {
-    "description": "Line under the choice that hides items above the level."
-  },
-  "cultureSettingAboveSupport": "Show with support",
-  "@cultureSettingAboveSupport": {
-    "description": "Choice: culture items above the learner’s level are shown with support."
-  },
-  "cultureSettingAboveSupportBody": "Words glossed, a lock mark, not counted",
-  "@cultureSettingAboveSupportBody": {
-    "description": "Line under the choice that shows items above the level with support."
-  },
-  "cultureSettingHowMany": "How many",
-  "@cultureSettingHowMany": {
-    "description": "Heading of the culture settings that say how many items a unit gets and how they count."
-  },
-  "cultureSettingPerUnit": "Per unit",
-  "@cultureSettingPerUnit": {
-    "description": "Row of the culture settings: how many culture items each path unit is given."
-  },
-  "cultureSettingPerUnitValue": "{count, plural, =1{1 item} other{{count} items}}",
-  "@cultureSettingPerUnitValue": {
-    "description": "How many culture items a unit is given, as a row value and as a choice.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "1"
-      }
-    }
+  "languagesCultureOff": "Off. You can still read and search it in Decks",
+  "@languagesCultureOff": {
+    "description": "Line under the Culture switch of a language’s details while it is off."
   },
   "cultureSettingCounts": "Count toward path progress",
   "@cultureSettingCounts": {
@@ -15964,14 +15884,6 @@
   "cultureSettingCreatorsOff": "Only the item and its source",
   "@cultureSettingCreatorsOff": {
     "description": "Line under the creator switch while it is off."
-  },
-  "cultureSettingOpenDeck": "The culture deck",
-  "@cultureSettingOpenDeck": {
-    "description": "Row of the culture settings that opens the whole culture deck of the language shown."
-  },
-  "cultureSettingNote": "Culture items are real texts, with the person behind them. An item above your level is never shown without support.",
-  "@cultureSettingNote": {
-    "description": "Help line at the foot of the culture settings page."
   },
   "cultureKindProverb": "Proverb",
   "@cultureKindProverb": {
@@ -16033,25 +15945,11 @@
   "@cultureNoKnownAuthor": {
     "description": "The author of a source line when the source names none."
   },
-  "cultureNotShownTitle": "Not shown yet",
-  "@cultureNotShownTitle": {
-    "description": "Title of the notice on an item above the learner’s level that is not shown."
-  },
-  "cultureNotShownBody": "This item is at {level}. It opens when you reach that level.",
-  "@cultureNotShownBody": {
-    "description": "Body of the notice on an item above the learner’s level that is not shown.",
-    "placeholders": {
-      "level": {
-        "type": "String",
-        "example": "B1"
-      }
-    }
-  },
   "cultureAboveTitle": "Above your level",
   "@cultureAboveTitle": {
     "description": "Title of the notice on an item above the learner’s level that is shown with support."
   },
-  "cultureAboveBody": "Its words are glossed. It will not count toward your progress or be scheduled for review.",
+  "cultureAboveBody": "You can read it now. It will not count toward your progress or be scheduled for review until you reach its level.",
   "@cultureAboveBody": {
     "description": "Body of the notice on an item above the learner’s level that is shown with support."
   },
@@ -16447,9 +16345,9 @@
       }
     }
   },
-  "cultureOffHint": "Culture items are off. Turn them on in Settings.",
+  "cultureOffHint": "Culture items are off for this language. Turn them on in its details.",
   "@cultureOffHint": {
-    "description": "Shown in a unit while culture items are off."
+    "description": "Shown in a unit while culture items are off for the language."
   },
   "cultureTodayTitle": "Culture · {level}",
   "@cultureTodayTitle": {

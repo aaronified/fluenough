@@ -17,8 +17,7 @@ const int maxUnitTopics = 4;
 
 /// The topics a unit teaches or revisits, at most [maxUnitTopics]: those that
 /// name one of its decks, its place on the path, or a card of its decks. A
-/// topic above the learner's level is left out when "Hide what is above my
-/// level" is on, and is listed marked otherwise.
+/// topic above the learner's level is listed marked with its level.
 List<ResolvedTopic> topicsOfUnit(
   AppState state,
   String language,
@@ -38,8 +37,6 @@ List<ResolvedTopic> topicsOfUnit(
     place = topics.world.unitIndex(core);
     if (place >= 0) break;
   }
-  final learner = state.levelIn(language);
-  final hide = state.settings.hideAboveLevel;
   final found = <ResolvedTopic>[];
   for (final r in topics.resolved) {
     final named =
@@ -47,7 +44,6 @@ List<ResolvedTopic> topicsOfUnit(
         (place >= 0 && r.units.contains(place)) ||
         r.cards.any(cards.contains);
     if (!named) continue;
-    if (hide && LevelGate.isAbove(r.topic.level, learner)) continue;
     found.add(r);
     if (found.length == maxUnitTopics) break;
   }

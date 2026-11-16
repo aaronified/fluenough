@@ -272,7 +272,6 @@ class _TypedSearchResultsState extends State<TypedSearchResults> {
             child: _NoResults(
               query: text,
               language: language,
-              hiddenAbove: found.hiddenAbove,
               onSearch: widget.onSearch,
             ),
           )
@@ -315,8 +314,6 @@ class _TypedSearchResultsState extends State<TypedSearchResults> {
             ),
           ),
           ..._content(context, state, index, selected, items, wordHits),
-          if (found.hiddenAbove > 0)
-            SliverToBoxAdapter(child: _HiddenAbove(count: found.hiddenAbove)),
         ],
         if (widget.outcome.broken.isNotEmpty)
           SliverToBoxAdapter(
@@ -562,71 +559,17 @@ class _TabStripState extends State<_TabStrip>
   }
 }
 
-/// The line under the results while "Hide what is above my level" is on: how
-/// many it left out, and a way to show them.
-class _HiddenAbove extends StatelessWidget {
-  const _HiddenAbove({required this.count});
-
-  final int count;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    final scheme = theme.colorScheme;
-    final settings = AppScope.read(context).settings;
-    return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(8, 12, 8, 0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Row(
-            children: <Widget>[
-              Icon(
-                Icons.visibility_off_outlined,
-                color: scheme.onSurfaceVariant,
-              ),
-              const SizedBox(width: 8),
-              Expanded(
-                child: Text(
-                  l10n.searchAboveHidden(count),
-                  style: theme.textTheme.bodyMedium,
-                ),
-              ),
-            ],
-          ),
-          Align(
-            alignment: AlignmentDirectional.centerStart,
-            child: TextButton(
-              onPressed: () => settings.hideAboveLevel = false,
-              child: Text(l10n.searchShowAbove),
-            ),
-          ),
-          Text(
-            l10n.searchHideAboveHint,
-            style: theme.textTheme.bodySmall!.copyWith(
-              color: scheme.onSurfaceVariant,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
 /// Nothing found (the mockup's screen 5): what the search looks in, and a few
 /// searches to try, from the language's own topics.
 class _NoResults extends StatelessWidget {
   const _NoResults({
     required this.query,
     required this.language,
-    required this.hiddenAbove,
     required this.onSearch,
   });
 
   final String query;
   final String language;
-  final int hiddenAbove;
   final ValueChanged<String> onSearch;
 
   @override
@@ -665,7 +608,6 @@ class _NoResults extends StatelessWidget {
               color: scheme.onSurfaceVariant,
             ),
           ),
-          if (hiddenAbove > 0) _HiddenAbove(count: hiddenAbove),
           if (suggestions.isNotEmpty) ...<Widget>[
             const SizedBox(height: 20),
             Text(l10n.searchTry, style: theme.textTheme.titleSmall),

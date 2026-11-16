@@ -20,11 +20,11 @@ import 'culture_parts.dart';
 /// The full culture deck of a course (approved mockup `culture-in-course`,
 /// screen 8): every culture and proverbs item the course holds with its kind,
 /// source and level, the ones above the learner's level locked ("Unlocks at
-/// B1", or shown with support when Settings says so), and a People list of the
-/// creators behind them, each opening their card.
+/// B1"), and a People list of the creators behind them, each opening their
+/// card.
 ///
-/// Reached from an item, from the culture settings and from the recommendations
-/// list; "Show culture items" off leaves it here, as it leaves search.
+/// Reached from an item and from the recommendations list; "Show culture
+/// items" off leaves it here, as it leaves search.
 class CultureDeckPage extends StatelessWidget {
   const CultureDeckPage({super.key, required this.language});
 
@@ -57,10 +57,10 @@ class CultureDeckPage extends StatelessWidget {
   /// anywhere; never one only a work out of sight cites (above the level, in a
   /// hidden deck, in a deck that does not weave, or a recommended work), whose
   /// name would give it away (the timeline's rule, from the same two sets).
-  List<Creator> _people(AppState state, CreatorsFile? file, bool support) {
+  List<Creator> _people(AppState state, CreatorsFile? file) {
     if (file == null) return const <Creator>[];
     final cited = state.creatorsCitedIn(language);
-    final shown = state.creatorsShownIn(language, support: support);
+    final shown = state.creatorsShownIn(language, support: false);
     return <Creator>[
       for (final c in file.creators)
         if (!cited.contains(c.id) || shown.contains(c.id)) c,
@@ -73,14 +73,14 @@ class CultureDeckPage extends StatelessWidget {
     final scheme = theme.colorScheme;
     final info = cultureLanguage(state, language);
     final learner = state.levelIn(language);
-    final support = state.settings.cultureAboveSupport;
+    final options = state.settings.cultureFor(language);
     final items = state.cultureItemsIn(language);
     final file = state.creatorsOf(language);
     final atLevel = items
         .where((i) => LevelGate.allows(i.level, learner))
         .length;
-    final people = _people(state, file, support);
-    final showPeople = state.settings.cultureCreators;
+    final people = _people(state, file);
+    final showPeople = options.creators;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -123,7 +123,6 @@ class CultureDeckPage extends StatelessWidget {
                         item: item,
                         language: language,
                         above: LevelGate.isAbove(item.level, learner),
-                        support: support,
                       ),
                   ],
                 ),
@@ -185,20 +184,18 @@ class _ItemRow extends StatelessWidget {
     required this.item,
     required this.language,
     required this.above,
-    required this.support,
   });
 
   final CultureItem item;
   final String language;
   final bool above;
-  final bool support;
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
     final info = cultureLanguage(state, language);
-    final locked = above && !support;
+    final locked = above;
     final source = item.source;
     final who = <String>[
       if (source?.author != null)

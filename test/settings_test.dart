@@ -27,7 +27,6 @@ import 'package:fluenough/features/decks/word_sheet.dart';
 import 'package:fluenough/features/profiles/pin_page.dart';
 import 'package:fluenough/features/report/report_page.dart';
 import 'package:fluenough/features/settings/activities_page.dart';
-import 'package:fluenough/features/culture/culture_settings_page.dart';
 import 'package:fluenough/features/settings/app_log_page.dart';
 import 'package:fluenough/features/settings/daily_minutes.dart';
 import 'package:fluenough/features/settings/appearance_page.dart';
@@ -341,7 +340,6 @@ void main() {
           final l10n = l10nOf(tester);
           final pages = <String, Type>{
             l10n.settingsRowActivities: ActivitiesPage,
-            l10n.settingsRowCulture: CultureSettingsPage,
             l10n.settingsRowLook: AppearancePage,
             l10n.settingsRowReviewing: ReviewingPage,
             l10n.settingsRowData: YourDataPage,
@@ -669,8 +667,9 @@ void main() {
         LanguagesPage(spokenList: pickerSpokenList),
       );
       final l10n = l10nOf(tester);
+      // The menu button's key is also given to the item inside it.
       Finder row() =>
-          find.byKey(const ValueKey<String>('languages-menu-adult'));
+          find.byKey(const ValueKey<String>('languages-menu-adult')).first;
       Future<void> openMenu() async {
         await tester.tap(find.byIcon(Icons.more_vert));
         await tester.pumpAndSettle();

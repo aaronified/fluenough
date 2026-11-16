@@ -272,7 +272,12 @@ class Backups extends ChangeNotifier {
       _log.warning('Completed works not restored: ${e.runtimeType}');
     }
     final defaults = SettingsNotifier();
-    final stored = <String, String>{...defaults.toStored(), ...backup.settings};
+    // Without the culture map the defaults hold: an old backup that has only
+    // the global culture keys must migrate, not read an empty map.
+    final stored = <String, String>{
+      ...defaults.toStored()..remove('culture_by_language'),
+      ...backup.settings,
+    };
     defaults.dispose();
     settings.restore(stored);
     _log.event('Restored from a backup: ${backup.reviews.length} reviews');

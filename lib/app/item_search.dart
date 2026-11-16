@@ -185,11 +185,7 @@ class ItemSearchIndex {
 
 /// One search over the typed items, with what the screen says about it.
 class ItemSearchResult {
-  const ItemSearchResult({
-    required this.outcome,
-    this.hiddenAbove = 0,
-    this.close = false,
-  });
+  const ItemSearchResult({required this.outcome, this.close = false});
 
   static const ItemSearchResult empty = ItemSearchResult(
     outcome: ItemSearchOutcome.empty,
@@ -197,9 +193,6 @@ class ItemSearchResult {
 
   /// The results, best first, of every kind but plain words.
   final ItemSearchOutcome outcome;
-
-  /// With "Hide what is above my level" on, how many results it left out.
-  final int hiddenAbove;
 
   /// Everything was found despite a typo.
   final bool close;
@@ -255,13 +248,11 @@ extension ItemSearchState on AppState {
     try {
       final index = itemSearchFor(language);
       final level = levelIn(language);
-      final hide = settings.hideAboveLevel;
-      ItemSearchOutcome run({required bool typos, required bool hideAbove}) {
+      ItemSearchOutcome run({required bool typos}) {
         final found = index.corpus.search(
           query,
           languages: <String>{language},
           levelOf: (_) => level,
-          hideAbove: hideAbove,
           typos: typos,
           sections: catalogWithAboveLevel.sections,
         );
@@ -269,17 +260,14 @@ extension ItemSearchState on AppState {
       }
 
       var typos = false;
-      var shown = run(typos: false, hideAbove: hide);
-      var all = hide ? run(typos: false, hideAbove: false) : shown;
-      if (all.results.isEmpty && !exact) {
+      var shown = run(typos: false);
+      if (shown.results.isEmpty && !exact) {
         typos = true;
-        shown = run(typos: true, hideAbove: hide);
-        all = hide ? run(typos: true, hideAbove: false) : shown;
+        shown = run(typos: true);
       }
       return ItemSearchResult(
         outcome: shown,
-        hiddenAbove: all.results.length - shown.results.length,
-        close: typos && all.results.isNotEmpty,
+        close: typos && shown.results.isNotEmpty,
       );
     } on Object catch (error, stack) {
       log.error(describeError('Typed search failed', error, stack));

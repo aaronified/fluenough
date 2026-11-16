@@ -209,22 +209,69 @@ class WovenCulture {
   }
 }
 
-/// How many items a unit is given, by default (the mockup's proposal).
+/// How many items a unit is given when no number is passed: one.
 const int defaultCulturePerUnit = 1;
 
-/// The most a learner may ask for per unit.
-const int maxCulturePerUnit = 3;
+/// The level whose units hold an item of [level]: [level] itself when the path
+/// has a unit of it, else the next level up that has one; null when none does.
+Level? _homeLevel(Level level, Set<Level> unitLevels) {
+  for (final candidate in Level.values) {
+    if (candidate.index >= level.index && unitLevels.contains(candidate)) {
+      return candidate;
+    }
+  }
+  return null;
+}
+
+/// The units of [plan] that can hold culture, with the level of each: those
+/// with decks, on a path that has levels.
+List<(int, Level)> _cultureUnits(List<PlanUnit> plan) => <(int, Level)>[
+  for (final (index, unit) in plan.indexed)
+    if (unit.decks.isNotEmpty)
+      if (levelOfUnit(plan, index) case final level?) (index, level),
+];
+
+/// How many items a unit of each level is given, so that every item appears
+/// and none piles into the first unit: the items of the level divided by the
+/// units of the level, rounded up, and at least 1. An item of a level the path
+/// has no unit of counts for the next level up that has one, where the weave
+/// puts it. A level with no unit has no entry.
+Map<Level, int> culturePerUnitByLevel(
+  List<PlanUnit> plan,
+  Iterable<CultureItem> items,
+) {
+  final units = <Level, int>{};
+  for (final (_, level) in _cultureUnits(plan)) {
+    units[level] = (units[level] ?? 0) + 1;
+  }
+  final unitLevels = units.keys.toSet();
+  final demand = <Level, int>{};
+  for (final item in items) {
+    final home = _homeLevel(item.level, unitLevels);
+    if (home != null) demand[home] = (demand[home] ?? 0) + 1;
+  }
+  return <Level, int>{
+    for (final MapEntry(:key, :value) in units.entries)
+      key: _atLeastOne(_ceilDiv(demand[key] ?? 0, value)),
+  };
+}
+
+int _ceilDiv(int n, int d) => d <= 0 ? 0 : (n + d - 1) ~/ d;
+
+int _atLeastOne(int n) => n < 1 ? 1 : n;
 
 /// Weaves [items] into the written units of [plan] for a learner at
 /// [learner] (null: a language with no levels, which is offered no levelled
-/// item). A unit gets [perUnit] items: those at its own level first, in deck
-/// order, then lower ones not used yet. An item is woven once. An item above
-/// the learner is listed in [WovenCulture.above] and never woven.
+/// item). A unit gets [perByLevel] of its level, else [perUnit], items: those
+/// at its own level first, in deck order, then lower ones not used yet. An
+/// item is woven once. An item above the learner is listed in
+/// [WovenCulture.above] and never woven.
 WovenCulture weaveCulture(
   List<PlanUnit> plan,
   List<CultureItem> items,
   Level? learner, {
   int perUnit = defaultCulturePerUnit,
+  Map<Level, int> perByLevel = const <Level, int>{},
 }) {
   if (items.isEmpty) return WovenCulture.none;
   final shown = <CultureItem>[];
@@ -236,11 +283,6 @@ WovenCulture weaveCulture(
       above.add(item);
     }
   }
-  final per = perUnit < 1
-      ? 1
-      : perUnit > maxCulturePerUnit
-      ? maxCulturePerUnit
-      : perUnit;
   final unused = List<CultureItem>.of(shown);
   final byUnit = <int, List<CultureItem>>{};
   for (final (index, unit) in plan.indexed) {
@@ -248,6 +290,7 @@ WovenCulture weaveCulture(
     if (unit.decks.isEmpty) continue;
     final level = levelOfUnit(plan, index);
     if (level == null) continue;
+    final per = _atLeastOne(perByLevel[level] ?? perUnit);
     final picked = <CultureItem>[];
     for (final item in unused) {
       if (item.level == level) picked.add(item);
