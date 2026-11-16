@@ -168,9 +168,9 @@ void main() {
       'press (#913)', (tester) async {
     await pumpLanguages(tester);
     final text = l10n(tester);
-    await tester.longPress(find.byIcon(Icons.bug_report_outlined));
+    await tester.longPress(find.byIcon(Icons.more_vert));
     await tester.pumpAndSettle();
-    expect(find.text(text.hintReport), findsOneWidget);
+    expect(find.text(text.languagesMenuMoreHint), findsOneWidget);
     await tapKey(tester, 'language-es');
     await tester.longPress(find.text('i'));
     await tester.pumpAndSettle();
