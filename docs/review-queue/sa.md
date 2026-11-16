@@ -53,3 +53,5 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | sa-3035 | sa-family-sentences (family unit) | Is सखा कः, who is the friend, natural, or does a learner need a verb or a name here? | Haiku deck worker | 2026-11-16 |
 | sa-3040 | sa-numbers-1-20-sentences (numbers unit) | The plurals देवाः, गावः, सुताः, पत्न्यः and सखायः come before the plural is taught; is it acceptable to teach them in these sentences? | Haiku deck worker | 2026-11-16 |
 | sa-3051 | sa-about-me-sentences (about-me unit) | Is वयः कति, how old, the usual way to ask age in classical texts, or is a verb expected? | Haiku deck worker | 2026-11-16 |
+| sa-3065 | sa-adverbs-sentences (adverbs unit) | Is पुनः पठति, he reads again, natural, or should the subject be stated? | Haiku deck worker | 2026-11-16 |
+| sa-3066 | sa-adverbs-sentences (adverbs unit) | Is एवं गच्छति, he goes this way, the natural wording for in this way? | Haiku deck worker | 2026-11-16 |

@@ -1,0 +1,43 @@
+schema: 1
+id: "sa-en-adverbs-sentences"
+kind: "layer"
+core: "sa-adverbs-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with adverbs"
+description: "Short sentences with the adverbs of Adverbs, built only from words already taught. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-3060":
+    native: "I go there."
+    bases: { "अहं": "I", "गच्छामि": "to go (I go)" }
+    confusables: { "w1": { why: "Here, not there: अत्र (atra) means here." }, "w2": { why: "Where, not there: यत्र (yatra) means where." } }
+  "sa-3061":
+    native: "Today I drink water."
+    bases: { "जलं": "water", "पिबामि": "to drink (I drink)" }
+    confusables: { "w1": { why: "Tomorrow, not today: श्वः (śvaḥ) means tomorrow." }, "w2": { why: "Yesterday, not today: ह्यः (hyaḥ) means yesterday." } }
+    notes: { "n1": "जलं (jalaṃ), water, is the thing drunk by पिबामि (pibāmi), I drink." }
+  "sa-3062":
+    native: "Tomorrow I drink."
+    bases: { "पिबामि": "to drink (I drink)" }
+    confusables: { "w1": { why: "Today, not tomorrow: अद्य (adya) means today." }, "w2": { why: "Yesterday, not tomorrow: ह्यः (hyaḥ) means yesterday." } }
+  "sa-3063":
+    native: "I always drink."
+    bases: { "अहं": "I", "पिबामि": "to drink (I drink)" }
+    confusables: { "w1": { why: "Sometimes, not always: कदाचित् (kadācit) means sometimes." }, "w2": { why: "Once, not always: एकदा (ekadā) means once." } }
+  "sa-3064":
+    native: "Water is here."
+    confusables: { "w1": { why: "There, not here: तत्र (tatra) means there." }, "w2": { why: "Fire, not water: अग्निः (agniḥ) means fire." } }
+  "sa-3065":
+    native: "He reads again."
+    bases: { "पठति": "to read (he reads)" }
+    confusables: { "w1": { why: "Also, not again: अपि (api) means also." }, "w2": { why: "Only, not again: एव (eva) means only." } }
+    notes: { "n1": "पठति (paṭhati), he reads, comes from पठ् (paṭh), to read." }
+  "sa-3066":
+    native: "He goes this way."
+    bases: { "एवं": "in this way", "गच्छति": "to go (he goes)" }
+    confusables: { "w1": { why: "Likewise, not in this way: तथा (tathā) means likewise." }, "w2": { why: "Then, not in this way: अथ (atha) means then." } }
+  "sa-3067":
+    native: "Then I go."
+    bases: { "गच्छामि": "to go (I go)" }
+    confusables: { "w1": { why: "When, not then: यदा (yadā) means when." }, "w2": { why: "Once, not then: एकदा (ekadā) means once." } }

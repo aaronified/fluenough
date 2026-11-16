@@ -1,0 +1,66 @@
+schema: 1
+id: "sa-adverbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3060"
+    target: "अहं तत्र गच्छामि."
+    reading: "ahaṃ tatra gacchāmi."
+    ipa: "əɦəm t̪ət̪rə ɡətʃtʃʰaːmi"
+    pos: "phrase"
+    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "तत्र", ref: "sa-1081" }, { word: "गच्छामि", base: "गम्", reading: "gam" }]
+    confusables: [{ id: "w1", ref: "sa-1080", kind: "word" }, { id: "w2", ref: "sa-1082", kind: "word" }]
+  - id: "sa-3061"
+    target: "अद्य जलं पिबामि."
+    reading: "adya jalaṃ pibāmi."
+    ipa: "əd̪jə dʒələm pibaːmi"
+    pos: "phrase"
+    bases: [{ word: "अद्य", ref: "sa-1088" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "पिबामि", base: "पा", reading: "pā" }]
+    confusables: [{ id: "w1", ref: "sa-1089", kind: "word" }, { id: "w2", ref: "sa-1090", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "sa-3062"
+    target: "श्वः पिबामि."
+    reading: "śvaḥ pibāmi."
+    ipa: "ʃʋəh pibaːmi"
+    pos: "phrase"
+    bases: [{ word: "श्वः", ref: "sa-1089" }, { word: "पिबामि", base: "पा", reading: "pā" }]
+    confusables: [{ id: "w1", ref: "sa-1088", kind: "word" }, { id: "w2", ref: "sa-1090", kind: "word" }]
+  - id: "sa-3063"
+    target: "अहं सदा पिबामि."
+    reading: "ahaṃ sadā pibāmi."
+    ipa: "əɦəm səd̪aː pibaːmi"
+    pos: "phrase"
+    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "सदा", ref: "sa-1086" }, { word: "पिबामि", base: "पा", reading: "pā" }]
+    confusables: [{ id: "w1", ref: "sa-1087", kind: "word" }, { id: "w2", ref: "sa-1103", kind: "word" }]
+  - id: "sa-3064"
+    target: "अत्र जलम्."
+    reading: "atra jalam."
+    ipa: "ət̪rə dʒələm"
+    pos: "phrase"
+    bases: [{ word: "अत्र", ref: "sa-1080" }, { word: "जलम्", ref: "sa-0023" }]
+    confusables: [{ id: "w1", ref: "sa-1081", kind: "word" }, { id: "w2", ref: "sa-0024", kind: "word" }]
+  - id: "sa-3065"
+    target: "पुनः पठति."
+    reading: "punaḥ paṭhati."
+    ipa: "punəh pəʈʰət̪i"
+    pos: "phrase"
+    bases: [{ word: "पुनः", ref: "sa-1091" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+    confusables: [{ id: "w1", ref: "sa-1092", kind: "word" }, { id: "w2", ref: "sa-1093", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "sa-3066"
+    target: "एवं गच्छति."
+    reading: "evaṃ gacchati."
+    ipa: "eːʋəm ɡətʃtʃʰət̪i"
+    pos: "phrase"
+    bases: [{ word: "एवं", base: "एवम्", reading: "evam" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+    confusables: [{ id: "w1", ref: "sa-1099", kind: "word" }, { id: "w2", ref: "sa-1100", kind: "word" }]
+  - id: "sa-3067"
+    target: "तदा गच्छामि."
+    reading: "tadā gacchāmi."
+    ipa: "t̪əd̪aː ɡətʃtʃʰaːmi"
+    pos: "phrase"
+    bases: [{ word: "तदा", ref: "sa-1084" }, { word: "गच्छामि", base: "गम्", reading: "gam" }]
+    confusables: [{ id: "w1", ref: "sa-1085", kind: "word" }, { id: "w2", ref: "sa-1103", kind: "word" }]
