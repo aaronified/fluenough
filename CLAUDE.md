@@ -256,6 +256,8 @@ long-horizon ask (owner, 2026-10-23).
 
 **Language completeness** (owner, 2026-11-13: "i want not just culture, but also topics, situations, everything the app now plans for a language, in FULL"): the checklist, status grid, batch rules and open questions for Japanese, Spanish, French, Telugu, Marathi, Bengali, Assamese and Gujarati are in [Plan-Language-Completeness](wiki/Plan-Language-Completeness.md).
 
+**Language sessions and token budget** (owner, 2026-11-15/16): one session per language; **at most 4 language sessions run at the same time** (owner, 2026-11-16: "run 4 sessions simultaneously. No more than that. I may have issues with the 5 hour token budget otherwise"). Priority after the first list: Classical Sanskrit (to B1, heavy Pāṇini focus), then Vedic Sanskrit (owner, 2026-11-16: "For vedic sanskrit, use public domain works on its grammar. Like max muller's work would be public domain"), then the other second-list languages. **Beyond the second list, every planned language gets up to A1 only** (owner, 2026-11-16: "for beyond second list, only add upto A1 level, but this will be for all languages planned. Everything must have something people can start with"). **Obvious gaps are work, not accepted shortfalls** (owner, 2026-11-15, on missing notes and short culture decks): write a note on every card with any real teachable point; before dropping a sourced item try every reachable source and record a one-line reason on the language's queue page.
+
 **Hindustani** is one course (owner, 2026-10-18: "Hindi and Urdu should be
 combined as we should not care about socipolitics over linguistics"; chose
 "One course, two scripts"). The `hi` course and its card ids stay; it is
