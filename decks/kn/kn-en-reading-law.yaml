@@ -1,0 +1,47 @@
+schema: 1
+id: "kn-en-reading-law"
+name: "Reading: a tenant's rights leaflet"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A Kannada passage written for this course with the words taught up to its unit (a leaflet on a tenant's rights). Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-rights-leaflet"
+    title: "Rights leaflet"
+    sentences:
+      - text: "ಬಾಡಿಗೆದಾರರಿಗೂ ಕಾನೂನು ಸಹಾಯ ಇದೆ."
+        reading: "bāḍigedārarigū kānūnu sahāya ide."
+        ipa: "baːɖiɡed̪aːrariɡuː kaːnuːnu sahaːja id̪e"
+      - text: "ದೂರು ಇದ್ದರೆ ನ್ಯಾಯಾಲಯಕ್ಕೆ ಹೋಗಿ."
+        reading: "dūru iddare nyāyālayakke hōgi."
+        ipa: "d̪uːru id̪d̪are njaːjaːlajakke hoːɡi"
+      - text: "ವಕೀಲರು ನಿಮಗೆ ಸಹಾಯ ಮಾಡುತ್ತಾರೆ."
+        reading: "vakīlaru nimage sahāya māḍuttāre."
+        ipa: "ʋakiːlaru nimaɡe sahaːja maːɖut̪t̪aːre"
+      - text: "ನ್ಯಾಯಾಧೀಶರು ತೀರ್ಪು ಕೊಡುತ್ತಾರೆ."
+        reading: "nyāyādhīśaru tīrpu koḍuttāre."
+        ipa: "njaːjaːd̪ʱiːʃaru t̪iːrpu koɖut̪t̪aːre"
+      - text: "ಕಾನೂನು ಎಲ್ಲರಿಗೂ ಒಂದೇ."
+        reading: "kānūnu ellarigū ondē."
+        ipa: "kaːnuːnu ellariɡuː ond̪eː"
+    questions:
+      - id: "kn-9382"
+        prompt: { en: "Who gives the verdict?" }
+        options:
+          - { en: "The judge" }
+          - { en: "The tenant" }
+          - { en: "The teacher" }
+        answer: 1
+      - id: "kn-9383"
+        prompt: { en: "A tenant has no legal help." }
+        answer: false
+      - id: "kn-9384"
+        prompt: { en: "Where should you go with a complaint?" }
+        options:
+          - { en: "To court" }
+          - { en: "To the bank" }
+          - { en: "To the park" }
+        answer: 1
