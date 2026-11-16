@@ -1,0 +1,246 @@
+schema: 1
+id: "gbm-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "gbm", iso639_3: "gbm", name: "Garhwali", script: "devanagari", tts: "hi-IN", icon: "गढ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "gbm-0001"
+    target: "नमस्कार"
+    reading: "namaskār"
+    ipa: "nəməskaːr"
+    pos: "other"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "नमस्कार", base: "नमस्कार", reading: "namaskār" }
+  - id: "gbm-0002"
+    target: "सुप्रभात"
+    reading: "suprabhāt"
+    ipa: "suprəbʰaːt"
+    pos: "other"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "सुप्रभात", base: "सुप्रभात", reading: "suprabhāt" }
+  - id: "gbm-0003"
+    target: "शुभ सांझ"
+    reading: "śubh sānjh"
+    ipa: "ʃubʰ saːɲʤ"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "शुभ", base: "शुभ", reading: "śubh" }
+      - { word: "सांझ", base: "सांझ", reading: "sānjh" }
+  - id: "gbm-0004"
+    target: "शुभ रात"
+    reading: "śubh rāt"
+    ipa: "ʃubʰ raːt"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "शुभ", base: "शुभ", reading: "śubh" }
+      - { word: "रात", base: "रात", reading: "rāt" }
+  - id: "gbm-0005"
+    target: "फेर भेटला"
+    reading: "pher bheṭlā"
+    ipa: "pʰer bʰeʈlaː"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "फेर", base: "फेर", reading: "pher" }
+      - { word: "भेटला", base: "भेटला", reading: "bheṭlā" }
+  - id: "gbm-0006"
+    target: "किरपा करि"
+    reading: "kirpā kari"
+    ipa: "kirpaː kəri"
+    pos: "phrase"
+    tags: ["polite", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "किरपा", base: "किरपा", reading: "kirpā" }
+      - { word: "करि", base: "करि", reading: "kari" }
+  - id: "gbm-0007"
+    target: "धन्यवाद"
+    reading: "dhanyavād"
+    ipa: "d̪ʱənjəʋaːd̪"
+    pos: "other"
+    tags: ["polite", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "धन्यवाद", base: "धन्यवाद", reading: "dhanyavād" }
+  - id: "gbm-0008"
+    target: "कै बात नि छ"
+    reading: "kai bāt ni cha"
+    ipa: "kəi baːt niː t͡ʃə"
+    pos: "phrase"
+    tags: ["polite", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "कै", base: "कै", reading: "kai" }
+      - { word: "बात", base: "बात", reading: "bāt" }
+  - id: "gbm-0009"
+    target: "माफ करा"
+    reading: "māph karā"
+    ipa: "maːpʰ kəraː"
+    pos: "phrase"
+    tags: ["polite", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "माफ", base: "माफ", reading: "māph" }
+      - { word: "करा", base: "करा", reading: "karā" }
+  - id: "gbm-0010"
+    target: "सुणा"
+    reading: "suṇā"
+    ipa: "suɳaː"
+    pos: "phrase"
+    tags: ["polite", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "सुणा", base: "सुणा", reading: "suṇā" }
+  - id: "gbm-0011"
+    target: "मेकु समझ नि आई"
+    reading: "meku samajh ni āī"
+    ipa: "meku səməd͡ʒ niː aːiː"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मेकु", base: "मेकु", reading: "meku" }
+      - { word: "समझ", base: "समझ", reading: "samajh" }
+      - { word: "आई", base: "आई", reading: "āī" }
+  - id: "gbm-0012"
+    target: "मेकु गढ़वळि नि औन्दी"
+    reading: "meku garhwaḷi ni aundī"
+    ipa: "meku ɡəɽʱʋəɭiː niː əundiː"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मेकु", base: "मेकु", reading: "meku" }
+      - { word: "गढ़वळि", base: "गढ़वळि", reading: "garhwaḷi" }
+      - { word: "औन्दी", base: "औन्दी", reading: "aundī" }
+  - id: "gbm-0013"
+    target: "धीरा बोला"
+    reading: "dhīrā bolā"
+    ipa: "dʱiːraː bolaː"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "धीरा", base: "धीरा", reading: "dhīrā" }
+      - { word: "बोला", base: "बोला", reading: "bolā" }
+  - id: "gbm-0014"
+    target: "तुम अंग्रेजी बोल सकदा?"
+    reading: "tum aṅgrejī bol sakdā?"
+    ipa: "tum əŋɡrɛdʒiː bol səkdaː"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "तुम", base: "तुम", reading: "tum" }
+      - { word: "अंग्रेजी", base: "अंग्रेजी", reading: "aṅgrejī" }
+      - { word: "बोल", base: "बोल", reading: "bol" }
+      - { word: "सकदा", base: "सकदा", reading: "sakdā" }
+  - id: "gbm-0015"
+    target: "तुम कनके छै?"
+    reading: "tum kanke chhai?"
+    ipa: "tum kənke t͡ʃʰəi"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "तुम", base: "तुम", reading: "tum" }
+      - { word: "कनके", base: "कनके", reading: "kanke" }
+      - { word: "छै", base: "छै", reading: "chhai" }
+  - id: "gbm-0016"
+    target: "मि ठीक छौं"
+    reading: "mi ṭhīk chhaun"
+    ipa: "mi ʈʰiːk t͡ʃʰaʊn"
+    pos: "phrase"
+    tags: ["greeting", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ठीक", base: "ठीक", reading: "ṭhīk" }
+      - { word: "छौं", base: "छौं", reading: "chhaun" }
+  - id: "gbm-0017"
+    target: "तुमारु नौं क्या छ?"
+    reading: "tumāru naun kyā cha?"
+    ipa: "tuməːru nəun kjaː t͡ʃə"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "तुमारु", base: "तुमारु", reading: "tumāru" }
+  - id: "gbm-0018"
+    target: "मेरु नौं ... छ"
+    reading: "meru naun ... cha"
+    ipa: "meru nəun t͡ʃə"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "मेरु", base: "मेरु", reading: "meru" }
+  - id: "gbm-0019"
+    target: "शौचालय कख छ?"
+    reading: "śauchālay kakh cha?"
+    ipa: "ʃəut͡ʃʰaːləj kəkʰ t͡ʃə"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "शौचालय", base: "शौचालय", reading: "śauchālay" }
+  - id: "gbm-0020"
+    target: "बचाओ!"
+    reading: "bacāo!"
+    ipa: "bət͡ʃʰaːəu"
+    pos: "phrase"
+    tags: ["help", "doubtful"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+
+    bases:
+      - { word: "बचाओ", base: "बचाओ!", reading: "bacāo!" }
