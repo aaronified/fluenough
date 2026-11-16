@@ -88,4 +88,5 @@ const Map<String, ScriptSample> scriptSamples = <String, ScriptSample>{
   'thai': ScriptSample('ขอบคุณ', 'khòp khun', 'thanks'),
   'meitei_mayek': ScriptSample('ꯈꯨꯔꯨꯝꯖꯔꯤ', 'khurumjari', 'thanks'),
   'brahmi': ScriptSample('𑀅𑀇𑀉', 'a i u', 'vowels'),
+  'sitelen_pona': ScriptSample('\u{F196C}', 'toki', 'hello'),
 };
