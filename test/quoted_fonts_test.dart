@@ -105,7 +105,13 @@ void main() {
     final context = tester.element(find.byType(Scaffold));
     expect(Theme.of(context).textTheme.bodyMedium!.fontFamily, 'Roboto');
     final rich = tester.widget<RichText>(find.byType(RichText).last);
-    final quote = (rich.text as TextSpan).children!.cast<TextSpan>().last;
-    expect(quote.style!.fontFamily, 'FluenoughScript-telugu');
+    final families = <String?>[];
+    rich.text.visitChildren((span) {
+      if (span is TextSpan && span.text == 'నమస్తే') {
+        families.add(span.style?.fontFamily);
+      }
+      return true;
+    });
+    expect(families, <String?>['FluenoughScript-telugu']);
   });
 }
