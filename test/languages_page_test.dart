@@ -167,7 +167,7 @@ void main() {
     final text = l10n(tester);
     await tester.longPress(find.byIcon(Icons.more_vert));
     await tester.pumpAndSettle();
-    expect(find.text(text.languagesMenuMore), findsOneWidget);
+    expect(find.text(text.languagesMenuMoreHint), findsOneWidget);
     await tapKey(tester, 'language-es');
     await tester.longPress(find.text('i'));
     await tester.pumpAndSettle();

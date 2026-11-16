@@ -440,7 +440,7 @@ void main() {
         );
         await pumpScreen(tester, const StatsPage(), state: state);
         final l10n = l10nOf(tester);
-        // There is no All button; a stored All still counts every language.
+        // There is no All button, and a stored All is ignored.
         expect(
           find.descendant(
             of: find.byType(LanguageBar),
@@ -450,8 +450,8 @@ void main() {
         );
         state.settings.progressAll = true;
         await tester.pumpAndSettle();
-        expect(find.text(l10n.progressStartedTitle), findsOneWidget);
-        expect(find.text(l10n.progressLevelTitle), findsNothing);
+        expect(find.text(l10n.progressLevelTitle), findsOneWidget);
+        expect(find.text(l10n.progressStartedTitle), findsNothing);
         state.showLanguage('es', allOff: true);
         await tester.pumpAndSettle();
         expect(find.text(l10n.progressLevelTitle), findsOneWidget);

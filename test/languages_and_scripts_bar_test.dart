@@ -985,17 +985,12 @@ void main() {
             'es',
           );
 
-          // On Progress, a swipe or the menu turns a stored All off.
+          // On Progress, a swipe or the menu picks the language.
           state.shellTab.value = ShellTab.progress;
-          await tester.pumpAndSettle();
-          state.settings.progressAll = true;
           await tester.pumpAndSettle();
           // With two languages, either way round is the other one.
           await swipe(tester, 1);
           expect(state.shownLanguage, 'hi');
-          expect(state.settings.progressAll, isFalse);
-          state.settings.progressAll = true;
-          await tester.pumpAndSettle();
           await openMenu(tester);
           await tester.tap(
             find.descendant(
@@ -1094,8 +1089,11 @@ void main() {
         await pumpBar(tester, screen: screen);
         expect(find.byIcon(Icons.bug_report_outlined), findsNothing);
         expect(allText(), findsNothing, reason: screen.name);
-        expect(tester.getCenter(zone()).dx, closeTo(195, 1));
-        expect(tester.getSize(zone()).width, closeTo(390, 1));
+        final wheel = find.byKey(
+          const ValueKey<String>('language-bar-mask'),
+        );
+        expect(tester.getCenter(wheel).dx, closeTo(195, 1));
+        expect(tester.getSize(wheel).width, closeTo(390 - 8, 1));
       }
     });
 

@@ -876,11 +876,7 @@ class _LanguageBarState extends State<LanguageBar>
           ),
         ),
       ),
-      child: Row(
-        children: <Widget>[
-          Expanded(child: zone),
-        ],
-      ),
+      child: zone,
     );
 
     // The turn works the same wherever it starts on the bar: on the wheel,

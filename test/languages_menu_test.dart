@@ -85,7 +85,7 @@ void main() {
     expect(find.byIcon(Icons.bug_report_outlined), findsNothing);
     await tester.longPress(find.byIcon(Icons.more_vert));
     await tester.pumpAndSettle();
-    expect(find.text(_l10n(tester).languagesMenuMore), findsWidgets);
+    expect(find.text(_l10n(tester).languagesMenuMoreHint), findsWidgets);
   });
 
   testWidgets('the menu lists the switches, then a divider, then Fact '
@@ -115,7 +115,17 @@ void main() {
       tester.getTopLeft(_item('sources')).dy,
       greaterThan(tester.getTopLeft(_item('fact')).dy),
     );
+    // Your decks is the row under the list, outside the menu.
     expect(find.text(l10n.settingsRowDecks), findsOneWidget);
+    for (final key in <String>['fact', 'sources', 'adult']) {
+      expect(
+        find.descendant(
+          of: _item(key),
+          matching: find.text(l10n.settingsRowDecks),
+        ),
+        findsNothing,
+      );
+    }
     expect(find.text(l10n.nativeChoiceTitle('Spanish')), findsNothing);
     expect(tester.takeException(), isNull);
   });
@@ -329,14 +339,19 @@ void main() {
     testWidgets('the menu, its Fact languages choices and the page fit at '
         '1.4x text on 360 dp in ${mode.name}', (tester) async {
       await _pump(tester, textScale: 1.4, mode: mode);
-      tester.view.physicalSize = const Size(360 * 3, 740 * 3);
+      tester.view
+        ..physicalSize = const Size(360 * 3, 740 * 3)
+        ..devicePixelRatio = 3;
       await tester.pumpAndSettle();
       expect(tester.takeException(), isNull);
       await _openMenu(tester);
       expect(tester.takeException(), isNull);
       await _tapItem(tester, 'fact');
       expect(tester.takeException(), isNull);
-      expect(find.byType(CheckboxMenuButton), findsWidgets);
+      expect(
+        find.byKey(const ValueKey<String>('fact-language-en')),
+        findsOneWidget,
+      );
     });
   }
 }

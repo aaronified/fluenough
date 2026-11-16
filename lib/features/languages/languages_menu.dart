@@ -36,7 +36,7 @@ class LanguagesMenu extends StatelessWidget {
         menuChildren: _items(context, l10n, state),
         builder: (context, controller, _) => LabelledIconButton(
           label: l10n.languagesMenuMore,
-          hint: l10n.languagesMenuMore,
+          hint: l10n.languagesMenuMoreHint,
           onPressed: () =>
               controller.isOpen ? controller.close() : controller.open(),
           icon: const Icon(Icons.more_vert),
@@ -207,12 +207,15 @@ class _Heading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 4),
-      child: Text(
-        text,
-        style: theme.textTheme.labelSmall!.copyWith(
-          color: theme.colorScheme.onSurfaceVariant,
+    return Semantics(
+      header: true,
+      child: Padding(
+        padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 4),
+        child: Text(
+          text,
+          style: theme.textTheme.labelSmall!.copyWith(
+            color: theme.colorScheme.onSurfaceVariant,
+          ),
         ),
       ),
     );

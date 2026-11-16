@@ -209,14 +209,6 @@ final List<GalleryEntry> settingsGalleryStates = <GalleryEntry>[
     builder: (_) => const AppearancePage(),
   ),
   GalleryEntry(
-    id: 'settings-adult-on',
-    section: GallerySection.progressAndSettings,
-    label: 'Settings, adult content on', // ui-literal-ok: debug-only gallery
-    note: 'Rude words shown (#96)', // ui-literal-ok: debug-only gallery
-    builder: (_) => const LanguagesPage(),
-    state: SettingsFixtures.adultOn,
-  ),
-  GalleryEntry(
     id: 'voices-speaking',
     section: GallerySection.progressAndSettings,
     label: 'Voices, speaking on', // ui-literal-ok: debug-only gallery
