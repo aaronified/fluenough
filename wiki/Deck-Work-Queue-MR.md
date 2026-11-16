@@ -99,7 +99,7 @@ MR-080..091: sentences decks for the 75 word decks without one, 12 workers of ab
 - A source-it-yourself mode for recommendations is specified in [Plan-Language-Completeness](Plan-Language-Completeness.md) but not implemented; MR-060 and MR-061 use the shape of `recommendations/es.yaml`.
 - The `mr` registry entry is shared tooling; MR-110 goes through the parent.
 
-## 6. Status and resume plan (2026-11-16, paused at the owner's instruction until 2 PM IST)
+## 6. Status (2026-11-16)
 
 ### Done and merged into decks-live
 
@@ -119,16 +119,19 @@ MR-080..091: sentences decks for the 75 word decks without one, 12 workers of ab
 |---|---|
 | #1506 | `mr-multiword-2..5` (23 + 9 + 15 + 13 cards); one Sonnet review, two BLOCKING fixed |
 | #1509 | `mr-culture-4` (6 cards), 11 more recommendations, creators; one Sonnet review, IPA slashes fixed |
+| #1518 | culture 3 and 4 to 18 cards each (Addendum 1) |
+| #1519 | narrow IPA rules `mr-phonetics.yaml` |
+| #1520 | `phonetic` on 2,859 cards (tool run) |
+| #1521 | review-queue rows 2 (12 rows) |
 
 No PR is open.
 
-### Resume plan (after 2 PM IST, when the parent says go)
+### Remaining
 
-1. Merging: `gh api repos/aaronified/fluenough/pulls/N/merge -X PUT -f merge_method=squash` when every check is green; on 'Base branch was modified' use `update-branch`. If red: pull the validate log (`gh api .../actions/jobs/<id>/logs`), send a Haiku to fix exactly the errors, rerun only what failed.
-2. Culture top-up from `wiki/Plan-Culture-Marathi-Addendum-1.md` (verified rows: culture 1 rows 19 to 39, culture 2 rows 10 to 27, culture 3 rows 19 to 48): one Haiku worker, serial because of `decks/creators/mr.yaml`, branch `decks/mr-kinds-wave4` from decks-live (#1509 is merged): (a) append 10 cards to `mr-culture-3` (8 to 18), ids mr-4108 to mr-4149; (b) append 12 cards to `mr-culture-4` (6 to 18; sant poets who died before 1900, theme older verse), ids mr-4156 to mr-4199. Verified rows only; creators appended; one Sonnet review; readings by the tool; no slashes in `ipa`.
-3. Narrow IPA (MR-110/111): the rules file is on branch `decks/mr-phonetics`; open its PR to decks-live (Sonnet review); the registry entry (branch `mr-phonetics-design`, issue #1476) needs the parent or owner (shared tooling) and the `ṁ` vs `m̐` question. After both merge: `python3 tools/derive_phonetic.py mr --write` and `--bracket-unchanged --write` on decks-live (tool run, no hand edits).
-4. Review-queue: append the rows of the last builders' reports (multi-word 2-5, culture 4, recommendations, fixes) to `docs/review-queue/mr.md` (parser: first cell one card id or `unit-level`/`course-wide`; extra ids go in the question text; question at most 400 characters).
-5. Update the Marathi row of [Plan-Language-Completeness](Plan-Language-Completeness.md) and issue #1177; send the parent the final summary table.
+a. The registry entry for `tools/phonetic_languages.yaml` (issue #1476, shared tooling: parent or owner) and the `ṁ` vs `m̐` question.
+b. Situations: about 30 phrases need Marathi from a reviewer.
+c. Items re-openable when a source appears: recommendations (songs, podcasts, Shwaas, Sant Tukaram, Ventilator); multi-word (structure-only entries); culture 4 and 3 are at 18 each, so there is no gap.
+d. Owner questions: grammar-unit reading decks, professional decks, set cards with notes.
 
 ### Left out, with reasons (not accepted shortfalls: re-open when a source appears)
 
