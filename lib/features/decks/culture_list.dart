@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
+import '../../app/app_state.dart' show AppState;
 import '../../app/culture.dart';
 import '../../app/culture_list.dart';
 import '../../app/deck_catalog.dart' show DeckEntry;
@@ -27,6 +28,22 @@ String cultureSectionName(
   RecommendationMedium.podcast => l10n.recKindPodcasts,
   RecommendationMedium.comic => l10n.recKindComics,
 };
+
+/// The sections of [language]'s culture list that match [query], named as the
+/// learner reads them (the kind as a row says it and as a header does).
+List<CultureListSection> cultureSections(
+  AppState state,
+  AppLocalizations l10n,
+  String language,
+  String query,
+) => state.cultureListOf(
+  language,
+  query: query,
+  mediumName: (medium) =>
+      '${recommendationMediumName(l10n, medium)} '
+      '${cultureSectionName(l10n, medium)}',
+  decksName: l10n.decksCultureDecksHeader,
+);
 
 /// The culture list the Decks screen shows in place of the deck path (approved
 /// mockup `culture-in-decks`): the culture and proverbs decks, then the
@@ -67,15 +84,7 @@ class CultureList extends StatelessWidget {
         state.recommendationProgress,
       ]),
       builder: (context, _) {
-        final sections = state.cultureListOf(
-          language,
-          query: query,
-          // The kind as a row says it and as the header does ("Film", "Films").
-          mediumName: (medium) =>
-              '${recommendationMediumName(l10n, medium)} '
-              '${cultureSectionName(l10n, medium)}',
-          decksName: l10n.decksCultureDecksHeader,
-        );
+        final sections = cultureSections(state, l10n, language, query);
         if (sections.isEmpty) {
           if (!showEmpty) return const SizedBox.shrink();
           return Padding(

@@ -635,7 +635,10 @@ class _DecksPageState extends State<DecksPage> {
         // Text in the bar, and no chip narrowing the deck part: the culture
         // list is searched too.
         final cultureHits =
-            code != null && _chips.isEmpty && applied.text.isNotEmpty;
+            code != null &&
+            _chips.isEmpty &&
+            applied.text.isNotEmpty &&
+            cultureSections(state, l10n, code, applied.text).isNotEmpty;
         final outcome = searching
             ? runSearch(
                 state,
@@ -778,7 +781,7 @@ class _DecksPageState extends State<DecksPage> {
                     // Search looks in everything: the culture decks and works
                     // that match the text follow the deck results, whichever
                     // list the screen was showing.
-                    if (cultureHits && code != null)
+                    if (cultureHits)
                       SliverToBoxAdapter(
                         child: CultureList(
                           language: code,

@@ -246,7 +246,8 @@ void main() {
       ) async {
         await open(tester);
         await _search(tester, 'pelicula');
-        await _search(tester, '');
+        await tester.tap(find.byTooltip(_l10n.decksSearchClear));
+        await tester.pumpAndSettle();
         expect(find.byType(CultureList), findsNWidgets(inCulture ? 1 : 0));
         expect(find.byType(CoursePathSliver), findsNWidgets(inCulture ? 0 : 1));
       });
