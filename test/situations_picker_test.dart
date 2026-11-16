@@ -300,6 +300,8 @@ void main() {
     testWidgets('a long press reorders only within On Today', (tester) async {
       final state = await open(tester);
       Future<void> drag(String from, String to) async {
+        // Both ends on screen, the source last so the target is in view too.
+        await tester.ensureVisible(tile(to));
         await tester.ensureVisible(tile(from));
         final a = tester.getCenter(tile(from));
         final b = tester.getCenter(tile(to));
@@ -313,13 +315,26 @@ void main() {
 
       // A tile under More cannot be dragged into On Today...
       await drag('Scene 7', 'Scene 2');
-      // ...and a tile on Today dropped on one under More stays in place.
+      // ...a tile on Today dropped on one under More stays in place...
       await drag('Scene 1', 'Scene 8');
       expect(count(tester, 6), findsOneWidget);
+      // Still in the default order: Scene 1 first, in the top row.
+      expect(
+        tester.getCenter(tile('Scene 1')).dx,
+        lessThan(tester.getCenter(tile('Scene 2')).dx),
+      );
+      // ...while within On Today the same drag does reorder.
+      await drag('Scene 1', 'Scene 3');
       await tester.tap(find.text(l10nOf(tester).commonDone));
       await tester.pumpAndSettle();
-      // The order is the default, so nothing is stored.
-      expect(state.settings.situationsShownOf('hi'), isNull);
+      expect(state.settings.situationsShownOf('hi'), <String>[
+        's2',
+        's3',
+        's1',
+        's4',
+        's5',
+        's6',
+      ]);
     });
 
     testWidgets('a list stored with more than six keeps the first six on '

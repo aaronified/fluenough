@@ -9,8 +9,8 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/hint.dart';
 import '../../ui/widgets/incoming.dart';
-import '../situations/situation_page.dart';
 import '../situations/fitted_label.dart';
+import '../situations/situation_page.dart';
 import '../situations/situation_visuals.dart';
 import '../situations/situations_editor.dart';
 

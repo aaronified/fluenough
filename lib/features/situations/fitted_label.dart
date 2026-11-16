@@ -42,6 +42,7 @@ LabelFit fitLabel({
   required TextStyle style,
   required TextScaler textScaler,
   required TextDirection textDirection,
+  Locale? locale,
   required double maxWidth,
 }) {
   final words = <String>[
@@ -54,6 +55,7 @@ LabelFit fitLabel({
     final painter = TextPainter(
       text: TextSpan(text: text, style: s),
       textDirection: textDirection,
+      locale: locale,
       textScaler: textScaler,
       textAlign: TextAlign.center,
       maxLines: fittedLabelMaxLines,
@@ -65,6 +67,8 @@ LabelFit fitLabel({
       final one = TextPainter(
         text: TextSpan(text: word, style: s),
         textDirection: textDirection,
+        locale: locale,
+      locale: locale,
         textScaler: textScaler,
       )..layout();
       final wide = one.width > maxWidth + 0.01;
@@ -122,6 +126,7 @@ class FittedLabel extends StatelessWidget {
       style: base,
       textScaler: MediaQuery.textScalerOf(context),
       textDirection: Directionality.of(context),
+      locale: Localizations.maybeLocaleOf(context),
       maxWidth: width - 2 * fittedLabelSidePadding,
     );
     return SizedBox(

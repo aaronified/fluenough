@@ -112,6 +112,9 @@ class _SituationsEditorState extends State<SituationsEditor> {
     return AlertDialog(
       title: Text(l10n.situationsEditTitle),
       insetPadding: const EdgeInsets.symmetric(horizontal: 16),
+      // The mockup's 16 dp sides: a tile is about 93 dp wide at 360 dp.
+      titlePadding: const EdgeInsets.fromLTRB(16, 24, 16, 0),
+      contentPadding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
       content: SizedBox(
         width: double.maxFinite,
         child: SingleChildScrollView(
@@ -528,7 +531,7 @@ class _TileFace extends StatelessWidget {
             child: Stack(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsetsDirectional.only(top: 12, bottom: 8),
+                  padding: const EdgeInsetsDirectional.only(top: 10, bottom: 8),
                   child: Column(
                     children: <Widget>[
                       Container(
