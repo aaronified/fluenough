@@ -1,0 +1,44 @@
+schema: 1
+id: "kn-en-reading-cooking"
+name: "Reading: a simple dish"
+kind: reading
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short passage written for this course, using only the words of its unit and the units before it. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-recipe-card"
+    title: "A simple dish"
+    sentences:
+      - text: "ಮೊದಲು ಪಾತ್ರೆಯನ್ನು ಕಾಯಿಸಿ."
+        reading: "modalu pātreyannu kāyisi."
+        ipa: "mod̪alu paːt̪rejannu kaːjisi"
+      - text: "ಅದರಲ್ಲಿ ಸಾಸಿವೆ ಮತ್ತು ಜೀರಿಗೆ ಹಾಕಿ."
+        reading: "adaralli sāsive mattu jīrige hāki."
+        ipa: "ad̪aralli saːsiʋe mat̪t̪u dʒiːriɡe haːki"
+      - text: "ನಂತರ ಶುಂಠಿ ಮತ್ತು ಅರಿಶಿನ ಸೇರಿಸಿ."
+        reading: "nantara śuṇṭhi mattu ariśina sērisi."
+        ipa: "nant̪ara ʃuɳʈʰi mat̪t̪u ariʃina seːrisi"
+      - text: "ಕೊನೆಗೆ ರುಚಿ ನೋಡಿ."
+        reading: "konege ruci nōḍi."
+        ipa: "koneɡe rutʃi noːɖi"
+    questions:
+      - id: "kn-9685"
+        prompt: { en: "What do you heat first?" }
+        options:
+          - { en: "The pot" }
+          - { en: "The bed" }
+          - { en: "The door" }
+        answer: 1
+      - id: "kn-9686"
+        prompt: { en: "Taste it at the end." }
+        answer: true
+      - id: "kn-9687"
+        prompt: { en: "Which two spices go in first?" }
+        options:
+          - { en: "Mustard and cumin" }
+          - { en: "Salt and sugar" }
+          - { en: "Tea and coffee" }
+        answer: 1

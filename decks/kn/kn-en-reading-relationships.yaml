@@ -1,0 +1,40 @@
+schema: 1
+id: "kn-en-reading-relationships"
+name: "Reading: thank-you note"
+kind: reading
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short passage written for this course, using only the words of its unit and the units before it. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-thank-you-note"
+    title: "Thank-you note"
+    sentences:
+      - text: "ಅಕ್ಕ, ಧನ್ಯವಾದ."
+        reading: "akka, dhanyavāda."
+        ipa: "akka d̪ʱanjaʋaːd̪a"
+      - text: "ನೀವು ನಮಗೆ ತುಂಬಾ ಸಹಾಯ ಮಾಡಿದ್ದೀರಿ."
+        reading: "nīvu namage tumbā sahāya māḍiddīri."
+        ipa: "niːʋu namaɡe t̪umbaː sahaːja maːɖid̪d̪iːri"
+      - text: "ನಿಮ್ಮ ಸ್ನೇಹ ನನಗೆ ತುಂಬಾ ಇಷ್ಟ."
+        reading: "nimma snēha nanage tumbā iṣṭa."
+        ipa: "nimma sneːha nanaɡe t̪umbaː iʂʈa"
+      - text: "ನೆರೆಹೊರೆಯವರು ಒಳ್ಳೆಯವರು."
+        reading: "nerehoreyavaru oḷḷeyavaru."
+        ipa: "nerehorejaʋaru oɭɭejaʋaru"
+    questions:
+      - id: "kn-9721"
+        prompt: { en: "What is the note for?" }
+        options:
+          - { en: "Help from a neighbour" }
+          - { en: "A bill" }
+          - { en: "A school test" }
+        answer: 1
+      - id: "kn-9722"
+        prompt: { en: "The writer likes the friendship." }
+        answer: true
+      - id: "kn-9723"
+        prompt: { en: "The note says sorry for a quarrel." }
+        answer: false
