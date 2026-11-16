@@ -1079,6 +1079,15 @@ class Phrasebook(B1Case):
                           f"phrasebook cards; a course's phrasebook has 15 to 25 "
                           f"(zy-bn-words)", "../zy")
 
+    def _a_pending_course_may_have_no_phrasebook_but_not_a_wrong_sized_one(self) -> None:
+        with mock.patch.object(validate_decks, "PHRASEBOOK_PENDING", {"zz"}):
+            self.phrasebook_of(0)
+            self.assertNotAcross("phrasebook:")
+            self.setUp()
+            self.phrasebook_of(5)
+            self.assertAcross(f"{self.p(PATH)}: phrasebook: the zz-en course has 5 phrasebook "
+                              f"cards; a course's phrasebook has 15 to 25 (zz-en-home)")
+
     def _a_course_with_no_written_deck_has_no_phrasebook_size(self) -> None:
         # A path and a script deck, no written deck: not held to 15 to 25.
         zx = self.tmp / "zx"
@@ -1187,6 +1196,7 @@ class Phrasebook(B1Case):
             self._a_ref_cannot_give_picture_ask,
             self._a_course_has_15_to_25_phrasebook_cards,
             self._none_is_an_error_only_with_a_plan,
+            self._a_pending_course_may_have_no_phrasebook_but_not_a_wrong_sized_one,
             self._a_course_with_no_written_deck_has_no_phrasebook_size,
             self._a_bengali_layers_phrasebook_counts_for_bengali_learners_only,
             self._the_phrasebook_comes_first,
