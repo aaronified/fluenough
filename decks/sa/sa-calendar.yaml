@@ -1,0 +1,737 @@
+schema: 1
+id: "sa-calendar"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "calendar"
+tags: ["unreviewed"]
+cards:
+  - id: "sa-5200"
+    target: "संवत्सरः"
+    reading: "saṃvatsaraḥ"
+    ipa: "sə̃ʋət̪sərəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "संवत्सरः", base: "संवत्सर", reading: "saṃvatsara" }
+    examples:
+      - target: "संवत्सरो दीर्घः"
+        reading: "saṃvatsaro dīrghaḥ"
+        ipa: "sə̃ʋət̪səroː d̪iːrɡʱəh"
+        bases:
+          - { word: "संवत्सरो", base: "संवत्सर", reading: "saṃvatsara" }
+          - { word: "दीर्घः", base: "दीर्घ", reading: "dīrgha" }
+      - target: "अत्र संवत्सरो भवति"
+        reading: "atra saṃvatsaro bhavati"
+        ipa: "ət̪rə sə̃ʋət̪səroː bʱəʋət̪i"
+        bases:
+          - { word: "अत्र", base: "अत्र", reading: "atra" }
+          - { word: "संवत्सरो", base: "संवत्सर", reading: "saṃvatsara" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5201"
+    target: "वत्सरः"
+    reading: "vatsaraḥ"
+    ipa: "ʋət̪sərəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "वत्सरः", base: "वत्सर", reading: "vatsara" }
+    examples:
+      - target: "वत्सरो दीर्घः"
+        reading: "vatsaro dīrghaḥ"
+        ipa: "ʋət̪səroː d̪iːrɡʱəh"
+        bases:
+          - { word: "वत्सरो", base: "वत्सर", reading: "vatsara" }
+          - { word: "दीर्घः", base: "दीर्घ", reading: "dīrgha" }
+      - target: "तत्र वत्सरो भवति"
+        reading: "tatra vatsaro bhavati"
+        ipa: "t̪ət̪rə ʋət̪səroː bʱəʋət̪i"
+        bases:
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "वत्सरो", base: "वत्सर", reading: "vatsara" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5202"
+    target: "मासः"
+    reading: "māsaḥ"
+    ipa: "maːsəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "मासः", base: "मास", reading: "māsa" }
+    examples:
+      - target: "मासो दीर्घः"
+        reading: "māso dīrghaḥ"
+        ipa: "maːsoː d̪iːrɡʱəh"
+        bases:
+          - { word: "मासो", base: "मास", reading: "māsa" }
+          - { word: "दीर्घः", base: "दीर्घ", reading: "dīrgha" }
+      - target: "अत्र मासो भवति"
+        reading: "atra māso bhavati"
+        ipa: "ət̪rə maːsoː bʱəʋət̪i"
+        bases:
+          - { word: "अत्र", base: "अत्र", reading: "atra" }
+          - { word: "मासो", base: "मास", reading: "māsa" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5203"
+    target: "दिनम्"
+    reading: "dinam"
+    ipa: "d̪inəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "दिनम्", base: "दिन", reading: "dina" }
+    examples:
+      - target: "दिनं दीर्घम्"
+        reading: "dinaṃ dīrgham"
+        ipa: "d̪inəm d̪iːrɡʱəm"
+        bases:
+          - { word: "दिनं", base: "दिन", reading: "dina" }
+          - { word: "दीर्घम्", base: "दीर्घ", reading: "dīrgha" }
+      - target: "तत्र दिनं भवति"
+        reading: "tatra dinaṃ bhavati"
+        ipa: "t̪ət̪rə d̪inəm bʱəʋət̪i"
+        bases:
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "दिनं", base: "दिन", reading: "dina" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5204"
+    target: "दिवसः"
+    reading: "divasaḥ"
+    ipa: "d̪iʋəsəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "दिवसः", base: "दिवस", reading: "divasa" }
+    examples:
+      - target: "दिवसो दीर्घः"
+        reading: "divaso dīrghaḥ"
+        ipa: "d̪iʋəsoː d̪iːrɡʱəh"
+        bases:
+          - { word: "दिवसो", base: "दिवस", reading: "divasa" }
+          - { word: "दीर्घः", base: "दीर्घ", reading: "dīrgha" }
+      - target: "अत्र दिवसो भवति"
+        reading: "atra divaso bhavati"
+        ipa: "ət̪rə d̪iʋəsoː bʱəʋət̪i"
+        bases:
+          - { word: "अत्र", base: "अत्र", reading: "atra" }
+          - { word: "दिवसो", base: "दिवस", reading: "divasa" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5205"
+    target: "वासरः"
+    reading: "vāsaraḥ"
+    ipa: "ʋaːsərəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "वासरः", base: "वासर", reading: "vāsara" }
+    examples:
+      - target: "वासरो निर्मलः"
+        reading: "vāsaro nirmalaḥ"
+        ipa: "ʋaːsəroː nirmələh"
+        bases:
+          - { word: "वासरो", base: "वासर", reading: "vāsara" }
+          - { word: "निर्मलः", base: "निर्मल", reading: "nirmala" }
+      - target: "तत्र वासरो भवति"
+        reading: "tatra vāsaro bhavati"
+        ipa: "t̪ət̪rə ʋaːsəroː bʱəʋət̪i"
+        bases:
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "वासरो", base: "वासर", reading: "vāsara" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5206"
+    target: "रजनी"
+    reading: "rajanī"
+    ipa: "rədʒəniː"
+    pos: "noun"
+    gender: "f"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "रजनी", base: "रजनी", reading: "rajanī" }
+    examples:
+      - target: "रजनी नीला"
+        reading: "rajanī nīlā"
+        ipa: "rədʒəniː niːlaː"
+        bases:
+          - { word: "रजनी", base: "रजनी", reading: "rajanī" }
+          - { word: "नीला", base: "नील", reading: "nīla" }
+      - target: "अत्र रजनी भवति"
+        reading: "atra rajanī bhavati"
+        ipa: "ət̪rə rədʒəniː bʱəʋət̪i"
+        bases:
+          - { word: "अत्र", base: "अत्र", reading: "atra" }
+          - { word: "रजनी", base: "रजनी", reading: "rajanī" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5207"
+    target: "सप्ताहः"
+    reading: "saptāhaḥ"
+    ipa: "səpt̪aːɦəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "सप्ताहः", base: "सप्ताह", reading: "saptāha" }
+    examples:
+      - target: "सप्ताहो दीर्घः"
+        reading: "saptāho dīrghaḥ"
+        ipa: "səpt̪aːɦoː d̪iːrɡʱəh"
+        bases:
+          - { word: "सप्ताहो", base: "सप्ताह", reading: "saptāha" }
+          - { word: "दीर्घः", base: "दीर्घ", reading: "dīrgha" }
+      - target: "तत्र सप्ताहो भवति"
+        reading: "tatra saptāho bhavati"
+        ipa: "t̪ət̪rə səpt̪aːɦoː bʱəʋət̪i"
+        bases:
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "सप्ताहो", base: "सप्ताह", reading: "saptāha" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5208"
+    target: "मुहूर्तः"
+    reading: "muhūrtaḥ"
+    ipa: "muɦuːrt̪əh"
+    pos: "noun"
+    gender: "m"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "मुहूर्तः", base: "मुहूर्त", reading: "muhūrta" }
+    examples:
+      - target: "मुहूर्तो निर्मलः"
+        reading: "muhūrto nirmalaḥ"
+        ipa: "muɦuːrt̪oː nirmələh"
+        bases:
+          - { word: "मुहूर्तो", base: "मुहूर्त", reading: "muhūrta" }
+          - { word: "निर्मलः", base: "निर्मल", reading: "nirmala" }
+      - target: "अत्र मुहूर्तो भवति"
+        reading: "atra muhūrto bhavati"
+        ipa: "ət̪rə muɦuːrt̪oː bʱəʋət̪i"
+        bases:
+          - { word: "अत्र", base: "अत्र", reading: "atra" }
+          - { word: "मुहूर्तो", base: "मुहूर्त", reading: "muhūrta" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5209"
+    target: "क्षणः"
+    reading: "kṣaṇaḥ"
+    ipa: "kʂəɳəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "क्षणः", base: "क्षण", reading: "kṣaṇa" }
+    examples:
+      - target: "क्षणो निर्मलः"
+        reading: "kṣaṇo nirmalaḥ"
+        ipa: "kʂəɳoː nirmələh"
+        bases:
+          - { word: "क्षणो", base: "क्षण", reading: "kṣaṇa" }
+          - { word: "निर्मलः", base: "निर्मल", reading: "nirmala" }
+      - target: "तत्र क्षणो भवति"
+        reading: "tatra kṣaṇo bhavati"
+        ipa: "t̪ət̪rə kʂəɳoː bʱəʋət̪i"
+        bases:
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "क्षणो", base: "क्षण", reading: "kṣaṇa" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5210"
+    target: "घटी"
+    reading: "ghaṭī"
+    ipa: "ɡʱəʈiː"
+    pos: "noun"
+    gender: "f"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "घटी", base: "घटी", reading: "ghaṭī" }
+    examples:
+      - target: "घटी दीर्घा"
+        reading: "ghaṭī dīrghā"
+        ipa: "ɡʱəʈiː d̪iːrɡʱaː"
+        bases:
+          - { word: "घटी", base: "घटी", reading: "ghaṭī" }
+          - { word: "दीर्घा", base: "दीर्घ", reading: "dīrgha" }
+      - target: "अत्र घटी भवति"
+        reading: "atra ghaṭī bhavati"
+        ipa: "ət̪rə ɡʱəʈiː bʱəʋət̪i"
+        bases:
+          - { word: "अत्र", base: "अत्र", reading: "atra" }
+          - { word: "घटी", base: "घटी", reading: "ghaṭī" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5211"
+    target: "कालः"
+    reading: "kālaḥ"
+    ipa: "kaːləh"
+    pos: "noun"
+    gender: "m"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "कालः", base: "काल", reading: "kāla" }
+    examples:
+      - target: "कालो दीर्घः"
+        reading: "kālo dīrghaḥ"
+        ipa: "kaːloː d̪iːrɡʱəh"
+        bases:
+          - { word: "कालो", base: "काल", reading: "kāla" }
+          - { word: "दीर्घः", base: "दीर्घ", reading: "dīrgha" }
+      - target: "तत्र कालो भवति"
+        reading: "tatra kālo bhavati"
+        ipa: "t̪ət̪rə kaːloː bʱəʋət̪i"
+        bases:
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "कालो", base: "काल", reading: "kāla" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5212"
+    target: "पूर्णिमा"
+    reading: "pūrṇimā"
+    ipa: "puːrɳimaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "पूर्णिमा", base: "पूर्णिमा", reading: "pūrṇimā" }
+    examples:
+      - target: "पूर्णिमा धवला"
+        reading: "pūrṇimā dhavalā"
+        ipa: "puːrɳimaː d̪ʱəʋəlaː"
+        bases:
+          - { word: "पूर्णिमा", base: "पूर्णिमा", reading: "pūrṇimā" }
+          - { word: "धवला", base: "धवल", reading: "dhavala" }
+      - target: "अत्र पूर्णिमा भवति"
+        reading: "atra pūrṇimā bhavati"
+        ipa: "ət̪rə puːrɳimaː bʱəʋət̪i"
+        bases:
+          - { word: "अत्र", base: "अत्र", reading: "atra" }
+          - { word: "पूर्णिमा", base: "पूर्णिमा", reading: "pūrṇimā" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5213"
+    target: "अमावास्या"
+    reading: "amāvāsyā"
+    ipa: "əmaːʋaːsjaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "अमावास्या", base: "अमावास्या", reading: "amāvāsyā" }
+    examples:
+      - target: "अमावास्या नीला"
+        reading: "amāvāsyā nīlā"
+        ipa: "əmaːʋaːsjaː niːlaː"
+        bases:
+          - { word: "अमावास्या", base: "अमावास्या", reading: "amāvāsyā" }
+          - { word: "नीला", base: "नील", reading: "nīla" }
+      - target: "तत्र अमावास्या भवति"
+        reading: "tatra amāvāsyā bhavati"
+        ipa: "t̪ət̪rə əmaːʋaːsjaː bʱəʋət̪i"
+        bases:
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "अमावास्या", base: "अमावास्या", reading: "amāvāsyā" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5214"
+    target: "मध्याह्नः"
+    reading: "madhyāhnaḥ"
+    ipa: "məd̪ʱjaːɦnəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "मध्याह्नः", base: "मध्याह्न", reading: "madhyāhna" }
+    examples:
+      - target: "मध्याह्नो रक्तः"
+        reading: "madhyāhno raktaḥ"
+        ipa: "məd̪ʱjaːɦnoː rəkt̪əh"
+        bases:
+          - { word: "मध्याह्नो", base: "मध्याह्न", reading: "madhyāhna" }
+          - { word: "रक्तः", base: "रक्त", reading: "rakta" }
+      - target: "अत्र मध्याह्नो भवति"
+        reading: "atra madhyāhno bhavati"
+        ipa: "ət̪rə məd̪ʱjaːɦnoː bʱəʋət̪i"
+        bases:
+          - { word: "अत्र", base: "अत्र", reading: "atra" }
+          - { word: "मध्याह्नो", base: "मध्याह्न", reading: "madhyāhna" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5215"
+    target: "शुक्लः"
+    reading: "śuklaḥ"
+    ipa: "ʃukləh"
+    pos: "noun"
+    gender: "m"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "शुक्लः", base: "शुक्ल", reading: "śukla" }
+    examples:
+      - target: "शुक्लो धवलः"
+        reading: "śuklo dhavalaḥ"
+        ipa: "ʃukloː d̪ʱəʋələh"
+        bases:
+          - { word: "शुक्लो", base: "शुक्ल", reading: "śukla" }
+          - { word: "धवलः", base: "धवल", reading: "dhavala" }
+      - target: "तत्र शुक्लो भवति"
+        reading: "tatra śuklo bhavati"
+        ipa: "t̪ət̪rə ʃukloː bʱəʋət̪i"
+        bases:
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "शुक्लो", base: "शुक्ल", reading: "śukla" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5216"
+    target: "उदयः"
+    reading: "udayaḥ"
+    ipa: "ud̪əjəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "उदयः", base: "उदय", reading: "udaya" }
+    examples:
+      - target: "उदयो रक्तः"
+        reading: "udayo raktaḥ"
+        ipa: "ud̪əjoː rəkt̪əh"
+        bases:
+          - { word: "उदयो", base: "उदय", reading: "udaya" }
+          - { word: "रक्तः", base: "रक्त", reading: "rakta" }
+      - target: "अत्र उदयो भवति"
+        reading: "atra udayo bhavati"
+        ipa: "ət̪rə ud̪əjoː bʱəʋət̪i"
+        bases:
+          - { word: "अत्र", base: "अत्र", reading: "atra" }
+          - { word: "उदयो", base: "उदय", reading: "udaya" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5217"
+    target: "ग्रहणम्"
+    reading: "grahaṇam"
+    ipa: "ɡrəɦəɳəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "ग्रहणम्", base: "ग्रहण", reading: "grahaṇa" }
+    examples:
+      - target: "ग्रहणं नीलम्"
+        reading: "grahaṇaṃ nīlam"
+        ipa: "ɡrəɦəɳəm niːləm"
+        bases:
+          - { word: "ग्रहणं", base: "ग्रहण", reading: "grahaṇa" }
+          - { word: "नीलम्", base: "नील", reading: "nīla" }
+      - target: "तत्र ग्रहणं भवति"
+        reading: "tatra grahaṇaṃ bhavati"
+        ipa: "t̪ət̪rə ɡrəɦəɳəm bʱəʋət̪i"
+        bases:
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "ग्रहणं", base: "ग्रहण", reading: "grahaṇa" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5218"
+    target: "प्रहरः"
+    reading: "praharaḥ"
+    ipa: "prəɦərəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "प्रहरः", base: "प्रहर", reading: "prahara" }
+    examples:
+      - target: "प्रहरो दीर्घः"
+        reading: "praharo dīrghaḥ"
+        ipa: "prəɦəroː d̪iːrɡʱəh"
+        bases:
+          - { word: "प्रहरो", base: "प्रहर", reading: "prahara" }
+          - { word: "दीर्घः", base: "दीर्घ", reading: "dīrgha" }
+      - target: "अत्र प्रहरो भवति"
+        reading: "atra praharo bhavati"
+        ipa: "ət̪rə prəɦəroː bʱəʋət̪i"
+        bases:
+          - { word: "अत्र", base: "अत्र", reading: "atra" }
+          - { word: "प्रहरो", base: "प्रहर", reading: "prahara" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5219"
+    target: "चैत्रः"
+    reading: "caitraḥ"
+    ipa: "tʃəit̪rəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "चैत्रः", base: "चैत्र", reading: "caitra" }
+    examples:
+      - target: "चैत्रो मासः"
+        reading: "caitro māsaḥ"
+        ipa: "tʃəit̪roː maːsəh"
+        bases:
+          - { word: "चैत्रो", base: "चैत्र", reading: "caitra" }
+          - { word: "मासः", base: "मास", reading: "māsa" }
+      - target: "तत्र चैत्रो भवति"
+        reading: "tatra caitro bhavati"
+        ipa: "t̪ət̪rə tʃəit̪roː bʱəʋət̪i"
+        bases:
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "चैत्रो", base: "चैत्र", reading: "caitra" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5220"
+    target: "वैशाखः"
+    reading: "vaiśākhaḥ"
+    ipa: "ʋəiʃaːkʰəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "वैशाखः", base: "वैशाख", reading: "vaiśākha" }
+    examples:
+      - target: "वैशाखो मासः"
+        reading: "vaiśākho māsaḥ"
+        ipa: "ʋəiʃaːkʰoː maːsəh"
+        bases:
+          - { word: "वैशाखो", base: "वैशाख", reading: "vaiśākha" }
+          - { word: "मासः", base: "मास", reading: "māsa" }
+      - target: "अत्र वैशाखो भवति"
+        reading: "atra vaiśākho bhavati"
+        ipa: "ət̪rə ʋəiʃaːkʰoː bʱəʋət̪i"
+        bases:
+          - { word: "अत्र", base: "अत्र", reading: "atra" }
+          - { word: "वैशाखो", base: "वैशाख", reading: "vaiśākha" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5221"
+    target: "आषाढः"
+    reading: "āṣāḍhaḥ"
+    ipa: "aːʂaːɖʱəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "आषाढः", base: "आषाढ", reading: "āṣāḍha" }
+    examples:
+      - target: "आषाढो मासः"
+        reading: "āṣāḍho māsaḥ"
+        ipa: "aːʂaːɖʱoː maːsəh"
+        bases:
+          - { word: "आषाढो", base: "आषाढ", reading: "āṣāḍha" }
+          - { word: "मासः", base: "मास", reading: "māsa" }
+      - target: "तत्र आषाढो भवति"
+        reading: "tatra āṣāḍho bhavati"
+        ipa: "t̪ət̪rə aːʂaːɖʱoː bʱəʋət̪i"
+        bases:
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "आषाढो", base: "आषाढ", reading: "āṣāḍha" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5222"
+    target: "आश्विनः"
+    reading: "āśvinaḥ"
+    ipa: "aːʃʋinəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "आश्विनः", base: "आश्विन", reading: "āśvina" }
+    examples:
+      - target: "आश्विनो मासः"
+        reading: "āśvino māsaḥ"
+        ipa: "aːʃʋinoː maːsəh"
+        bases:
+          - { word: "आश्विनो", base: "आश्विन", reading: "āśvina" }
+          - { word: "मासः", base: "मास", reading: "māsa" }
+      - target: "अत्र आश्विनो भवति"
+        reading: "atra āśvino bhavati"
+        ipa: "ət̪rə aːʃʋinoː bʱəʋət̪i"
+        bases:
+          - { word: "अत्र", base: "अत्र", reading: "atra" }
+          - { word: "आश्विनो", base: "आश्विन", reading: "āśvina" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5223"
+    target: "मार्गशीर्षः"
+    reading: "mārgaśīrṣaḥ"
+    ipa: "maːrɡəʃiːrʂəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "मार्गशीर्षः", base: "मार्गशीर्ष", reading: "mārgaśīrṣa" }
+    examples:
+      - target: "मार्गशीर्षो मासः"
+        reading: "mārgaśīrṣo māsaḥ"
+        ipa: "maːrɡəʃiːrʂoː maːsəh"
+        bases:
+          - { word: "मार्गशीर्षो", base: "मार्गशीर्ष", reading: "mārgaśīrṣa" }
+          - { word: "मासः", base: "मास", reading: "māsa" }
+      - target: "तत्र मार्गशीर्षो भवति"
+        reading: "tatra mārgaśīrṣo bhavati"
+        ipa: "t̪ət̪rə maːrɡəʃiːrʂoː bʱəʋət̪i"
+        bases:
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "मार्गशीर्षो", base: "मार्गशीर्ष", reading: "mārgaśīrṣa" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5224"
+    target: "पौषः"
+    reading: "pauṣaḥ"
+    ipa: "pəuʂəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "पौषः", base: "पौष", reading: "pauṣa" }
+    examples:
+      - target: "पौषो मासः"
+        reading: "pauṣo māsaḥ"
+        ipa: "pəuʂoː maːsəh"
+        bases:
+          - { word: "पौषो", base: "पौष", reading: "pauṣa" }
+          - { word: "मासः", base: "मास", reading: "māsa" }
+      - target: "अत्र पौषो भवति"
+        reading: "atra pauṣo bhavati"
+        ipa: "ət̪rə pəuʂoː bʱəʋət̪i"
+        bases:
+          - { word: "अत्र", base: "अत्र", reading: "atra" }
+          - { word: "पौषो", base: "पौष", reading: "pauṣa" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5225"
+    target: "माघः"
+    reading: "māghaḥ"
+    ipa: "maːɡʱəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "माघः", base: "माघ", reading: "māgha" }
+    examples:
+      - target: "माघो मासः"
+        reading: "māgho māsaḥ"
+        ipa: "maːɡʱoː maːsəh"
+        bases:
+          - { word: "माघो", base: "माघ", reading: "māgha" }
+          - { word: "मासः", base: "मास", reading: "māsa" }
+      - target: "तत्र माघो भवति"
+        reading: "tatra māgho bhavati"
+        ipa: "t̪ət̪rə maːɡʱoː bʱəʋət̪i"
+        bases:
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "माघो", base: "माघ", reading: "māgha" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5226"
+    target: "फाल्गुनः"
+    reading: "phālgunaḥ"
+    ipa: "pʰaːlɡunəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "फाल्गुनः", base: "फाल्गुन", reading: "phālguna" }
+    examples:
+      - target: "फाल्गुनो मासः"
+        reading: "phālguno māsaḥ"
+        ipa: "pʰaːlɡunoː maːsəh"
+        bases:
+          - { word: "फाल्गुनो", base: "फाल्गुन", reading: "phālguna" }
+          - { word: "मासः", base: "मास", reading: "māsa" }
+      - target: "अत्र फाल्गुनो भवति"
+        reading: "atra phālguno bhavati"
+        ipa: "ət̪rə pʰaːlɡunoː bʱəʋət̪i"
+        bases:
+          - { word: "अत्र", base: "अत्र", reading: "atra" }
+          - { word: "फाल्गुनो", base: "फाल्गुन", reading: "phālguna" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+  - id: "sa-5227"
+    target: "भाद्रपदः"
+    reading: "bhādrapadaḥ"
+    ipa: "bʱaːd̪rəpəd̪əh"
+    pos: "noun"
+    gender: "m"
+    tags: ["calendar", "unreviewed"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+    bases:
+      - { word: "भाद्रपदः", base: "भाद्रपद", reading: "bhādrapada" }
+    examples:
+      - target: "भाद्रपदो मासः"
+        reading: "bhādrapado māsaḥ"
+        ipa: "bʱaːd̪rəpəd̪oː maːsəh"
+        bases:
+          - { word: "भाद्रपदो", base: "भाद्रपद", reading: "bhādrapada" }
+          - { word: "मासः", base: "मास", reading: "māsa" }
+      - target: "तत्र भाद्रपदो भवति"
+        reading: "tatra bhādrapado bhavati"
+        ipa: "t̪ət̪rə bʱaːd̪rəpəd̪oː bʱəʋət̪i"
+        bases:
+          - { word: "तत्र", base: "तत्र", reading: "tatra" }
+          - { word: "भाद्रपदो", base: "भाद्रपद", reading: "bhādrapada" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
