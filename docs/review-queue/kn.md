@@ -45,3 +45,6 @@
 | kn-6268 | see card | The meaning given is speculative: what does the saying mean? | Sonnet review | 2026-11-15 |
 | kn-6269 | see card | The meaning given is speculative: what does the saying mean? | Sonnet review | 2026-11-15 |
 | kn-6303 | see card | The meaning given is speculative (likely: moaning 'alas' ages you): what is the sense? | Sonnet review | 2026-11-15 |
+| kn-9000 | see card | The reading decks' Kannada prose is the builder's own: is it natural? Doubts: ಕಲ್ಲು ಎತ್ತಬೇಡಿ (park sign), ನಂತರ ಭುಜ ಕೆಳಗೆ ಇಡಿ (body), ನಗದು ಅಥವಾ ಕಾರ್ಡ್ ಸರಿ (shopping), ನಿನ್ನ ಸಹಾಯ ಇದೆ, ನೆಮ್ಮದಿ ಆಯಿತು (feelings) | Haiku builder | 2026-11-15 |
+| kn-9735 | see card | Inflected forms in the reading decks were accepted by lemma: ಓಡುವುದಿಲ್ಲ, ಹಾಡುತ್ತೇನೆ, ಚಮಚವನ್ನು, ಯಾರದು, ಇತ್ತು, ಓಡಿಹೋಯಿತು, ಘೋಷಿಸಲಾಗಿದೆ, ಆರಂಭಿಸಲಾಗಿದೆ, ಮುಂದಿನ, ಕಟ್ಟಲಾಗುವುದು: check each against the grammar decks | Haiku builder | 2026-11-15 |
+| kn-9390 | see card | ZWNJ (U+200C) is written in ಕ್ಲಬ್‌ನಲ್ಲಿ and ಆಂಬುಲೆನ್ಸ್‌ಗೆ: does it match the course's spelling convention? | Haiku builder | 2026-11-15 |
