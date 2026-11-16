@@ -1,0 +1,98 @@
+schema: 1
+id: "sa-places-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3230"
+    target: "ग्रामे गृहाणि भवन्ति नगरे प्रासादा भवन्ति."
+    reading: "grāme gṛhāṇi bhavanti nagare prāsādā bhavanti."
+    ipa: "ɡraːmeː ɡr̩ɦaːɳi bʱəʋənt̪i nəɡəreː praːsaːd̪aː bʱəʋənt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "ग्रामे", base: "ग्रामः", reading: "grāmaḥ" }, { word: "गृहाणि", base: "गृहम्", reading: "gṛham" }, { word: "भवन्ति", base: "भू", reading: "bhū" }, { word: "नगरे", base: "नगरम्", reading: "nagaram" }, { word: "प्रासादा", base: "प्रासादः", reading: "prāsādaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1761", kind: "word" }, { id: "w2", ref: "sa-1777", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3231"
+    target: "वने सिंहो वसति ग्रामे कुक्कुरो वसति."
+    reading: "vane siṃho vasati grāme kukkuro vasati."
+    ipa: "ʋəneː sĩɦoː ʋəsət̪i ɡraːmeː kukkuroː ʋəsət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "वने", base: "वनम्", reading: "vanam" }, { word: "सिंहो", base: "सिंहः", reading: "siṃhaḥ" }, { word: "वसति", base: "वस्", reading: "vas" }, { word: "ग्रामे", base: "ग्रामः", reading: "grāmaḥ" }, { word: "कुक्कुरो", base: "कुक्कुरः", reading: "kukkuraḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1772", kind: "word" }, { id: "w2", ref: "sa-1724", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3232"
+    target: "नदी सागरं गच्छति जलं च वहति."
+    reading: "nadī sāgaraṃ gacchati jalaṃ ca vahati."
+    ipa: "nəd̪iː saːɡərəm ɡətʃtʃʰət̪i dʒələm tʃə ʋəɦət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "नदी", ref: "sa-1762" }, { word: "सागरं", base: "सागरः", reading: "sāgaraḥ" }, { word: "गच्छति", base: "गम्", reading: "gam" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "च", ref: "sa-1104" }, { word: "वहति", base: "वह्", reading: "vah" }]
+    confusables: [{ id: "w1", ref: "sa-1765", kind: "word" }, { id: "w2", ref: "sa-1776", kind: "word" }, { id: "w3", ref: "sa-2017", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "pair" }, { id: "n3", kind: "usage" }, { id: "n4", kind: "usage" }]
+  - id: "sa-3233"
+    target: "पर्वते गुहा भवति गुहायां सिंहो वसति."
+    reading: "parvate guhā bhavati guhāyāṃ siṃho vasati."
+    ipa: "pərʋət̪eː ɡuɦaː bʱəʋət̪i ɡuɦaːjaːm sĩɦoː ʋəsət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "पर्वते", base: "पर्वतः", reading: "parvataḥ" }, { word: "गुहा", ref: "sa-1772" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "गुहायां", base: "गुहा", reading: "guhā" }, { word: "सिंहो", base: "सिंहः", reading: "siṃhaḥ" }, { word: "वसति", base: "वस्", reading: "vas" }]
+    confusables: [{ id: "w1", ref: "sa-1761", kind: "word" }, { id: "w2", ref: "sa-1773", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3234"
+    target: "आपणे माता मांसं क्रीणाति पिता च मत्स्यं क्रीणाति."
+    reading: "āpaṇe mātā māṃsaṃ krīṇāti pitā ca matsyaṃ krīṇāti."
+    ipa: "aːpəɳeː maːt̪aː mãːsəm kriːɳaːt̪i pit̪aː tʃə mət̪sjəm kriːɳaːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "आपणे", base: "आपणः", reading: "āpaṇaḥ" }, { word: "माता", ref: "sa-1030" }, { word: "मांसं", base: "मांसम्", reading: "māṃsam" }, { word: "क्रीणाति", base: "क्री", reading: "krī" }, { word: "पिता", ref: "sa-1031" }, { word: "च", ref: "sa-1104" }, { word: "मत्स्यं", base: "मत्स्यः", reading: "matsyaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1769", kind: "word" }, { id: "w2", ref: "sa-1709", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3235"
+    target: "देवो मन्दिरे वसति पिता च तत्र गच्छति."
+    reading: "devo mandire vasati pitā ca tatra gacchati."
+    ipa: "d̪eːʋoː mənd̪ireː ʋəsət̪i pit̪aː tʃə t̪ət̪rə ɡətʃtʃʰət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "देवो", base: "देवः", reading: "devaḥ" }, { word: "मन्दिरे", base: "मन्दिरम्", reading: "mandiram" }, { word: "वसति", base: "वस्", reading: "vas" }, { word: "पिता", ref: "sa-1031" }, { word: "च", ref: "sa-1104" }, { word: "तत्र", ref: "sa-1081" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+    confusables: [{ id: "w1", ref: "sa-1768", kind: "word" }, { id: "w2", ref: "sa-1775", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3236"
+    target: "विद्यालये सूनुः पठति दुहिता च गायति."
+    reading: "vidyālaye sūnuḥ paṭhati duhitā ca gāyati."
+    ipa: "ʋid̪jaːləjeː suːnuh pəʈʰət̪i d̪uɦit̪aː tʃə ɡaːjət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "विद्यालये", base: "विद्यालयः", reading: "vidyālayaḥ" }, { word: "सूनुः", ref: "sa-1041" }, { word: "पठति", base: "पठ्", reading: "paṭh" }, { word: "दुहिता", ref: "sa-1035" }, { word: "च", ref: "sa-1104" }, { word: "गायति", base: "गै", reading: "gai" }]
+    confusables: [{ id: "w1", ref: "sa-1036", kind: "word" }, { id: "w2", ref: "sa-1034", kind: "word" }]
+    notes: [{ id: "n1", kind: "usage" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3237"
+    target: "आश्रमो वने भवति तीर्थं नद्यां भवति."
+    reading: "āśramo vane bhavati tīrthaṃ nadyāṃ bhavati."
+    ipa: "aːʃrəmoː ʋəneː bʱəʋət̪i t̪iːrt̪ʰəm nəd̪jaːm bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "आश्रमो", base: "आश्रमः", reading: "āśramaḥ" }, { word: "वने", base: "वनम्", reading: "vanam" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "तीर्थं", base: "तीर्थम्", reading: "tīrtham" }, { word: "नद्यां", base: "नदी", reading: "nadī" }]
+    confusables: [{ id: "w1", ref: "sa-1769", kind: "word" }, { id: "w2", ref: "sa-1776", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3238"
+    target: "सागरे द्वीपो भवति मरौ जलं न भवति."
+    reading: "sāgare dvīpo bhavati marau jalaṃ na bhavati."
+    ipa: "saːɡəreː d̪ʋiːpoː bʱəʋət̪i mərəu dʒələm nə bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सागरे", base: "सागरः", reading: "sāgaraḥ" }, { word: "द्वीपो", base: "द्वीपः", reading: "dvīpaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "मरौ", base: "मरुः", reading: "maruḥ" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "न", ref: "sa-0026" }]
+    confusables: [{ id: "w1", ref: "sa-1765", kind: "word" }, { id: "w2", ref: "sa-1777", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3239"
+    target: "उद्याने मयूरो नृत्यति क्षेत्रे वृषभो धावति."
+    reading: "udyāne mayūro nṛtyati kṣetre vṛṣabho dhāvati."
+    ipa: "ud̪jaːneː məjuːroː nr̩t̪jət̪i kʂeːt̪reː ʋr̩ʂəbʱoː d̪ʱaːʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "उद्याने", base: "उद्यानम्", reading: "udyānam" }, { word: "मयूरो", base: "मयूरः", reading: "mayūraḥ" }, { word: "नृत्यति", base: "नृत्", reading: "nṛt" }, { word: "क्षेत्रे", base: "क्षेत्रम्", reading: "kṣetram" }, { word: "वृषभो", base: "वृषभः", reading: "vṛṣabhaḥ" }, { word: "धावति", base: "धाव्", reading: "dhāv" }]
+    confusables: [{ id: "w1", ref: "sa-1766", kind: "word" }, { id: "w2", ref: "sa-1759", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
