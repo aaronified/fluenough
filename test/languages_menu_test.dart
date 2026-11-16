@@ -51,7 +51,10 @@ Future<void> _openMenu(WidgetTester tester) async {
   await tester.pumpAndSettle();
 }
 
-Finder _item(String key) => find.byKey(ValueKey<String>('languages-menu-$key'));
+// The framework gives the menu button's key to the item inside it too, so
+// the outer widget is the first match.
+Finder _item(String key) =>
+    find.byKey(ValueKey<String>('languages-menu-$key')).first;
 
 CheckboxMenuButton _toggle(WidgetTester tester, String key) =>
     tester.widget<CheckboxMenuButton>(_item(key));
@@ -69,6 +72,8 @@ void main() {
     usePhone(tester);
     await pumpScreen(tester, const SettingsPage());
     final l10n = _l10n(tester);
+    await tester.ensureVisible(find.text(l10n.settingsRowLanguages));
+    await tester.pumpAndSettle();
     await tester.tap(find.text(l10n.settingsRowLanguages));
     await tester.pump();
     await tester.pump(const Duration(seconds: 1));
@@ -93,13 +98,7 @@ void main() {
     await _pump(tester, state: _learner());
     await _openMenu(tester);
     final l10n = _l10n(tester);
-    final order = <String>[
-      'romanisation',
-      'ipa',
-      'ipa-replaces',
-      'adult',
-      'hide-above',
-    ];
+    final order = <String>['romanisation', 'ipa', 'ipa-replaces', 'adult'];
     var last = -1.0;
     for (final key in order) {
       final top = tester.getTopLeft(_item(key)).dy;
@@ -173,7 +172,6 @@ void main() {
       final restored = SettingsNotifier()..restore(settings.toStored());
       expect(restored.showRomanisation, settings.showRomanisation);
       expect(restored.showIpa, settings.showIpa);
-      expect(restored.hideAboveLevel, settings.hideAboveLevel);
     }
 
     await check(
@@ -189,13 +187,6 @@ void main() {
       l10n.settingsIpaOff,
       l10n.settingsIpaOn,
       () => settings.showIpa = false,
-    );
-    await check(
-      'hide-above',
-      () => settings.hideAboveLevel,
-      l10n.settingsHideAboveOff,
-      l10n.settingsHideAboveOn,
-      () => settings.hideAboveLevel = false,
     );
     expect(tester.takeException(), isNull);
   });
@@ -347,7 +338,7 @@ void main() {
       await _tapItem(tester, 'fact');
       expect(tester.takeException(), isNull);
       expect(
-        find.byKey(const ValueKey<String>('fact-language-en')),
+        find.byKey(const ValueKey<String>('fact-language-en')).first,
         findsOneWidget,
       );
     });

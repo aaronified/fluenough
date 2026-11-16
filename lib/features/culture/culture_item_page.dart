@@ -32,9 +32,9 @@ class CultureItemRequest {
 /// chip and one legacy line, and a button to practise it. A proverb, a stanza
 /// and a passage with its gloss are what the decks hold at A1, A2 and B1.
 ///
-/// An item above the learner's level is never shown (D2): with "Items above my
-/// level" at its default the page says it is not shown yet; with support on it
-/// shows the item with a lock, not counted and not scheduled for review.
+/// The page opens to read at any level. An item above the learner's level
+/// carries a notice and has nothing to practise: it is not counted and not
+/// scheduled for review.
 class CultureItemPage extends StatelessWidget {
   const CultureItemPage({super.key, required this.request});
 
@@ -75,19 +75,18 @@ class CultureItemPage extends StatelessWidget {
     final scheme = theme.colorScheme;
     final language = request.language;
     final info = cultureLanguage(state, language);
-    final settings = state.settings;
+    final options = state.settings.cultureFor(language);
     final learner = state.levelIn(language);
     final above = LevelGate.isAbove(item.level, learner);
-    final hidden = above && !settings.cultureAboveSupport;
     final spoken = cultureSpoken(context, state);
     final source = cultureSourceLine(l10n, item.source);
     final creatorId = item.creators.isEmpty ? null : item.creators.first;
     final creator = creatorId == null
         ? null
         : state.creatorsOf(language)?.byId(creatorId);
-    final showPerson = settings.cultureCreators;
+    final showPerson = options.creators;
     final done = state.isCultureItemDone(item);
-    final canPlay = !hidden && state.hasVoice(info);
+    final canPlay = state.hasVoice(info);
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -125,115 +124,108 @@ class CultureItemPage extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 12),
-          if (hidden)
-            AboveLevelNotice(
-              title: l10n.cultureNotShownTitle,
-              body: l10n.cultureNotShownBody(item.level.label),
-            )
-          else ...<Widget>[
+          Padding(
+            padding: const EdgeInsetsDirectional.symmetric(
+              horizontal: AppSizes.textInset,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                TargetText(
+                  item.target,
+                  language: info,
+                  fontSize: 26,
+                  fontWeight: FontWeight.w500,
+                  textAlign: TextAlign.start,
+                  card: item.card,
+                ),
+                if (item.reading != null) ...<Widget>[
+                  const SizedBox(height: 4),
+                  Text(
+                    item.reading!,
+                    style: theme.textTheme.bodyMedium!.copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
+                ],
+                if (item.meaning != null) ...<Widget>[
+                  const SizedBox(height: 8),
+                  Text(item.meaning!, style: theme.textTheme.bodyLarge),
+                ],
+              ],
+            ),
+          ),
+          if (item.glossary.isNotEmpty) ...<Widget>[
+            const SizedBox(height: 12),
             Padding(
               padding: const EdgeInsetsDirectional.symmetric(
                 horizontal: AppSizes.textInset,
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  TargetText(
-                    item.target,
-                    language: info,
-                    fontSize: 26,
-                    fontWeight: FontWeight.w500,
-                    textAlign: TextAlign.start,
-                    card: item.card,
-                  ),
-                  if (item.reading != null) ...<Widget>[
-                    const SizedBox(height: 4),
-                    Text(
-                      item.reading!,
-                      style: theme.textTheme.bodyMedium!.copyWith(
-                        color: scheme.onSurfaceVariant,
-                      ),
-                    ),
-                  ],
-                  if (item.meaning != null) ...<Widget>[
-                    const SizedBox(height: 8),
-                    Text(item.meaning!, style: theme.textTheme.bodyLarge),
-                  ],
-                ],
-              ),
-            ),
-            if (item.glossary.isNotEmpty) ...<Widget>[
-              const SizedBox(height: 12),
-              Padding(
-                padding: const EdgeInsetsDirectional.symmetric(
-                  horizontal: AppSizes.textInset,
-                ),
-                child: Semantics(
-                  header: true,
-                  child: Text(
-                    l10n.cultureGlossTitle,
-                    style: theme.textTheme.titleSmall!.copyWith(
-                      color: scheme.onSurfaceVariant,
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 6),
-              Padding(
-                padding: const EdgeInsetsDirectional.symmetric(
-                  horizontal: AppSizes.textInset,
-                ),
-                child: Wrap(
-                  spacing: 8,
-                  runSpacing: 6,
-                  children: <Widget>[
-                    for (final gloss in item.glossary)
-                      Chip(
-                        label: Text(
-                          l10n.cultureGlossEntry(
-                            gloss.word,
-                            gloss.meaning[bestLanguage(
-                                  gloss.meaning.keys,
-                                  spoken,
-                                )] ??
-                                gloss.modern,
-                          ),
-                        ),
-                      ),
-                  ],
-                ),
-              ),
-            ],
-            if (source != null) ...<Widget>[
-              const SizedBox(height: 12),
-              Padding(
-                padding: const EdgeInsetsDirectional.symmetric(
-                  horizontal: AppSizes.textInset,
-                ),
+              child: Semantics(
+                header: true,
                 child: Text(
-                  source,
-                  style: theme.textTheme.bodySmall!.copyWith(
+                  l10n.cultureGlossTitle,
+                  style: theme.textTheme.titleSmall!.copyWith(
                     color: scheme.onSurfaceVariant,
                   ),
                 ),
               ),
-            ],
-            if (showPerson) ...<Widget>[
-              const SizedBox(height: 14),
-              if (creator != null)
-                CreatorChip(language: language, creatorId: creator.id)
-              else if (item.creators.isEmpty)
-                const _NoSingleAuthor(),
-            ],
-            const SizedBox(height: 16),
-            if (above)
-              AboveLevelNotice(
-                title: l10n.cultureAboveTitle,
-                body: l10n.cultureAboveBody,
-              )
-            else
-              _Practise(item: item, language: language, done: done),
+            ),
+            const SizedBox(height: 6),
+            Padding(
+              padding: const EdgeInsetsDirectional.symmetric(
+                horizontal: AppSizes.textInset,
+              ),
+              child: Wrap(
+                spacing: 8,
+                runSpacing: 6,
+                children: <Widget>[
+                  for (final gloss in item.glossary)
+                    Chip(
+                      label: Text(
+                        l10n.cultureGlossEntry(
+                          gloss.word,
+                          gloss.meaning[bestLanguage(
+                                gloss.meaning.keys,
+                                spoken,
+                              )] ??
+                              gloss.modern,
+                        ),
+                      ),
+                    ),
+                ],
+              ),
+            ),
           ],
+          if (source != null) ...<Widget>[
+            const SizedBox(height: 12),
+            Padding(
+              padding: const EdgeInsetsDirectional.symmetric(
+                horizontal: AppSizes.textInset,
+              ),
+              child: Text(
+                source,
+                style: theme.textTheme.bodySmall!.copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
+              ),
+            ),
+          ],
+          if (showPerson) ...<Widget>[
+            const SizedBox(height: 14),
+            if (creator != null)
+              CreatorChip(language: language, creatorId: creator.id)
+            else if (item.creators.isEmpty)
+              const _NoSingleAuthor(),
+          ],
+          const SizedBox(height: 16),
+          if (above)
+            AboveLevelNotice(
+              title: l10n.cultureAboveTitle,
+              body: l10n.cultureAboveBody,
+            )
+          else
+            _Practise(item: item, language: language, done: done),
           const SizedBox(height: 8),
           Align(
             alignment: AlignmentDirectional.centerStart,
@@ -312,10 +304,10 @@ class _Practise extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final settings = AppScope.of(context).settings;
+    final options = AppScope.of(context).settings.cultureFor(language);
     // With culture off its decks are in no lesson or session, so there is
     // nothing to practise; the item can still be read.
-    if (item.cards.isEmpty || !settings.cultureItems) {
+    if (item.cards.isEmpty || !options.items) {
       return const SizedBox.shrink();
     }
     // A passage is learned through its questions, a lesson of its deck; any
@@ -352,9 +344,7 @@ class _Practise extends StatelessWidget {
         ],
         const SizedBox(height: 6),
         Text(
-          settings.cultureCounts
-              ? l10n.cultureCountsNote
-              : l10n.cultureBonusNote,
+          options.counts ? l10n.cultureCountsNote : l10n.cultureBonusNote,
           style: Theme.of(context).textTheme.bodySmall!
               .copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant),
         ),

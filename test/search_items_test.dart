@@ -237,17 +237,7 @@ void main() {
         skip: skip,
       );
 
-      test('removes what is above the level when the setting says so', () {
-        final hidden = corpus.search(
-          'culture',
-          levelOf: _level(Level.a1),
-          hideAbove: true,
-          sections: _sections,
-        );
-        expect(
-          hidden.results.where((r) => r.row.id == 'zz-en-culture-ejemplo'),
-          isEmpty,
-        );
+      test('always lists what is above the level', () {
         final shown = corpus.search(
           'culture',
           levelOf: _level(Level.a1),
@@ -335,17 +325,6 @@ void main() {
         sections: _sections,
       );
       expect(found.ofKind('situations').single.aboveLevel, isTrue);
-      expect(
-        corpusWithoutDeck()
-            .search(
-              'medicine',
-              levelOf: _level(Level.a2),
-              hideAbove: true,
-              sections: _sections,
-            )
-            .results,
-        isEmpty,
-      );
     });
 
     test(

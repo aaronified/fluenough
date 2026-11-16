@@ -58,7 +58,9 @@ const _names = <SpokenLanguage>[
   SpokenLanguage(code: 'hi', iso639_3: 'hin', name: 'Hindi', ownName: 'हिन्दी'),
 ];
 
-Finder _box(String code) => find.byKey(ValueKey<String>('fact-language-$code'));
+// The menu button's key is also given to the item inside it: take the outer.
+Finder _box(String code) =>
+    find.byKey(ValueKey<String>('fact-language-$code')).first;
 
 AppState _state(SettingsNotifier settings) {
   addTearDown(settings.dispose);
