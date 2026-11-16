@@ -1,0 +1,98 @@
+schema: 1
+id: "sa-food-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3200"
+    target: "माता पायसं पचति पिता च खादति."
+    reading: "mātā pāyasaṃ pacati pitā ca khādati."
+    ipa: "maːt̪aː paːjəsəm pətʃət̪i pit̪aː tʃə kʰaːd̪ət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "माता", ref: "sa-1030" }, { word: "पायसं", base: "पायसम्", reading: "pāyasam" }, { word: "पचति", base: "पच्", reading: "pac" }, { word: "पिता", ref: "sa-1031" }, { word: "च", ref: "sa-1104" }, { word: "खादति", base: "खाद्", reading: "khād" }]
+    confusables: [{ id: "w1", ref: "sa-1701", kind: "word" }, { id: "w2", ref: "sa-0432", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }, { id: "n4", kind: "usage" }]
+  - id: "sa-3201"
+    target: "अहं क्षीरं पिबामि त्वं च तक्रं पिबसि."
+    reading: "ahaṃ kṣīraṃ pibāmi tvaṃ ca takraṃ pibasi."
+    ipa: "əɦəm kʂiːrəm pibaːmi t̪ʋəm tʃə t̪əkrəm pibəsi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "क्षीरं", base: "क्षीरम्", reading: "kṣīram" }, { word: "पिबामि", base: "पा", reading: "pā" }, { word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "च", ref: "sa-1104" }, { word: "तक्रं", base: "तक्रम्", reading: "takram" }, { word: "पिबसि", base: "पा", reading: "pā" }]
+    confusables: [{ id: "w1", ref: "sa-1702", kind: "word" }, { id: "w2", ref: "sa-1700", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "pair", ref: "sa-1718" }, { id: "n3", kind: "usage" }, { id: "n4", kind: "usage" }]
+  - id: "sa-3202"
+    target: "दधि शीतं भवति गुडो मधुरो भवति."
+    reading: "dadhi śītaṃ bhavati guḍo madhuro bhavati."
+    ipa: "d̪əd̪ʱi ʃiːt̪əm bʱəʋət̪i ɡuɖoː məd̪ʱuroː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "दधि", ref: "sa-1702" }, { word: "शीतं", base: "शीतः", reading: "śītaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "गुडो", base: "गुडः", reading: "guḍaḥ" }, { word: "मधुरो", base: "मधुरः", reading: "madhuraḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1703", kind: "word" }, { id: "w2", ref: "sa-1711", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3203"
+    target: "स मत्स्यं खादति सा च मांसं न खादति."
+    reading: "sa matsyaṃ khādati sā ca māṃsaṃ na khādati."
+    ipa: "sə mət̪sjəm kʰaːd̪ət̪i saː tʃə mãːsəm nə kʰaːd̪ət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "स", base: "सः", reading: "saḥ" }, { word: "मत्स्यं", base: "मत्स्यः", reading: "matsyaḥ" }, { word: "खादति", base: "खाद्", reading: "khād" }, { word: "सा", ref: "sa-1011" }, { word: "च", ref: "sa-1104" }, { word: "मांसं", base: "मांसम्", reading: "māṃsam" }, { word: "न", ref: "sa-0026" }]
+    confusables: [{ id: "w1", ref: "sa-1709", kind: "word" }, { id: "w2", ref: "sa-1706", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3204"
+    target: "उदकं कः पिबति का च क्षीरं पिबति?"
+    reading: "udakaṃ kaḥ pibati kā ca kṣīraṃ pibati?"
+    ipa: "ud̪əkəm kəh pibət̪i kaː tʃə kʂiːrəm pibət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "उदकं", base: "उदकम्", reading: "udakam" }, { word: "कः", ref: "sa-1001" }, { word: "पिबति", base: "पा", reading: "pā" }, { word: "का", ref: "sa-1026" }, { word: "च", ref: "sa-1104" }, { word: "क्षीरं", base: "क्षीरम्", reading: "kṣīram" }]
+    confusables: [{ id: "w1", ref: "sa-1000", kind: "word" }, { id: "w2", ref: "sa-2000", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "pair", ref: "sa-0023" }, { id: "n3", kind: "usage" }, { id: "n4", kind: "usage" }]
+  - id: "sa-3205"
+    target: "आम्रं पिता क्रीणाति माता च दाडिमं क्रीणाति."
+    reading: "āmraṃ pitā krīṇāti mātā ca dāḍimaṃ krīṇāti."
+    ipa: "aːmrəm pit̪aː kriːɳaːt̪i maːt̪aː tʃə d̪aːɖiməm kriːɳaːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "आम्रं", base: "आम्रः", reading: "āmraḥ" }, { word: "पिता", ref: "sa-1031" }, { word: "क्रीणाति", base: "क्री", reading: "krī" }, { word: "माता", ref: "sa-1030" }, { word: "च", ref: "sa-1104" }, { word: "दाडिमं", base: "दाडिमः", reading: "dāḍimaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1706", kind: "word" }, { id: "w2", ref: "sa-1722", kind: "word" }, { id: "w3", ref: "sa-2109", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3206"
+    target: "वयं तिलं गुडं च खादामः."
+    reading: "vayaṃ tilaṃ guḍaṃ ca khādāmaḥ."
+    ipa: "ʋəjəm t̪iləm ɡuɖəm tʃə kʰaːd̪aːməh"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "वयं", base: "वयम्", reading: "vayam" }, { word: "तिलं", base: "तिलः", reading: "tilaḥ" }, { word: "गुडं", base: "गुडः", reading: "guḍaḥ" }, { word: "च", ref: "sa-1104" }, { word: "खादामः", base: "खाद्", reading: "khād" }]
+    confusables: [{ id: "w1", ref: "sa-1711", kind: "word" }, { id: "w2", ref: "sa-2001", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3207"
+    target: "लवणं मधुरं न भवति शर्करा मधुरा भवति."
+    reading: "lavaṇaṃ madhuraṃ na bhavati śarkarā madhurā bhavati."
+    ipa: "ləʋəɳəm məd̪ʱurəm nə bʱəʋət̪i ʃərkəraː məd̪ʱuraː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "लवणं", base: "लवणम्", reading: "lavaṇam" }, { word: "मधुरं", base: "मधुरः", reading: "madhuraḥ" }, { word: "न", ref: "sa-0026" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "शर्करा", ref: "sa-1711" }, { word: "मधुरा", base: "मधुरः", reading: "madhuraḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1703", kind: "word" }, { id: "w2", ref: "sa-1721", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3208"
+    target: "अद्य वयं शाकं पचामो दधि च खादामः."
+    reading: "adya vayaṃ śākaṃ pacāmo dadhi ca khādāmaḥ."
+    ipa: "əd̪jə ʋəjəm ʃaːkəm pətʃaːmoː d̪əd̪ʱi tʃə kʰaːd̪aːməh"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अद्य", ref: "sa-1088" }, { word: "वयं", base: "वयम्", reading: "vayam" }, { word: "शाकं", base: "शाकः", reading: "śākaḥ" }, { word: "पचामो", base: "पच्", reading: "pac" }, { word: "दधि", ref: "sa-1702" }, { word: "च", ref: "sa-1104" }, { word: "खादामः", base: "खाद्", reading: "khād" }]
+    confusables: [{ id: "w1", ref: "sa-1700", kind: "word" }, { id: "w2", ref: "sa-2001", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3209"
+    target: "कुत्र नवनीतं भवति कुत्र च मधु भवति?"
+    reading: "kutra navanītaṃ bhavati kutra ca madhu bhavati?"
+    ipa: "kut̪rə nəʋəniːt̪əm bʱəʋət̪i kut̪rə tʃə məd̪ʱu bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "कुत्र", ref: "sa-1002" }, { word: "नवनीतं", base: "नवनीतम्", reading: "navanītam" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "च", ref: "sa-1104" }, { word: "मधु", ref: "sa-1703" }]
+    confusables: [{ id: "w1", ref: "sa-1718", kind: "word" }, { id: "w2", ref: "sa-1720", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
