@@ -1,0 +1,79 @@
+schema: 1
+id: "sa-numbers-1-20-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3040"
+    target: "द्वौ शिष्यौ संस्कृतं पठतः."
+    reading: "dvau śiṣyau saṃskṛtaṃ paṭhataḥ."
+    ipa: "d̪ʋəu ʃiʂjəu sə̃skr̩t̪əm pəʈʰət̪əh"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "द्वौ", ref: "sa-1050" }, { word: "शिष्यौ", base: "शिष्यः", reading: "śiṣyaḥ" }, { word: "संस्कृतं", base: "संस्कृतम्", reading: "saṃskṛtam" }, { word: "पठतः", base: "पठ्", reading: "paṭh" }]
+    confusables: [{ id: "w1", ref: "sa-1051", kind: "word" }, { id: "w2", ref: "sa-0023", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3041"
+    target: "त्रयो देवा जलं पिबन्ति."
+    reading: "trayo devā jalaṃ pibanti."
+    ipa: "t̪rəjoː d̪eːʋaː dʒələm pibənt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "त्रयो", base: "त्रयः", reading: "trayaḥ" }, { word: "देवा", base: "देवः", reading: "devaḥ" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "पिबन्ति", base: "पा", reading: "pā" }]
+    confusables: [{ id: "w1", ref: "sa-1052", kind: "word" }, { id: "w2", ref: "sa-0028", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "sa-3042"
+    target: "कति शिष्या जलं पिबन्ति?"
+    reading: "kati śiṣyā jalaṃ pibanti?"
+    ipa: "kət̪i ʃiʂjaː dʒələm pibənt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "कति", ref: "sa-1005" }, { word: "शिष्या", base: "शिष्यः", reading: "śiṣyaḥ" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "पिबन्ति", base: "पा", reading: "pā" }]
+    confusables: [{ id: "w1", ref: "sa-1006", kind: "word" }, { id: "w2", ref: "sa-0024", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "sa-3043"
+    target: "अष्ट शिष्याः पठन्ति नव च देवा गच्छन्ति."
+    reading: "aṣṭa śiṣyāḥ paṭhanti nava ca devā gacchanti."
+    ipa: "əʂʈə ʃiʂjaːh pəʈʰənt̪i nəʋə tʃə d̪eːʋaː ɡətʃtʃʰənt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अष्ट", ref: "sa-1056" }, { word: "शिष्याः", base: "शिष्यः", reading: "śiṣyaḥ" }, { word: "पठन्ति", base: "पठ्", reading: "paṭh" }, { word: "नव", ref: "sa-1057" }, { word: "च", ref: "sa-1104" }, { word: "देवा", base: "देवः", reading: "devaḥ" }, { word: "गच्छन्ति", base: "गम्", reading: "gam" }]
+    confusables: [{ id: "w1", ref: "sa-1058", kind: "word" }, { id: "w2", ref: "sa-0023", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3044"
+    target: "अहं दश पुस्तकानि पठामि."
+    reading: "ahaṃ daśa pustakāni paṭhāmi."
+    ipa: "əɦəm d̪əʃə pust̪əkaːni pəʈʰaːmi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "दश", ref: "sa-1058" }, { word: "पुस्तकानि", base: "पुस्तकम्", reading: "pustakam" }, { word: "पठामि", base: "पठ्", reading: "paṭh" }]
+    confusables: [{ id: "w1", ref: "sa-0022", kind: "word" }, { id: "w2", ref: "sa-1050", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "sa-3045"
+    target: "अहं जलं नयामि त्वं च सप्त पुस्तकानि नयसि."
+    reading: "ahaṃ jalaṃ nayāmi tvaṃ ca sapta pustakāni nayasi."
+    ipa: "əɦəm dʒələm nəjaːmi t̪ʋəm tʃə səpt̪ə pust̪əkaːni nəjəsi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "नयामि", base: "नी", reading: "nī" }, { word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "च", ref: "sa-1104" }, { word: "सप्त", ref: "sa-1055" }, { word: "पुस्तकानि", base: "पुस्तकम्", reading: "pustakam" }, { word: "नयसि", base: "नी", reading: "nī" }]
+    confusables: [{ id: "w1", ref: "sa-1010", kind: "word" }, { id: "w2", ref: "sa-0024", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3046"
+    target: "एको देवः पुस्तकं पठति द्वौ च देवौ गच्छतः."
+    reading: "eko devaḥ pustakaṃ paṭhati dvau ca devau gacchataḥ."
+    ipa: "eːkoː d̪eːʋəh pust̪əkəm pəʈʰət̪i d̪ʋəu tʃə d̪eːʋəu ɡətʃtʃʰət̪əh"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "एको", base: "एकः", reading: "ekaḥ" }, { word: "देवः", ref: "sa-0025" }, { word: "पुस्तकं", base: "पुस्तकम्", reading: "pustakam" }, { word: "पठति", base: "पठ्", reading: "paṭh" }, { word: "द्वौ", ref: "sa-1050" }, { word: "च", ref: "sa-1104" }, { word: "देवौ", base: "देवः", reading: "devaḥ" }, { word: "गच्छतः", base: "गम्", reading: "gam" }]
+    confusables: [{ id: "w1", ref: "sa-0028", kind: "word" }, { id: "w2", ref: "sa-4101", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3047"
+    target: "द्वादश देवाः कुत्र गच्छन्ति?"
+    reading: "dvādaśa devāḥ kutra gacchanti?"
+    ipa: "d̪ʋaːd̪əʃə d̪eːʋaːh kut̪rə ɡətʃtʃʰənt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "द्वादश", ref: "sa-1060" }, { word: "देवाः", base: "देवः", reading: "devaḥ" }, { word: "कुत्र", ref: "sa-1002" }, { word: "गच्छन्ति", base: "गम्", reading: "gam" }]
+    confusables: [{ id: "w1", ref: "sa-0028", kind: "word" }, { id: "w2", ref: "sa-1003", kind: "word" }]

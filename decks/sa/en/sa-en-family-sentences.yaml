@@ -1,0 +1,50 @@
+schema: 1
+id: "sa-en-family-sentences"
+kind: "layer"
+core: "sa-family-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about family"
+description: "Short sentences about family, built only from words already taught. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-3030":
+    native: "Where does mother go and where does father read?"
+    bases: { "गच्छति": "to go (goes)", "पठति": "to read (reads)" }
+    confusables: { "w1": { why: "Brother, not mother: भ्राता (bhrātā) means brother." }, "w2": { why: "When, not where: कदा (kadā) means when." } }
+    notes: { "n1": "च (ca) means and: it never starts the part it joins, but follows its first word or a later one." }
+  "sa-3031":
+    native: "Father reads Sanskrit and mother speaks."
+    bases: { "संस्कृतं": "the Sanskrit language", "पठति": "to read (reads)", "वदति": "to speak (speaks)" }
+    confusables: { "w1": { why: "Brother, not father: भ्राता (bhrātā) means brother." }, "w2": { why: "To cook, not to read: पच् (pac) means to cook." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. संस्कृतम् (saṃskṛtam) is written संस्कृतं (saṃskṛtaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of पठति (paṭhati) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). Before a labial, such as the one here, Whitney 213 a would keep म् (m); the anusvāra sign is still the usual writing (Aṣṭādhyāyī 8.3.23; Whitney 213 i).", "n2": "च (ca) means and: it never starts the part it joins, but follows its first word or a later one.", "n3": "संस्कृतम् (saṃskṛtam) is the object of the verb, in the accusative case; for a neuter noun that case looks like the plain form. The cases are taught in the unit sa-grammar-case-system." }
+  "sa-3032":
+    native: "When does that brother bring water?"
+    bases: { "स": "he", "जलं": "water", "नयति": "to bring (brings)" }
+    confusables: { "w1": { why: "She, not he: सा (sā) means she." }, "w2": { why: "Sister, not brother: स्वसा (svasā) means sister." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. सः (saḥ) is written स (sa) because सः (saḥ) and एषः (eṣaḥ) lose their visarga before any consonant, here the start of भ्राता (bhrātā) (Whitney 176 a; Aṣṭādhyāyī 6.1.132). जलम् (jalam) is written जलं (jalaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of कदा (kadā) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign).", "n2": "जलम् (jalam) is the object of the verb, in the accusative case; for a neuter noun that case looks like the plain form. The cases are taught in the unit sa-grammar-case-system." }
+  "sa-3033":
+    native: "Who is the mother and who is the sister?"
+    bases: { "भवति": "to be (is)" }
+    confusables: { "w1": { why: "Father, not mother: पिता (pitā) means father." }, "w2": { why: "To go, not to be: गम् (gam) means to go." } }
+    notes: { "n1": "भवति (bhavati) joins a noun to a noun like the English is: no other word is needed.", "n2": "च (ca) means and: it never starts the part it joins, but follows its first word or a later one." }
+  "sa-3034":
+    native: "That friend does not speak Sanskrit."
+    bases: { "स": "he", "संस्कृतं": "the Sanskrit language", "वदति": "to speak (speaks)" }
+    confusables: { "w1": { why: "She, not he: सा (sā) means she." }, "w2": { why: "Son, not friend: सूनुः (sūnuḥ) means son." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. सः (saḥ) is written स (sa) because सः (saḥ) and एषः (eṣaḥ) lose their visarga before any consonant, here the start of सखा (sakhā) (Whitney 176 a; Aṣṭādhyāyī 6.1.132). संस्कृतम् (saṃskṛtam) is written संस्कृतं (saṃskṛtaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of न (na) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign).", "n2": "संस्कृतम् (saṃskṛtam) is the object of the verb, in the accusative case; for a neuter noun that case looks like the plain form. The cases are taught in the unit sa-grammar-case-system." }
+  "sa-3035":
+    native: "The sister reads and the brother goes."
+    bases: { "पठति": "to read (reads)", "गच्छति": "to go (goes)" }
+    confusables: { "w1": { why: "Husband, not sister: पतिः (patiḥ) means husband." }, "w2": { why: "To speak, not to read: वद् (vad) means to speak." } }
+    notes: { "n1": "च (ca) means and: it never starts the part it joins, but follows its first word or a later one." }
+  "sa-3036":
+    native: "How does this father speak Sanskrit?"
+    bases: { "अयं": "this (masculine)", "कथं": "how", "संस्कृतं": "the Sanskrit language", "वदति": "to speak (speaks)" }
+    confusables: { "w1": { why: "This (feminine), not this (masculine): इयम् (iyam) means this (feminine)." }, "w2": { why: "Brother, not father: भ्राता (bhrātā) means brother." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. अयम् (ayam) is written अयं (ayaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of पिता (pitā) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). Before a labial, such as the one here, Whitney 213 a would keep म् (m); the anusvāra sign is still the usual writing (Aṣṭādhyāyī 8.3.23; Whitney 213 i). कथम् (katham) is written कथं (kathaṃ), for the same reason, before संस्कृतम् (saṃskṛtam). संस्कृतम् (saṃskṛtam) is written संस्कृतं (saṃskṛtaṃ), for the same reason, before वदति (vadati).", "n2": "संस्कृतम् (saṃskṛtam) is the object of the verb, in the accusative case; for a neuter noun that case looks like the plain form. The cases are taught in the unit sa-grammar-case-system." }
+  "sa-3037":
+    native: "I am a brother and you are a friend."
+    bases: { "अहं": "I", "भवामि": "to be (I am)", "त्वं": "you", "भवसि": "to be (you are)" }
+    confusables: { "w1": { why: "He, not I: सः (saḥ) means he." }, "w2": { why: "Sister, not brother: स्वसा (svasā) means sister." } }
+    notes: { "n1": "Written apart: the words are not run together, but each junction that changes shape is shown. अहम् (aham) is written अहं (ahaṃ) because a final म् (m) is written as the anusvāra ं (ṃ) before a consonant, here the start of भ्राता (bhrātā) (Aṣṭādhyāyī 8.3.23, मः अनुस्वारः (maḥ anusvāraḥ); Whitney 213 i says texts generally write the assimilated m with the anusvāra sign). Before a labial, such as the one here, Whitney 213 a would keep म् (m); the anusvāra sign is still the usual writing (Aṣṭādhyāyī 8.3.23; Whitney 213 i). त्वम् (tvam) is written त्वं (tvaṃ), for the same reason, before च (ca).", "n2": "च (ca) means and: it never starts the part it joins, but follows its first word or a later one." }
