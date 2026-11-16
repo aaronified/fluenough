@@ -5,6 +5,7 @@
     python3 tools/tok_sitelen.py decks/tok          # add the spelling in place
     python3 tools/tok_sitelen.py --check decks/tok  # exit 1 if a file is not up to date
     python3 tools/tok_sitelen.py --words decks/tok  # list the words of the decks
+    python3 tools/tok_sitelen.py --glyph-deck decks/tok  # write the glyph deck
 
 The decks keep Toki Pona in Latin letters: a card's `target` is the Latin
 spelling, so every card, layer and id is as it was (ADR-0058). This tool adds
@@ -30,6 +31,14 @@ The rules, all of them:
   in Latin.
 - Deck text in a grammar table (`pattern`) or in a reading passage has no
   other-script field in the format and stays in Latin.
+
+`--glyph-deck` writes the glyph guide, `tok-script-sitelen-pona`, a script
+deck taught from the Latin side (ADR-0055): one card for each word the
+course teaches, its target the word's glyph and `target_scripts.latin` the
+word, in the order the path first meets the words. A card's reading, IPA and
+English meaning are those of the word's own card. The new card ids follow the
+largest `tok-NNNN` in `decks/`, and a card keeps its id when the tool is run
+again.
 
 The tool changes the text of the files and nothing else: it checks, by reading
 each file before and after, that the only difference is the added fields.
@@ -250,13 +259,134 @@ def words_of(root: Path) -> dict[str, int]:
     return counts
 
 
+# --- The glyph deck -----------------------------------------------------
+
+GLYPH_DECK = "tok-script-sitelen-pona"
+GLYPH_LAYER = "tok-en-script-sitelen-pona"
+_ID = re.compile(r"tok-(\d{4})\b")
+
+
+def _q(text: str) -> str:
+    """[text] as a double-quoted YAML scalar."""
+    import json
+    return json.dumps(text, ensure_ascii=False)
+
+
+def _unit_decks(path: Path) -> list[str]:
+    """The core ids of the path's decks, in unit order."""
+    raw = yaml.safe_load(path.read_text(encoding="utf-8"))
+    found: list[str] = []
+    for unit in raw.get("units", []):
+        ids = unit if isinstance(unit, list) else (unit or {}).get("decks", [])
+        for deck in ids or []:
+            if isinstance(deck, str) and deck != "*" and deck != GLYPH_DECK \
+                    and deck not in found:
+                found.append(deck)
+    return found
+
+
+def word_cards(root: Path) -> list[tuple[str, str, str | None, str]]:
+    """(word, card id, ipa, English meaning) of each word with a card of
+    its own, in the order the path first meets it."""
+    order = _unit_decks(root / "tok-path.yaml")
+    listed = {p.stem for p in deck_files(root)}
+    ordered = [d for d in order if d in listed] + sorted(listed - set(order))
+    found: dict[str, tuple[str, str | None, str]] = {}
+    for deck in ordered:
+        core = yaml.safe_load((root / f"{deck}.yaml").read_text(encoding="utf-8"))
+        if not is_vocab_core(core) or deck == GLYPH_DECK:
+            continue
+        layer_path = root / "en" / f"tok-en-{deck[4:]}.yaml"
+        layer = (yaml.safe_load(layer_path.read_text(encoding="utf-8"))
+                 if layer_path.is_file() else {}) or {}
+        meanings = layer.get("cards") or {}
+        for card in core["cards"]:
+            word = card.get("target") if isinstance(card, dict) else None
+            if (isinstance(word, str) and word in WORDS and word not in found
+                    and card.get("id") and card.get("pos") != "phrase"):
+                native = (meanings.get(card["id"]) or {}).get("native")
+                if isinstance(native, str) and native:
+                    found[word] = (card["id"], card.get("ipa"), native)
+    return [(w, *found[w]) for w in found]
+
+
+def glyph_deck(root: Path) -> tuple[str, str]:
+    """The text of the glyph deck's core and of its English layer."""
+    words = word_cards(root)
+    ids: dict[str, str] = {}
+    top = 0
+    for p in root.parent.rglob("*.yaml"):
+        for n in _ID.findall(p.read_text(encoding="utf-8")):
+            top = max(top, int(n))
+    existing = root / f"{GLYPH_DECK}.yaml"
+    if existing.is_file():
+        old = yaml.safe_load(existing.read_text(encoding="utf-8"))
+        for card in old.get("cards", []):
+            ids[card["target"]] = card["id"]
+    core = [
+        '"schema": 1',
+        f'"id": "{GLYPH_DECK}"',
+        '"part": "core"',
+        '"kind": "vocab"',
+        '"language":',
+        '  "code": "tok"',
+        '  "iso639_3": "tok"',
+        '  "name": "Toki Pona"',
+        f'  "script": "{SCRIPT}"',
+        f'  "scripts": ["{SCRIPT}", "latin"]',
+        '  "icon": "Tp"',
+        '"license": "CC-BY-SA-4.0"',
+        '"tags": ["beginner", "unreviewed", "script"]',
+        '"cards":',
+    ]
+    layer = [
+        '"schema": 1',
+        f'"id": "{GLYPH_LAYER}"',
+        '"kind": "layer"',
+        f'"core": "{GLYPH_DECK}"',
+        '"native":',
+        '  "code": "en"',
+        '  "iso639_3": "eng"',
+        '  "name": "English"',
+        '"name": "Sitelen pona: the glyphs"',
+        '"description": ' + _q(
+            "The glyph of each Toki Pona word the course teaches, in the order "
+            "you meet them: see the glyph, say the word. Sitelen pona writes a "
+            "word as one glyph; a name goes in a cartouche. Not yet checked by "
+            "a Toki Pona speaker: please report any mistake."),
+        '"license": "CC-BY-SA-4.0"',
+        '"tags": ["unreviewed", "script"]',
+        '"cards":',
+    ]
+    for word, _card, ipa, native in words:
+        glyph = chr(WORDS[word])
+        if glyph not in ids:
+            top += 1
+            ids[glyph] = f"tok-{top:04d}"
+        cid = ids[glyph]
+        core += [f'- "id": "{cid}"', f'  "target": {_q(glyph)}',
+                 '  "target_scripts":', f'    "latin": {_q(word)}',
+                 f'  "reading": {_q(word)}']
+        if ipa:
+            core.append(f'  "ipa": {_q(ipa)}')
+        core += ['  "pos": "letter"', '  "modes": ["listening", "speaking"]']
+        layer += [f'  "{cid}":', f'    "native": {_q(native)}']
+    return "\n".join(core) + "\n", "\n".join(layer) + "\n"
+
+
 def main(argv: list[str]) -> int:
     args = [a for a in argv[1:] if not a.startswith("--")]
     flags = {a for a in argv[1:] if a.startswith("--")}
-    if len(args) != 1 or not flags <= {"--check", "--words"}:
+    if len(args) != 1 or not flags <= {"--check", "--words", "--glyph-deck"}:
         print(__doc__)
         return 2
     root = Path(args[0])
+    if "--glyph-deck" in flags:
+        core, layer = glyph_deck(root)
+        (root / f"{GLYPH_DECK}.yaml").write_text(core, encoding="utf-8")
+        (root / "en" / f"{GLYPH_LAYER}.yaml").write_text(layer, encoding="utf-8")
+        print(f"{core.count(chr(10) + '- ')} cards")
+        return 0
     if "--words" in flags:
         for w, n in sorted(words_of(root).items()):
             mark = "name" if w[:1].isupper() else ("" if w in WORDS else "MISSING")

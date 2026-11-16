@@ -140,6 +140,101 @@ class Files(unittest.TestCase):
             self.assertEqual(ts.convert_file(path), 0)
 
 
+PATH = """schema: 1
+kind: "path"
+id: "tok-path"
+language: "tok"
+alphabet: ["tok-script-sitelen-pona"]
+units:
+  - ["tok-script-sitelen-pona"]
+  - decks: ["tok-b", "tok-a", "*"]
+    words: 3
+"""
+
+CORE_A = """schema: 1
+id: "tok-a"
+part: "core"
+kind: "vocab"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+cards:
+  - { id: "tok-0007", target: "toki", ipa: "ˈtoki", pos: "noun" }
+  - { id: "tok-0008", target: "toki pona", ipa: "x", pos: "phrase" }
+"""
+
+CORE_B = """schema: 1
+id: "tok-b"
+part: "core"
+kind: "vocab"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+cards:
+  - { id: "tok-0003", target: "mi", ipa: "mi", pos: "pronoun" }
+  - { id: "tok-0004", target: "toki", ipa: "ˈtoki", pos: "noun" }
+"""
+
+LAYER = """schema: 1
+id: "tok-en-%s"
+kind: "layer"
+core: "tok-%s"
+native: { code: "en", iso639_3: "eng", name: "English" }
+cards:
+%s
+"""
+
+
+class GlyphDeck(unittest.TestCase):
+    def tree(self, tmp: str) -> Path:
+        root = Path(tmp) / "decks" / "tok"
+        (root / "en").mkdir(parents=True)
+        (root / "tok-path.yaml").write_text(PATH, encoding="utf-8")
+        for name, core, cards in (
+                ("a", CORE_A, '  "tok-0007":\n    native: "language"\n  "tok-0008":\n    native: "x"'),
+                ("b", CORE_B, '  "tok-0003":\n    native: "I"\n  "tok-0004":\n    native: "again"')):
+            (root / f"tok-{name}.yaml").write_text(core, encoding="utf-8")
+            (root / "en" / f"tok-en-{name}.yaml").write_text(
+                LAYER % (name, name, cards), encoding="utf-8")
+        return root
+
+    def test_one_card_per_word_in_the_order_the_path_meets_them(self) -> None:
+        import yaml
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self.tree(tmp)
+            core, layer = ts.glyph_deck(root)
+            deck = yaml.safe_load(core)
+            cards = deck["cards"]
+            # tok-b comes first on the path: mi, then toki; the phrase and
+            # the repeated word are left out.
+            self.assertEqual([c["target_scripts"]["latin"] for c in cards], ["mi", "toki"])
+            self.assertEqual([c["target"] for c in cards], [g("mi"), g("toki")])
+            self.assertEqual(deck["language"]["script"], "sitelen_pona")
+            self.assertEqual(deck["language"]["scripts"], ["sitelen_pona", "latin"])
+            self.assertEqual(cards[1]["ipa"], "ˈtoki")
+            self.assertEqual(cards[0]["pos"], "letter")
+            self.assertEqual(cards[0]["modes"], ["listening", "speaking"])
+            ids = [c["id"] for c in cards]
+            self.assertEqual(ids, ["tok-0009", "tok-0010"], "after the largest id")
+            meanings = yaml.safe_load(layer)["cards"]
+            self.assertEqual(meanings[ids[0]]["native"], "I")
+            self.assertEqual(meanings[ids[1]]["native"], "language")
+
+    def test_ids_are_kept_when_it_is_run_again(self) -> None:
+        import yaml
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self.tree(tmp)
+            core, layer = ts.glyph_deck(root)
+            (root / f"{ts.GLYPH_DECK}.yaml").write_text(core, encoding="utf-8")
+            (root / "en" / f"{ts.GLYPH_LAYER}.yaml").write_text(layer, encoding="utf-8")
+            # A word added to an earlier deck takes a new id; the others keep theirs.
+            (root / "tok-a.yaml").write_text(
+                CORE_A + '  - { id: "tok-0011", target: "pona", ipa: "ˈpona", pos: "adjective" }\n',
+                encoding="utf-8")
+            (root / "en" / "tok-en-a.yaml").write_text(
+                LAYER % ("a", "a", '  "tok-0007":\n    native: "language"\n  "tok-0011":\n    native: "good"'),
+                encoding="utf-8")
+            core2, _ = ts.glyph_deck(root)
+            ids = {c["target_scripts"]["latin"]: c["id"] for c in yaml.safe_load(core2)["cards"]}
+            self.assertEqual(ids, {"mi": "tok-0009", "toki": "tok-0010", "pona": "tok-0012"})
+
+
 class Languages(unittest.TestCase):
     def test_toki_pona_offers_its_two_scripts(self) -> None:
         import yaml
