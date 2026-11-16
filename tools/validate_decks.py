@@ -104,6 +104,10 @@ SCRIPT_BLOCKS = {
     "gurmukhi": ((0x0A00, 0x0A7F),),
     "bengali": ((0x0980, 0x09FF),),
     "latin": ((0x0041, 0x024F), (0x1E00, 0x1EFF)),
+    # Toki Pona's sitelen pona: the UCSUR block (ADR-0055). Its characters are
+    # private-use, not letters, so what this refuses is a Latin letter left
+    # in the spelling.
+    "sitelen_pona": ((0xF1900, 0xF19FF),),
 }
 KINDS = {"vocab", "grammar", "facts", "situations", "themes", "numbers", "path", "sounds", "script",
          "reading", "rules", "layer", "resources", "phonetics", "gating",
