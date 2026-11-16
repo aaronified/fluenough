@@ -585,7 +585,11 @@ Remake the README's screenshots in `docs/screenshots/` (owner, 2026-11-16):
   Progress as stills, drawn at 360 x 780 dips and three pixels to the dip,
   each put inside a phone silhouette by `phone_frame.py` (a light silver
   bezel with a darker rim, a camera dot and side buttons, transparent outside,
-  so it suits the light and the dark README), under 400 KB;
+  so it suits the light and the dark README), under 400 KB. The screen gets
+  an Android status bar above the app (the camera dot sits in it) and the
+  gesture handle below it. The status bar is a PNG crop if
+  `docs/screenshots/frame/status-bar-light.png` (or `-dark.png`, by the
+  screen's theme) exists, else one drawn by the tool;
 - `learning-session.gif`: a real lesson driven through the drill screens,
   about ten seconds: the word shown, then questions of different types
   (choose the meaning, choose the word, put in order, type it), and
