@@ -86,7 +86,7 @@ units:
   - ["kn-script-vowels", "kn-script-consonants", "kn-script-reading"]
   - ["kn-script-vowel-signs", "kn-script-conjuncts", "kn-script-digits"]
   # Numbers 1–20 follow the script, so it comes after the first six units.
-  - decks: ["kn-numbers-1-20", "*"]
+  - decks: ["kn-numbers-1-20", "kn-numbers-1-20-sentences", "*"]
     words: 20
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
@@ -104,7 +104,7 @@ units:
       - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
     reading_passages:
       - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
-  - decks: ["kn-quantities", "kn-reading-quantities", "*"]
+  - decks: ["kn-quantities", "kn-quantities-sentences", "kn-reading-quantities", "*"]
     words: 23
     listening_passages:
       - { id: "at-the-grocers", text: { "en": "Asking how much and how many at a grocer's" } }
