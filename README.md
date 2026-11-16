@@ -137,10 +137,10 @@ below is written from `decks/index.json` each time the decks change.
 | Esperanto | Constructed | Romance | Latin | in progress |
 | Filipino | Austronesian | Malayo-Polynesian | Latin | in progress |
 | Finnish | Uralic | Finnic | Latin | in progress |
-| French | Indo-European | Romance | Latin | A1 |
+| French | Indo-European | Romance | Latin | B1 |
 | German | Indo-European | Germanic | Latin | in progress |
 | Greek (Modern) | Indo-European | Hellenic | Greek | in progress |
-| Gujarati | Indo-European | Indo-Aryan | Gujarati | in progress |
+| Gujarati | Indo-European | Indo-Aryan | Gujarati | A2 |
 | Hausa | Afro-Asiatic | Chadic | Latin | in progress |
 | Hebrew | Afro-Asiatic | Semitic | Hebrew | in progress |
 | Hindustani | Indo-European | Indo-Aryan | Devanagari, Perso-Arabic | B1 |
@@ -148,7 +148,7 @@ below is written from `decks/index.json` each time the decks change.
 | Interslavic | Constructed | Slavic | Latin, Cyrillic | in progress |
 | Irish | Indo-European | Celtic | Latin | in progress |
 | Italian | Indo-European | Romance | Latin | in progress |
-| Japanese | Japonic | — | Kana, Kanji | A1 |
+| Japanese | Japonic | — | Kana, Kanji | B1 |
 | Kannada | Dravidian | South | Kannada | B1 |
 | Koine Greek | Indo-European | Hellenic | Greek | in progress |
 | Korean | Koreanic | — | Hangul | in progress |
