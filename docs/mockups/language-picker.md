@@ -15,8 +15,8 @@ A tap on a tile or a row goes straight to d. There is no new step and no "Start 
 |---|---|
 | A new user sees an endless list and many "No course yet" rows | Eight big tiles first; the full list shows only languages with a course; languages without one are folded under "Coming soon" (collapsed by default, a native button with `aria-expanded`; its rows are not tappable). No "No course yet" chip in the main list. |
 | Tiles must say what you get | The status line is derived from the course: "A1 to B1 ready" (B1 fully written), "A1 and A2 ready", "A1 ready", "Beginner course" (A1 partly written), "First words only" (a course, no path yet). |
-| Do not lose the information on how much of each course is made | The four A1, A2, B1, Culture bars stay, as one slim bar of four segments (6 dp, 4 dp gaps). Filled, partly filled and empty segments show made, partly made and still to come at a glance. The labels A1, A2, B1, Culture are drawn once, in the key at the top, not per row. A screen reader still reads one line per row ("How much of the course is made: A1 100%, A2 100%, ...", in the style of today's `pickerCourseLineLabel`, "Course written: ..."). |
-| "Verified: Not at all" text row is clutter | It becomes the app's own flag glyph at the end of the bar line: outlined (Not at all), half-solid (Somewhat), solid (Completely), muted or primary. Shape carries the state, not colour. A tap (or long-press on a phone) shows a tooltip, "Verified by native speakers: somewhat" plus the detail sentence (`languagesVerifiedNoneDetail` and the others). Its accessible name is `languagesVerifiedLabel`. The key at the top says the three states once (the existing `VerificationKey`, folded into the same card). |
+| Do not lose the information on how much of each course is made | The four A1, A2, B1, Culture bars stay, as one slim bar of four segments (8 dp tall, 4 dp gaps, each an outlined capsule that the made part fills). Filled, partly filled and empty segments show made, partly made and still to come at a glance. The labels A1, A2, B1, Culture are drawn once, in the key at the top, not per row. A screen reader still reads one line per row ("How much of the course is made: A1 100%, A2 100%, ...", in the style of today's `pickerCourseLineLabel`, "Course written: ..."). |
+| "Verified: Not at all" text row is clutter | It becomes the app's own flag glyph at the end of the bar line: outlined (Not at all), half-solid (Somewhat), solid (Completely), muted or primary. Shape carries the state, not colour. A tap shows a tooltip bubble only, "Verified: Somewhat" (no sheet). The accessible name stays the longer `languagesVerifiedLabel` plus the detail sentence (`languagesVerifiedNoneDetail` and the others). Its accessible name is `languagesVerifiedLabel`. The key at the top says the three states once (the existing `VerificationKey`, folded into the same card). |
 | IPA and English Braille do not belong in the language list | A separate "Scripts and sounds" group, with no bars and no flag (as `isNotation` rows are today). |
 | After picking, nothing new | The pick leads to the existing Find my level, with its real strings. |
 
@@ -39,19 +39,21 @@ Computed from the app palette (`ColorScheme.fromSeed`, forest seed, as in the ot
 | Coming soon header (`onSurface` on `surfaceContainerHigh`) | 14.0:1 | 11.2:1 | 4.5:1 |
 | Search hint (`onSurfaceVariant` on `surfaceContainerHigh`) | 7.6:1 | 8.5:1 | 4.5:1 |
 | Tooltip (`surface` on `onSurface`) | 16.3:1 | 14.3:1 | 4.5:1 |
-| Filled bar segment (`primary` on the track `surfaceContainerHighest`) | 5.0:1 | 7.2:1 | 3:1 (graphic) |
+| Empty part of a segment: its outline (`outline` on `surface`) | 4.3:1 | 5.8:1 | 3:1 (graphic) |
+| Same outline on `surfaceContainerLow` (the key card) | 4.1:1 | 5.4:1 | 3:1 (graphic) |
+| Made part of a segment (`primary` on `surface`) | 6.2:1 | 10.9:1 | 3:1 (graphic) |
+| For the record, `outlineVariant` on `surface` (not used) | 1.6:1 | 2.0:1 | fails 3:1 |
 | Flag, Not at all (`onSurfaceVariant` on `surface`) | 8.9:1 | 10.9:1 | 3:1 (graphic) |
 | Flag, Somewhat and Completely (`primary` on `surface`) | 6.2:1 | 10.9:1 | 3:1 (graphic) |
-| Empty track (`surfaceContainerHighest` on `surface`) | 1.2:1 | 1.5:1 | not met |
 
-The empty track is below 3:1, as it is in today's `CourseLine`; the cue is the filled segment against it (5.0:1 and above), and every figure is also in the row's screen-reader label. If the owner wants the empty track to pass, use `outlineVariant` for it (open question 4).
+The empty part of each segment is drawn with the `outline` colour as a 1.5 dp stroke (`outlineVariant` was tried and fails, 1.6:1 and 2.0:1), so a segment that is still to come is a visible hollow capsule, not a faint fill; today's `CourseLine` track (`surfaceContainerHighest`, about 1.2:1) is replaced by it in the compact variant.
 
 No cue is colour alone: the flag states differ in shape (outline, half, solid), a tile says its status in words, "Added" is a word and a check. Checked in Chromium (Playwright) at deviceScaleFactor 2, light and dark, 1.4x text, 360 dp, with no horizontal page scroll (also at a 360 px viewport). Targets: tiles and rows are at least 56 dp tall, the flag button is 40 x 40 dp (the visible glyph is 22 dp).
 
 ## Implementation notes
 - Data: no new field is needed. A language has a course when `LanguageView.course != null` (`language_views.dart`); `canLearn` also needs the app to be new enough, so a course the app is too old for stays in the main list greyed with its "needs app" line, as today. "Coming soon" is `course == null && !language.isNotation`. Tile status uses `course.progressFor(...).levels` (already read by `_line`): the highest level whose share is 1.0, "Beginner course" if A1 > 0, else `languagesFirstWordsLabel`. Notations are `language.isNotation`.
 - `LanguagePickList`: add a `PopularTiles` first screen (the `popular` set already exists; add Telugu's flag if missing, it is `popular: true` now). "See all languages" pushes or swaps to the list. The search field stays on both; typing on the first screen switches to the list with matches (Popular matches first, as now) and a match inside Coming soon expands that group.
-- List: `_row` loses the `VerificationMark` text row and the `CourseLine` labels. A new `CourseLine` variant (a `compact` flag): four segments, no labels, height 6, and a trailing `VerificationFlag` in a 40 dp `IconButton` with `tooltip:` (the tooltip shows on long-press and on hover; a tap opens the same text in a small bubble or a bottom sheet) and `Semantics(label: languagesVerifiedLabel)`. `VerificationKey` gains the one-time key titled "How much of the course is made" with the segment labels (A1, A2, B1, Culture) above its existing flags.
+- List: `_row` loses the `VerificationMark` text row and the `CourseLine` labels. A new `CourseLine` variant (a `compact` flag): four segments, no labels, height 8, each a `DecoratedBox` with a 1.5 dp `scheme.outline` border and the made share filled with `scheme.primary` inside, and a trailing `VerificationFlag` in a 40 dp `IconButton` with `tooltip:` (a plain `Tooltip` with `triggerMode: TooltipTriggerMode.tap`, text "Verified: Somewhat", `languagesVerifiedShort` and the state's word; no sheet) and `Semantics(label: languagesVerifiedLabel)`. `VerificationKey` gains the one-time key titled "How much of the course is made" with the segment labels (A1, A2, B1, Culture) above its existing flags.
 - Groups, in order: Languages (course), Scripts and sounds (notations), Coming soon (a stateful header, collapsed by default, `ExpansionTile`-like, with `Semantics(expanded:)`). The "Popular" heading and note go away from the list (the tiles replace them).
 - The pick callback is unchanged (`onPick`), so a pick still ends in the Find my level declaration page (`FindLevelDeclarationPage`).
 - Strings: new `languagesAddQuestion` ("What do you want to learn?"), `languagesSeeAll` ("See all languages"), `languagesTileStatusA1B1` and its siblings (or one plural-free function), `languagesScriptsAndSounds`, `languagesScriptsAndSoundsNote`, `languagesComingSoon`, `languagesCourseMadeKey` ("How much of the course is made"), `languagesCourseMadeLabel` ("How much of the course is made: {levels}"). `languagesPopular`, `languagesPopularNote` and `languagesNoCourse` (as a chip) are retired; `languagesAllLanguages` becomes the "Languages" heading.
@@ -62,10 +64,12 @@ No cue is colour alone: the flag states differ in shape (outline, half, solid), 
 2. The Coming soon header shows only its label and a chevron, with no count.
 3. Tile status wording stays as drawn: "First words only" for a course with no path, "Beginner course" for a partly written A1.
 4. The first screen shows eight tiles, not nine, in two even columns with no full-width tile. The owner's order is Spanish, French, Telugu, Hindustani, Bengali, Marathi, Kannada, Japanese. Mandarin Chinese is left off the tiles and stays in the list.
+5. Tapping the verification flag shows a tooltip bubble only ("Verified: Somewhat"), with no sheet.
+6. The empty part of each bar uses a stronger outline: `outline`, which passes 3:1 against the surface in light (4.3:1) and dark (5.8:1); `outlineVariant` does not (1.6:1 and 2.0:1).
 
 ## Tile set: implementation
 `assets/languages.yaml` now has nine `popular: true` languages (Telugu was added), so Popular is one too many for the tiles. Recommended, the simplest option: show the first eight `popular` languages in the file's order and put them in the owner's order in the file (move Mandarin Chinese after Japanese, or give `zh` no `popular` flag). No new field and no new rule; the tile set is then "the `popular` languages, in file order, at most eight", and the owner changes it by editing the file. The alternative, a separate `tile: true` flag, adds a second field that must be kept in step with `popular`, and is only worth it if Popular is wanted for something else (it is not, once the list drops its Popular group). Either way, `LanguagePickList` must read the order from the data, not sort A to Z as it does today.
 
+
 ## Open questions for the owner
-1. Tap on the flag: tooltip bubble only, or open the language's details sheet with its Verified row?
-2. The empty bar track: keep today's `surfaceContainerHighest` (below 3:1) or move to `outlineVariant`?
+None. Every question is resolved.
