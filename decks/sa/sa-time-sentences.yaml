@@ -1,0 +1,50 @@
+schema: 1
+id: "sa-time-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3090"
+    target: "अद्य प्रातः."
+    reading: "adya prātaḥ."
+    ipa: "əd̪jə praːt̪əh"
+    pos: "phrase"
+    bases: [{ word: "अद्य", ref: "sa-1088" }, { word: "प्रातः", ref: "sa-1548" }]
+    confusables: [{ id: "w1", ref: "sa-1547", kind: "word" }, { id: "w2", ref: "sa-1549", kind: "word" }]
+  - id: "sa-3091"
+    target: "सायं पिबामि."
+    reading: "sāyaṃ pibāmi."
+    ipa: "saːjəm pibaːmi"
+    pos: "phrase"
+    bases: [{ word: "सायं", base: "सायम्", reading: "sāyam" }, { word: "पिबामि", base: "पा", reading: "pā" }]
+    confusables: [{ id: "w1", ref: "sa-1548", kind: "word" }, { id: "w2", ref: "sa-1549", kind: "word" }]
+  - id: "sa-3092"
+    target: "रात्रौ गच्छति."
+    reading: "rātrau gacchati."
+    ipa: "raːt̪rəu ɡətʃtʃʰət̪i"
+    pos: "phrase"
+    bases: [{ word: "रात्रौ", ref: "sa-1549" }, { word: "गच्छति", base: "गम्", reading: "gam" }]
+    confusables: [{ id: "w1", ref: "sa-1546", kind: "word" }, { id: "w2", ref: "sa-1547", kind: "word" }]
+  - id: "sa-3093"
+    target: "अधुना पठति."
+    reading: "adhunā paṭhati."
+    ipa: "əd̪ʱunaː pəʈʰət̪i"
+    pos: "phrase"
+    bases: [{ word: "अधुना", ref: "sa-1631" }, { word: "पठति", base: "पठ्", reading: "paṭh" }]
+    confusables: [{ id: "w1", ref: "sa-1632", kind: "word" }, { id: "w2", ref: "sa-1085", kind: "word" }]
+  - id: "sa-3094"
+    target: "वर्षा कदा?"
+    reading: "varṣā kadā?"
+    ipa: "ʋərʂaː kəd̪aː"
+    pos: "phrase"
+    bases: [{ word: "वर्षा", ref: "sa-1637" }, { word: "कदा", ref: "sa-1003" }]
+    confusables: [{ id: "w1", ref: "sa-1633", kind: "word" }, { id: "w2", ref: "sa-1635", kind: "word" }]
+  - id: "sa-3095"
+    target: "चिरं गच्छामि."
+    reading: "ciraṃ gacchāmi."
+    ipa: "tʃirəm ɡətʃtʃʰaːmi"
+    pos: "phrase"
+    bases: [{ word: "चिरं", base: "चिरम्", reading: "ciram" }, { word: "गच्छामि", base: "गम्", reading: "gam" }]
+    confusables: [{ id: "w1", ref: "sa-1632", kind: "word" }, { id: "w2", ref: "sa-1631", kind: "word" }]

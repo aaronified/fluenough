@@ -1,0 +1,32 @@
+schema: 1
+id: "sa-en-time-sentences"
+kind: "layer"
+core: "sa-time-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about time"
+description: "Short sentences about time of day, the season and length of time, built only from words already taught. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-3090":
+    native: "Today in the morning."
+    confusables: { "w1": { why: "Evening, not morning: सायम् (sāyam) means in the evening." }, "w2": { why: "At night, not morning: रात्रौ (rātrau) means at night." } }
+  "sa-3091":
+    native: "I drink in the evening."
+    bases: { "सायं": "in the evening", "पिबामि": "to drink (I drink)" }
+    confusables: { "w1": { why: "Morning, not evening: प्रातः (prātaḥ) means in the morning." }, "w2": { why: "At night, not evening: रात्रौ (rātrau) means at night." } }
+  "sa-3092":
+    native: "He goes at night."
+    bases: { "गच्छति": "to go (he goes)" }
+    confusables: { "w1": { why: "Before, not at night: पूर्वम् (pūrvam) means before." }, "w2": { why: "Evening, not at night: सायम् (sāyam) means in the evening." } }
+  "sa-3093":
+    native: "He reads now."
+    bases: { "पठति": "to read (he reads)" }
+    confusables: { "w1": { why: "Formerly, not now: पुरा (purā) means formerly." }, "w2": { why: "When, not now: यदा (yadā) means when." } }
+  "sa-3094":
+    native: "When is the rain?"
+    confusables: { "w1": { why: "Season, not rain: ऋतुः (ṛtuḥ) means season." }, "w2": { why: "Dawn, not rain: उषा (uṣā) means dawn." } }
+  "sa-3095":
+    native: "I go for a long time."
+    bases: { "चिरं": "for a long time", "गच्छामि": "to go (I go)" }
+    confusables: { "w1": { why: "Formerly, not for a long time: पुरा (purā) means formerly." }, "w2": { why: "Now, not for a long time: अधुना (adhunā) means now." } }
