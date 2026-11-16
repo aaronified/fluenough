@@ -57,5 +57,6 @@ Every architecture decision record in the wiki. Each one has its own page.
 - [ADR-0052](ADR-0052-Minimum-App-Version-In-The-Deck-Index): The deck index says which app version a language or deck needs
 - [ADR-0053](ADR-0053-Japanese-Kanji): Japanese kanji is the `han` script of a two-script language, with the kana reading as the card's second spelling
 - [ADR-0054](ADR-0054-Say-Audio-Replay): Replaying the learner's own last answer in Say drills (proposed)
+- [ADR-0055](ADR-0055-Sitelen-Pona-As-A-Second-Script): Toki Pona's sitelen pona is a second script of its cards, written by a tool
 
 See also: [Contributing](Contributing) · [ADR-Index](ADR-Index) · [Home](Home)

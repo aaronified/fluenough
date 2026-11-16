@@ -12,7 +12,8 @@ and `FONTS` and `FONT_ALIASES` in `tools/deck_index.py` register them.
 
 ## Rules
 
-- Only open licences: SIL OFL-1.1 here. Fonts are Noto, from Google Fonts'
+- Open licences: SIL OFL-1.1 here; MIT and other permissive licences are
+  also accepted, with their text kept in the folder (owner, 2026-11-16). Fonts are Noto, from Google Fonts'
   `ofl/` folder (the same Noto Project sources as notofonts.github.io).
 - **Content fonts**: Latin, Cyrillic and Greek are one Noto Sans subset each,
   shared by every language in the script. They always download with a course
@@ -38,7 +39,7 @@ and `FONTS` and `FONT_ALIASES` in `tools/deck_index.py` register them.
 | arabic | ar | alias of perso_arabic_naskh (Noto Naskh Arabic) | existing, 308 KB | 0 missing across 138 characters |
 | shahmukhi | pa | alias of perso_arabic (Noto Nastaliq Urdu) | existing, 690 KB | 0 missing across 182 characters |
 | braille | qbe | shadow-dot font that ships in the app (ADR-0043) | none | not applicable |
-| sitelen pona | tok | none yet | none | see below |
+| sitelen_pona | tok (second script) | sitelen seli kiwen asuki (Kreative Software, SIL OFL-1.1), subset to the UCSUR block U+F1900-F19FF | SitelenSeliKiwen.ttf, 582 KB | all 142 words and name glyphs of the decks are in its cmap; see below |
 
 The scripts that had fonts before (bengali, cuneiform, devanagari, egyptian
 hieroglyphs, gujarati, gurmukhi, the Han family, hangul, hebrew, kana,
@@ -53,14 +54,22 @@ font's cmap.
 
 ## Sitelen pona (Toki Pona)
 
-No font is added yet. The Toki Pona decks hold only Latin words (no UCSUR
-code points, U+F1900 to U+F19FF), so the app would also need to draw them in
-sitelen pona: either a ligature font that turns the Latin words into glyphs,
-or a table that maps each word to its UCSUR code point. The candidate found,
-nasin-nanpa (ETBCOR), has ligatures and UCSUR, but its licence is MIT, not
-OFL, Apache or CC0; the licences of Linja Pona, Fairfax HD and sitelen pona
-pona could not be read from here. The owner chooses the font and the licence
-rule before one is added.
+Owner, 2026-11-16: "Yes, accept MIT for any font. Also add sitelen pona
+decks." The licence rule is widened: MIT and other permissive licences are
+accepted for fonts when their text is kept in the font's folder.
+
+The font is sitelen seli kiwen asuki, version 2.2, by Rebecca Bettencourt of
+Kreative Software, under the SIL OFL-1.1 (so the wider rule was not needed). It
+came from the npm package `sitelen-layer-plugin`, which bundles it with the
+upstream licence text, because GitHub releases are blocked from the build
+sandbox (nasin-nanpa, ETBCOR, MIT, was the other candidate and its binaries
+are only in those releases). It is subset to the UCSUR block U+F1900 to
+U+F19FF, the registry's chart for sitelen pona, with all layout features kept.
+
+Toki Pona's vocab decks keep their Latin `target` and give each card and
+example `target_scripts: { sitelen_pona: ... }`, written by
+`tools/tok_sitelen.py`: [ADR-0055](ADR-0055-Sitelen-Pona-As-A-Second-Script).
+Grammar tables and reading passages stay Latin.
 
 See also: [ADR-0042](ADR-0042-Script-Fonts-Download-Per-Course) ·
-[Deck Format](Deck-Format) · [Plans Index](Plans-Index)
+[ADR-0055](ADR-0055-Sitelen-Pona-As-A-Second-Script) · [Deck Format](Deck-Format) · [Plans Index](Plans-Index)
