@@ -7,7 +7,7 @@ native:   { code: "en", iso639_3: "eng", name: "English" }
 license: "CC-BY-SA-4.0"
 source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
 description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
-tags: ["reading", "unreviewed"]
+tags: ["reading", "beginner", "unreviewed"]
 passages:
   - id: "sa-time-text-1"
     title: "Morning, evening, night"
@@ -20,15 +20,15 @@ passages:
     questions:
       - id: "sa-3459"
         prompt: { en: "When does mother sing?" }
-        options: [{ en: "In the morning" }, { en: "At night" }, { en: "In the evening" }]
-        answer: 3
+        options: [{ en: "In the evening" }, { en: "In the morning" }, { en: "At night" }]
+        answer: 1
       - id: "sa-3460"
         prompt: { en: "'We' read at night." }
         answer: false
       - id: "sa-3461"
         prompt: { en: "Who eats in the evening?" }
-        options: [{ en: "The brother" }, { en: "The friend" }, { en: "Father" }]
-        answer: 1
+        options: [{ en: "The friend" }, { en: "The brother" }, { en: "Father" }]
+        answer: 2
       - id: "sa-3462"
         prompt: { en: "The friend laughs for a long time." }
         answer: true
@@ -43,12 +43,12 @@ passages:
     questions:
       - id: "sa-3463"
         prompt: { en: "What is cold in the first sentence?" }
-        options: [{ en: "The rain" }, { en: "The night" }, { en: "The water" }]
-        answer: 2
+        options: [{ en: "The rain" }, { en: "The water" }, { en: "The night" }]
+        answer: 3
       - id: "sa-3464"
         prompt: { en: "When does father read in the second sentence?" }
-        options: [{ en: "At night" }, { en: "In the evening" }, { en: "In the morning" }]
-        answer: 3
+        options: [{ en: "In the morning" }, { en: "At night" }, { en: "In the evening" }]
+        answer: 1
       - id: "sa-3465"
         prompt: { en: "The rain brings water in the first sentence." }
         answer: true

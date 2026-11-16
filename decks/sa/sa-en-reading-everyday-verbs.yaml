@@ -7,7 +7,7 @@ native:   { code: "en", iso639_3: "eng", name: "English" }
 license: "CC-BY-SA-4.0"
 source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
 description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
-tags: ["reading", "unreviewed"]
+tags: ["reading", "beginner", "unreviewed"]
 passages:
   - id: "sa-everyday-verbs-text-1"
     title: "Singing, laughing, playing"
@@ -20,12 +20,12 @@ passages:
     questions:
       - id: "sa-3507"
         prompt: { en: "Who sings in the second sentence?" }
-        options: [{ en: "That friend" }, { en: "You all" }, { en: "That woman" }]
-        answer: 3
+        options: [{ en: "That woman" }, { en: "That friend" }, { en: "You all" }]
+        answer: 1
       - id: "sa-3508"
         prompt: { en: "Who plays in the third sentence?" }
-        options: [{ en: "We" }, { en: "You all" }, { en: "That friend" }]
-        answer: 1
+        options: [{ en: "You all" }, { en: "We" }, { en: "That friend" }]
+        answer: 2
       - id: "sa-3509"
         prompt: { en: "'You all' drink water in the last sentence." }
         answer: false
@@ -43,15 +43,15 @@ passages:
     questions:
       - id: "sa-3511"
         prompt: { en: "Which animal is asked about standing?" }
-        options: [{ en: "The horse" }, { en: "The cow" }, { en: "The dog" }]
-        answer: 2
+        options: [{ en: "The horse" }, { en: "The dog" }, { en: "The cow" }]
+        answer: 3
       - id: "sa-3512"
         prompt: { en: "Someone asks when the brother eats." }
         answer: true
       - id: "sa-3513"
         prompt: { en: "Who takes the water away?" }
-        options: [{ en: "Mother" }, { en: "The brother" }, { en: "The friend" }]
-        answer: 3
+        options: [{ en: "The friend" }, { en: "Mother" }, { en: "The brother" }]
+        answer: 1
       - id: "sa-3514"
         prompt: { en: "Mother takes the water away." }
         answer: false

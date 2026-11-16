@@ -7,7 +7,7 @@ native:   { code: "en", iso639_3: "eng", name: "English" }
 license: "CC-BY-SA-4.0"
 source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
 description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
-tags: ["reading", "unreviewed"]
+tags: ["reading", "beginner", "unreviewed"]
 passages:
   - id: "sa-home-text-1"
     title: "Door, lamp, bed"
@@ -20,12 +20,12 @@ passages:
     questions:
       - id: "sa-3531"
         prompt: { en: "What is blue?" }
-        options: [{ en: "The house" }, { en: "The bed" }, { en: "The door" }]
-        answer: 3
+        options: [{ en: "The house" }, { en: "The door" }, { en: "The bed" }]
+        answer: 2
       - id: "sa-3532"
         prompt: { en: "What is behind in the last sentence?" }
-        options: [{ en: "A vessel" }, { en: "A lamp" }, { en: "A bed" }]
-        answer: 1
+        options: [{ en: "A lamp" }, { en: "A bed" }, { en: "A vessel" }]
+        answer: 3
       - id: "sa-3533"
         prompt: { en: "The house is old." }
         answer: true
@@ -43,15 +43,15 @@ passages:
     questions:
       - id: "sa-3535"
         prompt: { en: "What is in the vessel?" }
-        options: [{ en: "Water" }, { en: "Milk" }, { en: "A pillar" }]
-        answer: 2
+        options: [{ en: "Milk" }, { en: "Water" }, { en: "Honey" }]
+        answer: 1
       - id: "sa-3536"
-        prompt: { en: "What is big?" }
-        options: [{ en: "The hut" }, { en: "The house" }, { en: "The palace" }]
-        answer: 3
+        prompt: { en: "What is said to be beautiful?" }
+        options: [{ en: "The palace" }, { en: "The hut" }, { en: "The house" }]
+        answer: 2
       - id: "sa-3537"
         prompt: { en: "There is a pillar in the house." }
         answer: false
       - id: "sa-3538"
-        prompt: { en: "The cat sees the mouse." }
-        answer: true
+        prompt: { en: "The dog sees the mouse." }
+        answer: false

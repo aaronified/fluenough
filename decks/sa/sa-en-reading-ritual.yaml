@@ -7,7 +7,7 @@ native:   { code: "en", iso639_3: "eng", name: "English" }
 license: "CC-BY-SA-4.0"
 source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
 description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
-tags: ["reading", "unreviewed"]
+tags: ["reading", "beginner", "unreviewed"]
 passages:
   - id: "sa-ritual-text-1"
     title: "Worship at home"
@@ -19,18 +19,18 @@ passages:
       - { text: "सखा सदा नद्यां स्नानं करोति.", reading: "sakhā sadā nadyāṃ snānaṃ karoti.", ipa: "səkʰaː səd̪aː nəd̪jaːm snaːnəm kəroːt̪i" }
     questions:
       - id: "sa-3563"
-        prompt: { en: "What does the sage murmur?" }
-        options: [{ en: "A mantra" }, { en: "A hymn" }, { en: "Incense" }]
-        answer: 1
+        prompt: { en: "Who makes an oblation at the sacrifice?" }
+        options: [{ en: "Mother" }, { en: "The sage" }, { en: "Father" }]
+        answer: 3
       - id: "sa-3564"
         prompt: { en: "What does mother give?" }
-        options: [{ en: "An oblation" }, { en: "Incense" }, { en: "A mantra" }]
-        answer: 2
+        options: [{ en: "Incense" }, { en: "An oblation" }, { en: "A mantra" }]
+        answer: 1
       - id: "sa-3565"
         prompt: { en: "Mother makes an oblation at the sacrifice." }
         answer: false
       - id: "sa-3566"
-        prompt: { en: "The friend bathes in the river." }
+        prompt: { en: "The friend always bathes in the river." }
         answer: true
   - id: "sa-ritual-text-2"
     title: "Temple and festival"
@@ -43,12 +43,11 @@ passages:
     questions:
       - id: "sa-3567"
         prompt: { en: "What is hard?" }
-        options: [{ en: "A fast" }, { en: "Heaven" }, { en: "A vow" }]
-        answer: 3
+        options: [{ en: "A fast" }, { en: "A vow" }, { en: "Heaven" }]
+        answer: 2
       - id: "sa-3568"
-        prompt: { en: "What is impure?" }
-        options: [{ en: "Hell" }, { en: "Heaven" }, { en: "A fast" }]
-        answer: 1
+        prompt: { en: "A fast is holy in the second sentence." }
+        answer: true
       - id: "sa-3569"
         prompt: { en: "There are lamps at the festival." }
         answer: true

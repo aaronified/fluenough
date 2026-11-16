@@ -7,7 +7,7 @@ native:   { code: "en", iso639_3: "eng", name: "English" }
 license: "CC-BY-SA-4.0"
 source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
 description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
-tags: ["reading", "unreviewed"]
+tags: ["reading", "beginner", "unreviewed"]
 passages:
   - id: "sa-describing-text-1"
     title: "Happy and sad"
@@ -33,7 +33,7 @@ passages:
         prompt: { en: "The speaker is happy in the second sentence." }
         answer: true
   - id: "sa-describing-text-2"
-    title: "Black, cold, new"
+    title: "A horse, water and a book"
     theme: "describing"
     sentences:
       - { text: "अश्वः कृष्णो भवति जलं च पवित्रं भवति.", reading: "aśvaḥ kṛṣṇo bhavati jalaṃ ca pavitraṃ bhavati.", ipa: "əʃʋəh kr̩ʂɳoː bʱəʋət̪i dʒələm tʃə pəʋit̪rəm bʱəʋət̪i" }
@@ -42,13 +42,11 @@ passages:
       - { text: "किं पुस्तकं कठिनं भवति?", reading: "kiṃ pustakaṃ kaṭhinaṃ bhavati?", ipa: "kim pust̪əkəm kəʈʰinəm bʱəʋət̪i" }
     questions:
       - id: "sa-3455"
-        prompt: { en: "What is black?" }
-        options: [{ en: "The horse" }, { en: "The water" }, { en: "The book" }]
-        answer: 1
+        prompt: { en: "The horse is holy." }
+        answer: false
       - id: "sa-3456"
-        prompt: { en: "What is cold?" }
-        options: [{ en: "The horse" }, { en: "The water" }, { en: "The book" }]
-        answer: 2
+        prompt: { en: "The book is new in the second sentence." }
+        answer: true
       - id: "sa-3457"
         prompt: { en: "The speaker reads an old book." }
         answer: false

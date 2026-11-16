@@ -7,10 +7,10 @@ native:   { code: "en", iso639_3: "eng", name: "English" }
 license: "CC-BY-SA-4.0"
 source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
 description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
-tags: ["reading", "unreviewed"]
+tags: ["reading", "beginner", "unreviewed"]
 passages:
   - id: "sa-animals-text-1"
-    title: "Lion, cat, monkey"
+    title: "Lion, mouse, monkey"
     theme: "animals"
     sentences:
       - { text: "सिंहो गजं पश्यति मृगो धावति.", reading: "siṃho gajaṃ paśyati mṛgo dhāvati.", ipa: "sĩɦoː ɡədʒəm pəʃjət̪i mr̩ɡoː d̪ʱaːʋət̪i" }
@@ -23,17 +23,17 @@ passages:
         options: [{ en: "The lion" }, { en: "The deer" }, { en: "The elephant" }]
         answer: 2
       - id: "sa-3524"
-        prompt: { en: "What does the cat drink?" }
-        options: [{ en: "Water" }, { en: "Honey" }, { en: "Milk" }]
+        prompt: { en: "Which animal does not drink water?" }
+        options: [{ en: "The cat" }, { en: "The monkey" }, { en: "The mouse" }]
         answer: 3
       - id: "sa-3525"
         prompt: { en: "The monkey eats a pomegranate." }
         answer: true
       - id: "sa-3526"
-        prompt: { en: "The crow always talks." }
+        prompt: { en: "The peacock eats a pomegranate." }
         answer: false
   - id: "sa-animals-text-2"
-    title: "Swan, goat, bee"
+    title: "Swan, goat, bee, hare"
     theme: "animals"
     sentences:
       - { text: "हंसो जले चलति मकरो जले वसति.", reading: "haṃso jale calati makaro jale vasati.", ipa: "ɦə̃soː dʒəleː tʃələt̪i məkəroː dʒəleː ʋəsət̪i" }
@@ -42,13 +42,12 @@ passages:
       - { text: "कूर्मो न धावति शशको धावति.", reading: "kūrmo na dhāvati śaśako dhāvati.", ipa: "kuːrmoː nə d̪ʱaːʋət̪i ʃəʃəkoː d̪ʱaːʋət̪i" }
     questions:
       - id: "sa-3527"
-        prompt: { en: "Who lives in the water?" }
-        options: [{ en: "The crocodile" }, { en: "The swan" }, { en: "The goat" }]
-        answer: 1
+        prompt: { en: "The swan lives in the water." }
+        answer: false
       - id: "sa-3528"
         prompt: { en: "What does the ant get?" }
-        options: [{ en: "Honey" }, { en: "Molasses" }, { en: "Milk" }]
-        answer: 2
+        options: [{ en: "Molasses" }, { en: "Honey" }, { en: "Milk" }]
+        answer: 1
       - id: "sa-3529"
         prompt: { en: "The ram gives milk." }
         answer: false

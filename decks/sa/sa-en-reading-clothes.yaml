@@ -7,7 +7,7 @@ native:   { code: "en", iso639_3: "eng", name: "English" }
 license: "CC-BY-SA-4.0"
 source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
 description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
-tags: ["reading", "unreviewed"]
+tags: ["reading", "beginner", "unreviewed"]
 passages:
   - id: "sa-clothes-text-1"
     title: "Cloth, crown, bracelet"
@@ -19,18 +19,18 @@ passages:
       - { text: "उष्णीषं पीतं भवति शाटी रक्ता भवति.", reading: "uṣṇīṣaṃ pītaṃ bhavati śāṭī raktā bhavati.", ipa: "uʂɳiːʂəm piːt̪əm bʱəʋət̪i ʃaːʈiː rəkt̪aː bʱəʋət̪i" }
     questions:
       - id: "sa-3547"
+        prompt: { en: "What is white?" }
+        options: [{ en: "The cloth" }, { en: "The rag" }, { en: "The turban" }]
+        answer: 1
+      - id: "sa-3548"
         prompt: { en: "What is black?" }
         options: [{ en: "The cloth" }, { en: "The rag" }, { en: "The garment" }]
         answer: 2
-      - id: "sa-3548"
-        prompt: { en: "What is on the head?" }
-        options: [{ en: "The shoe" }, { en: "The earring" }, { en: "The crown" }]
-        answer: 3
       - id: "sa-3549"
-        prompt: { en: "The bracelet is on the hand." }
+        prompt: { en: "The turban is yellow." }
         answer: true
       - id: "sa-3550"
-        prompt: { en: "The turban is red." }
+        prompt: { en: "The garment is white." }
         answer: false
   - id: "sa-clothes-text-2"
     title: "Buying clothes"
@@ -43,12 +43,12 @@ passages:
     questions:
       - id: "sa-3551"
         prompt: { en: "What does father buy?" }
-        options: [{ en: "Shoes" }, { en: "Cloth" }, { en: "A garment" }]
-        answer: 1
+        options: [{ en: "Cloth" }, { en: "A garment" }, { en: "Shoes" }]
+        answer: 3
       - id: "sa-3552"
         prompt: { en: "What is old?" }
-        options: [{ en: "The garland" }, { en: "The jacket" }, { en: "The thread" }]
-        answer: 2
+        options: [{ en: "The jacket" }, { en: "The garland" }, { en: "The thread" }]
+        answer: 1
       - id: "sa-3553"
         prompt: { en: "The thread is long." }
         answer: true

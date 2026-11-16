@@ -7,10 +7,10 @@ native:   { code: "en", iso639_3: "eng", name: "English" }
 license: "CC-BY-SA-4.0"
 source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
 description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
-tags: ["reading", "unreviewed"]
+tags: ["reading", "beginner", "unreviewed"]
 passages:
   - id: "sa-things-text-1"
-    title: "Pen, umbrella, drum"
+    title: "Who carries what"
     theme: "things"
     sentences:
       - { text: "सखा ग्रन्थं पठति कलमेन लिखति.", reading: "sakhā granthaṃ paṭhati kalamena likhati.", ipa: "səkʰaː ɡrənt̪ʰəm pəʈʰət̪i kələmeːnə likʰət̪i" }
@@ -19,15 +19,15 @@ passages:
       - { text: "माता वीणां वहति पिता मृदङ्गं वहति.", reading: "mātā vīṇāṃ vahati pitā mṛdaṅgaṃ vahati.", ipa: "maːt̪aː ʋiːɳaːm ʋəɦət̪i pit̪aː mr̩d̪əŋɡəm ʋəɦət̪i" }
     questions:
       - id: "sa-3555"
-        prompt: { en: "What does the friend write with?" }
-        options: [{ en: "A book" }, { en: "A mirror" }, { en: "A pen" }]
-        answer: 3
+        prompt: { en: "Who carries an umbrella in the rain?" }
+        options: [{ en: "Mother" }, { en: "Father" }, { en: "The friend" }]
+        answer: 2
       - id: "sa-3556"
-        prompt: { en: "What does father carry in the rain?" }
-        options: [{ en: "An umbrella" }, { en: "A drum" }, { en: "A lute" }]
-        answer: 1
+        prompt: { en: "Who carries a lute?" }
+        options: [{ en: "Father" }, { en: "The friend" }, { en: "Mother" }]
+        answer: 3
       - id: "sa-3557"
-        prompt: { en: "The woman sees a face in the mirror." }
+        prompt: { en: "The friend reads a book." }
         answer: true
       - id: "sa-3558"
         prompt: { en: "Mother carries a drum." }
@@ -43,12 +43,12 @@ passages:
     questions:
       - id: "sa-3559"
         prompt: { en: "What is empty?" }
-        options: [{ en: "The pot" }, { en: "The vessel" }, { en: "The wheel" }]
-        answer: 2
+        options: [{ en: "The vessel" }, { en: "The pot" }, { en: "The wheel" }]
+        answer: 1
       - id: "sa-3560"
-        prompt: { en: "What is beautiful?" }
-        options: [{ en: "Iron" }, { en: "Wood" }, { en: "Gold" }]
-        answer: 3
+        prompt: { en: "What falls in the third sentence?" }
+        options: [{ en: "The wheel" }, { en: "The weapon" }, { en: "The pot" }]
+        answer: 2
       - id: "sa-3561"
         prompt: { en: "The wheel does not move." }
         answer: true

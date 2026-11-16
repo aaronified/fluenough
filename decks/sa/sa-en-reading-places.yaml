@@ -7,10 +7,10 @@ native:   { code: "en", iso639_3: "eng", name: "English" }
 license: "CC-BY-SA-4.0"
 source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
 description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
-tags: ["reading", "unreviewed"]
+tags: ["reading", "beginner", "unreviewed"]
 passages:
   - id: "sa-places-text-1"
-    title: "Village, city, forest"
+    title: "Village, city, forest, temple"
     theme: "places"
     sentences:
       - { text: "ग्रामे गृहाणि भवन्ति नगरे प्रासादा भवन्ति.", reading: "grāme gṛhāṇi bhavanti nagare prāsādā bhavanti.", ipa: "ɡraːmeː ɡr̩ɦaːɳi bʱəʋənt̪i nəɡəreː praːsaːd̪aː bʱəʋənt̪i" }
@@ -19,13 +19,13 @@ passages:
       - { text: "देवो मन्दिरे वसति पिता च तत्र गच्छति.", reading: "devo mandire vasati pitā ca tatra gacchati.", ipa: "d̪eːʋoː mənd̪ireː ʋəsət̪i pit̪aː tʃə t̪ət̪rə ɡətʃtʃʰət̪i" }
     questions:
       - id: "sa-3539"
-        prompt: { en: "Where are there palaces?" }
-        options: [{ en: "In the city" }, { en: "In the village" }, { en: "In the forest" }]
-        answer: 1
+        prompt: { en: "Who goes to the temple?" }
+        options: [{ en: "Mother" }, { en: "The god" }, { en: "Father" }]
+        answer: 3
       - id: "sa-3540"
         prompt: { en: "Where does the dog live?" }
-        options: [{ en: "In the forest" }, { en: "In the village" }, { en: "In the cave" }]
-        answer: 2
+        options: [{ en: "In the village" }, { en: "In the forest" }, { en: "In the cave" }]
+        answer: 1
       - id: "sa-3541"
         prompt: { en: "A lion lives in the cave." }
         answer: true
@@ -42,16 +42,16 @@ passages:
       - { text: "उद्याने मयूरो नृत्यति क्षेत्रे वृषभो धावति.", reading: "udyāne mayūro nṛtyati kṣetre vṛṣabho dhāvati.", ipa: "ud̪jaːneː məjuːroː nr̩t̪jət̪i kʂeːt̪reː ʋr̩ʂəbʱoː d̪ʱaːʋət̪i" }
     questions:
       - id: "sa-3543"
-        prompt: { en: "Where does the river go?" }
-        options: [{ en: "To the forest" }, { en: "To the school" }, { en: "To the sea" }]
-        answer: 3
+        prompt: { en: "What runs in the field?" }
+        options: [{ en: "The peacock" }, { en: "The bull" }, { en: "The river" }]
+        answer: 2
       - id: "sa-3544"
         prompt: { en: "Who sings at school?" }
-        options: [{ en: "The daughter" }, { en: "The son" }, { en: "The peacock" }]
-        answer: 1
+        options: [{ en: "The son" }, { en: "The peacock" }, { en: "The daughter" }]
+        answer: 3
       - id: "sa-3545"
-        prompt: { en: "The hermitage is in the forest." }
-        answer: true
+        prompt: { en: "The holy place is on the mountain." }
+        answer: false
       - id: "sa-3546"
-        prompt: { en: "The bull dances in the field." }
+        prompt: { en: "The peacock runs in the garden." }
         answer: false

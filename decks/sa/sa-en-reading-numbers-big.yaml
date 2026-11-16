@@ -7,7 +7,7 @@ native:   { code: "en", iso639_3: "eng", name: "English" }
 license: "CC-BY-SA-4.0"
 source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
 description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
-tags: ["reading", "unreviewed"]
+tags: ["reading", "beginner", "unreviewed"]
 passages:
   - id: "sa-numbers-big-text-1"
     title: "Books by the hundred"
@@ -20,12 +20,12 @@ passages:
     questions:
       - id: "sa-3483"
         prompt: { en: "How many books does mother buy?" }
-        options: [{ en: "Fifty" }, { en: "A hundred" }, { en: "Thirty" }]
-        answer: 3
+        options: [{ en: "Thirty" }, { en: "Fifty" }, { en: "A hundred" }]
+        answer: 1
       - id: "sa-3484"
         prompt: { en: "Who carries fifty books?" }
-        options: [{ en: "Father" }, { en: "Mother" }, { en: "The speaker" }]
-        answer: 1
+        options: [{ en: "Mother" }, { en: "Father" }, { en: "The speaker" }]
+        answer: 2
       - id: "sa-3485"
         prompt: { en: "'You' read forty books." }
         answer: true
@@ -43,12 +43,12 @@ passages:
     questions:
       - id: "sa-3487"
         prompt: { en: "How many students go in the second sentence?" }
-        options: [{ en: "A thousand" }, { en: "Ten thousand" }, { en: "A hundred thousand" }]
-        answer: 2
+        options: [{ en: "A thousand" }, { en: "A hundred thousand" }, { en: "Ten thousand" }]
+        answer: 3
       - id: "sa-3488"
         prompt: { en: "How many books are there in the third sentence?" }
-        options: [{ en: "Seven hundred" }, { en: "A thousand" }, { en: "A hundred thousand" }]
-        answer: 3
+        options: [{ en: "A hundred thousand" }, { en: "Seven hundred" }, { en: "A thousand" }]
+        answer: 1
       - id: "sa-3489"
         prompt: { en: "The speaker reads seven hundred books." }
         answer: true

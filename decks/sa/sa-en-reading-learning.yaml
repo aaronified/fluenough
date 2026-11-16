@@ -7,7 +7,7 @@ native:   { code: "en", iso639_3: "eng", name: "English" }
 license: "CC-BY-SA-4.0"
 source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
 description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
-tags: ["reading", "unreviewed"]
+tags: ["reading", "beginner", "unreviewed"]
 passages:
   - id: "sa-learning-text-1"
     title: "Teacher and daughter"
@@ -20,12 +20,12 @@ passages:
     questions:
       - id: "sa-3571"
         prompt: { en: "What does the teacher tell?" }
-        options: [{ en: "A sentence" }, { en: "A story" }, { en: "A word" }]
-        answer: 2
+        options: [{ en: "A sentence" }, { en: "A word" }, { en: "A story" }]
+        answer: 3
       - id: "sa-3572"
         prompt: { en: "What does the daughter do in the second sentence?" }
-        options: [{ en: "Listens" }, { en: "Reads" }, { en: "Writes" }]
-        answer: 3
+        options: [{ en: "Writes" }, { en: "Listens" }, { en: "Reads" }]
+        answer: 1
       - id: "sa-3573"
         prompt: { en: "The third sentence asks who knows the meaning of the word." }
         answer: true
@@ -33,7 +33,7 @@ passages:
         prompt: { en: "The daughter gains knowledge through writing." }
         answer: false
   - id: "sa-learning-text-2"
-    title: "Words and letters"
+    title: "Words, letters, exam"
     theme: "learning"
     sentences:
       - { text: "वाक्ये पदानि भवन्ति पदे वर्णा भवन्ति.", reading: "vākye padāni bhavanti pade varṇā bhavanti.", ipa: "ʋaːkjeː pəd̪aːni bʱəʋənt̪i pəd̪eː ʋərɳaː bʱəʋənt̪i" }
@@ -42,16 +42,17 @@ passages:
       - { text: "को विषयः कठिनो भवति?", reading: "ko viṣayaḥ kaṭhino bhavati?", ipa: "koː ʋiʂəjəh kəʈʰinoː bʱəʋət̪i" }
     questions:
       - id: "sa-3575"
-        prompt: { en: "What are there in a word?" }
-        options: [{ en: "Letters" }, { en: "Sentences" }, { en: "Subjects" }]
-        answer: 1
+        prompt: { en: "What does the last sentence ask about?" }
+        options: [{ en: "Who knows the subject" }, { en: "Which subject is hard" }, { en: "Why the subject is hard" }]
+        answer: 2
       - id: "sa-3576"
-        prompt: { en: "A vowel is a letter." }
-        answer: true
+        prompt: { en: "The second sentence says a word is a sentence." }
+        answer: false
       - id: "sa-3577"
         prompt: { en: "What is easy?" }
-        options: [{ en: "The exam" }, { en: "The learning" }, { en: "The subject" }]
-        answer: 2
+        options: [{ en: "The exam" }, { en: "The subject" }, { en: "The learning" }]
+        answer: 3
       - id: "sa-3578"
-        prompt: { en: "The exam is hard." }
-        answer: false
+        prompt: { en: "What is not hard in the third sentence?" }
+        options: [{ en: "The exam" }, { en: "The subject" }, { en: "The letter" }]
+        answer: 1

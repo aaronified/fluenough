@@ -7,7 +7,7 @@ native:   { code: "en", iso639_3: "eng", name: "English" }
 license: "CC-BY-SA-4.0"
 source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
 description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
-tags: ["reading", "unreviewed"]
+tags: ["reading", "beginner", "unreviewed"]
 passages:
   - id: "sa-about-me-text-1"
     title: "Language and name"
@@ -19,8 +19,8 @@ passages:
       - { text: "सा नाम न वदति त्वं च वदसि.", reading: "sā nāma na vadati tvaṃ ca vadasi.", ipa: "saː naːmə nə ʋəd̪ət̪i t̪ʋəm tʃə ʋəd̪əsi" }
     questions:
       - id: "sa-3428"
-        prompt: { en: "What is Sanskrit called in the first sentence?" }
-        options: [{ en: "A book" }, { en: "A language" }, { en: "A name" }]
+        prompt: { en: "What does the speaker read in the first sentence?" }
+        options: [{ en: "A name" }, { en: "Sanskrit" }, { en: "A book" }]
         answer: 2
       - id: "sa-3429"
         prompt: { en: "The speaker speaks Sanskrit in the third sentence." }
@@ -40,7 +40,7 @@ passages:
     questions:
       - id: "sa-3431"
         prompt: { en: "What does father say in the first sentence?" }
-        options: [{ en: "The age" }, { en: "The name" }, { en: "Nothing" }]
+        options: [{ en: "The age" }, { en: "The name" }, { en: "The place" }]
         answer: 1
       - id: "sa-3432"
         prompt: { en: "Who says the name in the second sentence?" }

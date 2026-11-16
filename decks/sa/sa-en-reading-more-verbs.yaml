@@ -7,7 +7,7 @@ native:   { code: "en", iso639_3: "eng", name: "English" }
 license: "CC-BY-SA-4.0"
 source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
 description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
-tags: ["reading", "unreviewed"]
+tags: ["reading", "beginner", "unreviewed"]
 passages:
   - id: "sa-more-verbs-text-1"
     title: "Getting, being, giving"
@@ -20,15 +20,15 @@ passages:
     questions:
       - id: "sa-3475"
         prompt: { en: "Who gets a book in the first sentence?" }
-        options: [{ en: "The brother" }, { en: "She" }, { en: "Mother" }]
-        answer: 2
+        options: [{ en: "The brother" }, { en: "Mother" }, { en: "She" }]
+        answer: 3
       - id: "sa-3476"
         prompt: { en: "Mother is there in the second sentence." }
         answer: false
       - id: "sa-3477"
         prompt: { en: "What does father bring in the last sentence?" }
-        options: [{ en: "A book" }, { en: "Nothing" }, { en: "Water" }]
-        answer: 3
+        options: [{ en: "Water" }, { en: "A book" }, { en: "Wood" }]
+        answer: 1
       - id: "sa-3478"
         prompt: { en: "The third sentence asks who gives water." }
         answer: true
@@ -43,12 +43,12 @@ passages:
     questions:
       - id: "sa-3479"
         prompt: { en: "Who hears everything?" }
-        options: [{ en: "Mother" }, { en: "Father" }, { en: "The friend" }]
-        answer: 1
+        options: [{ en: "Father" }, { en: "Mother" }, { en: "The friend" }]
+        answer: 2
       - id: "sa-3480"
         prompt: { en: "Who knows Sanskrit in the second sentence?" }
-        options: [{ en: "I" }, { en: "The friend" }, { en: "The daughter" }]
-        answer: 2
+        options: [{ en: "I" }, { en: "The daughter" }, { en: "The friend" }]
+        answer: 3
       - id: "sa-3481"
         prompt: { en: "The daughter sees a book." }
         answer: true

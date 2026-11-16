@@ -7,7 +7,7 @@ native:   { code: "en", iso639_3: "eng", name: "English" }
 license: "CC-BY-SA-4.0"
 source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
 description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
-tags: ["reading", "unreviewed"]
+tags: ["reading", "beginner", "unreviewed"]
 passages:
   - id: "sa-questions-text-1"
     title: "Who, where, what?"
@@ -18,15 +18,15 @@ passages:
       - { text: "त्वं कुत्र जलं नयसि?", reading: "tvaṃ kutra jalaṃ nayasi?", ipa: "t̪ʋəm kut̪rə dʒələm nəjəsi" }
     questions:
       - id: "sa-3400"
-        prompt: { en: "What is being brought in the last sentence?" }
-        options: [{ en: "Water" }, { en: "A horse" }, { en: "Sanskrit" }]
+        prompt: { en: "What does the last sentence ask about?" }
+        options: [{ en: "Where water is brought" }, { en: "When water is brought" }, { en: "Why water is brought" }]
         answer: 1
       - id: "sa-3401"
-        prompt: { en: "What is said to go somewhere in the first sentence?" }
-        options: [{ en: "The god" }, { en: "The horse" }, { en: "The water" }]
+        prompt: { en: "Which pair of actions does the second sentence ask 'who' about?" }
+        options: [{ en: "Reading Sanskrit and eating" }, { en: "Reading Sanskrit and bringing water" }, { en: "Bringing water and singing" }]
         answer: 2
       - id: "sa-3402"
-        prompt: { en: "One sentence asks who reads Sanskrit." }
+        prompt: { en: "The first sentence asks where the horse goes." }
         answer: true
   - id: "sa-questions-text-2"
     title: "Why and how"

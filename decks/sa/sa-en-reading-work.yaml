@@ -7,7 +7,7 @@ native:   { code: "en", iso639_3: "eng", name: "English" }
 license: "CC-BY-SA-4.0"
 source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
 description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
-tags: ["reading", "unreviewed"]
+tags: ["reading", "beginner", "unreviewed"]
 passages:
   - id: "sa-work-text-1"
     title: "Farmer and wages"
@@ -19,13 +19,13 @@ passages:
       - { text: "उद्योगेन सदा जयति सखा.", reading: "udyogena sadā jayati sakhā.", ipa: "ud̪joːɡeːnə səd̪aː dʒəjət̪i səkʰaː" }
     questions:
       - id: "sa-3579"
-        prompt: { en: "What does the farmer get?" }
-        options: [{ en: "Wages" }, { en: "A craft" }, { en: "Grain" }]
-        answer: 3
+        prompt: { en: "Who gets wages through labour?" }
+        options: [{ en: "The farmer" }, { en: "He" }, { en: "The friend" }]
+        answer: 2
       - id: "sa-3580"
         prompt: { en: "How does he get wages?" }
-        options: [{ en: "Through labour" }, { en: "Through commerce" }, { en: "Through effort" }]
-        answer: 1
+        options: [{ en: "Through commerce" }, { en: "Through effort" }, { en: "Through labour" }]
+        answer: 3
       - id: "sa-3581"
         prompt: { en: "The brother lives by commerce." }
         answer: true
@@ -43,15 +43,15 @@ passages:
     questions:
       - id: "sa-3583"
         prompt: { en: "How does mother get wages?" }
-        options: [{ en: "Through service" }, { en: "Through commerce" }, { en: "Through labour" }]
-        answer: 2
+        options: [{ en: "Through commerce" }, { en: "Through service" }, { en: "Through labour" }]
+        answer: 1
       - id: "sa-3584"
         prompt: { en: "Where does the farmer go?" }
-        options: [{ en: "To the field" }, { en: "To the city" }, { en: "To the village" }]
-        answer: 3
+        options: [{ en: "To the field" }, { en: "To the village" }, { en: "To the city" }]
+        answer: 2
       - id: "sa-3585"
-        prompt: { en: "The wages are enough." }
-        answer: false
-      - id: "sa-3586"
-        prompt: { en: "Father makes the plough of iron." }
+        prompt: { en: "The labour is hard." }
         answer: true
+      - id: "sa-3586"
+        prompt: { en: "Father makes the plough of wood." }
+        answer: false

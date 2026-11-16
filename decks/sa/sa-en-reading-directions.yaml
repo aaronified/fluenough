@@ -7,7 +7,7 @@ native:   { code: "en", iso639_3: "eng", name: "English" }
 license: "CC-BY-SA-4.0"
 source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
 description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
-tags: ["reading", "unreviewed"]
+tags: ["reading", "beginner", "unreviewed"]
 passages:
   - id: "sa-directions-text-1"
     title: "In front and behind"
@@ -20,12 +20,12 @@ passages:
     questions:
       - id: "sa-3499"
         prompt: { en: "Who goes in front in the first sentence?" }
-        options: [{ en: "Father" }, { en: "The friend" }, { en: "Mother" }]
-        answer: 2
+        options: [{ en: "Father" }, { en: "Mother" }, { en: "The friend" }]
+        answer: 3
       - id: "sa-3500"
         prompt: { en: "Who stands in front in the second sentence?" }
-        options: [{ en: "Father" }, { en: "The friend" }, { en: "Mother" }]
-        answer: 3
+        options: [{ en: "Mother" }, { en: "Father" }, { en: "The friend" }]
+        answer: 1
       - id: "sa-3501"
         prompt: { en: "Father reads behind." }
         answer: true
@@ -43,12 +43,12 @@ passages:
     questions:
       - id: "sa-3503"
         prompt: { en: "What is above in the first sentence?" }
-        options: [{ en: "Water" }, { en: "The book" }, { en: "Father" }]
-        answer: 1
+        options: [{ en: "The book" }, { en: "Water" }, { en: "Father" }]
+        answer: 2
       - id: "sa-3504"
         prompt: { en: "What is below in the second sentence?" }
-        options: [{ en: "Mother" }, { en: "The book" }, { en: "Water" }]
-        answer: 2
+        options: [{ en: "Mother" }, { en: "Water" }, { en: "The book" }]
+        answer: 3
       - id: "sa-3505"
         prompt: { en: "The right hand brings water." }
         answer: true
