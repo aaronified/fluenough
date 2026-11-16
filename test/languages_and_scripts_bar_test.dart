@@ -30,7 +30,6 @@ import 'package:fluenough/features/today/daily_card.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/widgets/drill_frame.dart';
 import 'package:fluenough/ui/widgets/language_bar.dart';
-import 'package:fluenough/ui/widgets/report_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart'
     show CustomSemanticsAction, SemanticsAction;
@@ -364,8 +363,12 @@ Finder zone() => find
     .hitTestable()
     .first;
 
-Finder allButton() =>
-    find.descendant(of: bar(), matching: find.text('All')).hitTestable();
+/// The word All on the language bar: Progress had it as a button until the
+/// owner removed it (2026-11-16).
+Finder allText() => find.descendant(
+  of: find.byType(LanguageBar),
+  matching: find.text('All'),
+);
 
 Future<void> openMenu(WidgetTester tester) async {
   await tester.tap(zone());
@@ -933,24 +936,18 @@ void main() {
           usePhone(tester);
           final state = await pumpApp(tester, state: await aro(choice: 'es'));
           final l10n = l10nOf(tester);
-          for (final tab in <ShellTab>[ShellTab.today, ShellTab.decks]) {
+          // No tab has an All button (owner, 2026-11-16).
+          for (final tab in ShellTab.values) {
             state.shellTab.value = tab;
             await tester.pumpAndSettle();
-            expect(allButton(), findsNothing, reason: tab.name);
+            expect(allText(), findsNothing, reason: tab.name);
           }
           state.shellTab.value = ShellTab.progress;
           await tester.pumpAndSettle();
           // One language: the Level tile.
           expect(find.text(l10n.progressLevelTitle), findsOneWidget);
-          await tester.tap(allButton());
-          await tester.pumpAndSettle();
-          expect(state.settings.progressAll, isTrue);
-          // Every language: the start date alone, as levels differ by course.
-          expect(find.text(l10n.progressStartedTitle), findsOneWidget);
-          expect(find.text(l10n.progressLevelTitle), findsNothing);
-          // The wheel keeps its place, the selection an outline only.
-          expect(pillFilled(tester), isFalse);
           expect(state.shownLanguage, 'es');
+          expect(pillFilled(tester), isTrue);
 
           // Today and Decks still show Spanish alone.
           state.shellTab.value = ShellTab.today;
@@ -988,16 +985,17 @@ void main() {
             'es',
           );
 
-          // On Progress, a swipe or the menu turns All off.
+          // On Progress, a swipe or the menu turns a stored All off.
           state.shellTab.value = ShellTab.progress;
+          await tester.pumpAndSettle();
+          state.settings.progressAll = true;
           await tester.pumpAndSettle();
           // With two languages, either way round is the other one.
           await swipe(tester, 1);
           expect(state.shownLanguage, 'hi');
           expect(state.settings.progressAll, isFalse);
-          await tester.tap(allButton());
+          state.settings.progressAll = true;
           await tester.pumpAndSettle();
-          expect(state.settings.progressAll, isTrue);
           await openMenu(tester);
           await tester.tap(
             find.descendant(
@@ -1031,7 +1029,6 @@ void main() {
           child: Scaffold(
             body: LanguageBarFrame(
               screen: screen,
-              reportDetail: 'Test',
               child: const SizedBox.expand(),
             ),
           ),
@@ -1091,19 +1088,15 @@ void main() {
       );
     });
 
-    testWidgets('the wheel is centred whether or not the All slot holds All, '
-        'which only Progress shows', (tester) async {
-      await pumpBar(tester);
-      final today = tester.getCenter(zone()).dx;
-      expect(allButton(), findsNothing);
-      final slot = find.byKey(const ValueKey<String>('language-bar-all-slot'));
-      expect(tester.getSize(slot).width, 48);
-
-      await pumpBar(tester, screen: LanguageBarScreen.progress);
-      expect(allButton(), findsOneWidget);
-      expect(tester.getSize(slot).width, 48);
-      expect(tester.getCenter(zone()).dx, closeTo(today, 0.5));
-      expect(today, closeTo(195, 1));
+    testWidgets('the wheel takes the whole bar and is centred on every tab, '
+        'with no bug icon and no All button', (tester) async {
+      for (final screen in LanguageBarScreen.values) {
+        await pumpBar(tester, screen: screen);
+        expect(find.byIcon(Icons.bug_report_outlined), findsNothing);
+        expect(allText(), findsNothing, reason: screen.name);
+        expect(tester.getCenter(zone()).dx, closeTo(195, 1));
+        expect(tester.getSize(zone()).width, closeTo(390, 1));
+      }
     });
 
     testWidgets('in a right to left layout the next language is to the '
@@ -1374,21 +1367,17 @@ void main() {
       expect(drawn.last.opacity, lessThan(drawn.first.opacity));
     });
 
-    testWidgets('nothing on the wheel overlaps the bug button, at 1.4x text', (
+    testWidgets('nothing on the wheel is drawn past the bar, at 1.4x text', (
       tester,
     ) async {
       await pumpBar(tester, textScale: 1.4);
       await tester.pumpAndSettle();
-      final report = rectOf(
-        tester,
-        find.descendant(
-          of: find.byType(LanguageBar),
-          matching: find.byType(ReportButton),
-        ),
-      );
-      expect(rectOf(tester, pill()).overlaps(report), isFalse);
+      final bounds = rectOf(tester, find.byType(LanguageBar));
+      expect(rectOf(tester, pill()).left, greaterThanOrEqualTo(bounds.left));
+      expect(rectOf(tester, pill()).right, lessThanOrEqualTo(bounds.right));
       for (final glyph in drawnGlyphs(tester)) {
-        expect(glyph.rect.overlaps(report), isFalse);
+        expect(glyph.rect.left, greaterThanOrEqualTo(bounds.left - 0.5));
+        expect(glyph.rect.right, lessThanOrEqualTo(bounds.right + 0.5));
       }
     });
 

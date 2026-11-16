@@ -113,7 +113,6 @@ class _Frame extends StatelessWidget {
       bottom: false,
       child: LanguageBarFrame(
         screen: LanguageBarScreen.progress,
-        reportDetail: 'Progress',
         child: child,
       ),
     ),

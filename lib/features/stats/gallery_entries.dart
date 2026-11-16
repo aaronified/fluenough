@@ -41,7 +41,7 @@ final List<GalleryEntry> statsGalleryStates = <GalleryEntry>[
     id: 'stats-all-languages',
     section: GallerySection.progressAndSettings,
     label: 'Progress, All on', // ui-literal-ok: debug-only gallery
-    note: 'Every language together, from the language bar', // ui-literal-ok: debug-only gallery
+    note: 'Every language together, from a stored setting', // ui-literal-ok: debug-only gallery
     builder: (_) => const AppShell(),
     state: (app) => _onProgress(
       GalleryFixtures.state(app, features: FeatureRegistry.all())

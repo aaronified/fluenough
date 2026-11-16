@@ -9,7 +9,7 @@ import '../gallery/gallery_entry.dart';
 import 'activities_page.dart';
 import 'app_log_page.dart';
 import 'appearance_page.dart';
-import 'languages_page.dart';
+import '../languages/languages_page.dart';
 import 'profiles_privacy_page.dart';
 import 'reminders_page.dart';
 import 'reviewing_page.dart';
@@ -155,8 +155,8 @@ final List<GalleryEntry> settingsGalleryStates = <GalleryEntry>[
     id: 'settings-languages',
     section: GallerySection.progressAndSettings,
     label: 'Your languages', // ui-literal-ok: debug-only gallery
-    note: 'Known, learned, readings, 18+, sources', // ui-literal-ok: debug-only gallery
-    builder: (_) => const LanguagesSettingsPage(),
+    note: 'The language list, with the three-dot menu', // ui-literal-ok: debug-only gallery
+    builder: (_) => const LanguagesPage(),
   ),
   GalleryEntry(
     id: 'settings-activities',
@@ -213,7 +213,7 @@ final List<GalleryEntry> settingsGalleryStates = <GalleryEntry>[
     section: GallerySection.progressAndSettings,
     label: 'Settings, adult content on', // ui-literal-ok: debug-only gallery
     note: 'Rude words shown (#96)', // ui-literal-ok: debug-only gallery
-    builder: (_) => const LanguagesSettingsPage(),
+    builder: (_) => const LanguagesPage(),
     state: SettingsFixtures.adultOn,
   ),
   GalleryEntry(

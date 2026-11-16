@@ -84,7 +84,6 @@ class TodayPage extends StatelessWidget {
         bottom: false,
         child: LanguageBarFrame(
           screen: LanguageBarScreen.today,
-          reportDetail: 'Today',
           child: body,
         ),
       ),

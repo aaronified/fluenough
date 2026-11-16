@@ -72,7 +72,6 @@ Future<AppState> _pumpBar(
     const Scaffold(
       body: LanguageBarFrame(
         screen: LanguageBarScreen.today,
-        reportDetail: 'Test',
         child: SizedBox.expand(),
       ),
     ),
