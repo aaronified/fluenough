@@ -393,14 +393,22 @@ Future<void> _learningSession(
   state.shellTab.value = ShellTab.today;
   await _settle(tester);
   await reel.hold(3);
-  // A lesson of sentences, which are asked more ways than single words (put
-  // in order, typed, heard), else the language's next words.
-  Future<void> open(DrillRequest request) async {
-    tester
-        .state<NavigatorState>(find.byType(Navigator).first)
-        .pushNamed(AppRoutes.drill, arguments: request);
+  // Two real lessons, one after the other, so that the kinds of question a
+  // lesson asks all show in ten seconds: the language's next words (shown,
+  // then chosen), and a deck of sentences (shown, put in order, heard). A
+  // lesson of words alone asks only chosen and heard questions, and one of
+  // sentences alone only put in order and heard.
+  Future<void> open(DrillRequest request, {bool replace = false}) async {
+    final navigator = tester.state<NavigatorState>(
+      find.byType(Navigator).first,
+    );
+    replace
+        ? navigator.pushReplacementNamed(AppRoutes.drill, arguments: request)
+        : navigator.pushNamed(AppRoutes.drill, arguments: request);
     // The page builds its queue after real asynchronous work, which only
-    // runs outside the test's fake clock: wait for it there.
+    // runs outside the test's fake clock: wait for it there. A lesson put in
+    // the place of another first lets the old page go.
+    if (replace) await _settle(tester);
     for (var i = 0; i < 60; i++) {
       await tester.runAsync(
         () => Future<void>.delayed(const Duration(milliseconds: 100)),
@@ -429,89 +437,107 @@ Future<void> _learningSession(
   }
   // ignore: avoid_print
   print('learning-session lesson deck: $lessonDeck');
-  await open(DrillRequest.lesson(language: 'bn', deckId: lessonDeck));
-  if (_session(tester) == null &&
-      find.byType(ScriptGuideView).evaluate().isEmpty) {
-    tester.state<NavigatorState>(find.byType(Navigator).first).pop();
-    await _settle(tester);
-    await open(DrillRequest.lesson(language: 'bn'));
+  // A script guide first, if a lesson meets one.
+  Future<void> guide() async {
+    if (find.byType(ScriptGuideView).evaluate().isNotEmpty) {
+      await tester.tap(find.byType(FilledButton).first);
+      await _settle(tester);
+    }
   }
-  // A script guide first, if the lesson meets one.
-  if (find.byType(ScriptGuideView).evaluate().isNotEmpty) {
-    await tester.tap(find.byType(FilledButton).first);
-    await _settle(tester);
-  }
+
   final types = <Ask>{};
   var learned = false;
-  for (var step = 0; step < 30 && reel.count < maxFrames; step++) {
-    final session = _session(tester);
-    if (session == null) break;
-    final ask = session.ask;
-    final shows = ask.onlyShows;
-    // ignore: avoid_print
-    print('learning step $step: ${ask.name} ${session.item.card.target}');
-    if (shows) {
-      await reel.hold(ask == Ask.showSet ? 2 : 4);
-      session.learnt();
-      await tester.pump(const Duration(milliseconds: 400));
-      continue;
-    }
-    types.add(ask);
-    await reel.hold(2);
-    if (ask.chooses && find.byType(ChoiceTile).evaluate().isNotEmpty) {
-      final options = session.options;
-      final right = options.indexWhere(session.isRight);
-      await tester.tap(
-        find.byType(ChoiceTile).at(right),
-        warnIfMissed: false,
-      );
-      await tester.pump();
-    } else if (ask.chooses) {
-      session.pick(session.options.firstWhere(session.isRight));
-    } else if (ask == Ask.rearrange) {
-      final tiles = session.tiles;
-      final used = <int>{};
-      for (final word in session.answerWords) {
-        final i = <int>[
-          for (var k = 0; k < tiles.length; k++)
-            if (!used.contains(k) && tiles[k] == word) k,
-        ].first;
-        used.add(i);
-        session.place(i);
-        await reel.hold(2);
+  var step = 0;
+  // Plays the open lesson as a learner who knows it, until [questions]
+  // questions are answered, or "Learned" has shown.
+  Future<void> play({required int questions}) async {
+    var asked = 0;
+    for (; step < 40 && reel.count < maxFrames; step++) {
+      final session = _session(tester);
+      if (session == null) break;
+      final ask = session.ask;
+      final shows = ask.onlyShows;
+      // ignore: avoid_print
+      print('learning step $step: ${ask.name} ${session.item.card.target}');
+      if (shows) {
+        await reel.hold(ask == Ask.showSet ? 2 : 4);
+        session.learnt();
+        await tester.pump(const Duration(milliseconds: 400));
+        continue;
       }
-      session.checkOrder();
-    } else if (ask == Ask.matchPairs) {
-      for (final target in session.matchTargets) {
-        final meaning = session.matchMeanings.firstWhere(
-          (m) => m.card.id == target.card.id,
+      types.add(ask);
+      await reel.hold(2);
+      if (ask.chooses && find.byType(ChoiceTile).evaluate().isNotEmpty) {
+        final options = session.options;
+        final right = options.indexWhere(session.isRight);
+        await tester.tap(
+          find.byType(ChoiceTile).at(right),
+          warnIfMissed: false,
         );
-        session.match(target, meaning);
-        await reel.hold(2);
+        await tester.pump();
+      } else if (ask.chooses) {
+        session.pick(session.options.firstWhere(session.isRight));
+      } else if (ask == Ask.rearrange) {
+        final tiles = session.tiles;
+        final used = <int>{};
+        for (final word in session.answerWords) {
+          final i = <int>[
+            for (var k = 0; k < tiles.length; k++)
+              if (!used.contains(k) && tiles[k] == word) k,
+          ].first;
+          used.add(i);
+          session.place(i);
+          await reel.hold(2);
+        }
+        session.checkOrder();
+      } else if (ask == Ask.matchPairs) {
+        for (final target in session.matchTargets) {
+          final meaning = session.matchMeanings.firstWhere(
+            (m) => m.card.id == target.card.id,
+          );
+          session.match(target, meaning);
+          await reel.hold(2);
+        }
+      } else if (session.item.mode == DrillMode.recognition) {
+        session.reveal();
+        await reel.hold(3);
+        session.rate(SelfGrade.good);
+      } else {
+        // Typed: the answer typed in, then checked.
+        final field = find.byKey(const ValueKey<String>('answer'));
+        final answer = session.acceptedAnswers.first;
+        if (field.evaluate().isNotEmpty) {
+          await tester.enterText(
+            find.descendant(of: field, matching: find.byType(EditableText)),
+            answer,
+          );
+          await reel.hold(4);
+        }
+        session.check(answer);
       }
-    } else if (session.item.mode == DrillMode.recognition) {
-      session.reveal();
+      await reel.hold(1);
+      if (find.text('Learned').evaluate().isNotEmpty) learned = true;
       await reel.hold(3);
-      session.rate(SelfGrade.good);
-    } else {
-      // Typed: the answer typed in, then checked.
-      final field = find.byKey(const ValueKey<String>('answer'));
-      final answer = session.acceptedAnswers.first;
-      if (field.evaluate().isNotEmpty) {
-        await tester.enterText(
-          find.descendant(of: field, matching: find.byType(EditableText)),
-          answer,
-        );
-        await reel.hold(4);
+      asked++;
+      if (learned || asked >= questions) {
+        step++;
+        break;
       }
-      session.check(answer);
+      session.next();
+      await tester.pump(const Duration(milliseconds: 400));
     }
-    await reel.hold(1);
-    if (find.text('Learned').evaluate().isNotEmpty) learned = true;
-    await reel.hold(3);
-    if (learned && types.length >= 3) break;
-    session.next();
-    await tester.pump(const Duration(milliseconds: 400));
+  }
+
+  await open(DrillRequest.lesson(language: 'bn'));
+  await guide();
+  await play(questions: lessonDeck == null ? 99 : 1);
+  if (lessonDeck != null) {
+    await open(
+      DrillRequest.lesson(language: 'bn', deckId: lessonDeck),
+      replace: true,
+    );
+    await guide();
+    await play(questions: 99);
   }
   await reel.hold(6);
   // ignore: avoid_print
