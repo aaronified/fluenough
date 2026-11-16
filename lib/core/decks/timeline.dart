@@ -53,9 +53,8 @@ class TimelineWork {
 
 int? _rangeEnd(String? date, int first) {
   if (date == null) return null;
-  final m = RegExp(
-    r'^(?:c\.\s?)?-?\d{1,4}(?:\s+to\s+|-)(-?\d{1,4})$',
-  ).firstMatch(date.trim());
+  final m = RegExp(r'^(?:c\.\s?)?-?\d{1,4}(?:\s+to\s+|-)(-?\d{1,4})$')
+      .firstMatch(date.trim());
   if (m == null) return null;
   final end = int.parse(m.group(1)!);
   return end > first ? end : null;
