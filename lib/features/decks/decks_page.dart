@@ -109,6 +109,10 @@ class _DecksPageState extends State<DecksPage> {
   /// there once, not on every rebuild.
   String? _openedAt;
 
+  /// Whether the search was open at the last build, to scroll to the bar
+  /// once as it opens.
+  bool _wasOpen = false;
+
   @override
   void dispose() {
     _debounce?.cancel();
@@ -543,6 +547,17 @@ class _DecksPageState extends State<DecksPage> {
         );
         final searching = parsed.text.isNotEmpty || _chips.isNotEmpty;
         final open = _focus.hasFocus || searching;
+        // The path may sit scrolled to the unit up next, the bar under the
+        // language bar: opening the search brings the bar, its end button
+        // and its menu back into view.
+        if (open && !_wasOpen) {
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (mounted && _scroll.hasClients && _scroll.offset > 0) {
+              _scroll.jumpTo(0);
+            }
+          });
+        }
+        _wasOpen = open;
         final language = languages.firstOrNull;
         final outcome = searching
             ? runSearch(
