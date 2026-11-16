@@ -32,6 +32,7 @@ import 'package:fluenough/app/session.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/review/deck_review.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
+import 'package:fluenough/core/models/reading.dart' show QuestionCard;
 import 'package:fluenough/core/scheduling/lesson.dart' show Difficulty;
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart' show Ask;
@@ -419,8 +420,9 @@ Future<void> _learningSession(
   for (final entry in state.decks) {
     if (entry.language.code != 'bn') continue;
     final cards = state.untaughtCards('bn', deckId: entry.id);
+    if (cards.isEmpty || cards.first is QuestionCard) continue;
     final hard = cards.where((c) => Difficulty.of(c) == Difficulty.hard);
-    if (hard.length >= 4) {
+    if (hard.length >= 4 && entry.cards.every((c) => c.rule == null)) {
       lessonDeck = entry.id;
       break;
     }
