@@ -65,6 +65,9 @@ List<String> problemsOf(
   return problems;
 }
 
+/// A valid hash: the current parser refuses anything but 64 hex digits.
+final String _hash = '0' * 64;
+
 /// A one-language index listing one romanisation file, gated at [minApp]
 /// when given.
 String _fakeIndex(String path, {String? minApp}) => jsonEncode({
@@ -91,8 +94,8 @@ String _fakeIndex(String path, {String? minApp}) => jsonEncode({
           'kind': 'romanisation',
           'schema': 1,
           'size': 1,
-          'sha256': 'a',
-          'content_sha256': 'a',
+          'sha256': _hash,
+          'content_sha256': _hash,
           if (minApp != null) 'min_app': minApp,
         },
       ],
