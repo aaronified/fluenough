@@ -90,4 +90,18 @@ sample. Otherwise download. Same for everything." The font check, approved
   Sans SC, JP and KR, 10 to 18 MB each, downloaded only on "No". Traditional
   Hanzi has none yet.
 
+## Update (2026-11-16)
+
+Owner: "Add the fonts in the deck repo. App should get them from there."; "Latin
+languages can share one font. Same for Cyrillic. I don't want to depend on
+system fonts for content."
+
+- Latin, Cyrillic and Greek each have one shared Noto Sans subset (the
+  content fonts). They are the exception to the font check: they always
+  download with a course, are always drawn with, and are the fallback behind
+  every script's font and the interface's. Every course lists the Latin font.
+- Thai, Meitei Mayek and Brahmi have fonts; Arabic, Shahmukhi and the IPA
+  share another script's file (`FONT_ALIASES`).
+- The inventory is [Script Fonts Inventory](Script-Fonts-Inventory).
+
 See also: [Contributing](Contributing) · [ADR-Index](ADR-Index) · [Home](Home)
