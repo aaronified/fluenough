@@ -10,6 +10,7 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/hint.dart';
 import '../../ui/widgets/incoming.dart';
 import '../situations/situation_page.dart';
+import '../situations/fitted_label.dart';
 import '../situations/situation_visuals.dart';
 import '../situations/situations_editor.dart';
 
@@ -95,27 +96,41 @@ class SituationsCard extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 12),
-        for (
-          var start = 0;
-          start < buttons.length;
-          start += perRow
-        ) ...<Widget>[
-          if (start > 0) const SizedBox(height: 8),
-          IntrinsicHeight(
-            child: Row(
+        LayoutBuilder(
+          builder: (context, box) {
+            // The width of one button, so that every label is fitted to it.
+            final width = (box.maxWidth - 8 * (perRow - 1)) / perRow;
+            return Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
-              spacing: 8,
               children: <Widget>[
-                for (var i = start; i < start + perRow; i++)
-                  Expanded(
-                    child: i < buttons.length
-                        ? _SituationButton(spec: buttons[i])
-                        : const SizedBox.shrink(),
+                for (
+                  var start = 0;
+                  start < buttons.length;
+                  start += perRow
+                ) ...<Widget>[
+                  if (start > 0) const SizedBox(height: 8),
+                  IntrinsicHeight(
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      spacing: 8,
+                      children: <Widget>[
+                        for (var i = start; i < start + perRow; i++)
+                          Expanded(
+                            child: i < buttons.length
+                                ? _SituationButton(
+                                    spec: buttons[i],
+                                    width: width,
+                                  )
+                                : const SizedBox.shrink(),
+                          ),
+                      ],
+                    ),
                   ),
+                ],
               ],
-            ),
-          ),
-        ],
+            );
+          },
+        ),
       ],
     );
   }
@@ -167,9 +182,12 @@ class _ButtonSpec {
 }
 
 class _SituationButton extends StatelessWidget {
-  const _SituationButton({required this.spec});
+  const _SituationButton({required this.spec, required this.width});
 
   final _ButtonSpec spec;
+
+  /// The button's width, which its label is fitted to.
+  final double width;
 
   @override
   Widget build(BuildContext context) {
@@ -180,25 +198,10 @@ class _SituationButton extends StatelessWidget {
     final content = Column(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-        Container(
-          width: 40,
-          height: 40,
-          decoration: BoxDecoration(
-            color: colors.onContainer.withValues(alpha: 0.12),
-            shape: BoxShape.circle,
-          ),
-          child: Icon(spec.icon.situationIcon, color: colors.onContainer),
-        ),
-        const SizedBox(height: 6),
-        Text(
-          spec.title,
-          textAlign: TextAlign.center,
-          maxLines: 2,
-          overflow: TextOverflow.ellipsis,
-          style: theme.textTheme.labelLarge!.copyWith(
-            fontWeight: FontWeight.w700,
-            color: colors.onContainer,
-          ),
+        FittedLabel(
+          text: spec.title,
+          width: width,
+          color: colors.onContainer,
         ),
         if (count != null && count > 0)
           Text(
@@ -210,22 +213,43 @@ class _SituationButton extends StatelessWidget {
           ),
       ],
     );
-    final face = Padding(
-      padding: const EdgeInsetsDirectional.symmetric(
-        horizontal: 6,
-        vertical: 12,
+    // The label block (and the pill) sits in the middle of the space under
+    // the icon, whatever the number of lines.
+    final below = spec.live
+        ? content
+        : Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Opacity(opacity: kIncomingOpacity, child: content),
+              const SizedBox(height: 6),
+              // Full contrast, so the state is not shown by dimming alone.
+              const _UpcomingPill(),
+            ],
+          );
+    final face = ConstrainedBox(
+      constraints: BoxConstraints(
+        minHeight: MediaQuery.textScalerOf(
+          context,
+        ).scale(situationTileMinHeight),
       ),
-      child: spec.live
-          ? content
-          : Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                Opacity(opacity: kIncomingOpacity, child: content),
-                const SizedBox(height: 6),
-                // Full contrast, so the state is not shown by dimming alone.
-                const _UpcomingPill(),
-              ],
+      child: Padding(
+        padding: const EdgeInsetsDirectional.symmetric(vertical: 12),
+        child: Column(
+          children: <Widget>[
+            Container(
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                color: colors.onContainer.withValues(alpha: 0.12),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(spec.icon.situationIcon, color: colors.onContainer),
             ),
+            const SizedBox(height: 6),
+            Expanded(child: Center(child: below)),
+          ],
+        ),
+      ),
     );
     final button = Material(
       color: colors.container,

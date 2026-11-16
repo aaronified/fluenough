@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **Choosing situations is clearer.** The picker now has "On Today" (up to six, in your order, with a counter) and "More situations", so you can see what is shown and what is not, and long names such as Emergency and Doctor and pharmacy fit their tiles on the picker and on Today.
+
 ## [0.10.6] - 2026-11-15
 
 - **The Culture bar now fills.** In Add a language, the Culture bar under a language shows how much of its culture decks is written, instead of always being empty.
