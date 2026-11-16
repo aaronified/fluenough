@@ -303,8 +303,5 @@ ItemSearchOutcome withoutWords(ItemSearchOutcome found) {
 }
 
 /// The core id of a deck of the course (`te-health` for `te-en-health`).
-String? coreIdOfDeck(DeckEntry entry) => coreIdOf(
-  entry.id,
-  entry.language.code,
-  entry.deck.native.code,
-);
+String? coreIdOfDeck(DeckEntry entry) =>
+    coreIdOf(entry.id, entry.language.code, entry.deck.native.code);

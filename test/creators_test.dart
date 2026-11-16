@@ -64,10 +64,7 @@ void main() {
       expect(legacy.items.single.kind, LegacyKind.curriculum);
       expect(legacy.items.single.year, 1990);
       expect(legacy.items.single.sourceUrl, 'https://example.org/curriculum');
-      expect(
-        file.byId('zz-ejemplo-poeta')!.legacyFor(<String>[]),
-        isNull,
-      );
+      expect(file.byId('zz-ejemplo-poeta')!.legacyFor(<String>[]), isNull);
     });
 
     test('shows the full target-language text', () {
@@ -196,11 +193,7 @@ creators:
     born: 1980
     living: true
 ''', source: 'zz.yaml');
-      final line = buildTimeline(
-        living,
-        const <TimelineWork>[],
-        today: _today,
-      );
+      final line = buildTimeline(living, const <TimelineWork>[], today: _today);
       expect(line.spans.single.open, isTrue);
       expect(line.spans.single.to, _today);
     });
@@ -208,17 +201,13 @@ creators:
     test(
       'shows a creator that no work cites, and ignores a work of a stranger',
       () {
-        final line = buildTimeline(
-          file,
-          const <TimelineWork>[
-            TimelineWork(
-              cardId: 'zz-0001',
-              creatorIds: <String>['zz-unknown'],
-              year: 1700,
-            ),
-          ],
-          today: _today,
-        );
+        final line = buildTimeline(file, const <TimelineWork>[
+          TimelineWork(
+            cardId: 'zz-0001',
+            creatorIds: <String>['zz-unknown'],
+            year: 1700,
+          ),
+        ], today: _today);
         expect(line.spans, hasLength(2));
         expect(line.works, isEmpty);
       },

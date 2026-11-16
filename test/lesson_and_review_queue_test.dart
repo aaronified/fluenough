@@ -944,41 +944,38 @@ void main() {
         canChoose: (_, _) => choose,
       ).map(shape).toList();
 
-      test(
-        'shows and asks each card at once, three together, then asks it '
-        'again in another type after two other questions',
-        () {
-          expect(plan(nine), <String>[
-            'e0:recognition:teach',
-            'e0:recognition:chooseMeaning',
-            'e1:recognition:teach',
-            'e1:recognition:chooseMeaning',
-            'e2:recognition:teach',
-            'e2:recognition:chooseMeaning',
-            'e0:speaking:own',
-            'e1:speaking:own',
-            'e2:speaking:own',
-            'm0:listening:teach',
-            'm0:listening:hearMeaning',
-            'm1:listening:teach',
-            'm1:listening:hearMeaning',
-            'm2:listening:teach',
-            'm2:listening:hearMeaning',
-            'm0:recognition:chooseMeaning',
-            'm1:recognition:chooseMeaning',
-            'm2:recognition:chooseMeaning',
-            'h0:production:teach',
-            'h0:production:rearrange',
-            'h1:production:teach',
-            'h1:production:rearrange',
-            'h2:production:teach',
-            'h2:production:rearrange',
-            'h0:speaking:own',
-            'h1:speaking:own',
-            'h2:speaking:own',
-          ]);
-        },
-      );
+      test('shows and asks each card at once, three together, then asks it '
+          'again in another type after two other questions', () {
+        expect(plan(nine), <String>[
+          'e0:recognition:teach',
+          'e0:recognition:chooseMeaning',
+          'e1:recognition:teach',
+          'e1:recognition:chooseMeaning',
+          'e2:recognition:teach',
+          'e2:recognition:chooseMeaning',
+          'e0:speaking:own',
+          'e1:speaking:own',
+          'e2:speaking:own',
+          'm0:listening:teach',
+          'm0:listening:hearMeaning',
+          'm1:listening:teach',
+          'm1:listening:hearMeaning',
+          'm2:listening:teach',
+          'm2:listening:hearMeaning',
+          'm0:recognition:chooseMeaning',
+          'm1:recognition:chooseMeaning',
+          'm2:recognition:chooseMeaning',
+          'h0:production:teach',
+          'h0:production:rearrange',
+          'h1:production:teach',
+          'h1:production:rearrange',
+          'h2:production:teach',
+          'h2:production:rearrange',
+          'h0:speaking:own',
+          'h1:speaking:own',
+          'h2:speaking:own',
+        ]);
+      });
 
       test('a grammar cell with one type of question cannot be learned', () {
         final cell = cardLesson('g', 'voy', modes: DrillMode.vocabulary);

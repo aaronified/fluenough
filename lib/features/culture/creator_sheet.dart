@@ -175,9 +175,7 @@ class CreatorChip extends StatelessWidget {
     if (creator == null) return const SizedBox.shrink();
     final info = cultureLanguage(state, language);
     final spoken = cultureSpoken(context, state);
-    final legacy = showLegacyLine
-        ? creator.legacyFor(spoken)
-        : null;
+    final legacy = showLegacyLine ? creator.legacyFor(spoken) : null;
     final line = _legacyLine(legacy, spoken);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

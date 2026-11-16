@@ -431,10 +431,7 @@ class CultureNotice extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Icon(
-              Icons.info_outline,
-              color: theme.colorScheme.onSurfaceVariant,
-            ),
+            Icon(Icons.info_outline, color: theme.colorScheme.onSurfaceVariant),
             const SizedBox(width: 12),
             Expanded(
               child: Column(

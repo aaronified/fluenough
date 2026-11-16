@@ -3680,10 +3680,11 @@ class AppState extends ChangeNotifier {
   /// A reading question is an exam item and is not learned.
   bool canLearn(Card card) {
     if (card is QuestionCard) return true;
-    return derived<bool>(
-      ('canLearn', card.id, _catalog),
-      () => _learnAttemptOf(card) != null,
-    );
+    return derived<bool>((
+      'canLearn',
+      card.id,
+      _catalog,
+    ), () => _learnAttemptOf(card) != null);
   }
 
   /// The cards a walkthrough of [decks] covers (#694): every card of every

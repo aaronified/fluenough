@@ -158,12 +158,7 @@ class LearnTracker<T> {
 
   /// [id]'s question of [step] was answered, [correct] or not on its first
   /// attempt, with [payload] describing the answer.
-  LearnResult<T> answer(
-    String id,
-    LearnStep step,
-    bool correct,
-    T payload,
-  ) {
+  LearnResult<T> answer(String id, LearnStep step, bool correct, T payload) {
     final dropped = _activity();
     final attempt = _open[id];
     if (attempt == null) {
@@ -250,6 +245,7 @@ class LearnAttempt {
   /// The teach card, or the rule card, shown right before the first question.
   final List<SessionItem> shows;
   final SessionItem first;
+
   /// The second question, of a different type; null only for an untracked
   /// card with a single question.
   final SessionItem? second;
@@ -333,12 +329,12 @@ class LearnAttempt {
 /// skill where there is one. A recognition question rated by the learner
 /// ([Ask.own] in recognition) never counts: it proves nothing.
 ///
-/// [fallback] is a second type for a card whose skills give only one, such as
-/// a phrase of one word (no Write): it is used when the card's own questions
-/// have no second.
+/// [extras] are more ways to ask the card within its skills, for a card whose
+/// own questions give only one type: they are tried when the card's own have no
+/// second.
 ({SessionItem first, SessionItem second})? learnPair(
   List<SessionItem> questions, {
-  SessionItem? fallback,
+  List<SessionItem> extras = const <SessionItem>[],
 }) {
   final usable = <SessionItem>[
     for (final q in questions)
@@ -346,7 +342,10 @@ class LearnAttempt {
           q.ask != Ask.matchPairs)
         q,
   ];
-  if (usable.isEmpty) return null;
+  if (usable.isEmpty) {
+    // Nothing the card is asked its own way proves anything: its extras do.
+    return extras.length < 2 ? null : learnPair(extras);
+  }
   final first = usable.first;
   final other = usable
       .where((q) => q.mode != first.mode && q.ask != first.ask)
@@ -354,8 +353,10 @@ class LearnAttempt {
   if (other != null) return (first: first, second: other);
   final same = usable.where((q) => q.ask != first.ask).firstOrNull;
   if (same != null) return (first: first, second: same);
-  if (fallback != null && fallback.ask != first.ask) {
-    return (first: first, second: fallback);
-  }
+  final more = extras
+      .where((q) => q.ask != first.ask)
+      .where((q) => !(q.mode == DrillMode.recognition && q.ask == Ask.own))
+      .firstOrNull;
+  if (more != null) return (first: first, second: more);
   return null;
 }

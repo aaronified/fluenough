@@ -80,11 +80,7 @@ class Topics {
     final byCore = <String, TopicDeckFact>{};
     void add(DeckEntry entry, {required bool hidden}) {
       if (entry.language.code != language) return;
-      final core = coreIdOf(
-        entry.id,
-        language,
-        entry.deck.native.code,
-      );
+      final core = coreIdOf(entry.id, language, entry.deck.native.code);
       if (core == null || byCore.containsKey(core)) return;
       byCore[core] = TopicDeckFact(
         coreId: core,

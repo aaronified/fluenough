@@ -67,10 +67,7 @@ void main() {
       expect(_ids(woven.of(0)), <String>['proverb-a1', 'proverb-a1-too']);
       expect(woven.all, hasLength(4));
       // Never fewer than one.
-      expect(
-        weaveCulture(_plan(), items, perUnit: 0).of(0),
-        hasLength(1),
-      );
+      expect(weaveCulture(_plan(), items, perUnit: 0).of(0), hasLength(1));
     });
 
     group('with the number a level needs', () {
@@ -212,18 +209,14 @@ void main() {
 
     test('runs from the works to the present year', () {
       final file = parseCreators(cultureCreators, source: 'zz.yaml');
-      final built = buildTimeline(
-        file,
-        const <TimelineWork>[
-          TimelineWork(
-            cardId: 'w',
-            creatorIds: <String>['zz-machado'],
-            year: 1912,
-            level: Level.a1,
-          ),
-        ],
-        today: 2026,
-      );
+      final built = buildTimeline(file, const <TimelineWork>[
+        TimelineWork(
+          cardId: 'w',
+          creatorIds: <String>['zz-machado'],
+          year: 1912,
+          level: Level.a1,
+        ),
+      ], today: 2026);
       expect(built.end, 2026);
       expect(built.works.single.year, 1912);
     });

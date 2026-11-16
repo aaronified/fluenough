@@ -68,20 +68,21 @@ Map<String, String> _world() {
 }
 
 void main() {
-  testWidgets('People names neither a hidden-deck nor an unwoven-deck creator', (
-    tester,
-  ) async {
-    usePhone(tester);
-    final state = await cultureApp(reach: 'b1', files: _world());
-    await pumpScreen(
-      tester,
-      const CultureDeckPage(language: 'zz'),
-      state: state,
-    );
-    expect(find.text('Miguel de Cervantes'), findsOneWidget);
-    expect(find.text('Hidden Poet'), findsNothing);
-    expect(find.text('Faraway Poet'), findsNothing);
-  });
+  testWidgets(
+    'People names neither a hidden-deck nor an unwoven-deck creator',
+    (tester) async {
+      usePhone(tester);
+      final state = await cultureApp(reach: 'b1', files: _world());
+      await pumpScreen(
+        tester,
+        const CultureDeckPage(language: 'zz'),
+        state: state,
+      );
+      expect(find.text('Miguel de Cervantes'), findsOneWidget);
+      expect(find.text('Hidden Poet'), findsNothing);
+      expect(find.text('Faraway Poet'), findsNothing);
+    },
+  );
 
   test('the timeline leaves both out, spans and legacy marks', () async {
     final state = await cultureApp(reach: 'b1', files: _world());

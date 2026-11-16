@@ -112,11 +112,7 @@ class ItemRow {
 
 /// One result.
 class ItemResult {
-  const ItemResult({
-    required this.row,
-    required this.rank,
-    this.snippetCard,
-  });
+  const ItemResult({required this.row, required this.rank, this.snippetCard});
 
   /// The row found (a deck's own row, for a card of a hidden deck).
   final ItemRow row;

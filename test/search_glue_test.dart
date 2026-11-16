@@ -120,31 +120,28 @@ void main() {
   });
 
   group('the recommendations, fed from the course', () {
-    test(
-      'know a Latin-script course',
-      () async {
-        final fixture = kindsFixtureFiles();
-        final state = await kindsWorldApp(
-          files: <String, String>{
-            ...kindsWorld(),
-            'decks/recommendations/zz.yaml':
-                fixture['decks/recommendations/zz.yaml']!,
-            'decks/creators/zz.yaml': fixture['decks/creators/zz.yaml']!,
-          },
-        );
-        final course = state.recommendationCourseOf('zz');
-        expect(course.latinOnly, isTrue);
-        expect(course.pathHasAlphabet, isFalse);
-        expect(course.learnsScripts, isTrue);
-        expect(
-          state.catalogView.recommendations['zz']!.recommendations,
-          hasLength(2),
-        );
-        // Every work is offered, whatever its level.
-        expect(state.recommendationsFor('zz'), hasLength(2));
-        expect(state.recommendationsFor('yy'), isEmpty);
-      },
-    );
+    test('know a Latin-script course', () async {
+      final fixture = kindsFixtureFiles();
+      final state = await kindsWorldApp(
+        files: <String, String>{
+          ...kindsWorld(),
+          'decks/recommendations/zz.yaml':
+              fixture['decks/recommendations/zz.yaml']!,
+          'decks/creators/zz.yaml': fixture['decks/creators/zz.yaml']!,
+        },
+      );
+      final course = state.recommendationCourseOf('zz');
+      expect(course.latinOnly, isTrue);
+      expect(course.pathHasAlphabet, isFalse);
+      expect(course.learnsScripts, isTrue);
+      expect(
+        state.catalogView.recommendations['zz']!.recommendations,
+        hasLength(2),
+      );
+      // Every work is offered, whatever its level.
+      expect(state.recommendationsFor('zz'), hasLength(2));
+      expect(state.recommendationsFor('yy'), isEmpty);
+    });
   });
 
   group('a creator image on demand', () {

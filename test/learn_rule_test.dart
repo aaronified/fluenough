@@ -118,10 +118,7 @@ void main() {
       t.shown('a');
       t.left();
       expect(t.open, isEmpty);
-      expect(
-        t.answer('a', LearnStep.first, true, 'q1').held,
-        isEmpty,
-      );
+      expect(t.answer('a', LearnStep.first, true, 'q1').held, isEmpty);
     });
 
     test('a question skipped unasked ends its attempt', () {
@@ -166,10 +163,7 @@ void main() {
       t.answer('a', LearnStep.first, true, 'q1');
       t.end();
       expect(t.open, isEmpty);
-      expect(
-        t.answer('a', LearnStep.second, true, 'q2').held,
-        isEmpty,
-      );
+      expect(t.answer('a', LearnStep.second, true, 'q2').held, isEmpty);
     });
 
     test('a first question left unanswered ends its attempt', () {
@@ -262,10 +256,8 @@ void main() {
 
     test('a lesson of fewer than three, with no review to space it, is kept '
         'with the shorter gap it can have', () {
-      final items = learnSequence(<LearnAttempt>[
-        _attempt('a'),
-        _attempt('b'),
-      ]).items;
+      final items = learnSequence(<LearnAttempt>[_attempt('a'), _attempt('b')])
+          .items;
       expect(items.map(_shape).toList(), <String>[
         'a:show',
         'a:first',
@@ -281,10 +273,7 @@ void main() {
       final items = learnSequence(<LearnAttempt>[
         for (var i = 0; i < 4; i++) _attempt('x$i'),
       ]).items;
-      expect(
-        items.map((i) => i.card.id).toSet(),
-        <String>{'x0', 'x1', 'x2'},
-      );
+      expect(items.map((i) => i.card.id).toSet(), <String>{'x0', 'x1', 'x2'});
       expect(items.every((i) => i.learn!.gap == learnGap), isTrue);
     });
 
@@ -341,7 +330,7 @@ void main() {
       ];
       expect(learnPair(one), isNull);
       final fallback = _item(card, DrillMode.recognition, Ask.chooseWord);
-      final pair = learnPair(one, fallback: fallback)!;
+      final pair = learnPair(one, extras: <SessionItem>[fallback])!;
       expect(pair.second.ask, Ask.chooseWord);
     });
 
@@ -362,6 +351,15 @@ void main() {
         learnSequence(<LearnAttempt>[practised]).items.map((i) => i.ask),
         isNotEmpty,
       );
+    });
+
+    test('are found for a card whose other skills are left out', () {
+      final attempt = lessonAttempt(
+        _card('w'),
+        modesOf: (_) => <DrillMode>{DrillMode.production},
+        canChoose: (_, _) => true,
+      )!;
+      expect(attempt.first.ask, isNot(attempt.second!.ask));
     });
 
     test('are found for a phrase of one word, which has no Write', () {
@@ -473,10 +471,7 @@ cards:
       );
       expect(run.state.progress.log, hasLength(2));
       // Both answers are written as one moment.
-      expect(
-        run.state.progress.log.first.at,
-        run.state.progress.log.last.at,
-      );
+      expect(run.state.progress.log.first.at, run.state.progress.log.last.at);
       expect(run.state.isTaught(run.cards[1]), isFalse);
       play(run.session);
       play(run.session);
@@ -555,10 +550,7 @@ cards:
       // Idempotent: replaying again gives the same states.
       final again = replayReviews(log);
       expect(again.states.keys, once.states.keys);
-      expect(
-        again.states.values.single.dueAt,
-        once.states.values.single.dueAt,
-      );
+      expect(again.states.values.single.dueAt, once.states.values.single.dueAt);
       // The rows stay in the log, as events.
       expect(once.events, hasLength(3));
     });

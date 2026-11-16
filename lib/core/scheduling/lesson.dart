@@ -221,21 +221,45 @@ LearnAttempt? lessonAttempt(
         asked(q.mode, q.ask == Ask.matchPairs ? Ask.chooseMeaning : q.ask),
   ];
   // A word with only one skill of its own, as a phrase of one word has no
-  // Write, is also asked by choosing its word.
-  final fallback =
-      card.rule == null &&
-          !card.isGrammarCell &&
-          modes.contains(DrillMode.recognition) &&
-          canChoose(card, Ask.chooseWord)
-      ? SessionItem(
+  // Write or a card whose other skills are left out, is also asked another
+  // way within it: by choosing its word, or typing it, or putting it in order.
+  final extras = <SessionItem>[
+    if (card.rule == null && !card.isGrammarCell) ...<SessionItem>[
+      if (modes.contains(DrillMode.recognition) &&
+          canChoose(card, Ask.chooseWord))
+        SessionItem(
           card: card,
           mode: DrillMode.recognition,
           state: null,
           ask: Ask.chooseWord,
-        )
-      : null;
+        ),
+      if (modes.contains(DrillMode.production)) ...<SessionItem>[
+        if (card.rearranges)
+          SessionItem(
+            card: card,
+            mode: DrillMode.production,
+            state: null,
+            ask: Ask.rearrange,
+          ),
+        if (canChoose(card, Ask.chooseWord))
+          SessionItem(
+            card: card,
+            mode: DrillMode.production,
+            state: null,
+            ask: Ask.chooseWord,
+          ),
+        if (typed?.call(card) ?? true)
+          SessionItem(
+            card: card,
+            mode: DrillMode.production,
+            state: null,
+            ask: Ask.own,
+          ),
+      ],
+    ],
+  ];
   final isTracked = tracked?.call(card) ?? true;
-  final pair = learnPair(questions, fallback: fallback);
+  final pair = learnPair(questions, extras: extras);
   final SessionItem first;
   final SessionItem? second;
   if (pair != null) {

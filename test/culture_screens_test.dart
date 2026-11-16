@@ -296,9 +296,7 @@ void main() {
   });
 
   group('the full culture deck', () {
-    testWidgets('lists every item, and no unknown person', (
-      tester,
-    ) async {
+    testWidgets('lists every item, and no unknown person', (tester) async {
       usePhone(tester);
       final state = await cultureApp();
       await pumpScreen(
@@ -312,9 +310,7 @@ void main() {
       expect(find.text(_stanza), findsOneWidget);
     });
 
-    testWidgets('lists the people the items cite', (
-      tester,
-    ) async {
+    testWidgets('lists the people the items cite', (tester) async {
       usePhone(tester);
       final state = await cultureApp(reach: 'b1');
       await pumpScreen(

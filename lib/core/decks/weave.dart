@@ -278,7 +278,5 @@ WovenCulture weaveCulture(
     unused.removeWhere(picked.contains);
     byUnit[index] = List<CultureItem>.unmodifiable(picked);
   }
-  return WovenCulture(
-    byUnit: Map<int, List<CultureItem>>.unmodifiable(byUnit),
-  );
+  return WovenCulture(byUnit: Map<int, List<CultureItem>>.unmodifiable(byUnit));
 }

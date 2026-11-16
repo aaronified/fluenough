@@ -366,9 +366,7 @@ class _TopicPageState extends State<TopicPage> {
       GroupedList(
         outerRadius: AppRadii.card,
         gap: 4,
-        children: <Widget>[
-          for (final view in views) _unitRow(context, view),
-        ],
+        children: <Widget>[for (final view in views) _unitRow(context, view)],
       ),
     ];
   }

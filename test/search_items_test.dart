@@ -68,10 +68,7 @@ void main() {
   group('the kind of an item', () {
     late final ItemCorpus corpus = _corpus(_source(), fts: false);
     String kindOf(String query, SearchItemType type, String id) {
-      final found = corpus.search(
-        query,
-        sections: _sections,
-      );
+      final found = corpus.search(query, sections: _sections);
       return found.results
           .firstWhere((r) => r.row.type == type && r.row.id == id)
           .row
@@ -113,9 +110,7 @@ void main() {
         contains('zz-9201'),
       );
       expect(
-        corpus
-            .search('Poema', sections: _sections)
-            .ofKind('culture'),
+        corpus.search('Poema', sections: _sections).ofKind('culture'),
         isNotEmpty,
       );
     });
@@ -131,14 +126,8 @@ void main() {
       tearDown(() => corpus.index?.close());
 
       test('finds a word despite a typo, and an exact one ranks above it', () {
-        final exact = corpus.search(
-          'water',
-          sections: _sections,
-        );
-        final typo = corpus.search(
-          'watr',
-          sections: _sections,
-        );
+        final exact = corpus.search('water', sections: _sections);
+        final typo = corpus.search('watr', sections: _sections);
         expect(exact.ofKind('cards').map((r) => r.row.id), contains('zz-9002'));
         expect(typo.ofKind('cards').map((r) => r.row.id), contains('zz-9002'));
         expect(typo.ofKind('cards').first.isClose, isTrue);
@@ -148,20 +137,14 @@ void main() {
       test(
         'gives a tab for each kind with results, the best match\'s first',
         () {
-          final found = corpus.search(
-            'conjunct',
-            sections: _sections,
-          );
+          final found = corpus.search('conjunct', sections: _sections);
           expect(found.openKind, 'topics');
           expect(found.tabs.map((t) => t.kind), <String>['topics']);
           expect(found.tabs.single.row, 'topic');
           expect(found.countOf('topics'), 1);
           expect(found.countOf('cards'), 0);
 
-          final several = corpus.search(
-            'words',
-            sections: _sections,
-          );
+          final several = corpus.search('words', sections: _sections);
           expect(
             several.tabs.map((t) => t.kind),
             containsAll(<String>['decks', 'units']),
@@ -192,9 +175,7 @@ void main() {
             );
         expect(deck.row.level, isNotNull);
         expect(
-          corpus
-              .search('ilumina', sections: _sections)
-              .ofKind('culture'),
+          corpus.search('ilumina', sections: _sections).ofKind('culture'),
           isNotEmpty,
         );
       }, skip: skip);
@@ -254,10 +235,7 @@ void main() {
     }
 
     test('is found from the index alone, as a scene of its profession', () {
-      final found = corpusWithoutDeck().search(
-        'medicine',
-        sections: _sections,
-      );
+      final found = corpusWithoutDeck().search('medicine', sections: _sections);
       final row = found.ofKind('situations').single;
       expect(row.row.type, SearchItemType.deck);
       expect(row.row.hidden, isTrue);
@@ -266,10 +244,7 @@ void main() {
     });
 
     test('is listed whatever the learner\'s level', () {
-      final found = corpusWithoutDeck().search(
-        'medicine',
-        sections: _sections,
-      );
+      final found = corpusWithoutDeck().search('medicine', sections: _sections);
       expect(found.ofKind('situations'), hasLength(1));
     });
 
@@ -280,10 +255,7 @@ void main() {
           _source(added: true, shelves: shelves),
           fts: false,
         );
-        final found = corpus.search(
-          'registrarme',
-          sections: _sections,
-        );
+        final found = corpus.search('registrarme', sections: _sections);
         final row = found.results.single;
         expect(row.row.kind, 'situations');
         expect(row.row.type, SearchItemType.deck);
@@ -292,10 +264,7 @@ void main() {
         // The shelf and the added deck are one row, not two.
         expect(
           corpus
-              .search(
-                'medicine',
-                sections: _sections,
-              )
+              .search('medicine', sections: _sections)
               .results
               .where((r) => r.row.id == 'zz-en-medicine-registro'),
           hasLength(1),

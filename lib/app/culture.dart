@@ -97,8 +97,7 @@ extension CultureState on AppState {
   }
 
   /// The people of [language]'s culture, or null when it has none.
-  CreatorsFile? creatorsOf(String language) =>
-      catalogView.creators[language];
+  CreatorsFile? creatorsOf(String language) => catalogView.creators[language];
 
   /// Every creator any work of [language] cites: each card and passage of
   /// every deck of the language, hidden or not, woven or not, and every
