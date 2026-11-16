@@ -1,5 +1,5 @@
 # The people behind the Kannada recommended works (wiki/Deck-Format.md, Creators; D5). Lifespans are from each person's English Wikipedia article, read 2026-11-15
-# (Kannada film, play and book pages were read for titles only). No pictures: none has a licence checked yet. Creators of culture decks are added to this file by their own batch.
+# (Kannada film, play and book pages were read for titles only). No pictures: none has a licence checked yet. Creators of the culture decks (KN-010 to KN-013) were added by their own batch, from each person's English Wikipedia article read 2026-11-16.
 # Kumara Vyasa's death year is given as 1446 with 1447 in brackets on the page: circa. Girish Kasaravalli is living (born 1950; no death date on the page).
 schema: 1
 kind: "creators"
@@ -7,15 +7,123 @@ id: "creators-kn"
 language: "kn"
 license: "CC-BY-SA-4.0"
 eras:
+  - id: "old-kannada"
+    name: { en: "Old Kannada period" }
+    from: 850
+    to: 1000
+  - id: "western-chalukya"
+    name: { en: "Western Chalukya and Hoysala period" }
+    from: 1000
+    to: 1300
   - id: "vijayanagara"
     name: { en: "Vijayanagara period" }
     from: 1336
     to: 1646
+  - id: "colonial"
+    name: { en: "Colonial period" }
+    from: 1800
+    to: 1947
   - id: "modern"
     name: { en: "Modern period" }
     from: 1900
     to: 2026
 creators:
+  - id: "kn-pampa"
+    name:
+      en: { text: "Pampa" }
+    born: 902
+    died: 955
+    era: "old-kannada"
+    bio:
+      en: "Pampa was a Kannada poet of the Old Kannada period. He is known for the champu epic Vikramarjuna Vijaya, also called Pampa Bharata."
+    legacy:
+      text: { en: "His works served as the model for all future champu works in Kannada." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article says his works served as the model for all future champu works in Kannada." }, source: { url: "https://en.wikipedia.org/wiki/Adikavi_Pampa", accessed: "2026-11-16" } }
+  - id: "kn-basavanna"
+    name:
+      en: { text: "Basavanna" }
+    born: 1131
+    died: 1196
+    era: "western-chalukya"
+    bio:
+      en: "Basavanna was a twelfth-century poet, philosopher and chief minister. He taught devotion to Shiva in vachanas, short poems in plain Kannada."
+    legacy:
+      text: { en: "He rejected gender or social discrimination, superstitions and rituals." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article says he spread social awareness through his vachanas and rejected gender or social discrimination, superstitions and rituals." }, source: { url: "https://en.wikipedia.org/wiki/Basava", accessed: "2026-11-16" } }
+  - id: "kn-akka-mahadevi"
+    name:
+      en: { text: "Akka Mahadevi" }
+    born: { year: 1130, circa: true }
+    died: { year: 1160, circa: true }
+    era: "western-chalukya"
+    bio:
+      en: "Akka Mahadevi was a twelfth-century Kannada poet and devotee of Shiva. She wrote vachanas that she signed with the name of her lord, Chennamallikarjuna."
+    legacy:
+      text: { en: "Modern scholars see her as a prominent figure in the field of women's freedom." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article says modern scholars consider her a prominent figure in the field of female emancipation." }, source: { url: "https://en.wikipedia.org/wiki/Akka_Mahadevi", accessed: "2026-11-16" } }
+  - id: "kn-purandara-dasa"
+    name:
+      en: { text: "Purandara Dasa" }
+    born: { year: 1470, circa: true }
+    died: 1564
+    era: "vijayanagara"
+    bio:
+      en: "Purandara Dasa was a composer, singer and Haridasa poet from present-day Karnataka. He followed the Dvaita philosophy of Madhvacharya."
+    legacy:
+      text: { en: "He is counted among the chief founders of modern Carnatic music." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article calls him one of the chief founding proponents that shaped modern Carnatic music." }, source: { url: "https://en.wikipedia.org/wiki/Purandara_Dasa", accessed: "2026-11-16" } }
+  - id: "kn-kanaka-dasa"
+    name:
+      en: { text: "Kanaka Dasa" }
+    born: { year: 1509, circa: true }
+    died: 1606
+    era: "vijayanagara"
+    bio:
+      en: "Kanaka Dasa was a Haridasa saint, poet and composer from present-day Karnataka. He was a disciple of Vyasatirtha."
+    legacy:
+      text: { en: "He was a poet, a reformer and a composer of Carnatic music." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article calls him a Haridasa saint, poet, reformer and composer of Carnatic music." }, source: { url: "https://en.wikipedia.org/wiki/Kanaka_Dasa", accessed: "2026-11-16" } }
+  - id: "kn-shishunala-sharifa"
+    name:
+      en: { text: "Shishunala Sharifa" }
+    born: 1819
+    died: 1889
+    era: "colonial"
+    bio:
+      en: "Shishunala Sharifa was a saint, social reformer and poet from the Haveri district of Karnataka. His songs are known across Karnataka."
+    legacy:
+      text: { en: "He was a saint, a social reformer and a poet." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article calls him an Indian saint, social reformer, philosopher and poet." }, source: { url: "https://en.wikipedia.org/wiki/Shishunala_Sharif", accessed: "2026-11-16" } }
+  - id: "kn-muddana"
+    name:
+      en: { text: "Muddana" }
+    born: 1870
+    died: 1901
+    era: "colonial"
+    bio:
+      en: "Muddana, full name Nandalike Lakshminaranappa, was a Kannada writer and Yakshagana poet. He died at the age of 31."
+    legacy:
+      text: { en: "His works have been used extensively in Kannada school and college books." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article says his literary works have been used extensively in Kannada literary educational books." }, source: { url: "https://en.wikipedia.org/wiki/Muddana", accessed: "2026-11-16" } }
+  - id: "kn-panje-mangesh-rao"
+    name:
+      en: { text: "Panje Mangesh Rao" }
+    born: 1874
+    died: 1937
+    era: "colonial"
+    bio:
+      en: "Panje Mangesh Rao was a Kannada writer, poet and headmaster. He was born in Bantwal."
+    legacy:
+      text: { en: "He is credited with creating Navodaya literature in Kannada." }
+      items:
+        - { kind: "other", text: { en: "The English Wikipedia article says he is credited with the creation of Navodaya literature in Kannada." }, source: { url: "https://en.wikipedia.org/wiki/Panje_Mangesh_Rao", accessed: "2026-11-16" } }
   - id: "kn-kumara-vyasa"
     name:
       en: { text: "Kumara Vyasa" }
