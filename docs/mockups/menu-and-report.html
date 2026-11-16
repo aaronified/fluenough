@@ -228,13 +228,13 @@ function langScreen(open,fact){
   ${fact?`<div class="sub2"><div class="cbr"><span class="bx on">${ic('cbOn')}</span>English</div><div class="cbr"><span class="bx">${ic('cbOff')}</span>Hindustani</div><div class="sm" style="padding:0 0 6px">At least one stays checked</div></div>`:''}
   ${S.lf==='menu'?bt('Learn '+L[S.lang].en+' from',{sub:'English',icon:'ext'}):''}
   ${bt('Sources')}
-  ${bt('Your decks')}
  </div>`;
  return `<div class="ph" ${open?`style="height:${fact?1010:940}px"`:''}><div class="ab"><span class="ib">${ic('back')}</span><h2>Languages</h2><span class="ib">${ic('add')}</span><span class="ib chg upd ${open?'on':''}" aria-label="More options">${ic('more')}</span></div>
  ${open?'<div class="scrim"></div>':''}
  <div class="pills"><span class="pill2">Learning</span><span class="pill2">Know</span><span class="pill2">Speak</span><span class="pill2">Hear</span></div>
  <div class="sech">Learning · 3</div>${rows}
  <div class="sech">Know · 1</div><div class="lrow"><span class="n">English</span><div class="chips"><span class="chip">Speak</span><span class="chip">Hear</span><span class="chip">Read</span><span class="chip">Write</span></div></div>
+ <div class="gl chg" style="margin-top:16px"><div class="row"><span>${ic('list')}</span><div class="tx"><div class="t1">Your decks</div><div class="t2">No decks of your own</div></div><span style="color:var(--onSv)">${ic('ext')}</span></div></div>
  ${open?menu:''}</div>`}
 function fSetMenu(){
  return `<div class="fcol"><div class="fcap">i. Settings three-dot menu: Report a problem (the general report, besides Settings > Support)</div>
