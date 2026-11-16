@@ -98,7 +98,6 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "note" }
-      - { id: "n3", kind: "note" }
     bases:
       - { word: "पूजा", base: "पूजा", reading: "pūjā" }
     examples:
@@ -108,13 +107,13 @@ cards:
         bases:
           - { word: "पूजा", base: "पूजा", reading: "pūjā" }
           - { word: "शुभा", base: "शुभ", reading: "śubha" }
-      - target: "मन्दिरे पूजा अस्ति"
-        reading: "mandire pūjā asti"
-        ipa: "mənd̪ireː puːdʒaː əst̪i"
+      - target: "अस्ति मन्दिरे पूजा"
+        reading: "asti mandire pūjā"
+        ipa: "əst̪i mənd̪ireː puːdʒaː"
         bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
           - { word: "मन्दिरे", base: "मन्दिर", reading: "mandira" }
           - { word: "पूजा", base: "पूजा", reading: "pūjā" }
-          - { word: "अस्ति", base: "अस्", reading: "as" }
   - id: "sa-1819"
     target: "कलशः"
     reading: "kalaśaḥ"
@@ -162,13 +161,13 @@ cards:
         bases:
           - { word: "ऋषिः", base: "ऋषि", reading: "ṛṣi" }
           - { word: "प्राचीनः", base: "प्राचीन", reading: "prācīna" }
-      - target: "वने ऋषिर् अस्ति"
-        reading: "vane ṛṣir asti"
-        ipa: "ʋəneː r̩ʂir əst̪i"
+      - target: "ऋषिर् भवति वने"
+        reading: "ṛṣir bhavati vane"
+        ipa: "r̩ʂir bʱəʋət̪i ʋəneː"
         bases:
-          - { word: "वने", base: "वन", reading: "vana" }
           - { word: "ऋषिर्", base: "ऋषि", reading: "ṛṣi" }
-          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+          - { word: "वने", base: "वन", reading: "vana" }
   - id: "sa-1821"
     target: "स्तोत्रम्"
     reading: "stotram"
@@ -314,7 +313,6 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "note" }
-      - { id: "n3", kind: "note" }
     bases:
       - { word: "प्रार्थना", base: "प्रार्थना", reading: "prārthanā" }
     examples:
@@ -324,13 +322,13 @@ cards:
         bases:
           - { word: "प्रार्थना", base: "प्रार्थना", reading: "prārthanā" }
           - { word: "शुभा", base: "शुभ", reading: "śubha" }
-      - target: "मन्दिरे प्रार्थना अस्ति"
-        reading: "mandire prārthanā asti"
-        ipa: "mənd̪ireː praːrt̪ʰənaː əst̪i"
+      - target: "अस्ति मन्दिरे प्रार्थना"
+        reading: "asti mandire prārthanā"
+        ipa: "əst̪i mənd̪ireː praːrt̪ʰənaː"
         bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
           - { word: "मन्दिरे", base: "मन्दिर", reading: "mandira" }
           - { word: "प्रार्थना", base: "प्रार्थना", reading: "prārthanā" }
-          - { word: "अस्ति", base: "अस्", reading: "as" }
   - id: "sa-1827"
     target: "उपवासः"
     reading: "upavāsaḥ"
@@ -351,13 +349,13 @@ cards:
         bases:
           - { word: "उपवासः", base: "उपवास", reading: "upavāsa" }
           - { word: "कठिनः", base: "कठिन", reading: "kaṭhina" }
-      - target: "आश्रमे उपवासो ऽस्ति"
-        reading: "āśrame upavāso 'sti"
-        ipa: "aːʃrəmeː upəʋaːsoː st̪i"
+      - target: "उपवासो भवति मन्दिरे"
+        reading: "upavāso bhavati mandire"
+        ipa: "upəʋaːsoː bʱəʋət̪i mənd̪ireː"
         bases:
-          - { word: "आश्रमे", base: "आश्रम", reading: "āśrama" }
           - { word: "उपवासो", base: "उपवास", reading: "upavāsa" }
-          - { word: "ऽस्ति", base: "अस्", reading: "as" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+          - { word: "मन्दिरे", base: "मन्दिर", reading: "mandira" }
   - id: "sa-1828"
     target: "व्रतम्"
     reading: "vratam"
@@ -423,6 +421,7 @@ cards:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "note" }
       - { id: "n3", kind: "note" }
+      - { id: "n4", kind: "note" }
     bases:
       - { word: "अभिषेकः", base: "अभिषेक", reading: "abhiṣeka" }
     examples:
@@ -432,13 +431,13 @@ cards:
         bases:
           - { word: "अभिषेक", base: "अभिषेक", reading: "abhiṣeka" }
           - { word: "उत्तमः", base: "उत्तम", reading: "uttama" }
-      - target: "तीर्थे अभिषेको ऽस्ति"
-        reading: "tīrthe abhiṣeko 'sti"
-        ipa: "t̪iːrt̪ʰeː əbʱiʂeːkoː st̪i"
+      - target: "अभिषेको भवति तीर्थे"
+        reading: "abhiṣeko bhavati tīrthe"
+        ipa: "əbʱiʂeːkoː bʱəʋət̪i t̪iːrt̪ʰeː"
         bases:
-          - { word: "तीर्थे", base: "तीर्थ", reading: "tīrtha" }
           - { word: "अभिषेको", base: "अभिषेक", reading: "abhiṣeka" }
-          - { word: "ऽस्ति", base: "अस्", reading: "as" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+          - { word: "तीर्थे", base: "तीर्थ", reading: "tīrtha" }
   - id: "sa-1831"
     target: "दीक्षा"
     reading: "dīkṣā"
@@ -449,7 +448,6 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "note" }
-      - { id: "n3", kind: "note" }
     bases:
       - { word: "दीक्षा", base: "दीक्षा", reading: "dīkṣā" }
     examples:
@@ -459,13 +457,13 @@ cards:
         bases:
           - { word: "दीक्षा", base: "दीक्षा", reading: "dīkṣā" }
           - { word: "शुद्धा", base: "शुद्ध", reading: "śuddha" }
-      - target: "आश्रमे दीक्षा अस्ति"
-        reading: "āśrame dīkṣā asti"
-        ipa: "aːʃrəmeː d̪iːkʂaː əst̪i"
+      - target: "आश्रमे दीक्षा भवति"
+        reading: "āśrame dīkṣā bhavati"
+        ipa: "aːʃrəmeː d̪iːkʂaː bʱəʋət̪i"
         bases:
           - { word: "आश्रमे", base: "आश्रम", reading: "āśrama" }
           - { word: "दीक्षा", base: "दीक्षा", reading: "dīkṣā" }
-          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
   - id: "sa-1832"
     target: "स्नानम्"
     reading: "snānam"
@@ -557,7 +555,6 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "note" }
-      - { id: "n3", kind: "note" }
     bases:
       - { word: "तुलसी", base: "तुलसी", reading: "tulasī" }
     examples:
@@ -567,13 +564,13 @@ cards:
         bases:
           - { word: "तुलसी", base: "तुलसी", reading: "tulasī" }
           - { word: "शुभा", base: "शुभ", reading: "śubha" }
-      - target: "गृहे तुलसी अस्ति"
-        reading: "gṛhe tulasī asti"
-        ipa: "ɡr̩ɦeː t̪uləsiː əst̪i"
+      - target: "अस्ति गृहे तुलसी"
+        reading: "asti gṛhe tulasī"
+        ipa: "əst̪i ɡr̩ɦeː t̪uləsiː"
         bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
           - { word: "गृहे", base: "गृह", reading: "gṛha" }
           - { word: "तुलसी", base: "तुलसी", reading: "tulasī" }
-          - { word: "अस्ति", base: "अस्", reading: "as" }
   - id: "sa-1836"
     target: "देवता"
     reading: "devatā"
@@ -584,23 +581,22 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "note" }
-      - { id: "n3", kind: "note" }
     bases:
       - { word: "देवता", base: "देवता", reading: "devatā" }
     examples:
-      - target: "देवता उत्तमा"
-        reading: "devatā uttamā"
-        ipa: "d̪eːʋət̪aː ut̪t̪əmaː"
+      - target: "उत्तमा देवता"
+        reading: "uttamā devatā"
+        ipa: "ut̪t̪əmaː d̪eːʋət̪aː"
         bases:
-          - { word: "देवता", base: "देवता", reading: "devatā" }
           - { word: "उत्तमा", base: "उत्तम", reading: "uttama" }
-      - target: "मन्दिरे देवता अस्ति"
-        reading: "mandire devatā asti"
-        ipa: "mənd̪ireː d̪eːʋət̪aː əst̪i"
+          - { word: "देवता", base: "देवता", reading: "devatā" }
+      - target: "अस्ति मन्दिरे देवता"
+        reading: "asti mandire devatā"
+        ipa: "əst̪i mənd̪ireː d̪eːʋət̪aː"
         bases:
+          - { word: "अस्ति", base: "अस्", reading: "as" }
           - { word: "मन्दिरे", base: "मन्दिर", reading: "mandira" }
           - { word: "देवता", base: "देवता", reading: "devatā" }
-          - { word: "अस्ति", base: "अस्", reading: "as" }
   - id: "sa-1837"
     target: "उत्सवः"
     reading: "utsavaḥ"
@@ -621,13 +617,13 @@ cards:
         bases:
           - { word: "उत्सवः", base: "उत्सव", reading: "utsava" }
           - { word: "सुन्दरः", base: "सुन्दर", reading: "sundara" }
-      - target: "ग्रामे उत्सवो ऽस्ति"
-        reading: "grāme utsavo 'sti"
-        ipa: "ɡraːmeː ut̪səʋoː st̪i"
+      - target: "उत्सवो भवति ग्रामे"
+        reading: "utsavo bhavati grāme"
+        ipa: "ut̪səʋoː bʱəʋət̪i ɡraːmeː"
         bases:
-          - { word: "ग्रामे", base: "ग्राम", reading: "grāma" }
           - { word: "उत्सवो", base: "उत्सव", reading: "utsava" }
-          - { word: "ऽस्ति", base: "अस्", reading: "as" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+          - { word: "ग्रामे", base: "ग्राम", reading: "grāma" }
   - id: "sa-1838"
     target: "दक्षिणा"
     reading: "dakṣiṇā"
@@ -638,7 +634,6 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "note" }
-      - { id: "n3", kind: "note" }
     bases:
       - { word: "दक्षिणा", base: "दक्षिणा", reading: "dakṣiṇā" }
     examples:
@@ -648,10 +643,10 @@ cards:
         bases:
           - { word: "दक्षिणा", base: "दक्षिणा", reading: "dakṣiṇā" }
           - { word: "शुभा", base: "शुभ", reading: "śubha" }
-      - target: "आश्रमे दक्षिणा अस्ति"
-        reading: "āśrame dakṣiṇā asti"
-        ipa: "aːʃrəmeː d̪əkʂiɳaː əst̪i"
+      - target: "आश्रमे दक्षिणा भवति"
+        reading: "āśrame dakṣiṇā bhavati"
+        ipa: "aːʃrəmeː d̪əkʂiɳaː bʱəʋət̪i"
         bases:
           - { word: "आश्रमे", base: "आश्रम", reading: "āśrama" }
           - { word: "दक्षिणा", base: "दक्षिणा", reading: "dakṣiṇā" }
-          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "भवति", base: "भू", reading: "bhū" }

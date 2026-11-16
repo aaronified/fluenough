@@ -53,7 +53,6 @@ cards:
     notes:
       "n1": "An i-stem noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table."
       "n2": "The dictionary stem is दधि (dadhi); the card shows the isolated nominative singular दधि (dadhi)."
-      "n3": "Written apart: Before a vowel the words stay apart and the vowels are not joined: sandhi is not applied here; see the lesson sa-grammar-sandhi-vowel (Whitney 133)."
     bases:
       "दधि": "curd"
     examples:
@@ -62,18 +61,17 @@ cards:
         bases:
           "दधि": "curd"
           "मधुरम्": "sweet"
-      "गृहे दधि अस्ति":
+      "अस्ति गृहे दधि":
         native: "There is curd in the house."
         bases:
+          "अस्ति": "is"
           "गृहे": "house (locative)"
           "दधि": "curd"
-          "अस्ति": "is"
   "sa-1703":
     native: "Honey."
     notes:
       "n1": "A u-stem noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table."
       "n2": "The dictionary stem is मधु (madhu); the card shows the isolated nominative singular मधु (madhu)."
-      "n3": "Written apart: Before a vowel the words stay apart and the vowels are not joined: sandhi is not applied here; see the lesson sa-grammar-sandhi-vowel (Whitney 133)."
     bases:
       "मधु": "honey"
     examples:
@@ -82,12 +80,12 @@ cards:
         bases:
           "मधु": "honey"
           "मधुरम्": "sweet"
-      "वने मधु अस्ति":
+      "अस्ति वने मधु":
         native: "There is honey in the forest."
         bases:
+          "अस्ति": "is"
           "वने": "forest (locative)"
           "मधु": "honey"
-          "अस्ति": "is"
   "sa-1704":
     native: "Milk rice."
     notes:
@@ -113,7 +111,7 @@ cards:
     notes:
       "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
       "n2": "The dictionary stem is आम्र (āmra); the card shows the isolated nominative singular आम्रः (āmraḥ)."
-      "n3": "A final अः (aḥ) before a voiced consonant becomes ओ (o) (Whitney 175 a; Aṣṭādhyāyī 6.1.113 and 6.1.114). A final अः (aḥ) before अ (a) becomes ओ (o) and the अ (a) is shown by the sign ऽ (avagraha) (Whitney 175 a). Before a vowel the words stay apart and the vowels are not joined: sandhi is not applied here; see the lesson sa-grammar-sandhi-vowel (Whitney 133)."
+      "n3": "A final अः (aḥ) before a voiced consonant becomes ओ (o), as in आम्रो (āmro) from आम्रः (āmraḥ) (Whitney 175 a; Aṣṭādhyāyī 6.1.113 and 6.1.114)."
     bases:
       "आम्रः": "mango"
     examples:
@@ -122,18 +120,19 @@ cards:
         bases:
           "आम्रो": "mango"
           "मधुरः": "sweet"
-      "उद्याने आम्रो ऽस्ति":
-        native: "There is a mango in the garden."
+      "आम्रो भवति वने":
+        native: "There is a mango in the forest."
         bases:
-          "उद्याने": "garden (locative)"
           "आम्रो": "mango"
-          "ऽस्ति": "is"
+          "भवति": "is"
+          "वने": "forest (locative)"
   "sa-1706":
     native: "Cooked rice."
     notes:
       "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
       "n2": "The dictionary stem is ओदन (odana); the card shows the isolated nominative singular ओदनः (odanaḥ)."
-      "n3": "A final अः (aḥ) before अ (a) becomes ओ (o) and the अ (a) is shown by the sign ऽ (avagraha) (Whitney 175 a). A final अः (aḥ) before a vowel other than अ (a) loses its visarga and the vowels stay apart (Whitney 175 c). Before a vowel the words stay apart and the vowels are not joined: sandhi is not applied here; see the lesson sa-grammar-sandhi-vowel (Whitney 133)."
+      "n3": "A final अः (aḥ) before a voiced consonant becomes ओ (o), as in ओदनो (odano) from ओदनः (odanaḥ) (Whitney 175 a; Aṣṭādhyāyī 6.1.113 and 6.1.114)."
+      "n4": "After अ (a) the final ः (ḥ) before a vowel other than अ (a) is dropped and the vowels stay apart, as in ओदन (odana) from ओदनः (odanaḥ) (Whitney 175 c; Aṣṭādhyāyī 8.3.17 and 8.3.19)."
     bases:
       "ओदनः": "cooked rice"
     examples:
@@ -142,12 +141,12 @@ cards:
         bases:
           "ओदन": "cooked rice"
           "उष्णः": "hot"
-      "पात्रे ओदनो ऽस्ति":
+      "ओदनो भवति पात्रे":
         native: "There is cooked rice in the vessel."
         bases:
-          "पात्रे": "vessel (locative)"
           "ओदनो": "cooked rice"
-          "ऽस्ति": "is"
+          "भवति": "is"
+          "पात्रे": "vessel (locative)"
   "sa-1707":
     native: "Barley."
     notes:
@@ -233,7 +232,6 @@ cards:
     notes:
       "n1": "A feminine ā-stem noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table."
       "n2": "The dictionary stem is शर्करा (śarkarā); the card shows the isolated nominative singular शर्करा (śarkarā)."
-      "n3": "Written apart: Before a vowel the words stay apart and the vowels are not joined: sandhi is not applied here; see the lesson sa-grammar-sandhi-vowel (Whitney 133)."
     bases:
       "शर्करा": "sugar"
     examples:
@@ -242,12 +240,12 @@ cards:
         bases:
           "शर्करा": "sugar"
           "मधुरा": "sweet"
-      "गृहे शर्करा अस्ति":
+      "अस्ति गृहे शर्करा":
         native: "There is sugar in the house."
         bases:
+          "अस्ति": "is"
           "गृहे": "house (locative)"
           "शर्करा": "sugar"
-          "अस्ति": "is"
   "sa-1712":
     native: "Soup."
     notes:
@@ -313,7 +311,7 @@ cards:
     notes:
       "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
       "n2": "The dictionary stem is अपूप (apūpa); the card shows the isolated nominative singular अपूपः (apūpaḥ)."
-      "n3": "A final अः (aḥ) before a voiced consonant becomes ओ (o) (Whitney 175 a; Aṣṭādhyāyī 6.1.113 and 6.1.114). A final अः (aḥ) before अ (a) becomes ओ (o) and the अ (a) is shown by the sign ऽ (avagraha) (Whitney 175 a). Before a vowel the words stay apart and the vowels are not joined: sandhi is not applied here; see the lesson sa-grammar-sandhi-vowel (Whitney 133)."
+      "n3": "A final अः (aḥ) before a voiced consonant becomes ओ (o), as in अपूपो (apūpo) from अपूपः (apūpaḥ) (Whitney 175 a; Aṣṭādhyāyī 6.1.113 and 6.1.114)."
     bases:
       "अपूपः": "cake"
     examples:
@@ -322,12 +320,12 @@ cards:
         bases:
           "अपूपो": "cake"
           "मधुरः": "sweet"
-      "गृहे अपूपो ऽस्ति":
+      "अपूपो भवति गृहे":
         native: "There is a cake in the house."
         bases:
-          "गृहे": "house (locative)"
           "अपूपो": "cake"
-          "ऽस्ति": "is"
+          "भवति": "is"
+          "गृहे": "house (locative)"
   "sa-1716":
     native: "Sesame."
     notes:
@@ -353,7 +351,7 @@ cards:
     notes:
       "n1": "A u-stem noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table."
       "n2": "The dictionary stem is इक्षु (ikṣu); the card shows the isolated nominative singular इक्षुः (ikṣuḥ)."
-      "n3": "A final visarga after a vowel other than अ (a) or आ (ā) becomes र् (r) before a voiced consonant or a vowel (Whitney 174). Before a vowel the words stay apart and the vowels are not joined: sandhi is not applied here; see the lesson sa-grammar-sandhi-vowel (Whitney 133)."
+      "n3": "After इ (i), ई (ī), उ (u) or ऊ (ū) the final ः (ḥ) before a voiced sound becomes र् (r), as in इक्षुर् (ikṣur) from इक्षुः (ikṣuḥ) (Whitney 174; Aṣṭādhyāyī 8.2.66)."
     bases:
       "इक्षुः": "sugarcane"
     examples:
@@ -362,12 +360,12 @@ cards:
         bases:
           "इक्षुर्": "sugarcane"
           "मधुरः": "sweet"
-      "क्षेत्रे इक्षुर् अस्ति":
+      "इक्षुर् भवति क्षेत्रे":
         native: "There is sugarcane in the field."
         bases:
-          "क्षेत्रे": "field (locative)"
           "इक्षुर्": "sugarcane"
-          "अस्ति": "is"
+          "भवति": "is"
+          "क्षेत्रे": "field (locative)"
   "sa-1718":
     native: "Buttermilk."
     notes:
@@ -393,7 +391,7 @@ cards:
     notes:
       "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
       "n2": "The dictionary stem is उदक (udaka); the card shows the isolated nominative singular उदकम् (udakam)."
-      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i), also before a labial such as प (pa) or म (ma), where Whitney 213 a would keep म् (m) but texts write the anusvāra sign. Before a vowel the final म् (m) stays and is not joined to the next word: written apart, sandhi not applied (Whitney 213 a). Before a vowel the words stay apart and the vowels are not joined: sandhi is not applied here; see the lesson sa-grammar-sandhi-vowel (Whitney 133)."
+      "n3": "Before a consonant the final म् (m) is written ं (ṃ), as in उदकं (udakaṃ) from उदकम् (udakam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
     bases:
       "उदकम्": "water"
     examples:
@@ -402,12 +400,12 @@ cards:
         bases:
           "उदकं": "water"
           "शीतलम्": "cold"
-      "कूपे उदकम् अस्ति":
+      "उदकं भवति कूपे":
         native: "There is water in the well."
         bases:
+          "उदकं": "water"
+          "भवति": "is"
           "कूपे": "well (locative)"
-          "उदकम्": "water"
-          "अस्ति": "is"
   "sa-1720":
     native: "Molasses."
     notes:

@@ -71,23 +71,22 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "note" }
-      - { id: "n3", kind: "note" }
     bases:
       - { word: "सेवा", base: "सेवा", reading: "sevā" }
     examples:
-      - target: "सेवा उत्तमा"
-        reading: "sevā uttamā"
-        ipa: "seːʋaː ut̪t̪əmaː"
+      - target: "उत्तमा सेवा"
+        reading: "uttamā sevā"
+        ipa: "ut̪t̪əmaː seːʋaː"
         bases:
-          - { word: "सेवा", base: "सेवा", reading: "sevā" }
           - { word: "उत्तमा", base: "उत्तम", reading: "uttama" }
-      - target: "आश्रमे सेवा अस्ति"
-        reading: "āśrame sevā asti"
-        ipa: "aːʃrəmeː seːʋaː əst̪i"
+          - { word: "सेवा", base: "सेवा", reading: "sevā" }
+      - target: "आश्रमे सेवा भवति"
+        reading: "āśrame sevā bhavati"
+        ipa: "aːʃrəmeː seːʋaː bʱəʋət̪i"
         bases:
           - { word: "आश्रमे", base: "आश्रम", reading: "āśrama" }
           - { word: "सेवा", base: "सेवा", reading: "sevā" }
-          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
   - id: "sa-1860"
     target: "शिल्पम्"
     reading: "śilpam"
@@ -297,13 +296,13 @@ cards:
         bases:
           - { word: "उद्योगः", base: "उद्योग", reading: "udyoga" }
           - { word: "कठिनः", base: "कठिन", reading: "kaṭhina" }
-      - target: "ग्रामे उद्योगो ऽस्ति"
-        reading: "grāme udyogo 'sti"
-        ipa: "ɡraːmeː ud̪joːɡoː st̪i"
+      - target: "उद्योगो भवति ग्रामे"
+        reading: "udyogo bhavati grāme"
+        ipa: "ud̪joːɡoː bʱəʋət̪i ɡraːmeː"
         bases:
-          - { word: "ग्रामे", base: "ग्राम", reading: "grāma" }
           - { word: "उद्योगो", base: "उद्योग", reading: "udyoga" }
-          - { word: "ऽस्ति", base: "अस्", reading: "as" }
+          - { word: "भवति", base: "भू", reading: "bhū" }
+          - { word: "ग्रामे", base: "ग्राम", reading: "grāma" }
   - id: "sa-1868"
     target: "वस्तु"
     reading: "vastu"
@@ -314,7 +313,6 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour" }
       - { id: "n2", kind: "note" }
-      - { id: "n3", kind: "note" }
     bases:
       - { word: "वस्तु", base: "वस्तु", reading: "vastu" }
     examples:
@@ -324,10 +322,10 @@ cards:
         bases:
           - { word: "वस्तु", base: "वस्तु", reading: "vastu" }
           - { word: "नवम्", base: "नव", reading: "nava" }
-      - target: "आपणे वस्तु अस्ति"
-        reading: "āpaṇe vastu asti"
-        ipa: "aːpəɳeː ʋəst̪u əst̪i"
+      - target: "आपणे वस्तु भवति"
+        reading: "āpaṇe vastu bhavati"
+        ipa: "aːpəɳeː ʋəst̪u bʱəʋət̪i"
         bases:
           - { word: "आपणे", base: "आपण", reading: "āpaṇa" }
           - { word: "वस्तु", base: "वस्तु", reading: "vastu" }
-          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "भवति", base: "भू", reading: "bhū" }

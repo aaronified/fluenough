@@ -13,27 +13,27 @@ cards:
     notes:
       "n1": "A feminine ā-stem noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table."
       "n2": "The dictionary stem is शिक्षा (śikṣā); the card shows the isolated nominative singular शिक्षा (śikṣā)."
-      "n3": "Written apart: Before a vowel the words stay apart and the vowels are not joined: sandhi is not applied here; see the lesson sa-grammar-sandhi-vowel (Whitney 133)."
     bases:
       "शिक्षा": "learning"
     examples:
-      "शिक्षा उत्तमा":
+      "उत्तमा शिक्षा":
         native: "Learning is excellent."
         bases:
-          "शिक्षा": "learning"
           "उत्तमा": "excellent"
-      "विद्यालये शिक्षा अस्ति":
+          "शिक्षा": "learning"
+      "अस्ति विद्यालये शिक्षा":
         native: "There is learning in the school."
         bases:
+          "अस्ति": "is"
           "विद्यालये": "school (locative)"
           "शिक्षा": "learning"
-          "अस्ति": "is"
   "sa-1840":
     native: "Teacher."
     notes:
       "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
       "n2": "The dictionary stem is अध्यापक (adhyāpaka); the card shows the isolated nominative singular अध्यापकः (adhyāpakaḥ)."
-      "n3": "A final अः (aḥ) before अ (a) becomes ओ (o) and the अ (a) is shown by the sign ऽ (avagraha) (Whitney 175 a). A final अः (aḥ) before a vowel other than अ (a) loses its visarga and the vowels stay apart (Whitney 175 c). Before a vowel the words stay apart and the vowels are not joined: sandhi is not applied here; see the lesson sa-grammar-sandhi-vowel (Whitney 133)."
+      "n3": "A final अः (aḥ) before a voiced consonant becomes ओ (o), as in अध्यापको (adhyāpako) from अध्यापकः (adhyāpakaḥ) (Whitney 175 a; Aṣṭādhyāyī 6.1.113 and 6.1.114)."
+      "n4": "After अ (a) the final ः (ḥ) before a vowel other than अ (a) is dropped and the vowels stay apart, as in अध्यापक (adhyāpaka) from अध्यापकः (adhyāpakaḥ) (Whitney 175 c; Aṣṭādhyāyī 8.3.17 and 8.3.19)."
     bases:
       "अध्यापकः": "teacher"
     examples:
@@ -42,12 +42,12 @@ cards:
         bases:
           "अध्यापक": "teacher"
           "उत्तमः": "excellent"
-      "नगरे अध्यापको ऽस्ति":
+      "अध्यापको भवति नगरे":
         native: "There is a teacher in the city."
         bases:
-          "नगरे": "city (locative)"
           "अध्यापको": "teacher"
-          "ऽस्ति": "is"
+          "भवति": "is"
+          "नगरे": "city (locative)"
   "sa-1841":
     native: "Script."
     notes:
@@ -153,7 +153,7 @@ cards:
     notes:
       "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
       "n2": "The dictionary stem is अर्थ (artha); the card shows the isolated nominative singular अर्थः (arthaḥ)."
-      "n3": "A final अः (aḥ) before a voiced consonant becomes ओ (o) (Whitney 175 a; Aṣṭādhyāyī 6.1.113 and 6.1.114). A final अः (aḥ) before अ (a) becomes ओ (o) and the अ (a) is shown by the sign ऽ (avagraha) (Whitney 175 a). Before a vowel the words stay apart and the vowels are not joined: sandhi is not applied here; see the lesson sa-grammar-sandhi-vowel (Whitney 133)."
+      "n3": "A final अः (aḥ) before a voiced consonant becomes ओ (o), as in अर्थो (artho) from अर्थः (arthaḥ) (Whitney 175 a; Aṣṭādhyāyī 6.1.113 and 6.1.114)."
     bases:
       "अर्थः": "meaning"
     examples:
@@ -162,12 +162,12 @@ cards:
         bases:
           "अर्थो": "meaning"
           "गभीरः": "deep"
-      "वाक्ये अर्थो ऽस्ति":
+      "अर्थो भवति वाक्ये":
         native: "There is a meaning in the sentence."
         bases:
-          "वाक्ये": "sentence (locative)"
           "अर्थो": "meaning"
-          "ऽस्ति": "is"
+          "भवति": "is"
+          "वाक्ये": "sentence (locative)"
   "sa-1847":
     native: "Word, sound."
     notes:
@@ -253,7 +253,7 @@ cards:
     notes:
       "n1": "An a-stem noun: its full set of case forms is in the a-stems table of the grammar rules."
       "n2": "The dictionary stem is उदाहरण (udāharaṇa); the card shows the isolated nominative singular उदाहरणम् (udāharaṇam)."
-      "n3": "A final म् (m) before a consonant is written ं (ṃ) (Aṣṭādhyāyī 8.3.23, मोऽनुस्वारः (mo 'nusvāraḥ); Whitney 213 i), also before a labial such as प (pa) or म (ma), where Whitney 213 a would keep म् (m) but texts write the anusvāra sign. Before a vowel the final म् (m) stays and is not joined to the next word: written apart, sandhi not applied (Whitney 213 a). Before a vowel the words stay apart and the vowels are not joined: sandhi is not applied here; see the lesson sa-grammar-sandhi-vowel (Whitney 133)."
+      "n3": "Before a consonant the final म् (m) is written ं (ṃ), as in उदाहरणं (udāharaṇaṃ) from उदाहरणम् (udāharaṇam) (Aṣṭādhyāyī 8.3.23; Whitney 213)."
     bases:
       "उदाहरणम्": "example"
     examples:
@@ -262,18 +262,17 @@ cards:
         bases:
           "उदाहरणं": "example"
           "सरलम्": "simple"
-      "वाक्ये उदाहरणम् अस्ति":
+      "उदाहरणं भवति वाक्ये":
         native: "There is an example in the sentence."
         bases:
+          "उदाहरणं": "example"
+          "भवति": "is"
           "वाक्ये": "sentence (locative)"
-          "उदाहरणम्": "example"
-          "अस्ति": "is"
   "sa-1852":
     native: "Examination."
     notes:
       "n1": "A feminine ā-stem noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table."
       "n2": "The dictionary stem is परीक्षा (parīkṣā); the card shows the isolated nominative singular परीक्षा (parīkṣā)."
-      "n3": "Written apart: Before a vowel the words stay apart and the vowels are not joined: sandhi is not applied here; see the lesson sa-grammar-sandhi-vowel (Whitney 133)."
     bases:
       "परीक्षा": "examination"
     examples:
@@ -282,18 +281,17 @@ cards:
         bases:
           "परीक्षा": "examination"
           "कठिना": "hard"
-      "विद्यालये परीक्षा अस्ति":
+      "अस्ति विद्यालये परीक्षा":
         native: "There is an examination in the school."
         bases:
+          "अस्ति": "is"
           "विद्यालये": "school (locative)"
           "परीक्षा": "examination"
-          "अस्ति": "is"
   "sa-1853":
     native: "Story."
     notes:
       "n1": "A feminine ā-stem noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table."
       "n2": "The dictionary stem is कथा (kathā); the card shows the isolated nominative singular कथा (kathā)."
-      "n3": "Written apart: Before a vowel the words stay apart and the vowels are not joined: sandhi is not applied here; see the lesson sa-grammar-sandhi-vowel (Whitney 133)."
     bases:
       "कथा": "story"
     examples:
@@ -302,12 +300,12 @@ cards:
         bases:
           "कथा": "story"
           "सुन्दरा": "beautiful"
-      "ग्रामे कथा अस्ति":
+      "अस्ति ग्रामे कथा":
         native: "There is a story in the village."
         bases:
+          "अस्ति": "is"
           "ग्रामे": "village (locative)"
           "कथा": "story"
-          "अस्ति": "is"
   "sa-1854":
     native: "Subject, topic."
     notes:
@@ -333,7 +331,6 @@ cards:
     notes:
       "n1": "A feminine ā-stem noun: its case endings differ from the a-stem pattern, so it is not in the a-stems table."
       "n2": "The dictionary stem is मात्रा (mātrā); the card shows the isolated nominative singular मात्रा (mātrā)."
-      "n3": "Written apart: Before a vowel the words stay apart and the vowels are not joined: sandhi is not applied here; see the lesson sa-grammar-sandhi-vowel (Whitney 133)."
     bases:
       "मात्रा": "measure, mora"
     examples:
@@ -342,12 +339,12 @@ cards:
         bases:
           "मात्रा": "measure, mora"
           "दीर्घा": "long"
-      "वाक्ये मात्रा अस्ति":
+      "अस्ति वाक्ये मात्रा":
         native: "There is a mora in the sentence."
         bases:
+          "अस्ति": "is"
           "वाक्ये": "sentence (locative)"
           "मात्रा": "measure, mora"
-          "अस्ति": "is"
   "sa-1856":
     native: "Reading."
     notes:
