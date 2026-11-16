@@ -1,0 +1,58 @@
+schema: 1
+id: "sa-family-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3030"
+    target: "माता कुत्र?"
+    reading: "mātā kutra?"
+    ipa: "maːt̪aː kut̪rə"
+    pos: "phrase"
+    bases: [{ word: "माता", ref: "sa-1030" }, { word: "कुत्र", ref: "sa-1002" }]
+    confusables: [{ id: "w1", ref: "sa-1031", kind: "word" }, { id: "w2", ref: "sa-1003", kind: "word" }]
+  - id: "sa-3031"
+    target: "इयं माता."
+    reading: "iyaṃ mātā."
+    ipa: "ijəm maːt̪aː"
+    pos: "phrase"
+    bases: [{ word: "इयं", base: "इयम्", reading: "iyam" }, { word: "माता", ref: "sa-1030" }]
+    confusables: [{ id: "w1", ref: "sa-1031", kind: "word" }, { id: "w2", ref: "sa-1042", kind: "word" }]
+  - id: "sa-3032"
+    target: "अयं पिता."
+    reading: "ayaṃ pitā."
+    ipa: "əjəm pit̪aː"
+    pos: "phrase"
+    bases: [{ word: "अयं", base: "अयम्", reading: "ayam" }, { word: "पिता", ref: "sa-1031" }]
+    confusables: [{ id: "w1", ref: "sa-1030", kind: "word" }, { id: "w2", ref: "sa-1032", kind: "word" }]
+  - id: "sa-3033"
+    target: "सा सुता."
+    reading: "sā sutā."
+    ipa: "saː sut̪aː"
+    pos: "phrase"
+    bases: [{ word: "सा", ref: "sa-1011" }, { word: "सुता", ref: "sa-1044" }]
+    confusables: [{ id: "w1", ref: "sa-1037", kind: "word" }, { id: "w2", ref: "sa-1041", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "sa-3034"
+    target: "अहं सखा."
+    reading: "ahaṃ sakhā."
+    ipa: "əɦəm səkʰaː"
+    pos: "phrase"
+    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "सखा", ref: "sa-1038" }]
+    confusables: [{ id: "w1", ref: "sa-1036", kind: "word" }, { id: "w2", ref: "sa-1039", kind: "word" }]
+  - id: "sa-3035"
+    target: "सखा कः?"
+    reading: "sakhā kaḥ?"
+    ipa: "səkʰaː kəh"
+    pos: "phrase"
+    bases: [{ word: "सखा", ref: "sa-1038" }, { word: "कः", ref: "sa-1001" }]
+    confusables: [{ id: "w1", ref: "sa-1000", kind: "word" }, { id: "w2", ref: "sa-1003", kind: "word" }]
+  - id: "sa-3036"
+    target: "सूनुः कदा?"
+    reading: "sūnuḥ kadā?"
+    ipa: "suːnuh kəd̪aː"
+    pos: "phrase"
+    bases: [{ word: "सूनुः", ref: "sa-1041" }, { word: "कदा", ref: "sa-1003" }]
+    confusables: [{ id: "w1", ref: "sa-1034", kind: "word" }, { id: "w2", ref: "sa-1032", kind: "word" }]

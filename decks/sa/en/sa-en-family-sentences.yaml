@@ -1,0 +1,35 @@
+schema: 1
+id: "sa-en-family-sentences"
+kind: "layer"
+core: "sa-family-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about family"
+description: "Short sentences about family, built only from words already taught. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-3030":
+    native: "Where is mother?"
+    confusables: { "w1": { why: "Father, not mother: पिता (pitā) means father." }, "w2": { why: "When, not where: कदा (kadā) asks when." } }
+  "sa-3031":
+    native: "This is mother."
+    bases: { "इयं": "this (feminine)" }
+    confusables: { "w1": { why: "Father, not mother: पिता (pitā) means father." }, "w2": { why: "Woman, not mother: नारी (nārī) means woman." } }
+  "sa-3032":
+    native: "This is father."
+    bases: { "अयं": "this (masculine)" }
+    confusables: { "w1": { why: "Mother, not father: माता (mātā) means mother." }, "w2": { why: "Brother, not father: भ्राता (bhrātā) means brother." } }
+  "sa-3033":
+    native: "She is a daughter."
+    confusables: { "w1": { why: "Wife, not daughter: पत्नी (patnī) means wife." }, "w2": { why: "Son, not daughter: सूनुः (sūnuḥ) means son." } }
+    notes: { "n1": "सा (sā), she, is feminine, as सुता (sutā), daughter, is." }
+  "sa-3034":
+    native: "I am a friend."
+    bases: { "अहं": "I" }
+    confusables: { "w1": { why: "Husband, not friend: पतिः (patiḥ) means husband." }, "w2": { why: "Relative, not friend: बन्धुः (bandhuḥ) means relative or kinsman." } }
+  "sa-3035":
+    native: "Who is the friend?"
+    confusables: { "w1": { why: "What, not who: किम् (kim) asks what." }, "w2": { why: "When, not who: कदा (kadā) asks when." } }
+  "sa-3036":
+    native: "When is the son?"
+    confusables: { "w1": { why: "Daughter, not son: पुत्री (putrī) means daughter." }, "w2": { why: "Brother, not son: भ्राता (bhrātā) means brother." } }
