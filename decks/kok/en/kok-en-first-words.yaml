@@ -1,0 +1,660 @@
+schema: 1
+id: "kok-en-first-words"
+kind: "layer"
+core: "kok-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "The first words of Konkani: the pronouns, yes and no, the numbers 1 to 10, the family, and the everyday words for food, house, name and time. Not yet checked by a Konkani speaker: please report any mistake."
+cards:
+  "kok-0101":
+    native: "yes"
+    notes:
+      "n1": "The usual 'yes'."
+    examples:
+      "हय, हांव येतां।":
+        native: "Yes, I am coming."
+        bases:
+          "हांव": "I"
+          "येतां": "come"
+  "kok-0102":
+    native: "no; not"
+    notes:
+      "n1": "The negative. Put before a verb to say 'not'."
+    examples:
+      "ना, हांव येना।":
+        native: "No, I am not coming."
+        bases:
+          "हांव": "I"
+          "येना": "come"
+  "kok-0103":
+    native: "I"
+    notes:
+      "n1": "The first person."
+    examples:
+      "हांव शिक्षक आसा।":
+        native: "I am a teacher."
+        bases:
+          "हांव": "I"
+          "शिक्षक": "teacher"
+          "आसा": "am"
+      "हांव बरो आसा।":
+        native: "I am well."
+        bases:
+          "हांव": "I"
+          "बरो": "well"
+          "आसा": "am"
+  "kok-0104":
+    native: "you (to a friend or child)"
+    notes:
+      "n1": "The familiar 'you'. तुमी (tumī) is the respectful 'you'."
+    examples:
+      "तू कुठें आसा?":
+        native: "Where are you?"
+        bases:
+          "तू": "you"
+          "कुठें": "where"
+          "आसा": "are"
+      "तू बरो आसा।":
+        native: "You are well."
+        bases:
+          "तू": "you"
+          "बरो": "well"
+          "आसा": "are"
+  "kok-0105":
+    native: "he"
+    notes:
+      "n1": "The masculine 'he' or 'that man'."
+    examples:
+      "तो घरांत आसा।":
+        native: "He is at home."
+        bases:
+          "तो": "he"
+          "घरांत": "at home"
+          "आसा": "is"
+      "तो मनीस आसा।":
+        native: "He is a man."
+        bases:
+          "तो": "he"
+          "मनीस": "man"
+          "आसा": "is"
+  "kok-0106":
+    native: "she"
+    notes:
+      "n1": "The feminine 'she'."
+    examples:
+      "ती घरांत आसा।":
+        native: "She is at home."
+        bases:
+          "ती": "she"
+          "घरांत": "at home"
+          "आसा": "is"
+      "ती बायल आसा।":
+        native: "She is a woman."
+        bases:
+          "ती": "she"
+          "बाइल": "woman"
+          "आसा": "is"
+  "kok-0107":
+    native: "we"
+    notes:
+      "n1": "Means 'we', including the listener."
+    examples:
+      "आमी कोंकणी आमी।":
+        native: "We are Konkani."
+        bases:
+          "आमी": "we"
+          "कोंकणी": "Konkani"
+      "आमी घरा वतां।":
+        native: "We are going home."
+        bases:
+          "आमी": "we"
+          "घर": "home"
+          "वतां": "go"
+  "kok-0108":
+    native: "they"
+    notes:
+      "n1": "The plural of त्यो (tyo), that. For a group of people."
+    examples:
+      "ते येतात।":
+        native: "They come."
+        bases:
+          "ते": "they"
+          "येतात": "come"
+      "ते बरे आसात।":
+        native: "They are well."
+        bases:
+          "ते": "they"
+          "बरे": "well"
+          "आसात": "are"
+  "kok-0109":
+    native: "one"
+    notes:
+      "n1": "The number 1."
+    examples:
+      "एक गिलास पाणी।":
+        native: "One glass of water."
+        bases:
+          "एक": "one"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "एक कप चाह।":
+        native: "One cup of tea."
+        bases:
+          "एक": "one"
+          "कप": "cup"
+          "चाह": "tea"
+  "kok-0110":
+    native: "two"
+    notes:
+      "n1": "The number 2."
+    examples:
+      "दोन गिलास पाणी।":
+        native: "Two glasses of water."
+        bases:
+          "दोन": "two"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "दोन कप चाह।":
+        native: "Two cups of tea."
+        bases:
+          "दोन": "two"
+          "कप": "cup"
+          "चाह": "tea"
+  "kok-0111":
+    native: "three"
+    notes:
+      "n1": "The number 3."
+    examples:
+      "तीन गिलास पाणी।":
+        native: "Three glasses of water."
+        bases:
+          "तीन": "three"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "तीन कप चाह।":
+        native: "Three cups of tea."
+        bases:
+          "तीन": "three"
+          "कप": "cup"
+          "चाह": "tea"
+  "kok-0112":
+    native: "four"
+    notes:
+      "n1": "The number 4."
+    examples:
+      "चार गिलास पाणी।":
+        native: "Four glasses of water."
+        bases:
+          "चार": "four"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "चार कप चाह।":
+        native: "Four cups of tea."
+        bases:
+          "चार": "four"
+          "कप": "cup"
+          "चाह": "tea"
+  "kok-0113":
+    native: "five"
+    notes:
+      "n1": "The number 5."
+    examples:
+      "पाच गिलास पाणी।":
+        native: "Five glasses of water."
+        bases:
+          "पाच": "five"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "पाच कप चाह।":
+        native: "Five cups of tea."
+        bases:
+          "पाच": "five"
+          "कप": "cup"
+          "चाह": "tea"
+  "kok-0114":
+    native: "six"
+    notes:
+      "n1": "The number 6."
+    examples:
+      "सहा गिलास पाणी।":
+        native: "Six glasses of water."
+        bases:
+          "सहा": "six"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "सहा कप चाह।":
+        native: "Six cups of tea."
+        bases:
+          "सहा": "six"
+          "कप": "cup"
+          "चाह": "tea"
+  "kok-0115":
+    native: "seven"
+    notes:
+      "n1": "The number 7."
+    examples:
+      "सात गिलास पाणी।":
+        native: "Seven glasses of water."
+        bases:
+          "सात": "seven"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "सात कप चाह।":
+        native: "Seven cups of tea."
+        bases:
+          "सात": "seven"
+          "कप": "cup"
+          "चाह": "tea"
+  "kok-0116":
+    native: "eight"
+    notes:
+      "n1": "The number 8."
+    examples:
+      "आठ गिलास पाणी।":
+        native: "Eight glasses of water."
+        bases:
+          "आठ": "eight"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "आठ कप चाह।":
+        native: "Eight cups of tea."
+        bases:
+          "आठ": "eight"
+          "कप": "cup"
+          "चाह": "tea"
+  "kok-0117":
+    native: "nine"
+    notes:
+      "n1": "The number 9."
+    examples:
+      "नव गिलास पाणी।":
+        native: "Nine glasses of water."
+        bases:
+          "नव": "nine"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "नव कप चाह।":
+        native: "Nine cups of tea."
+        bases:
+          "नव": "nine"
+          "कप": "cup"
+          "चाह": "tea"
+  "kok-0118":
+    native: "ten"
+    notes:
+      "n1": "The number 10."
+    examples:
+      "दहा गिलास पाणी।":
+        native: "Ten glasses of water."
+        bases:
+          "दहा": "ten"
+          "गिलास": "glass"
+          "पाणी": "water"
+      "दहा कप चाह।":
+        native: "Ten cups of tea."
+        bases:
+          "दहा": "ten"
+          "कप": "cup"
+          "चाह": "tea"
+  "kok-0119":
+    native: "mother"
+    notes:
+      "n1": "The everyday word for 'mother'."
+    examples:
+      "म्हजी आई घरांत आसा।":
+        native: "My mother is at home."
+        bases:
+          "म्हजी": "my"
+          "आई": "mother"
+          "घरांत": "at home"
+      "आई, पाणी दी।":
+        native: "Mum, give water."
+        bases:
+          "आई": "mother"
+          "पाणी": "water"
+          "दी": "give"
+  "kok-0120":
+    native: "father"
+    notes:
+      "n1": "The everyday word for 'father'."
+    examples:
+      "म्हजो बापुइ शिक्षक आसा।":
+        native: "My father is a teacher."
+        bases:
+          "म्हजो": "my"
+          "बापुइ": "father"
+          "शिक्षक": "teacher"
+      "बापुइ, पाणी?":
+        native: "Dad, water?"
+        bases:
+          "बापुइ": "father"
+          "पाणी": "water"
+  "kok-0121":
+    native: "brother"
+    notes:
+      "n1": "An older or a younger brother."
+    examples:
+      "म्हजो भाव विद्यार्थी आसा।":
+        native: "My brother is a student."
+        bases:
+          "म्हजो": "my"
+          "भाव": "brother"
+          "विद्यार्थी": "student"
+      "भाव, येयात!":
+        native: "Brother, come!"
+        bases:
+          "भाव": "brother"
+          "येयात": "come"
+  "kok-0122":
+    native: "sister"
+    notes:
+      "n1": "An older or a younger sister."
+    examples:
+      "म्हजी बयणी घरांत आसा।":
+        native: "My sister is at home."
+        bases:
+          "म्हजी": "my"
+          "बयणी": "sister"
+          "घरांत": "at home"
+      "बयणी, जेवण तयार आसा।":
+        native: "Sister, the food is ready."
+        bases:
+          "बयणी": "sister"
+          "जेवण": "food"
+          "तयार": "ready"
+  "kok-0123":
+    native: "child"
+    notes:
+      "n1": "A child, a boy in particular; भुरगी (bhurgī) is a girl."
+    examples:
+      "भुर्गो खेळटा।":
+        native: "The child is playing."
+        bases:
+          "भुर्गो": "child"
+          "खेळटा": "play"
+      "भुर्गो सानो आसा।":
+        native: "The child is small."
+        bases:
+          "भुर्गो": "child"
+          "सानो": "small"
+          "आसा": "is"
+  "kok-0124":
+    native: "man; person"
+    notes:
+      "n1": "A human being, of either sex. Adult male is दिद्लो (didlo)."
+    examples:
+      "तो मनीस बरो आसा।":
+        native: "That man is good."
+        bases:
+          "तो": "that"
+          "मनीस": "man"
+          "बरो": "good"
+      "मनीस घरांत आसा।":
+        native: "The people are at home."
+        bases:
+          "मनीस": "people"
+          "घरांत": "at home"
+  "kok-0125":
+    native: "woman; wife"
+    notes:
+      "n1": "A woman. Also a wife."
+    examples:
+      "ती बाइल डाक्टर आसा।":
+        native: "That woman is a doctor."
+        bases:
+          "ती": "that"
+          "बाइल": "woman"
+          "डाक्टर": "doctor"
+      "बाइल, पाणी दी।":
+        native: "Woman, give water."
+        bases:
+          "बाइल": "woman"
+          "पाणी": "water"
+          "दी": "give"
+  "kok-0126":
+    native: "water"
+    notes:
+      "n1": "The everyday word for water."
+    examples:
+      "म्हाका पाणी जाय।":
+        native: "I need water."
+        bases:
+          "म्हाका": "to me"
+          "पाणी": "water"
+          "जाय": "need"
+      "पाणी थंड आसा।":
+        native: "The water is cold."
+        bases:
+          "पाणी": "water"
+          "थंड": "cold"
+          "आसा": "is"
+  "kok-0127":
+    native: "food; meal"
+    notes:
+      "n1": "Food in general, or a meal."
+    examples:
+      "जेवण तयार आसा।":
+        native: "The food is ready."
+        bases:
+          "जेवण": "food"
+          "तयार": "ready"
+      "हांव जेवतां।":
+        native: "I am eating."
+        bases:
+          "हांव": "I"
+          "जेवतां": "eat"
+  "kok-0128":
+    native: "tea"
+    notes:
+      "n1": "Milk tea is the everyday tea."
+    examples:
+      "चाह गरम आसा।":
+        native: "The tea is hot."
+        bases:
+          "चाह": "tea"
+          "गरम": "hot"
+          "आसा": "is"
+      "म्हाका चाह आवडता।":
+        native: "I like tea."
+        bases:
+          "म्हाका": "to me"
+          "चाह": "tea"
+          "आवडता": "like"
+  "kok-0129":
+    native: "house; home"
+    notes:
+      "n1": "A house, or home."
+    examples:
+      "म्हजें घर व्हडलें आसा।":
+        native: "My house is big."
+        bases:
+          "म्हजें": "my"
+          "घर": "house"
+          "व्हडलें": "big"
+      "घर कुटें आसा?":
+        native: "Where is the house?"
+        bases:
+          "घर": "house"
+          "कुटें": "where"
+          "आसा": "is"
+  "kok-0130":
+    native: "name"
+    notes:
+      "n1": "Your name is तुमचें नांव (tumcẽ nāṁv)."
+    examples:
+      "तुमचें नांव कितें?":
+        native: "What is your name?"
+        bases:
+          "तुमचें": "your"
+          "नांव": "name"
+          "कितें": "what"
+      "नांव बरें आसा।":
+        native: "The name is good."
+        bases:
+          "नांव": "name"
+          "बरें": "good"
+          "आसा": "is"
+  "kok-0131":
+    native: "good; nice"
+    notes:
+      "n1": "Good or well."
+    examples:
+      "हें बरें आसा।":
+        native: "This is good."
+        bases:
+          "हें": "this"
+          "बरें": "good"
+          "आसा": "is"
+      "आयज हवामान बरें आसा।":
+        native: "The weather is good today."
+        bases:
+          "आयज": "today"
+          "हवामान": "weather"
+          "बरें": "good"
+  "kok-0132":
+    native: "big; large"
+    notes:
+      "n1": "Of a thing or a person. धाकलो (dhākalo) is 'small'."
+    examples:
+      "हें घर व्हड आसा।":
+        native: "This house is big."
+        bases:
+          "हें": "this"
+          "घर": "house"
+          "व्हड": "big"
+      "व्हडलो कुत्रो।":
+        native: "A big dog."
+        bases:
+          "व्हडलो": "big"
+          "कुत्रो": "dog"
+  "kok-0133":
+    native: "small; little"
+    notes:
+      "n1": "Of a thing or a person."
+    examples:
+      "भुर्गो धाक्ले आसा।":
+        native: "The child is small."
+        bases:
+          "भुर्गो": "child"
+          "धाक्ले": "small"
+          "आसा": "is"
+      "धाक्ले घर।":
+        native: "A small house."
+        bases:
+          "धाक्ले": "small"
+          "घर": "house"
+  "kok-0134":
+    native: "here"
+    notes:
+      "n1": "The place where the speaker is."
+    examples:
+      "हांव हांगा आसा।":
+        native: "I am here."
+        bases:
+          "हांव": "I"
+          "हांगा": "here"
+          "आसा": "am"
+      "हांगा येयात।":
+        native: "Come here."
+        bases:
+          "हांगा": "here"
+          "येयात": "come"
+  "kok-0135":
+    native: "there"
+    notes:
+      "n1": "A place away from the speaker."
+    examples:
+      "थै पाणी आसा।":
+        native: "There is water there."
+        bases:
+          "थै": "there"
+          "पाणी": "water"
+          "आसा": "is"
+      "थै वचात।":
+        native: "Go there."
+        bases:
+          "थै": "there"
+          "वचात": "go"
+  "kok-0136":
+    native: "what"
+    notes:
+      "n1": "Asks 'what?' on its own."
+    examples:
+      "हें किदें आसा?":
+        native: "What is this?"
+        bases:
+          "हें": "this"
+          "किदें": "what"
+          "आसा": "is"
+      "तुमी किदें खाव्चें?":
+        native: "What will you eat?"
+        bases:
+          "तुमी": "you"
+          "किदें": "what"
+          "खाव्चें": "eat"
+  "kok-0137":
+    native: "who"
+    notes:
+      "n1": "Asks 'who?'."
+    examples:
+      "हो कोण आसा?":
+        native: "Who is this?"
+        bases:
+          "हो": "this"
+          "कोण": "who"
+          "आसा": "is"
+      "कोण येतात?":
+        native: "Who is coming?"
+        bases:
+          "कोण": "who"
+          "येतात": "come"
+  "kok-0138":
+    native: "where"
+    notes:
+      "n1": "Asks about a place."
+    examples:
+      "तुमी खैं आसा?":
+        native: "Where are you?"
+        bases:
+          "तुमी": "you"
+          "खैं": "where"
+          "आसा": "are"
+      "घर खैं आसा?":
+        native: "Where is the house?"
+        bases:
+          "घर": "house"
+          "खैं": "where"
+          "आसा": "is"
+  "kok-0139":
+    native: "and"
+    notes:
+      "n1": "Joins two nouns: चाह आनी पाणी (cāh ānī pāṇī), tea and water."
+    examples:
+      "चाह आनी पाणी।":
+        native: "Tea and water."
+        bases:
+          "चाह": "tea"
+          "पाणी": "water"
+      "हांव आनी तू।":
+        native: "You and I."
+        bases:
+          "हांव": "I"
+          "तू": "you"
+  "kok-0140":
+    native: "today"
+    notes:
+      "n1": "The day you are in now."
+    examples:
+      "आयज पावस पडटा।":
+        native: "It will rain today."
+        bases:
+          "आयज": "today"
+          "पावस": "rain"
+          "पडटा": "fall"
+      "आयज घाम आसा।":
+        native: "The sun is out today."
+        bases:
+          "आयज": "today"
+          "घाम": "sun"
+          "आसा": "is"
