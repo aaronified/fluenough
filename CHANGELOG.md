@@ -7,7 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- **Adding a language starts with eight big tiles.** Add a language now asks what you want to learn, shows Spanish, French, Telugu, Hindustani, Bengali, Marathi, Kannada and Japanese with how far each course is written, and keeps the full list one tap away, with languages that have no course yet folded under Coming soon.
+- **Adding a language starts with eight big tiles.** Add a language now asks what you want to learn, shows Spanish, French, Telugu, Hindustani, Bengali, Marathi, Kannada and Japanese with how far each course is written, and keeps the full list one tap away, with languages that have no course yet folded under Coming soon, where they cannot be added until they have a course.
+- **The info button on Today now sits before its sentence.** In the skills card, the small info button is now on the left of "Tap a skill to practise only that" instead of the far right.
 
 ## [0.10.6] - 2026-11-15
 

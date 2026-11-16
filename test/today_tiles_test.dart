@@ -484,12 +484,16 @@ void main() {
         expect(tester.takeException(), isNull, reason: 'fits at 1.4x');
         expect(find.text(l10n.todayDueHint), findsOneWidget);
         expect(find.bySemanticsLabel(l10n.todayDueHintInfo), findsOneWidget);
-        // The older "Adjusted to you" strip is gone from Today.
-        expect(find.text(l10n.adjustedTitle), findsNothing);
+        // The info dot comes before the sentence in reading order.
         final dot = find.descendant(
           of: find.byType(DueCard),
           matching: find.byTooltip(l10n.hintInfo),
         );
+        final dotRect = tester.getRect(dot);
+        final hintRect = tester.getRect(find.text(l10n.todayDueHint));
+        expect(dotRect.right, lessThanOrEqualTo(hintRect.left));
+        // The older "Adjusted to you" strip is gone from Today.
+        expect(find.text(l10n.adjustedTitle), findsNothing);
         expect(dot, findsOneWidget);
         await tester.ensureVisible(dot);
         await tester.pumpAndSettle();

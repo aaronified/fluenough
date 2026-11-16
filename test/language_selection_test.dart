@@ -629,6 +629,42 @@ languages:
         expect(tester.takeException(), isNull);
       });
 
+      testWidgets('the search keeps focus while typing on the first screen', (
+        tester,
+      ) async {
+        await pumpList(tester, mode: mode);
+        await tester.tap(key('languages-add-search'));
+        await tester.pump();
+        await tester.enterText(key('languages-add-search'), 'a');
+        await tester.pump();
+        await tester.enterText(key('languages-add-search'), 'al');
+        await tester.pump();
+        final field = tester.widget<EditableText>(find.byType(EditableText));
+        expect(field.focusNode.hasFocus, isTrue);
+        expect(find.text('al'), findsOneWidget);
+      });
+
+      testWidgets('a popular language with no course is no tile', (
+        tester,
+      ) async {
+        final views = <LanguageView>[
+          ...sampleViews(),
+          LanguageView(lang('hh', 'Hotel', popular: true), null),
+        ];
+        await pumpList(tester, mode: mode, views: views);
+        expect(key('tile-hh'), findsNothing);
+        expect(key('tile-zz'), findsOneWidget);
+      });
+
+      testWidgets('Coming soon can be closed during a search', (tester) async {
+        await pumpList(tester, mode: mode);
+        await search(tester, 'golf');
+        expect(key('soon-gg'), findsOneWidget);
+        await tester.tap(key('languages-coming-soon'));
+        await tester.pumpAndSettle();
+        expect(key('soon-gg'), findsNothing);
+      });
+
       testWidgets('tapping a row picks that language; Back from the list goes '
           'back to the tiles', (tester) async {
         final picked = <String>[];

@@ -12,7 +12,7 @@ Controls: theme, language (Telugu, Hindustani, Bengali: the language list, the d
 ## Screens in the mockup
 - **a. Top bar.** The bug icon is gone from the language bar (Today, Decks, Progress) and from `TabHeader`. The width it freed is used: no empty slot is left, the wheel runs the whole 360 dp bar with its pill at the centre, and more neighbouring languages show at each side. On Progress the All button, which had the left slot, floats over the wheel's faded start edge, so the wheel is the same width on every tab and nothing moves between them. The page shows before and after.
 - **b. Settings.** The row is still "Your languages", its line still names the languages learned. It now opens Languages directly. `LanguagesSettingsPage` and its "Languages" row are deleted.
-- **c. Languages.** The bar has "+ Add a language" (unchanged) and a three-dot icon at the top end in the bug's place.
+- **c. Languages.** Under the last language (after the Know group) sits a full-width list row, "Your decks" (`settingsRowDecks`, line `settingsSumDecks`: "No decks of your own"), with the link icon at its end: it opens `YourDecksPage`, a different screen. The bar has "+ Add a language" (unchanged) and a three-dot icon at the top end in the bug's place.
 - **d. The three-dot menu**, a native popup (`PopupMenuButton`), in two groups told apart by their marks, not only by a divider:
   | Group | Item and second line (existing strings) | Mark | Was |
   |---|---|---|---|
@@ -23,7 +23,6 @@ Controls: theme, language (Telugu, Hindustani, Bengali: the language list, the d
   | | Hide what is above my level: `settingsHideAboveOn` / `Off` | same | switch |
   | Open (buttons) | Fact languages (line: the languages checked, or All known languages) | chevron: its choices open in place inside the dropdown (frame d2), no sheet | row, was a bottom sheet |
   | | Sources | link icon: opens a different screen | row |
-  | | Your decks | link icon: opens a different screen | row |
   | (variant) | Learn {language} from | only in the "The menu" variant, see below; link icon (opens `NativeChoicePage`) | row |
   Each toggle keeps the one-line explanation it had as a second, muted line under its label, showing the line for its current state, exactly as the row did on the old page. A toggle row is therefore two or three lines at 1.4x; a button stays one line (Fact languages keeps its value line). The menu is about 300 dp wide and taller than the screen at 1.4x, so it scrolls, as a Flutter popup does when it does not fit (the page shows it clipped and scrollable). A divider and two small labels (Show, Open) separate the groups. A toggle has the box in both states and no trailing icon; a button has a trailing icon and no box.
 
@@ -32,7 +31,7 @@ Controls: theme, language (Telugu, Hindustani, Bengali: the language list, the d
   |---|---|---|
   | Fact languages | `FactLanguagesSheet.show`: a modal bottom sheet, a checklist of the known languages, "At least one stays checked". It is a choice list, not a screen | chevron (right when closed, down when open): build it as a `SubmenuButton` whose children are `CheckboxMenuButton`s, so the checklist expands in place (frame d2) and the sheet is dropped |
   | Sources | `AppNavigator.openSources`: a page | link icon |
-  | Your decks | settings route `settingsDecks`: a page | link icon |
+  | Your decks (now outside the dropdown, a row below the language list) | settings route `settingsDecks`: a page | link icon |
   | Learn {language} from (language sheet, not this menu) | `NativeChoicePage`: a page | link icon |
   | Report a problem (Settings menu) | `ReportPage`, then the mail app | link icon |
   | Latin-letter readings, IPA pronunciations, IPA replaces transliteration, Adult content, Hide above level | flip a setting | none (the box) |
@@ -128,7 +127,8 @@ Cues are never colour alone: checkmark against blank, the dividers, and the fill
 8. **Top bar** (owner, 2026-11-16): the width the bug button freed is used. The wheel takes the full bar, centred as the app does, no empty right slot (frame a, before and after).
 9. **Icon** (owner, 2026-11-16): the old bug icon is retained for the content report in the drill header and on deck, unit and topic pages, instead of a flag; the content-only reasons sheet stays behind it.
 10. **Report sheet** (owner, 2026-11-16): its reasons are completely visible without scrolling at 1.4x on 360 x 740 dp. Five top-level rows; a row with specifics opens a small second-level popup; two reasons added for choice exercises, "No correct option is listed" and "More than one option is correct", under "Wrong options". Heights are in the f section.
-11. **Dropdown icons** (owner, 2026-11-16): a chevron means more choices inside the same dropdown, a link icon means a different screen or the mail app. Applied row by row in the icon table above: only Fact languages gets the chevron (opened in place, frame d2); Sources, Your decks, Learn from and Report a problem get the link icon.
+11. **Dropdown icons** (owner, 2026-11-16): a chevron means more choices inside the same dropdown, a link icon means a different screen or the mail app. Applied row by row in the icon table above: only Fact languages gets the chevron (opened in place, frame d2); Sources, Learn from and Report a problem get the link icon in menus (Your decks moved out, see 12).
+12. **Your decks** (owner, 2026-11-16): it is outside the three-dot dropdown, a visible full-width row below the list of added languages on the Languages screen, with the link icon (opens another screen). It is removed from the dropdown in every frame and variant.
 
 ## Open questions for the owner (still open)
 1. **Reviewer screens**: remove as proposed, or keep the content report there too?

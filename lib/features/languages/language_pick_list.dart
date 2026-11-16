@@ -75,13 +75,14 @@ class _LanguagePickListState extends State<LanguagePickList> {
   /// "See all languages" was tapped.
   bool _showAll = false;
 
-  /// Coming soon is open; it starts folded.
-  bool _soonOpen = false;
+  /// What a tap on the Coming soon header chose; null follows the search
+  /// (open where it holds a match), else folded.
+  bool? _soonOverride;
 
   @override
   void initState() {
     super.initState();
-    _search.addListener(() => setState(() {}));
+    _search.addListener(() => setState(() => _soonOverride = null));
   }
 
   @override
@@ -163,8 +164,9 @@ class _LanguagePickListState extends State<LanguagePickList> {
       for (final v in matching)
         if (v.course == null && !v.language.isNotation) v,
     ];
-    // A search that finds a language in Coming soon opens the group.
-    final soonOpen = searching ? soon.isNotEmpty : _soonOpen;
+    // A search that finds a language in Coming soon opens the group; a tap
+    // on its header still closes or opens it.
+    final soonOpen = _soonOverride ?? (searching && soon.isNotEmpty);
     // Every side of the list is padded by its children.
     Widget pad(Widget child) => Padding(
       padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
@@ -196,7 +198,7 @@ class _LanguagePickListState extends State<LanguagePickList> {
     // The tiles: the first eight popular languages, in the file's order.
     final tiles = <LanguageView>[
       for (final v in widget.views)
-        if (v.language.popular && !v.language.isNotation) v,
+        if (v.language.popular && !v.language.isNotation && v.course != null) v,
     ].take(languageTileCount).toList();
     final showTiles = !_showAll && !searching && tiles.isNotEmpty;
     final children = <Widget>[
@@ -231,6 +233,9 @@ class _LanguagePickListState extends State<LanguagePickList> {
           ),
         ),
       ] else ...<Widget>[
+        // A slot where the question was, so the search field keeps its place
+        // in the list and its focus while the learner types.
+        const SizedBox.shrink(),
         searchField,
         if (withCourse.isNotEmpty) pad(const VerificationKey()),
         if (matching.isEmpty)
@@ -420,7 +425,7 @@ class _LanguagePickListState extends State<LanguagePickList> {
             // hint-ok: shows text
             child: InkWell(
               key: const ValueKey<String>('languages-coming-soon'),
-              onTap: () => setState(() => _soonOpen = !_soonOpen),
+              onTap: () => setState(() => _soonOverride = !open),
               child: ConstrainedBox(
                 constraints: const BoxConstraints(minHeight: 56),
                 child: Padding(
