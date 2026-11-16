@@ -1,0 +1,498 @@
+schema: 1
+id: "id-en-first-words"
+kind: "layer"
+core: "id-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "Yes and no, the pronouns, the numbers one to ten (the prices here are in thousands of rupiah), the family and a few everyday words (water, food, house, good, big, small, here, there, what, name). Greetings and thank you are in the phrasebook. Not yet checked by an Indonesian speaker: please report any mistake."
+cards:
+  "id-0101":
+    native: "yes"
+    notes:
+      "n1": "Ya is 'yes'. Its opposite, tidak, is the next card."
+    examples:
+      "Ya, terima kasih.":
+        native: "Yes, thank you."
+        bases:
+          "Ya": "yes"
+          "terima": "receive"
+          "kasih": "thanks"
+      "Ya, saya tahu.":
+        native: "Yes, I know."
+        bases:
+          "Ya": "yes"
+          "saya": "I"
+          "tahu": "know"
+  "id-0102":
+    native: "no; not"
+    notes:
+      "n1": "Tidak is 'no', and 'not' before a verb or an adjective. Before a noun, use bukan: bukan rumah saya (not my house)."
+    examples:
+      "Tidak, terima kasih.":
+        native: "No, thank you."
+        bases:
+          "Tidak": "no"
+          "terima": "receive"
+          "kasih": "thanks"
+      "Saya tidak tahu.":
+        native: "I don't know."
+        bases:
+          "Saya": "I"
+          "tidak": "not"
+          "tahu": "know"
+  "id-0103":
+    native: "I; me"
+    notes:
+      "n1": "Saya is the neutral 'I'. Aku is the informal 'I' for close friends, and is learned later."
+    examples:
+      "Saya mahasiswa.":
+        native: "I am a student."
+        bases:
+          "Saya": "I"
+          "mahasiswa": "student"
+      "Saya tidak mengerti.":
+        native: "I don't understand."
+        bases:
+          "Saya": "I"
+          "tidak": "not"
+          "mengerti": "understand"
+  "id-0104":
+    native: "you"
+    notes:
+      "n1": "Kamu is 'you' with friends and people of your own age. Anda is the polite 'you' for a stranger or an older person."
+    examples:
+      "Kamu bicara bahasa Inggris?":
+        native: "Do you speak English?"
+        bases:
+          "Kamu": "you"
+          "bicara": "speak"
+          "bahasa": "language"
+          "Inggris": "English"
+      "Kamu di sini.":
+        native: "You are here."
+        bases:
+          "Kamu": "you"
+          "di": "at"
+          "sini": "here"
+  "id-0105":
+    native: "he; she"
+    notes:
+      "n1": "Dia is 'he' and 'she'. Indonesian has no gender in pronouns, so the context shows which is meant."
+    examples:
+      "Dia ibu saya.":
+        native: "She is my mother."
+        bases:
+          "Dia": "she"
+          "ibu": "mother"
+          "saya": "my"
+      "Dia besar.":
+        native: "He is big."
+        bases:
+          "Dia": "he"
+          "besar": "big"
+  "id-0106":
+    native: "we"
+    notes:
+      "n1": "Kami is 'we' without the person spoken to. Kita is 'we' with them, which is learned later."
+    examples:
+      "Kami di sini.":
+        native: "We are here."
+        bases:
+          "Kami": "we"
+          "di": "at"
+          "sini": "here"
+      "Kami makan.":
+        native: "We eat."
+        bases:
+          "Kami": "we"
+          "makan": "eat"
+  "id-0107":
+    native: "they; them"
+    notes:
+      "n1": "Mereka is 'they' and 'them'."
+    examples:
+      "Mereka di sini.":
+        native: "They are here."
+        bases:
+          "Mereka": "they"
+          "di": "at"
+          "sini": "here"
+      "Mereka besar.":
+        native: "They are big."
+        bases:
+          "Mereka": "they"
+          "besar": "big"
+  "id-0108":
+    native: "one"
+    notes:
+      "n1": "Satu is 'one'."
+    examples:
+      "Satu, dua, tiga.":
+        native: "One, two, three."
+        bases:
+          "Satu": "one"
+          "dua": "two"
+          "tiga": "three"
+      "Satu gelas air, tolong.":
+        native: "One glass of water, please."
+        bases:
+          "Satu": "one"
+          "gelas": "glass"
+          "air": "water"
+          "tolong": "please"
+  "id-0109":
+    native: "two"
+    notes:
+      "n1": "Dua is 'two'. Ribu is 'thousand', so dua ribu is two thousand (rupiah)."
+    examples:
+      "Saya punya dua anak.":
+        native: "I have two children."
+        bases:
+          "Saya": "I"
+          "punya": "have"
+          "dua": "two"
+          "anak": "children"
+      "Harganya dua ribu.":
+        native: "It costs two thousand."
+        bases:
+          "Harganya": "its price"
+          "dua": "two"
+          "ribu": "thousand"
+  "id-0110":
+    native: "three"
+    notes:
+      "n1": "Tiga is 'three'."
+    examples:
+      "Dua, tiga, empat.":
+        native: "Two, three, four."
+        bases:
+          "Dua": "two"
+          "tiga": "three"
+          "empat": "four"
+      "Harganya tiga ribu.":
+        native: "It costs three thousand."
+        bases:
+          "Harganya": "its price"
+          "tiga": "three"
+          "ribu": "thousand"
+  "id-0111":
+    native: "four"
+    notes:
+      "n1": "Empat is 'four'."
+    examples:
+      "Tiga, empat, lima.":
+        native: "Three, four, five."
+        bases:
+          "Tiga": "three"
+          "empat": "four"
+          "lima": "five"
+      "Harganya empat ribu.":
+        native: "It costs four thousand."
+        bases:
+          "Harganya": "its price"
+          "empat": "four"
+          "ribu": "thousand"
+  "id-0112":
+    native: "five"
+    notes:
+      "n1": "Lima is 'five'."
+    examples:
+      "Empat, lima, enam.":
+        native: "Four, five, six."
+        bases:
+          "Empat": "four"
+          "lima": "five"
+          "enam": "six"
+      "Harganya lima ribu.":
+        native: "It costs five thousand."
+        bases:
+          "Harganya": "its price"
+          "lima": "five"
+          "ribu": "thousand"
+  "id-0113":
+    native: "six"
+    notes:
+      "n1": "Enam is 'six'."
+    examples:
+      "Lima, enam, tujuh.":
+        native: "Five, six, seven."
+        bases:
+          "Lima": "five"
+          "enam": "six"
+          "tujuh": "seven"
+      "Harganya enam ribu.":
+        native: "It costs six thousand."
+        bases:
+          "Harganya": "its price"
+          "enam": "six"
+          "ribu": "thousand"
+  "id-0114":
+    native: "seven"
+    notes:
+      "n1": "Tujuh is 'seven'."
+    examples:
+      "Enam, tujuh, delapan.":
+        native: "Six, seven, eight."
+        bases:
+          "Enam": "six"
+          "tujuh": "seven"
+          "delapan": "eight"
+      "Harganya tujuh ribu.":
+        native: "It costs seven thousand."
+        bases:
+          "Harganya": "its price"
+          "tujuh": "seven"
+          "ribu": "thousand"
+  "id-0115":
+    native: "eight"
+    notes:
+      "n1": "Delapan is 'eight'."
+    examples:
+      "Tujuh, delapan, sembilan.":
+        native: "Seven, eight, nine."
+        bases:
+          "Tujuh": "seven"
+          "delapan": "eight"
+          "sembilan": "nine"
+      "Harganya delapan ribu.":
+        native: "It costs eight thousand."
+        bases:
+          "Harganya": "its price"
+          "delapan": "eight"
+          "ribu": "thousand"
+  "id-0116":
+    native: "nine"
+    notes:
+      "n1": "Sembilan is 'nine'."
+    examples:
+      "Delapan, sembilan, sepuluh.":
+        native: "Eight, nine, ten."
+        bases:
+          "Delapan": "eight"
+          "sembilan": "nine"
+          "sepuluh": "ten"
+      "Harganya sembilan ribu.":
+        native: "It costs nine thousand."
+        bases:
+          "Harganya": "its price"
+          "sembilan": "nine"
+          "ribu": "thousand"
+  "id-0117":
+    native: "ten"
+    notes:
+      "n1": "Sepuluh is 'ten'."
+    examples:
+      "Satu sampai sepuluh.":
+        native: "One to ten."
+        bases:
+          "Satu": "one"
+          "sampai": "until"
+          "sepuluh": "ten"
+      "Harganya sepuluh ribu.":
+        native: "It costs ten thousand."
+        bases:
+          "Harganya": "its price"
+          "sepuluh": "ten"
+          "ribu": "thousand"
+  "id-0118":
+    native: "mother"
+    notes:
+      "n1": "Ibu is 'mother'. It is also the polite way to address an older woman, as 'madam'."
+    examples:
+      "Dia ibu saya.":
+        native: "She is my mother."
+        bases:
+          "Dia": "she"
+          "ibu": "mother"
+          "saya": "my"
+      "Selamat pagi, Ibu.":
+        native: "Good morning, madam."
+        bases:
+          "Selamat": "good"
+          "pagi": "morning"
+          "Ibu": "madam"
+  "id-0119":
+    native: "father"
+    notes:
+      "n1": "Ayah is 'father'."
+    examples:
+      "Dia ayah saya.":
+        native: "He is my father."
+        bases:
+          "Dia": "he"
+          "ayah": "father"
+          "saya": "my"
+      "Saya bicara dengan ayah.":
+        native: "I speak with my father."
+        bases:
+          "Saya": "I"
+          "bicara": "speak"
+          "dengan": "with"
+          "ayah": "father"
+  "id-0120":
+    native: "water"
+    notes:
+      "n1": "Air is 'water'."
+    examples:
+      "Air, tolong.":
+        native: "Water, please."
+        bases:
+          "Air": "water"
+          "tolong": "please"
+      "Ini air.":
+        native: "This is water."
+        bases:
+          "Ini": "this"
+          "air": "water"
+  "id-0121":
+    native: "food"
+    notes:
+      "n1": "Makanan is 'food'. Makan is 'to eat'."
+    examples:
+      "Makanannya enak.":
+        native: "The food is delicious."
+        bases:
+          "Makanannya": "the food"
+          "enak": "delicious"
+      "Saya makan di rumah.":
+        native: "I eat at home."
+        bases:
+          "Saya": "I"
+          "makan": "eat"
+          "di": "at"
+          "rumah": "home"
+  "id-0122":
+    native: "house; home"
+    notes:
+      "n1": "Rumah is 'house' and 'home'."
+    examples:
+      "Ini rumah saya.":
+        native: "This is my house."
+        bases:
+          "Ini": "this"
+          "rumah": "house"
+          "saya": "my"
+      "Rumah kami besar.":
+        native: "Our house is big."
+        bases:
+          "Rumah": "house"
+          "kami": "our"
+          "besar": "big"
+  "id-0123":
+    native: "name"
+    notes:
+      "n1": "Nama is 'name'."
+    examples:
+      "Nama saya Budi.":
+        native: "My name is Budi."
+        bases:
+          "Nama": "name"
+          "saya": "my"
+          "Budi": "Budi"
+      "Nama kamu apa?":
+        native: "What is your name?"
+        bases:
+          "Nama": "name"
+          "kamu": "your"
+          "apa": "what"
+  "id-0124":
+    native: "good; well"
+    notes:
+      "n1": "Baik is 'good', 'well' and 'kind'."
+    examples:
+      "Ini baik.":
+        native: "This is good."
+        bases:
+          "Ini": "this"
+          "baik": "good"
+      "Dia orang baik.":
+        native: "He or she is a good person."
+        bases:
+          "Dia": "he or she"
+          "orang": "person"
+          "baik": "good"
+  "id-0125":
+    native: "big"
+    notes:
+      "n1": "Besar is 'big'."
+    examples:
+      "Rumah itu besar.":
+        native: "That house is big."
+        bases:
+          "Rumah": "house"
+          "itu": "that"
+          "besar": "big"
+      "Anjing itu besar.":
+        native: "That dog is big."
+        bases:
+          "Anjing": "dog"
+          "itu": "that"
+          "besar": "big"
+  "id-0126":
+    native: "small"
+    notes:
+      "n1": "Kecil is 'small'."
+    examples:
+      "Anak itu kecil.":
+        native: "That child is small."
+        bases:
+          "Anak": "child"
+          "itu": "that"
+          "kecil": "small"
+      "Rumah ini kecil.":
+        native: "This house is small."
+        bases:
+          "Rumah": "house"
+          "ini": "this"
+          "kecil": "small"
+  "id-0127":
+    native: "here"
+    notes:
+      "n1": "Di sini is 'here'. Di sana is 'there'."
+    examples:
+      "Kami di sini.":
+        native: "We are here."
+        bases:
+          "Kami": "we"
+          "di": "at"
+          "sini": "here"
+      "Duduk di sini.":
+        native: "Sit here."
+        bases:
+          "Duduk": "sit"
+          "di": "at"
+          "sini": "here"
+  "id-0128":
+    native: "there"
+    notes:
+      "n1": "Di sana is 'there', the opposite of di sini, 'here'."
+    examples:
+      "Toiletnya di sana.":
+        native: "The toilet is there."
+        bases:
+          "Toiletnya": "the toilet"
+          "di": "at"
+          "sana": "there"
+      "Rumah saya di sana.":
+        native: "My house is there."
+        bases:
+          "Rumah": "house"
+          "saya": "my"
+          "di": "at"
+          "sana": "there"
+  "id-0129":
+    native: "what"
+    notes:
+      "n1": "Apa is 'what'. It starts questions about a thing, as Ini apa? (What is this?)."
+    examples:
+      "Ini apa?":
+        native: "What is this?"
+        bases:
+          "Ini": "this"
+          "apa": "what"
+      "Apa kabar?":
+        native: "How are you?"
+        bases:
+          "Apa": "what"
+          "kabar": "news"
