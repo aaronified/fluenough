@@ -1,0 +1,108 @@
+# The six kārakas and the cases they take, and four upapada words. Every sūtra number and word was
+# read on sa.wikisource.org/wiki/अष्टाध्यायी (first and second chapter pages, 2026-11-16); where the page
+# types a sūtra defectively (2.3.18 with a stray mark, 2.3.36 as सप्तमी अधिकरणे, 2.3.16 with its last
+# words split wrongly) the text is the one typed on sa.wikipedia.org/wiki/विभक्तिः, read the same day,
+# or is not quoted. The model word is Rāma, taught in sa-grammar-case-system (card sa-4094): its
+# forms are those of that deck. The upapada cases of सह, विना, ऋते and नमः are those the en.wiktionary.org
+# entries of the words give. Readings and IPA from tools/transcribe.py (sa).
+schema: 1
+id: "sa-grammar-karakas"
+part: "core"
+kind: "grammar"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["case", "model"]
+  entries:
+    - lemma: "कर्तृ"
+      key: "kartr-active"
+      reading: "kartṛ"
+      ipa: "kərt̪r̩"
+      forms: { "case": "प्रथमा", "model": "रामः" }
+      readings: { "case": "prathamā", "model": "rāmaḥ" }
+      ipas: { "case": "prət̪ʰəmaː", "model": "raːməh" }
+    - lemma: "कर्तृ"
+      key: "kartr-passive"
+      reading: "kartṛ"
+      ipa: "kərt̪r̩"
+      forms: { "case": "तृतीया", "model": "रामेण" }
+      readings: { "case": "tṛtīyā", "model": "rāmeṇa" }
+      ipas: { "case": "t̪r̩t̪iːjaː", "model": "raːmeːɳə" }
+    - lemma: "कर्म"
+      key: "karman-active"
+      reading: "karma"
+      ipa: "kərmə"
+      forms: { "case": "द्वितीया", "model": "रामम्" }
+      readings: { "case": "dvitīyā", "model": "rāmam" }
+      ipas: { "case": "d̪ʋit̪iːjaː", "model": "raːməm" }
+    - lemma: "कर्म"
+      key: "karman-passive"
+      reading: "karma"
+      ipa: "kərmə"
+      forms: { "case": "प्रथमा", "model": "रामः" }
+      readings: { "case": "prathamā", "model": "rāmaḥ" }
+      ipas: { "case": "prət̪ʰəmaː", "model": "raːməh" }
+    - lemma: "करण"
+      key: "karana"
+      reading: "karaṇa"
+      ipa: "kərəɳə"
+      forms: { "case": "तृतीया", "model": "रामेण" }
+      readings: { "case": "tṛtīyā", "model": "rāmeṇa" }
+      ipas: { "case": "t̪r̩t̪iːjaː", "model": "raːmeːɳə" }
+    - lemma: "सम्प्रदान"
+      key: "sampradana"
+      reading: "sampradāna"
+      ipa: "səmprəd̪aːnə"
+      forms: { "case": "चतुर्थी", "model": "रामाय" }
+      readings: { "case": "caturthī", "model": "rāmāya" }
+      ipas: { "case": "tʃət̪urt̪ʰiː", "model": "raːmaːjə" }
+    - lemma: "अपादान"
+      key: "apadana"
+      reading: "apādāna"
+      ipa: "əpaːd̪aːnə"
+      forms: { "case": "पञ्चमी", "model": "रामात्" }
+      readings: { "case": "pañcamī", "model": "rāmāt" }
+      ipas: { "case": "pəɲtʃəmiː", "model": "raːmaːt̪" }
+    - lemma: "अधिकरण"
+      key: "adhikarana"
+      reading: "adhikaraṇa"
+      ipa: "əd̪ʱikərəɳə"
+      forms: { "case": "सप्तमी", "model": "रामे" }
+      readings: { "case": "saptamī", "model": "rāme" }
+      ipas: { "case": "səpt̪əmiː", "model": "raːmeː" }
+    - lemma: "शेष"
+      key: "sesa"
+      reading: "śeṣa"
+      ipa: "ʃeːʂə"
+      forms: { "case": "षष्ठी", "model": "रामस्य" }
+      readings: { "case": "ṣaṣṭhī", "model": "rāmasya" }
+      ipas: { "case": "ʂəʂʈʰiː", "model": "raːməsjə" }
+    - lemma: "सह"
+      key: "saha"
+      reading: "saha"
+      ipa: "səɦə"
+      forms: { "case": "तृतीया", "model": "रामेण" }
+      readings: { "case": "tṛtīyā", "model": "rāmeṇa" }
+      ipas: { "case": "t̪r̩t̪iːjaː", "model": "raːmeːɳə" }
+    - lemma: "विना"
+      key: "vina"
+      reading: "vinā"
+      ipa: "ʋinaː"
+      forms: { "case": ["तृतीया", "द्वितीया", "पञ्चमी"], "model": ["रामेण", "रामम्", "रामात्"] }
+      readings: { "case": ["tṛtīyā", "dvitīyā", "pañcamī"], "model": ["rāmeṇa", "rāmam", "rāmāt"] }
+      ipas: { "case": ["t̪r̩t̪iːjaː", "d̪ʋit̪iːjaː", "pəɲtʃəmiː"], "model": ["raːmeːɳə", "raːməm", "raːmaːt̪"] }
+    - lemma: "ऋते"
+      key: "rte"
+      reading: "ṛte"
+      ipa: "r̩t̪eː"
+      forms: { "case": ["पञ्चमी", "द्वितीया"], "model": ["रामात्", "रामम्"] }
+      readings: { "case": ["pañcamī", "dvitīyā"], "model": ["rāmāt", "rāmam"] }
+      ipas: { "case": ["pəɲtʃəmiː", "d̪ʋit̪iːjaː"], "model": ["raːmaːt̪", "raːməm"] }
+    - lemma: "नमः"
+      key: "namas"
+      reading: "namaḥ"
+      ipa: "nəməh"
+      forms: { "case": "चतुर्थी", "model": "रामाय" }
+      readings: { "case": "caturthī", "model": "rāmāya" }
+      ipas: { "case": "tʃət̪urt̪ʰiː", "model": "raːmaːjə" }
