@@ -12,6 +12,8 @@
 # are placed in their levels. Each unit moves from `planned` to `decks` in
 # the commit that builds it; unit ids are permanent once a deck is written.
 #
+# Order (reviewed 2026-11-16): the present system comes right after the pronouns, so every sentences deck uses only verbs already taught; a sentences deck is listed in the first unit after every word it uses is taught, so the sentences that join parts with च (ca) are listed with the adverbs unit, which teaches च.
+#
 # Written so far: unit 1 (the phrasebook and the first words), the sound
 # differences, the script decks, spelling, the verb units, and the grammar units
 # for the case system, a-stems, the present system (with the first-class verbs),
@@ -63,6 +65,13 @@ units:
     words: 7
   - decks: ["sa-pronouns"]
     words: 17
+  - decks: ["sa-verbs-first-class", "sa-grammar-present-system"]
+    words: 6
+    grammar: ["present-stem", "present-third", "present-second", "present-first"]
+    listening_passages:
+      - { id: "grammar-present-system-heard", text: { "en": "A short passage in Classical Sanskrit showing present system, verb classes, read aloud" } }
+    reading_passages:
+      - { id: "grammar-present-system-text", text: { "en": "A short written text in Classical Sanskrit showing present system, verb classes" } }
   - decks: ["sa-family"]
     words: 16
   - decks: ["sa-numbers-1-20"]
@@ -89,30 +98,23 @@ units:
       - { id: "grammar-a-stems-heard", text: { "en": "A short passage in Classical Sanskrit showing a stem nouns, read aloud" } }
     reading_passages:
       - { id: "grammar-a-stems-text", text: { "en": "A short written text in Classical Sanskrit showing a stem nouns" } }
-  - decks: ["sa-verbs-first-class", "sa-grammar-present-system"]
-    words: 6
-    grammar: ["present-stem", "present-third", "present-second", "present-first"]
-    listening_passages:
-      - { id: "grammar-present-system-heard", text: { "en": "A short passage in Classical Sanskrit showing present system, verb classes, read aloud" } }
-    reading_passages:
-      - { id: "grammar-present-system-text", text: { "en": "A short written text in Classical Sanskrit showing present system, verb classes" } }
   - decks: ["sa-grammar-sandhi-vowel"]
     grammar: ["sandhi-vowel"]
     listening_passages:
       - { id: "grammar-sandhi-vowel-heard", text: { "en": "A short passage in Classical Sanskrit showing vowel sandhi, read aloud" } }
     reading_passages:
       - { id: "grammar-sandhi-vowel-text", text: { "en": "A short written text in Classical Sanskrit showing vowel sandhi" } }
-  - decks: ["sa-adverbs"]
-    words: 24
-  - decks: ["sa-quantities"]
+  - decks: ["sa-adverbs", "sa-adverbs-sentences", "sa-questions-sentences", "sa-pronouns-sentences", "sa-family-sentences", "sa-about-me-sentences", "sa-everyday-verbs-sentences", "sa-numbers-1-20-sentences"]
+    words: 25
+  - decks: ["sa-quantities", "sa-quantities-sentences"]
     words: 14
-  - decks: ["sa-describing"]
+  - decks: ["sa-describing", "sa-describing-sentences"]
     words: 24
-  - decks: ["sa-time"]
+  - decks: ["sa-time", "sa-time-sentences"]
     words: 12
-  - decks: ["sa-location"]
+  - decks: ["sa-location", "sa-location-sentences"]
     words: 9
-  - decks: ["sa-more-verbs"]
+  - decks: ["sa-more-verbs", "sa-more-verbs-sentences"]
     words: 24
     listening_passages:
       - { id: "more-verbs-heard", text: { "en": "A short passage in Classical Sanskrit on the theme more verbs, read aloud" } }
@@ -130,11 +132,11 @@ units:
       - { id: "grammar-atmanepada-heard", text: { "en": "A short passage in Classical Sanskrit showing atmanepada, read aloud" } }
     reading_passages:
       - { id: "grammar-atmanepada-text", text: { "en": "A short written text in Classical Sanskrit showing atmanepada" } }
-  - decks: ["sa-numbers-big"]
+  - decks: ["sa-numbers-big", "sa-numbers-big-sentences"]
     words: 9
-  - decks: ["sa-body"]
+  - decks: ["sa-body", "sa-body-sentences"]
     words: 18
-  - decks: ["sa-directions"]
+  - decks: ["sa-directions", "sa-directions-sentences"]
     words: 8
   - planned: { id: "sa-food", theme: "food", words: 24 }
     listening_passages:
@@ -176,7 +178,7 @@ units:
       - { id: "learning-heard", text: { "en": "A short passage in Classical Sanskrit on the theme learning, teachers and texts, read aloud" } }
     reading_passages:
       - { id: "learning-text", text: { "en": "A short written text in Classical Sanskrit on the theme learning, teachers and texts" } }
-  - planned: { id: "sa-work", theme: "work", words: 12 }
+  - planned: { id: "sa-work", theme: "work", words: 11 }
     listening_passages:
       - { id: "work-heard", text: { "en": "A short passage in Classical Sanskrit on the theme work and trades, read aloud" } }
     reading_passages:
