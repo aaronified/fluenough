@@ -1,0 +1,131 @@
+# Visarga sandhi: the junctions of a final visarga (ḥ) with the sound that follows. Every pair and joined
+# form was read on sa.wikipedia.org/wiki/सन्धिप्रकरणम् (2026-11-16) except these: सः + गच्छति = स गच्छति
+# and एषः + बाणः = एष बाणः (the rule for सः is the footnote of the en.wiktionary.org entry of तद्; एष बाणः is
+# the example of the entry of एतद्), and रामः + पठति = रामः पठति, which follows the rule the Sanskrit Wikipedia
+# page gives for the visarga before k, kh, p and ph (it becomes s before the other hard consonants only). The
+# sutra numbers were read on sa.wikisource.org/wiki/अष्टाध्यायी (the sixth and eighth chapter pages, 2026-11-16).
+# Readings and IPA from tools/transcribe.py (sa).
+schema: 1
+id: "sa-grammar-sandhi-visarga"
+part: "core"
+kind: "grammar"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["joined"]
+  entries:
+    - lemma: "रामः + अत्र"
+      key: "ramah-atra"
+      reading: "rāmaḥ atra"
+      forms: { "joined": "रामोऽत्र" }
+      readings: { "joined": "rāmo'tra" }
+      ipas: { "joined": "raːmoːt̪rə" }
+    - lemma: "देवः + अयम्"
+      key: "devah-ayam"
+      reading: "devaḥ ayam"
+      forms: { "joined": "देवोऽयम्" }
+      readings: { "joined": "devo'yam" }
+      ipas: { "joined": "d̪eːʋoːjəm" }
+    - lemma: "रामः + जयति"
+      key: "ramah-jayati"
+      reading: "rāmaḥ jayati"
+      forms: { "joined": "रामो जयति" }
+      readings: { "joined": "rāmo jayati" }
+      ipas: { "joined": "raːmoː dʒəjət̪i" }
+    - lemma: "शिवः + वन्द्यः"
+      key: "sivah-vandyah"
+      reading: "śivaḥ vandyaḥ"
+      forms: { "joined": "शिवो वन्द्यः" }
+      readings: { "joined": "śivo vandyaḥ" }
+      ipas: { "joined": "ʃiʋoː ʋənd̪jəh" }
+    - lemma: "मनः + रमा"
+      key: "manah-rama"
+      reading: "manaḥ ramā"
+      forms: { "joined": "मनोरमा" }
+      readings: { "joined": "manoramā" }
+      ipas: { "joined": "mənoːrəmaː" }
+    - lemma: "वेदः + इति"
+      key: "vedah-iti"
+      reading: "vedaḥ iti"
+      forms: { "joined": "वेद इति" }
+      readings: { "joined": "veda iti" }
+      ipas: { "joined": "ʋeːd̪ə it̪i" }
+    - lemma: "अर्जुनः + उवाच"
+      key: "arjunah-uvaca"
+      reading: "arjunaḥ uvāca"
+      forms: { "joined": "अर्जुन उवाच" }
+      readings: { "joined": "arjuna uvāca" }
+      ipas: { "joined": "ərdʒunə uʋaːtʃə" }
+    - lemma: "देवाः + यान्ति"
+      key: "devah-yanti"
+      reading: "devāḥ yānti"
+      forms: { "joined": "देवा यान्ति" }
+      readings: { "joined": "devā yānti" }
+      ipas: { "joined": "d̪eːʋaː jaːnt̪i" }
+    - lemma: "सुराः + नम्याः"
+      key: "surah-namyah"
+      reading: "surāḥ namyāḥ"
+      forms: { "joined": "सुरा नम्याः" }
+      readings: { "joined": "surā namyāḥ" }
+      ipas: { "joined": "suraː nəmjaːh" }
+    - lemma: "गुरुः + इच्छा"
+      key: "guruh-iccha"
+      reading: "guruḥ icchā"
+      forms: { "joined": "गुरुरिच्छा" }
+      readings: { "joined": "gururicchā" }
+      ipas: { "joined": "ɡururitʃtʃʰaː" }
+    - lemma: "मुनिः + नमति"
+      key: "munih-namati"
+      reading: "muniḥ namati"
+      forms: { "joined": "मुनिर्नमति" }
+      readings: { "joined": "munirnamati" }
+      ipas: { "joined": "munirnəmət̪i" }
+    - lemma: "रविः + उदेति"
+      key: "ravih-udeti"
+      reading: "raviḥ udeti"
+      forms: { "joined": "रविरुदेति" }
+      readings: { "joined": "ravirudeti" }
+      ipas: { "joined": "rəʋirud̪eːt̪i" }
+    - lemma: "रामः + तत्र"
+      key: "ramah-tatra"
+      reading: "rāmaḥ tatra"
+      forms: { "joined": "रामस्तत्र" }
+      readings: { "joined": "rāmastatra" }
+      ipas: { "joined": "raːməst̪ət̪rə" }
+    - lemma: "कः + चित्"
+      key: "kah-cit"
+      reading: "kaḥ cit"
+      forms: { "joined": "कश्चित्" }
+      readings: { "joined": "kaścit" }
+      ipas: { "joined": "kəʃtʃit̪" }
+    - lemma: "रामः + षष्ठः"
+      key: "ramah-sasthah"
+      reading: "rāmaḥ ṣaṣṭhaḥ"
+      forms: { "joined": "रामष्षष्ठः" }
+      readings: { "joined": "rāmaṣṣaṣṭhaḥ" }
+      ipas: { "joined": "raːməʂʂəʂʈʰəh" }
+    - lemma: "धनुः + ठङ्कारः"
+      key: "dhanuh-thankarah"
+      reading: "dhanuḥ ṭhaṅkāraḥ"
+      forms: { "joined": "धनुष्ठङ्कारः" }
+      readings: { "joined": "dhanuṣṭhaṅkāraḥ" }
+      ipas: { "joined": "d̪ʱənuʂʈʰəŋkaːrəh" }
+    - lemma: "सः + गच्छति"
+      key: "sah-gacchati"
+      reading: "saḥ gacchati"
+      forms: { "joined": "स गच्छति" }
+      readings: { "joined": "sa gacchati" }
+      ipas: { "joined": "sə ɡətʃtʃʰət̪i" }
+    - lemma: "एषः + बाणः"
+      key: "esah-banah"
+      reading: "eṣaḥ bāṇaḥ"
+      forms: { "joined": "एष बाणः" }
+      readings: { "joined": "eṣa bāṇaḥ" }
+      ipas: { "joined": "eːʂə baːɳəh" }
+    - lemma: "रामः + पठति"
+      key: "ramah-pathati"
+      reading: "rāmaḥ paṭhati"
+      forms: { "joined": "रामः पठति" }
+      readings: { "joined": "rāmaḥ paṭhati" }
+      ipas: { "joined": "raːməh pəʈʰət̪i" }
