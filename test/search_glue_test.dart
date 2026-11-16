@@ -81,7 +81,6 @@ void main() {
         isTrue,
       );
       expect(found.close, isFalse);
-      expect(found.hiddenAbove, 0);
     });
 
     test('puts a typo right only when nothing is found exactly', () async {
@@ -96,14 +95,10 @@ void main() {
       expect(state.searchItems('zz', 'house').close, isFalse);
     });
 
-    test('lists what is above the level marked, or counts it hidden', () async {
+    test('lists what is above the level, marked with its level', () async {
       final state = await kindsWorldApp();
       final listed = state.searchItems('zz', 'library');
       expect(listed.outcome.results.single.aboveLevel, isTrue);
-      state.settings.hideAboveLevel = true;
-      final hidden = state.searchItems('zz', 'library');
-      expect(hidden.outcome.results, isEmpty);
-      expect(hidden.hiddenAbove, 1);
     });
 
     test('is built once for a catalog, and topics with it', () async {

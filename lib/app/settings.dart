@@ -6,7 +6,7 @@ import 'package:flutter/foundation.dart';
 import '../core/placement/outcome_log.dart';
 import '../core/data/spoken_languages.dart';
 import '../core/decks/font_check.dart';
-import '../core/decks/weave.dart' show defaultCulturePerUnit, maxCulturePerUnit;
+import '../core/decks/culture_options.dart';
 import '../core/languages/language_skills.dart';
 import '../core/review/deck_review.dart';
 import '../core/review/question_log.dart';
@@ -166,12 +166,7 @@ class SettingsNotifier extends ChangeNotifier {
   Map<String, DateTime> _lessonsDone = const <String, DateTime>{};
   bool _reviewDecks = false;
   bool _adultContent = false;
-  bool _hideAboveLevel = false;
-  bool _cultureItems = true;
-  bool _cultureAboveSupport = false;
-  bool _cultureCounts = false;
-  int _culturePerUnit = defaultCulturePerUnit;
-  bool _cultureCreators = true;
+  Map<String, CultureOptions> _culture = const <String, CultureOptions>{};
   Map<String, String> _voices = const <String, String>{};
   String? _raterCode;
   bool _reviewIntroShown = false;
@@ -249,51 +244,22 @@ class SettingsNotifier extends ChangeNotifier {
   set adultContent(bool value) =>
       _set(_adultContent, value, (v) => _adultContent = v);
 
-  /// Settings' "Hide what is above my level" (deck-kinds plan, D2, #1137,
-  /// #1140): search lists a deck, topic, situation or unit above the
-  /// learner's level marked with its level and not startable; with this on
-  /// they are left out of a result. Off by default. Per profile.
-  bool get hideAboveLevel => _hideAboveLevel;
-  set hideAboveLevel(bool value) =>
-      _set(_hideAboveLevel, value, (v) => _hideAboveLevel = v);
+  /// [language]'s culture options (the approved mockup `culture-in-decks`):
+  /// whether culture items are in its path, Today and reviews, what to do with
+  /// those above the learner's level, whether they count toward path progress
+  /// and whether the creator shows. Each language keeps its own, chosen in its
+  /// details; a language that has not chosen has [CultureOptions.defaults].
+  CultureOptions cultureFor(String language) =>
+      _culture[language] ?? CultureOptions.defaults;
 
-  /// Settings' "Show culture items" (deck-kinds plan, D11, T20): whether
-  /// culture items (a proverb, a line of verse, a passage) are woven into the
-  /// path's units and Today, and the culture and proverbs decks are drilled
-  /// there. Off hides them from lessons and Today, never from search or the
-  /// Culture screen. On by default. Per profile.
-  bool get cultureItems => _cultureItems;
-  set cultureItems(bool value) =>
-      _set(_cultureItems, value, (v) => _cultureItems = v);
-
-  /// Settings' "Items above my level" (T20): false (the default) does not show
-  /// a culture item above the learner's level, which unlocks when they reach
-  /// it; true shows it with support: its words glossed, a lock mark, not
-  /// counted and not scheduled for review.
-  bool get cultureAboveSupport => _cultureAboveSupport;
-  set cultureAboveSupport(bool value) =>
-      _set(_cultureAboveSupport, value, (v) => _cultureAboveSupport = v);
-
-  /// Settings' "Count toward path progress" (T20): false (the default) makes a
-  /// woven culture item a bonus; true counts it as a step of its unit.
-  bool get cultureCounts => _cultureCounts;
-  set cultureCounts(bool value) =>
-      _set(_cultureCounts, value, (v) => _cultureCounts = v);
-
-  /// Settings' culture items "Per unit" (T20): 1 to [maxCulturePerUnit], one by
-  /// default.
-  int get culturePerUnit => _culturePerUnit;
-  set culturePerUnit(int value) => _set(
-    _culturePerUnit,
-    value.clamp(1, maxCulturePerUnit).toInt(),
-    (v) => _culturePerUnit = v,
-  );
-
-  /// Settings' "Show creator and legacy" (T20): the person behind an item, with
-  /// their card, and what still lives today. On by default.
-  bool get cultureCreators => _cultureCreators;
-  set cultureCreators(bool value) =>
-      _set(_cultureCreators, value, (v) => _cultureCreators = v);
+  /// Sets [language]'s culture options; the other languages keep theirs.
+  void setCultureFor(String language, CultureOptions options) {
+    if (cultureFor(language) == options) return;
+    _culture = Map<String, CultureOptions>.unmodifiable(
+      <String, CultureOptions>{..._culture, language: options},
+    );
+    notifyListeners();
+  }
 
   /// The rater code the phone made when reviewing was first turned on,
   /// written `FL-XXXX-XXXX-C`, or null before. Kept when reviewing is
@@ -1095,6 +1061,7 @@ class SettingsNotifier extends ChangeNotifier {
   /// learned, known or left is not a setting here and stays.
   void clearLanguageSettings(String language) {
     _dailyMinutes = _without(_dailyMinutes, language);
+    _culture = _without(_culture, language);
     _dailyExtra = _without(_dailyExtra, language);
     _scriptsLearned = _without(_scriptsLearned, language);
     _collapsedLevels = _without(_collapsedLevels, language);
@@ -1592,12 +1559,10 @@ class SettingsNotifier extends ChangeNotifier {
     'clock_time': jsonEncode(_clockTime),
     'review_decks': '$_reviewDecks',
     'adult_content': '$_adultContent',
-    'hide_above_level': '$_hideAboveLevel',
-    'culture_items': '$_cultureItems',
-    'culture_above_support': '$_cultureAboveSupport',
-    'culture_counts': '$_cultureCounts',
-    'culture_per_unit': '$_culturePerUnit',
-    'culture_creators': '$_cultureCreators',
+    'culture_by_language': jsonEncode(<String, Object>{
+      for (final MapEntry(:key, :value) in _culture.entries)
+        key: value.toJson(),
+    }),
     'tts_voices': jsonEncode(_voices),
     'rater_code': _raterCode ?? '',
     'review_intro_shown': '$_reviewIntroShown',
@@ -2033,16 +1998,6 @@ class SettingsNotifier extends ChangeNotifier {
     }
     if (pick('review_decks', flag) case final v?) reviewDecks = v;
     if (pick('adult_content', flag) case final v?) adultContent = v;
-    if (pick('hide_above_level', flag) case final v?) hideAboveLevel = v;
-    if (pick('culture_items', flag) case final v?) cultureItems = v;
-    if (pick('culture_above_support', flag) case final v?) {
-      cultureAboveSupport = v;
-    }
-    if (pick('culture_counts', flag) case final v?) cultureCounts = v;
-    if (pick('culture_per_unit', int.tryParse) case final v?) {
-      culturePerUnit = v;
-    }
-    if (pick('culture_creators', flag) case final v?) cultureCreators = v;
     if (pick('tts_voices', _parseJsonMap) case final v?) {
       for (final MapEntry(:key, :value) in v.entries) {
         if (RegExp(r'^[a-z]{2,3}$').hasMatch(key) &&
@@ -2139,6 +2094,51 @@ class SettingsNotifier extends ChangeNotifier {
         for (final id in v.split(','))
           if (RegExp(r'^[a-z0-9-]+$').hasMatch(id)) id,
       };
+    }
+    _restoreCulture(stored);
+  }
+
+  /// Restores the per-language culture options. A store that has the map reads
+  /// it, each entry tolerant of a missing key. One from before they were per
+  /// language holds the four global values: they are copied to every language
+  /// the profile has (one with skills, or one it learns), and a language added
+  /// later starts from the defaults. The old keys are never written again, and
+  /// the old `hide_above_level` and `culture_per_unit` are ignored.
+  void _restoreCulture(Map<String, String> stored) {
+    final code = RegExp(r'^[a-z]{2,3}$');
+    final text = stored['culture_by_language'];
+    final map = text == null ? null : _parseJsonMap(text);
+    if (map != null) {
+      for (final MapEntry(:key, :value) in map.entries) {
+        if (code.hasMatch(key) && value is Map) {
+          setCultureFor(key, CultureOptions.fromJson(value));
+        }
+      }
+      return;
+    }
+    bool? old(String name) => bool.tryParse(stored[name] ?? '');
+    final items = old('culture_items');
+    final showAbove = old('culture_above_support');
+    final counts = old('culture_counts');
+    final creators = old('culture_creators');
+    if (items == null &&
+        showAbove == null &&
+        counts == null &&
+        creators == null) {
+      return;
+    }
+    const base = CultureOptions.defaults;
+    final carried = CultureOptions(
+      items: items ?? base.items,
+      showAbove: showAbove ?? base.showAbove,
+      counts: counts ?? base.counts,
+      creators: creators ?? base.creators,
+    );
+    for (final language in <String>{
+      ...languagesWithSkills,
+      ..._learningLanguages,
+    }) {
+      setCultureFor(language, carried);
     }
   }
 

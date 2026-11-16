@@ -5,7 +5,9 @@
 // recommendations list offers, counts as hidden or leaves out for a learner.
 
 import 'package:fluenough/app/culture.dart';
+import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/core/data/course_path.dart';
+import 'package:fluenough/core/decks/culture_options.dart';
 import 'package:fluenough/core/decks/recommendation_list.dart';
 import 'package:fluenough/core/decks/recommendations.dart';
 import 'package:fluenough/core/decks/timeline.dart';
@@ -69,14 +71,87 @@ void main() {
       expect(woven.nextUnlock, Level.a2);
     });
 
-    test('gives a unit as many as the learner asked for, up to three', () {
+    test('gives a unit as many as it is told to', () {
       final woven = weaveCulture(_plan(), items, Level.b1, perUnit: 2);
       expect(_ids(woven.of(0)), <String>['proverb-a1', 'proverb-a1-too']);
       expect(woven.all, hasLength(4));
+      // Never fewer than one.
       expect(
-        weaveCulture(_plan(), items, Level.b1, perUnit: 9).all,
-        hasLength(4),
+        weaveCulture(_plan(), items, Level.b1, perUnit: 0).of(0),
+        hasLength(1),
       );
+    });
+
+    group('with the number a level needs', () {
+      final many = <CultureItem>[
+        for (var i = 1; i <= 3; i++) _item('a1-$i', Level.a1),
+        _item('a2-1', Level.a2),
+        for (var i = 1; i <= 3; i++) _item('b1-$i', Level.b1),
+      ];
+
+      test('is the items of a level over its units, rounded up', () {
+        final per = culturePerUnitByLevel(_plan(), many);
+        // Three A1 items in one unit, one A2 in one, three B1 in two.
+        expect(per, <Level, int>{Level.a1: 3, Level.a2: 1, Level.b1: 2});
+      });
+
+      test('is at least one, also for a level with no item', () {
+        final per = culturePerUnitByLevel(_plan(), <CultureItem>[
+          _item('a1-1', Level.a1),
+        ]);
+        expect(per, <Level, int>{Level.a1: 1, Level.a2: 1, Level.b1: 1});
+      });
+
+      test('counts an item of a level with no unit for the next level up', () {
+        const plan = <PlanUnit>[
+          PlanUnit(decks: <String>['a'], milestone: Milestone.a1),
+          PlanUnit(decks: <String>['b']),
+          PlanUnit(decks: <String>['c'], milestone: Milestone.b1),
+        ];
+        final per = culturePerUnitByLevel(plan, <CultureItem>[
+          _item('a1-1', Level.a1),
+          _item('a2-1', Level.a2),
+          _item('a2-2', Level.a2),
+          _item('b1-1', Level.b1),
+        ]);
+        // The A2 items go with the B1 ones: three items in two units.
+        expect(per, <Level, int>{Level.a1: 1, Level.b1: 2});
+      });
+
+      test('weaves every item at or below the level, none piled up', () {
+        final woven = weaveCulture(
+          _plan(),
+          many,
+          Level.b1,
+          perByLevel: culturePerUnitByLevel(_plan(), many),
+        );
+        expect(_ids(woven.of(0)), <String>['a1-1', 'a1-2', 'a1-3']);
+        expect(_ids(woven.of(1)), <String>['a2-1']);
+        expect(_ids(woven.of(2)), <String>['b1-1', 'b1-2']);
+        expect(_ids(woven.of(3)), <String>['b1-3']);
+        expect(woven.all, hasLength(many.length));
+      });
+
+      test('spreads what is above the learner over the units as previews', () {
+        final woven = weaveCulture(
+          _plan(),
+          many,
+          Level.a1,
+          perByLevel: culturePerUnitByLevel(_plan(), many),
+        );
+        expect(_ids(woven.all), <String>['a1-1', 'a1-2', 'a1-3']);
+        // Previews are never woven: they are a list apart.
+        expect(woven.previewsOf(0), isEmpty);
+        expect(_ids(woven.previewsOf(1)), <String>['a2-1']);
+        expect(_ids(woven.previewsOf(2)), <String>['b1-1', 'b1-2']);
+        expect(_ids(woven.previewsOf(3)), <String>['b1-3']);
+        expect(_ids(woven.above), <String>['a2-1', 'b1-1', 'b1-2', 'b1-3']);
+      });
+
+      test('previews nothing when nothing is above', () {
+        final woven = weaveCulture(_plan(), many, Level.b1);
+        expect(woven.previews, isEmpty);
+      });
     });
 
     test('weaves nothing for a language with no levels', () {
@@ -137,11 +212,38 @@ void main() {
       ]);
     });
 
+    test('give a unit as many as the course needs, with no setting', () async {
+      final state = await cultureApp(
+        files: <String, String>{...cultureWorld(), ...cultureMoreProverbs()},
+      );
+      final woven = state.wovenCultureOf('zz');
+      // Three A1 items and one A1 unit: all three are in it.
+      expect(
+        _ids(woven.of(0)),
+        unorderedEquals(<String>['zz-7101', 'zz-7102', 'zz-7103']),
+      );
+      expect(woven.all, hasLength(3));
+      expect(_ids(woven.above), <String>['zz-7201', 'zz-pasaje-1']);
+    });
+
     test('are offered on Today only while culture is on and not met', () async {
       final state = await cultureApp();
       expect(state.nextCultureItem('zz')!.id, 'zz-7101');
-      state.settings.cultureItems = false;
+      state.settings.setCultureFor('hi', const CultureOptions(items: false));
+      expect(state.nextCultureItem('zz')!.id, 'zz-7101');
+      state.settings.setCultureFor('zz', const CultureOptions(items: false));
       expect(state.nextCultureItem('zz'), isNull);
+    });
+
+    test('offer a preview on Today once the rest is met, with Show', () async {
+      final progress = MemoryProgress();
+      final state = await cultureApp(progress: progress);
+      studyCard(progress, state, 'zz-en-proverbs-lugar', 'zz-7101');
+      final proverb = state.cultureItemById('zz', 'zz-7101')!;
+      expect(state.isCultureItemDone(proverb), isTrue);
+      expect(state.nextCultureItem('zz'), isNull);
+      state.settings.setCultureFor('zz', const CultureOptions(showAbove: true));
+      expect(state.nextCultureItem('zz')!.id, 'zz-7201');
     });
   });
 

@@ -74,14 +74,15 @@ class CultureDeckPage extends StatelessWidget {
     final scheme = theme.colorScheme;
     final info = cultureLanguage(state, language);
     final learner = state.levelIn(language);
-    final support = state.settings.cultureAboveSupport;
+    final options = state.settings.cultureFor(language);
+    final support = options.showAbove;
     final items = state.cultureItemsIn(language);
     final file = state.creatorsOf(language);
     final atLevel = items
         .where((i) => LevelGate.allows(i.level, learner))
         .length;
     final people = _people(state, file, support);
-    final showPeople = state.settings.cultureCreators;
+    final showPeople = options.creators;
     return Scaffold(
       appBar: AppBar(
         title: Text(

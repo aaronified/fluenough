@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import '../core/feedback/report.dart';
 import '../features/culture/culture_deck_page.dart';
 import '../features/culture/culture_item_page.dart';
-import '../features/culture/culture_settings_page.dart';
 import '../features/culture/culture_timeline.dart';
 import '../features/culture/recommendations_page.dart';
 import '../features/culture/work_questions_page.dart';
@@ -113,10 +112,6 @@ abstract final class AppRoutes {
   static const String settingsSupport = '/settings/support';
   static const String settingsFonts = '/settings/fonts';
 
-  /// Settings' Culture page: the switch, what to do above the learner's level,
-  /// how many items a unit is given. Deck-kinds plan, T20.
-  static const String settingsCulture = '/settings/culture';
-
   /// Profiles and privacy, opened from the profile card.
   static const String settingsProfiles = '/settings/profiles';
   static const String spokenLanguages = '/spoken-languages';
@@ -219,7 +214,6 @@ abstract final class AppRoutes {
       settingsUpdates => const UpdatesPage(),
       settingsSupport => const SupportPage(),
       settingsFonts => const ScriptFontsPage(),
-      settingsCulture => const CultureSettingsPage(),
       settingsProfiles => const ProfilesPrivacyPage(),
       spokenLanguages => const LanguagesPage(),
       learnLanguages => LanguagesPage(

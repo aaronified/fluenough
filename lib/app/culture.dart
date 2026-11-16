@@ -57,19 +57,21 @@ extension CultureState on AppState {
   }
 
   /// The culture items of [language] woven into its path for this learner:
-  /// the learner's level, the items per unit from Settings. Nothing for a
+  /// the learner's level, and per unit as many as the course needs so that
+  /// every item at or below the level appears ([culturePerUnitByLevel]: the
+  /// items of a level divided by its units, rounded up). Nothing for a
   /// language with no path or no levels.
   WovenCulture wovenCultureOf(String language) {
     final level = levelIn(language);
-    final per = settings.culturePerUnit;
-    return derived<WovenCulture>(('woven', language, level, per), () {
+    return derived<WovenCulture>(('woven', language, level), () {
       try {
         final plan = languagePathOf(language)?.plan ?? const <PlanUnit>[];
+        final items = cultureItemsIn(language);
         return weaveCulture(
           plan,
-          cultureItemsIn(language),
+          items,
           level,
-          perUnit: per,
+          perByLevel: culturePerUnitByLevel(plan, items),
         );
       } on Object catch (error, stack) {
         log.error('Culture of $language could not be woven: $error\n$stack');
@@ -91,10 +93,17 @@ extension CultureState on AppState {
       item.cards.isNotEmpty && item.cards.every(isTaught);
 
   /// The culture item Today offers for [language]: the first woven item not
-  /// met yet, or null when culture is off or all are met.
+  /// met yet, or, when [language]'s "Items above my level" is Show and every
+  /// woven one is met, the first item above the level (a preview, which opens
+  /// to read and cannot be learned); null when culture is off for the language
+  /// or nothing is left.
   CultureItem? nextCultureItem(String language) {
-    if (!settings.cultureItems) return null;
-    return wovenCultureOf(language).next(isCultureItemDone);
+    final options = settings.cultureFor(language);
+    if (!options.items) return null;
+    final woven = wovenCultureOf(language);
+    final next = woven.next(isCultureItemDone);
+    if (next != null || !options.showAbove) return next;
+    return woven.above.isEmpty ? null : woven.above.first;
   }
 
   /// The people of [language]'s culture, or null when it has none.
