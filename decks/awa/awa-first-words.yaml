@@ -19,7 +19,7 @@ cards:
     examples:
       - target: "हाँ, यह पानी आय।"
         reading: "hām̐, yah pānī āy."
-        ipa: "ɦaːĩ, jəɦ paːniː aːj"
+        ipa: "ɦaːĩ jəɦ paːniː aːj"
         bases:
           - { word: "यह", base: "यह", reading: "yah" }
           - { word: "पानी", base: "पानी", reading: "pānī" }
@@ -101,8 +101,8 @@ cards:
         bases:
           - { word: "वह", base: "वह", reading: "vah" }
           - { word: "घर", base: "घर", reading: "ghar" }
-          - { word: "आय", base: "आय", reading: "āy" }
           - { word: "मा", base: "मा", reading: "mā" }
+          - { word: "आय", base: "आय", reading: "āy" }
       - target: "वह डाक्टर आय।"
         reading: "vah ḍākṭar āy."
         ipa: "ʋəɦ ɖaːkʈər aːj"
@@ -118,7 +118,8 @@ cards:
     tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases:
+      - { word: "लोग", base: "लोग", reading: "log" }
     examples:
       - target: "हम लोग घर जाइत हन।"
         reading: "ham log ghar jāit han."
@@ -128,6 +129,7 @@ cards:
           - { word: "लोग", base: "लोग", reading: "log" }
           - { word: "घर", base: "घर", reading: "ghar" }
           - { word: "जाइत", base: "जाब", reading: "jāit" }
+          - { word: "हन", base: "हन", reading: "han" }
       - target: "हम लोग अवधी आही।"
         reading: "ham log avadhī āhī."
         ipa: "ɦəm loɡ əʋədʱiː aːɦiː"
@@ -412,9 +414,10 @@ cards:
           - { word: "माई", base: "माई", reading: "māī" }
           - { word: "घर", base: "घर", reading: "ghar" }
           - { word: "मा", base: "मा", reading: "mā" }
+          - { word: "आय", base: "आय", reading: "āy" }
       - target: "माई, पानी देव।"
         reading: "māī, pānī deo."
-        ipa: "maːiː, paːniː dəu"
+        ipa: "maːiː paːniː dəu"
         bases:
           - { word: "माई", base: "माई", reading: "māī" }
           - { word: "पानी", base: "पानी", reading: "pānī" }
@@ -439,7 +442,7 @@ cards:
           - { word: "आहैं", base: "आय", reading: "āhain" }
       - target: "बाबू, पानी?"
         reading: "bābū, pānī?"
-        ipa: "baːbuː, paːniː"
+        ipa: "baːbuː paːniː"
         bases:
           - { word: "बाबू", base: "बाबू", reading: "bābū" }
           - { word: "पानी", base: "पानी", reading: "pānī" }
@@ -461,9 +464,10 @@ cards:
           - { word: "भाई", base: "भाई", reading: "bhāī" }
           - { word: "घर", base: "घर", reading: "ghar" }
           - { word: "मा", base: "मा", reading: "mā" }
+          - { word: "आय", base: "आय", reading: "āy" }
       - target: "भाई, आवा!"
         reading: "bhāī, āvā!"
-        ipa: "bʰaːiː, aːʋaː"
+        ipa: "bʰaːiː aːʋaː"
         bases:
           - { word: "भाई", base: "भाई", reading: "bhāī" }
           - { word: "आवा", base: "आवब", reading: "āvā" }
@@ -484,13 +488,15 @@ cards:
           - { word: "हमार", base: "हमार", reading: "hamār" }
           - { word: "बहिन", base: "बहिन", reading: "bahin" }
           - { word: "विद्यार्थी", base: "विद्यार्थी", reading: "vidyārthī" }
+          - { word: "आय", base: "आय", reading: "āy" }
       - target: "बहिन, खाना तैयार आय।"
         reading: "bahin, khānā taiyār āy."
-        ipa: "bəɦin, kʰaːnaː təijaːr aːj"
+        ipa: "bəɦin kʰaːnaː təijaːr aːj"
         bases:
           - { word: "बहिन", base: "बहिन", reading: "bahin" }
           - { word: "खाना", base: "खाना", reading: "khānā" }
           - { word: "तैयार", base: "तैयार", reading: "taiyār" }
+          - { word: "आय", base: "आय", reading: "āy" }
   - id: "awa-0122"
     target: "लरिका"
     reading: "larikā"
@@ -507,6 +513,7 @@ cards:
         bases:
           - { word: "लरिका", base: "लरिका", reading: "larikā" }
           - { word: "खेलत", base: "खेलब", reading: "khelat" }
+          - { word: "आय", base: "आय", reading: "āy" }
       - target: "लरिका छोट आय।"
         reading: "larikā chhoṭ āy."
         ipa: "ləriːkaː t͡ʃʰoʈ aːj"
@@ -531,6 +538,7 @@ cards:
           - { word: "वह", base: "वह", reading: "vah" }
           - { word: "आदमी", base: "आदमी", reading: "ādmī" }
           - { word: "नीक", base: "नीक", reading: "nīk" }
+          - { word: "आय", base: "आय", reading: "āy" }
       - target: "आदमी घर मा आय।"
         reading: "ādmī ghar mā āy."
         ipa: "aːdmiː ɡʱər maː aːj"
@@ -538,6 +546,7 @@ cards:
           - { word: "आदमी", base: "आदमी", reading: "ādmī" }
           - { word: "घर", base: "घर", reading: "ghar" }
           - { word: "मा", base: "मा", reading: "mā" }
+          - { word: "आय", base: "आय", reading: "āy" }
   - id: "awa-0124"
     target: "औरत"
     reading: "aurat"
@@ -554,9 +563,10 @@ cards:
           - { word: "वह", base: "वह", reading: "vah" }
           - { word: "औरत", base: "औरत", reading: "aurat" }
           - { word: "डाक्टर", base: "डाक्टर", reading: "ḍākṭar" }
+          - { word: "आय", base: "आय", reading: "āy" }
       - target: "औरत, पानी देव।"
         reading: "aurat, pānī deo."
-        ipa: "əurət, paːniː dəu"
+        ipa: "əurət paːniː dəu"
         bases:
           - { word: "औरत", base: "औरत", reading: "aurat" }
           - { word: "पानी", base: "पानी", reading: "pānī" }
@@ -600,6 +610,7 @@ cards:
         bases:
           - { word: "खाना", base: "खाना", reading: "khānā" }
           - { word: "तैयार", base: "तैयार", reading: "taiyār" }
+          - { word: "आय", base: "आय", reading: "āy" }
       - target: "हम खाना खाब।"
         reading: "ham khānā khāb."
         ipa: "ɦəm kʰaːnaː kʰaːb"
@@ -649,12 +660,14 @@ cards:
           - { word: "हमार", base: "हमार", reading: "hamār" }
           - { word: "घर", base: "घर", reading: "ghar" }
           - { word: "बड़", base: "बड़", reading: "baṛ" }
+          - { word: "आय", base: "आय", reading: "āy" }
       - target: "घर कहाँ आय?"
         reading: "ghar kahām̐ āy?"
         ipa: "ɡʱər kəɦaːĩ aːj"
         bases:
           - { word: "घर", base: "घर", reading: "ghar" }
           - { word: "कहाँ", base: "कहाँ", reading: "kahām̐" }
+          - { word: "आय", base: "आय", reading: "āy" }
   - id: "awa-0129"
     target: "नाव"
     reading: "nāv"
@@ -672,6 +685,7 @@ cards:
           - { word: "आपके", base: "आप", reading: "āpke" }
           - { word: "नाव", base: "नाव", reading: "nāv" }
           - { word: "का", base: "का", reading: "kā" }
+          - { word: "आय", base: "आय", reading: "āy" }
       - target: "नाव नीक आय।"
         reading: "nāv nīk āy."
         ipa: "naːʋ niːk aːj"
@@ -702,6 +716,7 @@ cards:
           - { word: "आज", base: "आज", reading: "āj" }
           - { word: "मौसम", base: "मौसम", reading: "mausam" }
           - { word: "नीक", base: "नीक", reading: "nīk" }
+          - { word: "आय", base: "आय", reading: "āy" }
   - id: "awa-0131"
     target: "बड़ा"
     reading: "baṛā"
@@ -835,6 +850,7 @@ cards:
         bases:
           - { word: "को", base: "को", reading: "ko" }
           - { word: "आवत", base: "आवब", reading: "āvat" }
+          - { word: "आय", base: "आय", reading: "āy" }
   - id: "awa-0137"
     target: "कहाँ"
     reading: "kahām̐"
@@ -899,6 +915,7 @@ cards:
       - target: "आज पानी बरसी।"
         reading: "āj pānī barasī."
         ipa: "aːdʒ paːniː bərəsiː"
+
         bases:
           - { word: "आज", base: "आज", reading: "āj" }
           - { word: "पानी", base: "पानी", reading: "pānī" }

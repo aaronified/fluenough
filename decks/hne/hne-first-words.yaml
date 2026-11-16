@@ -42,8 +42,8 @@ cards:
           - { word: "नई", base: "नई", reading: "naī" }
           - { word: "मैं", base: "मैं", reading: "maiṁ" }
           - { word: "आवत", base: "आवत", reading: "āvat" }
-          - { word: "हवं", base: "हवं", reading: "havaṁ" }
           - { word: "नइं", base: "नइं", reading: "naiṁ" }
+          - { word: "हवं", base: "हवं", reading: "havaṁ" }
   - id: "hne-0103"
     target: "मैं"
     reading: "maiṁ"
@@ -125,7 +125,9 @@ cards:
     tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases:
+      - { word: "हम", base: "हम", reading: "ham" }
+      - { word: "मन", base: "मन", reading: "man" }
     examples:
       - target: "हम मन घर जावत हन।"
         reading: "ham man ghar jāvat han."
@@ -428,7 +430,7 @@ cards:
           - { word: "हे", base: "हे", reading: "he" }
       - target: "दाई, पानी दे।"
         reading: "dāī, pānī de."
-        ipa: "daːiː, paːniː de"
+        ipa: "daːiː paːniː de"
         bases:
           - { word: "दाई", base: "दाई", reading: "dāī" }
           - { word: "पानी", base: "पानी", reading: "pānī" }
@@ -453,7 +455,7 @@ cards:
           - { word: "हे", base: "हे", reading: "he" }
       - target: "ददा, पानी?"
         reading: "dadā, pānī?"
-        ipa: "dədaː, paːniː"
+        ipa: "dədaː paːniː"
         bases:
           - { word: "ददा", base: "ददा", reading: "dadā" }
           - { word: "पानी", base: "पानी", reading: "pānī" }
@@ -478,7 +480,7 @@ cards:
           - { word: "हे", base: "हे", reading: "he" }
       - target: "भाई, आ!"
         reading: "bhāī, ā!"
-        ipa: "bʰaːiː, aː"
+        ipa: "bʰaːiː aː"
         bases:
           - { word: "भाई", base: "भाई", reading: "bhāī" }
           - { word: "आ", base: "आ", reading: "ā" }
@@ -502,7 +504,7 @@ cards:
           - { word: "हे", base: "हे", reading: "he" }
       - target: "बहिनी, खाना तइयार हे।"
         reading: "bahinī, khānā taiyār he."
-        ipa: "bəɦiniː, kʰaːnaː təijaːr ɦe"
+        ipa: "bəɦiniː kʰaːnaː təijaːr ɦe"
         bases:
           - { word: "बहिनी", base: "बहिनी", reading: "bahinī" }
           - { word: "खाना", base: "खाना", reading: "khānā" }
@@ -578,7 +580,7 @@ cards:
           - { word: "हे", base: "हे", reading: "he" }
       - target: "मेहरारू, पानी दे।"
         reading: "mehrārū, pānī de."
-        ipa: "mehəraːruː, paːniː de"
+        ipa: "mehəraːruː paːniː de"
         bases:
           - { word: "मेहरारू", base: "मेहरारू", reading: "mehrārū" }
           - { word: "पानी", base: "पानी", reading: "pānī" }
@@ -937,6 +939,7 @@ cards:
       - target: "आज पानी गिरही।"
         reading: "āj pānī girahī."
         ipa: "aːdʒ paːniː ɡirəɦiː"
+
         bases:
           - { word: "आज", base: "आज", reading: "āj" }
           - { word: "पानी", base: "पानी", reading: "pānī" }
