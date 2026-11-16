@@ -62,7 +62,6 @@ class ContentReportButton extends StatelessWidget {
 Future<void> showContentReport(BuildContext context, ContentTarget target) =>
     showModalBottomSheet<void>(
       context: context,
-      showDragHandle: true,
       isScrollControlled: true,
       builder: (_) => ContentReportSheet(target: target),
     );
@@ -185,7 +184,7 @@ class _ContentReportSheetState extends State<ContentReportSheet> {
           24,
           0,
           24,
-          16 + MediaQuery.viewInsetsOf(context).bottom,
+          12 + MediaQuery.viewInsetsOf(context).bottom,
         ),
         child: _done ? _doneView(l10n) : _form(l10n),
       ),
@@ -246,17 +245,32 @@ class _ContentReportSheetState extends State<ContentReportSheet> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
+        // A drag handle, drawn small: the sheet has to fit without
+        // scrolling at 1.4x text on a 360 x 740 dp screen.
+        ExcludeSemantics(
+          child: Center(
+            child: Container(
+              width: 32,
+              height: 4,
+              margin: const EdgeInsets.symmetric(vertical: 10),
+              decoration: BoxDecoration(
+                color: scheme.onSurfaceVariant.withValues(alpha: 0.4),
+                borderRadius: BorderRadius.circular(2),
+              ),
+            ),
+          ),
+        ),
         Semantics(
           header: true,
           child: Text(
             l10n.contentReportTitle(target.subject.name),
-            style: theme.textTheme.titleLarge,
+            style: theme.textTheme.titleMedium,
           ),
         ),
-        const SizedBox(height: 12),
+        const SizedBox(height: 8),
         Container(
           key: const ValueKey<String>('content-report-context'),
-          padding: const EdgeInsets.all(12),
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
           decoration: BoxDecoration(
             color: scheme.surfaceContainerHighest,
             borderRadius: BorderRadius.circular(AppRadii.field),
@@ -265,11 +279,12 @@ class _ContentReportSheetState extends State<ContentReportSheet> {
             contextLines(target.context('fluenough ${AppInfo.version}')),
             style: theme.textTheme.bodySmall!.copyWith(
               fontFamily: 'monospace',
+              fontFamilyFallback: const <String>[interfaceFontFamily],
               color: scheme.onSurfaceVariant,
             ),
           ),
         ),
-        const SizedBox(height: 4),
+        const SizedBox(height: 2),
         Semantics(
           container: true,
           explicitChildNodes: true,
@@ -287,10 +302,17 @@ class _ContentReportSheetState extends State<ContentReportSheet> {
             ),
           ),
         ),
-        const SizedBox(height: 4),
+        const SizedBox(height: 2),
         TextField(
           controller: _note,
           maxLength: contentNoteLength,
+          // The 140 limit is kept; its counter is left out to save a line.
+          buildCounter: (
+            context, {
+            required currentLength,
+            required isFocused,
+            required maxLength,
+          }) => null,
           maxLines: 1,
           textInputAction: TextInputAction.done,
           decoration: InputDecoration(
@@ -310,7 +332,7 @@ class _ContentReportSheetState extends State<ContentReportSheet> {
             ),
           ),
         ],
-        const SizedBox(height: 8),
+        const SizedBox(height: 4),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
@@ -333,24 +355,49 @@ class _ContentReportSheetState extends State<ContentReportSheet> {
   }
 
   Widget _row(AppLocalizations l10n, ContentCategory category) {
+    final theme = Theme.of(context);
     final target = widget.target;
     final popup = category.hasPopup(target);
     final chosen = _category == category ? _reason : null;
-    return ListTile(
+    return InkWell(
       key: ValueKey<String>('content-report-${category.name}'),
-      dense: true,
-      contentPadding: EdgeInsets.zero,
-      minLeadingWidth: 24,
-      leading: Radio<ContentCategory>(
-        value: category,
-        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      ),
-      title: Text(
-        popup ? category.text(l10n) : category.only(target).text(l10n),
-      ),
-      subtitle: popup && chosen != null ? Text(chosen.text(l10n)) : null,
-      trailing: popup ? const Icon(Icons.chevron_right) : null,
       onTap: () => _pick(category),
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 48),
+        child: Padding(
+          padding: const EdgeInsetsDirectional.symmetric(vertical: 4),
+          child: Row(
+            children: <Widget>[
+              Radio<ContentCategory>(
+                value: category,
+                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              ),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      popup
+                          ? category.text(l10n)
+                          : category.only(target).text(l10n),
+                      style: theme.textTheme.bodyMedium,
+                    ),
+                    if (popup && chosen != null)
+                      Text(
+                        chosen.text(l10n),
+                        style: theme.textTheme.bodySmall!.copyWith(
+                          color: theme.colorScheme.onSurfaceVariant,
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+              if (popup) const Icon(Icons.chevron_right),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

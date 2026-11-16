@@ -94,7 +94,6 @@ void main() {
       for (final category in ContentCategory.values) {
         expect(_row(category), findsOneWidget);
       }
-      expect(find.byType(ListTile), findsNWidgets(5));
 
       // The tallest state: a reason chosen shows its line under the row.
       await tester.tap(_row(ContentCategory.wrongOptions));
@@ -273,7 +272,7 @@ void main() {
       usePhone(tester);
       final state = AppState.test();
       await state.load();
-      final entry = state.deckById('hi-en-words')!;
+      final entry = state.deckById('te-en-family')!;
       await pumpScreen(
         tester,
         Scaffold(
@@ -288,7 +287,7 @@ void main() {
         find.textContaining('Card: ${entry.cards.first.id}'),
         findsOneWidget,
       );
-      expect(find.textContaining('Deck: hi-en-words'), findsOneWidget);
+      expect(find.textContaining('Deck: te-en-family'), findsOneWidget);
     });
 
     for (final (name, page) in <(String, Widget)>[
