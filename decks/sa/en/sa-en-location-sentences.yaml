@@ -1,0 +1,28 @@
+schema: 1
+id: "sa-en-location-sentences"
+kind: "layer"
+core: "sa-location-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about place"
+description: "Short sentences about place, built only from words already taught. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-3100":
+    native: "Water is everywhere."
+    confusables: { "w1": { why: "Here, not everywhere: इह (iha) means here." }, "w2": { why: "Outside, not everywhere: बहिः (bahiḥ) means outside." } }
+  "sa-3101":
+    native: "I drink outside."
+    bases: { "पिबामि": "to drink (I drink)" }
+    confusables: { "w1": { why: "Inside, not outside: अन्तः (antaḥ) means inside." }, "w2": { why: "Far away, not outside: दूरे (dūre) means far away." } }
+  "sa-3102":
+    native: "I go elsewhere."
+    bases: { "गच्छामि": "to go (I go)" }
+    confusables: { "w1": { why: "Everywhere, not elsewhere: सर्वत्र (sarvatra) means everywhere." }, "w2": { why: "Far away, not elsewhere: दूरे (dūre) means far away." } }
+  "sa-3103":
+    native: "The water is far away."
+    bases: { "जलं": "water" }
+    confusables: { "w1": { why: "Inside, not far away: अन्तः (antaḥ) means inside." }, "w2": { why: "Here, not far away: इह (iha) means here." } }
+  "sa-3104":
+    native: "The cow is in between."
+    confusables: { "w1": { why: "Below, not between: अधः (adhaḥ) means below." }, "w2": { why: "Horse, not cow: अश्वः (aśvaḥ) means horse." } }

@@ -1,0 +1,43 @@
+schema: 1
+id: "sa-location-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3100"
+    target: "सर्वत्र जलम्."
+    reading: "sarvatra jalam."
+    ipa: "sərʋət̪rə dʒələm"
+    pos: "phrase"
+    bases: [{ word: "सर्वत्र", ref: "sa-1554" }, { word: "जलम्", ref: "sa-0023" }]
+    confusables: [{ id: "w1", ref: "sa-1555", kind: "word" }, { id: "w2", ref: "sa-1556", kind: "word" }]
+  - id: "sa-3101"
+    target: "बहिः पिबामि."
+    reading: "bahiḥ pibāmi."
+    ipa: "bəɦih pibaːmi"
+    pos: "phrase"
+    bases: [{ word: "बहिः", ref: "sa-1556" }, { word: "पिबामि", base: "पा", reading: "pā" }]
+    confusables: [{ id: "w1", ref: "sa-1557", kind: "word" }, { id: "w2", ref: "sa-1558", kind: "word" }]
+  - id: "sa-3102"
+    target: "अन्यत्र गच्छामि."
+    reading: "anyatra gacchāmi."
+    ipa: "ənjət̪rə ɡətʃtʃʰaːmi"
+    pos: "phrase"
+    bases: [{ word: "अन्यत्र", ref: "sa-1640" }, { word: "गच्छामि", base: "गम्", reading: "gam" }]
+    confusables: [{ id: "w1", ref: "sa-1554", kind: "word" }, { id: "w2", ref: "sa-1558", kind: "word" }]
+  - id: "sa-3103"
+    target: "जलं दूरे."
+    reading: "jalaṃ dūre."
+    ipa: "dʒələm d̪uːreː"
+    pos: "phrase"
+    bases: [{ word: "जलं", base: "जलम्", reading: "jalam" }, { word: "दूरे", ref: "sa-1558" }]
+    confusables: [{ id: "w1", ref: "sa-1557", kind: "word" }, { id: "w2", ref: "sa-1555", kind: "word" }]
+  - id: "sa-3104"
+    target: "अन्तरा गौः."
+    reading: "antarā gauḥ."
+    ipa: "ənt̪əraː ɡəuh"
+    pos: "phrase"
+    bases: [{ word: "अन्तरा", ref: "sa-1642" }, { word: "गौः", ref: "sa-0028" }]
+    confusables: [{ id: "w1", ref: "sa-1643", kind: "word" }, { id: "w2", ref: "sa-0029", kind: "word" }]

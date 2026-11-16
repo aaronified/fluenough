@@ -84,3 +84,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | sa-3082 | sa-describing-sentences (describing unit) | Is पतिः पुराणः, the husband is old, a natural predicate? | Haiku deck worker | 2026-11-16 |
 | sa-3086 | sa-describing-sentences (describing unit) | Is एषः पिता, this one is father, natural with the masculine demonstrative एषः? | Haiku deck worker | 2026-11-16 |
 | sa-3094 | sa-time-sentences (time unit) | Is वर्षा कदा, when is the rain, natural, or is a season word expected? | Haiku deck worker | 2026-11-16 |
+| sa-3104 | sa-location-sentences (location unit) | Is अन्तरा गौः, the cow is in between, a natural sentence? | Haiku deck worker | 2026-11-16 |
