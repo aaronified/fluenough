@@ -96,14 +96,14 @@ String _fakeIndex(String path, {String? minApp}) => jsonEncode({
           'size': 1,
           'sha256': _hash,
           'content_sha256': _hash,
-          if (minApp != null) 'min_app': minApp,
+          'min_app': ?minApp,
         },
       ],
     },
   ],
 });
 
-const _unknownStandard = """
+const _unknownStandard = '''
 schema: 1
 kind: romanisation
 id: xx-romanisation
@@ -112,7 +112,7 @@ scheme: "Letters."
 standard: "No Such Standard"
 typed:
   - ["a", "a"]
-""";
+''';
 
 void main() {
   test('a file gated above the release is skipped; an ungated one is not', () {
