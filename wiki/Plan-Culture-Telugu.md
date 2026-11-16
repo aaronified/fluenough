@@ -58,6 +58,19 @@ Reserve: another Pothana verse, another Peddana verse. This task creates `decks/
 
 **What would unblock it:** readable te.wikisource text (a transcription, not a PDF scan) for these works, plus two sources giving lifespan years.
 
+**Third sourcing attempt, 2026-11-16.**
+
+- **Result:** 4 more Tikkana items te-8754 to te-8757 (PR #1500, pending merge), from proofread te.wikisource Page: pages (Page:భారతం-విరాటోద్యోగం.pdf/9 and /175, Page:నిర్వచనోత్తరరామాయణము.pdf/18). Dates 1205-1288 agreed by en.wikipedia and te.wikipedia (Wikidata's authority record says 1220-1300: not used). te.wikipedia also names him author of the Nirvachanottara Ramayanam, which supports that card.
+- **Nannaya:** no lifespan years in any source: en and te Wikipedia say only "11th century"; Wikidata Q3595179 has no dates; te.wikisource Adi Parvam is an index with no readable text: dropped.
+- **Errana / Errapragada:** only one lifespan source: te.wikipedia c. 1280-1364 (estimate); en.wikipedia gives only the court period 1325-1353; no readable Aranya or Narasimha ashvasa page found; the existing card te-8752 stays: dropped.
+- **Srinatha:** sources disagree: en.wikipedia c. 1355-1360 to 1441, Wikidata 1365-1440, te.wikipedia 1360-1470; te.wikisource Sringara Naishadham page missing: dropped.
+- **Allasani Peddana:** no death year in any source; birth conflicts: te.wikipedia Saka 1430 (about 1508 CE), Wikidata 1550: dropped.
+- **Nandi Thimmana:** no lifespan years: en.wikipedia blank, te.wikipedia "16th century", Wikidata none: dropped.
+- **Gaurana:** only te.wikipedia gives a period, first half of the 15th century; no en.wikipedia page; Wikidata no dates; te.wikisource hits are preface pages only: dropped.
+- **Pothana (Gajendra Moksham):** te.wikisource page missing; Pothana's dates unsettled: en.wikipedia 1400-1475, Wikidata 1450-1510 unreferenced, te.wikipedia no years: dropped.
+- **Hosts:** en.wikipedia, te.wikipedia, wikidata, te.wikisource, en.wikisource, commons and en.wikiquote answered 200 (no poet pages on en.wikiquote; en.wikisource no hits). archive.org, britannica.com, gutenberg.org, dli.ernet.in and sahitya-akademi.gov.in returned 403 (proxy policy denial, not retried).
+- **What would unblock the dropped poets:** readable te.wikisource text (a transcription, not an index or PDF scan) and two sources giving lifespan years.
+
 ### TE-036, `te-culture-2`: devotional verse and music (te-8800 to 8849)
 
 The plan gives candidates in no fixed order. The builder keeps only items whose text it reads on the cited Wikisource page.
