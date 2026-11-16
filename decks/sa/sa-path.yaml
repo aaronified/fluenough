@@ -222,7 +222,8 @@ units:
       - { id: "agriculture-heard", text: { "en": "A short passage in Classical Sanskrit on the theme farming and the harvest, read aloud" } }
     reading_passages:
       - { id: "agriculture-text", text: { "en": "A short written text in Classical Sanskrit on the theme farming and the harvest" } }
-  - planned: { id: "sa-grammar-past-tenses", grammar: ["past-tenses", "aorist", "perfect", "imperfect"] }
+  - decks: ["sa-grammar-past-tenses"]
+    grammar: ["imperfect-active", "imperfect-middle", "perfect-active", "perfect-middle", "aorist-active", "aorist-middle"]
     listening_passages:
       - { id: "grammar-past-tenses-heard", text: { "en": "A short passage in Classical Sanskrit showing past tenses, aorist, perfect, imperfect, read aloud" } }
     reading_passages:
