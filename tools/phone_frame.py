@@ -40,11 +40,17 @@ def margins(width: int) -> tuple[int, int]:
     return max(6, round(width * 0.04)), max(3, round(width * 0.012))
 
 
+def status_band(width: int) -> int:
+    """The height of the blank band above the screenshot, where the camera
+    dot sits so that it never covers the app."""
+    return round(width * 0.075)
+
+
 def frame_size(screen_size: tuple[int, int]) -> tuple[int, int]:
     """The size of the framed image for a screen of [screen_size]."""
     width, height = screen_size
     bezel, button = margins(width)
-    return width + 2 * (bezel + button), height + 2 * bezel
+    return width + 2 * (bezel + button), height + status_band(width) + 2 * bezel
 
 
 def frame_phone(screen):
@@ -54,8 +60,14 @@ def frame_phone(screen):
 
     screen = screen.convert("RGB")
     w, h = screen.size
+    # A blank status band on top, in the screenshot's own top colour.
+    band = status_band(w)
+    banded = Image.new("RGB", (w, h + band), screen.getpixel((w // 2, 0)))
+    banded.paste(screen, (0, band))
+    screen = banded
+    h += band
     bezel, button = margins(w)
-    out_w, out_h = frame_size(screen.size)
+    out_w, out_h = frame_size((w, h - band))
     ss = _SUPERSAMPLE
     radius = round(w * 0.13)
     inner_radius = max(4, radius - bezel)
@@ -122,7 +134,7 @@ def frame_phone(screen):
     # The camera: a dot at the top of the screen, on a thin ring.
     dot = max(3, round(w * 0.022))
     cx = body_left + bezel + w / 2
-    cy = bezel + max(dot * 2.2, w * 0.045)
+    cy = bezel + band / 2
     layer = Image.new("RGBA", (out_w * ss, out_h * ss), (0, 0, 0, 0))
     ld = ImageDraw.Draw(layer)
     ring = dot + max(1, round(dot * 0.3))
