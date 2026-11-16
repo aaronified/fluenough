@@ -397,6 +397,18 @@ Future<void> _learningSession(
         AppRoutes.drill,
         arguments: DrillRequest.lesson(language: 'bn'),
       );
+  // The page builds its queue after real asynchronous work, which only runs
+  // outside the test's fake clock: wait for it there.
+  for (var i = 0; i < 100; i++) {
+    await tester.runAsync(
+      () => Future<void>.delayed(const Duration(milliseconds: 100)),
+    );
+    await tester.pump(const Duration(milliseconds: 100));
+    if (_session(tester) != null ||
+        find.byType(ScriptGuideView).evaluate().isNotEmpty) {
+      break;
+    }
+  }
   await _settle(tester);
   // A script guide first, if the lesson meets one.
   if (find.byType(ScriptGuideView).evaluate().isNotEmpty) {
