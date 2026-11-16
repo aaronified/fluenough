@@ -2666,7 +2666,10 @@ class AppState extends ChangeNotifier {
         isPlaced(entry) ||
         _cultureOff(entry) ||
         !canDrill(entry) ||
-        notStudiedIn(entry) == 0,
+        // A unit none of whose cards can be learned yet is never done: only
+        // one the learner has begun is (it just never holds the path back,
+        // see [_isTaughtOut]).
+        (notStudiedIn(entry) == 0 && entry.cards.any(isTaught)),
   );
 
   /// The units Today teaches new cards from: for each language the profile

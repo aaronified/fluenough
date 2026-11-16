@@ -41,7 +41,7 @@ language: { code: hi, iso639_3: hin, name: Hindustani, script: $script, scripts:
 native: { code: $native, iso639_3: $iso, name: $nativeName }
 license: CC0-1.0
 ${isScript ? 'tags: [script]\n' : ''}cards:
-${<String>[for (var i = 1; i <= cards; i++) '  - { id: hi-$native-$id-000$i, target: "क", native: "k$i", reading: "ka" }'].join('\n')}
+${<String>[for (var i = 1; i <= cards; i++) '  - { id: hi-$native-$id-000$i, target: "क$id$i", native: "k$i", reading: "ka" }'].join('\n')}
 ''';
 }
 
