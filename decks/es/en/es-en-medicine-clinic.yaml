@@ -1,0 +1,36 @@
+schema: 1
+id: "es-en-medicine-clinic"
+kind: "layer"
+core: "es-medicine-clinic"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Medicine: a clinic appointment"
+license: "CC-BY-SA-4.0"
+description: "Words and phrases for a visit to the doctor: the appointment, the symptoms, and the instructions the doctor gives."
+cards:
+  "es-4662":
+    native: "What is wrong?"
+    notes: { n1: "Le is the usted form, the one a doctor uses with an adult patient." }
+  "es-4663":
+    native: "I have had a fever since yesterday."
+  "es-4664":
+    native: "My head hurts."
+    notes: { n1: "Duele agrees with the thing that hurts: Me duelen los ojos means My eyes hurt." }
+  "es-4665":
+    native: "Since when have you had these symptoms?"
+    notes: { n1: "Tiene is the usted form, used by a doctor to an adult patient." }
+  "es-4666":
+    native: "Breathe deeply."
+    notes: { n1: "Respire is the usted command, the form a doctor uses with an adult patient." }
+  "es-4667":
+    native: "Take one tablet every eight hours."
+  "es-4668":
+    native: "Do you have health insurance?"
+    notes: { n1: "Tiene is the usted form; to a friend you would say ¿Tienes seguro médico?" }
+  "es-4669":
+    native: "Come back in a week."
+  "es-4670":
+    native: "blood pressure"
+    bases: { "la": "the", "presión": "pressure", "arterial": "arterial" }
+    examples:
+      "Me miden la presión arterial.": { native: "They take my blood pressure." }
+      "La presión arterial está alta.": { native: "My blood pressure is high." }

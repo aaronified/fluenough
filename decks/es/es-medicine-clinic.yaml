@@ -1,0 +1,78 @@
+schema: 1
+id: "es-medicine-clinic"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+genre: "professional"
+professional: "medicine"
+hidden: true
+level: "B1"
+tags: ["unreviewed"]
+cards:
+  - id: "es-4662"
+    target: "¿Qué le pasa?"
+    ipa: "ke le ˈpasa"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4663"
+    target: "Tengo fiebre desde ayer."
+    ipa: "ˈtenɡo ˈfjebɾe ˈdesde aˈʝeɾ"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+  - id: "es-4664"
+    target: "Me duele la cabeza."
+    ipa: "me ˈdwele la kaˈbeθa"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4665"
+    target: "¿Desde cuándo tiene estos síntomas?"
+    ipa: "ˈdesde ˈkwando ˈtjene ˈestos ˈsintomas"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4666"
+    target: "Respire hondo."
+    ipa: "resˈpiɾe ˈondo"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4667"
+    target: "Tome una pastilla cada ocho horas."
+    ipa: "ˈtome ˈuna pasˈtiʝa ˈkada ˈotʃo ˈoɾas"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+  - id: "es-4668"
+    target: "¿Tiene seguro médico?"
+    ipa: "ˈtjene seˈɡuɾo ˈmediko"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4669"
+    target: "Vuelva en una semana."
+    ipa: "ˈbwelba en ˈuna seˈmana"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+  - id: "es-4670"
+    target: "la presión arterial"
+    ipa: "la pɾeˈsjon aɾteˈɾjal"
+    pos: "noun"
+    gender: "f"
+    modes: ["recognition", "production"]
+    bases: [{ word: "la", base: "la" }, { word: "presión", base: "presión" }, { word: "arterial", base: "arterial" }]
+    examples:
+      - target: "Me miden la presión arterial."
+        ipa: "me ˈmiden la pɾeˈsjon aɾteˈɾjal"
+        bases: [{ word: "Me", base: "me" }, { word: "miden", base: "medir" }, { word: "la", base: "la" }, { word: "presión", base: "presión" }, { word: "arterial", base: "arterial" }]
+      - target: "La presión arterial está alta."
+        ipa: "la pɾeˈsjon aɾteˈɾjal esˈta ˈalta"
+        bases: [{ word: "La", base: "la" }, { word: "presión", base: "presión" }, { word: "arterial", base: "arterial" }, { word: "está", base: "estar" }, { word: "alta", base: "alto" }]
+  - ref: "es-4607"
+  - ref: "es-0506"
+  - ref: "es-0844"
+  - ref: "es-1470"
+  - ref: "es-0873"
+  - ref: "es-1488"
+  - ref: "es-1302"
