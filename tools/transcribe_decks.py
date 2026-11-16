@@ -345,6 +345,12 @@ class _Scan:
                     f"{self.path.name} {name}: {key}: {f[0]}")
                 continue
             line, start, end, stored = f
+            if key == "ipa" and self.lang == "zh" and not computed[key]:
+                # Mandarin pinyin the tool cannot read gives an empty IPA:
+                # never blank (or report as a difference) a stored ipa.
+                report.unreadable.append(
+                    f"{self.path.name} {name}: ipa: pinyin not read; kept")
+                continue
             if key == "reading":
                 report.readings.append(
                     (self.path, line, start, stored, computed[key]))

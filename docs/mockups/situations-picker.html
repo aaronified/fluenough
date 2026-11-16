@@ -56,10 +56,11 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 .grid li{display:block;min-width:0;position:relative}
 /* selected tile: filled, in its own colours */
-.tile{width:100%;height:100%;min-height:calc(86px*var(--t));border:0;border-radius:12px;padding:10px 2px 8px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:5px;text-align:center;
+.tile{width:100%;height:100%;min-height:calc(86px*var(--t));border:0;border-radius:12px;padding:10px 2px 8px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:4px;text-align:center;
  background:var(--c);color:var(--oc);position:relative}
 .tile .ico{width:40px;height:40px;border-radius:50%;background:color-mix(in srgb,var(--oc) 12%,transparent);display:flex;align-items:center;justify-content:center}
-.tile .lb{font-size:calc(14px*var(--t));line-height:1.2;font-weight:700;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;max-width:100%}
+.tile .lw{flex:1;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:0 4px}
+.tile .lb{font-size:calc(13px*var(--t));line-height:1.2;font-weight:700;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;max-width:100%}
 .tile .x{position:absolute;top:3px;right:3px;width:24px;height:24px;border-radius:50%;background:color-mix(in srgb,var(--oc) 16%,transparent);display:flex;align-items:center;justify-content:center}
 .tile .x svg.i{width:16px;height:16px}
 .tile:focus-visible,.slot:focus-visible{outline:3px solid var(--p);outline-offset:2px}
@@ -68,6 +69,7 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .drop .tile{outline:2px solid var(--p);outline-offset:2px}
 .drop-gap{border-radius:12px}
 /* empty slot: dashed, not interactive */
+.grid li>.slot{height:100%}
 .slot{min-height:calc(86px*var(--t));border-radius:12px;border:2px dashed var(--ol);display:flex;align-items:center;justify-content:center;color:var(--onSv);opacity:.9}
 .slot svg.i{opacity:.7}
 /* unselected tile: neutral surface, outline, coloured icon only */
@@ -76,6 +78,7 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .tile.muted .add{position:absolute;top:3px;right:3px;width:24px;height:24px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv);display:flex;align-items:center;justify-content:center}
 .tile.muted .add svg.i{width:16px;height:16px}
 .tile.muted .lb{font-weight:500}
+.tile .lw{flex:1;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:0 4px}
 .tile .lb{overflow-wrap:normal;word-break:normal;hyphens:none}
 .tile.muted:disabled{cursor:not-allowed;background:transparent;color:var(--onSv);box-shadow:inset 0 0 0 1px var(--olv)}
 .tile.muted:disabled .ico{color:var(--onSv);opacity:.7}
@@ -149,7 +152,7 @@ const SIT=[
  {id:'eat',t:'Eating out',i:'eat',m:'speaking'},
  {id:'doctor',t:'Doctor and pharmacy',i:'doctor',m:'pair'},
  {id:'greet',t:'Greetings and apologies',i:'greet',m:'speaking'},
- {id:'emerg',t:'Emergencies',i:'emerg',m:'gesture'},
+ {id:'emerg',t:'Emergency',i:'emerg',m:'gesture'},
  {id:'traffic',t:'Traffic stop',i:'traffic',m:'recognition'},
  {id:'rail',t:'Rail station',i:'rail',m:'listening'},
  {id:'post',t:'Post and bank',i:'post',m:'reading'},
@@ -160,13 +163,13 @@ const S={theme:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'
 const F=[
  {cap:'a. 4 of 6: room to add',on:['taxi','shops','eat','doctor']},
  {cap:'b. 6 of 6: full, the rest disabled',on:['taxi','shops','eat','doctor','greet','emerg']},
- {cap:'c. 5 of 6, mid-drag (Emergencies lifted over Eating out)',on:['taxi','shops','eat','doctor','emerg'],drag:'emerg',over:'eat'}];
-const STRESS=[['Emergencies','gesture','emerg'],['Doctor and pharmacy','pair','doctor'],['Greetings and apologies','speaking','greet'],['క్షమాపణలు మరియు శుభాకాంక్షలు','speaking','greet'],['अभिवादन और क्षमायाचना','speaking','greet'],['অভিবাদন ও ক্ষমাপ্রার্থনা','speaking','greet']];
+ {cap:'c. 5 of 6, mid-drag (Emergency lifted over Eating out)',on:['taxi','shops','eat','doctor','emerg'],drag:'emerg',over:'eat'}];
+const STRESS=[['Emergency','gesture','emerg'],['Doctor and pharmacy','pair','doctor'],['Greetings and apologies','speaking','greet'],['క్షమాపణలు మరియు శుభాకాంక్షలు','speaking','greet'],['अभिवादन और क्षमायाचना','speaking','greet'],['অভিবাদন ও ক্ষমাপ্রার্থনা','speaking','greet']];
 function stress(){
  return `<div class="fcol"><div class="fcap">d. Stress row: longest labels at 1.4x (Telugu, Hindi, Bengali last)</div>
  <div class="ph" style="min-height:0"><div class="stage"><div class="dlg"><h2>Stress row</h2><ol class="grid">${STRESS.map(([t,m,i])=>tileOn({id:i,t,i,m},{},1)).join('')}</ol><ul class="fitlog" id="fitlog"></ul></div></div></div></div>`}
 function today(){
- const tiles=STRESS.map(([t,m,i],n)=>{const [c,oc]=MC[S.theme][m];return `<li><div class="tile" style="--c:${c};--oc:${oc}" role="button" tabindex="0" aria-label="${t}, ${n+2} new"><span class="ico">${ic(i)}</span><span class="lb">${t}</span><span class="nw">${n+2} new</span></div></li>`}).join('');
+ const tiles=STRESS.map(([t,m,i],n)=>{const [c,oc]=MC[S.theme][m];return `<li><div class="tile" style="--c:${c};--oc:${oc}" role="button" tabindex="0" aria-label="${t}, ${n+2} new"><span class="ico">${ic(i)}</span><span class="lw"><span class="lb">${t}</span><span class="nw">${n+2} new</span></span></div></li>`}).join('');
  return `<div class="fcol"><div class="fcap">e. Today homepage strip: the same six stress labels (same fit helper)</div>
  <div class="ph" style="min-height:0"><div class="today"><div class="th"><h2>Situations</h2><span class="pen">${ic('edit')}</span></div><ol class="grid">${tiles}</ol></div></div></div>`}
 const DEF=SIT.slice(0,MAX).map(s=>s.id);
@@ -174,9 +177,9 @@ const by=id=>SIT.find(s=>s.id===id);
 function tileOn(s,f,pos){
  const [c,oc]=MC[S.theme][s.m];
  const cls=(f.drag===s.id?' lift':'')+(f.over===s.id?' drop':'');
- return `<li class="${cls.trim()}"><button class="tile" style="--c:${c};--oc:${oc}" data-id="${s.id}" aria-label="${s.t}, on Today, place ${pos}. Tap to remove."><span class="ico">${ic(s.i)}</span><span class="lb">${s.t}</span>${S.x==='x'?`<span class="x">${ic('close')}</span>`:''}</button></li>`}
+ return `<li class="${cls.trim()}"><button class="tile" style="--c:${c};--oc:${oc}" data-id="${s.id}" aria-label="${s.t}, on Today, place ${pos}. Tap to remove."><span class="ico">${ic(s.i)}</span><span class="lw"><span class="lb">${s.t}</span></span>${S.x==='x'?`<span class="x">${ic('close')}</span>`:''}</button></li>`}
 function tileOff(s,full){
- return `<li><button class="tile muted" style="--ic:${ICO(S.theme,s.m)}" data-id="${s.id}" ${full?'disabled aria-label="'+s.t+', not on Today. Remove one to add another."':'aria-label="'+s.t+', not on Today. Tap to add."'}><span class="ico">${ic(s.i)}</span><span class="lb">${s.t}</span><span class="add">${ic('add')}</span></button></li>`}
+ return `<li><button class="tile muted" style="--ic:${ICO(S.theme,s.m)}" data-id="${s.id}" ${full?'disabled aria-label="'+s.t+', not on Today. Remove one to add another."':'aria-label="'+s.t+', not on Today. Tap to add."'}><span class="ico">${ic(s.i)}</span><span class="lw"><span class="lb">${s.t}</span></span><span class="add">${ic('add')}</span></button></li>`}
 function frame(f,k){
  const on=f.on,full=on.length>=MAX;
  const off=SIT.filter(s=>!on.includes(s.id));
@@ -207,7 +210,7 @@ function build(){
  document.querySelectorAll('.seg').forEach(s=>s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',S[s.dataset.k]==b.dataset.v)));
 }
 /* Fit order (see the .md): 1 wrap at spaces (up to 3 lines), 2 letter-spacing down to -0.02em, 3 font size down by at most 2 sp (x1.4), never break a word. */
-const BASE=14*1.4,MIN=12*1.4;
+const BASE=13*1.4,MIN=11*1.4;
 function fits(el){return el.scrollWidth<=el.clientWidth+0.5&&el.scrollHeight<=el.clientHeight+0.5}
 function fitAll(){
  const log=[];

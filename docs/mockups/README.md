@@ -2,6 +2,8 @@
 
 The wiki is the source of truth for documentation: https://github.com/aaronified/fluenough/wiki
 
+**Rule:** Share the mockup's HTML and .md files with the owner, not screenshots.
+
 ## Awaiting approval
 
 - `today-chain.html`: the Today chain's screens still to build (owner,
