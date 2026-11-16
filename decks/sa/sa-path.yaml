@@ -58,33 +58,18 @@ units:
     words: 10
   - decks: ["sa-sound-differences"]
     words: 22
-  - planned: { id: "sa-questions", theme: "questions", words: 7 }
-    listening_passages:
-      - { id: "questions-heard", text: { "en": "A short passage in Classical Sanskrit on the theme yes, no and questions, read aloud" } }
-    reading_passages:
-      - { id: "questions-text", text: { "en": "A short written text in Classical Sanskrit on the theme yes, no and questions" } }
-  - planned: { id: "sa-pronouns", theme: "pronouns", words: 14 }
-    listening_passages:
-      - { id: "pronouns-heard", text: { "en": "A short passage in Classical Sanskrit on the theme pronouns and people words, read aloud" } }
-    reading_passages:
-      - { id: "pronouns-text", text: { "en": "A short written text in Classical Sanskrit on the theme pronouns and people words" } }
-  - planned: { id: "sa-family", theme: "family", words: 16 }
-    listening_passages:
-      - { id: "family-heard", text: { "en": "A short passage in Classical Sanskrit on the theme family, read aloud" } }
-    reading_passages:
-      - { id: "family-text", text: { "en": "A short written text in Classical Sanskrit on the theme family" } }
-  - planned: { id: "sa-numbers-1-20", theme: "numbers-1-20", words: 13 }
-    listening_passages:
-      - { id: "numbers-1-20-heard", text: { "en": "A short passage in Classical Sanskrit on the theme numbers 1 to 20, read aloud" } }
-    reading_passages:
-      - { id: "numbers-1-20-text", text: { "en": "A short written text in Classical Sanskrit on the theme numbers 1 to 20" } }
+  - decks: ["sa-questions"]
+    words: 7
+  - decks: ["sa-pronouns"]
+    words: 14
+  - decks: ["sa-family"]
+    words: 16
+  - decks: ["sa-numbers-1-20"]
+    words: 13
   - ["sa-script-vowels", "sa-script-consonants", "sa-script-vowel-signs", "sa-script-digits"]
   - ["sa-script-conjuncts", "sa-script-reading", "sa-spelling"]
-  - planned: { id: "sa-about-me", theme: "about-me", words: 5 }
-    listening_passages:
-      - { id: "about-me-heard", text: { "en": "A short passage in Classical Sanskrit on the theme naming and introducing oneself, read aloud" } }
-    reading_passages:
-      - { id: "about-me-text", text: { "en": "A short written text in Classical Sanskrit on the theme naming and introducing oneself" } }
+  - decks: ["sa-about-me"]
+    words: 5
   - planned: { id: "sa-everyday-verbs", theme: "everyday-verbs", words: 24 }
     listening_passages:
       - { id: "everyday-verbs-heard", text: { "en": "A short passage in Classical Sanskrit on the theme everyday verbs of the first class, read aloud" } }
@@ -114,11 +99,8 @@ units:
       - { id: "grammar-sandhi-vowel-heard", text: { "en": "A short passage in Classical Sanskrit showing vowel sandhi, read aloud" } }
     reading_passages:
       - { id: "grammar-sandhi-vowel-text", text: { "en": "A short written text in Classical Sanskrit showing vowel sandhi" } }
-  - planned: { id: "sa-adverbs", theme: "adverbs", words: 24 }
-    listening_passages:
-      - { id: "adverbs-heard", text: { "en": "A short passage in Classical Sanskrit on the theme adverbs and particles, read aloud" } }
-    reading_passages:
-      - { id: "adverbs-text", text: { "en": "A short written text in Classical Sanskrit on the theme adverbs and particles" } }
+  - decks: ["sa-adverbs"]
+    words: 24
   - decks: ["sa-quantities"]
     words: 14
   - planned: { id: "sa-describing", theme: "describing", words: 24 }

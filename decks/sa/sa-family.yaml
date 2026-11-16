@@ -1,0 +1,368 @@
+schema: 1
+id: "sa-family"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "family"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-1030"
+    target: "माता"
+    reading: "mātā"
+    ipa: "maːt̪aː"
+    pos: "noun"
+    gender: "f"
+    tags: ["family"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "माता", base: "मातृ", reading: "mātṛ" }
+    examples:
+      - target: "माता करोति"
+        reading: "mātā karoti"
+        ipa: "maːt̪aː kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+      - target: "माता जानाति"
+        reading: "mātā jānāti"
+        ipa: "maːt̪aː dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+  - id: "sa-1031"
+    target: "पिता"
+    reading: "pitā"
+    ipa: "pit̪aː"
+    pos: "noun"
+    gender: "m"
+    tags: ["family"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "पिता", base: "पितृ", reading: "pitṛ" }
+    examples:
+      - target: "पिता जानाति"
+        reading: "pitā jānāti"
+        ipa: "pit̪aː dʒaːnaːt̪i"
+        bases:
+          - { word: "पिता", base: "पितृ", reading: "pitṛ" }
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "पिता करोति"
+        reading: "pitā karoti"
+        ipa: "pit̪aː kəroːt̪i"
+        bases:
+          - { word: "पिता", base: "पितृ", reading: "pitṛ" }
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1032"
+    target: "भ्राता"
+    reading: "bhrātā"
+    ipa: "bʱraːt̪aː"
+    pos: "noun"
+    gender: "m"
+    tags: ["family"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "भ्राता", base: "भ्रातृ", reading: "bhrātṛ" }
+    examples:
+      - target: "भ्राता जानाति"
+        reading: "bhrātā jānāti"
+        ipa: "bʱraːt̪aː dʒaːnaːt̪i"
+        bases:
+          - { word: "भ्राता", base: "भ्रातृ", reading: "bhrātṛ" }
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "भ्राता करोति"
+        reading: "bhrātā karoti"
+        ipa: "bʱraːt̪aː kəroːt̪i"
+        bases:
+          - { word: "भ्राता", base: "भ्रातृ", reading: "bhrātṛ" }
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1033"
+    target: "स्वसा"
+    reading: "svasā"
+    ipa: "sʋəsaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["family"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "स्वसा", base: "स्वसृ", reading: "svasṛ" }
+    examples:
+      - target: "स्वसा जानाति"
+        reading: "svasā jānāti"
+        ipa: "sʋəsaː dʒaːnaːt̪i"
+        bases:
+          - { word: "स्वसा", base: "स्वसृ", reading: "svasṛ" }
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "स्वसा करोति"
+        reading: "svasā karoti"
+        ipa: "sʋəsaː kəroːt̪i"
+        bases:
+          - { word: "स्वसा", base: "स्वसृ", reading: "svasṛ" }
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1034"
+    target: "पुत्री"
+    reading: "putrī"
+    ipa: "put̪riː"
+    pos: "noun"
+    gender: "f"
+    tags: ["family"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "पुत्री जानाति"
+        reading: "putrī jānāti"
+        ipa: "put̪riː dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "पुत्री करोति"
+        reading: "putrī karoti"
+        ipa: "put̪riː kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1035"
+    target: "दुहिता"
+    reading: "duhitā"
+    ipa: "d̪uɦit̪aː"
+    pos: "noun"
+    gender: "f"
+    tags: ["family"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "दुहिता", base: "दुहितृ", reading: "duhitṛ" }
+    examples:
+      - target: "दुहिता जानाति"
+        reading: "duhitā jānāti"
+        ipa: "d̪uɦit̪aː dʒaːnaːt̪i"
+        bases:
+          - { word: "दुहिता", base: "दुहितृ", reading: "duhitṛ" }
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "दुहिता करोति"
+        reading: "duhitā karoti"
+        ipa: "d̪uɦit̪aː kəroːt̪i"
+        bases:
+          - { word: "दुहिता", base: "दुहितृ", reading: "duhitṛ" }
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1036"
+    target: "पतिः"
+    reading: "patiḥ"
+    ipa: "pət̪ih"
+    pos: "noun"
+    gender: "m"
+    tags: ["family"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "पतिः", base: "पति", reading: "pati" }
+    examples:
+      - target: "पतिः जानाति"
+        reading: "patiḥ jānāti"
+        ipa: "pət̪ih dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "पतिः करोति"
+        reading: "patiḥ karoti"
+        ipa: "pət̪ih kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1037"
+    target: "पत्नी"
+    reading: "patnī"
+    ipa: "pət̪niː"
+    pos: "noun"
+    gender: "f"
+    tags: ["family"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "पत्नी जानाति"
+        reading: "patnī jānāti"
+        ipa: "pət̪niː dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "पत्नी करोति"
+        reading: "patnī karoti"
+        ipa: "pət̪niː kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1038"
+    target: "सखा"
+    reading: "sakhā"
+    ipa: "səkʰaː"
+    pos: "noun"
+    gender: "m"
+    tags: ["family"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "सखा जानाति"
+        reading: "sakhā jānāti"
+        ipa: "səkʰaː dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "सखा करोति"
+        reading: "sakhā karoti"
+        ipa: "səkʰaː kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1039"
+    target: "बन्धुः"
+    reading: "bandhuḥ"
+    ipa: "bənd̪ʱuh"
+    pos: "noun"
+    gender: "m"
+    tags: ["family"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "बन्धुः", base: "बन्धु", reading: "bandhu" }
+    examples:
+      - target: "बन्धुः जानाति"
+        reading: "bandhuḥ jānāti"
+        ipa: "bənd̪ʱuh dʒaːnaːt̪i"
+        bases:
+          - { word: "बन्धुः", base: "बन्धु", reading: "bandhu" }
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "बन्धुः करोति"
+        reading: "bandhuḥ karoti"
+        ipa: "bənd̪ʱuh kəroːt̪i"
+        bases:
+          - { word: "बन्धुः", base: "बन्धु", reading: "bandhu" }
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1040"
+    target: "वधूः"
+    reading: "vadhūḥ"
+    ipa: "ʋəd̪ʱuːh"
+    pos: "noun"
+    gender: "f"
+    tags: ["family"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "वधूः", base: "वधू", reading: "vadhū" }
+    examples:
+      - target: "वधूः जानाति"
+        reading: "vadhūḥ jānāti"
+        ipa: "ʋəd̪ʱuːh dʒaːnaːt̪i"
+        bases:
+          - { word: "वधूः", base: "वधू", reading: "vadhū" }
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "वधूः करोति"
+        reading: "vadhūḥ karoti"
+        ipa: "ʋəd̪ʱuːh kəroːt̪i"
+        bases:
+          - { word: "वधूः", base: "वधू", reading: "vadhū" }
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1041"
+    target: "सूनुः"
+    reading: "sūnuḥ"
+    ipa: "suːnuh"
+    pos: "noun"
+    gender: "m"
+    tags: ["family"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "सूनुः", base: "सूनु", reading: "sūnu" }
+    examples:
+      - target: "सूनुः जानाति"
+        reading: "sūnuḥ jānāti"
+        ipa: "suːnuh dʒaːnaːt̪i"
+        bases:
+          - { word: "सूनुः", base: "सूनु", reading: "sūnu" }
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "सूनुः करोति"
+        reading: "sūnuḥ karoti"
+        ipa: "suːnuh kəroːt̪i"
+        bases:
+          - { word: "सूनुः", base: "सूनु", reading: "sūnu" }
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1042"
+    target: "नारी"
+    reading: "nārī"
+    ipa: "naːriː"
+    pos: "noun"
+    gender: "f"
+    tags: ["family"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "नारी जानाति"
+        reading: "nārī jānāti"
+        ipa: "naːriː dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "नारी करोति"
+        reading: "nārī karoti"
+        ipa: "naːriː kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1043"
+    target: "स्त्री"
+    reading: "strī"
+    ipa: "st̪riː"
+    pos: "noun"
+    gender: "f"
+    tags: ["family"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "स्त्री जानाति"
+        reading: "strī jānāti"
+        ipa: "st̪riː dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "स्त्री करोति"
+        reading: "strī karoti"
+        ipa: "st̪riː kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1044"
+    target: "सुता"
+    reading: "sutā"
+    ipa: "sut̪aː"
+    pos: "noun"
+    gender: "f"
+    tags: ["family"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "सुता जानाति"
+        reading: "sutā jānāti"
+        ipa: "sut̪aː dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "सुता करोति"
+        reading: "sutā karoti"
+        ipa: "sut̪aː kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
+  - id: "sa-1045"
+    target: "जननी"
+    reading: "jananī"
+    ipa: "dʒənəniː"
+    pos: "noun"
+    gender: "f"
+    tags: ["family"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases: "self"
+    examples:
+      - target: "जननी जानाति"
+        reading: "jananī jānāti"
+        ipa: "dʒənəniː dʒaːnaːt̪i"
+        bases:
+          - { word: "जानाति", base: "ज्ञा", reading: "jñā" }
+      - target: "जननी करोति"
+        reading: "jananī karoti"
+        ipa: "dʒənəniː kəroːt̪i"
+        bases:
+          - { word: "करोति", base: "कृ", reading: "kṛ" }
