@@ -3989,7 +3989,7 @@ downloaded when the learner adds it.
 source:
   author: "Gurajada Apparao"      # or "anonymous"
   work: "Kanyasulkam"             # proverbs: `collection:`
-  date: 1892                      # a year, "1892-1909" or "c. 1750"
+  date: 1892                      # a year, "1892-1909" or "c. 1750"; BCE is negative: -479, "c. -400", "-475 to -221"
   edition: "Visalandhra, 1962"    # edition or url
   url: "https://example.org/..."
   basis: "public-domain"          # public-domain | licensed | quotation | oral-tradition

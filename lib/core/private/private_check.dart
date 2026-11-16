@@ -821,7 +821,8 @@ abstract final class PrivateCheck {
       } else if (basis == 'public-domain') {
         final died = source['author_died'];
         final date = '${source['date'] ?? ''}';
-        final year = int.tryParse(date.replaceAll(RegExp(r'[^0-9].*$'), ''));
+        final yearText = RegExp(r'^(?:c\.\s?)?(-?\d+)').firstMatch(date);
+        final year = yearText == null ? null : int.tryParse(yearText.group(1)!);
         final anonymousOld =
             source['author'] == 'anonymous' && year != null && year < 1900;
         if (died is! int && !anonymousOld) {

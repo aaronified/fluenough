@@ -7358,16 +7358,23 @@ def pd_term(jurisdiction: object) -> int:
 
 def parse_years(value: object) -> tuple[int, int] | None:
     """A source's `date`: a year (1892), a span ("1892-1909"), or "c. 1750",
-    as its first and last year; None for anything else."""
+    as its first and last year; None for anything else. A BCE year is
+    negative, as a creator's `born` is: -479, "c. -400", "-475 to -221",
+    "-475--221". There is no year 0."""
     if isinstance(value, bool):
         return None
     if isinstance(value, int):
-        return (value, value) if 1 <= value <= 9999 else None
+        return (value, value) if (1 <= value <= 9999 or -9999 <= value <= -1) else None
     if isinstance(value, str):
-        m = re.fullmatch(r"(?:c\.\s?)?([0-9]{3,4})(?:-([0-9]{3,4}))?", value.strip())
+        first_re = r"(?:[0-9]{3,4}|-[0-9]{1,4})"
+        last_re = r"-?[0-9]{1,4}"
+        m = re.fullmatch(
+            rf"(?:c\.\s?)?({first_re})(?:(?:\s+to\s+|-)({last_re}))?", value.strip())
         if m:
             first = int(m.group(1))
             last = int(m.group(2)) if m.group(2) else first
+            if first == 0 or last == 0:
+                return None
             return (first, last) if first <= last else None
     return None
 
@@ -7527,8 +7534,8 @@ def check_source_block(r: Report, where: str, source: object, *, genre: str | No
         r.error(p, f"url must be an https link, got {source['url']!r}")
     years = parse_years(source.get("date")) if "date" in source else None
     if "date" in source and years is None:
-        r.error(p, f"date must be a year, a span like \"1892-1909\", or \"c. 1750\", "
-                   f"got {source['date']!r}")
+        r.error(p, f"date must be a year, a span like \"1892-1909\" or \"-475 to -221\", "
+                   f"or \"c. 1750\" (a BCE year is negative), got {source['date']!r}")
     if "jurisdiction" in source and not (
             isinstance(source["jurisdiction"], str)
             and re.fullmatch(r"[A-Z]{2}", source["jurisdiction"])):
