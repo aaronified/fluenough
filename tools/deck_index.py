@@ -294,6 +294,31 @@ FONTS = {
     "han": ("Noto Sans JP", "NotoSansJP.ttf"),
     "kana": ("Noto Sans JP", "NotoSansJP.ttf"),
     "hangul": ("Noto Sans KR", "NotoSansKR.ttf"),
+    "thai": ("Noto Sans Thai", "NotoSansThai.ttf"),
+    "meitei_mayek": ("Noto Sans Meetei Mayek", "NotoSansMeeteiMayek.ttf"),
+    "brahmi": ("Noto Sans Brahmi", "NotoSansBrahmi.ttf"),
+    # The content fonts (owner, 2026-11-16: "Latin languages can share one
+    # font. Same for Cyrillic. I don't want to depend on system fonts for
+    # content."): one Noto Sans subset per script, shared by every language
+    # in it, and always downloaded with a course, never asked about. Latin
+    # holds the IPA, Latin Extended and combining marks the decks use.
+    "latin": ("Noto Sans", "NotoSansLatin.ttf"),
+    "cyrillic": ("Noto Sans", "NotoSansCyrillic.ttf"),
+    "greek": ("Noto Sans", "NotoSansGreek.ttf"),
+}
+CONTENT_FONTS = ("latin", "cyrillic", "greek")
+# Every course lists the Latin font too: its decks quote readings and IPA in
+# Latin letters, so that no content character falls back to the phone's font.
+COMPANION_FONT = "latin"
+# Scripts that share another script's font file instead of having their own:
+# Arabic is Naskh, Punjabi's Shahmukhi is the Urdu Nastaliq, and the IPA is
+# set in the Latin font. The app's `scriptFontAliases`
+# (lib/core/decks/script_fonts.dart) holds the same table, and a test keeps
+# the two equal.
+FONT_ALIASES = {
+    "arabic": "perso_arabic_naskh",
+    "shahmukhi": "perso_arabic",
+    "ipa": "latin",
 }
 FONTS_DIR = DECKS / "fonts"
 
@@ -515,12 +540,19 @@ def _scripts_of(code: str, block: dict, scripts: dict[str, list[str]]) -> list[s
 def _font_entries(scripts: list[str], code: str = "") -> list[dict]:
     """The fonts of [scripts] that decks/fonts/ holds (ADR-0042), in the
     order of [scripts]. [code] is the language: LANGUAGE_FONTS swaps a
-    script's font for the one its language draws it in."""
+    script's font for the one its language draws it in, and FONT_ALIASES
+    for the scripts that share another's file. Every language ends with the
+    Latin font (COMPANION_FONT)."""
     entries = []
-    for script in scripts:
-        script = LANGUAGE_FONTS.get((code, script), script)
-        if script not in FONTS:
+    seen = set()
+    wanted = [LANGUAGE_FONTS.get((code, s), FONT_ALIASES.get(s, s))
+              for s in scripts]
+    if code and COMPANION_FONT not in wanted:
+        wanted.append(COMPANION_FONT)
+    for script in wanted:
+        if script not in FONTS or script in seen:
             continue
+        seen.add(script)
         family, name = FONTS[script]
         path = FONTS_DIR / script / name
         if not path.is_file():

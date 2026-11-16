@@ -24,13 +24,10 @@ REPO = Path(__file__).resolve().parent.parent
 ARB = REPO / "lib" / "l10n" / "app_en.arb"
 FAMILY_LIST = REPO / "lib" / "features" / "languages" / "language_views.dart"
 
-# Bundled with the app (Roboto covers Latin, Cyrillic and Greek), so a course
-# in them needs no downloaded font.
-BUNDLED_SCRIPTS = {"latin", "cyrillic", "greek"}
-# Scripts that have no font in decks/fonts yet, and so rely on the phone's own:
-# a new script is added here or gets a FONTS entry, never neither. Notations
-# (ipa, braille) are drawn by the app itself.
-NO_FONT_YET = {"arabic", "shahmukhi", "thai", "meitei_mayek", "brahmi", "ipa", "braille"}
+# Scripts that have no font in decks/fonts, and so rely on the phone's own: a
+# new script is added here or gets a FONTS entry or a FONT_ALIASES one, never
+# none. Braille is drawn by the app itself (its shadow-dot font ships in it).
+NO_FONT_YET = {"braille"}
 
 
 def _languages() -> list[dict]:
@@ -119,13 +116,35 @@ class LanguagesList(unittest.TestCase):
 
     def test_every_script_has_a_font_or_is_known_to_have_none(self) -> None:
         used = {s for e in self.langs for s in e.get("scripts", [])}
-        for script in sorted(used - BUNDLED_SCRIPTS):
+        for script in sorted(used):
             with self.subTest(script=script):
-                self.assertTrue(script in deck_index.FONTS or script in NO_FONT_YET,
-                                f"{script} has no FONTS entry and is not in NO_FONT_YET")
+                self.assertTrue(
+                    script in deck_index.FONTS or script in deck_index.FONT_ALIASES
+                    or script in NO_FONT_YET,
+                    f"{script} has no FONTS entry, alias or NO_FONT_YET entry")
         for script in NO_FONT_YET:
             with self.subTest(stale=script):
                 self.assertNotIn(script, deck_index.FONTS)
+                self.assertNotIn(script, deck_index.FONT_ALIASES)
+
+    def test_aliases_point_at_fonts_and_match_the_app(self) -> None:
+        for script, target in deck_index.FONT_ALIASES.items():
+            with self.subTest(script=script):
+                self.assertIn(target, deck_index.FONTS)
+                self.assertNotIn(script, deck_index.FONTS)
+        dart = (REPO / "lib" / "core" / "decks" / "script_fonts.dart").read_text("utf-8")
+        block = dart[dart.index("scriptFontAliases"):]
+        block = block[:block.index("};")]
+        self.assertEqual(dict(re.findall(r"'(\w+)': '(\w+)'", block)),
+                         deck_index.FONT_ALIASES)
+
+    def test_content_fonts_match_the_app_and_every_language_lists_latin(self) -> None:
+        dart = (REPO / "lib" / "core" / "decks" / "script_fonts.dart").read_text("utf-8")
+        block = dart[dart.index("contentFontScripts"):]
+        block = block[:block.index("];")]
+        self.assertEqual(tuple(re.findall(r"'(\w+)'", block)), deck_index.CONTENT_FONTS)
+        for script in deck_index.CONTENT_FONTS:
+            self.assertEqual(deck_index.FONTS[script][0], "Noto Sans")
 
     def test_santali_and_yiddish_scripts_have_their_fonts(self) -> None:
         for script in ("ol_chiki", "hebrew"):

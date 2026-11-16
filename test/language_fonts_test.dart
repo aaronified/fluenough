@@ -21,7 +21,7 @@ void main() {
     expect(fontScriptFor('fa', 'perso_arabic'), 'perso_arabic_naskh');
     expect(fontScriptFor('ps', 'perso_arabic'), 'perso_arabic_naskh');
     expect(fontScriptFor('hi', 'perso_arabic'), 'perso_arabic');
-    expect(fontScriptFor('pa', 'shahmukhi'), 'shahmukhi');
+    expect(fontScriptFor('pa', 'shahmukhi'), 'perso_arabic');
     expect(fontScriptFor('te', 'telugu'), 'telugu');
   });
 
