@@ -1,0 +1,62 @@
+# Kannada's situation sheets (#724): lists of card ids, never card text. Every id
+# is a card of a Kannada deck, so progress, audio and notes are the card's own.
+# Draft: the choice of cards and the Kannada titles need a Kannada reviewer.
+schema: 1
+id: kn-situations
+name: "Kannada situations"
+kind: situations
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+description: "Key phrases and words for everyday moments. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+situations:
+  - id: "taxi"
+    icon: "taxi"
+    title: { en: "Taxi", kn: "ಟ್ಯಾಕ್ಸಿ" }
+    phrases: ["kn-7790", "kn-0347", "kn-0349", "kn-7787", "kn-7792"]
+    words: ["kn-0342", "kn-0343", "kn-0344", "kn-0345", "kn-0350"]
+  - id: "shops"
+    icon: "shops"
+    title: { en: "Shopping", kn: "ಖರೀದಿ" }
+    phrases: ["kn-0297", "kn-7028", "kn-7035", "kn-7437", "kn-7439", "kn-7032", "kn-7034"]
+    words: ["kn-0298", "kn-0299", "kn-0300", "kn-0301", "kn-1025", "kn-1036", "kn-1040", "kn-1041", "kn-0173", "kn-0304"]
+  - id: "eat"
+    icon: "eat"
+    title: { en: "Eating out", kn: "ಹೋಟೆಲ್" }
+    phrases: ["kn-8201", "kn-8203", "kn-0502", "kn-7777", "kn-8206", "kn-0503", "kn-8208", "kn-7778", "kn-8202"]
+    words: ["kn-0491", "kn-0492", "kn-0493", "kn-0494", "kn-0498", "kn-0501", "kn-0764", "kn-0765", "kn-0766"]
+  - id: "doctor"
+    icon: "doctor"
+    title: { en: "Doctor and pharmacy", kn: "ವೈದ್ಯರು ಮತ್ತು ಔಷಧಾಲಯ (vaidyaru mattu auṣadhālaya)" }
+    phrases: ["kn-7447", "kn-7448", "kn-7815", "kn-7859", "kn-7814"]
+    words: ["kn-1063", "kn-0235", "kn-1065", "kn-1080", "kn-1085", "kn-0818", "kn-1310", "kn-0529", "kn-0530", "kn-0861"]
+  - id: "traffic"
+    icon: "traffic"
+    title: { en: "Traffic stop", kn: "ಟ್ರಾಫಿಕ್" }
+    phrases: ["kn-0526", "kn-8299", "kn-7445", "kn-0349"]
+    words: ["kn-0113", "kn-0227", "kn-0378", "kn-0527", "kn-1429"]
+  - id: "rail"
+    icon: "rail"
+    title: { en: "Rail station", kn: "ರೈಲು ನಿಲ್ದಾಣ (railu nildāṇa)" }
+    phrases: ["kn-7788", "kn-7091", "kn-7794", "kn-0533"]
+    words: ["kn-0350", "kn-0351", "kn-0352", "kn-1219"]
+  - id: "hotel"
+    icon: "hotel"
+    title: { en: "Hotel", kn: "ವಸತಿಗೃಹ" }
+    phrases: ["kn-8251", "kn-8254", "kn-8255", "kn-8260", "kn-7156"]
+    words: ["kn-1385", "kn-1386", "kn-1388", "kn-1389", "kn-1601", "kn-0389", "kn-1599"]
+  - id: "post-bank"
+    icon: "post"
+    title: { en: "Post and bank", kn: "ಅಂಚೆ ಮತ್ತು ಬ್ಯಾಂಕು (añce mattu byāṅku)" }
+    phrases: ["kn-7124", "kn-7125", "kn-7519", "kn-7518"]
+    words: ["kn-0828", "kn-0829", "kn-1402", "kn-1405", "kn-1406", "kn-1407", "kn-1682", "kn-1681", "kn-1691", "kn-1684", "kn-1609"]
+  - id: "greetings"
+    icon: "greeting"
+    title: { en: "Greetings and apologies", kn: "ನಮಸ್ಕಾರ ಮತ್ತು ಕ್ಷಮಿಸಿ (namaskāra mattu kṣamisi)" }
+    phrases: ["kn-0142", "kn-0144", "kn-0145", "kn-0146", "kn-0148", "kn-0153", "kn-7375"]
+    words: ["kn-0147", "kn-0164", "kn-0165", "kn-0190", "kn-0191", "kn-1591"]
+  - id: "emergencies"
+    icon: "emergency"
+    title: { en: "Emergencies", kn: "ತುರ್ತು" }
+    phrases: ["kn-7509", "kn-7511", "kn-0524", "kn-0525", "kn-0531", "kn-7446", "kn-7444", "kn-7451"]
+    words: ["kn-1610", "kn-1611", "kn-1612", "kn-1613", "kn-0527", "kn-0528", "kn-0523", "kn-0526", "kn-1620"]

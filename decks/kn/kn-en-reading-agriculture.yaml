@@ -1,0 +1,40 @@
+schema: 1
+id: "kn-en-reading-agriculture"
+name: "Reading: market prices"
+kind: reading
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short passage written for this course, using only the words of its unit and the units before it. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-market-prices"
+    title: "Market prices"
+    sentences:
+      - text: "ರಾಗಿ ಕಿಲೋಗೆ ಮೂವತ್ತು ರೂಪಾಯಿ."
+        reading: "rāgi kilōge mūvattu rūpāyi."
+        ipa: "raːɡi kiloːɡe muːʋat̪t̪u ruːpaːji"
+      - text: "ಜೋಳ ಕಿಲೋಗೆ ಇಪ್ಪತ್ತು ರೂಪಾಯಿ."
+        reading: "jōḷa kilōge ippattu rūpāyi."
+        ipa: "dʒoːɭa kiloːɡe ippat̪t̪u ruːpaːji"
+      - text: "ಟೊಮೆಟೊ ತುಂಬಾ ದುಬಾರಿ."
+        reading: "ṭomeṭo tumbā dubāri."
+        ipa: "ʈomeʈo t̪umbaː d̪ubaːri"
+      - text: "ಹತ್ತಿ ಬೆಲೆ ಕಡಿಮೆ."
+        reading: "hatti bele kaḍime."
+        ipa: "hat̪t̪i bele kaɖime"
+    questions:
+      - id: "kn-9712"
+        prompt: { en: "What does ragi cost per kilo?" }
+        options:
+          - { en: "30 rupees" }
+          - { en: "20 rupees" }
+          - { en: "100 rupees" }
+        answer: 1
+      - id: "kn-9713"
+        prompt: { en: "Tomatoes are expensive." }
+        answer: true
+      - id: "kn-9714"
+        prompt: { en: "Cotton is expensive." }
+        answer: false

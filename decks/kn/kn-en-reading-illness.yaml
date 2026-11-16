@@ -1,0 +1,47 @@
+schema: 1
+id: "kn-en-reading-illness"
+name: "Reading: the medicine label"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A Kannada passage written for this course with the words taught up to its unit (the label on a packet of medicine). Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-medicine-label"
+    title: "Medicine label"
+    sentences:
+      - text: "ದಿನಕ್ಕೆ ಎರಡು ಮಾತ್ರೆ."
+        reading: "dinakke eraḍu mātre."
+        ipa: "d̪inakke eraɖu maːt̪re"
+      - text: "ರಾತ್ರಿ ಊಟದ ನಂತರ ತಿನ್ನಿ."
+        reading: "rātri ūṭada nantara tinni."
+        ipa: "raːt̪ri uːʈad̪a nant̪ara t̪inni"
+      - text: "ತಲೆನೋವು ಇದ್ದರೆ ವೈದ್ಯರನ್ನು ಕೇಳಿ."
+        reading: "talenōvu iddare vaidyarannu kēḷi."
+        ipa: "t̪alenoːʋu id̪d̪are ʋaid̪jarannu keːɭi"
+      - text: "ಹುಷಾರಿಲ್ಲದಿದ್ದರೆ ವಿಶ್ರಾಂತಿ ಮಾಡಿ."
+        reading: "huṣārilladiddare viśrānti māḍi."
+        ipa: "huʂaːrillad̪id̪d̪are ʋiʃraːnt̪i maːɖi"
+      - text: "ಒಂದು ವಾರದಲ್ಲಿ ಆರೋಗ್ಯ ಗುಣವಾಗುತ್ತದೆ."
+        reading: "ondu vāradalli ārōgya guṇavāguttade."
+        ipa: "ond̪u ʋaːrad̪alli aːroːɡja ɡuɳaʋaːɡut̪t̪ad̪e"
+    questions:
+      - id: "kn-9346"
+        prompt: { en: "How many tablets a day?" }
+        options:
+          - { en: "One" }
+          - { en: "Two" }
+          - { en: "Three" }
+        answer: 2
+      - id: "kn-9347"
+        prompt: { en: "What should you do if you have a headache?" }
+        options:
+          - { en: "Ask the doctor" }
+          - { en: "Sing a song" }
+          - { en: "Go to school" }
+        answer: 1
+      - id: "kn-9348"
+        prompt: { en: "Your health gets better in one week." }
+        answer: true

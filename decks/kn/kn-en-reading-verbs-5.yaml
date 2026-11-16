@@ -1,0 +1,40 @@
+schema: 1
+id: "kn-en-reading-verbs-5"
+name: "Reading: newspaper feature"
+kind: reading
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short passage written for this course, using only the words of its unit and the units before it. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-newspaper-feature"
+    title: "Newspaper feature"
+    sentences:
+      - text: "ಈ ವಾರ ನಮ್ಮ ಊರಿನಲ್ಲಿ ಹೊಸ ಶಾಲೆ ಆರಂಭಿಸಲಾಗಿದೆ."
+        reading: "ī vāra namma ūrinalli hosa śāle ārambhisalāgide."
+        ipa: "iː ʋaːra namma uːrinalli hosa ʃaːle aːrambʱisalaːɡid̪e"
+      - text: "ಶಿಕ್ಷಕರು ಹೇಳಿದರು."
+        reading: "śikṣakaru hēḷidaru."
+        ipa: "ʃikʂakaru heːɭid̪aru"
+      - text: "ಮಕ್ಕಳು ತುಂಬಾ ಸಂತೋಷ ಪಡುತ್ತಾರೆ."
+        reading: "makkaḷu tumbā santōṣa paḍuttāre."
+        ipa: "makkaɭu t̪umbaː sant̪oːʂa paɖut̪t̪aːre"
+      - text: "ಮುಂದಿನ ವರ್ಷ ಒಂದು ಶಾಲೆ ಕಟ್ಟಲಾಗುವುದು."
+        reading: "mundina varṣa ondu śāle kaṭṭalāguvudu."
+        ipa: "mund̪ina ʋarʂa ond̪u ʃaːle kaʈʈalaːɡuʋud̪u"
+    questions:
+      - id: "kn-9733"
+        prompt: { en: "What was started in the town?" }
+        options:
+          - { en: "A new school" }
+          - { en: "A new road" }
+          - { en: "A new bank" }
+        answer: 1
+      - id: "kn-9734"
+        prompt: { en: "The teacher said something." }
+        answer: true
+      - id: "kn-9735"
+        prompt: { en: "The children are happy." }
+        answer: true

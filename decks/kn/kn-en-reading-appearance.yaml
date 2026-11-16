@@ -1,0 +1,40 @@
+schema: 1
+id: "kn-en-reading-appearance"
+name: "Reading: lost and found notice"
+kind: reading
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short passage written for this course, using only the words of its unit and the units before it. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-lost-and-found-notice"
+    title: "Lost and found notice"
+    sentences:
+      - text: "ಇಲ್ಲಿ ಒಬ್ಬ ಯುವಕನ ಬ್ಯಾಗ್ ಇದೆ."
+        reading: "illi obba yuvakana byāg ide."
+        ipa: "illi obba juʋakana bjaːɡ id̪e"
+      - text: "ಯುವಕ ಉದ್ದ ಮತ್ತು ತೆಳ್ಳಗೆ."
+        reading: "yuvaka udda mattu teḷḷage."
+        ipa: "juʋaka ud̪d̪a mat̪t̪u t̪eɭɭaɡe"
+      - text: "ಬ್ಯಾಗ್ ಕೆಂಪು ಬಣ್ಣದ್ದು."
+        reading: "byāg kempu baṇṇaddu."
+        ipa: "bjaːɡ kempu baɳɳad̪d̪u"
+      - text: "ಯಾರದು? ಹೇಳಿ."
+        reading: "yāradu? hēḷi."
+        ipa: "jaːrad̪u heːɭi"
+    questions:
+      - id: "kn-9691"
+        prompt: { en: "What colour is the bag?" }
+        options:
+          - { en: "Red" }
+          - { en: "Blue" }
+          - { en: "Green" }
+        answer: 1
+      - id: "kn-9692"
+        prompt: { en: "The owner is tall and thin." }
+        answer: true
+      - id: "kn-9693"
+        prompt: { en: "The owner is short." }
+        answer: false

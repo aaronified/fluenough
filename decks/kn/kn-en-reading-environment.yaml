@@ -1,0 +1,47 @@
+schema: 1
+id: "kn-en-reading-environment"
+name: "Reading: a clean-up notice"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A Kannada passage written for this course with the words taught up to its unit (a notice for a neighbourhood clean-up). Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-clean-up-notice"
+    title: "Clean-up notice"
+    sentences:
+      - text: "ಭಾನುವಾರ ಬೆಳಿಗ್ಗೆ ಎಂಟು ಗಂಟೆಗೆ ಬನ್ನಿ."
+        reading: "bhānuvāra beḷigge eṇṭu gaṇṭege banni."
+        ipa: "bʱaːnuʋaːra beɭiɡɡe eɳʈu ɡaɳʈeɡe banni"
+      - text: "ನಾವು ಉದ್ಯಾನ ಸ್ವಚ್ಛಗೊಳಿಸುತ್ತೇವೆ."
+        reading: "nāvu udyāna svacchagoḷisuttēve."
+        ipa: "naːʋu ud̪jaːna sʋatʃtʃʰaɡoɭisut̪t̪eːʋe"
+      - text: "ಪ್ಲಾಸ್ಟಿಕ್ ಮರುಬಳಕೆ ಮಾಡಿ."
+        reading: "plāsṭik marubaḷake māḍi."
+        ipa: "plaːsʈik marubaɭake maːɖi"
+      - text: "ಪರಿಸರ ಉಳಿಸಿ."
+        reading: "parisara uḷisi."
+        ipa: "parisara uɭisi"
+      - text: "ಬನ್ನಿ, ನಮ್ಮ ಪರಿಸರವನ್ನು ಕಾಪಾಡೋಣ."
+        reading: "banni, namma parisaravannu kāpāḍōṇa."
+        ipa: "banni namma parisaraʋannu kaːpaːɖoːɳa"
+    questions:
+      - id: "kn-9367"
+        prompt: { en: "When is the clean-up?" }
+        options:
+          - { en: "Sunday morning at eight" }
+          - { en: "Monday morning at eight" }
+          - { en: "Sunday evening at eight" }
+        answer: 1
+      - id: "kn-9368"
+        prompt: { en: "Plastic should be recycled." }
+        answer: true
+      - id: "kn-9369"
+        prompt: { en: "What will the group clean?" }
+        options:
+          - { en: "The park" }
+          - { en: "The school" }
+          - { en: "The bank" }
+        answer: 1
