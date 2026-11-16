@@ -183,3 +183,8 @@ The sandbox's egress proxy allows only some hosts. A blocked host answers `CONNE
 | Macdonell's grammar and Practical Dictionary | not found: two searches on en.wikisource returned no such page (`A History of Sanskrit Literature` and `Vedic Grammar` are listed; their authors were not read). archive.org, Cologne and dsal are blocked | not fetchable; use Whitney and Wiktionary |
 | Monier-Williams | blocked (dsal, Cologne); Wiktionary and the kaikki.org dump stand in | glosses from Wiktionary entries, each read on its page |
 | Kālidāsa (Śākuntalam, Meghadūta) | one search each on sa.wikisource returned no play or poem page; not found | SA-001 tries `शाकुन्तलम्`, `मेघदूतम्`, `कुमारसम्भवम्`, `रघुवंशम्` and en.wikisource before dropping an item, and records a reason |
+
+## Progress
+
+- 2026-11-16, SA-003: branch `decks/sa-a1-wave1` pushed at `86651e5e` with the re-planned `decks/sa/sa-path.yaml`: 77 units (unit 1 is `sa-phrasebook`, `sa-first-words`, `*`; then 76 planned): A1 33 units (mark on `sa-work`, 400 words), A2 22 (mark on `sa-verbs-3`, 600), B1 21 (mark on `sa-verbs-4`, 900). Grammar units follow SA-100 to SA-139 with `sa-grammar-sutra-1` to `-4`. Three themes added to `decks/themes.yaml` on that branch: `dharma`, `ritual`, `learning`. `alphabet` is `[]` until the script decks exist.
+- 2026-11-16: the parent confirmed IAST readings (ṃ, ṛ) as vsn does, and is building the `sa` engine in `tools/transcribe.py`; readings of word decks wait for it.
