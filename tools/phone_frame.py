@@ -102,8 +102,14 @@ def _status_bar(width: int, background, frame_dir: Path | None):
     except TypeError:  # an old Pillow: the fixed-size font
         font = ImageFont.load_default()
     d.text((width * ss * 0.06, mid), "9:41", fill=ink, font=font, anchor="lm")
-    # Notification icons after it: a few small shapes.
-    x = width * ss * 0.06 + height * ss * 1.7
+    # The date after it, then notification icons: a few small shapes.
+    try:
+        small = ImageFont.load_default(size=round(height * ss * 0.36))
+    except TypeError:
+        small = font
+    x = width * ss * 0.06 + height * ss * 1.35
+    d.text((x, mid), "Mon 16", fill=ink, font=small, anchor="lm")
+    x += height * ss * 1.5
     r = unit * 0.28
     d.ellipse([x, mid - r, x + 2 * r, mid + r], fill=ink)
     x += unit * 0.9
