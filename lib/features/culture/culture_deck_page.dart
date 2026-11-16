@@ -21,11 +21,10 @@ import 'culture_parts.dart';
 /// The full culture deck of a course (approved mockup `culture-in-course`,
 /// screen 8): every culture and proverbs item the course holds with its kind,
 /// source and level, the ones above the learner's level locked ("Unlocks at
-/// B1", or shown with support when Settings says so), and a People list of the
+/// B1"), and a People list of the
 /// creators behind them, each opening their card.
 ///
-/// Reached from an item, from the culture settings and from the recommendations
-/// list; "Show culture items" off leaves it here, as it leaves search.
+/// Reached from an item and from the recommendations list; "Show culture items" off leaves it here, as it leaves search.
 class CultureDeckPage extends StatelessWidget {
   const CultureDeckPage({super.key, required this.language});
 
@@ -75,7 +74,7 @@ class CultureDeckPage extends StatelessWidget {
     final info = cultureLanguage(state, language);
     final learner = state.levelIn(language);
     final options = state.settings.cultureFor(language);
-    final support = options.showAbove;
+    const support = false;
     final items = state.cultureItemsIn(language);
     final file = state.creatorsOf(language);
     final atLevel = items

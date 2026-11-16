@@ -5,7 +5,6 @@
 // recommendations list offers, counts as hidden or leaves out for a learner.
 
 import 'package:fluenough/app/culture.dart';
-import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/core/data/course_path.dart';
 import 'package:fluenough/core/decks/culture_options.dart';
 import 'package:fluenough/core/decks/recommendation_list.dart';
@@ -131,27 +130,6 @@ void main() {
         expect(_ids(woven.of(3)), <String>['b1-3']);
         expect(woven.all, hasLength(many.length));
       });
-
-      test('spreads what is above the learner over the units as previews', () {
-        final woven = weaveCulture(
-          _plan(),
-          many,
-          Level.a1,
-          perByLevel: culturePerUnitByLevel(_plan(), many),
-        );
-        expect(_ids(woven.all), <String>['a1-1', 'a1-2', 'a1-3']);
-        // Previews are never woven: they are a list apart.
-        expect(woven.previewsOf(0), isEmpty);
-        expect(_ids(woven.previewsOf(1)), <String>['a2-1']);
-        expect(_ids(woven.previewsOf(2)), <String>['b1-1', 'b1-2']);
-        expect(_ids(woven.previewsOf(3)), <String>['b1-3']);
-        expect(_ids(woven.above), <String>['a2-1', 'b1-1', 'b1-2', 'b1-3']);
-      });
-
-      test('previews nothing when nothing is above', () {
-        final woven = weaveCulture(_plan(), many, Level.b1);
-        expect(woven.previews, isEmpty);
-      });
     });
 
     test('weaves nothing for a language with no levels', () {
@@ -233,17 +211,6 @@ void main() {
       expect(state.nextCultureItem('zz')!.id, 'zz-7101');
       state.settings.setCultureFor('zz', const CultureOptions(items: false));
       expect(state.nextCultureItem('zz'), isNull);
-    });
-
-    test('offer a preview on Today once the rest is met, with Show', () async {
-      final progress = MemoryProgress();
-      final state = await cultureApp(progress: progress);
-      studyCard(progress, state, 'zz-en-proverbs-lugar', 'zz-7101');
-      final proverb = state.cultureItemById('zz', 'zz-7101')!;
-      expect(state.isCultureItemDone(proverb), isTrue);
-      expect(state.nextCultureItem('zz'), isNull);
-      state.settings.setCultureFor('zz', const CultureOptions(showAbove: true));
-      expect(state.nextCultureItem('zz')!.id, 'zz-7201');
     });
   });
 

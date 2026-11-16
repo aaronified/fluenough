@@ -6,7 +6,6 @@ import '../../app/deck_catalog.dart';
 import '../../app/routes.dart';
 import '../../app/situations.dart';
 import '../../core/decks/weave.dart';
-import '../../core/models/level.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/target_text.dart';
@@ -122,10 +121,9 @@ class _CultureCard extends StatelessWidget {
 
 /// The culture item woven into a path unit (approved mockup, screen 1): one
 /// card between the lessons and the words, at the learner's level, "bonus" or
-/// "counts toward the unit" as the language's own options say; with "Items
-/// above my level" on Show, the previews of that level follow, marked as such
-/// and opening to read only. With culture items off, one line says so and where
-/// to turn them on; a unit with no item shows nothing.
+/// "counts toward the unit" as the language's own options say. With culture
+/// items off, one line says so and where to turn them on; a unit with no item
+/// shows nothing.
 class UnitCultureCard extends StatelessWidget {
   const UnitCultureCard({
     super.key,
@@ -165,14 +163,7 @@ class UnitCultureCard extends StatelessWidget {
           ),
         );
       }
-      // Items above the learner's level are only previews, and only when the
-      // language's "Items above my level" is Show.
-      final previews = options.showAbove
-          ? woven.previewsOf(index)
-          : const <CultureItem>[];
-      if (woven.of(index).isEmpty && previews.isEmpty) {
-        return const SizedBox.shrink();
-      }
+      if (woven.of(index).isEmpty) return const SizedBox.shrink();
       return Padding(
         padding: const EdgeInsetsDirectional.only(top: 16),
         child: Column(
@@ -187,13 +178,6 @@ class UnitCultureCard extends StatelessWidget {
                 line: options.counts
                     ? l10n.cultureCardLineCounts(item.level.label)
                     : l10n.cultureCardLineBonus(item.level.label),
-              ),
-            for (final item in previews)
-              _CultureCard(
-                item: item,
-                language: language,
-                done: false,
-                line: l10n.culturePreviewTag(item.level.label),
               ),
           ],
         ),
@@ -227,10 +211,6 @@ class TodayCultureCard extends StatelessWidget {
         try {
           final item = state.nextCultureItem(language);
           if (item == null) return const SizedBox.shrink();
-          final preview = LevelGate.isAbove(
-            item.level,
-            state.levelIn(language),
-          );
           return Padding(
             padding: const EdgeInsetsDirectional.only(top: 16),
             child: _CultureCard(
@@ -238,9 +218,7 @@ class TodayCultureCard extends StatelessWidget {
               language: language,
               done: false,
               title: l10n.cultureTodayTitle(item.level.label),
-              line: preview
-                  ? l10n.culturePreviewTag(item.level.label)
-                  : l10n.cultureTodayLine(cultureKindName(l10n, item.kind)),
+              line: l10n.cultureTodayLine(cultureKindName(l10n, item.kind)),
             ),
           );
         } on Object catch (error, stack) {

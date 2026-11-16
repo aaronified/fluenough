@@ -93,17 +93,10 @@ extension CultureState on AppState {
       item.cards.isNotEmpty && item.cards.every(isTaught);
 
   /// The culture item Today offers for [language]: the first woven item not
-  /// met yet, or, when [language]'s "Items above my level" is Show and every
-  /// woven one is met, the first item above the level (a preview, which opens
-  /// to read and cannot be learned); null when culture is off for the language
-  /// or nothing is left.
+  /// met yet, or null when culture is off for the language or all are met.
   CultureItem? nextCultureItem(String language) {
-    final options = settings.cultureFor(language);
-    if (!options.items) return null;
-    final woven = wovenCultureOf(language);
-    final next = woven.next(isCultureItemDone);
-    if (next != null || !options.showAbove) return next;
-    return woven.above.isEmpty ? null : woven.above.first;
+    if (!settings.cultureFor(language).items) return null;
+    return wovenCultureOf(language).next(isCultureItemDone);
   }
 
   /// The people of [language]'s culture, or null when it has none.

@@ -2100,10 +2100,11 @@ class SettingsNotifier extends ChangeNotifier {
 
   /// Restores the per-language culture options. A store that has the map reads
   /// it, each entry tolerant of a missing key. One from before they were per
-  /// language holds the four global values: they are copied to every language
+  /// language holds the global values: they are copied to every language
   /// the profile has (one with skills, or one it learns), and a language added
   /// later starts from the defaults. The old keys are never written again, and
-  /// the old `hide_above_level` and `culture_per_unit` are ignored.
+  /// the old `hide_above_level`, `culture_above_support` and
+  /// `culture_per_unit` are ignored.
   void _restoreCulture(Map<String, String> stored) {
     final code = RegExp(r'^[a-z]{2,3}$');
     final text = stored['culture_by_language'];
@@ -2118,19 +2119,12 @@ class SettingsNotifier extends ChangeNotifier {
     }
     bool? old(String name) => bool.tryParse(stored[name] ?? '');
     final items = old('culture_items');
-    final showAbove = old('culture_above_support');
     final counts = old('culture_counts');
     final creators = old('culture_creators');
-    if (items == null &&
-        showAbove == null &&
-        counts == null &&
-        creators == null) {
-      return;
-    }
+    if (items == null && counts == null && creators == null) return;
     const base = CultureOptions.defaults;
     final carried = CultureOptions(
       items: items ?? base.items,
-      showAbove: showAbove ?? base.showAbove,
       counts: counts ?? base.counts,
       creators: creators ?? base.creators,
     );

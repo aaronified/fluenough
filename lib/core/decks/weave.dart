@@ -167,7 +167,6 @@ class WovenCulture {
   const WovenCulture({
     this.byUnit = const <int, List<CultureItem>>{},
     this.above = const <CultureItem>[],
-    this.previews = const <int, List<CultureItem>>{},
   });
 
   /// Nothing woven.
@@ -179,16 +178,6 @@ class WovenCulture {
 
   /// The items above the learner's level, in order: they are never woven.
   final List<CultureItem> above;
-
-  /// The same items, by the unit of the path each is previewed in: the units
-  /// of its own level (or, for a level the path has no unit of, the next level
-  /// that has), spread so that every one has a unit. Shown only where the
-  /// language's "Items above my level" is Show, and never scheduled.
-  final Map<int, List<CultureItem>> previews;
-
-  /// The items previewed in the unit at [index].
-  List<CultureItem> previewsOf(int index) =>
-      previews[index] ?? const <CultureItem>[];
 
   /// Every woven item in path order.
   List<CultureItem> get all => <CultureItem>[
@@ -276,8 +265,7 @@ int _atLeastOne(int n) => n < 1 ? 1 : n;
 /// item). A unit gets [perByLevel] of its level, else [perUnit], items: those
 /// at its own level first, in deck order, then lower ones not used yet. An
 /// item is woven once. An item above the learner is listed in
-/// [WovenCulture.above], given a unit to be previewed in
-/// ([WovenCulture.previews]) and never woven.
+/// [WovenCulture.above] and never woven.
 WovenCulture weaveCulture(
   List<PlanUnit> plan,
   List<CultureItem> items,
@@ -325,37 +313,5 @@ WovenCulture weaveCulture(
   return WovenCulture(
     byUnit: Map<int, List<CultureItem>>.unmodifiable(byUnit),
     above: List<CultureItem>.unmodifiable(above),
-    previews: _previewsOf(plan, above),
   );
-}
-
-/// Spreads [above] over the units of the path: each goes to the units of its
-/// home level, the same number to each (rounded up), in order.
-Map<int, List<CultureItem>> _previewsOf(
-  List<PlanUnit> plan,
-  List<CultureItem> above,
-) {
-  if (above.isEmpty) return const <int, List<CultureItem>>{};
-  final units = _cultureUnits(plan);
-  final levels = <Level>{for (final (_, level) in units) level};
-  final out = <int, List<CultureItem>>{};
-  for (final level in levels) {
-    final mine = <CultureItem>[
-      for (final item in above)
-        if (_homeLevel(item.level, levels) == level) item,
-    ];
-    if (mine.isEmpty) continue;
-    final indexes = <int>[
-      for (final (index, unitLevel) in units)
-        if (unitLevel == level) index,
-    ];
-    final per = _atLeastOne(_ceilDiv(mine.length, indexes.length));
-    for (final (n, index) in indexes.indexed) {
-      final from = n * per;
-      if (from >= mine.length) break;
-      final to = from + per > mine.length ? mine.length : from + per;
-      out[index] = List<CultureItem>.unmodifiable(mine.sublist(from, to));
-    }
-  }
-  return Map<int, List<CultureItem>>.unmodifiable(out);
 }

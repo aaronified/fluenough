@@ -208,8 +208,7 @@ void main() {
     });
 
     testWidgets(
-      'above the level opens to read, whatever the option, and cannot be '
-      'practised',
+      'above the level opens to read and cannot be practised',
       (tester) async {
         usePhone(tester);
         final state = await cultureApp();
@@ -217,14 +216,6 @@ void main() {
         expect(find.text(_stanza), findsOneWidget);
         expect(find.text(_l10n.cultureAboveTitle), findsOneWidget);
         // Not counted, not scheduled: nothing to practise.
-        expect(find.text(_l10n.culturePractise), findsNothing);
-
-        state.settings.setCultureFor(
-          'zz',
-          const CultureOptions(showAbove: true),
-        );
-        await tester.pumpAndSettle();
-        expect(find.text(_stanza), findsOneWidget);
         expect(find.text(_l10n.culturePractise), findsNothing);
       },
     );
@@ -352,21 +343,6 @@ void main() {
       expect(find.byType(CreatorCard), findsOneWidget);
     });
 
-    testWidgets('shows what is above the level with support, when asked', (
-      tester,
-    ) async {
-      usePhone(tester);
-      final state = await cultureApp();
-      state.settings.setCultureFor('zz', const CultureOptions(showAbove: true));
-      await pumpScreen(
-        tester,
-        const CultureDeckPage(language: 'zz'),
-        state: state,
-      );
-      expect(find.text(_stanza), findsOneWidget);
-      expect(find.text(_l10n.cultureUnlocksAt('A2')), findsNothing);
-    });
-
     testWidgets('opens an item, and says so when the course has none', (
       tester,
     ) async {
@@ -402,10 +378,9 @@ void main() {
       expect(settings.cultureFor('te'), CultureOptions.defaults);
       settings.setCultureFor(
         'te',
-        const CultureOptions(items: false, showAbove: true, counts: true),
+        const CultureOptions(items: false, counts: true),
       );
       expect(settings.cultureFor('te').items, isFalse);
-      expect(settings.cultureFor('te').showAbove, isTrue);
       expect(settings.cultureFor('te').counts, isTrue);
       expect(settings.cultureFor('hi'), CultureOptions.defaults);
       settings.setCultureFor(
@@ -432,7 +407,6 @@ void main() {
           'te',
           const CultureOptions(
             items: false,
-            showAbove: true,
             counts: true,
             creators: false,
           ),
@@ -446,7 +420,6 @@ void main() {
         back.cultureFor('te'),
         const CultureOptions(
           items: false,
-          showAbove: true,
           counts: true,
           creators: false,
         ),
@@ -479,7 +452,6 @@ void main() {
         });
       const carried = CultureOptions(
         items: false,
-        showAbove: true,
         counts: true,
         creators: false,
       );
@@ -561,20 +533,6 @@ void main() {
     screen('a stanza with its creator', item('zz-7201', reach: 'b1'));
     screen('a passage with its gloss', item('zz-pasaje-1', reach: 'b1'));
     screen('an item above the level, to read', item('zz-7201'));
-    screen(
-      'an item above the level, with Show chosen',
-      page(
-        _item('zz-7201'),
-        state: () async {
-          final state = await cultureApp();
-          state.settings.setCultureFor(
-            'zz',
-            const CultureOptions(showAbove: true),
-          );
-          return state;
-        },
-      ),
-    );
     screen(
       'the culture deck at A1',
       page(const CultureDeckPage(language: 'zz'), state: () => cultureApp()),

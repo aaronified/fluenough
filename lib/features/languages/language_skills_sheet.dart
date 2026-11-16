@@ -1095,11 +1095,11 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
   /// The Culture group (approved mockup `culture-in-decks`, screen B): one
   /// switch for culture items in this language's path, Today and reviews,
   /// which opens in place, while it is on, to the language's other culture
-  /// options. Each language keeps its own.
+  /// options (counting toward progress, the creator). Each language keeps
+  /// its own.
   Widget _cultureBlock(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    final scheme = theme.colorScheme;
+    final scheme = Theme.of(context).colorScheme;
     final settings = _state.settings;
     final options = settings.cultureFor(_code);
     void choose(CultureOptions next) => settings.setCultureFor(_code, next);
@@ -1125,49 +1125,6 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
             ),
             if (options.items) ...<Widget>[
               Divider(height: 1, color: scheme.outlineVariant),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(12, 10, 12, 0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    Text(
-                      l10n.cultureSettingAboveHeading,
-                      style: theme.textTheme.bodyMedium!.copyWith(
-                        color: scheme.onSurfaceVariant,
-                      ),
-                    ),
-                    const SizedBox(height: 6),
-                    SegmentedButton<bool>(
-                      key: const ValueKey<String>('culture-above'),
-                      showSelectedIcon: false,
-                      segments: <ButtonSegment<bool>>[
-                        ButtonSegment<bool>(
-                          value: false,
-                          label: Text(l10n.cultureSettingAboveHide),
-                        ),
-                        ButtonSegment<bool>(
-                          value: true,
-                          label: Text(l10n.languagesCultureAboveShow),
-                        ),
-                      ],
-                      selected: <bool>{options.showAbove},
-                      onSelectionChanged: (chosen) =>
-                          choose(options.copyWith(showAbove: chosen.first)),
-                    ),
-                    Padding(
-                      padding: const EdgeInsetsDirectional.only(top: 6),
-                      child: Text(
-                        options.showAbove
-                            ? l10n.languagesCultureAboveShowLine
-                            : l10n.languagesCultureAboveHideLine,
-                        style: theme.textTheme.bodyMedium!.copyWith(
-                          color: scheme.onSurfaceVariant,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
               GroupedTile.toggle(
                 title: l10n.cultureSettingCounts,
                 subtitleOn: l10n.cultureSettingCountsOn,

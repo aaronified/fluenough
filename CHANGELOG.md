@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- **Each language has its own culture options.** In a language's details, one Culture switch opens to what to do with items above your level, whether culture counts toward your path, and whether the creator shows, and the old Settings page for culture is gone.
+- **Each language has its own culture options.** In a language's details, one Culture switch opens to whether culture counts toward your path and whether the creator shows, and the old Settings page for culture is gone.
 - **Culture items fill your path as the course needs.** The path now gives every unit as many culture items as it takes for you to see them all, so the "How many" choice is gone.
 - **Search always shows everything.** The "Hide what is above my level" choice is removed; results above your level stay in the list, marked with their level.
 - **Choosing situations is clearer.** The picker now has "On Today" (up to six, in your order, with a counter) and "More situations", so you can see what is shown and what is not, and long names such as Emergency and Doctor and pharmacy fit their tiles on the picker and on Today.

@@ -442,9 +442,7 @@ void main() {
       await tester.pumpAndSettle();
     }
 
-    final above = find.byKey(const ValueKey<String>('culture-above'));
-
-    testWidgets('is one switch that opens in place to the three options', (
+    testWidgets('is one switch that opens in place to its two options', (
       tester,
     ) async {
       final state = await pumpLanguages(tester);
@@ -455,8 +453,6 @@ void main() {
       // On by default, so it is open, with the mockup's wording and no
       // "applies to all languages" line.
       expect(find.text(text.languagesCultureOn), findsOneWidget);
-      expect(find.text(text.cultureSettingAboveHeading), findsOneWidget);
-      expect(find.text(text.languagesCultureAboveHideLine), findsOneWidget);
       expect(find.text(text.cultureSettingCounts), findsOneWidget);
       expect(find.text(text.cultureSettingCreators), findsOneWidget);
       expect(state.settings.cultureFor('es'), CultureOptions.defaults);
@@ -464,37 +460,17 @@ void main() {
       await tapShown(tester, find.text(text.languagesCulture));
       expect(state.settings.cultureFor('es').items, isFalse);
       expect(find.text(text.languagesCultureOff), findsOneWidget);
-      expect(find.text(text.cultureSettingAboveHeading), findsNothing);
       expect(find.text(text.cultureSettingCounts), findsNothing);
       expect(find.text(text.cultureSettingCreators), findsNothing);
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('chooses what is above the level and the two switches for '
-        'this language only', (tester) async {
+    testWidgets('chooses the two switches for this language only', (
+      tester,
+    ) async {
       final state = await pumpLanguages(tester);
       await tapKey(tester, 'language-es');
       final text = l10n(tester);
-      await tester.ensureVisible(above);
-      await tester.pumpAndSettle();
-      await tester.tap(
-        find.descendant(
-          of: above,
-          matching: find.text(text.languagesCultureAboveShow),
-        ),
-      );
-      await tester.pumpAndSettle();
-      expect(state.settings.cultureFor('es').showAbove, isTrue);
-      expect(find.text(text.languagesCultureAboveShowLine), findsOneWidget);
-      await tester.tap(
-        find.descendant(
-          of: above,
-          matching: find.text(text.cultureSettingAboveHide),
-        ),
-      );
-      await tester.pumpAndSettle();
-      expect(state.settings.cultureFor('es').showAbove, isFalse);
-
       await tapShown(tester, find.text(text.cultureSettingCounts));
       expect(state.settings.cultureFor('es').counts, isTrue);
       expect(find.text(text.cultureSettingCountsOn), findsOneWidget);
@@ -512,14 +488,13 @@ void main() {
       final state = learner();
       state.settings.setCultureFor(
         'es',
-        const CultureOptions(showAbove: true, counts: true),
+        const CultureOptions(counts: true),
       );
       await pumpLanguages(tester, state: state, mode: ThemeMode.dark);
       await tapKey(tester, 'language-es');
       final text = l10n(tester);
       await tester.ensureVisible(find.text(text.languagesCulture));
       await tester.pumpAndSettle();
-      expect(find.text(text.languagesCultureAboveShowLine), findsOneWidget);
       expect(find.text(text.cultureSettingCountsOn), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
