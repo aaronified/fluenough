@@ -1,0 +1,296 @@
+schema: 1
+id: "sa-stems-words"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "learning"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-2300"
+    target: "राजन्"
+    reading: "rājan"
+    ipa: "raːdʒən"
+    pos: "noun"
+    gender: "m"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "राजा गच्छति"
+        reading: "rājā gacchati"
+        ipa: "raːdʒaː ɡətʃtʃʰət̪i"
+        bases:
+          - { word: "राजा", base: "राजन्", reading: "rājan" }
+          - { word: "गच्छति", base: "गम्", reading: "gam" }
+      - target: "राजा पठति"
+        reading: "rājā paṭhati"
+        ipa: "raːdʒaː pəʈʰət̪i"
+        bases:
+          - { word: "राजा", base: "राजन्", reading: "rājan" }
+          - { word: "पठति", base: "पठ्", reading: "paṭh" }
+  - id: "sa-2301"
+    target: "वाच्"
+    reading: "vāc"
+    ipa: "ʋaːtʃ"
+    pos: "noun"
+    gender: "f"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "वाचं वदति"
+        reading: "vācaṃ vadati"
+        ipa: "ʋaːtʃəm ʋəd̪ət̪i"
+        bases:
+          - { word: "वाचं", base: "वाच्", reading: "vāc" }
+          - { word: "वदति", base: "वद्", reading: "vad" }
+      - target: "वाचा पठति"
+        reading: "vācā paṭhati"
+        ipa: "ʋaːtʃaː pəʈʰət̪i"
+        bases:
+          - { word: "वाचा", base: "वाच्", reading: "vāc" }
+          - { word: "पठति", base: "पठ्", reading: "paṭh" }
+  - id: "sa-2302"
+    target: "भवत्"
+    reading: "bhavat"
+    ipa: "bʱəʋət̪"
+    pos: "noun"
+    gender: "m"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "भवान् गच्छति"
+        reading: "bhavān gacchati"
+        ipa: "bʱəʋaːn ɡətʃtʃʰət̪i"
+        bases:
+          - { word: "भवान्", base: "भवत्", reading: "bhavat" }
+          - { word: "गच्छति", base: "गम्", reading: "gam" }
+      - target: "भवान् पठति"
+        reading: "bhavān paṭhati"
+        ipa: "bʱəʋaːn pəʈʰət̪i"
+        bases:
+          - { word: "भवान्", base: "भवत्", reading: "bhavat" }
+          - { word: "पठति", base: "पठ्", reading: "paṭh" }
+  - id: "sa-2303"
+    target: "आत्मन्"
+    reading: "ātman"
+    ipa: "aːt̪mən"
+    pos: "noun"
+    gender: "m"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "आत्मानं पश्यति"
+        reading: "ātmānaṃ paśyati"
+        ipa: "aːt̪maːnəm pəʃjət̪i"
+        bases:
+          - { word: "आत्मानं", base: "आत्मन्", reading: "ātman" }
+          - { word: "पश्यति", base: "पश्", reading: "paś" }
+      - target: "आत्मना गच्छति"
+        reading: "ātmanā gacchati"
+        ipa: "aːt̪mənaː ɡətʃtʃʰət̪i"
+        bases:
+          - { word: "आत्मना", base: "आत्मन्", reading: "ātman" }
+          - { word: "गच्छति", base: "गम्", reading: "gam" }
+  - id: "sa-2304"
+    target: "चन्द्रमस्"
+    reading: "candramas"
+    ipa: "tʃənd̪rəməs"
+    pos: "noun"
+    gender: "m"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "चन्द्रमसं पश्यति"
+        reading: "candramasaṃ paśyati"
+        ipa: "tʃənd̪rəməsəm pəʃjət̪i"
+        bases:
+          - { word: "चन्द्रमसं", base: "चन्द्रमस्", reading: "candramas" }
+          - { word: "पश्यति", base: "पश्", reading: "paś" }
+      - target: "चन्द्रमा गच्छति"
+        reading: "candramā gacchati"
+        ipa: "tʃənd̪rəmaː ɡətʃtʃʰət̪i"
+        bases:
+          - { word: "चन्द्रमा", base: "चन्द्रमस्", reading: "candramas" }
+          - { word: "गच्छति", base: "गम्", reading: "gam" }
+  - id: "sa-2305"
+    target: "ज्योतिस्"
+    reading: "jyotis"
+    ipa: "dʒjoːt̪is"
+    pos: "noun"
+    gender: "n"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "ज्योतिषा पश्यति"
+        reading: "jyotiṣā paśyati"
+        ipa: "dʒjoːt̪iʂaː pəʃjət̪i"
+        bases:
+          - { word: "ज्योतिषा", base: "ज्योतिस्", reading: "jyotis" }
+          - { word: "पश्यति", base: "पश्", reading: "paś" }
+      - target: "ज्योतिर् गच्छति"
+        reading: "jyotir gacchati"
+        ipa: "dʒjoːt̪ir ɡətʃtʃʰət̪i"
+        bases:
+          - { word: "ज्योतिर्", base: "ज्योतिस्", reading: "jyotis" }
+          - { word: "गच्छति", base: "गम्", reading: "gam" }
+  - id: "sa-2306"
+    target: "धनुस्"
+    reading: "dhanus"
+    ipa: "d̪ʱənus"
+    pos: "noun"
+    gender: "n"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "धनुर् नमति"
+        reading: "dhanur namati"
+        ipa: "d̪ʱənur nəmət̪i"
+        bases:
+          - { word: "धनुर्", base: "धनुस्", reading: "dhanus" }
+          - { word: "नमति", base: "नम्", reading: "nam" }
+      - target: "धनुः पतति"
+        reading: "dhanuḥ patati"
+        ipa: "d̪ʱənuh pət̪ət̪i"
+        bases:
+          - { word: "धनुः", base: "धनुस्", reading: "dhanus" }
+          - { word: "पतति", base: "पत्", reading: "pat" }
+  - id: "sa-2307"
+    target: "जगत्"
+    reading: "jagat"
+    ipa: "dʒəɡət̪"
+    pos: "noun"
+    gender: "n"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "जगद् गच्छति"
+        reading: "jagad gacchati"
+        ipa: "dʒəɡəd̪ ɡətʃtʃʰət̪i"
+        bases:
+          - { word: "जगद्", base: "जगत्", reading: "jagat" }
+          - { word: "गच्छति", base: "गम्", reading: "gam" }
+      - target: "जगत् तिष्ठति"
+        reading: "jagat tiṣṭhati"
+        ipa: "dʒəɡət̪ t̪iʂʈʰət̪i"
+        bases:
+          - { word: "जगत्", base: "जगत्", reading: "jagat" }
+          - { word: "तिष्ठति", base: "स्था", reading: "sthā" }
+  - id: "sa-2308"
+    target: "विद्युत्"
+    reading: "vidyut"
+    ipa: "ʋid̪jut̪"
+    pos: "noun"
+    gender: "f"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "विद्युत् पतति"
+        reading: "vidyut patati"
+        ipa: "ʋid̪jut̪ pət̪ət̪i"
+        bases:
+          - { word: "विद्युत्", base: "विद्युत्", reading: "vidyut" }
+          - { word: "पतति", base: "पत्", reading: "pat" }
+      - target: "विद्युता पश्यति"
+        reading: "vidyutā paśyati"
+        ipa: "ʋid̪jut̪aː pəʃjət̪i"
+        bases:
+          - { word: "विद्युता", base: "विद्युत्", reading: "vidyut" }
+          - { word: "पश्यति", base: "पश्", reading: "paś" }
+  - id: "sa-2309"
+    target: "हस्तिन्"
+    reading: "hastin"
+    ipa: "ɦəst̪in"
+    pos: "noun"
+    gender: "m"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "हस्ती गच्छति"
+        reading: "hastī gacchati"
+        ipa: "ɦəst̪iː ɡətʃtʃʰət̪i"
+        bases:
+          - { word: "हस्ती", base: "हस्तिन्", reading: "hastin" }
+          - { word: "गच्छति", base: "गम्", reading: "gam" }
+      - target: "हस्ती जलं पिबति"
+        reading: "hastī jalaṃ pibati"
+        ipa: "ɦəst̪iː dʒələm pibət̪i"
+        bases:
+          - { word: "हस्ती", base: "हस्तिन्", reading: "hastin" }
+          - { word: "जलं", base: "जलम्", reading: "jalam" }
+          - { word: "पिबति", base: "पा", reading: "pā" }
+  - id: "sa-2310"
+    target: "मरुत्"
+    reading: "marut"
+    ipa: "mərut̪"
+    pos: "noun"
+    gender: "m"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "मरुद् वहति"
+        reading: "marud vahati"
+        ipa: "mərud̪ ʋəɦət̪i"
+        bases:
+          - { word: "मरुद्", base: "मरुत्", reading: "marut" }
+          - { word: "वहति", base: "वह्", reading: "vah" }
+      - target: "मरुच् चलति"
+        reading: "maruc calati"
+        ipa: "mərutʃ tʃələt̪i"
+        bases:
+          - { word: "मरुच्", base: "मरुत्", reading: "marut" }
+          - { word: "चलति", base: "चल्", reading: "cal" }
+  - id: "sa-2311"
+    target: "त्वच्"
+    reading: "tvac"
+    ipa: "t̪ʋətʃ"
+    pos: "noun"
+    gender: "f"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "त्वचं पश्यति"
+        reading: "tvacaṃ paśyati"
+        ipa: "t̪ʋətʃəm pəʃjət̪i"
+        bases:
+          - { word: "त्वचं", base: "त्वच्", reading: "tvac" }
+          - { word: "पश्यति", base: "पश्", reading: "paś" }
+      - target: "त्वक् पतति"
+        reading: "tvak patati"
+        ipa: "t̪ʋək pət̪ət̪i"
+        bases:
+          - { word: "त्वक्", base: "त्वच्", reading: "tvac" }
+          - { word: "पतति", base: "पत्", reading: "pat" }
