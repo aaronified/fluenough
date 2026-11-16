@@ -1,0 +1,61 @@
+schema: 1
+id: "sa-en-grammar-a-stems"
+kind: "layer"
+core: "sa-grammar-a-stems"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nouns in a: the full table"
+description: "Every noun the course teaches that ends in a, masculine or neuter, in all eight cases and three numbers. Nouns with other endings, such as agni, are left out of this table. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "case and number"
+  slots:
+    "nom-sg": "nominative, singular"
+    "nom-du": "nominative, dual"
+    "nom-pl": "nominative, plural"
+    "acc-sg": "accusative, singular"
+    "acc-du": "accusative, dual"
+    "acc-pl": "accusative, plural"
+    "ins-sg": "instrumental, singular"
+    "ins-du": "instrumental, dual"
+    "ins-pl": "instrumental, plural"
+    "dat-sg": "dative, singular"
+    "dat-du": "dative, dual"
+    "dat-pl": "dative, plural"
+    "abl-sg": "ablative, singular"
+    "abl-du": "ablative, dual"
+    "abl-pl": "ablative, plural"
+    "gen-sg": "genitive, singular"
+    "gen-du": "genitive, dual"
+    "gen-pl": "genitive, plural"
+    "loc-sg": "locative, singular"
+    "loc-du": "locative, dual"
+    "loc-pl": "locative, plural"
+    "voc-sg": "vocative, singular"
+    "voc-du": "vocative, dual"
+    "voc-pl": "vocative, plural"
+rules:
+  "sa-rule-a-nominative":
+    name: "Nominative: -aḥ, -au, -āḥ"
+    explanation: "Masculine a-stems end in -aḥ, -au and -āḥ: {1}, {2}, {3}. Neuter a-stems end in -am, -e and -āni, and the neuter nominative is the same as the accusative: {4}, {5}, {6}. The stem a and the ending join into one sound, which is why there is no -a- in -au or -āḥ (Whitney 327 to 329)."
+  "sa-rule-a-accusative":
+    name: "Accusative: -am, -au, -ān"
+    explanation: "Masculine a-stems end in -am, -au and -ān: {1}, {2}, {3}. A neuter is the same in the accusative as in the nominative: {4}, {5}, {6}. The masculine plural ending is -ān (Whitney 329 b)."
+  "sa-rule-a-instrumental":
+    name: "Instrumental: -ena, -ābhyām, -aiḥ"
+    explanation: "The singular ends in -ena: {2}. After r or ṣ in the same word the n becomes ṇ, so {1} has ṇ where {2} has n (Pāṇini 8.4.1 gives the change and 8.4.2 the letters that may stand between). The dual ends in -ābhyām, {3}, the same as the dative and the ablative. The plural ends in -aiḥ: {4}. Pāṇini 7.1.12, {5}, gives -ina, which is the -ena, and 7.1.9, {6}, gives the plural -ais, which is -aiḥ."
+  "sa-rule-a-dative":
+    name: "Dative: -āya, -ābhyām, -ebhyaḥ"
+    explanation: "The singular ends in -āya: {1}. The dual is -ābhyām, {2}, as in the instrumental and the ablative, and the plural is -ebhyaḥ, {3}, as in the ablative. Pāṇini 7.1.13, {4}, gives -ya after the stem, and 7.3.102, {5}, lengthens the a before it: -āya."
+  "sa-rule-a-ablative":
+    name: "Ablative: -āt, -ābhyām, -ebhyaḥ"
+    explanation: "Only a-stems have their own ablative singular, -āt: {1} (Whitney 327 e). The dual {2} is the same as the dative and instrumental dual, and the plural {3} the same as the dative plural. Pāṇini 7.1.12, {4}, names the ablative ending among those that an a-stem changes."
+  "sa-rule-a-genitive":
+    name: "Genitive: -asya, -ayoḥ, -ānām"
+    explanation: "The singular ends in -asya: {1}. The dual ends in -ayoḥ: {2}. The plural ends in -ānām, with n becoming ṇ after r, as in {3}, but not in {4}. Pāṇini 2.3.50 says: {5}, the sixth case for what remains."
+  "sa-rule-a-locative":
+    name: "Locative: -e, -ayoḥ, -eṣu"
+    explanation: "The singular ends in -e: {1}. The dual ends in -ayoḥ: {2}. The plural ends in -eṣu: {3}, the s after e becoming ṣ. Pāṇini 2.3.36 says: {4}, the seventh case for the place. 7.3.103, {5}, makes the stem end in e before a plural ending that begins with a consonant like bh or s."
+  "sa-rule-a-vocative":
+    name: "Vocative: the bare stem; then as the nominative"
+    explanation: "The singular is the bare stem, for masculines and neuters alike: {1} and {4} (Whitney 327 h and 308 k). The dual and the plural are the same as the nominative: {2}, {3} for the masculine, {5}, {6} for the neuter. Pāṇini 2.3.47, {7}, adds the vocative."

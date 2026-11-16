@@ -1,0 +1,115 @@
+schema: 1
+id: "sa-en-script-vowels"
+kind: "layer"
+core: "sa-script-vowels"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Classical Sanskrit vowels"
+description: "The vowels as they are written on their own, with the anusvāra and the visarga that follow a vowel. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "script"]
+cards:
+  "sa-4000":
+    native: "a, short, as the 'u' of 'but'"
+    notes:
+      "n1": "Every consonant carries this a unless a sign changes it: the consonant क (ka) alone is said ka. Unlike Hindi, Classical Sanskrit keeps the inherent a at the end of a word too, so राम (rāma) is rāma, not rām."
+    examples:
+      "अहम् अस्मि।": "I am."
+      "अपि जानामि।": "I also know."
+  "sa-4001":
+    native: "ā, long, as the 'a' of 'father'"
+    notes:
+      "n1": "It is written after a consonant with the sign ा (ā), so का (kā) is kā. As a letter of its own it stands at the start of a word or after another vowel."
+    examples:
+      "आगच्छ।": "Come!"
+      "आम्रम् अस्ति।": "There is a mango."
+  "sa-4002":
+    native: "i, short, as the 'i' of 'bit'"
+    notes:
+      "n1": "Its sign ि (i) is written before the consonant it follows but said after it: कि (ki) is ki."
+    examples:
+      "इति।": "Thus."
+      "इदम् अस्ति।": "This is."
+  "sa-4003":
+    native: "ī, long, as the 'ee' of 'see'"
+    notes:
+      "n1": "Always long, like नदी (nadī, river): the length belongs to the word, so it is kept in spelling."
+    examples:
+      "ईश्वरः।": "The lord."
+      "नदी दीर्घा।": "The river is long."
+  "sa-4004":
+    native: "u, short, as the 'u' of 'put'"
+    notes:
+      "n1": "Its sign ु (u) is written below the consonant: कु (ku) is ku."
+    examples:
+      "उदकम् पिबति।": "He drinks water."
+      "मधु अस्ति।": "There is honey."
+  "sa-4005":
+    native: "ū, long, as the 'oo' of 'food'"
+    notes:
+      "n1": "Its sign ू (ū) is also written below the consonant: कू (kū) is kū."
+    examples:
+      "भूमिः विशाला।": "The earth is vast."
+      "ऊर्ध्वं पश्य।": "Look upward."
+  "sa-4006":
+    native: "ṛ, a single vowel: a syllabic r, as the r of 'rhythm'"
+    notes:
+      "n1": "Written as one vowel and said as an r that forms a syllable of its own. Its sign ृ (ṛ) goes below the consonant: कृ (kṛ) is kṛ."
+    examples:
+      "ऋषिः वदति।": "The sage speaks."
+      "ऋतं वद।": "Speak the truth."
+  "sa-4007":
+    native: "ṝ, long and rare: a long syllabic r"
+    notes:
+      "n1": "Rare. It is found in forms such as the genitive plural of stems in ṛ, as in पितॄणाम् (pitṝṇām, of the fathers)."
+    examples:
+      "पितॄणां स्मरणम्।": "Remembering the fathers."
+      "मातॄन् स्मरामि।": "I remember the mothers."
+  "sa-4008":
+    native: "ḷ, a syllabic l, very rare"
+    notes:
+      "n1": "Almost never written. Wikipedia's account of Sanskrit phonology gives one root only, कॢप् (kḷp, to arrange), and the Śiva sūtras list it beside ऋ (ṛ)."
+    examples:
+      "धातुः कॢप् अस्ति।": "The root is kḷp."
+      "कॢप् इति धातुः।": "Kḷp is a root."
+  "sa-4009":
+    native: "e, always long, as the 'a' of 'cake' with no glide"
+    notes:
+      "n1": "Sanskrit has no short e: the vowel is long in every word, as in एतत् (etat, this)."
+    examples:
+      "एतत् पुस्तकम्।": "This is a book."
+      "एषः गुरुः।": "This is the teacher."
+  "sa-4010":
+    native: "ai, a diphthong, as the 'ai' of 'aisle'"
+    notes:
+      "n1": "A diphthong of a and i, as in वैद्यः (vaidyaḥ, physician). Its sign ै (ai) is written above the consonant."
+    examples:
+      "शैलः उन्नतः।": "The mountain is high."
+      "वैद्यः आगच्छति।": "The physician comes."
+  "sa-4011":
+    native: "o, always long, as the 'o' of 'go' with no glide"
+    notes:
+      "n1": "Sanskrit has no short o: ओदनः (odanaḥ, rice) has the long vowel."
+    examples:
+      "ओदनः अस्ति।": "There is rice."
+      "भोः छात्र!": "O student!"
+  "sa-4012":
+    native: "au, a diphthong, as the 'ow' of 'how'"
+    notes:
+      "n1": "A diphthong of a and u, as in गौः (gauḥ, cow)."
+    examples:
+      "औषधम् अस्ति।": "There is medicine."
+      "गौः चरति।": "The cow grazes."
+  "sa-4013":
+    native: "ṃ, the anusvāra: a nasal dot that takes the nasal of the next consonant"
+    notes:
+      "n1": "Written after a vowel, it is the nasal of the next consonant: before क (ka) it is ṅ, before त (ta) it is n, before प (pa) it is m, and at the end of a word it is m. Here it is shown on अ (a)."
+    examples:
+      "संस्कृतं सुन्दरम्।": "Sanskrit is beautiful."
+      "अहं गच्छामि।": "I go."
+  "sa-4014":
+    native: "ḥ, the visarga: a breathed h at the end of a syllable"
+    notes:
+      "n1": "It is a form of r or s at the end of a word or before a pause, as in रामः (rāmaḥ, Rāma) and पुनः (punaḥ, again)."
+    examples:
+      "रामः गच्छति।": "Rama goes."
+      "नमः शिवाय।": "Homage to Śiva."
