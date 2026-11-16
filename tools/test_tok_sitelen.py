@@ -214,7 +214,8 @@ class GlyphDeck(unittest.TestCase):
             self.assertEqual(ids, ["tok-0009", "tok-0010"], "after the largest id")
             meanings = yaml.safe_load(layer)["cards"]
             self.assertEqual(meanings[ids[0]]["native"], "I")
-            self.assertEqual(meanings[ids[1]]["native"], "language")
+            # A repeated word keeps the first card the path meets.
+            self.assertEqual(meanings[ids[1]]["native"], "again")
 
     def test_ids_are_kept_when_it_is_run_again(self) -> None:
         import yaml
