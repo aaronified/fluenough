@@ -802,11 +802,18 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                 for (final (index, script) in _scripts.indexed)
                   _skillRow(
                     context,
-                    tile: _Tile(
-                      glyph: scriptGlyph(
-                        script,
-                        l10n.scriptNameOr(script, _view.name),
-                      ),
+                    tile: ListenableBuilder(
+                      listenable: Listenable.merge(<Listenable?>[
+                        scriptFontsOf(context),
+                      ]),
+                      builder: (context, _) {
+                        final face = scriptGlyphFace(
+                          context,
+                          script,
+                          l10n.scriptNameOr(script, _view.name),
+                        );
+                        return _Tile(glyph: face.text, family: face.family);
+                      },
                     ),
                     title: l10n.scriptNameOr(script, _view.name),
                     keys: _skills.keysOfScript(script),
@@ -1338,10 +1345,13 @@ class _PlainBadge extends StatelessWidget {
 
 /// A round tile at the start of a row: an icon, or a script's glyph.
 class _Tile extends StatelessWidget {
-  const _Tile({this.icon, this.glyph});
+  const _Tile({this.icon, this.glyph, this.family});
 
   final IconData? icon;
   final String? glyph;
+
+  /// The font [glyph] is drawn in; null is the phone's.
+  final String? family;
 
   @override
   Widget build(BuildContext context) {
@@ -1363,6 +1373,7 @@ class _Tile extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 16,
                   height: 1,
+                  fontFamily: family,
                   color: scheme.onSecondaryContainer,
                 ),
               ),

@@ -66,7 +66,7 @@ SCRIPTS = {
     "devanagari", "bengali", "gujarati", "gurmukhi", "odia",
     "telugu", "tamil", "kannada", "malayalam", "sinhala",
     "kana", "han", "han_simplified", "han_traditional", "hangul", "thai",
-    "ipa", "braille", "other",
+    "ipa", "braille", "sitelen_pona", "other",
 }
 # The notations taught like languages: the IPA (ADR-0041) and braille
 # (ADR-0043). Neither is spoken, so neither has a tts tag, and neither is

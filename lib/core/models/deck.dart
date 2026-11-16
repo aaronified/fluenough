@@ -90,6 +90,13 @@ class LanguageInfo {
     'adlam',
   };
 
+  /// The scripts no phone has a keyboard for, and the app has none of its
+  /// own for: sitelen pona, whose private-use glyphs (U+F1900 to U+F19FF)
+  /// are not on any keyboard. A card is shown in such a script, but an
+  /// answer is never asked in it: a typed or rearranged answer is the card's
+  /// first script, its Latin spelling (ADR-0055).
+  static const Set<String> noKeyboardScripts = <String>{'sitelen_pona'};
+
   /// Whether this is the IPA, a notation taught like a language
   /// (ADR-0041): its cards' examples are in other languages.
   bool get isIpa => script == 'ipa';
