@@ -125,7 +125,9 @@ cards:
     tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases:
+      - { word: "हम", base: "हम", reading: "ham" }
+      - { word: "मन", base: "मन", reading: "man" }
     examples:
       - target: "हम मन घर जावत हन।"
         reading: "ham man ghar jāvat han."

@@ -416,7 +416,9 @@ cards:
     tags: ["doubtful"]
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases:
+      - { word: "पिता", base: "पिता", reading: "pitā" }
+      - { word: "जी", base: "जी", reading: "jī" }
     examples:
       - target: "मेरे पिता जी मास्टर न।"
         reading: "mere pitā jī māsṭar n."
