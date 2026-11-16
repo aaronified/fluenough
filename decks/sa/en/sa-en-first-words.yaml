@@ -33,11 +33,12 @@ cards:
         bases:
           "त्वं": "you"
           "जानासि": "to know (you know)"
-      "त्वं देवः असि":
+      "त्वं देवो ऽसि":
         native: "You are a god."
         bases:
+          "देवो": "god"
           "त्वं": "you"
-          "असि": "to be (you are)"
+          "ऽसि": "to be (you are)"
   "sa-0023":
     native: "Water."
     notes:
@@ -62,10 +63,10 @@ cards:
     bases:
       "अग्निः": "fire"
     examples:
-      "अग्निः ज्वलति":
+      "अग्निर् ज्वलति":
         native: "Fire burns."
         bases:
-          "अग्निः": "fire"
+          "अग्निर्": "fire"
           "ज्वलति": "to burn (it burns)"
       "अग्निं पश्य":
         native: "Look at the fire."
@@ -79,11 +80,11 @@ cards:
     bases:
       "देवः": "god"
     examples:
-      "देवः अस्ति":
+      "देवो ऽस्ति":
         native: "There is a god."
         bases:
-          "देवः": "god"
-          "अस्ति": "to be (is)"
+          "देवो": "god"
+          "ऽस्ति": "to be (is)"
       "देवाः सन्ति":
         native: "There are gods."
         bases:
@@ -97,11 +98,13 @@ cards:
       "अहं न जानामि":
         native: "I do not know."
         bases:
+          "अहं": "I"
           "न": "not"
           "जानामि": "to know (I know)"
       "त्वं न गच्छसि":
         native: "You do not go."
         bases:
+          "त्वं": "you"
           "न": "not"
           "गच्छसि": "to go (you go)"
   "sa-0027":
@@ -111,14 +114,15 @@ cards:
     bases:
       "एकः": "one"
     examples:
-      "एकः अश्वः":
+      "एको ऽश्वः":
         native: "One horse."
         bases:
-          "एकः": "one"
-      "एकः देवः":
+          "ऽश्वः": "horse"
+          "एको": "one"
+      "एको देवः":
         native: "One god."
         bases:
-          "एकः": "one"
+          "एको": "one"
   "sa-0028":
     native: "Cow."
     notes:
@@ -126,14 +130,16 @@ cards:
     bases:
       "गौः": "cow"
     examples:
-      "गौः जलं पिबति":
+      "गौर् जलं पिबति":
         native: "The cow drinks water."
         bases:
-          "गौः": "cow"
+          "जलं": "water"
+          "गौर्": "cow"
           "पिबति": "to drink (it drinks)"
       "अहं गाम् पश्यामि":
         native: "I see the cow."
         bases:
+          "अहं": "I"
           "गाम्": "cow"
           "पश्यामि": "to see (I see)"
   "sa-0029":
@@ -143,10 +149,10 @@ cards:
     bases:
       "अश्वः": "horse"
     examples:
-      "अश्वः धावति":
+      "अश्वो धावति":
         native: "The horse runs."
         bases:
-          "अश्वः": "horse"
+          "अश्वो": "horse"
           "धावति": "to run (it runs)"
       "अहम् अश्वम् पश्यामि":
         native: "I see the horse."
@@ -163,6 +169,7 @@ cards:
       "अहं संस्कृतं जानामि":
         native: "I know Sanskrit."
         bases:
+          "अहं": "I"
           "संस्कृतं": "Sanskrit"
           "जानामि": "to know (I know)"
       "संस्कृतम् अस्ति":

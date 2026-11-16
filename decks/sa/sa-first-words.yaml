@@ -45,13 +45,13 @@ cards:
         bases:
           - { word: "त्वं", base: "त्वम्", reading: "tvam" }
           - { word: "जानासि", base: "ज्ञा", reading: "jñā" }
-      - target: "त्वं देवः असि"
-        reading: "tvaṃ devaḥ asi"
-        ipa: "t̪ʋəm d̪eːʋəh əsi"
+      - target: "त्वं देवो ऽसि"
+        reading: "tvaṃ devo 'si"
+        ipa: "t̪ʋəm d̪eːʋoː si"
         bases:
           - { word: "त्वं", base: "त्वम्", reading: "tvam" }
-          - { word: "देवः", ref: "sa-0025" }
-          - { word: "असि", base: "अस्", reading: "as" }
+          - { word: "देवो", base: "देवः", reading: "devaḥ" }
+          - { word: "ऽसि", base: "अस्", reading: "as" }
   - id: "sa-0023"
     target: "जलम्"
     reading: "jalam"
@@ -88,11 +88,11 @@ cards:
     bases:
       - { word: "अग्निः", base: "अग्नि", reading: "agni" }
     examples:
-      - target: "अग्निः ज्वलति"
-        reading: "agniḥ jvalati"
-        ipa: "əɡnih dʒʋələt̪i"
+      - target: "अग्निर् ज्वलति"
+        reading: "agnir jvalati"
+        ipa: "əɡnir dʒʋələt̪i"
         bases:
-          - { word: "अग्निः", base: "अग्नि", reading: "agni" }
+          - { word: "अग्निर्", base: "अग्नि", reading: "agni" }
           - { word: "ज्वलति", base: "ज्वल्", reading: "jval" }
       - target: "अग्निं पश्य"
         reading: "agniṃ paśya"
@@ -112,12 +112,12 @@ cards:
     bases:
       - { word: "देवः", base: "देव", reading: "deva" }
     examples:
-      - target: "देवः अस्ति"
-        reading: "devaḥ asti"
-        ipa: "d̪eːʋəh əst̪i"
+      - target: "देवो ऽस्ति"
+        reading: "devo 'sti"
+        ipa: "d̪eːʋoː st̪i"
         bases:
-          - { word: "देवः", base: "देव", reading: "deva" }
-          - { word: "अस्ति", base: "अस्", reading: "as" }
+          - { word: "देवो", base: "देव", reading: "deva" }
+          - { word: "ऽस्ति", base: "अस्", reading: "as" }
       - target: "देवाः सन्ति"
         reading: "devāḥ santi"
         ipa: "d̪eːʋaːh sənt̪i"
@@ -138,14 +138,14 @@ cards:
         reading: "ahaṃ na jānāmi"
         ipa: "əɦəm nə dʒaːnaːmi"
         bases:
-          - { word: "अहं", ref: "sa-0021" }
+          - { word: "अहं", base: "अहम्", reading: "aham" }
           - { word: "न", base: "न", reading: "na" }
           - { word: "जानामि", base: "ज्ञा", reading: "jñā" }
       - target: "त्वं न गच्छसि"
         reading: "tvaṃ na gacchasi"
         ipa: "t̪ʋəm nə ɡətʃtʃʰəsi"
         bases:
-          - { word: "त्वं", ref: "sa-0022" }
+          - { word: "त्वं", base: "त्वम्", reading: "tvam" }
           - { word: "न", base: "न", reading: "na" }
           - { word: "गच्छसि", base: "गम्", reading: "gam" }
   - id: "sa-0027"
@@ -159,17 +159,17 @@ cards:
     bases:
       - { word: "एकः", base: "एक", reading: "eka" }
     examples:
-      - target: "एकः अश्वः"
-        reading: "ekaḥ aśvaḥ"
-        ipa: "eːkəh əʃʋəh"
+      - target: "एको ऽश्वः"
+        reading: "eko 'śvaḥ"
+        ipa: "eːkoː ʃʋəh"
         bases:
-          - { word: "एकः", base: "एक", reading: "eka" }
-          - { word: "अश्वः", ref: "sa-0029" }
-      - target: "एकः देवः"
-        reading: "ekaḥ devaḥ"
-        ipa: "eːkəh d̪eːʋəh"
+          - { word: "एको", base: "एक", reading: "eka" }
+          - { word: "ऽश्वः", base: "अश्वः", reading: "aśvaḥ" }
+      - target: "एको देवः"
+        reading: "eko devaḥ"
+        ipa: "eːkoː d̪eːʋəh"
         bases:
-          - { word: "एकः", base: "एक", reading: "eka" }
+          - { word: "एको", base: "एक", reading: "eka" }
           - { word: "देवः", ref: "sa-0025" }
   - id: "sa-0028"
     target: "गौः"
@@ -183,18 +183,18 @@ cards:
     bases:
       - { word: "गौः", base: "गो", reading: "go" }
     examples:
-      - target: "गौः जलं पिबति"
-        reading: "gauḥ jalaṃ pibati"
-        ipa: "ɡəuh dʒələm pibət̪i"
+      - target: "गौर् जलं पिबति"
+        reading: "gaur jalaṃ pibati"
+        ipa: "ɡəur dʒələm pibət̪i"
         bases:
-          - { word: "गौः", base: "गो", reading: "go" }
-          - { word: "जलं", ref: "sa-0023" }
+          - { word: "गौर्", base: "गो", reading: "go" }
+          - { word: "जलं", base: "जलम्", reading: "jalam" }
           - { word: "पिबति", base: "पा", reading: "pā" }
       - target: "अहं गाम् पश्यामि"
         reading: "ahaṃ gām paśyāmi"
         ipa: "əɦəm ɡaːm pəʃjaːmi"
         bases:
-          - { word: "अहं", ref: "sa-0021" }
+          - { word: "अहं", base: "अहम्", reading: "aham" }
           - { word: "गाम्", base: "गो", reading: "go" }
           - { word: "पश्यामि", base: "दृश्", reading: "dṛś" }
   - id: "sa-0029"
@@ -209,11 +209,11 @@ cards:
     bases:
       - { word: "अश्वः", base: "अश्व", reading: "aśva" }
     examples:
-      - target: "अश्वः धावति"
-        reading: "aśvaḥ dhāvati"
-        ipa: "əʃʋəh d̪ʱaːʋət̪i"
+      - target: "अश्वो धावति"
+        reading: "aśvo dhāvati"
+        ipa: "əʃʋoː d̪ʱaːʋət̪i"
         bases:
-          - { word: "अश्वः", base: "अश्व", reading: "aśva" }
+          - { word: "अश्वो", base: "अश्व", reading: "aśva" }
           - { word: "धावति", base: "धाव्", reading: "dhāv" }
       - target: "अहम् अश्वम् पश्यामि"
         reading: "aham aśvam paśyāmi"
@@ -238,7 +238,7 @@ cards:
         reading: "ahaṃ saṃskṛtaṃ jānāmi"
         ipa: "əɦəm sə̃skr̩t̪əm dʒaːnaːmi"
         bases:
-          - { word: "अहं", ref: "sa-0021" }
+          - { word: "अहं", base: "अहम्", reading: "aham" }
           - { word: "संस्कृतं", base: "संस्कृत", reading: "saṃskṛta" }
           - { word: "जानामि", base: "ज्ञा", reading: "jñā" }
       - target: "संस्कृतम् अस्ति"
