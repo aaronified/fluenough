@@ -45,6 +45,69 @@
 | kn-6268 | see card | The meaning given is speculative: what does the saying mean? | Sonnet review | 2026-11-15 |
 | kn-6269 | see card | The meaning given is speculative: what does the saying mean? | Sonnet review | 2026-11-15 |
 | kn-6303 | see card | The meaning given is speculative (likely: moaning 'alas' ages you): what is the sense? | Sonnet review | 2026-11-15 |
+| kn-rec-kittur-chennamma | see card | Dropped from the Kannada recommendations: no plot of the 1961 film could be sourced (the English Wikipedia plot section is empty, the Kannada page is a stub), so no plot questions were written. Add it back with questions once a plot source is found. | Sonnet review fix | 2026-11-16 |
+| kn-rec-marali-mannige | see card | Dropped from the Kannada recommendations: the only sources found (English and Kannada Wikipedia, Wikidata) give no plot beyond the span of years, the three generations and the dialect, so no plot questions could be written. Add it back with a plot source. | Sonnet review fix | 2026-11-16 |
+| kn-rec-nagamandala | see card | Entry changed to the 1997 film (written by Girish Karnad, directed by T. S. Nagabharana, who has no creators entry yet): its plot is the only one sourced, and it differs from the 1988 play in details. Should the 1988 play be a separate entry once its plot is sourced? | Sonnet review fix | 2026-11-16 |
 | kn-9000 | see card | The reading decks' Kannada prose is the builder's own: is it natural? Doubts: ಕಲ್ಲು ಎತ್ತಬೇಡಿ (park sign), ನಂತರ ಭುಜ ಕೆಳಗೆ ಇಡಿ (body), ನಗದು ಅಥವಾ ಕಾರ್ಡ್ ಸರಿ (shopping), ನಿನ್ನ ಸಹಾಯ ಇದೆ, ನೆಮ್ಮದಿ ಆಯಿತು (feelings) | Haiku builder | 2026-11-15 |
 | kn-9735 | see card | Inflected forms in the reading decks were accepted by lemma: ಓಡುವುದಿಲ್ಲ, ಹಾಡುತ್ತೇನೆ, ಚಮಚವನ್ನು, ಯಾರದು, ಇತ್ತು, ಓಡಿಹೋಯಿತು, ಘೋಷಿಸಲಾಗಿದೆ, ಆರಂಭಿಸಲಾಗಿದೆ, ಮುಂದಿನ, ಕಟ್ಟಲಾಗುವುದು: check each against the grammar decks | Haiku builder | 2026-11-15 |
 | kn-9390 | see card | ZWNJ (U+200C) is written in ಕ್ಲಬ್‌ನಲ್ಲಿ and ಆಂಬುಲೆನ್ಸ್‌ಗೆ: does it match the course's spelling convention? | Haiku builder | 2026-11-15 |
+| kn-8213 | see card | claim that an unmarked object ಚಿತ್ರ means pictures in general and ಚಿತ್ರವನ್ನು marks a specific picture: right? | Haiku builder | 2026-11-16 |
+| kn-8216 | see card | note says a yes/no question with no particle is shown by voice alone (ಹಾಡುತ್ತೀಯ?): is that the usual form? | Haiku builder | 2026-11-16 |
+| kn-8281 | see card | note says ಅವರು is a respectful singular taking the plural verb ending: right? | Haiku builder | 2026-11-16 |
+| kn-7807 | see card | note says ಸೂರ್ಯ takes the masculine verb ending (ಉರಿಯುತ್ತಾನೆ): right? | Haiku builder | 2026-11-16 |
+| kn-8289 | see card | 'give respect' and 'ask for forgiveness' given as collocations, not checked against a dictionary | Haiku builder | 2026-11-16 |
+| kn-7809 | see card | location endings -ಅಲ್ಲಿ and -ಇನಲ್ಲಿ and the adverb ending -ಆಗಿ were stated from memory: check | Haiku builder | 2026-11-16 |
+| kn-8292 | see card | polite imperative forms (ತಿರುಗಿ, ಇಡಿ, ಸರಿಸಿ, ತೊಳೆಯಿರಿ) were given from memory: check | Haiku builder | 2026-11-16 |
+| kn-7002 | see card | note says ಅದು for a person is less polite: right? | Haiku builder | 2026-11-16 |
+| kn-7909 | see card | note on the zero copula with an adjective: right? | Haiku builder | 2026-11-16 |
+| kn-8154 | see card | ನಿಲ್ಲಿಸು as 'park': right? | Haiku builder | 2026-11-16 |
+| kn-8313 | see card | ಕೇಳುತ್ತದೆ as 'hears well': right? | Haiku builder | 2026-11-16 |
+| kn-7893 | see card | informal -ಈಯ and question endings in the note: right? | Haiku builder | 2026-11-16 |
+| kn-8206 | see card | ಸಸ್ಯಾಹಾರ / ಸಸ್ಯಾಹಾರಿ split in the note: right? | Haiku builder | 2026-11-16 |
+| kn-0454 | see card | month names as English loanwords: right? | Haiku builder | 2026-11-16 |
+| kn-7407 | see card | ಸಾವಿರದ as a genitive link (moderate confidence): right? | Haiku builder | 2026-11-16 |
+| kn-7485 | see card | ಸರ್ಕಾರಿ as an adjective of ಸರ್ಕಾರ (moderate confidence): right? | Haiku builder | 2026-11-16 |
+| kn-7462 | see card | -ುತ್ತದೆ for 'it' with animals and birds (moderate confidence): right? | Haiku builder | 2026-11-16 |
+| kn-8131 | see card | ಇದ್ದಾರಾ question form (moderate confidence): right? | Haiku builder | 2026-11-16 |
+| kn-7115 | see card | no note written: is ಚಿಂದಿ 'brilliant' slang right? | Haiku builder | 2026-11-16 |
+| kn-7116 | see card | no note written: is ಡಬ್ಬಾ 'rubbish' slang right? | Haiku builder | 2026-11-16 |
+| kn-7117 | see card | no note written: ಎಣ್ಣೆ is oil; should a register note mention the slang for liquor? | Haiku builder | 2026-11-16 |
+| kn-7093 | see card | no note written: placement of the question word ಯಾಕೆ: what is the rule? | Haiku builder | 2026-11-16 |
+| kn-7144 | see card | no note written: polite ಯಾರು | Haiku builder | 2026-11-16 |
+| kn-0361 | see card | no note written: ಹತ್ತಿರ with a plain noun versus the genitive | Haiku builder | 2026-11-16 |
+| kn-7479 | see card | no note written: ರೇಡಿಯೋದಲ್ಲಿ, the -ದಲ್ಲಿ versus -ಯಲ್ಲಿ allomorph | Haiku builder | 2026-11-16 |
+| kn-7872 | see card | no note written: ಲ್ಯಾಪ್ಟಾಪ್ ಮೇಲೆ, bare noun or genitive before ಮೇಲೆ | Haiku builder | 2026-11-16 |
+| kn-7877 | see card | no note written: polite command ಹಿಡಿಯಿರಿ (-ಇರಿ) | Haiku builder | 2026-11-16 |
+| kn-7177 | see card | no note written: ಯಾವುದು versus ಏನು | Haiku builder | 2026-11-16 |
+| kn-7141 | see card | The note says a plain command ends in -ು and a polite one in -ಿ: this holds for many verbs only (ತೆರೆ, ತೆಗೆ, ತೊಳೆ, ಬಾ differ). Same in kn-7777, kn-8230, kn-8305 and the plain-command notes of the food, verbs and clothes sentence decks: add 'often' | Sonnet review | 2026-11-16 |
+| kn-7789 | see card | -ಇನಲ್ಲಿ is called the 'by' ending: it is the locative (in or on), 'by' is only the English gloss. Same in kn-7793: reword as in kn-0243 | Sonnet review | 2026-11-16 |
+| kn-7521 | see card | ನನಗೆ ... ಬರುವುದಿಲ್ಲ is glossed 'cannot': literally 'does not come to me', meaning 'I do not know how to' | Sonnet review | 2026-11-16 |
+| kn-7387 | see card | ಇದೆ is said to be for things and ಇದ್ದಾರೆ for people, yet 'my family' takes ಇದೆ: add that a family counts as a group | Sonnet review | 2026-11-16 |
+| kn-8213 | see card | 'No object ending means in general, ending means particular' is a tendency, not a rule: soften with 'usually'. Same in kn-8149, kn-8151, kn-8160 | Sonnet review | 2026-11-16 |
+| kn-7764 | see card | The note has a stray hyphen in its reading, (hōda-)-: fix | Sonnet review | 2026-11-16 |
+| kn-8147 | see card | Some notes quote a suffix with no reading (-ಆಗಿ in kn-8147, -ು in kn-7789, ಹನ್ನ- and ಇನ- in kn-0243): add readings | Sonnet review | 2026-11-16 |
+| kn-7789 | see card | kn-7789 and kn-8236 chain several points in one note: split into one idea per sentence | Sonnet review | 2026-11-16 |
+| kn-6365 | see card | ನೆನಪಿಡು: the only source is a listing with the example ನೆನಪಿಡತಕ್ಕ ಮಾತುಗಳು on Kannada Wiktionary, with no English for the verb: is "to keep in mind" right? | Sonnet builder | 2026-11-16 |
+| kn-6367 | see card | ಕನ್ನಡಿಸು: the source (Kannada Wikipedia) names the -ಇಸು pattern and gives the sentence but no English: is "to render into Kannada" the usual sense? | Sonnet builder | 2026-11-16 |
+| kn-6411 | see card | ಸೇರಿಬಿಡು: the dictionary example is a plain "joined"; is ಬಿಡು a completive here, as the grammar deck says for ಹೇಳಿಬಿಟ್ಟೆ and ತಿಂದುಬಿಟ್ಟೆ? | Sonnet builder | 2026-11-16 |
+| kn-6412 | see card | ತಿಂದುಬಿಡು: no dictionary page read labels ಬಿಡು an auxiliary; the shade of "eat up" comes from the course's grammar deck: right? | Sonnet builder | 2026-11-16 |
+| kn-6451 | see card | ತಿಂಡಿ is "snack" or "breakfast" (kn-0435 says both); the source gives no English for ನನಗೆ ಆ ತಿಂಡಿ ಬೇಡ: which gloss? | Sonnet builder | 2026-11-16 |
+| kn-6463 | see card | ನನಗೆ ಕನ್ನಡ ಬರುತ್ತದೆ: ಬರು as "to be known (of a skill)" comes from the course's grammar decks, not from a dictionary page read: right? | Sonnet builder | 2026-11-16 |
+| kn-6482 | see card | ಹಿಡಿ as "agree with" (water that does not suit a person): the Kannada Wiktionary example has no English; is the translation right? | Sonnet builder | 2026-11-16 |
+| kn-6485 | see card | ಕಣ್ಣಿಗೆ ಬೀಳು: listed as an idiom on Kannada Wikipedia and Wiktionary with no English; "to catch the eye; to come into view" is built from the parts: right? | Sonnet builder | 2026-11-16 |
+| kn-8331 | see card | ಪ್ರತಿ ಕಿಲೋ ಎಷ್ಟು? and ಪ್ರತಿ ಲೀಟರ್ ಎಷ್ಟು? (kn-8332): is the pattern natural for 'how much per kilo / litre'? | Haiku builder | 2026-11-16 |
+| kn-8334 | see card | ಸ್ವಲ್ಪ ತಿನ್ನು (eat a little): natural? | Haiku builder | 2026-11-16 |
+| kn-8339 | see card | ಕೆಲವು ಮಕ್ಕಳು ತಿನ್ನುತ್ತಾರೆ is glossed 'Some children eat.', which reads incomplete: better gloss? | Haiku builder | 2026-11-16 |
+| kn-8327 | see card | ಇದರ ಬೆಲೆ ಹದಿನೈದು ರೂಪಾಯಿ: genitive ಇದರ of ಇದು and the price phrasing: natural? | Haiku builder | 2026-11-16 |
+| kn-8337 | see card | ಭರಪೂರ before a bare noun (ಭರಪೂರ ಮಾವು ತಿನ್ನುತ್ತೇನೆ) is a little bookish: natural? | Sonnet review | 2026-11-16 |
+| kn-6500 | see card | ನಿಮಗೆ ಏನು ತೊಂದರೆ?: is this the usual doctor's opening, or is ಏನಾಗಿದೆ? more natural? | Sonnet builder | 2026-11-16 |
+| kn-6522 | see card | ವೈದ್ಯರ ಚೀಟಿ: is ಚೀಟಿ the common word for a prescription at a pharmacy? | Sonnet builder | 2026-11-16 |
+| kn-6543 | see card | ಉಪಾಹಾರ: formal; does a hotel desk say ತಿಂಡಿ for breakfast instead? | Sonnet builder | 2026-11-16 |
+| kn-6546 | see card | ಚೆಕ್ ಔಟ್ ಸಮಯ: loan phrase; is ಕೊಠಡಿ ಖಾಲಿ ಮಾಡುವ ಸಮಯ more natural? | Sonnet builder | 2026-11-16 |
+| kn-6548 | see card | ದಯವಿಟ್ಟು ಒಂದು ಟ್ಯಾಕ್ಸಿ ಕರೆಯಿರಿ: would a front desk say ಟ್ಯಾಕ್ಸಿ ಬುಕ್ ಮಾಡಿ instead? | Sonnet builder | 2026-11-16 |
+| kn-6567 | see card | ಕಾರ್ಡಿನಲ್ಲಿ ಹಣ ಕೊಡಬಹುದೇ?: is the stem ಕಾರ್ಡಿನ- right, and is this how a diner asks to pay by card? | Sonnet builder | 2026-11-16 |
+| kn-6580 | see card | ಮಾನ್ಯರೇ,: traditional formal salutation; does it read as dated in an email? | Sonnet builder | 2026-11-16 |
+| kn-6585 | see card | ಉತ್ತರಿಸಲು ತಡವಾಗಿದ್ದಕ್ಕೆ ಕ್ಷಮೆ ಇರಲಿ: natural apology in an email, or is a different form usual? | Sonnet builder | 2026-11-16 |
+| kn-6586 | see card | ದಯವಿಟ್ಟು ಬಿಲ್ ಕಳುಹಿಸಿ: ಬಿಲ್ is glossed bill; should a business email say ಇನ್ವಾಯ್ಸ್ (invoice)? | Sonnet builder | 2026-11-16 |
+| kn-6600 | see card | ಸಭೆಯನ್ನು ಶುರು ಮಾಡೋಣ: ಮಾಡೋಣ is colloquial; is it right for a meeting, or ಮಾಡೋಣ vs ಆರಂಭಿಸೋಣ? | Sonnet builder | 2026-11-16 |
+| kn-6520, kn-6544, kn-6547 | see card | Readings of ಏನಾದರೂ, ಇದೆಯೇ, ವೈಫೈ and ಲಗೇಜ್ come from the tool's rules and are unreviewed: are ēnādarū, ideyē, vaiphai and lagēj right? | Sonnet builder | 2026-11-16 |

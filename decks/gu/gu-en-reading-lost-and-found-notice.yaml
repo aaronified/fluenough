@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "id": "gu-en-reading-lost-and-found-notice",
+  "name": "A lost-and-found notice describing a bag",
+  "kind": "reading",
+  "language": {
+    "code": "gu",
+    "iso639_3": "guj",
+    "name": "Gujarati",
+    "script": "gujarati",
+    "tts": "gu-IN",
+    "icon": "ગુ"
+  },
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "license": "CC-BY-SA-4.0",
+  "source": "Written for this deck, and released under CC BY-SA 4.0",
+  "description": "A lost-and-found notice that describes a bag left on a bus. Written for this deck and released under CC BY-SA 4.0. Not yet checked by a Gujarati speaker: please report any mistake.",
+  "tags": [
+    "reading",
+    "unreviewed"
+  ],
+  "passages": [
+    {
+      "id": "gu-lost-and-found-notice",
+      "title": "A lost-and-found notice describing a bag",
+      "theme": "appearance",
+      "sentences": [
+        {
+          "text": "કાળી બૅગ મળી છે.",
+          "reading": "kāḷi bêg maḷi che.",
+          "ipa": "kaɭi bɛɡ məɭi tʃʰe"
+        },
+        {
+          "text": "બૅગ નાની અને જૂની છે.",
+          "reading": "bêg nāni ane juni che.",
+          "ipa": "bɛɡ nani əne dʒuni tʃʰe"
+        },
+        {
+          "text": "અંદર લાલ પુસ્તક છે.",
+          "reading": "andar lāl pustak che.",
+          "ipa": "ənd̪ər lal pust̪ək tʃʰe"
+        },
+        {
+          "text": "માલિક ઓફિસમાં આવે.",
+          "reading": "mālik ophismām̐ āve.",
+          "ipa": "malik opʰismã aʋe"
+        }
+      ],
+      "questions": [
+        {
+          "id": "gu-3020",
+          "prompt": {
+            "en": "What colour is the bag?"
+          },
+          "answer": 2,
+          "options": [
+            {
+              "en": "Red"
+            },
+            {
+              "en": "Black"
+            },
+            {
+              "en": "Green"
+            }
+          ]
+        },
+        {
+          "id": "gu-3021",
+          "prompt": {
+            "en": "The bag is big and new."
+          },
+          "answer": false
+        },
+        {
+          "id": "gu-3022",
+          "prompt": {
+            "en": "Where should the owner go?"
+          },
+          "answer": 1,
+          "options": [
+            {
+              "en": "The office"
+            },
+            {
+              "en": "The station"
+            },
+            {
+              "en": "The school"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

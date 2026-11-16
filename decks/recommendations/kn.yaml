@@ -1,0 +1,269 @@
+# Popular works of Karnataka in Kannada, recommended for the learner to find (some are in the public domain): the learner finds them (a library, a shop, a service) and the app asks
+# the questions after the learner has marked the work as seen, read or heard. Nothing of a work is quoted (wiki/Plan-Language-Completeness.md,
+# "Source-it-yourself works"). No links are given: no link has been checked. Briefings and questions use only what the page named in the creators file or the work's own
+# Wikipedia article says (read 2026-11-15). Levels are defaults (B1) until a reviewer sets them. Not reviewed by a Kannada speaker (docs/review-queue/kn.md).
+# Wave 3 (2026-11-16): Bhootayyana Maga Ayyu, Sharapanjara and Gejje Pooje added from their en Wikipedia articles (plots) and the creators' en Wikipedia pages (lifespans), read 2026-11-16; the list is 20.
+# Wave 2 (2026-11-16): works added from en and kn Wikipedia and, for Marali Mannige, the 1959 Bengali translation scanned in the Digital Library of India (archive.org in.ernet.dli.2015.457745) and the Kuvempu University M.Phil. thesis archive.org kuh.mphil.585.pay.130221, which dates the writing to 1941 and names the village Kodi. Bedara Kannappa, Kittur Chennamma and Sandhya Raga (films) were dropped: no readable plot source (wiki/Deck-Work-Queue-KN.md section 7).
+schema: 1
+kind: "recommendations"
+id: "recommendations-kn"
+language: "kn"
+license: "CC-BY-SA-4.0"
+recommendations:
+  - id: "kn-rec-samskara"
+    medium: "film"
+    title: { text: "ಸಂಸ್ಕಾರ", reading: "samskāra" }
+    creator: ["kn-pattabhirama-reddy", "kn-u-r-ananthamurthy"]
+    year: 1970
+    level: "B1"
+    briefing: { en: "A 1970 film, directed by Pattabhirama Reddy and based on U. R. Ananthamurthy's novel. A respected Brahmin priest in a rural village faces a crisis when a rebellious man who broke the community's customs dies and no one will cremate the body." }
+    questions:
+      - { id: "q1", prompt: { en: "What do Narayanappa and his friends do that turns the Brahmins of the village against him?" }, options: { en: ["They refuse to attend the temple festival", "They catch the sacred fish in the temple tank and eat them", "They burn the village's holy books"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Who cremates Narayanappa's body in secret?" }, options: { en: ["Praneshacharya", "Chandri", "Narayanappa's friends"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Where does Praneshacharya find himself when he wakes in the middle of the night?" }, options: { en: ["Lying in the temple courtyard", "On the road to Shimoga", "Lying in Chandri's lap"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-vamsha-vriksha"
+    medium: "film"
+    title: { text: "ವಂಶವೃಕ್ಷ", reading: "vamśavrukṣa" }
+    creator: ["kn-b-v-karanth", "kn-girish-karnad", "kn-s-l-bhyrappa"]
+    year: 1971
+    level: "B1"
+    briefing: { en: "A 1971 family drama directed by B. V. Karanth and Girish Karnad, based on S. L. Bhyrappa's novel. Set in 1920s Karnataka, it follows a young widow who goes to college and falls for a professor, while his brother's research and second marriage bring trouble to the family." }
+    questions:
+      - { id: "q1", prompt: { en: "What large project does Sadashiva Rao take on?" }, options: { en: ["A five-volume cultural history of India", "A translation of the Vedas into English", "A school for village children"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "What does Shrothri find while sorting his papers that shakes his belief about his own family?" }, options: { en: ["A will leaving the land to Lakshmi", "A letter showing his father was not Nanjunda Shrothri Sr.", "A map of the ancestral fields"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Where does Kathyayani unexpectedly meet her son years after leaving him?" }, options: { en: ["In her English class", "At a temple fair", "At the Kapila River"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-bangarada-manushya"
+    medium: "film"
+    title: { text: "ಬಂಗಾರದ ಮನುಷ್ಯ", reading: "baṅgārada manuṣya" }
+    creator: ["kn-s-siddalingaiah"]
+    year: 1972
+    level: "B1"
+    briefing: { en: "A 1972 Kannada drama directed by S. Siddalingaiah. A man goes to his sister's village after her husband dies, takes responsibility for her family, and becomes prosperous and respected, while he keeps a hidden second life." }
+    questions:
+      - { id: "q1", prompt: { en: "Where does Rajiva travel every six months?" }, options: { en: ["Mysore", "Bangalore", "Belgaum"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "Who does Sharavathi, the woman Rajiva visits, turn out to be?" }, options: { en: ["Rajiva's secret wife", "A daughter of Sharada's late husband, so a half-sister of Sharada's children", "A widow of one of Rajiva's friends"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "How does Lakshmi die?" }, options: { en: ["She is chased by a bull and falls into a well", "She falls ill with fever", "She is struck by lightning in the field"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-mayura"
+    medium: "film"
+    title: { text: "ಮಯೂರ", reading: "mayūra" }
+    creator: ["kn-b-vijaya-reddy"]
+    year: 1975
+    level: "B1"
+    briefing: { en: "A 1975 Kannada historical drama directed by Vijay. It depicts the life of Mayura, a Brahmin youth who discovers his royal heritage and sets out to claim his destiny." }
+    questions:
+      - { id: "q1", prompt: { en: "What does Mayura do at the start of the film in Kanchi?" }, options: { en: ["He defeats an arrogant wrestler", "He wins a poetry contest", "He is crowned king"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who takes Mayura under his wing and trains him after that bout?" }, options: { en: ["Ranga Jetti", "Vishnugopa", "Sivaskandhavarma"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Under what name does Mayura return to Banavasi?" }, options: { en: ["Chandravarma", "Nilakanthagupta, a merchant", "Premavati"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-chomana-dudi"
+    medium: "film"
+    title: { text: "ಚೋಮನ ದುಡಿ", reading: "cōmana duḍi" }
+    creator: ["kn-b-v-karanth", "kn-k-shivaram-karanth"]
+    year: 1975
+    level: "B1"
+    briefing: { en: "A 1975 drama directed by B. V. Karanth, based on K. Shivaram Karanth's novel. A bonded labourer from a low caste is forbidden from farming the land he wants, and his family suffers debt, disease and a drowning that no one helps prevent." }
+    questions:
+      - { id: "q1", prompt: { en: "What does Choma manage to rear that he cannot use to till land?" }, options: { en: ["A pair of bullocks he found straying in the forest", "A herd of buffaloes", "A pair of horses given by the landlord"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "How does Choma end the film?" }, options: { en: ["He leaves the village", "He shuts himself in his house and plays his drum until he dies", "He takes the land by force"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Who tries to lure Choma with the promise of land?" }, options: { en: ["Christian missionaries", "The village head", "A coffee estate owner"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-ghatashraddha"
+    medium: "film"
+    title: { text: "ಘಟಶ್ರಾದ್ಧ", reading: "ghaṭaśrāddha" }
+    creator: ["kn-girish-kasaravalli", "kn-u-r-ananthamurthy"]
+    year: 1977
+    level: "B1"
+    briefing: { en: "A 1977 Kannada film directed by Girish Kasaravalli, based on a novella by U. R. Ananthamurthy. A Vedic teacher's daughter becomes pregnant, the village casts her out, and her father performs her mourning rites while she is still alive." }
+    questions:
+      - { id: "q1", prompt: { en: "What is the job of Yamuna's lover?" }, options: { en: ["School teacher", "Temple priest", "Landowner"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Why does Udupa leave town just before things go wrong at the school?" }, options: { en: ["To visit his relatives", "To raise funds for his crumbling school", "To attend a festival"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What is done to Yamuna at the end of the film?" }, options: { en: ["She is married off to a stranger", "She is sent to a city", "She is shaved bald and left under a banyan tree"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-ondanondu-kaladalli"
+    medium: "film"
+    title: { text: "ಒಂದಾನೊಂದು ಕಾಲದಲ್ಲಿ", reading: "ondānondu kāladalli" }
+    creator: ["kn-girish-karnad"]
+    year: 1978
+    level: "B1"
+    briefing: { en: "A 1978 Kannada epic film by Girish Karnad, with echoes of early samurai films. A mercenary is hired by a chieftain and is drawn into a feud between two brothers." }
+    questions:
+      - { id: "q1", prompt: { en: "Why does the mercenary release the enemy commander he has trapped?" }, options: { en: ["He did not want to shed blood on a festival day", "He is paid a bribe", "He fears the commander's army"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "What work has the chieftain given his nephew Jayakeshi?" }, options: { en: ["Training soldiers", "Tending cattle", "Collecting taxes"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "How does the mercenary die?" }, options: { en: ["He is killed in a duel with Peramadi", "He is fatally injured by his old chief, whom he had refused to kill", "He dies of fever on the road"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-kanooru-heggadithi"
+    medium: "film"
+    title: { text: "ಕಾನೂರು ಹೆಗ್ಗಡತಿ", reading: "kānūru heggaḍati" }
+    creator: ["kn-girish-karnad", "kn-kuvempu"]
+    year: 1999
+    level: "B1"
+    briefing: { en: "A 1999 film directed by Girish Karnad, based on Kuvempu's 1936 novel. Set in pre-independence Malnad, it follows Subbamma, the rebellious third wife of a landowner, who urges women to defy the men of their households." }
+    questions:
+      - { id: "q1", prompt: { en: "What does Subbamma do when her husband dies?" }, options: { en: ["Leaves the household", "Uses her authority to avenge wrongs done by men to women", "Hands the estate to her sons"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Who takes Subbamma's place after her actions destroy her?" }, options: { en: ["Seetha", "Chandre Gowda", "The liberal intellectual Hoovayya"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "How many main characters does the film's screenplay concentrate on, after cutting down the long novel?" }, options: { en: ["Four", "Twelve", "One"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-nagamandala"
+    medium: "film"
+    title: { text: "ನಾಗಮಂಡಲ", reading: "nāgamaṇḍala" }
+    creator: ["kn-girish-karnad"]
+    year: 1997
+    level: "B1"
+    briefing: { en: "A 1997 Kannada film written by Girish Karnad and directed by T. S. Nagabharana, adapted from Karnad's 1988 play based on a folk tale. It shows a woman and a snake that takes the form of her uncaring husband." }
+    questions:
+      - { id: "q1", prompt: { en: "What does Kurudamma give Rani to win her husband over?" }, options: { en: ["A small root to mix with milk", "A bottle of oil", "A silver ring"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "What happens to Rani when she picks up a snake from the anthill during the village test?" }, options: { en: ["She is bitten and dies", "She is unharmed and the village adores her", "She faints"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "How does the snake die at the end?" }, options: { en: ["Appanna throws it into a fire", "A hunter kills it", "It leaves the village"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-mysooru-mallige"
+    medium: "book"
+    title: { text: "ಮೈಸೂರು ಮಲ್ಲಿಗೆ", reading: "maisūru mallige" }
+    creator: ["kn-ks-narasimhaswamy"]
+    year: 1942
+    level: "B1"
+    script: "kannada"
+    briefing: { en: "A 1942 poetry collection by K. S. Narasimhaswamy, his first published work and his most popular. It is named after the jasmine of Mysuru and has been reprinted many times." }
+    questions:
+      - { id: "q1", prompt: { en: "What does the collection celebrate?" }, options: { en: ["The blossoming of love between a newly married couple", "The glory of the Mysore kings", "The harvest festival"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Which tradition influenced the poet?" }, options: { en: ["Persian ghazals", "English Romanticism", "Sanskrit epics"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Where was the book first released in 1942?" }, options: { en: ["At Central College, Bangalore", "At the Mysore Palace", "At Maharaja College"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-karnata-bharata-katha-manjari"
+    medium: "book"
+    title: { text: "ಕರ್ಣಾಟ ಭಾರತ ಕಥಾಮಂಜರಿ", reading: "karṇāṭa bhārata kathāmañjari" }
+    creator: ["kn-kumara-vyasa"]
+    year: 1430
+    level: "B1"
+    script: "kannada"
+    briefing: { en: "A Kannada verse retelling of the first ten parvas of the Mahabharata by Kumara Vyasa, completed in 1430 under Deva Raya II of the Vijayanagara Empire. It is written in six-line stanzas and is also called Dasha Parva Bharata and Gadugina Bharata." }
+    questions:
+      - { id: "q1", prompt: { en: "Who first completed the remaining eight chapters that Kumara Vyasa left incomplete?" }, options: { en: ["Thimmanna Kavi", "Lakshmisha", "Chamarasa"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "According to local belief, who narrated the story to the poet from behind the statue?" }, options: { en: ["Sri Veera Narayana, the Lord Vishnu", "The sage Vyasa", "The poet's teacher"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What condition did the narrator lay down for the poet?" }, options: { en: ["To write only at night", "He must not try to see the source of the voice", "To tell no one the story"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-kasturi-nivasa"
+    medium: "film"
+    title: { text: "ಕಸ್ತೂರಿ ನಿವಾಸ", reading: "kastūri nivāsa" }
+    creator: ["kn-s-k-bhagavan"]
+    year: 1971
+    level: "B1"
+    briefing: { en: "A 1971 Kannada family drama written and directed by the duo Dorai-Bhagavan, about a man who is generous to a fault." }
+    questions:
+      - { id: "q1", prompt: { en: "What does Ravi Varma own?" }, options: { en: ["A coffee estate", "A matchbox factory", "A cinema hall"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "Why does Chandru resign and start his own company?" }, options: { en: ["Ravi, a traditionalist, is angered by his idea of changing the company's structure", "He is offered a job in a bank", "He quarrels with Ravi over Neela"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "Neela asks Ravi for something for her sick daughter. What had he just sold?" }, options: { en: ["His house", "A gold ring", "The dove"] }, answer: 3 }
+      - { id: "q4", prompt: { en: "What does Ravi do when his secretary Neela asks his permission to marry Chandru?" }, options: { en: ["He forbids it", "He blesses her", "He leaves the city"] }, answer: 2 }
+      - { id: "q5", prompt: { en: "Ravi puts his house up for sale. What does he do when Chandru calls for the highest bid so as to give it back to him?" }, options: { en: ["He refuses to accept it", "He takes it gladly", "He asks for a higher price"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-marali-mannige"
+    medium: "book"
+    title: { text: "ಮರಳಿ ಮಣ್ಣಿಗೆ", reading: "maraḷi maṇṇige" }
+    creator: ["kn-k-shivaram-karanth"]
+    year: 1941
+    level: "B1"
+    script: "kannada"
+    briefing: { en: "A Kannada novel by K. Shivaram Karanth. Its English title is Back to the Soil." }
+    questions:
+      - { id: "q1", prompt: { en: "Whose wedding, held in a monsoon downpour, is told in the opening chapter?" }, options: { en: ["Parvati's", "Saraswati's", "Nagaveni's"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "How many generations of a family does the story follow, from about 1850 to 1940?" }, options: { en: ["Two", "Five", "Three"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "What strikes the villages after the chariot fair at Salagrama?" }, options: { en: ["A flood", "An epidemic of fever", "A famine"] }, answer: 2 }
+      - { id: "q4", prompt: { en: "Whose marriage is being fixed at the end, with Saraswati, the daughter of Nagappa of Brahmavara?" }, options: { en: ["Ram's", "Janardan's", "Nagappa's"] }, answer: 1 }
+      - { id: "q5", prompt: { en: "Which village on the coast of Dakshina Kannada is the family's home?" }, options: { en: ["Kote", "Kodi", "Kundapura"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-mookajjiya-kanasugalu"
+    medium: "book"
+    title: { text: "ಮೂಕಜ್ಜಿಯ ಕನಸುಗಳು", reading: "mūkajjiya kanasugaḷu" }
+    creator: ["kn-k-shivaram-karanth"]
+    year: 1968
+    level: "B1"
+    script: "kannada"
+    briefing: { en: "A 1968 Kannada novel by K. Shivaram Karanth about an old woman and her grandson. The title means Dreams of Mookajji." }
+    questions:
+      - { id: "q1", prompt: { en: "In which village is the novel set?" }, options: { en: ["Mooduru", "Kote", "Hindgana"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "At what age did Mookajji lose her husband?" }, options: { en: ["Twenty", "Ten", "Forty"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What special power does Mookajji have?" }, options: { en: ["She can cure the sick", "She can speak to animals", "She sees what will happen and what has happened, like waking dreams"] }, answer: 3 }
+      - { id: "q4", prompt: { en: "What does her grandson Subbaraya keep asking her about?" }, options: { en: ["God, tradition, belief and other social questions", "Prices at the market", "The history of the royal family"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-mookajjiya-kanasugalu-film"
+    medium: "film"
+    title: { text: "ಮೂಕಜ್ಜಿಯ ಕನಸುಗಳು", reading: "mūkajjiya kanasugaḷu" }
+    creator: ["kn-p-sheshadri", "kn-k-shivaram-karanth"]
+    year: 2019
+    level: "B1"
+    briefing: { en: "A 2019 Kannada film directed by P. Sheshadri, based on K. Shivaram Karanth's novel of the same name, set in coastal Karnataka." }
+    questions:
+      - { id: "q1", prompt: { en: "What object does Subbaraya bring home that starts Mookajji's first story?" }, options: { en: ["A wicker basket", "A gold chain", "A clay pot"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who is the rich merchant who pursues Naagi?" }, options: { en: ["Ramanna", "Sheenappa", "Anant Rao"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "What leads Mookajji to stop speaking?" }, options: { en: ["An illness in childhood", "A quarrel with her brother", "Being rudely told to leave the temple by the priest"] }, answer: 3 }
+      - { id: "q4", prompt: { en: "Who is Thippi?" }, options: { en: ["Mookajji's childhood friend in a neighbouring village", "Subbaraya's wife", "Naagi's daughter"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-malegalalli-madumagalu"
+    medium: "book"
+    title: { text: "ಮಲೆಗಳಲ್ಲಿ ಮದುಮಗಳು", reading: "malegaḷalli madumagaḷu" }
+    creator: ["kn-kuvempu"]
+    year: 1967
+    level: "B1"
+    script: "kannada"
+    briefing: { en: "A Kannada novel by Kuvempu, first published in 1967, set among the hills and villages of the Malnad in the nineteenth century." }
+    questions:
+      - { id: "q1", prompt: { en: "What is the name of Guthi's dog?" }, options: { en: ["Moti", "Tiger", "Huliya"] }, answer: 3 }
+      - { id: "q2", prompt: { en: "Why does Guthi set out on his long journey from Simbavi?" }, options: { en: ["To bring away his cousin Timmi, whose father plans to marry her to another man", "To look for work in a town", "To attend a temple festival"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What is Jeevaratnayya's role in the story?" }, options: { en: ["A landowner", "A priest who spreads Christianity", "A village astrologer"] }, answer: 2 }
+      - { id: "q4", prompt: { en: "To whom does Venkanna of Huvalli plan to give his daughter Chinnamma?" }, options: { en: ["Mukundayya", "Shankara Heggade", "Timmappa Heggade"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-sri-ramayana-darshanam"
+    medium: "book"
+    title: { text: "ಶ್ರೀ ರಾಮಾಯಣ ದರ್ಶನಂ", reading: "śrī rāmāyaṇa darśanaṁ" }
+    creator: ["kn-kuvempu"]
+    year: 1949
+    level: "B1"
+    script: "kannada"
+    briefing: { en: "A modern Kannada epic poem by Kuvempu that retells the Ramayana. Its first volume came out in 1949." }
+    questions:
+      - { id: "q1", prompt: { en: "What does Rama do when Sita enters the fire in Kuvempu's telling?" }, options: { en: ["He enters the flames too and comes out holding her hand", "He turns away and leaves", "He stops her with a word"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "Who is the poem dedicated to?" }, options: { en: ["His elder brother", "His teacher Sri Venkannayya", "His publisher"] }, answer: 2 }
+      - { id: "q3", prompt: { en: "Into how many parts (sampuṭa) is the poem divided?" }, options: { en: ["Two", "Seven", "Four"] }, answer: 3 }
+      - { id: "q4", prompt: { en: "Which of these is the name of one of its parts?" }, options: { en: ["Kishkindha sampuṭa", "Sundara sampuṭa", "Bala sampuṭa"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-bhootayyana-maga-ayyu"
+    medium: "film"
+    title: { text: "ಭೂತಯ್ಯನ ಮಗ ಅಯ್ಯು", reading: "bhūtayyana maga ayyu" }
+    creator: ["kn-s-siddalingaiah", "kn-gorur-ramaswamy-iyengar"]
+    year: 1974
+    level: "B1"
+    briefing: { en: "A 1974 Kannada drama directed by S. Siddalingaiah, based on a short story by Gorur Ramaswamy Iyengar. It is about two villagers who are enemies and how they mend their relationship." }
+    questions:
+      - { id: "q1", prompt: { en: "What do the villagers refuse to do when the zamindar Bhootayya dies?" }, options: { en: ["Come to perform his last rites", "Return the money they owe him", "Work on his fields"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "What does Gulla's wife try to do because she is sure Ayyu will not spare her husband?" }, options: { en: ["Beg the police for protection", "Run away to the town", "Drown herself in the river"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "What does Gulla do when the flood strikes the village?" }, options: { en: ["Warn the villagers to leave their homes", "Set out on a raft to rescue Ayyu's family", "Go to town to fetch the police"] }, answer: 2 }
+      - { id: "q4", prompt: { en: "What does Ayyu tell the district police about the fire at his house?" }, options: { en: ["That robbers had come from the town", "That Gulla was away that night", "That it was an accident"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-sharapanjara"
+    medium: "film"
+    title: { text: "ಶರಪಂಜರ", reading: "śarapañjara" }
+    creator: ["kn-puttanna-kanagal", "kn-triveni"]
+    year: 1971
+    level: "B1"
+    briefing: { en: "A 1971 Kannada film directed by Puttanna Kanagal, based on Triveni's novel of the same name. Its English title is Cage of Arrows." }
+    questions:
+      - { id: "q1", prompt: { en: "What condition does Kaveri develop after her second child is born?" }, options: { en: ["A serious heart condition", "Post-partum psychosis", "A loss of memory"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "How does Satish treat Kaveri when she returns home after her treatment?" }, options: { en: ["With callousness", "With great tenderness", "With open anger"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What does Kaveri discover that brings her symptoms back?" }, options: { en: ["That her parents have sold their house", "That her son has been sent away", "That Satish is seeing a colleague"] }, answer: 3 }
+      - { id: "q4", prompt: { en: "Where do Kaveri and Satish first meet?" }, options: { en: ["In her college", "At a friend's wedding", "At a hospital"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-gejje-pooje"
+    medium: "film"
+    title: { text: "ಗೆಜ್ಜೆ ಪೂಜೆ", reading: "gejje pūje" }
+    creator: ["kn-puttanna-kanagal", "kn-m-k-indira"]
+    year: 1969
+    level: "B1"
+    briefing: { en: "A 1969 Kannada film directed by Puttanna Kanagal, based on M. K. Indira's novel of the same name. It explores the problem of prostitutes." }
+    questions:
+      - { id: "q1", prompt: { en: "What is the heroine Chandramukhi's mother?" }, options: { en: ["A temple cook", "A devadasi", "A court singer"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "What does Chandramukhi value and, with her mother's support, want to pursue?" }, options: { en: ["A stage career in a travelling troupe", "A match arranged by her uncle", "Schooling"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "Who is the girl the young man goes on to marry?" }, options: { en: ["Her own half-sister", "Her mother's niece", "Her childhood friend"] }, answer: 1 }
+      - { id: "q4", prompt: { en: "What did Chandramukhi's biological father give her in his memory?" }, options: { en: ["A pair of gold anklets", "A diamond ring", "A plot of farmland"] }, answer: 2 }
+    tags: ["unreviewed"]

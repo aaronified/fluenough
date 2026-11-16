@@ -1,0 +1,115 @@
+schema: 1
+id: "es-medicine-pharmacy"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+genre: "professional"
+professional: "medicine"
+hidden: true
+level: "A2"
+tags: ["unreviewed"]
+cards:
+  - id: "es-4671"
+    target: "Necesito algo para el dolor de cabeza."
+    ipa: "neθeˈsito ˈalɡo ˈpaɾa el doˈloɾ de kaˈbeθa"
+    phonetic: "[neθeˈsit̪o ˈalɣo ˈpaɾa el d̪oˈloɾ ðe kaˈβeθa]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4672"
+    target: "¿Tiene algo para la tos?"
+    ipa: "ˈtjene ˈalɡo ˈpaɾa la tos"
+    phonetic: "[ˈt̪jene ˈalɣo ˈpaɾa la t̪os]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4673"
+    target: "¿Tiene receta?"
+    ipa: "ˈtjene reˈθeta"
+    phonetic: "[ˈt̪jene reˈθet̪a]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "es-4674"
+    target: "¿Cada cuánto tengo que tomarlo?"
+    ipa: "ˈkada ˈkwanto ˈtenɡo ke toˈmaɾlo"
+    phonetic: "[ˈkaða ˈkwan̪t̪o ˈt̪eŋɡo ke t̪oˈmaɾlo]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4675"
+    target: "Tómelo con comida."
+    ipa: "ˈtomelo kon koˈmida"
+    phonetic: "[ˈt̪omelo koŋ koˈmiða]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "usage" }]
+  - id: "es-4676"
+    target: "¿Hay algún efecto secundario?"
+    ipa: "aj alˈɡun eˈfekto sekunˈdaɾjo"
+    phonetic: "[aj alˈɣun eˈfekt̪o sekun̪ˈd̪aɾjo]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+  - id: "es-4677"
+    target: "No puedo tomar ibuprofeno."
+    ipa: "no ˈpwedo toˈmaɾ ibupɾoˈfeno"
+    phonetic: "[no ˈpweðo t̪oˈmaɾ iβupɾoˈfeno]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "es-4678"
+    target: "Es para la alergia."
+    ipa: "es ˈpaɾa la aˈleɾxja"
+    phonetic: "[es ˈpaɾa la aˈleɾxja]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    modes: ["recognition", "production", "listening"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+  - id: "es-4679"
+    target: "la dosis"
+    ipa: "la ˈdosis"
+    phonetic: "[la ˈðosis]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    modes: ["recognition", "production"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: [{ word: "la", base: "la" }, { word: "dosis", base: "dosis" }]
+    examples:
+      - target: "La dosis es de dos pastillas diarias."
+        ipa: "la ˈdosis es de dos pasˈtiʝas ˈdjaɾjas"
+        bases: [{ word: "La", base: "la" }, { word: "dosis", base: "dosis" }, { word: "es", base: "ser" }, { word: "de", base: "de" }, { word: "dos", base: "dos" }, { word: "pastillas", base: "pastilla" }, { word: "diarias", base: "diario" }]
+      - target: "¿Cuál es la dosis para un niño?"
+        ipa: "kwal es la ˈdosis ˈpaɾa un ˈniɲo"
+        bases: [{ word: "Cuál", base: "cuál" }, { word: "es", base: "ser" }, { word: "la", base: "la" }, { word: "dosis", base: "dosis" }, { word: "para", base: "para" }, { word: "un", base: "un" }, { word: "niño", base: "niño" }]
+  - id: "es-4680"
+    target: "el antibiótico"
+    ipa: "el antiˈbjotiko"
+    phonetic: "[el an̪t̪iˈβjot̪iko]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    modes: ["recognition", "production"]
+    notes: [{ id: "n1", kind: "behaviour" }]
+    bases: [{ word: "el", base: "el" }, { word: "antibiótico", base: "antibiótico" }]
+    examples:
+      - target: "El médico me recetó un antibiótico."
+        ipa: "el ˈmediko me reθeˈto un antiˈbjotiko"
+        bases: [{ word: "El", base: "el" }, { word: "médico", base: "médico" }, { word: "me", base: "me" }, { word: "recetó", base: "recetar" }, { word: "un", base: "un" }, { word: "antibiótico", base: "antibiótico" }]
+      - target: "El antibiótico es para la infección."
+        ipa: "el antiˈbjotiko es ˈpaɾa la infekˈθjon"
+        bases: [{ word: "El", base: "el" }, { word: "antibiótico", base: "antibiótico" }, { word: "es", base: "ser" }, { word: "para", base: "para" }, { word: "la", base: "la" }, { word: "infección", base: "infección" }]
+  - ref: "es-0771"
+  - ref: "es-1466"
+  - ref: "es-1465"
+  - ref: "es-4721"
+  - ref: "es-0624"
