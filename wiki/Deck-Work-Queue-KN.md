@@ -135,3 +135,16 @@ Owner directive via the parent session: at most four language sessions at once, 
 4. Multi-word verbs and the missing sentences decks.
 5. Final derive run, review-queue tidy, completeness grid update.
 6. A dropped item always carries a one-line reason in the review queue.
+
+## 7. Second pause and state (2026-11-16, until the parent resumes at 2 PM IST)
+
+Owner instruction via the parent: no new deck workers or phases until 2 PM IST; running workers finish and push; merge only what CI already passed.
+
+| Item | State | On resume |
+|---|---|---|
+| PR #1508 notes (about 530 notes, `decks/kn-notes-wave1`) | Review done; blockers fixed (nine `pair`/`homograph`/`lookalike` kinds without `ref`, a false -ಗೆ/-ಕ್ಕೆ rule, ಯಾವಾಗಲೂ), three suffix readings added after CI | Merge when "Decks: validate" is green |
+| PR #1487 recommendations | Two reviews done, no blocker; two unverified lines dropped | Merge when CI is green (its checks had not started at the pause) |
+| Culture retry (`decks/kn-culture-wave2`) | Sonnet worker running; pushes only to its branch | When it reports, open one PR to `decks-live`, one Sonnet review, merge when CI is green; list every dropped item with a one-line reason here |
+| Multi-word verbs | Not retried yet | Re-source from Wiktionary and the Kannada grammar pages, then build the families with verified rows |
+| `kn-numbers-1-20`, `kn-quantities` sentences | Not built | Widen the vocabulary rule, build |
+| Derive run | Not done | Last step: `derive_phonetic.py kn` after every content PR; ask a phonetician about the four vowel-lowering rules |
