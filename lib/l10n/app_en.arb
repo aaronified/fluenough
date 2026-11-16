@@ -15731,47 +15731,17 @@
       }
     }
   },
-  "settingsRowCulture": "Culture",
-  "@settingsRowCulture": {
-    "description": "Settings row: culture items woven through the course, their people and the recommended works."
+  "languagesCulture": "Culture",
+  "@languagesCulture": {
+    "description": "Switch in a language’s details: culture items (proverbs, songs, verse) in that language’s path, on Today and in reviews. Opens its options in place."
   },
-  "settingsSumCultureOn": "Items shown in the path and on Today",
-  "@settingsSumCultureOn": {
-    "description": "Line under the Culture row of Settings while culture items are on."
+  "languagesCultureOn": "Proverbs, songs and verse in the path, on Today and in reviews",
+  "@languagesCultureOn": {
+    "description": "Line under the Culture switch of a language’s details while it is on."
   },
-  "settingsSumCultureOff": "Culture items are off",
-  "@settingsSumCultureOff": {
-    "description": "Line under the Culture row of Settings while culture items are off."
-  },
-  "cultureSettingShow": "Show culture items",
-  "@cultureSettingShow": {
-    "description": "Switch on the Culture settings page: proverbs, lines of verse and passages woven into the path and Today."
-  },
-  "cultureSettingShowOn": "In the path, on Today and in reviews",
-  "@cultureSettingShowOn": {
-    "description": "Line under the culture switch while it is on."
-  },
-  "cultureSettingShowOff": "Not in the path, on Today or in reviews. Search still finds them.",
-  "@cultureSettingShowOff": {
-    "description": "Line under the culture switch while it is off."
-  },
-  "cultureSettingHowMany": "How many",
-  "@cultureSettingHowMany": {
-    "description": "Heading of the culture settings that say how many items a unit gets and how they count."
-  },
-  "cultureSettingPerUnit": "Per unit",
-  "@cultureSettingPerUnit": {
-    "description": "Row of the culture settings: how many culture items each path unit is given."
-  },
-  "cultureSettingPerUnitValue": "{count, plural, =1{1 item} other{{count} items}}",
-  "@cultureSettingPerUnitValue": {
-    "description": "How many culture items a unit is given, as a row value and as a choice.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "1"
-      }
-    }
+  "languagesCultureOff": "Off. You can still read and search it in Decks",
+  "@languagesCultureOff": {
+    "description": "Line under the Culture switch of a language’s details while it is off."
   },
   "cultureSettingCounts": "Count toward path progress",
   "@cultureSettingCounts": {
@@ -15796,14 +15766,6 @@
   "cultureSettingCreatorsOff": "Only the item and its source",
   "@cultureSettingCreatorsOff": {
     "description": "Line under the creator switch while it is off."
-  },
-  "cultureSettingOpenDeck": "The culture deck",
-  "@cultureSettingOpenDeck": {
-    "description": "Row of the culture settings that opens the whole culture deck of the language shown."
-  },
-  "cultureSettingNote": "Culture items are real texts, with the person behind them.",
-  "@cultureSettingNote": {
-    "description": "Help line at the foot of the culture settings page."
   },
   "cultureKindProverb": "Proverb",
   "@cultureKindProverb": {
@@ -16243,9 +16205,9 @@
       }
     }
   },
-  "cultureOffHint": "Culture items are off. Turn them on in Settings.",
+  "cultureOffHint": "Culture items are off for this language. Turn them on in its details.",
   "@cultureOffHint": {
-    "description": "Shown in a unit while culture items are off."
+    "description": "Shown in a unit while culture items are off for the language."
   },
   "cultureTodayTitle": "Culture · {level}",
   "@cultureTodayTitle": {

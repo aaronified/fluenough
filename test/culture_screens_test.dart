@@ -2,17 +2,17 @@
 // mockup docs/mockups/culture-in-course.html, default variants): a culture item
 // woven into a path unit and offered on Today at the learner's level; its page
 // with the text, meaning, gloss, source line, creator chip and legacy line; the
-// creator card with the picture's credit or its placeholder, the bio at the
-// learner's level, "Still alive today" and the timeline strip; the full
+// creator card with the picture's credit or its placeholder, the bio, "Still alive today" and the timeline strip; the full
 // timeline to today; the full culture deck with its people; the culture
-// settings.
+// options each language keeps (`culture-in-decks`).
 
+import 'package:fluenough/app/culture.dart';
 import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/core/decks/culture_options.dart';
 import 'package:fluenough/features/culture/creator_sheet.dart';
 import 'package:fluenough/features/culture/culture_cards.dart';
 import 'package:fluenough/features/culture/culture_deck_page.dart';
 import 'package:fluenough/features/culture/culture_item_page.dart';
-import 'package:fluenough/features/culture/culture_settings_page.dart';
 import 'package:fluenough/features/culture/culture_timeline.dart';
 import 'package:fluenough/features/decks/unit_page.dart';
 import 'package:fluenough/l10n/app_localizations_en.dart';
@@ -69,10 +69,12 @@ void main() {
       expect(find.text(_proverb), findsOneWidget);
     });
 
-    testWidgets('says it counts when Settings says so', (tester) async {
+    testWidgets('says it counts when the language\'s options say so', (
+      tester,
+    ) async {
       usePhone(tester);
       final state = await cultureApp();
-      state.settings.cultureCounts = true;
+      state.settings.setCultureFor('zz', const CultureOptions(counts: true));
       await pumpScreen(
         tester,
         const UnitPage(deckId: 'zz-en-words'),
@@ -86,7 +88,7 @@ void main() {
     ) async {
       usePhone(tester);
       final state = await cultureApp();
-      state.settings.cultureItems = false;
+      state.settings.setCultureFor('zz', const CultureOptions(items: false));
       await pumpScreen(
         tester,
         const UnitPage(deckId: 'zz-en-words'),
@@ -127,7 +129,7 @@ void main() {
         find.text(_l10n.cultureTodayLine(_l10n.cultureKindProverb)),
         findsOneWidget,
       );
-      state.settings.cultureItems = false;
+      state.settings.setCultureFor('zz', const CultureOptions(items: false));
       await tester.pumpAndSettle();
       expect(find.text(_l10n.cultureTodayTitle('A1')), findsNothing);
     });
@@ -190,12 +192,12 @@ void main() {
       );
     });
 
-    testWidgets('hides the person and the legacy when Settings says so', (
+    testWidgets('hides the person and the legacy when the options say so', (
       tester,
     ) async {
       usePhone(tester);
       final state = await cultureApp(reach: 'b1');
-      state.settings.cultureCreators = false;
+      state.settings.setCultureFor('zz', const CultureOptions(creators: false));
       await pumpScreen(tester, _item('zz-7201'), state: state);
       expect(find.byType(CreatorChip), findsNothing);
       expect(find.text(_l10n.cultureLegacyTitle), findsNothing);
@@ -356,52 +358,131 @@ void main() {
     });
   });
 
-  group('the culture settings', () {
-    testWidgets('switch culture off and on, and keep the choices', (
-      tester,
-    ) async {
-      usePhone(tester);
-      final state = await cultureApp();
-      await pumpScreen(tester, const CultureSettingsPage(), state: state);
-      expect(state.settings.cultureItems, isTrue);
-      await tester.tap(find.byType(Switch).first);
-      await tester.pumpAndSettle();
-      expect(state.settings.cultureItems, isFalse);
-      expect(find.text(_l10n.cultureSettingShowOff), findsOneWidget);
-
-      expect(state.settings.cultureCounts, isFalse);
-      expect(state.settings.cultureCreators, isTrue);
+  group('the culture options of each language', () {
+    test('are per language: one language\'s choice leaves the others', () {
+      final settings = SettingsNotifier();
+      expect(settings.cultureFor('te'), CultureOptions.defaults);
+      settings.setCultureFor(
+        'te',
+        const CultureOptions(items: false, counts: true),
+      );
+      expect(settings.cultureFor('te').items, isFalse);
+      expect(settings.cultureFor('te').counts, isTrue);
+      expect(settings.cultureFor('hi'), CultureOptions.defaults);
+      settings.setCultureFor(
+        'hi',
+        settings.cultureFor('hi').copyWith(creators: false),
+      );
+      expect(settings.cultureFor('hi').creators, isFalse);
+      expect(settings.cultureFor('te').creators, isTrue);
     });
 
-    testWidgets('asks how many items a unit is given', (tester) async {
-      usePhone(tester);
-      final state = await cultureApp();
-      await pumpScreen(tester, const CultureSettingsPage(), state: state);
-      expect(find.text(_l10n.cultureSettingPerUnitValue(1)), findsOneWidget);
-      await tester.tap(find.text(_l10n.cultureSettingPerUnit));
-      await tester.pumpAndSettle();
-      await tester.tap(find.text(_l10n.cultureSettingPerUnitValue(2)));
-      await tester.pumpAndSettle();
-      expect(state.settings.culturePerUnit, 2);
+    test('tell the settings\' listeners only when something changed', () {
+      final settings = SettingsNotifier();
+      var heard = 0;
+      settings.addListener(() => heard++);
+      settings.setCultureFor('te', CultureOptions.defaults);
+      expect(heard, 0);
+      settings.setCultureFor('te', const CultureOptions(counts: true));
+      expect(heard, 1);
     });
 
     test('are kept in the stored settings and come back after a restore', () {
       final settings = SettingsNotifier()
-        ..cultureItems = false
-        ..cultureCounts = true
-        ..culturePerUnit = 2
-        ..cultureCreators = false;
+        ..setCultureFor(
+          'te',
+          const CultureOptions(items: false, counts: true, creators: false),
+        );
       final stored = settings.toStored();
-      expect(stored['culture_items'], 'false');
-      expect(stored['culture_per_unit'], '2');
+      expect(stored.containsKey('culture_items'), isFalse);
+      expect(stored.containsKey('culture_per_unit'), isFalse);
+      expect(stored.containsKey('hide_above_level'), isFalse);
       final back = SettingsNotifier()..restore(stored);
-      expect(back.cultureItems, isFalse);
-      expect(back.cultureCounts, isTrue);
-      expect(back.culturePerUnit, 2);
-      expect(back.cultureCreators, isFalse);
-      // The count is kept between one and three.
-      back.culturePerUnit = 9;
-      expect(back.culturePerUnit, 3);
+      expect(
+        back.cultureFor('te'),
+        const CultureOptions(items: false, counts: true, creators: false),
+      );
+      expect(back.cultureFor('hi'), CultureOptions.defaults);
+    });
+
+    test('read an entry with a key missing or wrong as its default', () {
+      final back = SettingsNotifier()
+        ..restore(<String, String>{
+          'culture_by_language':
+              '{"te":{"counts":true,"items":"no"},"hi":[],"bad!":{}}',
+        });
+      expect(back.cultureFor('te'), const CultureOptions(counts: true));
+      expect(back.cultureFor('hi'), CultureOptions.defaults);
+    });
+
+    test('a store from before they were per language copies the global '
+        'values to every language the profile has', () {
+      final back = SettingsNotifier()
+        ..restore(<String, String>{
+          'language_skills': '{"te":{"speak":"learn"},"hi":{"speak":"learn"}}',
+          'learning_languages': 'bn',
+          'culture_items': 'false',
+          'culture_above_support': 'true',
+          'culture_counts': 'true',
+          'culture_per_unit': '3',
+          'culture_creators': 'false',
+          'hide_above_level': 'true',
+        });
+      const carried = CultureOptions(
+        items: false,
+        counts: true,
+        creators: false,
+      );
+      expect(back.cultureFor('te'), carried);
+      expect(back.cultureFor('hi'), carried);
+      expect(back.cultureFor('bn'), carried);
+      // A language added later starts from the defaults, not the old values.
+      expect(back.cultureFor('mr'), CultureOptions.defaults);
+      // The old keys are not written again; the map is.
+      final stored = back.toStored();
+      expect(stored.containsKey('culture_items'), isFalse);
+      expect(stored.containsKey('culture_per_unit'), isFalse);
+      expect(stored.containsKey('hide_above_level'), isFalse);
+      // Restoring what was written gives the same choices.
+      final again = SettingsNotifier()..restore(stored);
+      expect(again.cultureFor('te'), carried);
+      expect(again.cultureFor('mr'), CultureOptions.defaults);
+    });
+
+    test('the per-language map wins over old keys left in the store', () {
+      final back = SettingsNotifier()
+        ..restore(<String, String>{
+          'language_skills': '{"te":{"speak":"learn"},"hi":{"speak":"learn"}}',
+          'culture_by_language': '{"te":{"counts":true}}',
+          'culture_items': 'false',
+        });
+      expect(back.cultureFor('te'), const CultureOptions(counts: true));
+      expect(back.cultureFor('hi'), CultureOptions.defaults);
+    });
+
+    test('go back to the defaults when the language is cleared', () {
+      final settings = SettingsNotifier()
+        ..setCultureFor('te', const CultureOptions(items: false))
+        ..setCultureFor('hi', const CultureOptions(items: false))
+        ..clearLanguageSettings('te');
+      expect(settings.cultureFor('te'), CultureOptions.defaults);
+      expect(settings.cultureFor('hi').items, isFalse);
+    });
+
+    testWidgets('another language\'s choice leaves this one\'s culture on', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final state = await cultureApp();
+      // Another language's choice does not touch this one.
+      state.settings.setCultureFor('hi', const CultureOptions(items: false));
+      await pumpScreen(
+        tester,
+        const UnitPage(deckId: 'zz-en-words'),
+        state: state,
+      );
+      expect(find.text(_l10n.cultureCardLineBonus('A1')), findsOneWidget);
+      expect(state.nextCultureItem('zz'), isNotNull);
     });
   });
 
@@ -413,7 +494,9 @@ void main() {
         bool inDrill() =>
             state.drillDecks.any((e) => e.id == 'zz-en-proverbs-lugar');
         expect(inDrill(), isTrue);
-        state.settings.cultureItems = false;
+        state.settings.setCultureFor('hi', const CultureOptions(items: false));
+        expect(inDrill(), isTrue);
+        state.settings.setCultureFor('zz', const CultureOptions(items: false));
         expect(inDrill(), isFalse);
         expect(state.deckById('zz-en-proverbs-lugar'), isNotNull);
       },
@@ -458,10 +541,6 @@ void main() {
         ),
         state: () => cultureApp(),
       ),
-    );
-    screen(
-      'the culture settings',
-      page(const CultureSettingsPage(), state: () => cultureApp()),
     );
     screen(
       'a unit with a culture card',

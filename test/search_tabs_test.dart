@@ -258,6 +258,14 @@ void main() {
       expect(find.text(_l10n.searchAddToCourses), findsNothing);
     });
 
+    testWidgets('always shows what is above your level, marked', (
+      tester,
+    ) async {
+      usePhone(tester);
+      await _show(tester, state, 'library');
+      expect(find.text('Library words'), findsOneWidget);
+    });
+
     testWidgets('shows recent searches and the types before typing', (
       tester,
     ) async {

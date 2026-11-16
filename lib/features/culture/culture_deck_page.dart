@@ -6,6 +6,7 @@ import '../../app/culture.dart';
 import '../../app/routes.dart';
 import '../../core/decks/weave.dart';
 import '../../core/models/creator.dart';
+import '../../core/models/level.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
@@ -22,8 +23,8 @@ import 'culture_parts.dart';
 /// source and level, none locked, and a People list of the creators behind
 /// them, each opening their card.
 ///
-/// Reached from an item, from the culture settings and from the recommendations
-/// list; "Show culture items" off leaves it here, as it leaves search.
+/// Reached from an item and from the recommendations list; "Show culture
+/// items" off leaves it here, as it leaves search.
 class CultureDeckPage extends StatelessWidget {
   const CultureDeckPage({super.key, required this.language});
 
@@ -54,8 +55,8 @@ class CultureDeckPage extends StatelessWidget {
 
   /// The creators to list: those a shown item cites, and those no work cites
   /// anywhere; never one only a work out of sight cites (in a hidden deck, in a
-  /// deck that does not weave, or a recommended work), whose name would give it
-  /// away (the timeline's rule, from the same two sets).
+  /// deck that does not weave, or a recommended work), whose name would give
+  /// it away (the timeline's rule, from the same two sets).
   List<Creator> _people(AppState state, CreatorsFile? file) {
     if (file == null) return const <Creator>[];
     final cited = state.creatorsCitedIn(language);
@@ -71,10 +72,11 @@ class CultureDeckPage extends StatelessWidget {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final info = cultureLanguage(state, language);
+    final options = state.settings.cultureFor(language);
     final items = state.cultureItemsIn(language);
     final file = state.creatorsOf(language);
     final people = _people(state, file);
-    final showPeople = state.settings.cultureCreators;
+    final showPeople = options.creators;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -114,10 +116,7 @@ class CultureDeckPage extends StatelessWidget {
                   gap: 4,
                   children: <Widget>[
                     for (final item in items)
-                      _ItemRow(
-                        item: item,
-                        language: language,
-                      ),
+                      _ItemRow(item: item, language: language),
                   ],
                 ),
                 if (showPeople && people.isNotEmpty) ...<Widget>[

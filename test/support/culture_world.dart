@@ -147,6 +147,47 @@ passages:
 ''',
 };
 
+/// A second proverbs deck at A1 with two more proverbs, so that the A1 unit has
+/// three culture items to be given.
+Map<String, String> cultureMoreProverbs() => <String, String>{
+  'decks/zz/zz-proverbs-mas.yaml':
+      '''
+schema: 1
+id: "zz-proverbs-mas"
+part: "core"
+kind: "vocab"
+language: $_language
+license: "CC-BY-SA-4.0"
+genre: "proverbs"
+level: "A1"
+cards:
+  - id: "zz-7102"
+    target: "A buen entendedor, pocas palabras bastan."
+    pos: "phrase"
+    register: "neutral"
+    modes: ["recognition", "listening"]
+$_sourceProverb
+  - id: "zz-7103"
+    target: "Quien mucho abarca, poco aprieta."
+    pos: "phrase"
+    register: "neutral"
+    modes: ["recognition", "listening"]
+$_sourceProverb
+''',
+  'decks/zz/en/zz-en-proverbs-mas.yaml': '''
+schema: 1
+id: "zz-en-proverbs-mas"
+kind: "layer"
+core: "zz-proverbs-mas"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Proverbs: more"
+license: "CC-BY-SA-4.0"
+cards:
+  "zz-7102": { native: "A word to the wise is enough." }
+  "zz-7103": { native: "Grasp all, lose all." }
+''',
+};
+
 /// The creators file: a poet with a legacy and a bio at A2, and a novelist
 /// with a licensed picture.
 const String cultureCreators = '''

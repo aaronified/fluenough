@@ -570,7 +570,6 @@ cards:
           'culture_above_support': 'true',
           'culture_items': 'false',
         });
-      expect(settings.cultureItems, isFalse);
       expect(settings.toStored().containsKey('hide_above_level'), isFalse);
       expect(settings.toStored().containsKey('culture_above_support'), isFalse);
     });

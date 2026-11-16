@@ -12,6 +12,7 @@ import '../../app/language_skills.dart';
 import '../../app/placement_plan.dart';
 import '../../app/placement_recheck.dart';
 import '../../core/data/spoken_languages.dart' show SpokenLanguage;
+import '../../core/decks/culture_options.dart';
 import '../../core/decks/font_check.dart';
 import '../../core/decks/language_catalog.dart';
 import '../../core/decks/script_fonts.dart';
@@ -22,6 +23,7 @@ import '../../core/languages/language_skills.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/hint.dart';
 import '../../ui/widgets/snack.dart';
 import '../downloads/download_text.dart';
@@ -821,7 +823,10 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                       ?_scriptSkillOf(script),
                     ],
                   ),
-                if (!_isDraft && _skills.anyLearn) _learningBlock(context),
+                if (!_isDraft && _skills.anyLearn) ...<Widget>[
+                  _learningBlock(context),
+                  _cultureBlock(context),
+                ],
               ],
             ),
           ),
@@ -1118,6 +1123,63 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       hint: _locked ? null : l10n.languagesTapToChange(next.label(l10n)),
       onTap: _locked ? null : () => _cycleScript(script),
       combined: true,
+    );
+  }
+
+  /// The Culture group (approved mockup `culture-in-decks`, screen B): one
+  /// switch for culture items in this language's path, Today and reviews,
+  /// which opens in place, while it is on, to the language's other culture
+  /// options (counting toward progress, the creator). Each language keeps
+  /// its own.
+  Widget _cultureBlock(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final scheme = Theme.of(context).colorScheme;
+    final settings = _state.settings;
+    final options = settings.cultureFor(_code);
+    void choose(CultureOptions next) => settings.setCultureFor(_code, next);
+    const inset = EdgeInsetsDirectional.symmetric(horizontal: 12, vertical: 10);
+    return Padding(
+      padding: const EdgeInsetsDirectional.only(top: 4, bottom: 8),
+      child: Material(
+        color: scheme.surfaceContainerLow,
+        borderRadius: BorderRadius.circular(AppRadii.field),
+        clipBehavior: Clip.antiAlias,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            GroupedTile.toggle(
+              key: const ValueKey<String>('culture-switch'),
+              leading: const Icon(Icons.format_quote),
+              title: l10n.languagesCulture,
+              subtitleOn: l10n.languagesCultureOn,
+              subtitleOff: l10n.languagesCultureOff,
+              value: options.items,
+              padding: inset,
+              leadingGap: 12,
+              onChanged: (on) => choose(options.copyWith(items: on)),
+            ),
+            if (options.items) ...<Widget>[
+              Divider(height: 1, color: scheme.outlineVariant),
+              GroupedTile.toggle(
+                title: l10n.cultureSettingCounts,
+                subtitleOn: l10n.cultureSettingCountsOn,
+                subtitleOff: l10n.cultureSettingCountsOff,
+                value: options.counts,
+                padding: inset,
+                onChanged: (on) => choose(options.copyWith(counts: on)),
+              ),
+              GroupedTile.toggle(
+                title: l10n.cultureSettingCreators,
+                subtitleOn: l10n.cultureSettingCreatorsOn,
+                subtitleOff: l10n.cultureSettingCreatorsOff,
+                value: options.creators,
+                padding: inset,
+                onChanged: (on) => choose(options.copyWith(creators: on)),
+              ),
+            ],
+          ],
+        ),
+      ),
     );
   }
 

@@ -55,14 +55,20 @@ extension CultureState on AppState {
     return null;
   }
 
-  /// The culture items of [language] woven into its path, the items per unit
-  /// from Settings. Nothing for a language with no path.
+  /// The culture items of [language] woven into its path: per unit as many as
+  /// the course needs so that every item appears ([culturePerUnitByLevel]: the
+  /// items of a level divided by its units, rounded up). Nothing for a language
+  /// with no path.
   WovenCulture wovenCultureOf(String language) {
-    final per = settings.culturePerUnit;
-    return derived<WovenCulture>(('woven', language, per), () {
+    return derived<WovenCulture>(('woven', language), () {
       try {
         final plan = languagePathOf(language)?.plan ?? const <PlanUnit>[];
-        return weaveCulture(plan, cultureItemsIn(language), perUnit: per);
+        final items = cultureItemsIn(language);
+        return weaveCulture(
+          plan,
+          items,
+          perByLevel: culturePerUnitByLevel(plan, items),
+        );
       } on Object catch (error, stack) {
         log.error('Culture of $language could not be woven: $error\n$stack');
         return WovenCulture.none;
@@ -84,9 +90,9 @@ extension CultureState on AppState {
       item.cards.every((card) => isTaught(card) || !canLearn(card));
 
   /// The culture item Today offers for [language]: the first woven item not
-  /// met yet, or null when culture is off or all are met.
+  /// met yet, or null when culture is off for the language or all are met.
   CultureItem? nextCultureItem(String language) {
-    if (!settings.cultureItems) return null;
+    if (!settings.cultureFor(language).items) return null;
     return wovenCultureOf(language).next(isCultureItemDone);
   }
 

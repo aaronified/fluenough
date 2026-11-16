@@ -121,8 +121,9 @@ class _CultureCard extends StatelessWidget {
 
 /// The culture item woven into a path unit (approved mockup, screen 1): one
 /// card between the lessons and the words, at the learner's level, "bonus" or
-/// "counts toward the unit" as Settings says. With culture items off, one line
-/// says so and where to turn them on; a unit with no item shows nothing.
+/// "counts toward the unit" as the language's own options say. With culture
+/// items off, one line says so and where to turn them on; a unit with no item
+/// shows nothing.
 class UnitCultureCard extends StatelessWidget {
   const UnitCultureCard({
     super.key,
@@ -141,12 +142,11 @@ class UnitCultureCard extends StatelessWidget {
     try {
       final index = state.pathIndexOfUnit(language, decks);
       if (index < 0) return const SizedBox.shrink();
-      final settings = state.settings;
-      final woven = state.wovenCultureOf(language).of(index);
+      final options = state.settings.cultureFor(language);
       if (state.cultureItemsIn(language).isEmpty) {
         return const SizedBox.shrink();
       }
-      if (!settings.cultureItems) {
+      if (!options.items) {
         return Padding(
           padding: const EdgeInsetsDirectional.fromSTEB(
             AppSizes.textInset,
@@ -162,6 +162,7 @@ class UnitCultureCard extends StatelessWidget {
           ),
         );
       }
+      final woven = state.wovenCultureOf(language).of(index);
       if (woven.isEmpty) return const SizedBox.shrink();
       return Padding(
         padding: const EdgeInsetsDirectional.only(top: 16),
@@ -174,7 +175,7 @@ class UnitCultureCard extends StatelessWidget {
                 item: item,
                 language: language,
                 done: state.isCultureItemDone(item),
-                line: settings.cultureCounts
+                line: options.counts
                     ? l10n.cultureCardLineCounts(item.level.label)
                     : l10n.cultureCardLineBonus(item.level.label),
               ),
