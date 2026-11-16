@@ -175,8 +175,7 @@ class _FluenoughAppState extends State<FluenoughApp>
     // phone's own font; the interface itself stays in Roboto.
     ThemeData hapticTheme(ThemeData theme) {
       final contentFonts =
-          widget.state.deckDownloads?.fonts.contentFamilies ??
-          const <String>[];
+          widget.state.deckDownloads?.fonts.contentFamilies ?? const <String>[];
       var themed = theme;
       if (contentFonts.isNotEmpty) {
         final fallback = <String>[brailleFontFamily, ...contentFonts];
@@ -186,9 +185,7 @@ class _FluenoughAppState extends State<FluenoughApp>
       }
       return own
           ? themed.copyWith(
-              tooltipTheme: themed.tooltipTheme.copyWith(
-                enableFeedback: false,
-              ),
+              tooltipTheme: themed.tooltipTheme.copyWith(enableFeedback: false),
             )
           : themed;
     }

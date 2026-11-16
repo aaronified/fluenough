@@ -22,12 +22,8 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'support/deck_remote.dart';
 
-LanguageInfo _language(String code, String script) => LanguageInfo(
-  code: code,
-  iso639_3: code,
-  name: code,
-  script: script,
-);
+LanguageInfo _language(String code, String script) =>
+    LanguageInfo(code: code, iso639_3: code, name: code, script: script);
 
 IndexFont _font(String script) => IndexFont(
   path: 'decks/fonts/$script/Noto.ttf',
@@ -181,10 +177,7 @@ void main() {
       ),
     );
     Text shown() => tester.widget<Text>(
-      find.descendant(
-        of: find.byType(TargetText),
-        matching: find.byType(Text),
-      ),
+      find.descendant(of: find.byType(TargetText), matching: find.byType(Text)),
     );
     expect(shown().style!.fontFamily, isNull);
 
