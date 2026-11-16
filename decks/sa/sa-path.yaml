@@ -157,38 +157,57 @@ units:
   - decks: ["sa-work", "sa-work-sentences", "sa-reading-work"]
     words: 12
     milestone: "A1"
-  - planned: { id: "sa-grammar-karakas", grammar: ["karaka"] }
+  - decks: ["sa-grammar-karakas"]
+    grammar: ["karakas"]
     listening_passages:
       - { id: "grammar-karakas-heard", text: { "en": "A short passage in Classical Sanskrit showing karaka, read aloud" } }
     reading_passages:
       - { id: "grammar-karakas-text", text: { "en": "A short written text in Classical Sanskrit showing karaka" } }
-  - planned: { id: "sa-grammar-sandhi-consonant", grammar: ["consonant-sandhi"] }
+  - decks: ["sa-grammar-sandhi-consonant"]
+    grammar: ["sandhi-consonant"]
     listening_passages:
       - { id: "grammar-sandhi-consonant-heard", text: { "en": "A short passage in Classical Sanskrit showing consonant sandhi, read aloud" } }
     reading_passages:
       - { id: "grammar-sandhi-consonant-text", text: { "en": "A short written text in Classical Sanskrit showing consonant sandhi" } }
-  - planned: { id: "sa-grammar-sandhi-visarga", grammar: ["visarga-sandhi"] }
+  - decks: ["sa-grammar-sandhi-visarga"]
+    grammar: ["sandhi-visarga"]
     listening_passages:
       - { id: "grammar-sandhi-visarga-heard", text: { "en": "A short passage in Classical Sanskrit showing visarga sandhi, read aloud" } }
     reading_passages:
       - { id: "grammar-sandhi-visarga-text", text: { "en": "A short written text in Classical Sanskrit showing visarga sandhi" } }
   - decks: ["sa-nature"]
     words: 81
+    listening_passages:
+      - { id: "nature-heard", text: { "en": "A short passage in Classical Sanskrit on the theme nature: trees, rivers and mountains, read aloud" } }
+    reading_passages:
+      - { id: "nature-text", text: { "en": "A short written text in Classical Sanskrit on the theme nature: trees, rivers and mountains" } }
   - decks: ["sa-seasons"]
     words: 28
+    listening_passages:
+      - { id: "seasons-heard", text: { "en": "A short passage in Classical Sanskrit on the theme the seasons, read aloud" } }
+    reading_passages:
+      - { id: "seasons-text", text: { "en": "A short written text in Classical Sanskrit on the theme the seasons" } }
   - decks: ["sa-calendar"]
     words: 30
-  - planned: { id: "sa-grammar-gana-1", grammar: ["gana-1"] }
+    listening_passages:
+      - { id: "calendar-heard", text: { "en": "A short passage in Classical Sanskrit on the theme the calendar, read aloud" } }
+    reading_passages:
+      - { id: "calendar-text", text: { "en": "A short written text in Classical Sanskrit on the theme the calendar" } }
+  - decks: ["sa-grammar-gana-1"]
+    grammar: ["gana-1-singular", "gana-1-weak"]
     listening_passages:
       - { id: "grammar-gana-1-heard", text: { "en": "A short passage in Classical Sanskrit showing gana 1, read aloud" } }
     reading_passages:
       - { id: "grammar-gana-1-text", text: { "en": "A short written text in Classical Sanskrit showing gana 1" } }
-  - planned: { id: "sa-grammar-gana-2", grammar: ["gana-2"] }
+  - decks: ["sa-grammar-gana-2"]
+    grammar: ["gana-2-singular", "gana-2-weak"]
     listening_passages:
       - { id: "grammar-gana-2-heard", text: { "en": "A short passage in Classical Sanskrit showing gana 2, read aloud" } }
     reading_passages:
       - { id: "grammar-gana-2-text", text: { "en": "A short written text in Classical Sanskrit showing gana 2" } }
-  - planned: { id: "sa-grammar-other-stems", grammar: ["other-noun-stems"] }
+  - decks: ["sa-stems-words", "sa-grammar-other-stems"]
+    words: 12
+    grammar: ["other-nominative", "other-accusative", "other-instrumental", "other-dative", "other-ablative", "other-genitive", "other-locative", "other-vocative"]
     listening_passages:
       - { id: "grammar-other-stems-heard", text: { "en": "A short passage in Classical Sanskrit showing other noun stems, read aloud" } }
     reading_passages:
