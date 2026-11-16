@@ -1119,11 +1119,26 @@ class IsoAndIpa(unittest.TestCase):
     def _an_iso_romanisation_file_is_valid(self) -> None:
         self.assertEqual(self.romanisation().errors, [])
 
-    def _iso_15919_is_the_one_standard(self) -> None:
+    def _iso_15919_and_iast_are_the_standards_known(self) -> None:
         text = ROMANISATION.format(typed=TYPED).replace(
-            '"ISO 15919"', '"IAST"')
+            '"ISO 15919"', '"Hunterian"')
         self.assertRejected(self.write("hi-romanisation.yaml", text),
-                            "the one standard known is 'ISO 15919'")
+                            "the standards known are 'ISO 15919' and 'IAST'")
+
+    def _iast_adds_the_anusvara_dot_m_and_the_vocalic_long_letters(self) -> None:
+        # Sanskrit's readings are IAST (ṃ ṝ), which ISO 15919 files refuse.
+        reading = "saṃskṛtam pitṝṇām"
+        self.romanisation()
+        self.assertRejected(
+            self.write("hi-en-probe.yaml", vocab(reading, "sɐ̃skr̩t̪ɐm")),
+            "lowercase ISO 15919 letters")
+        iast = ROMANISATION.format(typed=TYPED).replace('"ISO 15919"', '"IAST"')
+        self.assertEqual(self.write("hi-romanisation.yaml", iast).errors, [])
+        self.assertEqual(
+            self.write("hi-en-probe.yaml", vocab(reading, "sɐ̃skr̩t̪ɐm")).errors, [])
+        self.assertRejected(
+            self.write("hi-en-probe.yaml", vocab("Saṃskṛtam", "sɐ̃skr̩t̪ɐm")),
+            "lowercase IAST letters")
 
     def _typed_needs_the_standard(self) -> None:
         text = ROMANISATION.format(typed=TYPED).replace(
@@ -1193,7 +1208,8 @@ class IsoAndIpa(unittest.TestCase):
     def test_readings_are_based_on_iso_15919(self) -> None:
         cases = (
             self._an_iso_romanisation_file_is_valid,
-            self._iso_15919_is_the_one_standard,
+            self._iso_15919_and_iast_are_the_standards_known,
+            self._iast_adds_the_anusvara_dot_m_and_the_vocalic_long_letters,
             self._typed_needs_the_standard,
             self._typed_pairs_are_iso_letters_and_how_they_are_typed,
             self._with_the_standard_readings_are_iso_letters,

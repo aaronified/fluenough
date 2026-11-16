@@ -14,6 +14,7 @@ const _fields = {
   'typed',
   'equivalents',
 };
+const _standards = {'ISO 15919', 'IAST'};
 final _spelling = RegExp(r"^[a-z]+(?:[ '-][a-z]+)*$");
 
 /// The romanisation in [text], a `<code>-romanisation.yaml` (#47). Throws
@@ -60,8 +61,8 @@ Romanisation parseRomanisation(String text, {required String source}) {
     throw bad('scheme says how $language is romanised, in a line', root);
   }
   final standard = root['standard'];
-  if (standard != null && standard != 'ISO 15919') {
-    throw bad('the one standard known is "ISO 15919"', root);
+  if (standard != null && !_standards.contains(standard)) {
+    throw bad('the standards known are "ISO 15919" and "IAST"', root);
   }
   final typed = <(String, String)>[];
   final typedNode = root.nodes['typed'];

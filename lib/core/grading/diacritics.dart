@@ -95,7 +95,15 @@ final Map<String, String> _diacriticFolding = _buildFolding({
       // The Arabic-script vowel marks (harakat: fatha, damma, kasra, their
       // tanwin, shadda, sukun) and the dagger alif, and the tatweel, which a
       // learner leaves off as native writers do.
-      '\u064B\u064C\u064D\u064E\u064F\u0650\u0651\u0652\u0670\u0640',
+      '\u064B\u064C\u064D\u064E\u064F\u0650\u0651\u0652\u0670\u0640'
+      // The Vedic accent marks of Devanagari (the udatta, anudatta and the
+      // recitation tone signs of the Vedic Extensions and Devanagari
+      // Extended blocks), which a learner typing a Vedic word leaves off.
+      '\u0951\u0952\u1CD0\u1CD1\u1CD2\u1CD4\u1CD5\u1CD6\u1CD7\u1CD8'
+      '\u1CD9\u1CDA\u1CDB\u1CDC\u1CDD\u1CDE\u1CDF\u1CE0\u1CE1\u1CE2'
+      '\u1CE3\u1CE4\u1CE5\u1CE6\u1CE7\u1CE8\u1CED\u1CF4\u1CF8\u1CF9'
+      '\uA8E0\uA8E1\uA8E2\uA8E3\uA8E4\uA8E5\uA8E6\uA8E7\uA8E8\uA8E9'
+      '\uA8EA\uA8EB\uA8EC\uA8ED\uA8EE\uA8EF\uA8F0\uA8F1',
 });
 
 Map<String, String> _buildFolding(Map<String, String> groups) {
