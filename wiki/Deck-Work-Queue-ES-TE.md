@@ -32,30 +32,41 @@ Planning output of 2026-11-14. Nothing here was built, run or pushed. Owner orde
 | BLOCKED by code | 0 (ES-026 was blocked by #1269; #1269 done 2026-11-15) | 0 (TE-004 was blocked by #1269; TE-058 was blocked by BL-1, closed by #1285) |
 | Held (no task: needs the owner) | professional decks | professional decks |
 
-### 1.2 Spanish checklist grid (decks-live, verified 2026-11-15)
+### 1.2 Spanish checklist grid (decks-live, verified 2026-11-16)
 
 | # | Deliverable | State | Evidence | Tasks |
 |---|---|---|---|---|
-| 1 | Path to B1 | **DONE** | `es-path.yaml`: 102 of 102 units built (verified 2026-11-15) | none |
-| 2 | Cores and English layers | **DONE** | 71 core decks and 32 grammar decks; cores and layers done (verified 2026-11-15) | none |
-| 3 | Sentences decks | **DONE** | 68 sentence decks (verified 2026-11-15); the 674-card count of 2026-11-14 is not re-counted | none |
-| 4 | Reading decks | **DONE** | 98 reading decks (verified 2026-11-15) | none |
+| 1 | Path to B1 | **DONE** | `es-path.yaml`: 102 of 102 units built (verified 2026-11-16). The file ends with a bare `["*"]` line (unit 103). 98 units name `es-reading-*` decks whose files are `es-en-reading-*` | none |
+| 2 | Cores and English layers | **DONE** | 71 core decks and 32 grammar decks; 188 layers, exactly one per non-reading deck; 3,028 own cards (verified 2026-11-16) | none |
+| 3 | Sentences decks | **DONE** | 68 sentence decks, 698 cards (verified 2026-11-16) | none |
+| 4 | Reading decks | **DONE** | 98 reading decks (verified 2026-11-16) | none |
 | 5 | Script decks | n/a (Latin script) | | none |
-| 6 | Phrasebook | **DONE** | `es-phrasebook`: 15 cards (verified 2026-11-15) | none |
-| 7 | Situations | PARTLY | `es-situations.yaml`: 10 sheets (verified 2026-11-15); ES-026 merged (PR #1355) | ES-025, ES-026 (ES-026 done) |
-| 8 | Topics | PARTLY | `es-topics.yaml`: 22 topics (verified 2026-11-15) | ES-029, ES-030 |
-| 9 | Culture decks | PARTLY | `es-culture-1` to `-4`: 6, 2, 9 and 4 items, 21 of a target of 72 (verified 2026-11-15); PR #1348 merged `-2` to `-4` | ES-014..017 |
-| 10 | Creators, eras, legacy | PARTLY | `decks/creators/es.yaml`: 34 creators (verified 2026-11-15); culture items es-4004, es-4150 and es-4151 are anonymous and have no creator | rides on ES-014..017, 027, 028 |
-| 11 | Proverbs | PARTLY | 60 items (verified 2026-11-15) | ES-018..020 |
-| 12 | Multi-word verbs | PARTLY | 80 items (verified 2026-11-15) | ES-021..024 |
-| 13 | Professional | HELD | held and empty (verified 2026-11-15) | none |
-| 14 | Recommendations | PARTLY | 20 entries in `decks/recommendations/es.yaml` (verified 2026-11-15) | ES-027, ES-028 |
-| 15 | Narrow IPA and broad `ipa` | **DONE** | narrow IPA and broad `ipa` on all 2,917 non-set cards (verified 2026-11-15); the issue #1369 follow-up pass (rules fixes and `--rederive`, PR #1372) is open | ES-040, ES-041 (PR #1372 open) |
-| 16 | Review-queue rows | PARTLY | `docs/review-queue/es.md` on decks-live: 12 rows, all for es-core-100 (verified 2026-11-15); the file is not on main | ES-042..044 |
+| 6 | Phrasebook | **DONE** | `es-phrasebook`: 15 cards, all `phrasebook: true` (cap 25); 4 have no notes (verified 2026-11-16) | none |
+| 7 | Situations | PARTLY | `es-situations.yaml`: 10 sheets, 85 phrases and 116 words, every id a real card; draft, not checked by a Spanish speaker (verified 2026-11-16). ES-026 merged (PR #1355) | ES-025, ES-026 (ES-026 done) |
+| 8 | Topics | PARTLY | `es-topics.yaml`: 22 topics; every listed deck has a file (verified 2026-11-16) | ES-029, ES-030 |
+| 9 | Culture decks | PARTLY | `es-culture-1` to `-4`: 18 items each, 72 in all (verified 2026-11-16). Nine Don Quijote Part I items: eight (es-4007 to 4012, es-4017, es-4018) cite the 1905 Tasso edition on es.wikisource; es-4001 cites the Spanish Wikipedia page for the 1605 opening line. So the brief's "nine from the 1905 edition on es.wikisource" is not what the files show. Candidates that stayed unverifiable: Rosalía's Galician text (excluded); Zorrilla's Tenorio and Silva's Nocturno III (no usable text); Santa Teresa, Lazarillo, Celestina, Conde Lucanor, Góngora, Lope, and the Abenámar, Loba parda and Alhama romances (no dated witness) | ES-014..017 |
+| 10 | Creators, eras, legacy | PARTLY | `decks/creators/es.yaml`: 51 creators; 33 referenced by culture items, 18 by recommendations, none unreferenced (verified 2026-11-16). 17 culture items have no creator: es-4004, es-4150, es-4151 and es-4154 to es-4167 | rides on ES-014..017, 027, 028 |
+| 11 | Proverbs | PARTLY | 60 cards in `es-proverbs-1` to `-3`, 20 each (verified 2026-11-16) | ES-018..020 |
+| 12 | Multi-word verbs | PARTLY | 80 cards in four `es-multiword-*` decks, 20 each (verified 2026-11-16) | ES-021..024 |
+| 13 | Professional | PRESENT, hidden | 6 decks with `genre: professional` and `hidden: true`, 99 cards: business 33, hospitality 35, medicine 31. `decks/sections.yaml` lists professions medicine, hospitality and business (verified 2026-11-16). The "held" line in 1.1 predates them | none |
+| 14 | Recommendations | PARTLY | 20 entries in `decks/recommendations/es.yaml` (verified 2026-11-16) | ES-027, ES-028 |
+| 15 | Narrow IPA and broad `ipa` | **DONE** | `ipa` and `phonetic` on all 3,028 own cards; `phonetic_source`: 2,333 `rules`, 695 `wiktionary` (verified 2026-11-16). The issue #1369 follow-up (PR #1372) is open | ES-040, ES-041 (PR #1372 open) |
+| 16 | Review-queue rows | PARTLY | `docs/review-queue/es.md` on decks-live: 48 rows, 40 card rows and 8 unit-level rows (verified 2026-11-16); the file is not on main | ES-042..044 |
 | 17 | Sourcing list | PARTLY | `wiki/Plan-Culture-Spanish.md` on main (ES-012): candidates only, nothing verified | ES-012 (done) |
-| 18 | Facts file | PARTLY | `es-facts.yaml`: 30 entries (verified 2026-11-15) | ES-013 |
-| + | Notes gap | PARTLY | 355 non-set cards still have no note (verified 2026-11-15). ES-031..039 merged (PR #1358) | ES-031..039 done |
+| 18 | Facts file | PARTLY | `es-facts.yaml`: 30 facts (verified 2026-11-16) | ES-013 |
+| + | Notes gap | PARTLY | 48 own cards have no notes list, in 9 decks: es-business-email 7, es-business-meeting 8, es-emergencies-sentences 1, es-hospitality-reception 7, es-hospitality-restaurant 8, es-medicine-clinic 5, es-medicine-pharmacy 7, es-numbers-1-20-sentences 1, es-phrasebook 4 (verified 2026-11-16). Every note id on a core card has its layer text, and no layer text lacks a core entry | ES-031..039 done |
 | + | Resources file (`es-resources.yaml`) | MISSING, not on the grid | `ja-resources.yaml` exists | not planned; add only if the owner asks |
+
+#### Blocked hosts (retry 2026-11-16)
+
+As the workers reported them on the 2026-11-16 retry. This audit did not re-test the hosts.
+
+- es.wikisource.org (HTML), es.wikipedia.org, es.wikiquote.org: blocked.
+- archive.org stream text and the Wolf & Hofmann OCR work: blocked; the archive.org download route gave 403.
+- gutenberg.org: 503 on every try.
+- britannica.com: 403 to plain curl.
+
+The owner added gutenberg.org, archive.org, web.archive.org, britannica.com, dli.gov.in, sanskritdocuments.org, gretil and heidelberg to the allowlist on 2026-11-16; the retry above was made after that. The Spanish culture cards in decks-live already cite es.wikisource.org (57 cards), es.wikipedia.org (9) and archive.org (6) pages; how those were sourced is not recorded here.
 
 ### 1.3 Telugu checklist grid (decks-live 75bfe636, re-read 2026-11-15)
 
