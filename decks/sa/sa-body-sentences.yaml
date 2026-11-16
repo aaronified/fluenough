@@ -1,0 +1,36 @@
+schema: 1
+id: "sa-body-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3120"
+    target: "केशः कृष्णः."
+    reading: "keśaḥ kṛṣṇaḥ."
+    ipa: "keːʃəh kr̩ʂɳəh"
+    pos: "phrase"
+    bases: [{ word: "केशः", ref: "sa-1572" }, { word: "कृष्णः", ref: "sa-1515" }]
+    confusables: [{ id: "w1", ref: "sa-1516", kind: "word" }, { id: "w2", ref: "sa-1519", kind: "word" }]
+  - id: "sa-3121"
+    target: "हस्तः कठिनः."
+    reading: "hastaḥ kaṭhinaḥ."
+    ipa: "ɦəst̪əh kəʈʰinəh"
+    pos: "phrase"
+    bases: [{ word: "हस्तः", ref: "sa-1567" }, { word: "कठिनः", ref: "sa-1535" }]
+    confusables: [{ id: "w1", ref: "sa-1536", kind: "word" }, { id: "w2", ref: "sa-1530", kind: "word" }]
+  - id: "sa-3122"
+    target: "कति हस्ताः?"
+    reading: "kati hastāḥ?"
+    ipa: "kət̪i ɦəst̪aːh"
+    pos: "phrase"
+    bases: [{ word: "कति", ref: "sa-1005" }, { word: "हस्ताः", base: "हस्तः", reading: "hastaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1001", kind: "word" }, { id: "w2", ref: "sa-1002", kind: "word" }]
+  - id: "sa-3123"
+    target: "दश पादाः."
+    reading: "daśa pādāḥ."
+    ipa: "d̪əʃə paːd̪aːh"
+    pos: "phrase"
+    bases: [{ word: "दश", ref: "sa-1058" }, { word: "पादाः", base: "पादः", reading: "pādaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1057", kind: "word" }, { id: "w2", ref: "sa-1059", kind: "word" }]

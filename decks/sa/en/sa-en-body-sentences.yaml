@@ -1,0 +1,24 @@
+schema: 1
+id: "sa-en-body-sentences"
+kind: "layer"
+core: "sa-body-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences about the body"
+description: "Short sentences about the body, built only from words already taught. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-3120":
+    native: "The hair is black."
+    confusables: { "w1": { why: "Red, not black: रक्तः (raktaḥ) means red." }, "w2": { why: "Yellow, not black: पीतः (pītaḥ) means yellow." } }
+  "sa-3121":
+    native: "The hand is hard."
+    confusables: { "w1": { why: "Easy, not hard: सरलः (saralaḥ) means easy." }, "w2": { why: "Cold, not hard: शीतः (śītaḥ) means cold." } }
+  "sa-3122":
+    native: "How many hands?"
+    bases: { "हस्ताः": "hand (plural: hands)" }
+    confusables: { "w1": { why: "Who, not how many: कः (kaḥ) asks who." }, "w2": { why: "Where, not how many: कुत्र (kutra) asks where." } }
+  "sa-3123":
+    native: "Ten feet."
+    bases: { "पादाः": "foot (plural: feet)" }
+    confusables: { "w1": { why: "Nine, not ten: नव (nava) means nine." }, "w2": { why: "Eleven, not ten: एकादश (ekādaśa) means eleven." } }
