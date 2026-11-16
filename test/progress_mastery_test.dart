@@ -22,8 +22,8 @@ import 'package:fluenough/features/stats/progress_mastery.dart';
 import 'package:fluenough/features/stats/skill_star.dart';
 import 'package:fluenough/features/stats/stats_numbers.dart';
 import 'package:fluenough/features/stats/stats_page.dart';
-import 'package:fluenough/ui/widgets/language_bar.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
+import 'package:fluenough/ui/widgets/language_bar.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
 import 'package:fluenough/app/features.dart';
 import 'package:flutter/material.dart';
@@ -439,16 +439,19 @@ void main() {
           features: FeatureRegistry.all(),
         );
         await pumpScreen(tester, const StatsPage(), state: state);
-        await tester.tap(
+        final l10n = l10nOf(tester);
+        // There is no All button, and a stored All is ignored.
+        expect(
           find.descendant(
             of: find.byType(LanguageBar),
-            matching: find.text(l10nOf(tester).languageBarAll),
+            matching: find.text('All'),
           ),
+          findsNothing,
         );
+        state.settings.progressAll = true;
         await tester.pumpAndSettle();
-        final l10n = l10nOf(tester);
-        expect(find.text(l10n.progressStartedTitle), findsOneWidget);
-        expect(find.text(l10n.progressLevelTitle), findsNothing);
+        expect(find.text(l10n.progressLevelTitle), findsOneWidget);
+        expect(find.text(l10n.progressStartedTitle), findsNothing);
         state.showLanguage('es', allOff: true);
         await tester.pumpAndSettle();
         expect(find.text(l10n.progressLevelTitle), findsOneWidget);

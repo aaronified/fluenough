@@ -215,7 +215,6 @@ body,.ph,.script{font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali","
 .qopt.ok{background:var(--sc);color:var(--onSc);border-color:transparent}
 .hrow{display:flex;gap:12px;overflow:hidden;padding:6px 0 10px}
 
-.tag.sup{background:none;box-shadow:inset 0 0 0 1px var(--p);color:var(--p)}
 .tag.far{background:none;box-shadow:inset 0 0 0 1px var(--pl);color:var(--pl)}
 .tag svg.i{fill:currentColor}
 .badge{display:inline-flex;align-items:center;height:calc(18px*var(--t));padding:0 8px;border-radius:calc(9px*var(--t));font-size:calc(11px*var(--t));background:var(--onP);color:var(--p);font-weight:700}
@@ -241,14 +240,13 @@ input.q::placeholder{color:var(--onSv)}
 <body>
 <div class="wrap" id="wrap">
 <h1>Culture in Decks</h1>
-<p class="cap1">Owner feedback, 2026-11-16: culture belongs on the Decks screen, nothing is locked, and only starting to learn is held back when a deck is too far above the learner. The Settings page goes; its options become one Culture group in the language details. Phone 360 dp at 1.4x text, light and dark, Telugu, Hindustani and Bengali. Titles, levels and counts are the data on decks-live. Self-checks, the bug diagnosis and notes: culture-in-decks.md.</p>
+<p class="cap1">Owner feedback, 2026-11-16: culture belongs on the Decks screen, nothing is locked, and only starting to learn is held back when a deck is too far above the learner. The Settings page goes; its options become one Culture group in each language's details. Phone 360 dp at 1.4x text, light and dark, Telugu, Hindustani and Bengali. Titles, levels and counts are the data on decks-live. Self-checks, the bug diagnosis and notes: culture-in-decks.md.</p>
 <div class="sticky tw">
  <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
  <div class="tg">Language <span class="seg" data-k="c"><button data-v="te">Telugu</button><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button></span></div>
  <div class="tg">Learner level <span class="seg" data-k="lv"><button data-v="A1">A1</button><button data-v="A2">A2</button><button data-v="B1">B1</button></span></div>
  <div class="tg">Culture items <span class="seg" data-k="cul"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
- <div class="tg">Decks entry <span class="seg" data-k="entry"><button data-v="a">A: switch</button><button data-v="b">B: after the path</button></span></div>
- <div class="tg">Deck page <span class="seg" data-k="dp"><button data-v="all">All states</button><button data-v="ok">Learnable</button><button data-v="reach">Within reach</button><button data-v="far">Too far</button></span></div>
+  <div class="tg">Deck page <span class="seg" data-k="dp"><button data-v="all">All states</button><button data-v="ok">Learnable</button><button data-v="far">Too far</button></span></div>
  <div class="tg">Highlight changes <span class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
 </div>
 <div id="root"></div>
@@ -258,7 +256,7 @@ const PAL={
 dark:{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sHigh":"#262b27","ol":"#8a938b","olv":"#404942","E":"#ffb4ab","onE":"#690005","pl":"#E0A458","onPl":"#2b1a00","pr":"#9ecaff","onPr":"#00315a"},
 light:{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sHigh":"#e4eae2","ol":"#717972","olv":"#c0c9c0","E":"#ba1a1a","onE":"#ffffff","pl":"#8A5A00","onPl":"#ffffff","pr":"#1565C0","onPr":"#ffffff"}};
 const IC={search:"M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z",close:"M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z",back:"M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z",add:"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z",chev:"M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z",check:"M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z",lock:"M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM9 8V6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9z",work:"M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z",vol:"M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z",quote:"M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z",tag:"M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58s1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z",deck:"M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z",flag:"M14.4 6 14 4H5v17h2v-7h5.6l.4 2h7V6z",place:"M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z",info:"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z",play:"M8 5v14l11-7z",hist:"M13 3a9 9 0 0 0-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.954 8.954 0 0 0 13 21a9 9 0 0 0 0-18zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z",person:"M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z",image:"M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z",star:"M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z",eyeoff:"M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2z",tune:"M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z",more:"M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z",expand:"M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z",today:"M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"};
-const S={theme:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light',c:'te',lv:'A1',cul:'1',entry:'a',hl:'1',dp:'all',q1:'',q2:null,kind:'all',open:{},abv:'support',cnt:'0',crt:'1',expanded:'1'};
+const S={theme:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light',c:'te',lv:'A1',cul:'1',hl:'1',dp:'all',abv:'show',cnt:'0',crt:'1',tab:{}};
 const LI={A1:0,A2:1,B1:2,B2:3,C1:4},LN=['A1','A2','B1','B2','C1'];
 const KP={book:'Books',film:'Films',series:'Series',song:'Songs',play:'Plays',podcast:'Podcasts',comic:'Comics'};
 const KS={book:'Book',film:'Film',series:'Series',song:'Song',play:'Play',podcast:'Podcast',comic:'Comic'};
@@ -271,56 +269,52 @@ te:{name:'Telugu',q2:'maha',
  works:[W('film','శంకరాభరణం','śaṅkarābharaṇaṁ',1980,'B1'),W('film','సాగర సంగమం','sāgara saṅgamaṁ',1983,'B1'),W('film','పెళ్ళి చూపులు','peḷḷi cūpulu',2016,'A2'),W('film','బాహుబలి: ది బిగినింగ్','bāhubali: di biginiṅg',2015,'B1'),W('film','రౌద్రం రణం రుధిరం','raudraṁ raṇaṁ rudhiraṁ',2022,'B1'),W('film','మహానటి','mahānaṭi',2018,'B1'),W('film','ఈగ','īga',2012,'A2'),W('film','స్వాతిముత్యం','svātimutyaṁ',1986,'A2'),W('film','పాతాళ భైరవి','pātāḷa bhairavi',1951,'A2'),
   W('book','చివరకు మిగిలేది','civaraku migilēdi',1946,'B1'),W('book','మైదానం','maidānaṁ',1927,'B1'),W('book','అమరావతి కథలు','amarāvati kathalu',1975,'A2'),W('book','వేయిపడగలు','vēyipaḍagalu',1937,'B1'),W('play','కన్యాశుల్కం','kanyāśulkaṁ',1892,'B1'),W('song','మా తెలుగు తల్లికి మల్లెపూదండ','mā telugu talliki mallepūdaṇḍa',1942,'A2')],
  ok:{deck:'Proverbs 1',lvl:'A2',t:'అన్నమయం ప్రాణమయం.',r:'annamayaṁ prāṇamayaṁ.',m:'Made of food, made of life.',n:'Said of the body, which lives on what it eats.',src:'Supplement to A Collection of Telugu Proverbs (M. W. Carr, 1868) · oral tradition',who:null,cards:20},
- hi:{deck:'Culture: verse of moral teaching (Vemana)',lvl:'B1',t:'అన్ని దానములను నన్నదానమె గొప్ప …',r:'anni dānamulanu nannadāname goppa …',m:'Of all gifts, the gift of food is the greatest; …',n:'The poet ranks the giving of food above every other gift.',src:'Yogi Vemana · Wikisource transcription · public domain',who:{n:'Yogi Vemana',d:'c. 1652 to c. 1730',leg:'Many lines of his poems are now everyday Telugu sayings.'},cards:5}},
+ far:{deck:'Culture: verse of moral teaching (Vemana)',lvl:'B1',t:'అన్ని దానములను నన్నదానమె గొప్ప …',r:'anni dānamulanu nannadāname goppa …',m:'Of all gifts, the gift of food is the greatest; …',n:'The poet ranks the giving of food above every other gift.',src:'Yogi Vemana · Wikisource transcription · public domain',who:{n:'Yogi Vemana',d:'c. 1652 to c. 1730',leg:'Many lines of his poems are now everyday Telugu sayings.'},cards:5}},
 hi:{name:'Hindustani',q2:'lag',
  decks:[D('Culture: bhakti, sant and Sufi poets','Culture','B1',6),D('Culture: classical Urdu poets','Culture','B1',7),D('Culture: modern Hindi and Urdu prose and verse','Culture','B1',8),D('Proverbs: kahavat 1','Proverbs','A2',17),D('Proverbs: kahavat 2','Proverbs','A2',18),D('Proverbs: kahavat 3','Proverbs','A2',20)],
  works:[W('film','Mughal-e-Azam','',1960,'B2'),W('film','Pyaasa','',1957,'B2'),W('film','Pakeezah','',1972,'C1'),W('film','Umrao Jaan','',1981,'C1'),W('film','Dilwale Dulhania Le Jayenge','',1995,'A2'),W('film','3 Idiots','',2009,'B1'),W('film','Lagaan','',2001,'B1'),W('film','Jaane Bhi Do Yaaro','',1983,'B2'),W('film','Mother India','',1957,'B2'),
   W('series','Dhoop Kinare','',1987,'B1'),W('series','Malgudi Days','',1986,'B1'),W('book','Raag Darbari','',1968,'C1'),W('book','Gunahon Ka Devta','',1949,'B2'),W('book','Aag Ka Darya','',1959,'C1'),W('book','Madhushala','',1935,'C1'),W('song','Hum Dekhenge','',1979,'C1')],
  ok:{deck:'Proverbs: kahavat 1',lvl:'A2',t:'जैसी करनी वैसी भरनी',r:'jaisī karnī vaisī bharnī',m:'As you sow, so shall you reap.',n:'Word for word, “as the deed, so the filling”.',src:'Wiktionary, Hindi proverbs · oral tradition',who:null,cards:17},
- hi:{deck:'Culture: bhakti, sant and Sufi poets',lvl:'B1',t:'जाति न पूछो साधु की, पूछ लीजिए ज्ञान …',r:'jāti na pūchō sādhu kī pūch lījiē gyān …',m:'Do not ask a holy man his caste, but ask for his knowledge; …',n:'The sword and its sheath are an image for judging a person by inner worth.',src:'Kabir · doha, as quoted on Hindi Wikipedia · public domain',who:{n:'Kabir',d:'c. 1398 to c. 1518',leg:'A couplet of his is quoted as a saying on the Hindi Wikipedia page about him.'},cards:6}},
+ far:{deck:'Culture: bhakti, sant and Sufi poets',lvl:'B1',t:'जाति न पूछो साधु की, पूछ लीजिए ज्ञान …',r:'jāti na pūchō sādhu kī pūch lījiē gyān …',m:'Do not ask a holy man his caste, but ask for his knowledge; …',n:'The sword and its sheath are an image for judging a person by inner worth.',src:'Kabir · doha, as quoted on Hindi Wikipedia · public domain',who:{n:'Kabir',d:'c. 1398 to c. 1518',leg:'A couplet of his is quoted as a saying on the Hindi Wikipedia page about him.'},cards:6}},
 bn:{name:'Bengali',q2:'pother',
  decks:[D('Culture: early and medieval Bengali, and songs of the Bengal Renaissance','Culture','A2',13),D('Culture: the nineteenth century','Culture','B1',15),D('Culture: Tagore and children’s classics','Culture','B1',15),D('Culture: twentieth-century fiction and poetry','Culture','B1',15),D('Proverbs 1','Proverbs','A2',20),D('Proverbs 2','Proverbs','A2',20),D('Proverbs 3','Proverbs','A2',20)],
  works:[W('film','পথের পাঁচালী','pôther pām̐cāli',1955,'B1'),W('film','চারুলতা','cārulotā',1964,'B1'),W('film','সোনার কেল্লা','śonār kellā',1974,'A2'),W('film','গুপী গাইন বাঘা বাইন','gupi gāin bāghā bāin',1969,'A2'),W('film','মেঘে ঢাকা তারা','meghe ḍhākā tārā',1960,'B1'),W('film','জলসাঘর','jôlśāghor',1958,'B1'),W('film','মাটির ময়না','māṭir môynā',2002,'B1'),W('film','অটোগ্রাফ','ôṭogrāph',2010,'B1'),W('film','চোখের বালি','cokher bāli',2003,'B1'),W('film','অপুর সংসার','ôpur śôṅśār',1959,'B1'),
   W('book','দেবী','debi',1985,'B1'),W('book','পদ্মা নদীর মাঝি','pôdmā nodir mājhi',1936,'B1'),W('book','হাজার চুরাশির মা','hājār curāśir mā',1974,'B1'),W('book','গণদেবতা','gônodebotā',1942,'B1'),W('book','হিমু','himu',1990,'A2'),W('book','জয় বাবা ফেলুনাথ','jôy bābā phelunāth',1975,'A2'),
   W('comic','নন্টে ফন্টে','nônṭe phônṭe',1969,'A2'),W('comic','বাঁটুল দি গ্রেট','bām̐ṭul di greṭ',1965,'A2'),W('song','আমি বাংলায় গান গাই','āmi bāṅlāy gān gāi',1994,'A2'),W('podcast','মহিষাসুরমর্দিনী','mohiśāsuromordini',1931,'B1')],
  ok:{deck:'Proverbs 1',lvl:'A2',t:'জলে কুমির ডাঙায় বাঘ',r:'jôle kumir ḍāṅāy bāgh',m:'A dilemma: whichever way you turn, there is danger.',n:'Word for word: crocodile in the water, tiger on the land.',src:'Bengali proverbs · oral tradition',who:null,cards:20},
- hi:{deck:'Culture: Tagore and children’s classics',lvl:'B1',t:'আমার সোনার বাংলা, আমি তোমায় ভালোবাসি।',r:'āmār śonār bāṅlā, āmi tomāy bhālobāśi.',m:'My golden Bengal, I love you.',n:'The first line of the song, printed in 1905.',src:'Rabindranath Tagore · Amar Sonar Bangla · public domain',who:{n:'Rabindranath Tagore',d:'1861 to 1941',leg:'He won the Nobel Prize in Literature in 1913.'},cards:15}}};
+ far:{deck:'Culture: Tagore and children’s classics',lvl:'B1',t:'আমার সোনার বাংলা, আমি তোমায় ভালোবাসি।',r:'āmār śonār bāṅlā, āmi tomāy bhālobāśi.',m:'My golden Bengal, I love you.',n:'The first line of the song, printed in 1905.',src:'Rabindranath Tagore · Amar Sonar Bangla · public domain',who:{n:'Rabindranath Tagore',d:'1861 to 1941',leg:'He won the Nobel Prize in Literature in 1913.'},cards:15}}};
+const ORD={te:{deck:'Multi-word verbs: compound verbs',lvl:'A2',t:'వెళ్ళిపోవడం',r:'veḷḷipōvaḍaṁ',m:'to go away; to leave'},hi:{deck:'Idioms: fixed phrases with a figurative meaning',lvl:'B1',t:'आईना दिखाना',r:'āīnā dikhānā',m:'to give someone a reality check'},bn:{deck:'Multi-word verbs: joined form + auxiliary (aspectual)',lvl:'B1',t:'ধুয়ে ফেলা',r:'dhuye phelā',m:'to wash off; to rinse away'}};
 const L=()=>LI[S.lv];
-/* the gate: ok = at or below the learner (LevelGate.allows); reach = one level above (new); far = two or more above */
-const gate=l=>l<=L()?'ok':l==L()+1?'reach':'far';
-const unlock=l=>LN[Math.max(0,l-1)];
+/* the gate (LevelGate.allows): Learn opens only when the learner's level is at or above the deck's own */
+const gate=l=>l<=L()?'ok':'far';
+const nz=x=>(x||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+function matches(q,...f){q=nz(q.trim());return !q||f.some(x=>nz(x).includes(q))}
 function ic(n,s){return `<svg class="i" viewBox="0 0 24 24" aria-hidden="true"${s?` style="width:${s}px;height:${s}px"`:''}><path d="${IC[n]}"/></svg>`}
 const ph=(cap,bar,body,bottom,over,id)=>`<div class="fcol"><div class="fcap">${cap}</div><div class="ph"${id?` id="${id}"`:''}>${bar}<div class="scroll">${body}</div>${bottom||''}${over||''}</div></div>`;
 const abar=(t,back,acts)=>`<div class="appbar">${back?`<button class="ib" aria-label="Back">${ic('back')}</button>`:'<span style="width:8px"></span>'}<span class="ttl">${t}</span>${acts||''}</div>`;
 const nav=on=>`<div class="nav">${['Today','Decks','Progress','Settings'].map(x=>`<div class="${x==on?'on':''}"><span class="pl">${ic(x=='Today'?'today':x=='Decks'?'deck':x=='Progress'?'star':'tune')}</span>${x}</div>`).join('')}</div>`;
-const lvtag=(l,g)=>`<span class="tag lv">${LN[l]}</span>`+(g=='reach'?`<span class="tag sup">With support</span>`:g=='far'?`<span class="tag far">${ic('lock',12)} Learn at ${unlock(l)}</span>`:'');
-const nz=x=>(x||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
-function matches(q,...f){q=nz(q.trim());return !q||f.some(x=>nz(x).includes(q))}
-function deckRow(d,l){const g=gate(d.l);return `<button class="rrow"><span class="ico">${ic(d.k=='Proverbs'?'quote':'deck',22)}</span><span class="tx"><span class="nm">${d.n}</span><span class="sub">${d.k} · ${d.c} items</span><span class="rt"><span class="tag kind">${d.k}</span>${lvtag(d.l,g)}</span></span></button>`}
-function workRow(w,l){const g=gate(w.l);const held=g=='far'?`<span class="sub">Its questions join your lessons at ${w.l-1>2?'a later level':unlock(w.l)}</span>`:'';return `<button class="rrow"><span class="ico">${ic(KI[w.k],22)}</span><span class="tx"><span class="nm script">${w.t}</span>${w.r?`<span class="sub">${w.r}</span>`:''}<span class="sub">${KS[w.k]} · ${w.y}</span><span class="rt"><span class="tag kind">${KS[w.k]}</span><span class="tag lv">${LN[w.l]}</span></span>${held}</span></button>`}
-function culBody(c,q,sel,id){
+const lvtag=l=>`<span class="tag lv">${LN[l]}</span>`+(gate(l)=='far'?`<span class="tag far">${ic('lock',12)} Unlocks at ${LN[l]}</span>`:'');
+function deckRow(d){return `<button class="rrow"><span class="ico">${ic(d.k=='Proverbs'?'quote':'deck',22)}</span><span class="tx"><span class="nm">${d.n}</span><span class="sub">${d.k} · ${d.c} items</span><span class="rt"><span class="tag kind">${d.k}</span>${lvtag(d.l)}</span></span></button>`}
+function workRow(w){const far=gate(w.l)=='far';return `<button class="rrow"><span class="ico">${ic(KI[w.k],22)}</span><span class="tx"><span class="nm script">${w.t}</span>${w.r?`<span class="sub">${w.r}</span>`:''}<span class="sub">${KS[w.k]} · ${w.y}</span><span class="rt"><span class="tag kind">${KS[w.k]}</span><span class="tag lv">${LN[w.l]}</span></span>${far?`<span class="sub">Its questions join your lessons at ${LN[w.l]}</span>`:''}</span></button>`}
+/* the culture list: plain section headers inside the one list; the one Decks search filters it */
+function culBody(c,q,id){
  const d=DATA[c];const ds=d.decks.filter(x=>matches(q,x.n,x.k));const ws=d.works.filter(x=>matches(q,x.t,x.r,KS[x.k],''+x.y));
- const kinds=Object.keys(KP).filter(k=>d.works.some(w=>w.k==k));
- const total=ds.length+ws.length;
- const cnt=k=>ws.filter(w=>w.k==k).length;
- const chips=`<div class="chips chg"><button class="chp ${sel=='all'?'on':''}" data-kind="${sel=='all'?'all':'all'}">All ${total}</button><button class="chp ${sel=='decks'?'on':''}" data-kind="decks">Decks ${ds.length}</button>${kinds.map(k=>`<button class="chp ${sel==k?'on':''}" data-kind="${k}">${KP[k]} ${cnt(k)}</button>`).join('')}</div>`;
- let out='';
- if(!total) return chips+`<div class="empty">${ic('search')}<p class="big">Nothing found for “${q.replace(/</g,'&lt;')}”</p><p class="t-sm">The search looks in deck names, titles, readings and years. Nothing is left out because of your level.</p><button class="btn tonal" data-clear="${id}" style="margin:12px auto 0">Clear search</button></div>`;
- const sec=(title,n,rows)=>n?`<p class="t-lab">${title} <span class="nowrap" style="font-weight:400">· ${n}</span></p>${rows}`:'';
- const by=(a,b)=>a.l-b.l;
- if(sel=='all'||sel=='decks')out+=sec('Culture decks',ds.length,[...ds].sort(by).map(x=>deckRow(x)).join(''));
- for(const k of kinds){ if(sel=='all'||sel==k) out+=sec(KP[k],cnt(k),ws.filter(w=>w.k==k).sort(by).map(w=>workRow(w)).join('')); }
- return chips+`<p class="hint">Everything is open to read. Works are not reproduced in the app. Learn opens for a deck once it is within a level of yours.</p>`+out;
+ if(!ds.length&&!ws.length)return `<div class="empty">${ic('search')}<p class="big">No decks match that search.</p><p class="t-sm">The search looks in deck names, titles, readings and years. Nothing is left out because of your level.</p><button class="btn tonal" data-clear="${id}" style="margin:12px auto 0">Clear</button></div>`;
+ const by=(a,b)=>a.l-b.l;const sec=(t,n,rows)=>n?`<p class="t-lab chg">${t} <span style="font-weight:400">· ${n}</span></p>${rows}`:'';
+ let out=sec('Culture decks',ds.length,[...ds].sort(by).map(deckRow).join(''));
+ for(const k of Object.keys(KP)){const w=ws.filter(x=>x.k==k);out+=sec(KP[k],w.length,w.sort(by).map(workRow).join(''))}
+ return out;
 }
-function decksPhone(id,cap,q){
- const d=DATA[S.c];const A=S.entry=='a';
- const pathPart=`<div class="card" style="padding:10px 16px;margin-bottom:6px"><div class="tx"><p class="t-h">A1 · Start</p><p class="t-sm">Units 1 to 12 · done</p></div>${ic('chev')}</div><div class="card" style="padding:10px 16px;margin-bottom:6px"><div class="tx"><p class="t-h">A2 · Up next</p><p class="t-sm">Units 13 to 30</p></div>${ic('chev')}</div>`;
- const top=`<div class="lbar"><span class="pill on">${d.name}</span><span class="pill">Hindustani</span></div><div class="sbox chg upd"><span style="color:var(--onSv)">${ic('search')}</span><input class="q" data-q="${id}" aria-label="Search culture in ${d.name}" placeholder="Search culture in ${d.name}" value="${(q||'').replace(/"/g,'&quot;')}"><button class="ib" style="width:40px;height:40px" data-clear="${id}" aria-label="Clear">${ic('close',20)}</button></div>`;
- const tabs=A?`<div class="tabs chg"><button class="tab" aria-selected="false">Path</button><button class="tab" aria-selected="true">Culture</button></div>`:'';
- const mid=A?'':`${pathPart}<p class="t-h chg" style="margin:16px 0 4px">Culture</p><p class="t-sm" style="margin-bottom:6px">Decks, books, films and songs in ${d.name}. Open any of them.</p>`;
- return ph(cap,abar('Decks'),'',nav('Decks'),'',id).replace('<div class="scroll"></div>',`<div class="scroll" style="padding-top:0">${top}${tabs}${mid}<div class="culbody" data-id="${id}">${culBody(S.c,q||'',S['sel'+id]||'all',id)}</div></div>`);
+function decksScreen(id,cap,mode,q){
+ const d=DATA[S.c];const cul=mode=='culture';
+ const pct=S.lv=='A1'?'22':S.lv=='A2'?'48':'74';
+ const btn=cul?`<button class="btn out chg upd" style="flex:none;min-height:48px;border-radius:24px;font-size:calc(14px*var(--t));padding:6px 16px">${ic('back',20)} Deck path</button>`:`<button class="btn out chg" style="flex:none;min-height:48px;border-radius:24px;font-size:calc(14px*var(--t));padding:6px 16px">${ic('quote',20)} Culture</button>`;
+ const card=`<div class="card" style="flex-direction:column;align-items:stretch;gap:6px"><div style="display:flex;align-items:center;gap:8px"><p class="t-h" style="flex:1">${d.name} course</p><button class="ib" aria-label="Look for deck updates">${ic('hist')}</button></div><div class="bar"><i style="width:${pct}%"></i></div><p class="t-sm">About ${S.lv=='A1'?'41':S.lv=='A2'?'28':'12'} hours left in the decks so far · 9 hours spent</p><div style="display:flex;gap:8px;margin-top:4px">${btn}</div></div>`;
+ const row=(a,b)=>`<div class="card" style="padding:10px 16px;margin-bottom:6px"><div class="tx"><p class="t-h">${a}</p><p class="t-sm">${b}</p></div>${ic('chev')}</div>`;
+ const search=`<div class="sbox"><span style="color:var(--onSv)">${ic('search')}</span><input class="q" ${cul?`data-q="${id}"`:'readonly'} aria-label="Search ${d.name}" placeholder="Search ${d.name}" value="${(q||'').replace(/"/g,'&quot;')}">${cul&&q?`<button class="ib" style="width:40px;height:40px" data-clear="${id}" aria-label="Clear search">${ic('close',20)}</button>`:''}</div>`;
+ const list=cul?`<div class="culbody" data-id="${id}">${culBody(S.c,q||'',id)}</div>`:`${row('A1 · Start','Units 1 to 12')}${row('A2 · Up next','Units 13 to 30')}${row('B1','Units 31 to 52')}`;
+ return ph(cap,abar('Decks'),`<div class="lbar"><span class="pill on">${d.name}</span><span class="pill">Hindustani</span></div>${search}${card}${list}`,nav('Decks'),'',id);
 }
-/* language details */
 function sw(on){return `<span class="sw2 ${on?'on':''}"></span>`}
 function sheetPhone(cap,expanded){
  const d=DATA[S.c];const on=S.cul=='1';
@@ -328,76 +322,75 @@ function sheetPhone(cap,expanded){
  const rowT=(t,s,n)=>`<button class="opt-row" data-tog="${n}" role="switch" aria-checked="${S[n]=='1'}" style="min-height:56px"><span class="tx">${t}<small>${s}</small></span>${sw(S[n]=='1')}</button>`;
  const cul=`<div class="cgroup chg">
   <button class="opt-row" data-tog="cul" role="switch" aria-checked="${on}" style="min-height:64px"><span class="ic" style="width:40px;height:40px;border-radius:20px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;flex:none">${ic('quote',20)}</span><span class="tx">Culture<small>${on?'Proverbs, songs and verse in the path, on Today and in reviews':'Off. You can still read and search it in Decks'}</small></span>${sw(on)}</button>
-  ${expanded&&on?`<div class="cin"><p class="t-sm" style="margin:2px 0 6px">Items above my level</p><div class="seg2" role="group" aria-label="Items above my level"><button data-abv="hide" aria-pressed="${S.abv=='hide'}">Hide</button><button data-abv="support" aria-pressed="${S.abv=='support'}">Show with support</button></div><p class="t-sm" style="margin:4px 0 8px">${S.abv=='hide'?'The path shows only what you can learn now.':'The path also shows items a level above, words glossed, not counted.'}</p>${rowT('Count toward path progress',S.cnt=='1'?'A culture item counts as a step of its unit':'Off: culture is a bonus','cnt')}${rowT('Show creator and legacy',S.crt=='1'?'Who made it and what still lives today':'Only the item and its source','crt')}<p class="t-sm" style="margin:2px 0 0">Applies to all your languages. ${ic('chev',14)} Read it all in Decks</p></div>`:''}
+  ${expanded&&on?`<div class="cin"><p class="t-sm" style="margin:2px 0 6px">Items above my level</p><div class="seg2" role="group" aria-label="Items above my level"><button data-abv="hide" aria-pressed="${S.abv=='hide'}">Hide</button><button data-abv="show" aria-pressed="${S.abv=='show'}">Show</button></div><p class="t-sm" style="margin:4px 0 8px">${S.abv=='hide'?'Left out of the path and Today. Still in Decks.':'Shown in the path and on Today as previews you can read but not learn. Never in reviews.'}</p>${rowT('Count toward path progress',S.cnt=='1'?'A culture item counts as a step of its unit':'Off: culture is a bonus','cnt')}${rowT('Show creator and legacy',S.crt=='1'?'Who made it and what still lives today':'Only the item and its source','crt')}</div>`:''}
  </div>`;
  const body=`<p class="t-lab" style="margin-top:4px">${ic('star',16)} Level</p>${row('Fit my level','Placed at A2 in reading')}<p class="t-lab">${ic('vol',16)} Speak and hear</p>${row('Spoken '+d.name,'Hear and say')}<p class="t-lab">${ic('tag',16)} Learning</p>${row('Minutes a day','15 min · about 51 cards')}<div class="sep"></div>${cul}`;
  return ph(cap,abar(d.name+' · details',true),body,`<div class="bottom"><button class="btn fill full">Done</button></div>`,'','sh'+(expanded?'e':'c'));
 }
-/* deck page */
 function deckPage(state){
- const d=DATA[S.c];const x=state=='ok'?d.ok:d.hi;const lv=LI[x.lvl];
- const learner=state=='far'?0:state=='reach'?1:state=='ok'?1:1;
- const lvl=LN[learner];
+ const d=DATA[S.c];const x=state=='ok'?d.ok:d.far;
  const off=state=='off';
  let btn,why='';
  if(off){btn=`<button class="btn fill full dis" disabled aria-disabled="true">${ic('lock',20)} Learn</button>`;why=`Culture is off for ${d.name}. Turn it on in ${d.name} details.`}
- else if(state=='far'){btn=`<button class="btn fill full dis" disabled aria-disabled="true">${ic('lock',20)} Learn</button>`;why=`Learn unlocks at ${unlock(lv)}. This deck is ${x.lvl}.`}
- else if(state=='reach'){btn=`<button class="btn fill full">Learn with support</button>`;why=`One level above you: words are glossed and it does not count toward your progress.`}
+ else if(state=='far'){btn=`<button class="btn fill full dis" disabled aria-disabled="true">${ic('lock',20)} Learn</button>`;why=`Unlocks at ${x.lvl}. You are at A1.`}
  else{btn=`<button class="btn fill full">Learn <span class="badge">${Math.min(x.cards,9)} new</span></button>`;why=S.cnt=='1'?'It counts toward your progress in its unit.':'A bonus: it does not count toward your progress.'}
- const cap={ok:'Learnable: at your level',reach:'Within reach: one level above',far:'Too far: view only',off:'Culture off: view only'}[state];
+ const cap={ok:'Learnable: your level is at or above the deck’s (A2, A2)',far:'Too far: view only (you A1, deck B1)',off:'Culture off: view only'}[state];
  const who=x.who?`<div class="blk"><span style="color:var(--onSv)">${ic('person',22)}</span><div><p class="tt">${x.who.n} · ${x.who.d}</p><p>${x.who.leg}</p></div></div>`:`<div class="blk"><span style="color:var(--onSv)">${ic('person',22)}</span><div><p class="tt">No single author</p><p>A saying in use for centuries.</p></div></div>`;
- const body=`<div class="pillrow"><span class="tag kind">${x.deck.startsWith('Proverbs')?'Proverbs':'Culture'}</span><span class="tag lv">${x.lvl}</span><span class="tag lv">${x.cards} items</span>${state=='reach'?'<span class="tag sup">With support</span>':''}</div>
+ const body=`<div class="pillrow"><span class="tag kind">${x.deck.startsWith('Proverbs')?'Proverbs':'Culture'}</span><span class="tag lv">${x.lvl}</span><span class="tag lv">${x.cards} items</span></div>
  <p class="t-lab">First item</p><div class="qt"><p class="big script">${x.t}</p><p class="t-sm" style="margin-top:4px">${x.r}</p><p class="t-body" style="margin-top:6px">${x.m}</p></div><p class="t-sm">${x.n}</p><p class="src" style="margin-top:6px">${x.src}</p>${S.crt=='1'?who:''}
  <p class="t-lab">More in this deck</p><div class="hint">${x.cards-1} more items. Tap one to read it.</div>`;
  const bottom=`<div class="bottom">${btn}<p class="t-sm ${state=='far'||off?'why':''}" style="margin-top:8px;text-align:center">${why}</p></div>`;
  return ph(cap,abar(x.deck,true),body,bottom,'');
 }
 function workPage(){
- const d=DATA[S.c];const w=[...d.works].sort((a,b)=>b.l-a.l)[0];const g=gate(w.l);
- const held=g=='far';
+ const d=DATA[S.c];const w=[...d.works].sort((a,b)=>b.l-a.l)[0];const far=gate(w.l)=='far';
  const body=`<div class="hd" style="display:flex;gap:12px"><div class="cover" style="width:72px;height:104px">${ic(KI[w.k])}</div><div style="min-width:0"><h3 class="script" style="margin:0;font-size:calc(20px*var(--t));font-weight:500">${w.t}</h3>${w.r?`<p class="t-sm">${w.r}</p>`:''}<p class="t-sm">${w.y}</p><div class="pillrow"><span class="tag kind">${KS[w.k]}</span><span class="tag lv">${LN[w.l]}</span></div></div></div>
  <p class="t-lab">Briefing</p><p class="t-body">A short note about the work, written at your level, with the people behind it.</p>
  <p class="src" style="margin-top:8px">Not included in the app: find it where you read, watch or listen.</p>
  <button class="btn text" style="align-self:flex-start;padding-left:0">${ic('place',18)} Library</button>
  <button class="btn fill full chg upd" style="margin-top:8px">I’ve completed this</button>
- <p class="t-sm" style="margin-top:8px;text-align:center">${held?`Its questions join your lessons at ${w.l-1>2?'a later level':unlock(w.l)}, so the app does not quiz you on it yet.`:'Its questions join your lessons.'}</p>`;
- return ph('Work page, '+(held?'too far: still readable':'at your level'),abar(KS[w.k],true),body,'');
+ <p class="t-sm" style="margin-top:8px;text-align:center">${far?`Its questions join your lessons at ${LN[w.l]}, so the app does not quiz you on it yet.`:'Its questions join your lessons.'}</p>`;
+ return ph('Work page, '+(far?'too far: still readable':'at your level'),abar(KS[w.k],true),body,'');
+}
+function ordinaryPage(){
+ const x=ORD[S.c];
+ const body=`<div class="pillrow"><span class="tag kind">Vocabulary</span><span class="tag lv">${x.lvl}</span></div><p class="t-lab">First item</p><div class="qt"><p class="big script">${x.t}</p><p class="t-sm" style="margin-top:4px">${x.r}</p><p class="t-body" style="margin-top:6px">${x.m}</p></div><p class="t-lab">More in this deck</p><div class="hint">Tap an item to read it.</div>`;
+ const bottom=`<div class="bottom"><button class="btn fill full dis" disabled aria-disabled="true">${ic('lock',20)} Learn</button><p class="t-sm why" style="margin-top:8px;text-align:center">Unlocks at ${x.lvl}. You are at A1.</p></div>`;
+ return ph('Same rule, an ordinary vocabulary deck (you A1, deck '+x.lvl+')',abar(x.deck,true),body,bottom);
+}
+function pathPreview(){
+ const d=DATA[S.c];const it=d.far;
+ const row=(tag,cls)=>`<div class="card chg" style="padding:12px 16px;margin-bottom:6px"><div class="ic">${ic('quote',20)}</div><div class="tx"><p class="t-sm">Culture · ${it.lvl}</p><p class="t-h script">${it.t.split(' ').slice(0,3).join(' ')} …</p><span class="rt"><span class="tag far">${ic('lock',12)} Preview · unlocks at ${it.lvl}</span></span></div></div>`;
+ const hide=S.abv=='hide';
+ return ph('Path unit, "Items above my level": '+(hide?'Hide':'Show'),abar('Unit 12',true),`<div class="card" style="padding:12px 16px;margin-bottom:6px"><div class="ic">${ic('deck',20)}</div><div class="tx"><p class="t-h">Words</p><p class="t-sm">9 new</p></div></div>${hide?'<p class="hint">With Hide, no culture item above your level appears here, on Today or in reviews.</p>':row()}<p class="hint">Reviews never include an item above your level, whichever you choose.</p>`,nav('Decks'));
 }
 function settingsPhone(){
  const row=(i,t,s,g)=>`<div class="card ${g?'ghost chg gone':''}" style="padding:12px 16px;margin-bottom:6px"><div class="ic">${ic(i,20)}</div><div class="tx"><p class="t-h">${t}</p><p class="t-sm">${s}</p></div>${ic('chev')}</div>`;
  return ph('Settings: the Culture row is gone',abar('Settings'),`${row('tune','Activities','All on')}${row('quote','Culture','Items shown in the path and on Today',1)}${row('tune','Look','Light, Roboto')}${row('tag','Your data','Backup and restore')}`,nav('Settings'));
 }
-function emptyPhone(){
- const c=S.c;return decksPhone('e','Empty: a search with no match','zzq');
-}
 function build(){
  const root=document.getElementById('root');
  const p=PAL[S.theme];root.style.cssText=Object.entries(p).map(([k,v])=>`--${k}:${v}`).join(';');root.className=S.hl=='1'?'hl-on':'';document.documentElement.dataset.theme=S.theme;
- if(S.q2==null||S.q2Lang!=S.c){S.q2=DATA[S.c].q2;S.q2Lang=S.c}
- const ds=S.dp=='all'?['ok','reach','far']:[S.dp];
+ if(S.q2Lang!=S.c){S.q2=DATA[S.c].q2;S.q2Lang=S.c;S.tab={}}
+ const ds=S.dp=='all'?['ok','far']:[S.dp];
  root.innerHTML=`
- <section class="opt"><h2>A · The Decks screen holds the culture</h2><p class="note">Decks, books, films, songs and the rest for the language chosen in the top bar, searchable, nothing locked. Entry <b>${S.entry=='a'?'A: a Path and Culture switch under the search':'B: a Culture section after the path, in place of the “Beyond the course” placeholder (#215)'}</b>. Learner level is ${S.lv}: marks on each row come from it.</p><div class="frames">${decksPhone('p1','1 · Browse, no search','')}${decksPhone('p2','2 · Search “'+S.q2+'”',S.q2)}${emptyPhone()}</div></section>
- <section class="opt"><h2>B · The language details screen takes the options</h2><p class="note">Culture is one switch row. It opens in place; the Settings page is gone. The switch here drives every phone on this page.</p><div class="frames">${sheetPhone('3 · Culture group, collapsed',false)}${sheetPhone('4 · Culture group, expanded',true)}${settingsPhone()}</div></section>
- <section class="opt"><h2>C · The deck page, three states</h2><p class="note">Opened and read in all of them. Only the Learn action changes. Too far means two or more levels above the learner; within reach means one level above.</p><div class="frames">${(S.cul=='0'?['off']:ds).map(deckPage).join('')}${S.dp=='all'?workPage():''}</div></section>
- <section class="qs"><b>Open questions for the owner</b><ol>
- <li>Is one level above learnable (with glosses, not counted), as shown, or should Learn open only at the deck’s own level?</li>
- <li>The options now apply to all languages. Should each language keep its own?</li>
- <li>Entry A (a switch) or B (a section after the path)?</li>
- <li>Search results elsewhere still hide what is above your level when Settings > Languages > “Hide what is above my level” is on. Remove that setting too, so search shows everything view-only?</li></ol></section>`;
+ <section class="opt"><h2>A · A Culture button on the Decks top card switches the list</h2><p class="note">The button on the top card swaps what the screen lists: the deck path, or the culture list, with the button then reading Deck path to go back. The one existing search stays and filters whichever list shows. The culture list has plain section headers (Culture decks, then only the kinds the data has); nothing is hidden or locked. Learner level is ${S.lv}: marks on each row come from it.</p><div class="frames">${decksScreen('d1','1 · Path view: the button reads Culture','path','')}${decksScreen('p1','2 · Culture view: the button reads Deck path','culture','')}${decksScreen('p2','3 · Culture view, the one search filters it: “'+S.q2+'”','culture',S.q2)}${decksScreen('e','4 · Empty: a search with no match','culture','zzq')}</div></section>
+ <section class="opt"><h2>B · Each language's details take its own culture options</h2><p class="note">One switch row, opening in place. The Settings page is gone. The switch drives every phone on this page.</p><div class="frames">${sheetPhone('5 · Culture group, collapsed',false)}${sheetPhone('6 · Culture group, expanded',true)}${pathPreview()}${settingsPhone()}</div></section>
+ <section class="opt"><h2>C · The deck page: Learn opens only at the deck’s own level</h2><p class="note">One rule for every deck kind: a deck can be learnt only when the learner’s level reaches the deck’s level (the same check for a culture deck and an ordinary vocabulary deck, last phone). Otherwise it is read-only and Learn is disabled with the reason.</p><div class="frames">${(S.cul=='0'?['off']:ds).map(deckPage).join('')}${S.dp=='all'?workPage():''}${S.cul=='1'&&S.dp!='ok'?ordinaryPage():''}</div></section>
+ <section class="qs"><b>Resolved (owner, 2026-11-16)</b>: see culture-in-decks.md. No open questions are left on this page.</section>`;
  document.querySelectorAll('.seg').forEach(s=>s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',S[s.dataset.k]==b.dataset.v)));
  const sc=document.getElementById('shc'),se=document.getElementById('she');[sc,se].forEach(e=>{const s=e&&e.querySelector('.scroll');if(s)s.scrollTop=s.scrollHeight});
  wireInner(root);
 }
+function refresh(root,id){const inp=root.querySelector(`input.q[data-q="${id}"]`);const b=root.querySelector(`.culbody[data-id="${id}"]`);b.innerHTML=culBody(S.c,inp.value,id);wireInner(b)}
 function wireInner(root){
- root.querySelectorAll('input.q').forEach(inp=>{inp.addEventListener('input',()=>{const id=inp.dataset.q;if(id=='p1')S.q1=inp.value;else if(id=='p2')S.q2=inp.value;const b=root.querySelector(`.culbody[data-id="${id}"]`);b.innerHTML=culBody(S.c,inp.value,S['sel'+id]||'all',id);wireInner(b)})});
- root.querySelectorAll('[data-kind]').forEach(b=>b.addEventListener('click',()=>{const body=b.closest('.culbody');const id=body.dataset.id;S['sel'+id]=b.dataset.kind;const inp=root.querySelector(`input.q[data-q="${id}"]`);body.innerHTML=culBody(S.c,inp.value,S['sel'+id],id);wireInner(body)}));
- root.querySelectorAll('[data-clear]').forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.clear;const inp=root.querySelector(`input.q[data-q="${id}"]`);inp.value='';if(id=='p1')S.q1='';else if(id=='p2')S.q2='';const body=root.querySelector(`.culbody[data-id="${id}"]`);body.innerHTML=culBody(S.c,'',S['sel'+id]||'all',id);wireInner(body)}));
+ root.querySelectorAll('input.q').forEach(inp=>{inp.addEventListener('input',()=>{refresh(document,inp.dataset.q)})});
+ root.querySelectorAll('[data-clear]').forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.clear;document.querySelector(`input.q[data-q="${id}"]`).value='';refresh(document,id)}));
  root.querySelectorAll('[data-tog]').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.tog;S[k]=S[k]=='1'?'0':'1';build()}));
  root.querySelectorAll('[data-abv]').forEach(b=>b.addEventListener('click',()=>{S.abv=b.dataset.abv;build()}));
 }
-document.querySelectorAll('.seg').forEach(s=>s.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;S[s.dataset.k]=b.dataset.v;if(s.dataset.k=='c'){S.q1='';S.sel='';S.selp1=S.selp2=S.selp=null}build()}));
+document.querySelectorAll('.seg').forEach(s=>s.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;S[s.dataset.k]=b.dataset.v;build()}));
 build();
-
 </script>
 </body>
 </html>

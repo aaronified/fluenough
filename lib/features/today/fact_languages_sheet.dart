@@ -68,6 +68,29 @@ String factLanguageName(
   return code;
 }
 
+/// The line under Fact languages in the Languages menu: the names of the
+/// languages checked, in the order the learner knows them, or "All known
+/// languages" while the choice covers every one.
+String factLanguagesLine(
+  AppLocalizations l10n,
+  AppState state,
+  List<SpokenLanguage>? all,
+) {
+  final known = state.factLanguageChoices;
+  final checked = state.factLanguagesChecked;
+  // Null, or a choice that covers every known language: all of them.
+  if (state.settings.factLanguages == null || checked.length == known.length) {
+    return l10n.settingsFactLanguagesAll;
+  }
+  String? names;
+  for (final code in known) {
+    if (!checked.contains(code)) continue;
+    final name = factLanguageName(state, all, code);
+    names = names == null ? name : l10n.settingsFactLanguagesJoin(names, name);
+  }
+  return names ?? l10n.settingsFactLanguagesAll;
+}
+
 /// The languages the learner knows, each with a box; the fact is shown in
 /// the checked ones. The last checked box cannot be unchecked.
 class FactLanguagesSheet extends StatefulWidget {
@@ -75,8 +98,8 @@ class FactLanguagesSheet extends StatefulWidget {
 
   final List<SpokenLanguage>? spokenList;
 
-  /// Opens the sheet over [context]: from Today's fact card and from the
-  /// Settings row, which write the same setting.
+  /// Opens the sheet over [context]: from Today's fact card; the Languages
+  /// menu's Fact languages writes the same setting.
   static Future<void> show(
     BuildContext context, [
     List<SpokenLanguage>? spokenList,

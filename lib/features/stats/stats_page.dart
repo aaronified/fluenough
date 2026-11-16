@@ -111,11 +111,7 @@ class _Frame extends StatelessWidget {
   Widget build(BuildContext context) => Scaffold(
     body: SafeArea(
       bottom: false,
-      child: LanguageBarFrame(
-        screen: LanguageBarScreen.progress,
-        reportDetail: 'Progress',
-        child: child,
-      ),
+      child: LanguageBarFrame(screen: LanguageBarScreen.progress, child: child),
     ),
   );
 }

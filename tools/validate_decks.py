@@ -8801,17 +8801,40 @@ def _pirate_hosts() -> set[str]:
         return set()
 
 
-def _language_scripts(code: str) -> list[str] | None:
-    """The scripts assets/languages.yaml lists for [code], or None."""
+def _language_entry(code: str) -> dict | None:
+    """The assets/languages.yaml entry for [code], or None."""
     raw = _load_raw_view(ROOT / "assets" / "languages.yaml")
     if isinstance(raw, dict) and isinstance(raw.get("languages"), list):
         for entry in raw["languages"]:
             if isinstance(entry, dict) and entry.get("code") == code:
-                scripts = entry.get("scripts")
-                if isinstance(scripts, list):
-                    return [s for s in scripts if isinstance(s, str)]
-                return [entry["script"]] if _is_str(entry.get("script")) else None
+                return entry
     return None
+
+
+def _language_scripts(code: str) -> list[str] | None:
+    """The scripts assets/languages.yaml lists for [code], or None."""
+    entry = _language_entry(code)
+    if entry is None:
+        return None
+    scripts = entry.get("scripts")
+    if isinstance(scripts, list):
+        return [s for s in scripts if isinstance(s, str)]
+    return [entry["script"]] if _is_str(entry.get("script")) else None
+
+
+def _language_book_scripts(code: str) -> list[str] | None:
+    """The scripts a recommended book of [code] may be printed in: the
+    language's own, plus the entry's optional `book_scripts` (books in a
+    script the course does not teach, such as the English-printed public-domain
+    editions of the Sanskrit courses), or None when the scripts are unknown."""
+    scripts = _language_scripts(code)
+    if scripts is None:
+        return None
+    entry = _language_entry(code) or {}
+    extra = entry.get("book_scripts")
+    if isinstance(extra, list):
+        scripts = scripts + [s for s in extra if isinstance(s, str) and s not in scripts]
+    return scripts
 
 
 def check_recommendations_file(r: Report, raw: dict, path: Path) -> None:
@@ -8838,7 +8861,7 @@ def check_recommendations_file(r: Report, raw: dict, path: Path) -> None:
     if not isinstance(recs, list) or not recs:
         r.error("recommendations", "must be a non-empty list")
         return
-    scripts = _language_scripts(lang) if lang else None
+    scripts = _language_book_scripts(lang) if lang else None
     hosts = _pirate_hosts()
     if not hosts:
         r.error("recommendations", "tools/pirate_hosts.txt is missing or empty, the "

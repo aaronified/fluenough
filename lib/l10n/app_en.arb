@@ -173,18 +173,6 @@
       }
     }
   },
-  "languageBarAll": "All",
-  "@languageBarAll": {
-    "description": "The button on Progress's language bar, just before the bug report button, that counts every language's numbers together. Short: it sits in a 48 dp slot."
-  },
-  "languageBarAllLabel": "All languages",
-  "@languageBarAllLabel": {
-    "description": "What the screen reader calls Progress's All button, a toggle."
-  },
-  "languageBarAllHint": "show every language's numbers together",
-  "@languageBarAllHint": {
-    "description": "The screen reader's hint for Progress's All button, after \"Double-tap to\"."
-  },
   "languageMenuLabel": "Language shown: {language}",
   "@languageMenuLabel": {
     "description": "Tooltip and screen-reader label of the language menu button at the top of a deck's or a unit's page, and what the screen reader says once the language bar at the top of Today, Decks and Progress shows another language. It names which language's lessons, decks and numbers the whole app shows. The placeholder is a language's name, such as \"Telugu\".",
@@ -1013,23 +1001,39 @@
   "@situationsEditTitle": {
     "description": "Title of the popup where the learner picks and orders the situations Today's card shows (#1145)."
   },
-  "situationsEditHelp": "Tap a situation to add or remove it. Hold and drag to reorder. The first {count} are shown on Today.",
-  "@situationsEditHelp": {
-    "description": "Help line in the situations editor: tapping toggles a tile, a long press drags it, and only the first few chosen are on the card.",
+  "situationsEditOnToday": "On Today",
+  "@situationsEditOnToday": {
+    "description": "Title of the first section of the situations editor: the situations Today's card shows, at most six, in their order (#1145)."
+  },
+  "situationsEditCount": "{count} of {max}",
+  "@situationsEditCount": {
+    "description": "Counter beside the On Today title in the situations editor: how many situations are on Today of the most it can show.",
     "placeholders": {
       "count": {
+        "type": "int",
+        "example": "4"
+      },
+      "max": {
         "type": "int",
         "example": "6"
       }
     }
   },
+  "situationsEditMore": "More situations",
+  "@situationsEditMore": {
+    "description": "Title of the second section of the situations editor: the situations that are not on Today, which a tap adds."
+  },
+  "situationsEditReorder": "Drag to order",
+  "@situationsEditReorder": {
+    "description": "The one instruction in the situations editor, under On Today: a long press then a drag moves a tile to another place in the order."
+  },
   "situationsEditReset": "Reset to defaults",
   "@situationsEditReset": {
     "description": "Button in the situations editor: goes back to the situations each language starts with."
   },
-  "situationsEditShown": "{title}, shown, number {position}",
+  "situationsEditShown": "{title}, on Today, place {position}",
   "@situationsEditShown": {
-    "description": "Screen reader label of a chosen situation's tile in the editor: its name and its place in the chosen order.",
+    "description": "Screen reader label of a situation's tile in the On Today section of the editor: its name and its place in the order.",
     "placeholders": {
       "title": {
         "type": "String",
@@ -1041,9 +1045,19 @@
       }
     }
   },
-  "situationsEditHidden": "{title}, not shown",
+  "situationsEditHidden": "{title}, not on Today, tap to add",
   "@situationsEditHidden": {
     "description": "Screen reader label of a situation's tile in the editor when it is not chosen; a tap adds it.",
+    "placeholders": {
+      "title": {
+        "type": "String",
+        "example": "Taxi"
+      }
+    }
+  },
+  "situationsEditFull": "{title}, not on Today. Remove one first to add another",
+  "@situationsEditFull": {
+    "description": "Screen reader label of a disabled tile under More situations, while six are on Today: it says what to do first. Nothing of it is shown on screen.",
     "placeholders": {
       "title": {
         "type": "String",
@@ -3454,16 +3468,6 @@
       "project": {
         "type": "String",
         "example": "wiktionary"
-      }
-    }
-  },
-  "settingsSourcesSummary": "{count, plural, =1{1 source} other{{count} sources}}",
-  "@settingsSourcesSummary": {
-    "description": "The line under Settings' Sources row: how many sources the decks name.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "3"
       }
     }
   },
@@ -12926,16 +12930,6 @@
   "@languagesTitle": {
     "description": "Title of the Languages page (#907), where each language's four skills, Speak, Hear, Read and Write, are set to Know, Learn or Leave, and the Settings row that opens it."
   },
-  "languagesSettingsSummary": "{count, plural, =0{Not learning any language} =1{1 language learning} other{{count} languages learning}}",
-  "@languagesSettingsSummary": {
-    "description": "Second line of the Languages row in Settings: how many languages have a skill set to Learn.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "3"
-      }
-    }
-  },
   "settingsFactLanguages": "Fact languages",
   "@settingsFactLanguages": {
     "description": "Title of the Settings row under Your languages that opens the choice of the languages Today's fact is shown in (#926)."
@@ -12965,6 +12959,22 @@
   "languagesAdd": "Add a language",
   "@languagesAdd": {
     "description": "Button and row on the Languages page that opens the list of languages to add."
+  },
+  "languagesMenuMore": "More options",
+  "@languagesMenuMore": {
+    "description": "The screen reader's label, and the long-press hint, of the three-dot icon at the top right of the Languages screen that opens the menu of reading and content switches."
+  },
+  "languagesMenuMoreHint": "More",
+  "@languagesMenuMoreHint": {
+    "description": "The one-word hint shown on a long press of the three-dot icon at the top right of the Languages screen."
+  },
+  "languagesMenuShow": "Show",
+  "@languagesMenuShow": {
+    "description": "Small heading over the switches in the Languages screen's three-dot menu: what the app shows."
+  },
+  "languagesMenuOpen": "Open",
+  "@languagesMenuOpen": {
+    "description": "Small heading over the rows that open more choices or another screen at the end of the Languages screen's three-dot menu."
   },
   "languagesEmptyTitle": "No languages yet",
   "@languagesEmptyTitle": {

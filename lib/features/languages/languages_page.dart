@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
+import '../../app/routes.dart';
 import '../../app/language_skills.dart';
 import '../../core/data/spoken_languages.dart';
 import '../../core/languages/language_skills.dart';
@@ -13,12 +14,14 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/faded_row.dart';
 import '../../ui/widgets/hint.dart';
 import '../../ui/widgets/page_parts.dart';
-import '../../ui/widgets/report_button.dart';
+import '../../ui/widgets/grouped_list.dart';
 import '../downloads/deck_update_controls.dart';
 import '../downloads/download_text.dart';
 import '../private/private_widgets.dart';
+import '../settings/your_decks_page.dart';
 import 'add_language_page.dart';
 import 'language_skills_sheet.dart';
+import 'languages_menu.dart';
 import 'language_views.dart';
 import 'skill_widgets.dart';
 import '../../app/language_directory_loader.dart';
@@ -121,7 +124,7 @@ class _LanguagesPageState extends State<LanguagesPage> {
                       icon: const Icon(Icons.add),
                     ),
             ),
-          const ReportButton(),
+          LanguagesMenu(spokenList: all),
         ],
       ),
       body: SafeArea(
@@ -323,6 +326,28 @@ class _LanguagesPageState extends State<LanguagesPage> {
                 ],
               ),
             ),
+          ),
+        ),
+        const SizedBox(height: 16),
+        // Decks the learner added (#475): a page of their own, so the link
+        // icon, below the languages rather than in the menu.
+        pad(
+          GroupedList.settings(
+            children: <Widget>[
+              GroupedTile(
+                key: const ValueKey<String>('languages-your-decks'),
+                leading: const Icon(Icons.style_outlined),
+                title: l10n.settingsRowDecks,
+                subtitle: l10n.settingsSumDecks(
+                  YourDecksPage.ownDecks(state.decks).length,
+                ),
+                trailing: const Icon(Icons.open_in_new),
+                onTap: () => AppNavigator.openSettingsPage(
+                  context,
+                  AppRoutes.settingsDecks,
+                ),
+              ),
+            ],
           ),
         ),
       ],
