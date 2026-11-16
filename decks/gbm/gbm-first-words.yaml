@@ -1,0 +1,931 @@
+schema: 1
+id: "gbm-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "gbm", iso639_3: "gbm", name: "Garhwali", script: "devanagari", tts: "hi-IN", icon: "गढ" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "gbm-0101"
+    target: "हाँ"
+    reading: "hām̐"
+    ipa: "ɦaːĩ"
+    pos: "other"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "हाँ, यो पाणी छ।"
+        reading: "hām̐, yo pāṇī cha."
+        ipa: "ɦaːĩ jo paːɳiː t͡ʃə"
+        bases:
+          - { word: "हाँ", base: "हाँ", reading: "hām̐" }
+          - { word: "यो", base: "यो", reading: "yo" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+          - { word: "छ", base: "छ", reading: "cha" }
+  - id: "gbm-0102"
+    target: "नि"
+    reading: "ni"
+    ipa: "niː"
+    pos: "other"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "नि, मि नि औन्दो।"
+        reading: "ni, mi ni aundo."
+        ipa: "niː mi niː əundo"
+        bases:
+          - { word: "मि", base: "मि", reading: "mi" }
+          - { word: "नि", base: "नि", reading: "ni" }
+          - { word: "औन्दो", base: "औण", reading: "aundo" }
+  - id: "gbm-0103"
+    target: "मि"
+    reading: "mi"
+    ipa: "mi"
+    pos: "pronoun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "मि डाक्टर छौं।"
+        reading: "mi ḍākṭar chhaun."
+        ipa: "mi ɖaːkʈər t͡ʃʰaʊn"
+        bases:
+          - { word: "मि", base: "मि", reading: "mi" }
+          - { word: "डाक्टर", base: "डाक्टर", reading: "ḍākṭar" }
+          - { word: "छौं", base: "छ", reading: "chhaun" }
+      - target: "मि ठीक छौं।"
+        reading: "mi ṭhīk chhaun."
+        ipa: "mi ʈʰiːk t͡ʃʰaʊn"
+        bases:
+          - { word: "मि", base: "मि", reading: "mi" }
+          - { word: "ठीक", base: "ठीक", reading: "ṭhīk" }
+          - { word: "छौं", base: "छ", reading: "chhaun" }
+  - id: "gbm-0104"
+    target: "तु"
+    reading: "tu"
+    ipa: "tu"
+    pos: "pronoun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "तु कख छै?"
+        reading: "tu kakh chhai?"
+        ipa: "tu kəkʰ t͡ʃʰəi"
+        bases:
+          - { word: "तु", base: "तु", reading: "tu" }
+          - { word: "कख", base: "कख", reading: "kakh" }
+          - { word: "छै", base: "छ", reading: "chhai" }
+      - target: "तु भलु छै।"
+        reading: "tu bhalu chhai."
+        ipa: "tu bʰəlu t͡ʃʰəi"
+        bases:
+          - { word: "तु", base: "तु", reading: "tu" }
+          - { word: "भलु", base: "भलु", reading: "bhalu" }
+          - { word: "छै", base: "छ", reading: "chhai" }
+  - id: "gbm-0105"
+    target: "वु"
+    reading: "wu"
+    ipa: "ʋu"
+    pos: "pronoun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "वु घौर में छ।"
+        reading: "wu ghaur mein cha."
+        ipa: "ʋu ɡʱəur meːn t͡ʃə"
+        bases:
+          - { word: "वु", base: "वु", reading: "wu" }
+          - { word: "घौर", base: "घौर", reading: "ghaur" }
+          - { word: "में", base: "में", reading: "mein" }
+          - { word: "छ", base: "छ", reading: "cha" }
+      - target: "वु डाक्टर छ।"
+        reading: "wu ḍākṭar cha."
+        ipa: "ʋu ɖaːkʈər t͡ʃə"
+        bases:
+          - { word: "वु", base: "वु", reading: "wu" }
+          - { word: "डाक्टर", base: "डाक्टर", reading: "ḍākṭar" }
+          - { word: "छ", base: "छ", reading: "cha" }
+  - id: "gbm-0106"
+    target: "हम"
+    reading: "ham"
+    ipa: "ɦəm"
+    pos: "pronoun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "हम घौर जौंला।"
+        reading: "ham ghaur jaunlā."
+        ipa: "ɦəm ɡʱəur d͡ʒəunlaː"
+        bases:
+          - { word: "हम", base: "हम", reading: "ham" }
+          - { word: "घौर", base: "घौर", reading: "ghaur" }
+          - { word: "जौंला", base: "जाण", reading: "jaunlā" }
+      - target: "हम गढ़वळि छौं।"
+        reading: "ham garhwaḷi chhaun."
+        ipa: "ɦəm ɡəɽʱʋəɭi t͡ʃʰaʊn"
+        bases:
+          - { word: "हम", base: "हम", reading: "ham" }
+          - { word: "गढ़वळि", base: "गढ़वळि", reading: "garhwaḷi" }
+          - { word: "छौं", base: "छ", reading: "chhaun" }
+  - id: "gbm-0107"
+    target: "वों"
+    reading: "won"
+    ipa: "ʋon"
+    pos: "pronoun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "वों पढ़दा छन।"
+        reading: "won paḍhdā chhan."
+        ipa: "ʋon pəɖʱdaː t͡ʃʰən"
+        bases:
+          - { word: "वों", base: "वों", reading: "won" }
+          - { word: "पढ़दा", base: "पढ़ण", reading: "paḍhdā" }
+          - { word: "छन", base: "छ", reading: "chhan" }
+      - target: "वों नेपाली छन।"
+        reading: "won nepālī chhan."
+        ipa: "ʋon nepaːliː t͡ʃʰən"
+        bases:
+          - { word: "वों", base: "वों", reading: "won" }
+          - { word: "नेपाली", base: "नेपाली", reading: "nepālī" }
+          - { word: "छन", base: "छ", reading: "chhan" }
+  - id: "gbm-0108"
+    target: "एक"
+    reading: "ek"
+    ipa: "ek"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "एक गिलास पाणी।"
+        reading: "ek gilās pāṇī."
+        ipa: "ek ɡilaːs paːɳiː"
+        bases:
+          - { word: "एक", base: "एक", reading: "ek" }
+          - { word: "गिलास", base: "गिलास", reading: "gilās" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+      - target: "एक कप चा।"
+        reading: "ek kap chā."
+        ipa: "ek kəp t͡ʃaː"
+        bases:
+          - { word: "एक", base: "एक", reading: "ek" }
+          - { word: "कप", base: "कप", reading: "kap" }
+          - { word: "चा", base: "चा", reading: "chā" }
+  - id: "gbm-0109"
+    target: "दु"
+    reading: "du"
+    ipa: "du"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "दु गिलास पाणी।"
+        reading: "du gilās pāṇī."
+        ipa: "du ɡilaːs paːɳiː"
+        bases:
+          - { word: "दु", base: "दु", reading: "du" }
+          - { word: "गिलास", base: "गिलास", reading: "gilās" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+      - target: "दु कप चा।"
+        reading: "du kap chā."
+        ipa: "du kəp t͡ʃaː"
+        bases:
+          - { word: "दु", base: "दु", reading: "du" }
+          - { word: "कप", base: "कप", reading: "kap" }
+          - { word: "चा", base: "चा", reading: "chā" }
+  - id: "gbm-0110"
+    target: "तीन"
+    reading: "tīn"
+    ipa: "tiːn"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "तीन गिलास पाणी।"
+        reading: "tīn gilās pāṇī."
+        ipa: "tiːn ɡilaːs paːɳiː"
+        bases:
+          - { word: "तीन", base: "तीन", reading: "tīn" }
+          - { word: "गिलास", base: "गिलास", reading: "gilās" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+      - target: "तीन कप चा।"
+        reading: "tīn kap chā."
+        ipa: "tiːn kəp t͡ʃaː"
+        bases:
+          - { word: "तीन", base: "तीन", reading: "tīn" }
+          - { word: "कप", base: "कप", reading: "kap" }
+          - { word: "चा", base: "चा", reading: "chā" }
+  - id: "gbm-0111"
+    target: "चार"
+    reading: "chār"
+    ipa: "t͡ʃaːr"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "चार गिलास पाणी।"
+        reading: "chār gilās pāṇī."
+        ipa: "t͡ʃaːr ɡilaːs paːɳiː"
+        bases:
+          - { word: "चार", base: "चार", reading: "chār" }
+          - { word: "गिलास", base: "गिलास", reading: "gilās" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+      - target: "चार कप चा।"
+        reading: "chār kap chā."
+        ipa: "t͡ʃaːr kəp t͡ʃaː"
+        bases:
+          - { word: "चार", base: "चार", reading: "chār" }
+          - { word: "कप", base: "कप", reading: "kap" }
+          - { word: "चा", base: "चा", reading: "chā" }
+  - id: "gbm-0112"
+    target: "पाँच"
+    reading: "pām̐ch"
+    ipa: "paːɲt͡ʃ"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "पाँच गिलास पाणी।"
+        reading: "pām̐ch gilās pāṇī."
+        ipa: "paːɲt͡ʃ ɡilaːs paːɳiː"
+        bases:
+          - { word: "पाँच", base: "पाँच", reading: "pām̐ch" }
+          - { word: "गिलास", base: "गिलास", reading: "gilās" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+      - target: "पाँच कप चा।"
+        reading: "pām̐ch kap chā."
+        ipa: "paːɲt͡ʃ kəp t͡ʃaː"
+        bases:
+          - { word: "पाँच", base: "पाँच", reading: "pām̐ch" }
+          - { word: "कप", base: "कप", reading: "kap" }
+          - { word: "चा", base: "चा", reading: "chā" }
+  - id: "gbm-0113"
+    target: "छ"
+    reading: "cha"
+    ipa: "t͡ʃə"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "छ गिलास पाणी।"
+        reading: "cha gilās pāṇī."
+        ipa: "t͡ʃə ɡilaːs paːɳiː"
+        bases:
+          - { word: "छ", base: "छ", reading: "cha" }
+          - { word: "गिलास", base: "गिलास", reading: "gilās" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+      - target: "छ कप चा।"
+        reading: "cha kap chā."
+        ipa: "t͡ʃə kəp t͡ʃaː"
+        bases:
+          - { word: "छ", base: "छ", reading: "cha" }
+          - { word: "कप", base: "कप", reading: "kap" }
+          - { word: "चा", base: "चा", reading: "chā" }
+  - id: "gbm-0114"
+    target: "सात"
+    reading: "sāt"
+    ipa: "saːt"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "सात गिलास पाणी।"
+        reading: "sāt gilās pāṇī."
+        ipa: "saːt ɡilaːs paːɳiː"
+        bases:
+          - { word: "सात", base: "सात", reading: "sāt" }
+          - { word: "गिलास", base: "गिलास", reading: "gilās" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+      - target: "सात कप चा।"
+        reading: "sāt kap chā."
+        ipa: "saːt kəp t͡ʃaː"
+        bases:
+          - { word: "सात", base: "सात", reading: "sāt" }
+          - { word: "कप", base: "कप", reading: "kap" }
+          - { word: "चा", base: "चा", reading: "chā" }
+  - id: "gbm-0115"
+    target: "आठ"
+    reading: "āṭh"
+    ipa: "aːʈʰ"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "आठ गिलास पाणी।"
+        reading: "āṭh gilās pāṇī."
+        ipa: "aːʈʰ ɡilaːs paːɳiː"
+        bases:
+          - { word: "आठ", base: "आठ", reading: "āṭh" }
+          - { word: "गिलास", base: "गिलास", reading: "gilās" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+      - target: "आठ कप चा।"
+        reading: "āṭh kap chā."
+        ipa: "aːʈʰ kəp t͡ʃaː"
+        bases:
+          - { word: "आठ", base: "आठ", reading: "āṭh" }
+          - { word: "कप", base: "कप", reading: "kap" }
+          - { word: "चा", base: "चा", reading: "chā" }
+  - id: "gbm-0116"
+    target: "नौ"
+    reading: "nau"
+    ipa: "nəu"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "नौ गिलास पाणी।"
+        reading: "nau gilās pāṇī."
+        ipa: "nəu ɡilaːs paːɳiː"
+        bases:
+          - { word: "नौ", base: "नौ", reading: "nau" }
+          - { word: "गिलास", base: "गिलास", reading: "gilās" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+      - target: "नौ कप चा।"
+        reading: "nau kap chā."
+        ipa: "nəu kəp t͡ʃaː"
+        bases:
+          - { word: "नौ", base: "नौ", reading: "nau" }
+          - { word: "कप", base: "कप", reading: "kap" }
+          - { word: "चा", base: "चा", reading: "chā" }
+  - id: "gbm-0117"
+    target: "दस"
+    reading: "das"
+    ipa: "dəs"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "दस गिलास पाणी।"
+        reading: "das gilās pāṇī."
+        ipa: "dəs ɡilaːs paːɳiː"
+        bases:
+          - { word: "दस", base: "दस", reading: "das" }
+          - { word: "गिलास", base: "गिलास", reading: "gilās" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+      - target: "दस कप चा।"
+        reading: "das kap chā."
+        ipa: "dəs kəp t͡ʃaː"
+        bases:
+          - { word: "दस", base: "दस", reading: "das" }
+          - { word: "कप", base: "कप", reading: "kap" }
+          - { word: "चा", base: "चा", reading: "chā" }
+  - id: "gbm-0118"
+    target: "ब्वै"
+    reading: "bwai"
+    ipa: "bʋəi"
+    pos: "noun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "मेरी ब्वै घौर में छ।"
+        reading: "merī bwai ghaur mein cha."
+        ipa: "meriː bʋəi ɡʱəur meːn t͡ʃə"
+        bases:
+          - { word: "मेरी", base: "मेरो", reading: "merī" }
+          - { word: "ब्वै", base: "ब्वै", reading: "bwai" }
+          - { word: "घौर", base: "घौर", reading: "ghaur" }
+          - { word: "में", base: "में", reading: "mein" }
+          - { word: "छ", base: "छ", reading: "cha" }
+      - target: "ब्वै, पाणी दे।"
+        reading: "bwai, pāṇī de."
+        ipa: "bʋəi, paːɳiː de"
+        bases:
+          - { word: "ब्वै", base: "ब्वै", reading: "bwai" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+          - { word: "दे", base: "दे", reading: "de" }
+  - id: "gbm-0119"
+    target: "बुबा"
+    reading: "bubā"
+    ipa: "bubaː"
+    pos: "noun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "मेरु बुबा मास्टर छ।"
+        reading: "meru bubā māsṭar cha."
+        ipa: "meru bubaː maːsʈər t͡ʃə"
+        bases:
+          - { word: "मेरु", base: "मेरु", reading: "meru" }
+          - { word: "बुबा", base: "बुबा", reading: "bubā" }
+          - { word: "मास्टर", base: "मास्टर", reading: "māsṭar" }
+          - { word: "छ", base: "छ", reading: "cha" }
+      - target: "बुबा, पाणी?"
+        reading: "bubā, pāṇī?"
+        ipa: "bubaː, paːɳiː"
+        bases:
+          - { word: "बुबा", base: "बुबा", reading: "bubā" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+  - id: "gbm-0120"
+    target: "भै"
+    reading: "bhai"
+    ipa: "bʰəi"
+    pos: "noun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "मेरु भै घौर में छ।"
+        reading: "meru bhai ghaur mein cha."
+        ipa: "meru bʰəi ɡʱəur meːn t͡ʃə"
+        bases:
+          - { word: "मेरु", base: "मेरु", reading: "meru" }
+          - { word: "भै", base: "भै", reading: "bhai" }
+          - { word: "घौर", base: "घौर", reading: "ghaur" }
+          - { word: "में", base: "में", reading: "mein" }
+          - { word: "छ", base: "छ", reading: "cha" }
+      - target: "भै, आ!"
+        reading: "bhai, ā!"
+        ipa: "bʰəi, aː"
+        bases:
+          - { word: "भै", base: "भै", reading: "bhai" }
+          - { word: "आ", base: "आ", reading: "ā" }
+  - id: "gbm-0121"
+    target: "बैंणी"
+    reading: "baiṇī"
+    ipa: "bəiɳiː"
+    pos: "noun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "मेरी बैंणी विद्यार्थी छ।"
+        reading: "merī baiṇī vidyārthī cha."
+        ipa: "meriː bəiɳiː ʋidjaːrtʰiː t͡ʃə"
+        bases:
+          - { word: "मेरी", base: "मेरो", reading: "merī" }
+          - { word: "बैंणी", base: "बैंणी", reading: "baiṇī" }
+          - { word: "विद्यार्थी", base: "विद्यार्थी", reading: "vidyārthī" }
+          - { word: "छ", base: "छ", reading: "cha" }
+      - target: "बैंणी, खाणु तैयार छ।"
+        reading: "baiṇī, khāṇu taiyār cha."
+        ipa: "bəiɳiː, kʰaːɳu təijaːr t͡ʃə"
+        bases:
+          - { word: "बैंणी", base: "बैंणी", reading: "baiṇī" }
+          - { word: "खाणु", base: "खाणु", reading: "khāṇu" }
+          - { word: "तैयार", base: "तैयार", reading: "taiyār" }
+          - { word: "छ", base: "छ", reading: "cha" }
+  - id: "gbm-0122"
+    target: "च्वड़ा"
+    reading: "cwaṛā"
+    ipa: "t͡ʃʋəɽaː"
+    pos: "noun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "च्वड़ा खेलणु छ।"
+        reading: "cwaṛā khelaṇu cha."
+        ipa: "t͡ʃʋəɽaː kʰelaɳu t͡ʃə"
+        bases:
+          - { word: "च्वड़ा", base: "च्वड़ा", reading: "cwaṛā" }
+          - { word: "खेलणु", base: "खेल", reading: "khelaṇu" }
+          - { word: "छ", base: "छ", reading: "cha" }
+      - target: "च्वड़ा निखाणु छ।"
+        reading: "cwaṛā nikhāṇu cha."
+        ipa: "t͡ʃʋəɽaː nikʰaːɳu t͡ʃə"
+        bases:
+          - { word: "च्वड़ा", base: "च्वड़ा", reading: "cwaṛā" }
+          - { word: "निखाणु", base: "निखाणु", reading: "nikhāṇu" }
+          - { word: "छ", base: "छ", reading: "cha" }
+  - id: "gbm-0123"
+    target: "मन्खी"
+    reading: "manakhī"
+    ipa: "mənəkʰiː"
+    pos: "noun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "वो मन्खी भलु छ।"
+        reading: "wo manakhī bhalu cha."
+        ipa: "ʋo mənəkʰiː bʰəlu t͡ʃə"
+        bases:
+          - { word: "वो", base: "वो", reading: "wo" }
+          - { word: "मन्खी", base: "मन्खी", reading: "manakhī" }
+          - { word: "भलु", base: "भलु", reading: "bhalu" }
+          - { word: "छ", base: "छ", reading: "cha" }
+      - target: "मन्खी घौर में छ।"
+        reading: "manakhī ghaur mein cha."
+        ipa: "mənəkʰiː ɡʱəur meːn t͡ʃə"
+        bases:
+          - { word: "मन्खी", base: "मन्खी", reading: "manakhī" }
+          - { word: "घौर", base: "घौर", reading: "ghaur" }
+          - { word: "में", base: "में", reading: "mein" }
+          - { word: "छ", base: "छ", reading: "cha" }
+  - id: "gbm-0124"
+    target: "जनानी"
+    reading: "janānī"
+    ipa: "dʒənaːniː"
+    pos: "noun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "वा जनानी डाक्टर छ।"
+        reading: "wā janānī ḍākṭar cha."
+        ipa: "ʋaː dʒənaːniː ɖaːkʈər t͡ʃə"
+        bases:
+          - { word: "वा", base: "वो", reading: "wā" }
+          - { word: "जनानी", base: "जनानी", reading: "janānī" }
+          - { word: "डाक्टर", base: "डाक्टर", reading: "ḍākṭar" }
+          - { word: "छ", base: "छ", reading: "cha" }
+      - target: "जनानी, पाणी दे।"
+        reading: "janānī, pāṇī de."
+        ipa: "dʒənaːniː, paːɳiː de"
+        bases:
+          - { word: "जनानी", base: "जनानी", reading: "janānī" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+          - { word: "दे", base: "दे", reading: "de" }
+  - id: "gbm-0125"
+    target: "पाणी"
+    reading: "pāṇī"
+    ipa: "paːɳiː"
+    pos: "noun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "मेकु पाणी चैंद।"
+        reading: "meku pāṇī chaind."
+        ipa: "meku paːɳiː t͡ʃəind"
+        bases:
+          - { word: "मेकु", base: "मेकु", reading: "meku" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+          - { word: "चैंद", base: "चैंण", reading: "chaind" }
+      - target: "पाणी ठंडु छ।"
+        reading: "pāṇī ṭhaṇḍu cha."
+        ipa: "paːɳiː ʈʰənɖu t͡ʃə"
+        bases:
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+          - { word: "ठंडु", base: "ठंडु", reading: "ṭhaṇḍu" }
+          - { word: "छ", base: "छ", reading: "cha" }
+  - id: "gbm-0126"
+    target: "खाणु"
+    reading: "khāṇu"
+    ipa: "kʰaːɳu"
+    pos: "noun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "खाणु तैयार छ।"
+        reading: "khāṇu taiyār cha."
+        ipa: "kʰaːɳu təijaːr t͡ʃə"
+        bases:
+          - { word: "खाणु", base: "खाणु", reading: "khāṇu" }
+          - { word: "तैयार", base: "तैयार", reading: "taiyār" }
+          - { word: "छ", base: "छ", reading: "cha" }
+      - target: "मि खाणु खौंल।"
+        reading: "mi khāṇu khaun."
+        ipa: "mi kʰaːɳu kʰəun"
+        bases:
+          - { word: "मि", base: "मि", reading: "mi" }
+          - { word: "खाणु", base: "खाणु", reading: "khāṇu" }
+          - { word: "खौंल", base: "खाण", reading: "khaun" }
+  - id: "gbm-0127"
+    target: "चा"
+    reading: "chā"
+    ipa: "t͡ʃaː"
+    pos: "noun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "चा गरम छ।"
+        reading: "chā garam cha."
+        ipa: "t͡ʃaː ɡərəm t͡ʃə"
+        bases:
+          - { word: "चा", base: "चा", reading: "chā" }
+          - { word: "गरम", base: "गरम", reading: "garam" }
+          - { word: "छ", base: "छ", reading: "cha" }
+      - target: "मेकु चा भलि लगदि।"
+        reading: "meku chā bhali lagdi."
+        ipa: "meku t͡ʃaː bʰəli ləɡdi"
+        bases:
+          - { word: "मेकु", base: "मेकु", reading: "meku" }
+          - { word: "चा", base: "चा", reading: "chā" }
+          - { word: "भलि", base: "भलु", reading: "bhali" }
+          - { word: "लगदि", base: "लगण", reading: "lagdi" }
+  - id: "gbm-0128"
+    target: "घौर"
+    reading: "ghaur"
+    ipa: "ɡʱəur"
+    pos: "noun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "मेरु घौर ठुलु छ।"
+        reading: "meru ghaur ṭhulu cha."
+        ipa: "meru ɡʱəur ʈʰulu t͡ʃə"
+        bases:
+          - { word: "मेरु", base: "मेरु", reading: "meru" }
+          - { word: "घौर", base: "घौर", reading: "ghaur" }
+          - { word: "ठुलु", base: "ठुलु", reading: "ṭhulu" }
+          - { word: "छ", base: "छ", reading: "cha" }
+      - target: "घौर कख छ?"
+        reading: "ghaur kakh cha?"
+        ipa: "ɡʱəur kəkʰ t͡ʃə"
+        bases:
+          - { word: "घौर", base: "घौर", reading: "ghaur" }
+          - { word: "कख", base: "कख", reading: "kakh" }
+          - { word: "छ", base: "छ", reading: "cha" }
+  - id: "gbm-0129"
+    target: "नौं"
+    reading: "naun"
+    ipa: "nəun"
+    pos: "noun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "तुमारु नौं क्या छ?"
+        reading: "tumāru naun kyā cha?"
+        ipa: "tuməːru nəun kjaː t͡ʃə"
+        bases:
+          - { word: "तुमारु", base: "तुमारु", reading: "tumāru" }
+          - { word: "नौं", base: "नौं", reading: "naun" }
+          - { word: "क्या", base: "क्या", reading: "kyā" }
+          - { word: "छ", base: "छ", reading: "cha" }
+      - target: "नौं भलु छ।"
+        reading: "naun bhalu cha."
+        ipa: "nəun bʰəlu t͡ʃə"
+        bases:
+          - { word: "नौं", base: "नौं", reading: "naun" }
+          - { word: "भलु", base: "भलु", reading: "bhalu" }
+          - { word: "छ", base: "छ", reading: "cha" }
+  - id: "gbm-0130"
+    target: "भलु"
+    reading: "bhalu"
+    ipa: "bʰəlu"
+    pos: "adj"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "यो भलु छ।"
+        reading: "yo bhalu cha."
+        ipa: "jo bʰəlu t͡ʃə"
+        bases:
+          - { word: "यो", base: "यो", reading: "yo" }
+          - { word: "भलु", base: "भलु", reading: "bhalu" }
+          - { word: "छ", base: "छ", reading: "cha" }
+      - target: "आज मौसम भलु छ।"
+        reading: "āj mausam bhalu cha."
+        ipa: "aːdʒ məusəm bʰəlu t͡ʃə"
+        bases:
+          - { word: "आज", base: "आज", reading: "āj" }
+          - { word: "मौसम", base: "मौसम", reading: "mausam" }
+          - { word: "भलु", base: "भलु", reading: "bhalu" }
+          - { word: "छ", base: "छ", reading: "cha" }
+  - id: "gbm-0131"
+    target: "ठुलु"
+    reading: "ṭhulu"
+    ipa: "ʈʰulu"
+    pos: "adj"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "घौर ठुलु छ।"
+        reading: "ghaur ṭhulu cha."
+        ipa: "ɡʱəur ʈʰulu t͡ʃə"
+        bases:
+          - { word: "घौर", base: "घौर", reading: "ghaur" }
+          - { word: "ठुलु", base: "ठुलु", reading: "ṭhulu" }
+          - { word: "छ", base: "छ", reading: "cha" }
+      - target: "ठुलु कुकुर।"
+        reading: "ṭhulu kukur."
+        ipa: "ʈʰulu kukur"
+        bases:
+          - { word: "ठुलु", base: "ठुलु", reading: "ṭhulu" }
+          - { word: "कुकुर", base: "कुकुर", reading: "kukur" }
+  - id: "gbm-0132"
+    target: "निखाणु"
+    reading: "nikhāṇu"
+    ipa: "nikʰaːɳu"
+    pos: "adj"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "च्वड़ा निखाणु छ।"
+        reading: "cwaṛā nikhāṇu cha."
+        ipa: "t͡ʃʋəɽaː nikʰaːɳu t͡ʃə"
+        bases:
+          - { word: "च्वड़ा", base: "च्वड़ा", reading: "cwaṛā" }
+          - { word: "निखाणु", base: "निखाणु", reading: "nikhāṇu" }
+          - { word: "छ", base: "छ", reading: "cha" }
+      - target: "निखाणु घौर।"
+        reading: "nikhāṇu ghaur."
+        ipa: "nikʰaːɳu ɡʱəur"
+        bases:
+          - { word: "निखाणु", base: "निखाणु", reading: "nikhāṇu" }
+          - { word: "घौर", base: "घौर", reading: "ghaur" }
+  - id: "gbm-0133"
+    target: "यख"
+    reading: "yakh"
+    ipa: "jəkʰ"
+    pos: "adv"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "मि यख छौं।"
+        reading: "mi yakh chhaun."
+        ipa: "mi jəkʰ t͡ʃʰaʊn"
+        bases:
+          - { word: "मि", base: "मि", reading: "mi" }
+          - { word: "यख", base: "यख", reading: "yakh" }
+          - { word: "छौं", base: "छ", reading: "chhaun" }
+      - target: "यख आ।"
+        reading: "yakh ā."
+        ipa: "jəkʰ aː"
+        bases:
+          - { word: "यख", base: "यख", reading: "yakh" }
+          - { word: "आ", base: "आ", reading: "ā" }
+  - id: "gbm-0134"
+    target: "वख"
+    reading: "wakh"
+    ipa: "ʋəkʰ"
+    pos: "adv"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "वख पाणी छ।"
+        reading: "wakh pāṇī cha."
+        ipa: "ʋəkʰ paːɳiː t͡ʃə"
+        bases:
+          - { word: "वख", base: "वख", reading: "wakh" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+          - { word: "छ", base: "छ", reading: "cha" }
+      - target: "वख जा।"
+        reading: "wakh jā."
+        ipa: "ʋəkʰ dʒaː"
+        bases:
+          - { word: "वख", base: "वख", reading: "wakh" }
+          - { word: "जा", base: "जा", reading: "jā" }
+  - id: "gbm-0135"
+    target: "क्या"
+    reading: "kyā"
+    ipa: "kjaː"
+    pos: "pronoun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "यो क्या छ?"
+        reading: "yo kyā cha?"
+        ipa: "jo kjaː t͡ʃə"
+        bases:
+          - { word: "यो", base: "यो", reading: "yo" }
+          - { word: "क्या", base: "क्या", reading: "kyā" }
+          - { word: "छ", base: "छ", reading: "cha" }
+      - target: "तु क्या खाला?"
+        reading: "tu kyā khālā?"
+        ipa: "tu kjaː kʰaːlaː"
+        bases:
+          - { word: "तु", base: "तु", reading: "tu" }
+          - { word: "क्या", base: "क्या", reading: "kyā" }
+          - { word: "खाला", base: "खाण", reading: "khālā" }
+  - id: "gbm-0136"
+    target: "कैन"
+    reading: "kain"
+    ipa: "kəin"
+    pos: "pronoun"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "यो कैन छ?"
+        reading: "yo kain cha?"
+        ipa: "jo kəin t͡ʃə"
+        bases:
+          - { word: "यो", base: "यो", reading: "yo" }
+          - { word: "कैन", base: "कैन", reading: "kain" }
+          - { word: "छ", base: "छ", reading: "cha" }
+      - target: "कैन आणु छ?"
+        reading: "kain āṇu cha?"
+        ipa: "kəin aːɳu t͡ʃə"
+        bases:
+          - { word: "कैन", base: "कैन", reading: "kain" }
+          - { word: "आणु", base: "आण", reading: "āṇu" }
+          - { word: "छ", base: "छ", reading: "cha" }
+  - id: "gbm-0137"
+    target: "कख"
+    reading: "kakh"
+    ipa: "kəkʰ"
+    pos: "adv"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "तु कख छै?"
+        reading: "tu kakh chhai?"
+        ipa: "tu kəkʰ t͡ʃʰəi"
+        bases:
+          - { word: "तु", base: "तु", reading: "tu" }
+          - { word: "कख", base: "कख", reading: "kakh" }
+          - { word: "छै", base: "छ", reading: "chhai" }
+      - target: "घौर कख छ?"
+        reading: "ghaur kakh cha?"
+        ipa: "ɡʱəur kəkʰ t͡ʃə"
+        bases:
+          - { word: "घौर", base: "घौर", reading: "ghaur" }
+          - { word: "कख", base: "कख", reading: "kakh" }
+          - { word: "छ", base: "छ", reading: "cha" }
+  - id: "gbm-0138"
+    target: "अर"
+    reading: "ar"
+    ipa: "əɾ"
+    pos: "other"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "चा अर पाणी।"
+        reading: "chā ar pāṇī."
+        ipa: "t͡ʃaː əɾ paːɳiː"
+        bases:
+          - { word: "चा", base: "चा", reading: "chā" }
+          - { word: "अर", base: "अर", reading: "ar" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+      - target: "मि अर तु।"
+        reading: "mi ar tu."
+        ipa: "mi əɾ tu"
+        bases:
+          - { word: "मि", base: "मि", reading: "mi" }
+          - { word: "अर", base: "अर", reading: "ar" }
+          - { word: "तु", base: "तु", reading: "tu" }
+  - id: "gbm-0139"
+    target: "आज"
+    reading: "āj"
+    ipa: "aːdʒ"
+    pos: "adv"
+    tags: ["doubtful"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "आज घाम निकलि।"
+        reading: "āj ghām nikali."
+        ipa: "aːdʒ ɡʱaːm nikəli"
+        bases:
+          - { word: "आज", base: "आज", reading: "āj" }
+          - { word: "घाम", base: "घाम", reading: "ghām" }
+          - { word: "निकलि", base: "निकलण", reading: "nikali" }
+      - target: "आज पाणी पड़लो।"
+        reading: "āj pāṇī paḍlo."
+        ipa: "aːdʒ paːɳiː pəɖlo"
+        bases:
+          - { word: "आज", base: "आज", reading: "āj" }
+          - { word: "पाणी", base: "पाणी", reading: "pāṇī" }
+          - { word: "पड़लो", base: "पड़ण", reading: "paḍlo" }
