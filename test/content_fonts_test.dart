@@ -99,6 +99,7 @@ void main() {
     final downloads = DeckDownloads(
       fetcher: FakeDeckRemote(const <String, String>{}),
       files: MemoryDownloadedDecks(),
+      clock: () => DateTime(2026, 11, 16),
       scriptFonts: ScriptFonts(register: (family, bytes) async {}),
     );
     await _loadAll(downloads.fonts, contentFontScripts);
@@ -160,6 +161,7 @@ void main() {
     final downloads = DeckDownloads(
       fetcher: FakeDeckRemote(const <String, String>{}),
       files: MemoryDownloadedDecks(),
+      clock: () => DateTime(2026, 11, 16),
       scriptFonts: ScriptFonts(register: (family, bytes) async {}),
     );
     final state = AppState.test(deckDownloads: downloads);
