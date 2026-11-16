@@ -45,3 +45,6 @@
 | kn-6268 | see card | The meaning given is speculative: what does the saying mean? | Sonnet review | 2026-11-15 |
 | kn-6269 | see card | The meaning given is speculative: what does the saying mean? | Sonnet review | 2026-11-15 |
 | kn-6303 | see card | The meaning given is speculative (likely: moaning 'alas' ages you): what is the sense? | Sonnet review | 2026-11-15 |
+| kn-rec-kittur-chennamma | see card | Dropped from the Kannada recommendations: no plot of the 1961 film could be sourced (the English Wikipedia plot section is empty, the Kannada page is a stub), so no plot questions were written. Add it back with questions once a plot source is found. | Sonnet review fix | 2026-11-16 |
+| kn-rec-marali-mannige | see card | Dropped from the Kannada recommendations: the only sources found (English and Kannada Wikipedia, Wikidata) give no plot beyond the span of years, the three generations and the dialect, so no plot questions could be written. Add it back with a plot source. | Sonnet review fix | 2026-11-16 |
+| kn-rec-nagamandala | see card | Entry changed to the 1997 film (written by Girish Karnad, directed by T. S. Nagabharana, who has no creators entry yet): its plot is the only one sourced, and it differs from the 1988 play in details. Should the 1988 play be a separate entry once its plot is sourced? | Sonnet review fix | 2026-11-16 |
