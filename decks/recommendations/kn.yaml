@@ -2,6 +2,7 @@
 # the questions after the learner has marked the work as seen, read or heard. Nothing of a work is quoted (wiki/Plan-Language-Completeness.md,
 # "Source-it-yourself works"). No links are given: no link has been checked. Briefings and questions use only what the page named in the creators file or the work's own
 # Wikipedia article says (read 2026-11-15). Levels are defaults (B1) until a reviewer sets them. Not reviewed by a Kannada speaker (docs/review-queue/kn.md).
+# Wave 3 (2026-11-16): Bhootayyana Maga Ayyu, Sharapanjara and Gejje Pooje added from their en Wikipedia articles (plots) and the creators' en Wikipedia pages (lifespans), read 2026-11-16; the list is 20.
 # Wave 2 (2026-11-16): works added from en and kn Wikipedia and, for Marali Mannige, the 1959 Bengali translation scanned in the Digital Library of India (archive.org in.ernet.dli.2015.457745) and the Kuvempu University M.Phil. thesis archive.org kuh.mphil.585.pay.130221, which dates the writing to 1941 and names the village Kodi. Bedara Kannappa, Kittur Chennamma and Sandhya Raga (films) were dropped: no readable plot source (wiki/Deck-Work-Queue-KN.md section 7).
 schema: 1
 kind: "recommendations"
@@ -226,4 +227,43 @@ recommendations:
       - { id: "q2", prompt: { en: "Who is the poem dedicated to?" }, options: { en: ["His elder brother", "His teacher Sri Venkannayya", "His publisher"] }, answer: 2 }
       - { id: "q3", prompt: { en: "Into how many parts (sampuṭa) is the poem divided?" }, options: { en: ["Two", "Seven", "Four"] }, answer: 3 }
       - { id: "q4", prompt: { en: "Which of these is the name of one of its parts?" }, options: { en: ["Kishkindha sampuṭa", "Sundara sampuṭa", "Bala sampuṭa"] }, answer: 1 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-bhootayyana-maga-ayyu"
+    medium: "film"
+    title: { text: "ಭೂತಯ್ಯನ ಮಗ ಅಯ್ಯು", reading: "bhūtayyana maga ayyu" }
+    creator: ["kn-s-siddalingaiah", "kn-gorur-ramaswamy-iyengar"]
+    year: 1974
+    level: "B1"
+    briefing: { en: "A 1974 Kannada drama directed by S. Siddalingaiah, based on a short story by Gorur Ramaswamy Iyengar. It is about two villagers who are enemies and how they mend their relationship." }
+    questions:
+      - { id: "q1", prompt: { en: "What do the villagers refuse to do when the zamindar Bhootayya dies?" }, options: { en: ["Come to perform his last rites", "Return the money they owe him", "Work on his fields"] }, answer: 1 }
+      - { id: "q2", prompt: { en: "What does Gulla's wife try to do because she is sure Ayyu will not spare her husband?" }, options: { en: ["Beg the police for protection", "Run away to the town", "Drown herself in the river"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "What does Gulla do when the flood strikes the village?" }, options: { en: ["Warn the villagers to leave their homes", "Set out on a raft to rescue Ayyu's family", "Go to town to fetch the police"] }, answer: 2 }
+      - { id: "q4", prompt: { en: "What does Ayyu tell the district police about the fire at his house?" }, options: { en: ["That robbers had come from the town", "That Gulla was away that night", "That it was an accident"] }, answer: 3 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-sharapanjara"
+    medium: "film"
+    title: { text: "ಶರಪಂಜರ", reading: "śarapañjara" }
+    creator: ["kn-puttanna-kanagal", "kn-triveni"]
+    year: 1971
+    level: "B1"
+    briefing: { en: "A 1971 Kannada film directed by Puttanna Kanagal, based on Triveni's novel of the same name. Its English title is Cage of Arrows." }
+    questions:
+      - { id: "q1", prompt: { en: "What condition does Kaveri develop after her second child is born?" }, options: { en: ["A serious heart condition", "Post-partum psychosis", "A loss of memory"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "How does Satish treat Kaveri when she returns home after her treatment?" }, options: { en: ["With callousness", "With great tenderness", "With open anger"] }, answer: 1 }
+      - { id: "q3", prompt: { en: "What does Kaveri discover that brings her symptoms back?" }, options: { en: ["That her parents have sold their house", "That her son has been sent away", "That Satish is seeing a colleague"] }, answer: 3 }
+      - { id: "q4", prompt: { en: "Where do Kaveri and Satish first meet?" }, options: { en: ["In her college", "At a friend's wedding", "At a hospital"] }, answer: 2 }
+    tags: ["unreviewed"]
+  - id: "kn-rec-gejje-pooje"
+    medium: "film"
+    title: { text: "ಗೆಜ್ಜೆ ಪೂಜೆ", reading: "gejje pūje" }
+    creator: ["kn-puttanna-kanagal", "kn-m-k-indira"]
+    year: 1969
+    level: "B1"
+    briefing: { en: "A 1969 Kannada film directed by Puttanna Kanagal, based on M. K. Indira's novel of the same name. It explores the problem of prostitutes." }
+    questions:
+      - { id: "q1", prompt: { en: "What is the heroine Chandramukhi's mother?" }, options: { en: ["A temple cook", "A devadasi", "A court singer"] }, answer: 2 }
+      - { id: "q2", prompt: { en: "What does Chandramukhi value and, with her mother's support, want to pursue?" }, options: { en: ["A stage career in a travelling troupe", "A match arranged by her uncle", "Schooling"] }, answer: 3 }
+      - { id: "q3", prompt: { en: "Who is the girl the young man goes on to marry?" }, options: { en: ["Her own half-sister", "Her mother's niece", "Her childhood friend"] }, answer: 1 }
+      - { id: "q4", prompt: { en: "What did Chandramukhi's biological father give her in his memory?" }, options: { en: ["A pair of gold anklets", "A diamond ring", "A plot of farmland"] }, answer: 2 }
     tags: ["unreviewed"]
