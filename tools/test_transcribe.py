@@ -284,6 +284,38 @@ class NewLanguagesTest(unittest.TestCase):
         with self.assertRaises(CannotRead):
             transcribe("你好", "zh")
 
+    def test_mandarin_ipa_is_derived_from_the_pinyin(self) -> None:
+        for pinyin, ipa in (
+            ("nǐ hǎo", "ni˨˩˦ xau˨˩˦"),          # citation tones, no sandhi
+            ("shì", "ʂɨ˥˩"),                    # apical vowels are ɨ
+            ("zì", "tsɨ˥˩"),
+            ("rì", "ɻɨ˥˩"),
+            ("xué", "ɕɥɛ˧˥"),                   # ü is written u after j q x
+            ("jiǔ", "tɕjou˨˩˦"),                # iu is iou
+            ("huì", "xwei˥˩"),                  # ui is uei
+            ("dūn", "twən˥˥"),                  # un is uen
+            ("bó", "pwo˧˥"),                    # o after b p m f is uo
+            ("yuè", "ɥɛ˥˩"),                    # y and w are spellings
+            ("wǒ", "wo˨˩˦"),
+            ("lǜ", "ly˥˩"),
+            ("wǒmen", "wo˨˩˦mən˙"),            # neutral tone ends in ˙
+            ("de", "tə˙"),                      # e is ə when neutral
+            ("xiān", "ɕjɛn˥˥"),                 # not xi + an
+            ("Xī'ān", "ɕi˥˥an˥˥"),             # the apostrophe divides
+            ("èr", "ɚ˥˩"),
+            ("shìr", "ʂɚ˥˩"),                  # erhua
+            ("yìdiǎnr", "i˥˩tjɐɻ˨˩˦"),
+            ("gēr", "kɤɻ˥˥"),                  # ger is not g + er
+            ("hǎo ma?", "xau˨˩˦ ma˙"),          # punctuation is dropped
+        ):
+            with self.subTest(pinyin):
+                self.assertEqual(transcribe("x", "zh", pinyin).ipa, ipa)
+
+    def test_mandarin_pinyin_that_cannot_be_read_gives_no_ipa_and_a_note(self) -> None:
+        t = transcribe("导航", "zh", "dǎováng")
+        self.assertEqual((t.reading, t.ipa, t.fitted), ("dǎováng", "", False))
+        self.assertIn("dǎováng", t.notes[0])
+
     def test_toki_pona_stress_is_on_the_first_syllable(self) -> None:
         self.assertEqual(transcribe("jan suli li toki.", "tok").ipa,
                          "jan ˈsuli li ˈtoki")

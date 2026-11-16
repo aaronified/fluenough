@@ -2052,13 +2052,205 @@ def korean(text: str) -> Transcription:
     return Transcription(" ".join(words), "", True)
 
 
+# --- Mandarin ----------------------------------------------------------------
+
+# Pinyin cannot be derived from characters, so a card's reading is the hint
+# (Wiktionary's pinyin with tone marks, as it was given; sandhi is not
+# applied, a card writes the citation tones except 不 and 一, written as said).
+# The broad IPA is derived from that pinyin, deterministically, by the tables
+# below (wiki: Deck-Work-Queue-ZH, section 4). Conventions:
+#  - phonemic, no brackets, no tie bars, no syllable dots; a pinyin word is one
+#    IPA word and the words stay separated by single spaces, as in the reading;
+#    punctuation is dropped (`,` `.` `?` and the like), as in the other courses;
+#  - every syllable ends in its tone, so the string is unambiguous without
+#    dots: Chao tone letters for the citation tones (1 ˥˥, 2 ˧˥, 3 ˨˩˦,
+#    4 ˥˩), as the Cantonese and Vietnamese decks do, and ˙ (U+02D9, the
+#    light-tone mark) for the neutral tone, whose pitch depends on the tone
+#    before it (the narrow rules give it one);
+#  - initials: b p m f d t n l g k h = p pʰ m f t tʰ n l k kʰ x, j q x = tɕ
+#    tɕʰ ɕ, zh ch sh = ʈʂ ʈʂʰ ʂ, r = ɻ, z c s = ts tsʰ s (Wikipedia, Standard
+#    Chinese phonology: r is [ʐ ~ ɻ]; the broad form takes ɻ);
+#  - the apical "vowels" of zhi chi shi ri zi ci si are written ɨ (the
+#    alternative analysis Wikipedia gives); the narrow rules make them ɹ̩ and ɻ̩;
+#  - e is ɤ, and ə in a neutral-tone syllable (de, le, me); ê is ɛ; en eng are
+#    ən əŋ; ong is ʊŋ; ie üe ian üan have ɛ; ai ei ao ou are ai ei au ou;
+#  - the glides are j w ɥ: ya ye you yan = ja jɛ jou jɛn, wo wei wen = wo wei
+#    wən, yue yuan = ɥɛ ɥɛn; y and w are spellings, not sounds;
+#  - the spellings are undone first: ü is written u after j q x y (ju qu xu
+#    yu), uo is written o after b p m f (bo = pwo), and iu ui un are iou uei
+#    uen (yin ying and jin are in iŋ... as written);
+#  - erhua (a final r, 花儿 huār) follows Wikipedia, Erhua: the coda i or n is
+#    deleted, ŋ nasalises the vowel, and the rhotic ɻ or ɚ ends the syllable
+#    (shìr = ʂɚ˥˩); the standalone syllable er is ɚ.
+ZH_INITIALS = ("zh", "ch", "sh", "b", "p", "m", "f", "d", "t", "n", "l", "g",
+               "k", "h", "j", "q", "x", "r", "z", "c", "s", "y", "w")
+ZH_INITIAL_IPA = {
+    "b": "p", "p": "pʰ", "m": "m", "f": "f", "d": "t", "t": "tʰ", "n": "n",
+    "l": "l", "g": "k", "k": "kʰ", "h": "x", "j": "tɕ", "q": "tɕʰ",
+    "x": "ɕ", "zh": "ʈʂ", "ch": "ʈʂʰ", "sh": "ʂ", "r": "ɻ", "z": "ts",
+    "c": "tsʰ", "s": "s", "": "",
+}
+# The full (unabbreviated) finals, with y and w and the shortenings undone.
+ZH_FINAL_IPA = {
+    "a": "a", "o": "o", "e": "ɤ", "ê": "ɛ", "ai": "ai", "ei": "ei",
+    "ao": "au", "ou": "ou", "an": "an", "en": "ən", "ang": "aŋ",
+    "eng": "əŋ", "ong": "ʊŋ", "er": "ɚ",
+    "i": "i", "ia": "ja", "ie": "jɛ", "iao": "jau", "iou": "jou",
+    "ian": "jɛn", "in": "in", "iang": "jaŋ", "ing": "iŋ", "iong": "jʊŋ",
+    "u": "u", "ua": "wa", "uo": "wo", "uai": "wai", "uei": "wei",
+    "uan": "wan", "uen": "wən", "uang": "waŋ", "ueng": "wəŋ",
+    "ü": "y", "üe": "ɥɛ", "üan": "ɥɛn", "ün": "yn",
+    "io": "jo",
+}
+# The same finals said with a final r (Wikipedia, Erhua, its chart with the
+# rhotic mark ʵ written ɻ). The apical i is handled apart (ɚ).
+ZH_ERHUA_IPA = {
+    "a": "aɻ", "o": "oɻ", "e": "ɤɻ", "ai": "ɐɻ", "ei": "ɚ", "ao": "auɻ",
+    "ou": "ouɻ", "an": "ɐɻ", "en": "ɚ", "ang": "ɑ̃ɻ",
+    "eng": "ɤ̃ɻ", "i": "jɚ", "ia": "jaɻ", "ie": "jɛɻ", "iao": "jauɻ",
+    "iou": "jouɻ", "ian": "jɐɻ", "in": "jɚ", "iang": "jɑ̃ɻ",
+    "ing": "jɤ̃ɻ", "u": "uɻ", "ua": "waɻ", "uo": "woɻ", "uai": "wɐɻ",
+    "uei": "wɚ", "uan": "wɐɻ", "uen": "wɚ", "uang": "wɑ̃ɻ",
+    "ong": "ʊ̃ɻ", "ü": "ɥɚ", "üe": "ɥɛɻ", "üan": "ɥɐɻ", "ün": "ɥɚ",
+    "iong": "jʊ̃ɻ", "er": "ɚ", "ê": "ɛɻ",
+}
+ZH_TONE_LETTERS = {1: "˥˥", 2: "˧˥", 3: "˨˩˦", 4: "˥˩", 0: "˙"}
+ZH_TONE_MARKS = {"̄": 1, "́": 2, "̌": 3, "̀": 4}
+ZH_APICAL = ("zh", "ch", "sh", "r", "z", "c", "s")
+ZH_PUNCT = ".,;:!?…\"“”‘’()[]、，。！？；：—-"
+
+
+def _zh_full_final(initial: str, written: str) -> tuple[str, str] | None:
+    """The (initial, full final) a written pinyin syllable [initial]+[written]
+    is, with the spellings undone, or None when the final is not one."""
+    if initial == "y":
+        # yi yin ying keep their i; ya ye yao you yan yang yong yo add it; yu
+        # yue yuan yun are ü.
+        if written[:1] == "i":
+            full = written
+        elif written[:1] in ("u", "ü"):
+            full = "ü" + written[1:]
+        else:
+            full = "i" + written
+        initial = ""
+    elif initial == "w":
+        full = written if written == "u" else "u" + written
+        initial = ""
+    elif initial in ("j", "q", "x") and written[:1] in ("u", "ü"):
+        full = "ü" + written[1:]        # ju jue juan jun
+    elif initial in ("b", "p", "m", "f") and written == "o":
+        full = "uo"                     # bo is pwo
+    else:
+        full = written
+        if initial and full in ("iu", "ui", "un"):
+            full = {"iu": "iou", "ui": "uei", "un": "uen"}[full]
+    if full == "er" and initial:
+        return None                     # er is a syllable of its own: ger is g + er
+    return (initial, full) if full in ZH_FINAL_IPA else None
+
+
+def _zh_segment(letters: list[str], i: int, first: bool
+                ) -> list[tuple[int, int, str, str]] | None:
+    """The syllables (start, end, initial, full final) of letters[i:], longest
+    syllable first, or None. Only a word's first syllable, or one after an
+    apostrophe, may begin with a vowel: `dangan` is dan gan, `xi'an` xi an."""
+    if i == len(letters):
+        return []
+    if letters[i] == "'":
+        return _zh_segment(letters, i + 1, True)
+    for end in range(min(len(letters), i + 6), i, -1):
+        piece = "".join(letters[i:end])
+        if "'" in piece:
+            continue
+        for initial in ZH_INITIALS + ("",):
+            if initial and not piece.startswith(initial):
+                continue
+            if not initial and not first:
+                continue
+            written = piece[len(initial):]
+            if not written:
+                continue
+            found = _zh_full_final(initial, written)
+            if found is None:
+                continue
+            rest = _zh_segment(letters, end, False)
+            if rest is not None:
+                return [(i, end, found[0], found[1])] + rest
+    return None
+
+
+def _zh_word_ipa(word: str) -> str:
+    """The broad IPA of one pinyin word (no spaces), or ValueError."""
+    letters: list[str] = []
+    tone_at: dict[int, int] = {}
+    word = word.replace("\u2019", "'")
+    for ch in unicodedata.normalize("NFD", word.lower()):
+        if ch in ZH_TONE_MARKS:
+            if not letters:
+                raise ValueError(word)
+            tone_at[len(letters) - 1] = ZH_TONE_MARKS[ch]
+        elif ch == "̈" and letters and letters[-1] == "u":
+            letters[-1] = "ü"
+        elif ch == "̂" and letters and letters[-1] == "e":
+            letters[-1] = "ê"
+        elif ch == "'" or ("a" <= ch <= "z"):
+            letters.append(ch)
+        else:
+            raise ValueError(word)
+    erhua = False
+    syllables = _zh_segment(letters, 0, True)
+    if syllables is None and letters[-1:] == ["r"] and len(letters) > 1:
+        syllables = _zh_segment(letters[:-1], 0, True)
+        erhua = syllables is not None
+    if not syllables:
+        raise ValueError(word)
+    out = []
+    for n, (a, b, initial, final) in enumerate(syllables):
+        tone = next((t for k, t in tone_at.items() if a <= k < b), 0)
+        if erhua and n == len(syllables) - 1:
+            if final == "i" and initial in ZH_APICAL:
+                nucleus = "ɚ"
+            elif final in ZH_ERHUA_IPA:
+                nucleus = ZH_ERHUA_IPA[final]
+            else:
+                raise ValueError(word)
+        elif final == "i" and initial in ZH_APICAL:
+            nucleus = "ɨ"
+        elif final == "e" and tone == 0:
+            nucleus = "ə"
+        else:
+            nucleus = ZH_FINAL_IPA[final]
+        out.append(ZH_INITIAL_IPA[initial] + nucleus + ZH_TONE_LETTERS[tone])
+    return "".join(out)
+
+
+def mandarin_ipa(pinyin: str) -> str:
+    """The broad IPA of [pinyin] (tone-marked, words separated by spaces),
+    punctuation dropped; ValueError naming the word it cannot read."""
+    words = []
+    for token in unicodedata.normalize("NFC", pinyin).split():
+        token = token.strip(ZH_PUNCT)
+        if token:
+            words.append(_zh_word_ipa(token))
+    return unicodedata.normalize("NFC", " ".join(words))
+
+
 def mandarin(text: str, hint: str | None) -> Transcription:
-    """Pinyin cannot be derived from characters, so it is the hint's:
+    """Pinyin cannot be derived from characters, so the reading is the hint's:
     Wiktionary's, with its tone marks, as it was given. Sandhi is not
-    applied; a card writes the citation tones."""
+    applied; a card writes the citation tones. The broad IPA is derived from
+    that pinyin (`mandarin_ipa`); a pinyin it cannot read gives an empty IPA,
+    `fitted` false and a note naming the word. The narrow IPA (the `phonetic`
+    field) is not made here: tools/derive_phonetic.py writes it from the broad
+    IPA by decks/zh/zh-phonetics.yaml."""
     if not hint or not hint.strip():
         raise CannotRead(text)
-    return Transcription(unicodedata.normalize("NFC", hint.strip()), "", True)
+    reading = unicodedata.normalize("NFC", hint.strip())
+    try:
+        return Transcription(reading, mandarin_ipa(reading), True)
+    except ValueError as e:
+        return Transcription(reading, "", False,
+                             [f"pinyin not read: {e}"])
 
 
 def toki_pona(text: str) -> Transcription:
