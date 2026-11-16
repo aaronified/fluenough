@@ -59,14 +59,15 @@ Planning output of 2026-11-14. Nothing here was built, run or pushed. Owner orde
 
 #### Blocked hosts (retry 2026-11-16)
 
-As the workers reported them on the 2026-11-16 retry. This audit did not re-test the hosts.
+As the workers reported them on the 2026-11-16 retry.
 
-- es.wikisource.org (HTML), es.wikipedia.org, es.wikiquote.org: blocked.
-- archive.org stream text and the Wolf & Hofmann OCR work: blocked; the archive.org download route gave 403.
-- gutenberg.org: 503 on every try.
-- britannica.com: 403 to plain curl.
+- es.wikisource.org (HTML pages; its API answers 429 for every request), es.wikipedia.org, es.wikiquote.org: reachable and used (57, 9 and 3 culture cards cite them).
+- archive.org: advancedsearch and the `stream/<id>/<id>_djvu.txt` full text are reachable (used for the Wolf & Hofmann Primavera y flor de romances 1856 and Rodríguez Marín, Cantos populares españoles 1882); the download route (dn790007.ca.archive.org and similar) is refused by the egress proxy (403 / connect_rejected).
+- gutenberg.org: answered 503 on every try on 2026-11-16 (not retried since).
+- britannica.com: 403 to plain curl (not retried with another user agent).
+- Not retried: web.archive.org, dli.gov.in (not needed for Spanish).
 
-The owner added gutenberg.org, archive.org, web.archive.org, britannica.com, dli.gov.in, sanskritdocuments.org, gretil and heidelberg to the allowlist on 2026-11-16; the retry above was made after that. The Spanish culture cards in decks-live already cite es.wikisource.org (57 cards), es.wikipedia.org (9) and archive.org (6) pages; how those were sourced is not recorded here.
+The owner added gutenberg.org, archive.org, web.archive.org, britannica.com, dli.gov.in, sanskritdocuments.org, gretil and heidelberg to the allowlist on 2026-11-16; the retry above was made after that.
 
 ### 1.3 Telugu checklist grid (decks-live 75bfe636, re-read 2026-11-15)
 
