@@ -24,7 +24,7 @@ cards:
     reading: "na"
     ipa: "næ"
     pos: "adv"
-    tags: ["answer", "doubtful"]
+    tags: ["answer"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
@@ -48,7 +48,7 @@ cards:
     reading: "to"
     ipa: "to"
     pos: "pronoun"
-    tags: ["pronoun", "doubtful"]
+    tags: ["pronoun"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
@@ -72,7 +72,7 @@ cards:
     reading: "mâ"
     ipa: "mɒː"
     pos: "pronoun"
-    tags: ["pronoun", "doubtful"]
+    tags: ["pronoun"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
@@ -84,7 +84,7 @@ cards:
     reading: "ânhâ"
     ipa: "ɒːnˈhɒː"
     pos: "pronoun"
-    tags: ["pronoun", "doubtful"]
+    tags: ["pronoun"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
@@ -113,7 +113,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "دو چای، لطفا.", reading: "do châi, lotfan.", ipa: "do tʃɒːj ˈlotfæn", bases: [{ word: "دو", base: "دو", reading: "do" }, { word: "چای", base: "چای", reading: "châi" }, { word: "لطفا", base: "لطفا", reading: "lotfan" }] }
+      - { target: "دو چای، لطفا.", reading: "do čây, lotfan.", ipa: "do tʃɒːj ˈlotfæn", bases: [{ word: "دو", base: "دو", reading: "do" }, { word: "چای", base: "چای", reading: "čây" }, { word: "لطفا", base: "لطفا", reading: "lotfan" }] }
       - { target: "یک، دو، سه.", reading: "yek, do, se.", ipa: "jek do se", bases: [{ word: "یک", base: "یک", reading: "yek" }, { word: "دو", base: "دو", reading: "do" }, { word: "سه", base: "سه", reading: "se" }] }
   - id: "fa-0110"
     target: "سه"
@@ -237,7 +237,7 @@ cards:
       - { target: "این نان است.", reading: "in nân ast.", ipa: "in nɒːn æst", bases: [{ word: "این", base: "این", reading: "in" }, { word: "نان", base: "نان", reading: "nân" }, { word: "است", base: "بودن", reading: "ast" }] }
   - id: "fa-0120"
     target: "چای"
-    reading: "châi"
+    reading: "čây"
     ipa: "tʃɒːj"
     pos: "noun"
     tags: ["food"]
@@ -245,8 +245,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "چای، لطفا.", reading: "châi, lotfan.", ipa: "tʃɒːj ˈlotfæn", bases: [{ word: "چای", base: "چای", reading: "châi" }, { word: "لطفا", base: "لطفا", reading: "lotfan" }] }
-      - { target: "این چای است.", reading: "in châi ast.", ipa: "in tʃɒːj æst", bases: [{ word: "این", base: "این", reading: "in" }, { word: "چای", base: "چای", reading: "châi" }, { word: "است", base: "بودن", reading: "ast" }] }
+      - { target: "چای، لطفا.", reading: "čây, lotfan.", ipa: "tʃɒːj ˈlotfæn", bases: [{ word: "چای", base: "چای", reading: "čây" }, { word: "لطفا", base: "لطفا", reading: "lotfan" }] }
+      - { target: "این چای است.", reading: "in čây ast.", ipa: "in tʃɒːj æst", bases: [{ word: "این", base: "این", reading: "in" }, { word: "چای", base: "چای", reading: "čây" }, { word: "است", base: "بودن", reading: "ast" }] }
   - id: "fa-0121"
     target: "خانه"
     reading: "xâne"
@@ -270,7 +270,7 @@ cards:
     bases: "self"
     examples:
       - { target: "نام من.", reading: "nâm-e man.", ipa: "nɒːm e mæn", bases: [{ word: "نام", base: "نام", reading: "nâm" }, { word: "من", base: "من", reading: "man" }] }
-      - { target: "نام شما چیست؟", reading: "nâm-e shomâ chist?", ipa: "nɒːm e ʃomɒː tʃist", bases: [{ word: "نام", base: "نام", reading: "nâm" }, { word: "شما", base: "شما", reading: "shomâ" }, { word: "چیست", base: "چه", reading: "chist" }] }
+      - { target: "نام شما چیست؟", reading: "nâm-e šomâ čist?", ipa: "nɒːm e ʃomɒː tʃist", bases: [{ word: "نام", base: "نام", reading: "nâm" }, { word: "شما", base: "شما", reading: "šomâ" }, { word: "چیست", base: "چه", reading: "čist" }] }
   - id: "fa-0123"
     target: "خوب"
     reading: "xub"
@@ -336,19 +336,19 @@ cards:
     reading: "če"
     ipa: "tʃe"
     pos: "pronoun"
-    tags: ["question", "doubtful"]
+    tags: ["question"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "این چه است؟", reading: "in če ast?", ipa: "in tʃe æst", bases: [{ word: "این", base: "این", reading: "in" }, { word: "چه", base: "چه", reading: "če" }, { word: "است", base: "بودن", reading: "ast" }] }
+      - { target: "چه دارید؟", reading: "če dârid?", ipa: "tʃe dɒːˈɾid", bases: [{ word: "چه", base: "چه", reading: "če" }, { word: "دارید", base: "داشتن", reading: "dârid" }] }
       - { target: "چه؟", reading: "če?", ipa: "tʃe", bases: [{ word: "چه", base: "چه", reading: "če" }] }
   - id: "fa-0129"
     target: "کی"
     reading: "ki"
     ipa: "ki"
     pos: "pronoun"
-    tags: ["question", "doubtful"]
+    tags: ["question"]
     notes:
       - { id: "n1", kind: "note" }
     bases: "self"
