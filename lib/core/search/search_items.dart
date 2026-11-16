@@ -12,9 +12,8 @@
 ///
 /// The level rule (D2): a deck, topic, situation, unit or concept above the
 /// learner's level is listed marked ([ItemResult.aboveLevel]) and is not
-/// startable, and the setting "Hide what is above my level" ([hideAbove])
-/// removes it; a card above the level, culture and proverb cards included, is
-/// never in a result at all.
+/// startable (search always shows it); a card above the level, culture and
+/// proverb cards included, is never in a result at all.
 library;
 
 import '../data/course_path.dart' show LanguagePath;
@@ -246,14 +245,12 @@ class ItemCorpus {
   /// * [kinds] limits it to those search kinds; [languages] to rows of those
   ///   languages (a row with no language is in every one).
   /// * [levelOf] gives a language's learner level (null: no levels).
-  /// * [hideAbove] is the setting "Hide what is above my level".
   /// * [sections] orders the tabs.
   ItemSearchOutcome search(
     String query, {
     Set<String>? kinds,
     Set<String>? languages,
     Level? Function(String language)? levelOf,
-    bool hideAbove = false,
     bool typos = true,
     DeckSections sections = DeckSections.empty,
   }) {
@@ -304,7 +301,6 @@ class ItemCorpus {
               ),
               snippetCard: row.id,
             );
-      if (result.aboveLevel && hideAbove) continue;
       final key = '${result.row.kind}|${result.row.key}';
       final earlier = best[key];
       if (earlier == null || result.rank < earlier.rank) {

@@ -11,7 +11,6 @@ import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/deck_downloads.dart';
 import 'package:fluenough/app/downloaded_decks.dart';
-import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/data/sections.dart';
 import 'package:fluenough/core/search/search_items.dart';
 import 'package:fluenough/features/decks/decks_page.dart';
@@ -298,18 +297,11 @@ void main() {
       expect(find.text(_l10n.searchAddToCourses), findsNothing);
     });
 
-    testWidgets('hides what is above your level when the setting says so', (
+    testWidgets('always shows what is above your level, marked', (
       tester,
     ) async {
       usePhone(tester);
-      state.settings.hideAboveLevel = true;
       await _show(tester, state, 'library');
-      expect(find.text('Library words'), findsNothing);
-      expect(find.text(_l10n.searchAboveHidden(1)), findsOneWidget);
-      await tester.ensureVisible(find.text(_l10n.searchShowAbove));
-      await tester.tap(find.text(_l10n.searchShowAbove));
-      await tester.pumpAndSettle();
-      expect(state.settings.hideAboveLevel, isFalse);
       expect(find.text('Library words'), findsOneWidget);
     });
 
@@ -404,14 +396,5 @@ void main() {
     screen('a unit above your level', results('last', tab: 'Units'));
     screen('a typo', results('hose'));
     screen('no results', results('qzxvbnm'));
-  });
-
-  group('the search settings', () {
-    test('Hide what is above my level is kept with the settings', () {
-      final settings = SettingsNotifier(spokenLanguages: const <String>['en']);
-      expect(settings.hideAboveLevel, isFalse);
-      settings.hideAboveLevel = true;
-      expect(settings.toStored()['hide_above_level'], 'true');
-    });
   });
 }

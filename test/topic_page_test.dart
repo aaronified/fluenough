@@ -242,19 +242,6 @@ void main() {
       );
       handle.dispose();
     });
-
-    testWidgets('are left out when the setting hides what is above', (
-      tester,
-    ) async {
-      usePhone(tester);
-      state.settings.hideAboveLevel = true;
-      await pumpScreen(
-        tester,
-        const UnitPage(deckId: 'zz-en-last'),
-        state: state,
-      );
-      expect(find.text(_l10n.topicOnUnit), findsNothing);
-    });
   });
 
   group('the topic page, at 1.4x text, light and dark', () {
