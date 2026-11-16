@@ -1,0 +1,57 @@
+schema: 1
+id: "sa-en-reading-ritual"
+name: "Reading: worship and ritual"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "sa-ritual-text-1"
+    title: "Worship at home"
+    theme: "ritual"
+    sentences:
+      - { text: "ऋषिः पूजां करोति मन्त्रं च जपति.", reading: "ṛṣiḥ pūjāṃ karoti mantraṃ ca japati.", ipa: "r̩ʂih puːdʒaːm kəroːt̪i mənt̪rəm tʃə dʒəpət̪i" }
+      - { text: "माता देवतां पूजयति धूपं च ददाति.", reading: "mātā devatāṃ pūjayati dhūpaṃ ca dadāti.", ipa: "maːt̪aː d̪eːʋət̪aːm puːdʒəjət̪i d̪ʱuːpəm tʃə d̪əd̪aːt̪i" }
+      - { text: "पिता यज्ञे होमं करोति माता च स्तोत्रं गायति.", reading: "pitā yajñe homaṃ karoti mātā ca stotraṃ gāyati.", ipa: "pit̪aː jədʒɲeː ɦoːməm kəroːt̪i maːt̪aː tʃə st̪oːt̪rəm ɡaːjət̪i" }
+      - { text: "सखा सदा नद्यां स्नानं करोति.", reading: "sakhā sadā nadyāṃ snānaṃ karoti.", ipa: "səkʰaː səd̪aː nəd̪jaːm snaːnəm kəroːt̪i" }
+    questions:
+      - id: "sa-3563"
+        prompt: { en: "What does the sage murmur?" }
+        options: [{ en: "A mantra" }, { en: "A hymn" }, { en: "Incense" }]
+        answer: 1
+      - id: "sa-3564"
+        prompt: { en: "What does mother give?" }
+        options: [{ en: "An oblation" }, { en: "Incense" }, { en: "A mantra" }]
+        answer: 2
+      - id: "sa-3565"
+        prompt: { en: "Mother makes an oblation at the sacrifice." }
+        answer: false
+      - id: "sa-3566"
+        prompt: { en: "The friend bathes in the river." }
+        answer: true
+  - id: "sa-ritual-text-2"
+    title: "Temple and festival"
+    theme: "ritual"
+    sentences:
+      - { text: "मन्दिरे देवस्य पूजा भवति तत्र धूपो भवति.", reading: "mandire devasya pūjā bhavati tatra dhūpo bhavati.", ipa: "mənd̪ireː d̪eːʋəsjə puːdʒaː bʱəʋət̪i t̪ət̪rə d̪ʱuːpoː bʱəʋət̪i" }
+      - { text: "उपवासः पवित्रो भवति व्रतं च कठिनं भवति.", reading: "upavāsaḥ pavitro bhavati vrataṃ ca kaṭhinaṃ bhavati.", ipa: "upəʋaːsəh pəʋit̪roː bʱəʋət̪i ʋrət̪əm tʃə kəʈʰinəm bʱəʋət̪i" }
+      - { text: "स्वर्गः पवित्रो भवति नरको मलिनो भवति.", reading: "svargaḥ pavitro bhavati narako malino bhavati.", ipa: "sʋərɡəh pəʋit̪roː bʱəʋət̪i nərəkoː məlinoː bʱəʋət̪i" }
+      - { text: "उत्सवे दीपा भवन्ति सर्वत्र च माला भवन्ति.", reading: "utsave dīpā bhavanti sarvatra ca mālā bhavanti.", ipa: "ut̪səʋeː d̪iːpaː bʱəʋənt̪i sərʋət̪rə tʃə maːlaː bʱəʋənt̪i" }
+    questions:
+      - id: "sa-3567"
+        prompt: { en: "What is hard?" }
+        options: [{ en: "A fast" }, { en: "Heaven" }, { en: "A vow" }]
+        answer: 3
+      - id: "sa-3568"
+        prompt: { en: "What is impure?" }
+        options: [{ en: "Hell" }, { en: "Heaven" }, { en: "A fast" }]
+        answer: 1
+      - id: "sa-3569"
+        prompt: { en: "There are lamps at the festival." }
+        answer: true
+      - id: "sa-3570"
+        prompt: { en: "The temple has no incense." }
+        answer: false

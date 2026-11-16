@@ -11,6 +11,7 @@ tags: ["reading", "unreviewed"]
 passages:
   - id: "sa-questions-text-1"
     title: "Who, where, what?"
+    theme: "questions"
     sentences:
       - { text: "अश्वः कुत्र गच्छति देवः कुत्र च पठति?", reading: "aśvaḥ kutra gacchati devaḥ kutra ca paṭhati?", ipa: "əʃʋəh kut̪rə ɡətʃtʃʰət̪i d̪eːʋəh kut̪rə tʃə pəʈʰət̪i" }
       - { text: "का संस्कृतं पठति का च जलं नयति?", reading: "kā saṃskṛtaṃ paṭhati kā ca jalaṃ nayati?", ipa: "kaː sə̃skr̩t̪əm pəʈʰət̪i kaː tʃə dʒələm nəjət̪i" }
@@ -18,17 +19,18 @@ passages:
     questions:
       - id: "sa-3400"
         prompt: { en: "What is being brought in the last sentence?" }
-        options: [{ en: "Water" }, { en: "A book" }, { en: "Food" }]
+        options: [{ en: "Water" }, { en: "A horse" }, { en: "Sanskrit" }]
         answer: 1
       - id: "sa-3401"
-        prompt: { en: "Which animal is asked about?" }
-        options: [{ en: "A cow" }, { en: "A horse" }, { en: "A dog" }]
+        prompt: { en: "What is said to go somewhere in the first sentence?" }
+        options: [{ en: "The god" }, { en: "The horse" }, { en: "The water" }]
         answer: 2
       - id: "sa-3402"
         prompt: { en: "One sentence asks who reads Sanskrit." }
         answer: true
   - id: "sa-questions-text-2"
     title: "Why and how"
+    theme: "questions"
     sentences:
       - { text: "स संस्कृतं कदा वदति?", reading: "sa saṃskṛtaṃ kadā vadati?", ipa: "sə sə̃skr̩t̪əm kəd̪aː ʋəd̪ət̪i" }
       - { text: "यूयं कथं संस्कृतं पठथ?", reading: "yūyaṃ kathaṃ saṃskṛtaṃ paṭhatha?", ipa: "juːjəm kət̪ʰəm sə̃skr̩t̪əm pəʈʰət̪ʰə" }

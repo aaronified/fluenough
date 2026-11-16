@@ -1,0 +1,57 @@
+schema: 1
+id: "sa-en-reading-work"
+name: "Reading: work"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "sa-work-text-1"
+    title: "Farmer and wages"
+    theme: "work"
+    sentences:
+      - { text: "कृषकः क्षेत्रे खनति धान्यं च लभते.", reading: "kṛṣakaḥ kṣetre khanati dhānyaṃ ca labhate.", ipa: "kr̩ʂəkəh kʂeːt̪reː kʰənət̪i d̪ʱaːnjəm tʃə ləbʱət̪eː" }
+      - { text: "स श्रमेण वेतनं लभते.", reading: "sa śrameṇa vetanaṃ labhate.", ipa: "sə ʃrəmeːɳə ʋeːt̪ənəm ləbʱət̪eː" }
+      - { text: "सखा शिल्पेन जीवति भ्राता च वाणिज्येन जीवति.", reading: "sakhā śilpena jīvati bhrātā ca vāṇijyena jīvati.", ipa: "səkʰaː ʃilpeːnə dʒiːʋət̪i bʱraːt̪aː tʃə ʋaːɳidʒjeːnə dʒiːʋət̪i" }
+      - { text: "उद्योगेन सदा जयति सखा.", reading: "udyogena sadā jayati sakhā.", ipa: "ud̪joːɡeːnə səd̪aː dʒəjət̪i səkʰaː" }
+    questions:
+      - id: "sa-3579"
+        prompt: { en: "What does the farmer get?" }
+        options: [{ en: "Wages" }, { en: "A craft" }, { en: "Grain" }]
+        answer: 3
+      - id: "sa-3580"
+        prompt: { en: "How does he get wages?" }
+        options: [{ en: "Through labour" }, { en: "Through commerce" }, { en: "Through effort" }]
+        answer: 1
+      - id: "sa-3581"
+        prompt: { en: "The brother lives by commerce." }
+        answer: true
+      - id: "sa-3582"
+        prompt: { en: "The friend always wins by labour." }
+        answer: false
+  - id: "sa-work-text-2"
+    title: "Service and commerce"
+    theme: "work"
+    sentences:
+      - { text: "पिता सेवया वेतनं लभते माता च वाणिज्येन वेतनं लभते.", reading: "pitā sevayā vetanaṃ labhate mātā ca vāṇijyena vetanaṃ labhate.", ipa: "pit̪aː seːʋəjaː ʋeːt̪ənəm ləbʱət̪eː maːt̪aː tʃə ʋaːɳidʒjeːnə ʋeːt̪ənəm ləbʱət̪eː" }
+      - { text: "श्रमः कठिनो भवति वेतनं च पर्याप्तं न भवति.", reading: "śramaḥ kaṭhino bhavati vetanaṃ ca paryāptaṃ na bhavati.", ipa: "ʃrəməh kəʈʰinoː bʱəʋət̪i ʋeːt̪ənəm tʃə pərjaːpt̪əm nə bʱəʋət̪i" }
+      - { text: "कृषको धान्यं वहति ग्रामं गच्छति.", reading: "kṛṣako dhānyaṃ vahati grāmaṃ gacchati.", ipa: "kr̩ʂəkoː d̪ʱaːnjəm ʋəɦət̪i ɡraːməm ɡətʃtʃʰət̪i" }
+      - { text: "पिता लोहेन हलं करोति कृषको हलं वहति.", reading: "pitā lohena halaṃ karoti kṛṣako halaṃ vahati.", ipa: "pit̪aː loːɦeːnə ɦələm kəroːt̪i kr̩ʂəkoː ɦələm ʋəɦət̪i" }
+    questions:
+      - id: "sa-3583"
+        prompt: { en: "How does mother get wages?" }
+        options: [{ en: "Through service" }, { en: "Through commerce" }, { en: "Through labour" }]
+        answer: 2
+      - id: "sa-3584"
+        prompt: { en: "Where does the farmer go?" }
+        options: [{ en: "To the field" }, { en: "To the city" }, { en: "To the village" }]
+        answer: 3
+      - id: "sa-3585"
+        prompt: { en: "The wages are enough." }
+        answer: false
+      - id: "sa-3586"
+        prompt: { en: "Father makes the plough of iron." }
+        answer: true

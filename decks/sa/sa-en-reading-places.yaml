@@ -1,0 +1,57 @@
+schema: 1
+id: "sa-en-reading-places"
+name: "Reading: places"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "sa-places-text-1"
+    title: "Village, city, forest"
+    theme: "places"
+    sentences:
+      - { text: "ग्रामे गृहाणि भवन्ति नगरे प्रासादा भवन्ति.", reading: "grāme gṛhāṇi bhavanti nagare prāsādā bhavanti.", ipa: "ɡraːmeː ɡr̩ɦaːɳi bʱəʋənt̪i nəɡəreː praːsaːd̪aː bʱəʋənt̪i" }
+      - { text: "वने सिंहो वसति ग्रामे कुक्कुरो वसति.", reading: "vane siṃho vasati grāme kukkuro vasati.", ipa: "ʋəneː sĩɦoː ʋəsət̪i ɡraːmeː kukkuroː ʋəsət̪i" }
+      - { text: "पर्वते गुहा भवति गुहायां सिंहो वसति.", reading: "parvate guhā bhavati guhāyāṃ siṃho vasati.", ipa: "pərʋət̪eː ɡuɦaː bʱəʋət̪i ɡuɦaːjaːm sĩɦoː ʋəsət̪i" }
+      - { text: "देवो मन्दिरे वसति पिता च तत्र गच्छति.", reading: "devo mandire vasati pitā ca tatra gacchati.", ipa: "d̪eːʋoː mənd̪ireː ʋəsət̪i pit̪aː tʃə t̪ət̪rə ɡətʃtʃʰət̪i" }
+    questions:
+      - id: "sa-3539"
+        prompt: { en: "Where are there palaces?" }
+        options: [{ en: "In the city" }, { en: "In the village" }, { en: "In the forest" }]
+        answer: 1
+      - id: "sa-3540"
+        prompt: { en: "Where does the dog live?" }
+        options: [{ en: "In the forest" }, { en: "In the village" }, { en: "In the cave" }]
+        answer: 2
+      - id: "sa-3541"
+        prompt: { en: "A lion lives in the cave." }
+        answer: true
+      - id: "sa-3542"
+        prompt: { en: "The god lives on the mountain." }
+        answer: false
+  - id: "sa-places-text-2"
+    title: "River, school, garden"
+    theme: "places"
+    sentences:
+      - { text: "नदी सागरं गच्छति जलं च वहति.", reading: "nadī sāgaraṃ gacchati jalaṃ ca vahati.", ipa: "nəd̪iː saːɡərəm ɡətʃtʃʰət̪i dʒələm tʃə ʋəɦət̪i" }
+      - { text: "विद्यालये सूनुः पठति दुहिता च गायति.", reading: "vidyālaye sūnuḥ paṭhati duhitā ca gāyati.", ipa: "ʋid̪jaːləjeː suːnuh pəʈʰət̪i d̪uɦit̪aː tʃə ɡaːjət̪i" }
+      - { text: "आश्रमो वने भवति तीर्थं नद्यां भवति.", reading: "āśramo vane bhavati tīrthaṃ nadyāṃ bhavati.", ipa: "aːʃrəmoː ʋəneː bʱəʋət̪i t̪iːrt̪ʰəm nəd̪jaːm bʱəʋət̪i" }
+      - { text: "उद्याने मयूरो नृत्यति क्षेत्रे वृषभो धावति.", reading: "udyāne mayūro nṛtyati kṣetre vṛṣabho dhāvati.", ipa: "ud̪jaːneː məjuːroː nr̩t̪jət̪i kʂeːt̪reː ʋr̩ʂəbʱoː d̪ʱaːʋət̪i" }
+    questions:
+      - id: "sa-3543"
+        prompt: { en: "Where does the river go?" }
+        options: [{ en: "To the forest" }, { en: "To the school" }, { en: "To the sea" }]
+        answer: 3
+      - id: "sa-3544"
+        prompt: { en: "Who sings at school?" }
+        options: [{ en: "The daughter" }, { en: "The son" }, { en: "The peacock" }]
+        answer: 1
+      - id: "sa-3545"
+        prompt: { en: "The hermitage is in the forest." }
+        answer: true
+      - id: "sa-3546"
+        prompt: { en: "The bull dances in the field." }
+        answer: false

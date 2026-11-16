@@ -1,0 +1,98 @@
+schema: 1
+id: "sa-clothes-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3240"
+    target: "वस्त्रं शुक्लं भवति चीरः कृष्णो भवति."
+    reading: "vastraṃ śuklaṃ bhavati cīraḥ kṛṣṇo bhavati."
+    ipa: "ʋəst̪rəm ʃukləm bʱəʋət̪i tʃiːrəh kr̩ʂɳoː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "वस्त्रं", base: "वस्त्रम्", reading: "vastram" }, { word: "शुक्लं", base: "शुक्लः", reading: "śuklaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "चीरः", ref: "sa-1781" }, { word: "कृष्णो", base: "कृष्णः", reading: "kṛṣṇaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1780", kind: "word" }, { id: "w2", ref: "sa-1516", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3241"
+    target: "माता नवं वस्त्रं क्रीणाति पिता च पादत्राणं क्रीणाति."
+    reading: "mātā navaṃ vastraṃ krīṇāti pitā ca pādatrāṇaṃ krīṇāti."
+    ipa: "maːt̪aː nəʋəm ʋəst̪rəm kriːɳaːt̪i pit̪aː tʃə paːd̪ət̪raːɳəm kriːɳaːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "माता", ref: "sa-1030" }, { word: "नवं", base: "नवः", reading: "navaḥ" }, { word: "वस्त्रं", base: "वस्त्रम्", reading: "vastram" }, { word: "क्रीणाति", base: "क्री", reading: "krī" }, { word: "पिता", ref: "sa-1031" }, { word: "च", ref: "sa-1104" }, { word: "पादत्राणं", base: "पादत्राणम्", reading: "pādatrāṇam" }]
+    confusables: [{ id: "w1", ref: "sa-1782", kind: "word" }, { id: "w2", ref: "sa-1785", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3242"
+    target: "कुण्डलं कर्णे भवति कङ्कणं हस्ते भवति."
+    reading: "kuṇḍalaṃ karṇe bhavati kaṅkaṇaṃ haste bhavati."
+    ipa: "kuɳɖələm kərɳeː bʱəʋət̪i kəŋkəɳəm ɦəst̪eː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "कुण्डलं", base: "कुण्डलम्", reading: "kuṇḍalam" }, { word: "कर्णे", base: "कर्णः", reading: "karṇaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "कङ्कणं", base: "कङ्कणम्", reading: "kaṅkaṇam" }, { word: "हस्ते", base: "हस्तः", reading: "hastaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1570", kind: "word" }, { id: "w2", ref: "sa-1568", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3243"
+    target: "मुकुटो मस्तके भवति पादत्राणं पादे भवति."
+    reading: "mukuṭo mastake bhavati pādatrāṇaṃ pāde bhavati."
+    ipa: "mukuʈoː məst̪əkeː bʱəʋət̪i paːd̪ət̪raːɳəm paːd̪eː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "मुकुटो", base: "मुकुटः", reading: "mukuṭaḥ" }, { word: "मस्तके", base: "मस्तकम्", reading: "mastakam" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "पादत्राणं", base: "पादत्राणम्", reading: "pādatrāṇam" }, { word: "पादे", base: "पादः", reading: "pādaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1789", kind: "word" }, { id: "w2", ref: "sa-1567", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "pair", ref: "sa-1580" }, { id: "n3", kind: "usage" }]
+  - id: "sa-3244"
+    target: "माला नवा भवति कञ्चुकः पुराणो भवति."
+    reading: "mālā navā bhavati kañcukaḥ purāṇo bhavati."
+    ipa: "maːlaː nəʋaː bʱəʋət̪i kəɲtʃukəh puraːɳoː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "माला", ref: "sa-1787" }, { word: "नवा", base: "नवः", reading: "navaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "कञ्चुकः", ref: "sa-1783" }, { word: "पुराणो", base: "पुराणः", reading: "purāṇaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1792", kind: "word" }, { id: "w2", ref: "sa-1781", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3245"
+    target: "ऊर्णा मेषस्य भवति गौः क्षीरं ददाति."
+    reading: "ūrṇā meṣasya bhavati gauḥ kṣīraṃ dadāti."
+    ipa: "uːrɳaː meːʂəsjə bʱəʋət̪i ɡəuh kʂiːrəm d̪əd̪aːt̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "ऊर्णा", ref: "sa-1793" }, { word: "मेषस्य", base: "मेषः", reading: "meṣaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "गौः", ref: "sa-0028" }, { word: "क्षीरं", base: "क्षीरम्", reading: "kṣīram" }, { word: "ददाति", base: "दा", reading: "dā" }]
+    confusables: [{ id: "w1", ref: "sa-1792", kind: "word" }, { id: "w2", ref: "sa-1740", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3246"
+    target: "सूत्रं दीर्घं भवति मेखला ह्रस्वा भवति."
+    reading: "sūtraṃ dīrghaṃ bhavati mekhalā hrasvā bhavati."
+    ipa: "suːt̪rəm d̪iːrɡʱəm bʱəʋət̪i meːkʰəlaː ɦrəsʋaː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "सूत्रं", base: "सूत्रम्", reading: "sūtram" }, { word: "दीर्घं", base: "दीर्घः", reading: "dīrghaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "मेखला", ref: "sa-1790" }, { word: "ह्रस्वा", base: "ह्रस्वः", reading: "hrasvaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1787", kind: "word" }, { id: "w2", ref: "sa-1523", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3247"
+    target: "उष्णीषं पीतं भवति शाटी रक्ता भवति."
+    reading: "uṣṇīṣaṃ pītaṃ bhavati śāṭī raktā bhavati."
+    ipa: "uʂɳiːʂəm piːt̪əm bʱəʋət̪i ʃaːʈiː rəkt̪aː bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "उष्णीषं", base: "उष्णीषम्", reading: "uṣṇīṣam" }, { word: "पीतं", base: "पीतः", reading: "pītaḥ" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "शाटी", ref: "sa-1791" }, { word: "रक्ता", base: "रक्तः", reading: "raktaḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1788", kind: "word" }, { id: "w2", ref: "sa-1779", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3248"
+    target: "पादत्राणं कुत्र भवति कञ्चुकः कुत्र भवति?"
+    reading: "pādatrāṇaṃ kutra bhavati kañcukaḥ kutra bhavati?"
+    ipa: "paːd̪ət̪raːɳəm kut̪rə bʱəʋət̪i kəɲtʃukəh kut̪rə bʱəʋət̪i"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "पादत्राणं", base: "पादत्राणम्", reading: "pādatrāṇam" }, { word: "कुत्र", ref: "sa-1002" }, { word: "भवति", base: "भू", reading: "bhū" }, { word: "कञ्चुकः", ref: "sa-1783" }]
+    confusables: [{ id: "w1", ref: "sa-1568", kind: "word" }, { id: "w2", ref: "sa-1782", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }]
+  - id: "sa-3249"
+    target: "अहं वसनं क्रीणामि त्वं च वस्त्रं क्रीणासि."
+    reading: "ahaṃ vasanaṃ krīṇāmi tvaṃ ca vastraṃ krīṇāsi."
+    ipa: "əɦəm ʋəsənəm kriːɳaːmi t̪ʋəm tʃə ʋəst̪rəm kriːɳaːsi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "वसनं", base: "वसनम्", reading: "vasanam" }, { word: "क्रीणामि", base: "क्री", reading: "krī" }, { word: "त्वं", base: "त्वम्", reading: "tvam" }, { word: "च", ref: "sa-1104" }, { word: "वस्त्रं", base: "वस्त्रम्", reading: "vastram" }, { word: "क्रीणासि", base: "क्री", reading: "krī" }]
+    confusables: [{ id: "w1", ref: "sa-1781", kind: "word" }, { id: "w2", ref: "sa-1792", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }, { id: "n2", kind: "usage" }, { id: "n3", kind: "usage" }]

@@ -1,0 +1,57 @@
+schema: 1
+id: "sa-en-reading-food"
+name: "Reading: food"
+kind: "reading"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Classical Sanskrit course, from its own sentences"
+description: "Short passages made only from sentences already taught, each with questions. Not yet checked by a Sanskrit speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "sa-food-text-1"
+    title: "Milk, buttermilk, fish"
+    theme: "food"
+    sentences:
+      - { text: "माता पायसं पचति पिता च खादति.", reading: "mātā pāyasaṃ pacati pitā ca khādati.", ipa: "maːt̪aː paːjəsəm pətʃət̪i pit̪aː tʃə kʰaːd̪ət̪i" }
+      - { text: "अहं क्षीरं पिबामि त्वं च तक्रं पिबसि.", reading: "ahaṃ kṣīraṃ pibāmi tvaṃ ca takraṃ pibasi.", ipa: "əɦəm kʂiːrəm pibaːmi t̪ʋəm tʃə t̪əkrəm pibəsi" }
+      - { text: "स मत्स्यं खादति सा च मांसं न खादति.", reading: "sa matsyaṃ khādati sā ca māṃsaṃ na khādati.", ipa: "sə mət̪sjəm kʰaːd̪ət̪i saː tʃə mãːsəm nə kʰaːd̪ət̪i" }
+      - { text: "आम्रं पिता क्रीणाति माता च दाडिमं क्रीणाति.", reading: "āmraṃ pitā krīṇāti mātā ca dāḍimaṃ krīṇāti.", ipa: "aːmrəm pit̪aː kriːɳaːt̪i maːt̪aː tʃə d̪aːɖiməm kriːɳaːt̪i" }
+    questions:
+      - id: "sa-3515"
+        prompt: { en: "What does 'you' drink?" }
+        options: [{ en: "Buttermilk" }, { en: "Milk" }, { en: "Water" }]
+        answer: 1
+      - id: "sa-3516"
+        prompt: { en: "What does she not eat?" }
+        options: [{ en: "Fish" }, { en: "Meat" }, { en: "Milk rice" }]
+        answer: 2
+      - id: "sa-3517"
+        prompt: { en: "Father buys a pomegranate." }
+        answer: false
+      - id: "sa-3518"
+        prompt: { en: "Mother cooks milk rice." }
+        answer: true
+  - id: "sa-food-text-2"
+    title: "Sweet and cold"
+    theme: "food"
+    sentences:
+      - { text: "दधि शीतं भवति गुडो मधुरो भवति.", reading: "dadhi śītaṃ bhavati guḍo madhuro bhavati.", ipa: "d̪əd̪ʱi ʃiːt̪əm bʱəʋət̪i ɡuɖoː məd̪ʱuroː bʱəʋət̪i" }
+      - { text: "लवणं मधुरं न भवति शर्करा मधुरा भवति.", reading: "lavaṇaṃ madhuraṃ na bhavati śarkarā madhurā bhavati.", ipa: "ləʋəɳəm məd̪ʱurəm nə bʱəʋət̪i ʃərkəraː məd̪ʱuraː bʱəʋət̪i" }
+      - { text: "अद्य वयं शाकं पचामो दधि च खादामः.", reading: "adya vayaṃ śākaṃ pacāmo dadhi ca khādāmaḥ.", ipa: "əd̪jə ʋəjəm ʃaːkəm pətʃaːmoː d̪əd̪ʱi tʃə kʰaːd̪aːməh" }
+      - { text: "कुत्र नवनीतं भवति कुत्र च मधु भवति?", reading: "kutra navanītaṃ bhavati kutra ca madhu bhavati?", ipa: "kut̪rə nəʋəniːt̪əm bʱəʋət̪i kut̪rə tʃə məd̪ʱu bʱəʋət̪i" }
+    questions:
+      - id: "sa-3519"
+        prompt: { en: "What is sweet in the first sentence?" }
+        options: [{ en: "Curd" }, { en: "Salt" }, { en: "Molasses" }]
+        answer: 3
+      - id: "sa-3520"
+        prompt: { en: "Salt is sweet." }
+        answer: false
+      - id: "sa-3521"
+        prompt: { en: "What do 'we' cook today?" }
+        options: [{ en: "Vegetables" }, { en: "Curd" }, { en: "Sugar" }]
+        answer: 1
+      - id: "sa-3522"
+        prompt: { en: "The last sentence asks where the honey is." }
+        answer: true
