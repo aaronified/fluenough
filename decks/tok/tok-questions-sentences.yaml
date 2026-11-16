@@ -2,12 +2,14 @@ schema: 1
 id: "tok-questions-sentences"
 part: "core"
 kind: "vocab"
-language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", scripts: ["latin", "sitelen_pona"], icon: "Tp" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed"]
 cards:
   - id: "tok-0048"
     target: "sina wile e seme?"
+    target_scripts:
+      sitelen_pona: "󱥞 󱥷 󱤉 󱥙?"
     ipa: "ˈsina ˈwile e ˈseme"
     pos: "phrase"
     bases:
@@ -18,6 +20,8 @@ cards:
       - { id: "w2", ref: "tok-0002", kind: "word" }
   - id: "tok-0049"
     target: "pan anu ko?"
+    target_scripts:
+      sitelen_pona: "󱥋 󱤇 󱤜?"
     ipa: "pan ˈanu ko"
     pos: "phrase"
     confusables:
@@ -25,6 +29,8 @@ cards:
       - { id: "w2", ref: "tok-0005", kind: "word" }
   - id: "tok-0050"
     target: "ni li lon."
+    target_scripts:
+      sitelen_pona: "󱥁 󱤧 󱤬."
     ipa: "ni li lon"
     pos: "phrase"
     bases:
@@ -35,6 +41,8 @@ cards:
       - { id: "w2", ref: "tok-0002", kind: "word" }
   - id: "tok-0051"
     target: "mi lon ni."
+    target_scripts:
+      sitelen_pona: "󱤴 󱤬 󱥁."
     ipa: "mi lon ni"
     pos: "phrase"
     bases:
@@ -44,6 +52,8 @@ cards:
       - { id: "w2", ref: "tok-0005", kind: "word" }
   - id: "tok-0052"
     target: "pona a!"
+    target_scripts:
+      sitelen_pona: "󱥔 󱤀!"
     ipa: "ˈpona a"
     pos: "phrase"
     confusables:
@@ -51,6 +61,8 @@ cards:
       - { id: "w2", ref: "tok-0005", kind: "word" }
   - id: "tok-0053"
     target: "sina toki pona a!"
+    target_scripts:
+      sitelen_pona: "󱥞 󱥬 󱥔 󱤀!"
     ipa: "ˈsina ˈtoki ˈpona a"
     pos: "phrase"
     confusables:
@@ -58,6 +70,8 @@ cards:
       - { id: "w2", ref: "tok-0005", kind: "word" }
   - id: "tok-0054"
     target: "sina sona anu ala?"
+    target_scripts:
+      sitelen_pona: "󱥞 󱥡 󱤇 󱤂?"
     ipa: "ˈsina ˈsona ˈanu ˈala"
     pos: "phrase"
     confusables:
