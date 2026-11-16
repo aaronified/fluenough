@@ -1,0 +1,521 @@
+schema: 1
+id: "sa-describing"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "describing"
+tags: ["unreviewed"]
+cards:
+  - id: "sa-1514"
+    target: "शुक्लः"
+    reading: "śuklaḥ"
+    ipa: "ʃukləh"
+    pos: "adj"
+    tags: ["colour"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "शुक्लः", base: "शुक्ल", reading: "śukla" }
+    examples:
+      - target: "शुक्लं वस्त्रम्"
+        reading: "śuklaṃ vastram"
+        ipa: "ʃukləm ʋəst̪rəm"
+        bases:
+          - { word: "शुक्लं", base: "शुक्ल", reading: "śukla" }
+          - { word: "वस्त्रम्", base: "वस्त्र", reading: "vastra" }
+      - target: "वस्त्रं शुक्लम्"
+        reading: "vastraṃ śuklam"
+        ipa: "ʋəst̪rəm ʃukləm"
+        bases:
+          - { word: "वस्त्रं", base: "वस्त्र", reading: "vastra" }
+          - { word: "शुक्लम्", base: "शुक्ल", reading: "śukla" }
+  - id: "sa-1515"
+    target: "कृष्णः"
+    reading: "kṛṣṇaḥ"
+    ipa: "kr̩ʂɳəh"
+    pos: "adj"
+    tags: ["colour"]
+    bases:
+      - { word: "कृष्णः", base: "कृष्ण", reading: "kṛṣṇa" }
+    examples:
+      - target: "कृष्णः काकः"
+        reading: "kṛṣṇaḥ kākaḥ"
+        ipa: "kr̩ʂɳəh kaːkəh"
+        bases:
+          - { word: "कृष्णः", base: "कृष्ण", reading: "kṛṣṇa" }
+          - { word: "काकः", base: "काक", reading: "kāka" }
+      - target: "काकः कृष्णः"
+        reading: "kākaḥ kṛṣṇaḥ"
+        ipa: "kaːkəh kr̩ʂɳəh"
+        bases:
+          - { word: "काकः", base: "काक", reading: "kāka" }
+          - { word: "कृष्णः", base: "कृष्ण", reading: "kṛṣṇa" }
+  - id: "sa-1516"
+    target: "रक्तः"
+    reading: "raktaḥ"
+    ipa: "rəkt̪əh"
+    pos: "adj"
+    tags: ["colour"]
+    bases:
+      - { word: "रक्तः", base: "रक्त", reading: "rakta" }
+    examples:
+      - target: "रक्तं पुष्पम्"
+        reading: "raktaṃ puṣpam"
+        ipa: "rəkt̪əm puʂpəm"
+        bases:
+          - { word: "रक्तं", base: "रक्त", reading: "rakta" }
+          - { word: "पुष्पम्", base: "पुष्प", reading: "puṣpa" }
+      - target: "पुष्पं रक्तम्"
+        reading: "puṣpaṃ raktam"
+        ipa: "puʂpəm rəkt̪əm"
+        bases:
+          - { word: "पुष्पं", base: "पुष्प", reading: "puṣpa" }
+          - { word: "रक्तम्", base: "रक्त", reading: "rakta" }
+  - id: "sa-1517"
+    target: "नीलः"
+    reading: "nīlaḥ"
+    ipa: "niːləh"
+    pos: "adj"
+    tags: ["colour"]
+    bases:
+      - { word: "नीलः", base: "नील", reading: "nīla" }
+    examples:
+      - target: "नीलं गगनम्"
+        reading: "nīlaṃ gaganam"
+        ipa: "niːləm ɡəɡənəm"
+        bases:
+          - { word: "नीलं", base: "नील", reading: "nīla" }
+          - { word: "गगनम्", base: "गगन", reading: "gagana" }
+      - target: "गगनं नीलम्"
+        reading: "gaganaṃ nīlam"
+        ipa: "ɡəɡənəm niːləm"
+        bases:
+          - { word: "गगनं", base: "गगन", reading: "gagana" }
+          - { word: "नीलम्", base: "नील", reading: "nīla" }
+  - id: "sa-1518"
+    target: "हरितः"
+    reading: "haritaḥ"
+    ipa: "ɦərit̪əh"
+    pos: "adj"
+    tags: ["colour"]
+    bases:
+      - { word: "हरितः", base: "हरित", reading: "harita" }
+    examples:
+      - target: "हरितं पत्रम्"
+        reading: "haritaṃ patram"
+        ipa: "ɦərit̪əm pət̪rəm"
+        bases:
+          - { word: "हरितं", base: "हरित", reading: "harita" }
+          - { word: "पत्रम्", base: "पत्र", reading: "patra" }
+      - target: "पत्रं हरितम्"
+        reading: "patraṃ haritam"
+        ipa: "pət̪rəm ɦərit̪əm"
+        bases:
+          - { word: "पत्रं", base: "पत्र", reading: "patra" }
+          - { word: "हरितम्", base: "हरित", reading: "harita" }
+  - id: "sa-1519"
+    target: "पीतः"
+    reading: "pītaḥ"
+    ipa: "piːt̪əh"
+    pos: "adj"
+    tags: ["colour"]
+    bases:
+      - { word: "पीतः", base: "पीत", reading: "pīta" }
+    examples:
+      - target: "पीतं फलम्"
+        reading: "pītaṃ phalam"
+        ipa: "piːt̪əm pʰələm"
+        bases:
+          - { word: "पीतं", base: "पीत", reading: "pīta" }
+          - { word: "फलम्", base: "फल", reading: "phala" }
+      - target: "फलं पीतम्"
+        reading: "phalaṃ pītam"
+        ipa: "pʰələm piːt̪əm"
+        bases:
+          - { word: "फलं", base: "फल", reading: "phala" }
+          - { word: "पीतम्", base: "पीत", reading: "pīta" }
+  - id: "sa-1520"
+    target: "सुन्दरः"
+    reading: "sundaraḥ"
+    ipa: "sund̪ərəh"
+    pos: "adj"
+    tags: ["feeling"]
+    bases:
+      - { word: "सुन्दरः", base: "सुन्दर", reading: "sundara" }
+    examples:
+      - target: "सुन्दरः बालः"
+        reading: "sundaraḥ bālaḥ"
+        ipa: "sund̪ərəh baːləh"
+        bases:
+          - { word: "सुन्दरः", base: "सुन्दर", reading: "sundara" }
+          - { word: "बालः", base: "बाल", reading: "bāla" }
+      - target: "गृहं सुन्दरम्"
+        reading: "gṛhaṃ sundaram"
+        ipa: "ɡr̩ɦəm sund̪ərəm"
+        bases:
+          - { word: "गृहं", base: "गृह", reading: "gṛha" }
+          - { word: "सुन्दरम्", base: "सुन्दर", reading: "sundara" }
+  - id: "sa-1521"
+    target: "मलिनः"
+    reading: "malinaḥ"
+    ipa: "məlinəh"
+    pos: "adj"
+    tags: ["feeling"]
+    bases:
+      - { word: "मलिनः", base: "मलिन", reading: "malina" }
+    examples:
+      - target: "मलिनं वस्त्रम्"
+        reading: "malinaṃ vastram"
+        ipa: "məlinəm ʋəst̪rəm"
+        bases:
+          - { word: "मलिनं", base: "मलिन", reading: "malina" }
+          - { word: "वस्त्रम्", base: "वस्त्र", reading: "vastra" }
+      - target: "जलं मलिनम्"
+        reading: "jalaṃ malinam"
+        ipa: "dʒələm məlinəm"
+        bases:
+          - { word: "जलं", base: "जल", reading: "jala" }
+          - { word: "मलिनम्", base: "मलिन", reading: "malina" }
+  - id: "sa-1522"
+    target: "महान्"
+    reading: "mahān"
+    ipa: "məɦaːn"
+    pos: "adj"
+    tags: ["size"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "महान्", base: "महत्", reading: "mahat" }
+    examples:
+      - target: "महान् राजा"
+        reading: "mahān rājā"
+        ipa: "məɦaːn raːdʒaː"
+        bases:
+          - { word: "महान्", base: "महत्", reading: "mahat" }
+          - { word: "राजा", base: "राजन्", reading: "rājan" }
+      - target: "महत् गृहम्"
+        reading: "mahat gṛham"
+        ipa: "məɦət̪ ɡr̩ɦəm"
+        bases:
+          - { word: "महत्", base: "महत्", reading: "mahat" }
+          - { word: "गृहम्", base: "गृह", reading: "gṛha" }
+  - id: "sa-1523"
+    target: "लघुः"
+    reading: "laghuḥ"
+    ipa: "ləɡʱuh"
+    pos: "adj"
+    tags: ["size"]
+    bases:
+      - { word: "लघुः", base: "लघु", reading: "laghu" }
+    examples:
+      - target: "लघु पुस्तकम्"
+        reading: "laghu pustakam"
+        ipa: "ləɡʱu pust̪əkəm"
+        bases:
+          - { word: "लघु", base: "लघु", reading: "laghu" }
+          - { word: "पुस्तकम्", base: "पुस्तक", reading: "pustaka" }
+      - target: "पुस्तकं लघु"
+        reading: "pustakaṃ laghu"
+        ipa: "pust̪əkəm ləɡʱu"
+        bases:
+          - { word: "पुस्तकं", base: "पुस्तक", reading: "pustaka" }
+          - { word: "लघु", base: "लघु", reading: "laghu" }
+  - id: "sa-1524"
+    target: "दीर्घः"
+    reading: "dīrghaḥ"
+    ipa: "d̪iːrɡʱəh"
+    pos: "adj"
+    tags: ["size"]
+    bases:
+      - { word: "दीर्घः", base: "दीर्घ", reading: "dīrgha" }
+    examples:
+      - target: "दीर्घः मार्गः"
+        reading: "dīrghaḥ mārgaḥ"
+        ipa: "d̪iːrɡʱəh maːrɡəh"
+        bases:
+          - { word: "दीर्घः", base: "दीर्घ", reading: "dīrgha" }
+          - { word: "मार्गः", base: "मार्ग", reading: "mārga" }
+      - target: "मार्गः दीर्घः"
+        reading: "mārgaḥ dīrghaḥ"
+        ipa: "maːrɡəh d̪iːrɡʱəh"
+        bases:
+          - { word: "मार्गः", base: "मार्ग", reading: "mārga" }
+          - { word: "दीर्घः", base: "दीर्घ", reading: "dīrgha" }
+  - id: "sa-1525"
+    target: "ह्रस्वः"
+    reading: "hrasvaḥ"
+    ipa: "ɦrəsʋəh"
+    pos: "adj"
+    tags: ["size"]
+    bases:
+      - { word: "ह्रस्वः", base: "ह्रस्व", reading: "hrasva" }
+    examples:
+      - target: "ह्रस्वा रात्रिः"
+        reading: "hrasvā rātriḥ"
+        ipa: "ɦrəsʋaː raːt̪rih"
+        bases:
+          - { word: "ह्रस्वा", base: "ह्रस्व", reading: "hrasva" }
+          - { word: "रात्रिः", base: "रात्रि", reading: "rātri" }
+      - target: "वस्त्रं ह्रस्वम्"
+        reading: "vastraṃ hrasvam"
+        ipa: "ʋəst̪rəm ɦrəsʋəm"
+        bases:
+          - { word: "वस्त्रं", base: "वस्त्र", reading: "vastra" }
+          - { word: "ह्रस्वम्", base: "ह्रस्व", reading: "hrasva" }
+  - id: "sa-1526"
+    target: "उच्चः"
+    reading: "uccaḥ"
+    ipa: "utʃtʃəh"
+    pos: "adj"
+    tags: ["size"]
+    bases:
+      - { word: "उच्चः", base: "उच्च", reading: "ucca" }
+    examples:
+      - target: "उच्चः पर्वतः"
+        reading: "uccaḥ parvataḥ"
+        ipa: "utʃtʃəh pərʋət̪əh"
+        bases:
+          - { word: "उच्चः", base: "उच्च", reading: "ucca" }
+          - { word: "पर्वतः", base: "पर्वत", reading: "parvata" }
+      - target: "उच्चं गृहम्"
+        reading: "uccaṃ gṛham"
+        ipa: "utʃtʃəm ɡr̩ɦəm"
+        bases:
+          - { word: "उच्चं", base: "उच्च", reading: "ucca" }
+          - { word: "गृहम्", base: "गृह", reading: "gṛha" }
+  - id: "sa-1527"
+    target: "स्थूलः"
+    reading: "sthūlaḥ"
+    ipa: "st̪ʰuːləh"
+    pos: "adj"
+    tags: ["size"]
+    bases:
+      - { word: "स्थूलः", base: "स्थूल", reading: "sthūla" }
+    examples:
+      - target: "स्थूलः दण्डः"
+        reading: "sthūlaḥ daṇḍaḥ"
+        ipa: "st̪ʰuːləh d̪əɳɖəh"
+        bases:
+          - { word: "स्थूलः", base: "स्थूल", reading: "sthūla" }
+          - { word: "दण्डः", base: "दण्ड", reading: "daṇḍa" }
+      - target: "दण्डः स्थूलः"
+        reading: "daṇḍaḥ sthūlaḥ"
+        ipa: "d̪əɳɖəh st̪ʰuːləh"
+        bases:
+          - { word: "दण्डः", base: "दण्ड", reading: "daṇḍa" }
+          - { word: "स्थूलः", base: "स्थूल", reading: "sthūla" }
+  - id: "sa-1528"
+    target: "नवः"
+    reading: "navaḥ"
+    ipa: "nəʋəh"
+    pos: "adj"
+    tags: ["age"]
+    bases:
+      - { word: "नवः", base: "नव", reading: "nava" }
+    examples:
+      - target: "नवं वस्त्रम्"
+        reading: "navaṃ vastram"
+        ipa: "nəʋəm ʋəst̪rəm"
+        bases:
+          - { word: "नवं", base: "नव", reading: "nava" }
+          - { word: "वस्त्रम्", base: "वस्त्र", reading: "vastra" }
+      - target: "पुस्तकं नवम्"
+        reading: "pustakaṃ navam"
+        ipa: "pust̪əkəm nəʋəm"
+        bases:
+          - { word: "पुस्तकं", base: "पुस्तक", reading: "pustaka" }
+          - { word: "नवम्", base: "नव", reading: "nava" }
+  - id: "sa-1529"
+    target: "पुराणः"
+    reading: "purāṇaḥ"
+    ipa: "puraːɳəh"
+    pos: "adj"
+    tags: ["age"]
+    bases:
+      - { word: "पुराणः", base: "पुराण", reading: "purāṇa" }
+    examples:
+      - target: "पुराणः ग्रन्थः"
+        reading: "purāṇaḥ granthaḥ"
+        ipa: "puraːɳəh ɡrənt̪ʰəh"
+        bases:
+          - { word: "पुराणः", base: "पुराण", reading: "purāṇa" }
+          - { word: "ग्रन्थः", base: "ग्रन्थ", reading: "grantha" }
+      - target: "ग्रन्थः पुराणः"
+        reading: "granthaḥ purāṇaḥ"
+        ipa: "ɡrənt̪ʰəh puraːɳəh"
+        bases:
+          - { word: "ग्रन्थः", base: "ग्रन्थ", reading: "grantha" }
+          - { word: "पुराणः", base: "पुराण", reading: "purāṇa" }
+  - id: "sa-1530"
+    target: "शीतः"
+    reading: "śītaḥ"
+    ipa: "ʃiːt̪əh"
+    pos: "adj"
+    tags: ["temperature"]
+    bases:
+      - { word: "शीतः", base: "शीत", reading: "śīta" }
+    examples:
+      - target: "शीतं जलम्"
+        reading: "śītaṃ jalam"
+        ipa: "ʃiːt̪əm dʒələm"
+        bases:
+          - { word: "शीतं", base: "शीत", reading: "śīta" }
+          - { word: "जलम्", base: "जल", reading: "jala" }
+      - target: "जलं शीतम्"
+        reading: "jalaṃ śītam"
+        ipa: "dʒələm ʃiːt̪əm"
+        bases:
+          - { word: "जलं", base: "जल", reading: "jala" }
+          - { word: "शीतम्", base: "शीत", reading: "śīta" }
+  - id: "sa-1531"
+    target: "उष्णः"
+    reading: "uṣṇaḥ"
+    ipa: "uʂɳəh"
+    pos: "adj"
+    tags: ["temperature"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "उष्णः", base: "उष्ण", reading: "uṣṇa" }
+    examples:
+      - target: "उष्णं दुग्धम्"
+        reading: "uṣṇaṃ dugdham"
+        ipa: "uʂɳəm d̪uɡd̪ʱəm"
+        bases:
+          - { word: "उष्णं", base: "उष्ण", reading: "uṣṇa" }
+          - { word: "दुग्धम्", base: "दुग्ध", reading: "dugdha" }
+      - target: "अन्नम् उष्णम्"
+        reading: "annam uṣṇam"
+        ipa: "ənnəm uʂɳəm"
+        bases:
+          - { word: "अन्नम्", base: "अन्न", reading: "anna" }
+          - { word: "उष्णम्", base: "उष्ण", reading: "uṣṇa" }
+  - id: "sa-1532"
+    target: "सुखी"
+    reading: "sukhī"
+    ipa: "sukʰiː"
+    pos: "adj"
+    tags: ["feeling"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    bases:
+      - { word: "सुखी", base: "सुखिन्", reading: "sukhin" }
+    examples:
+      - target: "सुखी बालः"
+        reading: "sukhī bālaḥ"
+        ipa: "sukʰiː baːləh"
+        bases:
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhin" }
+          - { word: "बालः", base: "बाल", reading: "bāla" }
+      - target: "पिता सुखी"
+        reading: "pitā sukhī"
+        ipa: "pit̪aː sukʰiː"
+        bases:
+          - { word: "पिता", base: "पितृ", reading: "pitṛ" }
+          - { word: "सुखी", base: "सुखिन्", reading: "sukhin" }
+  - id: "sa-1533"
+    target: "दुःखी"
+    reading: "duḥkhī"
+    ipa: "d̪uhkʰiː"
+    pos: "adj"
+    tags: ["feeling"]
+    bases:
+      - { word: "दुःखी", base: "दुःखिन्", reading: "duḥkhin" }
+    examples:
+      - target: "दुःखी बालः"
+        reading: "duḥkhī bālaḥ"
+        ipa: "d̪uhkʰiː baːləh"
+        bases:
+          - { word: "दुःखी", base: "दुःखिन्", reading: "duḥkhin" }
+          - { word: "बालः", base: "बाल", reading: "bāla" }
+      - target: "माता दुःखिनी"
+        reading: "mātā duḥkhinī"
+        ipa: "maːt̪aː d̪uhkʰiniː"
+        bases:
+          - { word: "माता", base: "मातृ", reading: "mātṛ" }
+          - { word: "दुःखिनी", base: "दुःखिन्", reading: "duḥkhin" }
+  - id: "sa-1534"
+    target: "पवित्रः"
+    reading: "pavitraḥ"
+    ipa: "pəʋit̪rəh"
+    pos: "adj"
+    tags: ["feeling"]
+    bases:
+      - { word: "पवित्रः", base: "पवित्र", reading: "pavitra" }
+    examples:
+      - target: "पवित्रं जलम्"
+        reading: "pavitraṃ jalam"
+        ipa: "pəʋit̪rəm dʒələm"
+        bases:
+          - { word: "पवित्रं", base: "पवित्र", reading: "pavitra" }
+          - { word: "जलम्", base: "जल", reading: "jala" }
+      - target: "गङ्गा पवित्रा"
+        reading: "gaṅgā pavitrā"
+        ipa: "ɡəŋɡaː pəʋit̪raː"
+        bases:
+          - { word: "गङ्गा", base: "गङ्गा", reading: "gaṅgā" }
+          - { word: "पवित्रा", base: "पवित्र", reading: "pavitra" }
+  - id: "sa-1535"
+    target: "कठिनः"
+    reading: "kaṭhinaḥ"
+    ipa: "kəʈʰinəh"
+    pos: "adj"
+    tags: ["feeling"]
+    bases:
+      - { word: "कठिनः", base: "कठिन", reading: "kaṭhina" }
+    examples:
+      - target: "कठिनः मार्गः"
+        reading: "kaṭhinaḥ mārgaḥ"
+        ipa: "kəʈʰinəh maːrɡəh"
+        bases:
+          - { word: "कठिनः", base: "कठिन", reading: "kaṭhina" }
+          - { word: "मार्गः", base: "मार्ग", reading: "mārga" }
+      - target: "पाठः कठिनः"
+        reading: "pāṭhaḥ kaṭhinaḥ"
+        ipa: "paːʈʰəh kəʈʰinəh"
+        bases:
+          - { word: "पाठः", base: "पाठ", reading: "pāṭha" }
+          - { word: "कठिनः", base: "कठिन", reading: "kaṭhina" }
+  - id: "sa-1536"
+    target: "सरलः"
+    reading: "saralaḥ"
+    ipa: "sərələh"
+    pos: "adj"
+    tags: ["feeling"]
+    bases:
+      - { word: "सरलः", base: "सरल", reading: "sarala" }
+    examples:
+      - target: "सरलः पाठः"
+        reading: "saralaḥ pāṭhaḥ"
+        ipa: "sərələh paːʈʰəh"
+        bases:
+          - { word: "सरलः", base: "सरल", reading: "sarala" }
+          - { word: "पाठः", base: "पाठ", reading: "pāṭha" }
+      - target: "मार्गः सरलः"
+        reading: "mārgaḥ saralaḥ"
+        ipa: "maːrɡəh sərələh"
+        bases:
+          - { word: "मार्गः", base: "मार्ग", reading: "mārga" }
+          - { word: "सरलः", base: "सरल", reading: "sarala" }
+  - id: "sa-1537"
+    target: "मधुरः"
+    reading: "madhuraḥ"
+    ipa: "məd̪ʱurəh"
+    pos: "adj"
+    tags: ["taste"]
+    bases:
+      - { word: "मधुरः", base: "मधुर", reading: "madhura" }
+    examples:
+      - target: "मधुरं फलम्"
+        reading: "madhuraṃ phalam"
+        ipa: "məd̪ʱurəm pʰələm"
+        bases:
+          - { word: "मधुरं", base: "मधुर", reading: "madhura" }
+          - { word: "फलम्", base: "फल", reading: "phala" }
+      - target: "दुग्धं मधुरम्"
+        reading: "dugdhaṃ madhuram"
+        ipa: "d̪uɡd̪ʱəm məd̪ʱurəm"
+        bases:
+          - { word: "दुग्धं", base: "दुग्ध", reading: "dugdha" }
+          - { word: "मधुरम्", base: "मधुर", reading: "madhura" }

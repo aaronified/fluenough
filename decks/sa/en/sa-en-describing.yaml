@@ -1,0 +1,378 @@
+schema: 1
+id: "sa-en-describing"
+kind: "layer"
+core: "sa-describing"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Describing things and feelings"
+description: "Describing things and feelings in Classical Sanskrit: colours, size, age, temperature, taste and feeling, with the adjective's agreement."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-1514":
+    native: "White."
+    notes:
+      "n1": "An adjective agrees with its noun: शुक्लः (śuklaḥ) for a masculine, शुक्लम् (śuklam) for a neuter, शुक्ला (śuklā) for a feminine."
+    bases:
+      "शुक्लः": "white"
+    examples:
+      "शुक्लं वस्त्रम्":
+        native: "A white cloth."
+        bases:
+          "शुक्लं": "white"
+          "वस्त्रम्": "cloth"
+      "वस्त्रं शुक्लम्":
+        native: "The cloth is white."
+        bases:
+          "वस्त्रं": "cloth"
+          "शुक्लम्": "white"
+  "sa-1515":
+    native: "Black; dark."
+    bases:
+      "कृष्णः": "black"
+    examples:
+      "कृष्णः काकः":
+        native: "A black crow."
+        bases:
+          "कृष्णः": "black"
+          "काकः": "crow"
+      "काकः कृष्णः":
+        native: "The crow is black."
+        bases:
+          "काकः": "crow"
+          "कृष्णः": "black"
+  "sa-1516":
+    native: "Red."
+    bases:
+      "रक्तः": "red"
+    examples:
+      "रक्तं पुष्पम्":
+        native: "A red flower."
+        bases:
+          "रक्तं": "red"
+          "पुष्पम्": "flower"
+      "पुष्पं रक्तम्":
+        native: "The flower is red."
+        bases:
+          "पुष्पं": "flower"
+          "रक्तम्": "red"
+  "sa-1517":
+    native: "Dark blue."
+    bases:
+      "नीलः": "dark blue"
+    examples:
+      "नीलं गगनम्":
+        native: "The dark-blue sky."
+        bases:
+          "नीलं": "dark blue"
+          "गगनम्": "sky"
+      "गगनं नीलम्":
+        native: "The sky is dark blue."
+        bases:
+          "गगनं": "sky"
+          "नीलम्": "dark blue"
+  "sa-1518":
+    native: "Green."
+    bases:
+      "हरितः": "green"
+    examples:
+      "हरितं पत्रम्":
+        native: "A green leaf."
+        bases:
+          "हरितं": "green"
+          "पत्रम्": "leaf"
+      "पत्रं हरितम्":
+        native: "The leaf is green."
+        bases:
+          "पत्रं": "leaf"
+          "हरितम्": "green"
+  "sa-1519":
+    native: "Yellow."
+    bases:
+      "पीतः": "yellow"
+    examples:
+      "पीतं फलम्":
+        native: "A yellow fruit."
+        bases:
+          "पीतं": "yellow"
+          "फलम्": "fruit"
+      "फलं पीतम्":
+        native: "The fruit is yellow."
+        bases:
+          "फलं": "fruit"
+          "पीतम्": "yellow"
+  "sa-1520":
+    native: "Beautiful."
+    bases:
+      "सुन्दरः": "beautiful"
+    examples:
+      "सुन्दरः बालः":
+        native: "A beautiful boy."
+        bases:
+          "सुन्दरः": "beautiful"
+          "बालः": "boy"
+      "गृहं सुन्दरम्":
+        native: "The house is beautiful."
+        bases:
+          "गृहं": "house"
+          "सुन्दरम्": "beautiful"
+  "sa-1521":
+    native: "Dirty; stained; impure."
+    bases:
+      "मलिनः": "dirty"
+    examples:
+      "मलिनं वस्त्रम्":
+        native: "A dirty cloth."
+        bases:
+          "मलिनं": "dirty"
+          "वस्त्रम्": "cloth"
+      "जलं मलिनम्":
+        native: "The water is dirty."
+        bases:
+          "जलं": "water"
+          "मलिनम्": "dirty"
+  "sa-1522":
+    native: "Great; big."
+    notes:
+      "n1": "The masculine nominative of महत् (mahat); the neuter is महत् (mahat) too, as in महत् (mahat) गृहम् (gṛham)."
+    bases:
+      "महान्": "great"
+    examples:
+      "महान् राजा":
+        native: "A great king."
+        bases:
+          "महान्": "great"
+          "राजा": "king"
+      "महत् गृहम्":
+        native: "A big house."
+        bases:
+          "महत्": "big"
+          "गृहम्": "house"
+  "sa-1523":
+    native: "Small; light."
+    bases:
+      "लघुः": "small"
+    examples:
+      "लघु पुस्तकम्":
+        native: "A small book."
+        bases:
+          "लघु": "small"
+          "पुस्तकम्": "book"
+      "पुस्तकं लघु":
+        native: "The book is small."
+        bases:
+          "पुस्तकं": "book"
+          "लघु": "small"
+  "sa-1524":
+    native: "Long."
+    bases:
+      "दीर्घः": "long"
+    examples:
+      "दीर्घः मार्गः":
+        native: "A long road."
+        bases:
+          "दीर्घः": "long"
+          "मार्गः": "road"
+      "मार्गः दीर्घः":
+        native: "The road is long."
+        bases:
+          "मार्गः": "road"
+          "दीर्घः": "long"
+  "sa-1525":
+    native: "Short."
+    bases:
+      "ह्रस्वः": "short"
+    examples:
+      "ह्रस्वा रात्रिः":
+        native: "A short night."
+        bases:
+          "ह्रस्वा": "short"
+          "रात्रिः": "night"
+      "वस्त्रं ह्रस्वम्":
+        native: "The cloth is short."
+        bases:
+          "वस्त्रं": "cloth"
+          "ह्रस्वम्": "short"
+  "sa-1526":
+    native: "High."
+    bases:
+      "उच्चः": "high"
+    examples:
+      "उच्चः पर्वतः":
+        native: "A high mountain."
+        bases:
+          "उच्चः": "high"
+          "पर्वतः": "mountain"
+      "उच्चं गृहम्":
+        native: "A high house."
+        bases:
+          "उच्चं": "high"
+          "गृहम्": "house"
+  "sa-1527":
+    native: "Thick; coarse; bulky."
+    bases:
+      "स्थूलः": "thick"
+    examples:
+      "स्थूलः दण्डः":
+        native: "A thick stick."
+        bases:
+          "स्थूलः": "thick"
+          "दण्डः": "stick"
+      "दण्डः स्थूलः":
+        native: "The stick is thick."
+        bases:
+          "दण्डः": "stick"
+          "स्थूलः": "thick"
+  "sa-1528":
+    native: "New."
+    bases:
+      "नवः": "new"
+    examples:
+      "नवं वस्त्रम्":
+        native: "A new cloth."
+        bases:
+          "नवं": "new"
+          "वस्त्रम्": "cloth"
+      "पुस्तकं नवम्":
+        native: "The book is new."
+        bases:
+          "पुस्तकं": "book"
+          "नवम्": "new"
+  "sa-1529":
+    native: "Old; ancient."
+    bases:
+      "पुराणः": "old"
+    examples:
+      "पुराणः ग्रन्थः":
+        native: "An old text."
+        bases:
+          "पुराणः": "old"
+          "ग्रन्थः": "text"
+      "ग्रन्थः पुराणः":
+        native: "The text is old."
+        bases:
+          "ग्रन्थः": "text"
+          "पुराणः": "old"
+  "sa-1530":
+    native: "Cold."
+    bases:
+      "शीतः": "cold"
+    examples:
+      "शीतं जलम्":
+        native: "Cold water."
+        bases:
+          "शीतं": "cold"
+          "जलम्": "water"
+      "जलं शीतम्":
+        native: "The water is cold."
+        bases:
+          "जलं": "water"
+          "शीतम्": "cold"
+  "sa-1531":
+    native: "Hot; warm."
+    notes:
+      "n1": "In these examples the words are written apart; in running text a final ḥ or m before a vowel takes sandhi,."
+    bases:
+      "उष्णः": "hot"
+    examples:
+      "उष्णं दुग्धम्":
+        native: "Hot milk."
+        bases:
+          "उष्णं": "hot"
+          "दुग्धम्": "milk"
+      "अन्नम् उष्णम्":
+        native: "The food is hot."
+        bases:
+          "अन्नम्": "food"
+          "उष्णम्": "hot"
+  "sa-1532":
+    native: "Happy."
+    notes:
+      "n1": "The masculine; the feminine is सुखिनी (sukhinī) (sukhinī), as in माता (mātā) सुखिनी (sukhinī), the mother is happy."
+    bases:
+      "सुखी": "happy"
+    examples:
+      "सुखी बालः":
+        native: "A happy boy."
+        bases:
+          "सुखी": "happy"
+          "बालः": "boy"
+      "पिता सुखी":
+        native: "The father is happy."
+        bases:
+          "पिता": "father"
+          "सुखी": "happy"
+  "sa-1533":
+    native: "Sad; unhappy."
+    bases:
+      "दुःखी": "sad"
+    examples:
+      "दुःखी बालः":
+        native: "A sad boy."
+        bases:
+          "दुःखी": "sad"
+          "बालः": "boy"
+      "माता दुःखिनी":
+        native: "The mother is sad."
+        bases:
+          "माता": "mother"
+          "दुःखिनी": "sad"
+  "sa-1534":
+    native: "Pure; holy."
+    bases:
+      "पवित्रः": "pure"
+    examples:
+      "पवित्रं जलम्":
+        native: "Pure water."
+        bases:
+          "पवित्रं": "pure"
+          "जलम्": "water"
+      "गङ्गा पवित्रा":
+        native: "The Ganges is holy."
+        bases:
+          "गङ्गा": "Ganges"
+          "पवित्रा": "holy"
+  "sa-1535":
+    native: "Hard; difficult."
+    bases:
+      "कठिनः": "hard"
+    examples:
+      "कठिनः मार्गः":
+        native: "A difficult road."
+        bases:
+          "कठिनः": "difficult"
+          "मार्गः": "road"
+      "पाठः कठिनः":
+        native: "The lesson is difficult."
+        bases:
+          "पाठः": "lesson"
+          "कठिनः": "difficult"
+  "sa-1536":
+    native: "Easy; simple; straight."
+    bases:
+      "सरलः": "easy"
+    examples:
+      "सरलः पाठः":
+        native: "An easy lesson."
+        bases:
+          "सरलः": "easy"
+          "पाठः": "lesson"
+      "मार्गः सरलः":
+        native: "The road is easy."
+        bases:
+          "मार्गः": "road"
+          "सरलः": "easy"
+  "sa-1537":
+    native: "Sweet."
+    bases:
+      "मधुरः": "sweet"
+    examples:
+      "मधुरं फलम्":
+        native: "A sweet fruit."
+        bases:
+          "मधुरं": "sweet"
+          "फलम्": "fruit"
+      "दुग्धं मधुरम्":
+        native: "The milk is sweet."
+        bases:
+          "दुग्धं": "milk"
+          "मधुरम्": "sweet"
