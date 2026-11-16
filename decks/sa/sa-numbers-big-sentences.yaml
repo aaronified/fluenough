@@ -1,0 +1,43 @@
+schema: 1
+id: "sa-numbers-big-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3110"
+    target: "शतं गावः."
+    reading: "śataṃ gāvaḥ."
+    ipa: "ʃət̪əm ɡaːʋəh"
+    pos: "phrase"
+    bases: [{ word: "शतं", base: "शतम्", reading: "śatam" }, { word: "गावः", base: "गौः", reading: "gauḥ" }]
+    confusables: [{ id: "w1", ref: "sa-1562", kind: "word" }, { id: "w2", ref: "sa-1560", kind: "word" }]
+  - id: "sa-3111"
+    target: "सहस्रं सुताः."
+    reading: "sahasraṃ sutāḥ."
+    ipa: "səɦəsrəm sut̪aːh"
+    pos: "phrase"
+    bases: [{ word: "सहस्रं", base: "सहस्रम्", reading: "sahasram" }, { word: "सुताः", base: "सुता", reading: "sutā" }]
+    confusables: [{ id: "w1", ref: "sa-1559", kind: "word" }, { id: "w2", ref: "sa-1561", kind: "word" }]
+  - id: "sa-3112"
+    target: "त्रिंशत् सखायः."
+    reading: "triṃśat sakhāyaḥ."
+    ipa: "t̪rĩʃət̪ səkʰaːjəh"
+    pos: "phrase"
+    bases: [{ word: "त्रिंशत्", ref: "sa-1610" }, { word: "सखायः", base: "सखा", reading: "sakhā" }]
+    confusables: [{ id: "w1", ref: "sa-1611", kind: "word" }, { id: "w2", ref: "sa-1612", kind: "word" }]
+  - id: "sa-3113"
+    target: "पञ्चाशत् पत्न्यः."
+    reading: "pañcāśat patnyaḥ."
+    ipa: "pəɲtʃaːʃət̪ pət̪njəh"
+    pos: "phrase"
+    bases: [{ word: "पञ्चाशत्", ref: "sa-1612" }, { word: "पत्न्यः", base: "पत्नी", reading: "patnī" }]
+    confusables: [{ id: "w1", ref: "sa-1610", kind: "word" }, { id: "w2", ref: "sa-1611", kind: "word" }]
+  - id: "sa-3114"
+    target: "अहं शतं जानामि."
+    reading: "ahaṃ śataṃ jānāmi."
+    ipa: "əɦəm ʃət̪əm dʒaːnaːmi"
+    pos: "phrase"
+    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "शतं", base: "शतम्", reading: "śatam" }, { word: "जानामि", base: "ज्ञा", reading: "jñā" }]
+    confusables: [{ id: "w1", ref: "sa-1560", kind: "word" }, { id: "w2", ref: "sa-1565", kind: "word" }]

@@ -1,0 +1,30 @@
+schema: 1
+id: "sa-en-numbers-big-sentences"
+kind: "layer"
+core: "sa-numbers-big-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with big numbers"
+description: "Short sentences with the big numbers of Big numbers, built only from words already taught. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "sa-3110":
+    native: "A hundred cows."
+    bases: { "शतं": "a hundred", "गावः": "cow (plural: cows)" }
+    confusables: { "w1": { why: "A hundred thousand, not a hundred: लक्षम् (lakṣam) means a hundred thousand." }, "w2": { why: "A thousand, not a hundred: सहस्रम् (sahasram) means a thousand." } }
+  "sa-3111":
+    native: "A thousand daughters."
+    bases: { "सहस्रं": "a thousand", "सुताः": "daughter (plural: daughters)" }
+    confusables: { "w1": { why: "A hundred, not a thousand: शतम् (śatam) means a hundred." }, "w2": { why: "Ten thousand, not a thousand: अयुतम् (ayutam) means ten thousand." } }
+  "sa-3112":
+    native: "Thirty friends."
+    bases: { "सखायः": "friend (plural: friends)" }
+    confusables: { "w1": { why: "Forty, not thirty: चत्वारिंशत् (catvāriṃśat) means forty." }, "w2": { why: "Fifty, not thirty: पञ्चाशत् (pañcāśat) means fifty." } }
+  "sa-3113":
+    native: "Fifty wives."
+    bases: { "पत्न्यः": "wife (plural: wives)" }
+    confusables: { "w1": { why: "Thirty, not fifty: त्रिंशत् (triṃśat) means thirty." }, "w2": { why: "Forty, not fifty: चत्वारिंशत् (catvāriṃśat) means forty." } }
+  "sa-3114":
+    native: "I know a hundred."
+    bases: { "अहं": "I", "शतं": "a hundred", "जानामि": "to know (I know)" }
+    confusables: { "w1": { why: "A thousand, not a hundred: सहस्रम् (sahasram) means a thousand." }, "w2": { why: "Ten lakhs, not a hundred: प्रयुतम् (prayutam) means ten lakhs." } }
