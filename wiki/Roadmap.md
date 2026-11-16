@@ -369,7 +369,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1476](https://github.com/aaronified/fluenough/issues/1476) Marathi: add "mr" to tools/phonetic_languages.yaml (narrow IPA, MR-110)
 - [#1480](https://github.com/aaronified/fluenough/issues/1480) Chinese: Mandarin broad IPA tooling (shared tools change, branch tools/zh-phonetics)
 - [#1483](https://github.com/aaronified/fluenough/issues/1483) Tamil transcription engine in tools/transcribe.py (TA-110)
-- [#1491](https://github.com/aaronified/fluenough/issues/1491) validator: allow BCE years in source.date (blocks Chinese culture-2 and culture-3)
 
 ## Plans
 
