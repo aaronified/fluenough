@@ -66,3 +66,14 @@ Order: VSA-001, 010, 100 (docs, parallel Sonnets), then VSA-110 through the pare
 ## 4. Open items for the owner
 
 - None yet. Decisions made with defaults are recorded here as they come.
+
+## 5. Pause and resume plan (recorded 2026-11-16, owner pause until 2 PM IST)
+
+Done so far: VSA-001 (Plan-Culture-Vedic), VSA-010 (Plan-Vedic-Path), VSA-100 (Plan-Vedic-Engine); engine merged by the parent (#1501); genre wave 1 pushed on `decks/vsn-genre-wave1` and open as PR #1512 (4 culture decks, 3 multi-word decks, 45 facts, creators, review-queue rows, `min_app.json` 0.10.7); VSA-020 closed with no deck (Vedic has no proverb genre; the 6 usable hymn lines go to a culture deck, VSA-015, after the pause); recommendations (VSA-060) held until the validator and D13 gate allow Latin-script books for `vsn` (asked of the parent). In flight at the pause: the A1 word-list spec (`wiki/Plan-Vedic-Words.md`, Sonnet) and the one Sonnet review of PR #1512; both finish and push, nothing new starts.
+
+Resume, in order:
+1. Read the review of #1512; workers apply blocking fixes on the shared branch; merge when CI is green (only "Validate decks" and "Released app reads the decks" matter).
+2. Branch `decks/vsn-a1-wave1` (exists, at decks-live d6d0a07): Haiku workers (at most 6, own worktrees) build the A1 word units from `Plan-Vedic-Words` (one worker per 3 to 4 units, ids `vsn-1000..2999`), the script decks VSA-070..075, notes on the 30 existing cards (VSA-005), regenerated readings and IPA of the existing cards through the engine (VSA-110, review-queue rows for every changed value), the path edit (units moved from `planned` to `decks`, seven new themes in `decks/themes.yaml`), `vsn-romanisation.yaml` declaring standard IAST and `vsn-phonetics.yaml`.
+3. Sonnet writes the grammar units (case system, a-stems, present system, other stems, preverbs and tmesis) from Whitney pages read; Haiku builds their layers.
+4. Then `vsn-topics.yaml`, `vsn-situations.yaml`, sentences decks, reading decks, the sayings culture deck, recommendations once the gate allows Latin books.
+5. One PR per branch, one Sonnet review each, merge on green.
