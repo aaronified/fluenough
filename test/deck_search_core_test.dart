@@ -70,12 +70,10 @@ void main() {
       expect(cultureChipsOf(p.chips), hasLength(3));
       expect(deckChipsOf(p.chips), isEmpty);
       final f = CultureFilter.fromChips(p.chips);
-      expect((f.kind, f.creator, f.yearFrom, f.yearTo), (
-        'film',
-        'tagore',
-        1900,
-        1950,
-      ));
+      expect(
+        (f.kind, f.creator, f.yearFrom, f.yearTo),
+        ('film', 'tagore', 1900, 1950),
+      );
     });
 
     test('status:done and kind:proverb are culture, status:learnt is not', () {

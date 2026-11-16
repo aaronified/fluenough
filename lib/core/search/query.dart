@@ -51,21 +51,18 @@ const List<String> cultureStatusSlugs = <String>['done', 'todo'];
 final RegExp _yearValue = RegExp(r'^(-?\d{1,4})(?:-(-?\d{1,4}))?$');
 
 /// Whether [value] is a whole value of [token].
-bool isWholeTokenValue(
-  SearchToken token,
-  String value,
-  Set<String> themes,
-) => switch (token) {
-  SearchToken.kind =>
-    SearchKind.values.any((k) => k.slug == value) ||
-        cultureKindSlugs.contains(value),
-  SearchToken.status =>
-    CardStatus.values.any((s) => s.slug == value) ||
-        cultureStatusSlugs.contains(value),
-  SearchToken.theme => themes.contains(value),
-  SearchToken.creator => value.isNotEmpty,
-  SearchToken.year => _yearValue.hasMatch(value),
-};
+bool isWholeTokenValue(SearchToken token, String value, Set<String> themes) =>
+    switch (token) {
+      SearchToken.kind =>
+        SearchKind.values.any((k) => k.slug == value) ||
+            cultureKindSlugs.contains(value),
+      SearchToken.status =>
+        CardStatus.values.any((s) => s.slug == value) ||
+            cultureStatusSlugs.contains(value),
+      SearchToken.theme => themes.contains(value),
+      SearchToken.creator => value.isNotEmpty,
+      SearchToken.year => _yearValue.hasMatch(value),
+    };
 
 /// Whether the chip [token]:[value] narrows the culture part of the search.
 bool isCultureChip(SearchToken token, String value) => switch (token) {
@@ -138,10 +135,7 @@ class CultureFilter {
   final bool? done;
 
   bool get isEmpty =>
-      kind == null &&
-      creator == null &&
-      yearFrom == null &&
-      done == null;
+      kind == null && creator == null && yearFrom == null && done == null;
 }
 
 /// A card's one status, in the order the first that holds wins (owner,

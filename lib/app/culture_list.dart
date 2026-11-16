@@ -74,9 +74,9 @@ extension CultureListState on AppState {
       final words = searchWords(query);
       bool matches(Iterable<String?> fields) {
         if (words.isEmpty) return true;
-        final haystack = foldForSearch(<String>[
-          for (final field in fields) ?field,
-        ].join(' '));
+        final haystack = foldForSearch(
+          <String>[for (final field in fields) ?field].join(' '),
+        );
         return words.every(haystack.contains);
       }
 
@@ -144,17 +144,18 @@ extension CultureListState on AppState {
         if (decks.isNotEmpty) CultureListSection(decks: decks),
         for (final medium in RecommendationMedium.values)
           if (<Recommendation>[
-            for (final work in works ?? const <Recommendation>[])
-              if (work.medium == medium &&
-                  workAllowed(work) &&
-                  matches(<String?>[
-                    work.title,
-                    work.titleReading,
-                    mediumName(medium),
-                    work.year?.toString(),
-                  ]))
-                work,
-          ] case final found when found.isNotEmpty)
+                for (final work in works ?? const <Recommendation>[])
+                  if (work.medium == medium &&
+                      workAllowed(work) &&
+                      matches(<String?>[
+                        work.title,
+                        work.titleReading,
+                        mediumName(medium),
+                        work.year?.toString(),
+                      ]))
+                    work,
+              ]
+              case final found when found.isNotEmpty)
             CultureListSection(medium: medium, works: found),
       ];
     } on Object catch (error, stack) {

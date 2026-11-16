@@ -89,10 +89,8 @@ Finder _header(String name, int count) =>
     find.text(_l10n.decksCultureHeader(name, count));
 
 /// The tab called [label] of the strip of tabs.
-Finder _tab(String label) => find.descendant(
-  of: find.byType(TabBar),
-  matching: find.text(label),
-);
+Finder _tab(String label) =>
+    find.descendant(of: find.byType(TabBar), matching: find.text(label));
 
 Future<void> _openTab(WidgetTester tester, String label) async {
   await tester.ensureVisible(_tab(label).first);
@@ -315,9 +313,7 @@ void main() {
         expect(_header(_l10n.recKindFilms, 1), findsOneWidget);
       });
 
-      testWidgets('kind:proverb lists the proverbs decks only', (
-        tester,
-      ) async {
+      testWidgets('kind:proverb lists the proverbs decks only', (tester) async {
         await chip(tester, 'kind:proverb ');
         expect(find.text('Proverbs: place'), findsOneWidget);
         expect(find.text('Culture: verse'), findsNothing);

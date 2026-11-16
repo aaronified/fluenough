@@ -471,11 +471,8 @@ class _DecksPageState extends State<DecksPage> {
               for (final theme in courseThemes(state, code))
                 (theme.id, theme.name, null),
           ],
-          SearchToken.creator || SearchToken.year => <(
-            String,
-            String,
-            String?,
-          )>[],
+          SearchToken.creator ||
+          SearchToken.year => <(String, String, String?)>[],
         },
       ];
       return SearchMenu(

@@ -94,8 +94,7 @@ class CompletedWorksCard extends StatelessWidget {
             ],
             TextButton(
               style: AppButtonStyles.inline(context),
-              onPressed: () =>
-                  AppNavigator.openCultureList(context, language),
+              onPressed: () => AppNavigator.openCultureList(context, language),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
@@ -132,11 +131,8 @@ class _Cover extends StatelessWidget {
       // hint-ok: shows text
       child: InkWell(
         borderRadius: BorderRadius.circular(AppRadii.field),
-        onTap: () => AppNavigator.openCultureList(
-          context,
-          language,
-          openId: work.id,
-        ),
+        onTap: () =>
+            AppNavigator.openCultureList(context, language, openId: work.id),
         child: SizedBox(
           width: 84,
           child: Padding(
