@@ -138,51 +138,24 @@ units:
     words: 18
   - decks: ["sa-directions", "sa-directions-sentences"]
     words: 8
-  - planned: { id: "sa-food", theme: "food", words: 24 }
-    listening_passages:
-      - { id: "food-heard", text: { "en": "A short passage in Classical Sanskrit on the theme food and drink, read aloud" } }
-    reading_passages:
-      - { id: "food-text", text: { "en": "A short written text in Classical Sanskrit on the theme food and drink" } }
-  - planned: { id: "sa-animals", theme: "animals", words: 24 }
-    listening_passages:
-      - { id: "animals-heard", text: { "en": "A short passage in Classical Sanskrit on the theme the animals of the fables, read aloud" } }
-    reading_passages:
-      - { id: "animals-text", text: { "en": "A short written text in Classical Sanskrit on the theme the animals of the fables" } }
-  - planned: { id: "sa-home", theme: "home", words: 12 }
-    listening_passages:
-      - { id: "home-heard", text: { "en": "A short passage in Classical Sanskrit on the theme house and village, read aloud" } }
-    reading_passages:
-      - { id: "home-text", text: { "en": "A short written text in Classical Sanskrit on the theme house and village" } }
-  - planned: { id: "sa-places", theme: "places", words: 20 }
-    listening_passages:
-      - { id: "places-heard", text: { "en": "A short passage in Classical Sanskrit on the theme places, read aloud" } }
-    reading_passages:
-      - { id: "places-text", text: { "en": "A short written text in Classical Sanskrit on the theme places" } }
-  - planned: { id: "sa-clothes", theme: "clothes", words: 15 }
-    listening_passages:
-      - { id: "clothes-heard", text: { "en": "A short passage in Classical Sanskrit on the theme clothes, read aloud" } }
-    reading_passages:
-      - { id: "clothes-text", text: { "en": "A short written text in Classical Sanskrit on the theme clothes" } }
-  - planned: { id: "sa-things", theme: "things", words: 20 }
-    listening_passages:
-      - { id: "things-heard", text: { "en": "A short passage in Classical Sanskrit on the theme things, read aloud" } }
-    reading_passages:
-      - { id: "things-text", text: { "en": "A short written text in Classical Sanskrit on the theme things" } }
-  - planned: { id: "sa-ritual", theme: "ritual", words: 24 }
-    listening_passages:
-      - { id: "ritual-heard", text: { "en": "A short passage in Classical Sanskrit on the theme gods, ritual and worship, read aloud" } }
-    reading_passages:
-      - { id: "ritual-text", text: { "en": "A short written text in Classical Sanskrit on the theme gods, ritual and worship" } }
-  - planned: { id: "sa-learning", theme: "learning", words: 18 }
-    listening_passages:
-      - { id: "learning-heard", text: { "en": "A short passage in Classical Sanskrit on the theme learning, teachers and texts, read aloud" } }
-    reading_passages:
-      - { id: "learning-text", text: { "en": "A short written text in Classical Sanskrit on the theme learning, teachers and texts" } }
-  - planned: { id: "sa-work", theme: "work", words: 11 }
-    listening_passages:
-      - { id: "work-heard", text: { "en": "A short passage in Classical Sanskrit on the theme work and trades, read aloud" } }
-    reading_passages:
-      - { id: "work-text", text: { "en": "A short written text in Classical Sanskrit on the theme work and trades" } }
+  - decks: ["sa-food"]
+    words: 24
+  - decks: ["sa-animals"]
+    words: 24
+  - decks: ["sa-home"]
+    words: 12
+  - decks: ["sa-places"]
+    words: 20
+  - decks: ["sa-clothes"]
+    words: 15
+  - decks: ["sa-things"]
+    words: 20
+  - decks: ["sa-ritual"]
+    words: 24
+  - decks: ["sa-learning"]
+    words: 18
+  - decks: ["sa-work"]
+    words: 12
     milestone: "A1"
   - planned: { id: "sa-grammar-karakas", grammar: ["karaka"] }
     listening_passages:

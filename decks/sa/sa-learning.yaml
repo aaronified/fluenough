@@ -1,0 +1,495 @@
+schema: 1
+id: "sa-learning"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "learning"
+tags: ["unreviewed"]
+cards:
+  - id: "sa-1839"
+    target: "शिक्षा"
+    reading: "śikṣā"
+    ipa: "ʃikʂaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "शिक्षा", base: "शिक्षा", reading: "śikṣā" }
+    examples:
+      - target: "शिक्षा उत्तमा"
+        reading: "śikṣā uttamā"
+        ipa: "ʃikʂaː ut̪t̪əmaː"
+        bases:
+          - { word: "शिक्षा", base: "शिक्षा", reading: "śikṣā" }
+          - { word: "उत्तमा", base: "उत्तम", reading: "uttama" }
+      - target: "विद्यालये शिक्षा अस्ति"
+        reading: "vidyālaye śikṣā asti"
+        ipa: "ʋid̪jaːləjeː ʃikʂaː əst̪i"
+        bases:
+          - { word: "विद्यालये", base: "विद्यालय", reading: "vidyālaya" }
+          - { word: "शिक्षा", base: "शिक्षा", reading: "śikṣā" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1840"
+    target: "अध्यापकः"
+    reading: "adhyāpakaḥ"
+    ipa: "əd̪ʱjaːpəkəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "अध्यापकः", base: "अध्यापक", reading: "adhyāpaka" }
+    examples:
+      - target: "अध्यापक उत्तमः"
+        reading: "adhyāpaka uttamaḥ"
+        ipa: "əd̪ʱjaːpəkə ut̪t̪əməh"
+        bases:
+          - { word: "अध्यापक", base: "अध्यापक", reading: "adhyāpaka" }
+          - { word: "उत्तमः", base: "उत्तम", reading: "uttama" }
+      - target: "नगरे अध्यापको ऽस्ति"
+        reading: "nagare adhyāpako 'sti"
+        ipa: "nəɡəreː əd̪ʱjaːpəkoː st̪i"
+        bases:
+          - { word: "नगरे", base: "नगर", reading: "nagara" }
+          - { word: "अध्यापको", base: "अध्यापक", reading: "adhyāpaka" }
+          - { word: "ऽस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1841"
+    target: "लिपिः"
+    reading: "lipiḥ"
+    ipa: "lipih"
+    pos: "noun"
+    gender: "f"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "लिपिः", base: "लिपि", reading: "lipi" }
+    examples:
+      - target: "लिपिः प्राचीना"
+        reading: "lipiḥ prācīnā"
+        ipa: "lipih praːtʃiːnaː"
+        bases:
+          - { word: "लिपिः", base: "लिपि", reading: "lipi" }
+          - { word: "प्राचीना", base: "प्राचीन", reading: "prācīna" }
+      - target: "विद्यालये लिपिर् अस्ति"
+        reading: "vidyālaye lipir asti"
+        ipa: "ʋid̪jaːləjeː lipir əst̪i"
+        bases:
+          - { word: "विद्यालये", base: "विद्यालय", reading: "vidyālaya" }
+          - { word: "लिपिर्", base: "लिपि", reading: "lipi" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1842"
+    target: "वर्णः"
+    reading: "varṇaḥ"
+    ipa: "ʋərɳəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "वर्णः", base: "वर्ण", reading: "varṇa" }
+    examples:
+      - target: "वर्णः शुद्धः"
+        reading: "varṇaḥ śuddhaḥ"
+        ipa: "ʋərɳəh ʃud̪d̪ʱəh"
+        bases:
+          - { word: "वर्णः", base: "वर्ण", reading: "varṇa" }
+          - { word: "शुद्धः", base: "शुद्ध", reading: "śuddha" }
+      - target: "ग्रामे वर्णो ऽस्ति"
+        reading: "grāme varṇo 'sti"
+        ipa: "ɡraːmeː ʋərɳoː st̪i"
+        bases:
+          - { word: "ग्रामे", base: "ग्राम", reading: "grāma" }
+          - { word: "वर्णो", base: "वर्ण", reading: "varṇa" }
+          - { word: "ऽस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1843"
+    target: "स्वरः"
+    reading: "svaraḥ"
+    ipa: "sʋərəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "स्वरः", base: "स्वर", reading: "svara" }
+    examples:
+      - target: "स्वरो मधुरः"
+        reading: "svaro madhuraḥ"
+        ipa: "sʋəroː məd̪ʱurəh"
+        bases:
+          - { word: "स्वरो", base: "स्वर", reading: "svara" }
+          - { word: "मधुरः", base: "मधुर", reading: "madhura" }
+      - target: "आश्रमे स्वरो ऽस्ति"
+        reading: "āśrame svaro 'sti"
+        ipa: "aːʃrəmeː sʋəroː st̪i"
+        bases:
+          - { word: "आश्रमे", base: "आश्रम", reading: "āśrama" }
+          - { word: "स्वरो", base: "स्वर", reading: "svara" }
+          - { word: "ऽस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1844"
+    target: "पदम्"
+    reading: "padam"
+    ipa: "pəd̪əm"
+    pos: "noun"
+    gender: "n"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "पदम्", base: "पद", reading: "pada" }
+    examples:
+      - target: "पदं सरलम्"
+        reading: "padaṃ saralam"
+        ipa: "pəd̪əm sərələm"
+        bases:
+          - { word: "पदं", base: "पद", reading: "pada" }
+          - { word: "सरलम्", base: "सरल", reading: "sarala" }
+      - target: "विद्यालये पदम् अस्ति"
+        reading: "vidyālaye padam asti"
+        ipa: "ʋid̪jaːləjeː pəd̪əm əst̪i"
+        bases:
+          - { word: "विद्यालये", base: "विद्यालय", reading: "vidyālaya" }
+          - { word: "पदम्", base: "पद", reading: "pada" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1845"
+    target: "वाक्यम्"
+    reading: "vākyam"
+    ipa: "ʋaːkjəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "वाक्यम्", base: "वाक्य", reading: "vākya" }
+    examples:
+      - target: "वाक्यं सरलम्"
+        reading: "vākyaṃ saralam"
+        ipa: "ʋaːkjəm sərələm"
+        bases:
+          - { word: "वाक्यं", base: "वाक्य", reading: "vākya" }
+          - { word: "सरलम्", base: "सरल", reading: "sarala" }
+      - target: "नगरे वाक्यम् अस्ति"
+        reading: "nagare vākyam asti"
+        ipa: "nəɡəreː ʋaːkjəm əst̪i"
+        bases:
+          - { word: "नगरे", base: "नगर", reading: "nagara" }
+          - { word: "वाक्यम्", base: "वाक्य", reading: "vākya" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1846"
+    target: "अर्थः"
+    reading: "arthaḥ"
+    ipa: "ərt̪ʰəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "अर्थः", base: "अर्थ", reading: "artha" }
+    examples:
+      - target: "अर्थो गभीरः"
+        reading: "artho gabhīraḥ"
+        ipa: "ərt̪ʰoː ɡəbʱiːrəh"
+        bases:
+          - { word: "अर्थो", base: "अर्थ", reading: "artha" }
+          - { word: "गभीरः", base: "गभीर", reading: "gabhīra" }
+      - target: "वाक्ये अर्थो ऽस्ति"
+        reading: "vākye artho 'sti"
+        ipa: "ʋaːkjeː ərt̪ʰoː st̪i"
+        bases:
+          - { word: "वाक्ये", base: "वाक्य", reading: "vākya" }
+          - { word: "अर्थो", base: "अर्थ", reading: "artha" }
+          - { word: "ऽस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1847"
+    target: "शब्दः"
+    reading: "śabdaḥ"
+    ipa: "ʃəbd̪əh"
+    pos: "noun"
+    gender: "m"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "शब्दः", base: "शब्द", reading: "śabda" }
+    examples:
+      - target: "शब्दो मधुरः"
+        reading: "śabdo madhuraḥ"
+        ipa: "ʃəbd̪oː məd̪ʱurəh"
+        bases:
+          - { word: "शब्दो", base: "शब्द", reading: "śabda" }
+          - { word: "मधुरः", base: "मधुर", reading: "madhura" }
+      - target: "आश्रमे शब्दो ऽस्ति"
+        reading: "āśrame śabdo 'sti"
+        ipa: "aːʃrəmeː ʃəbd̪oː st̪i"
+        bases:
+          - { word: "आश्रमे", base: "आश्रम", reading: "āśrama" }
+          - { word: "शब्दो", base: "शब्द", reading: "śabda" }
+          - { word: "ऽस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1848"
+    target: "प्रश्नः"
+    reading: "praśnaḥ"
+    ipa: "prəʃnəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "प्रश्नः", base: "प्रश्न", reading: "praśna" }
+    examples:
+      - target: "प्रश्नः कठिनः"
+        reading: "praśnaḥ kaṭhinaḥ"
+        ipa: "prəʃnəh kəʈʰinəh"
+        bases:
+          - { word: "प्रश्नः", base: "प्रश्न", reading: "praśna" }
+          - { word: "कठिनः", base: "कठिन", reading: "kaṭhina" }
+      - target: "विद्यालये प्रश्नो ऽस्ति"
+        reading: "vidyālaye praśno 'sti"
+        ipa: "ʋid̪jaːləjeː prəʃnoː st̪i"
+        bases:
+          - { word: "विद्यालये", base: "विद्यालय", reading: "vidyālaya" }
+          - { word: "प्रश्नो", base: "प्रश्न", reading: "praśna" }
+          - { word: "ऽस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1849"
+    target: "ज्ञानम्"
+    reading: "jñānam"
+    ipa: "dʒɲaːnəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "ज्ञानम्", base: "ज्ञान", reading: "jñāna" }
+    examples:
+      - target: "ज्ञानं शुद्धम्"
+        reading: "jñānaṃ śuddham"
+        ipa: "dʒɲaːnəm ʃud̪d̪ʱəm"
+        bases:
+          - { word: "ज्ञानं", base: "ज्ञान", reading: "jñāna" }
+          - { word: "शुद्धम्", base: "शुद्ध", reading: "śuddha" }
+      - target: "आश्रमे ज्ञानम् अस्ति"
+        reading: "āśrame jñānam asti"
+        ipa: "aːʃrəmeː dʒɲaːnəm əst̪i"
+        bases:
+          - { word: "आश्रमे", base: "आश्रम", reading: "āśrama" }
+          - { word: "ज्ञानम्", base: "ज्ञान", reading: "jñāna" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1850"
+    target: "व्याकरणम्"
+    reading: "vyākaraṇam"
+    ipa: "ʋjaːkərəɳəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "व्याकरणम्", base: "व्याकरण", reading: "vyākaraṇa" }
+    examples:
+      - target: "व्याकरणं कठिनम्"
+        reading: "vyākaraṇaṃ kaṭhinam"
+        ipa: "ʋjaːkərəɳəm kəʈʰinəm"
+        bases:
+          - { word: "व्याकरणं", base: "व्याकरण", reading: "vyākaraṇa" }
+          - { word: "कठिनम्", base: "कठिन", reading: "kaṭhina" }
+      - target: "नगरे व्याकरणम् अस्ति"
+        reading: "nagare vyākaraṇam asti"
+        ipa: "nəɡəreː ʋjaːkərəɳəm əst̪i"
+        bases:
+          - { word: "नगरे", base: "नगर", reading: "nagara" }
+          - { word: "व्याकरणम्", base: "व्याकरण", reading: "vyākaraṇa" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1851"
+    target: "उदाहरणम्"
+    reading: "udāharaṇam"
+    ipa: "ud̪aːɦərəɳəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "उदाहरणम्", base: "उदाहरण", reading: "udāharaṇa" }
+    examples:
+      - target: "उदाहरणं सरलम्"
+        reading: "udāharaṇaṃ saralam"
+        ipa: "ud̪aːɦərəɳəm sərələm"
+        bases:
+          - { word: "उदाहरणं", base: "उदाहरण", reading: "udāharaṇa" }
+          - { word: "सरलम्", base: "सरल", reading: "sarala" }
+      - target: "वाक्ये उदाहरणम् अस्ति"
+        reading: "vākye udāharaṇam asti"
+        ipa: "ʋaːkjeː ud̪aːɦərəɳəm əst̪i"
+        bases:
+          - { word: "वाक्ये", base: "वाक्य", reading: "vākya" }
+          - { word: "उदाहरणम्", base: "उदाहरण", reading: "udāharaṇa" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1852"
+    target: "परीक्षा"
+    reading: "parīkṣā"
+    ipa: "pəriːkʂaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "परीक्षा", base: "परीक्षा", reading: "parīkṣā" }
+    examples:
+      - target: "परीक्षा कठिना"
+        reading: "parīkṣā kaṭhinā"
+        ipa: "pəriːkʂaː kəʈʰinaː"
+        bases:
+          - { word: "परीक्षा", base: "परीक्षा", reading: "parīkṣā" }
+          - { word: "कठिना", base: "कठिन", reading: "kaṭhina" }
+      - target: "विद्यालये परीक्षा अस्ति"
+        reading: "vidyālaye parīkṣā asti"
+        ipa: "ʋid̪jaːləjeː pəriːkʂaː əst̪i"
+        bases:
+          - { word: "विद्यालये", base: "विद्यालय", reading: "vidyālaya" }
+          - { word: "परीक्षा", base: "परीक्षा", reading: "parīkṣā" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1853"
+    target: "कथा"
+    reading: "kathā"
+    ipa: "kət̪ʰaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "कथा", base: "कथा", reading: "kathā" }
+    examples:
+      - target: "कथा सुन्दरा"
+        reading: "kathā sundarā"
+        ipa: "kət̪ʰaː sund̪əraː"
+        bases:
+          - { word: "कथा", base: "कथा", reading: "kathā" }
+          - { word: "सुन्दरा", base: "सुन्दर", reading: "sundara" }
+      - target: "ग्रामे कथा अस्ति"
+        reading: "grāme kathā asti"
+        ipa: "ɡraːmeː kət̪ʰaː əst̪i"
+        bases:
+          - { word: "ग्रामे", base: "ग्राम", reading: "grāma" }
+          - { word: "कथा", base: "कथा", reading: "kathā" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1854"
+    target: "विषयः"
+    reading: "viṣayaḥ"
+    ipa: "ʋiʂəjəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "विषयः", base: "विषय", reading: "viṣaya" }
+    examples:
+      - target: "विषयो विशालः"
+        reading: "viṣayo viśālaḥ"
+        ipa: "ʋiʂəjoː ʋiʃaːləh"
+        bases:
+          - { word: "विषयो", base: "विषय", reading: "viṣaya" }
+          - { word: "विशालः", base: "विशाल", reading: "viśāla" }
+      - target: "नगरे विषयो ऽस्ति"
+        reading: "nagare viṣayo 'sti"
+        ipa: "nəɡəreː ʋiʂəjoː st̪i"
+        bases:
+          - { word: "नगरे", base: "नगर", reading: "nagara" }
+          - { word: "विषयो", base: "विषय", reading: "viṣaya" }
+          - { word: "ऽस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1855"
+    target: "मात्रा"
+    reading: "mātrā"
+    ipa: "maːt̪raː"
+    pos: "noun"
+    gender: "f"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "मात्रा", base: "मात्रा", reading: "mātrā" }
+    examples:
+      - target: "मात्रा दीर्घा"
+        reading: "mātrā dīrghā"
+        ipa: "maːt̪raː d̪iːrɡʱaː"
+        bases:
+          - { word: "मात्रा", base: "मात्रा", reading: "mātrā" }
+          - { word: "दीर्घा", base: "दीर्घ", reading: "dīrgha" }
+      - target: "वाक्ये मात्रा अस्ति"
+        reading: "vākye mātrā asti"
+        ipa: "ʋaːkjeː maːt̪raː əst̪i"
+        bases:
+          - { word: "वाक्ये", base: "वाक्य", reading: "vākya" }
+          - { word: "मात्रा", base: "मात्रा", reading: "mātrā" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1856"
+    target: "वाचनम्"
+    reading: "vācanam"
+    ipa: "ʋaːtʃənəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["learning"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "वाचनम्", base: "वाचन", reading: "vācana" }
+    examples:
+      - target: "वाचनं शुभम्"
+        reading: "vācanaṃ śubham"
+        ipa: "ʋaːtʃənəm ʃubʱəm"
+        bases:
+          - { word: "वाचनं", base: "वाचन", reading: "vācana" }
+          - { word: "शुभम्", base: "शुभ", reading: "śubha" }
+      - target: "मन्दिरे वाचनम् अस्ति"
+        reading: "mandire vācanam asti"
+        ipa: "mənd̪ireː ʋaːtʃənəm əst̪i"
+        bases:
+          - { word: "मन्दिरे", base: "मन्दिर", reading: "mandira" }
+          - { word: "वाचनम्", base: "वाचन", reading: "vācana" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
