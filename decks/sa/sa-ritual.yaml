@@ -1,0 +1,657 @@
+schema: 1
+id: "sa-ritual"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+theme: "ritual"
+tags: ["unreviewed"]
+cards:
+  - id: "sa-1815"
+    target: "यज्ञः"
+    reading: "yajñaḥ"
+    ipa: "jədʒɲəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["ritual"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "यज्ञः", base: "यज्ञ", reading: "yajña" }
+    examples:
+      - target: "यज्ञः शुभः"
+        reading: "yajñaḥ śubhaḥ"
+        ipa: "jədʒɲəh ʃubʱəh"
+        bases:
+          - { word: "यज्ञः", base: "यज्ञ", reading: "yajña" }
+          - { word: "शुभः", base: "शुभ", reading: "śubha" }
+      - target: "आश्रमे यज्ञः अस्ति"
+        reading: "āśrame yajñaḥ asti"
+        ipa: "aːʃrəmeː jədʒɲəh əst̪i"
+        bases:
+          - { word: "आश्रमे", base: "आश्रम", reading: "āśrama" }
+          - { word: "यज्ञः", base: "यज्ञ", reading: "yajña" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1816"
+    target: "मन्त्रः"
+    reading: "mantraḥ"
+    ipa: "mənt̪rəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["ritual"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "मन्त्रः", base: "मन्त्र", reading: "mantra" }
+    examples:
+      - target: "मन्त्रः सत्यः"
+        reading: "mantraḥ satyaḥ"
+        ipa: "mənt̪rəh sət̪jəh"
+        bases:
+          - { word: "मन्त्रः", base: "मन्त्र", reading: "mantra" }
+          - { word: "सत्यः", base: "सत्य", reading: "satya" }
+      - target: "मन्दिरे मन्त्रः अस्ति"
+        reading: "mandire mantraḥ asti"
+        ipa: "mənd̪ireː mənt̪rəh əst̪i"
+        bases:
+          - { word: "मन्दिरे", base: "मन्दिर", reading: "mandira" }
+          - { word: "मन्त्रः", base: "मन्त्र", reading: "mantra" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1817"
+    target: "होमः"
+    reading: "homaḥ"
+    ipa: "ɦoːməh"
+    pos: "noun"
+    gender: "m"
+    tags: ["ritual"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "होमः", base: "होम", reading: "homa" }
+    examples:
+      - target: "होमः पवित्रः"
+        reading: "homaḥ pavitraḥ"
+        ipa: "ɦoːməh pəʋit̪rəh"
+        bases:
+          - { word: "होमः", base: "होम", reading: "homa" }
+          - { word: "पवित्रः", base: "पवित्र", reading: "pavitra" }
+      - target: "तीर्थे होमः अस्ति"
+        reading: "tīrthe homaḥ asti"
+        ipa: "t̪iːrt̪ʰeː ɦoːməh əst̪i"
+        bases:
+          - { word: "तीर्थे", base: "तीर्थ", reading: "tīrtha" }
+          - { word: "होमः", base: "होम", reading: "homa" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1818"
+    target: "पूजा"
+    reading: "pūjā"
+    ipa: "puːdʒaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["ritual"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "पूजा", base: "पूजा", reading: "pūjā" }
+    examples:
+      - target: "पूजा शुभा"
+        reading: "pūjā śubhā"
+        ipa: "puːdʒaː ʃubʱaː"
+        bases:
+          - { word: "पूजा", base: "पूजा", reading: "pūjā" }
+          - { word: "शुभा", base: "शुभ", reading: "śubha" }
+      - target: "मन्दिरे पूजा अस्ति"
+        reading: "mandire pūjā asti"
+        ipa: "mənd̪ireː puːdʒaː əst̪i"
+        bases:
+          - { word: "मन्दिरे", base: "मन्दिर", reading: "mandira" }
+          - { word: "पूजा", base: "पूजा", reading: "pūjā" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1819"
+    target: "कलशः"
+    reading: "kalaśaḥ"
+    ipa: "kələʃəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["ritual"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "कलशः", base: "कलश", reading: "kalaśa" }
+    examples:
+      - target: "कलशः शुद्धः"
+        reading: "kalaśaḥ śuddhaḥ"
+        ipa: "kələʃəh ʃud̪d̪ʱəh"
+        bases:
+          - { word: "कलशः", base: "कलश", reading: "kalaśa" }
+          - { word: "शुद्धः", base: "शुद्ध", reading: "śuddha" }
+      - target: "मन्दिरे कलशः अस्ति"
+        reading: "mandire kalaśaḥ asti"
+        ipa: "mənd̪ireː kələʃəh əst̪i"
+        bases:
+          - { word: "मन्दिरे", base: "मन्दिर", reading: "mandira" }
+          - { word: "कलशः", base: "कलश", reading: "kalaśa" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1820"
+    target: "ऋषिः"
+    reading: "ṛṣiḥ"
+    ipa: "r̩ʂih"
+    pos: "noun"
+    gender: "m"
+    tags: ["ritual"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "ऋषिः", base: "ऋषि", reading: "ṛṣi" }
+    examples:
+      - target: "ऋषिः प्राचीनः"
+        reading: "ṛṣiḥ prācīnaḥ"
+        ipa: "r̩ʂih praːtʃiːnəh"
+        bases:
+          - { word: "ऋषिः", base: "ऋषि", reading: "ṛṣi" }
+          - { word: "प्राचीनः", base: "प्राचीन", reading: "prācīna" }
+      - target: "वने ऋषिः अस्ति"
+        reading: "vane ṛṣiḥ asti"
+        ipa: "ʋəneː r̩ʂih əst̪i"
+        bases:
+          - { word: "वने", base: "वन", reading: "vana" }
+          - { word: "ऋषिः", base: "ऋषि", reading: "ṛṣi" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1821"
+    target: "स्तोत्रम्"
+    reading: "stotram"
+    ipa: "st̪oːt̪rəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["ritual"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "स्तोत्रम्", base: "स्तोत्र", reading: "stotra" }
+    examples:
+      - target: "स्तोत्रं मधुरम्"
+        reading: "stotraṃ madhuram"
+        ipa: "st̪oːt̪rəm məd̪ʱurəm"
+        bases:
+          - { word: "स्तोत्रं", base: "स्तोत्र", reading: "stotra" }
+          - { word: "मधुरम्", base: "मधुर", reading: "madhura" }
+      - target: "आश्रमे स्तोत्रम् अस्ति"
+        reading: "āśrame stotram asti"
+        ipa: "aːʃrəmeː st̪oːt̪rəm əst̪i"
+        bases:
+          - { word: "आश्रमे", base: "आश्रम", reading: "āśrama" }
+          - { word: "स्तोत्रम्", base: "स्तोत्र", reading: "stotra" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1822"
+    target: "स्वर्गः"
+    reading: "svargaḥ"
+    ipa: "sʋərɡəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["ritual"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "स्वर्गः", base: "स्वर्ग", reading: "svarga" }
+    examples:
+      - target: "स्वर्गः सुन्दरः"
+        reading: "svargaḥ sundaraḥ"
+        ipa: "sʋərɡəh sund̪ərəh"
+        bases:
+          - { word: "स्वर्गः", base: "स्वर्ग", reading: "svarga" }
+          - { word: "सुन्दरः", base: "सुन्दर", reading: "sundara" }
+      - target: "पर्वते स्वर्गः अस्ति"
+        reading: "parvate svargaḥ asti"
+        ipa: "pərʋət̪eː sʋərɡəh əst̪i"
+        bases:
+          - { word: "पर्वते", base: "पर्वत", reading: "parvata" }
+          - { word: "स्वर्गः", base: "स्वर्ग", reading: "svarga" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1823"
+    target: "नरकः"
+    reading: "narakaḥ"
+    ipa: "nərəkəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["ritual"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "नरकः", base: "नरक", reading: "naraka" }
+    examples:
+      - target: "नरकः श्यामः"
+        reading: "narakaḥ śyāmaḥ"
+        ipa: "nərəkəh ʃjaːməh"
+        bases:
+          - { word: "नरकः", base: "नरक", reading: "naraka" }
+          - { word: "श्यामः", base: "श्याम", reading: "śyāma" }
+      - target: "गुहायाम् नरकः अस्ति"
+        reading: "guhāyām narakaḥ asti"
+        ipa: "ɡuɦaːjaːm nərəkəh əst̪i"
+        bases:
+          - { word: "गुहायाम्", base: "गुहा", reading: "guhā" }
+          - { word: "नरकः", base: "नरक", reading: "naraka" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1824"
+    target: "मोक्षः"
+    reading: "mokṣaḥ"
+    ipa: "moːkʂəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["ritual"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "मोक्षः", base: "मोक्ष", reading: "mokṣa" }
+    examples:
+      - target: "मोक्षः उत्तमः"
+        reading: "mokṣaḥ uttamaḥ"
+        ipa: "moːkʂəh ut̪t̪əməh"
+        bases:
+          - { word: "मोक्षः", base: "मोक्ष", reading: "mokṣa" }
+          - { word: "उत्तमः", base: "उत्तम", reading: "uttama" }
+      - target: "आश्रमे मोक्षः अस्ति"
+        reading: "āśrame mokṣaḥ asti"
+        ipa: "aːʃrəmeː moːkʂəh əst̪i"
+        bases:
+          - { word: "आश्रमे", base: "आश्रम", reading: "āśrama" }
+          - { word: "मोक्षः", base: "मोक्ष", reading: "mokṣa" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1825"
+    target: "ध्यानम्"
+    reading: "dhyānam"
+    ipa: "d̪ʱjaːnəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["ritual"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "ध्यानम्", base: "ध्यान", reading: "dhyāna" }
+    examples:
+      - target: "ध्यानं शान्तम्"
+        reading: "dhyānaṃ śāntam"
+        ipa: "d̪ʱjaːnəm ʃaːnt̪əm"
+        bases:
+          - { word: "ध्यानं", base: "ध्यान", reading: "dhyāna" }
+          - { word: "शान्तम्", base: "शान्त", reading: "śānta" }
+      - target: "वने ध्यानम् अस्ति"
+        reading: "vane dhyānam asti"
+        ipa: "ʋəneː d̪ʱjaːnəm əst̪i"
+        bases:
+          - { word: "वने", base: "वन", reading: "vana" }
+          - { word: "ध्यानम्", base: "ध्यान", reading: "dhyāna" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1826"
+    target: "प्रार्थना"
+    reading: "prārthanā"
+    ipa: "praːrt̪ʰənaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["ritual"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "प्रार्थना", base: "प्रार्थना", reading: "prārthanā" }
+    examples:
+      - target: "प्रार्थना शुभा"
+        reading: "prārthanā śubhā"
+        ipa: "praːrt̪ʰənaː ʃubʱaː"
+        bases:
+          - { word: "प्रार्थना", base: "प्रार्थना", reading: "prārthanā" }
+          - { word: "शुभा", base: "शुभ", reading: "śubha" }
+      - target: "मन्दिरे प्रार्थना अस्ति"
+        reading: "mandire prārthanā asti"
+        ipa: "mənd̪ireː praːrt̪ʰənaː əst̪i"
+        bases:
+          - { word: "मन्दिरे", base: "मन्दिर", reading: "mandira" }
+          - { word: "प्रार्थना", base: "प्रार्थना", reading: "prārthanā" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1827"
+    target: "उपवासः"
+    reading: "upavāsaḥ"
+    ipa: "upəʋaːsəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["ritual"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "उपवासः", base: "उपवास", reading: "upavāsa" }
+    examples:
+      - target: "उपवासः कठिनः"
+        reading: "upavāsaḥ kaṭhinaḥ"
+        ipa: "upəʋaːsəh kəʈʰinəh"
+        bases:
+          - { word: "उपवासः", base: "उपवास", reading: "upavāsa" }
+          - { word: "कठिनः", base: "कठिन", reading: "kaṭhina" }
+      - target: "आश्रमे उपवासः अस्ति"
+        reading: "āśrame upavāsaḥ asti"
+        ipa: "aːʃrəmeː upəʋaːsəh əst̪i"
+        bases:
+          - { word: "आश्रमे", base: "आश्रम", reading: "āśrama" }
+          - { word: "उपवासः", base: "उपवास", reading: "upavāsa" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1828"
+    target: "व्रतम्"
+    reading: "vratam"
+    ipa: "ʋrət̪əm"
+    pos: "noun"
+    gender: "n"
+    tags: ["ritual"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "व्रतम्", base: "व्रत", reading: "vrata" }
+    examples:
+      - target: "व्रतं कठिनम्"
+        reading: "vrataṃ kaṭhinam"
+        ipa: "ʋrət̪əm kəʈʰinəm"
+        bases:
+          - { word: "व्रतं", base: "व्रत", reading: "vrata" }
+          - { word: "कठिनम्", base: "कठिन", reading: "kaṭhina" }
+      - target: "आश्रमे व्रतम् अस्ति"
+        reading: "āśrame vratam asti"
+        ipa: "aːʃrəmeː ʋrət̪əm əst̪i"
+        bases:
+          - { word: "आश्रमे", base: "आश्रम", reading: "āśrama" }
+          - { word: "व्रतम्", base: "व्रत", reading: "vrata" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1829"
+    target: "नमस्कारः"
+    reading: "namaskāraḥ"
+    ipa: "nəməskaːrəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["ritual"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "नमस्कारः", base: "नमस्कार", reading: "namaskāra" }
+    examples:
+      - target: "नमस्कारः शुभः"
+        reading: "namaskāraḥ śubhaḥ"
+        ipa: "nəməskaːrəh ʃubʱəh"
+        bases:
+          - { word: "नमस्कारः", base: "नमस्कार", reading: "namaskāra" }
+          - { word: "शुभः", base: "शुभ", reading: "śubha" }
+      - target: "मन्दिरे नमस्कारः अस्ति"
+        reading: "mandire namaskāraḥ asti"
+        ipa: "mənd̪ireː nəməskaːrəh əst̪i"
+        bases:
+          - { word: "मन्दिरे", base: "मन्दिर", reading: "mandira" }
+          - { word: "नमस्कारः", base: "नमस्कार", reading: "namaskāra" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1830"
+    target: "अभिषेकः"
+    reading: "abhiṣekaḥ"
+    ipa: "əbʱiʂeːkəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["ritual"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "अभिषेकः", base: "अभिषेक", reading: "abhiṣeka" }
+    examples:
+      - target: "अभिषेकः उत्तमः"
+        reading: "abhiṣekaḥ uttamaḥ"
+        ipa: "əbʱiʂeːkəh ut̪t̪əməh"
+        bases:
+          - { word: "अभिषेकः", base: "अभिषेक", reading: "abhiṣeka" }
+          - { word: "उत्तमः", base: "उत्तम", reading: "uttama" }
+      - target: "तीर्थे अभिषेकः अस्ति"
+        reading: "tīrthe abhiṣekaḥ asti"
+        ipa: "t̪iːrt̪ʰeː əbʱiʂeːkəh əst̪i"
+        bases:
+          - { word: "तीर्थे", base: "तीर्थ", reading: "tīrtha" }
+          - { word: "अभिषेकः", base: "अभिषेक", reading: "abhiṣeka" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1831"
+    target: "दीक्षा"
+    reading: "dīkṣā"
+    ipa: "d̪iːkʂaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["ritual"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "दीक्षा", base: "दीक्षा", reading: "dīkṣā" }
+    examples:
+      - target: "दीक्षा शुद्धा"
+        reading: "dīkṣā śuddhā"
+        ipa: "d̪iːkʂaː ʃud̪d̪ʱaː"
+        bases:
+          - { word: "दीक्षा", base: "दीक्षा", reading: "dīkṣā" }
+          - { word: "शुद्धा", base: "शुद्ध", reading: "śuddha" }
+      - target: "आश्रमे दीक्षा अस्ति"
+        reading: "āśrame dīkṣā asti"
+        ipa: "aːʃrəmeː d̪iːkʂaː əst̪i"
+        bases:
+          - { word: "आश्रमे", base: "आश्रम", reading: "āśrama" }
+          - { word: "दीक्षा", base: "दीक्षा", reading: "dīkṣā" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1832"
+    target: "स्नानम्"
+    reading: "snānam"
+    ipa: "snaːnəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["ritual"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "स्नानम्", base: "स्नान", reading: "snāna" }
+    examples:
+      - target: "स्नानं शीतलम्"
+        reading: "snānaṃ śītalam"
+        ipa: "snaːnəm ʃiːt̪ələm"
+        bases:
+          - { word: "स्नानं", base: "स्नान", reading: "snāna" }
+          - { word: "शीतलम्", base: "शीतल", reading: "śītala" }
+      - target: "नद्याम् स्नानम् अस्ति"
+        reading: "nadyām snānam asti"
+        ipa: "nəd̪jaːm snaːnəm əst̪i"
+        bases:
+          - { word: "नद्याम्", base: "नदी", reading: "nadī" }
+          - { word: "स्नानम्", base: "स्नान", reading: "snāna" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1833"
+    target: "चन्दनम्"
+    reading: "candanam"
+    ipa: "tʃənd̪ənəm"
+    pos: "noun"
+    gender: "n"
+    tags: ["ritual"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "चन्दनम्", base: "चन्दन", reading: "candana" }
+    examples:
+      - target: "चन्दनं शुक्लम्"
+        reading: "candanaṃ śuklam"
+        ipa: "tʃənd̪ənəm ʃukləm"
+        bases:
+          - { word: "चन्दनं", base: "चन्दन", reading: "candana" }
+          - { word: "शुक्लम्", base: "शुक्ल", reading: "śukla" }
+      - target: "मन्दिरे चन्दनम् अस्ति"
+        reading: "mandire candanam asti"
+        ipa: "mənd̪ireː tʃənd̪ənəm əst̪i"
+        bases:
+          - { word: "मन्दिरे", base: "मन्दिर", reading: "mandira" }
+          - { word: "चन्दनम्", base: "चन्दन", reading: "candana" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1834"
+    target: "धूपः"
+    reading: "dhūpaḥ"
+    ipa: "d̪ʱuːpəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["ritual"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "धूपः", base: "धूप", reading: "dhūpa" }
+    examples:
+      - target: "धूपः शुद्धः"
+        reading: "dhūpaḥ śuddhaḥ"
+        ipa: "d̪ʱuːpəh ʃud̪d̪ʱəh"
+        bases:
+          - { word: "धूपः", base: "धूप", reading: "dhūpa" }
+          - { word: "शुद्धः", base: "शुद्ध", reading: "śuddha" }
+      - target: "मन्दिरे धूपः अस्ति"
+        reading: "mandire dhūpaḥ asti"
+        ipa: "mənd̪ireː d̪ʱuːpəh əst̪i"
+        bases:
+          - { word: "मन्दिरे", base: "मन्दिर", reading: "mandira" }
+          - { word: "धूपः", base: "धूप", reading: "dhūpa" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1835"
+    target: "तुलसी"
+    reading: "tulasī"
+    ipa: "t̪uləsiː"
+    pos: "noun"
+    gender: "f"
+    tags: ["ritual"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "तुलसी", base: "तुलसी", reading: "tulasī" }
+    examples:
+      - target: "तुलसी शुभा"
+        reading: "tulasī śubhā"
+        ipa: "t̪uləsiː ʃubʱaː"
+        bases:
+          - { word: "तुलसी", base: "तुलसी", reading: "tulasī" }
+          - { word: "शुभा", base: "शुभ", reading: "śubha" }
+      - target: "गृहे तुलसी अस्ति"
+        reading: "gṛhe tulasī asti"
+        ipa: "ɡr̩ɦeː t̪uləsiː əst̪i"
+        bases:
+          - { word: "गृहे", base: "गृह", reading: "gṛha" }
+          - { word: "तुलसी", base: "तुलसी", reading: "tulasī" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1836"
+    target: "देवता"
+    reading: "devatā"
+    ipa: "d̪eːʋət̪aː"
+    pos: "noun"
+    gender: "f"
+    tags: ["ritual"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "देवता", base: "देवता", reading: "devatā" }
+    examples:
+      - target: "देवता उत्तमा"
+        reading: "devatā uttamā"
+        ipa: "d̪eːʋət̪aː ut̪t̪əmaː"
+        bases:
+          - { word: "देवता", base: "देवता", reading: "devatā" }
+          - { word: "उत्तमा", base: "उत्तम", reading: "uttama" }
+      - target: "मन्दिरे देवता अस्ति"
+        reading: "mandire devatā asti"
+        ipa: "mənd̪ireː d̪eːʋət̪aː əst̪i"
+        bases:
+          - { word: "मन्दिरे", base: "मन्दिर", reading: "mandira" }
+          - { word: "देवता", base: "देवता", reading: "devatā" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1837"
+    target: "उत्सवः"
+    reading: "utsavaḥ"
+    ipa: "ut̪səʋəh"
+    pos: "noun"
+    gender: "m"
+    tags: ["ritual"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "उत्सवः", base: "उत्सव", reading: "utsava" }
+    examples:
+      - target: "उत्सवः सुन्दरः"
+        reading: "utsavaḥ sundaraḥ"
+        ipa: "ut̪səʋəh sund̪ərəh"
+        bases:
+          - { word: "उत्सवः", base: "उत्सव", reading: "utsava" }
+          - { word: "सुन्दरः", base: "सुन्दर", reading: "sundara" }
+      - target: "ग्रामे उत्सवः अस्ति"
+        reading: "grāme utsavaḥ asti"
+        ipa: "ɡraːmeː ut̪səʋəh əst̪i"
+        bases:
+          - { word: "ग्रामे", base: "ग्राम", reading: "grāma" }
+          - { word: "उत्सवः", base: "उत्सव", reading: "utsava" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
+  - id: "sa-1838"
+    target: "दक्षिणा"
+    reading: "dakṣiṇā"
+    ipa: "d̪əkʂiɳaː"
+    pos: "noun"
+    gender: "f"
+    tags: ["ritual"]
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "note" }
+      - { id: "n3", kind: "note" }
+    bases:
+      - { word: "दक्षिणा", base: "दक्षिणा", reading: "dakṣiṇā" }
+    examples:
+      - target: "दक्षिणा शुभा"
+        reading: "dakṣiṇā śubhā"
+        ipa: "d̪əkʂiɳaː ʃubʱaː"
+        bases:
+          - { word: "दक्षिणा", base: "दक्षिणा", reading: "dakṣiṇā" }
+          - { word: "शुभा", base: "शुभ", reading: "śubha" }
+      - target: "आश्रमे दक्षिणा अस्ति"
+        reading: "āśrame dakṣiṇā asti"
+        ipa: "aːʃrəmeː d̪əkʂiɳaː əst̪i"
+        bases:
+          - { word: "आश्रमे", base: "आश्रम", reading: "āśrama" }
+          - { word: "दक्षिणा", base: "दक्षिणा", reading: "dakṣiṇā" }
+          - { word: "अस्ति", base: "अस्", reading: "as" }
