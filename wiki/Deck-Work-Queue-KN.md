@@ -107,3 +107,30 @@ Run last, serially, after every Kannada content PR (sentences, readings, culture
 | KN-200.. | In progress: reading decks for word units (`decks/kn-readings-wave1`) |
 | KN-050 | In progress (`decks/kn-situations-wave1`) |
 | KN-030..032, KN-060 | Next: multi-word verbs (only verified families), recommendations with creators |
+
+## 6. Pause and resume plan (2026-11-16)
+
+Owner directive via the parent session: at most four language sessions at once, so Kannada is **paused**. No new worker starts until the parent says resume. Workers already running finish; four notes workers and the culture worker were cut off by the usage limit and are listed below with the state they left.
+
+### 6.1 Open work at the pause
+
+| Item | State | Resume action |
+|---|---|---|
+| PR #1486 situations | CI green | One review (running), merge when it has no blocker |
+| PR #1487 recommendations and creators | CI failed on fields the format does not hold (`basis`, `rights_checked`, `jurisdiction`) and on books without `script`; fixed in branch `decks/kn-recs-wave1` | Wait for CI green and the review, merge. The source-it-yourself rights fields come back when task T23 of the kinds plan lands. Seven works were dropped (reasons in the review queue) |
+| PR #1489 readings (53 word units, listed in `kn-path.yaml`) | CI failed on one reading the tool cannot produce (`ಆ್ಯಪ್`); the word is now written `ಆಪ್` | Wait for CI green and the review, merge |
+| Branch `decks/kn-multiword-wave1` | 4 cards (`kn-6400..6402`, `kn-6350`), held: sources do not label the compound status and some glosses are the builder's | Do not open a PR. Re-source with Wiktionary and the Kannada grammar pages before building the other families (dative-subject, idiomatic, light verbs, passive) |
+| Branch `decks/kn-culture-wave1` | PR #1468 closed (English of the three Pampa lines wrong) | Left for the owner to delete once `decks/kn-culture-wave2` replaces it |
+| Branch `decks/kn-culture-wave2` | Sonnet retry cut off by the limit; saved work only | Resume the Sonnet (same task: try every reachable source, correct translations, report blocked hosts, a one-line reason for each dropped item) |
+| Branch `decks/kn-notes-wave1` | Five Haiku note workers cut off. Each has a local worktree `/tmp/claude-0/kn-n0` to `kn-n4` with uncommitted work, which a new container will not have | Start again: the 826 cards without notes are split into five groups in the brief (`notes-brief.md`, in the session scratch; rewrite it from section 2 and the owner directive of 2026-11-15: a note on every card with a real teachable point, doubtful ones listed, never guessed) |
+| `kn-numbers-1-20`, `kn-quantities` sentences | Not built (too few earlier words) | Widen the vocabulary rule to the unit and the whole of the first twelve path units, then build |
+| `decks/kn/kn-phonetics.yaml` | Merged; 288 cards had no broad `ipa` | Last step of the course: rerun `derive_phonetic.py kn` after every content PR merged; ask a phonetician about the four vowel-lowering rules |
+
+### 6.2 Order after the resume
+
+1. Merge #1486, #1487, #1489.
+2. Notes wave (five Haiku workers, one Sonnet review).
+3. Culture wave 2 (Sonnet), then its PR, one review.
+4. Multi-word verbs and the missing sentences decks.
+5. Final derive run, review-queue tidy, completeness grid update.
+6. A dropped item always carries a one-line reason in the review queue.
