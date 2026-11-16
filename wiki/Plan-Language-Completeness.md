@@ -217,7 +217,7 @@ Owner (2026-11-13): "Deck work issues to be updated with the full deck format as
 | Sumerian | sux | #1203 | third list and others (first words only) | no ranked priority | 1 deck files, no path |
 | Egyptian | egy | #1204 | third list and others (first words only) | no ranked priority | 1 deck files, no path |
 | Proto-Indo-European | ine | #1205 | third list and others (first words only) | no ranked priority | 1 deck files, no path |
-| Vedic Sanskrit | vsn | #1206 | third list and others (first words only) | no ranked priority | path of 60 units, 1 built; 3 core files |
+| Vedic Sanskrit | vsn | #1206 | third list and others (first words only); owner 2026-11-15: right after Classical Sanskrit, to A1 | second after Classical Sanskrit | path of 60 units, 1 built; 3 core files; audit and queue in [Deck-Work-Queue-VSA](Deck-Work-Queue-VSA.md) (2026-11-16): everything but the phrasebook and 10 first words missing, no `vsn` engine in `tools/transcribe.py` |
 | Latin | la | #1207 | third list and others (first words only) | no ranked priority | path of 60 units, 1 built; 3 core files |
 | Old English | ang | #1208 | third list and others (first words only) | no ranked priority | path of 59 units, 1 built; 3 core files |
 | Middle English | enm | #1209 | third list and others (first words only) | no ranked priority | path of 57 units, 1 built; 3 core files |

@@ -24,7 +24,7 @@ State was read from `origin/decks-live` (`09e2a6d6`) on 2026-11-15 with PyYAML o
 | 14 | Recommendations | **MISSING** | no `decks/recommendations/zh.yaml` | ZH-060 |
 | 15 | Narrow IPA and broad `ipa` | **BIG GAP** (built on two branches, section 4, not merged) | 0 of 4,366 cards have `ipa` or `phonetic`; `tools/transcribe.py` has `mandarin()`, which returns the pinyin hint and an empty IPA; no `zh` entry in `tools/phonetic_languages.yaml`, no `decks/zh/zh-phonetics.yaml` | ZH-110..113 |
 | 16 | Review-queue rows | **PARTLY** | `docs/review-queue/zh.md`: 105 lines, written 2026-11-05 and 2026-11-06 | ZH-120 |
-| 17 | Sourcing list | **MISSING** | no `Plan-Culture-Chinese` | ZH-001 |
+| 17 | Sourcing list | **DONE** (2026-11-15) | [Plan-Culture-Chinese](Plan-Culture-Chinese.md): culture 4 decks (60 verified items), 3 proverb and chengyu decks, 4 multi-word families, 21 recommendations, 35 creators; open date question for BCE works | ZH-001 done |
 | 18 | Facts file | **MISSING** | no `decks/zh/zh-facts.yaml` | ZH-070 |
 
 ## 2. Conventions every ZH task carries
@@ -140,3 +140,30 @@ Run last, serially, after every Chinese content PR (sentences, readings, culture
 |---|---|
 | 2026-11-15 | Audit written. Path, cores, sentences, readings and script decks are done; every genre kind, topics, situations, facts, creators, recommendations and all IPA are missing |
 | 2026-11-15 | ZH-110..113 designed and built on `tools/zh-phonetics` and `decks/zh-phonetics-wave1` (section 4); not merged, no PR |
+| 2026-11-15 | ZH-001 done: Plan-Culture-Chinese written with every item read on a named page; culture decks 2 and 3 wait on the BCE `source.date` question |
+
+## 6. Pause and resume plan (2026-11-16)
+
+Owner directive via the parent (token budget): at most four language sessions run at once; Chinese is paused once PR #1481 and the open PRs are merged. No new worker or phase starts until the parent says resume. On 2026-11-15 every worker hit the account's 5-hour limit and stopped (limit reset 21:30 UTC); **none of them had pushed**, so their work sits uncommitted in scratchpad worktrees that a new session will not have. Treat all of the below as not started.
+
+**Merged on decks-live:** #1471 reading fixes, #1473 `zh-topics.yaml` (28 topics), #1474 `zh-situations.yaml` (10 sheets), #1475 `zh-emergencies-sentences`.
+
+**Waiting on the parent:** tools PR #1481 (`tools/zh-phonetics`, zh broad IPA, `fill_ipa.py`, patcher layouts, registry entry; CI failures being fixed); #1494 (BCE years in `source.date`, issue #1491), which unblocks `zh-culture-2` and `zh-culture-3`.
+
+**Resume order** (each wave: one shared branch, ONE PR to `decks-live`, ONE Sonnet review, merge when green; briefs: [Plan-Culture-Chinese](Plan-Culture-Chinese.md) and the conventions of section 2):
+
+| Step | Wave | Branch | Notes |
+|---|---|---|---|
+| 1 | Culture 1 and 4 with creators and eras (ZH-010, 013), then 2 and 3 once #1494 is merged | `decks/zh-culture-wave1` | Re-read the plan first: the retry of dropped culture items (every reachable host, a one-line reason for each item still dropped, hosts blocked reported) was in progress and may not have been saved; redo it for items marked P, C or F. Simplified text is converted from Wikisource traditional: a review-queue row per excerpt |
+| 2 | Proverbs 1 to 3 (ZH-025..027) | `decks/zh-proverbs-wave1` | ids zh-6200..6349; chengyu and sayings without an en.wiktionary entry need another host or are replaced |
+| 3 | Multi-word: separable, resultative (ZH-030), directional, light-verb idioms (ZH-031) | `decks/zh-multiword-wave1` | ids zh-6400..6599; the light-verb family label is an open owner question (plan default) |
+| 4 | Facts (ZH-070) | `decks/zh-facts-wave1` | about 30 facts, each with a source read |
+| 5 | Recommendations (ZH-060) | `decks/zh-recs-wave1` | after step 1 merges (shares `decks/creators/zh.yaml`) |
+| 6 | Notes wave (owner directive 2026-11-15: a note on every card with any real teachable point; only plainly self-explanatory cards stay bare) | `decks/zh-notes-wave1` | 954 cards in 119 files had no note on 2026-11-15, mostly sentence decks; recount first; six Haiku workers by chunk of about 160 cards; core `notes: [{id, kind}]` plus layer text; one Sonnet review checks accuracy |
+| 7 | Review-queue rows (ZH-120) | rides on each wave | |
+| 8 | Narrow IPA (ZH-110..113) | `decks/zh-phonetics-wave1` (head 9289edc6, 4,366 cards plus `zh-phonetics.yaml` and the 导航 fix) | Last: after #1481 is on main and every other zh content PR has merged; re-run `fill_ipa.py` and `derive_phonetic.py zh` over the new cards (section 4) |
+| 9 | Fix pass on `zh-situations` card choice | `decks/zh-situations-fix` | Review nits of #1474: hotel, taxi, greeting sheets hold off-topic cards; Chinese sheet titles do not match the English ones; obscure words |
+| 10 | Wording nits of #1475 | with step 9 | `why` lines of zh-7016, 7023, 7027, 7028, 7032, 7033, 7038 |
+| 11 | Grid and log | main (docs) | Update the Chinese row of [Plan-Language-Completeness](Plan-Language-Completeness.md) after each merge |
+
+Chinese is not done until steps 1 to 6 and 8 are merged. Professional situations stay held (owner).
