@@ -169,8 +169,14 @@ All of these are merged to `decks-live` (PRs #1462, #1463, #1464, #1465, #1467, 
 
 ## 9. Recommendations wave 2 and professional decks (2026-11-16)
 
-**Recommendations: 20 of 20** on branch `decks/kn-recs-wave2` (no PR yet). Added: Bedara Kannappa, Kittur Chennamma, Sandhya Raga, Kasturi Nivasa (films), Marali Mannige, Mookajjiya Kanasugalu, Malegalalli Madumagalu, Sri Ramayana Darshanam (books), and the 2019 film of Mookajjiya Kanasugalu as the twentieth. Creators added: H. L. N. Simha (kn.wikipedia), A. N. Krishna Rao, S. K. Bhagavan, P. Sheshadri (en.wikipedia). Sources: en and kn Wikipedia; Marali Mannige's plot questions come from the 1959 Bengali translation scanned by the Digital Library of India on archive.org, plus en.wikipedia.
+**Recommendations: 17 of 20** on branch `decks/kn-recs-wave2` (PR #1528). Added after review: Kasturi Nivasa (film), Marali Mannige, Mookajjiya Kanasugalu, Malegalalli Madumagalu, Sri Ramayana Darshanam (books) and the 2019 film of Mookajjiya Kanasugalu. Creators added: S. K. Bhagavan and P. Sheshadri (en.wikipedia).
 
-Doubts for a Kannada speaker: Kittur Chennamma's film plot is on no readable page, so its questions rest on cast, credits, soundtrack and premise; Marali Mannige's plot questions come from a translation, not the Kannada text; the year of Sri Ramayana Darshanam is the first volume (1949; the volume and Jnanpith years conflict between en and kn Wikipedia); Sandhya Raga's director credit is disputed (Narasimha Murthy credited, Bhagavan says he directed), so only Anakru is the creator.
+**Dropped, with reasons (one line each):**
+- Bedara Kannappa (film, 1954): the only plot text is two sentences on an en.wikipedia page marked "unreliable sources"; kn.wikipedia and archive.org hold no plot, so three plot questions cannot be written.
+- Kittur Chennamma (film, 1961): no readable page gives the film's plot (en Plot section empty, kn and te stubs); archive.org holds histories of the queen, not the film.
+- Sandhya Raga (film, 1966): no film plot anywhere; the archive.org scan is the novel, whose characters differ from the film's cast, and the novel's year is on no page. A. C. Narasimha Murthy's lifespan was not found.
+- The national-anthem poem: lyrics.
 
-Still dropped: the national anthem poem (lyrics). **Professional decks: still held.** The profession list is open owner question 6 of Plan-Deck-Kinds-And-Topics (`professions` is one shared list in `decks/sections.yaml`, not per language), so no Kannada professional deck was built.
+Sources: en and kn Wikipedia; Marali Mannige from the 1959 Bengali translation scan (archive.org in.ernet.dli.2015.457745) and the Kuvempu University M.Phil. thesis kuh.mphil.585.pay.130221 (1941, village Kodi). Doubts for a Kannada speaker: Marali Mannige's plot questions come from a translation; Sri Ramayana Darshanam's year is the first volume (1949; the volume years conflict between en and kn).
+
+**Professional decks: still held.** The profession list is open owner question 6 of Plan-Deck-Kinds-And-Topics (`professions` is one shared list in `decks/sections.yaml`), so no Kannada professional deck was built.
