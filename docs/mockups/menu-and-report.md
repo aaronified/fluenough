@@ -53,14 +53,14 @@ Where it could live:
 | Screen (file) | Proposal |
 |---|---|
 | Language bar on Today, Decks, Progress (`language_bar.dart`) | remove |
-| Tab header and placeholder pages (`page_parts.dart`) | remove |
+| Tab header and placeholder pages (`page_parts.dart`) | remove; the Settings tab header gets the three dots with "Report a problem" (resolved) |
 | Languages (`languages_page.dart`) | remove; the three dots take its place |
 | Drill header: recognition, reading, speaking, picture choice, rearrange, sets, grammar (`drill_frame.dart`) and walkthrough | keep as content report, flag, card id plus deck id |
 | Drill page (`drill_page.dart`, the shell around a drill) | remove (the card has the flag) |
 | Word sheet (`word_sheet.dart`, already a "Report" flag) | keep as content report, same sheet |
-| Deck page (`deck_detail_page.dart`) and its "Report a mistake" notice (`unreviewed_notice.dart`) | keep as content report, deck-level (no card id) |
-| Unit page (`unit_page.dart`) | keep as content report, deck-level |
-| Topic page (`topic_page.dart`) | keep as content report, deck-level |
+| Deck page (`deck_detail_page.dart`) and its "Report a mistake" notice (`unreviewed_notice.dart`) | keep as content report, same reasons, deck id instead of a card id (resolved) |
+| Unit page (`unit_page.dart`) | keep as content report, same reasons, unit (deck) id (resolved) |
+| Topic page (`topic_page.dart`) | keep as content report, same reasons, topic id (resolved) |
 | Culture item page (`culture_item_page.dart`) | keep as content report, item id |
 | Culture deck, timeline, recommendations, work questions (`culture_deck_page.dart`, `culture_timeline.dart`, `recommendations_page.dart`, `work_questions_page.dart`) | remove; reached through the item page, which has the flag |
 | Summary after a session (`summary_page.dart`) | remove |
@@ -69,7 +69,7 @@ Where it could live:
 | Profiles, new profile, PIN (`features/profiles/`) | remove |
 | Downloads page (`download_page.dart`) | remove |
 | Update failure and spoken-languages picker error links (`update_escape.dart`, `spoken_languages_picker.dart`) | keep the link, it opens the general report |
-| Settings > Support, "Send a bug report" | keep, the one general entry |
+| Settings > Support, "Send a bug report" | keep; the Settings three-dot menu also has "Report a problem" (resolved) |
 
 ## Contrast self-check (WCAG 2.1)
 Computed from the app palette (`ColorScheme.fromSeed`, forest seed; same tokens as the other mockups).
@@ -99,11 +99,11 @@ Cues are never colour alone: checkmark against blank, the dividers, and the fill
 1. **Learn {language} from** lives inside each language's own sheet. The menu has no Learn row (the page default is that variant).
 2. **Reports** keep the mail hand-off for now, with no in-app endpoint. The confirmation shown by default is the mail-app wording ("Your report is ready. Your mail app has the report. Send it from there."). The "In the app" wording stays as a tweak for later.
 3. **The content flag** sits in the drill header, where the bug icon was.
+4. **Deck, unit and topic pages** ALSO get the content flag (not only a card and the word sheet). On those pages the reasons list is the same and the report carries the deck, unit or topic id instead of a card id (frame j: the sheet's context box has no `Card:` line).
+5. **A general bug report** ALSO has a "Report a problem" item in the Settings three-dot menu, in addition to Settings > Support. It is a button-type row in the Open group, with the open-external glyph while reports go by the mail app (frame i). The Settings tab header gets the dots in the bug's place.
 
 ## Open questions for the owner (still open)
-1. **Deck-level pages** (deck, unit, topic): keep the flag there, or only on a card and the word sheet? Without a card the reasons such as "The audio is wrong" are vaguer.
-2. **Reviewer screens**: remove as proposed, or keep the content report there too?
-3. **A general bug** now lives only in Settings > Support. Is that enough, or should the three-dot menu of Settings carry "Report a problem"?
-4. **Menu lines**: the switches' one-line explanations are lost in the menu (tooltips only). Acceptable, or should IPA and Adult content keep a page?
-5. **Other screens' rule.** Which screens get the same three-dot treatment next (Decks, Progress, Settings pages)?
-6. Does "Your languages menu" mean the Settings row (assumed here), and not the language bar's tap menu, which stays a language picker?
+1. **Reviewer screens**: remove as proposed, or keep the content report there too?
+2. **Menu lines**: the switches' one-line explanations are lost in the menu (tooltips only). Acceptable, or should IPA and Adult content keep a page?
+3. **Other screens' rule.** Which screens get the same three-dot treatment next (Decks, Progress, Settings pages)?
+4. Does "Your languages menu" mean the Settings row (assumed here), and not the language bar's tap menu, which stays a language picker?
