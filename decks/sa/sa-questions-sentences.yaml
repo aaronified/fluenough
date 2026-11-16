@@ -1,0 +1,66 @@
+schema: 1
+id: "sa-questions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-3000"
+    target: "अहं कुत्र जलं पिबामि?"
+    reading: "ahaṃ kutra jalaṃ pibāmi?"
+    ipa: "əɦəm kut̪rə dʒələm pibaːmi"
+    pos: "phrase"
+    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "कुत्र", ref: "sa-1002" }, { word: "जलं", base: "जलम्", reading: "jalam" }, { word: "पिबामि", base: "पा", reading: "pā" }]
+    confusables: [{ id: "w1", ref: "sa-1003", kind: "word" }, { id: "w2", ref: "sa-1004", kind: "word" }]
+  - id: "sa-3001"
+    target: "अस्ति कुत्र जलम्?"
+    reading: "asti kutra jalam?"
+    ipa: "əst̪i kut̪rə dʒələm"
+    pos: "phrase"
+    bases: [{ word: "अस्ति", base: "अस्", reading: "as" }, { word: "कुत्र", ref: "sa-1002" }, { word: "जलम्", ref: "sa-0023" }]
+    confusables: [{ id: "w1", ref: "sa-0024", kind: "word" }, { id: "w2", ref: "sa-1003", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
+  - id: "sa-3002"
+    target: "अहं किं जानामि?"
+    reading: "ahaṃ kiṃ jānāmi?"
+    ipa: "əɦəm kim dʒaːnaːmi"
+    pos: "phrase"
+    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "किं", base: "किम्", reading: "kim" }, { word: "जानामि", base: "ज्ञा", reading: "jñā" }]
+    confusables: [{ id: "w1", ref: "sa-1001", kind: "word" }, { id: "w2", ref: "sa-1004", kind: "word" }]
+  - id: "sa-3003"
+    target: "अहं कथं गच्छामि?"
+    reading: "ahaṃ kathaṃ gacchāmi?"
+    ipa: "əɦəm kət̪ʰəm ɡətʃtʃʰaːmi"
+    pos: "phrase"
+    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "कथं", base: "कथम्", reading: "katham" }, { word: "गच्छामि", base: "गम्", reading: "gam" }]
+    confusables: [{ id: "w1", ref: "sa-1002", kind: "word" }, { id: "w2", ref: "sa-1003", kind: "word" }]
+  - id: "sa-3004"
+    target: "अग्निः कुत्र?"
+    reading: "agniḥ kutra?"
+    ipa: "əɡnih kut̪rə"
+    pos: "phrase"
+    bases: [{ word: "अग्निः", ref: "sa-0024" }, { word: "कुत्र", ref: "sa-1002" }]
+    confusables: [{ id: "w1", ref: "sa-0023", kind: "word" }, { id: "w2", ref: "sa-1004", kind: "word" }]
+  - id: "sa-3005"
+    target: "अहं किमर्थं पिबामि?"
+    reading: "ahaṃ kimarthaṃ pibāmi?"
+    ipa: "əɦəm kimərt̪ʰəm pibaːmi"
+    pos: "phrase"
+    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "किमर्थं", base: "किमर्थम्", reading: "kimartham" }, { word: "पिबामि", base: "पा", reading: "pā" }]
+    confusables: [{ id: "w1", ref: "sa-1002", kind: "word" }, { id: "w2", ref: "sa-1005", kind: "word" }]
+  - id: "sa-3006"
+    target: "किं जलम्?"
+    reading: "kiṃ jalam?"
+    ipa: "kim dʒələm"
+    pos: "phrase"
+    bases: [{ word: "किं", base: "किम्", reading: "kim" }, { word: "जलम्", ref: "sa-0023" }]
+    confusables: [{ id: "w1", ref: "sa-0024", kind: "word" }, { id: "w2", ref: "sa-1001", kind: "word" }]
+  - id: "sa-3007"
+    target: "अहं कः?"
+    reading: "ahaṃ kaḥ?"
+    ipa: "əɦəm kəh"
+    pos: "phrase"
+    bases: [{ word: "अहं", base: "अहम्", reading: "aham" }, { word: "कः", ref: "sa-1001" }]
+    confusables: [{ id: "w1", ref: "sa-1000", kind: "word" }, { id: "w2", ref: "sa-1002", kind: "word" }]
+    notes: [{ id: "n1", kind: "note" }]
