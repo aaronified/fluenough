@@ -1,0 +1,7 @@
+| vsn-6212 | see card | प्र वोचत्: the verb runs into the next word by sandhi (वोचत्कुत in RV 10.129.6); is the form read as written right? | Haiku builder | 2026-11-16 |
+| vsn-6218 | see card | Whitney's examples: only the two Atharvaveda lines (AV 2.4.6, AV 2.7.4) were found on sa.wikisource; his RV lines (gámad vā́jebhir, tā́v ā́ yātam) found no verse, so the deck has 2 cards. | Haiku builder | 2026-11-16 |
+| vsn-6209 | see card | परि बभूव: the gloss "to surround, embrace" follows Griffith's rendering of RV 10.121.10; the card's meaning should be checked by a Vedicist. | Haiku builder | 2026-11-16 |
+| vsn-6208 | see card | अव सृजा: the imperative सृजा (release) is the form in RV 7.86.5; the gloss "to set free" is the Griffith sense. | Haiku builder | 2026-11-16 |
+| vsn-culture-4 | level | The four Vedas and the three multi-word decks are set to level A2 by default (the preverb grammar is at A2 on the path); the architect confirms or changes it. | Haiku builder | 2026-11-16 |
+| vsn-multiword-preverb-adjacent | dropped | Not built: RV 1.1.5 आ गमत् (the preverb is fused into देवेभिरा by sandhi) and RV 10.125.8 प्र वामि (the verb is fused by sandhi as वाम्यारभमाणा): the verb form is not a separate word on the page. | Haiku builder | 2026-11-16 |
+| vsn-sayings | stopped | The attested-sayings deck (VSA-020) was not built: basis oral-tradition is wrong for hymn lines (wiki/Plan-Culture-Vedic.md, section 5), and no other basis is decided. | Haiku builder | 2026-11-16 |
