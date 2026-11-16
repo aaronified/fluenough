@@ -1,0 +1,435 @@
+# The order Classical Sanskrit is taught in, one unit per line, from every language
+# it is taught from: each deck is named by its core id, and a learner from
+# English is taught sa-en-<name> for sa-<name> (ADR-0013, ADR-0036).
+#
+# This is also Classical Sanskrit's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"): every
+# unit from the first words to B1, with its size in words or its grammar
+# topics, the three milestones, and for each planned unit its listening
+# and reading passages. The file was first written by tools/gen_planned_paths.py
+# (#959) and then re-planned by hand (SA-003, wiki/Deck-Work-Queue-SA.md,
+# section 2): the generator's themes of modern life are replaced by reading
+# themes, and the Paninian grammar units of the queue page (SA-100 to SA-139)
+# are placed in their levels. Each unit moves from `planned` to `decks` in
+# the commit that builds it; unit ids are permanent once a deck is written.
+#
+# Written so far: unit 1 (the phrasebook and the first words), the sound
+# differences, the script decks, spelling, and the grammar units for the case
+# system, a-stems and the present system (with the first-class verbs). Every
+# other unit is planned, so the course teaches each as "Coming" until its
+# deck is written. The passages are placeholders: each describes its unit's
+# theme or grammar and is reworded when the passage is written.
+#
+# A reading course (owner, 2026-10-31): Classical Sanskrit is read here, not spoken, so
+# the milestones A1, A2 and B1 mean three reading levels, and the sizes
+# are `levels` (400, 600 and 900 words, a judgement, low confidence) in
+# place of the plan's 700, 900 and 1,200. Themes of modern life are left
+# out. The word units total exactly these sizes (unit 1 counted in A1).
+#
+# Heavy focus on Panini's grammar (owner, 2026-11-02): the grammar units are
+# rules units with full tables and carry no word count (the vsn and te
+# precedent). A1: vowels and script, the case system, a-stems, the present
+# system, vowel sandhi, pronouns, atmanepada. A2: karakas, consonant and
+# visarga sandhi, the ten ganas, other noun stems, the past tenses, the
+# lakaras, imperatives, participles, samasa, taddhita. B1: krt, gerundives,
+# absolutives and infinitives, the passive, causatives, the optative, and
+# four units reading Astadhyayi rules (sutras) from the page.
+#
+# `alphabet` lists the script decks now written (SA-010 to SA-015): the
+# validator takes only written decks there, and each is on its unit below.
+# The script is taught in the units named `script`, after the first six
+# themes, as the scheme has it. Vedic Sanskrit is the separate course vsn.
+schema: 1
+kind: "path"
+id: "sa-path"
+language: "sa"
+description: "Classical Sanskrit: the path to B1, a reading course with a heavy focus on Panini's grammar. Written so far: the phrasebook and first words, the script and sound decks, the case system, a-stems and present-system grammar units; the other units are planned."
+genders: ["m", "f", "n"]
+levels: { A1: 400, A2: 600, B1: 900 }
+alphabet:
+  - "sa-script-vowels"
+  - "sa-script-consonants"
+  - "sa-script-vowel-signs"
+  - "sa-script-digits"
+  - "sa-script-conjuncts"
+  - "sa-script-reading"
+  - "sa-spelling"
+units:
+  - decks: ["sa-phrasebook", "sa-first-words", "*"]
+    words: 10
+  - decks: ["sa-sound-differences"]
+    words: 22
+  - planned: { id: "sa-questions", theme: "questions", words: 7 }
+    listening_passages:
+      - { id: "questions-heard", text: { "en": "A short passage in Classical Sanskrit on the theme yes, no and questions, read aloud" } }
+    reading_passages:
+      - { id: "questions-text", text: { "en": "A short written text in Classical Sanskrit on the theme yes, no and questions" } }
+  - planned: { id: "sa-pronouns", theme: "pronouns", words: 14 }
+    listening_passages:
+      - { id: "pronouns-heard", text: { "en": "A short passage in Classical Sanskrit on the theme pronouns and people words, read aloud" } }
+    reading_passages:
+      - { id: "pronouns-text", text: { "en": "A short written text in Classical Sanskrit on the theme pronouns and people words" } }
+  - planned: { id: "sa-family", theme: "family", words: 16 }
+    listening_passages:
+      - { id: "family-heard", text: { "en": "A short passage in Classical Sanskrit on the theme family, read aloud" } }
+    reading_passages:
+      - { id: "family-text", text: { "en": "A short written text in Classical Sanskrit on the theme family" } }
+  - planned: { id: "sa-numbers-1-20", theme: "numbers-1-20", words: 13 }
+    listening_passages:
+      - { id: "numbers-1-20-heard", text: { "en": "A short passage in Classical Sanskrit on the theme numbers 1 to 20, read aloud" } }
+    reading_passages:
+      - { id: "numbers-1-20-text", text: { "en": "A short written text in Classical Sanskrit on the theme numbers 1 to 20" } }
+  - ["sa-script-vowels", "sa-script-consonants", "sa-script-vowel-signs", "sa-script-digits"]
+  - ["sa-script-conjuncts", "sa-script-reading", "sa-spelling"]
+  - planned: { id: "sa-about-me", theme: "about-me", words: 5 }
+    listening_passages:
+      - { id: "about-me-heard", text: { "en": "A short passage in Classical Sanskrit on the theme naming and introducing oneself, read aloud" } }
+    reading_passages:
+      - { id: "about-me-text", text: { "en": "A short written text in Classical Sanskrit on the theme naming and introducing oneself" } }
+  - planned: { id: "sa-everyday-verbs", theme: "everyday-verbs", words: 24 }
+    listening_passages:
+      - { id: "everyday-verbs-heard", text: { "en": "A short passage in Classical Sanskrit on the theme everyday verbs of the first class, read aloud" } }
+    reading_passages:
+      - { id: "everyday-verbs-text", text: { "en": "A short written text in Classical Sanskrit on the theme everyday verbs of the first class" } }
+  - decks: ["sa-grammar-case-system"]
+    grammar: ["nominative", "accusative", "instrumental", "dative", "ablative", "genitive", "locative", "vocative"]
+    listening_passages:
+      - { id: "grammar-case-system-heard", text: { "en": "A short passage in Classical Sanskrit showing case system, read aloud" } }
+    reading_passages:
+      - { id: "grammar-case-system-text", text: { "en": "A short written text in Classical Sanskrit showing case system" } }
+  - decks: ["sa-grammar-a-stems"]
+    grammar: ["a-nominative", "a-accusative", "a-instrumental", "a-dative", "a-ablative", "a-genitive", "a-locative", "a-vocative"]
+    listening_passages:
+      - { id: "grammar-a-stems-heard", text: { "en": "A short passage in Classical Sanskrit showing a stem nouns, read aloud" } }
+    reading_passages:
+      - { id: "grammar-a-stems-text", text: { "en": "A short written text in Classical Sanskrit showing a stem nouns" } }
+  - decks: ["sa-verbs-first-class", "sa-grammar-present-system"]
+    words: 6
+    grammar: ["present-stem", "present-third", "present-second", "present-first"]
+    listening_passages:
+      - { id: "grammar-present-system-heard", text: { "en": "A short passage in Classical Sanskrit showing present system, verb classes, read aloud" } }
+    reading_passages:
+      - { id: "grammar-present-system-text", text: { "en": "A short written text in Classical Sanskrit showing present system, verb classes" } }
+  - planned: { id: "sa-grammar-sandhi-vowel", grammar: ["vowel-sandhi"] }
+    listening_passages:
+      - { id: "grammar-sandhi-vowel-heard", text: { "en": "A short passage in Classical Sanskrit showing vowel sandhi, read aloud" } }
+    reading_passages:
+      - { id: "grammar-sandhi-vowel-text", text: { "en": "A short written text in Classical Sanskrit showing vowel sandhi" } }
+  - planned: { id: "sa-adverbs", theme: "adverbs", words: 24 }
+    listening_passages:
+      - { id: "adverbs-heard", text: { "en": "A short passage in Classical Sanskrit on the theme adverbs and particles, read aloud" } }
+    reading_passages:
+      - { id: "adverbs-text", text: { "en": "A short written text in Classical Sanskrit on the theme adverbs and particles" } }
+  - planned: { id: "sa-quantities", theme: "quantities", words: 14 }
+    listening_passages:
+      - { id: "quantities-heard", text: { "en": "A short passage in Classical Sanskrit on the theme quantities, read aloud" } }
+    reading_passages:
+      - { id: "quantities-text", text: { "en": "A short written text in Classical Sanskrit on the theme quantities" } }
+  - planned: { id: "sa-describing", theme: "describing", words: 24 }
+    listening_passages:
+      - { id: "describing-heard", text: { "en": "A short passage in Classical Sanskrit on the theme describing things and people, read aloud" } }
+    reading_passages:
+      - { id: "describing-text", text: { "en": "A short written text in Classical Sanskrit on the theme describing things and people" } }
+  - planned: { id: "sa-time", theme: "time", words: 12 }
+    listening_passages:
+      - { id: "time-heard", text: { "en": "A short passage in Classical Sanskrit on the theme time, read aloud" } }
+    reading_passages:
+      - { id: "time-text", text: { "en": "A short written text in Classical Sanskrit on the theme time" } }
+  - planned: { id: "sa-location", theme: "location", words: 9 }
+    listening_passages:
+      - { id: "location-heard", text: { "en": "A short passage in Classical Sanskrit on the theme location, read aloud" } }
+    reading_passages:
+      - { id: "location-text", text: { "en": "A short written text in Classical Sanskrit on the theme location" } }
+  - planned: { id: "sa-more-verbs", theme: "more-verbs", words: 24 }
+    listening_passages:
+      - { id: "more-verbs-heard", text: { "en": "A short passage in Classical Sanskrit on the theme more verbs, read aloud" } }
+    reading_passages:
+      - { id: "more-verbs-text", text: { "en": "A short written text in Classical Sanskrit on the theme more verbs" } }
+  - planned: { id: "sa-grammar-pronouns", grammar: ["pronoun-declension"] }
+    listening_passages:
+      - { id: "grammar-pronouns-heard", text: { "en": "A short passage in Classical Sanskrit showing pronoun declension, read aloud" } }
+    reading_passages:
+      - { id: "grammar-pronouns-text", text: { "en": "A short written text in Classical Sanskrit showing pronoun declension" } }
+  - planned: { id: "sa-grammar-atmanepada", grammar: ["atmanepada"] }
+    listening_passages:
+      - { id: "grammar-atmanepada-heard", text: { "en": "A short passage in Classical Sanskrit showing atmanepada, read aloud" } }
+    reading_passages:
+      - { id: "grammar-atmanepada-text", text: { "en": "A short written text in Classical Sanskrit showing atmanepada" } }
+  - planned: { id: "sa-numbers-big", theme: "numbers-big", words: 9 }
+    listening_passages:
+      - { id: "numbers-big-heard", text: { "en": "A short passage in Classical Sanskrit on the theme tens and big numbers, read aloud" } }
+    reading_passages:
+      - { id: "numbers-big-text", text: { "en": "A short written text in Classical Sanskrit on the theme tens and big numbers" } }
+  - planned: { id: "sa-body", theme: "body", words: 18 }
+    listening_passages:
+      - { id: "body-heard", text: { "en": "A short passage in Classical Sanskrit on the theme the body, read aloud" } }
+    reading_passages:
+      - { id: "body-text", text: { "en": "A short written text in Classical Sanskrit on the theme the body" } }
+  - planned: { id: "sa-directions", theme: "directions", words: 8 }
+    listening_passages:
+      - { id: "directions-heard", text: { "en": "A short passage in Classical Sanskrit on the theme directions, read aloud" } }
+    reading_passages:
+      - { id: "directions-text", text: { "en": "A short written text in Classical Sanskrit on the theme directions" } }
+  - planned: { id: "sa-food", theme: "food", words: 24 }
+    listening_passages:
+      - { id: "food-heard", text: { "en": "A short passage in Classical Sanskrit on the theme food and drink, read aloud" } }
+    reading_passages:
+      - { id: "food-text", text: { "en": "A short written text in Classical Sanskrit on the theme food and drink" } }
+  - planned: { id: "sa-animals", theme: "animals", words: 24 }
+    listening_passages:
+      - { id: "animals-heard", text: { "en": "A short passage in Classical Sanskrit on the theme the animals of the fables, read aloud" } }
+    reading_passages:
+      - { id: "animals-text", text: { "en": "A short written text in Classical Sanskrit on the theme the animals of the fables" } }
+  - planned: { id: "sa-home", theme: "home", words: 12 }
+    listening_passages:
+      - { id: "home-heard", text: { "en": "A short passage in Classical Sanskrit on the theme house and village, read aloud" } }
+    reading_passages:
+      - { id: "home-text", text: { "en": "A short written text in Classical Sanskrit on the theme house and village" } }
+  - planned: { id: "sa-places", theme: "places", words: 20 }
+    listening_passages:
+      - { id: "places-heard", text: { "en": "A short passage in Classical Sanskrit on the theme places, read aloud" } }
+    reading_passages:
+      - { id: "places-text", text: { "en": "A short written text in Classical Sanskrit on the theme places" } }
+  - planned: { id: "sa-clothes", theme: "clothes", words: 15 }
+    listening_passages:
+      - { id: "clothes-heard", text: { "en": "A short passage in Classical Sanskrit on the theme clothes, read aloud" } }
+    reading_passages:
+      - { id: "clothes-text", text: { "en": "A short written text in Classical Sanskrit on the theme clothes" } }
+  - planned: { id: "sa-things", theme: "things", words: 20 }
+    listening_passages:
+      - { id: "things-heard", text: { "en": "A short passage in Classical Sanskrit on the theme things, read aloud" } }
+    reading_passages:
+      - { id: "things-text", text: { "en": "A short written text in Classical Sanskrit on the theme things" } }
+  - planned: { id: "sa-ritual", theme: "ritual", words: 24 }
+    listening_passages:
+      - { id: "ritual-heard", text: { "en": "A short passage in Classical Sanskrit on the theme gods, ritual and worship, read aloud" } }
+    reading_passages:
+      - { id: "ritual-text", text: { "en": "A short written text in Classical Sanskrit on the theme gods, ritual and worship" } }
+  - planned: { id: "sa-learning", theme: "learning", words: 18 }
+    listening_passages:
+      - { id: "learning-heard", text: { "en": "A short passage in Classical Sanskrit on the theme learning, teachers and texts, read aloud" } }
+    reading_passages:
+      - { id: "learning-text", text: { "en": "A short written text in Classical Sanskrit on the theme learning, teachers and texts" } }
+  - planned: { id: "sa-work", theme: "work", words: 12 }
+    listening_passages:
+      - { id: "work-heard", text: { "en": "A short passage in Classical Sanskrit on the theme work and trades, read aloud" } }
+    reading_passages:
+      - { id: "work-text", text: { "en": "A short written text in Classical Sanskrit on the theme work and trades" } }
+    milestone: "A1"
+  - planned: { id: "sa-grammar-karakas", grammar: ["karaka"] }
+    listening_passages:
+      - { id: "grammar-karakas-heard", text: { "en": "A short passage in Classical Sanskrit showing karaka, read aloud" } }
+    reading_passages:
+      - { id: "grammar-karakas-text", text: { "en": "A short written text in Classical Sanskrit showing karaka" } }
+  - planned: { id: "sa-grammar-sandhi-consonant", grammar: ["consonant-sandhi"] }
+    listening_passages:
+      - { id: "grammar-sandhi-consonant-heard", text: { "en": "A short passage in Classical Sanskrit showing consonant sandhi, read aloud" } }
+    reading_passages:
+      - { id: "grammar-sandhi-consonant-text", text: { "en": "A short written text in Classical Sanskrit showing consonant sandhi" } }
+  - planned: { id: "sa-grammar-sandhi-visarga", grammar: ["visarga-sandhi"] }
+    listening_passages:
+      - { id: "grammar-sandhi-visarga-heard", text: { "en": "A short passage in Classical Sanskrit showing visarga sandhi, read aloud" } }
+    reading_passages:
+      - { id: "grammar-sandhi-visarga-text", text: { "en": "A short written text in Classical Sanskrit showing visarga sandhi" } }
+  - planned: { id: "sa-nature", theme: "nature", words: 80 }
+    listening_passages:
+      - { id: "nature-heard", text: { "en": "A short passage in Classical Sanskrit on the theme nature: trees, rivers and mountains, read aloud" } }
+    reading_passages:
+      - { id: "nature-text", text: { "en": "A short written text in Classical Sanskrit on the theme nature: trees, rivers and mountains" } }
+  - planned: { id: "sa-seasons", theme: "seasons", words: 40 }
+    listening_passages:
+      - { id: "seasons-heard", text: { "en": "A short passage in Classical Sanskrit on the theme the seasons, read aloud" } }
+    reading_passages:
+      - { id: "seasons-text", text: { "en": "A short written text in Classical Sanskrit on the theme the seasons" } }
+  - planned: { id: "sa-calendar", theme: "calendar", words: 30 }
+    listening_passages:
+      - { id: "calendar-heard", text: { "en": "A short passage in Classical Sanskrit on the theme the calendar, read aloud" } }
+    reading_passages:
+      - { id: "calendar-text", text: { "en": "A short written text in Classical Sanskrit on the theme the calendar" } }
+  - planned: { id: "sa-grammar-gana-1", grammar: ["gana-1"] }
+    listening_passages:
+      - { id: "grammar-gana-1-heard", text: { "en": "A short passage in Classical Sanskrit showing gana 1, read aloud" } }
+    reading_passages:
+      - { id: "grammar-gana-1-text", text: { "en": "A short written text in Classical Sanskrit showing gana 1" } }
+  - planned: { id: "sa-grammar-gana-2", grammar: ["gana-2"] }
+    listening_passages:
+      - { id: "grammar-gana-2-heard", text: { "en": "A short passage in Classical Sanskrit showing gana 2, read aloud" } }
+    reading_passages:
+      - { id: "grammar-gana-2-text", text: { "en": "A short written text in Classical Sanskrit showing gana 2" } }
+  - planned: { id: "sa-grammar-other-stems", grammar: ["other-noun-stems"] }
+    listening_passages:
+      - { id: "grammar-other-stems-heard", text: { "en": "A short passage in Classical Sanskrit showing other noun stems, read aloud" } }
+    reading_passages:
+      - { id: "grammar-other-stems-text", text: { "en": "A short written text in Classical Sanskrit showing other noun stems" } }
+  - planned: { id: "sa-journey", theme: "journey", words: 70 }
+    listening_passages:
+      - { id: "journey-heard", text: { "en": "A short passage in Classical Sanskrit on the theme journeys, read aloud" } }
+    reading_passages:
+      - { id: "journey-text", text: { "en": "A short written text in Classical Sanskrit on the theme journeys" } }
+  - planned: { id: "sa-agriculture", theme: "agriculture", words: 60 }
+    listening_passages:
+      - { id: "agriculture-heard", text: { "en": "A short passage in Classical Sanskrit on the theme farming and the harvest, read aloud" } }
+    reading_passages:
+      - { id: "agriculture-text", text: { "en": "A short written text in Classical Sanskrit on the theme farming and the harvest" } }
+  - planned: { id: "sa-grammar-past-tenses", grammar: ["past-tenses", "aorist", "perfect", "imperfect"] }
+    listening_passages:
+      - { id: "grammar-past-tenses-heard", text: { "en": "A short passage in Classical Sanskrit showing past tenses, aorist, perfect, imperfect, read aloud" } }
+    reading_passages:
+      - { id: "grammar-past-tenses-text", text: { "en": "A short written text in Classical Sanskrit showing past tenses, aorist, perfect, imperfect" } }
+  - planned: { id: "sa-grammar-lakaras", grammar: ["lakaras"] }
+    listening_passages:
+      - { id: "grammar-lakaras-heard", text: { "en": "A short passage in Classical Sanskrit showing lakaras, read aloud" } }
+    reading_passages:
+      - { id: "grammar-lakaras-text", text: { "en": "A short written text in Classical Sanskrit showing lakaras" } }
+  - planned: { id: "sa-grammar-imperatives", grammar: ["imperative"] }
+    listening_passages:
+      - { id: "grammar-imperatives-heard", text: { "en": "A short passage in Classical Sanskrit showing imperative, read aloud" } }
+    reading_passages:
+      - { id: "grammar-imperatives-text", text: { "en": "A short written text in Classical Sanskrit showing imperative" } }
+  - planned: { id: "sa-government", theme: "government", words: 70 }
+    listening_passages:
+      - { id: "government-heard", text: { "en": "A short passage in Classical Sanskrit on the theme kingship and government, read aloud" } }
+    reading_passages:
+      - { id: "government-text", text: { "en": "A short written text in Classical Sanskrit on the theme kingship and government" } }
+  - planned: { id: "sa-dharma", theme: "dharma", words: 70 }
+    listening_passages:
+      - { id: "dharma-heard", text: { "en": "A short passage in Classical Sanskrit on the theme dharma, conduct and duty, read aloud" } }
+    reading_passages:
+      - { id: "dharma-text", text: { "en": "A short written text in Classical Sanskrit on the theme dharma, conduct and duty" } }
+  - planned: { id: "sa-grammar-participles", grammar: ["participles", "past-participle"] }
+    listening_passages:
+      - { id: "grammar-participles-heard", text: { "en": "A short passage in Classical Sanskrit showing participles, past participle, read aloud" } }
+    reading_passages:
+      - { id: "grammar-participles-text", text: { "en": "A short written text in Classical Sanskrit showing participles, past participle" } }
+  - planned: { id: "sa-grammar-samasa", grammar: ["samasa"] }
+    listening_passages:
+      - { id: "grammar-samasa-heard", text: { "en": "A short passage in Classical Sanskrit showing samasa, read aloud" } }
+    reading_passages:
+      - { id: "grammar-samasa-text", text: { "en": "A short written text in Classical Sanskrit showing samasa" } }
+  - planned: { id: "sa-grammar-taddhita", grammar: ["taddhita"] }
+    listening_passages:
+      - { id: "grammar-taddhita-heard", text: { "en": "A short passage in Classical Sanskrit showing taddhita, read aloud" } }
+    reading_passages:
+      - { id: "grammar-taddhita-text", text: { "en": "A short written text in Classical Sanskrit showing taddhita" } }
+  - planned: { id: "sa-stories", theme: "stories", words: 70 }
+    listening_passages:
+      - { id: "stories-heard", text: { "en": "A short passage in Classical Sanskrit on the theme fables and tales, read aloud" } }
+    reading_passages:
+      - { id: "stories-text", text: { "en": "A short written text in Classical Sanskrit on the theme fables and tales" } }
+  - planned: { id: "sa-festivals", theme: "festivals", words: 50 }
+    listening_passages:
+      - { id: "festivals-heard", text: { "en": "A short passage in Classical Sanskrit on the theme festivals, read aloud" } }
+    reading_passages:
+      - { id: "festivals-text", text: { "en": "A short written text in Classical Sanskrit on the theme festivals" } }
+  - planned: { id: "sa-verbs-3", theme: "verbs-3", words: 60 }
+    listening_passages:
+      - { id: "verbs-3-heard", text: { "en": "A short passage in Classical Sanskrit on the theme more daily actions, read aloud" } }
+    reading_passages:
+      - { id: "verbs-3-text", text: { "en": "A short written text in Classical Sanskrit on the theme more daily actions" } }
+    milestone: "A2"
+  - planned: { id: "sa-grammar-krt", grammar: ["krt"] }
+    listening_passages:
+      - { id: "grammar-krt-heard", text: { "en": "A short passage in Classical Sanskrit showing krt, read aloud" } }
+    reading_passages:
+      - { id: "grammar-krt-text", text: { "en": "A short written text in Classical Sanskrit showing krt" } }
+  - planned: { id: "sa-grammar-gerundives", grammar: ["gerundives"] }
+    listening_passages:
+      - { id: "grammar-gerundives-heard", text: { "en": "A short passage in Classical Sanskrit showing gerundives, read aloud" } }
+    reading_passages:
+      - { id: "grammar-gerundives-text", text: { "en": "A short written text in Classical Sanskrit showing gerundives" } }
+  - planned: { id: "sa-grammar-absolutives-infinitives", grammar: ["absolutives", "infinitives"] }
+    listening_passages:
+      - { id: "grammar-absolutives-infinitives-heard", text: { "en": "A short passage in Classical Sanskrit showing absolutives, infinitives, read aloud" } }
+    reading_passages:
+      - { id: "grammar-absolutives-infinitives-text", text: { "en": "A short written text in Classical Sanskrit showing absolutives, infinitives" } }
+  - planned: { id: "sa-health", theme: "health", words: 80 }
+    listening_passages:
+      - { id: "health-heard", text: { "en": "A short passage in Classical Sanskrit on the theme health and the body's humours, read aloud" } }
+    reading_passages:
+      - { id: "health-text", text: { "en": "A short written text in Classical Sanskrit on the theme health and the body's humours" } }
+  - planned: { id: "sa-feelings", theme: "feelings", words: 90 }
+    listening_passages:
+      - { id: "feelings-heard", text: { "en": "A short passage in Classical Sanskrit on the theme feelings, read aloud" } }
+    reading_passages:
+      - { id: "feelings-text", text: { "en": "A short written text in Classical Sanskrit on the theme feelings" } }
+  - planned: { id: "sa-grammar-passive", grammar: ["passive"] }
+    listening_passages:
+      - { id: "grammar-passive-heard", text: { "en": "A short passage in Classical Sanskrit showing passive, read aloud" } }
+    reading_passages:
+      - { id: "grammar-passive-text", text: { "en": "A short written text in Classical Sanskrit showing passive" } }
+  - planned: { id: "sa-grammar-causatives", grammar: ["causatives"] }
+    listening_passages:
+      - { id: "grammar-causatives-heard", text: { "en": "A short passage in Classical Sanskrit showing causatives, read aloud" } }
+    reading_passages:
+      - { id: "grammar-causatives-text", text: { "en": "A short written text in Classical Sanskrit showing causatives" } }
+  - planned: { id: "sa-grammar-optative", grammar: ["optative"] }
+    listening_passages:
+      - { id: "grammar-optative-heard", text: { "en": "A short passage in Classical Sanskrit showing optative, read aloud" } }
+    reading_passages:
+      - { id: "grammar-optative-text", text: { "en": "A short written text in Classical Sanskrit showing optative" } }
+  - planned: { id: "sa-opinions", theme: "opinions", words: 70 }
+    listening_passages:
+      - { id: "opinions-heard", text: { "en": "A short passage in Classical Sanskrit on the theme opinions and judgement, read aloud" } }
+    reading_passages:
+      - { id: "opinions-text", text: { "en": "A short written text in Classical Sanskrit on the theme opinions and judgement" } }
+  - planned: { id: "sa-relationships", theme: "relationships", words: 70 }
+    listening_passages:
+      - { id: "relationships-heard", text: { "en": "A short passage in Classical Sanskrit on the theme relationships, read aloud" } }
+    reading_passages:
+      - { id: "relationships-text", text: { "en": "A short written text in Classical Sanskrit on the theme relationships" } }
+  - planned: { id: "sa-history", theme: "history", words: 90 }
+    listening_passages:
+      - { id: "history-heard", text: { "en": "A short passage in Classical Sanskrit on the theme kings and history, read aloud" } }
+    reading_passages:
+      - { id: "history-text", text: { "en": "A short written text in Classical Sanskrit on the theme kings and history" } }
+  - planned: { id: "sa-arts", theme: "arts", words: 80 }
+    listening_passages:
+      - { id: "arts-heard", text: { "en": "A short passage in Classical Sanskrit on the theme arts: music, dance and drama, read aloud" } }
+    reading_passages:
+      - { id: "arts-text", text: { "en": "A short written text in Classical Sanskrit on the theme arts: music, dance and drama" } }
+  - planned: { id: "sa-grammar-sutra-1", grammar: ["sutra-1"] }
+    listening_passages:
+      - { id: "grammar-sutra-1-heard", text: { "en": "A short passage in Classical Sanskrit showing sutra 1, read aloud" } }
+    reading_passages:
+      - { id: "grammar-sutra-1-text", text: { "en": "A short written text in Classical Sanskrit showing sutra 1" } }
+  - planned: { id: "sa-grammar-sutra-2", grammar: ["sutra-2"] }
+    listening_passages:
+      - { id: "grammar-sutra-2-heard", text: { "en": "A short passage in Classical Sanskrit showing sutra 2, read aloud" } }
+    reading_passages:
+      - { id: "grammar-sutra-2-text", text: { "en": "A short written text in Classical Sanskrit showing sutra 2" } }
+  - planned: { id: "sa-law", theme: "law", words: 80 }
+    listening_passages:
+      - { id: "law-heard", text: { "en": "A short passage in Classical Sanskrit on the theme law and rules of conduct, read aloud" } }
+    reading_passages:
+      - { id: "law-text", text: { "en": "A short written text in Classical Sanskrit on the theme law and rules of conduct" } }
+  - planned: { id: "sa-weddings", theme: "weddings", words: 60 }
+    listening_passages:
+      - { id: "weddings-heard", text: { "en": "A short passage in Classical Sanskrit on the theme weddings and rites of passage, read aloud" } }
+    reading_passages:
+      - { id: "weddings-text", text: { "en": "A short written text in Classical Sanskrit on the theme weddings and rites of passage" } }
+  - planned: { id: "sa-literature", theme: "literature", words: 90 }
+    listening_passages:
+      - { id: "literature-heard", text: { "en": "A short passage in Classical Sanskrit on the theme poems and books, read aloud" } }
+    reading_passages:
+      - { id: "literature-text", text: { "en": "A short written text in Classical Sanskrit on the theme poems and books" } }
+  - planned: { id: "sa-grammar-sutra-3", grammar: ["sutra-3"] }
+    listening_passages:
+      - { id: "grammar-sutra-3-heard", text: { "en": "A short passage in Classical Sanskrit showing sutra 3, read aloud" } }
+    reading_passages:
+      - { id: "grammar-sutra-3-text", text: { "en": "A short written text in Classical Sanskrit showing sutra 3" } }
+  - planned: { id: "sa-grammar-sutra-4", grammar: ["sutra-4"] }
+    listening_passages:
+      - { id: "grammar-sutra-4-heard", text: { "en": "A short passage in Classical Sanskrit showing sutra 4, read aloud" } }
+    reading_passages:
+      - { id: "grammar-sutra-4-text", text: { "en": "A short written text in Classical Sanskrit showing sutra 4" } }
+  - planned: { id: "sa-abstract-words", theme: "abstract-words", words: 90 }
+    listening_passages:
+      - { id: "abstract-words-heard", text: { "en": "A short passage in Classical Sanskrit on the theme ideas and values, read aloud" } }
+    reading_passages:
+      - { id: "abstract-words-text", text: { "en": "A short written text in Classical Sanskrit on the theme ideas and values" } }
+  - planned: { id: "sa-verbs-4", theme: "verbs-4", words: 100 }
+    listening_passages:
+      - { id: "verbs-4-heard", text: { "en": "A short passage in Classical Sanskrit on the theme story actions, read aloud" } }
+    reading_passages:
+      - { id: "verbs-4-text", text: { "en": "A short written text in Classical Sanskrit on the theme story actions" } }
+    milestone: "B1"
+  - ["*"]

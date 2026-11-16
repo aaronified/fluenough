@@ -1,0 +1,208 @@
+# Pairs of words that differ in one sound, for the sound differences of
+# sa-sounds. Each word and its gloss was read on its Wiktionary entry
+# (2026-11-16); the pairs of anu and aṇu are those Wikipedia gives in
+# Sanskrit grammar (phonology), and aṇu is a u-stem noun.
+schema: 1
+id: "sa-sound-differences"
+part: "core"
+kind: "vocab"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sa-0400"
+    target: "कुल"
+    reading: "kula"
+    ipa: "kulə"
+    pos: "noun"
+    gender: "n"
+    tags: ["vowel-length"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "sa-0401"
+    target: "कूल"
+    reading: "kūla"
+    ipa: "kuːlə"
+    pos: "noun"
+    gender: "n"
+    tags: ["vowel-length"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "sa-0402"
+    target: "पुर"
+    reading: "pura"
+    ipa: "purə"
+    pos: "noun"
+    gender: "n"
+    tags: ["vowel-length"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "sa-0403"
+    target: "पूर"
+    reading: "pūra"
+    ipa: "puːrə"
+    pos: "noun"
+    gender: "m"
+    tags: ["vowel-length"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "sa-0404"
+    target: "कर"
+    reading: "kara"
+    ipa: "kərə"
+    pos: "noun"
+    gender: "m"
+    tags: ["vowel-length", "voicing"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "sa-0405"
+    target: "कार"
+    reading: "kāra"
+    ipa: "kaːrə"
+    pos: "noun"
+    gender: "m"
+    tags: ["vowel-length"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "sa-0406"
+    target: "पल"
+    reading: "pala"
+    ipa: "pələ"
+    pos: "noun"
+    gender: "n"
+    tags: ["aspiration"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "sa-0407"
+    target: "फल"
+    reading: "phala"
+    ipa: "pʰələ"
+    pos: "noun"
+    gender: "n"
+    tags: ["aspiration"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "sa-0408"
+    target: "बाल"
+    reading: "bāla"
+    ipa: "baːlə"
+    pos: "noun"
+    gender: "m"
+    tags: ["aspiration", "voicing"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "sa-0409"
+    target: "भाल"
+    reading: "bhāla"
+    ipa: "bʱaːlə"
+    pos: "noun"
+    gender: "n"
+    tags: ["aspiration"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "sa-0410"
+    target: "दान"
+    reading: "dāna"
+    ipa: "d̪aːnə"
+    pos: "noun"
+    gender: "n"
+    tags: ["aspiration"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "sa-0411"
+    target: "धान"
+    reading: "dhāna"
+    ipa: "d̪ʱaːnə"
+    pos: "noun"
+    gender: "n"
+    tags: ["aspiration"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "sa-0412"
+    target: "वात"
+    reading: "vāta"
+    ipa: "ʋaːt̪ə"
+    pos: "noun"
+    gender: "m"
+    tags: ["dental-retroflex"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "sa-0413"
+    target: "वाट"
+    reading: "vāṭa"
+    ipa: "ʋaːʈə"
+    pos: "noun"
+    gender: "m"
+    tags: ["dental-retroflex"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "sa-0414"
+    target: "पात"
+    reading: "pāta"
+    ipa: "paːt̪ə"
+    pos: "noun"
+    gender: "m"
+    tags: ["dental-retroflex", "aspiration"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "sa-0415"
+    target: "पाठ"
+    reading: "pāṭha"
+    ipa: "paːʈʰə"
+    pos: "noun"
+    gender: "m"
+    tags: ["dental-retroflex", "aspiration"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "sa-0416"
+    target: "अनु"
+    reading: "anu"
+    ipa: "ənu"
+    pos: "other"
+    tags: ["dental-retroflex"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "sa-0417"
+    target: "अणु"
+    reading: "aṇu"
+    ipa: "əɳu"
+    pos: "noun"
+    gender: "m"
+    tags: ["dental-retroflex"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "sa-0418"
+    target: "गर"
+    reading: "gara"
+    ipa: "ɡərə"
+    pos: "noun"
+    gender: "m"
+    tags: ["voicing"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "sa-0419"
+    target: "पाल"
+    reading: "pāla"
+    ipa: "paːlə"
+    pos: "noun"
+    gender: "m"
+    tags: ["voicing"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "sa-0420"
+    target: "शम"
+    reading: "śama"
+    ipa: "ʃəmə"
+    pos: "noun"
+    gender: "m"
+    tags: ["sibilants"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "sa-0421"
+    target: "सम"
+    reading: "sama"
+    ipa: "səmə"
+    pos: "adj"
+    tags: ["sibilants"]
+    notes:
+      - { id: "n1", kind: "note" }

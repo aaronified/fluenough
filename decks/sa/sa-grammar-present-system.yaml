@@ -1,0 +1,47 @@
+schema: 1
+id: "sa-grammar-present-system"
+part: "core"
+kind: "rules"
+language: { code: "sa", iso639_3: "san", name: "Classical Sanskrit", script: "devanagari", icon: "सं" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+source: "Whitney, Sanskrit Grammar 551 to 553 (endings), 599 to 608 (the classes) and 734 to 735 (the bhū class) on en.wikisource, and the Wikipedia pages Sanskrit nouns and Sanskrit grammar, read 2026-11-16; Panini, Astadhyayi 1.3.1, 3.1.68, 3.2.123 as typed on sa.wikisource.org/wiki/अष्टाध्यायी, read 2026-11-16; each verb's forms read in the present table of its en.wiktionary.org entry (2026-11-16)."
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    tags: ["gana-1"]
+  slots: ["stem", "p3-sg", "p3-du", "p3-pl", "p2-sg", "p2-du", "p2-pl", "p1-sg", "p1-du", "p1-pl"]
+  rows:
+    - word: "sa-0430"
+      forms: { "stem": "भव", "p3-sg": "भवति", "p3-du": "भवतः", "p3-pl": "भवन्ति", "p2-sg": "भवसि", "p2-du": "भवथः", "p2-pl": "भवथ", "p1-sg": "भवामि", "p1-du": "भवावः", "p1-pl": "भवामः" }
+      readings: { "stem": "bhava", "p3-sg": "bhavati", "p3-du": "bhavataḥ", "p3-pl": "bhavanti", "p2-sg": "bhavasi", "p2-du": "bhavathaḥ", "p2-pl": "bhavatha", "p1-sg": "bhavāmi", "p1-du": "bhavāvaḥ", "p1-pl": "bhavāmaḥ" }
+    - word: "sa-0431"
+      forms: { "stem": "गच्छ", "p3-sg": "गच्छति", "p3-du": "गच्छतः", "p3-pl": "गच्छन्ति", "p2-sg": "गच्छसि", "p2-du": "गच्छथः", "p2-pl": "गच्छथ", "p1-sg": "गच्छामि", "p1-du": "गच्छावः", "p1-pl": "गच्छामः" }
+      readings: { "stem": "gaccha", "p3-sg": "gacchati", "p3-du": "gacchataḥ", "p3-pl": "gacchanti", "p2-sg": "gacchasi", "p2-du": "gacchathaḥ", "p2-pl": "gacchatha", "p1-sg": "gacchāmi", "p1-du": "gacchāvaḥ", "p1-pl": "gacchāmaḥ" }
+    - word: "sa-0432"
+      forms: { "stem": "पठ", "p3-sg": "पठति", "p3-du": "पठतः", "p3-pl": "पठन्ति", "p2-sg": "पठसि", "p2-du": "पठथः", "p2-pl": "पठथ", "p1-sg": "पठामि", "p1-du": "पठावः", "p1-pl": "पठामः" }
+      readings: { "stem": "paṭha", "p3-sg": "paṭhati", "p3-du": "paṭhataḥ", "p3-pl": "paṭhanti", "p2-sg": "paṭhasi", "p2-du": "paṭhathaḥ", "p2-pl": "paṭhatha", "p1-sg": "paṭhāmi", "p1-du": "paṭhāvaḥ", "p1-pl": "paṭhāmaḥ" }
+    - word: "sa-0433"
+      forms: { "stem": "वद", "p3-sg": "वदति", "p3-du": "वदतः", "p3-pl": "वदन्ति", "p2-sg": "वदसि", "p2-du": "वदथः", "p2-pl": "वदथ", "p1-sg": "वदामि", "p1-du": "वदावः", "p1-pl": "वदामः" }
+      readings: { "stem": "vada", "p3-sg": "vadati", "p3-du": "vadataḥ", "p3-pl": "vadanti", "p2-sg": "vadasi", "p2-du": "vadathaḥ", "p2-pl": "vadatha", "p1-sg": "vadāmi", "p1-du": "vadāvaḥ", "p1-pl": "vadāmaḥ" }
+    - word: "sa-0434"
+      forms: { "stem": "पच", "p3-sg": "पचति", "p3-du": "पचतः", "p3-pl": "पचन्ति", "p2-sg": "पचसि", "p2-du": "पचथः", "p2-pl": "पचथ", "p1-sg": "पचामि", "p1-du": "पचावः", "p1-pl": "पचामः" }
+      readings: { "stem": "paca", "p3-sg": "pacati", "p3-du": "pacataḥ", "p3-pl": "pacanti", "p2-sg": "pacasi", "p2-du": "pacathaḥ", "p2-pl": "pacatha", "p1-sg": "pacāmi", "p1-du": "pacāvaḥ", "p1-pl": "pacāmaḥ" }
+    - word: "sa-0435"
+      forms: { "stem": "नय", "p3-sg": "नयति", "p3-du": "नयतः", "p3-pl": "नयन्ति", "p2-sg": "नयसि", "p2-du": "नयथः", "p2-pl": "नयथ", "p1-sg": "नयामि", "p1-du": "नयावः", "p1-pl": "नयामः" }
+      readings: { "stem": "naya", "p3-sg": "nayati", "p3-du": "nayataḥ", "p3-pl": "nayanti", "p2-sg": "nayasi", "p2-du": "nayathaḥ", "p2-pl": "nayatha", "p1-sg": "nayāmi", "p1-du": "nayāvaḥ", "p1-pl": "nayāmaḥ" }
+rules:
+  - id: "sa-rule-present-stem"
+    slots: ["stem"]
+    words: [{ word: "वर्तमाने लट्", reading: "vartamāne laṭ" }, { word: "कर्तरि शप्", reading: "kartari śap" }, { word: "भूवादयो धातवः", reading: "bhūvādayo dhātavaḥ" }, { word: "भू", reading: "bhū" }, { word: "भव", reading: "bhava" }, { word: "अद्", reading: "ad" }, { word: "अद्", reading: "ad" }, { word: "हु", reading: "hu" }, { word: "जुहु", reading: "juhu" }, { word: "दिव्", reading: "div" }, { word: "दीव्य", reading: "dīvya" }, { word: "सु", reading: "su" }, { word: "सुनु", reading: "sunu" }, { word: "तुद्", reading: "tud" }, { word: "तुद", reading: "tuda" }, { word: "रुध्", reading: "rudh" }, { word: "रुन्ध्", reading: "rundh" }, { word: "तन्", reading: "tan" }, { word: "तनु", reading: "tanu" }, { word: "क्री", reading: "krī" }, { word: "क्रीणा", reading: "krīṇā" }, { word: "चुर्", reading: "cur" }, { word: "चोरय", reading: "coraya" }]
+  - id: "sa-rule-present-third"
+    slots: ["p3-sg", "p3-du", "p3-pl"]
+    words: [{ word: "भवति", reading: "bhavati" }, { word: "भवतः", reading: "bhavataḥ" }, { word: "भवन्ति", reading: "bhavanti" }, { word: "अतः गुणे", reading: "ataḥ guṇe" }]
+  - id: "sa-rule-present-second"
+    slots: ["p2-sg", "p2-du", "p2-pl"]
+    words: [{ word: "भवसि", reading: "bhavasi" }, { word: "भवथः", reading: "bhavathaḥ" }, { word: "भवथ", reading: "bhavatha" }]
+  - id: "sa-rule-present-first"
+    slots: ["p1-sg", "p1-du", "p1-pl"]
+    words: [{ word: "भवामि", reading: "bhavāmi" }, { word: "भवावः", reading: "bhavāvaḥ" }, { word: "भवामः", reading: "bhavāmaḥ" }]

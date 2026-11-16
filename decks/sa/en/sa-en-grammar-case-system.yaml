@@ -1,0 +1,61 @@
+schema: 1
+id: "sa-en-grammar-case-system"
+kind: "layer"
+core: "sa-grammar-case-system"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The eight cases and three numbers"
+description: "Sanskrit nouns change their ending for eight cases and three numbers, one, two and many. The eight cases are shown on one noun, Rāma, so you can see what each case does before the endings of the next lesson. Not yet checked by a Sanskrit speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "case and number"
+  slots:
+    "nom-sg": "nominative, singular (one; the subject (who or what the sentence is about))"
+    "nom-du": "nominative, dual (two; the subject (who or what the sentence is about))"
+    "nom-pl": "nominative, plural (many; the subject (who or what the sentence is about))"
+    "acc-sg": "accusative, singular (one; the object (what the verb acts on))"
+    "acc-du": "accusative, dual (two; the object (what the verb acts on))"
+    "acc-pl": "accusative, plural (many; the object (what the verb acts on))"
+    "ins-sg": "instrumental, singular (one; the means or the doer-by-means (by, with))"
+    "ins-du": "instrumental, dual (two; the means or the doer-by-means (by, with))"
+    "ins-pl": "instrumental, plural (many; the means or the doer-by-means (by, with))"
+    "dat-sg": "dative, singular (one; the one given to (to, for))"
+    "dat-du": "dative, dual (two; the one given to (to, for))"
+    "dat-pl": "dative, plural (many; the one given to (to, for))"
+    "abl-sg": "ablative, singular (one; the source (from, away from))"
+    "abl-du": "ablative, dual (two; the source (from, away from))"
+    "abl-pl": "ablative, plural (many; the source (from, away from))"
+    "gen-sg": "genitive, singular (one; belonging (of))"
+    "gen-du": "genitive, dual (two; belonging (of))"
+    "gen-pl": "genitive, plural (many; belonging (of))"
+    "loc-sg": "locative, singular (one; the place (in, on, at))"
+    "loc-du": "locative, dual (two; the place (in, on, at))"
+    "loc-pl": "locative, plural (many; the place (in, on, at))"
+    "voc-sg": "vocative, singular (one; the one addressed (O!))"
+    "voc-du": "vocative, dual (two; the one addressed (O!))"
+    "voc-pl": "vocative, plural (many; the one addressed (O!))"
+rules:
+  "sa-rule-nominative":
+    name: "The nominative (subject): the first case"
+    explanation: "The nominative names who or what the sentence is about, the doer of the action. In the Sanskrit tradition it is the first case, {1}. For Rāma: {2} for one, {3} for two and {4} for many. Pāṇini's rule 2.3.46 gives this case for the bare meaning of a word: {5}."
+  "sa-rule-accusative":
+    name: "The accusative (object): the second case"
+    explanation: "The accusative names what the verb acts on, the object. In the tradition it is the second case, {1}. For Rāma: {2}, {3}, {4}. Pāṇini 2.3.2 says: {5}, the second case for the object."
+  "sa-rule-instrumental":
+    name: "The instrumental (means): the third case"
+    explanation: "The instrumental names the means, the one or thing by which the action is done: by, with. In the tradition it is the third case, {1}. For Rāma: {2}, {3}, {4}. Pāṇini 2.3.18 gives it to the doer (when the doer is not already named by the verb) and to the instrument; the page's text ends {5}, the third case for the instrument and the doer."
+  "sa-rule-dative":
+    name: "The dative (to, for): the fourth case"
+    explanation: "The dative names the one to whom or for whom something is done, the one given to: to, for. In the tradition it is the fourth case, {1}. For Rāma: {2}, {3}, {4}. Pāṇini 2.3.13 says: {5}, the fourth case for the one given to."
+  "sa-rule-ablative":
+    name: "The ablative (from): the fifth case"
+    explanation: "The ablative names the point things move away from, or the source: from, away from. In the tradition it is the fifth case, {1}. For Rāma: {2}, {3}, {4}. Pāṇini 2.3.28 says: {5}, the fifth case for the point of departure."
+  "sa-rule-genitive":
+    name: "The genitive (of): the sixth case"
+    explanation: "The genitive joins one noun to another: of, belonging to. In the tradition it is the sixth case, {1}. For Rāma: {2}, {3}, {4}. Pāṇini 2.3.50 says: {5}, the sixth case for what remains."
+  "sa-rule-locative":
+    name: "The locative (in, on, at): the seventh case"
+    explanation: "The locative names the place or time in which something is: in, on, at. In the tradition it is the seventh case, {1}. For Rāma: {2}, {3}, {4}. Pāṇini 2.3.36 says: {5}, the seventh case for the location."
+  "sa-rule-vocative":
+    name: "The vocative (O!): the case of address"
+    explanation: "The vocative is used to call someone: O Rāma! It is not counted among the first seven cases; the tradition names it {1}, address. For Rāma: {2} for one, {3} for two, {4} for many. Pāṇini 2.3.47 says: {5}, and also for address."
