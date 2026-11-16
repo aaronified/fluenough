@@ -42,6 +42,22 @@ cards:
     target_scripts: { sitelen_pona: "\u{F1954}" }
     native: "good"
 ''',
+  'decks/tok/tok-en-script-sitelen-pona.yaml': '''
+schema: 1
+id: tok-en-script-sitelen-pona
+name: "Sitelen pona: the glyphs"
+language: { code: tok, iso639_3: tok, name: Toki Pona, script: sitelen_pona, scripts: [sitelen_pona, latin] }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+tags: [script]
+cards:
+  - id: tok-en-script-sitelen-pona-0001
+    target: "\u{F196C}"
+    target_scripts: { latin: "toki" }
+    native: "language"
+    reading: "toki"
+    pos: letter
+''',
   'decks/tok/tok-path.yaml': '''
 schema: 1
 kind: path
@@ -167,6 +183,27 @@ void main() {
       final state = await toki(<String>{'latin', 'sitelen_pona'});
       final session = production(state);
       expect(session.writeScripts, <String>['latin']);
+    });
+
+    test('in the glyph deck, written in sitelen pona, the answer is the '
+        'Latin word', () async {
+      final state = await toki(<String>{'sitelen_pona'});
+      final glyphs = state.deckById('tok-en-script-sitelen-pona')!;
+      final session = DrillSession(
+        state: state,
+        items: <SessionItem>[
+          SessionItem(
+            card: glyphs.cards.first,
+            mode: DrillMode.production,
+            state: null,
+          ),
+        ],
+      );
+      addTearDown(session.dispose);
+      expect(session.writeScripts, <String>['latin']);
+      expect(session.writtenTarget, 'toki');
+      expect(session.acceptedAnswers, contains('toki'));
+      expect(session.acceptedAnswers, isNot(contains(_toki)));
     });
 
     test('the script has no keyboard, and other scripts are unchanged', () {
