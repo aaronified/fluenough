@@ -297,6 +297,9 @@ FONTS = {
     "thai": ("Noto Sans Thai", "NotoSansThai.ttf"),
     "meitei_mayek": ("Noto Sans Meetei Mayek", "NotoSansMeeteiMayek.ttf"),
     "brahmi": ("Noto Sans Brahmi", "NotoSansBrahmi.ttf"),
+    # Toki Pona's second script (owner, 2026-11-16; ADR-0055): sitelen seli
+    # kiwen asuki, SIL OFL-1.1, subset to the UCSUR block U+F1900-F19FF.
+    "sitelen_pona": ("sitelen seli kiwen asuki", "SitelenSeliKiwen.ttf"),
     # The content fonts (owner, 2026-11-16: "Latin languages can share one
     # font. Same for Cyrillic. I don't want to depend on system fonts for
     # content."): one Noto Sans subset per script, shared by every language

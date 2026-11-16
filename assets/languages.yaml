@@ -217,7 +217,9 @@ languages:
       script_question: "한글을 읽을 수 있나요?", script_can_read: "한글을 읽을 수 있습니다", script_text: "unchecked" }  # Claude-written, for a speaker to check
   - { code: "eo", dialect: "No dialects: one standard (Fundamento)", iso639_3: "epo", name: "Esperanto", own_name: "Esperanto", scripts: ["latin"], family: "constructed",
       script_question: "Ĉu vi povas legi la latinan skribon?", script_can_read: "Mi povas legi la latinan skribon", script_text: "unchecked" }  # Claude-written, for a speaker to check
-  - { code: "tok", dialect: "No dialects: one standard", iso639_3: "tok", name: "Toki Pona", own_name: "toki pona", scripts: ["latin"], family: "constructed" }
+  - { code: "tok", dialect: "No dialects: one standard", iso639_3: "tok", name: "Toki Pona", own_name: "toki pona", scripts: ["latin", "sitelen_pona"], family: "constructed",
+      scripts_question: "sina ken lukin e toki pona kepeken sitelen seme?",
+      script_can_read: { latin: "mi ken lukin e sitelen Lasina", sitelen_pona: "mi ken lukin e sitelen pona" }, script_text: "unchecked" }  # sitelen pona with Latin (owner, 2026-11-16); Claude-written, for a speaker to check
   - { code: "jbo", iso639_3: "jbo", name: "Lojban", own_name: "la .lojban.", scripts: ["latin"], family: "constructed" }
   - { code: "isv", iso639_3: "isv", name: "Interslavic", own_name: "Medžuslovjansky · Меджусловјанскы", scripts: ["latin", "cyrillic"], family: "constructed",
       aliases: ["Slovianski", "Medžuslovjansky", "Меджусловјанскы"] }
