@@ -60,9 +60,11 @@ def nearest(weights: dict[Path, int], weight: int) -> Path:
 
 
 def combining_marks(noto_sans: Path, roboto: Path) -> io.BytesIO:
-    """The combining diacritics (U+0300-036F) of [noto_sans], scaled to
+    """The IPA letters (U+0250-02FF), combining diacritics (U+0300-036F) and
+    Latin Extended Additional (U+1E00-1EFF) of [noto_sans], scaled to
     Roboto's units, as a font to merge in: Roboto lacks some, such as the
-    candrabindu U+0310 a Bengali reading can carry, which would draw as a box."""
+    candrabindu U+0310 a Bengali reading can carry, or an IPA letter of a
+    card's pronunciation, which would draw as a box."""
     from fontTools import subset
     from fontTools.ttLib import TTFont
     from fontTools.ttLib.scaleUpem import scale_upem
@@ -72,7 +74,7 @@ def combining_marks(noto_sans: Path, roboto: Path) -> io.BytesIO:
     options.layout_features = ["mark", "mkmk"]
     options.notdef_outline = False
     subsetter = subset.Subsetter(options)
-    subsetter.populate(unicodes=range(0x300, 0x370))
+    subsetter.populate(unicodes=[*range(0x250, 0x300), *range(0x300, 0x370), *range(0x1E00, 0x1F00)])
     subsetter.subset(font)
     scale_upem(font, TTFont(roboto)["head"].unitsPerEm)
     out = io.BytesIO()
@@ -91,7 +93,7 @@ def main(argv: list[str] | None = None) -> int:
         type=Path,
         default=None,
         help="directory of NotoSans-*.ttf, whose combining marks "
-        "(U+0300-036F) are added, as Bengali readings use them",
+        "(IPA letters and combining marks) are added, as readings and IPA use them",
     )
     args = parser.parse_args(argv)
 

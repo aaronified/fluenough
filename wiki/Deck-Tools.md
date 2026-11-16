@@ -609,7 +609,7 @@ A widget test draws text in boxes and turns font fallback off, so
 `readme_fonts.py` first merges the SDK's Roboto with static Noto Sans Bengali
 files (`NotoSansBengali-Regular.ttf`, `-SemiBold.ttf` and so on, from
 [notofonts](https://github.com/notofonts/notofonts.github.io/tree/main/fonts/NotoSansBengali/hinted/ttf),
-OFL-1.1), and with the combining marks (U+0300-036F) of static Noto Sans
+OFL-1.1), and with the IPA letters and combining marks (U+0250-036F, U+1E00-1EFF) of static Noto Sans
 (`--marks`: Roboto lacks some a reading uses, such as the candrabindu
 U+0310, which a test would draw as a box). Then `tools/readme_gifs/readme_gifs_test.dart`, skipped unless `README_GIFS=1`, writes
 each screen's frames, the three stills and the learning session's frames as
