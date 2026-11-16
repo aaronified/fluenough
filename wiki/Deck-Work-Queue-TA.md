@@ -64,3 +64,23 @@ Ids: highest today `ta-0332`; reserved ranges (never reused, ascending inside a 
 | B1 | Haiku | `decks/ta-a2-wave1`, `decks/ta-b1-wave1` | units 46 to 114, only if A1 has merged and time allows |
 
 Work order: TA-110 and TA-001 (Sonnet, parallel) first; A1 wave once TA-110 is merged; then the rest by the order in Plan-Language-Completeness (c).
+
+## 4. Pause and resume plan (2026-11-16)
+
+Owner directive via the parent (token budget): at most 4 language sessions at once; Tamil is paused. State at the pause:
+
+| Item | State |
+|---|---|
+| Audit, queue, `Plan-Culture-Tamil` | on main |
+| TA-110 Tamil engine | **merged** (#1488, tracker #1483); `python3 tools/transcribe.py ta "<text>"` is on main |
+| Shared branch `decks/ta-a1-wave1` | pushed, at decks-live `f20a3094`, **no commits**; no PR open |
+| Workers ta-gram (Sonnet), ta-script, ta-sent (Haiku) | all three stopped by the 5-hour API rate limit (HTTP 429, reset 21:30 UTC) before committing anything; no files written or pushed |
+
+Engine findings for the builders: bare digits (௦ to ௯) give an empty IPA, and the aytam ஃ gives `ḵ` [x]; both are for a Sonnet to settle with the tool owner, never hand-written. Fourteen old cards write `ʧ` where the engine writes `tʃ` (ta-0022, 0158, 0200, 0213, 0217, 0219, 0223, 0240, 0250, 0269, 0293, 0294, 0316, 0325): a deck fix in the first wave.
+
+**Resume, in this order** (same briefs as the 2026-11-15 session; the common brief is rebuilt from section 2 of [Deck-Work-Queue-KN](Deck-Work-Queue-KN.md) plus this page; use the engine from main, no branch fetch needed):
+
+1. Re-create or reuse `decks/ta-a1-wave1` (merge `origin/decks-live`).
+2. Wave 1, parallel, one worktree each: ta-script (Haiku: `ta-script-vowels`, `-vowel-signs` for units 7 and 8, then consonants, Grantha, digits, reading; `alphabet` in the path; ids `ta-1000..1299`); ta-sent (Haiku: sentences decks for time, location, work, numbers-big, groceries, market, directions, transport, home, first-words; ids `ta-3000..3999`); ta-gram (Sonnet: grammar units 17 to 22, 27, 29 to 32, 34, 40 to 42, 45 modelled on the Telugu, Kannada and Bengali grammar decks; ids `ta-0400..0899`; each unit's `planned` becomes `decks` in its commit); the `ʧ` to `tʃ` fix on the 14 cards.
+3. One PR to `decks-live`, one Sonnet review, merge on green ("Validate decks" and "Released app reads the decks").
+4. Then in order: TA-120 notes and review-queue rows (owner directive: a note on every card with a real teachable point), TA-040 topics, TA-050 situations, TA-080 facts, culture, proverbs, multi-word and recommendations from `Plan-Culture-Tamil` (before dropping an item try every reachable source and record a one-line reason), TA-2xx readings, TA-111/112 narrow IPA last, then A2 and B1.
