@@ -99,9 +99,8 @@ class _Hint extends StatelessWidget {
     // The icon's 48 dp box and the sentence's first line share a centre: the
     // sentence is pushed down by half the difference, so a wrapped sentence
     // keeps the icon level with its first line.
-    final lineHeight = MediaQuery.textScalerOf(
-      context,
-    ).scale(style.fontSize! * (style.height ?? 1.3));
+    final lineHeight = MediaQuery.textScalerOf(context)
+        .scale(style.fontSize! * (style.height ?? 1.3));
     final textTop = ((48 - lineHeight) / 2).clamp(0.0, 48.0);
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
