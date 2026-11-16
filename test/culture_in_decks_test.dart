@@ -57,6 +57,10 @@ Future<AppState> _decks(
 }
 
 Future<void> _toCulture(WidgetTester tester) async {
+  // The path opens scrolled to the unit up next: bring the course card, and
+  // its button, back to the top.
+  await tester.drag(find.byType(CustomScrollView).first, const Offset(0, 3000));
+  await tester.pumpAndSettle();
   await tester.tap(find.byKey(_button));
   await tester.pumpAndSettle();
 }
