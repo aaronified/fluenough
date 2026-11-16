@@ -6,6 +6,7 @@ import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/language_skills.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/data/spoken_languages.dart';
+import 'package:fluenough/core/decks/culture_options.dart';
 import 'package:fluenough/core/languages/language_skills.dart';
 import 'package:fluenough/features/languages/language_skills_sheet.dart';
 import 'package:fluenough/features/languages/language_views.dart';
@@ -434,6 +435,72 @@ void main() {
     await tapKey(tester, 'minutes-more');
     expect(state.settings.dailyMinutesFor('es'), 20);
     expect(find.text(text.languagesMinutesMins(20)), findsOneWidget);
+  });
+
+  group('the Culture group of a language\'s details', () {
+    // "Culture" is also a bar label on the sheet: the switch has a key.
+    final cultureSwitch = find.byKey(const ValueKey<String>('culture-switch'));
+
+    Future<void> tapShown(WidgetTester tester, Finder finder) async {
+      await tester.ensureVisible(finder);
+      await tester.pumpAndSettle();
+      await tester.tap(finder);
+      await tester.pumpAndSettle();
+    }
+
+    testWidgets('is one switch that opens in place to its two options', (
+      tester,
+    ) async {
+      final state = await pumpLanguages(tester);
+      await tapKey(tester, 'language-es');
+      final text = l10n(tester);
+      await tester.ensureVisible(cultureSwitch);
+      await tester.pumpAndSettle();
+      // On by default, so it is open, with the mockup's wording and no
+      // "applies to all languages" line.
+      expect(find.text(text.languagesCultureOn), findsOneWidget);
+      expect(find.text(text.cultureSettingCounts), findsOneWidget);
+      expect(find.text(text.cultureSettingCreators), findsOneWidget);
+      expect(state.settings.cultureFor('es'), CultureOptions.defaults);
+
+      await tapShown(tester, cultureSwitch);
+      expect(state.settings.cultureFor('es').items, isFalse);
+      expect(find.text(text.languagesCultureOff), findsOneWidget);
+      expect(find.text(text.cultureSettingCounts), findsNothing);
+      expect(find.text(text.cultureSettingCreators), findsNothing);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('chooses the two switches for this language only', (
+      tester,
+    ) async {
+      final state = await pumpLanguages(tester);
+      await tapKey(tester, 'language-es');
+      final text = l10n(tester);
+      await tapShown(tester, find.text(text.cultureSettingCounts));
+      expect(state.settings.cultureFor('es').counts, isTrue);
+      expect(find.text(text.cultureSettingCountsOn), findsOneWidget);
+      await tapShown(tester, find.text(text.cultureSettingCreators));
+      expect(state.settings.cultureFor('es').creators, isFalse);
+      expect(find.text(text.cultureSettingCreatorsOff), findsOneWidget);
+
+      // Another language keeps what it had.
+      expect(state.settings.cultureFor('hi'), CultureOptions.defaults);
+      expect(state.settings.cultureFor('te'), CultureOptions.defaults);
+    });
+
+    testWidgets('shows what the language chose before, and fits at 1.4x text '
+        'in dark', (tester) async {
+      final state = learner();
+      state.settings.setCultureFor('es', const CultureOptions(counts: true));
+      await pumpLanguages(tester, state: state, mode: ThemeMode.dark);
+      await tapKey(tester, 'language-es');
+      final text = l10n(tester);
+      await tester.ensureVisible(cultureSwitch);
+      await tester.pumpAndSettle();
+      expect(find.text(text.cultureSettingCountsOn), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
   });
 
   testWidgets('a script known from another language starts as Know when '

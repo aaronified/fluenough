@@ -207,6 +207,24 @@ void main() {
       expect(again.settings.todaySummary, 'kept');
     });
 
+    test('a store from before per-language culture is migrated and saved '
+        'at once', () async {
+      final db = AppDatabase(NativeDatabase.memory());
+      addTearDown(db.close);
+      await db.settingsDao.put('language_skills', '{"hi":{"speak":"learn"}}');
+      await db.settingsDao.put('culture_items', 'false');
+      final first = await StoredSettings.open(db);
+      expect(first.settings.cultureFor('hi').items, isFalse);
+      await first.flush();
+      // Written without any change by the learner, so it is read, not
+      // migrated, the next time.
+      final saved = await db.settingsDao.all();
+      expect(saved['culture_by_language'], contains('"hi"'));
+      await db.settingsDao.put('culture_items', 'true');
+      final again = await StoredSettings.open(db);
+      expect(again.settings.cultureFor('hi').items, isFalse);
+    });
+
     test('writing it notifies no screen', () {
       final settings = SettingsNotifier();
       var told = 0;
