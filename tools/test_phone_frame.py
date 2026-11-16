@@ -114,6 +114,31 @@ class PhoneFrameTest(unittest.TestCase):
                     rgba.getpixel((rgba.width // 2, rgba.height // 2))[3], 255
                 )
 
+    def test_a_dropped_in_status_bar_crop_is_used_by_theme(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            Image.new("RGB", (50, 8), (255, 0, 255)).save(
+                Path(tmp) / "status-bar-light.png"
+            )
+            framed = phone_frame.frame_phone(
+                _screen((250, 250, 250)), frame_dir=Path(tmp)
+            )
+            bezel, button = phone_frame.margins(SCREEN[0])
+            # Left of the camera, inside the band: the crop's colour.
+            self.assertEqual(
+                framed.getpixel((button + bezel + 20, bezel + 3)),
+                (255, 0, 255, 255),
+            )
+
+    def test_the_gesture_handle_sits_under_the_screen(self):
+        framed = phone_frame.frame_phone(_screen((250, 250, 250)))
+        bezel, _ = phone_frame.margins(SCREEN[0])
+        nav = phone_frame.nav_band(SCREEN[0])
+        y = framed.height - bezel - nav // 2
+        pixel = framed.getpixel((framed.width // 2, y))
+        self.assertLess(max(pixel[:3]), 200)
+        # And beside it the band is the screen's own colour.
+        self.assertEqual(framed.getpixel((framed.width // 2 - 40, y))[:3], (250, 250, 250))
+
 
 if __name__ == "__main__":
     unittest.main()

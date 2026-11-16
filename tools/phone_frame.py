@@ -46,28 +46,137 @@ def status_band(width: int) -> int:
     return round(width * 0.075)
 
 
+def gesture_pill(width: int) -> tuple[int, int]:
+    """The Android gesture handle's width and thickness for a screen
+    [width] pixels wide: 144 x 14 on a 1440 px screen."""
+    return round(width * 0.1), max(3, round(width * 0.0097))
+
+
+def nav_band(width: int) -> int:
+    """The height of the thin band below the app's navigation bar that holds
+    the gesture handle."""
+    return gesture_pill(width)[1] * 3
+
+
 def frame_size(screen_size: tuple[int, int]) -> tuple[int, int]:
     """The size of the framed image for a screen of [screen_size]."""
     width, height = screen_size
     bezel, button = margins(width)
-    return width + 2 * (bezel + button), height + status_band(width) + 2 * bezel
+    return (
+        width + 2 * (bezel + button),
+        height + status_band(width) + nav_band(width) + 2 * bezel,
+    )
 
 
-def frame_phone(screen):
+# Where an owner's crop of the real status bar can be dropped in, by theme:
+# `status-bar-light.png` and `status-bar-dark.png`.
+FRAME_DIR = Path(__file__).resolve().parent.parent / "docs" / "screenshots" / "frame"
+
+
+def _is_dark(colour) -> bool:
+    r, g, b = colour[:3]
+    return 0.299 * r + 0.587 * g + 0.114 * b < 128
+
+
+def _status_bar(width: int, background, frame_dir: Path | None):
+    """The status band, [width] wide: the owner's crop for the screen's
+    theme if there is one in [frame_dir], else one drawn here (time, small
+    notification icons, and signal, wifi and battery)."""
+    from PIL import Image, ImageDraw, ImageFont
+
+    height = status_band(width)
+    dark = _is_dark(background)
+    crop = (frame_dir or FRAME_DIR) / f"status-bar-{'dark' if dark else 'light'}.png"
+    if crop.is_file():
+        with Image.open(crop) as img:
+            return img.convert("RGB").resize((width, height), Image.Resampling.LANCZOS)
+    ink = (245, 246, 248) if dark else (28, 30, 34)
+    ss = 4
+    band = Image.new("RGB", (width * ss, height * ss), background)
+    d = ImageDraw.Draw(band)
+    mid = height * ss / 2
+    unit = height * ss * 0.5  # the icons' height
+    # Time, at the left.
+    try:
+        font = ImageFont.load_default(size=round(height * ss * 0.5))
+    except TypeError:  # an old Pillow: the fixed-size font
+        font = ImageFont.load_default()
+    d.text((width * ss * 0.06, mid), "9:41", fill=ink, font=font, anchor="lm")
+    # Notification icons after it: a few small shapes.
+    x = width * ss * 0.06 + height * ss * 1.7
+    r = unit * 0.28
+    d.ellipse([x, mid - r, x + 2 * r, mid + r], fill=ink)
+    x += unit * 0.9
+    d.rounded_rectangle([x, mid - r, x + 2 * r, mid + r], radius=r * 0.4, fill=ink)
+    x += unit * 0.9
+    d.polygon([(x, mid + r), (x + r, mid - r), (x + 2 * r, mid + r)], fill=ink)
+    # System icons at the right: battery, then signal bars, then wifi.
+    right = width * ss * 0.94
+    bw, bh = unit * 0.95, unit * 0.5
+    d.rounded_rectangle(
+        [right - bw, mid - bh / 2, right, mid + bh / 2],
+        radius=bh * 0.25,
+        outline=ink,
+        width=max(2, round(unit * 0.07)),
+    )
+    pad = unit * 0.1
+    d.rounded_rectangle(
+        [right - bw + pad * 1.6, mid - bh / 2 + pad * 1.6, right - bw * 0.3, mid + bh / 2 - pad * 1.6],
+        radius=bh * 0.1,
+        fill=ink,
+    )
+    d.rectangle([right + unit * 0.04, mid - bh * 0.15, right + unit * 0.1, mid + bh * 0.15], fill=ink)
+    x = right - bw - unit * 0.5
+    for i in range(4):
+        h = unit * (0.2 + 0.14 * i)
+        d.rectangle([x - unit * 0.62 + i * unit * 0.16, mid + unit * 0.3 - h, x - unit * 0.62 + i * unit * 0.16 + unit * 0.1, mid + unit * 0.3], fill=ink)
+    x -= unit * 0.95
+    cy = mid + unit * 0.32
+    for k, rad in enumerate((unit * 0.62, unit * 0.4, unit * 0.18)):
+        d.pieslice([x - rad, cy - rad, x + rad, cy + rad], 225, 315, fill=ink if k != 1 else background)
+        # An arc ring: the next smaller pie, cut out in the background.
+    d.pieslice([x - unit * 0.3, cy - unit * 0.3, x + unit * 0.3, cy + unit * 0.3], 225, 315, fill=ink)
+    return band.resize((width, height), Image.Resampling.LANCZOS)
+
+
+def _gesture_band(width: int, background):
+    """The band below the navigation bar, with the gesture handle."""
+    from PIL import Image, ImageDraw
+
+    height = nav_band(width)
+    pill_w, pill_h = gesture_pill(width)
+    ss = 4
+    band = Image.new("RGB", (width * ss, height * ss), background)
+    colour = (176, 180, 186) if _is_dark(background) else (112, 116, 122)
+    left = (width - pill_w) / 2 * ss
+    top = (height - pill_h) / 2 * ss
+    ImageDraw.Draw(band).rounded_rectangle(
+        [left, top, left + pill_w * ss, top + pill_h * ss],
+        radius=pill_h * ss / 2,
+        fill=colour,
+    )
+    return band.resize((width, height), Image.Resampling.LANCZOS)
+
+
+def frame_phone(screen, frame_dir: Path | None = None):
     """[screen] (a Pillow image) inside a phone silhouette, as an RGBA image
     with a transparent background."""
     from PIL import Image, ImageDraw
 
     screen = screen.convert("RGB")
     w, h = screen.size
-    # A blank status band on top, in the screenshot's own top colour.
+    # A status bar on top, over the screenshot's own top colour, and the
+    # gesture handle under its navigation bar, over its bottom colour.
     band = status_band(w)
-    banded = Image.new("RGB", (w, h + band), screen.getpixel((w // 2, 0)))
+    nav = nav_band(w)
+    banded = Image.new("RGB", (w, h + band + nav))
+    banded.paste(_status_bar(w, screen.getpixel((w // 2, 0)), frame_dir), (0, 0))
     banded.paste(screen, (0, band))
+    banded.paste(_gesture_band(w, screen.getpixel((w // 2, h - 1))), (0, band + h))
     screen = banded
-    h += band
+    h += band + nav
     bezel, button = margins(w)
-    out_w, out_h = frame_size((w, h - band))
+    out_w, out_h = frame_size((w, h - band - nav))
     ss = _SUPERSAMPLE
     radius = round(w * 0.13)
     inner_radius = max(4, radius - bezel)
