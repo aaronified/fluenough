@@ -209,7 +209,7 @@ function fC(){const exp=S.soon==='e';return `<div class="fcol"><div class="fcap"
  <p class="gn">Learn to read and say, not a language to speak.</p>
  <ul class="rows chg"><li class="row"><button class="main" type="button" aria-label="International Phonetic Alphabet"><span class="av" aria-hidden="true">ə</span><span class="nm"><span class="en">IPA</span><span class="nat">International Phonetic Alphabet</span></span><span class="chev">${ic('chev')}</span></button></li>
  <li class="row"><button class="main" type="button" aria-label="English Braille"><span class="av" aria-hidden="true">⠃</span><span class="nm"><span class="en">English Braille</span><span class="nat">⠃⠗⠁⠊⠇⠇⠑</span></span><span class="chev">${ic('chev')}</span></button></li></ul>
- <button class="soonh chg" type="button" aria-expanded="${exp}" aria-controls="soonlist"><span class="l">Coming soon</span><span class="n">${SOON.length} of 37 shown</span>${ic('down')}</button>
+ <button class="soonh chg" type="button" aria-expanded="${exp}" aria-controls="soonlist"><span class="l">Coming soon</span>${ic('down')}</button>
  <ul class="rows ${exp?'':'hide'}" id="soonlist">${SOON.map(soonRow).join('')}</ul></div></div></div>`}
 function fD(){return `<div class="fcol"><div class="fcap">d. Any tap or row goes straight here: Find my level, unchanged</div><div class="ph chg same ref">${bar('')}<div class="body">
  <h2 class="h" style="font-size:calc(24px*var(--t))">How well do you know ${L[S.lang==='none'?'te':S.lang].en}?</h2>
