@@ -14,7 +14,15 @@ genres:
   - { id: "proverbs", name: { en: "Proverbs" }, section: "beyond-basics", search_kind: "proverbs", weave: true }
   - { id: "multiword", name: { en: "Multi-word verbs" }, section: "beyond-basics", search_kind: "multiword", weave: true }
   - { id: "professional", name: { en: "Professional" }, section: "professional", search_kind: "situations", weave: false }
-professions: []
+professions:
+  - { id: "doctor", name: { en: "Doctor" } }
+  - { id: "teacher", name: { en: "Teacher" } }
+  - { id: "engineer", name: { en: "Engineer" } }
+  - { id: "shopkeeper", name: { en: "Shopkeeper" } }
+  - { id: "farmer", name: { en: "Farmer" } }
+  - { id: "driver", name: { en: "Driver" } }
+  - { id: "nurse", name: { en: "Nurse" } }
+  - { id: "police", name: { en: "Police officer" } }
 search_kinds:
   - { id: "situations", name: { en: "Situations" }, row: "scene", order: 1 }
   - { id: "topics", name: { en: "Topics" }, row: "topic", order: 2 }
