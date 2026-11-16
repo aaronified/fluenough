@@ -52,6 +52,9 @@ final Map<String, String> _env = Platform.environment;
 /// Where the frames go: one directory per screen.
 final String _out = _env['README_GIFS_OUT'] ?? 'build/readme_gifs';
 
+/// The sentences the learning session's lesson teaches.
+const String _lessonDeck = 'bn-en-cinema-sentences';
+
 /// The Bengali unit whose review the fourth GIF shows.
 const String _reviewDeck = 'bn-en-family';
 
@@ -386,30 +389,41 @@ Future<void> _learningSession(
   final dir = Directory('$_out/learning-session');
   if (dir.existsSync()) dir.deleteSync(recursive: true);
   final reel = _Reel(tester, boundary);
-  const maxFrames = 90;
+  const maxFrames = 76;
   state.settings.markScriptGuideSeen('bn');
   state.shellTab.value = ShellTab.today;
   await _settle(tester);
   await reel.hold(3);
-  tester
-      .state<NavigatorState>(find.byType(Navigator).first)
-      .pushNamed(
-        AppRoutes.drill,
-        arguments: DrillRequest.lesson(language: 'bn'),
+  // A lesson of sentences, which are asked more ways than single words (put
+  // in order, typed, heard), else the language's next words.
+  Future<void> open(DrillRequest request) async {
+    tester
+        .state<NavigatorState>(find.byType(Navigator).first)
+        .pushNamed(AppRoutes.drill, arguments: request);
+    // The page builds its queue after real asynchronous work, which only
+    // runs outside the test's fake clock: wait for it there.
+    for (var i = 0; i < 60; i++) {
+      await tester.runAsync(
+        () => Future<void>.delayed(const Duration(milliseconds: 100)),
       );
-  // The page builds its queue after real asynchronous work, which only runs
-  // outside the test's fake clock: wait for it there.
-  for (var i = 0; i < 100; i++) {
-    await tester.runAsync(
-      () => Future<void>.delayed(const Duration(milliseconds: 100)),
-    );
-    await tester.pump(const Duration(milliseconds: 100));
-    if (_session(tester) != null ||
-        find.byType(ScriptGuideView).evaluate().isNotEmpty) {
-      break;
+      await tester.pump(const Duration(milliseconds: 100));
+      if (_session(tester) != null ||
+          find.byType(ScriptGuideView).evaluate().isNotEmpty) {
+        break;
+      }
     }
+    await _settle(tester);
   }
-  await _settle(tester);
+
+  await open(
+    DrillRequest.lesson(language: 'bn', deckId: _lessonDeck),
+  );
+  if (_session(tester) == null &&
+      find.byType(ScriptGuideView).evaluate().isEmpty) {
+    tester.state<NavigatorState>(find.byType(Navigator).first).pop();
+    await _settle(tester);
+    await open(DrillRequest.lesson(language: 'bn'));
+  }
   // A script guide first, if the lesson meets one.
   if (find.byType(ScriptGuideView).evaluate().isNotEmpty) {
     await tester.tap(find.byType(FilledButton).first);
