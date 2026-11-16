@@ -13,7 +13,7 @@ A tap on a tile or a row goes straight to d. There is no new step and no "Start 
 ## What changed and why
 | Owner's point | Change |
 |---|---|
-| A new user sees an endless list and many "No course yet" rows | Nine big tiles first; the full list shows only languages with a course; languages without one are folded under "Coming soon" (collapsed by default, a native button with `aria-expanded`). No "No course yet" chip in the main list. |
+| A new user sees an endless list and many "No course yet" rows | Nine big tiles first; the full list shows only languages with a course; languages without one are folded under "Coming soon" (collapsed by default, a native button with `aria-expanded`; its rows are not tappable). No "No course yet" chip in the main list. |
 | Tiles must say what you get | The status line is derived from the course: "A1 to B1 ready" (B1 fully written), "A1 and A2 ready", "A1 ready", "Beginner course" (A1 partly written), "First words only" (a course, no path yet). |
 | Do not lose the information on how much of each course is made | The four A1, A2, B1, Culture bars stay, as one slim bar of four segments (6 dp, 4 dp gaps). Filled, partly filled and empty segments show made, partly made and still to come at a glance. The labels A1, A2, B1, Culture are drawn once, in the key at the top, not per row. A screen reader still reads one line per row ("How much of the course is made: A1 100%, A2 100%, ...", in the style of today's `pickerCourseLineLabel`, "Course written: ..."). |
 | "Verified: Not at all" text row is clutter | It becomes the app's own flag glyph at the end of the bar line: outlined (Not at all), half-solid (Somewhat), solid (Completely), muted or primary. Shape carries the state, not colour. A tap (or long-press on a phone) shows a tooltip, "Verified by native speakers: somewhat" plus the detail sentence (`languagesVerifiedNoneDetail` and the others). Its accessible name is `languagesVerifiedLabel`. The key at the top says the three states once (the existing `VerificationKey`, folded into the same card). |
@@ -58,7 +58,7 @@ No cue is colour alone: the flag states differ in shape (outline, half, solid), 
 - The first launch uses the same widget (as today): the user lands on screen a with no "Added" tile.
 
 ## Open questions for the owner
-1. A tap on a Coming soon language: keep what it does today (adds it as Know only, then the usual flow), or make it non-tappable until it has a course?
+1. Resolved (owner, 2026-11-16): a language in Coming soon is not tappable until it has a course. Its row shows only its name (and own name), muted but readable (`onSurfaceVariant`, 8.9:1 light and 10.9:1 dark), with no chevron and no pressed state, and a screen reader reads "{name}, no course yet" (hidden text, no button role). In Flutter: a plain `ListTile`-like row with `onTap: null` and `Semantics(label: ...)`, not an `InkWell`.
 2. Resolved (owner): the Coming soon header shows only its label, with no count.
 3. Tile status wording for a course with no path ("First words only") and for a partly written A1 ("Beginner course"): keep these two phrases?
 4. The empty bar track: keep today's `surfaceContainerHighest` (below 3:1) or move to `outlineVariant`?

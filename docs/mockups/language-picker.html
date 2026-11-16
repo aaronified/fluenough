@@ -90,7 +90,8 @@ ul.rows{list-style:none;margin:0;padding:0}
 .row .prog .flagwrap{position:relative}
 .row.soon .main{min-height:48px;padding:4px 0}
 .row.soon .av{background:var(--sHighest);color:var(--onSv)}
-.row.soon .nm .en{font-weight:500}
+.row.soon .nm .en{font-weight:500;color:var(--onSv)}
+.row.soon .main.static{cursor:default;pointer-events:none}
 .soonh{width:100%;margin:16px 0 0;min-height:56px;display:flex;align-items:center;gap:8px;padding:0 12px;border:0;border-radius:12px;background:var(--sHigh);font-size:calc(14px*var(--t));font-weight:700;text-align:start}
 .soonh span.l{flex:1}
 .soonh .n{font-weight:500;color:var(--onSv);font-size:calc(12px*var(--t))}
@@ -183,7 +184,7 @@ function row(k){const l=L[k],a=added(k);
  const lab=`${l.en}, ${l.nat}`;
  return `<li class="row ${a?'added':''}"><button class="main" type="button" aria-label="${lab}${a?', added':''}"><span class="av" aria-hidden="true" lang="${k}">${l.g}</span><span class="nm"><span class="en">${l.en}</span><span class="nat" lang="${k}">${l.nat}${l.nat2?' · '+l.nat2:''}</span></span>${a?`<span class="chip">${ic('check')}Added</span>`:''}<span class="chev">${ic('chev')}</span></button>
  <div class="prog"><span class="seg4" role="img" aria-label="How much of the course is made: ${pct(l.lv)}">${seg(l.lv)}</span><span class="flagwrap"><button class="flag ${l.v}" type="button" data-tip="${k}" title="Verified by native speakers: ${VW[l.v].toLowerCase()}" aria-label="Verified by native speakers: ${VW[l.v].toLowerCase()}. ${VD[l.v]}">${flagSvg(l.v)}</button></span></div></li>`}
-function soonRow(r){return `<li class="row soon"><button class="main" type="button" aria-label="${r[1]}, ${r[2]}, no course yet"><span class="av" aria-hidden="true">${r[3]}</span><span class="nm"><span class="en">${r[1]}</span><span class="nat">${r[2]}</span></span><span class="chev">${ic('chev')}</span></button></li>`}
+function soonRow(r){return `<li class="row soon"><div class="main static"><span class="av" aria-hidden="true">${r[3]}</span><span class="nm"><span class="en">${r[1]}</span><span class="nat">${r[2]}</span></span><span class="vh">No course yet</span></div></li>`}
 const bar=(t)=>`<div class="bar"><button class="ib" type="button" aria-label="Back">${ic('back')}</button>${t?`<span class="ttl">${t}</span>`:''}</div>`;
 const legend=()=>`<div class="legend chg" role="group" aria-label="Key">
  <p class="lt">How much of the course is made</p>
