@@ -1,0 +1,50 @@
+schema: 1
+id: "kn-en-reading-quantities"
+name: "Reading: a recipe card"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A recipe card for milk tea for two, with the amounts, using the measure words taught up to this unit. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-quantities-passage"
+    title: "Milk tea for two"
+    sentences:
+      - text: "ನಾನು ಒಂದು ಲೀಟರ್ ಹಾಲು ತೆಗೆದುಕೊಂಡೆ."
+        reading: "nānu ondu līṭar hālu tegedukoṇḍe."
+        ipa: "naːnu ond̪u liːʈar haːlu t̪eɡed̪ukoɳɖe"
+      - text: "ಚಹಾ ಮಾಡಿ, ಎರಡು ಚಮಚ ಸಕ್ಕರೆ ಹಾಕಿ."
+        reading: "cahā māḍi, eraḍu camaca sakkare hāki."
+        ipa: "tʃahaː maːɖi eraɖu tʃamatʃa sakkare haːki"
+      - text: "ಒಂದು ಲೋಟ ನೀರು ಸಾಕು."
+        reading: "ondu lōṭa nīru sāku."
+        ipa: "ond̪u loːʈa niːru saːku"
+      - text: "ಇಲ್ಲಿ ಕೆಲವು ಪೊಟ್ಟಣ ಬಿಸ್ಕೆಟ್ ಇದೆ."
+        reading: "illi kelavu poṭṭaṇa biskeṭ ide."
+        ipa: "illi kelaʋu poʈʈaɳa biskeʈ id̪e"
+      - text: "ಹಲವು ಜನ ಚಹಾ ಕುಡಿಯುತ್ತಾರೆ."
+        reading: "halavu jana cahā kuḍiyuttāre."
+        ipa: "halaʋu dʒana tʃahaː kuɖijut̪t̪aːre"
+      - text: "ಇಷ್ಟು ಸಾಕು."
+        reading: "iṣṭu sāku."
+        ipa: "iʂʈu saːku"
+    questions:
+      - id: "kn-9003"
+        prompt: { en: "How much milk did I buy?" }
+        options:
+          - { en: "One litre" }
+          - { en: "One kilo" }
+          - { en: "One packet" }
+        answer: 1
+      - id: "kn-9004"
+        prompt: { en: "How many spoons of sugar go into the tea?" }
+        options:
+          - { en: "Two spoons" }
+          - { en: "Two bowls" }
+          - { en: "Two glasses" }
+        answer: 1
+      - id: "kn-9005"
+        prompt: { en: "Several people drink tea here." }
+        answer: true

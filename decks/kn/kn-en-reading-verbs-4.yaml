@@ -1,0 +1,43 @@
+schema: 1
+id: "kn-en-reading-verbs-4"
+name: "Reading: a forest surprise"
+kind: reading
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short passage written for this course, using only the words of its unit and the units before it. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-short-story"
+    title: "A forest surprise"
+    sentences:
+      - text: "ರವಿ ಒಂದು ದಿನ ಕಾಡಿಗೆ ಹೋದ."
+        reading: "ravi ondu dina kāḍige hōda."
+        ipa: "raʋi ond̪u d̪ina kaːɖiɡe hoːd̪a"
+      - text: "ಅಲ್ಲಿ ಒಂದು ಹುಲಿ ಕಾಣಿಸಿತು."
+        reading: "alli ondu huli kāṇisitu."
+        ipa: "alli ond̪u huli kaːɳisit̪u"
+      - text: "ರವಿ ಕಲ್ಲು ಎಸೆದ."
+        reading: "ravi kallu eseda."
+        ipa: "raʋi kallu esed̪a"
+      - text: "ಹುಲಿ ಓಡಿಹೋಯಿತು."
+        reading: "huli ōḍihōyitu."
+        ipa: "huli oːɖihoːjit̪u"
+      - text: "ರವಿ ನಕ್ಕ. ಅದು ಅವನ ನೆರಳಾಗಿತ್ತು!"
+        reading: "ravi nakka. adu avana neraḷāgittu!"
+        ipa: "raʋi nakka ad̪u aʋana neraɭaːɡit̪t̪u"
+    questions:
+      - id: "kn-9727"
+        prompt: { en: "What did Ravi see in the forest?" }
+        options:
+          - { en: "A tiger" }
+          - { en: "A bus" }
+          - { en: "A flower" }
+        answer: 1
+      - id: "kn-9728"
+        prompt: { en: "Ravi threw a stone." }
+        answer: true
+      - id: "kn-9729"
+        prompt: { en: "The creature was Ravi's shadow." }
+        answer: true

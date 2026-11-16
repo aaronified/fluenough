@@ -1,0 +1,47 @@
+schema: 1
+id: "kn-en-reading-workplace"
+name: "Reading: a meeting notice"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "An office notice about a meeting, using the workplace words taught up to this unit. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-workplace-passage"
+    title: "Meeting notice"
+    sentences:
+      - text: "ನಾಳೆ ಬೆಳಿಗ್ಗೆ ಸಭೆ ಇದೆ."
+        reading: "nāḷe beḷigge sabhe ide."
+        ipa: "naːɭe beɭiɡɡe sabʱe id̪e"
+      - text: "ಎಲ್ಲಾ ಸಹೋದ್ಯೋಗಿಗಳು ಬರಬೇಕು."
+        reading: "ellā sahōdyōgigaḷu barabēku."
+        ipa: "ellaː sahoːd̪joːɡiɡaɭu barabeːku"
+      - text: "ಹೊಸ ಯೋಜನೆ ಶುರು ಆಗುತ್ತದೆ."
+        reading: "hosa yōjane śuru āguttade."
+        ipa: "hosa joːdʒane ʃuru aːɡut̪t̪ad̪e"
+      - text: "ಮ್ಯಾನೇಜರ್ ವರದಿ ತನ್ನಿ."
+        reading: "myānējar varadi tanni."
+        ipa: "mjaːneːdʒar ʋarad̪i t̪anni"
+      - text: "ದಯವಿಟ್ಟು ದಾಖಲೆ ತನ್ನಿ."
+        reading: "dayaviṭṭu dākhale tanni."
+        ipa: "d̪ajaʋiʈʈu d̪aːkʰale t̪anni"
+    questions:
+      - id: "kn-9021"
+        prompt: { en: "When is the meeting?" }
+        options:
+          - { en: "Tomorrow morning" }
+          - { en: "Yesterday evening" }
+          - { en: "Next Sunday" }
+        answer: 1
+      - id: "kn-9022"
+        prompt: { en: "Who must bring the report?" }
+        options:
+          - { en: "The manager" }
+          - { en: "The colleagues" }
+          - { en: "The secretary" }
+        answer: 1
+      - id: "kn-9023"
+        prompt: { en: "A new plan starts." }
+        answer: true

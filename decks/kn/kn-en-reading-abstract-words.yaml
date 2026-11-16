@@ -1,0 +1,43 @@
+schema: 1
+id: "kn-en-reading-abstract-words"
+name: "Reading: an opinion column"
+kind: "reading"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A Kannada passage written for this course with the words taught up to its unit (a short opinion column). Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-opinion-column"
+    title: "Opinion column"
+    sentences:
+      - text: "ಸಮಾನತೆ ಎಲ್ಲರ ಕನಸು."
+        reading: "samānate ellara kanasu."
+        ipa: "samaːnat̪e ellara kanasu"
+      - text: "ಜ್ಞಾನ ಮತ್ತು ನ್ಯಾಯ ಮೌಲ್ಯಗಳು."
+        reading: "jñāna mattu nyāya maulyagaḷu."
+        ipa: "dʒɲaːna mat̪t̪u njaːja mauljaɡaɭu"
+      - text: "ಸಂಸ್ಕೃತಿ ಮತ್ತು ಪರಂಪರೆ ನಮ್ಮ ಜೀವನದಲ್ಲಿ ಇವೆ."
+        reading: "samskruti mattu parampare namma jīvanadalli ive."
+        ipa: "samskrut̪i mat̪t̪u parampare namma dʒiːʋanad̪alli iʋe"
+      - text: "ಪ್ರತಿ ಆರಂಭಕ್ಕೆ ಒಂದು ಅಂತ್ಯ ಇದೆ."
+        reading: "prati ārambhakke ondu antya ide."
+        ipa: "prat̪i aːrambʱakke ond̪u ant̪ja id̪e"
+      - text: "ಭರವಸೆ ಮತ್ತು ಕನಸು ಜೊತೆಯಲ್ಲಿ ಇವೆ."
+        reading: "bharavase mattu kanasu joteyalli ive."
+        ipa: "bʱaraʋase mat̪t̪u kanasu dʒot̪ejalli iʋe"
+    questions:
+      - id: "kn-9385"
+        prompt: { en: "According to the column, what is everyone's dream?" }
+        options:
+          - { en: "Equality" }
+          - { en: "Money" }
+          - { en: "Sleep" }
+        answer: 1
+      - id: "kn-9386"
+        prompt: { en: "Knowledge and justice are values." }
+        answer: true
+      - id: "kn-9387"
+        prompt: { en: "Every beginning has an end." }
+        answer: true

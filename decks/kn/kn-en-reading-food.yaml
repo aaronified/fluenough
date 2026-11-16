@@ -1,0 +1,43 @@
+schema: 1
+id: "kn-en-reading-food"
+name: "Reading: our menu"
+kind: reading
+language: { code: kn, iso639_3: kan, name: Kannada, script: kannada, tts: kn-IN, icon: "ಕ" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "A short passage written for this course, using only the words of its unit and the units before it. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["reading", "beginner", "unreviewed"]
+passages:
+  - id: "kn-menu-card"
+    title: "Our menu"
+    sentences:
+      - text: "ಇದು ನಮ್ಮ ಮೆನು."
+        reading: "idu namma menu."
+        ipa: "id̪u namma menu"
+      - text: "ಸಾರು, ರೊಟ್ಟಿ ಮತ್ತು ಬಿರಿಯಾನಿ ಇದೆ."
+        reading: "sāru, roṭṭi mattu biriyāni ide."
+        ipa: "saːru roʈʈi mat̪t̪u birijaːni id̪e"
+      - text: "ಲಡ್ಡು ಅಥವಾ ಪಾಯಸ ಇದೆ."
+        reading: "laḍḍu athavā pāyasa ide."
+        ipa: "laɖɖu at̪ʰaʋaː paːjasa id̪e"
+      - text: "ಚಿಕನ್ ಮತ್ತು ಮಾವಿನಹಣ್ಣು ಕೂಡ ಇದೆ."
+        reading: "cikan mattu māvinahaṇṇu kūḍa ide."
+        ipa: "tʃikan mat̪t̪u maːʋinahaɳɳu kuːɖa id̪e"
+      - text: "ಎಲ್ಲವೂ ತುಂಬಾ ಚೆನ್ನಾಗಿದೆ."
+        reading: "ellavū tumbā cennāgide."
+        ipa: "ellaʋuː t̪umbaː tʃennaːɡid̪e"
+    questions:
+      - id: "kn-9673"
+        prompt: { en: "What is on the menu?" }
+        options:
+          - { en: "Curry, roti and biryani" }
+          - { en: "Only water" }
+          - { en: "Only bread" }
+        answer: 1
+      - id: "kn-9674"
+        prompt: { en: "The menu has laddoo or payasa." }
+        answer: true
+      - id: "kn-9675"
+        prompt: { en: "The menu has no chicken." }
+        answer: false
