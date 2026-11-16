@@ -17,10 +17,32 @@ const Map<String, String> languageFontScripts = <String, String>{
   'ks:perso_arabic': 'perso_arabic_naskh',
 };
 
+/// The scripts that have no font file of their own and are drawn in
+/// another script's (`FONT_ALIASES` in tools/deck_index.py, which a test
+/// keeps equal): Arabic is set in Naskh, Punjabi's Shahmukhi in the Urdu
+/// Nastaliq, and the IPA in the Latin font.
+const Map<String, String> scriptFontAliases = <String, String>{
+  'arabic': 'perso_arabic_naskh',
+  'shahmukhi': 'perso_arabic',
+  'ipa': 'latin',
+};
+
+/// The scripts whose fonts are the content fonts (owner, 2026-11-16: "I
+/// don't want to depend on system fonts for content"): one Noto Sans subset
+/// each, shared by every language in the script. They always download with
+/// a course and are always drawn with, never asked about, and they are the
+/// fallback behind every other script's font and the interface's, so that
+/// no deck character falls to the phone's font (`CONTENT_FONTS` in
+/// tools/deck_index.py).
+const List<String> contentFontScripts = <String>['latin', 'cyrillic', 'greek'];
+
 /// The font key to draw [language]'s text in [script] with: [script] itself
-/// unless [languageFontScripts] names another.
+/// unless [languageFontScripts] names another, or it shares another's font
+/// ([scriptFontAliases]).
 String fontScriptFor(String language, String script) =>
-    languageFontScripts['$language:$script'] ?? script;
+    languageFontScripts['$language:$script'] ??
+    scriptFontAliases[script] ??
+    script;
 
 /// The script a font key stands for: the one [fontScript] is a language's
 /// font for, else [fontScript] itself (`perso_arabic_naskh` is the font of
